@@ -7838,3 +7838,73 @@ DirectSoundWaveData_wl4_110c04::
 	.align 2
 DirectSoundWaveData_wl4_115de0::
 	.incbin "sound/direct_sound_samples/rip/wl4/wl4_115de0.bin"
+DirectSoundWaveData_az_voice::
+	.incbin "sound/direct_sound_samples/grounded/az_voice.bin"
+
+	.align 2
+DirectSoundWaveData_az_voice_lo::
+	.incbin "sound/direct_sound_samples/grounded/az_voice_lo.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_00::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_00.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_01::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_01.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_02::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_02.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_03::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_03.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_04::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_04.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_05::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_05.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_06::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_06.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_07::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_07.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_08::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_08.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_09::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_09.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_10::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_10.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_11::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_11.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_12::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_12.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_13::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_13.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_14::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_14.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_15::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_15.bin"

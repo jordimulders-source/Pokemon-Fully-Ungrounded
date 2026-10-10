@@ -216,8 +216,9 @@ def build():
     bg = [float(g) for g in open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                               'areazero_bells_gain.txt')).read().split()]
     # v8: begeleiding m5-23 = drie aansluitende knippen uit 'other' + 'bass'; m16-23 herhaalt stuk 1 en 2
-    for j, (bar, pos, ln) in list(enumerate(BELL_RIPS)) + [(1, (16, 0, 64)), (2, (20, 0, 64)), (3, (32, 0, 64)), (4, (36, 0, 64))]:
-        P['bellrip'].append([T(bar, pos), T(bar, pos) + ln * S + 2, 36 + j, vel(bg[j], LVL_PAD)])
+    for j, (bar, pos, ln) in list(enumerate(BELL_RIPS)) + [(1, (16, 0, 64)), (2, (20, 0, 64)), (3, (32, 0, 64)), (4, (36, 0, 64))] + \
+            [(5, (b, 0, 32)) for b in range(40, 64, 2) if b != 44]:   # v9: 16e-was m40-63
+        P['bellrip'].append([T(bar, pos), T(bar, pos) + ln * S + (2 if j < 5 else -1), 36 + j, vel(bg[j], LVL_PAD * (1.3 if j == 5 else 1))])   # v9: was +2 dB (orig 5-7% >2k, wij 4%)
 
     # lead (aria): bend per noot (BENDR 2: 64 stappen = 2 halve tonen) + vibrato
     for bar, pos, ln, n in LEAD_REST:
@@ -291,7 +292,7 @@ def build():
                 hit(T(b, 12), KICK, 80)
         else:
             hit(T(b, 2), KICK, 108); hit(T(b, 6), KICK, 92); hit(T(b, 7), KICK, 84); hit(T(b, 8), SNARE, 104)
-        hats = (0, 4, 6, 8, 10, 12, 14) if even else (0, 2, 6, 7, 8, 11, 14)
+        hats = ()                                   # v9: de hi-hats van het origineel zitten in de 16e-was (stuk 6)
         for h in hats:
             P['hat'].append([T(b, h), T(b, h) + S // 2, 72, 110 if h in (0, 8) else 84])
 

@@ -718,6 +718,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   stem controleren. **Weergaveketen meten** (solo vs stem, opname vs mixbuffer): 16 kHz-sample + mixer + GBA-uitgang
   = -2 dB bij 2 kHz tot -6,6 bij 7 kHz; het omgekeerde als voorversterking in de knip (`EQ` in
   `areazero_samples.py`) maakt de opname ±1 dB vlak t.o.v. het origineel.
+- Area Zero v9 (Jordi: 'tot 1:18 geweldig, dan een hele luie variant'): waar knippen ophouden en eigen partijen
+  overnemen, **een 16e-raster van de energie per band** (laag <150 Hz / hoog >3 kHz, `#o.`) naast het origineel zetten:
+  het origineel had een doorlopende 16e-was (pulserende ruis + hi-hats), wij achtsten. Goedkoopste fix: 2 maten
+  'other'+'drums' alleen boven 2 kHz knippen (14 kHz, 56 KB) en elke 2 maten herhalen; akkoorden/bas/kick blijven van
+  ons, dus geen akkoordbotsing. **Dezelfde kitnoot direct na zichzelf**: eind = volgende start (of erna) geeft in
+  mid2agb N01-noten (de note-off van de oude doodt de nieuwe); laat de noot 1 tick eerder eindigen.
 
 - Tower v1 (`tower_theme.py`, 687, gevechtsremix van `mus_rg_lavender.mid`): **origineel tpb 24 x 4 = 96 en de intro is
   ook 4 maten**, dus elke noot staat op tick x 4 en de loop (40 maten) blijft 1-op-1 (melodie spoor 1, jammerlijn spoor 5,

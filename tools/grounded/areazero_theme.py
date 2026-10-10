@@ -43,6 +43,10 @@ NBARS = 64
 MAXV = 10
 LEAD_DETUNE = 1.0            # 1 = zoals gemeten (±0,4 halve toon te hoog), 0 = zuiver
 LFOS = 24                    # vibratosnelheid: in de game gemeten 30 -> ±8 Hz, origineel ±6 Hz
+# v2 (Jordi: 'vocals veel te aanwezig, goofy, spookachtig; slaan de hele tijd over, moet 1 lange klank zijn; de seesaw-
+# achtige vocal vanaf 7 s [= de aria, m24-25] slaat nergens op; de achtergrond is prima'): in 681 geen aria/zuchten meer,
+# koor = 2 stemmen, één lange aangehouden noot per akkoord (sample loopt), zonder vibrato en zachter. 682 ongewijzigd.
+MAIN_LEAD, MAIN_SIGHS, MAIN_CHOIR_MOD, MAIN_CHOIR_VOICES = False, False, 0, 2
 LEAD_MOD, CHOIR_MOD, SIGH_MOD = 14, 6, 10   # in de game gemeten: MOD 6 gaf std 0,08 halve toon, origineel 0,33
 
 # programma's (grounded_gm-nummering, eigen invulling)
@@ -145,6 +149,17 @@ SIGHS = [(42, 10, 18, ('A4', 'D5')), (47, 14, 8, ('A4', 'D5')), (53, 14, 8, ('A4
          (64, 8, 8, ('E4', 'A4', 'C#5'))]      # m64: A-groot glijdt naar Ab-groot -> het begin (Ab5 C#6 Eb6)
 
 
+def legato(ev):
+    """Noten van dezelfde toonhoogte die direct op elkaar aansluiten (of overlappen) samenvoegen tot één noot."""
+    out = []
+    for e in sorted(ev, key=lambda e: (e[2], e[0])):
+        if out and out[-1][2] == e[2] and e[0] <= out[-1][1]:
+            out[-1][1] = max(out[-1][1], e[1])
+        else:
+            out.append(list(e))
+    return sorted(out)
+
+
 def build():
     P = {k: [] for k in ('lead', 'choir', 'sigh', 'str', 'bell', 'echo', 'ost', 'bass', 'hat', 'drums')}
     bend_lead, bend_sigh = [], []
@@ -175,7 +190,7 @@ def build():
     bells(64, CELL[:3], 70)
 
     # lead (aria): bend per noot (BENDR 2: 64 stappen = 2 halve tonen) + vibrato
-    for bar, pos, ln, n, dev in LEAD:
+    for bar, pos, ln, n, dev in (LEAD if MAIN_LEAD else ()):
         t = T(bar, pos)
         P['lead'].append([t, t + ln * S, p(n), 100])
         bend_lead.append((t, int(round(dev * LEAD_DETUNE * 32)) * 128))
@@ -184,6 +199,8 @@ def build():
     def chord(t, ln, strings, choir, vs=80, vc=88):
         for n in strings:
             P['str'].append([t, t + ln, p(n), vs])
+        if len(choir) > MAIN_CHOIR_VOICES:          # v2: buitenste stemmen houden
+            choir = [choir[0], choir[-1]][:MAIN_CHOIR_VOICES]
         for n in choir:
             P['choir'].append([t, t + ln, p(n), vc])
     for bar, pos, ln, strings, choir in CHORDS:
@@ -200,7 +217,7 @@ def build():
     chord(T(64), 8 * S, ['C#3'], ['C#4', 'F#4', 'Eb5'], 70, 74)
 
     # zuchten
-    for bar, pos, ln, notes in SIGHS:
+    for bar, pos, ln, notes in (SIGHS if MAIN_SIGHS else ()):
         t = T(bar, pos)
         for n in notes:
             P['sigh'].append([t, t + ln * S, p(n), 92])
@@ -262,14 +279,18 @@ def build():
 
     for k in P:
         P[k] = dedupe(P[k])
+    P['choir'] = legato(P['choir'])                 # v2: aaneensluitende gelijke noten = één lange klank
 
     write_voicegroup()
     rel = releases(VG)
     progs = {'lead': LEAD_P, 'choir': CHOIR, 'sigh': SIGH, 'str': STR, 'bell': BELL}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) + 2 for k, pr in progs.items()}
     tail['drums'] = 0
-    for k in ('lead', 'choir', 'str', 'sigh'):
+    for k in ('lead', 'str', 'sigh'):
         P[k] = detach(P[k], tail[k])
+    # koor: per toonhoogte loslaten, zodat een doorklinkende toon niet bij een akkoordwissel afbreekt
+    P['choir'] = sorted(sum((detach([e for e in P['choir'] if e[2] == n], tail['choir'])
+                             for n in sorted({e[2] for e in P['choir']})), []))
     order = ['lead', 'drums', 'bell', 'sigh', 'choir', 'str']
     ds = {k: P[k] for k in order}
     kept = allocate(ds, order, tail, drum_len=S * 2, drum_parts=('drums',), max_voices=MAXV)
@@ -287,12 +308,12 @@ def build():
                (0, mido.Message('control_change', control=1, value=LEAD_MOD))] + \
               [(t, mido.Message('pitchwheel', pitch=v)) for t, v in bend_lead]
     ex_choir = [(0, mido.Message('control_change', control=21, value=LFOS)),
-                (0, mido.Message('control_change', control=1, value=CHOIR_MOD))]
+                (0, mido.Message('control_change', control=1, value=MAIN_CHOIR_MOD))]
     ex_sigh = [(0, mido.Message('control_change', control=20, value=1)),
                (0, mido.Message('control_change', control=21, value=LFOS + 6)),
                (0, mido.Message('control_change', control=1, value=SIGH_MOD))] + \
               [(t, mido.Message('pitchwheel', pitch=max(-8192, min(8191, v)))) for t, v in bend_sigh]
-    TRACKS = [('lead', LEAD_P, 92, 64, ex_lead), ('choir', CHOIR, 70, 64, ex_choir), ('sigh', SIGH, 66, 56, ex_sigh),
+    TRACKS = [('lead', LEAD_P, 92, 64, ex_lead), ('choir', CHOIR, 50, 64, ex_choir), ('sigh', SIGH, 66, 56, ex_sigh),
               ('str', STR, 62, 64, ()), ('bell', BELL, 66, 72, ()), ('echo', ECHO, 30, 44, ()),
               ('ost', OST, 34, 80, ()), ('bass', BASS, 62, 64, ()), ('hat', HAT, 26, 70, ()),
               ('drums', DRUMS, 92, 64, ())]

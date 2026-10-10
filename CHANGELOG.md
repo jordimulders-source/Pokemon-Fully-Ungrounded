@@ -18141,3 +18141,16 @@ Gemaakt door een agent (`areazero_theme.py`, één eigen sample `az_crystal`, ±
 - **Battle! Area Zero** (`MUS_GROUNDED_VS_AREA_ZERO`), 150 bpm, remix voor alle paradoxen, Koraidon, Miraidon, Terapagos en wilde gevechten in Area Zero.
   - Ook de trainerklasse `TRAINER_CLASS_ZERO_LAB` vecht erop (Jordi: "alle battle themes worden remixes van Area Zero"). Terugdraaien kan met één regel in `src/pokemon.c`.
 - Beide op -V127, gemeten: piek 96/101, 0 overlopen. De agent had -V085, met een piek van 65.
+
+### [v0.9.244] - Battle! Boo, Lakeside Park in de jungle, feedback verwerkt
+Jordi (10 okt): "Broken Pier is goed. Kan je die heel licht remixen zodat het net meer een battle theme klinkt?" en "broken pier dan behouden voor de boo house … en dan de battle theme voor Boos".
+- **Battle! Boo** (`broken_pier_battle.py`, `MUS_GROUNDED_VS_BROKEN_PIER`): een lichte battle-remix van de rip.
+  - Tempo 116 → 132 bpm.
+  - In de eerste 9 maten (in het origineel zonder drums) een stuwende laag uit de eigen MKSC-drumkit: kick op 1 en 3, snare op 2 en 4, hihat op de achtsten. Vanaf maat 10 speelt het originele drumspoor.
+  - Gemeten: piek 79, 0 overlopen.
+  - Klinkt bij de Boo-gevechten en bij WILD MUSIC "BROKEN PIER".
+- **Boo-huis** (Yoshi's Island): het origineel van Broken Pier als kaartmuziek (`MUS_GROUNDED_MKSC_BROKEN_PIER`, was `MUS_RG_POKE_MANSION`).
+- **Lakeside Park** voor wilde gevechten in Fortree Jungle en Mangrove Mire.
+- **Xerneas/Yveltal en het meertrio** terug op de placeholder-muziek. Jordi: Xerneas/Yveltal "veel te vrolijk", het meertrio valt onder een generieker thema, en hij bedenkt zelf een richting. De MIDI's blijven in `legends3_theme.py` bewaard. Zacian/Zamazenta blijft ("prima").
+- **Vanilla-drums blijven zoals ze zijn** (Jordi na de A/B: "drums aanpassen klinkt heel gek").
+- `tools/grounded/mp2k_timing.py`: noten, tempo en loop van een MP2K-nummer per tick uitlezen, voor remixes van rips.

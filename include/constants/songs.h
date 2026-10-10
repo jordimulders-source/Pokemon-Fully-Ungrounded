@@ -554,7 +554,7 @@
 #define MUS_GROUNDED_VS_GHETSIS     616 // Project Grounded: Ghetsis-gevechtsmuziek (Black/White), keuze in het optiemenu
 #define MUS_GROUNDED_VS_DARK_CAVE   617 // Project Grounded: Dark Cave (HeartGold/SoulSilver), keuze bij WILD MUSIC
 #define MUS_GROUNDED_VS_YOSHI_CASTLE 618 // Project Grounded: Yoshi's castle-muziek, keuze bij WILD MUSIC
-#define MUS_GROUNDED_VS_BROKEN_PIER 619 // Project Grounded: Broken Pier (Mario Kart: Super Circuit, 1-op-1-rip sinds v0.9.240), keuze bij WILD MUSIC, Boo-gevechten
+#define MUS_GROUNDED_VS_BROKEN_PIER 619 // Project Grounded: Broken Pier Battle! Boo: lichte battle-remix (132 bpm, extra drums, tools/grounded/broken_pier_battle.py, v0.9.244), keuze bij WILD MUSIC, Boo-gevechten
 #define MUS_GROUNDED_VS_SUNSET_WILDS 620 // Project Grounded: Sunset Wilds (Mario Kart: Super Circuit, 1-op-1-rip sinds v0.9.240), keuze bij WILD MUSIC, Shy Guys
 #define MUS_GROUNDED_VS_ZINNIA      621 // Project Grounded: Zinnia-gevechtsmuziek (ORAS), Zinnia voor de Sky Pillar
 #define MUS_GROUNDED_VS_ZARUDE      622 // Project Grounded: "Battle! Zarude", eigen compositie (tools/grounded/zarude_theme.py)
@@ -605,7 +605,7 @@
 #define MUS_GROUNDED_YI_FUZZY       666 // Project Grounded: Overworld (Fuzzy), Touch Fuzzy Get Dizzy, SPC-rip (tools/grounded/spc/spc2gba.py)
 #define MUS_GROUNDED_YI_CASTLE      667 // Project Grounded: Castle & Fortress (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
 #define MUS_GROUNDED_MKSC_BOWSER_CASTLE 668 // Project Grounded: Mario Kart: Super Circuit, Bowser Castle, 1-op-1 uit mksc (song 22, tools/grounded/mp2k_rip.py)
-// 669 vrij: Boo Lake & Broken Pier (MKSC song 27) speelt op MUS_GROUNDED_VS_BROKEN_PIER (619)
+#define MUS_GROUNDED_MKSC_BROKEN_PIER 669 // Project Grounded: Mario Kart: Super Circuit, Boo Lake & Broken Pier, 1-op-1 (song 27); kaartmuziek van het Boo-huis (v0.9.244)
 // 670 vrij: Sunset Wilds (MKSC song 26) speelt op MUS_GROUNDED_VS_SUNSET_WILDS (620)
 #define MUS_GROUNDED_MKSC_LAKESIDE_PARK 671 // Project Grounded: Mario Kart: Super Circuit, Lakeside Park, 1-op-1 uit mksc (song 32, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_MKSC_RAINBOW_ROAD 672 // Project Grounded: Mario Kart: Super Circuit, Rainbow Road, 1-op-1 uit mksc (song 28, tools/grounded/mp2k_rip.py)

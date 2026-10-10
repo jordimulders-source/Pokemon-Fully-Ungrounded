@@ -6380,6 +6380,8 @@ u16 GetBattleBGM(void)
         return MUS_GROUNDED_VS_AREA_ZERO; // Project Grounded: wilde gevechten in Area Zero = remix van het Area Zero-thema
     if (gMapHeader.regionMapSectionId == MAPSEC_YOSHIS_ISLAND)
         return MUS_GROUNDED_YI_OVERWORLD; // Project Grounded: Yoshi's Island-overworld (SPC-rip) bij wilde gevechten op het eiland
+    if (gMapHeader.regionMapSectionId == MAPSEC_FORTREE_JUNGLE || gMapHeader.regionMapSectionId == MAPSEC_MANGROVE_MIRE)
+        return MUS_GROUNDED_MKSC_LAKESIDE_PARK; // Project Grounded: wilde gevechten in de jungle op Lakeside Park (Mario Kart: Super Circuit; Jordi 10 okt)
     return GetChosenWildBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_WILD)
     }
 }

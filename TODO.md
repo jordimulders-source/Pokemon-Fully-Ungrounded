@@ -70,7 +70,6 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
   2. De oude SoundMainRAM/Unk1/Unk2 in `src/m4a_1.s` achter `#if !M4A_HQ_MIXER` (`include/config/m4a_mixer.h`).
   3. `gLink` naar `EWRAM_DATA` (+4 KB IWRAM).
   Na akkoord: A/B-previews, lag en cries testen.
-- **Beslissen (Jordi, v0.9.240): vanilla-drums** spelen sinds v0.9.32 (mixer 21 kHz) ±7,8 halve tonen te hoog (`no_resample`). Terugzetten per kit na een A/B.
 
 ## Antwoorden Jordi 9 okt (verwerkt)
 - **Tao-eiland:** Dragon Tamers, verzekeringsexpert en drakentabellen blijven (alleen Gerald weg). Kyurem neutraal (geen Black/White-vorm). **Ghetsis** moet nog ergens in de wereld komen: hij geeft de **DNA Splicers**.

@@ -671,12 +671,12 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_NECROZMA_ULTRA:
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_DEOXYS);
         break;
-    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle, de kleur stroomt terug in het bos eigen thema (leven en dood)
+    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle, de kleur stroomt terug in het bos (placeholder-muziek: Jordi bedenkt een richting, v0.9.244)
     case SPECIES_XERNEAS_ACTIVE:
-        CreateBattleStartTask(B_TRANSITION_XERNEAS, MUS_GROUNDED_VS_XERNEAS);
+        CreateBattleStartTask(B_TRANSITION_XERNEAS, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, de kleur trekt weg, Oblivion Wing zelfde thema als Xerneas
-        CreateBattleStartTask(B_TRANSITION_YVELTAL, MUS_GROUNDED_VS_XERNEAS);
+    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, de kleur trekt weg, Oblivion Wing (placeholder-muziek, zie Xerneas)
+        CreateBattleStartTask(B_TRANSITION_YVELTAL, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_ARTICUNO: // Project Grounded (legends2): Shoal Cave, Frozen Depths; het beeld vriest dicht (muziek: placeholder)
         CreateBattleStartTask(B_TRANSITION_ARTICUNO, MUS_RG_VS_LEGEND);
@@ -725,10 +725,10 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_CELEBI: // Project Grounded: Ilex Forest (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_UXIE: // Project Grounded: de Gen 4-meren in de Spacetime Cave (rimpelingen), eigen thema (drie motieven)
+    case SPECIES_UXIE: // Project Grounded: de Gen 4-meren in de Spacetime Cave (rimpelingen), placeholder-muziek (Jordi: valt onder een generieker thema, v0.9.244)
     case SPECIES_MESPRIT:
     case SPECIES_AZELF:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_LAKE_TRIO);
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_ETERNATUS: // Project Grounded: National Park (placeholder: Kanto-legendary-thema, bestaande transitie)
     case SPECIES_ETERNATUS_ETERNAMAX:

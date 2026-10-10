@@ -18199,3 +18199,11 @@ Jordi (10 okt): "Broken Pier is goed. Kan je die heel licht remixen zodat het ne
   - het koor speelt 2 stemmen als lange aangehouden tonen, zonder vibrato en zachter;
   - piek 72 bij -V127.
   - Jordi vindt de vocalen nog steeds te ver van het origineel. Volgende stap (de agent werkt eraan): het koor ("YEEEEHOOOO HO") en de aria vanaf ±46 s elk uit het origineel knippen en los A/B'en, zoals bij Tapu.
+
+### [v0.9.247] - Intro's v2: Zacian, Zamazenta, Xerneas, Yveltal zonder sprite
+Jordi wilde hun sprites niet in beeld.
+- **Zacian:** het Rusted Sword zweeft op de open plek. De roest valt er in schilfers af en het zwaard wordt roestvrij (zilverblauwe kling, gouden gevest). Dan schiet het door het beeld, laat een witte snee achter en het beeld splijt open.
+- **Zamazenta:** het Rusted Shield wordt roestvrij (rood en goud). Het beukt drie keer tegen het scherm: per klap een flits, schudden en groeiende barsten. Bij de derde klap breekt het glas.
+- **Xerneas:** een grote X van gewei in het grauwe Ballonlea. De vier lichtjes (geel, paars, rood, blauw) gaan een voor een aan en de kleur stroomt vanuit de heksenkring terug. Dan regenboogglinsters en Geomancy.
+- **Yveltal:** een grote zwarte Y met rode strepen daalt in de kring. De kleur trekt weg en rode veren worden naar de Y gezogen. Dan kleurt Oblivion Wing alles rood en wordt het zwart.
+- +9,9 KB. Item-art is 4× vergroot met Scale2x; grote objecten bestaan uit vier 64×64-sprites die samen schalen en draaien.

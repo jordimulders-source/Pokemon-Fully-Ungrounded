@@ -59,7 +59,7 @@ voice_group grounded_area_zero
 	voice_directsound 60, 0, DirectSoundWaveData_az_voice_lo, 40, 0, 255, 190  @ 55
 	voice_keysplit_all voicegroup_area_zero_choir  @ 56
 	voice_keysplit_all voicegroup_area_zero_aria  @ 57
-	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 58
+	voice_keysplit_all voicegroup_area_zero_bells  @ 58
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 59
 	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn  @ 60
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 61

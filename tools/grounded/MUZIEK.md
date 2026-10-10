@@ -696,4 +696,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   als stapel stemmen in één sample op 16 kHz (KEEP_16K in resample_wav.py), 3 samples per kandidaat (transpositie
   -2..+5: onder de 10,5 kHz van de mixer). **De -V-grens van Mitch was de build-up**: kick + roffelsnare tegelijk =
   +35% boven de drops (offline), daarom liep -V > 066 over; roffelslag op/na een kick x0,5 -> -V092, piek 98, RMS 3950.
+- Area Zero v7 (Jordi: 'vanaf 8 s doen de piepjes hun eigen ding; vanaf 1:18 een deuntje dat er niet in hoort'):
+  **nooit een laag toevoegen die alleen gemeten en niet met een geïsoleerde A/B tegen de stem gecontroleerd is.** Een
+  dichte belletjeswolk (16en + echo + wisselnoten) is niet na te spelen; waar een stem alleen die laag bevat (intro,
+  pauzes) knip je hem als geheel (chroma A/B 0,97); de geraden cel/groove-arpeggio's zijn weg.
 

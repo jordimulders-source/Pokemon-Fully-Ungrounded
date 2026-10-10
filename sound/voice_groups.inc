@@ -293,3 +293,4 @@
 .include "sound/voicegroups/grounded_area_zero.inc"
 .include "sound/voicegroups/drumsets/area_zero_choir.inc"
 .include "sound/voicegroups/drumsets/area_zero_aria.inc"
+.include "sound/voicegroups/drumsets/area_zero_bells.inc"

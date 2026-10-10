@@ -7898,3 +7898,15 @@ DirectSoundWaveData_mitch7_pluck::
 	.align 2
 DirectSoundWaveData_mitch7_reese_raw::
 	.incbin "sound/direct_sound_samples/grounded/mitch7_reese_raw.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_0::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_0.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_1::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_1.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_2::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_2.bin"

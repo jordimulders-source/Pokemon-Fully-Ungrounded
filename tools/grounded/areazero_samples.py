@@ -148,6 +148,24 @@ def aria(j, bar, pos, ln, src=VOCALS, rate=RATE):
     return x / pk * 0.95, pk
 
 
+# v7 (Jordi: 'vanaf 8 s doen de piepjes hun eigen ding'): de hoge belletjeswolk (Ab6 C#7 Eb7 met wisselnoten en echo)
+# is niet noot voor noot na te spelen; in de intro (m5-7) en de pauzes klinken in de 'other'-stem alleen de belletjes,
+# dus die stukken komen als één geheel uit het origineel: (maat, 16e, lengte in 16en).
+OTHER = VOCALS.replace('vocals.wav', 'other.wav')
+BELL_RIPS = [(5, 0, 52), (10, 8, 24), (18, 8, 24)]
+
+
+def bellrip(j, bar, pos, ln, src=OTHER, rate=RATE):
+    t = BAR1 + (bar - 1) * 2 + pos * 0.125
+    x, sr = _read(src, t - 0.03, t + ln * 0.125)
+    x = _to_rate(x, sr, rate)
+    x[:int(0.01 * rate)] *= np.linspace(0, 1, int(0.01 * rate))
+    x[-int(0.25 * rate):] *= np.linspace(1, 0, int(0.25 * rate))
+    pk = np.abs(x).max()
+    print('az_bells_%d: m%d.%02d, %.2f s, piek %.3f' % (j, bar, pos, len(x) / rate, pk))
+    return x / pk * 0.95, pk
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     write_wav(os.path.join(OUT, 'az_crystal.wav'), crystal(), 16000, 84, None)
@@ -169,6 +187,13 @@ def main():
         y, pk = aria(j, bar, pos, ln, src)
         write_wav(os.path.join(OUT, 'az_aria_%d.wav' % j), y, RATE, 60, None)
         ag.append(pk)
+    bg = []
+    for j, (bar, pos, ln) in enumerate(BELL_RIPS):
+        y, pk = bellrip(j, bar, pos, ln)
+        write_wav(os.path.join(OUT, 'az_bells_%d.wav' % j), y, RATE, 60, None)
+        bg.append(pk)
+    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areazero_bells_gain.txt'), 'w').write(
+        ' '.join('%.4f' % (g / max(bg)) for g in bg) + '\n')
     open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areazero_aria_gain.txt'), 'w').write(
         ' '.join('%.4f' % (g / max(ag)) for g in ag) + '\n')
     # relatieve luidheid per roep (genormaliseerde samples; het thema zet de velocity hiernaar)

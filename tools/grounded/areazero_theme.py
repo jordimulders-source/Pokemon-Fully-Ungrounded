@@ -54,11 +54,12 @@ MAIN_LEAD, MAIN_SIGHS, MAIN_CHOIR_MOD, MAIN_CHOIR_VOICES = False, False, 0, 2
 MAIN_LEAD, MAIN_CHOIR_VOICES, VOICE_UNTIL = True, 3, 24
 VOICE, VOICE_LO, CHOIRKIT = 54, 55, 56   # az_voice (F5), az_voice_lo (Bb4), kit met de koorroepen (alleen 681)
 VOICE_SPLIT = 73                          # aria-noten t/m C#5 op az_voice_lo, daarboven az_voice
-from areazero_samples import CHOIR_EVENTS, ARIA_PHRASES  # noqa: E402  (zelfde lijsten als de geknipte samples)
+from areazero_samples import CHOIR_EVENTS, ARIA_PHRASES, BELL_RIPS  # noqa: E402  (zelfde lijsten als de geknipte samples)
+BELLKIT, BELLRIP_VEL = 58, 127
 ARIAKIT = 57                              # v5: de aria in frasen uit het origineel (kit area_zero_aria)
 # v5: wat niet in de vocals-stem zit (m36 Bb5, m39; Spleeter zette het in 'other') blijft op az_voice (gemeten in de mix)
 LEAD_REST = [(36, 0, 18, 'Bb5'), (39, 0, 4, 'Ab5'), (39, 4, 4, 'Bb5'), (39, 8, 4, 'F#5'), (39, 12, 6, 'Ab5')]
-CHOIR_MIN_GAIN = 0.15                     # roepen die in het origineel nauwelijks klinken (m8 opmaat, m18.04) weglaten
+CHOIR_MIN_GAIN = 0.10                     # roepen die in het origineel nauwelijks klinken (m8 opmaat, m18.04) weglaten
 LEAD_MOD, CHOIR_MOD, SIGH_MOD = 14, 6, 10   # in de game gemeten: MOD 6 gaf std 0,08 halve toon, origineel 0,33
 
 # programma's (grounded_gm-nummering, eigen invulling)
@@ -83,7 +84,9 @@ INTRO = [(0, 'F6'), (2, 'F#6'), (4, 'C#6'), (6, 'Eb6'), (8, 'Ab5'), (10, 'C#6'),
 INTRO4 = INTRO[:7] + [(13, 'Eb7'), (14, 'C#7')]
 INTRO5 = [(0, 'F6'), (2, 'F#6'), (4, 'C#7'), (6, 'Eb7'), (8, 'Ab6'), (10, 'C#7'), (12, 'Eb7'), (14, 'C#7')]
 CELL = [(4, 'C#7'), (6, 'Eb7'), (8, 'Ab6'), (12, 'Eb7'), (14, 'C#7')]            # m8-9, m12-17 (onder het koor)
-HI = [(0, 'Eb7'), (2, 'Ab6'), (4, 'C#7'), (6, 'Eb7'), (8, 'Ab6'), (10, 'C#7'), (12, 'Eb7'), (14, 'C#7')]  # m4-7, pauzes
+# pauzes: aanslagen per toon in de 'other'-stem (daar klinken alleen de belletjes), m10/m18 vanaf tel 2
+PAUSE_BELLS = [(10, [(4, 'C#7'), (6, 'Eb7')]), (11, [(4, 'C#7'), (7, 'Eb7'), (11, 'C#7'), (12, 'Eb7')]),
+               (18, [(4, 'C#7'), (6, 'Eb7'), (8, 'Ab6')]), (19, [(4, 'C#7'), (6, 'Eb7'), (8, 'Ab6'), (10, 'C#7'), (12, 'Eb7')])]
 CELL_B = [(4, 'C#7'), (6, 'Eb7'), (8, 'Ab6'), (10, 'C#7'), (12, 'Eb7')]           # m20-23
 ARP_AB = [(0, 'F6'), (3, 'F6'), (5, 'C#6'), (8, 'F6'), (10, 'C#6'), (12, 'Eb6')]  # aria boven Ab
 ARP_B = [(0, 'F#5'), (2, 'C#6'), (5, 'Bb5'), (8, 'F#5'), (9, 'Bb6'), (10, 'C#6'), (12, 'Bb6')]   # aria boven B
@@ -113,7 +116,7 @@ LEAD = [
 EBS = (['Eb3', 'Bb3'], ['F4', 'Eb5', 'Bb5'])
 BMAJ = (['B2', 'B3'], ['F#5', 'Bb5', 'C#6'])
 CHORDS = [
-    (8, 4, 12, ['Eb3', 'G3'], ['F4']),                       # opmaat: Eb-groot onder, koor F4 (gemeten G3 in 'other')
+    (8, 6, 10, ['Eb3', 'G3'], ['F4']),                       # opmaat; v7: strijkers pas met de stem (m8 tel 2+, gemeten 15,0 s)
     (9, 0, 16) + EBS, (10, 0, 8) + EBS,
     (10, 10, 22, [], ['Ab3', 'C#4', 'Eb4']),                 # pauze: spookakkoord (chroma: Eb C# Ab)
     (12, 0, 32) + BMAJ, (14, 0, 16, ['B2', 'F#3'], ['B3', 'Bb4', 'C#5']),
@@ -174,7 +177,7 @@ def legato(ev):
 
 
 def build():
-    P = {k: [] for k in ('lead', 'lead_lo', 'aria', 'choir', 'sigh', 'str', 'bell', 'bellecho', 'echo', 'ost', 'bass', 'hat', 'drums')}
+    P = {k: [] for k in ('lead', 'lead_lo', 'aria', 'choir', 'sigh', 'str', 'bell', 'bellecho', 'bellrip', 'echo', 'ost', 'bass', 'hat', 'drums')}
     bend_lead, bend_sigh = [], []
 
     # bellen
@@ -188,39 +191,22 @@ def build():
         for pos, n in cell:
             t = T(bar, pos)
             P['bell'].append([t, t + ring * S, p(n) + 12 * octave, vel])
-    # v6 (Jordi: 'vanaf 11 s raakt hij het ritme kwijt'): gemeten (onsets per toon, m4-8): vanaf m4 tel 3 speelt boven
-    # het lage arpeggio een hoog arpeggio in achtsten (Ab6 C#7 Eb7) met een echo één zestiende later; het lage
-    # arpeggio loopt in m5-7 zachter door. Geen tijdsdrift (alle aanslagen 20 ms vóór het raster, constant).
-    def hi(bar, vel, half=False):
-        for pos, n in HI[4:] if half else HI:
-            t = T(bar, pos)
-            P['bell'].append([t, t + 4 * S, p(n), vel])
-            P['bellecho'].append([t + S, t + 3 * S, p(n), int(vel * 0.5)])     # echo, 1 zestiende later (eigen spoor)
-    def lo(bar, vel, echo=True, ring=6, echo_to=16):    # het lage arpeggio + zijn echo (gemeten: ook vanaf m1)
-        bells(bar, INTRO, vel, ring=ring)
-        for pos, n in (INTRO if echo else ()):
-            if pos >= echo_to:
-                continue
+    # v7 (Jordi: 'vanaf 8 s gaan de piepjes hun eigen ding doen; vanaf 1:18 een deuntje dat niet in het nummer hoort'):
+    # alleen nog belletjes die met een geïsoleerde A/B tegen de stem kloppen: het lage arpeggio m1-6 (+ echo 1/16 later)
+    # en de pauzes m10-11/m18-19 (daar klinken in het origineel alleen de belletjes; aanslagen per toon gemeten).
+    # Weg: het hoge arpeggio m4-7, de cel onder het koor (m8-23) en de groove-arpeggio's vanaf m40 (geraden).
+    def lo(bar, vel, cell=INTRO, echo=True, ring=6):
+        bells(bar, cell, vel, ring=ring)
+        for pos, n in (cell if echo else ()):
             t = T(bar, pos)
             P['bellecho'].append([t + S, t + 3 * S, p(n), int(vel * 0.5)])
-    for b in (1, 2, 3):
-        lo(b, 92)
-    lo(4, 92, echo_to=8)                              # 2e helft m4: het hoge arpeggio neemt de echo over (max. 10 kanalen)
-    hi(4, 70, half=True)
-    for b, v in ((5, 70), (6, 56), (7, 44)):          # zacht onder het hoge arpeggio: zonder echo (kanaalbudget 10)
-        lo(b, v, echo=False, ring=4)
-    for b in (5, 6, 7):
-        hi(b, 84)
-    for b in (10, 11, 18, 19):
-        hi(b, 78)
-    for b in (8, 9, 12, 13, 14, 15, 16, 17):
-        bells(b, CELL, 64)
-    for b in range(20, 24):
-        bells(b, CELL_B, 66)
-    for b in range(40, 64):
-        ph = PHRASE[b]
-        bells(b, {'a': G_A, 'c': G_A, 'b': G_B, 'd': G_D, 'BD': G_BD}[ph], 70, ring=4)
-    bells(64, CELL[:3], 70)
+    for b in (1, 2, 3, 4):
+        lo(b, 74)                                     # v7: iets zachter (in het origineel is de wolk vanaf m5 3x zo luid)
+    # m5-7 en de pauzes: de belletjeswolk zelf uit het origineel (kit area_zero_bells, A/B: pauze_*, piepjes_*)
+    bg = [float(g) for g in open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                              'areazero_bells_gain.txt')).read().split()]
+    for j, (bar, pos, ln) in enumerate(BELL_RIPS):
+        P['bellrip'].append([T(bar, pos), T(bar, pos) + ln * S, 36 + j, int(round(BELLRIP_VEL * bg[j]))])
 
     # lead (aria): bend per noot (BENDR 2: 64 stappen = 2 halve tonen) + vibrato
     for bar, pos, ln, n in LEAD_REST:
@@ -338,7 +324,8 @@ def build():
     tail['bellecho'] = tail['bell']
     P['bellecho'] = [[s0, min(e0, min([x[0] for x in P['bellecho'] if x[2] == n0 and x[0] > s0], default=e0)), n0, v0]
                      for s0, e0, n0, v0 in P['bellecho']]
-    order = ['aria', 'lead', 'lead_lo', 'choir', 'drums', 'bell', 'bellecho', 'sigh', 'str']
+    tail['bellrip'] = release_ticks(CHOIR_REL, TPB, BPM) + 2
+    order = ['aria', 'lead', 'lead_lo', 'choir', 'drums', 'bellrip', 'bell', 'bellecho', 'sigh', 'str']
     ds = {k: P[k] for k in order}
     kept = allocate(ds, order, tail, drum_len=S * 2, drum_parts=('drums',), max_voices=MAXV)
     for k in order:
@@ -358,7 +345,7 @@ def build():
               [(t, mido.Message('pitchwheel', pitch=max(-8192, min(8191, v)))) for t, v in bend_sigh]
     TRACKS = [('lead', VOICE, 84, 64, ex_lead), ('lead_lo', VOICE_LO, 84, 64, ex_lead), ('choir', CHOIRKIT, 100, 64, ex_choir), ('aria', ARIAKIT, 96, 64, ex_choir),
               ('sigh', SIGH, 66, 56, ex_sigh),
-              ('str', STR, 62, 64, ()), ('bell', BELL, 66, 72, ()), ('bellecho', BELL, 66, 56, ()), ('echo', ECHO, 30, 44, ()),
+              ('str', STR, 62, 64, ()), ('bell', BELL, 66, 72, ()), ('bellecho', BELL, 66, 56, ()), ('bellrip', BELLKIT, 127, 64, ()), ('echo', ECHO, 30, 44, ()),
               ('ost', OST, 34, 80, ()), ('bass', BASS, 62, 64, ()), ('hat', HAT, 26, 70, ()),
               ('drums', DRUMS, 92, 64, ())]
     free = [c for c in range(16) if c != 9]
@@ -560,6 +547,7 @@ def write_voicegroup():
         VOICE_LO: 'voice_directsound 60, 0, DirectSoundWaveData_az_voice_lo, 40, 0, 255, 190',
         CHOIRKIT: 'voice_keysplit_all voicegroup_area_zero_choir',
         ARIAKIT: 'voice_keysplit_all voicegroup_area_zero_aria',
+        BELLKIT: 'voice_keysplit_all voicegroup_area_zero_bells',
         LEAD_P: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 200, 0, 255, 170',
         OST: 'voice_square_1 60, 0, 0, 1, 0, 2, 6, 1',
         ECHO: 'voice_square_2 60, 0, 0, 0, 3, 0, 1',
@@ -584,7 +572,7 @@ def write_voicegroup():
     dsd = 'sound/direct_sound_data.inc'
     txt = open(dsd).read()
     for lab in ['az_crystal', 'az_voice', 'az_voice_lo'] + ['az_choir_%02d' % i for i in range(len(CHOIR_EVENTS))] + \
-            ['az_aria_%d' % j for j in range(len(ARIA_PHRASES))]:
+            ['az_aria_%d' % j for j in range(len(ARIA_PHRASES))] + ['az_bells_%d' % j for j in range(len(BELL_RIPS))]:
         if 'DirectSoundWaveData_%s::' % lab not in txt:
             txt = txt.rstrip('\n') + ('\n\n\t.align 2\nDirectSoundWaveData_%s::\n'
                                       '\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (lab, lab))
@@ -601,9 +589,14 @@ def write_voicegroup():
         'voice_group area_zero_aria, 36\n' + ''.join(
             '\tvoice_directsound 60, 0, DirectSoundWaveData_az_aria_%d, 255, 0, 255, %d\n' % (j, CHOIR_REL)
             for j in range(len(ARIA_PHRASES))) + '\n')
+    open('sound/voicegroups/drumsets/area_zero_bells.inc', 'w').write(
+        '@ Project Grounded: de belletjeswolk van Area Zero (m5-7, pauzes), geknipt uit de other-stem (areazero_samples.py).\n'
+        'voice_group area_zero_bells, 36\n' + ''.join(
+            '\tvoice_directsound 60, 0, DirectSoundWaveData_az_bells_%d, 255, 0, 255, %d\n' % (j, CHOIR_REL)
+            for j in range(len(BELL_RIPS))) + '\n')
     vgi = 'sound/voice_groups.inc'
     txt = open(vgi).read()
-    for inc in ('drumsets/area_zero.inc', 'drumsets/area_zero_choir.inc', 'drumsets/area_zero_aria.inc',
+    for inc in ('drumsets/area_zero.inc', 'drumsets/area_zero_choir.inc', 'drumsets/area_zero_aria.inc', 'drumsets/area_zero_bells.inc',
                 'keysplits/area_zero_strings.inc', '%s.inc' % VG):
         line = '.include "sound/voicegroups/%s"' % inc
         if line not in txt:

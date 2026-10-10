@@ -18491,3 +18491,12 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Pecharunt:** paarse nevel, gifbellen, stuiterende Pecha-bessen en gifkettingen.
 - Alle paradoxen hebben de intro nu ook bij wilde gevechten in Area Zero.
 - Code: `src/data/legend_intros_cheap1.h`. De hulpnamen zijn hernoemd naar `LC1_` (botsten met deel 2). ROM vrij: 1,98 MB.
+
+### [v0.9.280] - Battle! Area Zero
+- `MUS_GROUNDED_VS_AREA_ZERO` (682, was een placeholder) is nu de "Area Zero Wild Battle" (SV) zelf. De battle is doorgecomponeerd (54 van de 69 maten uniek), dus nabouwen of knippen hergebruiken ging niet: het zijn 10 aansluitende knippen uit het origineel, 11 kHz, DPCM.
+  - **Opbouw:** intro + eerste doorgang één keer, daarna een lus van 69 maten (111 s) uit de tweede doorgang.
+  - **Naden:** op een heel frame, met een crossfade van 10 ms; de lusnaad heeft geen klik en geen dip.
+  - **Niveau:** zoals de andere legendary-thema's. De kreet komt er 9 dB bovenuit.
+- Kosten ±715 KB; ROM vrij **1,30 MB**. Helderder (13 kHz) kost ±130 KB extra. Jordi beoordeelt hem nog.
+- Speelt bij de paradoxen, Koraidon/Miraidon, Terapagos en de wilde gevechten in Area Zero.
+- Generator: `tools/grounded/vs_areazero_samples.py` + `vs_areazero_theme.py`.

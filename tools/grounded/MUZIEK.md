@@ -128,7 +128,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
-| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v1 wacht op opname (SV-thema nagebouwd op het gemeten raster; ostinato elektronisch, koto vanaf maat 21) | "Ruinous" |
+| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v2 wacht op opname (v1: 'drumritme goed, de rest niet'; v2 lage tokkel, geen koper/strijkers/PSG) | "Ruinous" |
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 
@@ -661,3 +661,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   bas-stem toonde boventonen). De lead zingt systematisch ±0,4 halve toon te hoog met brede vibrato (= het 'uncanny');
   nagebootst met pitch bend per noot + MOD. 8-bit-covers zijn niet noot-voor-noot (andere timing): alleen ter controle.
   Stock-glockenspiel/unknown_bell klinken een kwarttoon vals op toets 60 (1361/1227 Hz): kristalbel zelf gesynthetiseerd.
+- Ruinous v2 (Jordi: 'drumritme goed, voor de rest alles niet'): **Spleeter zet een getokkeld instrument in de stem
+  'piano'** (de intro E2/F#2/B2 met heraanslagen in 16en zat daar, niet in 'other'); v1 hield de hoge boventonen in de
+  mix voor 'twinkelingen'. Kijk bij elke laag in álle stems (dominante toon per 16e, `dom.py`-achtig). Een zachte laag
+  in het origineel (de F#5-'roep', bijna zuiver) niet op een luid instrument zetten: weglaten. 'Lange tonen' in
+  'other' kunnen het ostinato zelf zijn (B3+F#4 pulseren in het ostinato-ritme): eerst het ritme per noot meten.

@@ -216,9 +216,22 @@ def build():
     bg = [float(g) for g in open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                               'areazero_bells_gain.txt')).read().split()]
     # v8: begeleiding m5-23 = drie aansluitende knippen uit 'other' + 'bass'; m16-23 herhaalt stuk 1 en 2
-    for j, (bar, pos, ln) in list(enumerate(BELL_RIPS)) + [(1, (16, 0, 64)), (2, (20, 0, 64)), (3, (32, 0, 64)), (4, (36, 0, 64))] + \
-            [(5, (b, 0, 32)) for b in range(40, 64, 2) if b != 44]:   # v9: 16e-was m40-63
-        P['bellrip'].append([T(bar, pos), T(bar, pos) + ln * S + (2 if j < 5 else -1), 36 + j, vel(bg[j], LVL_PAD * (1.3 if j == 5 else 1))])   # v9: was +2 dB (orig 5-7% >2k, wij 4%)
+    # v10: de hele begeleiding m1-64 uit het origineel (stukken in areazero_samples.BELL_RIPS); (stuk, maat, eind-maat)
+    PLAN = [(8, 1, 5), (0, 5, 8), (1, 8, 12), (2, 12, 16), (1, 16, 20), (2, 20, 24), (3, 24, 28), (4, 28, 32),
+            (3, 32, 36), (4, 36, 40), (6, 54, 65)]
+    LOUDER = {16: 10 ** (2.7 / 20)}                 # m16-19: in het origineel 2,7 dB luider dan m8-11
+    # intro: in het origineel 8 dB onder de wolk (-42 dB), maar dat is op de GBA de ruisvloer van de 8-bit-uitgang
+    # (gemeten: >2 kHz 34% ruis, origineel 0%); +6 dB = 1,5 dB onder de wolk, zoals de goedgekeurde v8/v9
+    LOUDER[1] = 2.0
+    # m40-53 per maat de beste geknipte maat (chroma per 8e in het origineel, zie areazero_samples.BELL_RIPS)
+    BAR_SRC = {44: 5, 45: 7, 46: 9, 47: 10, 48: 11, 49: 12}
+    GROOVE_MAP = {40: 44, 41: 45, 42: 46, 43: 47, 44: 44, 45: 45, 46: 46, 47: 47, 48: 48, 49: 49, 50: 48, 51: 47,
+                  52: 44, 53: 49}
+    PLAN += [(BAR_SRC[src], b, b + 1) for b, src in sorted(GROOVE_MAP.items())]
+    for j, b0, b1 in PLAN:
+        ln = BELL_RIPS[j][2]
+        end = min(T(b0) + ln * S + 2, T(b1) - 1)    # afgebroken stuk (m52/m60) of exact aansluitend: 1 tick vóór
+        P['bellrip'].append([T(b0), end, 36 + j, vel(bg[j], LVL_PAD * LOUDER.get(b0, 1))])
 
     # lead (aria): bend per noot (BENDR 2: 64 stappen = 2 halve tonen) + vibrato
     for bar, pos, ln, n in LEAD_REST:
@@ -305,6 +318,8 @@ def build():
             P['choir'].append([T(bar, pos), T(bar, pos) + ln * S, 36 + i, vel(gains[i], LVL_VOX)])
     P['lead_lo'] = [e for e in P['lead'] if e[2] <= VOICE_SPLIT]
     P['lead'] = [e for e in P['lead'] if e[2] > VOICE_SPLIT]
+    for k in ('str', 'bass', 'drums', 'hat', 'bell', 'bellecho'):   # v10: zit allemaal in de knippen
+        P[k] = []
     for k in P:
         P[k] = dedupe(P[k])
 
@@ -589,7 +604,7 @@ def write_voicegroup():
             '\tvoice_directsound 60, 0, DirectSoundWaveData_az_aria_%d, 255, 0, 255, %d\n' % (j, CHOIR_REL)
             for j in range(len(ARIA_PHRASES))) + '\n')
     open('sound/voicegroups/drumsets/area_zero_bells.inc', 'w').write(
-        '@ Project Grounded: de begeleiding van Area Zero m5-31 (belletjeswolk, Eb-/B-akkoordklank, bas; vanaf m24 met de\n'
+        '@ Project Grounded: de begeleiding van Area Zero m1-64 (belletjes, akkoordklank, bas; vanaf m24 met de\n'
         '@ drums-stem), geknipt uit het origineel in aansluitende stukken (areazero_samples.py BELL_RIPS).\n'
         'voice_group area_zero_bells, 36\n' + ''.join(
             '\tvoice_directsound 60, 0, DirectSoundWaveData_az_bells_%d, 255, 0, 255, %d\n' % (j, CHOIR_REL)

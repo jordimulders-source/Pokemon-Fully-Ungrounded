@@ -724,6 +724,13 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   'other'+'drums' alleen boven 2 kHz knippen (14 kHz, 56 KB) en elke 2 maten herhalen; akkoorden/bas/kick blijven van
   ons, dus geen akkoordbotsing. **Dezelfde kitnoot direct na zichzelf**: eind = volgende start (of erna) geeft in
   mid2agb N01-noten (de note-off van de oude doodt de nieuwe); laat de noot 1 tick eerder eindigen.
+- Area Zero v10 (DPCM halveert de knippen; Jordi: 'quality first'): hele begeleiding m1-64 uit het origineel.
+  **Herhalen per maat i.p.v. per blok**: knip losse maten als eigen samples (zelfde bytes) en kies per doelmaat de
+  bron met de hoogste chroma-correlatie per 8e in het origineel (blokherhaling m48-63 gaf 0.73-0.92, per maat >= 0.94).
+  **DPCM-nultest** (opname gecomprimeerd - ongecomprimeerd): ruis ±-50 dB, bij luide knippen 22-24 dB eronder (prima),
+  bij zachte knippen (wolk, intro) maar 8-14 dB: die blijven ongecomprimeerd. **De 8-bit-uitgang heeft een ruisvloer**
+  ±-48 dB: een intro die in het origineel 27 dB onder het hoofddeel zit, wordt op de GBA ruis (34% >2 kHz waar het
+  origineel 0% heeft); daar dus bewust luider dan het origineel.
 
 - Tower v1 (`tower_theme.py`, 687, gevechtsremix van `mus_rg_lavender.mid`): **origineel tpb 24 x 4 = 96 en de intro is
   ook 4 maten**, dus elke noot staat op tick x 4 en de loop (40 maten) blijft 1-op-1 (melodie spoor 1, jammerlijn spoor 5,

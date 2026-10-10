@@ -256,7 +256,8 @@ def compose():
                 zap(t0, 4, 'C6'); zap(t0, 10, 'F#6'); zap(t0, 13, 'C7')
         elif sec in ('A', 'A2', 'D'):
             tr = {'A': 0, 'A2': -3, 'D': 3}[sec]
-            lead(t0, THEME[i], tr, 116 if sec == 'D' else 112)
+            if sec != 'A2':  # v3 (Jordi: 'de glazen lead mag na 23 s even verdwijnen'): in A2 alleen de PSG-echo
+                lead(t0, THEME[i], tr, 116 if sec == 'D' else 112)
             echo(t0, THEME[i], tr + (12 if sec == 'A2' else 0))
             if sec == 'D' and i == 3:
                 stut(t0, 14, 4, 'C6')

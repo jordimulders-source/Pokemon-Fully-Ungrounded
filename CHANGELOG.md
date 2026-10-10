@@ -18429,3 +18429,19 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Getest: warp naar Mirage Bazaar.
 - **Alle debuglijsten:** links/rechts bladert een pagina terug of verder.
 - **Compressie:** de twee Yoshi's Island-samples gaan niet meer gecomprimeerd (Jordi hoorde Athletic misschien wat dof); ±23 KB extra.
+
+### [v0.9.275] - Intro's: Dialga, Palkia, Arceus, Mew
+- **Dialga:**
+  - De echte wandklok uit de slaapkamer verschijnt, op de echte tijd. De wijzers draaien steeds sneller en staan op tel 6 stil op 12:00.
+  - Blauwe Dialga-vonken omringen de klok, die oplost in een blauwe spiraaltunnel; de wijzers worden de tunnel in gezogen.
+- **Palkia:**
+  - Echte kaartbeelden van Littleroot, Petalburg, Fortree, Mossdeep en Sootopolis wisselen op de tel, terwijl roze/paars vanaf de randen binnenkruipt.
+  - Daarna lopen de steden door elkaar tot complete chaos, ±12 frames heel duidelijk Spear Pillar, en een roze ruimtetunnel die in banden scheurt (met kreet).
+- **Arceus:**
+  - De wereld trilt op de eerste stoot van het nummer, heilig licht kruipt binnen en de wereld vervormt tot wit-goud.
+  - Het Arceus-teken (uit Jordi's afbeelding) verschijnt op tel 8 met draaiende stralen, vonken en vallende sterren, slaat nog eens in op tel 9 en op tel 15 dominant, met een fade naar wit; het gevecht begint op tel 16.
+  - Zonder de standaardflits vooraf.
+- **Mew:**
+  - Guyana bij zonsopgang: tafelbergen met een waterval, mist, regenwoud en een rivier, in lagen scrollend. Een roze glinstering schiet door het bos.
+  - Vlak voor het gevecht zwiept Mews staart (uit zijn echte sprite) door beeld.
+- Samen ±47 KB (de klok en de effecten stonden al in de ROM). Code: `src/data/legend_intros_dp.h`, generator `tools/grounded/legend_intros_dp.py`.

@@ -196,6 +196,7 @@ static void Task_LegendZamazenta(u8);
 static void Task_LegendXerneas(u8);
 static void Task_LegendYveltal(u8);
 static void Task_Wario(u8); // Project Grounded (src/data/wario_intro.h)
+static void Task_Boo(u8); // Project Grounded (src/data/boo_intro.h)
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -712,6 +713,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
     [B_TRANSITION_WEATHER_SERVICE] = Task_WeatherService, // Project Grounded
+    [B_TRANSITION_BOO] = Task_Boo, // Project Grounded (src/data/boo_intro.h)
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -10454,3 +10456,4 @@ static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
 #include "data/legend_intros.h"
 #include "data/legend_intros2.h"
 #include "data/wario_intro.h"
+#include "data/boo_intro.h"

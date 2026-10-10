@@ -18461,3 +18461,20 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Meting per 10 s tegen het origineel:** niveau binnen ±0,6 dB, nergens doffer, chroma gemiddeld 0,95.
 - **DPCM:** de zachte belletjeswolk en de intro (`az_bells_0`, `az_bells_8`) blijven ongecomprimeerd, omdat de ruis daar maar 8–14 dB onder het signaal zat; de luide knippen wel (ruis 22–24 dB eronder).
 - ±+399 KB; ROM vrij 2,03 MB.
+
+### [v0.9.278] - Intro's: Calyrex & paarden, Celebi, meertrio, Meloetta, Lati's, Zeraora, Cresselia, Necrozma, Zygarde, Galar-vogels
+- Alles in C getekend plus bestaande gevechtsanimatie-art, op de maat van het generieke legendary-thema: ±28 KB samen.
+  - **Calyrex:** een western bij zonsondergang, met hoefafdrukken op de pauken en een lasso. Ijs- en spookvarianten voor Calyrex-Ice/Shadow.
+  - **Glastrier:** ijsstappen en vorst over het scherm.
+  - **Spectrier:** paars spookvuur in elke afdruk.
+  - **Celebi:** de kaart in vier GBC-groenen, GS-flikkeren, bladeren, een groene beschermkoepel en de GS-spiraal.
+  - **Meertrio:** een mistig meer met rimpelingen op de tel, daarna een kleurwas: Uxie geel, Mesprit roze, Azelf blauw.
+  - **Meloetta:** het scherm loopt vol noten (3 → 160).
+  - **Latias/Latios:** eonlicht en een dromerige rood-wit of blauw-wit kleurwas.
+  - **Zeraora:** elektrische klauwhalen en een poot die het scherm laat barsten.
+  - **Cresselia:** de maan rijst en wast vol, met maanmist.
+  - **Necrozma:** een zwart prisma zuigt het licht en de regenboog op.
+  - **Zygarde:** een groene Zorro-Z en het beeld splijt.
+  - **Galar-vogels:** Articuno in psychisch paars (de Kanto-intro), Zapdos sprint en trapt, Moltres met zwarte vlammen en Fiery Wrath.
+- **Bugfix in deze intro's:** de minuutlijke dag/nacht-update zette midden in een intro de wereldpaletten terug.
+- Code: `src/data/legend_intros_cheap2.h`.

@@ -106,6 +106,9 @@ enum { ART_MAP_FROST, ART_MAP_CRACK };
 #define ART_Y           78
 
 static const u16 sArtIce[3] = {RGB(13, 19, 27), RGB(9, 14, 23), RGB(17, 23, 29)};
+// Project Grounded: Galar-Articuno (Mossdeep) gebruikt dezelfde intro, in psychisch paars (legend_intros_cheap2.h)
+static const u16 sArtPsychic[3] = {RGB(22, 9, 26), RGB(15, 5, 21), RGB(27, 15, 30)};
+static bool32 ArtGalar(void) { return GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL) == SPECIES_ARTICUNO_GALAR; }
 static const u8 sArtSnowX[ART_SNOWS] = {14, 40, 66, 92, 118, 144, 170, 196, 222, 30};
 static const u8 sArtSnowOfs[ART_SNOWS] = {0, 70, 30, 110, 50, 140, 20, 90, 60, 120};
 
@@ -129,7 +132,7 @@ static void RTArticuno_Init(struct Task *task)
         LI_Make(i, gBattleAnimSpriteGfx_Snowflakes, 16 * 224 / 2, gBattleAnimSpritePal_Snowflakes, ART_TAG_SNOW, &sLI2_Oam16x32, sArtSnowX[i], -32, 0);
     for (i = 0; i < ART_CHUNKS; i++)
         LI_Make(ART_SNOWS + i, gBattleAnimSpriteGfx_IceChunk, 32 * 160 / 2, gBattleAnimSpritePal_IceChunk, ART_TAG_CHUNK, &sGI_Oam32, ART_X, ART_Y, 0);
-    task->tGiSprite0 = GI_MonPic(SPECIES_ARTICUNO, ART_X, ART_Y);
+    task->tGiSprite0 = GI_MonPic(ArtGalar() ? SPECIES_ARTICUNO_GALAR : SPECIES_ARTICUNO, ART_X, ART_Y);
     if (task->tGiSprite0 < MAX_SPRITES)
         gSprites[task->tGiSprite0].oam.priority = 1; // achter het ijs (BG0)
     // het ijs telt op bij wat eronder ligt (zwart = niets): de grot blijft zichtbaar tot hij dichtvriest
@@ -157,7 +160,7 @@ static bool8 RTArticuno_Update(struct Task *task)
     for (i = 1; i < 16; i++)
     {
         age = t - ArtPhaseStart(i);
-        u[i] = age < 0 ? 0 : (age < 3 ? RGB_WHITE : sArtIce[i % 3]);
+        u[i] = age < 0 ? 0 : (age < 3 ? RGB_WHITE : (ArtGalar() ? sArtPsychic : sArtIce)[i % 3]);
     }
     CpuCopy16(u, &gPlttBufferFaded[BG_PLTT_ID(13)], PLTT_SIZE_4BPP);
 
@@ -220,9 +223,9 @@ static bool8 RTArticuno_Update(struct Task *task)
     if (t == 12)
         PlaySE(SE_M_HAIL);
     if (t == ART_CRY)
-        PlayCry_Normal(SPECIES_ARTICUNO, 0);
+        PlayCry_Normal(ArtGalar() ? SPECIES_ARTICUNO_GALAR : SPECIES_ARTICUNO, 0);
     if (t == ART_FREEZE)
-        PlaySE(SE_M_BLIZZARD);
+        PlaySE(ArtGalar() ? SE_M_PSYBEAM : SE_M_BLIZZARD);
     if (t == ART_CRACK || t == ART_CRACK + 6)
         PlaySE(SE_ICE_CRACK);
     if (t == ART_SHATTER)

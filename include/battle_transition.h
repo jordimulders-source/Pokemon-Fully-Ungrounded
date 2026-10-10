@@ -152,6 +152,17 @@ enum BattleTransition
     B_TRANSITION_PALKIA, // Project Grounded: Palkia, vijf Hoenn-steden op de maat, roze kruipt binnen, alles door elkaar, Spear Pillar, ruimtetunnel
     B_TRANSITION_ARCEUS, // Project Grounded: Arceus, de wereld trilt en vervormt in heilig licht, het teken slaat drie keer in op de maat
     B_TRANSITION_MEW, // Project Grounded: Mew, Guyana bij zonsopgang in parallax, een roze glinstering, Mews staart zwiept door beeld
+    B_TRANSITION_LEGEND_CROWN, // Project Grounded (src/data/legend_intros_cheap2.h): Calyrex/Glastrier/Spectrier, hoefafdrukken
+    B_TRANSITION_LEGEND_CELEBI, // Project Grounded: Celebi, GBC-groen, GS-flikkeren, bladeren, GS-spiraal
+    B_TRANSITION_LEGEND_LAKE, // Project Grounded: Uxie/Mesprit/Azelf, meer in de mist, kleurt naar de edelsteen
+    B_TRANSITION_LEGEND_MELOETTA, // Project Grounded: Meloetta, het beeld loopt vol noten
+    B_TRANSITION_LEGEND_ZERAORA, // Project Grounded: Zeraora, elektrische klauwhalen en een poot op de camera
+    B_TRANSITION_LEGEND_ZYGARDE, // Project Grounded: Zygarde, een groene Z als Zorro en het beeld splijt
+    B_TRANSITION_LEGEND_EON, // Project Grounded: Latias/Latios, eonlicht en een dromerige kleurwas
+    B_TRANSITION_LEGEND_CRESSELIA, // Project Grounded: Cresselia, de maan rijst en wast vol, maanmist
+    B_TRANSITION_LEGEND_NECROZMA, // Project Grounded: Necrozma, een zwart prisma zuigt het licht op
+    B_TRANSITION_LEGEND_GALAR_ZAPDOS, // Project Grounded: Galar-Zapdos, sprint en trap
+    B_TRANSITION_LEGEND_GALAR_MOLTRES, // Project Grounded: Galar-Moltres, zwarte vlammen en een duistere aura
     B_TRANSITION_COUNT
 };
 

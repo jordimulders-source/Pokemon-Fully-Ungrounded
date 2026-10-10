@@ -53,6 +53,9 @@ herkennen is, komt ook als controle in `music_lint.py`.
   (mediaan 12–35 van 255). Tegengif: zo hard mixen als veilig kan (piek ±110), zachte zuivere partijen en bassen op
   PSG, of een 16-bit-mixer (HQ-mixer van ipatix: voorstel, wacht op Jordi). Meten: solo per spoor uit de mixbuffer
   (`scratchpad/ovl/solo2.py`-aanpak; de mGBA-audiobuffer heeft bursts die metingen vertekenen).
+- **HQ-mixer (v0.9.245, op proef):** 16-bit mixen, één afronding met noise shaping, klemt i.p.v. omslaan.
+  Gemeten: ruisvloer 1–8 kHz 4–6 dB lager (YI), kreten/geluidseffecten identiek, minder vertraagde frames (Rayquaza-
+  gevecht 34 i.p.v. 46 per 2400). Volumes en pieken onveranderd, dus de mixregels (piek ±110) blijven gelden.
 - **`voice_directsound_no_resample` speelt op de mixersnelheid (21.024 Hz)**, niet op de rate van de sample: een
   drum van 13.379 Hz (alle vanilla-kits) klinkt sinds v0.9.32 ±7,8 halve tonen hoger en 36% korter, een van 16 kHz
   +4,7. Eigen kits: `voice_directsound 60, ...` (speelt op toets 60 met de eigen rate).

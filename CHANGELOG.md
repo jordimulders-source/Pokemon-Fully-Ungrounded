@@ -18154,3 +18154,31 @@ Jordi (10 okt): "Broken Pier is goed. Kan je die heel licht remixen zodat het ne
 - **Xerneas/Yveltal en het meertrio** terug op de placeholder-muziek. Jordi: Xerneas/Yveltal "veel te vrolijk", het meertrio valt onder een generieker thema, en hij bedenkt zelf een richting. De MIDI's blijven in `legends3_theme.py` bewaard. Zacian/Zamazenta blijft ("prima").
 - **Vanilla-drums blijven zoals ze zijn** (Jordi na de A/B: "drums aanpassen klinkt heel gek").
 - `tools/grounded/mp2k_timing.py`: noten, tempo en loop van een MP2K-nummer per tick uitlezen, voor remixes van rips.
+
+### [v0.9.245] - HQ-mixer (op proef)
+- Jordi (10 okt): "Ipatix HQ mixer kunnen we testen."
+- **Wat het is:** de HQ-mixer van ipatix (MIT-licentie, `src/m4a_hq_mixer.s`) vervangt de m4a-mixer.
+  - Hij telt alle kanalen op in een 16-bit-buffer en rondt één keer af naar 8 bit, met noise shaping. De oude mixer rondde elk kanaal apart af: de "overload".
+  - Bij te harde pieken klemt hij in plaats van om te slaan.
+  - Aan/uit: `M4A_HQ_MIXER` in `include/config/m4a_mixer.h`. De oude mixer staat er nog achter een `#if`.
+- **Instellingen:**
+  - reverb aan (onze nummers gebruiken `-R`);
+  - DMA uit (SoundMain draait in de VBlank-interrupt);
+  - een 16-bit mixbuffer van 1,4 KB;
+  - stackgrens `__iwram_bss_end` + 512 bytes (nieuw linkersymbool).
+- **Ruimte:** `gLink` (4 KB, linkkabel) is naar EWRAM verhuisd. De stack heeft nu 8,1 KB ruimte (was 6,5 KB).
+- **Gemeten:**
+  - **Ruisvloer** (dB onder het signaal; oud → HQ, SNES-origineel ter vergelijking):
+
+    | Nummer | 1–3 kHz | 3–8 kHz | SNES 3–8 kHz |
+    |---|---|---|---|
+    | Overworld | −32 → −38 | −36 → −42 | −53 |
+    | Fuzzy | −31 → −37 | −35 → −41 | −54 |
+    | Castle | −31 → −33 | −36 → −41 | −52 |
+    | Flower Garden | −30 → −34 | −35 → −39 | −44 |
+    | Athletic | −28 → −30 | −33 → −36 | −42 |
+
+  - **Volume en pieken:** gelijk aan de oude mixer (Overworld 108, Castle 110, VS Wild 88).
+  - **Kreten en geluidseffecten:** identiek (omhullende 0,978, spectrum binnen 0,2 dB).
+  - **Rekentijd:** sneller. Rayquaza-gevecht met filmintro: 34 vertraagde frames per 2400, tegen 46 met de oude mixer.
+- **Wat er overblijft** is de 8-bit-uitgang van de GBA zelf. Volgende stap als Jordi tevreden is: een hogere mixerfrequentie proberen.

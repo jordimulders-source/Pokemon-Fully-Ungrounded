@@ -57,6 +57,7 @@ SECTIONS {
         data/*.o(COMMON);
         test/*.o(COMMON);
         *libc.a:sbrkr.o(COMMON);
+        __iwram_bss_end = .; /* Project Grounded: stackgrens voor de HQ-mixer */
     } > IWRAM
 
     /* .persistent starts at 0x3007F00 */

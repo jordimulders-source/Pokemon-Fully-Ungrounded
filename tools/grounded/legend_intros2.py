@@ -397,13 +397,266 @@ def moltres():
 
 
 # ================================================================== Zacian / Zamazenta
+WOLF_CRACK = [(248, 248, 248), (200, 216, 240), (120, 136, 168)]   # barsten in het "glas" (palet 15)
+
+
+def wolf_cracks(stage, rnd_seed=4):
+    """Barsten vanuit het midden (Zamazenta's schild klapt tegen het scherm); stage 1-3 groeit, 3 = heel het beeld."""
+    rnd = random.Random(rnd_seed)
+    im = Image.new('RGB', (240, 160), KEY)
+    d = ImageDraw.Draw(im)
+    cx, cy = 120, 80
+    n = 9
+    frac = {1: 0.2, 2: 0.45, 3: 1.0}[stage]
+    for k in range(n):
+        ang = k * 2 * math.pi / n + rnd.uniform(-0.2, 0.2)
+        x, y = cx + math.cos(ang) * 6, cy + math.sin(ang) * 6
+        L = 190 * rnd.uniform(0.75, 1.0)
+        pts = [(x, y)]
+        s_ = 0
+        while s_ < L:                       # hele pad (stage 3), dan afkappen: de barsten groeien per klap door
+            st = rnd.uniform(6, 12)
+            ang += rnd.uniform(-0.35, 0.35)
+            x += math.cos(ang) * st
+            y += math.sin(ang) * st
+            s_ += st
+            pts.append((x, y))
+        pts = pts[:max(2, int(len(pts) * frac))]
+        d.line(pts, fill=WOLF_CRACK[1], width=2)
+        d.line(pts, fill=WOLF_CRACK[0], width=1)
+    # ringen (spinnenweb) vanaf stage 2
+    for r, st in ((22, 2), (48, 3), (78, 3)):
+        if stage < st:
+            continue
+        pts = []
+        for k in range(n + 1):
+            a = k * 2 * math.pi / n
+            rr = r * rnd.uniform(0.85, 1.15)
+            pts.append((cx + math.cos(a) * rr * 1.2, cy + math.sin(a) * rr))
+        d.line(pts, fill=WOLF_CRACK[2], width=1)
+    # inslagpunt
+    d.ellipse((cx - 5, cy - 4, cx + 5, cy + 4), fill=WOLF_CRACK[1])
+    d.ellipse((cx - 2, cy - 2, cx + 2, cy + 2), fill=WOLF_CRACK[0])
+    return im
+
+
 def wolves():
+    """De open plek (palet 10-14) en drie barst-stadia over een zwart scherm (palet 15, de rest doorzichtig)."""
     base = render_map('LAYOUT_MEGA_FOREST', 16, 0)
-    pals = quantize3([base], n=6)
+    pals = quantize3([base], n=5) + [WOLF_CRACK]
     enc = EncoderN('wolves', pals, 10)
     enc.add(base, None, 'open_plek')
+    cracks = [wolf_cracks(k) for k in (1, 2, 3)]
+    for k, im in enumerate(cracks):
+        enc.add(im, None, 'barst%d' % (k + 1))
     enc.save()
-    save_preview('wolves', [base, enc.render(enc.maps[0])])
+    save_preview('wolves', [base, enc.render(enc.maps[0])] + [enc.render(m) for m in enc.maps[1:]])
+
+
+# ------------------------------------------------------------------ grote objecten (128 x 128, vier 64x64-sprites)
+def scale2x_idx(a):
+    h, w = a.shape
+    p = np.pad(a, 1, mode='edge')
+    B, D, E, F, H = p[:-2, 1:-1], p[1:-1, :-2], p[1:-1, 1:-1], p[1:-1, 2:], p[2:, 1:-1]
+    o = np.zeros((h * 2, w * 2), a.dtype)
+    c = (B != H) & (D != F)
+    o[0::2, 0::2] = np.where(c & (D == B), D, E)
+    o[0::2, 1::2] = np.where(c & (B == F), F, E)
+    o[1::2, 0::2] = np.where(c & (D == H), D, E)
+    o[1::2, 1::2] = np.where(c & (H == F), F, E)
+    return o
+
+
+def save_big(name, idx, pal, extra_pals=()):
+    """idx: 128 x 128 indexbeeld -> legend_<name>.png (64 x 256: de kwadranten LB, RB, LO, RO onder elkaar) + .pal;
+    extra_pals: (achtervoegsel, palet) voor andere toestanden (C mengt ertussen)."""
+    assert idx.shape == (128, 128) and idx.max() < 16
+    sheet = np.concatenate([idx[:64, :64], idx[:64, 64:], idx[64:, :64], idx[64:, 64:]], 0).astype(np.uint8)
+    im = Image.fromarray(sheet, 'P')
+    full = [(0, 0, 0)] + [gba(c) for c in pal] + [(0, 0, 0)] * (15 - len(pal))
+    im.putpalette([v for c in full for v in c] + [0] * (768 - 48))
+    im.save(OUT + PFX + name + '.png')
+    write_pal(OUT + PFX + name + '.pal', full)
+    for suf, p in extra_pals:
+        write_pal(OUT + PFX + name + '_' + suf + '.pal', [(0, 0, 0)] + [gba(c) for c in p] + [(0, 0, 0)] * (15 - len(p)))
+
+
+def big_preview(idx, pal):
+    full = np.array([(255, 0, 255)] + list(pal) + [(0, 0, 0)] * (15 - len(pal)), np.uint8)
+    return Image.fromarray(full[idx])
+
+
+# Rusted Sword / Rusted Shield (item-icoon x4 met Scale2x); index: 1-4 grijs (kling / binnenkant), 5 rand, 6-9 roest
+# (kling / binnenkant), 10-13 grijs (gevest / schildrand), 14-15 roest (gevest / schildrand)
+RUST = [(136, 128, 128), (112, 112, 112), (88, 88, 88), (64, 64, 64), (40, 36, 40), (184, 96, 88), (152, 72, 72),
+        (120, 56, 56), (80, 40, 40), (136, 128, 128), (112, 112, 112), (88, 88, 88), (64, 64, 64), (152, 72, 72),
+        (80, 40, 40)]
+SWORD_CLEAN = [(232, 240, 248), (184, 208, 240), (120, 160, 216), (64, 104, 168), (24, 32, 64), (248, 248, 248),
+               (200, 224, 248), (136, 184, 232), (72, 120, 184), (248, 240, 176), (240, 216, 136), (208, 152, 80),
+               (136, 72, 40), (208, 152, 80), (136, 72, 40)]
+SHIELD_CLEAN = [(240, 104, 112), (216, 56, 64), (168, 40, 48), (112, 24, 32), (48, 16, 24), (248, 248, 200),
+                (240, 216, 136), (208, 152, 80), (152, 96, 48), (248, 240, 176), (240, 216, 136), (208, 152, 80),
+                (136, 72, 40), (208, 152, 80), (136, 72, 40)]
+
+
+def rusted(name):
+    im = Image.open(os.path.join(ROOT, 'graphics/items/icons/%s.png' % name))
+    a = np.array(im).astype(int)          # 0 leeg, 1-4 grijs, 5 rand, 6-9 roest (zelfde volgorde als RUST)
+    a[a > 9] = 0
+    big = scale2x_idx(scale2x_idx(a))     # 96 x 96
+    yy, xx = np.mgrid[0:96, 0:96] / 4.0
+    if name == 'rusted_sword':
+        # kling = linksonder, voorbij het kruisstuk; gevest en kruisstuk rechtsboven
+        s_ = ((13.5 - xx) + (yy - 9.5)) / math.sqrt(2)
+        hilt = s_ <= 2.3
+    else:
+        # schildrand: binnen 2 px (op 96) van de buitenkant
+        solid = big > 0
+        m = solid.copy()
+        for _ in range(9):
+            m = m & np.roll(m, 1, 0) & np.roll(m, -1, 0) & np.roll(m, 1, 1) & np.roll(m, -1, 1)
+        hilt = solid & ~m
+    out = big.copy()
+    grey = (big >= 1) & (big <= 4)
+    rust = big >= 6
+    out[grey & hilt] = big[grey & hilt] + 9          # 10-13
+    out[rust & hilt] = np.where(big[rust & hilt] <= 7, 14, 15)
+    canvas = np.zeros((128, 128), int)
+    canvas[16:112, 16:112] = out
+    return canvas
+
+
+def flakes():
+    """Vier roestschilfers (16 x 16) voor als de roest eraf valt."""
+    rnd = random.Random(3)
+    a = np.zeros((64, 16), np.uint8)
+    for f in range(4):
+        cx, cy = 7 + rnd.randint(-1, 1), f * 16 + 7
+        for k in range(5 + f):
+            x, y = cx + rnd.randint(-3, 3), cy + rnd.randint(-2, 2)
+            a[y, x] = 1 + (k % 3)
+            if k % 2:
+                a[y, x + 1] = 2
+    im = Image.fromarray(a, 'P')
+    pal = [(0, 0, 0), (184, 96, 88), (120, 56, 56), (80, 40, 40)] + [(0, 0, 0)] * 12
+    im.putpalette([v for c in pal for v in c] + [0] * (768 - 48))
+    im.save(OUT + PFX + 'rust_flakes.png')
+    write_pal(OUT + PFX + 'rust_flakes.pal', pal)
+
+
+def weapons():
+    sw = rusted('rusted_sword')
+    sh = rusted('rusted_shield')
+    save_big('sword', sw, RUST, [('clean', SWORD_CLEAN)])
+    save_big('shield', sh, RUST, [('clean', SHIELD_CLEAN)])
+    flakes()
+    if PREVIEW:
+        ims = [big_preview(sw, RUST), big_preview(sw, SWORD_CLEAN), big_preview(sh, RUST), big_preview(sh, SHIELD_CLEAN)]
+        W = Image.new('RGB', (4 * 132, 128), (40, 40, 40))
+        for i, x in enumerate(ims):
+            W.paste(x, (i * 132, 0))
+        W.resize((W.width * 2, W.height * 2), Image.NEAREST).save(os.path.join(PREVIEW, 'legend_weapons.png'))
+
+
+# ------------------------------------------------------------------ de Y van Yveltal en de X van Xerneas
+# Y: index 1 rand, 2 lijf (zwart), 3 donkergrijs, 4 grijs (veerpunten), 5 rood, 6 donkerrood, 7 rode gloed
+Y_PAL = [(16, 16, 24), (40, 40, 48), (72, 72, 80), (136, 136, 144), (216, 40, 56), (136, 24, 40), (248, 104, 112)]
+Y_DARK = [(16, 16, 24), (40, 40, 48), (72, 72, 80), (136, 136, 144), (40, 40, 48), (40, 40, 48), (56, 48, 56)]
+# X: 1 rand, 2 donkerblauw, 3 blauw, 4 lichtblauw, 5 zwart (de strepen in het gewei), 6 wit (glans),
+#    7-10 de lichtjes van de Active Mode (geel, paars, rood, blauw; C laat ze rondgaan)
+X_PAL = [(16, 24, 56), (32, 56, 120), (56, 104, 192), (136, 192, 248), (24, 24, 40), (248, 248, 248),
+         (248, 216, 64), (176, 96, 224), (232, 64, 72), (72, 160, 248)]
+X_DIM = [(16, 16, 24), (48, 52, 64), (72, 76, 88), (104, 108, 120), (24, 24, 32), (120, 124, 136),
+         (64, 64, 72), (64, 64, 72), (64, 64, 72), (64, 64, 72)]
+
+
+def _outline(a):
+    """Rand van 1 px (index 1) rond alle gevulde pixels (zonder om de randen heen te lopen)."""
+    a[0, :] = a[-1, :] = a[:, 0] = a[:, -1] = 0
+    m = a > 0
+    g = m.copy()
+    for dy, dx in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+        g |= np.roll(np.roll(m, dy, 0), dx, 1)
+    a[g & ~m] = 1
+    return a
+
+
+def _taper(d, x0, y0, x1, y1, w0, w1, fill):
+    """Taps toelopende balk van (x0, y0) (breedte w0) naar (x1, y1) (breedte w1)."""
+    L = math.hypot(x1 - x0, y1 - y0) or 1
+    nx, ny = -(y1 - y0) / L, (x1 - x0) / L
+    d.polygon([(x0 + nx * w0 / 2, y0 + ny * w0 / 2), (x1 + nx * w1 / 2, y1 + ny * w1 / 2),
+               (x1 - nx * w1 / 2, y1 - ny * w1 / 2), (x0 - nx * w0 / 2, y0 - ny * w0 / 2)], fill=fill)
+
+
+def y_symbol():
+    im = Image.new('P', (128, 128), 0)
+    d = ImageDraw.Draw(im)
+    for side in (-1, 1):
+        X = lambda x: 64 + side * (x - 64)
+        # arm van de vleugel: van de schouder schuin omhoog naar buiten
+        _taper(d, X(60), 56, X(22), 18, 18, 8, 2)
+        # slagpennen: lange veren die naar buiten waaieren (Yveltal's "hand"), de buitenste het langst
+        for (bx, by, ex, ey, w) in [(30, 26, 4, 4, 7), (26, 22, 14, 0, 6), (34, 30, 2, 18, 6), (42, 38, 8, 34, 6),
+                                    (50, 46, 18, 50, 5)]:
+            _taper(d, X(bx), by, X(ex), ey, w, 1, 2)
+            _taper(d, X(bx), by, X(ex), ey, max(w - 4, 1), 1, 3)
+        # rode band langs de onderkant van de arm
+        _taper(d, X(58), 62, X(26), 26, 6, 2, 5)
+        _taper(d, X(58), 64, X(40), 44, 3, 1, 6)
+    # lijf en staart: smal naar beneden, met een rode punt
+    d.polygon([(54, 48), (74, 48), (74, 62), (69, 90), (66, 110), (64, 124), (62, 110), (59, 90), (54, 62)], fill=2)
+    d.line([(64, 52), (64, 100)], fill=3, width=1)
+    d.polygon([(60, 98), (68, 98), (66, 112), (64, 122), (62, 112)], fill=5)
+    d.polygon([(63, 104), (65, 104), (64, 116)], fill=7)
+    # rode kraag en "kop" tussen de schouders
+    d.polygon([(54, 48), (64, 58), (74, 48), (70, 62), (64, 66), (58, 62)], fill=6)
+    d.polygon([(60, 40), (68, 40), (66, 50), (62, 50)], fill=2)
+    a = np.array(im).astype(int)
+    # grijze punten aan de veren (waar de taps toelopende veer eindigt)
+    return _outline(a)
+
+
+def x_symbol():
+    im = Image.new('P', (128, 128), 0)
+    d = ImageDraw.Draw(im)
+    lights = []
+    for flip in (False, True):
+        X = lambda x: (127 - x) if flip else x
+        # de balken: breed in het midden, smal naar de punten
+        for (x0, y0, x1, y1) in [(64, 64, 10, 10), (64, 64, 118, 118)]:
+            _taper(d, X(x0), y0, X(x1), y1, 16, 6, 2)
+            _taper(d, X(x0), y0, X(x1), y1, 8, 2, 3)
+        # geweitakken: taps toelopend, naar buiten gebogen, met een lichtje op de punt
+        for (bx, by, ex, ey) in [(26, 26, 4, 34), (26, 26, 34, 4), (40, 40, 18, 54), (40, 40, 54, 18),
+                                 (102, 102, 124, 94), (102, 102, 94, 124), (88, 88, 110, 74), (88, 88, 74, 110)]:
+            _taper(d, X(bx), by, X(ex), ey, 7, 2, 2)
+            _taper(d, X(bx), by, X(ex), ey, 3, 1, 3)
+            lights.append((X(ex), ey))
+        # zwarte strepen in het gewei
+        for k in (0.18, 0.32, 0.68, 0.82):
+            x, y = 10 + k * 108, 10 + k * 108
+            d.line([(X(x - 4), y + 4), (X(x + 4), y - 4)], fill=5, width=2)
+    for j, (x, y) in enumerate(lights):
+        d.ellipse((x - 3, y - 3, x + 3, y + 3), fill=7 + j % 4)
+        d.point((x - 1, y - 1), fill=6)
+    # glans in het midden (vierpuntige ster)
+    d.polygon([(64, 48), (67, 61), (80, 64), (67, 67), (64, 80), (61, 67), (48, 64), (61, 61)], fill=6)
+    d.polygon([(64, 56), (66, 62), (72, 64), (66, 66), (64, 72), (62, 66), (56, 64), (62, 62)], fill=4)
+    return _outline(np.array(im).astype(int))
+
+
+def symbols():
+    y = y_symbol()
+    x = x_symbol()
+    save_big('ysym', y, Y_PAL, [('dark', Y_DARK)])
+    save_big('xsym', x, X_PAL, [('dim', X_DIM)])
+    if PREVIEW:
+        ims = [big_preview(y, Y_DARK), big_preview(y, Y_PAL), big_preview(x, X_DIM), big_preview(x, X_PAL)]
+        W = Image.new('RGB', (4 * 132, 128), (40, 40, 40))
+        for i, im in enumerate(ims):
+            W.paste(im, (i * 132, 0))
+        W.resize((W.width * 2, W.height * 2), Image.NEAREST).save(os.path.join(PREVIEW, 'legend_symbols.png'))
 
 
 # ================================================================== Xerneas / Yveltal (leven en dood)

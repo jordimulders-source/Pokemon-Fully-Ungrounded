@@ -1288,6 +1288,9 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if ((trainerId >= TRAINER_BURGLAR_1 && trainerId <= TRAINER_BURGLAR_5)
      || (trainerId >= TRAINER_BURGLAR_6 && trainerId <= TRAINER_BURGLAR_9) || trainerId == TRAINER_STADIUM_BURGLAR)
         return B_TRANSITION_BURGLAR;
+    // Project Grounded: Wario (eindbaas van het Yoshi's Island-fort, en gast in het Battle Stadium): knoflook, de W, poses
+    if (trainerId == TRAINER_YI_WARIO || trainerId == TRAINER_STADIUM_WARIO)
+        return B_TRANSITION_WARIO;
 
     // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)
     if (trainerClass == TRAINER_CLASS_NEO_PLASMA || trainerClass == TRAINER_CLASS_SHADOW_TRIAD || trainerClass == TRAINER_CLASS_SAGE)

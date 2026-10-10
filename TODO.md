@@ -63,6 +63,7 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - Wacht op Jordi's oordeel: **Neo Plasma** v12k (v0.9.109), **Brawly** v6 Rocky-stijl (v0.9.98), **Regigigas** v5, **Burglar** v1 (v0.9.93). Batch 5 (v0.9.88) was verder "zeer tot gematigd tevreden".
 - Nog te maken: **Volcanion**, **Cresselia**, **Battle Stadium** (arena + finale, MUZIEK_KANDIDATEN A5), muziek voor de nieuwe uitbreidingen (Tao-eiland, Spacetime Cave, Yoshi's Island/Boo-thema: Jordi uploadt de Boo-bron).
 - Route-remixes, allemaal nog niet gemaakt (MUZIEK_KANDIDATEN C): Route 135/136 winter, Fortree Jungle, Mangrove Mire, Toadstool Hollow, Safari (Fairy Forest / Thunder Plains / Haunted Camp), The Spire (per act + elite/baas), Meteor Falls (kosmisch), Flower Paradise / Liberty Garden.
+- **Wario** krijgt een eigen Wario-thema (Jordi 10 okt). **Ultra Beasts**: eigen thema bouwen (Rainbow Road is te euforisch). Rainbow Road en Bowser Castle (MKSC, in de ROM): nog een functie zoeken.
 - Delta Episode: MIDI's voor **The Heirs to Eternity** en **The Lament of Falling Stars** (Jordi levert of wij zoeken). (4 okt)
 - Na de beta: Ho-Oh helderder, minder stotterende percussie. (6 okt)
 - **HQ-mixer (v0.9.245, ingebouwd op proef):** Jordi beoordeelt de A/B. Daarna eventueel een hogere mixerfrequentie (26.758/31.536 Hz) proberen: de HQ-mixer is sneller dan de oude, en meer Hz verdeelt de resterende 8-bit-ruis over een bredere band. Uitzetten: `M4A_HQ_MIXER 0` in `include/config/m4a_mixer.h`.

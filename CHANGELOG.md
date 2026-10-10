@@ -18303,3 +18303,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 
 ### [v0.9.258] - HQ-mixer definitief
 - De HQ-mixer (v0.9.245) blijft aan: hij lost de overload in de Yoshi's Island-nummers op (Jordi). Hij staat niet meer op proef.
+
+### [v0.9.259] - Battle! Pokémon Tower
+- Nieuw gevechtsthema `MUS_GROUNDED_VS_POKE_TOWER` (687): een remix van het Lavender Town-thema met de vorm van het origineel, op 160 bpm. Het speelt bij alle gevechten in de Pokémon Tower: wilde Pokémon (ook de GHOST-gevechten), de Channelers en Agatha (die had tot nu toe de Elite Four-muziek).
+- Opbouw: chromatische intro, de melodie op orgel → strijkers → koor ("de geesten") → trompet. Het arpeggio en de "jammerlijn" spelen op PSG; eigen kit met Japanse percussie (taiko, kotsuzumi, atarigane, hyoushigi). Alleen stock-samples: ±5 KB.
+- Generator: `tools/grounded/tower_theme.py`.

@@ -304,6 +304,7 @@ static void DebugAction_Give_Pokemon_SelectId(u8 taskId);
 static void DebugAction_Util_ForceEncounter(u8 taskId);
 struct BattleTest;
 static void DebugAction_Util_BattleTest(u8 taskId, const struct BattleTest *test);
+static void DebugAction_Util_ZoneWarp(u8 taskId, const void *mapId); // Project Grounded
 static void DebugAction_Util_ForceEncounter_SelectId(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectLevel(u8 taskId);
 static void DebugAction_Give_Pokemon_SelectShiny(u8 taskId);
@@ -718,8 +719,11 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
 #undef BT_WILD
 #undef BT_TRAINER
 
+#include "data/debug_zone_warps.h" // Project Grounded: Utilities > "Zone warp…" (tools/grounded/debug_zone_warps.py)
+
 static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
 {
+    { COMPOUND_STRING("Zone warp…"),       DebugAction_OpenSubMenu, sDebugMenu_Actions_ZoneWarp },
     { COMPOUND_STRING("Warp to the Spire"), DebugAction_ExecuteScript, Debug_EventScript_SpireWarp },
     { COMPOUND_STRING("Warp to the Stadium"), DebugAction_ExecuteScript, Debug_EventScript_StadiumWarp },
     { COMPOUND_STRING("Fly to map…"),       DebugAction_Util_Fly },
@@ -1048,7 +1052,7 @@ static void Debug_ShowMenu(DebugFunc HandleInput, const struct DebugMenuOption *
     menuTemplate.cursorShadowPal = 3;
     menuTemplate.lettersSpacing = 1;
     menuTemplate.itemVerticalPadding = 0;
-    menuTemplate.scrollMultiple = LIST_NO_MULTIPLE_SCROLL;
+    menuTemplate.scrollMultiple = LIST_MULTIPLE_SCROLL_DPAD; // Project Grounded: links/rechts = een pagina terug/verder
     menuTemplate.fontId = DEBUG_MENU_FONT;
     menuTemplate.cursorKind = 0;
     menuTaskId = ListMenuInit(&menuTemplate, 0, 0);
@@ -1333,7 +1337,7 @@ static void Debug_RefreshListMenu(u8 taskId)
     gMultiuseListMenuTemplate.cursorShadowPal = 3;
     gMultiuseListMenuTemplate.lettersSpacing = 1;
     gMultiuseListMenuTemplate.itemVerticalPadding = 0;
-    gMultiuseListMenuTemplate.scrollMultiple = LIST_NO_MULTIPLE_SCROLL;
+    gMultiuseListMenuTemplate.scrollMultiple = LIST_MULTIPLE_SCROLL_DPAD; // Project Grounded: links/rechts = een pagina terug/verder
     gMultiuseListMenuTemplate.fontId = 1;
     gMultiuseListMenuTemplate.cursorKind = 0;
 }
@@ -1360,6 +1364,10 @@ static void DebugTask_HandleMenuInput_General(u8 taskId)
             else if (option.action == DebugAction_Util_BattleTest)
             {
                 DebugAction_Util_BattleTest(taskId, (const struct BattleTest *)option.actionParams);
+            }
+            else if (option.action == DebugAction_Util_ZoneWarp)
+            {
+                DebugAction_Util_ZoneWarp(taskId, option.actionParams);
             }
             else if (option.action == DebugAction_ToggleFlag)
             {
@@ -1443,6 +1451,16 @@ static void DebugAction_OpenSubMenuCreateFollowerNPC(u8 taskId, const struct Deb
 
 // *******************************
 // Actions Utilities
+
+// Project Grounded: warp naar warp 0 van een kaart uit "Zone warp…" (zonder warps: het midden van de kaart)
+static void DebugAction_Util_ZoneWarp(u8 taskId, const void *mapId)
+{
+    u16 map = (uintptr_t)mapId;
+    SetWarpDestinationToMapWarp(map >> 8, map & 0xFF, 0);
+    DoWarp();
+    ResetInitialPlayerAvatarState();
+    Debug_DestroyMenu_Full(taskId);
+}
 
 static void DebugAction_Util_Fly(u8 taskId)
 {

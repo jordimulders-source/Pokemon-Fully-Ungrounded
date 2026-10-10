@@ -18422,3 +18422,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Vanaf 1:18 (maat 40):** het "luie" stuk had geen 16e-glans en hi-hats. Eén knip uit het origineel (maat 44–45, alleen boven 2 kHz) speelt er nu elke 2 maten onder; de PSG-hi-hats zijn weg.
   - **Helderder:** alle knippen hebben +2 dB boven 3 kHz.
   - **Bugfix:** een kitnoot die direct opnieuw begint, werd door mid2agb tot 1 tick ingekort.
+
+### [v0.9.274] - Debug: Zone warp naar elke kaart + bladeren met links/rechts
+- **Debugmenu Utilities > "Zone warp…":** een warp naar elke kaart van de game (718 kaarten), per kaartgroep. Eerst de eigen gebieden (Eilanden/quests, Spacetime met o.a. Yoshi's Island, Area Zero, de meren en Spear Pillar, Ultra Space), daarna alle vanilla-groepen. Je komt uit op warp 0 van de kaart (zonder warps: het midden), zonder dat je eerst iets hoeft te clearen.
+  - Generator: `tools/grounded/debug_zone_warps.py` (opnieuw draaien na nieuwe kaarten).
+  - Getest: warp naar Mirage Bazaar.
+- **Alle debuglijsten:** links/rechts bladert een pagina terug of verder.
+- **Compressie:** de twee Yoshi's Island-samples gaan niet meer gecomprimeerd (Jordi hoorde Athletic misschien wat dof); ±23 KB extra.

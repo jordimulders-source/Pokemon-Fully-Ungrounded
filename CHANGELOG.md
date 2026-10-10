@@ -18504,3 +18504,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 ### [v0.9.281] - Goedkeuringen
 - Jordi: Area Zero "beter dan ik had kunnen dromen", Battle! Area Zero "fenomenaal, in 1 keer", Treasures of Ruin "niet perfect maar veel beter dan ik ooit had gedacht dat een gba versie had kunnen worden". Alle drie blijven zoals ze zijn.
 - Intro's: liever zonder Pokémon-sprites ("lijkt minder budget"). Celebi, Meloetta, Cresselia en Zygarde gaan opnieuw.
+
+### [v0.9.282] - Gevechtsmuziek rouleert (ROTATE)
+- Jordi: "3/4 wild pokemon/trainer battle themes rouleren, zodat muziek spannend blijft". In het optiemenu staat bij wilde en bij trainer-gevechtsmuziek nu **ROTATE** bovenaan; dat is de nieuwe standaard. Elk gevecht krijgt het volgende nummer uit de lijst; de teller van wilde/trainergevechten bepaalt welk nummer, dus het blijft hetzelfde binnen één gevecht.
+  - **Wild:** Hoenn, Kanto, Sunset Wilds, Toxic Landfill.
+  - **Trainers:** Hoenn, Kanto, Toxic Landfill, Kanto Gym Leader.
+- De lijsten staan in `src/battle_music_options.c` (`sWildRotation`, `sTrainerRotation`). Een eerder gekozen optie schuift één plek op (de nieuwe ROTATE staat op plek 0).

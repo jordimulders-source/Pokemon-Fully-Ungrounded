@@ -18411,3 +18411,14 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Melodie:** de ontbrekende aangehouden roep (maat 5–12) en de hoge ostinatolijn (maat 13–20) zijn erbij. Daardoor zit maat 5–20 tot 4 kHz binnen ±3 dB van het origineel.
   - **Strijker vanaf 32 s:** klopt nog niet; Jordi hoort blazers. Volgt in v7.
 - Samples voor dit nummer samen ±367 KB. Er is nog **1,08 MB** ROM vrij.
+
+### [v0.9.273] - Compressie van eigen muzieksamples + Area Zero v9
+- **DPCM-compressie:** 248 eigen muzieksamples gaan nu gecomprimeerd (4 bit, de helft van de grootte) in de ROM. De HQ-mixer speelt ze af; loops werken.
+  - Jordi na een A/B van Mitch: "ik hoor geen verschil … dat soort dingen zijn prima".
+  - Niet gecomprimeerd: drums (aanzet), de aria, het koor en de stem van Area Zero, en samples < 4 KB.
+  - Lijst en regel: `sound/compressed_samples.mk` (opgenomen in `audio_rules.mk`).
+  - Vrije ROM-ruimte van ±1,0 naar ±2,6 MB.
+- **Area Zero v9:**
+  - **Vanaf 1:18 (maat 40):** het "luie" stuk had geen 16e-glans en hi-hats. Eén knip uit het origineel (maat 44–45, alleen boven 2 kHz) speelt er nu elke 2 maten onder; de PSG-hi-hats zijn weg.
+  - **Helderder:** alle knippen hebben +2 dB boven 3 kHz.
+  - **Bugfix:** een kitnoot die direct opnieuw begint, werd door mid2agb tot 1 tick ingekort.

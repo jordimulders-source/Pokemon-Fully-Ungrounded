@@ -3,7 +3,7 @@
 # Jordi 10 okt (A/B Mitch): "ik hoor geen verschil". Niet gecomprimeerd: drums (aanzet), aria/koor/stem van Area Zero, < 4 KB.
 COMPRESSED_SAMPLES := \
 	ashfrost_recorder ashfrost_sleigh ashfrost_warm_pad az_bells_0 az_bells_1 az_bells_2 \
-	az_bells_3 az_bells_4 az_crystal bg_bari bg_brush_slap bg_brush_tap \
+	az_bells_3 az_bells_4 az_bells_5 az_crystal bg_bari bg_brush_slap bg_brush_tap \
 	bg_mtpt bg_stab bg_upright bg_vibes darkrai_brass_dim darkrai_brass_low \
 	darkrai_brass_tt darkrai_celesta darkrai_cry_rev darkrai_drone darkrai_lullaby_rev darkrai_music_box \
 	darkrai_rev_box darkrai_rev_cluster darkrai_scream genesect_anvil genesect_bass genesect_bass_dark \

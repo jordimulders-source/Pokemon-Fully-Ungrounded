@@ -615,6 +615,15 @@
 #define MUS_GROUNDED_VS_ZACIAN      684 // Project Grounded: Battle! Zacian & Zamazenta, eigen compositie: zwaard en schild, Galar-ridders (tools/grounded/legends3_theme.py)
 #define MUS_GROUNDED_VS_XERNEAS     685 // Project Grounded: Battle! Xerneas & Yveltal, eigen compositie: leven (groot) en dood (klein), één melodie (tools/grounded/legends3_theme.py)
 #define MUS_GROUNDED_VS_LAKE_TRIO   686 // Project Grounded: Battle! Uxie, Mesprit & Azelf, eigen compositie: kennis, emotie, wilskracht (tools/grounded/legends3_theme.py)
+// 687 vrij: Palm Tree Paradise (WL4) geschrapt, 361 KB samples (Jordi 10 okt: "niet heel belangrijk")
+#define MUS_GROUNDED_WL4_MYSTIC_LAKE 688 // Project Grounded: Wario Land 4, Mystic Lake, 1-op-1 uit wl4 (song 655, tools/grounded/mp2k_rip.py)
+#define MUS_GROUNDED_WL4_MONSOON_JUNGLE 689 // Project Grounded: Wario Land 4, Monsoon Jungle, 1-op-1 uit wl4 (song 658, tools/grounded/mp2k_rip.py)
+#define MUS_GROUNDED_WL4_TOXIC_LANDFILL 690 // Project Grounded: Wario Land 4, Toxic Landfill, 1-op-1 uit wl4 (song 660, tools/grounded/mp2k_rip.py)
+#define MUS_GROUNDED_WL4_40_BELOW_FRIDGE 691 // Project Grounded: Wario Land 4, 40 Below Fridge, 1-op-1 uit wl4 (song 662, tools/grounded/mp2k_rip.py)
+#define MUS_GROUNDED_WL4_TOY_BLOCK_TOWER 692 // Project Grounded: Wario Land 4, Toy Block Tower, 1-op-1 uit wl4 (song 663, tools/grounded/mp2k_rip.py)
+#define MUS_GROUNDED_WL4_CRESCENT_MOON_VILLAGE 693 // Project Grounded: Wario Land 4, Crescent Moon Village, 1-op-1 uit wl4 (song 667, tools/grounded/mp2k_rip.py)
+#define MUS_GROUNDED_WL4_ARABIAN_NIGHT 694 // Project Grounded: Wario Land 4, Arabian Night, 1-op-1 uit wl4 (song 668, tools/grounded/mp2k_rip.py)
+#define MUS_GROUNDED_WL4_FIERY_CAVERN 695 // Project Grounded: Wario Land 4, Fiery Cavern, 1-op-1 uit wl4 (song 670, tools/grounded/mp2k_rip.py)
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

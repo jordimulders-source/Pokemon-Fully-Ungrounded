@@ -18207,3 +18207,23 @@ Jordi wilde hun sprites niet in beeld.
 - **Xerneas:** een grote X van gewei in het grauwe Ballonlea. De vier lichtjes (geel, paars, rood, blauw) gaan een voor een aan en de kleur stroomt vanuit de heksenkring terug. Dan regenboogglinsters en Geomancy.
 - **Yveltal:** een grote zwarte Y met rode strepen daalt in de kring. De kleur trekt weg en rode veren worden naar de Y gezogen. Dan kleurt Oblivion Wing alles rood en wordt het zwart.
 - +9,9 KB. Item-art is 4× vergroot met Scale2x; grote objecten bestaan uit vier 64×64-sprites die samen schalen en draaien.
+
+### [v0.9.248] - Wario Land 4: acht nummers 1-op-1
+Jordi heeft de nummers benoemd in de luisterlijst: alle WL4-nummers met een loop, opgenomen uit de ROM zelf.
+- Gerript met `mp2k_rip.py`:
+
+| Constante | WL4-song |
+|---|---|
+| `MUS_GROUNDED_WL4_MYSTIC_LAKE` | 655 |
+| `_MONSOON_JUNGLE` | 658 |
+| `_TOXIC_LANDFILL` | 660 |
+| `_40_BELOW_FRIDGE` | 662 |
+| `_TOY_BLOCK_TOWER` | 663 |
+| `_CRESCENT_MOON_VILLAGE` | 667 |
+| `_ARABIAN_NIGHT` | 668 |
+| `_FIERY_CAVERN` | 670 |
+
+- Samen ±80 KB.
+- **Palm Tree Paradise** (song 651) geschrapt: alleen voor dat nummer kostte het 361 KB aan samples (Jordi: "niet heel belangrijk").
+- Nog nergens gekoppeld. Voor Wario's thema denkt Jordi aan Toxic Landfill of Fiery Cavern.
+- Ook benoemd, niet gerript: 636 introscherm, 638/639 overworld, 654 bijenlevel, 656/657 Mystic Lake-delen, 661 Pinball Zone, 681/800 Hurry Up, 687–689 Boss.

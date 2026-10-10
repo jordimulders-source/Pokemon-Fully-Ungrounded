@@ -7642,3 +7642,199 @@ DirectSoundWaveData_ruinous_pluck_61::
 	.align 2
 DirectSoundWaveData_ruinous_pluck_68::
 	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_68.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_0d0c08::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_0d0c08.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_0a4228::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_0a4228.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_10619c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_10619c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_1090d8::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_1090d8.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_129b90::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_129b90.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_09bf88::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_09bf88.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_10bf9c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_10bf9c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12ed1c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12ed1c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12ef50::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12ef50.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12f31c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12f31c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_136398::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_136398.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_13d7ac::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_13d7ac.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_13e280::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_13e280.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_13e614::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_13e614.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_13e990::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_13e990.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_0a7160::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_0a7160.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_10a674::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_10a674.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11475c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11475c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11e2d4::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11e2d4.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11ee84::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11ee84.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11fc74::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11fc74.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12a58c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12a58c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12d308::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12d308.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12f638::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12f638.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_1300bc::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_1300bc.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_109f88::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_109f88.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11d674::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11d674.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12b490::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12b490.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12ddb8::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12ddb8.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_109784::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_109784.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11003c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11003c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11a45c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11a45c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_121814::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_121814.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12b9ec::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12b9ec.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12c15c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12c15c.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_0a7bc4::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_0a7bc4.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_105748::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_105748.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_106a94::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_106a94.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_108288::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_108288.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_108944::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_108944.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_116ae4::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_116ae4.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11bf68::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11bf68.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11eee8::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11eee8.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12eab4::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12eab4.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_0a5ae8::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_0a5ae8.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_110c04::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_110c04.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_115de0::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_115de0.bin"

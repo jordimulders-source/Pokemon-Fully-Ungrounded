@@ -27,13 +27,13 @@ KIT_BASE = 36
 REL = 40          # SNES-KOFF klinkt ±8 ms uit; 40/256 per frame = ±25 ms (geen kanaalroof, geen klik)
 TICK_MS = 1000 / 60
 
-# naam: (spc-bestand, songconstante, beschrijving, -V)
+# naam: (spc-bestand, songconstante, beschrijving, -V); -V zo dat de RMS ±1100 is (Jordi 10 okt: 'te hard, distortion')
 SONGS = {
-    'flower_garden': ('yi-07a.spc', 'MUS_GROUNDED_YI_FLOWER_GARDEN', "Flower Garden (Yoshi's Island)", 110),
-    'athletic':      ('yi-13a.spc', 'MUS_GROUNDED_YI_ATHLETIC', "Athletic (Yoshi's Island)", 110),
-    'overworld':     ('yi-14a.spc', 'MUS_GROUNDED_YI_OVERWORLD', "Overworld (Yoshi's Island)", 110),
-    'fuzzy':         ('yi-14b.spc', 'MUS_GROUNDED_YI_FUZZY', "Overworld (Fuzzy), Touch Fuzzy Get Dizzy", 110),
-    'castle':        ('yi-10.spc', 'MUS_GROUNDED_YI_CASTLE', "Castle & Fortress (Yoshi's Island)", 110),
+    'flower_garden': ('yi-07a.spc', 'MUS_GROUNDED_YI_FLOWER_GARDEN', "Flower Garden (Yoshi's Island)", 85),
+    'athletic':      ('yi-13a.spc', 'MUS_GROUNDED_YI_ATHLETIC', "Athletic (Yoshi's Island)", 80),
+    'overworld':     ('yi-14a.spc', 'MUS_GROUNDED_YI_OVERWORLD', "Overworld (Yoshi's Island)", 43),
+    'fuzzy':         ('yi-14b.spc', 'MUS_GROUNDED_YI_FUZZY', "Overworld (Fuzzy), Touch Fuzzy Get Dizzy", 44),
+    'castle':        ('yi-10.spc', 'MUS_GROUNDED_YI_CASTLE', "Castle & Fortress (Yoshi's Island)", 49),
 }
 
 # SNES-envelope: perioden (samples bij 32 kHz) per rate 0..31

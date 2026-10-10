@@ -49,6 +49,8 @@ herkennen is, komt ook als controle in `music_lint.py`.
 
 - **Eigen samples max. 11 kHz** (v0.9.232, Jordi: A/B SickBlik "prima"): de mixer draait op 21 kHz/8 bit, hogere rates kosten alleen ROM. Drums (drumsets/) blijven; grondtoon ≥ C6 → 16 kHz. Na elke `*_samples.py`/`gm_samples.py` en elke merge: `python3 tools/grounded/resample_wav.py --all`. Akkoorden als één sample (SickBlik) klinken voller maar kosten ±30 KB per akkoord.
 
+- **Rips (SPC/MP2K) op volume brengen:** de 8-bit-mixer vervormt boven een piek van ±90/127 (Yoshi's Island v0.9.235: "te hard, distortion"). Richtwaarde RMS ±1100 en piek ≤ 75 in batchrec; `-V` per nummer = 110 × 1100 / gemeten RMS.
+
 ## Opnemen (valkuilen)
 - De audiobuffer van mGBA moet **elke frame** worden uitgelezen, ook tijdens menu-navigatie; anders loopt hij over
   en neem je 16 kHz-ruis op (eerste Wally-previews: "gehoorschade simulator", terwijl de game in orde was).

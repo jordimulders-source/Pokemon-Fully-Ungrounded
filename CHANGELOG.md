@@ -18000,3 +18000,17 @@ Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's 
 - Running status zoals m4a: alleen commando's vanaf 0xBD nemen argumenten over.
 - `tools/grounded/mp2k_list.py` geeft per nummer de lengte, de loop en de lengte bij twee rondes, om te vergelijken met een soundtracklijst.
 - Getest met Wario Land 4 song 687: 35 KB, speelt in onze engine zonder pieken of overlopen. Daarna weer verwijderd: welk nummer welk is, volgt uit de MP3's van Jordi.
+
+### [v0.9.237] - Yoshi's Island-nummers zachter (geen vervorming meer)
+- Jordi (10 okt): "klinken goed, maar ze staan allemaal te hard, daarom krijgen ze distortion". De pieken kwamen tot 103–115 van de 127 (8-bit-mixer), met een RMS tot 2800.
+- Het mastervolume (`-V` in midi.cfg, vastgelegd in `SONGS` in `spc2gba.py`) staat nu per nummer zo dat de RMS ±1100 is, net als de andere eigen nummers:
+
+| Nummer | -V | Piek (van 127) |
+|---|---|---|
+| Flower Garden | 85 | 71 |
+| Athletic | 80 | 45 |
+| Overworld | 43 | 41 |
+| Fuzzy | 44 | 48 |
+| Castle | 49 | 50 |
+
+- Wario Land 4 song 687 bleek de Boss-muziek, niet 40 Below Fridge: matchen op duur is te onbetrouwbaar. Wacht op de MP3's van Jordi.

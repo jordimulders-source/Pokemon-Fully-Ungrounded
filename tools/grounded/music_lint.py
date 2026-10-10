@@ -36,6 +36,7 @@ MAX_PER_SONG = {'mus_grounded_yi_athletic.mid': 11,   # SPC-rip: 8 SNES-stemmen 
                 'mus_grounded_vs_ruinous.mid': 11,
                 'mus_grounded_vs_zacian.mid': 11, 'mus_grounded_vs_xerneas.mid': 11,
                 'mus_grounded_vs_lake_trio.mid': 11, 'mus_grounded_vs_legendary.mid': 11,
+                'mus_grounded_vs_mew.mid': 11,
 
                 'mus_grounded_vs_area_zero.mid': 11}
 CFG = 'sound/songs/midi/midi.cfg'

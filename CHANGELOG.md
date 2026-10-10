@@ -18332,3 +18332,12 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Nieuw thema `MUS_GROUNDED_VS_ARCEUS` (676), noot voor noot uit Jordi's DPPt-MIDI (`Battle_Arceus.mid`): clusterstoten met echo, pauken-ostinato (3+3+2), strijkersclusters, toms en bekkens; 150 bpm, loop van maat 10 tot 50. Alleen stock-samples (koper, strijkers, pauken): ±3,6 KB. Gekoppeld aan het gevecht in de Hall of Origin; de transitie blijft dezelfde.
 - Uit de MIDI weggelaten: een gedetunede kopie van het pauken-ostinato (stereo-chorus die alleen kanalen kost) en echo's onder velocity 20. "Track 10" is gelezen als drumspoor.
 - Generator: `tools/grounded/arceus_theme.py` (leest de MIDI van `origin/master`).
+
+### [v0.9.264] - Battle! Mew
+- Nieuw thema `MUS_GROUNDED_VS_MEW` (679): een remix van Battle! Mewtwo met dezelfde vorm en melodiecontouren, maar omgedraaid van karakter. A-lydisch/groot in plaats van mineur/frygisch, 132 bpm.
+  - **A:** het dreigende staccato-motief is een vraag-en-antwoord geworden (fluit vraagt, glockenspiel antwoordt), met elke 4e maat een ritmisch hikje.
+  - **B:** de "imperfecte kloon"-echo is een nieuwsgierige variatie.
+  - **C:** de hook in groot met hoog koor en tamboerijn.
+  - **Intro:** een kort "DNA-motief".
+- Instrumenten: fluit, glockenspiel, harp, fingered bass, koor en PSG; geen orgel of blokgolf-lead. Hergebruikt de voicegroup van Mewtwo (alleen stock-samples): ±3 KB. Gekoppeld aan het Mew-gevecht; `MUS_VS_MEW` blijft voor Jirachi en de muziekopties.
+- Generator: `tools/grounded/mew_theme.py`.

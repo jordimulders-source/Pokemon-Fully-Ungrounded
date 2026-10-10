@@ -18478,3 +18478,16 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Galar-vogels:** Articuno in psychisch paars (de Kanto-intro), Zapdos sprint en trapt, Moltres met zwarte vlammen en Fiery Wrath.
 - **Bugfix in deze intro's:** de minuutlijke dag/nacht-update zette midden in een intro de wereldpaletten terug.
 - Code: `src/data/legend_intros_cheap2.h`.
+
+### [v0.9.279] - Intro's: Swords of Justice, Ultra Beasts, paradoxen, Koraidon/Miraidon, Eternatus, Marshadow, Terapagos, Pecharunt
+- Alleen code en bestaande art: ±22 KB.
+  - **Cobalion/Terrakion/Virizion/Keldeo:** twee onzichtbare zwaardhalen op de tel en het beeld valt in vier stukken uiteen.
+  - **Ultra Beasts (alle 11):** interdimensionale vervorming (scanlines, kleursplitsing, glitchband, inversies) en een Ultra Wormhole.
+  - **Paradoxen (22):** de wereld flikkert tussen verleden (sepia, filmkorrel, krassen) en toekomst (cyaan, scanlines, digitale blokken) en kiest dan het tijdperk van de soort. Verleden sluit als een oude film-iris, toekomst als een CRT die uitgaat.
+  - **Koraidon / Miraidon:** een echte past warp (amberkleurige tijdtunnel) en future warp (cyaan/violet raster-tunnel).
+  - **Eternatus:** een rood-paarse apocalyps, energiezuilen en een barst die als een oog van rood licht opengaat.
+  - **Marshadow:** een schaduw met grijpende vingers neemt het scherm over (hij vecht nergens wild; de intro staat klaar).
+  - **Terapagos:** draaiende Tera-kristallen, het Tera-teken en een Stellar-flits.
+  - **Pecharunt:** paarse nevel, gifbellen, stuiterende Pecha-bessen en gifkettingen.
+- Alle paradoxen hebben de intro nu ook bij wilde gevechten in Area Zero.
+- Code: `src/data/legend_intros_cheap1.h`. De hulpnamen zijn hernoemd naar `LC1_` (botsten met deel 2). ROM vrij: 1,98 MB.

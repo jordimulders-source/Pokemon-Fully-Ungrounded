@@ -213,6 +213,14 @@ static void Task_LegendCresselia(u8);
 static void Task_LegendNecrozma(u8);
 static void Task_LegendGalarZapdos(u8);
 static void Task_LegendGalarMoltres(u8);
+static void Task_LegendSwords(u8); // Project Grounded (src/data/legend_intros_cheap1.h)
+static void Task_LegendUltraBeast(u8);
+static void Task_LegendParadoxPast(u8);
+static void Task_LegendParadoxFuture(u8);
+static void Task_LegendEternatus(u8);
+static void Task_LegendMarshadow(u8);
+static void Task_LegendTerapagos(u8);
+static void Task_LegendPecharunt(u8);
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -747,6 +755,14 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_LEGEND_NECROZMA] = Task_LegendNecrozma,
     [B_TRANSITION_LEGEND_GALAR_ZAPDOS] = Task_LegendGalarZapdos,
     [B_TRANSITION_LEGEND_GALAR_MOLTRES] = Task_LegendGalarMoltres,
+    [B_TRANSITION_SWORDS_SLASH] = Task_LegendSwords, // Project Grounded (src/data/legend_intros_cheap1.h)
+    [B_TRANSITION_ULTRA_BEAST] = Task_LegendUltraBeast,
+    [B_TRANSITION_PARADOX_PAST] = Task_LegendParadoxPast,
+    [B_TRANSITION_PARADOX_FUTURE] = Task_LegendParadoxFuture,
+    [B_TRANSITION_ETERNATUS] = Task_LegendEternatus,
+    [B_TRANSITION_MARSHADOW] = Task_LegendMarshadow,
+    [B_TRANSITION_TERAPAGOS] = Task_LegendTerapagos,
+    [B_TRANSITION_PECHARUNT] = Task_LegendPecharunt,
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -10494,3 +10510,4 @@ static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
 #include "data/legend_intros_dp.h"
 // Project Grounded: goedkope legendary-intro's (Calyrex, Celebi, meren-trio, Meloetta, ...)
 #include "data/legend_intros_cheap2.h"
+#include "data/legend_intros_cheap1.h" // Project Grounded: goedkope legendary-intro's (Swords, UB's, paradoxen, Eternatus, Marshadow, Terapagos, Pecharunt)

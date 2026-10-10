@@ -163,6 +163,14 @@ enum BattleTransition
     B_TRANSITION_LEGEND_NECROZMA, // Project Grounded: Necrozma, een zwart prisma zuigt het licht op
     B_TRANSITION_LEGEND_GALAR_ZAPDOS, // Project Grounded: Galar-Zapdos, sprint en trap
     B_TRANSITION_LEGEND_GALAR_MOLTRES, // Project Grounded: Galar-Moltres, zwarte vlammen en een duistere aura
+    B_TRANSITION_SWORDS_SLASH, // Project Grounded (legend_intros_cheap1.h): Swords of Justice + Keldeo, het beeld in vier stukken gesneden
+    B_TRANSITION_ULTRA_BEAST, // Project Grounded (cheap1): Ultra Beasts, interdimensionale storing en een Ultra Wormhole
+    B_TRANSITION_PARADOX_PAST, // Project Grounded (cheap1): paradox-Pokémon uit het verleden, verleden/toekomst-flikkering, dan het verleden in
+    B_TRANSITION_PARADOX_FUTURE, // Project Grounded (cheap1): paradox-Pokémon uit de toekomst
+    B_TRANSITION_ETERNATUS, // Project Grounded (cheap1): Eternatus, rode hemel, Dynamax-energie, de grond scheurt open
+    B_TRANSITION_MARSHADOW, // Project Grounded (cheap1): Marshadow, een schaduw neemt het beeld over
+    B_TRANSITION_TERAPAGOS, // Project Grounded (cheap1): Terapagos, ronddraaiende Tera-kristallen
+    B_TRANSITION_PECHARUNT, // Project Grounded (cheap1): Pecharunt, gifnevel, pecha-bessen, gifbellen en ketens
     B_TRANSITION_COUNT
 };
 

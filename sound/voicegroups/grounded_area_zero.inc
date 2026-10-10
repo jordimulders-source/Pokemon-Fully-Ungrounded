@@ -55,9 +55,9 @@ voice_group grounded_area_zero
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 60, 0, 255, 175  @ 52
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 90, 0, 255, 165  @ 53
-	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 54
-	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 55
-	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 56
+	voice_directsound 60, 0, DirectSoundWaveData_az_voice, 40, 0, 255, 190  @ 54
+	voice_directsound 60, 0, DirectSoundWaveData_az_voice_lo, 40, 0, 255, 190  @ 55
+	voice_keysplit_all voicegroup_area_zero_choir  @ 56
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 57
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 58
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 59

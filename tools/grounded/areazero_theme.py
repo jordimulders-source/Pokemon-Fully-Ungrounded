@@ -47,6 +47,15 @@ LFOS = 24                    # vibratosnelheid: in de game gemeten 30 -> ±8 Hz,
 # achtige vocal vanaf 7 s [= de aria, m24-25] slaat nergens op; de achtergrond is prima'): in 681 geen aria/zuchten meer,
 # koor = 2 stemmen, één lange aangehouden noot per akkoord (sample loopt), zonder vibrato en zachter. 682 ongewijzigd.
 MAIN_LEAD, MAIN_SIGHS, MAIN_CHOIR_MOD, MAIN_CHOIR_VOICES = False, False, 0, 2
+# v3 (Jordi: 'vocalen nog steeds ver van het origineel; de achtergrond is goed'): de stem komt uit het origineel zelf
+# (az_voice, areazero_samples.py) en speelt alleen wat de vocals-stem van het origineel heeft: de koorakkoorden m8-24
+# (tot 3 stemmen, lange aangehouden tonen) en de aria m24-39. Geen koor meer in m25-64 (daar zwijgt de vocals-stem;
+# de strijkers blijven). Geen vibrato/bends/detune: de vibrato zit in de sample zelf.
+MAIN_LEAD, MAIN_CHOIR_VOICES, VOICE_UNTIL = True, 3, 24
+VOICE, VOICE_LO, CHOIRKIT = 54, 55, 56   # az_voice (F5), az_voice_lo (Bb4), kit met de koorroepen (alleen 681)
+VOICE_SPLIT = 73                          # aria-noten t/m C#5 op az_voice_lo, daarboven az_voice
+from areazero_samples import CHOIR_EVENTS  # noqa: E402  (zelfde lijst als de geknipte koorroepen)
+CHOIR_MIN_GAIN = 0.15                     # roepen die in het origineel nauwelijks klinken (m8 opmaat, m18.04) weglaten
 LEAD_MOD, CHOIR_MOD, SIGH_MOD = 14, 6, 10   # in de game gemeten: MOD 6 gaf std 0,08 halve toon, origineel 0,33
 
 # programma's (grounded_gm-nummering, eigen invulling)
@@ -161,7 +170,7 @@ def legato(ev):
 
 
 def build():
-    P = {k: [] for k in ('lead', 'choir', 'sigh', 'str', 'bell', 'echo', 'ost', 'bass', 'hat', 'drums')}
+    P = {k: [] for k in ('lead', 'lead_lo', 'choir', 'sigh', 'str', 'bell', 'echo', 'ost', 'bass', 'hat', 'drums')}
     bend_lead, bend_sigh = [], []
 
     # bellen
@@ -192,14 +201,15 @@ def build():
     # lead (aria): bend per noot (BENDR 2: 64 stappen = 2 halve tonen) + vibrato
     for bar, pos, ln, n, dev in (LEAD if MAIN_LEAD else ()):
         t = T(bar, pos)
-        P['lead'].append([t, t + ln * S, p(n), 100])
-        bend_lead.append((t, int(round(dev * LEAD_DETUNE * 32)) * 128))
+        P['lead'].append([t, t + ln * S, p(n), 100])          # v3: geen bend (de stem-sample is op F5 gestemd)
 
     # akkoorden
     def chord(t, ln, strings, choir, vs=80, vc=88):
         for n in strings:
             P['str'].append([t, t + ln, p(n), vs])
-        if len(choir) > MAIN_CHOIR_VOICES:          # v2: buitenste stemmen houden
+        if t >= T(VOICE_UNTIL + 1):                 # v3: na m24 geen koor (vocals-stem zwijgt, alleen de aria)
+            choir = []
+        if len(choir) > MAIN_CHOIR_VOICES:
             choir = [choir[0], choir[-1]][:MAIN_CHOIR_VOICES]
         for n in choir:
             P['choir'].append([t, t + ln, p(n), vc])
@@ -277,21 +287,27 @@ def build():
         for h in hats:
             P['hat'].append([T(b, h), T(b, h) + S // 2, 72, 110 if h in (0, 8) else 84])
 
+    # v3: koor = de echte roepen uit het origineel, één kitnoot per roep (eigen toonhoogte), velocity = luidheid daar
+    P['choir'] = []
+    gains = [float(g) for g in open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                                 'areazero_choir_gain.txt')).read().split()]
+    for i, (bar, pos, ln) in enumerate(CHOIR_EVENTS):
+        if gains[i] >= CHOIR_MIN_GAIN:
+            P['choir'].append([T(bar, pos), T(bar, pos) + ln * S, 36 + i, int(round(60 + 67 * gains[i]))])
+    P['lead_lo'] = [e for e in P['lead'] if e[2] <= VOICE_SPLIT]
+    P['lead'] = [e for e in P['lead'] if e[2] > VOICE_SPLIT]
     for k in P:
         P[k] = dedupe(P[k])
-    P['choir'] = legato(P['choir'])                 # v2: aaneensluitende gelijke noten = één lange klank
 
     write_voicegroup()
     rel = releases(VG)
-    progs = {'lead': LEAD_P, 'choir': CHOIR, 'sigh': SIGH, 'str': STR, 'bell': BELL}
+    progs = {'lead': VOICE, 'lead_lo': VOICE_LO, 'sigh': SIGH, 'str': STR, 'bell': BELL}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) + 2 for k, pr in progs.items()}
+    tail['choir'] = release_ticks(CHOIR_REL, TPB, BPM) + 2
     tail['drums'] = 0
-    for k in ('lead', 'str', 'sigh'):
+    for k in ('lead', 'lead_lo', 'str', 'sigh', 'choir'):
         P[k] = detach(P[k], tail[k])
-    # koor: per toonhoogte loslaten, zodat een doorklinkende toon niet bij een akkoordwissel afbreekt
-    P['choir'] = sorted(sum((detach([e for e in P['choir'] if e[2] == n], tail['choir'])
-                             for n in sorted({e[2] for e in P['choir']})), []))
-    order = ['lead', 'drums', 'bell', 'sigh', 'choir', 'str']
+    order = ['lead', 'lead_lo', 'choir', 'drums', 'bell', 'sigh', 'str']
     ds = {k: P[k] for k in order}
     kept = allocate(ds, order, tail, drum_len=S * 2, drum_parts=('drums',), max_voices=MAXV)
     for k in order:
@@ -303,17 +319,14 @@ def build():
     song = Song(TPB, 500000)
     song.tempo(0, BPM / 120)
     song.loop = (0, NBARS * BAR)
-    ex_lead = [(0, mido.Message('control_change', control=20, value=2)),
-               (0, mido.Message('control_change', control=21, value=LFOS)),
-               (0, mido.Message('control_change', control=1, value=LEAD_MOD))] + \
-              [(t, mido.Message('pitchwheel', pitch=v)) for t, v in bend_lead]
-    ex_choir = [(0, mido.Message('control_change', control=21, value=LFOS)),
-                (0, mido.Message('control_change', control=1, value=MAIN_CHOIR_MOD))]
+    ex_lead = [(0, mido.Message('control_change', control=1, value=0)), (0, mido.Message('pitchwheel', pitch=0))]
+    ex_choir = [(0, mido.Message('control_change', control=1, value=0))]
     ex_sigh = [(0, mido.Message('control_change', control=20, value=1)),
                (0, mido.Message('control_change', control=21, value=LFOS + 6)),
                (0, mido.Message('control_change', control=1, value=SIGH_MOD))] + \
               [(t, mido.Message('pitchwheel', pitch=max(-8192, min(8191, v)))) for t, v in bend_sigh]
-    TRACKS = [('lead', LEAD_P, 92, 64, ex_lead), ('choir', CHOIR, 50, 64, ex_choir), ('sigh', SIGH, 66, 56, ex_sigh),
+    TRACKS = [('lead', VOICE, 84, 64, ex_lead), ('lead_lo', VOICE_LO, 84, 64, ex_lead), ('choir', CHOIRKIT, 80, 64, ex_choir),
+              ('sigh', SIGH, 66, 56, ex_sigh),
               ('str', STR, 62, 64, ()), ('bell', BELL, 66, 72, ()), ('echo', ECHO, 30, 44, ()),
               ('ost', OST, 34, 80, ()), ('bass', BASS, 62, 64, ()), ('hat', HAT, 26, 70, ()),
               ('drums', DRUMS, 92, 64, ())]
@@ -328,6 +341,7 @@ def build():
 
 
 LEAD_P = LEAD_PROG = 82
+CHOIR_REL = 200
 KIT = [
     'voice_directsound_no_resample 60, 64, DirectSoundWaveData_sc88pro_rnd_kick, 255, 0, 255, 200',          # 36
     'voice_directsound_no_resample 60, 64, DirectSoundWaveData_sc88pro_rnd_kick, 255, 0, 255, 200',          # 37
@@ -556,6 +570,9 @@ def write_voicegroup():
         STR: 'voice_keysplit voicegroup_area_zero_strings_keysplit, keysplit_strings',
         CHOIR: 'voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 60, 0, 255, 175',
         SIGH: 'voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 90, 0, 255, 165',
+        VOICE: 'voice_directsound 60, 0, DirectSoundWaveData_az_voice, 40, 0, 255, 190',     # rustige aanzet
+        VOICE_LO: 'voice_directsound 60, 0, DirectSoundWaveData_az_voice_lo, 40, 0, 255, 190',
+        CHOIRKIT: 'voice_keysplit_all voicegroup_area_zero_choir',
         LEAD_P: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 200, 0, 255, 170',
         OST: 'voice_square_1 60, 0, 0, 1, 0, 2, 6, 1',
         ECHO: 'voice_square_2 60, 0, 0, 0, 3, 0, 1',
@@ -579,13 +596,20 @@ def write_voicegroup():
     # sample-label en includes (idempotent)
     dsd = 'sound/direct_sound_data.inc'
     txt = open(dsd).read()
-    if 'DirectSoundWaveData_az_crystal::' not in txt:
-        txt = txt.rstrip('\n') + ('\n\n\t.align 2\nDirectSoundWaveData_az_crystal::\n'
-                                  '\t.incbin "sound/direct_sound_samples/grounded/az_crystal.bin"\n')
-        open(dsd, 'w').write(txt)
+    for lab in ['az_crystal', 'az_voice', 'az_voice_lo'] + ['az_choir_%02d' % i for i in range(len(CHOIR_EVENTS))]:
+        if 'DirectSoundWaveData_%s::' % lab not in txt:
+            txt = txt.rstrip('\n') + ('\n\n\t.align 2\nDirectSoundWaveData_%s::\n'
+                                      '\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (lab, lab))
+    open(dsd, 'w').write(txt)
+    open('sound/voicegroups/drumsets/area_zero_choir.inc', 'w').write(
+        '@ Project Grounded: de koorroepen van Area Zero, geknipt uit het origineel (areazero_samples.py); noot 36+i = roep i\n'
+        '@ (CHOIR_EVENTS), op de eigen toonhoogte.\n'
+        'voice_group area_zero_choir, 36\n' + ''.join(
+            '\tvoice_directsound 60, 0, DirectSoundWaveData_az_choir_%02d, 255, 0, 255, %d\n' % (i, CHOIR_REL)
+            for i in range(len(CHOIR_EVENTS))) + '\n')
     vgi = 'sound/voice_groups.inc'
     txt = open(vgi).read()
-    for inc in ('drumsets/area_zero.inc', 'keysplits/area_zero_strings.inc', '%s.inc' % VG):
+    for inc in ('drumsets/area_zero.inc', 'drumsets/area_zero_choir.inc', 'keysplits/area_zero_strings.inc', '%s.inc' % VG):
         line = '.include "sound/voicegroups/%s"' % inc
         if line not in txt:
             txt = txt.rstrip('\n') + '\n' + line + '\n'

@@ -5,8 +5,16 @@ az_crystal: het 'kristal'-belletje van Area Zero (sinus + zwakke boventonen, sne
 Gesynthetiseerd (geen FluidR3 nodig), grondtoon C6, 16 kHz (resample_wav.py: grondtoon >= C6 -> 16000 Hz), geen loop
 (sterft vanzelf uit). Stock-glockenspiel/unknown_bell klinken een kwarttoon vals op toets 60 (gemeten: 1361 Hz en
 1227 Hz), dus voor een arpeggio dat precies moet kloppen niet bruikbaar.
-Gebruik: python3 tools/grounded/areazero_samples.py"""
-import os, sys
+v3 (Jordi: 'de YEEEEHOOOOO HO-koorroepen en de onnatuurlijke aria vanaf ±46 s heb je nog niet goed nagemaakt'):
+alle vocalen komen uit het origineel zelf (Spleeter-vocals-stem), 11025 Hz:
+  az_voice / az_voice_lo: de aria-stem, één aangehouden toon (m26 F5, 50,25-51,35 s; m30 Bb4, 58,3-59,9 s), met de
+     eigen vibrato; loop = geheel aantal vibratoperiodes, gecrossfaded; gestemd op precies F5 / Bb4 (de stem zingt
+     daar ±0,5 halve toon hoger dan de noot).
+  az_choir_NN: de koorroepen m8-24, per akkoord de echte aanzet + klinker van het origineel ('YEEE', 'HOOO'), op de eigen
+     toonhoogte (kit-regel = eigen toonhoogte), lange akkoorden met een loop in de aanhouding.
+Bron: <scratchpad>/az/stems/areazero/vocals.wav (niet in de repo; ontbreekt hij, dan blijft de bestaande wav staan).
+Gebruik: python3 tools/grounded/areazero_samples.py [vocals.wav]"""
+import os, sys, wave
 import numpy as np
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sample_utils import write_wav
@@ -27,10 +35,113 @@ def crystal(rate=16000, key=84, dur=0.9):
     return x / np.abs(x).max() * 0.95
 
 
+VOCALS = '/tmp/claude-0/-home-user-projectgrounded/ffd47e46-6a2e-5021-9ef2-b627d7dbd889/scratchpad/az/stems/areazero/vocals.wav'
+VOICES = [('az_voice', 50.25, 51.35, 77, 600, 820), ('az_voice_lo', 58.30, 59.90, 70, 420, 520)]
+BAR1 = 0.185                               # maat 1 in het origineel (s)
+# koorroepen: (maat, zestiende, lengte in zestienden) = theme CHOIR_EVENTS; sample = aanzet + max. 1,0 s
+CHOIR_EVENTS = [(8, 4, 12), (9, 0, 24), (12, 0, 32), (14, 0, 16), (15, 0, 12), (15, 12, 4), (16, 0, 28), (17, 12, 4),
+                (18, 0, 4), (18, 4, 4), (20, 0, 32), (22, 0, 16), (23, 0, 8), (23, 8, 8), (24, 0, 8), (24, 8, 8)]
+
+
+def _read(src, t0, t1):
+    w = wave.open(src)
+    sr = w.getframerate()
+    w.setpos(int(t0 * sr))
+    raw = np.frombuffer(w.readframes(int((t1 - t0) * sr)), np.int16).astype(float)
+    x = raw.reshape(-1, w.getnchannels()).mean(1) / 32768
+    return x - np.convolve(x, np.ones(441) / 441, 'same'), sr      # gelijkstroom/brom < 50 Hz eruit
+
+
+def _to_rate(x, sr, rate):
+    X = np.fft.rfft(x)
+    X[int(len(X) * 0.9 * rate / sr):] = 0                         # anti-alias
+    x = np.fft.irfft(X, len(x))
+    return np.interp(np.arange(int(len(x) * rate / sr)) * sr / rate, np.arange(len(x)), x)
+
+
+def _pitch(x, sr, lo=600, hi=820):
+    """gemiddelde grondtoon (Hz) via autocorrelatie per 40 ms-venster, mediaan in centen."""
+    n, out = int(sr * 0.04), []
+    for i in range(0, len(x) - n, n // 2):
+        w = x[i:i + n] * np.hanning(n)
+        ac = np.correlate(w, w, 'full')[n - 1:]
+        a, b = int(sr / hi), int(sr / lo)
+        k = a + int(np.argmax(ac[a:b]))
+        if 0 < k < len(ac) - 1:                    # parabolische interpolatie
+            y0, y1, y2 = ac[k - 1], ac[k], ac[k + 1]
+            k = k + 0.5 * (y0 - y2) / (y0 - 2 * y1 + y2 + 1e-12)
+        out.append(12 * np.log2(sr / k / 440) + 69)
+    return 440 * 2 ** ((np.median(out) - 69) / 12)
+
+
+def _loop(x, rate, s0, lmin, lmax, fade_frac=0.3):
+    """beste loop vanaf s0 (lengte lmin..lmax s), einde gecrossfaded met wat vóór s0 staat."""
+    best, L = -2, 0
+    for cand in range(int(lmin * rate), min(len(x) - s0 - 1, int(lmax * rate))):
+        a, b = x[s0:s0 + 400], x[s0 + cand:s0 + cand + 400]
+        if len(b) < 400:
+            break
+        c = np.dot(a, b) / (np.linalg.norm(a) * np.linalg.norm(b) + 1e-9)
+        if c > best:
+            best, L = c, cand
+    e = s0 + L
+    fade = min(int(L * fade_frac), s0)
+    y = x[:e].copy()
+    t = np.linspace(0, 1, fade)
+    y[e - fade:e] = y[e - fade:e] * (1 - t) + x[s0 - fade:s0] * t
+    return y, (s0, e), best
+
+
+def voice(name, t0, t1, key, lo, hi, src=VOCALS, rate=11025):
+    x, sr = _read(src, t0, t1)
+    f = _pitch(x, sr, lo, hi)
+    target = 440 * 2 ** ((key - 69) / 12)
+    r = target / f                                                 # lees met stap r: r < 1 = omlaag
+    x = np.interp(np.arange(int(len(x) / r)) * r, np.arange(len(x)), x)
+    x = _to_rate(x, sr, rate)
+    y, loop, c = _loop(x, rate, int(0.22 * rate), 0.5, 0.85)
+    y[:int(0.03 * rate)] *= np.linspace(0, 1, int(0.03 * rate))   # zachte aanzet (de voicegroup doet de rest)
+    print('%s: gemeten %.1f Hz (%+.2f halve toon t.o.v. de noot), loop %d-%d (%.3f s, aansluiting %.3f)'
+          % (name, f, 12 * np.log2(f / target), loop[0], loop[1], (loop[1] - loop[0]) / rate, c))
+    return y / np.abs(y).max() * 0.95, loop
+
+
+def choir(i, bar, pos, ln, src=VOCALS, rate=11025):
+    t = BAR1 + (bar - 1) * 2 + pos * 0.125
+    dur = ln * 0.125
+    take = min(dur, 1.0)
+    x, sr = _read(src, t - 0.02, t + take)
+    x = _to_rate(x, sr, rate)
+    loop = None
+    if dur > take + 0.05:                                         # langer dan de knip: aanhouding loopen
+        x, loop, c = _loop(x, rate, int(0.55 * rate), 0.25, 0.42, 0.4)
+    else:
+        x[-int(0.03 * rate):] *= np.linspace(1, 0, int(0.03 * rate))
+    x[:int(0.01 * rate)] *= np.linspace(0, 1, int(0.01 * rate))
+    pk = np.abs(x).max()
+    print('az_choir_%02d: m%d.%02d, %.2f s geknipt, loop %s, piek %.3f' % (i, bar, pos, len(x) / rate, loop, pk))
+    return x / pk * 0.95, loop, pk
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     write_wav(os.path.join(OUT, 'az_crystal.wav'), crystal(), 16000, 84, None)
     print('az_crystal.wav')
+    src = sys.argv[1] if len(sys.argv) > 1 else VOCALS
+    if not os.path.exists(src):
+        print('vocals-stem niet gevonden: de stem-samples blijven zoals ze zijn')
+        return
+    for name, t0, t1, key, lo, hi in VOICES:
+        y, loop = voice(name, t0, t1, key, lo, hi, src)
+        write_wav(os.path.join(OUT, name + '.wav'), y, 11025, key, loop)
+    gains = []
+    for i, (bar, pos, ln) in enumerate(CHOIR_EVENTS):
+        y, loop, pk = choir(i, bar, pos, ln, src)
+        write_wav(os.path.join(OUT, 'az_choir_%02d.wav' % i), y, 11025, 60, loop)
+        gains.append(pk)
+    # relatieve luidheid per roep (genormaliseerde samples; het thema zet de velocity hiernaar)
+    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areazero_choir_gain.txt'), 'w').write(
+        ' '.join('%.4f' % (g / max(gains)) for g in gains) + '\n')
 
 
 if __name__ == '__main__':

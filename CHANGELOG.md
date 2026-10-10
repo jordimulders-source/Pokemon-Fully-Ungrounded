@@ -18362,3 +18362,11 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 ### [v0.9.267] - Ultra Beast: lead minder aanwezig
 - Jordi: "die main klank iets minder aanwezig, die kan na een paar min irriteren". De glazen lead gaat van 110 naar 80 (±−2,7 dB), de glas-stotters van 92 naar 80 en de PSG-echo van 36 naar 28. Noten en vorm zijn ongewijzigd.
 - Goedgekeurd door Jordi: de Boo-intro, Battle! Pokémon Tower, de Shy Guy-intro, het generieke legendary-thema, Arceus (de in-game versie) en Dialga/Palkia.
+
+### [v0.9.268] - Battle! Mew v2
+- Jordi over v1: "die tonen klinken raar, te hoog, niet in een goed tempo, maak het meer fluïde".
+  - **Toonsoort:** gewoon A-groot (geen lydische D# meer). De glockenspiel is eruit; motief en hook liggen een octaaf lager (max. E5) op fluit en strijkers unisono.
+  - **Groove:** 156 bpm in een rollende 4/4-groove (geen four-on-the-floor); het hikje elke 4e maat is weg.
+  - **Vloeiend:** legato-frases van 2 maten, doorrollende harp-arpeggio's en een golvende bas; de breakdown loopt zacht door.
+- Dezelfde vorm en Mewtwo-contouren. Eigen voicegroup `grounded_mew` (Mewtwo + kortere harp-release): ±3,5 KB.
+- Alternatief klaar: kandidaat B (12/8 op 120 bpm), via `FEEL = '128'` in `tools/grounded/mew_theme.py`.

@@ -18381,3 +18381,13 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Fly Guy:** Stadium-roze, Camp A1.
   - **Spear Guy:** Camp B1.
   - Kleuren via paletwissels; Fly Guy en Spear Guy wisselen van plek met de rode. +1,7 KB; 672 van 1024 sprite-tiles.
+
+### [v0.9.270] - Battle! Mew v3: Mewtwo's broer
+- Jordi: "Mewtwo's theme is super vet, dat mag iets minder dreigend, wat neutraler" en "Mew heeft alsnog hoge stats". De koers van v2 ("wolkenthema") is losgelaten.
+- **Wat van Mewtwo blijft:** het arrangement 1-op-1: 128 bpm four-on-the-floor, de jagende 16e-bas, gated trance-strijkers, koor, pauken en PSG-lagen, en dezelfde vorm.
+- **Wat minder dreigend is:**
+  - geen frygische Bb of verminderde E meer (A: Am-G-Am-Em; B: D-Am-F-G);
+  - de "imperfecte kloon"-echo staat nu zuiver een octaaf lager (Mew is het origineel);
+  - het kerkorgel is weg; de lead staat op blokgolf + trompet in een lager register;
+  - een korte intro waarin Mew verschijnt.
+- ±3 KB. Les (MUZIEK.md): bij een remix van een goedgekeurd nummer alleen het karakter veranderen, niet tegelijk tempo, groove en instrumenten.

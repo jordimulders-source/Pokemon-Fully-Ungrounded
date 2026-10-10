@@ -18126,3 +18126,18 @@ Gemaakt door een agent (`legends3_theme.py`). Alleen stock-samples, samen ±16 K
 - **Battle! Uxie, Mesprit & Azelf** (`MUS_GROUNDED_VS_LAKE_TRIO`), 144 bpm, F#-klein.
   - Drie motieven op één akkoordschema: kennis (kristallen 3+3+2 op glockenspiel + PSG), emotie (hobo met zuchten) en wilskracht (klimmende fanfare). Daarna klinken ze samen.
 - Volgens de nieuwe lessen: geen zachte DirectSound-noten (velocity ≥ 76), sub-bas op het PSG-golfkanaal, drums als gewone voice (niet `no_resample`).
+
+### [v0.9.243] - Area Zero en Battle! Area Zero
+Gemaakt door een agent (`areazero_theme.py`, één eigen sample `az_crystal`, ±10 KB).
+- **Area Zero** (`MUS_GROUNDED_AREA_ZERO`), nabouw van het Scarlet/Violet-thema, 120 bpm, Eb-klein, het hele nummer van 128 s.
+  - Het opent met alleen het kristal-arpeggio. Daarna pauzes met alleen belletjes, koorakkoorden Eb/B, de aria met drums, en een groove op een Eb-orgelpunt met koorzuchten.
+  - Jordi's feedback verwerkt:
+    - de lead is een GBA-blokgolf in plaats van een stem;
+    - koren als sfeer;
+    - de "uncanny" trilling nagebootst: de lead zingt ±0,4 halve toon hoog met een brede vibrato, net als in het origineel (uitzetten: `LEAD_DETUNE = 0`);
+    - de pauzes blijven staan.
+  - Bas op het PSG-golfkanaal (driehoek), nergens onder C2.
+  - Klinkt op alle zes Area Zero-kaarten.
+- **Battle! Area Zero** (`MUS_GROUNDED_VS_AREA_ZERO`), 150 bpm, remix voor alle paradoxen, Koraidon, Miraidon, Terapagos en wilde gevechten in Area Zero.
+  - Ook de trainerklasse `TRAINER_CLASS_ZERO_LAB` vecht erop (Jordi: "alle battle themes worden remixes van Area Zero"). Terugdraaien kan met één regel in `src/pokemon.c`.
+- Beide op -V127, gemeten: piek 96/101, 0 overlopen. De agent had -V085, met een piek van 65.

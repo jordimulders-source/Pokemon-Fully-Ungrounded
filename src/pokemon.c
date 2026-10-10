@@ -6115,6 +6115,10 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
      || trainerClass == TRAINER_CLASS_SHY_SQUAD) // Project Grounded: ook de Shy Squad op Yoshi's Island
         return MUS_GROUNDED_VS_SUNSET_WILDS;
 
+    // Project Grounded: Wario (eindbaas in het fort op Yoshi's Island, ook in het Stadium) vecht op Fiery Cavern (Wario Land 4)
+    if (trainerId == TRAINER_YI_WARIO || trainerId == TRAINER_STADIUM_WARIO)
+        return MUS_GROUNDED_WL4_FIERY_CAVERN;
+
     // Project Grounded: de Boos (Commander Boo op Yoshi's Island, Boo in het Stadium) vechten op Boo Lake & Broken Pier
     if (trainerId == TRAINER_YI_COMMANDER_BOO || trainerId == TRAINER_STADIUM_BOO)
         return MUS_GROUNDED_VS_BROKEN_PIER;

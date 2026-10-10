@@ -18233,3 +18233,7 @@ Gekozen door Jordi:
 - **Arabian Night** in alle verdiepingen van **Mirage Tower** (was het Mt. Chimney-thema). Jordi wilde de plek met geesten: Yamask, Galar-Yamask, Golett, Cofagrigus en Runerigus wonen daar.
 - **Toy Block Tower** in de **Mauville Game Corner** (was het vanilla Game Corner-thema).
 - **Monsoon Jungle** als kaartmuziek in **Fortree Jungle** en **Mangrove Mire** (was het Route 119-thema; Route 119 zelf houdt zijn thema). De wilde gevechten daar blijven op Lakeside Park.
+
+### [v0.9.250] - Wario vecht op Fiery Cavern
+- **Wario** (eindbaas in het fort op Yoshi's Island, en in het Stadium) vecht op **Fiery Cavern** uit Wario Land 4 (Jordi: "perfect voor Wario thema"). Een eigen Wario-intro is in de maak: knoflook, de grote W, Wario in poses.
+- **Toxic Landfill** (Wario Land 4) is een nieuwe keuze bij WILD MUSIC en TRAINER MUSIC, als "LANDFILL" (Jordi: "een goed ander battle theme").

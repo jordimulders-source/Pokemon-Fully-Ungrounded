@@ -22,6 +22,7 @@ const struct BattleMusicOption gWildBattleMusicOptions[] =
     { COMPOUND_STRING("YOSHI CASTLE"),MUS_GROUNDED_VS_YOSHI_CASTLE },
     { COMPOUND_STRING("BROKEN PIER"),MUS_GROUNDED_VS_BROKEN_PIER },
     { COMPOUND_STRING("SUNSET WILDS"),MUS_GROUNDED_VS_SUNSET_WILDS },
+    { COMPOUND_STRING("LANDFILL"),MUS_GROUNDED_WL4_TOXIC_LANDFILL }, // Wario Land 4 (Jordi: "een goed ander battle theme")
 };
 
 const struct BattleMusicOption gTrainerBattleMusicOptions[] =
@@ -37,6 +38,7 @@ const struct BattleMusicOption gTrainerBattleMusicOptions[] =
     { COMPOUND_STRING("NEO PLASMA"),   MUS_GROUNDED_VS_NEO_PLASMA },
     { COMPOUND_STRING("DEOXYS"),       MUS_RG_VS_DEOXYS },
     { COMPOUND_STRING("LEGEND DOGS"),  MUS_C_VS_LEGEND_BEAST },
+    { COMPOUND_STRING("LANDFILL"),MUS_GROUNDED_WL4_TOXIC_LANDFILL }, // Wario Land 4
 };
 
 const u8 gWildBattleMusicOptionsCount = ARRAY_COUNT(gWildBattleMusicOptions);

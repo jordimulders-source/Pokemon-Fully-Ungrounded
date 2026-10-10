@@ -22,12 +22,14 @@ from sample_utils import write_wav
 OUT = 'sound/direct_sound_samples/grounded'
 
 
-def crystal(rate=16000, key=84, dur=0.9):
+def crystal(rate=16000, key=84, dur=2.6):
     f0 = 440 * 2 ** ((key - 69) / 12)
     t = np.arange(int(rate * dur)) / rate
     x = np.zeros_like(t)
     # (verhouding, sterkte, uitsterftijd s): grondtoon draagt, octaaf + licht onharmonische glans sterven snel
-    for r, a, d in ((1.0, 1.0, 0.45), (2.0, 0.30, 0.18), (3.01, 0.12, 0.09), (4.18, 0.05, 0.05)):
+    # v5 (Jordi: 'de piepjes missen de helft'): in het origineel klinkt elke belnoot ±1 maat door (wolk van tonen);
+    # grondtoon sterft nu in 1,3 s i.p.v. 0,45 s
+    for r, a, d in ((1.0, 1.0, 1.3), (2.0, 0.30, 0.35), (3.01, 0.12, 0.12), (4.18, 0.05, 0.06)):
         x += a * np.sin(2 * np.pi * f0 * r * t) * np.exp(-t / d)
     att = np.minimum(1, t / 0.004)                     # 4 ms aanzet: tik zonder klik
     x *= att
@@ -127,6 +129,23 @@ def choir(i, bar, pos, ln, src=VOCALS, rate=RATE):
     return x / pk * 0.95, loop, pk
 
 
+# v5 (Jordi: 'de aria klinkt nog niet overal even vloeiend; doe het zoals bij het koor'): de aria in hele frasen uit
+# de vocals-stem (eigen aanzet, glijders en uitklink), elk een kitnoot op de eigen toonhoogte: (maat, 16e, lengte in 16en).
+# m36 en m39 zitten niet in de vocals-stem (Spleeter: 'other'); die blijven noten op az_voice.
+ARIA_PHRASES = [(24, 11, 44), (27, 13, 15), (29, 3, 54), (32, 13, 51), (37, 4, 28)]
+
+
+def aria(j, bar, pos, ln, src=VOCALS, rate=RATE):
+    t = BAR1 + (bar - 1) * 2 + pos * 0.125
+    x, sr = _read(src, t - 0.03, t + ln * 0.125)
+    x = _to_rate(x, sr, rate)
+    x[:int(0.01 * rate)] *= np.linspace(0, 1, int(0.01 * rate))
+    x[-int(0.08 * rate):] *= np.linspace(1, 0, int(0.08 * rate))
+    pk = np.abs(x).max()
+    print('az_aria_%d: m%d.%02d, %.2f s' % (j, bar, pos, len(x) / rate))
+    return x / pk * 0.95, pk
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     write_wav(os.path.join(OUT, 'az_crystal.wav'), crystal(), 16000, 84, None)
@@ -143,6 +162,13 @@ def main():
         y, loop, pk = choir(i, bar, pos, ln, src)
         write_wav(os.path.join(OUT, 'az_choir_%02d.wav' % i), y, RATE, 60, loop)
         gains.append(pk)
+    ag = []
+    for j, (bar, pos, ln) in enumerate(ARIA_PHRASES):
+        y, pk = aria(j, bar, pos, ln, src)
+        write_wav(os.path.join(OUT, 'az_aria_%d.wav' % j), y, RATE, 60, None)
+        ag.append(pk)
+    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areazero_aria_gain.txt'), 'w').write(
+        ' '.join('%.4f' % (g / max(ag)) for g in ag) + '\n')
     # relatieve luidheid per roep (genormaliseerde samples; het thema zet de velocity hiernaar)
     open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areazero_choir_gain.txt'), 'w').write(
         ' '.join('%.4f' % (g / max(gains)) for g in gains) + '\n')

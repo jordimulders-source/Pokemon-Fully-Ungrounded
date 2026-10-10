@@ -7908,3 +7908,23 @@ DirectSoundWaveData_az_choir_14::
 	.align 2
 DirectSoundWaveData_az_choir_15::
 	.incbin "sound/direct_sound_samples/grounded/az_choir_15.bin"
+
+	.align 2
+DirectSoundWaveData_az_aria_0::
+	.incbin "sound/direct_sound_samples/grounded/az_aria_0.bin"
+
+	.align 2
+DirectSoundWaveData_az_aria_1::
+	.incbin "sound/direct_sound_samples/grounded/az_aria_1.bin"
+
+	.align 2
+DirectSoundWaveData_az_aria_2::
+	.incbin "sound/direct_sound_samples/grounded/az_aria_2.bin"
+
+	.align 2
+DirectSoundWaveData_az_aria_3::
+	.incbin "sound/direct_sound_samples/grounded/az_aria_3.bin"
+
+	.align 2
+DirectSoundWaveData_az_aria_4::
+	.incbin "sound/direct_sound_samples/grounded/az_aria_4.bin"

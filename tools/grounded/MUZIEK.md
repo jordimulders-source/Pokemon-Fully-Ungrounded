@@ -99,6 +99,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Wally 1–5 | `wally_theme.py` | goedgekeurd | "Wally" |
 | Regigigas | `regigigas_theme.py` | wacht op Jordi (v5) | "Regigigas" |
 | Mewtwo | `mewtwo_theme.py` | v3 | "Mewtwo" |
+| Mew (remix van Mewtwo) | `mew_theme.py` | v1 wacht op Jordi | "Mew v1" |
 | Dave (Freed From Desire) | `freed_theme.py` | goedgekeurd | "Dave" |
 | Beasts (Raikou/Entei/Suicune) | `beasts_theme.py` | goedgekeurd | "Raikou", "Beasts" |
 | Zinnia, Ghetsis, PSG-drumfixes | `midi_songs.py` | goedgekeurd | "Zinnia", "Ghetsis", "PSG-drums" |
@@ -705,4 +706,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   jammerlijn, fluitlijn en hats (0 DS-kanalen); 1 basnoot van 490 valt weg. **`drum_and_percussion_kick` als
   `voice_directsound 60` speelt op 13.379 Hz = subdreun** (< 60 Hz 26-33% van de mix); op toets 67 (zoals de FRLG-kit
   via _no_resample) 10-15%. -V100: 0 overlopen, piek 105/127, RMS 3120; audiocheck 49-67 Hz = kick + grondtonen C2/B1.
-
+- Mew v1 (`mew_theme.py`, 679, remix van Battle! Mewtwo; Jordi: "minder evil, curious, geen kloon, originator"):
+  zelfde vorm/contouren, 132 bpm, A-lydisch (Mewtwo's frygische Bb -> B-groot = lydische II), motief als vraag
+  (fluit) en antwoord (glock 8va), hikje elke 4e maat; Mewtwo's halve-toon-echo wordt de frase gespiegeld in de
+  toonladder op de glock. Hergebruikt `voicegroup_grounded_mewtwo` (geen nieuwe samples/voicegroup). Glock/harp hebben
+  release 242 (±174 ticks staart): 8en op de glock of harp vreten kanalen, gebruik kwarten of zet ze op de 'en'.

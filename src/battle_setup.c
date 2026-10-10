@@ -563,8 +563,8 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_PHIONE:
         CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_MEW:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
+    case SPECIES_MEW: // Project Grounded: eigen thema, remix van Battle! Mewtwo (het origineel, nieuwsgierig)
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_GROUNDED_VS_MEW);
         break;
     case SPECIES_RAIKOU: // Project Grounded: de legendary beasts krijgen hun eigen thema, Raikou met bliksems
         CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_GROUNDED_VS_RAIKOU);

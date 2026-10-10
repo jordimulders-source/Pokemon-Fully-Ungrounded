@@ -132,7 +132,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
-| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v7 wacht op Jordi (v6 tot 32 s goed; v7: strijkerssectie maat 21-52 als halve maten uit het origineel; 403 KB samples) | "Ruinous" |
+| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v8 wacht op Jordi (v7 'heel dichtbij'; v8: stem 'other' maat 21-65 op zijn eigen plek, 2-maatsstukken 8 kHz DPCM; 447 KB samples) | "Ruinous" |
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
@@ -821,3 +821,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   scheidt niet: alle paren 0,90), zonder transpositie (sneller afspelen verschuift het 16e-ritme), de eerste twee
   maten (21-22) verplicht echt; niveau per halve maat = doel - bron. Mix-gelijkenis maat 21-52 0,62 -> 0,74 (maat
   13-20, goedgekeurd: 0,77). Netto +36 KB (strijkerknipsel weg).
+- Ruinous v8 (Jordi over v7: 'heel dichtbij; 34-35 s pakt hij een stuk dat pas later hoort, 37/41 s kapt hij af,
+  48-49/56 s melodie te snel af, 1:23-1:43 geen lekkere overgang'): **vervang nooit een maat door een 'gelijkende'
+  van elders**: een metriek van 0,85 is voor het oor een ander stuk muziek en halve maten kappen doorklinkende noten.
+  Gemeten: geen enkele maat in 21-64 herhaalt een andere >= 0,95. Nu de stem 'other' zelf op zijn eigen plek
+  (maat 21-65), stukken van 2 maten, 160-4000 Hz, 8 kHz, DPCM (293 KB), om en om op twee sporen met 60 ms lineaire
+  overlap (zelfde opname: lineair, niet gelijk-vermogen), één gezamenlijke normalisatie. Maat 53-64 had alleen
+  het pad < 450 Hz (de opbouw/roffels misten hun hoge laag: mix-gelijkenis 0,53 -> 0,73); maat 21-52 0,74 -> 0,86.

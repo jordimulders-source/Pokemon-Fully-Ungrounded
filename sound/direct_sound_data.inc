@@ -7905,81 +7905,24 @@ DirectSoundWaveData_ruinous_lo58::
 DirectSoundWaveData_ruinous_ostbar2::
 	.incbin "sound/direct_sound_samples/grounded/ruinous_ostbar2.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_g::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_g.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m36::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m36.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m37::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m37.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m38::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m38.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m39::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m39.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m52::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m52.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m53::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m53.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m54::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m54.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m55::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m55.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m56::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m56.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m57::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m57.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m58::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m58.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m59::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m59.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m60::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m60.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m61::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m61.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m62::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m62.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m63::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m63.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pad_m64::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m64.bin"
 
 	.align 2
 DirectSoundWaveData_ruinous_wide14::
@@ -7998,41 +7941,93 @@ DirectSoundWaveData_az_bells_5::
 	.incbin "sound/direct_sound_samples/grounded/az_bells_5.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_sec40::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_sec40.bin"
+DirectSoundWaveData_ruinous_st21::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st21.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_sec41::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_sec41.bin"
+DirectSoundWaveData_ruinous_st23::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st23.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_sec42::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_sec42.bin"
+DirectSoundWaveData_ruinous_st25::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st25.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_sec43::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_sec43.bin"
+DirectSoundWaveData_ruinous_st27::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st27.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_sec64::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_sec64.bin"
+DirectSoundWaveData_ruinous_st29::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st29.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_sec72::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_sec72.bin"
+DirectSoundWaveData_ruinous_st31::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st31.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_sec90::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_sec90.bin"
+DirectSoundWaveData_ruinous_st33::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st33.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_sec92::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_sec92.bin"
+DirectSoundWaveData_ruinous_st35::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st35.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_sec97::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_sec97.bin"
+DirectSoundWaveData_ruinous_st37::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st37.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_sec99::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_sec99.bin"
+DirectSoundWaveData_ruinous_st39::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st39.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st41::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st41.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st43::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st43.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st45::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st45.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st47::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st47.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st49::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st49.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st51::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st51.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st53::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st53.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st55::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st55.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st57::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st57.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st59::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st59.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st61::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st61.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st63::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st63.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st65::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st65.bin"

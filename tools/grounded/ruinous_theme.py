@@ -151,24 +151,12 @@ CALL_ENV = [-107, -105, -47, -37, -37, -37, -35, -34, -33, -34, -39, -40, -43, -
             -30, -26, -27, -30, -28, -30, -31, -32, -33, -31, -34, -32, -30, -33, -33, -32, -32, -33, -31, -31]
 CALL_V = 64                           # CC7 bij het luidste punt (-26 dB)
 WIDE_V = 100                          # pad-spoor in maat 13-20 (brede knipsels)
-# v7 strijkerssectie (maat 21-52): per halve maat (2 x (maat-1) + 0/1) de bron-halve maat uit het origineel en de
-# niveaucorrectie doel - bron (dB, 450-5000 Hz); gelijkenis per paar in halfmap (chroma per 8e 0,7 + spectrum 0,3)
-SEC_PROG = {40: 90, 41: 91, 42: 92, 43: 93, 64: 94, 72: 95, 90: 96, 92: 97, 97: 98, 99: 99}
-SEC_MAP = {   # doel: (bron, dB)
-    40: (40, 0.0), 41: (41, 0.0), 42: (42, 0.0), 43: (43, 0.0), 44: (99, -2.1), 45: (40, -2.5),
-    46: (41, 0.7), 47: (97, -2.7), 48: (72, 2.5), 49: (41, 0.9), 50: (42, -1.0), 51: (43, -0.4),
-    52: (42, -1.7), 53: (40, -2.5), 54: (72, 0.5), 55: (41, -2.1), 56: (64, -0.4), 57: (97, -1.0),
-    58: (90, -1.8), 59: (99, -1.6), 60: (92, -0.3), 61: (92, -0.3), 62: (64, -3.7), 63: (92, -0.3),
-    64: (64, 0.0), 65: (97, 0.6), 66: (90, -1.0), 67: (99, -4.9), 68: (92, -2.5), 69: (92, -5.8),
-    70: (64, -2.5), 71: (64, -0.6), 72: (72, 0.0), 73: (72, 0.2), 74: (72, 0.8), 75: (43, -6.1),
-    76: (72, 2.0), 77: (72, -1.6), 78: (41, -1.9), 79: (41, -0.8), 80: (72, 3.7), 81: (41, -2.7),
-    82: (72, 1.2), 83: (64, -5.8), 84: (40, -2.9), 85: (72, -0.1), 86: (72, -0.5), 87: (72, -0.6),
-    88: (64, 0.4), 89: (97, 0.1), 90: (90, 0.0), 91: (99, -1.0), 92: (92, 0.0), 93: (92, 2.1),
-    94: (92, -2.2), 95: (92, 1.4), 96: (64, 0.6), 97: (97, 0.0), 98: (90, -0.5), 99: (99, 0.0),
-    100: (92, 1.7), 101: (92, 1.2), 102: (97, 0.7), 103: (92, 1.1),
-}
-PAD_OWN = {b: 110 + i for i, b in enumerate((36, 37, 38, 39) + tuple(range(52, 65)))}   # maat -> programma (eigen pad)
-STR_VOL = 100                          # sectie: niveau t.o.v. pad/drums (gemeten in de mix)
+# v8 strijkerssectie + alles van de stem 'other' in maat 21-65: het origineel zelf op zijn eigen plek, stukken van
+# 2 maten (ruinous_samples.ST_PIECES), om en om op 'str' en 'str2' zodat elk stuk zijn overloop uitspeelt
+ST_PIECES = [(21, 2), (23, 2), (25, 2), (27, 2), (29, 2), (31, 2), (33, 2), (35, 2), (37, 2), (39, 2), (41, 2), (43, 2), (45, 2), (47, 2), (49, 2), (51, 2), (53, 2), (55, 2), (57, 2), (59, 2), (61, 2), (63, 2), (65, 1)]
+ST_PROG = {b: 40 + i for i, (b, _) in enumerate(ST_PIECES)}
+PAD_OWN = {}   # v8: geen eigen padknipsels meer (maat 21-65 = ST_PIECES)
+STR_VOL = 127                          # sectie: niveau t.o.v. pad/drums (gemeten in de mix)
 BASS_NOTES = {   # maat: stap:lengte:noot:velocity (pyin per 16e op de basstem, maat 5-69; v4)
     5: '0:1:D#2:80 1:1:D#2:87 2:7:E2:99 9:1:F2:80 10:1:E2:82 11:2:D#2:81 14:1:E2:80',
     13: '0:2:F2:80',
@@ -258,8 +246,6 @@ def compose():
             CC['ost'].append((t0, 'prog', OSTP if b <= 12 else OSTP2))
             if b in (5, 66):            # maat 66-69 liggen in het origineel 12,7 dB onder de grooves (5-12: 7-9 dB)
                 CC['ost'].append((t0, 7, 84 if b == 5 else 50))
-        if b in (37, 45):               # v6: maat 37-44 lag het pad 3-7 dB te luid in de mix (250-500 Hz, gemeten)
-            CC['pad'].append((t0, 7, 63 if b == 37 else 100))
         if b in PAD_OWN:              # het eigen stuk pad van deze maat (A/B met het getransponeerde pad < 0,75)
             add(P, 'pad', t0, 0, 16, 60, 120)
             CC['pad'].append((t0, 'prog', PAD_OWN[b]))
@@ -268,6 +254,8 @@ def compose():
             CC['pad'].append((t0, 'prog', WIDE14 if b <= 16 else WIDE18))
             if b == 13:
                 CC['pad'].append((t0, 7, WIDE_V))
+        elif 21 <= b <= 65:            # v8: het pad zit in de knipsels van de stem 'other' (ST_PIECES)
+            pass
         elif 13 <= b <= 64:
             if b == 21:
                 CC['pad'].append((t0, 7, 100))
@@ -281,13 +269,12 @@ def compose():
                     add(P, 'pad', t0, h, ln, 60 + SHIFT[root], 120)
                     CC['pad'].append((t0 + h * S, 'prog', PADP))
         # ------------------------------------------------------------------ strijker (vanaf maat 21, Jordi: 'vanaf 32 s mis ik de strijker')
-        for hh in (0, 1):           # v7: strijkerssectie, halve maten uit het origineel
-            h = 2 * (b - 1) + hh
-            if h in SEC_MAP:
-                src, db = SEC_MAP[h]
-                add(P, 'str', t0, 8 * hh, 8, 60, 120)
-                CC['str'].append((t0 + 8 * hh * S, 'prog', SEC_PROG[src]))
-                CC['str'].append((t0 + 8 * hh * S, 7, max(1, min(127, round(STR_VOL * 10 ** (db / 20))))))
+        for i, (b1, n1) in enumerate(ST_PIECES):   # v8: de stem 'other' zelf, 2 maten per stuk
+            if b1 == b:
+                trk = 'str' if i % 2 == 0 else 'str2'
+                add(P, trk, t0, 0, 16 * n1 + 1, 60, 127)
+                CC[trk].append((t0, 'prog', ST_PROG[b1]))
+                CC[trk].append((t0, 7, STR_VOL))
         # ------------------------------------------------------------------ bas (noot voor noot uit de stem)
         if b in BASS_NOTES:
             for st, ln, n, v in pat4(BASS_NOTES[b]):
@@ -411,17 +398,15 @@ VOICES = {
     LO: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_lo58, 255, 0, 255, 160',
     OSTP: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_ostbar, 255, 0, 255, 140',
     OSTP2: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_ostbar2, 255, 0, 255, 140',
-    PADP: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad, 255, 0, 255, 140',
     INTROP: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_intro, 255, 0, 255, 160',
-    PADG: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_g, 255, 0, 255, 140',
     BASS: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_bass, 255, 0, 255, 100',
     DRUMS: 'voice_keysplit_all voicegroup_ruinous_drumset',
     CALL: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_call, 120, 0, 255, 170',
     WIDE14: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_wide14, 255, 0, 255, 140',
     WIDE18: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_wide18, 255, 0, 255, 140',
 }
-for _h, _p in SEC_PROG.items():
-    VOICES[_p] = 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_sec%d, 255, 0, 255, 140' % _h
+for _b, _p in ST_PROG.items():
+    VOICES[_p] = 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_st%d, 255, 0, 255, 200' % _b
 for _b, _p in PAD_OWN.items():
     VOICES[_p] = 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m%d, 255, 0, 255, 140' % _b
 
@@ -459,11 +444,12 @@ TRACKS = [   # (naam, programma, volume, pan)
     ('fx', DRUMS, 110, 64), ('fx2', DRUMS, 80, 58),
     ('bass', BASS, 78, 64), ('ost', OSTP, 84, 60), ('pad', PADP, 100, 64), ('lo', LO, 30, 64),   # balans gemeten t.o.v. de drums (stems)
     ('intro', INTROP, 49, 64),
-    ('str', 90, 100, 66),
+    ('str', 40, 100, 64),
+    ('str2', 41, 100, 64),
     ('call', CALL, 1, 58),   # even luid als het pad (gemeten in de stem 'other')   # het origineel ligt in maat 1-4 15,5 dB onder de grooves (gemeten)
 ]
 PSG = set()
-ORDER = ['intro', 'tk', 'bm', 'fx', 'bass', 'call', 'str', 'lo', 'ost', 'pad', 'fx2', 'sn', 'hh']
+ORDER = ['intro', 'tk', 'bm', 'fx', 'bass', 'call', 'str', 'str2', 'lo', 'ost', 'pad', 'fx2', 'sn', 'hh']
 DRUMPARTS = ('tk', 'bm', 'sn', 'hh', 'fx', 'fx2')
 # hoe lang een slag mag doorklinken (16en); de volgende slag in dezelfde partij kapt eerder
 RING = {TAIKO: 4, BOOM: 2, KA: 1, IMPACT: 16, CRASH: 6, HAT: 1, SNARE: 1, TAIKO_LO: 3, KICK: 2}

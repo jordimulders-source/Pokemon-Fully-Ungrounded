@@ -196,16 +196,14 @@ CUTS['ruinous_ostbar'] = ('other', at(8, 0), at(9, 0) + 0.08, 60, (55, 5000), No
 CUTS['ruinous_ostbar2'] = ('other', at(67, 0), at(68, 0) + 0.08, 60, (55, 2600), None)
 #  pad: het aangehouden B3+F#4 van de grooves (stem 'other' < 450 Hz, zonder de lijn erboven), hele maat 19;
 #  per maat aangeslagen en naar de grondtoon getransponeerd, net als het ostinato
-CUTS['ruinous_pad'] = ('other', at(19, 0), at(20, 0) + 0.08, 60, (160, 450), None)
 #  pad_g: in de G-maten ligt het pad in octaven (G3 + G4, gemeten maat 26-50): eigen knipsel uit maat 33
-CUTS['ruinous_pad_g'] = ('other', at(33, 0), at(34, 0) + 0.08, 60, (160, 450), None)
 #  pad_mNN: maten waar het pad van het origineel anders ligt (in de A/B chroma < 0,75 met het getransponeerde B/G-pad:
 #  de D/A-Bm-Em-maten 36-39 en de roffels/opbouw 52-64): het eigen stuk van die maat (< 450 Hz)
-PAD_OWN = (36, 37, 38, 39) + tuple(range(52, 65))
+PAD_OWN = ()   # v8: maat 21-65 zit het pad in de knipsels van de stem 'other' (ST_PIECES)
 for _b in PAD_OWN:
     CUTS['ruinous_pad_m%d' % _b] = ('other', at(_b, 0), at(_b + 1, 0) + 0.08, 60, (160, 450), None)
 #  het pad bevat alleen < 450 Hz: 4 kHz is genoeg (6,4 KB per maat i.p.v. 17,6 KB)
-for _n in ['ruinous_pad', 'ruinous_pad_g'] + ['ruinous_pad_m%d' % _b for _b in PAD_OWN]:
+for _n in ['ruinous_pad_m%d' % _b for _b in PAD_OWN]:
     RATES[_n] = 4000
 #  bass: één B1 uit de basstem (maat 19, 16e 11-13: alleen B1 + boventonen, 0,3 s) met zijn natuurlijke uitklank;
 #  de noten zelf komen noot voor noot uit de basstem (pyin per 16e)
@@ -225,13 +223,20 @@ CUTS['ruinous_call'] = ('vocals', at(10, 4), at(10, 12), 78, (300, 5500), 'held'
 #  strijkerssectie in akkoorden (F#5 + D#6 + F#6 + A#6 tegelijk, geen samenhangend vibrato: ensemble), geen solo-
 #  lijn. Dus geen noten meer maar halve maten uit de stem 'other' (450-5000 Hz, 6 kHz), hergebruikt waar het
 #  origineel zich herhaalt (keuze: ruinous_theme.SEC_MAP, gemeten met chroma per 8e + spectrum).
-SEC_SRC = [40, 41, 42, 43, 64, 72, 90, 92, 97, 99]   # halve maten: 2 x (maat - 1) + 0/1
-for _h in SEC_SRC:
-    CUTS['ruinous_sec%d' % _h] = ('other', at(_h // 2 + 1, 8 * (_h % 2)), at(_h // 2 + 1, 8 * (_h % 2) + 8) + 0.08, 60,
-                                  (450, 5000), None)
-    RATES['ruinous_sec%d' % _h] = 6000
+#  v8 (Jordi over v7: 'heel dichtbij; 32 s komt perfect erin, maar 34-35 s pakt hij een stuk dat pas later hoort,
+#  37 en 41 s kapt hij af, 48-49 en 56 s de melodie te snel af; 1:23-1:43 geen lekkere overgang'): geen vervanging
+#  meer (geen enkele maat in 21-64 herhaalt een andere >= 0,95: gemeten, beste 0,94), maar de stem 'other' zelf op
+#  zijn eigen plek, in stukken van 2 maten (maat 21-64, plus maat 65), 160-4000 Hz, 8 kHz, DPCM. Elk stuk loopt
+#  ST_XF s door met een lineaire uitfade; het volgende begint met dezelfde lineaire infade (zelfde opname, dus
+#  samen precies 1). Eén gezamenlijke normalisatie (ST_NORM): de dynamiek van het origineel blijft.
+ST_PIECES = [(21, 2), (23, 2), (25, 2), (27, 2), (29, 2), (31, 2), (33, 2), (35, 2), (37, 2), (39, 2), (41, 2), (43, 2), (45, 2), (47, 2), (49, 2), (51, 2), (53, 2), (55, 2), (57, 2), (59, 2), (61, 2), (63, 2), (65, 1)]   # (eerste maat, aantal maten)
+ST_NAMES = ['ruinous_st%d' % _b for _b, _n in ST_PIECES]
+ST_XF = 0.06
+for _b, _n in ST_PIECES:
+    CUTS['ruinous_st%d' % _b] = ('other', at(_b, 0), at(_b + _n, 0) + ST_XF, 60, (160, 4000), None)
+    RATES['ruinous_st%d' % _b] = 8000
 SHELF = {}   # dB (v6: strijkerknipsel)
-WHOLE = tuple('ruinous_sec%d' % _h for _h in SEC_SRC) + ('ruinous_wide14', 'ruinous_wide18', 'ruinous_intro', 'ruinous_lo58', 'ruinous_ostbar', 'ruinous_ostbar2', 'ruinous_pad', 'ruinous_pad_g') + tuple(
+WHOLE = tuple(ST_NAMES) + ('ruinous_wide14', 'ruinous_wide18', 'ruinous_intro', 'ruinous_lo58', 'ruinous_ostbar', 'ruinous_ostbar2') + tuple(
     'ruinous_pad_m%d' % _b for _b in PAD_OWN)   # niet hertonen
 
 
@@ -278,6 +283,14 @@ def make_cut(name):
     if bnd:
         x = band(x, *bnd)
     x = x - np.mean(x)
+    if name in ST_NAMES:            # lineaire overgang naar het volgende stuk (zelfde opname)
+        nf = int(ST_XF * SR)
+        if name != ST_NAMES[0]:
+            x[:nf] *= np.linspace(0, 1, nf)
+        else:
+            x[:int(0.003 * SR)] *= np.linspace(0, 1, int(0.003 * SR))
+        x[-nf:] *= np.linspace(1, 0, nf)
+        return x, None, 0.0
     if name in WHOLE:
         cents = 0.0
     else:
@@ -290,6 +303,9 @@ def make_cut(name):
         a, z = int(lp[0] * SR), int(min(lp[1] * SR, len(x)))
         x, loop = xloop(x, a, z, int(0.25 * SR))
     return norm(x), loop, cents
+
+
+ST_NORM = 0.97 / 0.534   # gezamenlijke schaal van alle ST-knipsels (piek van de luidste, gemeten)
 
 
 SAMPLES = {   # naam: (functie, grondtoon) - synthetische drums (ongewijzigd sinds v1)
@@ -320,7 +336,8 @@ def main(only=None):
             x, lpx, cents = make_cut(name)
             key = CUTS[name][3]
             rate = RATES.get(name, RATE)
-            a = norm(resample(x, SR, rate))
+            a = resample(x, SR, rate)
+            a = np.clip(a * ST_NORM, -1, 1) if name in ST_NAMES else norm(a)
             lp = (int(lpx[0] * rate / SR), int(lpx[1] * rate / SR)) if lpx else None
             info = ', gestemd %+.0f ct%s' % (-cents, ', loop %.2f-%.2f s' % (lp[0] / rate, lp[1] / rate) if lp else '')
         write_wav(OUT + name + '.wav', a, rate, key, lp)

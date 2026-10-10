@@ -18347,3 +18347,14 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - De MIDI is opgeschoond, niet hergecomponeerd: verschoven echo- en kopiesporen op de tel gezet, rare programma's vervangen (bijv. een paukenpartij op "synth strings"), vier crashes toegevoegd. **Na maat 48,5 ligt alles een halve maat verschoven** (zo in de MIDI, zo gelaten): Jordi controleert tegen het origineel.
 - Bij het samenvoegen schoof de songtabel twee plekken op (Dialga en Mew); rechtgezet en per constante gecontroleerd.
 - Generator: `tools/grounded/dialga_theme.py`.
+
+### [v0.9.266] - Battle! Ultra Beast
+- Nieuw thema `MUS_GROUNDED_VS_ULTRA_BEAST` (677), een eigen compositie op 168 bpm met de regels van een battle theme (intro, bas-ostinato in 3+3+2, één duidelijke lead) maar "uit een andere dimensie".
+  - **Toonladder:** het thema is octatonisch en komt terug een kleine terts hoger en lager, in dezelfde tonen, zodat het verschuift zonder ergens aan te komen. Een heeltoons deel in 7/8 en een "glitch-dimensie" op een Db-pedaal.
+  - **Lead:** een glazen FM-klank met kwarttoon-buigingen.
+  - **Spiegelbeeld:** een PSG-echo die net niet klopt (3 zestienden later, 0,3 halve toon te hoog) en koorstemmen die tegengesteld wegbuigen.
+  - **Glitches:** een omgekeerde zwelling naar elke sectie, glas-stotters en sweep-zaps.
+- Twee eigen samples (`ub_glass`, `ub_swell`, 11 kHz): ±25 KB in totaal.
+- Gekoppeld aan de negen Ultra Beasts in Ultra Space (stonden op het Regi-thema) en aan elk ander gevecht met een UB (Poipole/Naganadel, wild). Necrozma blijft op het generieke legendary-thema.
+- Generator: `tools/grounded/ub_theme.py` + `ub_samples.py`.
+- De songtabel schoof bij het samenvoegen opnieuw op; `songtable_check.py` ving het, rechtgezet.

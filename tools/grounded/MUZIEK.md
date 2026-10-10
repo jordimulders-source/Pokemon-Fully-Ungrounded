@@ -139,6 +139,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Legendary Pokémon (670) | `legendary_theme.py` | v1 wacht op Jordi (generiek legendary-thema, Hoenn-stijl: Weather Trio-pauken, E4-koper, 176 bpm, alleen stock-samples) | "Legendary" |
 | Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
 | Battle! Dialga/Palkia (678) | `dialga_theme.py` | v1 wacht op Jordi (uit zijn MIDI, alleen stock-samples, ±9 KB) | "Dialga" |
+| Battle! Ultra Beast (677) | `ub_theme.py`, `ub_samples.py` | v1 wacht op Jordi (eigen compositie, octatonisch/heeltoons, 7/8, glazen FM-lead met microtonale bends; alle UB-gevechten in Ultra Space) | "Ultra Beast" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -737,3 +738,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   octaaf-echo van spoor 6) eerst op de tel zetten; de echo/arpeggio op PSG-vierkanten kost geen kanalen. fp-houdnoten
   (accent + dezelfde noot op v40) samenvoegen. balance.py tegen FluidR3: GM-synthbas is 11 dB luider dan de GBA-
   synth bass (spoor op 127 is het maximum). -V088: 0 overlopen, piek 94/127, RMS 2985; ROM ±9 KB (alleen stock).
+- Ultra Beast v1 (`ub_theme.py`, 677, 168 bpm, octatonisch C, B heeltoons in 7/8): **'andere dimensie' zonder horror of
+  euforie** = een ladder zonder grondtoonfunctie (octatonisch: het thema een kleine terts omlaag/omhoog geeft dezelfde
+  tonen) + microtonale details (kwarttoon-scoops/-wiebels op de lead via BENDR 2, PSG-echo 0,3 halve toon te hoog,
+  twee koorstemmen die tegengesteld een kwarttoon wegbuigen). Glazen lead = FM met een niet-harmonische modulator
+  (x1,41) en exacte loop (gehele perioden van alle oscillatoren in 2760 samples, 11 kHz). Omgekeerde zwelling =
+  FM-klok achterstevoren, 1,15 s eindigend op de downbeat (2 kanalen). Batchrec -V090: 0 overlopen, piek 95/127,
+  RMS 3000-3450, max -5,6 dB; audiocheck 45-62 Hz = rnd-kick + C2-pedaal (stijgt pas als de drums invallen). ±25 KB.

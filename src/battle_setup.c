@@ -638,32 +638,36 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_TERAPAGOS_STELLAR:
         CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL, MUS_GROUNDED_VS_AREA_ZERO);
         break;
-    case SPECIES_NIHILEGO: // Project Grounded: Ultra Space (placeholder: Regi-thema; eigen intro's en thema's volgen)
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_VS_REGI);
+    case SPECIES_NIHILEGO: // Project Grounded: Ultra Space, Battle! Ultra Beast (ub_theme.py); eigen intro's volgen
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_BUZZWOLE:
-        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_VS_REGI);
+        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_PHEROMOSA:
-        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_VS_REGI);
+        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_XURKITREE:
-        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_VS_REGI);
+        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_CELESTEELA:
-        CreateBattleStartTask(B_TRANSITION_SLICE, MUS_VS_REGI);
+        CreateBattleStartTask(B_TRANSITION_SLICE, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_KARTANA:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_REGI);
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_GUZZLORD:
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_VS_REGI);
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_STAKATAKA:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_SQUARES, MUS_VS_REGI);
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_SQUARES, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_BLACEPHALON:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL, MUS_VS_REGI);
+        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL, MUS_GROUNDED_VS_ULTRA_BEAST);
+        break;
+    case SPECIES_POIPOLE: // Project Grounded: (nog) geen gevecht, Poipole is een gift; voor het geval dat
+    case SPECIES_NAGANADEL:
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_NECROZMA: // Project Grounded: Ultra Space, prismagrot (Battle! Legendary Pokémon)
     case SPECIES_NECROZMA_DUSK_MANE:

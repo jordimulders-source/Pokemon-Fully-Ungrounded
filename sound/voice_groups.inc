@@ -301,3 +301,5 @@
 .include "sound/voicegroups/grounded_arceus.inc"
 .include "sound/voicegroups/drumsets/dialga.inc"
 .include "sound/voicegroups/grounded_dialga.inc"
+.include "sound/voicegroups/drumsets/ub.inc"
+.include "sound/voicegroups/grounded_ub.inc"

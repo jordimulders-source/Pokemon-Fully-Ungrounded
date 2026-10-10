@@ -6355,6 +6355,18 @@ u16 GetBattleBGM(void)
     case SPECIES_HOOPA_CONFINED: // Project Grounded: eigen thema, hijaz/darbuka (tools/grounded/hoopa_theme.py)
     case SPECIES_HOOPA_UNBOUND:
         return MUS_GROUNDED_VS_HOOPA;
+    case SPECIES_NIHILEGO: // Project Grounded: Battle! Ultra Beast (tools/grounded/ub_theme.py), alle Ultra Beasts
+    case SPECIES_BUZZWOLE:
+    case SPECIES_PHEROMOSA:
+    case SPECIES_XURKITREE:
+    case SPECIES_CELESTEELA:
+    case SPECIES_KARTANA:
+    case SPECIES_GUZZLORD:
+    case SPECIES_POIPOLE:
+    case SPECIES_NAGANADEL:
+    case SPECIES_STAKATAKA:
+    case SPECIES_BLACEPHALON:
+        return MUS_GROUNDED_VS_ULTRA_BEAST;
     // Project Grounded: Battle! Legendary Pokémon (tools/grounded/legendary_theme.py), het generieke thema voor
     // legendaries zonder eigen thema. Latias/Latios (Southern Island) komen hier via BattleSetup_StartLatiBattle;
     // de rest staat ook expliciet in BattleSetup_StartLegendaryBattle.
@@ -6442,6 +6454,21 @@ u16 GetBattleBGM(void)
     {
     if (IsMagikarpOnlyWildBattle())
         return MUS_GROUNDED_VS_MAGIKARP; // Project Grounded: Battle! Magikarp (spartelen)
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+    {
+    case SPECIES_NIHILEGO: // Project Grounded: een Ultra Beast in een gewoon wild gevecht (nu nergens) krijgt ook Battle! Ultra Beast
+    case SPECIES_BUZZWOLE:
+    case SPECIES_PHEROMOSA:
+    case SPECIES_XURKITREE:
+    case SPECIES_CELESTEELA:
+    case SPECIES_KARTANA:
+    case SPECIES_GUZZLORD:
+    case SPECIES_POIPOLE:
+    case SPECIES_NAGANADEL:
+    case SPECIES_STAKATAKA:
+    case SPECIES_BLACEPHALON:
+        return MUS_GROUNDED_VS_ULTRA_BEAST;
+    }
     // Project Grounded: wilde gevechten in Area Zero krijgen later Battle! Area Zero (MUS_GROUNDED_VS_AREA_ZERO), nu de gekozen muziek
     if (gMapHeader.regionMapSectionId == MAPSEC_POKEMON_TOWER)
         return MUS_GROUNDED_VS_POKE_TOWER; // Project Grounded: wilde gevechten (ook de GHOST) in de Pokemon Tower

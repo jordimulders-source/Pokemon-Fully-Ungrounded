@@ -18445,3 +18445,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Guyana bij zonsopgang: tafelbergen met een waterval, mist, regenwoud en een rivier, in lagen scrollend. Een roze glinstering schiet door het bos.
   - Vlak voor het gevecht zwiept Mews staart (uit zijn echte sprite) door beeld.
 - Samen ±47 KB (de klok en de effecten stonden al in de ROM). Code: `src/data/legend_intros_dp.h`, generator `tools/grounded/legend_intros_dp.py`.
+
+### [v0.9.276] - Treasures of Ruin v8
+- Jordi over v7: "32 sec komt perfect erin", maar er zat een loop van later in het nummer tussen (34–35 s), het kapte af (37, 41, 48–49, 56 s) en 1:23–1:43 liep niet lekker.
+- Vanaf maat 21 speelt de stem 'other' zelf, elke maat op zijn eigen plek; geen enkele maat wordt meer door een andere vervangen.
+- **Geen afkappen:** stukken van 2 maten, om en om op twee sporen, die 60 ms doorlopen en naadloos overvloeien.
+- **Maat 53–64:** de hoge laag van de opbouw en de roffels zit er nu in.
+- **Stukken op 8 kHz, DPCM:** gelijkenis met het origineel 0,86 (maat 21–52) en 0,74 (maat 53–69). Samples voor dit nummer ±447 KB; ROM vrij 2,35 MB.

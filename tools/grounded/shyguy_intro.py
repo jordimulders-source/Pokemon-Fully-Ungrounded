@@ -61,14 +61,49 @@ def stilt(x0, x1, y0, y1, dy):
     return a
 
 
+SMALL = [(8, 16, 18, 21), (29, 16, 18, 21), (50, 16, 18, 21), (71, 17, 18, 20), (92, 19, 23, 18)]
+BIG = (8, 205, 39, 30)
+SPEAR_FRONT = (312, 1343, 25, 34)    # de Spear Guy die recht in de camera kijkt (armen wijd)
+FLY = [(x, 120, 18, 29) for x in (8, 29, 50, 71)]
+
+
+def achromatic(row):
+    px = row[row[:, 3] > 0][:, :3].astype(int)
+    return len(px) == 0 or (np.abs(px[:, 0] - px[:, 1]).max() < 24 and np.abs(px[:, 1] - px[:, 2]).max() < 24)
+
+
+def flyturn(i):
+    """Een roze Fly Guy van voren, verschrikt: het lijf van de verschrikte roze Shy Guy (frame 4) met de propeller van
+    de roze Fly Guy (stand i) erop. Het blad heeft geen Fly Guy van voren."""
+    body = cut(92, 19, 23, 18, PINK)
+    fly = cut(*FLY[i], dy=PINK)
+    n = 0
+    while achromatic(fly[n]):
+        n += 1
+    prop = fly[:n]
+    ys, xs = np.where(prop[:, :, 3] > 0)
+    shaft = prop[n - 1, :, 3] > 0                      # onderste rij van de propeller = de as
+    sx = int(np.where(shaft)[0].mean())
+    top = np.where(body[0, :, 3] > 0)[0]
+    bx = int(top.mean())                               # midden van de capuchon
+    w = max(body.shape[1], bx - sx + prop.shape[1], prop.shape[1]) + abs(min(0, bx - sx))
+    off = max(0, sx - bx)
+    out = np.zeros((n + body.shape[0], w + off, 4), np.uint8)
+    out[n:, off:off + body.shape[1]] = body
+    px = off + bx - sx
+    m = prop[:, :, 3] > 0
+    out[:n, px:px + prop.shape[1]][m] = prop[m]
+    ys, xs = np.where(out[:, :, 3] > 0)
+    return out[ys.min():ys.max() + 1, xs.min():xs.max() + 1]
+
+
 # ------------------------------------------------------------------ de cast
 def cast():
     """Per figuur: lijst frames (RGBA, voeten onderaan). Kijkrichting op het blad: zie FACING in shyguy_intro.h."""
-    small = [(8, 16, 18, 21), (29, 16, 18, 21), (50, 16, 18, 21), (71, 17, 18, 20), (92, 19, 23, 18)]
     c = {}
-    c['red'] = [cut(*b) for b in small]                       # staan, 3x lopen, verschrikt (van voren)
-    c['yellow'] = [cut(*b, dy=YELLOW) for b in small[:4]]
-    c['fly'] = [cut(x, 120, 18, 29, GREEN) for x in (8, 29, 50, 71)]   # propeller draait
+    c['red'] = [cut(*b) for b in SMALL]                       # staan, 3x lopen, verschrikt (van voren)
+    c['yellow'] = [cut(*b, dy=YELLOW) for b in SMALL[:4]]
+    c['fly'] = [cut(*b, dy=GREEN) for b in FLY]   # propeller draait
     c['bush'] = [cut(8, 253, 26, 19), cut(66, 247, 26, 25), cut(95, 244, 26, 28), cut(124, 244, 26, 28)]
     c['spear'] = [cut(207, 1343, 21, 33), cut(233, 1343, 24, 33)]       # dansen
     c['fat'] = [cut(x, y, w, h, PINK) for x, y, w, h in
@@ -76,7 +111,10 @@ def cast():
     xs = [371, 399, 425, 451, 476, 501, 525, 549, 575]
     # van voren -> opzij (rechts) in vijf standen (0, 1, 3, 5, 7 van de acht op het blad)
     c['stilt'] = [stilt(xs[i] - 1, xs[i + 1] - 1, 2, 78, GREEN) for i in (0, 1, 3, 5, 7)]
-    c['big'] = [cut(8, 205, 39, 30)]
+    c['big'] = [cut(*BIG)]
+    # de gekozen Shy Guy als hij een Fly Guy (roze) of Spear Guy is: zijn 'van voren, verschrikt'-frames
+    c['flyturn'] = [flyturn(i) for i in (0, 2)]
+    c['spearturn'] = [cut(*SPEAR_FRONT)]
     ex = Image.open(os.path.join(ROOT, 'graphics/field_effects/pics/emotion_exclamation.png'))
     pal = ex.getpalette()[:48]
     idx = np.array(ex)
@@ -89,8 +127,64 @@ def cast():
     return c
 
 
-SHAPE = {'red': 32, 'yellow': 32, 'fly': 32, 'bush': 32, 'excl': 32, 'spear': 64, 'fat': 64, 'stilt': 64, 'big': 'big'}
-ORDER = ['red', 'yellow', 'fly', 'bush', 'excl', 'spear', 'fat', 'stilt', 'big']
+SHAPE = {'red': 32, 'yellow': 32, 'fly': 32, 'bush': 32, 'excl': 32, 'flyturn': 32, 'spear': 64, 'fat': 64, 'stilt': 64,
+         'spearturn': 64, 'big': 'big'}
+ORDER = ['red', 'yellow', 'fly', 'bush', 'excl', 'flyturn', 'spear', 'fat', 'stilt', 'spearturn', 'big']
+
+# ------------------------------------------------------------------ de gekozen Shy Guy (src/data/shyguy_intro.h, SG_V_*)
+# Per variant een palet voor de gekozen kleine figuur (een omgekleurde kopie van zijn palet) en een voor de grote Shy Guy
+# van de close-up. Groen en roze: de echte kleuren van het blad (dezelfde frames in het groene/roze blok, pixel voor
+# pixel); zwart staat niet op het blad: grijstinten zoals de trainerfoto (guest_shy_guy_black: 0..136).
+VARIANTS = ['RED', 'GREEN', 'PINK', 'BLACK', 'FLY', 'SPEAR']
+
+
+def sheetmap(src, dst):
+    """Kleur -> kleur uit twee reeksen gelijke frames (meerderheid per bronkleur)."""
+    from collections import Counter
+    cnt = {}
+    for a, b in zip(src, dst):
+        assert a.shape == b.shape, (a.shape, b.shape)
+        m = (a[:, :, 3] > 0) & (b[:, :, 3] > 0)
+        for ca, cb in zip(map(tuple, a[m][:, :3]), map(tuple, b[m][:, :3])):
+            cnt.setdefault(ca, Counter())[cb] += 1
+    return {k: v.most_common(1)[0][0] for k, v in cnt.items()}
+
+
+def greymap(cols):
+    out = {}
+    for c in cols:
+        L = 0.299 * c[0] + 0.587 * c[1] + 0.114 * c[2]
+        g = 0 if L < 16 else min(136, int(24 + L * 112 / 248)) >> 3 << 3
+        out[c] = (g, g, g)
+    return out
+
+
+def gbacol(c):
+    r, g, b = (int(v) for v in c[:3])
+    return (r >> 3) | (g >> 3) << 5 | (b >> 3) << 10
+
+
+def variant_pals(c, pals, where):
+    small = [cut(*b) for b in SMALL]
+    big = [cut(*BIG)]
+    fly_g, fly_p = [cut(*b, dy=GREEN) for b in FLY], [cut(*b, dy=PINK) for b in FLY]
+    maps = {
+        'RED': ({}, {}),
+        'GREEN': (sheetmap(small, [cut(*b, dy=GREEN) for b in SMALL]), sheetmap(big, [cut(*BIG, dy=GREEN)])),
+        'PINK': (sheetmap(small, [cut(*b, dy=PINK) for b in SMALL]), sheetmap(big, [cut(*BIG, dy=PINK)])),
+        'BLACK': (greymap(colours(small)), greymap(colours(big))),
+        'FLY': (sheetmap(fly_g, fly_p), {}),
+        'SPEAR': ({}, {}),
+    }
+    src = {'FLY': 'fly', 'SPEAR': 'spear'}
+    rows = []
+    for v in VARIANTS:
+        ms, mb = maps[v]
+        p = pals[where[src.get(v, 'red')]]
+        q = pals[where['big']]
+        rows.append([[0] + [gbacol(ms.get(col, col)) for col in p] + [0] * (15 - len(p)),
+                     [0] + [gbacol(mb.get(col, col)) for col in q] + [0] * (15 - len(q))])
+    return rows
 
 
 def colours(frames):
@@ -129,7 +223,10 @@ def place(f, w, h):
 
 def sprites():
     c = cast()
-    pals, where = pack(c)
+    pals, where = pack({k: v for k, v in c.items() if k != 'big'})
+    bp, bw = pack({'big': c['big']})
+    where['big'] = len(pals) + bw['big']
+    pals += bp
     print('sprites: %d paletten (%s)' % (len(pals), ', '.join('%s=%d' % (k, where[k]) for k in ORDER)))
     sheets = {32: [], 64: [], 'big': []}
     first, palof = {}, []
@@ -182,6 +279,15 @@ def sprites():
     lines.append('#define SG_H_%s %d' % ('X', 0))
     for k in ORDER:
         lines.append('#define SG_H_%s %d // hoogte van de figuur (frame 0)' % (k.upper(), c[k][0].shape[0]))
+    lines.append('// de gekozen Shy Guy: [variant][0] = palet van de kleine figuur, [1] = palet van de grote (close-up)')
+    lines.append('enum { %s, SG_NUM_VARIANTS };' % ', '.join('SG_V_' + v for v in VARIANTS))
+    lines.append('static const u16 sSG_VarPal[SG_NUM_VARIANTS][2][16] =\n{')
+    for v, (a, b) in zip(VARIANTS, variant_pals(c, pals, where)):
+        lines.append('    [SG_V_%s] = {' % v)
+        for r in (a, b):
+            lines.append('        {%s},' % ', '.join('0x%04X' % x for x in r))
+        lines.append('    },')
+    lines.append('};')
     open(os.path.join(ROOT, 'src/data/shyguy_intro_gen.h'), 'w').write('\n'.join(lines) + '\n')
     return prev
 

@@ -7961,3 +7961,19 @@ DirectSoundWaveData_ruinous_pad_m63::
 	.align 2
 DirectSoundWaveData_ruinous_pad_m64::
 	.incbin "sound/direct_sound_samples/grounded/ruinous_pad_m64.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_wide14::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_wide14.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_wide18::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_wide18.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_call::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_call.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_strf::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_strf.bin"

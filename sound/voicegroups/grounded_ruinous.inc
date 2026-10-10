@@ -1,5 +1,5 @@
 @ Project Grounded: grounded_gm voor Battle! Treasures of Ruin. Gegenereerd door tools/grounded/ruinous_theme.py.
-@ samples uit het origineel (ruinous_samples.py): 107 laag Aziatisch instrument (maat 5-8), 82/83 ostinato (maat 8 / 67), 84/86 pad (B/G), 85 intro (maat 1-4), 33 bas; 127 = drumkit ruinous.
+@ samples uit het origineel (ruinous_samples.py): 107 laag Aziatisch instrument (maat 5-8), 82/83 ostinato (maat 8 / 67), 84/86 pad (B/G), 85 intro (maat 1-4), 87 roep, 88/89 maat 13-20, 48 strijker, 33 bas; 127 = drumkit ruinous.
 voice_group grounded_ruinous
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -49,7 +49,7 @@ voice_group grounded_ruinous
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 45
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242  @ 46
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 226  @ 47
-	voice_keysplit voicegroup_ruinous_str_keysplit, keysplit_strings  @ 48
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_strf, 80, 0, 255, 180  @ 48
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
@@ -88,9 +88,9 @@ voice_group grounded_ruinous
 	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad, 255, 0, 255, 140  @ 84
 	voice_directsound 60, 0, DirectSoundWaveData_ruinous_intro, 255, 0, 255, 160  @ 85
 	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_g, 255, 0, 255, 140  @ 86
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 88
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 89
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_call, 120, 0, 255, 170  @ 87
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_wide14, 255, 0, 255, 140  @ 88
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_wide18, 255, 0, 255, 140  @ 89
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 90
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 91
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 92

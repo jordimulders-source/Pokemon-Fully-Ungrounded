@@ -191,7 +191,7 @@ CUTS['ruinous_intro'] = (('other', 'piano', 'vocals', 'bass', 'drums'), at(1, 0)
 CUTS['ruinous_lo58'] = ('piano', at(5, 0), at(9, 0), 60, None, None)
 RATES['ruinous_lo58'] = 8000
 #  ostbar: het ostinato met de diepe strijker-bourdon B2 ('bijna keelzang', Jordi) - hele maat 8 van de stem 'other'
-CUTS['ruinous_ostbar'] = ('other', at(8, 0), at(9, 0) + 0.08, 60, (55, 2600), None)
+CUTS['ruinous_ostbar'] = ('other', at(8, 0), at(9, 0) + 0.08, 60, (55, 5000), None)   # v6: tot 5 kHz (was 2,6: 'muffled')
 #  ostbar2: maat 66-69 hebben die bourdon niet: hele maat 67
 CUTS['ruinous_ostbar2'] = ('other', at(67, 0), at(68, 0) + 0.08, 60, (55, 2600), None)
 #  pad: het aangehouden B3+F#4 van de grooves (stem 'other' < 450 Hz, zonder de lijn erboven), hele maat 19;
@@ -210,12 +210,61 @@ for _n in ['ruinous_pad', 'ruinous_pad_g'] + ['ruinous_pad_m%d' % _b for _b in P
 #  bass: één B1 uit de basstem (maat 19, 16e 11-13: alleen B1 + boventonen, 0,3 s) met zijn natuurlijke uitklank;
 #  de noten zelf komen noot voor noot uit de basstem (pyin per 16e)
 CUTS['ruinous_bass'] = ('bass', at(19, 11) - 0.005, at(19, 14), 35, (30, 3000), None)
-WHOLE = ('ruinous_intro', 'ruinous_lo58', 'ruinous_ostbar', 'ruinous_ostbar2', 'ruinous_pad', 'ruinous_pad_g') + tuple(
+#  v6 (Jordi over v5: 'vanaf 6 s is de hoofdmelodie te weggedrukt, te muffled, vanaf 19-20 s ook'; 'het instrument
+#  vanaf 31 s is te veel blazer en te weinig strijker'):
+#  wide14/wide18: maat 13-20 hadden alleen het pad (< 450 Hz); de hoge ostinatolijn (B5-C6, maat 13-16) en de B4-lijn
+#  (17-20) uit de stem 'other' ontbraken (gemeten -10 tot -20 dB boven 500 Hz). Hele maat 14 / 18, 160-5000 Hz.
+CUTS['ruinous_wide14'] = ('other', at(14, 0), at(15, 0) + 0.08, 60, (160, 5000), None)
+CUTS['ruinous_wide18'] = ('other', at(18, 0), at(19, 0) + 0.08, 60, (160, 5000), None)
+#  call: de aangehouden roep F5 -> F#5 van maat 5-12 (stem 'vocals', 300-5500 Hz) ontbrak; één F#5 uit maat 10
+#  (16e 4-12), harmonisch gemaskerd, ping-pong-loop.  str: de strijker vanaf maat 21 (stem 'other', 560-4000 Hz):
+#  F#5 uit maat 21 (16e 3-11), harmonisch gemaskerd (de ostinato-lekkage -12 dB, strijkruis blijft), i.p.v. de
+#  stock-strijkers (aanzet 255 = koperachtig; 1-4 kHz +4..+7 dB te helder gemeten).
+CUTS['ruinous_call'] = ('vocals', at(10, 4), at(10, 12), 78, (300, 5500), 'held')
+CUTS['ruinous_strf'] = ('other', at(21, 3), at(21, 11), 78, (560, 4000), 'held')
+SHELF = {'ruinous_strf': 5.0}   # dB
+WHOLE = ('ruinous_wide14', 'ruinous_wide18', 'ruinous_intro', 'ruinous_lo58', 'ruinous_ostbar', 'ruinous_ostbar2', 'ruinous_pad', 'ruinous_pad_g') + tuple(
     'ruinous_pad_m%d' % _b for _b in PAD_OWN)   # niet hertonen
+
+
+def make_held(name):
+    """aangehouden noot uit een stem: gestemd, harmonisch masker (deeltonen +-35 ct, de rest -12 dB: lekkage van
+    andere partijen weg, strijkruis blijft zwak), aanzet 0,12 s + ping-pong-loop van het aangehouden deel."""
+    stem, t0, t1, key, bnd, _ = CUTS[name]
+    x = band(read_stem(stem, t0 - 0.005, t1), *bnd)
+    x, cents = tune(x - np.mean(x), key)
+    nom = 440.0 * 2 ** ((key - 69) / 12)
+    nf, hop = 4096, 256
+    win = np.hanning(nf)
+    pad = np.concatenate([np.zeros(nf), x, np.zeros(nf)])
+    fq = np.fft.rfftfreq(nf, 1 / SR)
+    m = np.full(len(fq), 10 ** (-12 / 20))
+    for h in range(1, 12):
+        c = nom * h
+        m[(fq > c * 2 ** (-0.35 / 12) - 6) & (fq < c * 2 ** (0.35 / 12) + 6)] = 1.0
+    y = np.zeros(len(pad)); wsum = np.zeros(len(pad))
+    for i in range(0, len(pad) - nf, hop):
+        y[i:i + nf] += np.fft.irfft(np.fft.rfft(pad[i:i + nf] * win) * m, nf) * win
+        wsum[i:i + nf] += win ** 2
+    x = (y / np.maximum(wsum, 1e-6))[nf:nf + len(x)]
+    if name in SHELF:                  # hoge plank boven 1,2 kHz (zwaartepunt gelijk aan de stem)
+        X = np.fft.rfft(x); fq2 = np.fft.rfftfreq(len(x), 1 / SR)
+        X *= 1 + (10 ** (SHELF[name] / 20) - 1) / (1 + (1200 / np.maximum(fq2, 1)) ** 2)
+        x = np.fft.irfft(X, len(x))
+    att, xf = int(0.12 * SR), int(0.08 * SR)
+    sus = x[att:]
+    w = np.linspace(0, np.pi / 2, xf)
+    body = np.concatenate([sus[:-xf], sus[-xf:] * np.cos(w) + sus[::-1][:xf] * np.sin(w), sus[::-1][xf:]])
+    x = np.concatenate([x[:att], body])
+    x[-xf:] = x[-xf:] * np.cos(w) + x[att - xf:att] * np.sin(w)
+    x = fade_in_out(x, 0.003, 0.0001)
+    return norm(x), (att, len(x)), cents
 
 
 def make_cut(name):
     stem, t0, t1, key, bnd, lp = CUTS[name]
+    if lp == 'held':
+        return make_held(name)
     stems = stem if isinstance(stem, tuple) else (stem,)
     x = sum(read_stem(s, t0, t1) for s in stems)
     if bnd:
@@ -265,7 +314,7 @@ def main(only=None):
             rate = RATES.get(name, RATE)
             a = norm(resample(x, SR, rate))
             lp = (int(lpx[0] * rate / SR), int(lpx[1] * rate / SR)) if lpx else None
-            info = ', gestemd %+.0f ct%s' % (-cents, ', loop %.2f-%.2f s' % (lp[0] / RATE, lp[1] / RATE) if lp else '')
+            info = ', gestemd %+.0f ct%s' % (-cents, ', loop %.2f-%.2f s' % (lp[0] / rate, lp[1] / rate) if lp else '')
         write_wav(OUT + name + '.wav', a, rate, key, lp)
         label = 'DirectSoundWaveData_' + name
         if label + '::' not in inc:

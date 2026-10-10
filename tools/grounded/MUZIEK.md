@@ -132,7 +132,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
-| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v5 wacht op Jordi (v4: intro goed maar 70 KB; v5 + strijker vanaf maat 21 op stock-strijkers, 0 KB) | "Ruinous" |
+| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v6 wacht op Jordi (v4: intro goed maar 70 KB; v6: roep maat 5-12, hoge lijn 13-20, eigen strijkerknipsel legato; 367 KB samples) | "Ruinous" |
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
@@ -763,3 +763,17 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   getransponeerd frase-sample verkort hem ook. **Een aangehouden lijn boven een 16e-figuur** vind je met salience
   alleen boven de figuur (> C#5, 560-4000 Hz): terugkerende motieven = betrouwbaar. Stock-strijkers (0 KB) en een
   knipsel uit het origineel (18 KB) scoorden gelijk (spectrum-r 0,77, chroma 0,75): stock gekozen.
+- Ruinous v6 (Jordi over v5: 'vanaf 6 s en 19-20 s is de hoofdmelodie weggedrukt, te muffled; het instrument vanaf
+  31 s is te veel blazer, te weinig strijker, qua maten de hele tijd off'): **meet de hele mix per maat per band tegen
+  het origineel** (gelijke totale RMS; `mixcmp.py`): maat 5-12 500-1000 Hz -6 dB en maat 13-16 alles boven 500 Hz
+  -10..-20 dB. Oorzaak: lagen die in de stems zaten maar nooit nagemaakt waren (de aangehouden roep F6-F5-F#5 in de
+  stem 'vocals' maat 5-12; de hoge B5-ostinatolijn in 'other' 13-20). Een lijn die niet in de stem staat waar je
+  zocht, staat in een andere stem: **per stem per band per maat** (`stembar.py`) vóór je de oorzaak in de balans
+  zoekt. Roep = één harmonisch gemaskerde F#5 (deeltonen +-35 ct, rest -12 dB: lekkage weg) met ping-pong-loop
+  (15 KB) + CC7 per 8e uit het gemeten niveau. **Koperachtig = aanzet 255 + te helder** (stock-strijkers 1-4 kHz
+  +4..+7 dB); eigen strijkerknipsel (zelfde masker, +5 dB plank > 1,2 kHz voor het zwaartepunt) met aanzet 80
+  (~50 ms). **'Off' = gestotterde noten, geen rasterfout**: de toonhoogte per 16e lag op verschuiving 0 (79% gelijk),
+  maar salience-aanzetten pakten de 16e-lekkage van het ostinato als herhaalde aanslagen; legato samenvoegen (zelfde
+  toon, gat <= 2) + doortrekken tot de volgende noot zolang het niveau < 6 dB zakt. Velocity per noot uit het
+  gemeten niveau van die toon (stem vs. GBA-solo, h1+h2), maatniveau als CC7. Onset-xcorr per maat is onbruikbaar
+  bij een legato lijn boven een periodieke figuur (springt +-2 16en); vergelijk de toon per 16e (`pitchlag.py`).

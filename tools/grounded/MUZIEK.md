@@ -134,7 +134,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
 | Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v8 wacht op Jordi (v7 'heel dichtbij'; v8: stem 'other' maat 21-65 op zijn eigen plek, 2-maatsstukken 8 kHz DPCM; 447 KB samples) | "Ruinous" |
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
-| Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
+| Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py`; 682: `vs_areazero_theme.py`, `vs_areazero_samples.py` | 681 v10: begeleiding m1-64 + koor + aria uit het origineel; 682 v1: het origineel in 10 knippen (11025 Hz, DPCM) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
 | Battle! Legendary Pokémon (670) | `legendary_theme.py` | v1 wacht op Jordi (generiek legendary-thema, Hoenn-stijl: Weather Trio-pauken, E4-koper, 176 bpm, alleen stock-samples) | "Legendary" |
 | Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
@@ -731,6 +731,16 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   bij zachte knippen (wolk, intro) maar 8-14 dB: die blijven ongecomprimeerd. **De 8-bit-uitgang heeft een ruisvloer**
   ±-48 dB: een intro die in het origineel 27 dB onder het hoofddeel zit, wordt op de GBA ruis (34% >2 kHz waar het
   origineel 0% heeft); daar dus bewust luider dan het origineel.
+- Battle! Area Zero v1 (682, `vs_areazero_samples.py` + `vs_areazero_theme.py`): **eerst meten of een nabouw met
+  knippen-bibliotheek kan**: per maat de unieke maten tellen (golfvorm per stem, chroma per 8e op de mix). De battle is
+  doorgecomponeerd (54/69 uniek), dus het hele origineel in aansluitende knippen (11025 Hz, DPCM, ±700 KB). **Frame-exact
+  knippen**: m4a op 150 bpm met 24 ticks/tel = 1 tick per frame (59,7275 Hz); de bron met factor K = P*fps/L
+  herbemonsteren zodat lus en grenzen op hele frames vallen. **Stukgrenzen op frame-afstanden met een (bijna) heel aantal
+  samples** (frames * rate/fps): een nieuwe noot begint op sample 0 terwijl de lopende op een gebroken positie staat
+  (mixer interpoleert); met willekeurige afstanden gaf de crossfade -10 dB fout, zo -33..-41 dB (= kwantisatie).
+  Doorgang 1 wijkt af (intro-staarten): stuk 0 = intro + doorgang 1 tot maat 9, de lus komt uit doorgang 2->3.
+  Niveau: één spoor op 127/127 gaf -26 LUFS, een tweede spoor met dezelfde noten (coherent) +4..6 dB -> -22,5 LUFS
+  (Giratina -22,7). Kreet: de engine dempt de BGM tot ±0,35-0,4 tijdens de kreet (gemeten), geen botsing.
 
 - Tower v1 (`tower_theme.py`, 687, gevechtsremix van `mus_rg_lavender.mid`): **origineel tpb 24 x 4 = 96 en de intro is
   ook 4 maten**, dus elke noot staat op tick x 4 en de loop (40 maten) blijft 1-op-1 (melodie spoor 1, jammerlijn spoor 5,

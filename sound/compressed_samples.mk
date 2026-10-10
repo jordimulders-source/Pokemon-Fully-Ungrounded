@@ -5,7 +5,7 @@
 # (nultest gecomprimeerd - ongecomprimeerd; de luide knippen 22-24 dB, ruis onder het signaal in elke band).
 COMPRESSED_SAMPLES := \
 	ashfrost_recorder ashfrost_sleigh ashfrost_warm_pad az_bells_1 az_bells_2 \
-	az_bells_3 az_bells_4 az_bells_5 az_bells_6 az_bells_7 az_bells_9 az_bells_10 az_bells_11 az_bells_12 az_crystal bg_bari bg_brush_slap bg_brush_tap \
+	az_bells_3 az_bells_4 az_bells_5 az_bells_6 az_bells_7 az_bells_9 az_bells_10 az_bells_11 az_bells_12 az_crystal vsaz_0 vsaz_1 vsaz_2 vsaz_3 vsaz_4 vsaz_5 vsaz_6 vsaz_7 vsaz_8 vsaz_9 bg_bari bg_brush_slap bg_brush_tap \
 	bg_mtpt bg_stab bg_upright bg_vibes darkrai_brass_dim darkrai_brass_low \
 	darkrai_brass_tt darkrai_celesta darkrai_cry_rev darkrai_drone darkrai_lullaby_rev darkrai_music_box \
 	darkrai_rev_box darkrai_rev_cluster darkrai_scream genesect_anvil genesect_bass genesect_bass_dark \

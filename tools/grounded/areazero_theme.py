@@ -657,8 +657,8 @@ def render_gm(outdir, name='areazero', src_mid=OUT):
 
 if __name__ == '__main__':
     build()
-    build_remix()
+    # 682 (Battle! Area Zero) komt sinds okt 10 uit vs_areazero_theme.py (het origineel in knippen); build_remix() is
+    # de oude nabouw (v2, geschrapt) en schrijft niet meer.
     if '--render' in sys.argv:
         d = sys.argv[sys.argv.index('--render') + 1]
         render_gm(d)
-        render_gm(d, 'vs_areazero', OUT_VS)

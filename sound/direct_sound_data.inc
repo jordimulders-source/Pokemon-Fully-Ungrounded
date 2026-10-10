@@ -8058,3 +8058,43 @@ DirectSoundWaveData_az_bells_11::
 	.align 2
 DirectSoundWaveData_az_bells_12::
 	.incbin "sound/direct_sound_samples/grounded/az_bells_12.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_0::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_0.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_1::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_1.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_2::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_2.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_3::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_3.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_4::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_4.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_5::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_5.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_6::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_6.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_7::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_7.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_8::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_8.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_9::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_9.bin"

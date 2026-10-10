@@ -304,3 +304,5 @@
 .include "sound/voicegroups/drumsets/ub.inc"
 .include "sound/voicegroups/grounded_ub.inc"
 .include "sound/voicegroups/drumsets/area_zero_bells.inc"
+.include "sound/voicegroups/drumsets/area_zero_vs.inc"
+.include "sound/voicegroups/grounded_vs_area_zero.inc"

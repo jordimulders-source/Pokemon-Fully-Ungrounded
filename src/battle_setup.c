@@ -564,7 +564,7 @@ void BattleSetup_StartLegendaryBattle(void)
         CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_MEW: // Project Grounded: eigen thema, remix van Battle! Mewtwo (het origineel, nieuwsgierig)
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_GROUNDED_VS_MEW);
+        CreateBattleStartTask(B_TRANSITION_MEW, MUS_GROUNDED_VS_MEW);
         break;
     case SPECIES_RAIKOU: // Project Grounded: de legendary beasts krijgen hun eigen thema, Raikou met bliksems
         CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_GROUNDED_VS_RAIKOU);
@@ -714,14 +714,14 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_DIALGA: // Project Grounded: Spear Pillar, de klok draait rond; Battle! Dialga/Palkia (D/P)
     case SPECIES_DIALGA_ORIGIN:
-        CreateBattleStartTask(B_TRANSITION_CLOCKWISE_WIPE, MUS_GROUNDED_VS_DIALGA_PALKIA);
+        CreateBattleStartTask(B_TRANSITION_DIALGA, MUS_GROUNDED_VS_DIALGA_PALKIA);
         break;
     case SPECIES_PALKIA: // Project Grounded: Spear Pillar, de ruimte rimpelt; Battle! Dialga/Palkia (D/P)
     case SPECIES_PALKIA_ORIGIN:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_DIALGA_PALKIA);
+        CreateBattleStartTask(B_TRANSITION_PALKIA, MUS_GROUNDED_VS_DIALGA_PALKIA);
         break;
     case SPECIES_ARCEUS_NORMAL: // Project Grounded: Hall of Origin (Battle! Arceus uit DPPt, het licht valt in banen)
-        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_GROUNDED_VS_ARCEUS);
+        CreateBattleStartTask(B_TRANSITION_ARCEUS, MUS_GROUNDED_VS_ARCEUS);
         break;
     case SPECIES_ZERAORA: // Project Grounded: Chargestone Cave (Battle! Legendary Pokémon, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_GROUNDED_VS_LEGENDARY);

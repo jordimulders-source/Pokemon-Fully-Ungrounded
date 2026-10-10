@@ -6208,8 +6208,8 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
         return MUS_RG_VS_TRAINER;
     case TRAINER_CLASS_ROCKET_EXEC: // Project Grounded: Petrel
         return MUS_RG_VS_GYM_LEADER;
-    case TRAINER_CLASS_ZERO_LAB: // Project Grounded: Area Zero (placeholder; Jordi maakt een eigen thema)
-        return trainerId == TRAINER_AREA_ZERO_ALARM ? MUS_RG_VS_LEGEND : MUS_VS_FRONTIER_BRAIN;
+    case TRAINER_CLASS_ZERO_LAB: // Project Grounded: Area Zero (Jordi: alle gevechtsmuziek daar = remix van Area Zero)
+        return MUS_GROUNDED_VS_AREA_ZERO;
     case TRAINER_CLASS_AQUA_LEADER:
     case TRAINER_CLASS_MAGMA_LEADER:
     case TRAINER_CLASS_BOSS: // Project Grounded: Battle Stadium
@@ -6376,6 +6376,8 @@ u16 GetBattleBGM(void)
     {
     if (IsMagikarpOnlyWildBattle())
         return MUS_GROUNDED_VS_MAGIKARP; // Project Grounded: Battle! Magikarp (spartelen)
+    if (gMapHeader.regionMapSectionId == MAPSEC_AREA_ZERO)
+        return MUS_GROUNDED_VS_AREA_ZERO; // Project Grounded: wilde gevechten in Area Zero = remix van het Area Zero-thema
     if (gMapHeader.regionMapSectionId == MAPSEC_YOSHIS_ISLAND)
         return MUS_GROUNDED_YI_OVERWORLD; // Project Grounded: Yoshi's Island-overworld (SPC-rip) bij wilde gevechten op het eiland
     return GetChosenWildBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_WILD)

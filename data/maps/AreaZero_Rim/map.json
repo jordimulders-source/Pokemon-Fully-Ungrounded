@@ -2,7 +2,7 @@
   "id": "MAP_AREA_ZERO_RIM",
   "name": "AreaZero_Rim",
   "layout": "LAYOUT_AREA_ZERO_RIM",
-  "music": "MUS_RG_VICTORY_ROAD",
+  "music": "MUS_GROUNDED_AREA_ZERO",
   "region_map_section": "MAPSEC_AREA_ZERO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

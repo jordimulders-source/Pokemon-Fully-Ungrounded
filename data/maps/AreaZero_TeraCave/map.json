@@ -2,7 +2,7 @@
   "id": "MAP_AREA_ZERO_TERA_CAVE",
   "name": "AreaZero_TeraCave",
   "layout": "LAYOUT_AREA_ZERO_TERA_CAVE",
-  "music": "MUS_SEALED_CHAMBER",
+  "music": "MUS_GROUNDED_AREA_ZERO",
   "region_map_section": "MAPSEC_AREA_ZERO",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

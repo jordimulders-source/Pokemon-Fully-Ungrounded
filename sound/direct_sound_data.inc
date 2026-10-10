@@ -7618,3 +7618,6 @@ DirectSoundWaveData_ruinous_impact::
 	.align 2
 DirectSoundWaveData_ruinous_synth::
 	.incbin "sound/direct_sound_samples/grounded/ruinous_synth.bin"
+	.align 2
+DirectSoundWaveData_az_crystal::
+	.incbin "sound/direct_sound_samples/grounded/az_crystal.bin"

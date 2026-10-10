@@ -18358,3 +18358,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Gekoppeld aan de negen Ultra Beasts in Ultra Space (stonden op het Regi-thema) en aan elk ander gevecht met een UB (Poipole/Naganadel, wild). Necrozma blijft op het generieke legendary-thema.
 - Generator: `tools/grounded/ub_theme.py` + `ub_samples.py`.
 - De songtabel schoof bij het samenvoegen opnieuw op; `songtable_check.py` ving het, rechtgezet.
+
+### [v0.9.267] - Ultra Beast: lead minder aanwezig
+- Jordi: "die main klank iets minder aanwezig, die kan na een paar min irriteren". De glazen lead gaat van 110 naar 80 (±−2,7 dB), de glas-stotters van 92 naar 80 en de PSG-echo van 36 naar 28. Noten en vorm zijn ongewijzigd.
+- Goedgekeurd door Jordi: de Boo-intro, Battle! Pokémon Tower, de Shy Guy-intro, het generieke legendary-thema, Arceus (de in-game versie) en Dialga/Palkia.

@@ -379,11 +379,11 @@ def compose():
     return P, X, CC, end, loop
 
 
-LAYOUT = [  # (partij, programma, volume, kanaal, pan, bend-partij)
-    ('lead', GLASS, 110, 0, 64, 'lead'), ('stut', GLASS_S, 92, 1, 76, None), ('bass', BASS, 104, 2, 64, None),
+LAYOUT = [  # (partij, programma, volume, kanaal, pan, bend-partij)  (v2, Jordi: lead minder aanwezig: 110 -> 80, stotters 92 -> 80, echo 36 -> 28)
+    ('lead', GLASS, 80, 0, 64, 'lead'), ('stut', GLASS_S, 80, 1, 76, None), ('bass', BASS, 104, 2, 64, None),
     ('ep', EP, 72, 3, 52, None), ('choir1', CHOIR, 70, 4, 40, 'choir1'), ('choir2', CHOIR, 66, 5, 88, 'choir2'),
     ('swell', SWELL, 84, 6, 64, None),
-    ('sq', SQ1, 40, 8, 36, None), ('echo', SQ2, 36, 10, 92, 'echo'), ('wave', WAVE, 56, 11, 64, None),
+    ('sq', SQ1, 40, 8, 36, None), ('echo', SQ2, 28, 10, 92, 'echo'), ('wave', WAVE, 56, 11, 64, None),
     ('hat', HAT, 40, 12, 64, None), ('metal', METAL, 30, 13, 64, None),
 ]
 ORDER = ['lead', 'drums', 'bass', 'stut', 'swell', 'choir1', 'ep', 'choir2']

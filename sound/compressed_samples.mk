@@ -31,10 +31,10 @@ COMPRESSED_SAMPLES := \
 	mitch7b_lead_55 mitch7b_lead_61 mitch7b_lead_67 mitch7c_lead_55 mitch7c_lead_61 mitch7c_lead_67 \
 	mitch_pad_maj mitch_pad_min rayquaza_choir rayquaza_gangsa rayquaza_gong rayquaza_gongbass \
 	rayquaza_jegogan rayquaza_reyong ruinous_call ruinous_impact ruinous_lo58 ruinous_ostbar \
-	ruinous_ostbar2 ruinous_pad ruinous_pad_g ruinous_pad_m36 ruinous_pad_m37 ruinous_pad_m38 \
-	ruinous_pad_m39 ruinous_pad_m52 ruinous_pad_m53 ruinous_pad_m54 ruinous_pad_m55 ruinous_pad_m56 \
-	ruinous_pad_m57 ruinous_pad_m58 ruinous_pad_m59 ruinous_pad_m60 ruinous_pad_m61 ruinous_pad_m62 \
-	ruinous_pad_m63 ruinous_pad_m64 ruinous_strf ruinous_taiko ruinous_wide14 ruinous_wide18 \
+	ruinous_ostbar2      \
+	      \
+	      \
+	                                ruinous_st21 ruinous_st23 ruinous_st25 ruinous_st27 ruinous_st29 ruinous_st31 ruinous_st33 ruinous_st35 ruinous_st37 ruinous_st39 ruinous_st41 ruinous_st43 ruinous_st45 ruinous_st47 ruinous_st49 ruinous_st51 ruinous_st53 ruinous_st55 ruinous_st57 ruinous_st59 ruinous_st61 ruinous_st63 ruinous_st65           ruinous_taiko ruinous_wide14 ruinous_wide18 \
 	sb_bass_harm sb_br_a13 sb_br_am9 sb_br_b7alt sb_br_cmaj9 sb_br_d13 \
 	sb_br_em9 sb_br_fmaj7s11 sb_br_gmu sb_clav sb_gtr_mute sb_horns \
 	sb_horns_hi sb_jazz_oct sb_jazz_oct_hi sb_mute_tpt sb_mute_tpt_hi sb_rh_am9 \

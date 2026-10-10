@@ -65,6 +65,8 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - Route-remixes, allemaal nog niet gemaakt (MUZIEK_KANDIDATEN C): Route 135/136 winter, Fortree Jungle, Mangrove Mire, Toadstool Hollow, Safari (Fairy Forest / Thunder Plains / Haunted Camp), The Spire (per act + elite/baas), Meteor Falls (kosmisch), Flower Paradise / Liberty Garden.
 - Delta Episode: MIDI's voor **The Heirs to Eternity** en **The Lament of Falling Stars** (Jordi levert of wij zoeken). (4 okt)
 - Na de beta: Ho-Oh helderder, minder stotterende percussie. (6 okt)
+- **Beslissen (Jordi, v0.9.240): HQ-mixer** (ipatix, MIT; 16-bit optellen, één afronding met noise shaping) tegen de "overload"-ruis van de 8-bit-mixer. Patch ligt klaar in de scratchpad van sessie 10 okt (`ext/hq_mixer.patch`, `m4a_hq_mixer.s`, `m4a_mixer.h`; `gLink` naar EWRAM voor IWRAM-ruimte). Na akkoord: inbouwen, A/B-previews, lag en cries testen.
+- **Beslissen (Jordi, v0.9.240): vanilla-drums** spelen sinds v0.9.32 (mixer 21 kHz) ±7,8 halve tonen te hoog (`no_resample`). Terugzetten per kit na een A/B.
 
 ## Antwoorden Jordi 9 okt (verwerkt)
 - **Tao-eiland:** Dragon Tamers, verzekeringsexpert en drakentabellen blijven (alleen Gerald weg). Kyurem neutraal (geen Black/White-vorm). **Ghetsis** moet nog ergens in de wereld komen: hij geeft de **DNA Splicers**.

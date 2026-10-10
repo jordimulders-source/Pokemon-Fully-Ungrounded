@@ -46,10 +46,20 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - `rs_drumset` begint op noot 36; PSG-drumnoten (piepjes): 37, 44, 49, 51, 52, 56, 58, 61, 63. Snare = 38,
   crash = 57, tamboerijn = 54, kick = 36, clap = 39.
 - Noten onder E1 (28) op DirectSound klinken als een vervormde dreun; bas liefst E1–E3.
+- **8-bit afronding per kanaal = de "overload"** (v0.9.240, gemeten): de mixer telt elk kanaal op in de 8-bit-buffer
+  (`(vol*sample)>>8`, afgekapt), dus elk kanaal brengt eigen afrondingsruis mee: ruisvloer ±−32 dB onder het signaal,
+  die met de noten mee aan- en uitgaat. Bij heldere nummers (Athletic) gemaskeerd, bij donkere/zachte (YI Overworld,
+  Castle: origineel −53 dB) hoort Jordi "alsof mn speakers eraan gaan". Kanaalvolumes zijn ook in vanilla laag
+  (mediaan 12–35 van 255). Tegengif: zo hard mixen als veilig kan (piek ±110), zachte zuivere partijen en bassen op
+  PSG, of een 16-bit-mixer (HQ-mixer van ipatix: voorstel, wacht op Jordi). Meten: solo per spoor uit de mixbuffer
+  (`scratchpad/ovl/solo2.py`-aanpak; de mGBA-audiobuffer heeft bursts die metingen vertekenen).
+- **`voice_directsound_no_resample` speelt op de mixersnelheid (21.024 Hz)**, niet op de rate van de sample: een
+  drum van 13.379 Hz (alle vanilla-kits) klinkt sinds v0.9.32 ±7,8 halve tonen hoger en 36% korter, een van 16 kHz
+  +4,7. Eigen kits: `voice_directsound 60, ...` (speelt op toets 60 met de eigen rate).
 
 - **Eigen samples max. 11 kHz** (v0.9.232, Jordi: A/B SickBlik "prima"): de mixer draait op 21 kHz/8 bit, hogere rates kosten alleen ROM. Drums (drumsets/) blijven; grondtoon ≥ C6 → 16 kHz. Na elke `*_samples.py`/`gm_samples.py` en elke merge: `python3 tools/grounded/resample_wav.py --all`. Akkoorden als één sample (SickBlik) klinken voller maar kosten ±30 KB per akkoord.
 
-- **Rips (SPC/MP2K) op volume brengen:** de 8-bit-mixer vervormt boven een piek van ±90/127 ("te hard, distortion") en laat bij een lage piek (±40) zijn eigen ruis horen ("overload"). Richtwaarde: piek ±80 in batchrec. SNES-samples eerst Gauss-filteren (`soften` in spc2gba.py); korte loops nooit rekken of verlagen (valse toon, zoem). Vergelijk met de GBA-versie uit een minigsf (gsflib = hele ROM, nummer op het adres uit de minigsf).
+- **Rips (SPC/MP2K) op volume brengen (v0.9.240, gecorrigeerd):** de mixbuffer slaat pas om bij 128 (meet met `recpcm.py`, nu links én rechts). Richtwaarde: piek ±100–112 in batchrec. Lager laat de afrondingsruis van de mixer horen ("overload", zie De engine). SNES-samples eerst Gauss-filteren (`soften` in spc2gba.py) en de velocity schalen op de piek **ná** dat filter (drums verliezen tot 12 dB piek). Korte loops nooit rekken of verlagen (valse toon, zoem). Vergelijk met de GBA-versie uit een minigsf (gsflib = hele ROM, nummer op het adres uit de minigsf).
 
 ## Opnemen (valkuilen)
 - De audiobuffer van mGBA moet **elke frame** worden uitgelezen, ook tijdens menu-navigatie; anders loopt hij over

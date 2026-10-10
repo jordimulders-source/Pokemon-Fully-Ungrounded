@@ -18100,3 +18100,17 @@ Bij Castle zijn de lage partijen nog wat te zacht.
   - Broken Pier en Sunset Wilds vervangen de oude MIDI-covers (619/620): Shy Guys en WILD MUSIC krijgen het origineel. De **Boos** (Commander Boo op Yoshi's Island, Boo in het Stadium) vechten nu op Broken Pier.
   - Sky Garden zat niet tussen de kandidaten.
   - De andere 8 proefrips zijn weg.
+
+### [v0.9.241] - Zeven legendary-intro's en Battle! Treasures of Ruin
+- **Battle! Treasures of Ruin** (`ruinous_theme.py`, `MUS_GROUNDED_VS_RUINOUS`), gemaakt door een agent: nabouw van het Scarlet/Violet-thema, 152 bpm, B met frygische C.
+  - Intro van 6,3 s met elektronische twinkelingen, daarna een loop van 65 maten.
+  - De drums zijn één grote composietslag op elke tel (eigen taiko, dreun, ka en inslag).
+  - Het ostinato blijft elektronisch; vanaf maat 21 komt er een koto bij (Jordi: "dan komt er een oosters instrument in"). Verder strijkers, hoorns, trompetfanfares op F#5 en de bas niet onder C2.
+  - Klinkt bij Wo-Chien, Chien-Pao, Ting-Lu en Chi-Yu. 5 eigen samples (±25 KB).
+- **Zeven legendary-intro's** (`legend_intros2.py`, `src/data/legend_intros2.h`), elk op de echte kaart waar de Pokémon staat (gerenderd uit de metatiles):
+  - **Articuno** (Frozen Depths): ijsvarens groeien over de grot; Articuno verschijnt achter het ijs, het vriest dicht en spat uiteen.
+  - **Zapdos** (Route 119): het Weather Institute in de regen; bij elke bliksem staat Zapdos dichterbij als silhouet, dan in kleur onder "FORECAST: 100% ZAPDOS".
+  - **Moltres** (Mt. Chimney): trillende hitte boven het lavameer; Moltres stijgt op in een vlammenring en duikt op je af.
+  - **Zacian:** drie witte zwaardsneden, het beeld splijt. **Zamazenta:** het schild glanst, dan Behemoth Bash met schokgolven (Mega Forest).
+  - **Xerneas:** grauw Glimwood, de kleur stroomt vanuit de heksenkring terug. **Yveltal:** een schaduw landt, de kleur trekt weg, Oblivion Wing kleurt rood en dan zwart.
+  - Samen ±36,5 KB, elk 1,5–2,1 s. De muziek blijft voorlopig de placeholder, behalve waar hieronder een eigen thema komt.

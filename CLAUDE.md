@@ -191,6 +191,10 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi)
 - **Audit vóór elke grote merge/release:** `python3 tools/grounded/audit.py` (open lijst in `AUDIT.md`). Coord-scripts die op `end` eindigen geven de besturing terug; alleen `lock`/`lockall` zonder `release` laat je vastzitten. Snel naar elke kaart in emulatortests: debugscript 1 (`warp`) en daarna `sWarpDestination` overschrijven (zie `nm`).
 - **Nieuwe legendary in de game:** draai `python3 tools/grounded/azure_flute.py` en geef hem een hint in `HINTS` (anders een algemene hint). Startmenu in emulatortests na een tasbezoek: eerst START, 2× UP, B om de cursor terug op DEBUG te zetten.
 - **Emulatortests (casino):** `gSaveBlock2Ptr` verhuist na een gevecht of warp: lees altijd opnieuw via de pointer. Structs zijn met apcs-gnu op 4 bytes uitgelijnd: neem groottes uit `nm -S`, niet met de hand. `sSpireBosses` is een aparte array naast `sSpireEncounters`.
+- **"Overload" in muziek = 8-bit afronding per mixerkanaal** (v0.9.240), niet te hard/clippen: meet solo's uit de mixbuffer (L+R; de mGBA-audiobuffer heeft bursts), mix met piek ±110, zachte zuivere partijen op PSG. `no_resample` speelt op de mixersnelheid (vanilla-drums sinds v0.9.32 ±7,8 halve tonen te hoog). Zie MUZIEK.md "De engine". Kritisch blijven: een hypothese die het goedgekeurde nummer (Athletic) niet onderscheidt, verklaart niets.
+- **Externe engine-code** (bijv. de HQ-mixer van ipatix) inbouwen wordt door de veiligheidscheck tegengehouden: eerst Jordi's akkoord; de patch ligt klaar (zie TODO).
+- **Legendary-intro's met de echte kaart** (`legend_intros2.py`): render de metatiles, kwantiseer naar BG-palet 10–15, laad die paletten pas als het beeld verschijnt (tilemap een frame later); additief BG0 over de wereld vraagt `WININ |= WIN0_CLR|WIN1_CLR` in grotten; witte snee = venster 0 als band met `gPlttBufferFaded[0]` wit; max. 32 sprites in `sLI_Spr`.
+- **Schijf vol** (8 okt–10 okt): oude agent-worktrees (±585 MB elk) na het samenvoegen weghalen (`git worktree remove --force`, branch blijft); controleer eerst `git status` en `merge-base --is-ancestor`.
 
 ## Werkwijzen (herhaalde taken)
 

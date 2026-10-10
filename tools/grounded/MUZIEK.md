@@ -132,7 +132,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
-| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v4 wacht op Jordi (v3: alleen het OST-ritme klopte; v4 intro/lo als frasen uit het origineel, ostinato met bourdon, pad per maat, bas noot voor noot) | "Ruinous" |
+| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v5 wacht op Jordi (v4: intro goed maar 70 KB; v5 + strijker vanaf maat 21 op stock-strijkers, 0 KB) | "Ruinous" |
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
@@ -756,3 +756,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   2,5x mediaan), één B1-sample: chroma 0,9-0,97 per maat. Offline-A/B (`sim.py`: noten x sample vs stem) vóór de ROM.
   De bovenlijn/16e-figuur van 'other' (±45% van die stem boven 500 Hz) bleef onbetrouwbaar (pyin en salience mengen
   figuur en melodie): niet nagemaakt; streamen kost ±650 KB (beslissing Jordi).
+- Ruinous v5 (Jordi over v4: 'intro is nu goed, maar kost veel samples; vanaf 32 s mis ik de strijker'): **goedkoper
+  maken offline meten vóór je kiest** (GBA-simulatie: samplerate, 8 bit, lineaire interpolatie; log-mel-correlatie per
+  maat t.o.v. het origineel): 4 maten 11 kHz (70 KB) mel 0,84; 8 kHz 0,74; 6 kHz 0,74; maat 3-4 = maat 1-2 +2 halve
+  tonen (zelfgelijkenis 0,90), dus 2 maten x2 (34 KB) 0,78 maar maat 4 zakt (0,60): sneller afspelen van een
+  getransponeerd frase-sample verkort hem ook. **Een aangehouden lijn boven een 16e-figuur** vind je met salience
+  alleen boven de figuur (> C#5, 560-4000 Hz): terugkerende motieven = betrouwbaar. Stock-strijkers (0 KB) en een
+  knipsel uit het origineel (18 KB) scoorden gelijk (spectrum-r 0,77, chroma 0,75): stock gekozen.

@@ -56,6 +56,7 @@
 .include "sound/voicegroups/keysplits/hoopa_oud.inc"
 .include "sound/voicegroups/keysplits/hoopa_mizmar.inc"
 .include "sound/voicegroups/keysplits/hoopa_str.inc"
+.include "sound/voicegroups/keysplits/ruinous_str.inc"
 .include "sound/voicegroups/keysplits/legends3_spicc.inc"
 .include "sound/voicegroups/keysplits/legends3_trumpet.inc"
 .include "sound/voicegroups/keysplits/legends3_horn.inc"

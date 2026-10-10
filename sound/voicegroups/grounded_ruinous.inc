@@ -49,7 +49,7 @@ voice_group grounded_ruinous
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 45
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242  @ 46
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 226  @ 47
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 48
+	voice_keysplit voicegroup_ruinous_str_keysplit, keysplit_strings  @ 48
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51

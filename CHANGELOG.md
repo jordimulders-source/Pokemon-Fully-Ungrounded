@@ -18500,3 +18500,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Kosten ±715 KB; ROM vrij **1,30 MB**. Helderder (13 kHz) kost ±130 KB extra. Jordi beoordeelt hem nog.
 - Speelt bij de paradoxen, Koraidon/Miraidon, Terapagos en de wilde gevechten in Area Zero.
 - Generator: `tools/grounded/vs_areazero_samples.py` + `vs_areazero_theme.py`.
+
+### [v0.9.281] - Goedkeuringen
+- Jordi: Area Zero "beter dan ik had kunnen dromen", Battle! Area Zero "fenomenaal, in 1 keer", Treasures of Ruin "niet perfect maar veel beter dan ik ooit had gedacht dat een gba versie had kunnen worden". Alle drie blijven zoals ze zijn.
+- Intro's: liever zonder Pokémon-sprites ("lijkt minder budget"). Celebi, Meloetta, Cresselia en Zygarde gaan opnieuw.

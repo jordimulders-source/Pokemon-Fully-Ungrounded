@@ -36,7 +36,11 @@ def crystal(rate=16000, key=84, dur=0.9):
 
 
 VOCALS = '/tmp/claude-0/-home-user-projectgrounded/ffd47e46-6a2e-5021-9ef2-b627d7dbd889/scratchpad/az/stems/areazero/vocals.wav'
-VOICES = [('az_voice', 50.25, 51.35, 77, 600, 820), ('az_voice_lo', 58.30, 59.90, 70, 420, 520)]
+# v4 (Jordi: 'koor loopt de hele tijd i.p.v. dat de toon doorklinkt; aria hapert; vocals iets te muffled'): langere
+# stukken (aria m34 F5 66,2-68,1 s), loops van >= 1 s met een gelijk-vermogen-crossfade, 16 kHz (uitgezonderd in
+# resample_wav.py --all).
+RATE = 16000
+VOICES = [('az_voice', 66.20, 68.10, 77, 600, 820), ('az_voice_lo', 58.30, 60.10, 70, 420, 520)]
 BAR1 = 0.185                               # maat 1 in het origineel (s)
 # koorroepen: (maat, zestiende, lengte in zestienden) = theme CHOIR_EVENTS; sample = aanzet + max. 1,0 s
 CHOIR_EVENTS = [(8, 4, 12), (9, 0, 24), (12, 0, 32), (14, 0, 16), (15, 0, 12), (15, 12, 4), (16, 0, 28), (17, 12, 4),
@@ -75,7 +79,7 @@ def _pitch(x, sr, lo=600, hi=820):
 
 
 def _loop(x, rate, s0, lmin, lmax, fade_frac=0.3):
-    """beste loop vanaf s0 (lengte lmin..lmax s), einde gecrossfaded met wat vóór s0 staat."""
+    """beste loop vanaf s0 (lengte lmin..lmax s), einde gecrossfaded (gelijk vermogen) met wat vóór s0 staat."""
     best, L = -2, 0
     for cand in range(int(lmin * rate), min(len(x) - s0 - 1, int(lmax * rate))):
         a, b = x[s0:s0 + 400], x[s0 + cand:s0 + cand + 400]
@@ -87,34 +91,34 @@ def _loop(x, rate, s0, lmin, lmax, fade_frac=0.3):
     e = s0 + L
     fade = min(int(L * fade_frac), s0)
     y = x[:e].copy()
-    t = np.linspace(0, 1, fade)
-    y[e - fade:e] = y[e - fade:e] * (1 - t) + x[s0 - fade:s0] * t
+    t = np.linspace(0, np.pi / 2, fade)
+    y[e - fade:e] = y[e - fade:e] * np.cos(t) + x[s0 - fade:s0] * np.sin(t)
     return y, (s0, e), best
 
 
-def voice(name, t0, t1, key, lo, hi, src=VOCALS, rate=11025):
+def voice(name, t0, t1, key, lo, hi, src=VOCALS, rate=RATE):
     x, sr = _read(src, t0, t1)
     f = _pitch(x, sr, lo, hi)
     target = 440 * 2 ** ((key - 69) / 12)
     r = target / f                                                 # lees met stap r: r < 1 = omlaag
     x = np.interp(np.arange(int(len(x) / r)) * r, np.arange(len(x)), x)
     x = _to_rate(x, sr, rate)
-    y, loop, c = _loop(x, rate, int(0.22 * rate), 0.5, 0.85)
+    y, loop, c = _loop(x, rate, int(0.40 * rate), 1.0, min(1.45, len(x) / rate - 0.42), 0.35)
     y[:int(0.03 * rate)] *= np.linspace(0, 1, int(0.03 * rate))   # zachte aanzet (de voicegroup doet de rest)
     print('%s: gemeten %.1f Hz (%+.2f halve toon t.o.v. de noot), loop %d-%d (%.3f s, aansluiting %.3f)'
           % (name, f, 12 * np.log2(f / target), loop[0], loop[1], (loop[1] - loop[0]) / rate, c))
     return y / np.abs(y).max() * 0.95, loop
 
 
-def choir(i, bar, pos, ln, src=VOCALS, rate=11025):
+def choir(i, bar, pos, ln, src=VOCALS, rate=RATE):
     t = BAR1 + (bar - 1) * 2 + pos * 0.125
     dur = ln * 0.125
-    take = min(dur, 1.0)
+    take = min(dur, 2.0)                                          # v4: tot 2 s echt, daarna een loop van >= 1 s
     x, sr = _read(src, t - 0.02, t + take)
     x = _to_rate(x, sr, rate)
     loop = None
     if dur > take + 0.05:                                         # langer dan de knip: aanhouding loopen
-        x, loop, c = _loop(x, rate, int(0.55 * rate), 0.25, 0.42, 0.4)
+        x, loop, c = _loop(x, rate, int(0.8 * rate), 1.0, 1.15, 0.4)
     else:
         x[-int(0.03 * rate):] *= np.linspace(1, 0, int(0.03 * rate))
     x[:int(0.01 * rate)] *= np.linspace(0, 1, int(0.01 * rate))
@@ -133,11 +137,11 @@ def main():
         return
     for name, t0, t1, key, lo, hi in VOICES:
         y, loop = voice(name, t0, t1, key, lo, hi, src)
-        write_wav(os.path.join(OUT, name + '.wav'), y, 11025, key, loop)
+        write_wav(os.path.join(OUT, name + '.wav'), y, RATE, key, loop)
     gains = []
     for i, (bar, pos, ln) in enumerate(CHOIR_EVENTS):
         y, loop, pk = choir(i, bar, pos, ln, src)
-        write_wav(os.path.join(OUT, 'az_choir_%02d.wav' % i), y, 11025, 60, loop)
+        write_wav(os.path.join(OUT, 'az_choir_%02d.wav' % i), y, RATE, 60, loop)
         gains.append(pk)
     # relatieve luidheid per roep (genormaliseerde samples; het thema zet de velocity hiernaar)
     open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areazero_choir_gain.txt'), 'w').write(

@@ -174,11 +174,14 @@ def build():
     bend_lead, bend_sigh = [], []
 
     # bellen
-    def bells(bar, cell, vel, octave=0):
+    # v4 (Jordi: 'de piepjes missen noten en vallen weg; de piano vanaf ±47 s speelt verkeerde noten; vanaf ±77 s speelt
+    # een instrument een heel ander nummer'): kanaallog in de game = géén kanaalroof (max. 9 kanalen). Oorzaken: belletjes
+    # van 0,25 s (het origineel laat ze ±0,8 s doorklinken), de PSG-echo 3 zestienden later (klinkt als losse foute
+    # noten), de geraden arpeggio's ARP_AB/ARP_B in m24-39 en het geraden blokgolf-ostinato vanaf m40: weg.
+    def bells(bar, cell, vel, octave=0, ring=6):
         for pos, n in cell:
             t = T(bar, pos)
-            P['bell'].append([t, t + 2 * S, p(n) + 12 * octave, vel])
-            P['echo'].append([t + 3 * S, t + 5 * S, p(n) + 12 * octave, max(40, vel - 30)])
+            P['bell'].append([t, t + ring * S, p(n) + 12 * octave, vel])
     for b in (1, 2, 3):
         bells(b, INTRO, 92)
     bells(4, INTRO4, 92)
@@ -191,11 +194,9 @@ def build():
         bells(b, CELL, 64)
     for b in range(20, 24):
         bells(b, CELL_B, 66)
-    for b in range(24, 40):
-        bells(b, ARP_B if b in range(28, 32) or b in range(36, 40) else ARP_AB, 56)
     for b in range(40, 64):
         ph = PHRASE[b]
-        bells(b, {'a': G_A, 'c': G_A, 'b': G_B, 'd': G_D, 'BD': G_BD}[ph], 70)
+        bells(b, {'a': G_A, 'c': G_A, 'b': G_B, 'd': G_D, 'BD': G_BD}[ph], 70, ring=4)
     bells(64, CELL[:3], 70)
 
     # lead (aria): bend per noot (BENDR 2: 64 stappen = 2 halve tonen) + vibrato
@@ -263,11 +264,7 @@ def build():
     bass(64, [(0, 8, 'C#3'), (8, 8, 'A2')], 80)
 
     # ostinato (groove)
-    for b in range(40, 64):
-        pat = {'b': OST_B, 'BD': OST_BD}.get(PHRASE[b], OST_A)
-        for i, n in enumerate(pat):
-            t = T(b, 2 * i)
-            P['ost'].append([t, t + 2 * S - 8, p(n), 84 if i % 4 == 0 else 70])
+    # v4: weg (geraden, niet uit het origineel)
 
     # drums (vanaf m24; gemeten in de 8-bit-cover en het origineel): 2-maatspatroon
     def hit(t, n, v, ln=S):
@@ -305,7 +302,10 @@ def build():
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) + 2 for k, pr in progs.items()}
     tail['choir'] = release_ticks(CHOIR_REL, TPB, BPM) + 2
     tail['drums'] = 0
-    for k in ('lead', 'lead_lo', 'str', 'sigh', 'choir'):
+    # v4: de aria niet loslaten vóór de volgende noot (detach gaf gaten = 'haperen'); belnoten van dezelfde toon afkappen
+    P['bell'] = [[s0, min(e0, min([x[0] for x in P['bell'] if x[2] == n0 and x[0] > s0], default=e0)), n0, v0]
+                 for s0, e0, n0, v0 in P['bell']]
+    for k in ('str', 'sigh'):                       # v4: koorroepen sluiten aan (detach gaf 0,2 s stilte vóór elke roep)
         P[k] = detach(P[k], tail[k])
     order = ['lead', 'lead_lo', 'choir', 'drums', 'bell', 'sigh', 'str']
     ds = {k: P[k] for k in order}

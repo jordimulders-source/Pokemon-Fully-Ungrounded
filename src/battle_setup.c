@@ -613,61 +613,63 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), eigen thema (anime-overwinningsfanfare)
         CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_GROUNDED_VS_VICTINI);
         break;
-    case SPECIES_SCREAM_TAIL: // Project Grounded: Area Zero, de eerste paradoxen (Battle! Area Zero, remix)
+    case SPECIES_SCREAM_TAIL: // Project Grounded: Area Zero, de eerste paradoxen (Battle! Area Zero, remix); cheap1: verleden/toekomst
+        CreateBattleStartTask(B_TRANSITION_PARADOX_PAST, MUS_GROUNDED_VS_AREA_ZERO);
+        break;
     case SPECIES_IRON_HANDS:
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_GROUNDED_VS_AREA_ZERO);
+        CreateBattleStartTask(B_TRANSITION_PARADOX_FUTURE, MUS_GROUNDED_VS_AREA_ZERO);
         break;
     case SPECIES_IRON_LEAVES: // Project Grounded: Area Zero, toekomst (Battle! Area Zero, remix)
     case SPECIES_IRON_BOULDER:
     case SPECIES_IRON_CROWN:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_SQUARES, MUS_GROUNDED_VS_AREA_ZERO);
+        CreateBattleStartTask(B_TRANSITION_PARADOX_FUTURE, MUS_GROUNDED_VS_AREA_ZERO);
         break;
     case SPECIES_WALKING_WAKE: // Project Grounded: Area Zero, verleden (Battle! Area Zero, remix)
     case SPECIES_GOUGING_FIRE:
     case SPECIES_RAGING_BOLT:
-        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_GROUNDED_VS_AREA_ZERO);
+        CreateBattleStartTask(B_TRANSITION_PARADOX_PAST, MUS_GROUNDED_VS_AREA_ZERO);
         break;
     case SPECIES_MIRAIDON: // Project Grounded: Area Zero, toekomst (Battle! Area Zero, remix)
-        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_GROUNDED_VS_AREA_ZERO);
+        CreateBattleStartTask(B_TRANSITION_PARADOX_FUTURE, MUS_GROUNDED_VS_AREA_ZERO);
         break;
     case SPECIES_KORAIDON: // Project Grounded: Area Zero, verleden (Battle! Area Zero, remix)
-        CreateBattleStartTask(B_TRANSITION_SLICE, MUS_GROUNDED_VS_AREA_ZERO);
+        CreateBattleStartTask(B_TRANSITION_PARADOX_PAST, MUS_GROUNDED_VS_AREA_ZERO);
         break;
     case SPECIES_TERAPAGOS_NORMAL: // Project Grounded: Area Zero, Tera-grot (Battle! Area Zero, remix)
     case SPECIES_TERAPAGOS_TERASTAL:
     case SPECIES_TERAPAGOS_STELLAR:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL, MUS_GROUNDED_VS_AREA_ZERO);
+        CreateBattleStartTask(B_TRANSITION_TERAPAGOS, MUS_GROUNDED_VS_AREA_ZERO); // cheap1: ronddraaiende Tera-kristallen
         break;
-    case SPECIES_NIHILEGO: // Project Grounded: Ultra Space, Battle! Ultra Beast (ub_theme.py); eigen intro's volgen
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_ULTRA_BEAST);
+    case SPECIES_NIHILEGO: // Project Grounded: Ultra Space, Battle! Ultra Beast (ub_theme.py); intro: storing + Ultra Wormhole (cheap1)
+        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_BUZZWOLE:
-        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_GROUNDED_VS_ULTRA_BEAST);
+        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_PHEROMOSA:
-        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_GROUNDED_VS_ULTRA_BEAST);
+        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_XURKITREE:
-        CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_GROUNDED_VS_ULTRA_BEAST);
+        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_CELESTEELA:
-        CreateBattleStartTask(B_TRANSITION_SLICE, MUS_GROUNDED_VS_ULTRA_BEAST);
+        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_KARTANA:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_GROUNDED_VS_ULTRA_BEAST);
+        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_GUZZLORD:
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_GROUNDED_VS_ULTRA_BEAST);
+        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_STAKATAKA:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_SQUARES, MUS_GROUNDED_VS_ULTRA_BEAST);
+        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_BLACEPHALON:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL, MUS_GROUNDED_VS_ULTRA_BEAST);
+        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_POIPOLE: // Project Grounded: (nog) geen gevecht, Poipole is een gift; voor het geval dat
     case SPECIES_NAGANADEL:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_ULTRA_BEAST);
+        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_GROUNDED_VS_ULTRA_BEAST);
         break;
     case SPECIES_NECROZMA: // Project Grounded: Ultra Space, prismagrot (Battle! Legendary Pokémon)
     case SPECIES_NECROZMA_DUSK_MANE:
@@ -710,7 +712,7 @@ void BattleSetup_StartLegendaryBattle(void)
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_GROUNDED_VS_LEGENDARY);
         break;
     case SPECIES_PECHARUNT: // Project Grounded: Yoshi's Island (Battle! Legendary Pokémon, bestaande transitie)
-        CreateBattleStartTask(B_TRANSITION_SWIRL, MUS_GROUNDED_VS_LEGENDARY);
+        CreateBattleStartTask(B_TRANSITION_PECHARUNT, MUS_GROUNDED_VS_LEGENDARY); // cheap1: gifnevel, pecha-bessen
         break;
     case SPECIES_DIALGA: // Project Grounded: Spear Pillar, de klok draait rond; Battle! Dialga/Palkia (D/P)
     case SPECIES_DIALGA_ORIGIN:
@@ -736,7 +738,7 @@ void BattleSetup_StartLegendaryBattle(void)
         break;
     case SPECIES_ETERNATUS: // Project Grounded: National Park (Battle! Legendary Pokémon, bestaande transitie)
     case SPECIES_ETERNATUS_ETERNAMAX:
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_GROUNDED_VS_LEGENDARY);
+        CreateBattleStartTask(B_TRANSITION_ETERNATUS, MUS_GROUNDED_VS_LEGENDARY); // cheap1: rode hemel, de grond scheurt
         break;
     case SPECIES_GLASTRIER: // Project Grounded: Crown Tundra, Calyrex-quest (Battle! Legendary Pokémon, ijs dat splijt)
         CreateBattleStartTask(B_TRANSITION_SHRED_SPLIT, MUS_GROUNDED_VS_LEGENDARY);
@@ -808,11 +810,11 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_COBALION:
     case SPECIES_TERRAKION:
     case SPECIES_VIRIZION:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_GROUNDED_VS_LEGENDARY);
+        CreateBattleStartTask(B_TRANSITION_SWORDS_SLASH, MUS_GROUNDED_VS_LEGENDARY); // cheap1: het beeld in stukken gesneden
         break;
     case SPECIES_KELDEO_ORDINARY:
     case SPECIES_KELDEO_RESOLUTE:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_LEGENDARY);
+        CreateBattleStartTask(B_TRANSITION_SWORDS_SLASH, MUS_GROUNDED_VS_LEGENDARY);
         break;
     // Project Grounded: het Tao-trio (Tao-eiland). Placeholders: bestaande transities; muziek: Battle! Legendary Pokémon;
     // Jordi bedenkt de eigen intro's nog.
@@ -826,6 +828,25 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_KYUREM_WHITE:
     case SPECIES_KYUREM_BLACK:
         CreateBattleStartTask(B_TRANSITION_AURORA, MUS_GROUNDED_VS_LEGENDARY);
+        break;
+    case SPECIES_MARSHADOW: // Project Grounded (cheap1): een schaduw neemt het beeld over (nu nergens als wild gevecht)
+        CreateBattleStartTask(B_TRANSITION_MARSHADOW, MUS_GROUNDED_VS_LEGENDARY);
+        break;
+    case SPECIES_GREAT_TUSK: // Project Grounded (cheap1): de overige paradoxen (nu alleen wild), voor het geval dat
+    case SPECIES_BRUTE_BONNET:
+    case SPECIES_FLUTTER_MANE:
+    case SPECIES_SLITHER_WING:
+    case SPECIES_SANDY_SHOCKS:
+    case SPECIES_ROARING_MOON:
+        CreateBattleStartTask(B_TRANSITION_PARADOX_PAST, MUS_GROUNDED_VS_AREA_ZERO);
+        break;
+    case SPECIES_IRON_TREADS:
+    case SPECIES_IRON_BUNDLE:
+    case SPECIES_IRON_JUGULIS:
+    case SPECIES_IRON_MOTH:
+    case SPECIES_IRON_THORNS:
+    case SPECIES_IRON_VALIANT:
+        CreateBattleStartTask(B_TRANSITION_PARADOX_FUTURE, MUS_GROUNDED_VS_AREA_ZERO);
         break;
     }
 
@@ -1216,6 +1237,30 @@ enum BattleTransition GetWildBattleTransition(void)
         return B_TRANSITION_XERNEAS;
     case SPECIES_YVELTAL:
         return B_TRANSITION_YVELTAL;
+    case SPECIES_GREAT_TUSK: // Project Grounded (cheap1): paradoxen, ook de wilde in Area Zero
+    case SPECIES_SCREAM_TAIL:
+    case SPECIES_BRUTE_BONNET:
+    case SPECIES_FLUTTER_MANE:
+    case SPECIES_SLITHER_WING:
+    case SPECIES_SANDY_SHOCKS:
+    case SPECIES_ROARING_MOON:
+    case SPECIES_WALKING_WAKE:
+    case SPECIES_GOUGING_FIRE:
+    case SPECIES_RAGING_BOLT:
+    case SPECIES_KORAIDON:
+        return B_TRANSITION_PARADOX_PAST;
+    case SPECIES_IRON_TREADS:
+    case SPECIES_IRON_BUNDLE:
+    case SPECIES_IRON_HANDS:
+    case SPECIES_IRON_JUGULIS:
+    case SPECIES_IRON_MOTH:
+    case SPECIES_IRON_THORNS:
+    case SPECIES_IRON_VALIANT:
+    case SPECIES_IRON_LEAVES:
+    case SPECIES_IRON_BOULDER:
+    case SPECIES_IRON_CROWN:
+    case SPECIES_MIRAIDON:
+        return B_TRANSITION_PARADOX_FUTURE;
     }
     if (routeTransition >= 0)
         return routeTransition;

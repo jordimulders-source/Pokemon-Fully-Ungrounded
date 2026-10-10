@@ -148,6 +148,14 @@ enum BattleTransition
     B_TRANSITION_WARIO, // Project Grounded: Wario, knoflook wordt opgegeten, de W dreunt erin, poses, de W neemt het beeld over
     B_TRANSITION_BOO, // Project Grounded: Boos (spookhuis uit Yoshi's Island), Kamek tovert er een tot Commander Boo
     B_TRANSITION_SHY_GUY, // Project Grounded: Shy Guys op Sunset Wilds, staan in 1-1, eentje beseft dat hij moet vechten
+    B_TRANSITION_SWORDS_SLASH, // Project Grounded (legend_intros_cheap1.h): Swords of Justice + Keldeo, het beeld in vier stukken gesneden
+    B_TRANSITION_ULTRA_BEAST, // Project Grounded (cheap1): Ultra Beasts, interdimensionale storing en een Ultra Wormhole
+    B_TRANSITION_PARADOX_PAST, // Project Grounded (cheap1): paradox-Pokémon uit het verleden, verleden/toekomst-flikkering, dan het verleden in
+    B_TRANSITION_PARADOX_FUTURE, // Project Grounded (cheap1): paradox-Pokémon uit de toekomst
+    B_TRANSITION_ETERNATUS, // Project Grounded (cheap1): Eternatus, rode hemel, Dynamax-energie, de grond scheurt open
+    B_TRANSITION_MARSHADOW, // Project Grounded (cheap1): Marshadow, een schaduw neemt het beeld over
+    B_TRANSITION_TERAPAGOS, // Project Grounded (cheap1): Terapagos, ronddraaiende Tera-kristallen
+    B_TRANSITION_PECHARUNT, // Project Grounded (cheap1): Pecharunt, gifnevel, pecha-bessen, gifbellen en ketens
     B_TRANSITION_COUNT
 };
 

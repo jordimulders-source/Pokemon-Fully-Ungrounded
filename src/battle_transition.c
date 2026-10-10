@@ -198,6 +198,14 @@ static void Task_LegendYveltal(u8);
 static void Task_Wario(u8); // Project Grounded (src/data/wario_intro.h)
 static void Task_Boo(u8); // Project Grounded (src/data/boo_intro.h)
 static void Task_ShyGuy(u8); // Project Grounded (src/data/shyguy_intro.h)
+static void Task_LegendSwords(u8); // Project Grounded (src/data/legend_intros_cheap1.h)
+static void Task_LegendUltraBeast(u8);
+static void Task_LegendParadoxPast(u8);
+static void Task_LegendParadoxFuture(u8);
+static void Task_LegendEternatus(u8);
+static void Task_LegendMarshadow(u8);
+static void Task_LegendTerapagos(u8);
+static void Task_LegendPecharunt(u8);
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -716,6 +724,14 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
     [B_TRANSITION_WEATHER_SERVICE] = Task_WeatherService, // Project Grounded
     [B_TRANSITION_BOO] = Task_Boo, // Project Grounded (src/data/boo_intro.h)
+    [B_TRANSITION_SWORDS_SLASH] = Task_LegendSwords, // Project Grounded (src/data/legend_intros_cheap1.h)
+    [B_TRANSITION_ULTRA_BEAST] = Task_LegendUltraBeast,
+    [B_TRANSITION_PARADOX_PAST] = Task_LegendParadoxPast,
+    [B_TRANSITION_PARADOX_FUTURE] = Task_LegendParadoxFuture,
+    [B_TRANSITION_ETERNATUS] = Task_LegendEternatus,
+    [B_TRANSITION_MARSHADOW] = Task_LegendMarshadow,
+    [B_TRANSITION_TERAPAGOS] = Task_LegendTerapagos,
+    [B_TRANSITION_PECHARUNT] = Task_LegendPecharunt,
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -10460,3 +10476,4 @@ static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
 #include "data/wario_intro.h"
 #include "data/boo_intro.h"
 #include "data/shyguy_intro.h"
+#include "data/legend_intros_cheap1.h" // Project Grounded: goedkope legendary-intro's (Swords, UB's, paradoxen, Eternatus, Marshadow, Terapagos, Pecharunt)

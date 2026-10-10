@@ -198,6 +198,10 @@ static void Task_LegendYveltal(u8);
 static void Task_Wario(u8); // Project Grounded (src/data/wario_intro.h)
 static void Task_Boo(u8); // Project Grounded (src/data/boo_intro.h)
 static void Task_ShyGuy(u8); // Project Grounded (src/data/shyguy_intro.h)
+static void Task_LegendDialga(u8); // Project Grounded (src/data/legend_intros_dp.h)
+static void Task_LegendPalkia(u8);
+static void Task_LegendArceus(u8);
+static void Task_LegendMew(u8);
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -584,7 +588,8 @@ static const u32 sFrontierSquares_Tilemap[] = INCBIN_U32("graphics/battle_transi
 // All battle transitions use the same intro
 static const TaskFunc sTasks_Intro[B_TRANSITION_COUNT] =
 {
-    [0 ... B_TRANSITION_COUNT - 1] = &Task_Intro
+    [0 ... B_TRANSITION_COUNT - 1] = &Task_Intro,
+    [B_TRANSITION_ARCEUS] = NULL, // Project Grounded: geen flits vooraf, de wereld trilt meteen op de eerste stoot
 };
 
 // After the intro each transition has a unique main task.
@@ -711,6 +716,10 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_YVELTAL] = Task_LegendYveltal,
     [B_TRANSITION_WARIO] = Task_Wario, // Project Grounded (src/data/wario_intro.h)
     [B_TRANSITION_SHY_GUY] = Task_ShyGuy, // Project Grounded (src/data/shyguy_intro.h)
+    [B_TRANSITION_DIALGA] = Task_LegendDialga, // Project Grounded (src/data/legend_intros_dp.h)
+    [B_TRANSITION_PALKIA] = Task_LegendPalkia,
+    [B_TRANSITION_ARCEUS] = Task_LegendArceus,
+    [B_TRANSITION_MEW] = Task_LegendMew,
     [B_TRANSITION_KYOGRE_MURAL] = Task_KyogreMural, // Project Grounded
     [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
@@ -10460,3 +10469,4 @@ static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
 #include "data/wario_intro.h"
 #include "data/boo_intro.h"
 #include "data/shyguy_intro.h"
+#include "data/legend_intros_dp.h"

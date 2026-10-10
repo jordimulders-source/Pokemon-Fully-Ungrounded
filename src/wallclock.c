@@ -71,7 +71,7 @@ enum {
     WIN_BUTTON_LABEL,
 };
 
-static const u32 sHand_Gfx[] = INCBIN_U32("graphics/wallclock/hand.4bpp.smol");
+const u32 gWallClockHand_Gfx[] = INCBIN_U32("graphics/wallclock/hand.4bpp.smol"); // Project Grounded: ook gebruikt door de Dialga-intro
 static const u16 sTextPrompt_Pal[] = INCBIN_U16("graphics/wallclock/text_prompt.gbapal"); // for "Cancel" or "Confirm"
 
 static const struct WindowTemplate sWindowTemplates[] =
@@ -132,7 +132,7 @@ static const struct BgTemplate sBgTemplates[] =
 
 static const struct CompressedSpriteSheet sSpriteSheet_ClockHand =
 {
-    sHand_Gfx, 0x2000, GFXTAG_WALL_CLOCK_HAND
+    gWallClockHand_Gfx, 0x2000, GFXTAG_WALL_CLOCK_HAND
 };
 
 static const u8 sUnused[8] = {0};

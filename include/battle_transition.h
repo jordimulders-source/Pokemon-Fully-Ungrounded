@@ -146,6 +146,7 @@ enum BattleTransition
     B_TRANSITION_XERNEAS, // Project Grounded: Xerneas, grauw Ballonlea, de kleur stroomt vanuit de heksenkring terug
     B_TRANSITION_YVELTAL, // Project Grounded: Yveltal, een schaduw landt in de kring, de kleur trekt weg, Oblivion Wing, zwart
     B_TRANSITION_WARIO, // Project Grounded: Wario, knoflook wordt opgegeten, de W dreunt erin, poses, de W neemt het beeld over
+    B_TRANSITION_SHY_GUY, // Project Grounded: Shy Guys op Sunset Wilds, staan in 1-1, eentje beseft dat hij moet vechten
     B_TRANSITION_COUNT
 };
 

@@ -1291,6 +1291,12 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: Wario (eindbaas van het Yoshi's Island-fort, en gast in het Battle Stadium): knoflook, de W, poses
     if (trainerId == TRAINER_YI_WARIO || trainerId == TRAINER_STADIUM_WARIO)
         return B_TRANSITION_WARIO;
+    // Project Grounded: de Shy Guys (Shy Squad op Yoshi's Island, de Stadium-Shy Guys, de woestijn): op de maat van
+    // Sunset Wilds staan ze in level 1-1, eentje draait zich om: het is zijn beurt
+    if (trainerId == TRAINER_STADIUM_SHY_GUY_RED || trainerId == TRAINER_STADIUM_SHY_GUY_GREEN
+     || trainerId == TRAINER_STADIUM_SHY_GUY_PINK || trainerId == TRAINER_STADIUM_SHY_GUY_BLACK
+     || trainerId == TRAINER_SHY_GUY_DESERT || trainerClass == TRAINER_CLASS_SHY_SQUAD)
+        return B_TRANSITION_SHY_GUY;
 
     // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)
     if (trainerClass == TRAINER_CLASS_NEO_PLASMA || trainerClass == TRAINER_CLASS_SHADOW_TRIAD || trainerClass == TRAINER_CLASS_SAGE)

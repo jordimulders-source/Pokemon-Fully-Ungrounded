@@ -65,7 +65,11 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - Route-remixes, allemaal nog niet gemaakt (MUZIEK_KANDIDATEN C): Route 135/136 winter, Fortree Jungle, Mangrove Mire, Toadstool Hollow, Safari (Fairy Forest / Thunder Plains / Haunted Camp), The Spire (per act + elite/baas), Meteor Falls (kosmisch), Flower Paradise / Liberty Garden.
 - Delta Episode: MIDI's voor **The Heirs to Eternity** en **The Lament of Falling Stars** (Jordi levert of wij zoeken). (4 okt)
 - Na de beta: Ho-Oh helderder, minder stotterende percussie. (6 okt)
-- **Beslissen (Jordi, v0.9.240): HQ-mixer** (ipatix, MIT; 16-bit optellen, één afronding met noise shaping) tegen de "overload"-ruis van de 8-bit-mixer. Patch ligt klaar in de scratchpad van sessie 10 okt (`ext/hq_mixer.patch`, `m4a_hq_mixer.s`, `m4a_mixer.h`; `gLink` naar EWRAM voor IWRAM-ruimte). Na akkoord: inbouwen, A/B-previews, lag en cries testen.
+- **Beslissen (Jordi, v0.9.240): HQ-mixer** (github.com/ipatix/gba-hq-mixer, MIT; 16-bit optellen, één afronding met noise shaping) tegen de "overload"-ruis van de 8-bit-mixer. Uitgewerkt, niet ingebouwd. Stappen:
+  1. `m4a_hq_mixer.s` als `src/m4a_hq_mixer.s` in `.section .iwram.code`, met `ENABLE_REVERB 1`, `ENABLE_DMA 0` (VBlank-interrupt), `hq_buffer_ptr` = eigen `.bss`-buffer van 0x160×4 bytes, `stack_boundary_literal` = `__iwram_bss_end + 0x200` (nieuw symbool aan het eind van `.iwram.bss` in beide ld-scripts), apostrofs uit het commentaar (CPP).
+  2. De oude SoundMainRAM/Unk1/Unk2 in `src/m4a_1.s` achter `#if !M4A_HQ_MIXER` (`include/config/m4a_mixer.h`).
+  3. `gLink` naar `EWRAM_DATA` (+4 KB IWRAM).
+  Na akkoord: A/B-previews, lag en cries testen.
 - **Beslissen (Jordi, v0.9.240): vanilla-drums** spelen sinds v0.9.32 (mixer 21 kHz) ±7,8 halve tonen te hoog (`no_resample`). Terugzetten per kit na een A/B.
 
 ## Antwoorden Jordi 9 okt (verwerkt)

@@ -7619,29 +7619,11 @@ DirectSoundWaveData_ruinous_impact::
 DirectSoundWaveData_az_crystal::
 	.incbin "sound/direct_sound_samples/grounded/az_crystal.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_ost::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_ost.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pluck_40::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_40.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pluck_47::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_47.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pluck_54::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_54.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pluck_61::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_61.bin"
 
-	.align 2
-DirectSoundWaveData_ruinous_pluck_68::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_68.bin"
 
 @ rip wl4 (mp2k_rip.py)
 	.align 2
@@ -7908,3 +7890,57 @@ DirectSoundWaveData_az_choir_14::
 	.align 2
 DirectSoundWaveData_az_choir_15::
 	.incbin "sound/direct_sound_samples/grounded/az_choir_15.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_lo_e2::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_lo_e2.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_lo_b3::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_lo_b3.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_ostbar::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_ostbar.bin"
+
+
+	.align 2
+DirectSoundWaveData_ruinous_bass::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_bass.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_oth_B::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_oth_B.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_oth_E::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_oth_E.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_oth_G::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_oth_G.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_oth_Gm::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_oth_Gm.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_oth_Bm::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_oth_Bm.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_oth_Fs::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_oth_Fs.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_oth_DA::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_oth_DA.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_oth_Em::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_oth_Em.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_oth_A::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_oth_A.bin"
+

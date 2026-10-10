@@ -1,5 +1,5 @@
 @ Project Grounded: grounded_gm voor Battle! Treasures of Ruin. Gegenereerd door tools/grounded/ruinous_theme.py.
-@ eigen samples (ruinous_samples.py): 82 elektronisch ostinato, 107 lage tokkel (keysplit ruinous_pluck), 127 = drumkit ruinous; stock: 33 bas, 48 strijkers (keysplit ruinous_str).
+@ samples uit het origineel (ruinous_samples.py): 107 laag Aziatisch instrument (keysplit ruinous_lo), 82 ostinato-pad (maat 67), 84-92 stem other per akkoord, 33 bas; 127 = drumkit ruinous.
 voice_group grounded_ruinous
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -34,7 +34,7 @@ voice_group grounded_ruinous
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 30
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 31
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 32
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 120  @ 33
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_bass, 255, 0, 255, 100  @ 33
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 34
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 36
@@ -49,7 +49,7 @@ voice_group grounded_ruinous
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 45
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242  @ 46
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 226  @ 47
-	voice_keysplit voicegroup_ruinous_str_keysplit, keysplit_strings  @ 48
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 48
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
@@ -83,17 +83,17 @@ voice_group grounded_ruinous
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_ost, 255, 0, 255, 90  @ 82
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_ostbar, 255, 0, 255, 140  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 86
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 88
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 89
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 90
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 91
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 92
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_B, 255, 0, 255, 140  @ 84
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_E, 255, 0, 255, 140  @ 85
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_G, 255, 0, 255, 140  @ 86
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_Gm, 255, 0, 255, 140  @ 87
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_Bm, 255, 0, 255, 140  @ 88
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_Fs, 255, 0, 255, 140  @ 89
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_DA, 255, 0, 255, 140  @ 90
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_Em, 255, 0, 255, 140  @ 91
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_A, 255, 0, 255, 140  @ 92
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 93
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 94
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 95
@@ -108,7 +108,7 @@ voice_group grounded_ruinous
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 104
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 105
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 106
-	voice_keysplit voicegroup_ruinous_pluck_keysplit, keysplit_ruinous_pluck  @ 107
+	voice_keysplit voicegroup_ruinous_lo_keysplit, keysplit_ruinous_lo  @ 107
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 108
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 109
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 110

@@ -18277,3 +18277,13 @@ Jordi: "doe de hele intro opnieuw en maak het heel goofy en Wario Ware achtig �
   7. De W neemt als superheldenembleem het beeld over.
 - De art komt uit de filmpjes van WarioWare, Inc., schoon gerenderd uit VRAM/OAM/BG in de emulator (`warioware_rip.py`, reproduceerbaar). De flex is de bestaande art.
 - ±2,7 s, ±25 KB.
+
+### [v0.9.255] - Treasures of Ruin v3: samples uit het origineel
+Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt elke melodische laag stukken die uit het origineel zelf geknipt zijn; geen FluidR3 of synth meer. Per laag een losse A/B.
+- **Laag instrument in de intro** (sterke grondtoon, felle 6e harmonische, ±5 Hz vibrato): E2- en B3-knipsels, met de gemeten noten in maat 1–8.
+- **Pad in de rustige maten:** een halve maat uit maat 67 (B3 + F#4 met de C4), per akkoord getransponeerd.
+- **De middenstem in maat 13–64:** knipsels per akkoord (B, E, G, Gm, Bm, F#, D/A, Em, A), per halve maat.
+- **Bas:** een E2-knipsel uit het origineel, in het gemeten ritme.
+- **Drums:** ritme ongewijzigd.
+- **Weggelaten:** de onherkenbare hogere lijn, de strijkers, de PSG en de synth.
+- Gemeten: piek 83, 0 overlopen, max. 11 kanalen. Samples 135 KB.

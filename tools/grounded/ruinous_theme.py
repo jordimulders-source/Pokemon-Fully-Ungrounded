@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """Project Grounded: "Battle! Treasures of Ruin" (song 683, MUS_GROUNDED_VS_RUINOUS): het gevechtsthema van Wo-Chien,
-Chien-Pao, Ting-Lu en Chi-Yu (Pokémon Scarlet/Violet) in GBA-stijl, v1.
+Chien-Pao, Ting-Lu en Chi-Yu (Pokémon Scarlet/Violet) in GBA-stijl, v3.
 
 Nagebouwd op het raster van het origineel (Jordi's mp3 + Spleeter-stems, gemeten met librosa/basic-pitch):
 152 bpm (onset-fase 0,070 s, maat 1 = 0,37 s), maat = 1,579 s, loop = 65 maten (102,6 s; maat 70 = maat 5).
@@ -25,17 +25,20 @@ Vorm (maten van het origineel):
   X  65      inslag + het Bmaj6-akkoord van de intro, de trommen vallen weg
   Q2 66-69   het ostinato alleen (zoals maat 5-12, zonder trompet); opmaat naar de inslag van maat 5 (= loopbegin)
   ]
-v2 (Jordi over v1: 'drumritme goed, voor de rest alles niet'): intro en de lijn vanaf maat 21 op een laag, zwaar
-Aziatisch tokkelinstrument (gemeten in de stem 'piano': E2/F#2/B2-frasen met heraanslagen in 16en, sterke grondtoon +
-sawari-zoem op h6); geen trompetten (de 'roep' in maat 6-12 is in het origineel een zachte, bijna zuivere F#5), geen
-hoorns en geen strijkers in de grooves (de 'lange tonen' waren het ostinato zelf), geen PSG; het ostinato als zuivere
-B3+kwint-puls (gemeten: h2 -26 dB). Drums ongewijzigd (alleen stock-kitregels nu op hun eigen samplerate).
-Instrumenten: eigen samples (tools/grounded/ruinous_samples.py, voorvoegsel ruinous_*, ±55 KB): drumkit
-drumsets/ruinous.inc (taiko, lage dreun, ka, inslag; stock crash/hihat/orkestsnare/lage taiko/kick), 82 ostinato
-(ruinous_ost), 107 lage tokkel (keysplit ruinous_pluck, E2-G#4); stock: 33 fingered bass, 48 strijkers (alleen
-roffels/opbouw).
-Laag (Jordi's speakers): niets onder C2 op DirectSound; de bas staat een octaaf hoger dan in het origineel (B2), de lage
-dreun op 62-78 Hz en zachter dan de taiko.
+(De vorm hierboven is die van v1; v2 en v3 houden het drumritme en de vorm, de rest is vervangen.)
+v3 (Jordi over v2: 'lijkt nog nergens op, een soort glitchend systeem, geen tokkel of strijker zoals het origineel;
+instrumenten isoleren'): alle melodische lagen spelen samples die uit het origineel zelf geknipt zijn
+(tools/grounded/ruinous_samples.py, CUTS, gestemd op de gemeten grondtoon), getoetst per laag met een A/B (solo uit de
+mixbuffer van één test-ROM tegen de stem):
+  lo    het lage instrument van de intro (stem 'piano': E2 uit maat 1, B3 uit maat 5 met loop van 1,0 s), maat 1-8
+  ost   de rustige maten 5-12 en 66-69: een halve maat van de stem 'other' uit maat 67 (B3 + F#4 aangehouden, de C4 op
+        16e 6), per halve maat aangeslagen en naar de grondtoon getransponeerd (E-maten E4, G-maten G3)
+  oth   maat 13-64: per akkoord de halve maat van de stem 'other' waar dat akkoord in het origineel klinkt (B, E, G,
+        Gm, Bm, F#, D/A, Em, A; > 160 Hz), programmawissel per halve maat; akkoorden zonder eigen knipsel getransponeerd
+  bass  één basnoot E2 uit de basstem, gemeten ritme en register (B1-B2, G2, F#2; opbouw tot F1)
+  drums ongewijzigd sinds v1/v2 (ritme 'goed'), synthetische taiko/dreun/ka/inslag + stock-kit
+Weggelaten: de hogere lijn in de stem 'piano' (maat 23-60, 0,2% van de energie; de A/B bleef onherkenbaar), trompetten,
+hoorns, strijkers en PSG (v1/v2). ROM: ±135 KB samples (11025 Hz).
 Gebruik: python3 tools/grounded/ruinous_theme.py [--render <map>] [-v]"""
 import os, subprocess, sys
 import numpy as np
@@ -51,7 +54,7 @@ BAR = TPB * 4
 BPM = 152
 MAX_V = 11                   # legendary-budget
 
-STR, HORN, TPT, KOTO, SYN, BASS, SQ1, SQ2, DRUMS = 48, 60, 56, 107, 82, 33, 80, 81, 127
+LO, OSTP, BASS, DRUMS = 107, 82, 33, 127
 (TAIKO, BOOM, KA, IMPACT, CRASH, HAT, SNARE, TAIKO_LO, KICK) = range(36, 45)
 
 N = {'C': 0, 'C#': 1, 'Db': 1, 'D': 2, 'D#': 3, 'Eb': 3, 'E': 4, 'F': 5, 'F#': 6, 'G': 7, 'G#': 8, 'Ab': 8,
@@ -131,173 +134,88 @@ def add(P, key, t0, st, ln, n, v):
 
 
 # ---- materiaal ---------------------------------------------------------------------------------------------------
-OST = (0, 1, 3, 4, 6)
-# v2: de lage tokkel in de intro en maat 5-8 (stem 'piano', dominante toon per 16e; lengte = aantal heraanslagen)
-INTRO_PLUCK = {1: '1:6:E2 8:1:B2 9:7:B3', 2: '0:1:B3 1:1:E4 2:1:B3 3:2:B2 7:2:D#4 13:3:B3',
-               3: '1:7:F#2 8:3:B2 11:3:A2 14:2:B2', 4: '0:1:F#3 1:1:F#4 2:2:A#4 4:2:G#4'}
-Q_PLUCK = {5: '0:15:B3 15:1:B2', 6: '0:5:B2 9:1:C3', 7: '5:4:B2 9:3:B3 12:2:B2 14:2:C4', 8: '0:1:B3 1:1:B2 2:2:F#4'}                         # het ostinato-ritme per halve maat (gemeten: maat 5-12 en 66-69)
-# trompet (maat 6-12): de roep van de 'vocals'-stem (basic-pitch), F5 -> F#5
-CALL = {6: '10:2:F5 12:2:F5', 7: '12:1:F5 13:2:F5 15:1:F5', 8: '0:4:F5 4:3:F5 7:2:F5 9:2:F5 11:4:F5',
-        9: '4:2:F#5 6:2:F#5 11:1:F#5 12:2:F#5 14:2:F#5', 10: '1:2:F#5 5:1:F#5 6:2:F#5 8:2:F#5 10:1:F#5 11:2:F#5 13:3:F#5',
-        11: '3:3:F#5 6:2:F#5 8:3:F#5 11:1:F#5 12:1:F#5 13:2:F#5',
-        12: '0:1:F#5 1:3:F#5 4:1:F#5 5:2:F#5 7:2:F#5 9:2:F#5 11:2:F#5 13:2:F#5 15:1:F#5'}
-FANFARE = '0:2:F#5 2:5:F#5 9:2:F#5 11:4:F#5'           # maat 31/47 (de herhaalde F#5-figuur)
-FANFARE2 = '0:2:F#5 3:1:F#5 4:1:F#5 5:3:F#5 9:5:F#5 14:2:E5'
-PAIRS = '4:1:F#4 5:2:F#4 8:1:A4 9:2:A4 12:1:B4 13:2:B4'  # maat 30/34/46/50: stijgende paren (vocals-stem)
-FALL = {35: '0:2:F#5 2:2:F#5 4:6:F#5 12:2:E5 14:2:C#5', 36: '0:6:F#4 6:1:G4 7:3:G4 11:1:D5 12:1:C#5 13:3:D5',
-        51: '0:2:F#5 2:2:F#5 4:6:F#5 12:2:G5 14:2:A5', 52: '0:6:F#5 6:1:E5 7:3:E5 11:1:C#5 12:1:B4 13:3:C#5'}
-# koto: per akkoord een cel (a a . b b . c .) uit akkoordtonen in G4-D6; per maat wisselt de richting
-KOTO_SET = {'B5': ('F#5', 'B5', 'C#6', 'B5', 'F#5', 'E5'), 'B': ('F#5', 'B5', 'D#6', 'B5', 'F#5', 'D#5'),
-            'Bm': ('F#5', 'B5', 'D6', 'B5', 'F#5', 'D5'), 'B7': ('D#5', 'F#5', 'A5', 'F#5', 'D#5', 'B4'),
-            'E': ('E5', 'B5', 'F#5', 'E5', 'B4', 'F#5'), 'Em': ('E5', 'G5', 'B5', 'G5', 'E5', 'B4'),
-            'Gm': ('G5', 'Bb5', 'D6', 'Bb5', 'G5', 'D5'), 'G': ('D5', 'G5', 'B5', 'F#5', 'D5', 'C#6'),
-            'F#': ('F#5', 'G#5', 'C#6', 'G#5', 'F#5', 'C#5'), 'DA': ('A4', 'D5', 'F#5', 'C#6', 'A5', 'F#5'),
-            'A': ('A4', 'C#5', 'E5', 'C#5', 'A4', 'E5'), 'Bo': ('D5', 'F5', 'A5', 'F5', 'D5', 'B4'),
-            'B11': ('E5', 'F#5', 'A5', 'F#5', 'E5', 'B4')}
-
-
-TPT_BARS = set(CALL) | {30, 31, 32, 34, 35, 36, 46, 47, 48, 50, 51, 52}
+# v3: noten van de laag 'lo' per 16e: 'stap:lengte:noot' (dominante toon per 16e in de stem 'piano'; B1/A1 een octaaf
+# hoger). De halve-maat-lagen (ost, oth) dragen hun eigen noten (geknipt uit het origineel).
+LO_NOTES = {
+    1: '1:7:E2 8:1:B2 9:7:B3', 2: '0:1:B3 1:1:E4 2:1:B3 3:2:B2 7:2:D#4 13:3:B3',
+    3: '1:7:F#2 8:3:B2 11:3:A2 14:2:B2', 4: '0:1:F#3 1:1:F#4 2:2:A#4 4:2:G#4',
+    5: '0:15:B3 15:1:B2', 6: '0:2:B3', 7: '8:5:B3', 8: '0:1:B3 1:3:F#4',
+    # (v3: de hogere lijn vanaf maat 23 in de stem 'piano' bleef in de A/B onherkenbaar (chroma 0-0,4 per maat) en
+    # draagt maar 0,2% van de energie: weggelaten - liever weinig lagen die kloppen)
+}
+# transpositie van het ostinato-knipsel (B3 = 59) per grondtoon (gemeten: B, E omhoog, G omlaag)
+SHIFT = {11: 0, 4: 5, 7: -4, 6: -5, 9: -2, 8: -3, 1: 2, 2: 3}
+# akkoord -> (halve-maat-sample uit 'other', transpositie); zonder eigen knipsel: het dichtstbijzijnde getransponeerd
+OTH_OF = {'B5': ('B', 0), 'B': ('B', 0), 'B7': ('B', 0), 'B11': ('B', 0), 'Bo': ('Bm', 0), 'Bm': ('Bm', 0),
+          'E': ('E', 0), 'Emaj': ('E', 0), 'Em': ('Em', 0), 'G': ('G', 0), 'Gm': ('Gm', 0), 'F#': ('Fs', 0),
+          'F#m': ('Fs', 0), 'DA': ('DA', 0), 'A': ('A', 0), 'G#m': ('Bm', -3), 'C#': ('Fs', -5), 'G#': ('Bm', -3)}
+OTH_TAGS = ('B', 'E', 'G', 'Gm', 'Bm', 'Fs', 'DA', 'Em', 'A')
+OTH_PROG = {t: 84 + i for i, t in enumerate(OTH_TAGS)}
 
 
 def compose():
     P, CC, EX = Parts(), Parts(), Parts()
-    rng = np.random.default_rng(683)
     for b in range(1, END + 1):
         t0 = (b - 1) * BAR
         sec = section(b)
         h1, h2 = HARM[b]
         nxt = HARM.get(b + 1, ('B5', 'B5'))[0]
-        # ------------------------------------------------------------------ intro: zwevend akkoord + twinkelingen
-        if sec == 'I':
-            # v2: het lage, zware Aziatische tokkelinstrument (stem 'piano', maat 1-4), heraanslagen in 16en;
-            # B1/A1 (onder C2) een octaaf hoger
-            for st, ln, n in pat(INTRO_PLUCK[b]):
-                for k in range(ln):
-                    add(P, 'pluck', t0, st + k, 1, n, 116 if k == 0 else 92 + 4 * (k % 2))
-            if b == 2:     # de twee zachte dreunen van het origineel (maat 2: kick op 16e 4 en 7)
-                add(P, 'bm', t0, 4, 2, BOOM, 70); add(P, 'bm', t0, 7, 2, BOOM, 62)
-            if b == 4:     # aanloop naar de inslag: taiko-roffel aanzwellend + strijkers B-F# ontstaan
-                for k in range(8, 16):
-                    add(P, 'tk', t0, k, 1, TAIKO_LO, 70 + 6 * (k - 8))
-            continue
-        r1, r2 = CHORD[h1][0], CHORD[h2][0]
-        # ------------------------------------------------------------------ ostinato (elektronisch, de hele loop)
-        if sec in ('Q', 'U', 'A', 'A2', 'B', 'R', 'H', 'K', 'Q2'):
+        # ------------------------------------------------------------------ lo (het lage Aziatische instrument)
+        if b in LO_NOTES:
+            for st, ln, n in pat(LO_NOTES[b]):
+                if n < p('C2'):
+                    n += 12
+                add(P, 'lo', t0, st, ln, n, 116 if ln >= 2 else 108)
+        # ------------------------------------------------------------------ 'other': pad + figuur (halve maten)
+        if 5 <= b <= 12 or b >= 66:            # rustige maten: het ostinato-pad uit maat 67
             for h, ch in ((0, h1), (8, h2)):
-                root, _, nb = CHORD[ch]
-                base = near(root, p('F#3'))          # F#3-F4: gemeten B3 (+ kwint F#4, zit in de sample)
-                for k in OST:
-                    n = base + (nb if k == 6 else 0)
-                    v = 112 if k == 0 else (102 if k == 3 else 92)
-                    add(P, 'syn', t0, h + k, 1, n, v)
-        # ------------------------------------------------------------------ bourdon / akkoorden (strijkers)
-        if False:      # v2: de 'bourdon' was het ostinato zelf (gemeten); geen strijkers in Q/U
-            vo = [p('B3'), p('F#4')] + ([p('E4')] if (sec == 'U' and b % 2 == 0) or (sec == 'Q2' and b % 2 == 1) else [])
-            for h in (0, 8):
-                for n in vo:
-                    add(P, 'str', t0, h, 8, n, 66 if sec != 'U' else 74 + 3 * (b - 13))
-            if b in (5, 13):
-                add(P, 'str', t0, 0, 16, p('B2'), 70)
-        elif sec in ('R', 'K'):          # v2: alleen nog onder de roffels (verminderd B / de opbouw)
+                add(P, 'ost', t0, h, 8, 59 + SHIFT[CHORD[ch][0]], 112)
+        elif 13 <= b <= 64:                    # de halve maat van het origineel met hetzelfde akkoord
             for h, ch in ((0, h1), (8, h2)):
-                lo = p('F#3') if sec != 'R' else p('A3')
-                horns = sec in ('A', 'A2', 'B') and not (sec == 'A' and b < 21)
-                vo = voicing(ch, p('B3') if horns else lo, 2 if horns or sec == 'K' else 3)     # met hoorns erbij: 2 stemmen, hoger
-                if b in TPT_BARS or b == 53:
-                    vo = vo[1:]                    # trompet erbij: één strijkersstem (kanalen)
-                for n in vo:
-                    add(P, 'str', t0, h, 8, n, 84 if sec in ('A', 'B', 'A2') else 92)
-        elif sec == 'X':          # gemeten: één vastgehouden G# (Ab6 bovenin), verder niets
-            for n in (p('G#3'), p('G#4'), p('G#5')):
-                add(P, 'str', t0, 0, 16, n, 96)
-        # ------------------------------------------------------------------ hoorns: felle lange tonen
-        if False:      # v2: geen hoorns (Jordi: 'voor de rest alles niet'; de lange tonen waren het ostinato)
-            if b % 2 == 1 or h1 != h2 or HARM[b - 1] != HARM[b]:
-                for h, ch in ((0, h1), (8, h2)) if h1 != h2 else ((0, h1),):
-                    root = CHORD[ch][0]
-                    lo = near(root, p('F#3'))
-                    ln = 8 if h1 != h2 else 16
-                    for n in (lo, lo + 7 if (lo + 7) % 12 in CHORD[ch][1] else lo + 12):
-                        add(P, 'horn', t0, h, ln, n, 96)
-        elif False:
-            for n in (p('B3'), p('F#4')):
-                add(P, 'horn', t0, 0, 16, n, 70 + 18 * (b - 15))
-        elif False:
-            line = {61: ('G4', 'A4'), 62: ('Bb4', 'B4'), 63: ('B4', 'C#5'), 64: ('D#5', 'F#5')}[b]
-            for h, nm in zip((0, 8), line):
-                add(P, 'horn', t0, h, 8, p(nm), 96 + 4 * (b - 61))
-                add(P, 'horn', t0, h, 8, p(nm) - 12, 88 + 4 * (b - 61))
-        elif False:
-            add(P, 'horn', t0, 0, 12, p('G#4'), 104)
+                tag, sh = OTH_OF[ch]
+                add(P, 'oth', t0, h, 8, 60 + sh, 112)
+                CC['oth'].append((t0 + h * S, 'prog', OTH_PROG[tag]))
         # ------------------------------------------------------------------ bas
         if sec in ('A', 'A2', 'B'):
             for h, ch in ((0, h1), (8, h2)):
                 root, _, nb = CHORD[ch]
-                R = near(root, p('C2'))
-                hi = h == 8 and ch in ('B5', 'B', 'Bm') and b % 2 == 1      # octaafsprong op de tweede helft
+                R = near(root, p('A1'))                  # register van het origineel (B1, E2, G2, F#2)
+                hi = h == 8 and root == 11 and b % 2 == 1  # B2-sprong op de tweede helft (gemeten in oneven maten)
                 steps = ((0, 1, R), (1, 1, R), (3, 2, R), (6, 2, R + nb))
                 if h == 8:
                     nroot = CHORD[nxt][0]
-                    tgt = near(nroot, p('C2'))
+                    tgt = near(nroot, p('A1'))
                     appr = (tgt + 1 if b % 2 == 1 else tgt - 2) if nroot == root else tgt - 1
-                    if appr < p('C2'):
-                        appr += 12
                     steps = ((0, 1, R + (12 if hi else 0)), (1, 1, R + (12 if hi else 0)), (3, 1, R), (4, 1, R),
                              (6, 2, appr))
                 for st, ln, n in steps:
-                    add(P, 'bass', t0, h + st, ln, n, 112 if st == 0 else 98)
-        elif sec == 'U':
-            ph = {16: '10:2:D3 12:1:D3 13:1:D3 14:1:D3 15:1:C#3'}.get(b)
-            if ph:
-                for st, ln, n in pat(ph):
-                    add(P, 'bass', t0, st, ln, n, 104)
+                    add(P, 'bass', t0, h + st, ln, n, 116 if st == 0 else 104)
+        elif sec == 'U' and b == 16:
+            for st, ln, n in pat('10:2:D2 12:1:D2 13:1:D2 14:1:D2 15:1:C#2'):
+                add(P, 'bass', t0, st, ln, n, 108)
         elif sec == 'R':
-            for st, ln, n in pat('0:2:B2 3:1:B2 4:1:B2 9:2:B2 12:1:B2 13:1:A2 14:2:Bb2'):
-                add(P, 'bass', t0, st, ln, n, 106)
+            for st, ln, n in pat('0:2:B1 3:1:B1 4:1:B1 9:2:B2 12:1:B1 13:1:A1 14:2:Bb1'):
+                add(P, 'bass', t0, st, ln, n, 110)
         elif sec == 'H':
             root = CHORD[h1][0]
-            R = near(root, p('C2'))
-            for st, ln, n in ((0, 2, R), (3, 1, R), (4, 2, R + 5), (6, 2, R - 2 + (12 if R - 2 < p('C2') else 0)),
-                              (8, 2, R), (11, 1, R), (12, 2, R + 7), (14, 2, R + 5)):
-                add(P, 'bass', t0, st, ln, n, 108 if st in (0, 8) else 96)
+            R = near(root, p('A1'))
+            for st, ln, n in ((0, 2, R), (3, 1, R), (4, 2, R + 5), (6, 2, R + 10), (8, 2, R), (11, 1, R),
+                              (12, 2, R + 7), (14, 2, R + 5)):
+                add(P, 'bass', t0, st, ln, n, 112 if st in (0, 8) else 102)
         elif sec == 'K':
-            ph = {61: '0:2:G2 3:2:Ab2 6:2:A2 8:2:G2 11:2:Ab2 14:2:A2', 62: '0:2:G2 3:2:Ab2 6:4:Eb3 10:6:E3',
-                  63: '0:3:Ab2 3:3:Eb3 6:2:E3 8:3:Ab2 11:3:Eb3 14:2:E3',
-                  64: '0:3:Ab2 4:2:B2 6:2:Ab2 8:2:A2 10:2:F2 12:2:F2 14:2:F#2'}[b]
+            ph = {61: '0:2:G1 3:2:Ab1 6:2:A1 8:2:G1 11:2:Ab1 14:2:A1', 62: '0:2:G1 3:2:Ab1 6:4:Eb2 10:6:E2',
+                  63: '0:3:Ab1 3:3:Eb2 6:2:E2 8:3:Ab1 11:3:Eb2 14:2:E2',
+                  64: '0:3:Ab1 4:2:B1 6:2:Ab1 8:2:A1 10:2:F1 12:2:F1 14:2:F#1'}[b]
             for st, ln, n in pat(ph):
-                add(P, 'bass', t0, st, ln, n, 110)
+                add(P, 'bass', t0, st, ln, n, 112)
         elif sec == 'Q' and b == 5:
-            add(P, 'bass', t0, 0, 6, p('E2'), 100)            # de inslag-dreun van het origineel (E2)
-        # ------------------------------------------------------------------ koto (oosters, vanaf maat 21)
-        if b in Q_PLUCK:                  # maat 5-8: de tokkel speelt door (stem 'piano'), heraanslagen in 16en
-            for st, ln, n in pat(Q_PLUCK[b]):
-                for k in range(ln):
-                    add(P, 'pluck', t0, st + k, 1, n, 112 if k == 0 else 90 + 4 * (k % 2))
-        if sec in ('A', 'A2', 'B', 'H') and not (sec == 'A' and b < 21):
-            # vanaf maat 21: dezelfde lage tokkel (Jordi: 'hoort meer het pluk instrument te zijn'), cellen uit
-            # akkoordtonen in F#3-D5 in het ostinato-ritme (gemeten: heraanslagen in 16en, G4-C5 in de stem 'piano')
-            for h, ch in ((0, h1), (8, h2)):
-                cell = KOTO_SET[ch]
-                c = cell[:3] if (b + h // 8) % 2 == 0 else cell[3:]
-                for k, n in zip(OST, (c[0], c[0], c[1], c[1], c[2])):
-                    add(P, 'pluck', t0, h + k, 1, p(n) - 12, 112 if k in (0, 3) else 94)
-        # ------------------------------------------------------------------ trompet
-        if False:      # v2: geen trompetten (Jordi: 'irritant en hoog'; gemeten: een zachte, bijna zuivere F#5)
-            for st, ln, n in pat(CALL[b]):
-                add(P, 'tpt', t0, st, ln, n, 96 if b < 9 else 106)
-        if False:
-            for st, ln, n in pat(FANFARE):
-                add(P, 'tpt', t0, st, ln, n, 112)
-        if False:
-            for st, ln, n in pat(FANFARE2):
-                add(P, 'tpt', t0, st, ln, n, 112)
-        if False:
-            for st, ln, n in pat(PAIRS):
-                add(P, 'tpt', t0, st, ln, n, 104)
-        if False:
-            for st, ln, n in pat(FALL[b]):
-                add(P, 'tpt', t0, st, ln, n, 108)
+            add(P, 'bass', t0, 0, 6, p('E2'), 108)            # de inslag-dreun van het origineel (E2)
         # ------------------------------------------------------------------ drums
+        if b == 2:     # de twee zachte dreunen van het origineel (maat 2: kick op 16e 4 en 7)
+            add(P, 'bm', t0, 4, 2, BOOM, 70); add(P, 'bm', t0, 7, 2, BOOM, 62)
+        if b == 4:     # aanloop naar de inslag: taiko-roffel aanzwellend
+            for k in range(8, 16):
+                add(P, 'tk', t0, k, 1, TAIKO_LO, 70 + 6 * (k - 8))
         if b == 5:
             add(P, 'fx', t0, 0, 16, IMPACT, 127)
             add(P, 'fx2', t0, 0, 8, CRASH, 116)
@@ -411,23 +329,23 @@ KIT = [   # vanaf noot 36: (regel, lengte van de sample in s; None = geloopt)
     ('voice_directsound 60, 64, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 120', 0.29),
 ]
 KEYSPLITS = {   # naam: (tabel, [(sample, sustain, release)])
-    'ruinous_str': ('strings', [('sc88pro_string_ensemble_%d' % k, 255, 150) for k in (60, 72, 84)]),
-    'ruinous_pluck': ('ruinous_pluck', [('ruinous_pluck_%d' % k, 255, 100) for k in (40, 47, 54, 61, 68)]),
+    'ruinous_lo': ('ruinous_lo', [('ruinous_lo_e2', 255, 150), ('ruinous_lo_b3', 255, 150)]),
 }
 VOICES = {
-    STR: 'voice_keysplit voicegroup_ruinous_str_keysplit, keysplit_strings',
-    KOTO: 'voice_keysplit voicegroup_ruinous_pluck_keysplit, keysplit_ruinous_pluck',
-    SYN: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_ost, 255, 0, 255, 90',
-    BASS: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 120',
+    LO: 'voice_keysplit voicegroup_ruinous_lo_keysplit, keysplit_ruinous_lo',
+    OSTP: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_ostbar, 255, 0, 255, 140',
+    BASS: 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_bass, 255, 0, 255, 100',
     DRUMS: 'voice_keysplit_all voicegroup_ruinous_drumset',
 }
+for _t, _p in OTH_PROG.items():
+    VOICES[_p] = 'voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_%s, 255, 0, 255, 140' % _t
 
 
 def write_voicegroup():
     lines = open('sound/voicegroups/grounded_gm.inc').read().split('\n')
     lines[0] = '@ Project Grounded: grounded_gm voor Battle! Treasures of Ruin. Gegenereerd door tools/grounded/ruinous_theme.py.'
-    lines[1] = ('@ eigen samples (ruinous_samples.py): 82 elektronisch ostinato, 107 lage tokkel (keysplit ruinous_pluck), '
-                '127 = drumkit ruinous; stock: 33 bas, 48 strijkers (keysplit ruinous_str).')
+    lines[1] = ('@ samples uit het origineel (ruinous_samples.py): 107 laag Aziatisch instrument (keysplit ruinous_lo), '
+                '82 ostinato-pad (maat 67), 84-92 stem other per akkoord, 33 bas; 127 = drumkit ruinous.')
     lines[2] = 'voice_group %s' % VG
     out = []
     for l in lines:
@@ -444,7 +362,7 @@ def write_voicegroup():
         'voice_group ruinous_drumset, 36\n' + ''.join('\t%s\n' % k for k, _ in KIT) + '\n')
     for name, (table, samples) in KEYSPLITS.items():
         open('sound/voicegroups/keysplits/%s.inc' % name, 'w').write(
-            '@ Project Grounded: Battle! Treasures of Ruin, %s (stock-samples, kortere release; tabel keysplit_%s).\n'
+            '@ Project Grounded: Battle! Treasures of Ruin, %s (samples uit het origineel; tabel keysplit_%s).\n'
             '@ Gegenereerd door tools/grounded/ruinous_theme.py.\n'
             'voice_group %s_keysplit\n' % (name, table, name) +
             ''.join('\tvoice_directsound 60, 0, DirectSoundWaveData_%s, 255, 0, %d, %d\n' % (s, su, r) for s, su, r in samples))
@@ -454,10 +372,10 @@ def write_voicegroup():
 TRACKS = [   # (naam, programma, volume, pan)
     ('tk', DRUMS, 127, 64), ('bm', DRUMS, 100, 64), ('sn', DRUMS, 84, 70), ('hh', DRUMS, 40, 76),
     ('fx', DRUMS, 110, 64), ('fx2', DRUMS, 80, 58),
-    ('bass', BASS, 100, 64), ('syn', SYN, 92, 60), ('pluck', KOTO, 110, 70), ('str', STR, 64, 68),
+    ('bass', BASS, 104, 64), ('ost', OSTP, 100, 60), ('oth', 84, 100, 64), ('lo', LO, 110, 64),
 ]
 PSG = set()
-ORDER = ['tk', 'bm', 'fx', 'bass', 'syn', 'pluck', 'fx2', 'sn', 'str', 'hh']
+ORDER = ['tk', 'bm', 'fx', 'bass', 'lo', 'ost', 'oth', 'fx2', 'sn', 'hh']
 DRUMPARTS = ('tk', 'bm', 'sn', 'hh', 'fx', 'fx2')
 # hoe lang een slag mag doorklinken (16en); de volgende slag in dezelfde partij kapt eerder
 RING = {TAIKO: 4, BOOM: 2, KA: 1, IMPACT: 16, CRASH: 6, HAT: 1, SNARE: 1, TAIKO_LO: 3, KICK: 2}
@@ -513,10 +431,10 @@ def build(render_dir=None):
     tail = {}
     for k, pr in progs.items():
         tail[k] = 0 if (k in PSG or pr == DRUMS) else release_ticks(rel.get(pr, 200), TPB, BPM) + 2
-    for k in ('str', 'horn', 'tpt'):
+    for k in ('lo',):
         if k in parts:
             parts[k] = detach(parts[k], tail[k])
-    for k in ('bass', 'syn', 'pluck'):
+    for k in ('bass',):
         if k in parts:
             parts[k] = tight(parts[k], tail[k])
     for k in DRUMPARTS:
@@ -527,10 +445,7 @@ def build(render_dir=None):
     for k, pr in progs.items():
         if pr == DRUMS:
             continue
-        lowest = p('C2') if k not in PSG else p('C2')
-        assert all(n >= lowest for _, _, n, _ in parts.get(k, [])), '%s: noten onder C2' % k
-        if pr in (TPT, HORN):
-            assert all(n >= 48 for _, _, n, _ in parts.get(k, [])), '%s: koper onder C3' % k
+        assert all(n >= p('E1') for _, _, n, _ in parts.get(k, [])), '%s: noten onder E1' % k
     proxy = {}
     for k in DRUMPARTS:
         proxy[k] = []
@@ -570,7 +485,7 @@ def build(render_dir=None):
 
 
 # ---- offline-render (FluidR3 GM; andere klanken dan de GBA, wel noten/vorm/tempo) ------------------------------------
-GM_PROG = {'bass': 33, 'syn': 89, 'pluck': 107, 'tpt': 56, 'horn': 60, 'str': 48, 'sq1': 80, 'sq2': 80}
+GM_PROG = {'bass': 33, 'ost': 89, 'oth': 89, 'lo': 107}
 GM_DRUM = {TAIKO: 41, BOOM: 35, KA: 37, IMPACT: 49, CRASH: 57, HAT: 42, SNARE: 38, TAIKO_LO: 43, KICK: 36}
 
 

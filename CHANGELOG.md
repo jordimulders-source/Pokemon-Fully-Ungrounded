@@ -17991,3 +17991,12 @@ Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's 
   - batchrec: geen pieken of clipping;
   - in de emulator: na de warp speelt Flower Garden, een wild gevecht speelt Overworld.
 - `music_lint.py`: Athletic mag 11 noten (8 SNES-stemmen + uitklinkstaartjes op 5 momenten).
+
+### [v0.9.236] - MP2K-ripper (Wario Land 4, Mario Kart: Super Circuit)
+- Wario Land 4 en Mario Kart: Super Circuit gebruiken dezelfde muziekengine als Emerald. `tools/grounded/mp2k_rip.py` haalt een nummer 1-op-1 uit hun ROM:
+  - de sporen gaan als bytecode naar `sound/songs/<naam>.s`, met pointers omgezet naar labels;
+  - alleen de gebruikte instrumenten komen mee in een eigen voicegroup (keysplits en drumkits met hun subtabellen);
+  - de samples worden wav's in `sound/direct_sound_samples/rip/<game>/` (gedeeld per game, niet verkleind; ze staan al op ±10,5 kHz).
+- Running status zoals m4a: alleen commando's vanaf 0xBD nemen argumenten over.
+- `tools/grounded/mp2k_list.py` geeft per nummer de lengte, de loop en de lengte bij twee rondes, om te vergelijken met een soundtracklijst.
+- Getest met Wario Land 4 song 687: 35 KB, speelt in onze engine zonder pieken of overlopen. Daarna weer verwijderd: welk nummer welk is, volgt uit de MP3's van Jordi.

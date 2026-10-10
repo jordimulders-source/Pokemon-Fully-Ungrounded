@@ -22,14 +22,16 @@ from sample_utils import write_wav
 OUT = 'sound/direct_sound_samples/grounded'
 
 
-def crystal(rate=16000, key=84, dur=2.6):
+def crystal(rate=16000, key=84, dur=1.3):
     f0 = 440 * 2 ** ((key - 69) / 12)
     t = np.arange(int(rate * dur)) / rate
     x = np.zeros_like(t)
     # (verhouding, sterkte, uitsterftijd s): grondtoon draagt, octaaf + licht onharmonische glans sterven snel
     # v5 (Jordi: 'de piepjes missen de helft'): in het origineel klinkt elke belnoot ±1 maat door (wolk van tonen);
     # grondtoon sterft nu in 1,3 s i.p.v. 0,45 s
-    for r, a, d in ((1.0, 1.0, 1.3), (2.0, 0.30, 0.35), (3.01, 0.12, 0.12), (4.18, 0.05, 0.06)):
+    # v6 (Jordi: 'vanaf 4 s een echo die te lang blijft'): gemeten uitsterving in het origineel -6 dB na 0,25 s,
+    # -11..-15 dB na 0,5 s, -20 dB na 0,75 s -> grondtoon 0,3 s
+    for r, a, d in ((1.0, 1.0, 0.3), (2.0, 0.30, 0.15), (3.01, 0.12, 0.07), (4.18, 0.05, 0.04)):
         x += a * np.sin(2 * np.pi * f0 * r * t) * np.exp(-t / d)
     att = np.minimum(1, t / 0.004)                     # 4 ms aanzet: tik zonder klik
     x *= att

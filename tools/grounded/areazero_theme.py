@@ -82,7 +82,8 @@ def T(bar, pos=0):
 INTRO = [(0, 'F6'), (2, 'F#6'), (4, 'C#6'), (6, 'Eb6'), (8, 'Ab5'), (10, 'C#6'), (12, 'Eb6'), (14, 'Ab6')]
 INTRO4 = INTRO[:7] + [(13, 'Eb7'), (14, 'C#7')]
 INTRO5 = [(0, 'F6'), (2, 'F#6'), (4, 'C#7'), (6, 'Eb7'), (8, 'Ab6'), (10, 'C#7'), (12, 'Eb7'), (14, 'C#7')]
-CELL = [(4, 'C#7'), (6, 'Eb7'), (8, 'Ab6'), (12, 'Eb7'), (14, 'C#7')]            # m6-7, pauzes, m12-19
+CELL = [(4, 'C#7'), (6, 'Eb7'), (8, 'Ab6'), (12, 'Eb7'), (14, 'C#7')]            # m8-9, m12-17 (onder het koor)
+HI = [(0, 'Eb7'), (2, 'Ab6'), (4, 'C#7'), (6, 'Eb7'), (8, 'Ab6'), (10, 'C#7'), (12, 'Eb7'), (14, 'C#7')]  # m4-7, pauzes
 CELL_B = [(4, 'C#7'), (6, 'Eb7'), (8, 'Ab6'), (10, 'C#7'), (12, 'Eb7')]           # m20-23
 ARP_AB = [(0, 'F6'), (3, 'F6'), (5, 'C#6'), (8, 'F6'), (10, 'C#6'), (12, 'Eb6')]  # aria boven Ab
 ARP_B = [(0, 'F#5'), (2, 'C#6'), (5, 'Bb5'), (8, 'F#5'), (9, 'Bb6'), (10, 'C#6'), (12, 'Bb6')]   # aria boven B
@@ -173,7 +174,7 @@ def legato(ev):
 
 
 def build():
-    P = {k: [] for k in ('lead', 'lead_lo', 'aria', 'choir', 'sigh', 'str', 'bell', 'echo', 'ost', 'bass', 'hat', 'drums')}
+    P = {k: [] for k in ('lead', 'lead_lo', 'aria', 'choir', 'sigh', 'str', 'bell', 'bellecho', 'echo', 'ost', 'bass', 'hat', 'drums')}
     bend_lead, bend_sigh = [], []
 
     # bellen
@@ -187,14 +188,31 @@ def build():
         for pos, n in cell:
             t = T(bar, pos)
             P['bell'].append([t, t + ring * S, p(n) + 12 * octave, vel])
+    # v6 (Jordi: 'vanaf 11 s raakt hij het ritme kwijt'): gemeten (onsets per toon, m4-8): vanaf m4 tel 3 speelt boven
+    # het lage arpeggio een hoog arpeggio in achtsten (Ab6 C#7 Eb7) met een echo één zestiende later; het lage
+    # arpeggio loopt in m5-7 zachter door. Geen tijdsdrift (alle aanslagen 20 ms vóór het raster, constant).
+    def hi(bar, vel, half=False):
+        for pos, n in HI[4:] if half else HI:
+            t = T(bar, pos)
+            P['bell'].append([t, t + 4 * S, p(n), vel])
+            P['bellecho'].append([t + S, t + 3 * S, p(n), int(vel * 0.5)])     # echo, 1 zestiende later (eigen spoor)
+    def lo(bar, vel, echo=True, ring=6, echo_to=16):    # het lage arpeggio + zijn echo (gemeten: ook vanaf m1)
+        bells(bar, INTRO, vel, ring=ring)
+        for pos, n in (INTRO if echo else ()):
+            if pos >= echo_to:
+                continue
+            t = T(bar, pos)
+            P['bellecho'].append([t + S, t + 3 * S, p(n), int(vel * 0.5)])
     for b in (1, 2, 3):
-        bells(b, INTRO, 92)
-    bells(4, INTRO4, 92)
-    bells(5, INTRO5, 88)
-    for b in (6, 7):
-        bells(b, CELL, 84)
+        lo(b, 92)
+    lo(4, 92, echo_to=8)                              # 2e helft m4: het hoge arpeggio neemt de echo over (max. 10 kanalen)
+    hi(4, 70, half=True)
+    for b, v in ((5, 70), (6, 56), (7, 44)):          # zacht onder het hoge arpeggio: zonder echo (kanaalbudget 10)
+        lo(b, v, echo=False, ring=4)
+    for b in (5, 6, 7):
+        hi(b, 84)
     for b in (10, 11, 18, 19):
-        bells(b, CELL, 80)
+        hi(b, 78)
     for b in (8, 9, 12, 13, 14, 15, 16, 17):
         bells(b, CELL, 64)
     for b in range(20, 24):
@@ -317,7 +335,10 @@ def build():
     for k in ('str', 'sigh'):                       # v4: koorroepen sluiten aan (detach gaf 0,2 s stilte vóór elke roep)
         P[k] = detach(P[k], tail[k])
     tail['aria'] = release_ticks(CHOIR_REL, TPB, BPM) + 2
-    order = ['aria', 'lead', 'lead_lo', 'choir', 'drums', 'bell', 'sigh', 'str']
+    tail['bellecho'] = tail['bell']
+    P['bellecho'] = [[s0, min(e0, min([x[0] for x in P['bellecho'] if x[2] == n0 and x[0] > s0], default=e0)), n0, v0]
+                     for s0, e0, n0, v0 in P['bellecho']]
+    order = ['aria', 'lead', 'lead_lo', 'choir', 'drums', 'bell', 'bellecho', 'sigh', 'str']
     ds = {k: P[k] for k in order}
     kept = allocate(ds, order, tail, drum_len=S * 2, drum_parts=('drums',), max_voices=MAXV)
     for k in order:
@@ -337,7 +358,7 @@ def build():
               [(t, mido.Message('pitchwheel', pitch=max(-8192, min(8191, v)))) for t, v in bend_sigh]
     TRACKS = [('lead', VOICE, 84, 64, ex_lead), ('lead_lo', VOICE_LO, 84, 64, ex_lead), ('choir', CHOIRKIT, 100, 64, ex_choir), ('aria', ARIAKIT, 96, 64, ex_choir),
               ('sigh', SIGH, 66, 56, ex_sigh),
-              ('str', STR, 62, 64, ()), ('bell', BELL, 66, 72, ()), ('echo', ECHO, 30, 44, ()),
+              ('str', STR, 62, 64, ()), ('bell', BELL, 66, 72, ()), ('bellecho', BELL, 66, 56, ()), ('echo', ECHO, 30, 44, ()),
               ('ost', OST, 34, 80, ()), ('bass', BASS, 62, 64, ()), ('hat', HAT, 26, 70, ()),
               ('drums', DRUMS, 92, 64, ())]
     free = [c for c in range(16) if c != 9]

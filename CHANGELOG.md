@@ -18227,3 +18227,9 @@ Jordi heeft de nummers benoemd in de luisterlijst: alle WL4-nummers met een loop
 - **Palm Tree Paradise** (song 651) geschrapt: alleen voor dat nummer kostte het 361 KB aan samples (Jordi: "niet heel belangrijk").
 - Nog nergens gekoppeld. Voor Wario's thema denkt Jordi aan Toxic Landfill of Fiery Cavern.
 - Ook benoemd, niet gerript: 636 introscherm, 638/639 overworld, 654 bijenlevel, 656/657 Mystic Lake-delen, 661 Pinball Zone, 681/800 Hurry Up, 687–689 Boss.
+
+### [v0.9.249] - Wario Land 4-nummers op hun plek
+Gekozen door Jordi:
+- **Arabian Night** in alle verdiepingen van **Mirage Tower** (was het Mt. Chimney-thema). Jordi wilde de plek met geesten: Yamask, Galar-Yamask, Golett, Cofagrigus en Runerigus wonen daar.
+- **Toy Block Tower** in de **Mauville Game Corner** (was het vanilla Game Corner-thema).
+- **Monsoon Jungle** als kaartmuziek in **Fortree Jungle** en **Mangrove Mire** (was het Route 119-thema; Route 119 zelf houdt zijn thema). De wilde gevechten daar blijven op Lakeside Park.

@@ -18370,3 +18370,14 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Vloeiend:** legato-frases van 2 maten, doorrollende harp-arpeggio's en een golvende bas; de breakdown loopt zacht door.
 - Dezelfde vorm en Mewtwo-contouren. Eigen voicegroup `grounded_mew` (Mewtwo + kortere harp-release): ±3,5 KB.
 - Alternatief klaar: kandidaat B (12/8 op 120 bpm), via `FEEL = '128'` in `tools/grounded/mew_theme.py`.
+
+### [v0.9.269] - Ultra Beast v3 + Shy Guy-intro per tegenstander
+- **Ultra Beast:** de glazen lead pauzeert vanaf 23 s, in de hele A2-sectie (±11 s). Dan draagt alleen de PSG-echo het thema, een octaaf hoger; in B, C en de climax (D) komt hij terug. Jordi: "de glazen lead mag op een gegeven moment al dan niet tijdelijk verdwijnen".
+- **Shy Guy-intro:** de Shy Guy die zich omdraait, het "!" krijgt, in de close-up staat en "Wait. / It's my turn." zegt, is nu de Shy Guy die je gaat bevechten. De variant wordt gekozen op de naam en op de kleur van de trainerfoto.
+  - **Rood:** Stadium-rood, de woestijn, strandwacht A.
+  - **Groen:** Stadium-groen, strandwacht B, Snifit, de jungle.
+  - **Roze:** Bouncer, Groovy Guy.
+  - **Zwart:** Stadium-zwart, Camp A2, Ninja, Miner.
+  - **Fly Guy:** Stadium-roze, Camp A1.
+  - **Spear Guy:** Camp B1.
+  - Kleuren via paletwissels; Fly Guy en Spear Guy wisselen van plek met de rode. +1,7 KB; 672 van 1024 sprite-tiles.

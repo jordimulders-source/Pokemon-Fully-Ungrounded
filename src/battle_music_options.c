@@ -47,8 +47,9 @@ const struct BattleMusicOption gTrainerBattleMusicOptions[] =
 
 // Project Grounded (Jordi: "3/4 wild pokemon/trainer battle themes rouleren, zodat muziek spannend blijft"):
 // de keuze ROTATE draait per gevecht door deze lijsten, op de teller van wilde/trainergevechten (vast binnen één gevecht).
-static const u16 sWildRotation[] = { MUS_VS_WILD, MUS_RG_VS_WILD, MUS_GROUNDED_VS_SUNSET_WILDS, MUS_GROUNDED_WL4_TOXIC_LANDFILL };
-static const u16 sTrainerRotation[] = { MUS_VS_TRAINER, MUS_RG_VS_TRAINER, MUS_GROUNDED_WL4_TOXIC_LANDFILL, MUS_RG_VS_GYM_LEADER };
+// Jordi: "die wild themes moeten echt in theme": alleen Pokémon-gevechtsthema's (geen Mario/Wario)
+static const u16 sWildRotation[] = { MUS_VS_WILD, MUS_RG_VS_WILD, MUS_GROUNDED_VS_DARK_CAVE };
+static const u16 sTrainerRotation[] = { MUS_VS_TRAINER, MUS_RG_VS_TRAINER };
 
 const u8 gWildBattleMusicOptionsCount = ARRAY_COUNT(gWildBattleMusicOptions);
 const u8 gTrainerBattleMusicOptionsCount = ARRAY_COUNT(gTrainerBattleMusicOptions);

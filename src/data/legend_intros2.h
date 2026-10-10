@@ -651,215 +651,293 @@ static void Task_LegendMoltres(u8 taskId)
 }
 
 // =====================================================================================================================
-// Zacian en Zamazenta (de open plek achterin het Mega Forest, in de schaduw; bloemblaadjes dwarrelen). De wolf staat op
-// zijn eigen plek (Zacian links, Zamazenta rechts) als een donkere vorm en komt uit de schaduw.
-// - Zacian ("It looks at you the way a dog looks at a stick."): drie snelle zwaardhalen (Sacred Sword): een witte snee
-//   schiet over het beeld (venster 0 als dunne band, de achtergrondkleur wit) en de twee helften verschuiven langs de
-//   snee (golf per beeldlijn). Bij de laatste splijt het beeld open en springt Zacian door de witte spleet op je af.
-// - Zamazenta ("like a wall that learned to breathe"): hij ademt (langzaam), het schild glanst (Iron Defense), dan
-//   Behemoth Bash: hij stormt naar het midden en naar je toe, het beeld dreunt, schokgolven.
+// ---------------- grote objecten (128 x 128) uit vier 64x64-sprites die samen schalen en draaien: zwaard, schild, Y, X
+#define LI2_BIG_SIZE    (128 * 128 / 2)
+
+static void LI2_BigMake(u32 b, const u32 *gfx, const u16 *pal, u16 tag, u8 subprio)
+{
+    u32 q;
+    for (q = 0; q < 4; q++)
+    {
+        LI_Make(b + q, gfx, LI2_BIG_SIZE, pal, tag, &sGI_Oam64Affine, 120, 80, subprio);
+        LI_Frame(b + q, tag, q, 64);
+    }
+}
+
+// midden (cx, cy), schaal (256 = 1x), draaiing (0-255, tegen de klok in), prioriteit (1 = achter BG0)
+static void LI2_BigSet(u32 b, s32 cx, s32 cy, s32 scale, s32 rot, bool32 show, u8 prio)
+{
+    u32 q;
+    s32 c = Cos(rot & 0xFF, 256), sn = Sin(rot & 0xFF, 256);
+    for (q = 0; q < 4; q++)
+    {
+        struct Sprite *s = LI_S(b + q);
+        s32 ox = (q & 1) ? 32 : -32, oy = (q & 2) ? 32 : -32;
+        s32 rx = (ox * c + oy * sn) >> 8, ry = (-ox * sn + oy * c) >> 8;
+        s->x = cx + rx * scale / 256;
+        s->y = cy + ry * scale / 256;
+        s->invisible = !show || s->y < -64 || s->y > DISPLAY_HEIGHT + 64; // anders loopt OAM-y rond
+        s->oam.priority = prio;
+        LI_Affine(sLI_Spr[b + q], scale, (u16)((rot & 0xFF) << 8));
+    }
+}
+
+static u16 LI2_Mix(u16 a, u16 b, s32 k)
+{
+    s32 r = a & 31, g = (a >> 5) & 31, bl = (a >> 10) & 31;
+    r += (((b & 31) - r) * k) >> 4;
+    g += ((((b >> 5) & 31) - g) * k) >> 4;
+    bl += ((((b >> 10) & 31) - bl) * k) >> 4;
+    return RGB(r, g, bl);
+}
+
+// het spritepalet van 'tag' per index tussen a en b (k[i] 0-16), in de unfaded buffer (GI_ResetPals zet het door)
+static void LI2_MixPal(u16 tag, const u16 *a, const u16 *b, const u8 *k)
+{
+    u8 slot = IndexOfSpritePaletteTag(tag);
+    u32 i;
+    u16 *u;
+    if (slot == 0xFF)
+        return;
+    u = &gPlttBufferUnfaded[OBJ_PLTT_ID(slot)];
+    for (i = 1; i < 16; i++)
+        u[i] = LI2_Mix(a[i], b[i], k[i]);
+}
+
+static u16 *LI2_ObjPal(u16 tag)
+{
+    u8 slot = IndexOfSpritePaletteTag(tag);
+    return slot == 0xFF ? NULL : &gPlttBufferUnfaded[OBJ_PLTT_ID(slot)];
+}
+
+// =====================================================================================================================
+// Zacian en Zamazenta (de open plek achterin het Mega Forest, in de schaduw; bloemblaadjes dwarrelen). Geen wolf in
+// beeld: midden op de open plek zweeft het Rusted Sword / Rusted Shield (het item-icoon x4 met Scale2x, vier sprites).
+// De roest valt er in schilfers af en het wordt roestvrij (kleur per index gemengd: grijs/roest -> zilverblauw met een
+// gouden gevest, of rood met goud zoals de Crowned-vorm), een glinster schiet erover en de wolf huilt (buiten beeld).
+// - Zacian: het zwaard draait horizontaal en slicet het beeld: een witte snee (venster 0 als band, de achtergrondkleur
+//   wit) volgt het zwaard, dan splijt het beeld open (golf per beeldlijn).
+// - Zamazenta: de open plek wordt zwart, het schild beukt drie keer tegen het scherm: het beeld schudt en de barsten in
+//   het "glas" (BG0 vóór het schild) groeien per klap, bij de derde breekt het.
 static const u32 sLegWolves_Tiles[] = INCBIN_U32("graphics/battle_transitions/legend_wolves.4bpp.smol");
 static const u32 sLegWolves_Maps[] = INCBIN_U32("graphics/battle_transitions/legend_wolves_maps.bin.smol");
 static const u16 sLegWolves_Pal[] = INCBIN_U16("graphics/battle_transitions/legend_wolves.gbapal");
+static const u32 sLegSword_Gfx[] = INCBIN_U32("graphics/battle_transitions/legend_sword.4bpp.smol");
+static const u16 sLegSword_Pal[] = INCBIN_U16("graphics/battle_transitions/legend_sword.gbapal");
+static const u16 sLegSword_CleanPal[] = INCBIN_U16("graphics/battle_transitions/legend_sword_clean.gbapal");
+static const u32 sLegShield_Gfx[] = INCBIN_U32("graphics/battle_transitions/legend_shield.4bpp.smol");
+static const u16 sLegShield_Pal[] = INCBIN_U16("graphics/battle_transitions/legend_shield.gbapal");
+static const u16 sLegShield_CleanPal[] = INCBIN_U16("graphics/battle_transitions/legend_shield_clean.gbapal");
+static const u32 sLegRustFlakes_Gfx[] = INCBIN_U32("graphics/battle_transitions/legend_rust_flakes.4bpp.smol");
+static const u16 sLegRustFlakes_Pal[] = INCBIN_U16("graphics/battle_transitions/legend_rust_flakes.gbapal");
 
 #define tWolfZam        data[12]
+enum { WOLF_MAP_CLEARING, WOLF_MAP_CRACK1, WOLF_MAP_CRACK2, WOLF_MAP_CRACK3 };
 #define WOLF_TAG_PETAL  0x5A77
-#define WOLF_TAG_RING   0x5A79
+#define WOLF_TAG_ITEM   0x5A78
+#define WOLF_TAG_FLAKE  0x5A79
+#define WOLF_TAG_GLINT  0x5A7B
 #define WOLF_SHOW       8
-#define WOLF_REVEAL     18
-#define WOLF_REVEAL_LEN 14
-#define WOLF_PETALS     10
-#define WOLF_RINGS      3
-#define WOLF_Y          80
+#define WOLF_PETALS     8
+#define WOLF_FLAKES     8
+#define WOLF_ITEM       WOLF_PETALS                    // vier slots
+#define WOLF_FLAKE0     (WOLF_ITEM + 4)
+#define WOLF_GLINT      (WOLF_FLAKE0 + WOLF_FLAKES)
+#define WOLF_X          120
+#define WOLF_Y          76
 #define WOLF_SHADE      RGB(2, 4, 7)
+#define WOLF_RUST       20    // de roest valt eraf (±24 frames)
+#define WOLF_GLEAM      46
+#define WOLF_CRY        52
 // Zacian
-#define ZAC_X           80
-#define ZAC_CRY         30
-#define ZAC_SLASH       40    // drie halen, om de 10 frames
-#define ZAC_SLASH_GAP   10
-#define ZAC_SLASHES     3
-#define ZAC_SPLIT       (ZAC_SLASH + (ZAC_SLASHES - 1) * ZAC_SLASH_GAP)   // de derde haal splijt het beeld
+#define ZAC_SWING       56    // het zwaard draait horizontaal
+#define ZAC_SWING_LEN   6
+#define ZAC_CUT         64    // en slicet van rechts naar links
+#define ZAC_CUT_LEN     6
+#define ZAC_SPLIT       72
 #define ZAC_SPLIT_LEN   16
-#define ZAC_END         (ZAC_SPLIT + ZAC_SPLIT_LEN + 16)
+#define ZAC_END         (ZAC_SPLIT + ZAC_SPLIT_LEN + 12)
 // Zamazenta
-#define ZAM_X           184
-#define ZAM_BREATHE     30
-#define ZAM_GLINT       52
-#define ZAM_CRY         62
-#define ZAM_BASH        68
-#define ZAM_BASH_LEN    16
-#define ZAM_HIT         (ZAM_BASH + ZAM_BASH_LEN)
-#define ZAM_END         (ZAM_HIT + 22)
+#define ZAM_FOCUS       56    // de open plek wordt zwart
+#define ZAM_DARK        64
+#define ZAM_HIT_LEN     6     // aanloop per klap
+#define ZAM_END         108
 
-static const u8 sWolfPetalX[WOLF_PETALS] = {10, 50, 90, 130, 170, 210, 30, 110, 190, 70};
-static const u8 sWolfPetalOfs[WOLF_PETALS] = {0, 60, 120, 30, 90, 150, 200, 15, 75, 135};
-// de drie sneden: beeldlijn en verschuiving van de helften (de laatste splijt verder open)
-static const u8 sZacCutY[ZAC_SLASHES] = {52, 112, 82};
-static const s8 sZacCutShift[ZAC_SLASHES] = {5, -4, 0};
+static const u8 sWolfPetalX[WOLF_PETALS] = {10, 50, 90, 130, 170, 210, 30, 190};
+static const u8 sWolfPetalOfs[WOLF_PETALS] = {0, 60, 120, 30, 90, 150, 200, 75};
+static const s8 sWolfFlake[WOLF_FLAKES][2] = {{-30, 22}, {18, -10}, {-6, 30}, {28, -28}, {-22, 4}, {8, 14}, {34, -4}, {-12, -20}};
+// per kleurindex: wanneer hij roestvrij wordt (de roest eerst, dan het metaal)
+static const u8 sWolfStagger[16] = {0, 10, 12, 14, 16, 6, 0, 2, 4, 6, 8, 10, 12, 14, 2, 4};
+static const u8 sZamHit[3] = {70, 84, 98};
 
 static void RTWolves_Init(struct Task *task)
 {
-    u32 i;
-    u16 species = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES);
+    u32 i, zam = task->tWolfZam;
 
-    if (task->tWolfZam && species != SPECIES_ZAMAZENTA_HERO && species != SPECIES_ZAMAZENTA_CROWNED)
-        species = SPECIES_ZAMAZENTA_HERO;
-    if (!task->tWolfZam && species != SPECIES_ZACIAN_HERO && species != SPECIES_ZACIAN_CROWNED)
-        species = SPECIES_ZACIAN_HERO;
     GI_LoadGfx(sLegWolves_Tiles, sLegWolves_Maps);
     LI_ResetSprites();
     for (i = 0; i < WOLF_PETALS; i++)
         LI_Make(i, gBattleAnimSpriteGfx_Petal, 16 * 112 / 2, gBattleAnimSpritePal_Petal, WOLF_TAG_PETAL, &sGI_Oam16, sWolfPetalX[i], -20, 0);
-    if (task->tWolfZam)
-    {
-        for (i = 0; i < WOLF_RINGS; i++)
-            LI_Make(WOLF_PETALS + i, gBattleAnimSpriteGfx_ThinRing, 64 * 64 / 2, gBattleAnimSpritePal_ThinRing, WOLF_TAG_RING, &sGI_Oam64Affine, 120, 84, 3); // achter de wolf
-    }
-    task->tGiSprite0 = LI_MonPicAffine(species, task->tWolfZam ? ZAM_X : ZAC_X, WOLF_Y);
-    task->tGiSprite1 = species;
-    GI_Sprite(task->tGiSprite0)->subpriority = 2;
+    LI2_BigMake(WOLF_ITEM, zam ? sLegShield_Gfx : sLegSword_Gfx, zam ? sLegShield_Pal : sLegSword_Pal, WOLF_TAG_ITEM, 2);
+    for (i = 0; i < WOLF_FLAKES; i++)
+        LI_Make(WOLF_FLAKE0 + i, sLegRustFlakes_Gfx, 16 * 64 / 2, sLegRustFlakes_Pal, WOLF_TAG_FLAKE, &sGI_Oam16, 0, 0, 1);
+    LI_Make(WOLF_GLINT, gBattleAnimSpriteGfx_Sparkle4, 32 * 160 / 2, gBattleAnimSpritePal_Sparkle3, WOLF_TAG_GLINT, &sGI_Oam32, 0, 0, 0);
+    task->tGiSprite1 = zam ? SPECIES_ZAMAZENTA_HERO : SPECIES_ZACIAN_HERO;
 }
 
 static bool8 RTWolves_Update(struct Task *task)
 {
-    s32 t = task->tRtTimer, i, k, dx = 0, dy = 0, scale = 256, end, gap = -1, cutY = 0, cutX = 0, split = 0;
-    u32 keep, wolfBit, zam = task->tWolfZam;
+    s32 t = task->tRtTimer, i, k, dx = 0, dy = 0, end, gap = -1, cutY = WOLF_Y, cutX = 0, split = 0;
+    s32 ix = WOLF_X, iy = WOLF_Y, scale = 256, rot = 0, prio = 0;
+    bool32 show = t >= WOLF_SHOW, done;
+    u32 keep, zam = task->tWolfZam;
+    u8 kk[16];
     s16 *hofs = LI2_Hofs(t, WOLF_SHOW);
-    struct Sprite *s, *wolf = GI_Sprite(task->tGiSprite0);
-    bool32 done;
+    struct Sprite *s;
 
     end = zam ? ZAM_END : ZAC_END;
-    wolfBit = LI2_MonBit(task->tGiSprite0);
-    keep = wolfBit | GI_SpritePalBit(WOLF_TAG_PETAL) | GI_SpritePalBit(WOLF_TAG_RING);
+    keep = GI_SpritePalBit(WOLF_TAG_PETAL) | GI_SpritePalBit(WOLF_TAG_ITEM) | GI_SpritePalBit(WOLF_TAG_FLAKE) | GI_SpritePalBit(WOLF_TAG_GLINT);
+
+    // roest -> roestvrij, per kleurindex
+    for (i = 0; i < 16; i++)
+        kk[i] = min(max((t - WOLF_RUST - sWolfStagger[i]) * 2, 0), 16);
+    LI2_MixPal(WOLF_TAG_ITEM, zam ? sLegShield_Pal : sLegSword_Pal, zam ? sLegShield_CleanPal : sLegSword_CleanPal, kk);
     GI_ResetPals(keep);
     if (t >= WOLF_SHOW)
     {
         LoadPalette(sLegWolves_Pal, BG_PLTT_ID(10), 6 * PLTT_SIZE_4BPP);
-        BlendPalettes(LI2_PALS_MAP, 5, WOLF_SHADE); // de schaduw van het bos
+        if (!zam || t < ZAM_DARK)
+            BlendPalettes(LI2_PALS_MAP & ~(1 << 15), 5, WOLF_SHADE); // de schaduw van het bos
     }
     if (t == WOLF_SHOW)
     {
         GI_KillFieldWindows();
         LI_InitWave();
-        // venster 0: binnen alleen sprites (de achtergrondkleur, wit, is de snee), buiten alles
-        sTransitionData->WININ = WININ_WIN0_OBJ;
+        // venster 0: binnen niets (de achtergrondkleur, wit, is de snee; ook geen sprites, anders zie je de speler
+        // van de kaart als zwart silhouet), buiten alles
+        sTransitionData->WININ = 0;
         sTransitionData->WINOUT = WINOUT_WIN01_BG_ALL | WINOUT_WIN01_OBJ;
         sTransitionData->WIN0V = 0;
     }
     if (t == WOLF_SHOW + 1) // een frame na de paletten (die gaan pas in de VBlank over)
-        GI_ShowMap(0);
+        GI_ShowMap(WOLF_MAP_CLEARING);
 
-    // de wolf komt uit de schaduw
-    if (t >= WOLF_SHOW)
-    {
-        wolf->invisible = FALSE;
-        k = t - WOLF_REVEAL;
-        if (k < WOLF_REVEAL_LEN)
-            BlendPalettes(wolfBit, k < 0 ? 14 : 14 - k, WOLF_SHADE);
-    }
-
+    // het voorwerp zweeft
+    iy = WOLF_Y + Sin((t * 4) & 0xFF, 2);
     for (i = 0; i < DISPLAY_HEIGHT; i++)
         hofs[i] = 0;
+
     if (!zam)
     {
-        // Zacian: drie sneden; elke snee schiet in 3 frames van links naar rechts, de helften verschuiven
-        for (i = 0; i < ZAC_SLASHES; i++)
+        // Zacian: draaien tot de kling naar links wijst, dan van rechts naar links door het beeld
+        if (t >= ZAC_SWING)
         {
-            k = t - ZAC_SLASH - i * ZAC_SLASH_GAP;
-            if (k < 0)
-                continue;
-            if (k < 6)
-            {
-                gap = 2;
-                cutY = sZacCutY[i];
-                cutX = min(k * 80 + 80, 240);
-            }
-            if (k >= 3 && sZacCutShift[i])
-            {
-                s32 j, sh = sZacCutShift[i];
-                for (j = 0; j < DISPLAY_HEIGHT; j++)
-                    hofs[j] += j < sZacCutY[i] ? sh : -sh;
-            }
-            if (k == 0)
+            k = min(t - ZAC_SWING, ZAC_SWING_LEN);
+            rot = -(k * 32 / ZAC_SWING_LEN);
+        }
+        if (t >= ZAC_CUT)
+        {
+            k = min(t - ZAC_CUT, ZAC_CUT_LEN);
+            ix = WOLF_X - k * k * 240 / (ZAC_CUT_LEN * ZAC_CUT_LEN);
+            iy = WOLF_Y;
+            show = ix > -70;
+            gap = 2;
+            cutX = max(ix - 40, 0);
+            if (t == ZAC_CUT)
                 PlaySE(SE_M_CUT);
         }
-        // tussen de halen schiet Zacian heen en weer, bij de laatste springt hij door de spleet naar je toe
-        if (t >= ZAC_SLASH && t < ZAC_SPLIT + 3)
-            wolf->x2 = (((t - ZAC_SLASH) / ZAC_SLASH_GAP) & 1) ? 36 : 12;
-        if (t >= ZAC_SPLIT + 3)
+        if (t >= ZAC_SPLIT)
         {
-            k = min(t - ZAC_SPLIT - 3, ZAC_SPLIT_LEN);
+            k = min(t - ZAC_SPLIT, ZAC_SPLIT_LEN);
             split = k * k * 90 / (ZAC_SPLIT_LEN * ZAC_SPLIT_LEN);
             gap = 2 + k * k * 40 / (ZAC_SPLIT_LEN * ZAC_SPLIT_LEN);
-            cutY = sZacCutY[ZAC_SLASHES - 1];
-            cutX = 240;
-            scale = 256 + k * 256 / ZAC_SPLIT_LEN;
-            wolf->x2 = 12 + 28 * k / ZAC_SPLIT_LEN;
+            cutX = 0;
             for (i = 0; i < DISPLAY_HEIGHT; i++)
-                hofs[i] += i < cutY ? split : -split;
+                hofs[i] = i < cutY ? split : -split;
         }
-        if (t == ZAC_CRY)
-            PlayCry_Normal(task->tGiSprite1, 0);
-        if (t == ZAC_SPLIT - 4)
+        if (t == ZAC_SWING)
             PlaySE(SE_M_SWORDS_DANCE);
-        if (t == ZAC_SPLIT + 2)
+        if (t == ZAC_SPLIT)
             PlaySE(SE_M_RAZOR_WIND);
     }
     else
     {
-        // Zamazenta: ademen, glanzen, dan Behemoth Bash (naar het midden en naar je toe)
-        if (t >= ZAM_BREATHE && t < ZAM_BASH)
-            scale = 256 + Sin(((t - ZAM_BREATHE) * 7) & 0xFF, 14);
-        if (t >= ZAM_GLINT && t < ZAM_GLINT + 6)
-            BlendPalettes(wolfBit, 12 - (t - ZAM_GLINT) * 2, RGB_WHITE);
-        if (t >= ZAM_BASH)
+        // Zamazenta: zwart, dan drie klappen tegen het scherm
+        if (t >= ZAM_FOCUS && t < ZAM_DARK)
+            BlendPalettes(LI2_PALS_MAP, (t - ZAM_FOCUS) * 2 + 2, RGB_BLACK);
+        if (t == ZAM_DARK)
+            CpuFill16(0, RT_Tilemap(), BG_SCREEN_SIZE);
+        if (t >= ZAM_DARK)
         {
-            k = min(t - ZAM_BASH, ZAM_BASH_LEN);
-            scale = 256 + k * k * 256 / (ZAM_BASH_LEN * ZAM_BASH_LEN);
-            wolf->x2 = (120 - ZAM_X) * k / ZAM_BASH_LEN;
-            wolf->y2 = -6 * k / ZAM_BASH_LEN;
-            if (t >= ZAM_HIT)
-            {
-                dx = LI_ShakeAmp(4);
-                dy = LI_ShakeAmp(3);
-            }
-            else
-            {
-                dx = LI_ShakeAmp(1);
-            }
+            prio = 1; // achter het "glas"
+            scale = 288;
+            // de kaart (BG1-3) ligt nu bloot: zijn paletten 10-14 zwart houden, alleen de barsten (15) blijven
+            BlendPalettes(LI2_PALS_MAP & ~(1 << 15), 16, RGB_BLACK);
         }
-        // schokgolven vanuit het midden
-        for (i = 0; i < WOLF_RINGS; i++)
+        for (i = 0; i < 3; i++)
         {
-            s = LI_S(WOLF_PETALS + i);
-            k = t - ZAM_HIT - i * 4;
-            s->invisible = k < 0 || k >= 12;
-            if (!s->invisible)
-                LI_Affine(sLI_Spr[WOLF_PETALS + i], 256 + k * 22, 0);
+            k = t - sZamHit[i];
+            if (k >= -ZAM_HIT_LEN && k < 0)
+                scale = 288 + (k + ZAM_HIT_LEN) * 132 / ZAM_HIT_LEN;          // aanloop naar het scherm
+            else if (k >= 0 && k < 8)
+            {
+                scale = 420 - k * 16;                                         // terugveren
+                dx = LI_ShakeAmp(4 - k / 2);
+                dy = LI_ShakeAmp(3 - k / 3);
+            }
+            if (k == 0)
+            {
+                GI_ShowMap(WOLF_MAP_CRACK1 + i);
+                PlaySE(i == 2 ? SE_ICE_BREAK : SE_M_MEGA_KICK2);
+            }
+            if (i == 2 && k >= 0)
+                scale = 420;
+            if (k >= 0 && k < 5)
+                BlendPalettes((1 << 15) | keep, (i == 2 ? 14 : 8) * (5 - k) / 5, RGB_WHITE); // flits (niet op 13/14: kaart)
         }
-        GI_Flash(t, ZAM_HIT, 6, 12, keep, RGB_WHITE);
-        if (t == ZAM_GLINT)
+        if (t == ZAM_FOCUS)
             PlaySE(SE_M_HARDEN);
-        if (t == ZAM_CRY)
-            PlayCry_Normal(task->tGiSprite1, 0);
-        if (t == ZAM_BASH)
-            PlaySE(SE_M_TAKE_DOWN);
-        if (t == ZAM_HIT)
-            PlaySE(SE_M_MEGA_KICK2);
-        wolf->x2 += dx;
-        wolf->y2 += dy;
     }
 
-    // BG: sneden, splijten en trillen
+    // het voorwerp (vier sprites)
+    LI2_BigSet(WOLF_ITEM, ix + dx, iy + dy, scale, rot, show, prio);
+    // de roest valt eraf
+    for (i = 0; i < WOLF_FLAKES; i++)
+    {
+        s = LI_S(WOLF_FLAKE0 + i);
+        k = t - WOLF_RUST - 1 - i * 3;
+        s->invisible = k < 0 || k >= 28;
+        if (s->invisible)
+            continue;
+        s->x = WOLF_X + sWolfFlake[i][0] + ((i & 1) ? k / 3 : -k / 3);
+        s->y = WOLF_Y + sWolfFlake[i][1] + (k * k) / 12;
+        LI_Frame(WOLF_FLAKE0 + i, WOLF_TAG_FLAKE, (i + (k >> 2)) & 3, 4);
+    }
+    // een glinster schiet over het voorwerp
+    s = LI_S(WOLF_GLINT);
+    k = t - WOLF_GLEAM;
+    s->invisible = k < 0 || k >= 10;
+    if (!s->invisible)
+    {
+        s->x = WOLF_X + 30 - k * 6;
+        s->y = WOLF_Y - 30 + k * 6;
+        LI_Frame(WOLF_GLINT, WOLF_TAG_GLINT, min(k >> 1, 4), 16);
+    }
+    if (t == WOLF_RUST)
+        PlaySE(SE_M_DETECT);
+    if (t == WOLF_GLEAM)
+        PlaySE(SE_SHINY);
+    if (t == WOLF_CRY)
+        PlayCry_Normal(task->tGiSprite1, 0);
+
+    // BG: snee, splijten en trillen
     for (i = 0; i < DISPLAY_HEIGHT; i++)
         hofs[i] = (hofs[i] + dx) & 0x1FF;
     SetGpuReg(REG_OFFSET_BG0VOFS, dy & 0x1FF);
-    LI_Affine(task->tGiSprite0, scale, 0);
-    // de snee: venster 0 als band rond cutY; daarbinnen alleen de (witte) achtergrondkleur en de sprites
     if (gap >= 0 && t > WOLF_SHOW)
     {
         SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-        SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(0, cutX));
+        SetGpuReg(REG_OFFSET_WIN0H, WIN_RANGE(cutX, 240));
         sTransitionData->WIN0V = WIN_RANGE(max(cutY - gap, 0), min(cutY + gap, DISPLAY_HEIGHT));
     }
     else if (t > WOLF_SHOW)
@@ -867,12 +945,12 @@ static bool8 RTWolves_Update(struct Task *task)
         sTransitionData->WIN0V = 0;
     }
 
-    // bloemblaadjes
+    // bloemblaadjes (niet meer als het donker is)
     for (i = 0; i < WOLF_PETALS; i++)
     {
         s = LI_S(i);
         k = t + sWolfPetalOfs[i];
-        s->invisible = t < WOLF_SHOW;
+        s->invisible = t < WOLF_SHOW || (zam && t >= ZAM_DARK);
         s->x = sWolfPetalX[i] + Sin((k * 4) & 0xFF, 12) - (k & 0x3F);
         s->y = ((k & 0xFF) * 3 >> 2) - 20;
         LI_Frame(i, WOLF_TAG_PETAL, (k >> 3) % 7, 4);
@@ -885,9 +963,8 @@ static bool8 RTWolves_Update(struct Task *task)
         gPlttBufferFaded[0] = RGB_WHITE; // de snee
     if (done)
     {
-        for (i = 0; i < WOLF_PETALS + WOLF_RINGS; i++)
+        for (i = 0; i <= WOLF_GLINT; i++)
             LI_S(i)->invisible = TRUE;
-        wolf->invisible = TRUE;
         return TRUE;
     }
     return FALSE;
@@ -899,9 +976,10 @@ static void RTWolves_Finish(struct Task *task)
     ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
     LI_EndWave();
     LI_DestroySprites();
-    LI_DestroyMonPic(task->tGiSprite0);
     GI_FreeTag(WOLF_TAG_PETAL);
-    GI_FreeTag(WOLF_TAG_RING);
+    GI_FreeTag(WOLF_TAG_ITEM);
+    GI_FreeTag(WOLF_TAG_FLAKE);
+    GI_FreeTag(WOLF_TAG_GLINT);
     GI_Free();
 }
 
@@ -928,13 +1006,15 @@ static void Task_LegendZamazenta(u8 taskId)
 // =====================================================================================================================
 // Xerneas en Yveltal (Glimwood Tangle: leven en dood). De echte heksenkring, in kleur (palet 10-15) of uitgedoofd zoals
 // toen de Impidimp-bende het licht doofde (dezelfde tiles met palet 4-9). Per vak kiest C de toestand op afstand van de
-// kring, zodat het licht als een ring uitdijt (Xerneas) of van buiten naar binnen wegtrekt (Yveltal).
-// - Xerneas ("its antlers flickering like a lamp on its last bulb. It opens one eye. Then the other. Then the
-//   antlers."): Ballonlea, grauw. Xerneas flikkert in de kring, drie keer licht (oog, oog, gewei), dan stroomt de kleur
-//   vanuit de kring over het bos, glinsters stijgen op, Geomancy in regenboogkleuren, wit.
-// - Yveltal ("It looks at you the way a vulture looks at a long walk."): de Tangle in volle gloed. Een enorme schaduw
-//   glijdt over het beeld en landt in de kring; de kleur trekt van buiten naar binnen weg, as dwarrelt omhoog, Yveltal
-//   kleurt rood op (Oblivion Wing) en alles gaat op zwart.
+// kring, zodat het licht als een ring uitdijt (Xerneas) of van buiten naar binnen wegtrekt (Yveltal). Geen Pokémon in
+// beeld, maar hun letter (vier sprites, 128 x 128):
+// - Xerneas: Ballonlea, grauw. Een grote X van gewei hangt grauw in de kring en flikkert ("a lamp on its last bulb");
+//   de lichtjes gaan een voor een aan (geel, paars, rood, blauw), het gewei kleurt blauw, de kleur stroomt vanuit de
+//   kring over het bos (leven geven), de lichtjes gaan rond als in de Active Mode, glinsters stijgen op, Geomancy:
+//   regenboog, wit.
+// - Yveltal: de Tangle in volle gloed. Een zwarte Y (gespreide vleugels en staart) daalt in de kring en zijn rode
+//   strepen gloeien op; de kleur trekt van buiten naar binnen weg en rode veren worden naar de Y toe gezogen (het leven
+//   gaat naar Yveltal), Oblivion Wing kleurt alles rood en het beeld gaat op zwart.
 static const u32 sLegXerneas_Tiles[] = INCBIN_U32("graphics/battle_transitions/legend_xerneas.4bpp.smol");
 static const u32 sLegXerneas_Maps[] = INCBIN_U32("graphics/battle_transitions/legend_xerneas_maps.bin.smol");
 static const u16 sLegXerneas_Pal[] = INCBIN_U16("graphics/battle_transitions/legend_xerneas.gbapal");
@@ -943,31 +1023,45 @@ static const u32 sLegYveltal_Tiles[] = INCBIN_U32("graphics/battle_transitions/l
 static const u32 sLegYveltal_Maps[] = INCBIN_U32("graphics/battle_transitions/legend_yveltal_maps.bin.smol");
 static const u16 sLegYveltal_Pal[] = INCBIN_U16("graphics/battle_transitions/legend_yveltal.gbapal");
 static const u16 sLegYveltal_DimPal[] = INCBIN_U16("graphics/battle_transitions/legend_yveltal_dying.gbapal");
+static const u32 sLegXSym_Gfx[] = INCBIN_U32("graphics/battle_transitions/legend_xsym.4bpp.smol");
+static const u16 sLegXSym_Pal[] = INCBIN_U16("graphics/battle_transitions/legend_xsym.gbapal");
+static const u16 sLegXSym_DimPal[] = INCBIN_U16("graphics/battle_transitions/legend_xsym_dim.gbapal");
+static const u32 sLegYSym_Gfx[] = INCBIN_U32("graphics/battle_transitions/legend_ysym.4bpp.smol");
+static const u16 sLegYSym_Pal[] = INCBIN_U16("graphics/battle_transitions/legend_ysym.gbapal");
+static const u16 sLegYSym_DarkPal[] = INCBIN_U16("graphics/battle_transitions/legend_ysym_dark.gbapal");
 
 #define GLIM_TAG_FX     0x5A7A
+#define GLIM_TAG_SYM    0x5A7C
 #define GLIM_SHOW       8
 #define GLIM_FX         8
+#define GLIM_SYM        GLIM_FX        // vier slots
 #define GLIM_CX         120
 #define GLIM_CY         84
-#define GLIM_MON_Y      70
+#define GLIM_SYM_Y      72
 // Xerneas
-#define XER_CRY         28
-#define XER_LIGHT       30    // oog, oog, gewei: om de 6 frames
+#define XER_CRY         26
+#define XER_LIGHT       28    // de vier lichtjes, om de 4 frames
 #define XER_SPREAD      46
 #define XER_SPREAD_LEN  32
 #define XER_GEO         (XER_SPREAD + XER_SPREAD_LEN)
-#define XER_END         (XER_GEO + 30)
+#define XER_END         (XER_GEO + 20)
+#define XER_ORB         7     // indexen 7-10: de lichtjes
 // Yveltal
 #define YVE_SWEEP       12
-#define YVE_SWEEP_LEN   28
+#define YVE_SWEEP_LEN   24
 #define YVE_CRY         (YVE_SWEEP + YVE_SWEEP_LEN)
 #define YVE_DRAIN       (YVE_CRY + 2)
 #define YVE_DRAIN_LEN   34
-#define YVE_OBLIVION    (YVE_DRAIN + YVE_DRAIN_LEN + 4)
-#define YVE_END         (YVE_OBLIVION + 26)
+#define YVE_OBLIVION    (YVE_DRAIN + YVE_DRAIN_LEN + 2)
+#define YVE_END         (YVE_OBLIVION + 24)
 
 static const u8 sGlimFxX[GLIM_FX] = {40, 200, 80, 160, 20, 220, 60, 180};
 static const u8 sGlimFxOfs[GLIM_FX] = {0, 16, 32, 48, 64, 80, 96, 112};
+// rode veren (de White Feather uit de gevechtsanimaties met een eigen palet), en waar ze vandaan komen
+static const u16 sYveRed[16] = {0, RGB(28, 4, 6), RGB(24, 3, 5), RGB(20, 2, 4), RGB(16, 2, 3), RGB(12, 1, 2),
+                                RGB(8, 1, 2), RGB(5, 1, 2)};
+static const s16 sYveFeatherFrom[GLIM_FX][2] = {{-10, 20}, {250, 30}, {-10, 120}, {250, 130}, {60, -16}, {180, -16},
+                                                {40, 176}, {200, 176}};
 
 // elk vak in kleur als het (met wat ruis) binnen straal r van de kring ligt, anders uitgedoofd
 static void LI2_GlimTiles(s32 r)
@@ -1010,24 +1104,24 @@ static void RTGlim_Init(struct Task *task)
     for (i = 0; i < GLIM_FX; i++)
     {
         if (yve)
-            LI_Make(i, gBattleAnimSpriteGfx_BlackSmoke, 32 * 16 / 2, gBattleAnimSpritePal_BlackSmoke, GLIM_TAG_FX, &sLI2_Oam32x16, sGlimFxX[i], 200, 0);
+            LI_Make(i, gBattleAnimSpriteGfx_WhiteFeather, 32 * 64 / 2, sYveRed, GLIM_TAG_FX, &sGI_Oam32, sYveFeatherFrom[i][0], sYveFeatherFrom[i][1], 1);
         else
             LI_Make(i, gBattleAnimSpriteGfx_Sparkle4, 32 * 160 / 2, gBattleAnimSpritePal_Sparkle3, GLIM_TAG_FX, &sGI_Oam32, sGlimFxX[i], 200, 0);
     }
-    task->tGiSprite0 = LI_MonPicAffine(species, GLIM_CX, yve ? -70 : GLIM_MON_Y);
+    LI2_BigMake(GLIM_SYM, yve ? sLegYSym_Gfx : sLegXSym_Gfx, yve ? sLegYSym_DarkPal : sLegXSym_DimPal, GLIM_TAG_SYM, 2);
     task->tGiSprite1 = species;
-    GI_Sprite(task->tGiSprite0)->subpriority = 2;
 }
 
 static bool8 RTGlim_Update(struct Task *task)
 {
-    s32 t = task->tRtTimer, i, k, e, r;
-    u32 yve = IsYveltalIntro(task), keep, monBit, bg = LI2_PALS_MAP | LI2_PALS_DIM;
-    struct Sprite *s, *mon = GI_Sprite(task->tGiSprite0);
+    s32 t = task->tRtTimer, i, k, e, r, scale = 256, sy = GLIM_SYM_Y;
+    u32 yve = IsYveltalIntro(task), keep, symBit, bg = LI2_PALS_MAP | LI2_PALS_DIM;
+    u8 kk[16];
+    u16 *sp;
+    struct Sprite *s;
 
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit | GI_SpritePalBit(GLIM_TAG_FX);
-    GI_ResetPals(keep);
+    symBit = GI_SpritePalBit(GLIM_TAG_SYM);
+    keep = symBit | GI_SpritePalBit(GLIM_TAG_FX);
     if (t >= GLIM_SHOW)
     {
         LoadPalette(yve ? sLegYveltal_Pal : sLegXerneas_Pal, BG_PLTT_ID(10), 6 * PLTT_SIZE_4BPP);
@@ -1038,24 +1132,37 @@ static bool8 RTGlim_Update(struct Task *task)
 
     if (!yve)
     {
+        // de X: grauw en flikkerend, dan de lichtjes een voor een, dan het gewei
+        for (i = 0; i < 16; i++)
+            kk[i] = (t >= XER_SPREAD) ? min((t - XER_SPREAD) * 2, 16) : ((Random() & 3) ? 0 : 5);
+        for (i = 0; i < 4; i++)
+            if (t >= XER_LIGHT + i * 4)
+                kk[XER_ORB + i] = 16;
+        LI2_MixPal(GLIM_TAG_SYM, sLegXSym_DimPal, sLegXSym_Pal, kk);
+        sp = LI2_ObjPal(GLIM_TAG_SYM);
+        if (sp != NULL)
+        {
+            for (i = 0; i < 4; i++)
+            {
+                k = t - XER_LIGHT - i * 4;
+                if (k >= 0 && k < 2)
+                    sp[XER_ORB + i] = RGB_WHITE;                                    // gaat aan
+                else if (t >= XER_SPREAD + 8)
+                    sp[XER_ORB + i] = sLegXSym_Pal[XER_ORB + ((i + t / 5) & 3)];   // Active Mode: de kleuren gaan rond
+            }
+        }
+        GI_ResetPals(keep);
         // de kleur stroomt vanuit de kring naar buiten
         r = t < XER_SPREAD ? 0 : (t - XER_SPREAD) * 8;
         if (t > GLIM_SHOW && t <= XER_SPREAD + XER_SPREAD_LEN)
             LI2_GlimTiles(r);
-        if (t >= GLIM_SHOW)
-        {
-            mon->invisible = FALSE;
-            if (t < XER_LIGHT)
-                BlendPalettes(monBit, (Random() & 3) ? 11 : 6, RGB(3, 4, 7)); // een lamp op zijn laatste peertje
-            else if (t < XER_SPREAD)
-                BlendPalettes(monBit, ((t - XER_LIGHT) % 6 < 2) ? 10 : 3, (t - XER_LIGHT) % 6 < 2 ? RGB_WHITE : RGB(3, 4, 7));
-        }
         if (t >= XER_GEO)
         {
             k = min(t - XER_GEO, 16);
-            LI_Affine(task->tGiSprite0, 256 + k * 4, 0);
+            scale = 256 + k * 3 + Sin((t * 12) & 0xFF, 6);
             BlendPalettes(LI2_PALS_MAP | GI_SpritePalBit(GLIM_TAG_FX), 3, sHoRainbow[(t / 3) % 7]);
         }
+        LI2_BigSet(GLIM_SYM, GLIM_CX, sy + Sin((t * 3) & 0xFF, 2), scale, 0, t >= GLIM_SHOW, 0);
         // glinsters stijgen op
         for (i = 0; i < GLIM_FX; i++)
         {
@@ -1068,10 +1175,13 @@ static bool8 RTGlim_Update(struct Task *task)
             s->y = 150 - ((k * 2) & 0x7F);
             LI_Frame(i, GLIM_TAG_FX, (k >> 2) % 5, 16);
         }
+        if (t >= XER_SPREAD)
+            BlendPalettes(GI_SpritePalBit(GLIM_TAG_FX), 5, sHoRainbow[(t / 4 + 3) % 7]); // regenboogglinsters
         if (t == XER_CRY)
             PlayCry_Normal(task->tGiSprite1, 0);
-        if (t == XER_LIGHT || t == XER_LIGHT + 6 || t == XER_LIGHT + 12)
-            PlaySE(SE_M_DETECT);
+        for (i = 0; i < 4; i++)
+            if (t == XER_LIGHT + i * 4)
+                PlaySE(SE_M_DETECT);
         if (t == XER_SPREAD)
             PlaySE(SE_M_MOONLIGHT);
         if (t == XER_GEO)
@@ -1079,37 +1189,41 @@ static bool8 RTGlim_Update(struct Task *task)
     }
     else
     {
-        // de kleur trekt van buiten naar binnen weg
-        r = t < YVE_DRAIN ? 400 : 260 - (t - YVE_DRAIN) * 8;
-        if (t > GLIM_SHOW && t <= YVE_DRAIN + YVE_DRAIN_LEN)
-            LI2_GlimTiles(r);
-        // de schaduw glijdt over het beeld en landt in de kring
+        // de Y: daalt als zwart silhouet in de kring, dan gloeien de rode strepen op
+        for (i = 0; i < 16; i++)
+            kk[i] = t < YVE_CRY + 2 ? 0 : min((t - YVE_CRY - 2) * 2, 16);
+        LI2_MixPal(GLIM_TAG_SYM, sLegYSym_DarkPal, sLegYSym_Pal, kk);
+        GI_ResetPals(keep);
         if (t >= YVE_SWEEP)
         {
             k = min(t - YVE_SWEEP, YVE_SWEEP_LEN);
             e = YVE_SWEEP_LEN * YVE_SWEEP_LEN - (YVE_SWEEP_LEN - k) * (YVE_SWEEP_LEN - k);
-            mon->invisible = FALSE;
-            mon->y = -70 + (GLIM_MON_Y + 70) * e / (YVE_SWEEP_LEN * YVE_SWEEP_LEN);
-            LI_Affine(task->tGiSprite0, 512 - 256 * e / (YVE_SWEEP_LEN * YVE_SWEEP_LEN), 0);
-            if (t < YVE_CRY + 4)
-                BlendPalettes(monBit, 16, RGB_BLACK);
-            else if (t < YVE_OBLIVION)
-                BlendPalettes(monBit, max(0, 16 - (t - YVE_CRY - 4)), RGB(20, 0, 2));
-            else
-                BlendPalettes(monBit, 6, RGB(31, 2, 4));
+            sy = -30 + (GLIM_SYM_Y + 30) * e / (YVE_SWEEP_LEN * YVE_SWEEP_LEN);
+            scale = 400 - 144 * e / (YVE_SWEEP_LEN * YVE_SWEEP_LEN);
+            if (t < YVE_CRY)
+                BlendPalettes(symBit, 16, RGB_BLACK);
+            else if (t >= YVE_OBLIVION)
+                BlendPalettes(symBit, 6 + Sin(((t - YVE_OBLIVION) * 24) & 0xFF, 5), RGB(31, 2, 4));
         }
+        LI2_BigSet(GLIM_SYM, GLIM_CX, sy, scale, 0, t >= YVE_SWEEP, 0);
+        // de kleur trekt van buiten naar binnen weg
+        r = t < YVE_DRAIN ? 400 : 260 - (t - YVE_DRAIN) * 8;
+        if (t > GLIM_SHOW && t <= YVE_DRAIN + YVE_DRAIN_LEN)
+            LI2_GlimTiles(r);
         if (t >= YVE_OBLIVION)
             BlendPalettes(bg, min((t - YVE_OBLIVION) * 2 / 3, 12), RGB(16, 0, 2));
-        // as dwarrelt omhoog
+        // rode veren worden naar de Y toe gezogen
         for (i = 0; i < GLIM_FX; i++)
         {
             s = LI_S(i);
-            k = t - YVE_DRAIN + sGlimFxOfs[i] / 3;
-            s->invisible = t < YVE_DRAIN;
+            k = t - YVE_DRAIN - i * 3;
+            s->invisible = k < 0 || k >= 20;
             if (s->invisible)
                 continue;
-            s->x = sGlimFxX[i] + Sin((k * 4) & 0xFF, 8);
-            s->y = 160 - ((k * 3 / 2) & 0x7F);
+            e = k * k;
+            s->x = sYveFeatherFrom[i][0] + (GLIM_CX - sYveFeatherFrom[i][0]) * e / 400;
+            s->y = sYveFeatherFrom[i][1] + (GLIM_SYM_Y - sYveFeatherFrom[i][1]) * e / 400;
+            LI_Frame(i, GLIM_TAG_FX, (k >> 2) & 1, 16);
         }
         if (t == YVE_SWEEP)
             PlaySE(SE_M_FLY);
@@ -1127,9 +1241,8 @@ static bool8 RTGlim_Update(struct Task *task)
     {
         if (LI2_WhiteOut(t, XER_END, bg, keep))
         {
-            for (i = 0; i < GLIM_FX; i++)
+            for (i = 0; i < GLIM_FX + 4; i++)
                 LI_S(i)->invisible = TRUE;
-            mon->invisible = TRUE;
             return TRUE;
         }
     }
@@ -1143,9 +1256,8 @@ static bool8 RTGlim_Update(struct Task *task)
         }
         if (t >= YVE_END)
         {
-            for (i = 0; i < GLIM_FX; i++)
+            for (i = 0; i < GLIM_FX + 4; i++)
                 LI_S(i)->invisible = TRUE;
-            mon->invisible = TRUE;
             return TRUE;
         }
     }
@@ -1155,8 +1267,8 @@ static bool8 RTGlim_Update(struct Task *task)
 static void RTGlim_Finish(struct Task *task)
 {
     LI_DestroySprites();
-    LI_DestroyMonPic(task->tGiSprite0);
     GI_FreeTag(GLIM_TAG_FX);
+    GI_FreeTag(GLIM_TAG_SYM);
     GI_Free();
 }
 

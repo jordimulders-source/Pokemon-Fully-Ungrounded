@@ -699,7 +699,7 @@ gSongTable::
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 685: Xerneas/Yveltal-thema uit (Jordi: "veel te vrolijk"; MIDI bewaard)
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 686: meertrio-thema uit (Jordi: generieker thema; MIDI bewaard)
 
-	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 687: vrij (Palm Tree Paradise geschrapt: 361 KB samples)
+	song mus_grounded_vs_poke_tower, MUSIC_PLAYER_BGM, 0
 
 	song mus_grounded_wl4_mystic_lake, MUSIC_PLAYER_BGM, 0
 

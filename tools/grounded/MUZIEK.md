@@ -134,6 +134,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v3 wacht op Jordi (v2 'glitchend systeem'; v3 alle melodische lagen geknipt uit het origineel, A/B per laag) | "Ruinous" |
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
+| Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -696,4 +697,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   als stapel stemmen in één sample op 16 kHz (KEEP_16K in resample_wav.py), 3 samples per kandidaat (transpositie
   -2..+5: onder de 10,5 kHz van de mixer). **De -V-grens van Mitch was de build-up**: kick + roffelsnare tegelijk =
   +35% boven de drops (offline), daarom liep -V > 066 over; roffelslag op/na een kick x0,5 -> -V092, piek 98, RMS 3950.
+
+- Tower v1 (`tower_theme.py`, 687, gevechtsremix van `mus_rg_lavender.mid`): **origineel tpb 24 x 4 = 96 en de intro is
+  ook 4 maten**, dus elke noot staat op tick x 4 en de loop (40 maten) blijft 1-op-1 (melodie spoor 1, jammerlijn spoor 5,
+  fluitlijn spoor 4, arpeggio spoor 7, atarigane spoor 6). Melodie per sectie op een ander instrument in eigen sporen
+  (orgel / strijkers / koor / trompet+strijkers) = geen programmawissels rond de looptick. PSG draagt arpeggio,
+  jammerlijn, fluitlijn en hats (0 DS-kanalen); 1 basnoot van 490 valt weg. **`drum_and_percussion_kick` als
+  `voice_directsound 60` speelt op 13.379 Hz = subdreun** (< 60 Hz 26-33% van de mix); op toets 67 (zoals de FRLG-kit
+  via _no_resample) 10-15%. -V100: 0 overlopen, piek 105/127, RMS 3120; audiocheck 49-67 Hz = kick + grondtonen C2/B1.
 

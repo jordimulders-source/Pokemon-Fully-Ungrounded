@@ -262,7 +262,8 @@ def compose():
             if sec == 'D' and i == 3:
                 stut(t0, 14, 4, 'C6')
         elif sec == 'B':
-            lead(t0, B_LEAD[i])
+            if i >= 4:  # v4 (Jordi: de lead nog 40% vaker pauzeren): B maat 0-3 alleen de echo (+56 zestienden)
+                lead(t0, B_LEAD[i])
             echo(t0, B_LEAD[i])
             if i == 7:
                 stut(t0, 0, 12, 'C6')

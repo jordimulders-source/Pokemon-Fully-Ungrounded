@@ -604,6 +604,7 @@
 #define MUS_GROUNDED_YI_OVERWORLD   665 // Project Grounded: Overworld (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
 #define MUS_GROUNDED_YI_FUZZY       666 // Project Grounded: Overworld (Fuzzy), Touch Fuzzy Get Dizzy, SPC-rip (tools/grounded/spc/spc2gba.py)
 #define MUS_GROUNDED_YI_CASTLE      667 // Project Grounded: Castle & Fortress (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
+#define MUS_GROUNDED_VS_RUINOUS     683 // Project Grounded: Battle! Treasures of Ruin (Wo-Chien, Chien-Pao, Ting-Lu, Chi-Yu), SV-thema in GBA-stijl (tools/grounded/ruinous_theme.py); 668-682 bezet door ander werk
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

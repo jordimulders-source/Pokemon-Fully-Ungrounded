@@ -679,6 +679,22 @@ gSongTable::
 	song mus_grounded_yi_fuzzy, MUSIC_PLAYER_BGM, 0
 
 	song mus_grounded_yi_castle, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 668 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 669 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 670 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 671 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 672 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 673 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 674 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 675 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 676 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 677 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 678 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 679 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 680 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 681 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 682 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_grounded_vs_ruinous, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

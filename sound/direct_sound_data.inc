@@ -7430,3 +7430,23 @@ DirectSoundWaveData_yi_dcb99354f_6140::
 	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_6140.bin"
 
 @ } yi_samples
+
+	.align 2
+DirectSoundWaveData_ruinous_taiko::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_taiko.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_boom::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_boom.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_ka::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_ka.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_impact::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_impact.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_synth::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_synth.bin"

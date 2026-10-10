@@ -99,7 +99,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Wally 1–5 | `wally_theme.py` | goedgekeurd | "Wally" |
 | Regigigas | `regigigas_theme.py` | wacht op Jordi (v5) | "Regigigas" |
 | Mewtwo | `mewtwo_theme.py` | v3 | "Mewtwo" |
-| Mew (remix van Mewtwo) | `mew_theme.py` | v1 wacht op Jordi | "Mew v1" |
+| Mew (remix van Mewtwo) | `mew_theme.py` | v2 wacht op Jordi (A 156 bpm 4/4 in de game, B 12/8 als kandidaat) | "Mew v1", "Mew v2" |
 | Dave (Freed From Desire) | `freed_theme.py` | goedgekeurd | "Dave" |
 | Beasts (Raikou/Entei/Suicune) | `beasts_theme.py` | goedgekeurd | "Raikou", "Beasts" |
 | Zinnia, Ghetsis, PSG-drumfixes | `midi_songs.py` | goedgekeurd | "Zinnia", "Ghetsis", "PSG-drums" |
@@ -745,3 +745,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   (x1,41) en exacte loop (gehele perioden van alle oscillatoren in 2760 samples, 11 kHz). Omgekeerde zwelling =
   FM-klok achterstevoren, 1,15 s eindigend op de downbeat (2 kanalen). Batchrec -V090: 0 overlopen, piek 95/127,
   RMS 3000-3450, max -5,6 dB; audiocheck 45-62 Hz = rnd-kick + C2-pedaal (stijgt pas als de drums invallen). ±25 KB.
+- Mew v2: v1 "tonen klinken raar, te hoog, niet in een goed tempo, maak het meer fluïde". -> gewoon A-groot (geen
+  lydische D#), geen glockenspiel, hook een octaaf lager (max. E5), Mewtwo's staccato-16en als legato-8en (frases van
+  2 maten), doorrollende harp-arpeggio's door het hele nummer, golvende bas, geen hikjes/stops. Twee gevoelens in één
+  script (`FEEL` 44 = 156 bpm rollend, 128 = 12/8 op 120 via `warp()`). Eigen `voicegroup_grounded_mew`: harp-release
+  242 -> 200, anders bezetten arpeggio's in 8en 5-6 kanalen. Pads per akkoord (2 maten) en een 8e vóór de wissel los
+  laten: aangehouden pads per maat stapelen hun release op de maatgrens (koor viel 14/16 weg).

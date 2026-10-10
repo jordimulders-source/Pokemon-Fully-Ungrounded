@@ -604,6 +604,10 @@
 #define MUS_GROUNDED_YI_OVERWORLD   665 // Project Grounded: Overworld (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
 #define MUS_GROUNDED_YI_FUZZY       666 // Project Grounded: Overworld (Fuzzy), Touch Fuzzy Get Dizzy, SPC-rip (tools/grounded/spc/spc2gba.py)
 #define MUS_GROUNDED_YI_CASTLE      667 // Project Grounded: Castle & Fortress (Yoshi's Island), SPC-rip (tools/grounded/spc/spc2gba.py)
+// 668-683: bezet door ander (parallel) werk; in song_table.inc staan hier mus_dummy-plaatshouders
+#define MUS_GROUNDED_VS_ZACIAN      684 // Project Grounded: Battle! Zacian & Zamazenta, eigen compositie: zwaard en schild, Galar-ridders (tools/grounded/legends3_theme.py)
+#define MUS_GROUNDED_VS_XERNEAS     685 // Project Grounded: Battle! Xerneas & Yveltal, eigen compositie: leven (groot) en dood (klein), één melodie (tools/grounded/legends3_theme.py)
+#define MUS_GROUNDED_VS_LAKE_TRIO   686 // Project Grounded: Battle! Uxie, Mesprit & Azelf, eigen compositie: kennis, emotie, wilskracht (tools/grounded/legends3_theme.py)
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

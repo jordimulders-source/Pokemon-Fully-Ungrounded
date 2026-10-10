@@ -581,11 +581,11 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_CHI_YU:
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_ZACIAN_HERO: // Project Grounded: Mega Forest (placeholder: Kanto-legendary-thema, bestaande transitie)
+    case SPECIES_ZACIAN_HERO: // Project Grounded: Mega Forest (bestaande transitie), eigen thema (zwaard en schild)
     case SPECIES_ZACIAN_CROWNED:
     case SPECIES_ZAMAZENTA_HERO:
     case SPECIES_ZAMAZENTA_CROWNED:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_GROUNDED_VS_ZACIAN);
         break;
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_GROUNDED_VS_HEATRAN); // eigen thema (stoner rock à la Kyuss)
@@ -669,12 +669,12 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_NECROZMA_ULTRA:
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_DEOXYS);
         break;
-    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle (placeholder: Kanto-legendary-thema, bestaande transitie)
+    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle (bestaande transitie), eigen thema (leven en dood)
     case SPECIES_XERNEAS_ACTIVE:
-        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_GROUNDED_VS_XERNEAS);
         break;
-    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, leven en dood (placeholder: Kanto-legendary-thema)
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_RG_VS_LEGEND);
+    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, leven en dood (zelfde thema als Xerneas)
+        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_GROUNDED_VS_XERNEAS);
         break;
     case SPECIES_ARTICUNO: // Project Grounded (legends2): Shoal Cave, Frozen Depths (placeholder: Kanto-legendary-thema)
         CreateBattleStartTask(B_TRANSITION_REGICE, MUS_RG_VS_LEGEND);
@@ -723,10 +723,10 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_CELEBI: // Project Grounded: Ilex Forest (placeholder: Kanto-legendary-thema, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_UXIE: // Project Grounded: de Gen 4-meren in de Spacetime Cave (placeholder: Kanto-legendary-thema, rimpelingen)
+    case SPECIES_UXIE: // Project Grounded: de Gen 4-meren in de Spacetime Cave (rimpelingen), eigen thema (drie motieven)
     case SPECIES_MESPRIT:
     case SPECIES_AZELF:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_LAKE_TRIO);
         break;
     case SPECIES_ETERNATUS: // Project Grounded: National Park (placeholder: Kanto-legendary-thema, bestaande transitie)
     case SPECIES_ETERNATUS_ETERNAMAX:

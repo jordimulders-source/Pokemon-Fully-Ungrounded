@@ -118,6 +118,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
+| Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -627,3 +628,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   v5 -10..-15 dB, v6 -27..-31 dB. **E4-hoorns** (vs_elite_four) = sc88pro-trompet = hetzelfde spectrum als FluidR3
   56 (vlak tot h8, zwaartepunt ±1,4 kHz op C4), gespeeld rond D5-Bb5: B = trompet een octaaf boven de geschreven noot
   + body op de noot. Kanalen/stemverdeler ongewijzigd. B: -V066, 0 overlopen, piek 72/127, RMS 2616.
+- Legends3 v1 (`legends3_theme.py`, 684-686, alleen stock-samples, één voicegroup `grounded_legends3` + kit `drumsets/legends3`):
+  **twee/drie motieven op hetzelfde akkoordschema schrijven** (meren: F#m-D-E-C#m-Bm-D-G-C#) zodat ze in de slotsectie
+  zonder aanpassing samen kunnen klinken; Xerneas/Yveltal = één melodie met `to_death()` (G#/C#/D# een halve toon
+  omlaag, behalve D# op de dominant), gecontroleerd met de duur per toonklasse per sectie (groot: 0 G/C/D, klein: 0 G#/C#).
+  **8-bit-fuzz vermijden**: DS-velocities >= 76 (assert in het script), geen fluit, sub op de PSG-golf, DS-bas >= C2,
+  zuivere lichte figuren (Uxie, waterrimpelingen) op PSG. **Kit met `voice_directsound <toets>`** i.p.v. _no_resample
+  (speelt op de sample-rate, niet op 21 kHz). Harp/spiccato in 16en: release <= 100-110, anders bezet elke 16e 2 kanalen
+  (detach houdt min. 6 ticks); koper eigen keysplits met release 112/120 voor 16en-opmaten. Tomfills laten eindigen
+  vóór de tel waarop de crash valt, en geen hihat op een crash: scheelt 2 kanalen op de zwaarste tel.

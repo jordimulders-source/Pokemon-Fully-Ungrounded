@@ -18,6 +18,7 @@
 .include "sound/voicegroups/drumsets/neo_plasma.inc"
 .include "sound/voicegroups/drumsets/darkrai.inc"
 .include "sound/voicegroups/drumsets/rayquaza.inc"
+.include "sound/voicegroups/drumsets/legends3.inc"
 .include "sound/voicegroups/drumsets/sickblik.inc"
 .include "sound/voicegroups/drumsets/mitch.inc"
 .include "sound/voicegroups/drumsets/genesect.inc"
@@ -54,6 +55,9 @@
 .include "sound/voicegroups/keysplits/hoopa_oud.inc"
 .include "sound/voicegroups/keysplits/hoopa_mizmar.inc"
 .include "sound/voicegroups/keysplits/hoopa_str.inc"
+.include "sound/voicegroups/keysplits/legends3_spicc.inc"
+.include "sound/voicegroups/keysplits/legends3_trumpet.inc"
+.include "sound/voicegroups/keysplits/legends3_horn.inc"
 
 .include "sound/voicegroups/route110.inc"
 .include "sound/voicegroups/route101.inc"
@@ -280,3 +284,4 @@
 .include "sound/voicegroups/grounded_hoopa.inc"
 .include "sound/voicegroups/drumsets/yi.inc"
 .include "sound/voicegroups/grounded_yi.inc"
+.include "sound/voicegroups/grounded_legends3.inc"

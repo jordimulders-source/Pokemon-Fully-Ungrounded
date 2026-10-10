@@ -54,7 +54,10 @@ MAIN_LEAD, MAIN_SIGHS, MAIN_CHOIR_MOD, MAIN_CHOIR_VOICES = False, False, 0, 2
 MAIN_LEAD, MAIN_CHOIR_VOICES, VOICE_UNTIL = True, 3, 24
 VOICE, VOICE_LO, CHOIRKIT = 54, 55, 56   # az_voice (F5), az_voice_lo (Bb4), kit met de koorroepen (alleen 681)
 VOICE_SPLIT = 73                          # aria-noten t/m C#5 op az_voice_lo, daarboven az_voice
-from areazero_samples import CHOIR_EVENTS  # noqa: E402  (zelfde lijst als de geknipte koorroepen)
+from areazero_samples import CHOIR_EVENTS, ARIA_PHRASES  # noqa: E402  (zelfde lijsten als de geknipte samples)
+ARIAKIT = 57                              # v5: de aria in frasen uit het origineel (kit area_zero_aria)
+# v5: wat niet in de vocals-stem zit (m36 Bb5, m39; Spleeter zette het in 'other') blijft op az_voice (gemeten in de mix)
+LEAD_REST = [(36, 0, 18, 'Bb5'), (39, 0, 4, 'Ab5'), (39, 4, 4, 'Bb5'), (39, 8, 4, 'F#5'), (39, 12, 6, 'Ab5')]
 CHOIR_MIN_GAIN = 0.15                     # roepen die in het origineel nauwelijks klinken (m8 opmaat, m18.04) weglaten
 LEAD_MOD, CHOIR_MOD, SIGH_MOD = 14, 6, 10   # in de game gemeten: MOD 6 gaf std 0,08 halve toon, origineel 0,33
 
@@ -170,7 +173,7 @@ def legato(ev):
 
 
 def build():
-    P = {k: [] for k in ('lead', 'lead_lo', 'choir', 'sigh', 'str', 'bell', 'echo', 'ost', 'bass', 'hat', 'drums')}
+    P = {k: [] for k in ('lead', 'lead_lo', 'aria', 'choir', 'sigh', 'str', 'bell', 'echo', 'ost', 'bass', 'hat', 'drums')}
     bend_lead, bend_sigh = [], []
 
     # bellen
@@ -178,7 +181,9 @@ def build():
     # een instrument een heel ander nummer'): kanaallog in de game = géén kanaalroof (max. 9 kanalen). Oorzaken: belletjes
     # van 0,25 s (het origineel laat ze ±0,8 s doorklinken), de PSG-echo 3 zestienden later (klinkt als losse foute
     # noten), de geraden arpeggio's ARP_AB/ARP_B in m24-39 en het geraden blokgolf-ostinato vanaf m40: weg.
-    def bells(bar, cell, vel, octave=0, ring=6):
+    # v5 (Jordi: 'de piepjes lijken de helft te missen'): in het origineel klinkt elke belnoot ±1 maat door (een wolk
+    # van tonen, zie de CQT van m1-2); ring = tot dezelfde toon opnieuw klinkt (max. 1 maat), kristalbel sterft in 1,3 s.
+    def bells(bar, cell, vel, octave=0, ring=16):
         for pos, n in cell:
             t = T(bar, pos)
             P['bell'].append([t, t + ring * S, p(n) + 12 * octave, vel])
@@ -200,9 +205,13 @@ def build():
     bells(64, CELL[:3], 70)
 
     # lead (aria): bend per noot (BENDR 2: 64 stappen = 2 halve tonen) + vibrato
-    for bar, pos, ln, n, dev in (LEAD if MAIN_LEAD else ()):
+    for bar, pos, ln, n in LEAD_REST:
         t = T(bar, pos)
-        P['lead'].append([t, t + ln * S, p(n), 100])          # v3: geen bend (de stem-sample is op F5 gestemd)
+        P['lead'].append([t, t + ln * S, p(n), 100])
+    ag = [float(g) for g in open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
+                                              'areazero_aria_gain.txt')).read().split()]
+    for j, (bar, pos, ln) in enumerate(ARIA_PHRASES):
+        P['aria'].append([T(bar, pos), T(bar, pos) + ln * S, 36 + j, int(round(70 + 57 * ag[j]))])
 
     # akkoorden
     def chord(t, ln, strings, choir, vs=80, vc=88):
@@ -307,7 +316,8 @@ def build():
                  for s0, e0, n0, v0 in P['bell']]
     for k in ('str', 'sigh'):                       # v4: koorroepen sluiten aan (detach gaf 0,2 s stilte vóór elke roep)
         P[k] = detach(P[k], tail[k])
-    order = ['lead', 'lead_lo', 'choir', 'drums', 'bell', 'sigh', 'str']
+    tail['aria'] = release_ticks(CHOIR_REL, TPB, BPM) + 2
+    order = ['aria', 'lead', 'lead_lo', 'choir', 'drums', 'bell', 'sigh', 'str']
     ds = {k: P[k] for k in order}
     kept = allocate(ds, order, tail, drum_len=S * 2, drum_parts=('drums',), max_voices=MAXV)
     for k in order:
@@ -325,7 +335,7 @@ def build():
                (0, mido.Message('control_change', control=21, value=LFOS + 6)),
                (0, mido.Message('control_change', control=1, value=SIGH_MOD))] + \
               [(t, mido.Message('pitchwheel', pitch=max(-8192, min(8191, v)))) for t, v in bend_sigh]
-    TRACKS = [('lead', VOICE, 84, 64, ex_lead), ('lead_lo', VOICE_LO, 84, 64, ex_lead), ('choir', CHOIRKIT, 80, 64, ex_choir),
+    TRACKS = [('lead', VOICE, 84, 64, ex_lead), ('lead_lo', VOICE_LO, 84, 64, ex_lead), ('choir', CHOIRKIT, 100, 64, ex_choir), ('aria', ARIAKIT, 96, 64, ex_choir),
               ('sigh', SIGH, 66, 56, ex_sigh),
               ('str', STR, 62, 64, ()), ('bell', BELL, 66, 72, ()), ('echo', ECHO, 30, 44, ()),
               ('ost', OST, 34, 80, ()), ('bass', BASS, 62, 64, ()), ('hat', HAT, 26, 70, ()),
@@ -528,6 +538,7 @@ def write_voicegroup():
         VOICE: 'voice_directsound 60, 0, DirectSoundWaveData_az_voice, 40, 0, 255, 190',     # rustige aanzet
         VOICE_LO: 'voice_directsound 60, 0, DirectSoundWaveData_az_voice_lo, 40, 0, 255, 190',
         CHOIRKIT: 'voice_keysplit_all voicegroup_area_zero_choir',
+        ARIAKIT: 'voice_keysplit_all voicegroup_area_zero_aria',
         LEAD_P: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_square_wave, 200, 0, 255, 170',
         OST: 'voice_square_1 60, 0, 0, 1, 0, 2, 6, 1',
         ECHO: 'voice_square_2 60, 0, 0, 0, 3, 0, 1',
@@ -551,7 +562,8 @@ def write_voicegroup():
     # sample-label en includes (idempotent)
     dsd = 'sound/direct_sound_data.inc'
     txt = open(dsd).read()
-    for lab in ['az_crystal', 'az_voice', 'az_voice_lo'] + ['az_choir_%02d' % i for i in range(len(CHOIR_EVENTS))]:
+    for lab in ['az_crystal', 'az_voice', 'az_voice_lo'] + ['az_choir_%02d' % i for i in range(len(CHOIR_EVENTS))] + \
+            ['az_aria_%d' % j for j in range(len(ARIA_PHRASES))]:
         if 'DirectSoundWaveData_%s::' % lab not in txt:
             txt = txt.rstrip('\n') + ('\n\n\t.align 2\nDirectSoundWaveData_%s::\n'
                                       '\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (lab, lab))
@@ -562,9 +574,16 @@ def write_voicegroup():
         'voice_group area_zero_choir, 36\n' + ''.join(
             '\tvoice_directsound 60, 0, DirectSoundWaveData_az_choir_%02d, 255, 0, 255, %d\n' % (i, CHOIR_REL)
             for i in range(len(CHOIR_EVENTS))) + '\n')
+    open('sound/voicegroups/drumsets/area_zero_aria.inc', 'w').write(
+        '@ Project Grounded: de aria van Area Zero in frasen, geknipt uit het origineel (areazero_samples.py); noot 36+j =\n'
+        '@ frase j (ARIA_PHRASES), op de eigen toonhoogte.\n'
+        'voice_group area_zero_aria, 36\n' + ''.join(
+            '\tvoice_directsound 60, 0, DirectSoundWaveData_az_aria_%d, 255, 0, 255, %d\n' % (j, CHOIR_REL)
+            for j in range(len(ARIA_PHRASES))) + '\n')
     vgi = 'sound/voice_groups.inc'
     txt = open(vgi).read()
-    for inc in ('drumsets/area_zero.inc', 'drumsets/area_zero_choir.inc', 'keysplits/area_zero_strings.inc', '%s.inc' % VG):
+    for inc in ('drumsets/area_zero.inc', 'drumsets/area_zero_choir.inc', 'drumsets/area_zero_aria.inc',
+                'keysplits/area_zero_strings.inc', '%s.inc' % VG):
         line = '.include "sound/voicegroups/%s"' % inc
         if line not in txt:
             txt = txt.rstrip('\n') + '\n' + line + '\n'

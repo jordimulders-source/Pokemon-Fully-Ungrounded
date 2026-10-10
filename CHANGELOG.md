@@ -18287,3 +18287,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Drums:** ritme ongewijzigd.
 - **Weggelaten:** de onherkenbare hogere lijn, de strijkers, de PSG en de synth.
 - Gemeten: piek 83, 0 overlopen, max. 11 kanalen. Samples 135 KB.
+
+### [v0.9.256] - Area Zero v5
+- **Piepjes:** de noten klopten, maar ze klonken te kort. In het origineel klinkt elke belnoot ±1 maat door, als een wolk van tonen. De kristalbel is opnieuw gemaakt (uitklink 1,3 s) en klinkt nu door tot dezelfde toon terugkomt. Chroma tegen het origineel: 0,88.
+- **Koor:** luider (spoorvolume 80 → 100), verder ongewijzigd. Een hogere rate heeft geen zin: de stem heeft boven 7 kHz bijna geen energie.
+- **Aria bij 1:10–1:15:** daar zat een gat in de transcriptie. Spleeter had dat stuk in de 'other'-stem gezet; nu uit de mix gemeten en aangevuld.
+- **Aria vloeiender:** 5 hele frasen uit het origineel geknipt, elk met de eigen aanzet, glijders en uitklink, gespeeld op de eigen toonhoogte. Chroma 0,89.
+- Gemeten: max. 10 kanalen, 0 afgekapt, piek 67. De aria-frasen kosten ±377 KB; er is nog 1,96 MB vrij.

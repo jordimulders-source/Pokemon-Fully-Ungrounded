@@ -675,6 +675,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   fix: noten laten aansluiten, loops >= 1 s met gelijk-vermogen-crossfade (cos/sin). In 682 gaf hetzelfde log 12
   kanalen bij een bekken + herhaalde leadnoot + strijkers per maat opnieuw: stemverdeler op 10 rekenen, strijkers als
   één lange noot. Geraden lagen (arpeggio's, ostinato) klinken voor Jordi als 'een ander nummer': weglaten.
+- Area Zero v5: **solo-opnames: mid2agb laat lege MIDI-sporen weg**, dus het m4a-spoornummer is de index onder de
+  níet-lege sporen (`NumTrks` in de .s); anders neem je het verkeerde spoor solo op (chroma A/B werd negatief).
+  'Piepjes missen de helft' = de belletjes van het origineel klinken elk ±1 maat door (wolk); de aria in hele frasen
+  uit de stem (zoals het koor) klinkt vloeiend; wat Spleeter in 'other' zette (m36, m39) bleef als noten.
 
 - Ruinous v3 (Jordi over v2: 'lijkt nergens op, een glitchend systeem; isoleer de instrumenten'): **een laag die je
   niet kunt benoemen, knip je uit de stem zelf**. De stem 'other' (25% van de energie: pad + 16e-figuur + hogere

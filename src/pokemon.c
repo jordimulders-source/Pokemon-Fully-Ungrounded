@@ -6098,6 +6098,12 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     else
         trainerClass = GetTrainerClassFromId(trainerId);
 
+    // Project Grounded: alle trainers in de Pokemon Tower (Channelers, Hex Maniacs, de bezeten Agatha op 5F) vechten
+    // op Battle! Pokemon Tower, de Lavender Town-remix (tools/grounded/tower_theme.py)
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+     && gMapHeader.regionMapSectionId == MAPSEC_POKEMON_TOWER)
+        return MUS_GROUNDED_VS_POKE_TOWER;
+
     // Project Grounded: het Juan-gevecht op Route 129 krijgt de FRLG Gym Leader-muziek
     if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
      && (trainerId == TRAINER_JUAN || trainerId == TRAINER_BROCK))
@@ -6381,6 +6387,8 @@ u16 GetBattleBGM(void)
     if (IsMagikarpOnlyWildBattle())
         return MUS_GROUNDED_VS_MAGIKARP; // Project Grounded: Battle! Magikarp (spartelen)
     // Project Grounded: wilde gevechten in Area Zero krijgen later Battle! Area Zero (MUS_GROUNDED_VS_AREA_ZERO), nu de gekozen muziek
+    if (gMapHeader.regionMapSectionId == MAPSEC_POKEMON_TOWER)
+        return MUS_GROUNDED_VS_POKE_TOWER; // Project Grounded: wilde gevechten (ook de GHOST) in de Pokemon Tower
     if (gMapHeader.regionMapSectionId == MAPSEC_YOSHIS_ISLAND)
         return MUS_GROUNDED_YI_OVERWORLD; // Project Grounded: Yoshi's Island-overworld (SPC-rip) bij wilde gevechten op het eiland
     if (gMapHeader.regionMapSectionId == MAPSEC_FORTREE_JUNGLE || gMapHeader.regionMapSectionId == MAPSEC_MANGROVE_MIRE)

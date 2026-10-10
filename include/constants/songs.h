@@ -615,7 +615,7 @@
 #define MUS_GROUNDED_VS_ZACIAN      684 // Project Grounded: Battle! Zacian & Zamazenta, eigen compositie: zwaard en schild, Galar-ridders (tools/grounded/legends3_theme.py)
 #define MUS_GROUNDED_VS_XERNEAS     685 // Project Grounded: Battle! Xerneas & Yveltal, eigen compositie: leven (groot) en dood (klein), één melodie (tools/grounded/legends3_theme.py)
 #define MUS_GROUNDED_VS_LAKE_TRIO   686 // Project Grounded: Battle! Uxie, Mesprit & Azelf, eigen compositie: kennis, emotie, wilskracht (tools/grounded/legends3_theme.py)
-// 687 vrij: Palm Tree Paradise (WL4) geschrapt, 361 KB samples (Jordi 10 okt: "niet heel belangrijk")
+#define MUS_GROUNDED_VS_POKE_TOWER  687 // Project Grounded: Battle! Pokémon Tower, gevechtsremix van Lavender Town voor alle gevechten in de Pokémon Tower (tools/grounded/tower_theme.py); was vrij (Palm Tree Paradise geschrapt)
 #define MUS_GROUNDED_WL4_MYSTIC_LAKE 688 // Project Grounded: Wario Land 4, Mystic Lake, 1-op-1 uit wl4 (song 655, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_WL4_MONSOON_JUNGLE 689 // Project Grounded: Wario Land 4, Monsoon Jungle, 1-op-1 uit wl4 (song 658, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_WL4_TOXIC_LANDFILL 690 // Project Grounded: Wario Land 4, Toxic Landfill, 1-op-1 uit wl4 (song 660, tools/grounded/mp2k_rip.py)

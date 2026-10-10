@@ -7906,3 +7906,22 @@ DirectSoundWaveData_ub_glass::
 	.align 2
 DirectSoundWaveData_ub_swell::
 	.incbin "sound/direct_sound_samples/grounded/ub_swell.bin"
+	.align 2
+DirectSoundWaveData_az_bells_0::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_0.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_1::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_1.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_2::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_2.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_3::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_3.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_4::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_4.bin"

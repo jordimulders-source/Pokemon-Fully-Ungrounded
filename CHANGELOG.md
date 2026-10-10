@@ -18391,3 +18391,13 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - het kerkorgel is weg; de lead staat op blokgolf + trompet in een lager register;
   - een korte intro waarin Mew verschijnt.
 - ±3 KB. Les (MUZIEK.md): bij een remix van een goedgekeurd nummer alleen het karakter veranderen, niet tegelijk tempo, groove en instrumenten.
+
+### [v0.9.271] - Area Zero v6–v8 + Ultra Beast v4
+- **Area Zero** (Jordi: "tot 1:18 geweldig … voor de rest klopt het nummer perfect"):
+  - **Piepjes:** de belletjes korter uitgestorven (zoals in het origineel), met echo; het geraden hoge arpeggio en het deuntje vanaf 1:18 zijn weg.
+  - **Begeleiding:** komt van maat 8 tot 40 uit het origineel ('other' + 'bass', later ook 'drums'), in aansluitende stukken, zodat de vervormde akkoordklank op 13 s doorklinkt en de glans terugkomt.
+  - **Mix en blazers:** de intro-belletjes staan 18 dB zachter en alle lagen staan in de verhoudingen van het origineel. De blazers beginnen samen met de stem.
+  - **Klank:** knippen op 16 kHz met een EQ die de demping van de GBA-keten compenseert.
+  - Aria en koor zijn ongewijzigd. Kost samen ±560 KB extra; er is nog **1,31 MB** ROM vrij.
+- **Ultra Beast v4:** de glazen lead pauzeert nu ook in de eerste helft van B. Hij zwijgt nu ±28% van de loop (was ±20%). Goedgekeurd: "dan zijn we er".
+- Goedgekeurd: de Shy Guy-varianten en Mew v3.

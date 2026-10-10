@@ -140,6 +140,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
 | Battle! Dialga/Palkia (678) | `dialga_theme.py` | v1 wacht op Jordi (uit zijn MIDI, alleen stock-samples, ±9 KB) | "Dialga" |
 | Battle! Ultra Beast (677) | `ub_theme.py`, `ub_samples.py` | v1 wacht op Jordi (eigen compositie, octatonisch/heeltoons, 7/8, glazen FM-lead met microtonale bends; alle UB-gevechten in Ultra Space) | "Ultra Beast" |
+| Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v8: begeleiding m5-39 + koor + aria uit het origineel geknipt, 682 geschrapt (Jordi) | "Area Zero" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -702,6 +703,21 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   als stapel stemmen in één sample op 16 kHz (KEEP_16K in resample_wav.py), 3 samples per kandidaat (transpositie
   -2..+5: onder de 10,5 kHz van de mixer). **De -V-grens van Mitch was de build-up**: kick + roffelsnare tegelijk =
   +35% boven de drops (offline), daarom liep -V > 066 over; roffelslag op/na een kick x0,5 -> -V092, piek 98, RMS 3950.
+- Area Zero v7 (Jordi: 'vanaf 8 s doen de piepjes hun eigen ding; vanaf 1:18 een deuntje dat er niet in hoort'):
+  **nooit een laag toevoegen die alleen gemeten en niet met een geïsoleerde A/B tegen de stem gecontroleerd is.** Een
+  dichte belletjeswolk (16en + echo + wisselnoten) is niet na te spelen; waar een stem alleen die laag bevat (intro,
+  pauzes) knip je hem als geheel (chroma A/B 0,97); de geraden cel/groove-arpeggio's zijn weg.
+- Area Zero v8 (Jordi: 'vanaf 8 s naar de achtergrond; distorted melodie op 13 s kapt af; 22 s en 47 s te muffled'):
+  **eerst per 0,5 s niveau + % boven 2 kHz van GBA-opname naast mix én stems zetten** (gelijke luidheid over het
+  venster): de intro stond 11 dB bóven de wolk (origineel 8 dB eronder), de knip stopte midden in de vervormde
+  Eb-akkoordklank (die zat deels in de bas-stem: PSG-bas zit niet in een mixbuffer-opname!), en de glans op 22/47 s
+  zat in 'other'. Opgelost met de begeleiding als aansluitende knippen uit other+bass(+drums) (lineaire crossfade van
+  15 ms op de naad, herhalen waar de golfvorm-correlatie per maat ≥0,5 is) en **alle knippen op één schaal**
+  (velocity = 127 x piek / grootste piek, lineair): dan is de verhouding stem/begeleiding vanzelf die van het
+  origineel (gemeten ±1 dB). Spleeter zet bromtonen soms in 'drums' (Eb-orgelpunt m24+): chroma per laag tegen de
+  stem controleren. **Weergaveketen meten** (solo vs stem, opname vs mixbuffer): 16 kHz-sample + mixer + GBA-uitgang
+  = -2 dB bij 2 kHz tot -6,6 bij 7 kHz; het omgekeerde als voorversterking in de knip (`EQ` in
+  `areazero_samples.py`) maakt de opname ±1 dB vlak t.o.v. het origineel.
 
 - Tower v1 (`tower_theme.py`, 687, gevechtsremix van `mus_rg_lavender.mid`): **origineel tpb 24 x 4 = 96 en de intro is
   ook 4 maten**, dus elke noot staat op tick x 4 en de loop (40 maten) blijft 1-op-1 (melodie spoor 1, jammerlijn spoor 5,

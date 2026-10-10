@@ -18237,3 +18237,10 @@ Gekozen door Jordi:
 ### [v0.9.250] - Wario vecht op Fiery Cavern
 - **Wario** (eindbaas in het fort op Yoshi's Island, en in het Stadium) vecht op **Fiery Cavern** uit Wario Land 4 (Jordi: "perfect voor Wario thema"). Een eigen Wario-intro is in de maak: knoflook, de grote W, Wario in poses.
 - **Toxic Landfill** (Wario Land 4) is een nieuwe keuze bij WILD MUSIC en TRAINER MUSIC, als "LANDFILL" (Jordi: "een goed ander battle theme").
+
+### [v0.9.251] - Wario-intro
+- Een eigen gevechtsintro voor **Wario**, in het fort op Yoshi's Island en in het Stadium (`B_TRANSITION_WARIO`, `wario_intro.py`, `src/data/wario_intro.h`), naar het idee van Jordi. Achter alles draait een stralenkrans in geel en paars. Duur ±2,3 s, ±12,6 KB.
+  1. Een knoflookbol wordt in drie happen opgegeten (met tandafdrukken, een schok en een bijtgeluid).
+  2. Een grote gele W met paarse rand dreunt erin als een ground pound.
+  3. Wario stempelt er in drie poses in: grijns, dubbele biceps en opzij. Dit is de echte GBA-art op 3×.
+  4. De W komt terug en groeit tot hij het hele beeld vult, wit, gevecht.

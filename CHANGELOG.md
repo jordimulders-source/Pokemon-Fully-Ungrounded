@@ -18308,3 +18308,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Nieuw gevechtsthema `MUS_GROUNDED_VS_POKE_TOWER` (687): een remix van het Lavender Town-thema met de vorm van het origineel, op 160 bpm. Het speelt bij alle gevechten in de Pokémon Tower: wilde Pokémon (ook de GHOST-gevechten), de Channelers en Agatha (die had tot nu toe de Elite Four-muziek).
 - Opbouw: chromatische intro, de melodie op orgel → strijkers → koor ("de geesten") → trompet. Het arpeggio en de "jammerlijn" spelen op PSG; eigen kit met Japanse percussie (taiko, kotsuzumi, atarigane, hyoushigi). Alleen stock-samples: ±5 KB.
 - Generator: `tools/grounded/tower_theme.py`.
+
+### [v0.9.260] - Boo-intro
+- Nieuwe gevechtsintro `B_TRANSITION_BOO` voor Commander Boo (Yoshi's Island) en de Stadium-Boo, op de maat van Battle! Boo.
+- Het verloop: vijf Boos voor het Yoshi's Island-spookhuis houden hun handen voor hun ogen (één gluurt even) → Kamek scheurt op zijn bezem voorbij en schiet zonder om te kijken zijn spreuk (cirkel, driehoek, vierkant) op de middelste → witte flits en de Boo zwelt op → poef: hij draait zich papierdun om als Commander Boo, tong uit → de rest slaat de handen weer voor de ogen en gluurt toch → het gevecht begint.
+- Art uit Super Mario Advance 3 (`tools/grounded/sma3_boo_rip.py`, `boo_intro.py`, code in `src/data/boo_intro.h`). Kost ±10,5 KB.

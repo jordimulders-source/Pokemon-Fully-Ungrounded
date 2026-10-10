@@ -669,3 +669,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   mix voor 'twinkelingen'. Kijk bij elke laag in álle stems (dominante toon per 16e, `dom.py`-achtig). Een zachte laag
   in het origineel (de F#5-'roep', bijna zuiver) niet op een luid instrument zetten: weglaten. 'Lange tonen' in
   'other' kunnen het ostinato zelf zijn (B3+F#4 pulseren in het ostinato-ritme): eerst het ritme per noot meten.
+- Area Zero v4 / 682 v2: **kanaalroof eerst meten, niet aannemen**: kanaallog per frame (gSoundInfo.chans = mixbuffer
+  - 12x64 bytes; status, spoor via track-pointer, toets, envelop) gaf in 681 max. 9 kanalen en 0 geroofde noten. De
+  'haperende aria' en 'roepen die loopen' waren detach-gaten (0,2 s stilte vóór elke noot) en te korte loops (0,3 s);
+  fix: noten laten aansluiten, loops >= 1 s met gelijk-vermogen-crossfade (cos/sin). In 682 gaf hetzelfde log 12
+  kanalen bij een bekken + herhaalde leadnoot + strijkers per maat opnieuw: stemverdeler op 10 rekenen, strijkers als
+  één lange noot. Geraden lagen (arpeggio's, ostinato) klinken voor Jordi als 'een ander nummer': weglaten.
+

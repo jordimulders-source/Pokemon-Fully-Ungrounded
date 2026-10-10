@@ -87,6 +87,9 @@ def base_note(path):
     return 60
 
 
+KEEP_RATE = ('az_voice',)   # Area Zero v4: stem uit het origineel op 16 kHz (Jordi: '11 kHz te muffled')
+
+
 def resample_all(root='.'):
     drum = set()
     for f in glob.glob(os.path.join(root, 'sound/voicegroups/drumsets/*.inc')):
@@ -95,7 +98,7 @@ def resample_all(root='.'):
     n = 0
     for name, p in re.findall(r'^DirectSoundWaveData_(\w+)::?\s*\n\s*\.incbin "([^"]+)"', inc, re.M):
         w = os.path.join(root, p[:-4] + '.wav')
-        if '/grounded/' not in p or name in drum or not os.path.exists(w):
+        if '/grounded/' not in p or name in drum or name.startswith(KEEP_RATE) or not os.path.exists(w):
             continue
         fmt = next(c for c in chunks(open(w, 'rb').read()) if c[0] == b'fmt ')[1]
         if struct.unpack_from('<H', fmt, 14)[0] != 8:

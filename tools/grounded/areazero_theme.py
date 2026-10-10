@@ -174,11 +174,14 @@ def build():
     bend_lead, bend_sigh = [], []
 
     # bellen
-    def bells(bar, cell, vel, octave=0):
+    # v4 (Jordi: 'de piepjes missen noten en vallen weg; de piano vanaf ±47 s speelt verkeerde noten; vanaf ±77 s speelt
+    # een instrument een heel ander nummer'): kanaallog in de game = géén kanaalroof (max. 9 kanalen). Oorzaken: belletjes
+    # van 0,25 s (het origineel laat ze ±0,8 s doorklinken), de PSG-echo 3 zestienden later (klinkt als losse foute
+    # noten), de geraden arpeggio's ARP_AB/ARP_B in m24-39 en het geraden blokgolf-ostinato vanaf m40: weg.
+    def bells(bar, cell, vel, octave=0, ring=6):
         for pos, n in cell:
             t = T(bar, pos)
-            P['bell'].append([t, t + 2 * S, p(n) + 12 * octave, vel])
-            P['echo'].append([t + 3 * S, t + 5 * S, p(n) + 12 * octave, max(40, vel - 30)])
+            P['bell'].append([t, t + ring * S, p(n) + 12 * octave, vel])
     for b in (1, 2, 3):
         bells(b, INTRO, 92)
     bells(4, INTRO4, 92)
@@ -191,11 +194,9 @@ def build():
         bells(b, CELL, 64)
     for b in range(20, 24):
         bells(b, CELL_B, 66)
-    for b in range(24, 40):
-        bells(b, ARP_B if b in range(28, 32) or b in range(36, 40) else ARP_AB, 56)
     for b in range(40, 64):
         ph = PHRASE[b]
-        bells(b, {'a': G_A, 'c': G_A, 'b': G_B, 'd': G_D, 'BD': G_BD}[ph], 70)
+        bells(b, {'a': G_A, 'c': G_A, 'b': G_B, 'd': G_D, 'BD': G_BD}[ph], 70, ring=4)
     bells(64, CELL[:3], 70)
 
     # lead (aria): bend per noot (BENDR 2: 64 stappen = 2 halve tonen) + vibrato
@@ -263,11 +264,7 @@ def build():
     bass(64, [(0, 8, 'C#3'), (8, 8, 'A2')], 80)
 
     # ostinato (groove)
-    for b in range(40, 64):
-        pat = {'b': OST_B, 'BD': OST_BD}.get(PHRASE[b], OST_A)
-        for i, n in enumerate(pat):
-            t = T(b, 2 * i)
-            P['ost'].append([t, t + 2 * S - 8, p(n), 84 if i % 4 == 0 else 70])
+    # v4: weg (geraden, niet uit het origineel)
 
     # drums (vanaf m24; gemeten in de 8-bit-cover en het origineel): 2-maatspatroon
     def hit(t, n, v, ln=S):
@@ -305,7 +302,10 @@ def build():
     tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) + 2 for k, pr in progs.items()}
     tail['choir'] = release_ticks(CHOIR_REL, TPB, BPM) + 2
     tail['drums'] = 0
-    for k in ('lead', 'lead_lo', 'str', 'sigh', 'choir'):
+    # v4: de aria niet loslaten vóór de volgende noot (detach gaf gaten = 'haperen'); belnoten van dezelfde toon afkappen
+    P['bell'] = [[s0, min(e0, min([x[0] for x in P['bell'] if x[2] == n0 and x[0] > s0], default=e0)), n0, v0]
+                 for s0, e0, n0, v0 in P['bell']]
+    for k in ('str', 'sigh'):                       # v4: koorroepen sluiten aan (detach gaf 0,2 s stilte vóór elke roep)
         P[k] = detach(P[k], tail[k])
     order = ['lead', 'lead_lo', 'choir', 'drums', 'bell', 'sigh', 'str']
     ds = {k: P[k] for k in order}
@@ -352,200 +352,155 @@ KIT = [
 CRASH, TOM = 39, 40
 
 
-# ==== Battle! Area Zero (MUS_GROUNDED_VS_AREA_ZERO, 682): remix voor paradoxen, Koraidon/Miraidon, Terapagos =========
+# ==== Battle! Area Zero (MUS_GROUNDED_VS_AREA_ZERO, 682) v2: naar de Area Zero wild battle (Scarlet/Violet) ========
+# Bron (Jordi): <scratchpad>/az/src/areazero_wild_battle.mp3, Spleeter-stems in az/stems/areazero_wild_battle/.
+# Gemeten: 148 bpm (drums), loop 111,1 s vanaf ±2 s; harmonie zoals Area Zero (Eb-orgelpunt <-> B/Cb maj7), bas Eb/B;
+# de lead speelt de aria van Area Zero op battle-tempo (maat 5-8: F#5 Ab5 -> F6 met F#6-wisselnoot, 9-12 boven B:
+# Ab4 C#5 Bb4, 13-16 F#5 Ab5 F5 -> F6, 17-20 C#6 Eb6 Bb5). Instrumenten = die van 681 (kristal, strijkers, PSG-bas,
+# kit, de geknipte stem en twee koorroepen uit het origineel); geen nieuwe samples.
+# Vorm (maten, 1-geteld): 1-4 intro | 5-8 A1 | 9-12 B1 | 13-16 A2 | 17-20 B2 | 21-24 brug (B -> Db, 2x) |
+#   25-32 drive (groove-frase a b c d x2) | 33-34 pauze (alleen belletjes) -> loop naar 5.
 OUT_VS = 'sound/songs/midi/mus_grounded_vs_area_zero.mid'
-VS_BPM = 150
-# Vorm (remix-maten, 1-geteld), zelfde materiaal, zelfde voicegroup (geen nieuwe samples):
-#   1-4   intro: het kristal-arpeggio (m1-4 van het origineel), maat 4 = roffel + koor zwelt (transitie)
-#   5-12  A: de groove (frase a b c d) met dubbel zo drukke drums, ostinato in zestienden, bas in achtsten
-#  12-27  B: de aria (origineel m24-39, opmaat in maat 12) op battle-drums
-#  28-31  C: B (Cb) maj9, halve-tijd-drums, kristalcel
-#  32-33  B -> Db (bVI-bVII) met roffel
-#  34     PAUZE: alleen belletjes (Area Zero 'houdt zijn adem in')
-#  35     inzet Eb + koorzucht -> terug naar A (loop 5-35)
-VS_LOOP0, VS_END = 5, 36
+VS_BPM = 148
+VS_LOOP0, VS_END = 5, 35
+# lead: (maat, zestiende, lengte, noot) = gemeten bovenlijn van de 'other'-stem (per achtste)
+VS_LEAD = [
+    (4, 14, 2, 'F#5'),
+    (5, 0, 4, 'F#5'), (5, 4, 4, 'Ab5'), (5, 8, 8, 'F6'), (6, 0, 4, 'F6'), (6, 4, 4, 'F#6'), (6, 8, 8, 'F6'),
+    (7, 0, 4, 'F6'), (7, 4, 4, 'F#6'), (7, 8, 8, 'F6'), (8, 0, 6, 'F6'), (8, 6, 4, 'Eb6'), (8, 10, 2, 'Eb5'),
+    (8, 12, 2, 'F5'),
+    (9, 0, 4, 'Ab4'), (9, 4, 4, 'C#5'), (9, 8, 8, 'Bb4'), (10, 0, 16, 'Bb4'),
+    (11, 0, 2, 'Bb4'), (11, 4, 4, 'C#5'), (11, 8, 8, 'Bb4'), (12, 0, 8, 'Bb4'), (12, 8, 4, 'Ab4'), (12, 12, 2, 'Bb4'),
+    (12, 14, 2, 'F#5'),
+    (13, 0, 2, 'F#5'), (13, 4, 4, 'Ab5'), (13, 8, 8, 'F5'), (14, 0, 4, 'F#5'), (14, 4, 2, 'Ab5'), (14, 6, 10, 'F5'),
+    (15, 0, 2, 'F5'), (15, 4, 2, 'Bb5'), (15, 6, 10, 'F6'), (16, 0, 10, 'F6'), (16, 10, 4, 'F#6'), (16, 14, 4, 'C#6'),
+    (17, 2, 2, 'Eb6'), (17, 6, 10, 'Bb5'), (18, 0, 4, 'Bb5'), (18, 12, 2, 'F#5'),
+    (19, 0, 4, 'C#6'), (19, 4, 2, 'B5'), (19, 6, 10, 'Bb5'), (20, 0, 8, 'Bb5'), (20, 8, 2, 'Ab5'), (20, 12, 2, 'Bb5'),
+]
+VS_B = (9, 10, 11, 12, 17, 18, 19, 20)       # B (Cb); de rest van 5-20 is Eb
 
 
 def build_remix():
-    P = {k: [] for k in ('lead', 'choir', 'sigh', 'str', 'bell', 'echo', 'ost', 'bass', 'hat', 'drums')}
-    bend_lead, bend_sigh = [], []
-    ORIG = lambda b: b + 12          # remix-maat -> origineel (aria-deel)
+    P = {k: [] for k in ('lead', 'lead_lo', 'choir', 'str', 'bell', 'bass', 'hat', 'drums')}
 
-    def bells(bar, cell, vel):
+    def bells(bar, cell, vel, ring=3):
         for pos, n in cell:
             t = T(bar, pos)
-            P['bell'].append([t, t + 2 * S, p(n), vel])
-            P['echo'].append([t + 3 * S, t + 5 * S, p(n), max(40, vel - 30)])
+            P['bell'].append([t, t + ring * S, p(n), vel])
 
-    def chord(t, ln, strings, choir, vs=78, vc=86):
-        end = t + ln
-        while t < end:
-            seg = min(end - t, 2 * TPB)
-            for n in strings:
-                P['str'].append([t, t + seg, p(n), vs])
-            for n in choir:
-                P['choir'].append([t, t + seg, p(n), vc])
-            t += seg
+    def chord(bar, pos, ln, strings, vs=76):
+        for n in strings:
+            P['str'].append([T(bar, pos), T(bar, pos) + ln * S, p(n), vs])
 
     def hit(t, n, v, ln=S):
         P['drums'].append([t, t + ln, n, v])
 
-    def hats16(bar, accent=(0, 4, 8, 12), vel=(104, 70)):
-        for i in range(16):
-            P['hat'].append([T(bar, i), T(bar, i) + S // 2, 72, vel[0] if i in accent else vel[1]])
-
     def bass8(bar, root, alt=None, vel=100):
-        """achtsten: grondtoon, octaafsprong op de 3+3+2-accenten (0, 3, 6 achtsten = 16e 0, 6, 12)."""
         for i in range(8):
             n = p(root) + (12 if i in (3, 6) else 0)
             if alt and i == 7:
                 n = p(alt)
             P['bass'].append([T(bar, 2 * i), T(bar, 2 * i) + 2 * S - 6, n, vel if i in (0, 3, 6) else vel - 18])
 
-    def groove_drums(bar, ph):
-        hit(T(bar, 0), KICK, 116); hit(T(bar, 6), KICK, 100); hit(T(bar, 8), KICK, 104)
+    def hats(bar, step=1, vel=(100, 64)):
+        for i in range(0, 16, step):
+            P['hat'].append([T(bar, i), T(bar, i) + S // 2, 72, vel[0] if i % 4 == 2 else vel[1]])
+
+    def four(bar, crash=False, fill=False):
+        for q in (0, 4, 8, 12):
+            hit(T(bar, q), KICK, 112 if q in (0, 8) else 100)
         hit(T(bar, 4), SNARE, 104); hit(T(bar, 12), SNARE, 110)
-        if ph == 'd':
-            hit(T(bar, 14), SNARE, 84); hit(T(bar, 15), SNARE, 92)
-        hats16(bar)
+        if crash:
+            hit(T(bar, 0), CRASH, 112, 4 * S)
+        if fill:
+            for i in (13, 14, 15):
+                hit(T(bar, i), SNARE, 80 + 8 * (i - 13))
 
-    # intro (1-4): kristal-arpeggio, maat 3-4 dubbel zo snel; roffel en koorzwelling in maat 4
-    bells(1, INTRO, 92); bells(2, INTRO, 92)
+    # koorroepen uit het origineel (zelfde kit als 681): Eb-akkoord = roep 1 (m9), B-akkoord = roep 2 (m12)
+    def roep(bar, i, ln=32, vel=96):
+        P['choir'].append([T(bar), T(bar) + ln * S, 36 + i, vel])
+
+    # intro 1-4: kristal-arpeggio + Eb-orgelpunt, kick op de tellen in maat 3-4
+    for b in (1, 2, 3):
+        bells(b, INTRO, 92, ring=6)
+    bells(4, INTRO4, 92, ring=6)
+    chord(1, 0, 64, ['Eb3', 'Bb3'], 66)
     for b in (3, 4):
-        cell = INTRO if b == 3 else INTRO4
-        for pos, n in cell:
-            for d in (0, 1):
-                t = T(b, pos + d)
-                P['bell'].append([t, t + S, p(n) + (12 if d else 0), 88])
-    chord(T(4), 16 * S, ['Eb3', 'Bb3'], ['Eb4', 'Bb4', 'Eb5'], 70, 80)
-    for i in range(16):
-        hit(T(4, i), SNARE, 50 + i * 4)
-    hit(T(4, 0), TOM, 100); hit(T(4, 8), TOM, 108); hit(T(4, 12), TOM, 116)
+        for q in (0, 4, 8, 12):
+            hit(T(b, q), KICK, 90 + 4 * (b - 3))
+        hats(b, 2, (80, 56))
+    for i in range(8, 16):
+        hit(T(4, i), SNARE, 60 + 6 * (i - 8))
+    P['bass'] += [[T(b), T(b) + 16 * S - 6, p('Eb2'), 90] for b in (1, 2, 3, 4)]
 
-    # A (5-12): groove
-    for k, b in enumerate(range(5, 13)):
-        ph = 'abcd'[k % 4]
-        for pos, ln, strings, choir in GROOVE[ph]:
-            chord(T(b, pos), ln * S, strings, choir)
-        bells(b, {'a': G_A, 'c': G_A, 'b': G_B, 'd': G_D}[ph], 72)
-        pat = {'b': OST_B}.get(ph, OST_A)
-        for i in range(16):
-            n = p(pat[i // 2]) + (12 if i % 2 else 0)          # elke achtste van het ostinato + zijn octaaf
-            P['ost'].append([T(b, i), T(b, i) + S - 6, n, 84 if i % 4 == 0 else 64])
-        bass8(b, 'Eb2', alt={'a': 'E2', 'c': 'D2', 'd': 'C#2'}.get(ph))
-        groove_drums(b, ph)
-        if b in (5, 9):
-            hit(T(b, 0), CRASH, 112, 4 * S)
-    for b, pos, ln, notes in ((7, 10, 8, ('A4', 'D5')), (11, 10, 8, ('A4', 'D5'))):
-        t = T(b, pos)
-        for n in notes:
-            P['sigh'].append([t, t + ln * S, p(n), 96])
-        bend_sigh.append((t, 0))
-        for i in range(1, 9):
-            bend_sigh.append((t + ln * S // 2 + i * (ln * S // 2) // 8 - 1, -int(8192 * i / 8)))
-        bend_sigh.append((t + ln * S + 1, 0))
-
-    # B (12-27): de aria van het origineel (m24-39) op battle-drums
-    for bar, pos, ln, n, dev in LEAD:
-        t = T(bar - 12, pos)
-        P['lead'].append([t, t + ln * S, p(n), 110])
-        bend_lead.append((t, int(round(dev * LEAD_DETUNE * 32)) * 128))
-    for bar, pos, ln, strings, choir in CHORDS:
-        if 25 <= bar <= 39:
-            chord(T(bar - 12, pos), ln * S, strings, choir, 76, 80)
-    for b in range(13, 28):
-        o = ORIG(b)
-        isB = o in range(28, 32) or o in range(36, 40)
-        bells(b, ARP_B if isB else ARP_AB, 60)
-        bass8(b, 'B2' if isB else 'Eb2', alt=('Bb2' if isB else 'D2') if b % 2 == 0 else None, vel=96)
-        hit(T(b, 0), KICK, 112); hit(T(b, 6), KICK, 96); hit(T(b, 8), KICK, 100)
-        hit(T(b, 4), SNARE, 100); hit(T(b, 12), SNARE, 108)
-        if b in (13, 21):
-            hit(T(b, 0), CRASH, 110, 4 * S)
-        hats16(b, vel=(96, 60))
-        chordtones = ['B3', 'F#4', 'Bb4', 'F#4'] if isB else ['Eb4', 'Bb4', 'F#4', 'Bb4']
-        for i in range(16):
-            if i % 4 != 3:
-                P['ost'].append([T(b, i), T(b, i) + S - 6, p(chordtones[i % 4]), 70 if i % 4 else 82])
-
-    # C (28-31): B maj9, halve tijd; 32-33 B -> Db met roffel; 34 pauze; 35 inzet
-    for b in range(28, 32):
-        chord(T(b), 16 * S, ['B2', 'B3'], ['F#5', 'Bb5', 'C#6'], 78, 86)
-        bells(b, CELL_B, 72)
-        bass8(b, 'B2', vel=92)
-        hit(T(b, 0), KICK, 112); hit(T(b, 8), SNARE, 110); hit(T(b, 10), KICK, 90)
-        if b == 28:
-            hit(T(b, 0), CRASH, 112, 4 * S)
-        for i in range(0, 16, 2):
-            P['hat'].append([T(b, i), T(b, i) + S // 2, 72, 96 if i % 8 == 0 else 70])
-    for b in (32, 33):
+    # A/B (5-20)
+    for b in range(5, 21):
+        isB = b in VS_B
+        chord(b, 0, 16, ['B2', 'B3'] if isB else ['Eb3', 'Bb3'])
+        bells(b, CELL_B if isB else G_A, 70)
+        bass8(b, 'B2' if isB else 'Eb2', alt=('Bb2' if isB else 'D2') if b % 4 == 0 else None)
+        four(b, crash=b in (5, 9), fill=b in (8, 12, 16, 20))   # geen bekken in 13/17: daar 12 kanalen (gemeten)
+        hats(b)
+        if (b - 5) % 2 == 0:
+            roep(b, 2 if isB else 1, vel=88)
+    # brug 21-24: B -> Db (bVI-bVII) vier keer, halve tijd
+    for b in range(21, 25):
         for pos, ln, strings, choir in GROOVE['BD']:
-            chord(T(b, pos), ln * S, strings, choir, 80, 90)
+            chord(b, pos, ln, strings, 80)
         bells(b, G_BD, 74)
         for i in range(8):
             n = 'B2' if i < 4 else 'C#3'
             P['bass'].append([T(b, 2 * i), T(b, 2 * i) + 2 * S - 6, p(n) + (12 if i in (3, 6) else 0), 100])
-        hit(T(b, 0), KICK, 112); hit(T(b, 8), KICK, 108)
-        for i in range(0, 16, 1 if b == 33 else 2):              # roffel: achtsten, dan zestienden, crescendo
-            hit(T(b, i), SNARE, (76 if b == 33 else 56) + i * 3)
-        hats16(b, vel=(100, 66))
-    bells(34, CELL, 84)                                         # pauze
-    chord(T(34, 10), 6 * S, [], ['Ab3', 'C#4', 'Eb4'], 60, 56)
-    chord(T(35), 16 * S, ['Eb3', 'Bb3'], ['Eb4', 'F4', 'Bb4'], 80, 90)
-    hit(T(35, 0), CRASH, 120, 4 * S); hit(T(35, 0), KICK, 120)
-    for pos in (8, 10, 12, 14):
-        hit(T(35, pos), TOM, 90 + pos * 2)
-    hit(T(35, 15), SNARE, 100)
-    bass8(35, 'Eb2', vel=100)
-    bells(35, G_A, 74)
-    t = T(35, 8)
-    for n in ('A4', 'D5'):
-        P['sigh'].append([t, t + 8 * S, p(n), 96])
-    bend_sigh.append((t, 0))
-    for i in range(1, 9):
-        bend_sigh.append((t + 4 * S + i * 4 * S // 8 - 1, -int(8192 * i / 8)))
-    bend_sigh.append((t + 8 * S + 1, 0))
+        hit(T(b, 0), KICK, 112); hit(T(b, 8), SNARE, 110); hit(T(b, 10), KICK, 92)
+        hats(b, 2, (96, 66))
+    for i in range(0, 16):
+        hit(T(24, i), SNARE, 64 + 3 * i)
+    # drive 25-32: groove-frase van 681 (a b c d) op battle-drums
+    for k, b in enumerate(range(25, 33)):
+        ph = 'abcd'[k % 4]
+        for pos, ln, strings, choir in GROOVE[ph]:
+            chord(b, pos, ln, strings, 74)
+        bells(b, {'a': G_A, 'c': G_A, 'b': G_B, 'd': G_D}[ph], 74)
+        bass8(b, 'Eb2', alt={'a': 'E2', 'c': 'D2', 'd': 'C#2'}.get(ph))
+        four(b, crash=b in (25, 29), fill=b in (28, 32))
+        hats(b)
+        if k % 2 == 0:
+            roep(b, 1, vel=84)
+    # pauze 33-34: alleen belletjes (de adem van Area Zero), daarna terug naar A1
+    bells(33, CELL, 84, ring=6)
+    bells(34, CELL, 84, ring=6)
+    for i in range(8, 16):
+        hit(T(34, i), SNARE, 56 + 7 * (i - 8))
 
+    for bar, pos, ln, n in VS_LEAD:
+        P['lead_lo' if p(n) <= VOICE_SPLIT else 'lead'].append([T(bar, pos), T(bar, pos) + ln * S, p(n), 104])
     for k in P:
         P[k] = dedupe(P[k])
+    P['bell'] = [[s0, min(e0, min([x[0] for x in P['bell'] if x[2] == n0 and x[0] > s0], default=e0)), n0, v0]
+                 for s0, e0, n0, v0 in P['bell']]
     rel = releases(VG)
-    progs = {'lead': LEAD_P, 'choir': CHOIR, 'sigh': SIGH, 'str': STR, 'bell': BELL}
+    progs = {'lead': VOICE, 'lead_lo': VOICE_LO, 'str': STR, 'bell': BELL}
     tail = {k: release_ticks(rel.get(pr, 200), TPB, VS_BPM) + 2 for k, pr in progs.items()}
-    tail['drums'] = 0
-    for k in ('lead', 'choir', 'str', 'sigh'):
-        P[k] = detach(P[k], tail[k])
-    order = ['lead', 'drums', 'bell', 'sigh', 'choir', 'str']
-    ds = {k: P[k] for k in order}
+    tail['choir'] = release_ticks(CHOIR_REL, TPB, VS_BPM) + 2
+    P['str'] = detach(legato(P['str']), tail['str'])      # één lange strijkersnoot per akkoord (minder uitklinkers)
+    order = ['lead', 'lead_lo', 'choir', 'bell', 'str']
     dl = {KICK: 2 * S, SNARE: 2 * S, CRASH: 8 * S, TOM: 3 * S}
-    drum_len = max(dl.values())
-    # drums: echte lengte per sample (kick/snare kort, bekken lang)
     busy = [(e[0], e[0] + dl.get(e[2], 2 * S)) for e in P['drums']]
-    kept = allocate({k: ds[k] for k in order if k != 'drums'}, [k for k in order if k != 'drums'], tail,
-                    max_voices=11, preset=busy)
-    kept['drums'] = P['drums']
+    # stemverdeler op 10 (gemeten in de game: uitklinkers duren langer dan berekend; zo blijft het <= 11)
+    kept = allocate({k: P[k] for k in order}, order, tail, max_voices=10, preset=busy)
     for k in order:
-        n = len(ds[k])
+        n = len(P[k])
         if n:
-            print('  %-6s %4d noten, %3d weg (%.0f%%)' % (k, n, n - len(kept[k]), 100 * (n - len(kept[k])) / n))
+            print('  %-7s %4d noten, %3d weg (%.0f%%)' % (k, n, n - len(kept[k]), 100 * (n - len(kept[k])) / n))
         P[k] = kept[k]
 
     song = Song(TPB, 500000)
     song.tempo(0, VS_BPM / 120)
     song.loop = (T(VS_LOOP0), T(VS_END))
-    ex_lead = [(0, mido.Message('control_change', control=20, value=2)),
-               (0, mido.Message('control_change', control=21, value=LFOS + 8)),
-               (0, mido.Message('control_change', control=1, value=LEAD_MOD))] + \
-              [(t, mido.Message('pitchwheel', pitch=v)) for t, v in bend_lead]
-    ex_choir = [(0, mido.Message('control_change', control=21, value=LFOS + 8)),
-                (0, mido.Message('control_change', control=1, value=CHOIR_MOD))]
-    ex_sigh = [(0, mido.Message('control_change', control=20, value=1)),
-               (0, mido.Message('control_change', control=21, value=LFOS + 14)),
-               (0, mido.Message('control_change', control=1, value=SIGH_MOD))] + \
-              [(t, mido.Message('pitchwheel', pitch=max(-8192, min(8191, v)))) for t, v in bend_sigh]
-    TRACKS = [('lead', LEAD_P, 100, 64, ex_lead), ('choir', CHOIR, 66, 64, ex_choir), ('sigh', SIGH, 70, 56, ex_sigh),
-              ('str', STR, 60, 64, ()), ('bell', BELL, 64, 72, ()), ('echo', ECHO, 28, 44, ()),
-              ('ost', OST, 36, 80, ()), ('bass', BASS, 66, 64, ()), ('hat', HAT, 28, 70, ()),
-              ('drums', DRUMS, 100, 64, ())]
+    ex0 = [(0, mido.Message('control_change', control=1, value=0)), (0, mido.Message('pitchwheel', pitch=0))]
+    TRACKS = [('lead', VOICE, 90, 64, ex0), ('lead_lo', VOICE_LO, 90, 64, ex0), ('choir', CHOIRKIT, 72, 64, ex0[:1]),
+              ('str', STR, 60, 64, ()), ('bell', BELL, 64, 72, ()), ('bass', BASS, 66, 64, ()),
+              ('hat', HAT, 28, 70, ()), ('drums', DRUMS, 100, 64, ())]
     free = [c for c in range(16) if c != 9]
     for k, prog, vol, pan, ex in TRACKS:
         ch = 9 if prog == DRUMS else free.pop(0)

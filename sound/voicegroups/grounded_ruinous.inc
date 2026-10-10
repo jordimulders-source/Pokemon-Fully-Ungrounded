@@ -1,5 +1,5 @@
 @ Project Grounded: grounded_gm voor Battle! Treasures of Ruin. Gegenereerd door tools/grounded/ruinous_theme.py.
-@ eigen samples (ruinous_samples.py): 82 elektronisch ostinato, 127 = drumkit ruinous; stock: 107 koto, 33 bas, 48 strijkers, 60 hoorn, 56 trompet (keysplits ruinous_*), PSG 80/81.
+@ eigen samples (ruinous_samples.py): 82 elektronisch ostinato, 107 lage tokkel (keysplit ruinous_pluck), 127 = drumkit ruinous; stock: 33 bas, 48 strijkers (keysplit ruinous_str).
 voice_group grounded_ruinous
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -57,11 +57,11 @@ voice_group grounded_ruinous
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 53
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 54
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 55
-	voice_keysplit voicegroup_ruinous_tpt_keysplit, keysplit_trumpet  @ 56
+	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 56
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 57
 	voice_keysplit voicegroup_tuba_keysplit, keysplit_tuba  @ 58
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 59
-	voice_keysplit voicegroup_ruinous_horn_keysplit, keysplit_french_horn  @ 60
+	voice_keysplit voicegroup_french_horn_keysplit, keysplit_french_horn  @ 60
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 61
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 62
 	voice_keysplit voicegroup_trumpet_keysplit, keysplit_trumpet  @ 63
@@ -81,9 +81,9 @@ voice_group grounded_ruinous
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_square_1 60, 0, 0, 1, 0, 2, 3, 1  @ 80
-	voice_square_2 60, 0, 0, 0, 1, 0, 1  @ 81
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_synth, 255, 0, 255, 90  @ 82
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_ost, 255, 0, 255, 90  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 84
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 85
@@ -108,7 +108,7 @@ voice_group grounded_ruinous
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 104
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 105
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 106
-	voice_directsound 60, 0, DirectSoundWaveData_unknown_koto_high, 255, 240, 0, 100  @ 107
+	voice_keysplit voicegroup_ruinous_pluck_keysplit, keysplit_ruinous_pluck  @ 107
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 108
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 109
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 110

@@ -7616,8 +7616,29 @@ DirectSoundWaveData_ruinous_impact::
 	.incbin "sound/direct_sound_samples/grounded/ruinous_impact.bin"
 
 	.align 2
-DirectSoundWaveData_ruinous_synth::
-	.incbin "sound/direct_sound_samples/grounded/ruinous_synth.bin"
-	.align 2
 DirectSoundWaveData_az_crystal::
 	.incbin "sound/direct_sound_samples/grounded/az_crystal.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_ost::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_ost.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_pluck_40::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_40.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_pluck_47::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_47.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_pluck_54::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_54.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_pluck_61::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_61.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_pluck_68::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_pluck_68.bin"

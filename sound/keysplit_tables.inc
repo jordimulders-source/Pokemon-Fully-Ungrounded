@@ -81,3 +81,11 @@ keysplit hoopa_mizmar, 48
 	split 0, 61
 	split 1, 68
 	split 2, 108
+
+@ Project Grounded: Battle! Treasures of Ruin v2 (ruinous_theme.py): ruinous_pluck_40/47/54/61/68 (E2 B2 F#3 C#4 G#4)
+keysplit ruinous_pluck, 36
+	split 0, 43
+	split 1, 50
+	split 2, 57
+	split 3, 64
+	split 4, 108

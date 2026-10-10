@@ -132,7 +132,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
-| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v3 wacht op Jordi (v2 'glitchend systeem'; v3 alle melodische lagen geknipt uit het origineel, A/B per laag) | "Ruinous" |
+| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v4 wacht op Jordi (v3: alleen het OST-ritme klopte; v4 intro/lo als frasen uit het origineel, ostinato met bourdon, pad per maat, bas noot voor noot) | "Ruinous" |
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
@@ -745,3 +745,14 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   (x1,41) en exacte loop (gehele perioden van alle oscillatoren in 2760 samples, 11 kHz). Omgekeerde zwelling =
   FM-klok achterstevoren, 1,15 s eindigend op de downbeat (2 kanalen). Batchrec -V090: 0 overlopen, piek 95/127,
   RMS 3000-3450, max -5,6 dB; audiocheck 45-62 Hz = rnd-kick + C2-pedaal (stijgt pas als de drums invallen). ±25 KB.
+- Ruinous v4 (Jordi over v3: 'lo klopt alleen de eerste toon, OST mist de diepe strijker, oth loopt een noot en
+  verdwijnt, oth2 als een vastslaande cd-speler, bas een rare remix'): **(1) de A/B-uitlijning zelf eerst controleren**:
+  v3 nam aan dat maat 1 op -0,74 s lag (een andere aanzet gekozen), echt is +0,034 s (kruiscorrelatie van een sample
+  dat uit het origineel komt): de B-fragmenten lagen een halve maat verschoven. **(2) A en B op gelijke RMS**, niet op
+  de piek ('het origineel heb je erg zacht opgenomen'). **(3) frasen waar het origineel doorloopt**: intro (maat 1-4,
+  alle stems = de mix, 70 KB) en de lo-frase (maat 5-8, 8 kHz) als één sample; maatknipsels van het pad alleen < 450 Hz
+  (dan is herhaling een aangehouden akkoord, geen haperende melodie), 4 kHz, en een eigen knipsel per maat waar het
+  getransponeerde pad in de offline-A/B < 0,75 chroma gaf. **(4) bas noot voor noot met pyin per 16e** (aanzetdrempel
+  2,5x mediaan), één B1-sample: chroma 0,9-0,97 per maat. Offline-A/B (`sim.py`: noten x sample vs stem) vóór de ROM.
+  De bovenlijn/16e-figuur van 'other' (±45% van die stem boven 500 Hz) bleef onbetrouwbaar (pyin en salience mengen
+  figuur en melodie): niet nagemaakt; streamen kost ±650 KB (beslissing Jordi).

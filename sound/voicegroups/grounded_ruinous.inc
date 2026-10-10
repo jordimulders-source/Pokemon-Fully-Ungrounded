@@ -1,5 +1,5 @@
 @ Project Grounded: grounded_gm voor Battle! Treasures of Ruin. Gegenereerd door tools/grounded/ruinous_theme.py.
-@ samples uit het origineel (ruinous_samples.py): 107 laag Aziatisch instrument (keysplit ruinous_lo), 82 ostinato-pad (maat 67), 84-92 stem other per akkoord, 33 bas; 127 = drumkit ruinous.
+@ samples uit het origineel (ruinous_samples.py): 107 laag Aziatisch instrument (maat 5-8), 82/83 ostinato (maat 8 / 67), 84/86 pad (B/G), 85 intro (maat 1-4), 33 bas; 127 = drumkit ruinous.
 voice_group grounded_ruinous
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 0
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 1
@@ -84,16 +84,16 @@ voice_group grounded_ruinous
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
 	voice_directsound 60, 0, DirectSoundWaveData_ruinous_ostbar, 255, 0, 255, 140  @ 82
-	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_B, 255, 0, 255, 140  @ 84
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_E, 255, 0, 255, 140  @ 85
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_G, 255, 0, 255, 140  @ 86
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_Gm, 255, 0, 255, 140  @ 87
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_Bm, 255, 0, 255, 140  @ 88
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_Fs, 255, 0, 255, 140  @ 89
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_DA, 255, 0, 255, 140  @ 90
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_Em, 255, 0, 255, 140  @ 91
-	voice_directsound 60, 0, DirectSoundWaveData_ruinous_oth_A, 255, 0, 255, 140  @ 92
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_ostbar2, 255, 0, 255, 140  @ 83
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad, 255, 0, 255, 140  @ 84
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_intro, 255, 0, 255, 160  @ 85
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_g, 255, 0, 255, 140  @ 86
+	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 87
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 88
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 89
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 90
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 91
+	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 92
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 93
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 94
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 95
@@ -108,24 +108,24 @@ voice_group grounded_ruinous
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 104
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 105
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 106
-	voice_keysplit voicegroup_ruinous_lo_keysplit, keysplit_ruinous_lo  @ 107
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_lo58, 255, 0, 255, 160  @ 107
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 108
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 109
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 110
-	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 111
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 112
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 113
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 114
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 115
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 116
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 117
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_taiko, 255, 0, 255, 0  @ 118
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 246, 0, 216  @ 119
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 120
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 121
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 122
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 123
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 124
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 125
-	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 126
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m36, 255, 0, 255, 140  @ 110
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m37, 255, 0, 255, 140  @ 111
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m38, 255, 0, 255, 140  @ 112
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m39, 255, 0, 255, 140  @ 113
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m52, 255, 0, 255, 140  @ 114
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m53, 255, 0, 255, 140  @ 115
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m54, 255, 0, 255, 140  @ 116
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m55, 255, 0, 255, 140  @ 117
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m56, 255, 0, 255, 140  @ 118
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m57, 255, 0, 255, 140  @ 119
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m58, 255, 0, 255, 140  @ 120
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m59, 255, 0, 255, 140  @ 121
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m60, 255, 0, 255, 140  @ 122
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m61, 255, 0, 255, 140  @ 123
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m62, 255, 0, 255, 140  @ 124
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m63, 255, 0, 255, 140  @ 125
+	voice_directsound 60, 0, DirectSoundWaveData_ruinous_pad_m64, 255, 0, 255, 140  @ 126
 	voice_keysplit_all voicegroup_ruinous_drumset  @ 127

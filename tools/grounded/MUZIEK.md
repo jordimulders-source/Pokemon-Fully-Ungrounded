@@ -135,6 +135,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
+| Battle! Dialga/Palkia (678) | `dialga_theme.py` | v1 wacht op Jordi (uit zijn MIDI, alleen stock-samples, ±9 KB) | "Dialga" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -705,4 +706,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   jammerlijn, fluitlijn en hats (0 DS-kanalen); 1 basnoot van 490 valt weg. **`drum_and_percussion_kick` als
   `voice_directsound 60` speelt op 13.379 Hz = subdreun** (< 60 Hz 26-33% van de mix); op toets 67 (zoals de FRLG-kit
   via _no_resample) 10-15%. -V100: 0 overlopen, piek 105/127, RMS 3120; audiocheck 49-67 Hz = kick + grondtonen C2/B1.
-
+- Dialga/Palkia v1 (Jordi's `DialgaPalkiaMIDIBeta.mid`, origin/master): **vorm zoeken met een spoor-voor-spoor-
+  vergelijking per halve maat** (gelijk / zelfde ritme / anders) i.p.v. op het gehoor: de MIDI heeft na maat 48 een
+  halve maat verschuiving (lange noten op tel 3 i.p.v. 1), en het einde (115,5) sluit naadloos aan op maat 6 (bas,
+  arpeggio, drums en pauken lopen door) = de loop. 'Humanize'-vertragingen (spoor 7 overal 12 ticks te laat, spoor 4 =
+  octaaf-echo van spoor 6) eerst op de tel zetten; de echo/arpeggio op PSG-vierkanten kost geen kanalen. fp-houdnoten
+  (accent + dezelfde noot op v40) samenvoegen. balance.py tegen FluidR3: GM-synthbas is 11 dB luider dan de GBA-
+  synth bass (spoor op 127 is het maximum). -V088: 0 overlopen, piek 94/127, RMS 2985; ROM ±9 KB (alleen stock).

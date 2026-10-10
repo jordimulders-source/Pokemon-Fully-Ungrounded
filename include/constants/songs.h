@@ -609,6 +609,7 @@
 // 670 vrij: Sunset Wilds (MKSC song 26) speelt op MUS_GROUNDED_VS_SUNSET_WILDS (620)
 #define MUS_GROUNDED_MKSC_LAKESIDE_PARK 671 // Project Grounded: Mario Kart: Super Circuit, Lakeside Park, 1-op-1 uit mksc (song 32, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_MKSC_RAINBOW_ROAD 672 // Project Grounded: Mario Kart: Super Circuit, Rainbow Road, 1-op-1 uit mksc (song 28, tools/grounded/mp2k_rip.py)
+#define MUS_GROUNDED_VS_DIALGA_PALKIA 678 // Project Grounded: Battle! Dialga/Palkia (Diamond/Pearl), uit Jordi's MIDI met stock-samples (tools/grounded/dialga_theme.py)
 #define MUS_GROUNDED_AREA_ZERO      681 // Project Grounded: Area Zero (Scarlet/Violet), nagebouwd in GBA-stijl (tools/grounded/areazero_theme.py); 668-680 = ander werk
 #define MUS_GROUNDED_VS_AREA_ZERO   682 // Project Grounded: Battle! Area Zero, remix van Area Zero voor paradoxen/Koraidon/Miraidon/Terapagos en wilde gevechten daar (tools/grounded/areazero_theme.py)
 #define MUS_GROUNDED_VS_RUINOUS     683 // Project Grounded: Battle! Treasures of Ruin (Wo-Chien, Chien-Pao, Ting-Lu, Chi-Yu), SV-thema in GBA-stijl (tools/grounded/ruinous_theme.py); 668-682 bezet door ander werk

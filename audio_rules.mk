@@ -28,6 +28,8 @@ $(CRY_BIN_DIR)/%.bin: $(CRY_SUBDIR)/%.wav
 $(CRY_BIN_DIR)/uncomp_%.bin: $(CRY_SUBDIR)/uncomp_%.aif
 	$(AIF) $< $@
 
+include sound/compressed_samples.mk
+
 # Uncompressed sounds
 $(SOUND_BIN_DIR)/%.bin: sound/%.wav
 	$(WAV2AGB) -b $< $@

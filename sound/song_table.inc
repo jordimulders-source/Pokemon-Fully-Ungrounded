@@ -625,8 +625,8 @@ gSongTable::
 	song mus_grounded_vs_ghetsis, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_dark_cave, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_yoshi_castle, MUSIC_PLAYER_BGM, 0
-	song mus_grounded_vs_broken_pier, MUSIC_PLAYER_BGM, 0
-	song mus_grounded_vs_sunset_wilds, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_mksc_broken_pier, MUSIC_PLAYER_BGM, 0 @ Project Grounded: 1-op-1-rip i.p.v. de MIDI-cover (v0.9.240)
+	song mus_grounded_mksc_sunset_wilds, MUSIC_PLAYER_BGM, 0 @ Project Grounded: 1-op-1-rip i.p.v. de MIDI-cover (v0.9.240)
 	song mus_grounded_vs_zinnia, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_zarude, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_neo_plasma, MUSIC_PLAYER_BGM, 0
@@ -679,6 +679,16 @@ gSongTable::
 	song mus_grounded_yi_fuzzy, MUSIC_PLAYER_BGM, 0
 
 	song mus_grounded_yi_castle, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_mksc_bowser_castle, MUSIC_PLAYER_BGM, 0
+
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 669: vrij (Broken Pier speelt op MUS_GROUNDED_VS_BROKEN_PIER)
+
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 670: vrij (Sunset Wilds speelt op MUS_GROUNDED_VS_SUNSET_WILDS)
+
+	song mus_grounded_mksc_lakeside_park, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_mksc_rainbow_road, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

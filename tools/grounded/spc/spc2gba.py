@@ -5,7 +5,8 @@ Werkwijze: de SPC wordt in blargg's snes_spc afgespeeld (spclog, met een haak op
 komen per SNES-stem de noten (KON/KOFF), toonhoogte (pitch-register, ook bends/vibrato), instrument (SRCN) en volume.
 De instrumenten zijn de originele BRR-samples uit het SPC-RAM (dezelfde bank wordt door de nummers gedeeld).
 - melodische samples: wav met grondtoon (autocorrelatie, bijgestemd tot een hele noot) en de BRR-loop,
-- drums (samples die op max. 3 toonhoogtes klinken): per toonhoogte een eigen drumtoets, 16 kHz, zonder resample,
+- drums (samples die op max. 3 toonhoogtes klinken): per toonhoogte een eigen drumtoets, 16 kHz, gewone voice op
+  toets 60 (v0.9.240; no_resample speelt op de mixersnelheid van 21.024 Hz: dat was 4,7 halve tonen te hoog),
 - tijd: 1 tick = 1 GBA-frame (150 BPM, 24 ticks per tel), loop automatisch gevonden ([ en ] markers),
 - ADSR/GAIN van de SNES omgerekend naar de MP2K-envelope (attack/decay/sustain/release per frame).
 
@@ -28,13 +29,14 @@ GAUSS_NU = float(os.environ.get('YI_GAUSS', '0.20'))   # SNES-Gauss-interpolatie
 REL = 40          # SNES-KOFF klinkt ±8 ms uit; 40/256 per frame = ±25 ms (geen kanaalroof, geen klik)
 TICK_MS = 1000 / 60
 
-# naam: (spc-bestand, songconstante, beschrijving, -V); -V zo dat de piek ±80/127 is: hoger vervormt de 8-bitmixer, lager laat zijn ruis horen (Jordi 10 okt)
+# naam: (spc-bestand, songconstante, beschrijving, -V); -V zo dat de piek ±110/127 is (v0.9.240): hoger slaat de 8-bitmixer om,
+# lager laat zijn afrondingsruis horen (de "overload" van Jordi, 10 okt: per kanaal 8-bit afronding, zie MUZIEK.md)
 SONGS = {
-    'flower_garden': ('yi-07a.spc', 'MUS_GROUNDED_YI_FLOWER_GARDEN', "Flower Garden (Yoshi's Island)", 103),
+    'flower_garden': ('yi-07a.spc', 'MUS_GROUNDED_YI_FLOWER_GARDEN', "Flower Garden (Yoshi's Island)", 127),   # v0.9.240: piek ±101 (8-bit-mixer: zo hard mogelijk = minder afrondingsruis)
     'athletic':      ('yi-13a.spc', 'MUS_GROUNDED_YI_ATHLETIC', "Athletic (Yoshi's Island)", 127),
-    'overworld':     ('yi-14a.spc', 'MUS_GROUNDED_YI_OVERWORLD', "Overworld (Yoshi's Island)", 86),
-    'fuzzy':         ('yi-14b.spc', 'MUS_GROUNDED_YI_FUZZY', "Overworld (Fuzzy), Touch Fuzzy Get Dizzy", 73),
-    'castle':        ('yi-10.spc', 'MUS_GROUNDED_YI_CASTLE', "Castle & Fortress (Yoshi's Island)", 71),
+    'overworld':     ('yi-14a.spc', 'MUS_GROUNDED_YI_OVERWORLD', "Overworld (Yoshi's Island)", 123),
+    'fuzzy':         ('yi-14b.spc', 'MUS_GROUNDED_YI_FUZZY', "Overworld (Fuzzy), Touch Fuzzy Get Dizzy", 102),
+    'castle':        ('yi-10.spc', 'MUS_GROUNDED_YI_CASTLE', "Castle & Fortress (Yoshi's Island)", 100),
 }
 
 # SNES-envelope: perioden (samples bij 32 kHz) per rate 0..31
@@ -241,12 +243,14 @@ def convert(spcdir, name, bank):
                 b = round(base)
                 # niet rekken (dat breekt korte loops): de fijnstemming gaat in de samplerate van het bestand
                 rate = 32000 * 2 ** ((b - base) / 12)
-                bank['mel'][h] = dict(prog=len(bank['mel']), x=soften(x, loop), base=b, basef=base, amp=float(np.abs(x).max()),
+                bank['mel'][h] = dict(prog=len(bank['mel']), x=soften(x, loop), base=b, basef=base,
+                                      amp=float(np.abs(soften(x, loop)).max()),   # piek ná het filter (zo klinkt hij ook op de SNES)
                                       rate=int(round(rate)), loop=loop,
                                       env=envelope(env[0][0], env[0][1], env[1]), name='yi_m%s' % h)
             inst[s] = dict(drum=False, prog=bank['mel'][h]['prog'], base=bank['mel'][h]['basef'], amp=bank['mel'][h]['amp'])
         if drum:
-            inst[s]['amp'] = float(np.abs(x).max())
+            inst[s]['amp'] = float(np.abs(soften(x)).max())   # v0.9.240: piek ná het Gauss-filter; scherpe drumpieken
+            # verliezen tot 12 dB, de wav wordt daarna genormaliseerd: met de ruwe piek stonden de FG-drums 6 dB te hard
 
     # MIDI: één spoor per SNES-stem
     mid = mido.MidiFile(ticks_per_beat=24)
@@ -351,11 +355,12 @@ def write_bank(bank):
             lines.append('\tvoice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ %d' % p)
     open(VG, 'w').write('\n'.join(lines) + '\n')
     kit = sorted(bank['drums'].values(), key=lambda d: d['key'])
-    kl = ['@ Project Grounded: Yoshi\'s Island-drums (spc2gba.py), vanaf toets %d.' % KIT_BASE,
+    kl = ['@ Project Grounded: Yoshi\'s Island-drums (spc2gba.py), vanaf toets %d. Gewone voice op toets 60 (16 kHz);'
+          ' no_resample speelt op de mixersnelheid (te hoog).' % KIT_BASE,
           'voice_group yi_drumset, %d' % KIT_BASE]
     for d in kit:
         a, dd, s, r = d['env']
-        kl.append('\tvoice_directsound_no_resample 60, 0, DirectSoundWaveData_%s, 255, %d, %d, %d' % (d['name'], dd, s, r))
+        kl.append('\tvoice_directsound 60, 0, DirectSoundWaveData_%s, 255, %d, %d, %d' % (d['name'], dd, s, r))
     open(KIT, 'w').write('\n'.join(kl) + '\n')
     # direct_sound_data.inc
     p = 'sound/direct_sound_data.inc'

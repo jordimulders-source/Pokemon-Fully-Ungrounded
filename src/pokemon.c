@@ -6115,6 +6115,10 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
      || trainerClass == TRAINER_CLASS_SHY_SQUAD) // Project Grounded: ook de Shy Squad op Yoshi's Island
         return MUS_GROUNDED_VS_SUNSET_WILDS;
 
+    // Project Grounded: de Boos (Commander Boo op Yoshi's Island, Boo in het Stadium) vechten op Boo Lake & Broken Pier
+    if (trainerId == TRAINER_YI_COMMANDER_BOO || trainerId == TRAINER_STADIUM_BOO)
+        return MUS_GROUNDED_VS_BROKEN_PIER;
+
     // Project Grounded: Dave (Cooltrainer, Victory Road; ook in het Stadium) vecht op Freed From Desire (Gala)
     if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_111 || trainerId == TRAINER_DAVE_PETALBURG
      || trainerId == TRAINER_DAVE_SOOTOPOLIS)

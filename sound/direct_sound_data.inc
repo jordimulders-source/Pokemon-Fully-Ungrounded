@@ -7430,3 +7430,172 @@ DirectSoundWaveData_yi_dcb99354f_6140::
 	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_6140.bin"
 
 @ } yi_samples
+
+@ rip mksc (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_mksc_170a60::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_170a60.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_172438::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_172438.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_174974::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_174974.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_17e8ec::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_17e8ec.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1804fc::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1804fc.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_194f2c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_194f2c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a2648::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a2648.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a4ea0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a4ea0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a564c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a564c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a6994::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a6994.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a7320::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a7320.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1aaa08::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1aaa08.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b54f0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b54f0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b7f44::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b7f44.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b92b8::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b92b8.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1ba620::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1ba620.bin"
+
+@ rip mksc (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_mksc_16faac::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_16faac.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_187738::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_187738.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_188fc0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_188fc0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a8e14::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a8e14.bin"
+
+@ rip mksc (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_mksc_17d448::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_17d448.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_182238::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_182238.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_18661c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_18661c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a5338::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a5338.bin"
+
+@ rip mksc (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_mksc_1769cc::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1769cc.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_179498::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_179498.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_17af68::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_17af68.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_17be30::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_17be30.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_196d48::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_196d48.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1986b0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1986b0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a318c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a318c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a45c0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a45c0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1ad5c8::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1ad5c8.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b00b4::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b00b4.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b13d0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b13d0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b1f24::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b1f24.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1bf78c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1bf78c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1c16b0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1c16b0.bin"
+
+@ rip mksc (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_mksc_16e798::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_16e798.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_18b73c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_18b73c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_18dd3c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_18dd3c.bin"

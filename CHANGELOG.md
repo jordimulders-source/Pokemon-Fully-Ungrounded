@@ -18050,3 +18050,53 @@ Bij Castle zijn de lage partijen nog wat te zacht.
 | Overworld | 86 | 78 | ±2200 |
 | Fuzzy | 73 | 72 | ±1800 |
 | Castle | 71 | 80 | ±1300 |
+
+### [v0.9.240] - De "overload" ontleed; YI-drums op toonhoogte; vijf Mario Kart-nummers 1-op-1
+- Jordi (10 okt): "athletic is goed, maar de rest heeft echt dikke overload … alsof mn speakers eraan gaan". Diepgaand gemeten, met solo-opnames per spoor (SNES-stem tegen GBA-spoor) en de mixbuffer van de game zelf (links én rechts; de mGBA-audiobuffer geeft losse bursts die eerdere metingen vertekenden).
+- **Wat het níet is** (gemeten en uitgesloten):
+  - Overlopen (8-bit wrap-around): 0, links en rechts.
+  - Clippen.
+  - Klikken bij noten.
+  - DC-offset.
+  - Te veel laag.
+  - De interpolatie van de mixer: toonzones per sample schelen 0–4 dB, alleen op de laagste basnoten, voor +121 KB, dus niet gedaan.
+- **Wat het wél is:** de m4a-mixer telt elk kanaal op in een **8-bit-buffer** en rondt dus per kanaal af na het volume. Bij de gebruikelijke kanaalvolumes (mediaan 20–40 van 255, net als vanilla Route 101/119) geeft dat een ruisvloer van **−32 dB** onder het signaal die met de noten mee aan- en uitgaat, en dat klinkt als vervorming. Ruisvloer 3–8 kHz, GBA tegen SNES:
+
+| Nummer | GBA | SNES | Verschil |
+|---|---|---|---|
+| Overworld | −32 dB | −53 dB | +20 dB |
+| Fuzzy | −32 dB | −54 dB | +21 dB |
+| Castle | −33 dB | −52 dB | +19 dB |
+| Flower Garden | −33 dB | −44 dB | +11 dB (en +8 dB in 1–3 kHz) |
+| Athletic | −32 dB | −42 dB | +10 dB |
+
+  De ruis is overal even hard; de donkere, zachte originelen maskeren hem niet, Athletic is van zichzelf helder. Zachter zetten maakt hem relatief erger, harder zetten gaf eerder echte overloop: vandaar "niks aan veranderd". Vanilla verbergt hem door zachte partijen en bassen op de PSG-kanalen te zetten.
+- **Echte oplossing (voorstel, Jordi beslist):** een mixer die in 16 bit optelt en één keer afrondt met noise shaping ("HQ-mixer" van ipatix, MIT-licentie, gemaakt voor Pokémon; Golden Sun-aanpak). Uitgewerkt maar niet ingebouwd: externe code in de geluidsengine heeft Jordi's akkoord nodig. Kosten: ±2,5 KB IWRAM (ruimte maken door `gLink` naar EWRAM te verplaatsen).
+- **Gerepareerd in de YI-rips** (`spc2gba.py`):
+  - **Drums klonken 4,7 halve tonen te hoog.** `voice_directsound_no_resample` speelt een sample op de mixersnelheid (21.024 Hz), niet op zijn eigen rate. De YI-drums (16 kHz) spelen nu als gewone voice op toets 60. Gemeten: 0,0 halve toon verschil met de SNES.
+  - **Flower Garden-drums stonden 6 dB te hard:** de velocity werd geschaald op de piek van de ruwe sample, de wav op de piek na het SNES-filter (scherpe drumpieken verliezen daar tot 12 dB). Nu beide na het filter. Daardoor schuiven ook de andere velocity's iets (ook in Athletic, minimaal).
+  - **Volume zo hoog als veilig kan** (minder afrondingsruis): piek ±100–112 van 127 in plaats van ±80:
+
+| Nummer | -V oud | -V nieuw |
+|---|---|---|
+| Flower Garden | 103 | 127 |
+| Overworld | 86 | 123 |
+| Fuzzy | 73 | 102 |
+| Castle | 71 | 100 |
+| Athletic | 127 | 127 |
+
+- **Ontdekt, nog niet aangepast (Jordi beslist):** door dezelfde `no_resample`-regel spelen **alle vanilla-drumsamples (13.379 Hz) sinds de mixer op 21.024 Hz staat (v0.9.32) ±7,8 halve tonen hoger en 36% korter**. Dat zit in alle vanilla- en eigen nummers met die drumkits. Terugzetten kan per kit (gewone voice op toets 60), maar het verandert de klank van goedgekeurde nummers: eerst een A/B.
+- `recpcm.py` meet overlopen en piek nu op beide kanalen (las alleen rechts).
+- **Mario Kart: Super Circuit 1-op-1** (`mp2k_rip.py`), toegewezen met chroma-vergelijking tegen Jordi's mp3's (0,94–0,98):
+
+| Nummer | MKSC-song | Constante |
+|---|---|---|
+| Bowser Castle | 22 | `MUS_GROUNDED_MKSC_BOWSER_CASTLE` |
+| Boo Lake & Broken Pier | 27 | `MUS_GROUNDED_VS_BROKEN_PIER` |
+| Sunset Wilds | 26 | `MUS_GROUNDED_VS_SUNSET_WILDS` |
+| Lakeside Park | 32 | `MUS_GROUNDED_MKSC_LAKESIDE_PARK` |
+| Rainbow Road | 28 | `MUS_GROUNDED_MKSC_RAINBOW_ROAD` |
+
+  - Broken Pier en Sunset Wilds vervangen de oude MIDI-covers (619/620): Shy Guys en WILD MUSIC krijgen het origineel. De **Boos** (Commander Boo op Yoshi's Island, Boo in het Stadium) vechten nu op Broken Pier.
+  - Sky Garden zat niet tussen de kandidaten.
+  - De andere 8 proefrips zijn weg.

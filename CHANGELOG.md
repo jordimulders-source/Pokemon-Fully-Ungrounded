@@ -18294,3 +18294,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Aria bij 1:10–1:15:** daar zat een gat in de transcriptie. Spleeter had dat stuk in de 'other'-stem gezet; nu uit de mix gemeten en aangevuld.
 - **Aria vloeiender:** 5 hele frasen uit het origineel geknipt, elk met de eigen aanzet, glijders en uitklink, gespeeld op de eigen toonhoogte. Chroma 0,89.
 - Gemeten: max. 10 kanalen, 0 afgekapt, piek 67. De aria-frasen kosten ±377 KB; er is nog 1,96 MB vrij.
+
+### [v0.9.257] - Mitch v7: duurdere instrumentatie
+- "Goedkoop" gemeten: alle synths hadden < 2% energie boven 2 kHz, de horn was één oscillator met een loop van 20 ms, en `resample_wav.py --all` had de v6-horn van 21 naar 11 kHz teruggezet. Mixniveau stond op -V066.
+- Drie nieuwe lead-kandidaten (`mitch7a/b/c_*`: A supersaw-stab, B screech/hoover = standaard, C vocal chop): gestapelde stemmen in één sample op 16 kHz (`KEEP_16K` in `resample_wav.py`), plus nieuwe `mitch7_pluck` en `mitch7_reese_raw`. Kiezen met `python3 tools/grounded/mitch_theme.py [a|b|c]`.
+- Noten, ritme en drums zijn gelijk aan v6; alleen de roffelslagen op/na een kick in de build-ups gaan naar ×0,5. Daardoor kan het niveau van -V066 naar -V092 (piek 98, geen overflows).
+- Opgeruimd: `mitch6a/6b_brass_*`, `mitch3_pluck`, `mitch5_reese_raw`.

@@ -113,7 +113,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Mitch (DnB) | `mitch_theme.py` | v4 in de maak (v3-ritme/vorm 'spot-on'; luidere wobble, keiharde kit) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v8 in de maak (noten/timing v7 'perfect'; GBA-soundfont-instrumenten) | "Neo Plasma" |
 | Heatran | `heatran_theme.py` | v7 wacht op opname (v6 'saai': meerdere riffs, 74/130 bpm, palm-mutes/slides) | "Heatran" |
-| Mitch (DnB) | `mitch_theme.py` | v6 wacht op Mitch/Jordi (v5 'lachen'; alleen de horn: schoon, A = v5-klank / B = E4-trompet een octaaf hoger, standaard B) | "Mitch" |
+| Mitch (DnB) | `mitch_theme.py` | v7 wacht op Mitch (v6 'nog te goedkoop, ander instrument dan de horn'; alleen klanken: lead-synth A supersaw / B screech (standaard) / C vocal chop, `LEAD` bovenin) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v9 in de maak (vette opening-run, valse noten B-sectie, brug) | "Neo Plasma" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v10 wacht op opname (glissando-intro, octaaffix orgeldeel, dikke bas, hats in de break) | "Neo Plasma" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v12 wacht op Jordi (noten v11, alleen stock-Emerald-instrumenten: trompet-lead, fingered bass, organ2, PSG, rs-kit) | "Neo Plasma" |
@@ -687,3 +687,13 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   Half-maat-knipsels 30 ms langer dan de halve maat + release 140 = naadloos. Laag met weinig energie en een A/B
   die niet klopt (de hogere 'piano'-lijn, chroma 0-0,4): weglaten. Solo uit de mixbuffer: `volX = 0` per spoor
   elke frame; de opname begint 0,74 s ná maat 1 (meten aan de inslag, niet met een kruiscorrelatie over 0,8 s).
+
+- Mitch v7 (Mitch: 'nog steeds te goedkoop, misschien een ander instrument dan de horn'; SickBlik klinkt beter):
+  **'goedkoop' gemeten** (gba_sim per spoor, `smpmetrics`-achtig: zwaartepunt, % boven 2/4 kHz, % 'dichte' FFT-bins):
+  alle synths < 2% boven 2 kHz, de horn één oscillator met een loop van 20 ms (alleen harmonische lijnen, dicht 4-6%),
+  en **`resample_wav.py --all` had de v6-horn van 21 naar 11 kHz gezet** (de v6-fix weer ongedaan); SickBlik =
+  echte instrumenten/ensembles/akkoorden in één sample, 54% van de mix in 150-2000 Hz (Mitch 23%). v7: synth-leads
+  als stapel stemmen in één sample op 16 kHz (KEEP_16K in resample_wav.py), 3 samples per kandidaat (transpositie
+  -2..+5: onder de 10,5 kHz van de mixer). **De -V-grens van Mitch was de build-up**: kick + roffelsnare tegelijk =
+  +35% boven de drops (offline), daarom liep -V > 066 over; roffelslag op/na een kick x0,5 -> -V092, piek 98, RMS 3950.
+

@@ -716,8 +716,8 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_PALKIA_ORIGIN:
         CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_ARCEUS_NORMAL: // Project Grounded: Hall of Origin (placeholder: Kanto-legendary-thema, het licht valt in banen)
-        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_RG_VS_LEGEND);
+    case SPECIES_ARCEUS_NORMAL: // Project Grounded: Hall of Origin (Battle! Arceus uit DPPt, het licht valt in banen)
+        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_GROUNDED_VS_ARCEUS);
         break;
     case SPECIES_ZERAORA: // Project Grounded: Chargestone Cave (Battle! Legendary Pokémon, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_GROUNDED_VS_LEGENDARY);

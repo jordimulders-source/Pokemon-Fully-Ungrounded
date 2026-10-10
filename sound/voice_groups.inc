@@ -297,3 +297,5 @@
 .include "sound/voicegroups/grounded_tower.inc"
 .include "sound/voicegroups/drumsets/legendary.inc"
 .include "sound/voicegroups/grounded_legendary.inc"
+.include "sound/voicegroups/drumsets/arceus.inc"
+.include "sound/voicegroups/grounded_arceus.inc"

@@ -136,6 +136,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
 | Battle! Legendary Pokémon (670) | `legendary_theme.py` | v1 wacht op Jordi (generiek legendary-thema, Hoenn-stijl: Weather Trio-pauken, E4-koper, 176 bpm, alleen stock-samples) | "Legendary" |
+| Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -714,3 +715,11 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   pauk met release 90 houdt het op max. 11 kanalen zonder weggevallen noten. E4-koper = stock trumpet/horn-keysplits,
   hoorns harmoniseren automatisch (hoogste akkoordtoon >= 3 halve tonen onder de trompet). -V090: 0 overlopen, piek
   100/127, RMS 3140; audiocheck 71-90 Hz = grondtonen D2-F#2 van bas/pauk. ±6 KB (song 4,7 KB + voicegroup).
+- Arceus v1 (`arceus_theme.py`, MUS_GROUNDED_VS_ARCEUS 676; bron `Battle_Arceus.mid` op origin/master, Domino-bewerking
+  van de SSEQ-rip SEQ_BA_SECRET1, 150 bpm, tpb 48): **uitgeschreven echo** in de bron (zelfde noot elke tel, velocity
+  110 -> 38 -> 27 ... 7) = elke herhaling een kanaal; stoot + echo per spoor samen `detach`en en de echo's als aparte
+  partij achteraan in de stemverdeler (onder v20 weg). Een **rip-kopie op 2 ticks met detune** (spoor 5, pitchwheel
+  -384 bij bend-range 12 = stereo-chorus) kost alleen kanalen: weg. Spoor 'Track 10' op kanaal 8 met programma 117 is
+  een GM-drumspoor (41/45 toms, 52/57 bekkens op tel 3 en 3-en), geen melodische taiko: eigen kit. Bekkens die een
+  achtste later terugkomen eerder los (anders 2 kanalen). Loop = maat 10-50 (maat 41.3-49 herhaalt de intro-gebaren).
+  Batchrec: 0 overlopen, piek 111/127, RMS 556-3590 (strijkerssecties het luidst), max -4,9 dB; ±3,6 KB ROM.

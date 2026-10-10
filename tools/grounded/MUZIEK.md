@@ -118,6 +118,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
+| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v1 wacht op opname (SV-thema nagebouwd op het gemeten raster; ostinato elektronisch, koto vanaf maat 21) | "Ruinous" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -627,3 +628,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   v5 -10..-15 dB, v6 -27..-31 dB. **E4-hoorns** (vs_elite_four) = sc88pro-trompet = hetzelfde spectrum als FluidR3
   56 (vlak tot h8, zwaartepunt ±1,4 kHz op C4), gespeeld rond D5-Bb5: B = trompet een octaaf boven de geschreven noot
   + body op de noot. Kanalen/stemverdeler ongewijzigd. B: -V066, 0 overlopen, piek 72/127, RMS 2616.
+- Ruinous v1 (`ruinous_theme.py`, 683, SV Treasures of Ruin, 152 bpm, B met frygische C): **eerst het 16e-raster fijn
+  vastleggen** (fase met STFT-flux per band: 0,070 s; het 16e-patroon van de eerste analyse hing aan de beat_track-fase
+  en lag een 16e verschoven: 'kick op de laatste 16e' was in werkelijkheid één grote slag op elke tel, alle banden).
+  **Een tijdstip uit Jordi's feedback hoort bij het fragment dat hij hoorde**: de ostinato-clip begon op 25,0 s
+  (kruiscorrelatie met de stem), dus zijn '7 s' = maat 21, waar een tokkellijn in B4-C6 begint (16e-heraanslagen).

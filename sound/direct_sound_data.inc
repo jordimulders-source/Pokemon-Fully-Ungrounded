@@ -7599,3 +7599,22 @@ DirectSoundWaveData_mksc_18b73c::
 	.align 2
 DirectSoundWaveData_mksc_18dd3c::
 	.incbin "sound/direct_sound_samples/rip/mksc/mksc_18dd3c.bin"
+	.align 2
+DirectSoundWaveData_ruinous_taiko::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_taiko.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_boom::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_boom.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_ka::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_ka.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_impact::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_impact.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_synth::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_synth.bin"

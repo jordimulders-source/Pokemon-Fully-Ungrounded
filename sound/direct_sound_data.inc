@@ -7996,3 +7996,7 @@ DirectSoundWaveData_ruinous_call::
 	.align 2
 DirectSoundWaveData_ruinous_strf::
 	.incbin "sound/direct_sound_samples/grounded/ruinous_strf.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_5::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_5.bin"

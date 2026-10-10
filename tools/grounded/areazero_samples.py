@@ -63,14 +63,17 @@ def _read(src, t0, t1, dc=441):
 # v8 (Jordi: 'op 22 s / 47 s te muffled'): gemeten weergaveketen (16 kHz-sample -> mixer 21 kHz -> GBA-uitgang, mGBA-
 # opname) t.o.v. het origineel: -2 dB bij 2 kHz, -3,4 bij 4 kHz, -5,6 bij 6 kHz, -6,6 bij 7 kHz. De knippen krijgen het
 # omgekeerde als voorversterking (Hz, dB), zodat de opname weer even helder is als het origineel.
-EQ = [(0, 0.0), (1000, 0.0), (2000, 2.0), (3000, 2.5), (4000, 3.4), (5000, 4.6), (6000, 5.6), (7000, 6.6), (8000, 6.6)]
+# v9 (Jordi: 'net wat muffled'): +2 dB plank boven 3 kHz (glijdend vanaf 2 kHz).
+EQ = [(0, 0.0), (1000, 0.0), (2000, 2.0), (3000, 3.5), (4000, 5.4), (5000, 6.6), (6000, 7.6), (7000, 8.6), (8000, 8.6)]
 
 
-def _to_rate(x, sr, rate, eq=False):
+def _to_rate(x, sr, rate, eq=False, hp=None):
     X = np.fft.rfft(x)
+    fr = np.fft.rfftfreq(len(x), 1 / sr)
     if eq:
-        fr = np.fft.rfftfreq(len(x), 1 / sr)
         X *= 10 ** (np.interp(fr, [p[0] for p in EQ], [p[1] for p in EQ]) / 20)
+    if hp:                                                         # hoogdoorlaat: 0 onder hp[0], 1 boven hp[1] Hz
+        X *= np.clip((fr - hp[0]) / (hp[1] - hp[0]), 0, 1)
     X[int(len(X) * 0.9 * rate / sr):] = 0                         # anti-alias
     x = np.fft.irfft(X, len(x))
     return np.interp(np.arange(int(len(x) * rate / sr)) * sr / rate, np.arange(len(x)), x)
@@ -172,26 +175,36 @@ BASS = VOCALS.replace('vocals.wav', 'bass.wav')
 # 2 kHz, onze strijkers even luid als de stem en 1%. Stuk 4 en 5 = m24-31, het thema herhaalt ze op m32 en m36.
 # Daar ook de 'drums'-stem erbij: die heeft naast de slagen de Eb2/Eb3-bromtoon (orgelpunt; zonder viel de chroma-
 # correlatie van m25-27 van 0.88 naar 0.55-0.75).
-BELL_RIPS = [(5, 0, 48), (8, 0, 64), (12, 0, 64), (24, 0, 64), (28, 0, 64)]
+# v9 (Jordi: 'tot 1:18 geweldig, dan komt een hele luie variant'): vanaf m40 speelt het origineel een doorlopende
+# 16e-was (pulserende ruis/glans in 'other' + dichte hi-hats in 'drums'); wij alleen strijkers, PSG-bas en de kit in
+# achtsten. Stuk 6 = m44-45 (golfvorm m41/m45 0.96, m40/m44 0.93), alleen boven 2 kHz (geen akkoordbotsing: bas,
+# akkoorden en kick/snare blijven van ons), 14 kHz; het thema herhaalt hem elke twee maten m40-63.
+BELL_RIPS = [(5, 0, 48), (8, 0, 64), (12, 0, 64), (24, 0, 64), (28, 0, 64), (44, 0, 32)]
+GROOVE_FROM, GROOVE_RATE, GROOVE_HP = 40, 14000, (1500, 2500)
 DRUMS = VOCALS.replace('vocals.wav', 'drums.wav')
 RIP_DRUMS_FROM = 24                            # vanaf deze maat zit de drums-stem in de knip
 SEAM = 0.015                                   # overlap tussen de stukken: lineaire crossfade (som = origineel)
 
 
 def bellrip(j, bar, pos, ln, rate=RATE):
+    hp = None
+    if bar >= GROOVE_FROM:
+        rate, hp = GROOVE_RATE, GROOVE_HP
     t = BAR1 + (bar - 1) * 2 + pos * 0.125 - 0.03
     t1 = t + ln * 0.125 + SEAM
     xo, sr = _read(OTHER, t, t1, dc=4410)
     xb, _ = _read(BASS, t, t1, dc=4410)
     if bar >= RIP_DRUMS_FROM:
         xb = xb + _read(DRUMS, t, t1, dc=4410)[0]
-    x = _to_rate(xo + xb, sr, rate, eq=True)
+    if hp:
+        xb = _read(DRUMS, t, t1, dc=4410)[0]                     # groove: other + drums, geen bas
+    x = _to_rate(xo + xb, sr, rate, eq=True, hp=hp)
     n = int(SEAM * rate)
     x[:n] *= np.linspace(0, 1, n)
     x[-n:] *= np.linspace(1, 0, n)
     pk = np.abs(x).max()
     print('az_bells_%d: m%d.%02d, %.2f s, piek %.3f' % (j, bar, pos, len(x) / rate, pk))
-    return x / pk * 0.95, pk
+    return x / pk * 0.95, pk, rate
 
 
 def main():
@@ -217,8 +230,8 @@ def main():
         ag.append(pk)
     bg = []
     for j, (bar, pos, ln) in enumerate(BELL_RIPS):
-        y, pk = bellrip(j, bar, pos, ln)
-        write_wav(os.path.join(OUT, 'az_bells_%d.wav' % j), y, RATE, 60, None)
+        y, pk, r = bellrip(j, bar, pos, ln)
+        write_wav(os.path.join(OUT, 'az_bells_%d.wav' % j), y, r, 60, None)
         bg.append(pk)
     # v8: één schaal voor alle knippen (piek / grootste piek van koor, aria en begeleiding): velocity lineair = de
     # verhoudingen van het origineel (Jordi: 'vanaf 8 s wordt alles naar de achtergrond gedrongen')

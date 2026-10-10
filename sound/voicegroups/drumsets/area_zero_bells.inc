@@ -6,4 +6,5 @@ voice_group area_zero_bells, 36
 	voice_directsound 60, 0, DirectSoundWaveData_az_bells_2, 255, 0, 255, 200
 	voice_directsound 60, 0, DirectSoundWaveData_az_bells_3, 255, 0, 255, 200
 	voice_directsound 60, 0, DirectSoundWaveData_az_bells_4, 255, 0, 255, 200
+	voice_directsound 60, 0, DirectSoundWaveData_az_bells_5, 255, 0, 255, 200
 

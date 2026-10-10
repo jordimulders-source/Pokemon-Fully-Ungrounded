@@ -1,183 +1,174 @@
 #!/usr/bin/env python3
-"""Project Grounded: Battle! Mew v2, remix van Battle! Mewtwo (mewtwo_theme.py) met het karakter omgedraaid (Jordi:
-"minder evil, minder sinister, curious, geen kloon, originator gevoel").
+"""Project Grounded: Battle! Mew v3, de 'broer' van Battle! Mewtwo (mewtwo_theme.py): dezelfde kracht, een andere houding.
 
-v1 (132 bpm, A-lydisch, glockenspiel-antwoorden een octaaf hoger, hikje elke 4e maat) -> Jordi: "die tonen klinken
-raar, te hoog, niet in een goed tempo, maak het meer fluïde". v2:
-- Gewoon A-groot (geen lydische D#), Mewtwo's Bb-maat wordt B-mineur; geen glockenspiel meer.
-- Lager register: motief A4-F#5, de hook een octaaf lager dan in Mewtwo (E4-E5), fluit + strijkers unisono.
-- Vloeiend: Mewtwo's staccato-16en worden legato-8en (elke frase 2 maten), doorrollende harp-arpeggio's door het
-  hele nummer (ook in de intro en de overgangen), golvende bas (grondtoon-kwint-octaaf), geen stops of hikjes.
-- Twee gevoelens (FEEL): '44' = 156 bpm, rollende 4/4 zonder four-on-the-floor (kick 1, 2-en, 3);
-  '128' = 12/8-wiegen op 120 bpm (8en geswingd tot triolen, triool-arpeggio's).
-Vorm zoals Mewtwo: intro (2 maten motief + 2 adem-/aanloopmaten voor de cry), A (motief), B (breakdown, de
-melancholische frase in groot met een gespiegelde tegenstem op de strijkers), C (de hook), loop naar A.
-voicegroup_grounded_mew = grounded_mewtwo met een kortere harp-release (242 -> 200), anders vreten de arpeggio's kanalen.
-Gebruik: python3 tools/grounded/mew_theme.py [44|128] [uit.mid]   (standaard: het gekozen gevoel naar mus_grounded_vs_mew.mid)"""
+Geschiedenis (Jordi):
+- v1 (132 bpm, A-lydisch, glockenspiel, hikjes): "tonen klinken raar, te hoog, niet in een goed tempo".
+- v2 (156 bpm, legato, harp, fluit): "nog veel te lieflijk ... een soort van wolkentheme"; "Mew heeft alsnog hoge
+  stats"; "Mewtwo's theme is super vet, dat mag iets minder dreigend, wat neutraler, maar hoeft niet naar oh my ik
+  loop op de wolken niveau".
+- v3 (dit script): Mewtwo's arrangement bijna 1-op-1 (128 bpm, four-on-the-floor, jagende 16e-bas, gated trance-
+  strijkers, koor, pauken, blokgolf-lead, PSG-lagen, breakdown + euforische drop), alleen minder dreigend:
+  * A: Mewtwo's frygische Bb en de verminderde E-maat eruit: Am-G-Am-Em (natuurlijk mineur), het motief zonder
+    halve-toonstap (A A C A B A E D C B), de E-maat als Em9 (G B D F# E);
+  * B: Dm-Am-Bb-E wordt D-Am-F-G (dorische IV in groot, dan bVI-bVII): de echo is zuiver (een octaaf lager, Mew is
+    het origineel) i.p.v. een halve toon ernaast (de imperfecte kloon);
+  * C: dezelfde hook Am-F-C-G, de tweede keer eindigend op G (bVII) die de loop in oplost naar Am i.p.v. het
+    dreigende E-groot;
+  * klank: het donkere kerkorgel weg; de melodie op de DirectSound-blokgolf + trompet (unisono), in v2's register
+    (motief A4-E5, hook een octaaf lager dan Mewtwo's orgel: max. D5); geen tritonus-aanslag in de intro;
+  * intro korter (Mew heeft de korte grid-transitie): drone + de vraag op de lead, Mew verschijnt (crash/pauk),
+    ademmaat voor de cry, Mewtwo's opbouwmaat.
+voicegroup_grounded_mew = grounded_mewtwo met een kortere harp-release (sinds v2, hier ongebruikt).
+Gebruik: python3 tools/grounded/mew_theme.py"""
 import os, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from musiclib import dedupe, detach, allocate, releases, release_ticks, Song
 
-FEEL = '44'                     # gekozen gevoel voor de game
 OUT = 'sound/songs/midi/mus_grounded_vs_mew.mid'
 VG = 'grounded_mew'
-TPB = 96
+TPB, BPM = 96, 128
+S16 = TPB // 4
 BAR = TPB * 4
-E8 = TPB // 2
-FLUTE, STRINGS, HARP, CHOIR, BASS, DRUMS = 72, 48, 46, 52, 32, 127
-SUB, SHAKER = 84, 120           # PSG
-KICK, SNARE, HH, OHH, CRASH, TAMB = 36, 38, 42, 46, 57, 54
+LEAD, TRUMPET, PLUCK, PAD, CHOIR, BASS, TIMPANI, DRUMS = 82, 56, 80, 48, 52, 38, 47, 127
+DELAY, SUB, SHAKER, RISER = 81, 84, 120, 121      # PSG-lagen
+APPEAR, BREATH, BUILD = 1, 2, 3
+KICK, SNARE, CLAP, HH, OHH, CRASH = 36, 38, 39, 42, 46, 57
 A_START, B_START, C_START, END = 4, 12, 20, 28
 MAX_DS = 11
 
-N = {'C': 0, 'C#': 1, 'D': 2, 'D#': 3, 'E': 4, 'F': 5, 'F#': 6, 'G': 7, 'G#': 8, 'A': 9, 'A#': 10, 'B': 11}
+N = {'C': 0, 'C#': 1, 'D': 2, 'D#': 3, 'E': 4, 'F': 5, 'F#': 6, 'G': 7, 'G#': 8, 'A': 9, 'A#': 10, 'Bb': 10, 'B': 11}
 
 
 def p(name):
-    if isinstance(name, int):
-        return name
     return 12 * (int(name[-1]) + 1) + N[name[:-1]]
 
 
-CH = {'A': ('A', ['A3', 'C#4', 'E4']), 'Bm': ('B', ['B3', 'D4', 'F#4']), 'E': ('E', ['B3', 'E4', 'G#4']),
-      'D': ('D', ['A3', 'D4', 'F#4']), 'F#m': ('F#', ['A3', 'C#4', 'F#4'])}
-# elke akkoord duurt 2 maten (de frases zijn 2 maten lang)
+CH = {'Am': ('A', ['A3', 'C4', 'E4']), 'F': ('F', ['F3', 'A3', 'C4']), 'C': ('C', ['G3', 'C4', 'E4']),
+      'G': ('G', ['G3', 'B3', 'D4']), 'Em': ('E', ['G3', 'B3', 'E4']), 'D': ('D', ['F#3', 'A3', 'D4'])}
 PROG = {}
 for b in range(A_START, B_START):
-    PROG[b] = ['A', 'Bm', 'A', 'E'][(b - A_START) // 2]          # Mewtwo: Am Bb Am E
+    PROG[b] = ['Am', 'G', 'Am', 'Em'][(b - A_START) % 4]         # Mewtwo: Am Bb Am E
 for b in range(B_START, C_START):
-    PROG[b] = ['D', 'A', 'Bm', 'E'][(b - B_START) // 2]          # Mewtwo: Dm Am Bb E
+    PROG[b] = ['D', 'Am', 'F', 'G'][(b - B_START) % 4]           # Mewtwo: Dm Am Bb E
 for b in range(C_START, END):
-    PROG[b] = ['A', 'F#m', 'D', 'E'][(b - C_START) // 2]         # Mewtwo: Am F C G (Am F C E)
-PROG.update({0: 'A', 1: 'Bm', 2: 'A', 3: 'E'})
+    PROG[b] = ['Am', 'F', 'C', 'G', 'Am', 'F', 'C', 'G'][b - C_START]   # Mewtwo: ... C E
 
 
-def phrase(pattern, bar, vel, shift=0):
-    """pattern in 8en over 2 maten: [(stap, lengte, 'A4')]."""
-    return [[bar * BAR + st * E8, bar * BAR + (st + ln) * E8, p(n) + shift, vel] for st, ln, n in pattern]
+def bars(pattern, bar, vel=110, shift=0):
+    return [[bar * BAR + st * S16, bar * BAR + (st + ln) * S16, p(n) + shift, vel] for st, ln, n in pattern]
 
 
-# --- melodieën: Mewtwo's contouren, in A-groot, legato in 8en -----------------------------------------------------
-MOTIF = {
-    'A': [(0, 2, 'A4'), (2, 1, 'A4'), (3, 2, 'C#5'), (5, 1, 'A4'), (6, 2, 'B4'), (8, 2, 'A4'), (10, 1, 'E5'),
-          (11, 1, 'D5'), (12, 2, 'C#5'), (14, 2, 'B4')],
-    'Bm': [(0, 2, 'B4'), (2, 1, 'B4'), (3, 2, 'D5'), (5, 1, 'B4'), (6, 2, 'C#5'), (8, 2, 'D5'), (10, 1, 'F#5'),
-           (11, 1, 'E5'), (12, 2, 'D5'), (14, 2, 'C#5')],
-    'E': [(0, 2, 'G#4'), (2, 2, 'B4'), (4, 2, 'E5'), (6, 2, 'F#5'), (8, 6, 'E5'), (14, 1, 'D5'), (15, 1, 'C#5')],
+MOTIF = {   # A: Mewtwo's staccato-motief zonder de frygische halve toon
+    'Am': [(0, 1, 'A4'), (2, 1, 'A4'), (3, 1, 'C5'), (5, 1, 'A4'), (6, 2, 'B4'), (8, 1, 'A4'), (10, 1, 'E5'),
+           (11, 1, 'D5'), (12, 2, 'C5'), (14, 2, 'B4')],
+    'G': [(0, 1, 'G4'), (2, 1, 'G4'), (3, 1, 'B4'), (5, 1, 'G4'), (6, 2, 'A4'), (8, 1, 'B4'), (10, 1, 'D5'),
+          (11, 1, 'C5'), (12, 2, 'B4'), (14, 2, 'A4')],
+    'Em': [(0, 2, 'G4'), (2, 2, 'B4'), (4, 2, 'D5'), (6, 2, 'F#5'), (8, 8, 'E5')],
 }
-SAD = {   # B: Mewtwo's melancholische frases, in groot
-    'D': [(0, 8, 'F#5'), (8, 8, 'E5')], 'A': [(0, 12, 'C#5'), (12, 4, 'E5')],
-    'Bm': [(0, 8, 'D5'), (8, 6, 'F#5'), (14, 2, 'E5')], 'E': [(0, 12, 'E5'), (12, 2, 'D5'), (14, 2, 'B4')],
+SAD = [   # B: Mewtwo's melancholische frase, over D-Am-F-G
+    [(0, 8, 'F#5'), (8, 8, 'E5')], [(0, 12, 'C5'), (12, 4, 'E5')],
+    [(0, 8, 'D5'), (8, 6, 'F5'), (14, 2, 'E5')], [(0, 16, 'D5')],
+]
+HOOK = {   # C: Mewtwo's hook (in build een octaaf lager gezet)
+    'Am': [(0, 3, 'E5'), (3, 3, 'A5'), (6, 2, 'C6'), (8, 3, 'B5'), (11, 3, 'A5'), (14, 2, 'E5')],
+    'F': [(0, 3, 'F5'), (3, 3, 'A5'), (6, 2, 'C6'), (8, 3, 'A5'), (11, 3, 'G5'), (14, 2, 'F5')],
+    'C': [(0, 3, 'E5'), (3, 3, 'G5'), (6, 2, 'C6'), (8, 3, 'D6'), (11, 3, 'C6'), (14, 2, 'G5')],
+    'G': [(0, 6, 'B5'), (6, 2, 'A5'), (8, 4, 'G5'), (12, 4, 'D5')],
+    'G2': [(0, 6, 'D6'), (6, 2, 'C6'), (8, 4, 'B5'), (12, 2, 'C6'), (14, 2, 'D6')],   # bVII, lost op in de loop
 }
-HOOK = {   # C: Mewtwo's hook, een octaaf lager (shift -12 in build), in 8en
-    'A': [(0, 3, 'E5'), (3, 3, 'A5'), (6, 2, 'C#6'), (8, 3, 'B5'), (11, 3, 'A5'), (14, 2, 'E5')],
-    'F#m': [(0, 3, 'F#5'), (3, 3, 'A5'), (6, 2, 'C#6'), (8, 3, 'A5'), (11, 3, 'G#5'), (14, 2, 'F#5')],
-    'D': [(0, 3, 'F#5'), (3, 3, 'A5'), (6, 2, 'D6'), (8, 3, 'E6'), (11, 3, 'D6'), (14, 2, 'A5')],
-    'E': [(0, 4, 'B5'), (4, 2, 'A5'), (6, 2, 'G#5'), (8, 4, 'E5'), (12, 2, 'G#5'), (14, 2, 'B5')],
-}
-INTRO = [(0, 2, 'A4'), (2, 2, 'C#5'), (4, 4, 'E5'), (8, 2, 'D5'), (10, 2, 'C#5'), (12, 4, 'B4')]   # het DNA: een vraag
+QUESTION = [(0, 2, 'A4'), (2, 2, 'C5'), (4, 2, 'E5'), (6, 2, 'D5'), (8, 6, 'B4')]   # de intro: Mew kijkt je aan
 
 
-def invert(pattern):
-    """Gespiegeld rond de eerste noot, in A-groot (Mew probeert het andersom)."""
-    scale = [n for n in range(128) if n % 12 in (9, 11, 1, 2, 4, 6, 8)]
-    idx = lambda n: min(range(len(scale)), key=lambda i: abs(scale[i] - n))
-    ax = idx(p(pattern[0][2]))
-    return [(st, ln, scale[2 * ax - idx(p(nm))]) for st, ln, nm in pattern]
+def build():
+    parts = {k: [] for k in ('lead', 'trumpet', 'echo', 'pluck', 'pad', 'gate', 'choir', 'bass', 'timp', 'drums', 'hats',
+                             'delay', 'sub', 'shaker', 'riser')}
 
-
-def warp(t, feel):
-    """12/8: elke tel = 3 triolen; een 8e op de 'en' schuift naar de derde triool (lang-kort)."""
-    b, r = divmod(t, TPB)
-    if feel != '128' or r % 24:          # noten op het triool-raster (arpeggio's, hats) blijven staan
-        return t
-    return b * TPB + (r * 64 // 48 if r < 48 else 64 + (r - 48) * 32 // 48)
-
-
-def build(feel=FEEL, out=OUT):
-    bpm = 156 if feel == '44' else 120
-    sub = 2 if feel == '44' else 3          # arpeggio-noten per tel
-    step = TPB // sub
-    parts = {k: [] for k in ('flute', 'str', 'harp', 'pad', 'choir', 'bass', 'drums', 'sub', 'shaker')}
-
-    for b in range(0, END):
+    # ---- intro: maat 0 = transitie, maat 1 = Mew verschijnt, maat 2 = adem (cry), maat 3 = opbouw ----
+    for b in range(0, BREATH):
         t0 = b * BAR
-        ch = PROG[b]
-        root, chord = CH[ch]
-        r = 12 * 3 + N[root] if N[root] >= 4 else 12 * 4 + N[root]      # E2..D#3
-        intro = b < A_START
-        # doorrollende harp: akkoord op en neer over 2 octaven (A3..A5), het lijmt alles aan elkaar
-        tones = sorted(p(x) for x in chord) + sorted(p(x) + 12 for x in chord)
-        wave = tones + tones[-2:0:-1]
-        n = 4 * sub
-        for i in range(n):
-            s = t0 + i * step
-            v = (44 + b * 6) if intro else 64 if b < B_START else 58 if b < C_START else 66
-            parts['harp'] += [[s, s + step, wave[(i + (b % 2) * n) % len(wave)], min(v, 66)]]
-        # strijkers/pad: zacht aangehouden (2 tonen), koor alleen in B en C
-        held = BAR - E8 if intro else 2 * BAR - E8          # aangehouden over het hele akkoord (2 maten), los vóór het volgende
-        if b >= 1 and (intro or b % 2 == 0):
-            parts['pad'] += [[t0, t0 + held, p(x), 52 if intro else 62] for x in (chord[:2] if intro else chord[1:2])]
-        if B_START <= b < C_START and b % 2 == 0:
-            parts['choir'] += [[t0, t0 + held, p(chord[-1]) + 12, 70]]
-        # bas: golvend grondtoon-kwint-octaaf-kwint in 8en (vanaf de aanloopmaat)
-        if b >= 3:
-            fig = [0, 7, 12, 7, 0, 7, 12, 14] if b % 2 == 0 else [0, 7, 12, 7, 0, 12, 7, 5]
-            bv = 72 if b == 3 else 100 if b < B_START else 84 if b < C_START else 106
-            if B_START <= b < C_START:
-                fig = [0, None, 7, None, 12, None, 7, None]               # breakdown: luchtiger
-            for i, iv in enumerate(fig):
-                if iv is None:
-                    continue
-                ln = 2 * E8 if B_START <= b < C_START else E8
-                parts['bass'] += [[t0 + i * E8, t0 + i * E8 + ln - 6, r + iv, bv]]
-        # drums: rollend, geen four-on-the-floor
-        if b >= A_START and not (B_START <= b < C_START - 1):
-            v = 108 if b >= C_START else 100
-            kicks = (0, 3, 4) if feel == '44' else (0, 4)                 # in 8en: 1, 2-en, 3
-            parts['drums'] += [[t0 + k * E8, t0 + k * E8 + E8, KICK, v] for k in kicks]
-            parts['drums'] += [[t0 + k * E8, t0 + k * E8 + E8, KICK, v - 20] for k in ((7,) if feel == '44' else (6, 7))]
-            parts['drums'] += [[t0 + i * TPB, t0 + i * TPB + E8, SNARE, 70] for i in (1, 3)]
-            if b >= C_START:
-                parts['drums'] += [[t0 + i * TPB, t0 + i * TPB + E8, TAMB, 66] for i in (1, 3)]
-            for i in range(4 * sub):
-                if sub == 3 and i % 3 == 1:
-                    continue                                              # 12/8: hats lang-kort (shuffle-ride)
-                parts['drums'] += [[t0 + i * step, t0 + i * step + step // 2, HH, 58 if i % sub else 44]]
-            if b in (A_START, C_START):
-                parts['drums'] += [[t0, t0 + 2 * TPB, CRASH, 96]]
-        if B_START <= b < C_START - 1 and b % 2 == 0:                     # breakdown: alleen een zachte kick per 2 maten
-            parts['drums'] += [[t0, t0 + E8, KICK, 70]]
-        if b == 3 or b == C_START - 1:                                    # zachte aanloop (snare in 8en, crescendo)
-            parts['drums'] += [[t0 + i * step, t0 + i * step + step // 2, SNARE, 36 + i * 4] for i in range(4 * sub)]
-        if b == A_START - 1:
-            parts['drums'] += [[t0, t0 + E8, KICK, 80], [t0 + 2 * TPB, t0 + 2 * TPB + E8, KICK, 86]]
-        # PSG: sub-bas en shaker
-        if b >= A_START:
-            parts['sub'] += [[t0, t0 + BAR - 6, 12 * 3 + N[root], 80 if not (B_START <= b < C_START) else 60]]
-            if not (B_START <= b < C_START):
-                parts['shaker'] += [[t0 + i * step, t0 + i * step + 6, 84, 70 if i % sub == sub - 1 else 40]
-                                    for i in range(4 * sub)]
+        parts['pad'] += [[t0, t0 + BAR - 8, p('A2'), 60 + b * 12], [t0, t0 + BAR - 8, p('E3'), 56 + b * 12]]
+        parts['choir'] += [[t0, t0 + BAR - 8, p('A3') if b == 0 else p('C4'), 60 + b * 12]]
+    parts['lead'] += bars(QUESTION, 0, 92)
+    for beat in (0, 2):
+        parts['drums'] += [[beat * TPB, beat * TPB + S16, KICK, 70], [beat * TPB + S16 + 8, beat * TPB + 2 * S16 + 8, KICK, 56]]
+    ap = APPEAR * BAR
+    parts['drums'] += [[ap, ap + 2 * TPB, CRASH, 120], [ap, ap + S16, KICK, 124]]
+    parts['timp'] += [[ap, ap + TPB, p('A2'), 124]]
+    parts['trumpet'] += [[ap, ap + 2 * TPB - 8, n, 100] for n in (p('E4'), p('A4'))]        # open kwint: kracht
+    parts['pluck'] += [[ap + i * 2 * S16, ap + i * 2 * S16 + 6, p('E5') + (0, 3, 7, 12)[i % 4], 50] for i in range(8)]
+    t0 = BREATH * BAR
+    parts['pad'] += [[t0 + TPB, t0 + BAR - 8, p('A2'), 66], [t0 + TPB, t0 + BAR - 8, p('E3'), 60]]
+    parts['choir'] += [[t0 + TPB, t0 + BAR - 8, p('E4'), 70]]
+    t0 = BUILD * BAR                                                              # Mewtwo's opbouwmaat
+    parts['drums'] += [[t0 + i * TPB, t0 + i * TPB + S16, KICK, 90 + i * 8] for i in range(4)]
+    parts['drums'] += [[t0 + i * S16, t0 + i * S16 + 8, SNARE, 50 + i * 4] for i in list(range(0, 8, 2)) + list(range(8, 16))]
+    parts['riser'] = [[t0 + i * 2 * S16, t0 + i * 2 * S16 + 2 * S16, 60 + i * 3, 60 + i * 8] for i in range(8)]
+    parts['gate'] += [[t0 + i * 2 * S16, t0 + i * 2 * S16 + S16, p('E4') + (0, 2, 3, 5, 7, 8, 10, 12)[i], 70 + i * 4]
+                      for i in range(8)]
 
-    # melodie
-    parts['flute'] += phrase(INTRO, 0, 84)
-    for b in range(A_START, END, 2):
+    for b in range(A_START, END):
         ch = PROG[b]
+        root, pad = CH[ch]
+        t0 = b * BAR
+        r = 12 * 3 + N[root] if N[root] >= 4 else 12 * 4 + N[root]
         if b < B_START:
-            parts['flute'] += phrase(MOTIF[ch], b, 104)
+            parts['bass'] += [[t0 + i * S16, t0 + i * S16 + S16 - 4, r + (12 if i % 4 == 3 else 0), 112] for i in range(16)]
         elif b < C_START:
-            parts['flute'] += phrase(SAD[ch], b, 96)
-            # de tegenstem: dezelfde frase gespiegeld, een octaaf lager op de strijkers, een maat later
-            parts['str'] += [[s + BAR, min(e + BAR, (b + 2) * BAR + BAR // 2), n - 12, 70]
-                             for s, e, n, v in phrase(invert(SAD[ch]), b, 70) if s + BAR < C_START * BAR]
+            parts['bass'] += [[t0, t0 + BAR - 12, r, 90]]
         else:
-            parts['flute'] += phrase(HOOK[ch], b, 112, shift=-12)
-            parts['str'] += phrase(HOOK[ch], b, 80, shift=-12)             # unisono: warm, niet schel
+            parts['bass'] += [[t0 + i * TPB + 2 * S16, t0 + i * TPB + 4 * S16 - 4, r, 118] for i in range(4)]
+            parts['bass'] += [[t0 + i * TPB, t0 + i * TPB + S16, r, 100] for i in range(4)]
+        if B_START <= b < C_START:
+            parts['pad'] += [[t0, t0 + BAR - 8, p(n), 92] for n in pad]
+        parts['choir'] += [[t0, t0 + BAR - 8, p(pad[-1]) + (0 if b < B_START else 12), 80 if b < B_START else 92 if b < C_START else 100]]
+        if b < B_START or b >= C_START:
+            parts['gate'] += [[t0 + i * 2 * S16, t0 + i * 2 * S16 + S16, p(n) + 12, 84] for i in range(8) for n in pad[1:]]
+            parts['drums'] += [[t0 + i * TPB, t0 + i * TPB + S16, KICK, 124] for i in range(4)]
+            parts['drums'] += [[t0 + i * TPB, t0 + i * TPB + 2 * S16, CLAP, 104] for i in (1, 3)]
+            parts['hats'] += [[t0 + i * TPB + 2 * S16, t0 + i * TPB + 4 * S16, OHH, 90] for i in range(4)]
+            if b < B_START:
+                parts['hats'] += [[t0 + i * S16, t0 + i * S16 + 8, HH, 70] for i in range(16) if i % 4 != 2]
+            if (b - A_START) % 4 == 0 or b == C_START:
+                parts['drums'] += [[t0, t0 + 2 * TPB, CRASH, 116]]
+                parts['timp'] += [[t0, t0 + TPB, r - 12 if r - 12 >= 40 else r, 118]]
+        if b in (C_START - 2, C_START - 1):
+            steps = range(0, 16, 2) if b == C_START - 2 else range(16)
+            parts['drums'] += [[t0 + i * S16, t0 + i * S16 + 8, SNARE, 60 + (i * 4 if b == C_START - 1 else i * 2)]
+                               for i in steps]
+        if b < B_START:
+            parts['lead'] += bars(MOTIF[ch], b, 112)
+            parts['pluck'] += [[t0 + i * S16, t0 + i * S16 + 10, p(pad[i % 3]) + 24, 64] for i in range(16)]
+        elif b < C_START:
+            k = b - B_START
+            if k % 2 == 0:
+                phrase = SAD[(k // 2) % 4]
+                parts['lead'] += bars(phrase, b, 104)
+                parts['echo'] += bars(phrase, b + 1, 70, shift=-12)       # zuivere echo: het origineel, geen kloon
+        else:
+            key = 'G2' if b == END - 1 else ch
+            parts['lead'] += bars(HOOK[key], b, 114, shift=-12)
+            parts['trumpet'] += bars(HOOK[key], b, 108, shift=-12)
+            parts['pluck'] += [[t0 + i * S16, t0 + i * S16 + 10, p(pad[i % 3]) + 24 + (12 if i % 8 >= 4 else 0), 72]
+                               for i in range(16)]
+
+    # ---- PSG-lagen (zoals Mewtwo) ----
+    parts['delay'] = [[s + 3 * S16, e + 3 * S16, n, int(v * 0.6)] for s, e, n, v in parts['pluck'] if s >= A_START * BAR]
+    for b in range(A_START, END):
+        t0, root = b * BAR, CH[PROG[b]][0]
+        if b < B_START or b >= C_START:
+            parts['sub'] += [[t0 + h * 2 * TPB, t0 + h * 2 * TPB + 2 * TPB - 8, 12 * 3 + N[root], 100] for h in (0, 1)]
+            parts['shaker'] += [[t0 + i * S16, t0 + i * S16 + 6, 84, 90 if i % 4 == 2 else 50] for i in range(16)]
+        else:
+            parts['sub'] += [[t0, t0 + BAR - 8, 12 * 3 + N[root], 70]]
+    for b in (C_START - 2, C_START - 1):
+        t0 = b * BAR
+        parts['riser'] += [[t0 + i * TPB, t0 + i * TPB + TPB, 56 + (b - C_START + 2) * 12 + i * 3, 50 + (b - C_START + 2) * 30 + i * 6]
+                           for i in range(4)]
 
     for k in parts:
-        parts[k] = dedupe([[warp(s, feel), max(warp(s, feel) + 6, warp(e, feel)), n, v] for s, e, n, v in parts[k]])
+        parts[k] = dedupe(parts[k])
 
-    # voicegroup: grounded_mewtwo met een kortere harp
+    # voicegroup (sinds v2): grounded_mewtwo met een kortere harp
     lines = open('sound/voicegroups/grounded_mewtwo.inc').read().split('\n')
     lines[0] = '@ Project Grounded: grounded_mewtwo met een kortere harp-release (46) voor Battle! Mew.'
     lines[1] = '@ Gegenereerd door tools/grounded/mew_theme.py.'
@@ -187,12 +178,13 @@ def build(feel=FEEL, out=OUT):
     open('sound/voicegroups/%s.inc' % VG, 'w').write('\n'.join(lines))
 
     rel = releases(VG)
-    progs = {'flute': FLUTE, 'str': STRINGS, 'harp': HARP, 'pad': STRINGS, 'choir': CHOIR, 'bass': BASS}
-    tail = {k: release_ticks(rel.get(pr, 200), TPB, bpm) for k, pr in progs.items()}
-    tail['drums'] = 0
-    for k in ('flute', 'str', 'choir'):
+    progs = {'lead': LEAD, 'trumpet': TRUMPET, 'echo': LEAD, 'pad': PAD, 'gate': PAD, 'choir': CHOIR, 'bass': BASS,
+             'timp': TIMPANI}
+    tail = {k: release_ticks(rel.get(pr, 200), TPB, BPM) for k, pr in progs.items()}
+    tail['drums'] = tail['hats'] = 0
+    for k in ('lead', 'trumpet', 'echo', 'choir'):
         parts[k] = detach(parts[k], tail[k])
-    order = ['flute', 'bass', 'drums', 'str', 'pad', 'choir', 'harp']
+    order = ['lead', 'trumpet', 'bass', 'drums', 'echo', 'timp', 'choir', 'gate', 'pad', 'hats']
     ds = {k: parts[k] for k in order}
     kept = allocate(ds, order, tail, max_voices=MAX_DS)
     for k in order:
@@ -204,19 +196,20 @@ def build(feel=FEEL, out=OUT):
         parts[k] = kept[k]
 
     song = Song(TPB, 500000)
-    song.tempo(0, bpm / 120)
+    song.tempo(0, BPM / 120)
     song.loop = (A_START * BAR, END * BAR)
-    layout = [('flute', FLUTE, 104, 0, 64), ('str', STRINGS, 70, 1, 76), ('harp', HARP, 78, 2, 48),
-              ('pad', STRINGS, 60, 3, 64), ('choir', CHOIR, 56, 4, 64), ('bass', BASS, 108, 5, 64),
-              ('sub', SUB, 38, 6, 64), ('shaker', SHAKER, 26, 7, 72)]
+    layout = [('lead', LEAD, 92, 0, 64), ('trumpet', TRUMPET, 96, 7, 64), ('gate', PAD, 70, 8, 64),
+              ('echo', LEAD, 66, 1, 96), ('pluck', PLUCK, 38, 2, 40), ('pad', PAD, 78, 3, 64),
+              ('choir', CHOIR, 76, 4, 64), ('bass', BASS, 112, 5, 64), ('timp', TIMPANI, 110, 6, 64),
+              ('delay', DELAY, 30, 10, 88), ('sub', SUB, 60, 11, 64), ('shaker', SHAKER, 34, 12, 70),
+              ('riser', RISER, 44, 13, 64)]
     for k, prog, vol, chn, pan in layout:
         song.add(parts[k], prog, vol, chn, pan)
-    song.add(sorted(parts['drums']), DRUMS, 92, 9)
-    assert not [k for k in parts if parts[k] and k not in {x[0] for x in layout} | {'drums'}]
-    song.save(out, END * BAR)
-    print(out, feel, bpm)
+    song.add(sorted(parts['drums'] + parts['hats']), DRUMS, 104, 9)
+    assert not [k for k in parts if parts[k] and k not in {x[0] for x in layout} | {'drums', 'hats'}]
+    song.save(OUT, END * BAR)
+    print(OUT)
 
 
 if __name__ == '__main__':
-    f = sys.argv[1] if len(sys.argv) > 1 else FEEL
-    build(f, sys.argv[2] if len(sys.argv) > 2 else OUT)
+    build()

@@ -99,7 +99,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Wally 1–5 | `wally_theme.py` | goedgekeurd | "Wally" |
 | Regigigas | `regigigas_theme.py` | wacht op Jordi (v5) | "Regigigas" |
 | Mewtwo | `mewtwo_theme.py` | v3 | "Mewtwo" |
-| Mew (remix van Mewtwo) | `mew_theme.py` | v2 wacht op Jordi (A 156 bpm 4/4 in de game, B 12/8 als kandidaat) | "Mew v1", "Mew v2" |
+| Mew (remix van Mewtwo) | `mew_theme.py` | v3 wacht op Jordi (Mewtwo-arrangement, minder dreigend) | "Mew v1", "Mew v2", "Mew v3" |
 | Dave (Freed From Desire) | `freed_theme.py` | goedgekeurd | "Dave" |
 | Beasts (Raikou/Entei/Suicune) | `beasts_theme.py` | goedgekeurd | "Raikou", "Beasts" |
 | Zinnia, Ghetsis, PSG-drumfixes | `midi_songs.py` | goedgekeurd | "Zinnia", "Ghetsis", "PSG-drums" |
@@ -751,3 +751,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   script (`FEEL` 44 = 156 bpm rollend, 128 = 12/8 op 120 via `warp()`). Eigen `voicegroup_grounded_mew`: harp-release
   242 -> 200, anders bezetten arpeggio's in 8en 5-6 kanalen. Pads per akkoord (2 maten) en een 8e vóór de wissel los
   laten: aangehouden pads per maat stapelen hun release op de maatgrens (koor viel 14/16 weg).
+- Mew v3: v2 "nog veel te lieflijk ... wolkentheme", "Mew heeft alsnog hoge stats", "Mewtwo's theme is super vet,
+  dat mag iets minder dreigend, wat neutraler". -> Mewtwo's arrangement bijna 1-op-1 (128 bpm, four-on-the-floor,
+  16e-bas, gate, koor, pauken, blokgolf, PSG-lagen); alleen de dreiging eruit: geen frygische Bb/verminderde maat
+  (Am-G-Am-Em, B: D-Am-F-G, C eindigt op bVII G -> loop naar Am), zuivere octaaf-echo i.p.v. halve toon ernaast,
+  kerkorgel -> blokgolf + trompet unisono, hook een octaaf lager (max. D5). Les: bij een remix van een goedgekeurd
+  nummer eerst vragen/aannemen dat de productie blijft en alleen het karakter (harmonie, 1-2 klanken) verschuift;
+  v1/v2 veranderden tempo, groove en instrumenten tegelijk en verloren zo wat Jordi 'vet' vond. -V090: piek 81, RMS ±2900.

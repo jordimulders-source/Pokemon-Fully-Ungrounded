@@ -131,7 +131,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
 | Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
-| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v2 wacht op opname (v1: 'drumritme goed, de rest niet'; v2 lage tokkel, geen koper/strijkers/PSG) | "Ruinous" |
+| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v3 wacht op Jordi (v2 'glitchend systeem'; v3 alle melodische lagen geknipt uit het origineel, A/B per laag) | "Ruinous" |
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 
@@ -669,3 +669,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   mix voor 'twinkelingen'. Kijk bij elke laag in álle stems (dominante toon per 16e, `dom.py`-achtig). Een zachte laag
   in het origineel (de F#5-'roep', bijna zuiver) niet op een luid instrument zetten: weglaten. 'Lange tonen' in
   'other' kunnen het ostinato zelf zijn (B3+F#4 pulseren in het ostinato-ritme): eerst het ritme per noot meten.
+- Ruinous v3 (Jordi over v2: 'lijkt nergens op, een glitchend systeem; isoleer de instrumenten'): **een laag die je
+  niet kunt benoemen, knip je uit de stem zelf**. De stem 'other' (25% van de energie: pad + 16e-figuur + hogere
+  lijn) als één halve maat per akkoord, geknipt waar dat akkoord in het origineel klinkt (9 knipsels à 9 KB), gaf in
+  de A/B chroma 0,7-0,95 per maat; een eigen ostinato-noot getransponeerd per akkoord (v2) klonk als 'systeem'.
+  Half-maat-knipsels 30 ms langer dan de halve maat + release 140 = naadloos. Laag met weinig energie en een A/B
+  die niet klopt (de hogere 'piano'-lijn, chroma 0-0,4): weglaten. Solo uit de mixbuffer: `volX = 0` per spoor
+  elke frame; de opname begint 0,74 s ná maat 1 (meten aan de inslag, niet met een kruiscorrelatie over 0,8 s).

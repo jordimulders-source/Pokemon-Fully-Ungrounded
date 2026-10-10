@@ -9,22 +9,17 @@ Op de GBA en Jordi's speakers geeft een luid laag onder ±60 Hz 'overload': de d
   ruinous_boom    lage dreun op de 'en': 78 -> 62 Hz, kort (±0,2 s), zachte klik (anders hoor je hem niet in 8 bit)
   ruinous_ka      de rand van de taiko (ka): droge tik voor roffels en opmaten
   ruinous_impact  de inslag (maat 5 en 65): lage trom + ruisuitbarsting + metalen naklank, ±1,1 s
-  ruinous_ost     het elektronische ostinato (v2): bijna zuivere B3 + kwint als één sample, zachte puls
-  ruinous_pluck_* (v2) het lage, zware Aziatische tokkelinstrument van de intro en de lijn vanaf maat 21 (Jordi:
-                  'vrij laag Aziatisch klinkend pluk instrument, zwaarder dan een sitar'), één sample per 7 halve tonen
-                  (E2 B2 F#3 C#4 G#4), FluidR3 koto + shamisen-zoem
-(v1 had een zaagtand-synth en de stock-koto; Jordi: 'voor de rest alles niet'.)
+v3 (Jordi: 'het moet klinken als het origineel'): de melodische samples komen uit het origineel zelf (CUTS hieronder:
+stem, tijd, grondtoon, loop); v1 (zaagtand-synth, stock-koto) en v2 (FluidR3-koto/shamisen, sinus-ostinato) zijn weg.
 Gebruik: python3 tools/grounded/ruinous_samples.py [naam ...]   (daarna: python3 tools/grounded/resample_wav.py --all)"""
-import os, subprocess, sys, tempfile, wave
+import os, sys, wave
 import numpy as np
-import mido
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from sample_utils import resample, write_wav
 
 OUT = 'sound/direct_sound_samples/grounded/'
 DATA = 'sound/direct_sound_data.inc'
 SR = 44100
-SF2 = '/usr/share/sounds/sf2/FluidR3_GM.sf2'
 RATE = 11025
 RNG = np.random.default_rng(683)
 
@@ -130,89 +125,103 @@ def impact():
     return norm(tail_fade(x, 0.25))
 
 
-def render(prog, note, dur, vel=112):
-    """één noot uit FluidR3 (GM-programma prog), mono, vanaf de eerste aanzet"""
-    m = mido.MidiFile(ticks_per_beat=480)
-    t = mido.MidiTrack(); m.tracks.append(t)
-    t.append(mido.Message('program_change', channel=0, program=prog))
-    t.append(mido.Message('note_on', channel=0, note=note, velocity=vel, time=0))
-    t.append(mido.Message('note_off', channel=0, note=note, velocity=0, time=int(dur * 960)))
-    with tempfile.TemporaryDirectory() as d:
-        mid, wav = os.path.join(d, 'n.mid'), os.path.join(d, 'n.wav')
-        m.save(mid)
-        subprocess.run(['fluidsynth', '-ni', '-g', '1.0', '-R', '0', '-C', '0', '-r', str(SR), '-F', wav, SF2, mid],
-                       check=True, capture_output=True)
-        w = wave.open(wav)
-        a = np.frombuffer(w.readframes(w.getnframes()), np.int16).reshape(-1, w.getnchannels()).mean(1) / 32768.0
-    s = int(np.argmax(np.abs(a) > 0.003))
-    return a[s:]
+# ---- v3: melodische samples uit het origineel zelf (Spleeter-stems), Jordi: 'het moet klinken als het origineel' ----
+# Bron: <scratchpad>/az/stems/ruinous/<stem>.wav (44,1 kHz stereo, niet in de repo; ontbreekt hij, dan blijven de
+# bestaande wav's staan). Maat m begint in het origineel op 0,366 + (m-1) x 1,5789 s (152 bpm, gemeten raster).
+STEMS = '/tmp/claude-0/-home-user-projectgrounded/ffd47e46-6a2e-5021-9ef2-b627d7dbd889/scratchpad/az/stems/ruinous/'
+S16 = 60 / 152 / 4
+T0 = 0.070 + 3 * S16
 
 
-def shape(x, f0, target_db, sr=SR, lim=15.0):
-    """harmonischenprofiel naar een doel (dB per harmonische t.o.v. de sterkste); statische EQ, envelop blijft."""
-    seg = x[len(x) // 8:]
-    F = np.abs(np.fft.rfft(seg * np.hanning(len(seg)))); fr = np.fft.rfftfreq(len(seg), 1 / sr)
-    hs, cur = [], []
-    for m, tgt in enumerate(target_db, 1):
-        if f0 * m > 4500:
-            break
-        sel = (fr > f0 * m * 0.97) & (fr < f0 * m * 1.03)
-        hs.append(f0 * m); cur.append(20 * np.log10(F[sel].max() + 1e-12))
-    cur = np.array(cur) - max(cur)
-    corr = np.clip(np.array(target_db[:len(hs)]) - cur, -lim, lim)
-    X = np.fft.rfft(x); fx = np.fft.rfftfreq(len(x), 1 / sr)
-    g = np.interp(np.log2(np.maximum(fx, 20)), np.log2(hs), corr)
-    g[fx > hs[-1]] = min(corr[-1], 0.0)          # boven de laatste harmonische niets oppompen
-    return np.fft.irfft(X * 10 ** (g / 20), len(x))
+def at(b, k):
+    return T0 + ((b - 1) * 16 + k) * S16
 
 
-def fit(x, n):
-    return np.concatenate([x, np.zeros(max(0, n - len(x)))])[:n]
+def read_stem(stem, t0, t1):
+    w = wave.open(STEMS + stem + '.wav')
+    sr = w.getframerate()
+    assert sr == SR
+    w.setpos(int(t0 * sr))
+    x = np.frombuffer(w.readframes(int((t1 - t0) * sr)), np.int16).astype(float)
+    return x.reshape(-1, w.getnchannels()).mean(1) / 32768
 
 
-def pluck(key, dur=0.55):
-    """laag, zwaar Aziatisch tokkelinstrument (biwa/lage koto). Gemeten in de stem 'piano' (maat 1-8, E2/F#2/B2):
-    sterke grondtoon, h2-h5 -11..-27 dB, een felle 6e harmonische (-4 dB: de sawari-zoem), heraanslagen in 16en.
-    FluidR3 Koto (107) heeft de grondtoon (-3) maar geen zoem, Shamisen (106) de zoem (h4/h5/h8) maar geen grondtoon:
-    koto als lijf + 30% shamisen + een sinus op de grondtoon, plectrumtik, lowpass 3,6 kHz."""
-    n = int(dur * SR); t = np.arange(n) / SR
-    f0 = 440.0 * 2 ** ((key - 69) / 12)
-    k = norm(fit(render(107, key, dur + 0.2), n))
-    sh = norm(fit(render(106, key, dur + 0.2), n))
-    x = k + 0.3 * sh
-    x += 0.55 * np.sin(2 * np.pi * f0 * t) * np.exp(-t / 0.28) * np.minimum(1, t / 0.003)
-    m = int(0.012 * SR); tt = np.arange(m) / SR
-    x = norm(x)
-    x[:m] += 0.25 * norm(band(RNG.standard_normal(m), 900, 3500) * np.exp(-tt / 0.002))
-    prof = (0, -10, -13, -21, -22, -6, -11, -14) if key < 60 else (0, -8, -12, -20, -22, -16, -20, -24)
-    x = shape(x, f0, prof)     # het gemeten profiel (E2, maat 1); hoog zonder felle zoem boven 2 kHz (niet schel)
-    x = soft_lowpass(x, 3600, 450)
-    x *= np.exp(-t / 0.38)
-    return norm(tail_fade(x, 0.12))
+def f0_of(x, key, sr=SR):
+    """echte grondtoon rond de verwachte noot: per harmonische h1-h4 de FFT-piek (8x zero-padding) binnen +-60 cent,
+    gewogen gemiddelde in cent (hogere harmonischen geven in een kort venster een preciezere toonhoogte)."""
+    nom = 440.0 * 2 ** ((key - 69) / 12)
+    seg = x[len(x) // 6:]
+    X = np.abs(np.fft.rfft(seg * np.hanning(len(seg)), 8 * len(seg))); fr = np.fft.rfftfreq(8 * len(seg), 1 / sr)
+    cs, ws = [], []
+    for h in (1, 2, 3, 4):
+        sel = (fr > nom * h * 2 ** (-0.6 / 12)) & (fr < nom * h * 2 ** (0.6 / 12))
+        i = np.argmax(X * sel)
+        cs.append(1200 * np.log2(fr[i] / h / nom)); ws.append(X[i] * h)
+    return nom * 2 ** (np.average(cs, weights=ws) / 1200)
 
 
-def ost(key=59, dur=0.4):
-    """het elektronische ostinato: gemeten (maat 66-67, stem 'other') bijna zuiver (h2 -26 dB), de kwint (F#4)
-    pulseert mee. Dus grondtoon + kwint als één sample (sinus + 15% 3e harmonische, twee stemmen 6 cent uit elkaar),
-    zachte aanzet (8 ms) en een korte pulserende uitklank; 1 kanaal per aanslag."""
-    n = int(dur * SR); t = np.arange(n) / SR
-    f0 = 440.0 * 2 ** ((key - 69) / 12)
-    x = np.zeros(n)
-    for f, a in ((f0, 1.0), (f0 * 1.4983, 0.62)):
-        for det in (-3, 3):
-            ff = f * 2 ** (det / 1200)
-            x += a * (np.sin(2 * np.pi * ff * t) + 0.15 * np.sin(2 * np.pi * 3 * ff * t))
-    env = np.minimum(1, t / 0.008) * (0.35 + 0.65 * np.exp(-t / 0.07)) * np.exp(-t / 0.35)
-    return norm(tail_fade(x * env, 0.06))
+def tune(x, key, sr=SR):
+    """zuiver stemmen: resample zodat de gemeten grondtoon precies op de noot ligt; geeft (x, afwijking in cent)."""
+    ratio = f0_of(x, key, sr) / (440.0 * 2 ** ((key - 69) / 12))
+    n = int(len(x) * ratio)
+    return np.interp(np.arange(n) / ratio, np.arange(len(x)), x), 1200 * np.log2(ratio)
 
 
-SAMPLES = {   # naam: (functie, grondtoon)
+def xloop(x, start, end, fade):
+    """loop start..end (samples), crossfade van `fade` samples met wat vóór het loopbegin staat."""
+    x = x[:end].copy()
+    w = np.linspace(0, 1, fade)
+    x[end - fade:end] = x[end - fade:end] * (1 - w) + x[start - fade:start] * w
+    return x, (start, end)
+
+
+def fade_in_out(x, a=0.004, b=0.04):
+    x = x.copy(); na, nb = int(a * SR), int(b * SR)
+    x[:na] *= np.linspace(0, 1, na); x[-nb:] *= np.linspace(1, 0, nb)
+    return x
+
+
+CUTS = {}     # naam: (stem, t0, t1, toets, band, loop (s vanaf begin) of None)
+#  lo_e2: het lage Aziatische instrument van de intro, E2 (maat 1, 16e 1-7: alleen E2 met zijn eigen boventonen)
+CUTS['ruinous_lo_e2'] = ('piano', at(1, 1) - 0.01, at(1, 8), 40, None, None)
+#  lo_b3: hetzelfde instrument, B3 aangehouden (maat 5, de hele maat; de stem 'piano' heeft daar niets anders)
+CUTS['ruinous_lo_b3'] = ('piano', at(5, 0) + 0.02, at(6, 0) - 0.02, 59, None, (0.45, 1.45))
+#  ostbar: het ostinato (B3 + F#4 aangehouden, de frygische C4 op 16e 6), een halve maat uit de rustige maat 67
+CUTS['ruinous_ostbar'] = ('other', at(67, 0), at(67, 8), 59, (90, 2600), None)
+#  oth_*: de hele stem 'other' (pad B3+F#4, de 16e-figuur B4+F#5-E-C#, de hogere lijn) als halve maat per akkoord,
+#  geknipt waar dat akkoord in het origineel klinkt; 30 ms langer dan een halve maat (overlap met de volgende aanslag)
+OTH = {'B': (18, 0), 'E': (22, 0), 'G': (29, 0), 'Gm': (46, 8), 'Bm': (31, 0), 'Fs': (35, 0), 'DA': (36, 0),
+       'Em': (38, 0), 'A': (52, 0)}
+for _t, (_b, _k) in OTH.items():
+    CUTS['ruinous_oth_' + _t] = ('other', at(_b, _k), at(_b, _k + 8) + 0.03, 60, (160, 5000), None)  # >160 Hz: geen baslek
+#  bass: één basnoot E2 (maat 22, 16e 3-5: alleen E2 + boventonen; de B1 van maat 17 had een D2 erdoor) met zijn
+#  natuurlijke uitklank
+CUTS['ruinous_bass'] = ('bass', at(22, 3) - 0.005, at(22, 6) - 0.01, 40, (30, 3000), None)
+WHOLE = ('ruinous_ostbar',) + tuple('ruinous_oth_' + t for t in OTH)      # meerdere tonen in één sample: niet hertonen, lengte = halve maat
+
+
+def make_cut(name):
+    stem, t0, t1, key, bnd, lp = CUTS[name]
+    x = read_stem(stem, t0, t1)
+    if bnd:
+        x = band(x, *bnd)
+    x = x - np.mean(x)
+    if name in WHOLE:
+        cents = 0.0
+    else:
+        x, cents = tune(x, key)
+    x = fade_in_out(x, 0.003, 0.025 if (lp or name in WHOLE) else 0.05)
+    loop = None
+    if lp:
+        a, z = int(lp[0] * SR), int(min(lp[1] * SR, len(x)))
+        x, loop = xloop(x, a, z, int(0.25 * SR))
+    return norm(x), loop, cents
+
+
+SAMPLES = {   # naam: (functie, grondtoon) - synthetische drums (ongewijzigd sinds v1)
     'ruinous_taiko': (taiko, 60), 'ruinous_boom': (boom, 60), 'ruinous_ka': (ka, 60),
-    'ruinous_impact': (impact, 60), 'ruinous_ost': (ost, 59),
+    'ruinous_impact': (impact, 60),
 }
-PLUCK_KEYS = (40, 47, 54, 61, 68)
-for _k in PLUCK_KEYS:
-    SAMPLES['ruinous_pluck_%d' % _k] = (lambda k=_k: pluck(k), _k)
 
 
 def main(only=None):
@@ -220,21 +229,33 @@ def main(only=None):
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
     total = 0
-    for name, (fn, key) in SAMPLES.items():
+    todo = [(n, 'synth') for n in SAMPLES] + [(n, 'cut') for n in CUTS]
+    for name, kind in todo:
         if only and name not in only:
             continue
-        RNG = np.random.default_rng(683 + sum(name.encode()))     # vaste seed per sample: los of samen = identiek
-        a = norm(resample(fn(), SR, RATE))
-        write_wav(OUT + name + '.wav', a, RATE, key, None)
+        if kind == 'synth':
+            RNG = np.random.default_rng(683 + sum(name.encode()))     # vaste seed per sample: los of samen = identiek
+            fn, key = SAMPLES[name]
+            a, lp, info = norm(resample(fn(), SR, RATE)), None, ''
+        else:
+            if not os.path.exists(STEMS + CUTS[name][0] + '.wav'):
+                print('%s: stem ontbreekt, bestaande wav blijft' % name)
+                continue
+            x, lpx, cents = make_cut(name)
+            key = CUTS[name][3]
+            a = norm(resample(x, SR, RATE))
+            lp = (int(lpx[0] * RATE / SR), int(lpx[1] * RATE / SR)) if lpx else None
+            info = ', gestemd %+.0f ct%s' % (-cents, ', loop %.2f-%.2f s' % (lp[0] / RATE, lp[1] / RATE) if lp else '')
+        write_wav(OUT + name + '.wav', a, RATE, key, lp)
         label = 'DirectSoundWaveData_' + name
         if label + '::' not in inc:
             inc = inc.rstrip('\n') + '\n\n\t.align 2\n%s::\n\t.incbin "sound/direct_sound_samples/grounded/%s.bin"\n' % (
                 label, name)
         total += len(a) + 16
         sp = np.abs(np.fft.rfft(a)) ** 2; fr = np.fft.rfftfreq(len(a), 1 / RATE)
-        print('%-16s %5d samples (%.2f s), < 60 Hz %4.1f%%, < 150 Hz %4.1f%%, > 2k %4.1f%%' % (
+        print('%-16s %5d samples (%.2f s), < 60 Hz %4.1f%%, < 150 Hz %4.1f%%, > 2k %4.1f%%%s' % (
             name, len(a), len(a) / RATE, 100 * sp[fr < 60].sum() / sp.sum(), 100 * sp[fr < 150].sum() / sp.sum(),
-            100 * sp[fr > 2000].sum() / sp.sum()))
+            100 * sp[fr > 2000].sum() / sp.sum(), info))
     open(DATA, 'w').write(inc)
     print('totaal %.1f KB' % (total / 1024))
 

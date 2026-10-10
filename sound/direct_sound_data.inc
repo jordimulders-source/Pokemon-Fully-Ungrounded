@@ -8031,3 +8031,30 @@ DirectSoundWaveData_ruinous_st63::
 	.align 2
 DirectSoundWaveData_ruinous_st65::
 	.incbin "sound/direct_sound_samples/grounded/ruinous_st65.bin"
+	.align 2
+DirectSoundWaveData_az_bells_6::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_6.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_7::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_7.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_8::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_8.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_9::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_9.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_10::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_10.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_11::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_11.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_12::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_12.bin"

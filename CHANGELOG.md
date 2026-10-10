@@ -18452,3 +18452,12 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Geen afkappen:** stukken van 2 maten, om en om op twee sporen, die 60 ms doorlopen en naadloos overvloeien.
 - **Maat 53–64:** de hoge laag van de opbouw en de roffels zit er nu in.
 - **Stukken op 8 kHz, DPCM:** gelijkenis met het origineel 0,86 (maat 21–52) en 0,74 (maat 53–69). Samples voor dit nummer ±447 KB; ROM vrij 2,35 MB.
+
+### [v0.9.277] - Area Zero v10
+- Kwaliteit voorop (Jordi: "die eerste is denk ik gewoon zuinigheid geweest").
+  - **Begeleiding:** van maat 1 tot 64 komt alles uit het origineel ('other' + 'bass', vanaf maat 24 ook 'drums'). De eigen strijkers, PSG-bas, drumkit en kristalbelletjes zijn weg.
+  - **Blijft:** koor en aria (goedgekeurd) en de lead in maat 36–39.
+  - **Maat 40–53:** per maat de best passende maat uit het origineel; maat 54–64 is één doorlopende knip.
+- **Meting per 10 s tegen het origineel:** niveau binnen ±0,6 dB, nergens doffer, chroma gemiddeld 0,95.
+- **DPCM:** de zachte belletjeswolk en de intro (`az_bells_0`, `az_bells_8`) blijven ongecomprimeerd, omdat de ruis daar maar 8–14 dB onder het signaal zat; de luide knippen wel (ruis 22–24 dB eronder).
+- ±+399 KB; ROM vrij 2,03 MB.

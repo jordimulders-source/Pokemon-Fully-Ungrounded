@@ -179,25 +179,36 @@ BASS = VOCALS.replace('vocals.wav', 'bass.wav')
 # 16e-was (pulserende ruis/glans in 'other' + dichte hi-hats in 'drums'); wij alleen strijkers, PSG-bas en de kit in
 # achtsten. Stuk 6 = m44-45 (golfvorm m41/m45 0.96, m40/m44 0.93), alleen boven 2 kHz (geen akkoordbotsing: bas,
 # akkoorden en kick/snare blijven van ons), 14 kHz; het thema herhaalt hem elke twee maten m40-63.
-BELL_RIPS = [(5, 0, 48), (8, 0, 64), (12, 0, 64), (24, 0, 64), (28, 0, 64), (44, 0, 32)]
-GROOVE_FROM, GROOVE_RATE, GROOVE_HP = 40, 14000, (1500, 2500)
+# v10 (Jordi: 'hoop dat ik een echt goede Area Zero te horen krijg; die eerste was gewoon zuinigheid'; DPCM halveert
+# de knippen): de hele begeleiding m1-64 komt nu uit het origineel. Stuk 5 = de groove m44-47 (other+bass+drums, heel
+# spectrum; golfvorm m40/m44 0.88, m41/m45 0.95, m42/m46 0.91, m43/m47 0.93), herhaald op m40/48/52/56/60; stuk 6 =
+# m16-19 eigen (de herhaling van m8 was 2,7 dB te zwak); stuk 7 = m54-55 (c + B->Db, ook m62-63); stuk 8 = m64
+# (overgang naar de lus); stuk 9 = de intro m1-4 (de lage belletjes zelf, eigen normalisatie: 8 dB onder de wolk).
+# Groove-herhaling eerst als 4-maatsblok: chroma per maat 0.73-0.92 in m48-63. Nu losse maten m44-49 (elk een eigen
+# sample: het thema kiest per maat m40-53 de best passende bron, chroma per 8e >= 0.94) en m54-64 als één stuk (de
+# laatste frase en de overgang wijken af: m58-63 vonden geen bron boven 0.87).
+# m16-19 = stuk 1 (m8) opnieuw, 2,7 dB luider (eigen knip kostte 64 KB). De intro (stuk 8) heeft niets boven 2 kHz
+# (origineel 0%): 11025 Hz, en net als de wolk ongecomprimeerd (zacht: DPCM-ruis maar 8-14 dB eronder).
+BELL_RIPS = [(5, 0, 48), (8, 0, 64), (12, 0, 64), (24, 0, 64), (28, 0, 64), (44, 0, 16), (54, 0, 176),
+             (45, 0, 16), (1, 0, 64), (46, 0, 16), (47, 0, 16), (48, 0, 16), (49, 0, 16)]
+RIP_RATE = {8: 11025}
+GROOVE_FROM, GROOVE_RATE, GROOVE_HP = 99, RATE, None     # v9-hoogdoorlaat (alleen >2 kHz) niet meer nodig
 DRUMS = VOCALS.replace('vocals.wav', 'drums.wav')
 RIP_DRUMS_FROM = 24                            # vanaf deze maat zit de drums-stem in de knip
 SEAM = 0.015                                   # overlap tussen de stukken: lineaire crossfade (som = origineel)
 
 
 def bellrip(j, bar, pos, ln, rate=RATE):
+    rate = RIP_RATE.get(j, rate)
     hp = None
     if bar >= GROOVE_FROM:
         rate, hp = GROOVE_RATE, GROOVE_HP
-    t = BAR1 + (bar - 1) * 2 + pos * 0.125 - 0.03
-    t1 = t + ln * 0.125 + SEAM
+    t = max(0.0, BAR1 + (bar - 1) * 2 + pos * 0.125 - 0.03)
+    t1 = BAR1 + (bar - 1) * 2 + pos * 0.125 - 0.03 + ln * 0.125 + SEAM
     xo, sr = _read(OTHER, t, t1, dc=4410)
     xb, _ = _read(BASS, t, t1, dc=4410)
     if bar >= RIP_DRUMS_FROM:
         xb = xb + _read(DRUMS, t, t1, dc=4410)[0]
-    if hp:
-        xb = _read(DRUMS, t, t1, dc=4410)[0]                     # groove: other + drums, geen bas
     x = _to_rate(xo + xb, sr, rate, eq=True, hp=hp)
     n = int(SEAM * rate)
     x[:n] *= np.linspace(0, 1, n)

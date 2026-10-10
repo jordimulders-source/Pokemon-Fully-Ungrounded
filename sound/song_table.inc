@@ -687,7 +687,7 @@ gSongTable::
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 673 (ander werk, wordt bij het samenvoegen vervangen)
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 674 (ander werk, wordt bij het samenvoegen vervangen)
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 675 (ander werk, wordt bij het samenvoegen vervangen)
-	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 676 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_grounded_vs_arceus, MUSIC_PLAYER_BGM, 0
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 677 (ander werk, wordt bij het samenvoegen vervangen)
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 678 (ander werk, wordt bij het samenvoegen vervangen)
 	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 679 (ander werk, wordt bij het samenvoegen vervangen)

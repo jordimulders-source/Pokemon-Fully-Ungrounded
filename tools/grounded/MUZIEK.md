@@ -135,6 +135,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
+| Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -706,3 +707,11 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   `voice_directsound 60` speelt op 13.379 Hz = subdreun** (< 60 Hz 26-33% van de mix); op toets 67 (zoals de FRLG-kit
   via _no_resample) 10-15%. -V100: 0 overlopen, piek 105/127, RMS 3120; audiocheck 49-67 Hz = kick + grondtonen C2/B1.
 
+- Arceus v1 (`arceus_theme.py`, MUS_GROUNDED_VS_ARCEUS 676; bron `Battle_Arceus.mid` op origin/master, Domino-bewerking
+  van de SSEQ-rip SEQ_BA_SECRET1, 150 bpm, tpb 48): **uitgeschreven echo** in de bron (zelfde noot elke tel, velocity
+  110 -> 38 -> 27 ... 7) = elke herhaling een kanaal; stoot + echo per spoor samen `detach`en en de echo's als aparte
+  partij achteraan in de stemverdeler (onder v20 weg). Een **rip-kopie op 2 ticks met detune** (spoor 5, pitchwheel
+  -384 bij bend-range 12 = stereo-chorus) kost alleen kanalen: weg. Spoor 'Track 10' op kanaal 8 met programma 117 is
+  een GM-drumspoor (41/45 toms, 52/57 bekkens op tel 3 en 3-en), geen melodische taiko: eigen kit. Bekkens die een
+  achtste later terugkomen eerder los (anders 2 kanalen). Loop = maat 10-50 (maat 41.3-49 herhaalt de intro-gebaren).
+  Batchrec: 0 overlopen, piek 111/127, RMS 556-3590 (strijkerssecties het luidst), max -4,9 dB; ±3,6 KB ROM.

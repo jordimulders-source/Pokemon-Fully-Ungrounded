@@ -295,3 +295,5 @@
 .include "sound/voicegroups/drumsets/area_zero_aria.inc"
 .include "sound/voicegroups/drumsets/tower.inc"
 .include "sound/voicegroups/grounded_tower.inc"
+.include "sound/voicegroups/drumsets/arceus.inc"
+.include "sound/voicegroups/grounded_arceus.inc"

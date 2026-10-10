@@ -51,17 +51,26 @@ CHOIR_EVENTS = [(8, 4, 12), (9, 0, 24), (12, 0, 32), (14, 0, 16), (15, 0, 12), (
                 (18, 0, 4), (18, 4, 4), (20, 0, 32), (22, 0, 16), (23, 0, 8), (23, 8, 8), (24, 0, 8), (24, 8, 8)]
 
 
-def _read(src, t0, t1):
+def _read(src, t0, t1, dc=441):
     w = wave.open(src)
     sr = w.getframerate()
     w.setpos(int(t0 * sr))
     raw = np.frombuffer(w.readframes(int((t1 - t0) * sr)), np.int16).astype(float)
     x = raw.reshape(-1, w.getnchannels()).mean(1) / 32768
-    return x - np.convolve(x, np.ones(441) / 441, 'same'), sr      # gelijkstroom/brom < 50 Hz eruit
+    return x - np.convolve(x, np.ones(dc) / dc, 'same'), sr        # gelijkstroom/brom < 50 Hz eruit (bas: dc groter)
 
 
-def _to_rate(x, sr, rate):
+# v8 (Jordi: 'op 22 s / 47 s te muffled'): gemeten weergaveketen (16 kHz-sample -> mixer 21 kHz -> GBA-uitgang, mGBA-
+# opname) t.o.v. het origineel: -2 dB bij 2 kHz, -3,4 bij 4 kHz, -5,6 bij 6 kHz, -6,6 bij 7 kHz. De knippen krijgen het
+# omgekeerde als voorversterking (Hz, dB), zodat de opname weer even helder is als het origineel.
+EQ = [(0, 0.0), (1000, 0.0), (2000, 2.0), (3000, 2.5), (4000, 3.4), (5000, 4.6), (6000, 5.6), (7000, 6.6), (8000, 6.6)]
+
+
+def _to_rate(x, sr, rate, eq=False):
     X = np.fft.rfft(x)
+    if eq:
+        fr = np.fft.rfftfreq(len(x), 1 / sr)
+        X *= 10 ** (np.interp(fr, [p[0] for p in EQ], [p[1] for p in EQ]) / 20)
     X[int(len(X) * 0.9 * rate / sr):] = 0                         # anti-alias
     x = np.fft.irfft(X, len(x))
     return np.interp(np.arange(int(len(x) * rate / sr)) * sr / rate, np.arange(len(x)), x)
@@ -119,7 +128,7 @@ def choir(i, bar, pos, ln, src=VOCALS, rate=RATE):
     dur = ln * 0.125
     take = min(dur, 2.0)                                          # v4: tot 2 s echt, daarna een loop van >= 1 s
     x, sr = _read(src, t - 0.02, t + take)
-    x = _to_rate(x, sr, rate)
+    x = _to_rate(x, sr, rate, eq=True)
     loop = None
     if dur > take + 0.05:                                         # langer dan de knip: aanhouding loopen
         x, loop, c = _loop(x, rate, int(0.8 * rate), 1.0, 1.15, 0.4)
@@ -140,7 +149,7 @@ ARIA_PHRASES = [(24, 11, 44), (27, 13, 15), (29, 3, 54), (32, 13, 51), (37, 4, 2
 def aria(j, bar, pos, ln, src=VOCALS, rate=RATE):
     t = BAR1 + (bar - 1) * 2 + pos * 0.125
     x, sr = _read(src, t - 0.03, t + ln * 0.125)
-    x = _to_rate(x, sr, rate)
+    x = _to_rate(x, sr, rate, eq=True)
     x[:int(0.01 * rate)] *= np.linspace(0, 1, int(0.01 * rate))
     x[-int(0.08 * rate):] *= np.linspace(1, 0, int(0.08 * rate))
     pk = np.abs(x).max()
@@ -150,17 +159,36 @@ def aria(j, bar, pos, ln, src=VOCALS, rate=RATE):
 
 # v7 (Jordi: 'vanaf 8 s doen de piepjes hun eigen ding'): de hoge belletjeswolk (Ab6 C#7 Eb7 met wisselnoten en echo)
 # is niet noot voor noot na te spelen; in de intro (m5-7) en de pauzes klinken in de 'other'-stem alleen de belletjes,
-# dus die stukken komen als één geheel uit het origineel: (maat, 16e, lengte in 16en).
+# dus die stukken komen als één geheel uit het origineel.
+# v8 (Jordi: 'op 13 s lijkt de distorted melodie perfect te starten maar hij kapt meteen af; op 22 s veel te muffled'):
+# de 'distorted melodie' is de aanzwellende, vervormde Eb-akkoordklank (Eb2 Bb2 Eb3 G3 F4 + ruis) die in het origineel
+# van m7.75 tot m10.75 doorklinkt; de knip stopte op m8.4 en de PSG-bas/strijkers vulden dat niet (geen Eb2 in de
+# opname). Ook de glans op 22 s (B-deel, 'other' 25-45% boven 2 kHz, wij 1%) zit in die stem. Nu de hele
+# begeleiding m5-15 uit 'other' + 'bass' in drie aansluitende stukken (maat, 16e, lengte in 16en); het thema speelt
+# stuk 1 en 2 nog eens op m16 en m20 (golfvorm-correlatie m12/m20 0.84, m13/m21 0.86; m8/m16 0.52, zelfde akkoorden).
 OTHER = VOCALS.replace('vocals.wav', 'other.wav')
-BELL_RIPS = [(5, 0, 52), (10, 8, 24), (18, 8, 24)]
+BASS = VOCALS.replace('vocals.wav', 'bass.wav')
+# Ook onder de aria (m24-39; Jordi: 'de melodie op 47 s is te muffled'): 'other' daar 7 dB onder de stem en 29% boven
+# 2 kHz, onze strijkers even luid als de stem en 1%. Stuk 4 en 5 = m24-31, het thema herhaalt ze op m32 en m36.
+# Daar ook de 'drums'-stem erbij: die heeft naast de slagen de Eb2/Eb3-bromtoon (orgelpunt; zonder viel de chroma-
+# correlatie van m25-27 van 0.88 naar 0.55-0.75).
+BELL_RIPS = [(5, 0, 48), (8, 0, 64), (12, 0, 64), (24, 0, 64), (28, 0, 64)]
+DRUMS = VOCALS.replace('vocals.wav', 'drums.wav')
+RIP_DRUMS_FROM = 24                            # vanaf deze maat zit de drums-stem in de knip
+SEAM = 0.015                                   # overlap tussen de stukken: lineaire crossfade (som = origineel)
 
 
-def bellrip(j, bar, pos, ln, src=OTHER, rate=RATE):
-    t = BAR1 + (bar - 1) * 2 + pos * 0.125
-    x, sr = _read(src, t - 0.03, t + ln * 0.125)
-    x = _to_rate(x, sr, rate)
-    x[:int(0.01 * rate)] *= np.linspace(0, 1, int(0.01 * rate))
-    x[-int(0.25 * rate):] *= np.linspace(1, 0, int(0.25 * rate))
+def bellrip(j, bar, pos, ln, rate=RATE):
+    t = BAR1 + (bar - 1) * 2 + pos * 0.125 - 0.03
+    t1 = t + ln * 0.125 + SEAM
+    xo, sr = _read(OTHER, t, t1, dc=4410)
+    xb, _ = _read(BASS, t, t1, dc=4410)
+    if bar >= RIP_DRUMS_FROM:
+        xb = xb + _read(DRUMS, t, t1, dc=4410)[0]
+    x = _to_rate(xo + xb, sr, rate, eq=True)
+    n = int(SEAM * rate)
+    x[:n] *= np.linspace(0, 1, n)
+    x[-n:] *= np.linspace(1, 0, n)
     pk = np.abs(x).max()
     print('az_bells_%d: m%d.%02d, %.2f s, piek %.3f' % (j, bar, pos, len(x) / rate, pk))
     return x / pk * 0.95, pk
@@ -192,13 +220,12 @@ def main():
         y, pk = bellrip(j, bar, pos, ln)
         write_wav(os.path.join(OUT, 'az_bells_%d.wav' % j), y, RATE, 60, None)
         bg.append(pk)
-    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areazero_bells_gain.txt'), 'w').write(
-        ' '.join('%.4f' % (g / max(bg)) for g in bg) + '\n')
-    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areazero_aria_gain.txt'), 'w').write(
-        ' '.join('%.4f' % (g / max(ag)) for g in ag) + '\n')
-    # relatieve luidheid per roep (genormaliseerde samples; het thema zet de velocity hiernaar)
-    open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areazero_choir_gain.txt'), 'w').write(
-        ' '.join('%.4f' % (g / max(gains)) for g in gains) + '\n')
+    # v8: één schaal voor alle knippen (piek / grootste piek van koor, aria en begeleiding): velocity lineair = de
+    # verhoudingen van het origineel (Jordi: 'vanaf 8 s wordt alles naar de achtergrond gedrongen')
+    top = max(bg + ag + gains)
+    for name, g in (('bells', bg), ('aria', ag), ('choir', gains)):
+        open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'areazero_%s_gain.txt' % name), 'w').write(
+            ' '.join('%.4f' % (x / top) for x in g) + '\n')
 
 
 if __name__ == '__main__':

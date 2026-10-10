@@ -55,7 +55,17 @@ MAIN_LEAD, MAIN_CHOIR_VOICES, VOICE_UNTIL = True, 3, 24
 VOICE, VOICE_LO, CHOIRKIT = 54, 55, 56   # az_voice (F5), az_voice_lo (Bb4), kit met de koorroepen (alleen 681)
 VOICE_SPLIT = 73                          # aria-noten t/m C#5 op az_voice_lo, daarboven az_voice
 from areazero_samples import CHOIR_EVENTS, ARIA_PHRASES, BELL_RIPS  # noqa: E402  (zelfde lijsten als de geknipte samples)
-BELLKIT, BELLRIP_VEL = 58, 127
+BELLKIT = 58
+# v8 (Jordi: 'vanaf 8 s wordt van alles naar de achtergrond gedrongen'): alle knippen op één schaal (gain = piek /
+# grootste piek, areazero_samples.py), velocity lineair -> stem, koor en begeleiding in de verhouding van het origineel
+PAD_UNTIL = 40                            # m5-39: begeleiding uit de knippen, geen strijkers/PSG-bas
+LVL_PAD, LVL_VOX = 1.0, 1.0
+
+
+def vel(g, lvl):
+    return max(1, min(127, int(round(127 * g * lvl))))
+
+
 ARIAKIT = 57                              # v5: de aria in frasen uit het origineel (kit area_zero_aria)
 # v5: wat niet in de vocals-stem zit (m36 Bb5, m39; Spleeter zette het in 'other') blijft op az_voice (gemeten in de mix)
 LEAD_REST = [(36, 0, 18, 'Bb5'), (39, 0, 4, 'Ab5'), (39, 4, 4, 'Bb5'), (39, 8, 4, 'F#5'), (39, 12, 6, 'Ab5')]
@@ -201,12 +211,13 @@ def build():
             t = T(bar, pos)
             P['bellecho'].append([t + S, t + 3 * S, p(n), int(vel * 0.5)])
     for b in (1, 2, 3, 4):
-        lo(b, 74)                                     # v7: iets zachter (in het origineel is de wolk vanaf m5 3x zo luid)
+        lo(b, 37)                                     # v8: in het origineel 8 dB onder de wolk (m5), wij 11 dB erboven -> -18 dB
     # m5-7 en de pauzes: de belletjeswolk zelf uit het origineel (kit area_zero_bells, A/B: pauze_*, piepjes_*)
     bg = [float(g) for g in open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                               'areazero_bells_gain.txt')).read().split()]
-    for j, (bar, pos, ln) in enumerate(BELL_RIPS):
-        P['bellrip'].append([T(bar, pos), T(bar, pos) + ln * S, 36 + j, int(round(BELLRIP_VEL * bg[j]))])
+    # v8: begeleiding m5-23 = drie aansluitende knippen uit 'other' + 'bass'; m16-23 herhaalt stuk 1 en 2
+    for j, (bar, pos, ln) in list(enumerate(BELL_RIPS)) + [(1, (16, 0, 64)), (2, (20, 0, 64)), (3, (32, 0, 64)), (4, (36, 0, 64))]:
+        P['bellrip'].append([T(bar, pos), T(bar, pos) + ln * S + 2, 36 + j, vel(bg[j], LVL_PAD)])
 
     # lead (aria): bend per noot (BENDR 2: 64 stappen = 2 halve tonen) + vibrato
     for bar, pos, ln, n in LEAD_REST:
@@ -215,7 +226,7 @@ def build():
     ag = [float(g) for g in open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                               'areazero_aria_gain.txt')).read().split()]
     for j, (bar, pos, ln) in enumerate(ARIA_PHRASES):
-        P['aria'].append([T(bar, pos), T(bar, pos) + ln * S, 36 + j, int(round(70 + 57 * ag[j]))])
+        P['aria'].append([T(bar, pos), T(bar, pos) + ln * S, 36 + j, vel(ag[j], LVL_VOX)])
 
     # akkoorden
     def chord(t, ln, strings, choir, vs=80, vc=88):
@@ -228,6 +239,8 @@ def build():
         for n in choir:
             P['choir'].append([t, t + ln, p(n), vc])
     for bar, pos, ln, strings, choir in CHORDS:
+        if bar < PAD_UNTIL:                          # v8: m8-23 zit in de knippen (strijkers/PSG-bas vulden dat niet)
+            continue
         quiet = bar in (10, 11, 18, 19) and pos >= 8
         # lange akkoorden in stukken van 2 tellen (koor-sample: geen eindeloze lus, heraanzet = 'adem')
         t, end = T(bar, pos), T(bar, pos) + ln * S
@@ -256,22 +269,7 @@ def build():
         for pos, ln, n in figs:
             t = T(bar, pos)
             P['bass'].append([t, t + ln * S - 4, p(n), vel])
-    for b in (8, 9):
-        bass(b, [(0 if b > 8 else 4, 16 if b > 8 else 12, 'Eb2')])
-    bass(10, [(0, 8, 'Eb2')])
-    for b in (12, 13, 14, 15, 20, 21, 22, 23, 28, 29, 30, 36, 38):
-        bass(b, [(0, 16, 'B2')])
-    for b in (31, 37, 39):
-        bass(b, WOBBLE_B)
-    for b in (16, 17):
-        bass(b, [(0, 16, 'Eb2')])
-    bass(18, [(0, 8, 'Eb2')])
-    for b in (24, 32):
-        bass(b, TO_AB)
-    for b in (25, 26, 33, 34):
-        bass(b, [(0, 16, 'Eb2')])
-    for b in (27, 35):
-        bass(b, WOBBLE_EB)
+    # v8: m8-39 = de bas-stem in de knippen
     for b in range(40, 64):
         bass(b, BASS_G[PHRASE[b]], 92)
     bass(64, [(0, 8, 'C#3'), (8, 8, 'A2')], 80)
@@ -282,7 +280,7 @@ def build():
     # drums (vanaf m24; gemeten in de 8-bit-cover en het origineel): 2-maatspatroon
     def hit(t, n, v, ln=S):
         P['drums'].append([t, t + ln, n, v])
-    for b in range(24, 64):
+    for b in range(PAD_UNTIL, 64):                 # v8: m24-39 zitten de drums (met Eb-bromtoon) in de knippen
         even = (b % 2 == 0)
         full = b >= 40
         if b == 24:
@@ -302,8 +300,8 @@ def build():
     gains = [float(g) for g in open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                                  'areazero_choir_gain.txt')).read().split()]
     for i, (bar, pos, ln) in enumerate(CHOIR_EVENTS):
-        if gains[i] >= CHOIR_MIN_GAIN:
-            P['choir'].append([T(bar, pos), T(bar, pos) + ln * S, 36 + i, int(round(60 + 67 * gains[i]))])
+        if gains[i] >= CHOIR_MIN_GAIN * max(gains):
+            P['choir'].append([T(bar, pos), T(bar, pos) + ln * S, 36 + i, vel(gains[i], LVL_VOX)])
     P['lead_lo'] = [e for e in P['lead'] if e[2] <= VOICE_SPLIT]
     P['lead'] = [e for e in P['lead'] if e[2] > VOICE_SPLIT]
     for k in P:
@@ -343,11 +341,11 @@ def build():
                (0, mido.Message('control_change', control=21, value=LFOS + 6)),
                (0, mido.Message('control_change', control=1, value=SIGH_MOD))] + \
               [(t, mido.Message('pitchwheel', pitch=max(-8192, min(8191, v)))) for t, v in bend_sigh]
-    TRACKS = [('lead', VOICE, 84, 64, ex_lead), ('lead_lo', VOICE_LO, 84, 64, ex_lead), ('choir', CHOIRKIT, 100, 64, ex_choir), ('aria', ARIAKIT, 96, 64, ex_choir),
+    TRACKS = [('lead', VOICE, 84, 64, ex_lead), ('lead_lo', VOICE_LO, 84, 64, ex_lead), ('choir', CHOIRKIT, 127, 64, ex_choir), ('aria', ARIAKIT, 127, 64, ex_choir),
               ('sigh', SIGH, 66, 56, ex_sigh),
-              ('str', STR, 62, 64, ()), ('bell', BELL, 66, 72, ()), ('bellecho', BELL, 66, 56, ()), ('bellrip', BELLKIT, 127, 64, ()), ('echo', ECHO, 30, 44, ()),
+              ('str', STR, 62, 64, ()), ('bell', BELL, 17, 72, ()), ('bellecho', BELL, 17, 56, ()), ('bellrip', BELLKIT, 127, 64, ()), ('echo', ECHO, 30, 44, ()),
               ('ost', OST, 34, 80, ()), ('bass', BASS, 62, 64, ()), ('hat', HAT, 26, 70, ()),
-              ('drums', DRUMS, 92, 64, ())]
+              ('drums', DRUMS, 92, 64, ())]                   # m40+ zoals v7 (m24-39: drums-stem in de knip)
     free = [c for c in range(16) if c != 9]
     for k, prog, vol, pan, ex in TRACKS:
         ch = 9 if prog == DRUMS else free.pop(0)
@@ -590,7 +588,8 @@ def write_voicegroup():
             '\tvoice_directsound 60, 0, DirectSoundWaveData_az_aria_%d, 255, 0, 255, %d\n' % (j, CHOIR_REL)
             for j in range(len(ARIA_PHRASES))) + '\n')
     open('sound/voicegroups/drumsets/area_zero_bells.inc', 'w').write(
-        '@ Project Grounded: de belletjeswolk van Area Zero (m5-7, pauzes), geknipt uit de other-stem (areazero_samples.py).\n'
+        '@ Project Grounded: de begeleiding van Area Zero m5-31 (belletjeswolk, Eb-/B-akkoordklank, bas; vanaf m24 met de\n'
+        '@ drums-stem), geknipt uit het origineel in aansluitende stukken (areazero_samples.py BELL_RIPS).\n'
         'voice_group area_zero_bells, 36\n' + ''.join(
             '\tvoice_directsound 60, 0, DirectSoundWaveData_az_bells_%d, 255, 0, 255, %d\n' % (j, CHOIR_REL)
             for j in range(len(BELL_RIPS))) + '\n')

@@ -7910,3 +7910,11 @@ DirectSoundWaveData_az_bells_1::
 	.align 2
 DirectSoundWaveData_az_bells_2::
 	.incbin "sound/direct_sound_samples/grounded/az_bells_2.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_3::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_3.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_4::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_4.bin"

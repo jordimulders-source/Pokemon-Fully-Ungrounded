@@ -133,7 +133,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
 | Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v3 wacht op Jordi (v2 'glitchend systeem'; v3 alle melodische lagen geknipt uit het origineel, A/B per laag) | "Ruinous" |
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
-| Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v1 wacht op opname (nagebouwd uit stems + 8-bit-cover; lead = blokgolf, koor, kristalbel; remix 150 bpm) | "Area Zero" |
+| Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v8: begeleiding m5-39 + koor + aria uit het origineel geknipt, 682 geschrapt (Jordi) | "Area Zero" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -700,4 +700,15 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   **nooit een laag toevoegen die alleen gemeten en niet met een geïsoleerde A/B tegen de stem gecontroleerd is.** Een
   dichte belletjeswolk (16en + echo + wisselnoten) is niet na te spelen; waar een stem alleen die laag bevat (intro,
   pauzes) knip je hem als geheel (chroma A/B 0,97); de geraden cel/groove-arpeggio's zijn weg.
+- Area Zero v8 (Jordi: 'vanaf 8 s naar de achtergrond; distorted melodie op 13 s kapt af; 22 s en 47 s te muffled'):
+  **eerst per 0,5 s niveau + % boven 2 kHz van GBA-opname naast mix én stems zetten** (gelijke luidheid over het
+  venster): de intro stond 11 dB bóven de wolk (origineel 8 dB eronder), de knip stopte midden in de vervormde
+  Eb-akkoordklank (die zat deels in de bas-stem: PSG-bas zit niet in een mixbuffer-opname!), en de glans op 22/47 s
+  zat in 'other'. Opgelost met de begeleiding als aansluitende knippen uit other+bass(+drums) (lineaire crossfade van
+  15 ms op de naad, herhalen waar de golfvorm-correlatie per maat ≥0,5 is) en **alle knippen op één schaal**
+  (velocity = 127 x piek / grootste piek, lineair): dan is de verhouding stem/begeleiding vanzelf die van het
+  origineel (gemeten ±1 dB). Spleeter zet bromtonen soms in 'drums' (Eb-orgelpunt m24+): chroma per laag tegen de
+  stem controleren. **Weergaveketen meten** (solo vs stem, opname vs mixbuffer): 16 kHz-sample + mixer + GBA-uitgang
+  = -2 dB bij 2 kHz tot -6,6 bij 7 kHz; het omgekeerde als voorversterking in de knip (`EQ` in
+  `areazero_samples.py`) maakt de opname ±1 dB vlak t.o.v. het origineel.
 

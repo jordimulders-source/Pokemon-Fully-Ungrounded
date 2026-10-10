@@ -299,3 +299,5 @@
 .include "sound/voicegroups/grounded_legendary.inc"
 .include "sound/voicegroups/drumsets/arceus.inc"
 .include "sound/voicegroups/grounded_arceus.inc"
+.include "sound/voicegroups/drumsets/dialga.inc"
+.include "sound/voicegroups/grounded_dialga.inc"

@@ -138,6 +138,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
 | Battle! Legendary Pokémon (670) | `legendary_theme.py` | v1 wacht op Jordi (generiek legendary-thema, Hoenn-stijl: Weather Trio-pauken, E4-koper, 176 bpm, alleen stock-samples) | "Legendary" |
 | Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
+| Battle! Dialga/Palkia (678) | `dialga_theme.py` | v1 wacht op Jordi (uit zijn MIDI, alleen stock-samples, ±9 KB) | "Dialga" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -729,3 +730,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   (fluit) en antwoord (glock 8va), hikje elke 4e maat; Mewtwo's halve-toon-echo wordt de frase gespiegeld in de
   toonladder op de glock. Hergebruikt `voicegroup_grounded_mewtwo` (geen nieuwe samples/voicegroup). Glock/harp hebben
   release 242 (±174 ticks staart): 8en op de glock of harp vreten kanalen, gebruik kwarten of zet ze op de 'en'.
+- Dialga/Palkia v1 (Jordi's `DialgaPalkiaMIDIBeta.mid`, origin/master): **vorm zoeken met een spoor-voor-spoor-
+  vergelijking per halve maat** (gelijk / zelfde ritme / anders) i.p.v. op het gehoor: de MIDI heeft na maat 48 een
+  halve maat verschuiving (lange noten op tel 3 i.p.v. 1), en het einde (115,5) sluit naadloos aan op maat 6 (bas,
+  arpeggio, drums en pauken lopen door) = de loop. 'Humanize'-vertragingen (spoor 7 overal 12 ticks te laat, spoor 4 =
+  octaaf-echo van spoor 6) eerst op de tel zetten; de echo/arpeggio op PSG-vierkanten kost geen kanalen. fp-houdnoten
+  (accent + dezelfde noot op v40) samenvoegen. balance.py tegen FluidR3: GM-synthbas is 11 dB luider dan de GBA-
+  synth bass (spoor op 127 is het maximum). -V088: 0 overlopen, piek 94/127, RMS 2985; ROM ±9 KB (alleen stock).

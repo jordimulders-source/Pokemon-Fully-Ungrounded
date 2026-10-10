@@ -708,13 +708,13 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_PECHARUNT: // Project Grounded: Yoshi's Island (Battle! Legendary Pokémon, bestaande transitie)
         CreateBattleStartTask(B_TRANSITION_SWIRL, MUS_GROUNDED_VS_LEGENDARY);
         break;
-    case SPECIES_DIALGA: // Project Grounded: Spear Pillar (placeholder: Kanto-legendary-thema, de klok draait rond)
+    case SPECIES_DIALGA: // Project Grounded: Spear Pillar, de klok draait rond; Battle! Dialga/Palkia (D/P)
     case SPECIES_DIALGA_ORIGIN:
-        CreateBattleStartTask(B_TRANSITION_CLOCKWISE_WIPE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_CLOCKWISE_WIPE, MUS_GROUNDED_VS_DIALGA_PALKIA);
         break;
-    case SPECIES_PALKIA: // Project Grounded: Spear Pillar (placeholder: Kanto-legendary-thema, de ruimte rimpelt)
+    case SPECIES_PALKIA: // Project Grounded: Spear Pillar, de ruimte rimpelt; Battle! Dialga/Palkia (D/P)
     case SPECIES_PALKIA_ORIGIN:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_GROUNDED_VS_DIALGA_PALKIA);
         break;
     case SPECIES_ARCEUS_NORMAL: // Project Grounded: Hall of Origin (Battle! Arceus uit DPPt, het licht valt in banen)
         CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_GROUNDED_VS_ARCEUS);

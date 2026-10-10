@@ -18341,3 +18341,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Intro:** een kort "DNA-motief".
 - Instrumenten: fluit, glockenspiel, harp, fingered bass, koor en PSG; geen orgel of blokgolf-lead. Hergebruikt de voicegroup van Mewtwo (alleen stock-samples): ±3 KB. Gekoppeld aan het Mew-gevecht; `MUS_VS_MEW` blijft voor Jirachi en de muziekopties.
 - Generator: `tools/grounded/mew_theme.py`.
+
+### [v0.9.265] - Battle! Dialga/Palkia
+- Nieuw thema `MUS_GROUNDED_VS_DIALGA_PALKIA` (678), uit Jordi's MIDI (`DialgaPalkiaMIDIBeta.mid`): 180 bpm, C-pedaal, parallelle kwinten en kwarten. Strijkers, hoorn, trompet, orgel, EP, synthbas en pauken; het arpeggio en de echo op PSG. Alleen stock-samples: ±9 KB. Gekoppeld aan Dialga en Palkia (ook de Origin-vormen) op Spear Pillar; transities ongewijzigd.
+- De MIDI is opgeschoond, niet hergecomponeerd: verschoven echo- en kopiesporen op de tel gezet, rare programma's vervangen (bijv. een paukenpartij op "synth strings"), vier crashes toegevoegd. **Na maat 48,5 ligt alles een halve maat verschoven** (zo in de MIDI, zo gelaten): Jordi controleert tegen het origineel.
+- Bij het samenvoegen schoof de songtabel twee plekken op (Dialga en Mew); rechtgezet en per constante gecontroleerd.
+- Generator: `tools/grounded/dialga_theme.py`.

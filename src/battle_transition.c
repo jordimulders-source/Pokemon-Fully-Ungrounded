@@ -188,6 +188,13 @@ static void Task_LegendHooh(u8);
 static void Task_LegendVolcanion(u8);
 static void Task_LegendHoopa(u8);
 static void Task_LegendForces(u8);
+static void Task_LegendArticuno(u8); // Project Grounded (src/data/legend_intros2.h)
+static void Task_LegendZapdos(u8);
+static void Task_LegendMoltres(u8);
+static void Task_LegendZacian(u8);
+static void Task_LegendZamazenta(u8);
+static void Task_LegendXerneas(u8);
+static void Task_LegendYveltal(u8);
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -692,6 +699,13 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_VOLCANION] = Task_LegendVolcanion,
     [B_TRANSITION_HOOPA] = Task_LegendHoopa,
     [B_TRANSITION_FORCES] = Task_LegendForces,
+    [B_TRANSITION_ARTICUNO] = Task_LegendArticuno, // Project Grounded (src/data/legend_intros2.h)
+    [B_TRANSITION_ZAPDOS] = Task_LegendZapdos,
+    [B_TRANSITION_MOLTRES] = Task_LegendMoltres,
+    [B_TRANSITION_ZACIAN] = Task_LegendZacian,
+    [B_TRANSITION_ZAMAZENTA] = Task_LegendZamazenta,
+    [B_TRANSITION_XERNEAS] = Task_LegendXerneas,
+    [B_TRANSITION_YVELTAL] = Task_LegendYveltal,
     [B_TRANSITION_KYOGRE_MURAL] = Task_KyogreMural, // Project Grounded
     [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
@@ -10436,3 +10450,4 @@ static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
 #include "data/gym_intros_b.h"
 // Project Grounded: legendary-intro's (Lugia, Ho-Oh, Volcanion, Hoopa, Forces of Nature)
 #include "data/legend_intros.h"
+#include "data/legend_intros2.h"

@@ -138,6 +138,13 @@ enum BattleTransition
     B_TRANSITION_HOOPA, // Project Grounded: Hoopa, ringportaal, er valt van alles uit, de hand grijpt de camera
     B_TRANSITION_FORCES, // Project Grounded: Tornadus/Thundurus/Landorus, een weerbericht dat ontspoort
     B_TRANSITION_VIAGRA_BOYS, // Project Grounded: Youngster Calvin (Route 102, Sports), het Viagra Boys-logo draait en keert van kleur om
+    B_TRANSITION_ARTICUNO, // Project Grounded: Articuno, ijsvarens groeien over de grot, het midden vriest dicht, het ijs spat uiteen
+    B_TRANSITION_ZAPDOS, // Project Grounded: Zapdos, Weather Institute 's nachts in de regen, silhouet bij elke bliksem, steeds dichterbij
+    B_TRANSITION_MOLTRES, // Project Grounded: Moltres, lavameer van Mt. Chimney in hitte, stijgt op in een vlammenring, Sky Attack
+    B_TRANSITION_ZACIAN, // Project Grounded: Zacian, open plek in het Mega Forest, drie zwaardhalen, het beeld splijt
+    B_TRANSITION_ZAMAZENTA, // Project Grounded: Zamazenta, dezelfde open plek, ademen, Iron Defense, Behemoth Bash
+    B_TRANSITION_XERNEAS, // Project Grounded: Xerneas, grauw Ballonlea, de kleur stroomt vanuit de heksenkring terug
+    B_TRANSITION_YVELTAL, // Project Grounded: Yveltal, een schaduw landt in de kring, de kleur trekt weg, Oblivion Wing, zwart
     B_TRANSITION_COUNT
 };
 

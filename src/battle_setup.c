@@ -581,11 +581,13 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_CHI_YU:
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_ZACIAN_HERO: // Project Grounded: Mega Forest (placeholder: Kanto-legendary-thema, bestaande transitie)
+    case SPECIES_ZACIAN_HERO: // Project Grounded: Mega Forest, drie zwaardhalen en het beeld splijt (muziek: placeholder, Kanto-legendary-thema)
     case SPECIES_ZACIAN_CROWNED:
-    case SPECIES_ZAMAZENTA_HERO:
+        CreateBattleStartTask(B_TRANSITION_ZACIAN, MUS_RG_VS_LEGEND);
+        break;
+    case SPECIES_ZAMAZENTA_HERO: // Project Grounded: Mega Forest, ademen en Behemoth Bash (muziek: placeholder)
     case SPECIES_ZAMAZENTA_CROWNED:
-        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_ZAMAZENTA, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting
         CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_GROUNDED_VS_HEATRAN); // eigen thema (stoner rock à la Kyuss)
@@ -669,21 +671,21 @@ void BattleSetup_StartLegendaryBattle(void)
     case SPECIES_NECROZMA_ULTRA:
         CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_DEOXYS);
         break;
-    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle (placeholder: Kanto-legendary-thema, bestaande transitie)
+    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle, de kleur stroomt terug in het bos (muziek: placeholder, Kanto-legendary-thema)
     case SPECIES_XERNEAS_ACTIVE:
-        CreateBattleStartTask(B_TRANSITION_WHITE_BARS_FADE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_XERNEAS, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, leven en dood (placeholder: Kanto-legendary-thema)
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE, MUS_RG_VS_LEGEND);
+    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, de kleur trekt weg, Oblivion Wing (muziek: placeholder)
+        CreateBattleStartTask(B_TRANSITION_YVELTAL, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_ARTICUNO: // Project Grounded (legends2): Shoal Cave, Frozen Depths (placeholder: Kanto-legendary-thema)
-        CreateBattleStartTask(B_TRANSITION_REGICE, MUS_RG_VS_LEGEND);
+    case SPECIES_ARTICUNO: // Project Grounded (legends2): Shoal Cave, Frozen Depths; het beeld vriest dicht (muziek: placeholder)
+        CreateBattleStartTask(B_TRANSITION_ARTICUNO, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_ZAPDOS: // Project Grounded (legends2): Route 119, in het onweer (placeholder)
-        CreateBattleStartTask(B_TRANSITION_ANGLED_WIPES, MUS_RG_VS_LEGEND);
+    case SPECIES_ZAPDOS: // Project Grounded (legends2): Route 119, silhouet in het onweer boven het Weather Institute (muziek: placeholder)
+        CreateBattleStartTask(B_TRANSITION_ZAPDOS, MUS_RG_VS_LEGEND);
         break;
-    case SPECIES_MOLTRES: // Project Grounded (legends2): kraterrand van Mt. Chimney (placeholder)
-        CreateBattleStartTask(B_TRANSITION_SHUFFLE, MUS_RG_VS_LEGEND);
+    case SPECIES_MOLTRES: // Project Grounded (legends2): lavameer van Mt. Chimney, Sky Attack (muziek: placeholder)
+        CreateBattleStartTask(B_TRANSITION_MOLTRES, MUS_RG_VS_LEGEND);
         break;
     case SPECIES_ARTICUNO_GALAR: // Project Grounded (legends2): Mossdeep, sterrenkijken (placeholder, Psychic: wazig)
         CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
@@ -1193,6 +1195,23 @@ enum BattleTransition GetWildBattleTransition(void)
     case SPECIES_LANDORUS_INCARNATE:
     case SPECIES_LANDORUS_THERIAN:
         return B_TRANSITION_FORCES;
+    case SPECIES_ARTICUNO:
+        return B_TRANSITION_ARTICUNO;
+    case SPECIES_ZAPDOS:
+        return B_TRANSITION_ZAPDOS;
+    case SPECIES_MOLTRES:
+        return B_TRANSITION_MOLTRES;
+    case SPECIES_ZACIAN_HERO:
+    case SPECIES_ZACIAN_CROWNED:
+        return B_TRANSITION_ZACIAN;
+    case SPECIES_ZAMAZENTA_HERO:
+    case SPECIES_ZAMAZENTA_CROWNED:
+        return B_TRANSITION_ZAMAZENTA;
+    case SPECIES_XERNEAS:
+    case SPECIES_XERNEAS_ACTIVE:
+        return B_TRANSITION_XERNEAS;
+    case SPECIES_YVELTAL:
+        return B_TRANSITION_YVELTAL;
     }
     if (routeTransition >= 0)
         return routeTransition;

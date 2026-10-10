@@ -18036,3 +18036,17 @@ Jordi (10 okt): "alles behalve Athletic heeft nog een soort overload; Flower Gar
 | Overworld / Fuzzy / Castle | 0,48–0,58, octaafverdeling gelijk |
 
 Bij Castle zijn de lage partijen nog wat te zacht.
+
+### [v0.9.239] - Yoshi's Island: SNES-filter op de samples, volume op de piek
+- Jordi (10 okt): "Flower Garden en Overworld hebben nog steeds overload".
+- Gemeten tegen de SNES-versie en de SMA3-versie: onze versies hadden veel meer ruisachtige energie boven 3 kHz. De SMA3-versie is opgenomen uit Jordi's minigsf's: de gsflib is de hele ROM, en de minigsf zet het nummer op 0x08002BA0.
+- **Oorzaak 1:** de SNES speelt samples met Gaussische interpolatie, en die dempt de boventonen in de sample-data zelf. Zonder die demping vouwen ze op de GBA terug als ruis. `spc2gba.py` filtert nu elke sample vooraf (`soften`, -6 dB bij 0,20 cycli per sample, loops periodiek). Flower Garden 6–10 kHz: 1,1% → 0,2% (SNES 0,3%).
+- **Oorzaak 2:** de vaste ruis van de 8-bitmixer valt op bij een laag volume. Overworld stond op -V43, met een piek van 40/127. Het volume staat nu per nummer op een piek van ±80/127 (onder de vervormingsgrens van ±90):
+
+| Nummer | -V | Piek | RMS |
+|---|---|---|---|
+| Flower Garden | 103 | 80 | 1300–1600 |
+| Athletic | 127 | 66 | ±1650 |
+| Overworld | 86 | 78 | ±2200 |
+| Fuzzy | 73 | 72 | ±1800 |
+| Castle | 71 | 80 | ±1300 |

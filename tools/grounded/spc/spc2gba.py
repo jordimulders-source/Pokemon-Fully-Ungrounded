@@ -24,16 +24,17 @@ SAMPLES = 'sound/direct_sound_samples/grounded/'
 VG = 'sound/voicegroups/grounded_yi.inc'
 KIT = 'sound/voicegroups/drumsets/yi.inc'
 KIT_BASE = 36
+GAUSS_NU = float(os.environ.get('YI_GAUSS', '0.20'))   # SNES-Gauss-interpolatie als voorfilter (cycli per sample, -6 dB)
 REL = 40          # SNES-KOFF klinkt ±8 ms uit; 40/256 per frame = ±25 ms (geen kanaalroof, geen klik)
 TICK_MS = 1000 / 60
 
-# naam: (spc-bestand, songconstante, beschrijving, -V); -V zo dat de RMS ±1100 is (Jordi 10 okt: 'te hard, distortion')
+# naam: (spc-bestand, songconstante, beschrijving, -V); -V zo dat de piek ±80/127 is: hoger vervormt de 8-bitmixer, lager laat zijn ruis horen (Jordi 10 okt)
 SONGS = {
-    'flower_garden': ('yi-07a.spc', 'MUS_GROUNDED_YI_FLOWER_GARDEN', "Flower Garden (Yoshi's Island)", 85),
-    'athletic':      ('yi-13a.spc', 'MUS_GROUNDED_YI_ATHLETIC', "Athletic (Yoshi's Island)", 80),
-    'overworld':     ('yi-14a.spc', 'MUS_GROUNDED_YI_OVERWORLD', "Overworld (Yoshi's Island)", 43),
-    'fuzzy':         ('yi-14b.spc', 'MUS_GROUNDED_YI_FUZZY', "Overworld (Fuzzy), Touch Fuzzy Get Dizzy", 44),
-    'castle':        ('yi-10.spc', 'MUS_GROUNDED_YI_CASTLE', "Castle & Fortress (Yoshi's Island)", 49),
+    'flower_garden': ('yi-07a.spc', 'MUS_GROUNDED_YI_FLOWER_GARDEN', "Flower Garden (Yoshi's Island)", 103),
+    'athletic':      ('yi-13a.spc', 'MUS_GROUNDED_YI_ATHLETIC', "Athletic (Yoshi's Island)", 127),
+    'overworld':     ('yi-14a.spc', 'MUS_GROUNDED_YI_OVERWORLD', "Overworld (Yoshi's Island)", 86),
+    'fuzzy':         ('yi-14b.spc', 'MUS_GROUNDED_YI_FUZZY', "Overworld (Fuzzy), Touch Fuzzy Get Dizzy", 73),
+    'castle':        ('yi-10.spc', 'MUS_GROUNDED_YI_CASTLE', "Castle & Fortress (Yoshi's Island)", 71),
 }
 
 # SNES-envelope: perioden (samples bij 32 kHz) per rate 0..31
@@ -77,6 +78,26 @@ def envelope(adsr1, adsr2, gain):
     if mode in (1, 2):          # lineair/exponentieel omlaag
         return 255, exp_frame(rate), 0, REL
     return 200, 0, 255, REL     # omhoog: zachte aanzet
+
+
+def soften(x, loop=None):
+    """De SNES speelt samples met Gaussische interpolatie: die dempt de boventonen in de sample-data zelf (onafhankelijk
+    van de toonhoogte). Zonder die demping vouwen ze op de GBA terug als ruis ('overload'). Loops periodiek filteren."""
+    def lp(y, periodic):
+        n = len(y)
+        if n < 4:
+            return y
+        if not periodic:
+            y2 = np.concatenate([y, y[::-1]])
+        else:
+            y2 = y
+        Y = np.fft.rfft(y2)
+        nu = np.fft.rfftfreq(len(y2))
+        Y *= np.exp(-np.log(2) * (nu / GAUSS_NU) ** 2)
+        return np.fft.irfft(Y, len(y2))[:n]
+    if loop is not None and 0 < loop < len(x):
+        return np.concatenate([lp(x[:loop], False), lp(x[loop:], True)])
+    return lp(x, False)
 
 
 def wav8(path, x, rate, base, loop=None):
@@ -205,7 +226,7 @@ def convert(spcdir, name, bank):
             for p in pitches:
                 k = (h, p)
                 if k not in bank['drums']:
-                    bank['drums'][k] = dict(key=KIT_BASE + len(bank['drums']), x=stretch(x, 4096 / p * 16000 / 32000),
+                    bank['drums'][k] = dict(key=KIT_BASE + len(bank['drums']), x=stretch(soften(x), 4096 / p * 16000 / 32000),
                                             env=envelope(env[0][0], env[0][1], env[1]), name='yi_d%s_%d' % (h, p))
                 keys[p] = bank['drums'][k]['key']
             inst[s] = dict(drum=True, keys=keys)
@@ -220,7 +241,7 @@ def convert(spcdir, name, bank):
                 b = round(base)
                 # niet rekken (dat breekt korte loops): de fijnstemming gaat in de samplerate van het bestand
                 rate = 32000 * 2 ** ((b - base) / 12)
-                bank['mel'][h] = dict(prog=len(bank['mel']), x=x, base=b, basef=base, amp=float(np.abs(x).max()),
+                bank['mel'][h] = dict(prog=len(bank['mel']), x=soften(x, loop), base=b, basef=base, amp=float(np.abs(x).max()),
                                       rate=int(round(rate)), loop=loop,
                                       env=envelope(env[0][0], env[0][1], env[1]), name='yi_m%s' % h)
             inst[s] = dict(drum=False, prog=bank['mel'][h]['prog'], base=bank['mel'][h]['basef'], amp=bank['mel'][h]['amp'])

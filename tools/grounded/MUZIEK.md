@@ -49,7 +49,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 
 - **Eigen samples max. 11 kHz** (v0.9.232, Jordi: A/B SickBlik "prima"): de mixer draait op 21 kHz/8 bit, hogere rates kosten alleen ROM. Drums (drumsets/) blijven; grondtoon ≥ C6 → 16 kHz. Na elke `*_samples.py`/`gm_samples.py` en elke merge: `python3 tools/grounded/resample_wav.py --all`. Akkoorden als één sample (SickBlik) klinken voller maar kosten ±30 KB per akkoord.
 
-- **Rips (SPC/MP2K) op volume brengen:** de 8-bit-mixer vervormt boven een piek van ±90/127 (Yoshi's Island v0.9.235: "te hard, distortion"). Richtwaarde RMS ±1100 en piek ≤ 75 in batchrec; `-V` per nummer = 110 × 1100 / gemeten RMS.
+- **Rips (SPC/MP2K) op volume brengen:** de 8-bit-mixer vervormt boven een piek van ±90/127 ("te hard, distortion") en laat bij een lage piek (±40) zijn eigen ruis horen ("overload"). Richtwaarde: piek ±80 in batchrec. SNES-samples eerst Gauss-filteren (`soften` in spc2gba.py); korte loops nooit rekken of verlagen (valse toon, zoem). Vergelijk met de GBA-versie uit een minigsf (gsflib = hele ROM, nummer op het adres uit de minigsf).
 
 ## Opnemen (valkuilen)
 - De audiobuffer van mGBA moet **elke frame** worden uitgelezen, ook tijdens menu-navigatie; anders loopt hij over

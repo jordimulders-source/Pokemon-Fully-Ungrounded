@@ -19,6 +19,22 @@ def chunks(d):
     return out
 
 
+def _fft_resample(x, m, periodic=False):
+    """x naar m samples. periodic: x is één loop (geen spiegeling, de loop blijft naadloos)."""
+    n = len(x)
+    if periodic:
+        X = np.fft.rfft(x)
+        Y = np.zeros(m // 2 + 1, complex)
+        k = min(len(X), len(Y))
+        Y[:k] = X[:k]
+        return np.fft.irfft(Y, m) * (m / n)
+    X = np.fft.rfft(np.concatenate([x, x[::-1]]))      # spiegelen: geen klik door de periodieke rand
+    return np.fft.irfft(X[:m + 1], 2 * m)[:m] * (m / n)
+
+
+MIN_LOOP = 128   # kortere loops (chiptune-golfjes van een paar periodes) niet verlagen: afronden maakt ze vals
+
+
 def resample(path, rate):
     cs = chunks(open(path, 'rb').read())
     fmt = next(c for c in cs if c[0] == b'fmt ')[1]
@@ -29,25 +45,39 @@ def resample(path, rate):
     data = next(c for c in cs if c[0] == b'data')
     x = np.frombuffer(bytes(data[1]), np.uint8).astype(np.float64) - 128
     n = len(x)
-    m = max(1, int(round(n * rate / old)))
-    X = np.fft.rfft(np.concatenate([x, x[::-1]]))          # spiegelen: geen klik door de periodieke rand
-    y = np.fft.irfft(X[:m + 1], 2 * m) * (m / n)
-    y = y[:m]
+    smpl = next((c for c in cs if c[0] == b'smpl'), None)
+    loop = None
+    if smpl and struct.unpack_from('<I', smpl[1], 28)[0]:
+        loop = struct.unpack_from('<I', smpl[1], 36 + 8)[0]
+    if loop is not None and 0 < loop < n:
+        L = n - loop
+        if L < MIN_LOOP:
+            return old, old
+        mL = max(2, int(round(L * rate / old)))
+        new = old * mL / L                          # exacte rate: de loop blijft een heel aantal samples, toonhoogte gelijk
+        mA = int(round(loop * new / old))
+        y = np.concatenate([_fft_resample(x[:loop], mA) if loop >= 2 else x[:loop], _fft_resample(x[loop:], mL, True)])
+        newrate, loops = int(round(new)), (mA, mA + mL - 1)
+    else:
+        m = max(1, int(round(n * rate / old)))
+        y = _fft_resample(x, m)
+        newrate, loops = rate, None
     data[1] = bytearray(np.clip(np.round(y) + 128, 0, 255).astype(np.uint8).tobytes())
-    struct.pack_into('<I', fmt, 4, rate)
-    struct.pack_into('<I', fmt, 8, rate)
-    for c in cs:
-        if c[0] == b'smpl':
-            s = c[1]
-            struct.pack_into('<I', s, 8, int(round(1e9 / rate)))
-            nl = struct.unpack_from('<I', s, 28)[0]
-            for k in range(nl):
-                o = 36 + k * 24
-                a, b = struct.unpack_from('<II', s, o + 8)
-                struct.pack_into('<II', s, o + 8, int(round(a * rate / old)), min(m - 1, int(round(b * rate / old))))
+    struct.pack_into('<I', fmt, 4, newrate)
+    struct.pack_into('<I', fmt, 8, newrate)
+    if smpl:
+        s_ = smpl[1]
+        struct.pack_into('<I', s_, 8, int(round(1e9 / newrate)))
+        if loops:
+            struct.pack_into('<II', s_, 36 + 8, *loops)
     body = b''.join(c[0] + struct.pack('<I', len(c[1])) + bytes(c[1]) + (b'\0' if len(c[1]) & 1 else b'') for c in cs)
     open(path, 'wb').write(b'RIFF' + struct.pack('<I', 4 + len(body)) + b'WAVE' + body)
-    return old, rate
+    return old, newrate
+
+
+def rate_of(path):
+    fmt = next(c for c in chunks(open(path, 'rb').read()) if c[0] == b'fmt ')[1]
+    return struct.unpack_from('<I', fmt, 4)[0]
 
 
 def base_note(path):
@@ -70,7 +100,8 @@ def resample_all(root='.'):
         fmt = next(c for c in chunks(open(w, 'rb').read()) if c[0] == b'fmt ')[1]
         if struct.unpack_from('<H', fmt, 14)[0] != 8:
             continue
-        old, new = resample(w, 16000 if base_note(w) >= 84 else 11025)
+        tgt = 16000 if base_note(w) >= 84 else 11025
+        old, new = resample(w, tgt) if rate_of(w) > tgt * 1.05 else (0, 0)
         n += old != new
     return n
 

@@ -127,6 +127,48 @@ def find_loop(ns, end):
     return A, P
 
 
+_SOLO = {}
+
+
+def solo(path, name, voice, secs):
+    """Eén SNES-stem solo afspelen (mono, 32 kHz)."""
+    k = (name, voice)
+    if k not in _SOLO:
+        raw = os.path.join(BUILD, '%s_v%d.raw' % (name, voice))
+        subprocess.run([spclog(), path, str(secs), os.devnull, raw, str(255 & ~(1 << voice))], check=True)
+        _SOLO[k] = np.fromfile(raw, np.int16).reshape(-1, 2).mean(1)
+        os.remove(raw)
+    return _SOLO[k]
+
+
+def octave(path, name, L, base):
+    """Octaaffout in de grondtoon: vergelijk de gemeten toonhoogte in de solo-stem met de voorspelde (k = -1, 0, 1)."""
+    v = collections.Counter(n['voice'] for n in L).most_common(1)[0][0]
+    notes = sorted((n for n in L if n['voice'] == v and n['t1'] - n['t0'] > 120), key=lambda n: -(n['t1'] - n['t0']))[:40]
+    if not notes:
+        return 0
+    y = solo(path, name, v, int(max(n['t1'] for n in notes) / 1000) + 2)
+    votes = collections.Counter()
+    for n in notes:
+        a, b = int((n['t0'] + 0.25 * (n['t1'] - n['t0'])) * 32), int((n['t0'] + 0.85 * (n['t1'] - n['t0'])) * 32)
+        seg = y[a:b] - y[a:b].mean()
+        if len(seg) < 600 or np.abs(seg).max() < 50:
+            continue
+        f = 440 * 2 ** ((base + 12 * math.log2(max(1, n['pitch']) / 4096) - 69) / 12)
+        ac = np.correlate(seg, seg, 'full')[len(seg) - 1:]
+        ac = ac / ac[0]
+        # kortste periode die klopt (autocorrelatie is ook hoog bij elk veelvoud van de periode)
+        pick = None
+        for k, thr in ((1, 0.8), (0, 0.6), (-1, 0.6)):
+            lag = 32000 / (f * 2 ** k)
+            if 2 <= lag < len(ac) - 2 and ac[int(round(lag))] >= thr:
+                pick = k
+                break
+        if pick is not None:
+            votes[pick] += 1
+    return votes.most_common(1)[0][0] if votes else 0
+
+
 def convert(spcdir, name, bank):
     fn, const, desc, vol = SONGS[name]
     path = os.path.join(spcdir, fn)
@@ -170,13 +212,20 @@ def convert(spcdir, name, bank):
         else:
             if h not in bank['mel']:
                 base = 69 + 12 * math.log2(f0 / 440)
+                # stemming: alle noten van dit instrument horen op hele halve tonen te vallen
+                frac = [(base + 12 * math.log2(max(1, n['pitch']) / 4096)) % 1 for n in L]
+                ang = np.angle(np.mean(np.exp(2j * np.pi * np.array(frac)))) / (2 * np.pi)   # circulaire mediaan
+                base -= ang
+                print('  %s srcn %2d: grondtoon %.2f (stemming %+.2f), %d noten' % (name, s, base, -ang, len(L)))
                 b = round(base)
-                fac = 2 ** ((base - b) / 12)          # langer maken = lager: precies op noot b bij 32 kHz
-                xs = stretch(x, fac)
-                bank['mel'][h] = dict(prog=len(bank['mel']), x=xs, base=b, loop=None if loop is None else
-                                      int(round(loop * fac)), env=envelope(env[0][0], env[0][1], env[1]),
-                                      name='yi_m%s' % h)
-            inst[s] = dict(drum=False, prog=bank['mel'][h]['prog'], base=69 + 12 * math.log2(f0 / 440))
+                # niet rekken (dat breekt korte loops): de fijnstemming gaat in de samplerate van het bestand
+                rate = 32000 * 2 ** ((b - base) / 12)
+                bank['mel'][h] = dict(prog=len(bank['mel']), x=x, base=b, basef=base, amp=float(np.abs(x).max()),
+                                      rate=int(round(rate)), loop=loop,
+                                      env=envelope(env[0][0], env[0][1], env[1]), name='yi_m%s' % h)
+            inst[s] = dict(drum=False, prog=bank['mel'][h]['prog'], base=bank['mel'][h]['basef'], amp=bank['mel'][h]['amp'])
+        if drum:
+            inst[s]['amp'] = float(np.abs(x).max())
 
     # MIDI: één spoor per SNES-stem
     mid = mido.MidiFile(ticks_per_beat=24)
@@ -189,7 +238,9 @@ def convert(spcdir, name, bank):
         cond.append(mido.MetaMessage('marker', text=txt, time=at - t))
         t = at
     used_echo = any(n['echo'] for n in ns)
-    vmax = max(1, max((abs(int(n['vol'][0])) + abs(int(n['vol'][1]))) / 2 for n in ns))
+    # SNES-volume = sample-amplitude x stemvolume; de wav's zijn genormaliseerd, dus de amplitude gaat in de velocity
+    raw = lambda n: (abs(int(n['vol'][0])) + abs(int(n['vol'][1]))) / 2 * inst[n['srcn']]['amp']
+    vmax = max(1e-6, max(raw(n) for n in ns if n['srcn'] in inst))
     K = 120 / vmax                                    # luidste noot van het nummer = velocity 120
     for v in range(8):
         vn = [n for n in ns if n['voice'] == v and round(n['t0'] / TICK_MS) < stop]
@@ -203,7 +254,7 @@ def convert(spcdir, name, bank):
             t0 = round(n['t0'] / TICK_MS)
             t1 = max(t0 + 1, min(stop, round(n['t1'] / TICK_MS)))
             l, r = abs(int(n['vol'][0])), abs(int(n['vol'][1]))
-            velo = max(1, min(127, int(round((l + r) / 2 * K))))
+            velo = max(1, min(127, int(round(raw(n) * K))))
             pan = 64 if l + r == 0 else max(0, min(127, int(round(64 + 63 * (r - l) / (l + r)))))
             if i['drum']:
                 key, bends = i['keys'][n['pitch']], []
@@ -260,7 +311,7 @@ def convert(spcdir, name, bank):
 def write_bank(bank):
     # wav's
     for h, m in bank['mel'].items():
-        wav8(SAMPLES + m['name'] + '.wav', m['x'], 32000, m['base'], m['loop'])
+        wav8(SAMPLES + m['name'] + '.wav', m['x'], m['rate'], m['base'], m['loop'])
     for k, d in bank['drums'].items():
         wav8(SAMPLES + d['name'] + '.wav', d['x'], 16000, 60)
     # voicegroup: programma's = melodische samples, 127 = kit

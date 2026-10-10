@@ -18014,3 +18014,25 @@ Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's 
 | Castle | 49 | 50 |
 
 - Wario Land 4 song 687 bleek de Boss-muziek, niet 40 Below Fridge: matchen op duur is te onbetrouwbaar. Wacht op de MP3's van Jordi.
+
+### [v0.9.238] - Yoshi's Island: geen overload, valse tonen of dronken timing meer
+Jordi (10 okt): "alles behalve Athletic heeft nog een soort overload; Flower Gardens fluitje lijkt te hoog en een ander geluid; Athletic klinkt als een dronken versie; Castle is ook te hoog".
+- **Gecontroleerd:** de noten in de MIDI kloppen exact. Per SNES-stem solo afgespeeld (`spclog` heeft nu een mute-masker) en de toonhoogte gemeten: 0,0 halve toon verschil op alle melodische stemmen.
+- **Oorzaak:** de samples. SNES-instrumenten zijn vaak piepkleine golfjes met een loop van 16–112 samples. Rekken (bijstemmen) en verlagen naar 11 kHz maakten de looplengte gebroken en daarna afgerond. Dat gaf tot 1,5% valse toonhoogte (dronken, te hoog) en een loop die niet meer naadloos aansloot (zoem, overload).
+- **`spc2gba.py`:**
+  - samples worden niet meer gerekt; de fijnstemming staat in de samplerate van het bestand;
+  - de sample-amplitude van de SNES gaat in de velocity, zodat instrumenten hun onderlinge balans houden;
+  - de octaafcorrectie is weer weg, want die zat ernaast.
+- **`resample_wav.py`:**
+  - loops onder 128 samples worden niet verlaagd;
+  - langere loops worden periodiek geresampled, met een samplerate die de loop exact een heel aantal samples houdt.
+  - De 98 eigen samples met een loop die in v0.9.232 waren verlaagd, zijn uit git hersteld en opnieuw omgezet. Wallace, Mitch, Darkrai en Jirachi zijn gecontroleerd: geen pieken.
+- **Meting:** profiel per noot tegen het SNES-origineel:
+
+| Nummer | Overeenkomst |
+|---|---|
+| Athletic | 0,98 (was 0,95) |
+| Flower Garden | 0,79 |
+| Overworld / Fuzzy / Castle | 0,48–0,58, octaafverdeling gelijk |
+
+Bij Castle zijn de lage partijen nog wat te zacht.

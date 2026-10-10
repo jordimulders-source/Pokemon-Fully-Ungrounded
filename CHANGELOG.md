@@ -18318,3 +18318,12 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Nieuwe gevechtsintro `B_TRANSITION_SHY_GUY` voor de Shy Squad (Yoshi's Island), de vier Stadium-Shy Guys en de woestijn-Shy Guy, op de maat van Sunset Wilds.
 - Het verloop: zeven Shy Guys (Stilt Guy, Fat Guy, Spear Guy, rood, een struik, geel, Fly Guy) staan in level 1-1 droog op de maat te wiebelen → op tel 3 staan ze stokstijf stil → de rode draait zich om en krijgt het trainer-"!" boven zijn hoofd → de rest kijkt hem één voor één aan (er gluurt een Shy Guy uit de struik) → close-up onder een spotlight, trillend → een Yoshi's Island-hintbord valt in beeld: "Wait. / It's my turn." → witte flits op de inzet van de melodie, het gevecht begint.
 - Art uit Super Mario Advance 3 (`tools/grounded/yi_shyguy_rip.py`, `shyguy_intro.py`, code in `src/data/shyguy_intro.h`). Kost ±14 KB; de intro gebruikt ±600 van de 1024 sprite-tiles.
+
+### [v0.9.262] - Battle! Legendary Pokémon (generiek thema)
+- Nieuw thema `MUS_GROUNDED_VS_LEGENDARY` (670) voor alle legendaries en mythicals zonder eigen thema. Het is in Hoenn-stijl geschreven: E-klein op 176 bpm, een pauk-ostinato zoals de Weather Trio, trompetten en hoorns zoals de Elite Four, strijkers, buisklokken en een chromatische bas. Opbouw: intro met koperroep → thema → strijkers → half-time → fanfare die per twee maten een halve toon stijgt → climax een hele toon hoger. Alleen stock-samples: ±6 KB.
+- Het thema speelt nu bij:
+  - Latias/Latios, Manaphy/Phione, Necrozma (alle vormen), Xerneas/Yveltal, Meloetta, Zygarde, Pecharunt, Zeraora, Celebi;
+  - het meertrio, Eternatus, Calyrex en de paarden, Volcanion, Cresselia, de Loyal Three, Ogerpon, Enamorus;
+  - de Swords of Justice + Keldeo, Reshiram/Zekrom/Kyurem.
+- Ongewijzigd: de Kanto-/Galar-vogels, Dialga/Palkia, Arceus, Mew en de Ultra Beasts (die krijgen nog een eigen thema), plus Deoxys, de Regi's en alles wat al een eigen thema had.
+- Generator: `tools/grounded/legendary_theme.py`.

@@ -32,6 +32,7 @@ def _fft_resample(x, m, periodic=False):
     return np.fft.irfft(X[:m + 1], 2 * m)[:m] * (m / n)
 
 
+KEEP_16K = ('mitch7',)   # Mitch v7 (DnB: zaag-leads en reese leven van 2-7 kHz; 11 kHz = 'goedkoop'): 16 kHz houden
 MIN_LOOP = 128   # kortere loops (chiptune-golfjes van een paar periodes) niet verlagen: afronden maakt ze vals
 
 
@@ -100,7 +101,7 @@ def resample_all(root='.'):
         fmt = next(c for c in chunks(open(w, 'rb').read()) if c[0] == b'fmt ')[1]
         if struct.unpack_from('<H', fmt, 14)[0] != 8:
             continue
-        tgt = 16000 if base_note(w) >= 84 else 11025
+        tgt = 16000 if base_note(w) >= 84 or name.startswith(KEEP_16K) else 11025
         old, new = resample(w, tgt) if rate_of(w) > tgt * 1.05 else (0, 0)
         n += old != new
     return n

@@ -18264,3 +18264,16 @@ Gekozen door Jordi:
   - De paradoxen, Koraidon, Miraidon en Terapagos houden de koppeling, zodat het nieuwe thema daar straks vanzelf klinkt.
   - Wilde gevechten in Area Zero volgen weer de gekozen WILD MUSIC.
   - Het Zero Lab krijgt weer zijn oude placeholders (Frontier Brain, het alarm Kanto-legendary).
+
+### [v0.9.254] - Wario-intro v2: een WarioWare-reeks
+Jordi: "doe de hele intro opnieuw en maak het heel goofy en Wario Ware achtig … kijk in Wario Ware naar de filmpjes … Wario moet echt als een soort gekke superheld/alleskunner uit de intro komen".
+- Een snelle reeks microgame-kaarten. Elke kaart heeft een harde kleur met een patroon, een opdracht in grote letters, en onderin de WarioWare-bomtimer met een opbrandende lont.
+  1. **EAT!** Wario op de bank eet een knoflookbol.
+  2. **INVENT!** Hij krijgt het "Game W Inc"-idee, met dollartekens in de ogen.
+  3. **FLY!** Hij vliegt door de lucht.
+  4. **FLEX!** De dubbele biceps.
+  5. De bom ontploft.
+  6. **WIN!** De grote grijnzende close-up.
+  7. De W neemt als superheldenembleem het beeld over.
+- De art komt uit de filmpjes van WarioWare, Inc., schoon gerenderd uit VRAM/OAM/BG in de emulator (`warioware_rip.py`, reproduceerbaar). De flex is de bestaande art.
+- ±2,7 s, ±25 KB.

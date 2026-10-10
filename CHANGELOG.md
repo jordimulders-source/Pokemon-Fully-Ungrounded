@@ -18182,3 +18182,20 @@ Jordi (10 okt): "Broken Pier is goed. Kan je die heel licht remixen zodat het ne
   - **Kreten en geluidseffecten:** identiek (omhullende 0,978, spectrum binnen 0,2 dB).
   - **Rekentijd:** sneller. Rayquaza-gevecht met filmintro: 34 vertraagde frames per 2400, tegen 46 met de oude mixer.
 - **Wat er overblijft** is de 8-bit-uitgang van de GBA zelf. Volgende stap als Jordi tevreden is: een hogere mixerfrequentie proberen.
+
+### [v0.9.246] - Treasures of Ruin v2, Area Zero v2
+- **Treasures of Ruin v2** (Jordi: "drum ritme is goed, voor de rest alles niet"):
+  - **Het lage tokkelinstrument** in de intro en vanaf ±31 s:
+    - gemeten als een biwa- of lage koto-achtige klank: sterke grondtoon met een felle 6e harmonische (de zoem), heraanslagen in 16en;
+    - Spleeter had het in de stem 'piano' gezet;
+    - eigen sample `ruinous_pluck` (5 keysplits, koto + shamisen-zoem).
+  - **Trompetten** helemaal weg.
+  - **Ostinato:** een bijna zuivere toon met meepulserende kwint (eigen sample `ruinous_ost`); de zaagtand-synth en de PSG zijn eruit.
+  - **Hoorns** weg; strijkers alleen nog onder de roffels.
+  - **Bas en drumritme** gelijk, de drums als gewone voice.
+  - -V100; gemeten: piek 108, 0 overlopen. Nieuwe samples ±55 KB.
+- **Area Zero v2:**
+  - de aria met detune en vibrato en de glijdende koorzuchten zijn weg;
+  - het koor speelt 2 stemmen als lange aangehouden tonen, zonder vibrato en zachter;
+  - piek 72 bij -V127.
+  - Jordi vindt de vocalen nog steeds te ver van het origineel. Volgende stap (de agent werkt eraan): het koor ("YEEEEHOOOO HO") en de aria vanaf ±46 s elk uit het origineel knippen en los A/B'en, zoals bij Tapu.

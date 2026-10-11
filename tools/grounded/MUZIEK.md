@@ -141,6 +141,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Dialga/Palkia (678) | `dialga_theme.py` | v1 wacht op Jordi (uit zijn MIDI, alleen stock-samples, ±9 KB) | "Dialga" |
 | Battle! Ultra Beast (677) | `ub_theme.py`, `ub_samples.py` | v1 wacht op Jordi (eigen compositie, octatonisch/heeltoons, 7/8, glazen FM-lead met microtonale bends; alle UB-gevechten in Ultra Space) | "Ultra Beast" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v8: begeleiding m5-39 + koor + aria uit het origineel geknipt, 682 geschrapt (Jordi) | "Area Zero" |
+| Trainerklasse-remixes van MUS_VS_TRAINER (696-703: SEA, MOUNTAIN, NATURE, MYSTIC, CHIC, ROCK, ELITE, KIDS) | `trclass_theme.py`, `trclass_samples.py` | v1 wacht op Jordi (melodie spoor 2 noot voor noot, bas/akkoorden uit het origineel, groove/instrumenten per groep; alleen bij HOENN/ROTATE) | "Trainerklassen" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -845,3 +846,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   (maat 21-65), stukken van 2 maten, 160-4000 Hz, 8 kHz, DPCM (293 KB), om en om op twee sporen met 60 ms lineaire
   overlap (zelfde opname: lineair, niet gelijk-vermogen), één gezamenlijke normalisatie. Maat 53-64 had alleen
   het pad < 450 Hz (de opbouw/roffels misten hun hoge laag: mix-gelijkenis 0,53 -> 0,73); maat 21-52 0,74 -> 0,86.
+- Trainerklassen v1 (`trclass_theme.py`, 696-703, remixes van `mus_vs_trainer.mid`, tpb 24, loop maat 10-74): **één
+  script, één voicegroup (`grounded_trclass`: de PSG-stemmen van vs_trainer op hun eigen nummers, zodat PSG-sporen 1-op-1
+  mee kunnen; eigen instrumenten per sample) en één kit** voor acht remixes: ±3,4-6,9 KB per nummer + 10 KB samples
+  (steel drum + vibrafoon, 11 kHz DPCM). Bas = de originele basnoten op nieuwe posities (calypso 0/3/6/8/11/14 enz.),
+  akkoorden per halve maat = grondtoon + zwaarste toonklassen van alle sporen (geen kleine secunden); de paukensolo
+  (maat 44-53) wordt per stijl een conga-/taiko-/tom-solo op hetzelfde ritme. **Grondtoon van stock-samples gemeten**
+  (autocorrelatie + laagste sterke spectrumpiek): fluitje C6, shakuhachi C5, ep1_high C5, low distortion C3,
+  powerchord C2 op toets 60 (rest C4). Swing (CHIC) als tijdkaart per tel (12 -> 16 ticks) na het arrangeren.
+  Batchrec: 0 overlopen, piek 97-120/127, max -3,8..-6,4 dB; MYSTIC '1072 Hz' = triangel op de sectiestarts.

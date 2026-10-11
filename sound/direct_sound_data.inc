@@ -8098,3 +8098,11 @@ DirectSoundWaveData_vsaz_8::
 	.align 2
 DirectSoundWaveData_vsaz_9::
 	.incbin "sound/direct_sound_samples/grounded/vsaz_9.bin"
+
+	.align 2
+DirectSoundWaveData_trclass_steel::
+	.incbin "sound/direct_sound_samples/grounded/trclass_steel.bin"
+
+	.align 2
+DirectSoundWaveData_trclass_vibes::
+	.incbin "sound/direct_sound_samples/grounded/trclass_vibes.bin"

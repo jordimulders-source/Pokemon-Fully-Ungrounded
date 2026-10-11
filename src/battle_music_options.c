@@ -75,3 +75,15 @@ u16 GetChosenTrainerBattleMusic(void)
         return sTrainerRotation[GetGameStat(GAME_STAT_TRAINER_BATTLES) % ARRAY_COUNT(sTrainerRotation)];
     return gTrainerBattleMusicOptions[choice].song;
 }
+
+// Project Grounded: de trainerklasse-remixes van MUS_VS_TRAINER (tools/grounded/trclass_theme.py) spelen alleen als de
+// speler HOENN of ROTATE koos; een gekozen specifiek trainerthema (KANTO, COLRESS, ...) blijft gerespecteerd.
+bool32 TrainerClassRemixAllowed(void)
+{
+    u16 choice = VarGet(VAR_BATTLE_MUSIC_TRAINER);
+
+    if (choice >= ARRAY_COUNT(gTrainerBattleMusicOptions))
+        choice = 0;
+    return gTrainerBattleMusicOptions[choice].song == MUS_NONE
+        || gTrainerBattleMusicOptions[choice].song == MUS_VS_TRAINER;
+}

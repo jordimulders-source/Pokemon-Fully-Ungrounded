@@ -10,10 +10,10 @@ R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC = R + '/graphics/title_screen/emerald_version.png'
 FONT = '/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf'
 TEXT = 'UNGROUNDED'
-W, H = 128, 32
+W, H = 192, 32              # drie sprites van 64x32 (title_screen.c)
 S = 8                       # oversampling
-ANGLE = 4.0                 # graden, stijgt naar rechts zoals EMERALD
-BOX = (3, 5, 124, 25)       # doelvak van de letters (x0, y0, x1, y1), omlijning valt erbuiten
+ANGLE = 0.0                 # recht (Jordi: 'zet het maar recht onder pokemon')
+BOX = (19, 6, 173, 27)      # gecentreerd (x 96), net onder het Pokémon-logo       # doelvak van de letters (x0, y0, x1, y1), omlijning valt erbuiten
 TRACK = -0.02               # letterafstand (fractie van de letterhoogte)
 
 def render():
@@ -31,7 +31,8 @@ def render():
         bb = font.getbbox(c)
         d.text((x - bb[0], 20 * S - asc[1]), c, font=font, fill=255)
         x += w + gap
-    big = big.rotate(ANGLE, resample=Image.BICUBIC, expand=True)
+    if ANGLE:
+        big = big.rotate(ANGLE, resample=Image.BICUBIC, expand=True)
     bb = big.getbbox()
     big = big.crop(bb)
     bw, bh = BOX[2] - BOX[0], BOX[3] - BOX[1]

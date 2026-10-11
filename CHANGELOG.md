@@ -18608,3 +18608,24 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 ### [v0.9.295] - 1.0-audit: trainers en wild
 - Mugshot-slide voor de post-game-gevechten in Paradiso Resort: Misty (blauw), Erika (groen) en Cynthia (paars).
 - Audit: de overige trainer- en wild-meldingen zijn bewust en staan nu in `IGNORE` (`tools/grounded/audit.py`): routedelen en kamers die je later bereikt of grap-trainers; Steven, Mimi en de taakstraf-gevechten van Archie/Maxie hebben een eigen transitie; Artisan Cave is, zoals vanilla, een Smeargle-grot. Trainers en wild: 0 meldingen.
+
+### [v1.0.0] - Project Grounded 1.0
+**De beta is er.** Alle geplande gebieden, quests, legendaries, intro's en thema's zitten erin. Vanaf hier: Jordi's complete testrun en bugfixes; na de 1.0 komen er alleen nog moves/abilities (en eventueel shinies) bij.
+
+- **Trainerklasse-intro's v2** (lichte intro's, alleen code plus art die al in de ROM stond; `src/data/class_intros2_a/b/c.h`), elk op de tel van de muziek:
+  - **Fisherman**: een laars, een visgraat en Magikarp (again) aan de haak, met een groeiend lijstje ("4. oh no."), dan buigt de hengel dubbel en komt er een gigantisch zeemonster omhoog.
+  - **Guitarist**: Guitar Hero-fretboard in perspectief, noten op de tel (E5, A5, D5, G5), slot met een POWER CHORD.
+  - **Ninja Boy**: handtekens RAM! SNAKE! TIGER!, schaduwklonen (1, 3, 7), een blauwe wervelbol in een bladerwervel, poef: "BELIEVE IT."
+  - **Collector** (had nog geen intro): holo-kaarten, "LOSERS.", een glimmende bril en een gigantische Wailord-knuffel (labeltje: MINT).
+  - **Hiker**: superheld-sprongen van piek naar piek, met cape, tot de droomwolk zichtbaar wordt; de echte Hiker lacht HO HO HO.
+  - **Psychic**: Poké Ball, Potion, TwistedSpoon en Old Rod zweven wiebelig omhoog… en vallen allemaal tegelijk. "…plop."
+  - **Bird Keeper**: lanceert een Wingull de lucht in; die landt meteen bij een Oran Berry. "…wtf."
+  - **Battle Girl** (Black Belt houdt de karateslag): flying kick door een muur, een rotsblok, een bunker, de maan en de zon. HAIYAAAH.
+  - **Bug Catcher/Bug Maniac**: het net vangt bijen, dan zoemt er een mug, KLAP. "ehh… busted?"
+  - **Pokéfan** (Breeder houdt de hartjes): knuffels ploppen op (als laatste "de grote" Wailord), glinsterogen, "……".
+  - **Aroma Lady**: een kruidentuin groeit en bloeit, tot een zwerm insecten de oogst verknalt. "…organic, they said."
+  - **Parasol Lady**: RAIN, HAIL, HEATWAVE en SANDSTORM ketsen allemaal af op haar parasol. "Lovely weather."
+  - Debug > Battle test: "Class intro: …"-ingangen per klasse. Samen ±31 KB.
+- **Playthrough-sweep** (emulator, automatisch): alle 718 kaarten geladen, alle 1406 warp-landingen, alle Battle test-gevechten (intro, muziek, gewonnen) en een wild gevecht op alle 246 kaarten met encounters. Geen crashes, hangers of kapotte kaarten in normaal spel. Na het samenvoegen van de intro's opnieuw getest: alle 20 klasse-gevechten in orde.
+- Tas: foutmeldingen ("There's nothing to sort!") sluiten nu ook met B.
+- Audit: 0 FOUT; songtabel in orde. **ROM: 1,11 MB vrij** (doel ≥ 512 KB).

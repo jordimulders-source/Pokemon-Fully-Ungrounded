@@ -59,19 +59,7 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - Nieuwe legendaries uit de uitbreidingen: Reshiram, Zekrom, Kyurem, Spacetime Cave (Mewtwo-Cerulean, meertrio, Celebi, Dialga, Palkia, Arceus).
 - Maxie & Archie: Jordi was "geen grote fan", sterker maken. (5 okt)
 
-**Trainerklasse-intro's v2 (Jordi 11 okt; pas na de playthrough-bugronde; licht qua KB's, vervangen de huidige in `class_intros.h`):**
-- Fisherman: kansloze vangsten (kapotte laars, visgraat, Magikarp…), dan een enorme vangst = het gevecht.
-- Guitarist: Guitar Hero-achtig ritmespel met akkoorden.
-- Hiker: springt als superheld een berg op, blijkt een droomwolk; lachende sprite "HOHOHO".
-- Psychic: amateur-zweven met gewone items, die vallen uiteindelijk.
-- Bird Keeper: stuurt een Wingull de wereld in, die landt meteen om voer te eten; Bird Keeper: wtf.
-- Bug Catcher: vangt bugs, dan een mug in beeld, slaat hem dood: "ehh, busted?".
-- Battle Girl: flying-kick-pose breekt muren, rotsen, bunkers, uiteindelijk maan en zon, HAIYAAAH.
-- Pokéfan: staat in awe naar plushies te kijken.
-- Collector: Pokémon-kaarten, "LOSERS", glimmende bril, dan blijkt hij een enorme Wailord-plushie te hebben.
-- Aroma Lady: omringd door een kruidentuin tot insecten de oogst verknallen.
-- Parasol Lady: blokt al het weer met haar parasol.
-- Ninja Boy: geniale Naruto-intro.
+~~**Trainerklasse-intro's v2**~~ (v1.0.0): Fisherman, Guitarist, Hiker, Psychic, Bird Keeper, Bug Catcher, Battle Girl, Pokéfan, Collector, Aroma Lady, Parasol Lady, Ninja Boy.
 
 **Muziek** (status uit `tools/grounded/MUZIEK.md` en de changelog):
 - Wacht op Jordi's oordeel: **Neo Plasma** v12k (v0.9.109), **Brawly** v6 Rocky-stijl (v0.9.98), **Regigigas** v5, **Burglar** v1 (v0.9.93). Batch 5 (v0.9.88) was verder "zeer tot gematigd tevreden".

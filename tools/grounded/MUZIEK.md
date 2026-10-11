@@ -136,6 +136,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py`; 682: `vs_areazero_theme.py`, `vs_areazero_samples.py` | 681 v10: begeleiding m1-64 + koor + aria uit het origineel; 682 v1: het origineel in 10 knippen (11025 Hz, DPCM) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
+| Hoenn-wildthema regionaal (673 vulkaan, 674 woestijn, 675 water, 680 onderwater) | `regio_theme.py`, `regio_samples.py` | v1 wacht op Jordi (remixes van mus_vs_wild: melodie/tweede stem/bas van het origineel, begeleiding nieuw; stock + 1 steel drum) | "Regio" |
 | Battle! Legendary Pokémon (670) | `legendary_theme.py` | v1 wacht op Jordi (generiek legendary-thema, Hoenn-stijl: Weather Trio-pauken, E4-koper, 176 bpm, alleen stock-samples) | "Legendary" |
 | Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
 | Battle! Dialga/Palkia (678) | `dialga_theme.py` | v1 wacht op Jordi (uit zijn MIDI, alleen stock-samples, ±9 KB) | "Dialga" |
@@ -855,3 +856,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   (autocorrelatie + laagste sterke spectrumpiek): fluitje C6, shakuhachi C5, ep1_high C5, low distortion C3,
   powerchord C2 op toets 60 (rest C4). Swing (CHIC) als tijdkaart per tel (12 -> 16 ticks) na het arrangeren.
   Batchrec: 0 overlopen, piek 97-120/127, max -3,8..-6,4 dB; MYSTIC '1072 Hz' = triangel op de sectiestarts.
+- Regio v1 (`regio_theme.py`, remixes van `mus_vs_wild.mid`, tpb 24 -> 96): **in het B-deel (maat 18-25) draagt spoor 1
+  (hoorn, 3+3+2) de melodie en spoor 2 de lange bovenstem**: `roles()` wisselt ze daar, anders krijgt de lead daar
+  alleen aangehouden noten. Woestijn = frygisch-dominant door alleen D->Db, A->Ab en Eb->E (het C-deel met Db en de
+  riff C#-Eb klopten al bijna); Bb wordt dan Bbm. Harp-golven onder de melodie houden (`lowest_lead()`, octaaf
+  omlaag); harp-release 190 -> 165 haalde 6,5% -> 0,6% weg. Onderwater: bloop = PSG-vierkant 1 met sweep omhoog
+  (sweep 21 = tijd 1, shift 5), sub op de PSG-golf, golvende bend op de pad (BENDR 2), echo = melodie 3 16en later.

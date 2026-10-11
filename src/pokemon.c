@@ -22,6 +22,7 @@
 #include "field_player_avatar.h"
 #include "field_specials.h"
 #include "field_weather.h"
+#include "wild_encounter.h"
 #include "fishing.h"
 #include "follower_npc.h"
 #include "graphics.h"
@@ -6365,6 +6366,48 @@ static bool32 IsMagikarpOnlyWildBattle(void)
     return count != 0;
 }
 
+// Project Grounded (Jordi: "remix de hoenn battle theme naar bepaalde regio's"): regionale remixes van het
+// Hoenn-wildthema (tools/grounded/regio_theme.py), alleen als de wildmuziek op ROTATE/HOENN staat en geen
+// specifiekere keuze (Pokemon Tower, jungle, Yoshi's Island, ...) eerder geldt. Volgorde: onderwater, water,
+// woestijn, vulkaan.
+static u16 GetRegionalWildBattleMusic(void)
+{
+    u16 mapsec = gMapHeader.regionMapSectionId;
+
+    if (gMapHeader.mapType == MAP_TYPE_UNDERWATER || TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_UNDERWATER))
+        return MUS_GROUNDED_VS_WILD_UNDERWATER;
+    if (gIsFishingEncounter || TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+        return MUS_GROUNDED_VS_WILD_WATER;
+    // woestijn: de zandstorm op Route 111 (zelfde vak als Route111_EventScript_CheckSetSandstorm), Desert Underpass,
+    // Mirage Tower en de Desert Ruins
+    if (mapsec == MAPSEC_ROUTE_111
+     && (GetCurrentWeather() == WEATHER_SANDSTORM
+      || (gSaveBlock1Ptr->pos.y >= 34 && gSaveBlock1Ptr->pos.y <= 107 && (gSaveBlock1Ptr->pos.y > 72 || gSaveBlock1Ptr->pos.x >= 8))))
+        return MUS_GROUNDED_VS_WILD_DESERT;
+    switch (mapsec)
+    {
+    case MAPSEC_DESERT_UNDERPASS:
+    case MAPSEC_MIRAGE_TOWER:
+    case MAPSEC_DESERT_RUINS:
+        return MUS_GROUNDED_VS_WILD_DESERT;
+    case MAPSEC_MT_CHIMNEY:
+    case MAPSEC_JAGGED_PASS:
+    case MAPSEC_JAGGED_PASS2:
+    case MAPSEC_FIERY_PATH:
+    case MAPSEC_FIERY_PATH2:
+    case MAPSEC_ROUTE_112:
+    case MAPSEC_ROUTE_113:
+    case MAPSEC_SCORCHED_SLAB:
+    case MAPSEC_MAGMA_HIDEOUT:
+    case MAPSEC_LAVARIDGE_TOWN:
+    case MAPSEC_STEAM_ISLAND:
+    case MAPSEC_MT_EMBER:
+    case MAPSEC_KINDLE_ROAD:
+        return MUS_GROUNDED_VS_WILD_VOLCANO;
+    }
+    return MUS_NONE;
+}
+
 u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
@@ -6553,6 +6596,12 @@ u16 GetBattleBGM(void)
         return MUS_GROUNDED_YI_OVERWORLD; // Project Grounded: Yoshi's Island-overworld (SPC-rip) bij wilde gevechten op het eiland
     if (gMapHeader.regionMapSectionId == MAPSEC_FORTREE_JUNGLE || gMapHeader.regionMapSectionId == MAPSEC_MANGROVE_MIRE)
         return MUS_GROUNDED_MKSC_LAKESIDE_PARK; // Project Grounded: wilde gevechten in de jungle op Lakeside Park (Mario Kart: Super Circuit; Jordi 10 okt)
+    if (IsDefaultWildBattleMusicChoice())
+    {
+        u16 regional = GetRegionalWildBattleMusic();
+        if (regional != MUS_NONE)
+            return regional;
+    }
     return GetChosenWildBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_WILD)
     }
 }

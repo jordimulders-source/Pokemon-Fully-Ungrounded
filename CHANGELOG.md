@@ -18557,3 +18557,12 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Trainer-id's waren op:** drie ongebruikte vanilla-id's zijn omgedoopt tot `TRAINER_RIVAL_POSTGAME_*` (Wallace als oud-kampioen, Red, Leaf). `src/rival_postgame.c` kiest het juiste team op geslacht en fase.
 - **Flags:** `FLAG_GROUNDED(1760–1762)`. Het oude Paradiso-flag hoort nu alleen bij Dave.
 - Debug Battle test: "Rival post-game".
+
+### [v0.9.288] - Wilde remixen per regio
+- Vier remixen van het Hoenn wild battle-thema (`MUS_VS_WILD`). Melodie, tweede stem en bas komen noot voor noot uit het origineel, met nieuwe begeleiding; vorm en loop zoals het origineel.
+  - **Vulkaan (673):** 204 bpm, distortion-lead, koperstoten, taiko in 3+3+2 en lavaloopjes. Mt. Chimney, Jagged Pass, Fiery Path, Routes 112/113, Lavaridge, Scorched Slab, Magma Hideout, Steam Island.
+  - **Woestijn (674):** C-frygisch-dominant, hobo met mordenten, oud, darbuka en zandwind. Route 111 bij zandstorm, Desert Underpass, Mirage Tower, Desert Ruins.
+  - **Water (675):** steeldrum, harp-golven, calypso-bas en conga's. Bij surfen en vissen.
+  - **Onderwater (680):** half-time, zachte EP met trage vibrato, donkere koorpad, sub-bas en stijgende bloop-belletjes. Bij duiken.
+- Alleen bij wildmuziek HOENN of ROTATE; bestaande uitzonderingen (Pokémon Tower, Yoshi's Island, jungle, …) gaan voor. ±19 KB.
+- Generator: `tools/grounded/regio_theme.py`. De YI-samples blijven ongecomprimeerd (een merge had er één teruggezet).

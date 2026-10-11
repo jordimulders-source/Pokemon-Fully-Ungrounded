@@ -684,14 +684,14 @@ gSongTable::
 	song mus_grounded_vs_legendary, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_mksc_lakeside_park, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_mksc_rainbow_road, MUSIC_PLAYER_BGM, 0
-	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 673 (ander werk, wordt bij het samenvoegen vervangen)
-	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 674 (ander werk, wordt bij het samenvoegen vervangen)
-	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 675 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_grounded_vs_wild_volcano, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wild_desert, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wild_water, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_arceus, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_ultra_beast, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_dialga_palkia, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_mew, MUSIC_PLAYER_BGM, 0
-	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: plaatshouder 678 (ander werk, wordt bij het samenvoegen vervangen)
+	song mus_grounded_vs_wild_underwater, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_area_zero, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_area_zero, MUSIC_PLAYER_BGM, 0 @ 682
 	song mus_grounded_vs_ruinous, MUSIC_PLAYER_BGM, 0

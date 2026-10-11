@@ -8106,3 +8106,6 @@ DirectSoundWaveData_trclass_steel::
 	.align 2
 DirectSoundWaveData_trclass_vibes::
 	.incbin "sound/direct_sound_samples/grounded/trclass_vibes.bin"
+	.align 2
+DirectSoundWaveData_regio_steeldrum::
+	.incbin "sound/direct_sound_samples/grounded/regio_steeldrum.bin"

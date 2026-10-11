@@ -112,3 +112,4 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - ~~**Elemental monkeys** blijven weg.~~ Sinds 9 okt toegestaan op passende routes.
 - **Dialogen van Trick House, Battle Frontier en Battle Tents** blijven vanilla tot na de beta.
 - **Na de 1.0:** extra shinies (7 kleurvarianten per Pokémon, afgeleid uit de persoonlijkheid: geen save-ruimte; ±250 KB voor gevechtssprites, ±500 KB met overworld; automatisch genereren + door Jordi laten keuren). Eerst kijken wat er na de 1.0 weg kan. (Jordi 10 okt)
+- **Muziek-lint:** `music_lint.py` en `musiclib.release_ticks` laten rekenen met de echte m4a-envelope (`channel_end()` in `route119_battle_theme.py`); andere nummers kunnen ongemerkt noten verliezen.

@@ -138,6 +138,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
 | Hoenn-wildthema regionaal (673 vulkaan, 674 woestijn, 675 water, 680 onderwater; v1.0.x lichte variaties 704 zee, 705 sneeuw, 706 spook, 707 nacht) | `regio_theme.py`, `regio_samples.py` | v1 wacht op Jordi (remixes van mus_vs_wild: melodie/tweede stem/bas van het origineel, begeleiding nieuw; stock + 1 steel drum) | "Regio" |
 | Battle! Legendary Pokémon (670) | `legendary_theme.py` | v1 wacht op Jordi (generiek legendary-thema, Hoenn-stijl: Weather Trio-pauken, E4-koper, 176 bpm, alleen stock-samples) | "Legendary" |
+| Hoenn-wildthema grotten (708 grot, 709 Meteor Falls, 710 Fiery Path) | `regio_theme2.py` | v1 wacht op Jordi (lichte remixes van mus_vs_wild, helpers uit regio_theme.py; alleen stock-samples) | "Grot-remixes" |
 | Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
 | Battle! Dialga/Palkia (678) | `dialga_theme.py` | v1 wacht op Jordi (uit zijn MIDI, alleen stock-samples, ±9 KB) | "Dialga" |
 | Battle! Ultra Beast (677) | `ub_theme.py`, `ub_samples.py` | v1 wacht op Jordi (eigen compositie, octatonisch/heeltoons, 7/8, glazen FM-lead met microtonale bends; alle UB-gevechten in Ultra Space) | "Ultra Beast" |
@@ -882,3 +883,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   accordeon en fluit C4. Sneeuw: een crash op de sectiestarts + glockenspiel-release 200 kostte de strijkers 10% en
   de glinsteringen 10%: crash eruit (triangel, past bij 'kaal'), glock-release 160 -> 2,6%. Batchrec: 0 overlopen,
   piek 78-93, RMS ±2300-3300, constante 'tonen' 27-60 Hz = bas/kick (breedband, geen fluittoon), 119,5 Hz = frames.
+- Grot-remixes v1 (`regio_theme2.py`, 708-710, importeert orig/roles/section/CH uit `regio_theme.py`): galm = de
+  lead 3 16en later op een zacht DS-spoor (laagste prioriteit in `allocate`, valt als eerste weg); druppels = PSG-vierkant 1
+  met sweep omhoog (19 = tijd 1, shift 3, decay 1) + twee PSG-echo's; holle bas = fretless een octaaf lager + dezelfde
+  noten op de PSG-golf. **Twee PSG-ruissporen delen één ruiskanaal**: in Fiery Path gaan de hihat-tikken op in het
+  knetteren (één spoor). Batchrec: 0 overlopen, piek 94-96, max -5,2..-5,9 dB, RMS 2900-3900.

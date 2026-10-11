@@ -644,6 +644,9 @@
 #define MUS_GROUNDED_VS_WILD_SNOW 705 // Project Grounded: Hoenn-wildthema, sneeuw/ijsremix (Shoal Cave, Coldstep Cave, Route 135/136, Ashfrost, Frost Hollow, ...; tools/grounded/regio_theme.py)
 #define MUS_GROUNDED_VS_WILD_SPOOKY 706 // Project Grounded: Hoenn-wildthema, spookremix (Mt. Pyre, Abandoned Ship, Sky Pillar; tools/grounded/regio_theme.py)
 #define MUS_GROUNDED_VS_WILD_NIGHT 707 // Project Grounded: Hoenn-wildthema, nachtremix (routes en steden 's nachts; tools/grounded/regio_theme.py)
+#define MUS_GROUNDED_VS_WILD_CAVE   708 // Project Grounded: Hoenn-wildthema, grotremix (alle grotten zonder eigen remix; tools/grounded/regio_theme2.py)
+#define MUS_GROUNDED_VS_WILD_METEOR 709 // Project Grounded: Hoenn-wildthema, Meteor Falls-remix (avontuurlijk, koper; tools/grounded/regio_theme2.py)
+#define MUS_GROUNDED_VS_WILD_FIERY  710 // Project Grounded: Hoenn-wildthema, Fiery Path-remix (vurige grot; tools/grounded/regio_theme2.py)
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

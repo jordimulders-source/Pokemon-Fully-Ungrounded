@@ -902,3 +902,10 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   `legato` = zachte echo-aanslag (zelfde toon, vel <= 40, direct na de vorige) samenvoegen tot één noot,
   `rel_cap`). Lilycove's echo's legato halveren de DS-drukte (lint 13 momenten >10 -> 0). De andere 12 bleven
   byte-identiek (md5); Slateport -V070 -> 084 omdat brushes + dunnere hats de RMS naar ±1750 brachten.
+- Regio v2 (705 sneeuw, 706 spook, 707 nacht; Jordi: sneeuw 'instrument vanaf 7 sec, dominant, heel irritant', spook
+  'vocalen te dominant', nacht 'intro valt een beetje weg'). Solo per m4a-spoor (volX = 0 op de rest, RMS + aandeel
+  > 2 kHz per seconde): **het irritante sneeuw-instrument = de sleebelletjes op de achtsten** (vanaf maat 6 = 7,7 s;
+  drumspoor > 2 kHz 135 -> 960, bijna alle hoge energie van de mix); nu alleen een schud op de sectiestarts + een
+  roffel van 4 16en (mix > 2 kHz 1050 -> 480). Koor solo was luider dan het orgel (1140 vs 1050): nu alleen in B/C,
+  een octaaf lager, CC7 76 -> 36 (-> 470). Nacht-intro miste de hoge triller van het origineel (alle v1.0.x-remixen
+  slaan de lead in maat 0-1 over): triller op fluit + strijkers onder val en riff; intro-RMS 2590 -> 2860 = loop.

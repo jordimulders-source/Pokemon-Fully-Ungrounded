@@ -16,10 +16,11 @@ v1.0.x, lichte variaties (Jordi 11 okt: "het hoeven allemaal echt maar lichte va
   704 MUS_GROUNDED_VS_WILD_SEA      zee (surfen/vissen op zeeroutes en bij kustplaatsen): 180 bpm, accordeon, hoorns,
                                     brede strijkers, shanty-stamp met tamboerijn, bekkenzwellen, PSG-branding
   705 MUS_GROUNDED_VS_WILD_SNOW     sneeuw/ijs: fluit, glockenspiel-glinsteringen en ijsloopjes, pizzicato,
-                                    sleebelletjes, PSG-wind, kaler (geen pad)
+                                    PSG-wind, kaler (geen pad); v2: sleebelletjes alleen nog als accent
   706 MUS_GROUNDED_VS_WILD_SPOOKY   spookachtig: 180 bpm, kerkorgel, PSG-klavecimbel, gebroken akkoord met tritonus,
-                                    koorwaas met kleine terts, doodsklok, pauken
-  707 MUS_GROUNDED_VS_WILD_NIGHT    nacht: 176 bpm, zachte EP, fluit, pizzicato, licht drumpatroon, PSG-krekels
+                                    koorwaas met kleine terts (v2: alleen B/C, lager en zachter), doodsklok, pauken
+  707 MUS_GROUNDED_VS_WILD_NIGHT    nacht: 176 bpm, zachte EP, fluit, pizzicato, licht drumpatroon, PSG-krekels;
+                                    v2: voller intro (triller op fluit, strijkers onder val en riff)
 
 Vorm, melodie en harmonie blijven die van het origineel (tick x 4: tpb 24 -> 96): intro maat 0-10 (chromatische val,
 de C-Db-riff in 3+3+2, maat 10), loop maat 11-42 (A 10-17, B 18-25, C 26-33, riff 34-41, maat 42 = maat 10). Van het
@@ -772,24 +773,25 @@ def snow(O):
         t0 = b * BAR
         sec = section(b)
         if b < 2:
-            for k in range(0, 16, 2 if b == 0 else 1):
-                P['drums'].append([t0 + k * S, t0 + k * S + D[SLEIGH], SLEIGH, 90 + 2 * k if b else 96])
+            for k in range(0, 16, 4 if b == 0 else 2):
+                P['drums'].append([t0 + k * S, t0 + k * S + D[SLEIGH], SLEIGH, 80 + k if b else 84])
             if b == 0:
                 drum(P, t0, (0,), TRI, 104, D)
             continue
         drum(P, t0, (0, 8) if sec != 'C' else (0, 8, 10), KICK, 112, D)
         drum(P, t0, (4, 12), RIM, 104, D)
-        if not (sec == 'R1' and b < 6):
-            for k in range(0, 16, 2):
-                P['drums'].append([t0 + k * S, t0 + k * S + D[SLEIGH], SLEIGH, 108 if k % 4 == 0 else 92])
+        # v2 (Jordi: 'een instrument dat vanaf 7 sec erin komt en daarna dominant wordt, heel irritant'): de
+        # sleebelletjes op de achtsten (vanaf maat 6 = 7,7 s) waren solo gemeten bijna alle energie boven 2 kHz van
+        # de mix. Nu alleen een zachte schud op de sectiestarts en een korte roffel aan het eind van elke frase.
         if b in (2, 10, 18, 26, 34, 42):               # kaal: triangel i.p.v. een crash op de sectiestarts
             drum(P, t0, (0,), TRI, 108, D)
+            drum(P, t0, (0,), SLEIGH, 84, D)
         elif b % 4 == 2 and sec in ('A', 'B', 'C'):
             drum(P, t0, (0,), TRI, 96, D)
-        if b in PHRASE_END:                            # sleebelletjes-roffel onder het ijsloopje
+        if b in PHRASE_END:                            # korte sleebelletjes-roffel onder het ijsloopje
             P['drums'] = [x for x in P['drums'] if not (t0 + 8 * S <= x[0] < t0 + BAR)]
-            for k in range(8, 16):
-                P['drums'].append([t0 + k * S, t0 + k * S + D[SLEIGH], SLEIGH, 92 + 3 * (k - 8)])
+            for k in range(12, 16):
+                P['drums'].append([t0 + k * S, t0 + k * S + D[SLEIGH], SLEIGH, 78 + 3 * (k - 12)])
             drum(P, t0, (8,), KICK, 108, D)
     over = {
         35: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 253, 0, 149',
@@ -856,11 +858,13 @@ def spooky(O):
                 continue
             P['arp'].append([t, t + S + 6, n, 100 if i % 4 == 0 else 88])
     # koorwaas: per halve maat grondtoon, dan de kleine terts (mineur-kleuring tegen de grote terts van de melodie)
-    for b in range(2, END_BAR):
+    # v2 (Jordi: 'de vocalen zijn te dominant'; solo gemeten luider dan het orgel): alleen nog in B en C
+    # (maat 18-33), een octaaf lager (onder de melodie, donkerder) en spoorvolume 76 -> 36.
+    for b in range(18, 34):
         r, _ = CH[b]
         for h, iv in ((0, 0), (1, 3)):
-            n = 60 + (r + iv) % 12
-            if n > 66:
+            n = 48 + (r + iv) % 12
+            if n > 54:
                 n -= 12
             t = b * BAR + h * 8 * S
             P['choir'].append([t, t + 8 * S - 6, n, 96])
@@ -901,7 +905,7 @@ def spooky(O):
         ('organ', 19, 104, 0, 64),
         ('hpsi', 80, 52, 1, 80),
         ('arp', 81, 40, 2, 44),
-        ('choir', 52, 76, 3, 56),
+        ('choir', 52, 36, 3, 56),
         ('bass', 33, 104, 4, 64),
     ]
     order = ['organ', 'drums', 'bass', 'choir']
@@ -917,19 +921,35 @@ def night(O):
     KICK, RIM, TRI, CYM = range(36, 40)
     D = {KICK: 2 * S, RIM: 2 * S, TRI: 3 * S, CYM: 6 * S}
     lead, second = roles(O)
+    # v2 (Jordi: 'bij night valt de intro een klein beetje weg'): de intro had alleen de chromatische val op de EP
+    # en daarna de riff in korte EP-stoten + pizzicato. Nu: de hoge triller van het origineel (maat 0-1) op de
+    # fluit, de val luider en een octaaf lager gedubbeld op zachte strijkers, de riff (R1/R2) luider op de EP en
+    # liggende strijkers (grondtoon + kwint per halve maat) eronder als body; de rest blijft gelijk.
     for s, e, n, v in lead:
         sec = section(bar_of(s))
         if sec == 'I':
+            P['flute'].append([s, e, n, 100 + (s % BAR) // 32])
             continue
-        P['ep'].append([s, min(e, s + 2 * S) if sec in ('R1', 'R2') else e, n, 116 if e - s > 2 * S else 108])
+        if sec in ('R1', 'R2'):
+            P['ep'].append([s, min(e, s + 2 * S), n, 122 if e - s > S else 116])
+        else:
+            P['ep'].append([s, e, n, 116 if e - s > 2 * S else 108])
     for s, e, n, v in second:
         sec = section(bar_of(s))
         if sec == 'I':
-            P['ep'].append([s, e, n, 100 + (s % BAR) // 24])
+            P['ep'].append([s, e, n, 112 + (s % BAR) // 32])
+            P['str'].append([s, e, n - 12, 100 + (s % BAR) // 32])
         elif sec in ('R1', 'R2'):
-            P['pizz'].append([s, min(e, s + 2 * S), n, 108])
+            P['pizz'].append([s, min(e, s + 2 * S), n, 116])
         else:
             P['flute'].append([s, max(e, s + 2 * S), n, 100])
+    for b in list(range(2, 10)) + list(range(34, 42)):
+        r, _ = CH[b]
+        for h in (0, 1):
+            t = b * BAR + h * 8 * S
+            for iv in (0, 7):
+                n = 48 + (r + iv) % 12
+                P['str'].append([t, t + 8 * S - 6, n, 96])
     for s, e, n, v in O[3]:
         P['bass'].append([s, e, n, 112])
     rnd = random.Random(707)                            # krekels: korte trillers van 4 32en, hoog en zacht
@@ -983,8 +1003,9 @@ def night(O):
         ('bass', 35, 104, 3, 64),
         ('hat', 121, 32, 10, 64),
         ('crick', 81, 20, 6, 96),
+        ('str', 48, 62, 4, 44),
     ]
-    order = ['ep', 'drums', 'bass', 'flute', 'pizz']
+    order = ['ep', 'drums', 'bass', 'flute', 'pizz', 'str']
     return dict(name='night', title='nacht', bpm=176, P=P, CC=CC, EX=EX, over=over, kit=kit, layout=layout,
                 order=order, kit_rel=170, brass=())
 

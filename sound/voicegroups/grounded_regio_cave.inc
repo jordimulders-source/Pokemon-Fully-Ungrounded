@@ -81,7 +81,7 @@ voice_group grounded_regio_cave
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_square_1 60, 0, 19, 1, 0, 1, 0, 0  @ 80
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83

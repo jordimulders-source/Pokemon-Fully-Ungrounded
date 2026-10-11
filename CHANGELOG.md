@@ -18524,3 +18524,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 ### [v0.9.284] - Celebi-intro: Johto-reis naar Ilex Forest
 - Na de GBC-reset (ongewijzigd, goedgekeurd) volgen op de achtsten drie iconische Johto-plekken in vier groentinten: New Bark Town (Elms lab), Goldenrod (de Radio Tower) en Ecruteak (de Tin Tower). De reis stopt in Ilex Forest bij het schrijn, met dwarrelende blaadjes, gevolgd door de GSC-flitsen, de spin naar zwart en de tijdreisflits.
 - Gerenderd uit de echte pokecrystal-kaartdata (`tools/grounded/celebi_gsc.py`): 93 tiles, +2,4 KB.
+
+### [v0.9.285] - Debug: Battle test en Legendary battle bijgewerkt
+- **Battle test…** (Utilities) heeft nu alle nieuwe intro's en thema's: de Shy Guy-varianten, Commander Boo, Wario, Agatha (Pokémon Tower) en 31 legendaries met een eigen intro of thema. Latias/Latios lopen via hun eigen Lati-gevecht.
+- **Legendary battle…** heeft 60 legendaries meer, met hun echte intro en muziek (vangbaar).
+- **Bugfix:** debuglijsten toonden maximaal 50 regels; alles daarna viel stil weg (Battle test had er al 84). Het maximum is nu 160.
+- Volgen nog: de rivaal-, class-, regio- en trainer-remixen, zodra die klaar zijn.

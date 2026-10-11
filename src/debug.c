@@ -176,7 +176,7 @@ enum DebugBattleEnvironment
 #define DEBUG_NUMBER_ICON_X 210
 #define DEBUG_NUMBER_ICON_Y 50
 
-#define DEBUG_MAX_MENU_ITEMS 50 // Project Grounded: was 20; Utilities en Legendary battle hadden er al meer (buffer-overflow)
+#define DEBUG_MAX_MENU_ITEMS 160 // Project Grounded: was 20, daarna 50; "Battle test…" heeft er >100 (alles boven het maximum viel stil weg)
 #define DEBUG_MAX_SUB_MENU_LEVELS 4
 
 // *******************************
@@ -375,6 +375,66 @@ extern const u8 Debug_EventScript_EWRAMCounters[];
 extern const u8 Debug_Follower_NPC_Event_Script[];
 extern const u8 Debug_Follower_NPC_Not_Enabled[];
 extern const u8 Debug_EventScript_Steven_Multi[];
+extern const u8 Debug_EventScript_Legend_G_ArceusNormal[];
+extern const u8 Debug_EventScript_Legend_G_Dialga[];
+extern const u8 Debug_EventScript_Legend_G_Palkia[];
+extern const u8 Debug_EventScript_Legend_G_GiratinaAltered[];
+extern const u8 Debug_EventScript_Legend_G_Celebi[];
+extern const u8 Debug_EventScript_Legend_G_Uxie[];
+extern const u8 Debug_EventScript_Legend_G_Mesprit[];
+extern const u8 Debug_EventScript_Legend_G_Azelf[];
+extern const u8 Debug_EventScript_Legend_G_Cresselia[];
+extern const u8 Debug_EventScript_Legend_G_MeloettaAria[];
+extern const u8 Debug_EventScript_Legend_G_Zeraora[];
+extern const u8 Debug_EventScript_Legend_G_Zygarde50[];
+extern const u8 Debug_EventScript_Legend_G_Necrozma[];
+extern const u8 Debug_EventScript_Legend_G_Eternatus[];
+extern const u8 Debug_EventScript_Legend_G_Calyrex[];
+extern const u8 Debug_EventScript_Legend_G_Glastrier[];
+extern const u8 Debug_EventScript_Legend_G_Spectrier[];
+extern const u8 Debug_EventScript_Legend_G_Cobalion[];
+extern const u8 Debug_EventScript_Legend_G_Terrakion[];
+extern const u8 Debug_EventScript_Legend_G_Virizion[];
+extern const u8 Debug_EventScript_Legend_G_KeldeoOrdinary[];
+extern const u8 Debug_EventScript_Legend_G_Pecharunt[];
+extern const u8 Debug_EventScript_Legend_G_Xerneas[];
+extern const u8 Debug_EventScript_Legend_G_Yveltal[];
+extern const u8 Debug_EventScript_Legend_G_ZacianHero[];
+extern const u8 Debug_EventScript_Legend_G_ZamazentaHero[];
+extern const u8 Debug_EventScript_Legend_G_Articuno[];
+extern const u8 Debug_EventScript_Legend_G_Zapdos[];
+extern const u8 Debug_EventScript_Legend_G_Moltres[];
+extern const u8 Debug_EventScript_Legend_G_ArticunoGalar[];
+extern const u8 Debug_EventScript_Legend_G_ZapdosGalar[];
+extern const u8 Debug_EventScript_Legend_G_MoltresGalar[];
+extern const u8 Debug_EventScript_Legend_G_Victini[];
+extern const u8 Debug_EventScript_Legend_G_ShayminLand[];
+extern const u8 Debug_EventScript_Legend_G_Manaphy[];
+extern const u8 Debug_EventScript_Legend_G_Volcanion[];
+extern const u8 Debug_EventScript_Legend_G_HoopaConfined[];
+extern const u8 Debug_EventScript_Legend_G_TornadusIncarnate[];
+extern const u8 Debug_EventScript_Legend_G_ThundurusIncarnate[];
+extern const u8 Debug_EventScript_Legend_G_LandorusIncarnate[];
+extern const u8 Debug_EventScript_Legend_G_Zarude[];
+extern const u8 Debug_EventScript_Legend_G_WoChien[];
+extern const u8 Debug_EventScript_Legend_G_ChienPao[];
+extern const u8 Debug_EventScript_Legend_G_TingLu[];
+extern const u8 Debug_EventScript_Legend_G_ChiYu[];
+extern const u8 Debug_EventScript_Legend_G_OgerponTeal[];
+extern const u8 Debug_EventScript_Legend_G_TapuKoko[];
+extern const u8 Debug_EventScript_Legend_G_Nihilego[];
+extern const u8 Debug_EventScript_Legend_G_Buzzwole[];
+extern const u8 Debug_EventScript_Legend_G_Pheromosa[];
+extern const u8 Debug_EventScript_Legend_G_Kartana[];
+extern const u8 Debug_EventScript_Legend_G_Koraidon[];
+extern const u8 Debug_EventScript_Legend_G_Miraidon[];
+extern const u8 Debug_EventScript_Legend_G_TerapagosNormal[];
+extern const u8 Debug_EventScript_Legend_G_GreatTusk[];
+extern const u8 Debug_EventScript_Legend_G_IronValiant[];
+extern const u8 Debug_EventScript_Legend_G_Reshiram[];
+extern const u8 Debug_EventScript_Legend_G_Zekrom[];
+extern const u8 Debug_EventScript_Legend_G_Kyurem[];
+extern const u8 Debug_EventScript_Legend_G_Marshadow[];
 extern const u8 Debug_EventScript_Legend_Regirock[];
 extern const u8 Debug_EventScript_Legend_Regice[];
 extern const u8 Debug_EventScript_Legend_Registeel[];
@@ -594,6 +654,66 @@ static const struct DebugMenuOption sDebugMenu_Actions_Legendary[] =
     { COMPOUND_STRING("Mewtwo"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Mewtwo },
     { COMPOUND_STRING("Jirachi"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Jirachi },
     { COMPOUND_STRING("Darkrai"), DebugAction_ExecuteScript, Debug_EventScript_Legend_Darkrai },
+    { COMPOUND_STRING("Arceus"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_ArceusNormal },
+    { COMPOUND_STRING("Dialga"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Dialga },
+    { COMPOUND_STRING("Palkia"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Palkia },
+    { COMPOUND_STRING("Giratina"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_GiratinaAltered },
+    { COMPOUND_STRING("Celebi"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Celebi },
+    { COMPOUND_STRING("Uxie"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Uxie },
+    { COMPOUND_STRING("Mesprit"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Mesprit },
+    { COMPOUND_STRING("Azelf"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Azelf },
+    { COMPOUND_STRING("Cresselia"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Cresselia },
+    { COMPOUND_STRING("Meloetta"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_MeloettaAria },
+    { COMPOUND_STRING("Zeraora"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Zeraora },
+    { COMPOUND_STRING("Zygarde"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Zygarde50 },
+    { COMPOUND_STRING("Necrozma"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Necrozma },
+    { COMPOUND_STRING("Eternatus"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Eternatus },
+    { COMPOUND_STRING("Calyrex"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Calyrex },
+    { COMPOUND_STRING("Glastrier"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Glastrier },
+    { COMPOUND_STRING("Spectrier"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Spectrier },
+    { COMPOUND_STRING("Cobalion"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Cobalion },
+    { COMPOUND_STRING("Terrakion"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Terrakion },
+    { COMPOUND_STRING("Virizion"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Virizion },
+    { COMPOUND_STRING("Keldeo"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_KeldeoOrdinary },
+    { COMPOUND_STRING("Pecharunt"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Pecharunt },
+    { COMPOUND_STRING("Xerneas"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Xerneas },
+    { COMPOUND_STRING("Yveltal"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Yveltal },
+    { COMPOUND_STRING("Zacian"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_ZacianHero },
+    { COMPOUND_STRING("Zamazenta"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_ZamazentaHero },
+    { COMPOUND_STRING("Articuno"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Articuno },
+    { COMPOUND_STRING("Zapdos"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Zapdos },
+    { COMPOUND_STRING("Moltres"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Moltres },
+    { COMPOUND_STRING("Articuno (Galar)"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_ArticunoGalar },
+    { COMPOUND_STRING("Zapdos (Galar)"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_ZapdosGalar },
+    { COMPOUND_STRING("Moltres (Galar)"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_MoltresGalar },
+    { COMPOUND_STRING("Victini"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Victini },
+    { COMPOUND_STRING("Shaymin"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_ShayminLand },
+    { COMPOUND_STRING("Manaphy"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Manaphy },
+    { COMPOUND_STRING("Volcanion"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Volcanion },
+    { COMPOUND_STRING("Hoopa"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_HoopaConfined },
+    { COMPOUND_STRING("Tornadus"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_TornadusIncarnate },
+    { COMPOUND_STRING("Thundurus"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_ThundurusIncarnate },
+    { COMPOUND_STRING("Landorus"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_LandorusIncarnate },
+    { COMPOUND_STRING("Zarude"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Zarude },
+    { COMPOUND_STRING("Wo-Chien"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_WoChien },
+    { COMPOUND_STRING("Chien-Pao"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_ChienPao },
+    { COMPOUND_STRING("Ting-Lu"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_TingLu },
+    { COMPOUND_STRING("Chi-Yu"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_ChiYu },
+    { COMPOUND_STRING("Ogerpon"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_OgerponTeal },
+    { COMPOUND_STRING("Tapu Koko"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_TapuKoko },
+    { COMPOUND_STRING("Nihilego"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Nihilego },
+    { COMPOUND_STRING("Buzzwole"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Buzzwole },
+    { COMPOUND_STRING("Pheromosa"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Pheromosa },
+    { COMPOUND_STRING("Kartana"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Kartana },
+    { COMPOUND_STRING("Koraidon"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Koraidon },
+    { COMPOUND_STRING("Miraidon"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Miraidon },
+    { COMPOUND_STRING("Terapagos"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_TerapagosNormal },
+    { COMPOUND_STRING("Great Tusk"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_GreatTusk },
+    { COMPOUND_STRING("Iron Valiant"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_IronValiant },
+    { COMPOUND_STRING("Reshiram"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Reshiram },
+    { COMPOUND_STRING("Zekrom"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Zekrom },
+    { COMPOUND_STRING("Kyurem"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Kyurem },
+    { COMPOUND_STRING("Marshadow"), DebugAction_ExecuteScript, Debug_EventScript_Legend_G_Marshadow },
     { NULL }
 };
 
@@ -605,6 +725,7 @@ enum
 {
     BATTLE_TEST_LEGEND,  // BattleSetup_StartLegendaryBattle
     BATTLE_TEST_REGI,    // StartRegiBattle
+    BATTLE_TEST_LATI,    // BattleSetup_StartLatiBattle (eigen Lati-intro)
     BATTLE_TEST_WILD,    // BattleSetup_StartScriptedWildBattle (transitie per soort)
     BATTLE_TEST_TRAINER, // trainergevecht (id2 = tweede trainer voor een dubbel, anders TRAINER_NONE)
 };
@@ -619,6 +740,7 @@ struct BattleTest
 
 #define BT_LEGEND(species, lvl) &(const struct BattleTest){ BATTLE_TEST_LEGEND, lvl, species, 0 }
 #define BT_REGI(species)        &(const struct BattleTest){ BATTLE_TEST_REGI, 50, species, 0 }
+#define BT_LATI(species)        &(const struct BattleTest){ BATTLE_TEST_LATI, 50, species, 0 }
 #define BT_WILD(species)        &(const struct BattleTest){ BATTLE_TEST_WILD, 5, species, 0 }
 #define BT_TRAINER(a, b)        &(const struct BattleTest){ BATTLE_TEST_TRAINER, 0, a, b }
 
@@ -660,6 +782,12 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
     { COMPOUND_STRING("Mimi"),                   DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_MIMI, TRAINER_NONE) },
     { COMPOUND_STRING("Burglar"),                DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_BURGLAR_1, TRAINER_NONE) },
     { COMPOUND_STRING("Shy Guy (Sunset Wilds)"),  DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_SHY_GUY_RED, TRAINER_NONE) },
+    { COMPOUND_STRING("Shy Guy: green"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_SHY_GUY_GREEN, TRAINER_NONE) },
+    { COMPOUND_STRING("Shy Guy: black"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_SHY_GUY_BLACK, TRAINER_NONE) },
+    { COMPOUND_STRING("Shy Guy: Fly Guy"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_SHY_GUY_PINK, TRAINER_NONE) },
+    { COMPOUND_STRING("Commander Boo"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_YI_COMMANDER_BOO, TRAINER_NONE) },
+    { COMPOUND_STRING("Wario"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_YI_WARIO, TRAINER_NONE) },
+    { COMPOUND_STRING("Agatha (Poke Tower)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_TOWER_AGATHA, TRAINER_NONE) },
     { COMPOUND_STRING("Archie + Maxie (werkstraf)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_ARCHIE_SERVICE_1, TRAINER_MAXIE_SERVICE_1) },
     // Wilde legendaries: transitie + thema uit het echte event
     { COMPOUND_STRING("Zarude"),                 DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ZARUDE, 50) },
@@ -682,6 +810,39 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
     { COMPOUND_STRING("Heatran"),                DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_HEATRAN, 70) },
     { COMPOUND_STRING("Genesect"),               DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_GENESECT, 70) },
     { COMPOUND_STRING("Mew"),                    DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_MEW, 50) },
+    { COMPOUND_STRING("Arceus"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ARCEUS_NORMAL, 80) },
+    { COMPOUND_STRING("Dialga"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_DIALGA, 80) },
+    { COMPOUND_STRING("Palkia"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_PALKIA, 80) },
+    { COMPOUND_STRING("Celebi"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_CELEBI, 70) },
+    { COMPOUND_STRING("Uxie"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_UXIE, 70) },
+    { COMPOUND_STRING("Mesprit"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_MESPRIT, 70) },
+    { COMPOUND_STRING("Azelf"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_AZELF, 70) },
+    { COMPOUND_STRING("Meloetta"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_MELOETTA_ARIA, 70) },
+    { COMPOUND_STRING("Zeraora"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ZERAORA, 70) },
+    { COMPOUND_STRING("Zygarde"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ZYGARDE_50, 80) },
+    { COMPOUND_STRING("Necrozma"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_NECROZMA, 80) },
+    { COMPOUND_STRING("Eternatus"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ETERNATUS, 80) },
+    { COMPOUND_STRING("Calyrex"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_CALYREX, 80) },
+    { COMPOUND_STRING("Glastrier"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_GLASTRIER, 80) },
+    { COMPOUND_STRING("Spectrier"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_SPECTRIER, 80) },
+    { COMPOUND_STRING("Cobalion"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_COBALION, 70) },
+    { COMPOUND_STRING("Keldeo"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_KELDEO_ORDINARY, 70) },
+    { COMPOUND_STRING("Pecharunt"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_PECHARUNT, 70) },
+    { COMPOUND_STRING("Xerneas"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_XERNEAS, 80) },
+    { COMPOUND_STRING("Yveltal"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_YVELTAL, 80) },
+    { COMPOUND_STRING("Zacian"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ZACIAN_HERO, 80) },
+    { COMPOUND_STRING("Articuno (Galar)"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ARTICUNO_GALAR, 70) },
+    { COMPOUND_STRING("Zapdos (Galar)"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ZAPDOS_GALAR, 70) },
+    { COMPOUND_STRING("Moltres (Galar)"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_MOLTRES_GALAR, 70) },
+    { COMPOUND_STRING("UB: Nihilego"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_NIHILEGO, 70) },
+    { COMPOUND_STRING("Paradox: Great Tusk"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_GREAT_TUSK, 70) },
+    { COMPOUND_STRING("Paradox: Iron Valiant"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_IRON_VALIANT, 70) },
+    { COMPOUND_STRING("Koraidon"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_KORAIDON, 80) },
+    { COMPOUND_STRING("Miraidon"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_MIRAIDON, 80) },
+    { COMPOUND_STRING("Terapagos"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_TERAPAGOS_NORMAL, 80) },
+    { COMPOUND_STRING("Wo-Chien (Ruin)"), DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_WO_CHIEN, 70) },
+    { COMPOUND_STRING("Latias"), DebugAction_Util_BattleTest, BT_LATI(SPECIES_LATIAS) },
+    { COMPOUND_STRING("Latios"), DebugAction_Util_BattleTest, BT_LATI(SPECIES_LATIOS) },
     { COMPOUND_STRING("Groudon"),                DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_GROUDON, 70) },
     { COMPOUND_STRING("Kyogre"),                 DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_KYOGRE, 70) },
     { COMPOUND_STRING("Rayquaza"),               DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_RAYQUAZA, 70) },
@@ -716,6 +877,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
 
 #undef BT_LEGEND
 #undef BT_REGI
+#undef BT_LATI
 #undef BT_WILD
 #undef BT_TRAINER
 
@@ -2572,6 +2734,10 @@ void Debug_BattleTest_Start(void)
     case BATTLE_TEST_REGI:
         CreateScriptedWildMon(test->id, test->level, ITEM_NONE);
         StartRegiBattle();
+        break;
+    case BATTLE_TEST_LATI:
+        CreateScriptedWildMon(test->id, test->level, ITEM_NONE);
+        BattleSetup_StartLatiBattle();
         break;
     case BATTLE_TEST_WILD:
         CreateScriptedWildMon(test->id, test->level, ITEM_NONE);

@@ -208,6 +208,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pok�
 - **Wegvallende noten in nieuwe nummers** (Route 119+ v2): de stemverdeler en de lint rekenden een noot tot de note-off, maar de m4a-engine houdt hem vast tot de envelope op 1/16 is (een crash met sustain 0 duurde 1,1 s i.p.v. 0,5 s). `ply_note` pakt eerst een uitklinkend kanaal, anders valt een noot van een later spoor stil weg. Slagwerk/pauken/klokken als korte noten met lange release; zie `channel_end()` in `route119_battle_theme.py`. Lint en `musiclib.release_ticks` rekenen nog niet zo (TODO).
 - **Nooit `cd <map>; rm *`** in één Bash-regel: de veiligheidscheck blokkeert het hele commando (ook de commits ervoor). Gebruik volledige paden.
 - **Water op elevation 0 is beloopbaar** (Nothing Island, v1.0): water hoort op elevation 1; met 0 loop je er zonder surfen op. Controle: `waterelev.py`-aanpak (water met botsing 0 en elevation 0 naast beloopbaar land). **Halve bomen** controleer je per kaart met een script (links-/rechterhelft 1d4/1d5, 1dc/1dd, 1e4/1e5 moeten paren vormen), niet alleen op het oog: Jordi vond in Lavender drie plekken na elkaar.
+- **Gesampelde opnames (Area Zero, Ruinous) blijven wat dof** (v1.0): 8-bit/11 kHz/DPCM van een volledige mix; luider/helderder maken hielp deels, een mengvorm met GBA-bas/-drums voegde volgens Jordi weinig toe. Niet verder aan sleutelen; nieuwe nummers liever als noten. Push nooit een extra branch naar origin zonder te vragen (verwijderen kan vanuit deze omgeving niet).
 
 ## Werkwijzen (herhaalde taken)
 

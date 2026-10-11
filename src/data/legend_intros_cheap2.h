@@ -1,7 +1,8 @@
 // Project Grounded: goedkope legendary-intro's (Jordi: "maak deze intro's goedkoop qua kbs"). Calyrex/Glastrier/
 // Spectrier, Celebi, het meren-trio, Meloetta, Latias/Latios, Zeraora, Cresselia, de Galar-vogels en Zygarde.
 // Geen eigen art: alle BG0-beelden worden bij de start in C getekend (gradiënten met Bayer-dither, boomsilhouetten,
-// ijs, slagen, de maan) en de rest is gevechtsanimatie-art en frontsprites die al in de ROM staan. Wordt onderaan
+// ijs, slagen, de sikkelmaan, het zeshoekraster) en de rest is gevechtsanimatie-art die al in de ROM staat. Geen
+// Pokémon-sprites (Jordi: "ik vind het vaak beter wanneer je de sprites weglaat, lijkt minder budget"). Wordt onderaan
 // src/battle_transition.c ingevoegd, na de andere legendary-intro's (gebruikt de GI_/LI_/LI2_-hulpjes, Tapu_Blend,
 // Tapu_Elapsed en de route-transitie-runner).
 // Op de muziek (MUS_GROUNDED_VS_LEGENDARY, 176 bpm, pauken in achtsten): t = echte VBlanks sinds de start van de
@@ -16,7 +17,6 @@
 #define tLcLast       data[12]               // vorige t (eenmalige gebeurtenissen, ook bij overgeslagen frames)
 #define tLcVar        data[13]               // variant (soort)
 #define tLcGen        data[14]               // rijen van het beeld die al getekend zijn
-#define tLcMon2       data[15]               // tweede frontsprite (spiegelbeeld)
 
 struct LCWork
 {
@@ -27,6 +27,10 @@ struct LCWork
     u8 cell[160];
     u8 frame[160];
     u16 tmp[16];
+    u8 shade[512];          // Celebi: GB-tint per kleur
+    u32 hash[LC_MAX_TILES]; // LC_PaintRowsDedup
+    u32 spr[32];            // Zygarde: een Cell (16x16)
+    u8 hexloc[16 * 24];     // Zygarde: het zeshoekraster per blok
     u16 nextTile;
     u8 curPhase, curVar;
     u8 matLand, matSet;
@@ -79,8 +83,6 @@ static void LC_Begin(struct Task *task, u32 seed)
     // de tijd-van-de-dag-update (elke minuut) zet de paletten van de wereld terug: tijdens het intro even niet
     if (gTimeUpdateCounter < 600)
         gTimeUpdateCounter = 600;
-    task->tLcMon2 = MAX_SPRITES;
-    task->tGiSprite0 = MAX_SPRITES;
     LI_ResetSprites();
 }
 
@@ -197,6 +199,65 @@ static bool32 LC_Gen(struct Task *task, s32 t, LCPixel px, LCCell cell)
     return LC_GenRows(task, px, cell, 20);
 }
 
+// zoals LC_PaintRows, maar ontdubbelt over het hele beeld (hash per tile; voor herhalende patronen zoals een raster)
+static void LC_PaintRowsDedup(LCPixel px, LCCell cell, u32 r0, u32 r1)
+{
+    u32 buf[8], cx, cy, x, y, any, h, c, n;
+    for (cy = r0; cy < r1 && cy < 20; cy++)
+    {
+        for (cx = 0; cx < 32; cx++)
+        {
+            u16 *m = &sLC->map[cy * 32 + cx];
+            c = cell(cx, cy);
+            if (c == LC_EMPTY)
+            {
+                *m = 0;
+                continue;
+            }
+            c &= ~LC_PLAIN;
+            any = h = 0;
+            for (y = 0; y < 8; y++)
+            {
+                u32 w = 0;
+                for (x = 0; x < 8; x++)
+                    w |= (px(cx * 8 + x, cy * 8 + y) & 15) << (x * 4);
+                buf[y] = w;
+                any |= w;
+                h = h * 0x9E3779B1 + w;
+            }
+            if (any == 0)
+            {
+                *m = 0;
+                continue;
+            }
+            for (n = 16; n < sLC->nextTile; n++)
+                if (sLC->hash[n] == h && memcmp(buf, LC_Tile(n), sizeof(buf)) == 0)
+                    break;
+            if (n == sLC->nextTile)
+            {
+                if (n >= LC_MAX_TILES)
+                {
+                    *m = 0;
+                    continue;
+                }
+                CpuCopy32(buf, LC_Tile(n), 32);
+                sLC->hash[n] = h;
+                sLC->nextTile++;
+            }
+            *m = n | c;
+        }
+    }
+}
+
+static bool32 LC_GenRowsDedup(struct Task *task, LCPixel px, LCCell cell, u32 rows)
+{
+    if (sLC == NULL || task->tLcGen >= 20)
+        return TRUE;
+    LC_PaintRowsDedup(px, cell, task->tLcGen, task->tLcGen + rows);
+    task->tLcGen += rows;
+    return task->tLcGen >= 20;
+}
+
 static void LC_ShowMap(void)
 {
     if (sLC != NULL)
@@ -275,14 +336,6 @@ static void LC_FreeMatrices(u32 n)
     sLC->matLand = sLC->matSet = 0xFF;
 }
 
-static u8 LC_MonPic(u16 species, s16 x, s16 y, u8 prio)
-{
-    u8 id = GI_MonPic(species, x, y);
-    if (id < MAX_SPRITES)
-        gSprites[id].oam.priority = prio;
-    return id;
-}
-
 static u16 LC_EnemySpecies(void)
 {
     return GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL);
@@ -292,6 +345,16 @@ static u16 LC_EnemySpecies(void)
 static void LC_DimWorld(s32 t, u32 keep, s32 maxK, u16 color)
 {
     BlendPalettes(PALETTES_ALL & ~GI_BG_PALS & ~keep, min(max(t, 0) * 2, maxK), color);
+}
+
+// BG0 telt op bij alles eronder (zwart = niets)
+static void LC_Additive(u32 eva)
+{
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3
+                               | BLDCNT_TGT2_OBJ | BLDCNT_TGT2_BD);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(eva, 16));
+    SetGpuReg(REG_OFFSET_WININ, GetGpuReg(REG_OFFSET_WININ) | WININ_WIN0_CLR | WININ_WIN1_CLR);
+    SetGpuReg(REG_OFFSET_WINOUT, GetGpuReg(REG_OFFSET_WINOUT) | WINOUT_WIN01_CLR | WINOUT_WINOBJ_CLR);
 }
 
 // eindflits: vanaf 'start' in 'len' frames naar 'color' (mask), TRUE als het klaar is
@@ -319,10 +382,6 @@ static void LC_FinishCommon(struct Task *task)
     if (sLC != NULL)
         LC_FreeMatrices(LI_SPRITES);
     LI_DestroySprites();
-    LI_DestroyMonPic(task->tGiSprite0);
-    if (task->tLcMon2 < MAX_SPRITES)
-        FreeAndDestroyMonPicSprite(task->tLcMon2);
-    task->tGiSprite0 = task->tLcMon2 = MAX_SPRITES;
     LC_EndWork();
     TRY_FREE_AND_SET_NULL(sLCCanvas);
 }
@@ -350,13 +409,11 @@ static void LC_Pines(u32 base, u32 lo, u32 hi, u32 spacing, u32 slope)
 // cowboy theme. Glastrier zet ijsstappen, Spectrier ghost stappen."). Hoefafdrukken (het hoefijzer uit de Mega Punch-
 // art) galopperen in achtsten over het beeld, op de pauken van het legendary-thema.
 // - Calyrex (alle vormen): western bij zonsondergang. Een gedithered avondlucht, een halve zon achter het bos van de
-//   beschermer, stofwolkjes bij elke stap; het silhouet van de koning staat voor de zon met een lasso die rondzwiept;
-//   op de klokslag gooit hij de lasso naar je toe en licht het bos groen op. De ruiters zetten de stappen van hun
-//   paard (ijs of spookvuur).
+//   beschermer, stofwolkjes bij elke stap; boven de zon zwiept een lasso rond, op de klokslag vliegt hij naar je toe
+//   en licht het bos groen op. De ruiters zetten de stappen van hun paard (ijs of spookvuur).
 // - Glastrier: de echte plek wordt koud blauw, elke stap bevriest (ijskristal) en de rijp groeit vanuit de afdrukken
 //   over het hele beeld (BG0 telt op bij de wereld; 15 groeifasen in de paletkleuren).
-// - Spectrier: de plek wordt zwartpaars, elke afdruk vat paars spookvuur en dooft weer; Spectrier flakkert half
-//   doorzichtig op.
+// - Spectrier: de plek wordt zwartpaars, elke afdruk vat paars spookvuur en dooft weer.
 enum { LCR_CALYREX, LCR_CALYREX_ICE, LCR_CALYREX_SHADOW, LCR_GLASTRIER, LCR_SPECTRIER };
 #define LCR_PRINTS     11
 #define LCR_E0         5     // eerste stap: achtste 5 (t 51), het eigen deel begint rond t 48
@@ -537,14 +594,7 @@ static void RTCrown_Init(struct Task *task)
                     LC_Tint(gBattleAnimSpritePal_Smoke, RGB(9, 6, 4), RGB(28, 21, 13)), LCR_TAG_FX, &sGI_Oam16, 0, 0, 2);
     }
     if (sunset)
-    {
         LI_Make(LCR_LASSO, gBattleAnimSpriteGfx_ThinRing, 0x800, gBattleAnimSpritePal_ThinRing, LCR_TAG_ROPE, &sGI_Oam64Affine, 120, 40, 1);
-        task->tGiSprite0 = LC_MonPic(sp, 120, 84, 0);
-    }
-    else
-    {
-        task->tGiSprite0 = LC_MonPic(sp, 120, 74, 0);
-    }
 
     if (v == LCR_GLASTRIER)
     {
@@ -555,28 +605,20 @@ static void RTCrown_Init(struct Task *task)
         SetGpuReg(REG_OFFSET_WININ, GetGpuReg(REG_OFFSET_WININ) | WININ_WIN0_CLR | WININ_WIN1_CLR);
         SetGpuReg(REG_OFFSET_WINOUT, GetGpuReg(REG_OFFSET_WINOUT) | WINOUT_WIN01_CLR | WINOUT_WINOBJ_CLR);
     }
-    else if (v == LCR_SPECTRIER)
-    {
-        if (task->tGiSprite0 < MAX_SPRITES)
-            gSprites[task->tGiSprite0].oam.objMode = ST_OAM_OBJ_BLEND;
-        SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_BD);
-        SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(10, 8));
-    }
 }
 
 static bool8 RTCrown_Update(struct Task *task)
 {
     s32 t = Tapu_Elapsed(), r, i, k, age, beatK;
-    u32 v = task->tLcVar, step = LCR_Step(v), keep, monBit;
+    u32 v = task->tLcVar, step = LCR_Step(v), keep;
     bool32 sunset = LCR_Sunset(v), done = FALSE;
-    struct Sprite *s, *mon = GI_Sprite(task->tGiSprite0);
+    struct Sprite *s;
     u16 cols[16];
 
     if (sLC == NULL)
         return TRUE;
     r = LC_R(t);
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit | GI_SpritePalBit(LCR_TAG_SHOE) | GI_SpritePalBit(LCR_TAG_FX) | GI_SpritePalBit(LCR_TAG_ROPE);
+    keep = GI_SpritePalBit(LCR_TAG_SHOE) | GI_SpritePalBit(LCR_TAG_FX) | GI_SpritePalBit(LCR_TAG_ROPE);
     GI_ResetPals(keep);
     beatK = 6 - min(6, t % 20);   // kort oplichten op elke tel
 
@@ -668,23 +710,11 @@ static bool8 RTCrown_Update(struct Task *task)
             PlaySE(SE_ICE_CRACK);
     }
 
-    // de legendary
+    // de lasso van de koning (geen Pokémon-sprite: het touw en de stappen vertellen het)
     if (sunset)
     {
         struct Sprite *rope = LI_S(LCR_LASSO);
         u8 mat = rope->oam.matrixNum;
-        k = t - LCR_MON_SHOW;
-        mon->invisible = k < 0;
-        if (k >= 0 && t < LC_HIT)
-        {
-            // silhouet voor de zon: komt uit de lucht op
-            BlendPalettes(monBit, 16, Tapu_Blend(RGB(31, 24, 10), RGB(2, 1, 3), min(16, k * 2)));
-            mon->y = 84 + max(0, 12 - k);
-        }
-        else if (k >= 0)
-        {
-            BlendPalettes(monBit, max(0, 16 - (t - LC_HIT) * 4), RGB_WHITE);
-        }
         // lasso: zwiept rond boven het hoofd, op de klokslag naar de camera
         k = t - (LCR_MON_SHOW - 20);
         rope->invisible = k < 0;
@@ -711,20 +741,6 @@ static bool8 RTCrown_Update(struct Task *task)
             PlaySE(SE_M_SWAGGER);
         if (LC_Cross(task, t, LC_HIT))
             PlaySE(SE_M_TAIL_WHIP);
-    }
-    else
-    {
-        k = t - LC_BEAT(6);
-        mon->invisible = k < 0;
-        mon->y2 = Sin((t * 5) & 0xFF, 2);
-        if (v == LCR_GLASTRIER && k >= 0)
-            BlendPalettes(monBit, max(0, 16 - k), RGB_WHITE);
-        else if (k >= 0)
-        {
-            BlendPalettes(monBit, max(0, 12 - k / 2), RGB(10, 0, 18));
-            if (t < LC_HIT && (Random() & 7) == 0)
-                mon->invisible = TRUE;
-        }
     }
     if (LC_Cross(task, t, sunset ? LCR_MON_SHOW + 6 : LC_BEAT(6) + 6))
         PlayCry_Normal(LC_EnemySpecies(), 0);
@@ -759,174 +775,197 @@ static void Task_LegendCrown(u8 taskId)
 }
 
 // =====================================================================================================================
-// Celebi (Ilex Forest; Jordi: "mag een iconische Gold/Silver intro, met forest protection"): de echte plek valt
-// terug in vier Game Boy Color-groentinten (alles, ook Celebi zelf). Het GS-flikkeren op de eerste drie tellen, dan
-// wervelen de bladeren naar binnen, de tijd brokkelt (mozaïek) en in het midden zet zich een groene beschermkoepel uit
-// waarin Celebi verschijnt. Daarna de GS-spiraal: zwarte vakjes draaien van buiten naar binnen dicht, tot de klokslag.
-#define LCC_LEAVES     16
-#define LCC_DOME       LCC_LEAVES
+// Celebi (Ilex Forest; Jordi: "maak de celebi intro extreem nostalgisch"): even zit je weer achter een Game Boy Color.
+// Het beeld wordt een GBC-scherm van 160x144 in een donkere rand met een brandend power-lampje (en het aan-geluidje),
+// de plek valt terug in de vier groentinten en komt op zoals GSC een beeld opbouwt: vanuit wit, in tintstappen. Dan
+// precies de wilde-gevechtsovergang van Gold/Silver/Crystal (pret/pokecrystal, engine/battle/battle_transition.asm):
+// drie keer de BGP-flits (12 tintstappen: donkerder, zwart, terug, lichter, wit, terug) op de tellen 3, 4 en 5, met
+// de gemaaide-grasblaadjes van het Celebi-schrijn (Crystal) die door het beeld dwarrelen, en dan de spin naar zwart
+// (20 wiggen met de klok mee vanaf links, de echte wigtabellen) op tel 6 en 7. Op de klokslag de tijdreis: het zwart
+// slaat om in Celebi-groen en wit. Geen Pokémon-sprite.
+#define LCC_LEAVES     8
 #define LCC_TAG_LEAF   0x5B23
-#define LCC_TAG_DOME   0x5B24
-#define LCC_FLICKER    LC_BEAT(3)   // tel 3 en 4
-#define LCC_SWIRL      50
-#define LCC_DOME_T     92
-#define LCC_MON        LC_BEAT(5)
-#define LCC_SPIRAL     128
+#define LCC_FLASH      LC_BEAT(3)   // tel 3, 4 en 5
+#define LCC_SPIN       LC_BEAT(6)   // 20 wiggen, 2 frames per wig
+#define LCC_X0         5            // het GBC-scherm: 20 x 18 tiles vanaf tile (5, 1)
+#define LCC_Y0         1
+#define LCC_BLACK      3            // tile 3 = effen kleur 3 = de donkerste tint
 
 static const u16 sLC_Gbc[4] = {RGB(3, 7, 4), RGB(9, 16, 8), RGB(19, 25, 10), RGB(28, 31, 21)};
-static const u16 sLCC_Pal15[16] = {0, RGB(3, 7, 4)};
+// BGP-flits uit pokecrystal (.pals): elke stap verschuift de vier tinten (+ = donkerder)
+static const s8 sLCC_FlashOff[12] = {1, 2, 3, 2, 1, 0, -1, -2, -3, -2, -1, 0};
+// de wiggen van StartTrainerBattle_SpinToBlack: aantal tiles, verschuiving, aantal, ..., 0xFF
+static const u8 sLCC_Wedge1[] = {2, 3, 5, 4, 9, 0xFF};
+static const u8 sLCC_Wedge2[] = {1, 1, 2, 2, 4, 2, 4, 2, 3, 0xFF};
+static const u8 sLCC_Wedge3[] = {2, 1, 3, 1, 4, 1, 4, 1, 4, 1, 3, 1, 2, 1, 1, 1, 1, 0xFF};
+static const u8 sLCC_Wedge4[] = {4, 1, 4, 0, 3, 1, 3, 0, 2, 1, 2, 0, 1, 0xFF};
+static const u8 sLCC_Wedge5[] = {4, 0, 3, 0, 3, 0, 2, 0, 2, 0, 1, 0, 1, 0, 1, 0xFF};
+struct LCCSpin { u8 quad, x, y; const u8 *wedge; };  // quad: bit 0 rechts, bit 1 onder
+static const struct LCCSpin sLCC_Spin[20] =
+{
+    {0, 1, 6, sLCC_Wedge1}, {0, 0, 3, sLCC_Wedge2}, {0, 1, 0, sLCC_Wedge3}, {0, 5, 0, sLCC_Wedge4}, {0, 9, 0, sLCC_Wedge5},
+    {1, 10, 0, sLCC_Wedge5}, {1, 14, 0, sLCC_Wedge4}, {1, 18, 0, sLCC_Wedge3}, {1, 19, 3, sLCC_Wedge2}, {1, 18, 6, sLCC_Wedge1},
+    {3, 18, 11, sLCC_Wedge1}, {3, 19, 14, sLCC_Wedge2}, {3, 18, 17, sLCC_Wedge3}, {3, 14, 17, sLCC_Wedge4}, {3, 10, 17, sLCC_Wedge5},
+    {2, 9, 17, sLCC_Wedge5}, {2, 5, 17, sLCC_Wedge4}, {2, 1, 17, sLCC_Wedge3}, {2, 0, 14, sLCC_Wedge2}, {2, 1, 11, sLCC_Wedge1},
+};
 
-static u16 LC_GbcColor(u16 c)
+// GB-tint 0 (wit) .. 3 (zwart) op helderheid
+static u8 LCC_Shade(u16 c)
 {
     s32 l = (c & 31) * 5 + ((c >> 5) & 31) * 9 + ((c >> 10) & 31) * 2;
-    return sLC_Gbc[l < 120 ? 0 : (l < 240 ? 1 : (l < 360 ? 2 : 3))];
+    return l < 120 ? 3 : (l < 240 ? 2 : (l < 360 ? 1 : 0));
 }
 
-static void LC_GbcPals(u32 mask)
+// wig n in de volgorde zetten (sLC->order[gy * 20 + gx] = eerste wig die de tile zwart maakt)
+static void LCC_Wedge(u32 n)
 {
-    u32 i, j;
-    for (i = 0; i < 32; i++)
+    const struct LCCSpin *sp = &sLCC_Spin[n];
+    const u8 *d = sp->wedge;
+    s32 x = sp->x, y = sp->y, dx = (sp->quad & 1) ? 1 : -1, dy = (sp->quad & 2) ? -1 : 1, c, xx;
+    for (;;)
     {
-        if (!((mask >> i) & 1))
-            continue;
-        for (j = 0; j < 16; j++)
-            gPlttBufferUnfaded[i * 16 + j] = LC_GbcColor(gPlttBufferUnfaded[i * 16 + j]);
-        CpuCopy16(&gPlttBufferUnfaded[i * 16], &gPlttBufferFaded[i * 16], PLTT_SIZE_4BPP);
+        for (c = *d++, xx = x; c > 0; c--, xx += dx)
+            if (xx >= 0 && xx < 20 && y >= 0 && y < 18 && sLC->order[y * 20 + xx] > n)
+                sLC->order[y * 20 + xx] = n;
+        y += dy;
+        c = *d++;
+        if (c == 0xFF)
+            return;
+        x -= dx * c;
     }
 }
 
-// spiraal van buiten naar binnen (met de klok mee, linksboven beginnen)
-static void LCC_MakeSpiral(void)
+// de GBC-rand: donker, een lichtere binnenrand en het power-lampje links
+static u32 LCC_BezelPixel(s32 x, s32 y)
 {
-    s32 x0 = 0, y0 = 0, x1 = 29, y1 = 19, n = 0, x, y;
-    while (x0 <= x1 && y0 <= y1)
-    {
-        for (x = x0; x <= x1; x++)
-            sLC->order[n++] = y0 * 32 + x;
-        for (y = y0 + 1; y <= y1; y++)
-            sLC->order[n++] = y * 32 + x1;
-        if (y0 < y1)
-            for (x = x1 - 1; x >= x0; x--)
-                sLC->order[n++] = y1 * 32 + x;
-        if (x0 < x1)
-            for (y = y1 - 1; y > y0; y--)
-                sLC->order[n++] = y * 32 + x0;
-        x0++, y0++, x1--, y1--;
-    }
+    s32 dx = x - 18, dy = y - 44;
+    if (dx * dx + dy * dy <= 3)
+        return 2;
+    if (dx * dx + dy * dy <= 10)
+        return 5;
+    if ((x == LCC_X0 * 8 - 1 || x == LCC_X0 * 8 + 160) && y >= LCC_Y0 * 8 - 1 && y <= LCC_Y0 * 8 + 144)
+        return 4;
+    if ((y == LCC_Y0 * 8 - 1 || y == LCC_Y0 * 8 + 144) && x >= LCC_X0 * 8 - 1 && x <= LCC_X0 * 8 + 160)
+        return 4;
+    return 1;
+}
+
+static u32 LCC_BezelCell(s32 cx, s32 cy)
+{
+    if (cx >= LCC_X0 && cx < LCC_X0 + 20 && cy >= LCC_Y0 && cy < LCC_Y0 + 18)
+        return LC_EMPTY;
+    return 13 << 12;
 }
 
 static void RTCelebi_Init(struct Task *task)
 {
-    u32 i, mine;
+    u32 i;
     LC_Begin(task, 0xCE1);
     if (sLC == NULL)
         return;
-    LCC_MakeSpiral();
-    // eerst de wereld (alle paletten die er nu zijn), dan onze sprites apart
-    LC_GbcPals(PALETTES_ALL & ~(1 << 15));
+    for (i = 0; i < 360; i++)
+        sLC->order[i] = 0xFF;
+    for (i = 0; i < 20; i++)
+        LCC_Wedge(i);
     for (i = 0; i < LCC_LEAVES; i++)
-        LI_Make(i, gBattleAnimSpriteGfx_Leaf, 0x480, gBattleAnimSpritePal_Leaf, LCC_TAG_LEAF, &sGI_Oam16, 120, 80, 2);
-    LI_Make(LCC_DOME, gBattleAnimSpriteGfx_CircleOfLight, 0x800, gBattleAnimSpritePal_WhiteCircleOfLight, LCC_TAG_DOME, &sGI_Oam64Affine, 120, 76, 3);
-    task->tGiSprite0 = LC_MonPic(SPECIES_CELEBI, 120, 74, 1);
-    mine = GI_SpritePalBit(LCC_TAG_LEAF) | GI_SpritePalBit(LCC_TAG_DOME) | LI2_MonBit(task->tGiSprite0);
-    LC_GbcPals(mine);
-    for (i = 0; i <= LCC_DOME; i++)
-        LI_S(i)->oam.priority = 1;   // onder de spiraal (BG0)
-    LI_S(LCC_DOME)->oam.objMode = ST_OAM_OBJ_BLEND;
-    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_OBJ | BLDCNT_TGT2_BD);
-    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 12));
-    SetGpuReg(REG_OFFSET_MOSAIC, 0);
-    SetGpuRegBits(REG_OFFSET_BG1CNT, BGCNT_MOSAIC);
-    SetGpuRegBits(REG_OFFSET_BG2CNT, BGCNT_MOSAIC);
-    SetGpuRegBits(REG_OFFSET_BG3CNT, BGCNT_MOSAIC);
+    {
+        LI_Make(i, gBattleAnimSpriteGfx_Leaf, 0x480, gBattleAnimSpritePal_Leaf, LCC_TAG_LEAF, &sGI_Oam16, 0, 0, 2);
+        LI_S(i)->oam.priority = 1;   // onder de rand en het zwart (BG0)
+    }
+    // elke kleur (wereld en blaadjes) krijgt zijn GB-tint
+    for (i = 0; i < 512; i++)
+        sLC->shade[i] = LCC_Shade(gPlttBufferUnfaded[i]);
+    LC_PaintRows(LCC_BezelPixel, LCC_BezelCell, 0, 20);
+    LC_ShowMap();
+    SetGpuReg(REG_OFFSET_BLDCNT, 0);
 }
 
 static bool8 RTCelebi_Update(struct Task *task)
 {
-    s32 t = Tapu_Elapsed(), i, k, r, n;
-    u32 keep, monBit;
-    struct Sprite *s, *mon = GI_Sprite(task->tGiSprite0), *dome = LI_S(LCC_DOME);
+    s32 t = Tapu_Elapsed(), r, i, k, off = 0, n;
+    struct Sprite *s;
     u16 *tilemap = RT_Tilemap();
+    u16 cols[16];
 
     if (sLC == NULL)
         return TRUE;
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit | GI_SpritePalBit(LCC_TAG_LEAF) | GI_SpritePalBit(LCC_TAG_DOME);
-    // alles (ook de wereld) terug naar de GBC-tinten; die staan al in 'unfaded'
-    CpuCopy16(gPlttBufferUnfaded, gPlttBufferFaded, PLTT_SIZE);
+    r = LC_R(t);
 
-    // GS-flikkeren op tel 1, 2 en 3: licht, donker, licht
-    for (i = 0; i < 2; i++)
+    // het scherm gaat aan: vanuit wit in tintstappen (zoals GSC elk beeld laat opkomen)
+    if (r < 12)
+        off = -3 + r / 3;
+    // de drie BGP-flitsen, elk een tel lang
+    for (i = 0; i < 3; i++)
     {
-        k = t - LCC_FLICKER - LC_BEAT(i);
-        if (k >= 0 && k < 8)
-            BlendPalettes(PALETTES_ALL & ~keep, 14 - k * 2, (i == 1) ? sLC_Gbc[0] : sLC_Gbc[3]);
+        k = (t - LCC_FLASH - LC_BEAT(i)) * 12 / LC_BEAT(1);
+        if (t >= LCC_FLASH + LC_BEAT(i) && k < 12)
+            off = sLCC_FlashOff[k];
+    }
+    for (i = 0; i < 512; i++)
+    {
+        if (i >= 13 * 16 && i < 14 * 16)
+            continue;
+        k = sLC->shade[i] + off;
+        gPlttBufferFaded[i] = sLC_Gbc[3 - (k < 0 ? 0 : (k > 3 ? 3 : k))];
     }
 
-    // de tijd brokkelt
-    k = (t > LC_BEAT(4)) ? min(4, (t - LC_BEAT(4)) / 9) : 0;
-    SetGpuReg(REG_OFFSET_MOSAIC, k | (k << 4));
+    // BG-palet 13: rand, lampje, het spin-zwart; op de klokslag de tijdreis (zwart -> Celebi-groen -> wit)
+    CpuFill16(0, cols, sizeof(cols));
+    cols[1] = RGB(5, 5, 7);
+    cols[2] = r < 2 ? RGB(8, 2, 2) : RGB(31, 6, 4);
+    cols[4] = RGB(11, 11, 14);
+    cols[5] = r < 2 ? RGB(5, 5, 7) : RGB(15, 4, 5);
+    k = t - LC_HIT;
+    if (k < 0)
+        cols[LCC_BLACK] = sLC_Gbc[0];
+    else if (k < 3)
+        cols[LCC_BLACK] = Tapu_Blend(sLC_Gbc[0], RGB(10, 30, 8), k * 6);
+    else
+        cols[LCC_BLACK] = Tapu_Blend(RGB(10, 30, 8), RGB(30, 31, 26), (k - 2) * 6);
+    LC_SetBgPal(0, cols);
 
-    // bladeren wervelen naar binnen
+    // de blaadjes van het schrijn dwarrelen omlaag (tel 3 tot 6)
     for (i = 0; i < LCC_LEAVES; i++)
     {
         s = LI_S(i);
-        k = t - LCC_SWIRL;
-        r = 150 - k * 150 / (LCC_SPIRAL + 24 - LCC_SWIRL);
-        s->invisible = k < 0 || r < 8;
+        k = t - LCC_FLASH - i * 5;
+        s->invisible = k < 0 || t >= LCC_SPIN + 30;
         if (s->invisible)
             continue;
-        s->x = 120 + Cos((i * 16 + k * 3 + k * k / 40) & 0xFF, r);
-        s->y = 76 + Sin((i * 16 + k * 3 + k * k / 40) & 0xFF, r * 2 / 3);
+        s->x = LCC_X0 * 8 + 10 + ((i * 53) % 150) + Sin((k * 4 + i * 40) & 0xFF, 14) - k / 3;
+        s->y = LCC_Y0 * 8 - 8 + ((k * 3 / 2 + i * 19) % 168);
         LI_Frame(i, LCC_TAG_LEAF, ((t >> 2) + i) % 9, 4);
     }
 
-    // de beschermkoepel zet zich uit en pulseert op de tel
-    k = t - LCC_DOME_T;
-    dome->invisible = k < 0;
-    if (k >= 0 && dome->oam.affineMode != ST_OAM_AFFINE_OFF)
-    {
-        s32 sc = min(560, k * 14) + (6 - min(6, t % 20)) * 8;
-        SetOamMatrixRotationScaling(dome->oam.matrixNum, sc, sc, 0);
-    }
-
-    // Celebi
-    k = t - LCC_MON;
-    mon->invisible = k < 0;
-    mon->y2 = Sin((t * 6) & 0xFF, 3);
-    if (k >= 0 && k < 16)
-        BlendPalettes(monBit, 16 - k, sLC_Gbc[3]);
-    if (LC_Cross(task, t, LCC_MON + 8))
-        PlayCry_Normal(SPECIES_CELEBI, 0);
-    if (LC_Cross(task, t, LCC_SWIRL))
-        PlaySE(SE_M_RAZOR_WIND);
-
-    // GS-spiraal
-    k = t - LCC_SPIRAL;
+    // spin naar zwart: één wig per 2 frames
+    k = t - LCC_SPIN;
     if (k >= 0)
     {
-        n = min(600, (k + 1) * 600 / (LC_HIT - LCC_SPIRAL));
-        for (i = 0; i < n; i++)
-            tilemap[sLC->order[i]] = 1 | (15 << 12);
+        n = min(20, k / 2 + 1);
+        for (i = 0; i < 360; i++)
+            if (sLC->order[i] < n)
+                tilemap[(LCC_Y0 + i / 20) * 32 + LCC_X0 + i % 20] = LCC_BLACK | (13 << 12);
     }
+
+    if (LC_Cross(task, t, sLC->t0))
+        PlaySE(SE_PC_ON);
+    if (LC_Cross(task, t, LCC_FLASH + LC_BEAT(2) + 8))
+        PlayCry_Normal(SPECIES_CELEBI, 0);
+    if (LC_Cross(task, t, LC_HIT))
+        PlaySE(SE_M_TELEPORT);
     task->tLcLast = t;
-    return t >= LC_HIT + 1;
+    return t >= LC_HIT + 8;
 }
 
 static void RTCelebi_Finish(struct Task *task)
 {
-    SetGpuReg(REG_OFFSET_MOSAIC, 0);
-    ClearGpuRegBits(REG_OFFSET_BG1CNT, BGCNT_MOSAIC);
-    ClearGpuRegBits(REG_OFFSET_BG2CNT, BGCNT_MOSAIC);
-    ClearGpuRegBits(REG_OFFSET_BG3CNT, BGCNT_MOSAIC);
     LC_FinishCommon(task);
     GI_FreeTag(LCC_TAG_LEAF);
-    GI_FreeTag(LCC_TAG_DOME);
 }
 
 static const struct RouteTransition sRT_LegendCelebi =
 {
-    sLC_BlankTile, 32, sLCC_Pal15, 1, 1, 0, RTCelebi_Init, RTCelebi_Update, RTCelebi_Finish
+    sLC_BlankTile, 32, sLC_Pal0, 1, 1, 0, RTCelebi_Init, RTCelebi_Update, RTCelebi_Finish
 };
 
 static void Task_LegendCelebi(u8 taskId)
@@ -937,15 +976,14 @@ static void Task_LegendCelebi(u8 taskId)
 // =====================================================================================================================
 // Uxie, Mesprit, Azelf (de Gen 4-meren; Jordi: "Feeling trio mag je een lake met daarna fadeout naar blauw, geel of
 // roze afhankelijk van de pokemon"): een stil meer in de ochtendmist, de verre oever als bosrand, glinsteringen op het
-// water. Op elke tel een kring in het water; de Pokémon rijst op boven het meer, met zijn spiegelbeeld (half doorzichtig,
-// golvend) eronder. Dan kleurt alles naar zijn edelsteen: Uxie geel, Mesprit roze, Azelf blauw.
+// water. Op elke tel een kring in het water, die vanaf tel 3 de kleur van de edelsteen krijgt (iets onder het
+// oppervlak); dan kleurt alles naar die edelsteen: Uxie geel, Mesprit roze, Azelf blauw.
 #define LCL_RINGS      4
 #define LCL_TAG_RING   0x5B25
 #define LCL_SURFACE    48
 #define LCL_SKY_N      8
 #define LCL_WATER_N    10
 #define LCL_MON_T      LC_BEAT(3)
-#define LCL_MON_Y      70
 #define LCL_RIPPLE_Y   106
 #define LCL_TINT       LC_BEAT(6)
 
@@ -996,9 +1034,6 @@ static u16 LCL_Color(void)
 static void RTLake_Init(struct Task *task)
 {
     u32 i;
-    u16 sp = LC_EnemySpecies();
-    if (sp != SPECIES_UXIE && sp != SPECIES_MESPRIT)
-        sp = SPECIES_AZELF;
     LC_Begin(task, 0x1A6E);
     if (sLC == NULL)
         return;
@@ -1010,16 +1045,6 @@ static void RTLake_Init(struct Task *task)
                 LCL_TAG_RING, &sGI_Oam64Affine, 120, LCL_RIPPLE_Y, 3);
     for (i = 0; i < LCL_RINGS; i++)
         LI_S(i)->oam.objMode = ST_OAM_OBJ_BLEND;
-    task->tGiSprite0 = LC_MonPic(sp, 120, LCL_MON_Y, 0);
-    task->tLcMon2 = LC_MonPic(sp, 120, 2 * LCL_RIPPLE_Y - LCL_MON_Y - 4, 0);
-    if (task->tLcMon2 < MAX_SPRITES)
-    {
-        struct Sprite *r = &gSprites[task->tLcMon2];
-        r->vFlip = TRUE;
-        r->oam.matrixNum |= ST_OAM_VFLIP;
-        r->oam.objMode = ST_OAM_OBJ_BLEND;
-        r->subpriority = 4;
-    }
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_BG0 | BLDCNT_TGT2_BD);
     SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(6, 10));
 }
@@ -1027,16 +1052,15 @@ static void RTLake_Init(struct Task *task)
 static bool8 RTLake_Update(struct Task *task)
 {
     s32 t = Tapu_Elapsed(), r, i, k;
-    u32 keep, monBit;
-    struct Sprite *s, *mon = GI_Sprite(task->tGiSprite0), *ref = GI_Sprite(task->tLcMon2);
+    u32 keep;
+    struct Sprite *s;
     u16 cols[16];
     bool32 done;
 
     if (sLC == NULL)
         return TRUE;
     r = LC_R(t);
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit | GI_SpritePalBit(LCL_TAG_RING);
+    keep = GI_SpritePalBit(LCL_TAG_RING);
     GI_ResetPals(keep);
     LC_Gen(task, t, LCL_Pixel, LCL_Cell);
     if (r == 0)
@@ -1074,18 +1098,10 @@ static bool8 RTLake_Update(struct Task *task)
             SetOamMatrixRotationScaling(s->oam.matrixNum, 48 + k * 9, (48 + k * 9) * 3 / 10, 0);
     }
 
-    // de Pokémon rijst op met zijn spiegelbeeld
+    // iets onder het oppervlak: vanaf tel 3 kleuren de kringen naar de edelsteen
     k = t - LCL_MON_T;
-    mon->invisible = ref->invisible = k < 0;
     if (k >= 0)
-    {
-        s32 rise = max(0, 24 - k) * max(0, 24 - k) / 24;
-        mon->y2 = rise + Sin((t * 5) & 0xFF, 2);
-        ref->y2 = -rise - Sin((t * 5) & 0xFF, 2);
-        ref->x2 = Sin((t * 9) & 0xFF, 2);
-        if (k < 24)
-            BlendPalettes(monBit, 16 - k * 2 / 3, RGB(4, 9, 16));
-    }
+        BlendPalettes(keep, min(11, k / 3), LCL_Color());
     if (LC_Cross(task, t, LCL_MON_T + 10))
         PlayCry_Normal(LC_EnemySpecies(), 0);
     if (LC_Cross(task, t, LC_BEAT(3)))
@@ -1122,126 +1138,218 @@ static void Task_LegendLake(u8 taskId)
 }
 
 // =====================================================================================================================
-// Meloetta (Jordi: "mag je heel veel noten het beeld laten vullen"): de muzieknoten van Sing (gevechtsanimatie) als
-// BG0-tiles. Op elke tel verdubbelt het aantal noten (1, 3, 7, 15, 31, 63, 127): op de klokslag staat het hele beeld
-// vol. De noten dansen (golf per beeldlijn, hupje op de tel) en wisselen op elke tel van kleur; Meloetta zingt in
-// het midden en er stijgen losse noten op.
-#define LCM_CELLS      160   // 16 x 10 vakken van 16 x 16
-#define LCM_TILE0      16
-#define LCM_FLOATS     8
+// Meloetta (Jordi: "Meloetta is ook saai, emuleer daar wat muziek dances"): een optreden. Het podium wordt donker, een
+// notenbalk licht op en twee spotlights zwaaien over het podium; onderin springt een equalizer op de achtsten. Acht
+// noten (de Sing-art) dansen een choreografie op het legendary-thema: ze komen tapdansend op (links/rechts om en om
+// op de achtsten), wiegen op de tellen (step-ball-change), doen op tel 5 een kickline (alles springt, het beeld veert
+// mee), en op tel 6 de pirouette: de rij draait in een cirkel die steeds sneller rondtolt, elke noot tolt mee (de
+// Pirouette-vorm), de spotlights zoeken het midden en op de klokslag een witte flits. Aria: groen, Pirouette: oranje.
+// Geen Pokémon-sprite.
+#define LCM_NOTES      8
+#define LCM_SPOT       LCM_NOTES     // twee spotlights
 #define LCM_TAG_NOTE   0x5B26
-#define LCM_MON_T      LC_BEAT(3)
+#define LCM_TAG_SPOT   0x5B2E
+#define LCM_BAR_TILE   16            // tiles 16-19: equalizerstaafjes in kleur 1-4
+#define LCM_STAFF_Y    60            // bovenste lijn; vijf lijnen, 6 px uit elkaar
+#define LCM_TAP        LC_BEAT(3)
+#define LCM_KICK       LC_BEAT(5)
+#define LCM_SPIN       LC_BEAT(6)
 
-// aantal noten na tel b (het eigen deel begint rond tel 2,4)
-static const u8 sLCM_Count[9] = {0, 0, 0, 3, 8, 20, 44, 96, LCM_CELLS};
+static const u16 sLCM_SpotPal[16] = {0, RGB_WHITE};
+
+static u32 LCM_StaffPixel(s32 x, s32 y)
+{
+    s32 d = y - LCM_STAFF_Y;
+    return (d >= 0 && d <= 24 && d % 6 == 0) ? 1 : 0;
+}
+
+static u32 LCM_StaffCell(s32 cx, s32 cy)
+{
+    return (cy * 8 + 7 >= LCM_STAFF_Y && cy * 8 <= LCM_STAFF_Y + 24) ? ((13 << 12) | LC_PLAIN) : LC_EMPTY;
+}
+
+// waar noot i staat in de rij (op een lijn of tussen twee lijnen)
+static void LCM_LinePos(u32 i, s32 *x, s32 *y)
+{
+    *x = 36 + i * 24;
+    *y = LCM_STAFF_Y + 12 + ((i & 1) ? -9 : 3) - 8;
+}
 
 static void RTMeloetta_Init(struct Task *task)
 {
-    u32 i, j;
-    u16 sp = LC_EnemySpecies(), *tilemap, *tileset;
-    if (sp != SPECIES_MELOETTA_PIROUETTE)
-        sp = SPECIES_MELOETTA_ARIA;
+    u32 i, k, y;
+    u16 sp = LC_EnemySpecies();
     LC_Begin(task, 0x3E10);
     if (sLC == NULL)
         return;
-    GetBg0TilesDst(&tilemap, &tileset);
-    DecompressDataWithHeaderVram(gBattleAnimSpriteGfx_MusicNotes2, tileset + LCM_TILE0 * 16);
-    for (i = 0; i < LCM_CELLS; i++)
-        sLC->cell[i] = i;
-    for (i = LCM_CELLS - 1; i > 0; i--)
+    task->tLcVar = (sp == SPECIES_MELOETTA_PIROUETTE);
+    // equalizerstaafjes: 6 px breed, 2 px tussenruimte
+    for (k = 0; k < 4; k++)
     {
-        u8 tmp;
-        j = LC_Rand() % (i + 1);
-        tmp = sLC->cell[i];
-        sLC->cell[i] = sLC->cell[j];
-        sLC->cell[j] = tmp;
+        u32 buf[8];
+        for (y = 0; y < 8; y++)
+            buf[y] = (y == 0) ? 0 : ((k + 1) * 0x01111110);
+        CpuCopy32(buf, LC_Tile(LCM_BAR_TILE + k), 32);
     }
-    for (i = 0; i < LCM_CELLS; i++)
-        sLC->frame[i] = LC_Rand() & 15;
-    for (i = 0; i < LCM_FLOATS; i++)
+    sLC->nextTile = LCM_BAR_TILE + 4;
+    LC_PaintRows(LCM_StaffPixel, LCM_StaffCell, 0, 20);
+    sLC->matSet = AllocOamMatrix();
+    for (i = 0; i < LCM_NOTES; i++)
     {
-        LI_Make(i, gBattleAnimSpriteGfx_MusicNotes2, 0x800, gBattleAnimSpritePal_MusicNotes2, LCM_TAG_NOTE, &sGI_Oam16, 120, 80, 1);
+        LI_Make(i, gBattleAnimSpriteGfx_MusicNotes2, 0x800, task->tLcVar ? gBattleAnimSpritePal_MusicNotes2
+                : LC_Rotate(gBattleAnimSpritePal_MusicNotes2, 1), LCM_TAG_NOTE, &sGI_Oam16, 0, 0, 1);
         LI_Frame(i, LCM_TAG_NOTE, (i * 5) & 15, 4);
+        LC_UseMatrix(LI_S(i), sLC->matSet, SPRITE_SHAPE(16x16), SPRITE_SIZE(16x16));
     }
-    task->tGiSprite0 = LC_MonPic(sp, 120, 80, 0);
-    LI_InitWave();
-    // de golf zet elke VBlank ook de vensters: alles laten zien (anders blijft alleen de achtergrondkleur over)
-    sTransitionData->WININ = WININ_WIN0_ALL | WININ_WIN1_ALL;
-    sTransitionData->WINOUT = WINOUT_WIN01_BG_ALL | WINOUT_WIN01_OBJ | WINOUT_WIN01_CLR;
-    sTransitionData->WIN0V = DISPLAY_HEIGHT;
-}
-
-static void LCM_PutNote(u16 *tilemap, u32 cell, u32 frame)
-{
-    u32 cx = (cell & 15) * 2, cy = (cell >> 4) * 2, pal = 13 + (cell % 3);
-    u32 base = LCM_TILE0 + frame * 4;
-    tilemap[cy * 32 + cx] = base | (pal << 12);
-    tilemap[cy * 32 + cx + 1] = (base + 1) | (pal << 12);
-    tilemap[(cy + 1) * 32 + cx] = (base + 2) | (pal << 12);
-    tilemap[(cy + 1) * 32 + cx + 1] = (base + 3) | (pal << 12);
+    for (i = 0; i < 2; i++)
+    {
+        LI_Make(LCM_SPOT + i, gBattleAnimSpriteGfx_Spotlight, 0x800, sLCM_SpotPal, LCM_TAG_SPOT, &sGI_Oam64Affine, 0, 0, 4);
+        LI_S(LCM_SPOT + i)->oam.objMode = ST_OAM_OBJ_BLEND;
+        LI_S(LCM_SPOT + i)->oam.priority = 1;   // onder de notenbalk (BG0 telt er dan bij op)
+    }
+    LC_Additive(12);
 }
 
 static bool8 RTMeloetta_Update(struct Task *task)
 {
-    s32 t = Tapu_Elapsed(), r, i, k, n, b, ph;
-    u32 keep, monBit;
-    struct Sprite *s, *mon = GI_Sprite(task->tGiSprite0);
+    s32 t = Tapu_Elapsed(), r, i, k, b, e, ph, eph, bump;
+    u32 keep, noteBit, spotBit;
+    bool32 piro = task->tLcVar;
+    struct Sprite *s;
     u16 *tilemap = RT_Tilemap();
-    s16 *hofs = (s16 *)gScanlineEffectRegBuffers[0];
+    u16 cols[16];
 
     if (sLC == NULL)
         return TRUE;
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit | GI_SpritePalBit(LCM_TAG_NOTE);
     r = LC_R(t);
+    noteBit = GI_SpritePalBit(LCM_TAG_NOTE);
+    spotBit = GI_SpritePalBit(LCM_TAG_SPOT);
+    keep = noteBit | spotBit;
     GI_ResetPals(keep);
-    LC_DimWorld(r, keep, 12, RGB(5, 1, 9));
+    LC_DimWorld(r, keep, 13, RGB(4, 1, 8));
+    if (r == 0)
+        LC_ShowMap();
 
-    // de kleuren draaien op elke tel door (rood/geel, groen/blauw, blauw/roze)
-    b = t * 1000 / 20363;
-    ph = t - LC_BEAT(b);
-    for (i = 0; i < 3; i++)
-        LC_SetBgPal(i, LC_Rotate(gBattleAnimSpritePal_MusicNotes2, (i + b) % 3));
-    if (b >= 3 && ph < 6)
-        BlendPalettes(GI_BG_PALS, 12 - ph * 2, RGB_WHITE);
+    b = t * 1000 / 20363;          // tel
+    ph = t - LC_BEAT(b);           // frames sinds de tel
+    e = t * 1000 / 10181;          // achtste
+    eph = t - LC_E8(e);
+    bump = (t >= LCM_TAP && ph < 3) ? 2 - ph / 2 : 0;
+    if (t >= LCM_KICK && t < LCM_SPIN && ph < 6)
+        bump = 4 - ph / 2;
 
-    // noten: verdubbelen op elke tel
-    n = sLCM_Count[min(b, 8)];
-    for (i = 0; i < n; i++)
-        LCM_PutNote(tilemap, sLC->cell[i], sLC->frame[sLC->cell[i]]);
-
-    // dansen: golf per beeldlijn en een hupje op de tel
-    for (i = 0; i < DISPLAY_HEIGHT; i++)
-        hofs[i] = Sin((i * 3 + t * 5) & 0xFF, 3);
-    SetGpuReg(REG_OFFSET_BG0VOFS, (ph < 4 && b >= 3) ? 2 : 0);
-
-    // Meloetta zingt
-    k = t - LCM_MON_T;
-    mon->invisible = k < 0;
-    mon->y2 = -abs(Sin((t * 256 / 41) & 0xFF, 4));
-    if (k >= 0 && k < 12)
-        BlendPalettes(monBit, 16 - k * 4 / 3, RGB_WHITE);
-    if (LC_Cross(task, t, LCM_MON_T + 8))
-        PlayCry_Normal(LC_EnemySpecies(), 0);
-    for (i = 0; i < LCM_FLOATS; i++)
+    // notenbalk (licht op op de tel) en equalizer
+    CpuFill16(0, cols, sizeof(cols));
+    k = min(16, r * 2);
+    cols[1] = Tapu_Blend(0, Tapu_Blend(piro ? RGB(22, 12, 3) : RGB(6, 20, 10), RGB(31, 31, 24), (t >= LCM_TAP && ph < 4) ? 8 - ph * 2 : 0), k);
+    LC_SetBgPal(0, cols);
+    cols[1] = RGB(4, 18, 6);
+    cols[2] = RGB(14, 22, 4);
+    cols[3] = RGB(24, 22, 4);
+    cols[4] = RGB(28, 8, 4);
+    LC_SetBgPal(1, cols);
+    for (i = 0; i < 30; i++)
     {
-        s = LI_S(i);
-        k = (t - LCM_MON_T - i * 7);
-        s->invisible = k < 0;
-        k %= 56;
-        s->x = 120 + ((i & 1) ? 24 : -24) + Sin((k * 6 + i * 32) & 0xFF, 10);
-        s->y = 72 - k * 3 / 2;
+        u32 h = (i * 2654435761u + e * 40503u) >> 13, lvl;
+        s32 tgt = (r < 6) ? 0 : 1 + (h % 3) + ((e & 1) == 0) + (i < 10 || (i > 20 && (e & 2)));
+        lvl = max(0, min(4, tgt - eph / 4));
+        for (k = 0; k < 4; k++)
+            tilemap[(19 - k) * 32 + i] = (k < (s32)lvl) ? ((LCM_BAR_TILE + k) | (14 << 12)) : 0;
     }
+    SetGpuReg(REG_OFFSET_BG0VOFS, (-bump) & 0x1FF);
 
+    // spotlights: zwaaien om hun top, op de klokslag allebei naar het midden
+    for (i = 0; i < 2; i++)
+    {
+        s32 ax = i ? 196 : 44, a;
+        s = LI_S(LCM_SPOT + i);
+        s->invisible = r < 4;
+        a = Sin((t * 3 + i * 128) & 0xFF, 22) + (i ? 14 : -14);
+        if (t >= LC_BEAT(7))
+            a = a * max(0, LC_HIT - t) / (LC_HIT - LC_BEAT(7)) + (i ? 34 : -34) * min(16, t - LC_BEAT(7)) / 16;
+        if (s->oam.affineMode != ST_OAM_AFFINE_OFF)
+            SetOamMatrixRotationScaling(s->oam.matrixNum, 300, 500, (u16)(a << 8));
+        s->x = ax - Sin(a & 0xFF, 60);
+        s->y = -6 + Cos(a & 0xFF, 60);
+    }
+    cols[0] = piro ? RGB(12, 7, 3) : RGB(7, 10, 6);
+    if (t >= LCM_TAP && ph < 4)
+        cols[0] = Tapu_Blend(cols[0], RGB(24, 24, 20), 8 - ph * 2);
+    k = IndexOfSpritePaletteTag(LCM_TAG_SPOT);
+    if (k != 0xFF)
+        gPlttBufferFaded[OBJ_PLTT_ID(k) + 1] = Tapu_Blend(0, cols[0], min(16, r * 2));
+
+    // de dans
+    // de noten zijn 1,5x zo groot; ze wiebelen op de tel en tollen bij de pirouette
+    if (sLC->matSet != 0xFF)
+    {
+        s32 sc = 384 + (t >= LC_BEAT(7) ? (t - LC_BEAT(7)) * 8 : 0), rot = (t >= LCM_TAP && ph < 6) ? (6 - ph) * ((b & 1) ? 600 : -600) : 0;
+        if (t >= LCM_SPIN)
+            rot = (t - LCM_SPIN) * (t - LCM_SPIN) * 40;
+        SetOamMatrixRotationScaling(sLC->matSet, sc, sc, (u16)rot);
+    }
+    for (i = 0; i < LCM_NOTES; i++)
+    {
+        s32 x, y, hop = 0, sway;
+        s = LI_S(i);
+        LCM_LinePos(i, &x, &y);
+        s->invisible = r < 2;
+        if (t < LCM_TAP)
+        {
+            // opkomen: tapdansend vanaf rechts, om en om op de achtsten
+            k = LCM_TAP - t;
+            x += k * 5;
+            if ((u32)(e & 1) == (i & 1))
+                hop = Sin(min(127, eph * 128 / 10), 8);
+        }
+        else if (t < LCM_KICK)
+        {
+            // tapdansen op de plek, de rij wiegt op de tellen (step-ball-change)
+            sway = (b & 1) ? 8 : -8;
+            x += -sway + 2 * sway * min(6, ph) / 6;
+            if ((u32)(e & 1) == (i & 1))
+                hop = Sin(min(127, eph * 128 / 10), 10);
+        }
+        else if (t < LCM_SPIN)
+        {
+            // kickline: alles springt op de tel, de buitenste noten het hoogst
+            hop = Sin(min(127, ph * 128 / 20), 14 + abs((s32)i * 2 - 7));
+        }
+        else
+        {
+            // pirouette: van de rij naar een tollende cirkel
+            s32 m = min(16, (t - LCM_SPIN) * 16 / 14), a, rad;
+            k = t - LCM_SPIN;
+            // rij -> cirkel zonder kruisen: even noten over de bovenkant, oneven over de onderkant
+            a = ((i & 1) ? 112 - ((s32)i - 1) * 16 : 144 + (s32)i * 16) + k * 3 + k * k / 12;
+            rad = 50 + (t >= LC_BEAT(7) ? (t - LC_BEAT(7)) * 3 : 0);
+            x = x + ((120 + Cos(a & 0xFF, rad)) - x) * m / 16;
+            y = y + ((70 + Sin(a & 0xFF, rad * 3 / 5)) - y) * m / 16;
+            hop = (ph < 6) ? 3 - ph / 2 : 0;
+        }
+        s->x = x + 8;
+        s->y = y + 8 - hop + bump;
+        LI_Frame(i, LCM_TAG_NOTE, ((i * 5) + b) & 15, 4);
+    }
+    if (t >= LCM_TAP && ph < 4)
+        BlendPalettes(noteBit, 10 - ph * 2, RGB_WHITE);
+
+    if (LC_Cross(task, t, LCM_KICK))
+        PlaySE(SE_M_ENCORE);
+    if (LC_Cross(task, t, LCM_SPIN))
+        PlaySE(SE_M_TEETER_DANCE);
+    if (LC_Cross(task, t, LCM_SPIN + 10))
+        PlayCry_Normal(LC_EnemySpecies(), 0);
     task->tLcLast = t;
     return LC_Out(t, LC_HIT + 1, 5, PALETTES_ALL, RGB_WHITE);
 }
 
 static void RTMeloetta_Finish(struct Task *task)
 {
-    LI_EndWave();
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
     LC_FinishCommon(task);
     GI_FreeTag(LCM_TAG_NOTE);
+    GI_FreeTag(LCM_TAG_SPOT);
 }
 
 static const struct RouteTransition sRT_LegendMeloetta =
@@ -1363,16 +1471,6 @@ static bool32 LC_GenStrokes(struct Task *task)
     return TRUE;
 }
 
-// BG0 telt op bij alles eronder (zwart = niets)
-static void LC_Additive(u32 eva)
-{
-    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT1_BG0 | BLDCNT_EFFECT_BLEND | BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3
-                               | BLDCNT_TGT2_OBJ | BLDCNT_TGT2_BD);
-    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(eva, 16));
-    SetGpuReg(REG_OFFSET_WININ, GetGpuReg(REG_OFFSET_WININ) | WININ_WIN0_CLR | WININ_WIN1_CLR);
-    SetGpuReg(REG_OFFSET_WINOUT, GetGpuReg(REG_OFFSET_WINOUT) | WINOUT_WIN01_CLR | WINOUT_WINOBJ_CLR);
-}
-
 // kleur van een slag-index: zwart voor 'from', twee frames wit, dan 'hot' dat in 'fade' frames zakt naar 'cool'
 static u16 LC_SlashColor(s32 t, s32 from, u16 hot, u16 cool, s32 fade)
 {
@@ -1386,7 +1484,7 @@ static u16 LC_SlashColor(s32 t, s32 from, u16 hot, u16 cool, s32 fade)
 
 // =====================================================================================================================
 // Zeraora (Jordi: "een soort electric paw strike"): Plasma Fists. De plek wordt donker, twee elektrische klauwhalen
-// (drie gekartelde strepen) trekken op de tellen over het beeld, Zeraora flakkert op tussen de vonken, en dan komt de
+// (drie gekartelde strepen) trekken op de tellen over het beeld, vonken knetteren rond het midden, en dan komt de
 // klauw (de poot uit de Mega Punch-art) recht op de camera af: het beeld barst vanuit het midden.
 #define LCZ_TAG_PAW    0x5B27
 #define LCZ_TAG_SPARK  0x5B28
@@ -1418,24 +1516,20 @@ static void RTZeraora_Init(struct Task *task)
     LI_Frame(0, LCZ_TAG_PAW, 1, 16);
     for (i = 0; i < LCZ_SPARKS; i++)
         LI_Make(1 + i, gBattleAnimSpriteGfx_Electricity, 0x800, gBattleAnimSpritePal_ElectricOrbs, LCZ_TAG_SPARK, &sGI_Oam32, 0, 0, 1);
-    task->tGiSprite0 = LC_MonPic(SPECIES_ZERAORA, 120, 76, 0);
-    if (task->tGiSprite0 < MAX_SPRITES)
-        gSprites[task->tGiSprite0].subpriority = 5;
     LC_Additive(14);
 }
 
 static bool8 RTZeraora_Update(struct Task *task)
 {
     s32 t = Tapu_Elapsed(), r, i, k;
-    u32 keep, monBit;
-    struct Sprite *s, *mon = GI_Sprite(task->tGiSprite0), *paw;
+    u32 keep;
+    struct Sprite *s, *paw;
     u16 cols[16];
 
     if (sLC == NULL)
         return TRUE;
     r = LC_R(t);
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit | GI_SpritePalBit(LCZ_TAG_PAW) | GI_SpritePalBit(LCZ_TAG_SPARK);
+    keep = GI_SpritePalBit(LCZ_TAG_PAW) | GI_SpritePalBit(LCZ_TAG_SPARK);
     GI_ResetPals(keep);
     LC_GenStrokes(task);
     LC_DimWorld(r, keep, 13, RGB(1, 1, 4));
@@ -1452,11 +1546,8 @@ static bool8 RTZeraora_Update(struct Task *task)
     cols[7] = cols[14] = cols[15] = 0;
     LC_SetBgPal(0, cols);
 
-    // Zeraora tussen de vonken
+    // vonken knetteren rond het midden (waar de klauw vandaan komt)
     k = t - LCZ_MON;
-    mon->invisible = k < 0 || (t < LCZ_PAW && (Random() & 7) == 0);
-    if (k >= 0 && k < 10)
-        BlendPalettes(monBit, 16 - k * 3 / 2, RGB(31, 31, 12));
     for (i = 0; i < LCZ_SPARKS; i++)
     {
         s = LI_S(1 + i);
@@ -1509,86 +1600,251 @@ static void Task_LegendZeraora(u8 taskId)
 }
 
 // =====================================================================================================================
-// Zygarde (alle vormen; Jordi: "een legends ZA groene Z zoals Zorro het beeld laten splijten"): drie snelle sneden op
-// de achtsten, boven, schuin en onder: een groene Z over de plek. Zygarde verschijnt, de Z gloeit op, wordt een kier
-// van licht en het beeld splijt (de kier gaat open, het beeld trilt), groen-wit.
-#define LCY_CUT        LC_E8(8)
-#define LCY_MON        LC_E8(11)
-#define LCY_SPLIT      LC_BEAT(6)
+// Zygarde (alle vormen; Jordi: "google hoe Zygarde behandeld wordt in de games, die Z is heel anders"): de Order-
+// Pokémon bestaat uit Cores en Cells, in de games altijd groen-zwarte zeshoeken die oplichten (Power Construct: de
+// Cells verzamelen zich; Core Enforcer in Legends Z-A: een hoofdletter Z op de grond). De plek wordt zwart en er
+// verschijnt een zeshoekraster (BG0, optellend) dat op elke tel vanuit de Z een golf uitzendt. In het midden licht de
+// Core op (de rode zeshoek), en op de achtsten vliegen groene Cells van alle kanten naar binnen; elke landing zet een
+// stuk van de Z van zeshoeken aan, van linksboven tot rechtsonder. Op tel 7 is de Z af en gloeit wit, en het beeld
+// breekt langs het raster: de naden worden wit van de Z naar buiten, alles trilt, en op de klokslag een groene flits.
+// Geen Pokémon-sprite.
+#define LCY_CELLS      16            // twee per stuk van de Z
+#define LCY_TAG_CELL   0x5B2F
+#define LCY_FLY        18            // vliegtijd van een Cell
+#define LCY_E0         6             // eerste landing: achtste 6 (tel 3)
+#define LCY_BREAK      LC_BEAT(7)
+#define LCY_HX         18            // zeshoeken: i -1..16, j -1..14
+#define LCY_HY         16
+#define LCY_Z_LEN      455           // lengte van de Z (144 + 167 + 144)
 
-static const struct LCStroke sLCY_Strokes[] =
+static const u16 sLCY_CellPal[16] = {0, RGB(6, 28, 10), RGB(1, 10, 4), RGB(20, 31, 18)};
+
+// de Z: boven (48,36)-(192,36), schuin naar (48,120), onder naar (192,120); afstand en positie langs de Z
+static s32 LCY_ZDist(s32 x, s32 y, s32 *along)
 {
-    {36, 34, 206, 34, 2, 6, 14, 1, 2, 0, 0},
-    {206, 34, 34, 128, 2, 6, 14, 3, 2, 0, 0},
-    {34, 128, 206, 128, 2, 6, 14, 5, 2, 0, 0},
-};
+    static const s16 sZ[4][2] = {{48, 36}, {192, 36}, {48, 120}, {192, 120}};
+    s32 k, best = 0x7FFFFFFF, base = 0;
+    for (k = 0; k < 3; k++)
+    {
+        s32 x0 = sZ[k][0], y0 = sZ[k][1], dx = sZ[k + 1][0] - x0, dy = sZ[k + 1][1] - y0;
+        s32 len2 = dx * dx + dy * dy, len = (k == 1) ? 167 : 144, u, px, py, d2;
+        u = ((x - x0) * dx + (y - y0) * dy) * 256 / len2;
+        u = u < 0 ? 0 : (u > 256 ? 256 : u);
+        px = x0 + dx * u / 256 - x;
+        py = y0 + dy * u / 256 - y;
+        d2 = px * px + py * py;
+        if (d2 < best)
+        {
+            best = d2;
+            *along = base + len * u / 256;
+        }
+        base += len;
+    }
+    return best;
+}
+
+// zeshoek (i, j): midden (16i + 8 (j oneven), 12j); sLC->order[(j+1)*18 + i+1] = vulkleur | ring << 8
+static u32 LCY_Hex(s32 i, s32 j)
+{
+    if (i < -1 || i > 16 || j < -1 || j > 14)
+        return 4 << 8;
+    return sLC->order[(j + 1) * LCY_HX + i + 1];
+}
+
+// het raster herhaalt zich per 16 x 24 pixels: per pixel in dat blok staat de dichtstbijzijnde zeshoek (a), de
+// tweede (b) en of het een naad is (sLC->hexloc, bij de start berekend: per pixel delen kan de GBA niet snel)
+static const s8 sLCY_Cand[7][2] = {{0, 0}, {1, 0}, {-1, 1}, {0, 1}, {1, 1}, {0, 2}, {1, 2}};
+
+static u32 LCY_Pixel(s32 x, s32 y)
+{
+    u32 v = sLC->hexloc[sLC->rowv[y] * 16 + (x & 15)], a = v & 7, b = (v >> 3) & 7;
+    s32 bx = x >> 4, by = sLC->top[y] * 2;
+    if (v & 0x40)
+    {
+        u32 ra = LCY_Hex(bx + sLCY_Cand[a][0], by + sLCY_Cand[a][1]) >> 8;
+        u32 rb = LCY_Hex(bx + sLCY_Cand[b][0], by + sLCY_Cand[b][1]) >> 8;
+        return 1 + min(ra, rb);           // naad: kleur 1-5 naar de ring
+    }
+    return LCY_Hex(bx + sLCY_Cand[a][0], by + sLCY_Cand[a][1]) & 0xFF;  // stuk van de Z (6-13), Core (14) of leeg (15)
+}
+
+static u32 LCY_Cell(s32 cx, s32 cy)
+{
+    return 13 << 12;
+}
 
 static void RTZygarde_Init(struct Task *task)
 {
-    u16 sp = LC_EnemySpecies();
-    if (sp != SPECIES_ZYGARDE_10_AURA_BREAK && sp != SPECIES_ZYGARDE_COMPLETE)
-        sp = SPECIES_ZYGARDE_50;
+    s32 i, j, along, d2, best = 0x7FFFFFFF, core = 0, sx[8] = {0}, sy[8] = {0}, sn[8] = {0};
+    u32 x, y;
     LC_Begin(task, 0x2A6D);
     if (sLC == NULL)
         return;
-    LC_StrokesInit(sLCY_Strokes, ARRAY_COUNT(sLCY_Strokes));
-    task->tGiSprite0 = LC_MonPic(sp, 120, 80, 0);
+    for (j = -1; j <= 14; j++)
+    {
+        for (i = -1; i <= 16; i++)
+        {
+            s32 cx = 16 * i + ((j & 1) ? 8 : 0), cy = 12 * j, g, ring;
+            u16 *h = &sLC->order[(j + 1) * LCY_HX + i + 1];
+            d2 = LCY_ZDist(cx, cy, &along);
+            if (d2 <= 7 * 7)
+            {
+                g = min(7, along * 8 / LCY_Z_LEN);
+                *h = 6 + g;
+                sx[g] += cx, sy[g] += cy, sn[g]++;
+                d2 = (cx - 120) * (cx - 120) + (cy - 78) * (cy - 78);
+                if (d2 < best)
+                    best = d2, core = (j + 1) * LCY_HX + i + 1;
+            }
+            else
+            {
+                for (ring = 1; ring < 4 && d2 > (7 + ring * 16) * (7 + ring * 16); ring++)
+                    ;
+                *h = 15 | (ring << 8);
+            }
+        }
+    }
+    sLC->order[core] = 14;
+    for (y = 0; y < DISPLAY_HEIGHT; y++)
+    {
+        sLC->top[y] = y / 24;
+        sLC->rowv[y] = y % 24;
+    }
+    for (y = 0; y < 24; y++)
+    {
+        for (x = 0; x < 16; x++)
+        {
+            s32 d[7], a = 0, b = 1, n;
+            for (n = 0; n < 7; n++)
+            {
+                s32 dx = (s32)x - (16 * sLCY_Cand[n][0] + ((sLCY_Cand[n][1] & 1) ? 8 : 0)), dy = (s32)y - 12 * sLCY_Cand[n][1];
+                d[n] = dx * dx + dy * dy;
+            }
+            if (d[1] < d[0])
+                a = 1, b = 0;
+            for (n = 2; n < 7; n++)
+            {
+                if (d[n] < d[a])
+                    b = a, a = n;
+                else if (d[n] < d[b])
+                    b = n;
+            }
+            sLC->hexloc[y * 16 + x] = a | (b << 3) | ((d[b] - d[a] < 20) ? 0x40 : 0);
+        }
+    }
+    for (i = 0; i < 8; i++)
+    {
+        sLC->cell[i] = sn[i] ? sx[i] / sn[i] : 120;
+        sLC->frame[i] = sn[i] ? sy[i] / sn[i] : 80;
+    }
+    // een Cell: groene zeshoek met een donkere rand en een lichte kern
+    CpuFill32(0, sLC->spr, sizeof(sLC->spr));
+    for (y = 0; y < 16; y++)
+    {
+        for (x = 0; x < 16; x++)
+        {
+            s32 dx = abs((s32)x * 2 - 15), dy = abs((s32)y * 2 - 15), v = 0;
+            if (dx <= 13 && dx / 2 + dy <= 15)
+                v = (dx >= 11 || dx / 2 + dy >= 13) ? 2 : ((dx + dy <= 6) ? 3 : 1);
+            sLC->spr[((y / 8) * 2 + x / 8) * 8 + (y & 7)] |= v << ((x & 7) * 4);
+        }
+    }
+    {
+        struct SpriteSheet sheet = {sLC->spr, sizeof(sLC->spr), LCY_TAG_CELL};
+        LoadSpriteSheet(&sheet);
+    }
+    for (i = 0; i < LCY_CELLS; i++)
+        LI_Make(i, (const u32 *)sLC->spr, sizeof(sLC->spr), sLCY_CellPal, LCY_TAG_CELL, &sGI_Oam16, 0, 0, 1);
     LC_Additive(14);
 }
 
 static bool8 RTZygarde_Update(struct Task *task)
 {
-    s32 t = Tapu_Elapsed(), r, i, k;
-    u32 keep, monBit;
-    struct Sprite *mon = GI_Sprite(task->tGiSprite0);
-    u16 cols[16];
+    s32 t = Tapu_Elapsed(), r, i, k, b, ph;
+    u32 keep;
+    struct Sprite *s;
+    u16 cols[16], green = RGB(6, 28, 10);
 
     if (sLC == NULL)
         return TRUE;
     r = LC_R(t);
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit;
+    keep = GI_SpritePalBit(LCY_TAG_CELL);
     GI_ResetPals(keep);
-    LC_GenStrokes(task);
-    LC_DimWorld(r, keep, 13, RGB(0, 3, 1));
-
-    cols[0] = 0;
-    for (i = 0; i < 6; i++)
+    if (task->tLcGen < 20)
     {
-        cols[1 + i] = LC_SlashColor(t, LCY_CUT + (i / 2) * LC_E8(1) + (i & 1), RGB(14, 31, 10), RGB(4, 24, 6), 20);
-        cols[8 + i] = cols[1 + i] ? Tapu_Blend(0, RGB(2, 20, 4), 10) : 0;
+        LC_GenRowsDedup(task, LCY_Pixel, LCY_Cell, 4);
+        if (task->tLcGen >= 20)
+            LC_ShowMap();
     }
-    cols[7] = 0;
-    // de kier: de aura gaat open en wordt wit
-    k = t - LCY_SPLIT;
-    cols[15] = k < 0 ? 0 : Tapu_Blend(RGB(4, 20, 6), RGB(28, 31, 28), min(16, k));
-    if (k >= 0)
-        for (i = 1; i <= 6; i++)
-            cols[i] = cols[i + 7] = Tapu_Blend(cols[i], RGB_WHITE, min(16, k));
+    LC_DimWorld(r, keep, 14, RGB(0, 2, 1));
+    b = t * 1000 / 20363;
+    ph = t - LC_BEAT(b);
+
+    // het raster: ringen verschijnen vanuit de Z, op elke tel een golf naar buiten, bij het breken wit
+    cols[0] = 0;
+    for (k = 0; k < 5; k++)
+    {
+        s32 on = r - 10 - k * 3, w = ph - k * 2;
+        u16 c = on < 0 ? 0 : Tapu_Blend(0, k ? RGB(1, 9, 3) : RGB(2, 13, 5), min(16, on * 3));
+        if (t >= LC_BEAT(3) && on >= 0 && w >= 0 && w < 4)
+            c = Tapu_Blend(c, green, 12 - w * 3);
+        if (t >= LCY_BREAK + k * 3)
+            c = Tapu_Blend(green, RGB(28, 31, 28), min(16, (t - LCY_BREAK - k * 3) * 4));
+        cols[1 + k] = c;
+    }
+    // de Z: elk stuk licht op als zijn Cells landen
+    for (k = 0; k < 8; k++)
+    {
+        s32 a = t - LC_E8(LCY_E0 + k);
+        u16 c = a < 0 ? 0 : (a < 2 ? RGB_WHITE : green);
+        if (a >= 2 && ph < 4)
+            c = Tapu_Blend(c, RGB(22, 31, 20), 8 - ph * 2);
+        if (t >= LCY_BREAK)
+            c = Tapu_Blend(green, RGB(30, 31, 30), min(16, (t - LCY_BREAK) * 2));
+        cols[6 + k] = c;
+    }
+    // de Core: klopt rood op de tel
+    k = r - 6;
+    cols[14] = k < 0 ? 0 : Tapu_Blend(RGB(14, 1, 3), RGB(31, 6, 8), (ph < 6) ? 16 - ph * 2 : 4);
+    if (t >= LCY_BREAK)
+        cols[14] = Tapu_Blend(cols[14], RGB_WHITE, min(16, (t - LCY_BREAK) * 2));
+    // binnenkant van de zeshoeken: pas bij het breken
+    k = t - LCY_BREAK - 10;
+    cols[15] = k < 0 ? 0 : Tapu_Blend(0, RGB(6, 20, 8), min(16, k * 2));
     LC_SetBgPal(0, cols);
 
-    k = t - LCY_MON;
-    mon->invisible = k < 0;
-    if (k >= 0 && k < 12)
-        BlendPalettes(monBit, 16 - k * 4 / 3, RGB(6, 28, 8));
-    if (t >= LCY_SPLIT)
-        mon->x2 = LI_ShakeAmp(2);
+    // de Cells vliegen naar hun stuk van de Z
+    for (i = 0; i < LCY_CELLS; i++)
+    {
+        s32 g = i / 2, land = LC_E8(LCY_E0 + g), a = (i * 89 + 40) & 0xFF, p;
+        s = LI_S(i);
+        k = t - (land - LCY_FLY);
+        s->invisible = k < 0 || t >= land;
+        if (s->invisible)
+            continue;
+        p = k * k * 256 / (LCY_FLY * LCY_FLY);
+        s->x = 120 + Cos(a, 170) + ((sLC->cell[g] + ((i & 1) ? 8 : -8)) - 120 - Cos(a, 170)) * p / 256;
+        s->y = 80 + Sin(a, 110) + (sLC->frame[g] - 80 - Sin(a, 110)) * p / 256;
+    }
 
-    for (i = 0; i < 3; i++)
-        if (LC_Cross(task, t, LCY_CUT + i * LC_E8(1)))
-            PlaySE(SE_M_CUT);
-    if (LC_Cross(task, t, LCY_MON + 6))
+    for (k = 0; k < 8; k += 2)
+        if (LC_Cross(task, t, LC_E8(LCY_E0 + k)))
+            PlaySE(SE_M_LOCK_ON);
+    if (LC_Cross(task, t, sLC->t0 + 6))
+        PlaySE(SE_M_DETECT);
+    if (LC_Cross(task, t, LCY_BREAK))
         PlayCry_Normal(LC_EnemySpecies(), 0);
-    if (LC_Cross(task, t, LCY_SPLIT))
-        PlaySE(SE_M_SOLAR_BEAM);
-    GI_Shake(t >= LCY_SPLIT ? 1 + (t - LCY_SPLIT) / 12 : 0);
+    if (LC_Cross(task, t, LCY_BREAK + 8))
+        PlaySE(SE_M_BRICK_BREAK);
+    GI_Shake(t >= LCY_BREAK + 8 ? 1 + (t - LCY_BREAK - 8) / 4 : 0);
     task->tLcLast = t;
-    return LC_Out(t, LC_HIT, 6, PALETTES_ALL, RGB(24, 31, 22));
+    return LC_Out(t, LC_HIT, 6, PALETTES_ALL, RGB(20, 31, 20));
 }
 
 static void RTZygarde_Finish(struct Task *task)
 {
     LC_FinishCommon(task);
+    GI_FreeTag(LCY_TAG_CELL);
 }
 
 static const struct RouteTransition sRT_LegendZygarde =
@@ -1603,10 +1859,11 @@ static void Task_LegendZygarde(u8 taskId)
 
 // =====================================================================================================================
 // Latias/Latios (Southern Island; Jordi: "Latias/Latios kan je een eon achtig kleuren intro maken"): de plek kleurt
-// zacht dromerig (rood-wit of blauw-wit, Soul Dew), strepen eonlicht razen voorbij, de Pokémon schiet twee keer langs
-// (als lichtflits, dan andersom) en zweeft dan in het midden; alles loopt over in een zachte kleurwas. Geen sync: de
-// Southern Island-gevechten hebben hun eigen muziek.
-#define LCE_TAG_NONE   0
+// zacht dromerig (rood-wit of blauw-wit), strepen eonlicht razen voorbij, een lichtbol schiet twee keer langs (wit,
+// dan andersom in de eonkleur) en zweeft dan in het midden, met de Soul Dew (het item-icoon) erin; alles loopt over in
+// een zachte kleurwas. Geen sync: de Southern Island-gevechten hebben hun eigen muziek.
+#define LCE_TAG_ORB    0x5B33
+#define LCE_TAG_DEW    0x5B34
 #define LCE_FLY1       6
 #define LCE_FLY2       30
 #define LCE_STAY       56
@@ -1623,6 +1880,7 @@ static const struct LCStroke sLCE_Strokes[] =
 static void RTEon_Init(struct Task *task)
 {
     u16 sp = LC_EnemySpecies();
+    u8 id;
     if (sp != SPECIES_LATIOS)
         sp = SPECIES_LATIAS;
     LC_Begin(task, 0xE0E0);
@@ -1630,23 +1888,35 @@ static void RTEon_Init(struct Task *task)
         return;
     task->tLcVar = sp;
     LC_StrokesInit(sLCE_Strokes, ARRAY_COUNT(sLCE_Strokes));
-    task->tGiSprite0 = LI_MonPicAffine(sp, -60, 60);
+    // de Pokémon als lichtbol die langs schiet; daarna zweeft de Soul Dew in het licht
+    LI_Make(0, gBattleAnimSpriteGfx_CircleOfLight, 0x800, LC_Tint(gBattleAnimSpritePal_WhiteCircleOfLight,
+            sp == SPECIES_LATIOS ? RGB(2, 5, 16) : RGB(16, 3, 5), sp == SPECIES_LATIOS ? RGB(20, 24, 31) : RGB(31, 20, 22)),
+            LCE_TAG_ORB, &sGI_Oam64Affine, -60, 60, 2);
+    LI_S(0)->oam.objMode = ST_OAM_OBJ_BLEND;
+    id = AddItemIconSprite(LCE_TAG_DEW, LCE_TAG_DEW, ITEM_SOUL_DEW);
+    sLI_Spr[1] = id;
+    if (id < MAX_SPRITES)
+    {
+        gSprites[id].invisible = TRUE;
+        gSprites[id].oam.priority = 0;
+        gSprites[id].x = 120;
+        gSprites[id].y = 76;
+    }
     LC_Additive(12);
 }
 
 static bool8 RTEon_Update(struct Task *task)
 {
-    s32 t = Tapu_Elapsed(), r, i, k;
-    u32 keep, monBit;
-    struct Sprite *mon = GI_Sprite(task->tGiSprite0);
+    s32 t = Tapu_Elapsed(), r, i, k, sc = 256;
+    u32 keep;
+    struct Sprite *orb = LI_S(0), *dew = LI_S(1);
     u16 cols[16], eon = task->tLcVar == SPECIES_LATIOS ? RGB(8, 14, 31) : RGB(31, 10, 12);
     u16 soft = task->tLcVar == SPECIES_LATIOS ? RGB(24, 27, 31) : RGB(31, 24, 25);
 
     if (sLC == NULL)
         return TRUE;
     r = LC_R(t);
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit;
+    keep = GI_SpritePalBit(LCE_TAG_ORB) | GI_SpritePalBit(LCE_TAG_DEW);
     GI_ResetPals(keep);
     LC_GenStrokes(task);
     BlendPalettes(PALETTES_ALL & ~GI_BG_PALS & ~keep, min(r, 9), soft);
@@ -1663,37 +1933,36 @@ static bool8 RTEon_Update(struct Task *task)
     LC_SetBgPal(0, cols);
     SetGpuReg(REG_OFFSET_BG0HOFS, (r * 14) & 0x1FF);
 
-    // langs, andersom, en blijven
-    mon->invisible = TRUE;
+    // langs (wit), andersom (eonkleur), en dan zweven in het midden met de Soul Dew erin
+    orb->invisible = TRUE;
+    dew->invisible = TRUE;
     if (r >= LCE_FLY1 && r < LCE_FLY1 + 16)
     {
         k = r - LCE_FLY1;
-        mon->invisible = FALSE;
-        mon->x = -60 + k * 24;
-        mon->y = 54;
-        LI_Affine(task->tGiSprite0, 300, 0);
-        BlendPalettes(monBit, 14, RGB_WHITE);
+        orb->invisible = FALSE;
+        orb->x = -60 + k * 24;
+        orb->y = 54;
+        sc = 110;
     }
     else if (r >= LCE_FLY2 && r < LCE_FLY2 + 16)
     {
         k = r - LCE_FLY2;
-        mon->invisible = FALSE;
-        mon->x = 300 - k * 24;
-        mon->y = 108;
-        if (mon->oam.affineMode != ST_OAM_AFFINE_OFF)
-            SetOamMatrixRotationScaling(mon->oam.matrixNum, -420, 420, 0);
-        BlendPalettes(monBit, 10, eon);
+        orb->invisible = FALSE;
+        orb->x = 300 - k * 24;
+        orb->y = 108;
+        sc = 130;
     }
     else if (r >= LCE_STAY)
     {
         k = min(r - LCE_STAY, 16);
-        mon->invisible = FALSE;
-        mon->x = 120 + (16 - k) * 6;
-        mon->y = 76 - (16 - k) * 3 + Sin((r * 6) & 0xFF, 3);
-        LI_Affine(task->tGiSprite0, 256 + (16 - k) * 24, 0);
-        if (k < 16)
-            BlendPalettes(monBit, 16 - k, RGB_WHITE);
+        orb->invisible = FALSE;
+        orb->x = dew->x = 120 + (16 - k) * 6;
+        orb->y = dew->y = 76 - (16 - k) * 3 + Sin((r * 6) & 0xFF, 3);
+        sc = 80 + k * 3 + Sin((r * 10) & 0xFF, 8);
+        dew->invisible = k < 8;
     }
+    if (orb->oam.affineMode != ST_OAM_AFFINE_OFF)
+        SetOamMatrixRotationScaling(orb->oam.matrixNum, sc * 3 / 2, sc, 0);
     if (r == LCE_FLY1 || r == LCE_FLY2)
         PlaySE(SE_M_FLY);
     if (r == LCE_STAY + 8)
@@ -1705,6 +1974,8 @@ static bool8 RTEon_Update(struct Task *task)
 static void RTEon_Finish(struct Task *task)
 {
     LC_FinishCommon(task);
+    GI_FreeTag(LCE_TAG_ORB);
+    GI_FreeTag(LCE_TAG_DEW);
 }
 
 static const struct RouteTransition sRT_LegendEon =
@@ -1718,40 +1989,68 @@ static void Task_LegendEon(u8 taskId)
 }
 
 // =====================================================================================================================
-// Cresselia (Fullmoon Island; Jordi: "een maan"): het wordt nacht, de maan rijst op (BG0, optellend: kraters, een
-// stralenkrans) en wast van sikkel naar vol, maanmist drijft laag over het beeld. Cresselia staat als silhouet voor de
-// maan en licht op met de volle maan; op de klokslag een zachte lavendelwitte flits.
-#define LCM2_MIST      8
+// Cresselia (Fullmoon Island; Jordi: "die hele naam betekent crescent moon toch? wat doet de full moon daar?"): de
+// Lunar-Pokémon, met halvemaanvormige ringen en de Lunar Wing. Het wordt nacht en de sterren gaan aan (BG0, optellend);
+// op tel 3 gloeit een dunne sikkelmaan op (nooit vol: alleen de sikkel en zijn gloed). Op de tellen 4, 5 en 6 zwiepen
+// telkens twee halvemaanbogen (de Psycho Cut-art) in een schuine baan om de sikkel, zoals Cresselia's ringen; roze en
+// gele Lunar Dance-glinsters dwarrelen omlaag en droommist drijft laag over het beeld. Op tel 7 Moonblast: de bogen
+// schieten de sikkel in, die wit-roze opvlamt, en op de klokslag een roze flits (geen ronde gloed: dat leek een volle
+// maan).
+// Geen Pokémon-sprite.
+#define LCM2_MIST      6
+#define LCM2_ARCS      6
+#define LCM2_ARC0      LCM2_MIST
+#define LCM2_GLINT0    (LCM2_ARC0 + LCM2_ARCS)
+#define LCM2_GLINTS    6
 #define LCM2_TAG_MIST  0x5B29
-#define LCM2_X         120
-#define LCM2_Y         62
-#define LCM2_R         42
-#define LCM2_MON       LC_BEAT(5)
-#define LCM2_FULL      LC_BEAT(6)
+#define LCM2_TAG_ARC   0x5B30
+#define LCM2_TAG_GLINT 0x5B31
+#define LCM2_X         120           // de maan
+#define LCM2_Y         52
+#define LCM2_R         28
+#define LCM2_IX        11            // de schijf die de sikkel uithapt
+#define LCM2_IY        -7
+#define LCM2_IR        26
+#define LCM2_MOON      LC_BEAT(3)
+#define LCM2_ARC_T     LC_BEAT(4)
+#define LCM2_MOONBLAST LC_BEAT(7)
 
+// de sikkel (kleur 1-3, kern het felst), zijn gloed (4-6, gedithered) en de sterren (8-10, drie fonkelgroepen)
 static u32 LCM2_Pixel(s32 x, s32 y)
 {
-    s32 dx = x - LCM2_X, dy = y - LCM2_Y, d2 = dx * dx + dy * dy, band;
+    s32 dx = x - LCM2_X, dy = y - LCM2_Y, d2 = dx * dx + dy * dy, ex = dx - LCM2_IX, ey = dy - LCM2_IY;
     u32 h;
-    if (d2 >= (LCM2_R + 6) * (LCM2_R + 6))
+    if (d2 < (LCM2_R + 12) * (LCM2_R + 12))
+    {
+        s32 d1 = Sqrt(d2 * 16), di = Sqrt((ex * ex + ey * ey) * 16), m, bay = sLC_Bayer[(y & 3) * 4 + (x & 3)];
+        if (d1 < LCM2_R * 4 && di > LCM2_IR * 4)
+        {
+            m = min(LCM2_R * 4 - d1, di - LCM2_IR * 4);
+            return m < 4 ? 1 : (m < 10 ? 2 : 3);
+        }
+        if (d1 < LCM2_R * 4 || di < LCM2_IR * 4 + 8)
+            return 0;
+        m = d1 - LCM2_R * 4;
+        if (m < 10)
+            return 4;
+        if (m < 22 && bay < 10)
+            return 5;
+        if (m < 40 && bay < 4)
+            return 6;
         return 0;
-    if (d2 >= LCM2_R * LCM2_R)
-        return (((x + y) & 1) || d2 < (LCM2_R + 3) * (LCM2_R + 3)) ? 15 : 0;
-    // banden langs de breedte van de rij: de terminator is gebogen (een sikkel)
-    h = sLC->rowv[y] + 1;
-    band = 1 + (dx + (s32)h) * 7 / (2 * (s32)h + 1);
-    band = band < 1 ? 1 : (band > 7 ? 7 : band);
-    if ((x - 104) * (x - 104) + (y - 48) * (y - 48) < 70 || (x - 134) * (x - 134) + (y - 76) * (y - 76) < 50
-     || (x - 112) * (x - 112) + (y - 80) * (y - 80) < 26 || (x - 140) * (x - 140) + (y - 52) * (y - 52) < 20
-     || (x - 96) * (x - 96) + (y - 70) * (y - 70) < 14)
-        return 7 + band;   // krater: donkerder
-    return band;
+    }
+    if (y > 118)
+        return 0;
+    h = (x * 2654435761u) ^ (y * 40503u * 2654435761u);
+    h ^= h >> 15;
+    if ((h & 0x1FF) < 2)
+        return 8 + (h >> 20) % 3;
+    return 0;
 }
 
 static u32 LCM2_Cell(s32 cx, s32 cy)
 {
-    s32 x = cx * 8 + 4 - LCM2_X, y = cy * 8 + 4 - LCM2_Y, r = LCM2_R + 12;
-    return (x * x + y * y < r * r) ? (13 << 12) : LC_EMPTY;
+    return 13 << 12;
 }
 
 static void RTCresselia_Init(struct Task *task)
@@ -1760,96 +2059,137 @@ static void RTCresselia_Init(struct Task *task)
     LC_Begin(task, 0xC4E5);
     if (sLC == NULL)
         return;
-    for (i = 0; i < DISPLAY_HEIGHT; i++)
-    {
-        s32 dy = i - LCM2_Y, w = 0;
-        while ((w + 1) * (w + 1) + dy * dy < LCM2_R * LCM2_R)
-            w++;
-        sLC->rowv[i] = w;
-    }
     sLC->matSet = AllocOamMatrix();
     if (sLC->matSet != 0xFF)
         SetOamMatrixRotationScaling(sLC->matSet, 640, 360, 0);
     for (i = 0; i < LCM2_MIST; i++)
     {
-        LI_Make(i, gBattleAnimSpriteGfx_Smoke, 0x100, LC_Tint(gBattleAnimSpritePal_Smoke, RGB(6, 5, 14), RGB(22, 20, 30)),
+        LI_Make(i, gBattleAnimSpriteGfx_Smoke, 0x100, LC_Tint(gBattleAnimSpritePal_Smoke, RGB(8, 4, 14), RGB(26, 18, 30)),
                 LCM2_TAG_MIST, &sGI_Oam16, 0, 0, 1);
         LI_S(i)->oam.objMode = ST_OAM_OBJ_BLEND;
         LI_Frame(i, LCM2_TAG_MIST, i & 1, 4);
         LC_UseMatrix(LI_S(i), sLC->matSet, SPRITE_SHAPE(16x16), SPRITE_SIZE(16x16));
     }
-    task->tGiSprite0 = LC_MonPic(SPECIES_CRESSELIA, LCM2_X, LCM2_Y + 6, 0);
+    for (i = 0; i < LCM2_ARCS; i++)
+    {
+        LI_Make(LCM2_ARC0 + i, gBattleAnimSpriteGfx_PsychoCut, 0x200, LC_Tint(gBattleAnimSpritePal_PsychoCut, RGB(16, 6, 22), RGB(31, 27, 31)),
+                LCM2_TAG_ARC, &sGI_Oam32Affine, 0, 0, 2);
+        LI_S(LCM2_ARC0 + i)->oam.objMode = ST_OAM_OBJ_BLEND;
+    }
+    for (i = 0; i < LCM2_GLINTS; i++)
+        LI_Make(LCM2_GLINT0 + i, gBattleAnimSpriteGfx_Sparkle4, 0xA00, LC_Tint(gBattleAnimSpritePal_Sparkle3, RGB(18, 6, 20), RGB(31, 30, 20)),
+                LCM2_TAG_GLINT, &sGI_Oam32, 0, 0, 2);
     LC_Additive(15);
-    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(15, 16));
 }
 
 static bool8 RTCresselia_Update(struct Task *task)
 {
-    s32 t = Tapu_Elapsed(), r, i, k, term;
-    u32 keep, monBit;
-    struct Sprite *s, *mon = GI_Sprite(task->tGiSprite0);
-    u16 cols[16];
+    s32 t = Tapu_Elapsed(), r, i, k, ph;
+    u32 keep;
+    struct Sprite *s;
+    u16 cols[16], moon;
 
     if (sLC == NULL)
         return TRUE;
     r = LC_R(t);
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit | GI_SpritePalBit(LCM2_TAG_MIST);
+    keep = GI_SpritePalBit(LCM2_TAG_MIST) | GI_SpritePalBit(LCM2_TAG_ARC) | GI_SpritePalBit(LCM2_TAG_GLINT);
     GI_ResetPals(keep);
-    if (LC_Gen(task, t, LCM2_Pixel, LCM2_Cell) && r == 0)
-        LC_ShowMap();
-    LC_DimWorld(r, keep, 13, RGB(1, 2, 8));
-
-    // de maan wast: banden rechts van de terminator zijn licht, links nog donker
-    term = 8 - min(8, max(0, (t - LC_BEAT(3)) * 8 / (LCM2_FULL - LC_BEAT(3))));
-    cols[0] = 0;
-    for (i = 1; i <= 7; i++)
+    if (task->tLcGen < 20)
     {
-        u16 c = (i >= term) ? RGB(26, 26, 20) : RGB(3, 3, 7);
-        if (i == term)
-            c = RGB(31, 31, 26); // de sikkelrand glanst
-        cols[i] = c;
-        cols[7 + i] = Tapu_Blend(c, 0, 5);
+        LC_GenRowsDedup(task, LCM2_Pixel, LCM2_Cell, 4);
+        if (task->tLcGen >= 20)
+            LC_ShowMap();
     }
-    cols[15] = Tapu_Blend(RGB(10, 9, 18), RGB(18, 16, 28), (6 - min(6, t % 20)) * 2);
-    LC_SetBgPal(0, cols);
-    k = min(16, r * 16 / 44);
-    BlendPalettes(GI_BG_PALS, 12 - min(12, k), RGB_BLACK);
-    SetGpuReg(REG_OFFSET_BG0VOFS, (-(96 - k * 6)) & 0x1FF);   // de maan rijst op
+    LC_DimWorld(r, keep, 13, RGB(1, 1, 7));
+    ph = t - LC_BEAT(t * 1000 / 20363);
 
-    // maanmist laag over het beeld
+    // sterren fonkelen; de sikkel gloeit op en klopt zacht op de tel; Moonblast maakt hem wit-roze
+    cols[0] = cols[7] = cols[11] = cols[12] = cols[13] = cols[14] = cols[15] = 0;
+    for (i = 0; i < 3; i++)
+    {
+        k = ((r >> 3) + i * 2) % 6;
+        cols[8 + i] = Tapu_Blend(0, k < 2 ? RGB(28, 28, 31) : (k < 4 ? RGB(14, 14, 22) : RGB(6, 6, 12)), min(16, r));
+    }
+    k = t - LCM2_MOON;
+    moon = k < 0 ? 0 : Tapu_Blend(0, RGB(31, 29, 18), min(16, k + 2));
+    if (k >= 0 && ph < 6)
+        moon = Tapu_Blend(moon, RGB(31, 31, 28), 6 - ph);
+    if (t >= LCM2_MOONBLAST)
+        moon = Tapu_Blend(moon, RGB(31, 24, 30), min(16, (t - LCM2_MOONBLAST) * 2));
+    cols[3] = moon;
+    cols[2] = Tapu_Blend(0, moon, 12);
+    cols[1] = Tapu_Blend(0, Tapu_Blend(moon, RGB(28, 20, 31), 6), 9);
+    cols[4] = Tapu_Blend(0, Tapu_Blend(moon, RGB(24, 16, 31), 8), 7);
+    cols[5] = Tapu_Blend(0, cols[4], 9);
+    cols[6] = Tapu_Blend(0, cols[4], 5);
+    LC_SetBgPal(0, cols);
+
+    // droommist laag over het beeld
     for (i = 0; i < LCM2_MIST; i++)
     {
         s = LI_S(i);
         s->invisible = FALSE;
-        s->x = ((i * 40 + r * (1 + (i & 1))) % 320) - 40;
-        s->y = 134 + (i % 3) * 10 + Sin((r * 4 + i * 40) & 0xFF, 3);
+        s->x = ((i * 54 + r * (1 + (i & 1))) % 320) - 40;
+        s->y = 138 + (i % 3) * 9 + Sin((r * 4 + i * 40) & 0xFF, 3);
     }
 
-    // Cresselia: silhouet voor de maan, licht op met de volle maan
-    k = t - LCM2_MON;
-    mon->invisible = k < 0;
-    mon->y2 = Sin((t * 4) & 0xFF, 3);
-    if (k >= 0)
+    // halvemaanbogen: per tel twee, in een schuine baan om de sikkel; bij Moonblast schieten ze de maan in
+    for (i = 0; i < LCM2_ARCS; i++)
     {
-        if (t < LCM2_FULL)
-            BlendPalettes(monBit, 16, RGB(2, 2, 6));
-        else
-            BlendPalettes(monBit, max(0, 16 - (t - LCM2_FULL)), RGB(2, 2, 6));
+        s32 born = LCM2_ARC_T + LC_BEAT(i / 2), a, rx, ry, x, y;
+        s = LI_S(LCM2_ARC0 + i);
+        k = t - born;
+        s->invisible = k < 0;
+        if (k < 0)
+            continue;
+        a = ((i & 1) ? 128 : 0) + k * 5 + i * 21;
+        rx = 86 - i * 6;
+        ry = 30 - i * 2;
+        if (t >= LCM2_MOONBLAST)
+        {
+            s32 m = max(0, 16 - (t - LCM2_MOONBLAST));
+            rx = rx * m / 16;
+            ry = ry * m / 16;
+            s->invisible = m == 0;
+        }
+        x = Cos(a & 0xFF, rx);
+        y = Sin(a & 0xFF, ry);
+        s->x = LCM2_X + x - y / 2;
+        s->y = LCM2_Y + 4 + y + x / 5;
+        if (s->oam.affineMode != ST_OAM_AFFINE_OFF)
+            SetOamMatrixRotationScaling(s->oam.matrixNum, 400, 340, (u16)(((a + 64) & 0xFF) << 8));
     }
-    if (LC_Cross(task, t, LCM2_FULL))
-        PlayCry_Normal(SPECIES_CRESSELIA, 0);
-    if (LC_Cross(task, t, LC_BEAT(3)))
+
+    // Lunar Dance: roze en gele glinsters dwarrelen omlaag
+    for (i = 0; i < LCM2_GLINTS; i++)
+    {
+        s = LI_S(LCM2_GLINT0 + i);
+        k = t - LCM2_ARC_T - i * 7;
+        s->invisible = k < 0 || ((t + i) & 7) == 0;
+        s->x = 20 + i * 40 + Sin((k * 3 + i * 50) & 0xFF, 10);
+        s->y = -16 + (k * 2 + i * 23) % 150;
+        LI_Frame(LCM2_GLINT0 + i, LCM2_TAG_GLINT, ((t >> 2) + i) % 5, 16);
+    }
+
+    if (LC_Cross(task, t, LCM2_MOON))
         PlaySE(SE_M_MOONLIGHT);
+    for (i = 0; i < 3; i++)
+        if (LC_Cross(task, t, LCM2_ARC_T + LC_BEAT(i)))
+            PlaySE(SE_M_RAZOR_WIND);
+    if (LC_Cross(task, t, LC_BEAT(6) + 10))
+        PlayCry_Normal(SPECIES_CRESSELIA, 0);
+    if (LC_Cross(task, t, LCM2_MOONBLAST))
+        PlaySE(SE_M_MORNING_SUN);
     task->tLcLast = t;
-    return LC_Out(t, LC_HIT, 6, PALETTES_ALL, RGB(28, 25, 31));
+    return LC_Out(t, LC_HIT, 6, PALETTES_ALL, RGB(31, 24, 31));
 }
 
 static void RTCresselia_Finish(struct Task *task)
 {
-    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
     LC_FinishCommon(task);
     GI_FreeTag(LCM2_TAG_MIST);
+    GI_FreeTag(LCM2_TAG_ARC);
+    GI_FreeTag(LCM2_TAG_GLINT);
 }
 
 static const struct RouteTransition sRT_LegendCresselia =
@@ -1864,12 +2204,13 @@ static void Task_LegendCresselia(u8 taskId)
 
 // =====================================================================================================================
 // Necrozma (alle vormen; Jordi: "light-devouring"): het beeld wordt fel wit, dan verschijnt in het midden een zwart
-// prisma (Necrozma zelf, als silhouet) dat al het licht en de kleur naar zich toe zuigt: de wereld wordt donker en
-// prismastralen in alle kleuren van het spectrum schieten van de randen naar binnen en verdwijnen in het prisma, tot
-// het beeld zwart is.
+// prisma (een kristal uit de Tera-art, helemaal zwart) dat al het licht en de kleur naar zich toe zuigt: de wereld
+// wordt donker en prismastralen in alle kleuren van het spectrum schieten van de randen naar binnen en verdwijnen
+// in het prisma, tot het beeld zwart is.
 #define LCN_PRISM      LC_BEAT(3)
 #define LCN_RAYS       LC_BEAT(4)
 #define LCN_RAY_N      9
+#define LCN_TAG_PRISM  0x5B35
 
 static const u16 sLCN_Spectrum[9] = {
     RGB(31, 6, 6), RGB(31, 18, 4), RGB(31, 30, 6), RGB(10, 31, 8), RGB(6, 30, 26), RGB(6, 16, 31), RGB(14, 8, 31), RGB(26, 8, 31), RGB(31, 10, 22),
@@ -1895,7 +2236,8 @@ static void RTNecrozma_Init(struct Task *task)
         return;
     task->tLcVar = sp;
     LC_StrokesInit(sLCN_Strokes, LCN_RAY_N);
-    task->tGiSprite0 = LI_MonPicAffine(sp, 120, 80);
+    // het zwarte prisma: een kristal (Tera-art) dat helemaal zwart is
+    LI_Make(0, gBattleAnimSpriteGfx_TeraCrystal, 0x800, gBattleAnimSpritePal_TeraCrystal, LCN_TAG_PRISM, &sGI_Oam64Affine, 120, 80, 2);
     LC_Additive(16);
 }
 
@@ -1903,13 +2245,13 @@ static bool8 RTNecrozma_Update(struct Task *task)
 {
     s32 t = Tapu_Elapsed(), r, i, j, k, edge;
     u32 keep, monBit;
-    struct Sprite *mon = GI_Sprite(task->tGiSprite0);
+    struct Sprite *mon = LI_S(0);
     u16 cols[16];
 
     if (sLC == NULL)
         return TRUE;
     r = LC_R(t);
-    monBit = LI2_MonBit(task->tGiSprite0);
+    monBit = GI_SpritePalBit(LCN_TAG_PRISM);
     keep = monBit;
     GI_ResetPals(keep);
     LC_GenStrokes(task);
@@ -1947,7 +2289,9 @@ static bool8 RTNecrozma_Update(struct Task *task)
     if (k >= 0)
     {
         BlendPalettes(monBit, 16, RGB(1, 0, 2));
-        LI_Affine(task->tGiSprite0, 160 + min(k, 60) * 2 + (6 - min(6, t % 20)) * 4, (u16)(k * 64));
+        if (mon->oam.affineMode != ST_OAM_AFFINE_OFF)
+            SetOamMatrixRotationScaling(mon->oam.matrixNum, 160 + min(k, 60) * 2 + (6 - min(6, t % 20)) * 4,
+                                        160 + min(k, 60) * 2 + (6 - min(6, t % 20)) * 4, (u16)(k * 64));
     }
     if (LC_Cross(task, t, LCN_PRISM))
         PlaySE(SE_M_COSMIC_POWER);
@@ -1962,6 +2306,7 @@ static bool8 RTNecrozma_Update(struct Task *task)
 static void RTNecrozma_Finish(struct Task *task)
 {
     LC_FinishCommon(task);
+    GI_FreeTag(LCN_TAG_PRISM);
 }
 
 static const struct RouteTransition sRT_LegendNecrozma =
@@ -1975,11 +2320,13 @@ static void Task_LegendNecrozma(u8 taskId)
 }
 
 // =====================================================================================================================
-// Galar-Zapdos (Route 111, rent rondjes; vechttype): stofstrepen razen voorbij, Galar-Zapdos sprint het beeld in (een
-// hupje op elke achtste), en trapt: de klauw (de voet uit de Mega Kick-art) komt op je af, een inslag (de ster uit de
-// klap-art) en scheuren vanuit het midden.
+// Galar-Zapdos (Route 111, rent rondjes; vechttype): stofstrepen razen voorbij, op elke achtste een stofwolk van de
+// sprint (links naar het midden), en dan de trap: de klauw (de voet uit de Mega Kick-art) komt op je af, een inslag
+// (de ster uit de klap-art) en scheuren vanuit het midden.
 #define LCGZ_TAG_FOOT  0x5B2A
 #define LCGZ_TAG_HIT   0x5B2B
+#define LCGZ_TAG_DUST  0x5B36
+#define LCGZ_DUST      8
 #define LCGZ_RUN       LC_BEAT(3)
 #define LCGZ_KICK      LC_BEAT(6)
 #define LCGZ_IMPACT    LC_BEAT(7)
@@ -1994,6 +2341,7 @@ static const struct LCStroke sLCGZ_Strokes[] =
 
 static void RTGalarZapdos_Init(struct Task *task)
 {
+    u32 i;
     LC_Begin(task, 0x6A2D);
     if (sLC == NULL)
         return;
@@ -2002,23 +2350,23 @@ static void RTGalarZapdos_Init(struct Task *task)
             LCGZ_TAG_FOOT, &sGI_Oam32Affine, 120, 80, 0);
     LI_Frame(0, LCGZ_TAG_FOOT, 2, 16);
     LI_Make(1, gBattleAnimSpriteGfx_Impact, 0x200, gBattleAnimSpritePal_Impact, LCGZ_TAG_HIT, &sGI_Oam32Affine, 120, 80, 1);
-    task->tGiSprite0 = LI_MonPicAffine(SPECIES_ZAPDOS_GALAR, -40, 84);
-    GI_Sprite(task->tGiSprite0)->subpriority = 5;
+    for (i = 0; i < LCGZ_DUST; i++)
+        LI_Make(2 + i, gBattleAnimSpriteGfx_Smoke, 0x100, LC_Tint(gBattleAnimSpritePal_Smoke, RGB(10, 5, 2), RGB(30, 22, 12)),
+                LCGZ_TAG_DUST, &sGI_Oam16, 0, 0, 3);
     LC_Additive(13);
 }
 
 static bool8 RTGalarZapdos_Update(struct Task *task)
 {
     s32 t = Tapu_Elapsed(), r, i, k;
-    u32 keep, monBit;
-    struct Sprite *mon = GI_Sprite(task->tGiSprite0), *foot = LI_S(0), *hit = LI_S(1);
+    u32 keep;
+    struct Sprite *s, *foot = LI_S(0), *hit = LI_S(1);
     u16 cols[16];
 
     if (sLC == NULL)
         return TRUE;
     r = LC_R(t);
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit | GI_SpritePalBit(LCGZ_TAG_FOOT) | GI_SpritePalBit(LCGZ_TAG_HIT);
+    keep = GI_SpritePalBit(LCGZ_TAG_DUST) | GI_SpritePalBit(LCGZ_TAG_FOOT) | GI_SpritePalBit(LCGZ_TAG_HIT);
     GI_ResetPals(keep);
     LC_GenStrokes(task);
     LC_DimWorld(r, keep, 12, RGB(5, 2, 1));
@@ -2038,15 +2386,15 @@ static bool8 RTGalarZapdos_Update(struct Task *task)
     LC_SetBgPal(0, cols);
     SetGpuReg(REG_OFFSET_BG0HOFS, (r * 12) & 0x1FF);
 
-    // sprinten, met een hupje op elke achtste
-    k = t - LCGZ_RUN;
-    mon->invisible = k < 0;
-    if (k >= 0)
+    // de sprint: op elke achtste een stofwolk, links naar het midden (om en om hoog en laag)
+    for (i = 0; i < LCGZ_DUST; i++)
     {
-        s32 e = (t * 1000) % 10181;
-        mon->x = min(120, -40 + k * 3);
-        mon->y = 84 - (e < 5000 ? Sin(e * 128 / 5000, 6) : 0);
-        LI_Affine(task->tGiSprite0, t < LCGZ_KICK ? 256 : 256 + min(t - LCGZ_KICK, 20) * 6, 0);
+        s = LI_S(2 + i);
+        k = t - LC_E8(6 + i);
+        s->invisible = k < 0 || k >= 20 || t >= LCGZ_IMPACT;
+        s->x = 8 + i * 15 - k / 2;
+        s->y = 116 + ((i & 1) ? 6 : -6) - k / 3;
+        LI_Frame(2 + i, LCGZ_TAG_DUST, k >= 10, 4);
     }
 
     // de trap
@@ -2078,6 +2426,7 @@ static bool8 RTGalarZapdos_Update(struct Task *task)
 static void RTGalarZapdos_Finish(struct Task *task)
 {
     LC_FinishCommon(task);
+    GI_FreeTag(LCGZ_TAG_DUST);
     GI_FreeTag(LCGZ_TAG_FOOT);
     GI_FreeTag(LCGZ_TAG_HIT);
 }
@@ -2095,10 +2444,11 @@ static void Task_LegendGalarZapdos(u8 taskId)
 // =====================================================================================================================
 // Galar-Moltres (Route 120, mist bij de tombe; duister type): de plek zakt weg in zwartpaars, zwarte vlammen (het vuur
 // uit de gevechtsanimaties, paarszwart gekleurd) laaien op langs de onderrand, een duistere aura pulseert op de tel
-// en Galar-Moltres komt eruit op; op de klokslag slokt de aura het beeld op (Fiery Wrath).
+// en daaruit laait één grote zwarte vlam op; op de klokslag slokt de aura het beeld op (Fiery Wrath).
 #define LCGM_FLAMES    8
 #define LCGM_AURA      LCGM_FLAMES   // drie ringen
 #define LCGM_RINGS     3
+#define LCGM_CORE      (LCGM_AURA + LCGM_RINGS)   // één grote zwarte vlam in het midden
 #define LCGM_TAG_FIRE  0x5B2C
 #define LCGM_TAG_AURA  0x5B2D
 #define LCGM_MON       LC_BEAT(4)
@@ -2119,7 +2469,7 @@ static void RTGalarMoltres_Init(struct Task *task)
                 LCGM_TAG_AURA, &sGI_Oam64Affine, 120, 76, 4);
         LI_S(LCGM_AURA + i)->oam.objMode = ST_OAM_OBJ_BLEND;
     }
-    task->tGiSprite0 = LC_MonPic(SPECIES_MOLTRES_GALAR, 120, 74, 0);
+    LI_Make(LCGM_CORE, gBattleAnimSpriteGfx_Fire, 0x1000, gBattleAnimSpritePal_Fire, LCGM_TAG_FIRE, &sGI_Oam32Affine, 120, 70, 0);
     SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3 | BLDCNT_TGT2_OBJ | BLDCNT_TGT2_BD);
     SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(10, 10));
 }
@@ -2127,14 +2477,13 @@ static void RTGalarMoltres_Init(struct Task *task)
 static bool8 RTGalarMoltres_Update(struct Task *task)
 {
     s32 t = Tapu_Elapsed(), r, i, k;
-    u32 keep, monBit;
-    struct Sprite *s, *mon = GI_Sprite(task->tGiSprite0);
+    u32 keep;
+    struct Sprite *s;
 
     if (sLC == NULL)
         return TRUE;
     r = LC_R(t);
-    monBit = LI2_MonBit(task->tGiSprite0);
-    keep = monBit | GI_SpritePalBit(LCGM_TAG_FIRE) | GI_SpritePalBit(LCGM_TAG_AURA);
+    keep = GI_SpritePalBit(LCGM_TAG_FIRE) | GI_SpritePalBit(LCGM_TAG_AURA);
     GI_ResetPals(keep);
     LC_DimWorld(r, keep, 13, RGB(2, 0, 4));
 
@@ -2163,11 +2512,17 @@ static bool8 RTGalarMoltres_Update(struct Task *task)
             SetOamMatrixRotationScaling(s->oam.matrixNum, min(512, 96 + k * 12), min(512, 96 + k * 12), 0);
     }
 
+    // uit de aura laait één grote zwarte vlam op, die op de tel opflakkert
+    s = LI_S(LCGM_CORE);
     k = t - LCGM_MON;
-    mon->invisible = k < 0;
-    mon->y2 = Sin((t * 5) & 0xFF, 2);
-    if (k >= 0)
-        BlendPalettes(monBit, max(0, 16 - k / 2), RGB(2, 0, 4));
+    s->invisible = k < 0;
+    LI_Frame(LCGM_CORE, LCGM_TAG_FIRE, (t >> 2) & 7, 16);
+    if (k >= 0 && s->oam.affineMode != ST_OAM_AFFINE_OFF)
+    {
+        s32 sc = min(480, 96 + k * 8) + (6 - min(6, t % 20)) * 10 + (t >= LCGM_WRATH ? (t - LCGM_WRATH) * 12 : 0);
+        SetOamMatrixRotationScaling(s->oam.matrixNum, sc, sc, 0);
+        s->y = 70 - min(k, 40) / 4;
+    }
     if (LC_Cross(task, t, LC_BEAT(3)))
         PlaySE(SE_M_NIGHTMARE);
     if (LC_Cross(task, t, LCGM_MON + 12))

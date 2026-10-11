@@ -338,7 +338,7 @@
 #define TRAINER_EDDIE                       332
 #define TRAINER_ALLEN                       333
 #define TRAINER_TIMMY                       334
-#define TRAINER_WALLACE_OLD_CHAMPION        335
+#define TRAINER_RIVAL_POSTGAME_TREECKO      335 // Project Grounded: rivaal post-game (Pacifidlog, Battle Frontier, Paradiso), speler koos Treecko; was TRAINER_WALLACE_OLD_CHAMPION (ongebruikt). Team per geslacht en fase: src/rival_postgame.c
 #define TRAINER_ANDREW                      336
 #define TRAINER_IVAN                        337
 #define TRAINER_CLAUDE                      338
@@ -854,8 +854,8 @@
 #define TRAINER_MARIELA                     848
 #define TRAINER_ALVARO                      849
 #define TRAINER_EVERETT                     850
-#define TRAINER_RED                         851
-#define TRAINER_LEAF                        852
+#define TRAINER_RIVAL_POSTGAME_TORCHIC      851 // Project Grounded: rivaal post-game, speler koos Torchic; was TRAINER_RED (alleen de testrunner). Team: src/rival_postgame.c
+#define TRAINER_RIVAL_POSTGAME_MUDKIP       852 // Project Grounded: rivaal post-game, speler koos Mudkip; was TRAINER_LEAF (alleen de testrunner). Team: src/rival_postgame.c
 #define TRAINER_KECCLES_FRONTIER            853 // Project Grounded: Keccles op het Battle Frontier-eiland (post-game, Marshadow; was TRAINER_BRENDAN_PLACEHOLDER)
 #define TRAINER_SICKBLIK_BEACH              854 // Project Grounded: SickBlik op het strand van Route 104 (was TRAINER_MAY_PLACEHOLDER, ongebruikt)
 #define TRAINER_CHAMPION_STEVEN              855

@@ -6,11 +6,17 @@ ParadisoResort_MapScripts::
 
 ParadisoResort_OnTransition:
 	call ParadisoResort_EventScript_SetRivalGfx
-	setflag FLAG_HIDE_RESORT_RIVAL
+	setflag FLAG_TEMP_1 @ rivaal: pas hier na gevecht 8 bij de Battle Tower (met pensioen)
+	call_if_set FLAG_RIVAL_PG_RETIRED, ParadisoResort_EventScript_ShowRival
+	setflag FLAG_HIDE_RESORT_RIVAL @ Dave (naam historisch: deelde vroeger de flag met de rivaal)
 	goto_if_unset FLAG_SYS_GAME_CLEAR, ParadisoResort_EventScript_End
 	clearflag FLAG_HIDE_RESORT_RIVAL
 ParadisoResort_EventScript_End:
 	end
+
+ParadisoResort_EventScript_ShowRival::
+	clearflag FLAG_TEMP_1
+	return
 
 ParadisoResort_EventScript_SetRivalGfx::
 	checkplayergender
@@ -90,14 +96,68 @@ ParadisoResort_EventScript_Turd::
 	msgbox ParadisoResort_Text_Turd, MSGBOX_SIGN
 	end
 
+@ Project Grounded: de rivaal met pensioen (na gevecht 8, FLAG_RIVAL_PG_RETIRED). Eén gevecht per dag
+@ (FLAG_DAILY_REMATCH_RIVAL) tegen het Frontier-team (TRAINER_RIVAL_POSTGAME_*, fase 2 in rival_postgame.c).
 ParadisoResort_EventScript_Rival::
+	lock
+	faceplayer
+	goto_if_set FLAG_RIVAL_PG_RESORT_MET, ParadisoResort_EventScript_RivalAgain
+	setflag FLAG_RIVAL_PG_RESORT_MET
 	checkplayergender
 	goto_if_eq VAR_RESULT, MALE, ParadisoResort_EventScript_RivalMayTalk
-	msgbox ParadisoResort_Text_RivalBrendan, MSGBOX_NPC
+	msgbox ParadisoResort_Text_RivalBrendan, MSGBOX_DEFAULT
+	goto ParadisoResort_EventScript_RivalAsk
 	end
 
 ParadisoResort_EventScript_RivalMayTalk::
-	msgbox ParadisoResort_Text_RivalMay, MSGBOX_NPC
+	msgbox ParadisoResort_Text_RivalMay, MSGBOX_DEFAULT
+	goto ParadisoResort_EventScript_RivalAsk
+	end
+
+ParadisoResort_EventScript_RivalAgain::
+	goto_if_set FLAG_DAILY_REMATCH_RIVAL, ParadisoResort_EventScript_RivalDoneToday
+	msgbox ParadisoResort_Text_RivalAgain, MSGBOX_DEFAULT
+ParadisoResort_EventScript_RivalAsk::
+	goto_if_set FLAG_DAILY_REMATCH_RIVAL, ParadisoResort_EventScript_RivalDoneToday
+	msgbox ParadisoResort_Text_RivalAsk, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, ParadisoResort_EventScript_RivalDecline
+	closemessage
+	switch VAR_STARTER_MON
+	case 0, ParadisoResort_EventScript_RivalTreecko
+	case 1, ParadisoResort_EventScript_RivalTorchic
+	case 2, ParadisoResort_EventScript_RivalMudkip
+	release
+	end
+
+ParadisoResort_EventScript_RivalTreecko::
+	trainerbattle_no_intro TRAINER_RIVAL_POSTGAME_TREECKO, ParadisoResort_Text_RivalDefeat
+	goto ParadisoResort_EventScript_RivalAfter
+	end
+
+ParadisoResort_EventScript_RivalTorchic::
+	trainerbattle_no_intro TRAINER_RIVAL_POSTGAME_TORCHIC, ParadisoResort_Text_RivalDefeat
+	goto ParadisoResort_EventScript_RivalAfter
+	end
+
+ParadisoResort_EventScript_RivalMudkip::
+	trainerbattle_no_intro TRAINER_RIVAL_POSTGAME_MUDKIP, ParadisoResort_Text_RivalDefeat
+	goto ParadisoResort_EventScript_RivalAfter
+	end
+
+ParadisoResort_EventScript_RivalAfter::
+	setflag FLAG_DAILY_REMATCH_RIVAL
+	msgbox ParadisoResort_Text_RivalPostBattle, MSGBOX_DEFAULT
+	release
+	end
+
+ParadisoResort_EventScript_RivalDecline::
+	msgbox ParadisoResort_Text_RivalDecline, MSGBOX_DEFAULT
+	release
+	end
+
+ParadisoResort_EventScript_RivalDoneToday::
+	msgbox ParadisoResort_Text_RivalDoneToday, MSGBOX_DEFAULT
+	release
 	end
 
 @ ---------------------------------------------------------------- overige gasten
@@ -253,20 +313,74 @@ ParadisoResort_Text_Turd:
 	.string "umbrella in it.$"
 
 ParadisoResort_Text_RivalBrendan:
-	.string "BRENDAN: Oh hey, CHAMPION.\p"
-	.string "No, I'm not training. I'm not\n"
-	.string "doing anything. That's the point.\p"
-	.string "Dad thinks I'm doing fieldwork.\n"
-	.string "Technically, I am lying in a field.\l"
-	.string "Of sand.$"
+	.string "BRENDAN: {PLAYER}! Welcome to\n"
+	.string "my retirement.\p"
+	.string "Guess who's in the GUINNESS BOOK\n"
+	.string "OF WORLD RECORDS.\p"
+	.string "Earliest retirement ever.\n"
+	.string "Thirteen years old.\p"
+	.string "They sent a man with a clipboard.\n"
+	.string "He asked if I was sure. I said I\l"
+	.string "have never been more sure.\l"
+	.string "He wept a little. On the form.\p"
+	.string "The previous record holder was a\n"
+	.string "SLAKOTH. It's taking the news well.\l"
+	.string "It hasn't moved since.\p"
+	.string "My pension is paid in seashells.\n"
+	.string "I own forty. I'm basically rich.\p"
+	.string "Dad still thinks I'm doing\n"
+	.string "fieldwork. Technically I'm lying\l"
+	.string "in a field. Of sand.$"
 
 ParadisoResort_Text_RivalMay:
-	.string "MAY: Oh hey, CHAMPION.\p"
-	.string "No, I'm not training. I'm not\n"
-	.string "doing anything. That's the point.\p"
-	.string "Dad thinks I'm doing fieldwork.\n"
-	.string "Technically, I am lying in a field.\l"
-	.string "Of sand.$"
+	.string "MAY: {PLAYER}! Welcome to\n"
+	.string "my retirement.\p"
+	.string "Guess who's in the GUINNESS BOOK\n"
+	.string "OF WORLD RECORDS.\p"
+	.string "Earliest retirement ever.\n"
+	.string "Thirteen years old.\p"
+	.string "They sent a man with a clipboard.\n"
+	.string "He asked if I was sure. I said I\l"
+	.string "have never been more sure.\l"
+	.string "He wept a little. On the form.\p"
+	.string "The previous record holder was a\n"
+	.string "SLAKOTH. It's taking the news well.\l"
+	.string "It hasn't moved since.\p"
+	.string "My pension is paid in seashells.\n"
+	.string "I own forty. I'm basically rich.\p"
+	.string "Dad still thinks I'm doing\n"
+	.string "fieldwork. Technically I'm lying\l"
+	.string "in a field. Of sand.$"
+
+ParadisoResort_Text_RivalAgain:
+	.string "{RIVAL}: Oh, it's you. I'm busy.\p"
+	.string "I'm on chapter three of doing\n"
+	.string "absolutely nothing. Real page-turner.$"
+
+ParadisoResort_Text_RivalAsk:
+	.string "{RIVAL}: Retired people get one\n"
+	.string "battle a day. Doctor's orders.\l"
+	.string "The doctor is also retired.\p"
+	.string "Want today's?$"
+
+ParadisoResort_Text_RivalDecline:
+	.string "{RIVAL}: Fine. More time for my tan.\n"
+	.string "One side is done. The other side\l"
+	.string "is between me and the sun.$"
+
+ParadisoResort_Text_RivalDefeat:
+	.string "Retired AND defeated.\n"
+	.string "I'm really nailing this lifestyle.$"
+
+ParadisoResort_Text_RivalPostBattle:
+	.string "{RIVAL}: Same time tomorrow?\n"
+	.string "I'll be here. I'm always here.\l"
+	.string "That's kind of the whole point.$"
+
+ParadisoResort_Text_RivalDoneToday:
+	.string "{RIVAL}: One battle a day. That's\n"
+	.string "the rule. I made it up, but now\l"
+	.string "it's in a book. Next to my record.$"
 
 ParadisoResort_Text_PoolSwimmer:
 	.string "Best pool I've ever been in!\n"

@@ -83,7 +83,8 @@ STORY = ['TRAINER_MAY_ROUTE_103_TREECKO', 'TRAINER_MAY_RUSTBORO_TREECKO', 'TRAIN
          'TRAINER_ZINNIA', 'TRAINER_WALLY_VR_1', 'TRAINER_SIDNEY', 'TRAINER_PHOEBE', 'TRAINER_GLACIA']
 
 # post-game of rematch-achtig, ook al staat het op een kaart van het hoofdpad
-POSTGAME = {'TRAINER_WALLY_VR_2', 'TRAINER_ZINNIA_DELTA', 'TRAINER_NONE'} | {
+POSTGAME = {'TRAINER_WALLY_VR_2', 'TRAINER_ZINNIA_DELTA', 'TRAINER_NONE',
+            'TRAINER_RIVAL_POSTGAME_TREECKO', 'TRAINER_RIVAL_POSTGAME_TORCHIC', 'TRAINER_RIVAL_POSTGAME_MUDKIP'} | {
     f'TRAINER_{w}_SERVICE_{i}' for w in ('ARCHIE', 'MAXIE') for i in range(1, 5)}
 
 # team: (groeicurve, hoofdstuk-index waarin hij erbij komt, kaart waar hij gevangen wordt)

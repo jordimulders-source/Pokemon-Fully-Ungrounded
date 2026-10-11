@@ -18629,6 +18629,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Playthrough-sweep** (emulator, automatisch): alle 718 kaarten geladen, alle 1406 warp-landingen, alle Battle test-gevechten (intro, muziek, gewonnen) en een wild gevecht op alle 246 kaarten met encounters. Geen crashes, hangers of kapotte kaarten in normaal spel. Na het samenvoegen van de intro's opnieuw getest: alle 20 klasse-gevechten in orde.
 - Tas: foutmeldingen ("There's nothing to sort!") sluiten nu ook met B.
 - Audit: 0 FOUT; songtabel in orde. **ROM: 1,11 MB vrij** (doel ≥ 512 KB).
-
-### [v1.0.1] - Battle! Area Zero en Battle! Ultra Beast bij wilde gevechten
 - Wilde gevechten in Area Zero spelen nu Battle! Area Zero (stond nog als "later" in de code); wilde gevechten in Ultra Space (alle UB-werelden, niet Altering Cave zelf) spelen Battle! Ultra Beast.

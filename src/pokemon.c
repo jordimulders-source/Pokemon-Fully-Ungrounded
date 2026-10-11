@@ -6598,7 +6598,11 @@ u16 GetBattleBGM(void)
     case SPECIES_BLACEPHALON:
         return MUS_GROUNDED_VS_ULTRA_BEAST;
     }
-    // Project Grounded: wilde gevechten in Area Zero krijgen later Battle! Area Zero (MUS_GROUNDED_VS_AREA_ZERO), nu de gekozen muziek
+    if (gMapHeader.regionMapSectionId == MAPSEC_AREA_ZERO)
+        return MUS_GROUNDED_VS_AREA_ZERO; // Project Grounded: wilde gevechten in Area Zero (v1.0.1)
+    if (gMapHeader.regionMapSectionId == MAPSEC_ALTERING_CAVE
+     && !(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ALTERING_CAVE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ALTERING_CAVE)))
+        return MUS_GROUNDED_VS_ULTRA_BEAST; // Project Grounded: alle wilde gevechten in Ultra Space (v1.0.1)
     if (gMapHeader.regionMapSectionId == MAPSEC_POKEMON_TOWER)
         return MUS_GROUNDED_VS_POKE_TOWER; // Project Grounded: wilde gevechten (ook de GHOST) in de Pokemon Tower
     if (gMapHeader.regionMapSectionId == MAPSEC_YOSHIS_ISLAND)

@@ -18589,3 +18589,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **22 class-intro's** (0,7–1,6 KB per stuk): onder andere Swimmer (plons), Hiker (rotsen), Bug Catcher (net + Pokéball-wiebel), Psychic (lepel), Fisherman (dobber en "!"), Hex Maniac (kaars gaat uit, twee ogen), Black Belt (karateslag), Ranger ("CAPTURED."), Ninja Boy (rookbom en één vallend blad), Breeder (Lucky Egg dat uitkomt), Rich Boy (muntenregen). Alleen voor gewone trainers; overal waar al een eigen intro is, blijft die. Niet in het Stadium.
 - ±46 KB totaal; ROM vrij 1,16 MB.
 - Debug Battle test: "Rival 1 … 6" + "Rival post-game"; de class-intro's zitten in de "Class: …"-gevechten.
+
+### [v0.9.292] - Trainer-remixen v2: Zee, Chic en Rock
+- **Zee:** 188 → 144 bpm, relaxter. Steeldrum-rolls alleen op lange noten, met een langere uitklank; geen clap meer, en een lichte calypso-swing.
+- **Chic:** de irritante hoge tik was een ride-bell (een toon op 2797 Hz); vervangen door een zachte brush-ride en de hihat-voet.
+- **Rock:** de powerchord-sample was een akkoord dat een octaaf te hoog en in stootjes klonk. Nu grondtoon + kwint als twee gelijk uitklinkende distortion-noten.
+- Berg, Natuur, Mystiek, Elite en Kids zijn ongewijzigd (goedgekeurd).

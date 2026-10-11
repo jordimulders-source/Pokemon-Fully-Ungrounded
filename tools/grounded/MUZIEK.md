@@ -142,7 +142,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Dialga/Palkia (678) | `dialga_theme.py` | v1 wacht op Jordi (uit zijn MIDI, alleen stock-samples, ±9 KB) | "Dialga" |
 | Battle! Ultra Beast (677) | `ub_theme.py`, `ub_samples.py` | v1 wacht op Jordi (eigen compositie, octatonisch/heeltoons, 7/8, glazen FM-lead met microtonale bends; alle UB-gevechten in Ultra Space) | "Ultra Beast" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v8: begeleiding m5-39 + koor + aria uit het origineel geknipt, 682 geschrapt (Jordi) | "Area Zero" |
-| Trainerklasse-remixes van MUS_VS_TRAINER (696-703: SEA, MOUNTAIN, NATURE, MYSTIC, CHIC, ROCK, ELITE, KIDS) | `trclass_theme.py`, `trclass_samples.py` | v1 wacht op Jordi (melodie spoor 2 noot voor noot, bas/akkoorden uit het origineel, groove/instrumenten per groep; alleen bij HOENN/ROTATE) | "Trainerklassen" |
+| Trainerklasse-remixes van MUS_VS_TRAINER (696-703: SEA, MOUNTAIN, NATURE, MYSTIC, CHIC, ROCK, ELITE, KIDS) | `trclass_theme.py`, `trclass_samples.py` | MOUNTAIN/NATURE/MYSTIC/ELITE/KIDS GOEDGEKEURD (Jordi); SEA/CHIC/ROCK v2 wacht op Jordi (SEA 144 bpm, CHIC zonder ride-bell, ROCK echte powerchords) | "Trainerklassen" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -862,3 +862,17 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   riff C#-Eb klopten al bijna); Bb wordt dan Bbm. Harp-golven onder de melodie houden (`lowest_lead()`, octaaf
   omlaag); harp-release 190 -> 165 haalde 6,5% -> 0,6% weg. Onderwater: bloop = PSG-vierkant 1 met sweep omhoog
   (sweep 21 = tijd 1, shift 5), sub op de PSG-golf, golvende bend op de pad (BENDR 2), echo = melodie 3 16en later.
+- Trainerklassen v2 (Jordi: MOUNTAIN/NATURE/MYSTIC/ELITE/KIDS 'prima'; SEA 'lager, relaxter tempo zodat de steel drum
+  realistisch klinkt', CHIC 'hele irritante hoge tik toon', ROCK 'half afgemaakte gitaarakkoorden'). Nieuwe
+  instrumenten achteraan `INST` = de goedgekeurde MIDI's blijven byte-identiek (md5 gecontroleerd).
+  **CHIC: solo-opname per spoor** (`agent_classmus/solo.py`: volX = 0 op de rest, emulator-audio): het drumspoor had 27%
+  energie > 3 kHz met een tonale piek op 2797 Hz (piek/mediaan 1,2 miljoen) = `dance_drums_ride_bell` (een ride-*bell*:
+  een toon, geen tik); stond ook al in audiocheck als 'constante toon 2797'. Nu een brush-ride op PSG-ruis (decay 2,
+  toets 58, vol 40) + hihat-voet op 2/4: drumspoor 2% > 3 kHz, geen piek meer. **ROCK:** de
+  `unused_guitar_separates_power_chord` is een akkoord met een harmonische reeks op 66 Hz incl. de 7e boventoon
+  (462 Hz) en duurt 0,36 s; autocorrelatie gaf 'C2', maar dat is de gezamenlijke periode van C3+G3, dus hij speelde
+  een octaaf te hoog, en in 16e-stootjes. Nu grondtoon + kwint als twee low-distortion-noten (C3 op toets 60, met
+  loop), uitklinkend per halve maat. **Les: een 'grondtoon' uit autocorrelatie van een akkoordsample is de
+  gezamenlijke periode (een octaaf of meer te laag); kijk naar de harmonischen.** SEA: 188 -> 144 bpm, rolls alleen
+  op noten >= een gestippelde kwart (±10 slagen/s), steel release 130 -> 175, geen clap, oneven 16en 1 tick later.
+  Batchrec: SEA piek 111, CHIC 118 (-V094), ROCK 114 (-V090), 0 overlopen.

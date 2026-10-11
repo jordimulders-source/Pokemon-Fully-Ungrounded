@@ -44,14 +44,14 @@ voice_group grounded_trclass
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tuba_39, 255, 0, 255, 140  @ 40
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tuba_51, 255, 0, 255, 140  @ 41
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 200  @ 42
-	voice_directsound 60, 0, DirectSoundWaveData_trclass_steel, 255, 0, 255, 130  @ 43
+	voice_directsound 60, 0, DirectSoundWaveData_trclass_steel, 255, 0, 255, 175  @ 43
 	voice_directsound 60, 0, DirectSoundWaveData_trclass_vibes, 255, 0, 255, 175  @ 44
 	voice_square_1 60, 0, 0, 2, 0, 1, 9, 1  @ 45
 	voice_square_2 60, 0, 1, 0, 2, 5, 1  @ 46
 	voice_programmable_wave_alt 60, 0, ProgrammableWaveData_3, 0, 7, 15, 2  @ 47
 	voice_noise_alt 60, 0, 0, 0, 1, 0, 0  @ 48
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 49
-	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 50
+	voice_noise_alt 60, 0, 0, 0, 2, 0, 0  @ 49
+	voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_distortion_guitar_low, 255, 0, 255, 150  @ 50
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 51
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 52
 	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 53

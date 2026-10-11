@@ -177,15 +177,18 @@ INST = {
     'synbass': [(0, ds('sc88pro_synth_bass', 255, 252, 0, 115), 0)],
     'tuba':    [(0, ds('sc88pro_tuba_39', 255, 0, 255, 140), 0), (45, ds('sc88pro_tuba_51', 255, 0, 255, 140), 0)],
     'timpani': [(0, ds('sc88pro_timpani', 255, 246, 0, 200), 0)],
-    'steel':   [(0, ds('trclass_steel', 255, 0, 255, 130), 0)],
+    'steel':   [(0, ds('trclass_steel', 255, 0, 255, 175), 0)],   # v2: laten naklinken (alleen SEA)
     'vibes':   [(0, ds('trclass_vibes', 255, 0, 255, 175), 0)],
     # eigen PSG-stemmen (kosten geen DirectSound-kanaal)
     'sq_lead': [(0, 'voice_square_1 60, 0, 0, 2, 0, 1, 9, 1', 0)],
     'sq_arp':  [(0, 'voice_square_2 60, 0, 1, 0, 2, 5, 1', 0)],
     'wave':    [(0, 'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_3, 0, 7, 15, 2', 0)],
     'noise':   [(0, 'voice_noise_alt 60, 0, 0, 0, 1, 0, 0', 0)],
+    # v2 (achteraan, zodat de goedgekeurde nummers byte-identiek blijven)
+    'brush':   [(0, 'voice_noise_alt 60, 0, 0, 0, 2, 0, 0', 0)],              # CHIC: brush-ride op PSG-ruis
+    'dist_low': [(0, ds('sd90_classical_distortion_guitar_low', 255, 0, 255, 150), -12)],  # ROCK: powerchords
 }
-PSG_INST = {'sq_lead', 'sq_arp', 'wave', 'noise'}
+PSG_INST = {'sq_lead', 'sq_arp', 'wave', 'noise', 'brush'}
 
 KITV = [  # drumkit vanaf toets 36 (voice_directsound, niet _no_resample: speelt op de rate van de sample)
     ('kick',    'voice_directsound 67, 64, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 160'),
@@ -421,6 +424,14 @@ def psg_copy(name, src, i, bars, vol):
     return part
 
 
+def lilt(part, amount=1):
+    """Lichte calypso-swing: aanslagen op de oneven zestienden `amount` ticks later."""
+    for x in part.notes:
+        if (x[0] // S) % 2 == 1 and x[0] % S == 0:
+            x[0] += amount
+            x[1] = max(x[1], x[0] + 2)
+
+
 def swing(part, a=2 * BAR):
     """Swing 2:1 vanaf tick a: de tweede achtste van elke tel schuift naar 2/3 (16 van 24 ticks)."""
     def f(t):
@@ -449,7 +460,7 @@ def sea(src):
     route(lead, src.lead, by_sec({'intro': ('steel', -12), 'riff': ('steel', 0), 'A': ('steel', 0),
                                   'B': ('steel', 12), 'C': ('steel', 0), 'C2': ('steel', -12), 'D': ('steel', -12),
                                   'E': ('steel', 12), 'F': ('steel', 0), 'G': ('steel', 0), 'riff2': ('steel', 0)}))
-    roll(lead)
+    roll(lead, minlen=6 * S, step=S, accent=(112, 90))     # v2: rolls alleen op lange noten, 144 bpm = ±10 slagen/s
     harm = Part('harm', vol=96, pan=80)
     route(harm, src.harm, by_sec({'intro': ('xylo', -12), 'riff': ('xylo', 0), 'A': ('xylo', 0), 'B': ('xylo', 12),
                                   'C': ('xylo', 0), 'C2': ('xylo', 0), 'D': ('xylo', 0), 'F': ('xylo', 0),
@@ -468,10 +479,10 @@ def sea(src):
         if k == 'E':
             continue
         e = ENERGY[k]
-        pat = {'kick': [0, 8] + ([14] if e >= 3 else []), 'conga_h': [(2, 96), (10, 96)],
-               'conga_l': [(6, 104), (7, 92), (14, 104), (15, 92)]}
-        if e >= 2:
-            pat['clap'] = [(4, 92), (12, 92)]
+        pat = {'kick': [0, 8], 'conga_h': [(2, 92), (10, 92)],
+               'conga_l': [(6, 104), (7, 88), (14, 104), (15, 88)]}
+        if e >= 3:
+            pat['wood'] = [(4, 84), (12, 84)]
         if k in ('C2', 'G', 'D', 'intro'):
             pat['cowbell'] = [(0, 96), (3, 88), (6, 96), (10, 88), (12, 96)]
         if b in SEC_END and k not in ('intro',):
@@ -485,11 +496,13 @@ def sea(src):
     for b in bars_of('E'):
         drum(dr, b, 0, 'kick', 104)
     psg = Part('shaker', ds=False, vol=60)
-    hats(psg, [b for b in ALL if sec(b) != 'E'], S, vel=(90, 58), accent={2, 6, 10, 14})
-    wave = Part('waves', ds=False, vol=58)
+    hats(psg, [b for b in ALL if sec(b) != 'E'], S, vel=(84, 52), accent={2, 6, 10, 14})
+    wave = Part('waves', ds=False, vol=52)
     arp(wave, src, 'wave', bars_of('A', 'C', 'G', 'F'), S, 60, seq=(0, 1, 2, 3, 4, 5, 4, 3, 2, 1, 0, 1, 2, 3, 2, 1),
         vel=100, oct_span=2)
-    return dict(bpm=188, V=96, parts=[lead, bass, dr, harm, cmp_], psg=[psg, wave],
+    for p in (dr, cmp_, psg, wave):                        # v2: laid-back, de oneven zestienden iets later
+        lilt(p)
+    return dict(bpm=144, V=96, parts=[lead, bass, dr, harm, cmp_], psg=[psg, wave],
                 order=['lead', 'bass', 'drums', 'harm', 'comp'])
 
 
@@ -674,25 +687,28 @@ def chic(src):
         if k == 'E':
             continue
         e = ENERGY[k]
-        pat = {'ride': [(0, 104), (4, 96), (6, 84), (8, 104), (12, 96), (14, 84)]}
+        pat = {}                                          # v2: geen ride-bell meer (de 'hoge tik', 2,8/3,6 kHz)
         if e >= 2:
             pat['skick'] = [(0, 96)]
             pat['ssnare'] = [(14, 78)] if b % 2 else [(10, 78)]
         if b in SEC_END and k != 'intro':
-            pattern(dr, b, {'ride': [(0, 104), (4, 96)]})
             fill(dr, b, 'jazz', 104)
         else:
             pattern(dr, b, pat)
         if b in SEC_START:
             drum(dr, b, 0, 'crash', 100)
     timp_solo(dr, src, lambda n: 'tom_l' if n < 50 else ('ssnare' if n < 54 else 'tom_h'), vel=108)
-    hh = Part('hihat', ds=False, vol=52)
+    hh = Part('hihat', ds=False, vol=40)                  # v2: zachte brush-ride + hihat-voet op 2 en 4 (PSG-ruis)
     for b in [b for b in ALL if sec(b) != 'E']:
-        for p in (4, 12):
-            hh.add(b * BAR + p * S, b * BAR + p * S + 3, 84, 92, 'noise')
+        for p in ((0, 4, 6, 8, 12, 14) if b not in SEC_END else (0, 4)):
+            t = b * BAR + p * S
+            if p in (4, 12):
+                hh.add(t, t + 3, 72, 80, 'noise')
+            else:
+                hh.add(t, t + 8, 58, 66 if p % 8 == 0 else 58, 'brush')
     for p in (lead, harm, bass, pno, dr, hh):
         swing(p)
-    return dict(bpm=200, V=98, parts=[lead, bass, dr, harm, pno], psg=[hh],
+    return dict(bpm=200, V=94, parts=[lead, bass, dr, harm, pno], psg=[hh],
                 order=['lead', 'bass', 'drums', 'harm', 'comp'])
 
 
@@ -711,15 +727,25 @@ def rock(src):
     bass = Part('bass', vol=116)
     orig_bass(bass, src, 'fbass', bars=range(0, 2))
     bass_rhythm(bass, src, 'fbass', [(p, 2, 'r') for p in range(0, 16, 2)], bars=LOOPB, vel=118)
-    pw = Part('power', vol=86, pan=30)
-    for b in bars_of('A', 'C2', 'D', 'G', 'riff', 'riff2'):
-        for p in range(0, 16, 2):
-            t = b * BAR + p * S
-            pw.add(t, t + S, place(src.half_root(t) % 12, 36), 112 if p % 4 == 0 else 100, 'power')
+    # v2 (Jordi: 'klinkt als half afgemaakte gitaarakkoorden'): de oude 'unused_guitar_separates_power_chord' is een
+    # akkoord met een harmonische reeks op C2 incl. de 7e boventoon, duurt maar 0,36 s en speelde een octaaf te hoog in
+    # 16e-stootjes. Nu: grondtoon + kwint als twee low-distortion-noten (sample klinkt C3 op toets 60, met loop),
+    # uitklinkend per halve maat; alleen in B/C/F bewust kortere aanslagen.
+    pw = Part('power', vol=84, pan=30)
+
+    def chord(t, ln, v):
+        r = place(src.half_root(t) % 12, 40)
+        pw.add(t, t + ln, r, v, 'dist_low')
+        pw.add(t, t + ln, r + 7, v - 8, 'dist_low')
+    for b in bars_of('A', 'C2', 'D', 'G'):
+        for p in (0, 8):
+            chord(b * BAR + p * S, 8 * S, 112)
+    for b in bars_of('riff', 'riff2'):
+        for p, ln in ((0, 6), (6, 6), (12, 4)):
+            chord(b * BAR + p * S, ln * S, 110 if p == 0 else 102)
     for b in bars_of('B', 'C', 'F'):
-        for p in (0, 6, 8, 14):
-            t = b * BAR + p * S
-            pw.add(t, t + (5 if p % 8 == 0 else 2) * S, place(src.half_root(t) % 12, 36), 110, 'power')
+        for p, ln in ((0, 6), (6, 2), (8, 6), (14, 2)):
+            chord(b * BAR + p * S, ln * S, 106 if ln > 2 else 96)
     dr = Part('drums', vol=106)
     for b in ALL:
         k = sec(b)
@@ -741,7 +767,7 @@ def rock(src):
     hats(psg, [b for b in ALL if sec(b) != 'E'], 2 * S, vel=(96, 70))
     p4 = psg_copy('psg4', src, 4, bars_of('riff', 'riff2', 'G'), 58)
     p5 = psg_copy('psg5', src, 5, bars_of('riff', 'riff2', 'G'), 52)
-    return dict(bpm=216, V=94, parts=[lead, bass, dr, harm, pw], psg=[psg, p4, p5],
+    return dict(bpm=216, V=90, parts=[lead, bass, dr, harm, pw], psg=[psg, p4, p5],
                 order=['lead', 'bass', 'drums', 'power', 'harm'])
 
 
@@ -990,8 +1016,13 @@ def register(num, key, V):
         open('sound/song_table.inc', 'w').write(t)
     c = open('sound/songs/midi/midi.cfg').read()
     line = '%s.mid: -E -R50 -G_%s -V%03d' % (low, VG, V)
-    lines = [l for l in c.rstrip('\n').split('\n') if not l.startswith(low + '.mid:')]
-    open('sound/songs/midi/midi.cfg', 'w').write('\n'.join(lines + [line]) + '\n')
+    lines = c.rstrip('\n').split('\n')
+    hit = [i for i, l in enumerate(lines) if l.startswith(low + '.mid:')]
+    if hit:
+        lines[hit[0]] = line                      # op zijn plek laten staan (geen verschuiving bij elke run)
+    else:
+        lines.append(line)
+    open('sound/songs/midi/midi.cfg', 'w').write('\n'.join(lines) + '\n')
     v = open('sound/voice_groups.inc').read()
     for inc in ('drumsets/%s.inc' % KIT, '%s.inc' % VG):
         if inc not in v:

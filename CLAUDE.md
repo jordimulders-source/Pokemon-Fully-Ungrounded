@@ -206,6 +206,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pok�
 - **Vier muziekagents samenvoegen** (v1.0): geef elk een eigen songnummerbereik; ze zetten plaatshouders (`mus_dummy`/`dummy_song_header`) op de nummers van de anderen, die bij de merge weg moeten (songtable_check vangt het). Koppelingen in `GetRegionalWildBattleMusic` laten ze als losse blokken met een commentaarregel aanleveren; de volgorde zet je zelf bij de merge.
 - **Wegvallende noten in nieuwe nummers** (Route 119+ v2): de stemverdeler en de lint rekenden een noot tot de note-off, maar de m4a-engine houdt hem vast tot de envelope op 1/16 is (een crash met sustain 0 duurde 1,1 s i.p.v. 0,5 s). `ply_note` pakt eerst een uitklinkend kanaal, anders valt een noot van een later spoor stil weg. Slagwerk/pauken/klokken als korte noten met lange release; zie `channel_end()` in `route119_battle_theme.py`. Lint en `musiclib.release_ticks` rekenen nog niet zo (TODO).
 - **Nooit `cd <map>; rm *`** in één Bash-regel: de veiligheidscheck blokkeert het hele commando (ook de commits ervoor). Gebruik volledige paden.
+- **Water op elevation 0 is beloopbaar** (Nothing Island, v1.0): water hoort op elevation 1; met 0 loop je er zonder surfen op. Controle: `waterelev.py`-aanpak (water met botsing 0 en elevation 0 naast beloopbaar land). **Halve bomen** controleer je per kaart met een script (links-/rechterhelft 1d4/1d5, 1dc/1dd, 1e4/1e5 moeten paren vormen), niet alleen op het oog: Jordi vond in Lavender drie plekken na elkaar.
 
 ## Werkwijzen (herhaalde taken)
 

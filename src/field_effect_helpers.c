@@ -398,6 +398,7 @@ void UpdateShadowFieldEffect(struct Sprite *sprite)
         if (!objectEvent->active
          || objectEvent->noShadow
          || objectEvent->inHotSprings
+         || objectEvent->graphicsId == OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN // Project Grounded: alleen een hoofd boven het water
          || objectEvent->inSandPile
          || gWeatherPtr->noShadows
          || MetatileBehavior_IsPokeGrass(objectEvent->currentMetatileBehavior)

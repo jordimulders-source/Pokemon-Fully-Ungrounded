@@ -811,6 +811,10 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
     { COMPOUND_STRING("Class intro: Guitarist"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_KIRK, TRAINER_NONE) },
     { COMPOUND_STRING("Class intro: Ninja Boy"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_YASU, TRAINER_NONE) },
     { COMPOUND_STRING("Class intro: Collector"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_EDWIN_1, TRAINER_NONE) },
+    { COMPOUND_STRING("Class intro: Hiker"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_SAWYER_1, TRAINER_NONE) },
+    { COMPOUND_STRING("Class intro: Psychic"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_EDWARD, TRAINER_NONE) },
+    { COMPOUND_STRING("Class intro: Bird Keeper"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_PERRY, TRAINER_NONE) },
+    { COMPOUND_STRING("Class intro: Battle Girl"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_CYNDY_1, TRAINER_NONE) },
     { COMPOUND_STRING("Archie + Maxie (werkstraf)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_ARCHIE_SERVICE_1, TRAINER_MAXIE_SERVICE_1) },
     // Wilde legendaries: transitie + thema uit het echte event
     { COMPOUND_STRING("Zarude"),                 DebugAction_Util_BattleTest, BT_LEGEND(SPECIES_ZARUDE, 50) },

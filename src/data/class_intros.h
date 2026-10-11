@@ -7,15 +7,16 @@
 //
 //   klasse                                   intro
 //   Swimmer M/F, Tuber M/F                   het water komt omhoog, spetters, een fontein, kopje onder
-//   Hiker                                    rotsblokken rollen het beeld in, het scherm barst
-//   Bug Catcher, Bug Maniac                  net vangt bijen, een mug, KLAP: "ehh… busted?" (class_intros2_c.h)
-//   Psychic                                  een lepel buigt, de wereld buigt mee
+//   Hiker                                    superheld-sprongen op een berg... een droomwolk. HOHOHO (2_b)
+//   Bug Catcher, Bug Maniac                  net vangt bijen, een mug, KLAP: "ehh… busted?" (2_c)
+//   Psychic                                  amateur-levitatie met gewone items, die vallen (2_b)
 //   Fisherman, Guitarist, Ninja Boy, Collector: zie class_intros2_a.h
-//   Bird Keeper                              een veren-storm
+//   Bird Keeper                              Wingull de wereld in... landt meteen bij het voer (2_b)
 //   Kindler                                  vlammen van onderen, hitte-trilling
 //   Ruin Maniac                              zandwand met hiërogliefen schuift over het beeld
 //   Hex Maniac                               een kaars in het donker flakkert, gaat uit, twee ogen
-//   Black Belt, Battle Girl                  karateslag: het beeld splijt in tweeën
+//   Black Belt                               karateslag: het beeld splijt in tweeën
+//   Battle Girl                              flying kick door muur, rots, bunker, maan, zon (2_b)
 //   Cooltrainer                              het wordt koud: rijp kruipt vanaf de randen naar binnen
 //   Triathlete                               zwemmen, fietsen, hardlopen in drie banen, dan de finishvlag
 //   Expert                                   inktwas: alles grijs, een penseelstreek, een rood zegel
@@ -951,6 +952,7 @@ enum
     CI_COOL, CI_TRI, CI_EXPERT, CI_SAILOR, CI_PICNIC, CI_BOUNCE, CI_RANGER, CI_PETAL, CI_NINJA, CI_HEART, CI_COINS,
     CI_FAN, CI_AROMA, CI_PARASOL, // class_intros2_c.h
     CI_FISH2, CI_GUITAR2, CI_NINJA2, CI_COLLECT, // class_intros2_a.h
+    CI_BGIRL,
     CI_COUNT
 };
 
@@ -978,8 +980,10 @@ static u32 ClassIntro_ForClass(u32 trainerClass)
         return CI_RUIN;
     case TRAINER_CLASS_HEX_MANIAC:
         return CI_HEX;
-    case TRAINER_CLASS_BLACK_BELT: case TRAINER_CLASS_BATTLE_GIRL:
+    case TRAINER_CLASS_BLACK_BELT:
         return CI_CHOP;
+    case TRAINER_CLASS_BATTLE_GIRL:
+        return CI_BGIRL;
     case TRAINER_CLASS_COOLTRAINER: case TRAINER_CLASS_COOLTRAINER_2:
         return CI_COOL;
     case TRAINER_CLASS_TRIATHLETE:
@@ -1062,166 +1066,9 @@ static bool32 CISwim_Update(s32 t)
 
 static const struct TIntro sCI_Swim = {CISwim_Init, CISwim_Update};
 
-// ---------------- Hiker: rotsblokken rollen van boven het beeld in en stuiteren; elke tel barst het scherm verder
+// Hiker, Psychic, Bird Keeper en Battle Girl: zie src/data/class_intros2_b.h
 static const u16 sCI_CrackPal[4] = {0, RGB(2, 2, 3), RGB(20, 20, 22), RGB(31, 31, 31)};
-#define HK_ROCKS 6
 
-static void CIHiker_Init(void)
-{
-    u32 i;
-    TI_SetPal(15, sCI_CrackPal, 4);
-    for (i = 0; i < HK_ROCKS; i++)
-    {
-        sTI->v[i] = TI_Anim(ANIM_TAG_ROCKS, &gOamData_AffineNormal_ObjNormal_32x32, -40, -40, (i % 6) * 16);
-        TI_Show(sTI->v[i], FALSE);
-    }
-}
-
-// barst vanaf (x, y): een paar zigzaggende takken (deterministisch per seed)
-static void CIHiker_Crack(s32 x0, s32 y0, u32 seed, s32 grow)
-{
-    u32 b, j, r = seed;
-    for (b = 0; b < 4; b++)
-    {
-        s32 x = x0, y = y0, ang = (b * 64 + (r & 31)) & 0xFF;
-        for (j = 0; j < 5; j++)
-        {
-            s32 len = 10 + (r >> 8) % 12, nx, ny;
-            r = r * 1103515245 + 12345;
-            ang = (ang + ((s32)((r >> 16) & 63) - 32)) & 0xFF;
-            nx = x + Cos(ang, len);
-            ny = y + Sin(ang, len);
-            if ((s32)j * 51 > grow)
-                break;
-            TI_Line(x, y, nx, ny, 0, 256, 0, 1);
-            TI_Line(x + 1, y + 1, nx + 1, ny + 1, 0, 256, 0, 3);
-            x = nx;
-            y = ny;
-        }
-    }
-}
-
-static bool32 CIHiker_Update(s32 t)
-{
-    s32 n, end = TI_Beat(4);
-    static const s16 sImpact[3][2] = {{70, 110}, {170, 60}, {120, 90}};
-    for (n = 0; n < 3; n++)
-    {
-        s32 at = TI_Beat(n + 1);
-        if (TI_AT(at - 22))
-        {
-            struct TIPart *p = TI_Part(sTI->v[n], n == 1 ? 260 : -20, -30, n == 1 ? -40 : 40, 0, 4, 0);
-            if (p != NULL)
-            {
-                // landt rond 'at' op het inslagpunt
-                p->vx = (sImpact[n][0] * 16 - p->x) / 22;
-                p->vy = (sImpact[n][1] * 16 - p->y) / 22 - 2 * 22;
-            }
-        }
-        if (TI_AT(at))
-        {
-            PlaySE(SE_M_ROCK_THROW);
-            CIHiker_Crack(sImpact[n][0], sImpact[n][1], 0x1234 + n * 777, 256);
-            sTI->v[10] = 6;
-        }
-    }
-    // kleine rolsteentjes
-    if (TI_AT(4))
-    {
-        struct TIPart *p = TI_Part(sTI->v[3], 250, 140, -36, -20, 3, 0);
-        if (p)
-            p->bounce = TRUE;
-    }
-    if (TI_AT(14))
-    {
-        struct TIPart *p = TI_Part(sTI->v[4], -10, 120, 30, -30, 3, 0);
-        if (p)
-            p->bounce = TRUE;
-    }
-    for (n = 0; n < HK_ROCKS; n++)
-        TI_Scale(sTI->v[n], 256, 256, t * (n & 1 ? 9 : -7));
-    if (sTI->v[10] > 0)
-        sTI->v[10]--;
-    TI_Shake(sTI->v[10]);
-    if (t >= TI_Beat(4) - 6)
-        TI_Tint(TI_World(), TI_Ramp(t, end - 6, end) * 12 >> 8, RGB(2, 2, 3));
-    TI_Flash(t, TI_Beat(3), 6, 10, TI_World(), RGB_WHITE);
-    return t >= end;
-}
-
-static const struct TIntro sCI_Hiker = {CIHiker_Init, CIHiker_Update};
-
-// ---------------- Psychic: een lepel buigt op de tel, de wereld golft steeds harder mee, paars
-static void CIPsychic_Init(void)
-{
-    sTI->v[0] = TI_Anim(ANIM_TAG_BENT_SPOON, &gOamData_AffineDouble_ObjNormal_16x32, 120, 78, 0);
-    TI_Scale(sTI->v[0], 96, 96, 0);
-    TI_Lines(TIF_WX);
-    PlaySE(SE_M_PSYBEAM);
-}
-
-static bool32 CIPsychic_Update(s32 t)
-{
-    s32 end = TI_Beat(4), amp, y, f;
-    u16 base = sTI->camX;
-    f = 0;
-    for (y = 1; y <= 4; y++)
-        if (t >= TI_Beat(y))
-            f = y;
-    if (t >= end - 4)
-        f = 5;
-    gSprites[sTI->v[0]].oam.tileNum = GetSpriteTileStartByTag(ANIM_TAG_BENT_SPOON) + f * 8;
-    amp = 1 + (TI_Ramp(t, 0, end) * 14 >> 8);
-    for (y = 0; y < DISPLAY_HEIGHT; y++)
-        sTI->back[TIB_WX][y] = base + Sin((y * 4 + t * 6) & 0xFF, amp);
-    TI_Tint(TI_World(), TI_Ramp(t, 0, end) * 9 >> 8, RGB(18, 6, 26));
-    TI_Scale(sTI->v[0], 96 - f * 4, 96 + f * 3, Sin((t * 8) & 0xFF, 6) << 8);
-    if (TI_AT(TI_Beat(2)))
-        PlaySE(SE_M_TELEPORT);
-    TI_Flash(t, end - 4, 6, 12, PALETTES_ALL, RGB(31, 26, 31));
-    return t >= end + 2;
-}
-
-static const struct TIntro sCI_Psychic = {CIPsychic_Init, CIPsychic_Update};
-
-// ---------------- Bird Keeper: een verenstorm van rechts, steeds dichter, op de 3e tel alles wit
-#define BD_N 14
-static void CIBird_Init(void)
-{
-    u32 i;
-    for (i = 0; i < BD_N; i++)
-    {
-        sTI->v[i] = TI_Anim(ANIM_TAG_WHITE_FEATHER, i < 6 ? &gOamData_AffineNormal_ObjNormal_32x32 : &gOamData_AffineOff_ObjNormal_32x32, -50, -50, (i & 1) * 16);
-        TI_Show(sTI->v[i], FALSE);
-    }
-    PlaySE(SE_M_GUST);
-}
-
-static bool32 CIBird_Update(s32 t)
-{
-    s32 end = TI_Beat(4), i;
-    for (i = 0; i < BD_N; i++)
-    {
-        s32 t0 = i * TI_Beat(2) / BD_N, dt = t - t0;
-        if (dt < 0)
-            continue;
-        if (dt == 0 || TI_AT(t0))
-        {
-            struct TIPart *p = TI_Part(sTI->v[i], 260, TI_RandRange(10, 150), -TI_RandRange(70, 110), TI_RandRange(-8, 8), 0, 0);
-            if (p)
-                p->ax = -1;
-        }
-        TI_Scale(sTI->v[i], 256, 256, (t * (5 + i)) << 7);
-        gSprites[sTI->v[i]].y2 = Sin((t * 9 + i * 40) & 0xFF, 6);
-    }
-    if (TI_AT(TI_Beat(2)))
-        PlaySE(SE_M_WING_ATTACK);
-    TI_Tint(TI_World(), TI_Ramp(t, TI_Beat(1), end) * 14 >> 8, RGB(31, 31, 30));
-    TI_WorldMove(-(TI_Ramp(t, 0, end) * 10 >> 8) + Sin((t * 20) & 0xFF, 2), 0);
-    return t >= end;
-}
-
-static const struct TIntro sCI_Bird = {CIBird_Init, CIBird_Update};
 
 // ---------------- Kindler: vlammen komen van onderen, de lucht trilt van de hitte
 #define KD_N 8
@@ -1928,6 +1775,7 @@ static const struct TIntro sCI_Coins = {CICoins_Init, CICoins_Update};
 
 #include "class_intros2_c.h"
 #include "class_intros2_a.h"
+static const struct TIntro sCI_Hiker, sCI_Psychic, sCI_Bird, sCI_BGirl;   // class_intros2_b.h
 
 static const struct TIntro *const sClassIntros[CI_COUNT] =
 {
@@ -1957,6 +1805,7 @@ static const struct TIntro *const sClassIntros[CI_COUNT] =
     [CI_FAN] = &sCI_Fan,
     [CI_AROMA] = &sCI_Aroma,
     [CI_PARASOL] = &sCI_Parasol,
+    [CI_BGIRL] = &sCI_BGirl,
 };
 
 static void Task_ClassIntro(u8 taskId)

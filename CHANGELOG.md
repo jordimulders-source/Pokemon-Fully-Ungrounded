@@ -18595,3 +18595,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Chic:** de irritante hoge tik was een ride-bell (een toon op 2797 Hz); vervangen door een zachte brush-ride en de hihat-voet.
 - **Rock:** de powerchord-sample was een akkoord dat een octaaf te hoog en in stootjes klonk. Nu grondtoon + kwint als twee gelijk uitklinkende distortion-noten.
 - Berg, Natuur, Mystiek, Elite en Kids zijn ongewijzigd (goedgekeurd).
+
+### [v0.9.293] - Kreten weer met DPCM-padding (HQ-mixer)
+- Kreten worden weer gecomprimeerd mét afsluitende padding (`--no-pad` uit `audio_rules.mk`). De HQ-mixer decodeert kreten altijd per blok van 64 samples; zonder padding is het laatste blok korter en leest hij voorbij het einde van de kreet (het tikje-risico uit TODO). Kost 16,7 KB; ROM nog 1,14 MB vrij.
+- Legendary Birds houden voor de 1.0 het generieke legendary-thema (Jordi); mogelijk een eigen thema na de 1.0.

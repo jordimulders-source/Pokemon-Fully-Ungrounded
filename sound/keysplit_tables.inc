@@ -81,3 +81,8 @@ keysplit hoopa_mizmar, 48
 	split 0, 61
 	split 1, 68
 	split 2, 108
+
+@ Project Grounded: elektrische piano voor de nachtversies van de stadsthema's (night_towns.py).
+keysplit night_ep, 24
+	split 0, 65
+	split 1, 120

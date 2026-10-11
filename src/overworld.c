@@ -1206,6 +1206,40 @@ static bool16 IsInfiltratedSpaceCenter(struct WarpData *warp)
     return FALSE;
 }
 
+// Project Grounded: nachtversies van de stadsthema's (tools/grounded/night_towns.py). 's Nachts speelt op een
+// buitenkaart (stad, dorp, route, zee) met een van deze thema's de nachtversie; gebouwen houden de gewone versie.
+static const u16 sNightTownMusic[][2] =
+{
+    {MUS_LITTLEROOT,        MUS_GROUNDED_NIGHT_LITTLEROOT},
+    {MUS_OLDALE,            MUS_GROUNDED_NIGHT_OLDALE},
+    {MUS_PETALBURG,         MUS_GROUNDED_NIGHT_PETALBURG},
+    {MUS_RUSTBORO,          MUS_GROUNDED_NIGHT_RUSTBORO},
+    {MUS_DEWFORD,           MUS_GROUNDED_NIGHT_DEWFORD},
+    {MUS_SLATEPORT,         MUS_GROUNDED_NIGHT_SLATEPORT},
+    {MUS_VERDANTURF,        MUS_GROUNDED_NIGHT_VERDANTURF},
+    {MUS_FALLARBOR,         MUS_GROUNDED_NIGHT_FALLARBOR},
+    {MUS_FORTREE,           MUS_GROUNDED_NIGHT_FORTREE},
+    {MUS_LILYCOVE,          MUS_GROUNDED_NIGHT_LILYCOVE},
+    {MUS_SOOTOPOLIS,        MUS_GROUNDED_NIGHT_SOOTOPOLIS},
+    {MUS_EVER_GRANDE,       MUS_GROUNDED_NIGHT_EVER_GRANDE},
+    {MUS_GROUNDED_ASHFROST, MUS_GROUNDED_NIGHT_ASHFROST},
+    {MUS_RG_CELADON,        MUS_GROUNDED_NIGHT_CELADON},
+};
+
+static u16 GetNightTownMusic(u16 music, enum MapType mapType)
+{
+    u32 i;
+
+    if (!IsMapTypeOutdoors(mapType))
+        return music;
+    for (i = 0; i < ARRAY_COUNT(sNightTownMusic); i++)
+    {
+        if (sNightTownMusic[i][0] == music)
+            return (GetTimeOfDay() == TIME_NIGHT) ? sNightTownMusic[i][1] : music;
+    }
+    return music;
+}
+
 u16 GetLocationMusic(struct WarpData *warp)
 {
     if (NoMusicInSootopolisWithLegendaries(warp) == TRUE)
@@ -1217,7 +1251,10 @@ u16 GetLocationMusic(struct WarpData *warp)
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
     else
-        return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
+    {
+        const struct MapHeader *header = Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum);
+        return GetNightTownMusic(header->music, header->mapType);
+    }
 }
 
 u16 GetCurrLocationDefaultMusic(void)

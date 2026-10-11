@@ -290,4 +290,5 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - **Takenlijst:** `TODO.md` is sinds 9 okt de enige actuele lijst (nu: basiskaart vullen; daarna Tao-eiland, Beacon Isle, Spacetime Cave met warps en Mt. Coronet als laatste quest, Yoshi's Island; pas daarna intro's en muziek). Andere plannings-documenten zijn naslag (statusregel bovenaan). **Lees TODO.md + de "Besloten"-lijst vóór je iets voorstelt of zegt dat er geen plan is.**
 - **Grenzen:** flags via `FLAG_GROUNDED(n)` (verdeling in flags.h), trainer-id's max 1199 (zie Lessen), `gMapGroup_Grounded` max 128 kaarten.
 - Emulator: `python3.11` (mgba); zie Lessen.
+- **Versie blijft 1.0** (Jordi 11 okt): geen v1.0.x-secties; alle wijzigingen gaan in de `[v1.0.0]`-sectie tot de muziekronde en Mitch klaar zijn.
 - **1.0 (11 okt) is uit.** Vanaf nu: Jordi's testrun en bugfixes; na de 1.0 alleen nog moves/abilities (en eventueel shinies). Open uit de 1.0-fase: Mitch-lead (A/B/C), Rainbow Road/Bowser Castle zonder functie, mogelijk een Legendary Birds-thema. ROM 1,11 MB vrij. Playthrough-sweepscripts (alle kaarten, warps, Battle test, wilde gevechten): zie Lessen.

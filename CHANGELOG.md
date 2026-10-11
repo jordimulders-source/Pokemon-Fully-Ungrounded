@@ -18530,3 +18530,21 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Legendary battle…** heeft 60 legendaries meer, met hun echte intro en muziek (vangbaar).
 - **Bugfix:** debuglijsten toonden maximaal 50 regels; alles daarna viel stil weg (Battle test had er al 84). Het maximum is nu 160.
 - Volgen nog: de rivaal-, class-, regio- en trainer-remixen, zodra die klaar zijn.
+
+### [v0.9.286] - Trainer-remixen per klasse
+- Acht remixen van het Hoenn trainer battle-thema (`MUS_VS_TRAINER`), 696–703. De melodie zit er noot voor noot in, de vorm en loop zijn gelijk aan het origineel, de paukensolo krijgt per stijl een eigen solo.
+
+| Remix | Klassen | Stijl |
+|---|---|---|
+| SEA | Swimmer M/F, Sailor, Fisherman, Tuber M/F, zwemmende Triathletes | calypso, steeldrum, conga's |
+| MOUNTAIN | Hiker, Black Belt, Battle Girl, Expert | half-time, taiko, gongs, hoorns |
+| NATURE | Bug Catcher/Maniac, Camper, Picnicker, Ranger, Breeder | folk, tin whistle, bodhrán |
+| MYSTIC | Psychic, Hex Maniac, Ruin Maniac | zwevend, shakuhachi, koor, vibrafoon |
+| CHIC | Beauty, Lady, Rich Boy, Gentleman, Pokéfan | jazz-swing, walking bass, Rhodes |
+| ROCK | Guitarist, Kindler, Ninja Boy | distortion, powerchords, rockkit |
+| ELITE | Ace Trainer, Dragon Tamer, Bird Keeper | koper, strijkers, pauken |
+| KIDS | Youngster, Lass, School Kid, Twins | xylofoon, stuiterbas, fietsbel |
+
+- Alleen als de speler HOENN of ROTATE kiest; alle eigen thema's gaan voor. Niet in de Frontier, Trainer Hill, het Stadium of geheime bases.
+- ±48 KB (2 eigen samples, gecomprimeerd). Generator: `tools/grounded/trclass_theme.py`.
+- Debug Battle test: een "Class: …"-gevecht per remix.

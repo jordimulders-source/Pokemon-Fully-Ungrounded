@@ -18599,3 +18599,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 ### [v0.9.293] - Kreten weer met DPCM-padding (HQ-mixer)
 - Kreten worden weer gecomprimeerd mét afsluitende padding (`--no-pad` uit `audio_rules.mk`). De HQ-mixer decodeert kreten altijd per blok van 64 samples; zonder padding is het laatste blok korter en leest hij voorbij het einde van de kreet (het tikje-risico uit TODO). Kost 16,7 KB; ROM nog 1,14 MB vrij.
 - Legendary Birds houden voor de 1.0 het generieke legendary-thema (Jordi); mogelijk een eigen thema na de 1.0.
+
+### [v0.9.294] - Trainerremixen voor de laatste klassen, TODO bijgewerkt
+- Trainerklassen zonder remix ingedeeld (`GetTrainerClassRemixBGM`): Parasol Lady en Sis & Bro → Zee; Aroma Lady → Natuur; Collector, Young Couple, Old Couple en Interviewer → Chic; Pokémaniac → Rock; Sr. & Jr. → Kids.
+- TODO.md: Altering Cave (Ultra Space, v0.9.221), Ghetsis met de DNA Splicers (v0.9.163), de grot op Beacon Isle (v0.9.162) en de Deoxys-vormen (Delta Episode, v0.9.161) als afgerond gemarkeerd.
+- Jordi: rivaalkrant blijft zoals hij is; de regionale wilde remixen (v0.9.288) test hij in de game.

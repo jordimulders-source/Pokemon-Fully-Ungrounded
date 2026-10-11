@@ -49,7 +49,7 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 15. ~~**Meltan**~~ (v0.9.182) als gift, evolueert in **Melmetal** door te levelen met een Metal Coat (Jordi 9 okt; plek nog kiezen).
 16. ~~**Enamorus**~~ (v0.9.212) (Jordi 9 okt): zwerft rond zoals de andere Forces. Zodra die allemaal gevangen zijn, hebben bepaalde stadjes kans op Enamorus: overal hartjes en NPC's die avances naar elkaar maken; één van de koppels is **Birch met een hoop stront**.
 18. ~~**Swords of Justice + Keldeo**~~ (v0.9.182) (Jordi 9 okt): Cobalion (diepste kamer Granite Cave), Terrakion (extra kamer Victory Road), Virizion (Mangrove Mire), zonder quest (zoals Gen 5). Heb je alle drie, dan belt **Mr. Briney** via de PokéNav: hij ziet iets heel geks in het water. Bij hem in de boot, fade-out, hij vaart je naar een plek die niet op de kaart staat: een pas ontstaan eiland met draaikolken; hij zet je af en daar staat **Keldeo**.
-17. **Altering Cave:** locatie behouden, koppelen aan een nog te bepalen legendary-quest.
+17. ~~**Altering Cave**~~ (v0.9.221): Ultra Wormhole naar Ultra Space.
 
 ## 3. Daarna: gevechtsintro's en muziek
 **Jordi 9 okt:** intro's van (nieuwe) legendaries bedenkt hij zelf; thema's nog niet maken: nieuwe legendaries gebruiken `MUS_RG_VS_LEGEND` (Kanto Legendary) tot hij ermee komt.
@@ -71,10 +71,10 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - **HQ-mixer (v0.9.245): goedgekeurd** (Jordi 10 okt: lost de YI-overload op). Eventueel nog een hogere mixerfrequentie (26.758/31.536 Hz) proberen: de HQ-mixer is sneller dan de oude, en meer Hz verdeelt de resterende 8-bit-ruis over een bredere band. Uitzetten: `M4A_HQ_MIXER 0` in `include/config/m4a_mixer.h`.
 
 ## Antwoorden Jordi 9 okt (verwerkt)
-- **Tao-eiland:** Dragon Tamers, verzekeringsexpert en drakentabellen blijven (alleen Gerald weg). Kyurem neutraal (geen Black/White-vorm). **Ghetsis** moet nog ergens in de wereld komen: hij geeft de **DNA Splicers**.
-- **Beacon Isle:** het lichteiland krijgt een kleine grot met zeldzame wilde soorten en één sterk gevecht.
+- **Tao-eiland:** Dragon Tamers, verzekeringsexpert en drakentabellen blijven (alleen Gerald weg). Kyurem neutraal (geen Black/White-vorm). ~~**Ghetsis** met de **DNA Splicers**~~ (v0.9.163, Frost Hollow).
+- ~~**Beacon Isle**~~ (v0.9.162, `BeaconIsle_Grotto` met Tallow): het lichteiland krijgt een kleine grot met zeldzame wilde soorten en één sterk gevecht.
 - **Spacetime Cave-warps:** Cerulean Cave, Lavender Town + Pokémon Tower, National Park + Forest-tunnel naar Ilex Forest (Celebi), een representatie van de Gen 4-meren, Mt. Coronet + Spear Pillar (+ de trap naar Arceus, aan het einde), Chargestone Cave (of een versie daarvan), Glimwood Tangle, Area Zero, en ????? naar Yoshi's Island. De Mewtwo-grot in Meteor Falls verdwijnt uiteindelijk. **Per locatie eerst input van Jordi** (volledig nabouwen of eigen richting, welke assets).
-- **Delta Episode:** Deoxys is beloning genoeg. Idee: een plek waar je Deoxys met de meteorieten van vorm laat wisselen.
+- ~~**Delta Episode**~~ (v0.9.161, meteoriet in Mossdeep): Deoxys is beloning genoeg. Idee: een plek waar je Deoxys met de meteorieten van vorm laat wisselen.
 - **Contests:** helemaal herbouwen, maar achteraan de lijst.
 - ~~**Beasts of Ruin**~~ (gedaan v0.9.170; thema nabouwen staat nog bij muziek) **(Jordi 9 okt):** Wo-Chien, Chien-Pao, Ting-Lu en Chi-Yu, elk "gesealed" op een lege plek in de wereld, bijv. Chi-Yu in een kamer bovenin Jagged Pass die naar een vurig gebied leidt. Hun thema nabouwen (Jordi is er weg van).
 - **Zacian en Zamazenta (Jordi 9 okt):** in een gebied achter een roadblock; een heel lichte visuele hint in het Mini Forest (Route 102), dat uiteindelijk het **Mega Forest** wordt, waar later meer kan.

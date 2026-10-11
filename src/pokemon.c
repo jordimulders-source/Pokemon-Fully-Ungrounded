@@ -6284,6 +6284,8 @@ static u16 GetTrainerClassRemixBGM(u16 trainerId)
     case TRAINER_CLASS_FISHERMAN:
     case TRAINER_CLASS_TUBER_M:
     case TRAINER_CLASS_TUBER_F:
+    case TRAINER_CLASS_PARASOL_LADY: // strandklassen
+    case TRAINER_CLASS_SIS_AND_BRO:
         return MUS_GROUNDED_VS_TRAINER_SEA;
     case TRAINER_CLASS_TRIATHLETE: // alleen de zwemmende; fietsers en hardlopers houden het Hoenn-thema
         if (GetTrainerPicFromId(trainerId) == TRAINER_PIC_SWIMMING_TRIATHLETE_M
@@ -6301,6 +6303,7 @@ static u16 GetTrainerClassRemixBGM(u16 trainerId)
     case TRAINER_CLASS_PICNICKER:
     case TRAINER_CLASS_PKMN_RANGER:
     case TRAINER_CLASS_PKMN_BREEDER:
+    case TRAINER_CLASS_AROMA_LADY:
         return MUS_GROUNDED_VS_TRAINER_NATURE;
     case TRAINER_CLASS_PSYCHIC:
     case TRAINER_CLASS_HEX_MANIAC:
@@ -6311,10 +6314,15 @@ static u16 GetTrainerClassRemixBGM(u16 trainerId)
     case TRAINER_CLASS_RICH_BOY:
     case TRAINER_CLASS_GENTLEMAN:
     case TRAINER_CLASS_POKEFAN:
+    case TRAINER_CLASS_COLLECTOR:
+    case TRAINER_CLASS_YOUNG_COUPLE:
+    case TRAINER_CLASS_OLD_COUPLE:
+    case TRAINER_CLASS_INTERVIEWER:
         return MUS_GROUNDED_VS_TRAINER_CHIC;
     case TRAINER_CLASS_GUITARIST:
     case TRAINER_CLASS_KINDLER:
     case TRAINER_CLASS_NINJA_BOY:
+    case TRAINER_CLASS_POKEMANIAC: // halfafgemaakte gitaarakkoorden passen bij een kostuum-otaku
         return MUS_GROUNDED_VS_TRAINER_ROCK;
     case TRAINER_CLASS_COOLTRAINER:
     case TRAINER_CLASS_COOLTRAINER_2:
@@ -6325,6 +6333,7 @@ static u16 GetTrainerClassRemixBGM(u16 trainerId)
     case TRAINER_CLASS_LASS:
     case TRAINER_CLASS_SCHOOL_KID:
     case TRAINER_CLASS_TWINS:
+    case TRAINER_CLASS_SR_AND_JR:
         return MUS_GROUNDED_VS_TRAINER_KIDS;
     default:
         return MUS_NONE;

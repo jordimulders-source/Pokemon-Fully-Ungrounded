@@ -18573,3 +18573,19 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 ### [v0.9.290] - Muziekfan in Oldale + Mario-thema's verborgen
 - **Oldale Town (16, 13):** een jongen die op de maat in zijn eigen hoofd staat te bobben, en je, de vierde wand doorbrekend, naar START > OPTION stuurt om de gevechtsmuziek te kiezen ("The developers spent weeks on those tracks. … They can see you not pressing it."). Hij hint naar de vergrendelde nummers ("?????").
 - **Optiemenu:** alle thema's uit de Mario-wereld (Yoshi's Island, Wario Land 4, Mario Kart Super Circuit, Boo, Sunset Wilds) zijn verborgen tot je op Yoshi's Island bent aangekomen (`FLAG_YI_ARRIVED`); bij het bladeren worden ze overgeslagen.
+
+### [v0.9.291] - Rivaal-intro's (9 stappen) en trainer class-intro's (22)
+- **Rivaal (Brendan/May)**, op de maat van het rivaalthema:
+  1. **Route 103:** het echte Littleroot bij nacht, het raam gaat aan, de tas van Birch valt open.
+  2. **Rustboro:** Devon bij zonsondergang en een Pokédex-vergelijking ("One of them is a Wurmple. Twice.").
+  3. **Route 110:** een race in twee helften ("WHO'S FURTHER?").
+  4. **Route 119:** onweer, de helften botsen.
+  5. **Lilycove:** "THE LILYCOVE LOWDOWN"-krant over je ace (hoogste level, echte sprite, shiny-palet) en een grote VS.
+  6. **Route 136:** "ASHFROST WEEKLY", met de starter-kleur van de rivaal.
+  7. **Pacifidlog:** "THE PACIFIDLOG DRIFTER".
+  8. **Battle Frontier:** "FINAL EDITION", de grootste versie.
+  9. **Paradiso (dagelijkse rematch):** een sepia "RETIRED CHAMP'S"-krant.
+  - ±16,5 KB.
+- **22 class-intro's** (0,7–1,6 KB per stuk): onder andere Swimmer (plons), Hiker (rotsen), Bug Catcher (net + Pokéball-wiebel), Psychic (lepel), Fisherman (dobber en "!"), Hex Maniac (kaars gaat uit, twee ogen), Black Belt (karateslag), Ranger ("CAPTURED."), Ninja Boy (rookbom en één vallend blad), Breeder (Lucky Egg dat uitkomt), Rich Boy (muntenregen). Alleen voor gewone trainers; overal waar al een eigen intro is, blijft die. Niet in het Stadium.
+- ±46 KB totaal; ROM vrij 1,16 MB.
+- Debug Battle test: "Rival 1 … 6" + "Rival post-game"; de class-intro's zitten in de "Class: …"-gevechten.

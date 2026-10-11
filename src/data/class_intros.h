@@ -8,7 +8,7 @@
 //   klasse                                   intro
 //   Swimmer M/F, Tuber M/F                   het water komt omhoog, spetters, een fontein, kopje onder
 //   Hiker                                    rotsblokken rollen het beeld in, het scherm barst
-//   Bug Catcher, Bug Maniac                  een net (web) zwiept twee keer, het beeld spartelt drie keer en zit vast
+//   Bug Catcher, Bug Maniac                  net vangt bijen, een mug, KLAP: "ehh… busted?" (class_intros2_c.h)
 //   Psychic                                  een lepel buigt, de wereld buigt mee
 //   Fisherman                                lijn uitgooien, dobber, beet!, het beeld wordt opgehaald
 //   Bird Keeper                              een veren-storm
@@ -24,10 +24,10 @@
 //   Picnicker, Camper                        het picknickkleed valt, bessen erop
 //   Youngster, School Kid                    het beeld stuitert als een trampoline en knapt
 //   Pkmn Ranger                              de Capture Styler trekt drie lussen: CAPTURED.
-//   Beauty, Aroma Lady, Parasol Lady,
-//   Lass, Lady                               bloemblaadjes en een glimlicht
+//   Beauty, Lass, Lady                       bloemblaadjes en een glimlicht
+//   Pokéfan, Aroma Lady, Parasol Lady        zie class_intros2_c.h
 //   Ninja Boy                                rookbom: het beeld is er niet meer, één blaadje valt
-//   Pkmn Breeder, Pokéfan                    hartjes en een Lucky Egg dat uitkomt
+//   Pkmn Breeder                             hartjes en een Lucky Egg dat uitkomt
 //   Rich Boy, Gentleman                      muntenregen
 
 // (includes staan bovenaan src/battle_transition.c: "battle_anim.h" zou hier src/data/battle_anim.h vinden)
@@ -951,6 +951,7 @@ enum
 {
     CI_NONE, CI_SWIM, CI_HIKER, CI_BUG, CI_PSYCHIC, CI_FISH, CI_BIRD, CI_KINDLER, CI_GUITAR, CI_RUIN, CI_HEX, CI_CHOP,
     CI_COOL, CI_TRI, CI_EXPERT, CI_SAILOR, CI_PICNIC, CI_BOUNCE, CI_RANGER, CI_PETAL, CI_NINJA, CI_HEART, CI_COINS,
+    CI_FAN, CI_AROMA, CI_PARASOL, // class_intros2_c.h
     CI_COUNT
 };
 
@@ -994,15 +995,20 @@ static u32 ClassIntro_ForClass(u32 trainerClass)
         return CI_BOUNCE;
     case TRAINER_CLASS_PKMN_RANGER:
         return CI_RANGER;
-    case TRAINER_CLASS_BEAUTY: case TRAINER_CLASS_AROMA_LADY: case TRAINER_CLASS_PARASOL_LADY: case TRAINER_CLASS_LASS:
-    case TRAINER_CLASS_LADY:
+    case TRAINER_CLASS_BEAUTY: case TRAINER_CLASS_LASS: case TRAINER_CLASS_LADY:
         return CI_PETAL;
     case TRAINER_CLASS_NINJA_BOY:
         return CI_NINJA;
-    case TRAINER_CLASS_PKMN_BREEDER: case TRAINER_CLASS_POKEFAN:
+    case TRAINER_CLASS_PKMN_BREEDER:
         return CI_HEART;
     case TRAINER_CLASS_RICH_BOY: case TRAINER_CLASS_GENTLEMAN:
         return CI_COINS;
+    case TRAINER_CLASS_POKEFAN:
+        return CI_FAN;
+    case TRAINER_CLASS_AROMA_LADY:
+        return CI_AROMA;
+    case TRAINER_CLASS_PARASOL_LADY:
+        return CI_PARASOL;
     }
     return CI_NONE;
 }
@@ -1143,57 +1149,6 @@ static bool32 CIHiker_Update(s32 t)
 }
 
 static const struct TIntro sCI_Hiker = {CIHiker_Init, CIHiker_Update};
-
-// ---------------- Bug Catcher: het net (een web) zwiept heen en terug, dan zit het beeld vast en spartelt het drie keer
-static void CIBug_Init(void)
-{
-    sTI->v[0] = TI_Anim(ANIM_TAG_SPIDER_WEB, &gOamData_AffineDouble_ObjNormal_64x64, -100, 80, 0);
-}
-
-static bool32 CIBug_Update(s32 t)
-{
-    s32 b1 = TI_Beat(1), b2 = TI_Beat(2), b3 = TI_Beat(3), end = TI_Beat(6), x, y, sc, k, a;
-    u8 web = sTI->v[0];
-    if (t < b2)
-    {
-        // zwaai over een boog rond een draaipunt onder het scherm
-        s32 r = TI_Ramp(t, 0, b1);
-        if (t >= b1)
-            r = 256 - TI_Ramp(t, b1, b2);
-        a = 160 - (r * 96 >> 8);   // hoek in 256-stappen
-        x = 120 + Cos(a & 0xFF, 150);
-        y = 230 - Sin(a & 0xFF, 190);
-        TI_Pos(web, x, y);
-        TI_Scale(web, 128, 128, (a - 192) << 8);
-        if (TI_AT(4) || TI_AT(b1))
-            PlaySE(SE_M_STRING_SHOT);
-        TI_Tint(TI_World(), 0, 0);
-    }
-    else
-    {
-        // het net valt over het beeld: groot, in het midden; het beeld spartelt (zoals een Poké Ball)
-        sc = 160 - (TI_Ramp(t, b2, b2 + 6) * 32 >> 8);   // hoogstens 2x (groter knipt de dubbele affine-box af)
-        TI_Pos(web, 120, 80);
-        k = 0;
-        if (t >= b3)
-        {
-            s32 w = ((t - b3) * 256 / max(1, (TI_Beat(4) - b3))) & 0xFF;
-            s32 n = (t - b3) / max(1, (TI_Beat(4) - b3));
-            if (n < 3)
-                k = Sin(w, 14);
-            if (TI_AT(TI_Beat(3)) || TI_AT(TI_Beat(4)) || TI_AT(TI_Beat(5)))
-                PlaySE(SE_BALL_BOUNCE_1);
-        }
-        if (TI_AT(TI_Beat(6) - 4))
-            PlaySE(SE_RG_BALL_CLICK);
-        TI_Scale(web, sc, sc, (k * 64) & 0xFFFF);
-        TI_WorldMove(k, 0);
-        TI_Tint(TI_World(), 5, RGB(4, 10, 2));
-    }
-    return t >= end;
-}
-
-static const struct TIntro sCI_Bug = {CIBug_Init, CIBug_Update};
 
 // ---------------- Psychic: een lepel buigt op de tel, de wereld golft steeds harder mee, paars
 static void CIPsychic_Init(void)
@@ -2137,11 +2092,13 @@ static bool32 CICoins_Update(s32 t)
 
 static const struct TIntro sCI_Coins = {CICoins_Init, CICoins_Update};
 
+#include "class_intros2_c.h"
+
 static const struct TIntro *const sClassIntros[CI_COUNT] =
 {
     [CI_SWIM] = &sCI_Swim,
     [CI_HIKER] = &sCI_Hiker,
-    [CI_BUG] = &sCI_Bug,
+    [CI_BUG] = &sCI_BugSwat,
     [CI_PSYCHIC] = &sCI_Psychic,
     [CI_FISH] = &sCI_Fish,
     [CI_BIRD] = &sCI_Bird,
@@ -2161,6 +2118,9 @@ static const struct TIntro *const sClassIntros[CI_COUNT] =
     [CI_NINJA] = &sCI_Ninja,
     [CI_HEART] = &sCI_Heart,
     [CI_COINS] = &sCI_Coins,
+    [CI_FAN] = &sCI_Fan,
+    [CI_AROMA] = &sCI_Aroma,
+    [CI_PARASOL] = &sCI_Parasol,
 };
 
 static void Task_ClassIntro(u8 taskId)

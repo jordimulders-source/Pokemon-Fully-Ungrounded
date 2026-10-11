@@ -144,7 +144,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Ultra Beast (677) | `ub_theme.py`, `ub_samples.py` | v1 wacht op Jordi (eigen compositie, octatonisch/heeltoons, 7/8, glazen FM-lead met microtonale bends; alle UB-gevechten in Ultra Space) | "Ultra Beast" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v8: begeleiding m5-39 + koor + aria uit het origineel geknipt, 682 geschrapt (Jordi) | "Area Zero" |
 | Trainerklasse-remixes van MUS_VS_TRAINER (696-703: SEA, MOUNTAIN, NATURE, MYSTIC, CHIC, ROCK, ELITE, KIDS) | `trclass_theme.py`, `trclass_samples.py` | MOUNTAIN/NATURE/MYSTIC/ELITE/KIDS GOEDGEKEURD (Jordi); SEA/CHIC/ROCK v2 wacht op Jordi (SEA 144 bpm, CHIC zonder ride-bell, ROCK echte powerchords) | "Trainerklassen" |
-| Route 119+-wildthema (711) | `route119_battle_theme.py` | v1 wacht op Jordi (melodieën/harmonie uit mus_route119, 176 bpm in triolen-galop, trompet/hoorns/strijkers/pauken, alleen stock-samples; landroutes 119-123, 135, 136) | "Route 119+" |
+| Route 119+-wildthema (711) | `route119_battle_theme.py` | v2 wacht op Jordi (v1 'slecht geremixed, klanken vallen weg, te veel een snellere versie van het origineel': nu een eigen Hoenn-gevechtsthema, 180 bpm rechte 8en, motief alleen geciteerd; stemverdeler met echte m4a-envelope; landroutes 119-123, 135, 136) | "Route 119+" |
 | Nachtversies stadsthema's (712-725, MUS_GROUNDED_NIGHT_*) | `night_towns.py` | v1 wacht op Jordi (origineel 1-op-1, tempo x0,87-0,92, EP/hoorn/fretless/harp, 50%-blokgolven, brushes; gekoppeld in `GetLocationMusic`) | "Nachtversies" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
@@ -897,3 +897,20 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   release 51 ticks bezetten ze 4 kanalen; dubbel ze op een PSG-vierkant. Liggende strijkers die op een sectiestart
   (crash + roffelstaart) geen kanaal krijgen: een 8e later laten inzetten i.p.v. de halve maat te schrappen.
 - **Nachtversies (v1):** één generator voor 14 thema's: originele MIDI 1-op-1 kopiëren en alleen tempo/velocity/drumnoten aanpassen; de klank zit in een kopie van de originele voicegroup met vervangen slots (generieke regels per sample, `--info` toont ze). Zo blijven vorm/loop/CC7 vanzelf gelijk. Lange harp/glockenspiel-releases (242/249) op 220 zetten haalde de vanilla-overschrijdingen van 10 DS-noten bijna weg (Fallarbor 19 -> 10). Kosten ±4–5 KB per nummer + 1,5 KB voicegroup.
+- Route 119+ v2 (711; Jordi over v1: "alsof het originele nummer slecht geremixed is, vallen allerlei klanken weg,
+  te veel een snellere versie van het origineel, net niet genoeg een battle theme"). **Opnieuw gecomponeerd** als
+  Hoenn-gevechtsthema (vorm van mus_vs_wild/mus_vs_trainer): eigen intro (chromatische 16e-val van de strijkers,
+  koperstoten in 3+3+2: E-Eb-D omlaag, C-D-E omhoog, E7 + loopje), rechte 8en in 180 bpm met Hoenn-bas (octaven +
+  chromatische opmaat), A/A' met het Route 119-motief als citaat (C#5 . E4-E4-E4 C#5, daarna eigen vervolg),
+  B heroïsch (F-G-C-Am-F-G-F/G-A, hoorns + strijkers 8va), C tutti-climax met klokken, D-opbouw F-G-Bb(Napolitaans)-E7.
+  Minder lagen: geen tegenstem, geen arpeggio, strijkers alleen liggend zolang de trompet zingt.
+  **Waarom v1 klanken verloor:** `release_ticks()` (en de lint) rekenen tot 1/16 van de envelope, maar een noot met
+  sustain 0 en trage decay (crash 235, pauken 246) blijft vóór de note-off volledig 'aan' en is dan niet te roven
+  zonder hoorbaar gat; v1 telde de crash 0,5 s, de engine 1,1 s. En `ply_note` (src/m4a_1.s) pakt eerst kanalen in
+  release, daarna de laagste prioriteit/het laatste spoor: zit alles vol met niet-losgelaten noten, dan valt een
+  noot van een later spoor stil weg. v2: (1) de stemverdeler simuleert de m4a-envelope frame voor frame
+  (`channel_end()`: aanslag/decay/sustain tot de note-off, release tot < 16, einde van niet-lussende samples);
+  (2) slagwerk, pauken en klokken als korte noten met sustain 255 en een lange release (crash 232): ze gaan meteen in
+  release = roofbaar, en klinken toch natuurlijk uit; (3) koper/strijkers/bas laten los op precies hun eigen
+  release-staart vóór de volgende noot (`detach` met `release_tail()`), dus nooit twee kanalen per partij.
+  Resultaat: 0 weggevallen noten in de verdeler, max. 10 kanalen.

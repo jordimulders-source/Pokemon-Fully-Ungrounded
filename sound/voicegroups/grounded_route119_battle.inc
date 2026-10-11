@@ -15,7 +15,7 @@ voice_group grounded_route119_battle
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_xylophone, 255, 235, 0, 204  @ 11
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_xylophone, 255, 235, 0, 204  @ 12
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_xylophone, 255, 235, 0, 204  @ 13
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255, 216, 90, 200  @ 14
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_tubular_bell, 255, 0, 255, 226  @ 14
 	voice_keysplit voicegroup_piano_keysplit, keysplit_piano  @ 15
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 16
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 127  @ 17
@@ -34,7 +34,7 @@ voice_group grounded_route119_battle
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 30
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 31
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 32
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 33
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 120  @ 33
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 34
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149  @ 35
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_slap_bass, 255, 235, 128, 99  @ 36
@@ -46,11 +46,11 @@ voice_group grounded_route119_battle
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 42
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 43
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 44
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 90  @ 45
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 0, 255, 150  @ 45
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_harp, 255, 242, 51, 242  @ 46
-	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 170  @ 47
+	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_timpani, 255, 0, 255, 192  @ 47
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 48
-	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 49
+	voice_keysplit voicegroup_route119_spicc_keysplit, keysplit_strings  @ 49
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 50
 	voice_keysplit voicegroup_strings_keysplit, keysplit_strings  @ 51
 	voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 255, 0, 255, 165  @ 52
@@ -81,7 +81,7 @@ voice_group grounded_route119_battle
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 77
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 78
 	voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 127  @ 79
-	voice_square_1 60, 0, 0, 2, 0, 1, 7, 1  @ 80
+	voice_square_1 60, 0, 0, 2, 0, 0, 15, 0  @ 80
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 81
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 82
 	voice_square_2 60, 0, 2, 0, 1, 7, 1  @ 83

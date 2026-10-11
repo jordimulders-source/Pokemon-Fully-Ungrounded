@@ -18566,3 +18566,6 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Onderwater (680):** half-time, zachte EP met trage vibrato, donkere koorpad, sub-bas en stijgende bloop-belletjes. Bij duiken.
 - Alleen bij wildmuziek HOENN of ROTATE; bestaande uitzonderingen (Pokémon Tower, Yoshi's Island, jungle, …) gaan voor. ±19 KB.
 - Generator: `tools/grounded/regio_theme.py`. De YI-samples blijven ongecomprimeerd (een merge had er één teruggezet).
+
+### [v0.9.289] - Optiemenu: alle nieuwe thema's kiesbaar
+- WILD MUSIC (93 keuzes) en TRAINER MUSIC (90 keuzes) bevatten nu alle eigen gevechtsthema's: de regio- en trainer-remixen, de legendary-thema's, de gymleiders, de personages (Birch, Zinnia, Wally, Dave, Keccles, Mitch, SickBlik, Burglar, Magikarp) en de Pokémon Tower. Daarnaast de nieuwe kaartmuziek: Area Zero, Ashfrost, Yoshi's Island, Mario Kart Super Circuit en Wario Land 4. Namen max. 12 tekens.

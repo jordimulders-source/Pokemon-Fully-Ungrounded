@@ -12,6 +12,14 @@ specifiek op water theme".
   680 MUS_GROUNDED_VS_WILD_UNDERWATER onderwater (duiken): 168 bpm half-time, zachte EP-mallet met trage vibrato,
                                     donkere pad met golvende bend, PSG-sub-bas, PSG-'bloop'-belletjes (sweep omhoog),
                                     melodie-echo en snare-echo's
+v1.0.x, lichte variaties (Jordi 11 okt: "het hoeven allemaal echt maar lichte variaties te zijn van het theme"):
+  704 MUS_GROUNDED_VS_WILD_SEA      zee (surfen/vissen op zeeroutes en bij kustplaatsen): 180 bpm, accordeon, hoorns,
+                                    brede strijkers, shanty-stamp met tamboerijn, bekkenzwellen, PSG-branding
+  705 MUS_GROUNDED_VS_WILD_SNOW     sneeuw/ijs: fluit, glockenspiel-glinsteringen en ijsloopjes, pizzicato,
+                                    sleebelletjes, PSG-wind, kaler (geen pad)
+  706 MUS_GROUNDED_VS_WILD_SPOOKY   spookachtig: 180 bpm, kerkorgel, PSG-klavecimbel, gebroken akkoord met tritonus,
+                                    koorwaas met kleine terts, doodsklok, pauken
+  707 MUS_GROUNDED_VS_WILD_NIGHT    nacht: 176 bpm, zachte EP, fluit, pizzicato, licht drumpatroon, PSG-krekels
 
 Vorm, melodie en harmonie blijven die van het origineel (tick x 4: tpb 24 -> 96): intro maat 0-10 (chromatische val,
 de C-Db-riff in 3+3+2, maat 10), loop maat 11-42 (A 10-17, B 18-25, C 26-33, riff 34-41, maat 42 = maat 10). Van het
@@ -632,6 +640,355 @@ def underwater(O):
                 layout=layout, order=order, kit_rel=170, brass=())
 
 
+# ---------------------------------------------------------------- v1.0.x: lichte variaties (zee, sneeuw, spook, nacht)
+# Jordi (11 okt): "het hoeven allemaal echt maar lichte variaties te zijn van het theme". Melodie, tweede stem en bas
+# blijven die van het origineel (roles() + O[3] noot voor noot), alleen instrumenten, begeleiding en percussie
+# veranderen; alleen stock-samples en PSG.
+def gusts(EX, P, part, bars, cc_bendr=24, lo=-6000, span=12000, peak=0.6):
+    """PSG-ruis met een bend-curve (zoals de zandwind van de woestijn): één vlaag per (startmaat, maten)."""
+    EX[part].append((0, mido.Message('control_change', control=20, value=cc_bendr)))
+    for b0, nb in bars:
+        t0, t1 = b0 * BAR, (b0 + nb) * BAR - S
+        P[part].append([t0, t1, 60, 100])
+        for t in range(t0, t1, 12):
+            x = (t - t0) / (t1 - t0)
+            curve = (x / peak) if x < peak else (1 - (x - peak) / (1 - peak))
+            EX[part].append((t, mido.Message('pitchwheel', pitch=int(lo + span * curve))))
+
+
+def sea(O):
+    """704 zee (open water: zeeroutes en kustplaatsen). 180 bpm (iets deinender), accordeon als melodie, hoorns op
+    de riff en de tweede stem in de riffs, brede strijkers op de lange tweede stem, shanty-stamp (kick 1/3, snare +
+    tamboerijn 2/4), bekkenzwellen als golven, paukenroffels aan het eind van elke frase, PSG-ruis als branding."""
+    P, CC, EX = Parts(), Parts(), Parts()
+    KICK, SN, TAMB, CRASH, SWELL, TIMP = range(36, 42)
+    D = {KICK: 2 * S, SN: 2 * S, TAMB: 2 * S, CRASH: 6 * S, SWELL: 8 * S, TIMP: 2 * S}
+    lead, second = roles(O)
+    for s, e, n, v in lead:
+        sec = section(bar_of(s))
+        if sec == 'I':
+            continue
+        if sec in ('R1', 'R2'):
+            P['acc'].append([s, min(e, s + 2 * S), n, 120])
+        else:
+            P['acc'].append([s, e, n, 116 if e - s > 2 * S else 106])
+    for s, e, n, v in second:
+        sec = section(bar_of(s))
+        if sec in ('I', 'R1', 'R2'):                     # chromatische val en riff: hoornstoten
+            P['horn'].append([s, min(e, s + 2 * S) if sec != 'I' else e, n, 116 if sec != 'I' else 100 + (s % BAR) // 24])
+        else:                                            # brede strijkers, minstens een halve tel
+            P['str'].append([s, max(e, s + 2 * S), n, 104])
+    for s, e, n, v in O[3]:
+        P['bass'].append([s, e, n, 116])
+    gusts(EX, P, 'surf', [(0, 2)] + [(b, 2) for b in range(2, 42, 2)], peak=0.4)
+    for b in range(END_BAR):
+        t0 = b * BAR
+        sec = section(b)
+        if b < 2:
+            drum(P, t0, (0,), SWELL, 104, D)
+            if b == 1:
+                for k in range(8, 16):
+                    P['drums'].append([t0 + k * S, t0 + (k + 1) * S, TIMP, 96 + 3 * (k - 8)])
+            else:
+                drum(P, t0, (0, 8), TIMP, 108, D)
+            continue
+        drum(P, t0, (0, 8), KICK, 116, D)
+        if sec in ('A', 'C'):
+            drum(P, t0, (14,), KICK, 100, D)
+        drum(P, t0, (4, 12), SN, 108, D)
+        drum(P, t0, (4, 12), TAMB, 112, D)
+        drum(P, t0, (2, 6, 10, 14), TAMB, 88, D)
+        if b % 2 == 1 and sec in ('A', 'B', 'C'):        # golf: bekkenzwel naar de volgende 2-maatsfrase
+            drum(P, t0, (8,), SWELL, 100, D)
+        if b in (2, 10, 18, 26, 34, 42):
+            drum(P, t0, (0,), CRASH, 112, D)
+        if b in PHRASE_END:                              # paukenroffel naar de volgende frase
+            P['drums'] = [x for x in P['drums'] if not (t0 + 8 * S <= x[0] < t0 + BAR)]
+            for k in range(8, 16):
+                P['drums'].append([t0 + k * S, t0 + (k + 1) * S, TIMP, 98 + 3 * (k - 8)])
+    over = {
+        21: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_accordion, 255, 0, 255, 165',
+        33: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149',
+        122: 'voice_noise_alt 60, 0, 0, 5, 0, 15, 4',
+    }
+    kit = [
+        ('36 kick', 'voice_directsound 62, 64, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 180'),
+        ('37 snare', 'voice_directsound 58, 64, DirectSoundWaveData_sc88pro_orchestra_snare, 255, 0, 255, 160'),
+        ('38 tamboerijn', 'voice_directsound 60, 76, DirectSoundWaveData_sc88pro_tambourine, 255, 0, 255, 150'),
+        ('39 crash', 'voice_directsound 60, 64, DirectSoundWaveData_trinity_cymbal_crash, 255, 235, 0, 165'),
+        ('40 bekkenzwel', 'voice_directsound 54, 52, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 30, 0, 255, 150'),
+        ('41 pauk', 'voice_directsound 43, 64, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 180'),
+    ]
+    layout = [
+        ('acc', 21, 108, 0, 64),
+        ('horn', 60, 100, 1, 72),
+        ('str', 48, 84, 2, 52),
+        ('bass', 33, 104, 3, 64),
+        ('surf', 122, 26, 10, 64),
+    ]
+    order = ['acc', 'horn', 'drums', 'bass', 'str']
+    return dict(name='sea', title='zee', bpm=180, P=P, CC=CC, EX=EX, over=over, kit=kit, layout=layout,
+                order=order, kit_rel=180, brass=('horn',))
+
+
+def snow(O):
+    """705 sneeuw/ijs. 188 bpm, kaler: fluit als melodie, glockenspiel-glinsteringen (een octaaf hoger op de
+    aanzet van lange noten, dalend ijsloopje aan het eind van elke frase), pizzicato op de riff en de chromatische
+    val, dunne strijkers op de tweede stem, fretless-bas; percussie met sleebelletjes op de achtsten, lichte kick
+    en rimsnare, triangel (ook op de sectiestarts, geen bekkens); PSG-ruis als koude wind (één vlaag per 4 maten).
+    Geen pad."""
+    P, CC, EX = Parts(), Parts(), Parts()
+    KICK, RIM, SLEIGH, TRI = range(36, 40)
+    D = {KICK: 2 * S, RIM: 2 * S, SLEIGH: 2 * S, TRI: 3 * S}
+    lead, second = roles(O)
+    for s, e, n, v in lead:
+        sec = section(bar_of(s))
+        if sec == 'I':
+            continue
+        if sec in ('R1', 'R2'):
+            P['flute'].append([s, min(e, s + 2 * S), n, 118])
+        else:
+            P['flute'].append([s, e, n, 116 if e - s > 2 * S else 106])
+            if e - s >= 4 * S:                          # glinstering op de aanzet van lange noten
+                P['glock'].append([s, s + 2 * S, n + 12 if n + 12 <= 96 else n, 104])
+    for s, e, n, v in second:
+        sec = section(bar_of(s))
+        if sec == 'I':
+            P['pizz'].append([s, e, n, 100 + (s % BAR) // 24])
+        elif sec in ('R1', 'R2'):
+            P['pizz'].append([s, min(e, s + 2 * S), n, 112])
+        else:
+            P['str'].append([s, max(e, s + 2 * S), n, 96])
+    for s, e, n, v in O[3]:
+        P['bass'].append([s, e, n, 112])
+    for b in PHRASE_END:                                # ijsloopje: dalende akkoordtonen in 16en (tel 3-4)
+        r, _ = CH[b]
+        tones = sorted({84 + (r + iv) % 12 for iv in (0, 4, 7)} | {72 + (r + 7) % 12, 72 + (r + 4) % 12}, reverse=True)
+        for i, n in enumerate(tones[:5]):
+            t = b * BAR + (10 + i) * S
+            P['glock'].append([t, t + S, n, 108 - 4 * i])
+    gusts(EX, P, 'wind', [(0, 2)] + [(b, 4) for b in range(2, 42, 4)])
+    for b in range(END_BAR):
+        t0 = b * BAR
+        sec = section(b)
+        if b < 2:
+            for k in range(0, 16, 2 if b == 0 else 1):
+                P['drums'].append([t0 + k * S, t0 + k * S + D[SLEIGH], SLEIGH, 90 + 2 * k if b else 96])
+            if b == 0:
+                drum(P, t0, (0,), TRI, 104, D)
+            continue
+        drum(P, t0, (0, 8) if sec != 'C' else (0, 8, 10), KICK, 112, D)
+        drum(P, t0, (4, 12), RIM, 104, D)
+        if not (sec == 'R1' and b < 6):
+            for k in range(0, 16, 2):
+                P['drums'].append([t0 + k * S, t0 + k * S + D[SLEIGH], SLEIGH, 108 if k % 4 == 0 else 92])
+        if b in (2, 10, 18, 26, 34, 42):               # kaal: triangel i.p.v. een crash op de sectiestarts
+            drum(P, t0, (0,), TRI, 108, D)
+        elif b % 4 == 2 and sec in ('A', 'B', 'C'):
+            drum(P, t0, (0,), TRI, 96, D)
+        if b in PHRASE_END:                            # sleebelletjes-roffel onder het ijsloopje
+            P['drums'] = [x for x in P['drums'] if not (t0 + 8 * S <= x[0] < t0 + BAR)]
+            for k in range(8, 16):
+                P['drums'].append([t0 + k * S, t0 + k * S + D[SLEIGH], SLEIGH, 92 + 3 * (k - 8)])
+            drum(P, t0, (8,), KICK, 108, D)
+    over = {
+        35: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 253, 0, 149',
+        9: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 160',
+        45: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_pizzicato_strings, 255, 216, 0, 165',
+        122: 'voice_noise_alt 60, 0, 0, 5, 0, 15, 4',
+    }
+    kit = [
+        ('36 kick', 'voice_directsound 60, 64, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 170'),
+        ('37 rimsnare', 'voice_directsound 68, 64, DirectSoundWaveData_sc88pro_rnd_snare, 255, 0, 255, 140'),
+        ('38 sleebelletjes', 'voice_directsound 60, 80, DirectSoundWaveData_sc88pro_jingle_bell, 255, 0, 255, 150'),
+        ('39 triangel', 'voice_directsound 74, 44, DirectSoundWaveData_sd90_open_triangle, 255, 0, 255, 160'),
+    ]
+    layout = [
+        ('flute', 73, 112, 0, 64),
+        ('glock', 9, 84, 1, 84),
+        ('pizz', 45, 96, 2, 76),
+        ('str', 48, 76, 3, 48),
+        ('bass', 35, 104, 4, 64),
+        ('wind', 122, 24, 10, 64),
+    ]
+    order = ['flute', 'drums', 'bass', 'pizz', 'str', 'glock']
+    return dict(name='snow', title='sneeuw', bpm=188, P=P, CC=CC, EX=EX, over=over, kit=kit, layout=layout,
+                order=order, kit_rel=170, brass=())
+
+
+def spooky(O):
+    """706 spookachtig (Mt. Pyre, Abandoned Ship, Sky Pillar). 180 bpm, kerkorgel als melodie, PSG-'klavecimbel'
+    (blokgolf 25%, korte decay) op de tweede stem en een gebroken akkoord in achtsten met een tritonus als
+    doorgangsnoot (0-7-12-#4), koorwaas met de kleine terts (grondtoon / mineur-terts per halve maat), doodsklok
+    (buisklok laag) elke 4 maten, pauken; kick en orkestsnare blijven, dus het blijft een gevechtsthema."""
+    P, CC, EX = Parts(), Parts(), Parts()
+    KICK, SN, BELL, TIMP, CRASH = range(36, 41)
+    D = {KICK: 2 * S, SN: 2 * S, BELL: 8 * S, TIMP: 2 * S, CRASH: 6 * S}
+    lead, second = roles(O)
+    for s, e, n, v in lead:
+        sec = section(bar_of(s))
+        if sec == 'I':
+            continue
+        if sec in ('R1', 'R2'):
+            P['organ'].append([s, min(e, s + 2 * S), n, 120])
+        else:
+            P['organ'].append([s, e, n, 116 if e - s > 2 * S else 106])
+    for s, e, n, v in second:
+        sec = section(bar_of(s))
+        if sec == 'I':                                  # chromatische val op het orgel
+            P['organ'].append([s, e, n, 100 + (s % BAR) // 24])
+        else:
+            P['hpsi'].append([s, min(e, s + 4 * S), n, 110])
+    for s, e, n, v in O[3]:
+        P['bass'].append([s, e, n, 112])
+    # gebroken akkoord (PSG): grondtoon-kwint-octaaf-overmatige kwart, onder de melodie
+    for b in list(range(10, 34)) + [42]:
+        r, _ = CH[b]
+        base = 48 + r if r < 5 else 36 + r
+        t0 = b * BAR
+        for i, iv in enumerate((0, 7, 12, 6, 0, 7, 12, 6)):
+            t = t0 + i * 2 * S
+            n = base + iv
+            lo = lowest_lead(lead, t, t + 2 * S)
+            while n >= lo - 2:
+                n -= 12
+            if n < 40:
+                continue
+            P['arp'].append([t, t + S + 6, n, 100 if i % 4 == 0 else 88])
+    # koorwaas: per halve maat grondtoon, dan de kleine terts (mineur-kleuring tegen de grote terts van de melodie)
+    for b in range(2, END_BAR):
+        r, _ = CH[b]
+        for h, iv in ((0, 0), (1, 3)):
+            n = 60 + (r + iv) % 12
+            if n > 66:
+                n -= 12
+            t = b * BAR + h * 8 * S
+            P['choir'].append([t, t + 8 * S - 6, n, 96])
+    for b in range(END_BAR):
+        t0 = b * BAR
+        sec = section(b)
+        if b < 2:
+            drum(P, t0, (0,), BELL, 112, D)
+            if b == 1:
+                for k in range(8, 16):
+                    P['drums'].append([t0 + k * S, t0 + (k + 1) * S, TIMP, 96 + 3 * (k - 8)])
+            continue
+        drum(P, t0, (0, 8) if sec != 'B' else (0, 6, 8), KICK, 114, D)
+        drum(P, t0, (4, 12), SN, 110, D)
+        if b % 4 == 2:
+            drum(P, t0, (0,), BELL, 108, D)
+        if b in (2, 18, 34):
+            drum(P, t0, (0,), CRASH, 104, D)
+        if b in PHRASE_END:
+            P['drums'] = [x for x in P['drums'] if not (t0 + 8 * S <= x[0] < t0 + BAR)]
+            for k in range(8, 16):
+                P['drums'].append([t0 + k * S, t0 + (k + 1) * S, TIMP, 98 + 3 * (k - 8)])
+    over = {
+        19: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_church_organ3_high, 255, 76, 154, 165',
+        33: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fingered_bass, 255, 253, 0, 149',
+        52: 'voice_directsound 60, 0, DirectSoundWaveData_classical_choir_voice_ahhs, 70, 0, 255, 165',
+        80: 'voice_square_1 60, 0, 0, 1, 0, 2, 3, 1',
+        81: 'voice_square_2 60, 0, 0, 0, 1, 0, 1',
+    }
+    kit = [
+        ('36 kick', 'voice_directsound 60, 64, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 180'),
+        ('37 snare', 'voice_directsound 56, 64, DirectSoundWaveData_sc88pro_orchestra_snare, 255, 0, 255, 160'),
+        ('38 doodsklok', 'voice_directsound 50, 64, DirectSoundWaveData_sc88pro_tubular_bell, 255, 165, 90, 200'),
+        ('39 pauk', 'voice_directsound 43, 64, DirectSoundWaveData_sc88pro_timpani, 255, 246, 0, 180'),
+        ('40 crash', 'voice_directsound 56, 64, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 255, 235, 0, 165'),
+    ]
+    layout = [
+        ('organ', 19, 104, 0, 64),
+        ('hpsi', 80, 52, 1, 80),
+        ('arp', 81, 40, 2, 44),
+        ('choir', 52, 76, 3, 56),
+        ('bass', 33, 104, 4, 64),
+    ]
+    order = ['organ', 'drums', 'bass', 'choir']
+    return dict(name='spooky', title='spookachtig', bpm=180, P=P, CC=CC, EX=EX, over=over, kit=kit, layout=layout,
+                order=order, kit_rel=200, brass=())
+
+
+def night(O):
+    """707 nacht (buitenkaarten als GetTimeOfDay() == TIME_NIGHT). 176 bpm, zachte EP als melodie (zonder vibrato
+    of echo, dus niet de onderwater-klank), fluit op de tweede stem, pizzicato op de riff, fretless-bas; lichter
+    drumpatroon (kick 1/3, rimsnare 2/4, zachte PSG-hihat op de achtsten, triangel), krekels op PSG-blokgolf."""
+    P, CC, EX = Parts(), Parts(), Parts()
+    KICK, RIM, TRI, CYM = range(36, 40)
+    D = {KICK: 2 * S, RIM: 2 * S, TRI: 3 * S, CYM: 6 * S}
+    lead, second = roles(O)
+    for s, e, n, v in lead:
+        sec = section(bar_of(s))
+        if sec == 'I':
+            continue
+        P['ep'].append([s, min(e, s + 2 * S) if sec in ('R1', 'R2') else e, n, 116 if e - s > 2 * S else 108])
+    for s, e, n, v in second:
+        sec = section(bar_of(s))
+        if sec == 'I':
+            P['ep'].append([s, e, n, 100 + (s % BAR) // 24])
+        elif sec in ('R1', 'R2'):
+            P['pizz'].append([s, min(e, s + 2 * S), n, 108])
+        else:
+            P['flute'].append([s, max(e, s + 2 * S), n, 100])
+    for s, e, n, v in O[3]:
+        P['bass'].append([s, e, n, 112])
+    rnd = random.Random(707)                            # krekels: korte trillers van 4 32en, hoog en zacht
+    for b in range(2, END_BAR):
+        if rnd.random() < 0.5:
+            continue
+        k0 = rnd.choice((2, 6, 10, 14))
+        n = rnd.choice((98, 100))
+        for i in range(4):
+            t = b * BAR + k0 * S + i * 12
+            P['crick'].append([t, t + 8, n, 100])
+    for b in range(END_BAR):
+        t0 = b * BAR
+        sec = section(b)
+        if b < 2:
+            drum(P, t0, (0,), TRI if b == 0 else KICK, 100, D)
+            if b == 1:
+                drum(P, t0, (8, 10, 12, 13, 14, 15), RIM, 96, D)
+            continue
+        hats = range(0, 16, 2)
+        drum(P, t0, (0, 8) if sec not in ('C', 'R2') else (0, 8, 10), KICK, 110, D)
+        drum(P, t0, (4, 12), RIM, 100, D)
+        if b % 2 == 0 and sec in ('A', 'B', 'C'):
+            drum(P, t0, (0,), TRI, 92, D)
+        if b in (2, 10, 18, 26, 34, 42):
+            drum(P, t0, (0,), CYM, 96, D)
+        if b in PHRASE_END:
+            P['drums'] = [x for x in P['drums'] if not (t0 + 12 * S <= x[0] < t0 + BAR)]
+            drum(P, t0, (12, 13, 14, 15), RIM, 92, D)
+            hats = range(0, 12, 2)
+        for k in hats:
+            t = t0 + k * S
+            P['hat'].append([t, t + 6, 84, 56 if k % 4 == 0 else 40])
+    over = {
+        4: 'voice_directsound 60, 0, DirectSoundWaveData_sd90_classical_detuned_ep1_low, 255, 200, 110, 160',
+        35: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 253, 0, 149',
+        45: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_pizzicato_strings, 255, 216, 0, 165',
+        81: 'voice_square_2 60, 0, 2, 0, 1, 0, 0',
+        121: 'voice_noise_alt 60, 0, 0, 0, 1, 0, 0',
+    }
+    kit = [
+        ('36 kick', 'voice_directsound 58, 64, DirectSoundWaveData_drum_and_percussion_kick, 255, 0, 255, 170'),
+        ('37 rimsnare', 'voice_directsound 66, 64, DirectSoundWaveData_sc88pro_rnd_snare, 255, 0, 255, 140'),
+        ('38 triangel', 'voice_directsound 72, 84, DirectSoundWaveData_sd90_open_triangle, 255, 0, 255, 150'),
+        ('39 bekken', 'voice_directsound 54, 64, DirectSoundWaveData_sc88pro_orchestra_cymbal_crash, 120, 235, 0, 150'),
+    ]
+    layout = [
+        ('ep', 4, 112, 0, 64),
+        ('flute', 73, 84, 1, 80),
+        ('pizz', 45, 92, 2, 76),
+        ('bass', 35, 104, 3, 64),
+        ('hat', 121, 32, 10, 64),
+        ('crick', 81, 20, 6, 96),
+    ]
+    order = ['ep', 'drums', 'bass', 'flute', 'pizz']
+    return dict(name='night', title='nacht', bpm=176, P=P, CC=CC, EX=EX, over=over, kit=kit, layout=layout,
+                order=order, kit_rel=170, brass=())
+
+
 # ---------------------------------------------------------------- wegschrijven
 def build(spec):
     name, bpm = spec['name'], spec['bpm']
@@ -689,5 +1046,5 @@ def build(spec):
 
 if __name__ == '__main__':
     O = orig()
-    for f in (volcano, desert, water, underwater):
+    for f in (volcano, desert, water, underwater, sea, snow, spooky, night):
         build(f(O))

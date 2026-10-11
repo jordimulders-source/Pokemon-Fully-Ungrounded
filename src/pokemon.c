@@ -6375,16 +6375,65 @@ static bool32 IsMagikarpOnlyWildBattle(void)
     return count != 0;
 }
 
+// Project Grounded v1.0.x (Jordi: "maak een specifieke water en zee remix"): open zee = zeeroutes, kustplaatsen en
+// alle oceaanroute-kaarten; rivieren, meren en vijvers houden de waterremix.
+static bool32 IsSeaWildMusicMapsec(u16 mapsec)
+{
+    if (gMapHeader.mapType == MAP_TYPE_OCEAN_ROUTE)
+        return TRUE;
+    if ((mapsec >= MAPSEC_ROUTE_105 && mapsec <= MAPSEC_ROUTE_110) || (mapsec >= MAPSEC_ROUTE_122 && mapsec <= MAPSEC_ROUTE_134))
+        return TRUE;
+    switch (mapsec)
+    {
+    case MAPSEC_DEWFORD_TOWN:
+    case MAPSEC_SLATEPORT_CITY:
+    case MAPSEC_LILYCOVE_CITY:
+    case MAPSEC_MOSSDEEP_CITY:
+    case MAPSEC_SOOTOPOLIS_CITY:
+    case MAPSEC_PACIFIDLOG_TOWN:
+    case MAPSEC_EVER_GRANDE_CITY:
+    case MAPSEC_BATTLE_FRONTIER:
+    case MAPSEC_SOUTHERN_ISLAND:
+        return TRUE;
+    }
+    return FALSE;
+}
+
+// Project Grounded v1.0.x: sneeuw/ijs (Frost Hollow ligt in de mapsec van Tao Island, dus op kaart) en elke kaart
+// met sneeuwweer (bv. de buitenkant van Mt. Coronet).
+static bool32 IsSnowWildMusicArea(u16 mapsec)
+{
+    switch (mapsec)
+    {
+    case MAPSEC_SHOAL_CAVE:
+    case MAPSEC_COLDSTEP_CAVE:
+    case MAPSEC_ROUTE_135:
+    case MAPSEC_ROUTE_136:
+    case MAPSEC_ASHFROST_TOWN:
+    case MAPSEC_CRYSTAL_CAVITY:
+    case MAPSEC_CROWN_TUNDRA:
+    case MAPSEC_LAKE_ACUITY:
+        return TRUE;
+    }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TAO_ISLAND_FROST_HOLLOW)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TAO_ISLAND_FROST_HOLLOW))
+        return TRUE;
+    return GetCurrentWeather() == WEATHER_SNOW;
+}
+
 // Project Grounded (Jordi: "remix de hoenn battle theme naar bepaalde regio's"): regionale remixes van het
 // Hoenn-wildthema (tools/grounded/regio_theme.py), alleen als de wildmuziek op ROTATE/HOENN staat en geen
-// specifiekere keuze (Pokemon Tower, jungle, Yoshi's Island, ...) eerder geldt. Volgorde: onderwater, water,
-// woestijn, vulkaan.
+// specifiekere keuze (Pokemon Tower, jungle, Yoshi's Island, ...) eerder geldt. Volgorde: onderwater, zee, water,
+// woestijn, vulkaan, sneeuw, spookachtig, nacht.
 static u16 GetRegionalWildBattleMusic(void)
 {
     u16 mapsec = gMapHeader.regionMapSectionId;
 
     if (gMapHeader.mapType == MAP_TYPE_UNDERWATER || TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_UNDERWATER))
         return MUS_GROUNDED_VS_WILD_UNDERWATER;
+    // v1.0.x zee: surfen/vissen op open zee; anders (zoet water) de waterremix
+    if ((gIsFishingEncounter || TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)) && IsSeaWildMusicMapsec(mapsec))
+        return MUS_GROUNDED_VS_WILD_SEA;
     if (gIsFishingEncounter || TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
         return MUS_GROUNDED_VS_WILD_WATER;
     // woestijn: de zandstorm op Route 111 (zelfde vak als Route111_EventScript_CheckSetSandstorm), Desert Underpass,
@@ -6414,6 +6463,20 @@ static u16 GetRegionalWildBattleMusic(void)
     case MAPSEC_KINDLE_ROAD:
         return MUS_GROUNDED_VS_WILD_VOLCANO;
     }
+    // v1.0.x sneeuw/ijs en spookachtig (op mapsec)
+    if (IsSnowWildMusicArea(mapsec))
+        return MUS_GROUNDED_VS_WILD_SNOW;
+    switch (mapsec)
+    {
+    case MAPSEC_MT_PYRE:
+    case MAPSEC_ABANDONED_SHIP:
+    case MAPSEC_SKY_PILLAR:
+        return MUS_GROUNDED_VS_WILD_SPOOKY;
+    }
+    // v1.0.x nacht: als laatste, alleen buiten (routes en steden) en als niets anders gold
+    if ((gMapHeader.mapType == MAP_TYPE_ROUTE || gMapHeader.mapType == MAP_TYPE_TOWN || gMapHeader.mapType == MAP_TYPE_CITY)
+     && GetTimeOfDay() == TIME_NIGHT)
+        return MUS_GROUNDED_VS_WILD_NIGHT;
     return MUS_NONE;
 }
 

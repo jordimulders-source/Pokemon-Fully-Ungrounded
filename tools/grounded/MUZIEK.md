@@ -136,7 +136,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py`; 682: `vs_areazero_theme.py`, `vs_areazero_samples.py` | 681 v10: begeleiding m1-64 + koor + aria uit het origineel; 682 v1: het origineel in 10 knippen (11025 Hz, DPCM) | "Area Zero" |
 | Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
-| Hoenn-wildthema regionaal (673 vulkaan, 674 woestijn, 675 water, 680 onderwater) | `regio_theme.py`, `regio_samples.py` | v1 wacht op Jordi (remixes van mus_vs_wild: melodie/tweede stem/bas van het origineel, begeleiding nieuw; stock + 1 steel drum) | "Regio" |
+| Hoenn-wildthema regionaal (673 vulkaan, 674 woestijn, 675 water, 680 onderwater; v1.0.x lichte variaties 704 zee, 705 sneeuw, 706 spook, 707 nacht) | `regio_theme.py`, `regio_samples.py` | v1 wacht op Jordi (remixes van mus_vs_wild: melodie/tweede stem/bas van het origineel, begeleiding nieuw; stock + 1 steel drum) | "Regio" |
 | Battle! Legendary Pokémon (670) | `legendary_theme.py` | v1 wacht op Jordi (generiek legendary-thema, Hoenn-stijl: Weather Trio-pauken, E4-koper, 176 bpm, alleen stock-samples) | "Legendary" |
 | Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
 | Battle! Dialga/Palkia (678) | `dialga_theme.py` | v1 wacht op Jordi (uit zijn MIDI, alleen stock-samples, ±9 KB) | "Dialga" |
@@ -876,3 +876,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   gezamenlijke periode (een octaaf of meer te laag); kijk naar de harmonischen.** SEA: 188 -> 144 bpm, rolls alleen
   op noten >= een gestippelde kwart (±10 slagen/s), steel release 130 -> 175, geen clap, oneven 16en 1 tick later.
   Batchrec: SEA piek 111, CHIC 118 (-V094), ROCK 114 (-V090), 0 overlopen.
+- Regio v1.0.x (704 zee, 705 sneeuw, 706 spook, 707 nacht; `regio_theme.py`, achteraan toegevoegd: de vier oude
+  MIDI's/voicegroups bleven byte-identiek, md5 gecontroleerd). Alleen stock + PSG, ±4 KB per nummer. Gemeten
+  grondtonen op toets 60: church_organ3_high C4 (organ3_low heeft een 16'-grondtoon C2), ep1_low C4 / ep1_high C5,
+  accordeon en fluit C4. Sneeuw: een crash op de sectiestarts + glockenspiel-release 200 kostte de strijkers 10% en
+  de glinsteringen 10%: crash eruit (triangel, past bij 'kaal'), glock-release 160 -> 2,6%. Batchrec: 0 overlopen,
+  piek 78-93, RMS ±2300-3300, constante 'tonen' 27-60 Hz = bas/kick (breedband, geen fluittoon), 119,5 Hz = frames.

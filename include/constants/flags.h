@@ -1618,7 +1618,7 @@
 #define FLAG_UNUSED_0x94B                           (DAILY_FLAGS_START + 0x2B) // Unused Flag
 #define FLAG_UNUSED_0x94C                           (DAILY_FLAGS_START + 0x2C) // Unused Flag
 #define FLAG_UNUSED_0x94D                           (DAILY_FLAGS_START + 0x2D) // Unused Flag
-#define FLAG_UNUSED_0x94E                           (DAILY_FLAGS_START + 0x2E) // Unused Flag
+#define FLAG_DAILY_REMATCH_RIVAL                    (DAILY_FLAGS_START + 0x2E) // Project Grounded: rivaal (met pensioen) in het Paradiso Resort vandaag al verslagen
 #define FLAG_DAILY_BEACHCOMBER_FIND                 (DAILY_FLAGS_START + 0x2F) // Project Grounded: strandjutter Route 132 gaf vandaag al iets
 #define FLAG_UNUSED_0x950                           (DAILY_FLAGS_START + 0x30) // Unused Flag
 #define FLAG_UNUSED_0x951                           (DAILY_FLAGS_START + 0x31) // Unused Flag
@@ -1648,7 +1648,7 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
-// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840-879 nieuwe items (nieuwe_items.py), 880+ vrij.
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840-879 nieuwe items (nieuwe_items.py), 1760-1769 rivaal post-game (blok rival_postgame), 880+ vrij.
 // lakes { (tools/grounded/maptools/lakes.py; FLAG_GROUNDED 1120-1159: 1120-1125 meren, 1140-1148 nieuwe items (nieuwe_items.py), 1126-1139 en 1149-1159 nog vrij)
 #define FLAG_HIDE_LAKE_ACUITY_UXIE                       FLAG_GROUNDED(1120) // Project Grounded: Lake Acuity: Uxie gevangen of verslagen (verbergt het object)
 #define FLAG_HIDE_LAKE_VALOR_AZELF                       FLAG_GROUNDED(1121) // Project Grounded: Lake Valor: Azelf gevangen of verslagen (verbergt het object)
@@ -2178,6 +2178,11 @@
 #define FLAG_RECEIVED_COSMOG                    FLAG_GROUNDED(1453) // Project Grounded: eerste Cosmog van Prof. Cozmo (Fallarbor, post-game)
 #define FLAG_RECEIVED_COSMOG_2                  FLAG_GROUNDED(1454) // Project Grounded: tweede Cosmog (na Solgaleo/Lunala laten zien)
 #define FLAG_ULTRA_HUB_VISITED                  FLAG_GROUNDED(1455) // Project Grounded: Ultra Space-hub al eens bezocht (lange tekst bij het portaal)
+// }
+// rival_postgame { (met de hand; rivaal na de Hall of Fame: Pacifidlog, Battle Frontier, Paradiso; FLAG_GROUNDED 1760-1769, 1763-1769 nog vrij)
+#define FLAG_RIVAL_PG_PACIFIDLOG_DONE           FLAG_GROUNDED(1760) // Project Grounded: rivaal in Pacifidlog verslagen (gevecht 7); rivaal staat daarna bij de Battle Tower, team fase 2 (rival_postgame.c)
+#define FLAG_RIVAL_PG_RETIRED                   FLAG_GROUNDED(1761) // Project Grounded: rivaal bij de Battle Tower verslagen (gevecht 8) en met pensioen naar het Paradiso Resort
+#define FLAG_RIVAL_PG_RESORT_MET                FLAG_GROUNDED(1762) // Project Grounded: Guinness-verhaal van de rivaal in het Paradiso Resort al gehoord (daarna korter)
 // }
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)

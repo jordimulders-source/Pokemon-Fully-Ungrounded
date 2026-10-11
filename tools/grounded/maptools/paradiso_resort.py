@@ -211,7 +211,7 @@ def exterior():
     objs = [
         O('OBJ_EVENT_GFX_PROF_BIRCH', 12, 36, P + 'Birch', move='MOVEMENT_TYPE_FACE_RIGHT', local_id='LOCALID_RESORT_BIRCH'),
         O('OBJ_EVENT_GFX_TURD', 13, 36, P + 'Turd'),
-        O('OBJ_EVENT_GFX_VAR_0', 27, 9, P + 'Rival', 'FLAG_HIDE_RESORT_RIVAL', local_id='LOCALID_RESORT_RIVAL'),
+        O('OBJ_EVENT_GFX_VAR_0', 27, 9, P + 'Rival', 'FLAG_TEMP_1', local_id='LOCALID_RESORT_RIVAL'),
         O('OBJ_EVENT_GFX_MISTY', 25, 23, P + 'Misty', move='MOVEMENT_TYPE_FACE_RIGHT'),
         O('OBJ_EVENT_GFX_SWIMMER_M', 28, 23, P + 'PoolSwimmer', move='MOVEMENT_TYPE_WANDER_AROUND', elev=1, rx=1, ry=1),
         O('OBJ_EVENT_GFX_SAILOR', 32, 22, P + 'Lifeguard', move='MOVEMENT_TYPE_FACE_LEFT'),

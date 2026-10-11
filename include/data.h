@@ -212,6 +212,10 @@ static inline u16 SanitizeTrainerId(u16 trainerId)
     return trainerId;
 }
 
+// Project Grounded: de post-game rivaal (src/rival_postgame.c) deelt drie trainer-id's over geslacht en fase
+const struct Trainer *GetRivalPostgameTrainer(u32 trainerId);
+#define IS_RIVAL_POSTGAME_TRAINER(id) ((id) == TRAINER_RIVAL_POSTGAME_TREECKO || (id) == TRAINER_RIVAL_POSTGAME_TORCHIC || (id) == TRAINER_RIVAL_POSTGAME_MUDKIP)
+
 static inline const struct Trainer *GetTrainerStructFromId(u16 trainerId)
 {
     u32 sanitizedTrainerId = 0;
@@ -221,6 +225,10 @@ static inline const struct Trainer *GetTrainerStructFromId(u16 trainerId)
 
     if (IsPartnerTrainerId(trainerId))
         return &gBattlePartners[difficulty][sanitizedTrainerId - TRAINER_PARTNER(PARTNER_NONE)];
+#if !TESTING
+    else if (IS_RIVAL_POSTGAME_TRAINER(sanitizedTrainerId))
+        return GetRivalPostgameTrainer(sanitizedTrainerId);
+#endif
     else
         return &gTrainers[difficulty][sanitizedTrainerId];
 }

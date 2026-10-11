@@ -17,7 +17,73 @@ BattleFrontier_OutsideEast_OnTransition:
 	setvar VAR_BRAVO_TRAINER_BATTLE_TOWER_ON, 0
 	setflag FLAG_HIDE_BATTLE_TOWER_REPORTER
 	setflag FLAG_TEMP_11 @ Project Grounded: Marshadow verschijnt pas in de Keccles-scene
+	call BattleFrontier_OutsideEast_EventScript_SetupRival
 	call_if_unset FLAG_DEFEATED_SUDOWOODO, BattleFrontier_OutsideEast_EventScript_ShowSudowoodo
+	end
+
+@ Project Grounded: rivaal voor de Battle Tower (gevecht 8), na Pacifidlog (FLAG_RIVAL_PG_PACIFIDLOG_DONE) tot hij
+@ met pensioen naar het Paradiso Resort gaat (FLAG_RIVAL_PG_RETIRED). Object-flag FLAG_TEMP_12.
+BattleFrontier_OutsideEast_EventScript_SetupRival::
+	setflag FLAG_TEMP_12
+	goto_if_unset FLAG_RIVAL_PG_PACIFIDLOG_DONE, Common_EventScript_NopReturn
+	goto_if_set FLAG_RIVAL_PG_RETIRED, Common_EventScript_NopReturn
+	clearflag FLAG_TEMP_12
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
+	checkplayergender
+	goto_if_ne VAR_RESULT, MALE, Common_EventScript_NopReturn
+	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_MAY_NORMAL
+	return
+
+BattleFrontier_OutsideEast_EventScript_Rival::
+	lock
+	faceplayer
+	checkplayergender
+	call_if_eq VAR_RESULT, MALE, BattleFrontier_OutsideEast_EventScript_RivalMusicMay
+	call_if_ne VAR_RESULT, MALE, BattleFrontier_OutsideEast_EventScript_RivalMusicBrendan
+	msgbox BattleFrontier_OutsideEast_Text_RivalPGIntro, MSGBOX_DEFAULT
+	switch VAR_STARTER_MON
+	case 0, BattleFrontier_OutsideEast_EventScript_RivalTreecko
+	case 1, BattleFrontier_OutsideEast_EventScript_RivalTorchic
+	case 2, BattleFrontier_OutsideEast_EventScript_RivalMudkip
+	end
+
+BattleFrontier_OutsideEast_EventScript_RivalMusicMay::
+	playbgm MUS_ENCOUNTER_MAY, TRUE
+	return
+
+BattleFrontier_OutsideEast_EventScript_RivalMusicBrendan::
+	playbgm MUS_ENCOUNTER_BRENDAN, TRUE
+	return
+
+BattleFrontier_OutsideEast_EventScript_RivalTreecko::
+	trainerbattle_no_intro TRAINER_RIVAL_POSTGAME_TREECKO, BattleFrontier_OutsideEast_Text_RivalPGDefeat
+	goto BattleFrontier_OutsideEast_EventScript_RivalAfter
+	end
+
+BattleFrontier_OutsideEast_EventScript_RivalTorchic::
+	trainerbattle_no_intro TRAINER_RIVAL_POSTGAME_TORCHIC, BattleFrontier_OutsideEast_Text_RivalPGDefeat
+	goto BattleFrontier_OutsideEast_EventScript_RivalAfter
+	end
+
+BattleFrontier_OutsideEast_EventScript_RivalMudkip::
+	trainerbattle_no_intro TRAINER_RIVAL_POSTGAME_MUDKIP, BattleFrontier_OutsideEast_Text_RivalPGDefeat
+	goto BattleFrontier_OutsideEast_EventScript_RivalAfter
+	end
+
+@ verhuizing: zwart, weg, en hij staat voortaan in het Paradiso Resort (ParadisoResort_OnTransition)
+BattleFrontier_OutsideEast_EventScript_RivalAfter::
+	msgbox BattleFrontier_OutsideEast_Text_RivalPGPostBattle, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_FRONTIER_RIVAL
+	setflag FLAG_TEMP_12
+	setflag FLAG_RIVAL_PG_RETIRED
+	savebgm MUS_DUMMY
+	fadedefaultbgm
+	delay 30
+	fadescreen FADE_FROM_BLACK
+	msgbox BattleFrontier_OutsideEast_Text_RivalPGMovedAway, MSGBOX_DEFAULT
+	release
 	end
 
 BattleFrontier_OutsideEast_EventScript_ShowSudowoodo::
@@ -660,3 +726,33 @@ BattleFrontier_OutsideEast_Text_KecclesPostBattle:
 	.string "THAT is camouflage.\p"
 	.string "I'm going home to stare at my own\n"
 	.string "shadow for a while. Suspiciously.$"
+
+BattleFrontier_OutsideEast_Text_RivalPGIntro:
+	.string "{RIVAL}: {PLAYER}. You came.\p"
+	.string "I've been standing in front of the\n"
+	.string "BATTLE TOWER for three days.\l"
+	.string "I haven't gone in. It's very tall.\p"
+	.string "Here's the deal. I win, I keep going.\n"
+	.string "I lose, I retire. For good.\p"
+	.string "I already printed business cards.\n"
+	.string "They just say “FORMER”.\l"
+	.string "Nothing after it. Just FORMER.\p"
+	.string "Make it count.$"
+
+BattleFrontier_OutsideEast_Text_RivalPGDefeat:
+	.string "…Huh. So that's what the end\n"
+	.string "feels like. Weirdly sunny.$"
+
+BattleFrontier_OutsideEast_Text_RivalPGPostBattle:
+	.string "{RIVAL}: That's it. I'm done.\p"
+	.string "I'm moving to the PARADISO RESORT.\n"
+	.string "All-inclusive. Unlimited buffet.\p"
+	.string "Unlimited sadness too, but they\n"
+	.string "serve it in a coconut.\p"
+	.string "Come visit. Bring nothing.\n"
+	.string "Especially not ambition.$"
+
+BattleFrontier_OutsideEast_Text_RivalPGMovedAway:
+	.string "{RIVAL} packed one suitcase and\n"
+	.string "a lifetime of regret, and left for\l"
+	.string "the PARADISO RESORT.$"

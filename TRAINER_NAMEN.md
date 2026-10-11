@@ -24,7 +24,7 @@ trainer op Route 129.
 | Wallace (gym-rematches) | `TRAINER_WALLACE_2` … `TRAINER_WALLACE_5` | `TRAINER_JUAN_2` … `_5` | 798–801 | 0x81E–0x821 | rematch-tabel (`src/battle_setup.c`); `WALLACE_5` in het Stadium (`WALLACE`). Sinds v0.9.85 ook `Name: WALLACE` / `Pic: Champion Wallace` |
 | Steven (kampioen) | `TRAINER_CHAMPION_STEVEN` | (zelfde) | 855 | 0x857 | `EverGrandeCity_ChampionsRoom` |
 | Steven (post-game) | `TRAINER_STEVEN` | (zelfde) | 804 | 0x824 + `FLAG_DEFEATED_METEOR_FALLS_STEVEN` | Meteor Falls, Steven's Cave; Stadium |
-| Wallace (oud kampioenteam) | `TRAINER_WALLACE_OLD_CHAMPION` | `TRAINER_WALLACE` | 335 | 0x64F | ongebruikt (niet in het verhaal, sinds v0.9.85 ook niet meer in het Stadium) |
+| (vrijgemaakt) | `TRAINER_RIVAL_POSTGAME_TREECKO` | `TRAINER_WALLACE_OLD_CHAMPION` (vanilla `TRAINER_WALLACE`) | 335 | 0x64F | sinds de post-game rivaal (zie "Rivaal na de Hall of Fame"); de rematch-rij `REMATCH_OLD_CHAMPION` is nu leeg (`TRAINER_NONE`) |
 | Juan | `TRAINER_JUAN` | `TRAINER_REED` | 675 | 0x7A3 | Route 129 (`Route129_EventScript_Juan`), FRLG-gymleidermuziek; Stadium (`JUAN`, op de oude poolplek van het vanilla-kampioenteam) |
 
 Bijbehorende constanten van gym 8 (Wallace):
@@ -165,6 +165,25 @@ de partij zijn veranderd, het nummer niet (verslagen-flag = 0x500 + nummer).
 | Kairos | `TRAINER_HOO_KAIROS` | `TRAINER_MIKE_1` | 634 | Hall of Origin, top | tijd en ruimte |
 
 Arceus (top) vecht pas als alle negen verslagen zijn.
+
+## Rivaal na de Hall of Fame (`src/rival_postgame.c`, `src/data/rival_postgame.party`)
+
+De trainer-id's waren op, dus de post-game rivaal heeft er maar **drie**, een per starter van de speler (zelfde
+benaming als de andere rivaalgevechten: de naam is de starter van de speler, de rivaal heeft de starter die daarvan wint).
+`GetTrainerStructFromId` (`include/data.h`) stuurt deze drie naar `GetRivalPostgameTrainer`, dat uit twaalf teams kiest:
+BRENDAN of MAY (geslacht van de speler) × fase 1 (Pacifidlog) of fase 2 (Battle Tower + dagelijks Paradiso, na
+`FLAG_RIVAL_PG_PACIFIDLOG_DONE`). De blokken in `trainers.party` (Brendan, fase 1) zijn er alleen voor de tools en de
+testrunner (onder `TESTING` staat de omleiding uit). Verslagen-flag wordt gedeeld door alle fasen; scripts gebruiken hem niet.
+
+| Constante | Oude naam | Nummer | Verslagen-flag | Waar |
+|---|---|---|---|---|
+| `TRAINER_RIVAL_POSTGAME_TREECKO` | `TRAINER_WALLACE_OLD_CHAMPION` | 335 | 0x64F | Pacifidlog (18, 14), Battle Tower (OutsideEast 18, 16), Paradiso Resort (27, 9) |
+| `TRAINER_RIVAL_POSTGAME_TORCHIC` | `TRAINER_RED` (alleen de testrunner) | 851 | 0x853 | idem |
+| `TRAINER_RIVAL_POSTGAME_MUDKIP` | `TRAINER_LEAF` (alleen de testrunner) | 852 | 0x854 | idem |
+
+Flags: `FLAG_RIVAL_PG_PACIFIDLOG_DONE` (gevecht 7), `FLAG_RIVAL_PG_RETIRED` (gevecht 8, verhuisd naar Paradiso),
+`FLAG_RIVAL_PG_RESORT_MET` (Guinness-verhaal gehoord), `FLAG_DAILY_REMATCH_RIVAL` (vandaag al verslagen). Levels: fase 1
+86 (ace 88), fase 2 92 (ace 94).
 
 ## Nieuwe trainer of hernoeming
 

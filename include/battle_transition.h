@@ -171,6 +171,8 @@ enum BattleTransition
     B_TRANSITION_MARSHADOW, // Project Grounded (cheap1): Marshadow, een schaduw neemt het beeld over
     B_TRANSITION_TERAPAGOS, // Project Grounded (cheap1): Terapagos, ronddraaiende Tera-kristallen
     B_TRANSITION_PECHARUNT, // Project Grounded (cheap1): Pecharunt, gifnevel, pecha-bessen, gifbellen en ketens
+    B_TRANSITION_RIVAL_INTRO, // Project Grounded (rival_intros.h): May/Brendan, escaleert per gevecht
+    B_TRANSITION_CLASS_INTRO, // Project Grounded (class_intros.h): lichte intro per trainerklasse
     B_TRANSITION_COUNT
 };
 
@@ -188,5 +190,8 @@ enum BattleTransitionGroup
     B_TRANSITION_GROUP_SECRET_BASE,
     B_TRANSITION_GROUP_E_READER,
 };
+
+bool32 RivalIntro_IsRival(u16 trainerId); // Project Grounded (src/data/rival_intros.h)
+bool32 ClassIntro_HasIntro(u32 trainerClass); // Project Grounded (src/data/class_intros.h)
 
 #endif // GUARD_BATTLE_TRANSITION_H

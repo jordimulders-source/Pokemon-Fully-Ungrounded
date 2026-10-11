@@ -28,6 +28,7 @@
 #include "constants/trainers.h"
 #include "constants/rgb.h"
 #include "starter_choose.h"
+#include "event_data.h"
 #include "constants/layouts.h"
 #include "constants/region_map_sections.h"
 #include "battle_anim.h"

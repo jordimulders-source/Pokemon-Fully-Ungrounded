@@ -13,8 +13,8 @@
 // tileset), de tas komt uit het starterscherm, de rest is code. Gebruikt de runner van class_intros.h; op de tel van
 // MUS_VS_RIVAL (196 BPM, het tempo komt uit de BGM-speler).
 
-// stappen (één regel per trainer in sRivalIntros hieronder; de dagelijkse Paradiso-rematch gebruikt de ids van gevecht 8
-// en moet dus vóór de Frontier-regel staan, of in Task_RivalIntro op de kaart worden gekozen)
+// stappen (één regel per trainer in sRivalIntros hieronder; de post-game-ids staan op RIS_PACIFIDLOG en Task_RivalIntro
+// kiest Frontier/Paradiso op FLAG_RIVAL_PG_PACIFIDLOG_DONE en de kaart)
 enum
 {
     RIS_ROUTE_103, RIS_RUSTBORO, RIS_ROUTE_110, RIS_ROUTE_119, RIS_LILYCOVE, RIS_ROUTE_136,
@@ -47,6 +47,9 @@ static const struct RivalIntroEntry sRivalIntros[] =
     RI_ROW(4, TRAINER_BRENDAN_LILYCOVE_MUDKIP, TRAINER_BRENDAN_LILYCOVE_TREECKO, TRAINER_BRENDAN_LILYCOVE_TORCHIC),
     RI_ROW(5, TRAINER_MAY_ROUTE_136_MUDKIP, TRAINER_MAY_ROUTE_136_TREECKO, TRAINER_MAY_ROUTE_136_TORCHIC),
     RI_ROW(5, TRAINER_BRENDAN_ROUTE_136_MUDKIP, TRAINER_BRENDAN_ROUTE_136_TREECKO, TRAINER_BRENDAN_ROUTE_136_TORCHIC),
+    // post-game (één id voor beide geslachten en beide gevechten): Pacifidlog tot FLAG_RIVAL_PG_PACIFIDLOG_DONE, daarna de
+    // Frontier (en in het Paradiso Resort de dagelijkse rematch), zie Task_RivalIntro
+    RI_ROW(RIS_PACIFIDLOG, TRAINER_RIVAL_POSTGAME_MUDKIP, TRAINER_RIVAL_POSTGAME_TREECKO, TRAINER_RIVAL_POSTGAME_TORCHIC),
 };
 #undef RI_ROW
 
@@ -88,9 +91,23 @@ static const struct OamData sRI_Oam32x8 =
     .priority = 0,
 };
 
+static bool32 RI_IsPostgame(u16 trainerId)
+{
+    return trainerId == TRAINER_RIVAL_POSTGAME_MUDKIP || trainerId == TRAINER_RIVAL_POSTGAME_TREECKO
+        || trainerId == TRAINER_RIVAL_POSTGAME_TORCHIC;
+}
+
+// trainerfoto van de rivaal; de post-game-rivaal deelt één id voor beide geslachten: altijd het andere geslacht dan de speler
+static u8 RI_RivalPic(void)
+{
+    if (RI_IsPostgame(sTI->trainer))
+        return gSaveBlock2Ptr->playerGender == MALE ? TRAINER_PIC_MAY : TRAINER_PIC_BRENDAN;
+    return GetTrainerPicFromId(sTI->trainer);
+}
+
 static bool32 RI_RivalIsMay(void)
 {
-    return GetTrainerPicFromId(sTI->trainer) == TRAINER_PIC_MAY || GetTrainerPicFromId(sTI->trainer) == TRAINER_PIC_RS_MAY;
+    return RI_RivalPic() == TRAINER_PIC_MAY || RI_RivalPic() == TRAINER_PIC_RS_MAY;
 }
 
 static void RI_Upper(u8 *s)
@@ -191,7 +208,7 @@ static u8 RI_PlayerPic(void)
 static void RI_MakePortraits(bool32 affine)
 {
     sTI->v[20] = TI_Trainer(RI_PlayerPic(), -80, 100, affine);
-    sTI->v[21] = TI_Trainer(GetTrainerPicFromId(sTI->trainer), 320, 100, affine);
+    sTI->v[21] = TI_Trainer(RI_RivalPic(), 320, 100, affine);
     if (!affine)
         gSprites[sTI->v[20]].oam.matrixNum |= ST_OAM_HFLIP;
 }
@@ -1125,6 +1142,9 @@ static void Task_RivalIntro(u8 taskId)
 {
     const struct RivalIntroEntry *e = RivalIntro_Find(TRAINER_BATTLE_PARAM.opponentA);
     u32 stage = e != NULL ? e->stage : RIS_ROUTE_103;
+    // post-game: na Pacifidlog (gevecht 7) is het de Frontier (gevecht 8)
+    if (stage == RIS_PACIFIDLOG && FlagGet(FLAG_RIVAL_PG_PACIFIDLOG_DONE))
+        stage = RIS_FRONTIER;
     // de dagelijkse rematch in het Paradiso Resort gebruikt de ids van het Frontier-gevecht
     if (stage == RIS_FRONTIER && gMapHeader.regionMapSectionId == MAPSEC_PARADISO_RESORT)
         stage = RIS_PARADISO;

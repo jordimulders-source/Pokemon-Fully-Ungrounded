@@ -640,6 +640,9 @@
 #define MUS_GROUNDED_VS_TRAINER_ROCK 701 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: snelle e-gitaarrock (Guitarist, Kindler, Ninja Boy) (tools/grounded/trclass_theme.py)
 #define MUS_GROUNDED_VS_TRAINER_ELITE 702 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: episch koper (Cooltrainer, Dragon Tamer, Bird Keeper) (tools/grounded/trclass_theme.py)
 #define MUS_GROUNDED_VS_TRAINER_KIDS 703 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: speels en stuiterend (Youngster, Lass, School Kid, Twins) (tools/grounded/trclass_theme.py)
+#define MUS_GROUNDED_VS_WILD_CAVE   708 // Project Grounded: Hoenn-wildthema, grotremix (alle grotten zonder eigen remix; tools/grounded/regio_theme2.py)
+#define MUS_GROUNDED_VS_WILD_METEOR 709 // Project Grounded: Hoenn-wildthema, Meteor Falls-remix (avontuurlijk, koper; tools/grounded/regio_theme2.py)
+#define MUS_GROUNDED_VS_WILD_FIERY  710 // Project Grounded: Hoenn-wildthema, Fiery Path-remix (vurige grot; tools/grounded/regio_theme2.py)
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

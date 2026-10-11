@@ -6378,7 +6378,7 @@ static bool32 IsMagikarpOnlyWildBattle(void)
 // Project Grounded (Jordi: "remix de hoenn battle theme naar bepaalde regio's"): regionale remixes van het
 // Hoenn-wildthema (tools/grounded/regio_theme.py), alleen als de wildmuziek op ROTATE/HOENN staat en geen
 // specifiekere keuze (Pokemon Tower, jungle, Yoshi's Island, ...) eerder geldt. Volgorde: onderwater, water,
-// woestijn, vulkaan.
+// Meteor Falls/Fiery Path, woestijn, vulkaan, grot.
 static u16 GetRegionalWildBattleMusic(void)
 {
     u16 mapsec = gMapHeader.regionMapSectionId;
@@ -6387,6 +6387,11 @@ static u16 GetRegionalWildBattleMusic(void)
         return MUS_GROUNDED_VS_WILD_UNDERWATER;
     if (gIsFishingEncounter || TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
         return MUS_GROUNDED_VS_WILD_WATER;
+    // Project Grounded (v1.0.x, regio_theme2.py): Meteor Falls (avontuurlijk) en Fiery Path (vurig) voor woestijn/vulkaan
+    if (mapsec == MAPSEC_METEOR_FALLS || mapsec == MAPSEC_METEOR_FALLS2)
+        return MUS_GROUNDED_VS_WILD_METEOR;
+    if (mapsec == MAPSEC_FIERY_PATH || mapsec == MAPSEC_FIERY_PATH2)
+        return MUS_GROUNDED_VS_WILD_FIERY;
     // woestijn: de zandstorm op Route 111 (zelfde vak als Route111_EventScript_CheckSetSandstorm), Desert Underpass,
     // Mirage Tower en de Desert Ruins
     if (mapsec == MAPSEC_ROUTE_111
@@ -6402,8 +6407,6 @@ static u16 GetRegionalWildBattleMusic(void)
     case MAPSEC_MT_CHIMNEY:
     case MAPSEC_JAGGED_PASS:
     case MAPSEC_JAGGED_PASS2:
-    case MAPSEC_FIERY_PATH:
-    case MAPSEC_FIERY_PATH2:
     case MAPSEC_ROUTE_112:
     case MAPSEC_ROUTE_113:
     case MAPSEC_SCORCHED_SLAB:
@@ -6413,6 +6416,47 @@ static u16 GetRegionalWildBattleMusic(void)
     case MAPSEC_MT_EMBER:
     case MAPSEC_KINDLE_ROAD:
         return MUS_GROUNDED_VS_WILD_VOLCANO;
+    }
+    // Project Grounded (v1.0.x, regio_theme2.py): grot-remix voor alle grotten zonder eigen remix; daarna elke andere
+    // ondergrondse kaart, behalve gebouwen/schepen/torens/tempels die toevallig MAP_TYPE_UNDERGROUND zijn
+    switch (mapsec)
+    {
+    case MAPSEC_GRANITE_CAVE:
+    case MAPSEC_RUSTURF_TUNNEL:
+    case MAPSEC_NEW_MAUVILLE:
+    case MAPSEC_SEAFLOOR_CAVERN:
+    case MAPSEC_VICTORY_ROAD:
+    case MAPSEC_CAVE_OF_ORIGIN:
+    case MAPSEC_MT_CORONET:
+    case MAPSEC_CHARGESTONE_CAVE:
+    case MAPSEC_CERULEAN_CAVE:
+    case MAPSEC_ARTISAN_CAVE:
+    case MAPSEC_NAVEL_ROCK:
+    case MAPSEC_NAVEL_ROCK_FRLG:
+    case MAPSEC_MARINE_CAVE:
+    case MAPSEC_TERRA_CAVE:
+    case MAPSEC_ISLAND_CAVE:
+    case MAPSEC_SEALED_CHAMBER:
+    case MAPSEC_ANCIENT_TOMB:
+    case MAPSEC_ALTERING_CAVE:
+    case MAPSEC_SPACETIME_CAVE:
+        return MUS_GROUNDED_VS_WILD_CAVE;
+    case MAPSEC_ABANDONED_SHIP:
+    case MAPSEC_SS_AGAVE:
+    case MAPSEC_SKY_PILLAR:
+    case MAPSEC_MIRAGE_TOWER:
+    case MAPSEC_TAO_ISLAND:
+    case MAPSEC_SEA_TEMPLE:
+    case MAPSEC_MT_PYRE:
+    case MAPSEC_AQUA_HIDEOUT:
+    case MAPSEC_OUTER_SPACE:
+    case MAPSEC_GLIMWOOD_TANGLE:
+    case MAPSEC_BALLONLEA:
+        break;
+    default:
+        if (gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
+            return MUS_GROUNDED_VS_WILD_CAVE;
+        break;
     }
     return MUS_NONE;
 }

@@ -8,13 +8,13 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import numpy as np
 R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC = R + '/graphics/title_screen/emerald_version.png'
-FONT = '/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf'
+FONT = os.environ.get('TB_FONT', '/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf')
 TEXT = 'UNGROUNDED'
 W, H = 192, 32              # drie sprites van 64x32 (title_screen.c)
 S = 8                       # oversampling
 ANGLE = 0.0                 # recht (Jordi: 'zet het maar recht onder pokemon')
-BOX = (19, 6, 173, 27)      # gecentreerd (x 96), net onder het Pokémon-logo       # doelvak van de letters (x0, y0, x1, y1), omlijning valt erbuiten
-TRACK = -0.02               # letterafstand (fractie van de letterhoogte)
+BOX = tuple(int(v) for v in os.environ.get('TB_BOX', '19,6,173,27').split(','))  # gecentreerd (x 96), net onder het logo       # doelvak van de letters (x0, y0, x1, y1), omlijning valt erbuiten
+TRACK = float(os.environ.get('TB_TRACK', '-0.02'))              # letterafstand (fractie van de letterhoogte)
 
 def render():
     font = ImageFont.truetype(FONT, 40 * S)
@@ -53,7 +53,7 @@ def build():
     a = render()
     fill = a >= 0.45
     edge = (a > 0.12) & ~fill                     # AA-rand: wordt binnenrand
-    outline = dilate(fill | edge, 2) & ~fill & ~edge
+    outline = dilate(fill | edge, int(os.environ.get('TB_OUT', '2'))) & ~fill & ~edge
     depth = (np.roll(np.roll(outline | fill | edge, 1, 0), 1, 1) | np.roll(outline | fill | edge, 2, 0)) & ~(outline | fill | edge)
     idx = np.zeros((H, W), np.uint8)              # 0 = transparant (magenta)
     # verticale verloop per kolom: bovenkant van de letter wit, naar onder grijzer
@@ -71,7 +71,8 @@ def build():
     idx[inner] = 11                                   # 8b
     idx[edge] = np.where(a[edge] > 0.3, 1, 9)         # 9c / 6a
     idx[outline] = 4                                  # zwart
-    idx[depth] = 14                                   # donkere 3D-rand
+    if os.environ.get('TB_DEPTH', '1') == '1':
+        idx[depth] = 14                               # donkere 3D-rand
     return idx
 
 def main():

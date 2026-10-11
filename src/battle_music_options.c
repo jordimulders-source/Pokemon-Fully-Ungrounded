@@ -65,6 +65,17 @@ u16 GetChosenWildBattleMusic(void)
     return gWildBattleMusicOptions[choice].song;
 }
 
+// Project Grounded: staat de wildmuziek op de standaard (ROTATE of HOENN)? Dan krijgen vulkaan, woestijn, water en
+// onderwater hun regionale remix van het Hoenn-wildthema (GetBattleBGM, tools/grounded/regio_theme.py).
+bool8 IsDefaultWildBattleMusicChoice(void)
+{
+    u16 choice = VarGet(VAR_BATTLE_MUSIC_WILD);
+
+    if (choice >= ARRAY_COUNT(gWildBattleMusicOptions))
+        choice = 0;
+    return gWildBattleMusicOptions[choice].song == MUS_NONE || gWildBattleMusicOptions[choice].song == MUS_VS_WILD;
+}
+
 u16 GetChosenTrainerBattleMusic(void)
 {
     u16 choice = VarGet(VAR_BATTLE_MUSIC_TRAINER);

@@ -44,7 +44,7 @@ COMPRESSED_SAMPLES := \
 	sb_rh_gmu sb_rhodes_13 sb_rhodes_m9 sb_side_stick sb_slap_pop sb_slap_thumb \
 	sb_talkbox shaymin_celesta shaymin_clarinet shaymin_flute shaymin_harp shaymin_nylon \
 	shaymin_upright tapu_brass tapu_brass_hi tapu_impact tapu_lead tapu_odaiko \
-	tapu_taiko tapu_vox_a tapu_vox_hu ub_swell victini_power \
+	tapu_taiko tapu_vox_a tapu_vox_hu ub_swell victini_power regio_steeldrum \
 	yi_dcb99354f_1929
 
 COMPRESSED_SAMPLE_BINS := $(patsubst %,sound/direct_sound_samples/grounded/%.bin,$(COMPRESSED_SAMPLES))

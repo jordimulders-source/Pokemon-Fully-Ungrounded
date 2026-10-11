@@ -8098,3 +8098,7 @@ DirectSoundWaveData_vsaz_8::
 	.align 2
 DirectSoundWaveData_vsaz_9::
 	.incbin "sound/direct_sound_samples/grounded/vsaz_9.bin"
+
+	.align 2
+DirectSoundWaveData_regio_steeldrum::
+	.incbin "sound/direct_sound_samples/grounded/regio_steeldrum.bin"

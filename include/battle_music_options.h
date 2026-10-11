@@ -17,5 +17,6 @@ extern const u8 gTrainerBattleMusicOptionsCount;
 
 u16 GetChosenWildBattleMusic(void);
 u16 GetChosenTrainerBattleMusic(void);
+bool8 IsDefaultWildBattleMusicChoice(void);
 
 #endif // GUARD_BATTLE_MUSIC_OPTIONS_H

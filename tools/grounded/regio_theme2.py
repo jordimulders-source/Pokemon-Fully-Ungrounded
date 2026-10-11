@@ -4,23 +4,25 @@
 Jordi (11 okt): "Grot theme ook prima, maar Meteor Falls mag dan avontuurlijker klinken en Fiery Path vurig. Maar het
 hoeven allemaal echt maar lichte variaties te zijn van het theme."
   708 MUS_GROUNDED_VS_WILD_CAVE    grot: 188 bpm, fluit-lead met galm (echo-spoor, 3 16en later), strijkers op de tweede
-                                   stem, holle bas (fretless een octaaf lager + PSG-golf), druppel-pings op PSG-vierkant 1
-                                   (sweep omhoog, met twee echo's), gedempte drums (doffe kick/snare, ambient toms,
-                                   hyoushigi-tikken als steentjes)
+                                   stem, holle bas (fretless een octaaf lager + PSG-golf), gedempte drums (doffe
+                                   kick/snare, ambient toms, zachte PSG-hihat)
   709 MUS_GROUNDED_VS_WILD_METEOR  Meteor Falls: 196 bpm (tempo van het origineel), de grot als basis maar met heroisch
                                    koper (trompet-lead, trompetstoten in de riffs), een hoorn op de melodie (in B de
                                    melodie zelf, in A/C een octaaf onder de trompet), snellere toms (16en-galop), pauken
                                    en een stijgend glockenspiel-loopje bij elke nieuwe frase (ontdekking)
   710 MUS_GROUNDED_VS_WILD_FIERY   Fiery Path: 196 bpm, de grot met hitte: rock-orgel als lead met galm, gloeiende
-                                   distortion-pads (grondtoon per halve maat, aanzwellend, trillende bend), knetterende
-                                   PSG-ruis (vuur), diepe taiko; geen gitaar-lead/chugs/koper zoals de vulkaan-remix (673)
+                                   distortion-pads (grondtoon per halve maat, aanzwellend, trillende bend), diepe taiko; geen gitaar-lead/chugs/koper zoals de vulkaan-remix (673)
 
 Vorm, melodie, harmonie en lengte zijn die van het origineel (zie regio_theme.py: tick x 4, intro maat 0-10, loop maat
 11-42). Van het origineel blijven de melodie (spoor 2), de tweede stem (spoor 1) en de bas (spoor 3, noot voor noot);
 in B wisselen spoor 1 en 2 van rol (roles()). Alleen stock-samples. Stemverdeler max. 10 DirectSound-noten.
 Hergebruikt de helpers van regio_theme.py (orig, roles, section, CH, drum); regio_theme.py zelf blijft ongemoeid.
+v2 (Jordi: 'een soort percussie op de achtergrond die niet past en heel irritant wordt', in alle drie): dat was de
+hyoushigi (houten klepper, in de kit op toets 56/58: een ringende 'tok' op 2,1-2,4 kHz, 2-3x per maat het hele
+nummer door). Eruit, net als de andere effectpercussie: de PSG-druppels (klonken in de game niet eens: PSG-volume 0)
+en het PSG-knetteren van Fiery Path. De normale kit (kick, snare, toms, pauken, bekkens, zachte PSG-hihat) blijft.
   python3 tools/grounded/regio_theme2.py"""
-import math, os, random, sys
+import math, os, sys
 import mido
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from musiclib import dedupe, detach, allocate, releases, release_ticks, Song
@@ -61,23 +63,6 @@ def hollow_bass(P, O, vel=112):
         P['sub'].append([s, max(s + S, e - 6), n2 + 12, 100])
 
 
-def drips(P, seed, density=0.5):
-    """Druppels: een hoge akkoordtoon op PSG-vierkant 1 (sweep omhoog = 'plip'), met twee zachtere echo's 3 en 6 16en
-    later (galm). Op een willekeurige 16e die niet op een tel valt; per halve maat hooguit één."""
-    rnd = random.Random(seed)
-    for b in range(2, END_BAR):
-        r, _ = CH[b]
-        tones = [84 + (r + iv) % 12 for iv in (0, 4, 7)] + [96 + r % 12]
-        for h in (0, 1):
-            if rnd.random() > density:
-                continue
-            k = h * 8 + rnd.choice((1, 2, 3, 5, 6))
-            n = rnd.choice(tones)
-            t = b * BAR + k * S
-            for i, vel in enumerate((104, 72, 48)):
-                P['drip'].append([t + i * 3 * S, t + i * 3 * S + 10, n, vel])
-
-
 def echo_of(P, src, dst, delay=3 * S, vel=90, maxlen=4 * S):
     for s, e, n, v in P[src]:
         P[dst].append([s + delay, s + delay + min(e - s, maxlen), n, vel])
@@ -105,15 +90,12 @@ def cave_drums(P, D, K, t0, b, fast_toms=False):
         drum(P, t0, (0, 8, 10), kick, 116, D)
         drum(P, t0, (4, 12), sn, 110, D)
         drum(P, t0, (0, 6), taiko, 104, D)
-        drum(P, t0, (3, 11, 14), stick, 92, D)
     elif sec == 'B':
         drum(P, t0, (0, 6, 8), kick, 114, D)
         drum(P, t0, (4, 12), sn, 108, D)
-        drum(P, t0, (2, 10), stick, 90, D)
     else:   # A, C
         drum(P, t0, (0, 6, 8, 10), kick, 114, D)
         drum(P, t0, (4, 12), sn, 108, D)
-        drum(P, t0, (7, 15), stick, 88, D)
         if sec == 'C':
             drum(P, t0, (0,), taiko, 104, D)
     if fast_toms and sec in ('A', 'C', 'R2'):            # Meteor: 16en-galop op de toms (hoog-midden) tussen de tellen
@@ -162,7 +144,6 @@ def cave(O):
             P['str'].append([s, e, n - 12 if n >= 72 else n, 100])
     echo_of(P, 'flute', 'echo', vel=92)
     hollow_bass(P, O)
-    drips(P, 708)
     for b in range(END_BAR):
         t0 = b * BAR
         hats = cave_drums(P, D, K, t0, b)
@@ -173,7 +154,6 @@ def cave(O):
         35: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 240, 0, 140',
         73: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 150',
         74: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_flute, 255, 127, 231, 140',
-        80: 'voice_square_1 60, 0, 19, 1, 0, 1, 0, 0',
         84: 'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_3, 0, 7, 15, 2',
         121: 'voice_noise_alt 60, 0, 0, 0, 1, 0, 0',
     }
@@ -193,7 +173,6 @@ def cave(O):
         ('str', 48, 84, 2, 44),
         ('bass', 35, 100, 3, 64),
         ('sub', 84, 56, 6, 64),
-        ('drip', 80, 44, 7, 76),
         ('hat', 121, 32, 10, 64),
     ]
     order = ['flute', 'drums', 'bass', 'str', 'echo']
@@ -232,7 +211,6 @@ def meteor(O):
             P['str'].append([s, e, n - 12 if n >= 72 else n, 100])
     echo_of(P, 'tpt', 'echo', vel=88, maxlen=2 * S)
     hollow_bass(P, O, vel=116)
-    drips(P, 709, density=0.35)
     # ontdekking: stijgend glockenspiel-loopje (akkoordtonen in 16en) aan het begin van elke frase
     for b in SECTION_START[:-1]:
         r, _ = CH[b]
@@ -251,7 +229,6 @@ def meteor(O):
     over = {
         9: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_glockenspiel, 255, 165, 51, 180',
         35: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_fretless_bass, 255, 240, 0, 140',
-        80: 'voice_square_1 60, 0, 19, 1, 0, 1, 0, 0',
         84: 'voice_programmable_wave_alt 60, 0, ProgrammableWaveData_3, 0, 7, 15, 2',
         121: 'voice_noise_alt 60, 0, 0, 0, 1, 0, 0',
     }
@@ -275,7 +252,6 @@ def meteor(O):
         ('glock', 9, 76, 5, 84),
         ('bass', 35, 100, 8, 64),
         ('sub', 84, 56, 6, 64),
-        ('drip', 80, 40, 7, 76),
         ('hat', 121, 34, 10, 64),
     ]
     order = ['tpt', 'horn', 'drums', 'bass', 'horn2', 'str', 'glock', 'echo']
@@ -319,14 +295,6 @@ def fiery(O):
     EX['pad'].append((0, mido.Message('control_change', control=20, value=2)))
     for t in range(0, END_BAR * BAR, 12):                 # hitte-trilling: trage golvende bend
         EX['pad'].append((t, mido.Message('pitchwheel', pitch=int(1600 * math.sin(2 * math.pi * t / BAR)))))
-    # knetteren: PSG-ruis, korte tikjes op willekeurige 16en en toonhoogtes (vuur), dichter in de riffs
-    rnd = random.Random(710)
-    for b in range(2, END_BAR):
-        dens = 0.45 if section(b) in ('R1', 'R2', 'C') else 0.3
-        for k in range(16):
-            if rnd.random() < dens:
-                t = b * BAR + k * S + rnd.choice((0, 0, 6, 12))
-                P['crackle'].append([t, t + 4, rnd.choice((76, 80, 84, 88, 91)), rnd.choice((60, 80, 100))])
     for b in range(END_BAR):
         t0 = b * BAR
         hats = cave_drums(P, D, K, t0, b)
@@ -334,7 +302,6 @@ def fiery(O):
             drum(P, t0, (8,), TAIKO, 108, D)
         cr = {x[0] for x in P['drums'] if x[2] == CRASH}
         soft_hats(P, t0, hats, cr)
-    P['crackle'] += P.pop('hat')                          # één PSG-ruiskanaal: de hihat-tikken gaan in het knetteren op
     over = {
         17: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 150',
         18: 'voice_directsound 60, 0, DirectSoundWaveData_sc88pro_organ2, 255, 0, 255, 140',
@@ -360,7 +327,7 @@ def fiery(O):
         ('pad', 31, 76, 3, 56),
         ('bass', 35, 100, 4, 64),
         ('sub', 84, 56, 6, 64),
-        ('crackle', 122, 40, 10, 64),
+        ('hat', 122, 32, 10, 64),
     ]
     order = ['organ', 'drums', 'bass', 'pad', 'str', 'echo']
     return dict(name='fiery', title='Fiery Path', bpm=196, P=P, CC=CC, EX=EX, over=over, kit=kit, layout=layout,

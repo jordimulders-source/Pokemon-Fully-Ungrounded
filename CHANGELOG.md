@@ -18510,3 +18510,13 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Wild:** Hoenn, Kanto, Sunset Wilds, Toxic Landfill.
   - **Trainers:** Hoenn, Kanto, Toxic Landfill, Kanto Gym Leader.
 - De lijsten staan in `src/battle_music_options.c` (`sWildRotation`, `sTrainerRotation`). Een eerder gekozen optie schuift één plek op (de nieuwe ROTATE staat op plek 0).
+
+### [v0.9.283] - Intro's herzien: sprites eruit, nieuwe Celebi/Meloetta/Cresselia/Zygarde
+- Jordi: "vaak beter wanneer je de sprites weglaat". Alle Pokémon-sprites en silhouetten zijn uit de goedkope intro's; effecten, symbolen en de wereld dragen ze nu (Lati@s: een lichtbol met de Soul Dew, Necrozma: een zwart Tera-kristal).
+- **Celebi (extreem nostalgisch):**
+  - Het beeld wordt een GBC-scherm van 160×144 met een donkere rand en een rood power-lampje; de plek valt terug in vier groentinten.
+  - Daarna precies de GSC-overgang uit pokecrystal: drie flitsen en de spin naar zwart met de 20 wiggen. Op de slag slaat hij om in Celebi-groen.
+- **Meloetta:** een podium met notenbalk, spotlights en een equalizer. Acht noten tapdansen, doen een kickline en een pirouette; Aria groen, Pirouette oranje.
+- **Cresselia:** een dunne sikkelmaan (geen volle maan meer), halvemaanbogen, Lunar Dance-glinsters en droommist.
+- **Zygarde:** een zeshoekraster, de rode Core en groene Cells die de Z van Core Enforcer (Legends Z-A) bouwen; het beeld breekt langs het raster.
+- +3,4 KB.

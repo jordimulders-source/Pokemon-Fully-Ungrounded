@@ -640,6 +640,10 @@
 #define MUS_GROUNDED_VS_TRAINER_ROCK 701 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: snelle e-gitaarrock (Guitarist, Kindler, Ninja Boy) (tools/grounded/trclass_theme.py)
 #define MUS_GROUNDED_VS_TRAINER_ELITE 702 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: episch koper (Cooltrainer, Dragon Tamer, Bird Keeper) (tools/grounded/trclass_theme.py)
 #define MUS_GROUNDED_VS_TRAINER_KIDS 703 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: speels en stuiterend (Youngster, Lass, School Kid, Twins) (tools/grounded/trclass_theme.py)
+#define MUS_GROUNDED_VS_WILD_SEA 704 // Project Grounded: Hoenn-wildthema, zeeremix (surfen/vissen op zeeroutes en bij kustplaatsen; tools/grounded/regio_theme.py)
+#define MUS_GROUNDED_VS_WILD_SNOW 705 // Project Grounded: Hoenn-wildthema, sneeuw/ijsremix (Shoal Cave, Coldstep Cave, Route 135/136, Ashfrost, Frost Hollow, ...; tools/grounded/regio_theme.py)
+#define MUS_GROUNDED_VS_WILD_SPOOKY 706 // Project Grounded: Hoenn-wildthema, spookremix (Mt. Pyre, Abandoned Ship, Sky Pillar; tools/grounded/regio_theme.py)
+#define MUS_GROUNDED_VS_WILD_NIGHT 707 // Project Grounded: Hoenn-wildthema, nachtremix (routes en steden 's nachts; tools/grounded/regio_theme.py)
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

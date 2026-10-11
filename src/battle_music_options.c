@@ -30,8 +30,12 @@ const struct BattleMusicOption gWildBattleMusicOptions[] =
     // Project Grounded (Jordi: "voeg alle nieuw toegevoegde battle en overworld themes toe")
     { COMPOUND_STRING("VOLCANO"), MUS_GROUNDED_VS_WILD_VOLCANO },
     { COMPOUND_STRING("DESERT"), MUS_GROUNDED_VS_WILD_DESERT },
-    { COMPOUND_STRING("SEA"), MUS_GROUNDED_VS_WILD_WATER },
+    { COMPOUND_STRING("WATER"), MUS_GROUNDED_VS_WILD_WATER }, // v1.0.x: was "SEA"; zoet water (de zee heeft nu een eigen remix)
     { COMPOUND_STRING("UNDERWATER"), MUS_GROUNDED_VS_WILD_UNDERWATER },
+    { COMPOUND_STRING("SEA"), MUS_GROUNDED_VS_WILD_SEA }, // v1.0.x: lichte variaties van het Hoenn-wildthema
+    { COMPOUND_STRING("SNOW"), MUS_GROUNDED_VS_WILD_SNOW },
+    { COMPOUND_STRING("SPOOKY"), MUS_GROUNDED_VS_WILD_SPOOKY },
+    { COMPOUND_STRING("NIGHT"), MUS_GROUNDED_VS_WILD_NIGHT },
     { COMPOUND_STRING("LEGENDARY"), MUS_GROUNDED_VS_LEGENDARY },
     { COMPOUND_STRING("AREA ZERO"), MUS_GROUNDED_VS_AREA_ZERO },
     { COMPOUND_STRING("ARCEUS"), MUS_GROUNDED_VS_ARCEUS },
@@ -124,7 +128,7 @@ const struct BattleMusicOption gTrainerBattleMusicOptions[] =
     // Project Grounded (Jordi: "voeg alle nieuw toegevoegde battle en overworld themes toe")
     { COMPOUND_STRING("VOLCANO"), MUS_GROUNDED_VS_WILD_VOLCANO },
     { COMPOUND_STRING("DESERT"), MUS_GROUNDED_VS_WILD_DESERT },
-    { COMPOUND_STRING("SEA"), MUS_GROUNDED_VS_WILD_WATER },
+    { COMPOUND_STRING("WATER"), MUS_GROUNDED_VS_WILD_WATER }, // v1.0.x: was "SEA" (de zee heeft nu een eigen remix)
     { COMPOUND_STRING("UNDERWATER"), MUS_GROUNDED_VS_WILD_UNDERWATER },
     { COMPOUND_STRING("LEGENDARY"), MUS_GROUNDED_VS_LEGENDARY },
     { COMPOUND_STRING("AREA ZERO"), MUS_GROUNDED_VS_AREA_ZERO },

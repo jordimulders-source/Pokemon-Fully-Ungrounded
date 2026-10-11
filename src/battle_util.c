@@ -2194,7 +2194,10 @@ static enum MoveCanceler CancelerObedience(struct BattleContext *ctx)
             return MOVE_STEP_FAILURE;
         case DISOBEYS_RANDOM_MOVE:
             gCurrentMove = gCalledMove = gBattleMons[ctx->battlerAtk].moves[gCurrMovePos];
-            BattleScriptCall(BattleScript_IgnoresAndUsesRandomMove);
+            // Project Grounded: na het bericht naar het script van de willekeurige move, niet terug naar dat van de
+            // gekozen move (anders ontplofte een ongehoorzame Explosion niet en kregen statusmoves het verkeerde effect)
+            BattleScriptPush(GetMoveBattleScript(gCalledMove));
+            gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesRandomMove;
             gBattlerTarget = GetBattleMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
             gHitMarker |= HITMARKER_OBEYS;
             return MOVE_STEP_BREAK;

@@ -145,7 +145,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v8: begeleiding m5-39 + koor + aria uit het origineel geknipt, 682 geschrapt (Jordi) | "Area Zero" |
 | Trainerklasse-remixes van MUS_VS_TRAINER (696-703: SEA, MOUNTAIN, NATURE, MYSTIC, CHIC, ROCK, ELITE, KIDS) | `trclass_theme.py`, `trclass_samples.py` | MOUNTAIN/NATURE/MYSTIC/ELITE/KIDS GOEDGEKEURD (Jordi); SEA/CHIC/ROCK v2 wacht op Jordi (SEA 144 bpm, CHIC zonder ride-bell, ROCK echte powerchords) | "Trainerklassen" |
 | Route 119+-wildthema (711) | `route119_battle_theme.py` | v1 wacht op Jordi (melodieën/harmonie uit mus_route119, 176 bpm in triolen-galop, trompet/hoorns/strijkers/pauken, alleen stock-samples; landroutes 119-123, 135, 136) | "Route 119+" |
-| Nachtversies stadsthema's (712-725, MUS_GROUNDED_NIGHT_*) | `night_towns.py` | v1 wacht op Jordi (origineel 1-op-1, tempo x0,87-0,92, EP/hoorn/fretless/harp, 50%-blokgolven, brushes; gekoppeld in `GetLocationMusic`) | "Nachtversies" |
+| Nachtversies stadsthema's (712-725, MUS_GROUNDED_NIGHT_*) | `night_towns.py` | v1 goedgekeurd ("uitstekend"; origineel 1-op-1, tempo x0,87-0,92, EP/hoorn/fretless/harp, 50%-blokgolven, brushes; gekoppeld in `GetLocationMusic`); v2 Slateport/Lilycove trager (x0,80) en rustiger, wacht op Jordi | "Nachtversies" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -897,3 +897,8 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   release 51 ticks bezetten ze 4 kanalen; dubbel ze op een PSG-vierkant. Liggende strijkers die op een sectiestart
   (crash + roffelstaart) geen kanaal krijgen: een 8e later laten inzetten i.p.v. de halve maat te schrappen.
 - **Nachtversies (v1):** één generator voor 14 thema's: originele MIDI 1-op-1 kopiëren en alleen tempo/velocity/drumnoten aanpassen; de klank zit in een kopie van de originele voicegroup met vervangen slots (generieke regels per sample, `--info` toont ze). Zo blijven vorm/loop/CC7 vanzelf gelijk. Lange harp/glockenspiel-releases (242/249) op 220 zetten haalde de vanilla-overschrijdingen van 10 DS-noten bijna weg (Fallarbor 19 -> 10). Kosten ±4–5 KB per nummer + 1,5 KB voicegroup.
+- Nachtversies v2 (717 Slateport, 721 Lilycove; Jordi: "iets langzamer en relaxter, rest perfect"): tempo x0,80,
+  per stad `opts` in `night_towns.py` (`grid` = alleen aanslagen op het 8e-raster, `drums` = zachtere kick/snare,
+  `legato` = zachte echo-aanslag (zelfde toon, vel <= 40, direct na de vorige) samenvoegen tot één noot,
+  `rel_cap`). Lilycove's echo's legato halveren de DS-drukte (lint 13 momenten >10 -> 0). De andere 12 bleven
+  byte-identiek (md5); Slateport -V070 -> 084 omdat brushes + dunnere hats de RMS naar ±1750 brachten.

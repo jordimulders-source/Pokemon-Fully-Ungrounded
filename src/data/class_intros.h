@@ -10,10 +10,9 @@
 //   Hiker                                    rotsblokken rollen het beeld in, het scherm barst
 //   Bug Catcher, Bug Maniac                  net vangt bijen, een mug, KLAP: "ehh… busted?" (class_intros2_c.h)
 //   Psychic                                  een lepel buigt, de wereld buigt mee
-//   Fisherman                                lijn uitgooien, dobber, beet!, het beeld wordt opgehaald
+//   Fisherman, Guitarist, Ninja Boy, Collector: zie class_intros2_a.h
 //   Bird Keeper                              een veren-storm
 //   Kindler                                  vlammen van onderen, hitte-trilling
-//   Guitarist                                versterker-dreun op elke tel, podiumlicht, noten
 //   Ruin Maniac                              zandwand met hiërogliefen schuift over het beeld
 //   Hex Maniac                               een kaars in het donker flakkert, gaat uit, twee ogen
 //   Black Belt, Battle Girl                  karateslag: het beeld splijt in tweeën
@@ -26,7 +25,6 @@
 //   Pkmn Ranger                              de Capture Styler trekt drie lussen: CAPTURED.
 //   Beauty, Lass, Lady                       bloemblaadjes en een glimlicht
 //   Pokéfan, Aroma Lady, Parasol Lady        zie class_intros2_c.h
-//   Ninja Boy                                rookbom: het beeld is er niet meer, één blaadje valt
 //   Pkmn Breeder                             hartjes en een Lucky Egg dat uitkomt
 //   Rich Boy, Gentleman                      muntenregen
 
@@ -952,6 +950,7 @@ enum
     CI_NONE, CI_SWIM, CI_HIKER, CI_BUG, CI_PSYCHIC, CI_FISH, CI_BIRD, CI_KINDLER, CI_GUITAR, CI_RUIN, CI_HEX, CI_CHOP,
     CI_COOL, CI_TRI, CI_EXPERT, CI_SAILOR, CI_PICNIC, CI_BOUNCE, CI_RANGER, CI_PETAL, CI_NINJA, CI_HEART, CI_COINS,
     CI_FAN, CI_AROMA, CI_PARASOL, // class_intros2_c.h
+    CI_FISH2, CI_GUITAR2, CI_NINJA2, CI_COLLECT, // class_intros2_a.h
     CI_COUNT
 };
 
@@ -968,13 +967,13 @@ static u32 ClassIntro_ForClass(u32 trainerClass)
     case TRAINER_CLASS_PSYCHIC:
         return CI_PSYCHIC;
     case TRAINER_CLASS_FISHERMAN:
-        return CI_FISH;
+        return CI_FISH2;
     case TRAINER_CLASS_BIRD_KEEPER:
         return CI_BIRD;
     case TRAINER_CLASS_KINDLER:
         return CI_KINDLER;
     case TRAINER_CLASS_GUITARIST:
-        return CI_GUITAR;
+        return CI_GUITAR2;
     case TRAINER_CLASS_RUIN_MANIAC:
         return CI_RUIN;
     case TRAINER_CLASS_HEX_MANIAC:
@@ -998,7 +997,9 @@ static u32 ClassIntro_ForClass(u32 trainerClass)
     case TRAINER_CLASS_BEAUTY: case TRAINER_CLASS_LASS: case TRAINER_CLASS_LADY:
         return CI_PETAL;
     case TRAINER_CLASS_NINJA_BOY:
-        return CI_NINJA;
+        return CI_NINJA2;
+    case TRAINER_CLASS_COLLECTOR:
+        return CI_COLLECT;
     case TRAINER_CLASS_PKMN_BREEDER:
         return CI_HEART;
     case TRAINER_CLASS_RICH_BOY: case TRAINER_CLASS_GENTLEMAN:
@@ -1183,80 +1184,6 @@ static bool32 CIPsychic_Update(s32 t)
 
 static const struct TIntro sCI_Psychic = {CIPsychic_Init, CIPsychic_Update};
 
-// ---------------- Fisherman: lijn uitgooien, dobber, "!", en het beeld wordt opgehaald
-static const u16 sCI_LinePal[4] = {0, RGB(28, 28, 26), RGB(10, 10, 10), RGB(31, 6, 4)};
-static const u16 sCI_BobberPal[4] = {0, RGB(31, 5, 4), RGB(31, 31, 31), RGB(4, 4, 4)};
-
-static void CIFish_Init(void)
-{
-    u8 buf[32];
-    s32 x, y;
-    TI_SetPal(15, sCI_LinePal, 4);
-    memset(buf, 0, sizeof(buf));
-    for (y = 1; y < 7; y++)
-        for (x = 1; x < 7; x++)
-            if ((2 * x - 7) * (2 * x - 7) + (2 * y - 7) * (2 * y - 7) < 32)
-                TI_BufPixel(buf, 1, x, y, y < 4 ? 1 : 2);
-    sTI->v[0] = TI_BufSprite(buf, 32, TI_TAG_BOBBER, sCI_BobberPal, &gOamData_AffineOff_ObjNormal_8x8, -20, -20);
-    sTI->v[1] = TI_Bang(150, 40);
-    sTI->v[2] = TI_Anim(ANIM_TAG_SMALL_BUBBLES, &gOamData_AffineOff_ObjNormal_16x16, 0, 200, 0);
-    TI_Show(sTI->v[2], FALSE);
-    TI_Windows(DISPCNT_WIN0_ON, WININ_WIN0_ALL, 0);
-    sTI->win0h = WIN_RANGE(0, DISPLAY_WIDTH);
-    PlaySE(SE_M_FLY);
-}
-
-static bool32 CIFish_Update(s32 t)
-{
-    s32 b1 = TI_Beat(1), b2 = TI_Beat(2), b3 = TI_Beat(3), end = TI_Beat(4) + 6, r, x, y, i, off = 0;
-    // boog van de hengeltop (0, 150) naar (150, 70)
-    if (t <= b1)
-    {
-        r = TI_Ramp(t, 0, b1);
-        x = 4 + (146 * r >> 8);
-        y = 150 - (80 * r >> 8) - (Sin((r >> 1) & 0xFF, 50));
-        TI_Pos(sTI->v[0], x, y);
-        for (i = sTI->v[3]; i <= r; i += 8)
-        {
-            s32 px = 4 + (146 * i >> 8), py = 150 - (80 * i >> 8) - Sin((i >> 1) & 0xFF, 50);
-            TI_Plot(px, py, 1);
-        }
-        sTI->v[3] = r & ~7;
-    }
-    if (TI_AT(b1))
-    {
-        PlaySE(SE_M_BUBBLE);
-        TI_Part(sTI->v[2], 146, 66, 0, -10, 1, 16);
-    }
-    if (t > b1 && t < b3)
-        TI_Pos(sTI->v[0], 150, 70 + (Sin((t * 12) & 0xFF, 2)) + (t >= b2 ? 4 : 0));
-    if (TI_AT(b2))
-    {
-        PlaySE(SE_PIN);
-        TI_Show(sTI->v[1], TRUE);
-        TI_Scale(sTI->v[1], 128, 128, 0);
-    }
-    if (t >= b3)
-    {
-        // ophalen: de wereld gaat omhoog, eronder is het zwart
-        s32 dt = t - b3;
-        off = dt * dt / 3 + dt * 2;
-        if (off > 160)
-            off = 160;
-        TI_Show(sTI->v[1], FALSE);
-        TI_WorldMove(0, off);
-        sTI->bg0y = off;
-        TI_Pos(sTI->v[0], 150, 70 - off);
-        sTI->win0v = WIN_RANGE(0, 160 - off);
-        if (TI_AT(b3))
-            PlaySE(SE_M_STRENGTH);
-    }
-    gPlttBufferFaded[0] = RGB_BLACK;
-    return t >= end;
-}
-
-static const struct TIntro sCI_Fish = {CIFish_Init, CIFish_Update};
-
 // ---------------- Bird Keeper: een verenstorm van rechts, steeds dichter, op de 3e tel alles wit
 #define BD_N 14
 static void CIBird_Init(void)
@@ -1336,46 +1263,6 @@ static bool32 CIKindler_Update(s32 t)
 }
 
 static const struct TIntro sCI_Kindler = {CIKindler_Init, CIKindler_Update};
-
-// ---------------- Guitarist: op elke tel een versterker-dreun (het beeld springt), podiumlicht wisselt, noten vliegen
-#define GT_N 8
-static const u16 sCI_StageCols[4] = {RGB(31, 4, 22), RGB(4, 24, 31), RGB(31, 26, 4), RGB(10, 31, 8)};
-
-static void CIGuitar_Init(void)
-{
-    u32 i;
-    for (i = 0; i < GT_N; i++)
-    {
-        sTI->v[i] = TI_Anim(ANIM_TAG_MUSIC_NOTES, &gOamData_AffineOff_ObjNormal_16x16, -20, -20, (i % 6) * 4);
-        TI_Show(sTI->v[i], FALSE);
-    }
-}
-
-static bool32 CIGuitar_Update(s32 t)
-{
-    s32 end = TI_Beat(5), n, since = 99, k;
-    for (n = 0; n <= 4; n++)
-    {
-        s32 at = TI_Beat(n);
-        if (t >= at)
-            since = t - at;
-        if (TI_AT(at))
-        {
-            u32 i;
-            PlaySE(n == 4 ? SE_M_HYPER_BEAM : SE_M_BELLY_DRUM);
-            for (i = 0; i < 2; i++)
-                TI_Part(sTI->v[(n * 2 + i) % GT_N], i ? 230 : 10, 150, i ? -TI_RandRange(20, 40) : TI_RandRange(20, 40), -TI_RandRange(40, 60), 2, 40);
-            sTI->v[12] = n;
-        }
-    }
-    k = since < 10 ? (10 - since) : 0;
-    TI_WorldMove((since < 10 ? Sin((since * 80) & 0xFF, k) : 0), since < 4 ? -k / 2 : 0);
-    TI_Tint(TI_World(), t >= TI_Beat(0) ? 4 + (since < 6 ? 6 - since : 0) : 0, sCI_StageCols[sTI->v[12] & 3]);
-    TI_Flash(t, TI_Beat(4), 10, 16, PALETTES_ALL, RGB_WHITE);
-    return t >= end;
-}
-
-static const struct TIntro sCI_Guitar = {CIGuitar_Init, CIGuitar_Update};
 
 // ---------------- Ruin Maniac: een zandwand vol hiërogliefen schuift van rechts over het beeld (rafelige rand)
 static const u16 sCI_SandPal[4] = {0, RGB(27, 22, 13), RGB(19, 13, 6), RGB(30, 27, 18)};
@@ -1944,59 +1831,6 @@ static bool32 CIPetal_Update(s32 t)
 
 static const struct TIntro sCI_Petal = {CIPetal_Init, CIPetal_Update};
 
-// ---------------- Ninja Boy: rookbom; als de rook optrekt is het beeld leeg (wit). Eén blaadje valt.
-#define NJ_N 10
-
-static void CINinja_Init(void)
-{
-    u32 i;
-    for (i = 0; i < NJ_N; i++)
-    {
-        sTI->v[i] = TI_Anim(ANIM_TAG_GRAY_SMOKE, &gOamData_AffineDouble_ObjNormal_32x32, -40, -40, 0);
-        TI_Show(sTI->v[i], FALSE);
-    }
-    sTI->v[15] = TI_Anim(ANIM_TAG_LEAF, &gOamData_AffineOff_ObjNormal_16x16, -20, -20, 0);
-    TI_Show(sTI->v[15], FALSE);
-}
-
-static bool32 CINinja_Update(s32 t)
-{
-    s32 b1 = TI_Beat(1), b3 = TI_Beat(3), end = TI_Beat(5), i;
-    if (TI_AT(b1))
-    {
-        PlaySE(SE_M_EXPLOSION);
-        for (i = 0; i < NJ_N; i++)
-        {
-            s32 a = i * 256 / NJ_N;
-            TI_Part(sTI->v[i], 120, 84, Cos(a, 40), Sin(a, 28), 0, 0);
-        }
-    }
-    if (t >= b1)
-        for (i = 0; i < NJ_N; i++)
-        {
-            s32 sc = 256 - min(128, (t - b1) * 6);   // 1x -> 2x (groter knipt de affine-box af)
-            struct Sprite *sp = &gSprites[sTI->v[i]];
-            TI_Scale(sTI->v[i], sc, sc, 0);
-            sp->oam.tileNum = GetSpriteTileStartByTag(ANIM_TAG_GRAY_SMOKE) + min(4, (t - b1) / 6) * 16;
-            if (t >= b3)
-                sp->invisible = (t - b3) > i * 2;
-        }
-    TI_Tint(TI_World(), TI_Ramp(t, b1, b1 + 10) * 16 >> 8, RGB(30, 30, 30));
-    if (t < b1)
-        TI_Tint(TI_World(), 0, 0);
-    if (TI_AT(b3))
-    {
-        TI_HideField();
-        TI_Part(sTI->v[15], 100, -10, 6, 8, 0, 0);
-        PlaySE(SE_M_GUST);
-    }
-    if (t > b3)
-        gSprites[sTI->v[15]].x2 = Sin((t * 5) & 0xFF, 14);
-    return t >= end;
-}
-
-static const struct TIntro sCI_Ninja = {CINinja_Init, CINinja_Update};
-
 // ---------------- Breeder/Pokéfan: hartjes stijgen op, een Lucky Egg wiebelt op de tel en komt uit (flits)
 #define HT_N 12
 
@@ -2093,17 +1927,20 @@ static bool32 CICoins_Update(s32 t)
 static const struct TIntro sCI_Coins = {CICoins_Init, CICoins_Update};
 
 #include "class_intros2_c.h"
+#include "class_intros2_a.h"
 
 static const struct TIntro *const sClassIntros[CI_COUNT] =
 {
+    [CI_FISH2] = &sCI_Fish2,
+    [CI_GUITAR2] = &sCI_Guitar2,
+    [CI_NINJA2] = &sCI_Ninja2,
+    [CI_COLLECT] = &sCI_Collect,
     [CI_SWIM] = &sCI_Swim,
     [CI_HIKER] = &sCI_Hiker,
     [CI_BUG] = &sCI_BugSwat,
     [CI_PSYCHIC] = &sCI_Psychic,
-    [CI_FISH] = &sCI_Fish,
     [CI_BIRD] = &sCI_Bird,
     [CI_KINDLER] = &sCI_Kindler,
-    [CI_GUITAR] = &sCI_Guitar,
     [CI_RUIN] = &sCI_Ruin,
     [CI_HEX] = &sCI_Hex,
     [CI_CHOP] = &sCI_Chop,
@@ -2115,7 +1952,6 @@ static const struct TIntro *const sClassIntros[CI_COUNT] =
     [CI_BOUNCE] = &sCI_Bounce,
     [CI_RANGER] = &sCI_Ranger,
     [CI_PETAL] = &sCI_Petal,
-    [CI_NINJA] = &sCI_Ninja,
     [CI_HEART] = &sCI_Heart,
     [CI_COINS] = &sCI_Coins,
     [CI_FAN] = &sCI_Fan,

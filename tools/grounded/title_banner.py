@@ -8,13 +8,13 @@ from PIL import Image, ImageDraw, ImageFont, ImageFilter
 import numpy as np
 R = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 SRC = R + '/graphics/title_screen/emerald_version.png'
-FONT = os.environ.get('TB_FONT', '/usr/share/fonts/opentype/inter/Inter-ExtraBold.otf')
+FONT = os.environ.get('TB_FONT', '/usr/share/fonts/opentype/inter/Inter-Bold.otf')  # variant B (Jordi 11 okt)
 TEXT = 'UNGROUNDED'
 W, H = 192, 32              # drie sprites van 64x32 (title_screen.c)
 S = 8                       # oversampling
 ANGLE = 0.0                 # recht (Jordi: 'zet het maar recht onder pokemon')
-BOX = tuple(int(v) for v in os.environ.get('TB_BOX', '19,6,173,27').split(','))  # gecentreerd (x 96), net onder het logo       # doelvak van de letters (x0, y0, x1, y1), omlijning valt erbuiten
-TRACK = float(os.environ.get('TB_TRACK', '-0.02'))              # letterafstand (fractie van de letterhoogte)
+BOX = tuple(int(v) for v in os.environ.get('TB_BOX', '31,8,161,23').split(','))  # gecentreerd (x 96), net onder het logo       # doelvak van de letters (x0, y0, x1, y1), omlijning valt erbuiten
+TRACK = float(os.environ.get('TB_TRACK', '0.06'))              # letterafstand (fractie van de letterhoogte)
 
 def render():
     font = ImageFont.truetype(FONT, 40 * S)
@@ -53,7 +53,7 @@ def build():
     a = render()
     fill = a >= 0.45
     edge = (a > 0.12) & ~fill                     # AA-rand: wordt binnenrand
-    outline = dilate(fill | edge, int(os.environ.get('TB_OUT', '2'))) & ~fill & ~edge
+    outline = dilate(fill | edge, int(os.environ.get('TB_OUT', '1'))) & ~fill & ~edge
     depth = (np.roll(np.roll(outline | fill | edge, 1, 0), 1, 1) | np.roll(outline | fill | edge, 2, 0)) & ~(outline | fill | edge)
     idx = np.zeros((H, W), np.uint8)              # 0 = transparant (magenta)
     # verticale verloop per kolom: bovenkant van de letter wit, naar onder grijzer
@@ -71,7 +71,7 @@ def build():
     idx[inner] = 11                                   # 8b
     idx[edge] = np.where(a[edge] > 0.3, 1, 9)         # 9c / 6a
     idx[outline] = 4                                  # zwart
-    if os.environ.get('TB_DEPTH', '1') == '1':
+    if os.environ.get('TB_DEPTH', '0') == '1':
         idx[depth] = 14                               # donkere 3D-rand
     return idx
 

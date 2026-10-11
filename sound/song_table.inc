@@ -733,6 +733,22 @@ gSongTable::
 
 	song mus_grounded_vs_trainer_kids, MUSIC_PLAYER_BGM, 0
 
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0 @ 704: plaatshouder (andere v1.0.x-remix)
+
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0 @ 705: plaatshouder (andere v1.0.x-remix)
+
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0 @ 706: plaatshouder (andere v1.0.x-remix)
+
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0 @ 707: plaatshouder (andere v1.0.x-remix)
+
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0 @ 708: plaatshouder (andere v1.0.x-remix)
+
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0 @ 709: plaatshouder (andere v1.0.x-remix)
+
+	song dummy_song_header, MUSIC_PLAYER_BGM, 0 @ 710: plaatshouder (andere v1.0.x-remix)
+
+	song mus_grounded_vs_wild_route119, MUSIC_PLAYER_BGM, 0
+
 	.align 2
 dummy_song_header:
 	.byte 0, 0, 0, 0

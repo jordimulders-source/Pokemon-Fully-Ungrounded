@@ -6414,6 +6414,22 @@ static u16 GetRegionalWildBattleMusic(void)
     case MAPSEC_KINDLE_ROAD:
         return MUS_GROUNDED_VS_WILD_VOLCANO;
     }
+    // Route 119+ (Jordi: "grande, avontuurlijk"): wilde gevechten op het land van de routes vanaf Route 119
+    // (surfen en vissen zijn hierboven al afgevangen; tools/grounded/route119_battle_theme.py)
+    if (gMapHeader.mapType == MAP_TYPE_ROUTE)
+    {
+        switch (mapsec)
+        {
+        case MAPSEC_ROUTE_119:
+        case MAPSEC_ROUTE_120:
+        case MAPSEC_ROUTE_121:
+        case MAPSEC_ROUTE_122:
+        case MAPSEC_ROUTE_123:
+        case MAPSEC_ROUTE_135:
+        case MAPSEC_ROUTE_136:
+            return MUS_GROUNDED_VS_WILD_ROUTE119;
+        }
+    }
     return MUS_NONE;
 }
 

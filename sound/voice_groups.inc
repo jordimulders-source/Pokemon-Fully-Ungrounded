@@ -316,3 +316,5 @@
 .include "sound/voicegroups/grounded_regio_water.inc"
 .include "sound/voicegroups/drumsets/regio_underwater.inc"
 .include "sound/voicegroups/grounded_regio_underwater.inc"
+.include "sound/voicegroups/drumsets/route119_battle.inc"
+.include "sound/voicegroups/grounded_route119_battle.inc"

@@ -18641,3 +18641,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Sneeuw:** de sleebelletjes op de achtsten (vanaf 7,7 s) alleen nog als accent. **Spook:** koor alleen in B/C, een octaaf lager en zachter. **Nacht:** volle intro (triller terug, strijkers onder de chromatische val).
   - **Grot, Meteor Falls, Fiery Path:** de hyoushigi (hoog houtgetik) en de effectpercussie zijn eruit.
   - **Nacht Slateport en Lilycove:** ±20% trager (Slateport 100 bpm), zachtere brushes, Lilycove legato.
+- **Definitieve 1.0-build** (11 okt): audit 0 FOUT, songtabel in orde, rookproef (wild gevecht op Route 120 speelt Route 119+). **ROM: 1,0 MB vrij** (1.049.756 bytes). Mitch volgt nog als update binnen de 1.0.

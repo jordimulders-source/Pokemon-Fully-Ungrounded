@@ -777,21 +777,29 @@ static void Task_LegendCrown(u8 taskId)
 // =====================================================================================================================
 // Celebi (Ilex Forest; Jordi: "maak de celebi intro extreem nostalgisch"): even zit je weer achter een Game Boy Color.
 // Het beeld wordt een GBC-scherm van 160x144 in een donkere rand met een brandend power-lampje (en het aan-geluidje),
-// de plek valt terug in de vier groentinten en komt op zoals GSC een beeld opbouwt: vanuit wit, in tintstappen. Dan
-// precies de wilde-gevechtsovergang van Gold/Silver/Crystal (pret/pokecrystal, engine/battle/battle_transition.asm):
-// drie keer de BGP-flits (12 tintstappen: donkerder, zwart, terug, lichter, wit, terug) op de tellen 3, 4 en 5, met
-// de gemaaide-grasblaadjes van het Celebi-schrijn (Crystal) die door het beeld dwarrelen, en dan de spin naar zwart
-// (20 wiggen met de klok mee vanaf links, de echte wigtabellen) op tel 6 en 7. Op de klokslag de tijdreis: het zwart
-// slaat om in Celebi-groen en wit. Geen Pokémon-sprite.
+// de plek valt terug in de vier groentinten en komt op zoals GSC een beeld opbouwt: vanuit wit, in tintstappen (Jordi:
+// "de reset is prima zo"). Dan een tijdreis langs Johto (Jordi: "Celebi mag nog een paar iconische locaties channelen
+// en stoppen bij Ilex Forest"), op de achtsten geknipt: New Bark Town (Elms lab), Goldenrod City (de Radio Tower),
+// Ecruteak City (de Tin Tower) en dan Ilex Forest met het schrijn, waar de blaadjes van het Celebi-schrijn (Crystal)
+// dwarrelen. De beelden zijn de echte kaarten uit pret/pokecrystal (maps/*.blk + metatiles + tilesets, in
+// tools/grounded/celebi_gsc.py als 160x144-uitsneden ontdubbeld: 92 tiles). Bij Ilex de wilde-gevechtsovergang van
+// Gold/Silver/Crystal (engine/battle/battle_transition.asm): drie keer de BGP-flits (12 tintstappen: donkerder, zwart,
+// terug, lichter, wit, terug) en de spin naar zwart (20 wiggen met de klok mee vanaf links, de echte wigtabellen). Op
+// de klokslag de tijdreis: het zwart slaat om in Celebi-groen en wit. Geen Pokémon-sprite.
 #define LCC_LEAVES     8
 #define LCC_TAG_LEAF   0x5B23
-#define LCC_FLASH      LC_BEAT(3)   // tel 3, 4 en 5
-#define LCC_SPIN       LC_BEAT(6)   // 20 wiggen, 2 frames per wig
+#define LCC_SCENES     4
+#define LCC_SCENE(n)   LC_E8(6 + (n))   // New Bark, Goldenrod, Ecruteak, Ilex
+#define LCC_FLASH      LC_E8(10)        // drie flitsen, elk een achtste
+#define LCC_SPIN       LC_E8(13)        // 20 wiggen tot de klokslag
+#define LCC_TILE       256              // eerste tile van de GSC-beelden (de rand gebruikt er ±90 vanaf 16)
 #define LCC_X0         5            // het GBC-scherm: 20 x 18 tiles vanaf tile (5, 1)
 #define LCC_Y0         1
 #define LCC_BLACK      3            // tile 3 = effen kleur 3 = de donkerste tint
 
 static const u16 sLC_Gbc[4] = {RGB(3, 7, 4), RGB(9, 16, 8), RGB(19, 25, 10), RGB(28, 31, 21)};
+static const u32 sLCC_GscTiles[] = INCBIN_U32("graphics/battle_transitions/legend_celebi_gsc.4bpp.smol");
+static const u32 sLCC_GscMaps[] = INCBIN_U32("graphics/battle_transitions/legend_celebi_gsc_maps.bin.smol");
 // BGP-flits uit pokecrystal (.pals): elke stap verschuift de vier tinten (+ = donkerder)
 static const s8 sLCC_FlashOff[12] = {1, 2, 3, 2, 1, 0, -1, -2, -3, -2, -1, 0};
 // de wiggen van StartTrainerBattle_SpinToBlack: aantal tiles, verschuiving, aantal, ..., 0xFF
@@ -867,11 +875,20 @@ static void RTCelebi_Init(struct Task *task)
         sLC->order[i] = 0xFF;
     for (i = 0; i < 20; i++)
         LCC_Wedge(i);
+    for (i = 0; i < 360; i++)
+        if (sLC->order[i] == 0xFF)
+            sLC->order[i] = 19;   // tiles die de wiggen net missen (de tabellen zijn voor een GBC-scherm)
     for (i = 0; i < LCC_LEAVES; i++)
     {
         LI_Make(i, gBattleAnimSpriteGfx_Leaf, 0x480, gBattleAnimSpritePal_Leaf, LCC_TAG_LEAF, &sGI_Oam16, 0, 0, 2);
-        LI_S(i)->oam.priority = 1;   // onder de rand en het zwart (BG0)
     }
+    // de vier GSC-beelden: tiles naar VRAM, de tilemaps (4 x 20 x 18) in het werkgeheugen
+    DecompressDataWithHeaderVram(sLCC_GscTiles, LC_Tile(LCC_TILE));
+    TRY_FREE_AND_SET_NULL(sLCCanvas);
+    sLCCanvas = Alloc(LCC_SCENES * 360 * 2);
+    if (sLCCanvas != NULL)
+        DecompressDataWithHeaderWram(sLCC_GscMaps, sLCCanvas);
+    task->tLcVar = 0;
     // elke kleur (wereld en blaadjes) krijgt zijn GB-tint
     for (i = 0; i < 512; i++)
         sLC->shade[i] = LCC_Shade(gPlttBufferUnfaded[i]);
@@ -894,11 +911,11 @@ static bool8 RTCelebi_Update(struct Task *task)
     // het scherm gaat aan: vanuit wit in tintstappen (zoals GSC elk beeld laat opkomen)
     if (r < 12)
         off = -3 + r / 3;
-    // de drie BGP-flitsen, elk een tel lang
+    // de drie BGP-flitsen, elk een achtste
     for (i = 0; i < 3; i++)
     {
-        k = (t - LCC_FLASH - LC_BEAT(i)) * 12 / LC_BEAT(1);
-        if (t >= LCC_FLASH + LC_BEAT(i) && k < 12)
+        k = (t - LCC_FLASH - LC_E8(i)) * 12 / LC_E8(1);
+        if (t >= LCC_FLASH + LC_E8(i) && k < 12)
             off = sLCC_FlashOff[k];
     }
     for (i = 0; i < 512; i++)
@@ -907,6 +924,23 @@ static bool8 RTCelebi_Update(struct Task *task)
             continue;
         k = sLC->shade[i] + off;
         gPlttBufferFaded[i] = sLC_Gbc[3 - (k < 0 ? 0 : (k > 3 ? 3 : k))];
+    }
+    // BG-palet 14: de GSC-beelden (kleur 1-4 = tint 0-3)
+    for (i = 0; i < 4; i++)
+    {
+        k = i + off;
+        gPlttBufferFaded[BG_PLTT_ID(14) + 1 + i] = sLC_Gbc[3 - (k < 0 ? 0 : (k > 3 ? 3 : k))];
+    }
+
+    // de tijdreis langs Johto: een nieuw beeld op elke achtste
+    for (n = 0; n < LCC_SCENES && t >= LCC_SCENE(n); n++)
+        ;
+    if (n != task->tLcVar && sLCCanvas != NULL && t < LCC_SPIN)
+    {
+        const u16 *m = (const u16 *)sLCCanvas + (n - 1) * 360;
+        for (i = 0; i < 18; i++)
+            CpuCopy16(m + i * 20, &tilemap[(LCC_Y0 + i) * 32 + LCC_X0], 40);
+        task->tLcVar = n;
     }
 
     // BG-palet 13: rand, lampje, het spin-zwart; op de klokslag de tijdreis (zwart -> Celebi-groen -> wit)
@@ -924,24 +958,25 @@ static bool8 RTCelebi_Update(struct Task *task)
         cols[LCC_BLACK] = Tapu_Blend(RGB(10, 30, 8), RGB(30, 31, 26), (k - 2) * 6);
     LC_SetBgPal(0, cols);
 
-    // de blaadjes van het schrijn dwarrelen omlaag (tel 3 tot 6)
+    // de blaadjes van het schrijn dwarrelen omlaag in Ilex Forest (binnen het scherm, tot de spin)
     for (i = 0; i < LCC_LEAVES; i++)
     {
+        s32 x, y;
         s = LI_S(i);
-        k = t - LCC_FLASH - i * 5;
-        s->invisible = k < 0 || t >= LCC_SPIN + 30;
-        if (s->invisible)
-            continue;
-        s->x = LCC_X0 * 8 + 10 + ((i * 53) % 150) + Sin((k * 4 + i * 40) & 0xFF, 14) - k / 3;
-        s->y = LCC_Y0 * 8 - 8 + ((k * 3 / 2 + i * 19) % 168);
+        k = t - LCC_SCENE(3) - i * 3;
+        x = LCC_X0 * 8 + 16 + ((i * 53) % 128) + Sin((k * 4 + i * 40) & 0xFF, 12) - k / 3;
+        y = LCC_Y0 * 8 + 8 + ((k * 2 + i * 37) % 128);
+        s->invisible = k < 0 || t >= LCC_SPIN || x < LCC_X0 * 8 + 8 || x > LCC_X0 * 8 + 152;
+        s->x = x;
+        s->y = y;
         LI_Frame(i, LCC_TAG_LEAF, ((t >> 2) + i) % 9, 4);
     }
 
-    // spin naar zwart: één wig per 2 frames
+    // spin naar zwart: 20 wiggen tot de klokslag
     k = t - LCC_SPIN;
     if (k >= 0)
     {
-        n = min(20, k / 2 + 1);
+        n = min(20, k * 20 / (LC_HIT - LCC_SPIN) + 1);
         for (i = 0; i < 360; i++)
             if (sLC->order[i] < n)
                 tilemap[(LCC_Y0 + i / 20) * 32 + LCC_X0 + i % 20] = LCC_BLACK | (13 << 12);
@@ -949,7 +984,7 @@ static bool8 RTCelebi_Update(struct Task *task)
 
     if (LC_Cross(task, t, sLC->t0))
         PlaySE(SE_PC_ON);
-    if (LC_Cross(task, t, LCC_FLASH + LC_BEAT(2) + 8))
+    if (LC_Cross(task, t, LCC_FLASH + 4))
         PlayCry_Normal(SPECIES_CELEBI, 0);
     if (LC_Cross(task, t, LC_HIT))
         PlaySE(SE_M_TELEPORT);

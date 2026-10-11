@@ -60,6 +60,15 @@ BELLKIT = 58
 # grootste piek, areazero_samples.py), velocity lineair -> stem, koor en begeleiding in de verhouding van het origineel
 PAD_UNTIL = 40                            # m5-39: begeleiding uit de knippen, geen strijkers/PSG-bas
 LVL_PAD, LVL_VOX = 1.0, 1.0
+# v11 (Jordi over de 1.0: 'klinkt ingame zacht, als een platenspeler'): de begeleiding op twee sporen met dezelfde
+# noten (coherent, +6 dB, +1 kanaal) en de stem (koor, aria, lead) dubbel zo luid via velocity/volume: zelfde
+# verhoudingen, 6 dB meer niveau. Zie ook de lage plank en de piekbegrenzer in areazero_samples.py.
+# Met de begrenzer bleef de piek op 72/127 (RMS 1708): de begeleiding op drie sporen (het derde op VOL3: samen x1,45)
+# en de stem op twee sporen (koor, aria, lead) met LVL_VOX 1,45: samen x2,9.
+LVL_VOX = 1.45
+LEAD_VOL = 127                            # was 84 (met velocity 100 -> 127: +5,6 dB)
+LEAD2_VOL = 65                            # tweede leadspoor: 127x127 + 65x127 = 2,9 x 84x100
+VOL3 = 114                                # derde begeleidingsspoor
 
 
 def vel(g, lvl):
@@ -187,7 +196,7 @@ def legato(ev):
 
 
 def build():
-    P = {k: [] for k in ('lead', 'lead_lo', 'aria', 'choir', 'sigh', 'str', 'bell', 'bellecho', 'bellrip', 'echo', 'ost', 'bass', 'hat', 'drums')}
+    P = {k: [] for k in ('lead', 'lead2', 'lead_lo', 'aria', 'aria2', 'choir', 'choir2', 'sigh', 'str', 'bell', 'bellecho', 'bellrip', 'bellrip2', 'bellrip3', 'echo', 'ost', 'bass', 'hat', 'drums')}
     bend_lead, bend_sigh = [], []
 
     # bellen
@@ -232,11 +241,13 @@ def build():
         ln = BELL_RIPS[j][2]
         end = min(T(b0) + ln * S + 2, T(b1) - 1)    # afgebroken stuk (m52/m60) of exact aansluitend: 1 tick vóór
         P['bellrip'].append([T(b0), end, 36 + j, vel(bg[j], LVL_PAD * LOUDER.get(b0, 1))])
+    P['bellrip2'] = [n[:] for n in P['bellrip']]     # v11: tweede en derde spoor, dezelfde noten
+    P['bellrip3'] = [n[:] for n in P['bellrip']]
 
     # lead (aria): bend per noot (BENDR 2: 64 stappen = 2 halve tonen) + vibrato
     for bar, pos, ln, n in LEAD_REST:
         t = T(bar, pos)
-        P['lead'].append([t, t + ln * S, p(n), 100])
+        P['lead'].append([t, t + ln * S, p(n), 127])
     ag = [float(g) for g in open(os.path.join(os.path.dirname(os.path.abspath(__file__)),
                                               'areazero_aria_gain.txt')).read().split()]
     for j, (bar, pos, ln) in enumerate(ARIA_PHRASES):
@@ -339,7 +350,12 @@ def build():
     P['bellecho'] = [[s0, min(e0, min([x[0] for x in P['bellecho'] if x[2] == n0 and x[0] > s0], default=e0)), n0, v0]
                      for s0, e0, n0, v0 in P['bellecho']]
     tail['bellrip'] = release_ticks(CHOIR_REL, TPB, BPM) + 2
-    order = ['aria', 'lead', 'lead_lo', 'choir', 'drums', 'bellrip', 'bell', 'bellecho', 'sigh', 'str']
+    for k in ('lead', 'aria', 'choir'):             # v11: stem op twee sporen
+        P[k + '2'] = [n[:] for n in P[k]]
+        tail[k + '2'] = tail[k]
+    tail['bellrip2'] = tail['bellrip3'] = tail['bellrip']
+    order = ['aria', 'aria2', 'lead', 'lead2', 'lead_lo', 'choir', 'choir2', 'drums', 'bellrip', 'bellrip2', 'bellrip3',
+             'bell', 'bellecho', 'sigh', 'str']
     ds = {k: P[k] for k in order}
     kept = allocate(ds, order, tail, drum_len=S * 2, drum_parts=('drums',), max_voices=MAXV)
     for k in order:
@@ -357,12 +373,13 @@ def build():
                (0, mido.Message('control_change', control=21, value=LFOS + 6)),
                (0, mido.Message('control_change', control=1, value=SIGH_MOD))] + \
               [(t, mido.Message('pitchwheel', pitch=max(-8192, min(8191, v)))) for t, v in bend_sigh]
-    TRACKS = [('lead', VOICE, 84, 64, ex_lead), ('lead_lo', VOICE_LO, 84, 64, ex_lead), ('choir', CHOIRKIT, 127, 64, ex_choir), ('aria', ARIAKIT, 127, 64, ex_choir),
+    TRACKS = [('lead', VOICE, LEAD_VOL, 64, ex_lead), ('lead2', VOICE, LEAD2_VOL, 64, ex_lead), ('lead_lo', VOICE_LO, LEAD_VOL, 64, ex_lead), ('choir', CHOIRKIT, 127, 64, ex_choir), ('choir2', CHOIRKIT, 127, 64, ex_choir), ('aria', ARIAKIT, 127, 64, ex_choir), ('aria2', ARIAKIT, 127, 64, ex_choir),
               ('sigh', SIGH, 66, 56, ex_sigh),
-              ('str', STR, 62, 64, ()), ('bell', BELL, 17, 72, ()), ('bellecho', BELL, 17, 56, ()), ('bellrip', BELLKIT, 127, 64, ()), ('echo', ECHO, 30, 44, ()),
+              ('str', STR, 62, 64, ()), ('bell', BELL, 17, 72, ()), ('bellecho', BELL, 17, 56, ()), ('bellrip', BELLKIT, 127, 64, ()), ('bellrip2', BELLKIT, 127, 64, ()), ('bellrip3', BELLKIT, VOL3, 64, ()), ('echo', ECHO, 30, 44, ()),
               ('ost', OST, 34, 80, ()), ('bass', BASS, 62, 64, ()), ('hat', HAT, 26, 70, ()),
               ('drums', DRUMS, 92, 64, ())]                   # m40+ zoals v7 (m24-39: drums-stem in de knip)
     free = [c for c in range(16) if c != 9]
+    TRACKS = [tr for tr in TRACKS if P[tr[0]]]       # v11: lege sporen niet schrijven (mid2agb liet ze al weg)
     for k, prog, vol, pan, ex in TRACKS:
         ch = 9 if prog == DRUMS else free.pop(0)
         song.add(P[k], prog, vol, ch, pan, extra=ex)

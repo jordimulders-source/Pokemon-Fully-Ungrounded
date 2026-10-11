@@ -151,12 +151,30 @@ CALL_ENV = [-107, -105, -47, -37, -37, -37, -35, -34, -33, -34, -39, -40, -43, -
             -30, -26, -27, -30, -28, -30, -31, -32, -33, -31, -34, -32, -30, -33, -33, -32, -32, -33, -31, -31]
 CALL_V = 64                           # CC7 bij het luidste punt (-26 dB)
 WIDE_V = 100                          # pad-spoor in maat 13-20 (brede knipsels)
+# (v9: CALL_V, WIDE_V en de ost-CC's gaan door mv(): MELO_DB luider)
 # v8 strijkerssectie + alles van de stem 'other' in maat 21-65: het origineel zelf op zijn eigen plek, stukken van
 # 2 maten (ruinous_samples.ST_PIECES), om en om op 'str' en 'str2' zodat elk stuk zijn overloop uitspeelt
 ST_PIECES = [(21, 2), (23, 2), (25, 2), (27, 2), (29, 2), (31, 2), (33, 2), (35, 2), (37, 2), (39, 2), (41, 2), (43, 2), (45, 2), (47, 2), (49, 2), (51, 2), (53, 2), (55, 2), (57, 2), (59, 2), (61, 2), (63, 2), (65, 1)]
 ST_PROG = {b: 40 + i for i, (b, _) in enumerate(ST_PIECES)}
 PAD_OWN = {}   # v8: geen eigen padknipsels meer (maat 21-65 = ST_PIECES)
 STR_VOL = 127                          # sectie: niveau t.o.v. pad/drums (gemeten in de mix)
+# v9 (Jordi over de 1.0: 'heel muffled, zacht'; gemeten t.o.v. het origineel: 60-120 Hz +4,5 dB te veel = de
+# lijf-dreun van taiko/dreun, de rest van het spectrum gelijk na de EQ in ruinous_samples.py): de lage plank op de
+# synthetische trommen (ruinous_samples.DRUM_LOW_DB) en alles behalve trommen en bas MELO_DB luider. Strijkers en
+# stem 'other' stonden al op 127/127: een tweede spoor met dezelfde stukken (str/str2 -> strb/str2b) op STR_VOL_B.
+MELO_DB = 4.5
+MELO = 10 ** (MELO_DB / 20)
+DRUM_DB = 1.5                          # trommen (na de lage plank) iets luider: spoorvolume, taiko via velocity
+DRUM = 10 ** (DRUM_DB / 20)
+
+
+def dv(v):
+    return max(1, min(127, round(v * DRUM)))
+STR_VOL_B = round(127 * (MELO - 1))
+
+
+def mv(v):
+    return max(1, min(127, round(v * MELO)))
 BASS_NOTES = {   # maat: stap:lengte:noot:velocity (pyin per 16e op de basstem, maat 5-69; v4)
     5: '0:1:D#2:80 1:1:D#2:87 2:7:E2:99 9:1:F2:80 10:1:E2:82 11:2:D#2:81 14:1:E2:80',
     13: '0:2:F2:80',
@@ -239,13 +257,13 @@ def compose():
             add(P, 'call', t0, 22, 46, p('F5'), 127)
             add(P, 'call', t0, 68, 60, p('F#5'), 127)
             for i, db in enumerate(CALL_ENV):
-                CC['call'].append((t0 + 2 * i * S, 7, max(1, min(127, round(CALL_V * 10 ** ((db + 26) / 20))))))
+                CC['call'].append((t0 + 2 * i * S, 7, max(1, min(127, round(CALL_V * MELO * 10 ** ((db + 26) / 20))))))
         # ------------------------------------------------------------------ ostinato (rustige maten) / pad (grooves)
         if 5 <= b <= 12 or b >= 66:
             add(P, 'ost', t0, 0, 16, 60, 120)
             CC['ost'].append((t0, 'prog', OSTP if b <= 12 else OSTP2))
             if b in (5, 66):            # maat 66-69 liggen in het origineel 12,7 dB onder de grooves (5-12: 7-9 dB)
-                CC['ost'].append((t0, 7, 84 if b == 5 else 50))
+                CC['ost'].append((t0, 7, mv(84 if b == 5 else 50)))
         if b in PAD_OWN:              # het eigen stuk pad van deze maat (A/B met het getransponeerde pad < 0,75)
             add(P, 'pad', t0, 0, 16, 60, 120)
             CC['pad'].append((t0, 'prog', PAD_OWN[b]))
@@ -253,7 +271,7 @@ def compose():
             add(P, 'pad', t0, 0, 16, 60, 120)
             CC['pad'].append((t0, 'prog', WIDE14 if b <= 16 else WIDE18))
             if b == 13:
-                CC['pad'].append((t0, 7, WIDE_V))
+                CC['pad'].append((t0, 7, mv(WIDE_V)))
         elif 21 <= b <= 65:            # v8: het pad zit in de knipsels van de stem 'other' (ST_PIECES)
             pass
         elif 13 <= b <= 64:
@@ -275,6 +293,9 @@ def compose():
                 add(P, trk, t0, 0, 16 * n1 + 1, 60, 127)
                 CC[trk].append((t0, 'prog', ST_PROG[b1]))
                 CC[trk].append((t0, 7, STR_VOL))
+                add(P, trk + 'b', t0, 0, 16 * n1 + 1, 60, 127)      # v9: zelfde stuk op een tweede spoor (coherent)
+                CC[trk + 'b'].append((t0, 'prog', ST_PROG[b1]))
+                CC[trk + 'b'].append((t0, 7, STR_VOL_B))
         # ------------------------------------------------------------------ bas (noot voor noot uit de stem)
         if b in BASS_NOTES:
             for st, ln, n, v in pat4(BASS_NOTES[b]):
@@ -440,16 +461,18 @@ def write_voicegroup():
 
 # ---- bouwen ---------------------------------------------------------------------------------------------------------
 TRACKS = [   # (naam, programma, volume, pan)
-    ('tk', DRUMS, 127, 64), ('bm', DRUMS, 100, 64), ('sn', DRUMS, 84, 70), ('hh', DRUMS, 40, 76),
-    ('fx', DRUMS, 110, 64), ('fx2', DRUMS, 80, 58),
-    ('bass', BASS, 78, 64), ('ost', OSTP, 84, 60), ('pad', PADP, 100, 64), ('lo', LO, 30, 64),   # balans gemeten t.o.v. de drums (stems)
-    ('intro', INTROP, 49, 64),
+    ('tk', DRUMS, 127, 64), ('bm', DRUMS, dv(100), 64), ('sn', DRUMS, dv(84), 70), ('hh', DRUMS, dv(40), 76),
+    ('fx', DRUMS, dv(110), 64), ('fx2', DRUMS, dv(80), 58),
+    ('bass', BASS, 78, 64), ('ost', OSTP, mv(84), 60), ('pad', PADP, mv(100), 64), ('lo', LO, mv(30), 64),   # balans gemeten t.o.v. de drums (stems)
+    ('intro', INTROP, mv(55), 64),   # v9: 49 -> 55 (de opening zat op RMS ±600-1300: ruisvloer van de uitgang)
     ('str', 40, 100, 64),
     ('str2', 41, 100, 64),
+    ('strb', 40, 100, 64),
+    ('str2b', 41, 100, 64),
     ('call', CALL, 1, 58),   # even luid als het pad (gemeten in de stem 'other')   # het origineel ligt in maat 1-4 15,5 dB onder de grooves (gemeten)
 ]
 PSG = set()
-ORDER = ['intro', 'tk', 'bm', 'fx', 'bass', 'call', 'str', 'str2', 'lo', 'ost', 'pad', 'fx2', 'sn', 'hh']
+ORDER = ['intro', 'tk', 'bm', 'fx', 'bass', 'call', 'str', 'str2', 'strb', 'str2b', 'lo', 'ost', 'pad', 'fx2', 'sn', 'hh']
 DRUMPARTS = ('tk', 'bm', 'sn', 'hh', 'fx', 'fx2')
 # hoe lang een slag mag doorklinken (16en); de volgende slag in dezelfde partij kapt eerder
 RING = {TAIKO: 4, BOOM: 2, KA: 1, IMPACT: 16, CRASH: 6, HAT: 1, SNARE: 1, TAIKO_LO: 3, KICK: 2}
@@ -536,6 +559,7 @@ def build(render_dir=None):
     for k in proxy:
         idx = {e[4] for e in kept[k]}
         kept[k] = [e for i, e in enumerate(parts.get(k, [])) if i in idx]
+    parts['tk'] = [[a, b, n, dv(v)] for a, b, n, v in parts.get('tk', [])]   # v9: taiko staat al op volume 127
     for k in ORDER:
         n = len(parts.get(k, []))
         weg = [e for e in parts.get(k, []) if e not in kept[k]]

@@ -189,7 +189,7 @@ RATES = {}    # afwijkende samplerate per knipsel (Hz)
 CUTS['ruinous_intro'] = (('other', 'piano', 'vocals', 'bass', 'drums'), at(1, 0), at(5, 0), 60, None, None)
 #  lo58: het lage instrument (stem 'piano') in maat 5-8 als één frase; inhoud < 2 kHz, dus 8 kHz
 CUTS['ruinous_lo58'] = ('piano', at(5, 0), at(9, 0), 60, None, None)
-RATES['ruinous_lo58'] = 8000
+# v9 (Jordi over de 1.0: 'klinkt ingame heel muffled, zacht'): 8 kHz -> 11025 Hz (de afgesproken bovengrens)
 #  ostbar: het ostinato met de diepe strijker-bourdon B2 ('bijna keelzang', Jordi) - hele maat 8 van de stem 'other'
 CUTS['ruinous_ostbar'] = ('other', at(8, 0), at(9, 0) + 0.08, 60, (55, 5000), None)   # v6: tot 5 kHz (was 2,6: 'muffled')
 #  ostbar2: maat 66-69 hebben die bourdon niet: hele maat 67
@@ -233,9 +233,22 @@ ST_PIECES = [(21, 2), (23, 2), (25, 2), (27, 2), (29, 2), (31, 2), (33, 2), (35,
 ST_NAMES = ['ruinous_st%d' % _b for _b, _n in ST_PIECES]
 ST_XF = 0.06
 for _b, _n in ST_PIECES:
-    CUTS['ruinous_st%d' % _b] = ('other', at(_b, 0), at(_b + _n, 0) + ST_XF, 60, (160, 4000), None)
-    RATES['ruinous_st%d' % _b] = 8000
+    CUTS['ruinous_st%d' % _b] = ('other', at(_b, 0), at(_b + _n, 0) + ST_XF, 60, (160, 5000), None)   # v9: 4 -> 5 kHz
+#  v9: de stukken op 11025 Hz (waren 8000: alles boven 3,6 kHz viel weg)
 SHELF = {}   # dB (v6: strijkerknipsel)
+# v9 (Jordi over de 1.0: 'de ruin theme klinkt ingame heeel muffled, zacht, alsof hij niet in de game hoort'): gemeten
+# in de game 0,4% > 3 kHz en 4,6% in 1-3 kHz (origineel 1,7% / 7,3%, mus_vs_wild 1,3% / 14,2%), zwaartepunt 254 Hz.
+# De weergaveketen (11 kHz-sample -> mixer 21 kHz -> GBA-uitgang) dempt het hoog (gemeten bij Area Zero: -2 dB bij
+# 2 kHz tot -6,6 bij 7 kHz); alle knippen uit het origineel krijgen het omgekeerde plus een hoge plank (Hz, dB).
+# De synthetische drums blijven zoals ze zijn.
+EQ = [(0, 0.0), (500, 0.0), (1000, 1.5), (1500, 3.2), (2500, 5.5), (3500, 7.5), (4500, 9.0), (5500, 9.5)]
+
+
+def eq(x, sr=SR):
+    X = np.fft.rfft(x); fr = np.fft.rfftfreq(len(x), 1 / sr)
+    X *= 10 ** (np.interp(fr, [p[0] for p in EQ], [p[1] for p in EQ]) / 20)
+    return np.fft.irfft(X, len(x))
+
 WHOLE = tuple(ST_NAMES) + ('ruinous_wide14', 'ruinous_wide18', 'ruinous_intro', 'ruinous_lo58', 'ruinous_ostbar', 'ruinous_ostbar2') + tuple(
     'ruinous_pad_m%d' % _b for _b in PAD_OWN)   # niet hertonen
 
@@ -244,7 +257,7 @@ def make_held(name):
     """aangehouden noot uit een stem: gestemd, harmonisch masker (deeltonen +-35 ct, de rest -12 dB: lekkage van
     andere partijen weg, strijkruis blijft zwak), aanzet 0,12 s + ping-pong-loop van het aangehouden deel."""
     stem, t0, t1, key, bnd, _ = CUTS[name]
-    x = band(read_stem(stem, t0 - 0.005, t1), *bnd)
+    x = eq(band(read_stem(stem, t0 - 0.005, t1), *bnd))
     x, cents = tune(x - np.mean(x), key)
     nom = 440.0 * 2 ** ((key - 69) / 12)
     nf, hop = 4096, 256
@@ -282,7 +295,7 @@ def make_cut(name):
     x = sum(read_stem(s, t0, t1) for s in stems)
     if bnd:
         x = band(x, *bnd)
-    x = x - np.mean(x)
+    x = eq(x - np.mean(x))
     if name in ST_NAMES:            # lineaire overgang naar het volgende stuk (zelfde opname)
         nf = int(ST_XF * SR)
         if name != ST_NAMES[0]:
@@ -305,7 +318,16 @@ def make_cut(name):
     return norm(x), loop, cents
 
 
-ST_NORM = 0.97 / 0.534   # gezamenlijke schaal van alle ST-knipsels (piek van de luidste, gemeten)
+ST_NORM = 0.97 / 0.534   # gezamenlijke schaal van alle ST-knipsels (piek van de luidste, gemeten); v9: st_norm()
+
+
+def st_norm():
+    """v9: gezamenlijke schaal van alle ST-knipsels uitgerekend (de EQ verandert de pieken; vast getal gaf clippen)."""
+    top = 0.0
+    for n in ST_NAMES:
+        x, _, _ = make_cut(n)
+        top = max(top, float(np.abs(resample(x, SR, RATES.get(n, RATE))).max()))
+    return 0.97 / top
 
 
 SAMPLES = {   # naam: (functie, grondtoon) - synthetische drums (ongewijzigd sinds v1)
@@ -314,8 +336,22 @@ SAMPLES = {   # naam: (functie, grondtoon) - synthetische drums (ongewijzigd sin
 }
 
 
+# v9: lage plank op de synthetische trommen (taiko, dreun, inslag): -DRUM_LOW_DB onder 100 Hz, glijdend tot 200 Hz,
+# zonder opnieuw te normaliseren (de aanslag/tik blijft even luid, het lijf zakt). Gemeten in de game t.o.v. het
+# origineel: 60-120 Hz +4,5 dB te veel.
+DRUM_LOW_DB = 4.0
+DRUM_LOW = ('ruinous_taiko', 'ruinous_boom', 'ruinous_impact')
+
+
+def low_shelf(a, rate, db):
+    X = np.fft.rfft(a); fr = np.fft.rfftfreq(len(a), 1 / rate)
+    X *= 10 ** (-db * np.clip((200 - fr) / 100, 0, 1) / 20)
+    return np.fft.irfft(X, len(a))
+
+
 def main(only=None):
-    global RNG
+    global RNG, ST_NORM
+    ST_NORM = None
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
     total = 0
@@ -327,6 +363,8 @@ def main(only=None):
             RNG = np.random.default_rng(683 + sum(name.encode()))     # vaste seed per sample: los of samen = identiek
             fn, key = SAMPLES[name]
             a, lp, info = norm(resample(fn(), SR, RATE)), None, ''
+            if name in DRUM_LOW:
+                a = low_shelf(a, RATE, DRUM_LOW_DB)
             rate = RATE
         else:
             src = CUTS[name][0]
@@ -337,6 +375,8 @@ def main(only=None):
             key = CUTS[name][3]
             rate = RATES.get(name, RATE)
             a = resample(x, SR, rate)
+            if name in ST_NAMES and ST_NORM is None:
+                ST_NORM = st_norm()
             a = np.clip(a * ST_NORM, -1, 1) if name in ST_NAMES else norm(a)
             lp = (int(lpx[0] * rate / SR), int(lpx[1] * rate / SR)) if lpx else None
             info = ', gestemd %+.0f ct%s' % (-cents, ', loop %.2f-%.2f s' % (lp[0] / rate, lp[1] / rate) if lp else '')

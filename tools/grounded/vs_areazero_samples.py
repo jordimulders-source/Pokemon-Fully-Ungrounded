@@ -44,6 +44,13 @@ def _frac(d):
 # weergaveketen (11025 Hz-sample -> mixer 21 kHz -> uitgang) dempt het hoog; omgekeerd als voorversterking (Hz, dB),
 # nagemeten in de opname (zie MUZIEK.md)
 EQ = [(0, 0.0), (1000, 0.0), (2000, 2.0), (3000, 4.0), (4000, 6.0), (5000, 8.0), (5600, 8.0)]   # v1b: 2-8 kHz was 1,3 dB te weinig
+# v2 (Jordi over de 1.0: 'de area zero themes klinken ingame heel muffled en zacht, alsof ze niet in de game horen'):
+# gemeten in de game RMS 2005 (mus_vs_wild 3339) en 72% van de energie onder 150 Hz (vs_wild 41%): de sub-bas van het
+# origineel draagt het niveau, maar op de GBA-speaker hoor je die nauwelijks. Daarom een lage plank (-LOW_DB onder
+# 90 Hz, glijdend tot 180 Hz) en een transparante piekbegrenzer op de hele mix (LIMIT_DB onder de hoogste piek;
+# gemeten: >1 dB reductie in 0,4% van de tijd), zodat dezelfde piek meer niveau draagt; plus een derde spoor.
+LOW_DB = 3.0
+LIMIT_DB = 2.0
 
 
 def _mix():
@@ -57,13 +64,41 @@ def _mix():
     return x, sr
 
 
+def limit_gain(x, sr, db, look=0.005, rel=0.08, hop=32):
+    """v2: piekbegrenzer met vooruitkijken (alleen numpy): versterking per sample zodat |x| <= hoogste piek - db dB;
+    de reductie begint `look` s vóór de piek en herstelt in `rel` s."""
+    ceil = np.abs(x).max() * 10 ** (-db / 20)
+    nb = len(x) // hop + 1
+    a = np.zeros(nb * hop); a[:len(x)] = np.abs(x)
+    gb = np.minimum(1.0, ceil / np.maximum(a.reshape(nb, hop).max(1), 1e-9))
+    n = max(1, int(look * sr / hop))
+    pad = np.concatenate([np.ones(n), gb, np.ones(n)])
+    gb = np.lib.stride_tricks.sliding_window_view(pad, 2 * n + 1).min(1)
+    ar = np.exp(-hop / (rel * sr))
+    out = np.empty(nb); v = 1.0
+    for i in range(nb):
+        v = min(gb[i], ar * v + (1 - ar))
+        out[i] = v
+    out = np.convolve(np.concatenate([np.full(n, out[0]), out, np.full(n, out[-1])]), np.ones(n) / n, 'same')[n:-n]
+    return np.interp(np.arange(len(x)) / hop, np.arange(nb), out)
+
+
+def _master(x, sr):
+    """v2: EQ (weergaveketen + lage plank) op de hele mix, daarna de piekbegrenzer."""
+    X = np.fft.rfft(x)
+    fr = np.fft.rfftfreq(len(x), 1 / sr)
+    X *= 10 ** (np.interp(fr, [p[0] for p in EQ], [p[1] for p in EQ]) / 20)
+    X *= 10 ** (-LOW_DB * np.clip((180 - fr) / 90, 0, 1) / 20)
+    x = np.fft.irfft(X, len(x))
+    return x * limit_gain(x, sr, LIMIT_DB)
+
+
 def _render(x, sr, t0, t1, k):
-    """bron-tijd t0..t1 (s), gelezen met factor k, naar RATE; anti-alias + EQ in het frequentiedomein."""
+    """bron-tijd t0..t1 (s), gelezen met factor k, naar RATE; anti-alias (de EQ zit sinds v2 in _master)."""
     a, b = int(t0 * sr) - 64, int(t1 * sr) + 64
     seg = x[max(0, a):b]
     X = np.fft.rfft(seg)
     fr = np.fft.rfftfreq(len(seg), 1 / sr)
-    X *= 10 ** (np.interp(fr, [p[0] for p in EQ], [p[1] for p in EQ]) / 20)
     X[fr > 0.45 * RATE] = 0
     seg = np.fft.irfft(X, len(seg))
     n = int(round((t1 - t0) / k * RATE))
@@ -73,6 +108,7 @@ def _render(x, sr, t0, t1, k):
 
 def main():
     x, sr = _mix()
+    x = _master(x, sr)
     L = 6639                                              # frames per lus (6638,97 gemeten; rest 0,03 sample)
     K = P * FPS / L                                       # bron-s per lied-s
     t9 = BAR0 + 8 * BAR                                   # maat 9 (doorgang 1)

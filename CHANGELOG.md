@@ -18569,3 +18569,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 
 ### [v0.9.289] - Optiemenu: alle nieuwe thema's kiesbaar
 - WILD MUSIC (93 keuzes) en TRAINER MUSIC (90 keuzes) bevatten nu alle eigen gevechtsthema's: de regio- en trainer-remixen, de legendary-thema's, de gymleiders, de personages (Birch, Zinnia, Wally, Dave, Keccles, Mitch, SickBlik, Burglar, Magikarp) en de Pokémon Tower. Daarnaast de nieuwe kaartmuziek: Area Zero, Ashfrost, Yoshi's Island, Mario Kart Super Circuit en Wario Land 4. Namen max. 12 tekens.
+
+### [v0.9.290] - Muziekfan in Oldale + Mario-thema's verborgen
+- **Oldale Town (16, 13):** een jongen die op de maat in zijn eigen hoofd staat te bobben, en je, de vierde wand doorbrekend, naar START > OPTION stuurt om de gevechtsmuziek te kiezen ("The developers spent weeks on those tracks. … They can see you not pressing it."). Hij hint naar de vergrendelde nummers ("?????").
+- **Optiemenu:** alle thema's uit de Mario-wereld (Yoshi's Island, Wario Land 4, Mario Kart Super Circuit, Boo, Sunset Wilds) zijn verborgen tot je op Yoshi's Island bent aangekomen (`FLAG_YI_ARRIVED`); bij het bladeren worden ze overgeslagen.

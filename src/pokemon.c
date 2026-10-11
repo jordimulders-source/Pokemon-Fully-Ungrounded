@@ -13,6 +13,7 @@
 #include "battle_tower.h"
 #include "battle_z_move.h"
 #include "data.h"
+#include "stadium.h" // Project Grounded: gStadiumBattle (trainerklasse-remixes)
 #include "daycare.h"
 #include "dexnav.h"
 #include "event_data.h"
@@ -6268,6 +6269,67 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     }
     }
 
+// Project Grounded: trainerklasse-remixes van het Hoenn-trainerthema (tools/grounded/trclass_theme.py). Alleen voor
+// trainers die anders de standaard trainermuziek krijgen (zie GetBattleBGM); MUS_NONE = geen remix voor deze klasse.
+static u16 GetTrainerClassRemixBGM(u16 trainerId)
+{
+    if (trainerId == TRAINER_NONE || trainerId >= TRAINERS_COUNT)
+        return MUS_NONE;
+    switch (GetTrainerClassFromId(trainerId))
+    {
+    case TRAINER_CLASS_SWIMMER_M:
+    case TRAINER_CLASS_SWIMMER_F:
+    case TRAINER_CLASS_SAILOR:
+    case TRAINER_CLASS_FISHERMAN:
+    case TRAINER_CLASS_TUBER_M:
+    case TRAINER_CLASS_TUBER_F:
+        return MUS_GROUNDED_VS_TRAINER_SEA;
+    case TRAINER_CLASS_TRIATHLETE: // alleen de zwemmende; fietsers en hardlopers houden het Hoenn-thema
+        if (GetTrainerPicFromId(trainerId) == TRAINER_PIC_SWIMMING_TRIATHLETE_M
+         || GetTrainerPicFromId(trainerId) == TRAINER_PIC_SWIMMING_TRIATHLETE_F)
+            return MUS_GROUNDED_VS_TRAINER_SEA;
+        return MUS_NONE;
+    case TRAINER_CLASS_HIKER:
+    case TRAINER_CLASS_BLACK_BELT:
+    case TRAINER_CLASS_BATTLE_GIRL:
+    case TRAINER_CLASS_EXPERT:
+        return MUS_GROUNDED_VS_TRAINER_MOUNTAIN;
+    case TRAINER_CLASS_BUG_CATCHER:
+    case TRAINER_CLASS_BUG_MANIAC:
+    case TRAINER_CLASS_CAMPER:
+    case TRAINER_CLASS_PICNICKER:
+    case TRAINER_CLASS_PKMN_RANGER:
+    case TRAINER_CLASS_PKMN_BREEDER:
+        return MUS_GROUNDED_VS_TRAINER_NATURE;
+    case TRAINER_CLASS_PSYCHIC:
+    case TRAINER_CLASS_HEX_MANIAC:
+    case TRAINER_CLASS_RUIN_MANIAC:
+        return MUS_GROUNDED_VS_TRAINER_MYSTIC;
+    case TRAINER_CLASS_BEAUTY:
+    case TRAINER_CLASS_LADY:
+    case TRAINER_CLASS_RICH_BOY:
+    case TRAINER_CLASS_GENTLEMAN:
+    case TRAINER_CLASS_POKEFAN:
+        return MUS_GROUNDED_VS_TRAINER_CHIC;
+    case TRAINER_CLASS_GUITARIST:
+    case TRAINER_CLASS_KINDLER:
+    case TRAINER_CLASS_NINJA_BOY:
+        return MUS_GROUNDED_VS_TRAINER_ROCK;
+    case TRAINER_CLASS_COOLTRAINER:
+    case TRAINER_CLASS_COOLTRAINER_2:
+    case TRAINER_CLASS_DRAGON_TAMER:
+    case TRAINER_CLASS_BIRD_KEEPER:
+        return MUS_GROUNDED_VS_TRAINER_ELITE;
+    case TRAINER_CLASS_YOUNGSTER:
+    case TRAINER_CLASS_LASS:
+    case TRAINER_CLASS_SCHOOL_KID:
+    case TRAINER_CLASS_TWINS:
+        return MUS_GROUNDED_VS_TRAINER_KIDS;
+    default:
+        return MUS_NONE;
+    }
+}
+
 // Project Grounded: alleen Magikarp (wild of een trainer met een team van alleen Magikarp) -> Battle! Magikarp
 static bool32 IsMagikarpOnlyTrainer(u16 trainerId)
 {
@@ -6448,6 +6510,21 @@ u16 GetBattleBGM(void)
      && (!(gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS) || IsMagikarpOnlyTrainer(TRAINER_BATTLE_PARAM.opponentB))
      && TRAINER_BATTLE_PARAM.opponentA != TRAINER_NONE)
         song = MUS_GROUNDED_VS_MAGIKARP; // Project Grounded: een team van alleen Magikarp (Gyarados niet)
+    // Project Grounded: trainerklasse-remix (zee, berg, natuur, ...) i.p.v. de standaard trainermuziek. Elk eigen thema
+    // hierboven (gymleiders, Elite Four, rivalen, teams, Tower, Magikarp, ...) gaat voor; niet in de Frontier, de
+    // Trainer Hill, het Battle Stadium, geheime bases of e-Reader-gevechten, en niet als de speler zelf een thema koos.
+    if (song == GetChosenTrainerBattleMusic()
+     && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SECRET_BASE
+                              | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_RECORDED))
+     && !gStadiumBattle
+     && TrainerClassRemixAllowed())
+    {
+        u16 remix = GetTrainerClassRemixBGM(TRAINER_BATTLE_PARAM.opponentA);
+        if (remix == MUS_NONE && (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS))
+            remix = GetTrainerClassRemixBGM(TRAINER_BATTLE_PARAM.opponentB);
+        if (remix != MUS_NONE)
+            song = remix;
+    }
     return song;
     }
     else

@@ -717,6 +717,22 @@ gSongTable::
 
 	song mus_grounded_wl4_fiery_cavern, MUSIC_PLAYER_BGM, 0
 
+	song mus_grounded_vs_trainer_sea, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_mountain, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_nature, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_mystic, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_chic, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_rock, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_elite, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_kids, MUSIC_PLAYER_BGM, 0
+
 	.align 2
 dummy_song_header:
 	.byte 0, 0, 0, 0

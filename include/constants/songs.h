@@ -628,6 +628,14 @@
 #define MUS_GROUNDED_WL4_CRESCENT_MOON_VILLAGE 693 // Project Grounded: Wario Land 4, Crescent Moon Village, 1-op-1 uit wl4 (song 667, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_WL4_ARABIAN_NIGHT 694 // Project Grounded: Wario Land 4, Arabian Night, 1-op-1 uit wl4 (song 668, tools/grounded/mp2k_rip.py)
 #define MUS_GROUNDED_WL4_FIERY_CAVERN 695 // Project Grounded: Wario Land 4, Fiery Cavern, 1-op-1 uit wl4 (song 670, tools/grounded/mp2k_rip.py)
+#define MUS_GROUNDED_VS_TRAINER_SEA 696 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: calypso (zee: Swimmer, Triathlete zwemmend, Sailor, Fisherman, Tuber) (tools/grounded/trclass_theme.py)
+#define MUS_GROUNDED_VS_TRAINER_MOUNTAIN 697 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: taiko en gongs (berg: Hiker, Black Belt, Battle Girl, Expert) (tools/grounded/trclass_theme.py)
+#define MUS_GROUNDED_VS_TRAINER_NATURE 698 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: folk met fluiten (natuur: Bug Catcher, Bug Maniac, Camper, Picnicker, Ranger, Breeder) (tools/grounded/trclass_theme.py)
+#define MUS_GROUNDED_VS_TRAINER_MYSTIC 699 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: zwevend en spookachtig (Psychic, Hex Maniac, Ruin Maniac) (tools/grounded/trclass_theme.py)
+#define MUS_GROUNDED_VS_TRAINER_CHIC 700 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: jazz-lounge swing (Beauty, Lady, Rich Boy, Gentleman, Pokefan) (tools/grounded/trclass_theme.py)
+#define MUS_GROUNDED_VS_TRAINER_ROCK 701 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: snelle e-gitaarrock (Guitarist, Kindler, Ninja Boy) (tools/grounded/trclass_theme.py)
+#define MUS_GROUNDED_VS_TRAINER_ELITE 702 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: episch koper (Cooltrainer, Dragon Tamer, Bird Keeper) (tools/grounded/trclass_theme.py)
+#define MUS_GROUNDED_VS_TRAINER_KIDS 703 // Project Grounded: trainerklasse-remix van MUS_VS_TRAINER: speels en stuiterend (Youngster, Lass, School Kid, Twins) (tools/grounded/trclass_theme.py)
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

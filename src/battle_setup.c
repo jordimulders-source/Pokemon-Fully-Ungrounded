@@ -1290,6 +1290,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
     u32 trainerId = SanitizeTrainerId(TRAINER_BATTLE_PARAM.opponentA);
     enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
 
+    // Project Grounded: de rivaal (May/Brendan) krijgt een eigen intro die per gevecht escaleert (i.p.v. de mugshot)
+    if (RivalIntro_IsRival(trainerId))
+        return B_TRANSITION_RIVAL_INTRO;
+
     // Project Grounded: Birch krijgt zijn eigen (poep-)transitie i.p.v. de mugshot
     if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER || trainerId == TRAINER_BIRCH_RESORT)
         return B_TRANSITION_BIRCH;
@@ -1399,6 +1403,11 @@ enum BattleTransition GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_AQUA_LEADER
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
+
+    // Project Grounded: lichte intro per trainerklasse (gewone trainers; wie hierboven een eigen transitie of mugshot
+    // heeft, is al weg). Gaat vóór de route-transitie: de klasse zegt meer over het gevecht dan de plek.
+    if (!gStadiumBattle && ClassIntro_HasIntro(trainerClass))
+        return B_TRANSITION_CLASS_INTRO;
 
     // Project Grounded: route-transitie voor de plek (zee, strand, onder water, sneeuw, ...)
     if (GetGroundedRouteTransition() >= 0)

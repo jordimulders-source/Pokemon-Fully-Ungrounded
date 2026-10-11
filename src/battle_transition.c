@@ -27,6 +27,20 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/rgb.h"
+#include "starter_choose.h"
+#include "constants/layouts.h"
+#include "constants/region_map_sections.h"
+#include "battle_anim.h"
+#include "item_icon.h"
+#include "menu.h"
+#include "pokedex.h"
+#include "string_util.h"
+#include "text.h"
+#include "trainer_pokemon_sprites.h"
+#include "window.h"
+#include "fieldmap.h"
+#include "constants/battle_anim.h"
+#include "constants/items.h"
 
 #define PALTAG_UNUSED_MUGSHOT 0x100A
 
@@ -221,6 +235,8 @@ static void Task_LegendEternatus(u8);
 static void Task_LegendMarshadow(u8);
 static void Task_LegendTerapagos(u8);
 static void Task_LegendPecharunt(u8);
+static void Task_RivalIntro(u8); // Project Grounded (src/data/rival_intros.h)
+static void Task_ClassIntro(u8); // Project Grounded (src/data/class_intros.h)
 static void Task_KyogreMural(u8); // Project Grounded
 static void Task_GroudonMural(u8); // Project Grounded
 static void Task_Ogerpon(u8); // Project Grounded
@@ -763,6 +779,8 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_MARSHADOW] = Task_LegendMarshadow,
     [B_TRANSITION_TERAPAGOS] = Task_LegendTerapagos,
     [B_TRANSITION_PECHARUNT] = Task_LegendPecharunt,
+    [B_TRANSITION_RIVAL_INTRO] = Task_RivalIntro, // Project Grounded (src/data/rival_intros.h)
+    [B_TRANSITION_CLASS_INTRO] = Task_ClassIntro, // Project Grounded (src/data/class_intros.h)
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -10511,3 +10529,6 @@ static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
 // Project Grounded: goedkope legendary-intro's (Calyrex, Celebi, meren-trio, Meloetta, ...)
 #include "data/legend_intros_cheap2.h"
 #include "data/legend_intros_cheap1.h" // Project Grounded: goedkope legendary-intro's (Swords, UB's, paradoxen, Eternatus, Marshadow, Terapagos, Pecharunt)
+// Project Grounded: trainerklasse-intro's (met de gedeelde runner) en de rivaal-intro's
+#include "data/class_intros.h"
+#include "data/rival_intros.h"

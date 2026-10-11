@@ -788,6 +788,7 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
     { COMPOUND_STRING("Commander Boo"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_YI_COMMANDER_BOO, TRAINER_NONE) },
     { COMPOUND_STRING("Wario"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_YI_WARIO, TRAINER_NONE) },
     { COMPOUND_STRING("Agatha (Poke Tower)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_TOWER_AGATHA, TRAINER_NONE) },
+    { COMPOUND_STRING("Rival post-game"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_RIVAL_POSTGAME_TREECKO, TRAINER_NONE) },
     { COMPOUND_STRING("Class: Sea (Swimmer)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_DECLAN, TRAINER_NONE) },
     { COMPOUND_STRING("Class: Mountain (Hiker)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_SAWYER_1, TRAINER_NONE) },
     { COMPOUND_STRING("Class: Nature (Bug Catcher)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_DAVIS, TRAINER_NONE) },

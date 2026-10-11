@@ -18548,3 +18548,12 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Alleen als de speler HOENN of ROTATE kiest; alle eigen thema's gaan voor. Niet in de Frontier, Trainer Hill, het Stadium of geheime bases.
 - ±48 KB (2 eigen samples, gecomprimeerd). Generator: `tools/grounded/trclass_theme.py`.
 - Debug Battle test: een "Class: …"-gevecht per remix.
+
+### [v0.9.287] - Rivaal na de Hall of Fame: Pacifidlog, Battle Frontier en pensioen in Paradiso
+- **Gevecht 7, Pacifidlog** (na de Hall of Fame): Brendan/May staat op (18, 14), lv 86 (ace 88). "Seven losses. That's a whole week. You took a week from me."
+- **Gevecht 8, Battle Frontier** (voor de Battle Tower): lv 92 (ace 94), met o.a. Life Orb, Choice Specs, Swords Dance, Boomburst en Stealth Rock. Na de winst verhuist de rivaal naar Paradiso ("one suitcase and a lifetime of regret").
+- **Paradiso Resort:** de rivaal heeft het Guinness Book of World Records gehaald voor het vroegste pensioen, op 13 jaar ("The previous record holder was a SLAKOTH. It hasn't moved since."). Elke dag één rematch (`FLAG_DAILY_REMATCH_RIVAL`, alleen gezet bij winst).
+- **Teams:** de Route 136-teams, volgroeid; zes varianten (geslacht × starter) in `src/data/rival_postgame.party`.
+- **Trainer-id's waren op:** drie ongebruikte vanilla-id's zijn omgedoopt tot `TRAINER_RIVAL_POSTGAME_*` (Wallace als oud-kampioen, Red, Leaf). `src/rival_postgame.c` kiest het juiste team op geslacht en fase.
+- **Flags:** `FLAG_GROUNDED(1760–1762)`. Het oude Paradiso-flag hoort nu alleen bij Dave.
+- Debug Battle test: "Rival post-game".

@@ -749,6 +749,34 @@ gSongTable::
 
 	song mus_grounded_vs_wild_route119, MUSIC_PLAYER_BGM, 0
 
+	song mus_grounded_night_littleroot, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_oldale, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_petalburg, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_rustboro, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_dewford, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_slateport, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_verdanturf, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_fallarbor, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_fortree, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_lilycove, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_sootopolis, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_ever_grande, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_ashfrost, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_celadon, MUSIC_PLAYER_BGM, 0
+
 	.align 2
 dummy_song_header:
 	.byte 0, 0, 0, 0

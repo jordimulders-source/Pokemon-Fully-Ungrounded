@@ -648,6 +648,20 @@
 #define MUS_GROUNDED_VS_WILD_METEOR 709 // Project Grounded: Hoenn-wildthema, Meteor Falls-remix (avontuurlijk, koper; tools/grounded/regio_theme2.py)
 #define MUS_GROUNDED_VS_WILD_FIERY  710 // Project Grounded: Hoenn-wildthema, Fiery Path-remix (vurige grot; tools/grounded/regio_theme2.py)
 #define MUS_GROUNDED_VS_WILD_ROUTE119 711 // Project Grounded: wildthema op de landroutes vanaf Route 119, groots/avontuurlijk, melodieën uit Route 119 (tools/grounded/route119_battle_theme.py); 704-710 zijn voor de andere v1.0.x-remixen
+#define MUS_GROUNDED_NIGHT_LITTLEROOT 712 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_OLDALE 713 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_PETALBURG 714 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_RUSTBORO 715 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_DEWFORD 716 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_SLATEPORT 717 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_VERDANTURF 718 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_FALLARBOR 719 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_FORTREE 720 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_LILYCOVE 721 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_SOOTOPOLIS 722 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_EVER_GRANDE 723 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_ASHFROST 724 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
+#define MUS_GROUNDED_NIGHT_CELADON 725 // Project Grounded: nachtversie van een stadsthema (tools/grounded/night_towns.py)
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

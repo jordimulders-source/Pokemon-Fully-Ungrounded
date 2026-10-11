@@ -22,6 +22,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pok�
 - **Battle Stadium-pool (Jordi):** alleen echt iconische personages komen in de toernooipool (met hun sterkste team): iets bijzonders zoals een eigen sprite, een eigen verhaal/quest of een gevecht dat je onthoudt (bijv. Colress, Zinnia, Mimi, Keccles, Grimsby). Geen gewone NPC's of routetrainers met alleen een naam en een standaardsprite (Jordi, 6 okt: "geen nono's en NPC's").
 - **Elemental monkeys** (Pansage/Pansear/Panpour-lijnen) mogen sinds 9 okt op routes waar ze passen (Jordi).
 - **National Dex** is vanaf het begin beschikbaar. **Alle Pokémon zijn te krijgen** (Jordi, 9 okt): geen versie-exclusieve keuzes waarbij een soort voorgoed verdwijnt (Glastrier én Spectrier).
+- **Ruimte is na de 1.0 geen hoofdzaak meer** (Jordi 11 okt: "veel content hoeft en kan er ook niet meer bij, maps, trainers etc"): kies bij klank/beeld voor kwaliteit; de grens hieronder blijft wel gelden.
 - **ROM-ruimte bij de 1.0 (Jordi, 10 okt):** doel ≥ 512 KB vrij, nooit minder dan 256 KB (na de 1.0 komen er alleen nog moves/abilities bij, en eventueel extra shinies). Meld bij elke grote toevoeging de resterende ruimte zodra we onder 1 MB komen. Meten: `grep "__rom_end = " pokeemerald.map`, vrij = 0x0A000000 − dat.
 - Merk je een nieuw designprincipe op, stel het eerst aan Jordi voor en voeg het pas na bevestiging toe aan dit bestand.
 

@@ -67,11 +67,67 @@ def _read(src, t0, t1, dc=441):
 EQ = [(0, 0.0), (1000, 0.0), (2000, 2.0), (3000, 3.5), (4000, 5.4), (5000, 6.6), (6000, 7.6), (7000, 8.6), (8000, 8.6)]
 
 
+# v11 (Jordi over de 1.0: 'klinkt ingame zacht, alsof het van een platenspeler is opgenomen; niet alsof het in de game
+# hoort'): gemeten RMS 988 (mus_vs_wild 3339, route119 2739), piek 49/127, 63% van de energie onder 150 Hz (vs_wild
+# 41%). Drie dingen, de noten en de verhoudingen blijven gelijk:
+#  - lage plank: -LOW_DB onder 90 Hz (glijdend tot 180 Hz) in alle knippen (de sub draagt op de GBA-speaker weinig);
+#  - piekbegrenzer op de hele mix (som van alle stems = de sidechain), LIMIT_DB onder de hoogste piek, dezelfde
+#    versterkingscurve op elke knip op zijn eigen tijd (dus de balans stem/begeleiding blijft die van het origineel;
+#    gemeten: >1 dB reductie in ±1,6% van de tijd);
+#  - in areazero_theme.py een tweede begeleidingsspoor en de stem dubbel zo luid (velocity had nog ruimte).
+LOW_DB = 3.0
+LIMIT_DB = 3.0
+
+
+def _eq_gain(fr):
+    return 10 ** ((np.interp(fr, [p[0] for p in EQ], [p[1] for p in EQ]) - LOW_DB * np.clip((180 - fr) / 90, 0, 1)) / 20)
+
+
+def limit_gain(x, sr, db, look=0.005, rel=0.08, hop=32):
+    """piekbegrenzer met vooruitkijken (alleen numpy): versterking per sample zodat |x| <= hoogste piek - db dB;
+    de reductie begint `look` s vóór de piek en herstelt in `rel` s."""
+    ceil = np.abs(x).max() * 10 ** (-db / 20)
+    nb = len(x) // hop + 1
+    a = np.zeros(nb * hop); a[:len(x)] = np.abs(x)
+    gb = np.minimum(1.0, ceil / np.maximum(a.reshape(nb, hop).max(1), 1e-9))
+    n = max(1, int(look * sr / hop))
+    pad = np.concatenate([np.ones(n), gb, np.ones(n)])
+    gb = np.lib.stride_tricks.sliding_window_view(pad, 2 * n + 1).min(1)
+    ar = np.exp(-hop / (rel * sr))
+    out = np.empty(nb); v = 1.0
+    for i in range(nb):
+        v = min(gb[i], ar * v + (1 - ar))
+        out[i] = v
+    out = np.convolve(np.concatenate([np.full(n, out[0]), out, np.full(n, out[-1])]), np.ones(n) / n, 'same')[n:-n]
+    return np.interp(np.arange(len(x)) / hop, np.arange(nb), out)
+
+
+_GAIN = None
+
+
+def _lim(x, sr, t0):
+    """de begrenzer-versterking van de hele mix op bron-tijd t0.. (s) toepassen op een knip."""
+    global _GAIN
+    if _GAIN is None:
+        full = None
+        for st in ('vocals', 'other', 'bass', 'drums', 'piano'):
+            w = wave.open(VOCALS.replace('vocals.wav', st + '.wav'))
+            y = np.frombuffer(w.readframes(w.getnframes()), np.int16).astype(float)
+            y = y.reshape(-1, w.getnchannels()).mean(1) / 32768
+            full = y if full is None else full + y
+        X = np.fft.rfft(full)
+        full = np.fft.irfft(X * _eq_gain(np.fft.rfftfreq(len(full), 1 / sr)), len(full))
+        _GAIN = limit_gain(full, sr, LIMIT_DB)
+    i = int(round(t0 * sr))
+    g = _GAIN[max(0, i):max(0, i) + len(x)]
+    return x * np.concatenate([g, np.ones(len(x) - len(g))])
+
+
 def _to_rate(x, sr, rate, eq=False, hp=None):
     X = np.fft.rfft(x)
     fr = np.fft.rfftfreq(len(x), 1 / sr)
     if eq:
-        X *= 10 ** (np.interp(fr, [p[0] for p in EQ], [p[1] for p in EQ]) / 20)
+        X *= _eq_gain(fr)
     if hp:                                                         # hoogdoorlaat: 0 onder hp[0], 1 boven hp[1] Hz
         X *= np.clip((fr - hp[0]) / (hp[1] - hp[0]), 0, 1)
     X[int(len(X) * 0.9 * rate / sr):] = 0                         # anti-alias
@@ -131,7 +187,7 @@ def choir(i, bar, pos, ln, src=VOCALS, rate=RATE):
     dur = ln * 0.125
     take = min(dur, 2.0)                                          # v4: tot 2 s echt, daarna een loop van >= 1 s
     x, sr = _read(src, t - 0.02, t + take)
-    x = _to_rate(x, sr, rate, eq=True)
+    x = _to_rate(_lim(x, sr, t - 0.02), sr, rate, eq=True)
     loop = None
     if dur > take + 0.05:                                         # langer dan de knip: aanhouding loopen
         x, loop, c = _loop(x, rate, int(0.8 * rate), 1.0, 1.15, 0.4)
@@ -152,7 +208,7 @@ ARIA_PHRASES = [(24, 11, 44), (27, 13, 15), (29, 3, 54), (32, 13, 51), (37, 4, 2
 def aria(j, bar, pos, ln, src=VOCALS, rate=RATE):
     t = BAR1 + (bar - 1) * 2 + pos * 0.125
     x, sr = _read(src, t - 0.03, t + ln * 0.125)
-    x = _to_rate(x, sr, rate, eq=True)
+    x = _to_rate(_lim(x, sr, t - 0.03), sr, rate, eq=True)
     x[:int(0.01 * rate)] *= np.linspace(0, 1, int(0.01 * rate))
     x[-int(0.08 * rate):] *= np.linspace(1, 0, int(0.08 * rate))
     pk = np.abs(x).max()
@@ -209,7 +265,7 @@ def bellrip(j, bar, pos, ln, rate=RATE):
     xb, _ = _read(BASS, t, t1, dc=4410)
     if bar >= RIP_DRUMS_FROM:
         xb = xb + _read(DRUMS, t, t1, dc=4410)[0]
-    x = _to_rate(xo + xb, sr, rate, eq=True, hp=hp)
+    x = _to_rate(_lim(xo + xb, sr, t), sr, rate, eq=True, hp=hp)
     n = int(SEAM * rate)
     x[:n] *= np.linspace(0, 1, n)
     x[-n:] *= np.linspace(1, 0, n)

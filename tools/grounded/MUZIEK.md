@@ -934,3 +934,16 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   release = roofbaar, en klinken toch natuurlijk uit; (3) koper/strijkers/bas laten los op precies hun eigen
   release-staart vóór de volgende noot (`detach` met `release_tail()`), dus nooit twee kanalen per partij.
   Resultaat: 0 weggevallen noten in de verdeler, max. 10 kanalen.
+- Area Zero / Battle! Area Zero / Ruinous (v11 / v2 / v9; Jordi over de 1.0: 'heel muffled, zacht, alsof ze niet
+  in de game horen; als een platenspeler'): **knippen uit een modern origineel zijn op de GBA te zacht omdat één
+  DS-kanaal met een volle sample maar ±35/127 haalt** (gemeten: 2 coherente sporen = piek 67) en de sub-bas (60-75%
+  < 150 Hz) het niveau draagt zonder dat je het op een kleine speaker hoort. Wat werkte (noten en verhoudingen gelijk):
+  dezelfde knip op 2-3 sporen tegelijk (coherent, +6/+9,5 dB, 1 kanaal per spoor), een lage plank (-3/-4 dB < 100 Hz),
+  en een piekbegrenzer met vooruitkijken op de **hele mix** (som van de stems = sidechain, -2/-3 dB, >1 dB reductie in
+  0,4-1,6% van de tijd) waarvan dezelfde versterkingscurve op elke knip op zijn eigen tijd komt (balans stem/begeleiding
+  blijft). Een 'lijm'-compressor (30 ms) helpt niets: de crest zit in de golfvorm, niet in de niveauverschillen.
+  Meet de luidheid ook A-gewogen (refs -21,4..-22,5 dB): RMS alleen beloont sub-bas. Ruinous: meet de balans per
+  octaafband tegen het origineel (`bands.py`-aanpak): +4,5 dB in 60-120 Hz (lijf van onze synthetische taiko/dreun)
+  en -4 dB in 1-4 kHz (8 kHz-knippen + weergaveketen) = 'muffled'. **DPCM in-game nultest**: het verschil ligt 7-16 dB
+  onder het signaal boven 3 kHz (20-35 dB eronder < 1 kHz): hoorbaar als korrel in het hoog. Alles ongecomprimeerd
+  kost +1,18 MB (past niet); `-l 8` (lookahead) wint 0,4 dB en duurt 7 min per sample.

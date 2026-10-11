@@ -8,7 +8,8 @@ De knippen en de frameplanning komen uit vs_areazero_samples.py (vs_areazero_pla
   - sound/songs/midi/mus_grounded_vs_area_zero.mid
 150 bpm met 24 ticks per tel = 1 m4a-tick per frame, dus elke noot start op precies de frame uit het plan. Lus: van
 het begin van stuk 1 (maat 9) tot het eind van het laatste stuk (maat 9 van de volgende doorgang).
-v1 (okt 10): eerste versie op het origineel (optie A: alles geknipt, 11025 Hz, DPCM)."""
+v1 (okt 10): eerste versie op het origineel (optie A: alles geknipt, 11025 Hz, DPCM).
+v2 (okt 11, Jordi over de 1.0: 'muffled, zacht'): lage plank + piekbegrenzer in de knippen, derde spoor; noten gelijk."""
 import json, os, sys
 import mido
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -19,6 +20,7 @@ OUT = 'sound/songs/midi/mus_grounded_vs_area_zero.mid'
 VG = '_grounded_vs_area_zero'
 REL = 255                                    # geen uitsterving: de knip eindigt zelf (crossfade in de sample)
 VOL = 127                                    # spoorvolume (twee sporen, zie onder)
+VOL3 = 70                                    # v2: derde spoor (niveau naar mus_vs_wild, zie main)
 
 
 def main():
@@ -62,6 +64,8 @@ def main():
     # met dezelfde noten (zelfde frame, coherent) = +6 dB -> -20 LUFS. Kost 1 kanaal extra (max. 4 tijdens een naad).
     song.add(notes, 0, VOL, 0, 64)
     song.add([n[:] for n in notes], 0, VOL, 1, 64)
+    # v2 (Jordi over de 1.0: 'klinkt ingame zacht'): een derde spoor met dezelfde noten op VOL3 (coherent, +1 kanaal)
+    song.add([n[:] for n in notes], 0, VOL3, 2, 64)
     song.save(OUT, plan['loop_end'])
     print(OUT, '%d stukken, lus %d-%d' % (len(notes), plan['loop_start'], plan['loop_end']))
 

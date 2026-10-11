@@ -33,11 +33,18 @@ SONGS = [
     ('mus_petalburg',         'PETALBURG',  0.87, {}, {}),
     ('mus_rustboro',          'RUSTBORO',   0.88, {}, {}),
     ('mus_dewford',           'DEWFORD',    0.90, {}, {}),
-    ('mus_slateport',         'SLATEPORT',  0.88, {14: 0.8}, {}),
+    # v2 (Jordi 11 okt: "slateport en lilycove nog iets langzamer en relaxter, zodat het echt een nachtgevoel geeft"):
+    # trager, brushes (alleen kick + snare op de 8e-tellen, heel zacht), PSG-hats en -akkoordstoten zachter en dunner
+    ('mus_slateport',         'SLATEPORT',  0.80, {14: 0.7, 5: 0.75, 6: 0.75, 80: 0.75, 81: 0.75, 83: 0.75,
+                                                   126: 0.6, 127: 0.6}, {},
+     {'drums': {'snare': 0.22, 'kick': 0.4}, 'grid': {0: 12, 126: 12, 127: 12}, 'legato': {7}}),
     ('mus_verdanturf',        'VERDANTURF', 0.92, {}, {}),
     ('mus_fallarbor',         'FALLARBOR',  0.88, {9: 0.75}, {}),
     ('mus_fortree',           'FORTREE',    0.88, {}, {}),
-    ('mus_lilycove',          'LILYCOVE',   0.90, {}, {}),
+    # v2: trager, begeleiding (strijkers/bas/PSG) legato: de zachte 'echo'-aanslag wordt één langere noot (rustiger
+    # en minder DS-noten tegelijk), harp korter uitklinken, strijkers iets zachter
+    ('mus_lilycove',          'LILYCOVE',   0.80, {48: 0.85}, {},
+     {'legato': {2, 3, 6}, 'rel_cap': 200}),
     ('mus_sootopolis',        'SOOTOPOLIS', 0.88, {}, {}),
     ('mus_ever_grande',       'EVER_GRANDE', 0.88, {14: 0.8}, {}),
     ('mus_grounded_ashfrost', 'ASHFROST',   0.88, {9: 0.75, 89: 0.5}, {}),
@@ -56,16 +63,17 @@ EP_TABLE = ('@ Project Grounded: elektrische piano voor de nachtversies van de s
             'keysplit night_ep, 24\n\tsplit 0, 65\n\tsplit 1, 120\n')
 
 # percussie per sample in de drumkit: None = weg, (noot, factor) = vervangen, factor = alleen zachter
-def drum_rule(line, kit_lines):
+def drum_rule(line, kit_lines, over=None):
     if 'cymbal_crash' in line:
         return None
     if 'open_hihat' in line:
         close = [k for k, l in kit_lines.items() if 'close_hihat' in l]
         return (close[0], 0.5) if close else None
+    over = over or {}
     for key, f in (('snare', 0.4), ('hand_clap', 0.35), ('kick', 0.6), ('tom', 0.6), ('close_hihat', 0.55),
                    ('tambourine', 0.45), ('timpani', 0.5), ('conga', 0.7), ('ride_bell', 0.5), ('cowbell', 0.5)):
         if key in line:
-            return f
+            return over.get(key, f)
     return 0.7
 
 
@@ -125,7 +133,7 @@ def soften_square(line):
     return '%s %s' % (kind, ', '.join(a))
 
 
-def night_voice(prog, line, rng):
+def night_voice(prog, line, rng, rel_cap=None):
     """(nieuwe regel, velocityfactor) voor één programma"""
     lo, hi = rng.get(prog, (60, 60))
     if 'piano_keysplit' in line or 'sc88pro_organ2' in line or 'sc88pro_accordion' in line:
@@ -143,9 +151,10 @@ def night_voice(prog, line, rng):
         return soften_square(line), 0.8
     if line.startswith('voice_noise'):
         return line, 0.45
-    if line.startswith('voice_directsound ') and int(line.split(',')[-1]) > REL_CAP:
+    cap = rel_cap or REL_CAP
+    if line.startswith('voice_directsound ') and int(line.split(',')[-1]) > cap:
         # lange uitklinktijd (harp 242, glockenspiel 249): korter, zodat de stemverdeling binnen 10 DS-noten blijft
-        return line.rsplit(',', 1)[0] + ', %d' % REL_CAP, 1.0
+        return line.rsplit(',', 1)[0] + ', %d' % cap, 1.0
     return line, 1.0
 
 
@@ -157,7 +166,34 @@ def even_tempo(us, f):
     return int(round(60e6 / (max(2, round(bpm / 2) * 2))))
 
 
-def build(idx, src, key, tf, velx, fixed, info=False):
+def legato_echoes(track, maxvel=40):
+    """Zachte 'echo' (zelfde toon, velocity <= maxvel, direct na het einde van de vorige noot) samenvoegen met die
+    vorige noot: één langere, rustige noot i.p.v. aanslag + naklank."""
+    ev, t = [], 0
+    for m in track:
+        t += m.time
+        ev.append([t, m])
+    off_at = {}   # (noot, tick) -> index van de note-off van de vorige noot
+    drop = set()
+    for i, (t, m) in enumerate(ev):
+        if m.type == 'note_off' or (m.type == 'note_on' and m.velocity == 0):
+            off_at[(m.note, t)] = i
+        elif m.type == 'note_on' and m.velocity <= maxvel and (m.note, t) in off_at:
+            j = off_at.pop((m.note, t))
+            if j in drop:
+                continue
+            drop.update((i, j))
+    out, last = mido.MidiTrack(), 0
+    for i, (t, m) in enumerate(ev):
+        if i in drop:
+            continue
+        out.append(m.copy(time=t - last))
+        last = t
+    return out, len(drop) // 2
+
+
+def build(idx, src, key, tf, velx, fixed, opts=None, info=False):
+    opts = opts or {}
     num = FIRST + idx
     low = 'mus_grounded_night_' + key.lower()
     vgname = 'grounded_night_' + key.lower()
@@ -174,7 +210,7 @@ def build(idx, src, key, tf, velx, fixed, info=False):
         new_lines.append('voice_square_1 60, 0, 0, 2, 0, 0, 15, 0')
     report = []
     for p in used:
-        nl, f = night_voice(p, lines[p], rng)
+        nl, f = night_voice(p, lines[p], rng, opts.get('rel_cap'))
         if p in fixed:
             nl = fixed[p]
         new_lines[p] = nl
@@ -190,11 +226,13 @@ def build(idx, src, key, tf, velx, fixed, info=False):
             kits[p] = {ks + i: l for i, l in enumerate(kl)}
     # MIDI
     out = mido.MidiFile(type=mid.type, ticks_per_beat=mid.ticks_per_beat)
-    dropped = kept = 0
+    dropped = kept = merged = 0
     tempi = []
-    for t in mid.tracks:
-        nt, prog, carry, skip = mido.MidiTrack(), 0, 0, {}
+    grid = opts.get('grid', {})
+    for ti, t in enumerate(mid.tracks):
+        nt, prog, carry, skip, at = mido.MidiTrack(), 0, 0, {}, 0
         for m in t:
+            at += m.time
             m = m.copy(time=m.time + carry)
             carry = 0
             if m.type == 'set_tempo':
@@ -213,8 +251,14 @@ def build(idx, src, key, tf, velx, fixed, info=False):
                         m = m.copy(note=kits[prog]['_map'][m.note])
                 else:
                     f = vel.get(prog, 1.0)
+                    if prog in grid and at % grid[prog]:
+                        # minder druk: alleen aanslagen op het raster (bijv. 8e-tellen)
+                        skip[m.note] = skip.get(m.note, 0) + 1
+                        carry = m.time
+                        dropped += 1
+                        continue
                     if prog in kits:
-                        r = drum_rule(kits[prog].get(m.note, ''), kits[prog])
+                        r = drum_rule(kits[prog].get(m.note, ''), kits[prog], opts.get('drums'))
                         if r is None:
                             skip[m.note] = skip.get(m.note, 0) + 1
                             carry = m.time
@@ -228,6 +272,9 @@ def build(idx, src, key, tf, velx, fixed, info=False):
                     kept += 1
                     m = m.copy(velocity=max(1, min(127, int(round(m.velocity * f)))))
             nt.append(m)
+        if ti in opts.get('legato', ()):
+            nt, n = legato_echoes(nt)
+            merged += n
         out.tracks.append(nt)
     path = os.path.join(MID, low + '.mid')
     out.save(path)
@@ -254,8 +301,9 @@ def build(idx, src, key, tf, velx, fixed, info=False):
         return mx
     obpm = 60e6 / next(m.tempo for tr in mid.tracks for m in tr if m.type == 'set_tempo')
     po, pn = peak(mid, ovg, obpm), peak(out, vgname, tempi[0])
-    print('%d %s: %s, %s bpm (was %d), DS-noten max %s -> %d, drumnoten weg %d' % (
-        num, low, ovg, sorted(set(tempi)), round(obpm), po, pn, dropped))
+    print('%d %s: %s, %s bpm (was %d), DS-noten max %s -> %d, drumnoten weg %d%s' % (
+        num, low, ovg, sorted(set(tempi)), round(obpm), po, pn, dropped,
+        ', echo\'s legato %d' % merged if merged else ''))
     if info:
         print('\n'.join(report))
     other = ' '.join(c for c in cfg if not c.startswith(('-G', '-V')))
@@ -263,7 +311,7 @@ def build(idx, src, key, tf, velx, fixed, info=False):
 
 
 # -V per nachtversie (na meting met batchrec: piek <= 110-120/127 en een RMS die niet ver onder het origineel zakt)
-VOLS = {}
+VOLS = {'SLATEPORT': 84}   # v2: brushes en dunnere begeleiding maken hem zachter (RMS 1750 bij -V070)
 
 
 def register(entries):

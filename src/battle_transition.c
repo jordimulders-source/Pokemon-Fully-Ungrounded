@@ -10532,4 +10532,5 @@ static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
 #include "data/legend_intros_cheap1.h" // Project Grounded: goedkope legendary-intro's (Swords, UB's, paradoxen, Eternatus, Marshadow, Terapagos, Pecharunt)
 // Project Grounded: trainerklasse-intro's (met de gedeelde runner) en de rivaal-intro's
 #include "data/class_intros.h"
+#include "data/class_intros2_b.h"
 #include "data/rival_intros.h"

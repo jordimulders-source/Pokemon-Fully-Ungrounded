@@ -18604,3 +18604,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Trainerklassen zonder remix ingedeeld (`GetTrainerClassRemixBGM`): Parasol Lady en Sis & Bro → Zee; Aroma Lady → Natuur; Collector, Young Couple, Old Couple en Interviewer → Chic; Pokémaniac → Rock; Sr. & Jr. → Kids.
 - TODO.md: Altering Cave (Ultra Space, v0.9.221), Ghetsis met de DNA Splicers (v0.9.163), de grot op Beacon Isle (v0.9.162) en de Deoxys-vormen (Delta Episode, v0.9.161) als afgerond gemarkeerd.
 - Jordi: rivaalkrant blijft zoals hij is; de regionale wilde remixen (v0.9.288) test hij in de game.
+
+### [v0.9.295] - 1.0-audit: trainers en wild
+- Mugshot-slide voor de post-game-gevechten in Paradiso Resort: Misty (blauw), Erika (groen) en Cynthia (paars).
+- Audit: de overige trainer- en wild-meldingen zijn bewust en staan nu in `IGNORE` (`tools/grounded/audit.py`): routedelen en kamers die je later bereikt of grap-trainers; Steven, Mimi en de taakstraf-gevechten van Archie/Maxie hebben een eigen transitie; Artisan Cave is, zoals vanilla, een Smeargle-grot. Trainers en wild: 0 meldingen.

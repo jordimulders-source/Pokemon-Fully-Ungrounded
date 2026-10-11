@@ -24,6 +24,32 @@ BASE = 'd79b0c5f31^'   # pokeemerald-expansion vlak vóór de eerste Grounded-co
 
 # Bewuste uitzonderingen (sleutel -> reden). Sleutels staan achteraan elke regel in -v / AUDIT.md.
 IGNORE = {
+    # v0.9.295 (1.0-audit): bewust. Levels: routedelen/kamers die je later bereikt of grap-trainers; Steven, Mimi en de
+    # taakstraf-gevechten hebben een eigen transitie (battle_setup.c); Artisan Cave is (zoals vanilla) een Smeargle-grot.
+    'lvlfit:TRAINER_ZINNIA_DELTA': 'bewust (1.0-audit)',
+    'lvlfit:TRAINER_ANDREW': 'bewust (1.0-audit)',
+    'lvlfit:TRAINER_RHETT': 'bewust (1.0-audit)',
+    'lvlfit:TRAINER_PETE': 'bewust (1.0-audit)',
+    'lvlfit:TRAINER_ISABELLE': 'bewust (1.0-audit)',
+    'lvlfit:TRAINER_NED': 'bewust (1.0-audit)',
+    'lvlfit:TRAINER_EDWARD': 'bewust (1.0-audit)',
+    'lvlfit:TRAINER_JACLYN': 'bewust (1.0-audit)',
+    'lvlfit:TRAINER_NOLAN': 'bewust (1.0-audit)',
+    'lvlfit:TRAINER_AARON': 'bewust (1.0-audit)',
+    'lvlfit:TRAINER_COLTON': 'bewust (1.0-audit)',
+    'mugshot:TRAINER_STEVEN': 'bewust (1.0-audit)',
+    'mugshot:TRAINER_MIMI': 'bewust (1.0-audit)',
+    'mugshot:TRAINER_ARCHIE_SERVICE_1': 'bewust (1.0-audit)',
+    'mugshot:TRAINER_ARCHIE_SERVICE_2': 'bewust (1.0-audit)',
+    'mugshot:TRAINER_ARCHIE_SERVICE_3': 'bewust (1.0-audit)',
+    'mugshot:TRAINER_ARCHIE_SERVICE_4': 'bewust (1.0-audit)',
+    'mugshot:TRAINER_MAXIE_SERVICE_1': 'bewust (1.0-audit)',
+    'mugshot:TRAINER_MAXIE_SERVICE_2': 'bewust (1.0-audit)',
+    'mugshot:TRAINER_MAXIE_SERVICE_3': 'bewust (1.0-audit)',
+    'mugshot:TRAINER_MAXIE_SERVICE_4': 'bewust (1.0-audit)',
+    'wild:gArtisanCave_B1F:land_mons:dup': 'bewust (1.0-audit)',
+    'wild:gArtisanCave_1F:land_mons:dup': 'bewust (1.0-audit)',
+
     'reachobj:YoshisIsland_Jungle:2': 'bereikbaar via de Poochy-rit (script verplaatst de speler)',
     'reachobj:YoshisIsland_Jungle:4': 'bereikbaar via de Poochy-rit (script verplaatst de speler)',
 }

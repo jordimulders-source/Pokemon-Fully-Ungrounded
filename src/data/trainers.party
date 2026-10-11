@@ -37017,6 +37017,7 @@ Class: Leader
 Pic: Misty
 Gender: Female
 Music: Girl
+Mugshot: Blue
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
@@ -37092,6 +37093,7 @@ Class: Leader
 Pic: Erika
 Gender: Female
 Music: Female
+Mugshot: Green
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
@@ -37242,6 +37244,7 @@ Class: Champion
 Pic: Cynthia
 Gender: Female
 Music: Elite Four
+Mugshot: Purple
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 

@@ -4,13 +4,13 @@ Gegenereerd met `python3 tools/grounded/audit.py --md AUDIT.md` (statisch, zonde
 
 | Categorie | FOUT | MELD | INFO | tellingen |
 |---|---|---|---|---|
-| Warps | 0 | 11 | 4 | dynamisch 47, alleen aankomstpunt 67, warps 1800 |
-| Kaarten en objecten | 0 | 11 | 0 | genegeerd 2, bereikbaarheid 518, tegelcontrole 567, kaarten 704 |
-| Scripts en teksten | 0 | 0 | 0 | map-scripts 4508, labelverwijzingen 29713, coord-scripts 218, lock-paden 3005, teksten 5279 |
-| Flags en vars | 0 | 0 | 0 | FLAG_GROUNDED 406, flags 1953, vars 285 |
-| Trainers | 0 | 24 | 81 | level-vergelijking 537, belangrijke gevechten 78, evolutie-meldingen 77, partijen 1200, pokemon 5404, trainer-id's 1190, vrije id's 9, ongebruikte constanten 4, alleen op ongebruikte kaarten 0 |
-| Wilde encounters | 0 | 4 | 8 | tabellen 387 |
-| Items en TM's | 0 | 5 | 0 | item-balls 395, verborgen items 318, TM's 60 |
+| Warps | 0 | 11 | 4 | dynamisch 47, alleen aankomstpunt 67, warps 1817 |
+| Kaarten en objecten | 0 | 11 | 0 | genegeerd 2, bereikbaarheid 520, tegelcontrole 581, kaarten 718 |
+| Scripts en teksten | 0 | 0 | 0 | map-scripts 4771, labelverwijzingen 30527, coord-scripts 221, lock-paden 3098, teksten 5409 |
+| Flags en vars | 0 | 0 | 0 | FLAG_GROUNDED 465, flags 2012, vars 285 |
+| Trainers | 0 | 0 | 77 | genegeerd 21, level-vergelijking 548, belangrijke gevechten 82, evolutie-meldingen 77, partijen 1200, pokemon 5424, trainer-id's 1190, vrije id's 9, ongebruikte constanten 0, alleen op ongebruikte kaarten 0 |
+| Wilde encounters | 0 | 0 | 8 | genegeerd 2, tabellen 400 |
+| Items en TM's | 0 | 0 | 0 | item-balls 408, verborgen items 320, TM's 60 |
 
 ## Warps
 
@@ -40,7 +40,7 @@ Gegenereerd met `python3 tools/grounded/audit.py --md AUDIT.md` (statisch, zonde
 - **MELD** MtPyre_Summit: object 8 (STEVEN, MtPyre_Summit_EventScript_Steven) staat op een muur/geblokkeerde tegel (21,8) [MB_NORMAL] `[wall:MtPyre_Summit:8]`
 - **MELD** NothingIsland: object 0 (PLASMA_FRIGATE, 0x0) staat op een muur/geblokkeerde tegel (29,16) [MB_OCEAN_WATER] `[wall:NothingIsland:0]`
 - **MELD** Route121: object 29 (ROCKET_GRUNT_M, 0x0) staat op een muur/geblokkeerde tegel (37,5) [MB_ANIMATED_DOOR] `[wall:Route121:29]`
-- **MELD** Route123: 44 objecten in totaal, tot 16 tegelijk in beeld rond (17, 9) (incl. objecten met flag; controleer dat ze niet allemaal tegelijk zichtbaar zijn) `[objview:Route123]`
+- **MELD** Route123: 47 objecten in totaal, tot 19 tegelijk in beeld rond (17, 9) (incl. objecten met flag; controleer dat ze niet allemaal tegelijk zichtbaar zijn) `[objview:Route123]`
 - **MELD** SlateportCity: 37 objecten in totaal, tot 16 tegelijk in beeld rond (24, 20) (incl. objecten met flag; controleer dat ze niet allemaal tegelijk zichtbaar zijn) `[objview:SlateportCity]`
 - **MELD** YoshisIsland_Jungle: object 0 (POOCHY, YoshisIsland_Jungle_EventScript_Poochy) staat op een muur/geblokkeerde tegel (10,8) [MB_NORMAL] `[wall:YoshisIsland_Jungle:0]`
 
@@ -54,31 +54,7 @@ Niets open.
 
 ## Trainers
 
-- **MELD** TRAINER_ZINNIA_DELTA op MossdeepCity: ace lv 95, de andere trainers op die kaart rond lv 74 `[lvlfit:TRAINER_ZINNIA_DELTA]`
-- **MELD** TRAINER_ANDREW op Route103: ace lv 75, de andere trainers op die kaart rond lv 14 `[lvlfit:TRAINER_ANDREW]`
-- **MELD** TRAINER_RHETT op Route103: ace lv 27, de andere trainers op die kaart rond lv 14 `[lvlfit:TRAINER_RHETT]`
-- **MELD** TRAINER_PETE op Route103: ace lv 42, de andere trainers op die kaart rond lv 14 `[lvlfit:TRAINER_PETE]`
-- **MELD** TRAINER_ISABELLE op Route103: ace lv 42, de andere trainers op die kaart rond lv 14 `[lvlfit:TRAINER_ISABELLE]`
-- **MELD** TRAINER_NED op Route106: ace lv 21, de andere trainers op die kaart rond lv 42 `[lvlfit:TRAINER_NED]`
-- **MELD** TRAINER_EDWARD op Route110: ace lv 84, de andere trainers op die kaart rond lv 29 `[lvlfit:TRAINER_EDWARD]`
-- **MELD** TRAINER_JACLYN op Route110: ace lv 52, de andere trainers op die kaart rond lv 29 `[lvlfit:TRAINER_JACLYN]`
-- **MELD** TRAINER_NOLAN op Route114: ace lv 57, de andere trainers op die kaart rond lv 36 `[lvlfit:TRAINER_NOLAN]`
-- **MELD** TRAINER_AARON op Route134: ace lv 83, de andere trainers op die kaart rond lv 69 `[lvlfit:TRAINER_AARON]`
-- **MELD** TRAINER_COLTON op SSTidalRooms: ace lv 42, de andere trainers op die kaart rond lv 85 `[lvlfit:TRAINER_COLTON]`
-- **MELD** TRAINER_STEVEN (Rival, MeteorFalls_StevensCave) heeft geen Mugshot: `[mugshot:TRAINER_STEVEN]`
-- **MELD** TRAINER_MIMI (Rival, Route119) heeft geen Mugshot: `[mugshot:TRAINER_MIMI]`
-- **MELD** TRAINER_ARCHIE_SERVICE_1 (Aqua Leader, Route119_WeatherInstitute_1F) heeft geen Mugshot: `[mugshot:TRAINER_ARCHIE_SERVICE_1]`
-- **MELD** TRAINER_MAXIE_SERVICE_1 (Magma Leader, Route119_WeatherInstitute_1F) heeft geen Mugshot: `[mugshot:TRAINER_MAXIE_SERVICE_1]`
-- **MELD** TRAINER_ARCHIE_SERVICE_2 (Aqua Leader, Route119_WeatherInstitute_1F) heeft geen Mugshot: `[mugshot:TRAINER_ARCHIE_SERVICE_2]`
-- **MELD** TRAINER_MAXIE_SERVICE_2 (Magma Leader, Route119_WeatherInstitute_1F) heeft geen Mugshot: `[mugshot:TRAINER_MAXIE_SERVICE_2]`
-- **MELD** TRAINER_ARCHIE_SERVICE_3 (Aqua Leader, Route119_WeatherInstitute_1F) heeft geen Mugshot: `[mugshot:TRAINER_ARCHIE_SERVICE_3]`
-- **MELD** TRAINER_MAXIE_SERVICE_3 (Magma Leader, Route119_WeatherInstitute_1F) heeft geen Mugshot: `[mugshot:TRAINER_MAXIE_SERVICE_3]`
-- **MELD** TRAINER_ARCHIE_SERVICE_4 (Aqua Leader, Route119_WeatherInstitute_1F) heeft geen Mugshot: `[mugshot:TRAINER_ARCHIE_SERVICE_4]`
-- **MELD** TRAINER_MAXIE_SERVICE_4 (Magma Leader, Route119_WeatherInstitute_1F) heeft geen Mugshot: `[mugshot:TRAINER_MAXIE_SERVICE_4]`
-- **MELD** TRAINER_RESORT_MISTY (Leader, ParadisoResort) heeft geen Mugshot: `[mugshot:TRAINER_RESORT_MISTY]`
-- **MELD** TRAINER_RESORT_ERIKA (Leader, ParadisoResort) heeft geen Mugshot: `[mugshot:TRAINER_RESORT_ERIKA]`
-- **MELD** TRAINER_RESORT_CYNTHIA (Champion, ParadisoResort_Lobby) heeft geen Mugshot: `[mugshot:TRAINER_RESORT_CYNTHIA]`
-- **INFO** (81 stuks, eerste 60):
+- **INFO** (77 stuks, eerste 60):
 - **INFO** TRAINER_ANDREW: MAGIKARP op lv 70 is nog niet geëvolueerd (evolueert op 20) `[evo:TRAINER_ANDREW:0]`
 - **INFO** TRAINER_ANDREW: MAGIKARP op lv 75 is nog niet geëvolueerd (evolueert op 20) `[evo:TRAINER_ANDREW:2]`
 - **INFO** TRAINER_AUTUMN: SHROOMISH op lv 38 is nog niet geëvolueerd (evolueert op 23) `[evo:TRAINER_AUTUMN:0]`
@@ -107,7 +83,6 @@ Niets open.
 - **INFO** TRAINER_EDWARD: ABRA op lv 35 is nog niet geëvolueerd (evolueert op 16) `[evo:TRAINER_EDWARD:2]`
 - **INFO** TRAINER_EDWARD: ABRA op lv 56 is nog niet geëvolueerd (evolueert op 16) `[evo:TRAINER_EDWARD:3]`
 - **INFO** TRAINER_EDWARD: ABRA op lv 84 is nog niet geëvolueerd (evolueert op 16) `[evo:TRAINER_EDWARD:4]`
-- **INFO** TRAINER_GRUNT_MT_CHIMNEY_2: LITTEN op lv 36 is nog niet geëvolueerd (evolueert op 17) `[evo:TRAINER_GRUNT_MT_CHIMNEY_2:2]`
 - **INFO** TRAINER_HARVEY: VIGOROTH op lv 44 is nog niet geëvolueerd (evolueert op 36) `[evo:TRAINER_HARVEY:0]`
 - **INFO** TRAINER_HORATIO: VIGOROTH op lv 45 is nog niet geëvolueerd (evolueert op 36) `[evo:TRAINER_HORATIO:0]`
 - **INFO** TRAINER_IVAN: GYARADOS op lv 4, maar MAGIKARP evolueert pas op 20 `[evo:TRAINER_IVAN:0]`
@@ -139,15 +114,12 @@ Niets open.
 - **INFO** TRAINER_ROGER: MAGIKARP op lv 25 is nog niet geëvolueerd (evolueert op 20) `[evo:TRAINER_ROGER:1]`
 - **INFO** TRAINER_RONALD: MAGIKARP op lv 70 is nog niet geëvolueerd (evolueert op 20) `[evo:TRAINER_RONALD:0]`
 - **INFO** TRAINER_RUIN_MANIAC_SIMON: NOSEPASS op lv 47 is nog niet geëvolueerd (evolueert op 30) `[evo:TRAINER_RUIN_MANIAC_SIMON:1]`
+- **INFO** TRAINER_SHY_GUY_DESERT: SANDYGAST op lv 40 is nog niet geëvolueerd (evolueert op 30) `[evo:TRAINER_SHY_GUY_DESERT:0]`
 
 Vrije trainer-id's (9): 601-602, 734, 883, 970, 972, 974, 976, 1198
 
 ## Wilde encounters
 
-- **MELD** gArtisanCave_B1F land (lv tot 80, post-game): dubbele soorten SMEARGLE `[wild:gArtisanCave_B1F:land_mons:dup]`
-- **MELD** gArtisanCave_1F land (lv tot 80, post-game): dubbele soorten SMEARGLE `[wild:gArtisanCave_1F:land_mons:dup]`
-- **MELD** gAlteringCave1 land (lv tot 91, post-game): dubbele soorten ROARING_MOON `[wild:gAlteringCave1:land_mons:dup]`
-- **MELD** gRoute126HermitCrater: wilde Pokémon rond lv 72, trainers op die kaart rond lv 58 `[wildlvl:gRoute126HermitCrater]`
 - **INFO** gAlteringCave2 land (lv tot 18): dubbele soorten MAREEP `[wild:gAlteringCave2:land_mons:dup]`
 - **INFO** gAlteringCave3 land (lv tot 44): dubbele soorten PINECO `[wild:gAlteringCave3:land_mons:dup]`
 - **INFO** gAlteringCave4 land (lv tot 32): dubbele soorten HOUNDOUR `[wild:gAlteringCave4:land_mons:dup]`
@@ -159,11 +131,7 @@ Vrije trainer-id's (9): 601-602, 734, 883, 970, 972, 974, 976, 1198
 
 ## Items en TM's
 
-- **MELD** ITEM_TM_DARK_PULSE komt op meer plekken voor: C: src/trainer_hill.c (nieuw); ligt: MtPyre_Exterior (nieuw) `[tm:ITEM_TM_DARK_PULSE]`
-- **MELD** ITEM_TM_FIRE_BLAST komt op meer plekken voor: ligt: JaggedPass_LavaTube (nieuw); winkel: LilycoveCity_DepartmentStore_4F `[tm:ITEM_TM_FIRE_BLAST]`
-- **MELD** ITEM_TM_NASTY_PLOT komt op meer plekken voor: C: src/trainer_hill.c (nieuw); script: SlateportCity_BattleTentLobby (nieuw) `[tm:ITEM_TM_NASTY_PLOT]`
-- **MELD** ITEM_TM_STORED_POWER komt op meer plekken voor: C: src/trainer_hill.c (nieuw); script: Route114 (nieuw) `[tm:ITEM_TM_STORED_POWER]`
-- **MELD** ITEM_TM_U_TURN komt op meer plekken voor: ligt: FortreeJungle (nieuw); winkel: LilycoveCity_DepartmentStore_4F (nieuw) `[tm:ITEM_TM_U_TURN]`
+Niets open.
 
 ## Handmatige controle
 

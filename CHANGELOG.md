@@ -18520,3 +18520,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Cresselia:** een dunne sikkelmaan (geen volle maan meer), halvemaanbogen, Lunar Dance-glinsters en droommist.
 - **Zygarde:** een zeshoekraster, de rode Core en groene Cells die de Z van Core Enforcer (Legends Z-A) bouwen; het beeld breekt langs het raster.
 - +3,4 KB.
+
+### [v0.9.284] - Celebi-intro: Johto-reis naar Ilex Forest
+- Na de GBC-reset (ongewijzigd, goedgekeurd) volgen op de achtsten drie iconische Johto-plekken in vier groentinten: New Bark Town (Elms lab), Goldenrod (de Radio Tower) en Ecruteak (de Tin Tower). De reis stopt in Ilex Forest bij het schrijn, met dwarrelende blaadjes, gevolgd door de GSC-flitsen, de spin naar zwart en de tijdreisflits.
+- Gerenderd uit de echte pokecrystal-kaartdata (`tools/grounded/celebi_gsc.py`): 93 tiles, +2,4 KB.

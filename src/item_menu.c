@@ -2149,7 +2149,7 @@ static void PrintItemCantBeHeld(u8 taskId)
 
 static void HandleErrorMessage(u8 taskId)
 {
-    if (JOY_NEW(A_BUTTON))
+    if (JOY_NEW(A_BUTTON | B_BUTTON)) // Project Grounded: ook met B sluiten
     {
         PlaySE(SE_RG_BALL_CLICK);
         CloseItemMessage(taskId);

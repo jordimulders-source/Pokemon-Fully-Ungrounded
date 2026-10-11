@@ -1,6 +1,7 @@
 #include "global.h"
 #include "battle_music_options.h"
 #include "event_data.h"
+#include "constants/flags.h"
 #include "overworld.h"
 #include "constants/game_stat.h"
 #include "constants/songs.h"
@@ -252,4 +253,36 @@ bool32 TrainerClassRemixAllowed(void)
         choice = 0;
     return gTrainerBattleMusicOptions[choice].song == MUS_NONE
         || gTrainerBattleMusicOptions[choice].song == MUS_VS_TRAINER;
+}
+
+// Project Grounded (Jordi: "Alle Yoshi en Wario themes blijven verborgen tot je in ????? bent geweest"):
+// de Mario-wereld (Yoshi's Island, Wario Land 4, Mario Kart, Boo, Shy Guys) pas na aankomst op Yoshi's Island.
+bool8 IsBattleMusicOptionUnlocked(const struct BattleMusicOption *option)
+{
+    switch (option->song)
+    {
+    case MUS_GROUNDED_VS_YOSHI_CASTLE:
+    case MUS_GROUNDED_VS_BROKEN_PIER:
+    case MUS_GROUNDED_VS_SUNSET_WILDS:
+    case MUS_GROUNDED_YI_FLOWER_GARDEN:
+    case MUS_GROUNDED_YI_ATHLETIC:
+    case MUS_GROUNDED_YI_OVERWORLD:
+    case MUS_GROUNDED_YI_FUZZY:
+    case MUS_GROUNDED_YI_CASTLE:
+    case MUS_GROUNDED_MKSC_BOWSER_CASTLE:
+    case MUS_GROUNDED_MKSC_BROKEN_PIER:
+    case MUS_GROUNDED_MKSC_LAKESIDE_PARK:
+    case MUS_GROUNDED_MKSC_RAINBOW_ROAD:
+    case MUS_GROUNDED_WL4_MYSTIC_LAKE:
+    case MUS_GROUNDED_WL4_MONSOON_JUNGLE:
+    case MUS_GROUNDED_WL4_TOXIC_LANDFILL:
+    case MUS_GROUNDED_WL4_40_BELOW_FRIDGE:
+    case MUS_GROUNDED_WL4_TOY_BLOCK_TOWER:
+    case MUS_GROUNDED_WL4_CRESCENT_MOON_VILLAGE:
+    case MUS_GROUNDED_WL4_ARABIAN_NIGHT:
+    case MUS_GROUNDED_WL4_FIERY_CAVERN:
+        return FlagGet(FLAG_YI_ARRIVED);
+    default:
+        return TRUE;
+    }
 }

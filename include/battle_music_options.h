@@ -19,5 +19,6 @@ u16 GetChosenWildBattleMusic(void);
 u16 GetChosenTrainerBattleMusic(void);
 bool32 TrainerClassRemixAllowed(void);
 bool8 IsDefaultWildBattleMusicChoice(void);
+bool8 IsBattleMusicOptionUnlocked(const struct BattleMusicOption *option);
 
 #endif // GUARD_BATTLE_MUSIC_OPTIONS_H

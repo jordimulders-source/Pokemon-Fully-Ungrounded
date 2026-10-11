@@ -747,6 +747,8 @@ gSongTable::
 
 	song mus_grounded_vs_wild_fiery, MUSIC_PLAYER_BGM, 0
 
+	song mus_grounded_vs_wild_route119, MUSIC_PLAYER_BGM, 0
+
 	.align 2
 dummy_song_header:
 	.byte 0, 0, 0, 0

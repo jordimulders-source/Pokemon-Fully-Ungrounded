@@ -144,6 +144,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Battle! Ultra Beast (677) | `ub_theme.py`, `ub_samples.py` | v1 wacht op Jordi (eigen compositie, octatonisch/heeltoons, 7/8, glazen FM-lead met microtonale bends; alle UB-gevechten in Ultra Space) | "Ultra Beast" |
 | Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v8: begeleiding m5-39 + koor + aria uit het origineel geknipt, 682 geschrapt (Jordi) | "Area Zero" |
 | Trainerklasse-remixes van MUS_VS_TRAINER (696-703: SEA, MOUNTAIN, NATURE, MYSTIC, CHIC, ROCK, ELITE, KIDS) | `trclass_theme.py`, `trclass_samples.py` | MOUNTAIN/NATURE/MYSTIC/ELITE/KIDS GOEDGEKEURD (Jordi); SEA/CHIC/ROCK v2 wacht op Jordi (SEA 144 bpm, CHIC zonder ride-bell, ROCK echte powerchords) | "Trainerklassen" |
+| Route 119+-wildthema (711) | `route119_battle_theme.py` | v1 wacht op Jordi (melodieën/harmonie uit mus_route119, 176 bpm in triolen-galop, trompet/hoorns/strijkers/pauken, alleen stock-samples; landroutes 119-123, 135, 136) | "Route 119+" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -888,3 +889,9 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   met sweep omhoog (19 = tijd 1, shift 3, decay 1) + twee PSG-echo's; holle bas = fretless een octaaf lager + dezelfde
   noten op de PSG-golf. **Twee PSG-ruissporen delen één ruiskanaal**: in Fiery Path gaan de hihat-tikken op in het
   knetteren (één spoor). Batchrec: 0 overlopen, piek 94-96, max -5,2..-5,9 dB, RMS 2900-3900.
+- Route 119+ v1 (`route119_battle_theme.py`, 711, wildthema op de landroutes vanaf 119): **mus_route119 staat in
+  triolen** (tpb 24: E4-E4-E4 op tick 32/40/48 = triool-8en, het motief begint op een halve maat: loopbegin tick 912 =
+  maat 9,5) en heeft **uitgeschreven echo's op velocity 32** (filter v <= 40). Begeleiding daarom ook in triolen
+  (galop: grondtoon op de tel + de 'a'), niet in rechte 8en. Snelle loopjes (32en) niet op strijkers dubbelen: met
+  release 51 ticks bezetten ze 4 kanalen; dubbel ze op een PSG-vierkant. Liggende strijkers die op een sectiestart
+  (crash + roffelstaart) geen kanaal krijgen: een 8e later laten inzetten i.p.v. de halve maat te schrappen.

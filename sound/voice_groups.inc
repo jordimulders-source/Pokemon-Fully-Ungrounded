@@ -330,3 +330,5 @@
 .include "sound/voicegroups/grounded_regio_meteor.inc"
 .include "sound/voicegroups/drumsets/regio_fiery.inc"
 .include "sound/voicegroups/grounded_regio_fiery.inc"
+.include "sound/voicegroups/drumsets/route119_battle.inc"
+.include "sound/voicegroups/grounded_route119_battle.inc"

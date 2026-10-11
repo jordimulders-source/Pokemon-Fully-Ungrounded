@@ -647,6 +647,7 @@
 #define MUS_GROUNDED_VS_WILD_CAVE   708 // Project Grounded: Hoenn-wildthema, grotremix (alle grotten zonder eigen remix; tools/grounded/regio_theme2.py)
 #define MUS_GROUNDED_VS_WILD_METEOR 709 // Project Grounded: Hoenn-wildthema, Meteor Falls-remix (avontuurlijk, koper; tools/grounded/regio_theme2.py)
 #define MUS_GROUNDED_VS_WILD_FIERY  710 // Project Grounded: Hoenn-wildthema, Fiery Path-remix (vurige grot; tools/grounded/regio_theme2.py)
+#define MUS_GROUNDED_VS_WILD_ROUTE119 711 // Project Grounded: wildthema op de landroutes vanaf Route 119, groots/avontuurlijk, melodieën uit Route 119 (tools/grounded/route119_battle_theme.py); 704-710 zijn voor de andere v1.0.x-remixen
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 
 #define MUS_NONE                    0xFFFF

@@ -111,6 +111,7 @@ const struct BattleMusicOption gWildBattleMusicOptions[] =
     { COMPOUND_STRING("CRESCENT"), MUS_GROUNDED_WL4_CRESCENT_MOON_VILLAGE },
     { COMPOUND_STRING("ARABIAN"), MUS_GROUNDED_WL4_ARABIAN_NIGHT },
     { COMPOUND_STRING("FIERY CAVERN"), MUS_GROUNDED_WL4_FIERY_CAVERN },
+    { COMPOUND_STRING("ROUTE 119+"), MUS_GROUNDED_VS_WILD_ROUTE119 }, // achteraan: opgeslagen keuzes (index) blijven gelijk
 };
 
 const struct BattleMusicOption gTrainerBattleMusicOptions[] =
@@ -206,6 +207,7 @@ const struct BattleMusicOption gTrainerBattleMusicOptions[] =
     { COMPOUND_STRING("CRESCENT"), MUS_GROUNDED_WL4_CRESCENT_MOON_VILLAGE },
     { COMPOUND_STRING("ARABIAN"), MUS_GROUNDED_WL4_ARABIAN_NIGHT },
     { COMPOUND_STRING("FIERY CAVERN"), MUS_GROUNDED_WL4_FIERY_CAVERN },
+    { COMPOUND_STRING("ROUTE 119+"), MUS_GROUNDED_VS_WILD_ROUTE119 }, // achteraan: opgeslagen keuzes (index) blijven gelijk
 };
 
 // Project Grounded (Jordi: "3/4 wild pokemon/trainer battle themes rouleren, zodat muziek spannend blijft"):

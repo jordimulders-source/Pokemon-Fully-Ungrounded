@@ -6517,6 +6517,22 @@ static u16 GetRegionalWildBattleMusic(void)
             return MUS_GROUNDED_VS_WILD_CAVE;
         break;
     }
+    // Route 119+ (Jordi: "grande, avontuurlijk"): wilde gevechten op het land van de routes vanaf Route 119
+    // (surfen en vissen zijn hierboven al afgevangen; tools/grounded/route119_battle_theme.py)
+    if (gMapHeader.mapType == MAP_TYPE_ROUTE)
+    {
+        switch (mapsec)
+        {
+        case MAPSEC_ROUTE_119:
+        case MAPSEC_ROUTE_120:
+        case MAPSEC_ROUTE_121:
+        case MAPSEC_ROUTE_122:
+        case MAPSEC_ROUTE_123:
+        case MAPSEC_ROUTE_135:
+        case MAPSEC_ROUTE_136:
+            return MUS_GROUNDED_VS_WILD_ROUTE119;
+        }
+    }
     // v1.0.x nacht: als laatste, alleen buiten (routes en steden) en als niets anders gold
     if ((gMapHeader.mapType == MAP_TYPE_ROUTE || gMapHeader.mapType == MAP_TYPE_TOWN || gMapHeader.mapType == MAP_TYPE_CITY)
      && GetTimeOfDay() == TIME_NIGHT)

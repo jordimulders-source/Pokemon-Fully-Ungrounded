@@ -1,6 +1,6 @@
 # Project Grounded – werkafspraken voor Claude
 
-Pokémon Emerald-romhack op basis van pokeemerald-expansion. De eigenaar (Jordi) communiceert in het Nederlands; antwoord en schrijf de changelog in het Nederlands.
+Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pokémon Ungrounded** (sinds 11 okt, titelscherm via `tools/grounded/title_banner.py`), "Project Grounded" blijft de projectnaam in code en tools. De eigenaar (Jordi) communiceert in het Nederlands; antwoord en schrijf de changelog in het Nederlands.
 
 ## Zuinig met tokens
 - **Humor herhaalt niet:** de "X: YES."-grap is op (Jordi, 9 okt); varieer grappen en check met grep of een vorm al vaak voorkomt.

@@ -3856,6 +3856,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Buneary @ Nugget
 Level: 11
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Pound
+- Quick Attack
+- Defense Curl
+- Baby-Doll Eyes
 
 Snubbull @ Nugget
 Level: 11
@@ -8785,6 +8789,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Morelull
 Level: 22
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Mega Drain
+- Astonish
+- Sleep Powder
+- Moonlight
 
 Togedemaru
 Level: 22
@@ -10275,6 +10283,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Shellos West
 Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Water Gun
+- Mud-Slap
+- Harden
+- Mud Shot
 
 Wiglett
 Level: 10
@@ -10329,6 +10341,10 @@ IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 Rockruff
 Level: 17
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Tackle
+- Rock Throw
+- Bite
+- Howl
 
 Murkrow
 Level: 18

@@ -2245,6 +2245,11 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum Stat stat)
     if (DoesAbilityRaiseStatsWhenLowered(gAiLogicData->abilities[battlerDef]))
         return NO_INCREASE;
 
+    // Project Grounded (Jordi, testrun): geen eindeloze debuff-spam (3x Smokescreen i.p.v. een aanval).
+    // Een verlaging scoort alleen als die stat nog niet verlaagd is; daarna wint de beste aanval.
+    if (stat != STAT_SPEED && gBattleMons[battlerDef].statStages[stat] < DEFAULT_STAT_STAGE)
+        return NO_INCREASE;
+
     // TODO: Avoid decreasing stat if
     // player can kill ai in 2 hits with decreased attack / sp atk stages
     // ai can kill target in 2 hits without decreasing defense / sp def stages

@@ -27,6 +27,7 @@ Status: ✅ opgelost · 👍 goed zo (geen actie) · ⏳ open · 💡 idee/later
 ### Bugs
 | Wat | Status |
 |---|---|
+| Ingang Toadstool Hollow niet te vinden (zag eruit als een boom); nu een zichtbaar pad. Ook de Wo-Chien-ingang. | ✅ |
 | Speler/rivaal onzichtbaar na de rivaal-intro (May) | ✅ |
 | Verkeerde pc-melding na het vangen ("sent to PC" terwijl er plek was) | ✅ |
 | Dave (Route 104) stond 1 tegel te laag in zee | ✅ |

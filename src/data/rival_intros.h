@@ -1,6 +1,7 @@
 // Project Grounded: de rivaal-intro's (May/Brendan), goedgekeurd door Jordi. Ze escaleren per gevecht:
-//   1 Route 103   buren: het echte Littleroot met de twee huizen, 's avonds. Het raam van de rivaal gaat aan, "!",
-//                 Birch' tas valt open en drie Poké Balls rollen eruit. Klein en vriendelijk.
+//   1 Route 103   de starters: op de route zelf valt Birch' tas in beeld, drie Poké Balls springen eruit; vechtspel-VS met
+//                 een diagonale streep, de starter van de rivaal groot tegenover die van de speler; de Galarian Zigzagoon
+//                 glijdt er vlak voor het gevecht bij (alleen als hij in het team zit)
 //   2 Rustboro    Devon Corp. bij zonsondergang (de echte kaart), een Pokédex-pagina: "CAUGHT: jij N, rivaal N+1"
 //   3 Route 110   de race: het beeld splitst in een blauwe (speler) en rode (rivaal) helft met snelheidslijnen, Birch'
 //                 aantekening "WHO'S FURTHER?"
@@ -9,7 +10,7 @@
 //                 flitslampen en spotlight, naam en level groot; dan de grote mugshot met beide portretten en VS
 //   6 Route 136   de finale in de sneeuw: weer de krant (de ace is nog steeds nieuws), dan overspoelt de kleur van de
 //                 starter van de rivaal het beeld (gras/vuur/water), beide portretten groot, de ultieme VS
-// Geen Pokémon-sprites, behalve de ace van de speler in de krant (Jordi). De kaarten worden uit de ROM getekend (layout +
+// Geen Pokémon-sprites, behalve de ace van de speler in de krant en de starters (+ Zigzagoon) op Route 103 (Jordi). De kaarten worden uit de ROM getekend (layout +
 // tileset), de tas komt uit het starterscherm, de rest is code. Gebruikt de runner van class_intros.h; op de tel van
 // MUS_VS_RIVAL (196 BPM, het tempo komt uit de BGM-speler).
 
@@ -70,7 +71,6 @@ bool32 RivalIntro_IsRival(u16 trainerId)
 // ---------------------------------------------------------------------------------------------------------------------
 // gedeelde hulpjes
 
-#define RI_TAG_GLOW   0x7A10
 #define RI_TAG_BALL   0x7A11   // +0..2
 #define RI_TAG_NAME   0x7A14
 #define RI_TAG_VS     0x7A15
@@ -79,17 +79,8 @@ bool32 RivalIntro_IsRival(u16 trainerId)
 static const u16 sRI_ElemCol[3][2] = {{RGB(5, 22, 6), RGB(14, 30, 10)}, {RGB(28, 7, 2), RGB(31, 22, 6)}, {RGB(3, 10, 28), RGB(12, 24, 31)}};
 static const u16 sRI_TextPal[4] = {0, RGB(31, 31, 31), RGB(4, 4, 8), 0};
 static const u16 sRI_VsPal[4] = {0, RGB(31, 29, 6), RGB(20, 2, 2), 0};
-static const u16 sRI_GlowPal[2] = {0, RGB(31, 27, 12)};
 
 extern const struct MapLayout *const gMapLayouts[];
-
-static const struct OamData sRI_Oam32x8 =
-{
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .shape = SPRITE_SHAPE(32x8),
-    .size = SPRITE_SIZE(32x8),
-    .priority = 0,
-};
 
 static bool32 RI_IsPostgame(u16 trainerId)
 {
@@ -389,20 +380,149 @@ static void RI_NewsWindows(void)
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
-// 1 Route 103: buren
-#define R1_MX 2
-#define R1_MY 2
+// 1 Route 103: de starters. Geen sprong naar Littleroot meer (Jordi: te abrupt), alles gebeurt op de route zelf: Birch'
+// tas valt in beeld, drie Poké Balls springen eruit. Eén vliegt naar de kant van de rivaal (rechtsboven), één naar de
+// kant van de speler (linksonder), de derde kijkt rond en kruipt terug in de tas. Twee panelen in de kleur van de
+// starters schuiven diagonaal over het beeld (vechtspel-VS met een witte streep), de ballen gaan open: de starter van de
+// rivaal groot, die van de speler gespiegeld ertegenover. VS. Heeft de speler de Galarian Zigzagoon uit Littleroot bij
+// zich, dan glijdt die er vlak voor het gevecht nog bij ("FEAT."), anders niet.
+static void RI_VsSprite(void);
+static const u16 sRV_StarterSpecies[3] = {SPECIES_TREECKO, SPECIES_TORCHIC, SPECIES_MUDKIP};   // per element
+#define RV_SPLIT      25   // eindstand van de streep: tiles met kolom + rij = 25 (45 graden, door het midden van het beeld)
+#define RV_BAG_ROW    5    // de tas staat op BG0 vanaf rij 5 (zichtbare rijen 6-14)
+#define RV_BAG_COPY   16   // tijdens de panelen staat een kopie van de tas 16 rijen lager (22-30, onzichtbaar)
+#define RV_RIVAL_X    184
+#define RV_RIVAL_Y    54
+#define RV_PLAYER_X   70
+#define RV_PLAYER_Y   100
+#define RV_ZIG_X      38
+#define RV_ZIG_Y      124
+#define RV_BAG_X      120
+#define RV_BAG_Y      70
+// v[]: 0-2 ballen, 3 starter rivaal, 4 starter speler, 5 Zigzagoon, 6 "FEAT.", 7 tas gekopieerd, 19 schudden, 22 VS
+#define RV_TAG_FEAT   0x7A16
+
+// een frontsprite (affine, dubbele grootte); wordt aan het eind door TI_Free opgeruimd
+static u8 RV_MonPic(u16 species, bool32 shiny, u32 personality, s16 x, s16 y)
+{
+    u16 id = CreateMonPicSprite(species, shiny, personality, TRUE, x, y, 0, species);
+    struct Sprite *s;
+    if (id >= MAX_SPRITES)
+        return MAX_SPRITES;
+    if (sTI->nmons >= ARRAY_COUNT(sTI->mons))
+    {
+        FreeAndDestroyMonPicSprite(id);
+        return MAX_SPRITES;
+    }
+    sTI->mons[sTI->nmons++] = id;
+    s = &gSprites[id];
+    s->invisible = TRUE;
+    s->oam.matrixNum = AllocOamMatrix();
+    if (s->oam.matrixNum == 0xFF)
+    {
+        s->oam.matrixNum = 0;
+    }
+    else
+    {
+        s->oam.affineMode = ST_OAM_AFFINE_DOUBLE;
+        s->affineAnimPaused = TRUE;
+        CalcCenterToCornerVec(s, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), ST_OAM_AFFINE_DOUBLE);
+        SetOamMatrixRotationScaling(s->oam.matrixNum, 256, 256, 0);
+    }
+    return TI_Track(id, TIK_MON);
+}
+
+// de eerste Pokémon van die soort in het team (shiny/persoonlijkheid), of NULL
+static struct Pokemon *RV_FindInParty(u16 species)
+{
+    u32 i;
+    for (i = 0; i < PARTY_SIZE; i++)
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) == species && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG))
+            return &gPlayerParty[i];
+    return NULL;
+}
+
+static u8 RV_PartyMonPic(u16 species, s16 x, s16 y)
+{
+    struct Pokemon *mon = RV_FindInParty(species);
+    if (mon == NULL)
+        return RV_MonPic(species, FALSE, 0, x, y);
+    return RV_MonPic(species, GetMonData(mon, MON_DATA_IS_SHINY), GetMonData(mon, MON_DATA_PERSONALITY), x, y);
+}
+
+// de panelen (45 graden): links de speler tot c + r = sL, rechts de rivaal vanaf c + r = sR + 1, met een witte streep
+// ertussen. Tiles: 0 speler, 1 rivaal, 2 wit, 3 speler|wit, 4 wit|rivaal, 5 wit|leeg (rand speler), 6 leeg|wit (rand
+// rivaal). De strepen in de kleurvlakken lopen (fase ph). Elke tile krijgt meteen zijn eindwaarde (geen wissen eerst).
+enum { RVT_P, RVT_R, RVT_W, RVT_PW, RVT_WR, RVT_W0, RVT_0W, RVT_COUNT };
+static const u8 sRV_EdgeLo[RVT_COUNT] = {8, 0, 0, 4, 0, 0, 0};    // x + y < lo: linkerdeel
+static const u8 sRV_EdgeHi[RVT_COUNT] = {16, 0, 16, 16, 8, 8, 4}; // x + y < hi: middendeel, daarna rechterdeel
+static const u8 sRV_EdgeKind[RVT_COUNT][3] = {{1, 1, 1}, {2, 2, 2}, {3, 3, 3}, {1, 3, 3}, {3, 3, 2}, {3, 3, 0}, {0, 0, 3}};
+
+static void RV_PanelTiles(u32 ph)
+{
+    u32 n, x, y;
+    for (n = 0; n < RVT_COUNT; n++)
+    {
+        u32 tile = sTI->v[16] + n;
+        for (y = 0; y < 8; y++)
+            for (x = 0; x < 8; x++)
+            {
+                u32 sum = x + y, kind = sRV_EdgeKind[n][sum < sRV_EdgeLo[n] ? 0 : (sum < sRV_EdgeHi[n] ? 1 : 2)], c = 0;
+                if (kind == 1)
+                    c = ((x + y + ph) & 7) < 2 ? 2 : 1;
+                else if (kind == 2)
+                    c = ((x + 8 - y + ph) & 7) < 2 ? 4 : 3;
+                else if (kind == 3)
+                    c = 5;
+                TI_TilePixel(tile, x, y, c);
+            }
+    }
+}
+
+static void RV_PanelMap(s32 sL, s32 sR)
+{
+    s32 r, c, a = sTI->v[16];
+    for (r = 0; r < 21; r++)
+    {
+        u16 *row = &sTI->bg0map[r * 32];
+        bool32 bag = r >= RV_BAG_ROW + 1 && r <= RV_BAG_ROW + 9;
+        for (c = 0; c < 31; c++)
+        {
+            s32 d = c + r, pl = -1, rv = -1, k;
+            if (d < sL)
+                pl = RVT_P;
+            else if (d == sL)
+                pl = RVT_PW;
+            else if (d == sL + 1)
+                pl = RVT_W0;
+            if (d > sR + 1)
+                rv = RVT_R;
+            else if (d == sR + 1)
+                rv = RVT_WR;
+            else if (d == sR)
+                rv = RVT_0W;
+            if (pl >= 0 && rv >= 0)
+                k = pl == RVT_W0 && rv == RVT_0W ? RVT_W : (pl == RVT_PW ? RVT_PW : rv);
+            else
+                k = pl >= 0 ? pl : rv;
+            if (k >= 0)
+                row[c] = (a + k) | (15 << 12);
+            else
+                row[c] = bag ? sTI->bg0map[(r + RV_BAG_COPY) * 32 + c] : 0;
+        }
+    }
+}
 
 static void RI1_Init(void)
 {
     u8 *buf;
     u16 *map;
     u32 i, r, c;
-    bool32 may = RI_RivalIsMay();
+    u32 rivalElem = sTI->elem, playerElem = sTI->elem == 0 ? 2 : sTI->elem - 1;
+    u16 cols[6];
+    struct Pokemon *zig = RV_FindInParty(SPECIES_ZIGZAGOON_GALAR);
 
-    RI_DrawScene(gMapLayouts[LAYOUT_LITTLEROOT_TOWN - 1], R1_MX, R1_MY);
-    sTI->camX = 8;
-    // de tas (starterscherm): tiles naar BG0 vanaf RI_BAG_TILE, palet 13/14
+    // de tas (starterscherm): tiles naar BG0 vanaf RI_BAG_TILE, palet 13/14; hij begint boven het scherm (bg0y)
     buf = Alloc(0x2000);
     map = Alloc(0x800);
     if (buf != NULL && map != NULL)
@@ -410,109 +530,214 @@ static void RI1_Init(void)
         DecompressDataWithHeaderWram(gBirchBagGrass_Gfx, buf);
         CpuCopy16(buf, &sTI->bg0tiles[RI_BAG_TILE * 16], 256 * 32);
         DecompressDataWithHeaderWram(gBirchBagTilemap, map);
-        for (r = 0; r < 12; r++)
+        for (r = 1; r < 10; r++)
             for (c = 0; c < 30; c++)
             {
                 u16 e = map[r * 32 + c];
                 if ((e & 0x3FF) == 0)
                     continue;
-                TI_Put(c, r, ((e & 0x3FF) + RI_BAG_TILE) | (e & 0x0C00) | (((e >> 12) + 13) << 12));
+                TI_Put(c, r + RV_BAG_ROW, ((e & 0x3FF) + RI_BAG_TILE) | (e & 0x0C00) | (((e >> 12) + 13) << 12));
             }
         LoadPalette(gBirchBagGrass_Pal, BG_PLTT_ID(13), 2 * PLTT_SIZE_4BPP);
     }
     TRY_FREE_AND_SET_NULL(buf);
     TRY_FREE_AND_SET_NULL(map);
-    sTI->bg0y = 96;    // de tas hangt boven het scherm (in de 96 onzichtbare rijen van de 256 hoge BG)
-    // gloed in het raam van de rivaal: halfdoorzichtige sprite (32x8)
-    {
-        u8 g[4 * 1 * 32];
-        u32 x, y;
-        memset(g, 0, sizeof(g));
-        for (y = 1; y < 7; y++)
-            for (x = 6; x < 26; x++)
-                TI_BufPixel(g, 4, x, y, 1);
-        sTI->v[0] = TI_BufSprite(g, sizeof(g), RI_TAG_GLOW, sRI_GlowPal, &sRI_Oam32x8, may ? 224 : 17, 96);
-        gSprites[sTI->v[0]].oam.objMode = ST_OAM_OBJ_BLEND;
-        TI_Show(sTI->v[0], FALSE);
-    }
-    sTI->v[1] = TI_Bang(may ? 204 : 36, 40);
+    sTI->bg0y = 120;
+    REG_BG0VOFS = 120;   // meteen: BG0 staat al aan (tekstvakken) en de tilemap is al geschreven; anders staat de tas
+                         // één beeld lang op zijn eindplek
+    SetGpuReg(REG_OFFSET_BG0VOFS, 120);
+
+    // panelen: 1/2 kleur van de speler, 3/4 van de rivaal, 5 wit
+    cols[0] = 0;
+    cols[1] = sRI_ElemCol[playerElem][0];
+    cols[2] = sRI_ElemCol[playerElem][1];
+    cols[3] = sRI_ElemCol[rivalElem][0];
+    cols[4] = sRI_ElemCol[rivalElem][1];
+    cols[5] = RGB_WHITE;
+    TI_SetPal(15, cols, 6);
+    sTI->v[16] = sTI->nextTile;
+    for (i = 0; i < RVT_COUNT; i++)
+        TI_NewTile();
+    RV_PanelTiles(0);
+
     for (i = 0; i < 3; i++)
     {
-        sTI->v[2 + i] = TI_Item(RI_TAG_BALL + i, ITEM_POKE_BALL, 120, 200);
-        TI_Show(sTI->v[2 + i], FALSE);
+        sTI->v[i] = TI_Item(RI_TAG_BALL + i, ITEM_POKE_BALL, RV_BAG_X, RV_BAG_Y);
+        TI_Show(sTI->v[i], FALSE);
     }
-    RI_MakePortraits(FALSE);
-    TI_Blend(BLDCNT_TGT2_BG1 | BLDCNT_TGT2_BG2 | BLDCNT_TGT2_BG3, 12, 8);
+    sTI->v[3] = RV_MonPic(sRV_StarterSpecies[rivalElem], FALSE, 0, RV_RIVAL_X, RV_RIVAL_Y);
+    sTI->v[4] = RV_PartyMonPic(sRV_StarterSpecies[playerElem], RV_PLAYER_X, RV_PLAYER_Y);
+    if (sTI->v[4] < MAX_SPRITES)
+        gSprites[sTI->v[4]].subpriority = 2;
+    sTI->v[5] = MAX_SPRITES;
+    sTI->v[6] = MAX_SPRITES;
+    if (zig != NULL)
+    {
+        u8 name[POKEMON_NAME_LENGTH + 12], nick[POKEMON_NAME_LENGTH + 1];
+        sTI->v[5] = RV_MonPic(SPECIES_ZIGZAGOON_GALAR, GetMonData(zig, MON_DATA_IS_SHINY), GetMonData(zig, MON_DATA_PERSONALITY), -60, RV_ZIG_Y);
+        if (sTI->v[5] < MAX_SPRITES)
+            gSprites[sTI->v[5]].subpriority = 0;   // vóór de starter
+        GetMonData(zig, MON_DATA_NICKNAME, nick);
+        StringGet_Nickname(nick);
+        RI_Upper(nick);
+        StringCopy(name, COMPOUND_STRING("FEAT.\n"));
+        StringAppend(name, nick);
+        sTI->v[6] = TI_TextSprite(name, 8, 4, 0, RV_TAG_FEAT, sRI_TextPal, &gOamData_AffineDouble_ObjNormal_64x32, 104, 144);
+        TI_Show(sTI->v[6], FALSE);
+    }
+    RI_VsSprite();
+}
+
+// pop uit de bal: van niets naar 2x (met een klein doorschot), eerst wit
+static void RV_Emerge(s32 t, s32 at, u8 id, bool32 flip)
+{
+    s32 k, size;
+    if (id >= MAX_SPRITES || t < at)
+        return;
+    if (TI_AT(at))
+    {
+        TI_Show(id, TRUE);
+        PlaySE(SE_BALL_OPEN);
+    }
+    k = t - at;
+    if (k < 6)
+        size = 16 + k * 98;           // 1/16 -> 2,3x
+    else if (k < 10)
+        size = 604 - (k - 6) * 23;    // terug naar 2x
+    else
+        size = 512;
+    TI_Scale(id, flip ? -(65536 / size) : 65536 / size, 65536 / size, 0);
+    if (k < 8)
+        TI_TintMore(TI_PalBit(id), 16 - k * 2, RGB_WHITE);
+    gSprites[id].y2 = k >= 10 ? Sin(((t - at) * 6) & 0xFF, 2) : 0;
 }
 
 static bool32 RI1_Update(s32 t)
 {
-    s32 b = TI_Beat(1) - TI_Beat(0), end = TI_Beat(9), i, k;
-    // avond: blauw-donker; het raam gloeit
-    TI_Tint(0x1FFF, 6, RGB(2, 3, 12));
-    if (TI_AT(TI_Beat(1)))
+    s32 b = TI_Beat(1) - TI_Beat(0), land = TI_Beat(1), pop = TI_Beat2(3), panels = TI_Beat(2), meet = TI_Beat(3);
+    s32 vs = TI_Beat(4), zig = TI_Beat(5), flash, end, i, k;
+    bool32 hasZig = sTI->v[5] < MAX_SPRITES;
+    static const s16 sBallTo[3][3] = {{RV_RIVAL_X, RV_RIVAL_Y + 8, 40}, {RV_PLAYER_X, RV_PLAYER_Y + 8, 28}, {RV_BAG_X, RV_BAG_Y, 22}};
+
+    flash = hasZig ? TI_Beat(7) : TI_Beat(6);
+    end = flash + 8;
+
+    // de route wordt donkerder (de kaart blijft staan: geen sprong naar Littleroot)
+    TI_Tint(TI_World(), TI_Ramp(t, 0, land) * 7 >> 8, RGB(2, 3, 9));
+
+    // de tas valt (BG0) en landt op tel 1
+    if (t < land)
     {
-        TI_Show(sTI->v[0], TRUE);
-        PlaySE(SE_SWITCH);
+        k = TI_Ramp(t, 0, land);
+        sTI->bg0y = 120 - ((k * k >> 8) * 120 >> 8);
     }
-    if (t >= TI_Beat(1))
-        sTI->bldalpha = BLDALPHA_BLEND(10 + ((t >> 2) & 1), 8);
-    if (TI_AT(TI_Beat(2)))
+    else
     {
-        TI_Show(sTI->v[1], TRUE);
-        PlaySE(SE_PIN);
-    }
-    if (t >= TI_Beat(2))
-    {
-        k = min(256, (t - TI_Beat(2)) * 64);
-        TI_Scale(sTI->v[1], 128 * 256 / max(64, k) , 128 * 256 / max(64, k), 0);
-        gSprites[sTI->v[1]].y2 = t < TI_Beat(2) + 6 ? -(t - TI_Beat(2)) : -6 + min(6, t - TI_Beat(2) - 6);
-    }
-    // de tas valt (BG0), landt op tel 4
-    if (t >= TI_Beat(3))
-    {
-        k = TI_Ramp(t, TI_Beat(3), TI_Beat(4));
-        sTI->bg0y = 96 - ((k * k >> 8) * 176 >> 8);
-        if (TI_AT(TI_Beat(4)))
+        if (TI_AT(land))
         {
             PlaySE(SE_M_STRENGTH);
-            sTI->v[5] = 4;
+            sTI->v[19] = 4;
         }
+        if (sTI->v[19] > 0)
+            sTI->v[19]--;
+        TI_Shake(sTI->v[19]);
     }
-    if (sTI->v[5] > 0)
-    {
-        sTI->v[5]--;
-        TI_WorldMove(0, (sTI->v[5] & 1) ? 2 : -2);
-        sTI->wx = 0;
-    }
-    else if (t >= TI_Beat(4))
-    {
-        sTI->wy = 0;
-    }
-    // drie Poké Balls rollen eruit
+
+    // drie ballen springen eruit: twee naar de zijkanten, de derde terug de tas in
     for (i = 0; i < 3; i++)
     {
-        s32 at = TI_Beat2(9 + i);
+        s32 at = pop + i * 2, dur = i == 2 ? b : 12;
+        u8 s = sTI->v[i];
+        if (t < at)
+            continue;
         if (TI_AT(at))
         {
-            struct TIPart *p = TI_Part(sTI->v[2 + i], 120, 118, (i - 1) * 22, -40, 4, 0);
-            if (p)
-                p->bounce = TRUE;
+            TI_Show(s, TRUE);
             PlaySE(SE_BALL_BOUNCE_1);
         }
+        k = TI_Ramp(t, at, at + dur);
+        TI_Pos(s, RV_BAG_X + ((sBallTo[i][0] - RV_BAG_X) * k >> 8), RV_BAG_Y + ((sBallTo[i][1] - RV_BAG_Y) * k >> 8) - (sBallTo[i][2] * k * (256 - k) >> 14));
+        if (i == 2)
+        {
+            // de overgebleven bal kijkt even rond (wiebelt) en kruipt terug
+            gSprites[s].x2 = k > 64 && k < 200 ? ((t >> 2) & 1 ? 2 : -2) : 0;
+            if (k >= 256)
+                TI_Show(s, FALSE);
+        }
     }
-    // de buren schuiven het beeld in (klein en vriendelijk)
-    if (t >= TI_Beat(6))
+
+    // panelen schuiven van de hoeken naar de diagonaal en raken elkaar op tel 3
+    if (t >= panels)
     {
-        k = TI_Ramp(t, TI_Beat(6), TI_Beat(6) + b);
-        TI_Pos(sTI->v[20], -40 + (k * 82 >> 8), 112 + (t & 8 ? 0 : 0));
-        TI_Pos(sTI->v[21], 280 - (k * 82 >> 8), 112);
-        if (TI_AT(TI_Beat(6)))
-            PlaySE(SE_M_TAIL_WHIP);
-        gSprites[sTI->v[20]].y2 = t >= TI_Beat(7) && t < TI_Beat(7) + 6 ? -3 : 0;
-        gSprites[sTI->v[21]].y2 = t >= TI_Beat2(15) && t < TI_Beat2(15) + 6 ? -3 : 0;
+        if (sTI->v[7] == 0)
+        {
+            sTI->v[7] = 1;
+            for (i = RV_BAG_ROW + 1; i <= RV_BAG_ROW + 9; i++)   // CpuCopy16: VRAM niet per byte
+                CpuCopy16(&sTI->bg0map[i * 32], &sTI->bg0map[(i + RV_BAG_COPY) * 32], 32 * 2);
+            PlaySE(SE_M_DOUBLE_TEAM);
+        }
+        k = TI_Ramp(t, panels, meet);
+        k = 256 - ((256 - k) * (256 - k) >> 8);   // ease-out
+        RV_PanelMap(-2 + ((RV_SPLIT + 2) * k >> 8), 50 - ((50 - RV_SPLIT) * k >> 8));
+        RV_PanelTiles(t >> 1);   // de strepen lopen
+        if (TI_AT(meet))
+        {
+            PlaySE(SE_M_MEGA_KICK);
+            sTI->v[19] = 5;
+        }
     }
-    TI_Flash(t, TI_Beat(8), 8, 12, PALETTES_ALL, RGB_WHITE);
+
+    // de ballen gaan open: eerst de starter van de rivaal, een halve tel later die van de speler (gespiegeld)
+    if (TI_AT(meet))
+        TI_Show(sTI->v[0], FALSE);
+    if (TI_AT(meet + b / 2))
+        TI_Show(sTI->v[1], FALSE);
+    RV_Emerge(t, meet, sTI->v[3], FALSE);
+    RV_Emerge(t, meet + b / 2, sTI->v[4], TRUE);
+
+    // VS slaat in op de streep
+    if (t >= vs)
+    {
+        s32 sc = 256 * 256 / max(256, 1600 - (t - vs) * 260);
+        if (sc > 64)
+            sc = 64;
+        TI_Show(sTI->v[22], TRUE);
+        TI_Pos(sTI->v[22], 124, 80);
+        TI_Scale(sTI->v[22], sc, sc, t < vs + 6 ? (u16)((vs + 6 - t) * 3000) : 0);
+        if (TI_AT(vs))
+        {
+            PlaySE(SE_M_MEGA_KICK);
+            sTI->v[19] = 8;
+        }
+    }
+
+    // vlak voor het gevecht: de Galarian Zigzagoon glijdt erbij
+    if (hasZig && t >= zig)
+    {
+        u8 z = sTI->v[5];
+        k = TI_Ramp(t, zig, zig + 8);
+        k = 256 - ((256 - k) * (256 - k) >> 8);
+        if (TI_AT(zig))
+        {
+            TI_Show(z, TRUE);
+            PlaySE(SE_M_TAIL_WHIP);
+        }
+        TI_Scale(z, -176, 176, 0);   // 1,5x, kijkt naar rechts
+        TI_Pos(z, -60 + ((RV_ZIG_X + 60) * k >> 8), RV_ZIG_Y);
+        gSprites[z].x2 = t >= zig + 8 && t < zig + 12 ? (zig + 12 - t) : 0;   // remt af
+        if (sTI->v[4] < MAX_SPRITES && t >= zig + 6 && t < zig + 12)
+            gSprites[sTI->v[4]].y2 = -5;   // de starter schrikt
+        if (t >= zig + 10 && sTI->v[6] < MAX_SPRITES)
+        {
+            s32 sc = min(256, 128 + (t - zig - 10) * 32);   // van 2x naar 1x
+            TI_Show(sTI->v[6], TRUE);
+            TI_Scale(sTI->v[6], sc, sc, 0);
+            if (TI_AT(zig + 10))
+                PlaySE(SE_PIN);
+        }
+    }
+
+    TI_Flash(t, flash, 8, 14, PALETTES_ALL, RGB_WHITE);
     return t >= end;
 }
 

@@ -571,7 +571,8 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Rock Slide
 - Flip Turn
 """),
-    dict(const='SICKBLIK_ROUTE_104', map='Route104', x=14, y=26, gfx='OBJ_EVENT_GFX_MAN_3', face='LEFT', sight=4,
+    # UIT (Jordi 12 okt): vlak na SickBlik op het strand; trainer blijft bestaan, niet op de kaart
+    dict(const='SICKBLIK_ROUTE_104', off=True, map='Route104', x=14, y=26, gfx='OBJ_EVENT_GFX_MAN_3', face='LEFT', sight=4,
          label='SickBlik',
          intro=r"Oh! A player! In my romhack!\pHi, I'm SICKBLIK. I made this.\p"
                r"Hold still. I need to check if\nthe battles actually work.$",
@@ -960,6 +961,8 @@ def main():
     # kaarten
     bymap = {}
     for f in FIGHTS:
+        if f.get('off'):
+            continue
         bymap.setdefault(f['map'], []).append(f)
     for m, fs in bymap.items():
         p = 'data/maps/%s/map.json' % m

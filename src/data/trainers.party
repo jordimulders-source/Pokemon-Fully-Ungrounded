@@ -777,7 +777,7 @@ Double Battle: No
 AI: Basic Trainer
 
 Wailord
-Level: 62
+Level: 65
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Bubble Beam
 - Bounce
@@ -785,19 +785,19 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Body Slam
 
 Snorlax
-Level: 62
+Level: 65
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Clefable
-Level: 62
+Level: 65
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Drifblim
-Level: 62
+Level: 65
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Dondozo
-Level: 62
+Level: 65
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Bubble Beam
 - Noble Roar
@@ -805,7 +805,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Body Slam
 
 Cetitan
-Level: 62
+Level: 65
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_ZANDER ===
@@ -923,12 +923,12 @@ AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI
 Mugshot: Blue
 
 Pelipper
-Level: 68
+Level: 71
 Ability: Drizzle
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Crobat
-Level: 68
+Level: 71
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Hypnosis
 - Rain Dance
@@ -936,7 +936,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Roost
 
 Overqwil @ Life Orb
-Level: 68
+Level: 71
 Ability: Swift Swim
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Gunk Shot
@@ -945,7 +945,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Toxic Spikes
 
 Castform
-Level: 68
+Level: 71
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Thunder
 - Hurricane
@@ -953,7 +953,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Lumina Crash
 
 Archaludon
-Level: 69
+Level: 72
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Electro Shot
 - Flash Cannon
@@ -961,7 +961,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Thunder Wave
 
 Sharpedo @ Focus Sash
-Level: 69
+Level: 72
 Ability: Rough Skin
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Flip Turn
@@ -2177,7 +2177,7 @@ Double Battle: No
 AI: BASIC_TRAINER / CHECK_BAD_MOVE / TRY_TO_FAINT / CHECK_VIABILITY
 
 Gothitelle
-Level: 43
+Level: 45
 Ability: Shadow Tag
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fake Out
@@ -2186,13 +2186,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Taunt
 
 Ditto
-Level: 43
+Level: 45
 Ability: Imposter
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Transform
 
 Maushold
-Level: 43
+Level: 45
 Ability: Technician
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Population Bomb
@@ -2201,7 +2201,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Encore
 
 Gumshoos
-Level: 43
+Level: 45
 Ability: Stakeout
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Pursuit
@@ -2210,7 +2210,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - U-turn
 
 Lickilicky
-Level: 43
+Level: 45
 Ability: Cloud Nine
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Explosion
@@ -2229,7 +2229,7 @@ Double Battle: No
 AI: BASIC_TRAINER / CHECK_BAD_MOVE / CHECK_VIABILITY / HP_AWARE
 
 Spinda
-Level: 43
+Level: 45
 Ability: Contrary
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Teeter Dance
@@ -2238,7 +2238,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Substitute
 
 Porygon2
-Level: 43
+Level: 45
 Ability: Trace
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Recover
@@ -2247,13 +2247,13 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Confuse Ray
 
 Ditto
-Level: 43
+Level: 45
 Ability: Imposter
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Transform
 
 Xatu
-Level: 43
+Level: 45
 Ability: Magic Bounce
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Future Sight
@@ -2262,7 +2262,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Teleport
 
 Politoed @ Damp Rock
-Level: 43
+Level: 45
 Ability: Drizzle
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Weather Ball
@@ -2271,7 +2271,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Perish Song
 
 Ursaluna
-Level: 43
+Level: 45
 Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Facade
@@ -2290,7 +2290,7 @@ Double Battle: No
 AI: BASIC_TRAINER / CHECK_BAD_MOVE / HP_AWARE / CHECK_VIABILITY / STALL
 
 Vigoroth @ Sitrus Berry
-Level: 44
+Level: 46
 Ability: Vital Spirit
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Body Slam
@@ -2299,7 +2299,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Toxic
 
 Wigglytuff @ Leftovers
-Level: 44
+Level: 46
 Ability: Competitive
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dazzling Gleam
@@ -2308,7 +2308,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Disable
 
 Chansey @ Eviolite
-Level: 44
+Level: 46
 Ability: Natural Cure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Soft-Boiled
@@ -2317,7 +2317,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Seismic Toss
 
 Wyrdeer @ Rocky Helmet
-Level: 44
+Level: 46
 Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Wave
@@ -2326,7 +2326,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psyshield Bash
 
 Obstagoon @ Flame Orb
-Level: 44
+Level: 46
 Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Obstruct
@@ -2335,7 +2335,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rest
 
 Oranguru @ Mental Herb
-Level: 44
+Level: 46
 Ability: Inner Focus
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Instruct
@@ -2354,7 +2354,7 @@ Double Battle: No
 AI: BASIC_TRAINER / CHECK_BAD_MOVE / TRY_TO_FAINT / RISKY / CHECK_VIABILITY
 
 Vigoroth @ Wide Lens
-Level: 45
+Level: 47
 Ability: Vital Spirit
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fissure
@@ -2363,7 +2363,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Night Slash
 
 Cinccino @ Wide Lens
-Level: 45
+Level: 47
 Ability: Skill Link
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tail Slap
@@ -2372,7 +2372,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Tidy Up
 
 Bouffalant @ Wide Lens
-Level: 45
+Level: 47
 Ability: Reckless
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Horn Drill
@@ -2381,7 +2381,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 
 Kangaskhan @ Wide Lens
-Level: 45
+Level: 47
 Ability: Scrappy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fissure
@@ -2390,7 +2390,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dizzy Punch
 
 Komala @ Wide Lens
-Level: 45
+Level: 47
 Ability: Comatose
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fissure
@@ -2399,7 +2399,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Wood Hammer
 
 Tauros @ Wide Lens
-Level: 45
+Level: 47
 Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Horn Drill
@@ -2987,7 +2987,7 @@ Double Battle: No
 AI: BASIC_TRAINER / CHECK_BAD_MOVE / HP_AWARE / CHECK_VIABILITY
 
 Delcatty @ Leftovers
-Level: 43
+Level: 45
 Ability: Wonder Skin
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Block
@@ -2996,7 +2996,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sucker Punch
 
 Doublade @ Eviolite
-Level: 43
+Level: 45
 Ability: No Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Iron Defense
@@ -3005,7 +3005,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Night Slash
 
 Cyclizar @ Rocky Helmet
-Level: 43
+Level: 45
 Ability: Regenerator
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shed Tail
@@ -3014,7 +3014,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - U-turn
 
 Heliolisk @ Life Orb
-Level: 43
+Level: 45
 Ability: Solar Power
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Pulse
@@ -3023,7 +3023,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Hyper Voice
 
 Drampa @ Wise Glasses
-Level: 43
+Level: 45
 Ability: Berserk
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Draco Meteor
@@ -3032,7 +3032,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Roost
 
 Pyroar @ Charcoal
-Level: 43
+Level: 45
 Ability: Unnerve
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Fire Blast
@@ -3051,7 +3051,7 @@ Double Battle: No
 AI: BASIC_TRAINER / CHECK_BAD_MOVE / HP_AWARE / CHECK_VIABILITY
 
 Obstagoon @ Flame Orb
-Level: 44
+Level: 46
 Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Obstruct
@@ -3060,7 +3060,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bulk Up
 
 Grafaiai @ Poison Barb
-Level: 44
+Level: 46
 Ability: Poison Touch
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Poison Jab
@@ -3069,7 +3069,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Encore
 
 Dusclops @ Eviolite
-Level: 44
+Level: 46
 Ability: Pressure
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Night Shade
@@ -3078,7 +3078,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mean Look
 
 Zoroark-Hisui @ Spell Tag
-Level: 44
+Level: 46
 Ability: Illusion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Bitter Malice
@@ -3087,7 +3087,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Ball
 
 Ursaluna-Bloodmoon @ Leftovers
-Level: 44
+Level: 46
 Ability: Mind's Eye
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Blood Moon
@@ -3096,7 +3096,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Calm Mind
 
 Zangoose @ Toxic Orb
-Level: 44
+Level: 46
 Ability: Toxic Boost
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Slash
@@ -3115,7 +3115,7 @@ Double Battle: No
 AI: CHECK_BAD_MOVE / TRY_TO_FAINT / FORCE_SETUP_FIRST_TURN / CHECK_VIABILITY
 
 Zangoose @ Toxic Orb
-Level: 43
+Level: 45
 Ability: Toxic Boost
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Swords Dance
@@ -3124,7 +3124,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Night Slash
 
 Wyrdeer @ Life Orb
-Level: 43
+Level: 45
 Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Calm Mind
@@ -3133,7 +3133,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunderbolt
 
 Farigiraf @ Leftovers
-Level: 43
+Level: 45
 Ability: Armor Tail
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nasty Plot
@@ -3142,7 +3142,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Wish
 
 Zoroark-Hisui @ Spell Tag
-Level: 43
+Level: 45
 Ability: Illusion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Agility
@@ -3151,7 +3151,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Burning Jealousy
 
 Indeedee @ Psychic Seed
-Level: 43
+Level: 45
 Ability: Psychic Surge
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Calm Mind
@@ -3160,7 +3160,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mystical Fire
 
 Grumpig @ Sitrus Berry
-Level: 43
+Level: 45
 Ability: Simple
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Belly Drum
@@ -3872,15 +3872,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Sinistcha @ Nugget
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Polteageist @ Nugget
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Weezing_Galar @ Nugget
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_2 ===
@@ -3958,15 +3958,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Alomomola @ Nugget
-Level: 74
+Level: 75
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Slowbro @ Nugget
-Level: 74
+Level: 75
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Crawdaunt @ Nugget
-Level: 74
+Level: 75
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_NAOMI ===
@@ -4245,27 +4245,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Politoed
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Ludicolo
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Seismitoad
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Gyarados
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Seaking
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Swanna
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRIDGET ===
@@ -4278,16 +4278,16 @@ Double Battle: No
 AI: Check Bad Move
 
 Azumarill
-Level: 74
+Level: 75
 Ability: Huge Power
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Tatsugiri
-Level: 73
+Level: 74
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Araquanid
-Level: 73
+Level: 74
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_OLIVIA ===
@@ -4300,7 +4300,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Starmie
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunder
 - Surf
@@ -4308,12 +4308,12 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Scald
 
 Kabutops
-Level: 74
+Level: 75
 Ability: Swift Swim
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Golduck
-Level: 74
+Level: 75
 Ability: Swift Swim
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
@@ -4327,15 +4327,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Cloyster
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Lapras
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Arctovish
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JESSICA_2 ===
@@ -5593,19 +5593,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Throh
-Level: 23
+Level: 25
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Mienfoo
-Level: 23
+Level: 25
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Clobbopus
-Level: 23
+Level: 25
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Pignite
-Level: 23
+Level: 25
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_HITOSHI ===
@@ -5933,15 +5933,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Raichu
-Level: 32
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Staryu
-Level: 32
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Porygon
-Level: 32
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_GRUNT_AQUA_HIDEOUT_7 ===
@@ -6004,15 +6004,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Toxel
-Level: 32
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Morpeko
-Level: 32
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Rotom
-Level: 32
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_FERNANDO_1 ===
@@ -6220,15 +6220,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Magmar
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Larvesta
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Coalossal
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JEFF ===
@@ -6241,23 +6241,23 @@ Double Battle: No
 AI: Check Bad Move
 
 Flareon
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Marowak_Alola
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Ninetales
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Arcanine
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Arcanine_Hisui
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_AXLE ===
@@ -6270,27 +6270,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Charizard
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Typhlosion
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Infernape
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Delphox
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Skeledirge
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Incineroar
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JACE ===
@@ -6303,15 +6303,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Torkoal
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Rapidash
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Volbeat
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_KEEGAN ===
@@ -6324,27 +6324,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Magcargo
-Level: 42
+Level: 45
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Camerupt
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Pyroar
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Cinderace
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Blaziken
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Heatmor
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BERNIE_1 ===
@@ -7172,7 +7172,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Smeargle
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Kinesis
 - Mimic
@@ -7180,7 +7180,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Sketch
 
 Mr. Mime
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Kinesis
 - Reflect
@@ -7188,7 +7188,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Moonblast
 
 Mr. Rime @ Focus Sash
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Kinesis
 - Snowscape
@@ -7205,7 +7205,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Gardevoir
-Level: 64
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Expanding Force
 - Dazzling Gleam
@@ -7213,7 +7213,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Icy Wind
 
 Sigilyph
-Level: 64
+Level: 66
 Ability: Magic Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Expanding Force
@@ -7222,7 +7222,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Heat Wave
 
 Exeggutor @ White Herb
-Level: 64
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Expanding Force
 - Leaf Storm
@@ -7239,7 +7239,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Farigiraf
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
 - Trick Room
 - Foul Play
@@ -7247,7 +7247,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
 - Helping Hand
 
 Hatterene
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
 - Dazzling Gleam
 - Moonblast
@@ -7255,7 +7255,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
 - Calm Mind
 
 Slowking @ Chesto Berry
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
 - Chilling Water
 - Icy Wind
@@ -7499,7 +7499,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Hypno
-Level: 64
+Level: 66
 Ability: Bad Dreams
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Nightmare
@@ -7508,7 +7508,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Hex
 
 Hypno
-Level: 64
+Level: 66
 Ability: Bad Dreams
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Dark Pulse
@@ -7517,7 +7517,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Psychic
 
 Orbeetle
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_SAMANTHA ===
@@ -7530,15 +7530,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Musharna
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
 
 Bronzong
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
 
 Rabsca
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
 
 === TRAINER_MAURA ===
@@ -7551,7 +7551,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Alakazam
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Kinesis
 - Psychic
@@ -7559,7 +7559,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Thunderbolt
 
 Jynx
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Snowscape
 - Blizzard
@@ -7567,7 +7567,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Aurora Veil
 
 Castform
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rain Dance
 - Blizzard
@@ -8252,7 +8252,7 @@ AI: CHECK_BAD_MOVE / TRY_TO_FAINT / CHECK_VIABILITY / HP_AWARE / WILL_SUICIDE
 Mugshot: Yellow
 
 Geodude @ Focus Sash
-Level: 16
+Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Solid Rock
 - Stealth Rock
@@ -8261,7 +8261,7 @@ Ability: Solid Rock
 - Explosion
 
 Geodude_Alola @ Focus Sash
-Level: 16
+Level: 20
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Galvanize
 - Self Destruct
@@ -8270,7 +8270,7 @@ Ability: Galvanize
 - Spark
 
 Lileep @ Absorb Bulb
-Level: 17
+Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Storm Drain
 - Leech Seed
@@ -8279,7 +8279,7 @@ Ability: Storm Drain
 - Recover
 
 Sableye @ Rocky Helmet
-Level: 17
+Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Prankster
 - Fake Out
@@ -8288,7 +8288,7 @@ Ability: Prankster
 - Shadow Sneak
 
 Shuckle @ Leftovers
-Level: 18
+Level: 22
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 Ability: Sap Sipper
 - Power Swap
@@ -8297,7 +8297,7 @@ Ability: Sap Sipper
 - Protect
 
 Nosepass @ Sitrus Berry
-Level: 17
+Level: 21
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Earth Eater
 - Nuzzle
@@ -8317,7 +8317,7 @@ AI: CHECK_BAD_MOVE / TRY_TO_FAINT / CHECK_VIABILITY / SMART_MON_CHOICES
 Mugshot: Blue
 
 Spinda @ Silk Scarf
-Level: 24
+Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Pure Power
 - Dizzy Punch
@@ -8326,7 +8326,7 @@ Ability: Pure Power
 - Sucker Punch
 
 Farfetchd @ Rawst Berry
-Level: 24
+Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Moody
 - Aerial Ace
@@ -8335,7 +8335,7 @@ Ability: Moody
 - Quick Attack
 
 Machop @ Eviolite
-Level: 25
+Level: 27
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: No Guard
 - Dynamic Punch
@@ -8344,7 +8344,7 @@ Ability: No Guard
 - Knock Off
 
 Meditite @ Expert Belt
-Level: 25
+Level: 27
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Pure Power
 - Fake Out
@@ -8353,7 +8353,7 @@ Ability: Pure Power
 - Ice Punch
 
 Hitmontop @ Black Belt
-Level: 24
+Level: 26
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Technician
 - Triple Kick
@@ -8362,7 +8362,7 @@ Ability: Technician
 - Aerial Ace
 
 Makuhita @ Sitrus Berry
-Level: 26
+Level: 28
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Technician
 - Belly Drum
@@ -8382,7 +8382,7 @@ AI: SMART_TRAINER / HP_AWARE
 Mugshot: Yellow
 
 Volbeat @ Charcoal
-Level: 31
+Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Levitate
 - Tail Glow
@@ -8391,7 +8391,7 @@ Ability: Levitate
 - Confuse Ray
 
 Illumise @ Bright Powder
-Level: 31
+Level: 33
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Prankster
 - Encore
@@ -8400,7 +8400,7 @@ Ability: Prankster
 - Charge Beam
 
 Voltorb-Hisui @ Air Balloon
-Level: 32
+Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Soundproof
 - Psybeam
@@ -8409,7 +8409,7 @@ Ability: Soundproof
 - Giga Drain
 
 Magneton @ Eviolite
-Level: 33
+Level: 35
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Magnet Pull
 - Tri Attack
@@ -8417,8 +8417,8 @@ Ability: Magnet Pull
 - Sonic Boom
 - Metal Sound
 
-Loudred @ Magnet
-Level: 33
+Exploud @ Magnet
+Level: 35
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Galvanize
 - Nuzzle
@@ -8427,7 +8427,7 @@ Ability: Galvanize
 - Swift
 
 Manectric @ Sitrus Berry
-Level: 34
+Level: 36
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Transistor
 - Electric Terrain
@@ -8447,7 +8447,7 @@ AI: AI_FLAG_OMNISCIENT / AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICT_SWITCH / AI_FLA
 Mugshot: Pink
 
 Ninetales @ Heat Rock
-Level: 42
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Drought
 - Burning Jealousy
@@ -8456,7 +8456,7 @@ Ability: Drought
 - Solar Beam
 
 Torkoal @ Leftovers
-Level: 42
+Level: 45
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: White Smoke
 - Rapid Spin
@@ -8465,7 +8465,7 @@ Ability: White Smoke
 - Lava Plume
 
 Scovillain @ Life Orb
-Level: 43
+Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Chlorophyll
 - Solar Beam
@@ -8474,7 +8474,7 @@ Ability: Chlorophyll
 - Sunny Day
 
 Talonflame @ Sharp Beak
-Level: 43
+Level: 46
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Gale Wings
 - Acrobatics
@@ -8483,7 +8483,7 @@ Ability: Gale Wings
 - Agility
 
 Coalossal @ Rocky Helmet
-Level: 44
+Level: 47
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Flash Fire
 - Stealth Rock
@@ -8492,7 +8492,7 @@ Ability: Flash Fire
 - Tar Shot
 
 Magcargo @ White Herb
-Level: 45
+Level: 48
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Desolate Land
 - Shell Smash
@@ -8512,7 +8512,7 @@ AI: BASIC_TRAINER / CHECK_BAD_MOVE / HP_AWARE / CHECK_VIABILITY / FORCE_SETUP_FI
 Mugshot: Purple
 
 Wobbuffet @ Custap Berry
-Level: 47
+Level: 49
 Ability: Shadow Tag
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Trick Room
@@ -8521,7 +8521,7 @@ IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Destiny Bond
 
 Arboliva @ Leftovers
-Level: 47
+Level: 49
 Ability: Seed Sower
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Strength Sap
@@ -8530,7 +8530,7 @@ IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Earth Power
 
 Bewear @ Choice Band
-Level: 47
+Level: 49
 Ability: Fluffy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Hammer Arm
@@ -8539,7 +8539,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Ice Punch
 
 Linoone @ Sitrus Berry
-Level: 47
+Level: 49
 Ability: Tough Claws
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - First Impression
@@ -8548,7 +8548,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Crush Claw
 
 Ursaluna @ Flame Orb
-Level: 47
+Level: 49
 Ability: Guts
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Facade
@@ -8557,7 +8557,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Drain Punch
 
 Slaking @ Leftovers
-Level: 47
+Level: 49
 Ability: Truant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - Rest
@@ -8577,7 +8577,7 @@ AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT
 Mugshot: Blue
 
 Xatu @ Focus Sash
-Level: 53
+Level: 54
 Ability: Magic Bounce
 - Tailwind
 - Psychic
@@ -8585,7 +8585,7 @@ Ability: Magic Bounce
 - Roost
 
 Dodrio @ Soft Sand
-Level: 54
+Level: 55
 Ability: Speed Boost
 - High Horsepower
 - Drill Peck
@@ -8593,7 +8593,7 @@ Ability: Speed Boost
 - Swords Dance
 
 Kilowattrel @ Charti Berry
-Level: 54
+Level: 55
 Ability: Wind Power
 - Thunderbolt
 - Hurricane
@@ -8601,7 +8601,7 @@ Ability: Wind Power
 - Volt Switch
 
 Ninjask @ Throat Spray
-Level: 54
+Level: 55
 Ability: Punk Rock
 - Boomburst
 - Bug Buzz
@@ -8609,7 +8609,7 @@ Ability: Punk Rock
 - Protect
 
 Swellow @ Focus Sash
-Level: 54
+Level: 55
 Ability: Wind Rider
 - Tailwind
 - Brave Bird
@@ -8617,7 +8617,7 @@ Ability: Wind Rider
 - Aqua Jet
 
 Altaria @ Leftovers
-Level: 55
+Level: 56
 Ability: Fluffy
 - Tailwind
 - Dragon Pulse
@@ -8636,7 +8636,7 @@ AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI
 Mugshot: Purple
 
 Slowking @ King's Rock
-Level: 65
+Level: 67
 Ability: Regenerator
 - Sludge Bomb
 - Scald
@@ -8644,7 +8644,7 @@ Ability: Regenerator
 - Chilly Reception
 
 Beheeyem @ Expert Belt
-Level: 65
+Level: 67
 Ability: Dimensional Warp
 - Photon Geyser
 - Signal Beam
@@ -8652,7 +8652,7 @@ Ability: Dimensional Warp
 - Ice Beam
 
 Solrock @ Focus Sash
-Level: 65
+Level: 67
 Ability: Levitate
 - Stone Axe
 - Zen Headbutt
@@ -8660,7 +8660,7 @@ Ability: Levitate
 - Earthquake
 
 Grumpig @ Leftovers
-Level: 65
+Level: 67
 Ability: Simple
 - Calm Mind
 - Psychic
@@ -8668,7 +8668,7 @@ Ability: Simple
 - Cosmic Power
 
 Reuniclus @ Life Orb
-Level: 65
+Level: 67
 Ability: Magic Guard
 - Calm Mind
 - Psyshock
@@ -8676,7 +8676,7 @@ Ability: Magic Guard
 - Recover
 
 Lunatone @ Sitrus Berry
-Level: 66
+Level: 68
 Ability: Levitate
 - Trick Room
 - Power Gem
@@ -8695,7 +8695,7 @@ AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI
 Mugshot: Blue
 
 Masquerain @ Focus Sash
-Level: 75
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Drizzle
 - Quiver Dance
@@ -8704,7 +8704,7 @@ Ability: Drizzle
 - Bug Buzz
 
 Seaking @ Choice Band
-Level: 75
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Lightning Rod
 - Wave Crash
@@ -8713,7 +8713,7 @@ Ability: Lightning Rod
 - Poison Jab
 
 Ludicolo @ Leftovers
-Level: 75
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Dancer
 - Aqua Step
@@ -8722,7 +8722,7 @@ Ability: Dancer
 - Victory Dance
 
 Golduck @ Life Orb
-Level: 75
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Swift Swim
 - Hydro Pump
@@ -8731,7 +8731,7 @@ Ability: Swift Swim
 - Ice Beam
 
 Relicanth @ Rindo Berry
-Level: 75
+Level: 76
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Rock Head
 - Head Smash
@@ -8740,7 +8740,7 @@ Ability: Rock Head
 - Slack Off
 
 Milotic @ Sitrus Berry
-Level: 76
+Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Multiscale
 - Scald
@@ -9736,17 +9736,17 @@ Double Battle: No
 AI: Check Bad Move
 
 Pelipper
-Level: 74
+Level: 75
 Ability: Drizzle
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Barraskewda
-Level: 73
+Level: 74
 Ability: Swift Swim
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Basculegion
-Level: 74
+Level: 75
 Ability: Swift Swim
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Last Respects
@@ -10290,27 +10290,27 @@ Double Battle: No
 AI: CHECK_BAD_MOVE / TRY_TO_FAINT / CHECK_VIABILITY / SMART_MON_CHOICES
 
 Baltoy
-Level: 14
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Dwebble
-Level: 14
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Maractus
-Level: 14
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Larvitar
-Level: 14
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Gligar
-Level: 14
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Cacnea
-Level: 15
+Level: 19
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_TOMMY ===
@@ -10323,15 +10323,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Aron
-Level: 13
+Level: 17
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 Rockruff
-Level: 13
+Level: 17
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Murkrow
-Level: 14
+Level: 18
 Ability: Prankster
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 - Haze
@@ -10374,27 +10374,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Kilowattrel
-Level: 32
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Lanturn
-Level: 32
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Stunfisk
-Level: 32
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Manectric
-Level: 32
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Luxray
-Level: 32
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Eelektrik
-Level: 32
+Level: 34
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_QUINCY ===
@@ -12650,15 +12650,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Dodrio
-Level: 52
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Togekiss
-Level: 53
+Level: 54
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Mantine
-Level: 53
+Level: 54
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_HUMBERTO ===
@@ -12671,23 +12671,23 @@ Double Battle: No
 AI: Check Bad Move
 
 Skarmory
-Level: 53
+Level: 54
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Bombirdier
-Level: 53
+Level: 54
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Aerodactyl
-Level: 53
+Level: 54
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Minior
-Level: 53
+Level: 54
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 Braviary
-Level: 53
+Level: 54
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
 
 === TRAINER_PRESLEY ===
@@ -12725,15 +12725,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Archeops
-Level: 53
+Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Mandibuzz
-Level: 53
+Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Gliscor
-Level: 53
+Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_COLIN ===
@@ -13383,19 +13383,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Stufful
-Level: 23
+Level: 25
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Sawk
-Level: 23
+Level: 25
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Combusken
-Level: 23
+Level: 25
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Flamigo
-Level: 23
+Level: 25
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_MCGREGOR ===
@@ -13408,19 +13408,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Croagunk
-Level: 24
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Heracross
-Level: 24
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Hawlucha
-Level: 24
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Sneasel-Hisui
-Level: 24
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_CYNDY_1 ===
@@ -15343,15 +15343,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Darmanitan_Standard
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Lampent
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Houndoom
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_ANNIKA ===
@@ -15364,15 +15364,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Swampert
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Inteleon
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Quaquaval
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_VIOLET_COOLTRAINER ===
@@ -15786,7 +15786,7 @@ AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI
 Mugshot: Purple
 
 Darmanitan @ Choice Scarf
-Level: 74
+Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - U-Turn
 - Flare Blitz
@@ -15794,7 +15794,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 
 Dondozo @ Leftovers
-Level: 74
+Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Curse
 - Waterfall
@@ -15802,7 +15802,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sleep Talk
 
 Baxcalibur @ Loaded Dice
-Level: 74
+Level: 77
 Ability: Thermal Exchange
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Icicle Spear
@@ -15811,7 +15811,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Dance
 
 Annihilape @ Chesto Berry
-Level: 74
+Level: 77
 Ability: Defiant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rest
@@ -15820,7 +15820,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Drain Punch
 
 Flutter Mane @ Choice Specs
-Level: 74
+Level: 77
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Ball
 - Mystical Fire
@@ -15828,7 +15828,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Power Gem
 
 Gallade @ Choice Scarf
-Level: 75
+Level: 78
 Ability: Sharpness
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psycho Cut
@@ -15861,27 +15861,27 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Houndour
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Clamperl
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Zangoose
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Loudred
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
-Shuppet
-Level: 27
+Banette
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Grovyle
-Level: 29
+Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_119_MUDKIP ===
@@ -15895,27 +15895,27 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Houndoom
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Huntail
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Pinsir
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Exploud
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Banette
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Sceptile
-Level: 49
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_103_TREECKO ===
@@ -15943,27 +15943,27 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Lombre
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Clamperl
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Zangoose
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Loudred
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Absol
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Combusken
-Level: 29
+Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_119_TREECKO ===
@@ -15977,27 +15977,27 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Ludicolo
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Huntail
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Zangoose
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Exploud
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Absol
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Blaziken
-Level: 49
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_103_TORCHIC ===
@@ -16025,27 +16025,27 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Kecleon
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Torkoal
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Zangoose
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Loudred
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Absol
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Marshtomp
-Level: 29
+Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_ROUTE_119_TORCHIC ===
@@ -16059,27 +16059,27 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Tropius
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Torkoal
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Zangoose
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Exploud
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Absol
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Swampert
-Level: 49
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_103_MUDKIP ===
@@ -16107,27 +16107,27 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Remoraid
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Vulpix
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lopunny
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Vespiquen
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Emolga
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Grovyle
-Level: 29
+Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_119_MUDKIP ===
@@ -16141,27 +16141,27 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Octillery
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Ninetales
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lopunny
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Vespiquen
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Eelektross
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Sceptile
-Level: 49
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_103_TREECKO ===
@@ -16189,27 +16189,27 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Remoraid
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mimikyu
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lopunny
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Vespiquen
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Emolga
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Combusken
-Level: 29
+Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_119_TREECKO ===
@@ -16223,27 +16223,27 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Octillery
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mimikyu
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lopunny
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Vespiquen
-Level: 47
+Level: 51
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Magnezone
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Blaziken
-Level: 49
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_103_TORCHIC ===
@@ -16271,27 +16271,27 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Capsakid
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mimikyu
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lopunny
-Level: 28
+Level: 32
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Snorunt
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Emolga
-Level: 27
+Level: 31
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Marshtomp
-Level: 29
+Level: 33
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_ROUTE_119_TORCHIC ===
@@ -16305,27 +16305,27 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Roserade
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Scovillain
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lopunny
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Froslass
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mienshao
-Level: 48
+Level: 52
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Swampert
-Level: 49
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_ISAAC_1 ===
@@ -17300,15 +17300,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Lunatone
-Level: 14
+Level: 18
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Bronzor
-Level: 13
+Level: 17
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Duskull
-Level: 14
+Level: 18
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_BAS_RUTTEN ===
@@ -17321,19 +17321,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Gurdurr
-Level: 23
+Level: 25
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Hitmonlee
-Level: 24
+Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Hitmonchan
-Level: 24
+Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Machop
-Level: 24
+Level: 26
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_ROGAN ===
@@ -17346,19 +17346,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Falinks
-Level: 23
+Level: 25
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Pancham
-Level: 23
+Level: 25
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Aipom
-Level: 24
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Mankey
-Level: 24
+Level: 26
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_CRISTIAN ===
@@ -17371,23 +17371,23 @@ Double Battle: No
 AI: Check Bad Move
 
 Riolu
-Level: 24
+Level: 26
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Passimian
-Level: 24
+Level: 26
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Pawmo
-Level: 24
+Level: 26
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Machop
-Level: 24
+Level: 26
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Grapploct
-Level: 24
+Level: 26
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_SYLVIA ===
@@ -17400,7 +17400,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Banette @ Focus Sash
-Level: 64
+Level: 66
 Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dark Void
@@ -17409,7 +17409,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Ball
 
 Venomoth
-Level: 64
+Level: 66
 Ability: Magic Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Quiver Dance
@@ -17418,7 +17418,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psychic Noise
 
 Wigglytuff
-Level: 64
+Level: 66
 Ability: Bad Dreams
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Expanding Force
@@ -17601,7 +17601,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Indeedee @ Terrain Extender
-Level: 64
+Level: 66
 Ability: Psychic Surge
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Moonblast
@@ -17610,7 +17610,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Skill Swap
 
 Xatu
-Level: 64
+Level: 66
 Ability: Magic Bounce
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Expanding Force
@@ -17619,7 +17619,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Air Slash
 
 Espathra
-Level: 64
+Level: 66
 Ability: Speed Boost
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Focus Blast
@@ -17637,7 +17637,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Zoroark @ Focus Sash
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Nasty Plot
 - Dark Pulse
@@ -17645,7 +17645,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Flamethrower
 
 Chandelure
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Psychic
 - Flamethrower
@@ -17653,7 +17653,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Energy Ball
 
 Meowstic
-Level: 64
+Level: 66
 Ability: Prankster
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Fake Out
@@ -17671,17 +17671,17 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Oranguru @ Choice Specs
-Level: 64
+Level: 66
 Ability: Symbiosis
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Instruct
 
 Golduck
-Level: 63
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
 
 Porygon2 @ Eviolite
-Level: 63
+Level: 65
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
 
 === TRAINER_NICHOLAS ===
@@ -17694,15 +17694,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Wobbuffet
-Level: 64
+Level: 66
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Veluza
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Delphox
-Level: 64
+Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_GRUNT_SPACE_CENTER_3 ===
@@ -17820,7 +17820,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Swoobat @ Focus Sash
-Level: 64
+Level: 66
 Ability: Simple
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Calm Mind
@@ -17829,7 +17829,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dazzling Gleam
 
 Armarouge @ White Herb
-Level: 64
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Calm Mind
 - Armor Cannon
@@ -17837,7 +17837,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mystical Fire
 
 Raichu_Alola
-Level: 64
+Level: 66
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nuzzle
 - Discharge
@@ -17855,15 +17855,15 @@ AI: Check Bad Move
 Mugshot: Blue
 
 Lombre
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Whismur
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Torchic
-Level: 15
+Combusken
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_BRENDAN_RUSTBORO_MUDKIP ===
@@ -17877,15 +17877,15 @@ AI: Check Bad Move
 Mugshot: Blue
 
 Houndour
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Whismur
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Treecko
-Level: 15
+Grovyle
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_PAXTON ===
@@ -18033,15 +18033,15 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Kecleon
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Whismur
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Mudkip
-Level: 15
+Marshtomp
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_MAY_RUSTBORO_MUDKIP ===
@@ -18055,15 +18055,15 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 Mugshot: Pink
 
 Vulpix
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Buneary
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Treecko
-Level: 15
+Grovyle
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_MAXIE_MAGMA_HIDEOUT ===
@@ -18078,27 +18078,27 @@ AI: Basic Trainer
 Mugshot: Yellow
 
 Hippowdon
-Level: 61
+Level: 63
 Ability: Sand Stream
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Excadrill
-Level: 61
+Level: 63
 Ability: Sand Rush
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Lycanroc
-Level: 61
+Level: 63
 Ability: Sand Rush
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Dracovish
-Level: 61
+Level: 63
 Ability: Sand Rush
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Houndstone
-Level: 61
+Level: 63
 Ability: Sand Rush
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Last Respects
@@ -18107,7 +18107,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Shadow Sneak
 
 Camerupt
-Level: 62
+Level: 64
 Ability: Storm Drain
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -18123,15 +18123,15 @@ AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_TRY_TO_FAINT / AI_FLAG_CHECK_VIABILITY / AI
 Mugshot: Yellow
 
 Hippowdon
-Level: 38
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Ferroseed
-Level: 38
+Level: 42
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Camerupt
-Level: 40
+Level: 44
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_TIANA ===
@@ -18422,27 +18422,27 @@ Double Battle: No
 AI: Check Bad Move
 
 Blastoise
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Feraligatr
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Empoleon
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Samurott
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Greninja
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Primarina
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_CRISSY ===
@@ -18455,15 +18455,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Toxapex
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Golisopod
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Tatsugiri
-Level: 74
+Level: 75
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_RICK ===
@@ -19438,15 +19438,15 @@ Double Battle: No
 AI: Basic Trainer
 
 Ceruledge
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Armarouge
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Turtonator
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_VIVIAN ===
@@ -19459,15 +19459,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Electabuzz
-Level: 32
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Boltund
-Level: 32
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Pawmot
-Level: 32
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_DANIELLE ===
@@ -19480,7 +19480,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Medicham
-Level: 43
+Level: 46
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Bide
 - Detect
@@ -19488,11 +19488,11 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Fire Punch
 
 Emboar
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Blaziken
-Level: 42
+Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_HIDEO ===
@@ -19568,15 +19568,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Crobat
-Level: 53
+Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Noivern
-Level: 53
+Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Drifblim
-Level: 53
+Level: 54
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 === TRAINER_ASHLEY ===
@@ -19589,15 +19589,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Altaria
-Level: 53
+Level: 54
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Jumpluff
-Level: 51
+Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Noctowl
-Level: 52
+Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_WALLY_MAUVILLE ===
@@ -19611,7 +19611,7 @@ AI: Basic Trainer
 Mugshot: Purple
 
 Darumaka
-Level: 27
+Level: 31
 Ability: Hustle
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Fire Fang
@@ -19620,7 +19620,7 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Work Up
 
 Frigibax
-Level: 27
+Level: 31
 Ability: Thermal Exchange
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Dragon Breath
@@ -19628,8 +19628,8 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Bite
 - Leer
 
-Mankey
-Level: 27
+Primeape
+Level: 31
 Ability: Vital Spirit
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Karate Chop
@@ -19638,7 +19638,7 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Focus Energy
 
 Kirlia @ Oran Berry
-Level: 29
+Level: 33
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Confusion
 - Magical Leaf
@@ -19657,7 +19657,7 @@ AI: Basic Trainer
 Mugshot: Purple
 
 Darmanitan @ Choice Scarf
-Level: 85
+Level: 88
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - U-Turn
 - Flare Blitz
@@ -19665,7 +19665,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earthquake
 
 Dondozo @ Leftovers
-Level: 85
+Level: 88
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Curse
 - Waterfall
@@ -19673,7 +19673,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Sleep Talk
 
 Baxcalibur @ Loaded Dice
-Level: 85
+Level: 88
 Ability: Thermal Exchange
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Icicle Spear
@@ -19682,7 +19682,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Dragon Dance
 
 Annihilape @ Chesto Berry
-Level: 85
+Level: 88
 Ability: Defiant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Rest
@@ -19691,7 +19691,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Drain Punch
 
 Flutter Mane @ Choice Specs
-Level: 85
+Level: 88
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shadow Ball
 - Mystical Fire
@@ -19699,7 +19699,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Power Gem
 
 Gallade @ Choice Scarf
-Level: 86
+Level: 89
 Ability: Sharpness
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Psycho Cut
@@ -19719,7 +19719,7 @@ AI: Basic Trainer
 Mugshot: Purple
 
 Darmanitan @ Choice Scarf
-Level: 89
+Level: 92
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - U-Turn
 - Flare Blitz
@@ -19727,7 +19727,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Earthquake
 
 Dondozo @ Leftovers
-Level: 89
+Level: 92
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Curse
 - Waterfall
@@ -19735,7 +19735,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Sleep Talk
 
 Baxcalibur @ Loaded Dice
-Level: 89
+Level: 92
 Ability: Thermal Exchange
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Icicle Spear
@@ -19744,7 +19744,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Dragon Dance
 
 Annihilape @ Chesto Berry
-Level: 89
+Level: 92
 Ability: Defiant
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Rest
@@ -19753,7 +19753,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Drain Punch
 
 Flutter Mane @ Choice Specs
-Level: 89
+Level: 92
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Shadow Ball
 - Mystical Fire
@@ -19761,7 +19761,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Power Gem
 
 Gallade @ Choice Scarf
-Level: 90
+Level: 93
 Ability: Sharpness
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Psycho Cut
@@ -19781,7 +19781,7 @@ AI: Basic Trainer
 Mugshot: Purple
 
 Darmanitan @ Choice Scarf
-Level: 94
+Level: 97
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - U-Turn
 - Flare Blitz
@@ -19789,7 +19789,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Earthquake
 
 Dondozo @ Leftovers
-Level: 94
+Level: 97
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Curse
 - Waterfall
@@ -19797,7 +19797,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Sleep Talk
 
 Baxcalibur @ Loaded Dice
-Level: 94
+Level: 97
 Ability: Thermal Exchange
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Icicle Spear
@@ -19806,7 +19806,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Dragon Dance
 
 Annihilape @ Chesto Berry
-Level: 94
+Level: 97
 Ability: Defiant
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Rest
@@ -19815,7 +19815,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Drain Punch
 
 Flutter Mane @ Choice Specs
-Level: 94
+Level: 97
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Shadow Ball
 - Mystical Fire
@@ -19823,7 +19823,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Power Gem
 
 Gallade @ Choice Scarf
-Level: 95
+Level: 98
 Ability: Sharpness
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Psycho Cut
@@ -19843,7 +19843,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mo
 Mugshot: Purple
 
 Darmanitan @ Choice Scarf
-Level: 99
+Level: 100
 Ability: Sheer Force
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
@@ -19854,7 +19854,7 @@ Nature: Jolly
 - Superpower
 
 Dondozo @ Leftovers
-Level: 99
+Level: 100
 Ability: Unaware
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 4 Atk / 252 Def
@@ -19865,7 +19865,7 @@ Nature: Impish
 - Sleep Talk
 
 Baxcalibur @ Loaded Dice
-Level: 99
+Level: 100
 Ability: Thermal Exchange
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
@@ -19876,7 +19876,7 @@ Nature: Jolly
 - Dragon Dance
 
 Annihilape @ Chesto Berry
-Level: 99
+Level: 100
 Ability: Defiant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
@@ -19887,7 +19887,7 @@ Nature: Adamant
 - Drain Punch
 
 Flutter Mane @ Choice Specs
-Level: 99
+Level: 100
 Ability: Protosynthesis
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
@@ -19919,27 +19919,27 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Houndoom
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Huntail
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Pinsir
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Exploud
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Glalie
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Sceptile
-Level: 60
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_LILYCOVE_TREECKO ===
@@ -19953,27 +19953,27 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Ludicolo
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Huntail
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Zangoose
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Exploud
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Absol
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Blaziken
-Level: 60
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_BRENDAN_LILYCOVE_TORCHIC ===
@@ -19987,27 +19987,27 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Tropius
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Torkoal
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Zangoose
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Exploud
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Absol
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Swampert
-Level: 60
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_LILYCOVE_MUDKIP ===
@@ -20021,27 +20021,27 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Octillery
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Ninetales
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lopunny
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Vespiquen
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Eelektross
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Sceptile
-Level: 60
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_LILYCOVE_TREECKO ===
@@ -20055,27 +20055,27 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Octillery
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mimikyu
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lopunny
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Vespiquen
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Magnezone
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Blaziken
-Level: 60
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_MAY_LILYCOVE_TORCHIC ===
@@ -20089,27 +20089,27 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Roserade
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Salazzle
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Lopunny
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Froslass
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Mienshao
-Level: 60
+Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Swampert
-Level: 60
+Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_JONAH ===
@@ -21777,29 +21777,29 @@ AI: Basic Trainer
 Mugshot: Yellow
 
 Tyranitar
-Level: 66
+Level: 69
 Ability: Sand Stream
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Orthworm
-Level: 64
+Level: 67
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Excadrill
-Level: 64
+Level: 67
 Ability: Sand Rush
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Heatran @ Air Balloon
-Level: 64
+Level: 67
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Claydol
-Level: 64
+Level: 67
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
 Camerupt
-Level: 65
+Level: 68
 Ability: Storm Drain
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -22569,15 +22569,15 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Remoraid
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Buneary
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Torchic
-Level: 15
+Combusken
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_MAY_RUSTBORO_TORCHIC ===
@@ -22591,15 +22591,15 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Capsakid
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Buneary
-Level: 14
+Level: 16
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
-Mudkip
-Level: 15
+Marshtomp
+Level: 17
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_ROXANNE_2 ===
@@ -24604,15 +24604,15 @@ Double Battle: No
 AI: Basic Trainer
 
 Charjabug
-Level: 32
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Galvantula
-Level: 32
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Vikavolt
-Level: 32
+Level: 34
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_DARIUS ===
@@ -24625,27 +24625,27 @@ Double Battle: No
 AI: Basic Trainer
 
 Pidgeot
-Level: 53
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Staraptor
-Level: 53
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Unfezant
-Level: 53
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Talonflame
-Level: 53
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Toucannon
-Level: 53
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Corviknight
-Level: 53
+Level: 54
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 === TRAINER_STEVEN ===
@@ -26312,7 +26312,7 @@ AI: AI_FLAG_ACE_POKEMON
 Mugshot: Purple
 
 Darumaka
-Level: 36
+Level: 40
 Ability: Hustle
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Fire Fang
@@ -26321,7 +26321,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Incinerate
 
 Dondozo
-Level: 36
+Level: 40
 Ability: Unaware
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Water Pulse
@@ -26330,7 +26330,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Curse
 
 Frigibax
-Level: 36
+Level: 40
 Ability: Thermal Exchange
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Dragon Breath
@@ -26339,7 +26339,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Bite
 
 Mankey
-Level: 36
+Level: 40
 Ability: Defiant
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Rage Fist
@@ -26348,7 +26348,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Seismic Toss
 
 Kirlia @ Oran Berry
-Level: 38
+Level: 42
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Calm Mind
 - Confusion
@@ -27704,7 +27704,7 @@ AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI
 Mugshot: Yellow
 
 Scovillain @ Charcoal
-Level: 68
+Level: 71
 Ball: Poke Ball
 Ability: Insomnia
 Nature: Modest
@@ -27716,7 +27716,7 @@ EVs: 4 HP / 252 SpA / 252 Spe
 - Protect
 
 Claydol @ Light Clay
-Level: 68
+Level: 71
 Ball: Poke Ball
 Ability: Magic Bounce
 Nature: Relaxed
@@ -27728,7 +27728,7 @@ EVs: 252 HP / 128 Def / 128 SpD
 - Psychic
 
 Camerupt @ Passho Berry
-Level: 69
+Level: 72
 Ball: Poke Ball
 Ability: Solid Rock
 Nature: Modest
@@ -27750,7 +27750,7 @@ AI: Check Bad Move / Try To Faint
 Mugshot: Green
 
 Rabsca
-Level: 31
+Level: 35
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Bug Bite
 - Psybeam
@@ -27758,7 +27758,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Light Screen
 
 Clodsire
-Level: 31
+Level: 35
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Mud Shot
 - Poison Tail
@@ -27766,7 +27766,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Bulldoze
 
 Sandygast
-Level: 31
+Level: 35
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Hex
 - Mud Shot
@@ -27774,7 +27774,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Harden
 
 Mudbray
-Level: 31
+Level: 35
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Bulldoze
 - Rock Smash
@@ -27782,7 +27782,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Iron Defense
 
 Grimer_Hoenn
-Level: 33
+Level: 37
 Ability: Stench
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Mud Bomb
@@ -28088,7 +28088,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mo
 Mugshot: Green
 
 Altaria
-Level: 70
+Level: 72
 Ability: Natural Cure
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Dragon Dance
@@ -28097,7 +28097,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Roost
 
 Salamence
-Level: 71
+Level: 73
 Ability: Intimidate
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Dragon Dance
@@ -28106,7 +28106,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Outrage
 
 Noivern
-Level: 70
+Level: 72
 Ability: Infiltrator
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Boomburst
@@ -28115,7 +28115,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Flamethrower
 
 Goodra_Hisui @ Leftovers
-Level: 70
+Level: 72
 Ability: Shell Armor
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Heavy Slam
@@ -28124,7 +28124,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Thunderbolt
 
 Dracovish
-Level: 70
+Level: 72
 Ability: Strong Jaw
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Fishious Rend
@@ -28133,7 +28133,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Dragon Rush
 
 Roaring Moon @ Booster Energy
-Level: 72
+Level: 74
 Ability: Protosynthesis
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Dragon Dance
@@ -38230,7 +38230,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 Mugshot: Purple
 
 Darmanitan @ Charcoal
-Level: 54
+Level: 57
 Ability: Sheer Force
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Flare Blitz
@@ -38239,7 +38239,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - U-Turn
 
 Dondozo @ Leftovers
-Level: 54
+Level: 57
 Ability: Unaware
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Waterfall
@@ -38248,7 +38248,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Sleep Talk
 
 Arctibax
-Level: 54
+Level: 57
 Ability: Thermal Exchange
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Icicle Crash
@@ -38257,7 +38257,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Dragon Dance
 
 Annihilape @ Chesto Berry
-Level: 54
+Level: 57
 Ability: Defiant
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Rage Fist
@@ -38266,7 +38266,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Rest
 
 Flutter Mane
-Level: 54
+Level: 57
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Shadow Ball
 - Dazzling Gleam
@@ -38274,7 +38274,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Confuse Ray
 
 Gallade @ Sitrus Berry
-Level: 56
+Level: 59
 Ability: Sharpness
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Psycho Cut
@@ -38519,7 +38519,7 @@ AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mo
 Mugshot: Blue
 
 Haunter @ Focus Sash
-Level: 43
+Level: 47
 Ability: Levitate
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
@@ -38530,7 +38530,7 @@ Nature: Timid
 - Destiny Bond
 
 Gliscor @ Toxic Orb
-Level: 43
+Level: 47
 Ability: Poison Heal
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 4 Atk / 252 Def
@@ -38541,7 +38541,7 @@ Nature: Impish
 - Protect
 
 Ceruledge @ Shell Bell
-Level: 43
+Level: 47
 Ability: Flash Fire
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
@@ -38552,7 +38552,7 @@ Nature: Adamant
 - Swords Dance
 
 Gabite @ Eviolite
-Level: 43
+Level: 47
 Ability: Rough Skin
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 Def
@@ -38563,7 +38563,7 @@ Nature: Adamant
 - Swords Dance
 
 Pawniard @ Eviolite
-Level: 44
+Level: 48
 Ability: Defiant
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 Def

@@ -37,6 +37,7 @@ WILD_MULT = 1.0
 CATCHUP = True        # B_GROUNDED_CATCHUP_EXP
 CATCHUP_STEP = 25     # B_CATCHUP_EXP_STEP: procent extra EXP per level onder de ace van de volgende mijlpaal
 CATCHUP_MAX = 200     # B_CATCHUP_EXP_MAX
+CATCHUP_BELOW = 9     # B_CATCHUP_EXP_BELOW_ACE: doel ligt zoveel levels onder de ace (Jordi: regulier spelen = paar levels eronder)
 LAND_RATES = [20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1]
 
 # (naam, [kaarten], mijlpaal-trainer)
@@ -161,8 +162,9 @@ class Sim:
 
     def catchup(self, amount, my_lv):
         """B_GROUNDED_CATCHUP_EXP: onder het doel +CATCHUP_STEP% per level achterstand, max. +CATCHUP_MAX%."""
-        if CATCHUP and my_lv < self.target:
-            return amount * (100 + min(CATCHUP_MAX, CATCHUP_STEP * (self.target - my_lv))) // 100
+        goal = self.target - CATCHUP_BELOW
+        if CATCHUP and my_lv < goal:
+            return amount * (100 + min(CATCHUP_MAX, CATCHUP_STEP * (goal - my_lv))) // 100
         return amount
 
     def yield_of(self, const):

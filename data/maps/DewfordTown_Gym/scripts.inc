@@ -511,12 +511,12 @@ DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
 @ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
 DewfordTown_Gym_Text_GymGuideAceLevel:
 	.string "Insider info: the LEADER's ace\n"
-	.string "is level 26.\p"
+	.string "is level 28.\p"
 	.string "You didn't hear it from me.\n"
 	.string "You heard it from me, but still.$"
 
 DewfordTown_Gym_Text_GymGuideNextAce:
 	.string "Next stop: WATTSON in MAUVILLE.\n"
-	.string "Their ace is level 34.\p"
+	.string "Their ace is level 36.\p"
 	.string "That's all the free advice.\n"
 	.string "The rest costs a RARE CANDY.$"

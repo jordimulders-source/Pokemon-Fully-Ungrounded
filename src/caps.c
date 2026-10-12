@@ -83,6 +83,8 @@ static u32 GetGroundedCatchUpExp(u32 level, u32 expValue)
     if (!B_GROUNDED_CATCHUP_EXP)
         return expValue;
     target = GetGroundedCatchUpTarget();
+    // Jordi 12 okt: regulier spelen = een paar levels onder de gymleider; inhaal-EXP is alleen een vangnet
+    target = (target > B_CATCHUP_EXP_BELOW_ACE) ? target - B_CATCHUP_EXP_BELOW_ACE : 0;
     if (level >= target)
         return expValue;
     bonus = (target - level) * B_CATCHUP_EXP_STEP;

@@ -16,6 +16,7 @@
 #define B_GROUNDED_CATCHUP_EXP      TRUE  // Project Grounded: inhaal-EXP onder het ace-level van de volgende mijlpaal (src/caps.c, LEVELCURVE.md)
 #define B_CATCHUP_EXP_STEP          25    // procent extra EXP per level achterstand (Jordi 12 okt: was 100, gaf inflatie aan het begin)
 #define B_CATCHUP_EXP_MAX           200   // maximaal extra (procent): x3 (was x10)
+#define B_CATCHUP_EXP_BELOW_ACE     9     // inhaal-EXP alleen onder (ace volgende mijlpaal − dit): vangnet, geen boost (Jordi 12 okt)
 #define B_TRAINER_EXP_MULTIPLIER    GEN_7 // In Gen7+, trainer battles no longer give a 1.5 multiplier to EXP gain.
 #define B_SPLIT_EXP                 GEN_5 // In Gen6+, all participating mon get full experience.
 #define B_SCALED_EXP                GEN_5 // In Gen5 and Gen7+, experience is weighted by level difference.

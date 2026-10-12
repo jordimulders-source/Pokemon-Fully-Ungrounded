@@ -737,12 +737,12 @@ MossdeepCity_Gym_Text_TateAndLizaRematchNeedTwoMons:
 @ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
 MossdeepCity_Gym_Text_GymGuideAceLevel:
 	.string "Insider info: the LEADER's ace\n"
-	.string "is level 68.\p"
+	.string "is level 64.\p"
 	.string "You didn't hear it from me.\n"
 	.string "You heard it from me, but still.$"
 
 MossdeepCity_Gym_Text_GymGuideNextAce:
 	.string "Next stop: WALLACE in SOOTOPOLIS.\n"
-	.string "Their ace is level 77.\p"
+	.string "Their ace is level 73.\p"
 	.string "That's all the free advice.\n"
 	.string "The rest costs a RARE CANDY.$"

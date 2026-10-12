@@ -1654,12 +1654,12 @@ PetalburgCity_Gym_Text_NormanRematchNeedTwoMons:
 @ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
 PetalburgCity_Gym_Text_GymGuideAceLevel:
 	.string "Insider info: the LEADER's ace\n"
-	.string "is level 49.\p"
+	.string "is level 46.\p"
 	.string "You didn't hear it from me.\n"
 	.string "You heard it from me, but still.$"
 
 PetalburgCity_Gym_Text_GymGuideNextAce:
 	.string "Next stop: WINONA in FORTREE.\n"
-	.string "Their ace is level 56.\p"
+	.string "Their ace is level 53.\p"
 	.string "That's all the free advice.\n"
 	.string "The rest costs a RARE CANDY.$"

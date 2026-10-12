@@ -6133,7 +6133,7 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
 
     // Project Grounded: Dave (Cooltrainer, Victory Road; ook in het Stadium) vecht op Freed From Desire (Gala)
     if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_111 || trainerId == TRAINER_DAVE_PETALBURG
-     || trainerId == TRAINER_DAVE_SOOTOPOLIS)
+     || trainerId == TRAINER_DAVE_SOOTOPOLIS || trainerId == TRAINER_DAVE_PARADISO)
         return MUS_GROUNDED_VS_DAVE;
 
     // Project Grounded: Mitch (Cooltrainer, Victory Road B1F; ook in het Stadium) vecht op Drum & Bass

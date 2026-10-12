@@ -1316,7 +1316,7 @@ enum BattleTransition GetTrainerBattleTransition(void)
         return B_TRANSITION_WEATHER_SERVICE;
 
     // Project Grounded: Colress: eerst de mugshot, dan twee tandwielen die op je af komen
-    if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)
+    if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA || trainerId == TRAINER_CHARGESTONE_COLRESS)
         return B_TRANSITION_COLRESS;
 
     // Project Grounded: Youngster Calvin (Route 102, "Short shorts, cigarette."): het Viagra Boys-logo
@@ -1326,7 +1326,7 @@ enum BattleTransition GetTrainerBattleTransition(void)
 
     // Project Grounded: Dave (Freed From Desire): een penalty strak in de winkelhaak, dan GOAL!
     if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_111 || trainerId == TRAINER_DAVE_PETALBURG
-     || trainerId == TRAINER_DAVE_SOOTOPOLIS)
+     || trainerId == TRAINER_DAVE_SOOTOPOLIS || trainerId == TRAINER_DAVE_PARADISO)
         return B_TRANSITION_DAVE;
     // Project Grounded: SickBlik (Jordi zelf): mugshot, dan de hotpot die een Poké Ball wordt (ook in het Battle Stadium)
     if (trainerId == TRAINER_SICKBLIK || trainerId == TRAINER_SICKBLIK_ROUTE_104 || trainerId == TRAINER_SICKBLIK_ROUTE_113

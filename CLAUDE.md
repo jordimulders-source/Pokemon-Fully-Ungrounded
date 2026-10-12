@@ -215,6 +215,8 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pok�
 - **Class-/rivaal-intro's die de kaart tekenen** (`TI_HideField`) verbergen de object events; die blijven na het gevecht bestaan, dus altijd terugzetten (`TI_Free`, `hiddenObjEvents`).
 - **Na het vangen** begint `givecaughtmon` met `MULTIUSE_STATE`; zonder bijnaamvraag eerst `setbyte gBattleCommunication, 0` (anders oude PC-meldingen).
 
+- **Savestate na een nieuwe ROM = corrupt** (Jordi's testrun 12 okt): savestates werken alleen op exact dezelfde build. Herstellen: in de `.ss0` (PNG) zit het geheugen in chunk `gbAs` (zlib), met de ROM-CRC32 op offset 8; bouw die commit na (alleen de gewijzigde bestanden terugzetten + incrementele `make`), laad met `load_raw_state` in mGBA (python3.11) met een vooraf aangemaakt flash-bestand van 128 KB `0xFF` (`autoload_save`, anders segfault tijdens het saven), save in het spel en lever de `.sav`. Raad Jordi aan in het spel te saven vóór een nieuwe ROM.
+
 ## Werkwijzen (herhaalde taken)
 
 ### Een route bouwen

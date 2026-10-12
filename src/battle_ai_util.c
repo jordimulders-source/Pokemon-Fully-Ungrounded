@@ -2230,6 +2230,21 @@ bool32 CanLowerStat(u32 battlerAtk, u32 battlerDef, struct AiLogicData *aiData, 
     return TRUE;
 }
 
+static bool32 IsFirstRivalBattle(void)
+{
+    switch (TRAINER_BATTLE_PARAM.opponentA)
+    {
+    case TRAINER_BRENDAN_ROUTE_103_MUDKIP:
+    case TRAINER_BRENDAN_ROUTE_103_TREECKO:
+    case TRAINER_BRENDAN_ROUTE_103_TORCHIC:
+    case TRAINER_MAY_ROUTE_103_MUDKIP:
+    case TRAINER_MAY_ROUTE_103_TREECKO:
+    case TRAINER_MAY_ROUTE_103_TORCHIC:
+        return TRUE;
+    }
+    return FALSE;
+}
+
 u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum Stat stat)
 {
     u32 tempScore = NO_INCREASE;
@@ -2247,7 +2262,9 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum Stat stat)
 
     // Project Grounded (Jordi, testrun): geen eindeloze debuff-spam (3x Smokescreen i.p.v. een aanval).
     // Een verlaging scoort alleen als die stat nog niet verlaagd is; daarna wint de beste aanval.
-    if (stat != STAT_SPEED && gBattleMons[battlerDef].statStages[stat] < DEFAULT_STAT_STAGE)
+    // Uitzondering: het eerste rivaalgevecht (Route 103) houdt de oude debuffs; anders is Zigzagoon te snel weg.
+    if (stat != STAT_SPEED && gBattleMons[battlerDef].statStages[stat] < DEFAULT_STAT_STAGE
+     && !IsFirstRivalBattle())
         return NO_INCREASE;
 
     // TODO: Avoid decreasing stat if

@@ -287,54 +287,55 @@ Route103_EventScript_Isabelle::
 	end
 
 Route103_Text_MayRoute103Pokemon:
-	.string "MAY: BURP, BARF! Ugh I really\n"
-	.string "shouldn't have gone for that\l"
-	.string "second bottle of wine....\l"
+	.string "MAY: BURP, BARF!\p"
+	.string "Ugh I really shouldn't have gone for\n"
+	.string "that second bottle of wine....\p"
 	.string "Oh, hi {PLAYER}...$"
 
 Route103_Text_MayLetsBattle:
-	.string "Listen. I have a lvl 5 starter\n"
-	.string "Pokemon that normally would be a\l"
-	.string "pushover, but now it has an\p"
-	.string "elemental move. So you'd better use\n"
-	.string "that Galarian Zigzagoon, otherwise\l"
-	.string "you'll have to do this fight many\l"
-	.string "many times.$"
+	.string "Listen.\p"
+	.string "I have a lvl 5 starter Pokemon that\n"
+	.string "normally would be a pushover, but now it\l"
+	.string "has an elemental move.\p"
+	.string "So you'd better use that Galarian\n"
+	.string "Zigzagoon, otherwise you'll have to do\l"
+	.string "this fight many many times.$"
 
 Route103_Text_MayDefeated:
 	.string "Would've been hilarious if you\n"
 	.string "had lost!$"
 
 Route103_Text_MayTimeToHeadBack:
-	.string "MAY: I think I know why Italians\n"
-	.string "are so picky when it comes to\l"
-	.string "pizza. The stuff these suckers\p"
-	.string "put on it these days. Towers and\n"
-	.string "towers of toppings. You don't\l"
-	.string "even taste the dough anymore.\p"
-	.string "well, I'm done with this shit,\n"
-	.string "gonna bother that lowlife of a\l"
-	.string "dad now. Ciaociao!$"
+	.string "MAY: I think I know why Italians are so\n"
+	.string "picky when it comes to pizza.\p"
+	.string "The stuff these suckers put on it\n"
+	.string "these days.\p"
+	.string "Towers and towers of toppings. You\n"
+	.string "don't even taste the dough anymore.\p"
+	.string "well, I'm done with this shit, gonna\n"
+	.string "bother that lowlife of a dad now.\p"
+	.string "Ciaociao!$"
 
 Route103_Text_BrendanRoute103Pokemon:
 	.string "BRENDAN: These trees…\p"
-	.string "Last generation there were POKéMON\n"
-	.string "in there. I've been headbutting them\l"
-	.string "for hours now and the only thing\l"
-	.string "I've received is temporary memory loss…$"
+	.string "Last generation there were POKéMON in\n"
+	.string "there.\p"
+	.string "I've been headbutting them for hours\n"
+	.string "now and the only thing I've received is\l"
+	.string "temporary memory loss…$"
 
 Route103_Text_BrendanLetsBattle:
 	.string "Hey, it's {PLAYER}!\p"
 	.string "…Oh, yeah, Dad gave you a headache.\p"
 	.string "Since we're here, how about a little\n"
-	.string "discussion about age discrimination\l"
-	.string "on the job market?\p"
+	.string "discussion about age discrimination on\l"
+	.string "the job market?\p"
 	.string "How come that once you are above 55\n"
 	.string "it's more difficult to find a job?\p"
-	.string "Actually I know what you're going\n"
-	.string "to say: 'POKéMON TRAINERS ARE WORSE\l"
-	.string "WHEN THEY GET OLDER!', but I think\l"
-	.string "you're making the point wrong.\p"
+	.string "Actually I know what you're going to\n"
+	.string "say: 'POKéMON TRAINERS ARE WORSE WHEN\l"
+	.string "THEY GET OLDER!', but I think you're\l"
+	.string "making the point wrong.\p"
 	.string "Oh snap I'm running out of dialo-$"
 
 Route103_Text_BrendanDefeated:
@@ -342,11 +343,10 @@ Route103_Text_BrendanDefeated:
 
 Route103_Text_BrendanTimeToHeadBack:
 	.string "BRENDAN: I think I get it.\p"
-	.string "I think I know why my dad has\n"
-	.string "diarrhea a lot. All the McDonalds…\p"
-	.string "Oh well, Paris is still far away and\n"
-	.string "the Tour waits for no one!\l"
-	.string "Au revoir!$"
+	.string "I think I know why my dad has diarrhea a\n"
+	.string "lot. All the McDonalds…\p"
+	.string "Oh well, Paris is still far away and the\n"
+	.string "Tour waits for no one! Au revoir!$"
 	
 Route103_Text_ShouldHaveBroughtPotion:
 	.string "My POKéMON is staggeringly groovy…\n"

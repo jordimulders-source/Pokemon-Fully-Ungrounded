@@ -70,10 +70,26 @@ const struct SpriteTemplate gFieldEffectObjectTemplate_MartLight = {
     .callback = UpdateLightSprite,
 };
 
+// Project Grounded: lichtbundel van de vuurtoren op Beacon Isle (64x32, palet van de lichtbol)
+static const struct SpriteFrameImage sPicTable_LighthouseBeam[] = {
+    obj_frame_tiles(gFieldEffectObjectPic_LighthouseBeam),
+};
+
+static const struct SpriteTemplate sFieldEffectObjectTemplate_LighthouseBeam = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_LIGHT,
+    .oam = &gObjectEventBaseOam_64x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_LighthouseBeam,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = UpdateLightSprite,
+};
+
 const struct SpriteTemplate *const gFieldEffectLightTemplates[] = {
     &gFieldEffectObjectTemplate_BallLight,
     &gFieldEffectObjectTemplate_PokeCenterLight,
     &gFieldEffectObjectTemplate_MartLight,
+    [LIGHT_TYPE_LIGHTHOUSE_BEAM] = &sFieldEffectObjectTemplate_LighthouseBeam,
 };
 
 const struct SpriteTemplate gFieldEffectObjectTemplate_ShadowSmall = {

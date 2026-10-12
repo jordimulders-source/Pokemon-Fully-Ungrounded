@@ -283,3 +283,48 @@ Route128_Text_StevenImGoingToSootopolis:
 	.string "{PLAYER}{KUN}… Don't do anything reckless.\p"
 	.string "I'm going to SOOTOPOLIS. ROCK ON!$"
 
+@ --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) ---
+Route128_EventScript_ZV2Derek::
+	trainerbattle_single TRAINER_EXPERT_DEREK, Route128_Text_ZV2Derek_Intro, Route128_Text_ZV2Derek_Defeat
+	msgbox Route128_Text_ZV2Derek_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route128_Text_ZV2Derek_Intro:
+	.string "I'm DEREK. I challenged the\nPOKeMON LEAGUE 47 times.\pI lost to SIDNEY 47 times.\nHe sends me a birthday card now.\pSo I built a dojo. On a sandbank.\nNext to EVER GRANDE. To stare.$"
+
+Route128_Text_ZV2Derek_Defeat:
+	.string "48 losses. Same as SIDNEY.\nWell. Similar.$"
+
+Route128_Text_ZV2Derek_Post:
+	.string "My old training partners ran into\nthe grass. They went wild.\pLiterally. Catch them if you want.\nThey never listened to me anyway.$"
+
+Route128_EventScript_ZV2Juno::
+	trainerbattle_single TRAINER_BATTLE_GIRL_JUNO, Route128_Text_ZV2Juno_Intro, Route128_Text_ZV2Juno_Defeat
+	msgbox Route128_Text_ZV2Juno_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route128_Text_ZV2Juno_Intro:
+	.string "I'm DEREK's only student!\pHe's a great teacher. He knows\nexactly how to lose. So I know\lexactly what NOT to do!$"
+
+Route128_Text_ZV2Juno_Defeat:
+	.string "Oh no. I did what he does.$"
+
+Route128_Text_ZV2Juno_Post:
+	.string "Membership fee is zero. Monthly.\nDEREK says it's 'exclusive'.$"
+@ --- einde zee_vulling_2 ---
+
+@ --- zee_vulling_4 (gegenereerd door tools/grounded/maptools/zee_vulling_4.py) ---
+Route128_EventScript_ZV4Solenne::
+	trainerbattle_single TRAINER_PARASOL_LADY_SOLENNE, Route128_Text_ZV4Solenne_Intro, Route128_Text_ZV4Solenne_Defeat
+	msgbox Route128_Text_ZV4Solenne_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route128_Text_ZV4Solenne_Intro:
+	.string "I came for the sun. My parasol\ncame for the shade.\pWe're in a very complicated\nrelationship.$"
+
+Route128_Text_ZV4Solenne_Defeat:
+	.string "Fine, I'll get a tan. On one side.\nThe parasol side stays pale.$"
+
+Route128_Text_ZV4Solenne_Post:
+	.string "This sandbank wasn't here\nyesterday. Tomorrow it won't be\leither. I have to keep moving my\ltowel.$"
+@ --- einde zee_vulling_4 ---

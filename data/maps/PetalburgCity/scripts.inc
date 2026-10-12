@@ -9,7 +9,18 @@ PetalburgCity_OnTransition:
 	call_if_eq VAR_PETALBURG_CITY_STATE, 2, PetalburgCity_EventScript_DisableMapNameAndMusic
 	call_if_eq VAR_PETALBURG_CITY_STATE, 4, PetalburgCity_EventScript_DisableMapNameAndMusic
 	call_if_eq VAR_PETALBURG_GYM_STATE, 8, PetalburgCity_EventScript_SetGymDoorsUnlocked
+	call PetalburgCity_EventScript_CheckDave
 	end
+
+@ Project Grounded: Dave staat na badge 4 (Flannery) voor de gymdeur tot je hem verslaat (extra_fights.py)
+PetalburgCity_EventScript_CheckDave::
+	goto_if_unset FLAG_BADGE04_GET, PetalburgCity_EventScript_HideDave
+	goto_if_defeated TRAINER_DAVE_PETALBURG, PetalburgCity_EventScript_HideDave
+	return
+
+PetalburgCity_EventScript_HideDave::
+	setflag FLAG_TEMP_9
+	return
 
 PetalburgCity_EventScript_MoveGymBoyToWestEntrance::
 	setobjectxyperm LOCALID_GYM_BOY, 5, 11
@@ -784,3 +795,47 @@ PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "Next time you see me, I'll be\n"
 	.string "dressed like ROXANNE!$"
 	
+
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+PetalburgCity_EventScript_EF_DavePetalburg::
+	trainerbattle_single TRAINER_DAVE_PETALBURG, PetalburgCity_Text_EF_DavePetalburgIntro, PetalburgCity_Text_EF_DavePetalburgDefeat, PetalburgCity_EventScript_EF_DavePetalburgDefeated
+	msgbox PetalburgCity_Text_EF_DavePetalburgPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+PetalburgCity_EventScript_EF_DavePetalburgDefeated::
+	msgbox PetalburgCity_Text_EF_DavePetalburgPostBattle, MSGBOX_DEFAULT
+	closemessage
+	opendoor 15, 8
+	waitdooranim
+	applymovement LOCALID_EF_DAVE_PETALBURG, Common_Movement_WalkUp
+	waitmovement 0
+	removeobject LOCALID_EF_DAVE_PETALBURG
+	closedoor 15, 8
+	waitdooranim
+	release
+	end
+
+PetalburgCity_Text_EF_DavePetalburgIntro:
+	.string "DAVE: I don't have time to watch\n"
+	.string "Netflix all the time,\l"
+	.string "I have two children.\p"
+	.string "Anyways, have you seen my picture,\n"
+	.string "when I was a part of the first\l"
+	.string "team at BLC?\p"
+	.string "I'll show you after you beat me!$"
+
+PetalburgCity_Text_EF_DavePetalburgDefeat:
+	.string "{PLAYER}, more....$"
+
+PetalburgCity_Text_EF_DavePetalburgPostBattle:
+	.string "DAVE: Fine. A deal is a deal.\p"
+	.string "(A faded team photo. Eleven men,\n"
+	.string "one trophy, zero necks.)\p"
+	.string "(Dave is circled in red marker.\n"
+	.string "By Dave. Several times.)\p"
+	.string "DAVE: Third from the left.\n"
+	.string "The blur. That's pace, {PLAYER}.\p"
+	.string "Right. Gotta get the kids.\n"
+	.string "Your dad's GYM counts as daycare.$"
+
+@ }

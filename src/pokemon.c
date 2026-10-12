@@ -13,6 +13,7 @@
 #include "battle_tower.h"
 #include "battle_z_move.h"
 #include "data.h"
+#include "stadium.h" // Project Grounded: gStadiumBattle (trainerklasse-remixes)
 #include "daycare.h"
 #include "dexnav.h"
 #include "event_data.h"
@@ -21,6 +22,7 @@
 #include "field_player_avatar.h"
 #include "field_specials.h"
 #include "field_weather.h"
+#include "wild_encounter.h"
 #include "fishing.h"
 #include "follower_npc.h"
 #include "graphics.h"
@@ -35,6 +37,7 @@
 #include "pokedex.h"
 #include "pokeblock.h"
 #include "pokemon.h"
+#include "ultra_space.h"
 #include "pokemon_animation.h"
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
@@ -687,6 +690,12 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
     },
 };
 
+// Grounded: met OW_ONLY_USED_SPECIES zijn de overworld-graphics static, zodat ongebruikte niet gelinkt worden.
+#if OW_POKEMON_OBJECT_EVENTS && OW_ONLY_USED_SPECIES
+#define OW_PIC_STORAGE static
+#else
+#define OW_PIC_STORAGE
+#endif
 #include "data/graphics/pokemon.h"
 
 #include "data/pokemon/trainer_class_lookups.h"
@@ -4716,6 +4725,10 @@ bool32 DoesMonMeetAdditionalConditions(struct Pokemon *mon, const struct Evoluti
             if (GetCurrentRegion() != params[i].arg1)
                 currentCondition = TRUE;
             break;
+        case IF_GROUNDED_SUN_MOON: // Project Grounded: Cosmoem -> Solgaleo/Lunala (src/ultra_space.c)
+            if (Ultra_CosmoemTarget(mon) == params[i].arg1)
+                currentCondition = TRUE;
+            break;
         case CONDITIONS_END:
             break;
         }
@@ -6087,6 +6100,12 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     else
         trainerClass = GetTrainerClassFromId(trainerId);
 
+    // Project Grounded: alle trainers in de Pokemon Tower (Channelers, Hex Maniacs, de bezeten Agatha op 5F) vechten
+    // op Battle! Pokemon Tower, de Lavender Town-remix (tools/grounded/tower_theme.py)
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+     && gMapHeader.regionMapSectionId == MAPSEC_POKEMON_TOWER)
+        return MUS_GROUNDED_VS_POKE_TOWER;
+
     // Project Grounded: het Juan-gevecht op Route 129 krijgt de FRLG Gym Leader-muziek
     if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
      && (trainerId == TRAINER_JUAN || trainerId == TRAINER_BROCK))
@@ -6099,22 +6118,34 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
 
     // Project Grounded: de Shy Guys (Stadium) vechten op Sunset Wilds (Mario Kart: Super Circuit)
     if (trainerId == TRAINER_STADIUM_SHY_GUY_RED || trainerId == TRAINER_STADIUM_SHY_GUY_GREEN
-     || trainerId == TRAINER_STADIUM_SHY_GUY_PINK || trainerId == TRAINER_STADIUM_SHY_GUY_BLACK)
+     || trainerId == TRAINER_STADIUM_SHY_GUY_PINK || trainerId == TRAINER_STADIUM_SHY_GUY_BLACK
+     || trainerId == TRAINER_SHY_GUY_DESERT
+     || trainerClass == TRAINER_CLASS_SHY_SQUAD) // Project Grounded: ook de Shy Squad op Yoshi's Island
         return MUS_GROUNDED_VS_SUNSET_WILDS;
 
+    // Project Grounded: Wario (eindbaas in het fort op Yoshi's Island, ook in het Stadium) vecht op Fiery Cavern (Wario Land 4)
+    if (trainerId == TRAINER_YI_WARIO || trainerId == TRAINER_STADIUM_WARIO)
+        return MUS_GROUNDED_WL4_FIERY_CAVERN;
+
+    // Project Grounded: de Boos (Commander Boo op Yoshi's Island, Boo in het Stadium) vechten op Boo Lake & Broken Pier
+    if (trainerId == TRAINER_YI_COMMANDER_BOO || trainerId == TRAINER_STADIUM_BOO)
+        return MUS_GROUNDED_VS_BROKEN_PIER;
+
     // Project Grounded: Dave (Cooltrainer, Victory Road; ook in het Stadium) vecht op Freed From Desire (Gala)
-    if (trainerId == TRAINER_DAVE)
+    if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_111 || trainerId == TRAINER_DAVE_PETALBURG
+     || trainerId == TRAINER_DAVE_SOOTOPOLIS)
         return MUS_GROUNDED_VS_DAVE;
 
     // Project Grounded: Mitch (Cooltrainer, Victory Road B1F; ook in het Stadium) vecht op Drum & Bass
-    if (trainerId == TRAINER_MITCH)
+    if (trainerId == TRAINER_MITCH || trainerId == TRAINER_MITCH_ROUTE_110 || trainerId == TRAINER_MITCH_ROUTE_121)
         return MUS_GROUNDED_VS_MITCH;
     // Project Grounded: SickBlik (= Jordi; Cooltrainer, Victory Road B2F; ook in het Stadium) vecht op smerige slap-funk
-    if (trainerId == TRAINER_SICKBLIK)
+    if (trainerId == TRAINER_SICKBLIK || trainerId == TRAINER_SICKBLIK_ROUTE_104 || trainerId == TRAINER_SICKBLIK_ROUTE_113)
         return MUS_GROUNDED_VS_SICKBLIK;
 
     // Project Grounded: Keccles (Route 115, Fortree, Route 136; ook in het Stadium) vecht op salsa dura
-    if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3)
+    if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3
+     || trainerId == TRAINER_KECCLES_FRONTIER)
         return MUS_GROUNDED_VS_KECCLES;
 
     // Project Grounded: gymleider-remixes 5-8 van het gymleiderthema (tools/grounded/gym_remixes2.py), incl. rematches
@@ -6168,17 +6199,17 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
 
     // Project Grounded: Prof. Birch vecht op de Macarena
     if (!(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
-     && (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER))
+     && (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER || trainerId == TRAINER_BIRCH_RESORT))
         return MUS_GROUNDED_VS_BIRCH;
 
     switch (trainerClass)
     {
+    case TRAINER_CLASS_BURGLAR: // Project Grounded: SIMON de inbreker (TRAINER_BURGLAR_1-9, ook TRAINER_STADIUM_BURGLAR)
+        return MUS_GROUNDED_VS_BURGLAR;
     case TRAINER_CLASS_SCIENTIST: // Project Grounded: Colress
         return MUS_GROUNDED_VS_COLRESS;
     case TRAINER_CLASS_LOREKEEPER: // Project Grounded: Zinnia
         return MUS_GROUNDED_VS_ZINNIA;
-    case TRAINER_CLASS_KING: // Project Grounded: N (Battle Stadium)
-        return MUS_GROUNDED_VS_N;
     case TRAINER_CLASS_PLASMA_BOSS: // Project Grounded: Ghetsis (Battle Stadium)
         return MUS_GROUNDED_VS_GHETSIS;
     case TRAINER_CLASS_SAGE: // Project Grounded: Neo Plasma (Battle Stadium)
@@ -6189,6 +6220,8 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
         return MUS_RG_VS_TRAINER;
     case TRAINER_CLASS_ROCKET_EXEC: // Project Grounded: Petrel
         return MUS_RG_VS_GYM_LEADER;
+    case TRAINER_CLASS_ZERO_LAB: // Project Grounded: Area Zero (placeholder tot Battle! Area Zero op het originele battle theme is gebouwd)
+        return trainerId == TRAINER_AREA_ZERO_ALARM ? MUS_RG_VS_LEGEND : MUS_VS_FRONTIER_BRAIN;
     case TRAINER_CLASS_AQUA_LEADER:
     case TRAINER_CLASS_MAGMA_LEADER:
     case TRAINER_CLASS_BOSS: // Project Grounded: Battle Stadium
@@ -6206,10 +6239,15 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     case TRAINER_CLASS_RIVAL:
         if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
             return MUS_VS_RIVAL;
-        // Project Grounded: Wally's eigen thema groeit met hem mee (1-2 = vrij voor nieuwe vroege gevechten, 5 = eindversie)
+        // Project Grounded: Wally's eigen thema groeit met hem mee, één per gevecht in de volgorde van het verhaal:
+        // 1 Mauville, 2 Meteor Falls, 3 Mt. Pyre, 4 Mossdeep, 5 Victory Road (ook de rematches en het Stadium)
         if (trainerId == TRAINER_WALLY_MAUVILLE)
-            return MUS_GROUNDED_VS_WALLY_3;
+            return MUS_GROUNDED_VS_WALLY_1;
         if (trainerId == TRAINER_WALLY_METEOR_FALLS)
+            return MUS_GROUNDED_VS_WALLY_2;
+        if (trainerId == TRAINER_WALLY_MT_PYRE)
+            return MUS_GROUNDED_VS_WALLY_3;
+        if (trainerId == TRAINER_WALLY_MOSSDEEP)
             return MUS_GROUNDED_VS_WALLY_4;
         if (!StringCompare(GetTrainerNameFromId(trainerId), gText_BattleWallyName))
             return MUS_GROUNDED_VS_WALLY_5;
@@ -6231,6 +6269,76 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
         return GetChosenTrainerBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_TRAINER)
     }
     }
+
+// Project Grounded: trainerklasse-remixes van het Hoenn-trainerthema (tools/grounded/trclass_theme.py). Alleen voor
+// trainers die anders de standaard trainermuziek krijgen (zie GetBattleBGM); MUS_NONE = geen remix voor deze klasse.
+static u16 GetTrainerClassRemixBGM(u16 trainerId)
+{
+    if (trainerId == TRAINER_NONE || trainerId >= TRAINERS_COUNT)
+        return MUS_NONE;
+    switch (GetTrainerClassFromId(trainerId))
+    {
+    case TRAINER_CLASS_SWIMMER_M:
+    case TRAINER_CLASS_SWIMMER_F:
+    case TRAINER_CLASS_SAILOR:
+    case TRAINER_CLASS_FISHERMAN:
+    case TRAINER_CLASS_TUBER_M:
+    case TRAINER_CLASS_TUBER_F:
+    case TRAINER_CLASS_PARASOL_LADY: // strandklassen
+    case TRAINER_CLASS_SIS_AND_BRO:
+        return MUS_GROUNDED_VS_TRAINER_SEA;
+    case TRAINER_CLASS_TRIATHLETE: // alleen de zwemmende; fietsers en hardlopers houden het Hoenn-thema
+        if (GetTrainerPicFromId(trainerId) == TRAINER_PIC_SWIMMING_TRIATHLETE_M
+         || GetTrainerPicFromId(trainerId) == TRAINER_PIC_SWIMMING_TRIATHLETE_F)
+            return MUS_GROUNDED_VS_TRAINER_SEA;
+        return MUS_NONE;
+    case TRAINER_CLASS_HIKER:
+    case TRAINER_CLASS_BLACK_BELT:
+    case TRAINER_CLASS_BATTLE_GIRL:
+    case TRAINER_CLASS_EXPERT:
+        return MUS_GROUNDED_VS_TRAINER_MOUNTAIN;
+    case TRAINER_CLASS_BUG_CATCHER:
+    case TRAINER_CLASS_BUG_MANIAC:
+    case TRAINER_CLASS_CAMPER:
+    case TRAINER_CLASS_PICNICKER:
+    case TRAINER_CLASS_PKMN_RANGER:
+    case TRAINER_CLASS_PKMN_BREEDER:
+    case TRAINER_CLASS_AROMA_LADY:
+        return MUS_GROUNDED_VS_TRAINER_NATURE;
+    case TRAINER_CLASS_PSYCHIC:
+    case TRAINER_CLASS_HEX_MANIAC:
+    case TRAINER_CLASS_RUIN_MANIAC:
+        return MUS_GROUNDED_VS_TRAINER_MYSTIC;
+    case TRAINER_CLASS_BEAUTY:
+    case TRAINER_CLASS_LADY:
+    case TRAINER_CLASS_RICH_BOY:
+    case TRAINER_CLASS_GENTLEMAN:
+    case TRAINER_CLASS_POKEFAN:
+    case TRAINER_CLASS_COLLECTOR:
+    case TRAINER_CLASS_YOUNG_COUPLE:
+    case TRAINER_CLASS_OLD_COUPLE:
+    case TRAINER_CLASS_INTERVIEWER:
+        return MUS_GROUNDED_VS_TRAINER_CHIC;
+    case TRAINER_CLASS_GUITARIST:
+    case TRAINER_CLASS_KINDLER:
+    case TRAINER_CLASS_NINJA_BOY:
+    case TRAINER_CLASS_POKEMANIAC: // halfafgemaakte gitaarakkoorden passen bij een kostuum-otaku
+        return MUS_GROUNDED_VS_TRAINER_ROCK;
+    case TRAINER_CLASS_COOLTRAINER:
+    case TRAINER_CLASS_COOLTRAINER_2:
+    case TRAINER_CLASS_DRAGON_TAMER:
+    case TRAINER_CLASS_BIRD_KEEPER:
+        return MUS_GROUNDED_VS_TRAINER_ELITE;
+    case TRAINER_CLASS_YOUNGSTER:
+    case TRAINER_CLASS_LASS:
+    case TRAINER_CLASS_SCHOOL_KID:
+    case TRAINER_CLASS_TWINS:
+    case TRAINER_CLASS_SR_AND_JR:
+        return MUS_GROUNDED_VS_TRAINER_KIDS;
+    default:
+        return MUS_NONE;
+    }
+}
 
 // Project Grounded: alleen Magikarp (wild of een trainer met een team van alleen Magikarp) -> Battle! Magikarp
 static bool32 IsMagikarpOnlyTrainer(u16 trainerId)
@@ -6267,6 +6375,171 @@ static bool32 IsMagikarpOnlyWildBattle(void)
     return count != 0;
 }
 
+// Project Grounded v1.0.x (Jordi: "maak een specifieke water en zee remix"): open zee = zeeroutes, kustplaatsen en
+// alle oceaanroute-kaarten; rivieren, meren en vijvers houden de waterremix.
+static bool32 IsSeaWildMusicMapsec(u16 mapsec)
+{
+    if (gMapHeader.mapType == MAP_TYPE_OCEAN_ROUTE)
+        return TRUE;
+    if ((mapsec >= MAPSEC_ROUTE_105 && mapsec <= MAPSEC_ROUTE_110) || (mapsec >= MAPSEC_ROUTE_122 && mapsec <= MAPSEC_ROUTE_134))
+        return TRUE;
+    switch (mapsec)
+    {
+    case MAPSEC_DEWFORD_TOWN:
+    case MAPSEC_SLATEPORT_CITY:
+    case MAPSEC_LILYCOVE_CITY:
+    case MAPSEC_MOSSDEEP_CITY:
+    case MAPSEC_SOOTOPOLIS_CITY:
+    case MAPSEC_PACIFIDLOG_TOWN:
+    case MAPSEC_EVER_GRANDE_CITY:
+    case MAPSEC_BATTLE_FRONTIER:
+    case MAPSEC_SOUTHERN_ISLAND:
+        return TRUE;
+    }
+    return FALSE;
+}
+
+// Project Grounded v1.0.x: sneeuw/ijs (Frost Hollow ligt in de mapsec van Tao Island, dus op kaart) en elke kaart
+// met sneeuwweer (bv. de buitenkant van Mt. Coronet).
+static bool32 IsSnowWildMusicArea(u16 mapsec)
+{
+    switch (mapsec)
+    {
+    case MAPSEC_SHOAL_CAVE:
+    case MAPSEC_COLDSTEP_CAVE:
+    case MAPSEC_ROUTE_135:
+    case MAPSEC_ROUTE_136:
+    case MAPSEC_ASHFROST_TOWN:
+    case MAPSEC_CRYSTAL_CAVITY:
+    case MAPSEC_CROWN_TUNDRA:
+    case MAPSEC_LAKE_ACUITY:
+        return TRUE;
+    }
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TAO_ISLAND_FROST_HOLLOW)
+     && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TAO_ISLAND_FROST_HOLLOW))
+        return TRUE;
+    return GetCurrentWeather() == WEATHER_SNOW;
+}
+
+// Project Grounded (Jordi: "remix de hoenn battle theme naar bepaalde regio's"): regionale remixes van het
+// Hoenn-wildthema (tools/grounded/regio_theme.py), alleen als de wildmuziek op ROTATE/HOENN staat en geen
+// specifiekere keuze (Pokemon Tower, jungle, Yoshi's Island, ...) eerder geldt. Volgorde: onderwater, zee, water,
+// Meteor Falls/Fiery Path, woestijn, vulkaan, sneeuw, spookachtig, grot, nacht.
+static u16 GetRegionalWildBattleMusic(void)
+{
+    u16 mapsec = gMapHeader.regionMapSectionId;
+
+    if (gMapHeader.mapType == MAP_TYPE_UNDERWATER || TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_UNDERWATER))
+        return MUS_GROUNDED_VS_WILD_UNDERWATER;
+    // v1.0.x zee: surfen/vissen op open zee; anders (zoet water) de waterremix
+    if ((gIsFishingEncounter || TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING)) && IsSeaWildMusicMapsec(mapsec))
+        return MUS_GROUNDED_VS_WILD_SEA;
+    if (gIsFishingEncounter || TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
+        return MUS_GROUNDED_VS_WILD_WATER;
+    // Project Grounded (v1.0.x, regio_theme2.py): Meteor Falls (avontuurlijk) en Fiery Path (vurig) voor woestijn/vulkaan
+    if (mapsec == MAPSEC_METEOR_FALLS || mapsec == MAPSEC_METEOR_FALLS2)
+        return MUS_GROUNDED_VS_WILD_METEOR;
+    if (mapsec == MAPSEC_FIERY_PATH || mapsec == MAPSEC_FIERY_PATH2)
+        return MUS_GROUNDED_VS_WILD_FIERY;
+    // woestijn: de zandstorm op Route 111 (zelfde vak als Route111_EventScript_CheckSetSandstorm), Desert Underpass,
+    // Mirage Tower en de Desert Ruins
+    if (mapsec == MAPSEC_ROUTE_111
+     && (GetCurrentWeather() == WEATHER_SANDSTORM
+      || (gSaveBlock1Ptr->pos.y >= 34 && gSaveBlock1Ptr->pos.y <= 107 && (gSaveBlock1Ptr->pos.y > 72 || gSaveBlock1Ptr->pos.x >= 8))))
+        return MUS_GROUNDED_VS_WILD_DESERT;
+    switch (mapsec)
+    {
+    case MAPSEC_DESERT_UNDERPASS:
+    case MAPSEC_MIRAGE_TOWER:
+    case MAPSEC_DESERT_RUINS:
+        return MUS_GROUNDED_VS_WILD_DESERT;
+    case MAPSEC_MT_CHIMNEY:
+    case MAPSEC_JAGGED_PASS:
+    case MAPSEC_JAGGED_PASS2:
+    case MAPSEC_ROUTE_112:
+    case MAPSEC_ROUTE_113:
+    case MAPSEC_SCORCHED_SLAB:
+    case MAPSEC_MAGMA_HIDEOUT:
+    case MAPSEC_LAVARIDGE_TOWN:
+    case MAPSEC_STEAM_ISLAND:
+    case MAPSEC_MT_EMBER:
+    case MAPSEC_KINDLE_ROAD:
+        return MUS_GROUNDED_VS_WILD_VOLCANO;
+    }
+    // v1.0.x sneeuw/ijs en spookachtig (op mapsec)
+    if (IsSnowWildMusicArea(mapsec))
+        return MUS_GROUNDED_VS_WILD_SNOW;
+    switch (mapsec)
+    {
+    case MAPSEC_MT_PYRE:
+    case MAPSEC_ABANDONED_SHIP:
+    case MAPSEC_SKY_PILLAR:
+        return MUS_GROUNDED_VS_WILD_SPOOKY;
+    }
+    // Project Grounded (v1.0.x, regio_theme2.py): grot-remix voor alle grotten zonder eigen remix; daarna elke andere
+    // ondergrondse kaart, behalve gebouwen/schepen/torens/tempels die toevallig MAP_TYPE_UNDERGROUND zijn
+    switch (mapsec)
+    {
+    case MAPSEC_GRANITE_CAVE:
+    case MAPSEC_RUSTURF_TUNNEL:
+    case MAPSEC_NEW_MAUVILLE:
+    case MAPSEC_SEAFLOOR_CAVERN:
+    case MAPSEC_VICTORY_ROAD:
+    case MAPSEC_CAVE_OF_ORIGIN:
+    case MAPSEC_MT_CORONET:
+    case MAPSEC_CHARGESTONE_CAVE:
+    case MAPSEC_CERULEAN_CAVE:
+    case MAPSEC_ARTISAN_CAVE:
+    case MAPSEC_NAVEL_ROCK:
+    case MAPSEC_NAVEL_ROCK_FRLG:
+    case MAPSEC_MARINE_CAVE:
+    case MAPSEC_TERRA_CAVE:
+    case MAPSEC_ISLAND_CAVE:
+    case MAPSEC_SEALED_CHAMBER:
+    case MAPSEC_ANCIENT_TOMB:
+    case MAPSEC_ALTERING_CAVE:
+    case MAPSEC_SPACETIME_CAVE:
+        return MUS_GROUNDED_VS_WILD_CAVE;
+    case MAPSEC_ABANDONED_SHIP:
+    case MAPSEC_SS_AGAVE:
+    case MAPSEC_SKY_PILLAR:
+    case MAPSEC_MIRAGE_TOWER:
+    case MAPSEC_TAO_ISLAND:
+    case MAPSEC_SEA_TEMPLE:
+    case MAPSEC_MT_PYRE:
+    case MAPSEC_AQUA_HIDEOUT:
+    case MAPSEC_OUTER_SPACE:
+    case MAPSEC_GLIMWOOD_TANGLE:
+    case MAPSEC_BALLONLEA:
+        break;
+    default:
+        if (gMapHeader.mapType == MAP_TYPE_UNDERGROUND)
+            return MUS_GROUNDED_VS_WILD_CAVE;
+        break;
+    }
+    // Route 119+ (Jordi: "grande, avontuurlijk"): wilde gevechten op het land van de routes vanaf Route 119
+    // (surfen en vissen zijn hierboven al afgevangen; tools/grounded/route119_battle_theme.py)
+    if (gMapHeader.mapType == MAP_TYPE_ROUTE)
+    {
+        switch (mapsec)
+        {
+        case MAPSEC_ROUTE_119:
+        case MAPSEC_ROUTE_120:
+        case MAPSEC_ROUTE_121:
+        case MAPSEC_ROUTE_122:
+        case MAPSEC_ROUTE_123:
+        case MAPSEC_ROUTE_135:
+        case MAPSEC_ROUTE_136:
+            return MUS_GROUNDED_VS_WILD_ROUTE119;
+        }
+    }
+    // v1.0.x nacht: als laatste, alleen buiten (routes en steden) en als niets anders gold
+    if ((gMapHeader.mapType == MAP_TYPE_ROUTE || gMapHeader.mapType == MAP_TYPE_TOWN || gMapHeader.mapType == MAP_TYPE_CITY)
+     && GetTimeOfDay() == TIME_NIGHT)
+        return MUS_GROUNDED_VS_WILD_NIGHT;
+    return MUS_NONE;
+}
+
 u16 GetBattleBGM(void)
 {
     if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
@@ -6286,6 +6559,8 @@ u16 GetBattleBGM(void)
         return MUS_VS_REGI;
     case SPECIES_REGIGIGAS: // Project Grounded: eigen thema met Slow Start
         return MUS_GROUNDED_VS_REGIGIGAS;
+    case SPECIES_LUGIA: // Project Grounded: eigen thema (tools/grounded/lugia_theme.py)
+        return MUS_GROUNDED_VS_LUGIA;
     case SPECIES_RAIKOU: // Project Grounded: legendary beasts-thema, per beest een eigen laag (HGSS-stijl)
         return MUS_GROUNDED_VS_RAIKOU;
     case SPECIES_ENTEI:
@@ -6298,9 +6573,91 @@ u16 GetBattleBGM(void)
     case SPECIES_GIRATINA_ALTERED: // Project Grounded: Giratina-muziek uit Platinum
     case SPECIES_GIRATINA_ORIGIN:
         return MUS_GROUNDED_VS_GIRATINA;
+    case SPECIES_ARCEUS_NORMAL: // Project Grounded: Battle! Arceus (DPPt, tools/grounded/arceus_theme.py)
+        return MUS_GROUNDED_VS_ARCEUS;
+    case SPECIES_HO_OH: // Project Grounded: eigen thema (tools/grounded/hooh_theme.py)
+        return MUS_GROUNDED_VS_HO_OH;
     case SPECIES_ZARUDE: // Project Grounded: eigen compositie (tools/grounded/zarude_theme.py)
     case SPECIES_ZARUDE_DADA:
         return MUS_GROUNDED_VS_ZARUDE;
+    case SPECIES_TORNADUS_INCARNATE: // Project Grounded: Forces of Nature, één motief in drie arrangementen (tools/grounded/forces_theme.py)
+    case SPECIES_TORNADUS_THERIAN:
+        return MUS_GROUNDED_VS_TORNADUS;
+    case SPECIES_THUNDURUS_INCARNATE:
+    case SPECIES_THUNDURUS_THERIAN:
+        return MUS_GROUNDED_VS_THUNDURUS;
+    case SPECIES_LANDORUS_INCARNATE:
+    case SPECIES_LANDORUS_THERIAN:
+        return MUS_GROUNDED_VS_LANDORUS;
+    case SPECIES_HOOPA_CONFINED: // Project Grounded: eigen thema, hijaz/darbuka (tools/grounded/hoopa_theme.py)
+    case SPECIES_HOOPA_UNBOUND:
+        return MUS_GROUNDED_VS_HOOPA;
+    case SPECIES_NIHILEGO: // Project Grounded: Battle! Ultra Beast (tools/grounded/ub_theme.py), alle Ultra Beasts
+    case SPECIES_BUZZWOLE:
+    case SPECIES_PHEROMOSA:
+    case SPECIES_XURKITREE:
+    case SPECIES_CELESTEELA:
+    case SPECIES_KARTANA:
+    case SPECIES_GUZZLORD:
+    case SPECIES_POIPOLE:
+    case SPECIES_NAGANADEL:
+    case SPECIES_STAKATAKA:
+    case SPECIES_BLACEPHALON:
+        return MUS_GROUNDED_VS_ULTRA_BEAST;
+    // Project Grounded: Battle! Legendary Pokémon (tools/grounded/legendary_theme.py), het generieke thema voor
+    // legendaries zonder eigen thema. Latias/Latios (Southern Island) komen hier via BattleSetup_StartLatiBattle;
+    // de rest staat ook expliciet in BattleSetup_StartLegendaryBattle.
+    case SPECIES_LATIAS:
+    case SPECIES_LATIOS:
+    case SPECIES_MANAPHY:
+    case SPECIES_PHIONE:
+    case SPECIES_NECROZMA:
+    case SPECIES_NECROZMA_DUSK_MANE:
+    case SPECIES_NECROZMA_DAWN_WINGS:
+    case SPECIES_NECROZMA_ULTRA:
+    case SPECIES_XERNEAS:
+    case SPECIES_XERNEAS_ACTIVE:
+    case SPECIES_YVELTAL:
+    case SPECIES_MELOETTA_ARIA:
+    case SPECIES_MELOETTA_PIROUETTE:
+    case SPECIES_ZYGARDE_50:
+    case SPECIES_ZYGARDE_10_AURA_BREAK:
+    case SPECIES_ZYGARDE_COMPLETE:
+    case SPECIES_PECHARUNT:
+    case SPECIES_ZERAORA:
+    case SPECIES_CELEBI:
+    case SPECIES_UXIE:
+    case SPECIES_MESPRIT:
+    case SPECIES_AZELF:
+    case SPECIES_ETERNATUS:
+    case SPECIES_ETERNATUS_ETERNAMAX:
+    case SPECIES_GLASTRIER:
+    case SPECIES_SPECTRIER:
+    case SPECIES_CALYREX:
+    case SPECIES_CALYREX_ICE:
+    case SPECIES_CALYREX_SHADOW:
+    case SPECIES_VOLCANION:
+    case SPECIES_CRESSELIA:
+    case SPECIES_OKIDOGI:
+    case SPECIES_MUNKIDORI:
+    case SPECIES_FEZANDIPITI:
+    case SPECIES_OGERPON_TEAL:
+    case SPECIES_OGERPON_WELLSPRING:
+    case SPECIES_OGERPON_HEARTHFLAME:
+    case SPECIES_OGERPON_CORNERSTONE:
+    case SPECIES_ENAMORUS_INCARNATE:
+    case SPECIES_ENAMORUS_THERIAN:
+    case SPECIES_COBALION:
+    case SPECIES_TERRAKION:
+    case SPECIES_VIRIZION:
+    case SPECIES_KELDEO_ORDINARY:
+    case SPECIES_KELDEO_RESOLUTE:
+    case SPECIES_RESHIRAM:
+    case SPECIES_ZEKROM:
+    case SPECIES_KYUREM:
+    case SPECIES_KYUREM_WHITE:
+    case SPECIES_KYUREM_BLACK:
+        return MUS_GROUNDED_VS_LEGENDARY;
     default:
         return MUS_RG_VS_LEGEND;
     }
@@ -6328,12 +6685,59 @@ u16 GetBattleBGM(void)
      && (!(gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS) || IsMagikarpOnlyTrainer(TRAINER_BATTLE_PARAM.opponentB))
      && TRAINER_BATTLE_PARAM.opponentA != TRAINER_NONE)
         song = MUS_GROUNDED_VS_MAGIKARP; // Project Grounded: een team van alleen Magikarp (Gyarados niet)
+    // Project Grounded: trainerklasse-remix (zee, berg, natuur, ...) i.p.v. de standaard trainermuziek. Elk eigen thema
+    // hierboven (gymleiders, Elite Four, rivalen, teams, Tower, Magikarp, ...) gaat voor; niet in de Frontier, de
+    // Trainer Hill, het Battle Stadium, geheime bases of e-Reader-gevechten, en niet als de speler zelf een thema koos.
+    if (song == GetChosenTrainerBattleMusic()
+     && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SECRET_BASE
+                              | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_RECORDED))
+     && !gStadiumBattle
+     && TrainerClassRemixAllowed())
+    {
+        u16 remix = GetTrainerClassRemixBGM(TRAINER_BATTLE_PARAM.opponentA);
+        if (remix == MUS_NONE && (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS))
+            remix = GetTrainerClassRemixBGM(TRAINER_BATTLE_PARAM.opponentB);
+        if (remix != MUS_NONE)
+            song = remix;
+    }
     return song;
     }
     else
     {
     if (IsMagikarpOnlyWildBattle())
         return MUS_GROUNDED_VS_MAGIKARP; // Project Grounded: Battle! Magikarp (spartelen)
+    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
+    {
+    case SPECIES_NIHILEGO: // Project Grounded: een Ultra Beast in een gewoon wild gevecht (nu nergens) krijgt ook Battle! Ultra Beast
+    case SPECIES_BUZZWOLE:
+    case SPECIES_PHEROMOSA:
+    case SPECIES_XURKITREE:
+    case SPECIES_CELESTEELA:
+    case SPECIES_KARTANA:
+    case SPECIES_GUZZLORD:
+    case SPECIES_POIPOLE:
+    case SPECIES_NAGANADEL:
+    case SPECIES_STAKATAKA:
+    case SPECIES_BLACEPHALON:
+        return MUS_GROUNDED_VS_ULTRA_BEAST;
+    }
+    if (gMapHeader.regionMapSectionId == MAPSEC_AREA_ZERO)
+        return MUS_GROUNDED_VS_AREA_ZERO; // Project Grounded: wilde gevechten in Area Zero (v1.0)
+    if (gMapHeader.regionMapSectionId == MAPSEC_ALTERING_CAVE
+     && !(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ALTERING_CAVE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ALTERING_CAVE)))
+        return MUS_GROUNDED_VS_ULTRA_BEAST; // Project Grounded: alle wilde gevechten in Ultra Space (v1.0)
+    if (gMapHeader.regionMapSectionId == MAPSEC_POKEMON_TOWER)
+        return MUS_GROUNDED_VS_POKE_TOWER; // Project Grounded: wilde gevechten (ook de GHOST) in de Pokemon Tower
+    if (gMapHeader.regionMapSectionId == MAPSEC_YOSHIS_ISLAND)
+        return MUS_GROUNDED_YI_OVERWORLD; // Project Grounded: Yoshi's Island-overworld (SPC-rip) bij wilde gevechten op het eiland
+    if (gMapHeader.regionMapSectionId == MAPSEC_FORTREE_JUNGLE || gMapHeader.regionMapSectionId == MAPSEC_MANGROVE_MIRE)
+        return MUS_GROUNDED_MKSC_LAKESIDE_PARK; // Project Grounded: wilde gevechten in de jungle op Lakeside Park (Mario Kart: Super Circuit; Jordi 10 okt)
+    if (IsDefaultWildBattleMusicChoice())
+    {
+        u16 regional = GetRegionalWildBattleMusic();
+        if (regional != MUS_NONE)
+            return regional;
+    }
     return GetChosenWildBattleMusic(); // Project Grounded: keuze uit het optiemenu (was MUS_VS_WILD)
     }
 }

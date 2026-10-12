@@ -297,14 +297,13 @@ PlayersHouse_1F_Text_IsntItNiceInHere:
 	.string "YOU FOOL!$"
 
 PlayersHouse_1F_Text_MoversPokemonGoSetClock:
-	.string "The mover's POKéMON do all the work\n"
-	.string "of moving us in and cleaning up after.\l"
+	.string "The mover's POKéMON do all the work of\n"
+	.string "moving us in and cleaning up after.\p"
 	.string "This is so convenient!\p"
-	.string "{PLAYER}, your room is upstairs.\n"
-	.string "Go check it out, dear!\p"
-	.string "DAD bought you a new clock to mark\n"
-	.string "our move here.\l"
-	.string "Don't forget to set it!$"
+	.string "{PLAYER}, your room is upstairs. Go\n"
+	.string "check it out, dear!\p"
+	.string "DAD bought you a new clock to mark our\n"
+	.string "move here. Don't forget to set it!$"
 
 PlayersHouse_1F_Text_ArentYouInterestedInRoom:
 	.string "MOM: Well, {PLAYER}?\p"
@@ -374,20 +373,18 @@ PlayersHouse_1F_Text_Vigoroth1:
 	.string "Pikachu!$"
 
 PlayersHouse_1F_Text_Vigoroth2:
-	.string "You're my heart, you're my soul\n"
-	.string "I keep it shining everywhere I go\p"
-	.string "You're my heart, you're my soul\n"
-	.string "I'll be holding you forever,\l"
-	.string "stay with me together!$"
+	.string "You're my heart, you're my soul I keep it\n"
+	.string "shining everywhere I go You're my heart,\l"
+	.string "you're my soul I'll be holding you\l"
+	.string "forever, stay with me together!$"
 
 PlayersHouse_1F_Text_ReportFromPetalburgGym:
 	.string "INTERVIEWER: …We brought you this\n"
 	.string "report from in front of PETALBURG GYM.$"
 
 PlayersHouse_1F_Text_TheresAMovieOnTV:
-	.string "Ugh, it's Friends... Again...\n"
-	.string "Never thought it was funny.\l"
-	.string "Better get going!$"
+	.string "Ugh, it's Friends... Again... Never\n"
+	.string "thought it was funny. Better get going!$"
 
 PlayersHouse_1F_Text_RunningShoesManual:
 	.string "If you do the KONAMI CODE,\n"
@@ -396,13 +393,13 @@ PlayersHouse_1F_Text_RunningShoesManual:
 PlayersHouse_1F_Text_TicketFromBrineyCameForYou:
 	.string "DAD: Hm?\p"
 	.string "Hey, it's {PLAYER}!\p"
-	.string "It's been a while since I saw you,\n"
-	.string "but you look…stronger, somehow.\p"
-	.string "That's the impression I get.\n"
-	.string "But your old man hasn't given up yet!\p"
-	.string "Oh, yes, I have something for you.\n"
-	.string "This came to you from someone named\l"
-	.string "MR. BRINEY.$"
+	.string "It's been a while since I saw you, but\n"
+	.string "you look…stronger, somehow.\p"
+	.string "That's the impression I get. But your\n"
+	.string "old man hasn't given up yet!\p"
+	.string "Oh, yes, I have something for you. This\n"
+	.string "came to you from someone named MR.\p"
+	.string "BRINEY.$"
 
 PlayersHouse_1F_Text_PortsInSlateportLilycove:
 	.string "DAD: Hm, a TICKET for a ferry?\p"
@@ -424,15 +421,14 @@ PlayersHouse_1F_Text_IsThatABreakingStory:
 	.string "MOM: Is that a breaking news story?$"
 
 PlayersHouse_1F_Text_LatiEmergencyNewsFlash:
-	.string "We bring you this emergency\n"
-	.string "news flash!\p"
+	.string "We bring you this emergency news flash!\p"
 	.string "In various HOENN locales, there have\n"
-	.string "been reports of a BZZT…colored\l"
-	.string "POKéMON in flight.\p"
+	.string "been reports of a BZZT…colored POKéMON\l"
+	.string "in flight.\p"
 	.string "The identity of this POKéMON is\n"
 	.string "currently unknown.\p"
-	.string "We now return you to the regular\n"
-	.string "movie program.$"
+	.string "We now return you to the regular movie\n"
+	.string "program.$"
 
 PlayersHouse_1F_Text_WhatColorDidTheySay:
 	.string "MOM: {PLAYER}, did you catch that?\p"

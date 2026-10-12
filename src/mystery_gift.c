@@ -298,7 +298,7 @@ static bool32 IsWonderCardFlagIDInValidRange(u16 flagId)
 
 static const u16 sReceivedGiftFlags[] =
 {
-    FLAG_RECEIVED_AURORA_TICKET,
+    FLAG_WONDER_CARD_UNUSED_0,
     FLAG_RECEIVED_MYSTIC_TICKET,
     FLAG_RECEIVED_OLD_SEA_MAP,
     FLAG_WONDER_CARD_UNUSED_1,

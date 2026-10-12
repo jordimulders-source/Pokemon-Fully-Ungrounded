@@ -11,7 +11,7 @@ AbandonedShip_Room_B1F_EventScript_TrashCan::
 	playmoncry SPECIES_SPIRITOMB, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_SPIRITOMB, 45
+	setwildbattle SPECIES_SPIRITOMB, 57
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_ne VAR_RESULT, B_OUTCOME_CAUGHT, AbandonedShip_Room_B1F_EventScript_TrashCanEnd

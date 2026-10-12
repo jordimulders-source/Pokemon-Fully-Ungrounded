@@ -2619,6 +2619,30 @@ BattleScript_FaintAttackerForImplosion::
 	callnative BS_FormBlackHole
 	printstring STRINGID_BLACKHOLEFORMED
 	waitmessage B_WAIT_TIME_LONG
+	@ het zwarte gat zuigt ook het weer en het terrein op
+	jumpifhalfword CMP_NO_COMMON_BITS, gBattleWeather, B_WEATHER_ANY, BattleScript_ImplosionTerrain
+	removeweather
+	printfromtable gWeatherEndsStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ImplosionTerrain:
+	jumpifhalfword CMP_NO_COMMON_BITS, gFieldStatuses, STATUS_FIELD_TERRAIN_ANY, BattleScript_ImplosionAbilities
+	removeterrain
+	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG
+	printfromtable gTerrainStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_ImplosionAbilities:
+	saveattacker
+	savetarget
+	resetterrainabilityflags
+	setbyte gBattlerAttacker, 0
+BattleScript_ImplosionLoop:
+	copyarraywithindex gBattlerTarget, gBattlerByTurnOrder, gBattlerAttacker, 1
+	activateterrainchangeabilities BS_TARGET
+	activateweatherchangeabilities BS_TARGET
+	addbyte gBattlerAttacker, 1
+	jumpifbytenotequal gBattlerAttacker, gBattlersCount, BattleScript_ImplosionLoop
+	restoreattacker
+	restoretarget
 	tryfaintmon BS_ATTACKER
 	return
 
@@ -3370,6 +3394,7 @@ BattleScript_AirPollutionActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNMADEACIDRAIN
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_ACID_RAIN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -3407,6 +3432,7 @@ BattleScript_PollenSeasonActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNMADEPOLLENHAZE
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_POLLEN_HAZE_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -4787,6 +4813,7 @@ BattleScript_LocalBattleWonLoseTexts::
 	waitstate
 	printstring STRINGID_TRAINER2LOSETEXT
 BattleScript_LocalBattleWonReward::
+	jumpifbyte CMP_NOT_EQUAL, gCasinoBattle, FALSE, BattleScript_CasinoBattleWonEnd
 	jumpifbyte CMP_NOT_EQUAL, gStadiumBattle, FALSE, BattleScript_PayDayMoneyAndPickUpItems
 	getmoneyreward
 	printstring STRINGID_PLAYERGOTMONEY
@@ -4796,10 +4823,15 @@ BattleScript_PayDayMoneyAndPickUpItems::
 	pickup
 	end2
 
+@ Project Grounded: Battle Casino, geen geld, Pay Day of Pickup voor het geleende team
+BattleScript_CasinoBattleWonEnd::
+	end2
+
 BattleScript_LocalBattleLost::
 	jumpifbattletype BATTLE_TYPE_DOME, BattleScript_CheckDomeDrew
 	jumpifbattletype BATTLE_TYPE_FRONTIER, BattleScript_LocalBattleLostPrintTrainersWinText
 	jumpifbyte CMP_NOT_EQUAL, gStadiumBattle, FALSE, BattleScript_LocalBattleLostPrintTrainersWinText
+	jumpifbyte CMP_NOT_EQUAL, gCasinoBattle, FALSE, BattleScript_LocalBattleLostPrintTrainersWinText
 	jumpifbattletype BATTLE_TYPE_TRAINER_HILL, BattleScript_LocalBattleLostPrintTrainersWinText
 	jumpifbattletype BATTLE_TYPE_EREADER_TRAINER, BattleScript_LocalBattleLostEnd
 	jumpifhalfword CMP_EQUAL, gTrainerBattleParameter + 2, TRAINER_SECRET_BASE, BattleScript_LocalBattleLostEnd
@@ -4996,8 +5028,25 @@ BattleScript_LevelUp::
 	printstring STRINGID_PKMNGREWTOLV
 	setbyte sLVLBOX_STATE, 0
 	drawlvlupbox
+	callnative BS_GroundedObedienceWarnLevelUp @ Project Grounded: melding als hij boven de badge-grens komt
 	handlelearnnewmove BattleScript_LearnedNewMove, BattleScript_LearnMoveReturn, TRUE
 	goto BattleScript_AskToLearnMove
+@ Project Grounded: Gen 1-GHOST zonder Silph Scope (src/gen1_ghost.c)
+BattleScript_Gen1GhostScared::
+	printstring STRINGID_GEN1GHOST_SCARED
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+BattleScript_Gen1GhostGetOut::
+	printstring STRINGID_GEN1GHOST_GETOUT
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
+BattleScript_GroundedObedienceWarnLevelUp::
+	printstring STRINGID_OBEYWARN_LEVELUP
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 BattleScript_TryLearnMoveLoop::
 	handlelearnnewmove BattleScript_LearnedNewMove, BattleScript_LearnMoveReturn, FALSE
 BattleScript_AskToLearnMove::
@@ -6668,6 +6717,7 @@ BattleScript_DrizzleActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNMADEITRAIN
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_RAIN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -6886,6 +6936,7 @@ BattleScript_SandstreamActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNSXWHIPPEDUPSANDSTORM
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_SANDSTORM_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -6895,6 +6946,7 @@ BattleScript_SandSpitActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_ASANDSTORMKICKEDUP
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_SANDSTORM_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	return
@@ -7028,6 +7080,7 @@ BattleScript_DroughtActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_PKMNSXINTENSIFIEDSUN
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_SUN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -7037,6 +7090,7 @@ BattleScript_DesolateLandActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_EXTREMELYHARSHSUNLIGHT
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_SUN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -7052,6 +7106,7 @@ BattleScript_PrimordialSeaActivates::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_HEAVYRAIN
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_RAIN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -7175,6 +7230,7 @@ BattleScript_SnowWarningActivatesHail::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_SNOWWARNINGHAIL
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_HAIL_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -7184,6 +7240,7 @@ BattleScript_SnowWarningActivatesSnow::
 	call BattleScript_AbilityPopUp
 	printstring STRINGID_SNOWWARNINGSNOW
 	waitstate
+	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_SNOW_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
 	end3
@@ -7521,6 +7578,7 @@ BattleScript_BattlerAbilityStatRaiseOnSwitchIn::
 	printstring STRINGID_SCRIPTINGABILITYSTATRAISE
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BattlerAbilityStatRaiseOnSwitchInRet:
+	destroyabilitypopup @ Project Grounded: popup niet laten hangen (Intrepid Sword e.d.)
 	end3
 
 BattleScript_ScriptingAbilityStatRaise::
@@ -7611,12 +7669,14 @@ BattleScript_SwitchInAbilityMsg::
 	call BattleScript_AbilityPopUp
 	printfromtable gSwitchInAbilityStringIds
 	waitmessage B_WAIT_TIME_LONG
+	destroyabilitypopup   @ Project Grounded: popup bleef half zichtbaar naast het actiemenu (Unnerve, multi battle)
 	end3
 
 BattleScript_SwitchInAbilityMsgRet::
 	call BattleScript_AbilityPopUp
 	printfromtable gSwitchInAbilityStringIds
 	waitmessage B_WAIT_TIME_LONG
+	destroyabilitypopup   @ Project Grounded: zie BattleScript_SwitchInAbilityMsg
 	return
 
 BattleScript_ActivateAsOne::
@@ -7629,6 +7689,7 @@ BattleScript_ActivateAsOne::
 	call BattleScript_AbilityPopUp
 	printfromtable gSwitchInAbilityStringIds
 	waitmessage B_WAIT_TIME_LONG
+	destroyabilitypopup   @ Project Grounded: zie BattleScript_SwitchInAbilityMsg
 	end3
 
 BattleScript_FriskMsgWithPopup::

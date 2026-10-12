@@ -13,6 +13,13 @@ General / Facility): blauwgrijs wordt koud antraciet, het groen/turkoois van de 
 blauw. Registreert layouts, kaarten, map_groups (gMapGroup_Grounded), event_scripts.s en de tilesets.
 De scripts.inc staan met de hand in data/maps/RocketHideout_*.
 Gebruik: python3 tools/grounded/maptools/rocket_hideout.py [rendermap]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import colorsys, json, os, struct, subprocess, sys
 
 # ---------------------------------------------------------------- paletten

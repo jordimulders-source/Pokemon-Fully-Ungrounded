@@ -1,0 +1,71 @@
+{
+  "id": "MAP_FULLMOON_ISLAND",
+  "name": "FullmoonIsland",
+  "layout": "LAYOUT_FULLMOON_ISLAND",
+  "music": "MUS_RG_SEVII_67",
+  "region_map_section": "MAPSEC_FULLMOON_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": [
+    {
+      "map": "MAP_ROUTE105",
+      "offset": -30,
+      "direction": "left"
+    }
+  ],
+  "object_events": [
+    {
+      "local_id": "LOCALID_FULLMOON_CRESSELIA",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CRESSELIA)",
+      "x": 11,
+      "y": 19,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FullmoonIsland_EventScript_Cresselia",
+      "flag": "FLAG_TEMP_12"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 22,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "FullmoonIsland_EventScript_Sailor",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 14,
+      "y": 22,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "FullmoonIsland_EventScript_MoonPool"
+    },
+    {
+      "type": "hidden_item",
+      "x": 16,
+      "y": 29,
+      "elevation": 3,
+      "item": "ITEM_MOON_STONE",
+      "flag": "FLAG_HIDDEN_ITEM_FULLMOON_ISLAND_MOON_STONE"
+    }
+  ]
+}

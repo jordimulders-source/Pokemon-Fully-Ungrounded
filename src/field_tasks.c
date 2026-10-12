@@ -7,6 +7,7 @@
 #include "field_player_avatar.h"
 #include "field_special_scene.h"
 #include "field_tasks.h"
+#include "ultra_worlds.h"
 #include "fieldmap.h"
 #include "item.h"
 #include "main.h"
@@ -65,7 +66,8 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_SOOTOPOLIS_ICE]    = SootopolisGymIcePerStepCallback,
     [STEP_CB_TRUCK]             = EndTruckSequence,
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
-    [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback
+    [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
+    [STEP_CB_ULTRA_WORLDS]      = UltraWorlds_StepCallback, // Project Grounded
 };
 
 // Each array has 4 pairs of data, each pair representing two metatiles of a log and their relative position.

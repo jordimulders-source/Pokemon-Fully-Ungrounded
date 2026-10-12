@@ -140,7 +140,7 @@ FallarborTown_EventScript_JirachiBattle::
 	closemessage
 	playmoncry SPECIES_JIRACHI, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_JIRACHI, 70
+	setwildbattle SPECIES_JIRACHI, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

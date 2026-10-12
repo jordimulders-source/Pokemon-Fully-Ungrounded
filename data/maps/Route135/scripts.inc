@@ -70,7 +70,7 @@ Route135_EventScript_Lapras::
 	faceplayer
 	playmoncry SPECIES_LAPRAS, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_LAPRAS, 36
+	setwildbattle SPECIES_LAPRAS, 51
 	dowildbattle
 	removeobject LOCALID_ROUTE135_LAPRAS
 	setflag FLAG_HIDE_ROUTE135_LAPRAS
@@ -83,7 +83,7 @@ Route135_EventScript_Bergmite::
 	faceplayer
 	playmoncry SPECIES_BERGMITE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_BERGMITE, 33
+	setwildbattle SPECIES_BERGMITE, 50
 	dowildbattle
 	removeobject LOCALID_ROUTE135_BERGMITE
 	setflag FLAG_TEMP_11
@@ -95,7 +95,7 @@ Route135_EventScript_Eiscue::
 	faceplayer
 	playmoncry SPECIES_EISCUE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_EISCUE, 33
+	setwildbattle SPECIES_EISCUE, 50
 	dowildbattle
 	removeobject LOCALID_ROUTE135_EISCUE
 	setflag FLAG_TEMP_12
@@ -107,7 +107,7 @@ Route135_EventScript_Bergmite2::
 	faceplayer
 	playmoncry SPECIES_BERGMITE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_BERGMITE, 33
+	setwildbattle SPECIES_BERGMITE, 50
 	dowildbattle
 	removeobject LOCALID_ROUTE135_BERGMITE_2
 	setflag FLAG_TEMP_13
@@ -119,7 +119,7 @@ Route135_EventScript_Bergmite3::
 	faceplayer
 	playmoncry SPECIES_BERGMITE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_BERGMITE, 33
+	setwildbattle SPECIES_BERGMITE, 50
 	dowildbattle
 	removeobject LOCALID_ROUTE135_BERGMITE_3
 	setflag FLAG_TEMP_14
@@ -131,7 +131,7 @@ Route135_EventScript_Eiscue2::
 	faceplayer
 	playmoncry SPECIES_EISCUE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_EISCUE, 33
+	setwildbattle SPECIES_EISCUE, 50
 	dowildbattle
 	removeobject LOCALID_ROUTE135_EISCUE_2
 	setflag FLAG_TEMP_15

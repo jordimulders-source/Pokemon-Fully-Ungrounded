@@ -2,7 +2,7 @@
   "id": "MAP_FORTREE_JUNGLE",
   "name": "FortreeJungle",
   "layout": "LAYOUT_FORTREE_JUNGLE",
-  "music": "MUS_ROUTE119",
+  "music": "MUS_GROUNDED_WL4_MONSOON_JUNGLE",
   "region_map_section": "MAPSEC_FORTREE_JUNGLE",
   "requires_flash": false,
   "weather": "WEATHER_JUNGLE_CYCLE",
@@ -120,7 +120,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_U_TURN",
+      "trainer_sight_or_berry_tree_id": "ITEM_BUG_MEMORY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_FORTREE_JUNGLE_TM_U_TURN"
     },

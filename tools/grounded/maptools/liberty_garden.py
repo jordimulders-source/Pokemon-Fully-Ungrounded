@@ -6,6 +6,13 @@ Gauntlet: het kronkelpad van de steiger naar het plein heeft vier knelpunten van
 uitdager (zicht 1) die de ene helft blokkeert en de andere ziet, dus je moet ze op volgorde verslaan.
 V wacht bij de fontein (aanspreken). Na de vijfde springt Victini van de rechterlantaarn naar de fontein.
 Idempotent; controleert de bereikbaarheid. Gebruik: python3 tools/grounded/maptools/liberty_garden.py"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, shutil, struct
 from collections import deque
 

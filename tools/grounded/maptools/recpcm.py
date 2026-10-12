@@ -18,7 +18,7 @@ if k:
 per=mem.u8[SI+11]; spv=int.from_bytes(rd(SI+16,4),'little'); freq=int.from_bytes(rd(SI+20,4),'little')
 print('period',per,'samples/vblank',spv,'freq',freq,'maxChans',mem.u8[SI+6])
 BUF=SI+848
-seg=[]; prev=np.frombuffer(rd(BUF,1584),np.int8).copy(); last=None
+seg=[]; segL=[]; prev=np.frombuffer(rd(BUF,1584),np.int8).copy(); last=None
 for f in range(int(60*sec)):
     if f==4: e.core.set_keys()
     e.core.run_frame()
@@ -29,13 +29,15 @@ for f in range(int(60*sec)):
     if last is not None and i!=(last+1)%per:
         print('LET OP: frame %d sprong van stuk %d naar %d'%(f,last,i))
     seg.append(cur[i*spv:(i+1)*spv]); prev=cur; last=i
+    segL.append(np.frombuffer(rd(BUF+1584+i*spv,spv),np.int8).copy())   # v0.9.240: ook de linkerhelft (stereo)
 x=np.concatenate(seg).astype(float)
 jumps=int((abs(np.diff(x[int(freq*0.1):]))>40).sum())
 print(out.split('/')[-1],'sprongen>40/128:',jumps)
 # overlopen: de 8-bit-mixer klemt niet maar slaat om (-93 -> 123); hoorbaar als knapperen (Zinnia). Moet 0 zijn.
-wr=np.where(abs(np.diff(x))>128)[0]
+xl=np.concatenate(segL).astype(float)
+wr=np.unique(np.concatenate([np.where(abs(np.diff(x))>128)[0],np.where(abs(np.diff(xl))>128)[0]]))   # links of rechts
 print('OVERLOPEN (knapperen): %d, op s: %s'%(len(wr),sorted(set((wr/freq).round(1).tolist()))[:12]) if len(wr)
-      else 'overlopen: 0, piek %d/127'%abs(x).max())
+      else 'overlopen: 0, piek %d/127'%max(abs(x).max(),abs(xl).max()))
 best=(0,0,x)
 x=(best[2]*256).clip(-32768,32767).astype(np.int16)
 w=wave.open(out,'wb'); w.setnchannels(1); w.setsampwidth(2); w.setframerate(freq); w.writeframes(x.tobytes()); w.close()

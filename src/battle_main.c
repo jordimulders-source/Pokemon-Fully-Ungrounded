@@ -1,4 +1,6 @@
 #include "global.h"
+#include "gen1_ghost.h"
+#include "forces.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_ai_main.h"
@@ -26,6 +28,7 @@
 #include "dexnav.h"
 #include "dma3.h"
 #include "event_data.h"
+#include "overworld.h"
 #include "evolution_scene.h"
 #include "field_weather.h"
 #include "follower_npc.h"
@@ -369,11 +372,14 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_COLLECTION] = { _("THE"), 0, BALL_MASTER }, // Project Grounded: trio-compagnons ("THE REGIS")
     [TRAINER_CLASS_KING] = { _("KING"), 50, BALL_POKE }, // Project Grounded: Battle Stadium (N)
     [TRAINER_CLASS_PLASMA_BOSS] = { _("PLASMA BOSS"), 50, BALL_MASTER }, // Project Grounded: Battle Stadium (Ghetsis)
-    [TRAINER_CLASS_SAGE] = { _("SAGE"), 40, BALL_ULTRA }, // Project Grounded: Battle Stadium (Neo Plasma)
-    [TRAINER_CLASS_SHADOW_TRIAD] = { _("SHADOW"), 40, BALL_DUSK }, // Project Grounded: Battle Stadium (Neo Plasma; met de naam TRIAD: "SHADOW TRIAD")
-    [TRAINER_CLASS_NEO_PLASMA] = { _("NEO PLASMA"), 20, BALL_GREAT }, // Project Grounded: Battle Stadium (Neo Plasma-grunts)
+    [TRAINER_CLASS_SAGE] = { _("SAGE"), 40, BALL_POKE }, // Project Grounded: Battle Stadium (Neo Plasma)
+    [TRAINER_CLASS_SHADOW_TRIAD] = { _("SHADOW"), 40, BALL_POKE }, // Project Grounded: Battle Stadium (Neo Plasma; met de naam TRIAD: "SHADOW TRIAD")
+    [TRAINER_CLASS_NEO_PLASMA] = { _("NEO PLASMA"), 20, BALL_POKE }, // Project Grounded: Battle Stadium (Neo Plasma-grunts)
     [TRAINER_CLASS_TEAM_ROCKET] = { _("TEAM ROCKET"), 10 }, // Project Grounded: Rocket-sidequest
     [TRAINER_CLASS_ROCKET_EXEC] = { _("ROCKET EXEC"), 25, BALL_ULTRA }, // Project Grounded: Rocket-sidequest
+    [TRAINER_CLASS_ZERO_LAB] = { _("ZERO LAB"), 0, BALL_MASTER }, // Project Grounded: Area Zero
+    [TRAINER_CLASS_CONSTRUCT] = { _("CONSTRUCT"), 40, BALL_CHERISH }, // Project Grounded: construct van Arceus, Hall of Origin (tools/grounded/construct_sprites.py)
+    [TRAINER_CLASS_SHY_SQUAD] = { _("SHY SQUAD"), 30, BALL_POKE }, // Project Grounded: Yoshi's Island
     [TRAINER_CLASS_BUG_CATCHER] = { _("BUG CATCHER"), 4 },
     [TRAINER_CLASS_PKMN_RANGER] = { _("{PKMN} RANGER"), 12 },
     [TRAINER_CLASS_MAGMA_LEADER] = { _("MAGMA LEADER"), 20, BALL_MASTER },
@@ -453,6 +459,7 @@ void CB2_InitBattle(void)
     AllocateBattleSpritesData();
     AllocateMonSpritesGfx();
     RecordedBattle_ClearFrontierPassFlag();
+    Gen1Ghost_OnBattleStart(); // Project Grounded
 
 #if T_SHOULD_RUN_MOVE_ANIM
     gLoadFail = FALSE;
@@ -551,7 +558,7 @@ static void CB2_InitBattleInternal(void)
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL
                                                                         | BATTLE_TYPE_RECORDED))
-        && !gStadiumBattle) // Project Grounded: het Stadium bepaalt zelf singles of doubles
+        && !gStadiumBattle && !gCasinoBattle) // Project Grounded: het Stadium en het Casino bepalen zelf singles of doubles
     {
         switch (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA))
         {
@@ -1773,6 +1780,13 @@ static void CB2_HandleStartMultiBattle(void)
     }
 }
 
+// Project Grounded: Battle Casino, de melding "Skipping to the result..." blijft printen tijdens het uitfaden
+static void CB2_CasinoSkipBattle(void)
+{
+    RunTextPrinters();
+    CB2_QuitRecordedBattle();
+}
+
 void BattleMainCB2(void)
 {
     AnimateSprites();
@@ -1781,7 +1795,14 @@ void BattleMainCB2(void)
     UpdatePaletteFade();
     RunTasks();
 
-    if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
+    // Project Grounded: Battle Casino, START = meteen naar de uitslag (zelfde afsluiting als een opgenomen gevecht)
+    if (Casino_TrySkipBattle())
+    {
+        ResetPaletteFadeControl();
+        BeginNormalPaletteFade(PALETTES_ALL, 3, 0, 16, RGB_BLACK);
+        SetMainCallback2(CB2_CasinoSkipBattle);
+    }
+    else if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
     {
         // Player pressed B during recorded battle playback, end battle
         gSpecialVar_Result = gBattleOutcome = B_OUTCOME_PLAYER_TELEPORTED;
@@ -2052,6 +2073,8 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
+    if (gCasinoBattle) // Project Grounded: Battle Casino, teams van de kaart
+        return Casino_BuildEnemyParty(party, trainerNum, firstTrainer);
     if (gStadiumBattle) // Project Grounded: Battle Stadium, keuze uit de pool op level 50
         return Stadium_BuildTrainerParty(party, trainerNum, firstTrainer);
     if (GetTrainerStructFromId(trainerNum)->overrideTrainer)
@@ -3164,6 +3187,20 @@ static void BattleStartClearSetData(void)
 
 #define UNPACK_VOLATILE_BATON_PASSABLES(_enum, _fieldName, _typeMaxValue, ...) __VA_OPT__(if ((FIRST(__VA_ARGS__)) & V_BATON_PASSABLE) gBattleMons[battler].volatiles._fieldName = volatilesCopy->_fieldName;)
 
+// Project Grounded: National Park, gevecht tegen Eternatus (na het herstel van het park, tot de quest klaar is):
+// Celebi's kracht geeft elke Pokémon van de speler bij binnenkomst +1 op Atk, Def, Spe, SpA en SpD (omniboost).
+static void TryNationalParkOmniboost(u32 battler)
+{
+    u32 i;
+
+    if (!IsOnPlayerSide(battler) || (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
+     || !FlagGet(FLAG_NATIONAL_PARK_RESTORED) || FlagGet(FLAG_NATIONAL_PARK_DONE)
+     || GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) != SPECIES_ETERNATUS)
+        return;
+    for (i = STAT_ATK; i <= STAT_SPDEF; i++)
+        gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE + 1;
+}
+
 void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
 {
     s32 i;
@@ -3175,6 +3212,7 @@ void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
     {
         for (i = 0; i < NUM_BATTLE_STATS; i++)
             gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
+        TryNationalParkOmniboost(battler); // Project Grounded
         for (i = 0; i < gBattlersCount; i++)
         {
             if (gBattleMons[i].volatiles.escapePrevention && gDisableStructs[i].battlerPreventingEscape == battler)
@@ -3522,6 +3560,7 @@ static void DoBattleIntro(void)
                 memset(&gBattleMons[battler].volatiles, 0, sizeof(struct Volatiles));
                 for (i = 0; i < NUM_BATTLE_STATS; i++)
                     gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
+                TryNationalParkOmniboost(battler); // Project Grounded
                 #if TESTING
                 if (gTestRunnerEnabled)
                 {
@@ -3790,6 +3829,12 @@ static void DoBattleIntro(void)
                 gBattleStruct->startingStatus = gSpireStartingStatus;
                 gBattleStruct->startingStatusTimer = 0;
             }
+            else if (gForcesStartingStatus) // Project Grounded: Forces op routes (Tornadus: Tailwind)
+            {
+                gBattleStruct->startingStatus = gForcesStartingStatus;
+                gBattleStruct->startingStatusTimer = 4;
+                gForcesStartingStatus = 0;
+            }
             else if (B_VAR_STARTING_STATUS != 0)
             {
                 gBattleStruct->startingStatus = VarGet(B_VAR_STARTING_STATUS);
@@ -3995,7 +4040,18 @@ static void TryDoEventsBeforeFirstTurn(void)
         }
 
         if ((i = ShouldDoTrainerSlide(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), TRAINER_SLIDE_BEFORE_FIRST_TURN)))
-            BattleScriptExecute(i == 1 ? BattleScript_TrainerASlideMsgEnd2 : BattleScript_TrainerBSlideMsgEnd2);
+        {
+            // Project Grounded: Battle Stadium (doubles): daarna praat tegenstander B ook (zie BS_StadiumTrainerBSlide)
+            if (i == 1 && gStadiumBattle && (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS))
+                BattleScriptExecute(BattleScript_StadiumTrainerABSlideMsgEnd2);
+            else
+                BattleScriptExecute(i == 1 ? BattleScript_TrainerASlideMsgEnd2 : BattleScript_TrainerBSlideMsgEnd2);
+        }
+        else if (Stadium_SetTrainerBFirstTurnSlide())
+        {
+            MarkTrainerSlideAsPlayed(TRAINER_SLIDE_BEFORE_FIRST_TURN);
+            BattleScriptExecute(BattleScript_TrainerBSlideMsgEnd2);
+        }
         gBattleStruct->eventState.beforeFirstTurn = 0;
         break;
     }
@@ -4242,6 +4298,8 @@ static void HandleTurnActionSelectionState(void)
         switch (gBattleCommunication[battler])
         {
         case STATE_TURN_START_RECORD: // Recorded battle related action on start of every turn.
+            if (battler == 0)
+                ForceHideAbilityPopUps(); // Project Grounded: geen halve popups naast het actiemenu
             RecordedBattle_CopyBattlerMoves(battler);
             gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
             ComputeBattlerDecisions(battler); // Do AI score computations here so we can use them in AI_TrySwitchOrUseItem
@@ -5572,6 +5630,8 @@ static void HandleEndTurn_BattleLost(void)
 static void HandleEndTurn_RanFromBattle(void)
 {
     gCurrentActionFuncId = 0;
+    if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED)))
+        IncrementGameStat(GAME_STAT_FLED_BATTLES);   // Project Grounded: omroeper van het Battle Stadium
 
     if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
     {

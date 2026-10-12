@@ -1,0 +1,303 @@
+{
+  "id": "MAP_PLASMA_FRIGATE_CABINS",
+  "name": "PlasmaFrigate_Cabins",
+  "layout": "LAYOUT_PLASMA_FRIGATE_CABINS",
+  "music": "MUS_AQUA_MAGMA_HIDEOUT",
+  "region_map_section": "MAPSEC_NOTHING_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_M",
+      "x": 3,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PlasmaFrigate_Cabins_EventScript_Sleeper",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_PP_MAX",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_PLASMA_FRIGATE_PP_MAX"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_F",
+      "x": 23,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "PlasmaFrigate_Cabins_EventScript_Gossip",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 29,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REVIVE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_PLASMA_FRIGATE_MAX_REVIVE"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 4,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 5,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 13,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 14,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "1"
+    },
+    {
+      "x": 22,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 23,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "2"
+    },
+    {
+      "x": 31,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 32,
+      "y": 16,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 4,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "4"
+    },
+    {
+      "x": 13,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "5"
+    },
+    {
+      "x": 22,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "6"
+    },
+    {
+      "x": 31,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_PLASMA_FRIGATE_CORRIDOR",
+      "dest_warp_id": "7"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalRed"
+    },
+    {
+      "type": "sign",
+      "x": 2,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalRed"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalBlue"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalBlue"
+    },
+    {
+      "type": "sign",
+      "x": 11,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalBlue"
+    },
+    {
+      "type": "sign",
+      "x": 12,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalBlue"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalWhite"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 11,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalWhite"
+    },
+    {
+      "type": "sign",
+      "x": 19,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalWhite"
+    },
+    {
+      "type": "sign",
+      "x": 20,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalWhite"
+    },
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalYellow"
+    },
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalYellow"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalYellow"
+    },
+    {
+      "type": "sign",
+      "x": 32,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalYellow"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalYellow"
+    },
+    {
+      "type": "sign",
+      "x": 33,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalYellow"
+    },
+    {
+      "type": "sign",
+      "x": 34,
+      "y": 12,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalYellow"
+    },
+    {
+      "type": "sign",
+      "x": 34,
+      "y": 13,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PlasmaFrigate_Cabins_EventScript_TerminalYellow"
+    }
+  ]
+}

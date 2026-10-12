@@ -38,5 +38,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 2,
+      "y": 4,
+      "elevation": 3,
+      "item": "ITEM_DIVE_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM6_DIVE_BALL"
+    }
+  ]
 }

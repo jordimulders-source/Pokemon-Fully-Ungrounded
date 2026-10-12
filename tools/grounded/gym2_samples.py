@@ -28,13 +28,10 @@ FLUID = {
     'gym2_cello':       ([(42, 60)], 1.3, True, 60, 22050, 112, None),          # epische cello (melodie)
     'gym2_ostinato':    ([(42, 48), (43, 36)], 0.34, False, 36, 18000, 124, None),  # cello + contrabas in octaven, kort
     'gym2_braam':       ([(57, 48), (57, 55), (60, 60), (61, 48)], 1.5, False, 48, 18000, 122, 5000),  # koper-'braam' C3+G3+C4
-    'gym2_concert_bd':  ([('drum', 48, 36)], 1.2, False, 60, 18000, 127, None),  # concert-basdrum (Orchestra kit)
-    'gym2_low_tom':     ([('drum', 48, 41)], 0.7, False, 60, 18000, 120, None),
     # --- Winona: bubblegum-dancepop ---
     'gym2_pop_stab':    ([(62, 60), (62, 67), (62, 74)], 0.40, False, 60, 22050, 118, 7000),   # synthbrass sus2 (C G D)
     'gym2_pop_stab5':   ([(62, 60), (62, 67), (62, 72)], 0.40, False, 60, 22050, 118, 7000),   # synthbrass kwint+octaaf
     'gym2_pop_brass':   ([(62, 60)], 1.0, True, 60, 22050, 112, 7000),           # synthbrass, enkele noot (melodie)
-    'gym2_pop_kick':    ([('drum', 16, 36)], 0.40, False, 60, 18000, 127, None),   # Power-kit kick
     # --- Wallace: Franse lounge ---
     'gym2_vibes':       ([(11, 72)], 1.8, False, 72, 22050, 100, None),          # vibrafoon
     'gym2_rhodes':      ([(4, 60)], 1.5, False, 60, 22050, 96, None),            # Rhodes (melodie/pianodelen)
@@ -49,16 +46,8 @@ FLUID = {
     'gym2_side_stick':  ([('drum', 40, 37)], 0.25, False, 60, 18000, 110, None),
     'gym2_soft_kick':   ([('drum', 40, 36)], 0.40, False, 60, 18000, 100, None),
     'gym2_ride':        ([('drum', 40, 51)], 1.0, False, 60, 18000, 96, None),
-    'gym2_shaker':      ([('drum', 0, 82)], 0.20, False, 60, 18000, 100, None),
-    # --- ronde 2 (v2) ---
-    # Winona v2: celesta (lead naast de PSG-blokgolf) en polysynth-pads (GM 90: aanslag 53 ms, GM 89 'warm' 384 ms
-    # was te traag voor off-beat-stoten); één sample per voicing (gelabeld op C4) = 1 kanaal per akkoord
-    'gym2_celesta':     ([(8, 72)], 1.2, False, 72, 22050, 110, None),
-    'gym2_wpad_dom':    ([(90, 60), (90, 67), (90, 70), (90, 74)], 1.0, True, 60, 18000, 104, 6000),   # C G Bb D
-    'gym2_wpad_maj':    ([(90, 60), (90, 64), (90, 69), (90, 74)], 1.0, True, 60, 18000, 104, 6000),   # 1 3 6 9
-    'gym2_wpad_min':    ([(90, 60), (90, 63), (90, 67), (90, 70)], 1.0, True, 60, 18000, 104, 6000),
-    'gym2_wpad_sus':    ([(90, 60), (90, 65), (90, 70), (90, 74)], 1.0, True, 60, 18000, 104, 6000),
-    'gym2_wpad_5':      ([(90, 60), (90, 67), (90, 72)], 1.0, True, 60, 18000, 104, 6000),
+    # (v0.9.103: concert-basdrum, lage tom, pop-kick, shaker en de Winona v2-celesta/-pads verwijderd: geen nummer
+    # gebruikt ze meer; ROM-ruimte)
 }
 # ronde 2, Norman v2: gelaagde akkoorden uit de échte Emerald-samples (Jordi: 'Trumpet / Brass Section samples',
 # 'Pizzicato Strings'). Elk akkoord = de vanilla-sample per toon getransponeerd en opgeteld (13.379 Hz, 8 bit) = één
@@ -81,8 +70,8 @@ SRC_DIR = 'sound/direct_sound_samples/'
 # genoteerd, zoals ProgrammableWaveData_8; zo kan de psy-bas onder C2 zonder dat m4a hem op C2 klemt)
 WAVES = {'gym2_saw': [int(round(15 - 15 * i / 31)) for i in range(32)]}
 
-SYNTH = ['gym2_pop_lead', 'gym2_pop_pluck', 'gym2_psy_kick', 'gym2_psy_bass', 'gym2_psy_lead_a', 'gym2_psy_lead_b',
-         'gym2_psy_zap', 'gym2_psy_acid']
+SYNTH = ['gym2_pop_lead', 'gym2_pop_pluck', 'gym2_psy_bass', 'gym2_psy_lead_a', 'gym2_psy_lead_b',
+         'gym2_psy_acid']   # gym2_psy_kick en gym2_psy_zap: ongebruikt, v0.9.103 verwijderd
 
 
 def render(notes, dur, vel):

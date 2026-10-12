@@ -28,6 +28,7 @@
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/weather.h"
+#include "grounded_forms.h"
 
 extern const u8 EventScript_SprayWoreOff[];
 
@@ -490,6 +491,7 @@ void CreateWildMon(u16 species, u8 level)
         species = gDebugForcedWildSpecies;
         gDebugForceNextStep = FALSE;
     }
+    species = GetWildEncounterForm(species); // Project Grounded: Vivillon-patroon willekeurig, Deerling per seizoen
 
     ZeroEnemyPartyMons();
 

@@ -46,5 +46,22 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 11,
+      "elevation": 0,
+      "item": "ITEM_HEAT_ROCK",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_MAGMAHIDEOUT_2F_3R_HEAT_ROCK"
+    },
+    {
+      "type": "hidden_item",
+      "x": 23,
+      "y": 13,
+      "elevation": 0,
+      "item": "ITEM_FULL_RESTORE",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_MAGMAHIDEOUT_2F_3R_FULL_RESTORE"
+    }
+  ]
 }

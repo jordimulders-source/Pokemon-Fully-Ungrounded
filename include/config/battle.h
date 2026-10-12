@@ -12,6 +12,10 @@
 
 // Experience settings
 #define B_EXP_CATCH                 GEN_6 // In Gen6+, Pokémon get experience from catching.
+#define B_TRAINER_EXP_PERCENT       50    // Project Grounded: EXP van trainergevechten in procenten (vanilla Gen 3-7: 150). Zie LEVELCURVE.md.
+#define B_GROUNDED_CATCHUP_EXP      TRUE  // Project Grounded: inhaal-EXP onder het ace-level van de volgende mijlpaal (src/caps.c, LEVELCURVE.md)
+#define B_CATCHUP_EXP_STEP          100   // procent extra EXP per level achterstand
+#define B_CATCHUP_EXP_MAX           900   // maximaal extra (procent): x10 voor een verse vangst ver onder het doel
 #define B_TRAINER_EXP_MULTIPLIER    GEN_7 // In Gen7+, trainer battles no longer give a 1.5 multiplier to EXP gain.
 #define B_SPLIT_EXP                 GEN_5 // In Gen6+, all participating mon get full experience.
 #define B_SCALED_EXP                GEN_5 // In Gen5 and Gen7+, experience is weighted by level difference.
@@ -215,7 +219,7 @@
 #define B_SMART_WILD_AI_FLAG        0     // If this flag is set, wild Pokémon will become smart, with all AI flags enabled.
 #define B_FLAG_NO_CATCHING          0     // If this flag is set, the ability to catch wild Pokémon is disabled.
 #define B_FLAG_NO_RUNNING           0     // If this flag is set, the ability to escape from wild battles is disabled. Also makes Roar/Whirlwind and Teleport (under Gen8) fail.
-#define B_FLAG_AI_VS_AI_BATTLE      0     // If this flag is set, the player's mons will be controlled by the ai next battles.
+#define B_FLAG_AI_VS_AI_BATTLE      FLAG_CASINO_AI_VS_AI // Project Grounded: Battle Casino; was 0     // If this flag is set, the player's mons will be controlled by the ai next battles.
 #define B_FLAG_DYNAMAX_BATTLE       0     // If this flag is set, the ability to Dynamax in battle is enabled for all trainers.
 #define B_FLAG_TERA_ORB_CHARGED     0     // If this flag is set, the Tera Orb is charged. It is automatically set upon healing and cleared upon Terastallizing once configured.
 #define B_FLAG_TERA_ORB_NO_COST     0     // If this flag is set, the Tera Orb does not use up its charge upon Terastallization. In S/V, this occurs after an event with Terapagos.

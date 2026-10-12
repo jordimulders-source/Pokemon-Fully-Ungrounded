@@ -287,7 +287,7 @@ LittlerootTown_MaysHouse_2F_EventScript_PC::
 	end
 
 LittlerootTown_MaysHouse_2F_EventScript_CheckRivalsPC::
-	msgbox gText_PokemonTrainerSchoolEmail, MSGBOX_DEFAULT
+	msgbox LittlerootTown_MaysHouse_2F_Text_MaysPC, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -309,15 +309,13 @@ LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC::
 	end
 
 RivalsHouse_2F_Text_MayWhoAreYou:
-	.string "AAAAAAAAAAAAAH!\n"
-	.string "AN INTRUDER!!!!\p"
-	.string "Oh, my mom sent you here?\n"
-	.string "She's a nuisance!\p"
-	.string "I'm a tell you something...\n"
-	.string "You might think I'll be\p"
-	.string "a decent Rival, but after\n"
-	.string "Lilycove you will\p"
-	.string "never see me again!\n"
+	.string "AAAAAAAAAAAAAH! AN INTRUDER!!!!\p"
+	.string "Oh, my mom sent you here? She's a\n"
+	.string "nuisance!\p"
+	.string "I'm a tell you something...\p"
+	.string "You might think I'll be a decent Rival,\n"
+	.string "but after Lilycove you will never see me\l"
+	.string "again!\p"
 	.string "Now get yo ass outta here!$"
 
 RivalsHouse_2F_Text_MayGettingReady:
@@ -326,16 +324,15 @@ RivalsHouse_2F_Text_MayGettingReady:
 	.string "POKéDEX charged!$"
 
 RivalsHouse_2F_Text_BrendanWhoAreYou:
-	.string "Hello, my hair is not white!\n"
-	.string "It's just a hat!\p"
+	.string "Hello, my hair is not white! It's just a\n"
+	.string "hat!\p"
 	.string "The less you know the better.\p"
-	.string "You thought I was the\n"
-	.string "Gen 2 Cooltrainer?\p"
+	.string "You thought I was the Gen 2\n"
+	.string "Cooltrainer?\p"
 	.string "Look it up!\p"
-	.string "Anyways, enough yapping.\n"
-	.string "Go enjoy your nomad life\p"
-	.string "and don't use Gyarados,\n"
-	.string "you loser!\p"
+	.string "Anyways, enough yapping.\p"
+	.string "Go enjoy your nomad life and don't use\n"
+	.string "Gyarados, you loser!\p"
 	.string "That's easy mode!$"
 
 RivalsHouse_2F_Text_BrendanGettingReady:
@@ -367,3 +364,7 @@ RivalsHouse_2F_Text_BrendanJustCheckingMyPokedex:
 RivalsHouse_2F_Text_BrendanWhereShouldIGoNext:
 	.string "BRENDAN: I'm having a hard time\n"
 	.string "deciding if I'm too sexy for my shirt?$"
+
+LittlerootTown_MaysHouse_2F_Text_MaysPC:
+	.string "MAY is watching awful family vlogs. She\n"
+	.string "clearly doesn't mind child labor.$"

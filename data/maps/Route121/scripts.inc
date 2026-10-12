@@ -261,3 +261,25 @@ Route121_Text_SafariZoneSign:
 	.string "Enter at your own risk. The POKéMON are\n"
 	.string "dangerous.$"
 
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route121_EventScript_EF_MitchRoute121::
+	trainerbattle_single TRAINER_MITCH_ROUTE_121, Route121_Text_EF_MitchRoute121Intro, Route121_Text_EF_MitchRoute121Defeat
+	msgbox Route121_Text_EF_MitchRoute121PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route121_Text_EF_MitchRoute121Intro:
+	.string "MITCH: You again. Okay. Breathe.\p"
+	.string "Last week I played for 12 people.\n"
+	.string "Eleven were Zigzagoon.\p"
+	.string "The twelfth asked for a refund.\n"
+	.string "Let's battle before I overthink it.$"
+
+Route121_Text_EF_MitchRoute121Defeat:
+	.string "Drop. Silence. Story of my life.$"
+
+Route121_Text_EF_MitchRoute121PostBattle:
+	.string "MITCH: Next gig: VICTORY ROAD.\n"
+	.string "Terrible acoustics. Perfect.\p"
+	.string "Nobody will hear me fail.$"
+
+@ }

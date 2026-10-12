@@ -23,6 +23,13 @@
 Idempotent: leest de oorspronkelijke kaart/tilesets uit git (commit ORIG) en bouwt alles opnieuw.
 Gebruik: python3 tools/grounded/maptools/stadium.py [voorbeeld.png]
 """
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import io, json, math, os, re, shutil, struct, subprocess, sys
 from PIL import Image
 
@@ -525,6 +532,7 @@ def build():
     print('stadion: %d metatiles (+1 deur, +1 verhuisd), %d tiles (vrij over: %d metatiles, %d tiles)'
           % (len(mt_index), len(out_tiles), len(free_mt), len(free_tiles)))
 
+    grid[73][17] = 0x403   # naambordje van het stadion (commit 0a8b6b35, eerst met de hand gezet)
     open(LAY + 'map.bin', 'wb').write(b''.join(struct.pack('<H', grid[y][x]) for y in range(H) for x in range(W)))
     open(TS + 'metatiles.bin', 'wb').write(bytes(mts))
     open(TS + 'metatile_attributes.bin', 'wb').write(bytes(attrs))
@@ -702,6 +710,11 @@ def interiors(warp_id):
         if 'local_id' in o:
             o['local_id'] = rename[o['local_id']]
         objs.append(o)
+    # de opstelling in de arena is daarna met de hand symmetrisch gemaakt (compagnon, tweede tegenstander,
+    # v0.8.127 e.v.): een bestaande arena houdt zijn objecten
+    ap = 'data/maps/%s/map.json' % A
+    if os.path.exists(ap):
+        objs = json.load(open(ap))['object_events']
     interior(A, 'BATTLE_FRONTIER_STADIUM_ARENA', 'BattleFrontier_BattleDomeBattleRoom',
              'LAYOUT_BATTLE_FRONTIER_STADIUM_LOBBY', 'MUS_B_DOME', objs, [], [], ARENA_SCRIPT)
 

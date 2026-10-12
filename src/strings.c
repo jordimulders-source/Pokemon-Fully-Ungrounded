@@ -520,7 +520,6 @@ const u8 gText_MenuOptionSave[] = _("SAVE");
 const u8 gText_MenuOptionOption[] = _("OPTION");
 const u8 gText_MenuOptionExit[] = _("EXIT");
 const u8 gText_SouthernIsland[] = _("SOUTHERN ISLAND");
-const u8 gText_BirthIsland[] = _("BIRTH ISLAND");
 const u8 gText_FarawayIsland[] = _("FARAWAY ISLAND");
 const u8 gText_FlowerParadise[] = _("FLOWER PARADISE"); // Project Grounded
 const u8 gText_NavelRock[] = _("NAVEL ROCK");

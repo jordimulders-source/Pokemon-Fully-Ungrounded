@@ -1,8 +1,8 @@
 @ Project Grounded: de meteoriet in de ruimte (Deoxys-event). Je komt hier vanuit het Space Center van Mossdeep
 @ (MossdeepCity_SpaceCenter_1F_EventScript_LaunchToSpace). Kaart en events: tools/grounded/maptools/meteor_space.py.
-@ De rode driehoek is de steen van Birth Island met het palet van de laatste puzzelstand (OBJ_EVENT_GFX_DEOXYS_TRIANGLE_RED);
+@ De rode driehoek is de vanilla Deoxys-steen met het palet van de laatste puzzelstand (OBJ_EVENT_GFX_DEOXYS_TRIANGLE_RED);
 @ geen puzzel, wel de vertrouwde opbouw: de steen spat uiteen, Deoxys zakt uit de ruimte naar beneden, gevecht met zijn transitie.
-@ Deoxys-flags gedeeld met Birth Island: FLAG_BATTLED_DEOXYS (gevangen), FLAG_DEFEATED_DEOXYS (verslagen; terug na de League).
+@ Deoxys-flags (vanilla): FLAG_BATTLED_DEOXYS (gevangen), FLAG_DEFEATED_DEOXYS (verslagen; terug na de League).
 
 MeteorSpace_MapScripts::
 	map_script MAP_SCRIPT_ON_TRANSITION, MeteorSpace_OnTransition
@@ -12,10 +12,10 @@ MeteorSpace_MapScripts::
 
 MeteorSpace_OnTransition:
 	setflag FLAG_HIDE_DEOXYS
-	setflag FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
+	setflag FLAG_HIDE_METEOR_SPACE_DEOXYS_TRIANGLE
 	goto_if_set FLAG_BATTLED_DEOXYS, MeteorSpace_EventScript_End
 	goto_if_set FLAG_DEFEATED_DEOXYS, MeteorSpace_EventScript_End
-	clearflag FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE
+	clearflag FLAG_HIDE_METEOR_SPACE_DEOXYS_TRIANGLE
 	end
 
 MeteorSpace_EventScript_End::

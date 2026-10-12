@@ -1,6 +1,7 @@
 	.include "asm/macros.inc"
 	.include "constants/gba_constants.inc"
 	.include "constants/m4a_constants.inc"
+#include "config/m4a_mixer.h"
 
 	.syntax unified
 
@@ -85,6 +86,7 @@ lt_o_SoundInfo_pcmBuffer: .word o_SoundInfo_pcmBuffer
 lt_PCM_DMA_BUF_SIZE:      .word PCM_DMA_BUF_SIZE
 	thumb_func_end SoundMain
 
+#if !M4A_HQ_MIXER // Project Grounded: met de HQ-mixer staat SoundMainRAM in src/m4a_hq_mixer.s
 	.section .iwram.code, "ax", %progbits
 	thumb_func_start SoundMainRAM
 SoundMainRAM:
@@ -709,6 +711,7 @@ _081DD594:
 	.pool
 	arm_func_end SoundMainRAM_Unk2
 
+#endif // !M4A_HQ_MIXER
 	.text
 	thumb_func_start SoundMainBTM
 SoundMainBTM:

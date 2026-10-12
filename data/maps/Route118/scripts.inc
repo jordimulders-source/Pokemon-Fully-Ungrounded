@@ -291,4 +291,3 @@ Route118_Text_RouteSign119:
 	.string "{UP_ARROW} ROUTE 119\p"
 	.string "It rains there. Always. This sign is wet\n"
 	.string "just thinking about it.$"
-

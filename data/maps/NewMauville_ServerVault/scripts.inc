@@ -1,41 +1,57 @@
 NewMauville_ServerVault_MapScripts::
 	.byte 0
 
-@ Project Grounded: Genesect in de serverkluis achter de Raikou-grot (post-game, deur via de terminal in de Raikou-grot)
-NewMauville_ServerVault_EventScript_Genesect::
-	lock
-	faceplayer
-	msgbox NewMauville_ServerVault_Text_TargetAcquired, MSGBOX_DEFAULT
-	closemessage
-	playmoncry SPECIES_GENESECT, CRY_MODE_ENCOUNTER
-	waitmoncry
-	setwildbattle SPECIES_GENESECT, 70
-	setflag FLAG_SYS_CTRL_OBJ_DELETE
-	special BattleSetup_StartLegendaryBattle
-	waitstate
-	clearflag FLAG_SYS_CTRL_OBJ_DELETE
-	specialvar VAR_RESULT, GetBattleOutcome
-	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, NewMauville_ServerVault_EventScript_GenesectStays
-	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, NewMauville_ServerVault_EventScript_GenesectStays
-	removeobject LOCALID_SERVER_VAULT_GENESECT
-	setflag FLAG_HIDE_NEW_MAUVILLE_GENESECT
-NewMauville_ServerVault_EventScript_GenesectStays::
-	release
+@ Project Grounded: serverkluis achter de Raikou-grot (post-game, deur via de terminal in de Raikou-grot).
+@ Sinds v0.9.110 is Genesect weg: Neo Team Plasma heeft hem verscheept. De printer geeft de vrachtbrief
+@ (VAR_PLASMA_FRIGATE 1) en zo de weg naar Nothing Island (mist ten westen van Route 105).
+NewMauville_ServerVault_EventScript_Capsule::
+	msgbox NewMauville_ServerVault_Text_Capsule, MSGBOX_SIGN
+	end
+
+NewMauville_ServerVault_EventScript_Printer::
+	lockall
+	goto_if_ne VAR_PLASMA_FRIGATE, 0, NewMauville_ServerVault_EventScript_PrinterAgain
+	msgbox NewMauville_ServerVault_Text_PrinterWakes, MSGBOX_DEFAULT
+	playse SE_PC_ON
+	waitse
+	msgbox NewMauville_ServerVault_Text_Waybill, MSGBOX_DEFAULT
+	setvar VAR_PLASMA_FRIGATE, 1
+	releaseall
+	end
+
+NewMauville_ServerVault_EventScript_PrinterAgain::
+	msgbox NewMauville_ServerVault_Text_Waybill, MSGBOX_DEFAULT
+	msgbox NewMauville_ServerVault_Text_PrinterAgain, MSGBOX_DEFAULT
+	releaseall
 	end
 
 NewMauville_ServerVault_EventScript_Server1::
 	msgbox NewMauville_ServerVault_Text_Server1, MSGBOX_SIGN
 	end
 
-NewMauville_ServerVault_EventScript_Server2::
-	msgbox NewMauville_ServerVault_Text_Server2, MSGBOX_SIGN
-	end
+NewMauville_ServerVault_Text_Capsule:
+	.string "A containment capsule. Empty.\p"
+	.string "The glass is broken outward.\n"
+	.string "Something left. Something angry.\l"
+	.string "Something with a forklift helping it.$"
 
-NewMauville_ServerVault_Text_TargetAcquired:
-	.string "Every screen in the room turns red.\p"
-	.string "TARGET ACQUIRED.\n"
-	.string "TARGET: YOU.\p"
-	.string "HASTA LA VISTA, BABY.$"
+NewMauville_ServerVault_Text_PrinterWakes:
+	.string "A dusty printer wakes up, screams\n"
+	.string "like a fax machine and spits out\l"
+	.string "a crumpled sheet.$"
+
+NewMauville_ServerVault_Text_Waybill:
+	.string "SHIPMENT 0451\n"
+	.string "1x GENESECT (ANCIENT, VERY ANGRY)\p"
+	.string "DELIVER TO: P. FRIGATE\n"
+	.string "c/o NOTHING ISLAND\l"
+	.string "(WEST OF ROUTE 105, IN THE FOG)\p"
+	.string "SIGNED: Z.\n"
+	.string "P.S. THIS SIDE UP. BOTH SIDES BITE.$"
+
+NewMauville_ServerVault_Text_PrinterAgain:
+	.string "The printer is out of paper.\n"
+	.string "And ink. And hope.$"
 
 NewMauville_ServerVault_Text_Server1:
 	.string "A server rack, humming happily.\p"

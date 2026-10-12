@@ -46,6 +46,7 @@ SECTIONS {
         src/*.o(COMMON);
         *libc.a:*.o(COMMON);
         *libnosys.a:*.o(COMMON);
+        __iwram_bss_end = .; /* Project Grounded: stackgrens voor de HQ-mixer */
     } > IWRAM
 
     /* BEGIN ROM DATA */

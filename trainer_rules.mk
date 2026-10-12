@@ -5,6 +5,7 @@ AUTO_GEN_TARGETS += src/data/trainers.h
 AUTO_GEN_TARGETS += src/data/battle_partners.h
 AUTO_GEN_TARGETS += test/battle/trainer_control.h
 AUTO_GEN_TARGETS += src/data/debug_trainers.h
+AUTO_GEN_TARGETS += src/data/rival_postgame.h
 
 %.h: %.party
 	$(CPP) $(CPPFLAGS) -traditional-cpp - < $< | $(TRAINERPROC) -o $@ -i $< -

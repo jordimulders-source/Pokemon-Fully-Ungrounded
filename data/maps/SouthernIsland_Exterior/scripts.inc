@@ -52,3 +52,18 @@ SouthernIsland_Exterior_EventScript_Sign::
 	msgbox SouthernIsland_Exterior_Text_Sign, MSGBOX_SIGN
 	end
 
+@ --- land_vulling (gegenereerd door tools/grounded/maptools/land_vulling.py) ---
+SouthernIsland_Exterior_EventScript_LVLetters::
+	msgbox SouthernIsland_Exterior_Text_LVLetters, MSGBOX_SIGN
+	end
+
+SouthernIsland_Exterior_Text_LVLetters:
+	.string "A crate full of letters. The top\none reads:\p'Day 1. A red dragon lives here.\nI just know it. I'll wait.'\p'Day 90. Still waiting. Built a\nchair. The chair is my friend now.'\p'Day 2,190. The boat came. I went.\nKeep the stuff. Keep the chair.\lDon't keep the dream. It's heavy.'$"
+
+SouthernIsland_Exterior_EventScript_LVPlush::
+	msgbox SouthernIsland_Exterior_Text_LVPlush, MSGBOX_SIGN
+	end
+
+SouthernIsland_Exterior_Text_LVPlush:
+	.string "A handmade LATIAS plush.\pOn closer inspection: a SWABLU\ndoll, painted red. Badly.\lWith love, but badly.$"
+@ --- einde land_vulling ---

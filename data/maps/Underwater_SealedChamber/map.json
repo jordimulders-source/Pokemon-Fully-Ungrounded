@@ -32,6 +32,14 @@
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
       "script": "Underwater_SealedChamber_EventScript_Braille"
+    },
+    {
+      "type": "hidden_item",
+      "x": 17,
+      "y": 45,
+      "elevation": 3,
+      "item": "ITEM_RELIC_STATUE",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_SEALED_RELIC_STATUE"
     }
   ]
 }

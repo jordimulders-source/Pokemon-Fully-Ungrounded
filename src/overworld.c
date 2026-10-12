@@ -1,5 +1,7 @@
 #include "global.h"
 #include "burglar.h"
+#include "forces.h"
+#include "enamorus.h"
 #include "field_move.h"
 #include "overworld.h"
 #include "battle_pyramid.h"
@@ -379,6 +381,7 @@ static void (*const sMovementStatusHandler[])(struct LinkPlayerObjectEvent *, st
 // code
 void DoWhiteOut(void)
 {
+    IncrementGameStat(GAME_STAT_WHITE_OUTS);   // Project Grounded: voor de omroeper van het Battle Stadium
     RunScriptImmediately(EventScript_WhiteOut);
     HealPlayerParty();
     Overworld_ResetStateAfterWhiteOut();
@@ -498,16 +501,32 @@ void IncrementGameStat(u8 index)
     }
 }
 
+// Project Grounded: de nieuwe game stats (53+) waren in oude saves nooit gewist; bij het eerste gebruik op 0
+static void InitGroundedGameStats(void)
+{
+    u32 i;
+
+    if (FlagGet(FLAG_GROUNDED_STATS_V1))
+        return;
+    FlagSet(FLAG_GROUNDED_STATS_V1);
+    for (i = GROUNDED_GAME_STATS_START; i < NUM_USED_GAME_STATS; i++)
+        gSaveBlock1Ptr->gameStats[i] = gSaveBlock2Ptr->encryptionKey;   // = 0 na het ontsleutelen
+}
+
 u32 GetGameStat(u8 index)
 {
     if (index >= NUM_USED_GAME_STATS)
         return 0;
+    if (index >= GROUNDED_GAME_STATS_START)
+        InitGroundedGameStats();
 
     return gSaveBlock1Ptr->gameStats[index] ^ gSaveBlock2Ptr->encryptionKey;
 }
 
 void SetGameStat(u8 index, u32 value)
 {
+    if (index >= GROUNDED_GAME_STATS_START && index < NUM_USED_GAME_STATS)
+        InitGroundedGameStats();
     if (index < NUM_USED_GAME_STATS)
         gSaveBlock1Ptr->gameStats[index] = value ^ gSaveBlock2Ptr->encryptionKey;
 }
@@ -877,6 +896,8 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     Burglar_OnMapEnter(); // Project Grounded
+    Forces_OnMapEnter(); // Project Grounded
+    Enamorus_OnMapEnter(); // Project Grounded
     InitMap();
     CopySecondaryTilesetToVramUsingHeap(gMapHeader.mapLayout);
     LoadSecondaryTilesetPalette(gMapHeader.mapLayout, TRUE); // skip copying to Faded, gamma shift will take care of it
@@ -889,6 +910,7 @@ void LoadMapFromCameraTransition(u8 mapGroup, u8 mapNum)
     DoCurrentWeather();
     ResetFieldTasksArgs();
     RunOnResumeMapScript();
+    Enamorus_StartHearts(); // Project Grounded: hartjes op een liefdesdag
 
     if (OW_HIDE_REPEAT_MAP_POPUP)
     {
@@ -947,6 +969,8 @@ static void LoadMapFromWarp(bool32 a1)
     Overworld_ClearSavedMusic();
     RunOnTransitionMapScript();
     Burglar_OnMapEnter(); // Project Grounded
+    Forces_OnMapEnter(); // Project Grounded
+    Enamorus_OnMapEnter(); // Project Grounded
     UpdateLocationHistoryForRoamer();
     MoveAllRoamersToOtherLocationSets();
     gChainFishingDexNavStreak = 0;
@@ -1182,6 +1206,40 @@ static bool16 IsInfiltratedSpaceCenter(struct WarpData *warp)
     return FALSE;
 }
 
+// Project Grounded: nachtversies van de stadsthema's (tools/grounded/night_towns.py). 's Nachts speelt op een
+// buitenkaart (stad, dorp, route, zee) met een van deze thema's de nachtversie; gebouwen houden de gewone versie.
+static const u16 sNightTownMusic[][2] =
+{
+    {MUS_LITTLEROOT,        MUS_GROUNDED_NIGHT_LITTLEROOT},
+    {MUS_OLDALE,            MUS_GROUNDED_NIGHT_OLDALE},
+    {MUS_PETALBURG,         MUS_GROUNDED_NIGHT_PETALBURG},
+    {MUS_RUSTBORO,          MUS_GROUNDED_NIGHT_RUSTBORO},
+    {MUS_DEWFORD,           MUS_GROUNDED_NIGHT_DEWFORD},
+    {MUS_SLATEPORT,         MUS_GROUNDED_NIGHT_SLATEPORT},
+    {MUS_VERDANTURF,        MUS_GROUNDED_NIGHT_VERDANTURF},
+    {MUS_FALLARBOR,         MUS_GROUNDED_NIGHT_FALLARBOR},
+    {MUS_FORTREE,           MUS_GROUNDED_NIGHT_FORTREE},
+    {MUS_LILYCOVE,          MUS_GROUNDED_NIGHT_LILYCOVE},
+    {MUS_SOOTOPOLIS,        MUS_GROUNDED_NIGHT_SOOTOPOLIS},
+    {MUS_EVER_GRANDE,       MUS_GROUNDED_NIGHT_EVER_GRANDE},
+    {MUS_GROUNDED_ASHFROST, MUS_GROUNDED_NIGHT_ASHFROST},
+    {MUS_RG_CELADON,        MUS_GROUNDED_NIGHT_CELADON},
+};
+
+static u16 GetNightTownMusic(u16 music, enum MapType mapType)
+{
+    u32 i;
+
+    if (mapType == MAP_TYPE_SECRET_BASE) // ook binnen (huizen met het stadsthema), anders wisselt het nummer bij elke deur
+        return music;
+    for (i = 0; i < ARRAY_COUNT(sNightTownMusic); i++)
+    {
+        if (sNightTownMusic[i][0] == music)
+            return (GetTimeOfDay() == TIME_NIGHT) ? sNightTownMusic[i][1] : music;
+    }
+    return music;
+}
+
 u16 GetLocationMusic(struct WarpData *warp)
 {
     if (NoMusicInSootopolisWithLegendaries(warp) == TRUE)
@@ -1193,7 +1251,10 @@ u16 GetLocationMusic(struct WarpData *warp)
     else if (IsInfiltratedWeatherInstitute(warp) == TRUE)
         return MUS_MT_CHIMNEY;
     else
-        return Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum)->music;
+    {
+        const struct MapHeader *header = Overworld_GetMapHeaderByGroupAndId(warp->mapGroup, warp->mapNum);
+        return GetNightTownMusic(header->music, header->mapType);
+    }
 }
 
 u16 GetCurrLocationDefaultMusic(void)
@@ -2440,6 +2501,7 @@ static void ResumeMap(bool32 a1)
     if (!a1)
         SetUpFieldTasks();
     RunOnResumeMapScript();
+    Enamorus_StartHearts(); // Project Grounded: hartjes op een liefdesdag
     TryStartMirageTowerPulseBlendEffect();
 }
 

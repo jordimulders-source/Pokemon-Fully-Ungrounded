@@ -38,12 +38,14 @@ Route111_EventScript_ShowTemporaryMirageTower::
 	return
 
 Route111_OnTransition:
+	call Route111_EventScript_Legends2_GalarTransition
 	setvar VAR_TRAINER_HILL_IS_ACTIVE, 0
 	special SetMirageTowerVisibility
 	call_if_unset FLAG_MIRAGE_TOWER_VISIBLE, Route111_EventScript_SetLayoutNoMirageTower
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 1, Route111_EventScript_SetFallingPlayerGfx
 	call_if_eq VAR_MIRAGE_TOWER_STATE, 2, Route111_EventScript_SetMirageTowerGone
 	call Route111_EventScript_CheckSetSandstorm
+	call Route111_EventScript_UpdateHoopaRing
 	call GabbyAndTy_EventScript_UpdateLocation
 	goto_if_not_defeated TRAINER_VICKY, Route111_EventScript_SetWinstratesNotDefeated
 	end
@@ -805,3 +807,148 @@ Route111_Text_HeatranGone:
 	.string "It lumbered off to the north…\p"
 	.string "The rocks that blocked the route\n"
 	.string "are gone. Melted, probably.$"
+
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route111_EventScript_EF_DaveRoute111::
+	trainerbattle_single TRAINER_DAVE_ROUTE_111, Route111_Text_EF_DaveRoute111Intro, Route111_Text_EF_DaveRoute111Defeat, Route111_EventScript_EF_DaveRoute111Defeated
+	msgbox Route111_Text_EF_DaveRoute111PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route111_EventScript_EF_DaveRoute111Defeated::
+	msgbox Route111_Text_EF_DaveRoute111PostBattle, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_EF_DAVE_ROUTE_111
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+Route111_Text_EF_DaveRoute111Intro:
+	.string "DAVE: Hey, kleine speler.\p"
+	.string "Have you heard about the\n"
+	.string "Dublin Rules?\p"
+	.string "Cheating is a subjective thing.\p"
+	.string "If this girl is related to you,\n"
+	.string "like it's your mom or sister,\l"
+	.string "it's cheating,\p"
+	.string "otherwise it could've been\n"
+	.string "non-consensual or accidental.\p"
+	.string "Nobody knows!\p"
+	.string "Well, let's fight!\n"
+	.string "Too much info!$"
+
+Route111_Text_EF_DaveRoute111Defeat:
+	.string "{PLAYER}, more....$"
+
+Route111_Text_EF_DaveRoute111PostBattle:
+	.string "DAVE: Dublin Rule number two:\n"
+	.string "never explain the Dublin Rules.\p"
+	.string "I've now broken both.\n"
+	.string "Great session. Bye!$"
+
+Route111_EventScript_EF_ShyGuyDesert::
+	trainerbattle_single TRAINER_SHY_GUY_DESERT, Route111_Text_EF_ShyGuyDesertIntro, Route111_Text_EF_ShyGuyDesertDefeat
+	msgbox Route111_Text_EF_ShyGuyDesertPostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route111_Text_EF_ShyGuyDesertIntro:
+	.string "…………\p"
+	.string "(A SHY GUY was hiding in the sand.\n"
+	.string "He is mortified that you found him.)$"
+
+Route111_Text_EF_ShyGuyDesertDefeat:
+	.string "…!\p"
+	.string "(He wants to be buried again.\n"
+	.string "Preferably forever.)$"
+
+Route111_Text_EF_ShyGuyDesertPostBattle:
+	.string "…\p"
+	.string "(He is pretending to be a cactus.\n"
+	.string "It is not going well.)$"
+
+@ }
+
+@ Project Grounded: Hoopa-quest. Na de Hall of Fame hangt een ring van Hoopa in de zandstorm; erdoor kom je in de
+@ Mirage Bazaar (data/maps/MirageBazaar/scripts.inc). De ring blijft ook na de quest hangen.
+Route111_EventScript_UpdateHoopaRing::
+	setflag FLAG_HIDE_ROUTE111_HOOPA_RING
+	goto_if_unset FLAG_SYS_GAME_CLEAR, Route111_EventScript_HoopaRingEnd
+	clearflag FLAG_HIDE_ROUTE111_HOOPA_RING
+Route111_EventScript_HoopaRingEnd::
+	return
+
+Route111_EventScript_HoopaRing::
+	lockall
+	goto_if_set FLAG_HOOPA_BAZAAR_VISITED, Route111_EventScript_HoopaRingAgain
+	msgbox Route111_Text_HoopaRing, MSGBOX_DEFAULT
+	closemessage
+Route111_EventScript_HoopaRingAgain::
+	playse SE_WARP_IN
+	warp MAP_MIRAGE_BAZAAR, 14, 20
+	waitstate
+	releaseall
+	end
+
+Route111_Text_HoopaRing:
+	.string "A golden ring hangs in the\n"
+	.string "sandstorm. It's not attached to\l"
+	.string "anything.\p"
+	.string "Through it: market stalls, lanterns,\n"
+	.string "and someone yelling “NO REFUNDS.”\p"
+	.string "You step through. Of course you do.$"
+
+@ --- legends2 (gegenereerd door tools/grounded/maptools/legends2.py) ---
+Route111_EventScript_Legends2_GalarTransition:
+	setflag FLAG_HIDE_LEGENDS_GALAR_ZAPDOS
+	goto_if_set FLAG_CAUGHT_GALAR_ZAPDOS, Route111_EventScript_Legends2_GalarTransitionEnd
+	call Legends2_EventScript_GalarReady
+	goto_if_eq VAR_RESULT, FALSE, Route111_EventScript_Legends2_GalarTransitionEnd
+	clearflag FLAG_HIDE_LEGENDS_GALAR_ZAPDOS
+Route111_EventScript_Legends2_GalarTransitionEnd:
+	return
+
+Route111_EventScript_GalarZapdos::
+	lock
+	faceplayer
+	playmoncry SPECIES_ZAPDOS_GALAR, CRY_MODE_ENCOUNTER
+	msgbox Route111_Text_GalarZapdos, MSGBOX_DEFAULT
+	waitmoncry
+	closemessage
+Route111_EventScript_GalarZapdos_Battle::
+	setwildbattle SPECIES_ZAPDOS_GALAR, 88
+	setflag FLAG_SYS_CTRL_OBJ_DELETE
+	special BattleSetup_StartLegendaryBattle
+	waitstate
+	clearflag FLAG_SYS_CTRL_OBJ_DELETE
+	specialvar VAR_RESULT, GetBattleOutcome
+	goto_if_eq VAR_RESULT, B_OUTCOME_CAUGHT, Route111_EventScript_GalarZapdos_Caught
+	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, Route111_EventScript_GalarZapdos_Stays
+	goto_if_eq VAR_RESULT, B_OUTCOME_PLAYER_TELEPORTED, Route111_EventScript_GalarZapdos_Stays
+	removeobject LOCALID_LEGENDS_GALAR_ZAPDOS
+	setflag FLAG_HIDE_LEGENDS_GALAR_ZAPDOS
+	msgbox Route111_Text_GalarZapdosFled, MSGBOX_DEFAULT
+Route111_EventScript_GalarZapdos_Stays::
+	release
+	end
+
+Route111_EventScript_GalarZapdos_Caught::
+	removeobject LOCALID_LEGENDS_GALAR_ZAPDOS
+	setflag FLAG_HIDE_LEGENDS_GALAR_ZAPDOS
+	setflag FLAG_CAUGHT_GALAR_ZAPDOS
+	release
+	end
+
+Route111_Text_GalarZapdos:
+	.string "Gya-gya!\p"
+	.string "(An orange ZAPDOS that cannot fly, will\n"
+	.string "not fly, and is doing laps. It's been\l"
+	.string "doing laps since the LEAGUE. It is on\l"
+	.string "lap four thousand.)$"
+
+Route111_Text_GalarZapdosFled:
+	.string "ZAPDOS sprinted off into the\n"
+	.string "sandstorm.\p"
+	.string "You can hear it doing laps out there.\n"
+	.string "It'll be back. It never actually leaves\l"
+	.string "the track.$"
+@ --- einde legends2 ---

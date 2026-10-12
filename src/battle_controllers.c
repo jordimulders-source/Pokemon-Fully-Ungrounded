@@ -91,7 +91,7 @@ void SetUpBattleVarsAndBirchZigzagoon(void)
     if (gBattleTypeFlags & BATTLE_TYPE_FIRST_BATTLE)
     {
         ZeroEnemyPartyMons();
-        CreateMon(&gEnemyParty[0], SPECIES_ZIGZAGOON, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
+        CreateMon(&gEnemyParty[0], SPECIES_JIGGLYPUFF, 2, USE_RANDOM_IVS, 0, 0, OT_ID_PLAYER_ID, 0);
         i = 0;
         SetMonData(&gEnemyParty[0], MON_DATA_HELD_ITEM, &i);
     }
@@ -2420,7 +2420,7 @@ void BtlController_HandleDrawTrainerPic(u32 battler, u32 trainerPicId, bool32 is
         gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].sSpeedX = -2;
         // Project Grounded: Battle Stadium. Geen rugplaatjes aan onze kant: de speler en de compagnon zijn onzichtbaar,
         // onze kant is eerst leeg en daarna vliegen de ballen er gewoon in ("Go! X!").
-        if (gStadiumBattle)
+        if (gStadiumBattle || (gCasinoBattle && Casino_HidePlayerTrainerPic())) // Casino: de Spire-baas heeft geen trainer
             gSprites[gBattleStruct->trainerSlideSpriteIds[battler]].invisible = TRUE;
     }
     if (B_FAST_INTRO_NO_SLIDE || gTestRunnerHeadless)

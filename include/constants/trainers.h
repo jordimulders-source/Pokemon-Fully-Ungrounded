@@ -190,7 +190,18 @@
 #define TRAINER_PIC_ROCKET_GRUNT_M        172 // Project Grounded: Rocket-sidequest (FRLG)
 #define TRAINER_PIC_ROCKET_GRUNT_F        173 // Project Grounded: Rocket-sidequest (FRLG)
 #define TRAINER_PIC_PETREL                174 // Project Grounded: Rocket-sidequest (HG/SS-sheet van Dann-The-Yoshi)
-#define TRAINER_PIC_COUNT                 175
+#define TRAINER_PIC_ZERO_SECURITY         175 // Project Grounded: Area Zero, beveiligingsdrone (area_zero_tiles.py)
+#define TRAINER_PIC_ZERO_ALARM            176 // Project Grounded: Area Zero, alarmdrone
+#define TRAINER_PIC_CONSTRUCT_SKY         177 // Project Grounded: construct van Arceus, sky (tools/grounded/construct_sprites.py)
+#define TRAINER_PIC_CONSTRUCT_SEA         178 // Project Grounded: construct van Arceus, sea (tools/grounded/construct_sprites.py)
+#define TRAINER_PIC_CONSTRUCT_LAND        179 // Project Grounded: construct van Arceus, land (tools/grounded/construct_sprites.py)
+#define TRAINER_PIC_CONSTRUCT_MIND        180 // Project Grounded: construct van Arceus, mind (tools/grounded/construct_sprites.py)
+#define TRAINER_PIC_CONSTRUCT_DREAM       181 // Project Grounded: construct van Arceus, dream (tools/grounded/construct_sprites.py)
+#define TRAINER_PIC_CONSTRUCT_JUSTICE     182 // Project Grounded: construct van Arceus, justice (tools/grounded/construct_sprites.py)
+#define TRAINER_PIC_CONSTRUCT_FORGE       183 // Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py)
+#define TRAINER_PIC_CONSTRUCT_ORDER       184 // Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py)
+#define TRAINER_PIC_CONSTRUCT_SPACETIME   185 // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
+#define TRAINER_PIC_COUNT                 186
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -202,6 +213,8 @@
 #define TRAINER_BACK_PIC_WALLY                  6
 #define TRAINER_BACK_PIC_STEVEN                 7
 #define TRAINER_BACK_PIC_KECLEON                8 // Project Grounded: Keccles als partner
+#define TRAINER_BACK_PIC_CALYREX                9 // Project Grounded: Calyrex als partner (National Park)
+#define TRAINER_BACK_PIC_YOSHI                  10 // Project Grounded: Yoshi als partner (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1
@@ -454,6 +467,9 @@ enum TrainerClassID
     TRAINER_CLASS_NEO_PLASMA, // Project Grounded: Battle Stadium (Neo Plasma-grunts)
     TRAINER_CLASS_TEAM_ROCKET, // Project Grounded: Rocket-sidequest (grunts)
     TRAINER_CLASS_ROCKET_EXEC, // Project Grounded: Rocket-sidequest (Petrel)
+    TRAINER_CLASS_ZERO_LAB, // Project Grounded: Area Zero (beveiligings- en alarmsysteem)
+    TRAINER_CLASS_SHY_SQUAD, // Project Grounded: Yoshi's Island (Shy Guys, parodie op een evil team)
+    TRAINER_CLASS_CONSTRUCT, // Project Grounded: construct van Arceus, Hall of Origin (tools/grounded/construct_sprites.py)
     TRAINER_CLASS_COUNT,
 };
 

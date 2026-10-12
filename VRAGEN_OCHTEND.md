@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # Vragen voor Jordi (ochtend 5 okt 2026)
 
 **Antwoorden 1-10 (5 okt):** 1 kort (direct de arena in, iedereen klaar) · 2 ja · 3 later · 4 nee, Gyarados eruit · 5 blijft · 6 ok · 7 tong · 8 willekeurig · 9 ok · 10 Route 115. Verwerkt in v0.8.114–0.8.115.

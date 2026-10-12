@@ -7,6 +7,7 @@
 #include "battle_ai_util.h"
 #include "battle_scripts.h"
 #include "spire.h"
+#include "debug.h"
 #include "stadium.h"
 #include "battle_environment.h"
 #include "battle_z_move.h"
@@ -4405,6 +4406,9 @@ static void Cmd_tryfaintmon(void)
                 gHitMarker |= HITMARKER_PLAYER_FAINTED;
                 if (gBattleResults.playerFaintCounter < 255)
                     gBattleResults.playerFaintCounter++;
+                if (!(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+                 && (GetBattlerPosition(battler) == B_POSITION_PLAYER_LEFT || !(gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)))
+                    IncrementGameStat(GAME_STAT_OWN_MONS_FAINTED);   // Project Grounded: omroeper
                 AdjustFriendshipOnBattleFaint(battler);
                 gSideTimers[B_SIDE_PLAYER].retaliateTimer = 2;
             }
@@ -4628,7 +4632,7 @@ static bool32 BattleTypeAllowsExp(void)
 {
     if (gSpireBattle) // Project Grounded: rentals in The Spire krijgen geen exp
         return FALSE;
-    if (gStadiumBattle) // Project Grounded: Battle Stadium, level-50-kopieën
+    if (gStadiumBattle || gCasinoBattle) // Project Grounded: Battle Stadium (level-50-kopieën), Battle Casino
         return FALSE;
     if (RECORDED_WILD_BATTLE)
         return TRUE;
@@ -4732,8 +4736,8 @@ static void Cmd_getexp(void)
             else
                 calculatedExp /= 7;
 
-            if (B_TRAINER_EXP_MULTIPLIER <= GEN_7 && gBattleTypeFlags & BATTLE_TYPE_TRAINER)
-                calculatedExp = (calculatedExp * 150) / 100;
+            if (gBattleTypeFlags & BATTLE_TYPE_TRAINER) // Project Grounded: B_TRAINER_EXP_PERCENT i.p.v. vast 1,5x
+                calculatedExp = (calculatedExp * B_TRAINER_EXP_PERCENT) / 100;
 
             if (B_SPLIT_EXP < GEN_6)
             {
@@ -5026,8 +5030,11 @@ bool32 NoAliveMonsForPlayer(void)
             ineligibleMonsCount++;
     }
 
+    // Project Grounded: in het Stadium is de opgeslagen party het echte team buiten het toernooi
+    // (doet niet mee); verloren pas als jij én je partner niets meer hebben (HP_count hieronder).
     if (B_MULTI_BATTLE_WHITEOUT > GEN_3 && gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER)
-     && !(gBattleTypeFlags & BATTLE_TYPE_ARENA) && !(IsMultibattleTest())) // Multibattle tests appear to not save the player party data for the check below.
+     && !(gBattleTypeFlags & BATTLE_TYPE_ARENA) && !(IsMultibattleTest()) // Multibattle tests appear to not save the player party data for the check below.
+     && !gStadiumBattle)
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
@@ -14757,6 +14764,17 @@ void BS_RestoreAttacker(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+// Project Grounded: Battle Stadium (doubles): bericht van tegenstander B klaarzetten, anders naar noSlideInstr
+void BS_StadiumTrainerBSlide(void)
+{
+    NATIVE_ARGS(const u8 *noSlideInstr);
+
+    if (Stadium_SetTrainerBFirstTurnSlide())
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    else
+        gBattlescriptCurrInstr = cmd->noSlideInstr;
+}
+
 void BS_CalcMetalBurstDmg(void)
 {
     NATIVE_ARGS(const u8 *failInstr);
@@ -15719,7 +15737,8 @@ void BS_TryAllySwitch(void)
 {
     NATIVE_ARGS(const u8 *failInstr);
 
-    if (!IsBattlerAlive(BATTLE_PARTNER(gBattlerAttacker)) || HasPartnerTrainer(gBattlerAttacker))
+    // Project Grounded: buiten doubles altijd mislukken (de wisselanimatie maakte in singles de sprite en healthbox kapot)
+    if (!IsDoubleBattle() || !IsBattlerAlive(BATTLE_PARTNER(gBattlerAttacker)) || HasPartnerTrainer(gBattlerAttacker))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
@@ -18575,8 +18594,24 @@ void BS_SwapAttackerAndTarget(void)
 void BS_FormBlackHole(void)
 {
     NATIVE_ARGS();
-    RemoveAllHazardsFromField(B_SIDE_PLAYER);
-    RemoveAllHazardsFromField(B_SIDE_OPPONENT);
+    u32 side, battler, stat;
+    u16 blackHoleTimer;
+
+    // alles op het veld verdwijnt: hazards, schermen en andere kant-effecten, rooms/Gravity e.d. en stat-wijzigingen
+    // (weer en terrein haalt het battlescript weg, zodat de abilities en vormen meeveranderen)
+    for (side = 0; side < NUM_BATTLE_SIDES; side++)
+    {
+        RemoveAllHazardsFromField(side);
+        gSideStatuses[side] = 0;
+        memset(&gSideTimers[side], 0, sizeof(gSideTimers[side]));
+    }
+    gFieldStatuses &= STATUS_FIELD_TERRAIN_ANY;
+    blackHoleTimer = gFieldTimers.terrainTimer;
+    memset(&gFieldTimers, 0, sizeof(gFieldTimers));
+    gFieldTimers.terrainTimer = blackHoleTimer;
+    for (battler = 0; battler < gBattlersCount; battler++)
+        for (stat = 0; stat < NUM_BATTLE_STATS; stat++)
+            gBattleMons[battler].statStages[stat] = DEFAULT_STAT_STAGE;
     gFieldTimers.blackHoleTimer = 5;
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
@@ -18770,5 +18805,50 @@ void BS_RecalcMoveType(void)
 {
     NATIVE_ARGS();
     SetTypeBeforeUsingMove(gCurrentMove, gBattlerAttacker);
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: melding als een Pokémon door een level-up (of bij het vangen) boven de badge-grens komt
+static bool32 Grounded_ShouldWarnObedience(void)
+{
+    if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_RECORDED | BATTLE_TYPE_FRONTIER))
+        return FALSE;
+    if (gSpireBattle || gDebugBattleTest)
+        return FALSE;
+    return GetPlayerObedienceLevel() < MAX_LEVEL;
+}
+
+void BS_GroundedObedienceWarnLevelUp(void)
+{
+    NATIVE_ARGS();
+    u32 monId = gBattleStruct->expGetterMonId;
+    struct Pokemon *mon = &gPlayerParty[monId];
+
+    if (Grounded_ShouldWarnObedience()
+     && !MonMayDisobeyAtLevel(mon, gBattleResources->beforeLvlUp->level)
+     && MonMayDisobeyAtLevel(mon, GetMonData(mon, MON_DATA_LEVEL)))
+    {
+        PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattleStruct->expGetterBattlerId, monId);
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff2, 3, GetPlayerObedienceLevel());
+        BattleScriptPush(cmd->nextInstr);
+        gBattlescriptCurrInstr = BattleScript_GroundedObedienceWarnLevelUp;
+        return;
+    }
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_GroundedObedienceWarnCaught(void)
+{
+    NATIVE_ARGS();
+    struct Pokemon *mon = GetBattlerMon(gBattlerTarget);
+
+    if (Grounded_ShouldWarnObedience() && MonMayDisobeyAtLevel(mon, GetMonData(mon, MON_DATA_LEVEL)))
+    {
+        PREPARE_SPECIES_BUFFER(gBattleTextBuff1, GetMonData(mon, MON_DATA_SPECIES));
+        PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff2, 3, GetPlayerObedienceLevel());
+        BattleScriptPush(cmd->nextInstr);
+        gBattlescriptCurrInstr = BattleScript_GroundedObedienceWarnCaught;
+        return;
+    }
     gBattlescriptCurrInstr = cmd->nextInstr;
 }

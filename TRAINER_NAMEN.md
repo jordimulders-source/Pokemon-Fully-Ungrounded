@@ -24,7 +24,7 @@ trainer op Route 129.
 | Wallace (gym-rematches) | `TRAINER_WALLACE_2` … `TRAINER_WALLACE_5` | `TRAINER_JUAN_2` … `_5` | 798–801 | 0x81E–0x821 | rematch-tabel (`src/battle_setup.c`); `WALLACE_5` in het Stadium (`WALLACE`). Sinds v0.9.85 ook `Name: WALLACE` / `Pic: Champion Wallace` |
 | Steven (kampioen) | `TRAINER_CHAMPION_STEVEN` | (zelfde) | 855 | 0x857 | `EverGrandeCity_ChampionsRoom` |
 | Steven (post-game) | `TRAINER_STEVEN` | (zelfde) | 804 | 0x824 + `FLAG_DEFEATED_METEOR_FALLS_STEVEN` | Meteor Falls, Steven's Cave; Stadium |
-| Wallace (oud kampioenteam) | `TRAINER_WALLACE_OLD_CHAMPION` | `TRAINER_WALLACE` | 335 | 0x64F | ongebruikt (niet in het verhaal, sinds v0.9.85 ook niet meer in het Stadium) |
+| (vrijgemaakt) | `TRAINER_RIVAL_POSTGAME_TREECKO` | `TRAINER_WALLACE_OLD_CHAMPION` (vanilla `TRAINER_WALLACE`) | 335 | 0x64F | sinds de post-game rivaal (zie "Rivaal na de Hall of Fame"); de rematch-rij `REMATCH_OLD_CHAMPION` is nu leeg (`TRAINER_NONE`) |
 | Juan | `TRAINER_JUAN` | `TRAINER_REED` | 675 | 0x7A3 | Route 129 (`Route129_EventScript_Juan`), FRLG-gymleidermuziek; Stadium (`JUAN`, op de oude poolplek van het vanilla-kampioenteam) |
 
 Bijbehorende constanten van gym 8 (Wallace):
@@ -93,9 +93,13 @@ kampioen-slot zoals in vanilla Emerald (en in oudere uitleg op internet).
 | Armstrong | `TRAINER_ARMSTRONG` | `TRAINER_ANTHONY` | 352 | 0x660 | Triathlete, Route 110 |
 | Violet | `TRAINER_VIOLET_COOLTRAINER` | `TRAINER_JAZMYN` | 503 | 0x6F7 | Cooltrainer, Route 123 (`TRAINER_VIOLET` = Aroma Lady op dezelfde route) |
 | Scarlet | `TRAINER_SCARLET` | `TRAINER_WENDY` | 92 | 0x55C | Cooltrainer, Route 123 |
-| Dave | `TRAINER_DAVE` | `TRAINER_ALBERT` | 80 | 0x550 | Cooltrainer, Victory Road 1F + Stadium (`PARTNER_STADIUM_DAVE`) |
+| Dave | `TRAINER_DAVE` | `TRAINER_ALBERT` | 80 | 0x550 | Cooltrainer, Victory Road 1F (zijn 4e gevecht) + Stadium (`PARTNER_STADIUM_DAVE`); post-game praat hij op een ligstoel in het Paradiso Resort |
 | Mitch | `TRAINER_MITCH` | `TRAINER_SAMUEL` | 81 | 0x551 | Cooltrainer, Victory Road B1F + Stadium (`PARTNER_STADIUM_MITCH`) |
 | SickBlik | `TRAINER_SICKBLIK` | `TRAINER_OWEN` | 83 | 0x553 | Cooltrainer, Victory Road B2F + Stadium (`PARTNER_STADIUM_SICKBLIK`) |
+| Dave | `TRAINER_DAVE_PARADISO` | (nieuw) | 1089 | 0x941 | post-game comeback op zijn ligstoel in het Paradiso Resort (18, 34), lv 100, eenmalig |
+| SickBlik | `TRAINER_SICKBLIK_DEV` | (nieuw) | 1185 | 0x9A1 | post-game 'developer', per dag in Mauville (3, 9) / Fortree (5, 9) / Lilycove (10, 26) / Pacifidlog (1, 14) (`Grounded_SickBlikSpot`, objectflag `FLAG_HIDE_SICKBLIK_DEV`), lv 100, eenmalig; script `data/scripts/sickblik_dev.inc` |
+| Kapitein Grimsby | `TRAINER_GRIMSBY` | (nieuw) | 1054 | 0x91E | Sailor, spookschip S.S. AGAVE (`GhostShip_CaptainsOffice`, 's nachts via Shipwreck Shoals) + Stadium (`PARTNER_STADIUM_GRIMSBY`) |
+| Spookzeelieden Silas, Morgan, Ned, Percy | `TRAINER_GHOST_SAILOR_SILAS` … `_PERCY` | (nieuw) | 1050–1053 | 0x91A–0x91D | spookschip (dek, gang, hutten) |
 
 De scriptlabels volgen dezelfde namen (bijv. `PetalburgCity_Gym_EventScript_GiHun`,
 `DewfordTown_Gym_EventScript_CheckRomero`, `VictoryRoad_B2F_EventScript_SickBlik`); de tekstlabels niet (zie boven).
@@ -103,6 +107,83 @@ De scriptlabels volgen dezelfde namen (bijv. `PetalburgCity_Gym_EventScript_GiHu
 Niet hernoemd, omdat de naam een rol beschrijft en niet misleidt: `TRAINER_LOCAL_CELEBRITY` (Brad),
 `TRAINER_DRACONID_ELDER` (Selene), `TRAINER_DOJO_*`, `TRAINER_BURGLAR_*` / `TRAINER_STADIUM_BURGLAR` (Simon),
 `TRAINER_STADIUM_SHY_GUY_*`, de duo's (`TRAINER_X_AND_Y`) en de generieke grunts/admins.
+
+## Extra gevechten in de wereld (`tools/grounded/maptools/extra_fights.py`)
+
+Zelfde personage, eerder in de game, met dezelfde muziek, mugshot en transitie als hun bestaande gevecht. Objecten heten
+`LOCALID_EF_<CONSTANTE>`, scripts `<Kaart>_EventScript_EF_<Naam>`, teksten `<Kaart>_Text_EF_<Naam>Intro/Defeat/PostBattle`.
+Verslagen-flag = 0x500 + nummer (Wally's objecten gebruiken die ook als verberg-flag).
+
+| Personage | Constante | Nummer | Waar (x, y) | Levels |
+|---|---|---|---|---|
+| Wally | `TRAINER_WALLY_MT_PYRE` | 1134 | Mt. Pyre 1F (9, 4); verdwijnt na zijn nederlaag; thema Wally 3 | 42, Gallade 44 |
+| Wally | `TRAINER_WALLY_MOSSDEEP` | 1135 | Mossdeep, voor het Space Center (68, 17); verdwijnt na zijn nederlaag; thema Wally 4 | 47, Gallade 49 |
+| Zinnia | `TRAINER_ZINNIA_ROUTE_114` | 1136 | Route 114, bij de ingang van Meteor Falls (22, 34) | 25, Bagon 27 |
+| Zinnia | `TRAINER_ZINNIA_ROUTE_119` | 1137 | Route 119, noordkant richting Fortree (33, 10) | 36, Shelgon 38 |
+| Dave | `TRAINER_DAVE_ROUTE_111` | 1138 | Route 111 zuid, naast het pad vanaf Mauville (26, 117); vóór Wattson; verdwijnt na zijn nederlaag | 22, Pawniard 23 |
+| Dave | `TRAINER_DAVE_PETALBURG` | 1139 | Petalburg, voor de gymdeur (15, 9); na badge 4 tot je wint (objectflag `FLAG_TEMP_9`, gezet in `PetalburgCity_OnTransition`) | 31, Pawniard 32 |
+| Mitch | `TRAINER_MITCH_ROUTE_110` | 1140 | Route 110, plein boven Slateport (20, 54) | 23, Marshtomp 24 |
+| Mitch | `TRAINER_MITCH_ROUTE_121` | 1141 | Route 121 (50, 13) | 39, Swampert 40 |
+| SickBlik | `TRAINER_SICKBLIK_ROUTE_104` | 1142 | Route 104 noord, bij de uitgang van Petalburg Woods (14, 26) | 12, Remoraid 13 |
+| SickBlik | `TRAINER_SICKBLIK_ROUTE_113` | 1143 | Route 113, oostkant (70, 13) | 26, Octillery 27 |
+| SickBlik | `TRAINER_SICKBLIK_MOTEL` | 1184 | Cove Lily Motel 1F (Lilycove), aan tafel (1, 4); ja/nee-gevecht | 56, Galar-Slowbro 57 |
+| SickBlik | `TRAINER_SICKBLIK_BEACH` | 854 (was `TRAINER_MAY_PLACEHOLDER`) | Route 104 zuid, strand (25, 76; buiten de looproute van Billy) | 16, Toedscool 17 |
+| Shy Guy (rood) | `TRAINER_SHY_GUY_DESERT` | 1144 | Route 111, woestijn: ingegraven achter het rotsblok aan de oostrand (37, 69) | 28, Mr. Mime 29 |
+| Dave | `TRAINER_DAVE_SOOTOPOLIS` | 1145 | Sootopolis (32, 35), rechts van de speler aan het begin van de Keccles-scène na Rayquaza (`FLAG_TEMP_9`) | 48, Kingambit 49 |
+
+Wally's thema's (`GetTrainerBattleBGM`): 1 Mauville, 2 Meteor Falls, 3 Mt. Pyre, 4 Mossdeep, 5 Victory Road (+ rematches).
+Burglar: `TRAINER_BURGLAR_1` … `_8` = 1–8 badges (979–983, 1146–1148), `_9` = na de Hall of Fame (1149).
+
+**Ghetsis:** `TRAINER_TAO_GHETSIS` (1065) is de verhaalversie (post-league superboss in Frost Hollow op het Tao-eiland,
+lv 82–84, geeft de DNA Splicers); `TRAINER_STADIUM_GHETSIS` (978) is de Stadium-versie (lv 50, met Kyurem-Black).
+**Tao-eiland** (was Dragonspine Isle, `tools/grounded/maptools/tao_island.py`): `TRAINER_TAO_VERNON`, `_SAELA`, `_OSRIC`,
+`_MIRA`, `_TALON` (1060–1064, waren `TRAINER_DRAGONSPINE_*` 1180–1184), `_JUN` (1066), `_YING` (1067). Drakenwachter
+Gerald (`TRAINER_GERALD_WARDEN`, 1185) is geschrapt, ook uit het Stadium; 1180–1185 zijn vrij.
+
+**Keccles:** `TRAINER_KECCLES_1` (859, strand Route 115), `_2` (860, onzichtbaar voor de Fortree Gym), `_3` (871,
+Route 136; ook in het Stadium) en `TRAINER_KECCLES_FRONTIER` (853, was `TRAINER_BRENDAN_PLACEHOLDER`): post-game op het
+Battle Frontier-eiland (oost, (57, 58), onzichtbaar op het pad naar de Sudowoodo, Devon Scope), lv 92–95, ace Salazzle 95.
+Vlak voor dat gevecht springt Marshadow (lv 88) uit de schaduw van de speler en komt in je team
+(`FLAG_RECEIVED_MARSHADOW`); Keccles verdwijnt na het gevecht (`FLAG_HIDE_FRONTIER_KECCLES`). Alle vier: salsa-thema
+en de Keccles-transitie.
+
+## Hall of Origin (`tools/grounded/maptools/hall_of_origin.py`)
+
+De emissaries van Arceus (lv 100, teams van legendaries) gebruiken ongebruikte vanilla-constanten; alleen de naam en
+de partij zijn veranderd, het nummer niet (verslagen-flag = 0x500 + nummer).
+
+| Personage | Constante | Oude naam | Nummer | Waar | Thema |
+|---|---|---|---|---|---|
+| Stratos | `TRAINER_HOO_STRATOS` | `TRAINER_CINDY_2` | 117 | Hall of Origin, trap (onderste trede) | lucht |
+| Thalassa | `TRAINER_HOO_THALASSA` | `TRAINER_DUDLEY` | 173 | Hall of Origin, trap (middelste trede) | zee |
+| Bedrock | `TRAINER_HOO_BEDROCK` | `TRAINER_KAYLEE` | 462 | Hall of Origin, trap (bovenste trede) | land |
+| Nous | `TRAINER_HOO_NOUS` | `TRAINER_AMY_AND_LIV_3` | 485 | Hall of Origin, atrium | geest |
+| Somnia | `TRAINER_HOO_SOMNIA` | `TRAINER_GINA_AND_MIA_2` | 486 | Hall of Origin, atrium | dromen |
+| Gladius | `TRAINER_HOO_GLADIUS` | `TRAINER_GRUNT_UNUSED` | 568 | Hall of Origin, atrium | rechtvaardigheid |
+| Hephaest | `TRAINER_HOO_HEPHAEST` | `TRAINER_TERRY` | 581 | Hall of Origin, atrium | vuur/smidse |
+| Ordo | `TRAINER_HOO_ORDO` | `TRAINER_LUCAS_2` | 633 | Hall of Origin, top | orde (de Regi's) |
+| Kairos | `TRAINER_HOO_KAIROS` | `TRAINER_MIKE_1` | 634 | Hall of Origin, top | tijd en ruimte |
+
+Arceus (top) vecht pas als alle negen verslagen zijn.
+
+## Rivaal na de Hall of Fame (`src/rival_postgame.c`, `src/data/rival_postgame.party`)
+
+De trainer-id's waren op, dus de post-game rivaal heeft er maar **drie**, een per starter van de speler (zelfde
+benaming als de andere rivaalgevechten: de naam is de starter van de speler, de rivaal heeft de starter die daarvan wint).
+`GetTrainerStructFromId` (`include/data.h`) stuurt deze drie naar `GetRivalPostgameTrainer`, dat uit twaalf teams kiest:
+BRENDAN of MAY (geslacht van de speler) × fase 1 (Pacifidlog) of fase 2 (Battle Tower + dagelijks Paradiso, na
+`FLAG_RIVAL_PG_PACIFIDLOG_DONE`). De blokken in `trainers.party` (Brendan, fase 1) zijn er alleen voor de tools en de
+testrunner (onder `TESTING` staat de omleiding uit). Verslagen-flag wordt gedeeld door alle fasen; scripts gebruiken hem niet.
+
+| Constante | Oude naam | Nummer | Verslagen-flag | Waar |
+|---|---|---|---|---|
+| `TRAINER_RIVAL_POSTGAME_TREECKO` | `TRAINER_WALLACE_OLD_CHAMPION` | 335 | 0x64F | Pacifidlog (18, 14), Battle Tower (OutsideEast 18, 16), Paradiso Resort (27, 9) |
+| `TRAINER_RIVAL_POSTGAME_TORCHIC` | `TRAINER_RED` (alleen de testrunner) | 851 | 0x853 | idem |
+| `TRAINER_RIVAL_POSTGAME_MUDKIP` | `TRAINER_LEAF` (alleen de testrunner) | 852 | 0x854 | idem |
+
+Flags: `FLAG_RIVAL_PG_PACIFIDLOG_DONE` (gevecht 7), `FLAG_RIVAL_PG_RETIRED` (gevecht 8, verhuisd naar Paradiso),
+`FLAG_RIVAL_PG_RESORT_MET` (Guinness-verhaal gehoord), `FLAG_DAILY_REMATCH_RIVAL` (vandaag al verslagen). Levels: fase 1
+86 (ace 88), fase 2 92 (ace 94).
 
 ## Nieuwe trainer of hernoeming
 

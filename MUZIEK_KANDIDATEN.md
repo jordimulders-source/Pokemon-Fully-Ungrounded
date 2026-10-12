@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # Muziekkandidaten (5 okt): keuzes van Jordi
 
 **Niet doen:** Archie en Maxie (werkstraf), Team Rocket (Petrel), Deoxys (bestaand thema, Jordi is er fan van).

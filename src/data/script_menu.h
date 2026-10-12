@@ -572,7 +572,7 @@ static const struct MenuAction MultichoiceList_FrontierGamblerBet[] =
 static const struct MenuAction MultichoiceList_UnusedSSTidal1[] =
 {
     {gText_SouthernIsland},
-    {gText_BirthIsland},
+    {gText_NavelRock},
     {gText_Exit},
 };
 
@@ -585,7 +585,7 @@ static const struct MenuAction MultichoiceList_UnusedSSTidal2[] =
 
 static const struct MenuAction MultichoiceList_UnusedSSTidal3[] =
 {
-    {gText_BirthIsland},
+    {gText_NavelRock},
     {gText_FarawayIsland},
     {gText_Exit},
 };
@@ -593,7 +593,7 @@ static const struct MenuAction MultichoiceList_UnusedSSTidal3[] =
 static const struct MenuAction MultichoiceList_UnusedSSTidal4[] =
 {
     {gText_SouthernIsland},
-    {gText_BirthIsland},
+    {gText_NavelRock},
     {gText_FarawayIsland},
     {gText_Exit},
 };
@@ -966,7 +966,6 @@ static const u8 *const sLilycoveSSTidalDestinations[SSTIDAL_SELECTION_COUNT] =
     [SSTIDAL_SELECTION_BATTLE_FRONTIER] = gText_BattleFrontier,
     [SSTIDAL_SELECTION_SOUTHERN_ISLAND] = gText_SouthernIsland,
     [SSTIDAL_SELECTION_NAVEL_ROCK]      = gText_NavelRock,
-    [SSTIDAL_SELECTION_BIRTH_ISLAND]    = gText_BirthIsland,
     [SSTIDAL_SELECTION_FARAWAY_ISLAND]  = gText_FarawayIsland,
     [SSTIDAL_SELECTION_FLOWER_PARADISE] = gText_FlowerParadise, // Project Grounded
     [SSTIDAL_SELECTION_EXIT]            = gText_Exit,

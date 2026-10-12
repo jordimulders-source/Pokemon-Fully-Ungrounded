@@ -66,14 +66,37 @@
     .affineAnims = gDummySpriteAffineAnimTable,                                                                                         \
 }
 
+#if OW_ONLY_USED_SPECIES
+// Grounded: alleen pic tables uit ow_species_keep.h krijgen overworldData; de rest valt terug op de
+// substitute-placeholder en hun graphics worden niet gelinkt (zie tools/grounded/ow_species_keep.py).
+#include "ow_species_keep.h"
+#define OW_ARG_PLACEHOLDER_1 0,
+#define OW_TAKE_SECOND(ignored, val, ...) val
+#define OW_IS_KEPT3(junk_or_arg) OW_TAKE_SECOND(junk_or_arg 1, 0)
+#define OW_IS_KEPT2(val) OW_IS_KEPT3(OW_ARG_PLACEHOLDER_##val)
+#define OW_IS_KEPT1(val) OW_IS_KEPT2(val)
+#define OW_IS_KEPT(pic) OW_IS_KEPT1(OWKEEP_##pic)
+#define OW_IF_1(...) __VA_ARGS__
+#define OW_IF_0(...)
+#define OW_IF2(c) OW_IF_##c
+#define OW_IF1(c) OW_IF2(c)
+#define OW_IF(c) OW_IF1(c)
+#else
+#define OW_IF(c) OW_IF_1
+#define OW_IF_1(...) __VA_ARGS__
+#define OW_IS_KEPT(pic) 1
+#endif // OW_ONLY_USED_SPECIES
+
 #define OVERWORLD(objEventPic, _size, shadow, _tracks, _anims, ...)                                 \
+    OW_IF(OW_IS_KEPT(objEventPic))(                                                                 \
     .overworldData = OVERWORLD_DATA(objEventPic, _size, shadow, _tracks, _anims),                   \
-    OVERWORLD_PAL(__VA_ARGS__)
+    OVERWORLD_PAL(__VA_ARGS__))
 
 #if P_GENDER_DIFFERENCES
 #define OVERWORLD_FEMALE(objEventPic, _size, shadow, _tracks, _anims, ...)                          \
+    OW_IF(OW_IS_KEPT(objEventPic))(                                                                 \
     .overworldDataFemale = OVERWORLD_DATA(objEventPic, _size, shadow, _tracks, _anims),             \
-    OVERWORLD_PAL_FEMALE(__VA_ARGS__)
+    OVERWORLD_PAL_FEMALE(__VA_ARGS__))
 #else
 #define OVERWORLD_FEMALE(...)
 #endif //P_GENDER_DIFFERENCES

@@ -10,6 +10,7 @@ Route112_Dojo_EventScript_Mustard::
 	goto_if_set FLAG_KUBFU_EVOLVED, Route112_Dojo_EventScript_MustardChallenge
 	goto_if_set FLAG_RECEIVED_KUBFU, Route112_Dojo_EventScript_MustardHint
 	msgbox Route112_Dojo_Text_MustardIntro, MSGBOX_DEFAULT
+	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU
 	givemon SPECIES_KUBFU, 22
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route112_Dojo_EventScript_KubfuReceived
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route112_Dojo_EventScript_KubfuToPC

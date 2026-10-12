@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is nog actueel.
+
 # The Spire – ontwerp (roguelike-faciliteit, Battle Frontier)
 
 Stand: 3 okt 2026, gesprek Jordi + Claude. Dit document is de bron voor de volgende sessie.

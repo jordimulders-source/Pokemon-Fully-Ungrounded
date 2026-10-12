@@ -39,3 +39,12 @@ SafariZone_HauntedCamp_Text_Campfire:
 SafariZone_HauntedCamp_Text_Lantern:
 	.string "A broken lantern. It only flickers\n"
 	.string "when you look away.$"
+
+@ --- land_vulling (gegenereerd door tools/grounded/maptools/land_vulling.py) ---
+SafariZone_HauntedCamp_EventScript_LVCounselor::
+	msgbox SafariZone_HauntedCamp_Text_LVCounselor, MSGBOX_NPC
+	end
+
+SafariZone_HauntedCamp_Text_LVCounselor:
+	.string "Welcome to CAMP SPOOKAMORE!\nI'm your camp counselor.\pGhost stories start at nine.\nSame story for thirty years.\pThe campers stopped coming in '94.\nSome of them still listen.$"
+@ --- einde land_vulling ---

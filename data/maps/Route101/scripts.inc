@@ -261,28 +261,29 @@ Route101_Text_HelpMe:
 	.string "AIEEEEEE!$"
 
 Route101_Text_PleaseHelp:
-	.string "Hello! You, with the ugly clothes\n"
-	.string "and the shit faced smug!\p"
-	.string "Please! Help! Don't leave me getting\n"
-	.string "chased by a super low level POKéMON\l"
-	.string "you will destroy in one hit!$"
+	.string "Hello! You, with the ugly clothes and\n"
+	.string "the shit faced smug!\p"
+	.string "Please! Help!\p"
+	.string "Don't leave me getting chased by a\n"
+	.string "super low level POKéMON you will destroy\l"
+	.string "in one hit!$"
 
 Route101_Text_DontLeaveMe:
-	.string "- 404 ERROR -\n"
-	.string "You must help the PROFESSOR to\l"
-	.string "continue your nomadic quest.\p"
+	.string "- 404 ERROR - You must help the\n"
+	.string "PROFESSOR to continue your nomadic\l"
+	.string "quest.\p"
 	.string "This is not Breath of the Wild!$"
 
 Route101_Text_YouSavedMe:
 	.string "PROF. BIRCH: Whew…\p"
-	.string "I was in the tall grass studying\n"
-	.string "shit... literally.\p"
+	.string "I was in the tall grass studying shit...\n"
+	.string "literally.\p"
 	.string "When I was attacked by territorial\n"
 	.string "POKéMON who don't like fat old men\l"
 	.string "touching their fresh feces.\p"
 	.string "GET TO THE CHOPPER!\p"
-	.string "I'll show you some cool shit and\n"
-	.string "treat you to some chocolate.$"
+	.string "I'll show you some cool shit and treat\n"
+	.string "you to some chocolate.$"
 
 Route101_Text_TakeTiredPokemonToPokeCenter:
 	.string "If POKéMON get tired, just tell\n"
@@ -292,8 +293,10 @@ Route101_Text_TakeTiredPokemonToPokeCenter:
 
 Route101_Text_WildPokemonInTallGrass:
 	.string "Wild POKéMON jump out of tall grass.\p"
-	.string "Want to catch one? Walk into the grass.\p"
-	.string "And check for ticks after.$"
+	.string "Very stalkerish behavior, but I mean,\n"
+	.string "have you ever seen police in HOENN?\p"
+	.string "Exactly. Learn how to jump them\n"
+	.string "yourself.$"
 
 Route101_Text_RouteSign:
 	.string "ROUTE 101\n"

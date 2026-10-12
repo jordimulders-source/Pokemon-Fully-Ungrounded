@@ -499,7 +499,9 @@ u32 CreateSpriteAt(u32 index, const struct SpriteTemplate *template, s16 x, s16 
     {
         s16 tileNum;
         sprite->images = template->images;
-        tileNum = AllocSpriteTiles((u8)(sprite->images->size / TILE_SIZE_4BPP));
+        // Project Grounded: u16 i.p.v. u8: frames van 256+ tiles (Nep-Enut 128x128, reuzen-Wailord 192x96) kregen
+        // anders 0 of 32 tiles toegewezen en overschreven de tiles van andere sprites (de speler)
+        tileNum = AllocSpriteTiles((u16)(sprite->images->size / TILE_SIZE_4BPP));
         if (tileNum == -1)
         {
             ResetSprite(sprite);

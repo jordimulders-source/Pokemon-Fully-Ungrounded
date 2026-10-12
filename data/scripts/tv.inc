@@ -24,7 +24,7 @@ EventScript_TryDoTVShow::
 
 EventScript_MomDadMightLikeThis1::
 	special GetMomOrDadStringForTVMessage
-	msgbox gText_MomOrDadMightLikeThisProgram, MSGBOX_DEFAULT
+	call EventScript_MomOrDadTVText
 	special TurnOffTVScreen
 	releaseall
 	end
@@ -64,7 +64,7 @@ EventScript_TurnOffTV::
 
 EventScript_MomDadMightLikeThis2::
 	special GetMomOrDadStringForTVMessage
-	msgbox gText_MomOrDadMightLikeThisProgram, MSGBOX_DEFAULT
+	call EventScript_MomOrDadTVText
 	goto EventScript_TurnOffTV
 	end
 
@@ -83,3 +83,13 @@ EventScript_DoInSearchOfTrainers::
 	goto_if_eq VAR_RESULT, 0, EventScript_DoInSearchOfTrainers
 	goto EventScript_TurnOffTV
 	end
+
+@ Project Grounded: eigen tekst voor Mom en Dad (VAR_TEMP_3: 1 = Mom, 2 = Dad, gezet door GetMomOrDadStringForTVMessage)
+EventScript_MomOrDadTVText::
+	goto_if_eq VAR_TEMP_3, 2, EventScript_DadTVText
+	msgbox gText_MomMightLikeThisProgram, MSGBOX_DEFAULT
+	return
+
+EventScript_DadTVText::
+	msgbox gText_DadMightLikeThisProgram, MSGBOX_DEFAULT
+	return

@@ -47,6 +47,7 @@
 #include "overworld.h"
 #include "palette.h"
 #include "party_menu.h"
+#include "battle_util.h"
 #include "player_pc.h"
 #include "pokemon.h"
 #include "pokemon_icon.h"
@@ -59,6 +60,7 @@
 #include "script.h"
 #include "sound.h"
 #include "sprite.h"
+#include "stadium.h"
 #include "start_menu.h"
 #include "string_util.h"
 #include "strings.h"
@@ -422,6 +424,7 @@ static void Task_TryLearningNextMoveAfterText(u8);
 static void BufferMonStatsToTaskData(struct Pokemon *, s16 *);
 static void UpdateMonDisplayInfoAfterRareCandy(u8, struct Pokemon *);
 static void Task_DisplayLevelUpStatsPg1(u8);
+static const u8 sText_ObedienceWarnRareCandy[] = _("\pYour badges only command POKéMON\nup to Lv. {STR_VAR_3}. It may stop\lobeying you!"); // Project Grounded
 static void DisplayLevelUpStatsPg1(u8);
 static void Task_DisplayLevelUpStatsPg2(u8);
 static void DisplayLevelUpStatsPg2(u8);
@@ -5986,6 +5989,14 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
                 StringExpandPlaceholders(gStringVar4, gText_PkmnGainedExpAndElevatedToLvVar3);
             }
 
+            // Project Grounded: melding als hij hierdoor boven de badge-grens komt
+            if (!MonMayDisobeyAtLevel(mon, sInitialLevel) && MonMayDisobeyAtLevel(mon, sFinalLevel))
+            {
+                u8 warn[96];
+                ConvertIntToDecimalStringN(gStringVar3, GetPlayerObedienceLevel(), STR_CONV_MODE_LEFT_ALIGN, 3);
+                StringExpandPlaceholders(warn, sText_ObedienceWarnRareCandy);
+                StringAppend(gStringVar4, warn);
+            }
             DisplayPartyMenuMessage(gStringVar4, TRUE);
             ScheduleBgCopyTilemapToVram(2);
             gTasks[taskId].func = Task_DisplayLevelUpStatsPg1;
@@ -8034,6 +8045,12 @@ static void Task_WaitAfterMultiPartnerPartySlideIn(u8 taskId)
     // data[0] used as a timer afterwards rather than the x pos
     if (FollowerNPCIsBattlePartner()) {
         if (++data[0] == 128)
+            Task_ClosePartyMenu(taskId);
+    }
+    // Project Grounded: Battle Stadium (Jordi): de teamvoorvertoning een kwart korter (256 + 32 schuiven -> 176 + 32)
+    else if (gStadiumBattle)
+    {
+        if (++data[0] == 176)
             Task_ClosePartyMenu(taskId);
     }
     else if (++data[0] == 256)

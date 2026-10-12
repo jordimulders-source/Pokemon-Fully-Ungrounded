@@ -167,9 +167,86 @@
       "trainer_sight_or_berry_tree_id": "ITEM_STAR_PIECE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_134_STAR_PIECE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_2",
+      "x": 6,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route134_EventScript_ZV2Architect",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_NINJA_BOY",
+      "x": 10,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route134_EventScript_ZV2Kage",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 11,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LIGHT_CLAY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_134_LIGHT_CLAY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 54,
+      "y": 16,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "2",
+      "script": "Route134_EventScript_ZV4Dorian",
+      "flag": "0"
     }
   ],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 5,
+      "y": 12,
+      "elevation": 3,
+      "item": "ITEM_STAR_PIECE",
+      "flag": "FLAG_HIDDEN_ITEM_ZV2_R134_STAR_PIECE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 20,
+      "y": 21,
+      "elevation": 1,
+      "item": "ITEM_ZINC",
+      "flag": "FLAG_HIDDEN_ITEM_ZV2_R134_ZINC"
+    },
+    {
+      "type": "hidden_item",
+      "x": 9,
+      "y": 13,
+      "elevation": 3,
+      "item": "ITEM_RELIC_COPPER",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_R134_RELIC_COPPER"
+    }
+  ]
 }

@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # Backlog: plan van aanpak en vragen (voor Jordi)
 
 Opgesteld 3 okt 2026. Per backlog-onderdeel uit `TODO.md`: wat er al is, mijn voorstel en de vragen die ik nodig heb vóór het bouwen. Beantwoord gerust kort ("1a, 2 ja, 3 Route 114"), dan begin ik.

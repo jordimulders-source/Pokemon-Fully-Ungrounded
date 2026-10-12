@@ -54,25 +54,31 @@ Music: Male
 Back Pic: Wally
 AI: AI_FLAG_ACE_POKEMON
 
-Oranguru
+Primeape
 Level: 28
+Ability: Defiant
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Instruct
+- Rage Fist
+- Low Sweep
+- Rock Tomb
+- Seismic Toss
 
 Dondozo
 Level: 28
+Ability: Unaware
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Water Pulse
+- Body Slam
 - Tickle
-- Soak
-- Noble Roar
+- Curse
 
 Kirlia
 Level: 30
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Calm Mind
 - Confusion
-- Screech
-- Skill Swap
+- Magical Leaf
+- Draining Kiss
 
 === PARTNER_KECCLES ===
 Name: KECCLES
@@ -116,6 +122,68 @@ EVs: 4 HP / 252 SpA / 252 Spe
 - Glare
 - Protect
 
+=== PARTNER_CALYREX ===
+Name: CALYREX
+Class: Rival
+Pic: Ruin Maniac
+Gender: Male
+Music: Male
+Back Pic: Calyrex
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Calyrex @ Leftovers
+Level: 72
+Ability: Unnerve
+Nature: Modest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+- Psychic
+- Giga Drain
+- Life Dew
+- Helping Hand
+
+=== PARTNER_YOSHI ===
+Name: YOSHI
+Class: Guest Star
+Pic: Guest Yoshi
+Gender: Male
+Music: Twins
+Back Pic: Yoshi
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Dracovish @ Choice Band
+Level: 93
+Ability: Strong Jaw
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+- Fishious Rend
+- Psychic Fangs
+- Crunch
+- Dragon Rush
+
+Tyrantrum @ Life Orb
+Level: 93
+Ability: Strong Jaw
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+- Rock Slide
+- Dragon Claw
+- Crunch
+- Dragon Dance
+
+Gouging Fire @ Booster Energy
+Level: 94
+Ability: Protosynthesis
+Nature: Adamant
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+- Flare Blitz
+- Breaking Swipe
+- Stomping Tantrum
+- Morning Sun
+
 /* --- Battle Stadium (gegenereerd door tools/grounded/stadium/pool.py) --- */
 
 === PARTNER_STADIUM_BRENDAN ===
@@ -125,19 +193,40 @@ Pic: Brendan
 Gender: Male
 Music: Male
 Back Pic: Brendan
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Huntail
+Ludicolo @ Sitrus Berry
 Level: 50
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Dancer
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Surf
+- Giga Drain
+- Ice Beam
+- Fake Out
 
-Exploud
+Exploud @ Throat Spray
 Level: 50
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hyper Voice
+- Flash Cannon
+- Flamethrower
+- Protect
 
-Blaziken
+Blaziken @ Life Orb
 Level: 50
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Flare Blitz
+- Close Combat
+- Knock Off
+- Protect
 
 === PARTNER_STADIUM_MAY ===
 Name: MAY
@@ -146,19 +235,40 @@ Pic: May
 Gender: Female
 Music: Female
 Back Pic: May
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Roserade
+Roserade @ Focus Sash
 Level: 50
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Sludge Bomb
+- Giga Drain
+- Sleep Powder
+- Protect
 
-Froslass
+Froslass @ Light Clay
 Level: 50
-IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Shadow Ball
+- Aurora Veil
+- Protect
 
-Swampert
+Swampert @ Leftovers
 Level: 50
-IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Liquidation
+- High Horsepower
+- Ice Punch
+- Protect
 
 === PARTNER_STADIUM_KECCLES ===
 Name: KECCLES
@@ -167,32 +277,40 @@ Pic: Kecleon
 Gender: Male
 Music: Male
 Back Pic: Kecleon
-AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_ACE_POKEMON
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / Ace Pokemon
 
-Charizard
+Heliolisk @ Choice Specs
 Level: 50
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Air Slash
-- Flamethrower
-- Dragon Claw
-- Scary Face
+Ability: Dry Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thunderbolt
+- Hyper Voice
+- Grass Knot
+- Volt Switch
 
-Serperior
+Serperior @ Leftovers
 Level: 50
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Leaf Blade
-- Coil
-- Leech Seed
-- Slam
+Ability: Contrary
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Leaf Storm
+- Dragon Pulse
+- Glare
+- Protect
 
-Salazzle
+Salazzle @ Focus Sash
 Level: 50
 Ability: Corrosion
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Fake Out
+- Sludge Bomb
+- Flamethrower
 - Nasty Plot
-- Venoshock
-- Incinerate
-- Poison Gas
 
 === PARTNER_STADIUM_WALLY ===
 Name: WALLY
@@ -201,34 +319,40 @@ Pic: Wally
 Gender: Male
 Music: Male
 Back Pic: Wally
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Baxcalibur @ Loaded Dice
+Darmanitan @ Choice Scarf
 Level: 50
-Ability: Thermal Exchange
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Icicle Spear
-- Glaive Rush
-- Earthquake
-- Dragon Dance
+Ability: Sheer Force
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Flare Blitz
+- U-turn
+- Rock Slide
+- Superpower
 
-Annihilape @ Chesto Berry
+Flutter Mane @ Choice Specs
 Level: 50
-Ability: Defiant
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Rest
-- Rage Fist
-- Bulk Up
-- Drain Punch
+Ability: Protosynthesis
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Shadow Ball
+- Moonblast
+- Mystical Fire
+- Power Gem
 
-Gallade @ Choice Scarf
+Gallade @ Life Orb
 Level: 50
 Ability: Sharpness
-IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
 - Psycho Cut
-- Leaf Blade
 - Sacred Sword
-- Aqua Cutter
+- Leaf Blade
+- Protect
 
 === PARTNER_STADIUM_ROXANNE ===
 Name: ROXANNE
@@ -802,7 +926,7 @@ Pic: Birch
 Gender: Male
 Music: Male
 Back Pic: Brendan
-AI: Check Bad Move / Try To Faint
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Rabsca
 Level: 50
@@ -836,7 +960,7 @@ Pic: Colress
 Gender: Male
 Music: Intense
 Back Pic: Brendan
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Magnezone
 Level: 50
@@ -872,7 +996,7 @@ Pic: Zinnia
 Gender: Female
 Music: Cool
 Back Pic: Brendan
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Salamence
 Level: 50
@@ -1147,7 +1271,7 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Back Pic: Brendan
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Beheeyem
 Level: 50
@@ -3392,19 +3516,40 @@ Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Back Pic: Brendan
-AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_DOUBLE_BATTLE
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Ace Pokemon / Omniscient / PP Stall Prevention / Predict Switch / Predict Incoming Mon / Predict Move
 
-Iron Valiant
+Iron Valiant @ Booster Energy
 Level: 50
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Quark Drive
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Spirit Break
+- Close Combat
+- Knock Off
+- Swords Dance
 
-Garchomp
+Garchomp @ Loaded Dice
 Level: 50
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Rough Skin
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Scale Shot
+- Earthquake
+- Stone Edge
+- Swords Dance
 
-Kingambit
+Kingambit @ Black Glasses
 Level: 50
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Supreme Overlord
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Kowtow Cleave
+- Sucker Punch
+- Iron Head
+- Swords Dance
 
 === PARTNER_STADIUM_MITCH ===
 Name: Mitch
@@ -3648,7 +3793,7 @@ Nature: Adamant
 
 === PARTNER_STADIUM_BOO ===
 Name: BOO
-Class: Guest Star
+Class: Commander
 Pic: Guest Boo
 Gender: Male
 Music: Suspicious
@@ -3905,40 +4050,40 @@ Pic: Guest Burglar
 Gender: Male
 Music: Suspicious
 Back Pic: Brendan
-AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
-Honchkrow @ Life Orb
+Grimmsnarl @ Light Clay
 Level: 50
-Ability: Moxie
+Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Adamant
-- Brave Bird
-- Sucker Punch
-- Pursuit
-- Heat Wave
-
-Arcanine @ Heavy-Duty Boots
-Level: 50
-Ability: Intimidate
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Flare Blitz
-- Extreme Speed
+EVs: 4 Def / 252 HP / 252 SpD
+Nature: Careful
 - Thief
-- Will-O-Wisp
+- Spirit Break
+- Reflect
+- Light Screen
 
-Weavile @ Life Orb
+Zoroark_Hisui @ Life Orb
 Level: 50
-Ability: Pickpocket
+Ability: Illusion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Knock Off
-- Ice Shard
-- Triple Axel
-- Swords Dance
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Bitter Malice
+- Flamethrower
+- Nasty Plot
+
+Thievul @ Sitrus Berry
+Level: 50
+Ability: Unburden
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Thief
+- Dark Pulse
+- Nasty Plot
+- Burning Jealousy
 
 === PARTNER_STADIUM_DITTO ===
 Name: DITTO
@@ -4171,6 +4316,328 @@ Nature: Timid
 - Fiery Dance
 - Bug Buzz
 - Giga Drain
+
+=== PARTNER_STADIUM_NIGEL ===
+Name: NIGEL
+Class: Neo Plasma
+Pic: Neo Plasma Grunt M
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Conkeldurr @ Flame Orb
+Level: 50
+Ability: Guts
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Drain Punch
+- Mach Punch
+- Knock Off
+- Ice Punch
+
+Excadrill @ Choice Scarf
+Level: 50
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Earthquake
+- Iron Head
+- Rock Slide
+- X-Scissor
+
+Haxorus @ Life Orb
+Level: 50
+Ability: Mold Breaker
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Dragon Dance
+- Outrage
+- Earthquake
+- Poison Jab
+
+=== PARTNER_STADIUM_GRIMSBY ===
+Name: GRIMSBY
+Class: Sailor
+Pic: Sailor
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Wailord @ Sitrus Berry
+Level: 50
+Ability: Multiscale
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Water Spout
+- Ice Beam
+- Heavy Slam
+- Rest
+
+Basculegion @ Mystic Water
+Level: 50
+Ability: Adaptability
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Wave Crash
+- Phantom Force
+- Aqua Jet
+- Crunch
+
+Dhelmise @ Life Orb
+Level: 50
+Ability: Steelworker
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Anchor Shot
+- Phantom Force
+- Power Whip
+- Earthquake
+
+=== PARTNER_STADIUM_WICK ===
+Name: WICK
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Magnezone
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Flash Cannon
+- Thunderbolt
+- Mirror Coat
+- Light Screen
+
+Lumineon
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- U-turn
+- Ice Beam
+- Rain Dance
+
+Lanturn @ Leftovers
+Level: 50
+Ability: Volt Absorb
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Discharge
+- Scald
+- Ice Beam
+- Confuse Ray
+
+=== PARTNER_STADIUM_SALIM ===
+Name: SALIM
+Class: Collector
+Pic: Collector
+Gender: Male
+Music: Rich
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Hippowdon @ Smooth Rock
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Sand Stream
+Nature: Impish
+- Earthquake
+- Slack Off
+- Stealth Rock
+- Whirlwind
+
+Sableye @ Sitrus Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Prankster
+Nature: Careful
+- Knock Off
+- Recover
+- Will-O-Wisp
+- Thief
+
+Gholdengo @ Air Balloon
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Good as Gold
+Nature: Modest
+- Make It Rain
+- Shadow Ball
+- Focus Blast
+- Nasty Plot
+
+=== PARTNER_STADIUM_SELENE ===
+Name: SELENE
+Class: Expert
+Pic: Expert F
+Gender: Female
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Kingdra
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Draco Meteor
+- Hydro Pump
+- Ice Beam
+- Rain Dance
+
+Dragonite
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Extreme Speed
+- Dragon Claw
+- Earthquake
+- Dragon Dance
+
+Hydreigon
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Dark Pulse
+- Draco Meteor
+- Flamethrower
+- Nasty Plot
+
+=== PARTNER_STADIUM_REGINALD ===
+Name: REGINALD
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Elite Four
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Tyranitar @ Chople Berry
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Sand Stream
+- Stone Edge
+- Crunch
+- Earthquake
+- Dragon Dance
+
+Metagross @ Air Balloon
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Clear Body
+- Meteor Mash
+- Zen Headbutt
+- Earthquake
+- Bullet Punch
+
+Slaking @ Choice Band
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Truant
+- Giga Impact
+- Earthquake
+- Knock Off
+- Slack Off
+
+=== PARTNER_STADIUM_HELIA ===
+Name: HELIA
+Class: Hex Maniac
+Pic: Hex Maniac
+Gender: Female
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
+
+Bronzong
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Heatproof
+- Sunny Day
+- Gyro Ball
+- Extrasensory
+- Stealth Rock
+
+Espeon
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Magic Bounce
+- Psychic
+- Dazzling Gleam
+- Shadow Ball
+- Morning Sun
+
+Armarouge @ Charcoal
+Level: 50
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Flash Fire
+- Armor Cannon
+- Psyshock
+- Calm Mind
+- Will-O-Wisp
+
+=== PARTNER_STADIUM_TALLOW ===
+Name: TALLOW
+Class: Sage
+Pic: Psychic M
+Gender: Male
+Music: Suspicious
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Drifblim
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Air Slash
+- Will-O-Wisp
+- Calm Mind
+
+Dusknoir
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Punch
+- Earthquake
+- Ice Punch
+- Will-O-Wisp
+
+Chandelure @ Life Orb
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shadow Ball
+- Flamethrower
+- Energy Ball
+- Trick Room
+
+=== PARTNER_STADIUM_LAVIS ===
+Name: LAVIS
+Class: Expert
+Pic: Expert M
+Gender: Male
+Music: Intense
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+
+Grafaiai
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Gunk Shot
+- Knock Off
+- U-turn
+- Super Fang
+
+Milotic @ Leftovers
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Scald
+- Recover
+- Ice Beam
+- Toxic
+
+Smeargle @ Focus Sash
+Level: 50
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Spore
+- Shell Smash
+- Stored Power
+- Hydro Pump
 
 === PARTNER_STADIUM_MASCOTS ===
 Name: MASCOTS

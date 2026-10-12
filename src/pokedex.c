@@ -15,6 +15,7 @@
 #include "overworld.h"
 #include "palette.h"
 #include "pokedex.h"
+#include "ultra_space.h"
 #include "pokedex_area_screen.h"
 #include "pokedex_cry_screen.h"
 #include "pokedex_plus_hgss.h"
@@ -4550,6 +4551,8 @@ s8 GetSetPokedexFlag(enum NationalDexOrder nationalDexNo, u8 caseID)
         gSaveBlock1Ptr->dexSeen[index] |= mask;
         break;
     case FLAG_SET_CAUGHT:
+        if (!(gSaveBlock1Ptr->dexCaught[index] & mask))
+            Ultra_OnNewDexCaught(nationalDexNo + 1); // Project Grounded: Solrock/Lunatone eerst (Cosmoem)
         gSaveBlock1Ptr->dexCaught[index] |= mask;
         break;
     }

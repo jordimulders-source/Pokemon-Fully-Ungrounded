@@ -1,10 +1,12 @@
 #include "global.h"
+#include "gen1_ghost.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_arena.h"
 #include "battle_environment.h"
 #include "battle_pyramid.h"
 #include "battle_util.h"
+#include "caps.h"
 #include "battle_controllers.h"
 #include "battle_interface.h"
 #include "battle_setup.h"
@@ -34,6 +36,7 @@
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
 #include "event_data.h"
+#include "overworld.h"
 #include "link.h"
 #include "malloc.h"
 #include "berry.h"
@@ -482,6 +485,14 @@ void HandleAction_UseMove(void)
         return;
     }
 
+    // Project Grounded: Gen 1-GHOST zonder Silph Scope: niemand doet iets (src/gen1_ghost.c)
+    if (Gen1Ghost_IsActive())
+    {
+        gBattlescriptCurrInstr = Gen1Ghost_MoveScript(gBattlerAttacker);
+        gCurrentActionFuncId = B_ACTION_EXEC_SCRIPT;
+        return;
+    }
+
     gCurrMovePos = gChosenMovePos = gBattleStruct->chosenMovePositions[gBattlerAttacker];
 
     // choose move
@@ -531,6 +542,17 @@ void HandleAction_UseMove(void)
             gBattleResults.lastUsedMovePlayer = gCurrentMove;
         else
             gBattleResults.lastUsedMoveOpponent = gCurrentMove;
+        // Project Grounded: omroeper van het Battle Stadium (alleen de eigen Pokémon van de speler)
+        if (IsOnPlayerSide(gBattlerAttacker) && !(gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED))
+         && (GetBattlerPosition(gBattlerAttacker) == B_POSITION_PLAYER_LEFT || !(gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)))
+        {
+            if (gCurrentMove == MOVE_SPLASH)
+                IncrementGameStat(GAME_STAT_USED_SPLASH);
+            else if (gCurrentMove == MOVE_STRUGGLE)
+                IncrementGameStat(GAME_STAT_USED_STRUGGLE);
+            else if (gCurrentMove == MOVE_IMPLOSION)
+                FlagSet(FLAG_USED_IMPLOSION);
+        }
     }
 
     // Set dynamic move type.
@@ -2172,7 +2194,10 @@ static enum MoveCanceler CancelerObedience(struct BattleContext *ctx)
             return MOVE_STEP_FAILURE;
         case DISOBEYS_RANDOM_MOVE:
             gCurrentMove = gCalledMove = gBattleMons[ctx->battlerAtk].moves[gCurrMovePos];
-            BattleScriptCall(BattleScript_IgnoresAndUsesRandomMove);
+            // Project Grounded: na het bericht naar het script van de willekeurige move, niet terug naar dat van de
+            // gekozen move (anders ontplofte een ongehoorzame Explosion niet en kregen statusmoves het verkeerde effect)
+            BattleScriptPush(GetMoveBattleScript(gCalledMove));
+            gBattlescriptCurrInstr = BattleScript_IgnoresAndUsesRandomMove;
             gBattlerTarget = GetBattleMoveTarget(gCalledMove, NO_TARGET_OVERRIDE);
             gHitMarker |= HITMARKER_OBEYS;
             return MOVE_STEP_BREAK;
@@ -6565,6 +6590,35 @@ u32 GetBattleMoveTarget(u16 move, u8 setTarget)
     return targetBattler;
 }
 
+// Project Grounded: tot welk level gehoorzamen Pokémon op basis van de badges (MAX_LEVEL = altijd)
+u32 GetPlayerObedienceLevel(void)
+{
+    // Project Grounded: de grens is het ace-level van de volgende gymleider (zelfde doel als de inhaal-EXP,
+    // GetGroundedCatchUpTarget in src/caps.c), zodat hij meeschuift met de levelcurve (LEVELCURVE.md).
+    if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
+        return MAX_LEVEL;
+    return GetGroundedCatchUpTarget();
+}
+
+// Project Grounded: het level waar de gehoorzaamheid naar kijkt (eigen Pokémon: het level bij het vangen)
+static u32 GetMonObedienceReferenceLevel(struct Pokemon *mon, u32 level)
+{
+    u8 otName[PLAYER_NAME_LENGTH + 1];
+
+    GetMonData(mon, MON_DATA_OT_NAME, otName);
+    if (B_OBEDIENCE_MECHANICS >= GEN_8 && !IsOtherTrainer(GetMonData(mon, MON_DATA_OT_ID), otName))
+        return GetMonData(mon, MON_DATA_MET_LEVEL);
+    if (B_OBEDIENCE_MECHANICS < GEN_8 && !IsOtherTrainer(GetMonData(mon, MON_DATA_OT_ID), otName))
+        return 0;
+    return level;
+}
+
+// Project Grounded: TRUE als deze Pokémon met dit level (deels) ongehoorzaam is
+bool32 MonMayDisobeyAtLevel(struct Pokemon *mon, u32 level)
+{
+    return GetMonObedienceReferenceLevel(mon, level) > GetPlayerObedienceLevel();
+}
+
 u8 GetAttackerObedienceForAction()
 {
     s32 rnd;
@@ -6590,22 +6644,7 @@ u8 GetAttackerObedienceForAction()
     if (FlagGet(FLAG_BADGE08_GET)) // Rain Badge, ignore obedience altogether
         return OBEYS;
 
-    obedienceLevel = 10;
-
-    if (FlagGet(FLAG_BADGE01_GET)) // Stone Badge
-        obedienceLevel = 20;
-    if (FlagGet(FLAG_BADGE02_GET)) // Knuckle Badge
-        obedienceLevel = 30;
-    if (FlagGet(FLAG_BADGE03_GET)) // Dynamo Badge
-        obedienceLevel = 40;
-    if (FlagGet(FLAG_BADGE04_GET)) // Heat Badge
-        obedienceLevel = 50;
-    if (FlagGet(FLAG_BADGE05_GET)) // Balance Badge
-        obedienceLevel = 60;
-    if (FlagGet(FLAG_BADGE06_GET)) // Feather Badge
-        obedienceLevel = 70;
-    if (FlagGet(FLAG_BADGE07_GET)) // Mind Badge
-        obedienceLevel = 80;
+    obedienceLevel = GetPlayerObedienceLevel();
 
     if (B_OBEDIENCE_MECHANICS >= GEN_8
      && !IsOtherTrainer(gBattleMons[gBattlerAttacker].otId, gBattleMons[gBattlerAttacker].otName))

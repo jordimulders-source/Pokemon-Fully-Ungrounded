@@ -117,5 +117,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 17,
+      "y": 11,
+      "elevation": 3,
+      "item": "ITEM_DEEP_SEA_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM5_DEEP_SEA_SCALE"
+    }
+  ]
 }

@@ -386,6 +386,10 @@ const u16 gItemIconPalette_OddKeystone[] = INCBIN_U16("graphics/items/icon_palet
 const u32 gItemIcon_PrettyFeather[] = INCBIN_U32("graphics/items/icons/pretty_feather.4bpp.smol");
 const u16 gItemIconPalette_PrettyFeather[] = INCBIN_U16("graphics/items/icon_palettes/pretty_feather.gbapal");
 
+// Project Grounded: Azure Flute (tools/grounded/azure_flute.py tekent het icoon)
+const u32 gItemIcon_AzureFlute[] = INCBIN_U32("graphics/items/icons/azure_flute.4bpp.smol");
+const u16 gItemIconPalette_AzureFlute[] = INCBIN_U16("graphics/items/icon_palettes/azure_flute.gbapal");
+
 const u32 gItemIcon_RelicCoin[] = INCBIN_U32("graphics/items/icons/relic_coin.4bpp.smol");
 const u16 gItemIconPalette_RelicCopper[] = INCBIN_U16("graphics/items/icon_palettes/relic_copper.gbapal");
 const u16 gItemIconPalette_RelicSilver[] = INCBIN_U16("graphics/items/icon_palettes/relic_silver.gbapal");
@@ -1689,8 +1693,6 @@ const u16 gItemIconPalette_MegaRing[] = INCBIN_U16("graphics/items/icon_palettes
 const u32 gItemIcon_ZPowerRing[] = INCBIN_U32("graphics/items/icons/z_power_ring.4bpp.smol");
 const u16 gItemIconPalette_ZPowerRing[] = INCBIN_U16("graphics/items/icon_palettes/z_power_ring.gbapal");
 
-const u32 gItemIcon_ZRing[] = INCBIN_U32("graphics/items/icons/z_ring.4bpp.smol"); // Remove
-const u16 gItemIconPalette_ZRing[] = INCBIN_U16("graphics/items/icon_palettes/z_ring.gbapal"); // Remove
 
 const u32 gItemIcon_DynamaxBand[] = INCBIN_U32("graphics/items/icons/dynamax_band.4bpp.smol");
 const u16 gItemIconPalette_DynamaxBand[] = INCBIN_U16("graphics/items/icon_palettes/dynamax_band.gbapal");
@@ -1771,8 +1773,6 @@ const u16 gItemIconPalette_EonTicket[] = INCBIN_U16("graphics/items/icon_palette
 const u32 gItemIcon_MysticTicket[] = INCBIN_U32("graphics/items/icons/mystic_ticket.4bpp.smol");
 const u16 gItemIconPalette_MysticTicket[] = INCBIN_U16("graphics/items/icon_palettes/mystic_ticket.gbapal");
 
-const u32 gItemIcon_AuroraTicket[] = INCBIN_U32("graphics/items/icons/aurora_ticket.4bpp.smol");
-const u16 gItemIconPalette_AuroraTicket[] = INCBIN_U16("graphics/items/icon_palettes/aurora_ticket.gbapal");
 
 const u32 gItemIcon_OldSeaMap[] = INCBIN_U32("graphics/items/icons/old_sea_map.4bpp.smol");
 const u16 gItemIconPalette_OldSeaMap[] = INCBIN_U16("graphics/items/icon_palettes/old_sea_map.gbapal");

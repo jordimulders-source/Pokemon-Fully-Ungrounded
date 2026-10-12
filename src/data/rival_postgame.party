@@ -1,0 +1,915 @@
+/* Project Grounded: post-game rivaal (Pacifidlog = fase 1, Battle Frontier + dagelijkse rematch in
+   Paradiso = fase 2). src/rival_postgame.c kiest per starter (TRAINER_RIVAL_POSTGAME_*), geslacht van
+   de speler en fase een van deze twaalf. Gegenereerd uit de Route 136-teams; levels 86/88 en 92/94. */
+
+=== RIVAL_PG_BRENDAN_PACIFIDLOG_TREECKO ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Blue
+
+Ludicolo @ Sitrus Berry
+Level: 86
+Ability: Dancer
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Surf
+- Giga Drain
+- Ice Beam
+- Fake Out
+
+Huntail @ White Herb
+Level: 86
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Waterfall
+- Crunch
+- Ice Fang
+
+Zangoose @ Toxic Orb
+Level: 86
+Ability: Toxic Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Facade
+- Close Combat
+- Knock Off
+- Quick Attack
+
+Exploud @ Throat Spray
+Level: 86
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hyper Voice
+- Flash Cannon
+- Flamethrower
+- Protect
+
+Absol @ Black Glasses
+Level: 86
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Knock Off
+- Sucker Punch
+- Swords Dance
+
+Blaziken @ Life Orb
+Level: 88
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Flare Blitz
+- Close Combat
+- Knock Off
+- Protect
+
+=== RIVAL_PG_BRENDAN_PACIFIDLOG_TORCHIC ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Blue
+
+Tropius @ Sitrus Berry
+Level: 86
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Giga Drain
+- Air Slash
+- Leech Seed
+- Protect
+
+Torkoal @ Charcoal
+Level: 86
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Quiet
+- Eruption
+- Heat Wave
+- Earth Power
+- Protect
+
+Zangoose @ Toxic Orb
+Level: 86
+Ability: Toxic Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Facade
+- Close Combat
+- Knock Off
+- Quick Attack
+
+Exploud @ Throat Spray
+Level: 86
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hyper Voice
+- Flash Cannon
+- Flamethrower
+- Protect
+
+Absol @ Black Glasses
+Level: 86
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Knock Off
+- Sucker Punch
+- Swords Dance
+
+Swampert @ Leftovers
+Level: 88
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Liquidation
+- High Horsepower
+- Ice Punch
+- Protect
+
+=== RIVAL_PG_BRENDAN_PACIFIDLOG_MUDKIP ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Blue
+
+Houndoom @ Charcoal
+Level: 86
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Heat Wave
+- Dark Pulse
+- Sludge Bomb
+- Nasty Plot
+
+Huntail @ White Herb
+Level: 86
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Waterfall
+- Crunch
+- Ice Fang
+
+Pinsir @ Choice Scarf
+Level: 86
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- X-Scissor
+- High Horsepower
+- Stone Edge
+- Close Combat
+
+Exploud @ Throat Spray
+Level: 86
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hyper Voice
+- Flash Cannon
+- Flamethrower
+- Protect
+
+Banette @ Sitrus Berry
+Level: 86
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Shadow Claw
+- Knock Off
+- Will-O-Wisp
+- Destiny Bond
+
+Sceptile @ Life Orb
+Level: 88
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Leaf Blade
+- Night Slash
+- Rock Slide
+- Swords Dance
+
+=== RIVAL_PG_BRENDAN_FRONTIER_TREECKO ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Blue
+
+Ludicolo @ Life Orb
+Level: 92
+Ability: Dancer
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hydro Pump
+- Giga Drain
+- Ice Beam
+- Fake Out
+
+Huntail @ White Herb
+Level: 92
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Waterfall
+- Crunch
+- Ice Fang
+
+Zangoose @ Toxic Orb
+Level: 92
+Ability: Toxic Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Facade
+- Close Combat
+- Knock Off
+- Quick Attack
+
+Exploud @ Throat Spray
+Level: 92
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Boomburst
+- Flash Cannon
+- Flamethrower
+- Protect
+
+Absol @ Black Glasses
+Level: 92
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Knock Off
+- Sucker Punch
+- Swords Dance
+
+Blaziken @ Life Orb
+Level: 94
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Flare Blitz
+- Close Combat
+- Swords Dance
+- Protect
+
+=== RIVAL_PG_BRENDAN_FRONTIER_TORCHIC ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Blue
+
+Tropius @ Sitrus Berry
+Level: 92
+Ability: Harvest
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 4 Def / 252 SpD
+Nature: Calm
+- Giga Drain
+- Air Slash
+- Leech Seed
+- Protect
+
+Torkoal @ Choice Specs
+Level: 92
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Quiet
+- Eruption
+- Heat Wave
+- Earth Power
+- Solar Beam
+
+Zangoose @ Toxic Orb
+Level: 92
+Ability: Toxic Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Facade
+- Close Combat
+- Knock Off
+- Quick Attack
+
+Exploud @ Throat Spray
+Level: 92
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Boomburst
+- Flash Cannon
+- Flamethrower
+- Protect
+
+Absol @ Black Glasses
+Level: 92
+Ability: Serene Grace
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Knock Off
+- Sucker Punch
+- Swords Dance
+
+Swampert @ Leftovers
+Level: 94
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Liquidation
+- High Horsepower
+- Ice Punch
+- Stealth Rock
+
+=== RIVAL_PG_BRENDAN_FRONTIER_MUDKIP ===
+Name: BRENDAN
+Class: Rival
+Pic: Brendan
+Gender: Male
+Music: Male
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Blue
+
+Houndoom @ Life Orb
+Level: 92
+Ability: Flash Fire
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Heat Wave
+- Dark Pulse
+- Sludge Bomb
+- Nasty Plot
+
+Huntail @ White Herb
+Level: 92
+Ability: Strong Jaw
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Shell Smash
+- Waterfall
+- Crunch
+- Ice Fang
+
+Pinsir @ Choice Scarf
+Level: 92
+Ability: Moxie
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- X-Scissor
+- High Horsepower
+- Stone Edge
+- Close Combat
+
+Exploud @ Throat Spray
+Level: 92
+Ability: Galvanize
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Boomburst
+- Flash Cannon
+- Flamethrower
+- Protect
+
+Banette @ Sitrus Berry
+Level: 92
+Ability: Prankster
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 Def
+Nature: Adamant
+- Shadow Claw
+- Knock Off
+- Will-O-Wisp
+- Destiny Bond
+
+Sceptile @ Life Orb
+Level: 94
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Leaf Blade
+- Night Slash
+- Earthquake
+- Swords Dance
+
+=== RIVAL_PG_MAY_PACIFIDLOG_TREECKO ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Pink
+
+Octillery @ Expert Belt
+Level: 86
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hydro Pump
+- Ice Beam
+- Fire Blast
+- Energy Ball
+
+Mimikyu @ Spell Tag
+Level: 86
+Ability: Disguise
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Shadow Claw
+- Shadow Sneak
+- Swords Dance
+
+Lopunny @ Silk Scarf
+Level: 86
+Ability: Limber
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Double-Edge
+- High Jump Kick
+- Ice Punch
+
+Vespiquen @ Leftovers
+Level: 86
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Attack Order
+- Defend Order
+- Heal Order
+- Toxic
+
+Magnezone @ Assault Vest
+Level: 86
+Ability: Analytic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Tri Attack
+
+Blaziken @ Life Orb
+Level: 88
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Flare Blitz
+- Close Combat
+- Knock Off
+- Protect
+
+=== RIVAL_PG_MAY_PACIFIDLOG_TORCHIC ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Pink
+
+Roserade @ Focus Sash
+Level: 86
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Sludge Bomb
+- Giga Drain
+- Sleep Powder
+- Protect
+
+Scovillain @ Life Orb
+Level: 86
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Flamethrower
+- Energy Ball
+- Sunny Day
+- Protect
+
+Lopunny @ Silk Scarf
+Level: 86
+Ability: Limber
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Double-Edge
+- High Jump Kick
+- Ice Punch
+
+Froslass @ Light Clay
+Level: 86
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Shadow Ball
+- Aurora Veil
+- Protect
+
+Mienshao @ Expert Belt
+Level: 86
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Close Combat
+- Knock Off
+- U-turn
+
+Swampert @ Leftovers
+Level: 88
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Liquidation
+- High Horsepower
+- Ice Punch
+- Protect
+
+=== RIVAL_PG_MAY_PACIFIDLOG_MUDKIP ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Pink
+
+Octillery @ Expert Belt
+Level: 86
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hydro Pump
+- Ice Beam
+- Fire Blast
+- Energy Ball
+
+Ninetales @ Heat Rock
+Level: 86
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Heat Wave
+- Solar Beam
+- Nasty Plot
+- Protect
+
+Lopunny @ Silk Scarf
+Level: 86
+Ability: Limber
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Double-Edge
+- High Jump Kick
+- Ice Punch
+
+Vespiquen @ Leftovers
+Level: 86
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Attack Order
+- Defend Order
+- Heal Order
+- Toxic
+
+Eelektross @ Assault Vest
+Level: 86
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Thunderbolt
+- Flamethrower
+- Giga Drain
+- Knock Off
+
+Sceptile @ Life Orb
+Level: 88
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Leaf Blade
+- Night Slash
+- Rock Slide
+- Swords Dance
+
+=== RIVAL_PG_MAY_FRONTIER_TREECKO ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Pink
+
+Octillery @ Choice Specs
+Level: 92
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hydro Pump
+- Ice Beam
+- Fire Blast
+- Energy Ball
+
+Mimikyu @ Life Orb
+Level: 92
+Ability: Disguise
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Play Rough
+- Shadow Claw
+- Shadow Sneak
+- Swords Dance
+
+Lopunny @ Silk Scarf
+Level: 92
+Ability: Limber
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Double-Edge
+- High Jump Kick
+- Ice Punch
+
+Vespiquen @ Leftovers
+Level: 92
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Attack Order
+- Defend Order
+- Heal Order
+- Toxic
+
+Magnezone @ Assault Vest
+Level: 92
+Ability: Analytic
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Thunderbolt
+- Flash Cannon
+- Volt Switch
+- Tri Attack
+
+Blaziken @ Life Orb
+Level: 94
+Ability: Speed Boost
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Adamant
+- Flare Blitz
+- Close Combat
+- Swords Dance
+- Protect
+
+=== RIVAL_PG_MAY_FRONTIER_TORCHIC ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Pink
+
+Roserade @ Focus Sash
+Level: 92
+Ability: Natural Cure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Sludge Bomb
+- Giga Drain
+- Sleep Powder
+- Protect
+
+Scovillain @ Life Orb
+Level: 92
+Ability: Chlorophyll
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Modest
+- Flamethrower
+- Energy Ball
+- Sunny Day
+- Protect
+
+Lopunny @ Silk Scarf
+Level: 92
+Ability: Limber
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Double-Edge
+- High Jump Kick
+- Ice Punch
+
+Froslass @ Light Clay
+Level: 92
+Ability: Snow Warning
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Blizzard
+- Shadow Ball
+- Aurora Veil
+- Protect
+
+Mienshao @ Expert Belt
+Level: 92
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Close Combat
+- Knock Off
+- U-turn
+
+Swampert @ Leftovers
+Level: 94
+Ability: Regenerator
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Atk / 4 SpD
+Nature: Adamant
+- Liquidation
+- High Horsepower
+- Ice Punch
+- Stealth Rock
+
+=== RIVAL_PG_MAY_FRONTIER_MUDKIP ===
+Name: MAY
+Class: Rival
+Pic: May
+Gender: Female
+Music: Female
+Double Battle: No
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
+Mugshot: Pink
+
+Octillery @ Choice Specs
+Level: 92
+Ability: Protean
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Hydro Pump
+- Ice Beam
+- Fire Blast
+- Energy Ball
+
+Ninetales @ Heat Rock
+Level: 92
+Ability: Drought
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 SpA / 252 Spe
+Nature: Timid
+- Heat Wave
+- Solar Beam
+- Nasty Plot
+- Protect
+
+Lopunny @ Silk Scarf
+Level: 92
+Ability: Limber
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Fake Out
+- Double-Edge
+- High Jump Kick
+- Ice Punch
+
+Vespiquen @ Leftovers
+Level: 92
+Ability: Pressure
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 Def / 4 SpD
+Nature: Impish
+- Attack Order
+- Defend Order
+- Heal Order
+- Toxic
+
+Eelektross @ Assault Vest
+Level: 92
+Ability: Levitate
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 252 HP / 252 SpA / 4 SpD
+Nature: Modest
+- Thunderbolt
+- Flamethrower
+- Giga Drain
+- Knock Off
+
+Sceptile @ Life Orb
+Level: 94
+Ability: Sharpness
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+EVs: 4 HP / 252 Atk / 252 Spe
+Nature: Jolly
+- Leaf Blade
+- Night Slash
+- Earthquake
+- Swords Dance

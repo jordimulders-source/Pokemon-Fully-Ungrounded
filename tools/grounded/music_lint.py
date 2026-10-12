@@ -18,7 +18,8 @@ from musiclib import releases, release_ticks
 
 MAX_CHANS = 10          # src/m4a.c mixt 12 kanalen; 2 houden we vrij voor geluidseffecten
 # uitzonderingen: legendary-gevechten mogen 11 (1 kanaal vrij voor effecten)
-MAX_PER_SONG = {'mus_grounded_vs_regigigas.mid': 11, 'mus_grounded_vs_suicune.mid': 11,
+MAX_PER_SONG = {'mus_grounded_yi_athletic.mid': 11,   # SPC-rip: 8 SNES-stemmen + uitklinkstaartjes (5 momenten)
+                'mus_grounded_vs_regigigas.mid': 11, 'mus_grounded_vs_suicune.mid': 11,
                 'mus_grounded_vs_entei.mid': 11, 'mus_grounded_vs_raikou.mid': 11,
                 'mus_grounded_vs_jirachi.mid': 11,
                 'mus_grounded_vs_heatran.mid': 11,
@@ -26,7 +27,20 @@ MAX_PER_SONG = {'mus_grounded_vs_regigigas.mid': 11, 'mus_grounded_vs_suicune.mi
                 'mus_grounded_vs_rayquaza.mid': 11,
                 'mus_grounded_vs_genesect.mid': 11,
                 'mus_grounded_vs_victini.mid': 11,
-                'mus_grounded_vs_darkrai.mid': 11}
+                'mus_grounded_vs_darkrai.mid': 11,
+                'mus_grounded_vs_tapu.mid': 11,
+                'mus_grounded_vs_ho_oh.mid': 11,
+                'mus_grounded_vs_lugia.mid': 11,
+                'mus_grounded_vs_tornadus.mid': 11, 'mus_grounded_vs_thundurus.mid': 11,
+                'mus_grounded_vs_landorus.mid': 11, 'mus_grounded_vs_hoopa.mid': 11,
+                'mus_grounded_vs_ruinous.mid': 11,
+                'mus_grounded_vs_zacian.mid': 11, 'mus_grounded_vs_xerneas.mid': 11,
+                'mus_grounded_vs_lake_trio.mid': 11, 'mus_grounded_vs_legendary.mid': 11,
+                'mus_grounded_vs_mew.mid': 11,
+                'mus_grounded_vs_dialga_palkia.mid': 11,
+
+                'mus_grounded_vs_ultra_beast.mid': 11,
+                'mus_grounded_vs_area_zero.mid': 11}
 CFG = 'sound/songs/midi/midi.cfg'
 VG_DIR = 'sound/voicegroups'
 

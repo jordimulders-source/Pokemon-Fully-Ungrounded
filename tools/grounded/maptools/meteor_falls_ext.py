@@ -16,6 +16,13 @@ Bouwt (vaste seed, idempotent):
 Stijl zoals vanilla Meteor Falls 1F: uitgehakte kamers in rots (rotsrand 234/23c, onderrand 236, noordwand met
 stalactieten 244 onder een rand 23e), terrassen (23e + 219 met trap 202), klif 23e/219/244x3, waterval uit 1F.
 Gebruik: python3 tools/grounded/maptools/meteor_falls_ext.py [rendermap]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, shutil, struct, random, sys
 from collections import deque
 

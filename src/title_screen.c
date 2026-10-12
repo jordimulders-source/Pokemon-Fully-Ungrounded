@@ -30,8 +30,10 @@ enum {
 };
 
 #define VERSION_BANNER_RIGHT_TILEOFFSET 64
-#define VERSION_BANNER_LEFT_X 98
-#define VERSION_BANNER_RIGHT_X 162
+#define VERSION_BANNER_THIRD_TILEOFFSET 128 // Project Grounded: "UNGROUNDED" is 192 breed (drie sprites)
+#define VERSION_BANNER_LEFT_X 52            // Project Grounded: gecentreerd onder het Pokémon-logo (x 116)
+#define VERSION_BANNER_RIGHT_X 116
+#define VERSION_BANNER_THIRD_X 180
 #define VERSION_BANNER_Y 2
 #define VERSION_BANNER_Y_GOAL 66
 #define START_BANNER_X 128
@@ -152,6 +154,17 @@ static const union AnimCmd sVersionBannerRightAnimSequence[] =
     ANIMCMD_END,
 };
 
+static const union AnimCmd sVersionBannerThirdAnimSequence[] =
+{
+    ANIMCMD_FRAME(VERSION_BANNER_THIRD_TILEOFFSET, 30),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sVersionBannerThirdAnimTable[] =
+{
+    sVersionBannerThirdAnimSequence,
+};
+
 static const union AnimCmd *const sVersionBannerLeftAnimTable[] =
 {
     sVersionBannerLeftAnimSequence,
@@ -184,11 +197,22 @@ static const struct SpriteTemplate sVersionBannerRightSpriteTemplate =
     .callback = SpriteCB_VersionBannerRight,
 };
 
+static const struct SpriteTemplate sVersionBannerThirdSpriteTemplate =
+{
+    .tileTag = TAG_VERSION,
+    .paletteTag = TAG_VERSION,
+    .oam = &sVersionBannerRightOamData,
+    .anims = sVersionBannerThirdAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_VersionBannerRight,
+};
+
 static const struct CompressedSpriteSheet sSpriteSheet_EmeraldVersion[] =
 {
     {
         .data = gTitleScreenEmeraldVersionGfx,
-        .size = 0x1000,
+        .size = 0x1800, // Project Grounded: drie sprites (was 0x1000)
         .tag = TAG_VERSION
     },
     {},
@@ -718,6 +742,10 @@ static void Task_TitleScreenPhase1(u8 taskId)
 
         // Create right side of version banner
         spriteId = CreateSprite(&sVersionBannerRightSpriteTemplate, VERSION_BANNER_RIGHT_X, VERSION_BANNER_Y, 0);
+        gSprites[spriteId].sParentTaskId = taskId;
+
+        // Project Grounded: derde stuk van de banner
+        spriteId = CreateSprite(&sVersionBannerThirdSpriteTemplate, VERSION_BANNER_THIRD_X, VERSION_BANNER_Y, 0);
         gSprites[spriteId].sParentTaskId = taskId;
 
         gTasks[taskId].tCounter = 144;

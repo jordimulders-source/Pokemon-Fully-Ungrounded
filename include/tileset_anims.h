@@ -20,6 +20,8 @@ void InitTilesetAnim_Mossdeep(void);
 void InitTilesetAnim_EverGrande(void);
 void InitTilesetAnim_Pacifidlog(void);
 void InitTilesetAnim_Sootopolis(void);
+void InitTilesetAnim_ParkBurnt(void); // Project Grounded
+void InitTilesetAnim_UnchartedIsle(void); // Project Grounded
 void InitTilesetAnim_BattleFrontierOutsideWest(void);
 void InitTilesetAnim_BattleFrontierOutsideEast(void);
 void InitTilesetAnim_Building(void);
@@ -31,5 +33,19 @@ void InitTilesetAnim_MauvilleGym(void);
 void InitTilesetAnim_EliteFour(void);
 void InitTilesetAnim_BattleDome(void);
 void InitTilesetAnim_BattlePyramid(void);
+
+// ultra_worlds_a {
+void InitTilesetAnim_UltraWorldNihilego(void);
+void InitTilesetAnim_UltraWorldPheromosa(void);
+void InitTilesetAnim_UltraWorldXurkitree(void);
+void InitTilesetAnim_UltraWorldKartana(void);
+// } ultra_worlds_a
+// ultra_worlds_b {
+void InitTilesetAnim_UltraBStakataka(void);
+void InitTilesetAnim_UltraBNecrozma(void);
+void InitTilesetAnim_UltraBGuzzlord(void);
+void InitTilesetAnim_UltraBBlacephalon(void);
+void InitTilesetAnim_UltraBPoipole(void);
+// } ultra_worlds_b
 
 #endif // GUARD_TILESET_ANIMS_H

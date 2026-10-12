@@ -31,6 +31,13 @@ Uitgang oost (39, 39-40) naar Mangrove Mire (warp via coord-trigger; andere tile
 Vrijgehouden voor later: het heiligdom van Ogerpon (zuidoost, stenen altaar 0x255 met bloemen, NPC-placeholder).
 
 Gebruik: python3 tools/grounded/maptools/fortree_jungle.py [voorbeeld.png]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, math, os, random, struct, sys
 from collections import deque
 
@@ -167,7 +174,7 @@ TRAINERS = [  # x, y, kijkrichting, gfx, script, zicht
 ITEMS = [  # x, y, item, flag
     (2, 13, 'ITEM_BIG_ROOT', 'FLAG_ITEM_FORTREE_JUNGLE_BIG_ROOT'),
     (37, 21, 'ITEM_MAX_REVIVE', 'FLAG_ITEM_FORTREE_JUNGLE_MAX_REVIVE'),
-    (34, 33, 'ITEM_TM_U_TURN', 'FLAG_ITEM_FORTREE_JUNGLE_TM_U_TURN'),
+    (34, 33, 'ITEM_BUG_MEMORY', 'FLAG_ITEM_FORTREE_JUNGLE_TM_U_TURN'),
     (37, 39, 'ITEM_MIRACLE_SEED', 'FLAG_ITEM_FORTREE_JUNGLE_MIRACLE_SEED'),
 ]
 HIDDEN = [  # x, y, item, flag
@@ -292,9 +299,9 @@ def check(extra=()):
     for x, y, *_ in TRAINERS + NPCS:
         assert near(x, y, walk), ('trainer/NPC onbereikbaar', x, y)
     for x, y, item, _ in ITEMS:
-        s = surf if item == 'ITEM_TM_U_TURN' else walk
+        s = surf if item == 'ITEM_BUG_MEMORY' else walk
         assert near(x, y, s), ('item onbereikbaar', item)
-        if item == 'ITEM_TM_U_TURN':
+        if item == 'ITEM_BUG_MEMORY':
             assert not near(x, y, walk), 'TM-zakje moet alleen surfend bereikbaar zijn'
     for x, y, item, _ in HIDDEN:
         assert (x, y) in walk, ('verborgen item onbereikbaar', item)

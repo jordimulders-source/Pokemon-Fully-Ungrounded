@@ -26,6 +26,8 @@ Route130_OnTransition:
 	end
 
 Route130_EventScript_SetMirageIslandLayout::
+	setflag FLAG_TEMP_5 @ zee_vulling_4: fotograaf mist het eiland
+	setflag FLAG_TEMP_6 @ Wynaut-crèche staat niet op Mirage Island (andere layout)
 	setmaplayoutindex LAYOUT_ROUTE130_MIRAGE_ISLAND
 	end
 
@@ -48,3 +50,84 @@ Route130_EventScript_Santiago::
 	msgbox Route130_Text_SantiagoPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+@ --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) ---
+Route130_EventScript_ZV2Teacher::
+	msgbox Route130_Text_ZV2Teacher, MSGBOX_NPC
+	end
+
+Route130_Text_ZV2Teacher:
+	.string "Welcome to WYNAUT DAYCARE!\nMotto: 'Why not?'\pSmall print: we are not\nresponsible.\pNot for lost WYNAUT, not for found\nWYNAUT, not for WYNAUT that are\lnow somehow a WOBBUFFET.$"
+
+Route130_EventScript_ZV2WynautA::
+	lock
+	faceplayer
+	playmoncry SPECIES_WYNAUT, CRY_MODE_NORMAL
+	msgbox Route130_Text_ZV2WynautA, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route130_Text_ZV2WynautA:
+	.string "WYNAUT: Wy? Wy? Wynaut!\pIt has asked 'why' 300 times today.\nNobody has an answer.$"
+
+Route130_EventScript_ZV2WynautB::
+	lock
+	faceplayer
+	playmoncry SPECIES_WYNAUT, CRY_MODE_NORMAL
+	msgbox Route130_Text_ZV2WynautB, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route130_Text_ZV2WynautB:
+	.string "WYNAUT: Wynaaaut.\pIt's taking a nap standing up.\nIts tail is still awake.$"
+
+Route130_EventScript_ZV2WynautC::
+	lock
+	faceplayer
+	playmoncry SPECIES_WYNAUT, CRY_MODE_NORMAL
+	msgbox Route130_Text_ZV2WynautC, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route130_Text_ZV2WynautC:
+	.string "WYNAUT: Wy!\pIt's guarding a sandcastle.\nThe sandcastle is just sand.$"
+
+Route130_EventScript_ZV2Honey::
+	trainerbattle_single TRAINER_BREEDER_HONEY, Route130_Text_ZV2Honey_Intro, Route130_Text_ZV2Honey_Defeat
+	msgbox Route130_Text_ZV2Honey_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route130_Text_ZV2Honey_Intro:
+	.string "Shift change! I'm the night\nsupervisor. It is noon.\pBattle me, sweetie. Nap time\nstarts when I win.$"
+
+Route130_Text_ZV2Honey_Defeat:
+	.string "No nap for anyone, then.\nThe WYNAUT will riot.$"
+
+Route130_Text_ZV2Honey_Post:
+	.string "Parents pick them up from MIRAGE\nISLAND. When it's there.\pWhen it isn't... more WYNAUT.$"
+@ --- einde zee_vulling_2 ---
+
+@ --- zee_vulling_4 (gegenereerd door tools/grounded/maptools/zee_vulling_4.py) ---
+Route130_EventScript_ZV4Bobby::
+	trainerbattle_single TRAINER_TUBER_BOBBY, Route130_Text_ZV4Bobby_Intro, Route130_Text_ZV4Bobby_Defeat
+	msgbox Route130_Text_ZV4Bobby_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route130_Text_ZV4Bobby_Intro:
+	.string "Mom said stay where she can see me.\nThat was in SLATEPORT.\pShe has very good eyes.\nProbably.$"
+
+Route130_Text_ZV4Bobby_Defeat:
+	.string "Can you tell my mom I'm fine?\nAnd that the tube is fine too?$"
+
+Route130_Text_ZV4Bobby_Post:
+	.string "I've been floating for two weeks.\nWAILMER bring me snacks.\lI'm never going home.$"
+
+Route130_EventScript_ZV4Photographer::
+	msgbox Route130_Text_ZV4Photographer, MSGBOX_NPC
+	end
+
+Route130_Text_ZV4Photographer:
+	.string "I'm waiting for MIRAGE ISLAND to\nappear. Then I take the photo.\pI've been here four years.\nI have 30,000 photos of water.\pOnce I went to get a sandwich.\nI hear it was beautiful.$"
+@ --- einde zee_vulling_4 ---

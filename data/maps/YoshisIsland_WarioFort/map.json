@@ -1,0 +1,128 @@
+{
+  "id": "MAP_YOSHIS_ISLAND_WARIO_FORT",
+  "name": "YoshisIsland_WarioFort",
+  "layout": "LAYOUT_YOSHIS_ISLAND_WARIO_FORT",
+  "music": "MUS_GROUNDED_YI_CASTLE",
+  "region_map_section": "MAPSEC_YOSHIS_ISLAND",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_INDOOR",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WARIO",
+      "x": 8,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_WarioFort_EventScript_Wario",
+      "flag": "FLAG_YI_WARIO_DONE",
+      "local_id": "LOCALID_YI_WARIO"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SHY_GUY_BLACK",
+      "x": 8,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_WarioFort_EventScript_Guards",
+      "flag": "FLAG_YI_FORT_GUARDS",
+      "local_id": "LOCALID_YI_FORT_GUARD_A"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SHY_GUY_PINK",
+      "x": 9,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_WarioFort_EventScript_Guards",
+      "flag": "FLAG_YI_FORT_GUARDS",
+      "local_id": "LOCALID_YI_FORT_GUARD_B"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_YOSHI",
+      "x": 10,
+      "y": 6,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "YoshisIsland_WarioFort_EventScript_Yoshi",
+      "flag": "FLAG_YI_YOSHI_HOME",
+      "local_id": "LOCALID_YI_FORT_YOSHI"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 2,
+      "y": 12,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GRIP_CLAW",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_GRIP_CLAW"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 15,
+      "y": 4,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MALICIOUS_ARMOR",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_MALICIOUS_ARMOR"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 8,
+      "y": 15,
+      "elevation": 3,
+      "dest_map": "MAP_YOSHIS_ISLAND_HILLS",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 8,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "YoshisIsland_WarioFort_EventScript_Throne"
+    },
+    {
+      "type": "sign",
+      "x": 9,
+      "y": 4,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "YoshisIsland_WarioFort_EventScript_Throne"
+    }
+  ]
+}

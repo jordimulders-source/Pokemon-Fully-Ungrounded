@@ -116,12 +116,9 @@ gSpecials::
 	def_special ShowEasyChatScreen
 	def_special ShowEasyChatProfile
 	def_special Script_GetCurrentMauvilleMan
-	def_special HasBardSongBeenChanged
-	def_special SaveBardSongLyrics
 	def_special HasHipsterTaughtWord
 	def_special SetHipsterTaughtWord
 	def_special HipsterTryTeachWord
-	def_special PlayBardSong
 	def_special SetMauvilleOldManObjEventGfx
 	def_special GenerateGiddyLine
 	def_special GiddyShouldTellAnotherTale
@@ -503,8 +500,6 @@ gSpecials::
 	def_special ScrollableMultichoice_RedrawPersistentMenu
 	def_special ChooseMonForMoveTutor
 	def_special ScrollableMultichoice_ClosePersistentMenu
-	def_special DoDeoxysRockInteraction
-	def_special SetDeoxysRockPalette
 	def_special DoMeteorSpaceFallWarp
 	def_special CreateEnemyEventMon
 	def_special StartMirageTowerDisintegration
@@ -602,9 +597,15 @@ gSpecials::
 	def_special Stadium_GetAnnouncerLine
 	def_special Grounded_PartyHasKubfu
 	def_special Grounded_EvolveKubfu
+	def_special Grounded_FindPartyDeoxys
+	def_special Grounded_SetDeoxysForm
 	def_special IsNightTime
 	def_special Grounded_CaughtRayquaza
+	def_special Grounded_CaughtXerneasAndYveltal
 	def_special Grounded_PartyHasShinyRayquaza
+	def_special FloatingMarket_OpenShop
+	def_special BpShop_Open
+	def_special BpShop_HyperTrain
 	def_special Burglar_SetupVars
 	def_special Burglar_SpawnThief
 	def_special Burglar_SpawnResident
@@ -618,3 +619,28 @@ gSpecials::
 	def_special Burglar_DebugForce
 	def_special ScorchedSlab_CountLitStones
 	def_special Grounded_GiantWailordSpot
+	def_special Grounded_UpdateTide
+	def_special Grounded_TideMinutesLeft
+	def_special FishTourney_GetBoardInfo
+	def_special FishTourney_Weigh
+	def_special FishTourney_ClaimPrize
+	def_special Forces_Finish
+	def_special Forces_PrepareBattle
+	def_special Forces_DebugForceNext
+	def_special Enamorus_Defeated
+	def_special Enamorus_DebugForceTown
+	def_special Grounded_SickBlikSpot
+	def_special Grounded_BufferWhiteOuts
+	def_special AzureFlute_GetHint
+	def_special AzureFlute_DebugCatchAll
+	def_special Casino_HasBp
+	def_special Casino_OpenCard
+	def_special Casino_StartArenaBattle
+	def_special Casino_SetArenaGfx
+	def_special Casino_Resolve
+	def_special Casino_CheckUnlock
+	def_special Casino_DebugUnlockAll
+	def_special Casino_GetTip
+	def_special Ultra_PickPortal
+	def_special Ultra_CountOpen
+	def_special Ultra_FindPartySunMoon

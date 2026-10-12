@@ -6517,6 +6517,7 @@ static void ReleaseMon(void)
     u16 item = ITEM_NONE;
 
     DestroyReleaseMonIcon();
+    IncrementGameStat(GAME_STAT_RELEASED_MONS);   // Project Grounded: omroeper van het Battle Stadium
     if (sIsMonBeingMoved)
     {
         sIsMonBeingMoved = FALSE;

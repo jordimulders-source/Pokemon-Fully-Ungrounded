@@ -52,14 +52,36 @@ ruis-crack ±1,4x, tanh x11, gate na 40 ms; RMS +3 dB); hihats 88 -> 76, bekkens
 50 -> 44. (3) Ducking korter en dieper: snare 10 -> 50 -> 100% in 10 ticks, kick 15 -> 55 -> 100% (1-2 frames).
 Balans afgesteld met solo-opnames in de game (recpcm, volX = 0) en offline gemengd met gains (lineair, gecontroleerd:
 som van de solo's = de mix, r = 0,996); zie MUZIEK.md (Log, Mitch v5). midi.cfg -V066 (Jordi hoorde v4 op -V070).
+v6 (Mitch zelf: 'die horn sound klinkt heel low quality ... maak hem misschien meer screechy/high pitched zoals de
+E4 theme'): noten, ritme, vorm, wobbles en mix exact v5; alleen het koper is nieuw (mitch_samples.py, brass6). Eén
+sample per lead-noot (F3-C5, 12 stuks) op de mixfrequentie 21.024 Hz, zodat de game niets transponeert (v5: één
+Eb4-sample op 22.050 Hz tot C5 omhoog: alles boven ±6 kHz vouwde terug), vervorming op 8x de samplerate, aanzet uit
+FluidR3 + een strikt periodieke loop (geen 8-bit-staart die naar 0 korrelt); de envelope zit in de voicegroup.
+Ruis/aliasing in de toon (gesimuleerde GBA-weergave, 8 bit + lineaire interpolatie): v5 -10..-15 dB, v6 -27..-31 dB.
+Twee varianten (BRASS_VARIANT): 'a' = dezelfde klank als v5 maar schoon; 'b' (standaard) = à la Elite Four: de
+sc88pro-trompet uit vs_elite_four heeft hetzelfde spectrum als FluidR3-trompet 56 (vlak tot de 8e harmonische),
+die een octaaf hoger bovenop (E4 speelt zijn hoorns rond D5-Bb5), de geschreven noot als body, feller vervormd
+(zwaartepunt ±1,1-1,8 kHz i.p.v. 0,4-1,5 kHz).
+v7 (Mitch via Jordi: 'nog steeds te goedkoop, misschien een ander instrument dan de horn'; SickBlik klinkt beter;
+het DnB-nummer zelf blijft): noten, ritme, drums, vorm en programmawissels exact v6; alleen klanken en mix.
+Gemeten (gba_sim per spoor, drop A): de synths (reese, koper, pluk, pad) hadden < 2% energie boven 2 kHz (alles op
+8-11 kHz sinds resample_wav --all: v6-koper 21 -> 11 kHz), het koper één schone oscillator met een loop van 20 ms
+(spectrum = losse harmonische lijnen, 'dicht' 4-6%), en het middengebied 150-2000 Hz maar 23% van de mix (SickBlik
+54%: tien echte instrumenten, akkoorden en ensembles in één sample). v7: de lead is geen hoorn meer maar een synth
+(LEAD, drie kandidaten, mitch_samples.py lead7: a supersaw-stab, b screech/hoover, c vocal chop), elk een stapel
+stemmen in één sample op 16 kHz (resample_wav.py houdt mitch7_* op 16 kHz), 3 samples per kandidaat (elke noot
+-2..+5 halve tonen getransponeerd, onder de 10,5 kHz van de mixer: geen terugvouwen); arpeggio op mitch7_pluck (vijf
+ontstemde zaagtanden + octaaf, 16 kHz), de rauwe reese op mitch7_reese_raw (16 kHz, lowpass 3,8 i.p.v. 2,5 kHz,
+loop 1 s); drums, wobbles en de donkere reese ongewijzigd. Mix luider (HQ-mixer): midi.cfg -V066 -> zie MIX_V.
 Zie tools/grounded/MUZIEK.md.
-Gebruik: python3 tools/grounded/mitch_theme.py"""
-import os, sys
+Gebruik: python3 tools/grounded/mitch_theme.py [a|b|c]   (lead-kandidaat; standaard LEAD)"""
+import os, re, sys
 import mido
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from musiclib import dedupe, detach, allocate, release_ticks, Song
 
 OUT = 'sound/songs/midi/mus_grounded_vs_mitch.mid'
+CFG = 'sound/songs/midi/midi.cfg'
 VG = 'grounded_mitch'
 TPB, BPM = 96, 172
 S = TPB // 4                 # zestiende
@@ -70,7 +92,20 @@ MAX_VOICES = 10              # gewone trainer
 # programma's (voicegroup grounded_mitch)
 REESE = {'raw': 32, 'dark': 33}
 WOB = {29: 34, 36: 35, 37: 36, 39: 37}                    # grondtoon -> wobble-sample (172 bpm)
-BRASS_LO, BRASS_HI, PLUCK, PAD_MIN, PAD_MAJ = 38, 39, 40, 41, 42
+PLUCK, PAD_MIN, PAD_MAJ = 40, 41, 42
+# v7: lead-kandidaat (Mitch kiest): 'a' supersaw-stab, 'b' screech/hoover, 'c' vocal chop (mitch_samples.py lead7)
+LEAD = 'b'
+LEAD = sys.argv[1] if len(sys.argv) > 1 else LEAD
+assert LEAD in ('a', 'b', 'c')
+# programma 43-54 = één programma per lead-noot (sinds v6; de MIDI blijft gelijk), v7: elk naar de dichtstbijzijnde
+# van drie samples (mitch7<LEAD>_lead_55/61/67)
+BRASS_NOTES = (53, 55, 56, 58, 60, 61, 63, 64, 65, 67, 68, 72)
+BRASS_PROG = {nt: 43 + i for i, nt in enumerate(BRASS_NOTES)}
+LEAD_ROOTS = (55, 61, 67)                                               # = LEAD7_ROOTS in mitch_samples.py
+LEAD_ROOT = {nt: min(LEAD_ROOTS, key=lambda r: (abs(nt - r), r)) for nt in BRASS_NOTES}
+assert all(-2 <= nt - r <= 5 for nt, r in LEAD_ROOT.items())
+MIX_V = 92                                                              # midi.cfg -V (v6: 66)
+ROLL_ON_KICK = 0.5                                                      # v7: roffelslag op een kick (x velocity)
 SUB, RISER, DRUMS = 84, 121, 127
 # drumkit (drumsets/mitch.inc, vanaf 36): naam, sample, release, lengte (ticks; ±de samplelengte)
 KIT = [
@@ -101,7 +136,9 @@ DROP_CH = ['Fm', 'Fm', 'Db', 'Eb', 'Fm', 'Fm', 'Db', 'C']
 BASS_ROOT = {'Fm': 'F1', 'Db': 'Db2', 'Eb': 'Eb2', 'C': 'C2'}
 # v5: lead (koper) -25%, reese/wobble/sub luider, arpeggio/pad/hihats/bekkens iets terug (v4: reese 80, wob 118,
 # brass 92, arp 52, pad 50, sub 60, hats 88, cym 84)
-VOL = {'reese': 60, 'wob': 110, 'brass': 69, 'arp': 44, 'pad': 44, 'sub': 84, 'hats': 76, 'cym': 72}
+# v7: lead/arpeggio op hun nieuwe samples even luid (A-gewogen) als v6 (LEAD_VOL, gemeten met gba_sim)
+LEAD_VOL = {'a': 89, 'b': 75, 'c': 70}
+VOL = {'reese': 60, 'wob': 110, 'brass': LEAD_VOL[LEAD], 'arp': 62, 'pad': 44, 'sub': 84, 'hats': 76, 'cym': 72}
 # v5: korter en dieper (1-2 frames; 1 frame = 4,6 ticks op 172 bpm). v4: snare 20->50->80->100% in 32 ticks,
 # kick 30->60->85->100% in 26 ticks
 DUCK = [(0, 0.10), (5, 0.50), (10, 1.0)]                                 # ducking na elke snare (ticks, factor)
@@ -204,7 +241,7 @@ def build():
             nt = n(nm) + oct
             st = t(b, p)
             P['brass'].append([st, st + (S + 8 if ln < 3 else 2 * S), nt, vel if p % 4 != 0 else min(127, vel + 3)])
-            prog['brass'].append((st, BRASS_LO if nt < n('Bb3') else BRASS_HI))
+            prog['brass'].append((st, BRASS_PROG[nt]))
 
     def arp(b, ch, vel=96):
         r = n(CHORDS[ch][0] + '3')
@@ -253,15 +290,19 @@ def build():
             hats(bb, 0.6 + 0.12 * i, dens=8 if i < 2 else 16, upto=12 if i == 3 else 16)
         # roffel: maat 1-2 achtsten, maat 3-4 zestienden, aanzwellend; stopt op de stille tel
         roll = [(b + i // 8, 2 * (i % 8)) for i in range(16)] + [(b + 2 + i // 16, i % 16) for i in range(28)]
+        kpos = {(b + i, p + d) for i in range(4) for p in ((0,), (0,), (0, 8), (0, 4, 8))[i] for d in (0, 1)}
         for k, (bb, p) in enumerate(roll):
-            SN(bb, p, int(48 + 79 * (k / (len(roll) - 1)) ** 1.3), duck=False)
+            v = int(48 + 79 * (k / (len(roll) - 1)) ** 1.3)
+            # v7: op een kick (en de 16e erna, de kick dreunt nog) de roffelslag op halve kracht: kick + snare tegelijk gaven de piek van het hele nummer
+            # (offline +35% boven de drops) en lieten de mixer bij -V > 066 omslaan; nu kan de mix luider
+            SN(bb, p, int(v * ROLL_ON_KICK) if (bb, p) in kpos else v, duck=False)
         # ruisriser (PSG): 32 achtsten, toonhoogte en volume omhoog
         P['noise'] += [[t(b) + i * E, min(end, t(b) + i * E + E), 34 + int(i * 1.5), 24 + 3 * i] for i in range(30)]
         # koperstoten 3-3-2 op de grondtoon, in maat 4 in achtsten tot de stilte
         for i, nm in enumerate(['Db4', 'Db4', 'C4', 'C4']):
             for p in ((0, 3, 6), (0, 3, 6), (0, 3, 6, 8, 11, 14), (0, 2, 4, 6, 8, 10))[i]:
                 P['brass'].append([t(b + i, p), t(b + i, p) + S + 8, n(nm), 108 + 5 * i])
-                prog['brass'].append((t(b + i, p), BRASS_HI))
+                prog['brass'].append((t(b + i, p), BRASS_PROG[n(nm)]))
         # reese: Db lang, dan C die over twee maten een octaaf opstijgt (de riser); sub mee tot de stilte
         reese(t(b), t(b + 2) - 8, n('Db2'), 'dark', 16, 110)
         sub(t(b), t(b + 2) - 8, n('Db2'), 104)
@@ -430,7 +471,7 @@ def main():
     layout = [  # naam, noten, programma, volume, kanaal, pan, ccs, extra
         ('reese', P['reese'], first(prog_['reese'], REESE['dark']), VOL['reese'], 0, 64,
          progs(prog_['reese']) + reese_ccs, reese_bends(P['reese'], bendev)),
-        ('brass', P['brass'], first(prog_['brass'], BRASS_LO), VOL['brass'], 1, 60,
+        ('brass', P['brass'], first(prog_['brass'], BRASS_PROG[53]), VOL['brass'], 1, 60,
          progs(prog_['brass']) + duck_ccs(VOL['brass'], snares, kicks), ()),
         ('arp', P['arp'], PLUCK, VOL['arp'], 2, 84, duck_ccs(VOL['arp'], snares, kicks), ()),
         ('pad', P['pad'], PAD_MIN, VOL['pad'], 3, 44, progs(prog_['pad']) + duck_ccs(VOL['pad'], snares, kicks), ()),
@@ -447,6 +488,10 @@ def main():
     assert not [k for k in P if P[k] and k not in written], 'partij niet weggeschreven'
     assert len(layout) <= 16
     song.save(OUT, LOOP_END)
+    cfg = open(CFG).read()
+    cfg2 = re.sub(r'^(mus_grounded_vs_mitch\.mid:.*-V)\d+', lambda m: m.group(1) + '%03d' % MIX_V, cfg, flags=re.M)
+    if cfg2 != cfg:
+        open(CFG, 'w').write(cfg2)
     sec = lambda tk: tk / TPB * 60 / BPM
     print(OUT, '%d sporen, intro %.1f s, loop %.1f s, totaal %.1f s' % (len(layout), sec(LOOP_START),
                                                                       sec(LOOP_END - LOOP_START), sec(LOOP_END)))
@@ -463,11 +508,13 @@ def write_voicegroup():
     ds = lambda smp, rel, key=60, att=255, dec=0, sus=255: \
         '\tvoice_directsound %d, 0, DirectSoundWaveData_%s, %d, %d, %d, %d' % (key, smp, att, dec, sus, rel)
     rep = {
-        32: ds('mitch5_reese_raw', 160), 33: ds('mitch5_reese_raw_dark', 160),
+        32: ds('mitch7_reese_raw', 160), 33: ds('mitch5_reese_raw_dark', 160),
         34: ds('mitch5_wob_f1', 170), 35: ds('mitch5_wob_c2', 170), 36: ds('mitch5_wob_db2', 170),
         37: ds('mitch5_wob_eb2', 170),
-        38: ds('mitch3_brass_lo', 160), 39: ds('mitch3_brass_hi', 160), 40: ds('mitch3_pluck', 150),
+        40: ds('mitch7_pluck', 150),
         41: ds('mitch_pad_min', 200, att=40), 42: ds('mitch_pad_maj', 200, att=40),
+        **{pr: ds('mitch7%s_lead_%d' % (LEAD, LEAD_ROOT[nt]), 160, key=LEAD_ROOT[nt], dec=248, sus=200)
+           for nt, pr in BRASS_PROG.items()},
         84: '\tvoice_programmable_wave_alt 60, 0, ProgrammableWaveData_8, 0, 7, 15, 1',
         121: '\tvoice_noise_alt 60, 0, 0, 3, 0, 15, 2',
         127: '\tvoice_keysplit_all voicegroup_mitch_drumset',

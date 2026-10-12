@@ -14,6 +14,11 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_TAPU_ISLE",
+      "offset": 0,
+      "direction": "up"
+    },
+    {
       "map": "MAP_ROUTE133",
       "offset": 0,
       "direction": "left"
@@ -154,9 +159,63 @@
       "trainer_sight_or_berry_tree_id": "ITEM_PROTEIN",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_ROUTE_132_PROTEIN"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 56,
+      "y": 13,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route132_EventScript_Beachcomber",
+      "flag": "FLAG_TIDE_HIGH"
     }
   ],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 60,
+      "y": 14,
+      "elevation": 3,
+      "item": "ITEM_BIG_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_132_BIG_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 47,
+      "y": 20,
+      "elevation": 3,
+      "item": "ITEM_STAR_PIECE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_132_STAR_PIECE"
+    },
+    {
+      "type": "sign",
+      "x": 47,
+      "y": 25,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route132_EventScript_TideCarving"
+    },
+    {
+      "type": "hidden_item",
+      "x": 46,
+      "y": 28,
+      "elevation": 3,
+      "item": "ITEM_SHOAL_SALT",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_R132_SHOAL_SALT"
+    },
+    {
+      "type": "hidden_item",
+      "x": 13,
+      "y": 16,
+      "elevation": 3,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_R132_HEART_SCALE"
+    }
+  ]
 }

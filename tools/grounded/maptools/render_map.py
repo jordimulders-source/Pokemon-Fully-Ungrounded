@@ -2,7 +2,7 @@ import json,struct,sys,os
 from PIL import Image, ImageDraw
 mapname=sys.argv[1]; out=sys.argv[2]
 d=json.load(open(f'data/maps/{mapname}/map.json'))
-L=[l for l in json.load(open('data/layouts/layouts.json'))['layouts'] if l['id']==d['layout']][0]
+L=[l for l in json.load(open('data/layouts/layouts.json'))['layouts'] if l.get('id')==d['layout']][0]
 w,h=L['width'],L['height']; v=struct.unpack(f'<{w*h}H',open(L['blockdata_filepath'],'rb').read())
 def tsdir(sym):
     import re

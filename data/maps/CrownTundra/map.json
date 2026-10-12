@@ -1,0 +1,114 @@
+{
+  "id": "MAP_CROWN_TUNDRA",
+  "name": "CrownTundra",
+  "layout": "LAYOUT_CROWN_TUNDRA",
+  "music": "MUS_RG_SEVII_ROUTE",
+  "region_map_section": "MAPSEC_CROWN_TUNDRA",
+  "requires_flash": false,
+  "weather": "WEATHER_SNOW",
+  "map_type": "MAP_TYPE_ROUTE",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_CROWN_TUNDRA_CALYREX",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(CALYREX)",
+      "x": 30,
+      "y": 10,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CrownTundra_EventScript_Calyrex",
+      "flag": "FLAG_TEMP_1"
+    },
+    {
+      "local_id": "LOCALID_CROWN_TUNDRA_GLASTRIER",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GLASTRIER)",
+      "x": 7,
+      "y": 21,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CrownTundra_EventScript_Glastrier",
+      "flag": "FLAG_TEMP_2"
+    },
+    {
+      "local_id": "LOCALID_CROWN_TUNDRA_SPECTRIER",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SPECTRIER)",
+      "x": 33,
+      "y": 23,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "CrownTundra_EventScript_Spectrier",
+      "flag": "FLAG_TEMP_3"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 4,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_ICE_GEM",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_CROWN_TUNDRA_ICE_GEM"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 34,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GHOST_GEM",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_CROWN_TUNDRA_GHOST_GEM"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 9,
+      "y": 5,
+      "elevation": 0,
+      "dest_map": "MAP_ROUTE136",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 31,
+      "y": 7,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "CrownTundra_EventScript_Altar"
+    },
+    {
+      "type": "hidden_item",
+      "x": 21,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_ICE_MEMORY",
+      "flag": "FLAG_HIDDEN_ITEM_CROWN_TUNDRA_ICE_MEMORY"
+    }
+  ]
+}

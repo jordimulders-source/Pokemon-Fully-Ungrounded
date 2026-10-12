@@ -192,6 +192,16 @@
       "blockdata_filepath": "data/layouts/Route102_MiniForest/map.bin"
     },
     {
+      "id": "LAYOUT_MEGA_FOREST",
+      "name": "MegaForest_Layout",
+      "width": 48,
+      "height": 56,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/MegaForest/border.bin",
+      "blockdata_filepath": "data/layouts/MegaForest/map.bin"
+    },
+    {
       "id": "LAYOUT_ROUTE103",
       "name": "Route103_Layout",
       "width": 80,
@@ -2952,6 +2962,66 @@
       "blockdata_filepath": "data/layouts/RegigigasTemple/map.bin"
     },
     {
+      "id": "LAYOUT_REGIGIGAS_TEMPLE_SEALED",
+      "name": "RegigigasTemple_Sealed_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_SnowTemple",
+      "border_filepath": "data/layouts/RegigigasTemple_Sealed/border.bin",
+      "blockdata_filepath": "data/layouts/RegigigasTemple_Sealed/map.bin"
+    },
+    {
+      "id": "LAYOUT_JAGGED_PASS_RUIN_CHAMBER",
+      "name": "JaggedPass_RuinChamber_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_RuinFire",
+      "border_filepath": "data/layouts/JaggedPass_RuinChamber/border.bin",
+      "blockdata_filepath": "data/layouts/JaggedPass_RuinChamber/map.bin"
+    },
+    {
+      "id": "LAYOUT_JAGGED_PASS_RUIN_CALDERA",
+      "name": "JaggedPass_RuinCaldera_Layout",
+      "width": 20,
+      "height": 18,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_RuinFire",
+      "border_filepath": "data/layouts/JaggedPass_RuinCaldera/border.bin",
+      "blockdata_filepath": "data/layouts/JaggedPass_RuinCaldera/map.bin"
+    },
+    {
+      "id": "LAYOUT_DESERT_UNDERPASS_RUIN_SHRINE",
+      "name": "DesertUnderpass_RuinShrine_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_RuinEarth",
+      "border_filepath": "data/layouts/DesertUnderpass_RuinShrine/border.bin",
+      "blockdata_filepath": "data/layouts/DesertUnderpass_RuinShrine/map.bin"
+    },
+    {
+      "id": "LAYOUT_PETALBURG_WOODS_RUIN_SHRINE",
+      "name": "PetalburgWoods_RuinShrine_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_RuinMoss",
+      "border_filepath": "data/layouts/PetalburgWoods_RuinShrine/border.bin",
+      "blockdata_filepath": "data/layouts/PetalburgWoods_RuinShrine/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE135_RUIN_SHRINE",
+      "name": "Route135_RuinShrine_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_SnowTownBase",
+      "secondary_tileset": "gTileset_RuinIce",
+      "border_filepath": "data/layouts/Route135_RuinShrine/border.bin",
+      "blockdata_filepath": "data/layouts/Route135_RuinShrine/map.bin"
+    },
+    {
       "id": "LAYOUT_REGIELEKI_CAVE",
       "name": "RegielekiCave_Layout",
       "width": 17,
@@ -4331,16 +4401,7 @@
       "border_filepath": "data/layouts/FarawayIsland_Interior/border.bin",
       "blockdata_filepath": "data/layouts/FarawayIsland_Interior/map.bin"
     },
-    {
-      "id": "LAYOUT_BIRTH_ISLAND_EXTERIOR",
-      "name": "BirthIsland_Exterior_Layout",
-      "width": 30,
-      "height": 30,
-      "primary_tileset": "gTileset_General",
-      "secondary_tileset": "gTileset_Dewford",
-      "border_filepath": "data/layouts/BirthIsland_Exterior/border.bin",
-      "blockdata_filepath": "data/layouts/BirthIsland_Exterior/map.bin"
-    },
+    {},
     {
       "id": "LAYOUT_METEOR_SPACE",
       "name": "MeteorSpace_Layout",
@@ -5040,6 +5101,1086 @@
       "secondary_tileset": "gTileset_Cave",
       "border_filepath": "data/layouts/Route127_WellspringGrotto/border.bin",
       "blockdata_filepath": "data/layouts/Route127_WellspringGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE132_LOW_TIDE",
+      "name": "Route132_LowTide_Layout",
+      "width": 80,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/Route132/border.bin",
+      "blockdata_filepath": "data/layouts/Route132_LowTide/map.bin"
+    },
+    {
+      "id": "LAYOUT_NOTHING_ISLAND",
+      "name": "NothingIsland_Layout",
+      "width": 44,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/NothingIsland/border.bin",
+      "blockdata_filepath": "data/layouts/NothingIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLASMA_FRIGATE_CORRIDOR",
+      "name": "PlasmaFrigate_Corridor_Layout",
+      "width": 18,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/PlasmaFrigate_Corridor/border.bin",
+      "blockdata_filepath": "data/layouts/PlasmaFrigate_Corridor/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLASMA_FRIGATE_CABINS",
+      "name": "PlasmaFrigate_Cabins_Layout",
+      "width": 36,
+      "height": 18,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/PlasmaFrigate_Cabins/border.bin",
+      "blockdata_filepath": "data/layouts/PlasmaFrigate_Cabins/map.bin"
+    },
+    {
+      "id": "LAYOUT_PLASMA_FRIGATE_HOLD",
+      "name": "PlasmaFrigate_Hold_Layout",
+      "width": 17,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/PlasmaFrigate_Hold/border.bin",
+      "blockdata_filepath": "data/layouts/PlasmaFrigate_Hold/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHIPWRECK_SHOALS",
+      "name": "ShipwreckShoals_Layout",
+      "width": 42,
+      "height": 58,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_ShipwreckShoals",
+      "border_filepath": "data/layouts/ShipwreckShoals/border.bin",
+      "blockdata_filepath": "data/layouts/ShipwreckShoals/map.bin"
+    },
+    {
+      "id": "LAYOUT_GHOST_SHIP_DECK",
+      "name": "GhostShip_Deck_Layout",
+      "width": 23,
+      "height": 21,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/GhostShip_Deck/border.bin",
+      "blockdata_filepath": "data/layouts/GhostShip_Deck/map.bin"
+    },
+    {
+      "id": "LAYOUT_GHOST_SHIP_CORRIDORS",
+      "name": "GhostShip_Corridors_Layout",
+      "width": 18,
+      "height": 12,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/GhostShip_Corridors/border.bin",
+      "blockdata_filepath": "data/layouts/GhostShip_Corridors/map.bin"
+    },
+    {
+      "id": "LAYOUT_GHOST_SHIP_CABINS",
+      "name": "GhostShip_Cabins_Layout",
+      "width": 18,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/GhostShip_Cabins/border.bin",
+      "blockdata_filepath": "data/layouts/GhostShip_Cabins/map.bin"
+    },
+    {
+      "id": "LAYOUT_GHOST_SHIP_CAPTAINS_OFFICE",
+      "name": "GhostShip_CaptainsOffice_Layout",
+      "width": 9,
+      "height": 7,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/GhostShip_CaptainsOffice/border.bin",
+      "blockdata_filepath": "data/layouts/GhostShip_CaptainsOffice/map.bin"
+    },
+    {
+      "id": "LAYOUT_FLOATING_MARKET",
+      "name": "FloatingMarket_Layout",
+      "width": 36,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/FloatingMarket/border.bin",
+      "blockdata_filepath": "data/layouts/FloatingMarket/map.bin"
+    },
+    {
+      "id": "LAYOUT_STEAM_ISLAND",
+      "name": "SteamIsland_Layout",
+      "width": 40,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/SteamIsland/border.bin",
+      "blockdata_filepath": "data/layouts/SteamIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_STEAM_ISLAND_CAVE",
+      "name": "SteamIsland_Cave_Layout",
+      "width": 17,
+      "height": 13,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Lavaridge",
+      "border_filepath": "data/layouts/SteamIsland_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/SteamIsland_Cave/map.bin"
+    },
+    {
+      "id": "LAYOUT_PARADISO_RESORT",
+      "name": "ParadisoResort_Layout",
+      "width": 40,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/ParadisoResort/border.bin",
+      "blockdata_filepath": "data/layouts/ParadisoResort/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_SEA_TEMPLE",
+      "name": "Underwater_SeaTemple_Layout",
+      "width": 22,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_SeaTemple/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_SeaTemple/map.bin"
+    },
+    {
+      "id": "LAYOUT_SEA_TEMPLE_HALL",
+      "name": "SeaTemple_Hall_Layout",
+      "width": 21,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/SeaTemple_Hall/border.bin",
+      "blockdata_filepath": "data/layouts/SeaTemple_Hall/map.bin"
+    },
+    {
+      "id": "LAYOUT_SEA_TEMPLE_SANCTUM",
+      "name": "SeaTemple_Sanctum_Layout",
+      "width": 21,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/SeaTemple_Sanctum/border.bin",
+      "blockdata_filepath": "data/layouts/SeaTemple_Sanctum/map.bin"
+    },
+    {
+      "id": "LAYOUT_WHIRL_ISLAND",
+      "name": "WhirlIsland_Layout",
+      "width": 40,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Mossdeep",
+      "border_filepath": "data/layouts/WhirlIsland/border.bin",
+      "blockdata_filepath": "data/layouts/WhirlIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_WHIRL_ISLAND",
+      "name": "Underwater_WhirlIsland_Layout",
+      "width": 20,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_WhirlIsland/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_WhirlIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_WHIRL_ISLAND_CAVE",
+      "name": "WhirlIsland_Cave_Layout",
+      "width": 27,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/WhirlIsland_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/WhirlIsland_Cave/map.bin"
+    },
+    {
+      "id": "LAYOUT_TAPU_ISLE",
+      "name": "TapuIsle_Layout",
+      "width": 56,
+      "height": 50,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_FortreeJungle",
+      "border_filepath": "data/layouts/TapuIsle/border.bin",
+      "blockdata_filepath": "data/layouts/TapuIsle/map.bin"
+    },
+    {
+      "id": "LAYOUT_FULLMOON_ISLAND",
+      "name": "FullmoonIsland_Layout",
+      "width": 38,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/FullmoonIsland/border.bin",
+      "blockdata_filepath": "data/layouts/FullmoonIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_ASHFROST_LODGE_2F",
+      "name": "AshfrostLodge_2F_Layout",
+      "width": 24,
+      "height": 7,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/AshfrostLodge_2F/border.bin",
+      "blockdata_filepath": "data/layouts/AshfrostLodge_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_ASHFROST_LODGE_ROOMS",
+      "name": "AshfrostLodge_Rooms_Layout",
+      "width": 36,
+      "height": 9,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/AshfrostLodge_Rooms/border.bin",
+      "blockdata_filepath": "data/layouts/AshfrostLodge_Rooms/map.bin"
+    },
+    {
+      "id": "LAYOUT_BEACON_ISLE",
+      "name": "BeaconIsle_Layout",
+      "width": 32,
+      "height": 48,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Dewford",
+      "border_filepath": "data/layouts/BeaconIsle/border.bin",
+      "blockdata_filepath": "data/layouts/BeaconIsle/map.bin"
+    },
+    {
+      "id": "LAYOUT_BEACON_ISLE_LIGHTHOUSE_1F",
+      "name": "BeaconIsle_Lighthouse_1F_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/BeaconIsle_Lighthouse_1F/border.bin",
+      "blockdata_filepath": "data/layouts/BeaconIsle_Lighthouse_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_BEACON_ISLE_LIGHTHOUSE_2F",
+      "name": "BeaconIsle_Lighthouse_2F_Layout",
+      "width": 16,
+      "height": 10,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Facility",
+      "border_filepath": "data/layouts/BeaconIsle_Lighthouse_2F/border.bin",
+      "blockdata_filepath": "data/layouts/BeaconIsle_Lighthouse_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_BEACON_ISLE_LIGHTHOUSE_TOP",
+      "name": "BeaconIsle_Lighthouse_Top_Layout",
+      "width": 18,
+      "height": 12,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_Shop",
+      "border_filepath": "data/layouts/BeaconIsle_Lighthouse_Top/border.bin",
+      "blockdata_filepath": "data/layouts/BeaconIsle_Lighthouse_Top/map.bin"
+    },
+    {
+      "id": "LAYOUT_TAO_ISLAND",
+      "name": "TaoIsland_Layout",
+      "width": 44,
+      "height": 38,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Pacifidlog",
+      "border_filepath": "data/layouts/TaoIsland/border.bin",
+      "blockdata_filepath": "data/layouts/TaoIsland/map.bin"
+    },
+    {
+      "id": "LAYOUT_TAO_ISLAND_DEN",
+      "name": "TaoIsland_Den_Layout",
+      "width": 36,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MeteorFalls",
+      "border_filepath": "data/layouts/TaoIsland_Den/border.bin",
+      "blockdata_filepath": "data/layouts/TaoIsland_Den/map.bin"
+    },
+    {
+      "id": "LAYOUT_MIRAGE_BAZAAR",
+      "name": "MirageBazaar_Layout",
+      "width": 30,
+      "height": 27,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Slateport",
+      "border_filepath": "data/layouts/MirageBazaar/border.bin",
+      "blockdata_filepath": "data/layouts/MirageBazaar/map.bin"
+    },
+    {
+      "id": "LAYOUT_MIRAGE_BAZAAR_VAULT",
+      "name": "MirageBazaar_Vault_Layout",
+      "width": 23,
+      "height": 23,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_BattlePyramid",
+      "border_filepath": "data/layouts/MirageBazaar_Vault/border.bin",
+      "blockdata_filepath": "data/layouts/MirageBazaar_Vault/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNDERWATER_ROUTE127_TRENCH",
+      "name": "Underwater_Route127_Trench_Layout",
+      "width": 40,
+      "height": 101,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Underwater",
+      "border_filepath": "data/layouts/Underwater_Route127_Trench/border.bin",
+      "blockdata_filepath": "data/layouts/Underwater_Route127_Trench/map.bin"
+    },
+    {
+      "id": "LAYOUT_GRANITE_CAVE_CRYSTAL_GROTTO",
+      "name": "GraniteCave_CrystalGrotto_Layout",
+      "width": 16,
+      "height": 17,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/GraniteCave_CrystalGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/GraniteCave_CrystalGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_SHOAL_CAVE_LOW_TIDE_FROZEN_DEPTHS",
+      "name": "ShoalCave_LowTideFrozenDepths_Layout",
+      "width": 18,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/ShoalCave_LowTideFrozenDepths/border.bin",
+      "blockdata_filepath": "data/layouts/ShoalCave_LowTideFrozenDepths/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE128_BUBBLE_GROTTO",
+      "name": "Route128_BubbleGrotto_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route128_BubbleGrotto/border.bin",
+      "blockdata_filepath": "data/layouts/Route128_BubbleGrotto/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE126_HERMIT_CRATER",
+      "name": "Route126_HermitCrater_Layout",
+      "width": 30,
+      "height": 26,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Sootopolis",
+      "border_filepath": "data/layouts/Route126_HermitCrater/border.bin",
+      "blockdata_filepath": "data/layouts/Route126_HermitCrater/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE126_SILENT_CRATER",
+      "name": "Route126_SilentCrater_Layout",
+      "width": 28,
+      "height": 25,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Sootopolis",
+      "border_filepath": "data/layouts/Route126_SilentCrater/border.bin",
+      "blockdata_filepath": "data/layouts/Route126_SilentCrater/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAVENDER_TOWN",
+      "name": "LavenderTown_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_LavenderHauntGeneral",
+      "secondary_tileset": "gTileset_LavenderHaunt",
+      "border_filepath": "data/layouts/LavenderTown/border.bin",
+      "blockdata_filepath": "data/layouts/LavenderTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPACETIME_CAVE",
+      "name": "SpacetimeCave_Layout",
+      "width": 27,
+      "height": 68,
+      "primary_tileset": "gTileset_SpacetimeGeneral",
+      "secondary_tileset": "gTileset_SpacetimeCave",
+      "border_filepath": "data/layouts/SpacetimeCave/border.bin",
+      "blockdata_filepath": "data/layouts/SpacetimeCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_TOWER_1F",
+      "name": "PokemonTower_1F_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonTower",
+      "border_filepath": "data/layouts/PokemonTower_1F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonTower_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_TOWER_2F",
+      "name": "PokemonTower_2F_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonTower",
+      "border_filepath": "data/layouts/PokemonTower_2F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonTower_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_TOWER_3F",
+      "name": "PokemonTower_3F_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonTower",
+      "border_filepath": "data/layouts/PokemonTower_3F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonTower_3F/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_TOWER_4F",
+      "name": "PokemonTower_4F_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonTower",
+      "border_filepath": "data/layouts/PokemonTower_4F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonTower_4F/map.bin"
+    },
+    {
+      "id": "LAYOUT_POKEMON_TOWER_5F",
+      "name": "PokemonTower_5F_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_Building",
+      "secondary_tileset": "gTileset_PokemonTower",
+      "border_filepath": "data/layouts/PokemonTower_5F/border.bin",
+      "blockdata_filepath": "data/layouts/PokemonTower_5F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_1F",
+      "name": "CeruleanCave_1F_Layout",
+      "width": 40,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_1F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_2F",
+      "name": "CeruleanCave_2F_Layout",
+      "width": 40,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_2F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CERULEAN_CAVE_B1F",
+      "name": "CeruleanCave_B1F_Layout",
+      "width": 40,
+      "height": 23,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CeruleanCave",
+      "border_filepath": "data/layouts/CeruleanCave_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/CeruleanCave_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAVENDER_TOWN_CALM",
+      "name": "LavenderTown_Calm_Layout",
+      "width": 24,
+      "height": 20,
+      "primary_tileset": "gTileset_LavenderCalmGeneral",
+      "secondary_tileset": "gTileset_LavenderCalm",
+      "border_filepath": "data/layouts/LavenderTown_Calm/border.bin",
+      "blockdata_filepath": "data/layouts/LavenderTown_Calm/map.bin"
+    },
+    {
+      "id": "LAYOUT_ROUTE126_CORAL_CATHEDRAL",
+      "name": "Route126_CoralCathedral_Layout",
+      "width": 35,
+      "height": 35,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/Route126_CoralCathedral/border.bin",
+      "blockdata_filepath": "data/layouts/Route126_CoralCathedral/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHARGESTONE_CAVE_1F",
+      "name": "ChargestoneCave_1F_Layout",
+      "width": 50,
+      "height": 40,
+      "primary_tileset": "gTileset_ChargestoneGeneral",
+      "secondary_tileset": "gTileset_Chargestone",
+      "border_filepath": "data/layouts/ChargestoneCave_1F/border.bin",
+      "blockdata_filepath": "data/layouts/ChargestoneCave_1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHARGESTONE_CAVE_B1F",
+      "name": "ChargestoneCave_B1F_Layout",
+      "width": 54,
+      "height": 46,
+      "primary_tileset": "gTileset_ChargestoneGeneral",
+      "secondary_tileset": "gTileset_Chargestone",
+      "border_filepath": "data/layouts/ChargestoneCave_B1F/border.bin",
+      "blockdata_filepath": "data/layouts/ChargestoneCave_B1F/map.bin"
+    },
+    {
+      "id": "LAYOUT_CHARGESTONE_CAVE_B2F",
+      "name": "ChargestoneCave_B2F_Layout",
+      "width": 46,
+      "height": 40,
+      "primary_tileset": "gTileset_ChargestoneGeneral",
+      "secondary_tileset": "gTileset_Chargestone",
+      "border_filepath": "data/layouts/ChargestoneCave_B2F/border.bin",
+      "blockdata_filepath": "data/layouts/ChargestoneCave_B2F/map.bin"
+    },
+    {
+      "id": "LAYOUT_NATIONAL_PARK",
+      "name": "NationalPark_Layout",
+      "width": 50,
+      "height": 60,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Rustboro",
+      "border_filepath": "data/layouts/NationalPark/border.bin",
+      "blockdata_filepath": "data/layouts/NationalPark/map.bin"
+    },
+    {
+      "id": "LAYOUT_NATIONAL_PARK_RUINED",
+      "name": "NationalPark_Ruined_Layout",
+      "width": 50,
+      "height": 60,
+      "primary_tileset": "gTileset_ParkBurntGeneral",
+      "secondary_tileset": "gTileset_ParkBurntRustboro",
+      "border_filepath": "data/layouts/NationalPark_Ruined/border.bin",
+      "blockdata_filepath": "data/layouts/NationalPark_Ruined/map.bin"
+    },
+    {
+      "id": "LAYOUT_ILEX_FOREST",
+      "name": "IlexForest_Layout",
+      "width": 40,
+      "height": 48,
+      "primary_tileset": "gTileset_IlexGeneral",
+      "secondary_tileset": "gTileset_IlexForest",
+      "border_filepath": "data/layouts/IlexForest/border.bin",
+      "blockdata_filepath": "data/layouts/IlexForest/map.bin"
+    },
+    {
+      "id": "LAYOUT_SWORD_CHAMBER",
+      "name": "SwordChamber_Layout",
+      "width": 15,
+      "height": 14,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/SwordChamber/border.bin",
+      "blockdata_filepath": "data/layouts/SwordChamber/map.bin"
+    },
+    {
+      "id": "LAYOUT_UNCHARTED_ISLE",
+      "name": "UnchartedIsle_Layout",
+      "width": 28,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_UnchartedIsle",
+      "border_filepath": "data/layouts/UnchartedIsle/border.bin",
+      "blockdata_filepath": "data/layouts/UnchartedIsle/map.bin"
+    },
+    {
+      "id": "LAYOUT_MANGROVE_MIRE_VIRIZION_GLADE",
+      "name": "MangroveMire_VirizionGlade_Layout",
+      "width": 20,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_MangroveMire",
+      "border_filepath": "data/layouts/MangroveMire_VirizionGlade/border.bin",
+      "blockdata_filepath": "data/layouts/MangroveMire_VirizionGlade/map.bin"
+    },
+    {
+      "id": "LAYOUT_GLIMWOOD_TANGLE",
+      "name": "GlimwoodTangle_Layout",
+      "width": 48,
+      "height": 60,
+      "primary_tileset": "gTileset_GlimwoodGeneral",
+      "secondary_tileset": "gTileset_Glimwood",
+      "border_filepath": "data/layouts/GlimwoodTangle/border.bin",
+      "blockdata_filepath": "data/layouts/GlimwoodTangle/map.bin"
+    },
+    {
+      "id": "LAYOUT_GLIMWOOD_TANGLE_DYING",
+      "name": "GlimwoodTangle_Dying_Layout",
+      "width": 48,
+      "height": 60,
+      "primary_tileset": "gTileset_GlimwoodGeneralDying",
+      "secondary_tileset": "gTileset_GlimwoodDying",
+      "border_filepath": "data/layouts/GlimwoodTangle/border.bin",
+      "blockdata_filepath": "data/layouts/GlimwoodTangle/map.bin"
+    },
+    {
+      "id": "LAYOUT_GLIMWOOD_TANGLE_BALLONLEA",
+      "name": "GlimwoodTangle_Ballonlea_Layout",
+      "width": 36,
+      "height": 34,
+      "primary_tileset": "gTileset_GlimwoodGeneral",
+      "secondary_tileset": "gTileset_Glimwood",
+      "border_filepath": "data/layouts/GlimwoodTangle_Ballonlea/border.bin",
+      "blockdata_filepath": "data/layouts/GlimwoodTangle_Ballonlea/map.bin"
+    },
+    {
+      "id": "LAYOUT_GLIMWOOD_TANGLE_BALLONLEA_DYING",
+      "name": "GlimwoodTangle_Ballonlea_Dying_Layout",
+      "width": 36,
+      "height": 34,
+      "primary_tileset": "gTileset_GlimwoodGeneralDying",
+      "secondary_tileset": "gTileset_GlimwoodDying",
+      "border_filepath": "data/layouts/GlimwoodTangle_Ballonlea/border.bin",
+      "blockdata_filepath": "data/layouts/GlimwoodTangle_Ballonlea/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_RIM",
+      "name": "AreaZero_Rim_Layout",
+      "width": 60,
+      "height": 54,
+      "primary_tileset": "gTileset_AreaZeroGeneral",
+      "secondary_tileset": "gTileset_AreaZero",
+      "border_filepath": "data/layouts/AreaZero_Rim/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_Rim/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_DEPTHS",
+      "name": "AreaZero_Depths_Layout",
+      "width": 60,
+      "height": 54,
+      "primary_tileset": "gTileset_AreaZeroGeneralDeep",
+      "secondary_tileset": "gTileset_AreaZeroDeep",
+      "border_filepath": "data/layouts/AreaZero_Depths/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_Depths/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_CRYSTAL",
+      "name": "AreaZero_Crystal_Layout",
+      "width": 60,
+      "height": 54,
+      "primary_tileset": "gTileset_AreaZeroGeneralCrystal",
+      "secondary_tileset": "gTileset_AreaZeroCrystal",
+      "border_filepath": "data/layouts/AreaZero_Crystal/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_Crystal/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_FUTURE",
+      "name": "AreaZero_Future_Layout",
+      "width": 64,
+      "height": 52,
+      "primary_tileset": "gTileset_AreaZeroGeneralFuture",
+      "secondary_tileset": "gTileset_AreaZeroFuture",
+      "border_filepath": "data/layouts/AreaZero_Future/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_Future/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_PAST",
+      "name": "AreaZero_Past_Layout",
+      "width": 64,
+      "height": 52,
+      "primary_tileset": "gTileset_AreaZeroGeneralPast",
+      "secondary_tileset": "gTileset_AreaZeroPast",
+      "border_filepath": "data/layouts/AreaZero_Past/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_Past/map.bin"
+    },
+    {
+      "id": "LAYOUT_AREA_ZERO_TERA_CAVE",
+      "name": "AreaZero_TeraCave_Layout",
+      "width": 44,
+      "height": 38,
+      "primary_tileset": "gTileset_AreaZeroGeneralTera",
+      "secondary_tileset": "gTileset_AreaZeroTera",
+      "border_filepath": "data/layouts/AreaZero_TeraCave/border.bin",
+      "blockdata_filepath": "data/layouts/AreaZero_TeraCave/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_BEACH",
+      "name": "YoshisIsland_Beach_Layout",
+      "width": 37,
+      "height": 24,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiBeach",
+      "border_filepath": "data/layouts/YoshisIsland_Beach/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_Beach/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_HILLS",
+      "name": "YoshisIsland_Hills_Layout",
+      "width": 40,
+      "height": 32,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiHills",
+      "border_filepath": "data/layouts/YoshisIsland_Hills/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_Hills/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_BOO_MANSION",
+      "name": "YoshisIsland_BooMansion_Layout",
+      "width": 18,
+      "height": 14,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiBoo",
+      "border_filepath": "data/layouts/YoshisIsland_BooMansion/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_BooMansion/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_WARIO_FORT",
+      "name": "YoshisIsland_WarioFort_Layout",
+      "width": 18,
+      "height": 16,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiFort",
+      "border_filepath": "data/layouts/YoshisIsland_WarioFort/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_WarioFort/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAKE_ACUITY",
+      "name": "LakeAcuity_Layout",
+      "width": 48,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Snow",
+      "border_filepath": "data/layouts/LakeAcuity/border.bin",
+      "blockdata_filepath": "data/layouts/LakeAcuity/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAKE_VALOR",
+      "name": "LakeValor_Layout",
+      "width": 48,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/LakeValor/border.bin",
+      "blockdata_filepath": "data/layouts/LakeValor/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAKE_VERITY",
+      "name": "LakeVerity_Layout",
+      "width": 48,
+      "height": 42,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Fortree",
+      "border_filepath": "data/layouts/LakeVerity/border.bin",
+      "blockdata_filepath": "data/layouts/LakeVerity/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAKE_ACUITY_CAVERN",
+      "name": "LakeAcuity_Cavern_Layout",
+      "width": 15,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/LakeAcuity_Cavern/border.bin",
+      "blockdata_filepath": "data/layouts/LakeAcuity_Cavern/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAKE_VALOR_CAVERN",
+      "name": "LakeValor_Cavern_Layout",
+      "width": 15,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/LakeValor_Cavern/border.bin",
+      "blockdata_filepath": "data/layouts/LakeValor_Cavern/map.bin"
+    },
+    {
+      "id": "LAYOUT_LAKE_VERITY_CAVERN",
+      "name": "LakeVerity_Cavern_Layout",
+      "width": 15,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Cave",
+      "border_filepath": "data/layouts/LakeVerity_Cavern/border.bin",
+      "blockdata_filepath": "data/layouts/LakeVerity_Cavern/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_4F_ROOM1",
+      "name": "MtCoronet_4F_Room1_Layout",
+      "width": 40,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetCave",
+      "border_filepath": "data/layouts/MtCoronet_4F_Room1/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_4F_Room1/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_4F_OUTSIDE",
+      "name": "MtCoronet_4F_Outside_Layout",
+      "width": 56,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetSnow",
+      "border_filepath": "data/layouts/MtCoronet_4F_Outside/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_4F_Outside/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_4F_ROOM2",
+      "name": "MtCoronet_4F_Room2_Layout",
+      "width": 18,
+      "height": 16,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetCave",
+      "border_filepath": "data/layouts/MtCoronet_4F_Room2/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_4F_Room2/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_4F_ROOM3",
+      "name": "MtCoronet_4F_Room3_Layout",
+      "width": 42,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetCave",
+      "border_filepath": "data/layouts/MtCoronet_4F_Room3/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_4F_Room3/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_5F",
+      "name": "MtCoronet_5F_Layout",
+      "width": 36,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetCave",
+      "border_filepath": "data/layouts/MtCoronet_5F/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_5F/map.bin"
+    },
+    {
+      "id": "LAYOUT_MT_CORONET_6F",
+      "name": "MtCoronet_6F_Layout",
+      "width": 24,
+      "height": 30,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_CoronetCave",
+      "border_filepath": "data/layouts/MtCoronet_6F/border.bin",
+      "blockdata_filepath": "data/layouts/MtCoronet_6F/map.bin"
+    },
+    {
+      "id": "LAYOUT_SPEAR_PILLAR",
+      "name": "SpearPillar_Layout",
+      "width": 34,
+      "height": 46,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SpearPillar",
+      "border_filepath": "data/layouts/SpearPillar/border.bin",
+      "blockdata_filepath": "data/layouts/SpearPillar/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_JUNGLE",
+      "name": "YoshisIsland_Jungle_Layout",
+      "width": 40,
+      "height": 30,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiJungle",
+      "border_filepath": "data/layouts/YoshisIsland_Jungle/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_Jungle/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_CAVE",
+      "name": "YoshisIsland_Cave_Layout",
+      "width": 24,
+      "height": 17,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiCave",
+      "border_filepath": "data/layouts/YoshisIsland_Cave/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_Cave/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_FLOWERS",
+      "name": "YoshisIsland_Flowers_Layout",
+      "width": 36,
+      "height": 30,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiFlowers",
+      "border_filepath": "data/layouts/YoshisIsland_Flowers/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_Flowers/map.bin"
+    },
+    {
+      "id": "LAYOUT_CROWN_TUNDRA",
+      "name": "CrownTundra_Layout",
+      "width": 40,
+      "height": 34,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Snow",
+      "border_filepath": "data/layouts/CrownTundra/border.bin",
+      "blockdata_filepath": "data/layouts/CrownTundra/map.bin"
+    },
+    {
+      "id": "LAYOUT_HALL_OF_ORIGIN_STAIRWAY",
+      "name": "HallOfOrigin_Stairway_Layout",
+      "width": 26,
+      "height": 52,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SpearPillar",
+      "border_filepath": "data/layouts/HallOfOrigin_Stairway/border.bin",
+      "blockdata_filepath": "data/layouts/HallOfOrigin_Stairway/map.bin"
+    },
+    {
+      "id": "LAYOUT_HALL_OF_ORIGIN_ATRIUM",
+      "name": "HallOfOrigin_Atrium_Layout",
+      "width": 34,
+      "height": 40,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SpearPillar",
+      "border_filepath": "data/layouts/HallOfOrigin_Atrium/border.bin",
+      "blockdata_filepath": "data/layouts/HallOfOrigin_Atrium/map.bin"
+    },
+    {
+      "id": "LAYOUT_HALL_OF_ORIGIN_SUMMIT",
+      "name": "HallOfOrigin_Summit_Layout",
+      "width": 30,
+      "height": 36,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_SpearPillar",
+      "border_filepath": "data/layouts/HallOfOrigin_Summit/border.bin",
+      "blockdata_filepath": "data/layouts/HallOfOrigin_Summit/map.bin"
+    },
+    {
+      "id": "LAYOUT_YOSHIS_ISLAND_YOSHI_HOUSE",
+      "name": "YoshisIsland_YoshiHouse_Layout",
+      "width": 14,
+      "height": 12,
+      "primary_tileset": "gTileset_YoshiIslandBase",
+      "secondary_tileset": "gTileset_YoshiHouse",
+      "border_filepath": "data/layouts/YoshisIsland_YoshiHouse/border.bin",
+      "blockdata_filepath": "data/layouts/YoshisIsland_YoshiHouse/map.bin"
+    },
+    {
+      "id": "LAYOUT_ABANDONED_SHIP_NIGHT_DECK",
+      "name": "AbandonedShip_NightDeck_Layout",
+      "width": 13,
+      "height": 11,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/AbandonedShip_NightDeck/border.bin",
+      "blockdata_filepath": "data/layouts/AbandonedShip_NightDeck/map.bin"
+    },
+    {
+      "id": "LAYOUT_ABANDONED_SHIP_NIGHT_CABINS",
+      "name": "AbandonedShip_NightCabins_Layout",
+      "width": 44,
+      "height": 15,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_InsideShip",
+      "border_filepath": "data/layouts/AbandonedShip_NightCabins/border.bin",
+      "blockdata_filepath": "data/layouts/AbandonedShip_NightCabins/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_NIHILEGO",
+      "name": "UltraSpace_Nihilego_Layout",
+      "width": 40,
+      "height": 32,
+      "primary_tileset": "gTileset_UltraWorldNihilegoGround",
+      "secondary_tileset": "gTileset_UltraWorldNihilego",
+      "border_filepath": "data/layouts/UltraSpace_Nihilego/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Nihilego/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_BUZZWOLE",
+      "name": "UltraSpace_Buzzwole_Layout",
+      "width": 40,
+      "height": 32,
+      "primary_tileset": "gTileset_UltraWorldBuzzwoleGround",
+      "secondary_tileset": "gTileset_UltraWorldBuzzwole",
+      "border_filepath": "data/layouts/UltraSpace_Buzzwole/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Buzzwole/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_PHEROMOSA",
+      "name": "UltraSpace_Pheromosa_Layout",
+      "width": 40,
+      "height": 32,
+      "primary_tileset": "gTileset_UltraWorldPheromosaGround",
+      "secondary_tileset": "gTileset_UltraWorldPheromosa",
+      "border_filepath": "data/layouts/UltraSpace_Pheromosa/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Pheromosa/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_XURKITREE",
+      "name": "UltraSpace_Xurkitree_Layout",
+      "width": 40,
+      "height": 32,
+      "primary_tileset": "gTileset_UltraWorldXurkitreeGround",
+      "secondary_tileset": "gTileset_UltraWorldXurkitree",
+      "border_filepath": "data/layouts/UltraSpace_Xurkitree/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Xurkitree/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_CELESTEELA",
+      "name": "UltraSpace_Celesteela_Layout",
+      "width": 48,
+      "height": 36,
+      "primary_tileset": "gTileset_UltraWorldCelesteelaGround",
+      "secondary_tileset": "gTileset_UltraWorldCelesteela",
+      "border_filepath": "data/layouts/UltraSpace_Celesteela/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Celesteela/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_KARTANA",
+      "name": "UltraSpace_Kartana_Layout",
+      "width": 36,
+      "height": 30,
+      "primary_tileset": "gTileset_UltraWorldKartanaGround",
+      "secondary_tileset": "gTileset_UltraWorldKartana",
+      "border_filepath": "data/layouts/UltraSpace_Kartana/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Kartana/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_GUZZLORD",
+      "name": "UltraSpace_Guzzlord_Layout",
+      "width": 44,
+      "height": 35,
+      "primary_tileset": "gTileset_UltraBGuzzlordBase",
+      "secondary_tileset": "gTileset_UltraBGuzzlord",
+      "border_filepath": "data/layouts/UltraSpace_Guzzlord/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Guzzlord/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_POIPOLE",
+      "name": "UltraSpace_Poipole_Layout",
+      "width": 42,
+      "height": 34,
+      "primary_tileset": "gTileset_UltraBPoipoleBase",
+      "secondary_tileset": "gTileset_UltraBPoipole",
+      "border_filepath": "data/layouts/UltraSpace_Poipole/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Poipole/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_STAKATAKA",
+      "name": "UltraSpace_Stakataka_Layout",
+      "width": 41,
+      "height": 33,
+      "primary_tileset": "gTileset_UltraBStakatakaBase",
+      "secondary_tileset": "gTileset_UltraBStakataka",
+      "border_filepath": "data/layouts/UltraSpace_Stakataka/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Stakataka/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_BLACEPHALON",
+      "name": "UltraSpace_Blacephalon_Layout",
+      "width": 40,
+      "height": 32,
+      "primary_tileset": "gTileset_UltraBBlacephalonBase",
+      "secondary_tileset": "gTileset_UltraBBlacephalon",
+      "border_filepath": "data/layouts/UltraSpace_Blacephalon/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Blacephalon/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_NECROZMA",
+      "name": "UltraSpace_Necrozma_Layout",
+      "width": 42,
+      "height": 32,
+      "primary_tileset": "gTileset_UltraBNecrozmaBase",
+      "secondary_tileset": "gTileset_UltraBNecrozma",
+      "border_filepath": "data/layouts/UltraSpace_Necrozma/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Necrozma/map.bin"
+    },
+    {
+      "id": "LAYOUT_ULTRA_SPACE_HUB",
+      "name": "UltraSpace_Hub_Layout",
+      "width": 26,
+      "height": 22,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_UltraHub",
+      "border_filepath": "data/layouts/UltraSpace_Hub/border.bin",
+      "blockdata_filepath": "data/layouts/UltraSpace_Hub/map.bin"
     }
   ]
 }

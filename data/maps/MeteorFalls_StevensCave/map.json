@@ -27,6 +27,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MeteorFalls_StevensCave_EventScript_Steven",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 25,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_MAX_REVIVE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_KV4_METEORFALLS_STEVENSCAVE_MAX_REVIVE"
     }
   ],
   "warp_events": [
@@ -39,5 +52,22 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 3,
+      "y": 17,
+      "elevation": 3,
+      "item": "ITEM_IRON_PLATE",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_METEORFALLS_STEVENSCAVE_IRON_PLATE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 23,
+      "y": 15,
+      "elevation": 3,
+      "item": "ITEM_METAL_COAT",
+      "flag": "FLAG_HIDDEN_ITEM_KV4_METEORFALLS_STEVENSCAVE_METAL_COAT"
+    }
+  ]
 }

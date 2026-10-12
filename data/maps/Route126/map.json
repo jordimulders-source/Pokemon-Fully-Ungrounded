@@ -146,9 +146,209 @@
       "trainer_sight_or_berry_tree_id": "7",
       "script": "Route126_EventScript_Leonardo",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_MAN",
+      "x": 39,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route126_EventScript_ZVOldCouple",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_OLD_WOMAN",
+      "x": 40,
+      "y": 5,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route126_EventScript_ZVOldCouple",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_WOMAN_3",
+      "x": 72,
+      "y": 40,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route126_EventScript_ZVVolunteer",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
+      "x": 71,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route126_EventScript_ZVCrate",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_DITTO_DOLL",
+      "x": 77,
+      "y": 37,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route126_EventScript_ZVDuck",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 71,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_METAL_COAT",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ROUTE_126_METAL_COAT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MAN_5",
+      "x": 73,
+      "y": 61,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route126_EventScript_ZVOswald",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
+      "x": 38,
+      "y": 63,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Route126_EventScript_ZVSirena",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SAILOR",
+      "x": 73,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route126_EventScript_ZV3Marty",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MOVING_BOX",
+      "x": 76,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route126_EventScript_ZV3TV",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(SEEL)",
+      "x": 77,
+      "y": 38,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route126_EventScript_ZV3Seel",
+      "flag": "FLAG_TEMP_11"
     }
   ],
   "warp_events": [],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 38,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_BERRY_JUICE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_126_BERRY_JUICE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 74,
+      "y": 37,
+      "elevation": 3,
+      "item": "ITEM_BLACK_SLUDGE",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_126_BLACK_SLUDGE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 74,
+      "y": 62,
+      "elevation": 3,
+      "item": "ITEM_PRETTY_FEATHER",
+      "flag": "FLAG_HIDDEN_ITEM_ROUTE_126_PRETTY_FEATHER"
+    },
+    {
+      "type": "sign",
+      "x": 75,
+      "y": 38,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Route126_EventScript_ZV3Ticket"
+    },
+    {
+      "type": "hidden_item",
+      "x": 73,
+      "y": 41,
+      "elevation": 3,
+      "item": "ITEM_ELIXIR",
+      "flag": "FLAG_HIDDEN_ITEM_ZV3_R126_ELIXIR"
+    },
+    {
+      "type": "hidden_item",
+      "x": 43,
+      "y": 5,
+      "elevation": 3,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_R126_STARDUST"
+    },
+    {
+      "type": "hidden_item",
+      "x": 41,
+      "y": 6,
+      "elevation": 3,
+      "item": "ITEM_DIVE_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_R126_DIVE_BALL"
+    }
+  ]
 }

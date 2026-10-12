@@ -440,3 +440,6 @@ if __name__ == '__main__':
     if len(sys.argv) > 1:
         os.makedirs(sys.argv[1], exist_ok=True)
         preview(keys, ball, fl, sys.argv[1])
+    # deel 1: de tribune (wave, spandoek DP PENNINGS) als film vóór de penalty
+    import dave_stadium
+    dave_stadium.build(sys.argv[1] if len(sys.argv) > 1 else None)

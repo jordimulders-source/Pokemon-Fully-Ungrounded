@@ -8,6 +8,7 @@ AbandonedShip_Corridors_B1F_OnResume:
 	end
 
 AbandonedShip_Corridors_B1F_OnLoad:
+	call AbandonedShip_Corridors_B1F_EventScript_NightHatchTiles
 	call_if_unset FLAG_USED_STORAGE_KEY, AbandonedShip_Corridors_B1F_EventScript_LockStorageRoom
 	call_if_set FLAG_USED_STORAGE_KEY, AbandonedShip_Corridors_B1F_EventScript_UnlockStorageRoom
 	end
@@ -86,3 +87,35 @@ AbandonedShip_Text_TheDoorIsOpen:
 	.string "The door is open. But are you really\n"
 	.string "sure you wanna go in?$"
 
+@ --- benedendek (gegenereerd door abandoned_ship_night.py) ---
+AbandonedShip_Corridors_B1F_EventScript_NightHatchTiles::
+	specialvar VAR_RESULT, IsNightTime
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_NopReturn
+	setmetatile 11, 6, 0x20A, FALSE
+	setmetatile 12, 6, 0x20B, TRUE
+	return
+
+AbandonedShip_Corridors_B1F_EventScript_NightHatch::
+	specialvar VAR_RESULT, IsNightTime
+	goto_if_eq VAR_RESULT, TRUE, AbandonedShip_Corridors_B1F_EventScript_NightHatchOpen
+	msgbox AbandonedShip_Corridors_B1F_Text_HatchDay, MSGBOX_SIGN
+	end
+
+AbandonedShip_Corridors_B1F_EventScript_NightHatchOpen::
+	msgbox AbandonedShip_Corridors_B1F_Text_HatchNight, MSGBOX_SIGN
+	end
+
+AbandonedShip_Corridors_B1F_Text_HatchDay:
+	.string "A hatch in the floor, boarded up with\n"
+	.string "suspicious enthusiasm.\p"
+	.string "Someone chalked on the planks: “LOWER\n"
+	.string "DECK. OPEN AFTER DARK.”\p"
+	.string "Underneath, in shakier handwriting:\n"
+	.string "“please don't.”$"
+
+AbandonedShip_Corridors_B1F_Text_HatchNight:
+	.string "The boards are gone. A staircase leads\n"
+	.string "down into the dark.\p"
+	.string "Cold air drifts up, smelling of seaweed\n"
+	.string "and poor decisions.$"
+@ --- einde benedendek ---

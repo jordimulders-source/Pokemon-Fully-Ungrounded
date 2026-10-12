@@ -54,8 +54,15 @@
 #define GAME_STAT_NUM_UNION_ROOM_BATTLES      50
 #define GAME_STAT_PLAYED_BERRY_CRUSH          51
 #define GAME_STAT_DEXNAV_SCANNED              52
+// Project Grounded (8 okt): tellers voor de omroeper van het Battle Stadium. Oude saves hebben hier rommel staan;
+// GetGameStat zet ze bij het eerste gebruik op 0 (FLAG_GROUNDED_STATS_V1).
+#define GAME_STAT_WHITE_OUTS                  53
+#define GAME_STAT_FLED_BATTLES                54
+#define GAME_STAT_RELEASED_MONS               55
+#define GAME_STAT_OWN_MONS_FAINTED            56
+#define GROUNDED_GAME_STATS_START             GAME_STAT_WHITE_OUTS
 
-#define NUM_USED_GAME_STATS                   53
+#define NUM_USED_GAME_STATS                   57
 #define NUM_GAME_STATS                        64
 
 #endif // GUARD_CONSTANTS_GAME_STAT_H

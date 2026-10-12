@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # Teksten post-game events (stijlronde)
 
 Voor en na van de herschreven teksten (Genesect, Mewtwo, Giratina, Jirachi, Darkrai, Shaymin, Kubfu-dojo). " / " = nieuw tekstvak. Logica ongewijzigd; alleen tekst.

@@ -15,6 +15,13 @@ Bouwt (idempotent, vaste seed):
 map.json en scripts.inc van ToadstoolHollow staan met de hand in data/maps/ToadstoolHollow.
 
 Gebruik: python3 tools/grounded/maptools/mushroom_forest.py"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import math, os, random, shutil, struct
 from collections import deque
 from PIL import Image
@@ -832,3 +839,8 @@ if inc not in es:
     es = es.replace(anchor, anchor + inc, 1)
     open('data/event_scripts.s', 'w').write(es)
 print('klaar', W, 'x', H)
+
+
+# national_park.py bouwt hier later op verder; meteen erna draaien, anders verdwijnen die wijzigingen.
+import subprocess as _sp  # noqa: E402
+_sp.check_call([sys.executable, "tools/grounded/maptools/national_park.py"])

@@ -203,3 +203,28 @@ Route114_Text_LanettesHouse:
 	.string "LANETTE'S HOUSE\p"
 	.string "(She made your PC. Be nice.)$"
 
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route114_EventScript_EF_ZinniaRoute114::
+	trainerbattle_single TRAINER_ZINNIA_ROUTE_114, Route114_Text_EF_ZinniaRoute114Intro, Route114_Text_EF_ZinniaRoute114Defeat
+	msgbox Route114_Text_EF_ZinniaRoute114PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route114_Text_EF_ZinniaRoute114Intro:
+	.string "ZINNIA: Shh. Listen. Hear that?\p"
+	.string "A lake full of meteors, crashing\n"
+	.string "down for ten thousand years.\p"
+	.string "My people wrote a song about it.\n"
+	.string "Forty-seven verses.\p"
+	.string "I'll hum it while I beat you.$"
+
+Route114_Text_EF_ZinniaRoute114Defeat:
+	.string "Verse thirty-two is about you now.\n"
+	.string "It's not flattering.$"
+
+Route114_Text_EF_ZinniaRoute114PostBattle:
+	.string "ZINNIA: Somewhere up there, a rock\n"
+	.string "is still falling.\p"
+	.string "Ten thousand years of falling.\n"
+	.string "Honestly? Relatable.$"
+
+@ }

@@ -3,6 +3,8 @@
 #include "event_data.h"
 #include "caps.h"
 #include "pokemon.h"
+#include "data.h"
+#include "constants/opponents.h"
 
 
 u32 GetCurrentLevelCap(void)
@@ -38,8 +40,61 @@ u32 GetCurrentLevelCap(void)
     return MAX_LEVEL;
 }
 
+// Project Grounded: ace-level van de volgende mijlpaal (gym, na badge 8 de kampioen, daarna 100); zie LEVELCURVE.md
+u32 GetGroundedCatchUpTarget(void)
+{
+    static const u16 sMilestones[][2] =
+    {
+        {FLAG_BADGE01_GET, TRAINER_ROXANNE_1},
+        {FLAG_BADGE02_GET, TRAINER_BRAWLY_1},
+        {FLAG_BADGE03_GET, TRAINER_WATTSON_1},
+        {FLAG_BADGE04_GET, TRAINER_FLANNERY_1},
+        {FLAG_BADGE05_GET, TRAINER_NORMAN_1},
+        {FLAG_BADGE06_GET, TRAINER_WINONA_1},
+        {FLAG_BADGE07_GET, TRAINER_TATE_AND_LIZA_1},
+        {FLAG_BADGE08_GET, TRAINER_WALLACE_1},
+        {FLAG_IS_CHAMPION, TRAINER_CHAMPION_STEVEN},
+    };
+    u32 i, j, ace = 0;
+
+    for (i = 0; i < ARRAY_COUNT(sMilestones); i++)
+    {
+        if (!FlagGet(sMilestones[i][0]))
+        {
+            const struct Trainer *trainer = &gTrainers[DIFFICULTY_NORMAL][sMilestones[i][1]];
+            for (j = 0; j < trainer->partySize; j++)
+            {
+                if (trainer->party[j].lvl > ace)
+                    ace = trainer->party[j].lvl;
+            }
+            return ace;
+        }
+    }
+    return MAX_LEVEL;
+}
+
+// Project Grounded: inhaal-EXP. Onder het ace-level van de volgende mijlpaal krijgt een Pokémon
+// B_CATCHUP_EXP_STEP procent extra EXP per level achterstand (max. B_CATCHUP_EXP_MAX procent).
+// Erboven verandert er niets (geen levelcap).
+static u32 GetGroundedCatchUpExp(u32 level, u32 expValue)
+{
+    u32 target, bonus;
+
+    if (!B_GROUNDED_CATCHUP_EXP)
+        return expValue;
+    target = GetGroundedCatchUpTarget();
+    if (level >= target)
+        return expValue;
+    bonus = (target - level) * B_CATCHUP_EXP_STEP;
+    if (bonus > B_CATCHUP_EXP_MAX)
+        bonus = B_CATCHUP_EXP_MAX;
+    return expValue * (100 + bonus) / 100;
+}
+
 u32 GetSoftLevelCapExpValue(u32 level, u32 expValue)
 {
+    expValue = GetGroundedCatchUpExp(level, expValue);
+
     static const u32 sExpScalingDown[5] = { 4, 8, 16, 32, 64 };
     static const u32 sExpScalingUp[5]   = { 16, 8, 4, 2, 1 };
 

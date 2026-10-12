@@ -200,15 +200,24 @@ BattleScript_TryPrintCaughtMonInfo:
 	displaydexinfo
 BattleScript_TryNicknameCaughtMon::
 	@ Project Grounded: geen bijnaamvraag na het vangen; een bijnaam geven kan via het summary-scherm (rename)
+	@ givecaughtmon begint bij MULTIUSE_STATE 0 (displaydexinfo laat er iets anders in staan)
+	setbyte gBattleCommunication, 0
 	givecaughtmon BattleScript_SuccessBallThrowEnd
 	printfromtable gCaughtMonStringIds
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_SuccessBallThrowEnd
 BattleScript_GiveCaughtMonEnd::
+	setbyte gBattleCommunication, 0
 	givecaughtmon BattleScript_SuccessBallThrowEnd
 BattleScript_SuccessBallThrowEnd::
+	callnative BS_GroundedObedienceWarnCaught @ Project Grounded: melding als hij boven de badge-grens zit
 	setbyte gBattleOutcome, B_OUTCOME_CAUGHT
 	finishturn
+
+BattleScript_GroundedObedienceWarnCaught::
+	printstring STRINGID_OBEYWARN_CAUGHT
+	waitmessage B_WAIT_TIME_LONG
+	return
 
 BattleScript_WallyBallThrow::
 	printstring STRINGID_GOTCHAPKMNCAUGHTWALLY
@@ -295,4 +304,13 @@ BattleScript_TrainerBSlideMsgRet::
 
 BattleScript_TrainerBSlideMsgEnd2::
 	call BattleScript_TrainerBSlideMsgRet
+	end2
+
+@ Project Grounded: Battle Stadium (doubles): beide tegenstanders praten vóór de eerste beurt, om beurten
+BattleScript_StadiumTrainerABSlideMsgEnd2::
+	call BattleScript_TrainerASlideMsgRet
+	callnative BS_StadiumTrainerBSlide
+	.4byte BattleScript_StadiumTrainerABSlideEnd
+	call BattleScript_TrainerBSlideMsgRet
+BattleScript_StadiumTrainerABSlideEnd:
 	end2

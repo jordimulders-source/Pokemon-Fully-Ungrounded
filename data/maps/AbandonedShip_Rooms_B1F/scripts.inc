@@ -29,7 +29,7 @@ AbandonedShip_Rooms_B1F_EventScript_TrashCan::
 	playmoncry SPECIES_MUK, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_MUK, 32
+	setwildbattle SPECIES_MUK, 49
 	dowildbattle
 	release
 	end

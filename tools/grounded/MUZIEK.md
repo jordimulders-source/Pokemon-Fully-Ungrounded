@@ -46,6 +46,23 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - `rs_drumset` begint op noot 36; PSG-drumnoten (piepjes): 37, 44, 49, 51, 52, 56, 58, 61, 63. Snare = 38,
   crash = 57, tamboerijn = 54, kick = 36, clap = 39.
 - Noten onder E1 (28) op DirectSound klinken als een vervormde dreun; bas liefst E1–E3.
+- **8-bit afronding per kanaal = de "overload"** (v0.9.240, gemeten): de mixer telt elk kanaal op in de 8-bit-buffer
+  (`(vol*sample)>>8`, afgekapt), dus elk kanaal brengt eigen afrondingsruis mee: ruisvloer ±−32 dB onder het signaal,
+  die met de noten mee aan- en uitgaat. Bij heldere nummers (Athletic) gemaskeerd, bij donkere/zachte (YI Overworld,
+  Castle: origineel −53 dB) hoort Jordi "alsof mn speakers eraan gaan". Kanaalvolumes zijn ook in vanilla laag
+  (mediaan 12–35 van 255). Tegengif: zo hard mixen als veilig kan (piek ±110), zachte zuivere partijen en bassen op
+  PSG, of een 16-bit-mixer (HQ-mixer van ipatix: voorstel, wacht op Jordi). Meten: solo per spoor uit de mixbuffer
+  (`scratchpad/ovl/solo2.py`-aanpak; de mGBA-audiobuffer heeft bursts die metingen vertekenen).
+- **HQ-mixer (v0.9.245, op proef):** 16-bit mixen, één afronding met noise shaping, klemt i.p.v. omslaan.
+  Gemeten: ruisvloer 1–8 kHz 4–6 dB lager (YI), kreten/geluidseffecten identiek, minder vertraagde frames (Rayquaza-
+  gevecht 34 i.p.v. 46 per 2400). Volumes en pieken onveranderd, dus de mixregels (piek ±110) blijven gelden.
+- **`voice_directsound_no_resample` speelt op de mixersnelheid (21.024 Hz)**, niet op de rate van de sample: een
+  drum van 13.379 Hz (alle vanilla-kits) klinkt sinds v0.9.32 ±7,8 halve tonen hoger en 36% korter, een van 16 kHz
+  +4,7. Eigen kits: `voice_directsound 60, ...` (speelt op toets 60 met de eigen rate).
+
+- **Eigen samples max. 11 kHz** (v0.9.232, Jordi: A/B SickBlik "prima"): de mixer draait op 21 kHz/8 bit, hogere rates kosten alleen ROM. Drums (drumsets/) blijven; grondtoon ≥ C6 → 16 kHz. Na elke `*_samples.py`/`gm_samples.py` en elke merge: `python3 tools/grounded/resample_wav.py --all`. Akkoorden als één sample (SickBlik) klinken voller maar kosten ±30 KB per akkoord.
+
+- **Rips (SPC/MP2K) op volume brengen (v0.9.240, gecorrigeerd):** de mixbuffer slaat pas om bij 128 (meet met `recpcm.py`, nu links én rechts). Richtwaarde: piek ±100–112 in batchrec. Lager laat de afrondingsruis van de mixer horen ("overload", zie De engine). SNES-samples eerst Gauss-filteren (`soften` in spc2gba.py) en de velocity schalen op de piek **ná** dat filter (drums verliezen tot 12 dB piek). Korte loops nooit rekken of verlagen (valse toon, zoem). Vergelijk met de GBA-versie uit een minigsf (gsflib = hele ROM, nummer op het adres uit de minigsf).
 
 ## Opnemen (valkuilen)
 - De audiobuffer van mGBA moet **elke frame** worden uitgelezen, ook tijdens menu-navigatie; anders loopt hij over
@@ -82,6 +99,7 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Wally 1–5 | `wally_theme.py` | goedgekeurd | "Wally" |
 | Regigigas | `regigigas_theme.py` | wacht op Jordi (v5) | "Regigigas" |
 | Mewtwo | `mewtwo_theme.py` | v3 | "Mewtwo" |
+| Mew (remix van Mewtwo) | `mew_theme.py` | v3 wacht op Jordi (Mewtwo-arrangement, minder dreigend) | "Mew v1", "Mew v2", "Mew v3" |
 | Dave (Freed From Desire) | `freed_theme.py` | goedgekeurd | "Dave" |
 | Beasts (Raikou/Entei/Suicune) | `beasts_theme.py` | goedgekeurd | "Raikou", "Beasts" |
 | Zinnia, Ghetsis, PSG-drumfixes | `midi_songs.py` | goedgekeurd | "Zinnia", "Ghetsis", "PSG-drums" |
@@ -96,8 +114,10 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Mitch (DnB) | `mitch_theme.py` | v4 in de maak (v3-ritme/vorm 'spot-on'; luidere wobble, keiharde kit) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v8 in de maak (noten/timing v7 'perfect'; GBA-soundfont-instrumenten) | "Neo Plasma" |
 | Heatran | `heatran_theme.py` | v7 wacht op opname (v6 'saai': meerdere riffs, 74/130 bpm, palm-mutes/slides) | "Heatran" |
-| Mitch (DnB) | `mitch_theme.py` | v5 in de maak (v4 '95%'; alleen de mix: bas baas, lead zachter, hardere kit) | "Mitch" |
+| Mitch (DnB) | `mitch_theme.py` | v7 wacht op Mitch (v6 'nog te goedkoop, ander instrument dan de horn'; alleen klanken: lead-synth A supersaw / B screech (standaard) / C vocal chop, `LEAD` bovenin) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v9 in de maak (vette opening-run, valse noten B-sectie, brug) | "Neo Plasma" |
+| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v10 wacht op opname (glissando-intro, octaaffix orgeldeel, dikke bas, hats in de break) | "Neo Plasma" |
+| Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v12 wacht op Jordi (noten v11, alleen stock-Emerald-instrumenten: trompet-lead, fingered bass, organ2, PSG, rs-kit) | "Neo Plasma" |
 | Heatran | `heatran_theme.py` | v6 in de maak (from scratch, gemeten aan Jordi's Kyuss-mp3's) | "Heatran" |
 | Mitch (DnB) | `mitch_theme.py` | v3 in de maak (duistere DnB) | "Mitch" |
 | Neo Plasma (BW2-remake) | `neo_plasma_theme.py` | v7 in de maak (vol, gelaagd) | "Neo Plasma" |
@@ -107,6 +127,27 @@ herkennen is, komt ook als controle in `music_lint.py`.
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | Wattson goedgekeurd; Roxanne/Brawly/Flannery v3 (anti-kermis, half-time), wacht op opname | "Gymleiders" |
 | Gymleiders 1-4 (Roxanne, Brawly, Wattson, Flannery) | `gym_remixes.py` | v1 in de maak | "Gymleiders" |
 | Gymleiders 5-8 (Norman, Winona, Tate & Liza, Wallace) | `gym_remixes2.py` | Wallace, Norman goedgekeurd; Winona/Tate & Liza v3 (anti-kermis), wacht op opname | "Gymleiders" |
+| Burglar (SIMON) | `burglar_theme.py` | v1 wacht op opname (noir-jazz-sluipen -> alarm -> achtervolging) | "Burglar" |
+| Battle! Tapu | `tapu_theme.py`, `tapu_samples.py` | v6 GOEDGEKEURD en gekoppeld (Jordi, 6 okt) | "Tapu" |
+| Ho-Oh (658) | `hooh_theme.py`, `hooh_samples.py` | v2 VOLDOENDE VOOR DE BETA (Jordi: "niet perfect maar voldoende"; na de beta evt. helderder/percussie). Was: (v1 'te vrolijk, trompet/fluit schel': E-klein hirajoshi, shakuhachi/koto/shamisen/taiko als eigen samples, geen trompet/whistle) | "Ho-Oh" |
+| Forces of Nature (Tornadus, Thundurus, Landorus) | `forces_theme.py` | v2 GOEDGEKEURD (v1 'Megaman/SNES'; v2 volle GBA-orkestratie, Landorus 132 bpm battle-groove) | "Forces" |
+| Lugia | `lugia_theme.py` | v2 GOEDGEKEURD (v1 'bijna helemaal goed'; v2 = accelerando 144->164 met drumopbouw op 30-33 s) | "Lugia" |
+| Treasures of Ruin (683) | `ruinous_theme.py`, `ruinous_samples.py` | v8 wacht op Jordi (v7 'heel dichtbij'; v8: stem 'other' maat 21-65 op zijn eigen plek, 2-maatsstukken 8 kHz DPCM; 447 KB samples) | "Ruinous" |
+| Zacian & Zamazenta (684), Xerneas & Yveltal (685), Uxie/Mesprit/Azelf (686) | `legends3_theme.py` | v1 wacht op opname (eigen composities, alleen stock-samples) | "Legends3" |
+| Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py`; 682: `vs_areazero_theme.py`, `vs_areazero_samples.py` | 681 v10: begeleiding m1-64 + koor + aria uit het origineel; 682 v1: het origineel in 10 knippen (11025 Hz, DPCM) | "Area Zero" |
+| Battle! Pokémon Tower (687) | `tower_theme.py` | v1 wacht op Jordi (Lavender-remix, 160 bpm, alleen stock-samples, alle gevechten in MAPSEC_POKEMON_TOWER) | "Tower" |
+| Hoenn-wildthema regionaal (673 vulkaan, 674 woestijn, 675 water, 680 onderwater; v1.0.x lichte variaties 704 zee, 705 sneeuw, 706 spook, 707 nacht) | `regio_theme.py`, `regio_samples.py` | v1 wacht op Jordi (remixes van mus_vs_wild: melodie/tweede stem/bas van het origineel, begeleiding nieuw; stock + 1 steel drum) | "Regio" |
+| Battle! Legendary Pokémon (670) | `legendary_theme.py` | v1 wacht op Jordi (generiek legendary-thema, Hoenn-stijl: Weather Trio-pauken, E4-koper, 176 bpm, alleen stock-samples) | "Legendary" |
+| Hoenn-wildthema grotten (708 grot, 709 Meteor Falls, 710 Fiery Path) | `regio_theme2.py` | v2 wacht op Jordi (v1: 'achtergrondpercussie irritant' = hyoushigi, eruit; lichte remixes van mus_vs_wild, alleen stock-samples) | "Grot-remixes" |
+| Battle! Arceus (676) | `arceus_theme.py` | v1 wacht op Jordi (noten 1-op-1 uit zijn DPPt-MIDI, alleen stock-samples, gekoppeld in de Hall of Origin) | "Arceus" |
+| Battle! Dialga/Palkia (678) | `dialga_theme.py` | v1 wacht op Jordi (uit zijn MIDI, alleen stock-samples, ±9 KB) | "Dialga" |
+| Battle! Ultra Beast (677) | `ub_theme.py`, `ub_samples.py` | v1 wacht op Jordi (eigen compositie, octatonisch/heeltoons, 7/8, glazen FM-lead met microtonale bends; alle UB-gevechten in Ultra Space) | "Ultra Beast" |
+| Area Zero (681) + Battle! Area Zero (682) | `areazero_theme.py`, `areazero_samples.py` | v8: begeleiding m5-39 + koor + aria uit het origineel geknipt, 682 geschrapt (Jordi) | "Area Zero" |
+| Trainerklasse-remixes van MUS_VS_TRAINER (696-703: SEA, MOUNTAIN, NATURE, MYSTIC, CHIC, ROCK, ELITE, KIDS) | `trclass_theme.py`, `trclass_samples.py` | MOUNTAIN/NATURE/MYSTIC/ELITE/KIDS GOEDGEKEURD (Jordi); SEA/CHIC/ROCK v2 wacht op Jordi (SEA 144 bpm, CHIC zonder ride-bell, ROCK echte powerchords) | "Trainerklassen" |
+| Route 119+-wildthema (711) | `route119_battle_theme.py` | v1 wacht op Jordi (melodieën/harmonie uit mus_route119, 176 bpm in triolen-galop, trompet/hoorns/strijkers/pauken, alleen stock-samples; landroutes 119-123, 135, 136) | "Route 119+" |
+| Nachtversies stadsthema's (712-725, MUS_GROUNDED_NIGHT_*) | `night_towns.py` | v1 goedgekeurd ("uitstekend"; origineel 1-op-1, tempo x0,87-0,92, EP/hoorn/fretless/harp, 50%-blokgolven, brushes; gekoppeld in `GetLocationMusic`); v2 Slateport/Lilycove trager (x0,80) en rustiger, wacht op Jordi | "Nachtversies" |
+| Route 119+-wildthema (711) | `route119_battle_theme.py` | v2 wacht op Jordi (v1 'slecht geremixed, klanken vallen weg, te veel een snellere versie van het origineel': nu een eigen Hoenn-gevechtsthema, 180 bpm rechte 8en, motief alleen geciteerd; stemverdeler met echte m4a-envelope; landroutes 119-123, 135, 136) | "Route 119+" |
+| Nachtversies stadsthema's (712-725, MUS_GROUNDED_NIGHT_*) | `night_towns.py` | v1 wacht op Jordi (origineel 1-op-1, tempo x0,87-0,92, EP/hoorn/fretless/harp, 50%-blokgolven, brushes; gekoppeld in `GetLocationMusic`) | "Nachtversies" |
 
 Goedgekeurde nummers niet meer aanraken. Volgende kandidaten: `MUZIEK_KANDIDATEN.md` (repo-root).
 
@@ -456,3 +497,453 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   piek/mediaan 16. Brawly-referentie (Face the Pain, librosa): ±112 bpm, kick 2-2,7 en gitaar 1-2 aanslagen per tel
   (gesyncopeerde zestienden), 49% < 250 Hz; Spleeter werkt hier niet (typer-fout).
 
+- Brawly v4 (Jordi over v3: 'speelgoedaccordeon/fluitje + akoestische tokkels, onhoorbare bas, blikken kick, scratches
+  weg'): **oorzaak gemeten met solo-opnames in één test-ROM** + klankvergelijking (`gba_sim.timbre_rank(..., audio=solo)`:
+  dezelfde noten met elk GM-instrument via FluidR3 gerenderd, MFCC-afstand): de chugs (gym_bra_epower, 2 ticks + rel 70
+  = ±40 ms) lagen het dichtst bij mondharmonica/tango-accordeon, de bas (5 ticks) bij pick bass/pizzicato, de lead bij
+  piano/koper (= Jordi's 'koper/synth-lead'); de scratch was een koor-'aah' met sinusvormige snelheid = zuivere
+  glijtoon (flatness 0,005, ±900 Hz) = glijfluitje. Kortom: korte stoten van een aangehouden GBA-distortionakkoord
+  zonder plectrumaanslag klinken als riet. `kermis_meter` keurt nu af: tonale kit-effecten (flatness < 0,03 en > 400 Hz),
+  en met `metal=True` begeleidingsnoten < 110 ms (incl. uitklinktijd) en een lage laag die < 80% van de loop klinkt.
+  De GM-klankvergelijking is alleen info: hij noemt elk vervormd GBA-akkoord 'koper/zaagtand' (ook FluidR3-distortion).
+  Fix: palm-mute-sample met plectrum + dichtklappende lowpass, muur-powerchords (tweede Emerald-distortion) op tel 1 en
+  elke akkoordwissel, overdrive-bas uit de Emerald-fingered bass in achtsten, PSG-ruis open hats (. x . x), breedbandige
+  scratches alleen op de overgangen. Bas t.o.v. lead +40%, t.o.v. drums +34%, t.o.v. de rest +25% (de muur is erbij).
+  -V068: 0 overlopen, piek 81/127, RMS 2960. Restverschil met Face the Pain: < 60 Hz 2,5% tegen 11-19% (subkick).
+- Neo Plasma v10 (Gemini-feedback over v9): **eerst de preview-start vaststellen** (hier 0 s: Gemini's 'arpeggio's
+  0:10-0:30 goed' = de farp van maat 7-22, '1:08' = het orgeldeel maat 50). **Octaaffouten in een transcriptie** vind
+  je met `octcheck` (per maat: CQT van de Spleeter-stem 'other' op de noot vs. een octaaf lager/hoger; lage noten
+  kloppen niet, die zitten in de basstem): orgel/saw/sinus in maat 50-62 een octaaf te hoog (10-16 dB). 'Hol piepje' =
+  te weinig grondtoon in de sample (sc88pro_synth_bass: 17% op f0, 46% op 2f0 = klinkt een octaaf hoger): grondtoon als
+  sinus erbij, fase uit de FFT van de loop, exact 16 perioden per loop. Glissando = één noot per stuk ladder met
+  pitchwheel elke 16 ticks (BENDR 12, ±12 halve tonen; mid2agb schrijft BEND + running status). **Mix-varianten
+  meten zonder extra ROM**: volX (MusicPlayerTrack +19, standaard 64, x = vol*volX>>5) per spoor elke frame zetten +
+  vlag 0x03 (anders pakt m4a het niet op) bootst CC7- en -V-wijzigingen exact na in recpcm/recaudio. -V064: 0
+  overlopen, piek 86/127, RMS 3157; < 150 Hz in de brug 42% (met de dunne bas 34%, origineel 52%).
+- Burglar v1 (`burglar_theme.py`, samples `burglar_samples.py`, kit `drumsets/burglar.inc`; noir-jazz-heist, D-klein):
+  swing 150 bpm (de 'en' op 2/3 van de tel: `tick()`), accelerando per tel 152-174 in de twee alarmmaten -> 176 recht,
+  ritardando terug; tempo van het loopbegin op de looptick. Anti-kermis als harde controle in het script
+  (`anti_kermis()`: geen begeleidingsnoot boven de klinkende melodienoot, voor de alarmstoot de bovenste toon van de
+  voicing; geen bas-sprong >= 5 halve tonen omhoog op een 'en'; PSG-sirene alleen waar de melodie rust). Alarmstoot =
+  één sample per voicing (bari D3 + koper D4/Ab4/C#5, tanh + stootenvelop: FluidR3-koper zwelt anders aan, piek pas op
+  0,43 s). Vingerknip gesynthetiseerd (ruis door bandpass 2,3 kHz, 35 ms). FluidR3 Brush-kit = bank 128 prog 40.
+
+- Brawly v5 (Gemini noemde muur, bas en open hats 'ontbrekend' terwijl v4 ze had): **meet hoorbaarheid A-gewogen per
+  solo-spoor** (emulator-audio met volX = 0 op de andere sporen, incl. PSG): lead 74% van de waargenomen luidheid,
+  muur 15%, bas 7%, hats 0,4%. Oorzaken: (1) **`gba_tone(..., base)` = de echte toonhoogte van de bronsample op zijn
+  eigen samplerate** (FFT meten, niet afleiden uit de samplerate): sc88pro_fingered_bass klinkt C4, sd90_..._low C3
+  (toets 60!); v4 gaf base 36/60 en de bas klonk twee octaven te hoog (C4 met label C2), de chug een octaaf te laag;
+  (2) muur op volume 62; (3) PSG-hats: -V schaalt ook PSG, decay 2 tot 0 + release 0 + 8 ticks = tik van 90 ms op
+  ±5/15; (4) kick van 6 ticks kapt zijn subtoon af. v5: bas op echt C2 (grondtoon + grom 250-1300 Hz, nog eens zacht
+  geklemd), muur dikker (lage distortion erbij, HPF 105 Hz), hats decay 1/sustain 5/release 1 op 18 ticks vol 127,
+  kick 16 ticks, lead 106 -> 68, chugs 84 -> 60, -V076. In-game: hats 15% (>6 kHz 2,8% = Face the Pain), bas/lead
+  A-gewogen 0,10 -> 0,23, < 60 Hz 2,4 -> 7%, 0 overlopen, piek 88/127, RMS 3231 (iets boven 3000).
+- Neo Plasma v11 (Gemini: 'theremin met vibrato op de lead, houtachtige tik-bas'): **de 'vibrato' zat in de sample, niet
+  in bends** (die gingen terug naar c_v+0): `sc88pro_square_wave` is zelf een gechorusde blokgolf (7-10 dB tremolo op
+  1,7-5 Hz, zwaartepunt schommelt 28%, 93% energie op de grondtoon = fluittoon); meet een lead-sample met
+  `sample_tremolo()` (neo_plasma_theme.py, nu een harde regel). 'Tikkende bas' = 16en van 27 ticks door detach met een
+  lange release: korte release (50) + langere noot geeft dezelfde kanaalbezetting. **Spleeter-model leeg** (download
+  faalde: h2/302) geeft 4 identieke stems zonder fout: md5 controleren; model met curl -L van de GitHub-release halen.
+- Brawly v6 (Jordi schrapte v1-v5; 'hi-hats als vervelende snare'): opnieuw als Rocky/Eye of the Tiger, alleen stock
+  samples, geen PSG/hats, max. 5 lagen (`brawly_check()` i.p.v. kermis_meter, dat koper/bellen verbiedt). **CC7 werkt
+  niet lineair op de waargenomen balans**: lead 100 -> 67 (-3,5 dB) haalde zijn A-gewogen aandeel maar van 63 naar 50%.
+  Stock-toonhoogtes (FFT) op toets 60: distortion_low, trinity_big_boned/30303 = C3; tubular_bell, trompet_60 = C4;
+  fingered bass C4 (C2 = toets 36, in de game gemeten Bb1 = 59 Hz). Emerald heeft geen synth-brass: trompet+hoorn (56/60).
+- Neo Plasma v12 (Jordi: 'kapotte speaker'; alleen stock-instrumenten): **instrumenten wisselen zonder de noten te
+  raken** = de stemverdeler laten rekenen met een bevroren release-tabel (V11_REL) en dan pas de voicegroup vervangen.
+  **Klinkende hoogte van stock-samples meten** (harmonic product spectrum): fingered/synth bass, trompet, square_wave
+  klinken op de geschreven noot, sc88pro_organ2 een octaaf lager. Een keysplit in een eigen bestand
+  (`keysplits/<naam>.inc`): musiclib/lint lezen de release alleen uit `<naam>.inc` (anders 200 = valse DS-overload).
+  rs_drumset-releases (kick 242) bezetten kanalen: release per kitnoot overnemen van de oude kit.
+- Tapu fase 1 (`tapu_theme.py`, alleen noten/ritme; geen MIDI van de bron): **eerst het raster vastleggen** (tempo via
+  onset-autocorrelatie over 128 tellen = 174, loop via zelfgelijkenis van mel-spectra = lag 82,80 s = 60 maten, maat 1 =
+  eerste slag) en daarna alles per 16e meten: drums per band (laag/mid/hoog, envelop-sprong), bas via basic-pitch op de
+  stem, chant via CQT van de vocal-stem per 16e (pyin faalt op koren: 'onstemhebbend'). Transcriptie controleren met
+  chroma-correlatie per maat (eigen solo-render vs. stem) en onset-correlatie per 4 maten (drums).
+- Tapu v2 (Jordi: 'game_e_alles lijkt totaal niet, terwijl de fluid-drums kloppen'): **solo-opname in de game** (volX = 0
+  op de andere sporen, mixbuffer) liet zien dat de drums er wel waren maar als tikjes: drumnoten van 2-3 zestienden
+  + release 140 op stock-trommen van 0,3-0,4 s (drumsolo maat 1-8: 3-25 dB vs. drumstem 26-32 dB, onset-correlatie
+  0,04-0,76). FluidR3 negeert note-offs op drums, de GBA niet. Fix: eigen samples (FluidR3 Taiko + gesynthetiseerd vel
+  met dalende toonhoogte + velslag + ruimtegalm, ±1 s, `tapu_samples.py`) en `ring_gates()`: een slag klinkt door tot
+  RING of de volgende slag in dezelfde partij -> per maat 25-34 dB, correlatie 0,6-0,9. **Kanaalbezetting nalopen met
+  een kanaallog** (gSoundInfo.chans per frame: spoor, noot, envelop) i.p.v. gokken op kanaalroof.
+  **Eerst de vorm uit Jordi's beschrijving op de opname leggen**: v1 dacht dat de mp3 met de HIT begon; de chant loopt
+  0,9-5,8 s (maat 1-4), de 'HOO' + slag valt op maat 5 (6,26 s) en het 'TUDUDU'-'deuntje' is het taikomotief van
+  maat 9 (16e 0,2,3,4 | 8,9,12,14), geen melodie (de tonale stems hebben daar alleen een tremolo). Stemmen zonder
+  opname-audio: additieve formantsynthese (harmonischen x formanten van een klinker, groep van 4-6 ontstemde stemmen,
+  ademruis), 16en-chant legato (geen detach: dat maakte stipjes). Het 'fluitje' (maat 41-48) waren korte E6-tikjes,
+  geen kwarten: 1 zestiende op een staccato-fluit. -V082: 0 overlopen, piek 96/127, RMS 3134 (drums bewust luid).
+- Ho-Oh v1 (song 658, eigen compositie, 180 bpm): **grondtoon van stock-samples meten** (harmonischenreeks, niet
+  alleen autocorrelatie: die vindt een suboctaaf): shakuhachi en koto_high klinken C5 op toets 60, whistle C6,
+  koto_low C4, distortion_low C3 -> per instrument een OCT-verschuiving in het script, noten op klinkende hoogte.
+  **Drums in de stemverdeler per sample**: bezet = min(lengte sample, noot + release) (rnd_kick 12 ticks, taiko 60,
+  laag gestemde taiko 90; geloopte toms/bekkens = noot + release); met één staart voor de hele kit viel 65% van de
+  strijkers weg. Koto/shamisen in 16en: release 90 + noot tot 'volgende aanslag - staart' = 1 kanaal. -V090: 0
+  overlopen, piek 99/127, RMS ±3000; audiocheck '54-85 Hz' = bas (E/A/F in achtsten) + taiko + framerate, geen brom.
+- Forces v1 (`forces_theme.py`, songs 659-661, alleen stock-samples, één voicegroup `grounded_forces` + keysplit
+  `forces_spicc`): **drie arrangementen van één motief = één materiaalblok (MEL/PROG in D-klein) + per thema een
+  bouwfunctie en een SHIFT** (Tornadus +2/176 bpm, Thundurus -2/152, Landorus 0/112). **Elke DS-partij door `detach`**
+  (noot + uitklinktijd vóór de volgende aanslag), anders kost een 16e-ostinato 2 kanalen (Landorus: koor 67% en klokken
+  100% weg -> 0%). **sc88pro_taiko klinkt 88 Hz op toets 60**: op C3 gaf hij 29% energie < 60 Hz (piek 45 Hz) -> toets 57.
+- Lugia v1 (`lugia_theme.py`, 657, 144 bpm, D-groot/D-klein, alleen stock-samples): **dualiteit = één melodie in twee
+  gedaanten** (groot, breed in halve noten = beschermer; klein met F#->F/B->Bb, dubbel zo snel en dubbel gepunt = storm).
+  Jordi: geen wiegenlied, de beschermer is heldhaftig. **Paukenroffels op een eigen programma met korte release (90)**:
+  16en op de gewone pauk (release 200 = 44 ticks) bezetten 3 kanalen en lieten de windvlagen wegvallen (71%). Drumnoten
+  op hun echte samplelengte (kick 0,09 s) i.p.v. een tel. Wind = `sc88pro_wind` (gelust) met trage aanzet + pitch bend
+  op/neer per vlaag. -V100 gaf RMS 3400-4100 -> -V078: 0 overlopen, piek 85/127, RMS 2600-3200.
+- Ho-Oh v2 (Jordi over v1: 'te vrolijk, trompetten/fluiten schel, niet Japans genoeg'): **eigen Japanse samples per
+  ±7 halve tonen** (`hooh_samples.py`, keysplits hooh_shami/koto/shaku, 132 KB): FluidR3-shamisen mist in de lage
+  ligging de grondtoon (E3 begint bij de 3e harmonische) -> 1e/2e erbij + bachi-tik + sawari; FluidR3-shakuhachi is
+  bijna een sinus -> 2e/3e harmonische + ademruis rond de grondtoon, lowpass 3,2 kHz. Expressie via pitch bend (meri
+  omhoog, yuri-vibrato, kari-val). **'Vrolijk' meten met Krumhansl**: v1 groot/klein liepen gelijk op (marge 0,02),
+  v2 Em/F#m 0,72-0,89 met marge 0,13-0,29. **Drumpartij = één speler** (`ring_gates` laat de slag los vóór de
+  volgende slag mínus de release): taiko 1,8 -> 1,1 kanaal; koto/shamisen release 100 = 16en op 1 kanaal. Lange
+  pads/koper krijgen voorrang op kleine percussie (anders 65-90% weg). Harmonische-som-toonhoogtemeting faalt op de
+  shamisen (inharmonisch): controleer met een piekenlijst. -V080: 0 overlopen, piek 80/127, RMS 2000-2700; leads
+  > 4 kHz 0,1-0,9%; A-gewogen shakuhachi 55 > shamisen/koto 50-52 > bas/gitaar 45-48 dB.
+- Lugia v2 (Jordi: 'bijna helemaal goed, maar tussen 30 en 40 s mag het tempo omhoog, opbouwen met goed drumgebruik'):
+  de stilte na de climax (maat 19) werd een **drumopbouw die versnelt** (achtsten taiko/toms -> 16en toms -> 32ste
+  snareroffel, aanzwellende paukenroffel, strijkersloop omhoog) met een **accelerando per tel** 144 -> 164 (maat 18-19),
+  C en D op 164. **Tempo terugzetten op het loopbegin**: een TEMPO-event op dezelfde tick als de '['-marker komt in de
+  .s ná het loop-label (controleer `grep TEMPO` + `_B1:`), anders blijft de loop op 164. -V078: 0 overlopen, piek 86.
+- Forces v2 (Jordi: 'klinkt heel erg als Megaman, alsof dit voor een SNES is'; Tornadus 'gedragen door dat hoge fluitje,
+  wimpy'; Thundurus 'voller GBA-sound'; Landorus 'saai, een aankondiging i.p.v. een battle theme'): **chiptune-gevoel =
+  PSG-blokgolfleads/-arpeggio's/-echo + PSG-ruis als snare** -> weg (PSG alleen nog als sub en voor wind/bliksem); lead
+  = trompet + strijkers unisono, hoorns als tweede stem, echte snare (rnd + orkest). **Solo A-gewogen meten per laag**
+  (scratch `solo_aw.py`, volX = 0 op de rest): de spiccato-ostinato's waren -18 dB (0-1%) = onhoorbaar, door de
+  keysplit-envelope (sustain 0) en een te lage ligging (D3, A-weging); nu sustain 255/release 110, een octaaf hoger,
+  spoor 127. **Kanaalroof door lagen stapelen**: kick op de taikoslagen, extra crashes en een koor naast een
+  tegenmelodie kostten 60% van het koor; per sectie kiezen (a2 tegenmelodie, C koor) i.p.v. alles tegelijk.
+  **Stereo**: nieuwe saves staan op Mono (`new_game.c`), dus pan-spreiding hoort alleen wie Stereo kiest.
+- Tapu v3 (Jordi over v2: 'HOO wimpy', 'TUDUDU onhoorbaar, is een synth', 'baslijn klopt niet', 'drums niet hard
+  genoeg'): **een neurie op het raster leggen** (pyin/basic-pitch, onsets / 0,0862 s): Jordi's 5,9 s = precies maat
+  9-12; vier tonen per halve maat + 16en-trillers. In de stem 'other' stijgt daar een brede synth (E3, B3, E4, F4;
+  basic-pitch + harmonische som per 16e); de eerste sprong (kwint) klopt met de neurie, de rest van de neurie +11.
+  **Spleeter zet een boventoonrijke synthbas half in 'other'**: wat daar in maat 13-60 als 'riff' leek (F4/E4/D4)
+  waren 3e harmonischen van de bas (A#2/A2/G2) -> de bas zelf op een zaagtand-sample (`tapu_synth`, twee ontstemde
+  zaagtanden, loop = kgv(80, 81) samples = exact). Bas per 16e vergelijken (toonklasse MIDI vs. stem): 75% -> 83%.
+  PSG-blokgolf (16en-puls) en PSG-ruis (hats) voor energie zonder DS-kanalen. Opname-offset zelf meten (maat 1 =
+  0,07 s in recsolo/recaudio, niet 0,55). -V076: 0 overlopen, piek 102/127, RMS 3180 (groove 3300-3500, bewust).
+- Tapu v4 (Jordi over v3: 'baslijn die niet bestaat', 'drums te zacht', 'klap op 6 harder', 'synth valt weg vanaf 13 s'):
+  **eerst per stem meten of een partij er echt is**: de 'bas' van maat 1-11 was de lage romp van de taiko's in de
+  basstem (pyin-stemhebbendheid 1-40%, C#2/D2 per slag); de eerste echte bastoon (F2, 40-67%) komt in maat 12.
+  **detach() op een 16en-lead met een uitklinktijd > een 16e maakt halve stipjes**: de synth nu legato (noot tot de
+  volgende aanslag) en gaten gedicht. **Een lange release (impact 230) in een drumpartij verhoogt de staart van de hele
+  partij in allocate()**: zulke slagen als eigen partij verdelen en daarna op het spoor zetten. Balans per sectie
+  A-gewogen t.o.v. de mix (solo-opnames, `bal4.py`): maat 1-4 drums -1,8 / chant -4,5 dB (origineel -4,1 / -7,0).
+  De klap zat al op de top van de 8-bit-mixer (piek 106/127): meer impact via stapelen + 4 zestienden stilte ervoor.
+  -V076: 0 overlopen, piek 106/127, RMS 2800-3500.
+- Tapu v5 (Jordi over v4: 'alles behalve de synth klopt; klinkt gehaast; kloppen de noten; is synth het juiste
+  instrument?'): **eerst vaststellen of een 'lead' een lijn of een akkoord is** (piek-tracking + pyin per band + basic-pitch,
+  per 16e): het was een opbouwend, liggend akkoord (E3+E4, +B3, E4->F4, dan 2,5 maat B3+F4). Het gewiebel en de 'woepsen'
+  in een neurie zijn de zweving van een ontstemd ensemble en een nieuwe aanzet + filter dat opengaat, geen trillers/noten:
+  v4 maakte er 16 losse 16en van in een eenstemmige lijn (= 'gehaast'). Klank op het harmonischenprofiel gekozen (zwakke
+  grondtoon, top op 2e-3e harmonische = synth-brass; eigen sample: 5 ontstemde stemmen, exacte loop, heldere variant
+  via programmawissel). Chroma per 16e (FluidR3 vs stem) 0,60 -> 0,88; A-gewogen spectrum game vs stem r = 0,98.
+- Tapu v6 (Jordi over v5: 'vanaf 5 s mis ik het stuk dat de climax verzorgt' + neurie): **een figuur boven een liggend
+  akkoord zoek je met grondtonen t.o.v. het akkoord, niet met piek/pyin per band**: de noten E5/F5/E6/F6 zijn ook
+  boventonen van E3/B3/F4. Werkwijze: FFT per kandidaat-noot (h1 en h2) in het venster tegen een akkoord-only-venster
+  (10:12-10:15): de grondtoon van de figuur stijgt +7..+15 dB, een boventoon van het akkoord niet. Zo ook het octaaf
+  bepalen (E5 op x:0, E6 op x:4; A#4 stijgt niet, A#5 wel). Spleeter zette de hoge helft van de figuur in 'vocals'
+  (stem 'vocals' +12 dB in maat 11). Een tritonus in een neurie is octaaf-dubbelzinnig (A2 onder E3 = A#5 boven E5).
+- Mitch v6 (Mitch zelf over v5: 'horn klinkt heel low quality; probeer hem screechy/high pitched zoals de E4-theme;
+  de wobbles zijn een mooie touch'): alleen het koper (MIDI-noten/CC's identiek, alleen programmanummers). **'Low
+  quality' = de sample, niet de partij**: één Eb4-sample op 22.050 Hz tot C5 omhoog (x1,7, boven ±6 kHz vouwt het
+  terug), tanh zonder oversampling, en een ingebakken staart die in 8 bit naar 0 korrelt. Nu één sample per lead-noot
+  op de mixfrequentie 21.024 Hz (stap 1 = geen transpositie, 12 x ±2 KB), vervorming op 8x, aanzet uit FluidR3 + een
+  **loop opnieuw opgebouwd uit de harmonischen** van het aangehouden deel (een loop van een paar echte perioden zoemt:
+  ensemble/aanzet = energie tussen de harmonischen, -10..-17 dB), envelope in de voicegroup (255/248/200/160).
+  Ruis/aliasing in de toon (GBA-simulatie: 8 bit + lineaire interpolatie, let op de loopsprong: i+1 = loopbegin):
+  v5 -10..-15 dB, v6 -27..-31 dB. **E4-hoorns** (vs_elite_four) = sc88pro-trompet = hetzelfde spectrum als FluidR3
+  56 (vlak tot h8, zwaartepunt ±1,4 kHz op C4), gespeeld rond D5-Bb5: B = trompet een octaaf boven de geschreven noot
+  + body op de noot. Kanalen/stemverdeler ongewijzigd. B: -V066, 0 overlopen, piek 72/127, RMS 2616.
+- Ruinous v1 (`ruinous_theme.py`, 683, SV Treasures of Ruin, 152 bpm, B met frygische C): **eerst het 16e-raster fijn
+  vastleggen** (fase met STFT-flux per band: 0,070 s; het 16e-patroon van de eerste analyse hing aan de beat_track-fase
+  en lag een 16e verschoven: 'kick op de laatste 16e' was in werkelijkheid één grote slag op elke tel, alle banden).
+  **Een tijdstip uit Jordi's feedback hoort bij het fragment dat hij hoorde**: de ostinato-clip begon op 25,0 s
+  (kruiscorrelatie met de stem), dus zijn '7 s' = maat 21, waar een tokkellijn in B4-C6 begint (16e-heraanslagen).
+- Legends3 v1 (`legends3_theme.py`, 684-686, alleen stock-samples, één voicegroup `grounded_legends3` + kit `drumsets/legends3`):
+  **twee/drie motieven op hetzelfde akkoordschema schrijven** (meren: F#m-D-E-C#m-Bm-D-G-C#) zodat ze in de slotsectie
+  zonder aanpassing samen kunnen klinken; Xerneas/Yveltal = één melodie met `to_death()` (G#/C#/D# een halve toon
+  omlaag, behalve D# op de dominant), gecontroleerd met de duur per toonklasse per sectie (groot: 0 G/C/D, klein: 0 G#/C#).
+  **8-bit-fuzz vermijden**: DS-velocities >= 76 (assert in het script), geen fluit, sub op de PSG-golf, DS-bas >= C2,
+  zuivere lichte figuren (Uxie, waterrimpelingen) op PSG. **Kit met `voice_directsound <toets>`** i.p.v. _no_resample
+  (speelt op de sample-rate, niet op 21 kHz). Harp/spiccato in 16en: release <= 100-110, anders bezet elke 16e 2 kanalen
+  (detach houdt min. 6 ticks); koper eigen keysplits met release 112/120 voor 16en-opmaten. Tomfills laten eindigen
+  vóór de tel waarop de crash valt, en geen hihat op een crash: scheelt 2 kanalen op de zwaarste tel.
+- Area Zero v1 (`areazero_theme.py`, 681 + remix 682): **transcriberen uit een dichte mix = per laag een ander gereedschap**:
+  kristal-arpeggio's met onset-per-halve-toon (`onsets.py`), de 'stem' met harmonische som + zwaartepunt per 16e
+  (`seg.py`: noten met hun afwijking), akkoorden met chroma per halve maat, drums per band; daarna **chroma-correlatie per
+  maat render vs. origineel** (0,70 -> 0,83): lage maten wezen precies de foute grondtoon aan (Ab-bas was Eb-orgelpunt,
+  bas-stem toonde boventonen). De lead zingt systematisch ±0,4 halve toon te hoog met brede vibrato (= het 'uncanny');
+  nagebootst met pitch bend per noot + MOD. 8-bit-covers zijn niet noot-voor-noot (andere timing): alleen ter controle.
+  Stock-glockenspiel/unknown_bell klinken een kwarttoon vals op toets 60 (1361/1227 Hz): kristalbel zelf gesynthetiseerd.
+- Ruinous v2 (Jordi: 'drumritme goed, voor de rest alles niet'): **Spleeter zet een getokkeld instrument in de stem
+  'piano'** (de intro E2/F#2/B2 met heraanslagen in 16en zat daar, niet in 'other'); v1 hield de hoge boventonen in de
+  mix voor 'twinkelingen'. Kijk bij elke laag in álle stems (dominante toon per 16e, `dom.py`-achtig). Een zachte laag
+  in het origineel (de F#5-'roep', bijna zuiver) niet op een luid instrument zetten: weglaten. 'Lange tonen' in
+  'other' kunnen het ostinato zelf zijn (B3+F#4 pulseren in het ostinato-ritme): eerst het ritme per noot meten.
+- Area Zero v4 / 682 v2: **kanaalroof eerst meten, niet aannemen**: kanaallog per frame (gSoundInfo.chans = mixbuffer
+  - 12x64 bytes; status, spoor via track-pointer, toets, envelop) gaf in 681 max. 9 kanalen en 0 geroofde noten. De
+  'haperende aria' en 'roepen die loopen' waren detach-gaten (0,2 s stilte vóór elke noot) en te korte loops (0,3 s);
+  fix: noten laten aansluiten, loops >= 1 s met gelijk-vermogen-crossfade (cos/sin). In 682 gaf hetzelfde log 12
+  kanalen bij een bekken + herhaalde leadnoot + strijkers per maat opnieuw: stemverdeler op 10 rekenen, strijkers als
+  één lange noot. Geraden lagen (arpeggio's, ostinato) klinken voor Jordi als 'een ander nummer': weglaten.
+- Area Zero v5: **solo-opnames: mid2agb laat lege MIDI-sporen weg**, dus het m4a-spoornummer is de index onder de
+  níet-lege sporen (`NumTrks` in de .s); anders neem je het verkeerde spoor solo op (chroma A/B werd negatief).
+  'Piepjes missen de helft' = de belletjes van het origineel klinken elk ±1 maat door (wolk); de aria in hele frasen
+  uit de stem (zoals het koor) klinkt vloeiend; wat Spleeter in 'other' zette (m36, m39) bleef als noten.
+
+- Ruinous v3 (Jordi over v2: 'lijkt nergens op, een glitchend systeem; isoleer de instrumenten'): **een laag die je
+  niet kunt benoemen, knip je uit de stem zelf**. De stem 'other' (25% van de energie: pad + 16e-figuur + hogere
+  lijn) als één halve maat per akkoord, geknipt waar dat akkoord in het origineel klinkt (9 knipsels à 9 KB), gaf in
+  de A/B chroma 0,7-0,95 per maat; een eigen ostinato-noot getransponeerd per akkoord (v2) klonk als 'systeem'.
+  Half-maat-knipsels 30 ms langer dan de halve maat + release 140 = naadloos. Laag met weinig energie en een A/B
+  die niet klopt (de hogere 'piano'-lijn, chroma 0-0,4): weglaten. Solo uit de mixbuffer: `volX = 0` per spoor
+  elke frame; de opname begint 0,74 s ná maat 1 (meten aan de inslag, niet met een kruiscorrelatie over 0,8 s).
+
+- Mitch v7 (Mitch: 'nog steeds te goedkoop, misschien een ander instrument dan de horn'; SickBlik klinkt beter):
+  **'goedkoop' gemeten** (gba_sim per spoor, `smpmetrics`-achtig: zwaartepunt, % boven 2/4 kHz, % 'dichte' FFT-bins):
+  alle synths < 2% boven 2 kHz, de horn één oscillator met een loop van 20 ms (alleen harmonische lijnen, dicht 4-6%),
+  en **`resample_wav.py --all` had de v6-horn van 21 naar 11 kHz gezet** (de v6-fix weer ongedaan); SickBlik =
+  echte instrumenten/ensembles/akkoorden in één sample, 54% van de mix in 150-2000 Hz (Mitch 23%). v7: synth-leads
+  als stapel stemmen in één sample op 16 kHz (KEEP_16K in resample_wav.py), 3 samples per kandidaat (transpositie
+  -2..+5: onder de 10,5 kHz van de mixer). **De -V-grens van Mitch was de build-up**: kick + roffelsnare tegelijk =
+  +35% boven de drops (offline), daarom liep -V > 066 over; roffelslag op/na een kick x0,5 -> -V092, piek 98, RMS 3950.
+- Area Zero v7 (Jordi: 'vanaf 8 s doen de piepjes hun eigen ding; vanaf 1:18 een deuntje dat er niet in hoort'):
+  **nooit een laag toevoegen die alleen gemeten en niet met een geïsoleerde A/B tegen de stem gecontroleerd is.** Een
+  dichte belletjeswolk (16en + echo + wisselnoten) is niet na te spelen; waar een stem alleen die laag bevat (intro,
+  pauzes) knip je hem als geheel (chroma A/B 0,97); de geraden cel/groove-arpeggio's zijn weg.
+- Area Zero v8 (Jordi: 'vanaf 8 s naar de achtergrond; distorted melodie op 13 s kapt af; 22 s en 47 s te muffled'):
+  **eerst per 0,5 s niveau + % boven 2 kHz van GBA-opname naast mix én stems zetten** (gelijke luidheid over het
+  venster): de intro stond 11 dB bóven de wolk (origineel 8 dB eronder), de knip stopte midden in de vervormde
+  Eb-akkoordklank (die zat deels in de bas-stem: PSG-bas zit niet in een mixbuffer-opname!), en de glans op 22/47 s
+  zat in 'other'. Opgelost met de begeleiding als aansluitende knippen uit other+bass(+drums) (lineaire crossfade van
+  15 ms op de naad, herhalen waar de golfvorm-correlatie per maat ≥0,5 is) en **alle knippen op één schaal**
+  (velocity = 127 x piek / grootste piek, lineair): dan is de verhouding stem/begeleiding vanzelf die van het
+  origineel (gemeten ±1 dB). Spleeter zet bromtonen soms in 'drums' (Eb-orgelpunt m24+): chroma per laag tegen de
+  stem controleren. **Weergaveketen meten** (solo vs stem, opname vs mixbuffer): 16 kHz-sample + mixer + GBA-uitgang
+  = -2 dB bij 2 kHz tot -6,6 bij 7 kHz; het omgekeerde als voorversterking in de knip (`EQ` in
+  `areazero_samples.py`) maakt de opname ±1 dB vlak t.o.v. het origineel.
+- Area Zero v9 (Jordi: 'tot 1:18 geweldig, dan een hele luie variant'): waar knippen ophouden en eigen partijen
+  overnemen, **een 16e-raster van de energie per band** (laag <150 Hz / hoog >3 kHz, `#o.`) naast het origineel zetten:
+  het origineel had een doorlopende 16e-was (pulserende ruis + hi-hats), wij achtsten. Goedkoopste fix: 2 maten
+  'other'+'drums' alleen boven 2 kHz knippen (14 kHz, 56 KB) en elke 2 maten herhalen; akkoorden/bas/kick blijven van
+  ons, dus geen akkoordbotsing. **Dezelfde kitnoot direct na zichzelf**: eind = volgende start (of erna) geeft in
+  mid2agb N01-noten (de note-off van de oude doodt de nieuwe); laat de noot 1 tick eerder eindigen.
+- Area Zero v10 (DPCM halveert de knippen; Jordi: 'quality first'): hele begeleiding m1-64 uit het origineel.
+  **Herhalen per maat i.p.v. per blok**: knip losse maten als eigen samples (zelfde bytes) en kies per doelmaat de
+  bron met de hoogste chroma-correlatie per 8e in het origineel (blokherhaling m48-63 gaf 0.73-0.92, per maat >= 0.94).
+  **DPCM-nultest** (opname gecomprimeerd - ongecomprimeerd): ruis ±-50 dB, bij luide knippen 22-24 dB eronder (prima),
+  bij zachte knippen (wolk, intro) maar 8-14 dB: die blijven ongecomprimeerd. **De 8-bit-uitgang heeft een ruisvloer**
+  ±-48 dB: een intro die in het origineel 27 dB onder het hoofddeel zit, wordt op de GBA ruis (34% >2 kHz waar het
+  origineel 0% heeft); daar dus bewust luider dan het origineel.
+- Battle! Area Zero v1 (682, `vs_areazero_samples.py` + `vs_areazero_theme.py`): **eerst meten of een nabouw met
+  knippen-bibliotheek kan**: per maat de unieke maten tellen (golfvorm per stem, chroma per 8e op de mix). De battle is
+  doorgecomponeerd (54/69 uniek), dus het hele origineel in aansluitende knippen (11025 Hz, DPCM, ±700 KB). **Frame-exact
+  knippen**: m4a op 150 bpm met 24 ticks/tel = 1 tick per frame (59,7275 Hz); de bron met factor K = P*fps/L
+  herbemonsteren zodat lus en grenzen op hele frames vallen. **Stukgrenzen op frame-afstanden met een (bijna) heel aantal
+  samples** (frames * rate/fps): een nieuwe noot begint op sample 0 terwijl de lopende op een gebroken positie staat
+  (mixer interpoleert); met willekeurige afstanden gaf de crossfade -10 dB fout, zo -33..-41 dB (= kwantisatie).
+  Doorgang 1 wijkt af (intro-staarten): stuk 0 = intro + doorgang 1 tot maat 9, de lus komt uit doorgang 2->3.
+  Niveau: één spoor op 127/127 gaf -26 LUFS, een tweede spoor met dezelfde noten (coherent) +4..6 dB -> -22,5 LUFS
+  (Giratina -22,7). Kreet: de engine dempt de BGM tot ±0,35-0,4 tijdens de kreet (gemeten), geen botsing.
+
+- Tower v1 (`tower_theme.py`, 687, gevechtsremix van `mus_rg_lavender.mid`): **origineel tpb 24 x 4 = 96 en de intro is
+  ook 4 maten**, dus elke noot staat op tick x 4 en de loop (40 maten) blijft 1-op-1 (melodie spoor 1, jammerlijn spoor 5,
+  fluitlijn spoor 4, arpeggio spoor 7, atarigane spoor 6). Melodie per sectie op een ander instrument in eigen sporen
+  (orgel / strijkers / koor / trompet+strijkers) = geen programmawissels rond de looptick. PSG draagt arpeggio,
+  jammerlijn, fluitlijn en hats (0 DS-kanalen); 1 basnoot van 490 valt weg. **`drum_and_percussion_kick` als
+  `voice_directsound 60` speelt op 13.379 Hz = subdreun** (< 60 Hz 26-33% van de mix); op toets 67 (zoals de FRLG-kit
+  via _no_resample) 10-15%. -V100: 0 overlopen, piek 105/127, RMS 3120; audiocheck 49-67 Hz = kick + grondtonen C2/B1.
+
+
+- Legendary v1 (`legendary_theme.py`, 670, generiek legendary-thema, E-klein 176 bpm, alleen stock-samples): **de
+  Weather Trio-'percussie' is vooral de pauk** (mus_vs_kyogre_groudon: 235 paukennoten, achtsten laag-hoog-laag-laag-
+  hoog-laag-laag-hoog op kwint/grondtoon; drums alleen bekkens). Pauk-ostinato op release 170 + roffels op een aparte
+  pauk met release 90 houdt het op max. 11 kanalen zonder weggevallen noten. E4-koper = stock trumpet/horn-keysplits,
+  hoorns harmoniseren automatisch (hoogste akkoordtoon >= 3 halve tonen onder de trompet). -V090: 0 overlopen, piek
+  100/127, RMS 3140; audiocheck 71-90 Hz = grondtonen D2-F#2 van bas/pauk. ±6 KB (song 4,7 KB + voicegroup).
+- Arceus v1 (`arceus_theme.py`, MUS_GROUNDED_VS_ARCEUS 676; bron `Battle_Arceus.mid` op origin/master, Domino-bewerking
+  van de SSEQ-rip SEQ_BA_SECRET1, 150 bpm, tpb 48): **uitgeschreven echo** in de bron (zelfde noot elke tel, velocity
+  110 -> 38 -> 27 ... 7) = elke herhaling een kanaal; stoot + echo per spoor samen `detach`en en de echo's als aparte
+  partij achteraan in de stemverdeler (onder v20 weg). Een **rip-kopie op 2 ticks met detune** (spoor 5, pitchwheel
+  -384 bij bend-range 12 = stereo-chorus) kost alleen kanalen: weg. Spoor 'Track 10' op kanaal 8 met programma 117 is
+  een GM-drumspoor (41/45 toms, 52/57 bekkens op tel 3 en 3-en), geen melodische taiko: eigen kit. Bekkens die een
+  achtste later terugkomen eerder los (anders 2 kanalen). Loop = maat 10-50 (maat 41.3-49 herhaalt de intro-gebaren).
+  Batchrec: 0 overlopen, piek 111/127, RMS 556-3590 (strijkerssecties het luidst), max -4,9 dB; ±3,6 KB ROM.
+- Mew v1 (`mew_theme.py`, 679, remix van Battle! Mewtwo; Jordi: "minder evil, curious, geen kloon, originator"):
+  zelfde vorm/contouren, 132 bpm, A-lydisch (Mewtwo's frygische Bb -> B-groot = lydische II), motief als vraag
+  (fluit) en antwoord (glock 8va), hikje elke 4e maat; Mewtwo's halve-toon-echo wordt de frase gespiegeld in de
+  toonladder op de glock. Hergebruikt `voicegroup_grounded_mewtwo` (geen nieuwe samples/voicegroup). Glock/harp hebben
+  release 242 (±174 ticks staart): 8en op de glock of harp vreten kanalen, gebruik kwarten of zet ze op de 'en'.
+- Dialga/Palkia v1 (Jordi's `DialgaPalkiaMIDIBeta.mid`, origin/master): **vorm zoeken met een spoor-voor-spoor-
+  vergelijking per halve maat** (gelijk / zelfde ritme / anders) i.p.v. op het gehoor: de MIDI heeft na maat 48 een
+  halve maat verschuiving (lange noten op tel 3 i.p.v. 1), en het einde (115,5) sluit naadloos aan op maat 6 (bas,
+  arpeggio, drums en pauken lopen door) = de loop. 'Humanize'-vertragingen (spoor 7 overal 12 ticks te laat, spoor 4 =
+  octaaf-echo van spoor 6) eerst op de tel zetten; de echo/arpeggio op PSG-vierkanten kost geen kanalen. fp-houdnoten
+  (accent + dezelfde noot op v40) samenvoegen. balance.py tegen FluidR3: GM-synthbas is 11 dB luider dan de GBA-
+  synth bass (spoor op 127 is het maximum). -V088: 0 overlopen, piek 94/127, RMS 2985; ROM ±9 KB (alleen stock).
+- Ultra Beast v1 (`ub_theme.py`, 677, 168 bpm, octatonisch C, B heeltoons in 7/8): **'andere dimensie' zonder horror of
+  euforie** = een ladder zonder grondtoonfunctie (octatonisch: het thema een kleine terts omlaag/omhoog geeft dezelfde
+  tonen) + microtonale details (kwarttoon-scoops/-wiebels op de lead via BENDR 2, PSG-echo 0,3 halve toon te hoog,
+  twee koorstemmen die tegengesteld een kwarttoon wegbuigen). Glazen lead = FM met een niet-harmonische modulator
+  (x1,41) en exacte loop (gehele perioden van alle oscillatoren in 2760 samples, 11 kHz). Omgekeerde zwelling =
+  FM-klok achterstevoren, 1,15 s eindigend op de downbeat (2 kanalen). Batchrec -V090: 0 overlopen, piek 95/127,
+  RMS 3000-3450, max -5,6 dB; audiocheck 45-62 Hz = rnd-kick + C2-pedaal (stijgt pas als de drums invallen). ±25 KB.
+- Mew v2: v1 "tonen klinken raar, te hoog, niet in een goed tempo, maak het meer fluïde". -> gewoon A-groot (geen
+  lydische D#), geen glockenspiel, hook een octaaf lager (max. E5), Mewtwo's staccato-16en als legato-8en (frases van
+  2 maten), doorrollende harp-arpeggio's door het hele nummer, golvende bas, geen hikjes/stops. Twee gevoelens in één
+  script (`FEEL` 44 = 156 bpm rollend, 128 = 12/8 op 120 via `warp()`). Eigen `voicegroup_grounded_mew`: harp-release
+  242 -> 200, anders bezetten arpeggio's in 8en 5-6 kanalen. Pads per akkoord (2 maten) en een 8e vóór de wissel los
+  laten: aangehouden pads per maat stapelen hun release op de maatgrens (koor viel 14/16 weg).
+- Mew v3: v2 "nog veel te lieflijk ... wolkentheme", "Mew heeft alsnog hoge stats", "Mewtwo's theme is super vet,
+  dat mag iets minder dreigend, wat neutraler". -> Mewtwo's arrangement bijna 1-op-1 (128 bpm, four-on-the-floor,
+  16e-bas, gate, koor, pauken, blokgolf, PSG-lagen); alleen de dreiging eruit: geen frygische Bb/verminderde maat
+  (Am-G-Am-Em, B: D-Am-F-G, C eindigt op bVII G -> loop naar Am), zuivere octaaf-echo i.p.v. halve toon ernaast,
+  kerkorgel -> blokgolf + trompet unisono, hook een octaaf lager (max. D5). Les: bij een remix van een goedgekeurd
+  nummer eerst vragen/aannemen dat de productie blijft en alleen het karakter (harmonie, 1-2 klanken) verschuift;
+  v1/v2 veranderden tempo, groove en instrumenten tegelijk en verloren zo wat Jordi 'vet' vond. -V090: piek 81, RMS ±2900.
+- Ruinous v4 (Jordi over v3: 'lo klopt alleen de eerste toon, OST mist de diepe strijker, oth loopt een noot en
+  verdwijnt, oth2 als een vastslaande cd-speler, bas een rare remix'): **(1) de A/B-uitlijning zelf eerst controleren**:
+  v3 nam aan dat maat 1 op -0,74 s lag (een andere aanzet gekozen), echt is +0,034 s (kruiscorrelatie van een sample
+  dat uit het origineel komt): de B-fragmenten lagen een halve maat verschoven. **(2) A en B op gelijke RMS**, niet op
+  de piek ('het origineel heb je erg zacht opgenomen'). **(3) frasen waar het origineel doorloopt**: intro (maat 1-4,
+  alle stems = de mix, 70 KB) en de lo-frase (maat 5-8, 8 kHz) als één sample; maatknipsels van het pad alleen < 450 Hz
+  (dan is herhaling een aangehouden akkoord, geen haperende melodie), 4 kHz, en een eigen knipsel per maat waar het
+  getransponeerde pad in de offline-A/B < 0,75 chroma gaf. **(4) bas noot voor noot met pyin per 16e** (aanzetdrempel
+  2,5x mediaan), één B1-sample: chroma 0,9-0,97 per maat. Offline-A/B (`sim.py`: noten x sample vs stem) vóór de ROM.
+  De bovenlijn/16e-figuur van 'other' (±45% van die stem boven 500 Hz) bleef onbetrouwbaar (pyin en salience mengen
+  figuur en melodie): niet nagemaakt; streamen kost ±650 KB (beslissing Jordi).
+- Ruinous v5 (Jordi over v4: 'intro is nu goed, maar kost veel samples; vanaf 32 s mis ik de strijker'): **goedkoper
+  maken offline meten vóór je kiest** (GBA-simulatie: samplerate, 8 bit, lineaire interpolatie; log-mel-correlatie per
+  maat t.o.v. het origineel): 4 maten 11 kHz (70 KB) mel 0,84; 8 kHz 0,74; 6 kHz 0,74; maat 3-4 = maat 1-2 +2 halve
+  tonen (zelfgelijkenis 0,90), dus 2 maten x2 (34 KB) 0,78 maar maat 4 zakt (0,60): sneller afspelen van een
+  getransponeerd frase-sample verkort hem ook. **Een aangehouden lijn boven een 16e-figuur** vind je met salience
+  alleen boven de figuur (> C#5, 560-4000 Hz): terugkerende motieven = betrouwbaar. Stock-strijkers (0 KB) en een
+  knipsel uit het origineel (18 KB) scoorden gelijk (spectrum-r 0,77, chroma 0,75): stock gekozen.
+- Ruinous v6 (Jordi over v5: 'vanaf 6 s en 19-20 s is de hoofdmelodie weggedrukt, te muffled; het instrument vanaf
+  31 s is te veel blazer, te weinig strijker, qua maten de hele tijd off'): **meet de hele mix per maat per band tegen
+  het origineel** (gelijke totale RMS; `mixcmp.py`): maat 5-12 500-1000 Hz -6 dB en maat 13-16 alles boven 500 Hz
+  -10..-20 dB. Oorzaak: lagen die in de stems zaten maar nooit nagemaakt waren (de aangehouden roep F6-F5-F#5 in de
+  stem 'vocals' maat 5-12; de hoge B5-ostinatolijn in 'other' 13-20). Een lijn die niet in de stem staat waar je
+  zocht, staat in een andere stem: **per stem per band per maat** (`stembar.py`) vóór je de oorzaak in de balans
+  zoekt. Roep = één harmonisch gemaskerde F#5 (deeltonen +-35 ct, rest -12 dB: lekkage weg) met ping-pong-loop
+  (15 KB) + CC7 per 8e uit het gemeten niveau. **Koperachtig = aanzet 255 + te helder** (stock-strijkers 1-4 kHz
+  +4..+7 dB); eigen strijkerknipsel (zelfde masker, +5 dB plank > 1,2 kHz voor het zwaartepunt) met aanzet 80
+  (~50 ms). **'Off' = gestotterde noten, geen rasterfout**: de toonhoogte per 16e lag op verschuiving 0 (79% gelijk),
+  maar salience-aanzetten pakten de 16e-lekkage van het ostinato als herhaalde aanslagen; legato samenvoegen (zelfde
+  toon, gat <= 2) + doortrekken tot de volgende noot zolang het niveau < 6 dB zakt. Velocity per noot uit het
+  gemeten niveau van die toon (stem vs. GBA-solo, h1+h2), maatniveau als CC7. Onset-xcorr per maat is onbruikbaar
+  bij een legato lijn boven een periodieke figuur (springt +-2 16en); vergelijk de toon per 16e (`pitchlag.py`).
+- Ruinous v7 (Jordi over v6: 'tot 32 s helemaal goed; je probeert strijkers met blazers na te maken, totaal anders'):
+  **kijk vóór het naspelen of het één lijn is**: spectrumpieken van een aangehouden moment (maat 21: F#5 + D#6 + F#6 +
+  A#6, geen veelvouden van elkaar = akkoord) en de vibrato van een deeltoon (sd 8 ct, onregelmatig 3,5 Hz, D#6 schuift
+  in = sectie, geen solist). Een sectie in akkoorden noot voor noot naspelen met één sample klinkt als een solo-
+  blazer, hoe goed het sample ook is. Nu halve maten uit de stem (450-5000 Hz, 6 kHz, 5,2 KB per stuk), 10 bronnen voor
+  64 halve maten: gekozen met een gretige dekking op gelijkenis (chroma per 8e 0,7 + CQT-spectrum 0,3; log-mel alleen
+  scheidt niet: alle paren 0,90), zonder transpositie (sneller afspelen verschuift het 16e-ritme), de eerste twee
+  maten (21-22) verplicht echt; niveau per halve maat = doel - bron. Mix-gelijkenis maat 21-52 0,62 -> 0,74 (maat
+  13-20, goedgekeurd: 0,77). Netto +36 KB (strijkerknipsel weg).
+- Ruinous v8 (Jordi over v7: 'heel dichtbij; 34-35 s pakt hij een stuk dat pas later hoort, 37/41 s kapt hij af,
+  48-49/56 s melodie te snel af, 1:23-1:43 geen lekkere overgang'): **vervang nooit een maat door een 'gelijkende'
+  van elders**: een metriek van 0,85 is voor het oor een ander stuk muziek en halve maten kappen doorklinkende noten.
+  Gemeten: geen enkele maat in 21-64 herhaalt een andere >= 0,95. Nu de stem 'other' zelf op zijn eigen plek
+  (maat 21-65), stukken van 2 maten, 160-4000 Hz, 8 kHz, DPCM (293 KB), om en om op twee sporen met 60 ms lineaire
+  overlap (zelfde opname: lineair, niet gelijk-vermogen), één gezamenlijke normalisatie. Maat 53-64 had alleen
+  het pad < 450 Hz (de opbouw/roffels misten hun hoge laag: mix-gelijkenis 0,53 -> 0,73); maat 21-52 0,74 -> 0,86.
+- Trainerklassen v1 (`trclass_theme.py`, 696-703, remixes van `mus_vs_trainer.mid`, tpb 24, loop maat 10-74): **één
+  script, één voicegroup (`grounded_trclass`: de PSG-stemmen van vs_trainer op hun eigen nummers, zodat PSG-sporen 1-op-1
+  mee kunnen; eigen instrumenten per sample) en één kit** voor acht remixes: ±3,4-6,9 KB per nummer + 10 KB samples
+  (steel drum + vibrafoon, 11 kHz DPCM). Bas = de originele basnoten op nieuwe posities (calypso 0/3/6/8/11/14 enz.),
+  akkoorden per halve maat = grondtoon + zwaarste toonklassen van alle sporen (geen kleine secunden); de paukensolo
+  (maat 44-53) wordt per stijl een conga-/taiko-/tom-solo op hetzelfde ritme. **Grondtoon van stock-samples gemeten**
+  (autocorrelatie + laagste sterke spectrumpiek): fluitje C6, shakuhachi C5, ep1_high C5, low distortion C3,
+  powerchord C2 op toets 60 (rest C4). Swing (CHIC) als tijdkaart per tel (12 -> 16 ticks) na het arrangeren.
+  Batchrec: 0 overlopen, piek 97-120/127, max -3,8..-6,4 dB; MYSTIC '1072 Hz' = triangel op de sectiestarts.
+- Regio v1 (`regio_theme.py`, remixes van `mus_vs_wild.mid`, tpb 24 -> 96): **in het B-deel (maat 18-25) draagt spoor 1
+  (hoorn, 3+3+2) de melodie en spoor 2 de lange bovenstem**: `roles()` wisselt ze daar, anders krijgt de lead daar
+  alleen aangehouden noten. Woestijn = frygisch-dominant door alleen D->Db, A->Ab en Eb->E (het C-deel met Db en de
+  riff C#-Eb klopten al bijna); Bb wordt dan Bbm. Harp-golven onder de melodie houden (`lowest_lead()`, octaaf
+  omlaag); harp-release 190 -> 165 haalde 6,5% -> 0,6% weg. Onderwater: bloop = PSG-vierkant 1 met sweep omhoog
+  (sweep 21 = tijd 1, shift 5), sub op de PSG-golf, golvende bend op de pad (BENDR 2), echo = melodie 3 16en later.
+- Trainerklassen v2 (Jordi: MOUNTAIN/NATURE/MYSTIC/ELITE/KIDS 'prima'; SEA 'lager, relaxter tempo zodat de steel drum
+  realistisch klinkt', CHIC 'hele irritante hoge tik toon', ROCK 'half afgemaakte gitaarakkoorden'). Nieuwe
+  instrumenten achteraan `INST` = de goedgekeurde MIDI's blijven byte-identiek (md5 gecontroleerd).
+  **CHIC: solo-opname per spoor** (`agent_classmus/solo.py`: volX = 0 op de rest, emulator-audio): het drumspoor had 27%
+  energie > 3 kHz met een tonale piek op 2797 Hz (piek/mediaan 1,2 miljoen) = `dance_drums_ride_bell` (een ride-*bell*:
+  een toon, geen tik); stond ook al in audiocheck als 'constante toon 2797'. Nu een brush-ride op PSG-ruis (decay 2,
+  toets 58, vol 40) + hihat-voet op 2/4: drumspoor 2% > 3 kHz, geen piek meer. **ROCK:** de
+  `unused_guitar_separates_power_chord` is een akkoord met een harmonische reeks op 66 Hz incl. de 7e boventoon
+  (462 Hz) en duurt 0,36 s; autocorrelatie gaf 'C2', maar dat is de gezamenlijke periode van C3+G3, dus hij speelde
+  een octaaf te hoog, en in 16e-stootjes. Nu grondtoon + kwint als twee low-distortion-noten (C3 op toets 60, met
+  loop), uitklinkend per halve maat. **Les: een 'grondtoon' uit autocorrelatie van een akkoordsample is de
+  gezamenlijke periode (een octaaf of meer te laag); kijk naar de harmonischen.** SEA: 188 -> 144 bpm, rolls alleen
+  op noten >= een gestippelde kwart (±10 slagen/s), steel release 130 -> 175, geen clap, oneven 16en 1 tick later.
+  Batchrec: SEA piek 111, CHIC 118 (-V094), ROCK 114 (-V090), 0 overlopen.
+- Regio v1.0.x (704 zee, 705 sneeuw, 706 spook, 707 nacht; `regio_theme.py`, achteraan toegevoegd: de vier oude
+  MIDI's/voicegroups bleven byte-identiek, md5 gecontroleerd). Alleen stock + PSG, ±4 KB per nummer. Gemeten
+  grondtonen op toets 60: church_organ3_high C4 (organ3_low heeft een 16'-grondtoon C2), ep1_low C4 / ep1_high C5,
+  accordeon en fluit C4. Sneeuw: een crash op de sectiestarts + glockenspiel-release 200 kostte de strijkers 10% en
+  de glinsteringen 10%: crash eruit (triangel, past bij 'kaal'), glock-release 160 -> 2,6%. Batchrec: 0 overlopen,
+  piek 78-93, RMS ±2300-3300, constante 'tonen' 27-60 Hz = bas/kick (breedband, geen fluittoon), 119,5 Hz = frames.
+- Grot-remixes v1 (`regio_theme2.py`, 708-710, importeert orig/roles/section/CH uit `regio_theme.py`): galm = de
+  lead 3 16en later op een zacht DS-spoor (laagste prioriteit in `allocate`, valt als eerste weg); druppels = PSG-vierkant 1
+  met sweep omhoog (19 = tijd 1, shift 3, decay 1) + twee PSG-echo's; holle bas = fretless een octaaf lager + dezelfde
+  noten op de PSG-golf. **Twee PSG-ruissporen delen één ruiskanaal**: in Fiery Path gaan de hihat-tikken op in het
+  knetteren (één spoor). Batchrec: 0 overlopen, piek 94-96, max -5,2..-5,9 dB, RMS 2900-3900.
+- Grot-remixes v2 (Jordi: 'een soort percussie op de achtergrond, past niet, heel irritant', in alle drie): solo-opnames
+  per spoor (volX=0 op de rest) + spectrogram: de **hyoushigi** in de kit (toets 56/58) ringt als een toon op 2,1-2,4 kHz
+  (sample 2,66 kHz op toets 60), 2-3x per maat het hele nummer door; in RMS bijna niets (drumspoor 2700 -> 2670), maar
+  in de 1,9-2,6 kHz-band van de mix -2,7..-4,9 dB na verwijderen. Hyoushigi niet als doorlopende 'steentjes' gebruiken.
+  Ook: de PSG-druppels (vierkant 1, spoorvolume 44, velocity <= 104) waren in de game **stil** (PSG-volume rondt naar 0):
+  PSG-sporen altijd solo opnemen. Druppels en Fiery-knetteren ook weg; ROM 2,5 KB kleiner.
+- Route 119+ v1 (`route119_battle_theme.py`, 711, wildthema op de landroutes vanaf 119): **mus_route119 staat in
+  triolen** (tpb 24: E4-E4-E4 op tick 32/40/48 = triool-8en, het motief begint op een halve maat: loopbegin tick 912 =
+  maat 9,5) en heeft **uitgeschreven echo's op velocity 32** (filter v <= 40). Begeleiding daarom ook in triolen
+  (galop: grondtoon op de tel + de 'a'), niet in rechte 8en. Snelle loopjes (32en) niet op strijkers dubbelen: met
+  release 51 ticks bezetten ze 4 kanalen; dubbel ze op een PSG-vierkant. Liggende strijkers die op een sectiestart
+  (crash + roffelstaart) geen kanaal krijgen: een 8e later laten inzetten i.p.v. de halve maat te schrappen.
+- **Nachtversies (v1):** één generator voor 14 thema's: originele MIDI 1-op-1 kopiëren en alleen tempo/velocity/drumnoten aanpassen; de klank zit in een kopie van de originele voicegroup met vervangen slots (generieke regels per sample, `--info` toont ze). Zo blijven vorm/loop/CC7 vanzelf gelijk. Lange harp/glockenspiel-releases (242/249) op 220 zetten haalde de vanilla-overschrijdingen van 10 DS-noten bijna weg (Fallarbor 19 -> 10). Kosten ±4–5 KB per nummer + 1,5 KB voicegroup.
+- Nachtversies v2 (717 Slateport, 721 Lilycove; Jordi: "iets langzamer en relaxter, rest perfect"): tempo x0,80,
+  per stad `opts` in `night_towns.py` (`grid` = alleen aanslagen op het 8e-raster, `drums` = zachtere kick/snare,
+  `legato` = zachte echo-aanslag (zelfde toon, vel <= 40, direct na de vorige) samenvoegen tot één noot,
+  `rel_cap`). Lilycove's echo's legato halveren de DS-drukte (lint 13 momenten >10 -> 0). De andere 12 bleven
+  byte-identiek (md5); Slateport -V070 -> 084 omdat brushes + dunnere hats de RMS naar ±1750 brachten.
+- Regio v2 (705 sneeuw, 706 spook, 707 nacht; Jordi: sneeuw 'instrument vanaf 7 sec, dominant, heel irritant', spook
+  'vocalen te dominant', nacht 'intro valt een beetje weg'). Solo per m4a-spoor (volX = 0 op de rest, RMS + aandeel
+  > 2 kHz per seconde): **het irritante sneeuw-instrument = de sleebelletjes op de achtsten** (vanaf maat 6 = 7,7 s;
+  drumspoor > 2 kHz 135 -> 960, bijna alle hoge energie van de mix); nu alleen een schud op de sectiestarts + een
+  roffel van 4 16en (mix > 2 kHz 1050 -> 480). Koor solo was luider dan het orgel (1140 vs 1050): nu alleen in B/C,
+  een octaaf lager, CC7 76 -> 36 (-> 470). Nacht-intro miste de hoge triller van het origineel (alle v1.0.x-remixen
+  slaan de lead in maat 0-1 over): triller op fluit + strijkers onder val en riff; intro-RMS 2590 -> 2860 = loop.
+- Route 119+ v2 (711; Jordi over v1: "alsof het originele nummer slecht geremixed is, vallen allerlei klanken weg,
+  te veel een snellere versie van het origineel, net niet genoeg een battle theme"). **Opnieuw gecomponeerd** als
+  Hoenn-gevechtsthema (vorm van mus_vs_wild/mus_vs_trainer): eigen intro (chromatische 16e-val van de strijkers,
+  koperstoten in 3+3+2: E-Eb-D omlaag, C-D-E omhoog, E7 + loopje), rechte 8en in 180 bpm met Hoenn-bas (octaven +
+  chromatische opmaat), A/A' met het Route 119-motief als citaat (C#5 . E4-E4-E4 C#5, daarna eigen vervolg),
+  B heroïsch (F-G-C-Am-F-G-F/G-A, hoorns + strijkers 8va), C tutti-climax met klokken, D-opbouw F-G-Bb(Napolitaans)-E7.
+  Minder lagen: geen tegenstem, geen arpeggio, strijkers alleen liggend zolang de trompet zingt.
+  **Waarom v1 klanken verloor:** `release_ticks()` (en de lint) rekenen tot 1/16 van de envelope, maar een noot met
+  sustain 0 en trage decay (crash 235, pauken 246) blijft vóór de note-off volledig 'aan' en is dan niet te roven
+  zonder hoorbaar gat; v1 telde de crash 0,5 s, de engine 1,1 s. En `ply_note` (src/m4a_1.s) pakt eerst kanalen in
+  release, daarna de laagste prioriteit/het laatste spoor: zit alles vol met niet-losgelaten noten, dan valt een
+  noot van een later spoor stil weg. v2: (1) de stemverdeler simuleert de m4a-envelope frame voor frame
+  (`channel_end()`: aanslag/decay/sustain tot de note-off, release tot < 16, einde van niet-lussende samples);
+  (2) slagwerk, pauken en klokken als korte noten met sustain 255 en een lange release (crash 232): ze gaan meteen in
+  release = roofbaar, en klinken toch natuurlijk uit; (3) koper/strijkers/bas laten los op precies hun eigen
+  release-staart vóór de volgende noot (`detach` met `release_tail()`), dus nooit twee kanalen per partij.
+  Resultaat: 0 weggevallen noten in de verdeler, max. 10 kanalen.
+- Area Zero / Battle! Area Zero / Ruinous (v11 / v2 / v9; Jordi over de 1.0: 'heel muffled, zacht, alsof ze niet
+  in de game horen; als een platenspeler'): **knippen uit een modern origineel zijn op de GBA te zacht omdat één
+  DS-kanaal met een volle sample maar ±35/127 haalt** (gemeten: 2 coherente sporen = piek 67) en de sub-bas (60-75%
+  < 150 Hz) het niveau draagt zonder dat je het op een kleine speaker hoort. Wat werkte (noten en verhoudingen gelijk):
+  dezelfde knip op 2-3 sporen tegelijk (coherent, +6/+9,5 dB, 1 kanaal per spoor), een lage plank (-3/-4 dB < 100 Hz),
+  en een piekbegrenzer met vooruitkijken op de **hele mix** (som van de stems = sidechain, -2/-3 dB, >1 dB reductie in
+  0,4-1,6% van de tijd) waarvan dezelfde versterkingscurve op elke knip op zijn eigen tijd komt (balans stem/begeleiding
+  blijft). Een 'lijm'-compressor (30 ms) helpt niets: de crest zit in de golfvorm, niet in de niveauverschillen.
+  Meet de luidheid ook A-gewogen (refs -21,4..-22,5 dB): RMS alleen beloont sub-bas. Ruinous: meet de balans per
+  octaafband tegen het origineel (`bands.py`-aanpak): +4,5 dB in 60-120 Hz (lijf van onze synthetische taiko/dreun)
+  en -4 dB in 1-4 kHz (8 kHz-knippen + weergaveketen) = 'muffled'. **DPCM in-game nultest**: het verschil ligt 7-16 dB
+  onder het signaal boven 3 kHz (20-35 dB eronder < 1 kHz): hoorbaar als korrel in het hoog. Alles ongecomprimeerd
+  kost +1,18 MB (past niet); `-l 8` (lookahead) wint 0,4 dB en duurt 7 min per sample.

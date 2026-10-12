@@ -17,6 +17,11 @@
       "map": "MAP_ROUTE102",
       "offset": -24,
       "direction": "down"
+    },
+    {
+      "map": "MAP_MEGA_FOREST",
+      "offset": -10,
+      "direction": "up"
     }
   ],
   "object_events": [
@@ -32,6 +37,47 @@
       "trainer_sight_or_berry_tree_id": "ITEM_LEFTOVERS",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_102_LEFTOVERS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_GIANT_LOG",
+      "x": 4,
+      "y": 1,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route102_MiniForest_EventScript_GiantLog",
+      "flag": "FLAG_HIDE_MINI_FOREST_GIANT_LOG"
+    },
+    {
+      "local_id": "LOCALID_MINI_FOREST_RUSTED_SWORD",
+      "graphics_id": "OBJ_EVENT_GFX_RUSTED_SWORD_OW",
+      "x": 3,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route102_MiniForest_EventScript_RustedSword",
+      "flag": "FLAG_RECEIVED_RUSTED_SWORD"
+    },
+    {
+      "local_id": "LOCALID_MINI_FOREST_RUSTED_SHIELD",
+      "graphics_id": "OBJ_EVENT_GFX_RUSTED_SHIELD_OW",
+      "x": 5,
+      "y": 2,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route102_MiniForest_EventScript_RustedShield",
+      "flag": "FLAG_RECEIVED_RUSTED_SHIELD"
     }
   ],
   "coord_events": [],

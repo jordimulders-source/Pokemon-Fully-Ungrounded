@@ -64,6 +64,18 @@ POOL = [
     'STADIUM_DONALD', 'STADIUM_IVAN', 'STADIUM_JOHNSON', 'STADIUM_LYLE',
     # post-game: de leider van de Victory-gauntlet (alleen V-Pokémon)
     'VICTORY_V',
+    # Neo Team Plasma, Plasma Frigate (Nothing Island): hoofd logistiek
+    'PLASMA_NIGEL',
+    # zee: kapitein van het spookschip S.S. AGAVE (Shipwreck Shoals, 's nachts)
+    'GRIMSBY',
+    # eilanden: vuurtorenwachter (Beacon Isle)
+    'WICK',
+    # Hoopa-quest: Salim, handelaar in de Mirage Bazaar (Route 111)
+    'SALIM',
+    # post-game kluizenaars: Selene (Draconid-oudere, Meteor Falls), Reginald (Victory Road), Helia (Scorched Slab)
+    'DRACONID_ELDER', 'VR_REGINALD', 'SLAB_HELIA',
+    'TALLOW',
+    'LAVIS',
 ]
 RIVALS = {'BRENDAN_ROUTE_136_TREECKO': 'FEMALE', 'MAY_ROUTE_136_TORCHIC': 'MALE'}   # speler-geslacht waarvoor dit de rivaal is
 
@@ -76,7 +88,8 @@ def companion_name(t):
                'TATE_AND_LIZA_5': 'TATE_AND_LIZA', 'GABBY_AND_TY_6': 'GABBY_AND_TY', 'LT_SURGE': 'LT_SURGE',
                'SHY_GUY_RED': 'SHY_GUY_RED', 'SHY_GUY_GREEN': 'SHY_GUY_GREEN', 'SHY_GUY_PINK': 'SHY_GUY_PINK',
                'SHY_GUY_BLACK': 'SHY_GUY_BLACK', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
-               'PLASMA_GRUNT_M': 'PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'PLASMA_GRUNT_F'}
+               'PLASMA_GRUNT_M': 'PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'PLASMA_GRUNT_F', 'PLASMA_NIGEL': 'NIGEL',
+               'DRACONID_ELDER': 'SELENE', 'VR_REGINALD': 'REGINALD', 'SLAB_HELIA': 'HELIA'}
     t2 = t[len('STADIUM_'):] if t.startswith('STADIUM_') else t
     return special.get(t, special.get(t2, t2.split('_')[0]))
 
@@ -189,18 +202,24 @@ GFX = {
     'GIOVANNI': 'GIOVANNI', 'CYRUS': 'GENTLEMAN', 'AGATHA': 'AGATHA', 'BERTHA': 'OLD_WOMAN',
     'LORELEI': 'LORELEI', 'LANCE': 'LANCE', 'BLUE': 'BLUE', 'BARRY': 'BOY_3', 'ROARK': 'HIKER', 'BYRON': 'HIKER',
     'GARDENIA': 'PICNICKER', 'ERIKA': 'ERIKA', 'FANTINA': 'BEAUTY', 'CANDICE': 'GIRL_3', 'VOLKNER': 'MAN_5',
-    'AARON': 'BUG_CATCHER', 'FLINT': 'MAN_5', 'LUCIAN': 'PSYCHIC_M', 'CYNTHIA': 'WOMAN_5', 'MARS': 'WOMAN_2',
+    'AARON': 'BUG_CATCHER', 'FLINT': 'MAN_5', 'LUCIAN': 'PSYCHIC_M', 'CYNTHIA': 'CYNTHIA', 'MARS': 'WOMAN_2',
     'JUPITER': 'WOMAN_2', 'SATURN': 'MAN_2', 'PALMER': 'MAN_4', 'THORTON': 'SCIENTIST_2', 'ARGENTA': 'WOMAN_3',
     'DAHLIA': 'WOMAN_4', 'RILEY': 'MAN_3', 'DAVE': 'MAN_3', 'MITCH': 'MAN_3', 'SICKBLIK': 'MAN_3', 'WINSTON': 'RICH_BOY',
     # gasten en meme-trainers
     'WARIO': 'FAT_MAN', 'YOSHI': 'SPECIES(TREECKO)', 'GOLBAT': 'SPECIES(GOLBAT)', 'GRIMER': 'SPECIES(GRIMER)',
-    'BOO': 'SPECIES(SHUPPET)', 'MEW': 'MEW', 'SHY_GUY': 'NINJA_BOY', 'BURGLAR': 'BURGLAR', 'DITTO': 'SPECIES(DITTO)',
+    'BOO': 'SPECIES(SHUPPET)', 'MEW': 'MEW', 'SHY_GUY_RED': 'SHY_GUY_RED', 'SHY_GUY_GREEN': 'SHY_GUY_GREEN', 'SHY_GUY_PINK': 'SHY_GUY_PINK', 'SHY_GUY_BLACK': 'SHY_GUY_BLACK', 'BURGLAR': 'BURGLAR', 'DITTO': 'SPECIES(DITTO)',
     'MUSTARD': 'MUSTARD', 'N': 'N', 'GHETSIS': 'GHETSIS',
     'ZINZOLIN': 'ZINZOLIN', 'ROOD': 'ROOD', 'SHADOW_TRIAD': 'SHADOW_TRIAD',
     'PLASMA_GRUNT_M': 'NEO_PLASMA_GRUNT_M', 'PLASMA_GRUNT_F': 'NEO_PLASMA_GRUNT_F',
-    'PETREL': 'PETREL',
+    'PETREL': 'PETREL', 'PLASMA_NIGEL': 'NEO_PLASMA_GRUNT_M',
     'DONALD': 'BUG_CATCHER', 'IVAN': 'FISHERMAN', 'JOHNSON': 'YOUNGSTER', 'LYLE': 'BUG_CATCHER',
     'VICTORY_V': 'EXPERT_M',
+    'GRIMSBY': 'SAILOR',
+    'LAVIS': 'ARTIST',
+    'TALLOW': 'PSYCHIC_M',
+    'WICK': 'EXPERT_M',
+    'SALIM': 'EXPERT_M',
+    'DRACONID_ELDER': 'OLD_WOMAN', 'VR_REGINALD': 'EXPERT_M', 'SLAB_HELIA': 'HEX_MANIAC',
 }
 
 
@@ -318,6 +337,10 @@ KEEP = {
     'STADIUM_JOEY': [1, 2, 0],  # Mightyena en Obstagoon (Jordi), Rattata (top percentage)
     'STADIUM_GOLBAT': [0],    # Zubat: de grot in Red/Blue
     'STADIUM_PETREL': [1],    # Ditto met Imposter: vermommingsteam (Zoroark is de ace)
+    # Startcompagnons (Jordi, 8 okt): compagnon = tegenstanderversie, dus de keuze zit hier en in hun verhaalteam
+    'KECCLES_3': [0, 2],      # Heliolisk en Serperior (ace Salazzle)
+    'WALLY_VR_5': [0, 4],     # Darmanitan en Flutter Mane (ace Gallade): minder Fairy-zwak dan Baxcalibur/Annihilape
+    'MAY_ROUTE_136_TORCHIC': [0, 3],  # Roserade en Froslass (ace Swampert)
 }
 # Sterkte met de hand: zes keer Ditto met Imposter is zo sterk als de tegenstander (gemiddelde van de pool)
 RATING = {'STADIUM_DONALD': 520, 'STADIUM_JOEY': 480}  # Joey: Poochyena is top percentage
@@ -410,7 +433,7 @@ for i, (pname, src, unlock) in enumerate(COMPANIONS):
     lines.append(f'Pic: {pic}')
     g = header_field(tr['header'], 'Gender') or 'Male'
     lines += [f'Gender: {g}', f'Music: {header_field(tr["header"], "Music") or g}', f'Back Pic: {back or "Brendan"}']
-    ai = header_field(tr['header'], 'AI')
+    ai = header_field(tr['header'], 'AI')   # zelfde AI als de tegenstanderversie (de C-code neemt die van de bron over)
     if ai:
         lines.append(f'AI: {ai}')
     lines.append('')

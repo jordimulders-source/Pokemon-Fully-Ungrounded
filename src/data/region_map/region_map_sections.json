@@ -1322,6 +1322,174 @@
       "y": 3,
       "width": 1,
       "height": 1
+    },
+    {
+      "id": "MAPSEC_NOTHING_ISLAND",
+      "name": "NOTHING ISLAND",
+      "x": 0,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SHIPWRECK_SHOALS",
+      "name": "SHIPWRECK SHOALS",
+      "x": 18,
+      "y": 12,
+      "width": 2,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SS_AGAVE",
+      "name": "S.S. AGAVE",
+      "x": 18,
+      "y": 12,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_FLOATING_MARKET",
+      "name": "FLOATING MARKET",
+      "x": 13,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SEA_TEMPLE",
+      "name": "SEA TEMPLE",
+      "x": 24,
+      "y": 10,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_STEAM_ISLAND",
+      "name": "STEAM ISLAND",
+      "x": 20,
+      "y": 9,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_PARADISO_RESORT",
+      "name": "PARADISO RESORT",
+      "x": 24,
+      "y": 11,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_WHIRL_ISLAND",
+      "name": "WHIRL ISLAND",
+      "x": 21,
+      "y": 3,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_TAPU_ISLE",
+      "name": "TAPU ISLE",
+      "x": 15,
+      "y": 8,
+      "width": 2,
+      "height": 2
+    },
+    {
+      "id": "MAPSEC_FULLMOON_ISLAND",
+      "name": "FULLMOON ISLAND",
+      "x": 1,
+      "y": 11,
+      "width": 2,
+      "height": 2
+    },
+    {
+      "id": "MAPSEC_BEACON_ISLE",
+      "name": "BEACON ISLE",
+      "x": 14,
+      "y": 11,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_TAO_ISLAND",
+      "name": "TAO ISLAND",
+      "x": 26,
+      "y": 10,
+      "width": 2,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_SPACETIME_CAVE",
+      "name": "SPACETIME CAVE",
+      "x": 26,
+      "y": 4,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_CHARGESTONE_CAVE",
+      "name": "CHARGESTONE CAVE",
+      "x": 26,
+      "y": 4,
+      "width": 1,
+      "height": 1
+    },
+    {
+      "id": "MAPSEC_NATIONAL_PARK",
+      "name": "NATIONAL PARK"
+    },
+    {
+      "id": "MAPSEC_ILEX_FOREST",
+      "name": "ILEX FOREST"
+    },
+    {
+      "id": "MAPSEC_UNCHARTED_ISLE",
+      "name": "???"
+    },
+    {
+      "id": "MAPSEC_GLIMWOOD_TANGLE",
+      "name": "GLIMWOOD TANGLE"
+    },
+    {
+      "id": "MAPSEC_BALLONLEA",
+      "name": "BALLONLEA"
+    },
+    {
+      "id": "MAPSEC_AREA_ZERO",
+      "name": "AREA ZERO"
+    },
+    {
+      "id": "MAPSEC_YOSHIS_ISLAND",
+      "name": "YOSHI'S ISLAND"
+    },
+    {
+      "id": "MAPSEC_LAKE_ACUITY",
+      "name": "LAKE ACUITY"
+    },
+    {
+      "id": "MAPSEC_LAKE_VALOR",
+      "name": "LAKE VALOR"
+    },
+    {
+      "id": "MAPSEC_LAKE_VERITY",
+      "name": "LAKE VERITY"
+    },
+    {
+      "id": "MAPSEC_MT_CORONET",
+      "name": "MT. CORONET"
+    },
+    {
+      "id": "MAPSEC_SPEAR_PILLAR",
+      "name": "SPEAR PILLAR"
+    },
+    {
+      "id": "MAPSEC_CROWN_TUNDRA",
+      "name": "CROWN TUNDRA"
+    },
+    {
+      "id": "MAPSEC_HALL_OF_ORIGIN",
+      "name": "HALL OF ORIGIN"
     }
   ]
 }

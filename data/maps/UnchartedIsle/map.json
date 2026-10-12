@@ -1,0 +1,63 @@
+{
+  "id": "MAP_UNCHARTED_ISLE",
+  "name": "UnchartedIsle",
+  "layout": "LAYOUT_UNCHARTED_ISLE",
+  "music": "MUS_SEALED_CHAMBER",
+  "region_map_section": "MAPSEC_UNCHARTED_ISLE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_OCEAN_ROUTE",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": true,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_UNCHARTED_ISLE_KELDEO",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KELDEO)",
+      "x": 14,
+      "y": 9,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UnchartedIsle_EventScript_Keldeo",
+      "flag": "FLAG_DEFEATED_KELDEO"
+    },
+    {
+      "local_id": "LOCALID_UNCHARTED_ISLE_BRINEY",
+      "graphics_id": "OBJ_EVENT_GFX_EXPERT_M",
+      "x": 15,
+      "y": 14,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UnchartedIsle_EventScript_Briney",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_UNCHARTED_ISLE_BOAT",
+      "graphics_id": "OBJ_EVENT_GFX_MR_BRINEYS_BOAT",
+      "x": 14,
+      "y": 16,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "0x0",
+      "flag": "0"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [],
+  "bg_events": []
+}

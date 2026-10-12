@@ -136,6 +136,7 @@ static void Line(s32 x0, s32 y0, s32 x1, s32 y1, u8 color)
 
 // Trainerplaatje (64×64); klein = halve grootte via affine matrix 0
 #define TAG_PORTRAIT 0x5400
+#define TAG_PIC_PAL  0x5410   // eigen paletslot per plaatje (niet over de icoonpaletten 0-5 heen)
 
 static const struct OamData sOam_Portrait = {.shape = SPRITE_SHAPE(32x32), .size = SPRITE_SIZE(32x32), .priority = 0};
 
@@ -148,7 +149,7 @@ static u8 Pixel(const u8 *pic, u32 x, u32 y)
 
 // Portret voor de bracket: 32x32 rond het hoofd uit de 64x64-trainerfoto, op ware pixelgrootte
 // (verkleinen gooit elke tweede pixel weg en ziet er rommelig uit)
-static u8 AddPortrait(u16 picId, s16 x, s16 y, u8 slot)
+static u8 AddPortrait(u16 picId, s16 x, s16 y, u8 slot, u8 pal)
 {
     u8 *pic = Alloc(64 * 64 / 2), *out = AllocZeroed(32 * 32 / 2);
     s32 top = 0, minX = 63, maxX = 0, x0, y0, px, py, row;
@@ -189,35 +190,46 @@ static u8 AddPortrait(u16 picId, s16 x, s16 y, u8 slot)
         }
     }
     LoadSpriteSheet(&sheet);
-    LoadPalette(gTrainerSprites[picId].palette.data, OBJ_PLTT_ID(slot), PLTT_SIZE_4BPP);
+    LoadPalette(gTrainerSprites[picId].palette.data, OBJ_PLTT_ID(pal), PLTT_SIZE_4BPP);
     Free(pic);
     Free(out);
     id = CreateSprite(&tmpl, x, y, 0);
     if (id != MAX_SPRITES)
-        gSprites[id].oam.paletteNum = slot;
+        gSprites[id].oam.paletteNum = pal;
     return id;
 }
 
 // Trainerplaatje (64x64), of als portret (32x32) in de bracket
 static u8 AddPic(u16 picId, s16 x, s16 y, bool32 small)
 {
-    u8 slot = sScr->picCount;
+    u8 slot = sScr->picCount, pal;
     u16 id;
 
     if (slot >= MAX_PICS)
         return MAX_SPRITES;
+    // Paletslot via de allocator: vaste slots (0, 1, ...) overschreven de icoonpaletten van
+    // LoadMonIconPalettes, waardoor de Pokémon-iconen de kleuren van de trainer kregen
+    pal = AllocSpritePalette(TAG_PIC_PAL + slot);
+    if (pal == 0xFF)
+        return MAX_SPRITES;
     if (small)
     {
-        id = AddPortrait(picId, x, y, slot);
+        id = AddPortrait(picId, x, y, slot, pal);
         if (id == MAX_SPRITES)
+        {
+            FreeSpritePaletteByTag(TAG_PIC_PAL + slot);
             return MAX_SPRITES;
+        }
         sScr->portraitMask |= 1 << slot;
     }
     else
     {
-        id = CreateTrainerPicSprite(picId, TRUE, x, y, slot, TAG_NONE);
+        id = CreateTrainerPicSprite(picId, TRUE, x, y, pal, TAG_NONE);
         if (id == 0xFFFF)
+        {
+            FreeSpritePaletteByTag(TAG_PIC_PAL + slot);
             return MAX_SPRITES;
+        }
     }
     gSprites[id].oam.priority = 0;
     sScr->pics[sScr->picCount++] = id;
@@ -239,6 +251,7 @@ static void FreePics(void)
         {
             FreeAndDestroyTrainerPicSprite(sScr->pics[i]);
         }
+        FreeSpritePaletteByTag(TAG_PIC_PAL + i);
     }
     sScr->picCount = 0;
     sScr->portraitMask = 0;
@@ -298,8 +311,28 @@ static void DrawMatchCard(void)
     PrintCentered(FONT_SMALL_NARROW, 56, 116, sColor_Blue, name);
     Stadium_GetEntrantName(opp, name);
     PrintCentered(FONT_SMALL_NARROW, 168, 116, sColor_Dark, name);
-    AddPic(Stadium_EntrantPic(0), 64, 80, FALSE);
-    AddPic(Stadium_EntrantPic(opp), 176, 80, FALSE);
+    if (Stadium_GetMode() == STADIUM_DOUBLES)
+    {
+        // doubles: beide duo's in beeld, de tweede schuin erachter
+        u8 back1 = AddPic(Stadium_EntrantMemberPic(0, 1), 72, 70, FALSE);
+        u8 front1 = AddPic(Stadium_EntrantMemberPic(0, 0), 40, 80, FALSE);
+        u8 back2 = AddPic(Stadium_EntrantMemberPic(opp, 1), 168, 70, FALSE);
+        u8 front2 = AddPic(Stadium_EntrantMemberPic(opp, 0), 200, 80, FALSE);
+
+        if (back1 != MAX_SPRITES)
+            gSprites[back1].subpriority = 2;
+        if (back2 != MAX_SPRITES)
+            gSprites[back2].subpriority = 2;
+        if (front1 != MAX_SPRITES)
+            gSprites[front1].subpriority = 1;
+        if (front2 != MAX_SPRITES)
+            gSprites[front2].subpriority = 1;
+    }
+    else
+    {
+        AddPic(Stadium_EntrantPic(0), 64, 80, FALSE);
+        AddPic(Stadium_EntrantPic(opp), 176, 80, FALSE);
+    }
     PrintCentered(FONT_SMALL, 112, 128, sColor_Gray, COMPOUND_STRING("Everyone fights at level 50."));
 }
 
@@ -437,6 +470,8 @@ static void DrawCompanionDetail(void)
     if (id != MAX_SPRITES && !unlocked)
         FadePic(gSprites[id].oam.paletteNum, 16, RGB_BLACK);
     FillWindowPixelRect(WIN, PIXEL_FILL(PAPER), 120, 0, 104, 144);
+    if (sScr->listCount > LIST_ROWS)
+        PrintText(FONT_SMALL, 124, 3, sColor_Gray, COMPOUND_STRING("{LEFT_ARROW}{RIGHT_ARROW} L/R: page"));
     if (unlocked)
     {
         PrintCentered(FONT_NORMAL, 176, 104, sColor_Dark, t->trainerName);
@@ -628,12 +663,27 @@ static void Task_StadiumScreen(u8 taskId)
         break;
     case SCREEN_COMPANIONS:
     {
-        u32 n = sScr->listCount, cur = sScr->cursor;
+        s32 n = sScr->listCount, cur = sScr->cursor, scroll = sScr->scroll, maxScroll = max(0, n - LIST_ROWS);
 
+        // omhoog/omlaag (wikkelt rond aan de uiteinden), links/rechts of L/R = een pagina
         if (JOY_REPEAT(DPAD_UP) && cur > 0)
             cur--;
+        else if (JOY_NEW(DPAD_UP) && n > 1)
+            cur = n - 1;
         else if (JOY_REPEAT(DPAD_DOWN) && cur + 1 < n)
             cur++;
+        else if (JOY_NEW(DPAD_DOWN) && n > 1)
+            cur = 0;
+        else if (JOY_REPEAT(DPAD_LEFT | L_BUTTON) && cur > 0)
+        {
+            cur = max(0, cur - LIST_ROWS);
+            scroll = max(0, scroll - LIST_ROWS);
+        }
+        else if (JOY_REPEAT(DPAD_RIGHT | R_BUTTON) && cur + 1 < n)
+        {
+            cur = min(n - 1, cur + LIST_ROWS);
+            scroll = min(maxScroll, scroll + LIST_ROWS);
+        }
         else if (JOY_NEW(A_BUTTON))
         {
             if (!Stadium_IsCompanionUnlocked(sScr->list[cur]))
@@ -658,10 +708,11 @@ static void Task_StadiumScreen(u8 taskId)
         {
             PlaySE(SE_SELECT);
             sScr->cursor = cur;
-            if (cur < sScr->scroll)
-                sScr->scroll = cur;
-            else if (cur >= sScr->scroll + LIST_ROWS)
-                sScr->scroll = cur - LIST_ROWS + 1;
+            if (cur < scroll)
+                scroll = cur;
+            else if (cur >= scroll + LIST_ROWS)
+                scroll = cur - LIST_ROWS + 1;
+            sScr->scroll = scroll;
             Redraw();
         }
         break;

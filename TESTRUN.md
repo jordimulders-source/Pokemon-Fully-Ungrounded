@@ -35,6 +35,10 @@ Status: ✅ opgelost · 👍 goed zo (geen actie) · ⏳ open · 💡 idee/later
 | SickBlik/Dave/Colress misten soms hun intro/thema | ✅ |
 | Save corrupt na nieuwe ROM (savestate) → hersteld als .sav | ✅ |
 | Relearn-knop zwart in "welke move vergeten?" na evolutie | ✅ |
+| Briney's boot voer over een eiland in Route 105; nu eromheen | ✅ |
+| Fish Judge (Dewford) alleen met Surf bereikbaar; verplaatst | ✅ |
+| Madame Silk had een Cooltrainer-sprite; nu oude man | ✅ |
+| SickBlik (strand Route 104) blijft niet staan na het gevecht maar gaat de wereld verkennen | ✅ |
 
 ### Wensen en teksten (verwerkt)
 TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd door Jigglypuff, hoog-gras-tekst, tijdschriften, Spinda-DJ, winkelplanken, muziekman Oldale verplaatst, VS-intro Route 103, wilde muziek (Hoenn, Kanto vanaf badge 4), tekstvakken afbreken op zinnen, Wally-Ralts-gevecht in Petalburg, Fisherman-intro (Wailord-finale) en Magikarp-intro, L INFO-melding in wilde gevechten, items verplaatsen in MOVE POKéMON, itemmelding onderin. Allemaal ✅.

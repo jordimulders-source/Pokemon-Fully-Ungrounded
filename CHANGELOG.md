@@ -18658,3 +18658,6 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Route 102:** DJ Spinny Spinda (draait rondjes, "Spin, spin, spin…") met zijn manager ernaast ("doesn't do autographs").
   - **Oldale:** de muziekfan stond op (16,13), achter het dak van het huis rechtsonder; nu op (12,12).
   - **Tekstvakken:** `tools/dialogen/import.py` verdeelt een lange alinea over vakken van 2 regels en begint een nieuw vak bij voorkeur op een zinsgrens (zoals vanilla), zodat je niet midden in een zin hoeft door te drukken. Littleroot (alle huizen, lab), Route 101 en Route 103 opnieuw afgebroken; vakken die midden in een zin eindigden zijn samengevoegd.
+  - **Speler en rivaal onzichtbaar na het eerste rivaalgevecht** (Route 103, ook Rustboro): de rivaal-intro tekent de echte kaart en verborg daarvoor alle object events (`TI_HideField`), maar zette ze nooit terug; pas na een warp waren ze er weer. `TI_Free` maakt nu precies de verborgen object events weer zichtbaar (`src/data/class_intros.h`). Getest in de emulator.
+  - **Exp na de eerste gevechten** (Mudkip lv 8 na Birch, lv 9 na May): geen bug, dit is de inhaal-EXP van v0.9.192 (×10 tot het ace-level van de volgende gymleider; vóór badge 1 is dat Roxanne lv 22).
+  - Spelersnaam blijft 7 tekens (Jordi; langer kan niet zonder de Pokémon-data en de pc-opslag te vergroten).

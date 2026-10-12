@@ -18697,3 +18697,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Roxanne's ace is Nosepass** (Jordi): Nosepass lv 19, Shuckle lv 18 (was andersom). De gymgids ("is level 19") klopt nog.
 - **TESTRUN.md**: nieuw document met de bevindingen uit Jordi's testrun (per bevinding wat we deden en de status).
 - **Ingang Toadstool Hollow zichtbaar** (Jordi: "hoe moet je dat weten"): de doorgang in de oostrand van Petalburg Woods (46–47,10) zag eruit als een gewone boom. Nu een open pad naar de kaartrand, met een boom erboven en een kruin eronder (metatiles 0x35e–0x361 van Rustboro aangepast; botsing van de rij erboven/eronder dicht). Dezelfde tegels zitten in de ingang van de Wo-Chien-tabletten (42–43,36): die is nu ook zichtbaar.
+  - Plus een **bordje** ernaast (45,9): "{RIGHT_ARROW} TOADSTOOL HOLLOW / Mushrooms ahead. Do not lick them. (Someone scratched “again” underneath.)"

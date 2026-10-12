@@ -281,6 +281,14 @@
   "bg_events": [
     {
       "type": "sign",
+      "x": 45,
+      "y": 9,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "PetalburgWoods_EventScript_ToadstoolSign"
+    },
+    {
+      "type": "sign",
       "x": 14,
       "y": 32,
       "elevation": 3,

@@ -486,3 +486,13 @@ PetalburgWoods_Text_TrainerTipsPP:
 	.string "Ignore these, POKéMON battles are\n"
 	.string "pure mathematics.$"
 
+
+PetalburgWoods_EventScript_ToadstoolSign::
+	msgbox PetalburgWoods_Text_ToadstoolSign, MSGBOX_SIGN
+	end
+
+PetalburgWoods_Text_ToadstoolSign:
+	.string "{RIGHT_ARROW} TOADSTOOL HOLLOW\n"
+	.string "Mushrooms ahead. Do not lick them.\p"
+	.string "(Someone scratched “again”\n"
+	.string "underneath.)$"

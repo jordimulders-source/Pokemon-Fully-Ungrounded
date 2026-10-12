@@ -210,6 +210,10 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pok�
 - **Water op elevation 0 is beloopbaar** (Nothing Island, v1.0): water hoort op elevation 1; met 0 loop je er zonder surfen op. Controle: `waterelev.py`-aanpak (water met botsing 0 en elevation 0 naast beloopbaar land). **Halve bomen** controleer je per kaart met een script (links-/rechterhelft 1d4/1d5, 1dc/1dd, 1e4/1e5 moeten paren vormen), niet alleen op het oog: Jordi vond in Lavender drie plekken na elkaar.
 - **Gesampelde opnames (Area Zero, Ruinous) blijven wat dof** (v1.0): 8-bit/11 kHz/DPCM van een volledige mix; luider/helderder maken hielp deels, een mengvorm met GBA-bas/-drums voegde volgens Jordi weinig toe. Niet verder aan sleutelen; nieuwe nummers liever als noten. Push nooit een extra branch naar origin zonder te vragen (verwijderen kan vanuit deze omgeving niet).
 
+- **Controleer de basis vóór je begint:** `master` liep ver achter op de echte werkbranch (1.0 op `funny-edison`); vergelijk de laatste changelogversie van de remote branches (`git branch -r` + `git show <b>:CHANGELOG.md`) met wat Jordi speelt, anders reproduceer je bugs op oude code.
+- **Class-/rivaal-intro's die de kaart tekenen** (`TI_HideField`) verbergen de object events; die blijven na het gevecht bestaan, dus altijd terugzetten (`TI_Free`, `hiddenObjEvents`).
+- **Na het vangen** begint `givecaughtmon` met `MULTIUSE_STATE`; zonder bijnaamvraag eerst `setbyte gBattleCommunication, 0` (anders oude PC-meldingen).
+
 ## Werkwijzen (herhaalde taken)
 
 ### Een route bouwen
@@ -292,7 +296,8 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Tilesets: sneeuw (`snow`, routes; nieuwe metatiles **alleen achteraan**, daarna `make data/tilesets/secondary/snow/tiles.4bpp`; ~445/512 tiles), `snow_town_base` (primary) + `snow_town` (secondary) voor Ashfrost: eigen nummering, 362 + 465 van 2×512 tiles; opnieuw genereren mag (alleen Ashfrost gebruikt ze), daarna `ashfrost.py` opnieuw draaien, Cave (kristallen 0x3A5–0x3A7, `-num_tiles 441` in `graphics_file_rules.mk`).
 
 ## Stand van zaken
-- **Werkbranch:** `claude/funny-edison-d44uts` (v0.9.154+, 9 okt), gebaseerd op `wonderful-brahmagupta`; `master` loopt ver achter. Hoopa-thema staat nog op `claude/hoopa-theme-wip`.
+- **Werkbranch:** `claude/affectionate-pascal-jc9de8` (12 okt: 1.0 van `claude/funny-edison-d44uts` + Jordi's testrun-fixes); `master` loopt ver achter (v0.9.89).
+- **Testrun Jordi (12 okt):** ronde 1 verwerkt (zie onderaan [v1.0.0] in de changelog). Open: inhaal-EXP vóór badge 1 voelt snel (Jordi test eerst verder), spelersnaam blijft 7 tekens. Hoopa-thema staat nog op `claude/hoopa-theme-wip`.
 - **Takenlijst:** `TODO.md` is sinds 9 okt de enige actuele lijst (nu: basiskaart vullen; daarna Tao-eiland, Beacon Isle, Spacetime Cave met warps en Mt. Coronet als laatste quest, Yoshi's Island; pas daarna intro's en muziek). Andere plannings-documenten zijn naslag (statusregel bovenaan). **Lees TODO.md + de "Besloten"-lijst vóór je iets voorstelt of zegt dat er geen plan is.**
 - **Grenzen:** flags via `FLAG_GROUNDED(n)` (verdeling in flags.h), trainer-id's max 1199 (zie Lessen), `gMapGroup_Grounded` max 128 kaarten.
 - Emulator: `python3.11` (mgba); zie Lessen.

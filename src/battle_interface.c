@@ -730,6 +730,7 @@ u8 CreateBattlerHealthboxSprites(u8 battler)
     gBattleStruct->ballSpriteIds[0] = MAX_SPRITES;
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
     gBattleStruct->moveInfoSpriteId = MAX_SPRITES;
+    gBattleStruct->wildInfoSpriteId = MAX_SPRITES;
 
     return healthboxLeftSpriteId;
 }
@@ -2885,6 +2886,7 @@ static const struct SpriteTemplate sSpriteTemplate_LastUsedBallWindow =
 };
 
 #define MOVE_INFO_WINDOW_TAG 0xE722
+#define WILD_INFO_WINDOW_TAG 0xE723 // Project Grounded
 
 static const struct OamData sOamData_MoveInfoWindow =
 {
@@ -3023,7 +3025,7 @@ void TryAddLastUsedBallItemSprites(void)
 static void DestroyLastUsedBallWinGfx(struct Sprite *sprite)
 {
     FreeSpriteTilesByTag(TAG_LAST_BALL_WINDOW);
-    if (GetSpriteTileStartByTag(MOVE_INFO_WINDOW_TAG) == 0xFFFF)
+    if (GetSpriteTileStartByTag(MOVE_INFO_WINDOW_TAG) == 0xFFFF && GetSpriteTileStartByTag(WILD_INFO_WINDOW_TAG) == 0xFFFF)
         FreeSpritePaletteByTag(TAG_ABILITY_POP_UP);
     DestroySprite(sprite);
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
@@ -3064,7 +3066,7 @@ void TryToHideMoveInfoWindow(void)
 static void DestroyMoveInfoWinGfx(struct Sprite *sprite)
 {
     FreeSpriteTilesByTag(MOVE_INFO_WINDOW_TAG);
-    if (GetSpriteTileStartByTag(TAG_LAST_BALL_WINDOW) == 0xFFFF)
+    if (GetSpriteTileStartByTag(TAG_LAST_BALL_WINDOW) == 0xFFFF && GetSpriteTileStartByTag(WILD_INFO_WINDOW_TAG) == 0xFFFF)
         FreeSpritePaletteByTag(TAG_ABILITY_POP_UP);
     DestroySprite(sprite);
     gBattleStruct->moveInfoSpriteId = MAX_SPRITES;
@@ -3124,6 +3126,109 @@ static void SpriteCB_MoveInfoWin(struct Sprite *sprite)
     }
 }
 
+// Project Grounded: "L INFO"-hint onder de last-used-ball-indicator. Alleen in wilde gevechten waarin
+// L in het actiemenu het summary-scherm van de wilde Pokémon opent (soort al gevangen; zie ShowWildMonInfo
+// in battle_controller_player.c). Schuift samen met de bal-indicator in en uit.
+#define WILD_INFO_WIN_Y      (LAST_USED_WIN_Y + 32)
+
+static const u8 sWildInfoWindowGfx[] = INCBIN_U8("graphics/battle_interface/wild_info_window_l.4bpp");
+static const struct SpriteSheet sSpriteSheet_WildInfoWindow =
+{
+    sWildInfoWindowGfx, sizeof(sWildInfoWindowGfx), WILD_INFO_WINDOW_TAG
+};
+
+static const struct OamData sOamData_WildInfoWindow =
+{
+    .shape = SPRITE_SHAPE(32x16),
+    .size = SPRITE_SIZE(32x16),
+    .priority = 1,
+};
+
+static void SpriteCB_WildInfoWin(struct Sprite *sprite);
+
+static const struct SpriteTemplate sSpriteTemplate_WildInfoWindow =
+{
+    .tileTag = WILD_INFO_WINDOW_TAG,
+    .paletteTag = TAG_ABILITY_POP_UP,
+    .oam = &sOamData_WildInfoWindow,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCB_WildInfoWin
+};
+
+bool32 CanViewWildMonInfo(void)
+{
+    u32 target;
+
+    if (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED | BATTLE_TYPE_SAFARI))
+        return FALSE;
+    if (gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_L_EQUALS_A)
+        return FALSE;
+    target = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
+    if (!IsBattlerAlive(target) && IsDoubleBattle())
+        target = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
+    return GetSetPokedexFlag(SpeciesToNationalPokedexNum(GetMonData(GetBattlerMon(target), MON_DATA_SPECIES)), FLAG_GET_CAUGHT) != 0;
+}
+
+static bool32 IsWildInfoSprite(u32 spriteId)
+{
+    return spriteId < MAX_SPRITES && gSprites[spriteId].inUse && gSprites[spriteId].callback == SpriteCB_WildInfoWin;
+}
+
+static void DestroyWildInfoWinGfx(struct Sprite *sprite)
+{
+    FreeSpriteTilesByTag(WILD_INFO_WINDOW_TAG);
+    if (GetSpriteTileStartByTag(TAG_LAST_BALL_WINDOW) == 0xFFFF && GetSpriteTileStartByTag(MOVE_INFO_WINDOW_TAG) == 0xFFFF)
+        FreeSpritePaletteByTag(TAG_ABILITY_POP_UP);
+    DestroySprite(sprite);
+    gBattleStruct->wildInfoSpriteId = MAX_SPRITES;
+}
+
+static void SpriteCB_WildInfoWin(struct Sprite *sprite)
+{
+    if (sprite->sHide)
+    {
+        if (sprite->x != LAST_BALL_WIN_X_0)
+            sprite->x--;
+        if (sprite->x == LAST_BALL_WIN_X_0)
+            DestroyWildInfoWinGfx(sprite);
+    }
+    else
+    {
+        if (sprite->x != LAST_BALL_WIN_X_F)
+            sprite->x++;
+    }
+}
+
+static void TryShowWildInfoWindow(void)
+{
+    u32 spriteId = gBattleStruct->wildInfoSpriteId;
+    bool32 canView = CanViewWildMonInfo();
+
+    if (IsWildInfoSprite(spriteId))
+    {
+        gSprites[spriteId].sHide = !canView;
+        return;
+    }
+    if (!canView)
+        return;
+    LoadSpritePalette(&sSpritePalette_AbilityPopUp);
+    if (GetSpriteTileStartByTag(WILD_INFO_WINDOW_TAG) == 0xFFFF)
+        LoadSpriteSheet(&sSpriteSheet_WildInfoWindow);
+    spriteId = CreateSprite(&sSpriteTemplate_WildInfoWindow, LAST_BALL_WIN_X_0, WILD_INFO_WIN_Y, 5);
+    if (spriteId == MAX_SPRITES)
+        return;
+    gSprites[spriteId].sHide = FALSE;
+    gBattleStruct->wildInfoSpriteId = spriteId;
+}
+
+static void TryHideWildInfoWindow(void)
+{
+    if (IsWildInfoSprite(gBattleStruct->wildInfoSpriteId))
+        gSprites[gBattleStruct->wildInfoSpriteId].sHide = TRUE;
+}
+
 static void TryHideOrRestoreLastUsedBall(u8 caseId)
 {
     if (B_LAST_USED_BALL == FALSE)
@@ -3154,6 +3259,7 @@ static void TryHideOrRestoreLastUsedBall(u8 caseId)
 
 void TryHideLastUsedBall(void)
 {
+    TryHideWildInfoWindow();
     if (B_LAST_USED_BALL_BUTTON == L_BUTTON && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_L_EQUALS_A)
         return;
 
@@ -3163,6 +3269,7 @@ void TryHideLastUsedBall(void)
 
 void TryRestoreLastUsedBall(void)
 {
+    TryShowWildInfoWindow();
     if (B_LAST_USED_BALL == FALSE)
         return;
 

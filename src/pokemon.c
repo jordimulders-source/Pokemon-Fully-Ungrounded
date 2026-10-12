@@ -6140,7 +6140,8 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
     if (trainerId == TRAINER_MITCH || trainerId == TRAINER_MITCH_ROUTE_110 || trainerId == TRAINER_MITCH_ROUTE_121)
         return MUS_GROUNDED_VS_MITCH;
     // Project Grounded: SickBlik (= Jordi; Cooltrainer, Victory Road B2F; ook in het Stadium) vecht op smerige slap-funk
-    if (trainerId == TRAINER_SICKBLIK || trainerId == TRAINER_SICKBLIK_ROUTE_104 || trainerId == TRAINER_SICKBLIK_ROUTE_113)
+    if (trainerId == TRAINER_SICKBLIK || trainerId == TRAINER_SICKBLIK_ROUTE_104 || trainerId == TRAINER_SICKBLIK_ROUTE_113
+     || trainerId == TRAINER_SICKBLIK_BEACH || trainerId == TRAINER_SICKBLIK_DEV || trainerId == TRAINER_SICKBLIK_MOTEL)
         return MUS_GROUNDED_VS_SICKBLIK;
 
     // Project Grounded: Keccles (Route 115, Fortree, Route 136; ook in het Stadium) vecht op salsa dura

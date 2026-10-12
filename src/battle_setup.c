@@ -1329,7 +1329,8 @@ enum BattleTransition GetTrainerBattleTransition(void)
      || trainerId == TRAINER_DAVE_SOOTOPOLIS)
         return B_TRANSITION_DAVE;
     // Project Grounded: SickBlik (Jordi zelf): mugshot, dan de hotpot die een Poké Ball wordt (ook in het Battle Stadium)
-    if (trainerId == TRAINER_SICKBLIK || trainerId == TRAINER_SICKBLIK_ROUTE_104 || trainerId == TRAINER_SICKBLIK_ROUTE_113)
+    if (trainerId == TRAINER_SICKBLIK || trainerId == TRAINER_SICKBLIK_ROUTE_104 || trainerId == TRAINER_SICKBLIK_ROUTE_113
+     || trainerId == TRAINER_SICKBLIK_BEACH || trainerId == TRAINER_SICKBLIK_DEV || trainerId == TRAINER_SICKBLIK_MOTEL)
         return B_TRANSITION_SICKBLIK;
     // Project Grounded: Mimi (poppenkast), Keccles (camouflage in het lab) en de Burglar (bewakingscamera), ook in het
     // Battle Stadium. Vervangen de mugshot, zoals bij Steven.

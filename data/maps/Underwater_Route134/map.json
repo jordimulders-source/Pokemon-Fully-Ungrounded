@@ -24,5 +24,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 6,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_RELIC_SILVER",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_R134_RELIC_SILVER"
+    }
+  ]
 }

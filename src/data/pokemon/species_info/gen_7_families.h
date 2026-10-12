@@ -1198,6 +1198,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .levelUpLearnset = sCharjabugLevelUpLearnset,
         .teachableLearnset = sCharjabugTeachableLearnset,
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_VIKAVOLT, CONDITIONS({IF_IN_MAPSEC, MAPSEC_NEW_MAUVILLE})},
+                                {EVO_LEVEL, 0, SPECIES_VIKAVOLT, CONDITIONS({IF_IN_MAPSEC, MAPSEC_CHARGESTONE_CAVE})}, // Project Grounded: magnetisch veld (chargestone.py)
                                 {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_VIKAVOLT},
                                 {EVO_NONE, 0, SPECIES_VIKAVOLT_TOTEM}),
     },
@@ -4307,7 +4308,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 95,
         .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_NORMAL),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = 107,
         .evYield_HP = 2,
         .genderRatio = MON_GENDERLESS,
@@ -4373,7 +4374,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 95,                                                        \
         .baseSpDefense = 95,                                                        \
         .types = MON_TYPES(type),                                                   \
-        .catchRate = 3,                                                             \
+        .catchRate = 30,                                                            \
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 285 : 257,                    \
         .evYield_HP = 3,                                                            \
         .genderRatio = MON_GENDERLESS,                                              \
@@ -5612,7 +5613,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 95,
         .baseSpDefense = 75,
         .types = MON_TYPES(TYPE_ELECTRIC, TYPE_FAIRY),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 285 : 257,
         .evYield_Speed = 3,
         .genderRatio = MON_GENDERLESS,
@@ -5688,7 +5689,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 130,
         .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_PSYCHIC, TYPE_FAIRY),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 285 : 257,
         .evYield_SpAttack = 3,
         .genderRatio = MON_GENDERLESS,
@@ -5760,7 +5761,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 85,
         .baseSpDefense = 95,
         .types = MON_TYPES(TYPE_GRASS, TYPE_FAIRY),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 285 : 257,
         .evYield_Attack = 3,
         .genderRatio = MON_GENDERLESS,
@@ -5834,7 +5835,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 95,
         .baseSpDefense = 130,
         .types = MON_TYPES(TYPE_WATER, TYPE_FAIRY),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 285 : 257,
         .evYield_SpDefense = 3,
         .genderRatio = MON_GENDERLESS,
@@ -6034,8 +6035,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sCosmoemLevelUpLearnset,
         .teachableLearnset = sCosmoemTeachableLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 53, SPECIES_SOLGALEO, CONDITIONS({IF_NOT_TIME, TIME_NIGHT})},
-                                {EVO_LEVEL, 53, SPECIES_LUNALA, CONDITIONS({IF_TIME, TIME_NIGHT})}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 53, SPECIES_SOLGALEO, CONDITIONS({IF_GROUNDED_SUN_MOON, 0})}, // Project Grounded: Solrock/Lunatone eerst gevangen (src/ultra_space.c)
+                                {EVO_LEVEL, 53, SPECIES_LUNALA, CONDITIONS({IF_GROUNDED_SUN_MOON, 1})}),
     },
 
     [SPECIES_SOLGALEO] =
@@ -6949,7 +6950,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 130,
         .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_STEEL, TYPE_FAIRY),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
         .evYield_SpAttack = 3,
         .genderRatio = MON_GENDERLESS,
@@ -7016,7 +7017,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 130,
         .baseSpDefense = 115,
         .types = MON_TYPES(TYPE_STEEL, TYPE_FAIRY),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
         .evYield_SpAttack = 3,
         .genderRatio = MON_GENDERLESS,
@@ -7085,7 +7086,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 90,
         .baseSpDefense = 90,
         .types = MON_TYPES(TYPE_FIGHTING, TYPE_GHOST),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
         .evYield_Attack = 2,
         .evYield_Speed = 1,
@@ -7426,7 +7427,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 102,
         .baseSpDefense = 80,
         .types = MON_TYPES(TYPE_ELECTRIC),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
         .evYield_Speed = 3,
         .genderRatio = MON_GENDERLESS,
@@ -7493,7 +7494,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 55,
         .baseSpDefense = 35,
         .types = MON_TYPES(TYPE_STEEL),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 150 : 135,
         .evYield_Attack = 1,
         .genderRatio = MON_GENDERLESS,
@@ -7547,6 +7548,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .perfectIVCount = LEGENDARY_PERFECT_IV_COUNT,
         .levelUpLearnset = sMeltanLevelUpLearnset,
         .teachableLearnset = sMeltanTeachableLearnset,
+        // Project Grounded: geen 400 Meltan Candy; levelen met een Metal Coat (Jordi, 9 okt)
+        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MELMETAL, CONDITIONS({IF_HOLD_ITEM, ITEM_METAL_COAT})}),
     },
 
     [SPECIES_MELMETAL] =
@@ -7558,7 +7561,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 80,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_STEEL),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
         .evYield_Attack = 3,
         .genderRatio = MON_GENDERLESS,
@@ -7626,7 +7629,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .baseSpAttack  = 80,
         .baseSpDefense = 65,
         .types = MON_TYPES(TYPE_STEEL),
-        .catchRate = 3,
+        .catchRate = 30,
         .expYield = (P_UPDATED_EXP_YIELDS >= GEN_8) ? 300 : 270,
         .evYield_Attack = 3,
         .genderRatio = MON_GENDERLESS,

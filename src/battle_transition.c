@@ -27,6 +27,21 @@
 #include "constants/songs.h"
 #include "constants/trainers.h"
 #include "constants/rgb.h"
+#include "starter_choose.h"
+#include "event_data.h"
+#include "constants/layouts.h"
+#include "constants/region_map_sections.h"
+#include "battle_anim.h"
+#include "item_icon.h"
+#include "menu.h"
+#include "pokedex.h"
+#include "string_util.h"
+#include "text.h"
+#include "trainer_pokemon_sprites.h"
+#include "window.h"
+#include "fieldmap.h"
+#include "constants/battle_anim.h"
+#include "constants/items.h"
 
 #define PALTAG_UNUSED_MUGSHOT 0x100A
 
@@ -145,6 +160,7 @@ static void Task_RouteJagged(u8); // Project Grounded
 static void Task_RouteRainforest(u8); // Project Grounded
 static void Task_Pikachu(u8); // Project Grounded
 static void Task_Magikarp(u8); // Project Grounded
+static void Task_ViagraBoys(u8); // Project Grounded
 static void Task_Psyduck(u8); // Project Grounded
 static void Task_Koffing(u8); // Project Grounded
 static void Task_GabbyTy(u8); // Project Grounded
@@ -162,6 +178,70 @@ static void Task_Victini(u8); // Project Grounded
 static void Task_Jirachi(u8); // Project Grounded
 static void Task_Darkrai(u8); // Project Grounded
 static void Task_NeoPlasma(u8); // Project Grounded
+static void Task_SickBlik(u8); // Project Grounded
+static void Task_Steven(u8); // Project Grounded
+static void Task_WallyVhs(u8); // Project Grounded
+static void Task_RayquazaPillar(u8); // Project Grounded
+static void Task_Mimi(u8); // Project Grounded
+static void Task_Keccles(u8); // Project Grounded
+static void Task_Burglar(u8); // Project Grounded
+static void Task_GymRoxanne(u8); // Project Grounded (src/data/gym_intros_a.h)
+static void Task_GymBrawly(u8); // Project Grounded
+static void Task_GymWattson(u8); // Project Grounded
+static void Task_GymFlannery(u8); // Project Grounded
+
+static void Task_TapuKoko(u8); // Project Grounded
+static void Task_TapuLele(u8);
+static void Task_TapuBulu(u8);
+static void Task_TapuFini(u8);
+static void Task_GymNorman(u8); // Project Grounded (src/data/gym_intros_b.h)
+static void Task_GymWinona(u8); // Project Grounded (src/data/gym_intros_b.h)
+static void Task_GymTateLiza(u8); // Project Grounded (src/data/gym_intros_b.h)
+static void Task_GymWallace(u8); // Project Grounded (src/data/gym_intros_b.h)
+static void Task_LegendLugia(u8); // Project Grounded (src/data/legend_intros.h)
+static void Task_LegendHooh(u8);
+static void Task_LegendVolcanion(u8);
+static void Task_LegendHoopa(u8);
+static void Task_LegendForces(u8);
+static void Task_LegendArticuno(u8); // Project Grounded (src/data/legend_intros2.h)
+static void Task_LegendZapdos(u8);
+static void Task_LegendMoltres(u8);
+static void Task_LegendZacian(u8);
+static void Task_LegendZamazenta(u8);
+static void Task_LegendXerneas(u8);
+static void Task_LegendYveltal(u8);
+static void Task_Wario(u8); // Project Grounded (src/data/wario_intro.h)
+static void Task_Boo(u8); // Project Grounded (src/data/boo_intro.h)
+static void Task_ShyGuy(u8); // Project Grounded (src/data/shyguy_intro.h)
+static void Task_LegendDialga(u8); // Project Grounded (src/data/legend_intros_dp.h)
+static void Task_LegendPalkia(u8);
+static void Task_LegendArceus(u8);
+static void Task_LegendMew(u8);
+static void Task_LegendCrown(u8); // Project Grounded (src/data/legend_intros_cheap2.h)
+static void Task_LegendCelebi(u8);
+static void Task_LegendLake(u8);
+static void Task_LegendMeloetta(u8);
+static void Task_LegendZeraora(u8);
+static void Task_LegendZygarde(u8);
+static void Task_LegendEon(u8);
+static void Task_LegendCresselia(u8);
+static void Task_LegendNecrozma(u8);
+static void Task_LegendGalarZapdos(u8);
+static void Task_LegendGalarMoltres(u8);
+static void Task_LegendSwords(u8); // Project Grounded (src/data/legend_intros_cheap1.h)
+static void Task_LegendUltraBeast(u8);
+static void Task_LegendParadoxPast(u8);
+static void Task_LegendParadoxFuture(u8);
+static void Task_LegendEternatus(u8);
+static void Task_LegendMarshadow(u8);
+static void Task_LegendTerapagos(u8);
+static void Task_LegendPecharunt(u8);
+static void Task_RivalIntro(u8); // Project Grounded (src/data/rival_intros.h)
+static void Task_ClassIntro(u8); // Project Grounded (src/data/class_intros.h)
+static void Task_KyogreMural(u8); // Project Grounded
+static void Task_GroudonMural(u8); // Project Grounded
+static void Task_Ogerpon(u8); // Project Grounded
+static void Task_WeatherService(u8); // Project Grounded
 static void Task_Rocket(u8); // Project Grounded
 static void Task_Zarude(u8); // Project Grounded
 static void Task_PoisonChain(u8); // Project Grounded
@@ -347,6 +427,7 @@ static struct RectangularSpiralLine sRectangularSpiralLines[4];
 
 EWRAM_DATA static struct TransitionData *sTransitionData = NULL;
 
+#define RT_SMOL 0   // Project Grounded: grootte 0 = tiles zijn smol-gecomprimeerd (v0.9.230)
 static const u32 sBigPokeball_Tileset[] = INCBIN_U32("graphics/battle_transitions/big_pokeball.4bpp");
 static const u32 sPokeballTrail_Tileset[] = INCBIN_U32("graphics/battle_transitions/pokeball_trail.4bpp");
 static const u8 sPokeball_Gfx[] = INCBIN_U8("graphics/battle_transitions/pokeball.4bpp");
@@ -374,16 +455,16 @@ static const u32 sGroudon_Tilemap[] = INCBIN_U32("graphics/battle_transitions/gr
 static const u16 sKyogre1_Palette[] = INCBIN_U16("graphics/battle_transitions/kyogre_pt1.gbapal");
 static const u16 sKyogre2_Palette[] = INCBIN_U16("graphics/battle_transitions/kyogre_pt2.gbapal");
 // Project Grounded: noorderlicht-transitie (Suicune), gegenereerd met tools/grounded/aurora_transition.py
-static const u16 sAurora_Tileset[] = INCBIN_U16("graphics/battle_transitions/aurora.4bpp");
+static const u32 sAurora_Tileset[] = INCBIN_U32("graphics/battle_transitions/aurora.4bpp.smol");
 static const u16 sAurora_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aurora.bin");
 static const u16 sAurora_Palette[] = INCBIN_U16("graphics/battle_transitions/aurora.gbapal");
-static const u16 sRegidrago_Tileset[] = INCBIN_U16("graphics/battle_transitions/regidrago.4bpp");
+static const u32 sRegidrago_Tileset[] = INCBIN_U32("graphics/battle_transitions/regidrago.4bpp.smol");
 static const u16 sRegidrago_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regidrago.bin");
 static const u16 sRegidrago_Palette[] = INCBIN_U16("graphics/battle_transitions/regidrago.gbapal");
-static const u16 sRegieleki_Tileset[] = INCBIN_U16("graphics/battle_transitions/regieleki.4bpp");
+static const u32 sRegieleki_Tileset[] = INCBIN_U32("graphics/battle_transitions/regieleki.4bpp.smol");
 static const u16 sRegieleki_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regieleki.bin");
 static const u16 sRegieleki_Palette[] = INCBIN_U16("graphics/battle_transitions/regieleki.gbapal");
-static const u16 sRegigigas_Tileset[] = INCBIN_U16("graphics/battle_transitions/regigigas.4bpp");
+static const u32 sRegigigas_Tileset[] = INCBIN_U32("graphics/battle_transitions/regigigas.4bpp.smol");
 static const u16 sRegigigas_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regigigas.bin");
 static const u16 sRegigigas_Palette[] = INCBIN_U16("graphics/battle_transitions/regigigas.gbapal");
 static const u16 sDeoxys_Tileset[] = INCBIN_U16("graphics/battle_transitions/deoxys.4bpp");
@@ -391,58 +472,58 @@ static const u16 sDeoxys_Tilemap[] = INCBIN_U16("graphics/battle_transitions/deo
 static const u16 sDeoxys_Palette[] = INCBIN_U16("graphics/battle_transitions/deoxys.gbapal");
 static const u16 sBirch_Tileset[] = INCBIN_U16("graphics/battle_transitions/birch.4bpp");
 static const u16 sBirch_Palette[] = INCBIN_U16("graphics/battle_transitions/birch.gbapal");
-static const u16 sRaikou_Tileset[] = INCBIN_U16("graphics/battle_transitions/raikou.4bpp");
+static const u32 sRaikou_Tileset[] = INCBIN_U32("graphics/battle_transitions/raikou.4bpp.smol");
 static const u16 sRaikou_Tilemap[] = INCBIN_U16("graphics/battle_transitions/raikou.bin");
 static const u16 sRaikou_Palette[] = INCBIN_U16("graphics/battle_transitions/raikou.gbapal");
 static const u16 sEntei_Tileset[] = INCBIN_U16("graphics/battle_transitions/entei.4bpp");
 static const u16 sEntei_Palette[] = INCBIN_U16("graphics/battle_transitions/entei.gbapal");
-static const u16 sRouteWave_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_wave.4bpp");
+static const u32 sRouteWave_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_wave.4bpp.smol");
 static const u16 sRouteWave_Palette[] = INCBIN_U16("graphics/battle_transitions/route_wave.gbapal");
-static const u16 sRouteBeach_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_beach.4bpp");
+static const u32 sRouteBeach_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_beach.4bpp.smol");
 static const u16 sRouteBeach_Palette[] = INCBIN_U16("graphics/battle_transitions/route_beach.gbapal");
-static const u16 sRouteBubbles_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_bubbles.4bpp");
+static const u32 sRouteBubbles_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_bubbles.4bpp.smol");
 static const u16 sRouteBubbles_Palette[] = INCBIN_U16("graphics/battle_transitions/route_bubbles.gbapal");
-static const u16 sRouteSnow_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_snow.4bpp");
+static const u32 sRouteSnow_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_snow.4bpp.smol");
 static const u16 sRouteSnow_Palette[] = INCBIN_U16("graphics/battle_transitions/route_snow.gbapal");
-static const u16 sRouteAsh_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_ash.4bpp");
+static const u32 sRouteAsh_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_ash.4bpp.smol");
 static const u16 sRouteAsh_Palette[] = INCBIN_U16("graphics/battle_transitions/route_ash.gbapal");
-static const u16 sRouteSand_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_sand.4bpp");
+static const u32 sRouteSand_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_sand.4bpp.smol");
 static const u16 sRouteSand_Palette[] = INCBIN_U16("graphics/battle_transitions/route_sand.gbapal");
-static const u16 sRouteCycling_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_cycling.4bpp");
+static const u32 sRouteCycling_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_cycling.4bpp.smol");
 static const u16 sRouteCycling_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_cycling.bin");
 static const u16 sRouteCycling_Palette[] = INCBIN_U16("graphics/battle_transitions/route_cycling.gbapal");
-static const u16 sRoutePyre_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_pyre.4bpp");
+static const u32 sRoutePyre_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_pyre.4bpp.smol");
 static const u16 sRoutePyre_Palette[] = INCBIN_U16("graphics/battle_transitions/route_pyre.gbapal");
-static const u16 sRouteSky_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_sky.4bpp");
+static const u32 sRouteSky_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_sky.4bpp.smol");
 static const u16 sRouteSky_Palette[] = INCBIN_U16("graphics/battle_transitions/route_sky.gbapal");
 static const u16 sRouteShort_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_short.4bpp");
 static const u16 sRouteShort_Palette[] = INCBIN_U16("graphics/battle_transitions/route_short.gbapal");
-static const u16 sRoutePaint_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_paint.4bpp");
+static const u32 sRoutePaint_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_paint.4bpp.smol");
 static const u16 sRoutePaint_Palette[] = INCBIN_U16("graphics/battle_transitions/route_paint.gbapal");
-static const u16 sRouteSafari_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_safari.4bpp");
+static const u32 sRouteSafari_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_safari.4bpp.smol");
 static const u16 sRouteSafari_Palette[] = INCBIN_U16("graphics/battle_transitions/route_safari.gbapal");
-static const u16 sRouteMeteor_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_meteor.4bpp");
+static const u32 sRouteMeteor_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_meteor.4bpp.smol");
 static const u16 sRouteMeteor_Palette[] = INCBIN_U16("graphics/battle_transitions/route_meteor.gbapal");
-static const u16 sRouteJagged_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_jagged.4bpp");
+static const u32 sRouteJagged_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_jagged.4bpp.smol");
 static const u16 sRouteJagged_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_jagged.bin");
 static const u16 sRouteJagged_Palette[] = INCBIN_U16("graphics/battle_transitions/route_jagged.gbapal");
-static const u16 sRouteRainforest_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_rainforest.4bpp");
+static const u32 sRouteRainforest_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_rainforest.4bpp.smol");
 static const u16 sRouteRainforest_Palette[] = INCBIN_U16("graphics/battle_transitions/route_rainforest.gbapal");
 static const u16 sPikachu_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_pikachu.4bpp");
 static const u16 sPikachu_Palette[] = INCBIN_U16("graphics/battle_transitions/route_pikachu.gbapal");
-static const u16 sMagikarp_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_magikarp.4bpp");
+static const u32 sMagikarp_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_magikarp.4bpp.smol");
 static const u16 sMagikarp_Palette[] = INCBIN_U16("graphics/battle_transitions/route_magikarp.gbapal");
-static const u16 sMagikarpPile_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_magikarp_pile.4bpp");
+static const u32 sMagikarpPile_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_magikarp_pile.4bpp.smol");
 static const u16 sMagikarpPile_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_magikarp_pile.bin");
 static const u16 sMagikarpPile_Palette[] = INCBIN_U16("graphics/battle_transitions/route_magikarp_pile.gbapal");
 static const u32 sMagikarpSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_magikarp.4bpp");
 static const u16 sMagikarpSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_magikarp.gbapal");
-static const u16 sGabbyTy_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_camera.4bpp");
+static const u32 sGabbyTy_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_camera.4bpp.smol");
 static const u16 sGabbyTy_Palette[] = INCBIN_U16("graphics/battle_transitions/route_camera.gbapal");
-static const u16 sKoffing_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_koffing.4bpp");
+static const u32 sKoffing_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_koffing.4bpp.smol");
 static const u16 sKoffing_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_koffing.bin");
 static const u16 sKoffing_Palette[] = INCBIN_U16("graphics/battle_transitions/route_koffing.gbapal");
-static const u16 sBeachball_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_beachball.4bpp");
+static const u32 sBeachball_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_beachball.4bpp.smol");
 static const u16 sBeachball_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_beachball.bin");
 static const u16 sBeachball_Palette[] = INCBIN_U16("graphics/battle_transitions/route_beachball.gbapal");
 static const u32 sQuestionSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_question.4bpp");
@@ -451,59 +532,68 @@ static const u32 sPoochyenaSprite_Gfx[] = INCBIN_U32("graphics/battle_transition
 static const u16 sPoochyenaSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_poochyena.gbapal");
 static const u32 sGearSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_gear.4bpp");
 static const u16 sGearSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_gear.gbapal");
-static const u16 sZangoose_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_zangoose.4bpp");
+static const u32 sZangoose_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_zangoose.4bpp.smol");
 static const u16 sZangoose_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zangoose.gbapal");
 static const u32 sZangooseClaw_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_zangoose_claw.4bpp");
 static const u16 sZangooseClaw_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_zangoose_claw.gbapal");
-static const u16 sSeviper_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_seviper.4bpp");
-static const u16 sHeatran_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_heatran.4bpp");
+static const u32 sSeviper_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_seviper.4bpp.smol");
+static const u32 sHeatran_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_heatran.4bpp.smol");
 static const u16 sHeatran_Palette[] = INCBIN_U16("graphics/battle_transitions/route_heatran.gbapal");
-static const u16 sShaymin_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.4bpp");
+static const u32 sShaymin_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_shaymin.4bpp.smol");
 static const u16 sShaymin_Palette[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.gbapal");
 static const u8 sShaymin_Petals[] = INCBIN_U8("graphics/battle_transitions/route_shaymin_petals.bin");
 static const u8 sShaymin_Carpet[] = INCBIN_U8("graphics/battle_transitions/route_shaymin_carpet.bin");
-static const u16 sGenesect_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_genesect.4bpp");
+static const u32 sGenesect_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_genesect.4bpp.smol");
 static const u16 sGenesect_Palette[] = INCBIN_U16("graphics/battle_transitions/route_genesect.gbapal");
-static const u16 sMewtwo_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.4bpp");
+static const u32 sMewtwo_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_mewtwo.4bpp.smol");
 static const u16 sMewtwo_Palette[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.gbapal");
 static const u16 sMewtwo_Lab[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_lab.bin");
 static const u16 sMewtwo_Crack[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_crack.bin");
 static const u16 sMewtwo_Page[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_page.bin");
 static const u16 sMewtwo_Burst[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_burst.bin");
-static const u16 sGiratina_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_giratina.4bpp");
+static const u32 sGiratina_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_giratina.4bpp.smol");
 static const u16 sGiratina_Palette[] = INCBIN_U16("graphics/battle_transitions/route_giratina.gbapal");
 static const u16 sGiratina_Crack[] = INCBIN_U16("graphics/battle_transitions/route_giratina_crack.bin");
 static const u8 sGiratina_CrackTime[] = INCBIN_U8("graphics/battle_transitions/route_giratina_crack_t.bin");
 static const u16 sGiratina_Wing[] = INCBIN_U16("graphics/battle_transitions/route_giratina_wing.bin");
-static const u16 sVictini_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_victini.4bpp");
+static const u32 sVictini_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_victini.4bpp.smol");
 static const u16 sVictini_Palette[] = INCBIN_U16("graphics/battle_transitions/route_victini.gbapal");
 static const u16 sVictini_V[] = INCBIN_U16("graphics/battle_transitions/route_victini_v.bin");
-static const u16 sJirachi_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_jirachi.4bpp");
+static const u32 sJirachi_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_jirachi.4bpp.smol");
 static const u16 sJirachi_Palette[] = INCBIN_U16("graphics/battle_transitions/route_jirachi.gbapal");
 static const u32 sJirachiStar_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_jirachi_star.4bpp");
 static const u16 sJirachiStar_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_jirachi_star.gbapal");
-static const u16 sDarkrai_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.4bpp");
-static const u16 sNeoPlasma_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.4bpp"); // Project Grounded
+static const u32 sDarkrai_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_darkrai.4bpp.smol");
+static const u32 sNeoPlasma_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_neo_plasma.4bpp.smol"); // Project Grounded
 static const u16 sNeoPlasma_Palette[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.gbapal");
 static const u16 sNeoPlasma_Maps[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.bin");
+// Project Grounded: SickBlik (tools/grounded/sickblik_transition.py)
+static const u32 sSickBlik_TableTiles[] = INCBIN_U32("graphics/battle_transitions/sickblik_table_tiles.bin");
+static const u16 sSickBlik_TableMap[] = INCBIN_U16("graphics/battle_transitions/sickblik_table_map.bin");
+static const u16 sSickBlik_TablePals[] = INCBIN_U16("graphics/battle_transitions/sickblik_table_pals.bin");
+static const u32 sSickBlik_TopStatic[] = INCBIN_U32("graphics/battle_transitions/sickblik_top_static.bin");
+static const u32 sSickBlik_TopDyn[] = INCBIN_U32("graphics/battle_transitions/sickblik_top_dyn_lz.bin"); // LZ77 per sleutelbeeld
+static const u16 sSickBlik_TopMaps[] = INCBIN_U16("graphics/battle_transitions/sickblik_top_maps.bin");
+static const u16 sSickBlik_TopPals[] = INCBIN_U16("graphics/battle_transitions/sickblik_top_pals.bin");
+#include "data/sickblik_transition.h"
 static const u16 sDarkrai_Palette[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.gbapal");
 static const u32 sDarkraiEye_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_darkrai_eye.4bpp");
 static const u16 sDarkraiEye_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_darkrai_eye.gbapal");
-static const u16 sRocket_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_rocket.4bpp");
+static const u32 sRocket_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_rocket.4bpp.smol");
 static const u16 sRocket_Palette[] = INCBIN_U16("graphics/battle_transitions/route_rocket.gbapal");
 static const u32 sRocketR_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_rocket_r.4bpp");
 static const u16 sRocketR_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_rocket_r.gbapal");
-static const u16 sZarude_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_zarude.4bpp"); // Project Grounded
+static const u32 sZarude_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_zarude.4bpp.smol"); // Project Grounded
 static const u16 sZarude_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zarude.gbapal");
 static const u16 sZarude_Claws[] = INCBIN_U16("graphics/battle_transitions/route_zarude_claws.bin");
 static const u8 sZarude_Depth[] = INCBIN_U8("graphics/battle_transitions/route_zarude_depth.bin");
-static const u16 sDave_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_dave.4bpp"); // Project Grounded
+static const u32 sDave_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_dave.4bpp.smol"); // Project Grounded
 static const u16 sDave_Palette[] = INCBIN_U16("graphics/battle_transitions/route_dave.gbapal");
 static const u16 sDave_Maps[] = INCBIN_U16("graphics/battle_transitions/route_dave.bin");
 static const s16 sDave_Ball[] = INCBIN_S16("graphics/battle_transitions/route_dave_ball.bin");
 static const u32 sDaveBall_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_dave_ball.4bpp");
 static const u16 sDaveBall_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_dave_ball.gbapal");
-static const u16 sPoisonChain_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.4bpp"); // Project Grounded
+static const u32 sPoisonChain_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_poisonchain.4bpp.smol"); // Project Grounded
 static const u16 sPoisonChain_Palette[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.gbapal");
 static const u16 sPoisonChain_Map[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_map.bin");
 static const u16 sPoisonChain_Anim[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_anim.bin");
@@ -514,7 +604,7 @@ static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/rout
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
 static const u32 sBeachballSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_beachball.4bpp");
 static const u16 sBeachballSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_beachball.gbapal");
-static const u16 sAquaMagma_Tileset[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.4bpp");
+static const u32 sAquaMagma_Tileset[] = INCBIN_U32("graphics/battle_transitions/aqua_magma.4bpp.smol");
 static const u16 sAquaMagma_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.bin");
 static const u16 sGroudon1_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt1.gbapal");
 static const u16 sGroudon2_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt2.gbapal");
@@ -534,7 +624,8 @@ static const u32 sFrontierSquares_Tilemap[] = INCBIN_U32("graphics/battle_transi
 // All battle transitions use the same intro
 static const TaskFunc sTasks_Intro[B_TRANSITION_COUNT] =
 {
-    [0 ... B_TRANSITION_COUNT - 1] = &Task_Intro
+    [0 ... B_TRANSITION_COUNT - 1] = &Task_Intro,
+    [B_TRANSITION_ARCEUS] = NULL, // Project Grounded: geen flits vooraf, de wereld trilt meteen op de eerste stoot
 };
 
 // After the intro each transition has a unique main task.
@@ -605,6 +696,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ROUTE_RAINFOREST] = Task_RouteRainforest, // Project Grounded
     [B_TRANSITION_PIKACHU] = Task_Pikachu, // Project Grounded
     [B_TRANSITION_MAGIKARP] = Task_Magikarp, // Project Grounded
+    [B_TRANSITION_VIAGRA_BOYS] = Task_ViagraBoys, // Project Grounded
     [B_TRANSITION_PSYDUCK] = Task_Psyduck, // Project Grounded
     [B_TRANSITION_KOFFING] = Task_Koffing, // Project Grounded
     [B_TRANSITION_GABBY_TY] = Task_GabbyTy, // Project Grounded
@@ -622,11 +714,74 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_JIRACHI] = Task_Jirachi, // Project Grounded
     [B_TRANSITION_DARKRAI] = Task_Darkrai, // Project Grounded
     [B_TRANSITION_NEO_PLASMA] = Task_NeoPlasma, // Project Grounded
+    [B_TRANSITION_SICKBLIK] = Task_SickBlik, // Project Grounded
     [B_TRANSITION_ROCKET] = Task_Rocket, // Project Grounded
     [B_TRANSITION_ZARUDE] = Task_Zarude, // Project Grounded
     [B_TRANSITION_POISON_CHAIN] = Task_PoisonChain, // Project Grounded
     [B_TRANSITION_REGIGIGAS] = Task_Regigigas, // Project Grounded
     [B_TRANSITION_DAVE] = Task_Dave, // Project Grounded
+    [B_TRANSITION_STEVEN] = Task_Steven, // Project Grounded
+    [B_TRANSITION_WALLY_VHS] = Task_WallyVhs, // Project Grounded
+    [B_TRANSITION_RAYQUAZA_PILLAR] = Task_RayquazaPillar, // Project Grounded
+    [B_TRANSITION_MIMI] = Task_Mimi, // Project Grounded
+    [B_TRANSITION_KECCLES] = Task_Keccles, // Project Grounded
+    [B_TRANSITION_BURGLAR] = Task_Burglar, // Project Grounded
+    [B_TRANSITION_GYM_ROXANNE] = Task_GymRoxanne, // Project Grounded
+    [B_TRANSITION_GYM_BRAWLY] = Task_GymBrawly, // Project Grounded
+    [B_TRANSITION_GYM_WATTSON] = Task_GymWattson, // Project Grounded
+    [B_TRANSITION_GYM_FLANNERY] = Task_GymFlannery, // Project Grounded
+    [B_TRANSITION_TAPU_KOKO] = Task_TapuKoko, // Project Grounded
+    [B_TRANSITION_TAPU_LELE] = Task_TapuLele,
+    [B_TRANSITION_TAPU_BULU] = Task_TapuBulu,
+    [B_TRANSITION_TAPU_FINI] = Task_TapuFini,
+    [B_TRANSITION_GYM_NORMAN] = Task_GymNorman, // Project Grounded
+    [B_TRANSITION_GYM_WINONA] = Task_GymWinona, // Project Grounded
+    [B_TRANSITION_GYM_TATE_LIZA] = Task_GymTateLiza, // Project Grounded
+    [B_TRANSITION_GYM_WALLACE] = Task_GymWallace, // Project Grounded
+    [B_TRANSITION_LUGIA] = Task_LegendLugia, // Project Grounded
+    [B_TRANSITION_HO_OH] = Task_LegendHooh,
+    [B_TRANSITION_VOLCANION] = Task_LegendVolcanion,
+    [B_TRANSITION_HOOPA] = Task_LegendHoopa,
+    [B_TRANSITION_FORCES] = Task_LegendForces,
+    [B_TRANSITION_ARTICUNO] = Task_LegendArticuno, // Project Grounded (src/data/legend_intros2.h)
+    [B_TRANSITION_ZAPDOS] = Task_LegendZapdos,
+    [B_TRANSITION_MOLTRES] = Task_LegendMoltres,
+    [B_TRANSITION_ZACIAN] = Task_LegendZacian,
+    [B_TRANSITION_ZAMAZENTA] = Task_LegendZamazenta,
+    [B_TRANSITION_XERNEAS] = Task_LegendXerneas,
+    [B_TRANSITION_YVELTAL] = Task_LegendYveltal,
+    [B_TRANSITION_WARIO] = Task_Wario, // Project Grounded (src/data/wario_intro.h)
+    [B_TRANSITION_SHY_GUY] = Task_ShyGuy, // Project Grounded (src/data/shyguy_intro.h)
+    [B_TRANSITION_DIALGA] = Task_LegendDialga, // Project Grounded (src/data/legend_intros_dp.h)
+    [B_TRANSITION_PALKIA] = Task_LegendPalkia,
+    [B_TRANSITION_ARCEUS] = Task_LegendArceus,
+    [B_TRANSITION_MEW] = Task_LegendMew,
+    [B_TRANSITION_KYOGRE_MURAL] = Task_KyogreMural, // Project Grounded
+    [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
+    [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
+    [B_TRANSITION_WEATHER_SERVICE] = Task_WeatherService, // Project Grounded
+    [B_TRANSITION_BOO] = Task_Boo, // Project Grounded (src/data/boo_intro.h)
+    [B_TRANSITION_LEGEND_CROWN] = Task_LegendCrown, // Project Grounded (src/data/legend_intros_cheap2.h)
+    [B_TRANSITION_LEGEND_CELEBI] = Task_LegendCelebi,
+    [B_TRANSITION_LEGEND_LAKE] = Task_LegendLake,
+    [B_TRANSITION_LEGEND_MELOETTA] = Task_LegendMeloetta,
+    [B_TRANSITION_LEGEND_ZERAORA] = Task_LegendZeraora,
+    [B_TRANSITION_LEGEND_ZYGARDE] = Task_LegendZygarde,
+    [B_TRANSITION_LEGEND_EON] = Task_LegendEon,
+    [B_TRANSITION_LEGEND_CRESSELIA] = Task_LegendCresselia,
+    [B_TRANSITION_LEGEND_NECROZMA] = Task_LegendNecrozma,
+    [B_TRANSITION_LEGEND_GALAR_ZAPDOS] = Task_LegendGalarZapdos,
+    [B_TRANSITION_LEGEND_GALAR_MOLTRES] = Task_LegendGalarMoltres,
+    [B_TRANSITION_SWORDS_SLASH] = Task_LegendSwords, // Project Grounded (src/data/legend_intros_cheap1.h)
+    [B_TRANSITION_ULTRA_BEAST] = Task_LegendUltraBeast,
+    [B_TRANSITION_PARADOX_PAST] = Task_LegendParadoxPast,
+    [B_TRANSITION_PARADOX_FUTURE] = Task_LegendParadoxFuture,
+    [B_TRANSITION_ETERNATUS] = Task_LegendEternatus,
+    [B_TRANSITION_MARSHADOW] = Task_LegendMarshadow,
+    [B_TRANSITION_TERAPAGOS] = Task_LegendTerapagos,
+    [B_TRANSITION_PECHARUNT] = Task_LegendPecharunt,
+    [B_TRANSITION_RIVAL_INTRO] = Task_RivalIntro, // Project Grounded (src/data/rival_intros.h)
+    [B_TRANSITION_CLASS_INTRO] = Task_ClassIntro, // Project Grounded (src/data/class_intros.h)
 };
 
 static const TransitionStateFunc sTaskHandlers[] =
@@ -1320,6 +1475,9 @@ static void LaunchBattleTransitionTask(u8 transitionId)
 {
     u8 taskId = CreateTask(Task_BattleTransition, 2);
     gTasks[taskId].tTransitionId = transitionId;
+    // Project Grounded: startmoment (VBlanks) bewaren, zodat een transitie op de muziek kan eindigen (Tapu's)
+    gTasks[taskId].data[13] = gMain.vblankCounter1;
+    gTasks[taskId].data[14] = gMain.vblankCounter1 >> 16;
     sTransitionData = AllocZeroed(sizeof(*sTransitionData));
 }
 
@@ -1727,7 +1885,7 @@ static bool8 Regi_Init(struct Task *task)
     return FALSE;
 }
 
-static void NewRegi_SetGfx(struct Task *task, const u16 *tileset_, u32 tilesetSize, const u16 *tilemap_, const u16 *palette)
+static void NewRegi_SetGfx(struct Task *task, const void *tileset_, u32 tilesetSize, const u16 *tilemap_, const u16 *palette)
 {
     u16 *tilemap, *tileset;
 
@@ -1735,7 +1893,10 @@ static void NewRegi_SetGfx(struct Task *task, const u16 *tileset_, u32 tilesetSi
     InitPatternWeaveTransition(task);
     GetBg0TilesDst(&tilemap, &tileset);
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-    CpuCopy16(tileset_, tileset, tilesetSize);
+    if (tilesetSize == RT_SMOL)
+        DecompressDataWithHeaderVram(tileset_, tileset);
+    else
+        CpuCopy16(tileset_, tileset, tilesetSize);
     LoadPalette(palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     CpuCopy16(tilemap_, tilemap, 0x500);
     SetSinWave((s16*)gScanlineEffectRegBuffers[0], 0, task->tSinIndex, 132, task->tAmplitude, DISPLAY_HEIGHT);
@@ -1744,25 +1905,25 @@ static void NewRegi_SetGfx(struct Task *task, const u16 *tileset_, u32 tilesetSi
 
 static bool8 AquaMagma_Init(struct Task *task)
 {
-    NewRegi_SetGfx(task, sAquaMagma_Tileset, sizeof(sAquaMagma_Tileset), sAquaMagma_Tilemap, sEvilTeam_Palette);
+    NewRegi_SetGfx(task, sAquaMagma_Tileset, RT_SMOL, sAquaMagma_Tilemap, sEvilTeam_Palette);
     return FALSE;
 }
 
 static bool8 Regidrago_Init(struct Task *task)
 {
-    NewRegi_SetGfx(task, sRegidrago_Tileset, sizeof(sRegidrago_Tileset), sRegidrago_Tilemap, sRegidrago_Palette);
+    NewRegi_SetGfx(task, sRegidrago_Tileset, RT_SMOL, sRegidrago_Tilemap, sRegidrago_Palette);
     return FALSE;
 }
 
 static bool8 Regieleki_Init(struct Task *task)
 {
-    NewRegi_SetGfx(task, sRegieleki_Tileset, sizeof(sRegieleki_Tileset), sRegieleki_Tilemap, sRegieleki_Palette);
+    NewRegi_SetGfx(task, sRegieleki_Tileset, RT_SMOL, sRegieleki_Tilemap, sRegieleki_Palette);
     return FALSE;
 }
 
 static bool8 Regigigas_Init(struct Task *task)
 {
-    NewRegi_SetGfx(task, sRegigigas_Tileset, sizeof(sRegigigas_Tileset), sRegigigas_Tilemap, sRegigigas_Palette);
+    NewRegi_SetGfx(task, sRegigigas_Tileset, RT_SMOL, sRegigigas_Tilemap, sRegigigas_Palette);
     return FALSE;
 }
 
@@ -5196,7 +5357,7 @@ static bool8 Aurora_Init(struct Task *task)
 
     GetBg0TilesDst(&tilemap, &tileset);
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-    CpuCopy16(sAurora_Tileset, tileset, sizeof(sAurora_Tileset));
+    DecompressDataWithHeaderVram(sAurora_Tileset, tileset);
     CpuCopy16(sAurora_Tilemap, tilemap, sizeof(sAurora_Tilemap));
     LoadPalette(sAurora_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     task->tAuroraTimer = 0;
@@ -5515,7 +5676,7 @@ static bool8 Raikou_Init(struct Task *task)
 
     GetBg0TilesDst(&tilemap, &tileset);
     CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-    CpuCopy16(sRaikou_Tileset, tileset, sizeof(sRaikou_Tileset));
+    DecompressDataWithHeaderVram(sRaikou_Tileset, tileset);
     LoadPalette(sRaikou_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
     SetGpuReg(REG_OFFSET_BG0VOFS, 0);
     task->tRaikouTimer = 0;
@@ -5750,7 +5911,7 @@ static void Task_Entei(u8 taskId)
 
 struct RouteTransition
 {
-    const u16 *tiles;
+    const void *tiles;
     u32 tilesSize;
     const u16 *palettes;
     u8 numPalettes;
@@ -5800,7 +5961,10 @@ static void RouteTransition_Run(u8 taskId, const struct RouteTransition *rt)
     case 0:
         GetBg0TilesDst(&tilemap, &tileset);
         CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-        CpuCopy16(rt->tiles, tileset, rt->tilesSize);
+        if (rt->tilesSize == RT_SMOL)
+            DecompressDataWithHeaderVram(rt->tiles, tileset);
+        else
+            CpuCopy16(rt->tiles, tileset, rt->tilesSize);
         SetGpuReg(REG_OFFSET_BG0HOFS, 0);
         SetGpuReg(REG_OFFSET_BG0VOFS, 0);
         task->tRtTimer = task->tRtA = task->tRtB = task->tRtC = 0;
@@ -5888,7 +6052,7 @@ static bool8 RTWave_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Wave =
 {
-    sRouteWave_Tileset, sizeof(sRouteWave_Tileset), sRouteWave_Palette, 4, 4, SE_M_SURF, RTWave_Init, RTWave_Update
+    sRouteWave_Tileset, RT_SMOL, sRouteWave_Palette, 4, 4, SE_M_SURF, RTWave_Init, RTWave_Update
 };
 
 static void Task_RouteWave(u8 taskId)
@@ -5953,7 +6117,7 @@ static bool8 RTBeach_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Beach =
 {
-    sRouteBeach_Tileset, sizeof(sRouteBeach_Tileset), sRouteBeach_Palette, 4, 4, SE_M_SURF, RTBeach_Init, RTBeach_Update
+    sRouteBeach_Tileset, RT_SMOL, sRouteBeach_Palette, 4, 4, SE_M_SURF, RTBeach_Init, RTBeach_Update
 };
 
 static void Task_RouteBeach(u8 taskId)
@@ -6025,7 +6189,7 @@ static bool8 RTBubbles_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Bubbles =
 {
-    sRouteBubbles_Tileset, sizeof(sRouteBubbles_Tileset), sRouteBubbles_Palette, 1, 1, 0, RTBubbles_Init, RTBubbles_Update
+    sRouteBubbles_Tileset, RT_SMOL, sRouteBubbles_Palette, 1, 1, 0, RTBubbles_Init, RTBubbles_Update
 };
 
 static void Task_RouteBubbles(u8 taskId)
@@ -6066,7 +6230,7 @@ static bool8 RTSnow_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Snow =
 {
-    sRouteSnow_Tileset, sizeof(sRouteSnow_Tileset), sRouteSnow_Palette, 1, 1, SE_M_GUST, NULL, RTSnow_Update
+    sRouteSnow_Tileset, RT_SMOL, sRouteSnow_Palette, 1, 1, SE_M_GUST, NULL, RTSnow_Update
 };
 
 static void Task_RouteSnow(u8 taskId)
@@ -6109,7 +6273,7 @@ static bool8 RTAsh_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Ash =
 {
-    sRouteAsh_Tileset, sizeof(sRouteAsh_Tileset), sRouteAsh_Palette, 1, 1, SE_M_GUST, NULL, RTAsh_Update
+    sRouteAsh_Tileset, RT_SMOL, sRouteAsh_Palette, 1, 1, SE_M_GUST, NULL, RTAsh_Update
 };
 
 static void Task_RouteAsh(u8 taskId)
@@ -6162,7 +6326,7 @@ static bool8 RTSand_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Sand =
 {
-    sRouteSand_Tileset, sizeof(sRouteSand_Tileset), sRouteSand_Palette, 1, 1, SE_M_SANDSTORM, RTSand_Init, RTSand_Update
+    sRouteSand_Tileset, RT_SMOL, sRouteSand_Palette, 1, 1, SE_M_SANDSTORM, RTSand_Init, RTSand_Update
 };
 
 static void Task_RouteSand(u8 taskId)
@@ -6215,7 +6379,7 @@ static bool8 RTCycling_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Cycling =
 {
-    sRouteCycling_Tileset, sizeof(sRouteCycling_Tileset), sRouteCycling_Palette, 1, 1, 0, RTCycling_Init, RTCycling_Update
+    sRouteCycling_Tileset, RT_SMOL, sRouteCycling_Palette, 1, 1, 0, RTCycling_Init, RTCycling_Update
 };
 
 static void Task_RouteCycling(u8 taskId)
@@ -6311,7 +6475,7 @@ static bool8 RTPyre_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Pyre =
 {
-    sRoutePyre_Tileset, sizeof(sRoutePyre_Tileset), sRoutePyre_Palette, 1, 1, SE_M_NIGHTMARE, RTPyre_Init, RTPyre_Update
+    sRoutePyre_Tileset, RT_SMOL, sRoutePyre_Palette, 1, 1, SE_M_NIGHTMARE, RTPyre_Init, RTPyre_Update
 };
 
 static void Task_RoutePyre(u8 taskId)
@@ -6367,7 +6531,7 @@ static bool8 RTSky_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Sky =
 {
-    sRouteSky_Tileset, sizeof(sRouteSky_Tileset), sRouteSky_Palette, 1, 1, SE_M_FLY, RTSky_Init, RTSky_Update
+    sRouteSky_Tileset, RT_SMOL, sRouteSky_Palette, 1, 1, SE_M_FLY, RTSky_Init, RTSky_Update
 };
 
 static void Task_RouteSky(u8 taskId)
@@ -6411,7 +6575,7 @@ static bool8 RTPaint_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Paint =
 {
-    sRoutePaint_Tileset, sizeof(sRoutePaint_Tileset), sRoutePaint_Palette, 1, 1, 0, NULL, RTPaint_Update
+    sRoutePaint_Tileset, RT_SMOL, sRoutePaint_Palette, 1, 1, 0, NULL, RTPaint_Update
 };
 
 static void Task_RoutePaint(u8 taskId)
@@ -6619,7 +6783,7 @@ static bool8 RTSafari_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Safari =
 {
-    sRouteSafari_Tileset, sizeof(sRouteSafari_Tileset), sRouteSafari_Palette, 1, 1, 0, RTSafari_Init, RTSafari_Update
+    sRouteSafari_Tileset, RT_SMOL, sRouteSafari_Palette, 1, 1, 0, RTSafari_Init, RTSafari_Update
 };
 
 static void Task_RouteSafari(u8 taskId)
@@ -6672,7 +6836,7 @@ static bool8 RTMeteor_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Meteor =
 {
-    sRouteMeteor_Tileset, sizeof(sRouteMeteor_Tileset), sRouteMeteor_Palette, 1, 1, SE_M_RAZOR_WIND, RTMeteor_Init, RTMeteor_Update
+    sRouteMeteor_Tileset, RT_SMOL, sRouteMeteor_Palette, 1, 1, SE_M_RAZOR_WIND, RTMeteor_Init, RTMeteor_Update
 };
 
 static void Task_RouteMeteor(u8 taskId)
@@ -6725,7 +6889,7 @@ static bool8 RTJagged_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Jagged =
 {
-    sRouteJagged_Tileset, sizeof(sRouteJagged_Tileset), sRouteJagged_Palette, 1, 1, 0, RTJagged_Init, RTJagged_Update
+    sRouteJagged_Tileset, RT_SMOL, sRouteJagged_Palette, 1, 1, 0, RTJagged_Init, RTJagged_Update
 };
 
 static void Task_RouteJagged(u8 taskId)
@@ -6777,7 +6941,7 @@ static bool8 RTRainforest_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Rainforest =
 {
-    sRouteRainforest_Tileset, sizeof(sRouteRainforest_Tileset), sRouteRainforest_Palette, 1, 1, SE_M_RAIN_DANCE, RTRainforest_Init, RTRainforest_Update
+    sRouteRainforest_Tileset, RT_SMOL, sRouteRainforest_Palette, 1, 1, SE_M_RAIN_DANCE, RTRainforest_Init, RTRainforest_Update
 };
 
 static void Task_RouteRainforest(u8 taskId)
@@ -6951,7 +7115,7 @@ static bool8 RTMagikarp_Update(struct Task *task)
         if (t == MAGIKARP_PILE_START)
         {
             CpuFill16(0, tilemap, BG_SCREEN_SIZE);
-            CpuCopy16(sMagikarpPile_Tileset, tileset, sizeof(sMagikarpPile_Tileset));
+            DecompressDataWithHeaderVram(sMagikarpPile_Tileset, tileset);
             PlaySE(SE_M_SURF);
         }
         LoadPalette(sMagikarpPile_Palette, BG_PLTT_ID(15), PLTT_SIZE_4BPP);
@@ -7032,12 +7196,122 @@ static void RTMagikarp_Finish(struct Task *task)
 
 static const struct RouteTransition sRT_Magikarp =
 {
-    sMagikarp_Tileset, sizeof(sMagikarp_Tileset), sMagikarp_Palette, 1, 1, 0, RTMagikarp_Init, RTMagikarp_Update, RTMagikarp_Finish
+    sMagikarp_Tileset, RT_SMOL, sMagikarp_Palette, 1, 1, 0, RTMagikarp_Init, RTMagikarp_Update, RTMagikarp_Finish
 };
 
 static void Task_Magikarp(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Magikarp);
+}
+
+// ---------------- Viagra Boys (Youngster Calvin, "Short shorts, cigarette."): het yin-yang-logo met V en B draait en
+// zoomt in op zwart, flits, en draait daarna andersom verder in omgekeerde kleuren (zwart logo op wit). Bron:
+// tools/grounded/viagra_boys_transition.py. BG-tile 1 = vlak in kleur 1 (zwart, in de tweede helft wit).
+#define VB_TAG    0x5A40
+#define VB_FLIP   44
+#define VB_END    86
+
+static const u16 sViagraBoys_BgTiles[] = INCBIN_U16("graphics/battle_transitions/viagra_boys_bg.4bpp");
+static const u16 sViagraBoys_BgPal[] = INCBIN_U16("graphics/battle_transitions/viagra_boys_bg.gbapal");
+static const u32 sViagraBoys_Gfx[] = INCBIN_U32("graphics/battle_transitions/viagra_boys.4bpp");
+static const u16 sViagraBoys_Pal[] = INCBIN_U16("graphics/battle_transitions/viagra_boys.gbapal");
+
+static const struct OamData sRTViagraBoys_Oam =
+{
+    .affineMode = ST_OAM_AFFINE_DOUBLE,
+    .shape = SPRITE_SHAPE(64x64),
+    .size = SPRITE_SIZE(64x64),
+    .priority = 0,
+};
+
+static const struct SpriteTemplate sRTViagraBoys_Template =
+{
+    .tileTag = VB_TAG,
+    .paletteTag = VB_TAG,
+    .oam = &sRTViagraBoys_Oam,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static void RTViagraBoys_Init(struct Task *task)
+{
+    struct SpriteSheet sheet = {sViagraBoys_Gfx, sizeof(sViagraBoys_Gfx), VB_TAG};
+    struct SpritePalette spal = {sViagraBoys_Pal, VB_TAG};
+    u8 id;
+
+    LoadSpriteSheet(&sheet);
+    LoadSpritePalette(&spal);
+    id = CreateSprite(&sRTViagraBoys_Template, 120, 80, 0);
+    task->tRtA = id;
+    task->tRtB = AllocOamMatrix();
+    if (id != MAX_SPRITES)
+    {
+        gSprites[id].oam.matrixNum = task->tRtB;
+        CalcCenterToCornerVec(&gSprites[id], SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), ST_OAM_AFFINE_DOUBLE);
+    }
+    PlaySE(SE_M_SWAGGER);
+}
+
+static bool8 RTViagraBoys_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, scale, rot;
+    u32 i, pal = 16 + IndexOfSpritePaletteTag(VB_TAG);
+    u16 black = RGB(2, 2, 2), white = RGB(30, 30, 30);
+
+    for (i = 0; i < 20 * 32; i++)
+        tilemap[i] = RT_TILE(1);
+    if (t < VB_FLIP)
+    {
+        // eerst: wit logo op zwart, een hele draai rechtsom terwijl het groeit
+        scale = 128 + t * 160 / VB_FLIP;
+        rot = -(t * 0x10000 / VB_FLIP);
+        LoadPalette(&black, BG_PLTT_ID(15) + 1, PLTT_SIZEOF(1));
+        BlendPalettes(RT_SCENE_PALETTES & ~(1 << pal), 16, RGB_BLACK);
+    }
+    else
+    {
+        // flits, dan omgekeerd: zwart logo op wit, andersom draaiend en verder groeiend
+        u32 k = t - VB_FLIP;
+        if (k == 0)
+        {
+            u16 inv[2] = {black, white};
+            LoadPalette(inv, OBJ_PLTT_ID(IndexOfSpritePaletteTag(VB_TAG)) + 1, PLTT_SIZEOF(2));
+            PlaySE(SE_M_HEADBUTT);
+        }
+        scale = 288 + min(k, 30u) * 224 / 30;
+        rot = k * 0x10000 / 30;
+        LoadPalette(&white, BG_PLTT_ID(15) + 1, PLTT_SIZEOF(1));
+        BlendPalettes(RT_SCENE_PALETTES & ~(1 << pal), 16, RGB_WHITE);
+        if (k < 2)
+            gSprites[task->tRtA].invisible = TRUE;
+        else
+            gSprites[task->tRtA].invisible = FALSE;
+    }
+    if (task->tRtA != MAX_SPRITES)
+        SetOamMatrixRotationScaling(task->tRtB, scale, scale, rot & 0xFFFF); // 256 = 1x, groter = groter
+    return t >= VB_END;
+}
+
+static void RTViagraBoys_Finish(struct Task *task)
+{
+    if (task->tRtA != MAX_SPRITES)
+        DestroySprite(&gSprites[task->tRtA]);
+    FreeOamMatrix(task->tRtB);
+    FreeSpriteTilesByTag(VB_TAG);
+    FreeSpritePaletteByTag(VB_TAG);
+}
+
+static const struct RouteTransition sRT_ViagraBoys =
+{
+    sViagraBoys_BgTiles, sizeof(sViagraBoys_BgTiles), sViagraBoys_BgPal, 1, 1, 0, RTViagraBoys_Init, RTViagraBoys_Update, RTViagraBoys_Finish
+};
+
+static void Task_ViagraBoys(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_ViagraBoys);
 }
 
 // ---------------- Gabby & Ty: een camera wordt op je gericht: zoekerhoeken zoomen in, REC en een knipperende rode stip
@@ -7074,7 +7348,7 @@ static bool8 RTGabbyTy_Update(struct Task *task)
 
 static const struct RouteTransition sRT_GabbyTy =
 {
-    sGabbyTy_Tileset, sizeof(sGabbyTy_Tileset), sGabbyTy_Palette, 1, 1, 0, NULL, RTGabbyTy_Update, NULL
+    sGabbyTy_Tileset, RT_SMOL, sGabbyTy_Palette, 1, 1, 0, NULL, RTGabbyTy_Update, NULL
 };
 
 static void Task_GabbyTy(u8 taskId)
@@ -7085,7 +7359,7 @@ static void Task_GabbyTy(u8 taskId)
 // ---------------- Koffing/Weezing: het schedel-en-botten-teken op paars, met het weef-effect van de Aqua/Magma-logo's
 static bool8 Koffing_Init(struct Task *task)
 {
-    NewRegi_SetGfx(task, sKoffing_Tileset, sizeof(sKoffing_Tileset), sKoffing_Tilemap, sKoffing_Palette);
+    NewRegi_SetGfx(task, sKoffing_Tileset, RT_SMOL, sKoffing_Tilemap, sKoffing_Palette);
     PlaySE(SE_M_TOXIC);
     return FALSE;
 }
@@ -7240,7 +7514,7 @@ static bool8 RTBeachball_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Beachball =
 {
-    sBeachball_Tileset, sizeof(sBeachball_Tileset), sBeachball_Palette, 1, 1, 0, RTBeachball_Init, RTBeachball_Update, RT_FinishSprite
+    sBeachball_Tileset, RT_SMOL, sBeachball_Palette, 1, 1, 0, RTBeachball_Init, RTBeachball_Update, RT_FinishSprite
 };
 
 static void Task_Beachball(u8 taskId)
@@ -7397,7 +7671,7 @@ static bool8 RTZangoose_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Zangoose =
 {
-    sZangoose_Tileset, sizeof(sZangoose_Tileset), sZangoose_Palette, 1, 1, 0, RTZangoose_Init, RTZangoose_Update, RT_FinishSprite
+    sZangoose_Tileset, RT_SMOL, sZangoose_Palette, 1, 1, 0, RTZangoose_Init, RTZangoose_Update, RT_FinishSprite
 };
 
 static void Task_Zangoose(u8 taskId)
@@ -7464,7 +7738,7 @@ static bool8 RTSeviper_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Seviper =
 {
-    sSeviper_Tileset, sizeof(sSeviper_Tileset), sSeviper_Palette, 1, 1, 0, NULL, RTSeviper_Update, NULL
+    sSeviper_Tileset, RT_SMOL, sSeviper_Palette, 1, 1, 0, NULL, RTSeviper_Update, NULL
 };
 
 static void Task_Seviper(u8 taskId)
@@ -7541,7 +7815,7 @@ static bool8 RTHeatran_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Heatran =
 {
-    sHeatran_Tileset, sizeof(sHeatran_Tileset), sHeatran_Palette, 4, 3, 0, NULL, RTHeatran_Update, NULL
+    sHeatran_Tileset, RT_SMOL, sHeatran_Palette, 4, 3, 0, NULL, RTHeatran_Update, NULL
 };
 
 static void Task_Heatran(u8 taskId)
@@ -7649,7 +7923,7 @@ static bool8 RTShaymin_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Shaymin =
 {
-    sShaymin_Tileset, sizeof(sShaymin_Tileset), sShaymin_Palette, 4, 4, SE_M_GUST, NULL, RTShaymin_Update, NULL
+    sShaymin_Tileset, RT_SMOL, sShaymin_Palette, 4, 4, SE_M_GUST, NULL, RTShaymin_Update, NULL
 };
 
 static void Task_Shaymin(u8 taskId)
@@ -7732,7 +8006,7 @@ static bool8 RTGenesect_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Genesect =
 {
-    sGenesect_Tileset, sizeof(sGenesect_Tileset), sGenesect_Palette, 1, 1, 0, NULL, RTGenesect_Update, NULL
+    sGenesect_Tileset, RT_SMOL, sGenesect_Palette, 1, 1, 0, NULL, RTGenesect_Update, NULL
 };
 
 static void Task_Genesect(u8 taskId)
@@ -7862,7 +8136,7 @@ static bool8 RTMewtwo_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Mewtwo =
 {
-    sMewtwo_Tileset, sizeof(sMewtwo_Tileset), sMewtwo_Palette, 3, 4, 0, NULL, RTMewtwo_Update, NULL
+    sMewtwo_Tileset, RT_SMOL, sMewtwo_Palette, 3, 4, 0, NULL, RTMewtwo_Update, NULL
 };
 
 static void Task_Mewtwo(u8 taskId)
@@ -8019,7 +8293,7 @@ static void RTGiratina_Finish(struct Task *task)
 
 static const struct RouteTransition sRT_Giratina =
 {
-    sGiratina_Tileset, sizeof(sGiratina_Tileset), sGiratina_Palette, 1, 1, 0, RTGiratina_Init, RTGiratina_Update, RTGiratina_Finish
+    sGiratina_Tileset, RT_SMOL, sGiratina_Palette, 1, 1, 0, RTGiratina_Init, RTGiratina_Update, RTGiratina_Finish
 };
 
 static void Task_Giratina(u8 taskId)
@@ -8146,7 +8420,7 @@ static bool8 RTVictini_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Victini =
 {
-    sVictini_Tileset, sizeof(sVictini_Tileset), sVictini_Palette, 4, 3, 0, NULL, RTVictini_Update, NULL
+    sVictini_Tileset, RT_SMOL, sVictini_Palette, 4, 3, 0, NULL, RTVictini_Update, NULL
 };
 
 static void Task_Victini(u8 taskId)
@@ -8240,7 +8514,7 @@ static bool8 RTJirachi_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Jirachi =
 {
-    sJirachi_Tileset, sizeof(sJirachi_Tileset), sJirachi_Palette, 4, 4, 0, RTJirachi_Init, RTJirachi_Update, RT_FinishSprite
+    sJirachi_Tileset, RT_SMOL, sJirachi_Palette, 4, 4, 0, RTJirachi_Init, RTJirachi_Update, RT_FinishSprite
 };
 
 static void Task_Jirachi(u8 taskId)
@@ -8327,7 +8601,7 @@ static bool8 RTDarkrai_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Darkrai =
 {
-    sDarkrai_Tileset, sizeof(sDarkrai_Tileset), sDarkrai_Palette, 4, 5, 0, RTDarkrai_Init, RTDarkrai_Update, RT_FinishSprite
+    sDarkrai_Tileset, RT_SMOL, sDarkrai_Palette, 4, 5, 0, RTDarkrai_Init, RTDarkrai_Update, RT_FinishSprite
 };
 
 static void Task_Darkrai(u8 taskId)
@@ -8403,13 +8677,192 @@ static bool8 RTNeoPlasma_Update(struct Task *task)
 
 static const struct RouteTransition sRT_NeoPlasma =
 {
-    sNeoPlasma_Tileset, sizeof(sNeoPlasma_Tileset), sNeoPlasma_Palette, 1, 1, 0, NULL, RTNeoPlasma_Update, NULL
+    sNeoPlasma_Tileset, RT_SMOL, sNeoPlasma_Palette, 1, 1, 0, NULL, RTNeoPlasma_Update, NULL
 };
 
 static void Task_NeoPlasma(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_NeoPlasma);
 }
+
+// ---------------- SickBlik (Jordi): eerst de mugshot; vanuit het witte scherm zit je aan tafel bij een yin-yang-hotpot
+// (stoom en bubbels via een kleurcyclus). Harde cut naar het bovenaanzicht: de S-scheiding trekt recht tot de band, de rand
+// wordt zwart, de ingrediënten zinken en een blokje tofu wordt de knop: de hotpot is een Poké Ball. Het bovenaanzicht
+// bestaat uit SB_KEYS sleutelbeelden; hun tiles gaan om en om in twee buffers achter de vaste tiles (nooit in de buffer die
+// in beeld is). Paletten 13-15, alles uit tabellen (tools/grounded/sickblik_transition.py).
+#define SB_PALS      ((1 << 13) | (1 << 14) | (1 << 15))
+#define SB_TABLE_END 84   // frames aan tafel
+#define SB_HOLD0     8    // het eerste bovenaanzicht
+#define SB_KEY_LEN   3    // frames per sleutelbeeld
+#define SB_CYCLE_LEN 5    // frames per stap van de stoom/bubbel-cyclus
+#define tSbKey      tRtB
+#define tSbCount    tRtC
+#define tSbCycle    data[5]
+#define tSbCycleT   data[6]
+#define tSickBlikPhase data[15]
+#define tSbFlash    data[5]
+
+static void SB_ShowMap(const u16 *map)
+{
+    u16 *tilemap = RT_Tilemap();
+    u32 r;
+    for (r = 0; r < 20; r++)
+        CpuCopy16(&map[r * 30], &tilemap[r * 32], 30 * 2);
+}
+
+static u32 *SB_Tileset(void)
+{
+    u16 *tilemap, *tileset;
+    GetBg0TilesDst(&tilemap, &tileset);
+    return (u32 *)tileset;
+}
+
+// de tiles van de sleutelbeelden zijn per beeld LZ77-gecomprimeerd (±58 i.p.v. 128 KB): een frame wordt het volgende
+// beeld uitgepakt in een buffer (SB_UnpackKey), een frame later gaat het naar de vrije VRAM-buffer (SB_UploadKey);
+// beide in de dode tijd waarin het getoonde beeld de andere buffer gebruikt
+static EWRAM_DATA u8 *sSickBlik_Buffer = NULL;
+
+static void SB_UnpackKey(u32 key)
+{
+    if (sSickBlik_Buffer != NULL)
+        FastLZ77UnCompWram(&sSickBlik_TopDyn[sSickBlik_KeyTiles[key][0]], sSickBlik_Buffer);
+}
+
+static void SB_UploadKey(u32 key)
+{
+    if (sSickBlik_Buffer != NULL)
+        CpuCopy32(sSickBlik_Buffer, &SB_Tileset()[(1 + SB_TOP_STATIC + (key & 1) * SB_TOP_DMAX) * 8],
+                  sSickBlik_KeyTiles[key][1] * 32);
+}
+
+static void RTSickBlik_Init(struct Task *task)
+{
+    sSickBlik_Buffer = Alloc(SB_TOP_DMAX * TILE_SIZE_4BPP);
+    SB_ShowMap(sSickBlik_TableMap);
+    task->tSbCycle = 0;
+    task->tSbCycleT = 0;
+    LoadPalette(sSickBlik_TablePals, BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+    BlendPalettes(SB_PALS, 16, RGB_WHITE);
+}
+
+static bool8 RTSickBlik_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    // de rest van het beeld (overworld, sprites) zwart; de tafel dekt het hele scherm
+    BlendPalettes(PALETTES_ALL & ~SB_PALS, 16, RGB_BLACK);
+    if (t < SB_TABLE_END)
+    {
+        // aan tafel: stoom stijgt en de bouillon borrelt (paletcyclus); vanuit het witte scherm infaden
+        if (++task->tSbCycleT == SB_CYCLE_LEN)
+        {
+            task->tSbCycleT = 0;
+            if (++task->tSbCycle == SB_CYCLE)
+                task->tSbCycle = 0;
+        }
+        LoadPalette(&sSickBlik_TablePals[task->tSbCycle * 48], BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+        if (t < 8)
+            BlendPalettes(SB_PALS, 16 - t * 2, RGB_WHITE);
+        if (t == 4)
+            PlaySE(SE_M_BUBBLE3);
+        return FALSE;
+    }
+    if (t == SB_TABLE_END)
+    {
+        // camera-cut: een zwart beeld, daarin worden de tiles van het bovenaanzicht geladen
+        BlendPalettes(SB_PALS, 16, RGB_BLACK);
+        SB_UnpackKey(0);
+        return FALSE;
+    }
+    if (t == SB_TABLE_END + 1)
+    {
+        CpuCopy32(sSickBlik_TopStatic, &SB_Tileset()[8], SB_TOP_STATIC * 32);
+        SB_UploadKey(0);
+        SB_ShowMap(sSickBlik_TopMaps);
+        task->tSbKey = 0;
+        task->tSbCount = 0;
+        LoadPalette(sSickBlik_TopPals, BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+        BlendPalettes(SB_PALS, 16, RGB_BLACK);
+        return FALSE;
+    }
+    // bovenaanzicht: de morph. Het volgende sleutelbeeld wordt een frame na de wissel in de vrije buffer geladen.
+    task->tSbCount++;
+    if (task->tSbCount == 1 && task->tSbKey + 1 < SB_KEYS)
+        SB_UnpackKey(task->tSbKey + 1);
+    if (task->tSbCount == 2 && task->tSbKey + 1 < SB_KEYS)
+        SB_UploadKey(task->tSbKey + 1);
+    if (task->tSbCount >= (task->tSbKey == 0 ? SB_HOLD0 : SB_KEY_LEN))
+    {
+        task->tSbKey++;
+        task->tSbCount = 0;
+        SB_ShowMap(&sSickBlik_TopMaps[task->tSbKey * 600]);
+    }
+    LoadPalette(&sSickBlik_TopPals[task->tSbKey * 48], BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+    if (task->tSbKey == SB_KEYS - 1)
+    {
+        PlaySE(SE_BALL_OPEN); // klik: het is een Poké Ball
+        return TRUE;
+    }
+    return FALSE;
+}
+
+static void RTSickBlik_Finish(struct Task *task)
+{
+    TRY_FREE_AND_SET_NULL(sSickBlik_Buffer);
+}
+
+static const struct RouteTransition sRT_SickBlik =
+{
+    (const u16 *)sSickBlik_TableTiles, sizeof(sSickBlik_TableTiles), &sSickBlik_TablePals[32], 1, 1, 0,
+    RTSickBlik_Init, RTSickBlik_Update, RTSickBlik_Finish
+};
+
+static void Task_SickBlik(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    if (task->tSickBlikPhase == 0)
+    {
+        // de mugshot tot de slides klaar zijn; de trage witte fade van de mugshot slaan we over (scheelt ruim een seconde)
+        while (task->tState < 6 && sMugshot_Funcs[task->tState](task))
+            ;
+        if (task->tState == 6)
+        {
+            task->tSbFlash = 0;
+            task->tSickBlikPhase = 1;
+        }
+        return;
+    }
+    if (task->tSickBlikPhase == 1)
+    {
+        // snelle witte flits (4 frames), dan alles van de mugshot opruimen zoals bij Colress
+        task->tSbFlash += 4;
+        BlendPalettes(PALETTES_ALL, task->tSbFlash, RGB_WHITE);
+        if (task->tSbFlash >= 16)
+        {
+            SetVBlankCallback(NULL);
+            DmaStop(0);
+            SetHBlankCallback(NULL);
+            SetGpuReg(REG_OFFSET_BLDCNT, 0);
+            SetGpuReg(REG_OFFSET_BLDY, 0);
+            ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON | DISPCNT_WIN1_ON);
+            SetVBlankCallback(VBlankCB_BattleTransition);
+            gSprites[task->data[11]].invisible = TRUE; // tOpponentSpriteAId
+            gSprites[task->data[14]].invisible = TRUE; // tPlayerSpriteId
+            task->tState = 0;
+            task->tSickBlikPhase = 2;
+        }
+        return;
+    }
+    RouteTransition_Run(taskId, &sRT_SickBlik);
+}
+
+#undef tSbKey
+#undef tSbCount
+#undef tSbCycle
+#undef tSbCycleT
+#undef tSickBlikPhase
+#undef tSbFlash
 
 // ---------------- Team Rocket: zwarte balken schuiven om en om van links en rechts dicht (rode voorrand), rode
 // snelheidsstrepen schieten over het zwart, en een grote rode R zoomt draaiend in en stempelt met een klap
@@ -8511,7 +8964,7 @@ static bool8 RTRocket_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Rocket =
 {
-    sRocket_Tileset, sizeof(sRocket_Tileset), sRocket_Palette, 1, 1, 0, RTRocket_Init, RTRocket_Update, RT_FinishSprite
+    sRocket_Tileset, RT_SMOL, sRocket_Palette, 1, 1, 0, RTRocket_Init, RTRocket_Update, RT_FinishSprite
 };
 
 static void Task_Rocket(u8 taskId)
@@ -8646,7 +9099,7 @@ static bool8 RTZarude_Update(struct Task *task)
 
 static const struct RouteTransition sRT_Zarude =
 {
-    sZarude_Tileset, sizeof(sZarude_Tileset), sZarude_Palette, 1, 1, 0, RTZarude_Init, RTZarude_Update, RT_FinishSprite
+    sZarude_Tileset, RT_SMOL, sZarude_Palette, 1, 1, 0, RTZarude_Init, RTZarude_Update, RT_FinishSprite
 };
 
 static void Task_Zarude(u8 taskId)
@@ -8762,7 +9215,7 @@ static void RTPoisonChain_Finish(struct Task *task)
 
 static const struct RouteTransition sRT_PoisonChain =
 {
-    sPoisonChain_Tileset, sizeof(sPoisonChain_Tileset), sPoisonChain_Palette, 1, 1, 0, RTPoisonChain_Init, RTPoisonChain_Update, RTPoisonChain_Finish
+    sPoisonChain_Tileset, RT_SMOL, sPoisonChain_Palette, 1, 1, 0, RTPoisonChain_Init, RTPoisonChain_Update, RTPoisonChain_Finish
 };
 
 static void Task_PoisonChain(u8 taskId)
@@ -8814,10 +9267,11 @@ static void RTDave_Init(struct Task *task)
     task->tRtB = -1; // getekende tilemap
 }
 
-static bool8 RTDave_Update(struct Task *task)
+// de penalty zelf (ongewijzigd); t = 0 is het begin van de penalty (na de tribune, zie RTDaveFull_Update)
+static bool8 RTDave_Penalty(struct Task *task, s32 t)
 {
     u16 *tilemap = RT_Tilemap();
-    s32 t = task->tRtTimer, x, y, scale, shake = 0, key = 0;
+    s32 x, y, scale, shake = 0, key = 0;
 
     // 1. beeld gaat open vanuit het midden (elke rij in één keer zijn eindwaarde)
     if (t < DAVE_REVEAL)
@@ -8895,12 +9349,1188 @@ static bool8 RTDave_Update(struct Task *task)
     return t >= DAVE_END;
 }
 
+// sRT_Dave en Task_Dave staan na de filmspeler (de tribune vooraf is een film)
+
+//------------------------------------------------------------------------
+// Project Grounded: filmtransities (Steven, Wally, Rayquaza). Een film is per gameframe een tilemap (LZ77), een
+// paletset (BG 13-15) en eventueel een laadactie: de tiles (LZ77) die het nieuwe beeld nog mist, met per run de plek in
+// VRAM. De encoder kiest alleen plekken die het getoonde beeld niet gebruikt, en elke nieuwe tilemap gaat naar het
+// schermblok dat niet getoond wordt (31 of 27); BG0CNT wisselt pas in de VBlank. Zo is het beeld nooit half beschreven
+// en wordt een stilstaande achtergrond maar één keer geladen. Gemaakt met tools/grounded/film.py (+
+// steven_transition.py, wally_transition.py, rayquaza_transition.py).
+//------------------------------------------------------------------------
+#define FILM_BLANK      0xFFFF
+#define FILM_SCREEN_B   27          // tweede schermblok (tiles 704-767 van charblock 2; de film gebruikt 1-702)
+#define FILM_TILE_BUF   (351 * TILE_SIZE_4BPP)
+#define FILM_MAP_BUF    (32 * 20 * 2)
+#define FILM_MAP_DELTA  0x80000000  // mapofs: XOR met de vorige tilemap
+#define FILM_SCENE_PALETTES (PALETTES_ALL & ~(7 << 13))
+#define tFilmMap    data[11]
+#define tFilmScreen data[12]
+#define tFilmCnt    data[13]
+
+struct Film
+{
+    const u32 *tiles;   // LZ77-blokken per laadactie
+    const u32 *loads;   // per laadactie: u32 offset in tiles, u32 aantal runs | eerste run << 16
+    const u32 *runs;    // per run: doeltile | aantal << 16
+    const u32 *maps;    // LZ77-tilemaps (32x20)
+    const u32 *mapOfs;  // per tilemap de offset in maps
+    const u32 *seq;     // per gameframe 2 x u32: tilemap | laadactie << 16, paletset
+    const u16 *pals;    // paletsets van 3 x 16 kleuren
+    u16 numFrames;
+};
+
+static EWRAM_DATA u8 *sFilmBuffer = NULL;
+static const u16 sFilm_EmptyTile[16] = {0};
+
+static u16 *Film_Screen(struct Task *task, u32 which)
+{
+    u32 base = which ? FILM_SCREEN_B : ((u16)task->tFilmCnt >> 8) & 0x1F;
+    return (u16 *)(BG_VRAM + base * BG_SCREEN_SIZE);
+}
+
+static void Film_Init(struct Task *task)
+{
+    sFilmBuffer = Alloc(FILM_TILE_BUF + FILM_MAP_BUF);
+    task->tFilmMap = -1;    // = FILM_BLANK: beide schermen zijn leeg
+    task->tFilmScreen = 0;
+    task->tFilmCnt = GetGpuReg(REG_OFFSET_BG0CNT);
+    CpuFill16(0, Film_Screen(task, 1), BG_SCREEN_SIZE);
+}
+
+static void Film_Finish(struct Task *task)
+{
+    SetGpuReg(REG_OFFSET_BG0CNT, (u16)task->tFilmCnt);
+    SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    TRY_FREE_AND_SET_NULL(sFilmBuffer);
+}
+
+// toont gameframe t van de film; TRUE als de film af is
+static bool8 Film_Update(struct Task *task, const struct Film *film)
+{
+    s32 t = task->tRtTimer;
+    u32 e, map, load, pal, next, i, n, r, run;
+    u16 *screen, *tilemap, *tileset;
+    const u8 *src;
+
+    if (t >= film->numFrames)
+    {
+        // RT_LoadPalette heeft net paletset 0 teruggezet: het laatste beeld houdt zijn eigen paletten (anders flitsen
+        // er bij het uitfaden losse tiles in de oude kleuren door het witte eindbeeld)
+        pal = film->seq[(film->numFrames - 1) * 2 + 1] & 0xFF;
+        LoadPalette(&film->pals[pal * 48], BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+        return TRUE;
+    }
+    e = film->seq[t * 2];
+    map = e & 0xFFFF;
+    load = e >> 16;
+    pal = film->seq[t * 2 + 1] & 0xFF;
+    LoadPalette(&film->pals[pal * 48], BG_PLTT_ID(13), 3 * PLTT_SIZE_4BPP);
+    // de wereld eronder wordt zwart (ook de sprites); daarna dekt de film hem af. Alleen tijdens het uitfaden: BlendPalettes
+    // over 29 paletten kost ±60 beeldlijnen per frame
+    if (t <= 8)
+        BlendPalettes(FILM_SCENE_PALETTES, min(t * 2, 16), RGB_BLACK);
+
+    if (sFilmBuffer == NULL)
+        return FALSE;
+    if (load != FILM_BLANK)
+    {
+        // de ontbrekende tiles, in plekken die het getoonde beeld niet gebruikt
+        GetBg0TilesDst(&tilemap, &tileset);
+        FastLZ77UnCompWram(&film->tiles[film->loads[load * 2] / 4], sFilmBuffer);
+        n = film->loads[load * 2 + 1] & 0xFFFF;
+        r = film->loads[load * 2 + 1] >> 16;
+        src = sFilmBuffer;
+        for (i = 0; i < n; i++)
+        {
+            run = film->runs[r + i];
+            CpuCopy32(src, (u8 *)tileset + (run & 0xFFFF) * TILE_SIZE_4BPP, (run >> 16) * TILE_SIZE_4BPP);
+            src += (run >> 16) * TILE_SIZE_4BPP;
+        }
+    }
+    if (map == (u16)task->tFilmMap)
+        return FALSE;
+    next = task->tFilmScreen ^ 1;
+    screen = Film_Screen(task, next);
+    if (map == FILM_BLANK)
+    {
+        CpuFill16(0, screen, BG_SCREEN_SIZE);
+    }
+    else
+    {
+        if (film->mapOfs[map] & FILM_MAP_DELTA)
+        {
+            // verschil met de vorige tilemap, die nog in de buffer staat (tools/grounded/film_delta.py)
+            u32 *dst = (u32 *)(sFilmBuffer + FILM_TILE_BUF);
+            FastLZ77UnCompWram(&film->maps[(film->mapOfs[map] & ~FILM_MAP_DELTA) / 4], sFilmBuffer);
+            for (i = 0; i < FILM_MAP_BUF / 4; i++)
+                dst[i] ^= ((u32 *)sFilmBuffer)[i];
+        }
+        else
+        {
+            FastLZ77UnCompWram(&film->maps[film->mapOfs[map] / 4], sFilmBuffer + FILM_TILE_BUF);
+        }
+        CpuFastCopy(sFilmBuffer + FILM_TILE_BUF, screen, FILM_MAP_BUF);
+        // rij 20 = rij 19 en rij 31 = rij 0, voor verticaal trillen
+        CpuFastCopy(&screen[19 * 32], &screen[20 * 32], 64);
+        CpuFastCopy(&screen[0], &screen[31 * 32], 64);
+    }
+    SetGpuReg(REG_OFFSET_BG0CNT, ((u16)task->tFilmCnt & ~(0x1F << 8)) | ((next ? FILM_SCREEN_B : (((u16)task->tFilmCnt >> 8) & 0x1F)) << 8));
+    task->tFilmScreen = next;
+    task->tFilmMap = map;
+    return FALSE;
+}
+
+#define FILM(name) \
+    { s##name##_Tiles, s##name##_Loads, s##name##_Runs, s##name##_Maps, s##name##_MapOfs, s##name##_Seq, s##name##_Pal, \
+      ARRAY_COUNT(s##name##_Seq) / 2 }
+
+// ---------------- Steven: zijn verzamelkast met edelstenen op donker fluweel ("ROCK", "ALSO ROCK", "THE ROCK"). De
+// middelste steen gaat gloeien, de camera zoomt in op de facetten en in de acht kite-facetten verschijnen een voor een
+// de badges, eerst in de blauwe tint van de steen; dan lichten ze een voor een op in hun echte kleur, elk met een klap
+// (wit facet, de badge springt groot op, het beeld schokt) en een noot hoger. Dan barst de steen en spat hij uiteen.
+// Vervangt de mugshot (zie battle_setup.c).
+static const u32 sFilmSteven_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_steven_tiles.bin");
+static const u32 sFilmSteven_Loads[] = INCBIN_U32("graphics/battle_transitions/film_steven_loads.bin");
+static const u32 sFilmSteven_Runs[] = INCBIN_U32("graphics/battle_transitions/film_steven_runs.bin");
+static const u32 sFilmSteven_Maps[] = INCBIN_U32("graphics/battle_transitions/film_steven_maps.bin");
+static const u32 sFilmSteven_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_steven_mapofs.bin");
+static const u32 sFilmSteven_Seq[] = INCBIN_U32("graphics/battle_transitions/film_steven_seq.bin");
+static const u16 sFilmSteven_Pal[] = INCBIN_U16("graphics/battle_transitions/film_steven_pal.bin");
+static const struct Film sFilm_Steven = FILM(FilmSteven);
+
+// tijden: zie steven_transition.py
+#define STEVEN_GLOW     56
+#define STEVEN_ZOOM     96
+#define STEVEN_BADGE    146
+#define STEVEN_BADGE_GAP 4
+#define STEVEN_LIGHT    182
+#define STEVEN_LIGHT_GAP 8
+#define STEVEN_CRACK    256
+#define STEVEN_SHATTER  274
+
+static const u16 sStevenBadgeNotes[8] =
+{
+    SE_NOTE_C, SE_NOTE_D, SE_NOTE_E, SE_NOTE_F, SE_NOTE_G, SE_NOTE_A, SE_NOTE_B, SE_NOTE_C_HIGH
+};
+
+static bool8 RTSteven_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    if (t == STEVEN_GLOW)
+        PlaySE(SE_SHINY);
+    if (t == STEVEN_ZOOM)
+        PlaySE(SE_M_HARDEN);
+    if (t >= STEVEN_BADGE && t < STEVEN_BADGE + 8 * STEVEN_BADGE_GAP && (t - STEVEN_BADGE) % STEVEN_BADGE_GAP == 0)
+        PlaySE(SE_BALL_TRAY_BALL);
+    if (t >= STEVEN_LIGHT && t < STEVEN_LIGHT + 8 * STEVEN_LIGHT_GAP && (t - STEVEN_LIGHT) % STEVEN_LIGHT_GAP == 0)
+        PlaySE(sStevenBadgeNotes[(t - STEVEN_LIGHT) / STEVEN_LIGHT_GAP]);
+    if (t == STEVEN_CRACK || t == STEVEN_CRACK + 6 || t == STEVEN_CRACK + 12)
+        PlaySE(SE_ICE_CRACK);
+    if (t == STEVEN_SHATTER)
+        PlaySE(SE_ICE_BREAK);
+    if (t >= STEVEN_CRACK && t < STEVEN_SHATTER + 14)
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 3) - 1) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 3) - 1) & 0x1FF);
+    }
+    else if (t >= STEVEN_LIGHT && t < STEVEN_LIGHT + 8 * STEVEN_LIGHT_GAP && (t - STEVEN_LIGHT) % STEVEN_LIGHT_GAP < 4)
+    {
+        // de klap van een badge: het beeld schokt 4 frames
+        static const s8 sKick[4][2] = {{0, -1}, {2, 1}, {-2, 0}, {1, 0}};
+        const s8 *kick = sKick[(t - STEVEN_LIGHT) % STEVEN_LIGHT_GAP];
+        SetGpuReg(REG_OFFSET_BG0HOFS, kick[0] & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, kick[1] & 0x1FF);
+    }
+    else
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    }
+    return Film_Update(task, &sFilm_Steven);
+}
+
+static const struct RouteTransition sRT_Steven =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmSteven_Pal, 1, 1, 0, Film_Init, RTSteven_Update, Film_Finish
+};
+
+static void Task_Steven(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Steven);
+}
+
+// ---------------- Wally (Victory Road): een oude VHS-band. Blauw scherm met PLAY en het etiket, Route 102 (Wally vangt
+// Ralts met de geleende Zigzagoon), doorspoelen door zijn groei (Mauville, zijn rondje in Meteor Falls, Kirlia wordt
+// Gallade), dan een snelle zoom op zijn vastberaden gezicht, PAUSE, sneeuw. De sporingsband en het trillen doet de
+// HBlank: per gameframe staat in film_wally_fx.bin de y van de band (255 = geen) en de sterkte | vlaggen.
+static const u32 sFilmWally_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_wally_tiles.bin");
+static const u32 sFilmWally_Loads[] = INCBIN_U32("graphics/battle_transitions/film_wally_loads.bin");
+static const u32 sFilmWally_Runs[] = INCBIN_U32("graphics/battle_transitions/film_wally_runs.bin");
+static const u32 sFilmWally_Maps[] = INCBIN_U32("graphics/battle_transitions/film_wally_maps.bin");
+static const u32 sFilmWally_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_wally_mapofs.bin");
+static const u32 sFilmWally_Seq[] = INCBIN_U32("graphics/battle_transitions/film_wally_seq.bin");
+static const u16 sFilmWally_Pal[] = INCBIN_U16("graphics/battle_transitions/film_wally_pal.bin");
+static const u8 sFilmWally_Fx[] = INCBIN_U8("graphics/battle_transitions/film_wally_fx.bin");
+static const struct Film sFilm_Wally = FILM(FilmWally);
+
+#define WALLY_FX_SHAKE  0x40
+#define WALLY_FX_WOBBLE 0x80
+#define WALLY_BAND_H    10
+// tijden: zie wally_transition.py
+#define WALLY_PLAY      8
+#define WALLY_THROW     104
+#define WALLY_CATCH     124
+#define WALLY_WOBBLE    146     // drie keer wiebelen: +0, +8, +16
+#define WALLY_CLICK     166
+#define WALLY_FF        226
+#define WALLY_ZOOM      428
+#define WALLY_PAUSE     442
+#define WALLY_SNOW      476
+
+// de HOFS per beeldlijn gaat met HBlank-DMA (geen interrupt per lijn: dat kostte ±30 beeldlijnen rekentijd per frame)
+static void VBlankCB_WallyVhs(void)
+{
+    VBlankCB_BattleTransition();
+    DmaStop(0);
+    if (sTransitionData->VBlank_DMA)
+    {
+        DmaCopy16(3, gScanlineEffectRegBuffers[0], gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2);
+        sTransitionData->VBlank_DMA = FALSE;
+    }
+    REG_BG0HOFS = gScanlineEffectRegBuffers[1][0];
+    DmaSet(0, &gScanlineEffectRegBuffers[1][1], &REG_BG0HOFS,
+           ((DMA_ENABLE | DMA_START_HBLANK | DMA_REPEAT | DMA_SRC_INC | DMA_DEST_RELOAD | DMA_16BIT) << 16) | 1);
+}
+
+static void RTWallyVhs_Init(struct Task *task)
+{
+    u32 i;
+
+    Film_Init(task);
+    InitTransitionData();
+    ScanlineEffect_Clear();
+    for (i = 0; i < DISPLAY_HEIGHT; i++)
+        gScanlineEffectRegBuffers[0][i] = gScanlineEffectRegBuffers[1][i] = 0;
+    SetVBlankCallback(VBlankCB_WallyVhs);
+}
+
+static void RTWallyVhs_Finish(struct Task *task)
+{
+    DmaStop(0);
+    SetVBlankCallback(VBlankCB_BattleTransition);
+    Film_Finish(task);
+}
+
+static bool8 RTWallyVhs_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer, y, band = 255, amp = 0, flags = 0, wob;
+    u16 *buf = gScanlineEffectRegBuffers[0];
+
+    if (t < (s32)ARRAY_COUNT(sFilmWally_Fx) / 2)
+    {
+        band = sFilmWally_Fx[t * 2];
+        amp = sFilmWally_Fx[t * 2 + 1] & 0x3F;
+        flags = sFilmWally_Fx[t * 2 + 1] & 0xC0;
+    }
+    // per beeldlijn een horizontale verschuiving: de sporingsband scheurt, bij doorspoelen golft alles, en altijd
+    // een paar lijnen die een pixel verspringen (de band is oud)
+    for (y = 0; y < DISPLAY_HEIGHT; y++)
+    {
+        s32 h = 0;
+        if (band != 255 && y >= band && y < band + WALLY_BAND_H)
+            h = (Random() % (2 * amp + 1)) - amp;
+        if (flags & WALLY_FX_WOBBLE)
+        {
+            wob = Sin(((y * 6 + t * 13) & 0xFF), 2);
+            h += wob;
+        }
+        buf[y] = h & 0x1FF;
+    }
+    for (y = 0; y < 3; y++)
+        buf[Random() % DISPLAY_HEIGHT] = ((Random() & 1) ? 1 : 0x1FF);
+    sTransitionData->VBlank_DMA = TRUE;
+    // PAUSE: het stilstaande beeld trilt een lijn op en neer
+    SetGpuReg(REG_OFFSET_BG0VOFS, (flags & WALLY_FX_SHAKE) ? ((t / 2) & 1) : 0);
+
+    if (t == WALLY_PLAY)
+        PlaySE(SE_PC_ON);
+    if (t == WALLY_THROW)
+        PlaySE(SE_BALL_THROW);
+    if (t == WALLY_CATCH)
+        PlaySE(SE_BALL_OPEN);
+    if (t == WALLY_WOBBLE || t == WALLY_WOBBLE + 8 || t == WALLY_WOBBLE + 16)
+        PlaySE(SE_BALL_BOUNCE_1);
+    if (t == WALLY_CLICK)
+        PlaySE(SE_RG_BALL_CLICK);
+    if (t >= WALLY_FF && t < WALLY_ZOOM && (t - WALLY_FF) % 18 == 0)
+        PlaySE(SE_DEX_SCROLL);
+    if (t == WALLY_PAUSE)
+        PlaySE(SE_CLICK);
+    if (t == WALLY_SNOW)
+        PlaySE(SE_PC_OFF);
+    return Film_Update(task, &sFilm_Wally);
+}
+
+static const struct RouteTransition sRT_WallyVhs =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmWally_Pal, 1, 1, 0, RTWallyVhs_Init, RTWallyVhs_Update, RTWallyVhs_Finish
+};
+
+static void Task_WallyVhs(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_WallyVhs);
+}
+
+// ---------------- Rayquaza (Sky Pillar, ook de shiny en de Delta Episode): je kijkt omhoog langs de pilaar, door de
+// wolken; een groene streep cirkelt steeds sneller om de top tot hij een ring is, en daaruit breekt Rayquaza's silhouet
+// recht op de camera af (kop eerst, gele markeringen gloeien). Vervangt B_TRANSITION_RAYQUAZA (die blijft bestaan).
+static const u32 sFilmRayquaza_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_tiles.bin");
+static const u32 sFilmRayquaza_Loads[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_loads.bin");
+static const u32 sFilmRayquaza_Runs[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_runs.bin");
+static const u32 sFilmRayquaza_Maps[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_maps.bin");
+static const u32 sFilmRayquaza_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_mapofs.bin");
+static const u32 sFilmRayquaza_Seq[] = INCBIN_U32("graphics/battle_transitions/film_rayquaza_seq.bin");
+static const u16 sFilmRayquaza_Pal[] = INCBIN_U16("graphics/battle_transitions/film_rayquaza_pal.bin");
+static const struct Film sFilm_Rayquaza = FILM(FilmRayquaza);
+
+// tijden: zie rayquaza_transition.py
+#define RAYQUAZA_STREAK 22
+#define RAYQUAZA_RING   100
+#define RAYQUAZA_FLASH  116
+#define RAYQUAZA_PAN    142
+#define RAYQUAZA_S3     194
+#define RAYQUAZA_S4     244
+
+static bool8 RTRayquazaPillar_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    if (t == 2)
+        PlaySE(SE_M_GUST);
+    if (t == RAYQUAZA_STREAK + 30)
+        PlaySE(SE_M_GUST2);
+    if (t == RAYQUAZA_RING - 12)
+        PlaySE(SE_M_TWISTER);
+    if (t == RAYQUAZA_FLASH - 4)
+        PlaySE(SE_M_DRAGON_RAGE);
+    // Rayquaza duikt door het gat in de wolken
+    if (t == RAYQUAZA_PAN + 12)
+        PlaySE(SE_M_FLY);
+    // de aanval: zoals in de cutscene om de 8 frames SE_INTRO_BLAST, dan schiet hij naar voren
+    if (t >= RAYQUAZA_S3 && t < RAYQUAZA_S3 + 24 && ((t - RAYQUAZA_S3) & 7) == 0)
+        PlaySE(SE_INTRO_BLAST);
+    if (t == RAYQUAZA_S3 + 24)
+        PlaySE(SE_M_HYPER_BEAM);
+    return Film_Update(task, &sFilm_Rayquaza);
+}
+
+static const struct RouteTransition sRT_RayquazaPillar =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmRayquaza_Pal, 1, 1, 0, Film_Init, RTRayquazaPillar_Update, Film_Finish
+};
+
+static void Task_RayquazaPillar(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_RayquazaPillar);
+}
+
+// ---------------- gedeelde hulpjes voor de filmtransities hieronder: geluid op vaste frames en trillen
+struct FilmSfx
+{
+    u16 frame;
+    u16 se;
+};
+
+static void Film_PlaySfx(s32 t, const struct FilmSfx *sfx, u32 n)
+{
+    u32 i;
+    for (i = 0; i < n; i++)
+    {
+        if (sfx[i].frame == t)
+            PlaySE(sfx[i].se);
+    }
+}
+
+// trillen (amp px) tussen t0 en t1, anders stil
+static void Film_Shake(s32 t, s32 t0, s32 t1, u32 amp)
+{
+    if (t >= t0 && t < t1)
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((s32)(Random() % (2 * amp + 1)) - (s32)amp) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((s32)(Random() % (2 * amp + 1)) - (s32)amp) & 0x1FF);
+    }
+    else
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    }
+}
+
+
+// ---------------- Dave (Freed From Desire), deel 1: de tribune. Een wave loopt rond, op de laatste noot van de eerste
+// riff gaat het spandoek DP PENNINGS omhoog, op de klap een close-up, op de eerste noot van de tweede riff flitsen de
+// camera's. Dan de penalty (RTDave_Penalty, ongewijzigd) op de tweede riff: die begint DAVE_STADIUM frames later
+// (klok 192 = 225 muziekframes), dus alle penaltytijden blijven op de maat. Film: tools/grounded/dave_stadium.py.
+static const u32 sFilmDaveStadium_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_tiles.bin");
+static const u32 sFilmDaveStadium_Loads[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_loads.bin");
+static const u32 sFilmDaveStadium_Runs[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_runs.bin");
+static const u32 sFilmDaveStadium_Maps[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_maps.bin");
+static const u32 sFilmDaveStadium_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_mapofs.bin");
+static const u32 sFilmDaveStadium_Seq[] = INCBIN_U32("graphics/battle_transitions/film_dave_stadium_seq.bin");
+static const u16 sFilmDaveStadium_Pal[] = INCBIN_U16("graphics/battle_transitions/film_dave_stadium_pal.bin");
+static const struct Film sFilm_DaveStadium = FILM(FilmDaveStadium);
+
+#define DAVE_STADIUM    225     // lengte van de tribunefilm = één keer de riff (2 maten)
+#define DAVE_SWITCH     (DAVE_STADIUM - 5) // de film is hier al zwart: penalty-tiles laden
+
+static const struct FilmSfx sDaveStadiumSfx[] =
+{
+    {10, SE_APPLAUSE},
+    {122, SE_APPLAUSE},
+};
+
+static void RTDaveFull_Init(struct Task *task)
+{
+    RTDave_Init(task);
+    Film_Init(task);
+}
+
+static bool8 RTDaveFull_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+    u16 *tilemap, *tileset;
+
+    if (t < DAVE_SWITCH)
+    {
+        Film_PlaySfx(t, sDaveStadiumSfx, ARRAY_COUNT(sDaveStadiumSfx));
+        Film_Shake(t, 206, 212, 2);
+        Film_Update(task, &sFilm_DaveStadium);
+        return FALSE;
+    }
+    if (t == DAVE_SWITCH)
+    {
+        // beide filmschermen leeg, het oorspronkelijke scherm terug, de penalty-tiles en het balpalet (de film heeft
+        // de sprites zwart geblend) opnieuw laden
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+        CpuFill16(0, Film_Screen(task, 0), BG_SCREEN_SIZE);
+        CpuFill16(0, Film_Screen(task, 1), BG_SCREEN_SIZE);
+        SetGpuReg(REG_OFFSET_BG0CNT, (u16)task->tFilmCnt);
+        GetBg0TilesDst(&tilemap, &tileset);
+        DecompressDataWithHeaderVram(sDave_Tileset, tileset);
+        LoadPalette(sDaveBall_Palette, OBJ_PLTT_ID(IndexOfSpritePaletteTag(RT_SPRITE_TAG)), PLTT_SIZE_4BPP);
+        TRY_FREE_AND_SET_NULL(sFilmBuffer);
+        return FALSE;
+    }
+    if (t < DAVE_STADIUM)
+        return FALSE;
+    return RTDave_Penalty(task, t - DAVE_STADIUM);
+}
+
+static void RTDaveFull_Finish(struct Task *task)
+{
+    RT_FinishSprite(task);
+    Film_Finish(task);
+}
+
 static const struct RouteTransition sRT_Dave =
 {
-    sDave_Tileset, sizeof(sDave_Tileset), sDave_Palette, 1, 1, 0, RTDave_Init, RTDave_Update, RT_FinishSprite
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sDave_Palette, 1, 1, 0, RTDaveFull_Init, RTDaveFull_Update, RTDaveFull_Finish
 };
 
 static void Task_Dave(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_Dave);
 }
+
+// ---------------- Mimi (Mimikyu, Mimic Circle Route 119; ook in het Battle Stadium): een donkere kinderkamer met een
+// poppenkast ("THE PIKACHU SHOW"). Het doek gaat open, de Pikachu-pop draait langzaam zijn kop opzij tot het nekje
+// knakt (busted), het licht flikkert en gaat uit, en onder het doek gaan twee ogen open. Film: mimi_transition.py.
+static const u32 sFilmMimi_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_mimi_tiles.bin");
+static const u32 sFilmMimi_Loads[] = INCBIN_U32("graphics/battle_transitions/film_mimi_loads.bin");
+static const u32 sFilmMimi_Runs[] = INCBIN_U32("graphics/battle_transitions/film_mimi_runs.bin");
+static const u32 sFilmMimi_Maps[] = INCBIN_U32("graphics/battle_transitions/film_mimi_maps.bin");
+static const u32 sFilmMimi_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_mimi_mapofs.bin");
+static const u32 sFilmMimi_Seq[] = INCBIN_U32("graphics/battle_transitions/film_mimi_seq.bin");
+static const u16 sFilmMimi_Pal[] = INCBIN_U16("graphics/battle_transitions/film_mimi_pal.bin");
+static const struct Film sFilm_Mimi = FILM(FilmMimi);
+
+// tijden: zie mimi_transition.py
+#define MIMI_SNAP 150
+
+static const struct FilmSfx sMimiSfx[] =
+{
+    {30, SE_CONTEST_CURTAIN_RISE},
+    {80, SE_ROTATING_GATE},
+    {108, SE_ROTATING_GATE},
+    {132, SE_ROTATING_GATE},
+    {MIMI_SNAP, SE_ICE_CRACK},
+    {166, SE_M_THUNDER_WAVE},
+    {192, SE_SWITCH},
+    {201, SE_M_LEER},
+};
+
+static bool8 RTMimi_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    Film_PlaySfx(t, sMimiSfx, ARRAY_COUNT(sMimiSfx));
+    Film_Shake(t, MIMI_SNAP, MIMI_SNAP + 8, 2);
+    return Film_Update(task, &sFilm_Mimi);
+}
+
+static const struct RouteTransition sRT_Mimi =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmMimi_Pal, 1, 1, 0, Film_Init, RTMimi_Update, Film_Finish
+};
+
+static void Task_Mimi(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Mimi);
+}
+
+// ---------------- Keccles (Kecleon, een droge, echt wijze denker; ook in het Battle Stadium): een verlaten lab vol
+// schoolborden. De camera zoekt (handheld): het lege lab, de aantekeningen (waarneming, camouflage, geduld), THE PLAN
+// met jouw gezicht omcirkeld. Een rode zigzag hangt in de lucht, een oog gaat open in het krijt, de camouflage golft weg
+// en Keccles staat er. Het krijt schrijft "WE SEE WHAT WE EXPECT." Film: keccles_transition.py.
+static const u32 sFilmKeccles_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_keccles_tiles.bin");
+static const u32 sFilmKeccles_Loads[] = INCBIN_U32("graphics/battle_transitions/film_keccles_loads.bin");
+static const u32 sFilmKeccles_Runs[] = INCBIN_U32("graphics/battle_transitions/film_keccles_runs.bin");
+static const u32 sFilmKeccles_Maps[] = INCBIN_U32("graphics/battle_transitions/film_keccles_maps.bin");
+static const u32 sFilmKeccles_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_keccles_mapofs.bin");
+static const u32 sFilmKeccles_Seq[] = INCBIN_U32("graphics/battle_transitions/film_keccles_seq.bin");
+static const u16 sFilmKeccles_Pal[] = INCBIN_U16("graphics/battle_transitions/film_keccles_pal.bin");
+static const struct Film sFilm_Keccles = FILM(FilmKeccles);
+
+// tijden: zie keccles_transition.py
+#define KECCLES_SHOT3 98
+
+static const struct FilmSfx sKecclesSfx[] =
+{
+    {54, SE_M_LOCK_ON},
+    {KECCLES_SHOT3, SE_M_LOCK_ON},
+    {126, SE_M_LEER},
+    {148, SE_M_TELEPORT},
+    {194, SE_M_SKETCH},     // T_QUOTE: het krijt schrijft (twee regels)
+    {205, SE_M_SKETCH},
+};
+
+// handheld: een langzaam zwalkende camera (in pixels, per 4 frames een stap)
+static const s8 sKecclesWobbleX[16] = {0, 1, 1, 2, 2, 1, 1, 0, 0, -1, -1, -2, -2, -1, -1, 0};
+static const s8 sKecclesWobbleY[16] = {0, 0, 1, 1, 1, 1, 0, 0, -1, -1, -1, 0, 0, 1, 0, 0};
+
+static bool8 RTKeccles_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    Film_PlaySfx(t, sKecclesSfx, ARRAY_COUNT(sKecclesSfx));
+    if (t < KECCLES_SHOT3)
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, sKecclesWobbleX[(t >> 2) & 15] & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, sKecclesWobbleY[((t >> 2) + 5) & 15] & 0x1FF);
+    }
+    else
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    }
+    return Film_Update(task, &sFilm_Keccles);
+}
+
+static const struct RouteTransition sRT_Keccles =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmKeccles_Pal, 1, 1, 0, Film_Init, RTKeccles_Update, Film_Finish
+};
+
+static void Task_Keccles(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Keccles);
+}
+
+// ---------------- Burglar (Simon, het inbreker-event; ook in het Battle Stadium): bewakingscamera CAM 03, de Burglar
+// uit Red/Blue sluipt door de woonkamer, draait zich naar de camera, digitale zoom (2X, 4X), REC knippert, alarm. Film:
+// burglar_transition.py.
+static const u32 sFilmBurglar_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_burglar_tiles.bin");
+static const u32 sFilmBurglar_Loads[] = INCBIN_U32("graphics/battle_transitions/film_burglar_loads.bin");
+static const u32 sFilmBurglar_Runs[] = INCBIN_U32("graphics/battle_transitions/film_burglar_runs.bin");
+static const u32 sFilmBurglar_Maps[] = INCBIN_U32("graphics/battle_transitions/film_burglar_maps.bin");
+static const u32 sFilmBurglar_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_burglar_mapofs.bin");
+static const u32 sFilmBurglar_Seq[] = INCBIN_U32("graphics/battle_transitions/film_burglar_seq.bin");
+static const u16 sFilmBurglar_Pal[] = INCBIN_U16("graphics/battle_transitions/film_burglar_pal.bin");
+static const struct Film sFilm_Burglar = FILM(FilmBurglar);
+
+// tijden: zie burglar_transition.py
+#define BURGLAR_ALARM 182
+
+static const struct FilmSfx sBurglarSfx[] =
+{
+    {8, SE_PC_ON},
+    {106, SE_PIN},
+    {124, SE_M_LOCK_ON},
+    {142, SE_M_LOCK_ON},
+    {BURGLAR_ALARM, SE_M_SCREECH},
+    {BURGLAR_ALARM + 16, SE_M_SCREECH},
+};
+
+static bool8 RTBurglar_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    Film_PlaySfx(t, sBurglarSfx, ARRAY_COUNT(sBurglarSfx));
+    Film_Shake(t, BURGLAR_ALARM, BURGLAR_ALARM + 36, 1);
+    return Film_Update(task, &sFilm_Burglar);
+}
+
+static const struct RouteTransition sRT_Burglar =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmBurglar_Pal, 1, 1, 0, Film_Init, RTBurglar_Update, Film_Finish
+};
+
+static void Task_Burglar(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Burglar);
+}
+
+// ---------------- Kyogre/Groudon (Marine Cave / Terra Cave): een oude muurschildering van hun strijd (Groudon met de
+// bergen, Kyogre met de golven, braille "DONT WAKE THEM"). Er lopen barsten door vanuit de borst van degene die je wekt;
+// door de barsten stroomt water of lava tot het beeld vol is, en daarin gaan de gloeiende Primal-markeringen aan.
+// Vervangt B_TRANSITION_KYOGRE/GROUDON (die blijven bestaan). Zie primal_mural_transition.py.
+static const u32 sFilmMuralKyogre_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_tiles.bin");
+static const u32 sFilmMuralKyogre_Loads[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_loads.bin");
+static const u32 sFilmMuralKyogre_Runs[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_runs.bin");
+static const u32 sFilmMuralKyogre_Maps[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_maps.bin");
+static const u32 sFilmMuralKyogre_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_mapofs.bin");
+static const u32 sFilmMuralKyogre_Seq[] = INCBIN_U32("graphics/battle_transitions/film_mural_kyogre_seq.bin");
+static const u16 sFilmMuralKyogre_Pal[] = INCBIN_U16("graphics/battle_transitions/film_mural_kyogre_pal.bin");
+static const struct Film sFilm_MuralKyogre = FILM(FilmMuralKyogre);
+static const u32 sFilmMuralGroudon_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_tiles.bin");
+static const u32 sFilmMuralGroudon_Loads[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_loads.bin");
+static const u32 sFilmMuralGroudon_Runs[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_runs.bin");
+static const u32 sFilmMuralGroudon_Maps[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_maps.bin");
+static const u32 sFilmMuralGroudon_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_mapofs.bin");
+static const u32 sFilmMuralGroudon_Seq[] = INCBIN_U32("graphics/battle_transitions/film_mural_groudon_seq.bin");
+static const u16 sFilmMuralGroudon_Pal[] = INCBIN_U16("graphics/battle_transitions/film_mural_groudon_pal.bin");
+static const struct Film sFilm_MuralGroudon = FILM(FilmMuralGroudon);
+
+#define MURAL_CRACK 40
+#define MURAL_LEAK  78
+#define MURAL_POOL  92
+#define MURAL_MARK  176
+
+static bool8 RTMural_Update(struct Task *task, const struct Film *film, bool32 lava)
+{
+    s32 t = task->tRtTimer;
+
+    if (t == MURAL_CRACK || t == MURAL_CRACK + 8 || t == MURAL_CRACK + 18)
+        PlaySE(SE_ICE_CRACK);
+    if (t == MURAL_CRACK + 28)
+        PlaySE(SE_M_ROCK_THROW);
+    if (t == MURAL_LEAK)
+        PlaySE(lava ? SE_M_EMBER : SE_M_BUBBLE);
+    if (t == MURAL_POOL)
+        PlaySE(lava ? SE_M_HEAT_WAVE : SE_M_WATERFALL);
+    if (t == MURAL_POOL + 44)
+        PlaySE(lava ? SE_M_FLAMETHROWER : SE_M_SURF);
+    if (t == MURAL_MARK + 20)
+        PlaySE(SE_M_DETECT);
+    // de muur trilt terwijl hij barst
+    if (t >= MURAL_CRACK && t < MURAL_CRACK + 30 && (t & 1))
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % 3) - 1) & 0x1FF);
+        SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % 3) - 1) & 0x1FF);
+    }
+    else if (t == MURAL_CRACK + 30 || !(t & 1))
+    {
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    }
+    return Film_Update(task, film);
+}
+
+static bool8 RTKyogreMural_Update(struct Task *task)
+{
+    return RTMural_Update(task, &sFilm_MuralKyogre, FALSE);
+}
+
+static bool8 RTGroudonMural_Update(struct Task *task)
+{
+    return RTMural_Update(task, &sFilm_MuralGroudon, TRUE);
+}
+
+static const struct RouteTransition sRT_KyogreMural =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmMuralKyogre_Pal, 1, 1, 0, Film_Init, RTKyogreMural_Update, Film_Finish
+};
+
+static const struct RouteTransition sRT_GroudonMural =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmMuralGroudon_Pal, 1, 1, 0, Film_Init, RTGroudonMural_Update, Film_Finish
+};
+
+static void Task_KyogreMural(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_KyogreMural);
+}
+
+static void Task_GroudonMural(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_GroudonMural);
+}
+
+// ---------------- Ogerpon (Fortree Jungle, einde van de quest): een maskerkraam op een nachtfestival. Vier maskers
+// (uit de echte Ogerpon-sprites), één lege haak ("STOLEN"), het Teal-masker "NOT FOR SALE". De lantaarns gaan uit, de
+// camera zoomt in, de ogen van het masker gaan branden en Ogerpon springt in een wolk bladeren. Zie ogerpon_transition.py.
+static const u32 sFilmOgerpon_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_tiles.bin");
+static const u32 sFilmOgerpon_Loads[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_loads.bin");
+static const u32 sFilmOgerpon_Runs[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_runs.bin");
+static const u32 sFilmOgerpon_Maps[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_maps.bin");
+static const u32 sFilmOgerpon_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_mapofs.bin");
+static const u32 sFilmOgerpon_Seq[] = INCBIN_U32("graphics/battle_transitions/film_ogerpon_seq.bin");
+static const u16 sFilmOgerpon_Pal[] = INCBIN_U16("graphics/battle_transitions/film_ogerpon_pal.bin");
+static const struct Film sFilm_Ogerpon = FILM(FilmOgerpon);
+
+#define OGERPON_OUT   30
+#define OGERPON_ZOOM  50
+#define OGERPON_EYES  122
+#define OGERPON_LEAP  164
+
+static bool8 RTOgerpon_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    // lantaarns gaan uit (om de 4 frames een)
+    if (t >= OGERPON_OUT && t < OGERPON_OUT + 24 && ((t - OGERPON_OUT) & 7) == 0)
+        PlaySE(SE_M_MINIMIZE);
+    if (t == OGERPON_ZOOM)
+        PlaySE(SE_M_SWAGGER);
+    if (t == OGERPON_EYES)
+        PlaySE(SE_M_LEER);
+    if (t == OGERPON_LEAP)
+        PlaySE(SE_M_RAZOR_WIND);
+    if (t == OGERPON_LEAP + 16)
+        PlaySE(SE_M_GIGA_DRAIN);
+    return Film_Update(task, &sFilm_Ogerpon);
+}
+
+static const struct RouteTransition sRT_Ogerpon =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmOgerpon_Pal, 1, 1, 0, Film_Init, RTOgerpon_Update, Film_Finish
+};
+
+static void Task_Ogerpon(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_Ogerpon);
+}
+
+// ---------------- Archie + Maxie (werkstraf, Weather Institute): het prikbord van de pauzeruimte. Een druppel koffie
+// op het rooster; de vlek wordt Groudon, dan Kyogre. Het rooster scheurt: links brand, rechts doorweekt. Eronder:
+// "VOLUNTEER OF THE MONTH" met allebei erop, "(DISPUTED)". Zie service_transition.py.
+static const u32 sFilmService_Tiles[] = INCBIN_U32("graphics/battle_transitions/film_service_tiles.bin");
+static const u32 sFilmService_Loads[] = INCBIN_U32("graphics/battle_transitions/film_service_loads.bin");
+static const u32 sFilmService_Runs[] = INCBIN_U32("graphics/battle_transitions/film_service_runs.bin");
+static const u32 sFilmService_Maps[] = INCBIN_U32("graphics/battle_transitions/film_service_maps.bin");
+static const u32 sFilmService_MapOfs[] = INCBIN_U32("graphics/battle_transitions/film_service_mapofs.bin");
+static const u32 sFilmService_Seq[] = INCBIN_U32("graphics/battle_transitions/film_service_seq.bin");
+static const u16 sFilmService_Pal[] = INCBIN_U16("graphics/battle_transitions/film_service_pal.bin");
+static const struct Film sFilm_Service = FILM(FilmService);
+
+#define SERVICE_SPLAT 38
+#define SERVICE_MORPH 84
+#define SERVICE_TEAR  124
+#define SERVICE_SPLIT 140
+
+static bool8 RTWeatherService_Update(struct Task *task)
+{
+    s32 t = task->tRtTimer;
+
+    if (t == SERVICE_SPLAT)
+        PlaySE(SE_M_BUBBLE3);
+    if (t == SERVICE_MORPH)
+        PlaySE(SE_M_BUBBLE);
+    if (t == SERVICE_TEAR)
+        PlaySE(SE_M_CUT);
+    if (t == SERVICE_SPLIT)
+        PlaySE(SE_M_FLAME_WHEEL);
+    if (t == SERVICE_SPLIT + 14)
+        PlaySE(SE_M_WATERFALL);
+    return Film_Update(task, &sFilm_Service);
+}
+
+static const struct RouteTransition sRT_WeatherService =
+{
+    sFilm_EmptyTile, sizeof(sFilm_EmptyTile), sFilmService_Pal, 1, 1, 0, Film_Init, RTWeatherService_Update, Film_Finish
+};
+
+static void Task_WeatherService(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_WeatherService);
+}
+
+// Project Grounded: gymleider-intro's (Roxanne, Brawly, Wattson, Flannery)
+#include "data/gym_intros_a.h"
+
+// ---------------- Tapu Koko/Lele/Bulu/Fini: lichte intro (geen film). Het gesloten schild verschijnt op een donkere
+// achtergrond in de kleur van de Tapu, met een motief uit het schildpatroon dat via een paletcyclus beweegt
+// (tools/grounded/tapu_transition.py). Het patroon licht op op de beat, bouwt op, en op de eerste grote drumslag
+// (met de chant) van MUS_GROUNDED_VS_TAPU gaat het schild open: licht, flits, gevecht.
+// Alles hangt aan TAPU_HIT_FRAME: het aantal VBlanks vanaf de start van de transitie (= start van de muziek, die
+// CreateBattleStartTask een frame eerder start) tot die drumslag, dus HIT_SECONDS * 60 uit tools/grounded/tapu_theme.py.
+// Er wordt op echte VBlanks geteld (gMain.vblankCounter1), zodat vertraagde frames de sync met de muziek niet breken.
+#define TAPU_HIT_FRAME 333 // = HIT_SECONDS_GBA (5,542 s) * 60 (tapu_theme.py v3: chant, dan de eerste grote slag); de transitie eindigt precies hier
+#define TAPU_BEAT      21  // 174 bpm = 20,7 frames per tel; beat-afstand voor het oplichten (geteld terug vanaf de drumslag)
+#define TAPU_BUILD     48  // opbouw: snellere pulsen, trillen, alles lichter
+#define TAPU_OPEN      10  // het schild gaat open in de laatste TAPU_OPEN frames
+#define TAPU_LATENCY   2   // gemeten: muziekstart -> transitiestart 1 frame, transitie-einde -> CB2_InitBattle 1 frame
+
+enum { TAPU_KOKO, TAPU_LELE, TAPU_BULU, TAPU_FINI };
+
+struct TapuIntro
+{
+    const u32 *tiles;
+    const u32 *map;
+    const u16 *shell; // [0] = lichttile, daarna w x h
+    const u16 *pal;
+    u8 w, h, cycleSpeed;
+    u16 dark, motif, glow;
+};
+
+static const u32 sTapuKoko_Tiles[] = INCBIN_U32("graphics/battle_transitions/tapu_koko.4bpp.smol");
+static const u32 sTapuKoko_Map[] = INCBIN_U32("graphics/battle_transitions/tapu_koko.bin.smolTM");
+static const u16 sTapuKoko_Shell[] = INCBIN_U16("graphics/battle_transitions/tapu_koko_shell.bin");
+static const u16 sTapuKoko_Pal[] = INCBIN_U16("graphics/battle_transitions/tapu_koko.gbapal");
+static const u32 sTapuLele_Tiles[] = INCBIN_U32("graphics/battle_transitions/tapu_lele.4bpp.smol");
+static const u32 sTapuLele_Map[] = INCBIN_U32("graphics/battle_transitions/tapu_lele.bin.smolTM");
+static const u16 sTapuLele_Shell[] = INCBIN_U16("graphics/battle_transitions/tapu_lele_shell.bin");
+static const u16 sTapuLele_Pal[] = INCBIN_U16("graphics/battle_transitions/tapu_lele.gbapal");
+static const u32 sTapuBulu_Tiles[] = INCBIN_U32("graphics/battle_transitions/tapu_bulu.4bpp.smol");
+static const u32 sTapuBulu_Map[] = INCBIN_U32("graphics/battle_transitions/tapu_bulu.bin.smolTM");
+static const u16 sTapuBulu_Shell[] = INCBIN_U16("graphics/battle_transitions/tapu_bulu_shell.bin");
+static const u16 sTapuBulu_Pal[] = INCBIN_U16("graphics/battle_transitions/tapu_bulu.gbapal");
+static const u32 sTapuFini_Tiles[] = INCBIN_U32("graphics/battle_transitions/tapu_fini.4bpp.smol");
+static const u32 sTapuFini_Map[] = INCBIN_U32("graphics/battle_transitions/tapu_fini.bin.smolTM");
+static const u16 sTapuFini_Shell[] = INCBIN_U16("graphics/battle_transitions/tapu_fini_shell.bin");
+static const u16 sTapuFini_Pal[] = INCBIN_U16("graphics/battle_transitions/tapu_fini.gbapal");
+
+static const struct TapuIntro sTapuIntros[] =
+{
+    [TAPU_KOKO] = {sTapuKoko_Tiles, sTapuKoko_Map, sTapuKoko_Shell, sTapuKoko_Pal, 12, 18, 2,
+                   RGB(3, 3, 0), RGB(31, 27, 4), RGB(31, 31, 18)},
+    [TAPU_LELE] = {sTapuLele_Tiles, sTapuLele_Map, sTapuLele_Shell, sTapuLele_Pal, 12, 18, 4,
+                   RGB(5, 1, 4), RGB(31, 12, 22), RGB(31, 26, 31)},
+    [TAPU_BULU] = {sTapuBulu_Tiles, sTapuBulu_Map, sTapuBulu_Shell, sTapuBulu_Pal, 18, 16, 5,
+                   RGB(1, 4, 1), RGB(18, 28, 4), RGB(31, 31, 16)},
+    [TAPU_FINI] = {sTapuFini_Tiles, sTapuFini_Map, sTapuFini_Shell, sTapuFini_Pal, 14, 17, 4,
+                   RGB(1, 2, 7), RGB(16, 19, 31), RGB(24, 31, 31)},
+};
+
+// helderheid van de 8 fasen van het motief (fase 0 = de lichtgolf, daarachter een staart)
+static const u8 sTapuCycle[8] = {16, 4, 3, 3, 3, 4, 6, 10};
+// schild open: verschuiving per helft in tiles, en de flits naar wit
+static const u8 sTapuOpenStep[TAPU_OPEN] = {0, 0, 1, 1, 2, 3, 4, 6, 9, 13};
+static const u8 sTapuOpenFlash[TAPU_OPEN] = {2, 4, 5, 6, 8, 9, 11, 13, 15, 16};
+
+#define tTapuState  data[0]
+#define tTapuTimer  data[1]
+#define tTapuPulse  data[2]
+#define tTapuId     data[3]
+#define tTapuHidden data[4]
+#define tTapuPos    data[5] // verticale positie (Bulu valt, Fini stijgt) in 1/16 px
+#define tTapuVel    data[6]
+#define tTapuSin    data[7]
+#define tTapuLast   data[8] // laatst geziene 'r' (frames tot de drumslag), voor beats bij vertraagde frames
+#define tTapuLanded data[9]
+
+static u16 Tapu_Blend(u16 a, u16 b, s32 k)
+{
+    s32 ar = a & 31, ag = (a >> 5) & 31, ab = (a >> 10) & 31;
+    s32 br = b & 31, bg = (b >> 5) & 31, bb = (b >> 10) & 31;
+    if (k <= 0)
+        return a;
+    if (k >= 16)
+        return b;
+    ar += ((br - ar) * k) >> 4;
+    ag += ((bg - ag) * k) >> 4;
+    ab += ((bb - ab) * k) >> 4;
+    return RGB(ar, ag, ab);
+}
+
+// frames sinds de start van de transitie (VBlanks), zie LaunchBattleTransitionTask
+static s32 Tapu_Elapsed(void)
+{
+    u8 id = FindTaskIdByFunc(Task_BattleTransition);
+    u32 start;
+    if (id == TASK_NONE)
+        return 0;
+    start = (u16)gTasks[id].data[13] | ((u32)(u16)gTasks[id].data[14] << 16);
+    return gMain.vblankCounter1 - start;
+}
+
+static void VBlankCB_Tapu(void)
+{
+    DmaStop(0);
+    VBlankCB_BattleTransition();
+    if (sTransitionData->VBlank_DMA)
+        DmaCopy16(3, gScanlineEffectRegBuffers[0], gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2);
+    DmaSet(0, gScanlineEffectRegBuffers[1], &REG_BG0HOFS, B_TRANS_DMA_FLAGS);
+}
+
+// schild tekenen met de helften 'step' tiles uit elkaar, de spleet vol licht (over het hele scherm)
+static void Tapu_DrawOpen(const struct TapuIntro *ti, s32 step)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 x0 = 15 - ti->w / 2, y0 = (20 - ti->h) / 2, half = ti->w / 2;
+    s32 r, c;
+    u16 light = ti->shell[0];
+
+    for (r = 0; r < 20; r++)
+    {
+        s32 sr = r - y0;
+        for (c = 15 - step; c < 15 + step; c++)
+            if (c >= 0 && c < 30)
+                tilemap[r * 32 + c] = light;
+        if (sr < 0 || sr >= ti->h)
+            continue;
+        for (c = 0; c < half; c++)
+        {
+            s32 xl = x0 + c - step, xr = 15 + c + step;
+            u16 el = ti->shell[1 + sr * ti->w + c], er = ti->shell[1 + sr * ti->w + half + c];
+            if (xl >= 0 && el)
+                tilemap[r * 32 + xl] = el;
+            if (xr < 30 && er)
+                tilemap[r * 32 + xr] = er;
+        }
+    }
+}
+
+static void Tapu_Finish(u8 taskId)
+{
+    SetVBlankCallback(NULL);
+    DmaStop(0);
+    SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+    SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_BG1_ON | DISPCNT_BG2_ON | DISPCNT_BG3_ON | DISPCNT_OBJ_ON);
+    FadeScreenBlack();
+    DestroyTask(taskId);
+}
+
+static void Tapu_Update(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    const struct TapuIntro *ti = &sTapuIntros[task->tTapuId];
+    s32 t = task->tTapuTimer, r = TAPU_HIT_FRAME - TAPU_LATENCY - Tapu_Elapsed();
+    s32 i, level, bgLevel, glow, flash = 0, shake = 0, wave = 0, cyc;
+    u16 *tilemap, *tileset;
+    u16 *pal14 = &gPlttBufferFaded[BG_PLTT_ID(14)], *pal15 = &gPlttBufferFaded[BG_PLTT_ID(15)];
+    s16 *hofs = (s16 *)gScanlineEffectRegBuffers[0];
+
+    if (task->tTapuState == 0)
+    {
+        InitTransitionData();
+        ScanlineEffect_Clear();
+        GetBg0TilesDst(&tilemap, &tileset);
+        CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+        DecompressDataWithHeaderVram(ti->tiles, tileset);
+        for (i = 0; i < 16; i++)
+            pal14[i] = pal15[i] = ti->dark;
+        CpuCopy16(pal14, &gPlttBufferUnfaded[BG_PLTT_ID(14)], PLTT_SIZE_4BPP * 2);
+        for (i = 0; i < DISPLAY_HEIGHT; i++)
+            gScanlineEffectRegBuffers[0][i] = gScanlineEffectRegBuffers[1][i] = 0;
+        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
+        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
+        // de wereld (BG 0-13 en alle sprites) zakt weg in de donkere kleur van de Tapu
+        BeginNormalPaletteFade(PALETTES_ALL & ~((1 << 14) | (1 << 15)), 0, 0, 16, ti->dark);
+        task->tTapuPos = (task->tTapuId == TAPU_BULU) ? (96 << 4) : (task->tTapuId == TAPU_FINI) ? -(96 << 4) : 0;
+        task->tTapuVel = 0;
+        task->tTapuLast = r;
+        SetVBlankCallback(VBlankCB_Tapu);
+        task->tTapuState++;
+        return;
+    }
+
+    if (r <= 0)
+    {
+        Tapu_Finish(taskId);
+        return;
+    }
+
+    // eerst zakt de wereld weg; pas dan het beeld tekenen en de tijdlijn starten. Daarna blijven alleen BG0 en de
+    // achtergrondkleur over (dan kan de flits via de achtergrondkleur)
+    if (!task->tTapuHidden)
+    {
+        if (gPaletteFade.active)
+            return;
+        ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_BG1_ON | DISPCNT_BG2_ON | DISPCNT_BG3_ON | DISPCNT_OBJ_ON);
+        DecompressDataWithHeaderVram(ti->map, RT_Tilemap());
+        task->tTapuHidden = TRUE;
+    }
+
+    // verschijnen (frames 8-56): elke Tapu op zijn eigen manier
+    level = (t - 8) * 16 / 40;
+    level = max(0, min(level, 16));
+    bgLevel = max(0, min((t - 40) * 16 / 30, 16));
+    switch (task->tTapuId)
+    {
+    case TAPU_KOKO: // elektrisch: het silhouet flitst aan, scanlijnen springen
+        if (t >= 8 && t < 56 && (Random() & 3) == 0)
+            level = 16;
+        if (t < 56)
+            wave = (56 - t) / 4;
+        break;
+    case TAPU_LELE: // psychisch: weefgolf zoals de Regi's, die uitdooft
+        wave = max(0, 40 - t) / 2;
+        break;
+    case TAPU_BULU: // zwaar: valt van boven, dreun, nadreunen
+        if (t >= 8 && !task->tTapuLanded)
+        {
+            task->tTapuVel += 20;
+            task->tTapuPos -= task->tTapuVel;
+            if (task->tTapuPos <= 0)
+            {
+                task->tTapuPos = 3 << 4; // terugvering, zakt hieronder weer weg
+                task->tTapuLanded = TRUE;
+                task->tTapuPulse = 16;
+            }
+        }
+        break;
+    case TAPU_FINI: // water: stijgt op uit de diepte, golvend
+        if (t >= 8 && task->tTapuPos < 0)
+            task->tTapuPos = -(((96 << 4) * (56 - t) / 48) * (56 - t) / 48);
+        if (t >= 56)
+            task->tTapuPos = 0;
+        wave = 2 + max(0, 56 - t) / 6;
+        break;
+    }
+
+    // beats: teruggeteld vanaf de drumslag; in de opbouw steeds sneller
+    if (t > 56)
+    {
+        s32 beat = r > TAPU_BUILD ? TAPU_BEAT : r > TAPU_BUILD / 2 ? 12 : 6;
+        for (i = task->tTapuLast - 1; i >= r; i--)
+        {
+            if (i > TAPU_OPEN && (i % beat) == 0)
+            {
+                task->tTapuPulse = 16;
+                if (task->tTapuId == TAPU_BULU && r > TAPU_BUILD)
+                    task->tTapuPos = 2 << 4; // dreun
+                break;
+            }
+        }
+    }
+    task->tTapuLast = r;
+
+    glow = task->tTapuPulse;
+    if (r < TAPU_BUILD)
+    {
+        s32 b = (TAPU_BUILD - r) * 10 / TAPU_BUILD;
+        glow = max(glow, b);
+        shake = (TAPU_BUILD - r) / 12;
+    }
+    if (r <= TAPU_OPEN)
+    {
+        Tapu_DrawOpen(ti, sTapuOpenStep[TAPU_OPEN - r]);
+        flash = sTapuOpenFlash[TAPU_OPEN - r];
+        shake = 0;
+    }
+
+    // palet 15: het schild (vanuit donker), het patroon (11-13) licht op, alles naar wit bij de flits
+    for (i = 1; i < 16; i++)
+    {
+        u16 c = Tapu_Blend(ti->dark, ti->pal[i], level);
+        if (i >= 11 && i <= 13)
+            c = Tapu_Blend(c, ti->glow, glow);
+        else if (i == 15)
+            c = ti->glow;
+        else
+            c = Tapu_Blend(c, RGB_WHITE, glow / 5);
+        pal15[i] = Tapu_Blend(c, RGB_WHITE, flash);
+    }
+    // palet 14: het motief, een lichtgolf die rondloopt; op de beat licht alles op
+    cyc = t / ti->cycleSpeed;
+    for (i = 1; i <= 8; i++)
+    {
+        s32 k = sTapuCycle[(i - 1 - cyc) & 7] + glow / 2;
+        if (task->tTapuId == TAPU_KOKO && task->tTapuPulse >= 14)
+            k = 16; // bliksemflits
+        k = min(k, 16) * bgLevel / 16;
+        pal14[i] = Tapu_Blend(Tapu_Blend(ti->dark, ti->motif, k), RGB_WHITE, flash);
+    }
+    gPlttBufferFaded[0] = Tapu_Blend(ti->dark, RGB_WHITE, flash); // achtergrondkleur
+    if (task->tTapuPulse > 0)
+        task->tTapuPulse -= 2;
+
+    // per beeldlijn horizontaal (golf / sprongen) en verticaal (vallen, stijgen, trillen)
+    sTransitionData->VBlank_DMA = FALSE;
+    if (task->tTapuId == TAPU_KOKO)
+    {
+        for (i = 0; i < DISPLAY_HEIGHT; i += 4)
+        {
+            s32 o = wave ? (s32)(Random() % (2 * wave + 1)) - wave : 0;
+            if (task->tTapuPulse >= 12 && (Random() & 1))
+                o += (Random() & 3) - 1;
+            hofs[i] = hofs[i + 1] = hofs[i + 2] = hofs[i + 3] = o;
+        }
+    }
+    else
+    {
+        s32 amp = wave + (task->tTapuId == TAPU_LELE ? task->tTapuPulse / 5 : task->tTapuId == TAPU_FINI ? task->tTapuPulse / 6 : 0);
+        task->tTapuSin += (task->tTapuId == TAPU_FINI) ? 3 : 8;
+        SetSinWave(hofs, 0, task->tTapuSin, task->tTapuId == TAPU_FINI ? 3 : 6, amp, DISPLAY_HEIGHT);
+    }
+    if (shake)
+    {
+        s32 o = (t & 1) ? shake : -shake;
+        for (i = 0; i < DISPLAY_HEIGHT; i++)
+            hofs[i] += o;
+    }
+    sTransitionData->VBlank_DMA = TRUE;
+
+    {
+        s32 vofs = task->tTapuPos >> 4;
+        if (task->tTapuId == TAPU_BULU && task->tTapuLanded && task->tTapuPos > 0)
+            task->tTapuPos = max(0, task->tTapuPos - 6);
+        SetGpuReg(REG_OFFSET_BG0VOFS, vofs & 0x1FF);
+    }
+    task->tTapuTimer++;
+}
+
+// de taakfunctie blijft per Tapu dezelfde (Transition_WaitForMain zoekt erop)
+static void Tapu_Run(u8 taskId, s16 which)
+{
+    gTasks[taskId].tTapuId = which;
+    Tapu_Update(taskId);
+}
+
+static void Task_TapuKoko(u8 taskId) { Tapu_Run(taskId, TAPU_KOKO); }
+static void Task_TapuLele(u8 taskId) { Tapu_Run(taskId, TAPU_LELE); }
+static void Task_TapuBulu(u8 taskId) { Tapu_Run(taskId, TAPU_BULU); }
+static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
+
+#undef tTapuState
+#undef tTapuTimer
+#undef tTapuPulse
+#undef tTapuId
+#undef tTapuHidden
+#undef tTapuPos
+#undef tTapuVel
+#undef tTapuSin
+#undef tTapuLast
+#undef tTapuLanded
+// Project Grounded: gymleider-intro's deel B (Norman, Winona, Tate & Liza, Wallace)
+#include "data/gym_intros_b.h"
+// Project Grounded: legendary-intro's (Lugia, Ho-Oh, Volcanion, Hoopa, Forces of Nature)
+#include "data/legend_intros.h"
+#include "data/legend_intros2.h"
+#include "data/wario_intro.h"
+#include "data/boo_intro.h"
+#include "data/shyguy_intro.h"
+#include "data/legend_intros_dp.h"
+// Project Grounded: goedkope legendary-intro's (Calyrex, Celebi, meren-trio, Meloetta, ...)
+#include "data/legend_intros_cheap2.h"
+#include "data/legend_intros_cheap1.h" // Project Grounded: goedkope legendary-intro's (Swords, UB's, paradoxen, Eternatus, Marshadow, Terapagos, Pecharunt)
+// Project Grounded: trainerklasse-intro's (met de gedeelde runner) en de rivaal-intro's
+#include "data/class_intros.h"
+#include "data/class_intros2_b.h"
+#include "data/rival_intros.h"

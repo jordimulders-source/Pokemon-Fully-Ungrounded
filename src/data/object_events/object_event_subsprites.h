@@ -2918,3 +2918,24 @@ static const struct SubspriteTable sOamTables_192x96[] = {
     {ARRAY_COUNT(sOamTable_192x96), sOamTable_192x96},
 };
 
+// Project Grounded: Nep-Enut op ware grootte, 128x128 als 2x4 blokken van 64x32 (-mwidth 8 -mheight 4)
+static const struct Subsprite sOamTable_128x128[] = {
+    {.x = -64, .y = -64, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 0, .priority = 2},
+    {.x = 0, .y = -64, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 32, .priority = 2},
+    {.x = -64, .y = -32, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 64, .priority = 2},
+    {.x = 0, .y = -32, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 96, .priority = 2},
+    {.x = -64, .y = 0, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 128, .priority = 2},
+    {.x = 0, .y = 0, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 160, .priority = 2},
+    {.x = -64, .y = 32, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 192, .priority = 2},
+    {.x = 0, .y = 32, .shape = SPRITE_SHAPE(64x32), .size = SPRITE_SIZE(64x32), .tileOffset = 224, .priority = 2},
+};
+
+static const struct SubspriteTable sOamTables_128x128[] = {
+    {ARRAY_COUNT(sOamTable_128x128), sOamTable_128x128},
+    {ARRAY_COUNT(sOamTable_128x128), sOamTable_128x128},
+    {ARRAY_COUNT(sOamTable_128x128), sOamTable_128x128},
+    {ARRAY_COUNT(sOamTable_128x128), sOamTable_128x128},
+    {ARRAY_COUNT(sOamTable_128x128), sOamTable_128x128},
+    {ARRAY_COUNT(sOamTable_128x128), sOamTable_128x128},
+};
+

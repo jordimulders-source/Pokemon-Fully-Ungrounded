@@ -17,6 +17,13 @@ buiten als terrassen (271-grond met de randen van Jagged Pass/Mt. Chimney). Het 
 bereikbaarheid (Rock Smash/Strength als poorten), dat elke rand een bekende vorm heeft en dat trappen in een
 rechte wand liggen.
 Gebruik: python3 tools/grounded/maptools/chimney_ext.py [voorbeeld.png]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, random, struct, sys
 
 REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..'))
@@ -283,7 +290,7 @@ def lava_tube():
         trainer('OBJ_EVENT_GFX_PICNICKER', 4, 25, 'JaggedPass_LavaTube_EventScript_Daisy', 3, 'MOVEMENT_TYPE_FACE_RIGHT'),
         item(5, 19, 'ITEM_CHARCOAL', 'FLAG_ITEM_LAVA_TUBE_CHARCOAL'),
         item(23, 25, 'ITEM_FIRE_STONE', 'FLAG_ITEM_LAVA_TUBE_FIRE_STONE'),
-        item(34, 16, 'ITEM_TM_FIRE_BLAST', 'FLAG_ITEM_LAVA_TUBE_TM_FIRE_BLAST'),
+        item(34, 16, 'ITEM_FIRE_MEMORY', 'FLAG_ITEM_LAVA_TUBE_TM_FIRE_BLAST'),
         item(34, 19, 'ITEM_HEAT_ROCK', 'FLAG_ITEM_LAVA_TUBE_HEAT_ROCK'),
         obj('OBJ_EVENT_GFX_PUSHABLE_BOULDER', BOULDER[0], BOULDER[1], 'EventScript_StrengthBoulder', 'FLAG_TEMP_11', move='MOVEMENT_TYPE_LOOK_AROUND'),
     ]
@@ -557,6 +564,7 @@ def main():
         for i in ims: out.paste(i, (x, 0)); x += i.width + 16
         out.save(sys.argv[1])
     print('klaar; Jagged Pass-warps %d/%d, Mt. Chimney-warps %s' % (wa, wb, mw))
+    print('let op: draai daarna tools/grounded/maptools/legends2.py opnieuw (legendaries op deze kaarten)')
 
 if __name__ == '__main__':
     main()

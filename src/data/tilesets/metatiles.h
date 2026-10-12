@@ -244,3 +244,138 @@ const u16 gMetatiles_ScorchedSlab[] = INCBIN_U16("data/tilesets/secondary/scorch
 const u16 gMetatileAttributes_ScorchedSlab[] = INCBIN_U16("data/tilesets/secondary/scorched_slab/metatile_attributes.bin");
 const u16 gMetatiles_MangroveMire[] = INCBIN_U16("data/tilesets/secondary/mangrove_mire/metatiles.bin");
 const u16 gMetatileAttributes_MangroveMire[] = INCBIN_U16("data/tilesets/secondary/mangrove_mire/metatile_attributes.bin");
+
+const u16 gMetatiles_ShipwreckShoals[] = INCBIN_U16("data/tilesets/secondary/shipwreck_shoals/metatiles.bin");
+const u16 gMetatileAttributes_ShipwreckShoals[] = INCBIN_U16("data/tilesets/secondary/shipwreck_shoals/metatile_attributes.bin");
+
+const u16 gMetatiles_RuinFire[] = INCBIN_U16("data/tilesets/secondary/ruin_fire/metatiles.bin"); // Project Grounded: Beasts of Ruin
+const u16 gMetatileAttributes_RuinFire[] = INCBIN_U16("data/tilesets/secondary/ruin_fire/metatile_attributes.bin");
+
+const u16 gMetatiles_RuinEarth[] = INCBIN_U16("data/tilesets/secondary/ruin_earth/metatiles.bin"); // Project Grounded: Beasts of Ruin
+const u16 gMetatileAttributes_RuinEarth[] = INCBIN_U16("data/tilesets/secondary/ruin_earth/metatile_attributes.bin");
+
+const u16 gMetatiles_RuinMoss[] = INCBIN_U16("data/tilesets/secondary/ruin_moss/metatiles.bin"); // Project Grounded: Beasts of Ruin
+const u16 gMetatileAttributes_RuinMoss[] = INCBIN_U16("data/tilesets/secondary/ruin_moss/metatile_attributes.bin");
+
+const u16 gMetatiles_RuinIce[] = INCBIN_U16("data/tilesets/secondary/ruin_ice/metatiles.bin"); // Project Grounded: Beasts of Ruin
+const u16 gMetatileAttributes_RuinIce[] = INCBIN_U16("data/tilesets/secondary/ruin_ice/metatile_attributes.bin");
+
+const u16 gMetatiles_SpacetimeCave[] = INCBIN_U16("data/tilesets/secondary/spacetime_cave/metatiles.bin"); // Project Grounded: Spacetime Cave: Cave + scheuren
+const u16 gMetatileAttributes_SpacetimeCave[] = INCBIN_U16("data/tilesets/secondary/spacetime_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_PokemonTower[] = INCBIN_U16("data/tilesets/secondary/pokemon_tower/metatiles.bin"); // Project Grounded: Pokemon Tower (FRLG + Ekat Revamp)
+const u16 gMetatileAttributes_PokemonTower[] = INCBIN_U16("data/tilesets/secondary/pokemon_tower/metatile_attributes.bin");
+
+const u16 gMetatiles_CeruleanCave[] = INCBIN_U16("data/tilesets/secondary/cerulean_cave/metatiles.bin"); // Project Grounded: Cerulean Cave (FRLG + Emerald Cave)
+const u16 gMetatileAttributes_CeruleanCave[] = INCBIN_U16("data/tilesets/secondary/cerulean_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_LavenderTown[] = INCBIN_U16("data/tilesets/secondary/lavender_town/metatiles.bin"); // Project Grounded: Lavender Town (Emerald-huizen, FRLG-toren)
+const u16 gMetatileAttributes_LavenderTown[] = INCBIN_U16("data/tilesets/secondary/lavender_town/metatile_attributes.bin");
+
+const u16 gMetatiles_Chargestone[] = INCBIN_U16("data/tilesets/secondary/chargestone/metatiles.bin"); // Project Grounded: Chargestone Cave: Meteor Falls blauw + zwevende stenen
+const u16 gMetatileAttributes_Chargestone[] = INCBIN_U16("data/tilesets/secondary/chargestone/metatile_attributes.bin");
+
+const u16 gMetatiles_UnchartedIsle[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/metatiles.bin");
+const u16 gMetatileAttributes_UnchartedIsle[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/metatile_attributes.bin");
+
+
+// Project Grounded: Glimwood Tangle (tools/grounded/maptools/glimwood.py)
+const u16 gMetatiles_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatiles.bin");
+const u16 gMetatileAttributes_Glimwood[] = INCBIN_U16("data/tilesets/secondary/glimwood/metatile_attributes.bin");
+
+// Project Grounded: tools/grounded/maptools/national_park_tiles.py
+const u16 gMetatiles_ParkBurntRustboro[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/metatiles.bin");
+const u16 gMetatileAttributes_ParkBurntRustboro[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/metatile_attributes.bin");
+// Project Grounded: tools/grounded/maptools/national_park_tiles.py
+const u16 gMetatiles_IlexForest[] = INCBIN_U16("data/tilesets/secondary/ilex_forest/metatiles.bin");
+const u16 gMetatileAttributes_IlexForest[] = INCBIN_U16("data/tilesets/secondary/ilex_forest/metatile_attributes.bin");
+
+// Project Grounded: Area Zero (tools/grounded/maptools/area_zero_tiles.py)
+const u16 gMetatiles_AreaZero[] = INCBIN_U16("data/tilesets/secondary/area_zero/metatiles.bin");
+const u16 gMetatileAttributes_AreaZero[] = INCBIN_U16("data/tilesets/secondary/area_zero/metatile_attributes.bin");
+
+
+const u16 gMetatiles_YoshiIslandBase[] = INCBIN_U16("data/tilesets/primary/yoshi_island_base/metatiles.bin"); // Project Grounded: Yoshi's Island: grond (primary)
+const u16 gMetatileAttributes_YoshiIslandBase[] = INCBIN_U16("data/tilesets/primary/yoshi_island_base/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiBeach[] = INCBIN_U16("data/tilesets/secondary/yoshi_beach/metatiles.bin"); // Project Grounded: Yoshi's Island: Beach
+const u16 gMetatileAttributes_YoshiBeach[] = INCBIN_U16("data/tilesets/secondary/yoshi_beach/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiHills[] = INCBIN_U16("data/tilesets/secondary/yoshi_hills/metatiles.bin"); // Project Grounded: Yoshi's Island: Hills
+const u16 gMetatileAttributes_YoshiHills[] = INCBIN_U16("data/tilesets/secondary/yoshi_hills/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiBoo[] = INCBIN_U16("data/tilesets/secondary/yoshi_boo/metatiles.bin"); // Project Grounded: Yoshi's Island: BooMansion
+const u16 gMetatileAttributes_YoshiBoo[] = INCBIN_U16("data/tilesets/secondary/yoshi_boo/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiFort[] = INCBIN_U16("data/tilesets/secondary/yoshi_fort/metatiles.bin"); // Project Grounded: Yoshi's Island: WarioFort
+const u16 gMetatileAttributes_YoshiFort[] = INCBIN_U16("data/tilesets/secondary/yoshi_fort/metatile_attributes.bin");
+
+const u16 gMetatiles_CoronetCave[] = INCBIN_U16("data/tilesets/secondary/coronet_cave/metatiles.bin"); // Project Grounded: Mt. Coronet: Meteor Falls-tiles, grijsbruin + lichte opening
+const u16 gMetatileAttributes_CoronetCave[] = INCBIN_U16("data/tilesets/secondary/coronet_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_CoronetSnow[] = INCBIN_U16("data/tilesets/secondary/coronet_snow/metatiles.bin"); // Project Grounded: Mt. Coronet: sneeuwset + bruggetjes, speerpilaren, altaren
+const u16 gMetatileAttributes_CoronetSnow[] = INCBIN_U16("data/tilesets/secondary/coronet_snow/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiJungle[] = INCBIN_U16("data/tilesets/secondary/yoshi_jungle/metatiles.bin"); // Project Grounded: Yoshi's Island: Jungle
+const u16 gMetatileAttributes_YoshiJungle[] = INCBIN_U16("data/tilesets/secondary/yoshi_jungle/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiCave[] = INCBIN_U16("data/tilesets/secondary/yoshi_cave/metatiles.bin"); // Project Grounded: Yoshi's Island: Cave
+const u16 gMetatileAttributes_YoshiCave[] = INCBIN_U16("data/tilesets/secondary/yoshi_cave/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiFlowers[] = INCBIN_U16("data/tilesets/secondary/yoshi_flowers/metatiles.bin"); // Project Grounded: Yoshi's Island: Flowers
+const u16 gMetatileAttributes_YoshiFlowers[] = INCBIN_U16("data/tilesets/secondary/yoshi_flowers/metatile_attributes.bin");
+
+const u16 gMetatiles_YoshiHouse[] = INCBIN_U16("data/tilesets/secondary/yoshi_house/metatiles.bin"); // Project Grounded: Yoshi's Island: YoshiHouse
+const u16 gMetatileAttributes_YoshiHouse[] = INCBIN_U16("data/tilesets/secondary/yoshi_house/metatile_attributes.bin");
+
+const u16 gMetatiles_SpearPillar[] = INCBIN_U16("data/tilesets/secondary/spear_pillar/metatiles.bin"); // Project Grounded: Spear Pillar + Hall of Origin: ruine, pilaren, trap van licht, wolken
+const u16 gMetatileAttributes_SpearPillar[] = INCBIN_U16("data/tilesets/secondary/spear_pillar/metatile_attributes.bin");
+
+// ultra_worlds_a { (tools/grounded/maptools/ultra_worlds_a.py: eigen tilesets van zes Ultra Beast-werelden)
+const u16 gMetatiles_UltraWorldNihilegoGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_nihilego_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldNihilegoGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_nihilego_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldNihilego[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldNihilego[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldBuzzwoleGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_buzzwole_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldBuzzwoleGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_buzzwole_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldBuzzwole[] = INCBIN_U16("data/tilesets/secondary/ultra_world_buzzwole/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldBuzzwole[] = INCBIN_U16("data/tilesets/secondary/ultra_world_buzzwole/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldPheromosaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_pheromosa_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldPheromosaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_pheromosa_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldPheromosa[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldPheromosa[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldXurkitreeGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_xurkitree_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldXurkitreeGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_xurkitree_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldXurkitree[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldXurkitree[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldCelesteelaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_celesteela_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldCelesteelaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_celesteela_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldCelesteela[] = INCBIN_U16("data/tilesets/secondary/ultra_world_celesteela/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldCelesteela[] = INCBIN_U16("data/tilesets/secondary/ultra_world_celesteela/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldKartanaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_kartana_ground/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldKartanaGround[] = INCBIN_U16("data/tilesets/primary/ultra_world_kartana_ground/metatile_attributes.bin");
+const u16 gMetatiles_UltraWorldKartana[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/metatiles.bin");
+const u16 gMetatileAttributes_UltraWorldKartana[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/metatile_attributes.bin");
+// } ultra_worlds_a
+// ultra_worlds_b { (tools/grounded/maptools/ultra_worlds_b.py)
+const u16 gMetatiles_UltraBStakatakaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBStakatakaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_stakataka_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBStakataka[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/metatiles.bin");
+const u16 gMetatileAttributes_UltraBStakataka[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/metatile_attributes.bin");
+const u16 gMetatiles_UltraBNecrozmaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_necrozma_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBNecrozmaBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_necrozma_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBNecrozma[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/metatiles.bin");
+const u16 gMetatileAttributes_UltraBNecrozma[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/metatile_attributes.bin");
+const u16 gMetatiles_UltraBGuzzlordBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_guzzlord_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBGuzzlordBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_guzzlord_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBGuzzlord[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/metatiles.bin");
+const u16 gMetatileAttributes_UltraBGuzzlord[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/metatile_attributes.bin");
+const u16 gMetatiles_UltraBBlacephalonBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_blacephalon_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBBlacephalonBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_blacephalon_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBBlacephalon[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/metatiles.bin");
+const u16 gMetatileAttributes_UltraBBlacephalon[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/metatile_attributes.bin");
+const u16 gMetatiles_UltraBPoipoleBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_poipole_base/metatiles.bin");
+const u16 gMetatileAttributes_UltraBPoipoleBase[] = INCBIN_U16("data/tilesets/primary/ultra_b_poipole_base/metatile_attributes.bin");
+const u16 gMetatiles_UltraBPoipole[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/metatiles.bin");
+const u16 gMetatileAttributes_UltraBPoipole[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/metatile_attributes.bin");
+// } ultra_worlds_b

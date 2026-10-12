@@ -1,5 +1,5 @@
 // Gegenereerd door tools/grounded/stadium/announcer.py; niet met de hand bewerken.
-// De omroeper kondigt de tegenstander aan (één tekstvak) vóór elke wedstrijd in de arena.
+// De omroeper in de arena (één tekstvak per zin): welkom, ronde, speler en compagnon, tegenstanders.
 
 struct StadiumAnnouncerLine
 {
@@ -8,6 +8,207 @@ struct StadiumAnnouncerLine
 };
 
 static const u8 sStadiumAnnouncerFallback[] = _("And the next challenger! We were told\nto say something funny here. We forgot.");
+
+static const u8 sStadiumAnnouncerVanilla[] = _("In the blue corner: {PLAYER}! A trainer.\nWith POKéMON. That's all it says here.");
+
+static const u8 *const sStadiumAnnouncerWelcome[] =
+{
+    COMPOUND_STRING("Welcome to the BATTLE STADIUM! 32\ntrainers, one trophy, zero refunds."),
+    COMPOUND_STRING("Welcome to STADIUM DOUBLES! Sixteen\nteams, twice the property damage."),
+};
+
+static const u8 *const sStadiumAnnouncerRounds[] =
+{
+    COMPOUND_STRING("ROUND OF 32! Half of you go home today.\nThe parking lot is already cheering."),
+    COMPOUND_STRING("ROUND OF 16! The hot dog stand has\noutlasted half the field already."),
+    COMPOUND_STRING("QUARTERFINALS! Eight left. The crowd\nhas learned two of their names."),
+    COMPOUND_STRING("The SEMIFINALS! Four left. Somebody's\ngrandma just woke up for this."),
+    COMPOUND_STRING("The FINAL! One match, one trophy, and\none very nervous janitor."),
+};
+
+enum StadiumAnnouncePlayer
+{
+    ANNOUNCE_PLAYER_WHITE_OUTS,
+    ANNOUNCE_PLAYER_LEAGUE_BULLY,
+    ANNOUNCE_PLAYER_FAN,
+    ANNOUNCE_PLAYER_MAGIKARP,
+    ANNOUNCE_PLAYER_MONOTYPE,
+    ANNOUNCE_PLAYER_IMPLOSION,
+    ANNOUNCE_PLAYER_TRASH_SPIRITOMB,
+    ANNOUNCE_PLAYER_HOOPA_SNACK,
+    ANNOUNCE_PLAYER_HOOPA_FAME,
+    ANNOUNCE_PLAYER_HOOPA_RICHES,
+    ANNOUNCE_PLAYER_HOOPA_POWER,
+    ANNOUNCE_PLAYER_BURGLAR,
+    ANNOUNCE_PLAYER_BIRCH,
+    ANNOUNCE_PLAYER_DAVE,
+    ANNOUNCE_PLAYER_COMMUNITY_SERVICE,
+    ANNOUNCE_PLAYER_SHINY_RAYQUAZA,
+    ANNOUNCE_PLAYER_RELEASED,
+    ANNOUNCE_PLAYER_FAINTED,
+    ANNOUNCE_PLAYER_FLED,
+    ANNOUNCE_PLAYER_SPLASH,
+    ANNOUNCE_PLAYER_STRUGGLE,
+    ANNOUNCE_PLAYER_STEPS,
+    ANNOUNCE_PLAYER_EGGS,
+    ANNOUNCE_PLAYER_FISHING,
+    ANNOUNCE_PLAYER_SAVES,
+    ANNOUNCE_PLAYER_POKECENTER,
+    ANNOUNCE_PLAYER_SHINIES,
+    ANNOUNCE_PLAYER_LEDGES,
+    ANNOUNCE_PLAYER_JACKPOT,
+    ANNOUNCE_PLAYER_RICH,
+    ANNOUNCE_PLAYER_BROKE,
+    ANNOUNCE_PLAYER_LEGENDARY,
+    ANNOUNCE_PLAYER_BIG_DEX,
+    ANNOUNCE_PLAYER_PLAYTIME,
+    ANNOUNCE_PLAYER_TITLES,
+    ANNOUNCE_PLAYER_VETERAN,
+    ANNOUNCE_PLAYER_RETURNING,
+    ANNOUNCE_PLAYER_NEWCOMER,
+    ANNOUNCE_PLAYER_HALL_OF_FAME,
+    ANNOUNCE_PLAYER_EIGHT_BADGES,
+    ANNOUNCE_PLAYER_TREECKO,
+    ANNOUNCE_PLAYER_TORCHIC,
+    ANNOUNCE_PLAYER_MUDKIP,
+    ANNOUNCE_PLAYER_COUNT
+};
+
+static const u8 *const sStadiumAnnouncerPlayer[] =
+{
+    COMPOUND_STRING("{PLAYER}! This trainer loses more than\nthey win.\pSo let's all pretend this time is gonna\nbe different."),
+    COMPOUND_STRING("{PLAYER}! {STR_VAR_2} wins at the POKéMON\nLEAGUE.\pA trainer who likes to fight the same\npeople over and over again. Bully!"),
+    COMPOUND_STRING("{PLAYER} owns {STR_VAR_2} {STR_VAR_1}!\pThat's not a team. That's a fan club\nwith a membership fee."),
+    COMPOUND_STRING("{PLAYER} entered a MAGIKARP. In a\ntournament. On purpose.\pBold strategy. Or a cry for help."),
+    COMPOUND_STRING("{PLAYER} brought only {STR_VAR_1}\ntypes.\pA theme team! Subtle. Like a brass band."),
+    COMPOUND_STRING("{PLAYER} once used IMPLOSION. A black\nhole. Indoors.\pOur insurance went up 400 percent."),
+    COMPOUND_STRING("{PLAYER} caught a SPIRITOMB in a trash\ncan. We don't judge. The trash can does."),
+    COMPOUND_STRING("{PLAYER} met a genie and wished for a\nsnack.\pA grandma in LAVARIDGE is short one\nbatch of cookies."),
+    COMPOUND_STRING("{PLAYER} wished for fame and got\nGABBY's. Remember GABBY? No? Exactly."),
+    COMPOUND_STRING("{PLAYER} wished for riches. Somewhere, a\nRICH BOY's piggy bank is empty. Boo!"),
+    COMPOUND_STRING("{PLAYER} wished for power and got a\nCHOICE BAND.\pBRAWLY lost his headband that day.\nFunny, that."),
+    COMPOUND_STRING("{PLAYER} has beaten SIMON the BURGLAR\n{STR_VAR_2} times.\pHe keeps coming back. Lock your doors."),
+    COMPOUND_STRING("{PLAYER} has beaten PROF. BIRCH and\nhis... samples.\pMany times. We washed the trophy twice."),
+    COMPOUND_STRING("{PLAYER} beat DAVE four times.\pDAVE says it doesn't count. He says you\nwere offside."),
+    COMPOUND_STRING("{PLAYER} battled ARCHIE and MAXIE\nduring their community service.\pThey were holding mops. Cold."),
+    COMPOUND_STRING("{PLAYER} caught a black RAYQUAZA.\pAn ancient sky god. Now a pocket\naccessory."),
+    COMPOUND_STRING("{PLAYER} released {STR_VAR_2} POKéMON.\pThey live on a farm now. A lovely farm.\nDon't ask."),
+    COMPOUND_STRING("{PLAYER}'s POKéMON have fainted\n{STR_VAR_2} times.\pThe POKéMON CENTER sends a fruit\nbasket every Christmas."),
+    COMPOUND_STRING("{PLAYER} has run from {STR_VAR_2} battles.\nGreat cardio.\pTonight, the exit is locked."),
+    COMPOUND_STRING("{PLAYER} has used SPLASH {STR_VAR_2} times.\nNothing happened. Every. Single. Time."),
+    COMPOUND_STRING("{PLAYER}'s POKéMON have used STRUGGLE\n{STR_VAR_2} times. PP? Never heard of her."),
+    COMPOUND_STRING("{PLAYER} has walked {STR_VAR_2} steps. The\nshoes have filed a complaint."),
+    COMPOUND_STRING("{PLAYER} has hatched {STR_VAR_2} eggs.\pSomewhere, a very tired DITTO needs a\nvacation."),
+    COMPOUND_STRING("{PLAYER} has gone fishing {STR_VAR_2}\ntimes. IVAN calls that a warm-up."),
+    COMPOUND_STRING("{PLAYER} has saved the game {STR_VAR_2}\ntimes. Trust issues?\pRelax. This match can't be undone."),
+    COMPOUND_STRING("{PLAYER} has visited a POKéMON CENTER\n{STR_VAR_2} times.\pThe nurse has a punch card with your\nface on it."),
+    COMPOUND_STRING("{PLAYER} owns {STR_VAR_2} shiny POKéMON.\nWrong colors, right attitude."),
+    COMPOUND_STRING("{PLAYER} has jumped off {STR_VAR_2} ledges.\nNever once climbed back up. Committed."),
+    COMPOUND_STRING("{PLAYER} hit a jackpot at the GAME\nCORNER.\pThe casino knows. The casino remembers."),
+    COMPOUND_STRING("{PLAYER} has half a million in the bank.\pTonight's prize money goes to the\njanitor."),
+    COMPOUND_STRING("{PLAYER} is broke. Like, really broke. Win\nthis one. The hot dogs aren't free."),
+    COMPOUND_STRING("{PLAYER} owns a {STR_VAR_1}! A legend.\nIn a ball. In a pocket. Sure."),
+    COMPOUND_STRING("{PLAYER} caught over 200 POKéMON. The\nPC storage union is on strike."),
+    COMPOUND_STRING("{PLAYER}! Over a hundred hours on the\nclock. Go outside. After this match."),
+    COMPOUND_STRING("Defending the trophy: {PLAYER}! The\ntrophy remembers you. It's scared."),
+    COMPOUND_STRING("{PLAYER}! Twenty-plus wins here. The\nfloor knows your footprints by heart."),
+    COMPOUND_STRING("{PLAYER} is back! Last time didn't go\ngreat. Don't worry, we kept the footage."),
+    COMPOUND_STRING("A fresh face: {PLAYER}! First time here.\nThe medics are on standby. Just in case."),
+    COMPOUND_STRING("The CHAMPION of HOENN: {PLAYER}! Yes,\nthe real one. STEVEN is still in therapy."),
+    COMPOUND_STRING("{PLAYER}! Eight BADGES, no ELITE FOUR\nwin. Ambition: high. Results: pending."),
+    COMPOUND_STRING("{PLAYER} picked TREECKO. The cool one.\nThat's what everybody says."),
+    COMPOUND_STRING("{PLAYER} picked TORCHIC. A chicken that\nlearns to kick. Respect."),
+    COMPOUND_STRING("{PLAYER} picked MUDKIP. Of course. The\ninternet told you to."),
+};
+
+static const u8 sStadiumAnnouncerPlayerWeight[] =
+{
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    6,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    3,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+};
+
+static const u8 *const sStadiumAnnouncerPartner[] =
+{
+    COMPOUND_STRING("At {PLAYER}'s side: {STR_VAR_1}!\nFriends? Their lawyers say partners."),
+    COMPOUND_STRING("With {PLAYER}: {STR_VAR_1}! They met\nfive minutes ago. Chemistry!"),
+    COMPOUND_STRING("{PLAYER}'s partner: {STR_VAR_1}! Paid\nin exposure and one free hot dog."),
+    COMPOUND_STRING("Covering {PLAYER}: {STR_VAR_1}! Or\nstanding nearby. Close enough."),
+};
+
+struct StadiumAnnouncerCompanion
+{
+    u16 partnerId;
+    const u8 *text;
+};
+
+static const struct StadiumAnnouncerCompanion sStadiumAnnouncerCompanion[] =
+{
+    {PARTNER_STADIUM_BRENDAN, COMPOUND_STRING("Teaming up with {PLAYER}: BRENDAN! Your\nrival.\pHe wants a rematch. After this match.\nObviously.")},
+    {PARTNER_STADIUM_MAY, COMPOUND_STRING("Teaming up with {PLAYER}: MAY! She keeps\nscore of your rivalry. She is “ahead”.")},
+    {PARTNER_STADIUM_KECCLES, COMPOUND_STRING("And next to {PLAYER}... KECCLES!\nProbably. He could be anywhere.\pA KECLEON with a PhD and an existential\ncrisis. Same thing, really.")},
+    {PARTNER_STADIUM_WALLY, COMPOUND_STRING("With {PLAYER}: WALLY! The sick kid from\nPETALBURG got better.\pMuch better. Worryingly better.")},
+    {PARTNER_STADIUM_MASCOTS, COMPOUND_STRING("With {PLAYER}: the MASCOTS!\pOn the lunchbox, on the plushie, and now\non the battlefield.")},
+    {PARTNER_STADIUM_STARTERS, COMPOUND_STRING("With {PLAYER}: the KANTO STARTERS! Fully\nevolved.\pStill holding a grudge about the lab.")},
+    {PARTNER_STADIUM_FOSSILS, COMPOUND_STRING("With {PLAYER}: the FOSSILS! Millions of\nyears old.\pStill faster than the WiFi in here.")},
+    {PARTNER_STADIUM_EEVEES, COMPOUND_STRING("With {PLAYER}: the EEVEE family!\pThree cousins, one family reunion, zero\nagreement.")},
+    {PARTNER_STADIUM_LAKE, COMPOUND_STRING("With {PLAYER}: the LAKE TRIO!\pKnowledge, emotion and willpower. You\nbring the snacks.")},
+    {PARTNER_STADIUM_REGIS, COMPOUND_STRING("With {PLAYER}: the REGIS! They speak\nonly in beeps. Our translator quit.")},
+    {PARTNER_STADIUM_BIRDS, COMPOUND_STRING("With {PLAYER}: the LEGENDARY BIRDS!\nPlease do not feed them.\pThey bite. And freeze. And zap.")},
+    {PARTNER_STADIUM_BEASTS, COMPOUND_STRING("With {PLAYER}: the LEGENDARY BEASTS!\pThey roamed half of HOENN to get here.\nTook the bus the last bit.")},
+    {PARTNER_STADIUM_PSEUDOS, COMPOUND_STRING("With {PLAYER}: three\nPSEUDO-LEGENDARIES!\p600 base stats each. The other trainers\nwant a word.")},
+    {PARTNER_STADIUM_SWORDS, COMPOUND_STRING("With {PLAYER}: the SWORDS OF JUSTICE!\pThey're here to judge. Mostly the\nreferee.")},
+    {PARTNER_STADIUM_LOYAL, COMPOUND_STRING("With {PLAYER}: the LOYAL THREE! Loyal to\n{PLAYER}. Today. Read the contract.")},
+    {PARTNER_STADIUM_TAPUS, COMPOUND_STRING("With {PLAYER}: the TAPUS! Island\nguardians.\pVery protective. Of the snack table.")},
+    {PARTNER_STADIUM_GENIES, COMPOUND_STRING("With {PLAYER}: the FORCES OF NATURE!\nWeather forecast: yes.")},
+    {PARTNER_STADIUM_ULTRAS, COMPOUND_STRING("With {PLAYER}: the ULTRA BEASTS! From\nanother dimension.\pTheir visas are pending.")},
+    {PARTNER_STADIUM_RUIN, COMPOUND_STRING("With {PLAYER}: the TREASURES OF RUIN!\nFour were sealed.\pThree showed up. Nobody asks about the\nfourth.")},
+    {PARTNER_STADIUM_WEATHER, COMPOUND_STRING("With {PLAYER}: the WEATHER TRIO!\pRain, sun, and a sky dragon that hates\nboth. Bring a coat.")},
+    {PARTNER_STADIUM_SELENE, COMPOUND_STRING("With {PLAYER}: SELENE! She calls you\n“the chosen one”.\pShe also calls her kettle that.")},
+    {PARTNER_STADIUM_REGINALD, COMPOUND_STRING("With {PLAYER}: REGINALD! He left his\ncave for this.\pHe wants it on record that he hates it.")},
+    {PARTNER_STADIUM_HELIA, COMPOUND_STRING("With {PLAYER}: HELIA! She brought\nsunscreen. For her BRONZONG.\pNot for you. Never for you.")},
+    {PARTNER_STADIUM_CREATORS, COMPOUND_STRING("With {PLAYER}: the CREATORS! Time, space\nand antimatter. The janitor gave up.")},
+};
 
 static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
 {
@@ -100,7 +301,7 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_STADIUM_YOSHI, COMPOUND_STRING("YOSHI! Please be gentle, he cries. We\nhave tissues on standby.")},
     {TRAINER_STADIUM_GOLBAT, COMPOUND_STRING("GOLBAT! From every cave of your\nchildhood. REPEL does not work in here.")},
     {TRAINER_STADIUM_GRIMER, COMPOUND_STRING("GRIMER! Here since 1996. So is the smell.\nFront rows, we apologize.")},
-    {TRAINER_STADIUM_BOO, COMPOUND_STRING("BOO! Don't look at him. Seriously, look\naway. It's in the rules.")},
+    {TRAINER_STADIUM_BOO, COMPOUND_STRING("COMMANDER BOO! Don't look at him.\nSeriously. He hates that.")},
     {TRAINER_STADIUM_MEW, COMPOUND_STRING("MEW! Found under a truck in LILYCOVE.\nThe rumors were true all along!")},
     {TRAINER_STADIUM_SHY_GUY_RED, COMPOUND_STRING("SHY GUY! He asked us not to announce\nhim. Sorry, buddy.")},
     {TRAINER_STADIUM_SHY_GUY_GREEN, COMPOUND_STRING("SHYER GUY! Even shyer than SHY GUY.\nHe's under the bleachers. Somewhere.")},
@@ -112,7 +313,16 @@ static const struct StadiumAnnouncerLine sStadiumAnnouncerLines[] =
     {TRAINER_STADIUM_IVAN, COMPOUND_STRING("IVAN the FISHERMAN! Very rare fishies.\nHis MAGIKARP knows HYDRO PUMP.")},
     {TRAINER_STADIUM_JOHNSON, COMPOUND_STRING("JOHNSON! Tik tok, tik tok. Nobody knows\nwhat happens next. Not even him.")},
     {TRAINER_STADIUM_LYLE, COMPOUND_STRING("LYLE! His brother's bugs, finally\ntrained! IVs: still zero. Heart: maxed.")},
+    {TRAINER_PLASMA_NIGEL, COMPOUND_STRING("NIGEL, NEO PLASMA's Head of Logistics!\nHe signed for a GENESECT.")},
     {TRAINER_VICTORY_V, COMPOUND_STRING("V! Only POKéMON with a V! VOLCARONA!\nVIKAVOLT! VICTORY? We'll see.")},
+    {TRAINER_GRIMSBY, COMPOUND_STRING("CAPTAIN GRIMSBY! Dead since 1802, still\nclocks in. Union rules.")},
+    {TRAINER_LAVIS, COMPOUND_STRING("LAVIS! Thirty-one years painting one\nlake. Today: you, small, in the corner.")},
+    {TRAINER_TALLOW, COMPOUND_STRING("TALLOW! Lighthouse keeper, 1952 to\n1953. Mostly 1953. Mostly dead.")},
+    {TRAINER_WICK, COMPOUND_STRING("WICK! Forty years a lighthouse keeper.\nHis lamp is a fish. It works.")},
+    {TRAINER_SALIM, COMPOUND_STRING("SALIM of the MIRAGE BAZAAR! Everything\nfor sale, nothing his!")},
+    {TRAINER_DRACONID_ELDER, COMPOUND_STRING("SELENE, DRACONID ELDER! Waited 300\nyears for a sky dragon. You'll do.")},
+    {TRAINER_VR_REGINALD, COMPOUND_STRING("REGINALD, the VICTORY ROAD HERMIT!\nLast saw daylight in 1987. Didn't like it.")},
+    {TRAINER_SLAB_HELIA, COMPOUND_STRING("HELIA of the SCORCHED SLAB! Worships\nthe sun. The sun has not replied.")},
     {TRAINER_BRENDAN_ROUTE_136_TREECKO, COMPOUND_STRING("BRENDAN! Your rival. Still salty about\nwhich starter you picked.")},
     {TRAINER_MAY_ROUTE_136_TORCHIC, COMPOUND_STRING("MAY! Your rival. She swears she's better\nat this than you. Prove it.")},
 };

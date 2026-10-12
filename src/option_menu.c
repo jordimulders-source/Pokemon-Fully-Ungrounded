@@ -77,7 +77,7 @@ static void FrameType_DrawChoices(u8 selection);
 static u8 ButtonMode_ProcessInput(u8 selection);
 static void ButtonMode_DrawChoices(u8 selection);
 static void DrawHeaderText(void);
-static u8 BattleMusic_ProcessInput(u8 selection, u8 count);
+static u8 BattleMusic_ProcessInput(u8 selection, u8 count, const struct BattleMusicOption *list);
 static void BattleMusic_DrawChoice(const u8 *name, u8 y);
 static void DrawOptionMenuTexts(void);
 static void DrawBgWindowFrames(void);
@@ -366,14 +366,14 @@ static void Task_OptionMenuProcessInput(u8 taskId)
             break;
         case MENUITEM_WILDMUSIC:
             previousOption = gTasks[taskId].tWildMusic;
-            gTasks[taskId].tWildMusic = BattleMusic_ProcessInput(gTasks[taskId].tWildMusic, gWildBattleMusicOptionsCount);
+            gTasks[taskId].tWildMusic = BattleMusic_ProcessInput(gTasks[taskId].tWildMusic, gWildBattleMusicOptionsCount, gWildBattleMusicOptions);
 
             if (previousOption != gTasks[taskId].tWildMusic)
                 BattleMusic_DrawChoice(gWildBattleMusicOptions[gTasks[taskId].tWildMusic].name, YPOS_WILDMUSIC);
             break;
         case MENUITEM_TRAINERMUSIC:
             previousOption = gTasks[taskId].tTrainerMusic;
-            gTasks[taskId].tTrainerMusic = BattleMusic_ProcessInput(gTasks[taskId].tTrainerMusic, gTrainerBattleMusicOptionsCount);
+            gTasks[taskId].tTrainerMusic = BattleMusic_ProcessInput(gTasks[taskId].tTrainerMusic, gTrainerBattleMusicOptionsCount, gTrainerBattleMusicOptions);
 
             if (previousOption != gTasks[taskId].tTrainerMusic)
                 BattleMusic_DrawChoice(gTrainerBattleMusicOptions[gTasks[taskId].tTrainerMusic].name, YPOS_TRAINERMUSIC);
@@ -660,16 +660,29 @@ static void ButtonMode_DrawChoices(u8 selection)
 }
 
 // Project Grounded: muziekkeuze, met links/rechts door de lijst bladeren.
-static u8 BattleMusic_ProcessInput(u8 selection, u8 count)
+// Thema's die nog verborgen zijn (Yoshi/Wario/Mario vóór ?????) worden overgeslagen.
+static u8 BattleMusic_ProcessInput(u8 selection, u8 count, const struct BattleMusicOption *list)
 {
+    u32 i;
+
     if (JOY_NEW(DPAD_RIGHT))
     {
-        selection = (selection + 1 < count) ? selection + 1 : 0;
+        for (i = 0; i < count; i++)
+        {
+            selection = (selection + 1 < count) ? selection + 1 : 0;
+            if (IsBattleMusicOptionUnlocked(&list[selection]))
+                break;
+        }
         sArrowPressed = TRUE;
     }
     if (JOY_NEW(DPAD_LEFT))
     {
-        selection = (selection != 0) ? selection - 1 : count - 1;
+        for (i = 0; i < count; i++)
+        {
+            selection = (selection != 0) ? selection - 1 : count - 1;
+            if (IsBattleMusicOptionUnlocked(&list[selection]))
+                break;
+        }
         sArrowPressed = TRUE;
     }
     return selection;

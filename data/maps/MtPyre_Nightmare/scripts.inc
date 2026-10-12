@@ -24,7 +24,7 @@ MtPyre_Nightmare_EventScript_Darkrai::
 	closemessage
 	playmoncry SPECIES_DARKRAI, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_DARKRAI, 70
+	setwildbattle SPECIES_DARKRAI, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

@@ -1263,6 +1263,7 @@ static const struct FormChange sDiancieFormChangeTable[] =
 static const struct FormChange sHoopaFormChangeTable[] =
 {
     {FORM_CHANGE_ITEM_USE,    SPECIES_HOOPA_UNBOUND, ITEM_PRISON_BOTTLE, SPECIES_HOOPA_CONFINED},
+    {FORM_CHANGE_ITEM_USE,    SPECIES_HOOPA_CONFINED, ITEM_PRISON_BOTTLE}, // Project Grounded: de Prison Bottle wisselt beide kanten op (Hoopa-quest)
     {FORM_CHANGE_WITHDRAW,    SPECIES_HOOPA_CONFINED},
     {FORM_CHANGE_DAYS_PASSED, SPECIES_HOOPA_CONFINED, 3},
     {FORM_CHANGE_TERMINATOR},

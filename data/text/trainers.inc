@@ -4548,17 +4548,19 @@ Route132_Text_RonaldPostBattle:
 	.string "Or against INCINEROAR. Same thing.$"
 
 Route132_Text_KiyoIntro:
-	.string "I contemplate POKéMON 24 hours a day.\p"
-	.string "How could you possibly beat me?$"
+	.string "I've been practicing Muay Thai a lot for\n"
+	.string "the past 6 months, I've been kicking\l"
+	.string "trees daily, my shins are made of iron\l"
+	.string "now. My trainer says I'm Bangkok ready!$"
 
 Route132_Text_KiyoDefeat:
-	.string "I lose. I concede.$"
+	.string "Wait, women there aren't always female?$"
 
 Route132_Text_KiyoPostBattle:
-	.string "Urggh… You're a POKéMON fanatic, aren't\n"
-	.string "you?\p"
-	.string "24 hours a day?\p"
-	.string "Go outside once in a while.$"
+	.string "That sounds like a nightmare, I guess I\n"
+	.string "am not Bangkok ready at all, time to\l"
+	.string "memorize how I can distinguish females\l"
+	.string "from males$"
 
 Route132_Text_MakaylaIntro:
 	.string "Woo-hoo! My husband got food\n"

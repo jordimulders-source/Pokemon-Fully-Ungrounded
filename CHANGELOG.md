@@ -16931,3 +16931,1722 @@ Volgens Jordi's GBA-instructies per leider:
 - **Sync:** gemeten met `gMPlayInfo_BGM.clock`; de transitie begint 19 frames na de muziek.
 - **Waar:** alleen Dave, ook in het Battle Stadium.
 - **Bouwscript:** `tools/grounded/dave_transition.py`; de baan van de bal is vooraf berekend in 3D-perspectief.
+### [v0.9.90] - Brawly v4 en Neo Plasma v10 (Jordi's Gemini-feedback)
+- **Brawly v4** (nu-metal, referentie Stemm "Face the Pain"):
+  - De "speelgoedaccordeon" bleken de korte chugs (±40 ms stoten van een aangehouden distortion-akkoord), de "tokkelgitaar" was de bas (noten van 5 ticks) en de "scratch" was eigenlijk een glijfluitje (koor-aah). Gemeten met solo-opnames per spoor.
+  - Nieuw: muur van powerchords op een tweede distortion-gitaar (tel 1 + elke akkoordwissel, aangehouden), echte palm-mutes, overdrive-bas in strakke achtsten met de kick (+40% t.o.v. de lead), zware kick, heavy-rock-snare op 2 en 4, open hihats op de PSG-ruis (. x . x), breedbandige vinylscratches op de overgangen (o.a. 0:07 en 0:15). Melodie ongewijzigd.
+  - `kermis_meter` keurt nu ook fluitjes, tokkel-begeleiding en een holle lage laag af. Nieuwe tool `gba_sim.py` (offline m4a-weergave).
+- **Neo Plasma v10:**
+  - Intro-run nu als glijdende synth-brass (pitch bend van E2 naar C6, velocity 127) i.p.v. losse 16e-tikjes.
+  - "Foute noten in het tweede thema" (0:22–0:35) klopten niet: de lead volgt het origineel daar noot voor noot (gecontroleerd op de Spleeter-stems). Wél fout rond 1:08: orgelakkoorden, sawtooth en 8-bit-sinus stonden in maat 50–62 een octaaf te hoog (bron-MIDI); die staan nu goed.
+  - Dikkere bas (sample met eigen grondtoon, +33% RMS, luider), basstoten x . x x . x . x in de bridge, hihats lopen door in de halftime-break.
+  - Harde controles in het script: niets boven C6 in melodiesporen, geen akoestische/trage-attack-samples.
+
+### [v0.9.91] - Battle Stadium: drie bugs uit Jordi's test
+- **Partnerkeuzescherm:** Pokémon-iconen kregen de kleuren van de gekozen partner (de trainerfoto overschreef icoonpalet 0). Elke foto krijgt nu een eigen paletslot.
+- **Multi/tag battle:** je verloor zodra jouw drie Pokémon op waren, ook als de partner er nog had (de Gen 4+-regel telde je echte team buiten het toernooi mee). Nu pas verlies als speler én partner op zijn.
+- **Partnerlijst:** LEFT/RIGHT en L/R springen een pagina (9 regels), UP bovenaan springt naar het einde en DOWN onderaan naar het begin. Hulptekst "←→ L/R: page" rechtsboven.
+
+### [v0.9.92] - SickBlik: hotpot-gevechtsintro (idee van Jordi)
+- Na de mugshot zit je aan tafel bij een dampende Chinese yin-yang-hotpot (rode mala- en witte bouillon), met borden vlees, garnalen, tofu, groenten, eetstokjes en biertjes (stoom en bubbels als paletanimatie, bubbelgeluid).
+- Harde cut naar het bovenaanzicht: de S-scheiding trekt recht tot de zwarte band, de pan wordt de rand, de ingrediënten zinken weg en een blokje tofu drijft naar het midden en wordt de knop. Als de Poké Ball af is (SE_BALL_OPEN): het gevecht. Hotpot-deel ±3,3 s, met mugshot ±5 s.
+- Ook in het Battle Stadium (als SickBlik de tegenstander is). Bouwscript `tools/grounded/sickblik_transition.py` (30 morph-sleutelbeelden, dubbele tilebuffer tegen tearing).
+
+### [v0.9.93] - Battle! Burglar (eigen compositie)
+- **`MUS_GROUNDED_VS_BURGLAR` (655)** voor Simon de inbreker (stadsevent, alle vijf de versies) en in het Battle Stadium.
+- Noir-jazz-heist in D-klein: intro met alarmstoot en vibrafoon; A = sluipen (150 bpm swing, walking bass, vingerknippen, gedempte trompet op de tenen, bari antwoordt); B = de kluis (side stick als tik-tak, kraak-riff); dan gaat het alarm af (tweetonige stoten, PSG-sirene, roffel, accelerando) naar C = de achtervolging (176 bpm, drums vol, bas in achtsten met sub), C2 een halve toon hoger, D = kwijt (ritardando terug). Eigen melodie, anti-kermis-controle in het script (`burglar_theme.py`, samples `burglar_samples.py`, eigen drumkit).
+- In de game opgenomen: 0 overlopen, piek 68/127 bij -V090 → volume naar -V112 (was te zacht).
+
+### [v0.9.94] - Brawly v5 (muur, bas en hats hoorbaar)
+- Gemeten (solo per spoor uit de game, A-gewogen): in v4 was de lead 74% van wat je hoort, de muur 15%, de bas 7% en de hats 0,4%. De bas klonk bovendien **twee octaven te hoog** (C4 i.p.v. C2: verkeerde grondtoon van de bronsample), de chugs een octaaf te laag, de hats waren tikjes van 90 ms en de kick werd afgekapt.
+- v5: echte C2-overdrive-bas met grom en punch, dikkere powerchord-muur (luider), open hats op de tussen-achtsten die je hoort, langere kick met subtoon, chugs op de juiste octaaf en zachter, lead zachter. Melodie, tempo, ritme, opener en snare-accenten ongewijzigd.
+- Nu: hats 15%, muur 26%, bas ±50% luider t.o.v. de lead; 0 overlopen, piek 88/127.
+
+### [v0.9.95] - Neo Plasma v11 (strakke lead, blikkerige bas)
+- **"Theremin met vibrato":** klopte, maar de oorzaak was de lead-sample zelf (gechorusde blokgolf met 7–10 dB tremolo), niet de pitch bends (die gaan na de intro netjes terug). Nieuwe lead: zuivere, fel aangeslagen 25%-pulsgolf, afgekapt per noot. De glijdende intro blijft.
+- **"Valse noten, F-E-D-C#-D":** opnieuw gemeten op het origineel: die reeks staat er niet in, en de lead en bas volgen het origineel. Geen noten veranderd.
+- **"Doffe, houtachtige bas":** klopte: de zestienden klonken maar 24 ms (een tik) op een holle sample. Nieuwe blikkerige zaagtand/puls-synthbas met volle noten, ±3 dB luider. Een octaaf lager kan niet (zou onder E1 komen).
+- Script-controles: geen bends buiten de intro, geen modulatie/vibrato, geen zwevende samples op de lead. -V064 → -V060 (luidere bas).
+
+### [v0.9.96] - Cinematische intro's: Steven, Wally en Rayquaza (+ filmspeler)
+- **Filmspeler voor transities** (`tools/grounded/film.py` + `Film_*` in `battle_transition.c`): een filmpje per gameframe op BG0 met drie paletten, ontdubbelde tiles (LZ77), VRAM als cache en dubbel gebufferde tilemaps (geen scheuren). Hiermee kunnen intro's echte filmscènes zijn.
+- **Steven** (kampioen + post-game, ook in het Stadium; vervangt de mugshot): zijn verzamelkast vol stenen met bordjes ("ROCK", "ROCK (WET)", "NICE ROCK", "ALSO ROCK", in het midden "THE ROCK"). De middelste steen gloeit, de camera zoomt in op de briljant, in de acht facetten verschijnen de badges één voor één (met een stijgende toonladder), dan barst de steen en spat uiteen. ±4,5 s.
+- **Wally** (laatste gevecht, Victory Road; rematches houden de mugshot): een VHS-band ("WALLY - 1ST POKEMON / (DAD: DO NOT TAPE OVER)"). PLAY: Route 102, Wally vangt Ralts ("Gotcha! RALTS was caught!"); FF: Mauville (Kirlia), Meteor Falls ("Wow! Very beaut! Train much team."), Kirlia evolueert in Gallade; dan PLAY, zoom op zijn vastberaden gezicht in Victory Road, PAUSE, sneeuw. Met tracking-ruis en golvend beeld. ±5 s.
+- **Rayquaza** (alle Rayquaza-gevechten op de Sky Pillar, ook shiny/Delta): je kijkt omhoog langs de pilaar door de wolken, een groene streep cirkelt steeds sneller om de top tot een ring, groene flits, en Rayquaza breekt eruit recht op de camera af tot zijn kop het beeld vult. ±3,4 s.
+- ROM +475 KB (30,3 van 32 MB).
+
+### [v0.9.97] - Rayquaza-intro: de echte Emerald-cutscene i.p.v. het nephoofd
+- Na de groene ring en flits kantelt de camera weg van de Sky Pillar de lucht in; door het gat in de wolken duikt de **echte Rayquaza uit de Emerald-cutscene** (waarin hij Kyogre en Groudon uit elkaar haalt) naar beneden, dan de grote Rayquaza met snelheidsstrepen die trilt, terugdeinst en op de camera af schiet tot zijn kop het beeld vult. Geluiden zoals in de cutscene (Dragon Rage, Fly, Hyper Beam). ±4,5 s.
+- Filmspeler: na het laatste beeld flitsten bij het uitfaden losse tiles in oude kleuren (ook bij Steven/Wally); opgelost.
+
+### [v0.9.98] - Brawly v6: Rocky / Eye of the Tiger (opnieuw vanaf de tekentafel)
+- v1–v5 geschrapt. Nieuw: 80s arena-rock op de melodie van het originele gym leader theme, met alleen stock Emerald-instrumenten (distortiongitaar en bas uit vs_gym_leader, trompet/hoorn, standaard kick/snare/crash). Geen hi-hats, geen PSG, geen eigen samples, max. vijf lagen tegelijk.
+- Intro: boksbel "ding ding" + aanzwellend snareroffel. Dan harde powerchord-stoten met stilte ertussen (dun-dun-dun ... dun), dikke snare met galm op 2 en 4, bas mee met de stoten; montage-deel waarin het koper de melodie overneemt en kick/bas achtsten spelen. 106 bpm gevoeld (half-time).
+- In de game: 0 overlopen, piek 96/127, alle lagen hoorbaar (lead 50%, stoten 23%, drums 18%, bas 10%).
+
+### [v0.9.99] - Neo Plasma v12: alleen gewone Emerald-instrumenten
+- Op Jordi's voorstel: noten, ritme, tempo (176), opbouw en drums van v11 exact gehouden, maar alle eigen samples en effecten eruit ("een computer met een kapotte speaker"). Elke partij speelt nu op een stock-instrument uit de vanilla Emerald-gevechtsnummers: lead op de trompet-keysplit (vs_gym_leader/vs_elite_four) met de PSG-blokgolf een octaaf eronder, akkoordstoten op trompet, orgel-16en/arpeggio's op het orgel uit vs_frontier_brain, bas op de fingered bass van vs_gym_leader, standaard rs-drumkit.
+- De opening-run is weer een gewone ladder (geen pitch bends). Alle np_*-samples en `neo_plasma_samples.py` zijn weg.
+- In dezelfde ROM gemeten tegen het gewone gym leader theme: even schoon (minder niet-harmonische ruis), 0 overlopen, piek 90/127.
+
+### [v0.9.100] - Neo Plasma v12e: de gitaarmelodie vanaf 0:14 vooraan
+- v12d (orgel-thema luid) teruggedraaid. Jordi neuriede de melodie die wegvalt; gemeten (pyin op de Spleeter-stem 'other' van het origineel): vanaf 14,4 s een lange C, dan G-D#-G#-G, vanaf 25,4 s hetzelfde op D. Dat is de elektrische gitaar uit de bron (lange octaafnoten met herhaalde achtsten), bij ons de partijen brass/brass_lo op de trompet, die op CC7 63/53 onder de 16e-lead (127) verdwenen.
+- Nu vanaf het loopbegin: gitaarmelodie CC7 120/96 en eerst in de stemverdeling (0 noten weg), de 16e-lead terug naar 84. Intro ongewijzigd. 0 overlopen, piek 87/127.
+
+### [v0.9.101] - Intro's: Kyogre/Groudon (muurschildering), Ogerpon (maskerkraam), Maxie & Archie (werkstraf)
+- **Kyogre en Groudon** (Marine/Terra Cave): een zandstenen muurschildering in fakkellicht met hun strijd (echte sprites als reliëf, braille "DONT WAKE THEM"). Barsten vanuit de borst van wie je wekt, water of lava stroomt eruit tot het beeld vol is, en daarin verschijnt het silhouet van de Primal-vorm met gloeiende markeringen. 3,9 s.
+- **Ogerpon:** nachtfestival met lantaarns en een maskerkraam (Wellspring, Hearthflame, Teal "NOT FOR SALE", een lege haak "STOLEN", Cornerstone). De lantaarns gaan uit, de camera zoomt op het Teal-masker, de ogen branden geel en Ogerpon springt in een bladerwolk op je af. 3,6 s.
+- **Maxie & Archie (werkstraf):** het prikbord van de pauzeruimte met het "COMMUNITY SERVICE"-rooster (DISHES: MAXIE, MOPPING: ARCHIE, RULE 1: NO DROUGHTS., RULE 2: NO FLOODS.) en briefjes over regen in de koelkast en lava in de waterkoker. Een koffievlek loopt uit tot Groudon, dan Kyogre; het rooster scheurt, de ene helft brandt, de andere verzuipt; eronder "VOLUNTEER OF THE MONTH (DISPUTED)" met beide trainerfoto's. 3,6 s.
+- Teksten in het Engels (placeholders, aan te passen in de scripts `primal_mural_transition.py`, `ogerpon_transition.py`, `service_transition.py`). ROM: ±600 KB vrij.
+
+### [v0.9.102] - Intro's: Dave-tribune, Mimi, Keccles, Burglar
+- **Dave:** vóór de bestaande penalty nu een avondstadion met reclameborden ("TOP BINS", "WINKELHAAK BV", "ROOF OF THE NET"), een wave die rond gaat, het spandoek **"DP PENNINGS"** dat op de riff omhoog gaat (flitsjes, applaus) en een close-up van het wapperende doek; daarna de penalty in de winkelhaak + GOAL! ongewijzigd, op de tweede riff (timing opnieuw gemeten, klopt op 1 klok). 5,7 s.
+- **Mimi:** donkere kinderkamer (blokken spellen "HELP"), poppenkast "THE PIKACHU SHOW (NOT A GHOST)"; het doek gaat open, de kop van de Mimikyu draait langzaam om zijn nekje, krak (busted-sprite), het licht flikkert uit, twee ogen in het donker. 3,7 s.
+- **Keccles:** een handheld camera zoekt door een leeg lab vol schoolborden ("KECLEON = WALL", "P(YOU WIN) < 0.01", THE PLAN: "1. BE THE WALL / 2. WAIT / 3. ??? / 4. LEAGUE" met jouw gezicht omcirkeld); alleen een rode zigzag zweeft op het bord (de streep die een Kecleon niet kan camoufleren); een oog gaat open, de camouflage golft weg, Keccles staat er, het krijt schrijft "Q.E.D.". Vervangt de mugshot. 3,6 s.
+- **Burglar:** groenig bewakingscamerabeeld ("CAM 03 LIVING ROOM", tijdstempel, knipperende REC); de echte Gen 1-Burglar sluipt op zijn tenen door de kamer, draait zich om, digitale zoom 2X en 4X recht in de lens, dan ALARM. 3,6 s. Ook in het Stadium.
+- Samen ±271 KB. ROM: ±327 KB vrij.
+
+### [v0.9.103] - ROM opgeruimd: +1,41 MB vrij
+- **91 ongebruikte muzieksamples** van oude versies verwijderd (oude gymremixes, Brawly v1–v5, Mitch v1–v4, losse gm-samples): ±1,18 MB. De generatoren maken ze niet meer aan; alle 38 muziekscripts draaien nog byte-identiek.
+- **Colosseum-koppeling** (multiboot-image voor de GameCube) eruit: 160 KB. Het copyrightscherm start de handshake niet meer; getest: koude start tot het titelscherm.
+- **SickBlik-intro** ingepakt (LZ77 per sleutelbeeld): 128 → 58 KB, pixel-identiek getest.
+- Vrij: 327 KB → **1,74 MB**.
+
+### [v0.9.104] - Neo Plasma v12f: de melodie valt niet meer weg bij de overgangen
+- De melodie wisselt in de bron tussen de elektrische gitaar en de sawtooth-lead. In v12e stond de lead vanaf 0:14 overal zachter, ook waar hij de melodie overneemt (o.a. ±0:52–0:55 en ±1:03–1:23). Nu staat de lead alleen zachter in de maten waarin de gitaar speelt (≥ 4 aanslagen per maat), elders weer op 127.
+
+### [v0.9.105] - ROM opgeruimd: Bard weg, Japanse lettertypes weg, overworld-sprites alleen voor gebruikte soorten (+1,51 MB)
+- **De Bard in Mauville** zingt niet meer (zangsysteem, 51 phoneme-nummers en samples eruit: +282 KB). Hij zegt nu: "I'm the BARD. Well, I was. / Someone decided my singing took up too many kilobytes. / So they deleted my voice to make room for real music. / I still hum sometimes. Nobody can hear it. Not even me." Save-indeling ongewijzigd; de andere Mauville-mannen werken gewoon.
+- **Japanse lettertypes** uit de ROM (+133 KB; schakelaar `JAPANESE_FONTS` in `include/fonts.h`). Geen enkele tekst in de game is Japans.
+- **Pokémon-overworldsprites** alleen voor de 59 soorten die echt op een kaart of in een script staan (+1,10 MB). `tools/grounded/ow_species_keep.py` maakt de lijst bij elke build automatisch; een nieuwe soort op een kaart komt er vanzelf bij. Schakelaar `OW_ONLY_USED_SPECIES` in `include/config/overworld.h`. Gevolg: de sprite-viewer in het debugmenu toont voor andere soorten een vraagteken.
+- Vrij: 1,74 MB → **3,25 MB**.
+
+### [v0.9.106] - Neo Plasma v12g: de herhaalde noten van de melodie klinken weer
+- Jordi: op 0:17, 0:19 en 0:22 valt de melodie weg. Daar speelt de gitaarmelodie herhaalde 16en (C3/C4, "dudududu"); door de lange release van de trompet (bedoeld voor akkoordstoten) kortte het script die noten in tot 20 ms, een tikje. De melodie krijgt nu de korte lead-release (60): de kortste noten klinken ±55 ms. Geen noten weg, 0 overlopen.
+
+### [v0.9.107] - Neo Plasma v12i: ruimte voor de gitaarmelodie (v12h teruggedraaid)
+- v12h (distortiongitaar) klonk niet: teruggedraaid naar de trompet van v12g. Jordi koos optie B: niet de melodie harder, maar de concurrenten stiller. In de maten waar de gitaarmelodie speelt: de broken chords van de lead dunner (de 16en tussen de achtsten op 45% velocity) en het PSG-lead-octaaf (dat precies in het register van de melodie, C3–C4, speelde) bijna weg (CC7 74 → 18). Melodie en de rest ongewijzigd; 0 overlopen, piek 90/127.
+
+### [v0.9.108] - Neo Plasma v12j: de gitaarmelodie zakt niet meer in
+- Gemeten met een solo-opname van de melodie uit de game: op 0:17–0:19 en 0:22–0:24 zakte de melodie zelf ±40% in, precies op de herhaalde C3/C4-16en (tikjes van 60 ticks met stilte ertussen; in het origineel een gedragen toon). Elke melodienoot klinkt nu door tot vlak voor de volgende aanslag; zelfde trompet en volume. Solo nu op die plekken even luid als de rest van de melodie.
+- v12i (lead dunner, PSG-octaaf weg) blijft. Iets meer arpeggio-noten vallen weg (farp 4 → 9%); de steeldrums spelen ook op de PSG.
+
+### [v0.9.109] - Neo Plasma v12k: het slotloopje van de melodie weer in octaven
+- Jordi (met zijn neuriën): de laatste noot valt nog twee keer weg. Dat is het slotloopje "TUDUDU" (A#–F#–D#–C) aan het eind van de frase: in de bron in octaven, maar het lage octaaf viel weg omdat het (opgetild tot C3) samenviel met de melodienoot. Waar dat gebeurt speelt nu het octaaf erboven mee (177 noten), zodat het loopje even vol blijft als de rest. Solo-opname: op 0:17,7–0:18,1 en 0:23,2–0:24 van ±33 naar ±48 (even luid als de rest van de melodie).
+
+### [v0.9.110] - Eb en vloed op Route 132, Juans eiland
+- **Eb en vloed** (Route 132, het wad ten noorden van het zandeiland): elk even uur eb, elk oneven uur vloed (wisselt bij het binnenkomen van de kaart, dus je staat nooit opeens in het water). Bij eb: ondiep wad met rotsen en getijdenpoelen, slik waarin je wegzakt met wilde Pokémon (Wugtrio, Crabrawler, Pyukumuku, Gastrodon, Barbaracle, Clawitzer, Corsola, Crustle, Palossand, Toxapex; zeldzaam Tatsugiri en Crabominable, lv 36–42), een strandjutter die je elke dag een vondst geeft en vertelt hoe lang het nog duurt tot het getij keert, en twee verborgen items. Bij vloed staat er een getijdentabel in een rots op het zandeiland gekrast. Bouwscript `tools/grounded/maptools/tides_juan.py`.
+- **Juans eiland** (Route 129): Juan staat niet meer in het open water maar op een eilandje met strand, palmen en een lagune als waterpodium, met een leerling die "een levende fontein" moet zijn, een fan, een criticus, een zonnebadende Walrein en "JUAN'S OPEN-AIR WATER ACADEMY" in het zand. Zijn gevecht is ongewijzigd.
+- Teksten: Engelse placeholders. ROM: +9,5 KB. Flags 0x2B9–0x2BB, dagflag 0x94F.
+
+### [v0.9.111] - Nothing Island en de Plasma Frigate: de Genesect-quest
+- **New Mauville-serverkluis** (post-game): Genesect is weg; de capsules zijn van binnenuit opengebroken en een printer spuugt een vrachtbrief uit: "SHIPMENT 0451 … DELIVER TO: P. FRIGATE c/o NOTHING ISLAND (WEST OF ROUTE 105, IN THE FOG) … SIGNED: Z."
+- **Nothing Island** (nieuwe kaart in de mist, west van Route 105, je surft er zo heen): een zandeiland met rotsen, een uitkijkpost en een steiger met de aangemeerde **Plasma Frigate** (de S.S. Tidal in Plasma-grijs/paars). Vóór de vrachtbrief: "THIS IS NOT A SHIP". Daarna grunts en **Nigel**, hoofd logistiek ("Nobody asks Logistics").
+- **De Plasma Frigate** (gang, hutten, ruim): deuren in de kleuren van de vier Drives; in elke hut een terminal met de volgende code (rood → blauw → wit → geel), bewakers die naar het wachtwoord vragen en toch vechten ("it's in my contract"). Bij het luik de **Shadow Triad**, die verdwijnt en meteen weer staat ("He never left. That's the whole technique"), tot je alle codes hebt. In het vrieslab een dubbel tegen **Zinzolin en Rood**, daarna breekt **Genesect** (lv 70) los, met zijn eigen transitie en muziek. Beloning: de **Burn/Chill/Douse/Shock Drive** ("very expensive coasters"); Rood en Zinzolin teleporteren weg ("Legally, that makes you a pirate").
+- 9 nieuwe trainers (lv 66–70), Nigel ook in de Battle Stadium-pool. Teksten: Engelse placeholders. ROM +19 KB.
+- Let op: wie Genesect in een oude save al in de kluis ving, ziet hem niet in het ruim (en krijgt de Drives dan niet).
+
+### [v0.9.112] - Shipwreck Shoals en het spookschip S.S. AGAVE
+- **Shipwreck Shoals** (nieuwe zeekaart onder Route 131): een mistig kerkhof van gezonken schepen (masten met gescheurde zeilen, gekapseisde rompen, boegen, tonnen; eigen tileset `shipwreck_shoals` met spookpaletten), twee zandbanken, een visser, een Reaper Cloth en een verborgen Big Pearl. Wilde Pokémon: Jellicent, Lanturn, Golisopod, Dhelmise, Cursola (surfen); Frillish, Chinchou, Galar-Corsola, Hisui-Qwilfish, Huntail, Relicanth, Bruxish, Gorebyss, Overqwil, Dondozo (vissen).
+- **'s Nachts** ligt op de middelste ondiepte het **spookschip S.S. AGAVE** (zusterschip van de Abandoned Ship; dek, gang, hutten, kapiteinshut). Spookzeelieden Silas, Morgan, Ned de kok (met Polteageist) en Percy (lv 48–50), en **kapitein Grimsby** (lv 51–53, ace Dhelmise), die zijn schatkaart kwijt is. Drie kaartstukken (Morgan, een hut, de prullenbak van de kapitein); met de kaart compleet wil Grimsby eerst vechten ("vakbondscontract") en wijst dan naar de schat bij de eenzame mast: een **Choice Band** en 2 Pearl Strings. Grimsby ook in de Battle Stadium-pool.
+- Teksten: Engelse placeholders. ROM +24 KB. Flags 0x4C9–0x4CF, trainers 1050–1054.
+
+### [v0.9.113] - Drijvende markt en stoomeiland
+- **Drijvende markt** (nieuwe kaart ten noorden van Route 133, Pacifidlog-stijl): vlotten met hutten en een rondreizende handelaar die **elke dag vijf andere items** verkoopt (een mint, twee evolutie-items waarmee in deze game echt iets evolueert, één "schat" zoals Bottle Cap/Gold Bottle Cap/Rare Candy/PP Up/PP Max, en een zeldzame bes; `src/floating_market.c`). Geen Ability Capsule/Patch en geen TM's. Visboer, vlotverhuurder, een afdingende klant, een oude visser, een Tuber, en een Wingull die één Poké Ball per dag uit je tas jat.
+- **Stoomeiland** (ten noorden van Route 131): zandstrand, een vulkaan met lavakrater, stoom en as-gras, een hete bron (uit Lavaridge) die je team meteen healt zonder ja/nee-vraag, een vulkanoloog, een toerist en een zwemster. Wilde Pokémon: Salandit, Magcargo, Torkoal, Camerupt, Centiskorch, Coalossal, Magmar, Heatmor, Salazzle, Talonflame, zeldzaam Larvesta en Turtonator (lv 36–42); op het water o.a. Cramorant, Bruxish en Lapras.
+- **Volcanion** (lv 70, post-game) in de stoomgrot in de vulkaan, open na de Hall of Fame (zoals het Heatran-hol); verslagen = terug na de volgende League.
+- Teksten: Engelse placeholders. ROM +11 KB. Flags 0x4A1–0x4A2, dagflag 0x95F (laatste vrije dagflag).
+- Let op: Volcanion en Manaphy zaten al als vis-encounter (lv 50) op Route 134.
+
+### [v0.9.114] - Paradiso Resort (strandresort)
+- **Paradiso Resort** (nieuw zandeiland direct ten zuiden van Route 109, onder het strand van Slateport): een groot all-in hotel, een strandbar, parasols, ligstoelen en een "INFINITY POOL" die gewoon de zee is. Buiten: **Birch** kijkt naar een echte, klassieke drol (nieuwe sprite, met een papieren parasolletje in de tekst), **Brendan/May** ligt post-game op een ligstoel, **Misty** bij de lagune, **Erika** onder een parasol, dronken fans, een badmeester en een verbrande toerist.
+- **Lobby:** inchecken bij de receptie healt je team meteen (geen ja/nee-vraag); **Cynthia** zit hier (nu met een eigen overworld-sprite, ook in het Battle Stadium).
+- **Wijnzaal:** **Wallace** presenteert zijn nieuwe wijn ("CHÂTEAU MILOTIC") met snobistische proefnotities, sommeliers en fans, en drie oude mannen die in een emmer spugen; hij geeft één keer 3× Berry Juice ("for legal reasons").
+- **Strandbar:** **Lorelei**, de barman en een dronken zeeman.
+- **Post-game gevechten** (elk één keer, na de Hall of Fame) met hun Stadium-teams: Misty, Erika, Lorelei (lv 75–78), Cynthia (lv 78, Garchomp 80) en Birch (strontteam + Pyukumuku, Hoenn-Muk als ace, met zijn eigen transitie en de Macarena).
+- Teksten: Engelse placeholders. ROM +17 KB. Flags 0x277–0x278. Lobby en wijnzaal hergebruiken de contest-layouts (er hangt nog wat contestdecor).
+
+### [v0.9.115] - Zeetempel (Manaphy/Phione) en Whirl Island (Lugia)
+- **Zeetempel** (vanaf badge 7/Dive): een zwemgat in de noordwand van Underwater Route 128 leidt naar een diepe trog met zeewier (Lumineon, Alomomola, Clawitzer, Mantine, zeldzaam Milotic) en een gezonken tempel. In de hal 12 wilde soorten (o.a. Golurk, Sableye, Cofagrigus, Carbink, zeldzaam Runerigus en Spiritomb, lv 38–44) en een eerlijke puzzel: tien gebeeldhouwde stenen, het raadsel noemt de volgorde maan → eb → vloed. In het heiligdom **Manaphy** (lv 50, nieuwe rimpeltransitie), de "Prince of the Sea" die sinds 2006 wacht tot een Pokémon Ranger hem ophaalt ("Has anyone checked the other cartridge?"). Daarna rolt er een **Phione-ei** ("SPARE") op het altaar, plus de **Silver Wing**.
+- **Whirl Island:** een zwemgat in Underwater Route 124 leidt via een onderzeese grot naar een lagune op een eiland binnen een ring van draaikolken. In de grot slaapt **Lugia** (lv 60) aan een meer, maar alleen als je de Silver Wing bij je hebt ("Smells of storms. / Points north of / Sootopolis. Down."). Jirachi blijft in Fallarbor.
+- Nieuw key item `ITEM_SILVER_WING`. Teksten: Engelse placeholders. ROM +18,5 KB. Flags 0x29C–0x29E, 0x4C7–0x4C8.
+
+### [v0.9.116] - Visserstoernooi op de steiger van Dewford
+- De steiger van Mr. Briney in **Dewford** is verlengd; aan het eind zit de jury. **Geen minigame:** de jury kiest zelf de zwaarste Water-Pokémon uit je team en weegt hem (gewicht van de soort × groottefactor³, dezelfde formule als de Lotad/Seedot-meter; een vanilla-fout in de laatste tabelregel afgevangen).
+- **Het record is altijd iemands Magikarp:** elke week een nieuwe record-Magikarp van 800–2000 kg met een wisselende eigenaar (Grandma Truus, Mr. Briney's ex, …); bij gelijkspel wint de Magikarp. Een Wailord of Kyogre? Dan heeft de jury het reglement dronken geschreven.
+- **Prijzen, één keer per week:** verliezen = troostprijs, de eerste keer een **Lucky Egg**, daarna Rare Candy, PP Up, Exp. Candy M, Big Pearl, Dive Ball of Heart Scale. Winnen = **één Poké Ball** (de eerste keer ook een Silver Shield-trofee) en geen troostprijs ("Rules are rules").
+- Een opschepper die al 312 weken op rij tweede wordt, en een visser die al 40 jaar onder de steiger naar Feebas vist. Teksten: Engelse placeholders. ROM +4,4 KB. Flags 0x27A–0x280.
+- Vragen: moet het record echt onverslaanbaar (nu kan een flinke Wailord in zwakke weken winnen)? Alleen echte vissen tellen, of elke Water-Pokémon?
+
+### [v0.9.117] - Zee-fixes uit Jordi's review
+- **Drijvende markt:** zeldzame bessen kosten nu 2500–5000 (eigen prijzen per winkel via `CreatePokemartMenuWithPrices`; andere winkels ongewijzigd).
+- **Route 134:** de placeholders Volcanion, Manaphy, Phione en Arctibax uit de vistabel; nu Remoraid, Seadra, Relicanth, Mantine, Huntail, Gorebyss, Kingler, Dragonair, Octillery en zeldzaam Kingdra. Surfen: Duraludon → Palafin.
+- **Visserstoernooi:** het record van de Magikarp is nu echt onverslaanbaar (altijd zwaarder dan de zwaarst mogelijke vis); alleen echte vissen tellen (expliciete lijst, van Magikarp tot Dondozo en Stunfisk), en de jury leest het "OFFICIAL LIST OF FISH, page 1 of 1" voor ("seahorses are fish. I checked. Twice", "Jellyfish… The name lies"). Grandma Truus heet nu Grandma Dorothy.
+- **Paradiso Resort** verhuisd naar het zuiden van Route 129 (buiten het zicht van Mr. Briney's boot; Town Map (24,11)). Alle gevechten daar vragen eerst ja/nee ("GARCHOMP is always disappointed").
+- **Zeestroming** op Route 132–134 veel minder straffend: alleen nog korte westwaartse geulen (6 tegels, met rustig water ertussen); een script controleert dat alles bereikbaar blijft (`calm_currents.py`). Daarbij gevonden: de drijvende markt was vanaf Route 133 onbereikbaar (rotsrij); er is nu een vaargeul.
+
+### [v0.9.118] - Zeevulling 1: Route 107, 126, 127 en de onderwaterroutes
+- **Route 107:** sushi-eilandje met een kok die eenmalig Leftovers geeft ("now I serve rice, just rice"), de boot S.S. NIGIRI met Sailor Duncan, een rots met "oude ruïne"-opschrift en Ruin Maniac Simon, een Dive Ball en verborgen items.
+- **Route 126:** een picknickeilandje met het Old Couple Hal & Mae (dubbel); de **Great Pacifidlog Garbage Patch** met een vrijwilliger (dag 412 van de opruiming), een raadselkist die het antwoord zelf geeft (PP Max), een rubber eend die een Ditto is, en een grasveldje met nieuwe wilde Pokémon (o.a. Trubbish, Raticate, Glameow, Purugly, Persian, Squawkabilly, Bombirdier, Crabrawler, Tatsugiri; de Rattata-, Meowth- en Glameow-lijn waren nog nergens wild); een vogeleilandje met Bird Keeper Oswald; en grap-trainer **Sirena** ("mermaid, legally a swimmer"; Primarina lv 6, Milotic lv 5, Gorebyss lv 7; ook in het Battle Stadium).
+- **Route 127:** een gestrande Wailmer die je terugduwt (Shell Bell als fooi) met Ranger Marisol, een verdwaalde toerist met een kaart van Kalos, de tweeling Pip & Pep (dubbel) en verborgen items.
+- **Onderwater 105, 125, 128, 129:** eindelijk eigen wilde Pokémon in het zeewier (alleen echte zeebewoners: o.a. Finneon, Binacle, Clauncher, Inkay, Clobbopus, Grapploct, Skrelp, Dragalge, Bruxish, Finizen, Palafin, Mantyke; zeldzaam de fossielen Kabuto, Anorith, Lileep en Arctovish; lv 34–44), een zeemansgraf ("Captain Barnaby kon geen uur zijn adem inhouden") met een Big Nugget, een duiker die voor een goed doel zijn adem inhoudt ("DAY 3"), en verborgen items.
+- 7 nieuwe trainers (1100–1106). Teksten: Engelse placeholders. ROM +23 KB.
+
+### [v0.9.119] - Sirena krijgt een echt team
+- Grap-trainer Sirena (Route 126, "mermaid, legally a swimmer") had Primarina lv 6, Milotic lv 5 en Gorebyss lv 7: zo laat in de game is dat tijdverspilling (Jordi). Nu lv 42–43 met een slimmere AI; ook in het Battle Stadium. Regel in CLAUDE.md: grap-trainers met extreem lage levels alleen vroeg in de game.
+
+### [v0.9.120] - Gymleider-intro's deel 1: Roxanne, Brawly, Wattson, Flannery
+- Eigen gevechtsintro's (vervangen de mugshot; ook bij rematches en in het Battle Stadium), samen ±38 KB:
+  - **Roxanne** (3,1 s): rockconcert in de gym: "PUT YOUR LIGHTERS UP!", aanstekers in golven, spotlight op Roxanne, rotsblok-versterkers zakken aan kettingen, stroboscoop. "Lighters kindly provided by TEAM MAGMA."
+  - **Brawly** (2,9 s): walkout door de tunnel (LIVE), octagon met cameraflitsen en omroeperbalk "BRAWLY | DOUBLE CHAMP", vuist door het kooigaas recht op de camera.
+  - **Wattson** (3,4 s): serverfarm + rigged door, spervuur Win95-pop-ups (FREE BADGE, WATTCOIN, 3 HOT MAGNEMITE…), koersgrafiek TO THE MOON → RUGPULLED, SCAM-stempel, "Wahahahah!".
+  - **Flannery** (2,9 s): camping met kampvuur ("NO WIFI. JUST ANALOG HEAT."), Mt. Chimney barst uit, "Totally planned!", gloeiende steen barst de lens.
+- Code: `src/data/gym_intros_a.h`, keuze in `GetTrainerBattleTransition`; art-scripts `tools/grounded/{roxanne,brawly,wattson,flannery}_transition.py` + `gym_intro_lib.py`. Teksten zitten in de art (aanpassen via de scripts).
+
+### [v0.9.121] - Zeevulling 2 + vergeten lijnen in het wild
+- Bouwscript `tools/grounded/maptools/zee_vulling_2.py`. Nieuwe eilandjes/events (Engelse placeholders), trainers 1110–1123, geen lage grap-levels op zee:
+  - Route 105: schipbreukeling die niet gered wil worden (Focus Sash), Voltorb "WILSON", Black Belt Kenta, gras met Normal-soorten.
+  - Route 108: bergingsvlot bij de Abandoned Ship (verzekeringsexpert: "Claim 4471: KYOGRE. Act of god."), Sis & Bro Jo & Leo (dubbel).
+  - Route 122: veerman zonder veer, undertaker Mortimer, Swimmer Cora.
+  - Route 124: weerstation met Castform (Smooth Rock), Bug Maniac Elliot, gras; kapitein Abe jaagt op de reuzen-Wailord.
+  - Route 128: dojo van Derek (47× van Sidney verloren), Battle Girl Juno, Black Belt; gras vol "verwilderde trainingspartners" (Fighting).
+  - Route 129: Wailord-tours zonder Wailord, honeymoonkoppel Tom & Tina (dubbel).
+  - Route 130: Wynaut-kinderopvang, Breeder Honey, Everstone.
+  - Route 131: de "nurse's cousin" heelt gratis; Hiker Bernard.
+  - Route 133: influencer Brayden + vader-cameraman, Choice Specs.
+  - Route 134: architect die een vuurtoren wil bouwen, Ninja Boy Kage, Light Clay.
+  - Whirl Island: zwijgende wachter met pratende Slowpoke (King's Rock), Bird Keeper Skye, Sharp Beak.
+  - Verborgen items op al die kaarten + in het water van Route 110/115/118/119/120.
+- Battle Stadium: Mortimer, Captain Abe, Derek en Brayden in de pool.
+- Wild (één slot vervangen, volgorde behouden): Rattata (101, 104), Meowth (103), Caterpie (104, Petalburg Woods), Skwovet (Petalburg Woods), Glameow (110, 121), Buneary (116), Raticate (118), Komala (119, Fortree Jungle), Greedent (120).
+
+### [v0.9.122] - Organische eilandjes, Tapu Isle en Fullmoon Island
+- **Zeevulling 2:** de eilandjes zijn geen rechthoeken meer. Het bouwscript laat er willekeurige bulten aan groeien (vaste seed per eiland, alleen op open zee, alleen vormen die de autotiles kunnen tekenen; bootjes blijven op zee). Het script telt `TRAINERS_COUNT` nu over alle trainers.
+- **Tapu Isle** (Midden-zee, boven Route 132; `tapu_cresselia.py`): jungle-eiland met een kahuna-plein en vier ruïnes. Tapu Koko → Lele → Bulu → Fini (lv 70), elk wekt de volgende en laat een Terrain Seed achter. Pas na de Hall of Fame (daarvoor houdt mist je tegen); verslagen Tapu's komen terug na de League. In Route 132 is één zeerots weggehaald voor een vaargeul. Trainers Kaimana, Leilani, Makoa en Nalu (1130–1133). Wild: o.a. Bewear, Komala, Exeggutor, Lycanroc en Oricorio Pom-Pom (nieuw wild), zeldzaam Vikavolt en Kommo-o.
+- **Fullmoon Island** (West-zee, rechts van Route 105): halvemaaneiland met een maanmeertje. Cresselia lv 60, 's nachts en na de Hall of Fame; daarna een "LUNAR FEATHER" (een Pretty Feather). Slapeloze zeeman verwijst naar Darkrai.
+- Voorlopig vanilla-transities en `MUS_RG_VS_LEGEND`; de eigen Tapu-intro's en het Tapu-thema volgen.
+
+### [v0.9.123] - Organisch gras op de eilandjes, Stadium-pool opgeschoond
+- Zeevulling 2: het hoge gras op de eilandjes is geen rechthoek meer (hoeken eraf, bulten erbij).
+- Battle Stadium: Sirena, Mortimer, Captain Abe, Derek en Brayden uit de pool gehaald (gewone NPC's zonder eigen sprite/verhaal). Regel aangescherpt: alleen echt iconische personages in de pool.
+
+### [v0.9.124] - Tapu-gevechtsintro's
+- Elke Tapu een eigen lichte intro (±12 KB samen): de wereld zakt weg in de kleur van de Tapu, het gesloten schild (uit Jordi's png's) verschijnt (Koko scanlijnen, Lele weefgolf, Bulu valt met een dreun, Fini stijgt golvend op), achtergrondmotief uit het schildpatroon pulseert op de beat, bouwt op, en het schild splijt open → wit → gevecht.
+- Duur 240 frames (4 s), instelbaar met `TAPU_HIT_FRAME` (= eerste grote drumslag van het Tapu-thema) en `TAPU_BEAT`; getimed op echte VBlanks. Generator `tools/grounded/tapu_transition.py`.
+- Op soort gekoppeld (wild en legendary). Muziek nog `MUS_RG_VS_LEGEND` tot het Tapu-thema er is.
+
+### [v0.9.125] - Battle! Tapu, fase 1 (transcriptie)
+- `MUS_GROUNDED_VS_TAPU` (656, `tools/grounded/tapu_theme.py`): transcriptie van het Sun/Moon-Tapu-thema op stock-instrumenten, 174 bpm, loop van 60 maten. Taiko-drumkit (`drumsets/tapu.inc`), koor (choir aahs) voor de chants, mannenstem voor de kreten, strijkers/hoorn/shakuhachi, fingered bass, pauk.
+- 3 maten voorspel (pauk-roffel, handtrommen, aanzwellend koor, taiko-opbouw), dan de eerste grote slag + koor op 4,156 s: daar begint het gevecht. De Tapu-intro's eindigen nu precies daar (`TAPU_HIT_FRAME` 249, beats op 174 bpm).
+- Nog niet aan de gevechten gekoppeld (eerst Jordi's oordeel over de noten; dan `#if 0` → `1` in `battle_setup.c`). Fragmenten per partij naast het origineel ter vergelijking.
+
+### [v0.9.126] - Tapu Isle: heiligdom met trap en Tapu-beelden
+- Het plein in het midden van Tapu Isle is nu een verhoogd terras (x 22–35, y 14–25) met een stenen trap in de zuidwand, een geplaveid voorplein en zuilen op de hoeken. De kahuna staat op een altaar achterin; de tafel met de volgorde naast de trap.
+- Vier grijze stenen beelden van Koko, Lele, Bulu en Fini (elk in de hoek van zijn eigen ruïne), met een placeholdertekst bij aanspreken. Generiek beeldenscript `tools/grounded/statue_sprites.py` (soort toevoegen aan `STATUES`), `OBJ_EVENT_GFX_STATUE_TAPU_*`.
+
+### [v0.9.127] - Tapu Isle: kahuna vóór het altaar
+- De kahuna stond op het altaar en leek te zweven; hij staat nu ervoor op de vloer.
+
+### [v0.9.128] - Gymleider-intro's deel 2: Norman, Winona, Tate & Liza, Wallace
+- Eigen intro's (vervangen de mugshot, ook rematches en Stadium), samen ±40 KB:
+  - **Norman** (3,0 s): NORMFLIX "Continue watching for DAD" (HOW TO BE A DAD 0%), "Are you still watching?" → de cursor springt terug van "Go outside (not recommended)"; het beeld krimpt in de tv, Slaking op de bank onder "LIVE LAUGH LOAF" springt op. "Your free trial expires in 10 minutes."
+  - **Winona** (2,9 s): WINAIR-vertrekbord (FORTREE DELAYED → BOARDING, YOUR MILES not found), Altaria vliegt langs het raam, het koffertje springt open: "BAGGAGE FEE!"
+  - **Tate & Liza** (3,2 s): ouijabord spelt R-I-P, tarotkaarten THE TWINS / THE MOON / DEATH (yours), "The cards have spoken... and they hate you.", psychic overload met buigende lepels, "aaaaaaaaaaaaah (your aura, screaming in lowercase)".
+  - **Wallace** (2,9 s): Crater Pub, zwevende fles schenkt een glas vol, "Your spirit has a certain... bouquet.", de wijn wordt Hoenn-blauw ("Notes of brine, regret and KYOGRE."), golf over de pub, "SANTÉ!"
+- Code `src/data/gym_intros_b.h`; art-scripts `tools/grounded/{norman,winona,tateliza,wallace}_transition.py`.
+
+### [v0.9.129] - Wallace-intro bijgesteld, battle tester compleet
+- Wallace-intro: "SANTÉ!" valt niet meer half buiten beeld (accent bovenaan).
+- Debugmenu Utilities > "Battle test…" bevat nu alle gevechten met een eigen intro of thema: de acht gymleiders, Steven, Mitch, SickBlik, Mimi, de Burglar, Shy Guy (Sunset Wilds), Archie + Maxie (werkstraf), Lugia, Ho-Oh, Manaphy, Volcanion, Munkidori, Fezandipiti, Ogerpon en Regigigas (naast de bestaande).
+
+### [v0.9.130] - Battle! Tapu v2
+- Diagnose v1: de drums waren tikjes (de MIDI kapte elke slag na 2–3 zestienden af; FluidR3 negeert dat, de GBA niet) en de vorm klopte niet (het nummer begint met het chant-thema, niet met de grote slag).
+- Nu in de volgorde van het origineel: chant-thema (maat 1–4), op maat 5 de "HOO!" met de eerste grote slag (5,54 s; daar begint het gevecht, `TAPU_HIT_FRAME` 333), dan de drums en vanaf maat 9 het TUDUDU-taikomotief. De loop springt terug naar de chant.
+- Eigen samples (77,8 KB, `tapu_*`): odaiko, taiko, ka, bekken, en formant-gesynthetiseerde stemmen (chant-'aa', lage 'hu', zesstemmige 'HOO!'-kreet). Slagen klinken uit tot de volgende slag.
+- Het "fluitje" (maat 41–48) zijn korte E6-tikjes op de tellen met de staccato-fluit.
+- Nog niet aan de gevechten gekoppeld (wacht op Jordi).
+
+### [v0.9.131] - Battle! Ho-Oh
+- `MUS_GROUNDED_VS_HO_OH` (658, `tools/grounded/hooh_theme.py`): eigen compositie, vurige rock op 180 bpm met Japanse instrumenten (shakuhachi, shinobue, koto, shamisen, taiko/odaiko, hyoshigi, tsuzumi, atarigane) naast distortion-gitaar en koper. Melodie in de in-toonladder op E, "regenboog"-sectie in de yo-toonladder, "heilig vuur"-sectie met alleen Japanse trommen, climax een toon hoger. Alleen stock-samples (±6 KB).
+- Gekoppeld aan wilde Ho-Oh.
+
+### [v0.9.132] - Battle! Lugia en de Forces of Nature-thema's
+- `MUS_GROUNDED_VS_LUGIA` (657, `tools/grounded/lugia_theme.py`), 144 bpm: één eigen "beschermersthema" in twee gedaanten: heldhaftig en breed in D-groot (beschermer) en dubbel zo snel in D-klein (storm). Intro: zinken in de diepte, drie reusachtige vleugelslagen; A storm, B de storm van 40 dagen (climax, dan alleen wind), C het oog van de storm = de beschermer (Silver Wing-glinstering), D ontwaken: de beschermer kantelt terug naar de vernietiger. Alleen stock-samples. Gekoppeld aan wilde Lugia.
+- Forces of Nature (`tools/grounded/forces_theme.py`): één motief, drie arrangementen. `MUS_GROUNDED_VS_TORNADUS` (659, 176 bpm, fluit, wervelende loopjes, windvlagen), `MUS_GROUNDED_VS_THUNDURUS` (660, 152 bpm, distortion-lead, gesyncopeerd, bliksemcracks), `MUS_GROUNDED_VS_LANDORUS` (661, 112 bpm, hoorns/tuba/pauken/taiko, triomf in D-groot met koor en buisklokken). Gekoppeld per soort (Incarnate + Therian); de soorten zitten nog niet in de wereld.
+
+### [v0.9.133] - Battle! Ho-Oh v2 (donkerder, Japanser)
+- Jordi: te vrolijk, trompetten/fluiten schel, niet Japans genoeg. Nu in E-klein (hirajoshi-thema, harmonie i–bVI–bVII), vuurdeel in de in-toonladder, climax een toon hoger. Trompet, whistle en PSG-fonkeling eruit; laag koper alleen als steun.
+- Japanse instrumenten voorop met eigen samples (±131 KB, `tools/grounded/hooh_samples.py`): shakuhachi (laag/midden, buigingen, vibrato), koto (tremolo, glissandi), tsugaru-shamisen (16en-riffs, solo), taiko-ensemble (odaiko, nagado, shime, ka), sho-clusters, kiai-roepen; gitaar/bas/kit eronder als motor.
+
+### [v0.9.134] - Lugia v2 en Forces of Nature v2
+- **Lugia:** op 30–33 s een versnellende drumopbouw (taiko/kick → toms in 16en → snareroffel in 32sten + paukenroffel + strijkersloop); het tempo gaat van 144 naar 164 bpm en blijft daar tot de loop (die springt correct terug naar 144). Het beschermersdeel kreeg een zachte puls.
+- **Forces of Nature:** minder chiptune, volle GBA-orkestratie (PSG alleen nog als sub en voor wind/bliksem/rommel), echte snare, hardere drums, hoorbare spiccato-strijkers. Tornadus: lead trompet + strijkers (fluitje weg), tornadostoten gebleven. Thundurus: zelfde compositie, gitaarlead verdubbeld door strijkers, tuba, pads. Landorus (nu 132 bpm): echte gevechtsgroove (drumstel + taiko, 16en-ostinato, springende bas), tegenmelodieën, vraag-antwoord koper, climax in D-groot met koor, tuba, buisklokken.
+
+### [v0.9.135] - Battle! Tapu v3
+- De "HOO" is weg (de grote slag op 5,54 s blijft, nu met kick en bekken).
+- De synth (Jordi's neurie, maat 9–12 = 11,8–17,3 s): eigen zaagtand-sample `tapu_synth` (6,5 KB), stijgende lijn E3–B3–E4–F4 met trillers, luidste laag op die plek, met een PSG-puls eronder.
+- Baslijn opnieuw uitgeschreven (per maat 75% → 83% gelijk aan het origineel), nu een synthbas. Drums harder met kick op 1 en 3, hats vanaf maat 13, taikomotief volgens het gemeten patroon.
+- Nog niet aan de gevechten gekoppeld.
+
+### [v0.9.136] - Legendary-intro's: Lugia, Ho-Oh, Volcanion, Hoopa, Forces of Nature
+- Vijf lichte intro's (samen ±49 KB, `src/data/legend_intros.h`, `tools/grounded/legend_intros.py`):
+  - **Lugia** (3,6 s): zinken, lichtbundels doven, bubbels, een zilveren veer dwarrelt omlaag; in het donker gaat een gloeiend ooglid open over Lugia's kop, draaikolk, het beeld kantelt de storm in, bliksem, wit.
+  - **Ho-Oh** (3,2 s): Bell Tower bij schemering met sintels en klokgelui, een regenboog veegt over het beeld, een vlammenmuur waaruit Ho-Oh opstijgt, gouden veren als vleugels.
+  - **Volcanion** (3,0 s): manometer ("fine / hm / NOPE", "DO NOT TAP THE GLASS"), de naald kruipt het rood in, klinknagels schieten eruit, stoom van beide kanten tot alles wit is.
+  - **Hoopa** (3,8 s): ringportaal opent, er vallen items uit, een Wailord zwemt achter de ring langs ("past er niet door"), een Magikarp floept eruit, Hoopa kijkt door de ring en zijn hand grijpt de camera.
+  - **Forces of Nature** (3,3 s): weerbericht "HOENN WEATHER / LIVE" ontspoort: Tornadus scheurt de kaart weg, Thundurus slaat drie keer in, Landorus laat de grond barsten met een kaartje "LANDORUS-T / OU usage: very yes / Counterplay: lol".
+- Lugia en Ho-Oh met hun eigen thema; de Forces elk hun eigen thema. Hoopa en de Forces staan in de battle tester.
+
+### [v0.9.137] - Battle! Tapu v4 (begin 0–25 s)
+- Bas pas vanaf maat 12 (de "bas" in de intro was de lage klank van de taiko's). Drums in maat 1–8 veel harder en dominant, de chant eronder.
+- De slag op 5,54 s gelaagd: nieuw sample `tapu_impact` (odaiko + dreun + orkesthit + galm, 24 KB) op twee sporen, met odaiko, taiko, crash, pauk en hoornstoot; vier zestienden stilte ervoor voor contrast.
+- Synth vanaf 11,8 s één doorlopende legato-lijn volgens Jordi's neurie (geen gaten of wegvallen meer).
+- Fluit rond 1:06 een octaaf lager; de "fluit" rond 1:18 was een verkeerd overgeschreven akkoord en is nu een strijkersakkoord.
+- Nog niet aan de gevechten gekoppeld.
+
+### [v0.9.138] - Battle! Tapu v5 (de synth)
+- De lead in maat 9–12 is geen melodielijn maar een akkoord dat zich opbouwt en blijft liggen: E3 → B3 → E4 → F4 (elke stap een halve maat, op de taikoslagen), daarna F4 boven B3 tot maat 13; op 11:0 en 12:0 een nieuwe aanzet met een helderder klank. v4 kapte elke toon af en las de zweving uit de neurie als trillers (vandaar "gehaast"); de PSG-puls eronder is weg.
+- Nieuw instrument: synth-brass (`tapu_brass` + `tapu_brass_hi`, vijf ontstemde stemmen, 24 KB), klankcorrelatie met het origineel 0,93 (zaagtand was 0,79). Overeenkomst per 16e met het origineel: 0,60 → 0,88.
+
+### [v0.9.139] - Battle! Tapu v6 (climax van de intro)
+- In maat 11 en 12 staat nu de snelle climax-figuur (Jordi's neurie) bovenop het liggende akkoord: D#5 (val-in) – E5 – A#5 – B5 – E6 – F6 aangehouden, het motief E-B-E-F in achtsten, twee octaven hoger. v5 miste hem: hij ligt op 620–1430 Hz (boven het akkoord) en zat in de 'vocals'-stem.
+- Eigen zachte synth-lead (`tapu_lead`, 11 KB) op het spoor dat tot maat 41 stil was. De rest is ongewijzigd.
+
+### [v0.9.140] - Battle! Tapu goedgekeurd en gekoppeld
+- Jordi: "dit is hem". `MUS_GROUNDED_VS_TAPU` speelt nu bij alle vier de Tapu-gevechten; de Tapu-intro's eindigen op de eerste grote slag (5,54 s).
+
+### [v0.9.141] - Testronde: gevechtsfixes
+- **Implosion:** het zwarte gat zuigt nu álles op: hazards, schermen (ook Aurora Veil), Tailwind/Safeguard/Mist en andere kant-effecten (beide kanten), Trick Room/Gravity/Magic Room/Wonder Room e.d., alle stat-wijzigingen, en ook het weer en het terrein (abilities en vormen veranderen mee). Getest: Snow Warning-sneeuw verdwijnt ("The snow storm stopped.").
+- **Ally Switch in singles:** faalt altijd buiten doubles, en de wisselanimatie doet in singles niets meer. Eerder raakte daardoor de healthbox kapot (rechtsboven) en werd de sprite onzichtbaar (Kadabra, screenshot van een tester).
+- **Exp. Points:** "X gained N Exp. Points!" (en de Exp. Share-regel) loopt na een korte pauze vanzelf door, zonder op A te drukken. "Grew to Lv." en het level-up-vak blijven wachten.
+- **Gehoorzaamheidsmelding:** komt een Pokémon door een level-up boven de badge-grens, of vang je een Pokémon boven die grens, dan meldt het spel: "Your badges only command POKéMON up to Lv. X. ... may (stop/not) obey you". De grens zit nu in één functie (`GetPlayerObedienceLevel`). Let op: eigen Pokémon kijken naar het level waarop ze gevangen zijn (Gen 8+-regel), dus de level-up-melding geldt vooral voor geruilde Pokémon.
+- **Neo Plasma** (grunts, sages, Shadow Triad) gooit gewone Poké Balls.
+
+### [v0.9.142] - Battle Stadium na Jordi's testrun
+- **Omroeper:**
+  - Bij het eerste gevecht: welkom en de rondenaam ("round of 16" enz.).
+  - Daarna een zin over jou, op basis van je speelgeschiedenis: eerdere titel, Hall of Fame, 8 badges, een gevangen legendary, veel gevangen, veel uren. Anders een vanilla-zin.
+  - In doubles volgt je compagnon, en daarna beide tegenstanders om beurten.
+  - Latere rondes: rondenaam en tegenstander(s).
+  - Nieuw: `SAVE.tournaments` (oude saves blijven werken).
+- **Teamvoorvertoning** een kwart korter (256 → 176 frames).
+- **Wedstrijdkaart in doubles:** jij en je compagnon, en beide tegenstanders in beeld.
+- **Slides:** in doubles praat ook tegenstander B voor de eerste beurt.
+- **AI:** de compagnon krijgt minstens dezelfde slimheid als de tegenstanders (Smart Switching e.d.). De startcompagnons hadden alleen Basic Trainer. Er werd niet gecounterpickt: drie keer Bullet Punch was pech (3 van de 106 leads).
+- **Balans:** tegenstanders bouwen hun EV's per wedstrijd op (0%, 33%, 67%, 100%); 75 van de 106 leads hadden volledige Showdown-EV's. Donalds Choice Scarf-Ditto's (de Marill met alleen Knock Off) zijn een bewuste grap en blijven.
+- **Verliesteksten** met de hand afgebroken, zodat ze in het gevechtsvak passen.
+- **Archie en Maxie** krijgen in het Stadium hun eigen mugshot, zoals in het verhaal (de Aqua/Magma-duotransitie blijft alleen als ze samen een duo vormen).
+
+### [v0.9.143] - Cinematische intro's: leestijd en details
+- **Wally:** Zigzagoon staat op het platform (y 52 → 59). Alle teksten staan langer in beeld (totaal 4,7 → 8,1 s). Ruisbanden lopen niet meer over de tekst.
+- **Wallace:** SANTÉ hoger (accent en onderkant zichtbaar). De hele intro is ±25% trager.
+- **Norman** (178 → 352 frames), **Winona** (174 → 324; de BAGGAGE FEE-grap 42 → 120) en **Tate & Liza** (192 → 428; "...and they hate you." 10 → 96, de stroboscoop alleen nog in het begin van de schreeuw): de teksten en de eindgrap zijn te lezen. Wattson is ongewijzigd.
+- **Steven:** de 8 badges verschijnen in het blauw. Daarna licht elke badge op: wit facet, sprong naar 1,5×, het beeld schokt, en dan zijn echte kleur, op een oplopende noot. Daarna barst de steen.
+  - De kleuren zijn zelf gekozen, omdat de Emerald-badges in de graphics grijs zijn: Stone grijs, Knuckle oranje, Dynamo goud, Heat rood, Balance koper, Feather paars, Mind roze, Rain blauw.
+- **Keccles:** geen "Be wall" meer; hij is een droge, echt wijze Kecleon.
+  - Borden: "UNSEEN IS NOT ABSENT. SEEN IS NOT UNDERSTOOD.", "EYES SEE EDGES, NOT THINGS. BLUR THE EDGE.", "COLOR = CONTEXT / SELF = CONTEXT ? / HASTE < PATIENCE", "EVERYONE WEARS A COLOR FOR OTHERS."
+  - Plan: OBSERVE / WAIT / ADAPT / ACT ONCE, met "PATIENCE IS ALSO A COLOR."
+  - Einde: het krijt schrijft "WE SEE WHAT WE EXPECT."
+- `film.py` werkt weer onder numpy 2.
+
+### [v0.9.144] - Frontier-bordjes en Exp. Share vóór gym 1
+- **Battle Stadium en The Spire** hebben een naambord bij de deur ("BATTLE STADIUM / Sixteen enter. One gets a trophy.", "THE SPIRE / Climb. Lose everything. Climb again.").
+- Bij elk gebouw staan twee praters over het gebouw.
+- De Spire-veteraan stond op een fakkelpilaar en staat nu een tegel naar links.
+- **Exp. Share:** Prof. Birch geeft hem samen met de Pokédex (vóór de eerste gym). Mr. Stone geeft na de brief een tweede ("Another one? Must be a franchise."). Het is een vastgehouden item (Gen 5): de houder krijgt een deel van de EXP zonder mee te vechten.
+
+### [v0.9.145] - Extra gevechten, Burglar 3×, Shy Guy in de overwereld
+- **Wally** vecht nu ook op Mt. Pyre 1F en in Mossdeep vóór het Space Center (met Jordi's zinnen: "Scare no much, horror watching when young many" en "Gallader psychic feel good in spacing placing"). Na het gevecht verdwijnt hij.
+  - Mt. Pyre: lv 42, Gallade 44 (spookteam).
+  - Mossdeep: lv 47, Gallade 49 (psychic).
+  - Beide op Wally's vierde thema (na Meteor Falls).
+- **Zinnia** vecht op Route 114 (Meteor Falls) en Route 119. **Dave** op Route 109 (strand) en Route 118. **Mitch** op Route 110 en Route 121. **SickBlik** op Route 104 en Route 113.
+  - Elk gevecht heeft eigen muziek en transitie, en de teams groeien mee naar hun bestaande Victory Road- of Sky Pillar-team.
+  - Alles komt uit `tools/grounded/maptools/extra_fights.py` (trainers 1134–1144); de tabel staat in `TRAINER_NAMEN.md`.
+- **Burglar:** schaalde al op badges. Nu komt hij na badge 2, 4 en 6 gegarandeerd bij je eerstvolgende bezoek aan een inbrekersstad, tot je hem voor die mijlpaal verslagen hebt. De gewone kans blijft daarnaast. Zo zie je hem minstens 3× per playthrough, steeds met een sterker team.
+- **Shy Guy:**
+  - Eigen overworldsprite (rood, groen, roze, zwart; uit DarkSB24's Yoshi's Island-sheet, `tools/grounded/shyguy_overworld.py`), ook in het Battle Stadium.
+  - Een rode Shy Guy zit ingegraven in de woestijn van Route 111 (achter het rotsblok aan de oostrand): lv 28, Mr. Mime 29.
+  - Een eigen intro bedenkt Jordi nog.
+
+### [v0.9.146] - Ashfrost na Jordi's test
+- **Achter het Pokémon Center** kun je nu lopen: het PC staat een rij lager (deur op 23,10).
+- **Bord links van het PC:** "ASHFROST VILLAGE / Where even the snow is grey. Please do not eat the snow. We know what's in it. Now you do too."
+- **Ashfrost Lodge:**
+  - De lobby heeft nu een trap naar een gang (`AshfrostTown_Lodge_2F`) met een kamermeisje en vier kamers (`AshfrostTown_Lodge_Rooms`), elk met een deurbordje.
+  - Kamer 1: "de situatie", een gast die sinds 1998 aan het uitchecken is. Kamer 2: een bevroren bed en een Never-Melt Ice. Kamer 3: het spook dat niet wil betalen. Kamer 4: een slapende Beartic, "Paid in full for the winter. In salmon."
+  - Bouwscript: `tools/grounded/maptools/ashfrost_lodge.py`.
+- **Placeholders vervangen** in House1–3 en bij de bezoeker in het PC; de Lodge-eigenaar krijgt er twee vakken bij.
+- **Regi-standbeelden:** de bloemen ervoor zijn begaanbaar. Elk beeld is aan te spreken, met zijn stippatroon en een cryptische hint naar zijn grot.
+- **Iglo:**
+  - Altijd open. In de tempel blokkeert een ijsmuur de zaal tot alle vijf Regi's gevangen zijn (`LAYOUT_REGIGIGAS_TEMPLE_SEALED` via `setmaplayoutindex`).
+  - De muur heeft vijf kuiltjes en geeft raadsels voor alle vijf Regi's, ook Regieleki en Regidrago.
+- **Route 136 (noordeinde, onder Ashfrost):**
+  - Halve keien onder de randbomen weg en een boom op de kale klifrand.
+  - De terrassen lopen door tot onder de bosrand (de foute hoektegel rechtsonder).
+- **Zwarte gaten in de klifvoeten:** in de route-sneeuwset heeft `cliff_front_b` een grotopening. `snowlib` gebruikt daar nu `cliff_b`. Opgelost op Route 136 (opnieuw gebouwd) en Route 135 (50 tegels direct in `map.bin`). De echte grotingangen blijven.
+
+### [v0.9.147] - Tweede testronde: Stadium eerlijker, popups, N, Rare Candy
+- **Stadium-compagnons:**
+  - Brendan, May, Keccles en Wally waren kopieën van hun verhaalteams: lage IV's, geen EV's of items, verhaalmoves zoals Scary Face. Ze krijgen echte Stadium-sets met dezelfde Pokémon, en de slimme AI van de pool.
+  - De sets staan in `COMPANION_SETS` in `pool.py`.
+- **Stadium-tegenstanders:** naast de EV-opbouw lopen ook de IV's op per ronde (max 20, 24, 28, daarna 31).
+- **Ability-popups:** bij weer-abilities (Snow Warning, Drought, Drizzle, Sand Stream, Air Pollution, Pollen Season, primal-weer) schuift de popup weg zodra de tekst er staat, niet pas na de weeranimatie.
+  - Bij stat-boosts bij het inwisselen (Intrepid Sword, Dauntless Shield e.d.) verdwijnt hij na de melding.
+  - Het "nooit weggaan en van kleur veranderen" kon ik in mGBA niet nabootsen; dit ruimt de popup in elk geval altijd op.
+- **N's thema weg** (de bron-MIDI was kapot): N gebruikt de gekozen trainermuziek, en "N" staat niet meer in het optiemenu. De muziekkeuzes daarna schuiven in oude saves één plek op.
+- **Rare Candy:** komt een Pokémon daardoor boven de badge-grens, dan meldt het partymenu dat hij misschien niet meer gehoorzaamt.
+
+### [v0.9.148] - Lege landplekken gevuld
+- **Ever Grande City:**
+  - Boven: een hotdogkraam (1 Big Malasada per dag, "we ran out of sausages in 2003"), een fotograaf en fans, waarvan de teksten veranderen na de Hall of Fame.
+  - Trainers: Expert Bramwell (47e poging bij de Elite Four, Fighting) en Pokéfan Gloria (Normal).
+  - Beneden: gitarist Rocky (Electric), een oud vrouwtje en een visser.
+  - Verborgen Full Restore.
+- **Mt. Pyre Exterior:** rouwenden met absurde rouw:
+  - iemand die haar eigen begrafenis repeteert;
+  - een man in rouw om zijn Tamagotchi;
+  - een herdenkingsstream;
+  - een Voltorb die zichzelf opblies;
+  - een "premium plot met zeezicht" in de mist;
+  - een Duskull die je opmeet.
+  - 4 verborgen items.
+- **Desert Underpass:** fossielenopgraving met een gapend Armaldo-"fossiel", een archeoloog (Max Revive) en Ruin Maniac Hollis (fossielenteam, lv 62–63). Ook Rock Smash-rotsen, een Stone Plate en een verborgen Rare Bone.
+- **Navel Rock Fork:** een wandelaar die al 11 jaar twijfelt tussen links en rechts, een Sky Plate en een verborgen PP Max.
+- **Southern / Birth / Faraway Island:** elk een verlaten kamp met een kist vol brieven en 2–3 items:
+  - een Latias-fan met een rood geverfde Swablu-pop;
+  - een sterrenkijker die verloofd raakte met de driehoek;
+  - Dr. P. Lumb: "It turned into my sister. I am an only child."
+- **Safari-zones, Starfall Grotto, Heatran-hol:** per plek een bijzondere NPC en verborgen items. Het sterrenstof in Starfall Grotto komt elke dag terug.
+- Alles komt uit `tools/grounded/maptools/land_vulling.py` (met `landlib.py`, dat ook de bereikbaarheid controleert). Nieuwe trainers 1070–1073.
+
+### [v0.9.149] - Zeevulling 3 (gaten gevuld)
+- **Het meeste bestond al** (zeevulling 1 en 2, v0.9.118/0.9.121). Gevuld met `tools/grounded/maptools/zee_vulling_3.py`:
+- **Onderwater:**
+  - Route 127 heeft zeewier met Qwilfish, Tatsugiri, Huntail, Cursola en Dhelmise (1%), en het anker van de "S.S. TIDAL II".
+  - Route 128: een gezonken postzak ("the captain says KYOGRE is a myth").
+  - Route 129: een piratenkist met een Comet Shard, drie stappen verderop.
+- **Verborgen items** op Route 107, 122, 125, 126, 129, 131, 133 en Whirl Island (geen TM's). De Soft Sand, de Snowball en de Ultra Ball komen elke dag terug.
+- **Trainers:**
+  - Hex Maniac Vesper (Route 122, bruidsmeisje van een spokenbruiloft).
+  - Sailor Marty (Route 126, "dat was mijn schip, een derde ervan").
+  - Ranger Coral (Route 129, nieuw eilandje, telt al jaren nul Wailord).
+  - Sailor Rusty (Route 131).
+- **Eilandje-NPC's:**
+  - SUSHI 107: een winkel die alles verkoopt behalve rijst.
+  - Route 131: een bergingsduiker op een nieuw eilandje. Hij ruilt steeds 2 Heart Scales tegen een Star Piece, Big Pearl, Nugget of Comet Shard.
+  - Route 133: een meteoroloog met Castform en een waarnemingspost. Hij geeft een Icy Rock, daarna nepvoorspellingen.
+- **Garbage Patch (Route 126):** een tv met POKéNAV RADIO 's nachts, een toegangsbewijs, en een Seel die er alleen 's nachts ligt.
+- **Zeemijnenveld (Route 127):** zes Voltorb/Electrode-"mijnen" in de lagune, waaronder een antieke houten Hisui-Voltorb. Ze komen terug als je de kaart opnieuw binnenkomt ("they respawn btw").
+- **Tweede plek** voor Skwovet (Route 102), Meowth (Route 113) en Buneary (Route 117).
+- **Bug:** Route 131 laadt altijd zijn Sky Pillar-layout, dus het eilandje uit zeevulling 2 stond in het spel op open water. Nu staat het er wel.
+
+### [v0.9.150] - Dave, Wally en Burglar (Jordi's tweede testronde)
+- **Dave** (Route 109/118 weg), met Freed From Desire, GOAL! en de verliesquote "{PLAYER}, more....":
+  1. Route 111 zuid (26,117), vóór Wattson. Hij loopt op je af met de Dublin Rules. Lv 22–23.
+  2. Na Flannery blokkeert hij de gymdeur in Petalburg (Netflix, twee kinderen, de BLC-foto). Na het gevecht laat hij de foto zien ("Eleven men, one trophy, zero necks.") en loopt hij de gym in. Lv 31–32.
+  3. Direct na de Rayquaza-scène in Sootopolis tikt hij je aan ("Just scored a hattrick... Winkelhaak BV"), vóór Maxie en Archie. Lv 48–49, ace Kingambit.
+  4. Victory Road (bestond al): zijn sterkste team, ook in het Stadium.
+  5. Na de Hall of Fame ligt hij op een strandbedje in het Paradiso Resort met zijn rum-cola-tekst.
+- **Wally:** één team dat groeit naar zijn eindteam (Baxcalibur-lijn, Darmanitan, Annihilape, Dondozo, Flutter Mane, Gallade). Losse leden die niet bij het eindteam horen zijn weg. Elk lid heeft een bruikbare moveset.
+
+  | # | Gevecht | Thema | Ace |
+  |---|---|---|---|
+  | 1 | Mauville | 1 | Kirlia 24 |
+  | 2 | Meteor Falls | 2 | Kirlia 28 |
+  | 3 | Mt. Pyre | 3 | Gallade 44 (spookaccent: Flutter Mane, Rage Fist) |
+  | 4 | Mossdeep | 4 | Gallade 49 (psychic-accent: Zen Mode-Darmanitan) |
+  | 5 | Victory Road (+ rematches) | 5 | Gallade 56 |
+
+  - Het Mt. Chimney-partnerteam is gelijkgetrokken (geen Oranguru meer).
+- **Burglar (SIMON):** een team per badge (1 t/m 8) en een post-E4-team (9 teams; nieuw `TRAINER_BURGLAR_6`–`_9`). De kern is de Kanto-inbreker (vuur + gifgas), die meegroeit van Koffing/Vulpix/Growlithe (lv 17) tot Mega Charizard Y (lv 66–68). De Big Nugget hoort bij het post-E4-team.
+
+### [v0.9.151] - 512 extra flags
+- De gewone flags waren op (alleen dagelijkse nog vrij). Er is nu een eigen blok van 512 flags: `FLAG_GROUNDED(0)` t/m `FLAG_GROUNDED(511)` (id 0x1000+).
+- Het blok staat achteraan SaveBlock1, zodat bestaande saves blijven werken. `GetFlagPointer` kent het bereik.
+- De verdeling per onderdeel staat in `include/constants/flags.h`. Getest: `setflag FLAG_GROUNDED(5)` en `(511)` komen in de save.
+
+### [v0.9.152] - Beacon Isle (vuurtoren) en Dragonspine Isle
+- **Beacon Isle** onder Route 133 (Town Map 14,11), met de goedgekeurde vuurtoren (`tools/grounded/maptools/beacon_dragon.py`):
+  - 's Nachts gloeit de lamp, draait er een lichtbundel (nieuw `LIGHT_TYPE_LIGHTHOUSE_BEAM`) en drijven er vier Chinchou.
+  - Binnen drie verdiepingen met trainers (Electric, Bug, Fighting, Normal; lv 41–47).
+  - Bovenin wachter **WICK** en zijn Lanturn: de lamp is al 40 jaar kapot, de Lanturn is het licht. Na zijn gevecht geeft hij de Zoom Lens ("de oude vuurtorenlens was een cameralens").
+  - Eigen wilde tabellen (Electric/Water-licht).
+  - De architect op Route 134 merkt het op: "And the lamp is a LANTURN? Cheater."
+  - Op Route 133 is één zeerots weg, zodat je het eiland bereikt.
+- **Dragonspine Isle** rechts van Route 129 (Town Map 26–27,10), bereikbaar vanaf badge 7:
+  - Dragon Tamers en Cooltrainers (lv 46–53) en een verzekeringsexpert die alle drakenclaims afkeurt ("act of God").
+  - In de Dragon's Den leidt een waterval (badge 8) naar drakenwachter **GERALD** en een slapende Dragonite. Gerald heeft een team tot lv 57 met ace Dragonite en geeft een Expert Belt.
+  - Wilde tabellen vol zeldzame draken: Duraludon, Garchomp, Salamence en Dragapult als 1%.
+- WICK en GERALD staan in de Battle Stadium-pool.
+- Trainers 1174–1185 (vrij: 1150–1169 en 1186–1199; `MAX_TRAINERS_COUNT` niet ophogen, dat verschuift de systeemflags). Flags `FLAG_GROUNDED(100–110)`.
+- Getest: Beacon Isle binnenlopen (deur naar 1F) en het gevecht met GERALD (start in de bovenhal van de Den). De lichtbundel zelf is nog niet in beeld gecontroleerd.
+
+### [v0.9.153] - Forces-trio op routes (post-game)
+- Na de Hall of Fame verschijnen **Tornadus, Thundurus en Landorus** (lv 70) af en toe als object op een route. Ze brengen hun eigen weer mee en vluchten niet.
+  - Tornadus: mist op Route 113, 118 of 121.
+  - Thundurus: onweer op Route 119, 120 of 123.
+  - Landorus: zandstorm op Route 112, 114 of 117.
+- **Kans:** 1 op 4 bij elke binnenkomst van een kandidaatroute. Even een huis of grot in en uit verandert niets; verlaat je de route, dan wordt opnieuw geloot. Weer-coördinaten op de route doen niets zolang de Force er staat.
+- **In het gevecht:** Thundurus regen + Electric Terrain, Landorus zandstorm, Tornadus Misty Terrain + 4 beurten Tailwind. Met de Forces-transitie en hun eigen thema.
+- **Na het gevecht:** gevangen of verslagen = weg ("A lot of hats will never come back."); gevlucht = blijft staan.
+- **Hint-NPC's:** in Fortree (de was waaide naar Route 121), het Weather Institute ("a thunderstorm with a face") en Verdanturf (een verdacht grote oogst).
+- **Code:** `src/forces.c` (hook naast `Burglar_OnMapEnter`), `tools/grounded/maptools/forces_routes.py`, `data/scripts/forces.inc`. Flags `FLAG_GROUNDED(50–55)`. Debug: special `Forces_DebugForceNext`.
+
+### [v0.9.154] - Hoopa-sidequest: de Mirage Bazaar (post-game)
+- **Ingang:** na de Hall of Fame hangt er een gouden Hoopa-ring in de zandstorm van Route 111 (33,57). Aanspreken = je stapt erdoor.
+- **Mirage Bazaar:** een luchtspiegeling met tenten, de luifel van handelaar **SALIM** en water dat er niet is. Een wens kost een gevecht met Salim (lv 70–72, ace Gholdengo; ook in het Battle Stadium).
+- **Hoopa Confined** vervult twee wensen naar keuze, met een monkey's-paw-twist: hij ringt het gewenste bij iemand anders weg.
+  - Rijkdom: een Big Nugget uit het spaarvarken van een Rich Boy.
+  - Kracht: Brawly's hoofdband (Choice Band).
+  - Roem: die van Gabby, zonder item.
+  - Snack: Lava Cookies van een oma in Lavaridge.
+- **De derde wens** (vrijheid of oneindig veel wensen) loopt altijd hetzelfde af: Hoopa ringt de Prison Bottle uit Salims sjerp, wordt Unbound en ringt jullie allebei naar zijn schatkamer.
+- **Schatkamer:** vol gestolen Hoenn-spullen:
+  - Birch' tas;
+  - de verhuiswagen ("daarom geen truck-scène") en MOM's TV ("daarom geen tv-scène");
+  - Mr. Briney's boot en Peeko;
+  - een kabelbaancabine;
+  - de Poochyena van Route 101 en het fossiel dat je niet koos;
+  - de opgevouwen Mirage Tower;
+  - Salim, "filed under MISC".
+  - Plus een Relic Crown, een Comet Shard en Relic Gold.
+- **Eindgevecht:** Hoopa Unbound lv 70. Vangen = Unbound; verslaan = hij krimpt en je krijgt Hoopa Confined. Daarna geeft Salim de Prison Bottle, die nu beide kanten op wisselt.
+- **Daarna** heeft de bazaar een Mart (Soft Sand, Smooth Rock, Safety Goggles, Lava Cookie) en NPC's, onder wie een visser die in de luchtspiegeling vist.
+- **Bouwscript:** `tools/grounded/maptools/mirage_bazaar.py`. Flags `FLAG_GROUNDED(0–15)`, trainer 1186.
+- **Muziek:** voorlopig het Kanto-legendary-thema. Het eigen Hoopa-thema staat op `claude/hoopa-theme-wip` en wordt gekoppeld in de muziekfase.
+
+### [v0.9.155] - Battle! Hoopa gekoppeld
+- Het eigen Hoopa-thema (`MUS_GROUNDED_VS_HOOPA`, song 662, `tools/grounded/hoopa_theme.py`; branch `claude/hoopa-theme-wip`) is samengevoegd en klinkt bij Hoopa Confined en Unbound (Mirage Bazaar-quest).
+  - Stijl: hijaz-toonladder, darbuka, oud en mizmar; de Confined-delen speels, de Unbound-delen dreigend.
+  - Gemeten: 0 overlopen, piek 101/127. Preview naar Jordi (vanaf 0 s, 90 s).
+
+### [v0.9.156] - Dave pittig, Burglar de dief, gimmicks alleen in de Spire
+- **Dave** (alle vijf gevechten, ook het Stadium) heeft echte sets, items en de slimste AI. De echte Dave vond zijn gevecht te makkelijk.
+  - Route 111 (lv 22–23): Gastly, Gligar, Charcadet, Gible en Pawniard; Gligar is nieuw.
+  - Petalburg (lv 31–32): IV 31, volle EV's, en Iron Valiant erbij.
+  - Sootopolis en Victory Road: Gengar (Hex/Will-O-Wisp), Gliscor (Poison Heal), Ceruledge (Bitter Blade), Iron Valiant (Booster Energy), Garchomp (Loaded Dice/Scale Shot) en ace Kingambit (Supreme Overlord, Kowtow Cleave).
+- **Burglar (SIMON):** geen Mega meer. Elk team is geniepig en sinister, met Thievul als vaste ace, en **elke Pokémon kent Thief**.
+  - Veel leden hebben bewust geen item, zodat ze het jouwe stelen. Pickpocket, Prankster en Unburden horen bij het thema.
+  - Zoroark staat vlak vóór Thievul en vermomt zich als hem.
+  - Het team loopt op van Purrloin/Sableye/Thievul (1 badge) tot Weavile/Krookodile/Grimmsnarl/Honchkrow/Zoroark/Thievul na de Elite Four.
+- **Mega-stenen weg** bij Zinnia (Delta), de werkstraf-rematches van Archie en Maxie, en Burglar 9.
+- **Gimmicks alleen in The Spire** (`CanActivateGimmick`): Mega Evolution, Z-moves, Dynamax en Tera kunnen daarbuiten door niemand meer gebruikt worden. Ook niet door een tegenstander met een steen, en ook niet door een Rayquaza met Dragon Ascent in het Stadium.
+
+### [v0.9.157] - Kaartvulling 4: dungeons en lege plekken
+- **Wilde Pokémon** in dungeons die ze misten:
+  - Seafloor Cavern Room 9, Cave of Origin B1F en Sky Pillar Entrance.
+  - De zijkamers van Victory Road: grondhaaien, Rattata-lijnen, Gimmighoul/Gholdengo en geesten.
+  - Aqua Hideout (surfen/vissen), het Abandoned Ship (scheepskat Meowth 1%) en de spookschipgangen.
+  - Meteor Falls Draconid Shrine (Bagon 20%), het voorhof van Scorched Slab en Navel Rock Fork/Entrance.
+  - Mt. Chimney: 31 nieuwe asgrastegels in drie plekken, en de Summit heeft nu een tabel.
+- **Bewust leeg:** legendary-holen (Crystal Cavity e.d.), de Loyal Three-holen, Sky Pillar 2F/4F (barstvloer), Birth Island.
+- **Granite Cave:**
+  - Een spelonkgids die al 12 jaar een kaart tekent (het is een tekening van Steven).
+  - Hiker Doug, een graffitibord, een Fist Plate en een Hard Stone.
+- **Shoal Cave:**
+  - Een getijdenwachter, met een andere tekst bij eb en bij vloed.
+  - Een zandbank met een Splash Plate, alleen bij eb.
+  - Swimmer Maren, alleen bij vloed.
+  - Expert Olga in de ijsgrot, alleen bij eb bereikbaar.
+  - Een Pearl String en een Icicle Plate.
+- **Seafloor Cavern / Cave of Origin:**
+  - Een Aqua-grunt die nog op wacht staat (hij noemde de rots "Gary") en een duiklogboek van Team Aqua.
+  - Een ex-Magma-grunt, een reserve-verslaggeefster, plates en items.
+- **Meer items:** Magma Hideout, Meteor Falls B1F en Steven's Cave, en Crystal Cavity.
+- **Shipwreck Shoals:** een bergingsduiker, Sailor Barnaby (deserteur van het spookschip) en Swimmer Cod.
+- **Safari-zones:** een steenliefhebber, een vogelaarster en een starteronderzoeker, met items.
+- **Nothing Island:** een toerist die een eenstersreview geeft.
+- **Route 124:** een strandjutter, Triathlete Nadia en Swimmer Wade.
+- Script `tools/grounded/maptools/kaart_vulling_4.py`. Flags `FLAG_GROUNDED(200–245)`, trainers 1150–1158.
+- **Ook:** Dave in Petalburg zonder Iron Valiant (die komt pas in Sootopolis). Burglar met Hisui-Zorua/Zoroark (Illusion als Thievul, en geen Fighting-zwakte meer) en Sableye in plaats van Weavile.
+
+### [v0.9.158] - Stadium: compagnons = tegenstanders, en een omroeper die alles weet
+- **Compagnons:** precies hun tegenstanderversie, zonder aparte sets. Zelfde doubles-drie, zelfde sets, zelfde AI (`GetAiFlags` van de bron-trainer), en ook dezelfde IV/EV-opbouw per ronde.
+- **Betere verhaalteams** (levels gelijk, nu met IV's 31, EV's, items, natures; geen Scary Face meer):
+  - Keccles 3: Heliolisk, Serperior en Salazzle in doubles.
+  - Wally VR 5: Darmanitan, Flutter Mane en Gallade in doubles (minder Fairy-zwak).
+  - May en Brendan op Route 136: alle zes de varianten gelijkgetrokken.
+  - Slimme AI voor Colress (Magma), Zinnia, Tabitha (Mossdeep) en Birch (onder water).
+  - Let op: daardoor worden Route 136, Keccles 3 en Wally in Victory Road in het verhaal ook pittiger.
+- **Omroeper:** ±35 spelerszinnen op basis van wat je deed, gewogen; de meest specifieke "we weten wat je deed"-zinnen vaker.
+  - Voorbeelden: "This trainer loses more than they win. So let's all pretend this time is gonna be different." (15+ white-outs), "...over and over again. Bully!" (10+ League-zeges), een fanclub (5+ van dezelfde soort).
+  - Ook: Implosion ooit gebruikt, de Hoopa-wens die je koos, Burglar en Dave verslagen, Birch' "samples", Splash/Struggle-tellers, eieren, vissen, opslaan, geld, je starter.
+  - De volledige lijst staat in `STADIUM_OMROEPER.md`.
+- **Compagnon-omroep:** elke compagnon krijgt zijn eigen karakterzin, bijv. Keccles: "A KECLEON with a PhD and an existential crisis. Same thing, really."
+- **Nieuwe tellers:** game stats 53–56 (white-outs, gevlucht, vrijgelaten, eigen Pokémon flauwgevallen). Splash en Struggle worden nu ook geteld.
+  - De tellers gebruiken ongebruikte save-plekken. Bij het eerste gebruik worden ze op 0 gezet (`FLAG_GROUNDED(150)`); `FLAG_USED_IMPLOSION` = `(151)`.
+
+### [v0.9.159] - Zeevulling 4: onderwater en de diepzeetrog
+- **Alle onderwaterkaarten hebben wilde Pokémon:**
+  - Sootopolis-krater: Tynamo-lijn, Feebas.
+  - Whirl Island, Marine Cave (buiten): fossielen, Wailord.
+  - Route 134 en de Sealed Chamber (buiten): Relicanth, Unown 1%.
+  - Scorched Slab, de ingang van Seafloor Cavern (Hisui-Qwilfish, Galar-Corsola) en Route 136 (Eiscue, Empoleon).
+  - Elk heeft een verborgen item.
+- **De grote onderwaterroutes** (105, 124–129) hebben verborgen items, duikers als trainer (Nerissa, Gill, Odessa, Brine), duiker-NPC's en een verhaalbord bij de gezonken eerste Sootopolis-onderzeeër.
+- **Diepzeetrog** (`Underwater_Route127_Trench`):
+  - Ingang via een zwemgat in onderwater 127.
+  - Encounters: Lanturn, Pyukumuku, Malamar, Relicanth, Dhelmise.
+  - Trainer: diepzeeduikster Abyssa.
+  - Items: Deep Sea Scale en Tooth, plus een verborgen Relic Crown achter het plateau.
+  - Bordje: "DEEPEST POINT IN HOENN. DEPTH: YES."
+- **Bovenwater:**
+  - Route 126/127/132/133: verborgen items.
+  - Route 127: een oceanograaf.
+  - Route 128: een eilandje met Parasol Lady Solenne.
+  - Route 130: Tuber Bobby en een fotograaf ("ging één keer een broodje halen").
+  - Route 134: Ruin Maniac Dorian, die de Sealed Chamber met een schep wil openen.
+- **Route 130:** op Mirage-dagen zijn de Wynaut-crèche en de fotograaf weg, want die layout heeft hun eilandje niet.
+- Script `tools/grounded/maptools/zee_vulling_4.py`. Flags `FLAG_GROUNDED(330–358)`, trainers 1187–1194.
+- Overgeslagen: Sootopolis-eilandjes; Route 126 heeft een andere tileset, dus dat vraagt eigen kaarten.
+
+### [v0.9.160] - Viagra Boys-intro voor Calvin, Muay Thai-Black Belt
+- **Youngster Calvin** (Route 102, "Short shorts, cigarette.", ook rematches 2–5) krijgt een eigen transitie `B_TRANSITION_VIAGRA_BOYS`:
+  - het Viagra Boys-logo (yin-yang met V en B, uit Jordi's afbeelding) draait groeiend op zwart;
+  - na een flits draait het andersom verder in omgekeerde kleuren, zwart op wit.
+  - ±3 KB; bouwscript `tools/grounded/viagra_boys_transition.py`.
+- **Black Belt Kiyo** (Route 132), teksten van Jordi:
+  - intro: "I've been practicing Muay Thai a lot for the past 6 months... My trainer says I'm Bangkok ready!"
+  - verlies: "Wait, women there aren't always female?"
+  - daarna: "That sounds like a nightmare, I guess I am not Bangkok ready at all, time to memorize how I can distinguish females from males"
+
+### [v0.9.161] - Gifts, Deoxys-vormen, Selene/Reginald/Helia in het Stadium
+- **Battle Stadium:** Selene (Draconid-oudere), Reginald (Victory Road-kluizenaar, "Last saw daylight in 1987. Didn't like it.") en Helia (zonnetempel, "The sun has not replied.") staan in de pool, met omroep- en compagnonzinnen.
+  - `STADIUM_MAX_COMPANIONS` 128 → 160 (het maximum was bereikt). In oude saves worden de laatste compagnon en de toernooiteller daardoor één keer 0.
+- **Type: Null** (lv 50): gift van een Devon-wetenschapper (Devon Corp 2F) na de Hall of Fame. "It's not a gift. It's a relocation." / "Don't take the helmet off. We did that once. Once."
+- **Magearna** (lv 60): gift van Colress in Mauville, nadat je hem verslagen hebt en de Plasma Frigate (Genesect) klaar is. "Unlike mine, it works."
+- **Regionale vormen** in de lobby van het Paradiso Resort:
+  - Alola-Rattata en Alola-Meowth (lv 18), van een toerist die ze in haar koffer smokkelde. Ze eten de minibar leeg.
+  - Galar-Farfetch'd met een Leek (lv 30), van een gentleman die hint op drie critical hits: Sirfetch'd evolueert via `EVO_BATTLE_END`.
+- **Deoxys van vorm wisselen** bij de meteoriet in Mossdeep: NORMAL, ATTACK, DEFENSE of SPEED ("Took two seconds. Your last haircut took longer, and looked worse."). Specials `Grounded_FindPartyDeoxys` en `Grounded_SetDeoxysForm`.
+- **Gift-afhandeling** op één plek (`data/scripts/grounded_gifts.inc`): vol team → pc. De pc-melding toont nu de juiste soort (eerder "??????????" bij Kubfu en Oaks starter).
+- Flags `FLAG_GROUNDED(360–364)`. Getest: Deoxys-wissel en Magearna (vol team → pc).
+
+### [v0.9.162] - Birth Island weg, Beacon Isle in een nieuwe vorm met het Lichteiland
+- **Birth Island is geschrapt:** het Deoxys-driehoekevent, het Aurora Ticket (item, Mystery Gift), de veerboot-bestemming en het kamp. Deoxys heeft zijn eigen ruimte-event.
+  - Save-veilig: op de kaartplekken staan lege stubs. Een oude save die daar stond, komt in Lilycove uit.
+  - De layout-plek is leeg, item 730 heet "????", mapsecs en flagnummers zijn ongewijzigd.
+  - De driehoek-sprite heet nu `DeoxysTriangle` (MeteorSpace gebruikt hem).
+- **Beacon Isle** (`tools/grounded/maptools/beacon_isle.py`):
+  - Nieuwe, organische vorm (32×48): een westlob met hoog gras, een baai met een houten steiger en een visser, de vuurtoren op een rotspunt aan de oostkant, en een lobbige zuidkust.
+  - Alle trainers, items, de Chinchou en de lichtjes zijn gebleven.
+- **Het Lichteiland:**
+  - Spreek je 's nachts de Lanturn bovenin de vuurtoren aan, dan opent zich een gat in het rif ten zuiden van het eiland, met twee lichtjes erbij. Het gat blijft daarna open.
+  - Daarachter ligt een eilandje met een grot (`BeaconIsle_Grotto`). Encounters op lv 42–46: Shiinotic, Lampent, Alola-Persian, Hisui-Voltorb, Klefki, Chimecho, Espathra, Accelgor, Palossand, Unown, Indeedee en Hisui-Electrode (1%). Er ligt een Mind Plate.
+  - **TALLOW**, de geest van de eerste vuurtorenwachter (hij brak de lamp in 1953): spookteam, lv 52–54, ace Chandelure. Geeft een Dusk Stone. Ook in het Battle Stadium.
+- Flag `FLAG_GROUNDED(400)`, trainer 1048.
+
+### [v0.9.163] - Tao-eiland: Reshiram, Zekrom, Kyurem en Ghetsis
+- **Dragonspine Isle heet nu TAO ISLAND** (`tools/grounded/maptools/tao_island.py`):
+  - een grillige rotspiek met een ruïnetoren, gebouwd op een kopie van de Sky Pillar-buitenkant;
+  - een zandstrand eronder;
+  - de Dragon's Den als doorgang naar het plateau.
+- **De toren** (Sky Pillar-layouts hergebruikt): een gids op 1F, Team Zekrom-Jun op 2F, Team Reshiram-Ying op 3F.
+- **Het dak:** Reshiram en Zekrom slapen er aan weerszijden. Een oude man legt uit dat ze al 300 jaar ruziën over het dak.
+  - Na de Hall of Fame worden ze wakker; allebei te vangen, lv 70.
+- **Frost Hollow** (ijsglijkamer achter de waterval in de Den, badge 8): na beide broers wacht **Ghetsis**, de post-league superboss.
+  - Team: Cofagrigus, Bouffalant, Seismitoad, Eelektross, Kingambit (lv 82) en Hydreigon (lv 84). IV's 31, items, boss-AI, eigen muziek.
+  - Hij geeft de **DNA Splicers**. Fusievormen staan aan (`P_FUSION_FORMS`), dus ze werken.
+  - Daarna is **Kyurem** (neutraal, lv 70) te vangen.
+- **Gerald is weg** (trainer, Stadium-pool, omroepzin). De Dragon Tamers, de verzekeringsexpert en de drakentabellen blijven.
+- **Placeholders:** Reshiram, Zekrom en Kyurem vechten op de Kanto Legendary-muziek met bestaande transities; Jordi bedenkt eigen intro's en thema's.
+- Flags `FLAG_GROUNDED(430–444)`; trainers 1060–1067 (1180–1185 zijn weer vrij).
+
+### [v0.9.164] - Extra dungeons: Granite-kristalgrot, Cave of Origin dieper, Shoal Cave Frozen Depths, luchtbel-grot Route 128
+- **Granite Cave – Crystal Grotto:** ladder in B2F (25,16) naar een kristalgrot; Carbink 20%, lv 14–19.
+- **Cave of Origin dieper:** na de Hall of Fame verschijnt een ladder in B1F (13,4) naar drie diepere lagen (hergebruik van de ongebruikte Ruby/Sapphire-kaarten), met Primal-lore op bordjes; lv 52–58.
+- **Shoal Cave – Frozen Depths:** ladder in de Ice Room (17,28) naar een ijzige onderlaag (Cetoddle, Bergmite e.d.), lv 34–43.
+- **Route 128 – Bubble Grotto:** duikgat in Underwater Route 128 (27,19) naar een luchtbel-grot met alleen water- en visencounters en een Relicanth-kluizenaar.
+- Flags `FLAG_GROUNDED(470–483)`, geen trainers; bouwscript `tools/grounded/maptools/dungeon_extra.py`.
+
+### [v0.9.165] - Kratereilanden bij Sootopolis (Route 126)
+- Twee nieuwe kratereilanden in Sootopolis-stijl, net als Sootopolis alleen bereikbaar door te duiken: zwemgaten in Underwater Route 126 op (24,14) en (37,9). Terug: duiken in het kratermeer.
+- **Hermit Crater** (bewoond): kluizenaar-schilder **Lavis** (oud-lid van de Sootopolis-familie; Grafaiai, Kingdra, Milotic, Smeargle met Spore/Shell Smash; ook in de Stadium-pool), Swimmer Margot en Aroma Lady Fenna (lv 46), Wide Lens en een verborgen Pearl String, 12 unieke landslots lv 44–49 plus water/vissen.
+- **Silent Crater** (verlaten): verzegelde tweelingpoort met Rayquaza-lore, Kyogre/Groudon-beelden, Gold Bottle Cap, verborgen Earth Plate en Splash Plate, eigen water- en visencounters (o.a. Cursola, Dragalge, Overqwil, Relicanth).
+- Bouwscript `tools/grounded/maptools/sootopolis_craters.py` (leert randen uit de Sootopolis-kaart); flags `FLAG_GROUNDED(500–504)`, trainers 1074–1076.
+
+### [v0.9.166] - Kratereilanden: kusthoekjes
+- Jordi: hoekjes land zonder kustrand. Waar gras, klif en water samenkomen loopt de klif nu een vakje door (Sootopolis heeft voor die hoeken geen tegel).
+- Silent Crater: het losse eilandje had aan de bovenkant geen kust (gras heeft geen noordkust-tegel); het is nu een grasrichel tegen de oostwand met de klif erboven. De Gold Bottle Cap ligt daar.
+
+### [v0.9.167] - Silent Crater: kust rechtsonder de grasrichel
+- Jordi: rechtsonder de grasrichel ontbraken nog 2 stukjes kust. De klif loopt nu één vakje door langs de wand en heeft de kliflip onder het gras (dezelfde tegel als in Sootopolis).
+
+### [v0.9.168] - Kratereilanden: kusthoeken netjes afgemaakt
+- Jordi: het klifblok rechtsonder de grasrichel stak uit. Weg; de hoek onder het gras is nu de waterhoektegel tegen de wand (zoals in Sootopolis) en het water eronder loopt door. Zelfde aanpak voor de onderhoeken van beide grasrichels in Hermit Crater.
+- Oostwanden naast water gebruiken nu tegel 073 i.p.v. 0a0 (die had een randje water in de klif; `wall_fix` in `sootopolis_craters.py`).
+
+### [v0.9.169] - Kratereilanden: bovenhoeken zoals Sootopolis, geen plantjes in de klif
+- Jordi: de bovenhoeken van de grasrichels (Hermit Crater) waren lelijk. Het meer reikt nu een rij hoger dan de richels en de hoeken gebruiken exact de tegelcombinaties van Sootopolis (westrichel als Sootopolis 21–24,34–36; oostrichel als 38–40,35–37).
+- De onafgemaakte plantjes in de klif boven gras (tegels 2de/2df) zijn weg in beide kraters: gewone klifvoet 079.
+
+### [v0.9.170] - Beasts of Ruin: vier verzegelde schrijnen
+- **Chi-Yu** (kralen): grotopening bovenin Jagged Pass (11,6), links van de trap naar Mt. Chimney → kamer met inscriptie → lavaveld met brug en lavapoelen.
+- **Ting-Lu** (vaten): opening in de zuidwand halverwege de Desert Underpass (61,13).
+- **Wo-Chien** (tabletten): verborgen gat in de bomen zuidoost in Petalburg Woods (43,36), net als de ingang naar Toadstool Hollow.
+- **Chien-Pao** (zwaard): grot in de sneeuwklif van Route 135 (51,21).
+- Elk schrijn: zaal met vier stenen staken, inscriptie, het beest bovenin; muziek `MUS_SEALED_CHAMBER`. Elk beest aanspreken telt als bezoek; vóór de Hall of Fame een cryptische zegeltekst, daarna breken de zegels pas als alle vier schrijnen bezocht zijn (anders een hint per ontbrekend schrijn).
+- Gevecht lv 70, transitie Black Hole Pulsate en Kanto Legendary-muziek als placeholder (Jordi maakt eigen intro's en het thema later).
+- Tilesets `ruin_fire/earth/moss/ice`: Ekat's Volcano Set per thema getint. Bouwscript `tools/grounded/maptools/ruin_beasts.py`; flags `FLAG_GROUNDED(530–537)`.
+
+### [v0.9.171] - Beasts of Ruin: zichtbare zegels + Sealbreaker van het echtpaar op Mt. Pyre
+- Jordi: alle vier de ingangen moeten duidelijk verzegeld zijn. Op elke ingang staat nu een **zegelstaak** (paarse staak met een zegelpapiertje; `tools/grounded/ruin_seal_sprite.py`, `OBJ_EVENT_GFX_RUIN_SEAL`). Ook Wo-Chiens ingang in Petalburg Woods is zo meteen zichtbaar.
+- Het **oude echtpaar op de top van Mt. Pyre** vertelt na de Hall of Fame dat zij de vier rampen ooit "tijdelijk" verzegelden (vierhonderd jaar geleden) en geeft de **Sealbreaker** (Key Item, oud slot 730 = het geschrapte Aurora Ticket). Daarmee breek je de zegels; binnen begint het gevecht meteen (de eis "eerst alle vier bezoeken" is weg).
+- Zonder Sealbreaker: een tekst over de staak, na de Hall of Fame met een hint naar Mt. Pyre.
+- Flags `FLAG_GROUNDED(538–541)` (`FLAG_RUIN_SEAL_OPEN_*`). Getest in de emulator: zegel dicht → gift op Mt. Pyre → zegel breekt → kamer in.
+
+### [v0.9.172] - Sealbreaker van Steven op Mt. Pyre
+- Jordi: liever Steven dan het echtpaar. Na de Hall of Fame staat **Steven** op de top van Mt. Pyre (tot hij je de Sealbreaker gaf). Hij vertelt wat het echtpaar hem toevertrouwde: hun **voorouders** verzegelden de vier rampen ooit "tijdelijk", vierhonderd jaar geleden. Jij bent er nu klaar voor; hij geeft de Sealbreaker en zegt waar de schrijnen liggen.
+- Het echtpaar heeft weer zijn gewone teksten. (Archie en de Aqua-grunts op de testbeelden komen door de test-save; in een echte playthrough zijn ze na het verhaal weg.)
+
+### [v0.9.173] - Spacetime Cave deel 1: hub, Lavender Town + Pokémon Tower, Cerulean Cave met de echte Mewtwo
+- **Spacetime Cave** (post-game): ingang in het rotsje op het lege eilandje van Route 125 (gaat open na de Hall of Fame). Violette hubgrot met 9 scheuren: Lavender en Cerulean werken; National Park/Ilex, Gen 4-meren, Chargestone, Glimwood, Area Zero, ????? en (onderaan in het midden) Mt. Coronet zijn nog grijze, instabiele scheuren. Mapsec `MAPSEC_SPACETIME_CAVE` op de Town Map naast Mossdeep. Nieuwe kaartgroep `gMapGroup_Spacetime`.
+- **Lavender Town:** indeling 1-op-1 uit FRLG, aangekleed met Emerald-materiaal (General-grond/bomen, Petalburg-huizen met paars dak); PC (heal location), Mart, Volunteer House en twee huizen.
+- **Pokémon Tower** (5 verdiepingen: FRLG 1F–4F + de top): interieur met Ekat's Pokémon Tower Interior (Revamp), graven in allerlei soorten; 10 Channelers (Hex Maniac, lv 65–69), wilde ghosts lv 60–68 (Alolan Marowak 1% bovenin), bovenin een conciërge met een Life Orb.
+- **Cerulean Cave** (1F, 2F, B1F): FRLG 1-op-1 met Emerald-grotmateriaal, land/water/vissen lv 60–70, 9 items, **Mewtwo lv 70** in B1F. De placeholder-Mewtwo in Meteor Falls is weg (zelfde flag, dus maar één Mewtwo, ook in oude saves); daar staat nu een kras in de rots die naar de Spacetime Cave wijst.
+- Scripts `tools/grounded/maptools/spacetime_tiles.py` + `spacetime_cave.py`; flags `FLAG_GROUNDED(560–573)`, trainers 1159–1168.
+
+### [v0.9.174] - Beasts of Ruin: één uitgeholde grot per beest, elk op zijn eigen manier geruïneerd
+- Jordi: zoals in Scarlet/Violet, een uitgeholde grot waar ze het beest in hebben geduwd. **Chi-Yu** staat nu in de kamer bovenin Jagged Pass; het lavaveld is onbereikbaar (de kaart blijft bestaan voor oude saves, met één warp terug). De beads-inscriptie staat op een staak in de kamer.
+- Ruïne rond elk beest: **vuur** (verschroeide grond, vertakte gloeiende lavascheuren), **aarde** (gebarsten platen, ringscheur, gebroken terracotta vaten), **mos** (rottende wortels, zwammen, rotte stronken, lianen), **ijs** (bevroren vloer, ijspegels, kristallen, rijp). Per pixel getekend op een kaartcanvas en in metatiles geknipt (`ruin_beasts.py`); stronken/paddenstoelen uit Ekat's Haunted Woods, vazen uit Egypt.
+
+### [v0.9.175] - Glastrier en Cosmog niet meer wild
+- Jordi: Glastrier komt in de Calyrex-quest en Cosmog later bij Ultra Space. Wilde slots vervangen met behoud van zeldzaamheid: Meteor Falls 1F (1%) **Elgyem** lv 18–20, vissen **Staryu** lv 38–40; Shoal Cave Ice Room (1%) **Arctibax** lv 38–40.
+
+### [v0.9.176] - Mega Forest met Zacian en Zamazenta
+- **Hint in het Mini Forest (Route 102):** in de noordrand (kamer linksboven) ligt een omgevallen reuzenboom (kopse kant met jaarringen en mos), links een roestig zwaard in de grond en rechts een roestig schild. Vóór de Hall of Fame een tekst ("Two snores, actually. In harmony."); daarna is de boom weg en kun je het **Rusted Sword** en **Rusted Shield** oppakken (Crowned-vorm in gevechten).
+- **Mega Forest** (48×56, naadloos boven het Mini Forest): kronkelpaden, hoog gras, vijver; 12 unieke Galar-soorten lv 60–68 (Falinks en Dragapult 1%); trainers Percival, Morgana en Gwen (lv 66–67); Sweet/Tart Apple, Max Revive, PP Max, verborgen Star Piece en Big Nugget.
+- Achterin een open plek met **Zacian** en **Zamazenta** (lv 70, Kanto Legendary-muziek als placeholder).
+- Sprites `tools/grounded/mega_forest_sprites.py`, kaart `tools/grounded/maptools/mega_forest.py`; flags `FLAG_GROUNDED(620–630)`, trainers 1077–1079.
+
+### [v0.9.177] - Mini Forest: boomstam in Hoenn-perspectief
+- Jordi: de omgevallen boom keek te veel van bovenaf. Nu een liggende stam uit Ekat's Haunted Woods (16×32, noord-zuid, past precies in de opening van 1 tegel), op helderheid omgezet naar de houtkleuren van het gedeelde palet. Zwaard en schild ongewijzigd.
+
+### [v0.9.178] - Spacetime S1: Dialga en Palkia, quest-poorten, spookstad Lavender, Giovanni en Mewtwo
+- **Ingang Route 125:** groter eiland (ondiepe rand, strand, zand) met een rotsheuvel met twee toppen; de grotopening zit in de onderrand, zoals bij Shoal Cave (verschijnt na de Hall of Fame).
+- **Eerste bezoek:** de grot is leeg tot Dialga en Palkia je begroeten (cry, schermschud, witte flits); daarna zijn 7 scheuren open. ????? en Mt. Coronet blijven dicht. ????? gaat open als alle sidequests klaar zijn (`Spacetime_AllSidequestsDone`; nu tellen Lavender en Cerulean, later uitbreidbaar). De onderzoeker en het ?????-bord zeggen hoeveel er nog openstaan.
+- **Lavender Town als spookstad:** eigen donkere paletten, graven, dode bomen (Ekat Haunted Woods), `WEATHER_SHADE`. Drie kwade geesten in de stad (Gengar, Dusknoir, Banette). Quest: de bezeten **Agatha** bovenin de Pokémon Tower verslaan (lv 70–71); daarna wordt de stad rustiger (eigen layout/paletten) en geeft de conciërge de Life Orb. De Protip Oracle is weg (een Silph Scope-verkoper); teksten voor en na de bevrijding.
+- **Channelers:** alle 10 teams herzien (Ghost, Dark, Psychic en mysterieus; geen dubbelen), bezeten teksten.
+- **Cerulean Cave:** vier Rocket-grunts (lv 66–70) en **Giovanni** (ace Nidoking lv 75, mugshot) vlak vóór Mewtwo. Daarna vertrekt hij, **healt Mewtwo je team** en vecht (nu lv 75).
+- Flags `FLAG_GROUNDED(574–579)`; trainers 1169, 1195–1199.
+
+### [v0.9.179] - Koraalkathedraal (Route 126) en de Sea Shard-quest
+- **Koraalkathedraal:** zwemgat in Underwater Route 126 (64,18, noordoosthoek); je duikt op in een hoge zaal met meer, terrassen en een lagune vol rode en paarse koraalbomen (Ekat's Coral Tiles). Swimmer Corinne en Fisherman Dorian (lv 48–49), Luminous Moss, Shell Bell, Pearl String, verborgen Big Pearl; 12 unieke landsoorten lv 46–52 (Cursola 1%), surf en vissen (Bruxish, Clawitzer).
+- **Sea Shards** (Key Item, oud Fame Checker-slot 725): 8 stuks in de duikplekken (Koraalkathedraal, luchtbel-grot 128, Shipwreck Shoals, Silent Crater, Wellspring Grotto, de diepzeetrog, de zeetempel, Underwater Route 136). De **Diving Treasure Hunter** (Route 124) neemt ze in: 2 → 10 Dive Balls, 4 → Heavy-Duty Boots, 6 → Gold Bottle Cap, 8 → **Master Ball**.
+- Script `tools/grounded/maptools/coral_cathedral.py` (zet ook de shards in kaarten van andere scripts: na het opnieuw draaien van zo'n script dit script ook draaien). Flags `FLAG_GROUNDED(660–671, 680–684)`, trainers 1080–1081. De Cave-tileset zit nu op 511/512 tiles.
+
+### [v0.9.180] - Spacetime S2 (gang en kamers, Gen 1-GHOST) en Chargestone Cave
+- **Ingang Route 125:** de grotopening was afgekapt (rotstop boven de deur); de rotsheuvel is nu exact vanilla nagebouwd (Route 111/Sky Pillar-tegels), eiland iets breder, deur op (45,28).
+- **Hub volgens het plan:** de hoofdzaal heeft alleen de zes sidequest-scheuren. Een gang naar het zuiden is dicht (gevouwen ruimte-tijdwand) tot alle sidequests klaar zijn → **?????-kamer** (placeholder) → wand die opengaat na Yoshi's Island → **meren-kamer** (Dialga/Palkia-scène, portalen Acuity/Valor/Verity, placeholder) → **doodlopend stuk** met een inscriptie over de Sky Pillar op zijn kop, open als Giratina **gevangen** is (in de omgekeerde Sky Pillar blijft een verslagen Giratina nu staan) → **Mt. Coronet-portaal** (placeholder).
+- **Gen 1-GHOST:** Jordi's sprite als gevechts- en overworldsprite van de kwade geesten. Zonder **Silph Scope** heet een wilde geest in Lavender/de Pokémon Tower "GHOST": je Pokémon is te bang om te bewegen, "Get out… Get out…", ballen werken niet, wegrennen wel (`src/gen1_ghost.c`). De oud-verkoper in het Lavender PC geeft zijn laatste Silph Scope; daarmee zie je de echte Pokémon.
+- **Chargestone Cave** (1F, B1F, B2F; achteraan `gMapGroup_Spacetime`): donkerblauwe grot (Meteor Falls getint) met zwevende magneetstenen, scherven en vonken; in B1F een stenenhek met duwstenen. Vier Neo Plasma-grunts (lv 66–70) en **Colress** uit een andere dimensie (kent je niet, is hier gewoon evil: Rotom-Heat, Porygon-Z, Metagross, Copperajah, Archaludon, Genesect met Shock Drive, lv 72–75). Daarna verschijnt **Zeraora** (lv 70) achter zijn machine. Magnetisch veld: Magneton → Magnezone en Charjabug → Vikavolt evolueren hier. 3× 12 unieke wilde soorten lv 60–67, items (Thunder Stone, Magnet, Metal Coat, Electirizer, PP Max e.a.).
+- Chargestone-scheur in de hub gekoppeld; Chargestone telt mee voor de gang naar ?????. Scripts `spacetime_cave.py`, `chargestone.py`, `chargestone_tiles.py`, `gen1_ghost_sprites.py`. Flags `FLAG_GROUNDED(580–582, 760–770)`, trainers 1124–1128.
+
+### [v0.9.181] - National Park en Ilex Forest (Calyrex, Celebi, Eternatus)
+- **National Park** (Spacetime-scheur → poortgebouwtje): park in de vorm van een Poké Ball (bovenhelft hoog gras, onderhelft donker gazon, fontein als knop, stenen ring met bloemen en lantaarns), onderaan een plein met bankjes en het bospad naar Ilex. Vier parktrainers (lv 67–69).
+- **Quest:** na de trainers verschijnt **Calyrex** bij de fontein; een witte flits toont het echte, **brandende park** (eigen layout, as-regen). Twee **multi battles met Calyrex als partner** tegen schimmen. In **Ilex Forest** (donker, mistig, schrijn met een stenen Celebi-beeld) verschijnt **Celebi** (lv 70; versla je hem, dan zet Calyrex de tijd terug). Terug in het park herstelt Celebi de natuur en verschijnt **Eternatus** (lv 75): elke Pokémon die je inzet krijgt +1 op alle stats (omniboost). Daarna vertrekt Calyrex.
+- Park- en Ilex-scheur gekoppeld; het park telt mee voor de gang naar ?????. 12 unieke wilde soorten per gebied (lv 60–68). Script `tools/grounded/maptools/national_park.py`; flags `FLAG_GROUNDED(700–711)`, trainers 1090–1097, partner `PARTNER_CALYREX`.
+- Chargestone: Colress' Genesect heeft nu een **Douse Drive** (Jordi: andere dimensie).
+
+### [v0.9.182] - Swords of Justice, Keldeo en Meltan
+- **Cobalion** (Granite Cave B2F: nieuwe grotopening in een nis, Rock Smash-rots ervoor → zwaardkamer), **Terrakion** (Victory Road B2F, zelfde soort kamer), **Virizion** (Mangrove Mire, doodlopende open plek aan het oostelijke zijpad, boomstam met een strakke zwaardsnede). Post-game, lv 70, zonder quest (zoals Gen 5).
+- **Keldeo:** na het derde zwaard belt **Mr. Briney** via de PokéNav (hij ziet iets geks in het water). Praat met hem (huis, Dewford of Route 109): fade, surfgeluid, en je staat op het **Uncharted Isle** ("???", niet op de kaart): een zandplaat in een ring van draaikolken met Keldeo (lv 70). Briney brengt je terug.
+- **Meltan:** Rivet de lasser in Sterns scheepswerf (Slateport) geeft Meltan lv 12; Meltan evolueert in **Melmetal** door te levelen met een **Metal Coat** (te koop in Lilycove 2F; wordt verbruikt).
+- Script `tools/grounded/maptools/swords_keldeo.py`; flags `FLAG_GROUNDED(800–809)`.
+
+### [v0.9.183] - Ability-popup bij binnenkomst verdwijnt netjes
+- Jordi zag in het multi battle met Calyrex een halve ability-melding links naast Arceus bij het actiemenu. Dat was de Unnerve-popup die nog aan het wegschuiven was. Na de melding van een switch-in-ability (o.a. Unnerve, As One) wordt de popup nu meteen weggehaald (zoals eerder bij de weer-abilities). Getest in de emulator.
+
+### [v0.9.184] - Ability-popups: nooit meer half zichtbaar bij het actiemenu
+- Jordi: ability-meldingen gaven af en toe glitches. Oorzaak: een popup schuift na een vaste tijd vanzelf weg, maar kon dan nog (half) in beeld staan als het actiemenu al open ging; met `fixedPopup` bleef hij zelfs staan. Nieuw: aan het begin van elke beurt (`STATE_TURN_START_RECORD`) worden alle nog actieve popups meteen verborgen en opgeruimd (`ForceHideAbilityPopUps` in `battle_interface.c`), en `fixedPopup` wordt gereset. Dit vangt álle abilities in één keer af, ook toekomstige.
+- Getest in de emulator met Intimidate + Drizzle (single) en Unnerve: het actiemenu is telkens schoon.
+
+### [v0.9.185] - Weergeluiden lopen niet meer door
+- Jordi: geluidseffecten (vooral van weer) bleven soms te lang doorlopen. Oorzaak: de weeranimaties zijn ingekort (`sFastBattleAnim` halveert de wachttijden), maar lange geluiden als `SE_M_RAIN_DANCE` en `SE_M_SANDSTORM` speelden hun volle lengte uit. Nu stopt het geluid zodra de animatie klaar is (`waitforvisualfinish` + `stopsound`) in de weeranimaties aan het eind van de beurt/bij abilities (Rain, Sandstorm, Hail, Snow, Sun, Pollen Haze, Acid Rain) en in de weermoves (Rain Dance, Sandstorm, Hail, Sunny Day, Snowscape, Chilly Reception).
+
+### [v0.9.186] - Virizion-kamer en een wilder Uncharted Isle
+- **Virizion** heeft een eigen kamer: aan het einde van het oostelijke zijpad in Mangrove Mire een groene tunnel in de boomrand (boog van mangrovewortels met lianen) naar **MangroveMire_VirizionGlade**: een open plek tussen junglebomen met een grote mangrove met een strakke zwaardsnede, wortelbogen, een omgevallen stam en een zonnevlek waar Virizion staat. De oude plek is weer gewone bosrand.
+- **Uncharted Isle:** een ring van **51 geanimeerde draaikolken** (eigen tileset `uncharted_isle`, 8 frames, afwisselend links- en rechtsom draaiend), rotsen in drie maten met schuimkragen, golfkammetjes en schuimkoppen; het eiland zelf met een grilligere kustlijn, wrakhout en steentjes.
+- Scripts `tools/grounded/maptools/swords_glade.py` en `swords_isle.py` (aangeroepen vanuit `swords_keldeo.py`; na `mangrove_swamp.py` altijd `swords_keldeo.py` opnieuw draaien).
+
+### [v0.9.187] - Bugfix: extra flagblok vergroot (512 → 1024)
+- Het blok `FLAG_GROUNDED(n)` had maar 512 plekken, terwijl Spacetime Cave, Mega Forest, Koraalkathedraal, National Park, Chargestone en de Swords of Justice al flags 560–809 gebruikten. Die vielen buiten het blok en kwamen in `GetFlagPointer` in de gewone flag-tak terecht: schrijven buiten de flag-array, midden in andere save-data (stille savecorruptie, quests die niet onthouden werden). Het blok is nu 1024 groot (64 bytes extra achteraan SaveBlock1, oude saves blijven werken).
+
+### [v0.9.188] - Trog als onderwatersnelweg, Chargestone opgeknapt, nieuwe items in de Spacetime-gebieden
+- **Diepzeetrog Route 127** (`trog127.py`): het rotsblok onderin (een "grot" zonder ingang) is weg. Onder de schacht ligt nu een zigzaggebied van vijf kommen met nissen en kronkelgangen. Een tweede zwemgat in de diepste kom leidt naar de Sea Temple-kom van Underwater Route 128 en terug: een onderwatersnelweg. Bovenkomen in het zuidelijke deel brengt je naar Route 128. Nieuwe items: Lure Ball ×3, Heavy Ball ×3, Binding Band, Eject Button, Power Anklet, Exp. Candy L ×2, verborgen Relic Vase.
+- **Chargestone Cave:** bultige vormen en kronkelgangen i.p.v. rechthoeken, terrassen met trappen (1F, B1F, B2F), veel meer decor (grote en kleine zwevende stenen, kristallen, gloeiende scheuren, kabels, Colress' machine met spoelen en terminals, schroot).
+- **Items die nog nergens in de game lagen** (centrale lijst `nieuwe_items.py`, geen TM's/Mega Stones/Z-kristallen): Chargestone (Fast Ball ×3, Power Lens, Eject Pack, Terrain Extender, Ability Shield, Exp. Candy XL), Lavender + Tower (Exp. Candy S ×3, Power Bracer, Moon Ball ×3, Red Card), Cerulean Cave (Level Ball ×3, Power Weight, Room Service, Mirror Herb, Power Band), National Park (Sport Ball ×5, Insect Plate, Power Belt), Ilex Forest (Friend Ball ×3, Love Ball ×3, Destiny Knot, Rose Incense).
+- Alle Spacetime-gebieden nagelopen: na de quest blijft alles bezoekbaar. Ontbrekende `// }`-afsluiters in `flags.h`/`opponents.h` gerepareerd (anders wisten generatorscripts elkaars blokken).
+- **Uncharted Isle:** de draaikolken hebben nu zes golven (drie leek op een werpster, Jordi).
+
+### [v0.9.189] - Glimwood Tangle en Ballonlea (Xerneas, Yveltal)
+- **Glimwood Tangle** (48×60) en **Ballonlea** (36×34) via de Spacetime-scheur: kronkelende, zacht gloeiende paden, terrassen, wortelbogen, reuzenpaddenstoelen, gloeiende klokjes, een heksenkring; in Ballonlea vier paddenstoelhuisjes en een terras met een heksenkring. Twee toestanden: grauw en uitgedoofd tot Xerneas gevangen is, daarna een nachtbos met felle gloed.
+- **Quest:** een oude Ballonlea-heks (met quizjes als grap) is je gids; de **Impidimp-bende** (wilde dubbelgevechten lv 64–65, Grimmsnarl en Morgrem bij de trap) dooft het licht. **Xerneas** (lv 70) vangen herstelt het bos; daarna verschijnt **Yveltal** (lv 70) in de heksenkring. Trainers Morwen, Silas, Odette en Arthur (lv 67–68).
+- Wilde Galar-soorten lv 60–68 (Mimikyu en Galarian Slowking 1%); nieuwe items: Exp. Candy XL, Eject Pack, Dream Ball, Galarica Cuff, Galarica Wreath, Exp. Candy L.
+- Glimwood-scheur gekoppeld; telt mee voor de gang naar ?????. Script `tools/grounded/maptools/glimwood.py`; flags `FLAG_GROUNDED(880–894)`, trainers 1098, 1099, 1107, 1108.
+
+### [v0.9.190] - Extra flagblok naar 2048
+- `NUM_GROUNDED_FLAGS` 1024 → 2048 (128 bytes extra achteraan SaveBlock1; oude saves blijven werken), zodat Area Zero, Yoshi's Island, Mt. Coronet en de Arceus-quest genoeg eigen flags hebben.
+
+### [v0.9.191] - Echt vuur in het verbrande National Park, schrijn en decor in Ilex Forest
+- **Verbrand park:** de "bloemen" zijn weg; nu **geanimeerd vuur** (de Gen 3-vuuranimatie uit Emerald zelf, 8 frames): 16 grote vuren op verschroeid gras met losse vlammen eromheen, brandende bloembakken en brandende boomkronen. In twee fasen, zodat niet alles tegelijk beweegt; vuur heeft botsing.
+- **Ilex Forest:** een handgetekend **houten schrijn** (GSC/HGSS-stijl: pannendak, touw met papieren stroken, deurtjes, stenen voet met mos, een appel en een sandwich als offer) met twee stenen lantaarns, i.p.v. het Celebi-beeld. Veel meer decor (Ekat Fairy Woods / Haunted Woods): treurwilg bij de vijver, grote ronde boom, boomstammen, paddenstoelen, stronken, dennetjes, varens, bloemenplekjes, waterlelies en zachte lichtvlekken.
+- Eigen secondary tilesets voor beide kaarten (`national_park_tiles.py`).
+
+### [v0.9.192] - Levelcurve: nooit grinden, variatie belonen
+- **Trainer-EXP 50%** (was 150%; `B_TRAINER_EXP_PERCENT`) en **inhaal-EXP** (`B_GROUNDED_CATCHUP_EXP`, `src/caps.c`): onder het ace-level van de volgende mijlpaal +100% EXP per level achterstand (max ×10), erboven niets (geen levelcap). Het doel wordt uit het team van de volgende gymleider gelezen (na badge 8 Steven, na de Hall of Fame 100), dus het schuift mee als een gymteam verandert. Beloont roteren met veel Pokémon en maakt post-game lage Pokémon snel bruikbaar.
+- **Nieuwe levels:** gymleiders (ace) Roxanne 23, Brawly 26, Wattson 34, Flannery 45, Norman 47, Winona 55, Tate & Liza 66, Wallace 76; E4 Sidney 78, Phoebe 79, Glacia 80, Drake 81; **Steven ace 84**. Routes en zijgebieden per hoofdstuk mee. Post-game 83–100; **lv 100**: Steven in Meteor Falls, Cynthia, Ghetsis, Archie/Maxie-taakstraf 4, laatste gymleider-rematches, Wally VR_5 (overige rematches 86/90/95). 175 extra evoluties; gymgidsen noemen de nieuwe ace-levels.
+- **Grap-teams** procentueel mee (Ivan's Gyarados 3 → 4, Lyle's Scizor/Yanmega 6 → 9, Edward, Jaclyn, Keccles op Route 115 e.a.); Magikarp ongewijzigd.
+- **Wilde Pokémon** in alle tabellen meegeschaald (bijv. Route 116 15–19, Route 119 38–51, Route 128 surf 60–73, Victory Road 65–77, Cerulean Cave 91–93); Magikarp en Route 101 ongewijzigd.
+- **Story- en post-game-legendaries** mee (o.a. beasts 62, Regi-trio 69, Regidrago/Regieleki/Manaphy 73, post-game 90–95).
+- **Gehoorzaamheid** blijft op het vanglevel; de grens is nu het ace-level van de volgende gymleider (23/26/34/45/47/55/66/76, na badge 8 geen grens). (De ongehoorzame Abra van Route 116 kan niet meer.)
+- Profielen (team min ace): hoofdpad +2,5 tot +4,8 bij gyms, Steven +1,1; alle content met 12 in rotatie +2 tot +3, Steven +0,1; superbosses 0. Rapport en advies over evolutielevels in `LEVELCURVE.md`; simulatie `tools/grounded/levelcurve.py`.
+
+### [v0.9.193] - Area Zero (paradoxen, Koraidon/Miraidon, Tera-alarm, Terapagos)
+- **Area Zero** via de Spacetime-scheur: zes kaarten (Rim → Depths → Crystal → Future/Past → Tera Cave), organische grotkamers met terrassen; per laag een eigen kleurversie (groen, lila, indigo kristal, toekomst-staal met neon, verleden-rode aarde, prisma-wit): hoe dieper, hoe vreemder. Eigen kristallen, glinsteringen, onderzoeksstation, Zero Gate, terminals, metalen kubussen en fossielbotten.
+- **Paradoxen:** Scream Tail en Iron Hands (lv 94); toekomst: Iron Leaves, Iron Boulder, Iron Crown (lv 96) + **Miraidon** (lv 98); verleden: Walking Wake, Gouging Fire, Raging Bolt (lv 96) + **Koraidon** (lv 98); de rest wild (lv 88–94). De Zero Gate wisselt tussen toekomst en verleden.
+- Na Miraidon/Koraidon: **beveiligingssysteem** (6 paradoxen lv 100). Beide offline → **Tera Cave**: het **alarmsysteem**, het enige gevecht in de game (naast de Spire) waarin Tera wordt gebruikt (elk teamlid één keer; de speler krijgt geen Tera), daarna **Terapagos** (lv 100).
+- Nieuwe items: Quick Ball, Muscle Band, Adrenaline Orb, Shed Shell, Beast Ball, Ring Target, Booster Energy, Metal Alloy, Air Balloon, Power Herb, Grip Claw, Sticky Barb.
+- Area Zero-scheur gekoppeld; telt mee voor de gang naar ?????. Scripts `area_zero.py` + `area_zero_tiles.py`; flags `FLAG_GROUNDED(920–937, 950–961)`, trainers 1180–1182 (klasse ZERO LAB).
+
+### [v0.9.194] - Yoshi's Island (Shy Guys, Commander Boo, Wario, Pecharunt) + ?????-portaal
+- **Het ?????-portaal** in de Spacetime Cave werkt: je grijpt erin, een gemaskerd handje trekt, "Spacetime says: dimension not found. Spacetime is lying." en je belandt op **Yoshi's Island**. De terugscheur op het strand brengt je naar de ?????-kamer.
+- **Yoshi's Island** (vier kaarten: strand, heuvels, Boo's spookhuis, Wario's fort): per pixel getekend in SMA3-stijl (krijtarcering, dikke omlijning, pastel, struikplateaus, noppenwanden) met objecten uit de Mode 7-eilandsheet (heuvels, palmen, kasteeltjes, vulkaan, Yoshi-vlag) en zelfgetekende pijpen, ?-blokken, eieren, lachbloemen en Shy Guy-tenten. Eigen primary + vier secondaries; bronnen in `graphics/grounded/yoshis_island/`.
+- **Verhaal:** je valt uit de lucht en **Yoshi** vindt je. **Multi battles met Yoshi als partner** (Lickilicky, Tropius, Alolan Exeggutor) tegen Shy Guy-bendes (klasse SHY SQUAD; ze praten niet, sarcasme tussen haakjes) → **Commander Boo** in het spookhuis → **Wario** in het fort. **Pecharunt** verkocht Wario de gehoorzaamheidsmochi; na Wario te vangen bij zijn kraampje (lv 92). Daarna is Yoshi's Island klaar en gaat de volgende gang (meren-kamer) open.
+- Overworlds Yoshi, Commander Boo en Wario; Yoshi-rugplaatje. Wilde Pokémon lv 91–93; nieuwe items (Honey, Heal Ball, Lagging Tail, Toxic Plate, Float Stone, Poké Doll, Malicious Armor e.a.).
+- Script `tools/grounded/maptools/yoshis_island.py` (+ `yoshi_sprites.py`); flags `FLAG_GROUNDED(1024–1049)`, trainers 1017–1019, 1026–1029, 1049, 1055, 1056, partner `PARTNER_YOSHI`.
+
+### [v0.9.195] - Bouwscripts houden de levelcurve vast
+- Nieuw: `tools/grounded/check_levels.py`. Elk bouwscript (48 stuks) roept bij de start `check_levels.protect()` aan en zet bij het afsluiten de levels (en evoluties) van bestaande trainers, wilde slots en `setwildbattle`s terug; alleen nieuwe entries krijgen de levels uit het script. Bewust wijzigen: `GROUNDED_SCRIPT_LEVELS=1`.
+- Controle achteraf: `python3 tools/grounded/check_levels.py [--fix]` meldt lagere levels of terug-geëvolueerde soorten t.o.v. HEAD.
+- `extra_fights.py` vervangt zijn objecten nu op hun plek (verschoof eerst de nummers van NPC's zonder local_id).
+- Let op: een aantal scripts herschrijft nog steeds hele `map.json`'s (objecten van latere scripts vallen weg); alleen gericht draaien en `git diff` controleren.
+
+### [v0.9.196] - Bouwscripts gooien niets meer weg
+- `check_levels.protect()` bewaakt nu ook alle events in `map.json` (objecten, verborgen items, triggers): wat een script wegschrijft maar nog een bestaand script-label heeft, komt op zijn oude plek terug (volgorde blijft, dus ook de nummers van NPC's zonder local_id). Bewust weghalen: `GROUNDED_SCRIPT_EVENTS=1`.
+- `zee_vulling_2/3` en `kaart_vulling_4` vervangen hun blokken in `trainers.party`, `opponents.h`, `flags.h` en `scripts.inc` op hun plek in plaats van ze naar achteren te schuiven.
+- `zee_vulling_3` wees bij opnieuw draaien flags opnieuw toe (en liet ze botsen met landvulling, o.a. 0x465); bestaande flags blijven nu staan.
+- `zee_vulling_2`: de Wynaut-crèche op Route 130 houdt `FLAG_TEMP_6` (niet op de Mirage-layout).
+- Twee generatorblokken misten hun afsluitende `// }` (beacon_isle in flags.h en opponents.h, area_zero in opponents.h), waardoor beacon_isle het Tao-eilandblok overschreef. Hersteld; de bewaker weigert nu te draaien als een blok niet gesloten is.
+
+### [v0.9.197] - De drie meren (Uxie, Mesprit, Azelf)
+- **Lake Acuity** (sneeuw, bergwand met grotmond als aankomst, eiland met grot), **Lake Valor** en **Lake Verity** (Hoenn-bos, meer met vanilla-oevers, riet, rotsheuvel met zwemgrot in het midden). Elke grot heeft bovenin zijn meerwezen: Uxie, Azelf en Mesprit lv 94 met de ripple-transitie en `MUS_RG_VS_LEGEND`. Verdwijnt na vangen of verslaan.
+- De portalen in de meren-kamer van de Spacetime Cave zijn nu echte warps (na de Dialga/Palkia-scene); terug via de grotmond (Acuity) of de zuidpijl (Valor/Verity). Emulatortest heen en terug geslaagd.
+- Wilde tabellen lv 88–94 (land 12 unieke soorten, surf, vissen); nieuwe items: Peat Block, Full Incense, Metal Powder, Auspicious Armor, Rock Incense, Leader's Crest, Odd Incense, Linking Cord, Quick Powder.
+- Script `tools/grounded/maptools/lakes.py`; flags `FLAG_GROUNDED(1120–1148)` (`FLAG_LAKE_*_DONE` = poort naar Mt. Coronet). Muziek: Kanto/Sevii-placeholders.
+- Bouwscripts: `legend_maps`, `scorched_slab_ext`, `spire_tower` (originelen nu in `tools/grounded/maptools/orig/`) en `zee_vulling_4` (draait meteen `trog127.py` erachteraan) draaien weer en veranderen niets meer.
+
+### [v0.9.198] - Mt. Coronet en Spear Pillar
+- **Mt. Coronet** (vanaf 4F, als in Platinum): kamer 1 met waterval, **buiten** in de sneeuw (56x46, terrassen om de top, beek met bruggetjes, je loopt west- of oostom de berg), kamer 2 (items, Rock Smash), kamer 3 (ladder), **5F** (puinhek met 2 Strength-stenen), **6F** (zuilen, lichte uitgang). Twaalf **projectie-trainers** van Dialga en Palkia (lv 95–98).
+- **Spear Pillar:** speerpilaren en twee altaren. Diamant-altaar = **Dialga**, parel-altaar = **Palkia** (lv 100, volgorde naar keuze, opnieuw proberen na vluchten); na beide terug naar de Spacetime Cave (`FLAG_SPACETIME_CORONET_DONE`). Eigen transities (Dialga clockwise wipe, Palkia ripple) met `MUS_RG_VS_LEGEND`.
+- Het Coronet-portaal in de Spacetime Cave (achter de Giratina-wand) is nu een echte warp; heen en terug getest.
+- Nieuwe items: Adamant Crystal, Lustrous Globe, Odd Keystone, Iron Ball, Adamant Orb, Lustrous Orb. Wilde Pokémon lv 91–94. Tilesets `coronet_cave` (Meteor Falls-tiles, warm grijsbruin) en `coronet_snow` (bruggen, speerpilaren, altaren).
+- Scripts `coronet.py`, `coronet_tiles.py`; flags `FLAG_GROUNDED(1160–1185)`, trainers 1057–1059, 1068, 1069, 1082–1088. Muziek: placeholders.
+- Bouwscripts (vervolg): `shipwreck_shoals` (vaste rotsen), `sea_temple_lugia`, `mangrove_swamp` en `mushroom_forest` draaien hun vervolgscript (zee_vulling_2, swords_glade, national_park), `reverse_pillar` en `stadium` houden latere wijzigingen; `coral_cathedral` zet zijn credit op zijn plek. Alle bouwscripts draaien nu zonder iets te veranderen.
+
+### [v0.9.199] - Area Zero als krater
+- Elke laag van Area Zero is een kom: ringvormige terrassen rond een bodem in het midden, ronde vormen, hoge noordwanden en lage zuidwanden. Je daalt in een spiraal af (per ring één trap, om en om links en rechts) en **de ladder naar de volgende diepte zit telkens in het midden**. In de Crystal-laag zitten de draaikolken van de Zero Gate en het verzegelde Tera-gat op de bodem; de Tera-grot is één ring met Terapagos in het midden.
+- Tiles, verhaal en events ongewijzigd (alleen herplaatst); Miraidon/Koraidon-tekst zegt nu "bottom of the crater".
+
+### [v0.9.200] - Mitch-thema v6: schonere horn
+- Feedback van Mitch: de horn klonk 'low quality'. Oorzaak: één sample die tot x1,7 omhoog werd gespeeld (terugvouwende hoge tonen), vervorming zonder oversampling en een korrelige uitsterftijd. Nu één sample per noot op de mixfrequentie, 8x oversampled vervorming en een schone loop (ruis −27..−31 dB i.p.v. −10..−15 dB).
+- Twee varianten: **A** dezelfde klank als v5 maar schoon, **B** (standaard) hoger en feller, richting de trompetten van het Elite Four-thema. Noten, ritme, wobbles en mix ongewijzigd. Wisselen: `python3 tools/grounded/mitch_theme.py a|b`.
+
+### [v0.9.201] - Dave en SickBlik post-game op lv 100
+- **Dave** (`TRAINER_DAVE_PARADISO`): na de Hall of Fame op zijn ligstoel in het Paradiso Resort. Eerst zijn pensioentekst, dan een comeback en meteen het gevecht: zijn Victory Road-team op lv 100 (Gengar, Gliscor, Ceruledge, Iron Valiant, Garchomp, Kingambit), eenmalig.
+- **SickBlik** (`TRAINER_SICKBLIK_DEV`): reist na de Hall of Fame als developer rond om te kijken of alles klopt; elke dag in Mauville, Fortree, Lilycove of Pacifidlog (special `Grounded_SickBlikSpot`). Eenmalig gevecht met zijn Victory Road-team op lv 100 (sterke AI, 2 Full Restores); daarna willekeurige developer-grappen.
+- Trainers 1089 en 1185, flag `FLAG_GROUNDED(1173)`. Gevechtsstart van beide getest in de emulator.
+
+### [v0.9.202] - Evolutielevels terug richting officieel, post-game wild per evolutiefase
+- Evolutielevels (advies uit LEVELCURVE.md): Hydreigon 64, Dragapult 60, Dragonite/Tyranitar 55, Archaludon 60, Kingambit 55, Gholdengo 55, Volcarona 59, Haxorus 48, Noivern 48, Flygon 40 (zoals Jordi's revisie), Mienshao 48, Mandibuzz 52, Klinklang 47, Vanilluxe 46, Wailord/Drapion/Rapidash 40, Archeops 37, Gogoat 32, Hippowdon 34, Beartic 37. Bewust gelaten (Jordi's eigen revisies): Muk 30, Cradily/Armaldo 30, Glalie 32, Tentacruel 27.
+- 34 trainer-Pokémon onder hun nieuwe evolutielevel terug naar de voorvorm (o.a. Larvesta, Drakloak, Klang, Noibat, Vullaby, Mienfoo, Bisharp, Zweilous). Battle Stadium (vast lv 50) ongewijzigd. Wild: Wailord op Route 103 → Wailmer, Mienshao in Granite Cave B2F (Rock Smash, 1%) → Throh.
+- **Post-game wilde Pokémon per fase** (alle slots vanaf lv 80): baby 55–60, basisvorm 60–70, middenfase 70–80, eindvorm 80–90; sterke soorten (BST ≥ 580, legendaries, paradoxen) ongewijzigd. 564 slots aangepast. Een post-game wild gevecht geeft gemiddeld ±87% van de oude EXP; de levelcurve van trainers blijft gelijk.
+
+### [v0.9.203] - Muk, Cradily, Armaldo en Glalie later
+- Op verzoek van Jordi ook deze evolutielevels omhoog: Grimer → Muk (alle vormen) 38, Lileep → Cradily en Anorith → Armaldo 40, Snorunt → Glalie 42 (waren 30/30/30/32). Beau's Alola-Muk (37) en Dillon's Muk (36) zijn weer Grimer; geen wilde slots geraakt.
+
+### [v0.9.204] - Yoshi's Island groter en meer SMA3
+- Drie nieuwe kaarten: **Jungle** (bladerdak, meertje, doorns, Piranha-tulpen, Chomp Rock), **kristalgrot** en een **bloemenveld boven de wolken** (GOAL!-letters, zonnebloem, ! switch); bereikbaar via pijpen vanaf het strand.
+- **Message Blocks** als infobordjes (overal i.p.v. houten bordjes), **vraagteken-wolkjes** (knappen open: items, een sterrenregen, en een brugwolk die een vlotjesbrug over de kloof legt), **Poochy** (rijdt je over de doorns naar een verborgen bosje en graaft een Strange Souvenir op), **Nep-Enut** (blauwe nep-Yoshi; verrassingsgevecht tegen Dondozo lv 90).
+- Shy Guys als trainers (lv 93–94, zwijgend, sarcasme tussen haakjes). **Yoshi's partnerteam** (Jordi): Dracovish, Tyrantrum en Gouging Fire.
+- Wilde Pokémon per evolutiefase; acht nieuwe items (Shalour Sable, Strange Souvenir, Moomoo Milk, Galarica Twig, Relic Band, Pewter Crunchies, Lumiose Galette, Cherish Ball). Flags `FLAG_GROUNDED(1050–1067)`, trainers 1109/1129/1183, ±70 KB.
+
+### [v0.9.205] - Calyrex-quest: Crown Tundra
+- Na het National Park (Eternatus) gaat in de zuidwand van een heuveltje rechtsonder op **Route 136** een grot open naar de **Crown Tundra**: een besneeuwde vallei met een vervallen heiligdom, een ijsveld en een dennenbos.
+- **Calyrex** vraagt je één van zijn paarden terug te halen: **Glastrier** (ijsveld) of **Spectrier** (bos), lv 86. Je kiest er één; het andere verdwijnt voorgoed. Daarna geeft Calyrex de **Reins of Unity** en vecht hij zelf (lv 88). Fusie werkt (ridervormen staan aan). Verslaan i.p.v. vangen: bij het volgende bezoek terug.
+- Wilde Pokémon per evolutiefase (Cubchoo, Snover, Snom, Phantump, Deerling, Piloswine, Wyrdeer, Cetitan, Trevenant, Frosmoth, Smoochum, Spiritomb); items Ice Gem, Ghost Gem, verborgen Ice Memory.
+- Script `tools/grounded/maptools/calyrex_quest.py`; flags `FLAG_GROUNDED(1280–1285, 1300–1302)`. Muziek: placeholder.
+
+### [v0.9.206] - Glastrier én Spectrier
+- Jordi: alle Pokémon zijn beschikbaar in deze game. Geen keuze meer tussen de paarden: **beide** zijn te vangen. Na het eerste paard geeft Calyrex de Reins of Unity; het andere paard blijft staan tot je het vangt (ook nadat je Calyrex gevangen hebt).
+
+### [v0.9.207] - Arceus, de Azure Flute en de Hall of Origin
+- **Na Spear Pillar** (terug bij het Coronet-portaal): het scherm flitst wit, **Arceus** spreekt (geen sprite, alleen de stem) en geeft de **Azure Flute** (nieuw Key Item, eigen icoon).
+- **Azure Flute** vanuit de tas: speelt het fluitdeuntje, zegt hoeveel legendaries nog openstaan en geeft een hint over de volgende (elke keer de volgende). Een soort telt als gedaan als hij gevangen is óf als zijn ontmoeting voorgoed op is. Lijst van 77 soorten, gegenereerd door `tools/grounded/azure_flute.py` (opnieuw draaien als er legendaries bijkomen; paradoxen tellen niet mee).
+- Alles gedaan → "meet me at SKY PILLAR". Op de top van Sky Pillar verschijnt een **trap van licht** naar de **Hall of Origin** (drie kaarten: trap, atrium met zuilen, top in Spear Pillar-stijl; lichtfonteinen die healen). Onderweg negen **emissaries van Arceus** (lv 100, elk een team legendaries met een thema: lucht, zee, land, geest, dromen, rechtvaardigheid, smidse, de zes Regi's, tijd en ruimte). Daarna healt Arceus je team ("anders is het niet eerlijk") en volgt het gevecht tegen **Arceus lv 100**.
+- Nieuwe items: Covert Cloak, Clear Amulet, Punching Glove, Griseous Orb. Trainer-id's: negen ongebruikte vanilla-trainers hergebruikt (`TRAINER_HOO_*`); flags `FLAG_GROUNDED(1220–1243)`. Muziek: placeholders.
+- Getest: Arceus-scene, fluit-hint, alles gevangen → Sky Pillar → Hall → Arceus-gevecht start. Niet getest: de gevechten met de emissaries.
+
+### [v0.9.208] - Nep-Enut op ware grootte, Yoshi-huis
+- **Nep-Enut** is nu de echte SMA3-sprite (sheet van Lunar994), **op ware grootte** (128x128-object) in het meertje in de jungle: eerst alleen ogen en wenkbrauwen boven water, bij aanspreken rijst hij op (de camera kijkt mee omhoog) en volgt het Dondozo-gevecht. De blauwe nep-Yoshi is weg.
+- **Yoshi-huis** op het strand (kaart 7 kolommen breder): dak als groot gevlekt Yoshi-ei, SMA3-deur en een brievenbus-Message Block. Binnen tien Yoshi's in alle kleuren (groen, rood, geel, lichtblauw, roze, paars, bruin, zwart, wit, blauw), elk met een eigen tekst; de roze geeft een Sweet Heart.
+- **Engine-fix** (`src/sprite.c`): het aantal tiles bij het reserveren van sprite-geheugen werd afgekapt tot een byte. Sprites van 256+ tiles kregen 0 tiles en overschreven de speler-sprite; de reuzen-Wailord kreeg 32 i.p.v. 288 tiles.
+
+### [v0.9.209] - Nep-Enut blijft
+- Nep-Enut verdwijnt niet meer na het Dondozo-gevecht: hij zakt terug tot alleen zijn wenkbrauwen boven water zijn en blijft chillen. Daarna heeft hij een eigen tekst ("He is off the clock.") en doet hij verder niets.
+
+### [v0.9.210] - Nep-Enut praat na
+- Na het Dondozo-gevecht rijst Nep-Enut bij aanspreken weer op (camera mee omhoog), houdt een praatje dat door de vierde wand gaat (meer schermtijd van een hobby-romhacker dan van Nintendo) en zakt dan terug tot alleen zijn wenkbrauwen. Getest in de emulator.
+
+### [v0.9.211] - Spear Pillar en Hall of Origin voller, constructen van Arceus
+- **Spear Pillar** opnieuw, als Gen 3-versie van het Platinum-origineel (eigen tileset `spear_pillar` in zandsteen): verhoogd plein met rijen hele en gebroken pilaren, de groef met het speerpunt-embleem tussen de altaren van Dialga en Palkia, ingestorte blokken met verzonken vloer, puin, zuidtrap met bordes en rotsmassieven eromheen.
+- **Arceus' trap van licht** loopt nu ook vanaf het embleem op Spear Pillar omhoog naar de Hall of Origin (verschijnt na de fluit, met een korte scene). De trap op Sky Pillar blijft; de terugweg brengt je naar waar je vandaan kwam. Fluittekst: "SKY PILLAR or SPEAR PILLAR, I built both".
+- **Hall of Origin** voller: zwevende glasplatforms in een wolkenleegte, trappen van licht, loper, marmeren zuilen; op de top het gouden wiel van Arceus tussen twee altaren en een zuilenring.
+- **De negen emissaries zijn constructen van Arceus:** één stenen golem met vizier, lichtkern en het gouden kruiswiel, met per thema een eigen palet (lucht, zee, land, geest, dromen, rechtvaardigheid, smidse, Regi's, tijd en ruimte); nieuwe trainerklasse CONSTRUCT, eigen trainerfoto's en overworlds; teksten als constructen ("CONSTRUCT ONLINE.").
+- Generatorbugs: `coronet.py` wiste bij opnieuw draaien de itemblokken van andere gebieden, `hall_of_origin.py` dupliceerde de trainers.
+
+### [v0.9.212] - Enamorus en de liefdesdagen
+- Zodra Tornadus, Thundurus en Landorus alle drie gevangen of verslagen zijn, heeft elke dag 2 op 3 kans op een **liefdesdag** in Oldale, Dewford, Fallarbor of Lavaridge (vast per dag). Dan zweven er hartjes boven NPC's, staat er een verliefd koppel (oude man + oude vrouw, Sailor + Beauty, Hiker + Picnicker, Psychic + Hex Maniac) en staat **Prof. Birch verliefd bij een hoop stront**.
+- **Enamorus** (lv 93) staat dan in het stadje; aanspreken = gevecht (eigen transitie). Gevangen: weg, de liefdesdagen blijven als sfeer. Verslagen: komt op een volgende liefdesdag terug.
+- Azure Flute-hint voor Enamorus; flags `FLAG_GROUNDED(1360–1362)`. Debug: `special Enamorus_DebugForceTown` (VAR_0x8004 0–3).
+
+### [v0.9.213] - Battle Casino
+- Nieuw huisje op het plein van het Frontier-eiland (oostkant): het **Battle Casino** (Game Corner-interieur, croupier, gokkers, onder wie iemand die al zijn BP kwijt is).
+- **Wedstrijdkaart** met 4 wedstrijden: per kant trainer(s), portret, team als mon-iconen met levels en de **odds** (1,1x–5x; van 50/50 tot 90/10). Kies wedstrijd, kant en inzet (1–100 BP), dan **meekijken** (de AI speelt beide kanten) of **alleen de uitslag**. Geen daglimiet: na elke wedstrijd een nieuwe kaart. Je eigen team blijft veilig; geen EXP/geld/white-out.
+- **Modi die je vrijspeelt:** wereld singles (bestaande trainers met hun echte team) → wereld doubles (na 3 inzetten) → Battle Stadium singles (6) → Stadium doubles (10) → Factory (willekeurige huurteams, 15) → Spire-baas (een wereldtrainer tegen een Spire-baas, 20).
+- Geen introducties: bij wereld/Factory/Spire een korte tv-overgang (tv-kast, ruis, scanlines, "CASINO TV / LIVE"); bij het Stadium loop je zelf de arena in en zie je het veld vanuit je POV.
+- Odds: kracht per team uit BST × level en typevoordeel, winkans T_A² / (T_A² + T_B²). Bugfix in expansion: bij AI-tegen-AI kreeg de trainerfoto bij de balworp het verkeerde palet.
+- Flags `FLAG_GROUNDED(1320–1321)`, `VAR_CASINO_BETS` (0x40BB). Debug: `special Casino_DebugUnlockAll`.
+
+### [v0.9.214] - Meer SickBlik
+- **Route 113** (de route met de as): SickBlik heeft een nieuwe tekst van Jordi ("I never liked ASH. I mean anime ASH." … FRIEZA) en vraagt hoe het gaat: hij telt je **white-outs** (`GAME_STAT_WHITE_OUTS`, nieuwe special `Grounded_BufferWhiteOuts`). Meer dan 0: "Goooood, the difficulty is good then!"; 0: hij moet de difficulty gaan uppen. Daarna het gevecht. Nieuw team (lv 38–39): Wartortle, Banette, Amoonguss, Scyther, Alola-Marowak, Galar-Slowbro. Je spreekt hem nu zelf aan (geen zichtlijn meer).
+- **Cove Lily Motel (Lilycove):** SickBlik chillt aan tafel ("I am travelling the globe! … the literal enhancer of this world"), ja/nee, dan het gevecht (lv 56–57): Zangoose, Xatu, Mimikyu, Porygon2, Cofagrigus, Galar-Slowbro. `TRAINER_SICKBLIK_MOTEL` (1184, de laatste vrije trainer-id).
+
+### [v0.9.215] - Frontier-sets kloppen weer met de revisies
+- Alle 1554 vaste sets (Battle Frontier, Battle Tents, Battle Pyramid, Trainer Hill) gecontroleerd tegen de learnsets, TM's, items, abilities en revisies van dit project (`tools/grounded/frontier_sets.py`, met `--fix`; samenvatting in `FRONTIER_SETS.md`).
+- 586 niet-leerbare moves vervangen in 464 sets (227 soorten), o.a. Aerial Ace (87×), Roar, Rock Tomb, Feint Attack en Water Pulse (geen TM meer in deze rom). Waar een stat-revisie de categorie omdraaide: andere aanvallen en nature/EV's omgedraaid (o.a. Aggron, Sableye, Cacturne, Volbeat, Shiftry); Swellow met Brave Bird (Gale Wings), Spinda met Brick Break (Pure Power). Indexen en aantallen ongewijzigd.
+
+### [v0.9.216] - Casino: nieuwe odds, bookies, skip; Abandoned Ship 's nachts; SickBlik op het strand
+- **Battle Casino:** nieuwe odds-berekening. De echte kans (BST × level, typevoordeel) bepaalt de uitslag; de **bookies** tonen die kans met ruis (±12 punt rond 50/50, minder aan de randen) en zitten in 1 op 6 wedstrijden bewust flink naast (uitbuitbaar). Uitbetaling x1.1–x30, in **hele BP** ("Bet 25 BP → Pays 80 BP"). De meeste wedstrijden zijn spannend (50–65%), ongeveer 1 op 3 kaarten heeft één eenzijdige pot. **START** tijdens het meekijken springt naar de uitslag. Drie **bookies** in het gebouw (een tipgever die soms gelijk heeft, een oddsmaker die elf keer ontslagen is, een spiritist). Singles altijd 4 tegen 4, doubles 6 tegen 6 (3 per trainer).
+- **Abandoned Ship 's nachts:** in de B1F-gang gaat 's nachts een trap open naar een **benedendek** (gang met ondergelopen hoek + zes hutten, `WEATHER_SHADE`): wilde Ghost/Water-soorten lv 44–50 (o.a. Houndstone, Lampent, Golisopod, Dhelmise, Drakloak, 1%: Spiritomb, Basculegion), Ghost Memory, Water Gems, verborgen Water Memory, een spookmatroos die oplost en een Lampent die beleefd aan je levenskracht nipt. Overdag is het luik dichtgetimmerd.
+- **SickBlik op het strand van Route 104** (ten westen van Petalburg): wil voetballen, dan het gevecht ("Well, kind of the slaveworker of several AI programs. But trust me, all the humor and ideas in the game are mine!") met Porygon, Charjabug, Cramorant, Gastly, Toxel en Toedscool (lv 16–17). Trainer-id 854 (was de ongebruikte `TRAINER_MAY_PLACEHOLDER`).
+
+### [v0.9.217] - Audit richting 1.0
+- Nieuw: `tools/grounded/audit.py` (±10 s) controleert de hele game statisch: warps (doel, index, elevation, warpgedrag, vastzitten), kaarten (128 per groep, objecten in beeld, bereikbaarheid lopen/surfen incl. looproutes van NPC's, ongeldige tegels), scripts (labels, lock zonder release, verschoven LOCALID's, tekstbreedte), flags/vars, trainers (partijen, abilities, levels, evoluties, mugshots, vrije id's), wild en items (dubbele flags, TM's dubbel). Vanilla-bevindingen worden weggefilterd; open lijst in `AUDIT.md`.
+- Gerepareerd: de torendeur op het **Tao-eiland** was een dichte Sky Pillar-deur (toren onbereikbaar); in **Safari Zone Northeast** sneed de grot naar Thunder Plains de enige richel af (5 rotsen, Nugget en Zinc onbereikbaar); op **Route 117** wees het Day Care-script naar trainer Melina i.p.v. de Day Care-Pokémon; portretten en troon op **Yoshi's Island** stonden een rij te hoog; een te brede debugtekst.
+- Emulator: 91 warps in de nieuwe gebieden geladen zonder crash of zwart beeld; wilde gevechten starten in Crown Tundra, Yoshi's Island en Area Zero.
+
+### [v0.9.218] - Audit-punten van Jordi
+- Dubbele TM's weg (TM's zijn herbruikbaar): de Fire Blast in de Lava Tube is een **Fire Memory**, de U-turn in Fortree Jungle een **Bug Memory** (allebei te koop in Lilycove), en de TM-prijzen van de Trainer Hill (Dark Pulse, Nasty Plot, Stored Power) zijn **Dark/Poison/Psychic Memory**.
+- De Litten (lv 36) van de Magma Grunt op Mt. Chimney is een Incineroar. Rick's Kricketune blijft (bewust).
+- **Hermit Crater**: wilde Pokémon lv 57–59 (was 71–73), gelijk met de trainers daar.
+
+### [v0.9.219] - Alle Pokémon te krijgen (meting)
+- Nieuw: `tools/grounded/dex_check.py` meet per soort/vorm of hij zonder ruilen te krijgen is (wild, statics, gifts, evoluties met verkrijgbare items, fokken, vormwissels); `--waarom SPECIES_X` toont de bronnen. Uitkomst (9 okt): **alle 1025 soorten + 57 regionale vormen** te krijgen (1050), behalve de 6 monkeys en de 26 die nu gebouwd worden (Kanto-/Galar-vogels, Meloetta, Zygarde, Diancie, Ultra Beasts, Cosmog-lijn, Necrozma, Marshadow). Geen ruil-only soorten meer. `DEX_ANALYSE.md` bijgewerkt.
+- Gaten gedicht: Indeedee ♀ (Route 123), Rockruff met Own Tempo voor Lycanroc Dusk (Route 112), Rotom Catalog (Rotom-kelder Mauville), Reveal Glass (Weather Institute 2F), Pink en Purple Nectar (Pretty Petal, Route 104), en de 14 ontbrekende Silvally-Memories (Devon stuurt ze na Type: Null naar je pc).
+- Caterpie en Kanto-Rattata zaten al vroeg in de game (Route 101/104, Petalburg Woods).
+
+### [v0.9.220] - De overige legendaries
+- **Kanto-vogels** (post-game, lv 85): **Articuno** in de Frozen Depths van Shoal Cave, **Zapdos** op een afgelegen richel boven het Weather Institute (Route 119), **Moltres** op de kraterrand van Mt. Chimney.
+- **Galar-vogels** (lv 88), zodra alle drie de Kanto-vogels gevangen zijn: **Galar-Articuno** bij het Space Center van Mossdeep (teleporteert met een flits naar een ander terras als je hem aanspreekt), **Galar-Zapdos** rent rond in de woestijn van Route 111, **Galar-Moltres** in de nis naast de Ancient Tomb op Route 120.
+- **Diancie** (gift, lv 80) tussen de Carbink in de kristalgrot van Granite Cave, naast Stevens kamer.
+- **Meloetta**: op Route 123 ligt de hele game een **Snorlax** voor de bessenvelden van de Berry Master. Post-game ligt er een Poké Flute naast: oppakken = spelen, Snorlax loopt weg (velden vrij) en **Meloetta** (lv 62) valt aan.
+- **Zygarde** (50%, lv 90) in een nis midden in de Desert Underpass, zodra Xerneas én Yveltal gevangen zijn.
+- **Master Balls** te koop voor 200 BP bij de ruilbalie in de Battle Frontier.
+- **Catch rates:** legendaries/mythicals/UB's/paradoxen met catch rate 3 gaan naar 30; Arceus en de grote legendaries (Mewtwo, Lugia, Ho-Oh, Kyogre, Groudon, Rayquaza, Dialga, Palkia, Giratina, Reshiram, Zekrom, Kyurem, Zygarde, Cosmog-lijn, Necrozma, Calyrex, Koraidon, Miraidon) blijven 3; Eternatus en Terapagos van 255 naar 3.
+- Azure Flute-hints voor alle nieuwe; script `tools/grounded/maptools/legends2.py`, flags `FLAG_GROUNDED(1520–1540)`.
+
+### [v0.9.221] - Ultra Space
+- Post-game staat achterin **Altering Cave** een Ultra Wormhole naar een **Ultra Space-hub** (zwevend eiland). Het portaal daar stuurt je **willekeurig** naar de plek van een Ultra Beast die je nog niet hebt; **Necrozma** komt pas als de andere tien gevangen zijn.
+- Elf bizarre plekken (gang + arena), elk met de UB als zichtbaar object (lv 88–90, Necrozma 95; verslaan = blijft staan): **Nihilego** in een glazen droomwereld, **Buzzwole** in een sportschool, **Pheromosa** op een catwalk met jury, **Xurkitree** in een kabelwoud, **Celesteela** op een lanceerveld in het niets met negen aftellende Celesteela, **Kartana** in een papierwereld, **Guzzlord** op een afvalvlakte, **Stakataka** als muur die je aankijkt, **Blacephalon** in een circus met clowns, **Necrozma** in een donkere prismagrot, en een gifkristalgrot waar **aliens je Poipole geven**.
+- **Prof. Cozmo** (Fallarbor) geeft post-game **Cosmog**. Cosmoem wordt **Solgaleo** als je Solrock eerder ving dan Lunatone, **Lunala** andersom, willekeurig als je geen van beide hebt. Laat je Cozmo de geëvolueerde vorm zien, dan krijg je een tweede Cosmog die de andere wordt.
+- Items: N-Solarizer, N-Lunarizer, Poison/Electric/Fighting/Steel Memory, Dark Gems. De Azure Flute telt nu ook de UB's, Cosmog, Solgaleo en Lunala mee (98 soorten) — dus ook die zijn nodig voor de Hall of Origin. Placeholder-muziek en -transities.
+- `tools/grounded/dex_check.py`: alle soorten en regionale vormen te krijgen, op Marshadow na (komt bij het Keccles-gevecht).
+
+### [v0.9.222] - Wilde tabellen: apen terug, legendaries eruit, betere spreiding
+- **Elemental monkeys** in de wereld: Pansage in Fortree Jungle, Panpour op Route 119, Pansear in de Fiery Path (elk 10%, bij de bijbehorende steen), Simisage/Simisear/Simipour post-game (Yoshi's Island, Steam Island). De NPC in het Petalburg Pokémon Center die ze miste, is er nu verbaasd over.
+- **Legendaries uit gewone tabellen:** Jirachi (Mt. Pyre, → Gardevoir), Victini (Route 130, → Florges), Manaphy (Route 131, → Gyarados), Kubfu (Route 115, → Munchlax); allemaal nog te krijgen via hun eigen event.
+- **Spreiding** (`tools/grounded/wild_spread.py`, `WILD_SPREAD.md`): te vaak voorkomende soorten (Dhelmise, Bronzong, Relicanth, Bruxish, Probopass, Lapras, Garchomp) in een paar tabellen vervangen; **Magikarp** aan de Old Rod in 12 routes en steden (lv 12–19; bestaande Magikarp-levels ongewijzigd), Crobat in drie late grotten, Graveler en Swellow vaker.
+- **Vivillon/Scatterbug/Spewpa** krijgen een willekeurig patroon (wild en bij fokken); **Deerling/Sawsbuck** volgen het seizoen van de echte datum (ook in je team), zoals in Gen 5.
+- `dex_check.py`: alle soorten en regionale vormen te krijgen (1081), op Marshadow na (komt).
+
+### [v0.9.223] - Marshadow en Keccles in de Frontier
+- Post-game staat **Keccles** onzichtbaar op het pad naar de Sudowoodo op het Frontier-eiland (Devon Scope nodig). Hij wordt zichtbaar, en dan beweegt je schaduw zonder jou: **Marshadow** springt eruit en komt in je team (lv 88; pc als je team vol is). Daarna het gevecht tegen Keccles' sterkste "Lizardmon"-team (Heliolisk, Tropius, Clodsire, Charizard, Serperior, Salazzle als ace; lv 92–95; Keccles-transitie en salsa-thema). Na afloop: "Wow, I can still learn something from that. … THAT is camouflage."
+- Trainer-id 853 (was de ongebruikte `TRAINER_BRENDAN_PLACEHOLDER`), flags `FLAG_GROUNDED(1541–1542)`.
+- **Alle 1025 soorten en alle regionale vormen zijn nu zonder ruilen te krijgen** (`tools/grounded/dex_check.py`: 1082/1082). Azure Flute: 89 hints (Ultra Beasts tellen niet mee, Necrozma wel).
+
+### [v0.9.224] - Alle nuttige items te krijgen, competitive in minuten
+- Nieuw: `tools/grounded/item_check.py` (welke items waar te krijgen zijn; `--waar ITEM_X`). Vóór dit werk ontbraken 108 nuttige items, nu **0 van de 440**.
+- **Devon** stuurt na Type: Null zes prototypes naar de pc: Loaded Dice, Throat Spray, Blunder Policy, Protective Pads, Wise Glasses, Berserk Gene. De Memories zijn "door Accounting voor BP aan de Frontier verkocht".
+- **BP-winkels in de Exchange Corner van de Battle Frontier** (eigen BP-winkeltype met aantal kiezen):
+  - Training (oude dame): EXP Candy XS–XL, Rare Candy, vitamines, feathers, mochi + Fresh-Start Mochi (EV's op nul), EV-verlagende bessen, Power-items, Macho Brace, PP Up/Max (1–4 BP).
+  - Natuur & potentieel (Hex Maniac): alle 21 mints, Bottle Cap, Gold Bottle Cap, Ability Capsule, Destiny Knot, Everstone.
+  - Held items (winkelbediende): ±65 competitive items (Choice-items, Life Orb, Leftovers, Focus Sash, Assault Vest, Rocky Helmet, Boots, Eviolite, Booster Energy, weerstenen, terrain seeds, herbs, orbs …).
+  - DEVON Outlet: alle 17 Memories, 18 gems, alle weerstandsbessen.
+  - **Hyper Trainer** (Black Belt): Bottle Cap = één stat op 31, Gold Bottle Cap = alle zes.
+- Lilycove-warenhuis: Lures, Poké Toy, Luck Incense, X Sp. Def; Lavaridge-kruidenwinkel: Remedies, Jubilife Muffin; Red Nectar bij Pretty Petal.
+- Getest: een Mint en een Bottle Cap gekocht, Hyper Training op Speed, een Mint gebruikt.
+
+### [v0.9.225] - Keccles lager
+- Keccles in de Frontier is een van de eerste post-game-gevechten: team lv 85, Salazzle lv 87 (was 92–95); Marshadow komt op lv 85. Charms (Shiny/Oval/Catching/Exp.) komen bewust niet in de game (Jordi).
+
+### [v0.9.226] - Ultra Space opnieuw: zes UB-werelden (deel 1)
+- De eerste versie (hergebruikte gym- en grotkaarten) is weg. Zes werelden zijn per pixel opnieuw getekend, elk met een eigen tileset (`tools/grounded/maptools/ultra_worlds_a.py`) en paletcycli voor beweging (lava, water, leds, stroom):
+  - **Nihilego:** waterplaneet met illusies: glazen schijven naar Nihilego dat boven het water zweeft, twee zonnen die alleen in het water bestaan, een gespiegelde stad die er niet is, en nep-eilanden die oplossen als je ernaartoe surft.
+  - **Buzzwole:** oversized jungle: reuzengrassprieten als muren, druppels zo groot als een huis, reuzenpaddenstoelen, een boomstronk-arena met bessenhalters.
+  - **Pheromosa:** elementen zonder effect op elkaar: vuur op water en ijs, bliksem in lava, vlammen bevroren in ijs, een water- en een lavarivier die elkaar kruisen onder een marmeren podium.
+  - **Xurkitree:** alleen kabels: kabelbanen boven een diepte vol kabels, kabelbomen met stekkers en knipperende leds, een hoofdkabel met stroompuls naar een transformator.
+  - **Celesteela:** een eindeloze steppe met alleen Celesteela: monolieten, stenen beelden, schroeikringen en silhouetten aan de horizon.
+  - **Kartana:** omgekeerde bibliotheek: kasten, trappen en kroonluchters op hun kop, inkt die omhoog druppelt, vallende bladzijden, Kartana op een open boek.
+- Wilde Pokémon lv 83–89 met soorten die nog weinig voorkwamen (Celesteela: bewust geen). ±223 KB.
+
+### [v0.9.227] - Geen reuzen-Ledyba
+- De reuzen-Ledyba in de Buzzwole-wereld is weg (out of place, Jordi).
+
+### [v0.9.228] - Ultra Space opnieuw: vijf UB-werelden (deel 2)
+Jordi (9 okt): "Schrap alle mappen die je al had ... Je kan veel beter, kom op." Deel 2: de laatste vijf werelden, elk met een eigen getekende tileset (primary + secondary) en eigen wilde Pokémon (12 unieke soorten). Bouwscript `tools/grounded/maptools/ultra_worlds_b.py` (+ `ultra_worlds_b_art.py`); `ultra_space.py` slaat ze over via `EXTERNAL_B`.
+- **Guzzlord:** Lilycove, maar opgegeten. Warenhuis met een hap eruit, de Contest Hall als krater met Guzzlord in het midden, een ingestort museum, een gebroken pier, as, puin en verkoolde bomen. Af en toe gerommel en vallend puin.
+- **Stakataka:** een echt doolhof van Stakataka-stenen. De ogen in de muren knipperen, losse ogen (`OBJ_EVENT_GFX_ULTRA_EYE`) kijken je na, en in het hart staat de muur zelf.
+- **Blacephalon:** circus met tent, piste, tribunes, ringen, ballonnen en clowns met teksten. Blacephalon is de ster van de show. Ballonnen knallen en er is vuurwerk.
+- **Necrozma:** prismagrot met kristallen in alle kleuren, lichtstralen, regenboogbreking, een spiegelvloer en glinsteringen. Necrozma staat op een zwart altaar dat het licht opslokt.
+- **Poipole:** space horror. Meteorieten, gasgeisers, bliksem, aardbevingen en zwaartekrachtgolven (`src/ultra_worlds.c`, stepcallback `STEP_CB_ULTRA_WORLDS`). De aliens wonen er met Poipole.
+- Techniek:
+  - de oude tilesets van deze vijf zijn uit het `ultra_space`-blok;
+  - `NUM_OBJ_EVENT_GFX` is 351;
+  - audit.py kent `ULTRA_EYE` als muurobject.
+- Na de merge: build, audit 0 FOUT, dex 1082/1082 en een emulatorcheck van alle vijf de tilesets. ROM-ruimte: nog ±0,86 MB vrij.
+
+### [v0.9.229] - ROM-ruimte: ±590 KB terug
+Jordi (9 okt): "kijk waar je allemaal nog ruimte kan vinden". Vóór de intro's en muziek was er nog ±0,86 MB vrij; nu ±1,43 MB.
+- **Trainer-slides** (`src/trainer_slide.c`): de tabel `[moeilijkheid][1200 trainers][14 momenten]` aan pointers was 196 KB plus 49 KB voor de Frontier, bijna alles leeg. Nu is het een lijstje van de 28 Stadium-zinnen (`sTrainerSlideEntries`). Dat scheelt 252 KB; er verandert niets in het spel.
+- **Filmintro's** (`film_delta.py`): elke tilemap staat nu als verschil met de vorige opgeslagen, behalve op keyframes waar de film terugspringt. De filmspeler XOR't die met de vorige tilemap in zijn buffer. Dat scheelt 321 KB, en het beeld is pixel voor pixel gelijk (controle in Python en in de emulator met Rayquaza). `film.py` doet dit voortaan zelf.
+- **gbagfx-LZ77** comprimeert optimaal i.p.v. greedy (zelfde formaat). Dat scheelt nog 18 KB op de films.
+- Al goed en daarom niet aangeraakt: kreten (al gecomprimeerd, en Jordi wil ze niet lager), alle sprites/tilesets (al `smol`) en de opstartintro (±90 KB in totaal).
+
+### [v0.9.230] - ROM-ruimte: route-transities gecomprimeerd (136 KB)
+- De tiles van 36 route-transities (`struct RouteTransition`, o.a. Mewtwo, Neo Plasma, Zarude, Darkrai) en de weef-transities (Aqua/Magma, Regidrago/-eleki/-gigas, Koffing) staan nu als `smol` in de ROM. Ze worden bij de start uitgepakt (`RT_SMOL` = grootte 0). Dat scheelt 112 KB.
+- Hetzelfde voor Aurora (Suicune), Raikou, de Magikarp-stapel en de Dave-penalty: nog 24 KB.
+- In de emulator getest: Mewtwo, Raikou, Suicune, Zarude, Darkrai, Koffing, Magikarp en Dave. Alles ziet er hetzelfde uit.
+- Bekeken en gezond bevonden:
+  - nummers: alleen 38 ongebruikte vanilla-RG-nummers (93 KB), bewaard voor Kanto-plekken;
+  - muzieksamples: alles in gebruik, op 32 KB na;
+  - tilesets: geen ongebruikte;
+  - opstartintro: ±90 KB.
+- Vrij: ±1,56 MB.
+
+### [v0.9.231] - ROM-ruimte: ongebruikte Kanto-nummers weg (94 KB)
+- Jordi (10 okt): "we gaan geen kanto plekken meer toevoegen, dus die kunnen eruit". De 38 nummers die nergens werden afgespeeld zijn weg; hun plek in `song_table.inc` wijst nu naar `mus_dummy`, de constanten blijven bestaan. Het gaat om 36 FRLG-nummers (Pewter, Fuchsia, Oak, Teachy TV …), `MUS_LITTLEROOT_TEST`, `MUS_C_COMM_CENTER`, `MUS_WEATHER_GROUDON` en het lege N-slot. Geen samples vrijgekomen; FRLG gebruikte de standaardinstrumenten.
+- Nieuw hulpmiddel `tools/grounded/resample_wav.py` zet een 8-bit sample-wav naar een lagere samplerate (smpl-chunk en loops gaan mee). Nog niet toegepast; eerst de A/B-test van SickBlik (versie B: 34 tonale samples naar 11 kHz, drums ongemoeid, scheelt 315 KB).
+- Vrij: ±1,65 MB.
+
+### [v0.9.232] - ROM-ruimte: eigen muzieksamples op 11 kHz (1,02 MB)
+- Jordi (10 okt) na de A/B van SickBlik: "De b-versie is prima, pas dat maar toe op andere nummers". Alle 220 eigen samples (`sound/direct_sound_samples/grounded/`) staan nu op max. 11025 Hz. Uitzonderingen: drums (alles uit `sound/voicegroups/drumsets/`) blijven zoals ze waren, en een sample met een grondtoon vanaf C6 krijgt 16 kHz.
+- Waarom het niet hoorbaar is: de mixer draait op 21 kHz in 8 bit. In de SickBlik-meting verloor B maar −0,5 dB tussen 2 en 5,5 kHz en nog minder daarboven.
+- Steekproef Wallace en Mitch in de emulator: geen klikken of pieken (`audiocheck.py`).
+- `resample_wav.py --all` doet dit idempotent. Draai het na elke samplegenerator en muziekmerge.
+- **Waarom SickBlik zo zwaar was:** elk jazzakkoord is een eigen opname (8 blazersakkoorden van 2,4 s, 8 rhodesakkoorden, 2 rhodes = ±570 KB), plus vier slap-bas-articulaties en hoge rates. Jordi: zo laten, het is een banger. Het nummer is nu 315 KB lichter.
+- Vrij: ±2,67 MB (was ±0,86 MB vóór v0.9.229).
+
+### [v0.9.233] - Laatste opruimronde: ongebruikte vanilla-data (69 KB)
+- Jordi (10 okt): "Doe een algehele laatste check en kijk of er nutteloze kbs of ongebruikte zaken in zitten".
+- Gescand: alle ROM-symbolen waarvan de naam nergens buiten de eigen definitie voorkomt. Daarvan zijn 101 vanilla-restjes weg:
+  - de lege opvularrays `tileset_anims_space_*` (15 KB nullen, alleen om vanilla-adressen gelijk te houden);
+  - de oude Japanse contest-graphics;
+  - ongebruikte animatieframes (`Unused1`/`Unused2`, Lavaridge-lava 4–7);
+  - de oude charmap- en battle-interface-graphics;
+  - de ongebruikte Secret Base- en Cable Club-tiles.
+  - De build slaagt, dus niets verwees ernaar.
+- Niet weg, want via macro's toch in gebruik: wallpapers, de balsprites in de overworld en de Vivillon-patronen.
+- Eindstand ROM: 29,3 MB gebruikt, **±2,74 MB vrij** (was ±0,86 MB vóór v0.9.229).
+
+### [v0.9.234] - ROM-ruimte: ongebruikte Mega- en Gigantamax-vormen eruit (728 KB)
+- Jordi (10 okt): "Ja wat een besparing". De speler kan niet Mega-evolueren of Dynamaxen; alleen de Spire-bazen gebruiken Mega Metagross, Mega Mewtwo Y, Mega Rayquaza en Gigantamax Pikachu. Mega Gengar staat er ook nog in, omdat de code hem noemt.
+- **Kreten:** de 44 andere Mega's krijgen in `sound/cry_tables.inc` de kreet van hun basisvorm, en hun eigen opname is uit `direct_sound_data.inc`. Dat scheelt 521 KB.
+- **Sprites:** voor de andere Mega- en Gmax-vormen wijzen de front-, back-, palet- en icoon-namen in `src/data/graphics/pokemon.h` via een `#define` naar de basisvorm. Hun eigen plaatjes gaan dus niet meer mee. Dat scheelt 207 KB.
+- Toxtricity-, Urshifu- en Alcremie-Gmax hebben geen enkelvoudige basisnaam en blijven zoals ze waren.
+- Terugzetten: de regel met `Project Grounded: ... weg` / `vorm niet in de game` terugdraaien. Nodig als een nieuwe Spire-baas een andere Mega krijgt.
+- Audit 0 FOUT, dex 1082/1082. Vrij: **±3,46 MB**.
+
+### [v0.9.235] - Yoshi's Island: de echte SNES-muziek (SPC-rip)
+- Jordi (10 okt) uploadde de SPC-set van *Super Mario World 2: Yoshi's Island* (`Yoshi Island.rsn` op master). Super Mario Advance 3 heeft een eigen muziekengine (geen MP2K), dus deze nummers komen uit de SNES-versie.
+- Nieuw: `tools/grounded/spc/`.
+  - `spclog.cpp`: blargg's snes_spc met een haak op elke DSP-schrijfactie. De bron van game-music-emu wordt naar `build/gme` gekloond.
+  - `spclib.py`: BRR-decoder en notenlog.
+  - `spc2gba.py`: per SNES-stem één spoor, met de noten (KON/KOFF), toonhoogte en vibrato als pitchbend, het instrument (SRCN) en volume en pan. De originele BRR-samples zijn de instrumenten: melodisch met gemeten grondtoon en loop, drums per toonhoogte.
+  - Timing: 1 tick = 1 GBA-frame (150 BPM). De loop wordt automatisch gevonden, en de SNES-ADSR is omgerekend naar de MP2K-envelope.
+- Vijf nummers, samen **99 KB** (13 samples + 13 drumtoetsen, gedeeld in `voicegroup_grounded_yi` / `yi_drumset`):
+
+| Nummer | Waar in de game |
+|---|---|
+| Flower Garden | Flowers, Beach, Yoshi-huis |
+| Athletic | Hills, Jungle |
+| Castle & Fortress | Wario Fort |
+| Overworld | wilde gevechten op heel Yoshi's Island (`MAPSEC_YOSHIS_ISLAND` in `GetBattleBGM`) |
+| Overworld (Fuzzy) | Touch Fuzzy Get Dizzy; nog niet gekoppeld |
+
+- Controle:
+  - toonhoogtes, chroma-vergelijking met het SNES-origineel: 0,78;
+  - klankverdeling per band binnen een paar procent;
+  - batchrec: geen pieken of clipping;
+  - in de emulator: na de warp speelt Flower Garden, een wild gevecht speelt Overworld.
+- `music_lint.py`: Athletic mag 11 noten (8 SNES-stemmen + uitklinkstaartjes op 5 momenten).
+
+### [v0.9.236] - MP2K-ripper (Wario Land 4, Mario Kart: Super Circuit)
+- Wario Land 4 en Mario Kart: Super Circuit gebruiken dezelfde muziekengine als Emerald. `tools/grounded/mp2k_rip.py` haalt een nummer 1-op-1 uit hun ROM:
+  - de sporen gaan als bytecode naar `sound/songs/<naam>.s`, met pointers omgezet naar labels;
+  - alleen de gebruikte instrumenten komen mee in een eigen voicegroup (keysplits en drumkits met hun subtabellen);
+  - de samples worden wav's in `sound/direct_sound_samples/rip/<game>/` (gedeeld per game, niet verkleind; ze staan al op ±10,5 kHz).
+- Running status zoals m4a: alleen commando's vanaf 0xBD nemen argumenten over.
+- `tools/grounded/mp2k_list.py` geeft per nummer de lengte, de loop en de lengte bij twee rondes, om te vergelijken met een soundtracklijst.
+- Getest met Wario Land 4 song 687: 35 KB, speelt in onze engine zonder pieken of overlopen. Daarna weer verwijderd: welk nummer welk is, volgt uit de MP3's van Jordi.
+
+### [v0.9.237] - Yoshi's Island-nummers zachter (geen vervorming meer)
+- Jordi (10 okt): "klinken goed, maar ze staan allemaal te hard, daarom krijgen ze distortion". De pieken kwamen tot 103–115 van de 127 (8-bit-mixer), met een RMS tot 2800.
+- Het mastervolume (`-V` in midi.cfg, vastgelegd in `SONGS` in `spc2gba.py`) staat nu per nummer zo dat de RMS ±1100 is, net als de andere eigen nummers:
+
+| Nummer | -V | Piek (van 127) |
+|---|---|---|
+| Flower Garden | 85 | 71 |
+| Athletic | 80 | 45 |
+| Overworld | 43 | 41 |
+| Fuzzy | 44 | 48 |
+| Castle | 49 | 50 |
+
+- Wario Land 4 song 687 bleek de Boss-muziek, niet 40 Below Fridge: matchen op duur is te onbetrouwbaar. Wacht op de MP3's van Jordi.
+
+### [v0.9.238] - Yoshi's Island: geen overload, valse tonen of dronken timing meer
+Jordi (10 okt): "alles behalve Athletic heeft nog een soort overload; Flower Gardens fluitje lijkt te hoog en een ander geluid; Athletic klinkt als een dronken versie; Castle is ook te hoog".
+- **Gecontroleerd:** de noten in de MIDI kloppen exact. Per SNES-stem solo afgespeeld (`spclog` heeft nu een mute-masker) en de toonhoogte gemeten: 0,0 halve toon verschil op alle melodische stemmen.
+- **Oorzaak:** de samples. SNES-instrumenten zijn vaak piepkleine golfjes met een loop van 16–112 samples. Rekken (bijstemmen) en verlagen naar 11 kHz maakten de looplengte gebroken en daarna afgerond. Dat gaf tot 1,5% valse toonhoogte (dronken, te hoog) en een loop die niet meer naadloos aansloot (zoem, overload).
+- **`spc2gba.py`:**
+  - samples worden niet meer gerekt; de fijnstemming staat in de samplerate van het bestand;
+  - de sample-amplitude van de SNES gaat in de velocity, zodat instrumenten hun onderlinge balans houden;
+  - de octaafcorrectie is weer weg, want die zat ernaast.
+- **`resample_wav.py`:**
+  - loops onder 128 samples worden niet verlaagd;
+  - langere loops worden periodiek geresampled, met een samplerate die de loop exact een heel aantal samples houdt.
+  - De 98 eigen samples met een loop die in v0.9.232 waren verlaagd, zijn uit git hersteld en opnieuw omgezet. Wallace, Mitch, Darkrai en Jirachi zijn gecontroleerd: geen pieken.
+- **Meting:** profiel per noot tegen het SNES-origineel:
+
+| Nummer | Overeenkomst |
+|---|---|
+| Athletic | 0,98 (was 0,95) |
+| Flower Garden | 0,79 |
+| Overworld / Fuzzy / Castle | 0,48–0,58, octaafverdeling gelijk |
+
+Bij Castle zijn de lage partijen nog wat te zacht.
+
+### [v0.9.239] - Yoshi's Island: SNES-filter op de samples, volume op de piek
+- Jordi (10 okt): "Flower Garden en Overworld hebben nog steeds overload".
+- Gemeten tegen de SNES-versie en de SMA3-versie: onze versies hadden veel meer ruisachtige energie boven 3 kHz. De SMA3-versie is opgenomen uit Jordi's minigsf's: de gsflib is de hele ROM, en de minigsf zet het nummer op 0x08002BA0.
+- **Oorzaak 1:** de SNES speelt samples met Gaussische interpolatie, en die dempt de boventonen in de sample-data zelf. Zonder die demping vouwen ze op de GBA terug als ruis. `spc2gba.py` filtert nu elke sample vooraf (`soften`, -6 dB bij 0,20 cycli per sample, loops periodiek). Flower Garden 6–10 kHz: 1,1% → 0,2% (SNES 0,3%).
+- **Oorzaak 2:** de vaste ruis van de 8-bitmixer valt op bij een laag volume. Overworld stond op -V43, met een piek van 40/127. Het volume staat nu per nummer op een piek van ±80/127 (onder de vervormingsgrens van ±90):
+
+| Nummer | -V | Piek | RMS |
+|---|---|---|---|
+| Flower Garden | 103 | 80 | 1300–1600 |
+| Athletic | 127 | 66 | ±1650 |
+| Overworld | 86 | 78 | ±2200 |
+| Fuzzy | 73 | 72 | ±1800 |
+| Castle | 71 | 80 | ±1300 |
+
+### [v0.9.240] - De "overload" ontleed; YI-drums op toonhoogte; vijf Mario Kart-nummers 1-op-1
+- Jordi (10 okt): "athletic is goed, maar de rest heeft echt dikke overload … alsof mn speakers eraan gaan". Diepgaand gemeten, met solo-opnames per spoor (SNES-stem tegen GBA-spoor) en de mixbuffer van de game zelf (links én rechts; de mGBA-audiobuffer geeft losse bursts die eerdere metingen vertekenden).
+- **Wat het níet is** (gemeten en uitgesloten):
+  - Overlopen (8-bit wrap-around): 0, links en rechts.
+  - Clippen.
+  - Klikken bij noten.
+  - DC-offset.
+  - Te veel laag.
+  - De interpolatie van de mixer: toonzones per sample schelen 0–4 dB, alleen op de laagste basnoten, voor +121 KB, dus niet gedaan.
+- **Wat het wél is:** de m4a-mixer telt elk kanaal op in een **8-bit-buffer** en rondt dus per kanaal af na het volume. Bij de gebruikelijke kanaalvolumes (mediaan 20–40 van 255, net als vanilla Route 101/119) geeft dat een ruisvloer van **−32 dB** onder het signaal die met de noten mee aan- en uitgaat, en dat klinkt als vervorming. Ruisvloer 3–8 kHz, GBA tegen SNES:
+
+| Nummer | GBA | SNES | Verschil |
+|---|---|---|---|
+| Overworld | −32 dB | −53 dB | +20 dB |
+| Fuzzy | −32 dB | −54 dB | +21 dB |
+| Castle | −33 dB | −52 dB | +19 dB |
+| Flower Garden | −33 dB | −44 dB | +11 dB (en +8 dB in 1–3 kHz) |
+| Athletic | −32 dB | −42 dB | +10 dB |
+
+  De ruis is overal even hard; de donkere, zachte originelen maskeren hem niet, Athletic is van zichzelf helder. Zachter zetten maakt hem relatief erger, harder zetten gaf eerder echte overloop: vandaar "niks aan veranderd". Vanilla verbergt hem door zachte partijen en bassen op de PSG-kanalen te zetten.
+- **Echte oplossing (voorstel, Jordi beslist):** een mixer die in 16 bit optelt en één keer afrondt met noise shaping ("HQ-mixer" van ipatix, MIT-licentie, gemaakt voor Pokémon; Golden Sun-aanpak). Uitgewerkt maar niet ingebouwd: externe code in de geluidsengine heeft Jordi's akkoord nodig. Kosten: ±2,5 KB IWRAM (ruimte maken door `gLink` naar EWRAM te verplaatsen).
+- **Gerepareerd in de YI-rips** (`spc2gba.py`):
+  - **Drums klonken 4,7 halve tonen te hoog.** `voice_directsound_no_resample` speelt een sample op de mixersnelheid (21.024 Hz), niet op zijn eigen rate. De YI-drums (16 kHz) spelen nu als gewone voice op toets 60. Gemeten: 0,0 halve toon verschil met de SNES.
+  - **Flower Garden-drums stonden 6 dB te hard:** de velocity werd geschaald op de piek van de ruwe sample, de wav op de piek na het SNES-filter (scherpe drumpieken verliezen daar tot 12 dB). Nu beide na het filter. Daardoor schuiven ook de andere velocity's iets (ook in Athletic, minimaal).
+  - **Volume zo hoog als veilig kan** (minder afrondingsruis): piek ±100–112 van 127 in plaats van ±80:
+
+| Nummer | -V oud | -V nieuw |
+|---|---|---|
+| Flower Garden | 103 | 127 |
+| Overworld | 86 | 123 |
+| Fuzzy | 73 | 102 |
+| Castle | 71 | 100 |
+| Athletic | 127 | 127 |
+
+- **Ontdekt, nog niet aangepast (Jordi beslist):** door dezelfde `no_resample`-regel spelen **alle vanilla-drumsamples (13.379 Hz) sinds de mixer op 21.024 Hz staat (v0.9.32) ±7,8 halve tonen hoger en 36% korter**. Dat zit in alle vanilla- en eigen nummers met die drumkits. Terugzetten kan per kit (gewone voice op toets 60), maar het verandert de klank van goedgekeurde nummers: eerst een A/B.
+- `recpcm.py` meet overlopen en piek nu op beide kanalen (las alleen rechts).
+- **Mario Kart: Super Circuit 1-op-1** (`mp2k_rip.py`), toegewezen met chroma-vergelijking tegen Jordi's mp3's (0,94–0,98):
+
+| Nummer | MKSC-song | Constante |
+|---|---|---|
+| Bowser Castle | 22 | `MUS_GROUNDED_MKSC_BOWSER_CASTLE` |
+| Boo Lake & Broken Pier | 27 | `MUS_GROUNDED_VS_BROKEN_PIER` |
+| Sunset Wilds | 26 | `MUS_GROUNDED_VS_SUNSET_WILDS` |
+| Lakeside Park | 32 | `MUS_GROUNDED_MKSC_LAKESIDE_PARK` |
+| Rainbow Road | 28 | `MUS_GROUNDED_MKSC_RAINBOW_ROAD` |
+
+  - Broken Pier en Sunset Wilds vervangen de oude MIDI-covers (619/620): Shy Guys en WILD MUSIC krijgen het origineel. De **Boos** (Commander Boo op Yoshi's Island, Boo in het Stadium) vechten nu op Broken Pier.
+  - Sky Garden zat niet tussen de kandidaten.
+  - De andere 8 proefrips zijn weg.
+
+### [v0.9.241] - Zeven legendary-intro's en Battle! Treasures of Ruin
+- **Battle! Treasures of Ruin** (`ruinous_theme.py`, `MUS_GROUNDED_VS_RUINOUS`), gemaakt door een agent: nabouw van het Scarlet/Violet-thema, 152 bpm, B met frygische C.
+  - Intro van 6,3 s met elektronische twinkelingen, daarna een loop van 65 maten.
+  - De drums zijn één grote composietslag op elke tel (eigen taiko, dreun, ka en inslag).
+  - Het ostinato blijft elektronisch; vanaf maat 21 komt er een koto bij (Jordi: "dan komt er een oosters instrument in"). Verder strijkers, hoorns, trompetfanfares op F#5 en de bas niet onder C2.
+  - Klinkt bij Wo-Chien, Chien-Pao, Ting-Lu en Chi-Yu. 5 eigen samples (±25 KB).
+- **Zeven legendary-intro's** (`legend_intros2.py`, `src/data/legend_intros2.h`), elk op de echte kaart waar de Pokémon staat (gerenderd uit de metatiles):
+  - **Articuno** (Frozen Depths): ijsvarens groeien over de grot; Articuno verschijnt achter het ijs, het vriest dicht en spat uiteen.
+  - **Zapdos** (Route 119): het Weather Institute in de regen; bij elke bliksem staat Zapdos dichterbij als silhouet, dan in kleur onder "FORECAST: 100% ZAPDOS".
+  - **Moltres** (Mt. Chimney): trillende hitte boven het lavameer; Moltres stijgt op in een vlammenring en duikt op je af.
+  - **Zacian:** drie witte zwaardsneden, het beeld splijt. **Zamazenta:** het schild glanst, dan Behemoth Bash met schokgolven (Mega Forest).
+  - **Xerneas:** grauw Glimwood, de kleur stroomt vanuit de heksenkring terug. **Yveltal:** een schaduw landt, de kleur trekt weg, Oblivion Wing kleurt rood en dan zwart.
+  - Samen ±36,5 KB, elk 1,5–2,1 s. De muziek blijft voorlopig de placeholder, behalve waar hieronder een eigen thema komt.
+
+### [v0.9.242] - Drie eigen legendary-thema's
+Gemaakt door een agent (`legends3_theme.py`). Alleen stock-samples, samen ±16 KB. Alle drie gemeten: 0 overlopen, piek 97–111.
+- **Battle! Zacian & Zamazenta** (`MUS_GROUNDED_VS_ZACIAN`), 152 bpm, B-klein.
+  - Een zwaardmotief (trompet, slag omhoog) en een schildmotief (hoorns, dalende halve noten in D-groot) met galopperende strijkers.
+  - Een duel als vraag en antwoord, daarna "Crowned": een hele toon hoger.
+- **Battle! Xerneas & Yveltal** (`MUS_GROUNDED_VS_XERNEAS`), 168 bpm.
+  - Eén melodie in twee gedaanten: leven in E-groot (strijkers, glockenspiel, harp) en dood in E-klein (distortiongitaar, hoorns, buisklok, half-time, vleugelslagen op PSG-ruis).
+  - Op het eind wisselen ze per twee maten.
+- **Battle! Uxie, Mesprit & Azelf** (`MUS_GROUNDED_VS_LAKE_TRIO`), 144 bpm, F#-klein.
+  - Drie motieven op één akkoordschema: kennis (kristallen 3+3+2 op glockenspiel + PSG), emotie (hobo met zuchten) en wilskracht (klimmende fanfare). Daarna klinken ze samen.
+- Volgens de nieuwe lessen: geen zachte DirectSound-noten (velocity ≥ 76), sub-bas op het PSG-golfkanaal, drums als gewone voice (niet `no_resample`).
+
+### [v0.9.243] - Area Zero en Battle! Area Zero
+Gemaakt door een agent (`areazero_theme.py`, één eigen sample `az_crystal`, ±10 KB).
+- **Area Zero** (`MUS_GROUNDED_AREA_ZERO`), nabouw van het Scarlet/Violet-thema, 120 bpm, Eb-klein, het hele nummer van 128 s.
+  - Het opent met alleen het kristal-arpeggio. Daarna pauzes met alleen belletjes, koorakkoorden Eb/B, de aria met drums, en een groove op een Eb-orgelpunt met koorzuchten.
+  - Jordi's feedback verwerkt:
+    - de lead is een GBA-blokgolf in plaats van een stem;
+    - koren als sfeer;
+    - de "uncanny" trilling nagebootst: de lead zingt ±0,4 halve toon hoog met een brede vibrato, net als in het origineel (uitzetten: `LEAD_DETUNE = 0`);
+    - de pauzes blijven staan.
+  - Bas op het PSG-golfkanaal (driehoek), nergens onder C2.
+  - Klinkt op alle zes Area Zero-kaarten.
+- **Battle! Area Zero** (`MUS_GROUNDED_VS_AREA_ZERO`), 150 bpm, remix voor alle paradoxen, Koraidon, Miraidon, Terapagos en wilde gevechten in Area Zero.
+  - Ook de trainerklasse `TRAINER_CLASS_ZERO_LAB` vecht erop (Jordi: "alle battle themes worden remixes van Area Zero"). Terugdraaien kan met één regel in `src/pokemon.c`.
+- Beide op -V127, gemeten: piek 96/101, 0 overlopen. De agent had -V085, met een piek van 65.
+
+### [v0.9.244] - Battle! Boo, Lakeside Park in de jungle, feedback verwerkt
+Jordi (10 okt): "Broken Pier is goed. Kan je die heel licht remixen zodat het net meer een battle theme klinkt?" en "broken pier dan behouden voor de boo house … en dan de battle theme voor Boos".
+- **Battle! Boo** (`broken_pier_battle.py`, `MUS_GROUNDED_VS_BROKEN_PIER`): een lichte battle-remix van de rip.
+  - Tempo 116 → 132 bpm.
+  - In de eerste 9 maten (in het origineel zonder drums) een stuwende laag uit de eigen MKSC-drumkit: kick op 1 en 3, snare op 2 en 4, hihat op de achtsten. Vanaf maat 10 speelt het originele drumspoor.
+  - Gemeten: piek 79, 0 overlopen.
+  - Klinkt bij de Boo-gevechten en bij WILD MUSIC "BROKEN PIER".
+- **Boo-huis** (Yoshi's Island): het origineel van Broken Pier als kaartmuziek (`MUS_GROUNDED_MKSC_BROKEN_PIER`, was `MUS_RG_POKE_MANSION`).
+- **Lakeside Park** voor wilde gevechten in Fortree Jungle en Mangrove Mire.
+- **Xerneas/Yveltal en het meertrio** terug op de placeholder-muziek. Jordi: Xerneas/Yveltal "veel te vrolijk", het meertrio valt onder een generieker thema, en hij bedenkt zelf een richting. De MIDI's blijven in `legends3_theme.py` bewaard. Zacian/Zamazenta blijft ("prima").
+- **Vanilla-drums blijven zoals ze zijn** (Jordi na de A/B: "drums aanpassen klinkt heel gek").
+- `tools/grounded/mp2k_timing.py`: noten, tempo en loop van een MP2K-nummer per tick uitlezen, voor remixes van rips.
+
+### [v0.9.245] - HQ-mixer (op proef)
+- Jordi (10 okt): "Ipatix HQ mixer kunnen we testen."
+- **Wat het is:** de HQ-mixer van ipatix (MIT-licentie, `src/m4a_hq_mixer.s`) vervangt de m4a-mixer.
+  - Hij telt alle kanalen op in een 16-bit-buffer en rondt één keer af naar 8 bit, met noise shaping. De oude mixer rondde elk kanaal apart af: de "overload".
+  - Bij te harde pieken klemt hij in plaats van om te slaan.
+  - Aan/uit: `M4A_HQ_MIXER` in `include/config/m4a_mixer.h`. De oude mixer staat er nog achter een `#if`.
+- **Instellingen:**
+  - reverb aan (onze nummers gebruiken `-R`);
+  - DMA uit (SoundMain draait in de VBlank-interrupt);
+  - een 16-bit mixbuffer van 1,4 KB;
+  - stackgrens `__iwram_bss_end` + 512 bytes (nieuw linkersymbool).
+- **Ruimte:** `gLink` (4 KB, linkkabel) is naar EWRAM verhuisd. De stack heeft nu 8,1 KB ruimte (was 6,5 KB).
+- **Gemeten:**
+  - **Ruisvloer** (dB onder het signaal; oud → HQ, SNES-origineel ter vergelijking):
+
+    | Nummer | 1–3 kHz | 3–8 kHz | SNES 3–8 kHz |
+    |---|---|---|---|
+    | Overworld | −32 → −38 | −36 → −42 | −53 |
+    | Fuzzy | −31 → −37 | −35 → −41 | −54 |
+    | Castle | −31 → −33 | −36 → −41 | −52 |
+    | Flower Garden | −30 → −34 | −35 → −39 | −44 |
+    | Athletic | −28 → −30 | −33 → −36 | −42 |
+
+  - **Volume en pieken:** gelijk aan de oude mixer (Overworld 108, Castle 110, VS Wild 88).
+  - **Kreten en geluidseffecten:** identiek (omhullende 0,978, spectrum binnen 0,2 dB).
+  - **Rekentijd:** sneller. Rayquaza-gevecht met filmintro: 34 vertraagde frames per 2400, tegen 46 met de oude mixer.
+- **Wat er overblijft** is de 8-bit-uitgang van de GBA zelf. Volgende stap als Jordi tevreden is: een hogere mixerfrequentie proberen.
+
+### [v0.9.246] - Treasures of Ruin v2, Area Zero v2
+- **Treasures of Ruin v2** (Jordi: "drum ritme is goed, voor de rest alles niet"):
+  - **Het lage tokkelinstrument** in de intro en vanaf ±31 s:
+    - gemeten als een biwa- of lage koto-achtige klank: sterke grondtoon met een felle 6e harmonische (de zoem), heraanslagen in 16en;
+    - Spleeter had het in de stem 'piano' gezet;
+    - eigen sample `ruinous_pluck` (5 keysplits, koto + shamisen-zoem).
+  - **Trompetten** helemaal weg.
+  - **Ostinato:** een bijna zuivere toon met meepulserende kwint (eigen sample `ruinous_ost`); de zaagtand-synth en de PSG zijn eruit.
+  - **Hoorns** weg; strijkers alleen nog onder de roffels.
+  - **Bas en drumritme** gelijk, de drums als gewone voice.
+  - -V100; gemeten: piek 108, 0 overlopen. Nieuwe samples ±55 KB.
+- **Area Zero v2:**
+  - de aria met detune en vibrato en de glijdende koorzuchten zijn weg;
+  - het koor speelt 2 stemmen als lange aangehouden tonen, zonder vibrato en zachter;
+  - piek 72 bij -V127.
+  - Jordi vindt de vocalen nog steeds te ver van het origineel. Volgende stap (de agent werkt eraan): het koor ("YEEEEHOOOO HO") en de aria vanaf ±46 s elk uit het origineel knippen en los A/B'en, zoals bij Tapu.
+
+### [v0.9.247] - Intro's v2: Zacian, Zamazenta, Xerneas, Yveltal zonder sprite
+Jordi wilde hun sprites niet in beeld.
+- **Zacian:** het Rusted Sword zweeft op de open plek. De roest valt er in schilfers af en het zwaard wordt roestvrij (zilverblauwe kling, gouden gevest). Dan schiet het door het beeld, laat een witte snee achter en het beeld splijt open.
+- **Zamazenta:** het Rusted Shield wordt roestvrij (rood en goud). Het beukt drie keer tegen het scherm: per klap een flits, schudden en groeiende barsten. Bij de derde klap breekt het glas.
+- **Xerneas:** een grote X van gewei in het grauwe Ballonlea. De vier lichtjes (geel, paars, rood, blauw) gaan een voor een aan en de kleur stroomt vanuit de heksenkring terug. Dan regenboogglinsters en Geomancy.
+- **Yveltal:** een grote zwarte Y met rode strepen daalt in de kring. De kleur trekt weg en rode veren worden naar de Y gezogen. Dan kleurt Oblivion Wing alles rood en wordt het zwart.
+- +9,9 KB. Item-art is 4× vergroot met Scale2x; grote objecten bestaan uit vier 64×64-sprites die samen schalen en draaien.
+
+### [v0.9.248] - Wario Land 4: acht nummers 1-op-1
+Jordi heeft de nummers benoemd in de luisterlijst: alle WL4-nummers met een loop, opgenomen uit de ROM zelf.
+- Gerript met `mp2k_rip.py`:
+
+| Constante | WL4-song |
+|---|---|
+| `MUS_GROUNDED_WL4_MYSTIC_LAKE` | 655 |
+| `_MONSOON_JUNGLE` | 658 |
+| `_TOXIC_LANDFILL` | 660 |
+| `_40_BELOW_FRIDGE` | 662 |
+| `_TOY_BLOCK_TOWER` | 663 |
+| `_CRESCENT_MOON_VILLAGE` | 667 |
+| `_ARABIAN_NIGHT` | 668 |
+| `_FIERY_CAVERN` | 670 |
+
+- Samen ±80 KB.
+- **Palm Tree Paradise** (song 651) geschrapt: alleen voor dat nummer kostte het 361 KB aan samples (Jordi: "niet heel belangrijk").
+- Nog nergens gekoppeld. Voor Wario's thema denkt Jordi aan Toxic Landfill of Fiery Cavern.
+- Ook benoemd, niet gerript: 636 introscherm, 638/639 overworld, 654 bijenlevel, 656/657 Mystic Lake-delen, 661 Pinball Zone, 681/800 Hurry Up, 687–689 Boss.
+
+### [v0.9.249] - Wario Land 4-nummers op hun plek
+Gekozen door Jordi:
+- **Arabian Night** in alle verdiepingen van **Mirage Tower** (was het Mt. Chimney-thema). Jordi wilde de plek met geesten: Yamask, Galar-Yamask, Golett, Cofagrigus en Runerigus wonen daar.
+- **Toy Block Tower** in de **Mauville Game Corner** (was het vanilla Game Corner-thema).
+- **Monsoon Jungle** als kaartmuziek in **Fortree Jungle** en **Mangrove Mire** (was het Route 119-thema; Route 119 zelf houdt zijn thema). De wilde gevechten daar blijven op Lakeside Park.
+
+### [v0.9.250] - Wario vecht op Fiery Cavern
+- **Wario** (eindbaas in het fort op Yoshi's Island, en in het Stadium) vecht op **Fiery Cavern** uit Wario Land 4 (Jordi: "perfect voor Wario thema"). Een eigen Wario-intro is in de maak: knoflook, de grote W, Wario in poses.
+- **Toxic Landfill** (Wario Land 4) is een nieuwe keuze bij WILD MUSIC en TRAINER MUSIC, als "LANDFILL" (Jordi: "een goed ander battle theme").
+
+### [v0.9.251] - Wario-intro
+- Een eigen gevechtsintro voor **Wario**, in het fort op Yoshi's Island en in het Stadium (`B_TRANSITION_WARIO`, `wario_intro.py`, `src/data/wario_intro.h`), naar het idee van Jordi. Achter alles draait een stralenkrans in geel en paars. Duur ±2,3 s, ±12,6 KB.
+  1. Een knoflookbol wordt in drie happen opgegeten (met tandafdrukken, een schok en een bijtgeluid).
+  2. Een grote gele W met paarse rand dreunt erin als een ground pound.
+  3. Wario stempelt er in drie poses in: grijns, dubbele biceps en opzij. Dit is de echte GBA-art op 3×.
+  4. De W komt terug en groeit tot hij het hele beeld vult, wit, gevecht.
+
+### [v0.9.252] - Area Zero v4 en Battle! Area Zero v2
+- **Area Zero v4** (Jordi: het koor "loopt de hele tijd", de aria "hapert en laat los", de piepjes missen noten, en "vanaf 1:07 een ander nummer").
+  - **Kanaalroof was het niet.** Gemeten met een kanaallog per frame: maximaal 9 kanalen, 0 afgekapte noten. De oorzaken zaten in het arrangement.
+  - **Koor:** geknipt tot 2 s uit het origineel met een loop van ±1 s en een gelijk-vermogen-crossfade (was 0,25–0,42 s, hoorbare herhaling). De roepen sluiten nu aan, zonder stilte ertussen.
+  - **Aria:** langere stukken uit het origineel (F5 uit m34, Bb4 uit m30), loops 1,06 en 1,42 s, en geen loslaten meer vóór de volgende noot.
+  - **Stem en koor op 16 kHz** (niet meer dof); uitgezonderd in `resample_wav.py --all`.
+  - **Belletjes** klinken door zoals in het origineel (±0,8 s); de PSG-echo is weg.
+  - **Geraden lagen weg:** de "piano"-arpeggio's (m24–39) en het blokgolf-ostinato vanaf m40 (het "andere nummer").
+  - Gemeten: piek 64. Chroma tegen het origineel: koor 0,97, aria 0,86. Samples ±570 KB.
+- **Battle! Area Zero v2**, naar de Area Zero wild battle uit Scarlet/Violet (aangeleverd door Jordi).
+  - 148 bpm. De lead speelt de aria op battle-tempo, met de stem uit het origineel. Koorakkoorden op Eb/B, de groove van 681, een pauze met belletjes, en een loop van ±48,6 s.
+  - Geen nieuwe samples. Gemeten: max. 11 kanalen, 0 afgekapt, piek 89.
+
+### [v0.9.253] - Battle! Area Zero v2 geschrapt
+- Jordi: "Die vs area zero mag je schrappen … we maken eerst de main theme af".
+  - `MUS_GROUNDED_VS_AREA_ZERO` speelt weer de placeholder (Kanto-legendary).
+  - De paradoxen, Koraidon, Miraidon en Terapagos houden de koppeling, zodat het nieuwe thema daar straks vanzelf klinkt.
+  - Wilde gevechten in Area Zero volgen weer de gekozen WILD MUSIC.
+  - Het Zero Lab krijgt weer zijn oude placeholders (Frontier Brain, het alarm Kanto-legendary).
+
+### [v0.9.254] - Wario-intro v2: een WarioWare-reeks
+Jordi: "doe de hele intro opnieuw en maak het heel goofy en Wario Ware achtig … kijk in Wario Ware naar de filmpjes … Wario moet echt als een soort gekke superheld/alleskunner uit de intro komen".
+- Een snelle reeks microgame-kaarten. Elke kaart heeft een harde kleur met een patroon, een opdracht in grote letters, en onderin de WarioWare-bomtimer met een opbrandende lont.
+  1. **EAT!** Wario op de bank eet een knoflookbol.
+  2. **INVENT!** Hij krijgt het "Game W Inc"-idee, met dollartekens in de ogen.
+  3. **FLY!** Hij vliegt door de lucht.
+  4. **FLEX!** De dubbele biceps.
+  5. De bom ontploft.
+  6. **WIN!** De grote grijnzende close-up.
+  7. De W neemt als superheldenembleem het beeld over.
+- De art komt uit de filmpjes van WarioWare, Inc., schoon gerenderd uit VRAM/OAM/BG in de emulator (`warioware_rip.py`, reproduceerbaar). De flex is de bestaande art.
+- ±2,7 s, ±25 KB.
+
+### [v0.9.255] - Treasures of Ruin v3: samples uit het origineel
+Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt elke melodische laag stukken die uit het origineel zelf geknipt zijn; geen FluidR3 of synth meer. Per laag een losse A/B.
+- **Laag instrument in de intro** (sterke grondtoon, felle 6e harmonische, ±5 Hz vibrato): E2- en B3-knipsels, met de gemeten noten in maat 1–8.
+- **Pad in de rustige maten:** een halve maat uit maat 67 (B3 + F#4 met de C4), per akkoord getransponeerd.
+- **De middenstem in maat 13–64:** knipsels per akkoord (B, E, G, Gm, Bm, F#, D/A, Em, A), per halve maat.
+- **Bas:** een E2-knipsel uit het origineel, in het gemeten ritme.
+- **Drums:** ritme ongewijzigd.
+- **Weggelaten:** de onherkenbare hogere lijn, de strijkers, de PSG en de synth.
+- Gemeten: piek 83, 0 overlopen, max. 11 kanalen. Samples 135 KB.
+
+### [v0.9.256] - Area Zero v5
+- **Piepjes:** de noten klopten, maar ze klonken te kort. In het origineel klinkt elke belnoot ±1 maat door, als een wolk van tonen. De kristalbel is opnieuw gemaakt (uitklink 1,3 s) en klinkt nu door tot dezelfde toon terugkomt. Chroma tegen het origineel: 0,88.
+- **Koor:** luider (spoorvolume 80 → 100), verder ongewijzigd. Een hogere rate heeft geen zin: de stem heeft boven 7 kHz bijna geen energie.
+- **Aria bij 1:10–1:15:** daar zat een gat in de transcriptie. Spleeter had dat stuk in de 'other'-stem gezet; nu uit de mix gemeten en aangevuld.
+- **Aria vloeiender:** 5 hele frasen uit het origineel geknipt, elk met de eigen aanzet, glijders en uitklink, gespeeld op de eigen toonhoogte. Chroma 0,89.
+- Gemeten: max. 10 kanalen, 0 afgekapt, piek 67. De aria-frasen kosten ±377 KB; er is nog 1,96 MB vrij.
+
+### [v0.9.257] - Mitch v7: duurdere instrumentatie
+- "Goedkoop" gemeten: alle synths hadden < 2% energie boven 2 kHz, de horn was één oscillator met een loop van 20 ms, en `resample_wav.py --all` had de v6-horn van 21 naar 11 kHz teruggezet. Mixniveau stond op -V066.
+- Drie nieuwe lead-kandidaten (`mitch7a/b/c_*`: A supersaw-stab, B screech/hoover = standaard, C vocal chop): gestapelde stemmen in één sample op 16 kHz (`KEEP_16K` in `resample_wav.py`), plus nieuwe `mitch7_pluck` en `mitch7_reese_raw`. Kiezen met `python3 tools/grounded/mitch_theme.py [a|b|c]`.
+- Noten, ritme en drums zijn gelijk aan v6; alleen de roffelslagen op/na een kick in de build-ups gaan naar ×0,5. Daardoor kan het niveau van -V066 naar -V092 (piek 98, geen overflows).
+- Opgeruimd: `mitch6a/6b_brass_*`, `mitch3_pluck`, `mitch5_reese_raw`.
+
+### [v0.9.258] - HQ-mixer definitief
+- De HQ-mixer (v0.9.245) blijft aan: hij lost de overload in de Yoshi's Island-nummers op (Jordi). Hij staat niet meer op proef.
+
+### [v0.9.259] - Battle! Pokémon Tower
+- Nieuw gevechtsthema `MUS_GROUNDED_VS_POKE_TOWER` (687): een remix van het Lavender Town-thema met de vorm van het origineel, op 160 bpm. Het speelt bij alle gevechten in de Pokémon Tower: wilde Pokémon (ook de GHOST-gevechten), de Channelers en Agatha (die had tot nu toe de Elite Four-muziek).
+- Opbouw: chromatische intro, de melodie op orgel → strijkers → koor ("de geesten") → trompet. Het arpeggio en de "jammerlijn" spelen op PSG; eigen kit met Japanse percussie (taiko, kotsuzumi, atarigane, hyoushigi). Alleen stock-samples: ±5 KB.
+- Generator: `tools/grounded/tower_theme.py`.
+
+### [v0.9.260] - Boo-intro
+- Nieuwe gevechtsintro `B_TRANSITION_BOO` voor Commander Boo (Yoshi's Island) en de Stadium-Boo, op de maat van Battle! Boo.
+- Het verloop: vijf Boos voor het Yoshi's Island-spookhuis houden hun handen voor hun ogen (één gluurt even) → Kamek scheurt op zijn bezem voorbij en schiet zonder om te kijken zijn spreuk (cirkel, driehoek, vierkant) op de middelste → witte flits en de Boo zwelt op → poef: hij draait zich papierdun om als Commander Boo, tong uit → de rest slaat de handen weer voor de ogen en gluurt toch → het gevecht begint.
+- Art uit Super Mario Advance 3 (`tools/grounded/sma3_boo_rip.py`, `boo_intro.py`, code in `src/data/boo_intro.h`). Kost ±10,5 KB.
+
+### [v0.9.261] - Shy Guy-intro
+- Nieuwe gevechtsintro `B_TRANSITION_SHY_GUY` voor de Shy Squad (Yoshi's Island), de vier Stadium-Shy Guys en de woestijn-Shy Guy, op de maat van Sunset Wilds.
+- Het verloop: zeven Shy Guys (Stilt Guy, Fat Guy, Spear Guy, rood, een struik, geel, Fly Guy) staan in level 1-1 droog op de maat te wiebelen → op tel 3 staan ze stokstijf stil → de rode draait zich om en krijgt het trainer-"!" boven zijn hoofd → de rest kijkt hem één voor één aan (er gluurt een Shy Guy uit de struik) → close-up onder een spotlight, trillend → een Yoshi's Island-hintbord valt in beeld: "Wait. / It's my turn." → witte flits op de inzet van de melodie, het gevecht begint.
+- Art uit Super Mario Advance 3 (`tools/grounded/yi_shyguy_rip.py`, `shyguy_intro.py`, code in `src/data/shyguy_intro.h`). Kost ±14 KB; de intro gebruikt ±600 van de 1024 sprite-tiles.
+
+### [v0.9.262] - Battle! Legendary Pokémon (generiek thema)
+- Nieuw thema `MUS_GROUNDED_VS_LEGENDARY` (670) voor alle legendaries en mythicals zonder eigen thema. Het is in Hoenn-stijl geschreven: E-klein op 176 bpm, een pauk-ostinato zoals de Weather Trio, trompetten en hoorns zoals de Elite Four, strijkers, buisklokken en een chromatische bas. Opbouw: intro met koperroep → thema → strijkers → half-time → fanfare die per twee maten een halve toon stijgt → climax een hele toon hoger. Alleen stock-samples: ±6 KB.
+- Het thema speelt nu bij:
+  - Latias/Latios, Manaphy/Phione, Necrozma (alle vormen), Xerneas/Yveltal, Meloetta, Zygarde, Pecharunt, Zeraora, Celebi;
+  - het meertrio, Eternatus, Calyrex en de paarden, Volcanion, Cresselia, de Loyal Three, Ogerpon, Enamorus;
+  - de Swords of Justice + Keldeo, Reshiram/Zekrom/Kyurem.
+- Ongewijzigd: de Kanto-/Galar-vogels, Dialga/Palkia, Arceus, Mew en de Ultra Beasts (die krijgen nog een eigen thema), plus Deoxys, de Regi's en alles wat al een eigen thema had.
+- Generator: `tools/grounded/legendary_theme.py`.
+
+### [v0.9.263] - Battle! Arceus
+- Nieuw thema `MUS_GROUNDED_VS_ARCEUS` (676), noot voor noot uit Jordi's DPPt-MIDI (`Battle_Arceus.mid`): clusterstoten met echo, pauken-ostinato (3+3+2), strijkersclusters, toms en bekkens; 150 bpm, loop van maat 10 tot 50. Alleen stock-samples (koper, strijkers, pauken): ±3,6 KB. Gekoppeld aan het gevecht in de Hall of Origin; de transitie blijft dezelfde.
+- Uit de MIDI weggelaten: een gedetunede kopie van het pauken-ostinato (stereo-chorus die alleen kanalen kost) en echo's onder velocity 20. "Track 10" is gelezen als drumspoor.
+- Generator: `tools/grounded/arceus_theme.py` (leest de MIDI van `origin/master`).
+
+### [v0.9.264] - Battle! Mew
+- Nieuw thema `MUS_GROUNDED_VS_MEW` (679): een remix van Battle! Mewtwo met dezelfde vorm en melodiecontouren, maar omgedraaid van karakter. A-lydisch/groot in plaats van mineur/frygisch, 132 bpm.
+  - **A:** het dreigende staccato-motief is een vraag-en-antwoord geworden (fluit vraagt, glockenspiel antwoordt), met elke 4e maat een ritmisch hikje.
+  - **B:** de "imperfecte kloon"-echo is een nieuwsgierige variatie.
+  - **C:** de hook in groot met hoog koor en tamboerijn.
+  - **Intro:** een kort "DNA-motief".
+- Instrumenten: fluit, glockenspiel, harp, fingered bass, koor en PSG; geen orgel of blokgolf-lead. Hergebruikt de voicegroup van Mewtwo (alleen stock-samples): ±3 KB. Gekoppeld aan het Mew-gevecht; `MUS_VS_MEW` blijft voor Jirachi en de muziekopties.
+- Generator: `tools/grounded/mew_theme.py`.
+
+### [v0.9.265] - Battle! Dialga/Palkia
+- Nieuw thema `MUS_GROUNDED_VS_DIALGA_PALKIA` (678), uit Jordi's MIDI (`DialgaPalkiaMIDIBeta.mid`): 180 bpm, C-pedaal, parallelle kwinten en kwarten. Strijkers, hoorn, trompet, orgel, EP, synthbas en pauken; het arpeggio en de echo op PSG. Alleen stock-samples: ±9 KB. Gekoppeld aan Dialga en Palkia (ook de Origin-vormen) op Spear Pillar; transities ongewijzigd.
+- De MIDI is opgeschoond, niet hergecomponeerd: verschoven echo- en kopiesporen op de tel gezet, rare programma's vervangen (bijv. een paukenpartij op "synth strings"), vier crashes toegevoegd. **Na maat 48,5 ligt alles een halve maat verschoven** (zo in de MIDI, zo gelaten): Jordi controleert tegen het origineel.
+- Bij het samenvoegen schoof de songtabel twee plekken op (Dialga en Mew); rechtgezet en per constante gecontroleerd.
+- Generator: `tools/grounded/dialga_theme.py`.
+
+### [v0.9.266] - Battle! Ultra Beast
+- Nieuw thema `MUS_GROUNDED_VS_ULTRA_BEAST` (677), een eigen compositie op 168 bpm met de regels van een battle theme (intro, bas-ostinato in 3+3+2, één duidelijke lead) maar "uit een andere dimensie".
+  - **Toonladder:** het thema is octatonisch en komt terug een kleine terts hoger en lager, in dezelfde tonen, zodat het verschuift zonder ergens aan te komen. Een heeltoons deel in 7/8 en een "glitch-dimensie" op een Db-pedaal.
+  - **Lead:** een glazen FM-klank met kwarttoon-buigingen.
+  - **Spiegelbeeld:** een PSG-echo die net niet klopt (3 zestienden later, 0,3 halve toon te hoog) en koorstemmen die tegengesteld wegbuigen.
+  - **Glitches:** een omgekeerde zwelling naar elke sectie, glas-stotters en sweep-zaps.
+- Twee eigen samples (`ub_glass`, `ub_swell`, 11 kHz): ±25 KB in totaal.
+- Gekoppeld aan de negen Ultra Beasts in Ultra Space (stonden op het Regi-thema) en aan elk ander gevecht met een UB (Poipole/Naganadel, wild). Necrozma blijft op het generieke legendary-thema.
+- Generator: `tools/grounded/ub_theme.py` + `ub_samples.py`.
+- De songtabel schoof bij het samenvoegen opnieuw op; `songtable_check.py` ving het, rechtgezet.
+
+### [v0.9.267] - Ultra Beast: lead minder aanwezig
+- Jordi: "die main klank iets minder aanwezig, die kan na een paar min irriteren". De glazen lead gaat van 110 naar 80 (±−2,7 dB), de glas-stotters van 92 naar 80 en de PSG-echo van 36 naar 28. Noten en vorm zijn ongewijzigd.
+- Goedgekeurd door Jordi: de Boo-intro, Battle! Pokémon Tower, de Shy Guy-intro, het generieke legendary-thema, Arceus (de in-game versie) en Dialga/Palkia.
+
+### [v0.9.268] - Battle! Mew v2
+- Jordi over v1: "die tonen klinken raar, te hoog, niet in een goed tempo, maak het meer fluïde".
+  - **Toonsoort:** gewoon A-groot (geen lydische D# meer). De glockenspiel is eruit; motief en hook liggen een octaaf lager (max. E5) op fluit en strijkers unisono.
+  - **Groove:** 156 bpm in een rollende 4/4-groove (geen four-on-the-floor); het hikje elke 4e maat is weg.
+  - **Vloeiend:** legato-frases van 2 maten, doorrollende harp-arpeggio's en een golvende bas; de breakdown loopt zacht door.
+- Dezelfde vorm en Mewtwo-contouren. Eigen voicegroup `grounded_mew` (Mewtwo + kortere harp-release): ±3,5 KB.
+- Alternatief klaar: kandidaat B (12/8 op 120 bpm), via `FEEL = '128'` in `tools/grounded/mew_theme.py`.
+
+### [v0.9.269] - Ultra Beast v3 + Shy Guy-intro per tegenstander
+- **Ultra Beast:** de glazen lead pauzeert vanaf 23 s, in de hele A2-sectie (±11 s). Dan draagt alleen de PSG-echo het thema, een octaaf hoger; in B, C en de climax (D) komt hij terug. Jordi: "de glazen lead mag op een gegeven moment al dan niet tijdelijk verdwijnen".
+- **Shy Guy-intro:** de Shy Guy die zich omdraait, het "!" krijgt, in de close-up staat en "Wait. / It's my turn." zegt, is nu de Shy Guy die je gaat bevechten. De variant wordt gekozen op de naam en op de kleur van de trainerfoto.
+  - **Rood:** Stadium-rood, de woestijn, strandwacht A.
+  - **Groen:** Stadium-groen, strandwacht B, Snifit, de jungle.
+  - **Roze:** Bouncer, Groovy Guy.
+  - **Zwart:** Stadium-zwart, Camp A2, Ninja, Miner.
+  - **Fly Guy:** Stadium-roze, Camp A1.
+  - **Spear Guy:** Camp B1.
+  - Kleuren via paletwissels; Fly Guy en Spear Guy wisselen van plek met de rode. +1,7 KB; 672 van 1024 sprite-tiles.
+
+### [v0.9.270] - Battle! Mew v3: Mewtwo's broer
+- Jordi: "Mewtwo's theme is super vet, dat mag iets minder dreigend, wat neutraler" en "Mew heeft alsnog hoge stats". De koers van v2 ("wolkenthema") is losgelaten.
+- **Wat van Mewtwo blijft:** het arrangement 1-op-1: 128 bpm four-on-the-floor, de jagende 16e-bas, gated trance-strijkers, koor, pauken en PSG-lagen, en dezelfde vorm.
+- **Wat minder dreigend is:**
+  - geen frygische Bb of verminderde E meer (A: Am-G-Am-Em; B: D-Am-F-G);
+  - de "imperfecte kloon"-echo staat nu zuiver een octaaf lager (Mew is het origineel);
+  - het kerkorgel is weg; de lead staat op blokgolf + trompet in een lager register;
+  - een korte intro waarin Mew verschijnt.
+- ±3 KB. Les (MUZIEK.md): bij een remix van een goedgekeurd nummer alleen het karakter veranderen, niet tegelijk tempo, groove en instrumenten.
+
+### [v0.9.271] - Area Zero v6–v8 + Ultra Beast v4
+- **Area Zero** (Jordi: "tot 1:18 geweldig … voor de rest klopt het nummer perfect"):
+  - **Piepjes:** de belletjes korter uitgestorven (zoals in het origineel), met echo; het geraden hoge arpeggio en het deuntje vanaf 1:18 zijn weg.
+  - **Begeleiding:** komt van maat 8 tot 40 uit het origineel ('other' + 'bass', later ook 'drums'), in aansluitende stukken, zodat de vervormde akkoordklank op 13 s doorklinkt en de glans terugkomt.
+  - **Mix en blazers:** de intro-belletjes staan 18 dB zachter en alle lagen staan in de verhoudingen van het origineel. De blazers beginnen samen met de stem.
+  - **Klank:** knippen op 16 kHz met een EQ die de demping van de GBA-keten compenseert.
+  - Aria en koor zijn ongewijzigd. Kost samen ±560 KB extra; er is nog **1,31 MB** ROM vrij.
+- **Ultra Beast v4:** de glazen lead pauzeert nu ook in de eerste helft van B. Hij zwijgt nu ±28% van de loop (was ±20%). Goedgekeurd: "dan zijn we er".
+- Goedgekeurd: de Shy Guy-varianten en Mew v3.
+
+### [v0.9.272] - Treasures of Ruin v4–v6
+- Jordi: "gaat helemaal goed, tot aan 32 sec". Alle lagen zijn nu uit het origineel geknipt.
+  - **Intro (maat 1–4):** het origineel zelf, 70 KB, goedgekeurd.
+  - **lo en ostinato:** als frase uit de stems, met de diepe bourdon-strijker.
+  - **Pad:** een liggend akkoord per maat (geen "vastslaande cd" meer).
+  - **Bas:** noot voor noot uit de basstem.
+  - **Melodie:** de ontbrekende aangehouden roep (maat 5–12) en de hoge ostinatolijn (maat 13–20) zijn erbij. Daardoor zit maat 5–20 tot 4 kHz binnen ±3 dB van het origineel.
+  - **Strijker vanaf 32 s:** klopt nog niet; Jordi hoort blazers. Volgt in v7.
+- Samples voor dit nummer samen ±367 KB. Er is nog **1,08 MB** ROM vrij.
+
+### [v0.9.273] - Compressie van eigen muzieksamples + Area Zero v9
+- **DPCM-compressie:** 248 eigen muzieksamples gaan nu gecomprimeerd (4 bit, de helft van de grootte) in de ROM. De HQ-mixer speelt ze af; loops werken.
+  - Jordi na een A/B van Mitch: "ik hoor geen verschil … dat soort dingen zijn prima".
+  - Niet gecomprimeerd: drums (aanzet), de aria, het koor en de stem van Area Zero, en samples < 4 KB.
+  - Lijst en regel: `sound/compressed_samples.mk` (opgenomen in `audio_rules.mk`).
+  - Vrije ROM-ruimte van ±1,0 naar ±2,6 MB.
+- **Area Zero v9:**
+  - **Vanaf 1:18 (maat 40):** het "luie" stuk had geen 16e-glans en hi-hats. Eén knip uit het origineel (maat 44–45, alleen boven 2 kHz) speelt er nu elke 2 maten onder; de PSG-hi-hats zijn weg.
+  - **Helderder:** alle knippen hebben +2 dB boven 3 kHz.
+  - **Bugfix:** een kitnoot die direct opnieuw begint, werd door mid2agb tot 1 tick ingekort.
+
+### [v0.9.274] - Debug: Zone warp naar elke kaart + bladeren met links/rechts
+- **Debugmenu Utilities > "Zone warp…":** een warp naar elke kaart van de game (718 kaarten), per kaartgroep. Eerst de eigen gebieden (Eilanden/quests, Spacetime met o.a. Yoshi's Island, Area Zero, de meren en Spear Pillar, Ultra Space), daarna alle vanilla-groepen. Je komt uit op warp 0 van de kaart (zonder warps: het midden), zonder dat je eerst iets hoeft te clearen.
+  - Generator: `tools/grounded/debug_zone_warps.py` (opnieuw draaien na nieuwe kaarten).
+  - Getest: warp naar Mirage Bazaar.
+- **Alle debuglijsten:** links/rechts bladert een pagina terug of verder.
+- **Compressie:** de twee Yoshi's Island-samples gaan niet meer gecomprimeerd (Jordi hoorde Athletic misschien wat dof); ±23 KB extra.
+
+### [v0.9.275] - Intro's: Dialga, Palkia, Arceus, Mew
+- **Dialga:**
+  - De echte wandklok uit de slaapkamer verschijnt, op de echte tijd. De wijzers draaien steeds sneller en staan op tel 6 stil op 12:00.
+  - Blauwe Dialga-vonken omringen de klok, die oplost in een blauwe spiraaltunnel; de wijzers worden de tunnel in gezogen.
+- **Palkia:**
+  - Echte kaartbeelden van Littleroot, Petalburg, Fortree, Mossdeep en Sootopolis wisselen op de tel, terwijl roze/paars vanaf de randen binnenkruipt.
+  - Daarna lopen de steden door elkaar tot complete chaos, ±12 frames heel duidelijk Spear Pillar, en een roze ruimtetunnel die in banden scheurt (met kreet).
+- **Arceus:**
+  - De wereld trilt op de eerste stoot van het nummer, heilig licht kruipt binnen en de wereld vervormt tot wit-goud.
+  - Het Arceus-teken (uit Jordi's afbeelding) verschijnt op tel 8 met draaiende stralen, vonken en vallende sterren, slaat nog eens in op tel 9 en op tel 15 dominant, met een fade naar wit; het gevecht begint op tel 16.
+  - Zonder de standaardflits vooraf.
+- **Mew:**
+  - Guyana bij zonsopgang: tafelbergen met een waterval, mist, regenwoud en een rivier, in lagen scrollend. Een roze glinstering schiet door het bos.
+  - Vlak voor het gevecht zwiept Mews staart (uit zijn echte sprite) door beeld.
+- Samen ±47 KB (de klok en de effecten stonden al in de ROM). Code: `src/data/legend_intros_dp.h`, generator `tools/grounded/legend_intros_dp.py`.
+
+### [v0.9.276] - Treasures of Ruin v8
+- Jordi over v7: "32 sec komt perfect erin", maar er zat een loop van later in het nummer tussen (34–35 s), het kapte af (37, 41, 48–49, 56 s) en 1:23–1:43 liep niet lekker.
+- Vanaf maat 21 speelt de stem 'other' zelf, elke maat op zijn eigen plek; geen enkele maat wordt meer door een andere vervangen.
+- **Geen afkappen:** stukken van 2 maten, om en om op twee sporen, die 60 ms doorlopen en naadloos overvloeien.
+- **Maat 53–64:** de hoge laag van de opbouw en de roffels zit er nu in.
+- **Stukken op 8 kHz, DPCM:** gelijkenis met het origineel 0,86 (maat 21–52) en 0,74 (maat 53–69). Samples voor dit nummer ±447 KB; ROM vrij 2,35 MB.
+
+### [v0.9.277] - Area Zero v10
+- Kwaliteit voorop (Jordi: "die eerste is denk ik gewoon zuinigheid geweest").
+  - **Begeleiding:** van maat 1 tot 64 komt alles uit het origineel ('other' + 'bass', vanaf maat 24 ook 'drums'). De eigen strijkers, PSG-bas, drumkit en kristalbelletjes zijn weg.
+  - **Blijft:** koor en aria (goedgekeurd) en de lead in maat 36–39.
+  - **Maat 40–53:** per maat de best passende maat uit het origineel; maat 54–64 is één doorlopende knip.
+- **Meting per 10 s tegen het origineel:** niveau binnen ±0,6 dB, nergens doffer, chroma gemiddeld 0,95.
+- **DPCM:** de zachte belletjeswolk en de intro (`az_bells_0`, `az_bells_8`) blijven ongecomprimeerd, omdat de ruis daar maar 8–14 dB onder het signaal zat; de luide knippen wel (ruis 22–24 dB eronder).
+- ±+399 KB; ROM vrij 2,03 MB.
+
+### [v0.9.278] - Intro's: Calyrex & paarden, Celebi, meertrio, Meloetta, Lati's, Zeraora, Cresselia, Necrozma, Zygarde, Galar-vogels
+- Alles in C getekend plus bestaande gevechtsanimatie-art, op de maat van het generieke legendary-thema: ±28 KB samen.
+  - **Calyrex:** een western bij zonsondergang, met hoefafdrukken op de pauken en een lasso. Ijs- en spookvarianten voor Calyrex-Ice/Shadow.
+  - **Glastrier:** ijsstappen en vorst over het scherm.
+  - **Spectrier:** paars spookvuur in elke afdruk.
+  - **Celebi:** de kaart in vier GBC-groenen, GS-flikkeren, bladeren, een groene beschermkoepel en de GS-spiraal.
+  - **Meertrio:** een mistig meer met rimpelingen op de tel, daarna een kleurwas: Uxie geel, Mesprit roze, Azelf blauw.
+  - **Meloetta:** het scherm loopt vol noten (3 → 160).
+  - **Latias/Latios:** eonlicht en een dromerige rood-wit of blauw-wit kleurwas.
+  - **Zeraora:** elektrische klauwhalen en een poot die het scherm laat barsten.
+  - **Cresselia:** de maan rijst en wast vol, met maanmist.
+  - **Necrozma:** een zwart prisma zuigt het licht en de regenboog op.
+  - **Zygarde:** een groene Zorro-Z en het beeld splijt.
+  - **Galar-vogels:** Articuno in psychisch paars (de Kanto-intro), Zapdos sprint en trapt, Moltres met zwarte vlammen en Fiery Wrath.
+- **Bugfix in deze intro's:** de minuutlijke dag/nacht-update zette midden in een intro de wereldpaletten terug.
+- Code: `src/data/legend_intros_cheap2.h`.
+
+### [v0.9.279] - Intro's: Swords of Justice, Ultra Beasts, paradoxen, Koraidon/Miraidon, Eternatus, Marshadow, Terapagos, Pecharunt
+- Alleen code en bestaande art: ±22 KB.
+  - **Cobalion/Terrakion/Virizion/Keldeo:** twee onzichtbare zwaardhalen op de tel en het beeld valt in vier stukken uiteen.
+  - **Ultra Beasts (alle 11):** interdimensionale vervorming (scanlines, kleursplitsing, glitchband, inversies) en een Ultra Wormhole.
+  - **Paradoxen (22):** de wereld flikkert tussen verleden (sepia, filmkorrel, krassen) en toekomst (cyaan, scanlines, digitale blokken) en kiest dan het tijdperk van de soort. Verleden sluit als een oude film-iris, toekomst als een CRT die uitgaat.
+  - **Koraidon / Miraidon:** een echte past warp (amberkleurige tijdtunnel) en future warp (cyaan/violet raster-tunnel).
+  - **Eternatus:** een rood-paarse apocalyps, energiezuilen en een barst die als een oog van rood licht opengaat.
+  - **Marshadow:** een schaduw met grijpende vingers neemt het scherm over (hij vecht nergens wild; de intro staat klaar).
+  - **Terapagos:** draaiende Tera-kristallen, het Tera-teken en een Stellar-flits.
+  - **Pecharunt:** paarse nevel, gifbellen, stuiterende Pecha-bessen en gifkettingen.
+- Alle paradoxen hebben de intro nu ook bij wilde gevechten in Area Zero.
+- Code: `src/data/legend_intros_cheap1.h`. De hulpnamen zijn hernoemd naar `LC1_` (botsten met deel 2). ROM vrij: 1,98 MB.
+
+### [v0.9.280] - Battle! Area Zero
+- `MUS_GROUNDED_VS_AREA_ZERO` (682, was een placeholder) is nu de "Area Zero Wild Battle" (SV) zelf. De battle is doorgecomponeerd (54 van de 69 maten uniek), dus nabouwen of knippen hergebruiken ging niet: het zijn 10 aansluitende knippen uit het origineel, 11 kHz, DPCM.
+  - **Opbouw:** intro + eerste doorgang één keer, daarna een lus van 69 maten (111 s) uit de tweede doorgang.
+  - **Naden:** op een heel frame, met een crossfade van 10 ms; de lusnaad heeft geen klik en geen dip.
+  - **Niveau:** zoals de andere legendary-thema's. De kreet komt er 9 dB bovenuit.
+- Kosten ±715 KB; ROM vrij **1,30 MB**. Helderder (13 kHz) kost ±130 KB extra. Jordi beoordeelt hem nog.
+- Speelt bij de paradoxen, Koraidon/Miraidon, Terapagos en de wilde gevechten in Area Zero.
+- Generator: `tools/grounded/vs_areazero_samples.py` + `vs_areazero_theme.py`.
+
+### [v0.9.281] - Goedkeuringen
+- Jordi: Area Zero "beter dan ik had kunnen dromen", Battle! Area Zero "fenomenaal, in 1 keer", Treasures of Ruin "niet perfect maar veel beter dan ik ooit had gedacht dat een gba versie had kunnen worden". Alle drie blijven zoals ze zijn.
+- Intro's: liever zonder Pokémon-sprites ("lijkt minder budget"). Celebi, Meloetta, Cresselia en Zygarde gaan opnieuw.
+
+### [v0.9.282] - Gevechtsmuziek rouleert (ROTATE)
+- Jordi: "3/4 wild pokemon/trainer battle themes rouleren, zodat muziek spannend blijft". In het optiemenu staat bij wilde en bij trainer-gevechtsmuziek nu **ROTATE** bovenaan; dat is de nieuwe standaard. Elk gevecht krijgt het volgende nummer uit de lijst; de teller van wilde/trainergevechten bepaalt welk nummer, dus het blijft hetzelfde binnen één gevecht.
+  - **Wild:** Hoenn, Kanto, Sunset Wilds, Toxic Landfill.
+  - **Trainers:** Hoenn, Kanto, Toxic Landfill, Kanto Gym Leader.
+- De lijsten staan in `src/battle_music_options.c` (`sWildRotation`, `sTrainerRotation`). Een eerder gekozen optie schuift één plek op (de nieuwe ROTATE staat op plek 0).
+
+### [v0.9.283] - Intro's herzien: sprites eruit, nieuwe Celebi/Meloetta/Cresselia/Zygarde
+- Jordi: "vaak beter wanneer je de sprites weglaat". Alle Pokémon-sprites en silhouetten zijn uit de goedkope intro's; effecten, symbolen en de wereld dragen ze nu (Lati@s: een lichtbol met de Soul Dew, Necrozma: een zwart Tera-kristal).
+- **Celebi (extreem nostalgisch):**
+  - Het beeld wordt een GBC-scherm van 160×144 met een donkere rand en een rood power-lampje; de plek valt terug in vier groentinten.
+  - Daarna precies de GSC-overgang uit pokecrystal: drie flitsen en de spin naar zwart met de 20 wiggen. Op de slag slaat hij om in Celebi-groen.
+- **Meloetta:** een podium met notenbalk, spotlights en een equalizer. Acht noten tapdansen, doen een kickline en een pirouette; Aria groen, Pirouette oranje.
+- **Cresselia:** een dunne sikkelmaan (geen volle maan meer), halvemaanbogen, Lunar Dance-glinsters en droommist.
+- **Zygarde:** een zeshoekraster, de rode Core en groene Cells die de Z van Core Enforcer (Legends Z-A) bouwen; het beeld breekt langs het raster.
+- +3,4 KB.
+
+### [v0.9.284] - Celebi-intro: Johto-reis naar Ilex Forest
+- Na de GBC-reset (ongewijzigd, goedgekeurd) volgen op de achtsten drie iconische Johto-plekken in vier groentinten: New Bark Town (Elms lab), Goldenrod (de Radio Tower) en Ecruteak (de Tin Tower). De reis stopt in Ilex Forest bij het schrijn, met dwarrelende blaadjes, gevolgd door de GSC-flitsen, de spin naar zwart en de tijdreisflits.
+- Gerenderd uit de echte pokecrystal-kaartdata (`tools/grounded/celebi_gsc.py`): 93 tiles, +2,4 KB.
+
+### [v0.9.285] - Debug: Battle test en Legendary battle bijgewerkt
+- **Battle test…** (Utilities) heeft nu alle nieuwe intro's en thema's: de Shy Guy-varianten, Commander Boo, Wario, Agatha (Pokémon Tower) en 31 legendaries met een eigen intro of thema. Latias/Latios lopen via hun eigen Lati-gevecht.
+- **Legendary battle…** heeft 60 legendaries meer, met hun echte intro en muziek (vangbaar).
+- **Bugfix:** debuglijsten toonden maximaal 50 regels; alles daarna viel stil weg (Battle test had er al 84). Het maximum is nu 160.
+- Volgen nog: de rivaal-, class-, regio- en trainer-remixen, zodra die klaar zijn.
+
+### [v0.9.286] - Trainer-remixen per klasse
+- Acht remixen van het Hoenn trainer battle-thema (`MUS_VS_TRAINER`), 696–703. De melodie zit er noot voor noot in, de vorm en loop zijn gelijk aan het origineel, de paukensolo krijgt per stijl een eigen solo.
+
+| Remix | Klassen | Stijl |
+|---|---|---|
+| SEA | Swimmer M/F, Sailor, Fisherman, Tuber M/F, zwemmende Triathletes | calypso, steeldrum, conga's |
+| MOUNTAIN | Hiker, Black Belt, Battle Girl, Expert | half-time, taiko, gongs, hoorns |
+| NATURE | Bug Catcher/Maniac, Camper, Picnicker, Ranger, Breeder | folk, tin whistle, bodhrán |
+| MYSTIC | Psychic, Hex Maniac, Ruin Maniac | zwevend, shakuhachi, koor, vibrafoon |
+| CHIC | Beauty, Lady, Rich Boy, Gentleman, Pokéfan | jazz-swing, walking bass, Rhodes |
+| ROCK | Guitarist, Kindler, Ninja Boy | distortion, powerchords, rockkit |
+| ELITE | Ace Trainer, Dragon Tamer, Bird Keeper | koper, strijkers, pauken |
+| KIDS | Youngster, Lass, School Kid, Twins | xylofoon, stuiterbas, fietsbel |
+
+- Alleen als de speler HOENN of ROTATE kiest; alle eigen thema's gaan voor. Niet in de Frontier, Trainer Hill, het Stadium of geheime bases.
+- ±48 KB (2 eigen samples, gecomprimeerd). Generator: `tools/grounded/trclass_theme.py`.
+- Debug Battle test: een "Class: …"-gevecht per remix.
+
+### [v0.9.287] - Rivaal na de Hall of Fame: Pacifidlog, Battle Frontier en pensioen in Paradiso
+- **Gevecht 7, Pacifidlog** (na de Hall of Fame): Brendan/May staat op (18, 14), lv 86 (ace 88). "Seven losses. That's a whole week. You took a week from me."
+- **Gevecht 8, Battle Frontier** (voor de Battle Tower): lv 92 (ace 94), met o.a. Life Orb, Choice Specs, Swords Dance, Boomburst en Stealth Rock. Na de winst verhuist de rivaal naar Paradiso ("one suitcase and a lifetime of regret").
+- **Paradiso Resort:** de rivaal heeft het Guinness Book of World Records gehaald voor het vroegste pensioen, op 13 jaar ("The previous record holder was a SLAKOTH. It hasn't moved since."). Elke dag één rematch (`FLAG_DAILY_REMATCH_RIVAL`, alleen gezet bij winst).
+- **Teams:** de Route 136-teams, volgroeid; zes varianten (geslacht × starter) in `src/data/rival_postgame.party`.
+- **Trainer-id's waren op:** drie ongebruikte vanilla-id's zijn omgedoopt tot `TRAINER_RIVAL_POSTGAME_*` (Wallace als oud-kampioen, Red, Leaf). `src/rival_postgame.c` kiest het juiste team op geslacht en fase.
+- **Flags:** `FLAG_GROUNDED(1760–1762)`. Het oude Paradiso-flag hoort nu alleen bij Dave.
+- Debug Battle test: "Rival post-game".
+
+### [v0.9.288] - Wilde remixen per regio
+- Vier remixen van het Hoenn wild battle-thema (`MUS_VS_WILD`). Melodie, tweede stem en bas komen noot voor noot uit het origineel, met nieuwe begeleiding; vorm en loop zoals het origineel.
+  - **Vulkaan (673):** 204 bpm, distortion-lead, koperstoten, taiko in 3+3+2 en lavaloopjes. Mt. Chimney, Jagged Pass, Fiery Path, Routes 112/113, Lavaridge, Scorched Slab, Magma Hideout, Steam Island.
+  - **Woestijn (674):** C-frygisch-dominant, hobo met mordenten, oud, darbuka en zandwind. Route 111 bij zandstorm, Desert Underpass, Mirage Tower, Desert Ruins.
+  - **Water (675):** steeldrum, harp-golven, calypso-bas en conga's. Bij surfen en vissen.
+  - **Onderwater (680):** half-time, zachte EP met trage vibrato, donkere koorpad, sub-bas en stijgende bloop-belletjes. Bij duiken.
+- Alleen bij wildmuziek HOENN of ROTATE; bestaande uitzonderingen (Pokémon Tower, Yoshi's Island, jungle, …) gaan voor. ±19 KB.
+- Generator: `tools/grounded/regio_theme.py`. De YI-samples blijven ongecomprimeerd (een merge had er één teruggezet).
+
+### [v0.9.289] - Optiemenu: alle nieuwe thema's kiesbaar
+- WILD MUSIC (93 keuzes) en TRAINER MUSIC (90 keuzes) bevatten nu alle eigen gevechtsthema's: de regio- en trainer-remixen, de legendary-thema's, de gymleiders, de personages (Birch, Zinnia, Wally, Dave, Keccles, Mitch, SickBlik, Burglar, Magikarp) en de Pokémon Tower. Daarnaast de nieuwe kaartmuziek: Area Zero, Ashfrost, Yoshi's Island, Mario Kart Super Circuit en Wario Land 4. Namen max. 12 tekens.
+
+### [v0.9.290] - Muziekfan in Oldale + Mario-thema's verborgen
+- **Oldale Town (16, 13):** een jongen die op de maat in zijn eigen hoofd staat te bobben, en je, de vierde wand doorbrekend, naar START > OPTION stuurt om de gevechtsmuziek te kiezen ("The developers spent weeks on those tracks. … They can see you not pressing it."). Hij hint naar de vergrendelde nummers ("?????").
+- **Optiemenu:** alle thema's uit de Mario-wereld (Yoshi's Island, Wario Land 4, Mario Kart Super Circuit, Boo, Sunset Wilds) zijn verborgen tot je op Yoshi's Island bent aangekomen (`FLAG_YI_ARRIVED`); bij het bladeren worden ze overgeslagen.
+
+### [v0.9.291] - Rivaal-intro's (9 stappen) en trainer class-intro's (22)
+- **Rivaal (Brendan/May)**, op de maat van het rivaalthema:
+  1. **Route 103:** het echte Littleroot bij nacht, het raam gaat aan, de tas van Birch valt open.
+  2. **Rustboro:** Devon bij zonsondergang en een Pokédex-vergelijking ("One of them is a Wurmple. Twice.").
+  3. **Route 110:** een race in twee helften ("WHO'S FURTHER?").
+  4. **Route 119:** onweer, de helften botsen.
+  5. **Lilycove:** "THE LILYCOVE LOWDOWN"-krant over je ace (hoogste level, echte sprite, shiny-palet) en een grote VS.
+  6. **Route 136:** "ASHFROST WEEKLY", met de starter-kleur van de rivaal.
+  7. **Pacifidlog:** "THE PACIFIDLOG DRIFTER".
+  8. **Battle Frontier:** "FINAL EDITION", de grootste versie.
+  9. **Paradiso (dagelijkse rematch):** een sepia "RETIRED CHAMP'S"-krant.
+  - ±16,5 KB.
+- **22 class-intro's** (0,7–1,6 KB per stuk): onder andere Swimmer (plons), Hiker (rotsen), Bug Catcher (net + Pokéball-wiebel), Psychic (lepel), Fisherman (dobber en "!"), Hex Maniac (kaars gaat uit, twee ogen), Black Belt (karateslag), Ranger ("CAPTURED."), Ninja Boy (rookbom en één vallend blad), Breeder (Lucky Egg dat uitkomt), Rich Boy (muntenregen). Alleen voor gewone trainers; overal waar al een eigen intro is, blijft die. Niet in het Stadium.
+- ±46 KB totaal; ROM vrij 1,16 MB.
+- Debug Battle test: "Rival 1 … 6" + "Rival post-game"; de class-intro's zitten in de "Class: …"-gevechten.
+
+### [v0.9.292] - Trainer-remixen v2: Zee, Chic en Rock
+- **Zee:** 188 → 144 bpm, relaxter. Steeldrum-rolls alleen op lange noten, met een langere uitklank; geen clap meer, en een lichte calypso-swing.
+- **Chic:** de irritante hoge tik was een ride-bell (een toon op 2797 Hz); vervangen door een zachte brush-ride en de hihat-voet.
+- **Rock:** de powerchord-sample was een akkoord dat een octaaf te hoog en in stootjes klonk. Nu grondtoon + kwint als twee gelijk uitklinkende distortion-noten.
+- Berg, Natuur, Mystiek, Elite en Kids zijn ongewijzigd (goedgekeurd).
+
+### [v0.9.293] - Kreten weer met DPCM-padding (HQ-mixer)
+- Kreten worden weer gecomprimeerd mét afsluitende padding (`--no-pad` uit `audio_rules.mk`). De HQ-mixer decodeert kreten altijd per blok van 64 samples; zonder padding is het laatste blok korter en leest hij voorbij het einde van de kreet (het tikje-risico uit TODO). Kost 16,7 KB; ROM nog 1,14 MB vrij.
+- Legendary Birds houden voor de 1.0 het generieke legendary-thema (Jordi); mogelijk een eigen thema na de 1.0.
+
+### [v0.9.294] - Trainerremixen voor de laatste klassen, TODO bijgewerkt
+- Trainerklassen zonder remix ingedeeld (`GetTrainerClassRemixBGM`): Parasol Lady en Sis & Bro → Zee; Aroma Lady → Natuur; Collector, Young Couple, Old Couple en Interviewer → Chic; Pokémaniac → Rock; Sr. & Jr. → Kids.
+- TODO.md: Altering Cave (Ultra Space, v0.9.221), Ghetsis met de DNA Splicers (v0.9.163), de grot op Beacon Isle (v0.9.162) en de Deoxys-vormen (Delta Episode, v0.9.161) als afgerond gemarkeerd.
+- Jordi: rivaalkrant blijft zoals hij is; de regionale wilde remixen (v0.9.288) test hij in de game.
+
+### [v0.9.295] - 1.0-audit: trainers en wild
+- Mugshot-slide voor de post-game-gevechten in Paradiso Resort: Misty (blauw), Erika (groen) en Cynthia (paars).
+- Audit: de overige trainer- en wild-meldingen zijn bewust en staan nu in `IGNORE` (`tools/grounded/audit.py`): routedelen en kamers die je later bereikt of grap-trainers; Steven, Mimi en de taakstraf-gevechten van Archie/Maxie hebben een eigen transitie; Artisan Cave is, zoals vanilla, een Smeargle-grot. Trainers en wild: 0 meldingen.
+
+### [v1.0.0] - Project Grounded 1.0
+**De beta is er.** Alle geplande gebieden, quests, legendaries, intro's en thema's zitten erin. Vanaf hier: Jordi's complete testrun en bugfixes; na de 1.0 komen er alleen nog moves/abilities (en eventueel shinies) bij.
+
+- **Trainerklasse-intro's v2** (lichte intro's, alleen code plus art die al in de ROM stond; `src/data/class_intros2_a/b/c.h`), elk op de tel van de muziek:
+  - **Fisherman**: een laars, een visgraat en Magikarp (again) aan de haak, met een groeiend lijstje ("4. oh no."), dan buigt de hengel dubbel en komt er een gigantisch zeemonster omhoog.
+  - **Guitarist**: Guitar Hero-fretboard in perspectief, noten op de tel (E5, A5, D5, G5), slot met een POWER CHORD.
+  - **Ninja Boy**: handtekens RAM! SNAKE! TIGER!, schaduwklonen (1, 3, 7), een blauwe wervelbol in een bladerwervel, poef: "BELIEVE IT."
+  - **Collector** (had nog geen intro): holo-kaarten, "LOSERS.", een glimmende bril en een gigantische Wailord-knuffel (labeltje: MINT).
+  - **Hiker**: superheld-sprongen van piek naar piek, met cape, tot de droomwolk zichtbaar wordt; de echte Hiker lacht HO HO HO.
+  - **Psychic**: Poké Ball, Potion, TwistedSpoon en Old Rod zweven wiebelig omhoog… en vallen allemaal tegelijk. "…plop."
+  - **Bird Keeper**: lanceert een Wingull de lucht in; die landt meteen bij een Oran Berry. "…wtf."
+  - **Battle Girl** (Black Belt houdt de karateslag): flying kick door een muur, een rotsblok, een bunker, de maan en de zon. HAIYAAAH.
+  - **Bug Catcher/Bug Maniac**: het net vangt bijen, dan zoemt er een mug, KLAP. "ehh… busted?"
+  - **Pokéfan** (Breeder houdt de hartjes): knuffels ploppen op (als laatste "de grote" Wailord), glinsterogen, "……".
+  - **Aroma Lady**: een kruidentuin groeit en bloeit, tot een zwerm insecten de oogst verknalt. "…organic, they said."
+  - **Parasol Lady**: RAIN, HAIL, HEATWAVE en SANDSTORM ketsen allemaal af op haar parasol. "Lovely weather."
+  - Debug > Battle test: "Class intro: …"-ingangen per klasse. Samen ±31 KB.
+- **Playthrough-sweep** (emulator, automatisch): alle 718 kaarten geladen, alle 1406 warp-landingen, alle Battle test-gevechten (intro, muziek, gewonnen) en een wild gevecht op alle 246 kaarten met encounters. Geen crashes, hangers of kapotte kaarten in normaal spel. Na het samenvoegen van de intro's opnieuw getest: alle 20 klasse-gevechten in orde.
+- Tas: foutmeldingen ("There's nothing to sort!") sluiten nu ook met B.
+- Audit: 0 FOUT; songtabel in orde. **ROM: 1,11 MB vrij** (doel ≥ 512 KB).
+- Wilde gevechten in Area Zero spelen nu Battle! Area Zero (stond nog als "later" in de code); wilde gevechten in Ultra Space (alle UB-werelden, niet Altering Cave zelf) spelen Battle! Ultra Beast.
+- **Meer afwisseling in de gevechtsmuziek** (Jordi: "ik hou van games die een switch up doen"). Telling vooraf: trainers 72% klasse-remix, 26% eigen thema, 2% standaard; wilde gevechten op het land 84% standaard. Nieuw, alleen bij wildmuziek ROTATE/HOENN:
+  - Lichte remixes van het Hoenn-wildthema (`regio_theme.py`, `regio_theme2.py`): **zee** (704, surfen/vissen op zeeroutes en bij kustplaatsen; de calypso-water-remix blijft voor zoet water), **sneeuw/ijs** (705, Shoal Cave, Coldstep, Route 135/136, Ashfrost, Frost Hollow, …), **spookachtig** (706, Mt. Pyre, Abandoned Ship, Sky Pillar), **nacht** (707, buiten 's nachts), **grot** (708, alle grotten zonder eigen remix), **Meteor Falls** (709, avontuurlijk koper) en **Fiery Path** (710, vurige grot; uit de vulkaanlijst). Volgorde: onderwater, zee, water, Meteor Falls/Fiery Path, woestijn, vulkaan, sneeuw, spookachtig, grot, Route 119+, nacht.
+  - **Nieuw gevechtsthema Route 119+** (711, `route119_battle_theme.py`): grootse, avontuurlijke bewerking van het Route 119-thema (triolengalop, koper, strijkers) voor wilde gevechten op het land van Route 119–123.
+  - **Nachtversies van de stadsthema's** (712–725, `night_towns.py`, D/P-stijl): Littleroot, Oldale, Petalburg, Rustboro, Dewford, Slateport, Verdanturf, Fallarbor, Fortree, Lilycove, Sootopolis, Ever Grande, Ashfrost en Celadon (Mirage Bazaar, National Park). Trager (×0,87–0,92), elektrische piano/hoorn/fretless in plaats van piano/trompet/tuba, brushes. 's Nachts buiten én binnen in huizen met het stadsthema (niet in geheime bases). Mauville, Mossdeep, Lavaridge, Pacifidlog en Paradiso Resort volgen automatisch hun thema.
+  - Alle nummers staan ook in het optiemenu (de oude "SEA" heet nu "WATER"). Samen ±135 KB. **ROM: 1,0 MB vrij** (1.043.228 bytes).
+- **De romhack heet Pokémon Ungrounded** (Jordi; "Project Grounded" blijft de projectnaam in code en tools). Het titelscherm toont UNGROUNDED in plaats van EMERALD VERSION, rustig en recht direct onder het Pokémon-logo (Inter Bold, wit met grijs verloop, dunne omlijning, zonder 3D-rand; Jordi koos variant B na een eerste, te Wario-achtige versie): de banner is nu 192 px breed, drie sprites in `title_screen.c` (`tools/grounded/title_banner.py` maakt `graphics/title_screen/emerald_version.png`).
+- **Muziekfeedback Jordi verwerkt** (v2):
+  - **Route 119+** opnieuw gecomponeerd als eigen Hoenn-gevechtsthema (180 bpm, rechte 8en, eigen gevechtsintro, Route 119-motief als citaat, heroïsch B-deel, tutti-climax). Niets valt meer weg: de stemverdeler rekent nu met de echte m4a-envelope.
+  - **Sneeuw:** de sleebelletjes op de achtsten (vanaf 7,7 s) alleen nog als accent. **Spook:** koor alleen in B/C, een octaaf lager en zachter. **Nacht:** volle intro (triller terug, strijkers onder de chromatische val).
+  - **Grot, Meteor Falls, Fiery Path:** de hyoushigi (hoog houtgetik) en de effectpercussie zijn eruit.
+  - **Nacht Slateport en Lilycove:** ±20% trager (Slateport 100 bpm), zachtere brushes, Lilycove legato.
+- **Definitieve 1.0-build** (11 okt): audit 0 FOUT, songtabel in orde, rookproef (wild gevecht op Route 120 speelt Route 119+). **ROM: 1,0 MB vrij** (1.049.756 bytes). Mitch volgt nog als update binnen de 1.0.
+- **Bugfix ongehoorzaamheid** (Jordi: Electrode lv 100 deed Explosion/Implosion zonder zelf te ontploffen): een ongehoorzame Pokémon die een willekeurige andere move gebruikt, draaide het script van de gekozen move met de naam/kracht van de nieuwe. Nu springt de game naar het script van de willekeurige move (`src/battle_util.c`, `DISOBEYS_RANDOM_MOVE`). Getest: Explosion en Implosion laten de gebruiker nu K.O. gaan; ook statusmoves krijgen zo hun echte effect. (Bug zat in pokeemerald-expansion zelf.)
+- **Lavender Town:** de linkerrand had halve bomen (alleen de linkerhelft van elke boom, met pad of grafjes ernaast). Kolom 0–1 is nu over de hele hoogte een rij volle bomen, aansluitend op de rand; het verborgen item (Exp. Candy S) schoof één vak naar rechts, naar (2,13).
+- **Water zonder botsing** (Jordi: zee ten noorden van Nothing Island): op een paar zelfgebouwde/aangepaste kaarten lag het water op elevation 0 ("elke hoogte"), zodat je vanaf het land zonder surfen het water op kon lopen. Water dat te voet bereikbaar is, staat nu op elevation 1 (zoals vanilla): Nothing Island, Whirl Island, Battle Frontier oost en west, Yoshi's Island Jungle. Getest: de zandranden om Nothing Island (water) houden je tegen tot je surft.
+- **Rennen op Pacifidlog en Floating Market:** de drijvende boomstammen blokkeerden rennen (vanilla); dat mag nu (`MetatileBehavior_IsRunningDisallowed`). Getest in de emulator.
+- **Oude vrouwen in de hete bronnen** (Steam Island, ook Lavaridge): geen schaduw meer onder het "zwevende hoofd" (`OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN` krijgt geen schaduw).
+- **Lavender Town:** ook links naast de Pokémon Tower stonden de boomhelften verkeerd om (twee halve bomen); omgewisseld. De twee halve bomen naast de Spacetime-scheur onderaan zijn nu grond. Een script controleerde de hele kaart: geen halve bomen meer.
+- **Area Zero, Battle! Area Zero en Ruinous luider en helderder** (Jordi: "klinken ingame heel muffled… zacht… alsof ze niet in de game horen"): noten en arrangement gelijk. Meer volume door dezelfde knip op meerdere sporen (één DirectSound-kanaal haalt maar ±35/127), minder sub-bas, een piekbegrenzer per nummer; Ruinous-strijkers van 8 naar 11 kHz met een hoge plank. A-gewogen nu −22 tot −24 dB (was −27 tot −33; Emerald-nummers −21 tot −22). Kosten +121 KB; **ROM ±853 KB vrij**. Restpunt: de DPCM-compressie van Area Zero geeft wat korrel in het hoog; die weghalen kost ±535 KB (dan onder 512 KB vrij), dus niet gedaan.
+- A/B-test "mengvorm" (bas en drums als GBA-noten, kern gesampled) voor Battle! Area Zero en Ruinous: Jordi: "voegt weinig toe", de huidige versies blijven. De test staat op de branch `ab-mengvorm-areazero-ruinous` (niet samengevoegd).

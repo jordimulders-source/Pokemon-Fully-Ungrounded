@@ -356,13 +356,13 @@ gSongTable::
 	song dummy_song_header, MUSIC_PLAYER_BGM, 0
 	song dummy_song_header, MUSIC_PLAYER_BGM, 0
 	song dummy_song_header, MUSIC_PLAYER_BGM, 0
-	song mus_littleroot_test, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_littleroot_test weg (ongebruikt, v0.9.231)
 	song mus_gsc_route38, MUSIC_PLAYER_BGM, 0
 	song mus_caught, MUSIC_PLAYER_BGM, 0
 	song mus_victory_wild, MUSIC_PLAYER_BGM, 0
 	song mus_victory_gym_leader, MUSIC_PLAYER_BGM, 0
 	song mus_victory_league, MUSIC_PLAYER_BGM, 0
-	song mus_c_comm_center, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_c_comm_center weg (ongebruikt, v0.9.231)
 	song mus_gsc_pewter, MUSIC_PLAYER_BGM, 0
 	song mus_c_vs_legend_beast, MUSIC_PLAYER_BGM, 0
 	song mus_route101, MUSIC_PLAYER_BGM, 0
@@ -450,7 +450,7 @@ gSongTable::
 	song mus_encounter_magma, MUSIC_PLAYER_BGM, 0
 	song mus_intro_battle, MUSIC_PLAYER_BGM, 0
 	song mus_abnormal_weather, MUSIC_PLAYER_BGM, 0
-	song mus_weather_groudon, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_weather_groudon weg (ongebruikt, v0.9.231)
 	song mus_sootopolis, MUSIC_PLAYER_BGM, 0
 	song mus_contest_results, MUSIC_PLAYER_BGM, 0
 	song mus_hall_of_fame_room, MUSIC_PLAYER_BGM, 0
@@ -494,25 +494,25 @@ gSongTable::
 	song mus_rg_game_corner, MUSIC_PLAYER_BGM, 0
 	song mus_rg_rocket_hideout, MUSIC_PLAYER_BGM, 0
 	song mus_rg_gym, MUSIC_PLAYER_BGM, 0
-	song mus_rg_jigglypuff, MUSIC_PLAYER_SE2, 2
-	song mus_rg_intro_fight, MUSIC_PLAYER_BGM, 0
-	song mus_rg_title, MUSIC_PLAYER_BGM, 0
-	song mus_rg_cinnabar, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_SE2, 2 @ Project Grounded: mus_rg_jigglypuff weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_intro_fight weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_title weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_cinnabar weg (ongebruikt, v0.9.231)
 	song mus_rg_lavender, MUSIC_PLAYER_BGM, 0
-	song mus_rg_heal, MUSIC_PLAYER_BGM, 0
-	song mus_rg_cycling, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_heal weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_cycling weg (ongebruikt, v0.9.231)
 	song mus_rg_encounter_rocket, MUSIC_PLAYER_BGM, 0
-	song mus_rg_encounter_girl, MUSIC_PLAYER_BGM, 0
-	song mus_rg_encounter_boy, MUSIC_PLAYER_BGM, 0
-	song mus_rg_hall_of_fame, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_encounter_girl weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_encounter_boy weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_hall_of_fame weg (ongebruikt, v0.9.231)
 	song mus_rg_viridian_forest, MUSIC_PLAYER_BGM, 0
 	song mus_rg_mt_moon, MUSIC_PLAYER_BGM, 0
 	song mus_rg_poke_mansion, MUSIC_PLAYER_BGM, 0
-	song mus_rg_credits, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_credits weg (ongebruikt, v0.9.231)
 	song mus_rg_route1, MUSIC_PLAYER_BGM, 0
 	song mus_rg_route24, MUSIC_PLAYER_BGM, 0
-	song mus_rg_route3, MUSIC_PLAYER_BGM, 0
-	song mus_rg_route11, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_route3 weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_route11 weg (ongebruikt, v0.9.231)
 	song mus_rg_victory_road, MUSIC_PLAYER_BGM, 0
 	song mus_rg_vs_gym_leader, MUSIC_PLAYER_BGM, 0
 	song mus_rg_vs_trainer, MUSIC_PLAYER_BGM, 0
@@ -520,37 +520,37 @@ gSongTable::
 	song mus_rg_vs_champion, MUSIC_PLAYER_BGM, 0
 	song mus_rg_pallet, MUSIC_PLAYER_BGM, 0
 	song mus_rg_oak_lab, MUSIC_PLAYER_BGM, 0
-	song mus_rg_oak, MUSIC_PLAYER_BGM, 0
-	song mus_rg_poke_center, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_oak weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_poke_center weg (ongebruikt, v0.9.231)
 	song mus_rg_ss_anne, MUSIC_PLAYER_BGM, 0
-	song mus_rg_surf, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_surf weg (ongebruikt, v0.9.231)
 	song mus_rg_poke_tower, MUSIC_PLAYER_BGM, 0
 	song mus_rg_silph, MUSIC_PLAYER_BGM, 0
-	song mus_rg_fuchsia, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_fuchsia weg (ongebruikt, v0.9.231)
 	song mus_rg_celadon, MUSIC_PLAYER_BGM, 0
-	song mus_rg_victory_trainer, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_victory_trainer weg (ongebruikt, v0.9.231)
 	song mus_rg_victory_wild, MUSIC_PLAYER_BGM, 0
-	song mus_rg_victory_gym_leader, MUSIC_PLAYER_BGM, 0
-	song mus_rg_vermillion, MUSIC_PLAYER_BGM, 0
-	song mus_rg_pewter, MUSIC_PLAYER_BGM, 0
-	song mus_rg_encounter_rival, MUSIC_PLAYER_BGM, 0
-	song mus_rg_rival_exit, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_victory_gym_leader weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_vermillion weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_pewter weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_encounter_rival weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_rival_exit weg (ongebruikt, v0.9.231)
 	song mus_rg_dex_rating, MUSIC_PLAYER_SE2, 2
 	song mus_rg_obtain_key_item, MUSIC_PLAYER_SE2, 2
 	song mus_rg_caught_intro, MUSIC_PLAYER_SE2, 2
-	song mus_rg_photo, MUSIC_PLAYER_SE2, 2
-	song mus_rg_game_freak, MUSIC_PLAYER_BGM, 0
-	song mus_rg_caught, MUSIC_PLAYER_BGM, 0
-	song mus_rg_new_game_instruct, MUSIC_PLAYER_BGM, 0
-	song mus_rg_new_game_intro, MUSIC_PLAYER_BGM, 0
-	song mus_rg_new_game_exit, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_SE2, 2 @ Project Grounded: mus_rg_photo weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_game_freak weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_caught weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_new_game_instruct weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_new_game_intro weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_new_game_exit weg (ongebruikt, v0.9.231)
 	song mus_rg_poke_jump, MUSIC_PLAYER_BGM, 0
-	song mus_rg_union_room, MUSIC_PLAYER_BGM, 0
-	song mus_rg_net_center, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_union_room weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_net_center weg (ongebruikt, v0.9.231)
 	song mus_rg_mystery_gift, MUSIC_PLAYER_BGM, 0
 	song mus_rg_berry_pick, MUSIC_PLAYER_BGM, 0
 	song mus_rg_sevii_cave, MUSIC_PLAYER_BGM, 0
-	song mus_rg_teachy_tv_show, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_teachy_tv_show weg (ongebruikt, v0.9.231)
 	song mus_rg_sevii_route, MUSIC_PLAYER_BGM, 0
 	song mus_rg_sevii_dungeon, MUSIC_PLAYER_BGM, 0
 	song mus_rg_sevii_123, MUSIC_PLAYER_BGM, 0
@@ -560,62 +560,62 @@ gSongTable::
 	song mus_rg_vs_deoxys, MUSIC_PLAYER_BGM, 0
 	song mus_rg_vs_mewtwo, MUSIC_PLAYER_BGM, 0
 	song mus_rg_vs_legend, MUSIC_PLAYER_BGM, 0
-	song mus_rg_encounter_gym_leader, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_encounter_gym_leader weg (ongebruikt, v0.9.231)
 	song mus_rg_encounter_deoxys, MUSIC_PLAYER_BGM, 0
-	song mus_rg_trainer_tower, MUSIC_PLAYER_BGM, 0
-	song mus_rg_slow_pallet, MUSIC_PLAYER_BGM, 0
-	song mus_rg_teachy_tv_menu, MUSIC_PLAYER_BGM, 0
-	song ph_trap_blend, MUSIC_PLAYER_SE2, 2
-	song ph_trap_held, MUSIC_PLAYER_SE2, 2
-	song ph_trap_solo, MUSIC_PLAYER_SE2, 2
-	song ph_face_blend, MUSIC_PLAYER_SE2, 2
-	song ph_face_held, MUSIC_PLAYER_SE2, 2
-	song ph_face_solo, MUSIC_PLAYER_SE2, 2
-	song ph_cloth_blend, MUSIC_PLAYER_SE2, 2
-	song ph_cloth_held, MUSIC_PLAYER_SE2, 2
-	song ph_cloth_solo, MUSIC_PLAYER_SE2, 2
-	song ph_dress_blend, MUSIC_PLAYER_SE2, 2
-	song ph_dress_held, MUSIC_PLAYER_SE2, 2
-	song ph_dress_solo, MUSIC_PLAYER_SE2, 2
-	song ph_fleece_blend, MUSIC_PLAYER_SE2, 2
-	song ph_fleece_held, MUSIC_PLAYER_SE2, 2
-	song ph_fleece_solo, MUSIC_PLAYER_SE2, 2
-	song ph_kit_blend, MUSIC_PLAYER_SE2, 2
-	song ph_kit_held, MUSIC_PLAYER_SE2, 2
-	song ph_kit_solo, MUSIC_PLAYER_SE2, 2
-	song ph_price_blend, MUSIC_PLAYER_SE2, 2
-	song ph_price_held, MUSIC_PLAYER_SE2, 2
-	song ph_price_solo, MUSIC_PLAYER_SE2, 2
-	song ph_lot_blend, MUSIC_PLAYER_SE2, 2
-	song ph_lot_held, MUSIC_PLAYER_SE2, 2
-	song ph_lot_solo, MUSIC_PLAYER_SE2, 2
-	song ph_goat_blend, MUSIC_PLAYER_SE2, 2
-	song ph_goat_held, MUSIC_PLAYER_SE2, 2
-	song ph_goat_solo, MUSIC_PLAYER_SE2, 2
-	song ph_thought_blend, MUSIC_PLAYER_SE2, 2
-	song ph_thought_held, MUSIC_PLAYER_SE2, 2
-	song ph_thought_solo, MUSIC_PLAYER_SE2, 2
-	song ph_choice_blend, MUSIC_PLAYER_SE2, 2
-	song ph_choice_held, MUSIC_PLAYER_SE2, 2
-	song ph_choice_solo, MUSIC_PLAYER_SE2, 2
-	song ph_mouth_blend, MUSIC_PLAYER_SE2, 2
-	song ph_mouth_held, MUSIC_PLAYER_SE2, 2
-	song ph_mouth_solo, MUSIC_PLAYER_SE2, 2
-	song ph_foot_blend, MUSIC_PLAYER_SE2, 2
-	song ph_foot_held, MUSIC_PLAYER_SE2, 2
-	song ph_foot_solo, MUSIC_PLAYER_SE2, 2
-	song ph_goose_blend, MUSIC_PLAYER_SE2, 2
-	song ph_goose_held, MUSIC_PLAYER_SE2, 2
-	song ph_goose_solo, MUSIC_PLAYER_SE2, 2
-	song ph_strut_blend, MUSIC_PLAYER_SE2, 2
-	song ph_strut_held, MUSIC_PLAYER_SE2, 2
-	song ph_strut_solo, MUSIC_PLAYER_SE2, 2
-	song ph_cure_blend, MUSIC_PLAYER_SE2, 2
-	song ph_cure_held, MUSIC_PLAYER_SE2, 2
-	song ph_cure_solo, MUSIC_PLAYER_SE2, 2
-	song ph_nurse_blend, MUSIC_PLAYER_SE2, 2
-	song ph_nurse_held, MUSIC_PLAYER_SE2, 2
-	song ph_nurse_solo, MUSIC_PLAYER_SE2, 2
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_trainer_tower weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_slow_pallet weg (ongebruikt, v0.9.231)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ Project Grounded: mus_rg_teachy_tv_menu weg (ongebruikt, v0.9.231)
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
+	song dummy_song_header, MUSIC_PLAYER_SE2, 2
 	song mus_grounded_vs_colress, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_birch, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_dppt_champion, MUSIC_PLAYER_BGM, 0
@@ -625,8 +625,8 @@ gSongTable::
 	song mus_grounded_vs_ghetsis, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_dark_cave, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_yoshi_castle, MUSIC_PLAYER_BGM, 0
-	song mus_grounded_vs_broken_pier, MUSIC_PLAYER_BGM, 0
-	song mus_grounded_vs_sunset_wilds, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_boo, MUSIC_PLAYER_BGM, 0 @ Project Grounded: Battle! Boo, lichte battle-remix van Broken Pier (v0.9.244)
+	song mus_grounded_mksc_sunset_wilds, MUSIC_PLAYER_BGM, 0 @ Project Grounded: 1-op-1-rip i.p.v. de MIDI-cover (v0.9.240)
 	song mus_grounded_vs_zinnia, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_zarude, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_neo_plasma, MUSIC_PLAYER_BGM, 0
@@ -661,6 +661,121 @@ gSongTable::
 	song mus_grounded_vs_winona, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_tate_liza, MUSIC_PLAYER_BGM, 0
 	song mus_grounded_vs_wallace, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_burglar, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_tapu, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_lugia, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_ho_oh, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_tornadus, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_thundurus, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_landorus, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_hoopa, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_yi_flower_garden, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_yi_athletic, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_yi_overworld, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_yi_fuzzy, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_yi_castle, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_mksc_bowser_castle, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_mksc_broken_pier, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_legendary, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_mksc_lakeside_park, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_mksc_rainbow_road, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wild_volcano, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wild_desert, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wild_water, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_arceus, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_ultra_beast, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_dialga_palkia, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_mew, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_wild_underwater, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_area_zero, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_area_zero, MUSIC_PLAYER_BGM, 0 @ 682
+	song mus_grounded_vs_ruinous, MUSIC_PLAYER_BGM, 0
+	song mus_grounded_vs_zacian, MUSIC_PLAYER_BGM, 0
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 685: Xerneas/Yveltal-thema uit (Jordi: "veel te vrolijk"; MIDI bewaard)
+	song mus_dummy, MUSIC_PLAYER_BGM, 0 @ 686: meertrio-thema uit (Jordi: generieker thema; MIDI bewaard)
+
+	song mus_grounded_vs_poke_tower, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_wl4_mystic_lake, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_wl4_monsoon_jungle, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_wl4_toxic_landfill, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_wl4_40_below_fridge, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_wl4_toy_block_tower, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_wl4_crescent_moon_village, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_wl4_arabian_night, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_wl4_fiery_cavern, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_sea, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_mountain, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_nature, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_mystic, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_chic, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_rock, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_elite, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_trainer_kids, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_wild_sea, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_wild_snow, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_wild_spooky, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_wild_night, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_wild_cave, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_wild_meteor, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_wild_fiery, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_vs_wild_route119, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_littleroot, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_oldale, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_petalburg, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_rustboro, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_dewford, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_slateport, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_verdanturf, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_fallarbor, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_fortree, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_lilycove, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_sootopolis, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_ever_grande, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_ashfrost, MUSIC_PLAYER_BGM, 0
+
+	song mus_grounded_night_celadon, MUSIC_PLAYER_BGM, 0
 
 	.align 2
 dummy_song_header:

@@ -5,6 +5,22 @@
 MangroveMire_MapScripts::
 	.byte 0
 
+@ Project Grounded: Virizion staat sinds v0.9.184 in MangroveMire_VirizionGlade (swords_glade.py), achter de groene
+@ tunnel aan het einde van het oostelijke zijpad; de teksten blijven hier (Dialoogstudio-labels).
+MangroveMire_Text_Virizion:
+	.string "A slender green deer stands where\n"
+	.string "the path gives up.\p"
+	.string "It is the only thing in this swamp\n"
+	.string "that is not damp. Somehow.\p"
+	.string "It lowers its horns. Politely.\n"
+	.string "Like a fencer. A wet fencer.$"
+
+MangroveMire_Text_CutTree:
+	.string "A mangrove trunk with one clean,\n"
+	.string "diagonal cut. No axe does that.\p"
+	.string "The tree seems fine with it. It has\n"
+	.string "seen worse. It lives in a swamp.$"
+
 MangroveMire_EventScript_ToJungle::
 	warpsilent MAP_FORTREE_JUNGLE, 38, 39
 	waitstate

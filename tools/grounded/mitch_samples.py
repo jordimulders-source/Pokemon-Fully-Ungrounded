@@ -53,8 +53,24 @@ v5 (Jordi over v4: '95%; bas moet baas zijn, lead zachter, kick/snare harder, dr
       twee rondes zachte begrenzing (lagere crest = luider bij dezelfde piek).
   mitch5_wob_<noot> : de v4-wobble met een vollere grondtoon (0,7 i.p.v. 0,5), minder highpass (80 i.p.v. 110 Hz),
       een iets kleinere 1,5 kHz-snijband en drie rondes begrenzing: zwaarder in het laag/laag-midden en luider.
+v6 (Mitch over v5: 'die horn klinkt heel low quality; probeer hem screechy/high pitched zoals de E4-theme'):
+  mitch6a_brass_<noot> / mitch6b_brass_<noot> : één koperstoot per lead-noot (F3-C5) op 21.024 Hz (= mixfrequentie,
+      dus niet getransponeerd), vervorming op 8x, FluidR3-aanzet + loop uit de harmonischen (zie brass6). a = de
+      v3-v5-klank (61 + 62 in octaven) schoon; b = E4-trompet (56) een octaaf hoger + body. Vervangen mitch3_brass_lo/hi.
+v7 (Mitch via Jordi: 'klinkt nog steeds te goedkoop; misschien een ander instrument dan de horn'), alles op 16 kHz
+(resample_wav.py --all houdt mitch7_* op 16 kHz), synthese op 64 kHz (vervorming zonder aliasing):
+  mitch7<a|b|c>_lead_<55|61|67> : drie lead-kandidaten, elk een stapel stemmen in één sample (1 kanaal), aanslag +
+      0,14 s overvloeiende loop, envelope in de voicegroup; 3 samples per kandidaat, elke noot -2..+5 getransponeerd.
+      a = supersaw-stab (7 ontstemde zaagtanden ±25 cent, 4 een octaaf hoger, 1 lager; filter 11 -> 5 kHz),
+      b = screech/hoover (vier ontstemde zaagtanden een octaaf hoger + body + duodecime, pitch-swoop van -1,5 halve
+      toon in 12 ms, tanh x4, resonante sweep 1,3 -> 4,9 kHz),
+      c = vocal chop (FluidR3 Choir Aahs/Voice Oohs/Synth Voice midden uit de klinker geknipt, octaaf erboven, 'ah'-
+      formanten aangezet, dunne zaagrand voor de aanslag).
+  mitch7_pluck : arpeggio-pluk met vijf ontstemde zaagtanden + octaaf (v3: twee), op 16 kHz.
+  mitch7_reese_raw : de v5-rauwe reese met meer lucht (lowpass 3,8 i.p.v. 2,5 kHz, 16 kHz, loop 1 s i.p.v. 2 s).
+  Vervangen mitch6a/b_brass_*, mitch3_pluck en mitch5_reese_raw (verwijderd).
 Labels achteraan sound/direct_sound_data.inc (na .align 2).
-Gebruik: python3 tools/grounded/mitch_samples.py"""
+Gebruik: python3 tools/grounded/mitch_samples.py [v7]   (v7 = alleen de v7-samples opnieuw)"""
 import os, subprocess, sys, tempfile, wave
 import numpy as np
 import mido
@@ -421,6 +437,59 @@ def brass3(notes, key, rate=22050, dur=0.34):
     return fade_out(norm(a), rate, 0.05), rate
 
 
+MIX = 21024             # mixfrequentie van de game (src/m4a.c): een sample op deze rate op zijn eigen noot = stap 1
+BRASS6_NOTES = (53, 55, 56, 58, 60, 61, 63, 64, 65, 67, 68, 72)   # alle koperlead-noten van mitch_theme.py (F3-C5)
+BRASS6 = {   # variant -> lagen (GM-programma, octaaf t.o.v. de geschreven noot, gain), drive, highpass
+    # A: dezelfde klank als v3-v5 (brass section 61 + synth brass 62 in octaven, geschreven noot = bovenste), schoon
+    'a': (((61, -12, 1.0), (62, -12, 0.6), (61, 0, 1.0), (62, 0, 0.6)), 1.8, 110.0),
+    # B: à la Elite Four (sc88pro-trompet = hetzelfde spectrum als FluidR3-trompet 56): een octaaf hoger trompet
+    #    bovenop, de geschreven noot als body (trompet + brass section), feller vervormd
+    'b': (((56, 12, 1.0), (56, 0, 0.5), (61, 0, 0.4)), 2.6, 160.0),
+}
+
+
+def brass6(variant, note, rate=MIX):
+    """v6 (Mitch: 'die horn sound klinkt heel low quality'): één sample per lead-noot op de mixfrequentie, zodat de
+    game niets transponeert (v3: één Eb4-sample op 22.050 Hz tot C5 omhoog = x1,7: alles boven ±6 kHz vouwde terug).
+    Vervorming op 8x de samplerate (geen aliasing), daarna lowpass 8,5 kHz; geen ingebakken uitsterving (een 8-bit
+    staart die naar 0 zakt = korrelig) maar aanslag + korte loop op vol niveau, de envelope doet de voicegroup."""
+    from scipy.signal import resample_poly
+    layers, drive, hp = BRASS6[variant]
+    dur = 0.45
+    m = int(dur * 44100)
+    a = np.zeros(m)
+    for prog, octv, g in layers:
+        x = render(prog, [note + octv], dur, vel=124)[:m]
+        a[:len(x)] += g * x
+    up = resample_poly(a, 8, 1)                                   # 352,8 kHz
+    up = np.tanh(drive * norm(up))
+    up = sosfilt(butter(8, 8500, 'lowpass', fs=44100 * 8, output='sos'), up)
+    a = resample_poly(up, 584, 1225 * 8)                          # 44.100 x 584/1225 = 21.024 Hz
+    a = sosfilt(butter(2, hp, 'highpass', fs=rate, output='sos'), a)
+    # aanslag = de echte FluidR3-aanzet (60 ms); daarna een strikt periodieke loop, opnieuw opgebouwd uit de
+    # harmonischen van het aangehouden deel (amplitude en fase, 80-300 ms). Een loop van een paar 'echte' perioden
+    # zoemt: de perioden verschillen (aanzet, ensemble), en dat geeft energie tussen de harmonischen.
+    f0 = hz(note + min(o for _, o, _ in layers))
+    m = min(range(1, 9), key=lambda m: abs(m * rate / f0 - round(m * rate / f0)) / m)
+    P = int(round(m * rate / f0))
+    f0 = m * rate / P                                             # exact P samples per m perioden (< 2 cent)
+    t = np.arange(len(a)) / rate
+    w0, w1 = int(0.08 * rate), int(0.30 * rate)
+    seg, ts = a[w0:w1], t[w0:w1]
+    win = np.hanning(len(seg))
+    syn = np.zeros(len(a))
+    for j in range(1, int(9000 / f0) + 1):
+        c = 2 * np.sum(win * seg * np.exp(-2j * np.pi * j * f0 * ts)) / np.sum(win)
+        syn += np.real(c * np.exp(2j * np.pi * j * f0 * t))
+    x0, x1 = int(0.04 * rate), int(0.07 * rate)                  # overvloeien van de echte aanzet naar de loop
+    xf = np.clip((np.arange(len(a)) - x0) / (x1 - x0), 0, 1)
+    out = a * (1 - xf) + syn * xf
+    s = x1
+    e = s + P * max(1, int(np.ceil(0.02 * rate / P)))
+    a = out[:e]
+    return norm(a), rate, note, (s, e)
+
+
 def pluck3(rate=22050, dur=0.3):
     """Donkere pluk op C4: twee ontstemde zaagtanden, lowpass-envelope 2,4 kHz -> 350 Hz."""
     t = np.arange(int(rate * dur)) / rate
@@ -581,87 +650,155 @@ def snare5(rate=22050, dur=0.12):
     return fade_out(norm(a), rate, 0.025), rate
 
 
+# ---------------------------------------------------------------- v7: 'duurdere' klanken (Mitch: 'te goedkoop')
+R7 = 16000                       # v7-samples op 16 kHz (resample_wav.py laat mitch7_* op 16 kHz staan)
+OS7 = 4                          # synthese op 4x (64 kHz): vervorming zonder aliasing
+LEAD7_ROOTS = (55, 61, 67)       # één sample per kwart/kwint: elke lead-noot -2..+5 halve tonen van zijn sample
+LEAD7 = {                        # variant -> omschrijving (zie lead7)
+    'a': 'supersaw-stab: 7 ontstemde zaagtanden + 4 een octaaf hoger + 1 een octaaf lager, filterenvelope 11 -> 5 kHz',
+    'b': 'screech/hoover: ontstemde zaag/puls een octaaf hoger + body, pitch-swoop, zware vervorming, resonante sweep',
+    'c': 'vocal chop: FluidR3-koor (aahs/oohs/synth voice) midden uit de klinker geknipt, octaaf erboven, + zaagrand',
+}
+
+
+def _saws(f, t, voices, top=20000.0, seed=1, pitch=None):
+    """Som van bandbeperkte zaagtanden. voices = [(octaaf in halve tonen, cent, gain)]; pitch(t) = extra halve tonen
+    (swoop) of None. Willekeurige fase per stem (= supersaw-'breedte')."""
+    rng = np.random.default_rng(seed)
+    fs = 1 / (t[1] - t[0])
+    bend = 2 ** (pitch(t) / 12) if pitch is not None else np.ones_like(t)
+    a = np.zeros_like(t)
+    for semi, cent, g in voices:
+        f1 = f * 2 ** (semi / 12 + cent / 1200)
+        ph = 2 * np.pi * np.cumsum(f1 * bend) / fs + rng.uniform(0, 2 * np.pi)
+        for h in range(1, int(min(top, 0.45 * fs) / (f1 * bend.max())) + 1):
+            a += g * np.sin(h * ph) / h
+    return a
+
+
+def _xfade_loop(a, rate, s_sec, e_sec, frac=0.5):
+    """Loop van s tot e; de laatste `frac` van de loop overgevloeid (gelijke kracht) met wat vóór het loopbegin
+    staat: geen klik en geen zoem (het signaal is ruisachtig breed, geen vaste periode)."""
+    s, e = int(s_sec * rate), int(e_sec * rate)
+    f = int((e - s) * frac)
+    w = np.linspace(0, 1, f)
+    a = a[:e].copy()
+    a[e - f:e] = a[e - f:e] * np.sqrt(1 - w) + a[s - f:s] * np.sqrt(w)
+    return a, (s, e)
+
+
+def _finish(x, fs, rate=R7, lp=7000.0, hp=140.0):
+    """Van de synthesesnelheid naar `rate`: lowpass (geen spiegeling bij afspelen), highpass (laag = de reese)."""
+    from scipy.signal import resample_poly
+    x = sosfilt(butter(8, lp, 'lowpass', fs=fs, output='sos'), x)
+    x = resample_poly(x, rate, fs)
+    return sosfilt(butter(2, hp, 'highpass', fs=rate, output='sos'), x)
+
+
+def lead7(variant, root, rate=R7, dur=0.34):
+    """v7-lead op `root` (16 kHz, aanslag + 0,14 s loop; de envelope zit in de voicegroup, zoals v6)."""
+    fs = rate * OS7
+    t = np.arange(int(dur * fs)) / fs
+    f = hz(root)
+    if variant == 'a':
+        v = [(0, c, 1.0) for c in (-24, -14, -6, 0, 7, 15, 25)] + [(12, c, 0.85) for c in (-11, -3, 4, 12)] + [(-12, 0, 0.2)]
+        x = _saws(f, t, v, seed=root)
+        fc = 5000 + 6000 * np.exp(-t / 0.05)                          # 'blaat' open -> 5 kHz
+        x = svf_lp(norm(x), fc, 1.3, fs)
+        x = np.tanh(2.0 * norm(x))
+        x = norm(_finish(x, fs, rate))
+    elif variant == 'b':
+        swoop = lambda tt: -1.5 * np.exp(-tt / 0.012)                  # hoover: van 1,5 halve toon onder omhoog
+        v = [(12, c, 1.0) for c in (-18, -7, 6, 17)] + [(0, c, 0.6) for c in (-9, 9)] + [(19, 0, 0.18)]
+        x = _saws(f, t, v, seed=root + 50, pitch=swoop)
+        x = np.tanh(4.0 * norm(x))                                     # zwaar vervormd (op 64 kHz)
+        fc = 1300 + 3600 * (1 - np.exp(-t / 0.035))                    # resonante sweep 1,3 -> 4,9 kHz ('yah')
+        x = svf_lp(x, fc, 3.2, fs)
+        x = np.tanh(1.6 * norm(x))
+        x = norm(_finish(x, fs, rate, lp=7200, hp=220))
+    else:
+        from scipy.signal import resample_poly
+        skip, m = 0.14, int((dur + 0.14) * 44100)                      # midden uit de klinker knippen (koor zwelt traag aan)
+        y = np.zeros(m)
+        for prog, semi, g in ((52, 12, 1.0), (53, 0, 0.7), (54, 12, 0.6), (52, 0, 0.5)):
+            r = render(prog, [root + semi], dur + 0.2, vel=127)[:m]
+            y[:len(r)] += g * norm(r)
+        y = y[int(skip * 44100):]
+        y = resample_poly(y, fs, 44100)[:len(t)]
+        y = np.pad(y, (0, len(t) - len(y)))
+        # presence: klinker 'ah' scherper (formanten ±1 en ±3 kHz), plus een dunne zaagrand voor de aanslag
+        y = norm(y) + 0.6 * norm(sosfilt(butter(2, [800, 1300], 'bandpass', fs=fs, output='sos'), y)) \
+            + 0.5 * norm(sosfilt(butter(2, [2500, 3600], 'bandpass', fs=fs, output='sos'), y))
+        edge = _saws(f, t, [(12, -8, 1.0), (12, 8, 1.0)], seed=root + 90)
+        edge = svf_lp(norm(edge), 1800 + 6000 * np.exp(-t / 0.03), 1.0, fs)
+        x = norm(y) + 0.28 * norm(edge)
+        x = np.tanh(2.2 * norm(x))
+        x = norm(_finish(x, fs, rate, lp=7000, hp=180))
+    x = x * np.minimum(1, np.arange(len(x)) / (0.0025 * rate))         # 2,5 ms aanzet (geen klik)
+    a, loop = _xfade_loop(x, rate, 0.20, dur)
+    return norm(a), rate, root, loop
+
+
+def pluck7(rate=R7, dur=0.3):
+    """v7-arpeggio: vijf ontstemde zaagtanden + octaaf (i.p.v. twee), filterenvelope 6,5 kHz -> 600 Hz, op 16 kHz."""
+    fs = rate * OS7
+    t = np.arange(int(dur * fs)) / fs
+    x = _saws(hz(60), t, [(0, c, 1.0) for c in (-16, -8, 0, 8, 16)] + [(12, c, 0.35) for c in (-5, 5)], seed=60)
+    x = svf_lp(norm(x), 600 + 6000 * np.exp(-t / 0.045), 1.4, fs)
+    x = np.tanh(1.5 * norm(x * np.minimum(1, t / 0.002) * np.exp(-t / 0.11)))
+    x = _finish(x, fs, rate, lp=6000, hp=120)
+    return fade_out(norm(x), rate, 0.05), rate
+
+
 def main():
     os.makedirs(OUT, exist_ok=True)
     inc = open(DATA).read()
     jobs = {}           # naam -> (signaal, rate, grondtoon, loop)
-    # reese: grondtoon C2 (36), 128 samples per periode (8372 Hz), loop 128 perioden (±1,96 s, zweving ±0,5 Hz)
-    for name, fc, res, fm in (('dark', 4.0, 0.6, ()), ('mid', 9.0, 0.9, ((7, 3, 1.5),)), ('bright', 20.0, 0.7, ((9, 4, 2.0),))):
-        a, r = reese(36, 128, 128, fc, res, formants=fm, sub=0.15 if name == 'dark' else 0.0, fund=1.0 if name == 'dark' else 0.45)
-        jobs['mitch_reese_' + name] = (a, r, 36, (0, len(a)))
-    a, r = reese(36, 128, 128, 14.0, 0.5, drive=2.6, formants=((10, 3, 4.0), (19, 4, 3.0)), detune=((-1, 1.0), (2, 0.9)), sub=0.0, fund=0.45)
-    jobs['mitch_growl'] = (a, r, 36, (0, len(a)))
-    # wobble: twee maten per loop; M = aantal perioden in twee maten (afgerond: < 0,4% tempoverschil)
-    for nm, note in (('f1', 29), ('ab1', 32), ('c2', 36), ('db2', 37), ('eb2', 39)):
-        M = int(round(8 * BEAT * hz(note)))
-        per = 96 if note >= 36 else 128
-        a, r = reese(note, per, M, None, 0.9, sub=0.0, fund=0.5, drive=2.0, lfo=wob_lfo(), top=40, formants=((8, 4, 3.5),))
-        jobs['mitch_wob_' + nm] = (a, r, note, (0, len(a)))
-    a, r = reese(72, 32, 128, None, 0, sub=0, drive=1.2, top=13, detune=((-1, 1.0), (1, 0.9)))
-    jobs['mitch_lead'] = (a, r, 72, (0, len(a)))
-    a, r = stab([60, 63, 67, 72])
-    jobs['mitch_stab_min'] = (a, r, 60, None)
-    a, r = stab([60, 64, 67, 72])
-    jobs['mitch_stab_maj'] = (a, r, 60, None)
+    if 'v7' in sys.argv[1:]:          # alleen de v7-samples (de rest blijft byte-identiek)
+        return _write(v7_jobs(), inc)
+    # v1-v4-samples die geen nummer meer gebruikt (reese, wobbles, lead, stabs, horns, kicks/snares, rewind, airhorn,
+    # mitch3_kick/snare/wob, mitch4_*) zijn in v0.9.103 verwijderd (ROM-ruimte); de functies staan er nog.
     for nm, notes in (('min', [60, 63, 67]), ('maj', [60, 64, 67])):
-        a, r, lp = gm_chord(61, notes, 0.5, 22050, False)
-        jobs['mitch_horn_' + nm] = (a, r, 60, lp)
         a, r, lp = gm_chord(89, notes, 2.0, 16000, True)
         jobs['mitch_pad_' + nm] = (a, r, 60, lp)
-    k, kr = kick2()
-    s, sr = snare2()
-    jobs['mitch_kick'] = (k, kr, 60, None)
-    jobs['mitch_snare'] = (s, sr, 60, None)
-    g, gr = snare2(ghost=True)
-    jobs['mitch_ghost'] = (g, gr, 60, None)
     a, r = hat()
     jobs['mitch_hat'] = (a, r, 60, None)
-    a, r = hat(open_=True)
-    jobs['mitch_ohat'] = (a, r, 60, None)
-    a, r = reese_raw()
-    jobs['mitch_reese_raw'] = (a, r, 36, (0, len(a)))
-    a, r = reese_raw(cut=1100.0, drive=4.5, saws=((-2, 0.8), (-1, 1.0), (1, 1.0), (3, 0.8)))
-    jobs['mitch_reese_raw_dark'] = (a, r, 36, (0, len(a)))
     a, r = revcym()
     jobs['mitch_revcym'] = (a, r, 60, None)
     a = norm(resample(render(0, [51], 0.9, kit=0, vel=112), 44100, 22050, antialias=True))
     jobs['mitch_ride'] = (fade_out(a, 22050, 0.3), 22050, 60, None)
-    rb, rr = jobs['mitch_reese_mid'][:2]
-    a, r = rewind({'kick': (k, kr), 'snare': (s, sr), 'reese': (np.tile(rb, 4), rr * 2 ** (-7 / 12)),
-                   'stab': jobs['mitch_stab_min'][:2]})
-    jobs['mitch_rewind'] = (a, r, 60, None)
-    a, r = airhorn()
-    jobs['mitch_airhorn'] = (a, r, 60, None)
     # ---- v3
-    a, r = kick3(); jobs['mitch3_kick'] = (a, r, 60, None)
-    a, r = snare3(); jobs['mitch3_snare'] = (a, r, 60, None)
     a, r = snare3(ghost=True); jobs['mitch3_ghost'] = (a, r, 60, None)
-    a, r = brass3([41, 53], 53); jobs['mitch3_brass_lo'] = (a, r, 53, None)
-    a, r = brass3([51, 63], 63); jobs['mitch3_brass_hi'] = (a, r, 63, None)
-    a, r = pluck3(); jobs['mitch3_pluck'] = (a, r, 60, None)
-    for nm, note in (('f1', 29), ('c2', 36), ('db2', 37), ('eb2', 39)):
-        M = int(round(8 * BEAT3 * hz(note)))
-        per = 96 if note >= 36 else 128
-        a, r = reese(note, per, M, None, 0.9, sub=0.0, fund=0.45, drive=2.4, lfo=wob_lfo3(), top=40,
-                     formants=((8, 4, 3.0),), detune=((-2, 0.8), (-1, 1.0), (1, 1.0), (2, 0.8)))
-        jobs['mitch3_wob_' + nm] = (a, r, note, (0, len(a)))
-    # ---- v4
-    a, r = kick4(); jobs['mitch4_kick'] = (a, r, 60, None)
-    a, r = snare4(); jobs['mitch4_snare'] = (a, r, 60, None)
-    for nm, note in (('f1', 29), ('c2', 36), ('db2', 37), ('eb2', 39)):
-        a, r = wob4(note, 256 if note < 36 else 192)
-        jobs['mitch4_wob_' + nm] = (a, r, note, (0, len(a)))
+    # mitch3_brass_lo/hi (v3-v5) zijn in v6 vervangen door brass6; mitch3_pluck (v3-v6) in v7 door mitch7_pluck
     # ---- v5 (Jordi over v4: 'bas moet baas zijn'): luidere, vollere bas en wobble; hardere kick en snare
     a, r = kick5(); jobs['mitch5_kick'] = (a, r, 60, None)
     a, r = snare5(); jobs['mitch5_snare'] = (a, r, 60, None)
-    a, r = reese_raw(fund=0.8, low=0.6, grit=0.8, lowmid=1.0, limit=2)
-    jobs['mitch5_reese_raw'] = (a, r, 36, (0, len(a)))
+    # mitch5_reese_raw (v5-v6) is in v7 vervangen door mitch7_reese_raw
     a, r = reese_raw(cut=1100.0, drive=4.5, saws=((-2, 0.8), (-1, 1.0), (1, 1.0), (3, 0.8)), fund=0.8, low=0.6, grit=0.8,
                      lowmid=1.0, limit=2)
     jobs['mitch5_reese_raw_dark'] = (a, r, 36, (0, len(a)))
     for nm, note in (('f1', 29), ('c2', 36), ('db2', 37), ('eb2', 39)):
         a, r = wob4(note, 256 if note < 36 else 192, fund=0.7, hp=80.0, cutband=1.3, rounds=3)
         jobs['mitch5_wob_' + nm] = (a, r, note, (0, len(a)))
+    # ---- v6 (Mitch over v5: 'horn klinkt low quality'): mitch6a/b_brass_* (brass6) zijn in v7 vervangen door lead7
+    jobs.update(v7_jobs())
+    _write(jobs, inc)
+
+
+def v7_jobs():
+    """v7 (Mitch: 'klinkt nog te goedkoop, misschien een ander instrument dan de horn'): drie lead-kandidaten,
+    rijkere pluk, rauwe reese met meer lucht; alles op 16 kHz."""
+    jobs = {}
+    for v in LEAD7:
+        for root in LEAD7_ROOTS:
+            jobs['mitch7%s_lead_%d' % (v, root)] = lead7(v, root)
+    a, r = pluck7(); jobs['mitch7_pluck'] = (a, r, 60, None)
+    a, r = reese_raw(per=240, M=64, cut=3800.0, fund=0.8, low=0.6, grit=0.8, lowmid=1.0, limit=2)
+    jobs['mitch7_reese_raw'] = (a, r, 36, (0, len(a)))
+    return jobs
+
+
+def _write(jobs, inc):
     for name, (a, rate, key, loop) in jobs.items():
         write_wav(OUT + name + '.wav', a, rate, key, loop)
         label = 'DirectSoundWaveData_' + name

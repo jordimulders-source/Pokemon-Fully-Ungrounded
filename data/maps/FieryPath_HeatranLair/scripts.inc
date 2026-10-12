@@ -7,7 +7,7 @@ FieryPath_HeatranLair_EventScript_Heatran::
 	faceplayer
 	playmoncry SPECIES_HEATRAN, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_HEATRAN, 70
+	setwildbattle SPECIES_HEATRAN, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -20,3 +20,12 @@ FieryPath_HeatranLair_EventScript_Heatran::
 FieryPath_HeatranLair_EventScript_HeatranStays::
 	release
 	end
+
+@ --- land_vulling (gegenereerd door tools/grounded/maptools/land_vulling.py) ---
+FieryPath_HeatranLair_EventScript_LVSauna::
+	msgbox FieryPath_HeatranLair_Text_LVSauna, MSGBOX_NPC
+	end
+
+FieryPath_HeatranLair_Text_LVSauna:
+	.string "Ahh. Twelve hundred degrees.\nBest thing there is for the knees.\pThe hot springs in LAVARIDGE?\nLukewarm soup for tourists.\pThe big one in the back doesn't\nmind me. We're both old and we\lboth like it hot.$"
+@ --- einde land_vulling ---

@@ -59,37 +59,37 @@ MeteorFalls_CraterRoom_EventScript_StaticMon::
 MeteorFalls_CraterRoom_EventScript_Battle_BAGON:
 	playmoncry SPECIES_BAGON, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_BAGON, 20
+	setwildbattle SPECIES_BAGON, 30
 	goto MeteorFalls_CraterRoom_EventScript_DoBattle
 
 MeteorFalls_CraterRoom_EventScript_Battle_DEINO:
 	playmoncry SPECIES_DEINO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_DEINO, 20
+	setwildbattle SPECIES_DEINO, 30
 	goto MeteorFalls_CraterRoom_EventScript_DoBattle
 
 MeteorFalls_CraterRoom_EventScript_Battle_LAPRAS:
 	playmoncry SPECIES_LAPRAS, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_LAPRAS, 22
+	setwildbattle SPECIES_LAPRAS, 33
 	goto MeteorFalls_CraterRoom_EventScript_DoBattle
 
 MeteorFalls_CraterRoom_EventScript_Battle_MIENFOO:
 	playmoncry SPECIES_MIENFOO, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MIENFOO, 20
+	setwildbattle SPECIES_MIENFOO, 30
 	goto MeteorFalls_CraterRoom_EventScript_DoBattle
 
 MeteorFalls_CraterRoom_EventScript_Battle_MINIOR_METEOR:
 	playmoncry SPECIES_MINIOR_METEOR, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MINIOR_METEOR, 20
+	setwildbattle SPECIES_MINIOR_METEOR, 30
 	goto MeteorFalls_CraterRoom_EventScript_DoBattle
 
 MeteorFalls_CraterRoom_EventScript_Battle_CARBINK:
 	playmoncry SPECIES_CARBINK, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_CARBINK, 20
+	setwildbattle SPECIES_CARBINK, 30
 	goto MeteorFalls_CraterRoom_EventScript_DoBattle
 
 MeteorFalls_CraterRoom_EventScript_DoBattle:

@@ -7033,6 +7033,39 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_LawnMower,
     },
 
+    [ITEM_SILVER_WING] =
+    {
+        .name = ITEM_NAME("Silver Wing"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Smells of storms.\n"
+            "Points north of\n"
+            "Sootopolis. Down."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
+        .iconPic = gItemIcon_PrettyFeather,
+        .iconPalette = gItemIconPalette_PrettyFeather,
+    },
+
+    // Project Grounded: Arceus geeft hem na Spear Pillar; hint naar de volgende niet-gevangen legendary
+    [ITEM_AZURE_FLUTE] =
+    {
+        .name = ITEM_NAME("Azure Flute"),
+        .price = 0,
+        .importance = 1,
+        .description = COMPOUND_STRING(
+            "Plays a note no\n"
+            "one taught it.\n"
+            "Legends listen."),
+        .pocket = POCKET_KEY_ITEMS,
+        .type = ITEM_USE_BAG_MENU,
+        .fieldUseFunc = ItemUseOutOfBattle_AzureFlute,
+        .iconPic = gItemIcon_AzureFlute,
+        .iconPalette = gItemIconPalette_AzureFlute,
+    },
+
 // Gems
     #if I_PRICE >= GEN_9
         #define GEM_PRICE 15000
@@ -13939,20 +13972,21 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_PokeFlute,
     },
 
-    [ITEM_FAME_CHECKER] =
+    // Project Grounded: slot van de Fame Checker (FRLG, ongebruikt); Sea Shard-verzamelquest
+    [ITEM_SEA_SHARD] =
     {
-        .name = ITEM_NAME("Fame Checker"),
+        .name = ITEM_NAME("Sea Shard"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "Stores information\n"
-            "on famous people\n"
-            "for instant recall."),
+            "A glowing shard\n"
+            "from the seabed.\n"
+            "Divers want these."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_FameChecker,
-        .iconPalette = gItemIconPalette_FameChecker,
+        .iconPic = gItemIcon_Shard,
+        .iconPalette = gItemIconPalette_BlueShard,
     },
 
     [ITEM_TEACHY_TV] =
@@ -14022,20 +14056,21 @@ const struct Item gItemsInfo[] =
         .iconPalette = gItemIconPalette_MysticTicket,
     },
 
-    [ITEM_AURORA_TICKET] =
+    // Project Grounded: slot van het Aurora Ticket (Birth Island geschrapt); leeg, zodat de item-id's gelijk blijven
+    [ITEM_SEALBREAKER] =
     {
-        .name = ITEM_NAME("Aurora Ticket"),
+        .name = ITEM_NAME("Sealbreaker"),
         .price = 0,
         .description = COMPOUND_STRING(
-            "A ticket required\n"
-            "to board the ship\n"
-            "to Birth Island."),
+            "An old key from\n"
+            "Mt. Pyre. Breaks\n"
+            "the seals of ruin."),
         .importance = 1,
         .pocket = POCKET_KEY_ITEMS,
         .type = ITEM_USE_BAG_MENU,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
-        .iconPic = gItemIcon_AuroraTicket,
-        .iconPalette = gItemIconPalette_AuroraTicket,
+        .iconPic = gItemIcon_SecretKey,
+        .iconPalette = gItemIconPalette_SecretKey,
     },
 
     [ITEM_OLD_SEA_MAP] =

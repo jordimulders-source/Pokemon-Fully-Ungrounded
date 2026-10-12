@@ -7071,6 +7071,11 @@ static void AnimDoubleTeam(struct Sprite *sprite)
 
 void AnimTask_AllySwitchAttacker(u8 taskId)
 {
+    if (!IsDoubleBattle()) // Project Grounded: nooit wisselen in singles
+    {
+        DestroyAnimVisualTask(taskId);
+        return;
+    }
     PrepareDoubleTeamAnim(taskId, ANIM_ATTACKER, TRUE);
     gSprites[gBattlerSpriteIds[gBattlerAttacker]].invisible = TRUE;
     gSprites[gBattlerSpriteIds[BATTLE_PARTNER(gBattlerAttacker)]].invisible = TRUE;
@@ -7084,6 +7089,11 @@ void AnimTask_AllySwitchAttacker(u8 taskId)
 
 void AnimTask_AllySwitchPartner(u8 taskId)
 {
+    if (!IsDoubleBattle()) // Project Grounded: nooit wisselen in singles
+    {
+        DestroyAnimVisualTask(taskId);
+        return;
+    }
     PrepareDoubleTeamAnim(taskId, ANIM_ATK_PARTNER, TRUE);
 }
 

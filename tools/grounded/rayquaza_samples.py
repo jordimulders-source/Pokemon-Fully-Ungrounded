@@ -17,12 +17,9 @@ DATA = 'sound/direct_sound_data.inc'
 
 # naam: (GM-programma, noot, lengte in s, samplerate, loop) ; loop=None -> eenmalig (uitklinkend instrument)
 SAMPLES = {
-    'gm_clean_guitar': (27, 60, 1.6, 16000, None),
-    'gm_steel_drums':  (114, 72, 0.9, 22050, None),
 }
 # gesynthetiseerde golven met een loop van precies 4 perioden op C4 (64 samples per periode): (golf, harmonischen)
 WAVES = {
-    'gm_saw_lead': ('saw', 24),
 }
 # additief gesynthetiseerde, uitklinkende slaginstrumenten met inharmonische partialen (gamelan voor Battle! Rayquaza,
 # rayquaza_theme.py). naam: (grondtoon-noot, lengte s, samplerate, ombak Hz, aanslag (amp, ms, helderheid),

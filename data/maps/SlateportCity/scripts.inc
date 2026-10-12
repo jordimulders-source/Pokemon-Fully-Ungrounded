@@ -1430,6 +1430,7 @@ SlateportCity_EventScript_ProfOakGiveSquirtle::
 
 SlateportCity_EventScript_ProfOakGiveMon::
 	bufferspeciesname STR_VAR_1, VAR_TEMP_1
+	copyvar VAR_TEMP_TRANSFERRED_SPECIES, VAR_TEMP_1
 	givemon VAR_TEMP_1, 15
 	goto_if_eq VAR_RESULT, MON_CANT_GIVE, Common_EventScript_NoMoreRoomForPokemon
 	playfanfare MUS_OBTAIN_ITEM

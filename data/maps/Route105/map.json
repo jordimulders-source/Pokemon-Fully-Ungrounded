@@ -14,6 +14,16 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
+      "map": "MAP_FULLMOON_ISLAND",
+      "offset": 30,
+      "direction": "right"
+    },
+    {
+      "map": "MAP_NOTHING_ISLAND",
+      "offset": 0,
+      "direction": "left"
+    },
+    {
       "map": "MAP_ROUTE104",
       "offset": 0,
       "direction": "up"
@@ -133,6 +143,45 @@
       "trainer_sight_or_berry_tree_id": "4",
       "script": "Route105_EventScript_Andres",
       "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_HIKER",
+      "x": 21,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route105_EventScript_ZV2Castaway",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(VOLTORB)",
+      "x": 22,
+      "y": 26,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route105_EventScript_ZV2Wilson",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_BLACK_BELT",
+      "x": 26,
+      "y": 27,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_LEFT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "3",
+      "script": "Route105_EventScript_ZV2Kenta",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -161,6 +210,30 @@
       "elevation": 3,
       "item": "ITEM_BIG_PEARL",
       "flag": "FLAG_HIDDEN_ITEM_ROUTE_105_BIG_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 20,
+      "y": 30,
+      "elevation": 3,
+      "item": "ITEM_BIG_PEARL",
+      "flag": "FLAG_HIDDEN_ITEM_ZV2_R105_BIG_PEARL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 26,
+      "y": 25,
+      "elevation": 3,
+      "item": "ITEM_STAR_PIECE",
+      "flag": "FLAG_HIDDEN_ITEM_ZV2_R105_STAR_PIECE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 23,
+      "y": 40,
+      "elevation": 1,
+      "item": "ITEM_HEART_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_ZV2_R105_HEART_SCALE"
     }
   ]
 }

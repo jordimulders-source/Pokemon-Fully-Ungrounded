@@ -1,0 +1,1020 @@
+{
+  "id": "MAP_ULTRA_SPACE_NIHILEGO",
+  "name": "UltraSpace_Nihilego",
+  "layout": "LAYOUT_ULTRA_SPACE_NIHILEGO",
+  "music": "MUS_UNDERWATER",
+  "region_map_section": "MAPSEC_ALTERING_CAVE",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "local_id": "LOCALID_ULTRA_NIHILEGO_RETURN",
+      "graphics_id": "OBJ_EVENT_GFX_ULTRA_WORMHOLE",
+      "x": 20,
+      "y": 29,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UltraSpace_EventScript_ReturnToHub",
+      "flag": "0"
+    },
+    {
+      "local_id": "LOCALID_ULTRA_NIHILEGO_UB",
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NIHILEGO)",
+      "x": 20,
+      "y": 11,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UltraSpace_Nihilego_EventScript_UB",
+      "flag": "FLAG_ULTRA_NIHILEGO"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(FRILLISH)",
+      "x": 12,
+      "y": 25,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Jelly",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(JELLICENT)",
+      "x": 29,
+      "y": 25,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_WANDER_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 2,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Jelly",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NIHILEGO)",
+      "x": 6,
+      "y": 13,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Echo",
+      "flag": "FLAG_ULTRA_NIHILEGO"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(NIHILEGO)",
+      "x": 36,
+      "y": 11,
+      "elevation": 1,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Echo",
+      "flag": "FLAG_ULTRA_NIHILEGO"
+    }
+  ],
+  "warp_events": [],
+  "coord_events": [
+    {
+      "type": "trigger",
+      "x": 3,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 4,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 5,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 6,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 7,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 8,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 9,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 10,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 11,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_1",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage0"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 24,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 23,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 19,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 36,
+      "y": 22,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 20,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 37,
+      "y": 21,
+      "elevation": 0,
+      "var": "VAR_TEMP_2",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage1"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 28,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 29,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 30,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 31,
+      "y": 18,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 11,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 32,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 12,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 33,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 13,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 14,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 15,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 34,
+      "y": 17,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    },
+    {
+      "type": "trigger",
+      "x": 35,
+      "y": 16,
+      "elevation": 0,
+      "var": "VAR_TEMP_3",
+      "var_value": "0",
+      "script": "UltraSpace_Nihilego_EventScript_Mirage2"
+    }
+  ],
+  "bg_events": []
+}

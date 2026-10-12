@@ -13,10 +13,12 @@ for y in range(H):
 # events (vrij houden): trainers, items, deuren
 EVENTS={(17,13),(16,29),(25,21),(33,10),(31,4),(43,6),(49,2),(51,20),(52,18),(27,2),(51,25),(51,26),(8,8),(36,40),(13,40)}
 # --- terrassen: dal (L0) -> L1 -> hoge rotswand -> L2-richel -> L3-richel -> top (L4) ---
-L1=set(rect(18,-1,55,25))|set(rect(30,26,36,28))
-L2=set(rect(26,-1,55,17))|set(rect(34,18,38,19))
-L3=set(rect(36,-1,55,10))
-L4=set(rect(46,-1,55,5))
+# de terrassen lopen tot x 56 door: hun oostrand verdwijnt onder de randbomen (x 56-59), anders klopte de hoek
+# waar een klifvoet op de oostrand van de laag eronder stuit niet
+L1=set(rect(18,-1,56,25))|set(rect(30,26,36,28))
+L2=set(rect(26,-1,56,17))|set(rect(34,18,38,19))
+L3=set(rect(36,-1,56,10))
+L4=set(rect(46,-1,56,5))
 terrace(m,L1); terrace(m,L2,face=4); terrace(m,L3,face=3); terrace(m,L4)
 # rotsheuvels in het dal en de wei
 for r in (set(rect(4,12,8,17)),set(rect(27,34,33,38)),set(rect(42,29,47,33)),set(rect(13,30,17,33))): terrace(m,r)
@@ -38,7 +40,7 @@ path-= {c for c in path if m.g[c[1]][c[0]] in STAIRS}
 path={c for c in path if free(*c)}
 autopath(m,path,'deep')
 # grote keien (2x2) als obstakels op de plateaus
-for (bx,by) in [(33,19),(44,19),(24,2),(31,8),(42,1),(52,1),(36,29),(30,37)]:
+for (bx,by) in [(33,19),(44,19),(24,2),(31,8),(42,3),(52,2),(36,29),(30,37)]:   # niet op rij 0-1: daar staan de randbomen
     if all(free(bx+dx,by+dy) and (bx+dx,by+dy) not in path and (bx+dx,by+dy) not in EVENTS for dx in (0,1) for dy in (0,1)):
         for dx in (0,1):
             for dy in (0,1): m.put(bx+dx,by+dy,f'boulder_{dx}{dy}',1)
@@ -56,6 +58,7 @@ def okb(x,y):
     return 0<=x<W and 0<=y<H and (x,y) not in path and (x,y) not in EVENTS and m.elev[y][x]!=1 and \
         m.g[y][x] not in STAIRS|{N['cave_door']}
 BAND=set(rect(0,0,3,H-1))|set(rect(W-4,0,W-1,H-1))|set(rect(0,0,9,1))|set(rect(14,0,47,1))|set(rect(52,0,W-1,1))|set(rect(0,H-2,W-1,H-1))
+BAND|=set(rect(46,2,47,3))   # boom op de westrand van de bovenste laag: geen losse klifrand onder de boom bij de uitgang
 hforest(m,BAND,okb,path)
 # hoog gras (niet direct tegen de randbomen aan)
 HT={N[k] for k in N if k.startswith('htree')}

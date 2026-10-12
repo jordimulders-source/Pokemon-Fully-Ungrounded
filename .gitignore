@@ -49,6 +49,7 @@ tools/trainerproc/trainerproc
 src/data/battle_partners.h
 src/data/trainers.h
 src/data/debug_trainers.h
+src/data/rival_postgame.h
 test/battle/trainer_control.h
 tools/compresSmol/compresSmol
 tools/compresSmol/compresSmolTilemap
@@ -58,3 +59,5 @@ tools/aif2pcm/aif2pcm
 *.fastSmol
 *.smolTM
 __pycache__
+src/data/pokemon/ow_species_keep.h
+.claude/worktrees/

@@ -39,6 +39,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_REAPER_CLOTH",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_SAFARI_SPOOK_REAPER_CLOTH"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_CAMPER",
+      "x": 4,
+      "y": 24,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_RIGHT",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "SafariZone_HauntedCamp_EventScript_LVCounselor",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -107,6 +120,14 @@
       "elevation": 3,
       "item": "ITEM_SPELL_TAG",
       "flag": "FLAG_HIDDEN_ITEM_SAFARI_SPOOK_SPELL_TAG"
+    },
+    {
+      "type": "hidden_item",
+      "x": 14,
+      "y": 38,
+      "elevation": 3,
+      "item": "ITEM_CLEANSE_TAG",
+      "flag": "FLAG_HIDDEN_ITEM_SAFARI_SPOOK_CLEANSE_TAG"
     }
   ]
 }

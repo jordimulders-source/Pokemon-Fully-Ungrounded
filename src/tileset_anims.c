@@ -77,7 +77,6 @@ static void QueueAnimTiles_EliteFour_WallLights(u16);
 const u16 gTilesetAnims_General_Flower_Frame1[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/1.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame0[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/0.4bpp");
 const u16 gTilesetAnims_General_Flower_Frame2[] = INCBIN_U16("data/tilesets/primary/general/anim/flower/2.4bpp");
-const u16 tileset_anims_space_0[16] = {};
 
 const u16 *const gTilesetAnims_General_Flower[] = {
     gTilesetAnims_General_Flower_Frame0,
@@ -214,7 +213,6 @@ const u16 gTilesetAnims_Mauville_Flower2_Frame1[] = INCBIN_U16("data/tilesets/se
 const u16 gTilesetAnims_Mauville_Flower2_Frame2[] = INCBIN_U16("data/tilesets/secondary/mauville/anim/flower_2/2.4bpp");
 const u16 gTilesetAnims_Mauville_Flower2_Frame3[] = INCBIN_U16("data/tilesets/secondary/mauville/anim/flower_2/3.4bpp");
 const u16 gTilesetAnims_Mauville_Flower2_Frame4[] = INCBIN_U16("data/tilesets/secondary/mauville/anim/flower_2/4.4bpp");
-const u16 tileset_anims_space_1[16] = {};
 
 u16 *const gTilesetAnims_Mauville_Flower1_VDests[] = {
     (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 96)),
@@ -315,7 +313,6 @@ const u16 *const gTilesetAnims_Rustboro_WindyWater[] = {
 
 const u16 gTilesetAnims_Rustboro_Fountain_Frame0[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/fountain/0.4bpp");
 const u16 gTilesetAnims_Rustboro_Fountain_Frame1[] = INCBIN_U16("data/tilesets/secondary/rustboro/anim/fountain/1.4bpp");
-const u16 tileset_anims_space_2[16] = {};
 
 const u16 *const gTilesetAnims_Rustboro_Fountain[] = {
     gTilesetAnims_Rustboro_Fountain_Frame0,
@@ -326,11 +323,6 @@ const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame0[] = INCBIN_U16("data/tilesets
 const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame1[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/1.4bpp");
 const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame2[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/2.4bpp");
 const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame3[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/3.4bpp");
-const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame4[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/4.4bpp");
-const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame5[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/5.4bpp");
-const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame6[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/6.4bpp");
-const u16 gTilesetAnims_Lavaridge_Cave_Lava_Frame7[] = INCBIN_U16("data/tilesets/secondary/cave/anim/lava/7.4bpp");
-const u16 tileset_anims_space_3[16] = {};
 
 const u16 *const gTilesetAnims_Lavaridge_Cave_Lava[] = {
     gTilesetAnims_Lavaridge_Cave_Lava_Frame0,
@@ -347,7 +339,6 @@ const u16 gTilesetAnims_EverGrande_Flowers_Frame4[] = INCBIN_U16("data/tilesets/
 const u16 gTilesetAnims_EverGrande_Flowers_Frame5[] = INCBIN_U16("data/tilesets/secondary/ever_grande/anim/flowers/5.4bpp");
 const u16 gTilesetAnims_EverGrande_Flowers_Frame6[] = INCBIN_U16("data/tilesets/secondary/ever_grande/anim/flowers/6.4bpp");
 const u16 gTilesetAnims_EverGrande_Flowers_Frame7[] = INCBIN_U16("data/tilesets/secondary/ever_grande/anim/flowers/7.4bpp");
-const u16 tileset_anims_space_4[16] = {};
 
 u16 *const gTilesetAnims_EverGrande_VDests[] = {
     (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 224)),
@@ -452,7 +443,6 @@ const u16 gTilesetAnims_EliteFour_WallLights_Frame0[] = INCBIN_U16("data/tileset
 const u16 gTilesetAnims_EliteFour_WallLights_Frame1[] = INCBIN_U16("data/tilesets/secondary/elite_four/anim/wall_lights/1.4bpp");
 const u16 gTilesetAnims_EliteFour_WallLights_Frame2[] = INCBIN_U16("data/tilesets/secondary/elite_four/anim/wall_lights/2.4bpp");
 const u16 gTilesetAnims_EliteFour_WallLights_Frame3[] = INCBIN_U16("data/tilesets/secondary/elite_four/anim/wall_lights/3.4bpp");
-const u16 tileset_anims_space_5[16] = {};
 
 const u16 *const gTilesetAnims_EliteFour_WallLights[] = {
     gTilesetAnims_EliteFour_WallLights_Frame0,
@@ -468,7 +458,6 @@ const u16 *const gTilesetAnims_EliteFour_FloorLight[] = {
 
 const u16 gTilesetAnims_MauvilleGym_ElectricGates_Frame0[] = INCBIN_U16("data/tilesets/secondary/mauville_gym/anim/electric_gates/0.4bpp");
 const u16 gTilesetAnims_MauvilleGym_ElectricGates_Frame1[] = INCBIN_U16("data/tilesets/secondary/mauville_gym/anim/electric_gates/1.4bpp");
-const u16 tileset_anims_space_6[16] = {};
 
 const u16 *const gTilesetAnims_MauvilleGym_ElectricGates[] = {
     gTilesetAnims_MauvilleGym_ElectricGates_Frame0,
@@ -477,7 +466,6 @@ const u16 *const gTilesetAnims_MauvilleGym_ElectricGates[] = {
 
 const u16 gTilesetAnims_BikeShop_BlinkingLights_Frame0[] = INCBIN_U16("data/tilesets/secondary/bike_shop/anim/blinking_lights/0.4bpp");
 const u16 gTilesetAnims_BikeShop_BlinkingLights_Frame1[] = INCBIN_U16("data/tilesets/secondary/bike_shop/anim/blinking_lights/1.4bpp");
-const u16 tileset_anims_space_7[16] = {};
 
 const u16 *const gTilesetAnims_BikeShop_BlinkingLights[] = {
     gTilesetAnims_BikeShop_BlinkingLights_Frame0,
@@ -492,12 +480,47 @@ const u16 gTilesetAnims_Sootopolis_StormyWater_Frame4[] = INCBIN_U16("data/tiles
 const u16 gTilesetAnims_Sootopolis_StormyWater_Frame5[] = INCBIN_U16("data/tilesets/secondary/sootopolis/anim/stormy_water/5_kyogre.4bpp", "data/tilesets/secondary/sootopolis/anim/stormy_water/5_groudon.4bpp");
 const u16 gTilesetAnims_Sootopolis_StormyWater_Frame6[] = INCBIN_U16("data/tilesets/secondary/sootopolis/anim/stormy_water/6_kyogre.4bpp", "data/tilesets/secondary/sootopolis/anim/stormy_water/6_groudon.4bpp");
 const u16 gTilesetAnims_Sootopolis_StormyWater_Frame7[] = INCBIN_U16("data/tilesets/secondary/sootopolis/anim/stormy_water/7_kyogre.4bpp", "data/tilesets/secondary/sootopolis/anim/stormy_water/7_groudon.4bpp");
-const u16 tileset_anims_space_8[16] = {};
 
-const u16 gTilesetAnims_Unused1_Frame0[] = INCBIN_U16("data/tilesets/secondary/unused_1/0.4bpp");
-const u16 gTilesetAnims_Unused1_Frame1[] = INCBIN_U16("data/tilesets/secondary/unused_1/1.4bpp");
-const u16 gTilesetAnims_Unused1_Frame2[] = INCBIN_U16("data/tilesets/secondary/unused_1/2.4bpp");
-const u16 gTilesetAnims_Unused1_Frame3[] = INCBIN_U16("data/tilesets/secondary/unused_1/3.4bpp");
+
+// Project Grounded: draaikolken van het Keldeo-eiland (tools/grounded/maptools/swords_isle.py)
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame0[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/0.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame1[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/1.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame2[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/2.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame3[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/3.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame4[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/4.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame5[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/5.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame6[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/6.4bpp");
+const u16 gTilesetAnims_UnchartedIsle_Whirlpool_Frame7[] = INCBIN_U16("data/tilesets/secondary/uncharted_isle/anim/whirlpool/7.4bpp");
+const u16 *const gTilesetAnims_UnchartedIsle_Whirlpool[] = {
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame0,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame1,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame2,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame3,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame4,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame5,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame6,
+    gTilesetAnims_UnchartedIsle_Whirlpool_Frame7,
+};
+
+// Project Grounded: vuur in het brandende National Park (national_park_tiles.py)
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame0[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/0.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame1[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/1.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame2[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/2.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame3[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/3.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame4[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/4.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame5[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/5.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame6[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/6.4bpp");
+const u16 gTilesetAnims_ParkBurnt_Fire_Frame7[] = INCBIN_U16("data/tilesets/secondary/park_burnt_rustboro/anim/fire/7.4bpp");
+const u16 *const gTilesetAnims_ParkBurnt_Fire[] = {
+    gTilesetAnims_ParkBurnt_Fire_Frame0,
+    gTilesetAnims_ParkBurnt_Fire_Frame1,
+    gTilesetAnims_ParkBurnt_Fire_Frame2,
+    gTilesetAnims_ParkBurnt_Fire_Frame3,
+    gTilesetAnims_ParkBurnt_Fire_Frame4,
+    gTilesetAnims_ParkBurnt_Fire_Frame5,
+    gTilesetAnims_ParkBurnt_Fire_Frame6,
+    gTilesetAnims_ParkBurnt_Fire_Frame7,
+};
 
 const u16 *const gTilesetAnims_Sootopolis_StormyWater[] = {
     gTilesetAnims_Sootopolis_StormyWater_Frame0,
@@ -513,17 +536,12 @@ const u16 *const gTilesetAnims_Sootopolis_StormyWater[] = {
 const u16 gTilesetAnims_BattlePyramid_Torch_Frame0[] = INCBIN_U16("data/tilesets/secondary/battle_pyramid/anim/torch/0.4bpp");
 const u16 gTilesetAnims_BattlePyramid_Torch_Frame1[] = INCBIN_U16("data/tilesets/secondary/battle_pyramid/anim/torch/1.4bpp");
 const u16 gTilesetAnims_BattlePyramid_Torch_Frame2[] = INCBIN_U16("data/tilesets/secondary/battle_pyramid/anim/torch/2.4bpp");
-const u16 tileset_anims_space_9[16] = {};
 
 const u16 gTilesetAnims_BattlePyramid_StatueShadow_Frame0[] = INCBIN_U16("data/tilesets/secondary/battle_pyramid/anim/statue_shadow/0.4bpp");
 const u16 gTilesetAnims_BattlePyramid_StatueShadow_Frame1[] = INCBIN_U16("data/tilesets/secondary/battle_pyramid/anim/statue_shadow/1.4bpp");
 const u16 gTilesetAnims_BattlePyramid_StatueShadow_Frame2[] = INCBIN_U16("data/tilesets/secondary/battle_pyramid/anim/statue_shadow/2.4bpp");
-const u16 tileset_anims_space_10[7808] = {};
 
-const u16 gTilesetAnims_Unused2_Frame0[] = INCBIN_U16("data/tilesets/secondary/unused_2/0.4bpp");
-const u16 tileset_anims_space_11[224] = {};
 
-const u16 gTilesetAnims_Unused2_Frame1[] = INCBIN_U16("data/tilesets/secondary/unused_2/1.4bpp");
 
 const u16 *const gTilesetAnims_BattlePyramid_Torch[] = {
     gTilesetAnims_BattlePyramid_Torch_Frame0,
@@ -1186,3 +1204,628 @@ static void BlendAnimPalette_BattleDome_FloorLightsNoBlend(u16 timer)
             sSecondaryTilesetAnimCallback = NULL;
     }
 }
+
+// Project Grounded: draaikolken van het Keldeo-eiland; tiles 16-31 van de secondary, elke 8 frames een stap
+static void QueueAnimTiles_UnchartedIsle_Whirlpool(u16 timer)
+{
+    u16 i = timer % ARRAY_COUNT(gTilesetAnims_UnchartedIsle_Whirlpool);
+    AppendTilesetAnimToBuffer(gTilesetAnims_UnchartedIsle_Whirlpool[i], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 16)), 16 * TILE_SIZE_4BPP);
+}
+
+static void TilesetAnim_UnchartedIsle(u16 timer)
+{
+    if (timer % 8 == 0)
+        QueueAnimTiles_UnchartedIsle_Whirlpool(timer / 8);
+}
+
+void InitTilesetAnim_UnchartedIsle(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UnchartedIsle;
+}
+
+// Project Grounded: brandend National Park (tools/grounded/maptools/national_park_tiles.py): Rustboro (fontein) +
+// vuur in tiles 320-375 van de secondary, elke 8 frames een stap
+static void TilesetAnim_ParkBurnt(u16 timer)
+{
+    TilesetAnim_Rustboro(timer);
+    if (timer % 8 == 1)
+        AppendTilesetAnimToBuffer(gTilesetAnims_ParkBurnt_Fire[(timer / 8) % ARRAY_COUNT(gTilesetAnims_ParkBurnt_Fire)],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 320)), 56 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_ParkBurnt(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_ParkBurnt;
+}
+
+// ultra_worlds_a { (tools/grounded/maptools/ultra_worlds_a.py: eigen tilesets van zes Ultra Beast-werelden)
+#include "constants/rgb.h"
+
+// paletcyclus: kleuren first..first+n-1 van BG-palet pal schuiven elke stap een plek op (lava, water, leds)
+static void UltraWorld_CyclePal(u8 pal, u8 first, u8 n, const u16 *cols, u16 step)
+{
+    u32 i;
+    for (i = 0; i < n; i++)
+        gPlttBufferUnfaded[BG_PLTT_ID(pal) + first + i] = cols[(i + step) % n];
+    if ((u8)FindTaskIdByFunc(Task_BattleTransition_Intro) == TASK_NONE)
+        BlendPalette(BG_PLTT_ID(pal) + first, n, gPaletteFade.y, gPaletteFade.blendColor & 0x7FFF);
+}
+const u16 gTilesetAnims_UltraWorldNihilego_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/0.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/1.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/2.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/3.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/4.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/5.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/6.4bpp");
+const u16 gTilesetAnims_UltraWorldNihilego_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_world_nihilego/anim/7.4bpp");
+const u16 *const gTilesetAnims_UltraWorldNihilego[] = {
+    gTilesetAnims_UltraWorldNihilego_Frame0,
+    gTilesetAnims_UltraWorldNihilego_Frame1,
+    gTilesetAnims_UltraWorldNihilego_Frame2,
+    gTilesetAnims_UltraWorldNihilego_Frame3,
+    gTilesetAnims_UltraWorldNihilego_Frame4,
+    gTilesetAnims_UltraWorldNihilego_Frame5,
+    gTilesetAnims_UltraWorldNihilego_Frame6,
+    gTilesetAnims_UltraWorldNihilego_Frame7,
+};
+
+static void TilesetAnim_UltraWorldNihilego(u16 timer)
+{
+    if (timer % 8 == 0)
+        AppendTilesetAnimToBuffer(gTilesetAnims_UltraWorldNihilego[(timer / 8) % 8], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY)), 52 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraWorldNihilego(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraWorldNihilego;
+}
+
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/0.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/1.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/2.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/3.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/4.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/5.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/6.4bpp");
+const u16 gTilesetAnims_UltraWorldPheromosa_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_world_pheromosa/anim/7.4bpp");
+const u16 *const gTilesetAnims_UltraWorldPheromosa[] = {
+    gTilesetAnims_UltraWorldPheromosa_Frame0,
+    gTilesetAnims_UltraWorldPheromosa_Frame1,
+    gTilesetAnims_UltraWorldPheromosa_Frame2,
+    gTilesetAnims_UltraWorldPheromosa_Frame3,
+    gTilesetAnims_UltraWorldPheromosa_Frame4,
+    gTilesetAnims_UltraWorldPheromosa_Frame5,
+    gTilesetAnims_UltraWorldPheromosa_Frame6,
+    gTilesetAnims_UltraWorldPheromosa_Frame7,
+};
+
+static const u16 sUltraWorldPheromosa_Cycle0[] = {RGB(24, 5, 0), RGB(30, 12, 1), RGB(31, 20, 3), RGB(31, 28, 12)};
+static const u16 sUltraWorldPheromosa_Cycle1[] = {RGB(4, 11, 21), RGB(6, 16, 26), RGB(11, 21, 29), RGB(19, 26, 31)};
+static void TilesetAnim_UltraWorldPheromosa(u16 timer)
+{
+    if (timer % 6 == 0)
+        AppendTilesetAnimToBuffer(gTilesetAnims_UltraWorldPheromosa[(timer / 6) % 8], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY)), 112 * TILE_SIZE_4BPP);
+    if (timer % 8 == 0)
+        UltraWorld_CyclePal(11, 12, 4, sUltraWorldPheromosa_Cycle0, timer / 8);
+    if (timer % 8 == 0)
+        UltraWorld_CyclePal(12, 12, 4, sUltraWorldPheromosa_Cycle1, timer / 8);
+}
+
+void InitTilesetAnim_UltraWorldPheromosa(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraWorldPheromosa;
+}
+
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/0.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/1.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/2.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/3.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/4.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/5.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/6.4bpp");
+const u16 gTilesetAnims_UltraWorldXurkitree_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_world_xurkitree/anim/7.4bpp");
+const u16 *const gTilesetAnims_UltraWorldXurkitree[] = {
+    gTilesetAnims_UltraWorldXurkitree_Frame0,
+    gTilesetAnims_UltraWorldXurkitree_Frame1,
+    gTilesetAnims_UltraWorldXurkitree_Frame2,
+    gTilesetAnims_UltraWorldXurkitree_Frame3,
+    gTilesetAnims_UltraWorldXurkitree_Frame4,
+    gTilesetAnims_UltraWorldXurkitree_Frame5,
+    gTilesetAnims_UltraWorldXurkitree_Frame6,
+    gTilesetAnims_UltraWorldXurkitree_Frame7,
+};
+
+static const u16 sUltraWorldXurkitree_Cycle0[] = {RGB(31, 30, 15), RGB(13, 12, 6), RGB(12, 11, 7), RGB(11, 12, 6)};
+static const u16 sUltraWorldXurkitree_Cycle1[] = {RGB(3, 9, 14), RGB(6, 18, 26), RGB(17, 28, 31), RGB(5, 13, 21)};
+static void TilesetAnim_UltraWorldXurkitree(u16 timer)
+{
+    if (timer % 4 == 0)
+        AppendTilesetAnimToBuffer(gTilesetAnims_UltraWorldXurkitree[(timer / 4) % 8], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY)), 48 * TILE_SIZE_4BPP);
+    if (timer % 8 == 0)
+        UltraWorld_CyclePal(11, 12, 4, sUltraWorldXurkitree_Cycle0, timer / 8);
+    if (timer % 8 == 0)
+        UltraWorld_CyclePal(12, 12, 4, sUltraWorldXurkitree_Cycle1, timer / 8);
+}
+
+void InitTilesetAnim_UltraWorldXurkitree(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraWorldXurkitree;
+}
+
+const u16 gTilesetAnims_UltraWorldKartana_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/0.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/1.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/2.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/3.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/4.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/5.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/6.4bpp");
+const u16 gTilesetAnims_UltraWorldKartana_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_world_kartana/anim/7.4bpp");
+const u16 *const gTilesetAnims_UltraWorldKartana[] = {
+    gTilesetAnims_UltraWorldKartana_Frame0,
+    gTilesetAnims_UltraWorldKartana_Frame1,
+    gTilesetAnims_UltraWorldKartana_Frame2,
+    gTilesetAnims_UltraWorldKartana_Frame3,
+    gTilesetAnims_UltraWorldKartana_Frame4,
+    gTilesetAnims_UltraWorldKartana_Frame5,
+    gTilesetAnims_UltraWorldKartana_Frame6,
+    gTilesetAnims_UltraWorldKartana_Frame7,
+};
+
+static void TilesetAnim_UltraWorldKartana(u16 timer)
+{
+    if (timer % 6 == 0)
+        AppendTilesetAnimToBuffer(gTilesetAnims_UltraWorldKartana[(timer / 6) % 8], (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY)), 77 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraWorldKartana(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = 256;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraWorldKartana;
+}
+// } ultra_worlds_a
+// ultra_worlds_b { (tools/grounded/maptools/ultra_worlds_b.py: animaties van de Ultra Space-werelden)
+static const u16 sTilesetAnims_UltraBStakataka_Eyes0_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes0/0.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes0_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes0/1.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes0_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes0/2.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes0_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes0/3.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes0_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes0/4.4bpp");
+static const u16 *const sTilesetAnims_UltraBStakataka_Eyes0[] = {
+    sTilesetAnims_UltraBStakataka_Eyes0_Frame0,
+    sTilesetAnims_UltraBStakataka_Eyes0_Frame1,
+    sTilesetAnims_UltraBStakataka_Eyes0_Frame2,
+    sTilesetAnims_UltraBStakataka_Eyes0_Frame3,
+    sTilesetAnims_UltraBStakataka_Eyes0_Frame4,
+};
+static const u8 sTilesetAnimSeq_UltraBStakataka_Eyes0[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 2, 2, 0, 0, 0, 0, 0, 0, 0, 3, 4, 3};
+static const u16 sTilesetAnims_UltraBStakataka_Eyes1_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes1/0.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes1_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes1/1.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes1_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes1/2.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes1_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes1/3.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes1_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes1/4.4bpp");
+static const u16 *const sTilesetAnims_UltraBStakataka_Eyes1[] = {
+    sTilesetAnims_UltraBStakataka_Eyes1_Frame0,
+    sTilesetAnims_UltraBStakataka_Eyes1_Frame1,
+    sTilesetAnims_UltraBStakataka_Eyes1_Frame2,
+    sTilesetAnims_UltraBStakataka_Eyes1_Frame3,
+    sTilesetAnims_UltraBStakataka_Eyes1_Frame4,
+};
+static const u8 sTilesetAnimSeq_UltraBStakataka_Eyes1[] = {0, 0, 0, 0, 3, 4, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 2, 2, 0, 1, 1, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBStakataka_Eyes2_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes2/0.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes2_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes2/1.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes2_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes2/2.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes2_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes2/3.4bpp");
+static const u16 sTilesetAnims_UltraBStakataka_Eyes2_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_stakataka/anim/eyes2/4.4bpp");
+static const u16 *const sTilesetAnims_UltraBStakataka_Eyes2[] = {
+    sTilesetAnims_UltraBStakataka_Eyes2_Frame0,
+    sTilesetAnims_UltraBStakataka_Eyes2_Frame1,
+    sTilesetAnims_UltraBStakataka_Eyes2_Frame2,
+    sTilesetAnims_UltraBStakataka_Eyes2_Frame3,
+    sTilesetAnims_UltraBStakataka_Eyes2_Frame4,
+};
+static const u8 sTilesetAnimSeq_UltraBStakataka_Eyes2[] = {0, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 4, 3, 0, 2, 2};
+static void TilesetAnim_UltraBStakataka(u16 timer)
+{
+    if (timer % 8 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBStakataka_Eyes0[sTilesetAnimSeq_UltraBStakataka_Eyes0[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBStakataka_Eyes0)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 36 * TILE_SIZE_4BPP);
+    if (timer % 8 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBStakataka_Eyes1[sTilesetAnimSeq_UltraBStakataka_Eyes1[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBStakataka_Eyes1)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 36)), 36 * TILE_SIZE_4BPP);
+    if (timer % 8 == 2)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBStakataka_Eyes2[sTilesetAnimSeq_UltraBStakataka_Eyes2[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBStakataka_Eyes2)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 72)), 36 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraBStakataka(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraBStakataka;
+}
+
+static const u16 sTilesetAnims_UltraBNecrozma_Spark0_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark0/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark0_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark0/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark0_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark0/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark0_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark0/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark0[] = {
+    sTilesetAnims_UltraBNecrozma_Spark0_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark0_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark0_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark0_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark0[] = {0, 1, 2, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBNecrozma_Spark1_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark1/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark1_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark1/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark1_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark1/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark1_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark1/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark1[] = {
+    sTilesetAnims_UltraBNecrozma_Spark1_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark1_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark1_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark1_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark1[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 2, 1, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBNecrozma_Spark2_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark2/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark2_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark2/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark2_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark2/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark2_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark2/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark2[] = {
+    sTilesetAnims_UltraBNecrozma_Spark2_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark2_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark2_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark2_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark2[] = {0, 0, 0, 0, 1, 2, 3, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBNecrozma_Spark3_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark3/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark3_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark3/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark3_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark3/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark3_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark3/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark3[] = {
+    sTilesetAnims_UltraBNecrozma_Spark3_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark3_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark3_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark3_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark3[] = {0, 1, 2, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBNecrozma_Spark4_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark4/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark4_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark4/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark4_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark4/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark4_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark4/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark4[] = {
+    sTilesetAnims_UltraBNecrozma_Spark4_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark4_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark4_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark4_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark4[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 2, 1, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBNecrozma_Spark5_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark5/0.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark5_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark5/1.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark5_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark5/2.4bpp");
+static const u16 sTilesetAnims_UltraBNecrozma_Spark5_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_necrozma/anim/spark5/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBNecrozma_Spark5[] = {
+    sTilesetAnims_UltraBNecrozma_Spark5_Frame0,
+    sTilesetAnims_UltraBNecrozma_Spark5_Frame1,
+    sTilesetAnims_UltraBNecrozma_Spark5_Frame2,
+    sTilesetAnims_UltraBNecrozma_Spark5_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBNecrozma_Spark5[] = {0, 0, 0, 0, 1, 2, 3, 3, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static void TilesetAnim_UltraBNecrozma(u16 timer)
+{
+    if (timer % 6 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark0[sTilesetAnimSeq_UltraBNecrozma_Spark0[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark0)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 28 * TILE_SIZE_4BPP);
+    if (timer % 6 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark1[sTilesetAnimSeq_UltraBNecrozma_Spark1[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark1)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 28)), 28 * TILE_SIZE_4BPP);
+    if (timer % 6 == 2)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark2[sTilesetAnimSeq_UltraBNecrozma_Spark2[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark2)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 56)), 28 * TILE_SIZE_4BPP);
+    if (timer % 6 == 3)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark3[sTilesetAnimSeq_UltraBNecrozma_Spark3[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark3)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 84)), 16 * TILE_SIZE_4BPP);
+    if (timer % 6 == 4)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark4[sTilesetAnimSeq_UltraBNecrozma_Spark4[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark4)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 100)), 12 * TILE_SIZE_4BPP);
+    if (timer % 6 == 5)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBNecrozma_Spark5[sTilesetAnimSeq_UltraBNecrozma_Spark5[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBNecrozma_Spark5)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 112)), 12 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraBNecrozma(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraBNecrozma;
+}
+
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/0.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/1.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/2.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/3.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/4.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/5.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/6.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire0_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire0/7.4bpp");
+static const u16 *const sTilesetAnims_UltraBGuzzlord_Fire0[] = {
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame0,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame1,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame2,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame3,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame4,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame5,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame6,
+    sTilesetAnims_UltraBGuzzlord_Fire0_Frame7,
+};
+static const u8 sTilesetAnimSeq_UltraBGuzzlord_Fire0[] = {0, 1, 2, 3, 4, 5, 6, 7};
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/0.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/1.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/2.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/3.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/4.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/5.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/6.4bpp");
+static const u16 sTilesetAnims_UltraBGuzzlord_Fire1_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_b_guzzlord/anim/fire1/7.4bpp");
+static const u16 *const sTilesetAnims_UltraBGuzzlord_Fire1[] = {
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame0,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame1,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame2,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame3,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame4,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame5,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame6,
+    sTilesetAnims_UltraBGuzzlord_Fire1_Frame7,
+};
+static const u8 sTilesetAnimSeq_UltraBGuzzlord_Fire1[] = {0, 1, 2, 3, 4, 5, 6, 7};
+static void TilesetAnim_UltraBGuzzlord(u16 timer)
+{
+    if (timer % 8 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBGuzzlord_Fire0[sTilesetAnimSeq_UltraBGuzzlord_Fire0[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBGuzzlord_Fire0)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 12 * TILE_SIZE_4BPP);
+    if (timer % 8 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBGuzzlord_Fire1[sTilesetAnimSeq_UltraBGuzzlord_Fire1[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBGuzzlord_Fire1)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 8 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraBGuzzlord(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraBGuzzlord;
+}
+
+static const u16 sTilesetAnims_UltraBBlacephalon_Bulbs_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/bulbs/0.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Bulbs_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/bulbs/1.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Bulbs_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/bulbs/2.4bpp");
+static const u16 *const sTilesetAnims_UltraBBlacephalon_Bulbs[] = {
+    sTilesetAnims_UltraBBlacephalon_Bulbs_Frame0,
+    sTilesetAnims_UltraBBlacephalon_Bulbs_Frame1,
+    sTilesetAnims_UltraBBlacephalon_Bulbs_Frame2,
+};
+static const u8 sTilesetAnimSeq_UltraBBlacephalon_Bulbs[] = {0, 1, 2};
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/0.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/1.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/2.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/3.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/4.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/5.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/6.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Hoop_Frame7[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/hoop/7.4bpp");
+static const u16 *const sTilesetAnims_UltraBBlacephalon_Hoop[] = {
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame0,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame1,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame2,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame3,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame4,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame5,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame6,
+    sTilesetAnims_UltraBBlacephalon_Hoop_Frame7,
+};
+static const u8 sTilesetAnimSeq_UltraBBlacephalon_Hoop[] = {0, 1, 2, 3, 4, 5, 6, 7};
+static const u16 sTilesetAnims_UltraBBlacephalon_Balloons_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/balloons/0.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Balloons_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/balloons/1.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Balloons_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/balloons/2.4bpp");
+static const u16 sTilesetAnims_UltraBBlacephalon_Balloons_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_blacephalon/anim/balloons/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBBlacephalon_Balloons[] = {
+    sTilesetAnims_UltraBBlacephalon_Balloons_Frame0,
+    sTilesetAnims_UltraBBlacephalon_Balloons_Frame1,
+    sTilesetAnims_UltraBBlacephalon_Balloons_Frame2,
+    sTilesetAnims_UltraBBlacephalon_Balloons_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBBlacephalon_Balloons[] = {0, 1, 2, 3};
+static void TilesetAnim_UltraBBlacephalon(u16 timer)
+{
+    if (timer % 10 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBBlacephalon_Bulbs[sTilesetAnimSeq_UltraBBlacephalon_Bulbs[(timer / 10) % ARRAY_COUNT(sTilesetAnimSeq_UltraBBlacephalon_Bulbs)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 12 * TILE_SIZE_4BPP);
+    if (timer % 8 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBBlacephalon_Hoop[sTilesetAnimSeq_UltraBBlacephalon_Hoop[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBBlacephalon_Hoop)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 12)), 8 * TILE_SIZE_4BPP);
+    if (timer % 16 == 2)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBBlacephalon_Balloons[sTilesetAnimSeq_UltraBBlacephalon_Balloons[(timer / 16) % ARRAY_COUNT(sTilesetAnimSeq_UltraBBlacephalon_Balloons)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 20)), 16 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraBBlacephalon(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraBBlacephalon;
+}
+
+static const u16 sTilesetAnims_UltraBPoipole_Eye_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/eye/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Eye_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/eye/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Eye_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/eye/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Eye_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/eye/3.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Eye_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/eye/4.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Eye[] = {
+    sTilesetAnims_UltraBPoipole_Eye_Frame0,
+    sTilesetAnims_UltraBPoipole_Eye_Frame1,
+    sTilesetAnims_UltraBPoipole_Eye_Frame2,
+    sTilesetAnims_UltraBPoipole_Eye_Frame3,
+    sTilesetAnims_UltraBPoipole_Eye_Frame4,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Eye[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 4, 3, 0, 0, 0, 0, 0, 0, 1, 1, 1, 0, 2, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Meteor0_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor0/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor0_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor0/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor0_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor0/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor0_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor0/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Meteor0[] = {
+    sTilesetAnims_UltraBPoipole_Meteor0_Frame0,
+    sTilesetAnims_UltraBPoipole_Meteor0_Frame1,
+    sTilesetAnims_UltraBPoipole_Meteor0_Frame2,
+    sTilesetAnims_UltraBPoipole_Meteor0_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Meteor0[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Meteor1_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor1/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor1_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor1/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor1_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor1/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor1_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor1/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Meteor1[] = {
+    sTilesetAnims_UltraBPoipole_Meteor1_Frame0,
+    sTilesetAnims_UltraBPoipole_Meteor1_Frame1,
+    sTilesetAnims_UltraBPoipole_Meteor1_Frame2,
+    sTilesetAnims_UltraBPoipole_Meteor1_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Meteor1[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Meteor2_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor2/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor2_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor2/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor2_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor2/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor2_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor2/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Meteor2[] = {
+    sTilesetAnims_UltraBPoipole_Meteor2_Frame0,
+    sTilesetAnims_UltraBPoipole_Meteor2_Frame1,
+    sTilesetAnims_UltraBPoipole_Meteor2_Frame2,
+    sTilesetAnims_UltraBPoipole_Meteor2_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Meteor2[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Meteor3_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor3/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor3_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor3/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor3_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor3/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Meteor3_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/meteor3/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Meteor3[] = {
+    sTilesetAnims_UltraBPoipole_Meteor3_Frame0,
+    sTilesetAnims_UltraBPoipole_Meteor3_Frame1,
+    sTilesetAnims_UltraBPoipole_Meteor3_Frame2,
+    sTilesetAnims_UltraBPoipole_Meteor3_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Meteor3[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 3, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Bubbles_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/bubbles/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Bubbles_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/bubbles/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Bubbles_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/bubbles/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Bubbles_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/bubbles/3.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Bubbles_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/bubbles/4.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Bubbles[] = {
+    sTilesetAnims_UltraBPoipole_Bubbles_Frame0,
+    sTilesetAnims_UltraBPoipole_Bubbles_Frame1,
+    sTilesetAnims_UltraBPoipole_Bubbles_Frame2,
+    sTilesetAnims_UltraBPoipole_Bubbles_Frame3,
+    sTilesetAnims_UltraBPoipole_Bubbles_Frame4,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Bubbles[] = {0, 1, 2, 3, 4, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/3.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/4.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/5.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Geyser_Frame6[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/geyser/6.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Geyser[] = {
+    sTilesetAnims_UltraBPoipole_Geyser_Frame0,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame1,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame2,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame3,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame4,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame5,
+    sTilesetAnims_UltraBPoipole_Geyser_Frame6,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Geyser[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 3, 4, 4, 5, 6, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/3.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame4[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/4.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Plasma_Frame5[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/plasma/5.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Plasma[] = {
+    sTilesetAnims_UltraBPoipole_Plasma_Frame0,
+    sTilesetAnims_UltraBPoipole_Plasma_Frame1,
+    sTilesetAnims_UltraBPoipole_Plasma_Frame2,
+    sTilesetAnims_UltraBPoipole_Plasma_Frame3,
+    sTilesetAnims_UltraBPoipole_Plasma_Frame4,
+    sTilesetAnims_UltraBPoipole_Plasma_Frame5,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Plasma[] = {0, 1, 2, 3, 4, 5, 1, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Arc_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/arc/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Arc_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/arc/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Arc_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/arc/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Arc_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/arc/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Arc[] = {
+    sTilesetAnims_UltraBPoipole_Arc_Frame0,
+    sTilesetAnims_UltraBPoipole_Arc_Frame1,
+    sTilesetAnims_UltraBPoipole_Arc_Frame2,
+    sTilesetAnims_UltraBPoipole_Arc_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Arc[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 2, 1, 3, 0, 2, 3, 0, 0, 0, 0, 0, 0, 0, 0};
+static const u16 sTilesetAnims_UltraBPoipole_Ufo_Frame0[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/ufo/0.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Ufo_Frame1[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/ufo/1.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Ufo_Frame2[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/ufo/2.4bpp");
+static const u16 sTilesetAnims_UltraBPoipole_Ufo_Frame3[] = INCBIN_U16("data/tilesets/secondary/ultra_b_poipole/anim/ufo/3.4bpp");
+static const u16 *const sTilesetAnims_UltraBPoipole_Ufo[] = {
+    sTilesetAnims_UltraBPoipole_Ufo_Frame0,
+    sTilesetAnims_UltraBPoipole_Ufo_Frame1,
+    sTilesetAnims_UltraBPoipole_Ufo_Frame2,
+    sTilesetAnims_UltraBPoipole_Ufo_Frame3,
+};
+static const u8 sTilesetAnimSeq_UltraBPoipole_Ufo[] = {0, 1, 2, 3};
+static void TilesetAnim_UltraBPoipole(u16 timer)
+{
+    if (timer % 10 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Eye[sTilesetAnimSeq_UltraBPoipole_Eye[(timer / 10) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Eye)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 0)), 84 * TILE_SIZE_4BPP);
+    if (timer % 3 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Meteor0[sTilesetAnimSeq_UltraBPoipole_Meteor0[(timer / 3) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Meteor0)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 84)), 12 * TILE_SIZE_4BPP);
+    if (timer % 3 == 2)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Meteor1[sTilesetAnimSeq_UltraBPoipole_Meteor1[(timer / 3) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Meteor1)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 96)), 12 * TILE_SIZE_4BPP);
+    if (timer % 3 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Meteor2[sTilesetAnimSeq_UltraBPoipole_Meteor2[(timer / 3) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Meteor2)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 108)), 12 * TILE_SIZE_4BPP);
+    if (timer % 3 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Meteor3[sTilesetAnimSeq_UltraBPoipole_Meteor3[(timer / 3) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Meteor3)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 120)), 12 * TILE_SIZE_4BPP);
+    if (timer % 8 == 5)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Bubbles[sTilesetAnimSeq_UltraBPoipole_Bubbles[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Bubbles)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 132)), 16 * TILE_SIZE_4BPP);
+    if (timer % 6 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Geyser[sTilesetAnimSeq_UltraBPoipole_Geyser[(timer / 6) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Geyser)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 148)), 8 * TILE_SIZE_4BPP);
+    if (timer % 7 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Plasma[sTilesetAnimSeq_UltraBPoipole_Plasma[(timer / 7) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Plasma)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 156)), 12 * TILE_SIZE_4BPP);
+    if (timer % 4 == 0)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Arc[sTilesetAnimSeq_UltraBPoipole_Arc[(timer / 4) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Arc)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 168)), 20 * TILE_SIZE_4BPP);
+    if (timer % 8 == 1)
+        AppendTilesetAnimToBuffer(sTilesetAnims_UltraBPoipole_Ufo[sTilesetAnimSeq_UltraBPoipole_Ufo[(timer / 8) % ARRAY_COUNT(sTilesetAnimSeq_UltraBPoipole_Ufo)]],
+                                  (u16 *)(BG_VRAM + TILE_OFFSET_4BPP(NUM_TILES_IN_PRIMARY + 188)), 16 * TILE_SIZE_4BPP);
+}
+
+void InitTilesetAnim_UltraBPoipole(void)
+{
+    sSecondaryTilesetAnimCounter = 0;
+    sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
+    sSecondaryTilesetAnimCallback = TilesetAnim_UltraBPoipole;
+}
+
+// } ultra_worlds_b

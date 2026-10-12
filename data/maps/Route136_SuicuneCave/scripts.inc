@@ -12,7 +12,7 @@ Route136_SuicuneCave_EventScript_Suicune::
 	faceplayer
 	playmoncry SPECIES_SUICUNE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_SUICUNE, 50
+	setwildbattle SPECIES_SUICUNE, 62
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

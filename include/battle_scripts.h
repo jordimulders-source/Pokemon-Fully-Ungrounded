@@ -50,6 +50,8 @@ extern const u8 BattleScript_DoSwitchOut[];
 extern const u8 BattleScript_MoveSwitchOpenPartyScreen[];
 extern const u8 BattleScript_Pausex20[];
 extern const u8 BattleScript_LevelUp[];
+extern const u8 BattleScript_GroundedObedienceWarnLevelUp[];
+extern const u8 BattleScript_GroundedObedienceWarnCaught[];
 extern const u8 BattleScript_WeatherContinues[];
 extern const u8 BattleScript_WeatherFaded[];
 extern const u8 BattleScript_DamagingWeatherContinues[];
@@ -326,6 +328,7 @@ extern const u8 BattleScript_TrainerASlideMsgRet[];
 extern const u8 BattleScript_TrainerASlideMsgEnd2[];
 extern const u8 BattleScript_TrainerBSlideMsgRet[];
 extern const u8 BattleScript_TrainerBSlideMsgEnd2[];
+extern const u8 BattleScript_StadiumTrainerABSlideMsgEnd2[];
 extern const u8 BattleScript_MoveEffectFeint[];
 extern const u8 BattleScript_ProteanActivates[];
 extern const u8 BattleScript_DazzlingProtected[];
@@ -877,5 +880,7 @@ extern const u8 BattleScript_MetronomeAttackstring[];
 extern const u8 BattleScript_SleepTalkAttackstring[];
 extern const u8 BattleScript_NaturePowerAttackstring[];
 extern const u8 BattleScript_PokemonCantUseTheMove[];
+extern const u8 BattleScript_Gen1GhostScared[]; // Project Grounded
+extern const u8 BattleScript_Gen1GhostGetOut[]; // Project Grounded
 
 #endif // GUARD_BATTLE_SCRIPTS_H

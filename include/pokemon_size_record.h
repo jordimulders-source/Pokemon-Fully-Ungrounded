@@ -9,6 +9,8 @@ void InitLotadSizeRecord(void);
 void GetLotadSizeRecordInfo(void);
 void CompareLotadSize(void);
 
+u32 GetMonSizePermille(struct Pokemon *mon);
+
 void GiveGiftRibbonToParty(u8 index, u8 ribbonId);
 
 #endif // GUARD_POKEMON_SIZE_RECORD_H

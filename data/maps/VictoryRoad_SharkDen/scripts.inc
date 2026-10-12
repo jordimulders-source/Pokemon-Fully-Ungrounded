@@ -9,7 +9,7 @@ VictoryRoad_SharkDen_EventScript_Garchomp::
 	msgbox VictoryRoad_SharkDen_Text_Garchomp, MSGBOX_DEFAULT
 	playmoncry SPECIES_GARCHOMP, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_GARCHOMP, 58
+	setwildbattle SPECIES_GARCHOMP, 81
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	dowildbattle
 	clearflag FLAG_SYS_CTRL_OBJ_DELETE

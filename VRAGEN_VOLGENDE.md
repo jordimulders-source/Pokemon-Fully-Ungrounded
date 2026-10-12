@@ -1,3 +1,5 @@
+> Status (9 okt): verwerkt in TODO.md; dit document is naslag.
+
 # Voorstellen en vragen voor Jordi (fase 0.9, 4 okt 2026)
 
 Beantwoord (4 okt): shiny Rayquaza, Delta Episode, Archie/Maxie, volgorde gebieden, signature moves, Burglar, N/Ghetsis. Zie `TODO.md` ("Fase v0.9"). Kort antwoorden mag ("1 ja, 2b").

@@ -169,7 +169,7 @@
 #define FLAG_MR_BRINEY_SAILING_INTRO         0x93
 #define FLAG_DOCK_REJECTED_DEVON_GOODS       0x94
 #define FLAG_DELIVERED_DEVON_GOODS           0x95
-#define FLAG_RECEIVED_CONTEST_PASS           0x96 // Unused, leftover from R/S
+#define FLAG_RECEIVED_DESERT_UNDERPASS_MAX_REVIVE 0x96 // Project Grounded (landvulling): Desert Underpass, archeoloog (was R/S-restant RECEIVED_CONTEST_PASS)
 #define FLAG_RECEIVED_CASTFORM               0x97
 #define FLAG_RECEIVED_SUPER_ROD              0x98
 #define FLAG_RUSTBORO_NPC_TRADE_COMPLETED    0x99
@@ -337,7 +337,7 @@
 #define FLAG_WALLACE_GOES_TO_SKY_PILLAR      0x137 // Set after speaking to Wallace within the Cave of Origin.
 #define FLAG_RECEIVED_HM_WATERFALL           0x138
 #define FLAG_BEAT_MAGMA_GRUNT_JAGGED_PASS    0x139
-#define FLAG_RECEIVED_AURORA_TICKET          0x13A
+#define FLAG_WONDER_CARD_UNUSED_0            0x13A // Project Grounded: was Aurora Ticket
 #define FLAG_RECEIVED_MYSTIC_TICKET          0x13B
 #define FLAG_RECEIVED_OLD_SEA_MAP            0x13C
 #define FLAG_WONDER_CARD_UNUSED_1            0x13D // These Wonder Card flags are referenced but never set
@@ -357,7 +357,7 @@
 #define FLAG_WONDER_CARD_UNUSED_15           0x14B
 #define FLAG_WONDER_CARD_UNUSED_16           0x14C
 #define FLAG_WONDER_CARD_UNUSED_17           0x14D
-#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_RECEIVED_AURORA_TICKET)
+#define NUM_WONDER_CARD_FLAGS                (1 + FLAG_WONDER_CARD_UNUSED_17 - FLAG_WONDER_CARD_UNUSED_0)
 
 #define FLAG_MIRAGE_TOWER_VISIBLE            0x14E
 #define FLAG_CHOSE_ROOT_FOSSIL               0x14F
@@ -466,7 +466,7 @@
 #define FLAG_DEFEATED_DEOXYS                 0x1AC
 #define FLAG_BATTLED_DEOXYS                  0x1AD
 #define FLAG_SHOWN_EON_TICKET                0x1AE
-#define FLAG_SHOWN_AURORA_TICKET             0x1AF
+#define FLAG_UNUSED_0x1AF                    0x1AF // Project Grounded: was FLAG_SHOWN_AURORA_TICKET
 #define FLAG_SHOWN_OLD_SEA_MAP               0x1B0
 #define FLAG_MOVE_TUTOR_TAUGHT_SWAGGER       0x1B1
 #define FLAG_MOVE_TUTOR_TAUGHT_ROLLOUT       0x1B2
@@ -516,12 +516,12 @@
 #define FLAG_DEFEATED_HO_OH                  0x1DC
 #define FLAG_DEFEATED_LUGIA                  0x1DD
 
-#define FLAG_UNUSED_0x1DE                    0x1DE // Unused Flag
-#define FLAG_UNUSED_0x1DF                    0x1DF // Unused Flag
-#define FLAG_UNUSED_0x1E0                    0x1E0 // Unused Flag
-#define FLAG_UNUSED_0x1E1                    0x1E1 // Unused Flag
-#define FLAG_UNUSED_0x1E2                    0x1E2 // Unused Flag
-#define FLAG_UNUSED_0x1E3                    0x1E3 // Unused Flag
+#define FLAG_CAUGHT_TAPU_KOKO                0x1DE // Project Grounded: Tapu-eiland: Tapu Koko gevangen
+#define FLAG_CAUGHT_TAPU_LELE                0x1DF // Project Grounded: Tapu-eiland: Tapu Lele gevangen
+#define FLAG_CAUGHT_TAPU_BULU                0x1E0 // Project Grounded: Tapu-eiland: Tapu Bulu gevangen
+#define FLAG_CAUGHT_TAPU_FINI                0x1E1 // Project Grounded: Tapu-eiland: Tapu Fini gevangen
+#define FLAG_DEFEATED_TAPU_KOKO              0x1E2 // Project Grounded: Tapu-eiland: Tapu Koko verslagen/gevangen (terug na de League als niet gevangen)
+#define FLAG_DEFEATED_TAPU_LELE              0x1E3 // Project Grounded: Tapu-eiland: Tapu Lele verslagen/gevangen
 
 // Mystery Gift Flags (Unknown)
 #define FLAG_MYSTERY_GIFT_DONE               0x1E4
@@ -670,21 +670,21 @@
 #define FLAG_HIDE_SKY_PILLAR_TOP_SHINY_RAYQUAZA 0x26F // Project Grounded: wordt elke keer in OnTransition gezet/gewist
 #define FLAG_HIDE_MOSSDEEP_ZINNIA   0x270 // Project Grounded: Zinnia in Mossdeep (Delta Episode); in OnTransition gezet/gewist
 #define FLAG_NEW_MAUVILLE_VAULT_OPEN  0x271 // Project Grounded: serverkluis onder New Mauville herstart (terminal in de Raikou-grot), deur naar Genesect open
-#define FLAG_HIDE_NEW_MAUVILLE_GENESECT  0x272 // Project Grounded: Genesect (static) in de serverkluis onder New Mauville
+#define FLAG_HIDE_NEW_MAUVILLE_GENESECT  0x272 // Project Grounded: Genesect (static), sinds v0.9.110 in het ruim van de Plasma Frigate (Nothing Island)
 #define FLAG_HIDE_METEOR_FALLS_MEWTWO  0x273 // Project Grounded: Mewtwo (static) in de verborgen grot achter Meteor Falls
 #define FLAG_ITEM_UNKNOWN_CAVE_1F_MAX_REVIVE  0x274 // Project Grounded: item in de verborgen grot achter Meteor Falls (1F)
 #define FLAG_ITEM_UNKNOWN_CAVE_B1F_MAX_ELIXIR  0x275 // Project Grounded: item in de verborgen grot achter Meteor Falls (B1F)
-#define FLAG_UNUSED_0x276  0x276 // Unused Flag
-#define FLAG_UNUSED_0x277  0x277 // Unused Flag
-#define FLAG_UNUSED_0x278  0x278 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_WHIRL_SEA_INCENSE                      0x276 // Project Grounded (zeevulling 3)
+#define FLAG_RECEIVED_RESORT_WINE  0x277 // Project Grounded: Wallace' wijn (Berry Juice) in het PARADISO RESORT ontvangen
+#define FLAG_HIDE_RESORT_RIVAL     0x278 // Project Grounded: rivaal in het PARADISO RESORT; in OnTransition gezet/gewist (post-game)
 #define FLAG_HIDE_SKY_PILLAR_GIRATINA  0x279 // Project Grounded: Giratina (static) onderin de omgekeerde Sky Pillar
-#define FLAG_UNUSED_0x27A  0x27A // Unused Flag
-#define FLAG_UNUSED_0x27B  0x27B // Unused Flag
-#define FLAG_UNUSED_0x27C  0x27C // Unused Flag
-#define FLAG_UNUSED_0x27D  0x27D // Unused Flag
-#define FLAG_UNUSED_0x27E  0x27E // Unused Flag
-#define FLAG_UNUSED_0x27F  0x27F // Unused Flag
-#define FLAG_UNUSED_0x280  0x280 // Unused Flag
+#define FLAG_FISH_TOURNEY_WEEK_BIT0  0x27A // Project Grounded: visserstoernooi (Dewford), 0x27A-0x27E = (week % 31) + 1 van de laatst opgehaalde prijs
+#define FLAG_FISH_TOURNEY_WEEK_BIT1  0x27B // Project Grounded: visserstoernooi, weekbit 1
+#define FLAG_FISH_TOURNEY_WEEK_BIT2  0x27C // Project Grounded: visserstoernooi, weekbit 2
+#define FLAG_FISH_TOURNEY_WEEK_BIT3  0x27D // Project Grounded: visserstoernooi, weekbit 3
+#define FLAG_FISH_TOURNEY_WEEK_BIT4  0x27E // Project Grounded: visserstoernooi, weekbit 4
+#define FLAG_FISH_TOURNEY_TROPHY     0x27F // Project Grounded: visserstoernooi, trofee (1e plaats) ooit ontvangen
+#define FLAG_FISH_TOURNEY_LUCKY_EGG  0x280 // Project Grounded: visserstoernooi, Lucky Egg (eerste troostprijs) ontvangen
 #define FLAG_HIDE_FLOWER_PARADISE_SHAYMIN  0x281 // Project Grounded: Shaymin gevangen
 #define FLAG_RECEIVED_GRACIDEA  0x282 // Project Grounded: Gracidea na het vangen van Shaymin
 #define FLAG_RECEIVED_KUBFU  0x283 // Project Grounded: Kubfu van de dojomeester (Dewford)
@@ -712,10 +712,10 @@
 #define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_DUSK_STONE  0x299 // Project Grounded: Safari Zone (nieuwe zones)
 #define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_SPELL_TAG  0x29A // Project Grounded: Safari Zone (nieuwe zones)
 #define FLAG_HIDE_GIANT_WAILORD  0x29B // Project Grounded: reuzen-Wailord verborgen (per kaartbezoek gezet, zie Grounded_GiantWailordSpot)
-#define FLAG_UNUSED_0x29C  0x29C // Unused Flag
-#define FLAG_UNUSED_0x29D  0x29D // Unused Flag
-#define FLAG_UNUSED_0x29E  0x29E // Unused Flag
-#define FLAG_UNUSED_0x29F  0x29F // Unused Flag
+#define FLAG_SEA_TEMPLE_DOOR_OPEN  0x29C // Project Grounded: zeetempel (Route 128), stenenpuzzel opgelost, deur naar het heiligdom open
+#define FLAG_CAUGHT_SEA_TEMPLE_MANAPHY  0x29D // Project Grounded: zeetempel, Manaphy gevangen (ook verbergflag; verslagen = komt terug)
+#define FLAG_RECEIVED_SEA_TEMPLE_EGG  0x29E // Project Grounded: zeetempel, Phione-ei + Silver Wing van het altaar
+#define FLAG_ITEM_PLASMA_FRIGATE_MAX_REVIVE 0x29F // Project Grounded (was 0x2B9; botste met eb en vloed)
 #define FLAG_ITEM_METEOR_FALLS_B1F_2R_RARE_CANDY 0x2A0 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_B1F_2R_STAR_PIECE 0x2A1 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_HIDDEN_FALLS_DRAGON_SCALE 0x2A2 // Project Grounded: Meteor Falls (diepte)
@@ -737,13 +737,13 @@
 #define FLAG_ITEM_TOADSTOOL_HOLLOW_MISTY_SEED  0x2B2 // Project Grounded: Toadstool Hollow
 #define FLAG_HIDDEN_ITEM_TOADSTOOL_HOLLOW_BALM_MUSHROOM  0x2B3 // Project Grounded: Toadstool Hollow (midden van de heksenkring)
 #define FLAG_HIDDEN_ITEM_TOADSTOOL_HOLLOW_TINY_MUSHROOM  0x2B4 // Project Grounded: Toadstool Hollow (einde van een stam)
-#define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
-#define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
-#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_HIDE_PLASMA_ISLAND_CREW  0x2B5 // Project Grounded: Neo Plasma-grunts en Nigel op Nothing Island (in OnTransition: gezet zolang VAR_PLASMA_FRIGATE 0 is)
+#define FLAG_HIDE_PLASMA_TRIAD        0x2B6 // Project Grounded: Shadow Triad bij het luik van de Plasma Frigate (verdwijnt na het gevecht)
+#define FLAG_HIDE_PLASMA_BOSSES       0x2B7 // Project Grounded: Zinzolin en Rood in het ruim (weg na het Genesect-gevecht)
+#define FLAG_ITEM_PLASMA_FRIGATE_PP_MAX     0x2B8 // Project Grounded
+#define FLAG_HIDDEN_ITEM_ROUTE_132_STAR_PIECE  0x2B9 // Project Grounded: wad Route 132 (alleen bij eb)
+#define FLAG_HIDDEN_ITEM_ROUTE_132_BIG_PEARL  0x2BA // Project Grounded: wad Route 132 (alleen bij eb)
+#define FLAG_TIDE_HIGH  0x2BB // Project Grounded: vloed op Route 132 (gezet bij binnenkomst, oneven uur)
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC
@@ -776,7 +776,7 @@
 #define FLAG_HIDE_MOSSDEEP_CITY_STEVENS_HOUSE_INVISIBLE_NINJA_BOY   0x2D7
 #define FLAG_HIDE_PETALBURG_CITY_WALLYS_MOM                         0x2D8
 
-#define FLAG_UNUSED_0x2D9                                           0x2D9 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_WHIRL_MAX_ELIXIR                       0x2D9 // Project Grounded (zeevulling 3)
 
 #define FLAG_HIDE_LILYCOVE_FAN_CLUB_INTERVIEWER                     0x2DA
 #define FLAG_HIDE_RUSTBORO_CITY_AQUA_GRUNT                          0x2DB
@@ -812,7 +812,7 @@
 #define FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK              0x2F9
 #define FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK                  0x2FA
 #define FLAG_HIDE_DEOXYS                                            0x2FB
-#define FLAG_HIDE_BIRTH_ISLAND_DEOXYS_TRIANGLE                      0x2FC
+#define FLAG_HIDE_METEOR_SPACE_DEOXYS_TRIANGLE                      0x2FC
 #define FLAG_HIDE_MAUVILLE_CITY_SCOTT                               0x2FD
 #define FLAG_HIDE_VERDANTURF_TOWN_SCOTT                             0x2FE
 #define FLAG_HIDE_FALLARBOR_TOWN_BATTLE_TENT_SCOTT                  0x2FF
@@ -873,7 +873,7 @@
 #define FLAG_HIDE_AQUA_HIDEOUT_1F_GRUNT_2_BLOCKING_ENTRANCE         0x336
 #define FLAG_HIDE_MOSSDEEP_CITY_TEAM_MAGMA                          0x337
 #define FLAG_HIDE_PETALBURG_GYM_WALLYS_DAD                          0x338
-#define FLAG_HIDE_LEGEND_MON_CAVE_OF_ORIGIN                         0x339 // Unused, leftover from R/S
+#define FLAG_ITEM_DESERT_UNDERPASS_STONE_PLATE                      0x339 // Project Grounded (landvulling): Desert Underpass, opgraving (was R/S-restant)
 #define FLAG_HIDE_SOOTOPOLIS_CITY_ARCHIE                            0x33A
 #define FLAG_HIDE_SOOTOPOLIS_CITY_MAXIE                             0x33B
 #define FLAG_HIDE_SEAFLOOR_CAVERN_ROOM_9_ARCHIE                     0x33C
@@ -1083,7 +1083,7 @@
 #define FLAG_ITEM_ROUTE_120_NUGGET                                  0x406
 #define FLAG_ITEM_ROUTE_120_TM_SCALD                                0x407 // Project Grounded: was Full Heal
 #define FLAG_ITEM_ROUTE_123_CALCIUM                                 0x408
-#define FLAG_ITEM_ROUTE_123_RARE_CANDY                              0x409 // Unused Flag, leftover from R/S. In Emerald this is a hidden item and uses a different flag
+#define FLAG_ITEM_NAVEL_ROCK_FORK_SKY_PLATE                         0x409 // Project Grounded (landvulling): Navel Rock Fork (was R/S-restant)
 #define FLAG_ITEM_ROUTE_127_ZINC                                    0x40A
 #define FLAG_ITEM_ROUTE_127_CARBOS                                  0x40B
 #define FLAG_ITEM_ROUTE_132_RARE_CANDY                              0x40C
@@ -1175,27 +1175,27 @@
 #define FLAG_ITEM_NEW_MAUVILLE_FULL_HEAL                            0x462
 #define FLAG_ITEM_NEW_MAUVILLE_PARALYZE_HEAL                        0x463
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_MASTER_BALL                      0x464
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MASTER_BALL                 0x465 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B1F_MAX_ELIXIR                  0x466 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_ITEM_OLD_MAGMA_HIDEOUT_B2F_NEST_BALL                   0x467 // Unused Flag, leftover from the Ruby Magma hideout
-#define FLAG_UNUSED_0x468                                           0x468 // Unused Flag
+#define FLAG_ITEM_SOUTHERN_ISLAND_CAMP_DRAGON_FANG                  0x465 // Project Grounded (landvulling): Southern Island, verlaten kamp (was Ruby-restant)
+#define FLAG_ITEM_LIGHT_ISLE_MIND_PLATE                             0x466 // Project Grounded: Lichteiland (Beacon Isle; was Birth Island-kamp)
+#define FLAG_ITEM_FARAWAY_ISLAND_CAMP_PP_MAX                        0x467 // Project Grounded (landvulling): Faraway Island, verlaten kamp (was Ruby-restant)
+#define FLAG_HIDDEN_ITEM_ZV3_UW125_WAVE_INCENSE                     0x468 // Project Grounded (zeevulling 3)
 #define FLAG_ITEM_MT_PYRE_2F_ULTRA_BALL                             0x469
 #define FLAG_ITEM_MT_PYRE_4F_SEA_INCENSE                            0x46A
 #define FLAG_ITEM_SAFARI_ZONE_SOUTH_WEST_MAX_REVIVE                 0x46B
 #define FLAG_ITEM_AQUA_HIDEOUT_B1F_NUGGET                           0x46C
-#define FLAG_ITEM_MOSSDEEP_STEVENS_HOUSE_HM08                       0x46D // Unused Flag, leftover from R/S. HM08 is given to the player directly in Emerald
+#define FLAG_HIDDEN_ITEM_EVER_GRANDE_FULL_RESTORE                   0x46D // Project Grounded (landvulling): Ever Grande, promenade (was R/S-restant HM08)
 #define FLAG_ITEM_ROUTE_119_NUGGET                                  0x46E
 #define FLAG_ITEM_ROUTE_104_POTION                                  0x46F
-#define FLAG_UNUSED_0x470                                           0x470 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_UW129_COMET_SHARD                      0x470 // Project Grounded (zeevulling 3)
 #define FLAG_ITEM_ROUTE_103_PP_UP                                   0x471
-#define FLAG_UNUSED_0x472                                           0x472 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_R122_CLEANSE_TAG                       0x472 // Project Grounded (zeevulling 3)
 #define FLAG_ITEM_ROUTE_108_STAR_PIECE                              0x473
 #define FLAG_ITEM_ROUTE_109_POTION                                  0x474
 #define FLAG_ITEM_ROUTE_110_ELIXIR                                  0x475
 #define FLAG_ITEM_ROUTE_111_ELIXIR                                  0x476
 #define FLAG_ITEM_ROUTE_113_HYPER_POTION                            0x477
 #define FLAG_ITEM_ROUTE_115_HEAL_POWDER                             0x478
-#define FLAG_UNUSED_0x479                                           0x479 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_R125_BIG_PEARL                         0x479 // Project Grounded (zeevulling 3)
 #define FLAG_ITEM_ROUTE_116_POTION                                  0x47A
 #define FLAG_ITEM_ROUTE_119_ELIXIR_2                                0x47B
 #define FLAG_ITEM_ROUTE_120_REVIVE                                  0x47C
@@ -1231,29 +1231,29 @@
 #define FLAG_ITEM_ROCKET_HIDEOUT_MAX_POTION                         0x499 // Project Grounded: Rocket-hideout B1F
 #define FLAG_ITEM_ROCKET_HIDEOUT_PP_UP                              0x49A // Project Grounded: Rocket-hideout B1F
 #define FLAG_ITEM_ROCKET_HIDEOUT_NUGGET                             0x49B // Project Grounded: Rocket-hideout B1F
-#define FLAG_UNUSED_0x49C                                           0x49C // Unused Flag
-#define FLAG_UNUSED_0x49D                                           0x49D // Unused Flag
-#define FLAG_UNUSED_0x49E                                           0x49E // Unused Flag
-#define FLAG_UNUSED_0x49F                                           0x49F // Unused Flag
-#define FLAG_UNUSED_0x4A0                                           0x4A0 // Unused Flag
-#define FLAG_UNUSED_0x4A1                                           0x4A1 // Unused Flag
-#define FLAG_UNUSED_0x4A2                                           0x4A2 // Unused Flag
+#define FLAG_HIDDEN_ITEM_ZV3_R126_ELIXIR                            0x49C // Project Grounded (zeevulling 3)
+#define FLAG_HIDDEN_ITEM_ZV3_R129_BIG_ROOT                          0x49D // Project Grounded (zeevulling 3)
+#define FLAG_HIDDEN_ITEM_ZV3_R131_PP_UP                             0x49E // Project Grounded (zeevulling 3)
+#define FLAG_RECEIVED_ROUTE_133_ICY_ROCK                            0x49F // Project Grounded (zeevulling 3)
+#define FLAG_HIDDEN_ITEM_ZV3_R133_UTILITY_UMBRELLA                  0x4A0 // Project Grounded (zeevulling 3)
+#define FLAG_CAUGHT_VOLCANION                                       0x4A1 // Project Grounded: Volcanion (Stoomeiland) gevangen
+#define FLAG_DEFEATED_VOLCANION                                     0x4A2 // Project Grounded: Volcanion verslagen/gevangen of nog geen post-game (objectvlag)
 #define FLAG_ITEM_METEOR_FALLS_STAR_CORE_COMET_SHARD 0x4A3 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_ECHO_CHAMBER_MAX_ETHER 0x4A4 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_STARFALL_COMET_SHARD 0x4A5 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_ITEM_METEOR_FALLS_STARFALL_STAR_PIECE 0x4A6 // Project Grounded: Meteor Falls (diepte)
 #define FLAG_RECEIVED_METEOR_FALLS_ELDER_GIFT 0x4A7 // Project Grounded: Meteor Falls (diepte)
-#define FLAG_UNUSED_0x4A8                                           0x4A8 // Unused Flag
-#define FLAG_UNUSED_0x4A9                                           0x4A9 // Unused Flag
-#define FLAG_UNUSED_0x4AA                                           0x4AA // Unused Flag
+#define FLAG_ITEM_ROUTE_107_DIVE_BALL                               0x4A8 // Project Grounded (zeevulling 1): Route 107, rots-eilandje
+#define FLAG_RECEIVED_ROUTE_107_LEFTOVERS                           0x4A9 // Project Grounded (zeevulling 1): Route 107, sushikok (Leftovers)
+#define FLAG_ITEM_ROUTE_126_METAL_COAT                              0x4AA // Project Grounded (zeevulling 1): Route 126, Garbage Patch
 #define FLAG_RECEIVED_UMBRELLA_REGINALD 0x4AB // Project Grounded: Victory Road-zijkamers
 #define FLAG_HIDE_VICTORY_ROAD_GARCHOMP 0x4AC // Project Grounded: Victory Road-zijkamers
 #define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_LIFE_ORB 0x4AD // Project Grounded: Victory Road-zijkamers
 #define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_EVIOLITE 0x4AE // Project Grounded: Victory Road-zijkamers
 #define FLAG_ITEM_VICTORY_ROAD_SHARK_DEN_DRAGON_FANG 0x4AF // Project Grounded: Victory Road-zijkamers
-#define FLAG_UNUSED_0x4B0                                           0x4B0 // Unused Flag
-#define FLAG_UNUSED_0x4B1                                           0x4B1 // Unused Flag
-#define FLAG_UNUSED_0x4B2                                           0x4B2 // Unused Flag
+#define FLAG_ROUTE_126_CRATE_SOLVED                                 0x4B0 // Project Grounded (zeevulling 1): Route 126, raadselkist (PP Max)
+#define FLAG_ROUTE_127_WAILMER_RESCUED                              0x4B1 // Project Grounded (zeevulling 1): Route 127, gestrande Wailmer teruggeduwd (object weg, Shell Bell)
+#define FLAG_ITEM_UNDERWATER_105_BIG_NUGGET                         0x4B2 // Project Grounded (zeevulling 1): Underwater 105, zeemansgraf
 #define FLAG_JAGGED_PASS_LAVA_TUBE_ROCK                             0x4B3 // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_ITEM_LAVA_TUBE_CHARCOAL                                0x4B4 // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_ITEM_LAVA_TUBE_FIRE_STONE                              0x4B5 // Project Grounded: Lavabuis / top van Mt. Chimney
@@ -1265,8 +1265,8 @@
 #define FLAG_ITEM_MT_CHIMNEY_SUMMIT_MAGMARIZER                      0x4BB // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_RECEIVED_FLAME_ORB_VOLCANOLOGIST                       0x4BC // Project Grounded: Lavabuis / top van Mt. Chimney
 #define FLAG_HIDDEN_ITEM_MT_CHIMNEY_SUMMIT_STAR_PIECE               0x4BD // Project Grounded: Lavabuis / top van Mt. Chimney
-#define FLAG_UNUSED_0x4BE                                           0x4BE // Unused Flag
-#define FLAG_UNUSED_0x4BF                                           0x4BF // Unused Flag
+#define FLAG_ITEM_ASHFROST_LODGE_NEVER_MELT_ICE                     0x4BE // Project Grounded: Ashfrost Lodge, Never-Melt Ice op het kussen van kamer 2
+#define FLAG_ITEM_WHIRL_ISLAND_SHARP_BEAK           0x4BF // Project Grounded (zeevulling 2): Whirl Island, strand van de lagune
 #define FLAG_SCORCHED_SLAB_SUN_DOOR_OPEN                            0x4C0 // Project Grounded: Scorched Slab
 #define FLAG_HIDE_SCORCHED_SLAB_VOLCARONA                           0x4C1 // Project Grounded: Scorched Slab
 #define FLAG_ITEM_SCORCHED_SLAB_SUN_STONE                           0x4C2 // Project Grounded: Scorched Slab
@@ -1274,15 +1274,15 @@
 #define FLAG_ITEM_SCORCHED_SLAB_HEAT_ROCK                           0x4C4 // Project Grounded: Scorched Slab
 #define FLAG_ITEM_SCORCHED_SLAB_TM_WEATHER_BALL                     0x4C5 // Project Grounded: Scorched Slab
 #define FLAG_HIDDEN_ITEM_SCORCHED_SLAB_BIG_NUGGET                   0x4C6 // Project Grounded: Scorched Slab
-#define FLAG_UNUSED_0x4C7                                           0x4C7 // Unused Flag
-#define FLAG_UNUSED_0x4C8                                           0x4C8 // Unused Flag
-#define FLAG_UNUSED_0x4C9                                           0x4C9 // Unused Flag
-#define FLAG_UNUSED_0x4CA                                           0x4CA // Unused Flag
-#define FLAG_UNUSED_0x4CB                                           0x4CB // Unused Flag
-#define FLAG_UNUSED_0x4CC                                           0x4CC // Unused Flag
-#define FLAG_UNUSED_0x4CD                                           0x4CD // Unused Flag
-#define FLAG_UNUSED_0x4CE                                           0x4CE // Unused Flag
-#define FLAG_UNUSED_0x4CF                                           0x4CF // Unused Flag
+#define FLAG_CAUGHT_WHIRL_ISLAND_LUGIA                              0x4C7 // Project Grounded: Whirl Island, Lugia gevangen (verslagen = komt terug)
+#define FLAG_SEA_TEMPLE_MANAPHY_BATTLED                             0x4C8 // Project Grounded: zeetempel, eerste gevecht met Manaphy gehad (ei verschijnt op het altaar)
+#define FLAG_HIDDEN_ITEM_SHIPWRECK_SHOALS_BIG_PEARL                 0x4C9 // Project Grounded: Shipwreck Shoals, verborgen Big Pearl
+#define FLAG_ITEM_SHIPWRECK_SHOALS_REAPER_CLOTH                     0x4CA // Project Grounded: Shipwreck Shoals, Reaper Cloth op de ondiepte
+#define FLAG_GHOST_SHIP_PIECE_BIN                                   0x4CB // Project Grounded: spookschip, kaartstuk uit de prullenbak van de kapitein
+#define FLAG_GHOST_SHIP_PIECE_CABIN                                 0x4CC // Project Grounded: spookschip, kaartstuk in de hut (ook verbergflag van het object)
+#define FLAG_GHOST_SHIP_PIECE_MORGAN                                0x4CD // Project Grounded: spookschip, kaartstuk van Morgan (na het gevecht)
+#define FLAG_GHOST_SHIP_MAP_RETURNED                                0x4CE // Project Grounded: schatkaart terug bij kapitein Grimsby (na het gevecht)
+#define FLAG_SHIPWRECK_TREASURE_FOUND                               0x4CF // Project Grounded: schat van Grimsby opgegraven (Shipwreck Shoals)
 #define FLAG_DEFEATED_ZARUDE                                        0x4D0 // Project Grounded: Zarude gevangen of verslagen (Fortree Jungle; verslagen = terug na de League)
 #define FLAG_CAUGHT_ZARUDE                                          0x4D1 // Project Grounded: Zarude gevangen
 #define FLAG_HIDE_FORTREE_JUNGLE_ZARUDE                             0x4D2 // Project Grounded: Zarude-object in de boomkruin (verborgen tot de scene)
@@ -1307,14 +1307,14 @@
 #define FLAG_CAUGHT_OGERPON                                         0x4E5 // Project Grounded: Ogerpon-quest: Ogerpon gevangen
 #define FLAG_HIDE_FORTREE_JUNGLE_OGERPON                            0x4E6 // Project Grounded: Ogerpon-quest: Ogerpon-object achter het altaar
 #define FLAG_OGERPON_MASKS_RETURNED                                 0x4E7 // Project Grounded: Ogerpon-quest: de speler heeft de drie maskers terug als hold items
-#define FLAG_UNUSED_0x4E8                                           0x4E8 // Unused Flag
+#define FLAG_RECEIVED_WHIRL_ISLAND_KINGS_ROCK       0x4E8 // Project Grounded (zeevulling 2): Whirl Island, zwijgende wachter (King's Rock)
 #define FLAG_ITEM_METEOR_SPACE_COMET_SHARD                          0x4E9 // Project Grounded: meteoriet in de ruimte (Deoxys-event)
 #define FLAG_ITEM_METEOR_SPACE_STAR_PIECE                           0x4EA // Project Grounded: meteoriet in de ruimte
 #define FLAG_ITEM_METEOR_SPACE_MOON_STONE                           0x4EB // Project Grounded: meteoriet in de ruimte
 #define FLAG_METEOR_SPACE_RETURNED                                  0x4EC // Project Grounded: een keer heelhuids terug uit de ruimte (kortere teksten daarna)
-#define FLAG_UNUSED_0x4ED                                           0x4ED // Unused Flag
-#define FLAG_UNUSED_0x4EE                                           0x4EE // Unused Flag
-#define FLAG_UNUSED_0x4EF                                           0x4EF // Unused Flag
+#define FLAG_ITEM_ROUTE_134_LIGHT_CLAY              0x4ED // Project Grounded (zeevulling 2): Route 134, bouwplaats vuurtoren
+#define FLAG_ITEM_ROUTE_133_CHOICE_SPECS            0x4EE // Project Grounded (zeevulling 2): Route 133, zandbank van de influencer
+#define FLAG_ITEM_ROUTE_130_EVERSTONE               0x4EF // Project Grounded (zeevulling 2): Route 130, Wynaut-kinderopvang
 
 #define FLAG_DEFEATED_RUSTBORO_GYM                                  0x4F0
 #define FLAG_DEFEATED_DEWFORD_GYM                                   0x4F1
@@ -1326,15 +1326,15 @@
 #define FLAG_DEFEATED_SOOTOPOLIS_GYM                                0x4F7
 #define FLAG_DEFEATED_METEOR_FALLS_STEVEN                           0x4F8
 
-#define FLAG_UNUSED_0x4F9                                           0x4F9 // Unused Flag
-#define FLAG_UNUSED_0x4FA                                           0x4FA // Unused Flag
+#define FLAG_ITEM_ROUTE_128_BLACK_BELT              0x4F9 // Project Grounded (zeevulling 2): Route 128, Dereks dojo
+#define FLAG_RECEIVED_ROUTE_124_SMOOTH_ROCK         0x4FA // Project Grounded (zeevulling 2): Route 124, weerman (Smooth Rock)
 
 #define FLAG_DEFEATED_ELITE_4_SIDNEY                                0x4FB
 #define FLAG_DEFEATED_ELITE_4_PHOEBE                                0x4FC
 #define FLAG_DEFEATED_ELITE_4_GLACIA                                0x4FD
 #define FLAG_DEFEATED_ELITE_4_DRAKE                                 0x4FE
 
-#define FLAG_UNUSED_0x4FF                                           0x4FF // Unused Flag
+#define FLAG_RECEIVED_ROUTE_105_FOCUS_SASH          0x4FF // Project Grounded (zeevulling 2): Route 105, schipbreukeling (Focus Sash)
 
 // Trainer Flags
 // Trainer flags occupy 0x500 - 0x85F, the last 9 of which are unused
@@ -1350,7 +1350,7 @@
 #define FLAG_SYS_POKEMON_GET                         (SYSTEM_FLAGS + 0x0) // FLAG_0x860
 #define FLAG_SYS_POKEDEX_GET                         (SYSTEM_FLAGS + 0x1)
 #define FLAG_SYS_POKENAV_GET                         (SYSTEM_FLAGS + 0x2)
-#define FLAG_UNUSED_0x863                            (SYSTEM_FLAGS + 0x3) // Unused Flag
+#define FLAG_DEFEATED_TAPU_BULU                      (SYSTEM_FLAGS + 0x3) // Project Grounded: Tapu-eiland: Tapu Bulu verslagen/gevangen
 #define FLAG_SYS_GAME_CLEAR                          (SYSTEM_FLAGS + 0x4)
 #define FLAG_SYS_CHAT_USED                           (SYSTEM_FLAGS + 0x5)
 #define FLAG_UNLOCKED_TRENDY_SAYINGS                 (SYSTEM_FLAGS + 0x6)
@@ -1387,13 +1387,13 @@
 #define FLAG_IS_CHAMPION                            (SYSTEM_FLAGS + 0x1F) // Seems to be related to linking.
 #define FLAG_NURSE_UNION_ROOM_REMINDER              (SYSTEM_FLAGS + 0x20)
 
-#define FLAG_UNUSED_0x881                           (SYSTEM_FLAGS + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x882                           (SYSTEM_FLAGS + 0x22) // Unused Flag
-#define FLAG_UNUSED_0x883                           (SYSTEM_FLAGS + 0x23) // Unused Flag
-#define FLAG_UNUSED_0x884                           (SYSTEM_FLAGS + 0x24) // Unused Flag
-#define FLAG_UNUSED_0x885                           (SYSTEM_FLAGS + 0x25) // Unused Flag
-#define FLAG_UNUSED_0x886                           (SYSTEM_FLAGS + 0x26) // Unused Flag
-#define FLAG_UNUSED_0x887                           (SYSTEM_FLAGS + 0x27) // Unused Flag
+#define FLAG_DEFEATED_TAPU_FINI                     (SYSTEM_FLAGS + 0x21) // Project Grounded: Tapu-eiland: Tapu Fini verslagen/gevangen
+#define FLAG_TAPU_LELE_AWAKE                        (SYSTEM_FLAGS + 0x22) // Project Grounded: Tapu-eiland: Tapu Lele wakker (Koko een keer verslagen/gevangen)
+#define FLAG_TAPU_BULU_AWAKE                        (SYSTEM_FLAGS + 0x23) // Project Grounded: Tapu-eiland: Tapu Bulu wakker (na Lele)
+#define FLAG_TAPU_FINI_AWAKE                        (SYSTEM_FLAGS + 0x24) // Project Grounded: Tapu-eiland: Tapu Fini wakker (na Bulu)
+#define FLAG_CAUGHT_CRESSELIA                       (SYSTEM_FLAGS + 0x25) // Project Grounded: Fullmoon Island: Cresselia gevangen
+#define FLAG_DEFEATED_CRESSELIA                     (SYSTEM_FLAGS + 0x26) // Project Grounded: Fullmoon Island: Cresselia verslagen/gevangen (terug na de League als niet gevangen)
+#define FLAG_HIDDEN_ITEM_TAPU_ISLE_BIG_PEARL        (SYSTEM_FLAGS + 0x27) // Project Grounded: Tapu-eiland: verborgen Big Pearl
 
 #define FLAG_SYS_USE_FLASH                          (SYSTEM_FLAGS + 0x28)
 #define FLAG_SYS_USE_STRENGTH                       (SYSTEM_FLAGS + 0x29)
@@ -1403,8 +1403,8 @@
 #define FLAG_SYS_SAFARI_MODE                        (SYSTEM_FLAGS + 0x2C)
 #define FLAG_SYS_CRUISE_MODE                        (SYSTEM_FLAGS + 0x2D)
 
-#define FLAG_UNUSED_0x88E                           (SYSTEM_FLAGS + 0x2E) // Unused Flag
-#define FLAG_UNUSED_0x88F                           (SYSTEM_FLAGS + 0x2F) // Unused Flag
+#define FLAG_ITEM_TAPU_ISLE_STAR_PIECE              (SYSTEM_FLAGS + 0x2E) // Project Grounded: Tapu-eiland: Star Piece (Bulu-ruine)
+#define FLAG_HIDDEN_ITEM_FULLMOON_ISLAND_MOON_STONE (SYSTEM_FLAGS + 0x2F) // Project Grounded: Fullmoon Island: verborgen Moon Stone
 
 #define FLAG_SYS_TV_HOME                            (SYSTEM_FLAGS + 0x30)
 #define FLAG_SYS_TV_WATCH                           (SYSTEM_FLAGS + 0x31)
@@ -1413,9 +1413,9 @@
 #define FLAG_SYS_MIX_RECORD                         (SYSTEM_FLAGS + 0x34)
 #define FLAG_SYS_CLOCK_SET                          (SYSTEM_FLAGS + 0x35)
 #define FLAG_SYS_NATIONAL_DEX                       (SYSTEM_FLAGS + 0x36)
-#define FLAG_SYS_CAVE_SHIP                          (SYSTEM_FLAGS + 0x37) // Unused Flag, leftover from R/S debug, presumably used by Emerald's debug too
-#define FLAG_SYS_CAVE_WONDER                        (SYSTEM_FLAGS + 0x38) // Unused Flag, same as above
-#define FLAG_SYS_CAVE_BATTLE                        (SYSTEM_FLAGS + 0x39) // Unused Flag, same as above
+#define FLAG_HIDDEN_ITEM_SAFARI_FAIRY_MEADOW_PLATE  (SYSTEM_FLAGS + 0x37) // Project Grounded (landvulling): verborgen item (was SYS_CAVE_SHIP, ongebruikt)
+#define FLAG_HIDDEN_ITEM_SAFARI_THUNDER_ELECTIRIZER (SYSTEM_FLAGS + 0x38) // Project Grounded (landvulling): verborgen item (was SYS_CAVE_WONDER, ongebruikt)
+#define FLAG_HIDDEN_ITEM_SAFARI_SPOOK_CLEANSE_TAG   (SYSTEM_FLAGS + 0x39) // Project Grounded (landvulling): verborgen item (was SYS_CAVE_BATTLE, ongebruikt)
 #define FLAG_SYS_SHOAL_TIDE                         (SYSTEM_FLAGS + 0x3A)
 #define FLAG_SYS_RIBBON_GET                         (SYSTEM_FLAGS + 0x3B)
 
@@ -1484,7 +1484,7 @@
 
 #define FLAG_MAP_SCRIPT_CHECKED_DEOXYS              (SYSTEM_FLAGS + 0x73)
 #define FLAG_DEOXYS_ROCK_COMPLETE                   (SYSTEM_FLAGS + 0x74)
-#define FLAG_ENABLE_SHIP_BIRTH_ISLAND               (SYSTEM_FLAGS + 0x75)
+#define FLAG_UNUSED_SYS_0x75                        (SYSTEM_FLAGS + 0x75) // Project Grounded: was FLAG_ENABLE_SHIP_BIRTH_ISLAND
 #define FLAG_ENABLE_SHIP_FARAWAY_ISLAND             (SYSTEM_FLAGS + 0x76)
 
 #define FLAG_SHOWN_BOX_WAS_FULL_MESSAGE             (SYSTEM_FLAGS + 0x77)
@@ -1503,68 +1503,68 @@
 #define FLAG_ARRIVED_AT_NAVEL_ROCK                  (SYSTEM_FLAGS + 0x81)
 #define FLAG_LANDMARK_TRAINER_HILL                  (SYSTEM_FLAGS + 0x82)
 
-#define FLAG_UNUSED_0x8E3                           (SYSTEM_FLAGS + 0x83) // Unused Flag
+#define FLAG_HIDDEN_ITEM_MT_PYRE_EXT_PURE_INCENSE   (SYSTEM_FLAGS + 0x83) // Project Grounded (landvulling): verborgen item
 
 #define FLAG_RECEIVED_POKEDEX_FROM_BIRCH            (SYSTEM_FLAGS + 0x84)
 
-#define FLAG_UNUSED_0x8E5                           (SYSTEM_FLAGS + 0x85) // Unused Flag
-#define FLAG_UNUSED_0x8E6                           (SYSTEM_FLAGS + 0x86) // Unused Flag
-#define FLAG_UNUSED_0x8E7                           (SYSTEM_FLAGS + 0x87) // Unused Flag
-#define FLAG_UNUSED_0x8E8                           (SYSTEM_FLAGS + 0x88) // Unused Flag
-#define FLAG_UNUSED_0x8E9                           (SYSTEM_FLAGS + 0x89) // Unused Flag
-#define FLAG_UNUSED_0x8EA                           (SYSTEM_FLAGS + 0x8A) // Unused Flag
-#define FLAG_UNUSED_0x8EB                           (SYSTEM_FLAGS + 0x8B) // Unused Flag
-#define FLAG_UNUSED_0x8EC                           (SYSTEM_FLAGS + 0x8C) // Unused Flag
-#define FLAG_UNUSED_0x8ED                           (SYSTEM_FLAGS + 0x8D) // Unused Flag
-#define FLAG_UNUSED_0x8EE                           (SYSTEM_FLAGS + 0x8E) // Unused Flag
-#define FLAG_UNUSED_0x8EF                           (SYSTEM_FLAGS + 0x8F) // Unused Flag
-#define FLAG_UNUSED_0x8F0                           (SYSTEM_FLAGS + 0x90) // Unused Flag
-#define FLAG_UNUSED_0x8F1                           (SYSTEM_FLAGS + 0x91) // Unused Flag
-#define FLAG_UNUSED_0x8F2                           (SYSTEM_FLAGS + 0x92) // Unused Flag
-#define FLAG_UNUSED_0x8F3                           (SYSTEM_FLAGS + 0x93) // Unused Flag
-#define FLAG_UNUSED_0x8F4                           (SYSTEM_FLAGS + 0x94) // Unused Flag
-#define FLAG_UNUSED_0x8F5                           (SYSTEM_FLAGS + 0x95) // Unused Flag
-#define FLAG_UNUSED_0x8F6                           (SYSTEM_FLAGS + 0x96) // Unused Flag
-#define FLAG_UNUSED_0x8F7                           (SYSTEM_FLAGS + 0x97) // Unused Flag
-#define FLAG_UNUSED_0x8F8                           (SYSTEM_FLAGS + 0x98) // Unused Flag
-#define FLAG_UNUSED_0x8F9                           (SYSTEM_FLAGS + 0x99) // Unused Flag
-#define FLAG_UNUSED_0x8FA                           (SYSTEM_FLAGS + 0x9A) // Unused Flag
-#define FLAG_UNUSED_0x8FB                           (SYSTEM_FLAGS + 0x9B) // Unused Flag
-#define FLAG_UNUSED_0x8FC                           (SYSTEM_FLAGS + 0x9C) // Unused Flag
-#define FLAG_UNUSED_0x8FD                           (SYSTEM_FLAGS + 0x9D) // Unused Flag
-#define FLAG_UNUSED_0x8FE                           (SYSTEM_FLAGS + 0x9E) // Unused Flag
-#define FLAG_UNUSED_0x8FF                           (SYSTEM_FLAGS + 0x9F) // Unused Flag
-#define FLAG_UNUSED_0x900                           (SYSTEM_FLAGS + 0xA0) // Unused Flag
-#define FLAG_UNUSED_0x901                           (SYSTEM_FLAGS + 0xA1) // Unused Flag
-#define FLAG_UNUSED_0x902                           (SYSTEM_FLAGS + 0xA2) // Unused Flag
-#define FLAG_UNUSED_0x903                           (SYSTEM_FLAGS + 0xA3) // Unused Flag
-#define FLAG_UNUSED_0x904                           (SYSTEM_FLAGS + 0xA4) // Unused Flag
-#define FLAG_UNUSED_0x905                           (SYSTEM_FLAGS + 0xA5) // Unused Flag
-#define FLAG_UNUSED_0x906                           (SYSTEM_FLAGS + 0xA6) // Unused Flag
-#define FLAG_UNUSED_0x907                           (SYSTEM_FLAGS + 0xA7) // Unused Flag
-#define FLAG_UNUSED_0x908                           (SYSTEM_FLAGS + 0xA8) // Unused Flag
-#define FLAG_UNUSED_0x909                           (SYSTEM_FLAGS + 0xA9) // Unused Flag
-#define FLAG_UNUSED_0x90A                           (SYSTEM_FLAGS + 0xAA) // Unused Flag
-#define FLAG_UNUSED_0x90B                           (SYSTEM_FLAGS + 0xAB) // Unused Flag
-#define FLAG_UNUSED_0x90C                           (SYSTEM_FLAGS + 0xAC) // Unused Flag
-#define FLAG_UNUSED_0x90D                           (SYSTEM_FLAGS + 0xAD) // Unused Flag
-#define FLAG_UNUSED_0x90E                           (SYSTEM_FLAGS + 0xAE) // Unused Flag
-#define FLAG_UNUSED_0x90F                           (SYSTEM_FLAGS + 0xAF) // Unused Flag
-#define FLAG_UNUSED_0x910                           (SYSTEM_FLAGS + 0xB0) // Unused Flag
-#define FLAG_UNUSED_0x911                           (SYSTEM_FLAGS + 0xB1) // Unused Flag
-#define FLAG_UNUSED_0x912                           (SYSTEM_FLAGS + 0xB2) // Unused Flag
-#define FLAG_UNUSED_0x913                           (SYSTEM_FLAGS + 0xB3) // Unused Flag
-#define FLAG_UNUSED_0x914                           (SYSTEM_FLAGS + 0xB4) // Unused Flag
-#define FLAG_UNUSED_0x915                           (SYSTEM_FLAGS + 0xB5) // Unused Flag
-#define FLAG_UNUSED_0x916                           (SYSTEM_FLAGS + 0xB6) // Unused Flag
-#define FLAG_UNUSED_0x917                           (SYSTEM_FLAGS + 0xB7) // Unused Flag
-#define FLAG_UNUSED_0x918                           (SYSTEM_FLAGS + 0xB8) // Unused Flag
-#define FLAG_UNUSED_0x919                           (SYSTEM_FLAGS + 0xB9) // Unused Flag
-#define FLAG_UNUSED_0x91A                           (SYSTEM_FLAGS + 0xBA) // Unused Flag
-#define FLAG_UNUSED_0x91B                           (SYSTEM_FLAGS + 0xBB) // Unused Flag
-#define FLAG_UNUSED_0x91C                           (SYSTEM_FLAGS + 0xBC) // Unused Flag
-#define FLAG_UNUSED_0x91D                           (SYSTEM_FLAGS + 0xBD) // Unused Flag
-#define FLAG_UNUSED_0x91E                           (SYSTEM_FLAGS + 0xBE) // Unused Flag
+#define FLAG_HIDDEN_ITEM_MT_PYRE_EXT_RARE_BONE      (SYSTEM_FLAGS + 0x85) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_MT_PYRE_EXT_REVIVAL_HERB   (SYSTEM_FLAGS + 0x86) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_MT_PYRE_EXT_DUSK_BALL      (SYSTEM_FLAGS + 0x87) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_DESERT_UNDERPASS_RARE_BONE (SYSTEM_FLAGS + 0x88) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_NAVEL_ROCK_FORK_PP_MAX     (SYSTEM_FLAGS + 0x89) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_SOUTHERN_ISLAND_CAMP_BIG_NUGGET (SYSTEM_FLAGS + 0x8A) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_LIGHT_ISLE_STAR_PIECE (SYSTEM_FLAGS + 0x8B) // Project Grounded: verborgen item op het Lichteiland (was Birth Island-kamp)
+#define FLAG_HIDDEN_ITEM_FARAWAY_ISLAND_CAMP_BIG_MUSHROOM (SYSTEM_FLAGS + 0x8C) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_HEATRAN_LAIR_FLAME_PLATE   (SYSTEM_FLAGS + 0x8D) // Project Grounded (landvulling): verborgen item
+#define FLAG_HIDDEN_ITEM_ZV2_R120_PEARL_STRING      (SYSTEM_FLAGS + 0x8E) // Project Grounded (zeevulling 2): verborgen item (Route120)
+#define FLAG_HIDDEN_ITEM_ZV2_R119_MYSTIC_WATER      (SYSTEM_FLAGS + 0x8F) // Project Grounded (zeevulling 2): verborgen item (Route119)
+#define FLAG_HIDDEN_ITEM_ZV2_R118_HEART_SCALE       (SYSTEM_FLAGS + 0x90) // Project Grounded (zeevulling 2): verborgen item (Route118)
+#define FLAG_HIDDEN_ITEM_ZV2_R115_BIG_PEARL         (SYSTEM_FLAGS + 0x91) // Project Grounded (zeevulling 2): verborgen item (Route115)
+#define FLAG_HIDDEN_ITEM_ZV2_R110_PEARL             (SYSTEM_FLAGS + 0x92) // Project Grounded (zeevulling 2): verborgen item (Route110)
+#define FLAG_HIDDEN_ITEM_ZV2_WHIRL_BIG_NUGGET       (SYSTEM_FLAGS + 0x93) // Project Grounded (zeevulling 2): verborgen item (WhirlIsland)
+#define FLAG_HIDDEN_ITEM_ZV2_WHIRL_PP_MAX           (SYSTEM_FLAGS + 0x94) // Project Grounded (zeevulling 2): verborgen item (WhirlIsland)
+#define FLAG_HIDDEN_ITEM_ZV2_R134_ZINC              (SYSTEM_FLAGS + 0x95) // Project Grounded (zeevulling 2): verborgen item (Route134)
+#define FLAG_HIDDEN_ITEM_ZV2_R134_STAR_PIECE        (SYSTEM_FLAGS + 0x96) // Project Grounded (zeevulling 2): verborgen item (Route134)
+#define FLAG_HIDDEN_ITEM_ZV2_R133_PEARL             (SYSTEM_FLAGS + 0x97) // Project Grounded (zeevulling 2): verborgen item (Route133)
+#define FLAG_HIDDEN_ITEM_ZV2_R133_NUGGET            (SYSTEM_FLAGS + 0x98) // Project Grounded (zeevulling 2): verborgen item (Route133)
+#define FLAG_HIDDEN_ITEM_ZV2_R131_BIG_PEARL         (SYSTEM_FLAGS + 0x99) // Project Grounded (zeevulling 2): verborgen item (Route131)
+#define FLAG_HIDDEN_ITEM_ZV2_R131_HYPER_POTION      (SYSTEM_FLAGS + 0x9A) // Project Grounded (zeevulling 2): verborgen item (Route131)
+#define FLAG_HIDDEN_ITEM_ZV2_R130_STARDUST          (SYSTEM_FLAGS + 0x9B) // Project Grounded (zeevulling 2): verborgen item (Route130)
+#define FLAG_HIDDEN_ITEM_ZV2_R130_LUCKY_PUNCH       (SYSTEM_FLAGS + 0x9C) // Project Grounded (zeevulling 2): verborgen item (Route130)
+#define FLAG_HIDDEN_ITEM_ZV2_R129_ULTRA_BALL        (SYSTEM_FLAGS + 0x9D) // Project Grounded (zeevulling 2): verborgen item (Route129)
+#define FLAG_HIDDEN_ITEM_ZV2_R129_PEARL_STRING      (SYSTEM_FLAGS + 0x9E) // Project Grounded (zeevulling 2): verborgen item (Route129)
+#define FLAG_HIDDEN_ITEM_ZV2_R128_STAR_PIECE        (SYSTEM_FLAGS + 0x9F) // Project Grounded (zeevulling 2): verborgen item (Route128)
+#define FLAG_HIDDEN_ITEM_ZV2_R128_HP_UP             (SYSTEM_FLAGS + 0xA0) // Project Grounded (zeevulling 2): verborgen item (Route128)
+#define FLAG_HIDDEN_ITEM_ZV2_R128_PROTEIN           (SYSTEM_FLAGS + 0xA1) // Project Grounded (zeevulling 2): verborgen item (Route128)
+#define FLAG_HIDDEN_ITEM_ZV2_R124_HEART_SCALE       (SYSTEM_FLAGS + 0xA2) // Project Grounded (zeevulling 2): verborgen item (Route124)
+#define FLAG_HIDDEN_ITEM_ZV2_R124_BIG_PEARL         (SYSTEM_FLAGS + 0xA3) // Project Grounded (zeevulling 2): verborgen item (Route124)
+#define FLAG_HIDDEN_ITEM_ZV2_R124_PP_UP             (SYSTEM_FLAGS + 0xA4) // Project Grounded (zeevulling 2): verborgen item (Route124)
+#define FLAG_HIDDEN_ITEM_ZV2_R122_RARE_BONE         (SYSTEM_FLAGS + 0xA5) // Project Grounded (zeevulling 2): verborgen item (Route122)
+#define FLAG_HIDDEN_ITEM_ZV2_R122_SPELL_TAG         (SYSTEM_FLAGS + 0xA6) // Project Grounded (zeevulling 2): verborgen item (Route122)
+#define FLAG_HIDDEN_ITEM_ZV2_R108_METAL_COAT        (SYSTEM_FLAGS + 0xA7) // Project Grounded (zeevulling 2): verborgen item (Route108)
+#define FLAG_HIDDEN_ITEM_ZV2_R108_NUGGET            (SYSTEM_FLAGS + 0xA8) // Project Grounded (zeevulling 2): verborgen item (Route108)
+#define FLAG_HIDDEN_ITEM_ZV2_R108_PEARL             (SYSTEM_FLAGS + 0xA9) // Project Grounded (zeevulling 2): verborgen item (Route108)
+#define FLAG_HIDDEN_ITEM_ZV2_R105_HEART_SCALE       (SYSTEM_FLAGS + 0xAA) // Project Grounded (zeevulling 2): verborgen item (Route105)
+#define FLAG_HIDDEN_ITEM_ZV2_R105_STAR_PIECE        (SYSTEM_FLAGS + 0xAB) // Project Grounded (zeevulling 2): verborgen item (Route105)
+#define FLAG_HIDDEN_ITEM_ZV2_R105_BIG_PEARL         (SYSTEM_FLAGS + 0xAC) // Project Grounded (zeevulling 2): verborgen item (Route105)
+#define FLAG_HIDDEN_ITEM_ROUTE_107_BIG_PEARL        (SYSTEM_FLAGS + 0xAD) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_107_HARD_STONE       (SYSTEM_FLAGS + 0xAE) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_126_BERRY_JUICE      (SYSTEM_FLAGS + 0xAF) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_126_BLACK_SLUDGE     (SYSTEM_FLAGS + 0xB0) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_126_PRETTY_FEATHER   (SYSTEM_FLAGS + 0xB1) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_127_BIG_PEARL        (SYSTEM_FLAGS + 0xB2) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_127_MYSTIC_WATER     (SYSTEM_FLAGS + 0xB3) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_ROUTE_127_DAMP_ROCK        (SYSTEM_FLAGS + 0xB4) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_105_DEEP_SEA_TOOTH (SYSTEM_FLAGS + 0xB5) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_105_HEART_SCALE (SYSTEM_FLAGS + 0xB6) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_105_BIG_PEARL   (SYSTEM_FLAGS + 0xB7) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_125_NEVER_MELT_ICE (SYSTEM_FLAGS + 0xB8) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_125_HEART_SCALE (SYSTEM_FLAGS + 0xB9) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_128_DEEP_SEA_SCALE (SYSTEM_FLAGS + 0xBA) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_128_STAR_PIECE  (SYSTEM_FLAGS + 0xBB) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_129_DRAGON_SCALE (SYSTEM_FLAGS + 0xBC) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_129_PEARL       (SYSTEM_FLAGS + 0xBD) // Project Grounded (zeevulling 1): verborgen item
+#define FLAG_HIDDEN_ITEM_UNDERWATER_129_HEART_SCALE (SYSTEM_FLAGS + 0xBE) // Project Grounded (zeevulling 1): verborgen item
 #define FLAG_UNUSED_0x91F                           (SYSTEM_FLAGS + 0xBF) // Unused Flag
 
 // Daily Flags
@@ -1601,12 +1601,12 @@
 #define FLAG_DAILY_REMATCH_WINONA                   (DAILY_FLAGS_START + 0x1A) // Project Grounded: gymleider-rematch vandaag al gewonnen
 #define FLAG_DAILY_REMATCH_TATE_AND_LIZA            (DAILY_FLAGS_START + 0x1B) // Project Grounded: gymleider-rematch vandaag al gewonnen
 #define FLAG_DAILY_REMATCH_WALLACE                  (DAILY_FLAGS_START + 0x1C) // Project Grounded: gymleider-rematch vandaag al gewonnen
-#define FLAG_UNUSED_0x93D                           (DAILY_FLAGS_START + 0x1D) // Unused Flag
-#define FLAG_UNUSED_0x93E                           (DAILY_FLAGS_START + 0x1E) // Unused Flag
-#define FLAG_UNUSED_0x93F                           (DAILY_FLAGS_START + 0x1F) // Unused Flag
-#define FLAG_UNUSED_0x940                           (DAILY_FLAGS_START + 0x20) // Unused Flag
-#define FLAG_UNUSED_0x941                           (DAILY_FLAGS_START + 0x21) // Unused Flag
-#define FLAG_UNUSED_0x942                           (DAILY_FLAGS_START + 0x22) // Unused Flag
+#define FLAG_DAILY_EVER_GRANDE_HOTDOG               (DAILY_FLAGS_START + 0x1D) // Project Grounded (landvulling): hotdogkraam (1 per dag)
+#define FLAG_DAILY_HIDDEN_STARFALL_STARDUST_1       (DAILY_FLAGS_START + 0x1E) // Project Grounded (landvulling): verborgen sterrenstof, elke dag opnieuw
+#define FLAG_DAILY_HIDDEN_STARFALL_STARDUST_2       (DAILY_FLAGS_START + 0x1F) // Project Grounded (landvulling): verborgen sterrenstof, elke dag opnieuw
+#define FLAG_HIDDEN_ITEM_ZV3_R107_SOFT_SAND                                   (DAILY_FLAGS_START + 0x20) // Project Grounded (zeevulling 3): komt elke dag terug
+#define FLAG_HIDDEN_ITEM_ZV3_R125_SNOWBALL                                    (DAILY_FLAGS_START + 0x21) // Project Grounded (zeevulling 3): komt elke dag terug
+#define FLAG_HIDDEN_ITEM_ZV3_R125_ULTRA_BALL                                  (DAILY_FLAGS_START + 0x22) // Project Grounded (zeevulling 3): komt elke dag terug
 #define FLAG_UNUSED_0x943                           (DAILY_FLAGS_START + 0x23) // Unused Flag
 #define FLAG_UNUSED_0x944                           (DAILY_FLAGS_START + 0x24) // Unused Flag
 #define FLAG_UNUSED_0x945                           (DAILY_FLAGS_START + 0x25) // Unused Flag
@@ -1618,8 +1618,8 @@
 #define FLAG_UNUSED_0x94B                           (DAILY_FLAGS_START + 0x2B) // Unused Flag
 #define FLAG_UNUSED_0x94C                           (DAILY_FLAGS_START + 0x2C) // Unused Flag
 #define FLAG_UNUSED_0x94D                           (DAILY_FLAGS_START + 0x2D) // Unused Flag
-#define FLAG_UNUSED_0x94E                           (DAILY_FLAGS_START + 0x2E) // Unused Flag
-#define FLAG_UNUSED_0x94F                           (DAILY_FLAGS_START + 0x2F) // Unused Flag
+#define FLAG_DAILY_REMATCH_RIVAL                    (DAILY_FLAGS_START + 0x2E) // Project Grounded: rivaal (met pensioen) in het Paradiso Resort vandaag al verslagen
+#define FLAG_DAILY_BEACHCOMBER_FIND                 (DAILY_FLAGS_START + 0x2F) // Project Grounded: strandjutter Route 132 gaf vandaag al iets
 #define FLAG_UNUSED_0x950                           (DAILY_FLAGS_START + 0x30) // Unused Flag
 #define FLAG_UNUSED_0x951                           (DAILY_FLAGS_START + 0x31) // Unused Flag
 #define FLAG_UNUSED_0x952                           (DAILY_FLAGS_START + 0x32) // Unused Flag
@@ -1635,11 +1635,555 @@
 #define FLAG_UNUSED_0x95C                           (DAILY_FLAGS_START + 0x3C) // Unused Flag
 #define FLAG_UNUSED_0x95D                           (DAILY_FLAGS_START + 0x3D) // Unused Flag
 #define FLAG_UNUSED_0x95E                           (DAILY_FLAGS_START + 0x3E) // Unused Flag
-#define FLAG_UNUSED_0x95F                           (DAILY_FLAGS_START + 0x3F) // Unused Flag
-#define DAILY_FLAGS_END                             (FLAG_UNUSED_0x95F + (7 - FLAG_UNUSED_0x95F % 8))
+#define FLAG_DAILY_WINGULL_THEFT                    (DAILY_FLAGS_START + 0x3F) // Project Grounded: Wingull op de drijvende markt jat 1 Poké Ball per dag
+#define DAILY_FLAGS_END                             (FLAG_DAILY_WINGULL_THEFT + (7 - FLAG_DAILY_WINGULL_THEFT % 8))
 #define NUM_DAILY_FLAGS                             (DAILY_FLAGS_END - DAILY_FLAGS_START + 1)
 
 #define FLAGS_COUNT (DAILY_FLAGS_END + 1)
+
+// Project Grounded: extra flags (de gewone flags waren op, 8 okt). Ze staan achteraan SaveBlock1
+// (gSaveBlock1Ptr->groundedFlags), zodat oude saves blijven werken. Gebruik: FLAG_GROUNDED(n), n = 0..2047.
+#define GROUNDED_FLAGS_START                    0x1000
+#define NUM_GROUNDED_FLAGS                      2048 // v0.9.190: 1024 -> 2048 (ruimte voor Yoshi's Island e.a.); was eerst 512
+#define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
+// Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
+// (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840-879 nieuwe items (nieuwe_items.py), 1760-1769 rivaal post-game (blok rival_postgame), 880+ vrij.
+// lakes { (tools/grounded/maptools/lakes.py; FLAG_GROUNDED 1120-1159: 1120-1125 meren, 1140-1148 nieuwe items (nieuwe_items.py), 1126-1139 en 1149-1159 nog vrij)
+#define FLAG_HIDE_LAKE_ACUITY_UXIE                       FLAG_GROUNDED(1120) // Project Grounded: Lake Acuity: Uxie gevangen of verslagen (verbergt het object)
+#define FLAG_HIDE_LAKE_VALOR_AZELF                       FLAG_GROUNDED(1121) // Project Grounded: Lake Valor: Azelf gevangen of verslagen (verbergt het object)
+#define FLAG_HIDE_LAKE_VERITY_MESPRIT                    FLAG_GROUNDED(1122) // Project Grounded: Lake Verity: Mesprit gevangen of verslagen (verbergt het object)
+#define FLAG_LAKE_ACUITY_DONE                            FLAG_GROUNDED(1123) // Project Grounded: Lake Acuity: meerwezen afgehandeld (voor de meren-quest in de hub)
+#define FLAG_LAKE_VALOR_DONE                             FLAG_GROUNDED(1124) // Project Grounded: Lake Valor: meerwezen afgehandeld (voor de meren-quest in de hub)
+#define FLAG_LAKE_VERITY_DONE                            FLAG_GROUNDED(1125) // Project Grounded: Lake Verity: meerwezen afgehandeld (voor de meren-quest in de hub)
+// }
+// coronet { (tools/grounded/maptools/coronet.py; FLAG_GROUNDED 1160-1219: 1180-1186 nieuwe items (blok nieuwe_items), 1173 SickBlik (sickblik-blok), 1174-1179 en 1187-1219 nog vrij)
+#define FLAG_SPACETIME_CORONET_DONE                      FLAG_GROUNDED(1160) // Project Grounded: Mt. Coronet: Dialga en Palkia allebei gevangen of verslagen (klaar-flag; Arceus-scene in de hub)
+#define FLAG_CORONET_DIALGA_DONE                         FLAG_GROUNDED(1161) // Project Grounded: Spear Pillar: DIALGA gevangen of verslagen
+#define FLAG_CORONET_PALKIA_DONE                         FLAG_GROUNDED(1162) // Project Grounded: Spear Pillar: PALKIA gevangen of verslagen
+#define FLAG_HIDE_CORONET_DIALGA                         FLAG_GROUNDED(1163) // Project Grounded: Spear Pillar: DIALGA verborgen (verschijnt alleen via het altaar)
+#define FLAG_HIDE_CORONET_PALKIA                         FLAG_GROUNDED(1164) // Project Grounded: Spear Pillar: PALKIA verborgen (verschijnt alleen via het altaar)
+#define FLAG_ITEM_CORONET_4F_ROOM1_MAX_REVIVE            FLAG_GROUNDED(1165) // Project Grounded: Mt. Coronet 4F kamer 1: Max Revive
+#define FLAG_HIDDEN_ITEM_CORONET_4F_ROOM1_ULTRA_BALL     FLAG_GROUNDED(1166) // Project Grounded: Mt. Coronet 4F kamer 1: verborgen Ultra Balls
+#define FLAG_ITEM_CORONET_4F_OUTSIDE_MAX_ELIXIR          FLAG_GROUNDED(1167) // Project Grounded: Mt. Coronet 4F buiten: Max Elixir (op het massief)
+#define FLAG_ITEM_CORONET_4F_OUTSIDE_PP_MAX              FLAG_GROUNDED(1168) // Project Grounded: Mt. Coronet 4F buiten: PP Max
+#define FLAG_ITEM_CORONET_4F_ROOM3_RARE_CANDY            FLAG_GROUNDED(1169) // Project Grounded: Mt. Coronet 4F kamer 3: Rare Candy
+#define FLAG_ITEM_CORONET_5F_MAX_POTION                  FLAG_GROUNDED(1170) // Project Grounded: Mt. Coronet 5F: Max Potion
+#define FLAG_HIDDEN_ITEM_CORONET_5F_STAR_PIECE           FLAG_GROUNDED(1171) // Project Grounded: Mt. Coronet 5F: verborgen Star Piece
+#define FLAG_ITEM_CORONET_6F_PP_UP                       FLAG_GROUNDED(1172) // Project Grounded: Mt. Coronet 6F: PP Up
+// }
+// Post-game Dave/SickBlik (met de hand; FLAG_GROUNDED 1173-1179, 1174-1179 nog vrij)
+#define FLAG_HIDE_SICKBLIK_DEV                           FLAG_GROUNDED(1173) // Project Grounded: SickBlik (developer) niet op deze kaart vandaag; gezet/gewist in ON_TRANSITION van Mauville/Fortree/Lilycove/Pacifidlog
+// hall_of_origin { (tools/grounded/maptools/hall_of_origin.py; FLAG_GROUNDED 1220-1279: 1240-1259 nieuwe items (blok nieuwe_items), 1225-1239 en 1260-1279 nog vrij)
+#define FLAG_ARCEUS_MET                                  FLAG_GROUNDED(1220) // Project Grounded: Arceus-scene in de Spacetime Cave gezien, Azure Flute ontvangen
+#define FLAG_ARCEUS_SKY_PILLAR                           FLAG_GROUNDED(1221) // Project Grounded: alle legendaries afgehandeld: Arceus wacht op Sky Pillar
+#define FLAG_HALL_OF_ORIGIN_OPEN                         FLAG_GROUNDED(1222) // Project Grounded: Sky Pillar: de trap van licht naar de Hall of Origin is neergedaald
+#define FLAG_HALL_ARCEUS_DONE                            FLAG_GROUNDED(1223) // Project Grounded: Hall of Origin: Arceus gevangen of verslagen (afsluitende tekst gezien)
+#define FLAG_HIDE_HALL_ARCEUS                            FLAG_GROUNDED(1224) // Project Grounded: Hall of Origin: Arceus-object verborgen (gezet in ON_TRANSITION als hij gevangen is)
+// }
+// yoshis_island { (tools/grounded/maptools/yoshis_island.py; FLAG_GROUNDED 1024-1119; 1060-1069 = nieuwe items (blok nieuwe_items), 1055-1059 en 1070-1119 nog vrij)
+#define FLAG_YI_ARRIVED                                      FLAG_GROUNDED(1024) // Project Grounded: Yoshi's Island: aankomstscene gezien (uit de lucht gevallen, Yoshi gevonden)
+#define FLAG_YI_BEACH_GUARDS                                 FLAG_GROUNDED(1025) // Project Grounded: Yoshi's Island: de twee Shy Guys bij de pijp verslagen (multi battle 1)
+#define FLAG_YI_CAMP_A                                       FLAG_GROUNDED(1026) // Project Grounded: Yoshi's Island: bende A in het Shy Guy-kamp verslagen (multi battle 2)
+#define FLAG_YI_CAMP_B                                       FLAG_GROUNDED(1027) // Project Grounded: Yoshi's Island: bende B voor het spookhuis verslagen (multi battle 3)
+#define FLAG_YI_BOO_DONE                                     FLAG_GROUNDED(1028) // Project Grounded: Yoshi's Island: Commander Boo verslagen (de fortwachter vlucht)
+#define FLAG_YI_FORT_GUARDS                                  FLAG_GROUNDED(1029) // Project Grounded: Yoshi's Island: de twee fortwachters verslagen (multi battle 4)
+#define FLAG_YI_WARIO_DONE                                   FLAG_GROUNDED(1030) // Project Grounded: Yoshi's Island: Wario verslagen (zet ook FLAG_SPACETIME_YOSHI_DONE)
+#define FLAG_YI_PECHARUNT_DONE                               FLAG_GROUNDED(1031) // Project Grounded: Yoshi's Island: Pecharunt gevangen (of verslagen; komt dan terug)
+#define FLAG_YI_YOSHI_AHEAD                                  FLAG_GROUNDED(1032) // Project Grounded: Yoshi's Island: Yoshi is vooruit de pijp in (verbergt Yoshi op het strand)
+#define FLAG_YI_YOSHI_HOME                                   FLAG_GROUNDED(1033) // Project Grounded: Yoshi's Island: quest klaar, Yoshi wacht op het strand (verbergt hem elders)
+#define FLAG_ITEM_YOSHIS_ISLAND_BEACH_HONEY                  FLAG_GROUNDED(1040) // Project Grounded: Yoshi's Island strand: Honey
+#define FLAG_ITEM_YOSHIS_ISLAND_BEACH_HEAL_BALL              FLAG_GROUNDED(1041) // Project Grounded: Yoshi's Island strand: Heal Ball
+#define FLAG_HIDDEN_ITEM_YOSHIS_ISLAND_BEACH_EXP_CANDY_XS    FLAG_GROUNDED(1042) // Project Grounded: Yoshi's Island strand: verborgen Exp. Candy XS
+#define FLAG_ITEM_YOSHIS_ISLAND_HILLS_LAGGING_TAIL           FLAG_GROUNDED(1043) // Project Grounded: Yoshi's Island heuvels: Lagging Tail
+#define FLAG_ITEM_YOSHIS_ISLAND_HILLS_TOXIC_PLATE            FLAG_GROUNDED(1044) // Project Grounded: Yoshi's Island heuvels: Toxic Plate (bij Pecharunts kraampje)
+#define FLAG_HIDDEN_ITEM_YOSHIS_ISLAND_HILLS_STICKY_BARB     FLAG_GROUNDED(1045) // Project Grounded: Yoshi's Island heuvels: verborgen Sticky Barb
+#define FLAG_ITEM_YOSHIS_ISLAND_BOO_MANSION_FLOAT_STONE      FLAG_GROUNDED(1046) // Project Grounded: Yoshi's Island spookhuis: Float Stone
+#define FLAG_ITEM_YOSHIS_ISLAND_BOO_MANSION_POKE_DOLL        FLAG_GROUNDED(1047) // Project Grounded: Yoshi's Island spookhuis: Poke Doll
+#define FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_GRIP_CLAW         FLAG_GROUNDED(1048) // Project Grounded: Yoshi's Island fort: Grip Claw
+#define FLAG_ITEM_YOSHIS_ISLAND_WARIO_FORT_MALICIOUS_ARMOR   FLAG_GROUNDED(1049) // Project Grounded: Yoshi's Island fort: Malicious Armor
+#define FLAG_YI_NEP_ENUT_DONE                                FLAG_GROUNDED(1050) // Project Grounded: Yoshi's Island jungle: Nep-Enut (het watermonster in het meertje, een Dondozo) verslagen of gevangen
+#define FLAG_YI_POOCHY_DUG                                   FLAG_GROUNDED(1051) // Project Grounded: Yoshi's Island jungle: Poochy heeft in het bosje iets opgegraven
+#define FLAG_YI_BRIDGE_CLOUD                                 FLAG_GROUNDED(1052) // Project Grounded: Yoshi's Island bloemenveld: ?-wolk geknapt, de brug over de kloof ligt er
+#define FLAG_YI_STAR_CLOUD                                   FLAG_GROUNDED(1053) // Project Grounded: Yoshi's Island heuvels: ?-wolk met de sterrenregen geknapt
+#define FLAG_YI_POOCHY_MET                                   FLAG_GROUNDED(1054) // Project Grounded: Yoshi's Island jungle: Poochy leren kennen (korte uitleg alleen de eerste keer)
+// }
+// calyrex { (tools/grounded/maptools/calyrex_quest.py; FLAG_GROUNDED 1280-1319: 1280-1285 quest, 1300-1309 nieuwe items (nieuwe_items.py), 1286-1299 en 1310-1319 nog vrij)
+#define FLAG_CROWN_QUEST_STARTED                         FLAG_GROUNDED(1280) // Project Grounded: Crown Tundra: Calyrex heeft gevraagd zijn paard terug te halen (paarden verschijnen)
+#define FLAG_CROWN_CHOSE_GLASTRIER                       FLAG_GROUNDED(1281) // Project Grounded: Crown Tundra: GLASTRIER gevangen (naam historisch; beide paarden zijn te vangen)
+#define FLAG_CROWN_CHOSE_SPECTRIER                       FLAG_GROUNDED(1282) // Project Grounded: Crown Tundra: SPECTRIER gevangen (naam historisch; beide paarden zijn te vangen)
+#define FLAG_CROWN_STEED_DONE                            FLAG_GROUNDED(1283) // Project Grounded: Crown Tundra: minstens één paard gevangen (Calyrex geeft de Reins)
+#define FLAG_RECEIVED_REINS_OF_UNITY                     FLAG_GROUNDED(1284) // Project Grounded: Crown Tundra: REINS OF UNITY gekregen van Calyrex
+#define FLAG_CROWN_CALYREX_DONE                          FLAG_GROUNDED(1285) // Project Grounded: Crown Tundra: CALYREX gevangen (quest klaar)
+// }
+// battle_casino { (met de hand, src/battle_casino.c; FLAG_GROUNDED 1320-1359: 1320-1321 in gebruik, 1322-1359 nog vrij)
+#define FLAG_CASINO_AI_VS_AI                             FLAG_GROUNDED(1320) // Project Grounded: Battle Casino: alleen tijdens een casinogevecht gezet (B_FLAG_AI_VS_AI_BATTLE, AI speelt beide kanten)
+#define FLAG_CASINO_INTRO_SEEN                           FLAG_GROUNDED(1321) // Project Grounded: Battle Casino: uitleg van de croupier gezien
+// }
+// national_park { (tools/grounded/maptools/national_park.py; FLAG_GROUNDED 700-759, 712-759 nog vrij)
+#define FLAG_NATIONAL_PARK_REVEALED                      FLAG_GROUNDED(700) // Project Grounded: National Park: Calyrex heeft de illusie opgeheven (brandend park)
+#define FLAG_NATIONAL_PARK_CELEBI_DONE                   FLAG_GROUNDED(701) // Project Grounded: Ilex Forest: Celebi gevangen
+#define FLAG_NATIONAL_PARK_RESTORED                      FLAG_GROUNDED(702) // Project Grounded: National Park: Celebi heeft het park hersteld (Eternatus verschijnt)
+#define FLAG_NATIONAL_PARK_DONE                          FLAG_GROUNDED(703) // Project Grounded: Spacetime-sidequest klaar: Eternatus gevangen/verslagen, Calyrex vertrokken
+#define FLAG_NATIONAL_PARK_SCENE_PENDING                 FLAG_GROUNDED(704) // Project Grounded: National Park: tekst na de schermwissel nog tonen (eenmalig)
+#define FLAG_ITEM_NATIONAL_PARK_SILVER_POWDER            FLAG_GROUNDED(705) // Project Grounded: National Park: Silver Powder
+#define FLAG_ITEM_NATIONAL_PARK_SUN_STONE                FLAG_GROUNDED(706) // Project Grounded: National Park: Sun Stone
+#define FLAG_HIDDEN_ITEM_NATIONAL_PARK_BIG_NUGGET        FLAG_GROUNDED(707) // Project Grounded: National Park: verborgen Big Nugget
+#define FLAG_ITEM_ILEX_FOREST_REVIVAL_HERB               FLAG_GROUNDED(708) // Project Grounded: Ilex Forest: Revival Herb
+#define FLAG_ITEM_ILEX_FOREST_BOTTLE_CAP                 FLAG_GROUNDED(709) // Project Grounded: Ilex Forest: Bottle Cap
+#define FLAG_HIDDEN_ITEM_ILEX_FOREST_RARE_CANDY          FLAG_GROUNDED(710) // Project Grounded: Ilex Forest: verborgen Rare Candy
+#define FLAG_ITEM_ILEX_FOREST_MIRACLE_SEED               FLAG_GROUNDED(711) // Project Grounded: Ilex Forest: Miracle Seed (dwaalpad)
+// }
+// area_zero { (tools/grounded/maptools/area_zero.py; FLAG_GROUNDED 920-999: 938-949 en 962-999 nog vrij, 950-961 nieuwe items (nieuwe_items.py))
+#define FLAG_SPACETIME_AREAZERO_DONE                     FLAG_GROUNDED(920) // Project Grounded: Spacetime-sidequest klaar: TERAPAGOS gevangen
+#define FLAG_AREAZERO_SCREAM_TAIL                        FLAG_GROUNDED(921) // Project Grounded: Area Zero, diepte: SCREAM TAIL gevangen
+#define FLAG_AREAZERO_IRON_HANDS                         FLAG_GROUNDED(922) // Project Grounded: Area Zero, diepte: IRON HANDS gevangen
+#define FLAG_AREAZERO_IRON_LEAVES                        FLAG_GROUNDED(923) // Project Grounded: Area Zero, toekomst: IRON LEAVES gevangen
+#define FLAG_AREAZERO_IRON_BOULDER                       FLAG_GROUNDED(924) // Project Grounded: Area Zero, toekomst: IRON BOULDER gevangen
+#define FLAG_AREAZERO_IRON_CROWN                         FLAG_GROUNDED(925) // Project Grounded: Area Zero, toekomst: IRON CROWN gevangen
+#define FLAG_AREAZERO_MIRAIDON                           FLAG_GROUNDED(926) // Project Grounded: Area Zero, toekomst: MIRAIDON gevangen (beveiligingssysteem gaat aan)
+#define FLAG_AREAZERO_WALKING_WAKE                       FLAG_GROUNDED(927) // Project Grounded: Area Zero, verleden: WALKING WAKE gevangen
+#define FLAG_AREAZERO_GOUGING_FIRE                       FLAG_GROUNDED(928) // Project Grounded: Area Zero, verleden: GOUGING FIRE gevangen
+#define FLAG_AREAZERO_RAGING_BOLT                        FLAG_GROUNDED(929) // Project Grounded: Area Zero, verleden: RAGING BOLT gevangen
+#define FLAG_AREAZERO_KORAIDON                           FLAG_GROUNDED(930) // Project Grounded: Area Zero, verleden: KORAIDON gevangen (beveiligingssysteem gaat aan)
+#define FLAG_AREAZERO_INTRO                              FLAG_GROUNDED(931) // Project Grounded: Area Zero: introtekst bij de eerste afdaling gezien
+#define FLAG_ITEM_AREA_ZERO_RIM_FULL_RESTORE             FLAG_GROUNDED(932) // Project Grounded: Area Zero, kraterwand: Full Restore
+#define FLAG_HIDDEN_ITEM_AREA_ZERO_RIM_MAX_ELIXIR        FLAG_GROUNDED(933) // Project Grounded: Area Zero, kraterwand: verborgen Max Elixir
+#define FLAG_ITEM_AREA_ZERO_DEPTHS_PP_UP                 FLAG_GROUNDED(934) // Project Grounded: Area Zero, diepte: PP Up
+#define FLAG_ITEM_AREA_ZERO_CRYSTAL_MAX_REVIVE           FLAG_GROUNDED(935) // Project Grounded: Area Zero, kristalgrot: Max Revive
+#define FLAG_ITEM_AREA_ZERO_FUTURE_PP_MAX                FLAG_GROUNDED(936) // Project Grounded: Area Zero, toekomst: PP Max
+#define FLAG_ITEM_AREA_ZERO_PAST_RARE_CANDY              FLAG_GROUNDED(937) // Project Grounded: Area Zero, verleden: Rare Candy
+// }
+// glimwood { (tools/grounded/maptools/glimwood.py; FLAG_GROUNDED 880-919, 895-919 nog vrij)
+#define FLAG_GLIMWOOD_MET_WITCH                          FLAG_GROUNDED(880) // Project Grounded: Glimwood: de heks heeft zich voorgesteld
+#define FLAG_GLIMWOOD_GANG_1                             FLAG_GROUNDED(881) // Project Grounded: Glimwood: Impidimp-bende 1 (west) verslagen
+#define FLAG_GLIMWOOD_GANG_2                             FLAG_GROUNDED(882) // Project Grounded: Glimwood: Impidimp-bende 2 (oost) verslagen
+#define FLAG_GLIMWOOD_GANG_3                             FLAG_GROUNDED(883) // Project Grounded: Glimwood: Impidimp-bende 3 (blokkeert de weg naar Ballonlea) verslagen
+#define FLAG_GLIMWOOD_GANG_BOSS                          FLAG_GROUNDED(884) // Project Grounded: Ballonlea: Grimmsnarl (baas van de bende, blokkeert de trap) verslagen
+#define FLAG_GLIMWOOD_XERNEAS_DONE                       FLAG_GROUNDED(885) // Project Grounded: Ballonlea: Xerneas gevangen, het bos licht weer op
+#define FLAG_SPACETIME_GLIMWOOD_DONE                     FLAG_GROUNDED(886) // Project Grounded: Spacetime-sidequest klaar: Yveltal gevangen
+#define FLAG_GLIMWOOD_SCENE_PENDING                      FLAG_GROUNDED(887) // Project Grounded: Ballonlea: tekst na het oplichten nog tonen (eenmalig)
+#define FLAG_GLIMWOOD_YVELTAL_SEEN                       FLAG_GROUNDED(888) // Project Grounded: Glimwood: Yveltal-scene gezien (eenmalig)
+#define FLAG_ITEM_GLIMWOOD_EXP_CANDY_XL                  FLAG_GROUNDED(889) // Project Grounded: Glimwood: Exp. Candy XL (westterras)
+#define FLAG_ITEM_GLIMWOOD_EJECT_PACK                    FLAG_GROUNDED(890) // Project Grounded: Glimwood: Eject Pack (doodlopend pad oost)
+#define FLAG_ITEM_GLIMWOOD_DREAM_BALL                    FLAG_GROUNDED(891) // Project Grounded: Glimwood: Dream Ball (oostterras)
+#define FLAG_HIDDEN_ITEM_GLIMWOOD_GALARICA_CUFF          FLAG_GROUNDED(892) // Project Grounded: Glimwood: verborgen Galarica Cuff (heksenkring)
+#define FLAG_ITEM_BALLONLEA_GALARICA_WREATH              FLAG_GROUNDED(893) // Project Grounded: Ballonlea: Galarica Wreath
+#define FLAG_HIDDEN_ITEM_BALLONLEA_EXP_CANDY_L           FLAG_GROUNDED(894) // Project Grounded: Ballonlea: verborgen Exp. Candy L
+// }
+// coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; FLAG_GROUNDED 660-699, 685-699 nog vrij)
+#define FLAG_ITEM_SEA_SHARD_ROUTE126_CORAL_CATHEDRAL     FLAG_GROUNDED(660) // Project Grounded: Koraalkathedraal: Sea Shard
+#define FLAG_ITEM_CORAL_CATHEDRAL_LUMINOUS_MOSS          FLAG_GROUNDED(661) // Project Grounded: Koraalkathedraal: Luminous Moss
+#define FLAG_ITEM_CORAL_CATHEDRAL_SHELL_BELL             FLAG_GROUNDED(662) // Project Grounded: Koraalkathedraal: Shell Bell
+#define FLAG_ITEM_CORAL_CATHEDRAL_PEARL_STRING           FLAG_GROUNDED(663) // Project Grounded: Koraalkathedraal: Pearl String
+#define FLAG_HIDDEN_ITEM_CORAL_CATHEDRAL_BIG_PEARL       FLAG_GROUNDED(664) // Project Grounded: Koraalkathedraal: verborgen Big Pearl
+#define FLAG_ITEM_SEA_SHARD_ROUTE128_BUBBLE_GROTTO       FLAG_GROUNDED(665) // Project Grounded: Sea Shard in Route128_BubbleGrotto
+#define FLAG_ITEM_SEA_SHARD_UNDERWATER_ROUTE127_TRENCH   FLAG_GROUNDED(666) // Project Grounded: Sea Shard in Underwater_Route127_Trench
+#define FLAG_ITEM_SEA_SHARD_SHIPWRECK_SHOALS             FLAG_GROUNDED(667) // Project Grounded: Sea Shard in ShipwreckShoals
+#define FLAG_ITEM_SEA_SHARD_UNDERWATER_SEA_TEMPLE        FLAG_GROUNDED(668) // Project Grounded: Sea Shard in Underwater_SeaTemple
+#define FLAG_ITEM_SEA_SHARD_ROUTE126_SILENT_CRATER       FLAG_GROUNDED(669) // Project Grounded: Sea Shard in Route126_SilentCrater
+#define FLAG_ITEM_SEA_SHARD_ROUTE127_WELLSPRING_GROTTO   FLAG_GROUNDED(670) // Project Grounded: Sea Shard in Route127_WellspringGrotto
+#define FLAG_ITEM_SEA_SHARD_UNDERWATER_ROUTE136          FLAG_GROUNDED(671) // Project Grounded: Sea Shard in Underwater_Route136
+#define FLAG_SEA_SHARD_REWARD_2                          FLAG_GROUNDED(680) // Project Grounded: Sea Shards: beloning 2 (Dive Balls)
+#define FLAG_SEA_SHARD_REWARD_4                          FLAG_GROUNDED(681) // Project Grounded: Sea Shards: beloning 4 (Heavy-Duty Boots)
+#define FLAG_SEA_SHARD_REWARD_6                          FLAG_GROUNDED(682) // Project Grounded: Sea Shards: beloning 6 (Gold Bottle Cap)
+#define FLAG_SEA_SHARD_REWARD_8                          FLAG_GROUNDED(683) // Project Grounded: Sea Shards: beloning 8 (Master Ball)
+#define FLAG_SEA_SHARDS_EXPLAINED                        FLAG_GROUNDED(684) // Project Grounded: Sea Shards: Treasure Hunter heeft de quest uitgelegd
+// }
+// dex_check { (met de hand, tools/grounded/dex_check.py; FLAG_GROUNDED 1580-1619: 1580-1583 nieuwe items (blok nieuwe_items), 1584 Memories, 1585-1619 nog vrij)
+#define FLAG_RECEIVED_SILVALLY_MEMORIES                  FLAG_GROUNDED(1584) // Project Grounded: Devon Corp 2F: zes prototype-battle items gekregen (na Type: Null; was de Silvally-Memories, die zijn nu te koop voor BP)
+// }
+// nieuwe_items { (tools/grounded/maptools/nieuwe_items.py; FLAG_GROUNDED 840-879, items die nergens anders liggen)
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_LURE_BALL   FLAG_GROUNDED(840) // Project Grounded: diepzeetrog: Lure Balls
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_HEAVY_BALL  FLAG_GROUNDED(841) // Project Grounded: diepzeetrog: Heavy Balls
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_BINDING_BAND FLAG_GROUNDED(842) // Project Grounded: diepzeetrog: Binding Band
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_EJECT_BUTTON FLAG_GROUNDED(843) // Project Grounded: diepzeetrog: Eject Button
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_POWER_ANKLET FLAG_GROUNDED(844) // Project Grounded: diepzeetrog: Power Anklet
+#define FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_EXP_CANDY_L FLAG_GROUNDED(845) // Project Grounded: diepzeetrog: Exp. Candy L
+#define FLAG_HIDDEN_ITEM_UNDERWATER_ROUTE127_TRENCH_RELIC_VASE FLAG_GROUNDED(846) // Project Grounded: diepzeetrog: verborgen Relic Vase
+#define FLAG_ITEM_CHARGESTONE_CAVE_1F_FAST_BALL          FLAG_GROUNDED(850) // Project Grounded: Chargestone Cave 1F: Fast Balls
+#define FLAG_ITEM_CHARGESTONE_CAVE_1F_POWER_LENS         FLAG_GROUNDED(851) // Project Grounded: Chargestone Cave 1F: Power Lens
+#define FLAG_ITEM_CHARGESTONE_CAVE_B1F_EJECT_PACK        FLAG_GROUNDED(852) // Project Grounded: Chargestone Cave B1F: Eject Pack
+#define FLAG_ITEM_CHARGESTONE_CAVE_B1F_TERRAIN_EXTENDER  FLAG_GROUNDED(853) // Project Grounded: Chargestone Cave B1F: Terrain Extender
+#define FLAG_ITEM_CHARGESTONE_CAVE_B2F_ABILITY_SHIELD    FLAG_GROUNDED(854) // Project Grounded: Chargestone Cave B2F: Ability Shield
+#define FLAG_HIDDEN_ITEM_CHARGESTONE_CAVE_B2F_EXP_CANDY_XL FLAG_GROUNDED(855) // Project Grounded: Chargestone Cave B2F: verborgen Exp. Candy XL
+#define FLAG_HIDDEN_ITEM_LAVENDER_TOWN_EXP_CANDY_S       FLAG_GROUNDED(860) // Project Grounded: Lavender Town: verborgen Exp. Candy S
+#define FLAG_ITEM_POKEMON_TOWER_3F_MOON_BALL             FLAG_GROUNDED(861) // Project Grounded: Pokemon Tower 3F: Moon Balls
+#define FLAG_ITEM_POKEMON_TOWER_4F_RED_CARD              FLAG_GROUNDED(862) // Project Grounded: Pokemon Tower 4F: Red Card
+#define FLAG_ITEM_POKEMON_TOWER_2F_POWER_BRACER          FLAG_GROUNDED(863) // Project Grounded: Pokemon Tower 2F: Power Bracer
+#define FLAG_ITEM_CERULEAN_CAVE_1F_LEVEL_BALL            FLAG_GROUNDED(864) // Project Grounded: Cerulean Cave 1F: Level Balls
+#define FLAG_ITEM_CERULEAN_CAVE_2F_POWER_WEIGHT          FLAG_GROUNDED(865) // Project Grounded: Cerulean Cave 2F: Power Weight
+#define FLAG_ITEM_CERULEAN_CAVE_2F_ROOM_SERVICE          FLAG_GROUNDED(866) // Project Grounded: Cerulean Cave 2F: Room Service
+#define FLAG_ITEM_CERULEAN_CAVE_B1F_MIRROR_HERB          FLAG_GROUNDED(867) // Project Grounded: Cerulean Cave B1F: Mirror Herb
+#define FLAG_HIDDEN_ITEM_CERULEAN_CAVE_B1F_POWER_BAND    FLAG_GROUNDED(868) // Project Grounded: Cerulean Cave B1F: verborgen Power Band
+#define FLAG_ITEM_NATIONAL_PARK_SPORT_BALL               FLAG_GROUNDED(870) // Project Grounded: National Park: Sport Balls
+#define FLAG_ITEM_NATIONAL_PARK_INSECT_PLATE             FLAG_GROUNDED(871) // Project Grounded: National Park: Insect Plate
+#define FLAG_HIDDEN_ITEM_NATIONAL_PARK_POWER_BELT        FLAG_GROUNDED(872) // Project Grounded: National Park: verborgen Power Belt
+#define FLAG_ITEM_ILEX_FOREST_FRIEND_BALL                FLAG_GROUNDED(873) // Project Grounded: Ilex Forest: Friend Balls
+#define FLAG_ITEM_ILEX_FOREST_LOVE_BALL                  FLAG_GROUNDED(874) // Project Grounded: Ilex Forest: Love Balls
+#define FLAG_ITEM_ILEX_FOREST_DESTINY_KNOT               FLAG_GROUNDED(875) // Project Grounded: Ilex Forest: Destiny Knot
+#define FLAG_HIDDEN_ITEM_ILEX_FOREST_ROSE_INCENSE        FLAG_GROUNDED(876) // Project Grounded: Ilex Forest: verborgen Rose Incense
+#define FLAG_ITEM_AREA_ZERO_RIM_QUICK_BALL               FLAG_GROUNDED(950) // Project Grounded: Area Zero, kraterwand: Quick Balls
+#define FLAG_ITEM_AREA_ZERO_RIM_MUSCLE_BAND              FLAG_GROUNDED(951) // Project Grounded: Area Zero, kraterwand: Muscle Band
+#define FLAG_ITEM_AREA_ZERO_DEPTHS_ADRENALINE_ORB        FLAG_GROUNDED(952) // Project Grounded: Area Zero, diepte: Adrenaline Orb
+#define FLAG_HIDDEN_ITEM_AREA_ZERO_DEPTHS_SHED_SHELL     FLAG_GROUNDED(953) // Project Grounded: Area Zero, diepte: verborgen Shed Shell
+#define FLAG_ITEM_AREA_ZERO_CRYSTAL_BEAST_BALL           FLAG_GROUNDED(954) // Project Grounded: Area Zero, kristalgrot: Beast Balls
+#define FLAG_HIDDEN_ITEM_AREA_ZERO_CRYSTAL_RING_TARGET   FLAG_GROUNDED(955) // Project Grounded: Area Zero, kristalgrot: verborgen Ring Target
+#define FLAG_ITEM_AREA_ZERO_FUTURE_BOOSTER_ENERGY        FLAG_GROUNDED(956) // Project Grounded: Area Zero, toekomst: Booster Energy
+#define FLAG_ITEM_AREA_ZERO_FUTURE_METAL_ALLOY           FLAG_GROUNDED(957) // Project Grounded: Area Zero, toekomst: Metal Alloy (Duraludon -> Archaludon)
+#define FLAG_HIDDEN_ITEM_AREA_ZERO_FUTURE_AIR_BALLOON    FLAG_GROUNDED(958) // Project Grounded: Area Zero, toekomst: verborgen Air Balloon
+#define FLAG_ITEM_AREA_ZERO_PAST_POWER_HERB              FLAG_GROUNDED(959) // Project Grounded: Area Zero, verleden: Power Herb
+#define FLAG_ITEM_AREA_ZERO_PAST_GRIP_CLAW               FLAG_GROUNDED(960) // Project Grounded: Area Zero, verleden: Grip Claw
+#define FLAG_HIDDEN_ITEM_AREA_ZERO_PAST_STICKY_BARB      FLAG_GROUNDED(961) // Project Grounded: Area Zero, verleden: verborgen Sticky Barb
+#define FLAG_ITEM_LAKE_ACUITY_PEAT_BLOCK                 FLAG_GROUNDED(1140) // Project Grounded: Lake Acuity: Peat Block (Ursaring -> Ursaluna)
+#define FLAG_HIDDEN_ITEM_LAKE_ACUITY_FULL_INCENSE        FLAG_GROUNDED(1141) // Project Grounded: Lake Acuity: verborgen Full Incense
+#define FLAG_ITEM_LAKE_ACUITY_CAVERN_METAL_POWDER        FLAG_GROUNDED(1142) // Project Grounded: Lake Acuity, grot: Metal Powder
+#define FLAG_ITEM_LAKE_VALOR_AUSPICIOUS_ARMOR            FLAG_GROUNDED(1143) // Project Grounded: Lake Valor: Auspicious Armor (Charcadet -> Armarouge)
+#define FLAG_HIDDEN_ITEM_LAKE_VALOR_ROCK_INCENSE         FLAG_GROUNDED(1144) // Project Grounded: Lake Valor: verborgen Rock Incense
+#define FLAG_ITEM_LAKE_VALOR_CAVERN_LEADERS_CREST        FLAG_GROUNDED(1145) // Project Grounded: Lake Valor, grot: Leader's Crest (Bisharp -> Kingambit)
+#define FLAG_ITEM_LAKE_VERITY_ODD_INCENSE                FLAG_GROUNDED(1146) // Project Grounded: Lake Verity: Odd Incense
+#define FLAG_HIDDEN_ITEM_LAKE_VERITY_LINKING_CORD        FLAG_GROUNDED(1147) // Project Grounded: Lake Verity: verborgen Linking Cord
+#define FLAG_ITEM_LAKE_VERITY_CAVERN_QUICK_POWDER        FLAG_GROUNDED(1148) // Project Grounded: Lake Verity, grot: Quick Powder
+#define FLAG_ITEM_MT_CORONET_4_F_ROOM2_ADAMANT_CRYSTAL   FLAG_GROUNDED(1180) // Project Grounded: Mt. Coronet 4F kamer 2: Adamant Crystal (Dialga Origin)
+#define FLAG_ITEM_MT_CORONET_4_F_ROOM2_ODD_KEYSTONE      FLAG_GROUNDED(1181) // Project Grounded: Mt. Coronet 4F kamer 2: Odd Keystone
+#define FLAG_HIDDEN_ITEM_MT_CORONET_4_F_OUTSIDE_LUSTROUS_GLOBE FLAG_GROUNDED(1182) // Project Grounded: Mt. Coronet 4F buiten: verborgen Lustrous Globe (Palkia Origin)
+#define FLAG_ITEM_MT_CORONET_5F_IRON_BALL                FLAG_GROUNDED(1183) // Project Grounded: Mt. Coronet 5F: Iron Ball
+#define FLAG_ITEM_SPEAR_PILLAR_ADAMANT_ORB               FLAG_GROUNDED(1184) // Project Grounded: Spear Pillar: Adamant Orb (bij het altaar van Dialga)
+#define FLAG_ITEM_SPEAR_PILLAR_LUSTROUS_ORB              FLAG_GROUNDED(1185) // Project Grounded: Spear Pillar: Lustrous Orb (bij het altaar van Palkia)
+#define FLAG_ITEM_YOSHIS_ISLAND_BEACH_SHALOUR_SABLE      FLAG_GROUNDED(1060) // Project Grounded: Yoshi's Island strand: Shalour Sable (?-wolk)
+#define FLAG_ITEM_YOSHIS_ISLAND_JUNGLE_STRANGE_SOUVENIR  FLAG_GROUNDED(1061) // Project Grounded: Yoshi's Island jungle: Strange Souvenir (Poochy graaft)
+#define FLAG_ITEM_YOSHIS_ISLAND_JUNGLE_MOOMOO_MILK       FLAG_GROUNDED(1062) // Project Grounded: Yoshi's Island jungle: Moomoo Milk (?-wolk)
+#define FLAG_ITEM_YOSHIS_ISLAND_JUNGLE_GALARICA_TWIG     FLAG_GROUNDED(1063) // Project Grounded: Yoshi's Island jungle: Galarica Twig
+#define FLAG_ITEM_YOSHIS_ISLAND_CAVE_RELIC_BAND          FLAG_GROUNDED(1064) // Project Grounded: Yoshi's Island kristalgrot: Relic Band
+#define FLAG_HIDDEN_ITEM_YOSHIS_ISLAND_CAVE_PEWTER_CRUNCHIES FLAG_GROUNDED(1065) // Project Grounded: Yoshi's Island kristalgrot: verborgen Pewter Crunchies
+#define FLAG_ITEM_YOSHIS_ISLAND_FLOWERS_LUMIOSE_GALETTE  FLAG_GROUNDED(1066) // Project Grounded: Yoshi's Island bloemenveld: Lumiose Galette (?-wolk)
+#define FLAG_ITEM_YOSHIS_ISLAND_FLOWERS_CHERISH_BALL     FLAG_GROUNDED(1067) // Project Grounded: Yoshi's Island bloemenveld: Cherish Ball (achter de brug)
+#define FLAG_ITEM_CROWN_TUNDRA_ICE_GEM                   FLAG_GROUNDED(1300) // Project Grounded: Crown Tundra: Ice Gem (ijsveld van Glastrier)
+#define FLAG_ITEM_CROWN_TUNDRA_GHOST_GEM                 FLAG_GROUNDED(1301) // Project Grounded: Crown Tundra: Ghost Gem (bos van Spectrier)
+#define FLAG_HIDDEN_ITEM_CROWN_TUNDRA_ICE_MEMORY         FLAG_GROUNDED(1302) // Project Grounded: Crown Tundra: verborgen Ice Memory
+#define FLAG_ITEM_HALL_OF_ORIGIN_STAIRWAY_COVERT_CLOAK   FLAG_GROUNDED(1240) // Project Grounded: Hall of Origin, trap: Covert Cloak
+#define FLAG_ITEM_HALL_OF_ORIGIN_ATRIUM_CLEAR_AMULET     FLAG_GROUNDED(1241) // Project Grounded: Hall of Origin, atrium: Clear Amulet
+#define FLAG_HIDDEN_ITEM_HALL_OF_ORIGIN_ATRIUM_PUNCHING_GLOVE FLAG_GROUNDED(1242) // Project Grounded: Hall of Origin, atrium: verborgen Punching Glove
+#define FLAG_ITEM_HALL_OF_ORIGIN_SUMMIT_GRISEOUS_ORB     FLAG_GROUNDED(1243) // Project Grounded: Hall of Origin, top: Griseous Orb (Giratina Origin)
+#define FLAG_ITEM_YOSHIS_ISLAND_YOSHI_HOUSE_SWEET_HEART  FLAG_GROUNDED(1068) // Project Grounded: Yoshi's Island Yoshi-huis: Sweet Heart (de roze Yoshi bakt hem)
+#define FLAG_ITEM_ABANDONED_SHIP_NIGHT_CABINS_GHOST_MEMORY FLAG_GROUNDED(1400) // Project Grounded: Abandoned Ship benedendek: Ghost Memory
+#define FLAG_ITEM_ABANDONED_SHIP_NIGHT_CABINS_WATER_GEM  FLAG_GROUNDED(1401) // Project Grounded: Abandoned Ship benedendek: Water Gems
+#define FLAG_HIDDEN_ITEM_ABANDONED_SHIP_NIGHT_CABINS_WATER_MEMORY FLAG_GROUNDED(1402) // Project Grounded: Abandoned Ship benedendek: verborgen Water Memory
+#define FLAG_ITEM_MAUVILLE_CITY_HOUSE2_B1F_ROTOM_CATALOG FLAG_GROUNDED(1580) // Project Grounded: Mauville, kelder van Rotom: Rotom Catalog (Rotom-apparaatvormen)
+#define FLAG_ITEM_ROUTE119_WEATHER_INSTITUTE_2F_REVEAL_GLASS FLAG_GROUNDED(1581) // Project Grounded: Weather Institute 2F: Reveal Glass (Therian-vormen van de Forces en Enamorus)
+#define FLAG_ITEM_ROUTE104_PRETTY_PETAL_FLOWER_SHOP_PINK_NECTAR FLAG_GROUNDED(1582) // Project Grounded: Pretty Petal-bloemenwinkel: Pink Nectar (Oricorio Pa'u)
+#define FLAG_ITEM_ROUTE104_PRETTY_PETAL_FLOWER_SHOP_PURPLE_NECTAR FLAG_GROUNDED(1583) // Project Grounded: Pretty Petal-bloemenwinkel: Purple Nectar (Oricorio Sensu)
+#define FLAG_ITEM_ULTRA_SPACE_NECROZMA_N_SOLARIZER       FLAG_GROUNDED(1460) // Project Grounded: Ultra Space, prismagrot: N-Solarizer (Necrozma + Solgaleo)
+#define FLAG_ITEM_ULTRA_SPACE_NECROZMA_N_LUNARIZER       FLAG_GROUNDED(1461) // Project Grounded: Ultra Space, prismagrot: N-Lunarizer (Necrozma + Lunala)
+#define FLAG_ITEM_ULTRA_SPACE_POIPOLE_POISON_MEMORY      FLAG_GROUNDED(1462) // Project Grounded: Ultra Space, gifkristallen: Poison Memory
+#define FLAG_ITEM_ULTRA_SPACE_XURKITREE_ELECTRIC_MEMORY  FLAG_GROUNDED(1463) // Project Grounded: Ultra Space, kabelwoud: Electric Memory
+#define FLAG_ITEM_ULTRA_SPACE_BUZZWOLE_FIGHTING_MEMORY   FLAG_GROUNDED(1464) // Project Grounded: Ultra Space, sportschool: Fighting Memory
+#define FLAG_HIDDEN_ITEM_ULTRA_SPACE_STAKATAKA_STEEL_MEMORY FLAG_GROUNDED(1465) // Project Grounded: Ultra Space, muur: verborgen Steel Memory
+#define FLAG_ITEM_ULTRA_SPACE_GUZZLORD_DARK_GEM          FLAG_GROUNDED(1466) // Project Grounded: Ultra Space, afvalvlakte: Dark Gems
+#define FLAG_ITEM_ROUTE104_PRETTY_PETAL_FLOWER_SHOP_RED_NECTAR FLAG_GROUNDED(1620) // Project Grounded: Pretty Petal-bloemenwinkel: Red Nectar (Oricorio terug naar Baile)
+// }
+// chargestone { (tools/grounded/maptools/chargestone.py; FLAG_GROUNDED 760-799, 771-799 nog vrij)
+#define FLAG_SPACETIME_CHARGESTONE_DONE                  FLAG_GROUNDED(760) // Project Grounded: Chargestone Cave: ZERAORA gevangen of verslagen (klaar-flag sidequest)
+#define FLAG_HIDE_CHARGESTONE_ZERAORA                    FLAG_GROUNDED(761) // Project Grounded: Chargestone Cave B2F: ZERAORA verborgen (voor Colress verslagen is of na het gevecht)
+#define FLAG_HIDE_CHARGESTONE_COLRESS                    FLAG_GROUNDED(762) // Project Grounded: Chargestone Cave B2F: Colress weg (na ZERAORA)
+#define FLAG_ITEM_CHARGESTONE_1F_THUNDER_STONE           FLAG_GROUNDED(763) // Project Grounded: Chargestone Cave 1F: Thunder Stone
+#define FLAG_ITEM_CHARGESTONE_1F_MAX_REVIVE              FLAG_GROUNDED(764) // Project Grounded: Chargestone Cave 1F: Max Revive (zijgrot achter de duwsteen)
+#define FLAG_ITEM_CHARGESTONE_B1F_MAGNET                 FLAG_GROUNDED(765) // Project Grounded: Chargestone Cave B1F: Magnet
+#define FLAG_ITEM_CHARGESTONE_B1F_METAL_COAT             FLAG_GROUNDED(766) // Project Grounded: Chargestone Cave B1F: Metal Coat
+#define FLAG_ITEM_CHARGESTONE_B2F_ELECTIRIZER            FLAG_GROUNDED(767) // Project Grounded: Chargestone Cave B2F: Electirizer
+#define FLAG_ITEM_CHARGESTONE_B2F_PP_MAX                 FLAG_GROUNDED(768) // Project Grounded: Chargestone Cave B2F: PP Max
+#define FLAG_HIDDEN_ITEM_CHARGESTONE_1F_CELL_BATTERY     FLAG_GROUNDED(769) // Project Grounded: Chargestone Cave 1F: verborgen Cell Battery
+#define FLAG_HIDDEN_ITEM_CHARGESTONE_B1F_BIG_NUGGET      FLAG_GROUNDED(770) // Project Grounded: Chargestone Cave B1F: verborgen Big Nugget
+// }
+// swords_keldeo { (tools/grounded/maptools/swords_keldeo.py; FLAG_GROUNDED 800-839, 810-839 nog vrij)
+#define FLAG_DEFEATED_COBALION                           FLAG_GROUNDED(800) // Project Grounded: Cobalion gevangen/verslagen (Granite Cave)
+#define FLAG_DEFEATED_TERRAKION                          FLAG_GROUNDED(801) // Project Grounded: Terrakion gevangen/verslagen (Victory Road)
+#define FLAG_DEFEATED_VIRIZION                           FLAG_GROUNDED(802) // Project Grounded: Virizion gevangen/verslagen (Mangrove Mire)
+#define FLAG_BRINEY_KELDEO_CALL                          FLAG_GROUNDED(803) // Project Grounded: Mr. Briney heeft gebeld over het eiland (na de drie zwaarden)
+#define FLAG_DEFEATED_KELDEO                             FLAG_GROUNDED(804) // Project Grounded: Keldeo gevangen/verslagen (UnchartedIsle)
+#define FLAG_GRANITE_SWORD_CHAMBER_ROCK                  FLAG_GROUNDED(805) // Project Grounded: Rock Smash-rots voor de zwaardkamer in Granite Cave B2F
+#define FLAG_VICTORY_ROAD_SWORD_CHAMBER_ROCK             FLAG_GROUNDED(806) // Project Grounded: Rock Smash-rots voor de zwaardkamer in Victory Road B2F
+#define FLAG_KELDEO_TRIP_FROM_DEWFORD                    FLAG_GROUNDED(807) // Project Grounded: Keldeo-bootreis vertrokken uit Dewford (terugweg)
+#define FLAG_KELDEO_TRIP_FROM_ROUTE109                   FLAG_GROUNDED(808) // Project Grounded: Keldeo-bootreis vertrokken van Route 109 (terugweg)
+#define FLAG_RECEIVED_MELTAN                             FLAG_GROUNDED(809) // Project Grounded: Meltan gekregen (Sterns scheepswerf, Slateport)
+// }
+// mega_forest { (tools/grounded/maptools/mega_forest.py; FLAG_GROUNDED 620-659, 631-659 nog vrij voor later)
+#define FLAG_HIDE_MINI_FOREST_GIANT_LOG                  FLAG_GROUNDED(620) // Project Grounded: Mini Forest: omgevallen reuzenboom weg (na de Hall of Fame, ON_TRANSITION)
+#define FLAG_RECEIVED_RUSTED_SWORD                       FLAG_GROUNDED(621) // Project Grounded: Mini Forest: roestig zwaard opgepakt (na de HoF; verbergt het zwaard)
+#define FLAG_RECEIVED_RUSTED_SHIELD                      FLAG_GROUNDED(622) // Project Grounded: Mini Forest: roestig schild opgepakt (na de HoF; verbergt het schild)
+#define FLAG_HIDE_MEGA_FOREST_ZACIAN                     FLAG_GROUNDED(623) // Project Grounded: Mega Forest: Zacian gevangen/verslagen
+#define FLAG_HIDE_MEGA_FOREST_ZAMAZENTA                  FLAG_GROUNDED(624) // Project Grounded: Mega Forest: Zamazenta gevangen/verslagen
+#define FLAG_ITEM_MEGA_FOREST_SWEET_APPLE                FLAG_GROUNDED(625) // Project Grounded: Mega Forest: Sweet Apple
+#define FLAG_ITEM_MEGA_FOREST_TART_APPLE                 FLAG_GROUNDED(626) // Project Grounded: Mega Forest: Tart Apple
+#define FLAG_ITEM_MEGA_FOREST_MAX_REVIVE                 FLAG_GROUNDED(627) // Project Grounded: Mega Forest: Max Revive
+#define FLAG_ITEM_MEGA_FOREST_PP_MAX                     FLAG_GROUNDED(628) // Project Grounded: Mega Forest: PP Max
+#define FLAG_HIDDEN_ITEM_MEGA_FOREST_STAR_PIECE          FLAG_GROUNDED(629) // Project Grounded: Mega Forest: verborgen Star Piece
+#define FLAG_HIDDEN_ITEM_MEGA_FOREST_BIG_NUGGET          FLAG_GROUNDED(630) // Project Grounded: Mega Forest: verborgen Big Nugget
+// }
+
+// spacetime_cave { (tools/grounded/maptools/spacetime_cave.py; FLAG_GROUNDED 560-619)
+#define FLAG_ITEM_POKEMON_TOWER_3F_MAX_REVIVE            FLAG_GROUNDED(560) // Project Grounded: Pokemon Tower 3F: Max Revive
+#define FLAG_ITEM_POKEMON_TOWER_4F_MAX_ELIXIR            FLAG_GROUNDED(561) // Project Grounded: Pokemon Tower 4F: Max Elixir
+#define FLAG_ITEM_POKEMON_TOWER_4F_DUSK_STONE            FLAG_GROUNDED(562) // Project Grounded: Pokemon Tower 4F: Dusk Stone
+#define FLAG_ITEM_POKEMON_TOWER_4F_DUSK_BALL             FLAG_GROUNDED(563) // Project Grounded: Pokemon Tower 4F: Dusk Ball
+#define FLAG_RECEIVED_POKEMON_TOWER_LIFE_ORB             FLAG_GROUNDED(564) // Project Grounded: Pokemon Tower 5F: Life Orb van de conciërge
+#define FLAG_ITEM_CERULEAN_CAVE_1F_BIG_NUGGET            FLAG_GROUNDED(565) // Project Grounded: Cerulean Cave 1F: Big Nugget
+#define FLAG_ITEM_CERULEAN_CAVE_1F_FULL_RESTORE          FLAG_GROUNDED(566) // Project Grounded: Cerulean Cave 1F: Full Restore
+#define FLAG_ITEM_CERULEAN_CAVE_1F_MAX_ELIXIR            FLAG_GROUNDED(567) // Project Grounded: Cerulean Cave 1F: Max Elixir
+#define FLAG_HIDDEN_ITEM_CERULEAN_CAVE_1F_PP_MAX         FLAG_GROUNDED(568) // Project Grounded: Cerulean Cave 1F: verborgen PP Max
+#define FLAG_ITEM_CERULEAN_CAVE_2F_PP_UP                 FLAG_GROUNDED(569) // Project Grounded: Cerulean Cave 2F: PP Up
+#define FLAG_ITEM_CERULEAN_CAVE_2F_RARE_CANDY            FLAG_GROUNDED(570) // Project Grounded: Cerulean Cave 2F: Rare Candy
+#define FLAG_ITEM_CERULEAN_CAVE_2F_FULL_RESTORE          FLAG_GROUNDED(571) // Project Grounded: Cerulean Cave 2F: Full Restore
+#define FLAG_ITEM_CERULEAN_CAVE_B1F_ULTRA_BALL           FLAG_GROUNDED(572) // Project Grounded: Cerulean Cave B1F: Ultra Ball
+#define FLAG_ITEM_CERULEAN_CAVE_B1F_MAX_REVIVE           FLAG_GROUNDED(573) // Project Grounded: Cerulean Cave B1F: Max Revive
+#define FLAG_SPACETIME_RIFTS_OPENED                      FLAG_GROUNDED(574) // Project Grounded: Spacetime Cave: Dialga en Palkia hebben de scheuren geopend
+#define FLAG_SPACETIME_LAVENDER_DONE                     FLAG_GROUNDED(575) // Project Grounded: Spacetime-sidequest klaar: Lavender bevrijd (Agatha verslagen)
+#define FLAG_SPACETIME_CERULEAN_DONE                     FLAG_GROUNDED(576) // Project Grounded: Spacetime-sidequest klaar: Mewtwo gevangen/verslagen
+#define FLAG_HIDE_LAVENDER_GHOST_GENGAR                  FLAG_GROUNDED(577) // Project Grounded: Lavender Town: kwade geest voor de toren verdreven
+#define FLAG_HIDE_LAVENDER_GHOST_DUSKNOIR                FLAG_GROUNDED(578) // Project Grounded: Lavender Town: kwade geest bij de noorduitgang verdreven
+#define FLAG_HIDE_LAVENDER_GHOST_BANETTE                 FLAG_GROUNDED(579) // Project Grounded: Lavender Town: kwade geest bij de westuitgang verdreven
+#define FLAG_SPACETIME_YOSHI_DONE                        FLAG_GROUNDED(580) // Project Grounded: Spacetime: Yoshi's Island gefixt (opent de gang naar de meren; nog nooit gezet)
+#define FLAG_SPACETIME_LAKES_SCENE                       FLAG_GROUNDED(581) // Project Grounded: Spacetime: Dialga en Palkia hebben de meren-portalen geopend
+#define FLAG_RECEIVED_SILPH_SCOPE                        FLAG_GROUNDED(582) // Project Grounded: Lavender Town: Silph Scope van de oud-verkoper in het PC
+// }
+// ruin_beasts { (tools/grounded/maptools/ruin_beasts.py; FLAG_GROUNDED 530-559)
+#define FLAG_RUIN_SEAL_CHI_YU                            FLAG_GROUNDED(530) // Project Grounded: Chi-Yu-schrijn (Jagged Pass) bezocht
+#define FLAG_RUIN_SEAL_TING_LU                           FLAG_GROUNDED(531) // Project Grounded: Ting-Lu-schrijn (Desert Underpass) bezocht
+#define FLAG_RUIN_SEAL_WO_CHIEN                          FLAG_GROUNDED(532) // Project Grounded: Wo-Chien-schrijn (Petalburg Woods) bezocht
+#define FLAG_RUIN_SEAL_CHIEN_PAO                         FLAG_GROUNDED(533) // Project Grounded: Chien-Pao-schrijn (Route 135) bezocht
+#define FLAG_HIDE_RUIN_CHI_YU                            FLAG_GROUNDED(534) // Project Grounded: Chi-Yu gevangen/verslagen
+#define FLAG_HIDE_RUIN_TING_LU                           FLAG_GROUNDED(535) // Project Grounded: Ting-Lu gevangen/verslagen
+#define FLAG_HIDE_RUIN_WO_CHIEN                          FLAG_GROUNDED(536) // Project Grounded: Wo-Chien gevangen/verslagen
+#define FLAG_HIDE_RUIN_CHIEN_PAO                         FLAG_GROUNDED(537) // Project Grounded: Chien-Pao gevangen/verslagen
+#define FLAG_RUIN_SEAL_OPEN_CHI_YU                       FLAG_GROUNDED(538) // Project Grounded: zegel bij de ingang naar Chi-Yu gebroken (Sealbreaker)
+#define FLAG_RUIN_SEAL_OPEN_TING_LU                      FLAG_GROUNDED(539) // Project Grounded: zegel bij de ingang naar Ting-Lu gebroken (Sealbreaker)
+#define FLAG_RUIN_SEAL_OPEN_WO_CHIEN                     FLAG_GROUNDED(540) // Project Grounded: zegel bij de ingang naar Wo-Chien gebroken (Sealbreaker)
+#define FLAG_RUIN_SEAL_OPEN_CHIEN_PAO                    FLAG_GROUNDED(541) // Project Grounded: zegel bij de ingang naar Chien-Pao gebroken (Sealbreaker)
+// }
+// sootopolis_craters { (tools/grounded/maptools/sootopolis_craters.py; FLAG_GROUNDED 500-529)
+#define FLAG_ITEM_HERMIT_CRATER_WIDE_LENS                FLAG_GROUNDED(500) // Project Grounded: kluizenaarskrater: Wide Lens
+#define FLAG_HIDDEN_ITEM_HERMIT_CRATER_PEARL_STRING      FLAG_GROUNDED(501) // Project Grounded: kluizenaarskrater: verborgen Pearl String
+#define FLAG_ITEM_SILENT_CRATER_GOLD_BOTTLE_CAP          FLAG_GROUNDED(502) // Project Grounded: stille krater: Gold Bottle Cap (grasrichel)
+#define FLAG_HIDDEN_ITEM_SILENT_CRATER_EARTH_PLATE       FLAG_GROUNDED(503) // Project Grounded: stille krater: verborgen Earth Plate (voorplein)
+#define FLAG_HIDDEN_ITEM_SILENT_CRATER_SPLASH_PLATE      FLAG_GROUNDED(504) // Project Grounded: stille krater: verborgen Splash Plate (grasrand)
+// }
+// dungeon_extra { (tools/grounded/maptools/dungeon_extra.py; FLAG_GROUNDED 470-499)
+#define FLAG_ITEM_GRANITE_CRYSTAL_STAR_PIECE             FLAG_GROUNDED(470) // Project Grounded: Granite Cave kristalgrot: Star Piece
+#define FLAG_ITEM_GRANITE_CRYSTAL_HARD_STONE             FLAG_GROUNDED(471) // Project Grounded: Granite Cave kristalgrot: Hard Stone
+#define FLAG_HIDDEN_ITEM_GRANITE_CRYSTAL_SHINY_STONE     FLAG_GROUNDED(472) // Project Grounded: Granite Cave kristalgrot: verborgen Shiny Stone
+#define FLAG_ITEM_ORIGIN_DEEP1_DAMP_ROCK                 FLAG_GROUNDED(473) // Project Grounded: Cave of Origin diep 1: Damp Rock
+#define FLAG_ITEM_ORIGIN_DEEP2_HEAT_ROCK                 FLAG_GROUNDED(474) // Project Grounded: Cave of Origin diep 2: Heat Rock
+#define FLAG_ITEM_ORIGIN_DEEP3_PP_MAX                    FLAG_GROUNDED(475) // Project Grounded: Cave of Origin diep 3: PP Max
+#define FLAG_HIDDEN_ITEM_ORIGIN_DEEP3_BIG_NUGGET         FLAG_GROUNDED(476) // Project Grounded: Cave of Origin diep 3: verborgen Big Nugget
+#define FLAG_ITEM_SHOAL_FROZEN_ICE_STONE                 FLAG_GROUNDED(477) // Project Grounded: Shoal Cave ijzige onderlaag: Ice Stone
+#define FLAG_ITEM_SHOAL_FROZEN_ICY_ROCK                  FLAG_GROUNDED(478) // Project Grounded: Shoal Cave ijzige onderlaag: Icy Rock
+#define FLAG_ITEM_SHOAL_FROZEN_ABILITY_CAPSULE           FLAG_GROUNDED(479) // Project Grounded: Shoal Cave ijzige onderlaag: Ability Capsule
+#define FLAG_HIDDEN_ITEM_SHOAL_FROZEN_PEARL_STRING       FLAG_GROUNDED(480) // Project Grounded: Shoal Cave ijzige onderlaag: verborgen Pearl String
+#define FLAG_ITEM_BUBBLE_GROTTO_DEEP_SEA_TOOTH           FLAG_GROUNDED(481) // Project Grounded: luchtbel-grot Route 128: Deep Sea Tooth
+#define FLAG_ITEM_BUBBLE_GROTTO_RARE_BONE                FLAG_GROUNDED(482) // Project Grounded: luchtbel-grot Route 128: Rare Bone
+#define FLAG_HIDDEN_ITEM_BUBBLE_GROTTO_STAR_PIECE        FLAG_GROUNDED(483) // Project Grounded: luchtbel-grot Route 128: verborgen Star Piece
+// }
+// beacon_isle { (tools/grounded/maptools/beacon_isle.py; FLAG_GROUNDED 400-429)
+#define FLAG_BEACON_LIGHT_ISLE_FOUND                     FLAG_GROUNDED(400) // Project Grounded: Beacon Isle: 's nachts de lamp aangesproken, rif naar het Lichteiland open
+// }
+// tao_island { (tools/grounded/maptools/tao_island.py; FLAG_GROUNDED 430-469)
+#define FLAG_HIDDEN_ITEM_TAO_ISLAND_DRAGON_SCALE         FLAG_GROUNDED(430) // Project Grounded: Tao-eiland: verborgen Dragon Scale
+#define FLAG_HIDDEN_ITEM_TAO_ISLAND_STAR_PIECE           FLAG_GROUNDED(431) // Project Grounded: Tao-eiland: verborgen Star Piece
+#define FLAG_ITEM_TAO_ISLAND_MAX_REVIVE                  FLAG_GROUNDED(432) // Project Grounded: Tao-eiland: Max Revive
+#define FLAG_ITEM_TAO_DEN_PP_UP                          FLAG_GROUNDED(433) // Project Grounded: Dragon's Den: PP Up
+#define FLAG_ITEM_TAO_DEN_MAX_ELIXIR                     FLAG_GROUNDED(434) // Project Grounded: Dragon's Den: Max Elixir
+#define FLAG_HIDDEN_ITEM_TAO_DEN_BIG_NUGGET              FLAG_GROUNDED(435) // Project Grounded: Dragon's Den: verborgen Big Nugget
+#define FLAG_HIDE_TAO_RESHIRAM                           FLAG_GROUNDED(436) // Project Grounded: Tao-toren: Reshiram gevangen/verslagen
+#define FLAG_HIDE_TAO_ZEKROM                             FLAG_GROUNDED(437) // Project Grounded: Tao-toren: Zekrom gevangen/verslagen
+#define FLAG_HIDE_TAO_DEN_DRAGONITE                      FLAG_GROUNDED(438) // Project Grounded: Dragon's Den: Dragonite van het gat (na beide broers)
+#define FLAG_HIDE_TAO_KYUREM                             FLAG_GROUNDED(439) // Project Grounded: Frost Hollow: Kyurem gevangen/verslagen
+#define FLAG_HIDE_TAO_GHETSIS                            FLAG_GROUNDED(440) // Project Grounded: Frost Hollow: Ghetsis vertrokken (DNA Splicers gekregen)
+#define FLAG_ITEM_TAO_TOWER_2F_DRAGON_FANG               FLAG_GROUNDED(441) // Project Grounded: Tao-toren 2F: Dragon Fang
+#define FLAG_ITEM_TAO_TOWER_3F_FULL_RESTORE              FLAG_GROUNDED(442) // Project Grounded: Tao-toren 3F: Full Restore
+#define FLAG_ITEM_TAO_FROST_NEVER_MELT_ICE               FLAG_GROUNDED(443) // Project Grounded: Frost Hollow: Never-Melt Ice
+#define FLAG_ITEM_TAO_FROST_ICE_STONE                    FLAG_GROUNDED(444) // Project Grounded: Frost Hollow: Ice Stone
+// }
+// Battle Stadium-omroeper (src/stadium.c, AnnouncePlayer)
+#define FLAG_GROUNDED_STATS_V1                  FLAG_GROUNDED(150) // game stats 53+ (white-outs e.d.) zijn op 0 gezet
+#define FLAG_USED_IMPLOSION                     FLAG_GROUNDED(151) // de speler heeft ooit IMPLOSION gebruikt
+// beacon_dragon { (tools/grounded/maptools/beacon_dragon.py; FLAG_GROUNDED 100-149)
+#define FLAG_HIDDEN_ITEM_BEACON_ISLE_BIG_PEARL           FLAG_GROUNDED(100) // Project Grounded: Beacon Isle: verborgen Big Pearl
+#define FLAG_HIDDEN_ITEM_BEACON_ISLE_PEARL_STRING        FLAG_GROUNDED(101) // Project Grounded: Beacon Isle: verborgen Pearl String
+#define FLAG_ITEM_BEACON_ISLE_CELL_BATTERY               FLAG_GROUNDED(102) // Project Grounded: Beacon Isle: Cell Battery
+#define FLAG_ITEM_BEACON_LIGHTHOUSE_THUNDER_STONE        FLAG_GROUNDED(103) // Project Grounded: vuurtoren 1F: Thunder Stone
+#define FLAG_ITEM_BEACON_LIGHTHOUSE_ELECTIRIZER          FLAG_GROUNDED(104) // Project Grounded: vuurtoren 2F: Electirizer
+// }
+// Forces-trio op routes (src/forces.c): DONE = gevangen/verslagen (permanent), HIDE = objectflag, per kaartlading gezet.
+#define FLAG_FORCES_TORNADUS_DONE               FLAG_GROUNDED(50)
+#define FLAG_FORCES_THUNDURUS_DONE              FLAG_GROUNDED(51)
+#define FLAG_FORCES_LANDORUS_DONE               FLAG_GROUNDED(52)
+#define FLAG_FORCES_HIDE_TORNADUS               FLAG_GROUNDED(53)
+#define FLAG_FORCES_HIDE_THUNDURUS              FLAG_GROUNDED(54)
+#define FLAG_FORCES_HIDE_LANDORUS               FLAG_GROUNDED(55)
+
+// Hoopa-quest (Mirage Bazaar, Route 111; data/maps/MirageBazaar/scripts.inc)
+#define FLAG_HOOPA_WISH_RICHES                  FLAG_GROUNDED(0)  // wens: rijkdom (Big Nugget)
+#define FLAG_HOOPA_WISH_POWER                   FLAG_GROUNDED(1)  // wens: kracht (Choice Band)
+#define FLAG_HOOPA_WISH_FAME                    FLAG_GROUNDED(2)  // wens: roem (niets, behalve roem)
+#define FLAG_HOOPA_WISH_SNACK                   FLAG_GROUNDED(3)  // wens: een snack (Lava Cookies)
+#define FLAG_HOOPA_UNBOUND                      FLAG_GROUNDED(4)  // derde wens gedaan: Hoopa Unbound zit in de schatkamer
+#define FLAG_HOOPA_QUEST_DONE                   FLAG_GROUNDED(5)  // Hoopa gevangen of gekregen, Prison Bottle ontvangen
+#define FLAG_HIDE_ROUTE111_HOOPA_RING           FLAG_GROUNDED(6)  // ring in de woestijn (alleen post-game)
+#define FLAG_HIDE_MIRAGE_BAZAAR_HOOPA           FLAG_GROUNDED(7)  // Hoopa Confined bij Salims kraam
+#define FLAG_HIDE_MIRAGE_BAZAAR_SALIM           FLAG_GROUNDED(8)  // Salim (weg zolang hij in de schatkamer zit)
+#define FLAG_HIDE_MIRAGE_BAZAAR_VAULT_RING      FLAG_GROUNDED(9)  // ring naar de schatkamer (na de derde wens)
+#define FLAG_HIDE_HOOPA_VAULT_HOOPA             FLAG_GROUNDED(10) // Hoopa Unbound in de schatkamer
+#define FLAG_HIDE_HOOPA_VAULT_SALIM             FLAG_GROUNDED(11) // Salim in de schatkamer
+#define FLAG_ITEM_HOOPA_VAULT_1                 FLAG_GROUNDED(12) // items in de schatkamer
+#define FLAG_ITEM_HOOPA_VAULT_2                 FLAG_GROUNDED(13)
+#define FLAG_ITEM_HOOPA_VAULT_3                 FLAG_GROUNDED(14)
+#define FLAG_HOOPA_BAZAAR_VISITED               FLAG_GROUNDED(15) // eerste keer door de ring: lange tekst
+
+// kaart_vulling_4 { (tools/grounded/maptools/kaart_vulling_4.py; FLAG_GROUNDED 200-329)
+#define FLAG_KV4_GRANITECAVE_B1F_GIFT_SPELUNKER          FLAG_GROUNDED(200) // Project Grounded (kaartvulling 4): GraniteCave_B1F: cadeau van Spelunker (HARD_STONE)
+#define FLAG_ITEM_KV4_GRANITECAVE_B1F_FIST_PLATE         FLAG_GROUNDED(201) // Project Grounded (kaartvulling 4): GraniteCave_B1F: FIST_PLATE 
+#define FLAG_HIDDEN_ITEM_KV4_GRANITECAVE_B1F_REVIVE      FLAG_GROUNDED(202) // Project Grounded (kaartvulling 4): GraniteCave_B1F: verborgen REVIVE 
+#define FLAG_HIDDEN_ITEM_KV4_GRANITECAVE_1F_ESCAPE_ROPE  FLAG_GROUNDED(203) // Project Grounded (kaartvulling 4): GraniteCave_1F: verborgen ESCAPE_ROPE (doodlopend gangetje)
+#define FLAG_KV4_HIDE_SHOAL_SWIMMER                      FLAG_GROUNDED(204) // Project Grounded (kaartvulling 4): Shoal Cave: zwemmer alleen bij vloed
+#define FLAG_KV4_HIDE_SHOAL_SANDBAR                      FLAG_GROUNDED(205) // Project Grounded (kaartvulling 4): Shoal Cave: Splash Plate op de zandbank alleen bij eb
+#define FLAG_KV4_SHOAL_SANDBAR_TAKEN                     FLAG_GROUNDED(206) // Project Grounded (kaartvulling 4): Shoal Cave: Splash Plate van de zandbank gepakt
+#define FLAG_HIDDEN_ITEM_KV4_SHOALCAVE_LOWTIDEINNERROOM_PEARL_STRING FLAG_GROUNDED(207) // Project Grounded (kaartvulling 4): ShoalCave_LowTideInnerRoom: verborgen PEARL_STRING 
+#define FLAG_HIDDEN_ITEM_KV4_SHOALCAVE_LOWTIDEICEROOM_ICICLE_PLATE FLAG_GROUNDED(208) // Project Grounded (kaartvulling 4): ShoalCave_LowTideIceRoom: verborgen ICICLE_PLATE 
+#define FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM5_DEEP_SEA_SCALE FLAG_GROUNDED(209) // Project Grounded (kaartvulling 4): SeafloorCavern_Room5: verborgen DEEP_SEA_SCALE 
+#define FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM6_DIVE_BALL FLAG_GROUNDED(210) // Project Grounded (kaartvulling 4): SeafloorCavern_Room6: verborgen DIVE_BALL 
+#define FLAG_ITEM_KV4_SEAFLOORCAVERN_ROOM7_DREAD_PLATE   FLAG_GROUNDED(211) // Project Grounded (kaartvulling 4): SeafloorCavern_Room7: DREAD_PLATE 
+#define FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM7_BIG_PEARL FLAG_GROUNDED(212) // Project Grounded (kaartvulling 4): SeafloorCavern_Room7: verborgen BIG_PEARL 
+#define FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM9_MAX_ELIXIR FLAG_GROUNDED(213) // Project Grounded (kaartvulling 4): SeafloorCavern_Room9: verborgen MAX_ELIXIR 
+#define FLAG_HIDDEN_ITEM_KV4_SEAFLOORCAVERN_ROOM9_DAMP_ROCK FLAG_GROUNDED(214) // Project Grounded (kaartvulling 4): SeafloorCavern_Room9: verborgen DAMP_ROCK 
+#define FLAG_ITEM_KV4_CAVEOFORIGIN_1F_PP_UP              FLAG_GROUNDED(215) // Project Grounded (kaartvulling 4): CaveOfOrigin_1F: PP_UP 
+#define FLAG_HIDDEN_ITEM_KV4_CAVEOFORIGIN_B1F_COMET_SHARD FLAG_GROUNDED(216) // Project Grounded (kaartvulling 4): CaveOfOrigin_B1F: verborgen COMET_SHARD 
+#define FLAG_HIDDEN_ITEM_KV4_CAVEOFORIGIN_B1F_BOTTLE_CAP FLAG_GROUNDED(217) // Project Grounded (kaartvulling 4): CaveOfOrigin_B1F: verborgen BOTTLE_CAP 
+#define FLAG_ITEM_KV4_ABANDONEDSHIP_DECK_LUXURY_BALL     FLAG_GROUNDED(218) // Project Grounded (kaartvulling 4): AbandonedShip_Deck: LUXURY_BALL 
+#define FLAG_HIDDEN_ITEM_KV4_ABANDONEDSHIP_DECK_HEART_SCALE FLAG_GROUNDED(219) // Project Grounded (kaartvulling 4): AbandonedShip_Deck: verborgen HEART_SCALE 
+#define FLAG_HIDDEN_ITEM_KV4_MAGMAHIDEOUT_2F_3R_HEAT_ROCK FLAG_GROUNDED(220) // Project Grounded (kaartvulling 4): MagmaHideout_2F_3R: verborgen HEAT_ROCK 
+#define FLAG_HIDDEN_ITEM_KV4_MAGMAHIDEOUT_2F_3R_FULL_RESTORE FLAG_GROUNDED(221) // Project Grounded (kaartvulling 4): MagmaHideout_2F_3R: verborgen FULL_RESTORE 
+#define FLAG_HIDDEN_ITEM_KV4_METEORFALLS_B1F_1R_MOON_STONE FLAG_GROUNDED(222) // Project Grounded (kaartvulling 4): MeteorFalls_B1F_1R: verborgen MOON_STONE 
+#define FLAG_ITEM_KV4_METEORFALLS_B1F_1R_DRAGON_SCALE    FLAG_GROUNDED(223) // Project Grounded (kaartvulling 4): MeteorFalls_B1F_1R: DRAGON_SCALE 
+#define FLAG_HIDDEN_ITEM_KV4_METEORFALLS_B1F_1R_STAR_PIECE FLAG_GROUNDED(224) // Project Grounded (kaartvulling 4): MeteorFalls_B1F_1R: verborgen STAR_PIECE 
+#define FLAG_HIDDEN_ITEM_KV4_METEORFALLS_STEVENSCAVE_IRON_PLATE FLAG_GROUNDED(225) // Project Grounded (kaartvulling 4): MeteorFalls_StevensCave: verborgen IRON_PLATE 
+#define FLAG_ITEM_KV4_METEORFALLS_STEVENSCAVE_MAX_REVIVE FLAG_GROUNDED(226) // Project Grounded (kaartvulling 4): MeteorFalls_StevensCave: MAX_REVIVE 
+#define FLAG_HIDDEN_ITEM_KV4_METEORFALLS_STEVENSCAVE_METAL_COAT FLAG_GROUNDED(227) // Project Grounded (kaartvulling 4): MeteorFalls_StevensCave: verborgen METAL_COAT 
+#define FLAG_HIDDEN_ITEM_KV4_ROUTE136_GROTTO_NEVER_MELT_ICE FLAG_GROUNDED(228) // Project Grounded (kaartvulling 4): Route136_Grotto: verborgen NEVER_MELT_ICE 
+#define FLAG_ITEM_KV4_ROUTE136_GROTTO_ICE_STONE          FLAG_GROUNDED(229) // Project Grounded (kaartvulling 4): Route136_Grotto: ICE_STONE 
+#define FLAG_HIDDEN_ITEM_KV4_NAVELROCK_ENTRANCE_PP_MAX   FLAG_GROUNDED(230) // Project Grounded (kaartvulling 4): NavelRock_Entrance: verborgen PP_MAX 
+#define FLAG_ITEM_KV4_NAVELROCK_ENTRANCE_ULTRA_BALL      FLAG_GROUNDED(231) // Project Grounded (kaartvulling 4): NavelRock_Entrance: ULTRA_BALL 
+#define FLAG_HIDDEN_ITEM_KV4_SHIPWRECKSHOALS_RELIC_GOLD  FLAG_GROUNDED(232) // Project Grounded (kaartvulling 4): ShipwreckShoals: verborgen RELIC_GOLD 
+#define FLAG_ITEM_KV4_SHIPWRECKSHOALS_SPELL_TAG          FLAG_GROUNDED(233) // Project Grounded (kaartvulling 4): ShipwreckShoals: SPELL_TAG 
+#define FLAG_HIDDEN_ITEM_KV4_SHIPWRECKSHOALS_PEARL_STRING FLAG_GROUNDED(234) // Project Grounded (kaartvulling 4): ShipwreckShoals: verborgen PEARL_STRING 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_NORTH_SOFT_SAND  FLAG_GROUNDED(235) // Project Grounded (kaartvulling 4): SafariZone_North: verborgen SOFT_SAND 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_NORTH_HP_UP      FLAG_GROUNDED(236) // Project Grounded (kaartvulling 4): SafariZone_North: verborgen HP_UP 
+#define FLAG_ITEM_KV4_SAFARIZONE_NORTH_SMOOTH_ROCK       FLAG_GROUNDED(237) // Project Grounded (kaartvulling 4): SafariZone_North: SMOOTH_ROCK 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_NORTHWEST_ZINC   FLAG_GROUNDED(238) // Project Grounded (kaartvulling 4): SafariZone_Northwest: verborgen ZINC 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_NORTHWEST_BIG_MUSHROOM FLAG_GROUNDED(239) // Project Grounded (kaartvulling 4): SafariZone_Northwest: verborgen BIG_MUSHROOM 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_SOUTHWEST_CARBOS FLAG_GROUNDED(240) // Project Grounded (kaartvulling 4): SafariZone_Southwest: verborgen CARBOS 
+#define FLAG_HIDDEN_ITEM_KV4_SAFARIZONE_SOUTHWEST_MIRACLE_SEED FLAG_GROUNDED(241) // Project Grounded (kaartvulling 4): SafariZone_Southwest: verborgen MIRACLE_SEED 
+#define FLAG_HIDDEN_ITEM_KV4_NOTHINGISLAND_NUGGET        FLAG_GROUNDED(242) // Project Grounded (kaartvulling 4): NothingIsland: verborgen NUGGET 
+#define FLAG_HIDDEN_ITEM_KV4_NOTHINGISLAND_RELIC_SILVER  FLAG_GROUNDED(243) // Project Grounded (kaartvulling 4): NothingIsland: verborgen RELIC_SILVER 
+#define FLAG_HIDDEN_ITEM_KV4_ROUTE124_SHINY_STONE        FLAG_GROUNDED(244) // Project Grounded (kaartvulling 4): Route124: verborgen SHINY_STONE 
+#define FLAG_ITEM_KV4_ROUTE124_NET_BALL                  FLAG_GROUNDED(245) // Project Grounded (kaartvulling 4): Route124: NET_BALL 
+// }
+// zee_vulling_4 { (tools/grounded/maptools/zee_vulling_4.py; FLAG_GROUNDED 330-429)
+#define FLAG_ITEM_ZV4_TRENCH_DEEP_SEA_SCALE              FLAG_GROUNDED(330) // Project Grounded (zeevulling 4): item (Underwater_Route127_Trench)
+#define FLAG_ITEM_ZV4_TRENCH_DEEP_SEA_TOOTH              FLAG_GROUNDED(331) // Project Grounded (zeevulling 4): item (Underwater_Route127_Trench)
+#define FLAG_HIDDEN_ITEM_ZV4_TRENCH_RELIC_CROWN          FLAG_GROUNDED(332) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route127_Trench)
+#define FLAG_HIDDEN_ITEM_ZV4_TRENCH_DIVE_BALL            FLAG_GROUNDED(333) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route127_Trench)
+#define FLAG_HIDDEN_ITEM_ZV4_SOOTO_PRISM_SCALE           FLAG_GROUNDED(334) // Project Grounded (zeevulling 4): verborgen item (Underwater_SootopolisCity)
+#define FLAG_HIDDEN_ITEM_ZV4_WHIRL_SHOAL_SHELL           FLAG_GROUNDED(335) // Project Grounded (zeevulling 4): verborgen item (Underwater_WhirlIsland)
+#define FLAG_HIDDEN_ITEM_ZV4_MARINE_SPLASH_PLATE         FLAG_GROUNDED(336) // Project Grounded (zeevulling 4): verborgen item (Underwater_MarineCave)
+#define FLAG_HIDDEN_ITEM_ZV4_R134_RELIC_SILVER           FLAG_GROUNDED(337) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route134)
+#define FLAG_HIDDEN_ITEM_ZV4_SEAFLOOR_NET_BALL           FLAG_GROUNDED(338) // Project Grounded (zeevulling 4): verborgen item (Underwater_SeafloorCavern)
+#define FLAG_HIDDEN_ITEM_ZV4_SEALED_RELIC_STATUE         FLAG_GROUNDED(339) // Project Grounded (zeevulling 4): verborgen item (Underwater_SealedChamber)
+#define FLAG_HIDDEN_ITEM_ZV4_UW136_NEVER_MELT_ICE        FLAG_GROUNDED(340) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route136)
+#define FLAG_HIDDEN_ITEM_ZV4_UW105_PEARL_STRING          FLAG_GROUNDED(341) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route105)
+#define FLAG_HIDDEN_ITEM_ZV4_UW124_STAR_PIECE            FLAG_GROUNDED(342) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route124)
+#define FLAG_HIDDEN_ITEM_ZV4_UW125_BIG_PEARL             FLAG_GROUNDED(343) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route125)
+#define FLAG_HIDDEN_ITEM_ZV4_UW126_BIG_NUGGET            FLAG_GROUNDED(344) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route126)
+#define FLAG_HIDDEN_ITEM_ZV4_UW126_HEART_SCALE           FLAG_GROUNDED(345) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route126)
+#define FLAG_HIDDEN_ITEM_ZV4_UW127_PP_MAX                FLAG_GROUNDED(346) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route127)
+#define FLAG_HIDDEN_ITEM_ZV4_UW128_MAX_REVIVE            FLAG_GROUNDED(347) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route128)
+#define FLAG_HIDDEN_ITEM_ZV4_UW129_BOTTLE_CAP            FLAG_GROUNDED(348) // Project Grounded (zeevulling 4): verborgen item (Underwater_Route129)
+#define FLAG_HIDDEN_ITEM_ZV4_R126_STARDUST               FLAG_GROUNDED(349) // Project Grounded (zeevulling 4): verborgen item (Route126)
+#define FLAG_HIDDEN_ITEM_ZV4_R126_DIVE_BALL              FLAG_GROUNDED(350) // Project Grounded (zeevulling 4): verborgen item (Route126)
+#define FLAG_HIDDEN_ITEM_ZV4_R127_DEEP_SEA_TOOTH         FLAG_GROUNDED(351) // Project Grounded (zeevulling 4): verborgen item (Route127)
+#define FLAG_HIDDEN_ITEM_ZV4_R128_HEAT_ROCK              FLAG_GROUNDED(352) // Project Grounded (zeevulling 4): verborgen item (Route128)
+#define FLAG_HIDDEN_ITEM_ZV4_R130_STAR_PIECE             FLAG_GROUNDED(353) // Project Grounded (zeevulling 4): verborgen item (Route130)
+#define FLAG_HIDDEN_ITEM_ZV4_R132_SHOAL_SALT             FLAG_GROUNDED(354) // Project Grounded (zeevulling 4): verborgen item (Route132)
+#define FLAG_HIDDEN_ITEM_ZV4_R132_HEART_SCALE            FLAG_GROUNDED(355) // Project Grounded (zeevulling 4): verborgen item (Route132)
+#define FLAG_HIDDEN_ITEM_ZV4_R133_PEARL                  FLAG_GROUNDED(356) // Project Grounded (zeevulling 4): verborgen item (Route133)
+#define FLAG_HIDDEN_ITEM_ZV4_R133_RARE_CANDY             FLAG_GROUNDED(357) // Project Grounded (zeevulling 4): verborgen item (Route133)
+#define FLAG_HIDDEN_ITEM_ZV4_R134_RELIC_COPPER           FLAG_GROUNDED(358) // Project Grounded (zeevulling 4): verborgen item (Route134)
+// } zee_vulling_4
+// Gifts (360-399): Type: Null (Devon Corp 2F), Magearna (Colress, Mauville), regionale vormen (Paradiso Resort-lobby)
+#define FLAG_RECEIVED_TYPE_NULL                 FLAG_GROUNDED(360)
+#define FLAG_RECEIVED_MAGEARNA                  FLAG_GROUNDED(361)
+#define FLAG_RECEIVED_ALOLA_RATTATA             FLAG_GROUNDED(362)
+#define FLAG_RECEIVED_ALOLA_MEOWTH              FLAG_GROUNDED(363)
+#define FLAG_RECEIVED_GALAR_FARFETCHD           FLAG_GROUNDED(364)
+
+// abandoned_ship_night { (tools/grounded/maptools/abandoned_ship_night.py; FLAG_GROUNDED 1400-1439: 1400-1402 nieuwe items (blok nieuwe_items), 1410 spookmatroos, 1403-1409 en 1411-1439 nog vrij)
+#define FLAG_HIDE_NIGHT_CABINS_SAILOR                    FLAG_GROUNDED(1410) // Project Grounded: Abandoned Ship benedendek: de spookmatroos is na zijn praatje opgelost (verbergt hem)
+// }
+// enamorus { (src/enamorus.c, tools/grounded/maptools/enamorus_towns.py; FLAG_GROUNDED 1360-1399: 1360-1362 in gebruik, 1363-1399 nog vrij)
+#define FLAG_ENAMORUS_DONE                      FLAG_GROUNDED(1360) // Project Grounded: Enamorus gevangen (liefdesdagen blijven, zonder Enamorus)
+#define FLAG_ENAMORUS_HIDE                      FLAG_GROUNDED(1361) // Project Grounded: verbergt Enamorus (gezet/gewist door src/enamorus.c)
+#define FLAG_LOVEDAY_HIDE                       FLAG_GROUNDED(1362) // Project Grounded: verbergt koppels, Birch en zijn drol (liefdesdag)
+// }
+
+// legends2 { (tools/grounded/maptools/legends2.py; FLAG_GROUNDED 1520-1579: 1520-1540 in gebruik, 1541-1579 nog vrij)
+#define FLAG_CAUGHT_KANTO_ARTICUNO                       FLAG_GROUNDED(1520) // Project Grounded: Articuno (Shoal Cave) gevangen
+#define FLAG_CAUGHT_KANTO_ZAPDOS                         FLAG_GROUNDED(1521) // Project Grounded: Zapdos (Route 119) gevangen
+#define FLAG_CAUGHT_KANTO_MOLTRES                        FLAG_GROUNDED(1522) // Project Grounded: Moltres (Mt. Chimney) gevangen
+#define FLAG_CAUGHT_GALAR_ARTICUNO                       FLAG_GROUNDED(1523) // Project Grounded: Galar-Articuno (Mossdeep) gevangen
+#define FLAG_CAUGHT_GALAR_ZAPDOS                         FLAG_GROUNDED(1524) // Project Grounded: Galar-Zapdos (Route 111) gevangen
+#define FLAG_CAUGHT_GALAR_MOLTRES                        FLAG_GROUNDED(1525) // Project Grounded: Galar-Moltres (Route 120) gevangen
+#define FLAG_RECEIVED_DIANCIE                            FLAG_GROUNDED(1526) // Project Grounded: Diancie (Granite Cave-kristalgrot) gekregen
+#define FLAG_ROUTE123_SNORLAX_GONE                       FLAG_GROUNDED(1527) // Project Grounded: Route 123: Snorlax is weggelopen (verbergt hem; bessenvelden vrij)
+#define FLAG_CAUGHT_MELOETTA                             FLAG_GROUNDED(1528) // Project Grounded: Meloetta (Route 123) gevangen
+#define FLAG_CAUGHT_ZYGARDE                              FLAG_GROUNDED(1529) // Project Grounded: Zygarde (Desert Underpass) gevangen
+#define FLAG_HIDE_LEGENDS_ARTICUNO                       FLAG_GROUNDED(1530) // Project Grounded: verbergt Articuno (gezet/gewist in ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_ZAPDOS                         FLAG_GROUNDED(1531) // Project Grounded: verbergt Zapdos (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_MOLTRES                        FLAG_GROUNDED(1532) // Project Grounded: verbergt Moltres (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_GALAR_ARTICUNO                 FLAG_GROUNDED(1533) // Project Grounded: verbergt Galar-Articuno (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_GALAR_ZAPDOS                   FLAG_GROUNDED(1534) // Project Grounded: verbergt Galar-Zapdos (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_GALAR_MOLTRES                  FLAG_GROUNDED(1535) // Project Grounded: verbergt Galar-Moltres (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_MELOETTA                       FLAG_GROUNDED(1536) // Project Grounded: verbergt Meloetta (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_ZYGARDE                        FLAG_GROUNDED(1537) // Project Grounded: verbergt Zygarde (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_DIANCIE                        FLAG_GROUNDED(1538) // Project Grounded: verbergt Diancie (ON_TRANSITION)
+#define FLAG_HIDE_LEGENDS_CARBINK                        FLAG_GROUNDED(1539) // Project Grounded: verbergt de twee Carbink naast Diancie (ON_TRANSITION, alleen post-game zichtbaar)
+#define FLAG_HIDE_LEGENDS_POKE_FLUTE                     FLAG_GROUNDED(1540) // Project Grounded: verbergt de Poke Flute naast Snorlax (ON_TRANSITION, alleen post-game)
+// }
+// marshadow { (met de hand; Keccles op het Battle Frontier-eiland + Marshadow; FLAG_GROUNDED 1541-1549, 1543-1549 nog vrij)
+#define FLAG_HIDE_FRONTIER_KECCLES                       FLAG_GROUNDED(1541) // Project Grounded: Battle Frontier (oost): Keccles verslagen en vertrokken (verbergt hem)
+#define FLAG_RECEIVED_MARSHADOW                          FLAG_GROUNDED(1542) // Project Grounded: Marshadow sprong uit je schaduw en kwam in je team (Keccles-gevecht, Battle Frontier)
+// }
+// ultra_space { (tools/grounded/maptools/ultra_space.py, src/ultra_space.c; FLAG_GROUNDED 1440-1519: 1440-1450 Ultra Beasts/Necrozma, 1451-1459 Cosmog/Solrock-Lunatone, 1460-1479 nieuwe items (blok nieuwe_items), 1480-1519 nog vrij)
+#define FLAG_ULTRA_NIHILEGO                     FLAG_GROUNDED(1440) // Project Grounded: Ultra Space: Nihilego gevangen (verbergt het object, portaal slaat de plek over)
+#define FLAG_ULTRA_BUZZWOLE                     FLAG_GROUNDED(1441) // Project Grounded: Ultra Space: Buzzwole gevangen
+#define FLAG_ULTRA_PHEROMOSA                    FLAG_GROUNDED(1442) // Project Grounded: Ultra Space: Pheromosa gevangen
+#define FLAG_ULTRA_XURKITREE                    FLAG_GROUNDED(1443) // Project Grounded: Ultra Space: Xurkitree gevangen
+#define FLAG_ULTRA_CELESTEELA                   FLAG_GROUNDED(1444) // Project Grounded: Ultra Space: Celesteela gevangen
+#define FLAG_ULTRA_KARTANA                      FLAG_GROUNDED(1445) // Project Grounded: Ultra Space: Kartana gevangen
+#define FLAG_ULTRA_GUZZLORD                     FLAG_GROUNDED(1446) // Project Grounded: Ultra Space: Guzzlord gevangen
+#define FLAG_ULTRA_POIPOLE                      FLAG_GROUNDED(1447) // Project Grounded: Ultra Space: Poipole gekregen van de aliens (gift)
+#define FLAG_ULTRA_STAKATAKA                    FLAG_GROUNDED(1448) // Project Grounded: Ultra Space: Stakataka gevangen
+#define FLAG_ULTRA_BLACEPHALON                  FLAG_GROUNDED(1449) // Project Grounded: Ultra Space: Blacephalon gevangen
+#define FLAG_ULTRA_NECROZMA                     FLAG_GROUNDED(1450) // Project Grounded: Ultra Space: Necrozma gevangen
+#define FLAG_ULTRA_SOLROCK_FIRST                FLAG_GROUNDED(1451) // Project Grounded: Solrock eerder gevangen dan Lunatone (Cosmoem -> Solgaleo); gezet in GetSetPokedexFlag
+#define FLAG_ULTRA_LUNATONE_FIRST               FLAG_GROUNDED(1452) // Project Grounded: Lunatone eerder gevangen dan Solrock (Cosmoem -> Lunala)
+#define FLAG_RECEIVED_COSMOG                    FLAG_GROUNDED(1453) // Project Grounded: eerste Cosmog van Prof. Cozmo (Fallarbor, post-game)
+#define FLAG_RECEIVED_COSMOG_2                  FLAG_GROUNDED(1454) // Project Grounded: tweede Cosmog (na Solgaleo/Lunala laten zien)
+#define FLAG_ULTRA_HUB_VISITED                  FLAG_GROUNDED(1455) // Project Grounded: Ultra Space-hub al eens bezocht (lange tekst bij het portaal)
+// }
+// rival_postgame { (met de hand; rivaal na de Hall of Fame: Pacifidlog, Battle Frontier, Paradiso; FLAG_GROUNDED 1760-1769, 1763-1769 nog vrij)
+#define FLAG_RIVAL_PG_PACIFIDLOG_DONE           FLAG_GROUNDED(1760) // Project Grounded: rivaal in Pacifidlog verslagen (gevecht 7); rivaal staat daarna bij de Battle Tower, team fase 2 (rival_postgame.c)
+#define FLAG_RIVAL_PG_RETIRED                   FLAG_GROUNDED(1761) // Project Grounded: rivaal bij de Battle Tower verslagen (gevecht 8) en met pensioen naar het Paradiso Resort
+#define FLAG_RIVAL_PG_RESORT_MET                FLAG_GROUNDED(1762) // Project Grounded: Guinness-verhaal van de rivaal in het Paradiso Resort al gehoord (daarna korter)
+// }
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000

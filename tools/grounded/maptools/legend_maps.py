@@ -1,5 +1,5 @@
 """Project Grounded: kaarten voor de post-game legendary-events Genesect en Mewtwo.
-- NewMauville_ServerVault (Genesect lv 70): serverkluis achter de Raikou-grot onder New Mauville. Stijl en bouwstenen
+- NewMauville_ServerVault (was Genesect lv 70; sinds v0.9.110 leeg, met de vrachtbrief naar Nothing Island): serverkluis achter de Raikou-grot onder New Mauville. Stijl en bouwstenen
   zoals NewMauville_ThunderCave (beasts_maps.py): rotswanden uit NewMauville_Entrance, tanks en computers uit
   AquaHideout_B2F. Ingang: kluisdeur in de bovenwand van de Raikou-grot (x 6-8), verschijnt na de herstart via de
   terminal (FLAG_NEW_MAUVILLE_VAULT_OPEN, scripts in NewMauville_ThunderCave/scripts.inc).
@@ -9,6 +9,13 @@
   Ingang: na de Hall of Fame een grotopening in Meteor Falls 1F (12,25-26).
 Idempotent. Controleert de bereikbaarheid van warps, items en de legendaries.
 Gebruik: python3 tools/grounded/maptools/legend_maps.py"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, shutil, struct, random
 from collections import deque
 
@@ -148,11 +155,10 @@ for (dx, dy) in ((2, 8), (10, 8)):                            # serverkasten (sc
     paste(17, 6, 3, 4, dx, dy)
 save_layout(VAULT, g, 'NewMauville_Entrance')
 add_layout(VAULT, VAULT_C, W, H, 'gTileset_Facility')
-GENESECT = (7, 9)
-r = reachable(g, (7, 2), {GENESECT})
-assert next_to(r, *GENESECT), 'Genesect onbereikbaar'
-for sx, sy in ((2, 10), (3, 10), (10, 10), (11, 10)):
-    assert (sx, sy + 1) in r, ('server', sx, sy)
+# sinds v0.9.110 is Genesect weg (Neo Plasma, Plasma Frigate bij Nothing Island): lege capsules + printer met de vrachtbrief
+r = reachable(g, (7, 2), set())
+for sx, sy in ((2, 10), (3, 10), (10, 10), (11, 10), (3, 6), (4, 6), (10, 6), (11, 6)):
+    assert (sx, sy + 1) in r, ('server/capsule', sx, sy)
 
 # Raikou-grot: warp naar de kluis (alleen bereikbaar als de deur er is)
 tc = json.load(open('data/maps/NewMauville_ThunderCave/map.json'))
@@ -164,23 +170,25 @@ tcw = [i for i, w in enumerate(tc['warp_events']) if w['dest_map'] == 'MAP_' + V
 os.makedirs('data/maps/' + VAULT, exist_ok=True)
 write_json('data/maps/%s/map.json' % VAULT, map_json(
     VAULT_C, VAULT, VAULT_C, 'MUS_RG_SILPH', 'MAPSEC_NEW_MAUVILLE',
-    [obj('LOCALID_SERVER_VAULT_GENESECT', 'OBJ_EVENT_GFX_SPECIES(GENESECT)', GENESECT[0], GENESECT[1],
-         VAULT + '_EventScript_Genesect', 'FLAG_HIDE_NEW_MAUVILLE_GENESECT', 'MOVEMENT_TYPE_FACE_UP')],
+    [],
     [{'x': 7, 'y': 1, 'elevation': 0, 'dest_map': 'MAP_NEW_MAUVILLE_THUNDER_CAVE', 'dest_warp_id': str(tcw)}],
     [sign(2, 10, VAULT + '_EventScript_Server1'), sign(3, 10, VAULT + '_EventScript_Server1'),
-     sign(10, 10, VAULT + '_EventScript_Server2'), sign(11, 10, VAULT + '_EventScript_Server2')]))
+     sign(10, 10, VAULT + '_EventScript_Printer'), sign(11, 10, VAULT + '_EventScript_Printer')]
+    + [sign(x, 6, VAULT + '_EventScript_Capsule') for x in (3, 4, 10, 11)]))
 add_to_groups(VAULT, 'MeteorSpace')
 add_include(VAULT, 'MeteorSpace')
 
 # ====================================================================== Mewtwo: verborgen grot achter Meteor Falls
+# (Mewtwo staat sinds v0.9.171 in de echte Cerulean Cave achter de Spacetime Cave: draai na dit script ook
+#  tools/grounded/maptools/spacetime_cave.py, dat Mewtwo hier weghaalt en een kras in de rots zet.)
 C1, C1_C = 'MeteorFalls_UnknownCave_1F', 'METEOR_FALLS_UNKNOWN_CAVE_1F'
 C2, C2_C = 'MeteorFalls_UnknownCave_B1F', 'METEOR_FALLS_UNKNOWN_CAVE_B1F'
 g1 = load('AlteringCave')
 HOLE = (27, 10)
 g1[HOLE[1]][HOLE[0]] = (g1[HOLE[1]][HOLE[0]] & 0xF000) | 0x33d   # ladder naar beneden (gat), hoogte van het plateau
 g2 = load('CaveOfOrigin_UnusedRubySapphireMap3')
-assert g2[6][12] & 0x3ff == 0x33d
-g2[6][12] = g2[6][11]                     # gat naar beneden dicht: hier staat Mewtwo
+if g2[6][12] & 0x3ff == 0x33d:            # (al dicht als de bronlayout eerder is aangepast)
+    g2[6][12] = g2[6][11]                 # gat naar beneden dicht: hier staat Mewtwo
 save_layout(C1, g1, 'AlteringCave')
 save_layout(C2, g2, 'CaveOfOrigin_UnusedRubySapphireMap3')
 add_layout(C1, C1_C, len(g1[0]), len(g1), 'gTileset_Cave', VAULT + '_Layout')
@@ -212,8 +220,7 @@ write_json('data/maps/%s/map.json' % C1, map_json(
      {'x': HOLE[0], 'y': HOLE[1], 'elevation': g1[HOLE[1]][HOLE[0]] >> 12, 'dest_map': 'MAP_' + C2_C, 'dest_warp_id': '0'}], []))
 write_json('data/maps/%s/map.json' % C2, map_json(
     C2_C, C2, C2_C, 'MUS_RG_SEVII_DUNGEON', 'MAPSEC_METEOR_FALLS',
-    [obj('LOCALID_UNKNOWN_CAVE_MEWTWO', 'OBJ_EVENT_GFX_SPECIES(MEWTWO)', MEWTWO[0], MEWTWO[1],
-         C2 + '_EventScript_Mewtwo', 'FLAG_HIDE_METEOR_FALLS_MEWTWO', 'MOVEMENT_TYPE_FACE_DOWN'),
+    [  # Mewtwo staat sinds v0.9.171 in de Cerulean Cave (Spacetime Cave), niet meer hier
      obj('LOCALID_UNKNOWN_CAVE_B1F_ITEM', 'OBJ_EVENT_GFX_ITEM_BALL', ITEM2[0], ITEM2[1], 'Common_EventScript_FindItem',
          'FLAG_ITEM_UNKNOWN_CAVE_B1F_MAX_ELIXIR', 'MOVEMENT_TYPE_LOOK_AROUND', 'ITEM_MAX_ELIXIR')],
     [{'x': 7, 'y': 14, 'elevation': 3, 'dest_map': 'MAP_' + C1_C, 'dest_warp_id': '1'}], []))

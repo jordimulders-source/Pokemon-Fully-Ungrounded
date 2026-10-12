@@ -1,0 +1,163 @@
+"""Project Grounded: items die nergens anders in de game te krijgen zijn (Jordi, 9 okt), verdeeld over de diepzeetrog
+onder Route 127 en de Spacetime-gebieden. Eén lijst, zodat geen item dubbel ligt; elke kaartgenerator haalt hier zijn
+items op (plek bepaalt de generator) en schrijft het flagblok.
+
+Bepaling 'nergens te krijgen' (9 okt): het item komt in geen kaart (item balls, verborgen items), geen script
+(giveitem/finditem/marts) en geen C-bron (Floating Market, Fishing Tournament, Battle Frontier, Spire, ...) voor;
+alleen in de itemdefinities/gevechtslogica of als held item van trainers. Geen TM's, geen Mega Stones/Z-kristallen
+(geen Mega Ring), geen Ability Patch (verborgen abilities zijn niet verkrijgbaar).
+Flags FLAG_GROUNDED 840-879 (blok 'nieuwe_items' in flags.h).
+Gebruik: import nieuwe_items as ni; ni.items('ChargestoneCave_1F') -> [(flag, item, aantal, verborgen)]; ni.flags()."""
+import os, re
+
+REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', '..', '..'))
+
+# (n, kaart, item, aantal, verborgen?, omschrijving)
+ITEMS = [
+    # diepzeetrog onder Route 127 (trog127.py)
+    (840, 'Underwater_Route127_Trench', 'ITEM_LURE_BALL', 3, False, 'diepzeetrog: Lure Balls'),
+    (841, 'Underwater_Route127_Trench', 'ITEM_HEAVY_BALL', 3, False, 'diepzeetrog: Heavy Balls'),
+    (842, 'Underwater_Route127_Trench', 'ITEM_BINDING_BAND', 1, False, 'diepzeetrog: Binding Band'),
+    (843, 'Underwater_Route127_Trench', 'ITEM_EJECT_BUTTON', 1, False, 'diepzeetrog: Eject Button'),
+    (844, 'Underwater_Route127_Trench', 'ITEM_POWER_ANKLET', 1, False, 'diepzeetrog: Power Anklet'),
+    (845, 'Underwater_Route127_Trench', 'ITEM_EXP_CANDY_L', 2, False, 'diepzeetrog: Exp. Candy L'),
+    (846, 'Underwater_Route127_Trench', 'ITEM_RELIC_VASE', 1, True, 'diepzeetrog: verborgen Relic Vase'),
+    # Chargestone Cave (chargestone.py)
+    (850, 'ChargestoneCave_1F', 'ITEM_FAST_BALL', 3, False, 'Chargestone Cave 1F: Fast Balls'),
+    (851, 'ChargestoneCave_1F', 'ITEM_POWER_LENS', 1, False, 'Chargestone Cave 1F: Power Lens'),
+    (852, 'ChargestoneCave_B1F', 'ITEM_EJECT_PACK', 1, False, 'Chargestone Cave B1F: Eject Pack'),
+    (853, 'ChargestoneCave_B1F', 'ITEM_TERRAIN_EXTENDER', 1, False, 'Chargestone Cave B1F: Terrain Extender'),
+    (854, 'ChargestoneCave_B2F', 'ITEM_ABILITY_SHIELD', 1, False, 'Chargestone Cave B2F: Ability Shield'),
+    (855, 'ChargestoneCave_B2F', 'ITEM_EXP_CANDY_XL', 1, True, 'Chargestone Cave B2F: verborgen Exp. Candy XL'),
+    # Lavender Town + Pokemon Tower (spacetime_cave.py)
+    (860, 'LavenderTown', 'ITEM_EXP_CANDY_S', 3, True, 'Lavender Town: verborgen Exp. Candy S'),
+    (861, 'PokemonTower_3F', 'ITEM_MOON_BALL', 3, False, 'Pokemon Tower 3F: Moon Balls'),
+    (862, 'PokemonTower_4F', 'ITEM_RED_CARD', 1, False, 'Pokemon Tower 4F: Red Card'),
+    (863, 'PokemonTower_2F', 'ITEM_POWER_BRACER', 1, False, 'Pokemon Tower 2F: Power Bracer'),
+    # Cerulean Cave (spacetime_cave.py)
+    (864, 'CeruleanCave_1F', 'ITEM_LEVEL_BALL', 3, False, 'Cerulean Cave 1F: Level Balls'),
+    (865, 'CeruleanCave_2F', 'ITEM_POWER_WEIGHT', 1, False, 'Cerulean Cave 2F: Power Weight'),
+    (866, 'CeruleanCave_2F', 'ITEM_ROOM_SERVICE', 1, False, 'Cerulean Cave 2F: Room Service'),
+    (867, 'CeruleanCave_B1F', 'ITEM_MIRROR_HERB', 1, False, 'Cerulean Cave B1F: Mirror Herb'),
+    (868, 'CeruleanCave_B1F', 'ITEM_POWER_BAND', 1, True, 'Cerulean Cave B1F: verborgen Power Band'),
+    # National Park + Ilex Forest (national_park.py)
+    (870, 'NationalPark', 'ITEM_SPORT_BALL', 5, False, 'National Park: Sport Balls'),
+    (871, 'NationalPark', 'ITEM_INSECT_PLATE', 1, False, 'National Park: Insect Plate'),
+    (872, 'NationalPark', 'ITEM_POWER_BELT', 1, True, 'National Park: verborgen Power Belt'),
+    (873, 'IlexForest', 'ITEM_FRIEND_BALL', 3, False, 'Ilex Forest: Friend Balls'),
+    (874, 'IlexForest', 'ITEM_LOVE_BALL', 3, False, 'Ilex Forest: Love Balls'),
+    (875, 'IlexForest', 'ITEM_DESTINY_KNOT', 1, False, 'Ilex Forest: Destiny Knot'),
+    (876, 'IlexForest', 'ITEM_ROSE_INCENSE', 1, True, 'Ilex Forest: verborgen Rose Incense'),
+    # Area Zero (area_zero.py; flags uit het eigen blok FLAG_GROUNDED 920-999)
+    (950, 'AreaZero_Rim', 'ITEM_QUICK_BALL', 5, False, 'Area Zero, kraterwand: Quick Balls'),
+    (951, 'AreaZero_Rim', 'ITEM_MUSCLE_BAND', 1, False, 'Area Zero, kraterwand: Muscle Band'),
+    (952, 'AreaZero_Depths', 'ITEM_ADRENALINE_ORB', 1, False, 'Area Zero, diepte: Adrenaline Orb'),
+    (953, 'AreaZero_Depths', 'ITEM_SHED_SHELL', 1, True, 'Area Zero, diepte: verborgen Shed Shell'),
+    (954, 'AreaZero_Crystal', 'ITEM_BEAST_BALL', 3, False, 'Area Zero, kristalgrot: Beast Balls'),
+    (955, 'AreaZero_Crystal', 'ITEM_RING_TARGET', 1, True, 'Area Zero, kristalgrot: verborgen Ring Target'),
+    (956, 'AreaZero_Future', 'ITEM_BOOSTER_ENERGY', 2, False, 'Area Zero, toekomst: Booster Energy'),
+    (957, 'AreaZero_Future', 'ITEM_METAL_ALLOY', 1, False, 'Area Zero, toekomst: Metal Alloy (Duraludon -> Archaludon)'),
+    (958, 'AreaZero_Future', 'ITEM_AIR_BALLOON', 1, True, 'Area Zero, toekomst: verborgen Air Balloon'),
+    (959, 'AreaZero_Past', 'ITEM_POWER_HERB', 1, False, 'Area Zero, verleden: Power Herb'),
+    (960, 'AreaZero_Past', 'ITEM_GRIP_CLAW', 1, False, 'Area Zero, verleden: Grip Claw'),
+    (961, 'AreaZero_Past', 'ITEM_STICKY_BARB', 1, True, 'Area Zero, verleden: verborgen Sticky Barb'),
+    # Gen 4-meren (lakes.py; flags uit het eigen blok FLAG_GROUNDED 1120-1159)
+    (1140, 'LakeAcuity', 'ITEM_PEAT_BLOCK', 1, False, 'Lake Acuity: Peat Block (Ursaring -> Ursaluna)'),
+    (1141, 'LakeAcuity', 'ITEM_FULL_INCENSE', 1, True, 'Lake Acuity: verborgen Full Incense'),
+    (1142, 'LakeAcuity_Cavern', 'ITEM_METAL_POWDER', 1, False, 'Lake Acuity, grot: Metal Powder'),
+    (1143, 'LakeValor', 'ITEM_AUSPICIOUS_ARMOR', 1, False, 'Lake Valor: Auspicious Armor (Charcadet -> Armarouge)'),
+    (1144, 'LakeValor', 'ITEM_ROCK_INCENSE', 1, True, 'Lake Valor: verborgen Rock Incense'),
+    (1145, 'LakeValor_Cavern', 'ITEM_LEADERS_CREST', 1, False, "Lake Valor, grot: Leader's Crest (Bisharp -> Kingambit)"),
+    (1146, 'LakeVerity', 'ITEM_ODD_INCENSE', 1, False, 'Lake Verity: Odd Incense'),
+    (1147, 'LakeVerity', 'ITEM_LINKING_CORD', 1, True, 'Lake Verity: verborgen Linking Cord'),
+    (1148, 'LakeVerity_Cavern', 'ITEM_QUICK_POWDER', 1, False, 'Lake Verity, grot: Quick Powder'),
+    # Mt. Coronet + Spear Pillar (coronet.py; flags uit het eigen blok FLAG_GROUNDED 1160-1219)
+    (1180, 'MtCoronet_4F_Room2', 'ITEM_ADAMANT_CRYSTAL', 1, False, 'Mt. Coronet 4F kamer 2: Adamant Crystal (Dialga Origin)'),
+    (1181, 'MtCoronet_4F_Room2', 'ITEM_ODD_KEYSTONE', 1, False, 'Mt. Coronet 4F kamer 2: Odd Keystone'),
+    (1182, 'MtCoronet_4F_Outside', 'ITEM_LUSTROUS_GLOBE', 1, True, 'Mt. Coronet 4F buiten: verborgen Lustrous Globe (Palkia Origin)'),
+    (1183, 'MtCoronet_5F', 'ITEM_IRON_BALL', 1, False, 'Mt. Coronet 5F: Iron Ball'),
+    (1184, 'SpearPillar', 'ITEM_ADAMANT_ORB', 1, False, 'Spear Pillar: Adamant Orb (bij het altaar van Dialga)'),
+    (1185, 'SpearPillar', 'ITEM_LUSTROUS_ORB', 1, False, 'Spear Pillar: Lustrous Orb (bij het altaar van Palkia)'),
+    # Yoshi's Island (yoshis_island.py; flags uit het eigen blok FLAG_GROUNDED 1060-1069). ?-wolken en Poochy geven
+    # hun item via een script (niet verborgen, geen item ball): zie CLOUD_ITEMS / POOCHY_ITEM in yoshis_island.py
+    (1060, 'YoshisIsland_Beach', 'ITEM_SHALOUR_SABLE', 2, False, "Yoshi's Island strand: Shalour Sable (?-wolk)"),
+    (1061, 'YoshisIsland_Jungle', 'ITEM_STRANGE_SOUVENIR', 1, False, "Yoshi's Island jungle: Strange Souvenir (Poochy graaft)"),
+    (1062, 'YoshisIsland_Jungle', 'ITEM_MOOMOO_MILK', 3, False, "Yoshi's Island jungle: Moomoo Milk (?-wolk)"),
+    (1063, 'YoshisIsland_Jungle', 'ITEM_GALARICA_TWIG', 1, False, "Yoshi's Island jungle: Galarica Twig"),
+    (1064, 'YoshisIsland_Cave', 'ITEM_RELIC_BAND', 1, False, "Yoshi's Island kristalgrot: Relic Band"),
+    (1065, 'YoshisIsland_Cave', 'ITEM_PEWTER_CRUNCHIES', 2, True, "Yoshi's Island kristalgrot: verborgen Pewter Crunchies"),
+    (1066, 'YoshisIsland_Flowers', 'ITEM_LUMIOSE_GALETTE', 2, False, "Yoshi's Island bloemenveld: Lumiose Galette (?-wolk)"),
+    (1067, 'YoshisIsland_Flowers', 'ITEM_CHERISH_BALL', 1, False, "Yoshi's Island bloemenveld: Cherish Ball (achter de brug)"),
+    # Crown Tundra, Calyrex-quest (calyrex_quest.py; flags uit het eigen blok FLAG_GROUNDED 1280-1319)
+    (1300, 'CrownTundra', 'ITEM_ICE_GEM', 1, False, 'Crown Tundra: Ice Gem (ijsveld van Glastrier)'),
+    (1301, 'CrownTundra', 'ITEM_GHOST_GEM', 1, False, 'Crown Tundra: Ghost Gem (bos van Spectrier)'),
+    (1302, 'CrownTundra', 'ITEM_ICE_MEMORY', 1, True, 'Crown Tundra: verborgen Ice Memory'),
+    # Hall of Origin (hall_of_origin.py; flags uit het eigen blok FLAG_GROUNDED 1220-1279)
+    (1240, 'HallOfOrigin_Stairway', 'ITEM_COVERT_CLOAK', 1, False, 'Hall of Origin, trap: Covert Cloak'),
+    (1241, 'HallOfOrigin_Atrium', 'ITEM_CLEAR_AMULET', 1, False, 'Hall of Origin, atrium: Clear Amulet'),
+    (1242, 'HallOfOrigin_Atrium', 'ITEM_PUNCHING_GLOVE', 1, True, 'Hall of Origin, atrium: verborgen Punching Glove'),
+    (1243, 'HallOfOrigin_Summit', 'ITEM_GRISEOUS_ORB', 1, False, 'Hall of Origin, top: Griseous Orb (Giratina Origin)'),
+    (1068, 'YoshisIsland_YoshiHouse', 'ITEM_SWEET_HEART', 1, False, "Yoshi's Island Yoshi-huis: Sweet Heart (de roze Yoshi bakt hem)"),
+    # Abandoned Ship, nachtelijk benedendek (abandoned_ship_night.py; flags uit het eigen blok FLAG_GROUNDED 1400-1439)
+    (1400, 'AbandonedShip_NightCabins', 'ITEM_GHOST_MEMORY', 1, False, 'Abandoned Ship benedendek: Ghost Memory'),
+    (1401, 'AbandonedShip_NightCabins', 'ITEM_WATER_GEM', 2, False, 'Abandoned Ship benedendek: Water Gems'),
+    (1402, 'AbandonedShip_NightCabins', 'ITEM_WATER_MEMORY', 1, True, 'Abandoned Ship benedendek: verborgen Water Memory'),
+    # vormwissel-items die nergens lagen (dex_check.py; met de hand in map.json gezet; flags uit het eigen blok FLAG_GROUNDED 1580-1619)
+    (1580, 'MauvilleCity_House2_B1F', 'ITEM_ROTOM_CATALOG', 1, False, 'Mauville, kelder van Rotom: Rotom Catalog (Rotom-apparaatvormen)'),
+    (1581, 'Route119_WeatherInstitute_2F', 'ITEM_REVEAL_GLASS', 1, False, 'Weather Institute 2F: Reveal Glass (Therian-vormen van de Forces en Enamorus)'),
+    (1582, 'Route104_PrettyPetalFlowerShop', 'ITEM_PINK_NECTAR', 1, False, "Pretty Petal-bloemenwinkel: Pink Nectar (Oricorio Pa'u)"),
+    (1583, 'Route104_PrettyPetalFlowerShop', 'ITEM_PURPLE_NECTAR', 1, False, 'Pretty Petal-bloemenwinkel: Purple Nectar (Oricorio Sensu)'),
+    # Ultra Space (ultra_space.py; flags uit het eigen blok FLAG_GROUNDED 1440-1519)
+    (1460, 'UltraSpace_Necrozma', 'ITEM_N_SOLARIZER', 1, False, 'Ultra Space, prismagrot: N-Solarizer (Necrozma + Solgaleo)'),
+    (1461, 'UltraSpace_Necrozma', 'ITEM_N_LUNARIZER', 1, False, 'Ultra Space, prismagrot: N-Lunarizer (Necrozma + Lunala)'),
+    (1462, 'UltraSpace_Poipole', 'ITEM_POISON_MEMORY', 1, False, 'Ultra Space, gifkristallen: Poison Memory'),
+    (1463, 'UltraSpace_Xurkitree', 'ITEM_ELECTRIC_MEMORY', 1, False, 'Ultra Space, kabelwoud: Electric Memory'),
+    (1464, 'UltraSpace_Buzzwole', 'ITEM_FIGHTING_MEMORY', 1, False, 'Ultra Space, sportschool: Fighting Memory'),
+    (1465, 'UltraSpace_Stakataka', 'ITEM_STEEL_MEMORY', 1, True, 'Ultra Space, muur: verborgen Steel Memory'),
+    (1466, 'UltraSpace_Guzzlord', 'ITEM_DARK_GEM', 2, False, 'Ultra Space, afvalvlakte: Dark Gems'),
+    # items die nog nergens te krijgen waren (item_check.py, 9 okt; met de hand in map.json gezet; flags FLAG_GROUNDED 1620-1699)
+    (1620, 'Route104_PrettyPetalFlowerShop', 'ITEM_RED_NECTAR', 1, False, 'Pretty Petal-bloemenwinkel: Red Nectar (Oricorio terug naar Baile)'),
+]
+FIRST, LAST = 840, 879
+EXTRA_RANGES = [(920, 999), (1060, 1069), (1140, 1159), (1160, 1219), (1240, 1259), (1300, 1309), (1400, 1409), (1460, 1479), (1580, 1619), (1620, 1699)]   # eigen blokken per gebied (zie flags.h)
+
+
+def flag_name(n, mp, it, hid):
+    m = re.sub(r'(?<=[a-z0-9])(?=[A-Z])', '_', mp).upper().replace('_1_F', '_1F').replace('_2_F', '_2F')
+    m = re.sub(r'_(B?\d)_F\b', r'_\1F', m)
+    return 'FLAG_%sITEM_%s_%s' % ('HIDDEN_' if hid else '', m, it[5:])
+
+
+def items(mp):
+    """[(flag, item, aantal, verborgen)] voor kaart mp."""
+    return [(flag_name(n, m, it, h), it, q, h) for n, m, it, q, h, _ in ITEMS if m == mp]
+
+
+def flags():
+    assert len({it for _, _, it, *_ in ITEMS}) == len(ITEMS), 'item dubbel'
+    assert len({n for n, *_ in ITEMS}) == len(ITEMS) and all(
+        FIRST <= n <= LAST or any(a <= n <= b for a, b in EXTRA_RANGES) for n, *_ in ITEMS)
+    assert not any(it.startswith(('ITEM_TM', 'ITEM_HM')) for _, _, it, *_ in ITEMS)
+    p = os.path.join(REPO, 'include/constants/flags.h')
+    s = open(p).read()
+    blk = '// nieuwe_items { (tools/grounded/maptools/nieuwe_items.py; FLAG_GROUNDED 840-879, items die nergens anders liggen)\n'
+    for n, mp, it, q, h, why in ITEMS:
+        blk += '#define %-48s FLAG_GROUNDED(%d) // Project Grounded: %s\n' % (flag_name(n, mp, it, h), n, why)
+    blk += '// }'
+    if '// nieuwe_items {' in s:
+        i = s.index('// nieuwe_items {'); j = s.index('// }', i) + 4
+        s = s[:i] + blk + s[j:]
+    else:
+        anchor = s.index('// chargestone {')
+        s = s[:anchor] + blk + '\n' + s[anchor:]
+    s = s.replace('800-839 Swords of Justice/Keldeo/Meltan, 840+ vrij.',
+                  '800-839 Swords of Justice/Keldeo/Meltan, 840-879 nieuwe items (nieuwe_items.py), 880+ vrij.')
+    for n, *_ in ITEMS:
+        assert len(re.findall(r'FLAG_GROUNDED\(%d\)' % n, s)) == 1, ('flag dubbel', n)
+    open(p, 'w').write(s)
+
+
+if __name__ == '__main__':
+    flags()
+    for row in ITEMS:
+        print(flag_name(row[0], row[1], row[2], row[4]), row[3])

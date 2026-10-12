@@ -17,7 +17,7 @@
 #define STADIUM_MAX_ENTRANTS    32
 #define STADIUM_PLAYER          0       // deelnemer 0 = de speler (en compagnon)
 #define STADIUM_MAX_POOL        128
-#define STADIUM_MAX_COMPANIONS  128
+#define STADIUM_MAX_COMPANIONS  160     // was 128 (v0.9: Selene/Reginald/Helia); oude saves: lastCompanion/tournaments terug op 0
 
 enum StadiumUnlock
 {
@@ -55,7 +55,8 @@ struct StadiumSave
     u32 beaten[STADIUM_MAX_POOL / 32];          // deelnemers ooit verslagen (bit per poolplek)
     u32 seen[STADIUM_MAX_COMPANIONS / 32];      // compagnons waarvan de melding al getoond is
     u8 lastCompanion;
-    u8 unused[3];
+    u8 tournaments;     // toernooien begonnen (max. 255; de omroeper: nieuwkomer of terugkeerder)
+    u8 unused[2];
 };
 #define STADIUM_SAVE (*(struct StadiumSave *)gSaveBlock2Ptr->stadiumData)
 
@@ -64,7 +65,27 @@ extern bool8 gStadiumBattle;
 // battle_main.c: team van een tegenstander (keuze uit de pool, level 50)
 u8 Stadium_BuildTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer);
 bool32 Stadium_PartnerUsesFrontPic(void);
+u32 Stadium_CapIvs(u32 ivs);
+void Stadium_ScaleCompanionMon(struct Pokemon *mon);
+u16 Stadium_CompanionSourceTrainer(void);
 const u8 *Stadium_GetWinText(u32 opponent);
+const u8 *Stadium_GetDefeatText(u32 trainerId);
+
+// Project Grounded: Battle Casino (src/battle_casino.c)
+extern bool8 gCasinoBattle;
+u8 Casino_BuildEnemyParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer);
+const u8 *Casino_GetWinText(u16 trainerId);
+const u8 *Casino_GetPlayerSideName(void);
+bool32 Casino_HidePlayerTrainerPic(void);
+void Casino_HasBp(void);
+void Casino_OpenCard(void);
+void Casino_StartArenaBattle(void);
+void Casino_SetArenaGfx(void);
+void Casino_Resolve(void);
+void Casino_CheckUnlock(void);
+void Casino_DebugUnlockAll(void);
+bool32 Casino_TrySkipBattle(void);
+void Casino_GetTip(void);
 
 // specials (data/maps/BattleFrontier_StadiumLobby/scripts.inc)
 void Stadium_PrepareChooseParty(void);
@@ -93,6 +114,7 @@ bool32 Stadium_IsCompanionVisible(u32 i);
 u16 Stadium_EntrantTrainer(u8 slot, u32 member);    // trainer van bracketplek (lid 0/1 bij doubles)
 void Stadium_GetEntrantName(u8 slot, u8 *dst);
 u16 Stadium_EntrantPic(u8 slot);
+u16 Stadium_EntrantMemberPic(u8 slot, u32 member);
 u8 Stadium_GetMode(void);
 u8 Stadium_GetRound(void);
 u8 Stadium_GetRoundCount(void);

@@ -283,7 +283,62 @@
 #define OBJ_EVENT_GFX_PETREL                          272 // Project Grounded: Rocket-sidequest (FRLG-grunt, paarse kuif)
 #define OBJ_EVENT_GFX_GIANT_WAILORD                   273 // Project Grounded: reuzen-Wailord op zee (192x96, tools/grounded/giant_wailord_draw.py)
 
-#define NUM_OBJ_EVENT_GFX                        274
+#define OBJ_EVENT_GFX_PLASMA_FRIGATE                  274 // Project Grounded: Plasma Frigate (S.S. Tidal-sprite, eigen palet; Nothing Island)
+
+#define OBJ_EVENT_GFX_CYNTHIA                         275 // Project Grounded: strandresort (sheet cynthia.png, 2x -> 1x)
+#define OBJ_EVENT_GFX_TURD                            276 // Project Grounded: drol op het strand van het resort (Birch)
+
+#define OBJ_EVENT_GFX_STATUE_TAPU_KOKO               277 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+#define OBJ_EVENT_GFX_STATUE_TAPU_LELE               278 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+#define OBJ_EVENT_GFX_STATUE_TAPU_BULU               279 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+#define OBJ_EVENT_GFX_STATUE_TAPU_FINI               280 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+
+#define OBJ_EVENT_GFX_SHY_GUY_RED                         281 // Project Grounded: Shy Guy (Yoshi's Island, DarkSB24; tools/grounded/shyguy_overworld.py, 32x32)
+#define OBJ_EVENT_GFX_SHY_GUY_GREEN                       282 // Project Grounded: Shy Guy (Yoshi's Island, DarkSB24; tools/grounded/shyguy_overworld.py, 32x32)
+#define OBJ_EVENT_GFX_SHY_GUY_PINK                        283 // Project Grounded: Shy Guy (Yoshi's Island, DarkSB24; tools/grounded/shyguy_overworld.py, 32x32)
+#define OBJ_EVENT_GFX_SHY_GUY_BLACK                       284 // Project Grounded: Shy Guy (Yoshi's Island, DarkSB24; tools/grounded/shyguy_overworld.py, 32x32)
+
+#define OBJ_EVENT_GFX_HOOPA_RING                      285 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
+
+#define OBJ_EVENT_GFX_RUIN_SEAL                       286 // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+
+#define OBJ_EVENT_GFX_RUSTED_SWORD_OW                   287 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+#define OBJ_EVENT_GFX_RUSTED_SHIELD_OW                  288 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+#define OBJ_EVENT_GFX_GIANT_LOG                         289 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+
+#define OBJ_EVENT_GFX_GEN1_GHOST                        290 // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
+#define OBJ_EVENT_GFX_STATUE_CELEBI                     291 // Project Grounded: stenen Celebi-beeld, schrijn in Ilex Forest (tools/grounded/statue_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI                             292 // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_COMMANDER_BOO                     293 // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_WARIO                             294 // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_POOCHY                            295 // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_QCLOUD                            296 // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_NEP_ENUT                          297 // Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_GREEN                       298 // Project Grounded: green Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_RED                         299 // Project Grounded: red Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_YELLOW                      300 // Project Grounded: yellow Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_LIGHT_BLUE                  301 // Project Grounded: light blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_PINK                        302 // Project Grounded: pink Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_PURPLE                      303 // Project Grounded: purple Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_BROWN                       304 // Project Grounded: brown Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_BLACK                       305 // Project Grounded: black Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_WHITE                       306 // Project Grounded: white Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_YOSHI_BLUE                        307 // Project Grounded: blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_SKY                     308 // Project Grounded: construct van Arceus, sky (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_SEA                     309 // Project Grounded: construct van Arceus, sea (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_LAND                    310 // Project Grounded: construct van Arceus, land (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_MIND                    311 // Project Grounded: construct van Arceus, mind (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_DREAM                   312 // Project Grounded: construct van Arceus, dream (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_JUSTICE                 313 // Project Grounded: construct van Arceus, justice (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_FORGE                   314 // Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_ORDER                   315 // Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_GFX_CONSTRUCT_SPACETIME               316 // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
+
+#define OBJ_EVENT_GFX_ULTRA_WORMHOLE                    317 // Project Grounded: Ultra Wormhole (Ultra Space, tools/grounded/ultra_wormhole_sprite.py)
+
+#define OBJ_EVENT_GFX_ULTRA_EYE                         350 // Project Grounded: oog in het Stakataka-doolhof (Ultra Space, tools/grounded/ultra_eye_sprite.py)
+
+#define NUM_OBJ_EVENT_GFX                        351
 
 
 // These are dynamic object gfx ids.
@@ -346,6 +401,7 @@
 #define LIGHT_TYPE_BALL             0
 #define LIGHT_TYPE_PKMN_CENTER_SIGN 1
 #define LIGHT_TYPE_POKE_MART_SIGN   2
+#define LIGHT_TYPE_LIGHTHOUSE_BEAM  3 // Project Grounded: draaiende lichtbundel van de vuurtoren (Beacon Isle)
 
 #define FIRST_DECORATION_SPRITE_GFX OBJ_EVENT_GFX_PICHU_DOLL
 
@@ -409,7 +465,7 @@
 #define OBJ_EVENT_PAL_TAG_POOCHYENA               0x111C
 #define OBJ_EVENT_PAL_TAG_RED_LEAF                0x111D
 #define OBJ_EVENT_PAL_TAG_DEOXYS                  0x111E
-#define OBJ_EVENT_PAL_TAG_BIRTH_ISLAND_STONE      0x111F
+#define OBJ_EVENT_PAL_TAG_DEOXYS_TRIANGLE         0x111F
 #define OBJ_EVENT_PAL_TAG_HO_OH                   0x1120
 #define OBJ_EVENT_PAL_TAG_LUGIA                   0x1121
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
@@ -435,6 +491,40 @@
 #define OBJ_EVENT_PAL_TAG_ROCKET                   0x1137 // Project Grounded: Rocket-sidequest
 #define OBJ_EVENT_PAL_TAG_PETREL                   0x1138 // Project Grounded: Rocket-sidequest
 #define OBJ_EVENT_PAL_TAG_GIANT_WAILORD            0x1139 // Project Grounded: reuzen-Wailord
+#define OBJ_EVENT_PAL_TAG_PLASMA_FRIGATE           0x113A // Project Grounded: Plasma Frigate
+#define OBJ_EVENT_PAL_TAG_CYNTHIA                  0x113B // Project Grounded: strandresort
+#define OBJ_EVENT_PAL_TAG_TURD                     0x113C // Project Grounded: strandresort (drol)
+#define OBJ_EVENT_PAL_TAG_STONE_STATUE             0x113D // Project Grounded: stenen beelden (Tapu-heiligdom)
+#define OBJ_EVENT_PAL_TAG_SHY_GUY_RED              0x113E // Project Grounded: Shy Guy
+#define OBJ_EVENT_PAL_TAG_SHY_GUY_GREEN            0x113F // Project Grounded: Shy Guy
+#define OBJ_EVENT_PAL_TAG_SHY_GUY_PINK             0x1140 // Project Grounded: Shy Guy
+#define OBJ_EVENT_PAL_TAG_SHY_GUY_BLACK            0x1141 // Project Grounded: Shy Guy
+#define OBJ_EVENT_PAL_TAG_RUIN_SEAL               0x1143 // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI                   0x1170 // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_COMMANDER_BOO           0x1171 // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_WARIO                   0x1172 // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_QCLOUD                  0x1174 // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_NEP_ENUT                0x1175 // Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_POOCHY                  0x1173 // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_0          0x1176 // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_1          0x1177 // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_2          0x1178 // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_3          0x1179 // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_YOSHI_COLORS_4          0x117A // Project Grounded: gedeeld palet van de kleuren-Yoshi's (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_SKY           0x1180 // Project Grounded: construct van Arceus, sky (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_SEA           0x1181 // Project Grounded: construct van Arceus, sea (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_LAND          0x1182 // Project Grounded: construct van Arceus, land (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_MIND          0x1183 // Project Grounded: construct van Arceus, mind (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_DREAM         0x1184 // Project Grounded: construct van Arceus, dream (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_JUSTICE       0x1185 // Project Grounded: construct van Arceus, justice (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_FORGE         0x1186 // Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_ORDER         0x1187 // Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_CONSTRUCT_SPACETIME     0x1188 // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
+#define OBJ_EVENT_PAL_TAG_GEN1_GHOST              0x116B // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
+#define OBJ_EVENT_PAL_TAG_MEGA_FOREST             0x1144 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+#define OBJ_EVENT_PAL_TAG_ULTRA_EYE               0x11B5 // Project Grounded: oog in het Stakataka-doolhof (Ultra Space, tools/grounded/ultra_eye_sprite.py)
+#define OBJ_EVENT_PAL_TAG_ULTRA_WORMHOLE          0x11A0 // Project Grounded: Ultra Wormhole (Ultra Space, tools/grounded/ultra_wormhole_sprite.py)
+#define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

@@ -88,7 +88,7 @@
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "ITEM_TM_FIRE_BLAST",
+      "trainer_sight_or_berry_tree_id": "ITEM_FIRE_MEMORY",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_LAVA_TUBE_TM_FIRE_BLAST"
     },

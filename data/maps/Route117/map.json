@@ -353,6 +353,7 @@
       "flag": "0"
     },
     {
+      "local_id": "LOCALID_DAYCARE_MON_0",
       "graphics_id": "OBJ_EVENT_GFX_VAR_0",
       "x": 47,
       "y": 2,
@@ -366,6 +367,7 @@
       "flag": "FLAG_TEMP_1"
     },
     {
+      "local_id": "LOCALID_DAYCARE_MON_1",
       "graphics_id": "OBJ_EVENT_GFX_VAR_1",
       "x": 49,
       "y": 2,
@@ -377,6 +379,19 @@
       "trainer_sight_or_berry_tree_id": "VAR_TEMP_1",
       "script": "NULL",
       "flag": "FLAG_TEMP_2"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(LANDORUS_INCARNATE)",
+      "x": 22,
+      "y": 8,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Forces_EventScript_Landorus",
+      "flag": "FLAG_FORCES_HIDE_LANDORUS"
     }
   ],
   "warp_events": [

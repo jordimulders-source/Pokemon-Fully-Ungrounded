@@ -8,7 +8,6 @@
 #include "malloc.h"
 #include "gpu_regs.h"
 #include "link.h"
-#include "multiboot_pokemon_colosseum.h"
 #include "load_save.h"
 #include "save.h"
 #include "new_game.h"
@@ -133,7 +132,6 @@ enum {
 #define TAG_FLYGON_SILHOUETTE 2002
 #define TAG_RAYQUAZA_ORB      2003
 
-#define COLOSSEUM_GAME_CODE 0x65366347 // "Gc6e" in ASCII
 
 // Used by various tasks and sprites
 #define tState data[0]
@@ -1064,11 +1062,6 @@ static void LoadCopyrightGraphics(u16 tilesetAddress, u16 tilemapAddress, u16 pa
     LoadPalette(gIntroCopyright_Pal, paletteOffset, PLTT_SIZE_4BPP);
 }
 
-static void SerialCB_CopyrightScreen(void)
-{
-    GameCubeMultiBoot_HandleSerialInterrupt(&gMultibootProgramStruct);
-}
-
 static u8 SetUpCopyrightScreen(void)
 {
     switch (gMain.state)
@@ -1100,8 +1093,8 @@ static u8 SetUpCopyrightScreen(void)
         EnableInterrupts(INTR_FLAG_VBLANK);
         SetVBlankCallback(VBlankCB_Intro);
         REG_DISPCNT = DISPCNT_MODE_0 | DISPCNT_OBJ_1D_MAP | DISPCNT_BG0_ON;
-        SetSerialCallback(SerialCB_CopyrightScreen);
-        GameCubeMultiBoot_Init(&gMultibootProgramStruct);
+        // Project Grounded: geen GameCube-koppeling (Pokémon Colosseum-multiboot) meer; de multiboot-image is
+        // uit de ROM gehaald (±160 KB). Het copyrightscherm luistert dus niet meer naar een GameCube.
     // REG_DISPCNT needs to be overwritten the second time, because otherwise the intro won't show up on VBA 1.7.2 and John GBA Lite emulators.
     // The REG_DISPCNT overwrite is NOT needed in m-GBA, No$GBA, VBA 1.8.0, My Boy and Pizza Boy GBA emulators.
     case COPYRIGHT_EMULATOR_BLEND:
@@ -1109,15 +1102,10 @@ static u8 SetUpCopyrightScreen(void)
     default:
         UpdatePaletteFade();
         gMain.state++;
-        GameCubeMultiBoot_Main(&gMultibootProgramStruct);
         break;
     case COPYRIGHT_START_FADE:
-        GameCubeMultiBoot_Main(&gMultibootProgramStruct);
-        if (gMultibootProgramStruct.gcmb_field_2 != 1)
-        {
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
-            gMain.state++;
-        }
+        BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
+        gMain.state++;
         break;
     case COPYRIGHT_START_INTRO:
         if (UpdatePaletteFade())
@@ -1129,24 +1117,8 @@ static u8 SetUpCopyrightScreen(void)
         CreateTask(Task_Scene1_Load, 0);
         SetMainCallback2(MainCB2_Intro);
 #endif
-        if (gMultibootProgramStruct.gcmb_field_2 != 0)
-        {
-            if (gMultibootProgramStruct.gcmb_field_2 == 2)
-            {
-                // check the multiboot ROM header game code to see if we already did this
-                if (*(u32 *)(EWRAM_START + 0xAC) == COLOSSEUM_GAME_CODE)
-                {
-                    CpuCopy16(&gMultiBootProgram_PokemonColosseum_Start, (void *)EWRAM_START, sizeof(gMultiBootProgram_PokemonColosseum_Start));
-                    *(u32 *)(EWRAM_START + 0xAC) = COLOSSEUM_GAME_CODE;
-                }
-                GameCubeMultiBoot_ExecuteProgram(&gMultibootProgramStruct);
-            }
-        }
-        else
-        {
-            GameCubeMultiBoot_Quit();
-            SetSerialCallback(SerialCB);
-        }
+        GameCubeMultiBoot_Quit();
+        SetSerialCallback(SerialCB);
         return 0;
     }
 

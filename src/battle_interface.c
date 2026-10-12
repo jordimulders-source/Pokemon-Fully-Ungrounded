@@ -2814,6 +2814,25 @@ void DestroyAbilityPopUp(u8 battler)
     }
 }
 
+// Project Grounded: aan het begin van elke beurt alle ability-popups meteen verbergen. Popups die nog aan het
+// wegschuiven waren (of met fixedPopup bleven staan) bleven anders half zichtbaar naast het actiemenu (Jordi).
+void ForceHideAbilityPopUps(void)
+{
+    for (u32 battler = 0; battler < gBattlersCount; battler++)
+    {
+        if (!gBattleStruct->battlerState[battler].activeAbilityPopUps)
+            continue;
+        for (u32 i = 0; i < 2; i++)
+        {
+            struct Sprite *sprite = &gSprites[gBattleStruct->abilityPopUpSpriteIds[battler][i]];
+            sprite->invisible = TRUE;
+            sprite->sAutoDestroy = TRUE;
+            sprite->sState = APU_STATE_END;
+        }
+    }
+    gBattleScripting.fixedPopup = FALSE;
+}
+
 static void Task_FreeAbilityPopUpGfx(u8 taskId)
 {
     if (!IsAnyAbilityPopUpActive())

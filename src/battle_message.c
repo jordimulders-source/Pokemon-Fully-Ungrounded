@@ -174,7 +174,7 @@ static const u8 sText_TerrainReturnedToNormal[] = _("The terrain returned to nor
 const u8 *const gBattleStringsTable[STRINGID_COUNT] =
 {
     [STRINGID_TRAINER1LOSETEXT]                     = COMPOUND_STRING("{B_TRAINER1_LOSE_TEXT}"),
-    [STRINGID_PKMNGAINEDEXP]                        = COMPOUND_STRING("{B_BUFF1} gained{B_BUFF2} {B_BUFF3} Exp. Points!\p"),
+    [STRINGID_PKMNGAINEDEXP]                        = COMPOUND_STRING("{B_BUFF1} gained{B_BUFF2} {B_BUFF3} Exp. Points!{PAUSE 40}"),
     [STRINGID_PKMNGREWTOLV]                         = COMPOUND_STRING("{B_BUFF1} grew to Lv. {B_BUFF2}!{WAIT_SE}\p"),
     [STRINGID_PKMNLEARNEDMOVE]                      = COMPOUND_STRING("{B_BUFF1} learned {B_BUFF2}!{WAIT_SE}\p"),
     [STRINGID_TRYTOLEARNMOVE1]                      = COMPOUND_STRING("{B_BUFF1} wants to learn the move {B_BUFF2}.\p"),
@@ -294,7 +294,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_FUNGALCONTROLCHOOSE]                  = COMPOUND_STRING("Spores seep into\n{B_DEF_NAME_WITH_PREFIX2}'s brain…"),
     [STRINGID_FUNGALCONTROLLED]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is now\na fungus puppet!\pIt can only use {B_BUFF1}!"),
     [STRINGID_TRANSMUTED]                           = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was transmuted\ninto {B_BUFF1}!"),
-    [STRINGID_BLACKHOLEFORMED]                      = COMPOUND_STRING("The implosion left a black hole!\pAll hazards on the field were\nswallowed up!"),
+    [STRINGID_BLACKHOLEFORMED]                      = COMPOUND_STRING("The implosion left a black hole!\pEvery hazard, screen and stat change\non the field was swallowed up!"),
     [STRINGID_BLACKHOLESWITCHIN]                    = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} is pulled\ntoward the black hole!"),
     [STRINGID_BLACKHOLEENDS]                        = COMPOUND_STRING("The black hole evaporated.\nThanks, Hawking."),
     [STRINGID_MACHINELEARNINGTRAINED]               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} finished\ntraining epoch {B_BUFF1}!"),
@@ -841,7 +841,11 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNITEMMELTED]                       = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} corroded {B_DEF_NAME_WITH_PREFIX2}'s {B_LAST_ITEM}!"),
     [STRINGID_ULTRABURSTREACTING]                   = COMPOUND_STRING("Bright light is about to burst out of {B_ATK_NAME_WITH_PREFIX2}!"),
     [STRINGID_ULTRABURSTCOMPLETED]                  = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} regained its true power through Ultra Burst!"),
-    [STRINGID_TEAMGAINEDEXP]                        = COMPOUND_STRING("The rest of your team gained Exp. Points thanks to the Exp. Share!\p"),
+    [STRINGID_OBEYWARN_LEVELUP]                     = COMPOUND_STRING("Your badges only command POKéMON up to Lv. {B_BUFF2}.\p{B_BUFF1} may stop obeying you until you earn the next GYM BADGE!\p"), // Project Grounded
+    [STRINGID_OBEYWARN_CAUGHT]                      = COMPOUND_STRING("Your badges only command POKéMON up to Lv. {B_BUFF2}.\p{B_BUFF1} may not obey you until you earn more GYM BADGES!\p"), // Project Grounded
+    [STRINGID_GEN1GHOST_SCARED]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is too scared to move!"), // Project Grounded
+    [STRINGID_GEN1GHOST_GETOUT]                     = COMPOUND_STRING("GHOST: Get out…{PAUSE 20} Get out…"), // Project Grounded
+    [STRINGID_TEAMGAINEDEXP]                        = COMPOUND_STRING("The rest of your team gained Exp. Points thanks to the Exp. Share!{PAUSE 50}"),
     [STRINGID_CURRENTMOVECANTSELECT]                = COMPOUND_STRING("{B_BUFF1} cannot be used!\p"),
     [STRINGID_TARGETISBEINGSALTCURED]               = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is being salt cured!"),
     [STRINGID_TARGETISHURTBYSALTCURE]               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is hurt by {B_BUFF1}!"),
@@ -2611,7 +2615,9 @@ static const u8 *BattleStringGetPlayerName(u8 *text, u8 battler)
     switch (GetBattlerPosition(battler))
     {
     case B_POSITION_PLAYER_LEFT:
-        if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
+        if (gCasinoBattle) // Project Grounded: Battle Casino, de kant die de AI voor "de speler" speelt
+            toCpy = Casino_GetPlayerSideName();
+        else if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
             toCpy = gLinkPlayers[0].name;
         else
             toCpy = gSaveBlock2Ptr->playerName;
@@ -2950,7 +2956,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 }
                 break;
             case B_TXT_TRAINER1_WIN_TEXT: // trainerA win text
-                if (gStadiumBattle)
+                if (gCasinoBattle)
+                    toCpy = Casino_GetWinText(TRAINER_BATTLE_PARAM.opponentA);
+                else if (gStadiumBattle)
                     toCpy = Stadium_GetWinText(TRAINER_BATTLE_PARAM.opponentA);
                 else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 {
@@ -3071,7 +3079,9 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst, u32 dstSize)
                 }
                 break;
             case B_TXT_TRAINER2_WIN_TEXT:
-                if (gStadiumBattle)
+                if (gCasinoBattle)
+                    toCpy = Casino_GetWinText(TRAINER_BATTLE_PARAM.opponentB);
+                else if (gStadiumBattle)
                     toCpy = Stadium_GetWinText(TRAINER_BATTLE_PARAM.opponentB);
                 else if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
                 {

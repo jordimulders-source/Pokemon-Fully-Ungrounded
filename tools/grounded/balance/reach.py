@@ -23,7 +23,7 @@ def tsdir(sym):
 
 def load(mapname):
     d = json.load(open(os.path.join(ROOT, 'data/maps', mapname, 'map.json')))
-    L = [l for l in json.load(open(os.path.join(ROOT, 'data/layouts/layouts.json')))['layouts'] if l['id'] == d['layout']][0]
+    L = [l for l in json.load(open(os.path.join(ROOT, 'data/layouts/layouts.json')))['layouts'] if l.get('id') == d['layout']][0]
     w, h = L['width'], L['height']
     blocks = struct.unpack('<%dH' % (w * h), open(os.path.join(ROOT, L['blockdata_filepath']), 'rb').read())
     pa = open(os.path.join(ROOT, tsdir(L['primary_tileset'])), 'rb').read()

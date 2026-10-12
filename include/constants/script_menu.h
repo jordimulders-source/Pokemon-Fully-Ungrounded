@@ -129,7 +129,7 @@
 #define SSTIDAL_SELECTION_BATTLE_FRONTIER  1
 #define SSTIDAL_SELECTION_SOUTHERN_ISLAND  2
 #define SSTIDAL_SELECTION_NAVEL_ROCK       3
-#define SSTIDAL_SELECTION_BIRTH_ISLAND     4
+// 4 was Birth Island (geschrapt in Project Grounded); nummer vrij gelaten
 #define SSTIDAL_SELECTION_FARAWAY_ISLAND   5
 #define SSTIDAL_SELECTION_FLOWER_PARADISE  6 // Project Grounded: Shaymin
 #define SSTIDAL_SELECTION_EXIT             7

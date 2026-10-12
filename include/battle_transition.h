@@ -109,6 +109,70 @@ enum BattleTransition
     B_TRANSITION_POISON_CHAIN, // Project Grounded: Loyal Three (Okidogi, Munkidori, Fezandipiti), paarse gloeiende Poison Chain
     B_TRANSITION_REGIGIGAS, // Project Grounded: Regigigas, zes ogen (rood/blauw/wit) in het Regi-weefeffect
     B_TRANSITION_DAVE, // Project Grounded: Dave (Freed From Desire), een penalty strak in de winkelhaak, dan GOAL!
+    B_TRANSITION_SICKBLIK, // Project Grounded: SickBlik (Jordi), mugshot, aan tafel bij een hotpot, die van bovenaf een Poké Ball wordt
+    B_TRANSITION_STEVEN, // Project Grounded: Steven, verzamelkast, gloeiende steen met de badges in de facetten, spat uiteen
+    B_TRANSITION_WALLY_VHS, // Project Grounded: Wally (Victory Road), VHS-band van zijn groei, bevriest op zijn gezicht
+    B_TRANSITION_RAYQUAZA_PILLAR, // Project Grounded: Rayquaza, groene ring rond de Sky Pillar, Rayquaza breekt eruit
+    B_TRANSITION_KYOGRE_MURAL, // Project Grounded: Kyogre, oude muurschildering barst, water stroomt erdoor, Primal-markeringen
+    B_TRANSITION_GROUDON_MURAL, // Project Grounded: Groudon, dezelfde schildering, lava stroomt door de barsten
+    B_TRANSITION_OGERPON, // Project Grounded: Ogerpon, maskerkraam op een nachtfestival, het Teal-masker kijkt terug
+    B_TRANSITION_WEATHER_SERVICE, // Project Grounded: Archie + Maxie (werkstraf), koffievlek Groudon/Kyogre, rooster scheurt
+    B_TRANSITION_MIMI, // Project Grounded: Mimi, poppenkast in een donkere kinderkamer, het nekje van de Pikachu-pop knakt
+    B_TRANSITION_KECCLES, // Project Grounded: Keccles, lab vol schoolborden, de camouflage golft weg
+    B_TRANSITION_BURGLAR, // Project Grounded: Burglar, bewakingscamera, de Gen 1-Burglar kijkt in de lens, alarm
+    B_TRANSITION_GYM_ROXANNE, // Project Grounded: Roxanne, concert: aanstekers, spotlight, rotsblok-versterkers, powerchord
+    B_TRANSITION_GYM_BRAWLY, // Project Grounded: Brawly, UFC-walkout, octagon, omroeperbalk, vuist tegen het kooigaas
+    B_TRANSITION_GYM_WATTSON, // Project Grounded: Wattson, serverfarm, pop-ups, WATTCOIN crasht, SCAM-stempel, Wahahahah!
+    B_TRANSITION_GYM_FLANNERY, // Project Grounded: Flannery, camping, Mt. Chimney ontploft, een lavasteen raakt de camera
+    B_TRANSITION_TAPU_KOKO, // Project Grounded: Tapu's, gesloten schild op het motief van het schild, opent op de drumslag
+    B_TRANSITION_TAPU_LELE,
+    B_TRANSITION_TAPU_BULU,
+    B_TRANSITION_TAPU_FINI,
+    B_TRANSITION_GYM_NORMAN, // Project Grounded: Norman, NORMFLIX: Are you still watching?, het beeld krimpt in de tv, Slaking op de bank
+    B_TRANSITION_GYM_WINONA, // Project Grounded: Winona, WINAIR: vertrekbord DELAYED -> BOARDING, Altaria vliegt over, het koffertje springt open
+    B_TRANSITION_GYM_TATE_LIZA, // Project Grounded: Tate & Liza, ouijabord spelt RIP, drie tarotkaarten, psychic overload in lowercase
+    B_TRANSITION_GYM_WALLACE, // Project Grounded: Wallace, Crater Pub: een wijnglas schenkt vol, de wijn wordt Hoenn-blauw, een golf over de pub, Santé!
+    B_TRANSITION_LUGIA, // Project Grounded: Lugia, zinken met een zilveren veer, een oog gaat open, draaikolk, storm
+    B_TRANSITION_HO_OH, // Project Grounded: Ho-Oh, Bell Tower bij schemering, regenboog, vlammenmuur, gouden vleugels
+    B_TRANSITION_VOLCANION, // Project Grounded: Volcanion, manometer in het rood, klinknagels schieten eruit, stoom
+    B_TRANSITION_HOOPA, // Project Grounded: Hoopa, ringportaal, er valt van alles uit, de hand grijpt de camera
+    B_TRANSITION_FORCES, // Project Grounded: Tornadus/Thundurus/Landorus, een weerbericht dat ontspoort
+    B_TRANSITION_VIAGRA_BOYS, // Project Grounded: Youngster Calvin (Route 102, Sports), het Viagra Boys-logo draait en keert van kleur om
+    B_TRANSITION_ARTICUNO, // Project Grounded: Articuno, ijsvarens groeien over de grot, het midden vriest dicht, het ijs spat uiteen
+    B_TRANSITION_ZAPDOS, // Project Grounded: Zapdos, Weather Institute 's nachts in de regen, silhouet bij elke bliksem, steeds dichterbij
+    B_TRANSITION_MOLTRES, // Project Grounded: Moltres, lavameer van Mt. Chimney in hitte, stijgt op in een vlammenring, Sky Attack
+    B_TRANSITION_ZACIAN, // Project Grounded: Zacian, open plek in het Mega Forest, drie zwaardhalen, het beeld splijt
+    B_TRANSITION_ZAMAZENTA, // Project Grounded: Zamazenta, dezelfde open plek, ademen, Iron Defense, Behemoth Bash
+    B_TRANSITION_XERNEAS, // Project Grounded: Xerneas, grauw Ballonlea, de kleur stroomt vanuit de heksenkring terug
+    B_TRANSITION_YVELTAL, // Project Grounded: Yveltal, een schaduw landt in de kring, de kleur trekt weg, Oblivion Wing, zwart
+    B_TRANSITION_WARIO, // Project Grounded: Wario, knoflook wordt opgegeten, de W dreunt erin, poses, de W neemt het beeld over
+    B_TRANSITION_BOO, // Project Grounded: Boos (spookhuis uit Yoshi's Island), Kamek tovert er een tot Commander Boo
+    B_TRANSITION_SHY_GUY, // Project Grounded: Shy Guys op Sunset Wilds, staan in 1-1, eentje beseft dat hij moet vechten
+    B_TRANSITION_DIALGA, // Project Grounded: Dialga, de wandklok uit je kamer slaat op hol, staat stil, blauwe kracht, tijdtunnel
+    B_TRANSITION_PALKIA, // Project Grounded: Palkia, vijf Hoenn-steden op de maat, roze kruipt binnen, alles door elkaar, Spear Pillar, ruimtetunnel
+    B_TRANSITION_ARCEUS, // Project Grounded: Arceus, de wereld trilt en vervormt in heilig licht, het teken slaat drie keer in op de maat
+    B_TRANSITION_MEW, // Project Grounded: Mew, Guyana bij zonsopgang in parallax, een roze glinstering, Mews staart zwiept door beeld
+    B_TRANSITION_LEGEND_CROWN, // Project Grounded (src/data/legend_intros_cheap2.h): Calyrex/Glastrier/Spectrier, hoefafdrukken
+    B_TRANSITION_LEGEND_CELEBI, // Project Grounded: Celebi, GBC-groen, GS-flikkeren, bladeren, GS-spiraal
+    B_TRANSITION_LEGEND_LAKE, // Project Grounded: Uxie/Mesprit/Azelf, meer in de mist, kleurt naar de edelsteen
+    B_TRANSITION_LEGEND_MELOETTA, // Project Grounded: Meloetta, het beeld loopt vol noten
+    B_TRANSITION_LEGEND_ZERAORA, // Project Grounded: Zeraora, elektrische klauwhalen en een poot op de camera
+    B_TRANSITION_LEGEND_ZYGARDE, // Project Grounded: Zygarde, een groene Z als Zorro en het beeld splijt
+    B_TRANSITION_LEGEND_EON, // Project Grounded: Latias/Latios, eonlicht en een dromerige kleurwas
+    B_TRANSITION_LEGEND_CRESSELIA, // Project Grounded: Cresselia, de maan rijst en wast vol, maanmist
+    B_TRANSITION_LEGEND_NECROZMA, // Project Grounded: Necrozma, een zwart prisma zuigt het licht op
+    B_TRANSITION_LEGEND_GALAR_ZAPDOS, // Project Grounded: Galar-Zapdos, sprint en trap
+    B_TRANSITION_LEGEND_GALAR_MOLTRES, // Project Grounded: Galar-Moltres, zwarte vlammen en een duistere aura
+    B_TRANSITION_SWORDS_SLASH, // Project Grounded (legend_intros_cheap1.h): Swords of Justice + Keldeo, het beeld in vier stukken gesneden
+    B_TRANSITION_ULTRA_BEAST, // Project Grounded (cheap1): Ultra Beasts, interdimensionale storing en een Ultra Wormhole
+    B_TRANSITION_PARADOX_PAST, // Project Grounded (cheap1): paradox-Pokémon uit het verleden, verleden/toekomst-flikkering, dan het verleden in
+    B_TRANSITION_PARADOX_FUTURE, // Project Grounded (cheap1): paradox-Pokémon uit de toekomst
+    B_TRANSITION_ETERNATUS, // Project Grounded (cheap1): Eternatus, rode hemel, Dynamax-energie, de grond scheurt open
+    B_TRANSITION_MARSHADOW, // Project Grounded (cheap1): Marshadow, een schaduw neemt het beeld over
+    B_TRANSITION_TERAPAGOS, // Project Grounded (cheap1): Terapagos, ronddraaiende Tera-kristallen
+    B_TRANSITION_PECHARUNT, // Project Grounded (cheap1): Pecharunt, gifnevel, pecha-bessen, gifbellen en ketens
+    B_TRANSITION_RIVAL_INTRO, // Project Grounded (rival_intros.h): May/Brendan, escaleert per gevecht
+    B_TRANSITION_CLASS_INTRO, // Project Grounded (class_intros.h): lichte intro per trainerklasse
     B_TRANSITION_COUNT
 };
 
@@ -126,5 +190,8 @@ enum BattleTransitionGroup
     B_TRANSITION_GROUP_SECRET_BASE,
     B_TRANSITION_GROUP_E_READER,
 };
+
+bool32 RivalIntro_IsRival(u16 trainerId); // Project Grounded (src/data/rival_intros.h)
+bool32 ClassIntro_HasIntro(u32 trainerClass); // Project Grounded (src/data/class_intros.h)
 
 #endif // GUARD_BATTLE_TRANSITION_H

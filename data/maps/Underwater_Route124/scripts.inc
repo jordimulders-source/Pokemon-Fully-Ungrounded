@@ -47,3 +47,12 @@ Underwater_Route124_Text_BirchPostBattle:
 Underwater_Route124_Text_ClamperlDroppings:
 	.string "Small white pearls in the sand.\n"
 	.string "They're not pearls.$"
+
+@ --- zee_vulling_4 (gegenereerd door tools/grounded/maptools/zee_vulling_4.py) ---
+Underwater_Route124_EventScript_ZV4Diver::
+	msgbox Underwater_Route124_Text_ZV4Diver, MSGBOX_NPC
+	end
+
+Underwater_Route124_Text_ZV4Diver:
+	.string "(A diver writes on a slate:)\p'THE HOLE UP NORTH GOES TO AN\nISLAND. OR TO A WHIRLPOOL.\pI'VE BEEN SPINNING FOR 3 DAYS.\nIT'S A WHIRLPOOL.'$"
+@ --- einde zee_vulling_4 ---

@@ -77,8 +77,11 @@ PetalburgCity_PokemonCenter_1F_Text_ManyTypesOfPokemon:
 	.string "So where are the monkeys?!\p"
 	.string "PANSAGE, PANSEAR, PANPOUR!\p"
 	.string "The whole triangle, in monkey form!\p"
-	.string "Somebody left them out on purpose. I\n"
-	.string "KNOW it.$"
+	.string "Somebody left them out on purpose.\p"
+	.string "...Wait. They're BACK? On ROUTE 119?\n"
+	.string "Somebody actually listened to me?\p"
+	.string "That has never happened before.\n"
+	.string "I don't know what to do with my hands.$"
 
 PetalburgCity_PokemonCenter_1F_Text_TreeckoIsGrassType:
 	.string "Your TREECKO is a GRASS type.\p"

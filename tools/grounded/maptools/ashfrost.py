@@ -60,7 +60,7 @@ DOORS=_D()
 # laag 0 (dorp)
 DOORS['lodge']=obj('lodge',4,5,5,5,(1,4))
 DOORS['house_blue']=obj('house_blue',11,6,4,4,(1,3))
-DOORS['pc']=obj('pc',21,5,5,5,(2,4))                  # centraal boven het dal
+DOORS['pc']=obj('pc',21,6,5,5,(2,4))                  # centraal boven het dal; rij 5 erachter blijft begaanbaar
 DOORS['house_pink']=obj('house_pink',29,6,4,4,(2,3))
 DOORS['house_yellow']=obj('house_yellow',36,6,4,4,(1,3))
 DOORS['mart']=obj('mart',3,24,4,4,(2,3))              # bij de ingang
@@ -104,12 +104,11 @@ for i,sp in enumerate(('regirock','regice','registeel')):
     obj(sp,20+3*i,15,2,3)
 for (x,y) in [(10,9),(19,9),(27,9),(34,9),(42,9),(4,22),(42,18),(19,17),(29,17)]:
     if free((x,y)) and free((x,y-1)): m.put(x,y-1,'lamp_0',1); m.put(x,y,'lamp_1',1)
-for x in (20,21,23,24,26,27): put_if(x,18,'g_flowers')
+for x in (20,21,23,24,26,27): put_if(x,18,'g_flowers',0)   # bloemen voor de beelden: begaanbaar (beelden aanspreken)
 for (dx_,dy_) in DOORS.values():
     put_if(dx_-1,dy_+1,'pot_red'); put_if(dx_+1,dy_+1,'pot_white')
 obj('stall',15,6,3,3)                                 # marktkraampje naast het Center
-obj('igloo',33,15,3,3,(1,2))                          # iglo (later de weg naar de Regigigas-grot)
-if m.g[17][34]==N['igloo_12']: m.col[17][34]=1
+IGLOO=obj('igloo',33,15,3,3,(1,2))                    # iglo: altijd open, deur naar de Regigigas-tempel
 # stenen hekje langs de klifrand boven laag 1 (niet voor de trap)
 for x in range(10,38):
     if free((x,12)) and m.g[13][x] not in (N['hstairs_l'],N['hstairs_r']):
@@ -174,7 +173,9 @@ while q:
     for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)):
         n=(x+dx,y+dy)
         if n not in seen and walk(*n) and n not in EVENTS: seen.add(n); q.append(n)
-print('deuren bereikbaar:',{k:(d[0],d[1]+1) in seen for k,d in DOORS.items() if d})
+print('deuren bereikbaar:',{k:(d[0],d[1]+1) in seen for k,d in DOORS.items() if d},'iglo:',(IGLOO[0],IGLOO[1]+1) in seen)
+print('achter het Center (rij 5) begaanbaar:',all((x,5) in seen for x in range(20,27)))
+print('voor de beelden:',all((x,18) in seen for x in (20,21,23,26,27)))
 print('events bereikbaar:',{p:any((p[0]+dx,p[1]+dy) in seen for dx,dy in ((1,0),(-1,0),(0,1),(0,-1))) for p in sorted(EVENTS)})
 shore={c for c in seen if any((c[0]+dx,c[1]+dy) in lake for dx,dy in ((1,0),(-1,0),(0,1),(0,-1)))}
 print('meeroever bereikbaar:',len(shore))

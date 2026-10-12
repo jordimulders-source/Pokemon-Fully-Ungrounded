@@ -3,6 +3,8 @@ MauvilleCity_MapScripts::
 	.byte 0
 
 MauvilleCity_OnTransition:
+	setvar VAR_0x8004, 0
+	call Common_EventScript_SickBlikDevSpawn  @ SickBlik als developer (post-game, dagrotatie)
 	setflag FLAG_VISITED_MAUVILLE_CITY
 	clearflag FLAG_FORCE_MIRAGE_TOWER_VISIBLE
 	clearflag FLAG_HIDE_SLATEPORT_MUSEUM_POPULATION
@@ -654,9 +656,41 @@ MauvilleCity_Text_BeenCheckingOutTV:
 @ bij het Pokémon Center (VAR_COLRESS_MAUVILLE_STATE 1) tot je het wel aangaat.
 MauvilleCity_EventScript_SetColressVisibility::
 	setflag FLAG_HIDE_MAUVILLE_COLRESS
+	call_if_eq VAR_COLRESS_MAUVILLE_STATE, 2, MauvilleCity_EventScript_ColressMagearnaVisibility
 	goto_if_ne VAR_COLRESS_MAUVILLE_STATE, 1, Common_EventScript_NopReturn
 	clearflag FLAG_HIDE_MAUVILLE_COLRESS
 	return
+
+@ Na de Plasma Frigate (VAR_PLASMA_FRIGATE 8) staat Colress bij het Pokémon Center met Magearna, tot je hem hebt.
+MauvilleCity_EventScript_ColressMagearnaVisibility::
+	goto_if_set FLAG_RECEIVED_MAGEARNA, Common_EventScript_NopReturn
+	goto_if_lt VAR_PLASMA_FRIGATE, 8, Common_EventScript_NopReturn
+	setobjectxyperm LOCALID_MAUVILLE_COLRESS, 21, 9
+	setobjectmovementtype LOCALID_MAUVILLE_COLRESS, MOVEMENT_TYPE_FACE_DOWN
+	clearflag FLAG_HIDE_MAUVILLE_COLRESS
+	return
+
+MauvilleCity_EventScript_ColressMagearna::
+	msgbox MauvilleCity_Text_ColressMagearna, MSGBOX_DEFAULT
+	setvar VAR_0x8004, SPECIES_MAGEARNA
+	setvar VAR_0x8005, 60
+	setvar VAR_0x8006, ITEM_NONE
+	call Grounded_EventScript_GiveGiftMon
+	goto_if_eq VAR_RESULT, FALSE, MauvilleCity_EventScript_ColressMagearnaNoRoom
+	setflag FLAG_RECEIVED_MAGEARNA
+	msgbox MauvilleCity_Text_ColressMagearnaAfter, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_MAUVILLE_COLRESS
+	setflag FLAG_HIDE_MAUVILLE_COLRESS
+	fadescreen FADE_FROM_BLACK
+	release
+	end
+
+MauvilleCity_EventScript_ColressMagearnaNoRoom::
+	msgbox MauvilleCity_Text_ColressMagearnaNoRoom, MSGBOX_DEFAULT
+	release
+	end
 
 MauvilleCity_EventScript_ColressArrives::
 	lockall
@@ -723,6 +757,7 @@ MauvilleCity_EventScript_ColressBattle::
 MauvilleCity_EventScript_Colress::
 	lock
 	faceplayer
+	goto_if_eq VAR_COLRESS_MAUVILLE_STATE, 2, MauvilleCity_EventScript_ColressMagearna
 	msgbox MauvilleCity_Text_ColressWaiting, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, MauvilleCity_EventScript_ColressStillWaiting
 	call MauvilleCity_EventScript_ColressBattle
@@ -868,3 +903,31 @@ MauvilleCity_Text_ColressStillWaiting:
 	.string "Still no? Fine. I will keep observing the\n"
 	.string "bike shop. I believe it's about to sell a\l"
 	.string "third bike to nobody.$"
+
+MauvilleCity_Text_ColressMagearna:
+	.string "COLRESS: {PLAYER}. I heard you sank NEO\n"
+	.string "PLASMA's frigate. Well. Inconvenienced\l"
+	.string "it.\p"
+	.string "GENESECT was their idea of science.\n"
+	.string "Bolt a cannon to a fossil and call it\l"
+	.string "progress. Crude.\p"
+	.string "This is MAGEARNA. Built five hundred\n"
+	.string "years ago by someone who actually knew\l"
+	.string "what they were doing.\p"
+	.string "I have studied it for ten years. The\n"
+	.string "main thing I learned is that I am not\l"
+	.string "that person.\p"
+	.string "Take it. It deserves a trainer who\n"
+	.string "brings out its true strength. I'll\l"
+	.string "settle for one who reads the manual.$"
+
+MauvilleCity_Text_ColressMagearnaAfter:
+	.string "COLRESS: Its SOUL-HEART is a\n"
+	.string "mechanical heart. Unlike mine, it works.\p"
+	.string "If it starts ticking louder, that's\n"
+	.string "normal. If it stops, run.$"
+
+MauvilleCity_Text_ColressMagearnaNoRoom:
+	.string "COLRESS: No room? Not even in a box?\n"
+	.string "You have nineteen boxes. Fascinating.\l"
+	.string "Come back when you've freed some up.$"

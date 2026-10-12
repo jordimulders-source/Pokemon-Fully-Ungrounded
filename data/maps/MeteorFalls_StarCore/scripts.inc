@@ -15,7 +15,7 @@ MeteorFalls_StarCore_EventScript_Salamence::
 	closemessage
 	playmoncry SPECIES_SALAMENCE, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_SALAMENCE, 55
+	setwildbattle SPECIES_SALAMENCE, 80
 	dowildbattle
 	specialvar VAR_RESULT, GetBattleOutcome
 	goto_if_eq VAR_RESULT, B_OUTCOME_RAN, MeteorFalls_StarCore_EventScript_SalamenceStays
@@ -69,7 +69,7 @@ MeteorFalls_StarCore_EventScript_Minior5::
 MeteorFalls_StarCore_EventScript_MiniorBattle::
 	playmoncry SPECIES_MINIOR_METEOR, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MINIOR_METEOR, 48
+	setwildbattle SPECIES_MINIOR_METEOR, 74
 	dowildbattle
 	return
 

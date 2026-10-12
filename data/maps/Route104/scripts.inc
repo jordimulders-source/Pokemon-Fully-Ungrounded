@@ -1221,3 +1221,61 @@ Route104_Text_BrendanPostBattle:
 	.string "so I'm gonna stand here and look\l"
 	.string "at the distance.\p"
 	.string "Don't disturb me.$"
+
+@ extra_fights { (tools/grounded/maptools/extra_fights.py)
+Route104_EventScript_EF_SickblikRoute104::
+	trainerbattle_single TRAINER_SICKBLIK_ROUTE_104, Route104_Text_EF_SickblikRoute104Intro, Route104_Text_EF_SickblikRoute104Defeat
+	msgbox Route104_Text_EF_SickblikRoute104PostBattle, MSGBOX_AUTOCLOSE
+	end
+
+Route104_Text_EF_SickblikRoute104Intro:
+	.string "Oh! A player! In my romhack!\p"
+	.string "Hi, I'm SICKBLIK. I made this.\p"
+	.string "Hold still. I need to check if\n"
+	.string "the battles actually work.$"
+
+Route104_Text_EF_SickblikRoute104Defeat:
+	.string "Battles work! Losing also works!\n"
+	.string "Great news for everyone but me.$"
+
+Route104_Text_EF_SickblikRoute104PostBattle:
+	.string "SICKBLIK: A bug? That's a feature.\n"
+	.string "A feature? Probably also a bug.$"
+
+@ }
+
+@ Project Grounded: SickBlik voetbalt op het strand (Jordi, 9 okt)
+Route104_EventScript_SickBlikBeach::
+	lock
+	faceplayer
+	goto_if_defeated TRAINER_SICKBLIK_BEACH, Route104_EventScript_SickBlikBeachAfter
+	msgbox Route104_Text_SickBlikBeachIntro, MSGBOX_DEFAULT
+	trainerbattle_no_intro TRAINER_SICKBLIK_BEACH, Route104_Text_SickBlikBeachDefeat
+	msgbox Route104_Text_SickBlikBeachAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_EventScript_SickBlikBeachAfter:
+	msgbox Route104_Text_SickBlikBeachAfter, MSGBOX_DEFAULT
+	release
+	end
+
+Route104_Text_SickBlikBeachIntro:
+	.string "SICKBLIK: Why does nobody wanna play\n"
+	.string "football with me on the beach?\l"
+	.string "Join in!\p"
+	.string "Oh, you wanna battle? You sure?\n"
+	.string "I'm the romhacker of this game!\p"
+	.string "Well, kind of the slaveworker of\n"
+	.string "several AI programs.\p"
+	.string "But trust me, all the humor and\n"
+	.string "ideas in the game are mine!\p"
+	.string "This team too. Vamos!$"
+
+Route104_Text_SickBlikBeachDefeat:
+	.string "The AI programs did NOT\n"
+	.string "see this coming.$"
+
+Route104_Text_SickBlikBeachAfter:
+	.string "SICKBLIK: Fine, no football then.\n"
+	.string "I'll go yell at a WINGULL instead.$"

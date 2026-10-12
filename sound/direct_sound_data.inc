@@ -401,9 +401,6 @@ Cry_Venusaur::
 	.incbin "sound/direct_sound_samples/cries/venusaur.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_VenusaurMega::
-	.incbin "sound/direct_sound_samples/cries/venusaur_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_BULBASAUR
 
@@ -421,13 +418,6 @@ Cry_Charizard::
 	.incbin "sound/direct_sound_samples/cries/charizard.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_CharizardMegaX::
-	.incbin "sound/direct_sound_samples/cries/charizard_mega_x.bin"
-
-	.align 2
-Cry_CharizardMegaY::
-	.incbin "sound/direct_sound_samples/cries/charizard_mega_y.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_CHARMANDER
 
@@ -445,9 +435,6 @@ Cry_Blastoise::
 	.incbin "sound/direct_sound_samples/cries/blastoise.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_BlastoiseMega::
-	.incbin "sound/direct_sound_samples/cries/blastoise_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SQUIRTLE
 
@@ -479,9 +466,6 @@ Cry_Beedrill::
 	.incbin "sound/direct_sound_samples/cries/beedrill.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_BeedrillMega::
-	.incbin "sound/direct_sound_samples/cries/beedrill_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_WEEDLE
 
@@ -499,9 +483,6 @@ Cry_Pidgeot::
 	.incbin "sound/direct_sound_samples/cries/pidgeot.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_PidgeotMega::
-	.incbin "sound/direct_sound_samples/cries/pidgeot_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_PIDGEY
 
@@ -782,9 +763,6 @@ Cry_Alakazam::
 	.incbin "sound/direct_sound_samples/cries/alakazam.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_AlakazamMega::
-	.incbin "sound/direct_sound_samples/cries/alakazam_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ABRA
 
@@ -865,9 +843,6 @@ Cry_Slowking::
 	.incbin "sound/direct_sound_samples/cries/slowking.bin"
 .endif @ P_GEN_2_CROSS_EVOS
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_SlowbroMega::
-	.incbin "sound/direct_sound_samples/cries/slowbro_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .if P_GALARIAN_FORMS == TRUE
 	.align 2
@@ -977,9 +952,6 @@ Cry_Steelix::
 	.incbin "sound/direct_sound_samples/cries/steelix.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_SteelixMega::
-	.incbin "sound/direct_sound_samples/cries/steelix_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_GEN_2_CROSS_EVOS
 .endif @ P_FAMILY_ONIX
@@ -1130,9 +1102,6 @@ Cry_Kangaskhan::
 	.incbin "sound/direct_sound_samples/cries/kangaskhan.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_KangaskhanMega::
-	.incbin "sound/direct_sound_samples/cries/kangaskhan_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_KANGASKHAN
 
@@ -1202,9 +1171,6 @@ Cry_Scizor::
 	.incbin "sound/direct_sound_samples/cries/scizor.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_ScizorMega::
-	.incbin "sound/direct_sound_samples/cries/scizor_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_GEN_2_CROSS_EVOS
 .if P_GEN_8_CROSS_EVOS == TRUE
@@ -1268,9 +1234,6 @@ Cry_Pinsir::
 	.incbin "sound/direct_sound_samples/cries/pinsir.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_PinsirMega::
-	.incbin "sound/direct_sound_samples/cries/pinsir_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_PINSIR
 
@@ -1290,9 +1253,6 @@ Cry_Gyarados::
 	.incbin "sound/direct_sound_samples/cries/gyarados.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_GyaradosMega::
-	.incbin "sound/direct_sound_samples/cries/gyarados_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MAGIKARP
 
@@ -1394,9 +1354,6 @@ Cry_Aerodactyl::
 	.incbin "sound/direct_sound_samples/cries/aerodactyl.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_AerodactylMega::
-	.incbin "sound/direct_sound_samples/cries/aerodactyl_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_AERODACTYL
 
@@ -1450,10 +1407,6 @@ Cry_Mewtwo::
 	.incbin "sound/direct_sound_samples/cries/mewtwo.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_MewtwoMegaX::
-	.incbin "sound/direct_sound_samples/cries/mewtwo_mega_x.bin"
-
 	.align 2
 Cry_MewtwoMegaY::
 	.incbin "sound/direct_sound_samples/cries/mewtwo_mega_y.bin"
@@ -1598,9 +1551,6 @@ Cry_Ampharos::
 	.incbin "sound/direct_sound_samples/cries/ampharos.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_AmpharosMega::
-	.incbin "sound/direct_sound_samples/cries/ampharos_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MAREEP
 
@@ -1812,9 +1762,6 @@ Cry_Heracross::
 	.incbin "sound/direct_sound_samples/cries/heracross.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_HeracrossMega::
-	.incbin "sound/direct_sound_samples/cries/heracross_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_HERACROSS
 
@@ -1935,9 +1882,6 @@ Cry_Houndoom::
 	.incbin "sound/direct_sound_samples/cries/houndoom.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_HoundoomMega::
-	.incbin "sound/direct_sound_samples/cries/houndoom_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_HOUNDOUR
 
@@ -2007,9 +1951,6 @@ Cry_Tyranitar::
 	.incbin "sound/direct_sound_samples/cries/tyranitar.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_TyranitarMega::
-	.incbin "sound/direct_sound_samples/cries/tyranitar_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_LARVITAR
 
@@ -2045,9 +1986,6 @@ Cry_Sceptile::
 	.incbin "sound/direct_sound_samples/cries/sceptile.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_SceptileMega::
-	.incbin "sound/direct_sound_samples/cries/sceptile_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_TREECKO
 
@@ -2065,9 +2003,6 @@ Cry_Blaziken::
 	.incbin "sound/direct_sound_samples/cries/blaziken.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_BlazikenMega::
-	.incbin "sound/direct_sound_samples/cries/blaziken_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_TORCHIC
 
@@ -2085,9 +2020,6 @@ Cry_Swampert::
 	.incbin "sound/direct_sound_samples/cries/swampert.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_SwampertMega::
-	.incbin "sound/direct_sound_samples/cries/swampert_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MUDKIP
 
@@ -2202,9 +2134,6 @@ Cry_Gardevoir::
 	.incbin "sound/direct_sound_samples/cries/gardevoir.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_GardevoirMega::
-	.incbin "sound/direct_sound_samples/cries/gardevoir_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .if P_GEN_4_CROSS_EVOS == TRUE
 	.align 2
@@ -2212,9 +2141,6 @@ Cry_Gallade::
 	.incbin "sound/direct_sound_samples/cries/gallade.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_GalladeMega::
-	.incbin "sound/direct_sound_samples/cries/gallade_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_GEN_4_CROSS_EVOS
 .endif @ P_FAMILY_RALTS
@@ -2319,9 +2245,6 @@ Cry_Sableye::
 	.incbin "sound/direct_sound_samples/cries/sableye.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_SableyeMega::
-	.incbin "sound/direct_sound_samples/cries/sableye_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SABLEYE
 
@@ -2331,9 +2254,6 @@ Cry_Mawile::
 	.incbin "sound/direct_sound_samples/cries/mawile.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_MawileMega::
-	.incbin "sound/direct_sound_samples/cries/mawile_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MAWILE
 
@@ -2351,9 +2271,6 @@ Cry_Aggron::
 	.incbin "sound/direct_sound_samples/cries/aggron.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_AggronMega::
-	.incbin "sound/direct_sound_samples/cries/aggron_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ARON
 
@@ -2367,9 +2284,6 @@ Cry_Medicham::
 	.incbin "sound/direct_sound_samples/cries/medicham.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_MedichamMega::
-	.incbin "sound/direct_sound_samples/cries/medicham_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MEDITITE
 
@@ -2383,9 +2297,6 @@ Cry_Manectric::
 	.incbin "sound/direct_sound_samples/cries/manectric.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_ManectricMega::
-	.incbin "sound/direct_sound_samples/cries/manectric_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ELECTRIKE
 
@@ -2449,9 +2360,6 @@ Cry_Sharpedo::
 	.incbin "sound/direct_sound_samples/cries/sharpedo.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_SharpedoMega::
-	.incbin "sound/direct_sound_samples/cries/sharpedo_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_CARVANHA
 
@@ -2475,9 +2383,6 @@ Cry_Camerupt::
 	.incbin "sound/direct_sound_samples/cries/camerupt.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_CameruptMega::
-	.incbin "sound/direct_sound_samples/cries/camerupt_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_NUMEL
 
@@ -2537,9 +2442,6 @@ Cry_Altaria::
 	.incbin "sound/direct_sound_samples/cries/altaria.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_AltariaMega::
-	.incbin "sound/direct_sound_samples/cries/altaria_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SWABLU
 
@@ -2649,9 +2551,6 @@ Cry_Banette::
 	.incbin "sound/direct_sound_samples/cries/banette.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_BanetteMega::
-	.incbin "sound/direct_sound_samples/cries/banette_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SHUPPET
 
@@ -2695,9 +2594,6 @@ Cry_Absol::
 	.incbin "sound/direct_sound_samples/cries/absol.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_AbsolMega::
-	.incbin "sound/direct_sound_samples/cries/absol_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ABSOL
 
@@ -2711,9 +2607,6 @@ Cry_Glalie::
 	.incbin "sound/direct_sound_samples/cries/glalie.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_GlalieMega::
-	.incbin "sound/direct_sound_samples/cries/glalie_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .if P_GEN_4_CROSS_EVOS == TRUE
 	.align 2
@@ -2776,9 +2669,6 @@ Cry_Salamence::
 	.incbin "sound/direct_sound_samples/cries/salamence.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_SalamenceMega::
-	.incbin "sound/direct_sound_samples/cries/salamence_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_BAGON
 
@@ -2826,9 +2716,6 @@ Cry_Latias::
 	.incbin "sound/direct_sound_samples/cries/latias.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_LatiasMega::
-	.incbin "sound/direct_sound_samples/cries/latias_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_LATIAS
 
@@ -2838,9 +2725,6 @@ Cry_Latios::
 	.incbin "sound/direct_sound_samples/cries/latios.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_LatiosMega::
-	.incbin "sound/direct_sound_samples/cries/latios_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_LATIOS
 
@@ -3084,9 +2968,6 @@ Cry_Lopunny::
 	.incbin "sound/direct_sound_samples/cries/lopunny.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_LopunnyMega::
-	.incbin "sound/direct_sound_samples/cries/lopunny_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_BUNEARY
 
@@ -3146,9 +3027,6 @@ Cry_Garchomp::
 	.incbin "sound/direct_sound_samples/cries/garchomp.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_GarchompMega::
-	.incbin "sound/direct_sound_samples/cries/garchomp_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_GIBLE
 
@@ -3162,9 +3040,6 @@ Cry_Lucario::
 	.incbin "sound/direct_sound_samples/cries/lucario.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_LucarioMega::
-	.incbin "sound/direct_sound_samples/cries/lucario_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_RIOLU
 
@@ -3224,9 +3099,6 @@ Cry_Abomasnow::
 	.incbin "sound/direct_sound_samples/cries/abomasnow.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_AbomasnowMega::
-	.incbin "sound/direct_sound_samples/cries/abomasnow_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SNOVER
 
@@ -3508,9 +3380,6 @@ Cry_Audino::
 	.incbin "sound/direct_sound_samples/cries/audino.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_AudinoMega::
-	.incbin "sound/direct_sound_samples/cries/audino_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_AUDINO
 
@@ -4525,9 +4394,6 @@ Cry_Diancie::
 	.incbin "sound/direct_sound_samples/cries/diancie.bin"
 
 .if P_MEGA_EVOLUTIONS == TRUE
-	.align 2
-Cry_DiancieMega::
-	.incbin "sound/direct_sound_samples/cries/diancie_mega.bin"
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_DIANCIE
 
@@ -6172,370 +6038,6 @@ DirectSoundWaveData_sc88pro_nylon_str_guitar::
 DirectSoundWaveData_sd90_special_scream_drive::
 	.incbin "sound/direct_sound_samples/sd90_special_scream_drive.bin"
 
-
-.if PHONEMES_SHARED == TRUE
-	.align 2
-DirectSoundWaveData_Phoneme_1::
-
-	.align 2
-DirectSoundWaveData_Phoneme_2::
-
-	.align 2
-DirectSoundWaveData_Phoneme_3::
-
-	.align 2
-DirectSoundWaveData_Phoneme_4::
-
-	.align 2
-DirectSoundWaveData_Phoneme_5::
-
-	.align 2
-DirectSoundWaveData_Phoneme_6::
-
-	.align 2
-DirectSoundWaveData_Phoneme_7::
-
-	.align 2
-DirectSoundWaveData_Phoneme_8::
-
-	.align 2
-DirectSoundWaveData_Phoneme_9::
-
-	.align 2
-DirectSoundWaveData_Phoneme_10::
-
-	.align 2
-DirectSoundWaveData_Phoneme_11::
-
-	.align 2
-DirectSoundWaveData_Phoneme_12::
-
-	.align 2
-DirectSoundWaveData_Phoneme_13::
-
-	.align 2
-DirectSoundWaveData_Phoneme_14::
-
-	.align 2
-DirectSoundWaveData_Phoneme_15::
-
-	.align 2
-DirectSoundWaveData_Phoneme_16::
-
-	.align 2
-DirectSoundWaveData_Phoneme_17::
-
-	.align 2
-DirectSoundWaveData_Phoneme_18::
-
-	.align 2
-DirectSoundWaveData_Phoneme_19::
-
-	.align 2
-DirectSoundWaveData_Phoneme_20::
-
-	.align 2
-DirectSoundWaveData_Phoneme_21::
-
-	.align 2
-DirectSoundWaveData_Phoneme_22::
-
-	.align 2
-DirectSoundWaveData_Phoneme_23::
-
-	.align 2
-DirectSoundWaveData_Phoneme_24::
-
-	.align 2
-DirectSoundWaveData_Phoneme_25::
-
-	.align 2
-DirectSoundWaveData_Phoneme_26::
-
-	.align 2
-DirectSoundWaveData_Phoneme_27::
-
-	.align 2
-DirectSoundWaveData_Phoneme_28::
-
-	.align 2
-DirectSoundWaveData_Phoneme_29::
-
-	.align 2
-DirectSoundWaveData_Phoneme_30::
-
-	.align 2
-DirectSoundWaveData_Phoneme_31::
-
-	.align 2
-DirectSoundWaveData_Phoneme_32::
-
-	.align 2
-DirectSoundWaveData_Phoneme_33::
-
-	.align 2
-DirectSoundWaveData_Phoneme_34::
-
-	.align 2
-DirectSoundWaveData_Phoneme_35::
-
-	.align 2
-DirectSoundWaveData_Phoneme_36::
-
-	.align 2
-DirectSoundWaveData_Phoneme_37::
-
-	.align 2
-DirectSoundWaveData_Phoneme_38::
-
-	.align 2
-DirectSoundWaveData_Phoneme_39::
-
-	.align 2
-DirectSoundWaveData_Phoneme_40::
-
-	.align 2
-DirectSoundWaveData_Phoneme_41::
-
-	.align 2
-DirectSoundWaveData_Phoneme_42::
-
-	.align 2
-DirectSoundWaveData_Phoneme_43::
-
-	.align 2
-DirectSoundWaveData_Phoneme_44::
-
-	.align 2
-DirectSoundWaveData_Phoneme_45::
-
-	.align 2
-DirectSoundWaveData_Phoneme_46::
-
-	.align 2
-DirectSoundWaveData_Phoneme_47::
-
-	.align 2
-DirectSoundWaveData_Phoneme_48::
-
-	.align 2
-DirectSoundWaveData_Phoneme_49::
-
-	.align 2
-DirectSoundWaveData_Phoneme_50::
-
-	.align 2
-DirectSoundWaveData_Phoneme_51::
-	.incbin "sound/direct_sound_samples/phonemes/shared.bin"
-
-.else @ PHONEMES_SHARED
-
-	.align 2
-DirectSoundWaveData_Phoneme_1::
-	.incbin "sound/direct_sound_samples/phonemes/01.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_2::
-	.incbin "sound/direct_sound_samples/phonemes/02.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_3::
-	.incbin "sound/direct_sound_samples/phonemes/03.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_4::
-	.incbin "sound/direct_sound_samples/phonemes/04.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_5::
-	.incbin "sound/direct_sound_samples/phonemes/05.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_6::
-	.incbin "sound/direct_sound_samples/phonemes/06.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_7::
-	.incbin "sound/direct_sound_samples/phonemes/07.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_8::
-	.incbin "sound/direct_sound_samples/phonemes/08.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_9::
-	.incbin "sound/direct_sound_samples/phonemes/09.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_10::
-	.incbin "sound/direct_sound_samples/phonemes/10.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_11::
-	.incbin "sound/direct_sound_samples/phonemes/11.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_12::
-	.incbin "sound/direct_sound_samples/phonemes/12.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_13::
-	.incbin "sound/direct_sound_samples/phonemes/13.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_14::
-	.incbin "sound/direct_sound_samples/phonemes/14.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_15::
-	.incbin "sound/direct_sound_samples/phonemes/15.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_16::
-	.incbin "sound/direct_sound_samples/phonemes/16.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_17::
-	.incbin "sound/direct_sound_samples/phonemes/17.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_18::
-	.incbin "sound/direct_sound_samples/phonemes/18.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_19::
-	.incbin "sound/direct_sound_samples/phonemes/19.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_20::
-	.incbin "sound/direct_sound_samples/phonemes/20.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_21::
-	.incbin "sound/direct_sound_samples/phonemes/21.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_22::
-	.incbin "sound/direct_sound_samples/phonemes/22.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_23::
-	.incbin "sound/direct_sound_samples/phonemes/23.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_24::
-	.incbin "sound/direct_sound_samples/phonemes/24.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_25::
-	.incbin "sound/direct_sound_samples/phonemes/25.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_26::
-	.incbin "sound/direct_sound_samples/phonemes/26.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_27::
-	.incbin "sound/direct_sound_samples/phonemes/27.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_28::
-	.incbin "sound/direct_sound_samples/phonemes/28.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_29::
-	.incbin "sound/direct_sound_samples/phonemes/29.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_30::
-	.incbin "sound/direct_sound_samples/phonemes/30.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_31::
-	.incbin "sound/direct_sound_samples/phonemes/31.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_32::
-	.incbin "sound/direct_sound_samples/phonemes/32.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_33::
-	.incbin "sound/direct_sound_samples/phonemes/33.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_34::
-	.incbin "sound/direct_sound_samples/phonemes/34.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_35::
-	.incbin "sound/direct_sound_samples/phonemes/35.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_36::
-	.incbin "sound/direct_sound_samples/phonemes/36.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_37::
-	.incbin "sound/direct_sound_samples/phonemes/37.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_38::
-	.incbin "sound/direct_sound_samples/phonemes/38.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_39::
-	.incbin "sound/direct_sound_samples/phonemes/39.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_40::
-	.incbin "sound/direct_sound_samples/phonemes/40.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_41::
-	.incbin "sound/direct_sound_samples/phonemes/41.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_42::
-	.incbin "sound/direct_sound_samples/phonemes/42.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_43::
-	.incbin "sound/direct_sound_samples/phonemes/43.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_44::
-	.incbin "sound/direct_sound_samples/phonemes/44.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_45::
-	.incbin "sound/direct_sound_samples/phonemes/45.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_46::
-	.incbin "sound/direct_sound_samples/phonemes/46.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_47::
-	.incbin "sound/direct_sound_samples/phonemes/47.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_48::
-	.incbin "sound/direct_sound_samples/phonemes/48.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_49::
-	.incbin "sound/direct_sound_samples/phonemes/49.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_50::
-	.incbin "sound/direct_sound_samples/phonemes/50.bin"
-
-	.align 2
-DirectSoundWaveData_Phoneme_51::
-	.incbin "sound/direct_sound_samples/phonemes/51.bin"
-
-.endif @ PHONEMES_SHARED
-
 	.align 2
 DirectSoundWaveData_sc88pro_accordion_duplicate::
 	.incbin "sound/direct_sound_samples/sc88pro_accordion_duplicate.bin"
@@ -6551,18 +6053,6 @@ DirectSoundWaveData_sd90_classical_whistle::
 	.align 2
 DirectSoundWaveData_sd90_enhanced_delay_shaku::
 	.incbin "sound/direct_sound_samples/sd90_enhanced_delay_shaku.bin"
-
-	.align 2
-DirectSoundWaveData_gm_clean_guitar::
-	.incbin "sound/direct_sound_samples/grounded/gm_clean_guitar.bin"
-
-	.align 2
-DirectSoundWaveData_gm_steel_drums::
-	.incbin "sound/direct_sound_samples/grounded/gm_steel_drums.bin"
-
-	.align 2
-DirectSoundWaveData_gm_saw_lead::
-	.incbin "sound/direct_sound_samples/grounded/gm_saw_lead.bin"
 
 	.align 2
 DirectSoundWaveData_shaymin_harp::
@@ -6764,7 +6254,6 @@ DirectSoundWaveData_sb_dead_thumb::
 DirectSoundWaveData_sb_dead_pop::
 	.incbin "sound/direct_sound_samples/grounded/sb_dead_pop.bin"
 
-
 	.align 2
 DirectSoundWaveData_sb_gtr_scratch::
 	.incbin "sound/direct_sound_samples/grounded/sb_gtr_scratch.bin"
@@ -6818,92 +6307,16 @@ DirectSoundWaveData_sb_closed_hat::
 	.incbin "sound/direct_sound_samples/grounded/sb_closed_hat.bin"
 
 	.align 2
-DirectSoundWaveData_mitch_reese_dark::
-	.incbin "sound/direct_sound_samples/grounded/mitch_reese_dark.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_reese_mid::
-	.incbin "sound/direct_sound_samples/grounded/mitch_reese_mid.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_reese_bright::
-	.incbin "sound/direct_sound_samples/grounded/mitch_reese_bright.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_growl::
-	.incbin "sound/direct_sound_samples/grounded/mitch_growl.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_wob_f1::
-	.incbin "sound/direct_sound_samples/grounded/mitch_wob_f1.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_wob_ab1::
-	.incbin "sound/direct_sound_samples/grounded/mitch_wob_ab1.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_wob_c2::
-	.incbin "sound/direct_sound_samples/grounded/mitch_wob_c2.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_wob_db2::
-	.incbin "sound/direct_sound_samples/grounded/mitch_wob_db2.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_wob_eb2::
-	.incbin "sound/direct_sound_samples/grounded/mitch_wob_eb2.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_lead::
-	.incbin "sound/direct_sound_samples/grounded/mitch_lead.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_stab_min::
-	.incbin "sound/direct_sound_samples/grounded/mitch_stab_min.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_stab_maj::
-	.incbin "sound/direct_sound_samples/grounded/mitch_stab_maj.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_horn_min::
-	.incbin "sound/direct_sound_samples/grounded/mitch_horn_min.bin"
-
-	.align 2
 DirectSoundWaveData_mitch_pad_min::
 	.incbin "sound/direct_sound_samples/grounded/mitch_pad_min.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_horn_maj::
-	.incbin "sound/direct_sound_samples/grounded/mitch_horn_maj.bin"
 
 	.align 2
 DirectSoundWaveData_mitch_pad_maj::
 	.incbin "sound/direct_sound_samples/grounded/mitch_pad_maj.bin"
 
 	.align 2
-DirectSoundWaveData_mitch_kick::
-	.incbin "sound/direct_sound_samples/grounded/mitch_kick.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_snare::
-	.incbin "sound/direct_sound_samples/grounded/mitch_snare.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_ghost::
-	.incbin "sound/direct_sound_samples/grounded/mitch_ghost.bin"
-
-	.align 2
 DirectSoundWaveData_mitch_revcym::
 	.incbin "sound/direct_sound_samples/grounded/mitch_revcym.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_rewind::
-	.incbin "sound/direct_sound_samples/grounded/mitch_rewind.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_airhorn::
-	.incbin "sound/direct_sound_samples/grounded/mitch_airhorn.bin"
 
 	.align 2
 DirectSoundWaveData_mitch_ride::
@@ -7034,18 +6447,6 @@ DirectSoundWaveData_mitch_hat::
 	.incbin "sound/direct_sound_samples/grounded/mitch_hat.bin"
 
 	.align 2
-DirectSoundWaveData_mitch_ohat::
-	.incbin "sound/direct_sound_samples/grounded/mitch_ohat.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_reese_raw::
-	.incbin "sound/direct_sound_samples/grounded/mitch_reese_raw.bin"
-
-	.align 2
-DirectSoundWaveData_mitch_reese_raw_dark::
-	.incbin "sound/direct_sound_samples/grounded/mitch_reese_raw_dark.bin"
-
-	.align 2
 DirectSoundWaveData_genesect_bass::
 	.incbin "sound/direct_sound_samples/grounded/genesect_bass.bin"
 
@@ -7154,44 +6555,8 @@ DirectSoundWaveData_darkrai_revcym::
 	.incbin "sound/direct_sound_samples/grounded/darkrai_revcym.bin"
 
 	.align 2
-DirectSoundWaveData_mitch3_kick::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_kick.bin"
-
-	.align 2
-DirectSoundWaveData_mitch3_snare::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_snare.bin"
-
-	.align 2
 DirectSoundWaveData_mitch3_ghost::
 	.incbin "sound/direct_sound_samples/grounded/mitch3_ghost.bin"
-
-	.align 2
-DirectSoundWaveData_mitch3_brass_lo::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_brass_lo.bin"
-
-	.align 2
-DirectSoundWaveData_mitch3_brass_hi::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_brass_hi.bin"
-
-	.align 2
-DirectSoundWaveData_mitch3_pluck::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_pluck.bin"
-
-	.align 2
-DirectSoundWaveData_mitch3_wob_f1::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_wob_f1.bin"
-
-	.align 2
-DirectSoundWaveData_mitch3_wob_c2::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_wob_c2.bin"
-
-	.align 2
-DirectSoundWaveData_mitch3_wob_db2::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_wob_db2.bin"
-
-	.align 2
-DirectSoundWaveData_mitch3_wob_eb2::
-	.incbin "sound/direct_sound_samples/grounded/mitch3_wob_eb2.bin"
 
 	.align 2
 DirectSoundWaveData_gym2_cello::
@@ -7206,20 +6571,8 @@ DirectSoundWaveData_gym2_braam::
 	.incbin "sound/direct_sound_samples/grounded/gym2_braam.bin"
 
 	.align 2
-DirectSoundWaveData_gym2_concert_bd::
-	.incbin "sound/direct_sound_samples/grounded/gym2_concert_bd.bin"
-
-	.align 2
-DirectSoundWaveData_gym2_low_tom::
-	.incbin "sound/direct_sound_samples/grounded/gym2_low_tom.bin"
-
-	.align 2
 DirectSoundWaveData_gym2_pop_stab::
 	.incbin "sound/direct_sound_samples/grounded/gym2_pop_stab.bin"
-
-	.align 2
-DirectSoundWaveData_gym2_pop_kick::
-	.incbin "sound/direct_sound_samples/grounded/gym2_pop_kick.bin"
 
 	.align 2
 DirectSoundWaveData_gym2_vibes::
@@ -7274,20 +6627,12 @@ DirectSoundWaveData_gym2_ride::
 	.incbin "sound/direct_sound_samples/grounded/gym2_ride.bin"
 
 	.align 2
-DirectSoundWaveData_gym2_shaker::
-	.incbin "sound/direct_sound_samples/grounded/gym2_shaker.bin"
-
-	.align 2
 DirectSoundWaveData_gym2_pop_lead::
 	.incbin "sound/direct_sound_samples/grounded/gym2_pop_lead.bin"
 
 	.align 2
 DirectSoundWaveData_gym2_pop_pluck::
 	.incbin "sound/direct_sound_samples/grounded/gym2_pop_pluck.bin"
-
-	.align 2
-DirectSoundWaveData_gym2_psy_kick::
-	.incbin "sound/direct_sound_samples/grounded/gym2_psy_kick.bin"
 
 	.align 2
 DirectSoundWaveData_gym2_psy_bass::
@@ -7302,10 +6647,6 @@ DirectSoundWaveData_gym2_psy_lead_b::
 	.incbin "sound/direct_sound_samples/grounded/gym2_psy_lead_b.bin"
 
 	.align 2
-DirectSoundWaveData_gym2_psy_zap::
-	.incbin "sound/direct_sound_samples/grounded/gym2_psy_zap.bin"
-
-	.align 2
 DirectSoundWaveData_gym2_pop_stab5::
 	.incbin "sound/direct_sound_samples/grounded/gym2_pop_stab5.bin"
 
@@ -7318,128 +6659,12 @@ DirectSoundWaveData_gym2_psy_acid::
 	.incbin "sound/direct_sound_samples/grounded/gym2_psy_acid.bin"
 
 	.align 2
-DirectSoundWaveData_gym_rox_power::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_power.bin"
-
-	.align 2
-DirectSoundWaveData_gym_rox_lead_60::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_lead_60.bin"
-
-	.align 2
-DirectSoundWaveData_gym_rox_lead_72::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_lead_72.bin"
-
-	.align 2
-DirectSoundWaveData_gym_rox_lead_84::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_lead_84.bin"
-
-	.align 2
 DirectSoundWaveData_gym_rox_clean_60::
 	.incbin "sound/direct_sound_samples/grounded/gym_rox_clean_60.bin"
 
 	.align 2
 DirectSoundWaveData_gym_rox_clean_72::
 	.incbin "sound/direct_sound_samples/grounded/gym_rox_clean_72.bin"
-
-	.align 2
-DirectSoundWaveData_gym_rox_kick::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_kick.bin"
-
-	.align 2
-DirectSoundWaveData_gym_rox_snare::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_snare.bin"
-
-	.align 2
-DirectSoundWaveData_gym_rox_hat::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_hat.bin"
-
-	.align 2
-DirectSoundWaveData_gym_rox_crash::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_crash.bin"
-
-	.align 2
-DirectSoundWaveData_gym_rox_tom_41::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_tom_41.bin"
-
-	.align 2
-DirectSoundWaveData_gym_rox_tom_45::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_tom_45.bin"
-
-	.align 2
-DirectSoundWaveData_gym_rox_tom_48::
-	.incbin "sound/direct_sound_samples/grounded/gym_rox_tom_48.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_chug::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_chug.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_power::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_power.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_lead_60::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_lead_60.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_lead_72::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_lead_72.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_lead_84::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_lead_84.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_lead2_60::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_lead2_60.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_lead2_72::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_lead2_72.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_lead2_84::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_lead2_84.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_bass::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_bass.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_kick::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_kick.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_snare::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_snare.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_hat::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_hat.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_china::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_china.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_crash::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_crash.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_tom_41::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_tom_41.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_tom_45::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_tom_45.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_tom_48::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_tom_48.bin"
-
-	.align 2
-DirectSoundWaveData_gym_bra_scratch::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_scratch.bin"
 
 	.align 2
 DirectSoundWaveData_gym_wat_kick::
@@ -7474,92 +6699,12 @@ DirectSoundWaveData_gym_wat_bass::
 	.incbin "sound/direct_sound_samples/grounded/gym_wat_bass.bin"
 
 	.align 2
-DirectSoundWaveData_gym_fla_nylon_60::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_nylon_60.bin"
-
-	.align 2
-DirectSoundWaveData_gym_fla_nylon_72::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_nylon_72.bin"
-
-	.align 2
-DirectSoundWaveData_gym_fla_nylon_84::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_nylon_84.bin"
-
-	.align 2
-DirectSoundWaveData_gym_fla_violin_60::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_violin_60.bin"
-
-	.align 2
-DirectSoundWaveData_gym_fla_violin_72::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_violin_72.bin"
-
-	.align 2
-DirectSoundWaveData_gym_fla_rasg::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_rasg.bin"
-
-	.align 2
-DirectSoundWaveData_gym_fla_strum::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_strum.bin"
-
-	.align 2
-DirectSoundWaveData_gym_fla_golpe::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_golpe.bin"
-
-	.align 2
-DirectSoundWaveData_gym_fla_palmas::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_palmas.bin"
-
-	.align 2
-DirectSoundWaveData_gym_fla_sorda::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_sorda.bin"
-
-	.align 2
 DirectSoundWaveData_gym_fla_cajon_bass::
 	.incbin "sound/direct_sound_samples/grounded/gym_fla_cajon_bass.bin"
 
 	.align 2
 DirectSoundWaveData_gym_fla_cajon_slap::
 	.incbin "sound/direct_sound_samples/grounded/gym_fla_cajon_slap.bin"
-
-	.align 2
-DirectSoundWaveData_gym_fla_castanets::
-	.incbin "sound/direct_sound_samples/grounded/gym_fla_castanets.bin"
-
-	.align 2
-DirectSoundWaveData_np_sine::
-	.incbin "sound/direct_sound_samples/grounded/np_sine.bin"
-
-	.align 2
-DirectSoundWaveData_np_organ_sharp::
-	.incbin "sound/direct_sound_samples/grounded/np_organ_sharp.bin"
-
-	.align 2
-DirectSoundWaveData_mitch4_kick::
-	.incbin "sound/direct_sound_samples/grounded/mitch4_kick.bin"
-
-	.align 2
-DirectSoundWaveData_mitch4_snare::
-	.incbin "sound/direct_sound_samples/grounded/mitch4_snare.bin"
-
-	.align 2
-DirectSoundWaveData_mitch4_wob_f1::
-	.incbin "sound/direct_sound_samples/grounded/mitch4_wob_f1.bin"
-
-	.align 2
-DirectSoundWaveData_mitch4_wob_c2::
-	.incbin "sound/direct_sound_samples/grounded/mitch4_wob_c2.bin"
-
-	.align 2
-DirectSoundWaveData_mitch4_wob_db2::
-	.incbin "sound/direct_sound_samples/grounded/mitch4_wob_db2.bin"
-
-	.align 2
-DirectSoundWaveData_mitch4_wob_eb2::
-	.incbin "sound/direct_sound_samples/grounded/mitch4_wob_eb2.bin"
-
-	.align 2
-DirectSoundWaveData_np_synth_bass::
-	.incbin "sound/direct_sound_samples/grounded/np_synth_bass.bin"
 
 	.align 2
 DirectSoundWaveData_heatran_st_pw_36::
@@ -7618,36 +6763,8 @@ DirectSoundWaveData_darkrai_drone::
 	.incbin "sound/direct_sound_samples/grounded/darkrai_drone.bin"
 
 	.align 2
-DirectSoundWaveData_gym_bra_epower::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_epower.bin"
-
-	.align 2
 DirectSoundWaveData_gym_fla_gba_nylon::
 	.incbin "sound/direct_sound_samples/grounded/gym_fla_gba_nylon.bin"
-
-	.align 2
-DirectSoundWaveData_gym2_celesta::
-	.incbin "sound/direct_sound_samples/grounded/gym2_celesta.bin"
-
-	.align 2
-DirectSoundWaveData_gym2_wpad_dom::
-	.incbin "sound/direct_sound_samples/grounded/gym2_wpad_dom.bin"
-
-	.align 2
-DirectSoundWaveData_gym2_wpad_maj::
-	.incbin "sound/direct_sound_samples/grounded/gym2_wpad_maj.bin"
-
-	.align 2
-DirectSoundWaveData_gym2_wpad_min::
-	.incbin "sound/direct_sound_samples/grounded/gym2_wpad_min.bin"
-
-	.align 2
-DirectSoundWaveData_gym2_wpad_sus::
-	.incbin "sound/direct_sound_samples/grounded/gym2_wpad_sus.bin"
-
-	.align 2
-DirectSoundWaveData_gym2_wpad_5::
-	.incbin "sound/direct_sound_samples/grounded/gym2_wpad_5.bin"
 
 	.align 2
 DirectSoundWaveData_gym2_nb_dom::
@@ -7742,10 +6859,6 @@ DirectSoundWaveData_mitch5_snare::
 	.incbin "sound/direct_sound_samples/grounded/mitch5_snare.bin"
 
 	.align 2
-DirectSoundWaveData_mitch5_reese_raw::
-	.incbin "sound/direct_sound_samples/grounded/mitch5_reese_raw.bin"
-
-	.align 2
 DirectSoundWaveData_mitch5_reese_raw_dark::
 	.incbin "sound/direct_sound_samples/grounded/mitch5_reese_raw_dark.bin"
 
@@ -7764,14 +6877,6 @@ DirectSoundWaveData_mitch5_wob_db2::
 	.align 2
 DirectSoundWaveData_mitch5_wob_eb2::
 	.incbin "sound/direct_sound_samples/grounded/mitch5_wob_eb2.bin"
-
-	.align 2
-DirectSoundWaveData_np_lead_fat::
-	.incbin "sound/direct_sound_samples/grounded/np_lead_fat.bin"
-
-	.align 2
-DirectSoundWaveData_np_lead_fat_lo::
-	.incbin "sound/direct_sound_samples/grounded/np_lead_fat_lo.bin"
 
 	.align 2
 DirectSoundWaveData_gym2_w_saw::
@@ -7842,10 +6947,6 @@ DirectSoundWaveData_gym_rox_pbass::
 	.incbin "sound/direct_sound_samples/grounded/gym_rox_pbass.bin"
 
 	.align 2
-DirectSoundWaveData_gym_bra_scratch2::
-	.incbin "sound/direct_sound_samples/grounded/gym_bra_scratch2.bin"
-
-	.align 2
 DirectSoundWaveData_gym_fla_down_five::
 	.incbin "sound/direct_sound_samples/grounded/gym_fla_down_five.bin"
 
@@ -7884,3 +6985,1127 @@ DirectSoundWaveData_gym_fla_pclara::
 	.align 2
 DirectSoundWaveData_gym_fla_psorda::
 	.incbin "sound/direct_sound_samples/grounded/gym_fla_psorda.bin"
+
+	.align 2
+DirectSoundWaveData_bg_upright::
+	.incbin "sound/direct_sound_samples/grounded/bg_upright.bin"
+
+	.align 2
+DirectSoundWaveData_bg_mtpt::
+	.incbin "sound/direct_sound_samples/grounded/bg_mtpt.bin"
+
+	.align 2
+DirectSoundWaveData_bg_bari::
+	.incbin "sound/direct_sound_samples/grounded/bg_bari.bin"
+
+	.align 2
+DirectSoundWaveData_bg_vibes::
+	.incbin "sound/direct_sound_samples/grounded/bg_vibes.bin"
+
+	.align 2
+DirectSoundWaveData_bg_stab::
+	.incbin "sound/direct_sound_samples/grounded/bg_stab.bin"
+
+	.align 2
+DirectSoundWaveData_bg_kick::
+	.incbin "sound/direct_sound_samples/grounded/bg_kick.bin"
+
+	.align 2
+DirectSoundWaveData_bg_brush_tap::
+	.incbin "sound/direct_sound_samples/grounded/bg_brush_tap.bin"
+
+	.align 2
+DirectSoundWaveData_bg_brush_slap::
+	.incbin "sound/direct_sound_samples/grounded/bg_brush_slap.bin"
+
+	.align 2
+DirectSoundWaveData_bg_ride::
+	.incbin "sound/direct_sound_samples/grounded/bg_ride.bin"
+
+	.align 2
+DirectSoundWaveData_bg_hat::
+	.incbin "sound/direct_sound_samples/grounded/bg_hat.bin"
+
+	.align 2
+DirectSoundWaveData_bg_hat_pedal::
+	.incbin "sound/direct_sound_samples/grounded/bg_hat_pedal.bin"
+
+	.align 2
+DirectSoundWaveData_bg_hat_open::
+	.incbin "sound/direct_sound_samples/grounded/bg_hat_open.bin"
+
+	.align 2
+DirectSoundWaveData_bg_snare::
+	.incbin "sound/direct_sound_samples/grounded/bg_snare.bin"
+
+	.align 2
+DirectSoundWaveData_bg_rim::
+	.incbin "sound/direct_sound_samples/grounded/bg_rim.bin"
+
+	.align 2
+DirectSoundWaveData_bg_crash::
+	.incbin "sound/direct_sound_samples/grounded/bg_crash.bin"
+
+	.align 2
+DirectSoundWaveData_bg_tom_lo::
+	.incbin "sound/direct_sound_samples/grounded/bg_tom_lo.bin"
+
+	.align 2
+DirectSoundWaveData_bg_tom_hi::
+	.incbin "sound/direct_sound_samples/grounded/bg_tom_hi.bin"
+
+	.align 2
+DirectSoundWaveData_bg_snap::
+	.incbin "sound/direct_sound_samples/grounded/bg_snap.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_odaiko::
+	.incbin "sound/direct_sound_samples/grounded/tapu_odaiko.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_taiko::
+	.incbin "sound/direct_sound_samples/grounded/tapu_taiko.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_ka::
+	.incbin "sound/direct_sound_samples/grounded/tapu_ka.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_crash::
+	.incbin "sound/direct_sound_samples/grounded/tapu_crash.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_vox_a::
+	.incbin "sound/direct_sound_samples/grounded/tapu_vox_a.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_vox_hu::
+	.incbin "sound/direct_sound_samples/grounded/tapu_vox_hu.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_synth::
+	.incbin "sound/direct_sound_samples/grounded/tapu_synth.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shami_52::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shami_52.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shami_59::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shami_59.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shami_66::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shami_66.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shami_73::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shami_73.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_koto_57::
+	.incbin "sound/direct_sound_samples/grounded/hooh_koto_57.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_koto_64::
+	.incbin "sound/direct_sound_samples/grounded/hooh_koto_64.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_koto_71::
+	.incbin "sound/direct_sound_samples/grounded/hooh_koto_71.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_koto_78::
+	.incbin "sound/direct_sound_samples/grounded/hooh_koto_78.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shaku_62::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shaku_62.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shaku_69::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shaku_69.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shaku_76::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shaku_76.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_sho::
+	.incbin "sound/direct_sound_samples/grounded/hooh_sho.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_odaiko::
+	.incbin "sound/direct_sound_samples/grounded/hooh_odaiko.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_nagado::
+	.incbin "sound/direct_sound_samples/grounded/hooh_nagado.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_shime::
+	.incbin "sound/direct_sound_samples/grounded/hooh_shime.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_ka::
+	.incbin "sound/direct_sound_samples/grounded/hooh_ka.bin"
+
+	.align 2
+DirectSoundWaveData_hooh_kiai::
+	.incbin "sound/direct_sound_samples/grounded/hooh_kiai.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_impact::
+	.incbin "sound/direct_sound_samples/grounded/tapu_impact.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_brass::
+	.incbin "sound/direct_sound_samples/grounded/tapu_brass.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_brass_hi::
+	.incbin "sound/direct_sound_samples/grounded/tapu_brass_hi.bin"
+
+	.align 2
+DirectSoundWaveData_tapu_lead::
+	.incbin "sound/direct_sound_samples/grounded/tapu_lead.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_oud_50::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_oud_50.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_oud_57::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_oud_57.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_oud_64::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_oud_64.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_oud_71::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_oud_71.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_mizmar_57::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_mizmar_57.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_mizmar_64::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_mizmar_64.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_mizmar_71::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_mizmar_71.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_dum::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_dum.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_tek::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_tek.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_bendir::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_bendir.bin"
+
+	.align 2
+DirectSoundWaveData_hoopa_zill::
+	.incbin "sound/direct_sound_samples/grounded/hoopa_zill.bin"
+
+@ yi_samples { (tools/grounded/spc/spc2gba.py)
+	.align 2
+DirectSoundWaveData_yi_m88ac58b4::
+	.incbin "sound/direct_sound_samples/grounded/yi_m88ac58b4.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m39b1d92b::
+	.incbin "sound/direct_sound_samples/grounded/yi_m39b1d92b.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m20fbd656::
+	.incbin "sound/direct_sound_samples/grounded/yi_m20fbd656.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m6722e044::
+	.incbin "sound/direct_sound_samples/grounded/yi_m6722e044.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m9c7726bb::
+	.incbin "sound/direct_sound_samples/grounded/yi_m9c7726bb.bin"
+
+	.align 2
+DirectSoundWaveData_yi_mf50ad3de::
+	.incbin "sound/direct_sound_samples/grounded/yi_mf50ad3de.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m81e158f6::
+	.incbin "sound/direct_sound_samples/grounded/yi_m81e158f6.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m3b55e06a::
+	.incbin "sound/direct_sound_samples/grounded/yi_m3b55e06a.bin"
+
+	.align 2
+DirectSoundWaveData_yi_mb3ebf3bb::
+	.incbin "sound/direct_sound_samples/grounded/yi_mb3ebf3bb.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m88221d6a::
+	.incbin "sound/direct_sound_samples/grounded/yi_m88221d6a.bin"
+
+	.align 2
+DirectSoundWaveData_yi_md3d45d85::
+	.incbin "sound/direct_sound_samples/grounded/yi_md3d45d85.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m10dcb6ad::
+	.incbin "sound/direct_sound_samples/grounded/yi_m10dcb6ad.bin"
+
+	.align 2
+DirectSoundWaveData_yi_m28089580::
+	.incbin "sound/direct_sound_samples/grounded/yi_m28089580.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d31d9aad8_1989::
+	.incbin "sound/direct_sound_samples/grounded/yi_d31d9aad8_1989.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d55eeb0c7_2022::
+	.incbin "sound/direct_sound_samples/grounded/yi_d55eeb0c7_2022.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d7bb38411_2044::
+	.incbin "sound/direct_sound_samples/grounded/yi_d7bb38411_2044.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d7bb38411_2296::
+	.incbin "sound/direct_sound_samples/grounded/yi_d7bb38411_2296.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d7bb38411_2580::
+	.incbin "sound/direct_sound_samples/grounded/yi_d7bb38411_2580.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d47803877_2044::
+	.incbin "sound/direct_sound_samples/grounded/yi_d47803877_2044.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d7bb38411_4601::
+	.incbin "sound/direct_sound_samples/grounded/yi_d7bb38411_4601.bin"
+
+	.align 2
+DirectSoundWaveData_yi_dcb99354f_1623::
+	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_1623.bin"
+
+	.align 2
+DirectSoundWaveData_yi_dcb99354f_1929::
+	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_1929.bin"
+
+	.align 2
+DirectSoundWaveData_yi_d40f10563_4877::
+	.incbin "sound/direct_sound_samples/grounded/yi_d40f10563_4877.bin"
+
+	.align 2
+DirectSoundWaveData_yi_de7bd4dd3_2231::
+	.incbin "sound/direct_sound_samples/grounded/yi_de7bd4dd3_2231.bin"
+
+	.align 2
+DirectSoundWaveData_yi_dcb99354f_4601::
+	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_4601.bin"
+
+	.align 2
+DirectSoundWaveData_yi_dcb99354f_6140::
+	.incbin "sound/direct_sound_samples/grounded/yi_dcb99354f_6140.bin"
+
+@ } yi_samples
+
+@ rip mksc (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_mksc_170a60::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_170a60.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_172438::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_172438.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_174974::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_174974.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_17e8ec::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_17e8ec.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1804fc::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1804fc.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_194f2c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_194f2c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a2648::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a2648.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a4ea0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a4ea0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a564c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a564c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a6994::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a6994.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a7320::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a7320.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1aaa08::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1aaa08.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b54f0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b54f0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b7f44::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b7f44.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b92b8::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b92b8.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1ba620::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1ba620.bin"
+
+@ rip mksc (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_mksc_16faac::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_16faac.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_187738::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_187738.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_188fc0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_188fc0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a8e14::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a8e14.bin"
+
+@ rip mksc (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_mksc_17d448::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_17d448.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_182238::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_182238.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_18661c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_18661c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a5338::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a5338.bin"
+
+@ rip mksc (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_mksc_1769cc::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1769cc.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_179498::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_179498.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_17af68::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_17af68.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_17be30::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_17be30.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_196d48::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_196d48.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1986b0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1986b0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a318c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a318c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1a45c0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1a45c0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1ad5c8::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1ad5c8.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b00b4::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b00b4.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b13d0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b13d0.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1b1f24::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1b1f24.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1bf78c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1bf78c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_1c16b0::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_1c16b0.bin"
+
+@ rip mksc (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_mksc_16e798::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_16e798.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_18b73c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_18b73c.bin"
+
+	.align 2
+DirectSoundWaveData_mksc_18dd3c::
+	.incbin "sound/direct_sound_samples/rip/mksc/mksc_18dd3c.bin"
+	.align 2
+DirectSoundWaveData_ruinous_taiko::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_taiko.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_boom::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_boom.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_ka::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_ka.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_impact::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_impact.bin"
+
+	.align 2
+DirectSoundWaveData_az_crystal::
+	.incbin "sound/direct_sound_samples/grounded/az_crystal.bin"
+
+
+
+
+
+
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_0d0c08::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_0d0c08.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_0a4228::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_0a4228.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_10619c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_10619c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_1090d8::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_1090d8.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_129b90::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_129b90.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_09bf88::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_09bf88.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_10bf9c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_10bf9c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12ed1c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12ed1c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12ef50::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12ef50.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12f31c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12f31c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_136398::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_136398.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_13d7ac::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_13d7ac.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_13e280::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_13e280.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_13e614::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_13e614.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_13e990::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_13e990.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_0a7160::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_0a7160.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_10a674::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_10a674.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11475c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11475c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11e2d4::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11e2d4.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11ee84::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11ee84.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11fc74::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11fc74.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12a58c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12a58c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12d308::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12d308.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12f638::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12f638.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_1300bc::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_1300bc.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_109f88::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_109f88.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11d674::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11d674.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12b490::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12b490.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12ddb8::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12ddb8.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_109784::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_109784.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11003c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11003c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11a45c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11a45c.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_121814::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_121814.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12b9ec::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12b9ec.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12c15c::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12c15c.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_0a7bc4::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_0a7bc4.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_105748::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_105748.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_106a94::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_106a94.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_108288::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_108288.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_108944::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_108944.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_116ae4::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_116ae4.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11bf68::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11bf68.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_11eee8::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_11eee8.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_12eab4::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_12eab4.bin"
+
+@ rip wl4 (mp2k_rip.py)
+	.align 2
+DirectSoundWaveData_wl4_0a5ae8::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_0a5ae8.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_110c04::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_110c04.bin"
+
+	.align 2
+DirectSoundWaveData_wl4_115de0::
+	.incbin "sound/direct_sound_samples/rip/wl4/wl4_115de0.bin"
+	.align 2
+DirectSoundWaveData_az_voice::
+	.incbin "sound/direct_sound_samples/grounded/az_voice.bin"
+
+	.align 2
+DirectSoundWaveData_az_voice_lo::
+	.incbin "sound/direct_sound_samples/grounded/az_voice_lo.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_00::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_00.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_01::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_01.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_02::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_02.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_03::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_03.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_04::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_04.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_05::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_05.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_06::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_06.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_07::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_07.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_08::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_08.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_09::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_09.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_10::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_10.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_11::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_11.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_12::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_12.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_13::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_13.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_14::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_14.bin"
+
+	.align 2
+DirectSoundWaveData_az_choir_15::
+	.incbin "sound/direct_sound_samples/grounded/az_choir_15.bin"
+
+
+
+	.align 2
+DirectSoundWaveData_ruinous_ostbar::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_ostbar.bin"
+
+
+	.align 2
+DirectSoundWaveData_ruinous_bass::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_bass.bin"
+
+
+
+
+
+
+
+
+
+
+	.align 2
+DirectSoundWaveData_az_aria_0::
+	.incbin "sound/direct_sound_samples/grounded/az_aria_0.bin"
+
+	.align 2
+DirectSoundWaveData_az_aria_1::
+	.incbin "sound/direct_sound_samples/grounded/az_aria_1.bin"
+
+	.align 2
+DirectSoundWaveData_az_aria_2::
+	.incbin "sound/direct_sound_samples/grounded/az_aria_2.bin"
+
+	.align 2
+DirectSoundWaveData_az_aria_3::
+	.incbin "sound/direct_sound_samples/grounded/az_aria_3.bin"
+
+	.align 2
+DirectSoundWaveData_az_aria_4::
+	.incbin "sound/direct_sound_samples/grounded/az_aria_4.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7a_lead_55::
+	.incbin "sound/direct_sound_samples/grounded/mitch7a_lead_55.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7a_lead_61::
+	.incbin "sound/direct_sound_samples/grounded/mitch7a_lead_61.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7a_lead_67::
+	.incbin "sound/direct_sound_samples/grounded/mitch7a_lead_67.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7b_lead_55::
+	.incbin "sound/direct_sound_samples/grounded/mitch7b_lead_55.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7b_lead_61::
+	.incbin "sound/direct_sound_samples/grounded/mitch7b_lead_61.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7b_lead_67::
+	.incbin "sound/direct_sound_samples/grounded/mitch7b_lead_67.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7c_lead_55::
+	.incbin "sound/direct_sound_samples/grounded/mitch7c_lead_55.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7c_lead_61::
+	.incbin "sound/direct_sound_samples/grounded/mitch7c_lead_61.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7c_lead_67::
+	.incbin "sound/direct_sound_samples/grounded/mitch7c_lead_67.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7_pluck::
+	.incbin "sound/direct_sound_samples/grounded/mitch7_pluck.bin"
+
+	.align 2
+DirectSoundWaveData_mitch7_reese_raw::
+	.incbin "sound/direct_sound_samples/grounded/mitch7_reese_raw.bin"
+
+	.align 2
+DirectSoundWaveData_ub_glass::
+	.incbin "sound/direct_sound_samples/grounded/ub_glass.bin"
+
+	.align 2
+DirectSoundWaveData_ub_swell::
+	.incbin "sound/direct_sound_samples/grounded/ub_swell.bin"
+	.align 2
+DirectSoundWaveData_az_bells_0::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_0.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_1::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_1.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_2::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_2.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_3::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_3.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_4::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_4.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_intro::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_intro.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_lo58::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_lo58.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_ostbar2::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_ostbar2.bin"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	.align 2
+DirectSoundWaveData_ruinous_wide14::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_wide14.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_wide18::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_wide18.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_call::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_call.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_5::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_5.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st21::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st21.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st23::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st23.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st25::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st25.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st27::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st27.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st29::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st29.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st31::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st31.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st33::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st33.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st35::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st35.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st37::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st37.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st39::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st39.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st41::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st41.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st43::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st43.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st45::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st45.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st47::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st47.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st49::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st49.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st51::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st51.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st53::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st53.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st55::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st55.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st57::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st57.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st59::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st59.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st61::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st61.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st63::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st63.bin"
+
+	.align 2
+DirectSoundWaveData_ruinous_st65::
+	.incbin "sound/direct_sound_samples/grounded/ruinous_st65.bin"
+	.align 2
+DirectSoundWaveData_az_bells_6::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_6.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_7::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_7.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_8::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_8.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_9::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_9.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_10::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_10.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_11::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_11.bin"
+
+	.align 2
+DirectSoundWaveData_az_bells_12::
+	.incbin "sound/direct_sound_samples/grounded/az_bells_12.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_0::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_0.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_1::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_1.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_2::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_2.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_3::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_3.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_4::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_4.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_5::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_5.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_6::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_6.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_7::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_7.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_8::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_8.bin"
+
+	.align 2
+DirectSoundWaveData_vsaz_9::
+	.incbin "sound/direct_sound_samples/grounded/vsaz_9.bin"
+
+	.align 2
+DirectSoundWaveData_trclass_steel::
+	.incbin "sound/direct_sound_samples/grounded/trclass_steel.bin"
+
+	.align 2
+DirectSoundWaveData_trclass_vibes::
+	.incbin "sound/direct_sound_samples/grounded/trclass_vibes.bin"
+	.align 2
+DirectSoundWaveData_regio_steeldrum::
+	.incbin "sound/direct_sound_samples/grounded/regio_steeldrum.bin"

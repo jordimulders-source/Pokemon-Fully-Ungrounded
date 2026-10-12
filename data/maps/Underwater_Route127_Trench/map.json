@@ -1,0 +1,194 @@
+{
+  "id": "MAP_UNDERWATER_ROUTE127_TRENCH",
+  "name": "Underwater_Route127_Trench",
+  "layout": "LAYOUT_UNDERWATER_ROUTE127_TRENCH",
+  "music": "MUS_UNDERWATER",
+  "region_map_section": "MAPSEC_ROUTE_127",
+  "requires_flash": false,
+  "weather": "WEATHER_UNDERWATER_BUBBLES",
+  "map_type": "MAP_TYPE_UNDERWATER",
+  "allow_cycling": true,
+  "allow_escaping": false,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SWIMMER_F",
+      "x": 7,
+      "y": 22,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NORMAL",
+      "trainer_sight_or_berry_tree_id": "4",
+      "script": "Underwater_Route127_Trench_EventScript_ZV4Abyssa",
+      "flag": "0"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 5,
+      "y": 60,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DEEP_SEA_TOOTH",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ZV4_TRENCH_DEEP_SEA_TOOTH"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 34,
+      "y": 85,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_DEEP_SEA_SCALE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_ZV4_TRENCH_DEEP_SEA_SCALE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 36,
+      "y": 55,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_LURE_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_LURE_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 35,
+      "y": 65,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 3,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_HEAVY_BALL",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_HEAVY_BALL"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 4,
+      "y": 80,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_BINDING_BAND",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_BINDING_BAND"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 8,
+      "y": 71,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_EJECT_BUTTON",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_EJECT_BUTTON"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 35,
+      "y": 91,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POWER_ANKLET",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_POWER_ANKLET"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 7,
+      "y": 94,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 2,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_EXP_CANDY_L",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_UNDERWATER_ROUTE127_TRENCH_EXP_CANDY_L"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 7,
+      "y": 1,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_ROUTE127",
+      "dest_warp_id": "3"
+    },
+    {
+      "x": 8,
+      "y": 89,
+      "elevation": 0,
+      "dest_map": "MAP_UNDERWATER_ROUTE128",
+      "dest_warp_id": "3"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 8,
+      "y": 9,
+      "elevation": 3,
+      "item": "ITEM_DIVE_BALL",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_TRENCH_DIVE_BALL"
+    },
+    {
+      "type": "hidden_item",
+      "x": 18,
+      "y": 96,
+      "elevation": 3,
+      "item": "ITEM_RELIC_CROWN",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_TRENCH_RELIC_CROWN"
+    },
+    {
+      "type": "hidden_item",
+      "x": 28,
+      "y": 84,
+      "elevation": 3,
+      "item": "ITEM_RELIC_VASE",
+      "flag": "FLAG_HIDDEN_ITEM_UNDERWATER_ROUTE127_TRENCH_RELIC_VASE"
+    },
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 89,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "Underwater_Route127_Trench_EventScript_ZV4Bottom"
+    },
+    {
+      "type": "hidden_item",
+      "x": 12,
+      "y": 40,
+      "elevation": 3,
+      "item": "ITEM_SEA_SHARD",
+      "flag": "FLAG_ITEM_SEA_SHARD_UNDERWATER_ROUTE127_TRENCH"
+    }
+  ]
+}

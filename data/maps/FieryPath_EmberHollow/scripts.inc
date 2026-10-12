@@ -13,7 +13,7 @@ FieryPath_EmberHollow_EventScript_Munkidori::
 FieryPath_EmberHollow_EventScript_MunkidoriBattle::
 	playmoncry SPECIES_MUNKIDORI, CRY_MODE_ENCOUNTER
 	waitmoncry
-	setwildbattle SPECIES_MUNKIDORI, 65
+	setwildbattle SPECIES_MUNKIDORI, 91
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

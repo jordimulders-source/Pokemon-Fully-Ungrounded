@@ -8,6 +8,10 @@ def use_tileset(name):
     """Wissel naar een andere sneeuw-tileset (bijv. 'snow_town' voor Ashfrost): N en de render volgen mee."""
     N.clear(); N.update(json.load(open(os.path.join(REPO,f'data/tilesets/secondary/{name}/metatile_names.json')))); SEC[0]=name
     if os.path.isdir(os.path.join(REPO,f'data/tilesets/primary/{name}_base')): PRIM[0]=name+'_base'   # eigen primary (Ashfrost)
+def FRONT_B():
+    # In de route-sneeuwset heeft cliff_front_b een grotopening (zwarte boog): als gewone klifvoet gaf dat een rij
+    # zwarte gaten langs elke wand. Daar de rotslaag van cliff_b gebruiken (zoals snow_town al doet).
+    return 'cliff_b' if SEC[0]=='snow' else 'cliff_front_b'
 class M:
     def __init__(s,W,H,base='snow'):
         s.W,s.H=W,H; s.g=[[N[base]]*W for _ in range(H)]; s.col=[[0]*W for _ in range(H)]; s.elev=[[3]*W for _ in range(H)]
@@ -23,7 +27,7 @@ class M:
                 top=y==y0 and 'n' not in open_; bot=y>=y0+h-face and 's' not in open_
                 l=x==x0 and 'w' not in open_; r=x==x0+w-1 and 'e' not in open_
                 if bot:
-                    n='cliff_b' if y==y0+h-face else 'cliff_front_b'
+                    n='cliff_b' if y==y0+h-face else FRONT_B()
                     if y==y0+h-face:
                         if l: n='cliff_bl'
                         elif r: n='cliff_br'
@@ -125,7 +129,7 @@ def terrace(m,R,face=2,skip=set()):
             if d==face or (d==1 and face==1):
                 n='cliff_bl' if l else 'cliff_br' if r else 'cliff_b'
             elif d==1 or face<=2:
-                n='cliff_front_a' if l else 'cliff_front_c' if r else 'cliff_front_b'
+                n='cliff_front_a' if l else 'cliff_front_c' if r else FRONT_B()
             else:
                 n=N.get('cliff_mid_l','cliff_l') if l else N.get('cliff_mid_r','cliff_r') if r else N.get('cliff_mid',169)
             c=1

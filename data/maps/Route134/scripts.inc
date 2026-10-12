@@ -51,3 +51,41 @@ Route134_EventScript_Kelvin::
 	msgbox Route134_Text_KelvinPostBattle, MSGBOX_AUTOCLOSE
 	end
 
+@ --- zee_vulling_2 (gegenereerd door tools/grounded/maptools/zee_vulling_2.py) ---
+Route134_EventScript_ZV2Architect::
+	msgbox Route134_Text_ZV2Architect, MSGBOX_NPC
+	end
+
+Route134_Text_ZV2Architect:
+	.string "This is where the lighthouse goes.\nBig. White. Stripes. A light.\pProblem: nobody in HOENN knows what\na lighthouse looks like.\pI asked around. Someone drew me a\nvery tall PEEKO. I'm considering it.\p...Wait. There's one south of ROUTE 133\nalready? And the lamp is a LANTURN?\pCheater.$"
+
+Route134_EventScript_ZV2Kage::
+	trainerbattle_single TRAINER_NINJA_BOY_KAGE, Route134_Text_ZV2Kage_Intro, Route134_Text_ZV2Kage_Defeat
+	msgbox Route134_Text_ZV2Kage_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route134_Text_ZV2Kage_Intro:
+	.string "...!\pYou saw me?! I was hiding! In the\nsand! In full black clothing!$"
+
+Route134_Text_ZV2Kage_Defeat:
+	.string "My disguise needs work.\nMaybe a beige ninja.$"
+
+Route134_Text_ZV2Kage_Post:
+	.string "The architect thinks I'm a\nlighthouse. I'm not correcting him.$"
+@ --- einde zee_vulling_2 ---
+
+@ --- zee_vulling_4 (gegenereerd door tools/grounded/maptools/zee_vulling_4.py) ---
+Route134_EventScript_ZV4Dorian::
+	trainerbattle_single TRAINER_RUIN_MANIAC_DORIAN, Route134_Text_ZV4Dorian_Intro, Route134_Text_ZV4Dorian_Defeat
+	msgbox Route134_Text_ZV4Dorian_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route134_Text_ZV4Dorian_Intro:
+	.string "Somewhere under this sea is a\nSEALED CHAMBER. With BRAILLE.\pI can't read braille.\nI brought a shovel. Same thing.$"
+
+Route134_Text_ZV4Dorian_Defeat:
+	.string "My shovel isn't waterproof.\nNeither am I.$"
+
+Route134_Text_ZV4Dorian_Post:
+	.string "The chamber is south of here,\ndeep down. They say you need a\lWAILORD and a RELICANTH to open it.\pI have a RELICANTH. My WAILORD\nis in a different chamber.\lIt's called 'the PC'.$"
+@ --- einde zee_vulling_4 ---

@@ -90,7 +90,7 @@ COMMON_DATA u8 gShouldAdvanceLinkState = 0;
 COMMON_DATA u16 gLinkTestBlockChecksums[MAX_LINK_PLAYERS] = {0};
 COMMON_DATA u8 gBlockRequestType = 0;
 COMMON_DATA u8 gLastSendQueueCount = 0;
-COMMON_DATA struct Link gLink = {0};
+EWRAM_DATA struct Link gLink = {0}; // Project Grounded: uit IWRAM (4 KB, ruimte voor de HQ-mixer en de stack)
 COMMON_DATA u8 gLastRecvQueueCount = 0;
 COMMON_DATA u16 gLinkSavedIme = 0;
 

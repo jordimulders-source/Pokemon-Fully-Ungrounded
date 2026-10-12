@@ -613,6 +613,8 @@ extern const u16 gItemIconPalette_Honey[];
 extern const u32 gItemIcon_OddKeystone[];
 extern const u16 gItemIconPalette_OddKeystone[];
 extern const u32 gItemIcon_PrettyFeather[];
+extern const u32 gItemIcon_AzureFlute[]; // Project Grounded
+extern const u16 gItemIconPalette_AzureFlute[];
 extern const u16 gItemIconPalette_PrettyFeather[];
 extern const u32 gItemIcon_RelicCoin[];
 extern const u16 gItemIconPalette_RelicCopper[];
@@ -1535,8 +1537,6 @@ extern const u32 gItemIcon_EonTicket[];
 extern const u16 gItemIconPalette_EonTicket[];
 extern const u32 gItemIcon_MysticTicket[];
 extern const u16 gItemIconPalette_MysticTicket[];
-extern const u32 gItemIcon_AuroraTicket[];
-extern const u16 gItemIconPalette_AuroraTicket[];
 extern const u32 gItemIcon_OldSeaMap[];
 extern const u16 gItemIconPalette_OldSeaMap[];
 extern const u32 gItemIcon_Letter[];

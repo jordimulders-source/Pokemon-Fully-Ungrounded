@@ -873,14 +873,14 @@
 #define ITEM_POKEBLOCK_CASE 722
 #define ITEM_SOOT_SACK 723
 #define ITEM_POKE_FLUTE 724
-#define ITEM_FAME_CHECKER 725
+#define ITEM_SEA_SHARD 725 // Project Grounded: Sea Shard-verzamelquest (duikplekken -> Diving Treasure Hunter, Route 124); was Fame Checker (FRLG)
 #define ITEM_TEACHY_TV 726
 
 // Story Key Items
 #define ITEM_SS_TICKET 727
 #define ITEM_EON_TICKET 728
 #define ITEM_MYSTIC_TICKET 729
-#define ITEM_AURORA_TICKET 730
+#define ITEM_SEALBREAKER 730 // Project Grounded: breekt de zegels van de Beasts of Ruin-schrijnen (was Aurora Ticket, Birth Island geschrapt)
 #define ITEM_OLD_SEA_MAP 731
 #define ITEM_LETTER 732
 #define ITEM_DEVON_PARTS 733
@@ -1033,7 +1033,11 @@
 #define ITEM_ELECTRIC_FAN 860
 #define ITEM_LAWN_MOWER 861
 
-#define ITEMS_COUNT 862
+#define ITEM_SILVER_WING 862 // Project Grounded: Key Item uit de zeetempel; Lugia (Whirl Island) verschijnt alleen als je hem hebt
+
+#define ITEM_AZURE_FLUTE 863 // Project Grounded: Key Item van Arceus (na Spear Pillar); geeft een hint naar de volgende niet-gevangen legendary (src/azure_flute.c)
+
+#define ITEMS_COUNT 864
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 
 // A special item id associated with "Cancel"/"Exit" etc. in a list of items or decorations

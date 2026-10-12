@@ -1,0 +1,164 @@
+{
+  "id": "MAP_AREA_ZERO_PAST",
+  "name": "AreaZero_Past",
+  "layout": "LAYOUT_AREA_ZERO_PAST",
+  "music": "MUS_GROUNDED_AREA_ZERO",
+  "region_map_section": "MAPSEC_AREA_ZERO",
+  "requires_flash": false,
+  "weather": "WEATHER_NONE",
+  "map_type": "MAP_TYPE_UNDERGROUND",
+  "allow_cycling": false,
+  "allow_escaping": true,
+  "allow_running": true,
+  "show_map_name": false,
+  "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
+  "connections": null,
+  "object_events": [
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(WALKING_WAKE)",
+      "x": 9,
+      "y": 30,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AreaZero_Past_EventScript_WalkingWake",
+      "flag": "FLAG_AREAZERO_WALKING_WAKE",
+      "local_id": "LOCALID_AREA_ZERO_WALKING_WAKE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(GOUGING_FIRE)",
+      "x": 45,
+      "y": 33,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AreaZero_Past_EventScript_GougingFire",
+      "flag": "FLAG_AREAZERO_GOUGING_FIRE",
+      "local_id": "LOCALID_AREA_ZERO_GOUGING_FIRE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(RAGING_BOLT)",
+      "x": 36,
+      "y": 46,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AreaZero_Past_EventScript_RagingBolt",
+      "flag": "FLAG_AREAZERO_RAGING_BOLT",
+      "local_id": "LOCALID_AREA_ZERO_RAGING_BOLT"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SPECIES(KORAIDON)",
+      "x": 30,
+      "y": 28,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "AreaZero_Past_EventScript_Legend",
+      "flag": "FLAG_AREAZERO_KORAIDON",
+      "local_id": "LOCALID_AREA_ZERO_KORAIDON"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 28,
+      "y": 30,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_RARE_CANDY",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_AREA_ZERO_PAST_RARE_CANDY"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 49,
+      "y": 42,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_POWER_HERB",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_AREA_ZERO_PAST_POWER_HERB"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
+      "x": 16,
+      "y": 25,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "ITEM_GRIP_CLAW",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_ITEM_AREA_ZERO_PAST_GRIP_CLAW"
+    }
+  ],
+  "warp_events": [
+    {
+      "x": 36,
+      "y": 7,
+      "elevation": 3,
+      "dest_map": "MAP_AREA_ZERO_FUTURE",
+      "dest_warp_id": "0"
+    },
+    {
+      "x": 30,
+      "y": 6,
+      "elevation": 3,
+      "dest_map": "MAP_AREA_ZERO_CRYSTAL",
+      "dest_warp_id": "1"
+    }
+  ],
+  "coord_events": [],
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 34,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AreaZero_Past_EventScript_Terminal"
+    },
+    {
+      "type": "sign",
+      "x": 35,
+      "y": 27,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AreaZero_Past_EventScript_Terminal"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 21,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AreaZero_Past_EventScript_Log"
+    },
+    {
+      "type": "hidden_item",
+      "x": 45,
+      "y": 22,
+      "elevation": 3,
+      "item": "ITEM_STICKY_BARB",
+      "flag": "FLAG_HIDDEN_ITEM_AREA_ZERO_PAST_STICKY_BARB"
+    }
+  ]
+}

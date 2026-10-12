@@ -136,7 +136,7 @@ FortreeJungle_EventScript_Ogerpon::
 	playmoncry SPECIES_OGERPON_TEAL, CRY_MODE_ENCOUNTER
 	waitmoncry
 FortreeJungle_EventScript_OgerponBattle::
-	setwildbattle SPECIES_OGERPON_TEAL, 70
+	setwildbattle SPECIES_OGERPON_TEAL, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -222,7 +222,7 @@ FortreeJungle_EventScript_ZarudeScene::
 	waitmoncry
 	msgbox FortreeJungle_Text_Zarude, MSGBOX_DEFAULT
 	closemessage
-	setwildbattle SPECIES_ZARUDE, 70
+	setwildbattle SPECIES_ZARUDE, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate

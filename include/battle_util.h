@@ -288,6 +288,8 @@ void HandleAction_RunBattleScript(void);
 u32 SetRandomTarget(u32 battler);
 u32 GetBattleMoveTarget(u16 move, u8 setTarget);
 u8 GetAttackerObedienceForAction();
+u32 GetPlayerObedienceLevel(void);
+bool32 MonMayDisobeyAtLevel(struct Pokemon *mon, u32 level);
 enum HoldEffect GetBattlerHoldEffect(u32 battler);
 enum HoldEffect GetBattlerHoldEffectIgnoreAbility(u32 battler);
 enum HoldEffect GetBattlerHoldEffectIgnoreNegation(u32 battler);

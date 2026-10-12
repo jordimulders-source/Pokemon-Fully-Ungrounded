@@ -83,7 +83,7 @@
   "warp_events": [
     {
       "x": 23,
-      "y": 9,
+      "y": 10,
       "elevation": 0,
       "dest_map": "MAP_ASHFROST_TOWN_POKEMON_CENTER_1F",
       "dest_warp_id": "0"
@@ -132,8 +132,8 @@
     },
     {
       "x": 34,
-      "y": 18,
-      "elevation": 3,
+      "y": 17,
+      "elevation": 0,
       "dest_map": "MAP_REGIGIGAS_TEMPLE",
       "dest_warp_id": "0"
     }
@@ -179,11 +179,59 @@
   "bg_events": [
     {
       "type": "sign",
-      "x": 34,
+      "x": 18,
+      "y": 8,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "AshfrostTown_EventScript_VillageSign"
+    },
+    {
+      "type": "sign",
+      "x": 20,
       "y": 17,
       "elevation": 3,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
-      "script": "AshfrostTown_EventScript_Igloo"
+      "script": "AshfrostTown_EventScript_StatueRegirock"
+    },
+    {
+      "type": "sign",
+      "x": 21,
+      "y": 17,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AshfrostTown_EventScript_StatueRegirock"
+    },
+    {
+      "type": "sign",
+      "x": 23,
+      "y": 17,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AshfrostTown_EventScript_StatueRegice"
+    },
+    {
+      "type": "sign",
+      "x": 24,
+      "y": 17,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AshfrostTown_EventScript_StatueRegice"
+    },
+    {
+      "type": "sign",
+      "x": 26,
+      "y": 17,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AshfrostTown_EventScript_StatueRegisteel"
+    },
+    {
+      "type": "sign",
+      "x": 27,
+      "y": 17,
+      "elevation": 3,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_NORTH",
+      "script": "AshfrostTown_EventScript_StatueRegisteel"
     }
   ]
 }

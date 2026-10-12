@@ -288,6 +288,17 @@ s32 Spire_IconYOffset(u16 species, u32 personality)
 #include "data/spire_pool.h"
 #include "data/spire_encounters.h"
 
+// Project Grounded: Battle Casino (Spire-baas als speciale modus)
+u32 Spire_BossCount(void)
+{
+    return ARRAY_COUNT(sSpireBosses);
+}
+
+const struct SpireEncounter *Spire_GetBoss(u32 i)
+{
+    return &sSpireBosses[i];
+}
+
 // Vasthouditems (winkel, events). Eén per Pokémon; een gebruikt item (Focus Sash, bes) is weg voor de rest van de run.
 // Niet in de pool, want nutteloos in de Spire: Red Card, Eject Button/Pack, Shed Shell, Smoke Ball, Exp. Share,
 // Lucky Egg, Everstone, evolutie-items (Up-Grade, ...), Destiny Knot, Float Stone, Iron Ball, Lagging Tail, Sticky Barb,

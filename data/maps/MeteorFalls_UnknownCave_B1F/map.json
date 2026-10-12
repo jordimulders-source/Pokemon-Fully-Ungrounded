@@ -15,20 +15,6 @@
   "connections": null,
   "object_events": [
     {
-      "local_id": "LOCALID_UNKNOWN_CAVE_MEWTWO",
-      "graphics_id": "OBJ_EVENT_GFX_SPECIES(MEWTWO)",
-      "x": 12,
-      "y": 6,
-      "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
-      "movement_range_x": 0,
-      "movement_range_y": 0,
-      "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "MeteorFalls_UnknownCave_B1F_EventScript_Mewtwo",
-      "flag": "FLAG_HIDE_METEOR_FALLS_MEWTWO"
-    },
-    {
       "local_id": "LOCALID_UNKNOWN_CAVE_B1F_ITEM",
       "graphics_id": "OBJ_EVENT_GFX_ITEM_BALL",
       "x": 7,
@@ -53,5 +39,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "sign",
+      "x": 13,
+      "y": 5,
+      "elevation": 0,
+      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
+      "script": "MeteorFalls_UnknownCave_B1F_EventScript_Scratches"
+    }
+  ]
 }

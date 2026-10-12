@@ -415,3 +415,21 @@ OldaleTown_Text_TownSign:
 	.string "OLDALE TOWN\n"
 	.string "“Where things start off young.”$"
 
+
+@ Project Grounded: muziekfan die naar het optiemenu verwijst (Jordi: 4th wall, muziek kiezen in OPTION)
+OldaleTown_EventScript_MusicFan::
+	msgbox OldaleTown_Text_MusicFan, MSGBOX_NPC
+	end
+
+OldaleTown_Text_MusicFan:
+	.string "Shh. I'm listening to the battle music.\n"
+	.string "In my head. Constantly.\p"
+	.string "Pro tip: press START, go to OPTION,\n"
+	.string "and you can pick the battle music\l"
+	.string "yourself. WILD MUSIC. TRAINER MUSIC.\p"
+	.string "The developers spent weeks on those\n"
+	.string "tracks. Weeks. Please press it.\l"
+	.string "They can see you not pressing it.\p"
+	.string "Some tracklist entries are still\n"
+	.string "locked. Something about “?????”.\l"
+	.string "I don't know. I just bop here.$"

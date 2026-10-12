@@ -4,6 +4,8 @@ FortreeCity_MapScripts::
 	.byte 0
 
 FortreeCity_OnTransition:
+	setvar VAR_0x8004, 1
+	call Common_EventScript_SickBlikDevSpawn  @ SickBlik als developer (post-game, dagrotatie)
 	setflag FLAG_VISITED_FORTREE_CITY
 	end
 

@@ -39,6 +39,19 @@
       "trainer_sight_or_berry_tree_id": "ITEM_STAR_PIECE",
       "script": "Common_EventScript_FindItem",
       "flag": "FLAG_ITEM_METEOR_FALLS_STARFALL_STAR_PIECE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_SCIENTIST_2",
+      "x": 26,
+      "y": 20,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MeteorFalls_StarfallGrotto_EventScript_LVStargazer",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -51,5 +64,22 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 17,
+      "y": 23,
+      "elevation": 3,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_DAILY_HIDDEN_STARFALL_STARDUST_1"
+    },
+    {
+      "type": "hidden_item",
+      "x": 29,
+      "y": 26,
+      "elevation": 3,
+      "item": "ITEM_STARDUST",
+      "flag": "FLAG_DAILY_HIDDEN_STARFALL_STARDUST_2"
+    }
+  ]
 }

@@ -6,7 +6,7 @@ gCryTable::
 	cry Cry_Ivysaur
 	cry Cry_Venusaur
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_VenusaurMega
+	cry Cry_Venusaur @ Project Grounded: Cry_VenusaurMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_BULBASAUR
 .if P_FAMILY_CHARMANDER == TRUE
@@ -14,8 +14,8 @@ gCryTable::
 	cry Cry_Charmeleon
 	cry Cry_Charizard
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_CharizardMegaX
-	cry Cry_CharizardMegaY
+	cry Cry_Charizard @ Project Grounded: Cry_CharizardMegaX weg (Mega niet in de game)
+	cry Cry_Charizard @ Project Grounded: Cry_CharizardMegaY weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_CHARMANDER
 .if P_FAMILY_SQUIRTLE == TRUE
@@ -23,7 +23,7 @@ gCryTable::
 	cry Cry_Wartortle
 	cry Cry_Blastoise
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_BlastoiseMega
+	cry Cry_Blastoise @ Project Grounded: Cry_BlastoiseMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SQUIRTLE
 .if P_FAMILY_CATERPIE == TRUE
@@ -36,7 +36,7 @@ gCryTable::
 	cry Cry_Kakuna
 	cry Cry_Beedrill
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_BeedrillMega
+	cry Cry_Beedrill @ Project Grounded: Cry_BeedrillMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_WEEDLE
 .if P_FAMILY_PIDGEY == TRUE
@@ -44,7 +44,7 @@ gCryTable::
 	cry Cry_Pidgeotto
 	cry Cry_Pidgeot
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_PidgeotMega
+	cry Cry_Pidgeot @ Project Grounded: Cry_PidgeotMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_PIDGEY
 .if P_FAMILY_RATTATA == TRUE
@@ -158,7 +158,7 @@ gCryTable::
 	cry Cry_Kadabra
 	cry Cry_Alakazam
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_AlakazamMega
+	cry Cry_Alakazam @ Project Grounded: Cry_AlakazamMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ABRA
 .if P_FAMILY_MACHOP == TRUE
@@ -191,7 +191,7 @@ gCryTable::
 	cry Cry_Slowking
 .endif @ P_GEN_2_CROSS_EVOS
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_SlowbroMega
+	cry Cry_Slowbro @ Project Grounded: Cry_SlowbroMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .if P_GALARIAN_FORMS == TRUE
 	cry Cry_SlowpokeGalar
@@ -239,7 +239,7 @@ gCryTable::
 .if P_GEN_2_CROSS_EVOS == TRUE
 	cry Cry_Steelix
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_SteelixMega
+	cry Cry_Steelix @ Project Grounded: Cry_SteelixMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_GEN_2_CROSS_EVOS
 .endif @ P_FAMILY_ONIX
@@ -308,7 +308,7 @@ gCryTable::
 .if P_FAMILY_KANGASKHAN == TRUE
 	cry Cry_Kangaskhan
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_KangaskhanMega
+	cry Cry_Kangaskhan @ Project Grounded: Cry_KangaskhanMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_KANGASKHAN
 .if P_FAMILY_HORSEA == TRUE
@@ -340,7 +340,7 @@ gCryTable::
 .if P_GEN_2_CROSS_EVOS == TRUE
 	cry Cry_Scizor
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_ScizorMega
+	cry Cry_Scizor @ Project Grounded: Cry_ScizorMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_GEN_2_CROSS_EVOS
 .if P_GEN_8_CROSS_EVOS == TRUE
@@ -374,7 +374,7 @@ gCryTable::
 .if P_FAMILY_PINSIR == TRUE
 	cry Cry_Pinsir
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_PinsirMega
+	cry Cry_Pinsir @ Project Grounded: Cry_PinsirMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_PINSIR
 .if P_FAMILY_TAUROS == TRUE
@@ -384,7 +384,7 @@ gCryTable::
 	cry Cry_Magikarp
 	cry Cry_Gyarados
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_GyaradosMega
+	cry Cry_Gyarados @ Project Grounded: Cry_GyaradosMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MAGIKARP
 .if P_FAMILY_LAPRAS == TRUE
@@ -430,7 +430,7 @@ gCryTable::
 .if P_FAMILY_AERODACTYL == TRUE
 	cry Cry_Aerodactyl
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_AerodactylMega
+	cry Cry_Aerodactyl @ Project Grounded: Cry_AerodactylMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_AERODACTYL
 .if P_FAMILY_SNORLAX == TRUE
@@ -456,7 +456,7 @@ gCryTable::
 .if P_FAMILY_MEWTWO == TRUE
 	cry Cry_Mewtwo
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_MewtwoMegaX
+	cry Cry_Mewtwo @ Project Grounded: Cry_MewtwoMegaX weg (Mega niet in de game)
 	cry Cry_MewtwoMegaY
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MEWTWO
@@ -514,7 +514,7 @@ gCryTable::
 	cry Cry_Flaaffy
 	cry Cry_Ampharos
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_AmpharosMega
+	cry Cry_Ampharos @ Project Grounded: Cry_AmpharosMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MAREEP
 .if P_FAMILY_MARILL == TRUE
@@ -609,7 +609,7 @@ gCryTable::
 .if P_FAMILY_HERACROSS == TRUE
 	cry Cry_Heracross
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_HeracrossMega
+	cry Cry_Heracross @ Project Grounded: Cry_HeracrossMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_HERACROSS
 .if P_FAMILY_SNEASEL == TRUE
@@ -665,7 +665,7 @@ gCryTable::
 	cry Cry_Houndour
 	cry Cry_Houndoom
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_HoundoomMega
+	cry Cry_Houndoom @ Project Grounded: Cry_HoundoomMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_HOUNDOUR
 .if P_FAMILY_PHANPY == TRUE
@@ -698,7 +698,7 @@ gCryTable::
 	cry Cry_Pupitar
 	cry Cry_Tyranitar
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_TyranitarMega
+	cry Cry_Tyranitar @ Project Grounded: Cry_TyranitarMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_LARVITAR
 .if P_FAMILY_LUGIA == TRUE
@@ -715,7 +715,7 @@ gCryTable::
 	cry Cry_Grovyle
 	cry Cry_Sceptile
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_SceptileMega
+	cry Cry_Sceptile @ Project Grounded: Cry_SceptileMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_TREECKO
 .if P_FAMILY_TORCHIC == TRUE
@@ -723,7 +723,7 @@ gCryTable::
 	cry Cry_Combusken
 	cry Cry_Blaziken
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_BlazikenMega
+	cry Cry_Blaziken @ Project Grounded: Cry_BlazikenMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_TORCHIC
 .if P_FAMILY_MUDKIP == TRUE
@@ -731,7 +731,7 @@ gCryTable::
 	cry Cry_Marshtomp
 	cry Cry_Swampert
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_SwampertMega
+	cry Cry_Swampert @ Project Grounded: Cry_SwampertMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MUDKIP
 .if P_FAMILY_POOCHYENA == TRUE
@@ -775,12 +775,12 @@ gCryTable::
 	cry Cry_Kirlia
 	cry Cry_Gardevoir
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_GardevoirMega
+	cry Cry_Gardevoir @ Project Grounded: Cry_GardevoirMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .if P_GEN_4_CROSS_EVOS == TRUE
 	cry Cry_Gallade
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_GalladeMega
+	cry Cry_Gallade @ Project Grounded: Cry_GalladeMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_GEN_4_CROSS_EVOS
 .endif @ P_FAMILY_RALTS
@@ -824,13 +824,13 @@ gCryTable::
 .if P_FAMILY_SABLEYE == TRUE
 	cry Cry_Sableye
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_SableyeMega
+	cry Cry_Sableye @ Project Grounded: Cry_SableyeMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SABLEYE
 .if P_FAMILY_MAWILE == TRUE
 	cry Cry_Mawile
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_MawileMega
+	cry Cry_Mawile @ Project Grounded: Cry_MawileMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MAWILE
 .if P_FAMILY_ARON == TRUE
@@ -838,21 +838,21 @@ gCryTable::
 	cry Cry_Lairon
 	cry Cry_Aggron
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_AggronMega
+	cry Cry_Aggron @ Project Grounded: Cry_AggronMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ARON
 .if P_FAMILY_MEDITITE == TRUE
 	cry Cry_Meditite
 	cry Cry_Medicham
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_MedichamMega
+	cry Cry_Medicham @ Project Grounded: Cry_MedichamMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MEDITITE
 .if P_FAMILY_ELECTRIKE == TRUE
 	cry Cry_Electrike
 	cry Cry_Manectric
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_ManectricMega
+	cry Cry_Manectric @ Project Grounded: Cry_ManectricMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ELECTRIKE
 .if P_FAMILY_PLUSLE == TRUE
@@ -882,7 +882,7 @@ gCryTable::
 	cry Cry_Carvanha
 	cry Cry_Sharpedo
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_SharpedoMega
+	cry Cry_Sharpedo @ Project Grounded: Cry_SharpedoMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_CARVANHA
 .if P_FAMILY_WAILMER == TRUE
@@ -893,7 +893,7 @@ gCryTable::
 	cry Cry_Numel
 	cry Cry_Camerupt
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_CameruptMega
+	cry Cry_Camerupt @ Project Grounded: Cry_CameruptMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_NUMEL
 .if P_FAMILY_TORKOAL == TRUE
@@ -919,7 +919,7 @@ gCryTable::
 	cry Cry_Swablu
 	cry Cry_Altaria
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_AltariaMega
+	cry Cry_Altaria @ Project Grounded: Cry_AltariaMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SWABLU
 .if P_FAMILY_ZANGOOSE == TRUE
@@ -968,7 +968,7 @@ gCryTable::
 	cry Cry_Shuppet
 	cry Cry_Banette
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_BanetteMega
+	cry Cry_Banette @ Project Grounded: Cry_BanetteMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SHUPPET
 .if P_FAMILY_DUSKULL == TRUE
@@ -990,14 +990,14 @@ gCryTable::
 .if P_FAMILY_ABSOL == TRUE
 	cry Cry_Absol
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_AbsolMega
+	cry Cry_Absol @ Project Grounded: Cry_AbsolMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ABSOL
 .if P_FAMILY_SNORUNT == TRUE
 	cry Cry_Snorunt
 	cry Cry_Glalie
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_GlalieMega
+	cry Cry_Glalie @ Project Grounded: Cry_GlalieMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .if P_GEN_4_CROSS_EVOS == TRUE
 	cry Cry_Froslass
@@ -1024,7 +1024,7 @@ gCryTable::
 	cry Cry_Shelgon
 	cry Cry_Salamence
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_SalamenceMega
+	cry Cry_Salamence @ Project Grounded: Cry_SalamenceMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_BAGON
 .if P_FAMILY_BELDUM == TRUE
@@ -1047,13 +1047,13 @@ gCryTable::
 .if P_FAMILY_LATIAS == TRUE
 	cry Cry_Latias
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_LatiasMega
+	cry Cry_Latias @ Project Grounded: Cry_LatiasMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_LATIAS
 .if P_FAMILY_LATIOS == TRUE
 	cry Cry_Latios
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_LatiosMega
+	cry Cry_Latios @ Project Grounded: Cry_LatiosMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_LATIOS
 .if P_FAMILY_KYOGRE == TRUE
@@ -1153,7 +1153,7 @@ gCryTable::
 	cry Cry_Buneary
 	cry Cry_Lopunny
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_LopunnyMega
+	cry Cry_Lopunny @ Project Grounded: Cry_LopunnyMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_BUNEARY
 .if P_FAMILY_GLAMEOW == TRUE
@@ -1179,14 +1179,14 @@ gCryTable::
 	cry Cry_Gabite
 	cry Cry_Garchomp
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_GarchompMega
+	cry Cry_Garchomp @ Project Grounded: Cry_GarchompMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_GIBLE
 .if P_FAMILY_RIOLU == TRUE
 	cry Cry_Riolu
 	cry Cry_Lucario
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_LucarioMega
+	cry Cry_Lucario @ Project Grounded: Cry_LucarioMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_RIOLU
 .if P_FAMILY_HIPPOPOTAS == TRUE
@@ -1212,7 +1212,7 @@ gCryTable::
 	cry Cry_Snover
 	cry Cry_Abomasnow
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_AbomasnowMega
+	cry Cry_Abomasnow @ Project Grounded: Cry_AbomasnowMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SNOVER
 .if P_FAMILY_ROTOM == TRUE
@@ -1331,7 +1331,7 @@ gCryTable::
 .if P_FAMILY_AUDINO == TRUE
 	cry Cry_Audino
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_AudinoMega
+	cry Cry_Audino @ Project Grounded: Cry_AudinoMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_AUDINO
 .if P_FAMILY_TIMBURR == TRUE
@@ -1742,7 +1742,7 @@ gCryTable::
 .if P_FAMILY_DIANCIE == TRUE
 	cry Cry_Diancie
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry Cry_DiancieMega
+	cry Cry_Diancie @ Project Grounded: Cry_DiancieMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_DIANCIE
 .if P_FAMILY_HOOPA == TRUE
@@ -2434,7 +2434,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Ivysaur
 	cry_reverse Cry_Venusaur
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_VenusaurMega
+	cry_reverse Cry_Venusaur @ Project Grounded: Cry_VenusaurMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_BULBASAUR
 .if P_FAMILY_CHARMANDER == TRUE
@@ -2442,8 +2442,8 @@ gCryTable_Reverse::
 	cry_reverse Cry_Charmeleon
 	cry_reverse Cry_Charizard
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_CharizardMegaX
-	cry_reverse Cry_CharizardMegaY
+	cry_reverse Cry_Charizard @ Project Grounded: Cry_CharizardMegaX weg (Mega niet in de game)
+	cry_reverse Cry_Charizard @ Project Grounded: Cry_CharizardMegaY weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_CHARMANDER
 .if P_FAMILY_SQUIRTLE == TRUE
@@ -2451,7 +2451,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Wartortle
 	cry_reverse Cry_Blastoise
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_BlastoiseMega
+	cry_reverse Cry_Blastoise @ Project Grounded: Cry_BlastoiseMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SQUIRTLE
 .if P_FAMILY_CATERPIE == TRUE
@@ -2464,7 +2464,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Kakuna
 	cry_reverse Cry_Beedrill
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_BeedrillMega
+	cry_reverse Cry_Beedrill @ Project Grounded: Cry_BeedrillMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_WEEDLE
 .if P_FAMILY_PIDGEY == TRUE
@@ -2472,7 +2472,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Pidgeotto
 	cry_reverse Cry_Pidgeot
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_PidgeotMega
+	cry_reverse Cry_Pidgeot @ Project Grounded: Cry_PidgeotMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_PIDGEY
 .if P_FAMILY_RATTATA == TRUE
@@ -2586,7 +2586,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Kadabra
 	cry_reverse Cry_Alakazam
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_AlakazamMega
+	cry_reverse Cry_Alakazam @ Project Grounded: Cry_AlakazamMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ABRA
 .if P_FAMILY_MACHOP == TRUE
@@ -2619,7 +2619,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Slowking
 .endif @ P_GEN_2_CROSS_EVOS
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_SlowbroMega
+	cry_reverse Cry_Slowbro @ Project Grounded: Cry_SlowbroMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .if P_GALARIAN_FORMS == TRUE
 	cry_reverse Cry_SlowpokeGalar
@@ -2667,7 +2667,7 @@ gCryTable_Reverse::
 .if P_GEN_2_CROSS_EVOS == TRUE
 	cry_reverse Cry_Steelix
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_SteelixMega
+	cry_reverse Cry_Steelix @ Project Grounded: Cry_SteelixMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_GEN_2_CROSS_EVOS
 .endif @ P_FAMILY_ONIX
@@ -2736,7 +2736,7 @@ gCryTable_Reverse::
 .if P_FAMILY_KANGASKHAN == TRUE
 	cry_reverse Cry_Kangaskhan
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_KangaskhanMega
+	cry_reverse Cry_Kangaskhan @ Project Grounded: Cry_KangaskhanMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_KANGASKHAN
 .if P_FAMILY_HORSEA == TRUE
@@ -2768,7 +2768,7 @@ gCryTable_Reverse::
 .if P_GEN_2_CROSS_EVOS == TRUE
 	cry_reverse Cry_Scizor
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_ScizorMega
+	cry_reverse Cry_Scizor @ Project Grounded: Cry_ScizorMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_GEN_2_CROSS_EVOS
 .if P_GEN_8_CROSS_EVOS == TRUE
@@ -2802,7 +2802,7 @@ gCryTable_Reverse::
 .if P_FAMILY_PINSIR == TRUE
 	cry_reverse Cry_Pinsir
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_PinsirMega
+	cry_reverse Cry_Pinsir @ Project Grounded: Cry_PinsirMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_PINSIR
 .if P_FAMILY_TAUROS == TRUE
@@ -2812,7 +2812,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Magikarp
 	cry_reverse Cry_Gyarados
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_GyaradosMega
+	cry_reverse Cry_Gyarados @ Project Grounded: Cry_GyaradosMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MAGIKARP
 .if P_FAMILY_LAPRAS == TRUE
@@ -2858,7 +2858,7 @@ gCryTable_Reverse::
 .if P_FAMILY_AERODACTYL == TRUE
 	cry_reverse Cry_Aerodactyl
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_AerodactylMega
+	cry_reverse Cry_Aerodactyl @ Project Grounded: Cry_AerodactylMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_AERODACTYL
 .if P_FAMILY_SNORLAX == TRUE
@@ -2884,7 +2884,7 @@ gCryTable_Reverse::
 .if P_FAMILY_MEWTWO == TRUE
 	cry_reverse Cry_Mewtwo
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_MewtwoMegaX
+	cry_reverse Cry_Mewtwo @ Project Grounded: Cry_MewtwoMegaX weg (Mega niet in de game)
 	cry_reverse Cry_MewtwoMegaY
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MEWTWO
@@ -2942,7 +2942,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Flaaffy
 	cry_reverse Cry_Ampharos
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_AmpharosMega
+	cry_reverse Cry_Ampharos @ Project Grounded: Cry_AmpharosMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MAREEP
 .if P_FAMILY_MARILL == TRUE
@@ -3037,7 +3037,7 @@ gCryTable_Reverse::
 .if P_FAMILY_HERACROSS == TRUE
 	cry_reverse Cry_Heracross
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_HeracrossMega
+	cry_reverse Cry_Heracross @ Project Grounded: Cry_HeracrossMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_HERACROSS
 .if P_FAMILY_SNEASEL == TRUE
@@ -3093,7 +3093,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Houndour
 	cry_reverse Cry_Houndoom
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_HoundoomMega
+	cry_reverse Cry_Houndoom @ Project Grounded: Cry_HoundoomMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_HOUNDOUR
 .if P_FAMILY_PHANPY == TRUE
@@ -3126,7 +3126,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Pupitar
 	cry_reverse Cry_Tyranitar
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_TyranitarMega
+	cry_reverse Cry_Tyranitar @ Project Grounded: Cry_TyranitarMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_LARVITAR
 .if P_FAMILY_LUGIA == TRUE
@@ -3143,7 +3143,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Grovyle
 	cry_reverse Cry_Sceptile
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_SceptileMega
+	cry_reverse Cry_Sceptile @ Project Grounded: Cry_SceptileMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_TREECKO
 .if P_FAMILY_TORCHIC == TRUE
@@ -3151,7 +3151,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Combusken
 	cry_reverse Cry_Blaziken
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_BlazikenMega
+	cry_reverse Cry_Blaziken @ Project Grounded: Cry_BlazikenMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_TORCHIC
 .if P_FAMILY_MUDKIP == TRUE
@@ -3159,7 +3159,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Marshtomp
 	cry_reverse Cry_Swampert
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_SwampertMega
+	cry_reverse Cry_Swampert @ Project Grounded: Cry_SwampertMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MUDKIP
 .if P_FAMILY_POOCHYENA == TRUE
@@ -3203,12 +3203,12 @@ gCryTable_Reverse::
 	cry_reverse Cry_Kirlia
 	cry_reverse Cry_Gardevoir
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_GardevoirMega
+	cry_reverse Cry_Gardevoir @ Project Grounded: Cry_GardevoirMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .if P_GEN_4_CROSS_EVOS == TRUE
 	cry_reverse Cry_Gallade
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_GalladeMega
+	cry_reverse Cry_Gallade @ Project Grounded: Cry_GalladeMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_GEN_4_CROSS_EVOS
 .endif @ P_FAMILY_RALTS
@@ -3252,13 +3252,13 @@ gCryTable_Reverse::
 .if P_FAMILY_SABLEYE == TRUE
 	cry_reverse Cry_Sableye
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_SableyeMega
+	cry_reverse Cry_Sableye @ Project Grounded: Cry_SableyeMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SABLEYE
 .if P_FAMILY_MAWILE == TRUE
 	cry_reverse Cry_Mawile
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_MawileMega
+	cry_reverse Cry_Mawile @ Project Grounded: Cry_MawileMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MAWILE
 .if P_FAMILY_ARON == TRUE
@@ -3266,21 +3266,21 @@ gCryTable_Reverse::
 	cry_reverse Cry_Lairon
 	cry_reverse Cry_Aggron
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_AggronMega
+	cry_reverse Cry_Aggron @ Project Grounded: Cry_AggronMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ARON
 .if P_FAMILY_MEDITITE == TRUE
 	cry_reverse Cry_Meditite
 	cry_reverse Cry_Medicham
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_MedichamMega
+	cry_reverse Cry_Medicham @ Project Grounded: Cry_MedichamMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_MEDITITE
 .if P_FAMILY_ELECTRIKE == TRUE
 	cry_reverse Cry_Electrike
 	cry_reverse Cry_Manectric
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_ManectricMega
+	cry_reverse Cry_Manectric @ Project Grounded: Cry_ManectricMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ELECTRIKE
 .if P_FAMILY_PLUSLE == TRUE
@@ -3310,7 +3310,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Carvanha
 	cry_reverse Cry_Sharpedo
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_SharpedoMega
+	cry_reverse Cry_Sharpedo @ Project Grounded: Cry_SharpedoMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_CARVANHA
 .if P_FAMILY_WAILMER == TRUE
@@ -3321,7 +3321,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Numel
 	cry_reverse Cry_Camerupt
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_CameruptMega
+	cry_reverse Cry_Camerupt @ Project Grounded: Cry_CameruptMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_NUMEL
 .if P_FAMILY_TORKOAL == TRUE
@@ -3347,7 +3347,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Swablu
 	cry_reverse Cry_Altaria
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_AltariaMega
+	cry_reverse Cry_Altaria @ Project Grounded: Cry_AltariaMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SWABLU
 .if P_FAMILY_ZANGOOSE == TRUE
@@ -3396,7 +3396,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Shuppet
 	cry_reverse Cry_Banette
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_BanetteMega
+	cry_reverse Cry_Banette @ Project Grounded: Cry_BanetteMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SHUPPET
 .if P_FAMILY_DUSKULL == TRUE
@@ -3418,14 +3418,14 @@ gCryTable_Reverse::
 .if P_FAMILY_ABSOL == TRUE
 	cry_reverse Cry_Absol
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_AbsolMega
+	cry_reverse Cry_Absol @ Project Grounded: Cry_AbsolMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_ABSOL
 .if P_FAMILY_SNORUNT == TRUE
 	cry_reverse Cry_Snorunt
 	cry_reverse Cry_Glalie
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_GlalieMega
+	cry_reverse Cry_Glalie @ Project Grounded: Cry_GlalieMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .if P_GEN_4_CROSS_EVOS == TRUE
 	cry_reverse Cry_Froslass
@@ -3452,7 +3452,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Shelgon
 	cry_reverse Cry_Salamence
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_SalamenceMega
+	cry_reverse Cry_Salamence @ Project Grounded: Cry_SalamenceMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_BAGON
 .if P_FAMILY_BELDUM == TRUE
@@ -3475,13 +3475,13 @@ gCryTable_Reverse::
 .if P_FAMILY_LATIAS == TRUE
 	cry_reverse Cry_Latias
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_LatiasMega
+	cry_reverse Cry_Latias @ Project Grounded: Cry_LatiasMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_LATIAS
 .if P_FAMILY_LATIOS == TRUE
 	cry_reverse Cry_Latios
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_LatiosMega
+	cry_reverse Cry_Latios @ Project Grounded: Cry_LatiosMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_LATIOS
 .if P_FAMILY_KYOGRE == TRUE
@@ -3581,7 +3581,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Buneary
 	cry_reverse Cry_Lopunny
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_LopunnyMega
+	cry_reverse Cry_Lopunny @ Project Grounded: Cry_LopunnyMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_BUNEARY
 .if P_FAMILY_GLAMEOW == TRUE
@@ -3607,14 +3607,14 @@ gCryTable_Reverse::
 	cry_reverse Cry_Gabite
 	cry_reverse Cry_Garchomp
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_GarchompMega
+	cry_reverse Cry_Garchomp @ Project Grounded: Cry_GarchompMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_GIBLE
 .if P_FAMILY_RIOLU == TRUE
 	cry_reverse Cry_Riolu
 	cry_reverse Cry_Lucario
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_LucarioMega
+	cry_reverse Cry_Lucario @ Project Grounded: Cry_LucarioMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_RIOLU
 .if P_FAMILY_HIPPOPOTAS == TRUE
@@ -3640,7 +3640,7 @@ gCryTable_Reverse::
 	cry_reverse Cry_Snover
 	cry_reverse Cry_Abomasnow
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_AbomasnowMega
+	cry_reverse Cry_Abomasnow @ Project Grounded: Cry_AbomasnowMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_SNOVER
 .if P_FAMILY_ROTOM == TRUE
@@ -3759,7 +3759,7 @@ gCryTable_Reverse::
 .if P_FAMILY_AUDINO == TRUE
 	cry_reverse Cry_Audino
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_AudinoMega
+	cry_reverse Cry_Audino @ Project Grounded: Cry_AudinoMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_AUDINO
 .if P_FAMILY_TIMBURR == TRUE
@@ -4170,7 +4170,7 @@ gCryTable_Reverse::
 .if P_FAMILY_DIANCIE == TRUE
 	cry_reverse Cry_Diancie
 .if P_MEGA_EVOLUTIONS == TRUE
-	cry_reverse Cry_DiancieMega
+	cry_reverse Cry_Diancie @ Project Grounded: Cry_DiancieMega weg (Mega niet in de game)
 .endif @ P_MEGA_EVOLUTIONS
 .endif @ P_FAMILY_DIANCIE
 .if P_FAMILY_HOOPA == TRUE

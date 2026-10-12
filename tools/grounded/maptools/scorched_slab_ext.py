@@ -19,6 +19,13 @@ Bouwt (deterministisch, idempotent):
 Controleert de bereikbaarheid (HM-poorten), lost de blokpuzzel op (BFS op duwen: oplosbaar, minimaal aantal duwen,
 uitgangen blijven bereikbaar) en dat de puzzel-coordinaten kloppen met de lichtschachten.
 Gebruik: python3 tools/grounded/maptools/scorched_slab_ext.py [voorbeeld.png]"""
+import os as _os, sys as _sys  # noqa: E401
+_sys.path.append(_os.path.join(_os.path.dirname(_os.path.abspath(__file__)), '..'))
+# Levels: de levelcurve (v0.9.192) is leidend. check_levels zet bij het afsluiten de levels van
+# bestaande trainers/wilde slots/setwildbattles terug naar de stand vóór dit script; alleen nieuwe
+# entries krijgen de levels hieronder. Bewust een level wijzigen: GROUNDED_SCRIPT_LEVELS=1.
+import check_levels  # noqa: E402
+check_levels.protect()
 import json, os, shutil, struct, sys
 from collections import deque
 
@@ -59,7 +66,10 @@ def build_tileset():
     os.makedirs(TS + '/palettes', exist_ok=True)
     mts = open(CAVE + '/metatiles.bin', 'rb').read()
     att = open(CAVE + '/metatile_attributes.bin', 'rb').read()
-    assert len(mts) == N_CAVE * 16 and len(att) == N_CAVE * 2, 'Cave-tileset is veranderd: N_CAVE bijwerken'
+    # Cave groeide na dit script (v0.9.179+); de Scorched Slab houdt de eerste N_CAVE metatiles,
+    # zodat de zonne-metatiles (en METATILE_ScorchedSlab_SunLight) op hun plek blijven.
+    assert len(mts) >= N_CAVE * 16 and len(att) >= N_CAVE * 2, 'Cave-tileset is kleiner geworden'
+    mts, att = mts[:N_CAVE * 16], att[:N_CAVE * 2]
     floor_attr = att[(0x201 - 0x200) * 2:(0x201 - 0x200) * 2 + 2]
     sun_attr = att[(0x3a9 - 0x200) * 2:(0x3a9 - 0x200) * 2 + 2]
     new = struct.pack('<8H', *[s | (PAL_SUN << 12) for s in SUN_SUB], 0, 0, 0, 0)

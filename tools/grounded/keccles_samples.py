@@ -19,8 +19,6 @@ DATA = 'sound/direct_sound_data.inc'
 # loop='auto' -> aanhoudend instrument (koper): een loop van hele perioden met crossfade (zie auto_loop).
 # GM-programma 'drum' = GM-drumkit (kanaal 10), noot = drumnoot; de sample krijgt grondtoon 60 (speel op 60 = echt).
 SAMPLES = {
-    'gm_clean_guitar': (27, 60, 1.6, 16000, None),
-    'gm_steel_drums':  (114, 72, 0.9, 22050, None),
     # Battle! Keccles v2 (keccles_theme.py): trombones, cuatro (= steel-string, hoog), salsa-percussie
     'kc_trombone_55':  (57, 55, 1.0, 22050, 'auto'),
     'kc_trombone_67':  (57, 67, 1.0, 22050, 'auto'),
@@ -41,7 +39,6 @@ SAMPLES = {
 CRUNCH = {'kc_guitar_57': (4.0, 3500), 'kc_guitar_69': (4.0, 3500)}   # (tanh-versterking, lowpass Hz)
 # gesynthetiseerde golven met een loop van precies 4 perioden op C4 (64 samples per periode): (golf, harmonischen)
 WAVES = {
-    'gm_saw_lead': ('saw', 24),
 }
 
 

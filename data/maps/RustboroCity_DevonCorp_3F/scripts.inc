@@ -231,7 +231,8 @@ RustboroCity_DevonCorp_3F_Text_CountingOnYou:
 RustboroCity_DevonCorp_3F_Text_ThankYouForDeliveringLetter:
 	.string "MR. STONE: You delivered my LETTER?\n"
 	.string "What letter? Oh. Right.\p"
-	.string "Here, take this. It was on my desk.$"
+	.string "Here, take this. It was on my desk.\l"
+	.string "Another one? Must be a franchise.$"
 
 RustboroCity_DevonCorp_3F_Text_ExplainExpShare:
 	.string "MR. STONE: A POKéMON holding the EXP.\n"

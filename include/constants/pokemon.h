@@ -306,6 +306,7 @@ enum EvolutionConditions {
     IF_BAG_ITEM_COUNT,                  // The Player has the specific amount of an item in the bag. It then removes those items.
     IF_REGION,                          // The Player is in the specific region.
     IF_NOT_REGION,                      // The Player is NOT in the specific region.
+    IF_GROUNDED_SUN_MOON,               // Project Grounded: Cosmoem; arg1 0 = Solgaleo-tak, 1 = Lunala-tak (regel in src/ultra_space.c)
     CONDITIONS_END
 };
 

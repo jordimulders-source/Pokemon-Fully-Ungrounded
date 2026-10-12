@@ -15,6 +15,7 @@
 #include "constants/form_change_types.h"
 #include "apricorn_tree.h"
 #include "gym_leader_rematch.h"
+#include "grounded_forms.h"
 
 static void UpdatePerDay(struct Time *localTime);
 static void UpdatePerMinute(struct Time *localTime);
@@ -95,6 +96,7 @@ void FormChangeTimeUpdate()
             CalculateMonStats(mon);
         }
     }
+    SeasonalFormUpdateParty(); // Project Grounded: Deerling/Sawsbuck volgen het seizoen
 }
 
 static void ReturnFromStartWallClock(void)

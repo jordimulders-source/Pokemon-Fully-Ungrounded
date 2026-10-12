@@ -76,3 +76,159 @@ Route127_EventScript_RematchKoji::
 	msgbox Route127_Text_KojiPostRematch, MSGBOX_AUTOCLOSE
 	end
 
+@ --- zee_vulling_1 (gegenereerd door tools/grounded/maptools/zee_vulling_1.py) ---
+Route127_EventScript_ZVWailmer::
+	lock
+	faceplayer
+	msgbox Route127_Text_ZVWailmer, MSGBOX_DEFAULT
+	playmoncry SPECIES_WAILMER, CRY_MODE_NORMAL
+	waitmoncry
+	fadescreen FADE_TO_BLACK
+	removeobject VAR_LAST_TALKED
+	setflag FLAG_ROUTE_127_WAILMER_RESCUED
+	fadescreen FADE_FROM_BLACK
+	msgbox Route127_Text_ZVWailmerGone, MSGBOX_DEFAULT
+	giveitem ITEM_SHELL_BELL
+	release
+	end
+
+Route127_Text_ZVWailmer:
+	.string "A WAILMER is stranded on the\nsand. It looks at you like you\lowe it money.\pYou push. And push. It rolls into\nthe sea with the grace of a\ldropped piano.$"
+
+Route127_Text_ZVWailmerGone:
+	.string "Far away, a spout of water.\nSomething shiny lands at your feet.\pA tip. From a whale.$"
+
+Route127_EventScript_ZVMarisol::
+	trainerbattle_single TRAINER_RANGER_MARISOL, Route127_Text_ZVMarisol_Intro, Route127_Text_ZVMarisol_Defeat
+	msgbox Route127_Text_ZVMarisol_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route127_Text_ZVMarisol_Intro:
+	.string "Stand back! This WAILMER has been\nstranded for six hours.\pI've been observing it. Taking\nnotes. Very important notes.\lMostly drawings.$"
+
+Route127_Text_ZVMarisol_Defeat:
+	.string "You're right. Pushing it back\nwould also have been an option.$"
+
+Route127_Text_ZVMarisol_Post:
+	.string "Ranger protocol says observe, don't\ninterfere. Ranger protocol has\lnever met a sad whale.$"
+
+Route127_EventScript_ZVTourist::
+	msgbox Route127_Text_ZVTourist, MSGBOX_NPC
+	end
+
+Route127_Text_ZVTourist:
+	.string "Excuse me, is this Kalos?\pMy map says the hotel is right\nhere. The map is of Kalos.\p...Is it upside down? Oh. Oh no.\nThen I swam the wrong way for\ltwo weeks.\pStill. Five stars. Great water.$"
+
+Route127_EventScript_ZVTwins::
+	trainerbattle_double TRAINER_TWINS_PIP_AND_PEP, Route127_Text_ZVTwins_Intro, Route127_Text_ZVTwins_Defeat, Route127_Text_ZVTwins_NotEnough
+	msgbox Route127_Text_ZVTwins_Post, MSGBOX_AUTOCLOSE
+	end
+
+Route127_Text_ZVTwins_Intro:
+	.string "PIP: We swam here on a floatie!\nPEP: The floatie popped!\pPIP: Now we live here!\nPEP: Mom doesn't know yet!$"
+
+Route127_Text_ZVTwins_Defeat:
+	.string "PIP: We lost!\nPEP: Like the floatie!$"
+
+Route127_Text_ZVTwins_NotEnough:
+	.string "PIP: Two against one is unfair.\nPEP: Come back with a friend!$"
+
+Route127_Text_ZVTwins_Post:
+	.string "PIP: If you see Mom, say we're\nat a sleepover.\pPEP: With a sandbank!$"
+@ --- einde zee_vulling_1 ---
+
+@ --- zee_vulling_3 (gegenereerd door tools/grounded/maptools/zee_vulling_3.py) ---
+Route127_EventScript_ZV3Mine0::
+	lock
+	faceplayer
+	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_VOLTORB, 69
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_EventScript_ZV3Mine1::
+	lock
+	faceplayer
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_ELECTRODE, 70
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_EventScript_ZV3Mine2::
+	lock
+	faceplayer
+	playmoncry SPECIES_VOLTORB, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_VOLTORB, 69
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_EventScript_ZV3Mine3::
+	lock
+	faceplayer
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_ELECTRODE, 70
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_EventScript_ZV3Mine4::
+	lock
+	faceplayer
+	playmoncry SPECIES_VOLTORB_HISUI, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3MineAntique, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_VOLTORB_HISUI, 69
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_EventScript_ZV3Mine5::
+	lock
+	faceplayer
+	playmoncry SPECIES_ELECTRODE, CRY_MODE_ENCOUNTER
+	msgbox Route127_Text_ZV3Mine, MSGBOX_DEFAULT
+	waitmoncry
+	setwildbattle SPECIES_ELECTRODE, 70
+	dowildbattle
+	removeobject VAR_LAST_TALKED
+	release
+	end
+
+Route127_Text_ZV3Mine:
+	.string "Something round is bobbing in the\nwater. It's ticking.\pIt's a SEA MINE!\n...No. It's a POKeMON pretending.\lIt's very committed to the bit.$"
+
+Route127_Text_ZV3MineAntique:
+	.string "This mine is made of wood and has\na fuse. An antique.\pIt looks at you like you are\nthe newfangled one.$"
+
+Route127_EventScript_ZV3Warning::
+	msgbox Route127_Text_ZV3Warning, MSGBOX_SIGN
+	end
+
+Route127_Text_ZV3Warning:
+	.string "DANGER: MINEFIELD.\nDO NOT TOUCH, PET OR CATCH.\pSomeone has scratched underneath:\n'they respawn btw'$"
+@ --- einde zee_vulling_3 ---
+
+@ --- zee_vulling_4 (gegenereerd door tools/grounded/maptools/zee_vulling_4.py) ---
+Route127_EventScript_ZV4Oceanographer::
+	msgbox Route127_Text_ZV4Oceanographer, MSGBOX_NPC
+	end
+
+Route127_Text_ZV4Oceanographer:
+	.string "I measure the depth of the trench\nwest of here. With a rope.\pThe rope ran out. I tied on a\nsecond rope. That ran out too.\pOfficial result: two ropes deep.\nIf you DIVE at the head of the\ltrench, look for a hole. Bring\lrope.$"
+@ --- einde zee_vulling_4 ---

@@ -16,7 +16,7 @@ for i, body in enumerate(scripts, 1):
     s = s.replace(f'Debug_EventScript_Script_{i}::\n\trelease\n\tend', f'Debug_EventScript_Script_{i}::\n{lines}\trelease\n\tend', 1)
 try:
     open(p, 'w').write(s)
-    r = subprocess.run(['make', '-j8'], cwd=REPO, capture_output=True, text=True)
+    r = subprocess.run(['make', '-j4'], cwd=REPO, capture_output=True, text=True)
     if r.returncode:
         print(r.stdout[-2000:], r.stderr[-2000:]); sys.exit(1)
     shutil.copy(os.path.join(REPO, 'pokeemerald.gba'), os.path.join(out, 'test.gba'))

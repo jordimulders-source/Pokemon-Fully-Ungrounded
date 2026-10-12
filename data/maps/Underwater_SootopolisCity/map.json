@@ -31,5 +31,14 @@
     }
   ],
   "coord_events": [],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 6,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_PRISM_SCALE",
+      "flag": "FLAG_HIDDEN_ITEM_ZV4_SOOTO_PRISM_SCALE"
+    }
+  ]
 }

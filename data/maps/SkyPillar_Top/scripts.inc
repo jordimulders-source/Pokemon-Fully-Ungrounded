@@ -2,6 +2,7 @@ SkyPillar_Top_MapScripts::
 	map_script MAP_SCRIPT_ON_RESUME, SkyPillar_Top_OnResume
 	map_script MAP_SCRIPT_ON_TRANSITION, SkyPillar_Top_OnTransition
 	map_script MAP_SCRIPT_ON_WARP_INTO_MAP_TABLE, SkyPillar_Top_OnWarp
+	map_script MAP_SCRIPT_ON_FRAME_TABLE, SkyPillar_Top_OnFrame
 	.byte 0
 
 SkyPillar_Top_OnResume:
@@ -18,7 +19,12 @@ SkyPillar_Top_OnTransition:
 	call_if_lt VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_SetCleanLayout
 	call_if_ge VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_TryShowRayquaza
 	call SkyPillar_Top_EventScript_TryShowShinyRayquaza
+	call SkyPillar_Top_EventScript_ArmHallOfOrigin @ Project Grounded: Arceus (data/scripts/azure_flute.inc)
 	end
+
+SkyPillar_Top_OnFrame:
+	map_script_2 VAR_TEMP_4, 1, SkyPillar_Top_EventScript_HallOfOriginScene
+	.2byte 0
 
 @ Project Grounded: Delta Episode. Is de gewone Rayquaza gevangen, dan wacht er een tweede, shiny Rayquaza.
 SkyPillar_Top_EventScript_TryShowShinyRayquaza::
@@ -57,7 +63,7 @@ SkyPillar_Top_EventScript_Rayquaza::
 	playmoncry SPECIES_RAYQUAZA, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	setwildbattle SPECIES_RAYQUAZA, 70
+	setwildbattle SPECIES_RAYQUAZA, 93
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle
 	waitstate
@@ -79,7 +85,7 @@ SkyPillar_Top_EventScript_ShinyRayquaza::
 	delay 40
 	waitmoncry
 	setflag FLAG_FORCE_SHINY
-	setwildbattle SPECIES_RAYQUAZA, 75
+	setwildbattle SPECIES_RAYQUAZA, 95
 	clearflag FLAG_FORCE_SHINY
 	setflag FLAG_SYS_CTRL_OBJ_DELETE
 	special BattleSetup_StartLegendaryBattle

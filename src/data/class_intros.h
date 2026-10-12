@@ -75,6 +75,7 @@ struct TIState
     s16 camX, camY, wx, wy, bg0x, bg0y;
     bool8 regs, scroll;
     u8 nspr, ntags, nfield;
+    u16 hiddenObjEvents;                // bitmasker: door TI_HideField verborgen object events (bij het einde terug)
     u8 spr[TI_MAX_SPR];
     u8 kind[TI_MAX_SPR];
     u16 monSpr;                         // CreateMonPicSprite geeft een u16
@@ -364,8 +365,11 @@ static void TI_HideField(void)
 {
     u32 i;
     for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
-        if (gObjectEvents[i].active)
+        if (gObjectEvents[i].active && !gObjectEvents[i].invisible)
+        {
             gObjectEvents[i].invisible = TRUE;   // anders zet de kaart ze elke frame weer zichtbaar
+            sTI->hiddenObjEvents |= 1u << i;     // gObjectEvents blijft na het gevecht bestaan: in TI_Free terugzetten
+        }
     for (i = 0; i < sTI->nfield; i++)
         gSprites[sTI->field[i]].invisible = TRUE;
 }
@@ -770,6 +774,12 @@ static void TI_UpdateParts(void)
 static void TI_Free(void)
 {
     u32 i;
+    // object events die de intro verborg weer zichtbaar maken; anders blijven speler en rivaal na het gevecht
+    // onzichtbaar tot de volgende warp (gObjectEvents wordt bij de terugkeer naar de kaart niet opnieuw opgebouwd)
+    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
+        if (sTI->hiddenObjEvents & (1u << i))
+            gObjectEvents[i].invisible = FALSE;
+    sTI->hiddenObjEvents = 0;
     for (i = 0; i < sTI->nspr; i++)
     {
         struct Sprite *sp = &gSprites[sTI->spr[i]];

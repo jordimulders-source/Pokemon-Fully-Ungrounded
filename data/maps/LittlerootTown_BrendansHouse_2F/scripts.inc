@@ -258,7 +258,7 @@ LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC::
 	end
 
 LittlerootTown_BrendansHouse_2F_EventScript_CheckRivalsPC::
-	msgbox gText_PokemonTrainerSchoolEmail, MSGBOX_DEFAULT
+	msgbox LittlerootTown_BrendansHouse_2F_Text_BrendansPC, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -275,10 +275,10 @@ PlayersHouse_2F_Text_ClockIsStopped:
 	.string "night system!$"
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom:
-	.string "MOM: {PLAYER}, I know you're a child\n"
-	.string "and you just moved here,\p"
-	.string "but it's time to leave and\n"
-	.string "become a nomad! Goodbye!$"
+	.string "MOM: {PLAYER}, I know you're a child and\n"
+	.string "you just moved here, but it's time to\l"
+	.string "leave and become a nomad!\p"
+	.string "Goodbye!$"
 
 PlayersHouse_2F_Text_Notebook:
 	.string "{PLAYER} flipped open the notebook.\p"
@@ -291,8 +291,12 @@ Common_Text_LookCloserAtMap:
 
 PlayersHouse_2F_Text_ItsAGameCube:
 	.string "It's a Nintendo GameCube.\p"
-	.string "You're playing Double Dash, 150cc\n"
-	.string "Mirror Mode. Mitch is already\l"
-	.string "trailing you by 32 points after\l"
-	.string "10 races. And you didn't even\l"
-	.string "play Dry Dry Desert yet!$"
+	.string "You're playing Double Dash, 150cc Mirror\n"
+	.string "Mode.\p"
+	.string "Mitch is already trailing you by 32\n"
+	.string "points after 10 races.\p"
+	.string "And you didn't even play Dry Dry Desert\n"
+	.string "yet!$"
+
+LittlerootTown_BrendansHouse_2F_Text_BrendansPC:
+	.string "BRENDAN is clearly on Newgrounds.$"

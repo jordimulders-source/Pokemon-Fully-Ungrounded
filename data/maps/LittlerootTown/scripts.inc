@@ -249,9 +249,8 @@ LittlerootTown_EventScript_FatMan::
 	end
 
 LittlerootTown_Text_GroundedFatMan:
-	.string "Technology is perplexing!!\n"
-	.string "You can use AI to build\l"
-	.string "Your own romhack!$"
+	.string "Technology is perplexing!! You can use\n"
+	.string "AI to build Your own romhack!$"
 
 LittlerootTown_EventScript_Boy::
 	msgbox LittlerootTown_Text_BirchSpendsDaysInLab, MSGBOX_NPC
@@ -926,8 +925,8 @@ LittlerootTown_Text_WaitPlayer:
 
 LittlerootTown_Text_WearTheseRunningShoes:
 	.string "MOM: I know you already have running\n"
-	.string "shoes, but it's a pain to delete\l"
-	.string "this script.$"
+	.string "shoes, but it's a pain to delete this\l"
+	.string "script.$"
 
 LittlerootTown_Text_SwitchShoesWithRunningShoes:
 	.string "{PLAYER} doesn't know what to do.$"
@@ -939,13 +938,13 @@ LittlerootTown_Text_ExplainRunningShoes:
 	.string "Alive is by the Village People.$"
 
 LittlerootTown_Text_ComeHomeIfAnythingHappens:
-	.string "Don't cry! Back in the day it was\n"
-	.string "very normal to be a nomad.\p"
-	.string "The Mongols used to conquer nations\n"
-	.string "by horseback and you're sitting here\l"
-	.string "being a crybaby.\p"
-	.string "Only come back home if you brought\n"
-	.string "me a monetary gift!$"
+	.string "Don't cry! Back in the day it was very\n"
+	.string "normal to be a nomad.\p"
+	.string "The Mongols used to conquer nations by\n"
+	.string "horseback and you're sitting here being\l"
+	.string "a crybaby.\p"
+	.string "Only come back home if you brought me a\n"
+	.string "monetary gift!$"
 	
 LittlerootTown_Text_CanUsePCToStoreItems:
 	.string "With a PC, you can store items and\n"
@@ -958,7 +957,7 @@ LittlerootTown_Text_BirchSpendsDaysInLab:
 	.string "PROF. BIRCH spends days on the toilet\n"
 	.string "reading magazines and laughing...\p"
 	.string "He's playing Solitaire, Minesweeper,\n"
-	.string "recently even POKéMON SLEEP...\l"
+	.string "recently even POKéMON SLEEP...\p"
 	.string "What a boomer!\p"
 	.string "When does PROF. BIRCH actually spend\n"
 	.string "time at home?$"
@@ -969,18 +968,18 @@ LittlerootTown_Text_IfYouGoInGrassPokemonWillJumpOut:
 	.string "no, he can't read my POKER FACE!$"
 
 LittlerootTown_Text_DangerousIfYouDontHavePokemon:
-	.string "It's dangerous if you don't have\n"
-	.string "a certified, dual-layered, stainless\p"
-	.string "steel thermal insulation element for\n"
-	.string "lukewarm beverages at exactly 38C!\l"
+	.string "It's dangerous if you don't have a\n"
+	.string "certified, dual-layered, stainless\l"
+	.string "steel thermal insulation element for\l"
+	.string "lukewarm beverages at exactly 38C!\p"
 	.string "Think of the logistical liability!\p"
 	.string "If you were to experience a marginal\n"
 	.string "fluctuation in your hydration-to-\p"
-	.string "electrolyte ratio without a spill-\n"
-	.string "proof nozzle, the audit would be\l"
-	.string "absolutely devastating!\p"
-	.string "No thermal element, no entry!\n"
-	.string "Safety is a lifestyle, not a choice!$"
+	.string "electrolyte ratio without a spill- proof\n"
+	.string "nozzle, the audit would be absolutely\l"
+	.string "devastating!\p"
+	.string "No thermal element, no entry! Safety is\n"
+	.string "a lifestyle, not a choice!$"
 
 LittlerootTown_Text_CanYouGoSeeWhatsHappening:
 	.string "Um, hi!\p"
@@ -1013,9 +1012,8 @@ LittlerootTown_Text_PlayersHouse:
 	.string "IN THE MIDDLE OF THE STREET!$"
 
 LittlerootTown_Text_ProfBirchsHouse:
-	.string "PROF. BIRCH'S HOUSE\p"
-	.string "He's never home. He's in a bush\n"
-	.string "somewhere.$"
+	.string "PROF. BIRCH'S HOUSE He's never home.\n"
+	.string "He's in a bush somewhere.$"
 
 LittlerootTown_Text_BirchSomethingToShowYouAtLab:
 	.string "PROF. BIRCH: Well, well, {PLAYER}{KUN}! Great\n"
@@ -1058,6 +1056,15 @@ LittlerootTown_EventScript_GalarBiologist::
 	release
 	end
 
+LittlerootTown_EventScript_GalarZigzagoon::
+	lock
+	faceplayer
+	playmoncry SPECIES_ZIGZAGOON_GALAR, CRY_MODE_NORMAL
+	msgbox LittlerootTown_Text_GalarZigzagoonCheer, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
 LittlerootTown_EventScript_GalarTooBusy::
 	msgbox LittlerootTown_Text_GalarTooBusy, MSGBOX_DEFAULT
 	release
@@ -1087,17 +1094,19 @@ LittlerootTown_Text_GalarTooBusy:
 	.string "better watch out for frame drops...$"
 
 LittlerootTown_Text_GalarIntro:
-	.string "Biologist: You! You look like you need\n"
-	.string "a SWORD and/or SHIELD!\p"
+	.string "Biologist: You! You look like you need a\n"
+	.string "SWORD and/or SHIELD!\p"
 	.string "No WILD AREA is too wild for you!\p"
 	.string "I am a BIOLOGIST and I've just returned\n"
-	.string "from GALAR. It's great to be back in a\l"
-	.string "world where everything runs at a\l"
-	.string "consistent 60fps and you can actually\l"
-	.string "interact with buildings!\p"
+	.string "from GALAR.\p"
+	.string "It's great to be back in a world where\n"
+	.string "everything runs at a consistent 60fps\l"
+	.string "and you can actually interact with\l"
+	.string "buildings!\p"
 	.string "Anyways, you know ZIGZAGOON? GALAR\n"
-	.string "has really cool ones! They grow even\l"
-	.string "further after becoming a LINOONE.\p"
+	.string "has really cool ones!\p"
+	.string "They grow even further after becoming\n"
+	.string "a LINOONE.\p"
 	.string "They like to stand in front of places\n"
 	.string "and obstruct. What rowdy behavior!\p"
 	.string "Would you like to take this one?$"
@@ -1118,3 +1127,7 @@ LittlerootTown_Text_WrongHouse:
 	.string "Huh? These boxes aren't yours…\p"
 	.string "This is the neighbor's house!\n"
 	.string "Your MOM is waiting next door.$"
+
+LittlerootTown_Text_GalarZigzagoonCheer:
+	.string "ZIGZAGOON: OH-HO-HO-HO-OH,\n"
+	.string "OH-HO-HO-HO!$"

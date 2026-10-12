@@ -172,3 +172,22 @@ Route102_Text_NoRoomForRellor:
 	.string "balls, but your party is full of junk.\l"
 	.string "Make some room!$"
 	
+
+Route102_EventScript_DJSpinda::
+	lock
+	playmoncry SPECIES_SPINDA, CRY_MODE_NORMAL
+	msgbox Route102_Text_DJSpinda, MSGBOX_DEFAULT
+	waitmoncry
+	release
+	end
+
+Route102_EventScript_SpindaManager::
+	msgbox Route102_Text_SpindaManager, MSGBOX_NPC
+	end
+
+Route102_Text_DJSpinda:
+	.string "SPINDA: Spin, spin, spin…$"
+
+Route102_Text_SpindaManager:
+	.string "Sorry, DJ SPINNY SPINDA doesn't do\n"
+	.string "autographs.$"

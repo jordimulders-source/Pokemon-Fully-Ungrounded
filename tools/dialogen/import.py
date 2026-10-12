@@ -75,10 +75,35 @@ def wrap_line(line):
     return out
 
 
+def split_sentences(p):
+    """Zinnen (incl. hun leesteken) van een alinea zonder geforceerde regels."""
+    return [x for x in re.split(r'(?<=[.!?…])\s+(?=\S)', p) if x]
+
+
+def pack_sentences(p):
+    """Verdeel een alinea over vakken van 2 regels en begin een nieuw vak bij voorkeur
+    op een zinsgrens (zoals vanilla), zodat je niet midden in een zin hoeft door te drukken.
+    Een zin die zelf langer is dan 2 regels scrollt binnen zijn vak door."""
+    boxes, cur = [], ''
+    for sent in split_sentences(p):
+        attempt = f'{cur} {sent}' if cur else sent
+        if not cur or len(wrap_line(attempt)) <= 2:
+            cur = attempt
+        else:
+            boxes.append(wrap_line(cur))
+            cur = sent
+    if cur:
+        boxes.append(wrap_line(cur))
+    return boxes
+
+
 def layout(text):
     boxes = [p.strip() for p in re.split(r'\n\s*\n', text.replace('\r', '')) if p.strip()]
     result = []
     for p in boxes:
+        if '\n' not in p and len(wrap_line(p)) > 2:
+            result += pack_sentences(p)
+            continue
         lines = []
         for forced in p.split('\n'):
             lines += wrap_line(forced.strip())

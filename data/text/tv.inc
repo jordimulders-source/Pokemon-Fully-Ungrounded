@@ -2984,3 +2984,15 @@ ContestLadyShow_Text_LostBadly::
 	.string "MC: Uh… Uh-oh…\p"
 	.string "Uh… That's all the time we have today!\n"
 	.string "Thanks for tuning in!$"
+
+gText_MomMightLikeThisProgram::
+	.string "MOM might like this program.\p"
+	.string "She's really into these weird housewife\n"
+	.string "reality series.\p"
+	.string "Maybe it's relatable for her?$"
+
+gText_DadMightLikeThisProgram::
+	.string "DAD might like this program.\p"
+	.string "It's just three 50+ year olds\n"
+	.string "discussing sports like it's still the\l"
+	.string "1980s.$"

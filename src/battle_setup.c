@@ -1293,6 +1293,20 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: de rivaal (May/Brendan) krijgt een eigen intro die per gevecht escaleert (i.p.v. de mugshot)
     if (RivalIntro_IsRival(trainerId))
         return B_TRANSITION_RIVAL_INTRO;
+    // Project Grounded (Jordi): een trainer met alleen Magikarp (Fisherman Darian) krijgt de Magikarp-intro
+    if (!(gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS) && trainerId != TRAINER_NONE)
+    {
+        const struct Trainer *magikarpTrainer = GetTrainerStructFromId(trainerId);
+        u32 i;
+        bool32 onlyMagikarp = magikarpTrainer->partySize != 0;
+        for (i = 0; i < magikarpTrainer->partySize; i++)
+        {
+            if (magikarpTrainer->party[i].species != SPECIES_MAGIKARP)
+                onlyMagikarp = FALSE;
+        }
+        if (onlyMagikarp)
+            return B_TRANSITION_MAGIKARP;
+    }
 
     // Project Grounded: Birch krijgt zijn eigen (poep-)transitie i.p.v. de mugshot
     if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER || trainerId == TRAINER_BIRCH_RESORT)

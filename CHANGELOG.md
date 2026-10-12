@@ -18678,3 +18678,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
     - Gen 5-exp (minder exp tegen lagere/gelijke levels) staat aan (`B_SCALED_EXP`) en zit in de berekening.
   - **SickBlik: intro (hotpot) en thema bij álle gevechten.** Het strand op Route 104, "Dev" en het motel in Lilycove hadden de gewone Cooltrainer-overgang en -muziek; nu `B_TRANSITION_SICKBLIK` en `MUS_GROUNDED_VS_SICKBLIK` voor alle zes de SickBlik-trainers.
   - **Dave in Paradiso Resort** (lv 100) krijgt nu ook de GOAL!-intro en Freed From Desire; **Colress in Chargestone Cave** zijn eigen intro (het thema had hij al via zijn klasse). Gecontroleerd voor alle personages met een eigen intro/thema: Keccles, Mimi, de Burglar, Birch, Wally en Mitch waren al volledig gekoppeld.
+  - **Fisherman Darian** (alleen Magikarp) krijgt de Magikarp-intro: elke trainer met een team van alleen Magikarp gebruikt `B_TRANSITION_MAGIKARP` (de muziek deed dat al).

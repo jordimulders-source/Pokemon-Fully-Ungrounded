@@ -1,5 +1,7 @@
 # Levelcurve (9 okt)
 
+> **12 okt:** inhaal-EXP milder (Jordi: inflatie aan het begin): +25% per level achterstand, max. ×3 (was +100%, max. ×10). Hoofdpad nu +1,5 tot +3 boven elke gymleider, Steven −0,7. Zie de changelog ([v1.0.0], testrun).
+
 Vraag van Jordi: door alle nieuwe trainers en grotere teams loopt een reguliere speler ver voor. Daarna (feedback): **de E4 rond lv 80, Steven ace 84, de sterkste superbosses op 100; grinden is een no-go; extra content is het alternatief voor grinden; variatie in teams moet worden aangemoedigd.** Ronde 3: grap-teams, wilde Pokémon en legendaries schalen mee; advies over evolutielevels.
 
 ## Ontwerp in één alinea

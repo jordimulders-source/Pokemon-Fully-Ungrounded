@@ -35,8 +35,8 @@ WILD_PER_MAP = 6
 TRAINER_MULT = 0.5   # B_TRAINER_EXP_PERCENT (was 1.5: B_TRAINER_EXP_MULTIPLIER GEN_7)
 WILD_MULT = 1.0
 CATCHUP = True        # B_GROUNDED_CATCHUP_EXP
-CATCHUP_STEP = 100    # B_CATCHUP_EXP_STEP: procent extra EXP per level onder de ace van de volgende mijlpaal
-CATCHUP_MAX = 900     # B_CATCHUP_EXP_MAX
+CATCHUP_STEP = 25     # B_CATCHUP_EXP_STEP: procent extra EXP per level onder de ace van de volgende mijlpaal
+CATCHUP_MAX = 200     # B_CATCHUP_EXP_MAX
 LAND_RATES = [20, 20, 10, 10, 10, 10, 5, 5, 4, 4, 1, 1]
 
 # (naam, [kaarten], mijlpaal-trainer)

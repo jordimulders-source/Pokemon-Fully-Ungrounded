@@ -5252,6 +5252,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Pyukumuku
 Level: 67
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Toxic
+- Recover
+- Counter
+- Mirror Coat
 
 === TRAINER_HERMAN ===
 Name: HERMAN
@@ -7290,6 +7294,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Indeedee
 Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Calm Mind
+- Psychic
+- Power Split
+- Psychic Terrain
 
 Beheeyem
 Level: 54
@@ -9253,6 +9261,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Skarmory
 Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Spikes
+- Roost
+- Iron Defense
+- Body Press
 
 Venusaur
 Level: 51
@@ -9951,6 +9963,10 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Parasect
 Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Strength Sap
+- Pollen Haze
+- Growth
+- X-Scissor
 
 === TRAINER_TIMOTHY_2 ===
 Name: TIMOTHY
@@ -12294,6 +12310,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Pyukumuku
 Level: 67
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+- Toxic
+- Recover
+- Counter
+- Mirror Coat
 
 === TRAINER_KATELYN_2 ===
 Name: KATELYN
@@ -12693,6 +12713,10 @@ AI: Check Bad Move
 Skarmory
 Level: 51
 IVs: 30 HP / 30 Atk / 30 Def / 30 SpA / 30 SpD / 30 Spe
+- Spikes
+- Roost
+- Iron Defense
+- Body Press
 
 Bombirdier
 Level: 51
@@ -13738,6 +13762,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Skarmory
 Level: 48
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Spikes
+- Roost
+- Iron Defense
+- Body Press
 
 Dudunsparce_Two_Segment
 Level: 48
@@ -13767,6 +13795,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Skarmory
 Level: 50
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Spikes
+- Roost
+- Iron Defense
+- Body Press
 
 Dudunsparce_Two_Segment
 Level: 50
@@ -14144,6 +14176,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Pyukumuku
 Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Toxic
+- Recover
+- Counter
+- Mirror Coat
 
 === TRAINER_KARA ===
 Name: KARA
@@ -16459,6 +16495,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Mr_Mime
 Level: 38
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Psychic
+- Light Screen
+- Reflect
+- Safeguard
 
 Chimecho
 Level: 38
@@ -18055,6 +18095,10 @@ Mugshot: Blue
 Kecleon
 Level: 15
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Shadow Sneak
+- Bind
+- Leech Seed
+- Glare
 
 Whismur
 Level: 15
@@ -18693,6 +18737,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Parasect
 Level: 39
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Strength Sap
+- Pollen Haze
+- Growth
+- X-Scissor
 
 === TRAINER_JAMES_3 ===
 Name: JAMES
@@ -21877,6 +21925,10 @@ AI: Check Bad Move
 Claydol
 Level: 44
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Earth Power
+- Power Split
+- Transmutation
+- Sandstorm
 
 Krookodile
 Level: 44
@@ -22163,6 +22215,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Reuniclus
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Light Screen
+- Reflect
+- Psychic
+- Pain Split
 
 === TRAINER_HELENE ===
 Name: HELENE

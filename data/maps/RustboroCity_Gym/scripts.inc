@@ -282,7 +282,7 @@ RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
 @ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
 RustboroCity_Gym_Text_GymGuideAceLevel:
 	.string "Insider info: the LEADER's ace\n"
-	.string "is level 23.\p"
+	.string "is level 18.\p"
 	.string "You didn't hear it from me.\n"
 	.string "You heard it from me, but still.$"
 

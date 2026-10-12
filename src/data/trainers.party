@@ -257,7 +257,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Chewtle
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bubble Beam
 - Tackle
@@ -265,7 +265,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 
 Mareanie
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bubble Beam
 - Peck
@@ -273,11 +273,11 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bite
 
 Slowpoke_Galar
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Tatsugiri
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Bubble Beam
 - Splash
@@ -3846,19 +3846,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Furfrou @ Nugget
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Brionne @ Nugget
-Level: 19
+Popplio @ Nugget
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Buneary @ Nugget
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Snubbull @ Nugget
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DAPHNE ===
@@ -4481,20 +4481,20 @@ Double Battle: No
 AI: Check Bad Move
 
 Zigzagoon_Galar @ Nugget
-Level: 16
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Meowth @ Nugget
-Level: 16
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Pay Day
 
 Gimmighoul @ Nugget
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Rellor @ Nugget
-Level: 16
+Level: 12
 Shiny: Yes
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -8252,7 +8252,7 @@ AI: CHECK_BAD_MOVE / TRY_TO_FAINT / CHECK_VIABILITY / HP_AWARE / WILL_SUICIDE
 Mugshot: Yellow
 
 Geodude @ Focus Sash
-Level: 21
+Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Solid Rock
 - Stealth Rock
@@ -8261,7 +8261,7 @@ Ability: Solid Rock
 - Explosion
 
 Geodude_Alola @ Focus Sash
-Level: 21
+Level: 16
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Galvanize
 - Self Destruct
@@ -8270,7 +8270,7 @@ Ability: Galvanize
 - Spark
 
 Lileep @ Absorb Bulb
-Level: 22
+Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Storm Drain
 - Leech Seed
@@ -8279,7 +8279,7 @@ Ability: Storm Drain
 - Recover
 
 Sableye @ Rocky Helmet
-Level: 22
+Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Prankster
 - Fake Out
@@ -8288,7 +8288,7 @@ Ability: Prankster
 - Shadow Sneak
 
 Shuckle @ Leftovers
-Level: 23
+Level: 18
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 Ability: Sap Sipper
 - Power Swap
@@ -8297,7 +8297,7 @@ Ability: Sap Sipper
 - Protect
 
 Nosepass @ Sitrus Berry
-Level: 22
+Level: 17
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Earth Eater
 - Nuzzle
@@ -8758,15 +8758,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Plusle
-Level: 19
+Level: 15
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Minun
-Level: 19
+Level: 15
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 Gastly
-Level: 19
+Level: 15
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 
 === TRAINER_TED ===
@@ -8957,37 +8957,37 @@ Double Battle: No
 AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_DOUBLE_BATTLE
 
 Psyduck @ Focus Sash
-Level: 18
+Level: 14
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Endeavor
 - Vacuum Wave
 
 Delibird @ Focus Sash
-Level: 18
+Level: 14
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Endeavor
 - Ice Shard
 
 Nuzleaf @ Focus Sash
-Level: 18
+Level: 14
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Endeavor
 - Quick Attack
 
 Luvdisc @ Focus Sash
-Level: 18
+Level: 14
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Endeavor
 - Aqua Jet
 
 Volbeat @ Focus Sash
-Level: 18
+Level: 14
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Endeavor
 - Quick Attack
 
 Tandemaus @ Loaded Dice
-Level: 19
+Level: 15
 Ability: Pickup
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Population Bomb
@@ -10248,11 +10248,11 @@ Double Battle: No
 AI: Check Bad Move
 
 Poochyena
-Level: 11
+Level: 7
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
 Scraggy
-Level: 12
+Level: 8
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
 === TRAINER_BILLY ===
@@ -10264,20 +10264,20 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Bibarel
-Level: 16
+Bidoof
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Wooper
-Level: 16
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Shellos West
-Level: 16
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Wiglett
-Level: 16
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSH ===
@@ -10290,27 +10290,27 @@ Double Battle: No
 AI: CHECK_BAD_MOVE / TRY_TO_FAINT / CHECK_VIABILITY / SMART_MON_CHOICES
 
 Baltoy
-Level: 19
+Level: 14
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Dwebble
-Level: 19
+Level: 14
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Maractus
-Level: 19
+Level: 14
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Larvitar
-Level: 19
+Level: 14
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Gligar
-Level: 19
+Level: 14
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Cacnea
-Level: 20
+Level: 15
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_TOMMY ===
@@ -10323,15 +10323,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Aron
-Level: 18
+Level: 13
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 
 Rockruff
-Level: 18
+Level: 13
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Murkrow
-Level: 19
+Level: 14
 Ability: Prankster
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 - Haze
@@ -10349,19 +10349,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Poochyena
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Poochyena
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Poochyena
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Poochyena
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_BEN ===
@@ -10694,15 +10694,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Zigzagoon
-Level: 12
+Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Chatot
-Level: 12
+Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Taillow
-Level: 11
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 30 Spe
 
 === TRAINER_TIMMY ===
@@ -10841,7 +10841,7 @@ Double Battle: No
 AI: Check Bad Move
 
 Gyarados
-Level: 4
+Level: 3
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Magikarp
@@ -10850,11 +10850,11 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Hydro Pump
 
 Pyukumuku
-Level: 18
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Arrokuda
-Level: 18
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CLAUDE ===
@@ -14807,7 +14807,7 @@ Double Battle: Yes
 AI: Check Bad Move
 
 Wingull
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ability: Hydration
 - Water Gun
@@ -14816,7 +14816,7 @@ Ability: Hydration
 - Supersonic
 
 Lombre
-Level: 18
+Level: 14
 Ability: Swift Swim
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Chilling Water
@@ -14825,7 +14825,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Growl
 
 Shroomish
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Growth
 - Leech Seed
@@ -14833,7 +14833,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Growl
 
 Nuzleaf
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Growth
 - Protect
@@ -17300,15 +17300,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Lunatone
-Level: 19
+Level: 14
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 
 Bronzor
-Level: 18
+Level: 13
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 Duskull
-Level: 19
+Level: 14
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 
 === TRAINER_BAS_RUTTEN ===
@@ -17855,15 +17855,15 @@ AI: Check Bad Move
 Mugshot: Blue
 
 Lombre
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Whismur
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Torchic
-Level: 17
+Level: 15
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_BRENDAN_RUSTBORO_MUDKIP ===
@@ -17877,15 +17877,15 @@ AI: Check Bad Move
 Mugshot: Blue
 
 Houndour
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Whismur
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Treecko
-Level: 17
+Level: 15
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_PAXTON ===
@@ -18033,15 +18033,15 @@ AI: Basic Trainer
 Mugshot: Blue
 
 Kecleon
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Whismur
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Mudkip
-Level: 17
+Level: 15
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_MAY_RUSTBORO_MUDKIP ===
@@ -18055,15 +18055,15 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 Mugshot: Pink
 
 Vulpix
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Buneary
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Treecko
-Level: 17
+Level: 15
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_MAXIE_MAGMA_HIDEOUT ===
@@ -18144,15 +18144,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Wooper
-Level: 12
+Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Shroomish
-Level: 12
+Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Slakoth
-Level: 12
+Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_HALEY_1 ===
@@ -18164,24 +18164,24 @@ Music: Female
 Double Battle: No
 AI: Check Bad Move
 
-Fletchinder
-Level: 18
+Fletchling
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Slakoth
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Klefki
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Jigglypuff
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Pachirisu
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JANICE ===
@@ -18194,15 +18194,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Marill
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Toxel
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Munchlax
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_VIVI ===
@@ -18475,28 +18475,28 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Butterfree
-Level: 10
+Caterpie
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Wurmple
-Level: 10
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Dottler
-Level: 10
+Blipbug
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Scatterbug
-Level: 11
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Kricketune
-Level: 12
+Level: 8
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Sewaddle
-Level: 11
+Level: 7
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_LYLE ===
@@ -18509,19 +18509,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Scyther
-Level: 15
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Pinsir
-Level: 15
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Scizor
-Level: 9
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Yanmega
-Level: 9
+Level: 6
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOSE ===
@@ -18534,19 +18534,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Wimpod
-Level: 19
+Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Nincada
-Level: 19
+Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Surskit
-Level: 19
+Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 Spewpa
-Level: 19
+Level: 15
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 
 === TRAINER_DOUG ===
@@ -18622,23 +18622,23 @@ Double Battle: No
 AI: Check Bad Move
 
 Nincada
-Level: 16
+Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Kricketot
-Level: 17
+Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Cutiefly
-Level: 17
+Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Surskit
-Level: 17
+Level: 13
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Snom
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JAMES_2 ===
@@ -18896,15 +18896,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Skiddo
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Nosepass
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Carbink
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_ERIC ===
@@ -20883,23 +20883,23 @@ Double Battle: No
 AI: Check Bad Move
 
 Luxio @ Nugget
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Yamper
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Sandile
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Furfrou
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Meowth_Alola
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_SARAH ===
@@ -20913,15 +20913,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Skitty
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Minccino @ Nugget
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Glameow
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DARIAN ===
@@ -22196,15 +22196,15 @@ Double Battle: No
 AI: Check Bad Move
 
 Spheal
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Seviper
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Frillish
-Level: 19
+Level: 15
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_JOHNSON ===
@@ -22217,32 +22217,32 @@ Double Battle: No
 AI: Check Bad Move
 
 Machop
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Metronome
 
 Meowth
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Metronome
 
 Electabuzz
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Metronome
 
 Plusle
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Metronome
 
 Chansey
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Metronome
 
 Lucario
-Level: 18
+Level: 14
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Metronome
 
@@ -22569,15 +22569,15 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Remoraid
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Buneary
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Torchic
-Level: 17
+Level: 15
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_MAY_RUSTBORO_TORCHIC ===
@@ -22591,15 +22591,15 @@ AI: Basic Trainer
 Mugshot: Pink
 
 Capsakid
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Buneary
-Level: 16
+Level: 14
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 Mudkip
-Level: 17
+Level: 15
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 
 === TRAINER_ROXANNE_2 ===
@@ -38678,7 +38678,7 @@ AI: Check Bad Move / Try To Faint
 Mugshot: Yellow
 
 Dreepy
-Level: 18
+Level: 14
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Astonish
 - Quick Attack
@@ -38686,7 +38686,7 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Bite
 
 Ferroseed
-Level: 18
+Level: 14
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Metal Claw
 - Pin Missile
@@ -38694,7 +38694,7 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Tackle
 
 Voltorb
-Level: 18
+Level: 14
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Charge Beam
 - Spark
@@ -38702,7 +38702,7 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Self-Destruct
 
 Remoraid @ Oran Berry
-Level: 19
+Level: 15
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 - Water Gun
 - Water Pulse

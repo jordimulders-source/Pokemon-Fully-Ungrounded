@@ -2068,11 +2068,27 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
     return trainer->partySize;
 }
 
+// Project Grounded (Jordi 12 okt): Wally vecht in Petalburg meteen met zijn net gevangen Ralts.
+// Hergebruikt TRAINER_WALLY_MAUVILLE (naam, foto, mugshot, thema); alle trainer-id's zijn bezet.
+EWRAM_DATA bool8 gWallyRaltsBattle = FALSE;
+
+void Grounded_StartWallyRaltsBattle(void)
+{
+    gWallyRaltsBattle = TRUE;
+}
+
 static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 firstTrainer)
 {
     u8 retVal;
     if (trainerNum == TRAINER_SECRET_BASE)
         return 0;
+    if (gWallyRaltsBattle && trainerNum == TRAINER_WALLY_MAUVILLE)
+    {
+        gWallyRaltsBattle = FALSE;
+        ZeroEnemyPartyMons();
+        CreateMaleMon(&party[0], SPECIES_RALTS, 5);
+        return 1;
+    }
     if (gCasinoBattle) // Project Grounded: Battle Casino, teams van de kaart
         return Casino_BuildEnemyParty(party, trainerNum, firstTrainer);
     if (gStadiumBattle) // Project Grounded: Battle Stadium, keuze uit de pool op level 50

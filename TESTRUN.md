@@ -20,7 +20,7 @@ Status: ✅ opgelost · 👍 goed zo (geen actie) · ⏳ open · 💡 idee/later
 | Shellos (Billy) | Harden + Recover was eindeloos rekken; Recover → Mud Shot. Recover mag, maar niet om vroege gevechten te rekken. | ✅ |
 | AI-debuffspam | Keccles' Charmander deed 3× Smokescreen vóór Dragon Breath. Nu: een stat-verlaging scoort alleen zolang die stat nog niet verlaagd is. Uitzondering: eerste rivaalgevecht (Route 103), daar maakt de spam het winbaar. | ✅ |
 | Pokémon zonder aanval | Ivan's Pyukumuku (Baton Pass gaf Leech Seed door) kon niets: + Counter. Alle trainer-Pokémon zonder aanval kregen er een (behalve grappen). | ✅ |
-| Bullet Seed | Raakte maar 2×. Kansen zijn standaard Gen 5+ (35% 2×, 35% 3×, 15% 4×, 15% 5×); niet aangepast. | 👍 |
+| Bullet Seed | Raakte maar 2×. Kansen zijn standaard Gen 5+ (35% 2×, 35% 3×, 15% 4×, 15% 5×); de power is wel verhoogd (30 per hit i.p.v. 25, gemiddeld ±93 i.p.v. ±77). Jordi: viel mee, niet te sterk. | 👍 |
 | Self-Destruct mist | Alola-Geodude's Self-Destruct "raakte niet": miss door 1 Mud-Slap (accuracy −1). Geen bug. | 👍 |
 | Leech Seed na wissel | Bleef hangen: Pyukumuku gebruikte Baton Pass (geeft het door, zoals in de echte games). Geen bug. | 👍 |
 

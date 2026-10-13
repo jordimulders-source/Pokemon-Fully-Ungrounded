@@ -66,3 +66,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Burglar SIMON (Slateport) | Eerste inbrekersevent getriggerd in Slateport: werkt zoals bedoeld, "erg leuk" (Jordi). | 👍 |
 | Burglar SIMON levels | Teams per badge liepen vanaf badge 3 tot 24 levels achter; nu net onder de volgende gym-ace (26–28 … 70–72). Hone Claws tegen Tinkatink: logische keuze, AI blijft. | ✅ |
 | Simon verdween zomaar na zijn vlucht; nu een snelle fade naar zwart | | ✅ |
+| Team na Slateport | Lv 17–21 (Emolga 21, Butterfree/Sirfetch'd 20, Cutiefly/Sableye 19, Tinkatink 17): kern 2–3 onder Brawly's ace 23 = doel; gemiddeld −3,7 door rouleren. EXP niet aanpassen; bij problemen eerst naar Brawly's team kijken. | 👍 |

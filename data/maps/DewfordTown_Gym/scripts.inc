@@ -124,7 +124,7 @@ DewfordTown_Gym_EventScript_CheckBasRutten::
 	goto_if_not_defeated TRAINER_BAS_RUTTEN, DewfordTown_Gym_EventScript_CheckCristian
 	addvar VAR_0x8000, 1
 DewfordTown_Gym_EventScript_CheckCristian::
-	goto_if_not_defeated TRAINER_CRISTIAN, DewfordTown_Gym_EventScript_CheckRogan
+	goto_if_not_defeated TRAINER_CHAEL, DewfordTown_Gym_EventScript_CheckRogan
 	addvar VAR_0x8000, 1
 DewfordTown_Gym_EventScript_CheckRogan::
 	goto_if_not_defeated TRAINER_ROGAN, DewfordTown_Gym_EventScript_StopCountingTrainers
@@ -228,7 +228,7 @@ DewfordTown_Gym_EventScript_BasRuttenBrightenRoom::
 	end
 
 DewfordTown_Gym_EventScript_Cristian::
-	trainerbattle_single TRAINER_CRISTIAN, DewfordTown_Gym_Text_CristianIntro, DewfordTown_Gym_Text_CristianDefeat, DewfordTown_Gym_EventScript_CristianBrightenRoom
+	trainerbattle_single TRAINER_CHAEL, DewfordTown_Gym_Text_CristianIntro, DewfordTown_Gym_Text_CristianDefeat, DewfordTown_Gym_EventScript_CristianBrightenRoom
 	msgbox DewfordTown_Gym_Text_CristianPostBattle, MSGBOX_AUTOCLOSE
 	end
 

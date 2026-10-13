@@ -577,7 +577,7 @@
 #define TRAINER_DIO                         571
 #define TRAINER_BAS_RUTTEN                  572
 #define TRAINER_ROGAN                       573
-#define TRAINER_CRISTIAN                    574
+#define TRAINER_CHAEL                    574
 #define TRAINER_SYLVIA                      575
 #define TRAINER_LEONARDO                    576
 #define TRAINER_ATHENA                      577

@@ -1537,7 +1537,9 @@ static const struct LevelUpMove sPsyduckLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGolduckLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_RIPTIDE), // Project Grounded: signature
     LEVEL_UP_MOVE( 0, MOVE_PSYCHIC),        
+    LEVEL_UP_MOVE( 1, MOVE_RIPTIDE),
     LEVEL_UP_MOVE( 1, MOVE_PSYCHIC),
     LEVEL_UP_MOVE( 1, MOVE_AQUA_JET),
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),

@@ -7059,7 +7059,7 @@ static const u16 sWeightToDamageTable[] =
 };
 
 static const u8 sSpeedDiffPowerTable[] = {40, 60, 80, 120, 150};
-static const u8 sRiptidePowerTable[] = {40, 60, 80, 100, 120}; // Project Grounded: Riptide (Golduck), max 120
+static const u8 sCavitationPowerTable[] = {40, 60, 80, 100, 120}; // Project Grounded: Cavitation (Golduck), max 120
 static const u8 sHeatCrashPowerTable[] = {40, 40, 60, 80, 100, 120};
 static const u8 sTrumpCardPowerTable[] = {200, 80, 60, 50, 40};
 
@@ -7360,7 +7360,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         speed = GetBattlerTotalSpeedStat(battlerAtk, ctx->abilityAtk, ctx->holdEffectAtk) / GetBattlerTotalSpeedStat(battlerDef, ctx->abilityDef, ctx->holdEffectDef);
         if (speed >= ARRAY_COUNT(sSpeedDiffPowerTable))
             speed = ARRAY_COUNT(sSpeedDiffPowerTable) - 1;
-        basePower = (move == MOVE_RIPTIDE) ? sRiptidePowerTable[speed] : sSpeedDiffPowerTable[speed];
+        basePower = (move == MOVE_CAVITATION) ? sCavitationPowerTable[speed] : sSpeedDiffPowerTable[speed];
         break;
     case EFFECT_GYRO_BALL:
         {

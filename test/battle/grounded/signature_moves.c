@@ -280,3 +280,21 @@ SINGLE_BATTLE_TEST("Hyphal Snare does not bind Grass types")
         EXPECT(!opponent->volatiles.wrapped);
     }
 }
+
+// Cavitation (Golduck): Water, special; power naar snelheidsverhouding (40/60/80/100/120), max 120.
+SINGLE_BATTLE_TEST("Cavitation deals more damage the faster the user is", s16 damage)
+{
+    u32 speed;
+    PARAMETRIZE { speed = 50; }
+    PARAMETRIZE { speed = 400; }
+    GIVEN {
+        PLAYER(SPECIES_GOLDUCK) { Speed(speed); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(100); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_CAVITATION); }
+    } SCENE {
+        HP_BAR(opponent, captureDamage: &results[i].damage);
+    } FINALLY {
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(3.0), results[1].damage);
+    }
+}

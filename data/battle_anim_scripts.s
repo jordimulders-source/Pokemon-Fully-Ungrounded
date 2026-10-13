@@ -38947,29 +38947,45 @@ Status_HyphalSnare:
 	waitforvisualfinish
 	end
 
-@ Project Grounded: Riptide. Golduck schiet weg en scheurt langs het doelwit; zijn kielzog stuwt een
-@ golf op die terugstroomt als muistroom en het doelwit meesleurt.
-gBattleAnimMove_Riptide::
-	loadspritegfx ANIM_TAG_SPLASH
-	loadspritegfx ANIM_TAG_SWEAT_BEAD
-	loadspritegfx ANIM_TAG_WATER_IMPACT
+@ Project Grounded: Cavitation. Golduck zwemt zo snel dat het water om hem heen verdampt: hij verdwijnt
+@ in een streep, een stroom dampbellen schiet naar het doelwit en implodeert daar in een reeks
+@ schokgolven met lichtflitsjes (zoals de klap van een pistoolgarnaal).
+gBattleAnimMove_Cavitation::
+	loadspritegfx ANIM_TAG_BUBBLE
 	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	loadspritegfx ANIM_TAG_THIN_RING
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_THIN_RING, 0, 12, 12, RGB(24, 30, 31)
 	createvisualtask AnimTask_AttackerStretchAndDisappear, 2
 	playsewithpan SE_M_RAZOR_WIND2, SOUND_PAN_ATTACKER
 	waitforvisualfinish
 	delay 1
 	createvisualtask AnimTask_SetAttackerInvisibleWaitForSignal, 2
-	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
-	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +4, 0
-	delay 20
 	monbg ANIM_DEF_PARTNER
 	setalpha 12, 8
-	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_TARGET, 12, 4, 2, 4
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 9, RGB(8, 14, 31)
-	playsewithpan SE_M_WATERFALL, SOUND_PAN_TARGET
-	call RisingWaterHitEffect
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 7, RGB(2, 8, 18)
+	createsprite gWaterBubbleProjectileSpriteTemplate, ANIM_ATTACKER, 2, 18, 0, 15, -15, 6, 128, 100
+	playsewithpan SE_M_BUBBLE, SOUND_PAN_ATTACKER
+	delay 3
+	createsprite gWaterBubbleProjectileSpriteTemplate, ANIM_ATTACKER, 2, 18, 0, 35, 37, 6, 128, 100
+	delay 3
+	createsprite gWaterBubbleProjectileSpriteTemplate, ANIM_ATTACKER, 2, 18, 0, 10, -37, 6, 128, 100
+	playsewithpan SE_M_BUBBLE, SOUND_PAN_ATTACKER
+	delay 3
+	createsprite gWaterBubbleProjectileSpriteTemplate, ANIM_ATTACKER, 2, 18, 0, 30, 10, 6, 128, 100
+	delay 3
+	createsprite gWaterBubbleProjectileSpriteTemplate, ANIM_ATTACKER, 2, 18, 0, 20, -20, 6, 128, 100
 	waitforvisualfinish
-	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 9, 0, RGB(8, 14, 31)
+	call CavitationImplosion_A
+	call CavitationImplosion_B
+	call CavitationImplosion_A
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 1, 0
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=0
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 4, 0, 12, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 12, 0, RGB_WHITE
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 7, 0, RGB(2, 8, 18)
 	createvisualtask AnimTask_ExtremeSpeedMonReappear, 2
 	setarg 7, 0x1000
 	waitforvisualfinish
@@ -38977,3 +38993,17 @@ gBattleAnimMove_Riptide::
 	clearmonbg ANIM_DEF_PARTNER
 	blendoff
 	end
+CavitationImplosion_A:
+	playsewithpan SE_M_BUBBLE2, SOUND_PAN_TARGET
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, -12, -8, 1, 0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 0, 10, 0, RGB_WHITE
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 2, 0, 4, 1
+	delay 5
+	return
+CavitationImplosion_B:
+	playsewithpan SE_M_BUBBLE2, SOUND_PAN_TARGET
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, 12, 6, 1, 0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 0, 10, 0, RGB_WHITE
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 2, 0, 4, 1
+	delay 5
+	return

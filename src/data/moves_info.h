@@ -22047,12 +22047,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_HyphalSnare,
     },
 
-    [MOVE_RIPTIDE] = // Project Grounded: Golduck
+    [MOVE_CAVITATION] = // Project Grounded: Golduck
     {
-        .name = COMPOUND_STRING("Riptide"),
+        .name = COMPOUND_STRING("Cavitation"),
         .description = COMPOUND_STRING(
-            "A current from its wake. More\n"
-            "damage the faster the user."),
+            "Imploding bubbles from its\n"
+            "speed. Faster = stronger."),
         .effect = EFFECT_ELECTRO_BALL,
         .power = 1,
         .type = TYPE_WATER,
@@ -22065,7 +22065,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Riptide,
+        .battleAnimScript = gBattleAnimMove_Cavitation,
     },
 
     // Z-Moves

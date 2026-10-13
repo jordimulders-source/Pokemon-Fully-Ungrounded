@@ -936,7 +936,7 @@
 #define MOVE_GULP_DOWN 873 // Project Grounded: Swalot
 #define MOVE_NINE_LIVES 874 // Project Grounded: Delcatty
 #define MOVE_HYPHAL_SNARE 875 // Project Grounded: Parasect
-#define MOVE_RIPTIDE 876 // Project Grounded: Golduck
+#define MOVE_CAVITATION 876 // Project Grounded: Golduck
 
 #define MOVES_COUNT_GEN9 877
 

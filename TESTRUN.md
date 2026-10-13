@@ -74,3 +74,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Pollen Haze-balans | Besproken: buffs nodig (Bug was het zwakste type). Ribombee te weinig bulk; Scizor en Volcarona hebben geen Pollen Season (move of partner nodig) en een eigen weersetter of windmove lost de haze op. Zo laten, in het late spel in de gaten houden. | 👍 |
 | Wilde levels | Route 110 (Gulpin lv 14) en de hele middengame lagen ver onder de trainers; 43 tabellen verhoogd tot ±2 onder het trainerlevel, evoluties waar nodig. | ✅ |
 | May Route 110 (ace 29) | Voorstel 2 lager (ace 27): Jordi test eerst. | ⏳ |
+| Birch op Route 110: nieuwe dialoog van Jordi | | ✅ |

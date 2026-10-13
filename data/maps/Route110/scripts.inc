@@ -950,13 +950,20 @@ Route110_Text_ThereIsNoRecord:
 	.string "Everyone's too scared.$"
 
 Route110_Text_ImagineSeeingYouHere:
-	.string "PROF. BIRCH: Oh, {PLAYER}{KUN}! Fancy seeing\n"
-	.string "you here!\p"
-	.string "Where's my {RIVAL}?$"
+	.string "PROF. BIRCH: Oh shit, you're here now!\p"
+	.string "Well, huh, you mean why am I coming from\n"
+	.string "the north? Haha, yeah, MUD SHOT!!\p"
+	.string "You aren't into extreme sports? Sad!\p"
+	.string "Where's my little turd? I mean, my\n"
+	.string "{RIVAL}?$"
 
 Route110_Text_HeardYouInstallMatchCall:
-	.string "Oh, you're traveling separately. That's\n"
-	.string "fine.\p"
+	.string "Ahh, you're not together?\p"
+	.string "Well, you guys are too young to marry\n"
+	.string "anyways.\p"
+	.string "It ain't the Middle Ages… sadly…\p"
+	.string "I mean, at least there were droppings\n"
+	.string "everywhere back then. More to study!\p"
 	.string "Your POKéNAV has MATCH CALL?\p"
 	.string "Then let me register you.\p"
 	.string "I can rate your POKéDEX anytime. At 3\n"
@@ -967,9 +974,14 @@ Route110_Text_RegisteredBirchInPokenav:
 	.string "Registered PROF. BIRCH in the POKéNAV.$"
 
 Route110_Text_KeepAnEyeOutForRival:
-	.string "PROF. BIRCH: {PLAYER}{KUN}…\p"
-	.string "Keep an eye on my {RIVAL}, please. … … …\p"
-	.string "Well, I'm off to hide in a bush. See you!$"
+	.string "PROF. BIRCH: Well, see you around.\p"
+	.string "I've been trying that new TEAM MAGMA\n"
+	.string "hot sauce. Well, hot it is.\p"
+	.string "You feel it twice.\p"
+	.string "I'm about to feel the second one. Onto\n"
+	.string "the POKéMON CENTER!\p"
+	.string "I advise you not to heal your POKéMON\n"
+	.string "there anytime soon. Adios!$"
 
 
 @ Project Grounded: roestig luik in de pijler van de Cycling Road, naar de grot van Regieleki

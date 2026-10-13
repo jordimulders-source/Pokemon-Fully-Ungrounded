@@ -36,7 +36,7 @@ Status: ✅ opgelost · 👍 goed zo (geen actie) · ⏳ open · 💡 idee/later
 | Save corrupt na nieuwe ROM (savestate) → hersteld als .sav | ✅ |
 | Relearn-knop zwart in "welke move vergeten?" na evolutie | ✅ |
 | Briney's boot voer over een eiland in Route 105; nu eromheen | ✅ |
-| Fish Judge (Dewford) alleen met Surf bereikbaar; verplaatst | ✅ |
+| Fish Judge (Dewford) alleen met Surf bereikbaar; nu op het zand onder de steiger (13,11) | ✅ |
 | Madame Silk had een Cooltrainer-sprite; nu de Bard-sprite (Mauville) | ✅ |
 | SickBlik (strand Route 104) blijft niet staan na het gevecht maar gaat de wereld verkennen | ✅ |
 

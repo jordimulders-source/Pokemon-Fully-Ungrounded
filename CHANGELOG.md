@@ -18732,3 +18732,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Alle soorten blijven zoals ze waren, ook als het nieuwe level boven hun evolutielevel ligt (Jordi: "ze mogen wel gewoon de non-geëvolueerde stages blijven in het wild"), dus ook de pseudo-legendaries zonder plafond.
   - Levelcurve (hoofdpad): team schuift 0,3–0,5 omhoog, nog steeds onder elke gym-ace (Wattson −0,2, Flannery −0,9 in de simulatie).
   - Bewust niet aangepast: surfen en vissen op vroege routes (pas later bereikbaar, zoals vanilla), optionele/zware gebieden die hoger liggen (Route 115, New Mauville, de diepe Meteor Falls-kamers, Coldstep Cave, Sky Pillar-omgekeerd, Ghost Ship) en soorten die al vóór deze ronde boven hun evolutielevel in het wild zaten.
+- **Route 110 wild 19–23** (was na de vorige ronde 22–26; Jordi zit daar zelf op lv 22–23): nu 2–3 onder de speler, zoals bedoeld.

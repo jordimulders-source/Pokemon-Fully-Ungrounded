@@ -396,63 +396,63 @@
             "encounter_rate": 20,
             "mons": [
               {
-                "min_level": 22,
-                "max_level": 25,
+                "min_level": 19,
+                "max_level": 22,
                 "species": "SPECIES_ELECTRIKE"
               },
               {
-                "min_level": 22,
-                "max_level": 25,
+                "min_level": 19,
+                "max_level": 22,
                 "species": "SPECIES_GLAMEOW"
               },
               {
-                "min_level": 22,
-                "max_level": 23,
+                "min_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_GULPIN"
               },
               {
-                "min_level": 22,
-                "max_level": 23,
+                "min_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_TRUBBISH"
               },
               {
-                "min_level": 23,
-                "max_level": 25,
+                "min_level": 20,
+                "max_level": 22,
                 "species": "SPECIES_PLUSLE"
               },
               {
-                "min_level": 23,
-                "max_level": 25,
+                "min_level": 20,
+                "max_level": 22,
                 "species": "SPECIES_MINUN"
-              },
-              {
-                "min_level": 25,
-                "max_level": 26,
-                "species": "SPECIES_CYCLIZAR"
-              },
-              {
-                "min_level": 23,
-                "max_level": 25,
-                "species": "SPECIES_PAWMI"
-              },
-              {
-                "min_level": 23,
-                "max_level": 25,
-                "species": "SPECIES_GRIMER_ALOLA"
               },
               {
                 "min_level": 22,
                 "max_level": 23,
+                "species": "SPECIES_CYCLIZAR"
+              },
+              {
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_PAWMI"
+              },
+              {
+                "min_level": 20,
+                "max_level": 22,
+                "species": "SPECIES_GRIMER_ALOLA"
+              },
+              {
+                "min_level": 19,
+                "max_level": 20,
                 "species": "SPECIES_VOLTORB"
               },
               {
-                "min_level": 23,
-                "max_level": 25,
+                "min_level": 20,
+                "max_level": 22,
                 "species": "SPECIES_TOGEDEMARU"
               },
               {
-                "min_level": 25,
-                "max_level": 26,
+                "min_level": 22,
+                "max_level": 23,
                 "species": "SPECIES_TADBULB"
               }
             ]

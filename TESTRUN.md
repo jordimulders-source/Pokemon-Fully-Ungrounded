@@ -58,3 +58,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | AI van gymtrainers | Alle gymtrainers (gym 1–8, 39 in totaal) hebben nu de slimmere AI. | ✅ |
 | Team vóór Brawly | Lv 17–19 (Butterfree, Shroodle, Cutiefly, Emolga, Tinkatink, Sirfetch'd), 3 van 6 gewisseld na Roxanne, zonder grinden en zonder Slateport. Brawly ace 23: 4–6 eronder, iets lager dan het doel (2–3). Uitslag afwachten. | ⏳ |
 | Black Belt Cristian heet nu Chael | | ✅ |
+| Volgorde Granite Cave / Flash | Hoofdpad naar Steven was donker (Flash pas na Brawly). Nu: B1F en B2F licht; Crystal Grotto, Cornerstone- en zwaardkamer donker tot Flash. Vóór Brawly kun je naar Slateport voor extra EXP. | ✅ |

@@ -393,6 +393,65 @@ DewfordTown_Movement_SailToPetalburg:
 
 DewfordTown_Movement_SailToSlateport:
 	walk_right
+	walk_right
+	walk_right
+	walk_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_up
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_faster_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	walk_faster_right
@@ -480,79 +539,12 @@ DewfordTown_Movement_SailToSlateport:
 	walk_faster_right
 	walk_faster_right
 	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
 	walk_fast_right
 	walk_fast_right
-	walk_fast_up
-	walk_fast_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
-	walk_faster_up
+	walk_fast_right
+	walk_fast_right
+	walk_up
+	walk_up
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
@@ -563,6 +555,16 @@ DewfordTown_Movement_SailToSlateport:
 	walk_fast_up
 	walk_fast_up
 	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_up
+	walk_up
 	step_end
 
 DewfordTown_Movement_PlayerBoardBoat:

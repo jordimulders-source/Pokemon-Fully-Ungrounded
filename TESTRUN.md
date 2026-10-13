@@ -55,3 +55,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Sirfetch'd op lv 18 | SIR LEEK (ruil) houdt een Leek vast: 50% crit per treffer, dus 3 crits in één gevecht gaat snel. Vroeg, maar niet game-breaking (Jordi): zo laten. | 👍 |
 | Pollen Season verborgen | Butterfree had Pollen Season als verborgen ability (niet te krijgen). Bij alle 8 soorten nu in slot 1/2; verder geen nieuwe abilities alleen in het verborgen slot. | ✅ |
 | Romero (Dewford Gym) Detect-spam | Gymtrainers hadden een bijna willekeurige AI; nu slimmere AI, Combusken een echte moveset. | ✅ |
+| AI van gymtrainers | Alle gymtrainers (gym 1–8, 39 in totaal) hebben nu de slimmere AI. | ✅ |

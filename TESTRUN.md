@@ -56,3 +56,5 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Pollen Season verborgen | Butterfree had Pollen Season als verborgen ability (niet te krijgen). Bij alle 8 soorten nu in slot 1/2; verder geen nieuwe abilities alleen in het verborgen slot. | ✅ |
 | Romero (Dewford Gym) Detect-spam | Gymtrainers hadden een bijna willekeurige AI; nu slimmere AI, Combusken een echte moveset. | ✅ |
 | AI van gymtrainers | Alle gymtrainers (gym 1–8, 39 in totaal) hebben nu de slimmere AI. | ✅ |
+| Team vóór Brawly | Lv 17–19 (Butterfree, Shroodle, Cutiefly, Emolga, Tinkatink, Sirfetch'd), 3 van 6 gewisseld na Roxanne, zonder grinden en zonder Slateport. Brawly ace 23: 4–6 eronder, iets lager dan het doel (2–3). Uitslag afwachten. | ⏳ |
+| Black Belt Cristian heet nu Chael | | ✅ |

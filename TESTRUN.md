@@ -61,3 +61,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Volgorde Granite Cave / Flash | Hoofdpad naar Steven was donker (Flash pas na Brawly). Nu: B1F en B2F licht; Crystal Grotto, Cornerstone- en zwaardkamer donker tot Flash. Vóór Brawly kun je naar Slateport voor extra EXP. | ✅ |
 | Crystal Grotto te makkelijk te vinden; nu een Rock Smash-rots op de ladder | | ✅ |
 | Briney voer richting Slateport over eilanden/NPC's in Route 107/108; nu eromheen | | ✅ |
+| Strand Slateport (Route 109) | Trainers te voet lv 22–24, hoger dan Brawly maar makkelijker; met de Gen 5-EXP (hoger level = meer EXP) juist een goede EXP-plek vóór Brawly (Jordi): zo laten. | 👍 |

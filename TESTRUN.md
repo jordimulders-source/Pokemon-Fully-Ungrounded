@@ -59,7 +59,7 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Team vóór Brawly | Lv 17–19 (Butterfree, Shroodle, Cutiefly, Emolga, Tinkatink, Sirfetch'd), 3 van 6 gewisseld na Roxanne, zonder grinden en zonder Slateport. Brawly ace 23: 4–6 eronder. Uitslag: zie Brawly hieronder. | 👍 |
 | Black Belt Cristian heet nu Chael | | ✅ |
 | Volgorde Granite Cave / Flash | Hoofdpad naar Steven was donker (Flash pas na Brawly). Nu: B1F en B2F licht; Cornerstone- en zwaardkamer donker tot Flash (en achter Rock Smash); Crystal Grotto vroeg, maar verstopt. Vóór Brawly kun je naar Slateport voor extra EXP. | ✅ |
-| Crystal Grotto te makkelijk te vinden; bedoeld als vroege optionele grot: ladder nu verstopt in een zijvakje van B2F (geen rots, donker tot Flash) | | ✅ |
+| Crystal Grotto te makkelijk te vinden; bedoeld als vroege optionele grot: ladder nu in een hoekje van B1F (15,21, door Jordi aangewezen; geen rots, donker tot Flash) | | ✅ |
 | Briney voer richting Slateport over eilanden/NPC's in Route 107/108; nu eromheen | | ✅ |
 | Strand Slateport (Route 109) | Trainers te voet lv 22–24, hoger dan Brawly maar makkelijker; met de Gen 5-EXP (hoger level = meer EXP) juist een goede EXP-plek vóór Brawly (Jordi): zo laten. | 👍 |
 | Spit or Swallow (strand Slateport) | Gaf met een vol team geen keuzemenu; nu wel (Pokémon naar de pc) en een vrouw i.p.v. een man. | ✅ |

@@ -34247,7 +34247,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Liepard
-Level: 21
+Level: 26
 Ability: Prankster
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thief
@@ -34256,7 +34256,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Sand Attack
 
 Zorua_Hisui
-Level: 21
+Level: 26
 Ability: Illusion
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thief
@@ -34265,7 +34265,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Taunt
 
 Sableye
-Level: 21
+Level: 26
 Ability: Prankster
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thief
@@ -34274,7 +34274,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Confuse Ray
 
 Thievul @ Oran Berry
-Level: 23
+Level: 28
 Ability: Unburden
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thief
@@ -34292,7 +34292,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Liepard
-Level: 25
+Level: 36
 Ability: Prankster
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Nature: Jolly
@@ -34301,8 +34301,8 @@ Nature: Jolly
 - Sucker Punch
 - Encore
 
-Zorua_Hisui
-Level: 25
+Zoroark_Hisui
+Level: 36
 Ability: Illusion
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Nature: Timid
@@ -34312,7 +34312,7 @@ Nature: Timid
 - Nasty Plot
 
 Sableye
-Level: 25
+Level: 36
 Ability: Prankster
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Nature: Impish
@@ -34322,7 +34322,7 @@ Nature: Impish
 - Confuse Ray
 
 Murkrow
-Level: 25
+Level: 36
 Ability: Super Luck
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Nature: Adamant
@@ -34332,7 +34332,7 @@ Nature: Adamant
 - Tailwind
 
 Thievul @ Sitrus Berry
-Level: 27
+Level: 38
 Ability: Unburden
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Nature: Timid
@@ -34352,7 +34352,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Zoroark_Hisui
-Level: 30
+Level: 41
 Ability: Illusion
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Nature: Timid
@@ -34362,7 +34362,7 @@ Nature: Timid
 - Nasty Plot
 
 Sableye
-Level: 30
+Level: 41
 Ability: Prankster
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Nature: Impish
@@ -34372,7 +34372,7 @@ Nature: Impish
 - Recover
 
 Honchkrow @ Black Glasses
-Level: 30
+Level: 41
 Ability: Super Luck
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Nature: Adamant
@@ -34381,8 +34381,8 @@ Nature: Adamant
 - Wing Attack
 - Sucker Punch
 
-Krokorok
-Level: 30
+Krookodile
+Level: 41
 Ability: Intimidate
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Nature: Adamant
@@ -34392,7 +34392,7 @@ Nature: Adamant
 - Rock Slide
 
 Banette @ Spell Tag
-Level: 30
+Level: 41
 Ability: Prankster
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Nature: Adamant
@@ -34402,7 +34402,7 @@ Nature: Adamant
 - Thunder Wave
 
 Thievul @ Sitrus Berry
-Level: 32
+Level: 43
 Ability: Unburden
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Nature: Timid
@@ -34422,7 +34422,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Liepard
-Level: 37
+Level: 46
 Ability: Prankster
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 128 Atk / 128 Spe
@@ -34433,7 +34433,7 @@ Nature: Jolly
 - U-turn
 
 Sableye
-Level: 37
+Level: 46
 Ability: Prankster
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 84 HP / 84 SpD
@@ -34444,7 +34444,7 @@ Nature: Impish
 - Recover
 
 Zoroark_Hisui
-Level: 37
+Level: 46
 Ability: Illusion
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 84 SpA / 84 Spe
@@ -34455,7 +34455,7 @@ Nature: Timid
 - Nasty Plot
 
 Honchkrow @ Black Glasses
-Level: 37
+Level: 46
 Ability: Super Luck
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 84 Atk / 84 Spe
@@ -34466,7 +34466,7 @@ Nature: Adamant
 - Sucker Punch
 
 Krookodile
-Level: 37
+Level: 46
 Ability: Intimidate
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 84 Atk / 84 Spe
@@ -34477,7 +34477,7 @@ Nature: Jolly
 - Bulk Up
 
 Thievul @ Sitrus Berry
-Level: 39
+Level: 48
 Ability: Unburden
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 84 SpA / 84 Spe
@@ -39289,7 +39289,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
 Sableye
-Level: 43
+Level: 54
 Ability: Prankster
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 128 HP / 128 SpD
@@ -39300,7 +39300,7 @@ Nature: Careful
 - Recover
 
 Spiritomb
-Level: 43
+Level: 54
 Ability: Infiltrator
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 128 HP / 128 SpD
@@ -39311,7 +39311,7 @@ Nature: Calm
 - Pain Split
 
 Zoroark_Hisui
-Level: 43
+Level: 54
 Ability: Illusion
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 128 SpA / 128 Spe
@@ -39322,7 +39322,7 @@ Nature: Timid
 - Nasty Plot
 
 Honchkrow @ Black Glasses
-Level: 43
+Level: 54
 Ability: Moxie
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 128 Atk / 128 Spe
@@ -39333,7 +39333,7 @@ Nature: Adamant
 - Sucker Punch
 
 Krookodile
-Level: 43
+Level: 54
 Ability: Intimidate
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 128 Atk / 128 Spe
@@ -39344,7 +39344,7 @@ Nature: Jolly
 - Bulk Up
 
 Thievul @ Sitrus Berry
-Level: 45
+Level: 56
 Ability: Unburden
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 128 SpA / 128 Spe
@@ -39365,7 +39365,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
 Sableye
-Level: 49
+Level: 63
 Ability: Prankster
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 EVs: 128 HP / 128 SpD
@@ -39376,7 +39376,7 @@ Nature: Careful
 - Recover
 
 Spiritomb
-Level: 49
+Level: 63
 Ability: Infiltrator
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 EVs: 4 Def / 252 HP / 252 SpD
@@ -39387,7 +39387,7 @@ Nature: Calm
 - Pain Split
 
 Zoroark_Hisui
-Level: 49
+Level: 63
 Ability: Illusion
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
@@ -39398,7 +39398,7 @@ Nature: Timid
 - Nasty Plot
 
 Honchkrow @ Scope Lens
-Level: 49
+Level: 63
 Ability: Super Luck
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
@@ -39409,7 +39409,7 @@ Nature: Adamant
 - Sucker Punch
 
 Grimmsnarl @ Light Clay
-Level: 49
+Level: 63
 Ability: Prankster
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 EVs: 4 Def / 252 HP / 252 SpD
@@ -39420,7 +39420,7 @@ Nature: Careful
 - Light Screen
 
 Thievul @ Sitrus Berry
-Level: 51
+Level: 65
 Ability: Unburden
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
@@ -39441,7 +39441,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / HP Aware / Omniscient
 
 Sableye
-Level: 54
+Level: 70
 Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 128 HP / 128 SpD
@@ -39452,7 +39452,7 @@ Nature: Careful
 - Recover
 
 Spiritomb
-Level: 54
+Level: 70
 Ability: Infiltrator
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 Def / 252 HP / 252 SpD
@@ -39463,7 +39463,7 @@ Nature: Calm
 - Pain Split
 
 Zoroark_Hisui @ Life Orb
-Level: 54
+Level: 70
 Ability: Illusion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
@@ -39474,7 +39474,7 @@ Nature: Timid
 - Nasty Plot
 
 Honchkrow @ Scope Lens
-Level: 54
+Level: 70
 Ability: Super Luck
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
@@ -39485,7 +39485,7 @@ Nature: Adamant
 - Sucker Punch
 
 Grimmsnarl @ Light Clay
-Level: 54
+Level: 70
 Ability: Prankster
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 Def / 252 HP / 252 SpD
@@ -39496,7 +39496,7 @@ Nature: Careful
 - Light Screen
 
 Thievul @ Sitrus Berry
-Level: 56
+Level: 72
 Ability: Unburden
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe

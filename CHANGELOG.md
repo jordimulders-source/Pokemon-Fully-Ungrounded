@@ -18703,3 +18703,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Fish Judge in Dewford** stond op het eind van de pier, achter Briney (pier is 1 breed): alleen met Surf bereikbaar. Nu op het zand ernaast (19,10).
 - **Madame Silk** (Dewford, Silk Scarf) heeft nu de Bard-sprite uit het Mauville Pokémon Center (`OBJ_EVENT_GFX_BARD`) i.p.v. de Cooltrainer-sprite (Jordi).
 - **Granite Cave wild hoger** (Jordi: "een beetje laag gelaten"): 1F stond nog op vanilla-niveau (lv 6–13) terwijl je na Roxanne ±16–19 bent. Nu (volgorde per tabel gelijk): **1F 14–17**, **B1F 15–18**, **B2F 16–21**, **Steven's kamer 15–20** (Larvitar 20). Crystal Grotto (19–24) ongewijzigd.
+- **Pollen Season niet meer verborgen** (Jordi: verborgen abilities zijn niet te krijgen): bij 8 soorten stond hij per ongeluk in het verborgen slot. Nu in een verkrijgbaar slot; de zwakste ability schuift naar het verborgen slot (alleen voor trainers):
+  - Butterfree, Mothim: Compound Eyes / Swarm / **Pollen Season** (slot 2; een Caterpie/Burmy met slot 2 krijgt hem bij evolutie).
+  - Jumpluff: Chlorophyll / **Pollen Season** / verborgen Leaf Guard. Sunflora: Chlorophyll / **Pollen Season** / verborgen Solar Power.
+  - Ribombee: **Pollen Season** / Shield Dust / verborgen Honey Gather. Eldegoss: **Pollen Season** / Regenerator / verborgen Cotton Down. Vivillon: **Pollen Season** / Compound Eyes / verborgen Shield Dust.
+  - Gecontroleerd voor alle soorten: verder geen nieuwe of vervangen ability die alleen in het verborgen slot staat (de andere verschuivingen in het verborgen slot zijn bewuste revisies, zoals Pinsir/Heracross Moxie in slot 2).

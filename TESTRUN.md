@@ -53,3 +53,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 |---|---|---|
 | Granite Cave wild | 1F stond nog op lv 6–13; nu 14–17 (1F), 15–18 (B1F), 16–21 (B2F), 15–20 (Steven). | ✅ |
 | Sirfetch'd op lv 18 | SIR LEEK (ruil) houdt een Leek vast: 50% crit per treffer, dus 3 crits in één gevecht gaat snel. Vroeg, maar niet game-breaking (Jordi): zo laten. | 👍 |
+| Pollen Season verborgen | Butterfree had Pollen Season als verborgen ability (niet te krijgen). Bij alle 8 soorten nu in slot 1/2; verder geen nieuwe abilities alleen in het verborgen slot. | ✅ |

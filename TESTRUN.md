@@ -70,3 +70,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | **Brawly** | Gewonnen, nipt. Sableye (Prankster Will-O-Wisp) en Sirfetch'd nuttig, Cutiefly/Tinkatink kansloos. Spinda (Normal/Fighting, Pure Power, Silk Scarf) is de grote drempel; counters vóór Brawly: Phantump (Will-O-Wisp + Leech Seed/Hex), Shuppet/Sableye (Prankster Will-O-Wisp), Mawile (Intimidate, in- en uitwisselen). Genoeg counters (Jordi): zo laten. | 👍 |
 | Cornerstone-kamer (Okidogi) bereikbaar zonder Rock Smash (pad om de vanilla-rotsen heen); nu een rots op de ingang | | ✅ |
 | Crystal Grotto: nutteloze richel bij de ingang weggehaald | | ✅ |
+| Leftovers en andere healing-items: de animatie duurde te lang (elke beurt). Nu alleen een korte flits met een ring | | ✅ |

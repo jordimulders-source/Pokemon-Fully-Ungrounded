@@ -1254,7 +1254,7 @@ static const struct LevelUpMove sParasectLevelUpLearnset[] = {
     LEVEL_UP_MOVE(22, MOVE_SPORE),
     LEVEL_UP_MOVE(23, MOVE_SHADOW_SNEAK),
     LEVEL_UP_MOVE(24, MOVE_SHADOW_PUNCH),    
-    LEVEL_UP_MOVE(26, MOVE_HEX),
+    LEVEL_UP_MOVE(26, MOVE_SHADOW_CLAW), // Project Grounded: was Hex (fysiek past bij Atk 110)
     LEVEL_UP_MOVE(29, MOVE_SLASH),
     LEVEL_UP_MOVE(32, MOVE_STRENGTH_SAP),    
     LEVEL_UP_MOVE(33, MOVE_POLLEN_HAZE), // Project Grounded

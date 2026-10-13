@@ -216,6 +216,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pok�
 - **Na het vangen** begint `givecaughtmon` met `MULTIUSE_STATE`; zonder bijnaamvraag eerst `setbyte gBattleCommunication, 0` (anders oude PC-meldingen).
 
 - **Gym- en bossteams niet zelf aanpassen na een verloren gevecht** (Jordi 13 okt, Brawly's Spinda: "nee je vervangt niks"): eerst analyseren en voorstellen, pas na akkoord wijzigen. Jordi verliest bewust om te testen.
+- **Bereikbaarheid in grotten:** reken met objecten (rotsen) én gescheurde vloer (`MB_CRACKED_FLOOR*`, Mach Bike) als blokkade, anders zie je omwegen en fiets-routes over het hoofd (Granite Cave, 13 okt).
 - **Savestate na een nieuwe ROM = corrupt** (Jordi's testrun 12 okt): savestates werken alleen op exact dezelfde build. Herstellen: in de `.ss0` (PNG) zit het geheugen in chunk `gbAs` (zlib), met de ROM-CRC32 op offset 8; bouw die commit na (alleen de gewijzigde bestanden terugzetten + incrementele `make`), laad met `load_raw_state` in mGBA (python3.11) met een vooraf aangemaakt flash-bestand van 128 KB `0xFF` (`autoload_save`, anders segfault tijdens het saven), save in het spel en lever de `.sav`. Raad Jordi aan in het spel te saven vóór een nieuwe ROM.
 
 ## Werkwijzen (herhaalde taken)

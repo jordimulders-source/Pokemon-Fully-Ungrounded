@@ -68,3 +68,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Simon verdween zomaar na zijn vlucht; nu een snelle fade naar zwart | | ✅ |
 | Team na Slateport | Lv 17–21 (Emolga 21, Butterfree/Sirfetch'd 20, Cutiefly/Sableye 19, Tinkatink 17): kern 2–3 onder Brawly's ace 23 = doel; gemiddeld −3,7 door rouleren. EXP niet aanpassen; bij problemen eerst naar Brawly's team kijken. | 👍 |
 | **Brawly** | Gewonnen, nipt. Sableye (Prankster Will-O-Wisp) en Sirfetch'd nuttig, Cutiefly/Tinkatink kansloos. Spinda (Normal/Fighting, Pure Power, Silk Scarf) is de grote drempel; counters vóór Brawly: Phantump (Will-O-Wisp + Leech Seed/Hex), Shuppet/Sableye (Prankster Will-O-Wisp), Mawile (Intimidate, in- en uitwisselen). Genoeg counters (Jordi): zo laten. | 👍 |
+| Cornerstone-kamer (Okidogi) bereikbaar zonder Rock Smash (pad om de vanilla-rotsen heen); nu een rots op de ingang | | ✅ |

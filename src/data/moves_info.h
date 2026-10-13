@@ -22021,6 +22021,32 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_NineLives,
     },
 
+    [MOVE_HYPHAL_SNARE] = // Project Grounded: Parasect
+    {
+        .name = COMPOUND_STRING("Hyphal Snare"),
+        .description = COMPOUND_STRING(
+            "Fungal threads snare the foe\n"
+            "for 4-5 turns. Not on Grass."),
+        .effect = EFFECT_HIT,
+        .power = 75,
+        .type = TYPE_GRASS,
+        .accuracy = 95,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WRAP,
+            .multistring.wrapped = B_MSG_WRAPPED_HYPHAL_SNARE,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HyphalSnare,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

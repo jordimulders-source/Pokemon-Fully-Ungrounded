@@ -935,8 +935,9 @@
 #define MOVE_PRIMEVAL_WARD 872 // Project Grounded: Relicanth
 #define MOVE_GULP_DOWN 873 // Project Grounded: Swalot
 #define MOVE_NINE_LIVES 874 // Project Grounded: Delcatty
+#define MOVE_HYPHAL_SNARE 875 // Project Grounded: Parasect
 
-#define MOVES_COUNT_GEN9 875
+#define MOVES_COUNT_GEN9 876
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

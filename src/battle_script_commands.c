@@ -3277,7 +3277,9 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
         }
         break;
     case MOVE_EFFECT_WRAP:
-        if (gBattleMons[gEffectBattler].volatiles.wrapped)
+        if (gBattleMons[gEffectBattler].volatiles.wrapped
+         || (gCurrentMove == MOVE_HYPHAL_SNARE // Project Grounded: sporen, dus geen vat op Grass/Overcoat/Safety Goggles
+          && !IsAffectedByPowderMove(gEffectBattler, GetBattlerAbility(gEffectBattler), GetBattlerHoldEffect(gEffectBattler))))
         {
             gBattlescriptCurrInstr = battleScript;
         }

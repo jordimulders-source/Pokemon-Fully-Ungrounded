@@ -1240,6 +1240,7 @@ static const struct LevelUpMove sParasLevelUpLearnset[] = {
 static const struct LevelUpMove sParasectLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_FUNGAL_CONTROL), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_FUNGAL_CONTROL),
+    LEVEL_UP_MOVE( 1, MOVE_HYPHAL_SNARE), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_SPORE),
     LEVEL_UP_MOVE( 1, MOVE_CROSS_POISON),
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
@@ -1259,6 +1260,7 @@ static const struct LevelUpMove sParasectLevelUpLearnset[] = {
     LEVEL_UP_MOVE(32, MOVE_STRENGTH_SAP),    
     LEVEL_UP_MOVE(33, MOVE_POLLEN_HAZE), // Project Grounded
     LEVEL_UP_MOVE(35, MOVE_GROWTH),
+    LEVEL_UP_MOVE(36, MOVE_HYPHAL_SNARE), // Project Grounded: signature
     LEVEL_UP_MOVE(38, MOVE_NIGHTMARE),       
     LEVEL_UP_MOVE(41, MOVE_GIGA_DRAIN),
     LEVEL_UP_MOVE(44, MOVE_DESTINY_BOND),    

@@ -31441,6 +31441,7 @@ gBattleAnimGeneral_TurnTrap::
 	jumpargeq 0, TRAP_ANIM_THUNDER_CAGE, Status_Thunder_Cage
 	jumpargeq 0, TRAP_ANIM_MUMMYS_CURSE, Status_MummysCurse
 	jumpargeq 0, TRAP_ANIM_STEEL_TRAP, Status_SteelTrap
+	jumpargeq 0, TRAP_ANIM_HYPHAL_SNARE, Status_HyphalSnare
 	goto Status_BindWrap
 Status_BindWrap:
 	loadspritegfx ANIM_TAG_TENDRILS
@@ -38892,5 +38893,56 @@ gBattleAnimMove_NineLives::
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 12, 0, RGB_WHITE
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 9, 0, RGB(8, 6, 14)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Hyphal Snare. Parasect slaat toe, een wolk sporen en daarna schieten bleke
+@ schimmeldraden om het doelwit heen die het vastsnoeren; het doelwit kleurt schimmelig wit.
+gBattleAnimMove_HyphalSnare::
+	loadspritegfx ANIM_TAG_TENDRILS
+	loadspritegfx ANIM_TAG_SPORE
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_TENDRILS, 0, 12, 12, RGB(28, 27, 22)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 8, RGB(5, 4, 3)
+	waitforvisualfinish
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 6
+	delay 4
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 8, 1
+	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_TARGET, 10, 3
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-20, wave_offset=85, duration=50, blend=1
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-10, wave_offset=170, duration=50, blend=1
+	delay 10
+	loopsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET, 6, 3
+	create_constrict_binding_sprite ANIM_TARGET, 4, initial_x=0, initial_y=16, affine_animation=0, squeezes=2
+	delay 7
+	create_constrict_binding_sprite ANIM_TARGET, 2, initial_x=0, initial_y=8, affine_animation=1, squeezes=2
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 10, RGB(27, 26, 21)
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 6, 1
+	playsewithpan SE_M_BIND, SOUND_PAN_TARGET
+	delay 20
+	setarg 7, 0xFFFF
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 10, 0, RGB(27, 26, 21)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 8, 0, RGB(5, 4, 3)
+	waitforvisualfinish
+	end
+
+@ Elke beurt: de draden snoeren nog eens aan en er stuift een spore af.
+Status_HyphalSnare:
+	loadspritegfx ANIM_TAG_TENDRILS
+	loadspritegfx ANIM_TAG_SPORE
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_TENDRILS, 0, 12, 12, RGB(28, 27, 22)
+	loopsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET, 6, 2
+	create_constrict_binding_sprite ANIM_TARGET, 4, initial_x=0, initial_y=16, affine_animation=0, squeezes=1
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=0, duration=40, blend=1
+	delay 7
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 0, 9, RGB(27, 26, 21)
+	playsewithpan SE_M_BIND, SOUND_PAN_TARGET
+	delay 12
+	setarg 7, 0xFFFF
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 9, 0, RGB(27, 26, 21)
 	waitforvisualfinish
 	end

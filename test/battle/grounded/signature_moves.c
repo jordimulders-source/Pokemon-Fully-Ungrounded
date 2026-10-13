@@ -245,3 +245,38 @@ SINGLE_BATTLE_TEST("Heartbreak lowers the target's Sp. Atk")
         EXPECT_EQ(opponent->statStages[STAT_SPATK], DEFAULT_STAT_STAGE - 1);
     }
 }
+
+// Hyphal Snare: Grass 75, contact, bindt 4-5 beurten; sporen, dus geen vat op Grass-types.
+SINGLE_BATTLE_TEST("Hyphal Snare binds the target")
+{
+    GIVEN {
+        ASSUME(MoveHasAdditionalEffect(MOVE_HYPHAL_SNARE, MOVE_EFFECT_WRAP));
+        PLAYER(SPECIES_PARASECT);
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_HYPHAL_SNARE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HYPHAL_SNARE, player);
+        HP_BAR(opponent);
+        MESSAGE("The opposing Wobbuffet got tangled in Parasect's hyphae! Gross!");
+        HP_BAR(opponent); // binding damage at end of turn
+    } THEN {
+        EXPECT(opponent->volatiles.wrapped);
+    }
+}
+
+SINGLE_BATTLE_TEST("Hyphal Snare does not bind Grass types")
+{
+    GIVEN {
+        PLAYER(SPECIES_PARASECT);
+        OPPONENT(SPECIES_ODDISH);
+    } WHEN {
+        TURN { MOVE(player, MOVE_HYPHAL_SNARE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HYPHAL_SNARE, player);
+        HP_BAR(opponent);
+        NOT MESSAGE("The opposing Oddish got tangled in Parasect's hyphae! Gross!");
+    } THEN {
+        EXPECT(!opponent->volatiles.wrapped);
+    }
+}

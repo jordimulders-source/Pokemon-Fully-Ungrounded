@@ -646,6 +646,7 @@
 #define TRAP_ANIM_THUNDER_CAGE 8
 #define TRAP_ANIM_MUMMYS_CURSE 9 // Project Grounded
 #define TRAP_ANIM_STEEL_TRAP 10 // Project Grounded
+#define TRAP_ANIM_HYPHAL_SNARE 11 // Project Grounded
 
 // Weather defines for battle animation scripts.
 #define ANIM_WEATHER_NONE 0

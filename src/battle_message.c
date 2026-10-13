@@ -320,6 +320,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_SPIREBLOCKSOFTENED]                   = COMPOUND_STRING("The block softened the hit!"),
     [STRINGID_PKMNMUMMYWRAPPED]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was wrapped\nin cursed bandages!"),
     [STRINGID_PKMNINSTEELTRAP]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} stepped right\ninto {B_ATK_NAME_WITH_PREFIX2}'s steel trap!"),
+    [STRINGID_PKMNHYPHALSNARE]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} got tangled\nin {B_ATK_NAME_WITH_PREFIX2}'s hyphae! Gross!"),
     [STRINGID_WEATHERREPORTFORECAST] = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} checked the forecast\nfor {B_DEF_NAME_WITH_PREFIX2}…"),
     [STRINGID_WINDCHIMEHEAL] = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} was soothed\nby the wind chime!"),
     [STRINGID_PRIMEVALWARD] = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} hasn't changed in\n100 million years. Why start now?"),
@@ -1168,6 +1169,7 @@ const u16 gWrappedStringIds[NUM_TRAPPING_MOVES] =
     [B_MSG_WRAPPED_THUNDER_CAGE]= STRINGID_THUNDERCAGETRAPPED,     // MOVE_THUNDER_CAGE
     [B_MSG_WRAPPED_MUMMY]       = STRINGID_PKMNMUMMYWRAPPED,       // MOVE_MUMMYS_CURSE (Project Grounded)
     [B_MSG_WRAPPED_STEEL_TRAP]  = STRINGID_PKMNINSTEELTRAP,        // MOVE_STEEL_TRAP (Project Grounded)
+    [B_MSG_WRAPPED_HYPHAL_SNARE] = STRINGID_PKMNHYPHALSNARE,       // MOVE_HYPHAL_SNARE (Project Grounded)
 };
 
 const u16 gMistUsedStringIds[] =

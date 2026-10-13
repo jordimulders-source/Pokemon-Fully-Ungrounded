@@ -56,7 +56,7 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Pollen Season verborgen | Butterfree had Pollen Season als verborgen ability (niet te krijgen). Bij alle 8 soorten nu in slot 1/2; verder geen nieuwe abilities alleen in het verborgen slot. | ✅ |
 | Romero (Dewford Gym) Detect-spam | Gymtrainers hadden een bijna willekeurige AI; nu slimmere AI, Combusken een echte moveset. | ✅ |
 | AI van gymtrainers | Alle gymtrainers (gym 1–8, 39 in totaal) hebben nu de slimmere AI. | ✅ |
-| Team vóór Brawly | Lv 17–19 (Butterfree, Shroodle, Cutiefly, Emolga, Tinkatink, Sirfetch'd), 3 van 6 gewisseld na Roxanne, zonder grinden en zonder Slateport. Brawly ace 23: 4–6 eronder, iets lager dan het doel (2–3). Uitslag afwachten. | ⏳ |
+| Team vóór Brawly | Lv 17–19 (Butterfree, Shroodle, Cutiefly, Emolga, Tinkatink, Sirfetch'd), 3 van 6 gewisseld na Roxanne, zonder grinden en zonder Slateport. Brawly ace 23: 4–6 eronder. Uitslag: zie Brawly hieronder. | 👍 |
 | Black Belt Cristian heet nu Chael | | ✅ |
 | Volgorde Granite Cave / Flash | Hoofdpad naar Steven was donker (Flash pas na Brawly). Nu: B1F en B2F licht; Crystal Grotto, Cornerstone- en zwaardkamer donker tot Flash. Vóór Brawly kun je naar Slateport voor extra EXP. | ✅ |
 | Crystal Grotto te makkelijk te vinden; nu een Rock Smash-rots op de ladder | | ✅ |
@@ -67,3 +67,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Burglar SIMON levels | Teams per badge liepen vanaf badge 3 tot 24 levels achter; nu net onder de volgende gym-ace (26–28 … 70–72). Hone Claws tegen Tinkatink: logische keuze, AI blijft. | ✅ |
 | Simon verdween zomaar na zijn vlucht; nu een snelle fade naar zwart | | ✅ |
 | Team na Slateport | Lv 17–21 (Emolga 21, Butterfree/Sirfetch'd 20, Cutiefly/Sableye 19, Tinkatink 17): kern 2–3 onder Brawly's ace 23 = doel; gemiddeld −3,7 door rouleren. EXP niet aanpassen; bij problemen eerst naar Brawly's team kijken. | 👍 |
+| **Brawly** | Gewonnen, nipt. Sableye (Prankster Will-O-Wisp) en Sirfetch'd nuttig, Cutiefly/Tinkatink kansloos. Spinda (Normal/Fighting, Pure Power, Silk Scarf) is de grote drempel; counters vóór Brawly: Phantump (Will-O-Wisp + Leech Seed/Hex), Shuppet/Sableye (Prankster Will-O-Wisp), Mawile (Intimidate, in- en uitwisselen). Genoeg counters (Jordi): zo laten. | 👍 |

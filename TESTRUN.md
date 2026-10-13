@@ -75,3 +75,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Wilde levels | Route 110 (Gulpin lv 14) en de hele middengame lagen ver onder de trainers; 43 tabellen verhoogd tot ±2 onder het trainerlevel, evoluties waar nodig. | ✅ |
 | May Route 110 (ace 29) | Voorstel 2 lager (ace 27): Jordi test eerst. | ⏳ |
 | Birch op Route 110: nieuwe dialoog van Jordi | | ✅ |
+| EXP-bomgevechten | Miguel (Route 103-oost, 4× Blissey) werkt perfect als compensatie na veel vangen. Idee (Jordi, hardop): meer van zulke gevechten na grote vangmomenten, bijv. Route 113/114 (±37), Route 119 (±47), Route 121/123 (±55), Route 128/129 (±66); eerst testen met de nieuwe wilde levels. Nog maar 3 vrije trainer-id's (851–853). | 💡 |

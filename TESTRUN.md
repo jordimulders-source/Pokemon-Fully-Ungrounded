@@ -71,3 +71,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Cornerstone-kamer (Okidogi) bereikbaar zonder Rock Smash (pad om de vanilla-rotsen heen); nu een rots op de ingang | | ✅ |
 | Crystal Grotto: nutteloze richel bij de ingang weggehaald | | ✅ |
 | Leftovers en andere healing-items: de animatie duurde te lang (elke beurt). Nu alleen een korte flits met een ring | | ✅ |
+| Pollen Haze-balans | Besproken: buffs nodig (Bug was het zwakste type). Ribombee te weinig bulk; Scizor en Volcarona hebben geen Pollen Season (move of partner nodig) en een eigen weersetter of windmove lost de haze op. Zo laten, in het late spel in de gaten houden. | 👍 |

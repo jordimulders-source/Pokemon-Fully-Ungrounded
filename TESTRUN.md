@@ -47,3 +47,8 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 - ⏳ Jordi heeft nog een lijstje met mogelijke aanpassingen.
 - 💡 Simulatie: bij Brawly komt een hoofdpadspeler ±0,7 boven de ace uit; nalopen als Jordi daar is.
 - 💡 Emolga eventueel naar een 1%-slot.
+
+## Ronde 2 (13 okt): Dewford en Granite Cave
+| Wat | Bevinding | Status |
+|---|---|---|
+| Granite Cave wild | 1F stond nog op lv 6–13; nu 14–17 (1F), 15–18 (B1F), 16–21 (B2F), 15–20 (Steven). | ✅ |

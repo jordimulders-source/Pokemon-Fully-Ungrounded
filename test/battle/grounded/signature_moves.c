@@ -299,8 +299,8 @@ SINGLE_BATTLE_TEST("Cavitation deals more damage the faster the user is", s16 da
     }
 }
 
-// Lure Light (Lumineon): Follow Me (+2) en daarna Accuracy -1 voor elke tegenstander.
-DOUBLE_BATTLE_TEST("Lure Light redirects attacks and lowers the foes' accuracy")
+// Lure Light (Lumineon): Follow Me (+2); wie Lumineon daarna aanvalt, krijgt vlak ervoor Accuracy -1.
+DOUBLE_BATTLE_TEST("Lure Light redirects attacks and dazzles only the attackers")
 {
     GIVEN {
         PLAYER(SPECIES_LUMINEON);
@@ -308,15 +308,15 @@ DOUBLE_BATTLE_TEST("Lure Light redirects attacks and lowers the foes' accuracy")
         OPPONENT(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
-        TURN { MOVE(playerLeft, MOVE_LURE_LIGHT); MOVE(opponentLeft, MOVE_TACKLE, target: playerRight); }
+        TURN { MOVE(playerLeft, MOVE_LURE_LIGHT); MOVE(opponentLeft, MOVE_TACKLE, target: playerRight); MOVE(opponentRight, MOVE_CELEBRATE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_LURE_LIGHT, playerLeft);
         MESSAGE("Lumineon became the center of attention!");
-        MESSAGE("The opposing Wobbuffet's accuracy fell!");
+        MESSAGE("The opposing Wobbuffet was dazzled by Lumineon's lure!");
         MESSAGE("The opposing Wobbuffet's accuracy fell!");
     } THEN {
         EXPECT_EQ(opponentLeft->statStages[STAT_ACC], DEFAULT_STAT_STAGE - 1);
-        EXPECT_EQ(opponentRight->statStages[STAT_ACC], DEFAULT_STAT_STAGE - 1);
+        EXPECT_EQ(opponentRight->statStages[STAT_ACC], DEFAULT_STAT_STAGE);
     }
 }
 

@@ -6501,9 +6501,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_MAGIC_GUARD, ABILITY_POLLEN_SEASON, ABILITY_SHIELD_DUST }, // Project Grounded: Tinted Lens -> Pollen Season
+        .abilities = { ABILITY_MAGIC_GUARD, ABILITY_TINTED_LENS, ABILITY_SHIELD_DUST }, // Project Grounded (Pollen Season weer weg: Venomoth is geen Bug)
     #else
-        .abilities = { ABILITY_SHIELD_DUST, ABILITY_POLLEN_SEASON, ABILITY_MAGIC_GUARD }, // Project Grounded: Tinted Lens -> Pollen Season
+        .abilities = { ABILITY_SHIELD_DUST, ABILITY_TINTED_LENS, ABILITY_MAGIC_GUARD }, // Project Grounded
     #endif
         .bodyColor = BODY_COLOR_PURPLE,
         .speciesName = _("Venomoth"),

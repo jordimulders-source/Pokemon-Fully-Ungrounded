@@ -320,6 +320,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_SPIREBLOCKSOFTENED]                   = COMPOUND_STRING("The block softened the hit!"),
     [STRINGID_PKMNMUMMYWRAPPED]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was wrapped\nin cursed bandages!"),
     [STRINGID_PKMNINSTEELTRAP]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} stepped right\ninto {B_ATK_NAME_WITH_PREFIX2}'s steel trap!"),
+    [STRINGID_LURELIGHTDAZZLED]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} was dazzled\nby {B_DEF_NAME_WITH_PREFIX2}'s lure!"),
     [STRINGID_BEAVERDAMLAYER]                       = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} added a layer\nto its dam! ({B_BUFF1}/3)"),
     [STRINGID_BEAVERDAMBREAK]                       = COMPOUND_STRING("With no one to keep it up,\n{B_SCR_NAME_WITH_PREFIX2}'s dam burst!"),
     [STRINGID_BEAVERDAMFLOOD]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} was swept\naway by the flood!"),

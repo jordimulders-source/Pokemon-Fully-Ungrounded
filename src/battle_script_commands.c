@@ -1566,9 +1566,32 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
     }
 }
 
+// Project Grounded: Lure Light. Wie deze beurt Lumineon aanvalt (het lokaas), wordt vlak voor zijn
+// aanval verblind: Accuracy -1, één keer per aanvaller per beurt.
+static u8 sLureDazzledMask; // wordt gewist zodra Lure Light gebruikt wordt (+2, dus vóór de aanvallen)
+
+static bool32 TryLureLightDazzle(void)
+{
+    u32 side = GetBattlerSide(gBattlerTarget);
+
+    if (!gSideTimers[side].followmeTimer
+     || !gSideTimers[side].followmeLureLight
+     || gSideTimers[side].followmeTarget != gBattlerTarget
+     || IsBattlerAlly(gBattlerAttacker, gBattlerTarget)
+     || !IsBattlerAlive(gBattlerTarget)
+     || (sLureDazzledMask & (1u << gBattlerAttacker)))
+        return FALSE;
+    sLureDazzledMask |= 1u << gBattlerAttacker;
+    BattleScriptCall(BattleScript_LureLightDazzleAttacker);
+    return TRUE;
+}
+
 static void Cmd_accuracycheck(void)
 {
     CMD_ARGS(const u8 *failInstr, u16 move);
+
+    if (cmd->move == ACC_CURR_MOVE && TryLureLightDazzle())
+        return;
 
     // The main body of this function has been moved to AccuracyCheck() to accomodate
     // Dragon Darts' multiple accuracy checks on a single attack;
@@ -12812,6 +12835,9 @@ static void Cmd_setforcedtarget(void)
     gSideTimers[GetBattlerSide(gBattlerTarget)].followmeTimer = 1;
     gSideTimers[GetBattlerSide(gBattlerTarget)].followmeTarget = gBattlerTarget;
     gSideTimers[GetBattlerSide(gBattlerTarget)].followmePowder = IsPowderMove(gCurrentMove);
+    gSideTimers[GetBattlerSide(gBattlerTarget)].followmeLureLight = (gCurrentMove == MOVE_LURE_LIGHT); // Project Grounded
+    if (gCurrentMove == MOVE_LURE_LIGHT)
+        sLureDazzledMask = 0;
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 

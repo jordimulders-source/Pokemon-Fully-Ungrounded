@@ -220,6 +220,7 @@ struct SideTimer
     u8 followmeTimer:4;
     u8 followmeTarget:3;
     u8 followmePowder:1; // Rage powder, does not affect grass type pokemon.
+    u8 followmeLureLight:1; // Project Grounded: Lure Light verblindt wie Lumineon aanvalt
     u8 retaliateTimer;
     u16 damageNonTypesTimer;
     enum Type damageNonTypesType;

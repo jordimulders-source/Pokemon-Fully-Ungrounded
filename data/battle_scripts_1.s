@@ -4079,7 +4079,12 @@ BattleScript_EffectStockpile::
 	stockpile 0
 	attackanimation
 	waitanimation
+	jumpifmove MOVE_BEAVER_DAM, BattleScript_EffectStockpileBeaverDamMsg
 	printstring STRINGID_PKMNSTOCKPILED
+	goto BattleScript_EffectStockpileMsgDone
+BattleScript_EffectStockpileBeaverDamMsg:
+	printstring STRINGID_BEAVERDAMLAYER
+BattleScript_EffectStockpileMsgDone:
 	waitmessage B_WAIT_TIME_LONG
 	.if B_STOCKPILE_RAISES_DEFS < GEN_4
 	goto BattleScript_EffectStockpileEnd
@@ -4693,6 +4698,7 @@ BattleScript_FaintBattler::
 	dofaintanimation BS_FAINTED
 	copybyte sBATTLER, gBattlerFainted @ for message
 	printstring STRINGID_BATTLERFAINTED
+	trybeaverdambreak @ Project Grounded: Beaver Dam breekt als Bibarel flauwvalt
 	cleareffectsonfaint BS_FAINTED
 	trytoclearprimalweather
 	tryrevertweatherform
@@ -9392,4 +9398,23 @@ BattleScript_GulpDownUseless::
 	call BattleScript_GulpDownCommon
 	printstring STRINGID_GULPEDUSELESS
 	waitmessage B_WAIT_TIME_LONG
+	return
+
+@ Project Grounded: Beaver Dam. Bibarel valt flauw, niemand onderhoudt de dam meer: hij breekt en de
+@ vloed raakt elke tegenstander (1/6 max. HP per laag). gBattleScripting.battler = Bibarel.
+BattleScript_BeaverDamBreak::
+	pause B_WAIT_TIME_SHORT
+	playanimation BS_SCRIPTING, B_ANIM_BEAVER_DAM_BREAK
+	waitanimation
+	printstring STRINGID_BEAVERDAMBREAK
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BeaverDamFloodLoop:
+	beaverdamfloodnext BattleScript_BeaverDamFloodEnd
+	healthbarupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
+	datahpupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
+	printstring STRINGID_BEAVERDAMFLOOD
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_SCRIPTING
+	goto BattleScript_BeaverDamFloodLoop
+BattleScript_BeaverDamFloodEnd:
 	return

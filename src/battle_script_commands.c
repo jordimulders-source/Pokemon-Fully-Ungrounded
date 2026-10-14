@@ -10243,6 +10243,8 @@ static void Cmd_stockpile(void)
     {
     case 0:
         gDisableStructs[gBattlerAttacker].stockpileCounter++;
+        if (gCurrentMove == MOVE_BEAVER_DAM) // Project Grounded
+            gDisableStructs[gBattlerAttacker].beaverDam = TRUE;
         gDisableStructs[gBattlerAttacker].stockpileBeforeDef = gBattleMons[gBattlerAttacker].statStages[STAT_DEF];
         gDisableStructs[gBattlerAttacker].stockpileBeforeSpDef = gBattleMons[gBattlerAttacker].statStages[STAT_SPDEF];
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 1, gDisableStructs[gBattlerAttacker].stockpileCounter);
@@ -18853,4 +18855,54 @@ void BS_GroundedObedienceWarnCaught(void)
         return;
     }
     gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: Beaver Dam. Valt Bibarel flauw met een dam (stockpile-lagen), dan breekt de dam
+// en krijgt elke tegenstander 1/6 van zijn max. HP per laag (Magic Guard beschermt).
+static u8 sBeaverDamOwner, sBeaverDamLayers, sBeaverDamNext;
+
+void BeaverDam_PrepareFlood(u32 owner, u32 layers)
+{
+    sBeaverDamOwner = owner;
+    sBeaverDamLayers = layers;
+    sBeaverDamNext = 0;
+}
+
+void BS_TryBeaverDamBreak(void)
+{
+    NATIVE_ARGS();
+    u32 battler = gBattlerFainted;
+
+    if (gDisableStructs[battler].beaverDam && gDisableStructs[battler].stockpileCounter > 0)
+    {
+        BeaverDam_PrepareFlood(battler, gDisableStructs[battler].stockpileCounter);
+        gDisableStructs[battler].beaverDam = FALSE;
+        gBattleScripting.battler = battler;
+        BattleScriptPush(cmd->nextInstr);
+        gBattlescriptCurrInstr = BattleScript_BeaverDamBreak;
+        return;
+    }
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_BeaverDamFloodNext(void)
+{
+    NATIVE_ARGS(const u8 *endInstr);
+
+    while (sBeaverDamNext < gBattlersCount)
+    {
+        u32 battler = sBeaverDamNext++;
+        if (IsBattlerAlive(battler)
+         && !IsBattlerAlly(battler, sBeaverDamOwner)
+         && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        {
+            s32 dmg = GetNonDynamaxMaxHP(battler) * sBeaverDamLayers / 6;
+            gBattleScripting.battler = battler;
+            SetPassiveDamageAmount(battler, dmg > 0 ? dmg : 1);
+            gBattlescriptCurrInstr = cmd->nextInstr;
+            return;
+        }
+    }
+    gBattleScripting.battler = sBeaverDamOwner;
+    gBattlescriptCurrInstr = cmd->endInstr;
 }

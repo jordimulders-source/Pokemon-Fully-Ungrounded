@@ -938,8 +938,9 @@
 #define MOVE_HYPHAL_SNARE 875 // Project Grounded: Parasect
 #define MOVE_CAVITATION 876 // Project Grounded: Golduck
 #define MOVE_LURE_LIGHT 877 // Project Grounded: Lumineon
+#define MOVE_BEAVER_DAM 878 // Project Grounded: Bibarel
 
-#define MOVES_COUNT_GEN9 878
+#define MOVES_COUNT_GEN9 879
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

@@ -599,7 +599,8 @@
 #define B_ANIM_SWAP_FROM_SUBSTITUTE     55
 #define B_ANIM_ACID_RAIN_CONTINUES      56 // Project Grounded
 #define B_ANIM_POLLEN_HAZE_CONTINUES    57 // Project Grounded
-#define NUM_B_ANIMS_GENERAL             58
+#define B_ANIM_BEAVER_DAM_BREAK         58 // Project Grounded
+#define NUM_B_ANIMS_GENERAL             59
 
 // special animations table (sBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

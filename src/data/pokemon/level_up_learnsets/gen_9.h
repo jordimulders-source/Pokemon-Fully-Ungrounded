@@ -10858,6 +10858,8 @@ static const struct LevelUpMove sBidoofLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sBibarelLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_BEAVER_DAM), // Project Grounded: signature
+    LEVEL_UP_MOVE( 1, MOVE_BEAVER_DAM),
     LEVEL_UP_MOVE( 0, MOVE_WATER_GUN),
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
     LEVEL_UP_MOVE( 1, MOVE_AQUA_JET),

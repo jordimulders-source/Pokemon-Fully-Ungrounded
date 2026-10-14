@@ -758,6 +758,9 @@ enum StringID
     STRINGID_GEN1GHOST_SCARED, // Project Grounded
     STRINGID_GEN1GHOST_GETOUT, // Project Grounded
     STRINGID_PKMNHYPHALSNARE, // Project Grounded
+    STRINGID_BEAVERDAMLAYER, // Project Grounded
+    STRINGID_BEAVERDAMBREAK, // Project Grounded
+    STRINGID_BEAVERDAMFLOOD, // Project Grounded
     STRINGID_COUNT
 };
 

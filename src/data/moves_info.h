@@ -22095,6 +22095,31 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_LureLight,
     },
 
+    [MOVE_BEAVER_DAM] = // Project Grounded: Bibarel (Stockpile-lagen + vloed bij flauwvallen)
+    {
+        .name = COMPOUND_STRING("Beaver Dam"),
+        .description = COMPOUND_STRING(
+            "Adds a layer to its dam (x3).\n"
+            "Ups Def/Sp. Def. Bursts on KO."),
+        .effect = EFFECT_STOCKPILE,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RECOVER_HP },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_BeaverDam,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

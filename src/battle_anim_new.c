@@ -10130,3 +10130,116 @@ const struct SpriteTemplate gTipsyDuckSpriteTemplate =
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimTipsyDuck,
 };
+
+// Project Grounded: Beaver Dam - stammen (Wood Hammer) en takken (Branch Poke) vormen een dam voor
+// de aanvaller. arg0/arg1: eindpositie t.o.v. de aanvaller, arg2/arg3: startoffset (schuift naar 0),
+// arg4: aantal stappen (deelt arg2/arg3 precies), arg5: frames blijven staan, arg6: draaiing (affine),
+// arg7: 1 = omgekeerd (vliegt van de eindpositie weg, voor het breken van de dam).
+static const union AnimCmd sAnim_DamLog[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnims_DamLog[] =
+{
+    sAnim_DamLog,
+};
+
+static const union AffineAnimCmd sAffineAnim_DamRot0[]   = { AFFINEANIMCMD_FRAME(0x100, 0x100, 64, 0), AFFINEANIMCMD_END };
+static const union AffineAnimCmd sAffineAnim_DamRot1[]   = { AFFINEANIMCMD_FRAME(0x100, 0x100, 0, 0), AFFINEANIMCMD_END };
+static const union AffineAnimCmd sAffineAnim_DamRot2[]   = { AFFINEANIMCMD_FRAME(0x100, 0x100, 20, 0), AFFINEANIMCMD_END };
+static const union AffineAnimCmd sAffineAnim_DamRot3[]   = { AFFINEANIMCMD_FRAME(0x100, 0x100, -24, 0), AFFINEANIMCMD_END };
+static const union AffineAnimCmd sAffineAnim_DamRot4[]   = { AFFINEANIMCMD_FRAME(0x100, 0x100, 128, 0), AFFINEANIMCMD_END };
+
+static const union AffineAnimCmd *const sAffineAnims_DamPiece[] =
+{
+    sAffineAnim_DamRot0, // liggende stam
+    sAffineAnim_DamRot1,
+    sAffineAnim_DamRot2,
+    sAffineAnim_DamRot3,
+    sAffineAnim_DamRot4,
+};
+
+static void AnimBeaverDamPiece_Step(struct Sprite *sprite)
+{
+    if (sprite->data[0] > 0)
+    {
+        sprite->x2 += sprite->data[1];
+        sprite->y2 += sprite->data[2];
+        sprite->data[0]--;
+        if (sprite->data[0] == 0 && sprite->data[4]) // omgekeerd: weg na de vlucht
+            DestroyAnimSprite(sprite);
+    }
+    else if (sprite->data[3] > 0)
+    {
+        sprite->data[3]--;
+    }
+    else
+    {
+        DestroyAnimSprite(sprite);
+    }
+}
+
+static void AnimBeaverDamPiece(struct Sprite *sprite)
+{
+    s16 steps = gBattleAnimArgs[4] > 0 ? gBattleAnimArgs[4] : 1;
+
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2) + gBattleAnimArgs[0];
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[1];
+    if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_PLAYER)
+        sprite->y -= 26; // anders valt de dam achter het tekstvak
+    sprite->data[4] = gBattleAnimArgs[7];
+    if (sprite->data[4])
+    {
+        sprite->x2 = 0;
+        sprite->y2 = 0;
+        sprite->data[1] = gBattleAnimArgs[2] / steps;
+        sprite->data[2] = gBattleAnimArgs[3] / steps;
+    }
+    else
+    {
+        sprite->x2 = gBattleAnimArgs[2];
+        sprite->y2 = gBattleAnimArgs[3];
+        sprite->data[1] = -gBattleAnimArgs[2] / steps;
+        sprite->data[2] = -gBattleAnimArgs[3] / steps;
+    }
+    sprite->data[0] = (gBattleAnimArgs[4] > 1) ? steps : 0;
+    if (sprite->data[0] == 0 && !sprite->data[4])
+    {
+        sprite->x2 = 0;
+        sprite->y2 = 0;
+    }
+    sprite->data[3] = gBattleAnimArgs[5];
+    StartSpriteAffineAnim(sprite, gBattleAnimArgs[6]);
+    sprite->callback = AnimBeaverDamPiece_Step;
+}
+
+const struct SpriteTemplate gBeaverDamLogSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_WOOD_HAMMER,
+    .paletteTag = ANIM_TAG_WOOD_HAMMER,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = sAnims_DamLog,
+    .images = NULL,
+    .affineAnims = sAffineAnims_DamPiece,
+    .callback = AnimBeaverDamPiece,
+};
+
+const struct SpriteTemplate gBeaverDamBranchSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BRANCH,
+    .paletteTag = ANIM_TAG_BRANCH,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = sAffineAnims_DamPiece,
+    .callback = AnimBeaverDamPiece,
+};
+
+void AnimTask_GetBeaverDamLayers(u8 taskId)
+{
+    u32 layers = gAnimDisableStructPtr != NULL ? gAnimDisableStructPtr->stockpileCounter : 1;
+    gBattleAnimArgs[ARG_RET_ID] = (layers >= 1 && layers <= 3) ? layers : 1;
+    DestroyAnimVisualTask(taskId);
+}

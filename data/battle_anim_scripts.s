@@ -39028,3 +39028,143 @@ gBattleAnimMove_LureLight::
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 12, 0, RGB(1, 2, 8)
 	waitforvisualfinish
 	end
+
+@ Project Grounded: Beaver Dam. Bibarel knaagt, stammen rollen in en takken vallen erop; elke keer
+@ komt er een laag bij (1-3), de lagen eronder staan er al.
+gBattleAnimMove_BeaverDam::
+	loadspritegfx ANIM_TAG_WOOD_HAMMER
+	loadspritegfx ANIM_TAG_BRANCH
+	playsewithpan SE_M_BITE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 2, 0, 6, 1
+	delay 8
+	playsewithpan SE_M_BITE, SOUND_PAN_ATTACKER
+	delay 8
+	createvisualtask AnimTask_GetBeaverDamLayers, 2
+	delay 1
+	jumpreteq 2, BeaverDam_Build2
+	jumpreteq 3, BeaverDam_Build3
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 20, -48, 0, 12, 70, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 20, 48, 0, 12, 64, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 20, -48, 0, 12, 58, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 20, 48, 0, 12, 52, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	delay 8
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -20, 12, 0, -32, 8, 40, 2, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 26, 14, 0, -32, 8, 40, 3, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	goto BeaverDam_Done
+BeaverDam_Build2:
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -20, 12, 0, 0, 1, 82, 2, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 26, 14, 0, 0, 1, 82, 3, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -24, 11, -48, 0, 12, 70, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 0, 11, 48, 0, 12, 64, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 24, 11, -48, 0, 12, 58, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	delay 8
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 10, 3, 0, -32, 8, 40, 1, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -30, 4, 0, -32, 8, 40, 4, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	goto BeaverDam_Done
+BeaverDam_Build3:
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -20, 12, 0, 0, 1, 82, 2, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 26, 14, 0, 0, 1, 82, 3, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -24, 11, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 0, 11, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 24, 11, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 10, 3, 0, 0, 1, 82, 1, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -30, 4, 0, 0, 1, 82, 4, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 2, -48, 0, 12, 70, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 2, 48, 0, 12, 64, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 2, -48, 0, 12, 58, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 2, 48, 0, 12, 52, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	delay 8
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -6, -6, 0, -32, 8, 40, 2, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 30, -5, 0, -32, 8, 40, 3, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -34, -4, 0, -32, 8, 40, 1, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+BeaverDam_Done:
+	waitforvisualfinish
+	end
+
+@ Project Grounded: de dam breekt (Bibarel flauwgevallen): de stammen vliegen alle kanten op en een
+@ vloedgolf spoelt over het veld.
+gBattleAnimGeneral_BeaverDamBreak::
+	loadspritegfx ANIM_TAG_WOOD_HAMMER
+	loadspritegfx ANIM_TAG_BRANCH
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 20, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 20, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 20, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 20, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -20, 12, 0, 0, 1, 14, 2, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 26, 14, 0, 0, 1, 14, 3, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -24, 11, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 0, 11, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 24, 11, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 10, 3, 0, 0, 1, 14, 1, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -30, 4, 0, 0, 1, 14, 4, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 2, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 2, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 2, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 2, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -6, -6, 0, 0, 1, 14, 2, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 30, -5, 0, 0, 1, 14, 3, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -34, -4, 0, 0, 1, 14, 1, 0
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 3, 0, 12, 1
+	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_ATTACKER
+	delay 14
+	playsewithpan SE_M_SELF_DESTRUCT, SOUND_PAN_ATTACKER
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 20, -60, -48, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 20, -60, -48, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 20, 60, -48, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 20, 60, -48, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -24, 11, -60, -40, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 0, 11, 60, -40, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 24, 11, 60, -40, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 2, -60, -32, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 2, -60, -32, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 2, 60, -32, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 2, 60, -32, 12, 0, 0, 1
+	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
+	delay 12
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	waitforvisualfinish
+	end

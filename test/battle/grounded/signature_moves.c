@@ -319,3 +319,24 @@ DOUBLE_BATTLE_TEST("Lure Light redirects attacks and lowers the foes' accuracy")
         EXPECT_EQ(opponentRight->statStages[STAT_ACC], DEFAULT_STAT_STAGE - 1);
     }
 }
+
+// Beaver Dam (Bibarel): Stockpile-lagen (+1 Def/SpDef); valt Bibarel flauw, dan breekt de dam en
+// verliest elke tegenstander 1/6 van zijn max. HP per laag.
+SINGLE_BATTLE_TEST("Beaver Dam bursts when Bibarel faints and floods the foe")
+{
+    GIVEN {
+        PLAYER(SPECIES_BIBAREL) { HP(1); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_BEAVER_DAM); MOVE(opponent, MOVE_TACKLE); SEND_OUT(player, 1); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_BEAVER_DAM, player);
+        MESSAGE("Bibarel added a layer to its dam! (1/3)");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
+        MESSAGE("Bibarel fainted!");
+        MESSAGE("With no one to keep it up, Bibarel's dam burst!");
+        HP_BAR(opponent);
+        MESSAGE("The opposing Wobbuffet was swept away by the flood!");
+    }
+}

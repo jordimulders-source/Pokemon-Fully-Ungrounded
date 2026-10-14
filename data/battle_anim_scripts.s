@@ -39007,3 +39007,24 @@ CavitationImplosion_B:
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 2, 0, 4, 1
 	delay 5
 	return
+
+@ Project Grounded: Lure Light. De lichtorganen van Lumineon gloeien op en trekken de blik (het
+@ lokaas van een diepzeevis), dan een felle flits die de tegenstanders verblindt.
+gBattleAnimMove_LureLight::
+	loadspritegfx ANIM_TAG_SPARKLE_2
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 12, RGB(1, 2, 8)
+	waitforvisualfinish
+	playsewithpan SE_M_MORNING_SUN, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 0, 12, RGB(20, 31, 31)
+	createsprite gGrantingStarsSpriteTemplate, ANIM_ATTACKER, 2, -15, 0, 0, 0, 32, 60
+	delay 8
+	createsprite gGrantingStarsSpriteTemplate, ANIM_ATTACKER, 2, 12, -5, 0, 0, 32, 60
+	delay 16
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 12, 0, RGB(20, 31, 31)
+	waitforvisualfinish
+	playsewithpan SE_M_LEER, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_Flash, 2
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 12, 0, RGB(1, 2, 8)
+	waitforvisualfinish
+	end

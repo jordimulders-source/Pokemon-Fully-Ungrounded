@@ -4262,6 +4262,25 @@ BattleScript_EffectFollowMe::
 	waitanimation
 	printstring STRINGID_PKMNCENTERATTENTION
 	waitmessage B_WAIT_TIME_LONG
+	jumpifmove MOVE_LURE_LIGHT, BattleScript_LureLightDazzle
+	goto BattleScript_MoveEnd
+
+@ Project Grounded: Lure Light (Lumineon). Na het lokken verblindt de flits elke tegenstander: Accuracy -1.
+BattleScript_LureLightDazzle:
+	savetarget
+	setbyte gBattlerTarget, 0
+BattleScript_LureLightLoop:
+	jumpiftargetally BattleScript_LureLightLoopIncrement
+	jumpifabsent BS_TARGET, BattleScript_LureLightLoopIncrement
+	setstatchanger STAT_ACC, 1, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_LureLightLoopIncrement
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_LureLightLoopIncrement
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_LureLightLoopIncrement:
+	addbyte gBattlerTarget, 1
+	jumpifbytenotequal gBattlerTarget, gBattlersCount, BattleScript_LureLightLoop
+	restoretarget
 	goto BattleScript_MoveEnd
 
 BattleScript_EffectCharge::

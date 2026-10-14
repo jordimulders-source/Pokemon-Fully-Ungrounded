@@ -937,8 +937,9 @@
 #define MOVE_NINE_LIVES 874 // Project Grounded: Delcatty
 #define MOVE_HYPHAL_SNARE 875 // Project Grounded: Parasect
 #define MOVE_CAVITATION 876 // Project Grounded: Golduck
+#define MOVE_LURE_LIGHT 877 // Project Grounded: Lumineon
 
-#define MOVES_COUNT_GEN9 877
+#define MOVES_COUNT_GEN9 878
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

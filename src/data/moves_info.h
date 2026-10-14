@@ -22068,6 +22068,33 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Cavitation,
     },
 
+    [MOVE_LURE_LIGHT] = // Project Grounded: Lumineon (Follow Me + Flash)
+    {
+        .name = COMPOUND_STRING("Lure Light"),
+        .description = COMPOUND_STRING(
+            "A glowing lure draws all\n"
+            "attacks, then dazzles foes."),
+        .effect = EFFECT_FOLLOW_ME,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 2,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LureLight,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

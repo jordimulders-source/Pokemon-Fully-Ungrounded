@@ -11851,6 +11851,8 @@ static const struct LevelUpMove sFinneonLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sLumineonLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_LURE_LIGHT), // Project Grounded: signature
+    LEVEL_UP_MOVE( 1, MOVE_LURE_LIGHT),
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_GUST),
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),

@@ -39168,3 +39168,30 @@ gBattleAnimGeneral_BeaverDamBreak::
 	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
 	waitforvisualfinish
 	end
+
+@ Project Grounded: Moai Watch. Probopass laadt magnetisch op, drie stenen Nosepass-beelden rijzen
+@ draaiend op aan de kant van het doelwit en vallen stil, gezicht naar voren; vonken tussen de beelden.
+gBattleAnimMove_MoaiWatch::
+	loadspritegfx ANIM_TAG_MOAI_STATUE
+	loadspritegfx ANIM_TAG_SPARK_2
+	loadspritegfx ANIM_TAG_ROCKS
+	playsewithpan SE_M_THUNDER_WAVE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 0, 9, RGB(31, 28, 6)
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 2, 0, 10, 1
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 9, 0, RGB(31, 28, 6)
+	playsewithpan SE_M_EARTHQUAKE, SOUND_PAN_TARGET
+	createvisualtask AnimTask_HorizontalShake, 5, ANIM_TARGET, 4, 30
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 8, 6, 20, 30, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 8, 6, 20, 24, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 8, 6, 20, 18, 0
+	delay 48
+	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_TARGET
+	createsprite gSparkElectricitySpriteTemplate, ANIM_TARGET, 2, -18, 10, 64, 12, ANIM_TARGET, 1, 0
+	createsprite gSparkElectricitySpriteTemplate, ANIM_TARGET, 2, 18, 10, 192, 12, ANIM_TARGET, 1, 0
+	delay 12
+	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
+	waitforvisualfinish
+	end

@@ -1581,6 +1581,9 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
         // G-Max Steelsurge
         if (IsHazardOnSide(side, HAZARDS_STEELSURGE) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS)
             hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_SHARP_STEEL, defType1, defType2, battleMon->maxHP);
+        // Project Grounded: Moai Watch
+        if (IsHazardOnSide(side, HAZARDS_MOAI_WATCH) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS)
+            hazardDamage += GetMoaiWatchDamageByTypesAndHP(defType1, defType2, battleMon->maxHP);
         // Spikes
         if (IsHazardOnSide(side, HAZARDS_SPIKES) && IsMonGrounded(heldItemEffect, ability, defType1, defType2))
         {

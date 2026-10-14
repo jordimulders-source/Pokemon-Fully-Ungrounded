@@ -426,6 +426,7 @@
 #define ANIM_TAG_LASER_DOT                  (ANIM_SPRITES_START + 412) // Project Grounded: Laser Beam
 #define ANIM_TAG_BROKEN_HEART               (ANIM_SPRITES_START + 413) // Project Grounded: Heartbreak
 #define ANIM_TAG_MUMMY_BANDAGE              (ANIM_SPRITES_START + 414) // Project Grounded: Mummy's Curse
+#define ANIM_TAG_MOAI_STATUE                (ANIM_SPRITES_START + 415) // Project Grounded: Moai Watch
 
 // battlers
 #define ANIM_ATTACKER         0

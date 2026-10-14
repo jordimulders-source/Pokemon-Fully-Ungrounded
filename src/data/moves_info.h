@@ -22120,6 +22120,29 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_BeaverDam,
     },
 
+    [MOVE_MOAI_WATCH] = // Project Grounded: Probopass (hazard, beste van Rock/Electric)
+    {
+        .name = COMPOUND_STRING("Moai Watch"),
+        .description = COMPOUND_STRING(
+            "Statues guard the foe's side.\n"
+            "They strike all who enter."),
+        .effect = EFFECT_STEALTH_ROCK,
+        .power = 0,
+        .type = TYPE_ROCK,
+        .accuracy = 0,
+        .pp = 20,
+        .target = MOVE_TARGET_OPPONENTS_FIELD,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
+        .magicCoatAffected = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_MoaiWatch,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

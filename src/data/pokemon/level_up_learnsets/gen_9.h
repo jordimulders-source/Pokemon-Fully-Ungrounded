@@ -8355,6 +8355,8 @@ static const struct LevelUpMove sNosepassLevelUpLearnset[] = {
 
 #if P_GEN_4_CROSS_EVOS
 static const struct LevelUpMove sProbopassLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_MOAI_WATCH), // Project Grounded: signature
+    LEVEL_UP_MOVE( 1, MOVE_MOAI_WATCH),
     LEVEL_UP_MOVE( 0, MOVE_TRI_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_TRI_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),

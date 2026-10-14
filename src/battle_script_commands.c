@@ -8168,6 +8168,16 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
                 SetDmgHazardsBattlescript(battler, B_MSG_SHARPSTEELDMG);
         }
         break;
+    case HAZARDS_MOAI_WATCH: // Project Grounded
+        if (IsBattlerAffectedByHazards(battler, FALSE) && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        {
+            enum Type types[3];
+            GetBattlerTypes(battler, FALSE, types);
+            gBattleStruct->passiveHpUpdate[battler] = GetMoaiWatchDamageByTypesAndHP(types[0], types[1], gBattleMons[battler].maxHP);
+            if (gBattleStruct->passiveHpUpdate[battler] != 0)
+                SetDmgHazardsBattlescript(battler, B_MSG_MOAIWATCHDMG);
+        }
+        break;
     case HAZARDS_MAX_COUNT:
         break;
     }
@@ -13349,13 +13359,14 @@ static void Cmd_setstealthrock(void)
     CMD_ARGS(const u8 *failInstr);
 
     u8 targetSide = GetBattlerSide(gBattlerTarget);
-    if (IsHazardOnSide(targetSide, HAZARDS_STEALTH_ROCK))
+    enum Hazards hazard = (gCurrentMove == MOVE_MOAI_WATCH) ? HAZARDS_MOAI_WATCH : HAZARDS_STEALTH_ROCK; // Project Grounded
+    if (IsHazardOnSide(targetSide, hazard))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
     else
     {
-        PushHazardTypeToQueue(targetSide, HAZARDS_STEALTH_ROCK);
+        PushHazardTypeToQueue(targetSide, hazard);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
 }

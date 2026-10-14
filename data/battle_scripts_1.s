@@ -2220,7 +2220,12 @@ BattleScript_EffectStealthRock::
 	setstealthrock BattleScript_ButItFailed
 	attackanimation
 	waitanimation
+	jumpifmove MOVE_MOAI_WATCH, BattleScript_EffectStealthRockMoai
 	printstring STRINGID_POINTEDSTONESFLOAT
+	goto BattleScript_EffectStealthRockMsgDone
+BattleScript_EffectStealthRockMoai:
+	printstring STRINGID_MOAISTANDWATCH
+BattleScript_EffectStealthRockMsgDone:
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 

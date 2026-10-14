@@ -1037,6 +1037,7 @@ extern const u8 gBattleAnimMove_HyphalSnare[];
 extern const u8 gBattleAnimMove_Cavitation[];
 extern const u8 gBattleAnimMove_LureLight[];
 extern const u8 gBattleAnimMove_BeaverDam[];
+extern const u8 gBattleAnimMove_MoaiWatch[];
 extern const u8 gBattleAnimMove_AcidRain[];
 
 // special animations

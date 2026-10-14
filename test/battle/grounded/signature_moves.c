@@ -340,3 +340,23 @@ SINGLE_BATTLE_TEST("Beaver Dam bursts when Bibarel faints and floods the foe")
         MESSAGE("The opposing Wobbuffet was swept away by the flood!");
     }
 }
+
+// Moai Watch (Probopass): hazard; wie binnenkomt krijgt 1/8 x de beste van Rock/Electric.
+SINGLE_BATTLE_TEST("Moai Watch damages a switched-in foe with the better of Rock and Electric")
+{
+    s16 damage;
+    GIVEN {
+        PLAYER(SPECIES_PROBOPASS);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WINGULL); // Water/Flying: Electric 4x
+    } WHEN {
+        TURN { MOVE(player, MOVE_MOAI_WATCH); }
+        TURN { SWITCH(opponent, 1); }
+    } SCENE {
+        MESSAGE("Stone statues now stand watch around the opposing team!");
+        MESSAGE("The stone statues turned on the opposing Wingull!");
+        HP_BAR(opponent, captureDamage: &damage);
+    } THEN {
+        EXPECT_EQ(damage, GetMonData(&OPPONENT_PARTY[1], MON_DATA_MAX_HP) / 2);
+    }
+}

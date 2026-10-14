@@ -939,8 +939,9 @@
 #define MOVE_CAVITATION 876 // Project Grounded: Golduck
 #define MOVE_LURE_LIGHT 877 // Project Grounded: Lumineon
 #define MOVE_BEAVER_DAM 878 // Project Grounded: Bibarel
+#define MOVE_MOAI_WATCH 879 // Project Grounded: Probopass
 
-#define MOVES_COUNT_GEN9 879
+#define MOVES_COUNT_GEN9 880
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

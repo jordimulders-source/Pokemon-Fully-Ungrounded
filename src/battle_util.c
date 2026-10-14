@@ -9295,6 +9295,15 @@ s32 GetStealthHazardDamageByTypesAndHP(enum TypeSideHazard hazardType, enum Type
     return dmg;
 }
 
+// Project Grounded: Moai Watch - de beelden slaan toe met de beste van Rock (steen) of Electric
+// (de magnetische Mini-Noses) tegen de nieuwkomer: 1/8 max. HP x die effectiviteit.
+s32 GetMoaiWatchDamageByTypesAndHP(enum Type type1, enum Type type2, u32 maxHp)
+{
+    s32 rock = GetStealthHazardDamageByTypesAndHP((enum TypeSideHazard)TYPE_ROCK, type1, type2, maxHp);
+    s32 elec = GetStealthHazardDamageByTypesAndHP((enum TypeSideHazard)TYPE_ELECTRIC, type1, type2, maxHp);
+    return rock > elec ? rock : elec;
+}
+
 s32 GetStealthHazardDamage(enum TypeSideHazard hazardType, u32 battler)
 {
     enum Type types[3];

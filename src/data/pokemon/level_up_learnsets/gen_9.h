@@ -937,6 +937,7 @@ static const struct LevelUpMove sVulpixAlolaLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sNinetalesAlolaLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_MOONBLAST), // Project Grounded: anders nooit door levelen te leren
     LEVEL_UP_MOVE( 0, MOVE_DAZZLING_GLEAM),
     LEVEL_UP_MOVE( 1, MOVE_DAZZLING_GLEAM),
     LEVEL_UP_MOVE( 1, MOVE_MIST),
@@ -4931,6 +4932,7 @@ static const struct LevelUpMove sDragonairLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sDragoniteLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_OUTRAGE), // Project Grounded: anders nooit door levelen te leren
     LEVEL_UP_MOVE( 0, MOVE_HURRICANE),
     LEVEL_UP_MOVE( 1, MOVE_ROOST),
     LEVEL_UP_MOVE( 1, MOVE_EXTREME_SPEED),
@@ -10310,6 +10312,7 @@ static const struct LevelUpMove sMetangLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sMetagrossLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_HARD_PRESS), // Project Grounded: anders nooit door levelen te leren
     LEVEL_UP_MOVE( 0, MOVE_HAMMER_ARM),
     LEVEL_UP_MOVE( 1, MOVE_HAMMER_ARM),
     LEVEL_UP_MOVE( 1, MOVE_CONFUSION),
@@ -15413,6 +15416,7 @@ static const struct LevelUpMove sLarvestaLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sVolcaronaLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_HEAT_WAVE), // Project Grounded: anders nooit door levelen te leren
     LEVEL_UP_MOVE( 0, MOVE_QUIVER_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_FIERY_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_STRUGGLE_BUG),
@@ -19369,6 +19373,7 @@ static const struct LevelUpMove sDottlerLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sOrbeetleLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_BUG_BUZZ), // Project Grounded: anders nooit door levelen te leren
     LEVEL_UP_MOVE( 1, MOVE_REFLECT),
     LEVEL_UP_MOVE( 1, MOVE_LIGHT_SCREEN),
     LEVEL_UP_MOVE( 1, MOVE_CONFUSION),

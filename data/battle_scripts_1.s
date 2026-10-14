@@ -5753,11 +5753,13 @@ BattleScript_LeechSeedFree::
 	return
 
 BattleScript_SpinHazardsAway::
+	call BattleScript_TryMoaiCrumble @ Project Grounded
 	printfromtable gSpinHazardsStringIds
 	waitmessage B_WAIT_TIME_LONG
 	return
 
 BattleScript_DefogClearHazards::
+	call BattleScript_TryMoaiCrumble @ Project Grounded
 	printfromtable gDefogHazardsStringIds
 	waitmessage B_WAIT_TIME_LONG
 	return
@@ -9416,4 +9418,53 @@ BattleScript_BeaverDamFloodLoop:
 	tryfaintmon BS_SCRIPTING
 	goto BattleScript_BeaverDamFloodLoop
 BattleScript_BeaverDamFloodEnd:
+	return
+
+@ Project Grounded: Heliotropism (Sunflora). Komt hij in de zon binnen, dan draait hij naar de zon en
+@ bloeit op: alle stats +2. gBattleScripting.battler = Sunflora.
+BattleScript_HeliotropismActivates::
+	call BattleScript_AbilityPopUpScripting
+	saveattacker
+	copybyte gBattlerAttacker, sBATTLER
+BattleScript_HeliotropismAtk:
+	setstatchanger STAT_ATK, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismDef
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_HeliotropismDef:
+	setstatchanger STAT_DEF, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismSpeed
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismSpeed
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_HeliotropismSpeed:
+	setstatchanger STAT_SPEED, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismSpAtk
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismSpAtk
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_HeliotropismSpAtk:
+	setstatchanger STAT_SPATK, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismSpDef
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismSpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_HeliotropismSpDef:
+	setstatchanger STAT_SPDEF, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismEnd
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_HeliotropismEnd:
+	restoreattacker
+	destroyabilitypopup
+	end3
+
+@ Project Grounded: de stenen beelden van Moai Watch storten in als ze opgeruimd worden.
+BattleScript_TryMoaiCrumble::
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, HAZARDS_MOAI_WATCH, BattleScript_TryMoaiCrumbleRet
+	playanimation BS_SCRIPTING, B_ANIM_MOAI_CRUMBLE
+	waitanimation
+BattleScript_TryMoaiCrumbleRet:
 	return

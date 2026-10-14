@@ -210,6 +210,7 @@ struct SideTimer
     u16 mistTimer;
     u16 safeguardTimer;
     u8 spikesAmount:4;
+    u8 moaiWatchAmount:2; // Project Grounded: lagen Moai Watch (1-3)
     u8 toxicSpikesAmount:4;
     u8 stickyWebBattlerId;
     u8 stickyWebBattlerSide; // Used for Court Change

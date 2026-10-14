@@ -379,6 +379,7 @@ extern const u8 BattleScript_DancerActivates[];
 extern const u8 BattleScript_AftermathDmg[];
 extern const u8 BattleScript_BeaverDamBreak[];
 extern const u8 BattleScript_LureLightDazzleAttacker[];
+extern const u8 BattleScript_HeliotropismActivates[];
 extern const u8 BattleScript_BattlerFormChange[];
 extern const u8 BattleScript_BattlerFormChangeEnd2[];
 extern const u8 BattleScript_BattlerFormChangeEnd3[];

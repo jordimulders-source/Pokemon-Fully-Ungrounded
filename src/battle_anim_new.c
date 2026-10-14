@@ -10244,22 +10244,27 @@ void AnimTask_GetBeaverDamLayers(u8 taskId)
     DestroyAnimVisualTask(taskId);
 }
 
-// Project Grounded: Moai Watch - stenen Nosepass-beelden (uit de Nosepass Spring-tileset) rijzen draaiend
-// op aan de kant van het doelwit en vallen stil met hun gezicht naar voren. De draai: 4 aanzichten
-// (voor, rechts, achter, links) met tussendoor horizontaal samenknijpen, zodat het als een draai oogt.
-// Frames in moai_statue.png: 0 voor, 1 links, 2 rechts, 3 achter, 4 gebroken.
+// Project Grounded: Moai Watch - stenen beelden (uit de Nosepass Spring-tileset) rijzen draaiend op aan de
+// kant van het doelwit en vallen stil met hun gezicht naar voren. De draai: 4 aanzichten (voor, rechts,
+// achter, links); halverwege elke kwartslag knijpt het beeld tot de helft samen en wisselt het aanzicht,
+// zodat het als een kanteling oogt en nooit een lijntje wordt.
+// moai_statue.png: 0-3 Nosepass (voor, links, rechts, achter), 4 Nosepass gebroken,
+//                  5-8 Probopass (idem), 9 Probopass gebroken.
 // arg0/arg1: positie t.o.v. het doelwit, arg2: frames per kwartslag, arg3: aantal kwartslagen,
-// arg4: hoogte waarover hij oprijst, arg5: frames blijven staan, arg6: 1 = gebroken beeld (geen draai).
+// arg4: hoogte waarover hij oprijst, arg5: frames blijven staan,
+// arg6: soort (0 Nosepass, 1 Nosepass 1,5x, 2 Probopass), arg7: 1 = gebroken (geen draai).
 static const u8 sMoaiSpinOrder[] = {0, 2, 3, 1};
 
-static void AnimMoaiStatue_SetWidth(struct Sprite *sprite, s32 width)
+static void AnimMoaiStatue_SetScale(struct Sprite *sprite, s32 width)
 {
-    if (width < 40)
-        width = 40;
-    gOamMatrices[sprite->oam.matrixNum].a = (0x100 * 0x100) / width;
+    s32 scale = sprite->data[5]; // 0x100 = 1x, 0x180 = 1,5x
+    s32 w = (width * scale) / 0x100;
+    if (w < 1)
+        w = 1;
+    gOamMatrices[sprite->oam.matrixNum].a = (0x100 * 0x100) / w;
     gOamMatrices[sprite->oam.matrixNum].b = 0;
     gOamMatrices[sprite->oam.matrixNum].c = 0;
-    gOamMatrices[sprite->oam.matrixNum].d = 0x100;
+    gOamMatrices[sprite->oam.matrixNum].d = (0x100 * 0x100) / scale;
 }
 
 static void AnimMoaiStatue_Step(struct Sprite *sprite)
@@ -10275,13 +10280,14 @@ static void AnimMoaiStatue_Step(struct Sprite *sprite)
         s16 turn = t / q, u = t % q, half = q / 2;
         u8 frame = sMoaiSpinOrder[(u < half ? turn : turn + 1) % 4];
         sprite->oam.tileNum = sprite->data[7] + frame * 16;
-        AnimMoaiStatue_SetWidth(sprite, (abs(half - u) * 0x100) / half);
+        // breedte 100% -> 50% (wissel van aanzicht) -> 100%
+        AnimMoaiStatue_SetScale(sprite, 0x80 + (abs(half - u) * 0x80) / half);
         sprite->y2 = rise - (rise * t) / total;
     }
     else
     {
         sprite->oam.tileNum = sprite->data[7];
-        AnimMoaiStatue_SetWidth(sprite, 0x100);
+        AnimMoaiStatue_SetScale(sprite, 0x100);
         sprite->y2 = 0;
         if (--sprite->data[4] <= 0)
             DestroyAnimSprite(sprite);
@@ -10290,18 +10296,23 @@ static void AnimMoaiStatue_Step(struct Sprite *sprite)
 
 static void AnimMoaiStatue(struct Sprite *sprite)
 {
+    u32 kind = gBattleAnimArgs[6];
+
     sprite->x = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2) + gBattleAnimArgs[0];
     sprite->y = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y) + gBattleAnimArgs[1];
-    sprite->data[7] = sprite->oam.tileNum;
+    sprite->data[7] = sprite->oam.tileNum + (kind == 2 ? 5 * 16 : 0);
+    sprite->data[5] = (kind == 1) ? 0x180 : 0x100;
+    if (kind == 1)
+        sprite->y -= 8; // groter beeld, voet op dezelfde plek
     sprite->affineAnimPaused = TRUE;
     sprite->data[0] = 0;
     sprite->data[1] = gBattleAnimArgs[2] > 1 ? gBattleAnimArgs[2] : 2;
-    sprite->data[2] = gBattleAnimArgs[6] ? 0 : gBattleAnimArgs[3];
+    sprite->data[2] = gBattleAnimArgs[7] ? 0 : gBattleAnimArgs[3];
     sprite->data[3] = gBattleAnimArgs[4];
     sprite->data[4] = gBattleAnimArgs[5];
-    if (gBattleAnimArgs[6])
+    if (gBattleAnimArgs[7])
         sprite->data[7] += 4 * 16; // gebroken beeld
-    AnimMoaiStatue_SetWidth(sprite, 0x100);
+    AnimMoaiStatue_SetScale(sprite, 0x100);
     sprite->callback = AnimMoaiStatue_Step;
     sprite->callback(sprite);
 }
@@ -10310,9 +10321,16 @@ const struct SpriteTemplate gMoaiStatueSpriteTemplate =
 {
     .tileTag = ANIM_TAG_MOAI_STATUE,
     .paletteTag = ANIM_TAG_MOAI_STATUE,
-    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .oam = &gOamData_AffineDouble_ObjNormal_32x32,
     .anims = gDummySpriteAnimTable,
     .images = NULL,
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimMoaiStatue,
 };
+
+void AnimTask_GetMoaiWatchLayers(u8 taskId)
+{
+    u32 layers = gSideTimers[GetBattlerSide(gBattleAnimTarget)].moaiWatchAmount;
+    gBattleAnimArgs[ARG_RET_ID] = (layers >= 1 && layers <= 3) ? layers : 1;
+    DestroyAnimVisualTask(taskId);
+}

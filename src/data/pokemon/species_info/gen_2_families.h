@@ -3169,9 +3169,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .growthRate = GROWTH_MEDIUM_SLOW,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
     #if P_UPDATED_ABILITIES >= GEN_4
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_POLLEN_SEASON, ABILITY_SOLAR_POWER }, // Project Grounded: Early Bird -> Pollen Season
+        .abilities = { ABILITY_HELIOTROPISM, ABILITY_POLLEN_SEASON, ABILITY_SOLAR_POWER }, // Project Grounded: Heliotropism i.p.v. Chlorophyll
     #else
-        .abilities = { ABILITY_CHLOROPHYLL, ABILITY_POLLEN_SEASON, ABILITY_POLLEN_SEASON }, // Project Grounded
+        .abilities = { ABILITY_HELIOTROPISM, ABILITY_POLLEN_SEASON, ABILITY_POLLEN_SEASON }, // Project Grounded
     #endif
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Sunflora"),

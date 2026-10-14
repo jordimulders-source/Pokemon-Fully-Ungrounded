@@ -1017,6 +1017,7 @@ extern const u8 gBattleAnimGeneral_SwapFromSubstitute[];
 extern const u8 gBattleAnimGeneral_AcidRain[];
 extern const u8 gBattleAnimGeneral_PollenHaze[];
 extern const u8 gBattleAnimGeneral_BeaverDamBreak[];
+extern const u8 gBattleAnimGeneral_MoaiCrumble[];
 extern const u8 gBattleAnimMove_PollenHaze[];
 extern const u8 gBattleAnimMove_MummysCurse[];
 extern const u8 gBattleAnimMove_ZapTrap[];

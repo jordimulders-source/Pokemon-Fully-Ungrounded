@@ -37,6 +37,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
     },
 
+    [ABILITY_HELIOTROPISM] = // Project Grounded: Sunflora
+    {
+        .name = _("Heliotropism"),
+        .description = COMPOUND_STRING("Sharply ups all stats if it enters in sun."),
+        .aiRating = 7,
+    },
+
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("Speed Boost"),

@@ -39169,12 +39169,12 @@ gBattleAnimGeneral_BeaverDamBreak::
 	waitforvisualfinish
 	end
 
-@ Project Grounded: Moai Watch. Probopass laadt magnetisch op, drie stenen Nosepass-beelden rijzen
-@ draaiend op aan de kant van het doelwit en vallen stil, gezicht naar voren; vonken tussen de beelden.
+@ Project Grounded: Moai Watch. Probopass laadt magnetisch op, de grond schudt en stenen beelden rijzen
+@ draaiend op aan de kant van het doelwit: laag 1 kleine Nosepass-beelden, laag 2 grotere, laag 3
+@ Probopass-beelden. Ze vallen stil met het gezicht naar voren; vonken ertussen.
 gBattleAnimMove_MoaiWatch::
 	loadspritegfx ANIM_TAG_MOAI_STATUE
 	loadspritegfx ANIM_TAG_SPARK_2
-	loadspritegfx ANIM_TAG_ROCKS
 	playsewithpan SE_M_THUNDER_WAVE, SOUND_PAN_ATTACKER
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 0, 9, RGB(31, 28, 6)
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 2, 0, 10, 1
@@ -39182,16 +39182,53 @@ gBattleAnimMove_MoaiWatch::
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 9, 0, RGB(31, 28, 6)
 	playsewithpan SE_M_EARTHQUAKE, SOUND_PAN_TARGET
 	createvisualtask AnimTask_HorizontalShake, 5, ANIM_TARGET, 4, 30
-	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 8, 6, 20, 30, 0
+	createvisualtask AnimTask_GetMoaiWatchLayers, 2
+	delay 1
+	jumpreteq 2, MoaiWatch_Layer2
+	jumpreteq 3, MoaiWatch_Layer3
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 10, 6, 20, 30, 0, 0
 	delay 6
-	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 8, 6, 20, 24, 0
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 10, 6, 20, 24, 0, 0
 	delay 6
-	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 8, 6, 20, 18, 0
-	delay 48
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 10, 6, 20, 18, 0, 0
+	goto MoaiWatch_Finish
+MoaiWatch_Layer2:
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 10, 6, 20, 30, 1, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 10, 6, 20, 24, 1, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 10, 6, 20, 18, 1, 0
+	goto MoaiWatch_Finish
+MoaiWatch_Layer3:
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 10, 6, 20, 30, 2, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 10, 6, 20, 24, 2, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 10, 6, 20, 18, 2, 0
+	goto MoaiWatch_Finish
+MoaiWatch_Finish:
+	delay 56
 	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_TARGET
 	createsprite gSparkElectricitySpriteTemplate, ANIM_TARGET, 2, -18, 10, 64, 12, ANIM_TARGET, 1, 0
 	createsprite gSparkElectricitySpriteTemplate, ANIM_TARGET, 2, 18, 10, 192, 12, ANIM_TARGET, 1, 0
 	delay 12
 	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
+	waitforvisualfinish
+	end
+
+@ Project Grounded: de beelden van Moai Watch worden opgeruimd en storten in (gebroken versie uit de tileset).
+gBattleAnimGeneral_MoaiCrumble::
+	loadspritegfx ANIM_TAG_MOAI_STATUE
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 10, 0, 0, 16, 0, 0
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 10, 0, 0, 16, 0, 0
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 10, 0, 0, 16, 0, 0
+	createvisualtask AnimTask_HorizontalShake, 5, ANIM_TARGET, 3, 16
+	delay 16
+	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 10, 0, 0, 34, 0, 1
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 10, 0, 0, 34, 0, 1
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 10, 0, 0, 34, 0, 1
+	delay 6
+	playsewithpan SE_M_EARTHQUAKE, SOUND_PAN_TARGET
 	waitforvisualfinish
 	end

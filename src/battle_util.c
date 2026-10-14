@@ -4516,6 +4516,16 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
+        case ABILITY_HELIOTROPISM: // Project Grounded: Sunflora draait naar de zon en bloeit op
+            if (!gSpecialStatuses[battler].switchInAbilityDone
+             && IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                gBattleScripting.battler = battler;
+                BattleScriptPushCursorAndCallback(BattleScript_HeliotropismActivates);
+                effect++;
+            }
+            break;
         case ABILITY_INTREPID_SWORD:
             if (!gSpecialStatuses[battler].switchInAbilityDone
              && !GetBattlerPartyState(battler)->intrepidSwordBoost)
@@ -9297,11 +9307,19 @@ s32 GetStealthHazardDamageByTypesAndHP(enum TypeSideHazard hazardType, enum Type
 
 // Project Grounded: Moai Watch - de beelden slaan toe met de beste van Rock (steen) of Electric
 // (de magnetische Mini-Noses) tegen de nieuwkomer: 1/8 max. HP x die effectiviteit.
-s32 GetMoaiWatchDamageByTypesAndHP(enum Type type1, enum Type type2, u32 maxHp)
+// Lagen: 1 = 1/8, 2 = 1/6, 3 = 1/4 (x effectiviteit), nooit meer dan de helft van de max. HP.
+s32 GetMoaiWatchDamageByTypesAndHP(enum Type type1, enum Type type2, u32 maxHp, u32 layers)
 {
     s32 rock = GetStealthHazardDamageByTypesAndHP((enum TypeSideHazard)TYPE_ROCK, type1, type2, maxHp);
     s32 elec = GetStealthHazardDamageByTypesAndHP((enum TypeSideHazard)TYPE_ELECTRIC, type1, type2, maxHp);
-    return rock > elec ? rock : elec;
+    s32 dmg = rock > elec ? rock : elec; // 1/8 x effectiviteit
+    if (layers == 2)
+        dmg = dmg * 8 / 6;
+    else if (layers >= 3)
+        dmg = dmg * 2;
+    if (dmg > (s32)(maxHp / 2))
+        dmg = maxHp / 2;
+    return dmg;
 }
 
 s32 GetStealthHazardDamage(enum TypeSideHazard hazardType, u32 battler)
@@ -11063,6 +11081,8 @@ bool32 IsHazardOnSideAndClear(u32 side, enum Hazards hazardType)
                 gSideTimers[side].spikesAmount = 0;
             else if (hazardType == HAZARDS_TOXIC_SPIKES)
                 gSideTimers[side].toxicSpikesAmount = 0;
+            else if (hazardType == HAZARDS_MOAI_WATCH) // Project Grounded
+                gSideTimers[side].moaiWatchAmount = 0;
             return TRUE;
         }
     }
@@ -11091,6 +11111,8 @@ void RemoveHazardFromField(u32 side, enum Hazards hazardType)
                 gSideTimers[side].spikesAmount = 0;
             else if (hazardType == HAZARDS_TOXIC_SPIKES)
                 gSideTimers[side].toxicSpikesAmount = 0;
+            else if (hazardType == HAZARDS_MOAI_WATCH) // Project Grounded
+                gSideTimers[side].moaiWatchAmount = 0;
             break;
         }
     }

@@ -8173,7 +8173,7 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
         {
             enum Type types[3];
             GetBattlerTypes(battler, FALSE, types);
-            gBattleStruct->passiveHpUpdate[battler] = GetMoaiWatchDamageByTypesAndHP(types[0], types[1], gBattleMons[battler].maxHP);
+            gBattleStruct->passiveHpUpdate[battler] = GetMoaiWatchDamageByTypesAndHP(types[0], types[1], gBattleMons[battler].maxHP, gSideTimers[side].moaiWatchAmount);
             if (gBattleStruct->passiveHpUpdate[battler] != 0)
                 SetDmgHazardsBattlescript(battler, B_MSG_MOAIWATCHDMG);
         }
@@ -9630,6 +9630,7 @@ static bool32 DefogClearHazards(u32 saveBattler, u32 side, bool32 clear)
             {
                 gBattleStruct->numHazards[side]--;
                 gBattleCommunication[MULTISTRING_CHOOSER] = hazardType;
+                gBattleScripting.battler = GetBattlerAtPosition(side == B_SIDE_PLAYER ? B_POSITION_PLAYER_LEFT : B_POSITION_OPPONENT_LEFT); // Project Grounded: Moai-instortanimatie
                 BattleScriptCall(BattleScript_DefogClearHazards);
             }
             else
@@ -9860,6 +9861,7 @@ void BS_CourtChangeSwapSideStatuses(void)
         gBattleStruct->hazardsQueue[B_SIDE_OPPONENT][i] = tempQueue[i];
     SWAP(sideTimerPlayer->spikesAmount, sideTimerOpp->spikesAmount, temp);
     SWAP(sideTimerPlayer->toxicSpikesAmount, sideTimerOpp->toxicSpikesAmount, temp);
+    SWAP(sideTimerPlayer->moaiWatchAmount, sideTimerOpp->moaiWatchAmount, temp); // Project Grounded
 
     // Change battler IDs of swapped effects. Needed for the correct string when they expire
     UPDATE_COURTCHANGED_BATTLER(stickyWebBattlerId);
@@ -12594,6 +12596,7 @@ static void Cmd_rapidspinfree(void)
             {
                 gBattleStruct->numHazards[atkSide]--;
                 gBattleCommunication[MULTISTRING_CHOOSER] = hazardType;
+                gBattleScripting.battler = gBattlerAttacker; // Project Grounded: Moai-instortanimatie
                 BattleScriptCall(BattleScript_SpinHazardsAway);
                 return;
             }
@@ -13360,7 +13363,19 @@ static void Cmd_setstealthrock(void)
 
     u8 targetSide = GetBattlerSide(gBattlerTarget);
     enum Hazards hazard = (gCurrentMove == MOVE_MOAI_WATCH) ? HAZARDS_MOAI_WATCH : HAZARDS_STEALTH_ROCK; // Project Grounded
-    if (IsHazardOnSide(targetSide, hazard))
+    if (hazard == HAZARDS_MOAI_WATCH) // Project Grounded: stapelbaar tot 3 lagen, zoals Spikes
+    {
+        if (gSideTimers[targetSide].moaiWatchAmount >= 3)
+        {
+            gBattlescriptCurrInstr = cmd->failInstr;
+            return;
+        }
+        if (!IsHazardOnSide(targetSide, HAZARDS_MOAI_WATCH))
+            PushHazardTypeToQueue(targetSide, HAZARDS_MOAI_WATCH);
+        gSideTimers[targetSide].moaiWatchAmount++;
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+    else if (IsHazardOnSide(targetSide, hazard))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }

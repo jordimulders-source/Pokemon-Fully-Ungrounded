@@ -360,3 +360,35 @@ SINGLE_BATTLE_TEST("Moai Watch damages a switched-in foe with the better of Rock
         EXPECT_EQ(damage, GetMonData(&OPPONENT_PARTY[1], MON_DATA_MAX_HP) / 2);
     }
 }
+
+// Heliotropism (Sunflora): komt hij binnen in de zon, dan +2 op alle stats.
+SINGLE_BATTLE_TEST("Heliotropism sharply raises all stats when entering in sun")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_SUNFLORA) { Ability(ABILITY_HELIOTROPISM); }
+        OPPONENT(SPECIES_TORKOAL) { Ability(ABILITY_DROUGHT); }
+    } WHEN {
+        TURN { SWITCH(player, 1); }
+    } SCENE {
+        ABILITY_POPUP(player, ABILITY_HELIOTROPISM);
+    } THEN {
+        EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 2);
+        EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE + 2);
+        EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 2);
+        EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 2);
+        EXPECT_EQ(player->statStages[STAT_SPDEF], DEFAULT_STAT_STAGE + 2);
+    }
+}
+
+SINGLE_BATTLE_TEST("Heliotropism does nothing without sun")
+{
+    GIVEN {
+        PLAYER(SPECIES_SUNFLORA) { Ability(ABILITY_HELIOTROPISM); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { }
+    } THEN {
+        EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE);
+    }
+}

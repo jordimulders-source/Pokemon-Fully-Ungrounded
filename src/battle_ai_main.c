@@ -1881,6 +1881,12 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             else if (DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
                 ADJUST_SCORE(-10);
             break;
+        case EFFECT_DREAM_EATER:
+            // Project Grounded: zonder Try To Faint/Check Viability werd Dream Eater op een wakker doelwit
+            // niet bestraft (schade 0 telt alleen daar mee); Hypno at dan lucht (testrun Jordi, Route 110)
+            if (!AI_IsBattlerAsleepOrComatose(battlerDef))
+                ADJUST_SCORE(-20);
+            break;
         case EFFECT_CURSE:
             if (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_GHOST))
             {

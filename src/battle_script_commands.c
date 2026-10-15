@@ -8503,7 +8503,13 @@ static void Cmd_handlelearnnewmove(void)
     u32 currLvl = GetMonData(&gPlayerParty[monId], MON_DATA_LEVEL);
 
     if (!gBattleResources->beforeLvlUp->learnMultipleMoves && gBattleResources->beforeLvlUp->level != (currLvl - 1))
+    {
         gBattleResources->beforeLvlUp->learnMultipleMoves = TRUE;
+        // Project Grounded: begin bij het eerste NIEUWE level. Het oude level telde mee, waardoor een
+        // move van dat level (Tinkatink: Covet op 11) na een sprong van meerdere levels (inhaal-EXP)
+        // opnieuw werd aangeboden (testrun Jordi).
+        gBattleResources->beforeLvlUp->level++;
+    }
 
     if (B_LEVEL_UP_NOTIFICATION >= GEN_9 && gBattleResources->beforeLvlUp->learnMultipleMoves)
     {

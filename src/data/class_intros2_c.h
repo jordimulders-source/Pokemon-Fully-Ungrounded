@@ -239,27 +239,33 @@ static const struct TIntro sCI_BugSwat = {CIBugSwat_Init, CIBugSwat_Update};
 // CreateMonIcon laat images naar een lokale variabele wijzen; dit maakt DestroySprite (TI_Free) veilig
 static const struct SpriteFrameImage sCIc_IconImage = {NULL, 0x200};
 
+// een Pokémon-icoon als knuffel (beweegt niet, affine voor het opploppen)
+static u8 CIFan_Plush(u16 species, s16 x, s16 y)
+{
+    u8 id;
+    LoadMonIconPalette(species);
+    id = CreateMonIcon(species, SpriteCallbackDummy, x, y, 1, 0);
+    if (id < MAX_SPRITES)
+    {
+        gSprites[id].images = &sCIc_IconImage;
+        TI_AddTag(POKE_ICON_BASE_PAL_TAG + gSpeciesInfo[species].iconPalIndex);
+        CIc_Affine(id);
+        TI_Track(id, TIK_SPRITE);
+    }
+    return id;
+}
+
 static void CIFan_Init(void)
 {
     u32 i;
     u16 pic = GetTrainerPicFromId(sTI->trainer);
-    u8 id;
     TI_SetPal(15, sCIc_TextPal, 4);
     sTI->v[0] = TI_Anim(ANIM_TAG_MONSTER_DOLL, &gOamData_AffineDouble_ObjNormal_32x32, 46, 58, 0);
     sTI->v[1] = TI_Item(CIC_TAG_ITEM1, ITEM_POKE_DOLL, 94, 40);
     CIc_Affine(sTI->v[1]);
-    sTI->v[2] = TI_Item(CIC_TAG_ITEM2, ITEM_FLUFFY_TAIL, 146, 40);
-    CIc_Affine(sTI->v[2]);
-    LoadMonIconPalette(SPECIES_WAILORD);
-    id = CreateMonIcon(SPECIES_WAILORD, SpriteCallbackDummy, 194, 58, 1, 0);   // een knuffel beweegt niet
-    if (id < MAX_SPRITES)
-    {
-        gSprites[id].images = &sCIc_IconImage;
-        TI_AddTag(POKE_ICON_BASE_PAL_TAG + gSpeciesInfo[SPECIES_WAILORD].iconPalIndex);
-        CIc_Affine(id);
-        TI_Track(id, TIK_SPRITE);
-    }
-    sTI->v[3] = id;
+    // 3e knuffel was ITEM_FLUFFY_TAIL: las als een los item tussen de Pokémon (testrun Jordi)
+    sTI->v[2] = CIFan_Plush(SPECIES_PIKACHU, 146, 40);
+    sTI->v[3] = CIFan_Plush(SPECIES_WAILORD, 194, 58);
     for (i = 0; i < 4; i++)
         TI_Show(sTI->v[i], FALSE);
     sTI->v[4] = TI_Anim(ANIM_TAG_EYE_SPARKLE, &gOamData_AffineDouble_ObjNormal_16x16, -20, -20, 0);

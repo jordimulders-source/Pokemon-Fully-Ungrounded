@@ -1252,6 +1252,8 @@ Route110_Text_TimmyPostBattle:
 
 Route110_Text_AlyssaIntro:
 	.string "I fell off CYCLING ROAD…\p"
+	.string "Well, my CYCLIZAR fell off. I was on\n"
+	.string "it. Physics handled the rest.\p"
 	.string "I'll get over the embarrassment by\n"
 	.string "battling you!$"
 
@@ -1260,7 +1262,9 @@ Route110_Text_AlyssaDefeated:
 
 Route110_Text_AlyssaPostBattle:
 	.string "Falling… Losing…\p"
-	.string "There's a video. It has 2 million views.$"
+	.string "There's a video. 2 million views.\n"
+	.string "The CYCLIZAR got a fan club.\p"
+	.string "I got a meme. With a sound effect.$"
 
 Route110_Text_JosephIntro:
 	.string "Love forever, love is free\n"
@@ -2529,71 +2533,82 @@ Route117_Text_DerekPostBattle:
 	.string "And no girlfriend.$"
 
 Route117_Text_AnnaIntro:
-	.string "ANNA: I'm with my junior student\n"
-	.string "partner. I have to look good!$"
+	.string "ANNA: This is my junior, MEG. I'm\n"
+	.string "showing her how a senior wins.\p"
+	.string "If I lose, I'm legally required to\n"
+	.string "become HER junior. School rules.$"
 
 Route117_Text_AnnaDefeat:
-	.string "ANNA: Not in front of my junior!$"
+	.string "ANNA: MEG, look away! This is not\n"
+	.string "a teachable moment!$"
 
 Route117_Text_AnnaPostBattle:
-	.string "ANNA: Your POKéMON have good\n"
-	.string "combinations.\p"
-	.string "Second only to ours! Barely.$"
+	.string "ANNA: Our whole team glows in the\n"
+	.string "dark. It's called a brand.\p"
+	.string "We call it “synergy.” Our parents\n"
+	.string "call it “the electricity bill.”$"
 
 Route117_Text_AnnaAndMegRegister:
-	.string "ANNA: We won't take this lying down!\n"
-	.string "You'll come back for a rematch, right?$"
+	.string "ANNA: Give me your number. I need a\n"
+	.string "rematch before MEG tells everyone.$"
 
 Route117_Text_AnnaNotEnoughMons:
-	.string "ANNA: Bring two POKéMON if you want to\n"
-	.string "battle us.$"
+	.string "ANNA: One POKéMON? This is a double\n"
+	.string "act. Come back with a plus-one.$"
 
 Route117_Text_MegIntro:
-	.string "MEG: I'll tag up with my super senior\n"
-	.string "partner and beat you!$"
+	.string "MEG: ANNA says watching her win is\n"
+	.string "part of my education.\p"
+	.string "I've watched her lose 31 times.\n"
+	.string "I'm VERY educated.$"
 
 Route117_Text_MegDefeat:
-	.string "MEG: Oh, no! Sorry, ANNA! I let you down…$"
+	.string "MEG: 32! I'm writing a thesis.$"
 
 Route117_Text_MegPostBattle:
-	.string "MEG: I dragged ANNA down…\p"
-	.string "She says it's fine. Her face says it's\n"
-	.string "not.$"
+	.string "MEG: ANNA says losing builds\n"
+	.string "character.\p"
+	.string "She has so much character now. Too\n"
+	.string "much. It's leaking.$"
 
 Route117_Text_MegNotEnoughMons:
-	.string "MEG: Only one POKéMON? We want a 2-on-2\n"
-	.string "battle!$"
+	.string "MEG: Only one POKéMON? ANNA says\n"
+	.string "bullying is beneath her. Bring two.$"
 
 Route117_Text_AnnaRematchIntro:
-	.string "ANNA: I can't keep losing in front of my\n"
-	.string "junior!$"
+	.string "ANNA: Rematch! I've trained MEG for\n"
+	.string "months. Mostly in making excuses.$"
 
 Route117_Text_AnnaRematchDefeat:
-	.string "ANNA: I couldn't find the groove.$"
+	.string "ANNA: That loss was MEG's. Write it\n"
+	.string "down, MEG. Under your name.$"
 
 Route117_Text_AnnaPostRematch:
-	.string "ANNA: Good combinations!\p"
-	.string "Still second to ours. Emotionally.$"
+	.string "ANNA: Next time I'm bringing my own\n"
+	.string "senior. MEG's grandma.\p"
+	.string "She has a PIKACHU and zero mercy.$"
 
 Route117_Text_AnnaRematchNotEnoughMons:
-	.string "ANNA: Bring two POKéMON if you want to\n"
-	.string "battle us.$"
+	.string "ANNA: Still one POKéMON? It's called\n"
+	.string "a DOUBLE battle. It's in the name.$"
 
 Route117_Text_MegRematchIntro:
-	.string "MEG: Me and my senior partner will win\n"
-	.string "this time!$"
+	.string "MEG: I got promoted! I'm still the\n"
+	.string "junior, but now with a lanyard.$"
 
 Route117_Text_MegRematchDefeat:
-	.string "MEG: Too strong! Still too strong!$"
+	.string "MEG: They're taking the lanyard\n"
+	.string "back, aren't they.$"
 
 Route117_Text_MegPostRematch:
-	.string "MEG: We lost again…\p"
-	.string "ANNA is typing very aggressively on her\n"
-	.string "phone.$"
+	.string "MEG: ANNA is writing my performance\n"
+	.string "review.\p"
+	.string "It's just the word “no” in a very\n"
+	.string "large font.$"
 
 Route117_Text_MegRematchNotEnoughMons:
-	.string "MEG: Only one POKéMON? We want a 2-on-2\n"
-	.string "battle!$"
+	.string "MEG: One POKéMON again? ANNA says\n"
+	.string "that's a cry for help. Bring two!$"
 
 Route117_Text_MelinaIntro:
 	.string "Isn't it nice? Battling while looking at\n"

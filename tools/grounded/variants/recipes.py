@@ -150,7 +150,7 @@ LINES = {
             {'naam': 'Albino', 'grey': ('#c4c0c0', ALBINO), 'dark': ('#9c9494', ALBINO), 'eyes': '#d02030',
              'mouth': '#e08898'},
             {'naam': 'Midnight Lycanroc', 'grey': '#b83838', 'dark': '#28242c', 'eyes': '#58e070'},
-            {'naam': 'Spookwolf', 'grey': '#50d0e8', 'dark': '#3a2a5c', 'eyes': '#ff4898'},
+            {'naam': 'Amaterasu (Okami)', 'grey': '#d8dce6', 'dark': '#c02030', 'eyes': '#e83030', 'mouth': '#c02030'},
         ],
     },
     'zigzagoon': {
@@ -211,8 +211,8 @@ LINES = {
             {'naam': 'Albino', 'leaf': ('#c4d0bc', ALBINO), 'body': ('#c8c8d4', ALBINO), 'beak': '#e0a8a8',
              'red': '#e0a0b0', 'stripes': ('#b8b0a8', ALBINO), 'ludicolo:body': ('#d8d4c4', ALBINO)},
             {'naam': 'Kappa', 'leaf': '#8c9098', 'body': '#3cb058', 'ludicolo:body': '#3cb058', 'stripes': '#286838'},
-            {'naam': 'Neon', 'leaf': '#e040c0', 'body': '#40e0e8', 'ludicolo:body': '#40e0e8', 'stripes': '#6038c0',
-             'red': '#f8e030'},
+            {'naam': 'Gouden idool', 'leaf': '#d8a828', 'body': '#c89028', 'ludicolo:body': '#e0b838',
+             'stripes': '#7a4c18', 'red': '#28a8a0', 'beak': '#28a8a0'},
         ],
     },
     'seedot': {

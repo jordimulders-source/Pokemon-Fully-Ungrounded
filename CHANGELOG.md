@@ -18802,10 +18802,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Sceptiles armbladeren hebben nu een eigen index (oranje in de Mudkip-variant, ook op de achterkant); daarvoor ging de donkerste staarttint op in de bijna gelijke donkerste lijftint. De gewone Sceptile houdt al zijn glans en schaduw.
 - Sceptile terug naar de versie met de oranje buikstreep en armbladeren in lijfkleur (Jordi); de extra index-ingreep is teruggedraaid.
 - **Kleurvarianten, Hoenn-dex groep 2:**
-  - Poochyena-lijn: blauwe merle, rode wolf, poolwolf, albino, Midnight Lycanroc, spookwolf.
+  - Poochyena-lijn: blauwe merle, rode wolf, poolwolf, albino, Midnight Lycanroc, Amaterasu (Okami; Jordi koos hem boven de spookwolf).
   - Zigzagoon-lijn: wasbeer, aardbeienmelk, Pikachu-kleuren, albino, Sonic, vaporwave (rode panda leek op de shiny, Galar-kleuren verwarrend; Jordi).
   - Wurmple-familie: monarchvlinder (jadegroene cocons), blauwe morpho, maanvlinder, melanisme, Kanto-neven (Caterpie, Metapod, Kakuna, Butterfree, Venomoth), neon.
-  - Lotad-lijn: lotus, Día de los Muertos (goudsbloem-oranje, botwit met zwarte zigzag, paars en magenta; Jordi), mandarijneend, albino, kappa, neon.
+  - Lotad-lijn: lotus, Día de los Muertos (goudsbloem-oranje, botwit met zwarte zigzag, paars en magenta; Jordi), mandarijneend, albino, kappa, gouden idool (Jordi koos hem boven neon).
   - Seedot-lijn: onrijpe eikel, tengu, sakura, albino, oni (Jordi), winterdemon (Shiftry is hier Grass/Ice met Snow Warning; Jordi).
 - **Kleurvarianten, Hoenn-dex groep 3:**
   - Taillow-lijn: roodborst, ijsvogel, kardinaal, albino, blauw-gele ara, zwaluwstaart (rokkostuum).

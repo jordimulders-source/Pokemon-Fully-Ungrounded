@@ -252,6 +252,39 @@ static const u16 sVariants_Plusle[] = INCBIN_U16("graphics/pokemon/plusle/varian
 #if (P_FAMILY_MINUN)
 static const u16 sVariants_Minun[] = INCBIN_U16("graphics/pokemon/minun/variants.gbapal");
 #endif
+#if (P_FAMILY_VOLBEAT_ILLUMISE)
+static const u16 sVariants_Volbeat[] = INCBIN_U16("graphics/pokemon/volbeat/variants.gbapal");
+#endif
+#if (P_FAMILY_VOLBEAT_ILLUMISE)
+static const u16 sVariants_Illumise[] = INCBIN_U16("graphics/pokemon/illumise/variants.gbapal");
+#endif
+#if (P_FAMILY_ROSELIA)
+static const u16 sVariants_Roselia[] = INCBIN_U16("graphics/pokemon/roselia/variants.gbapal");
+#endif
+#if (P_FAMILY_GULPIN)
+static const u16 sVariants_Gulpin[] = INCBIN_U16("graphics/pokemon/gulpin/variants.gbapal");
+#endif
+#if (P_FAMILY_GULPIN)
+static const u16 sVariants_Swalot[] = INCBIN_U16("graphics/pokemon/swalot/variants.gbapal");
+#endif
+#if (P_FAMILY_CARVANHA)
+static const u16 sVariants_Carvanha[] = INCBIN_U16("graphics/pokemon/carvanha/variants.gbapal");
+#endif
+#if (P_FAMILY_CARVANHA)
+static const u16 sVariants_Sharpedo[] = INCBIN_U16("graphics/pokemon/sharpedo/variants.gbapal");
+#endif
+#if (P_FAMILY_WAILMER)
+static const u16 sVariants_Wailmer[] = INCBIN_U16("graphics/pokemon/wailmer/variants.gbapal");
+#endif
+#if (P_FAMILY_WAILMER)
+static const u16 sVariants_Wailord[] = INCBIN_U16("graphics/pokemon/wailord/variants.gbapal");
+#endif
+#if (P_FAMILY_NUMEL)
+static const u16 sVariants_Numel[] = INCBIN_U16("graphics/pokemon/numel/variants.gbapal");
+#endif
+#if (P_FAMILY_NUMEL)
+static const u16 sVariants_Camerupt[] = INCBIN_U16("graphics/pokemon/camerupt/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -506,6 +539,39 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_MINUN)
     {gMonPalette_Minun, sVariants_Minun},
+#endif
+#if (P_FAMILY_VOLBEAT_ILLUMISE)
+    {gMonPalette_Volbeat, sVariants_Volbeat},
+#endif
+#if (P_FAMILY_VOLBEAT_ILLUMISE)
+    {gMonPalette_Illumise, sVariants_Illumise},
+#endif
+#if (P_FAMILY_ROSELIA)
+    {gMonPalette_Roselia, sVariants_Roselia},
+#endif
+#if (P_FAMILY_GULPIN)
+    {gMonPalette_Gulpin, sVariants_Gulpin},
+#endif
+#if (P_FAMILY_GULPIN)
+    {gMonPalette_Swalot, sVariants_Swalot},
+#endif
+#if (P_FAMILY_CARVANHA)
+    {gMonPalette_Carvanha, sVariants_Carvanha},
+#endif
+#if (P_FAMILY_CARVANHA)
+    {gMonPalette_Sharpedo, sVariants_Sharpedo},
+#endif
+#if (P_FAMILY_WAILMER)
+    {gMonPalette_Wailmer, sVariants_Wailmer},
+#endif
+#if (P_FAMILY_WAILMER)
+    {gMonPalette_Wailord, sVariants_Wailord},
+#endif
+#if (P_FAMILY_NUMEL)
+    {gMonPalette_Numel, sVariants_Numel},
+#endif
+#if (P_FAMILY_NUMEL)
+    {gMonPalette_Camerupt, sVariants_Camerupt},
 #endif
     {NULL, NULL},
 };

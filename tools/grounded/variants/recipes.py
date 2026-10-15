@@ -581,4 +581,94 @@ LINES = {
              'minun:cream': '#f0d060', 'minun:cheeks': '#40c040'},
         ],
     },
+
+    # --- Hoenn-dex, groep 7 ---
+    'volbeat': {
+        # paar: binnen één variant contrasteren
+        'species': {
+            'volbeat': {'main': [8, 9, 13, 15], 'yellow': [5, 6, 7], 'face': [10, 11, 12], 'dark': [1, 4]},
+            'illumise': {'main': [5, 6, 8], 'yellow': [1, 2, 3], 'face': [9, 10, 11], 'dark': [14, 15]},
+        },
+        'variants': [
+            {'naam': 'Omgewisseld', 'volbeat:main': '#9850b8', 'illumise:main': '#d84050'},
+            {'naam': 'Nacht en dag', 'volbeat:main': '#283878', 'illumise:main': '#f08838'},
+            {'naam': 'Smaragd en saffier', 'volbeat:main': '#30a060', 'illumise:main': '#3060c0'},
+            {'naam': 'Albino en melanisme', 'volbeat:main': ('#d8ccd0', ALBINO), 'volbeat:face': '#e8dce0',
+             'volbeat:dark': '#a8a0a4', 'illumise:main': ('#2c2c34', {'l': 1.3}), 'illumise:face': '#4c4c58'},
+            {'naam': 'Mario en Luigi', 'volbeat:dark': '#2848c0', 'volbeat:face': '#f0d0a8', 'illumise:main': '#30a040',
+             'illumise:dark': '#2848c0', 'illumise:face': '#f0d0a8'},
+            {'naam': 'Daft Punk', 'volbeat:main': '#e0b030', 'illumise:main': '#c0c4cc', 'dark': '#202024',
+             'face': '#303038'},
+        ],
+    },
+    'roselia': {
+        'species': {'roselia': {'body': [1, 2, 3, 4, 6, 7], 'rose1': [8, 9, 10], 'rose2': [12, 13, 15],
+                                'thorns': [11, 14]}},
+        'variants': [
+            {'naam': 'Witte en gele roos', 'rose1': '#e4e0e0', 'rose2': '#f0d030'},
+            {'naam': 'Hollandse tulpen', 'rose2': '#f08020'},
+            {'naam': 'Cactusbloei', 'body': '#6c9a6c', 'rose1': '#e030a0', 'rose2': '#f0d030'},
+            {'naam': 'Albino', 'body': ('#ccd4c8', ALBINO), 'rose1': '#f0c0cc', 'rose2': '#c8d4f0'},
+            {'naam': 'Betoverde roos', 'body': ('#2c3c34', {'l': 1.3}), 'rose1': '#f03050', 'rose2': '#e0b030'},
+            {'naam': 'Gifbloem', 'body': '#7040a0', 'rose1': '#60e040', 'rose2': ('#2c2c30', {'l': 1.3})},
+        ],
+    },
+    'gulpin': {
+        'species': {
+            'gulpin': {'body': [6, 7, 8, 9, 10], 'yellow': [1, 2, 4, 5]},
+            'swalot': {'body': [1, 2, 3, 4, 14], 'yellow': [8, 9, 10], 'red': [7, 15], 'grey': [11, 12, 13]},
+        },
+        'variants': [
+            {'naam': 'Omgewisseld', 'gulpin:body': '#a880e8', 'swalot:body': '#a0d890'},
+            {'naam': 'Karamelpudding', 'body': '#d89848', 'yellow': '#6c3c1c'},
+            {'naam': 'Kirby', 'body': '#f090b8', 'yellow': '#e02838', 'grey': '#e02838'},
+            {'naam': 'Albino', 'body': ('#dcd8d0', ALBINO), 'yellow': '#f0e0c0', 'red': '#e02838'},
+            {'naam': 'Pac-Man', 'body': '#f0d020', 'yellow': '#e02020', 'grey': '#2848c0'},
+            {'naam': 'Biohazard', 'body': ('#2c2c30', {'l': 1.3}), 'yellow': '#60e040', 'grey': '#f0d020',
+             'red': '#60e040'},
+        ],
+    },
+    'carvanha': {
+        'species': {
+            'carvanha': {'blue': [9, 10, 11], 'red': [7, 8, 12, 13, 15], 'yellow': [1, 4, 5, 6]},
+            'sharpedo': {'blue': [1, 2, 3, 4], 'yellow': [6, 7], 'belly': [11, 12], 'red': [9, 10, 13]},
+        },
+        'variants': [
+            {'naam': 'Witte haai', 'blue': '#7c8490', 'yellow': '#d8dce0'},
+            {'naam': 'Tijgerhaai', 'blue': '#c88848', 'yellow': '#4c3020'},
+            {'naam': 'Zwarte piranha', 'blue': ('#2c2c34', {'l': 1.3}), 'yellow': '#c0c4cc'},
+            {'naam': 'Albino', 'blue': ('#d8d0d4', ALBINO), 'red': '#f0a0b0', 'yellow': ('#ece4d8', ALBINO)},
+            {'naam': 'Megalodon (fossiel)', 'blue': '#c8b898', 'yellow': '#6c5034', 'red': '#8c6c50'},
+            {'naam': 'Gulf-racekleuren', 'blue': '#78b8e0', 'yellow': '#f07818', 'red': '#f07818'},
+        ],
+    },
+    'wailmer': {
+        'species': {
+            'wailmer': {'blue': [1, 2, 3, 4, 5], 'belly': [8, 9, 11, 13, 14]},
+            'wailord': {'blue': [1, 2, 4, 7, 9], 'belly': [5, 6, 8, 11]},
+        },
+        'variants': [
+            {'naam': 'Tropisch turkoois', 'blue': '#30a8a0'},
+            {'naam': 'Orka', 'blue': ('#202024', {'l': 1.3}), 'belly': '#f0f0f0'},
+            {'naam': 'Migaloo (witte bultrug)', 'blue': '#c8ccd8'},
+            {'naam': 'Roze rivierdolfijn', 'blue': '#e8a0b0', 'belly': '#f8e0e4'},
+            {'naam': 'Zeppelin', 'blue': '#b8bcc4', 'belly': '#c02828'},
+            {'naam': 'Sterrenhemel', 'blue': ('#20206a', {'l': 1.2}), 'belly': '#e0c060'},
+        ],
+    },
+    'numel': {
+        'species': {
+            'numel': {'body': [2, 3, 4, 5, 9, 10], 'hump': [6, 7, 8, 13]},
+            'camerupt': {'body': [6, 7, 8, 11], 'hump': [1, 2, 3], 'rings': [9, 10]},
+        },
+        'variants': [
+            {'naam': 'Dromedaris', 'body': '#a87848', 'hump': '#7c5434', 'rings': '#e8c070'},
+            {'naam': 'Basalt en lava', 'body': ('#3c3c44', {'l': 1.3}), 'hump': '#28282c', 'rings': '#f07020',
+             'numel:hump': '#f07020'},
+            {'naam': 'Kawah Ijen (blauw vuur)', 'body': '#6c7078', 'hump': '#e8d040', 'rings': '#3890f0'},
+            {'naam': 'Albino', 'body': ('#e0d8d0', ALBINO), 'hump': '#d8d0c8', 'rings': '#e898a8'},
+            {'naam': 'IJsvulkaan', 'body': '#a8c8e0', 'hump': '#eef4fa', 'rings': '#3870c8'},
+            {'naam': 'Lavalamp', 'body': '#8040b0', 'hump': '#f08030', 'rings': '#c8f040'},
+        ],
+    },
 }

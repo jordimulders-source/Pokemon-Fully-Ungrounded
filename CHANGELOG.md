@@ -18839,3 +18839,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Medicham-lijn: Z-fighter (Dragon Ball-gi), Akuma, verlicht met rode monnikspij (de laatste drie leken op elkaar).
   - Electrike-lijn: Zekrom-kleuren i.p.v. stormwolk (leek op de shiny).
   - Plusle en Minun contrasteren in de middelste varianten: pastel (roze/mint), batterij (koper/zwart), yin en yang.
+- **Kleurvarianten, Hoenn-dex groep 7:**
+  - Volbeat en Illumise (contrasterend paar): omgewisseld, nacht en dag, smaragd en saffier, albino en melanisme, Mario en Luigi, Daft Punk.
+  - Roselia: witte en gele roos, Hollandse tulpen, cactusbloei, albino, betoverde roos, gifbloem.
+  - Gulpin-lijn: omgewisseld, karamelpudding, Kirby, albino, Pac-Man, biohazard.
+  - Carvanha-lijn: witte haai, tijgerhaai, zwarte piranha, albino, megalodon (fossiel), Gulf-racekleuren.
+  - Wailmer-lijn: tropisch turkoois, orka, Migaloo (witte bultrug), roze rivierdolfijn, zeppelin, sterrenhemel.
+  - Numel-lijn: dromedaris, basalt en lava, Kawah Ijen (blauw vuur), albino, ijsvulkaan, lavalamp.

@@ -392,3 +392,22 @@ SINGLE_BATTLE_TEST("Heliotropism does nothing without sun")
         EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE);
     }
 }
+
+// Parental Bond (Project Grounded): alleen boven de helft van de HP slaat de baby mee.
+SINGLE_BATTLE_TEST("Parental Bond only hits twice above half HP")
+{
+    u32 hp;
+    PARAMETRIZE { hp = 200; }
+    PARAMETRIZE { hp = 90; }
+    GIVEN {
+        PLAYER(SPECIES_KANGASKHAN) { Ability(ABILITY_PARENTAL_BOND); MaxHP(200); HP(hp); }
+        OPPONENT(SPECIES_WOBBUFFET) { MaxHP(999); HP(999); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_TACKLE); }
+    } SCENE {
+        if (hp > 100)
+            MESSAGE("The Pokémon was hit 2 time(s)!");
+        else
+            NOT MESSAGE("The Pokémon was hit 2 time(s)!");
+    }
+}

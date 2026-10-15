@@ -1194,6 +1194,7 @@ static void Cmd_attackcanceler(void)
 
     if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_OFF
      && ctx.abilities[ctx.battlerAtk] == ABILITY_PARENTAL_BOND
+     && ParentalBondActive(gBattlerAttacker)
      && IsMoveAffectedByParentalBond(gCurrentMove, gBattlerAttacker)
      && !(gAbsentBattlerFlags & (1u << gBattlerTarget))
      && GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE)

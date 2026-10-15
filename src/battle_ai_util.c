@@ -846,6 +846,7 @@ static inline void CalcDynamicMoveDamage(struct DamageContext *ctx, u16 *medianD
     }
 
     if (ctx->abilityAtk == ABILITY_PARENTAL_BOND
+        && ParentalBondActive(ctx->battlerAtk)
         && !strikeCount
         && effect != EFFECT_TRIPLE_KICK
         && effect != EFFECT_MULTI_HIT

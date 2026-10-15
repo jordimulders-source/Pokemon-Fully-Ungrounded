@@ -11696,3 +11696,12 @@ bool32 IsSwallowableHoldEffect(enum HoldEffect holdEffect)
         return FALSE;
     }
 }
+
+// Project Grounded: de baby slaat alleen mee zolang moeder boven de helft van haar HP zit
+// (Jordi: "dat die goed kan zorgen voor haar kind boven de 50% HP"). Mega Kangaskhan altijd.
+bool32 ParentalBondActive(u32 battler)
+{
+    if (gBattleMons[battler].species == SPECIES_KANGASKHAN_MEGA)
+        return TRUE;
+    return gBattleMons[battler].hp * 2 > gBattleMons[battler].maxHP;
+}

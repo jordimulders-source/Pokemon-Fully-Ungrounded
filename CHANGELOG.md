@@ -18771,3 +18771,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Araquanid:** HP 68 → 78, Atk 70 → 90; leert **Sticky Web** (lv 23) en Leech Life op lv 28 (was 56).
   - **Slowbro-Galar:** **Regenerator** van verborgen naar slot 2 (Own Tempo wordt verborgen). Stats blijven (Jordi: "heeft al uitstekende stats").
   - Nog open: Kangaskhan (Parental Bond, Jordi wil het aanpassen), Dhelmise en Dugtrio/Dugtrio-Alola/Wugtrio (nieuw idee).
+- **Kangaskhan: Parental Bond** in slot 1 (was Early Bird), maar **alleen boven 50% HP** (Jordi: "dat die goed kan zorgen voor haar kind boven de 50% HP"; niet unga bunga klikken). Tweede klap 25%, zoals Gen 7. Onder de helft slaat moeder alleen. Mega Kangaskhan (Spire) houdt altijd beide klappen. AI rekent ermee (`ParentalBondActive`). Beschrijving: "Hits twice above half HP." Test in `signature_moves.c`.

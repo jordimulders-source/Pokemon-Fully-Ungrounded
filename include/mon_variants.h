@@ -23,6 +23,5 @@ u32 GetVariantFromPersonality(u32 personality);
 const u16 *GetVariantPalette(const u16 *normalPalette, u32 variant);
 u32 SetPersonalityVariant(u32 personality, u32 variant, u32 nature);
 u32 ApplyTrainerMonVariant(u32 personality, u32 trainerVariant, u32 nature);
-const u32 *GetVariantMonPic(u16 species, u32 personality, bool32 isFrontPic);
 
 #endif // GUARD_MON_VARIANTS_H

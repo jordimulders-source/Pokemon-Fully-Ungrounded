@@ -1325,22 +1325,22 @@ LINES = {
         ],
     },
     'voltorb': {
-        # Poké Balls met echte patronen (eigen sprites per variant, ball_patterns.py; 'pat' = patroonkleur);
-        # Hisui-vormen als Legends: Arceus-ballen (hball/hwood), alleen palet.
+        # Poké Ball-kleuren als paletwissel (Jordi: patronen werden niets; geen Great Ball, dat is de shiny).
+        # Hisui-vormen als Legends: Arceus-ballen (hball/hwood).
         # De Electrode-shiny is weer het origineel; zijn Master Ball-palet is nu de 0,5%.
         'species': {
-            'voltorb': {'red': [14, 13, 12, 11, 10, 9], 'white': [4, 3, 2, 1], 'pat': [7, 6, 8]},
-            'electrode': {'red': [14, 13, 12, 11, 10], 'white': [4, 3, 2, 1], 'pat': [7, 6, 8]},
+            'voltorb': {'red': [14, 13, 12, 11, 10, 9], 'white': [4, 3, 2, 1]},
+            'electrode': {'red': [14, 13, 12, 11, 10], 'white': [4, 3, 2, 1]},
             'voltorb/hisui': {'hball': [2, 3, 4, 5, 6, 7], 'hwood': [12, 9, 13]},
             'electrode/hisui': {'hball': [10, 14, 8, 9], 'hwood': [1, 2, 4, 5, 3, 6]},
         },
         'variants': [
-            {'naam': 'Great Ball / Great Ball (Hisui)', 'red': '#3880c0', 'pat': '#c83038', 'hball': '#2850b0'},
-            {'naam': 'Ultra Ball / Feather Ball (Hisui)', 'red': ('#34343c', {'l': 1.3}), 'pat': '#f8d038', 'hball': '#70b0e8'},
-            {'naam': 'Quick Ball / Wing Ball (Hisui)', 'red': '#3878c8', 'pat': '#f0e030', 'hball': '#3a9a50'},
-            {'naam': 'Safari Ball / Ultra Ball (Hisui)', 'red': '#a8a048', 'pat': '#307850', 'hball': '#d8c020', 'hwood': '#8a8a90'},
-            {'naam': 'Dusk Ball / Strange Ball (Hisui)', 'red': '#484840', 'pat': '#40a840', 'white': '#484840', 'hball': '#c870c0'},
-            {'naam': 'Master Ball / Origin Ball (Hisui, paars)', 'red': '#783088', 'pat': '#d03898', 'electrode:palfile': 'master_ball.pal', 'hball': '#8848c0'},
+            {'naam': 'Love Ball / Great Ball (Hisui)', 'red': '#f088b8', 'hball': '#2850b0'},
+            {'naam': 'Friend Ball / Feather Ball (Hisui)', 'red': '#50b048', 'hball': '#70b0e8'},
+            {'naam': 'Premier Ball / Wing Ball (Hisui)', 'red': '#e8e8ec', 'hball': '#3a9a50'},
+            {'naam': 'Luxury Ball / Ultra Ball (Hisui)', 'red': ('#303038', {'l': 1.3}), 'white': ('#40404a', {'l': 1.3}), 'hball': '#d8c020', 'hwood': '#8a8a90'},
+            {'naam': 'Cherish Ball (twee kanten rood) / Strange Ball (Hisui)', 'red': '#b01828', 'white': '#a01822', 'hball': '#c870c0'},
+            {'naam': 'Master Ball / Origin Ball (Hisui, paars)', 'red': '#7838b0', 'electrode:palfile': 'master_ball.pal', 'hball': '#8848c0'},
         ],
     },
     'oddish': {

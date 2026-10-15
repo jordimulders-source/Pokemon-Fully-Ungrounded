@@ -74,4 +74,59 @@ LINES = {
              'fur': '#98f0ff', 'cannons': '#8048d8'},
         ],
     },
+
+    # --- Hoenn-dex, groep 1: starters ---
+    'treecko': {
+        'species': {
+            'treecko': {'body': [1, 3, 4, 5], 'leaves': [13, 14, 15], 'belly': [10, 11, 12], 'eyes': [6, 8, 9]},
+            'grovyle': {'body': [5, 6, 7, 8, 13], 'leaves': [1, 2, 3], 'belly': [11, 12, 14], 'eyes': [9, 10]},
+            'sceptile': {'body': [1, 2, 3, 4, 5], 'leaves': [12, 13, 14], 'belly': [9, 10], 'seeds': [7, 8, 11]},
+        },
+        'variants': [
+            {'naam': 'Torchic-kleuren', 'body': '#e87828', 'leaves': '#c09818', 'belly': '#f0d060'},
+            {'naam': 'Mudkip-kleuren', 'body': '#3890d0', 'leaves': '#d87028', 'belly': '#b8c8e8'},
+            {'naam': 'Bladstaartgekko', 'body': '#7c5c3c', 'leaves': '#4c2c1c', 'belly': '#c8a878'},
+            {'naam': 'Albino', 'body': ('#c8c8bc', ALBINO), 'leaves': ('#a8aca0', ALBINO),
+             'belly': '#e0a8b0', 'eyes': '#d02030', 'seeds': '#e8d8c8'},
+            {'naam': 'Pikachu', 'body': '#f0c828', 'leaves': '#986020', 'seeds': '#d83020'},
+            {'naam': 'Cyberpunk', 'body': ('#2c2c38', {'l': 0.8}), 'leaves': '#28e870', 'belly': '#ff3090',
+             'eyes': '#30e8ff', 'seeds': '#30e8ff'},
+        ],
+    },
+    'torchic': {
+        'species': {
+            'torchic': {'main': [5, 6, 7, 8, 9], 'second': [1, 2, 3], 'feet': [11, 12, 13, 14]},
+            'combusken': {'main': [1, 3, 4, 8], 'second': [5, 6, 7], 'feet': [10, 11, 12, 13, 14]},
+            'blaziken': {'main': [1, 5, 6, 9], 'second': [3, 4, 7, 8, 13], 'flame': [10, 12, 15], 'eyes': [11]},
+        },
+        'variants': [
+            {'naam': 'Treecko-kleuren', 'main': '#70a830', 'second': '#386838', 'flame': '#e04868'},
+            {'naam': 'Mudkip-kleuren', 'main': '#68b8e0', 'second': '#c8d4ec', 'feet': '#e88830'},
+            {'naam': 'Flamingo, cyaan vuur', 'main': '#f07898', 'second': '#f8c8d0', 'feet': '#d86878',
+             'flame': '#30c8f0'},
+            {'naam': 'Albino', 'main': ('#c8bebe', ALBINO), 'second': ('#d4ccc4', ALBINO), 'feet': '#d8a8a8',
+             'flame': '#38a8f8', 'eyes': '#d02030'},
+            {'naam': 'Ayam Cemani (zwarte kip)', 'main': ('#3c3844', {'l': 1.3}), 'second': ('#4c4854', {'l': 1.3}),
+             'feet': ('#34303c', {'l': 1.3})},
+            {'naam': 'Captain Falcon', 'main': '#2c44a8', 'second': '#f0c020', 'feet': '#d83020',
+             'flame': '#f04818'},
+        ],
+    },
+    'mudkip': {
+        'species': {
+            'mudkip': {'body': [1, 2, 3, 4, 9], 'belly': [6, 7, 8], 'cheeks': [10, 11, 12], 'eyes': [14]},
+            'marshtomp': {'body': [4, 5, 6, 7, 8], 'crest': [1, 3], 'belly': [10, 13], 'cheeks': [9, 11, 12]},
+            'swampert': {'body': [4, 5, 6, 10], 'crest': [2, 3], 'belly': [13, 14, 15], 'cheeks': [7, 8, 9]},
+        },
+        'variants': [
+            {'naam': 'Torchic-kleuren', 'body': '#e88030', 'crest': '#a88010', 'belly': '#f0e0b0', 'cheeks': '#f0d040'},
+            {'naam': 'Treecko-kleuren', 'body': '#70a830', 'crest': '#305830', 'belly': '#d8f0a0', 'cheeks': '#e04868'},
+            {'naam': 'Slijkspringer', 'body': '#887850', 'crest': '#504030', 'belly': '#d8d0b0', 'cheeks': '#3898e0'},
+            {'naam': 'Albino', 'body': ('#c4c4cc', ALBINO), 'crest': ('#a8a8b4', ALBINO), 'belly': ('#dcdce4', ALBINO),
+             'cheeks': '#e0a0a0', 'eyes': '#c02030'},
+            {'naam': 'Koi (Showa)', 'body': ('#282830', {'l': 0.8}), 'crest': '#d82818', 'belly': '#e8e8e8',
+             'cheeks': '#e83018'},
+            {'naam': 'Bubblegum', 'body': '#f058a8', 'crest': '#901860', 'belly': '#f8f0c0', 'cheeks': '#30e8f8'},
+        ],
+    },
 }

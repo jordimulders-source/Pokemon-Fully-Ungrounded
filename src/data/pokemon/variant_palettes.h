@@ -27,6 +27,33 @@ static const u16 sVariants_Wartortle[] = INCBIN_U16("graphics/pokemon/wartortle/
 #if (P_FAMILY_SQUIRTLE)
 static const u16 sVariants_Blastoise[] = INCBIN_U16("graphics/pokemon/blastoise/variants.gbapal");
 #endif
+#if (P_FAMILY_TREECKO)
+static const u16 sVariants_Treecko[] = INCBIN_U16("graphics/pokemon/treecko/variants.gbapal");
+#endif
+#if (P_FAMILY_TREECKO)
+static const u16 sVariants_Grovyle[] = INCBIN_U16("graphics/pokemon/grovyle/variants.gbapal");
+#endif
+#if (P_FAMILY_TREECKO)
+static const u16 sVariants_Sceptile[] = INCBIN_U16("graphics/pokemon/sceptile/variants.gbapal");
+#endif
+#if (P_FAMILY_TORCHIC)
+static const u16 sVariants_Torchic[] = INCBIN_U16("graphics/pokemon/torchic/variants.gbapal");
+#endif
+#if (P_FAMILY_TORCHIC)
+static const u16 sVariants_Combusken[] = INCBIN_U16("graphics/pokemon/combusken/variants.gbapal");
+#endif
+#if (P_FAMILY_TORCHIC)
+static const u16 sVariants_Blaziken[] = INCBIN_U16("graphics/pokemon/blaziken/variants.gbapal");
+#endif
+#if (P_FAMILY_MUDKIP)
+static const u16 sVariants_Mudkip[] = INCBIN_U16("graphics/pokemon/mudkip/variants.gbapal");
+#endif
+#if (P_FAMILY_MUDKIP)
+static const u16 sVariants_Marshtomp[] = INCBIN_U16("graphics/pokemon/marshtomp/variants.gbapal");
+#endif
+#if (P_FAMILY_MUDKIP)
+static const u16 sVariants_Swampert[] = INCBIN_U16("graphics/pokemon/swampert/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -56,6 +83,33 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_SQUIRTLE)
     {gMonPalette_Blastoise, sVariants_Blastoise},
+#endif
+#if (P_FAMILY_TREECKO)
+    {gMonPalette_Treecko, sVariants_Treecko},
+#endif
+#if (P_FAMILY_TREECKO)
+    {gMonPalette_Grovyle, sVariants_Grovyle},
+#endif
+#if (P_FAMILY_TREECKO)
+    {gMonPalette_Sceptile, sVariants_Sceptile},
+#endif
+#if (P_FAMILY_TORCHIC)
+    {gMonPalette_Torchic, sVariants_Torchic},
+#endif
+#if (P_FAMILY_TORCHIC)
+    {gMonPalette_Combusken, sVariants_Combusken},
+#endif
+#if (P_FAMILY_TORCHIC)
+    {gMonPalette_Blaziken, sVariants_Blaziken},
+#endif
+#if (P_FAMILY_MUDKIP)
+    {gMonPalette_Mudkip, sVariants_Mudkip},
+#endif
+#if (P_FAMILY_MUDKIP)
+    {gMonPalette_Marshtomp, sVariants_Marshtomp},
+#endif
+#if (P_FAMILY_MUDKIP)
+    {gMonPalette_Swampert, sVariants_Swampert},
 #endif
     {NULL, NULL},
 };

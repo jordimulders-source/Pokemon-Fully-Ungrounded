@@ -63,11 +63,10 @@ def describe(folder):
     return pal, rows
 
 
-def index_map(folder, out):
-    """Sprite 4x, met per pixel het indexnummer erop (alleen voor kijken)."""
+def index_map(folder, out, S=12):
+    """Sprite vergroot, met per pixel het indexnummer erop (alleen voor kijken)."""
     im, data, (w, h) = load(folder)
     pal = read_pal(os.path.join(folder, 'normal.pal'))[:16]
-    S = 12
     img = Image.new('RGB', (64 * S + 260, 64 * S), (255, 255, 255))
     d = ImageDraw.Draw(img)
     for y in range(64):
@@ -85,7 +84,27 @@ def index_map(folder, out):
     img.save(out)
 
 
-if __name__ == '__main__':
+def index_grid(names, out, cols=3, S=9):
+    """Indexkaarten van meerdere soorten in één beeld (zonder legenda)."""
+    import tempfile
+    tiles = []
+    for n in names:
+        t = tempfile.mktemp(suffix='.png')
+        index_map(os.path.join(ROOT, 'graphics/pokemon', n), t, S)
+        im = Image.open(t).crop((0, 0, 64 * S, 64 * S))
+        ImageDraw.Draw(im).text((4, 4), n, fill=(0, 0, 200))
+        tiles.append(im)
+        os.remove(t)
+    rows = (len(tiles) + cols - 1) // cols
+    grid = Image.new('RGB', (cols * 64 * S, rows * 64 * S), (255, 255, 255))
+    for k, im in enumerate(tiles):
+        grid.paste(im, ((k % cols) * 64 * S, (k // cols) * 64 * S))
+    grid.save(out)
+
+
+if __name__ == '__main__' and len(sys.argv) > 1 and sys.argv[1] == '--grid':
+    index_grid(sys.argv[3:], sys.argv[2])
+elif __name__ == '__main__':
     folder = os.path.join(ROOT, 'graphics/pokemon', sys.argv[1])
     pal, rows = describe(folder)
     for r in rows:

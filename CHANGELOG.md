@@ -18926,3 +18926,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Kleurvarianten, groep 17 (Hoenn-dex-rest, deel 2):** Pinsir, Heracross, Rhyhorn-lijn (Rhyperior met eigen, donkerder doelkleuren), Corsola (Galar-Corsola/Cursola nog niet: moderne, bijna witte sprites), Chinchou-lijn, Horsea-lijn, Celebi. Hiermee heeft de hele Hoenn-dex varianten (Castform: per weervorm). Inspiratie: `KEURING.md`.
 
 - **Kleurvarianten, groep 18 (Kanto/Johto, revisiesoorten):** Ekans-lijn, Venonat-lijn, Seel-lijn, Gastly-lijn, Drowzee-lijn, Farfetch'd (Galar-vormen nog niet), Dunsparce (Dudunsparce nog niet). Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 19 (Kanto/Johto):** Ledyba-lijn, Remoraid-lijn, Poliwag-lijn met Politoed, Porygon-lijn, Caterpie-lijn, Weedle-lijn, Pidgey-lijn, Rattata-lijn (ook Alola). Recepten kunnen nu `{'h': 0}` gebruiken. Inspiratie: `KEURING.md`.

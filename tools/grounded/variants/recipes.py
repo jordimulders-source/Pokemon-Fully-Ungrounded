@@ -1804,4 +1804,130 @@ LINES = {
             {'naam': 'Chinese draak', 'yellow': '#c02828', 'blue': '#e0b030'},
         ],
     },
+    # --- groep 19 (Kanto/Johto) ---
+    'ledyba': {
+        # Ledian in deze rom Bug/Normal; lieveheersbeestjes
+        'species': {
+            'ledyba': {'shell': [3, 4, 5, 6]},
+            'ledian': {'shell': [5, 3, 6, 4]},
+        },
+        'variants': [
+            {'naam': 'Geel (22-stippig)', 'shell': '#f0c828'},
+            {'naam': 'Room (Calvia)', 'shell': '#e8dcc8'},
+            {'naam': 'Zwart met rood', 'shell': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Roze lieveheersbeestje', 'shell': '#f08ab0'},
+            {'naam': 'Groene schildpadtor', 'shell': '#50a040'},
+            {'naam': 'Blauw metallic (Halmus)', 'shell': '#2c50b0'},
+        ],
+    },
+    'remoraid': {
+        'species': {
+            'remoraid': {'body': [2, 1, 10, 7, 3, 4]},
+            'octillery': {'body': [2, 5, 6, 8], 'pot': [3, 4, 11]},
+        },
+        'variants': [
+            {'naam': 'Groene octopus', 'body': '#50a050'},
+            {'naam': 'Blauwringoctopus', 'body': '#d8b840', 'pot': '#3060d0'},
+            {'naam': 'Mimic-octopus', 'body': '#8a5a38', 'pot': '#f0ece4'},
+            {'naam': 'Albino (glasoctopus)', 'body': ('#ece4e0', ALBINO), 'pot': '#f0c8c8'},
+            {'naam': 'Dumbo-octopus', 'body': '#f0a0b0'},
+            {'naam': 'Kraken', 'body': ('#2c2830', {'l': 1.3}), 'pot': '#c02828'},
+        ],
+    },
+    'poliwag': {
+        # kikkers; de spiraal blijft
+        'species': {
+            'poliwag': {'body': [14, 13, 12, 11, 7]},
+            'poliwhirl': {'body': [14, 13, 12, 11]},
+            'poliwrath': {'body': [14, 13, 12, 11]},
+            'politoed': {'body': [5, 4, 7, 6]},
+        },
+        'variants': [
+            {'naam': 'Oranje pijlgifkikker', 'body': '#e07020'},
+            {'naam': 'Pad (bruin)', 'body': '#8a6a40'},
+            {'naam': 'Paarse kikker', 'body': '#7048a8'},
+            {'naam': 'Albino', 'body': ('#ece0e0', ALBINO)},
+            {'naam': 'Gouden gifkikker', 'body': '#e8c030'},
+            {'naam': 'Aardbeigifkikker', 'body': '#c82828'},
+        ],
+    },
+    'porygon': {
+        # Porygon-Z in deze rom Electric/Ghost; digitaal
+        'species': {
+            'porygon': {'red': [12, 1, 3, 5, 4], 'blue': [8, 9, 11, 10, 14]},
+            'porygon2': {'red': [3, 1, 2, 5], 'blue': [9, 4, 8, 7]},
+            'porygon_z': {'red': [1, 2, 5, 3, 6], 'blue': [8, 9, 12, 11]},
+        },
+        'variants': [
+            {'naam': 'Wireframe (groen op zwart)', 'red': ('#2c2c34', {'l': 1.3}), 'blue': '#40e060'},
+            {'naam': 'Windows 95', 'red': '#a8a8b0', 'blue': '#3050b0'},
+            {'naam': 'Game Boy', 'red': '#8a9a30', 'blue': '#3a5a20'},
+            {'naam': 'Virtual Boy', 'red': '#c02020', 'blue': ('#2c2c30', {'l': 1.3})},
+            {'naam': 'Glitch (MissingNo.)', 'red': '#a040c0', 'blue': '#40e0e0'},
+            {'naam': 'Game Boy Color Pikachu-editie', 'red': '#f0c030', 'blue': '#3060c0'},
+        ],
+    },
+    'caterpie': {
+        # rupsen en vlinders: de rups draagt de kleur van de vlinder
+        'species': {
+            'caterpie': {'body': [1, 2, 3, 4, 5, 6]},
+            'metapod': {'body': [1, 2, 4, 3, 5, 6]},
+            'butterfree': {'wings': [13, 14], 'body': [1, 2, 3, 4, 11]},
+        },
+        'variants': [
+            {'naam': 'Blauwe morpho', 'body': '#3060c0', 'butterfree:body': ('#2c2c34', {'l': 1.3}), 'wings': '#4890e8'},
+            {'naam': 'Rode admiraal', 'body': '#c83030', 'butterfree:body': ('#2c2c34', {'l': 1.3}), 'wings': '#d04030'},
+            {'naam': 'Koninginnenpage (zwarte rups)', 'body': ('#34343c', {'l': 1.3}), 'butterfree:body': ('#2c2c34', {'l': 1.3}), 'wings': '#f0c840'},
+            {'naam': 'Rouwmantel', 'body': '#5a3a40', 'wings': '#4a3038'},
+            {'naam': 'Grote weerschijnvlinder (paars)', 'body': '#6040a0', 'wings': '#7050c0'},
+            {'naam': 'Smaragdpijlstaart', 'body': '#20a0a0', 'wings': '#50c080'},
+        ],
+    },
+    'weedle': {
+        # Bug/Poison; wespen en bijen
+        'species': {
+            'weedle': {'body': [10, 9, 8, 7, 6]},
+            'kakuna': {'body': [7, 6, 5, 4, 3, 2]},
+            'beedrill': {'body': [6, 5, 4, 3, 2]},
+        },
+        'variants': [
+            {'naam': 'Hoornaar', 'body': '#a05020'},
+            {'naam': 'Blauwe houtbij', 'body': '#3050b0'},
+            {'naam': 'Rode wesp', 'body': '#c02828'},
+            {'naam': 'Paarse houtbij', 'body': '#7040a0'},
+            {'naam': 'Albino', 'body': ('#ece8dc', ALBINO)},
+            {'naam': 'Zwarte hoornaar', 'body': ('#2c2c34', {'l': 1.3})},
+        ],
+    },
+    'pidgey': {
+        'species': {
+            'pidgey': {'body': [14, 13, 12, 11], 'cream': [10, 9, 8]},
+            'pidgeotto': {'body': [11, 10, 9], 'cream': [7, 6], 'crest': [15, 14, 13, 12]},
+            'pidgeot': {'body': [14, 13, 12], 'cream': [5, 4, 3], 'crest': [9, 8, 7, 6]},
+        },
+        'variants': [
+            {'naam': 'Stadsduif', 'body': '#8a8a98', 'cream': '#d8d8e0'},
+            {'naam': 'Roodborst', 'body': '#7a5a40', 'cream': '#e06030'},
+            {'naam': 'Pimpelmees', 'body': '#3a70c0', 'cream': '#f0d040'},
+            {'naam': 'Albino', 'body': ('#ece4e0', ALBINO), 'cream': '#f4f0ec'},
+            {'naam': 'Kardinaal', 'body': ('#b01818', {'h': 0}), 'crest': '#2c2c34'},
+            {'naam': 'Paradijsvogel', 'body': '#5a3a90', 'crest': '#30c0c0', 'cream': '#f0d040'},
+        ],
+    },
+    'rattata': {
+        'species': {
+            'rattata': {'body': [7, 6, 5, 4]},
+            'raticate': {'body': [12, 11, 10, 9]},
+            'rattata/alola': {'body': [1, 2, 4]},
+            'raticate/alola': {'body': [1, 3, 6]},
+        },
+        'variants': [
+            {'naam': 'Witte labrat', 'body': '#ece8e4'},
+            {'naam': 'Chinchilla', 'body': '#7a8498'},
+            {'naam': 'Agouti', 'body': '#b06030'},
+            {'naam': 'Naakte molrat', 'body': '#f0b0b0'},
+            {'naam': 'Fancy rat (oranje)', 'body': '#e09040'},
+            {'naam': 'Gouden rat (dierenriem)', 'body': '#d8a828'},
+        ],
+    },
 }

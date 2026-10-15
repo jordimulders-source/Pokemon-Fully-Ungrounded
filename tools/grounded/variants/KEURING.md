@@ -41,3 +41,13 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Drowzee/Hypno** (Hypno Psychic/Dark; tapir en hypnotiseur): 10% Maleise tapir (zwart boven, wit onder), 6% baku (blauw: de Japanse droomvreter), 4% Freddy Krueger (rood met groen), 3% albino, 1,5% hypnosespiraal (groen), 0,5% paars en goud.
 - **Farfetch'd** (Fighting/Flying): 10% grijze gans, 6% wilde eend, 4% zwarte eend, 3% albino, 1,5% zuurstok (rood met witte prei), 0,5% koningsblauw met gouden zwaard. Galar-Farfetch'd/Sirfetch'd nog niet (moderne sprites).
 - **Dunsparce** (Normal/Ground): 10% groene drakenslang, 6% lavendel (gouden ringen), 4% roodbruin, 3% albino, 1,5% koi (oranje met wit), 0,5% Chinese draak (rood en goud). Dudunsparce nog niet (moderne sprite).
+
+## Groep 19
+- **Ledyba/Ledian** (lieveheersbeestjes): 10% geel (22-stippig), 6% room (Calvia), 4% zwart met rode stippen, 3% roze lieveheersbeestje, 1,5% groene schildpadtor, 0,5% blauw metallic (Halmus). Geen oranje: de shiny is oranje.
+- **Remoraid/Octillery** (octopussen): 10% groene octopus, 6% blauwringoctopus (geel met blauwe ringen), 4% mimic-octopus (bruin-wit), 3% albino glasoctopus, 1,5% Dumbo-octopus (roze), 0,5% Kraken (zwart met rode zuignappen).
+- **Poliwag/Poliwhirl/Poliwrath/Politoed** (kikkers, spiraal blijft): 10% oranje pijlgifkikker, 6% pad (bruin), 4% paarse kikker, 3% albino, 1,5% gouden gifkikker, 0,5% aardbeigifkikker (rood).
+- **Porygon/Porygon2/Porygon-Z** (digitaal): 10% wireframe (groen op zwart), 6% Windows 95 (grijs met blauw), 4% Game Boy (groen), 3% Virtual Boy (rood-zwart), 1,5% glitch (MissingNo.: paars met cyaan), 0,5% Game Boy Color Pikachu-editie (geel met blauw).
+- **Caterpie/Metapod/Butterfree** (de rups draagt de kleur van de vlinder): 10% blauwe morpho, 6% rode admiraal, 4% koninginnenpage (zwarte rups, gele vleugels), 3% rouwmantel, 1,5% grote weerschijnvlinder (paars), 0,5% smaragdpijlstaart (teal). Geen geel/oranje voor de rups: de shiny's zijn geel/oranje.
+- **Weedle/Kakuna/Beedrill** (wespen en bijen): 10% hoornaar, 6% blauwe houtbij, 4% rode wesp, 3% paarse houtbij, 1,5% albino, 0,5% zwarte hoornaar. Geen groen: de Beedrill-shiny is groen.
+- **Pidgey/Pidgeotto/Pidgeot**: 10% stadsduif, 6% roodborst, 4% pimpelmees (blauw-geel), 3% albino, 1,5% kardinaal (rood met zwarte kuif), 0,5% paradijsvogel (paars met turquoise kuif). Geen goud: de Pidgeot-shiny is goud.
+- **Rattata/Raticate** (ook Alola): 10% witte labrat, 6% chinchilla (blauwgrijs), 4% agouti (roodbruin), 3% naakte molrat (roze), 1,5% fancy rat (oranje), 0,5% gouden rat (Chinese dierenriem).

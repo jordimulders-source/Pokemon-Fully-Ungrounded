@@ -4975,6 +4975,11 @@ s32 GetBattleMovePriority(u32 battler, enum Ability ability, u32 move)
 
     priority = GetMovePriority(move);
 
+    // Project Grounded: Straight Line rent alleen de eerste keer vooruit; opnieuw achter elkaar = x1,5 zonder prioriteit.
+    if (GetMoveEffect(move) == EFFECT_STRAIGHT_LINE && gLastResultingMoves[battler] == move
+     && gBattleStruct->metronomeItemCounter[battler] > 0)
+        priority = 0;
+
     // Max Guard check
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX && GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
         return GetMovePriority(MOVE_MAX_GUARD);

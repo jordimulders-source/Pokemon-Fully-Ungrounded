@@ -21904,8 +21904,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Straight Line"),
         .description = COMPOUND_STRING(
-            "Dashes first. Double power if\n"
-            "used again right after."),
+            "Dashes first. Again in a row:\n"
+            "1.5x power, but no priority."),
         .effect = EFFECT_STRAIGHT_LINE,
         .power = 70,
         .type = TYPE_NORMAL,

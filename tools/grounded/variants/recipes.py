@@ -205,8 +205,8 @@ LINES = {
         },
         'variants': [
             {'naam': 'Lotus (roze)', 'leaf': '#e078a0'},
-            {'naam': 'Mexico', 'leaf': '#c82830', 'body': '#2c8c48', 'ludicolo:body': '#ece4d4', 'stripes': '#287840',
-             'red': '#f0ece4', 'beak': '#f0e8d0'},
+            {'naam': 'Día de los Muertos', 'leaf': '#f08c10', 'body': '#7034a8', 'ludicolo:body': '#e4dcd0',
+             'stripes': '#242024', 'red': '#e02890', 'beak': '#e02890', 'mouth': '#e02890'},
             {'naam': 'Mandarijneend', 'leaf': '#207050', 'body': '#e07830', 'beak': '#d83030', 'red': '#3858c8'},
             {'naam': 'Albino', 'leaf': ('#c4d0bc', ALBINO), 'body': ('#c8c8d4', ALBINO), 'beak': '#e0a8a8',
              'red': '#e0a0b0', 'stripes': ('#b8b0a8', ALBINO), 'ludicolo:body': ('#d8d4c4', ALBINO)},

@@ -18805,5 +18805,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Poochyena-lijn: blauwe merle, rode wolf, poolwolf, albino, Midnight Lycanroc, spookwolf.
   - Zigzagoon-lijn: wasbeer, aardbeienmelk, Pikachu-kleuren, albino, Sonic, vaporwave (rode panda leek op de shiny, Galar-kleuren verwarrend; Jordi).
   - Wurmple-familie: monarchvlinder (jadegroene cocons), blauwe morpho, maanvlinder, melanisme, Kanto-neven (Caterpie, Metapod, Kakuna, Butterfree, Venomoth), neon.
-  - Lotad-lijn: lotus, Mexico (Jordi), mandarijneend, albino, kappa, neon.
+  - Lotad-lijn: lotus, Día de los Muertos (goudsbloem-oranje, botwit met zwarte zigzag, paars en magenta; Jordi), mandarijneend, albino, kappa, neon.
   - Seedot-lijn: onrijpe eikel, tengu, sakura, albino, oni (Jordi), winterdemon (Shiftry is hier Grass/Ice met Snow Warning; Jordi).

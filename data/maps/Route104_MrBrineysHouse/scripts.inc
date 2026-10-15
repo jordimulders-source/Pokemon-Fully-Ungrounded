@@ -41,12 +41,49 @@ Route104_MrBrineysHouse_EventScript_SailingIntro::
 Route104_MrBrineysHouse_EventScript_WhereAreWeBound::
 	message Route104_MrBrineysHouse_Text_WhereAreWeBound
 	waitmessage
-	multichoicedefault 20, 8, MULTI_BRINEY_OFF_DEWFORD, 1, FALSE
+Route104_MrBrineysHouse_EventScript_ChooseDestination::
+	multichoicedefault 20, 6, MULTI_BRINEY_HOUSE, 2, FALSE
 	switch VAR_RESULT
 	case 0, Route104_MrBrineysHouse_EventScript_SailToDewford
-	case 1, Route104_MrBrineysHouse_EventScript_DeclineSailing
+	case 1, Route104_MrBrineysHouse_EventScript_SailToSlateport
+	case 2, Route104_MrBrineysHouse_EventScript_DeclineSailing
 	case MULTI_B_PRESSED, Route104_MrBrineysHouse_EventScript_DeclineSailing
 	end
+
+@ Project Grounded: na de brief in Dewford vaart Briney ook direct naar Slateport (zonder animatie,
+@ zie "bootreis zonder animatie" in CLAUDE.md). Eindtoestand = die van Dewford -> Slateport.
+Route104_MrBrineysHouse_EventScript_SailToSlateport::
+	goto_if_unset FLAG_DELIVERED_DEVON_GOODS, Route104_MrBrineysHouse_EventScript_SlateportGoodsText
+	msgbox Route104_MrBrineysHouse_Text_SetSailForSlateport, MSGBOX_DEFAULT
+	goto Route104_MrBrineysHouse_EventScript_DoSailToSlateport
+	end
+
+Route104_MrBrineysHouse_EventScript_SlateportGoodsText::
+	msgbox Route104_MrBrineysHouse_Text_SetSailForSlateportGoods, MSGBOX_DEFAULT
+Route104_MrBrineysHouse_EventScript_DoSailToSlateport::
+	closemessage
+	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY
+	setflag FLAG_HIDE_ROUTE_104_MR_BRINEY_BOAT
+	setflag FLAG_HIDE_BRINEYS_HOUSE_MR_BRINEY
+	setflag FLAG_HIDE_BRINEYS_HOUSE_PEEKO
+	setflag FLAG_HIDE_MR_BRINEY_DEWFORD_TOWN
+	setflag FLAG_HIDE_MR_BRINEY_BOAT_DEWFORD_TOWN
+	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY
+	clearflag FLAG_HIDE_ROUTE_109_MR_BRINEY_BOAT
+	call_if_ne VAR_BRINEY_LOCATION, 0, Route104_MrBrineysHouse_EventScript_SetLocationRoute109
+	fadescreen FADE_TO_BLACK
+	applymovement LOCALID_PLAYER, Common_Movement_FaceDown
+	waitmovement 0
+	playse SE_M_SURF
+	delay 40
+	warpsilent MAP_ROUTE109, 21, 23
+	waitstate
+	releaseall
+	end
+
+Route104_MrBrineysHouse_EventScript_SetLocationRoute109::
+	setvar VAR_BRINEY_LOCATION, 3
+	return
 
 Route104_MrBrineysHouse_EventScript_SailBothDeliveries::
 	msgbox Route104_MrBrineysHouse_Text_NeedToMakeDeliveriesSailToDewford, MSGBOX_YESNO
@@ -55,9 +92,9 @@ Route104_MrBrineysHouse_EventScript_SailBothDeliveries::
 	end
 
 Route104_MrBrineysHouse_EventScript_SailDeliverPackage::
-	msgbox Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, NO, Route104_MrBrineysHouse_EventScript_DeclineDeliverySailing
-	goto Route104_MrBrineysHouse_EventScript_SailToDewford
+	message Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford
+	waitmessage
+	goto Route104_MrBrineysHouse_EventScript_ChooseDestination
 	end
 
 Route104_MrBrineysHouse_EventScript_DeclineDeliverySailing::
@@ -130,7 +167,17 @@ Route104_MrBrineysHouse_Text_NeedToDeliverPackageSailToDewford:
 	.string "MR. BRINEY: Ahoy! I know what you want!\p"
 	.string "A package for CAPT. STERN in SLATEPORT.\p"
 	.string "No problem! I'm the man for the job!\p"
-	.string "First, DEWFORD.$"
+	.string "Straight there, or via DEWFORD?$"
+
+Route104_MrBrineysHouse_Text_SetSailForSlateport:
+	.string "MR. BRINEY: SLATEPORT, nonstop!\p"
+	.string "PEEKO, hold on to your feathers.\n"
+	.string "We're skipping the scenic route.$"
+
+Route104_MrBrineysHouse_Text_SetSailForSlateportGoods:
+	.string "MR. BRINEY: SLATEPORT, nonstop!\p"
+	.string "Hand CAPT. STERN his package before it\n"
+	.string "starts ticking. Or smelling.$"
 
 Route104_MrBrineysHouse_Text_WhereAreWeBound:
 	.string "MR. BRINEY: Ahoy! For you, I'll sail\n"

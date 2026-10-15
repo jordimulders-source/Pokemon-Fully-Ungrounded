@@ -76,6 +76,14 @@ static const struct MenuAction MultichoiceList_BrineyOffDewford[] =
     {gText_Exit},
 };
 
+// Project Grounded: Briney vaart vanuit zijn huis ook direct naar Slateport
+static const struct MenuAction MultichoiceList_BrineyHouse[] =
+{
+    {COMPOUND_STRING("DEWFORD")},
+    {COMPOUND_STRING("SLATEPORT")},
+    {gText_Exit},
+};
+
 static const struct MenuAction MultichoiceList_ViewedPaintings[] =
 {
     {COMPOUND_STRING("Saw it")},
@@ -906,6 +914,7 @@ static const struct MultichoiceListStruct sMultichoiceLists[] =
     [MULTI_FALLARBOR_TENT_RULES]       = MULTICHOICE(MultichoiceList_FallarborTentRules),
     [MULTI_TAG_MATCH_TYPE]             = MULTICHOICE(MultichoiceList_TagMatchType),
     [MULTI_BERRY_PLOT]                 = MULTICHOICE(MultichoiceList_BerryPlot),
+    [MULTI_BRINEY_HOUSE]               = MULTICHOICE(MultichoiceList_BrineyHouse),
 };
 
 const u8 *const gStdStrings[] =

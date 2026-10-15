@@ -33,8 +33,18 @@ MauvilleCity_EventScript_Woman::
 	msgbox MauvilleCity_Text_RydelVeryGenerous, MSGBOX_NPC
 	end
 
+@ Project Grounded: eenmalige item-giveaway (testrun Jordi)
 MauvilleCity_EventScript_RichBoy::
-	msgbox MauvilleCity_Text_PokemonCanJumpYouOnBike, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox MauvilleCity_Text_PokemonCanJumpYouOnBike, MSGBOX_DEFAULT
+	goto_if_set FLAG_RECEIVED_MAUVILLE_RICH_BOY_GIFT, MauvilleCity_EventScript_RichBoy_GiftDone
+	msgbox MauvilleCity_Text_TakeExpertBelt, MSGBOX_DEFAULT
+	giveitem ITEM_EXPERT_BELT
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_MAUVILLE_RICH_BOY_GIFT
+MauvilleCity_EventScript_RichBoy_GiftDone::
+	release
 	end
 
 MauvilleCity_EventScript_CitySign::
@@ -931,3 +941,9 @@ MauvilleCity_Text_ColressMagearnaNoRoom:
 	.string "COLRESS: No room? Not even in a box?\n"
 	.string "You have nineteen boxes. Fascinating.\l"
 	.string "Come back when you've freed some up.$"
+
+MauvilleCity_Text_TakeExpertBelt:
+	.string "Here, peasant. An EXPERT BELT.\p"
+	.string "It powers up super effective moves.\n"
+	.string "My personal trainer left it behind.\p"
+	.string "He's my personal ex-trainer now.$"

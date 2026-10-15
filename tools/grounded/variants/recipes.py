@@ -877,4 +877,144 @@ LINES = {
             {'naam': 'Samoeraiharnas', 'shell': '#b02020', 'green': '#801818', 'red': '#202024', 'gold': '#e8c030'},
         ],
     },
+
+    # --- Hoenn-dex, groep 10 ---
+    'feebas': {
+        'species': {
+            'feebas': {'body': [5, 6, 7, 8, 9, 10, 11], 'tail': [1, 2, 3], 'ribbon': [14, 15]},
+            'milotic': {'body': [4, 5, 6, 10], 'ribbon': [1, 3, 9, 11, 13, 14], 'tail': [7, 8]},
+        },
+        'variants': [
+            {'naam': 'Riemvis (zilver en rood)', 'body': '#b8c0cc', 'ribbon': '#e04028', 'tail': '#e04028'},
+            {'naam': 'Pastel', 'body': '#c8b8e8', 'ribbon': '#80d8b8', 'tail': '#f090b8'},
+            {'naam': 'Koninklijk', 'body': '#e0b030', 'ribbon': '#2848a8', 'tail': '#c02028'},
+            {'naam': 'Albino', 'body': ('#e4dcd8', ALBINO), 'ribbon': '#f0b8c8', 'tail': '#d8e0e8'},
+            {'naam': 'Nachtzwart', 'body': ('#2c2c34', {'l': 1.3}), 'ribbon': '#e0b030', 'tail': '#8040c0'},
+            {'naam': 'Feniks', 'body': '#e04820', 'ribbon': '#f0d040', 'tail': '#f0a020'},
+        ],
+    },
+    'castform': {
+        # elke weervorm is een eigen vorm met een eigen shiny: per vorm eigen kleuren, één thema per variant
+        'species': {
+            'castform': {'body': [12, 2, 3, 4], 'face': [6, 7]},
+            'castform/sunny': {'petals': [1, 9, 8], 'core': [10, 2, 3, 4], 'face': [6, 7], 'cloud': [11, 12]},
+            'castform/rainy': {'hood': [1, 9, 8], 'body': [10, 2, 3, 4], 'face': [6, 7], 'cloud': [11, 12]},
+            'castform/snowy': {'leaves': [1, 12, 9, 8, 11], 'body': [10, 2, 3], 'face': [6, 7]},
+        },
+        'variants': [
+            {'naam': 'Zonsondergang', 'castform:body': '#f0a070',
+             'castform/sunny:petals': '#e85880', 'castform/sunny:core': '#f0a030',
+             'castform/rainy:hood': '#f09058', 'castform/rainy:body': '#b84870',
+             'castform/snowy:leaves': '#f0b0a0', 'castform/snowy:body': '#c04870'},
+            {'naam': 'Onweer', 'castform:body': '#606078', 'castform:face': '#f0e050',
+             'castform/sunny:petals': '#606088', 'castform/sunny:core': '#f0d030', 'castform/sunny:cloud': '#707080',
+             'castform/rainy:hood': '#40405c', 'castform/rainy:body': '#e0c020', 'castform/rainy:face': '#f8f0a0',
+             'castform/snowy:leaves': '#686888', 'castform/snowy:body': '#e8c828', 'castform/snowy:face': '#f8f0a0'},
+            {'naam': 'Noorderlicht', 'castform:body': '#68d0a8',
+             'castform/sunny:petals': '#40c890', 'castform/sunny:core': '#8050c0',
+             'castform/rainy:hood': '#50e0b0', 'castform/rainy:body': '#7040b0',
+             'castform/snowy:leaves': '#8868e0', 'castform/snowy:body': '#40d8a0'},
+            {'naam': 'Zure regen', 'castform:body': '#a8c040',
+             'castform/sunny:petals': '#a0d030', 'castform/sunny:core': '#704898',
+             'castform/rainy:hood': '#98c838', 'castform/rainy:body': '#6a3c8c',
+             'castform/snowy:leaves': '#c0d860', 'castform/snowy:body': '#583878'},
+            {'naam': 'Bloedmaan', 'castform:body': '#a02830',
+             'castform/sunny:petals': '#a01820', 'castform/sunny:core': '#38141c',
+             'castform/rainy:hood': '#a02030', 'castform/rainy:body': '#401420',
+             'castform/snowy:leaves': '#c03040', 'castform/snowy:body': '#401420'},
+            {'naam': 'Sterrennacht', 'castform:body': '#283878', 'castform:face': '#f0e8a0',
+             'castform/sunny:petals': '#283878', 'castform/sunny:core': '#f0d040', 'castform/sunny:cloud': '#8890c0',
+             'castform/rainy:hood': '#202850', 'castform/rainy:body': '#8090f0',
+             'castform/snowy:leaves': '#384890', 'castform/snowy:body': '#d0d8f8'},
+        ],
+    },
+    'kecleon': {
+        # in deze rom Grass; een kameleon: kleur wisselen is zijn ding
+        'species': {'kecleon': {'body': [2, 6, 7, 9, 10, 11], 'crest': [1, 4, 5, 8], 'stripe': [13, 14]}},
+        'variants': [
+            {'naam': 'Panterkameleon', 'body': '#30a8c0', 'crest': '#f08030', 'stripe': '#e02838'},
+            {'naam': 'Opgewonden rood', 'body': '#d04030', 'crest': '#f0d030', 'stripe': '#3058c0'},
+            {'naam': 'Schorscamouflage', 'body': '#7c5c3c', 'crest': '#c8a870', 'stripe': '#3c5c30'},
+            {'naam': 'Albino', 'body': ('#dcd8cc', ALBINO), 'crest': '#f0e8c8', 'stripe': '#f0a0b8'},
+            {'naam': 'Lisa Frank', 'body': '#9050c0', 'crest': '#f080c0', 'stripe': '#40e0f0'},
+            {'naam': 'Bijna onzichtbaar (glas)', 'body': '#b8dce8', 'crest': '#e0f0f8', 'stripe': '#f0c8d8'},
+        ],
+    },
+    'shuppet': {
+        'species': {
+            'shuppet': {'body': [1, 3, 4, 5, 6, 7], 'zipper': [12, 13]},
+            'banette': {'body': [1, 2, 3, 4, 6], 'zipper': [11, 12, 13, 14, 15], 'eyes': [7, 8, 10]},
+        },
+        'variants': [
+            {'naam': 'Teddybeer', 'body': '#8a6440', 'zipper': '#e8d0a0'},
+            {'naam': 'Voodoopop (jute)', 'body': '#c0a070', 'zipper': '#c02020'},
+            {'naam': 'Chucky', 'body': '#3858a0', 'zipper': '#c02020'},
+            {'naam': 'Porseleinen pop', 'body': ('#dcd8d4', ALBINO), 'zipper': '#e0b030'},
+            {'naam': 'Mimikyu-kleuren', 'body': '#e8c838', 'zipper': '#3c3028', 'eyes': '#202020'},
+            {'naam': 'Jack Skellington', 'body': ('#202024', {'l': 1.3}), 'zipper': '#e8e8f0', 'eyes': '#e8e8f0'},
+        ],
+    },
+    'duskull': {
+        'species': {
+            'duskull': {'robe': [1, 2, 3, 4], 'skull': [6, 7, 8, 9, 10], 'eye': [11, 12, 13]},
+            'dusclops': {'robe': [7, 8, 9, 10], 'skull': [1, 2, 3, 4, 5], 'eye': [13, 14]},
+        },
+        'variants': [
+            {'naam': 'Bemoste grafsteen', 'robe': '#506848', 'skull': '#a8a8a0'},
+            {'naam': 'Monnikspij', 'robe': '#5c4030', 'skull': '#e0d4b8', 'eye': '#f0c030'},
+            {'naam': 'Dwaallicht', 'robe': '#283c70', 'skull': '#c0d8f0', 'eye': '#40e8f8'},
+            {'naam': 'Albino', 'robe': ('#c8c4c4', ALBINO), 'skull': ('#ece8e4', ALBINO), 'eye': '#e02838'},
+            {'naam': 'Magere Hein', 'robe': ('#1c1c20', {'l': 1.3}), 'skull': '#e8e4d8', 'eye': '#e02020'},
+            {'naam': 'Farao-mummie', 'robe': '#2848a8', 'skull': '#e0b030', 'eye': '#40e0a0'},
+        ],
+    },
+    'tropius': {
+        'species': {'tropius': {'leaves': [1, 2, 3, 5], 'body': [6, 8, 9, 10], 'fruit': [11, 12]}},
+        'variants': [
+            {'naam': 'Herfst', 'leaves': '#d86020'},
+            {'naam': 'Kersenboom', 'leaves': '#f0a0c0', 'fruit': '#d02028'},
+            {'naam': 'Drakenvrucht', 'body': '#e05088', 'fruit': '#f0f0f0'},
+            {'naam': 'Albino', 'leaves': ('#d0d8c8', ALBINO), 'body': ('#e0d8d0', ALBINO), 'fruit': '#f0e8c0'},
+            {'naam': 'Ginkgo (goud)', 'leaves': '#e8c030', 'fruit': '#f08030'},
+            {'naam': 'Winter', 'leaves': '#dce4ec', 'body': '#4c3424', 'fruit': '#d02028'},
+        ],
+    },
+    'chimecho': {
+        # in deze rom Psychic/Steel
+        'species': {'chimecho': {'body': [7, 8, 9, 11], 'red': [10, 12, 13], 'top': [1, 3, 5, 6, 14]}},
+        'variants': [
+            {'naam': 'Koperen windgong', 'body': '#c87838', 'red': '#30a0a0'},
+            {'naam': 'Zilver', 'body': '#b8bcc8', 'red': '#3058c0'},
+            {'naam': 'Amethist', 'body': '#9068c8', 'red': '#f0c040'},
+            {'naam': 'Albino', 'body': ('#e0dcdc', ALBINO), 'red': '#f0a8b8'},
+            {'naam': 'Kerstklok', 'body': '#e0b030', 'red': '#38a040', 'top': '#c02028'},
+            {'naam': 'Fuurin (Japans glas)', 'body': '#283878', 'red': '#f05030', 'top': '#f0f0f8'},
+        ],
+    },
+    'absol': {
+        # in deze rom Dark/Fairy
+        'species': {'absol': {'fur': [6, 7, 8, 9, 10], 'dark': [1, 2, 3, 4], 'eyes': [11, 12, 13]}},
+        'variants': [
+            {'naam': 'Omgekeerd (zwart)', 'fur': ('#34343c', {'l': 1.3}), 'dark': '#e0e4ec'},
+            {'naam': 'IJswolf', 'fur': '#d4e8f4', 'dark': '#2c88c0'},
+            {'naam': 'Fee (mint)', 'dark': '#38b8a0', 'eyes': '#f070b0'},
+            {'naam': 'Kitsune', 'dark': '#e07820', 'eyes': '#f0d020'},
+            {'naam': 'Sterrenstelsel', 'fur': '#c4b8e0', 'dark': '#6838a8', 'eyes': '#f0e040'},
+            {'naam': 'Qilin', 'fur': '#e8c860', 'dark': '#2c8c60'},
+        ],
+    },
+    'wynaut': {
+        'species': {
+            'wynaut': {'body': [1, 2, 3, 4, 6], 'mouth': [7, 8, 9]},
+            'wobbuffet': {'body': [1, 2, 3, 4, 5], 'mouth': [7, 8, 9], 'tail': [10, 11, 12, 13]},
+        },
+        'variants': [
+            {'naam': 'Oranje', 'body': '#f09038', 'mouth': '#a03828'},
+            {'naam': 'Groen', 'body': '#58b048'},
+            {'naam': 'Paars', 'body': '#8058c0', 'mouth': '#f0c030'},
+            {'naam': 'Albino', 'body': ('#dcd8dc', ALBINO), 'mouth': '#e88898'},
+            {'naam': 'SpongeBob', 'body': '#f0d830', 'mouth': '#c03838', 'tail': '#a06830'},
+            {'naam': 'Bokszak', 'body': '#c02028', 'mouth': '#f0e8d8', 'tail': '#2c2c30'},
+        ],
+    },
 }

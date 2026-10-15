@@ -18861,3 +18861,14 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Baltoy-lijn: terracotta, jade, Ming-porselein, albino (i.p.v. zwartfigurig), Dogu (Jomon), ufo.
   - Lileep-lijn: koraalrif, witte zeeanemoon, versteend, albino, diepzeegloed, ammoniet (parelmoer).
   - Anorith-lijn: versteend, degenkrab (blauw bloed), trilobiet (zwart en goud), albino, Anomalocaris, samoeraiharnas.
+
+- **Kleurvarianten, Hoenn-dex groep 10:** (Feebas t/m Wobbuffet; ROM ±808 KB vrij)
+  - Feebas-lijn: riemvis, pastel, koninklijk, albino, nachtzwart, feniks (rood lijf, goud lint).
+  - Castform: elke weervorm is een eigen vorm met een eigen shiny, dus per vorm eigen kleuren binnen één thema: zonsondergang, onweer, noorderlicht, zure regen, bloedmaan, sterrennacht.
+  - Kecleon: panterkameleon, opgewonden rood, schorscamouflage, albino, Lisa Frank, glas.
+  - Shuppet-lijn: teddybeer, voodoopop, Chucky, porseleinen pop, Mimikyu-kleuren, Jack Skellington.
+  - Duskull-lijn: bemoste grafsteen, monnikspij, dwaallicht, albino, Magere Hein, farao-mummie.
+  - Tropius: herfst, kersenboom, drakenvrucht, albino, ginkgo, winter.
+  - Chimecho: koper, zilver, amethist (jade lag te dicht bij de shiny), albino, kerstklok, fuurin.
+  - Absol: omgekeerd (zwart), ijswolf, fee (mint), kitsune, sterrenstelsel, qilin (rood en roze vervallen: te dicht bij de shiny).
+  - Wynaut-lijn: oranje, groen, paars, albino, SpongeBob, bokszak.

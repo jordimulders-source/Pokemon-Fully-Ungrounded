@@ -66,6 +66,12 @@ static const u16 sVariants_Marill[] = INCBIN_U16("graphics/pokemon/marill/varian
 #if (P_FAMILY_MARILL)
 static const u16 sVariants_Azumarill[] = INCBIN_U16("graphics/pokemon/azumarill/variants.gbapal");
 #endif
+#if (P_FAMILY_WOBBUFFET) && (P_GEN_3_CROSS_EVOS)
+static const u16 sVariants_Wynaut[] = INCBIN_U16("graphics/pokemon/wynaut/variants.gbapal");
+#endif
+#if (P_FAMILY_WOBBUFFET)
+static const u16 sVariants_Wobbuffet[] = INCBIN_U16("graphics/pokemon/wobbuffet/variants.gbapal");
+#endif
 #if (P_FAMILY_TREECKO)
 static const u16 sVariants_Treecko[] = INCBIN_U16("graphics/pokemon/treecko/variants.gbapal");
 #endif
@@ -360,6 +366,48 @@ static const u16 sVariants_Anorith[] = INCBIN_U16("graphics/pokemon/anorith/vari
 #if (P_FAMILY_ANORITH)
 static const u16 sVariants_Armaldo[] = INCBIN_U16("graphics/pokemon/armaldo/variants.gbapal");
 #endif
+#if (P_FAMILY_FEEBAS)
+static const u16 sVariants_Feebas[] = INCBIN_U16("graphics/pokemon/feebas/variants.gbapal");
+#endif
+#if (P_FAMILY_FEEBAS)
+static const u16 sVariants_Milotic[] = INCBIN_U16("graphics/pokemon/milotic/variants.gbapal");
+#endif
+#if (P_FAMILY_CASTFORM)
+static const u16 sVariants_CastformNormal[] = INCBIN_U16("graphics/pokemon/castform/variants.gbapal");
+#endif
+#if (P_FAMILY_CASTFORM)
+static const u16 sVariants_CastformSunny[] = INCBIN_U16("graphics/pokemon/castform/sunny/variants.gbapal");
+#endif
+#if (P_FAMILY_CASTFORM)
+static const u16 sVariants_CastformRainy[] = INCBIN_U16("graphics/pokemon/castform/rainy/variants.gbapal");
+#endif
+#if (P_FAMILY_CASTFORM)
+static const u16 sVariants_CastformSnowy[] = INCBIN_U16("graphics/pokemon/castform/snowy/variants.gbapal");
+#endif
+#if (P_FAMILY_KECLEON)
+static const u16 sVariants_Kecleon[] = INCBIN_U16("graphics/pokemon/kecleon/variants.gbapal");
+#endif
+#if (P_FAMILY_SHUPPET)
+static const u16 sVariants_Shuppet[] = INCBIN_U16("graphics/pokemon/shuppet/variants.gbapal");
+#endif
+#if (P_FAMILY_SHUPPET)
+static const u16 sVariants_Banette[] = INCBIN_U16("graphics/pokemon/banette/variants.gbapal");
+#endif
+#if (P_FAMILY_DUSKULL)
+static const u16 sVariants_Duskull[] = INCBIN_U16("graphics/pokemon/duskull/variants.gbapal");
+#endif
+#if (P_FAMILY_DUSKULL)
+static const u16 sVariants_Dusclops[] = INCBIN_U16("graphics/pokemon/dusclops/variants.gbapal");
+#endif
+#if (P_FAMILY_TROPIUS)
+static const u16 sVariants_Tropius[] = INCBIN_U16("graphics/pokemon/tropius/variants.gbapal");
+#endif
+#if (P_FAMILY_CHIMECHO)
+static const u16 sVariants_Chimecho[] = INCBIN_U16("graphics/pokemon/chimecho/variants.gbapal");
+#endif
+#if (P_FAMILY_ABSOL)
+static const u16 sVariants_Absol[] = INCBIN_U16("graphics/pokemon/absol/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -428,6 +476,12 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_MARILL)
     {gMonPalette_Azumarill, sVariants_Azumarill},
+#endif
+#if (P_FAMILY_WOBBUFFET) && (P_GEN_3_CROSS_EVOS)
+    {gMonPalette_Wynaut, sVariants_Wynaut},
+#endif
+#if (P_FAMILY_WOBBUFFET)
+    {gMonPalette_Wobbuffet, sVariants_Wobbuffet},
 #endif
 #if (P_FAMILY_TREECKO)
     {gMonPalette_Treecko, sVariants_Treecko},
@@ -722,6 +776,48 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_ANORITH)
     {gMonPalette_Armaldo, sVariants_Armaldo},
+#endif
+#if (P_FAMILY_FEEBAS)
+    {gMonPalette_Feebas, sVariants_Feebas},
+#endif
+#if (P_FAMILY_FEEBAS)
+    {gMonPalette_Milotic, sVariants_Milotic},
+#endif
+#if (P_FAMILY_CASTFORM)
+    {gMonPalette_CastformNormal, sVariants_CastformNormal},
+#endif
+#if (P_FAMILY_CASTFORM)
+    {gMonPalette_CastformSunny, sVariants_CastformSunny},
+#endif
+#if (P_FAMILY_CASTFORM)
+    {gMonPalette_CastformRainy, sVariants_CastformRainy},
+#endif
+#if (P_FAMILY_CASTFORM)
+    {gMonPalette_CastformSnowy, sVariants_CastformSnowy},
+#endif
+#if (P_FAMILY_KECLEON)
+    {gMonPalette_Kecleon, sVariants_Kecleon},
+#endif
+#if (P_FAMILY_SHUPPET)
+    {gMonPalette_Shuppet, sVariants_Shuppet},
+#endif
+#if (P_FAMILY_SHUPPET)
+    {gMonPalette_Banette, sVariants_Banette},
+#endif
+#if (P_FAMILY_DUSKULL)
+    {gMonPalette_Duskull, sVariants_Duskull},
+#endif
+#if (P_FAMILY_DUSKULL)
+    {gMonPalette_Dusclops, sVariants_Dusclops},
+#endif
+#if (P_FAMILY_TROPIUS)
+    {gMonPalette_Tropius, sVariants_Tropius},
+#endif
+#if (P_FAMILY_CHIMECHO)
+    {gMonPalette_Chimecho, sVariants_Chimecho},
+#endif
+#if (P_FAMILY_ABSOL)
+    {gMonPalette_Absol, sVariants_Absol},
 #endif
     {NULL, NULL},
 };

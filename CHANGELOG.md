@@ -18806,4 +18806,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Zigzagoon-lijn: wasbeer, rode panda, Galar-kleuren, albino, Sonic, vaporwave.
   - Wurmple-familie: monarchvlinder (jadegroene cocons), blauwe morpho, maanvlinder, melanisme, Kanto-neven (Caterpie, Metapod, Kakuna, Butterfree, Venomoth), neon.
   - Lotad-lijn: lotus, Mexico (Jordi), mandarijneend, albino, kappa, neon.
-  - Seedot-lijn: onrijpe eikel, herfst, tengu, albino, sakura, winterdemon (Shiftry is hier Grass/Ice met Snow Warning; Jordi).
+  - Seedot-lijn: onrijpe eikel, tengu, sakura, albino, oni (Jordi), winterdemon (Shiftry is hier Grass/Ice met Snow Warning; Jordi).

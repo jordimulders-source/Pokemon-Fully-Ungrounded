@@ -129,4 +129,5 @@ Besloten:
 - Generator `tools/grounded/wiki/build_wiki.py` leest de **code zelf** (species_info, `gen_9.h`, moves_info.h, items.h, wild_encounters.json, trainers.party, map-scripts) en maakt een statische site; opnieuw draaien na elke wijziging.
 - **Focus op wijzigingen:** automatisch vergelijken met de originele pokeemerald-expansion (labels "gewijzigd"/"nieuw", met oud → nieuw), filters als "alleen gewijzigd".
 - Onderdelen: Pokédex (types, stats, abilities, evolutielevels, learnsets, vindplaatsen), moves, items/TM's met vindplaats, trainers/gyms, tips & tricks/QoL (met de hand, eerste versie uit CLAUDE.md + changelog).
+- Wiki-opzet: een eigen pagina per Pokémon/move/item/locatie met onderlinge links, zoekbalk via een zoekindex in de browser (bijv. Pagefind). Sprites uit `graphics/pokemon/`, ingekleurd per palet: normaal, shiny en de kleurvarianten ("skins") met afbeelding.
 - **Openbaar voor vrienden/testers:** statische HTML naar een apart openbaar repo met GitHub Pages; spoilers (legendaries, post-game, Spacetime) achter uitklapblokken, geen debug-info, geen ROM.

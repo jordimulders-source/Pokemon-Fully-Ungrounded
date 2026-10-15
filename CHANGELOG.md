@@ -18854,10 +18854,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Cacnea-lijn: opuntia, rode maancactus, pompoenvogelverschrikker, albino, woestijnnacht, snoepcactus.
   - Swablu-lijn: suikerspin, onweerswolk, zonsondergang, pauw, Kinto-un (Dragon Ball), poollicht.
 - **Kleurvarianten, Hoenn-dex groep 9:**
-  - Zangoose en Seviper (rivalen, contrasterend paar): omgewisseld, mangoeste en koningscobra, ijs en vuur, melanisme en albino, Spider-Man en Venom, rode en gouden draak.
+  - Zangoose en Seviper (rivalen, contrasterend paar; katachtigen en slangen, Jordi): tijger en groene mamba, sneeuwluipaard en koraalslang, ijs en vuur, zwarte panter en albinopython, Siamese kat en Quetzalcoatl, Bastet en Apophis. De gekleurde randtinten horen nu bij hun kleurgroep (de lijnen tussen patroon en lijf waren lelijk).
   - Lunatone en Solrock: omgewisseld, bloedmaan en zwarte zon, zonsverduistering, maansteen en zonnesteen, Majora's maan en Shine Sprite, Neptunus en Venus.
   - Barboach-lijn: Europese meerval, goudmeerval, panda-corydoras, albino, Namazu (aardbevingsmythe), sidderaal.
   - Corphish-lijn: blauwe kreeft, gemarmerde rivierkreeft, paarse kreeft, albino, glasgarnaal, gele kreeft (1 op 30 miljoen).
-  - Baltoy-lijn: terracotta, jade, Ming-porselein, zwartfigurig (Grieks), Dogu (Jomon), ufo.
+  - Baltoy-lijn: terracotta, jade, Ming-porselein, albino (i.p.v. zwartfigurig), Dogu (Jomon), ufo.
   - Lileep-lijn: koraalrif, witte zeeanemoon, versteend, albino, diepzeegloed, ammoniet (parelmoer).
   - Anorith-lijn: versteend, degenkrab (blauw bloed), trilobiet (zwart en goud), albino, Anomalocaris, samoeraiharnas.

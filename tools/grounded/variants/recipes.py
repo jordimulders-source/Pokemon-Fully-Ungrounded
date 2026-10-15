@@ -766,24 +766,26 @@ LINES = {
 
     # --- Hoenn-dex, groep 9 ---
     'zangoose': {
-        # rivalen als contrasterend paar
+        # rivalen als contrasterend paar; randtinten (1/8, 4; 7, 15) horen bij hun groep (anders lelijke lijnen)
         'species': {
-            'zangoose': {'fur': [3, 5, 11], 'red': [4, 6, 7, 10, 12]},
-            'seviper': {'body': [2, 3, 6], 'yellow': [1, 4, 5], 'purple': [7, 9, 12], 'blade': [10, 11, 13]},
+            'zangoose': {'fur': [1, 3, 5, 8, 11], 'red': [4, 6, 7, 10, 12]},
+            'seviper': {'body': [2, 3, 6, 15], 'yellow': [1, 4, 5], 'purple': [7, 9, 12], 'blade': [10, 11, 13]},
         },
         'variants': [
-            {'naam': 'Omgewisseld', 'zangoose:fur': '#5c6680', 'zangoose:red': '#e0a048', 'seviper:body': '#c8d4ec',
-             'seviper:yellow': '#e04a6a', 'seviper:purple': '#b43952', 'seviper:blade': '#8c9494'},
-            {'naam': 'Mangoeste en koningscobra', 'zangoose:fur': '#b09068', 'zangoose:red': '#5c3c24',
-             'seviper:body': '#6c6040', 'seviper:yellow': '#e8dcb0', 'seviper:purple': '#3c3424'},
+            {'naam': 'Tijger en groene mamba', 'zangoose:fur': '#e88830', 'zangoose:red': ('#2c2420', {'l': 1.3}),
+             'seviper:body': '#40a840', 'seviper:yellow': '#c8f060', 'seviper:purple': '#286830', 'seviper:blade': '#e8f080'},
+            {'naam': 'Sneeuwluipaard en koraalslang', 'zangoose:fur': '#ccd0d8', 'zangoose:red': '#4c4c58',
+             'seviper:body': ('#202024', {'l': 1.3}), 'seviper:yellow': '#f0d020', 'seviper:purple': '#d02828',
+             'seviper:blade': '#d02828'},
             {'naam': 'IJs en vuur', 'zangoose:fur': '#b8d8f0', 'zangoose:red': '#30a0d0', 'seviper:body': '#a02818',
              'seviper:yellow': '#f0a020', 'seviper:purple': '#f06020'},
-            {'naam': 'Melanisme en albino', 'zangoose:fur': ('#34343c', {'l': 1.3}), 'seviper:body': '#d4ccd0',
-             'seviper:yellow': '#f0c0c8', 'seviper:purple': '#e090a0'},
-            {'naam': 'Spider-Man en Venom', 'zangoose:fur': '#c82028', 'zangoose:red': '#2850c0',
-             'seviper:body': ('#202024', {'l': 1.3}), 'seviper:yellow': '#f0f0f0', 'seviper:purple': '#f0f0f0'},
-            {'naam': 'Rode en gouden draak', 'zangoose:fur': '#c01828', 'zangoose:red': '#f0c030', 'seviper:body': '#e0b030',
-             'seviper:yellow': '#c01828', 'seviper:purple': '#c01828'},
+            {'naam': 'Zwarte panter en albinopython', 'zangoose:fur': ('#2c2c34', {'l': 1.3}), 'zangoose:red': '#e0b030',
+             'seviper:body': '#ece4d0', 'seviper:yellow': '#f0d040', 'seviper:purple': '#e8d890', 'seviper:blade': '#f0a0b0'},
+            {'naam': 'Siamese kat en Quetzalcoatl', 'zangoose:fur': '#e8dcc8', 'zangoose:red': '#4c3828',
+             'seviper:body': '#2898b0', 'seviper:yellow': '#e8c030', 'seviper:purple': '#d03030', 'seviper:blade': '#40c860'},
+            {'naam': 'Bastet en Apophis', 'zangoose:fur': '#e0b030', 'zangoose:red': '#2848a8',
+             'seviper:body': ('#2c2038', {'l': 1.3}), 'seviper:yellow': '#d02828', 'seviper:purple': '#d02828',
+             'seviper:blade': '#e0b030'},
         ],
     },
     'lunatone': {
@@ -842,7 +844,7 @@ LINES = {
             {'naam': 'Terracotta', 'body': '#c06838', 'red': '#3c3030'},
             {'naam': 'Jade', 'body': '#48a078', 'red': '#e0b030'},
             {'naam': 'Ming-porselein', 'body': '#d8e0f0', 'claydol:body': '#d0d8ec', 'red': '#2848a8', 'white': '#2848a8'},
-            {'naam': 'Zwartfigurig (Grieks)', 'body': ('#2c2828', {'l': 1.3}), 'red': '#e07028', 'white': '#e07028'},
+            {'naam': 'Albino', 'body': ('#d8d4cc', ALBINO), 'red': '#e02838', 'white': '#ece8e4', 'tan': '#e8d8c8'},
             {'naam': 'Dogu (Jomon)', 'body': '#a04830', 'red': '#f0ece0', 'tan': '#f0ece0'},
             {'naam': 'Ufo', 'body': '#b8c0cc', 'red': '#58e058', 'white': '#3c4450'},
         ],

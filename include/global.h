@@ -1064,7 +1064,7 @@ struct ExternalEventFlags
 
 struct Bag
 {
-    struct ItemSlot items[BAG_ITEMS_COUNT];
+    struct ItemSlot itemsLegacy[BAG_ITEMS_COUNT_LEGACY]; // Project Grounded: wordt bij het laden naar bagItems verhuisd
     struct ItemSlot keyItems[BAG_KEYITEMS_COUNT];
     struct ItemSlot pokeBalls[BAG_POKEBALLS_COUNT];
     struct ItemSlot TMsHMs[BAG_TMHM_COUNT];
@@ -1179,7 +1179,9 @@ struct SaveBlock1
     /*0x3???*/ struct TrainerHillSave trainerHill;
 #endif //FREE_TRAINER_HILL
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
-    u8 groundedFlags[NUM_GROUNDED_FLAGS / 8]; // Project Grounded: extra flags (GROUNDED_FLAGS_START), altijd achteraan houden
+    u8 groundedFlags[NUM_GROUNDED_FLAGS / 8]; // Project Grounded: extra flags (GROUNDED_FLAGS_START)
+    // Project Grounded: nieuwe velden alleen hieronder toevoegen (oude saves lezen hier nullen, zie HandleWriteSector).
+    struct ItemSlot bagItems[BAG_ITEMS_COUNT]; // Items-pocket (was bag.items met 30 plekken)
     // sizeof: 0x3???
 };
 

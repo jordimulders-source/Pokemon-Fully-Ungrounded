@@ -93,7 +93,8 @@
 #define ROAMER_COUNT 1 // Number of maximum concurrent active roamers
 
 // Bag constants
-#define BAG_ITEMS_COUNT 30
+#define BAG_ITEMS_COUNT_LEGACY 30 // Project Grounded: oude Items-pocket in struct Bag (alleen nog voor oude saves)
+#define BAG_ITEMS_COUNT 120       // Project Grounded: Items-pocket staat nu achteraan SaveBlock1 (bagItems)
 #define BAG_KEYITEMS_COUNT 30
 #define BAG_POKEBALLS_COUNT 16
 #define BAG_TMHM_COUNT 64

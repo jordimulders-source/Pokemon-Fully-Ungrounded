@@ -1,5 +1,9 @@
 # Levelcurve (9 okt)
 
+> **12 okt:** inhaal-EXP milder (Jordi: inflatie aan het begin): +25% per level achterstand, max. ×3 (was +100%, max. ×10). Hoofdpad nu +1,5 tot +3 boven elke gymleider, Steven −0,7. Zie de changelog ([v1.0.0], testrun).
+> **12 okt (2):** het hoofdstuk vóór Roxanne staat weer op de levels van vóór deze revisie (Roxanne ace 18, Route 102 trainers 6–8, wild 6–8): het begin hoeft niet te stijgen (weinig nieuwe content), de curve loopt pas daarna geleidelijk op. Hoofdpad: Roxanne +2,1, Brawly +1,3, Wattson +1,9.
+> **12 okt (3), geldend:** regulier spelen = een paar levels ónder de gymleider (Jordi). Inhaal-EXP alleen als vangnet (onder ace − 9); gymleiders en bossgevechten opgehoogd tot ace ≈ team + 2,5. Hoofdpad: gyms −1,8 tot −3,0, E4 −3,6, Steven −6,5; met alle zijcontent nergens boven de ace. Details in de changelog.
+
 Vraag van Jordi: door alle nieuwe trainers en grotere teams loopt een reguliere speler ver voor. Daarna (feedback): **de E4 rond lv 80, Steven ace 84, de sterkste superbosses op 100; grinden is een no-go; extra content is het alternatief voor grinden; variatie in teams moet worden aangemoedigd.** Ronde 3: grap-teams, wilde Pokémon en legendaries schalen mee; advies over evolutielevels.
 
 ## Ontwerp in één alinea

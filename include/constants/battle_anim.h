@@ -426,6 +426,7 @@
 #define ANIM_TAG_LASER_DOT                  (ANIM_SPRITES_START + 412) // Project Grounded: Laser Beam
 #define ANIM_TAG_BROKEN_HEART               (ANIM_SPRITES_START + 413) // Project Grounded: Heartbreak
 #define ANIM_TAG_MUMMY_BANDAGE              (ANIM_SPRITES_START + 414) // Project Grounded: Mummy's Curse
+#define ANIM_TAG_MOAI_STATUE                (ANIM_SPRITES_START + 415) // Project Grounded: Moai Watch
 
 // battlers
 #define ANIM_ATTACKER         0
@@ -599,7 +600,9 @@
 #define B_ANIM_SWAP_FROM_SUBSTITUTE     55
 #define B_ANIM_ACID_RAIN_CONTINUES      56 // Project Grounded
 #define B_ANIM_POLLEN_HAZE_CONTINUES    57 // Project Grounded
-#define NUM_B_ANIMS_GENERAL             58
+#define B_ANIM_BEAVER_DAM_BREAK         58 // Project Grounded
+#define B_ANIM_MOAI_CRUMBLE             59 // Project Grounded
+#define NUM_B_ANIMS_GENERAL             60
 
 // special animations table (sBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0
@@ -646,6 +649,7 @@
 #define TRAP_ANIM_THUNDER_CAGE 8
 #define TRAP_ANIM_MUMMYS_CURSE 9 // Project Grounded
 #define TRAP_ANIM_STEEL_TRAP 10 // Project Grounded
+#define TRAP_ANIM_HYPHAL_SNARE 11 // Project Grounded
 
 // Weather defines for battle animation scripts.
 #define ANIM_WEATHER_NONE 0

@@ -1342,13 +1342,11 @@ SlateportCity_EventScript_SetScottDisguiseFemale::
 	setvar VAR_OBJ_GFX_ID_0, OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL
 	return
 
-@ Project Grounded: strandman die maar één vraag stelt.
+@ Project Grounded: strandvrouw die maar één vraag stelt (volle party: de Pokémon gaat naar de pc).
 SlateportCity_EventScript_SpitOrSwallow::
 	lock
 	faceplayer
 	goto_if_set FLAG_RECEIVED_SPIT_SWALLOW_MON, SlateportCity_EventScript_SpitOrSwallowNice
-	getpartysize
-	goto_if_eq VAR_RESULT, PARTY_SIZE, SlateportCity_EventScript_SpitOrSwallowAsk
 	message SlateportCity_Text_SpitOrSwallow
 	waitmessage
 	dynmultichoice 21, 6, TRUE, 2, 0, DYN_MULTICHOICE_CB_NONE, SlateportCity_Text_Spit, SlateportCity_Text_Swallow
@@ -1361,19 +1359,16 @@ SlateportCity_EventScript_Swallow::
 	givemon SPECIES_CRAMORANT, 10, item=ITEM_NONE, move1=MOVE_STOCKPILE, move2=MOVE_SWALLOW, move3=MOVE_NONE, move4=MOVE_NONE
 	bufferspeciesname STR_VAR_1, SPECIES_CRAMORANT
 SlateportCity_EventScript_SpitOrSwallowReceived::
+	copyvar VAR_0x8004, VAR_RESULT
 	playfanfare MUS_OBTAIN_ITEM
 	message SlateportCity_Text_ReceivedSpitOrSwallowMon
 	waitmessage
 	waitfanfare
 	setflag FLAG_RECEIVED_SPIT_SWALLOW_MON
+	goto_if_ne VAR_0x8004, MON_GIVEN_TO_PC, SlateportCity_EventScript_SpitOrSwallowNice
+	msgbox SlateportCity_Text_SpitOrSwallowToPC, MSGBOX_DEFAULT
 SlateportCity_EventScript_SpitOrSwallowNice::
 	msgbox SlateportCity_Text_Nice, MSGBOX_DEFAULT
-	release
-	end
-
-@ Volle party: hij stelt alleen de vraag, zonder keuzemenu.
-SlateportCity_EventScript_SpitOrSwallowAsk::
-	msgbox SlateportCity_Text_SpitOrSwallow, MSGBOX_DEFAULT
 	release
 	end
 
@@ -1391,6 +1386,9 @@ SlateportCity_Text_ReceivedSpitOrSwallowMon:
 
 SlateportCity_Text_Nice:
 	.string "Nice.$"
+
+SlateportCity_Text_SpitOrSwallowToPC:
+	.string "{STR_VAR_1} was sent to the PC.$"
 
 @ Project Grounded: Prof. Oak staat bij de vuurtoren naar zee te kijken. Gevecht, daarna een Kanto-starter naar keuze.
 SlateportCity_EventScript_ProfOak::

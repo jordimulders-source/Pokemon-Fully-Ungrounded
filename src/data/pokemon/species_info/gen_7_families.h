@@ -1859,7 +1859,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_BUG, EGG_GROUP_FAIRY),
-        .abilities = { ABILITY_HONEY_GATHER, ABILITY_SHIELD_DUST, ABILITY_POLLEN_SEASON }, // Project Grounded: Sweet Veil -> Pollen Season
+        .abilities = { ABILITY_POLLEN_SEASON, ABILITY_SHIELD_DUST, ABILITY_HONEY_GATHER }, // Project Grounded: Sweet Veil -> Pollen Season
         .bodyColor = BODY_COLOR_YELLOW,
         .speciesName = _("Ribombee"),
         .cryId = CRY_RIBOMBEE,
@@ -2763,8 +2763,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
 
     [SPECIES_ARAQUANID] =
     {
-        .baseHP        = 68,
-        .baseAttack    = 70,
+        .baseHP        = 78,
+        .baseAttack    = 90,
         .baseDefense   = 92,
         .baseSpeed     = 42,
         .baseSpAttack  = 50,

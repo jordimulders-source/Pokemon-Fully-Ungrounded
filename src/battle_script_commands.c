@@ -1194,6 +1194,7 @@ static void Cmd_attackcanceler(void)
 
     if (gSpecialStatuses[gBattlerAttacker].parentalBondState == PARENTAL_BOND_OFF
      && ctx.abilities[ctx.battlerAtk] == ABILITY_PARENTAL_BOND
+     && ParentalBondActive(gBattlerAttacker)
      && IsMoveAffectedByParentalBond(gCurrentMove, gBattlerAttacker)
      && !(gAbsentBattlerFlags & (1u << gBattlerTarget))
      && GetActiveGimmick(gBattlerAttacker) != GIMMICK_Z_MOVE)
@@ -1566,9 +1567,32 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
     }
 }
 
+// Project Grounded: Lure Light. Wie deze beurt Lumineon aanvalt (het lokaas), wordt vlak voor zijn
+// aanval verblind: Accuracy -1, één keer per aanvaller per beurt.
+static u8 sLureDazzledMask; // wordt gewist zodra Lure Light gebruikt wordt (+2, dus vóór de aanvallen)
+
+static bool32 TryLureLightDazzle(void)
+{
+    u32 side = GetBattlerSide(gBattlerTarget);
+
+    if (!gSideTimers[side].followmeTimer
+     || !gSideTimers[side].followmeLureLight
+     || gSideTimers[side].followmeTarget != gBattlerTarget
+     || IsBattlerAlly(gBattlerAttacker, gBattlerTarget)
+     || !IsBattlerAlive(gBattlerTarget)
+     || (sLureDazzledMask & (1u << gBattlerAttacker)))
+        return FALSE;
+    sLureDazzledMask |= 1u << gBattlerAttacker;
+    BattleScriptCall(BattleScript_LureLightDazzleAttacker);
+    return TRUE;
+}
+
 static void Cmd_accuracycheck(void)
 {
     CMD_ARGS(const u8 *failInstr, u16 move);
+
+    if (cmd->move == ACC_CURR_MOVE && TryLureLightDazzle())
+        return;
 
     // The main body of this function has been moved to AccuracyCheck() to accomodate
     // Dragon Darts' multiple accuracy checks on a single attack;
@@ -3277,7 +3301,9 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
         }
         break;
     case MOVE_EFFECT_WRAP:
-        if (gBattleMons[gEffectBattler].volatiles.wrapped)
+        if (gBattleMons[gEffectBattler].volatiles.wrapped
+         || (gCurrentMove == MOVE_HYPHAL_SNARE // Project Grounded: sporen, dus geen vat op Grass/Overcoat/Safety Goggles
+          && !IsAffectedByPowderMove(gEffectBattler, GetBattlerAbility(gEffectBattler), GetBattlerHoldEffect(gEffectBattler))))
         {
             gBattlescriptCurrInstr = battleScript;
         }
@@ -8143,6 +8169,16 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
                 SetDmgHazardsBattlescript(battler, B_MSG_SHARPSTEELDMG);
         }
         break;
+    case HAZARDS_MOAI_WATCH: // Project Grounded
+        if (IsBattlerAffectedByHazards(battler, FALSE) && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        {
+            enum Type types[3];
+            GetBattlerTypes(battler, FALSE, types);
+            gBattleStruct->passiveHpUpdate[battler] = GetMoaiWatchDamageByTypesAndHP(types[0], types[1], gBattleMons[battler].maxHP, gSideTimers[side].moaiWatchAmount);
+            if (gBattleStruct->passiveHpUpdate[battler] != 0)
+                SetDmgHazardsBattlescript(battler, B_MSG_MOAIWATCHDMG);
+        }
+        break;
     case HAZARDS_MAX_COUNT:
         break;
     }
@@ -9595,6 +9631,7 @@ static bool32 DefogClearHazards(u32 saveBattler, u32 side, bool32 clear)
             {
                 gBattleStruct->numHazards[side]--;
                 gBattleCommunication[MULTISTRING_CHOOSER] = hazardType;
+                gBattleScripting.battler = GetBattlerAtPosition(side == B_SIDE_PLAYER ? B_POSITION_PLAYER_LEFT : B_POSITION_OPPONENT_LEFT); // Project Grounded: Moai-instortanimatie
                 BattleScriptCall(BattleScript_DefogClearHazards);
             }
             else
@@ -9825,6 +9862,7 @@ void BS_CourtChangeSwapSideStatuses(void)
         gBattleStruct->hazardsQueue[B_SIDE_OPPONENT][i] = tempQueue[i];
     SWAP(sideTimerPlayer->spikesAmount, sideTimerOpp->spikesAmount, temp);
     SWAP(sideTimerPlayer->toxicSpikesAmount, sideTimerOpp->toxicSpikesAmount, temp);
+    SWAP(sideTimerPlayer->moaiWatchAmount, sideTimerOpp->moaiWatchAmount, temp); // Project Grounded
 
     // Change battler IDs of swapped effects. Needed for the correct string when they expire
     UPDATE_COURTCHANGED_BATTLER(stickyWebBattlerId);
@@ -10241,6 +10279,8 @@ static void Cmd_stockpile(void)
     {
     case 0:
         gDisableStructs[gBattlerAttacker].stockpileCounter++;
+        if (gCurrentMove == MOVE_BEAVER_DAM) // Project Grounded
+            gDisableStructs[gBattlerAttacker].beaverDam = TRUE;
         gDisableStructs[gBattlerAttacker].stockpileBeforeDef = gBattleMons[gBattlerAttacker].statStages[STAT_DEF];
         gDisableStructs[gBattlerAttacker].stockpileBeforeSpDef = gBattleMons[gBattlerAttacker].statStages[STAT_SPDEF];
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 1, gDisableStructs[gBattlerAttacker].stockpileCounter);
@@ -12557,6 +12597,7 @@ static void Cmd_rapidspinfree(void)
             {
                 gBattleStruct->numHazards[atkSide]--;
                 gBattleCommunication[MULTISTRING_CHOOSER] = hazardType;
+                gBattleScripting.battler = gBattlerAttacker; // Project Grounded: Moai-instortanimatie
                 BattleScriptCall(BattleScript_SpinHazardsAway);
                 return;
             }
@@ -12808,6 +12849,9 @@ static void Cmd_setforcedtarget(void)
     gSideTimers[GetBattlerSide(gBattlerTarget)].followmeTimer = 1;
     gSideTimers[GetBattlerSide(gBattlerTarget)].followmeTarget = gBattlerTarget;
     gSideTimers[GetBattlerSide(gBattlerTarget)].followmePowder = IsPowderMove(gCurrentMove);
+    gSideTimers[GetBattlerSide(gBattlerTarget)].followmeLureLight = (gCurrentMove == MOVE_LURE_LIGHT); // Project Grounded
+    if (gCurrentMove == MOVE_LURE_LIGHT)
+        sLureDazzledMask = 0;
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -13319,13 +13363,26 @@ static void Cmd_setstealthrock(void)
     CMD_ARGS(const u8 *failInstr);
 
     u8 targetSide = GetBattlerSide(gBattlerTarget);
-    if (IsHazardOnSide(targetSide, HAZARDS_STEALTH_ROCK))
+    enum Hazards hazard = (gCurrentMove == MOVE_MOAI_WATCH) ? HAZARDS_MOAI_WATCH : HAZARDS_STEALTH_ROCK; // Project Grounded
+    if (hazard == HAZARDS_MOAI_WATCH) // Project Grounded: stapelbaar tot 3 lagen, zoals Spikes
+    {
+        if (gSideTimers[targetSide].moaiWatchAmount >= 3)
+        {
+            gBattlescriptCurrInstr = cmd->failInstr;
+            return;
+        }
+        if (!IsHazardOnSide(targetSide, HAZARDS_MOAI_WATCH))
+            PushHazardTypeToQueue(targetSide, HAZARDS_MOAI_WATCH);
+        gSideTimers[targetSide].moaiWatchAmount++;
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+    else if (IsHazardOnSide(targetSide, hazard))
     {
         gBattlescriptCurrInstr = cmd->failInstr;
     }
     else
     {
-        PushHazardTypeToQueue(targetSide, HAZARDS_STEALTH_ROCK);
+        PushHazardTypeToQueue(targetSide, hazard);
         gBattlescriptCurrInstr = cmd->nextInstr;
     }
 }
@@ -18851,4 +18908,54 @@ void BS_GroundedObedienceWarnCaught(void)
         return;
     }
     gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: Beaver Dam. Valt Bibarel flauw met een dam (stockpile-lagen), dan breekt de dam
+// en krijgt elke tegenstander 1/6 van zijn max. HP per laag (Magic Guard beschermt).
+static u8 sBeaverDamOwner, sBeaverDamLayers, sBeaverDamNext;
+
+void BeaverDam_PrepareFlood(u32 owner, u32 layers)
+{
+    sBeaverDamOwner = owner;
+    sBeaverDamLayers = layers;
+    sBeaverDamNext = 0;
+}
+
+void BS_TryBeaverDamBreak(void)
+{
+    NATIVE_ARGS();
+    u32 battler = gBattlerFainted;
+
+    if (gDisableStructs[battler].beaverDam && gDisableStructs[battler].stockpileCounter > 0)
+    {
+        BeaverDam_PrepareFlood(battler, gDisableStructs[battler].stockpileCounter);
+        gDisableStructs[battler].beaverDam = FALSE;
+        gBattleScripting.battler = battler;
+        BattleScriptPush(cmd->nextInstr);
+        gBattlescriptCurrInstr = BattleScript_BeaverDamBreak;
+        return;
+    }
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+void BS_BeaverDamFloodNext(void)
+{
+    NATIVE_ARGS(const u8 *endInstr);
+
+    while (sBeaverDamNext < gBattlersCount)
+    {
+        u32 battler = sBeaverDamNext++;
+        if (IsBattlerAlive(battler)
+         && !IsBattlerAlly(battler, sBeaverDamOwner)
+         && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        {
+            s32 dmg = GetNonDynamaxMaxHP(battler) * sBeaverDamLayers / 6;
+            gBattleScripting.battler = battler;
+            SetPassiveDamageAmount(battler, dmg > 0 ? dmg : 1);
+            gBattlescriptCurrInstr = cmd->nextInstr;
+            return;
+        }
+    }
+    gBattleScripting.battler = sBeaverDamOwner;
+    gBattlescriptCurrInstr = cmd->endInstr;
 }

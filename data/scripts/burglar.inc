@@ -121,9 +121,11 @@ Burglar_EventScript_AfterBattle::
 	msgbox Burglar_Text_Flee, MSGBOX_DEFAULT
 	special Burglar_ThiefFlee
 	waitmovement LOCALID_BURGLAR_THIEF
+	fadescreenspeed FADE_TO_BLACK, 0
 	setvar VAR_0x8004, LOCALID_BURGLAR_THIEF
 	special Burglar_RemoveActor
 	special Burglar_SetupVars
+	fadescreenspeed FADE_FROM_BLACK, 0
 	fadedefaultbgm
 	msgbox Burglar_Text_Dropped, MSGBOX_DEFAULT
 	goto_if_eq VAR_0x8007, 8, Burglar_EventScript_BigNugget

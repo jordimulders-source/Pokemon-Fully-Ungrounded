@@ -68,6 +68,8 @@ SlateportCity_OceanicMuseum_2F_EventScript_CaptStern::
 	msgbox SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs, MSGBOX_DEFAULT
 	setvar VAR_0x8004, ITEM_DEVON_PARTS
 	call Common_EventScript_PlayerHandedOverTheItem
+	msgbox SlateportCity_OceanicMuseum_2F_Text_SternTakeMoonStone, MSGBOX_DEFAULT
+	giveitem ITEM_MOON_STONE
 	msgbox SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo, MSGBOX_DEFAULT
 	closemessage
 	fadescreen FADE_TO_BLACK
@@ -335,6 +337,12 @@ SlateportCity_OceanicMuseum_2F_Text_SternThankYouForSavingUs:
 	.string "us!\p"
 	.string "Oh, and you even brought the parts from\n"
 	.string "DEVON!$"
+
+SlateportCity_OceanicMuseum_2F_Text_SternTakeMoonStone:
+	.string "CAPT. STERN: Here, take this as thanks.\n"
+	.string "We dredged it up from the seafloor.\p"
+	.string "It's either a MOON STONE or a very\n"
+	.string "old potato. Either way, it's yours.$"
 
 SlateportCity_OceanicMuseum_2F_Text_SternIveGotToGo:
 	.string "CAPT. STERN: Whoops! No time to lose!\p"

@@ -245,3 +245,169 @@ SINGLE_BATTLE_TEST("Heartbreak lowers the target's Sp. Atk")
         EXPECT_EQ(opponent->statStages[STAT_SPATK], DEFAULT_STAT_STAGE - 1);
     }
 }
+
+// Hyphal Snare: Grass 75, contact, bindt 4-5 beurten; sporen, dus geen vat op Grass-types.
+SINGLE_BATTLE_TEST("Hyphal Snare binds the target")
+{
+    GIVEN {
+        ASSUME(MoveHasAdditionalEffect(MOVE_HYPHAL_SNARE, MOVE_EFFECT_WRAP));
+        PLAYER(SPECIES_PARASECT);
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_HYPHAL_SNARE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HYPHAL_SNARE, player);
+        HP_BAR(opponent);
+        MESSAGE("The opposing Wobbuffet got tangled in Parasect's hyphae! Gross!");
+        HP_BAR(opponent); // binding damage at end of turn
+    } THEN {
+        EXPECT(opponent->volatiles.wrapped);
+    }
+}
+
+SINGLE_BATTLE_TEST("Hyphal Snare does not bind Grass types")
+{
+    GIVEN {
+        PLAYER(SPECIES_PARASECT);
+        OPPONENT(SPECIES_ODDISH);
+    } WHEN {
+        TURN { MOVE(player, MOVE_HYPHAL_SNARE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_HYPHAL_SNARE, player);
+        HP_BAR(opponent);
+        NOT MESSAGE("The opposing Oddish got tangled in Parasect's hyphae! Gross!");
+    } THEN {
+        EXPECT(!opponent->volatiles.wrapped);
+    }
+}
+
+// Cavitation (Golduck): Water, special; power naar snelheidsverhouding (40/60/80/100/120), max 120.
+SINGLE_BATTLE_TEST("Cavitation deals more damage the faster the user is", s16 damage)
+{
+    u32 speed;
+    PARAMETRIZE { speed = 50; }
+    PARAMETRIZE { speed = 400; }
+    GIVEN {
+        PLAYER(SPECIES_GOLDUCK) { Speed(speed); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(100); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_CAVITATION); }
+    } SCENE {
+        HP_BAR(opponent, captureDamage: &results[i].damage);
+    } FINALLY {
+        EXPECT_MUL_EQ(results[0].damage, Q_4_12(3.0), results[1].damage);
+    }
+}
+
+// Lure Light (Lumineon): Follow Me (+2); wie Lumineon daarna aanvalt, krijgt vlak ervoor Accuracy -1.
+DOUBLE_BATTLE_TEST("Lure Light redirects attacks and dazzles only the attackers")
+{
+    GIVEN {
+        PLAYER(SPECIES_LUMINEON);
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(playerLeft, MOVE_LURE_LIGHT); MOVE(opponentLeft, MOVE_TACKLE, target: playerRight); MOVE(opponentRight, MOVE_CELEBRATE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_LURE_LIGHT, playerLeft);
+        MESSAGE("Lumineon became the center of attention!");
+        MESSAGE("The opposing Wobbuffet was dazzled by Lumineon's lure!");
+        MESSAGE("The opposing Wobbuffet's accuracy fell!");
+    } THEN {
+        EXPECT_EQ(opponentLeft->statStages[STAT_ACC], DEFAULT_STAT_STAGE - 1);
+        EXPECT_EQ(opponentRight->statStages[STAT_ACC], DEFAULT_STAT_STAGE);
+    }
+}
+
+// Beaver Dam (Bibarel): Stockpile-lagen (+1 Def/SpDef); valt Bibarel flauw, dan breekt de dam en
+// verliest elke tegenstander 1/6 van zijn max. HP per laag.
+SINGLE_BATTLE_TEST("Beaver Dam bursts when Bibarel faints and floods the foe")
+{
+    GIVEN {
+        PLAYER(SPECIES_BIBAREL) { HP(1); }
+        PLAYER(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_BEAVER_DAM); MOVE(opponent, MOVE_TACKLE); SEND_OUT(player, 1); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_BEAVER_DAM, player);
+        MESSAGE("Bibarel added a layer to its dam! (1/3)");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_TACKLE, opponent);
+        MESSAGE("Bibarel fainted!");
+        MESSAGE("With no one to keep it up, Bibarel's dam burst!");
+        HP_BAR(opponent);
+        MESSAGE("The opposing Wobbuffet was swept away by the flood!");
+    }
+}
+
+// Moai Watch (Probopass): hazard; wie binnenkomt krijgt 1/8 x de beste van Rock/Electric.
+SINGLE_BATTLE_TEST("Moai Watch damages a switched-in foe with the better of Rock and Electric")
+{
+    s16 damage;
+    GIVEN {
+        PLAYER(SPECIES_PROBOPASS);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WINGULL); // Water/Flying: Electric 4x
+    } WHEN {
+        TURN { MOVE(player, MOVE_MOAI_WATCH); }
+        TURN { SWITCH(opponent, 1); }
+    } SCENE {
+        MESSAGE("Stone statues now stand watch around the opposing team!");
+        MESSAGE("The stone statues turned on the opposing Wingull!");
+        HP_BAR(opponent, captureDamage: &damage);
+    } THEN {
+        EXPECT_EQ(damage, GetMonData(&OPPONENT_PARTY[1], MON_DATA_MAX_HP) / 2);
+    }
+}
+
+// Heliotropism (Sunflora): komt hij binnen in de zon, dan +2 op alle stats.
+SINGLE_BATTLE_TEST("Heliotropism sharply raises all stats when entering in sun")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_SUNFLORA) { Ability(ABILITY_HELIOTROPISM); }
+        OPPONENT(SPECIES_TORKOAL) { Ability(ABILITY_DROUGHT); }
+    } WHEN {
+        TURN { SWITCH(player, 1); }
+    } SCENE {
+        ABILITY_POPUP(player, ABILITY_HELIOTROPISM);
+    } THEN {
+        EXPECT_EQ(player->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 2);
+        EXPECT_EQ(player->statStages[STAT_DEF], DEFAULT_STAT_STAGE + 2);
+        EXPECT_EQ(player->statStages[STAT_SPEED], DEFAULT_STAT_STAGE + 2);
+        EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE + 2);
+        EXPECT_EQ(player->statStages[STAT_SPDEF], DEFAULT_STAT_STAGE + 2);
+    }
+}
+
+SINGLE_BATTLE_TEST("Heliotropism does nothing without sun")
+{
+    GIVEN {
+        PLAYER(SPECIES_SUNFLORA) { Ability(ABILITY_HELIOTROPISM); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { }
+    } THEN {
+        EXPECT_EQ(player->statStages[STAT_SPATK], DEFAULT_STAT_STAGE);
+    }
+}
+
+// Parental Bond (Project Grounded): alleen boven de helft van de HP slaat de baby mee.
+SINGLE_BATTLE_TEST("Parental Bond only hits twice above half HP")
+{
+    u32 hp;
+    PARAMETRIZE { hp = 200; }
+    PARAMETRIZE { hp = 90; }
+    GIVEN {
+        PLAYER(SPECIES_KANGASKHAN) { Ability(ABILITY_PARENTAL_BOND); MaxHP(200); HP(hp); }
+        OPPONENT(SPECIES_WOBBUFFET) { MaxHP(999); HP(999); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_TACKLE); }
+    } SCENE {
+        if (hp > 100)
+            MESSAGE("The Pokémon was hit 2 time(s)!");
+        else
+            NOT MESSAGE("The Pokémon was hit 2 time(s)!");
+    }
+}

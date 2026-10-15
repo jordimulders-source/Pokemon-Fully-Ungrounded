@@ -584,6 +584,7 @@ gSpecials::
 	def_special Stadium_StartTournament
 	def_special Stadium_ShowNextMatch
 	def_special Stadium_StartMatch
+	def_special Grounded_StartWallyRaltsBattle
 	def_special Stadium_AfterMatch
 	def_special Stadium_EndTournament
 	def_special Stadium_ChooseCompanion

@@ -79,6 +79,8 @@ struct TIState
     u8 spr[TI_MAX_SPR];
     u8 kind[TI_MAX_SPR];
     u16 monSpr;                         // CreateMonPicSprite geeft een u16
+    u16 mons[4];                        // extra frontsprites (affine), zie RV_MonPic in rival_intros.h
+    u8 nmons;
     u16 tags[TI_MAX_TAGS];
     u8 field[MAX_SPRITES];              // sprites van de kaart (met hun oorspronkelijke x2/y2)
     s16 fieldY2[MAX_SPRITES];
@@ -803,6 +805,17 @@ static void TI_Free(void)
     }
     if (sTI->monSpr != 0xFFFF)
         FreeAndDestroyMonPicSprite(sTI->monSpr);
+    for (i = 0; i < sTI->nmons; i++)
+    {
+        struct Sprite *sp = &gSprites[sTI->mons[i]];
+        if (sp->oam.affineMode != ST_OAM_AFFINE_OFF)
+        {
+            FreeOamMatrix(sp->oam.matrixNum);
+            sp->oam.affineMode = ST_OAM_AFFINE_OFF;
+            sp->oam.matrixNum = 0;
+        }
+        FreeAndDestroyMonPicSprite(sTI->mons[i]);
+    }
     for (i = 0; i < sTI->ntags; i++)
     {
         FreeSpriteTilesByTag(sTI->tags[i]);

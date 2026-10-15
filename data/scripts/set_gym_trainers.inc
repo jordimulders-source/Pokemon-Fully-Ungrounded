@@ -21,7 +21,7 @@ DewfordTown_Gym_SetGymTrainers::
 	settrainerflag TRAINER_ROMERO
 	settrainerflag TRAINER_MCGREGOR
 	settrainerflag TRAINER_BAS_RUTTEN
-	settrainerflag TRAINER_CRISTIAN
+	settrainerflag TRAINER_CHAEL
 	settrainerflag TRAINER_ROGAN
 	return
 

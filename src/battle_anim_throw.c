@@ -2729,6 +2729,9 @@ void AnimTask_GetTrappedMoveAnimId(u8 taskId)
     case MOVE_STEEL_TRAP:
         gBattleAnimArgs[0] = TRAP_ANIM_STEEL_TRAP;
         break;
+    case MOVE_HYPHAL_SNARE:
+        gBattleAnimArgs[0] = TRAP_ANIM_HYPHAL_SNARE;
+        break;
     default:
         gBattleAnimArgs[0] = TRAP_ANIM_BIND;
         break;

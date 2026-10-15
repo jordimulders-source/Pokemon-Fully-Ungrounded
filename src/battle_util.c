@@ -4516,6 +4516,16 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                 effect++;
             }
             break;
+        case ABILITY_HELIOTROPISM: // Project Grounded: Sunflora draait naar de zon en bloeit op
+            if (!gSpecialStatuses[battler].switchInAbilityDone
+             && IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                gBattleScripting.battler = battler;
+                BattleScriptPushCursorAndCallback(BattleScript_HeliotropismActivates);
+                effect++;
+            }
+            break;
         case ABILITY_INTREPID_SWORD:
             if (!gSpecialStatuses[battler].switchInAbilityDone
              && !GetBattlerPartyState(battler)->intrepidSwordBoost)
@@ -7059,6 +7069,7 @@ static const u16 sWeightToDamageTable[] =
 };
 
 static const u8 sSpeedDiffPowerTable[] = {40, 60, 80, 120, 150};
+static const u8 sCavitationPowerTable[] = {40, 60, 80, 100, 120}; // Project Grounded: Cavitation (Golduck), max 120
 static const u8 sHeatCrashPowerTable[] = {40, 40, 60, 80, 100, 120};
 static const u8 sTrumpCardPowerTable[] = {200, 80, 60, 50, 40};
 
@@ -7270,9 +7281,9 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         if (gBattleMons[battlerAtk].volatiles.confusionTurns)
             basePower *= 2;
         break;
-    case EFFECT_STRAIGHT_LINE: // Project Grounded: tweede keer achter elkaar = dubbel
+    case EFFECT_STRAIGHT_LINE: // Project Grounded: opnieuw achter elkaar = x1,5 (maar zonder prioriteit, zie GetBattleMovePriority)
         if (gBattleStruct->metronomeItemCounter[battlerAtk] > 0)
-            basePower *= 2;
+            basePower = basePower * 3 / 2;
         break;
     case EFFECT_WIND_CHIME: // Project Grounded: met Tailwind dubbel, tegen een doelwit met status x1,5
         if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_TAILWIND)
@@ -7359,7 +7370,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         speed = GetBattlerTotalSpeedStat(battlerAtk, ctx->abilityAtk, ctx->holdEffectAtk) / GetBattlerTotalSpeedStat(battlerDef, ctx->abilityDef, ctx->holdEffectDef);
         if (speed >= ARRAY_COUNT(sSpeedDiffPowerTable))
             speed = ARRAY_COUNT(sSpeedDiffPowerTable) - 1;
-        basePower = sSpeedDiffPowerTable[speed];
+        basePower = (move == MOVE_CAVITATION) ? sCavitationPowerTable[speed] : sSpeedDiffPowerTable[speed];
         break;
     case EFFECT_GYRO_BALL:
         {
@@ -9294,6 +9305,23 @@ s32 GetStealthHazardDamageByTypesAndHP(enum TypeSideHazard hazardType, enum Type
     return dmg;
 }
 
+// Project Grounded: Moai Watch - de beelden slaan toe met de beste van Rock (steen) of Electric
+// (de magnetische Mini-Noses) tegen de nieuwkomer: 1/8 max. HP x die effectiviteit.
+// Lagen: 1 = 1/8, 2 = 1/6, 3 = 1/4 (x effectiviteit), nooit meer dan de helft van de max. HP.
+s32 GetMoaiWatchDamageByTypesAndHP(enum Type type1, enum Type type2, u32 maxHp, u32 layers)
+{
+    s32 rock = GetStealthHazardDamageByTypesAndHP((enum TypeSideHazard)TYPE_ROCK, type1, type2, maxHp);
+    s32 elec = GetStealthHazardDamageByTypesAndHP((enum TypeSideHazard)TYPE_ELECTRIC, type1, type2, maxHp);
+    s32 dmg = rock > elec ? rock : elec; // 1/8 x effectiviteit
+    if (layers == 2)
+        dmg = dmg * 8 / 6;
+    else if (layers >= 3)
+        dmg = dmg * 2;
+    if (dmg > (s32)(maxHp / 2))
+        dmg = maxHp / 2;
+    return dmg;
+}
+
 s32 GetStealthHazardDamage(enum TypeSideHazard hazardType, u32 battler)
 {
     enum Type types[3];
@@ -11053,6 +11081,8 @@ bool32 IsHazardOnSideAndClear(u32 side, enum Hazards hazardType)
                 gSideTimers[side].spikesAmount = 0;
             else if (hazardType == HAZARDS_TOXIC_SPIKES)
                 gSideTimers[side].toxicSpikesAmount = 0;
+            else if (hazardType == HAZARDS_MOAI_WATCH) // Project Grounded
+                gSideTimers[side].moaiWatchAmount = 0;
             return TRUE;
         }
     }
@@ -11081,6 +11111,8 @@ void RemoveHazardFromField(u32 side, enum Hazards hazardType)
                 gSideTimers[side].spikesAmount = 0;
             else if (hazardType == HAZARDS_TOXIC_SPIKES)
                 gSideTimers[side].toxicSpikesAmount = 0;
+            else if (hazardType == HAZARDS_MOAI_WATCH) // Project Grounded
+                gSideTimers[side].moaiWatchAmount = 0;
             break;
         }
     }
@@ -11663,4 +11695,13 @@ bool32 IsSwallowableHoldEffect(enum HoldEffect holdEffect)
     default:
         return FALSE;
     }
+}
+
+// Project Grounded: de baby slaat alleen mee zolang moeder boven de helft van haar HP zit
+// (Jordi: "dat die goed kan zorgen voor haar kind boven de 50% HP"). Mega Kangaskhan altijd.
+bool32 ParentalBondActive(u32 battler)
+{
+    if (gBattleMons[battler].species == SPECIES_KANGASKHAN_MEGA)
+        return TRUE;
+    return gBattleMons[battler].hp * 2 > gBattleMons[battler].maxHP;
 }

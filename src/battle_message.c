@@ -320,6 +320,15 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_SPIREBLOCKSOFTENED]                   = COMPOUND_STRING("The block softened the hit!"),
     [STRINGID_PKMNMUMMYWRAPPED]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was wrapped\nin cursed bandages!"),
     [STRINGID_PKMNINSTEELTRAP]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} stepped right\ninto {B_ATK_NAME_WITH_PREFIX2}'s steel trap!"),
+    [STRINGID_MOAISTANDWATCH]                       = COMPOUND_STRING("Stone statues now stand watch\naround {B_DEF_TEAM2} team!"),
+    [STRINGID_MOAIWATCHDMG]                         = COMPOUND_STRING("The stone statues turned on\n{B_SCR_NAME_WITH_PREFIX2}!"),
+    [STRINGID_MOAIDISAPPEARED]                      = COMPOUND_STRING("The stone statues around\n{B_ATK_TEAM2} team crumbled away!"),
+    [STRINGID_PKMNBLEWAWAYMOAI]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} toppled\nthe stone statues!"),
+    [STRINGID_LURELIGHTDAZZLED]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} was dazzled\nby {B_DEF_NAME_WITH_PREFIX2}'s lure!"),
+    [STRINGID_BEAVERDAMLAYER]                       = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} added a layer\nto its dam! ({B_BUFF1}/3)"),
+    [STRINGID_BEAVERDAMBREAK]                       = COMPOUND_STRING("With no one to keep it up,\n{B_SCR_NAME_WITH_PREFIX2}'s dam burst!"),
+    [STRINGID_BEAVERDAMFLOOD]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} was swept\naway by the flood!"),
+    [STRINGID_PKMNHYPHALSNARE]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} got tangled\nin {B_ATK_NAME_WITH_PREFIX2}'s hyphae! Gross!"),
     [STRINGID_WEATHERREPORTFORECAST] = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} checked the forecast\nfor {B_DEF_NAME_WITH_PREFIX2}…"),
     [STRINGID_WINDCHIMEHEAL] = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} was soothed\nby the wind chime!"),
     [STRINGID_PRIMEVALWARD] = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} hasn't changed in\n100 million years. Why start now?"),
@@ -994,6 +1003,7 @@ const u16 gDmgHazardsStringIds[] =
     [B_MSG_POINTEDSTONESFLOAT] = STRINGID_POINTEDSTONESFLOAT,
     [B_MSG_SPIKESSCATTERED]    = STRINGID_SPIKESSCATTERED,
     [B_MSG_SHARPSTEELFLOATS]   = STRINGID_SHARPSTEELFLOATS,
+    [B_MSG_MOAIWATCHDMG]       = STRINGID_MOAIWATCHDMG, // Project Grounded
 };
 
 const u16 gSwitchInAbilityStringIds[] =
@@ -1168,6 +1178,7 @@ const u16 gWrappedStringIds[NUM_TRAPPING_MOVES] =
     [B_MSG_WRAPPED_THUNDER_CAGE]= STRINGID_THUNDERCAGETRAPPED,     // MOVE_THUNDER_CAGE
     [B_MSG_WRAPPED_MUMMY]       = STRINGID_PKMNMUMMYWRAPPED,       // MOVE_MUMMYS_CURSE (Project Grounded)
     [B_MSG_WRAPPED_STEEL_TRAP]  = STRINGID_PKMNINSTEELTRAP,        // MOVE_STEEL_TRAP (Project Grounded)
+    [B_MSG_WRAPPED_HYPHAL_SNARE] = STRINGID_PKMNHYPHALSNARE,       // MOVE_HYPHAL_SNARE (Project Grounded)
 };
 
 const u16 gMistUsedStringIds[] =
@@ -1417,6 +1428,7 @@ const u16 gDefogHazardsStringIds[] =
     [HAZARDS_TOXIC_SPIKES] = STRINGID_TOXICSPIKESDISAPPEAREDFROMTEAM,
     [HAZARDS_STEALTH_ROCK] = STRINGID_STEALTHROCKDISAPPEAREDFROMTEAM,
     [HAZARDS_STEELSURGE] = STRINGID_SHARPSTEELDISAPPEAREDFROMTEAM,
+    [HAZARDS_MOAI_WATCH] = STRINGID_MOAIDISAPPEARED,
 };
 
 const u16 gSpinHazardsStringIds[] =
@@ -1426,6 +1438,7 @@ const u16 gSpinHazardsStringIds[] =
     [HAZARDS_TOXIC_SPIKES] = STRINGID_PKMNBLEWAWAYTOXICSPIKES,
     [HAZARDS_STEALTH_ROCK] = STRINGID_PKMNBLEWAWAYSTEALTHROCK,
     [HAZARDS_STEELSURGE] = STRINGID_PKMNBLEWAWAYSHARPSTEEL,
+    [HAZARDS_MOAI_WATCH] = STRINGID_PKMNBLEWAWAYMOAI,
 };
 
 const u8 gText_PkmnIsEvolving[] = _("What?\n{STR_VAR_1} is evolving!");

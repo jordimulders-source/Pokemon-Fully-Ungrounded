@@ -468,6 +468,6 @@ LavaridgeTown_Gym_1F_Text_GymGuideAceLevel:
 
 LavaridgeTown_Gym_1F_Text_GymGuideNextAce:
 	.string "Next stop: NORMAN in PETALBURG.\n"
-	.string "Your dad. His ace is level 47.\p"
+	.string "Your dad. His ace is level 46.\p"
 	.string "That's all the free advice.\n"
 	.string "The rest costs a RARE CANDY.$"

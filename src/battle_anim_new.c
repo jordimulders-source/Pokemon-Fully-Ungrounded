@@ -10130,3 +10130,207 @@ const struct SpriteTemplate gTipsyDuckSpriteTemplate =
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimTipsyDuck,
 };
+
+// Project Grounded: Beaver Dam - stammen (Wood Hammer) en takken (Branch Poke) vormen een dam voor
+// de aanvaller. arg0/arg1: eindpositie t.o.v. de aanvaller, arg2/arg3: startoffset (schuift naar 0),
+// arg4: aantal stappen (deelt arg2/arg3 precies), arg5: frames blijven staan, arg6: draaiing (affine),
+// arg7: 1 = omgekeerd (vliegt van de eindpositie weg, voor het breken van de dam).
+static const union AnimCmd sAnim_DamLog[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnims_DamLog[] =
+{
+    sAnim_DamLog,
+};
+
+static const union AffineAnimCmd sAffineAnim_DamRot0[]   = { AFFINEANIMCMD_FRAME(0x100, 0x100, 64, 0), AFFINEANIMCMD_END };
+static const union AffineAnimCmd sAffineAnim_DamRot1[]   = { AFFINEANIMCMD_FRAME(0x100, 0x100, 0, 0), AFFINEANIMCMD_END };
+static const union AffineAnimCmd sAffineAnim_DamRot2[]   = { AFFINEANIMCMD_FRAME(0x100, 0x100, 20, 0), AFFINEANIMCMD_END };
+static const union AffineAnimCmd sAffineAnim_DamRot3[]   = { AFFINEANIMCMD_FRAME(0x100, 0x100, -24, 0), AFFINEANIMCMD_END };
+static const union AffineAnimCmd sAffineAnim_DamRot4[]   = { AFFINEANIMCMD_FRAME(0x100, 0x100, 128, 0), AFFINEANIMCMD_END };
+
+static const union AffineAnimCmd *const sAffineAnims_DamPiece[] =
+{
+    sAffineAnim_DamRot0, // liggende stam
+    sAffineAnim_DamRot1,
+    sAffineAnim_DamRot2,
+    sAffineAnim_DamRot3,
+    sAffineAnim_DamRot4,
+};
+
+static void AnimBeaverDamPiece_Step(struct Sprite *sprite)
+{
+    if (sprite->data[0] > 0)
+    {
+        sprite->x2 += sprite->data[1];
+        sprite->y2 += sprite->data[2];
+        sprite->data[0]--;
+        if (sprite->data[0] == 0 && sprite->data[4]) // omgekeerd: weg na de vlucht
+            DestroyAnimSprite(sprite);
+    }
+    else if (sprite->data[3] > 0)
+    {
+        sprite->data[3]--;
+    }
+    else
+    {
+        DestroyAnimSprite(sprite);
+    }
+}
+
+static void AnimBeaverDamPiece(struct Sprite *sprite)
+{
+    s16 steps = gBattleAnimArgs[4] > 0 ? gBattleAnimArgs[4] : 1;
+
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2) + gBattleAnimArgs[0];
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[1];
+    if (GetBattlerSide(gBattleAnimAttacker) == B_SIDE_PLAYER)
+        sprite->y -= 26; // anders valt de dam achter het tekstvak
+    sprite->data[4] = gBattleAnimArgs[7];
+    if (sprite->data[4])
+    {
+        sprite->x2 = 0;
+        sprite->y2 = 0;
+        sprite->data[1] = gBattleAnimArgs[2] / steps;
+        sprite->data[2] = gBattleAnimArgs[3] / steps;
+    }
+    else
+    {
+        sprite->x2 = gBattleAnimArgs[2];
+        sprite->y2 = gBattleAnimArgs[3];
+        sprite->data[1] = -gBattleAnimArgs[2] / steps;
+        sprite->data[2] = -gBattleAnimArgs[3] / steps;
+    }
+    sprite->data[0] = (gBattleAnimArgs[4] > 1) ? steps : 0;
+    if (sprite->data[0] == 0 && !sprite->data[4])
+    {
+        sprite->x2 = 0;
+        sprite->y2 = 0;
+    }
+    sprite->data[3] = gBattleAnimArgs[5];
+    StartSpriteAffineAnim(sprite, gBattleAnimArgs[6]);
+    sprite->callback = AnimBeaverDamPiece_Step;
+}
+
+const struct SpriteTemplate gBeaverDamLogSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_WOOD_HAMMER,
+    .paletteTag = ANIM_TAG_WOOD_HAMMER,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = sAnims_DamLog,
+    .images = NULL,
+    .affineAnims = sAffineAnims_DamPiece,
+    .callback = AnimBeaverDamPiece,
+};
+
+const struct SpriteTemplate gBeaverDamBranchSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_BRANCH,
+    .paletteTag = ANIM_TAG_BRANCH,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = sAffineAnims_DamPiece,
+    .callback = AnimBeaverDamPiece,
+};
+
+void AnimTask_GetBeaverDamLayers(u8 taskId)
+{
+    u32 layers = gAnimDisableStructPtr != NULL ? gAnimDisableStructPtr->stockpileCounter : 1;
+    gBattleAnimArgs[ARG_RET_ID] = (layers >= 1 && layers <= 3) ? layers : 1;
+    DestroyAnimVisualTask(taskId);
+}
+
+// Project Grounded: Moai Watch - stenen beelden (uit de Nosepass Spring-tileset) rijzen draaiend op aan de
+// kant van het doelwit en vallen stil met hun gezicht naar voren. De draai: 4 aanzichten (voor, rechts,
+// achter, links); halverwege elke kwartslag knijpt het beeld tot de helft samen en wisselt het aanzicht,
+// zodat het als een kanteling oogt en nooit een lijntje wordt.
+// moai_statue.png: 0-3 Nosepass (voor, links, rechts, achter), 4 Nosepass gebroken,
+//                  5-8 Probopass (idem), 9 Probopass gebroken.
+// arg0/arg1: positie t.o.v. het doelwit, arg2: frames per kwartslag, arg3: aantal kwartslagen,
+// arg4: hoogte waarover hij oprijst, arg5: frames blijven staan,
+// arg6: soort (0 Nosepass, 1 Nosepass 1,5x, 2 Probopass), arg7: 1 = gebroken (geen draai).
+static const u8 sMoaiSpinOrder[] = {0, 2, 3, 1};
+
+static void AnimMoaiStatue_SetScale(struct Sprite *sprite, s32 width)
+{
+    s32 scale = sprite->data[5]; // 0x100 = 1x, 0x180 = 1,5x
+    s32 w = (width * scale) / 0x100;
+    if (w < 1)
+        w = 1;
+    gOamMatrices[sprite->oam.matrixNum].a = (0x100 * 0x100) / w;
+    gOamMatrices[sprite->oam.matrixNum].b = 0;
+    gOamMatrices[sprite->oam.matrixNum].c = 0;
+    gOamMatrices[sprite->oam.matrixNum].d = (0x100 * 0x100) / scale;
+}
+
+static void AnimMoaiStatue_Step(struct Sprite *sprite)
+{
+    s16 t = sprite->data[0]++;
+    s16 q = sprite->data[1];          // frames per kwartslag
+    s16 turns = sprite->data[2];
+    s16 total = q * turns;
+    s16 rise = sprite->data[3];
+
+    if (t < total)
+    {
+        s16 turn = t / q, u = t % q, half = q / 2;
+        u8 frame = sMoaiSpinOrder[(u < half ? turn : turn + 1) % 4];
+        sprite->oam.tileNum = sprite->data[7] + frame * 16;
+        // breedte 100% -> 50% (wissel van aanzicht) -> 100%
+        AnimMoaiStatue_SetScale(sprite, 0x80 + (abs(half - u) * 0x80) / half);
+        sprite->y2 = rise - (rise * t) / total;
+    }
+    else
+    {
+        sprite->oam.tileNum = sprite->data[7];
+        AnimMoaiStatue_SetScale(sprite, 0x100);
+        sprite->y2 = 0;
+        if (--sprite->data[4] <= 0)
+            DestroyAnimSprite(sprite);
+    }
+}
+
+static void AnimMoaiStatue(struct Sprite *sprite)
+{
+    u32 kind = gBattleAnimArgs[6];
+
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2) + gBattleAnimArgs[0];
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y) + gBattleAnimArgs[1];
+    sprite->data[7] = sprite->oam.tileNum + (kind == 2 ? 5 * 16 : 0);
+    sprite->data[5] = (kind == 1) ? 0x180 : 0x100;
+    if (kind == 1)
+        sprite->y -= 8; // groter beeld, voet op dezelfde plek
+    sprite->affineAnimPaused = TRUE;
+    sprite->data[0] = 0;
+    sprite->data[1] = gBattleAnimArgs[2] > 1 ? gBattleAnimArgs[2] : 2;
+    sprite->data[2] = gBattleAnimArgs[7] ? 0 : gBattleAnimArgs[3];
+    sprite->data[3] = gBattleAnimArgs[4];
+    sprite->data[4] = gBattleAnimArgs[5];
+    if (gBattleAnimArgs[7])
+        sprite->data[7] += 4 * 16; // gebroken beeld
+    AnimMoaiStatue_SetScale(sprite, 0x100);
+    sprite->callback = AnimMoaiStatue_Step;
+    sprite->callback(sprite);
+}
+
+const struct SpriteTemplate gMoaiStatueSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_MOAI_STATUE,
+    .paletteTag = ANIM_TAG_MOAI_STATUE,
+    .oam = &gOamData_AffineDouble_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimMoaiStatue,
+};
+
+void AnimTask_GetMoaiWatchLayers(u8 taskId)
+{
+    u32 layers = gSideTimers[GetBattlerSide(gBattleAnimTarget)].moaiWatchAmount;
+    gBattleAnimArgs[ARG_RET_ID] = (layers >= 1 && layers <= 3) ? layers : 1;
+    DestroyAnimVisualTask(taskId);
+}

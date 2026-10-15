@@ -87,6 +87,7 @@ kampioen-slot zoals in vanilla Emerald (en in oudere uitleg op internet).
 | McGregor | `TRAINER_MCGREGOR` | `TRAINER_LAURA` | 426 | 0x6AA | Black Belt, Dewford Gym |
 | Bas Rutten | `TRAINER_BAS_RUTTEN` | `TRAINER_BRENDEN` | 572 | 0x73C | Sailor, Dewford Gym |
 | Rogan | `TRAINER_ROGAN` | `TRAINER_LILITH` | 573 | 0x73D | Black Belt, Dewford Gym |
+| Chael (was Cristian) | `TRAINER_CHAEL` | `TRAINER_CRISTIAN` | 574 | 0x73E | Black Belt, Dewford Gym |
 | Dio | `TRAINER_DIO` | `TRAINER_MARC` | 571 | 0x73B | Dragon Tamer, Rustboro Gym |
 | Uri | `TRAINER_URI` | `TRAINER_PRESTON` | 233 | 0x5E9 | Psychic, Mossdeep Gym |
 | Blackmore | `TRAINER_BLACKMORE` | `TRAINER_MARCOS` | 702 | 0x7BE | Guitarist, Route 103 |

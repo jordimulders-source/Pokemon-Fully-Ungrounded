@@ -139,9 +139,31 @@ void ApplyNewEncryptionKeyToBagItems(u32 newKey)
     }
 }
 
+// Project Grounded: de Items-pocket staat sinds de grotere tas in gSaveBlock1Ptr->bagItems.
+// Items uit de oude pocket (oude saves) verhuizen daarheen; de oude plekken worden leeg.
+void MigrateLegacyBagItems(void)
+{
+    u32 i, j = 0;
+    struct ItemSlot *legacy = gSaveBlock1Ptr->bag.itemsLegacy;
+    struct ItemSlot *items = gSaveBlock1Ptr->bagItems;
+
+    for (i = 0; i < BAG_ITEMS_COUNT_LEGACY; i++)
+    {
+        if (legacy[i].itemId == ITEM_NONE)
+            continue;
+        while (j < BAG_ITEMS_COUNT && items[j].itemId != ITEM_NONE)
+            j++;
+        if (j >= BAG_ITEMS_COUNT)
+            break;
+        items[j] = legacy[i]; // quantity blijft versleuteld met dezelfde sleutel
+        legacy[i].itemId = ITEM_NONE;
+        legacy[i].quantity = 0;
+    }
+}
+
 void SetBagItemsPointers(void)
 {
-    gBagPockets[POCKET_ITEMS].itemSlots = gSaveBlock1Ptr->bag.items;
+    gBagPockets[POCKET_ITEMS].itemSlots = gSaveBlock1Ptr->bagItems;
     gBagPockets[POCKET_ITEMS].capacity = BAG_ITEMS_COUNT;
     gBagPockets[POCKET_ITEMS].id = POCKET_ITEMS;
 
@@ -560,6 +582,7 @@ void MoveItemSlotInPC(struct ItemSlot *itemSlots, u32 from, u32 to)
 void ClearBag(void)
 {
     CpuFastFill(0, &gSaveBlock1Ptr->bag, sizeof(struct Bag));
+    CpuFastFill(0, gSaveBlock1Ptr->bagItems, sizeof(gSaveBlock1Ptr->bagItems));
 }
 
 static inline u16 NONNULL BagPocket_CountTotalItemQuantity(struct BagPocket *pocket, u16 itemId)

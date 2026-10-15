@@ -450,12 +450,12 @@ Route104_Movement_SailToDewfordBeforeDadCalls:
 	walk_fast_down
 	walk_fast_right
 	walk_fast_right
+	walk_fast_right
+	walk_fast_right
 	walk_faster_right
 	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
+	walk_fast_right
+	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_down
@@ -479,22 +479,29 @@ Route104_Movement_SailToDewfordBeforeDadCalls:
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down
@@ -524,10 +531,10 @@ Route104_Movement_SailToDewfordBeforeDadCalls:
 	step_end
 
 Route104_Movement_SailToDewfordAfterDadCalls:
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down
@@ -595,13 +602,10 @@ Route104_Movement_SailToDewfordAfterDadCalls:
 	walk_faster_right
 	walk_faster_right
 	walk_faster_right
-	walk_faster_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
-	walk_right
-	walk_right
 	walk_down
 	walk_down
 	walk_fast_down
@@ -650,14 +654,54 @@ Route104_Movement_SailToDewford:
 	walk_fast_down
 	walk_fast_right
 	walk_fast_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
-	walk_faster_right
+	walk_fast_right
+	walk_fast_right
 	walk_faster_right
 	walk_faster_right
 	walk_fast_right
 	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_faster_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_right
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_down
+	walk_fast_left
+	walk_fast_left
 	walk_fast_down
 	walk_fast_down
 	walk_fast_down
@@ -712,39 +756,6 @@ Route104_Movement_SailToDewford:
 	walk_faster_down
 	walk_faster_down
 	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
-	walk_faster_down
 	walk_fast_down
 	walk_fast_down
 	walk_fast_down
@@ -792,13 +803,10 @@ Route104_Movement_SailToDewford:
 	walk_faster_right
 	walk_faster_right
 	walk_faster_right
-	walk_faster_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
 	walk_fast_right
-	walk_right
-	walk_right
 	walk_down
 	walk_down
 	walk_fast_down
@@ -1252,6 +1260,11 @@ Route104_EventScript_SickBlikBeach::
 	msgbox Route104_Text_SickBlikBeachIntro, MSGBOX_DEFAULT
 	trainerbattle_no_intro TRAINER_SICKBLIK_BEACH, Route104_Text_SickBlikBeachDefeat
 	msgbox Route104_Text_SickBlikBeachAfter, MSGBOX_DEFAULT
+	msgbox Route104_Text_SickBlikBeachLeave, MSGBOX_DEFAULT
+	closemessage
+	fadescreen FADE_TO_BLACK
+	removeobject LOCALID_ROUTE104_SICKBLIK_BEACH
+	fadescreen FADE_FROM_BLACK
 	release
 	end
 
@@ -1279,3 +1292,8 @@ Route104_Text_SickBlikBeachDefeat:
 Route104_Text_SickBlikBeachAfter:
 	.string "SICKBLIK: Fine, no football then.\n"
 	.string "I'll go yell at a WINGULL instead.$"
+
+Route104_Text_SickBlikBeachLeave:
+	.string "Actually, I've never played my own\n"
+	.string "game. Time to explore it!\p"
+	.string "If I find a bug, I'm blaming the AI.$"

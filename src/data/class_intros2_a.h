@@ -3,8 +3,8 @@
 // Alles is code: vormen op BG0 (CI2A_Fill/CI2A_HLine), kleine sprites uit een buffer, gevechtsanimatie-art, mon-iconen
 // (Magikarp, de kaarten) en trainerfoto's die al in de ROM staan.
 //
-//   Fisherman    lijn uit; een laars, een visgraat, Magikarp (drie keer "wah wah"); de hengel buigt dubbel, is weg, en
-//                iets enorms met één gloeiend oog komt uit de diepte
+//   Fisherman    lijn uit; Magikarp, Goldeen, Tentacool, Carvanha, Wailmer (echte frontsprites, elke vangst groter);
+//                de hengel buigt dubbel, is weg, en een Wailord (4x op BG0) komt uit de diepte en past niet in beeld
 //   Guitarist    een rock-game-fretboard in perspectief; gekleurde noten schuiven op de tel naar de slaglijn (E5, A5,
 //                D5, G5), dan een power chord over alle vijf de snaren
 //   Ninja Boy    drie handtekens (RAM! SNAKE! TIGER!) met speedlines, schaduwklonen (1, 3, 7), een blauwe wervelbol
@@ -129,7 +129,7 @@ static void CI2A_BufRect(u8 *buf, u32 wTiles, s32 x0, s32 y0, s32 x1, s32 y1, u3
             TI_BufPixel(buf, wTiles, x, y, c);
 }
 
-// mon-icoon (Magikarp, kaarten): TI_Free ruimt die niet goed op (eigen tegels), dus zelf weggooien met CI2A_FreeIcon
+// mon-icoon (kaarten): TI_Free ruimt die niet goed op (eigen tegels), dus zelf weggooien met CI2A_FreeIcon
 static u8 CI2A_Icon(u16 species, s16 x, s16 y)
 {
     u8 id;
@@ -163,33 +163,11 @@ static const u16 sCI2A_TextPal[4] = {0, RGB(31, 31, 31), RGB(20, 2, 2), 0};
 // ---------------------------------------------------------------------------------------------------------------------
 // Fisherman: kansloze vissersactie
 
-// 1 lijn, 2 hengel, 3 rood, 4 silhouet, 5 oog, 6 tekst, 7 tekstschaduw, 8 tanden
-static const u16 sCI2A_FishPal[9] = {0, RGB(30, 30, 28), RGB(27, 19, 9), RGB(31, 6, 4), RGB(1, 2, 5), RGB(31, 29, 6), RGB(31, 31, 31), RGB(3, 3, 5), RGB(26, 26, 22)};
-// 1 donker, 2 bruin, 3 lichtbruin, 4 bot, 5 rood, 6 wit
-static const u16 sCI2A_JunkPal[7] = {0, RGB(4, 3, 2), RGB(14, 8, 3), RGB(22, 14, 7), RGB(29, 29, 25), RGB(31, 5, 4), RGB(31, 31, 31)};
+// 1 lijn, 2 hengel, 6 tekst, 7 tekstschaduw
+static const u16 sCI2A_FishPal[8] = {0, RGB(30, 30, 28), RGB(27, 19, 9), 0, 0, 0, RGB(31, 31, 31), RGB(3, 3, 5)};
+// dobber: 1 donker, 5 rood, 6 wit
+static const u16 sCI2A_BobberPal[7] = {0, RGB(4, 3, 2), 0, 0, 0, RGB(31, 5, 4), RGB(31, 31, 31)};
 
-static const char sCI2A_Boot[] =
-    "....111111......"
-    "....123321......"
-    "....122321......"
-    "....122221......"
-    "....122221......"
-    "....122221......"
-    "...1222221......"
-    "...12222221111.."
-    "..122222222231.."
-    "..12222202222231"
-    "..12222222222221"
-    "..11111111111111"
-    "...1.1...1.1....";
-static const char sCI2A_Bone[] =
-    "4.....4.4.4....."
-    "44....4.4.4..44."
-    ".44...4.4.4.4444"
-    "..4444444444414."
-    ".44...4.4.4.4444"
-    "44....4.4.4..44."
-    "4.....4.4.4.....";
 static const char sCI2A_Bobber[] =
     "......1111......"
     ".....155551....."
@@ -198,22 +176,84 @@ static const char sCI2A_Bobber[] =
     "......1661......"
     ".......11.......";
 
-static const u8 *const sCI2A_Catch[4] = {
-    COMPOUND_STRING("1. a boot"),
-    COMPOUND_STRING("2. a fishbone"),
-    COMPOUND_STRING("3. Magikarp (again)"),
-    COMPOUND_STRING("4. oh no."),
+// de vangsten (echte frontsprites): soort, schaal (matrixwaarde, 256 = 1x), worp (1/16 px per beeld), draaisnelheid
+#define FI_CATCHES 5
+#define FI_LIFE    40
+static const struct { u16 species; s16 scale, vx, vy, spin; } sCI2A_Catches[FI_CATCHES] = {
+    {SPECIES_MAGIKARP,  320, -28, -100,     0},   // spartelt (spiegelen) i.p.v. draaien
+    {SPECIES_GOLDEEN,   300, -40, -104,  1400},
+    {SPECIES_TENTACOOL, 300, -20, -108, -1800},
+    {SPECIES_CARVANHA,  280, -48,  -96,  2600},
+    {SPECIES_WAILMER,   224,  -8,  -64,   300},   // zwaar: komt nauwelijks boven water
+};
+
+static const u8 *const sCI2A_Catch[FI_CATCHES + 1] = {
+    COMPOUND_STRING("1. Magikarp (again)"),
+    COMPOUND_STRING("2. Goldeen (meh)"),
+    COMPOUND_STRING("3. Tentacool (ow)"),
+    COMPOUND_STRING("4. Carvanha (OW!)"),
+    COMPOUND_STRING("5. Wailmer (heavy)"),
+    COMPOUND_STRING("6. oh no."),
 };
 
 #define FI_BOBBER  0
-#define FI_JUNK    1   // 1-3: laars, visgraat, Magikarp
-#define FI_BANG    4
-#define FI_BUBBLE  5
-#define FI_ROD     6   // getekende buiging (-1 = niets)
-#define FI_LBX     7   // getekende lijn: dobber x, y, doorhang
-#define FI_LBY     8
-#define FI_LSAG    9
-#define FI_DEEP    10  // 1 = de hengel is weg, het silhouet staat op BG0
+#define FI_PIC     1   // 1-5: de vangsten (MAX_SPRITES = nog niet / niet meer)
+#define FI_BANG    6
+#define FI_ROD     7   // getekende buiging (-1 = niets)
+#define FI_LBX     8   // getekende lijn: dobber x, y, doorhang
+#define FI_LBY     9
+#define FI_LSAG    10
+#define FI_DEEP    11  // 1 = de hengel is weg, Wailord staat op BG0
+#define FI_SPLASH  12  // 12-17: spetters (bubbels)
+#define FI_NSPLASH 6
+
+// frontsprite van een vangst (affien, voor draaien/spiegelen); TIK_MON: TI_Free laat hem staan, CI2A_FreePic ruimt op
+static u8 CI2A_Pic(u16 species)
+{
+    u16 id = CreateMonPicSprite(species, FALSE, 0, TRUE, -64, -64, 0, species);
+    struct Sprite *s;
+    if (id >= MAX_SPRITES)
+        return MAX_SPRITES;
+    s = &gSprites[id];
+    s->invisible = TRUE;
+    s->oam.matrixNum = AllocOamMatrix();
+    if (s->oam.matrixNum == 0xFF)
+    {
+        s->oam.matrixNum = 0;
+    }
+    else
+    {
+        s->oam.affineMode = ST_OAM_AFFINE_DOUBLE;
+        s->affineAnimPaused = TRUE;
+        CalcCenterToCornerVec(s, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), ST_OAM_AFFINE_DOUBLE);
+    }
+    // na de init geladen: elke frame begint met sTI->base, dus het palet daar ook neerzetten
+    CpuCopy16(&gPlttBufferUnfaded[OBJ_PLTT_ID(s->oam.paletteNum)], &sTI->base[OBJ_PLTT_ID(s->oam.paletteNum)], PLTT_SIZE_4BPP);
+    return TI_Track(id, TIK_MON);
+}
+
+static void CI2A_FreePic(s32 *slot)
+{
+    struct Sprite *s;
+    u32 i;
+    if (*slot >= MAX_SPRITES)
+        return;
+    for (i = 0; i < TI_MAX_PART; i++)   // het deeltje mag de vrijgekomen sprite niet meer verplaatsen
+        if (sTI->part[i].on && sTI->part[i].slot == *slot)
+            sTI->part[i].on = FALSE;
+    s = &gSprites[*slot];
+    if (s->inUse)
+    {
+        if (s->oam.affineMode != ST_OAM_AFFINE_OFF)
+        {
+            FreeOamMatrix(s->oam.matrixNum);
+            s->oam.affineMode = ST_OAM_AFFINE_OFF;
+            s->oam.matrixNum = 0;
+        }
+        FreeAndDestroyMonPicSprite(*slot);
+    }
+    *slot = MAX_SPRITES;
+}
 
 // de hengel: kwadratische kromme van onder links naar de top; bend 0-256 = recht tot dubbelgebogen
 static void CI2A_RodTip(s32 bend, s32 *x, s32 *y)
@@ -263,61 +303,72 @@ static void CI2A_FishSet(s32 bend, s32 bx, s32 by, s32 sag)
     v[FI_LSAG] = sag;
 }
 
-// het ding uit de diepte: lijf, gevorkte staart, rugvin, één gloeiend oog, tanden
-static void CI2A_DrawDeep(void)
+// Wailord's frontsprite 4x op BG0 (256 x 256: de hele kaart, 32 x 32 tiles). Elke tile = 2 x 2 bronpixels; effen
+// tiles worden gedeeld (±350 eigen tiles). Palet 15 = Wailord.
+static void CI2A_DrawWailord4x(void)
 {
-    s16 xa[DISPLAY_HEIGHT], xb[DISPLAY_HEIGHT];
-    u32 solid = CI2A_Solid(4), y, i;
-    CI2A_FillEllipse(118, 112, 104, 52, 4, solid);
-    for (y = 0; y < DISPLAY_HEIGHT; y++)
+    u8 *pic = Alloc(MON_PIC_SIZE * MAX_MON_PIC_FRAMES);
+    u16 solid[16] = {0};
+    s32 tx, ty, r;
+    if (pic == NULL)
+        return;
+    LoadSpecialPokePic(pic, SPECIES_WAILORD, 0, TRUE);
+    TI_SetPal(15, GetMonSpritePalFromSpecies(SPECIES_WAILORD, FALSE, FALSE), 16);
+    for (ty = 0; ty < 32; ty++)
     {
-        s32 d = abs((s32)y - 112);
-        xa[y] = xb[y] = 0;
-        if (y >= 60)   // staart: een V die naar rechts openklapt
+        for (tx = 0; tx < 32; tx++)
         {
-            xa[y] = 206 - d / 3;
-            xb[y] = 214 + d;
-        }
-        if (y >= 36 && y < 70 && xb[y] == 0)   // rugvin
-        {
-            xa[y] = 112 - (y - 36) / 2;
-            xb[y] = 120 + (y - 36);
+            u32 c[4], n;
+            for (r = 0; r < 4; r++)
+            {
+                u32 x = tx * 2 + (r & 1), y = ty * 2 + (r >> 1);
+                u8 b = pic[((y >> 3) * 8 + (x >> 3)) * 32 + (y & 7) * 4 + ((x & 7) >> 1)];
+                c[r] = (x & 1) ? b >> 4 : b & 0xF;
+            }
+            if (c[0] == c[1] && c[0] == c[2] && c[0] == c[3])
+            {
+                if (c[0] == 0)
+                    continue;
+                if (solid[c[0]] == 0)
+                    solid[c[0]] = CI2A_Solid(c[0]);
+                TI_Put(tx, ty, solid[c[0]] | (15 << 12));
+                continue;
+            }
+            n = TI_NewTile();
+            if (n == 0)
+                continue;
+            for (r = 0; r < 8; r++)
+            {
+                u32 *row = (u32 *)&sTI->bg0tiles[n * 16 + r * 2];
+                u32 a = c[(r >> 2) * 2], b = c[(r >> 2) * 2 + 1];
+                *row = a * 0x1111 | (b * 0x1111) << 16;
+            }
+            TI_Put(tx, ty, n | (15 << 12));
         }
     }
-    CI2A_Fill(xa, xb, 0, DISPLAY_HEIGHT, 4, solid);
-    CI2A_FillEllipse(60, 96, 11, 7, 5, 0);
-    CI2A_FillEllipse(61, 96, 2, 6, 4, 0);
-    for (i = 0; i < 9; i++)   // tanden: driehoekjes langs de bek
-    {
-        TI_Line(14 + i * 9, 120, 18 + i * 9, 130, 0, 256, 0, 6);
-        TI_Line(18 + i * 9, 130, 22 + i * 9, 120, 0, 256, 0, 6);
-    }
+    Free(pic);
 }
 
 static void CIFish2_Init(void)
 {
-    u8 *buf = AllocZeroed(3 * 4 * 32);
+    u8 *buf = AllocZeroed(4 * 32);
     u32 i;
     TI_SetPal(15, sCI2A_FishPal, ARRAY_COUNT(sCI2A_FishPal));
+    sTI->v[FI_BOBBER] = MAX_SPRITES;
     if (buf != NULL)
     {
-        CI2A_Art(buf, 0, 1, sCI2A_Boot, sizeof(sCI2A_Boot) / 16);
-        CI2A_Art(buf, 1, 4, sCI2A_Bone, sizeof(sCI2A_Bone) / 16);
-        CI2A_Art(buf, 2, 5, sCI2A_Bobber, sizeof(sCI2A_Bobber) / 16);
-        sTI->v[FI_BOBBER] = TI_BufSprite(buf, 3 * 4 * 32, CI2A_TAG_SHEET, sCI2A_JunkPal, &gOamData_AffineOff_ObjNormal_16x16, -20, -20);
-        for (i = 0; i < 2; i++)
-        {
-            sTI->v[FI_JUNK + i] = TI_BufSprite(buf, 3 * 4 * 32, CI2A_TAG_SHEET, sCI2A_JunkPal, &gOamData_AffineDouble_ObjNormal_16x16, -20, -20);
-            gSprites[sTI->v[FI_JUNK + i]].oam.tileNum += i * 4;
-            TI_Show(sTI->v[FI_JUNK + i], FALSE);
-        }
-        gSprites[sTI->v[FI_BOBBER]].oam.tileNum += 8;
+        CI2A_Art(buf, 0, 5, sCI2A_Bobber, sizeof(sCI2A_Bobber) / 16);
+        sTI->v[FI_BOBBER] = TI_BufSprite(buf, 4 * 32, CI2A_TAG_SHEET, sCI2A_BobberPal, &gOamData_AffineOff_ObjNormal_16x16, -20, -20);
         Free(buf);
     }
-    sTI->v[FI_JUNK + 2] = CI2A_Icon(SPECIES_MAGIKARP, -40, -40);
+    for (i = 0; i < FI_CATCHES; i++)
+        sTI->v[FI_PIC + i] = MAX_SPRITES;
     sTI->v[FI_BANG] = TI_Bang(152, 64);
-    sTI->v[FI_BUBBLE] = TI_Anim(ANIM_TAG_SMALL_BUBBLES, &gOamData_AffineOff_ObjNormal_16x16, 0, 200, 0);
-    TI_Show(sTI->v[FI_BUBBLE], FALSE);
+    for (i = 0; i < FI_NSPLASH; i++)
+    {
+        sTI->v[FI_SPLASH + i] = TI_Anim(ANIM_TAG_SMALL_BUBBLES, &gOamData_AffineOff_ObjNormal_16x16, 0, 200, 0);
+        TI_Show(sTI->v[FI_SPLASH + i], FALSE);
+    }
     sTI->v[FI_ROD] = -1;
     TI_Windows(DISPCNT_WIN0_ON, WININ_WIN0_ALL, TI_NO_BG0);
     CI2A_Rise(0);
@@ -341,15 +392,17 @@ static bool32 CIFish2_Update(s32 t)
     if (TI_AT(h2))
     {
         PlaySE(SE_M_BUBBLE);
-        TI_Part(v[FI_BUBBLE], 152, 96, 0, -10, 1, 16);
+        TI_Part(v[FI_SPLASH], 152, 96, 0, -10, 1, 16);
     }
     if (t >= h2)
         by += Sin((t * 12) & 0xFF, 2);
-    // drie vangsten, telkens op de halve tel: dobber duikt, iets vliegt eruit, en valt
-    for (k = 0; k < 3; k++)
+    // vijf vangsten, één per halve tel, elke keer groter: dobber duikt, de vangst vliegt eruit en valt terug
+    for (k = 0; k < FI_CATCHES; k++)
     {
-        s32 hc = TI_Beat2(3 + 2 * k);
-        u8 id = v[FI_JUNK + k];
+        s32 hc = TI_Beat2(3 + k);
+        s32 *slot = &v[FI_PIC + k];
+        if (TI_AT(hc - 6))
+            *slot = CI2A_Pic(sCI2A_Catches[k].species);   // tijdens het duiken uitpakken
         if (t >= hc - 6 && t < hc)
         {
             by = 104;
@@ -357,20 +410,24 @@ static bool32 CIFish2_Update(s32 t)
         }
         if (TI_AT(hc))
         {
-            struct TIPart *p = TI_Part(id, 152, 96, -24, -96, 7, 0);
-            (void)p;
-            PlaySE(SE_BALL_BOUNCE_1);
+            TI_Part(*slot, 152, 92, sCI2A_Catches[k].vx, sCI2A_Catches[k].vy, 7, FI_LIFE);
+            PlaySE(k == FI_CATCHES - 1 ? SE_M_SURF : SE_BALL_BOUNCE_1);
             TI_TextBg(sCI2A_Catch[k], 1, 1 + 2 * k, 14, 2, 0, 0, 0, 6, 7, FONT_NORMAL, 15);
         }
-        if (TI_AT(hc + 10))
+        if (TI_AT(hc + 10) && (k == 0 || k == FI_CATCHES - 1))
             PlaySE(SE_FAILURE);
-        if (t >= hc && id < MAX_SPRITES)
+        if (t >= hc && *slot < MAX_SPRITES)
         {
-            if (k < 2)
-                TI_Scale(id, 256, 256, (t - hc) * (k ? -2400 : 1800));
-            else if (((t - hc) & 3) == 0)
-                gSprites[id].oam.matrixNum ^= ST_OAM_HFLIP;   // Magikarp spartelt
+            s32 sc = sCI2A_Catches[k].scale;
+            if (k == 0)
+                TI_Scale(*slot, ((t - hc) & 4) ? -sc : sc, sc, 0);   // Magikarp spartelt
+            else
+                TI_Scale(*slot, sc, sc, (t - hc) * sCI2A_Catches[k].spin);
         }
+        if (*slot < MAX_SPRITES && gSprites[*slot].y > 188)
+            TI_Show(*slot, FALSE);   // OAM-y is 8 bits: een 128 hoge sprite zou anders bovenin weer opduiken
+        if (t >= hc + FI_LIFE)
+            CI2A_FreePic(slot);
     }
     // de grote beet: "!", de hengel buigt dubbel, het beeld schudt
     if (TI_AT(h9))
@@ -378,7 +435,7 @@ static bool32 CIFish2_Update(s32 t)
         PlaySE(SE_PIN);
         TI_Show(v[FI_BANG], TRUE);
         TI_Scale(v[FI_BANG], 128, 128, 0);
-        TI_TextBg(sCI2A_Catch[3], 1, 7, 14, 2, 0, 0, 0, 6, 7, FONT_NORMAL, 15);
+        TI_TextBg(sCI2A_Catch[FI_CATCHES], 16, 1, 14, 2, 0, 0, 0, 6, 7, FONT_NORMAL, 15);
     }
     if (t >= h9)
     {
@@ -387,12 +444,12 @@ static bool32 CIFish2_Update(s32 t)
         bx = 154;
         by = 112;
         sag = 0;
-        shake = t < h12 ? 2 + (t - h9) / 6 : 0;
+        shake = t < h12 ? 2 + (t - h9) / 6 : max(0, 6 - (t - h12) / 2);
     }
     if (!v[FI_DEEP])
         CI2A_FishSet(bend, bx, by, sag);
     TI_Pos(v[FI_BOBBER], bx, by - 4);
-    // de hengel is weg; iets enorms komt omhoog
+    // de hengel is weg; Wailord komt uit de diepte en past niet in beeld
     if (TI_AT(h10))
     {
         PlaySE(SE_M_STRENGTH);
@@ -401,16 +458,19 @@ static bool32 CIFish2_Update(s32 t)
         sTI->nextTile = sTI->reserved = 1;
         v[FI_DEEP] = 1;
         CI2A_Rise(DISPLAY_HEIGHT);   // tekenen duurt langer dan een beeld: eerst verbergen
-        CI2A_DrawDeep();
+        CI2A_DrawWailord4x();
+        for (k = 0; k < FI_NSPLASH; k++)
+            TI_Part(v[FI_SPLASH + k], 20 + k * 40, 156, (k - 2) * 6 - 3, -40 - (k & 1) * 16, 3, 24);
     }
     TI_Shake(min(shake, 6));
-    if (TI_AT(h10))
-        for (k = 0; k < 3; k++)
-            TI_Show(v[FI_JUNK + k], FALSE);
     if (t >= h10)
     {
-        s32 r = TI_Ramp(t, h10, h12);
-        CI2A_Rise(160 - (r * (512 - r) * 160 >> 16));
+        // eerst omhoog tot de bovenkant van de kaart (bg0y 16), na de klap nog verder: hij blijft maar komen
+        s32 r = TI_Ramp(t, h10, h12), off = 160 - (r * (512 - r) * 160 >> 16);
+        s32 lunge = t >= h12 ? 28 - (28 * (256 - TI_Ramp(t, h12, end)) * (256 - TI_Ramp(t, h12, end)) >> 16) : 0;
+        CI2A_Rise(off);
+        sTI->bg0x += 8;
+        sTI->bg0y += 16 + lunge;
         TI_Tint(TI_World(), r * 13 >> 8, RGB(1, 3, 8));
     }
     else
@@ -418,14 +478,12 @@ static bool32 CIFish2_Update(s32 t)
         sTI->win0h = WIN_RANGE(0, DISPLAY_WIDTH);
         sTI->win0v = WIN_RANGE(0, DISPLAY_HEIGHT);
     }
-    // het oog gaat aan
     if (TI_AT(h12))
-        PlaySE(SE_M_LEER);
-    if (t >= h12)
-        gPlttBufferFaded[15 * 16 + 5] = ((t - h12) & 4) ? RGB(31, 31, 31) : RGB(31, 29, 6);
+        PlaySE(SE_M_HYDRO_PUMP);
     TI_Flash(t, h12, 8, 10, PALETTES_ALL, RGB(31, 31, 31));
     if (t >= end)
-        CI2A_FreeIcon(v[FI_JUNK + 2]);
+        for (k = 0; k < FI_CATCHES; k++)
+            CI2A_FreePic(&v[FI_PIC + k]);
     return t >= end;
 }
 

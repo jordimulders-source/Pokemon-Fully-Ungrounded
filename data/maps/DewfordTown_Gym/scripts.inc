@@ -124,7 +124,7 @@ DewfordTown_Gym_EventScript_CheckBasRutten::
 	goto_if_not_defeated TRAINER_BAS_RUTTEN, DewfordTown_Gym_EventScript_CheckCristian
 	addvar VAR_0x8000, 1
 DewfordTown_Gym_EventScript_CheckCristian::
-	goto_if_not_defeated TRAINER_CRISTIAN, DewfordTown_Gym_EventScript_CheckRogan
+	goto_if_not_defeated TRAINER_CHAEL, DewfordTown_Gym_EventScript_CheckRogan
 	addvar VAR_0x8000, 1
 DewfordTown_Gym_EventScript_CheckRogan::
 	goto_if_not_defeated TRAINER_ROGAN, DewfordTown_Gym_EventScript_StopCountingTrainers
@@ -228,7 +228,7 @@ DewfordTown_Gym_EventScript_BasRuttenBrightenRoom::
 	end
 
 DewfordTown_Gym_EventScript_Cristian::
-	trainerbattle_single TRAINER_CRISTIAN, DewfordTown_Gym_Text_CristianIntro, DewfordTown_Gym_Text_CristianDefeat, DewfordTown_Gym_EventScript_CristianBrightenRoom
+	trainerbattle_single TRAINER_CHAEL, DewfordTown_Gym_Text_CristianIntro, DewfordTown_Gym_Text_CristianDefeat, DewfordTown_Gym_EventScript_CristianBrightenRoom
 	msgbox DewfordTown_Gym_Text_CristianPostBattle, MSGBOX_AUTOCLOSE
 	end
 
@@ -511,12 +511,12 @@ DewfordTown_Gym_Text_BrawlyRematchNeedTwoMons:
 @ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
 DewfordTown_Gym_Text_GymGuideAceLevel:
 	.string "Insider info: the LEADER's ace\n"
-	.string "is level 26.\p"
+	.string "is level 23.\p"
 	.string "You didn't hear it from me.\n"
 	.string "You heard it from me, but still.$"
 
 DewfordTown_Gym_Text_GymGuideNextAce:
 	.string "Next stop: WATTSON in MAUVILLE.\n"
-	.string "Their ace is level 34.\p"
+	.string "Their ace is level 32.\p"
 	.string "That's all the free advice.\n"
 	.string "The rest costs a RARE CANDY.$"

@@ -2307,6 +2307,8 @@ extern const u32 gBattleAnimSpriteGfx_BrokenHeart[];
 extern const u16 gBattleAnimSpritePal_BrokenHeart[];
 extern const u32 gBattleAnimSpriteGfx_MummyBandage[];
 extern const u16 gBattleAnimSpritePal_MummyBandage[];
+extern const u32 gBattleAnimSpriteGfx_MoaiStatue[];
+extern const u16 gBattleAnimSpritePal_MoaiStatue[];
 extern const u32 gBattleAnimSpriteGfx_GreenSpike[];
 extern const u32 gBattleAnimSpriteGfx_Pokeblock[];
 extern const u32 gBattleAnimSpriteGfx_WhiteFeather[];

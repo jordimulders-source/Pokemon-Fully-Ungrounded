@@ -60,6 +60,11 @@ PetalburgCity_EventScript_WallyTutorial::
 	fadedefaultbgm
 	clearflag FLAG_DONT_TRANSITION_MUSIC
 	special LoadPlayerParty
+	@ Project Grounded (Jordi): Wally wil meteen zijn nieuwe Ralts testen; je pa interesseert het niks
+	msgbox PetalburgCity_Text_WallyRaltsChallenge, MSGBOX_DEFAULT
+	special Grounded_StartWallyRaltsBattle
+	trainerbattle_no_intro TRAINER_WALLY_MAUVILLE, PetalburgCity_Text_WallyRaltsDefeat
+	cleartrainerflag TRAINER_WALLY_MAUVILLE
 	setvar VAR_PETALBURG_GYM_STATE, 1
 	warp MAP_PETALBURG_CITY_GYM, 4, 108
 	waitstate
@@ -839,3 +844,11 @@ PetalburgCity_Text_EF_DavePetalburgPostBattle:
 	.string "Your dad's GYM counts as daycare.$"
 
 @ }
+
+PetalburgCity_Text_WallyRaltsChallenge:
+	.string "WALLY: Caught! Test for fighting\n"
+	.string "{PLAYER}? Going I'm here!$"
+
+PetalburgCity_Text_WallyRaltsDefeat:
+	.string "Lost I… Strong you are, RALTS\n"
+	.string "and me stronger will be!$"

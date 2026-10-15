@@ -21904,8 +21904,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Straight Line"),
         .description = COMPOUND_STRING(
-            "Dashes first. Double power if\n"
-            "used again right after."),
+            "Dashes first. Again in a row:\n"
+            "1.5x power, but no priority."),
         .effect = EFFECT_STRAIGHT_LINE,
         .power = 70,
         .type = TYPE_NORMAL,
@@ -22019,6 +22019,128 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_NineLives,
+    },
+
+    [MOVE_HYPHAL_SNARE] = // Project Grounded: Parasect
+    {
+        .name = COMPOUND_STRING("Hyphal Snare"),
+        .description = COMPOUND_STRING(
+            "Fungal threads snare the foe\n"
+            "for 4-5 turns. Not on Grass."),
+        .effect = EFFECT_HIT,
+        .power = 75,
+        .type = TYPE_GRASS,
+        .accuracy = 95,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WRAP,
+            .multistring.wrapped = B_MSG_WRAPPED_HYPHAL_SNARE,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HyphalSnare,
+    },
+
+    [MOVE_CAVITATION] = // Project Grounded: Golduck
+    {
+        .name = COMPOUND_STRING("Cavitation"),
+        .description = COMPOUND_STRING(
+            "Imploding bubbles from its\n"
+            "speed. Faster = stronger."),
+        .effect = EFFECT_ELECTRO_BALL,
+        .power = 1,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Cavitation,
+    },
+
+    [MOVE_LURE_LIGHT] = // Project Grounded: Lumineon (Follow Me + Flash)
+    {
+        .name = COMPOUND_STRING("Lure Light"),
+        .description = COMPOUND_STRING(
+            "A glowing lure draws all\n"
+            "attacks, then dazzles foes."),
+        .effect = EFFECT_FOLLOW_ME,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 2,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LureLight,
+    },
+
+    [MOVE_BEAVER_DAM] = // Project Grounded: Bibarel (Stockpile-lagen + vloed bij flauwvallen)
+    {
+        .name = COMPOUND_STRING("Beaver Dam"),
+        .description = COMPOUND_STRING(
+            "Adds a layer to its dam (x3).\n"
+            "Ups Def/Sp. Def. Bursts on KO."),
+        .effect = EFFECT_STOCKPILE,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RECOVER_HP },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_BeaverDam,
+    },
+
+    [MOVE_MOAI_WATCH] = // Project Grounded: Probopass (hazard, beste van Rock/Electric)
+    {
+        .name = COMPOUND_STRING("Moai Watch"),
+        .description = COMPOUND_STRING(
+            "Statues guard the foe's side.\n"
+            "They strike all who enter."),
+        .effect = EFFECT_STEALTH_ROCK,
+        .power = 0,
+        .type = TYPE_ROCK,
+        .accuracy = 0,
+        .pp = 20,
+        .target = MOVE_TARGET_OPPONENTS_FIELD,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
+        .magicCoatAffected = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_MoaiWatch,
     },
 
     // Z-Moves

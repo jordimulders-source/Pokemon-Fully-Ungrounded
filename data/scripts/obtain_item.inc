@@ -131,6 +131,10 @@ EventScript_QuickPickUpItem::
 	copyvar VAR_0x8007, VAR_0x8005
 	playse SE_RG_BAG_POCKET
 	special ShowItemPickupPopup
+	message gText_QuickPickedUpItem
+	waitmessage
+	delay 30
+	closemessage
 	release
 	return
 
@@ -244,6 +248,10 @@ EventScript_QuickPickUpHiddenItem::
 	setvar VAR_0x8007, 1
 	playse SE_RG_BAG_POCKET
 	special ShowItemPickupPopup
+	message gText_QuickPickedUpItem
+	waitmessage
+	delay 30
+	closemessage
 	special TryPutTreasureInvestigatorsOnAir
 	special SetHiddenItemFlag
 	callnative Script_UpdateDowseState
@@ -256,3 +264,6 @@ EventScript_NoRoomForHiddenItem::
 	setvar VAR_RESULT, 0
 	releaseall
 	end
+
+gText_QuickPickedUpItem::
+	.string "{PLAYER} picked up {STR_VAR_1}.$"

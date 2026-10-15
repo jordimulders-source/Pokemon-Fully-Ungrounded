@@ -98,6 +98,11 @@ def recipe_variants(folder, colors):
         out = []
         for var in line['variants']:
             pal = list(colors)
+            palfile = var.get('%s:palfile' % folder)
+            if palfile:
+                # vast handgemaakt palet (bijv. Electrode als Master Ball)
+                out.append(read_pal(os.path.join(ROOT, 'graphics/pokemon', folder, palfile))[:16])
+                continue
             for part, idxs in ramps.items():
                 spec = var.get('%s:%s' % (folder, part), var.get(part))
                 if spec is None:

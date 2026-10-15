@@ -18907,5 +18907,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Tentacool-lijn (echte kwallen): kompaskwal, bloedkwal, oorkwal, spiegeleikwal, gifgroen, sterrenstelselkwal.
   - Machop-lijn: bronzen beeld, Hulk, Hellboy, albino, Na'vi (Avatar), Super Saiyan God.
   - Magnemite-lijn: koper, R2-D2, WALL-E, gunmetal, hoefijzermagneet, Gouden Snaai.
-  - Voltorb/Electrode (ook Hisui) als Poké Balls: Ultra, Love, Net, Premier, Dusk, Luxury (Hisui: Master-paars, want de Hisui-shiny is zwart).
+  - Voltorb/Electrode als Poké Balls: Ultra, Love, Net, Premier, Dusk, Master. De Electrode-shiny is weer het origineel (`shiny_original.pal`); het oude Master Ball-palet (v0.2.2) staat nu in `master_ball.pal` en is de 0,5%-variant (`palfile` in het recept).
+  - Hisui-Voltorb/-Electrode als Legends: Arceus-ballen: Great, Feather, Wing, Ultra (grijs onderstuk), Strange, Origin.
+  - Tentacool-lijn: meer contrast (geen vlakke Gen 2-look), Machamp-albino met meer tintverschil, Magnezone donkerder doel met kleinere lichtsprong, Bellossoms lijf en hoofd kleuren mee.
   - Oddish-lijn (bloemen; Oddish' bladeren dragen de kleur van de latere bloem): witte rafflesia, blauwe lotus, lijkbloem, zonnebloem, sakura, alruin (Harry Potter).

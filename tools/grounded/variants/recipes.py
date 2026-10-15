@@ -966,7 +966,7 @@ LINES = {
             {'naam': 'Dwaallicht (groen vuur)', 'robe': '#2c8a50', 'skull': '#d8f0c0', 'eye': '#c0f040'},
             {'naam': 'Calavera (Día de Muertos)', 'robe': '#e05898', 'skull': '#f0e8d0', 'eye': '#f0a020'},
             {'naam': 'Pompoenlantaarn', 'robe': '#e07020', 'skull': '#f0e0a0', 'eye': '#40d040'},
-            {'naam': 'Farao (goud en lapis)', 'robe': '#d8a020', 'skull': '#3050b0', 'eye': '#e02020'},
+            {'naam': 'Zwavelgeest', 'robe': '#c8b828', 'skull': '#f4f0e0', 'eye': '#8040c0'},
             {'naam': 'Azteekse turkoois', 'robe': '#30b0a0', 'skull': '#e8d8b0', 'eye': '#e03020'},
             {'naam': 'Kristallen schedel', 'robe': '#9070d8', 'skull': '#b0e8f0', 'eye': '#f040b0'},
         ],
@@ -1244,7 +1244,8 @@ LINES = {
         ],
     },
     'zigzagoon_galar': {
-        # Galar-vormen + Obstagoon: punk
+        # Galar-vormen + Obstagoon: punk. Moderne sprites (alleen front.png) hebben ruizige schaduw:
+        # donkere groepen donker houden, vooral de lichte strepen kleuren; geen albino.
         'species': {
             'zigzagoon/galar': {'dark': [1, 3, 4], 'light': [6, 7], 'tongue': [8, 10, 13, 12, 11]},
             'linoone/galar': {'dark': [3, 4, 2], 'light': [5, 6], 'tongue': [8, 9, 10]},
@@ -1252,11 +1253,11 @@ LINES = {
         },
         'variants': [
             {'naam': 'Tijgerpunk', 'light': '#f08020'},
-            {'naam': 'Rasta-punk', 'dark': '#2c8a40', 'light': '#f0d030', 'grey': '#c03028'},
-            {'naam': 'Ziggy Stardust', 'dark': '#d84020', 'light': '#40a0e0', 'grey': '#e0d8d0'},
-            {'naam': 'Albino', 'dark': ('#d8d0d0', ALBINO), 'grey': ('#e0d8d8', ALBINO), 'tongue': '#e02838'},
-            {'naam': 'Joker', 'dark': '#5a2c8a', 'light': '#80e040', 'grey': '#d8d0e0'},
-            {'naam': 'Daft Punk (goud en zilver)', 'dark': '#c89828', 'light': '#e0e4ec', 'grey': '#b0b8c0'},
+            {'naam': 'Rasta-punk', 'dark': ('#1c4a24', {'l': 0.8}), 'light': '#f0d030', 'grey': '#c03028'},
+            {'naam': 'Ziggy Stardust', 'dark': ('#5a1810', {'l': 0.8}), 'light': '#40a0e0', 'grey': '#d8d0c8'},
+            {'naam': 'Cyberpunk', 'light': '#40d8f0', 'grey': '#58606c'},
+            {'naam': 'Joker', 'dark': ('#2c1848', {'l': 0.8}), 'light': '#80e040', 'grey': '#b8a8c8'},
+            {'naam': 'Daft Punk (goud en chroom)', 'light': '#e0b030', 'grey': '#c0c8d0'},
         ],
     },
 }

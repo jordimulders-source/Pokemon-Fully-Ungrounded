@@ -18897,6 +18897,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 
 - **Kleurvarianten, groep 13 (ontbrekende evoluties en Galar-vormen):**
   - Budew en Roserade bij de Roselia-lijn, Dusknoir bij de Duskull-lijn, Chingling bij Chimecho (zelfde thema's, eigen kleurgroepen per soort).
-  - Galar-Zigzagoon, -Linoone en Obstagoon (punk): tijgerpunk, rasta-punk, Ziggy Stardust, albino, Joker, Daft Punk (goud en zilver).
+  - Galar-Zigzagoon, -Linoone en Obstagoon (punk): tijgerpunk, rasta-punk, Ziggy Stardust, cyberpunk, Joker, Daft Punk (goud en chroom). Moderne sprites hebben ruizige schaduw: donkere delen blijven donker, vooral de lichte strepen kleuren; geen albino.
+  - Duskull-lijn 3%: farao (goud en lapis) vervangen door zwavelgeest (geel).
   - `ramps.py`/`sheet.py` vallen terug op `front.png` als een vorm geen `anim_front.png` heeft (Galar-vormen).
   - Mega-, Primal- en Gmax-vormen krijgen geen varianten (zitten alleen in de Spire; Jordi).

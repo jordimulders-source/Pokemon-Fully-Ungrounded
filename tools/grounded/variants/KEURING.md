@@ -63,5 +63,15 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Mankey/Primeape** (apen): 10% Japanse makaak (grijs met rode ledematen), 6% gouden stompneusaap (met blauw), 4% gorilla, 3% albino, 1,5% mandril (grijs met rood), 0,5% Sun Wukong (de Apenkoning: goud met rood).
 - **Growlithe/Arcanine** (honden): 10% dobermann (zwart met roest), 6% husky, 4% blauwe chow chow, 3% albino, 1,5% foo-hond (Chinese tempelleeuw: groen en goud), 0,5% blauw vuur.
 
+## Groep 21
+- **Bellsprout/Weepinbell/Victreebel** (bekerplanten): 10% rode Nepenthes, 6% Venusvliegenval (groen met rode lippen), 4% paarse bekerplant, 3% witte Sarracenia (rode lippen), 1,5% zwarte bekerplant, 0,5% glasplant (lichtblauw, blauwe lippen).
+- **Ponyta/Rapidash** (vuur): 10% groen vuur, 6% paars vuur, 4% zwart paard met wit vuur, 3% bloedrood vuur, 1,5% spookvuur (cyaan), 0,5% gouden paard Sleipnir (wit vuur). Geen blauw vuur: de Ponyta-shiny heeft blauw vuur.
+- **Slowpoke/Slowbro/Slowking**: 10% blauw, 6% mint, 4% luiaard-bruin, 3% albino, 1,5% oranje, 0,5% hipster-zwart. Geen paars: de shiny is paarsroze.
+- **Shellder/Cloyster** (schelpen): 10% abalone (blauwgroen), 6% mossel (zwartblauw), 4% kokkel (zandbeige), 3% parelmoer, 1,5% groenlipmossel, 0,5% gouden parel. Geen oranje: de Shellder-shiny is oranje.
+- **Onix/Steelix** (steen / metaal): 10% zandsteen / brons, 6% basalt / gunmetal, 4% amethist / patina, 3% kwarts / chroom, 1,5% lava / roest, 0,5% goud / roségoud (Steelix niet goud: dat is zijn shiny).
+- **Krabby/Kingler** (krabben): 10% blauwe zwemkrab, 6% turkoois, 4% kokoskrab (paars), 3% albino, 1,5% zwarte krab, 0,5% gouden krab.
+- **Exeggcute/Exeggutor** (ook Alola; eieren en palmbladeren): 10% kersenbloesem (perzik eieren, roze bladeren), 6% paaseieren (pastelblauw, mintblad), 4% dinosaurusei (gespikkeld groen, donkerblad), 3% albino, 1,5% sneeuwpalm, 0,5% Fabergé (robijnrode eieren, gouden blad). Geen oranje blad/gouden eieren: dat zijn de shiny's.
+- **Cubone/Marowak** (de schedel blijft): 10% blauw, 6% rouwgrijs, 4% paars, 3% roze, 1,5% spook (zwart: de Marowak-geest uit de Pokémon Tower), 0,5% farao (goud).
+
 ## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
-Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.
+Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.

@@ -2069,4 +2069,124 @@ LINES = {
             {'naam': 'Blauw vuur', 'body': '#3070d0', 'mane': '#e8f0f8'},
         ],
     },
+    # --- groep 21 (Kanto) ---
+    'bellsprout': {
+        # bekerplanten
+        'species': {
+            'bellsprout': {'body': [13, 14], 'leaves': [9, 10, 11, 12], 'lips': [5, 6, 7, 8]},
+            'weepinbell': {'body': [5, 6, 7, 4, 3], 'leaves': [12, 13, 14, 15], 'lips': [8, 9, 10, 11]},
+            'victreebel': {'body': [6, 7, 8, 5, 4], 'leaves': [12, 13, 14, 15], 'lips': [9, 10, 11]},
+        },
+        'variants': [
+            {'naam': 'Rode Nepenthes', 'body': '#c04030'},
+            {'naam': 'Venusvliegenval', 'body': '#80b040', 'leaves': '#40802a', 'lips': '#e02020'},
+            {'naam': 'Paarse bekerplant', 'body': '#8050a0'},
+            {'naam': 'Witte Sarracenia', 'body': '#ece8e0', 'lips': '#c03040'},
+            {'naam': 'Zwarte bekerplant', 'body': ('#3a3038', {'l': 1.3})},
+            {'naam': 'Glasplant', 'body': '#80c0e0', 'lips': '#3060c0'},
+        ],
+    },
+    'ponyta': {
+        # Galar-vormen (moderne sprites) nog niet
+        'species': {
+            'ponyta': {'body': [7, 6, 5, 4, 3], 'flames': [8, 9, 10, 11]},
+            'rapidash': {'body': [7, 6, 5, 4, 3], 'flames': [8, 9, 10, 11]},
+        },
+        'variants': [
+            {'naam': 'Groen vuur', 'flames': '#40c060'},
+            {'naam': 'Paars vuur', 'flames': '#a050e0'},
+            {'naam': 'Zwart paard met wit vuur', 'body': ('#3a3038', {'l': 1.3}), 'flames': '#f0f0f8'},
+            {'naam': 'Bloedrood vuur', 'flames': ('#c01818', {'h': 0})},
+            {'naam': 'Spookvuur', 'flames': '#a0f0f0'},
+            {'naam': 'Gouden paard (Sleipnir)', 'body': '#d8a828', 'flames': '#f0f0f8'},
+        ],
+    },
+    'slowpoke': {
+        # Galar-vormen (moderne sprites) nog niet
+        'species': {
+            'slowpoke': {'body': [13, 12, 11, 10, 9]},
+            'slowbro': {'body': [14, 13, 12, 11]},
+            'slowking': {'body': [5, 8, 7, 9]},
+        },
+        'variants': [
+            {'naam': 'Blauw', 'body': '#6090d0'},
+            {'naam': 'Mint', 'body': '#80d0b0'},
+            {'naam': 'Luiaard-bruin', 'body': '#8a6a48'},
+            {'naam': 'Albino', 'body': ('#ece4e4', ALBINO)},
+            {'naam': 'Oranje', 'body': '#e08040'},
+            {'naam': 'Hipster (zwart)', 'body': ('#3a3a42', {'l': 1.3})},
+        ],
+    },
+    'shellder': {
+        'species': {
+            'shellder': {'shell': [5, 4, 3, 2, 1]},
+            'cloyster': {'shell': [5, 4, 2, 1, 3]},
+        },
+        'variants': [
+            {'naam': 'Abalone', 'shell': '#3a8a90'},
+            {'naam': 'Mossel', 'shell': '#2c3a58'},
+            {'naam': 'Kokkel', 'shell': '#d8c098'},
+            {'naam': 'Parelmoer', 'shell': '#ecdce8'},
+            {'naam': 'Groenlipmossel', 'shell': '#40a070'},
+            {'naam': 'Gouden parel', 'shell': '#d8a828'},
+        ],
+    },
+    'onix': {
+        'species': {
+            'onix': {'body': [15, 14, 13, 12, 11, 10]},
+            'steelix': {'body': [6, 2, 1, 5, 4]},
+        },
+        'variants': [
+            {'naam': 'Zandsteen / brons', 'body': '#c8a068', 'steelix:body': '#8a5030'},
+            {'naam': 'Basalt / gunmetal', 'body': ('#3a3a44', {'l': 1.3})},
+            {'naam': 'Amethist / patina', 'body': '#8a70b0', 'steelix:body': '#4a9a80'},
+            {'naam': 'Kwarts / chroom', 'body': '#d8e0f0', 'steelix:body': '#c8ccd8'},
+            {'naam': 'Lava / roest', 'body': '#a03020', 'steelix:body': '#904020'},
+            {'naam': 'Goud / roségoud', 'body': '#d8a828', 'steelix:body': '#d89890'},
+        ],
+    },
+    'krabby': {
+        'species': {
+            'krabby': {'shell': [14, 13, 12, 11], 'cream': [8, 7, 6, 5, 4]},
+            'kingler': {'shell': [4, 3, 2, 1], 'cream': [8, 7, 6, 5]},
+        },
+        'variants': [
+            {'naam': 'Blauwe zwemkrab', 'shell': '#3070c0'},
+            {'naam': 'Turkoois', 'shell': '#30a0a0'},
+            {'naam': 'Kokoskrab', 'shell': '#7040a0'},
+            {'naam': 'Albino', 'shell': ('#ece4e0', ALBINO)},
+            {'naam': 'Zwarte krab', 'shell': ('#34343c', {'l': 1.3})},
+            {'naam': 'Gouden krab', 'shell': '#d8a828'},
+        ],
+    },
+    'exeggcute': {
+        'species': {
+            'exeggcute': {'eggs': [15, 14, 13, 12, 11]},
+            'exeggutor': {'leaves': [12, 11, 10, 9], 'eggs': [5, 4, 3, 2, 1]},
+            'exeggutor/alola': {'leaves': [13, 11, 14, 15]},
+        },
+        'variants': [
+            {'naam': 'Kersenbloesem', 'eggs': '#f0c080', 'leaves': '#f0a0c0'},
+            {'naam': 'Paaseieren', 'eggs': '#90c8f0', 'leaves': '#80d0a0'},
+            {'naam': 'Dinosaurusei', 'eggs': '#a0c890', 'leaves': '#3a7040'},
+            {'naam': 'Albino', 'eggs': ('#ece8e4', ALBINO), 'leaves': '#c8d8c0'},
+            {'naam': 'Sneeuwpalm', 'eggs': '#e8f0f8', 'leaves': '#a0c8e0'},
+            {'naam': 'Fabergé', 'eggs': '#c02848', 'leaves': '#e0b030'},
+        ],
+    },
+    'cubone': {
+        # Alola-Marowak (moderne sprite) nog niet
+        'species': {
+            'cubone': {'body': [4, 3, 2]},
+            'marowak': {'body': [15, 14, 13]},
+        },
+        'variants': [
+            {'naam': 'Blauw', 'body': '#4870c0'},
+            {'naam': 'Rouwgrijs', 'body': '#7a7a80'},
+            {'naam': 'Paars', 'body': '#7050a0'},
+            {'naam': 'Roze', 'body': '#e090a0'},
+            {'naam': 'Spook (zwart)', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Farao (goud)', 'body': ('#c89820', {'h': 0})},
+        ],
+    },
 }

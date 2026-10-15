@@ -18930,3 +18930,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Kleurvarianten, groep 19 (Kanto/Johto):** Ledyba-lijn, Remoraid-lijn, Poliwag-lijn met Politoed, Porygon-lijn, Caterpie-lijn, Weedle-lijn, Pidgey-lijn, Rattata-lijn (ook Alola). Recepten kunnen nu `{'h': 0}` gebruiken. Inspiratie: `KEURING.md`.
 
 - **Kleurvarianten, groep 20 (Kanto):** Spearow-lijn, Nidoran♀-lijn, Nidoran♂-lijn, Clefairy-lijn (met Cleffa), Paras-lijn, Diglett-lijn (ook Alola, het blonde haar blijft), Meowth-lijn (ook Alola), Mankey-lijn, Growlithe-lijn. Moderne vormen (Galar-Meowth, Perrserker, Annihilape, Hisui-Growlithe/-Arcanine) nog niet. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 21 (Kanto):** Bellsprout-lijn, Ponyta-lijn, Slowpoke-lijn, Shellder-lijn, Onix/Steelix, Krabby-lijn, Exeggcute-lijn (ook Alola), Cubone-lijn. Galar-Ponyta/-Slowpoke-familie en Alola-Marowak (moderne sprites) nog niet. Inspiratie: `KEURING.md`.

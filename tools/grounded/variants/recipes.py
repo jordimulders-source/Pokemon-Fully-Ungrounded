@@ -1612,4 +1612,96 @@ LINES = {
             {'naam': 'Thaise tempelolifant (goud)', 'body': '#d8a828', 'armor': '#f0d060', 'ears': '#c02828'},
         ],
     },
+    # --- groep 17 (Hoenn-dex-rest, deel 2) ---
+    'pinsir': {
+        # Bug/Ground; kevers
+        'species': {'pinsir': {'body': [11, 8, 12, 9, 10], 'horns': [2, 1, 5, 3, 4]}},
+        'variants': [
+            {'naam': 'Zwarte neushoornkever', 'body': ('#3a3038', {'l': 1.3})},
+            {'naam': 'Vliegend hert (roodbruin)', 'body': '#8a3020'},
+            {'naam': 'Goudkever (Chrysina)', 'body': '#c8a030'},
+            {'naam': 'Groene juweelkever', 'body': '#2c8a50'},
+            {'naam': 'Paarlemoerkever', 'body': '#e0dcd8'},
+            {'naam': 'Scarabee (turkoois en goud)', 'body': '#1c6a78', 'horns': '#e0b030'},
+        ],
+    },
+    'heracross': {
+        'species': {'heracross': {'body': [3, 5, 4, 2], 'tip': [6, 8, 7]}},
+        'variants': [
+            {'naam': 'Herculeskever (olijf)', 'body': '#5a5a30'},
+            {'naam': 'Japanse neushoornkever', 'body': '#6a2c20'},
+            {'naam': 'Goliathkever (wit)', 'body': '#d8d4cc', 'tip': '#2c2c34'},
+            {'naam': 'Goudtor', 'body': '#c8a030', 'tip': '#c02828'},
+            {'naam': 'Smaragdkever', 'body': '#2c9a60'},
+            {'naam': 'Kabuto (samoerai)', 'body': ('#2c2c34', {'l': 1.3}), 'tip': '#c02828'},
+        ],
+    },
+    'rhyhorn': {
+        'species': {
+            'rhyhorn': {'body': [5, 4, 3, 2, 1]},
+            'rhydon': {'body': [14, 13, 12, 11]},
+            'rhyperior': {'body': [3, 6, 1, 2, 5], 'armor': [8, 12, 9, 10]},
+        },
+        'variants': [
+            {'naam': 'Bemost', 'body': '#6a8a50', 'rhyperior:body': '#3a5030'},
+            {'naam': 'Witte neushoorn', 'body': '#d8d4cc', 'rhyperior:body': '#a8a4a0'},
+            {'naam': 'Basalt met lava', 'body': ('#3a3038', {'l': 1.3}), 'rhyperior:body': '#2c2830', 'armor': '#f0e040'},
+            {'naam': 'Amethist', 'body': '#8a70b0', 'rhyperior:body': '#4a3a68', 'armor': '#e0c060'},
+            {'naam': 'Roze marmer', 'body': '#e0b8c0', 'rhyperior:body': '#a07080', 'armor': '#a04060'},
+            {'naam': 'Goud', 'body': '#c89828', 'rhyperior:body': '#806018', 'armor': '#3060b0'},
+        ],
+    },
+    'corsola': {
+        # Galar-Corsola/Cursola (moderne, bijna witte sprites) nog niet
+        'species': {'corsola': {'body': [7, 1, 5, 4, 6, 2]}},
+        'variants': [
+            {'naam': 'Hersenkoraal', 'body': '#e0c050'},
+            {'naam': 'Groen koraal', 'body': '#60b060'},
+            {'naam': 'Edelkoraal (rood)', 'body': '#c02030'},
+            {'naam': 'Gebleekt koraal', 'body': '#ece8e4'},
+            {'naam': 'Zwart koraal', 'body': ('#3a3038', {'l': 1.3})},
+            {'naam': 'Oranje zeewaaier', 'body': '#f08030'},
+        ],
+    },
+    'chinchou': {
+        'species': {
+            'chinchou': {'body': [7, 2, 1, 3, 6, 13], 'light': [4, 12, 5, 11]},
+            'lanturn': {'body': [7, 4, 8, 5, 12], 'light': [11, 1, 6, 3, 2]},
+        },
+        'variants': [
+            {'naam': 'Bloedrode diepzeevis', 'body': '#a02830'},
+            {'naam': 'Zilveren lantaarnvis', 'body': '#a8b0c0', 'light': '#40c0f0'},
+            {'naam': 'Zwart met cyaan licht', 'body': ('#2c2c38', {'l': 1.3}), 'light': '#40e0f0'},
+            {'naam': 'Albino (grottenvis)', 'body': ('#ecdcdc', ALBINO), 'light': '#f8f0c0'},
+            {'naam': 'Bioluminescent groen', 'body': '#1c5a50', 'light': '#80f060'},
+            {'naam': 'Goudvislantaarn', 'body': '#e08030', 'light': '#f4f4f4'},
+        ],
+    },
+    'horsea': {
+        'species': {
+            'horsea': {'body': [1, 2, 3, 4], 'fins': [9, 11, 10]},
+            'seadra': {'body': [10, 2, 1, 5, 3], 'fins': [6, 9, 7]},
+            'kingdra': {'body': [4, 1, 5, 3, 6], 'fins': [13, 12, 11]},
+        },
+        'variants': [
+            {'naam': 'Oranje zeepaardje', 'body': '#e08030', 'fins': '#f8e0a0'},
+            {'naam': 'Pygmeezeepaardje', 'body': '#f0a0b0', 'fins': '#e05070'},
+            {'naam': 'Blad-zeedraak', 'body': '#8aa040', 'fins': '#e0c060'},
+            {'naam': 'Zwart zeepaardje', 'body': ('#2c2c34', {'l': 1.3}), 'fins': '#f0d040'},
+            {'naam': 'Spookzeepaardje', 'body': '#e4e8ec', 'fins': '#90c8e0'},
+            {'naam': 'Robijn en goud', 'body': '#a01830', 'fins': '#e0b030'},
+        ],
+    },
+    'celebi': {
+        # in deze rom Fairy/Grass
+        'species': {'celebi': {'green': [7, 1, 2], 'light': [10, 12, 9], 'eyes': [6, 4, 5]}},
+        'variants': [
+            {'naam': 'Herfstblad', 'green': '#d07028', 'light': '#f0d0a0'},
+            {'naam': 'Winter', 'green': '#a8b8c8', 'light': '#e8f0f8', 'eyes': '#3060c0'},
+            {'naam': 'Lavendelfee', 'green': '#9070c8', 'light': '#e0d0f0'},
+            {'naam': 'Bloemgeel', 'green': '#e0c030', 'light': '#f8f0b0', 'eyes': '#40a040'},
+            {'naam': 'Tijdreiziger (blauw)', 'green': '#3a70c0', 'light': '#c8e0f8', 'eyes': '#f0d040'},
+            {'naam': 'GS Ball (goud en zilver)', 'green': '#c8a030', 'light': '#e0e4ec'},
+        ],
+    },
 }

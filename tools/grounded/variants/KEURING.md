@@ -23,3 +23,12 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Natu/Xatu**: 10% totempaal (hout, blauwe accenten), 6% kaketoe, 4% ara (blauw en geel), 3% albino, 1,5% kraai (grijze mantel), 0,5% Azteeks goud (teal mantel, turquoise).
 - **Girafarig/Farigiraf**: 10% okapi, 6% witte giraf (leucistisch), 4% Lisa Frank-roze, 3% Psychic-blauw, 1,5% zwart en goud, 0,5% kosmisch. Farigiraf: alleen de oranje vacht (moderne sprite).
 - **Phanpy/Donphan**: 10% mammoet, 6% witte olifant (Siam), 4% roze olifant (Dombo), 3% lava-olifant, 1,5% Ganesha (blauw met goud), 0,5% Thaise tempelolifant (goud, rode oren).
+
+## Groep 17
+- **Pinsir** (Bug/Ground, kevers): 10% zwarte neushoornkever, 6% vliegend hert (roodbruin), 4% goudkever (Chrysina), 3% groene juweelkever, 1,5% paarlemoerkever, 0,5% scarabee (turkoois met gouden tangen). Geen blauw/paars: de shiny is paarsblauw.
+- **Heracross**: 10% Herculeskever (olijf), 6% Japanse neushoornkever (kabutomushi, roodbruin), 4% Goliathkever (wit met zwarte hoornpunt), 3% goudtor (rode punt), 1,5% smaragdkever, 0,5% kabuto (samoeraihelm: zwart met rood).
+- **Rhyhorn/Rhydon/Rhyperior**: 10% bemost, 6% witte neushoorn, 4% basalt (Rhyperior: gloeiend gele platen), 3% amethist, 1,5% roze marmer, 0,5% goud (blauwe platen). Geen roodbruin: de Rhyhorn-shiny is roodbruin.
+- **Corsola** (koraalsoorten): 10% hersenkoraal (geel), 6% groen koraal, 4% edelkoraal (rood), 3% gebleekt koraal (wit: koraalsterfte), 1,5% zwart koraal, 0,5% oranje zeewaaier. Galar-Corsola/Cursola nog niet (moderne, bijna witte sprites; voorstel nodig).
+- **Chinchou/Lanturn** (diepzee): 10% bloedrode diepzeevis, 6% zilveren lantaarnvis (blauw licht), 4% zwart met cyaan licht, 3% albino grottenvis, 1,5% bioluminescent groen, 0,5% goudvis met witte lamp.
+- **Horsea/Seadra/Kingdra** (zeepaardjes): 10% oranje zeepaardje, 6% pygmeezeepaardje (roze), 4% blad-zeedraak (groengeel), 3% zwart zeepaardje (gele vinnen), 1,5% spookzeepaardje (wit), 0,5% robijn en goud.
+- **Celebi** (Fairy/Grass): 10% herfstblad, 6% winter, 4% lavendelfee, 3% bloemgeel, 1,5% tijdreiziger (blauw), 0,5% GS Ball (goud en zilver: het Celebi-event uit Crystal).

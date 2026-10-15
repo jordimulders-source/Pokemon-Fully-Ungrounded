@@ -17,6 +17,13 @@ def load(folder, picname='anim_front.png'):
     return im, list(im.get_flattened_data()) if hasattr(im, "get_flattened_data") else list(im.getdata()), im.size
 
 
+def edge_fraction(folder):
+    """Per index: welk deel van zijn pixels tegen de transparante achtergrond ligt
+    (de gekleurde omlijning van moderne sprites)."""
+    count, adj = stats(folder)
+    return [adj.get((0, i), 0) / count[i] if count[i] else 0 for i in range(16)]
+
+
 def stats(folder):
     """Pixeltelling per index en buurparen (front + back)."""
     count = [0] * 16

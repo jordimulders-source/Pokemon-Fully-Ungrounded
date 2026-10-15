@@ -18784,3 +18784,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Charizards ogen deelden een paletindex met zijn vleugels; ze hebben nu een eigen index (zelfde kleur, `sprite_fixes.py`), zodat albino rode ogen kan krijgen.
   - Trainer- en Frontier-Pokémon zijn standaard normaal van kleur (Jordi); een vaste variant kan met `Variant:`.
   - Gereedschap in `tools/grounded/variants/`: `ramps.py` (kleurgroepen + indexkaart), `colorlib.py`, `recipes.py`, `variants.py`, `sheet.py`, `sprite_fixes.py`.
+- **Kleurvarianten: omlijning blijft zichtbaar** (Jordi: witte varianten "lijken onderdeel van de achtergrond te worden"). Moderne sprites hebben naast zwart ook een gekleurde omlijning (de donkerste tint van lijf of vlam); bij albino werd die bijna wit. Paletindexen die voor ≥ 30% langs de rand liggen, worden in een variant nooit lichter dan het origineel of OKLab-lichtheid 0,5.

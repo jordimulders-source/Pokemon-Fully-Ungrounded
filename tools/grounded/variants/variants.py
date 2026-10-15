@@ -19,6 +19,8 @@ ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..', '..')
 GFX_H = os.path.join(ROOT, 'src/data/graphics/pokemon.h')
 OUT_H = os.path.join(ROOT, 'src/data/pokemon/variant_palettes.h')
 NUM_VARIANTS = 6  # naast normaal
+EDGE_FRAC = 0.3   # index ligt voor >= 30% tegen de achtergrond: omlijning
+EDGE_MAX_L = 0.5  # die wordt nooit lichter dan dit (OKLab), of dan het origineel
 
 PAL_RE = re.compile(r'const u16 (gMonPalette_\w+)\[\] = INCBIN_U16\("([^"]+)\.gbapal"\);')
 IF_RE = re.compile(r'^\s*#\s*(if|ifdef|ifndef|elif|else|endif)\b(.*)$')
@@ -85,12 +87,14 @@ def recipe_variants(folder, colors):
     """6 varianten volgens recipes.py, of None als de soort nog geen recept heeft."""
     from recipes import LINES
     from colorlib import recolor
-    from ramps import stats
+    from ramps import stats, edge_fraction
+    from colorlib import to_oklch, from_oklch, gba
     for line in LINES.values():
         ramps = line['species'].get(folder)
         if ramps is None:
             continue
         count, _ = stats(os.path.join(ROOT, 'graphics/pokemon', folder))
+        edge = edge_fraction(os.path.join(ROOT, 'graphics/pokemon', folder))
         out = []
         for var in line['variants']:
             pal = list(colors)
@@ -102,6 +106,13 @@ def recipe_variants(folder, colors):
                 base = max(idxs, key=lambda i: count[i])
                 for i, c in recolor(colors, idxs, base, target, lscale=opts.get('l', 1.0),
                                     cscale=opts.get('c')).items():
+                    # Gekleurde omlijning (pixels langs de rand) blijft donker genoeg,
+                    # anders lost een lichte variant op in de achtergrond.
+                    if edge[i] >= EDGE_FRAC:
+                        L, C, h = to_oklch(c)
+                        cap = max(to_oklch(colors[i])[0], EDGE_MAX_L)
+                        if L > cap:
+                            c = gba(from_oklch(cap, C, h))
                     pal[i] = c
             out.append(pal)
         return out

@@ -1532,7 +1532,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STEELWORKER] =
     {
         .name = _("Steelworker"),
-        .description = COMPOUND_STRING("Powers up Steel moves."),
+        .description = COMPOUND_STRING("Steel moves up; adds Steel type."),
         .aiRating = 6,
     },
 

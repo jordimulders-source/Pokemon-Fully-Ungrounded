@@ -10667,6 +10667,13 @@ void GetBattlerTypes(u32 battler, bool32 ignoreTera, enum Type types[static 3])
         else if (types[1] == TYPE_FLYING)
             types[1] = TYPE_MYSTERY;
     }
+
+    // Project Grounded: Steelworker voegt het Steel-type toe zolang de ability actief is (zoals Forest's Curse).
+    if (!isTera
+     && types[0] != TYPE_STEEL && types[1] != TYPE_STEEL && types[2] != TYPE_STEEL
+     && (types[2] == TYPE_MYSTERY || types[2] == types[0] || types[2] == types[1])
+     && GetBattlerAbility(battler) == ABILITY_STEELWORKER)
+        types[2] = TYPE_STEEL;
 }
 
 enum Type GetBattlerType(u32 battler, u32 typeIndex, bool32 ignoreTera)

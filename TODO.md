@@ -140,7 +140,7 @@ Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen
 - Een aantal krijgt **Pikachu-kleuren** of een **Poké Ball-palet** (Voltorb/Electrode: Great/Ultra/Master/Premier).
 - **Neon/cyberpunk** en andere populaire kleurenpaletten.
 - **Vermijden:** echt rare of vloekende kleuren (tenzij specifiek grappig), en varianten die nauwelijks verschillen van normaal (geen "shiny Garchomp"-situatie; bijv. teal Squirtle lijkt op de gewone).
-- **Per onderdeel kleuren, niet één tint over alles** (Jordi 15 okt): een Pokémon bestaat uit meerdere kleurgroepen (lijf, buik, vlam, bloem, ogen); pas er één of meer aan en houd de schaduwen erin. Vuur mag spelen: blauwe, groene, witte vlam (met tinten).
+- **Per onderdeel kleuren, niet één tint over alles** (Jordi 15 okt): een Pokémon bestaat uit meerdere kleurgroepen (lijf, buik, vlam, bloem, ogen); pas er één of meer aan en houd de schaduwen erin. Vuur mag spelen: blauwe, groene, witte vlam (met tinten); **vlam in contrast met de huid** (Jordi 15 okt), liefst realistische vlamkleuren (wit, blauw, groen, violet, karmijn).
 - **Albino:** wit met schaduwen, **rode ogen**, donkerdere vlekken blijven donkerder, een andere kleur bol/bloem; een witte vlam houdt tinten.
 
 ## Wiki / encyclopedie — start na Jordi's volledige testrun (Jordi 15 okt)

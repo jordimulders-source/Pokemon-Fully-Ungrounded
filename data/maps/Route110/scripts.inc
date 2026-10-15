@@ -759,12 +759,19 @@ Route110_Text_AquaActionsBringSmiles:
 
 Route110_Text_MayLetsBattle:
 	.string "MAY: Hi, {PLAYER}{KUN}! Long time!\p"
-	.string "While I searched for POKéMON, mine got\n"
-	.string "stronger.\p"
-	.string "So… A little battle?$"
+	.string "Mwuahaha! It's the moment you've\n"
+	.string "been dreading!\p"
+	.string "The run killer. Relatively the\n"
+	.string "hardest fight in all of POKéMON.\p"
+	.string "Emerald rival, Route 110. Nuzlockers\n"
+	.string "still wake up screaming about it.\p"
+	.string "Somewhere, a streamer is resetting\n"
+	.string "because of me. Hi, chat!\p"
+	.string "So… A little battle? I brought the\n"
+	.string "starter that beats yours. Science!$"
 
 Route110_Text_MayDefeated:
-	.string "Yikes! Better than I expected!$"
+	.string "Yikes! The run killer got killed!$"
 
 Route110_Text_MayTakeThis:
 	.string "MAY: You've been training too, huh?\p"
@@ -779,11 +786,20 @@ Route110_Text_MayExplainItemfinder:
 
 Route110_Text_BrendanLetsBattle:
 	.string "BRENDAN: Hey, {PLAYER}. There you are.\p"
-	.string "Been raising your POKéMON? I'll check.$"
+	.string "Mwuahaha. It's the moment you've\n"
+	.string "been dreading.\p"
+	.string "The run killer. Relatively the\n"
+	.string "hardest fight in all of POKéMON.\p"
+	.string "Ask a Nuzlocker about Route 110.\n"
+	.string "They don't answer. They just stare.\p"
+	.string "I brought the starter that beats\n"
+	.string "yours. I checked. Twice.\p"
+	.string "Your graveyard has a free plot.\n"
+	.string "Let's go.$"
 
 Route110_Text_BrendanDefeated:
 	.string "Hmm…\n"
-	.string "You're pretty good.$"
+	.string "Run survived. Annoying.$"
 
 Route110_Text_BrendanTakeThis:
 	.string "BRENDAN: You trained without me\n"
@@ -1011,3 +1027,22 @@ Route110_Text_EF_MitchRoute110PostBattle:
 	.string "Coincidence.$"
 
 @ }
+
+@ Project Grounded: de Cyclizar-kijker (testrun Jordi). Zit de hele dag bij de pijlers van de Cycling Road.
+Route110_EventScript_CyclizarWatcher::
+	msgbox Route110_Text_CyclizarWatcher, MSGBOX_NPC
+	end
+
+Route110_Text_CyclizarWatcher:
+	.string "Shh. I'm watching CYCLING ROAD.\n"
+	.string "Lawn chair, thermos, front row.\p"
+	.string "The CYCLIZAR think they're faster\n"
+	.string "than the railing. They are not.\p"
+	.string "VROOM, BONK, a perfect little arc\n"
+	.string "into the bushes. Every few minutes.\p"
+	.string "Sometimes a person flies off too.\n"
+	.string "Less graceful. Better screaming.\p"
+	.string "Today: CYCLIZAR 14, people 3.\n"
+	.string "The railing remains undefeated.\p"
+	.string "Don't tell anyone. If they fix it,\n"
+	.string "I'll have to get a hobby.$"

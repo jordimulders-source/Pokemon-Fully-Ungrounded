@@ -844,7 +844,7 @@ MauvilleCity_Text_ColressIntro:
 	.string "wired to one man named Gerald. When you\l"
 	.string "win, Gerald cries.\p"
 	.string "Exhibit B: the entire city runs on a\n"
-	.string "single MAGNEMITE on a treadmill.\l"
+	.string "single PAWMI in a hamster wheel.\l"
 	.string "WATTSON calls this “the grid.”\p"
 	.string "Exhibit C: the bike shop sells two bikes,\n"
 	.string "but you may only own one. That is not a\l"
@@ -891,8 +891,8 @@ MauvilleCity_Text_ColressPostBattle:
 	.string "Your Pokémon brought out every last\n"
 	.string "bit of their potential.\p"
 	.string "Unlike MAUVILLE's power grid. I'm going\n"
-	.string "to go unplug the treadmill and see what\l"
-	.string "happens.$"
+	.string "to give that PAWMI a day off and see\l"
+	.string "what happens.$"
 
 MauvilleCity_Text_ColressWaiting:
 	.string "COLRESS: Ah, my favorite data point!\n"

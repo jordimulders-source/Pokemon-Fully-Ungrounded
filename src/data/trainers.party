@@ -3846,19 +3846,19 @@ Double Battle: No
 AI: Check Bad Move
 
 Furfrou @ Nugget
-Level: 19
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Brionne @ Nugget
-Level: 19
+Popplio @ Nugget
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Buneary @ Nugget
-Level: 19
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Snubbull @ Nugget
-Level: 19
+Level: 10
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_DAPHNE ===
@@ -10290,27 +10290,31 @@ Double Battle: No
 AI: CHECK_BAD_MOVE / TRY_TO_FAINT / CHECK_VIABILITY / SMART_MON_CHOICES
 
 Baltoy
-Level: 19
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Dwebble
-Level: 19
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Maractus
-Level: 19
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Larvitar
-Level: 19
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 Gligar
-Level: 19
+Level: 18
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Sand Attack
+- Quick Attack
+- Fury Cutter
+- Poison Tail
 
 Cacnea
-Level: 20
+Level: 19
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
 === TRAINER_TOMMY ===
@@ -26229,7 +26233,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Growl
 
 Toedscool @ Oran Berry
-Level: 17
+Level: 10
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Mega Drain
 - Poison Powder
@@ -27968,7 +27972,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 Mugshot: Blue
 
-Elgyem
+Beheeyem
 Level: 34
 Ability: Dimensional Warp
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
@@ -27977,7 +27981,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Headbutt
 - Calm Mind
 
-Klink
+Klang
 Level: 34
 Ability: Clear Body
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
@@ -27986,7 +27990,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Shift Gear
 - Thunder Wave
 
-Magnemite
+Magneton @ Air Balloon
 Level: 34
 Ability: Analytic
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
@@ -28004,12 +28008,21 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Taunt
 - Screech
 
+Rotom
+Level: 34
+Ability: Levitate
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Hex
+- Shock Wave
+- Confuse Ray
+- Charge
+
 Porygon @ Eviolite
 Level: 35
 Ability: Analytic
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Tri Attack
-- Psybeam
+- Ice Beam
 - Thunder Wave
 - Recover
 

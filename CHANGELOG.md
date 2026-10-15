@@ -18912,3 +18912,11 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Machamp-albino: kuif met eigen schaduw; Magnezone per thema een eigen kleur voor de koepel en donkerder doelkleur; Bellossoms twee groene bladeren kleuren mee.
   - Tentacool-lijn: meer contrast (geen vlakke Gen 2-look), Machamp-albino met meer tintverschil, Magnezone donkerder doel met kleinere lichtsprong, Bellossoms lijf en hoofd kleuren mee.
   - Oddish-lijn (bloemen; Oddish' bladeren dragen de kleur van de latere bloem): witte rafflesia, blauwe lotus, lijkbloem, zonnebloem, sakura, alruin (Harry Potter).
+
+- **Kleurvarianten, groep 15:**
+  - Doduo-lijn (loopvogels): struisvogel, emoe, flamingo, albino, kasuaris, goudfazant.
+  - Slugma-lijn (lava): blauw vuur (Kawah Ijen), koperen vlam (groen), paarse lava, afgekoeld (obsidiaan), witheet, sterrennevel.
+  - Grimer-lijn (ook de Hoenn-vorm): bloedrood slijm, olie, kauwgom, lavaslijm, ectoplasma, Midas (goud). Alola-vormen: olie met regenboog, zuurstok, teal, kauwgom, lavendel en mint, gouden slijm.
+  - Koffing-lijn (Galar-Weezing: alleen de rook, moderne sprite): smog, gifgas, vuurwerkrook, koude damp, kosmische nevel, goudstof.
+  - Sandshrew-lijn: schubdier, Petra-rood, egel, albino, roze gordeldier, Shadow the Hedgehog. Alola: smaragdijs, rozenkwarts, koperijs, amethist, goudijs, poolnacht.
+  - Skarmory (metalen): koper, brons met patina, gunmetal, geanodiseerd titanium, roségoud, Excalibur.

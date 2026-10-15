@@ -1360,4 +1360,122 @@ LINES = {
             {'naam': 'Alruin (Harry Potter)', 'body': '#a07850', 'petals': '#c06080', 'center': '#3a6a30', 'bbody': '#b08860', 'bleaves': '#3a6a30'},
         ],
     },
+    # --- groep 15 ---
+    'doduo': {
+        # in deze rom Ground/Flying; loopvogels
+        'species': {
+            'doduo': {'body': [8, 7, 6, 5], 'neck': [12, 11, 9, 10]},
+            'dodrio': {'body': [4, 3, 2, 1], 'neck': [7, 6, 5], 'tail': [10, 9, 8], 'crest': [13, 12]},
+        },
+        'variants': [
+            {'naam': 'Struisvogel', 'body': ('#34343c', {'l': 1.3}), 'neck': '#e8d0c0', 'tail': '#f0f0f0'},
+            {'naam': 'Emoe', 'body': '#7a8090', 'neck': '#5a6070', 'tail': '#a0a8b8'},
+            {'naam': 'Flamingo', 'body': '#f090a0', 'neck': '#f0b8c0', 'tail': '#d04060'},
+            {'naam': 'Albino', 'body': ('#e4dcd8', ALBINO), 'neck': '#f0e8e0', 'tail': '#f0c8c8', 'crest': '#c8c0c0'},
+            {'naam': 'Kasuaris', 'body': ('#24242c', {'l': 1.3}), 'neck': '#3070d0', 'tail': '#d03030', 'crest': '#c03030'},
+            {'naam': 'Goudfazant', 'body': '#e0a020', 'neck': '#c02828', 'tail': '#2c6a40', 'crest': '#f0d040'},
+        ],
+    },
+    'slugma': {
+        # lavaslak (Fire/Rock)
+        'species': {
+            'slugma': {'lava': [2, 1, 5, 3, 6]},
+            'magcargo': {'lava': [5, 1, 2, 13], 'shell': [7, 6, 9, 11], 'spots': [12, 14, 15]},
+        },
+        'variants': [
+            {'naam': 'Blauw vuur (Kawah Ijen)', 'lava': '#3870e0', 'spots': '#80c0f8'},
+            {'naam': 'Koperen vlam (groen)', 'lava': '#40b058', 'spots': '#a0e080'},
+            {'naam': 'Paarse lava', 'lava': '#9040c0', 'spots': '#e070d0'},
+            {'naam': 'Afgekoeld (obsidiaan)', 'lava': ('#3a3038', {'l': 1.3}), 'shell': ('#202028', {'l': 1.3}), 'spots': '#f08020'},
+            {'naam': 'Witheet', 'lava': '#f0d870', 'shell': '#c03020', 'spots': '#f8f0c0'},
+            {'naam': 'Sterrennevel', 'lava': '#e050c0', 'shell': '#28205a', 'spots': '#70e0f0'},
+        ],
+    },
+    'grimer': {
+        # ook de eigen Hoenn-vorm (bruin)
+        'species': {
+            'grimer': {'body': [11, 10, 9, 8, 7, 6]},
+            'muk': {'body': [11, 10, 9, 8, 7, 6]},
+            'grimer/hoenn': {'body': [11, 10, 9, 8, 7, 6]},
+            'muk/hoenn': {'body': [11, 10, 9, 8, 7, 6]},
+        },
+        'variants': [
+            {'naam': 'Bloedrood slijm', 'body': '#b02838'},
+            {'naam': 'Olie', 'body': ('#30303a', {'l': 1.3})},
+            {'naam': 'Kauwgom', 'body': '#f080b0'},
+            {'naam': 'Lavaslijm', 'body': '#e07020'},
+            {'naam': 'Ectoplasma', 'body': '#40a0e0'},
+            {'naam': 'Midas (goud)', 'body': '#d8a828'},
+        ],
+    },
+    'grimer_alola': {
+        'species': {
+            'grimer/alola': {'body': [3, 6, 8, 1, 2, 5], 'yellow': [11, 10, 9]},
+            'muk/alola': {'body': [1, 8, 10], 'pink': [2, 5, 7], 'blue': [9, 11], 'yellow': [13, 12]},
+        },
+        'variants': [
+            {'naam': 'Olie met regenboog', 'body': ('#2c2c34', {'l': 1.3}), 'pink': '#e050a0', 'blue': '#40c0e0', 'yellow': '#f0e040'},
+            {'naam': 'Zuurstok', 'body': '#d83040', 'pink': '#f4f0f0', 'blue': '#30a050', 'yellow': '#f4f0f0'},
+            {'naam': 'Teal', 'body': '#30a0a0', 'pink': '#f0d040', 'blue': '#e05060'},
+            {'naam': 'Kauwgom', 'body': '#f080b0', 'pink': '#80d0f0', 'blue': '#b070e0'},
+            {'naam': 'Lavendel en mint', 'body': '#a890d8', 'pink': '#80e0b0', 'blue': '#f0a0c0'},
+            {'naam': 'Gouden slijm', 'body': '#d8a828', 'pink': '#c02828', 'blue': '#2c2c34', 'yellow': '#f4f0f0'},
+        ],
+    },
+    'koffing': {
+        'species': {
+            'koffing': {'body': [14, 13, 12, 11], 'gas': [10, 9, 8]},
+            'weezing': {'body': [14, 13, 12, 11, 10], 'gas': [9, 8, 7]},
+            'weezing/galar': {'gas': [3, 1, 2]},
+        },
+        'variants': [
+            {'naam': 'Smog', 'body': '#707078', 'gas': '#b0a890'},
+            {'naam': 'Gifgas (groen)', 'body': '#4a8040', 'gas': '#c0e040'},
+            {'naam': 'Vuurwerkrook', 'body': '#a02828', 'gas': '#f0a040'},
+            {'naam': 'Koude damp', 'body': '#60a8d0', 'gas': '#e0f0f8'},
+            {'naam': 'Kosmische nevel', 'body': '#282060', 'gas': '#e070d0'},
+            {'naam': 'Goudstof', 'body': '#c89020', 'gas': '#f0e8c0'},
+        ],
+    },
+    'sandshrew': {
+        'species': {
+            'sandshrew': {'body': [7, 6, 5, 4, 3], 'belly': [10, 11, 12]},
+            'sandslash': {'body': [5, 4, 3, 2, 1], 'belly': [7], 'spines': [14, 13, 12]},
+        },
+        'variants': [
+            {'naam': 'Schubdier', 'body': '#8a6040', 'spines': '#5a3a20'},
+            {'naam': 'Petra-rood', 'body': '#c86040', 'spines': '#7a2818'},
+            {'naam': 'Egel', 'body': '#9a9088', 'spines': '#404048', 'belly': '#e8dcc8'},
+            {'naam': 'Albino', 'body': ('#e8e0d8', ALBINO), 'spines': '#d8ccc0', 'belly': '#f4ece4'},
+            {'naam': 'Roze gordeldier', 'body': '#e8a0b0', 'spines': '#c06080'},
+            {'naam': 'Shadow the Hedgehog', 'body': ('#303038', {'l': 1.3}), 'spines': '#c02828', 'belly': '#e8dcc8'},
+        ],
+    },
+    'sandshrew_alola': {
+        # Ice/Steel
+        'species': {
+            'sandshrew/alola': {'body': [2, 1, 5, 4], 'belly': [10, 12, 11]},
+            'sandslash/alola': {'body': [1, 8, 7, 5, 3, 6, 9, 12], 'belly': [10, 11]},
+        },
+        'variants': [
+            {'naam': 'Smaragdijs', 'body': '#40b088'},
+            {'naam': 'Rozenkwarts', 'body': '#f0a0c0'},
+            {'naam': 'Koperijs', 'body': '#c07840'},
+            {'naam': 'Amethist', 'body': '#9070d0'},
+            {'naam': 'Goudijs', 'body': '#e0b030', 'belly': '#f4ecd8'},
+            {'naam': 'Poolnacht', 'body': '#3a3070', 'belly': '#70e0d0'},
+        ],
+    },
+    'skarmory': {
+        # Steel/Flying; metalen
+        'species': {'skarmory': {'steel': [3, 1, 10, 5, 4, 2], 'red': [7, 8, 11, 9]}},
+        'variants': [
+            {'naam': 'Koper', 'steel': '#b06838', 'red': '#40a0a0'},
+            {'naam': 'Brons met patina', 'steel': '#507860', 'red': '#c08040'},
+            {'naam': 'Gunmetal', 'steel': ('#3a3c48', {'l': 1.3}), 'red': '#40d0f0'},
+            {'naam': 'Geanodiseerd titanium', 'steel': '#7050a8', 'red': '#f0d040'},
+            {'naam': 'Roségoud', 'steel': '#d89890', 'red': '#8040a0'},
+            {'naam': 'Excalibur (zilver en goud)', 'steel': '#c8ccd8', 'red': '#e0b030'},
+        ],
+    },
 }

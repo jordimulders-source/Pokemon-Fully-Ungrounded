@@ -27,6 +27,18 @@ static const u16 sVariants_Wartortle[] = INCBIN_U16("graphics/pokemon/wartortle/
 #if (P_FAMILY_SQUIRTLE)
 static const u16 sVariants_Blastoise[] = INCBIN_U16("graphics/pokemon/blastoise/variants.gbapal");
 #endif
+#if (P_FAMILY_SANDSHREW)
+static const u16 sVariants_Sandshrew[] = INCBIN_U16("graphics/pokemon/sandshrew/variants.gbapal");
+#endif
+#if (P_FAMILY_SANDSHREW)
+static const u16 sVariants_Sandslash[] = INCBIN_U16("graphics/pokemon/sandslash/variants.gbapal");
+#endif
+#if (P_FAMILY_SANDSHREW) && (P_ALOLAN_FORMS)
+static const u16 sVariants_SandshrewAlola[] = INCBIN_U16("graphics/pokemon/sandshrew/alola/variants.gbapal");
+#endif
+#if (P_FAMILY_SANDSHREW) && (P_ALOLAN_FORMS)
+static const u16 sVariants_SandslashAlola[] = INCBIN_U16("graphics/pokemon/sandslash/alola/variants.gbapal");
+#endif
 #if (P_FAMILY_ZUBAT)
 static const u16 sVariants_Zubat[] = INCBIN_U16("graphics/pokemon/zubat/variants.gbapal");
 #endif
@@ -90,6 +102,30 @@ static const u16 sVariants_Magneton[] = INCBIN_U16("graphics/pokemon/magneton/va
 #if (P_FAMILY_MAGNEMITE) && (P_GEN_4_CROSS_EVOS)
 static const u16 sVariants_Magnezone[] = INCBIN_U16("graphics/pokemon/magnezone/variants.gbapal");
 #endif
+#if (P_FAMILY_DODUO)
+static const u16 sVariants_Doduo[] = INCBIN_U16("graphics/pokemon/doduo/variants.gbapal");
+#endif
+#if (P_FAMILY_DODUO)
+static const u16 sVariants_Dodrio[] = INCBIN_U16("graphics/pokemon/dodrio/variants.gbapal");
+#endif
+#if (P_FAMILY_GRIMER)
+static const u16 sVariants_Grimer[] = INCBIN_U16("graphics/pokemon/grimer/variants.gbapal");
+#endif
+#if (P_FAMILY_GRIMER)
+static const u16 sVariants_Muk[] = INCBIN_U16("graphics/pokemon/muk/variants.gbapal");
+#endif
+#if (P_FAMILY_GRIMER) && (P_ALOLAN_FORMS)
+static const u16 sVariants_GrimerAlola[] = INCBIN_U16("graphics/pokemon/grimer/alola/variants.gbapal");
+#endif
+#if (P_FAMILY_GRIMER) && (P_ALOLAN_FORMS)
+static const u16 sVariants_MukAlola[] = INCBIN_U16("graphics/pokemon/muk/alola/variants.gbapal");
+#endif
+#if (P_FAMILY_GRIMER)
+static const u16 sVariants_GrimerHoenn[] = INCBIN_U16("graphics/pokemon/grimer/hoenn/variants.gbapal");
+#endif
+#if (P_FAMILY_GRIMER)
+static const u16 sVariants_MukHoenn[] = INCBIN_U16("graphics/pokemon/muk/hoenn/variants.gbapal");
+#endif
 #if (P_FAMILY_VOLTORB)
 static const u16 sVariants_Voltorb[] = INCBIN_U16("graphics/pokemon/voltorb/variants.gbapal");
 #endif
@@ -101,6 +137,15 @@ static const u16 sVariants_VoltorbHisui[] = INCBIN_U16("graphics/pokemon/voltorb
 #endif
 #if (P_FAMILY_VOLTORB) && (P_HISUIAN_FORMS)
 static const u16 sVariants_ElectrodeHisui[] = INCBIN_U16("graphics/pokemon/electrode/hisui/variants.gbapal");
+#endif
+#if (P_FAMILY_KOFFING)
+static const u16 sVariants_Koffing[] = INCBIN_U16("graphics/pokemon/koffing/variants.gbapal");
+#endif
+#if (P_FAMILY_KOFFING)
+static const u16 sVariants_Weezing[] = INCBIN_U16("graphics/pokemon/weezing/variants.gbapal");
+#endif
+#if (P_FAMILY_KOFFING) && (P_GALARIAN_FORMS)
+static const u16 sVariants_WeezingGalar[] = INCBIN_U16("graphics/pokemon/weezing/galar/variants.gbapal");
 #endif
 #if (P_FAMILY_GOLDEEN)
 static const u16 sVariants_Goldeen[] = INCBIN_U16("graphics/pokemon/goldeen/variants.gbapal");
@@ -128,6 +173,15 @@ static const u16 sVariants_Wynaut[] = INCBIN_U16("graphics/pokemon/wynaut/varian
 #endif
 #if (P_FAMILY_WOBBUFFET)
 static const u16 sVariants_Wobbuffet[] = INCBIN_U16("graphics/pokemon/wobbuffet/variants.gbapal");
+#endif
+#if (P_FAMILY_SLUGMA)
+static const u16 sVariants_Slugma[] = INCBIN_U16("graphics/pokemon/slugma/variants.gbapal");
+#endif
+#if (P_FAMILY_SLUGMA)
+static const u16 sVariants_Magcargo[] = INCBIN_U16("graphics/pokemon/magcargo/variants.gbapal");
+#endif
+#if (P_FAMILY_SKARMORY)
+static const u16 sVariants_Skarmory[] = INCBIN_U16("graphics/pokemon/skarmory/variants.gbapal");
 #endif
 #if (P_FAMILY_TREECKO)
 static const u16 sVariants_Treecko[] = INCBIN_U16("graphics/pokemon/treecko/variants.gbapal");
@@ -606,6 +660,18 @@ const struct VariantPalettes gVariantPalettes[] =
 #if (P_FAMILY_SQUIRTLE)
     {gMonPalette_Blastoise, sVariants_Blastoise},
 #endif
+#if (P_FAMILY_SANDSHREW)
+    {gMonPalette_Sandshrew, sVariants_Sandshrew},
+#endif
+#if (P_FAMILY_SANDSHREW)
+    {gMonPalette_Sandslash, sVariants_Sandslash},
+#endif
+#if (P_FAMILY_SANDSHREW) && (P_ALOLAN_FORMS)
+    {gMonPalette_SandshrewAlola, sVariants_SandshrewAlola},
+#endif
+#if (P_FAMILY_SANDSHREW) && (P_ALOLAN_FORMS)
+    {gMonPalette_SandslashAlola, sVariants_SandslashAlola},
+#endif
 #if (P_FAMILY_ZUBAT)
     {gMonPalette_Zubat, sVariants_Zubat},
 #endif
@@ -669,6 +735,30 @@ const struct VariantPalettes gVariantPalettes[] =
 #if (P_FAMILY_MAGNEMITE) && (P_GEN_4_CROSS_EVOS)
     {gMonPalette_Magnezone, sVariants_Magnezone},
 #endif
+#if (P_FAMILY_DODUO)
+    {gMonPalette_Doduo, sVariants_Doduo},
+#endif
+#if (P_FAMILY_DODUO)
+    {gMonPalette_Dodrio, sVariants_Dodrio},
+#endif
+#if (P_FAMILY_GRIMER)
+    {gMonPalette_Grimer, sVariants_Grimer},
+#endif
+#if (P_FAMILY_GRIMER)
+    {gMonPalette_Muk, sVariants_Muk},
+#endif
+#if (P_FAMILY_GRIMER) && (P_ALOLAN_FORMS)
+    {gMonPalette_GrimerAlola, sVariants_GrimerAlola},
+#endif
+#if (P_FAMILY_GRIMER) && (P_ALOLAN_FORMS)
+    {gMonPalette_MukAlola, sVariants_MukAlola},
+#endif
+#if (P_FAMILY_GRIMER)
+    {gMonPalette_GrimerHoenn, sVariants_GrimerHoenn},
+#endif
+#if (P_FAMILY_GRIMER)
+    {gMonPalette_MukHoenn, sVariants_MukHoenn},
+#endif
 #if (P_FAMILY_VOLTORB)
     {gMonPalette_Voltorb, sVariants_Voltorb},
 #endif
@@ -680,6 +770,15 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_VOLTORB) && (P_HISUIAN_FORMS)
     {gMonPalette_ElectrodeHisui, sVariants_ElectrodeHisui},
+#endif
+#if (P_FAMILY_KOFFING)
+    {gMonPalette_Koffing, sVariants_Koffing},
+#endif
+#if (P_FAMILY_KOFFING)
+    {gMonPalette_Weezing, sVariants_Weezing},
+#endif
+#if (P_FAMILY_KOFFING) && (P_GALARIAN_FORMS)
+    {gMonPalette_WeezingGalar, sVariants_WeezingGalar},
 #endif
 #if (P_FAMILY_GOLDEEN)
     {gMonPalette_Goldeen, sVariants_Goldeen},
@@ -707,6 +806,15 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_WOBBUFFET)
     {gMonPalette_Wobbuffet, sVariants_Wobbuffet},
+#endif
+#if (P_FAMILY_SLUGMA)
+    {gMonPalette_Slugma, sVariants_Slugma},
+#endif
+#if (P_FAMILY_SLUGMA)
+    {gMonPalette_Magcargo, sVariants_Magcargo},
+#endif
+#if (P_FAMILY_SKARMORY)
+    {gMonPalette_Skarmory, sVariants_Skarmory},
 #endif
 #if (P_FAMILY_TREECKO)
     {gMonPalette_Treecko, sVariants_Treecko},

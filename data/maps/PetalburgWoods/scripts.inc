@@ -88,7 +88,7 @@ PetalburgWoods_EventScript_DevonResearcherPostBattle::
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown
 	waitmovement 0
 	msgbox PetalburgWoods_Text_ThatWasAwfullyClose, MSGBOX_DEFAULT
-	giveitem ITEM_MOON_STONE
+	giveitem ITEM_REVIVE
 	goto_if_eq VAR_RESULT, FALSE, PetalburgWoods_EventScript_BagFull
 	goto PetalburgWoods_EventScript_DevonResearcherFinish
 	end
@@ -382,7 +382,7 @@ PetalburgWoods_Text_ICantBeWastingTime:
 
 PetalburgWoods_Text_YoureLoadedWithItems:
 	.string "You're loaded with items.\n"
-	.string "I can't give you this MOON STONE.$"
+	.string "I can't give you this REVIVE.$"
 
 PetalburgWoods_Text_GoBugPokemonTeam:
 	.string "I got a whole bunch of BUG\n"

@@ -1015,7 +1015,6 @@ static const struct LevelUpMove sJigglypuffLevelUpLearnset[] = {
 static const struct LevelUpMove sWigglytuffLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_MOONBLAST),
     LEVEL_UP_MOVE( 1, MOVE_MOONBLAST),
-    LEVEL_UP_MOVE( 1, MOVE_BOOMBURST),     
     LEVEL_UP_MOVE( 1, MOVE_WISH),          
     LEVEL_UP_MOVE( 1, MOVE_TELEPORT),        
     LEVEL_UP_MOVE( 1, MOVE_SWEET_KISS),
@@ -1032,14 +1031,15 @@ static const struct LevelUpMove sWigglytuffLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_BODY_SLAM),
     LEVEL_UP_MOVE( 1, MOVE_MIMIC),
     LEVEL_UP_MOVE( 1, MOVE_GYRO_BALL),
-    LEVEL_UP_MOVE( 1, MOVE_HYPER_VOICE),
-    LEVEL_UP_MOVE( 1, MOVE_DOUBLE_EDGE),
     LEVEL_UP_MOVE( 1, MOVE_SING),
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_COPYCAT),
     LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE( 5, MOVE_PLAY_ROUGH),
+    LEVEL_UP_MOVE(36, MOVE_HYPER_VOICE),     // Project Grounded: was lv 1 (Boomburst vóór gym 1)
     LEVEL_UP_MOVE(42, MOVE_NIGHTMARE),        
+    LEVEL_UP_MOVE(44, MOVE_DOUBLE_EDGE),
+    LEVEL_UP_MOVE(50, MOVE_BOOMBURST),
     LEVEL_UP_MOVE(55, MOVE_PERISH_SONG),
     LEVEL_UP_END
 };

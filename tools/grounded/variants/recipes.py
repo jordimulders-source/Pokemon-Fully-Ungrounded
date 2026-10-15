@@ -89,7 +89,7 @@ LINES = {
             {'naam': 'Torchic-kleuren', 'body': '#e87828', 'tail': '#c09818', 'armleaves': '#c09818',
              'belly': '#f0d060'},
             {'naam': 'Mudkip-kleuren (vinnen als Swampert, oranje bladeren)', 'body': '#3890d0', 'tail': '#504a58',
-             'armleaves': '#e07828', 'belly': '#b8c8e8'},
+             'armleaves': '#e07828', 'belly': '#e07828'},
             {'naam': 'Tokeh', 'body': '#a4b0c4', 'tail': '#e08828', 'armleaves': '#e08828', 'belly': '#dcdce4',
              'seeds': '#e08828'},
             {'naam': 'Albino', 'body': ('#c8c8bc', ALBINO), 'tail': ('#a8aca0', ALBINO),

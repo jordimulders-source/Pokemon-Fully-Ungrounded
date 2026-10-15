@@ -18798,3 +18798,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Bladstaartgekko vervangen door de **tokeh** (blauwgrijs met oranje).
   - Mudkip-lijn: twee axolotls, **leucistisch** (roze, roze-rode kieuwen, donkere ogen; i.p.v. albino) en **GFP** (lichtgevend, i.p.v. bubblegum).
   - `sprite_fixes.py` kan nu ook indexen samenvoegen, vlakvullen vanaf zaadpixels en binnen rechthoeken hernummeren; eenmalig per soort (`sprite_fixes_done.txt`).
+- Treecko-lijn in Mudkip-kleuren: de rode buik/streep is nu oranje als Mudkips wangen (Jordi); Sceptiles armbladeren blijven lijfkleur (geen vrije paletplek zonder een lijftint te verliezen).

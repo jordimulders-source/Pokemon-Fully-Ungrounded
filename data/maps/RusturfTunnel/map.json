@@ -148,6 +148,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "RusturfTunnel_EventScript_Wanda",
       "flag": "FLAG_HIDE_RUSTURF_TUNNEL_WANDA"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MANIAC",
+      "x": 18,
+      "y": 15,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_UP",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "RusturfTunnel_EventScript_SpoonDigger",
+      "flag": "0"
     }
   ],
   "warp_events": [
@@ -220,5 +233,23 @@
       "script": "RusturfTunnel_EventScript_TunnelBlockagePos3"
     }
   ],
-  "bg_events": []
+  "bg_events": [
+    {
+      "type": "hidden_item",
+      "x": 3,
+      "y": 7,
+      "elevation": 3,
+      "item": "ITEM_STAR_PIECE",
+      "flag": "FLAG_HIDDEN_ITEM_RUSTURF_TUNNEL_STAR_PIECE"
+    },
+    {
+      "type": "hidden_item",
+      "x": 33,
+      "y": 9,
+      "elevation": 3,
+      "item": "ITEM_EXP_CANDY_S",
+      "flag": "FLAG_HIDDEN_ITEM_RUSTURF_TUNNEL_EXP_CANDY",
+      "quantity": 2
+    }
+  ]
 }

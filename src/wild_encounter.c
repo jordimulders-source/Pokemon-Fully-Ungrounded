@@ -34,6 +34,8 @@ extern const u8 EventScript_SprayWoreOff[];
 
 #define MAX_ENCOUNTER_RATE 2880
 
+#define ROUTE104_NORTH_MAX_Y 34 // Project Grounded: y < 34 = Route 104 boven Petalburg Woods (bosingang noord y 30, zuid y 38/42)
+
 #define NUM_FEEBAS_SPOTS 6
 
 // Number of accessible fishing spots in each section of Route 119
@@ -398,6 +400,16 @@ u16 GetCurrentMapWildMonHeaderId(void)
                     alteringCaveId = 0;
 
                 i += alteringCaveId;
+            }
+            // Project Grounded: Route 104 ten noorden van Petalburg Woods (bosuitgang y 30) heeft een eigen
+            // tabel; die staat in wild_encounters.json direct na de gewone Route 104-tabel (gRoute104_North).
+            else if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE104)
+                  && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE104)
+                  && gSaveBlock1Ptr->pos.y < ROUTE104_NORTH_MAX_Y
+                  && gWildMonHeaders[i + 1].mapGroup == MAP_GROUP(MAP_ROUTE104)
+                  && gWildMonHeaders[i + 1].mapNum == MAP_NUM(MAP_ROUTE104))
+            {
+                i++;
             }
 
             return i;

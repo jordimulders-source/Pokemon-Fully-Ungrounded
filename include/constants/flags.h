@@ -2184,6 +2184,17 @@
 #define FLAG_RIVAL_PG_RETIRED                   FLAG_GROUNDED(1761) // Project Grounded: rivaal bij de Battle Tower verslagen (gevecht 8) en met pensioen naar het Paradiso Resort
 #define FLAG_RIVAL_PG_RESORT_MET                FLAG_GROUNDED(1762) // Project Grounded: Guinness-verhaal van de rivaal in het Paradiso Resort al gehoord (daarna korter)
 // }
+// town_gifts { (met de hand; testrun Jordi: item-giveaways in de vroege steden en Rusturf Tunnel; FLAG_GROUNDED 1840-1899, 1849-1899 nog vrij)
+#define FLAG_RECEIVED_PETALBURG_HOUSE2_GIFT     FLAG_GROUNDED(1840) // Project Grounded: Petalburg, huis rechtsonder: Bright Powder van de schooljongen
+#define FLAG_RECEIVED_RUSTBORO_HOUSE2_GIFT      FLAG_GROUNDED(1841) // Project Grounded: Rustboro House2: Wide Lens van de moeder van de influencer
+#define FLAG_RECEIVED_DEWFORD_HOUSE1_GIFT       FLAG_GROUNDED(1842) // Project Grounded: Dewford House1: Smoke Ball van Randy (zwijggeld)
+#define FLAG_RECEIVED_SLATEPORT_HOUSE_GIFT      FLAG_GROUNDED(1843) // Project Grounded: Slateport House: Scope Lens van de Pokefan
+#define FLAG_RECEIVED_MAUVILLE_RICH_BOY_GIFT    FLAG_GROUNDED(1844) // Project Grounded: Mauville: Expert Belt van de rijkeluiszoon
+#define FLAG_RECEIVED_VERDANTURF_HOUSE_GIFT     FLAG_GROUNDED(1845) // Project Grounded: Verdanturf House: Metronome van de Swiftie
+#define FLAG_HIDDEN_ITEM_RUSTURF_TUNNEL_STAR_PIECE FLAG_GROUNDED(1846) // Project Grounded: Rusturf Tunnel: verborgen Star Piece
+#define FLAG_HIDDEN_ITEM_RUSTURF_TUNNEL_EXP_CANDY  FLAG_GROUNDED(1847) // Project Grounded: Rusturf Tunnel: verborgen Exp. Candy S (x2)
+#define FLAG_RECEIVED_RUSTURF_SPOON_GIFT        FLAG_GROUNDED(1848) // Project Grounded: Rusturf Tunnel: lepelgraver geeft een Twisted Spoon
+// }
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000

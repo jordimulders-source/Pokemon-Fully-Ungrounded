@@ -413,6 +413,48 @@ RusturfTunnel_Movement_PeekoExit:
 	walk_left
 	step_end
 
+@ Project Grounded: lepelgraver in de zijgang (testrun Jordi: Rusturf mocht wat leuks krijgen)
+RusturfTunnel_EventScript_SpoonDigger::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_RUSTURF_SPOON_GIFT, RusturfTunnel_EventScript_SpoonDiggerDone
+	msgbox RusturfTunnel_Text_SpoonDiggerIntro, MSGBOX_DEFAULT
+	giveitem ITEM_TWISTED_SPOON
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_RUSTURF_SPOON_GIFT
+	msgbox RusturfTunnel_Text_SpoonDiggerAfter, MSGBOX_DEFAULT
+	goto RusturfTunnel_EventScript_SpoonDiggerBackToWork
+	end
+
+RusturfTunnel_EventScript_SpoonDiggerDone::
+	msgbox RusturfTunnel_Text_SpoonDiggerDone, MSGBOX_DEFAULT
+RusturfTunnel_EventScript_SpoonDiggerBackToWork::
+	closemessage
+	applymovement VAR_LAST_TALKED, Common_Movement_FaceUp
+	waitmovement 0
+	release
+	end
+
+RusturfTunnel_Text_SpoonDiggerIntro:
+	.string "Shh. I'm digging to VERDANTURF.\p"
+	.string "They said drills were too loud.\n"
+	.string "It upsets the WHISMUR.\p"
+	.string "So I use a spoon. Quiet. Respectful.\n"
+	.string "Day 7,412.\p"
+	.string "This one bent. Take it. I think\n"
+	.string "it's psychic now.$"
+
+RusturfTunnel_Text_SpoonDiggerAfter:
+	.string "A TWISTED SPOON powers up PSYCHIC\n"
+	.string "moves. And it builds character.\p"
+	.string "…What do you mean, the exit is\n"
+	.string "right over there?$"
+
+RusturfTunnel_Text_SpoonDiggerDone:
+	.string "Day 7,413. Still digging.\p"
+	.string "Don't say it. Don't point at it.\n"
+	.string "This is about the journey.$"
+
 RusturfTunnel_EventScript_Mike::
 	trainerbattle_single TRAINER_MIKE_2, RusturfTunnel_Text_MikeIntro, RusturfTunnel_Text_MikeDefeat
 	msgbox RusturfTunnel_Text_MikePostBattle, MSGBOX_AUTOCLOSE

@@ -283,6 +283,100 @@
               ]
             }
           },
+          {
+            "map": "MAP_ROUTE104",
+            "base_label": "gRoute104_North",
+            "land_mons": {
+              "encounter_rate": 20,
+              "mons": [
+                {
+                  "min_level": 14,
+                  "max_level": 15,
+                  "species": "SPECIES_BELLSPROUT"
+                },
+                {
+                  "min_level": 14,
+                  "max_level": 15,
+                  "species": "SPECIES_ODDISH"
+                },
+                {
+                  "min_level": 13,
+                  "max_level": 14,
+                  "species": "SPECIES_SHINX"
+                },
+                {
+                  "min_level": 14,
+                  "max_level": 15,
+                  "species": "SPECIES_COMBEE"
+                },
+                {
+                  "min_level": 14,
+                  "max_level": 15,
+                  "species": "SPECIES_CUTIEFLY"
+                },
+                {
+                  "min_level": 14,
+                  "max_level": 16,
+                  "species": "SPECIES_SKIDDO"
+                },
+                {
+                  "min_level": 15,
+                  "max_level": 15,
+                  "species": "SPECIES_NATU"
+                },
+                {
+                  "min_level": 15,
+                  "max_level": 15,
+                  "species": "SPECIES_FLITTLE"
+                },
+                {
+                  "min_level": 15,
+                  "max_level": 15,
+                  "species": "SPECIES_BOUNSWEET"
+                },
+                {
+                  "min_level": 15,
+                  "max_level": 15,
+                  "species": "SPECIES_PETILIL"
+                },
+                {
+                  "min_level": 16,
+                  "max_level": 16,
+                  "species": "SPECIES_SNIVY"
+                },
+                {
+                  "min_level": 16,
+                  "max_level": 16,
+                  "species": "SPECIES_EEVEE"
+                }
+              ]
+            },
+            "water_mons": {
+              "encounter_rate": 4,
+              "mons": [
+                { "min_level": 7, "max_level": 15, "species": "SPECIES_LOTAD" },
+                { "min_level": 7, "max_level": 18, "species": "SPECIES_DUCKLETT" },
+                { "min_level": 15, "max_level": 22, "species": "SPECIES_FLABEBE" },
+                { "min_level": 22, "max_level": 27, "species": "SPECIES_COMFEY" },
+                { "min_level": 32, "max_level": 37, "species": "SPECIES_SWANNA" }
+              ]
+            },
+            "fishing_mons": {
+              "encounter_rate": 30,
+              "mons": [
+                { "min_level": 7, "max_level": 15, "species": "SPECIES_FINNEON" },
+                { "min_level": 7, "max_level": 15, "species": "SPECIES_SURSKIT" },
+                { "min_level": 15, "max_level": 22, "species": "SPECIES_EXEGGCUTE" },
+                { "min_level": 15, "max_level": 27, "species": "SPECIES_SHELLDER" },
+                { "min_level": 27, "max_level": 32, "species": "SPECIES_LUMINEON" },
+                { "min_level": 27, "max_level": 32, "species": "SPECIES_MASQUERAIN" },
+                { "min_level": 32, "max_level": 37, "species": "SPECIES_LOMBRE" },
+                { "min_level": 37, "max_level": 42, "species": "SPECIES_CLOYSTER" },
+                { "min_level": 42, "max_level": 47, "species": "SPECIES_BELLOSSOM" },
+                { "min_level": 47, "max_level": 52, "species": "SPECIES_RIBOMBEE" }
+              ]
+            }
+          },
         {
           "map": "MAP_ROUTE105",
           "base_label": "gRoute105",

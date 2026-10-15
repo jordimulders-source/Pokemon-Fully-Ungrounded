@@ -1240,6 +1240,14 @@
 	.4byte \products
 	.endm
 
+	@ Project Grounded: Pokemart met een vast basisassortiment dat meegroeit met het aantal badges
+	@ (src/badge_mart.c), plus de stadsspecialiteiten in products (zelfde lijstvorm als pokemart).
+	.macro badgemart products:req
+	callnative ScrNative_BadgeMart
+	.4byte \products
+	waitstate
+	.endm
+
 	@ Used as the endpoint for a Pokemart item list
 	.macro pokemartlistend
 	.2byte ITEM_NONE

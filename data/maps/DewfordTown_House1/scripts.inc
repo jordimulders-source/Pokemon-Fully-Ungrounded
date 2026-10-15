@@ -1,8 +1,18 @@
 DewfordTown_House1_MapScripts::
 	.byte 0
 
+@ Project Grounded: eenmalige item-giveaway (testrun Jordi)
 DewfordTown_House1_EventScript_Man::
-	msgbox DewfordTown_House1_Text_LotToBeSaidForLivingOnIsland, MSGBOX_NPC
+	lock
+	faceplayer
+	msgbox DewfordTown_House1_Text_LotToBeSaidForLivingOnIsland, MSGBOX_DEFAULT
+	goto_if_set FLAG_RECEIVED_DEWFORD_HOUSE1_GIFT, DewfordTown_House1_EventScript_Man_GiftDone
+	msgbox DewfordTown_House1_Text_TakeSmokeBall, MSGBOX_DEFAULT
+	giveitem ITEM_SMOKE_BALL
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_DEWFORD_HOUSE1_GIFT
+DewfordTown_House1_EventScript_Man_GiftDone::
+	release
 	end
 
 DewfordTown_House1_EventScript_Woman::
@@ -43,3 +53,8 @@ DewfordTown_House1_Text_Zigzagoon:
 	.string "winks.\p"
 	.string "It knows. It definitely knows.$"
 
+DewfordTown_House1_Text_TakeSmokeBall:
+	.string "…Here. Take this SMOKE BALL.\p"
+	.string "It gets you away from any wild\n"
+	.string "POKéMON. Or any conversation.\p"
+	.string "You and I never talked. Capisce?$"

@@ -7086,6 +7086,20 @@ static void Cmd_moveend(void)
                 effect = TRUE;
                 BattleScriptCall(BattleScript_EffectHitEscape);
             }
+            // Project Grounded: Hole Up - na een KO duikt Dugtrio/Wugtrio weg en wissel je gratis
+            else if (moveEffect != EFFECT_HIT_ESCAPE
+             && GetBattlerAbility(gBattlerAttacker) == ABILITY_HOLE_UP
+             && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+             && !IsBattleMoveStatus(gCurrentMove)
+             && gBattlerAttacker != gBattlerTarget
+             && !IsBattlerAlive(gBattlerTarget)
+             && IsBattlerAlive(gBattlerAttacker)
+             && !NoAliveMonsForBattlerSide(gBattlerTarget))
+            {
+                effect = TRUE;
+                gBattleScripting.battler = gBattlerAttacker;
+                BattleScriptCall(BattleScript_HoleUpActivates);
+            }
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_EJECT_PACK:

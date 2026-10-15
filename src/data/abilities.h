@@ -44,6 +44,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 7,
     },
 
+    [ABILITY_HOLE_UP] = // Project Grounded
+    {
+        .name = _("Hole Up"),
+        .description = COMPOUND_STRING("Ducks into its hole after a KO."),
+        .aiRating = 6,
+    },
+
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("Speed Boost"),

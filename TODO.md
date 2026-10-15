@@ -143,6 +143,7 @@ Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen
 - **Per onderdeel kleuren, niet één tint over alles** (Jordi 15 okt): een Pokémon bestaat uit meerdere kleurgroepen (lijf, buik, vlam, bloem, ogen); pas er één of meer aan en houd de schaduwen erin. Vuur mag spelen: blauwe, groene, witte vlam (met tinten); **vlam in contrast met de huid** (Jordi 15 okt), liefst realistische vlamkleuren (wit, blauw, groen, violet, karmijn).
 - **Zwart:** schaduwen juist versterken (`'l': 1.3`), anders wordt een kleine sprite een vormloze vlek.
 - Past bij de rom zelf: typing/abilities van revisies meenemen (Shiftry Grass/Ice = winterdemon).
+- Geen kleuren van een echte regionale vorm van dezelfde soort (Galar-Zigzagoon: verwarrend; Jordi).
 - Varianten onderling en t.o.v. shiny vergelijken: twee blauwe in één lijn = één vervangen.
 - **Albino:** gebroken wit met volledige schaduwen (de belichte rand is de hoofdkleur van het lijf: nooit puur wit, anders valt de omlijning weg), **rode ogen**, donkerdere vlekken blijven donkerder, een andere kleur bol/bloem; een witte vlam houdt tinten.
 

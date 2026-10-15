@@ -18803,7 +18803,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Sceptile terug naar de versie met de oranje buikstreep en armbladeren in lijfkleur (Jordi); de extra index-ingreep is teruggedraaid.
 - **Kleurvarianten, Hoenn-dex groep 2:**
   - Poochyena-lijn: blauwe merle, rode wolf, poolwolf, albino, Midnight Lycanroc, spookwolf.
-  - Zigzagoon-lijn: wasbeer, rode panda, Galar-kleuren, albino, Sonic, vaporwave.
+  - Zigzagoon-lijn: wasbeer, aardbeienmelk, Pikachu-kleuren, albino, Sonic, vaporwave (rode panda leek op de shiny, Galar-kleuren verwarrend; Jordi).
   - Wurmple-familie: monarchvlinder (jadegroene cocons), blauwe morpho, maanvlinder, melanisme, Kanto-neven (Caterpie, Metapod, Kakuna, Butterfree, Venomoth), neon.
   - Lotad-lijn: lotus, Mexico (Jordi), mandarijneend, albino, kappa, neon.
   - Seedot-lijn: onrijpe eikel, tengu, sakura, albino, oni (Jordi), winterdemon (Shiftry is hier Grass/Ice met Snow Warning; Jordi).

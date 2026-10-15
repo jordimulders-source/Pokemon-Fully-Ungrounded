@@ -160,8 +160,8 @@ LINES = {
         },
         'variants': [
             {'naam': 'Wasbeer', 'light': '#b4b4b4', 'brown': '#5c5c60'},
-            {'naam': 'Rode panda', 'light': '#e4d8c4', 'brown': '#b04a24', 'dark': '#2c2020'},
-            {'naam': 'Galar-kleuren', 'light': '#dcdcdc', 'brown': '#2c2c30', 'dark': '#101014', 'eyes': '#e83030'},
+            {'naam': 'Aardbeienmelk', 'light': '#f6e0e6', 'brown': '#d86890', 'dark': '#682838'},
+            {'naam': 'Pikachu-kleuren', 'light': '#f8ecb8', 'brown': '#f0c020', 'dark': '#6a4020', 'eyes': '#e84830'},
             {'naam': 'Albino', 'light': ('#d4cccc', ALBINO), 'brown': ('#bcb0b0', ALBINO), 'dark': '#a08888',
              'eyes': '#d02030'},
             {'naam': 'Sonic', 'light': '#f0c890', 'brown': '#2860d0', 'dark': '#183880', 'eyes': '#38c048'},

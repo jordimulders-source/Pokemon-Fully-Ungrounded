@@ -1354,6 +1354,7 @@ static const struct LevelUpMove sDugtrioLevelUpLearnset[] = {
     LEVEL_UP_MOVE(30, MOVE_SANDSTORM),
     LEVEL_UP_MOVE(33, MOVE_SWORDS_DANCE), // Project Grounded
     LEVEL_UP_MOVE(36, MOVE_DIG),
+    LEVEL_UP_MOVE(39, MOVE_DRILL_RUN), // Project Grounded
     LEVEL_UP_MOVE(42, MOVE_EARTH_POWER),
     LEVEL_UP_MOVE(48, MOVE_EARTHQUAKE),
     LEVEL_UP_MOVE(54, MOVE_FISSURE),
@@ -1393,6 +1394,7 @@ static const struct LevelUpMove sDugtrioAlolaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(30, MOVE_SANDSTORM),
     LEVEL_UP_MOVE(33, MOVE_SWORDS_DANCE), // Project Grounded
     LEVEL_UP_MOVE(36, MOVE_DIG),
+    LEVEL_UP_MOVE(39, MOVE_DRILL_RUN), // Project Grounded
     LEVEL_UP_MOVE(42, MOVE_EARTH_POWER),
     LEVEL_UP_MOVE(48, MOVE_EARTHQUAKE),
     LEVEL_UP_MOVE(54, MOVE_FISSURE),

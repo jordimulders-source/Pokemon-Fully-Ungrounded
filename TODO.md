@@ -150,7 +150,7 @@ Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen
 - Voorbeelden die Jordi geniaal vond: Toad (Breloom), amethistzwam, Kumamon, Mewtwo-kleuren (Abra), Garfield, Oni-Shiftry, Okami-Poochyena; en evolutiewissels (Magikarp ↔ Gyarados).
 - Gepaarde soorten (Plusle/Minun, Volbeat/Illumise): binnen één variant contrasteren, niet dezelfde kleur.
 - Pokémon-games als thema (Sableye: Gold/Silver/Crystal enz.) viel goed; een sprite met meerdere edelstenen/onderdelen kan per onderdeel een eigen kleur krijgen (sprite_fixes).
-- Niet alleen één onderdeel kleuren: een variant moet het hele lichaam meenemen (Volbeat/Illumise-feedback). Ronde Pokémon: baltema's (basketbal, tennisbal, strandbal; niet de Poké Ball).
+- Een variant hoeft niet altijd het hele lichaam mee te kleuren (Jordi), maar moet wel opvallen: alleen de schaal van Volbeat/Illumise was saai. Ronde Pokémon: baltema's (tennisbal voor Wailmer/Wailord; niet de Poké Ball).
 - Varianten onderling en t.o.v. shiny vergelijken: twee blauwe in één lijn = één vervangen.
 - **Albino:** gebroken wit met volledige schaduwen (de belichte rand is de hoofdkleur van het lijf: nooit puur wit, anders valt de omlijning weg), **rode ogen**, donkerdere vlekken blijven donkerder, een andere kleur bol/bloem; een witte vlam houdt tinten.
 

@@ -18844,5 +18844,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Roselia: witte en gele roos, Hollandse tulpen, cactusbloei, albino, betoverde roos, gifbloem.
   - Gulpin-lijn: omgewisseld, karamelpudding, Kirby, albino, Pac-Man, biohazard.
   - Carvanha-lijn: witte haai, vuurvis, zwarte piranha, albino, megalodon (fossiel), Gulf-racekleuren.
-  - Wailmer-lijn: tropisch turkoois, orka, Migaloo (witte bultrug), roze rivierdolfijn, zeppelin, basketbal (Jordi: baltema).
+  - Wailmer-lijn: tropisch turkoois, orka, Migaloo (witte bultrug), roze rivierdolfijn, zeppelin, tennisbal (Jordi: baltema).
   - Numel-lijn: dromedaris, basalt en lava, Kawah Ijen (blauw vuur), albino, ijsvulkaan, lavalamp.

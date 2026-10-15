@@ -656,7 +656,7 @@ LINES = {
             {'naam': 'Migaloo (witte bultrug)', 'blue': '#c8ccd8'},
             {'naam': 'Roze rivierdolfijn', 'blue': '#e8a0b0', 'belly': '#f8e0e4'},
             {'naam': 'Zeppelin', 'blue': '#b8bcc4', 'belly': '#c02828'},
-            {'naam': 'Basketbal', 'blue': '#e07020', 'belly': '#f0a050'},
+            {'naam': 'Tennisbal', 'blue': '#c8e030', 'belly': '#eef2d8'},
         ],
     },
     'numel': {

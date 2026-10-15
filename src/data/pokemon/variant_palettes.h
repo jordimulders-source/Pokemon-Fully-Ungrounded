@@ -36,6 +36,36 @@ static const u16 sVariants_Kadabra[] = INCBIN_U16("graphics/pokemon/kadabra/vari
 #if (P_FAMILY_ABRA)
 static const u16 sVariants_Alakazam[] = INCBIN_U16("graphics/pokemon/alakazam/variants.gbapal");
 #endif
+#if (P_FAMILY_GEODUDE)
+static const u16 sVariants_Geodude[] = INCBIN_U16("graphics/pokemon/geodude/variants.gbapal");
+#endif
+#if (P_FAMILY_GEODUDE)
+static const u16 sVariants_Graveler[] = INCBIN_U16("graphics/pokemon/graveler/variants.gbapal");
+#endif
+#if (P_FAMILY_GEODUDE)
+static const u16 sVariants_Golem[] = INCBIN_U16("graphics/pokemon/golem/variants.gbapal");
+#endif
+#if (P_FAMILY_GOLDEEN)
+static const u16 sVariants_Goldeen[] = INCBIN_U16("graphics/pokemon/goldeen/variants.gbapal");
+#endif
+#if (P_FAMILY_GOLDEEN)
+static const u16 sVariants_Seaking[] = INCBIN_U16("graphics/pokemon/seaking/variants.gbapal");
+#endif
+#if (P_FAMILY_MAGIKARP)
+static const u16 sVariants_Magikarp[] = INCBIN_U16("graphics/pokemon/magikarp/variants.gbapal");
+#endif
+#if (P_FAMILY_MAGIKARP)
+static const u16 sVariants_Gyarados[] = INCBIN_U16("graphics/pokemon/gyarados/variants.gbapal");
+#endif
+#if (P_FAMILY_MARILL) && (P_GEN_3_CROSS_EVOS)
+static const u16 sVariants_Azurill[] = INCBIN_U16("graphics/pokemon/azurill/variants.gbapal");
+#endif
+#if (P_FAMILY_MARILL)
+static const u16 sVariants_Marill[] = INCBIN_U16("graphics/pokemon/marill/variants.gbapal");
+#endif
+#if (P_FAMILY_MARILL)
+static const u16 sVariants_Azumarill[] = INCBIN_U16("graphics/pokemon/azumarill/variants.gbapal");
+#endif
 #if (P_FAMILY_TREECKO)
 static const u16 sVariants_Treecko[] = INCBIN_U16("graphics/pokemon/treecko/variants.gbapal");
 #endif
@@ -177,6 +207,15 @@ static const u16 sVariants_Makuhita[] = INCBIN_U16("graphics/pokemon/makuhita/va
 #if (P_FAMILY_MAKUHITA)
 static const u16 sVariants_Hariyama[] = INCBIN_U16("graphics/pokemon/hariyama/variants.gbapal");
 #endif
+#if (P_FAMILY_NOSEPASS)
+static const u16 sVariants_Nosepass[] = INCBIN_U16("graphics/pokemon/nosepass/variants.gbapal");
+#endif
+#if (P_FAMILY_SKITTY)
+static const u16 sVariants_Skitty[] = INCBIN_U16("graphics/pokemon/skitty/variants.gbapal");
+#endif
+#if (P_FAMILY_SKITTY)
+static const u16 sVariants_Delcatty[] = INCBIN_U16("graphics/pokemon/delcatty/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -215,6 +254,36 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_ABRA)
     {gMonPalette_Alakazam, sVariants_Alakazam},
+#endif
+#if (P_FAMILY_GEODUDE)
+    {gMonPalette_Geodude, sVariants_Geodude},
+#endif
+#if (P_FAMILY_GEODUDE)
+    {gMonPalette_Graveler, sVariants_Graveler},
+#endif
+#if (P_FAMILY_GEODUDE)
+    {gMonPalette_Golem, sVariants_Golem},
+#endif
+#if (P_FAMILY_GOLDEEN)
+    {gMonPalette_Goldeen, sVariants_Goldeen},
+#endif
+#if (P_FAMILY_GOLDEEN)
+    {gMonPalette_Seaking, sVariants_Seaking},
+#endif
+#if (P_FAMILY_MAGIKARP)
+    {gMonPalette_Magikarp, sVariants_Magikarp},
+#endif
+#if (P_FAMILY_MAGIKARP)
+    {gMonPalette_Gyarados, sVariants_Gyarados},
+#endif
+#if (P_FAMILY_MARILL) && (P_GEN_3_CROSS_EVOS)
+    {gMonPalette_Azurill, sVariants_Azurill},
+#endif
+#if (P_FAMILY_MARILL)
+    {gMonPalette_Marill, sVariants_Marill},
+#endif
+#if (P_FAMILY_MARILL)
+    {gMonPalette_Azumarill, sVariants_Azumarill},
 #endif
 #if (P_FAMILY_TREECKO)
     {gMonPalette_Treecko, sVariants_Treecko},
@@ -356,6 +425,15 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_MAKUHITA)
     {gMonPalette_Hariyama, sVariants_Hariyama},
+#endif
+#if (P_FAMILY_NOSEPASS)
+    {gMonPalette_Nosepass, sVariants_Nosepass},
+#endif
+#if (P_FAMILY_SKITTY)
+    {gMonPalette_Skitty, sVariants_Skitty},
+#endif
+#if (P_FAMILY_SKITTY)
+    {gMonPalette_Delcatty, sVariants_Delcatty},
 #endif
     {NULL, NULL},
 };

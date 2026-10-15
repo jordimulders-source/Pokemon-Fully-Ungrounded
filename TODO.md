@@ -125,7 +125,7 @@ Besloten:
 - Varianten gelden overal waar het gevechts-/menupalet gebruikt wordt (gevecht, summary, pc, evolutie, contest); niet in de Pokédex. Volgers staan uit in deze rom, dus geen overworld-paletten nodig.
 - Trainers (ook Frontier): standaard **normaal** (Jordi 15 okt); vaste variant met `Variant: 0–6` in trainers.party. Later eventueel: Archie/Maxie in Aqua/Magma-kleuren.
 - **Evolutielijnen consistent:** variant k van Charmander hoort bij variant k van Charizard (zelfde recept per lijn); soorten die bij het evolueren van kleur wisselen mogen dat ook in hun varianten (`'soort:onderdeel'` in recipes.py).
-- Werkwijze (Jordi 15 okt): Hoenn-dex eerst (vanilla 202, volgorde `HOENN_DEX_*`; groep 1 starters ✔, groep 2 ✔, groep 3 Taillow–Breloom ✔, groep 4 Slakoth–Hariyama (wacht op Jordi); volgende: Goldeen, Gyarados (geen Magikarp-levels, wel kleuren?), Azurill, Geodude, Nosepass, Skitty), **per groepje** evolutielijnen recepten maken → contactvel (`sheet.py`) → Jordi keurt → volgende groep. Alleen soorten met een recept krijgen varianten (de rest blijft normaal). Per lijn: `ramps.py <map> [indexkaart.png]` voor de kleurgroepen, recept in `recipes.py`, `variants.py` draaien. Delen ogen een index met een ander onderdeel: eigen index via `sprite_fixes.py`. Nog te doen: Mega/Gmax-vormen (submappen) meenemen.
+- Werkwijze (Jordi 15 okt): Hoenn-dex eerst (vanilla 202, volgorde `HOENN_DEX_*`; groep 1 starters ✔, groep 2 ✔, groep 3 Taillow–Breloom ✔, groep 4 ✔, groep 5 Goldeen–Delcatty (wacht op Jordi); volgende: Sableye, Mawile, Aron, Meditite, Electrike, Plusle/Minun), **per groepje** evolutielijnen recepten maken → contactvel (`sheet.py`) → Jordi keurt → volgende groep. Alleen soorten met een recept krijgen varianten (de rest blijft normaal). Per lijn: `ramps.py <map> [indexkaart.png]` voor de kleurgroepen, recept in `recipes.py`, `variants.py` draaien. Delen ogen een index met een ander onderdeel: eigen index via `sprite_fixes.py`. Nog te doen: Mega/Gmax-vormen (submappen) meenemen.
 - Schatting: Hoenn-test ±1–1,7 M tokens, rest van de dex ±1–2 M.
 
 Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen):
@@ -146,6 +146,8 @@ Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen
 - Geen kleuren van een echte regionale vorm van dezelfde soort (Galar-Zigzagoon: verwarrend; Jordi).
 - **0,5% gevarieerd houden** (Jordi 15 okt): neon/vaporwave niet standaard; meer soorten patronen en thema's (popcultuur, mythen, materialen). Hoogtepunt volgens Jordi: Oni-Shiftry (thema dat bij de soort past).
 - **Metalen en edelstenen** (Jordi 15 okt): goud, zilver, brons, koper, diamant, robijn, smaragd, saffier enz. voor Pokémon die op erts/gesteente gebaseerd zijn (Geodude, Nosepass, Aron, Carbink...).
+- **Shiny eerst bekijken** (kolom 2 van het contactvel) vóór je een thema kiest: Geodude/Graveler goud, Azumarill geel, Skitty oranje, Nosepass bruin.
+- Voorbeelden die Jordi geniaal vond: Toad (Breloom), amethistzwam, Kumamon, Mewtwo-kleuren (Abra), Garfield, Oni-Shiftry, Okami-Poochyena; en evolutiewissels (Magikarp ↔ Gyarados).
 - Varianten onderling en t.o.v. shiny vergelijken: twee blauwe in één lijn = één vervangen.
 - **Albino:** gebroken wit met volledige schaduwen (de belichte rand is de hoofdkleur van het lijf: nooit puur wit, anders valt de omlijning weg), **rode ogen**, donkerdere vlekken blijven donkerder, een andere kleur bol/bloem; een witte vlam houdt tinten.
 

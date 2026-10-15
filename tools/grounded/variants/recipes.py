@@ -398,4 +398,92 @@ LINES = {
             {'naam': 'Daruma', 'skin': '#c83028', 'hands': '#a82020', 'belt': '#e0b030', 'cheeks': '#f0e8d8'},
         ],
     },
+
+    # --- Hoenn-dex, groep 5 ---
+    'goldeen': {
+        'species': {
+            'goldeen': {'white': [2, 4, 5], 'orange': [6, 8, 10, 11], 'eyes': [12, 13], 'fins': [1, 3]},
+            'seaking': {'white': [2, 3, 11], 'orange': [7, 8, 9, 10], 'fins': [1, 4, 12]},
+        },
+        'variants': [
+            {'naam': 'Goudvis (helemaal oranje)', 'white': '#f09030', 'orange': '#c82818'},
+            {'naam': 'Black Moor', 'white': ('#34343c', {'l': 1.3}), 'orange': '#6c5c4c'},
+            {'naam': 'Shubunkin (blauw)', 'white': '#a0c4e8', 'orange': '#e86818'},
+            {'naam': 'Panda-oranda', 'orange': '#2c2c30'},
+            {'naam': 'Kempvis (halfmoon)', 'white': '#2848c0', 'orange': '#c82838', 'eyes': '#e8c020'},
+            {'naam': 'Nemo (clownvis)', 'white': '#f07818', 'orange': '#f0eee8', 'fins': '#1c1c20'},
+        ],
+    },
+    'magikarp': {
+        'species': {
+            'magikarp': {'body': [3, 4, 8, 9, 12, 14], 'gold': [2, 15], 'fins': [5, 7, 11]},
+            'gyarados': {'body': [3, 5, 6, 7, 9], 'gold': [10, 11, 12], 'fins': [4, 8], 'mouth': [13, 14, 15]},
+        },
+        'variants': [
+            {'naam': 'Omgewisseld (Magikarp blauw, Gyarados oranje)', 'magikarp:body': '#2890b8',
+             'magikarp:gold': '#d8c088', 'gyarados:body': '#f07020', 'gyarados:gold': '#f8d828'},
+            {'naam': 'Kohaku (koi)', 'body': '#e8e4dc', 'fins': '#d03020', 'gyarados:gold': '#d03020'},
+            {'naam': 'Karasu (zwarte koi)', 'body': ('#2c2c34', {'l': 1.3}), 'fins': '#e87020', 'gold': '#e87020'},
+            {'naam': 'Drakenpoort (jade)', 'body': '#38a068', 'gold': '#e0b828', 'fins': '#e8f0d0'},
+            {'naam': 'Godzilla', 'body': ('#3c4a3c', {'l': 1.2}), 'fins': '#90c8f0', 'gold': '#707870'},
+            {'naam': 'Hemelse draak', 'body': '#c4d8f0', 'fins': '#e8c030', 'gold': '#e8c030'},
+        ],
+    },
+    'azurill': {
+        'species': {
+            'azurill': {'blue': [1, 2, 3, 4, 8, 9], 'red': [6, 7]},
+            'marill': {'blue': [1, 2, 3, 4, 5], 'red': [6, 7, 8], 'belly': [10, 11, 13]},
+            'azumarill': {'blue': [1, 2, 3, 8, 11, 15], 'red': [5, 6, 7, 10, 12], 'belly': [9, 13, 14]},
+        },
+        'variants': [
+            {'naam': 'Lavendel', 'blue': '#a888d8', 'red': '#f0c030'},
+            {'naam': 'Roze', 'blue': '#f088b0', 'red': '#4098d0'},
+            {'naam': 'Sinaasappel', 'blue': '#f09038', 'red': '#48a838', 'belly': '#f8e8c0'},
+            {'naam': 'Albino', 'blue': ('#d0d0dc', ALBINO), 'red': '#e890a0'},
+            {'naam': 'Sterrennacht (Van Gogh)', 'blue': '#203070', 'red': '#f0c020', 'belly': '#f0e8a8'},
+            {'naam': 'Kerstbal', 'blue': '#c82028', 'red': '#e0b030', 'belly': '#f0e8d0'},
+        ],
+    },
+    'geodude': {
+        'species': {
+            'geodude': {'rock': [2, 3, 4, 5, 6]},
+            'graveler': {'rock': [2, 3, 4, 5, 6]},
+            'golem': {'rock': [6, 7, 8, 9]},
+        },
+        'variants': [
+            {'naam': 'Koper', 'rock': '#b86838'},
+            {'naam': 'Zilver', 'rock': '#b8bcc4'},
+            {'naam': 'Saffier', 'rock': '#2858c0'},
+            {'naam': 'Robijn', 'rock': '#c02838'},
+            {'naam': 'Amethist', 'rock': '#8848c0'},
+            {'naam': 'Diamant', 'rock': ('#d4e8f8', {'l': 1.2})},
+        ],
+    },
+    'nosepass': {
+        'species': {
+            'nosepass': {'body': [1, 2, 3, 4, 5], 'nose': [7, 8, 9, 10, 11]},
+        },
+        'variants': [
+            {'naam': 'Basalt', 'body': '#585860', 'nose': '#c84830'},
+            {'naam': 'IJzererts (roest)', 'body': '#a04828', 'nose': '#c0c4cc'},
+            {'naam': 'Jade (Olmeeks)', 'body': '#48a078', 'nose': '#e0b030'},
+            {'naam': 'Marmer', 'body': '#c8c8d0', 'nose': '#2c2c30'},
+            {'naam': 'Robijn', 'body': '#b02838', 'nose': '#e0b030'},
+            {'naam': 'Diamant', 'body': ('#d4e8f8', {'l': 1.2}), 'nose': '#f088b8'},
+        ],
+    },
+    'skitty': {
+        'species': {
+            'skitty': {'main': [5, 6, 7, 8, 12], 'cream': [1, 2, 3, 11], 'tip': [9, 10]},
+            'delcatty': {'main': [1, 2, 3, 5], 'cream': [6, 7, 10, 13]},
+        },
+        'variants': [
+            {'naam': 'Siamees', 'main': '#5c3c2c', 'tip': '#3c2820'},
+            {'naam': 'Doraemon', 'main': '#2898e0', 'cream': '#f0f0f0', 'tip': '#e02020'},
+            {'naam': 'Grijze tabby', 'main': '#8a8a8e', 'tip': '#4c4c54'},
+            {'naam': 'Albino', 'main': ('#dcd0d4', ALBINO), 'cream': ('#ece4dc', ALBINO), 'tip': '#e090a8'},
+            {'naam': 'Cheshire Cat', 'main': '#c040a0', 'cream': '#7838a8', 'tip': '#f0c8e8'},
+            {'naam': 'Luna (Sailor Moon)', 'main': ('#2c2834', {'l': 1.3}), 'cream': '#f0c830', 'tip': '#f0c830'},
+        ],
+    },
 }

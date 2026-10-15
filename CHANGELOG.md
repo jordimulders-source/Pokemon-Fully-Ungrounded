@@ -18819,3 +18819,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Nincada-familie: groene cicade, barnsteen, brons, albino, hemels (gouden halo), Japans lakwerk.
   - Whismur-lijn: luidspreker, olifant, KISS, albino, gouden plaat, banshee.
   - Makuhita-lijn: Kumamon, kappa-sumo, Hokusai (indigo), albino, lucha libre, Daruma.
+- **Kleurvarianten, Hoenn-dex groep 5:**
+  - Goldeen-lijn: goudvis, Black Moor, shubunkin, panda-oranda, kempvis, Nemo.
+  - Magikarp-lijn (alleen kleuren; levels ongemoeid): omgewisseld (Magikarp blauw, Gyarados oranje; Jordi), kohaku, karasu, drakenpoort (jade), Godzilla, hemelse draak.
+  - Azurill-lijn: lavendel, roze, sinaasappel, albino, Sterrennacht (Van Gogh), kerstbal.
+  - Geodude-lijn (edelmetalen/-stenen; Jordi): koper, zilver, saffier, robijn, amethist, diamant (geen goud: de shiny is al goud).
+  - Nosepass: basalt, ijzererts, jade (Olmeeks), marmer, robijn, diamant.
+  - Skitty-lijn: Siamees, Doraemon, grijze tabby, albino, Cheshire Cat, Luna (Sailor Moon).

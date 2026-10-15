@@ -55,7 +55,8 @@ LINES = {
     },
     'squirtle': {
         'species': {
-            'squirtle': {'body': [11, 12, 13, 14], 'shell': [3, 4, 5], 'belly': [6, 7, 8, 9], 'eyes': [10]},
+            'squirtle': {'body': [11, 12, 13, 14], 'shell': [3, 4, 5], 'belly': [6, 7, 8, 9],
+                         'lines': [10]},  # 10 = kinlijn/buikrand én pupillen
             'wartortle': {'body': [11, 12, 13, 14], 'fur': [2, 3], 'shell': [6, 7], 'belly': [8, 9, 10],
                           'eyes': [4, 5]},
             'blastoise': {'body': [6, 7, 8, 9], 'shell': [13, 14, 15], 'belly': [11], 'cannons': [3, 4, 5],
@@ -66,9 +67,10 @@ LINES = {
             {'naam': 'Soepschildpad', 'body': '#8a7448', 'shell': '#3c4c1c', 'belly': '#e8d070', 'fur': '#d8e8b0'},
             {'naam': 'Koopa', 'body': '#e0b830', 'shell': '#c82018', 'fur': '#f8f8f0'},
             {'naam': 'Albino', 'body': ('#e6e6ee', ALBINO), 'shell': ('#e4d4a0', ALBINO),
-             'belly': ('#f8f0e0', ALBINO), 'fur': ('#f0f0f8', ALBINO), 'eyes': '#e02030'},
+             'belly': '#d8ccb4', 'fur': ('#f0f0f8', ALBINO), 'eyes': '#e02030',
+             'lines': '#782028'},
             {'naam': 'Ninja Turtle', 'body': '#4e9a2c', 'shell': '#704414', 'belly': '#f0c838'},
-            {'naam': 'Vaporwave', 'body': '#f078b8', 'shell': '#28c0e0', 'belly': '#f8f0ff',
+            {'naam': 'Vaporwave', 'body': '#f078b8', 'shell': '#28c0e0', 'belly': '#d0b8ec',
              'fur': '#98f0ff', 'cannons': '#8048d8'},
         ],
     },

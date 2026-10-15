@@ -61,10 +61,16 @@ def recolor(colors, idxs, base, target, lscale=1.0, cscale=None, hshift=1.0):
     indexen hun verschil t.o.v. base (lichtheid, verzadiging, tint) houden."""
     tL, tC, th = to_oklch(hexrgb(target) if isinstance(target, str) else target)
     bL, bC, bh = to_oklch(colors[base])
+    # Lichtheid: verschil t.o.v. base behouden; loopt de groep boven wit of onder
+    # zwart uit, dan die kant samendrukken i.p.v. afkappen (anders vallen tinten weg).
+    dL = {i: (to_oklch(colors[i])[0] - bL) * lscale for i in idxs}
+    hi, lo = max(dL.values()), min(dL.values())
+    up = (0.97 - tL) / hi if hi > 0 and tL + hi > 0.97 else 1.0
+    down = (tL - 0.12) / -lo if lo < 0 and tL + lo < 0.12 else 1.0
     out = {}
     for i in idxs:
         L, C, h = to_oklch(colors[i])
-        nL = tL + (L - bL) * lscale
+        nL = tL + dL[i] * (max(0.0, up) if dL[i] > 0 else max(0.0, down))
         if cscale is not None:
             nC = tC * cscale
         elif bC > 0.02:

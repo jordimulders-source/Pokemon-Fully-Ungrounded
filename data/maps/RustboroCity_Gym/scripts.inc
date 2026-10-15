@@ -157,21 +157,17 @@ RustboroCity_Gym_Text_JoshPostBattle:
 	.string "again.$"
 
 RustboroCity_Gym_Text_TommyIntro:
-	.string "Name's TOMMY IOMMI. I invented heavy\n"
-	.string "metal. Don't look it up.\p"
-	.string "Lost two fingertips in a sheet metal\n"
-	.string "factory. Now my ARON is my fingertip.\p"
-	.string "I AM IRON MAN! Well, he is.$"
+	.string "Has he lost his mind?\n"
+	.string "Can he see or is he blind?\p"
+	.string "I AM IRON MAN!$"
 
 RustboroCity_Gym_Text_TommyDefeat:
-	.string "Heaven and Hell… mostly Hell.\n"
-	.string "Good thing I play with my thimbles on.$"
+	.string "What is this that stands before me?$"
 
 RustboroCity_Gym_Text_TommyPostBattle:
-	.string "Every riff you've ever headbanged to?\n"
-	.string "Mine. Tuned down, because it hurts.\p"
-	.string "The MURKROW is only here for the\n"
-	.string "BLACK SABBATH aesthetic.$"
+	.string "Finished with my woman 'cause she\n"
+	.string "couldn't help me with my mind…\p"
+	.string "PARANOID!$"
 
 RustboroCity_Gym_Text_MarcIntro:
 	.string "Holy Diver!\p"

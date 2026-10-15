@@ -18807,3 +18807,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Wurmple-familie: monarchvlinder (jadegroene cocons), blauwe morpho, maanvlinder, melanisme, Kanto-neven (Caterpie, Metapod, Kakuna, Butterfree, Venomoth), neon.
   - Lotad-lijn: lotus, Día de los Muertos (goudsbloem-oranje, botwit met zwarte zigzag, paars en magenta; Jordi), mandarijneend, albino, kappa, neon.
   - Seedot-lijn: onrijpe eikel, tengu, sakura, albino, oni (Jordi), winterdemon (Shiftry is hier Grass/Ice met Snow Warning; Jordi).
+- **Kleurvarianten, Hoenn-dex groep 3:**
+  - Taillow-lijn: roodborst, ijsvogel, kardinaal, albino, blauw-gele ara, zwaluwstaart (rokkostuum).
+  - Wingull-lijn: bruine pelikaan, papegaaiduiker, galah, melanisme, postbode (PostNL), onweersvogel.
+  - Ralts-lijn: lavendel, roos (rood/groen omgedraaid), hemelsblauw, albino, zwarte zwaan (ballet), Hyrule-koninklijk.
+  - Surskit-lijn: rode waterjuffer, dagpauwoog, groene glazenmaker, albino, Mothra, Luxury Ball.
+  - Shroomish-lijn: vliegenzwam, cantharel, Toad, albino, amethistzwam, lichtgevende zwam.

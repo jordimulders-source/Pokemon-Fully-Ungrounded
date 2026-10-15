@@ -232,4 +232,88 @@ LINES = {
              'face': '#d8e8f8', 'eyes': '#f02838'},
         ],
     },
+
+    # --- Hoenn-dex, groep 3 ---
+    'taillow': {
+        'species': {
+            'taillow': {'blue': [1, 2, 5], 'red': [3, 4], 'white': [7, 8], 'beak': [10, 11, 12, 13]},
+            'swellow': {'blue': [1, 4, 5], 'red': [2, 3, 6], 'white': [9, 10], 'beak': [8, 11, 12, 13]},
+        },
+        'variants': [
+            {'naam': 'Roodborst', 'blue': '#7a6048', 'red': '#e87030', 'white': '#f0e4d0'},
+            {'naam': 'IJsvogel', 'blue': '#1898c0', 'red': '#f07020', 'white': '#f0d8b8'},
+            {'naam': 'Kardinaal', 'blue': '#c02028', 'red': '#202024', 'beak': '#e86030'},
+            {'naam': 'Albino', 'blue': ('#c4c4cc', ALBINO), 'red': '#e0a8b4', 'beak': '#e8c8b0'},
+            {'naam': 'Blauw-gele ara', 'blue': '#2848c0', 'red': '#f0c020', 'white': '#f8f0c8'},
+            {'naam': 'Zwaluwstaart (rokkostuum)', 'blue': ('#24242a', {'l': 1.3}), 'red': '#e4e0d8',
+             'beak': '#d8b030'},
+        ],
+    },
+    'wingull': {
+        'species': {
+            'wingull': {'white': [3, 4], 'wings': [5, 6, 7], 'beak': [9, 10, 12]},
+            'pelipper': {'white': [6, 7, 8, 15], 'wings': [1, 3, 4, 5], 'beak': [9, 10, 11, 12, 13]},
+        },
+        'variants': [
+            {'naam': 'Bruine pelikaan', 'white': '#c8b8a0', 'wings': '#7a5838'},
+            {'naam': 'Papegaaiduiker', 'wings': '#242428', 'beak': '#e85020'},
+            {'naam': 'Galah (roze kaketoe)', 'white': '#f0c4d4', 'wings': '#8c94a4', 'beak': '#e8e0d8'},
+            {'naam': 'Melanisme', 'white': ('#50505c', {'l': 1.3}), 'wings': '#202024'},
+            {'naam': 'Postbode (PostNL)', 'wings': '#f07818', 'beak': '#283c88'},
+            {'naam': 'Onweersvogel', 'white': '#6c7484', 'wings': '#f0d020', 'beak': '#283048'},
+        ],
+    },
+    'ralts': {
+        'species': {
+            'ralts': {'hair': [5, 6, 7, 8], 'horn': [1, 2, 3], 'body': [9, 10, 11, 12]},
+            'kirlia': {'hair': [2, 6, 7, 8], 'horn': [1, 3, 4], 'body': [9, 10, 11]},
+            'gardevoir': {'hair': [1, 2, 3, 4], 'horn': [8, 11, 13], 'body': [6, 7, 10, 12]},
+            'gallade': {'hair': [1, 3, 7], 'horn': [12, 13, 14], 'body': [8, 9, 10, 11], 'legs': [4, 5, 6]},
+        },
+        'variants': [
+            {'naam': 'Lavendel', 'hair': '#9070c8', 'horn': '#28a898'},
+            {'naam': 'Roos (rood en groen omgedraaid)', 'hair': '#d84868', 'horn': '#58b858'},
+            {'naam': 'Hemelsblauw', 'hair': '#58a8e8', 'horn': '#e8b828', 'legs': '#4870b0'},
+            {'naam': 'Albino', 'hair': ('#ccd8c4', ALBINO), 'horn': '#e8a8b8'},
+            {'naam': 'Zwarte zwaan (ballet)', 'body': ('#2c2c34', {'l': 1.3}), 'hair': '#4c5058', 'horn': '#d82838',
+             'legs': '#202024'},
+            {'naam': 'Hyrule-koninklijk (Zelda)', 'hair': '#e8c040', 'body': '#d0b8ec', 'horn': '#3060d0',
+             'legs': '#6848a8'},
+        ],
+    },
+    'surskit': {
+        'species': {
+            'surskit': {'body': [6, 7, 8], 'head': [1, 2, 4, 5], 'cheeks': [11, 12]},
+            'masquerain': {'body': [7, 9, 11, 12], 'wingedge': [1, 2, 4], 'wing': [5, 6], 'eyespots': [8, 10]},
+        },
+        'variants': [
+            {'naam': 'Rode waterjuffer', 'body': '#d03838', 'wingedge': '#d03838', 'eyespots': '#3060d0'},
+            {'naam': 'Dagpauwoog', 'body': '#8a5838', 'head': '#3868d0', 'wingedge': '#a83020', 'eyespots': '#2858d0'},
+            {'naam': 'Groene glazenmaker', 'body': '#30a860', 'head': '#3070e0', 'wingedge': '#20a0a0',
+             'eyespots': '#e8c020'},
+            {'naam': 'Albino', 'body': ('#c8ccd8', ALBINO), 'head': '#e8e0c0', 'wingedge': '#e8c4b4',
+             'eyespots': '#d83040'},
+            {'naam': 'Mothra', 'body': '#d8d0c0', 'surskit:body': '#8a6a50', 'head': '#3c78e0',
+             'wingedge': '#f0a018', 'eyespots': '#2050d0'},
+            {'naam': 'Luxury Ball', 'body': ('#2c2c30', {'l': 1.3}), 'head': '#d82828', 'wingedge': '#e0b030',
+             'eyespots': '#d82828', 'cheeks': '#e0b030'},
+        ],
+    },
+    'shroomish': {
+        'species': {
+            'shroomish': {'cap': [1, 2, 3, 5, 9], 'spots': [6, 7, 8, 10], 'red': [11, 12]},
+            'breloom': {'cap': [8, 9, 10, 11], 'spots': [1, 2, 3], 'red': [4, 5, 7]},
+        },
+        'variants': [
+            {'naam': 'Vliegenzwam', 'cap': '#d02820', 'spots': '#ece8dc', 'breloom:cap': '#d02820',
+             'breloom:spots': '#e4dccc', 'breloom:red': '#f0f0e8'},
+            {'naam': 'Cantharel', 'cap': '#e8a020', 'spots': '#c87818', 'breloom:spots': '#a87830'},
+            {'naam': 'Toad', 'cap': '#ece8e0', 'spots': '#d82828', 'breloom:spots': '#3058c0'},
+            {'naam': 'Albino', 'cap': ('#d0ccc4', ALBINO), 'spots': ('#c4c4bc', ALBINO), 'red': '#d83040'},
+            {'naam': 'Amethistzwam', 'cap': '#8048b0', 'spots': '#c8a8e8', 'breloom:spots': '#6838a0',
+             'red': '#e8d040'},
+            {'naam': 'Lichtgevende zwam', 'cap': ('#1c4250', {'l': 1.2}), 'spots': '#60f088',
+             'breloom:spots': '#2c5868', 'red': '#60f088'},
+        ],
+    },
 }

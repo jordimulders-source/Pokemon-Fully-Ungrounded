@@ -145,6 +145,7 @@ Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen
 - Past bij de rom zelf: typing/abilities van revisies meenemen (Shiftry Grass/Ice = winterdemon).
 - Geen kleuren van een echte regionale vorm van dezelfde soort (Galar-Zigzagoon: verwarrend; Jordi).
 - **0,5% gevarieerd houden** (Jordi 15 okt): neon/vaporwave niet standaard; meer soorten patronen en thema's (popcultuur, mythen, materialen). Hoogtepunt volgens Jordi: Oni-Shiftry (thema dat bij de soort past).
+- **Metalen en edelstenen** (Jordi 15 okt): goud, zilver, brons, koper, diamant, robijn, smaragd, saffier enz. voor Pokémon die op erts/gesteente gebaseerd zijn (Geodude, Nosepass, Aron, Carbink...).
 - Varianten onderling en t.o.v. shiny vergelijken: twee blauwe in één lijn = één vervangen.
 - **Albino:** gebroken wit met volledige schaduwen (de belichte rand is de hoofdkleur van het lijf: nooit puur wit, anders valt de omlijning weg), **rode ogen**, donkerdere vlekken blijven donkerder, een andere kleur bol/bloem; een witte vlam houdt tinten.
 

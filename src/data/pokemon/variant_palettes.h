@@ -99,6 +99,42 @@ static const u16 sVariants_Nuzleaf[] = INCBIN_U16("graphics/pokemon/nuzleaf/vari
 #if (P_FAMILY_SEEDOT)
 static const u16 sVariants_Shiftry[] = INCBIN_U16("graphics/pokemon/shiftry/variants.gbapal");
 #endif
+#if (P_FAMILY_TAILLOW)
+static const u16 sVariants_Taillow[] = INCBIN_U16("graphics/pokemon/taillow/variants.gbapal");
+#endif
+#if (P_FAMILY_TAILLOW)
+static const u16 sVariants_Swellow[] = INCBIN_U16("graphics/pokemon/swellow/variants.gbapal");
+#endif
+#if (P_FAMILY_WINGULL)
+static const u16 sVariants_Wingull[] = INCBIN_U16("graphics/pokemon/wingull/variants.gbapal");
+#endif
+#if (P_FAMILY_WINGULL)
+static const u16 sVariants_Pelipper[] = INCBIN_U16("graphics/pokemon/pelipper/variants.gbapal");
+#endif
+#if (P_FAMILY_RALTS)
+static const u16 sVariants_Ralts[] = INCBIN_U16("graphics/pokemon/ralts/variants.gbapal");
+#endif
+#if (P_FAMILY_RALTS)
+static const u16 sVariants_Kirlia[] = INCBIN_U16("graphics/pokemon/kirlia/variants.gbapal");
+#endif
+#if (P_FAMILY_RALTS)
+static const u16 sVariants_Gardevoir[] = INCBIN_U16("graphics/pokemon/gardevoir/variants.gbapal");
+#endif
+#if (P_FAMILY_RALTS) && (P_GEN_4_CROSS_EVOS)
+static const u16 sVariants_Gallade[] = INCBIN_U16("graphics/pokemon/gallade/variants.gbapal");
+#endif
+#if (P_FAMILY_SURSKIT)
+static const u16 sVariants_Surskit[] = INCBIN_U16("graphics/pokemon/surskit/variants.gbapal");
+#endif
+#if (P_FAMILY_SURSKIT)
+static const u16 sVariants_Masquerain[] = INCBIN_U16("graphics/pokemon/masquerain/variants.gbapal");
+#endif
+#if (P_FAMILY_SHROOMISH)
+static const u16 sVariants_Shroomish[] = INCBIN_U16("graphics/pokemon/shroomish/variants.gbapal");
+#endif
+#if (P_FAMILY_SHROOMISH)
+static const u16 sVariants_Breloom[] = INCBIN_U16("graphics/pokemon/breloom/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -200,6 +236,42 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_SEEDOT)
     {gMonPalette_Shiftry, sVariants_Shiftry},
+#endif
+#if (P_FAMILY_TAILLOW)
+    {gMonPalette_Taillow, sVariants_Taillow},
+#endif
+#if (P_FAMILY_TAILLOW)
+    {gMonPalette_Swellow, sVariants_Swellow},
+#endif
+#if (P_FAMILY_WINGULL)
+    {gMonPalette_Wingull, sVariants_Wingull},
+#endif
+#if (P_FAMILY_WINGULL)
+    {gMonPalette_Pelipper, sVariants_Pelipper},
+#endif
+#if (P_FAMILY_RALTS)
+    {gMonPalette_Ralts, sVariants_Ralts},
+#endif
+#if (P_FAMILY_RALTS)
+    {gMonPalette_Kirlia, sVariants_Kirlia},
+#endif
+#if (P_FAMILY_RALTS)
+    {gMonPalette_Gardevoir, sVariants_Gardevoir},
+#endif
+#if (P_FAMILY_RALTS) && (P_GEN_4_CROSS_EVOS)
+    {gMonPalette_Gallade, sVariants_Gallade},
+#endif
+#if (P_FAMILY_SURSKIT)
+    {gMonPalette_Surskit, sVariants_Surskit},
+#endif
+#if (P_FAMILY_SURSKIT)
+    {gMonPalette_Masquerain, sVariants_Masquerain},
+#endif
+#if (P_FAMILY_SHROOMISH)
+    {gMonPalette_Shroomish, sVariants_Shroomish},
+#endif
+#if (P_FAMILY_SHROOMISH)
+    {gMonPalette_Breloom, sVariants_Breloom},
 #endif
     {NULL, NULL},
 };

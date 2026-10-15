@@ -2199,12 +2199,12 @@ LINES = {
             'hitmontop': {'body': [5, 4, 3, 2], 'gear': [9, 8, 7, 6]},
         },
         'variants': [
-            {'naam': 'Bruce Lee', 'body': '#e0c030', 'gear': '#2c2c34'},
+            {'naam': 'Bruce Lee', 'body': ('#e8c020', {'h': 0}), 'gear': '#2c2c34'},
             {'naam': 'Karate-gi', 'body': '#ece8e0', 'gear': '#c02828'},
             {'naam': 'Luchador', 'body': '#4070c0', 'gear': '#e050a0'},
             {'naam': 'Shaolin', 'body': '#e08030', 'gear': '#c8a030'},
             {'naam': 'Ninja', 'body': ('#34343c', {'l': 1.3}), 'gear': '#5070c0'},
-            {'naam': 'Kampioensgordel', 'body': '#d8a828', 'gear': '#c02828'},
+            {'naam': 'Kampioensgordel (rood met goud)', 'body': ('#b02020', {'h': 0}), 'gear': '#e0b030'},
         ],
     },
     'lickitung': {
@@ -2258,7 +2258,7 @@ LINES = {
             {'naam': 'Wallaby', 'body': '#c8a878'},
             {'naam': 'Albino', 'body': ('#ece4e0', ALBINO)},
             {'naam': 'Zwarte wallaroo', 'body': ('#3a3a40', {'l': 1.3})},
-            {'naam': 'Goud', 'body': '#d8a828'},
+            {'naam': 'Goud', 'body': ('#c89820', {'h': 0})},
         ],
     },
     'mr_mime': {
@@ -2316,7 +2316,7 @@ LINES = {
             {'naam': 'Paarse tijger', 'body': '#9060c0'},
             {'naam': 'Radioactief groen', 'body': '#70c040'},
             {'naam': 'Witte tijger', 'body': '#ece8e0'},
-            {'naam': 'Magmar-ruil', 'body': '#e05030'},
+            {'naam': 'Roze bliksem', 'body': '#e070b0'},
             {'naam': 'Zilver', 'body': '#c0c4d0'},
         ],
     },

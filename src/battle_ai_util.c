@@ -846,6 +846,7 @@ static inline void CalcDynamicMoveDamage(struct DamageContext *ctx, u16 *medianD
     }
 
     if (ctx->abilityAtk == ABILITY_PARENTAL_BOND
+        && ParentalBondActive(ctx->battlerAtk)
         && !strikeCount
         && effect != EFFECT_TRIPLE_KICK
         && effect != EFFECT_MULTI_HIT
@@ -2230,6 +2231,21 @@ bool32 CanLowerStat(u32 battlerAtk, u32 battlerDef, struct AiLogicData *aiData, 
     return TRUE;
 }
 
+static bool32 IsFirstRivalBattle(void)
+{
+    switch (TRAINER_BATTLE_PARAM.opponentA)
+    {
+    case TRAINER_BRENDAN_ROUTE_103_MUDKIP:
+    case TRAINER_BRENDAN_ROUTE_103_TREECKO:
+    case TRAINER_BRENDAN_ROUTE_103_TORCHIC:
+    case TRAINER_MAY_ROUTE_103_MUDKIP:
+    case TRAINER_MAY_ROUTE_103_TREECKO:
+    case TRAINER_MAY_ROUTE_103_TORCHIC:
+        return TRUE;
+    }
+    return FALSE;
+}
+
 u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum Stat stat)
 {
     u32 tempScore = NO_INCREASE;
@@ -2243,6 +2259,13 @@ u32 IncreaseStatDownScore(u32 battlerAtk, u32 battlerDef, enum Stat stat)
         return NO_INCREASE;
 
     if (DoesAbilityRaiseStatsWhenLowered(gAiLogicData->abilities[battlerDef]))
+        return NO_INCREASE;
+
+    // Project Grounded (Jordi, testrun): geen eindeloze debuff-spam (3x Smokescreen i.p.v. een aanval).
+    // Een verlaging scoort alleen als die stat nog niet verlaagd is; daarna wint de beste aanval.
+    // Uitzondering: het eerste rivaalgevecht (Route 103) houdt de oude debuffs; anders is Zigzagoon te snel weg.
+    if (stat != STAT_SPEED && gBattleMons[battlerDef].statStages[stat] < DEFAULT_STAT_STAGE
+     && !IsFirstRivalBattle())
         return NO_INCREASE;
 
     // TODO: Avoid decreasing stat if
@@ -3325,6 +3348,8 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
         hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_POINTED_STONES, type1, type2, maxHp);
     if (IsHazardOnSide(side, HAZARDS_STEELSURGE))
         hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_SHARP_STEEL, type1, type2, maxHp);
+    if (IsHazardOnSide(side, HAZARDS_MOAI_WATCH)) // Project Grounded
+        hazardDamage += GetMoaiWatchDamageByTypesAndHP(type1, type2, maxHp, gSideTimers[side].moaiWatchAmount);
 
     if (IsHazardOnSide(side, HAZARDS_SPIKES) && ((type1 != TYPE_FLYING && type2 != TYPE_FLYING
         && ability != ABILITY_LEVITATE && holdEffect != HOLD_EFFECT_AIR_BALLOON)

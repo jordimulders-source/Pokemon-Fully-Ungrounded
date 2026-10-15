@@ -1016,6 +1016,8 @@ extern const u8 gBattleAnimGeneral_SwapToSubstitute[];
 extern const u8 gBattleAnimGeneral_SwapFromSubstitute[];
 extern const u8 gBattleAnimGeneral_AcidRain[];
 extern const u8 gBattleAnimGeneral_PollenHaze[];
+extern const u8 gBattleAnimGeneral_BeaverDamBreak[];
+extern const u8 gBattleAnimGeneral_MoaiCrumble[];
 extern const u8 gBattleAnimMove_PollenHaze[];
 extern const u8 gBattleAnimMove_MummysCurse[];
 extern const u8 gBattleAnimMove_ZapTrap[];
@@ -1032,6 +1034,12 @@ extern const u8 gBattleAnimMove_WindChime[];
 extern const u8 gBattleAnimMove_PrimevalWard[];
 extern const u8 gBattleAnimMove_GulpDown[];
 extern const u8 gBattleAnimMove_NineLives[];
+extern const u8 gBattleAnimMove_HyphalSnare[];
+extern const u8 gBattleAnimMove_KelpShroud[];
+extern const u8 gBattleAnimMove_Cavitation[];
+extern const u8 gBattleAnimMove_LureLight[];
+extern const u8 gBattleAnimMove_BeaverDam[];
+extern const u8 gBattleAnimMove_MoaiWatch[];
 extern const u8 gBattleAnimMove_AcidRain[];
 
 // special animations

@@ -6660,6 +6660,7 @@ bool32 DoesSideHaveDamagingHazards(u32 side)
         case HAZARDS_TOXIC_SPIKES:
         case HAZARDS_STEALTH_ROCK:
         case HAZARDS_STEELSURGE:
+        case HAZARDS_MOAI_WATCH: // Project Grounded
             return TRUE;
         default:
             return FALSE;

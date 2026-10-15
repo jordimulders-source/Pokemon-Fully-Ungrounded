@@ -2136,6 +2136,15 @@
 	callnative BS_TryActivateSoulheart
 	.endm
 
+	.macro trybeaverdambreak @ Project Grounded
+	callnative BS_TryBeaverDamBreak
+	.endm
+
+	.macro beaverdamfloodnext endInstr:req @ Project Grounded
+	callnative BS_BeaverDamFloodNext
+	.4byte \endInstr
+	.endm
+
 	.macro playmoveanimation move:req
 	callnative BS_PlayMoveAnimation
 	.2byte \move

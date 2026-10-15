@@ -937,6 +937,7 @@ static const struct LevelUpMove sVulpixAlolaLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sNinetalesAlolaLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_MOONBLAST), // Project Grounded: anders nooit door levelen te leren
     LEVEL_UP_MOVE( 0, MOVE_DAZZLING_GLEAM),
     LEVEL_UP_MOVE( 1, MOVE_DAZZLING_GLEAM),
     LEVEL_UP_MOVE( 1, MOVE_MIST),
@@ -1014,7 +1015,6 @@ static const struct LevelUpMove sJigglypuffLevelUpLearnset[] = {
 static const struct LevelUpMove sWigglytuffLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_MOONBLAST),
     LEVEL_UP_MOVE( 1, MOVE_MOONBLAST),
-    LEVEL_UP_MOVE( 1, MOVE_BOOMBURST),     
     LEVEL_UP_MOVE( 1, MOVE_WISH),          
     LEVEL_UP_MOVE( 1, MOVE_TELEPORT),        
     LEVEL_UP_MOVE( 1, MOVE_SWEET_KISS),
@@ -1031,14 +1031,15 @@ static const struct LevelUpMove sWigglytuffLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_BODY_SLAM),
     LEVEL_UP_MOVE( 1, MOVE_MIMIC),
     LEVEL_UP_MOVE( 1, MOVE_GYRO_BALL),
-    LEVEL_UP_MOVE( 1, MOVE_HYPER_VOICE),
-    LEVEL_UP_MOVE( 1, MOVE_DOUBLE_EDGE),
     LEVEL_UP_MOVE( 1, MOVE_SING),
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_COPYCAT),
     LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE( 5, MOVE_PLAY_ROUGH),
+    LEVEL_UP_MOVE(36, MOVE_HYPER_VOICE),     // Project Grounded: was lv 1 (Boomburst vóór gym 1)
     LEVEL_UP_MOVE(42, MOVE_NIGHTMARE),        
+    LEVEL_UP_MOVE(44, MOVE_DOUBLE_EDGE),
+    LEVEL_UP_MOVE(50, MOVE_BOOMBURST),
     LEVEL_UP_MOVE(55, MOVE_PERISH_SONG),
     LEVEL_UP_END
 };
@@ -1240,6 +1241,7 @@ static const struct LevelUpMove sParasLevelUpLearnset[] = {
 static const struct LevelUpMove sParasectLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_FUNGAL_CONTROL), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_FUNGAL_CONTROL),
+    LEVEL_UP_MOVE( 1, MOVE_HYPHAL_SNARE), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_SPORE),
     LEVEL_UP_MOVE( 1, MOVE_CROSS_POISON),
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
@@ -1254,11 +1256,12 @@ static const struct LevelUpMove sParasectLevelUpLearnset[] = {
     LEVEL_UP_MOVE(22, MOVE_SPORE),
     LEVEL_UP_MOVE(23, MOVE_SHADOW_SNEAK),
     LEVEL_UP_MOVE(24, MOVE_SHADOW_PUNCH),    
-    LEVEL_UP_MOVE(26, MOVE_HEX),
+    LEVEL_UP_MOVE(26, MOVE_SHADOW_CLAW), // Project Grounded: was Hex (fysiek past bij Atk 110)
     LEVEL_UP_MOVE(29, MOVE_SLASH),
     LEVEL_UP_MOVE(32, MOVE_STRENGTH_SAP),    
     LEVEL_UP_MOVE(33, MOVE_POLLEN_HAZE), // Project Grounded
     LEVEL_UP_MOVE(35, MOVE_GROWTH),
+    LEVEL_UP_MOVE(36, MOVE_HYPHAL_SNARE), // Project Grounded: signature
     LEVEL_UP_MOVE(38, MOVE_NIGHTMARE),       
     LEVEL_UP_MOVE(41, MOVE_GIGA_DRAIN),
     LEVEL_UP_MOVE(44, MOVE_DESTINY_BOND),    
@@ -1347,8 +1350,11 @@ static const struct LevelUpMove sDugtrioLevelUpLearnset[] = {
     LEVEL_UP_MOVE(16, MOVE_BULLDOZE),
     LEVEL_UP_MOVE(20, MOVE_SUCKER_PUNCH),
     LEVEL_UP_MOVE(24, MOVE_SLASH),
+    LEVEL_UP_MOVE(28, MOVE_ROCK_SLIDE), // Project Grounded
     LEVEL_UP_MOVE(30, MOVE_SANDSTORM),
+    LEVEL_UP_MOVE(33, MOVE_SWORDS_DANCE), // Project Grounded
     LEVEL_UP_MOVE(36, MOVE_DIG),
+    LEVEL_UP_MOVE(39, MOVE_DRILL_RUN), // Project Grounded
     LEVEL_UP_MOVE(42, MOVE_EARTH_POWER),
     LEVEL_UP_MOVE(48, MOVE_EARTHQUAKE),
     LEVEL_UP_MOVE(54, MOVE_FISSURE),
@@ -1386,7 +1392,9 @@ static const struct LevelUpMove sDugtrioAlolaLevelUpLearnset[] = {
     LEVEL_UP_MOVE(20, MOVE_SUCKER_PUNCH),
     LEVEL_UP_MOVE(24, MOVE_IRON_HEAD),
     LEVEL_UP_MOVE(30, MOVE_SANDSTORM),
+    LEVEL_UP_MOVE(33, MOVE_SWORDS_DANCE), // Project Grounded
     LEVEL_UP_MOVE(36, MOVE_DIG),
+    LEVEL_UP_MOVE(39, MOVE_DRILL_RUN), // Project Grounded
     LEVEL_UP_MOVE(42, MOVE_EARTH_POWER),
     LEVEL_UP_MOVE(48, MOVE_EARTHQUAKE),
     LEVEL_UP_MOVE(54, MOVE_FISSURE),
@@ -1535,7 +1543,9 @@ static const struct LevelUpMove sPsyduckLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sGolduckLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_CAVITATION), // Project Grounded: signature
     LEVEL_UP_MOVE( 0, MOVE_PSYCHIC),        
+    LEVEL_UP_MOVE( 1, MOVE_CAVITATION),
     LEVEL_UP_MOVE( 1, MOVE_PSYCHIC),
     LEVEL_UP_MOVE( 1, MOVE_AQUA_JET),
     LEVEL_UP_MOVE( 1, MOVE_SCRATCH),
@@ -4927,6 +4937,7 @@ static const struct LevelUpMove sDragonairLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sDragoniteLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_OUTRAGE), // Project Grounded: anders nooit door levelen te leren
     LEVEL_UP_MOVE( 0, MOVE_HURRICANE),
     LEVEL_UP_MOVE( 1, MOVE_ROOST),
     LEVEL_UP_MOVE( 1, MOVE_EXTREME_SPEED),
@@ -8349,6 +8360,8 @@ static const struct LevelUpMove sNosepassLevelUpLearnset[] = {
 
 #if P_GEN_4_CROSS_EVOS
 static const struct LevelUpMove sProbopassLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_MOAI_WATCH), // Project Grounded: signature
+    LEVEL_UP_MOVE( 1, MOVE_MOAI_WATCH),
     LEVEL_UP_MOVE( 0, MOVE_TRI_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_TRI_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_MAGNETIC_FLUX),
@@ -10306,6 +10319,7 @@ static const struct LevelUpMove sMetangLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sMetagrossLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_HARD_PRESS), // Project Grounded: anders nooit door levelen te leren
     LEVEL_UP_MOVE( 0, MOVE_HAMMER_ARM),
     LEVEL_UP_MOVE( 1, MOVE_HAMMER_ARM),
     LEVEL_UP_MOVE( 1, MOVE_CONFUSION),
@@ -10851,6 +10865,8 @@ static const struct LevelUpMove sBidoofLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sBibarelLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_BEAVER_DAM), // Project Grounded: signature
+    LEVEL_UP_MOVE( 1, MOVE_BEAVER_DAM),
     LEVEL_UP_MOVE( 0, MOVE_WATER_GUN),
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
     LEVEL_UP_MOVE( 1, MOVE_AQUA_JET),
@@ -11813,8 +11829,10 @@ static const struct LevelUpMove sCarnivineLevelUpLearnset[] = {
     LEVEL_UP_MOVE(11, MOVE_VINE_WHIP),
     LEVEL_UP_MOVE(17, MOVE_SWEET_SCENT),
     LEVEL_UP_MOVE(21, MOVE_INGRAIN),
+    LEVEL_UP_MOVE(21, MOVE_SNAP_TRAP), // Project Grounded
     LEVEL_UP_MOVE(27, MOVE_GRASS_KNOT),
     LEVEL_UP_MOVE(31, MOVE_LEAF_TORNADO),
+    LEVEL_UP_MOVE(34, MOVE_JAW_LOCK), // Project Grounded
     LEVEL_UP_MOVE(37, MOVE_STOCKPILE),
     LEVEL_UP_MOVE(37, MOVE_SPIT_UP),
     LEVEL_UP_MOVE(37, MOVE_SWALLOW),
@@ -11844,6 +11862,8 @@ static const struct LevelUpMove sFinneonLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sLumineonLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_LURE_LIGHT), // Project Grounded: signature
+    LEVEL_UP_MOVE( 1, MOVE_LURE_LIGHT),
     LEVEL_UP_MOVE( 1, MOVE_POUND),
     LEVEL_UP_MOVE( 1, MOVE_GUST),
     LEVEL_UP_MOVE( 1, MOVE_WATER_GUN),
@@ -13741,7 +13761,9 @@ static const struct LevelUpMove sCofagrigusLevelUpLearnset[] = {
     LEVEL_UP_MOVE(24, MOVE_HEX),
     LEVEL_UP_MOVE(28, MOVE_MEAN_LOOK),
     LEVEL_UP_MOVE(32, MOVE_GRUDGE),
+    LEVEL_UP_MOVE(34, MOVE_BODY_PRESS), // Project Grounded
     LEVEL_UP_MOVE(38, MOVE_CURSE),
+    LEVEL_UP_MOVE(41, MOVE_PAIN_SPLIT), // Project Grounded
     LEVEL_UP_MOVE(44, MOVE_SHADOW_BALL),
     LEVEL_UP_MOVE(50, MOVE_DARK_PULSE),
     LEVEL_UP_MOVE(56, MOVE_POWER_SPLIT),
@@ -13782,11 +13804,14 @@ static const struct LevelUpMove sRunerigusLevelUpLearnset[] = {
     LEVEL_UP_MOVE(12, MOVE_DISABLE),
     LEVEL_UP_MOVE(16, MOVE_BRUTAL_SWING),
     LEVEL_UP_MOVE(20, MOVE_CRAFTY_SHIELD),
+    LEVEL_UP_MOVE(20, MOVE_STEALTH_ROCK), // Project Grounded
     LEVEL_UP_MOVE(24, MOVE_HEX),
     LEVEL_UP_MOVE(28, MOVE_MEAN_LOOK),
     LEVEL_UP_MOVE(32, MOVE_SLAM),
+    LEVEL_UP_MOVE(34, MOVE_BODY_PRESS), // Project Grounded
     LEVEL_UP_MOVE(38, MOVE_CURSE),
     LEVEL_UP_MOVE(44, MOVE_SHADOW_BALL),
+    LEVEL_UP_MOVE(47, MOVE_POLTERGEIST), // Project Grounded
     LEVEL_UP_MOVE(50, MOVE_EARTHQUAKE),
     LEVEL_UP_MOVE(56, MOVE_POWER_SPLIT),
     LEVEL_UP_MOVE(56, MOVE_GUARD_SPLIT),
@@ -15409,6 +15434,7 @@ static const struct LevelUpMove sLarvestaLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sVolcaronaLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_HEAT_WAVE), // Project Grounded: anders nooit door levelen te leren
     LEVEL_UP_MOVE( 0, MOVE_QUIVER_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_FIERY_DANCE),
     LEVEL_UP_MOVE( 1, MOVE_STRUGGLE_BUG),
@@ -17947,12 +17973,13 @@ static const struct LevelUpMove sAraquanidLevelUpLearnset[] = {
     LEVEL_UP_MOVE(12, MOVE_BUBBLE_BEAM),
     LEVEL_UP_MOVE(16, MOVE_AQUA_RING),
     LEVEL_UP_MOVE(20, MOVE_HEADBUTT),
+    LEVEL_UP_MOVE(23, MOVE_STICKY_WEB), // Project Grounded
     LEVEL_UP_MOVE(26, MOVE_CRUNCH),
+    LEVEL_UP_MOVE(28, MOVE_LEECH_LIFE), // Project Grounded
     LEVEL_UP_MOVE(32, MOVE_SOAK),
     LEVEL_UP_MOVE(38, MOVE_ENTRAINMENT),
     LEVEL_UP_MOVE(44, MOVE_LUNGE),
     LEVEL_UP_MOVE(50, MOVE_LIQUIDATION),
-    LEVEL_UP_MOVE(56, MOVE_LEECH_LIFE),
     LEVEL_UP_MOVE(62, MOVE_MIRROR_COAT),
     LEVEL_UP_END
 };
@@ -18509,13 +18536,16 @@ static const struct LevelUpMove sDrampaLevelUpLearnset[] = {
 static const struct LevelUpMove sDhelmiseLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 1, MOVE_ABSORB),
     LEVEL_UP_MOVE( 1, MOVE_RAPID_SPIN),
+    LEVEL_UP_MOVE( 1, MOVE_KELP_SHROUD), // Project Grounded
     LEVEL_UP_MOVE( 4, MOVE_ASTONISH),
     LEVEL_UP_MOVE( 8, MOVE_WRAP),
     LEVEL_UP_MOVE(12, MOVE_MEGA_DRAIN),
     LEVEL_UP_MOVE(16, MOVE_GROWTH),
     LEVEL_UP_MOVE(20, MOVE_GYRO_BALL),
     LEVEL_UP_MOVE(24, MOVE_SWITCHEROO),
+    LEVEL_UP_MOVE(24, MOVE_KELP_SHROUD), // Project Grounded
     LEVEL_UP_MOVE(28, MOVE_GIGA_DRAIN),
+    LEVEL_UP_MOVE(30, MOVE_INGRAIN), // Project Grounded
     LEVEL_UP_MOVE(32, MOVE_WHIRLPOOL),
     LEVEL_UP_MOVE(36, MOVE_HEAVY_SLAM),
     LEVEL_UP_MOVE(40, MOVE_SLAM),
@@ -19365,6 +19395,7 @@ static const struct LevelUpMove sDottlerLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sOrbeetleLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_BUG_BUZZ), // Project Grounded: anders nooit door levelen te leren
     LEVEL_UP_MOVE( 1, MOVE_REFLECT),
     LEVEL_UP_MOVE( 1, MOVE_LIGHT_SCREEN),
     LEVEL_UP_MOVE( 1, MOVE_CONFUSION),
@@ -21968,9 +21999,10 @@ static const struct LevelUpMove sWugtrioLevelUpLearnset[] = {
     LEVEL_UP_MOVE(24, MOVE_HEADBUTT),
     LEVEL_UP_MOVE(30, MOVE_TRIPLE_DIVE),
     LEVEL_UP_MOVE(36, MOVE_DIG),
+    LEVEL_UP_MOVE(38, MOVE_LIQUIDATION), // Project Grounded
     LEVEL_UP_MOVE(42, MOVE_SUCKER_PUNCH),
+    LEVEL_UP_MOVE(46, MOVE_WAVE_CRASH), // Project Grounded
     LEVEL_UP_MOVE(48, MOVE_THROAT_CHOP),
-    LEVEL_UP_MOVE(54, MOVE_LIQUIDATION),
     LEVEL_UP_END
 };
 #endif //P_FAMILY_WIGLETT

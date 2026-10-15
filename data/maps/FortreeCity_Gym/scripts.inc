@@ -393,12 +393,12 @@ FortreeCity_Gym_Text_WinonaRematchNeedTwoMons:
 @ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
 FortreeCity_Gym_Text_GymGuideAceLevel:
 	.string "Insider info: the LEADER's ace\n"
-	.string "is level 55.\p"
+	.string "is level 53.\p"
 	.string "You didn't hear it from me.\n"
 	.string "You heard it from me, but still.$"
 
 FortreeCity_Gym_Text_GymGuideNextAce:
 	.string "Next stop: TATE AND LIZA, MOSSDEEP.\n"
-	.string "Their ace is level 66.\p"
+	.string "Their ace is level 64.\p"
 	.string "That's all the free advice.\n"
 	.string "The rest costs a RARE CANDY.$"

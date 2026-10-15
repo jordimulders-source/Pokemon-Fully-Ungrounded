@@ -106,6 +106,8 @@ struct DisableStruct
     u8 syrupBombIsShiny:1;
     u8 usedProteanLibero:1;
     u8 flashFireBoosted:1;
+    u8 beaverDam:1; // Project Grounded: stockpile-lagen zijn een beverdam (Beaver Dam)
+    u8 kelpLayers:2; // Project Grounded: Kelp Shroud-lagen op dit doelwit (drain 1/8, 1/6, 1/4)
     u8 boosterEnergyActivated:1;
     u8 padding1:1;
     u16 overwrittenAbility;   // abilities overwritten during battle (keep separate from battle history in case of switching)
@@ -209,6 +211,7 @@ struct SideTimer
     u16 mistTimer;
     u16 safeguardTimer;
     u8 spikesAmount:4;
+    u8 moaiWatchAmount:2; // Project Grounded: lagen Moai Watch (1-3)
     u8 toxicSpikesAmount:4;
     u8 stickyWebBattlerId;
     u8 stickyWebBattlerSide; // Used for Court Change
@@ -219,6 +222,7 @@ struct SideTimer
     u8 followmeTimer:4;
     u8 followmeTarget:3;
     u8 followmePowder:1; // Rage powder, does not affect grass type pokemon.
+    u8 followmeLureLight:1; // Project Grounded: Lure Light verblindt wie Lumineon aanvalt
     u8 retaliateTimer;
     u16 damageNonTypesTimer;
     enum Type damageNonTypesType;
@@ -725,6 +729,7 @@ struct BattleStruct
     u8 throwingPokeBall:1;
     u8 ballSpriteIds[2];    // item gfx, window gfx
     u8 moveInfoSpriteId; // move info, window gfx
+    u8 wildInfoSpriteId; // Project Grounded: "L INFO"-hint in wilde gevechten
     u8 skyDropTargets[MAX_BATTLERS_COUNT]; // For Sky Drop, to account for if multiple Pokemon use Sky Drop in a double battle.
     // When using a move which hits multiple opponents which is then bounced by a target, we need to make sure, the move hits both opponents, the one with bounce, and the one without.
     u16 beatUpSpecies[PARTY_SIZE]; // Species for Gen5+ Beat Up, otherwise party indexes

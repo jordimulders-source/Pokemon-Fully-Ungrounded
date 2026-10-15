@@ -757,6 +757,18 @@ enum StringID
     STRINGID_OBEYWARN_CAUGHT, // Project Grounded
     STRINGID_GEN1GHOST_SCARED, // Project Grounded
     STRINGID_GEN1GHOST_GETOUT, // Project Grounded
+    STRINGID_PKMNHYPHALSNARE, // Project Grounded
+    STRINGID_BEAVERDAMLAYER, // Project Grounded
+    STRINGID_LURELIGHTDAZZLED, // Project Grounded
+    STRINGID_MOAISTANDWATCH, // Project Grounded
+    STRINGID_MOAIWATCHDMG, // Project Grounded
+    STRINGID_MOAIDISAPPEARED, // Project Grounded
+    STRINGID_PKMNBLEWAWAYMOAI, // Project Grounded
+    STRINGID_BEAVERDAMBREAK, // Project Grounded
+    STRINGID_BEAVERDAMFLOOD, // Project Grounded
+    STRINGID_HOLEUP, // Project Grounded
+    STRINGID_KELPSHROUD, // Project Grounded
+    STRINGID_KELPTIGHTEN, // Project Grounded
     STRINGID_COUNT
 };
 
@@ -1178,6 +1190,7 @@ enum __attribute__((packed)) WrappedStringID
     B_MSG_WRAPPED_THUNDER_CAGE,
     B_MSG_WRAPPED_MUMMY, // Project Grounded: Mummy's Curse
     B_MSG_WRAPPED_STEEL_TRAP, // Project Grounded: Steel Trap
+    B_MSG_WRAPPED_HYPHAL_SNARE, // Project Grounded: Hyphal Snare
     NUM_TRAPPING_MOVES,
 };
 
@@ -1202,6 +1215,7 @@ enum DmgHazardStringID
     B_MSG_POINTEDSTONESFLOAT,
     B_MSG_SPIKESSCATTERED,
     B_MSG_SHARPSTEELFLOATS,
+    B_MSG_MOAIWATCHDMG, // Project Grounded
 };
 
 // gDamageNonTypesStartStringIds

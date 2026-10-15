@@ -838,6 +838,17 @@ BattleScript_MoveEffectLeechSeed::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+@ Project Grounded: Kelp Shroud
+BattleScript_MoveEffectKelpShroud::
+	printstring STRINGID_KELPSHROUD
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_MoveEffectKelpTighten::
+	printstring STRINGID_KELPTIGHTEN
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_MoveEffectReflect::
 	printfromtable gReflectLightScreenSafeguardStringIds
 	waitmessage B_WAIT_TIME_LONG
@@ -2220,7 +2231,12 @@ BattleScript_EffectStealthRock::
 	setstealthrock BattleScript_ButItFailed
 	attackanimation
 	waitanimation
+	jumpifmove MOVE_MOAI_WATCH, BattleScript_EffectStealthRockMoai
 	printstring STRINGID_POINTEDSTONESFLOAT
+	goto BattleScript_EffectStealthRockMsgDone
+BattleScript_EffectStealthRockMoai:
+	printstring STRINGID_MOAISTANDWATCH
+BattleScript_EffectStealthRockMsgDone:
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
@@ -2420,6 +2436,16 @@ BattleScript_EffectHealBlock::
 	printstring STRINGID_PKMNPREVENTEDFROMHEALING
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
+
+@ Project Grounded: Hole Up
+BattleScript_HoleUpActivates::
+	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_HoleUpEnd
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_HOLEUP
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_EffectHitEscape
+BattleScript_HoleUpEnd:
+	return
 
 BattleScript_EffectHitEscape::
 	jumpiffainted BS_TARGET, FALSE, BattleScript_HitEscapeSwitch
@@ -4079,7 +4105,12 @@ BattleScript_EffectStockpile::
 	stockpile 0
 	attackanimation
 	waitanimation
+	jumpifmove MOVE_BEAVER_DAM, BattleScript_EffectStockpileBeaverDamMsg
 	printstring STRINGID_PKMNSTOCKPILED
+	goto BattleScript_EffectStockpileMsgDone
+BattleScript_EffectStockpileBeaverDamMsg:
+	printstring STRINGID_BEAVERDAMLAYER
+BattleScript_EffectStockpileMsgDone:
 	waitmessage B_WAIT_TIME_LONG
 	.if B_STOCKPILE_RAISES_DEFS < GEN_4
 	goto BattleScript_EffectStockpileEnd
@@ -4263,6 +4294,19 @@ BattleScript_EffectFollowMe::
 	printstring STRINGID_PKMNCENTERATTENTION
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
+
+@ Project Grounded: Lure Light (Lumineon). Wie het lokaas aanvalt, kijkt recht in het licht: Accuracy -1
+@ vlak voor zijn aanval (aangeroepen vanuit accuracycheck, die daarna gewoon verder gaat).
+BattleScript_LureLightDazzleAttacker::
+	printstring STRINGID_LURELIGHTDAZZLED
+	waitmessage B_WAIT_TIME_SHORT
+	setstatchanger STAT_ACC, 1, TRUE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_LureLightDazzleAttackerEnd
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_LureLightDazzleAttackerEnd
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_LureLightDazzleAttackerEnd:
+	return
 
 BattleScript_EffectCharge::
 	attackcanceler
@@ -4674,6 +4718,7 @@ BattleScript_FaintBattler::
 	dofaintanimation BS_FAINTED
 	copybyte sBATTLER, gBattlerFainted @ for message
 	printstring STRINGID_BATTLERFAINTED
+	trybeaverdambreak @ Project Grounded: Beaver Dam breekt als Bibarel flauwvalt
 	cleareffectsonfaint BS_FAINTED
 	trytoclearprimalweather
 	tryrevertweatherform
@@ -5729,11 +5774,13 @@ BattleScript_LeechSeedFree::
 	return
 
 BattleScript_SpinHazardsAway::
+	call BattleScript_TryMoaiCrumble @ Project Grounded
 	printfromtable gSpinHazardsStringIds
 	waitmessage B_WAIT_TIME_LONG
 	return
 
 BattleScript_DefogClearHazards::
+	call BattleScript_TryMoaiCrumble @ Project Grounded
 	printfromtable gDefogHazardsStringIds
 	waitmessage B_WAIT_TIME_LONG
 	return
@@ -9373,4 +9420,72 @@ BattleScript_GulpDownUseless::
 	call BattleScript_GulpDownCommon
 	printstring STRINGID_GULPEDUSELESS
 	waitmessage B_WAIT_TIME_LONG
+	return
+
+@ Project Grounded: Beaver Dam. Bibarel valt flauw, niemand onderhoudt de dam meer: hij breekt en de
+@ vloed raakt elke tegenstander (1/6 max. HP per laag). gBattleScripting.battler = Bibarel.
+BattleScript_BeaverDamBreak::
+	pause B_WAIT_TIME_SHORT
+	playanimation BS_SCRIPTING, B_ANIM_BEAVER_DAM_BREAK
+	waitanimation
+	printstring STRINGID_BEAVERDAMBREAK
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_BeaverDamFloodLoop:
+	beaverdamfloodnext BattleScript_BeaverDamFloodEnd
+	healthbarupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
+	datahpupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
+	printstring STRINGID_BEAVERDAMFLOOD
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_SCRIPTING
+	goto BattleScript_BeaverDamFloodLoop
+BattleScript_BeaverDamFloodEnd:
+	return
+
+@ Project Grounded: Heliotropism (Sunflora). Komt hij in de zon binnen, dan draait hij naar de zon en
+@ bloeit op: alle stats +2. gBattleScripting.battler = Sunflora.
+BattleScript_HeliotropismActivates::
+	call BattleScript_AbilityPopUpScripting
+	saveattacker
+	copybyte gBattlerAttacker, sBATTLER
+BattleScript_HeliotropismAtk:
+	setstatchanger STAT_ATK, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismDef
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_HeliotropismDef:
+	setstatchanger STAT_DEF, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismSpeed
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismSpeed
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_HeliotropismSpeed:
+	setstatchanger STAT_SPEED, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismSpAtk
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismSpAtk
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_HeliotropismSpAtk:
+	setstatchanger STAT_SPATK, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismSpDef
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismSpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_HeliotropismSpDef:
+	setstatchanger STAT_SPDEF, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismEnd
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_HeliotropismEnd:
+	restoreattacker
+	destroyabilitypopup
+	end3
+
+@ Project Grounded: de stenen beelden van Moai Watch storten in als ze opgeruimd worden.
+BattleScript_TryMoaiCrumble::
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, HAZARDS_MOAI_WATCH, BattleScript_TryMoaiCrumbleRet
+	playanimation BS_SCRIPTING, B_ANIM_MOAI_CRUMBLE
+	waitanimation
+BattleScript_TryMoaiCrumbleRet:
 	return

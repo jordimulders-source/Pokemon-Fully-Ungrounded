@@ -79,4 +79,6 @@ bool32 EmergencyExitCanBeTriggered(u32 battler);
 extern void (*const gBattleScriptingCommandsTable[])(void);
 extern const struct StatFractions gAccuracyStageRatios[];
 
+void BeaverDam_PrepareFlood(u32 owner, u32 layers); // Project Grounded
+
 #endif // GUARD_BATTLE_SCRIPT_COMMANDS_H

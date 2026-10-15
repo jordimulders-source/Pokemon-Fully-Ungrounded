@@ -308,6 +308,7 @@ enum Hazards
     HAZARDS_TOXIC_SPIKES,
     HAZARDS_STEALTH_ROCK,
     HAZARDS_STEELSURGE,
+    HAZARDS_MOAI_WATCH, // Project Grounded: Probopass
     HAZARDS_MAX_COUNT,
 };
 

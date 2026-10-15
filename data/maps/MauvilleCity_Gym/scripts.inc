@@ -483,7 +483,7 @@ MauvilleCity_Gym_Text_WattsonRematchNeedTwoMons:
 @ Project Grounded: aanwijzing van het level van de gym-ace (placeholder)
 MauvilleCity_Gym_Text_GymGuideAceLevel:
 	.string "Insider info: the LEADER's ace\n"
-	.string "is level 34.\p"
+	.string "is level 32.\p"
 	.string "You didn't hear it from me.\n"
 	.string "You heard it from me, but still.$"
 

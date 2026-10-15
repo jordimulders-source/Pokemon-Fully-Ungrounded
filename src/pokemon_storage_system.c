@@ -160,6 +160,7 @@ enum {
     MENU_POKECENTER,
     MENU_MACHINE,
     MENU_SIMPLE,
+    MENU_ITEM, // Project Grounded: item oppakken vanuit MOVE POKéMON
 };
 #define MENU_WALLPAPER_SETS_START MENU_SCENERY_1
 #define MENU_WALLPAPERS_START MENU_FOREST
@@ -553,6 +554,12 @@ EWRAM_DATA static u8 sMovingMonOrigBoxPos = 0;
 EWRAM_DATA static bool8 sAutoActionOn = 0;
 EWRAM_DATA static bool8 sJustOpenedBag = 0;
 EWRAM_DATA static bool8 sRefreshDisplayMonGfx = FALSE;
+// Project Grounded: tijdelijke MOVE ITEMS-modus vanuit MOVE POKéMON (ITEM in het menu).
+// Geen save-data: alleen zolang de pc open is.
+EWRAM_DATA static bool8 sItemFromMonMode = FALSE;
+EWRAM_DATA static u8 sItemSourceBox = 0;
+EWRAM_DATA static u8 sItemSourcePos = 0;
+EWRAM_DATA static u32 sItemSourcePersonality = 0;
 
 // Main tasks
 static void Task_InitPokeStorage(u8);
@@ -586,6 +593,12 @@ static void Task_HandleWallpapers(u8);
 static void Task_NameBox(u8);
 static void Task_PrintCantStoreMail(u8);
 static void Task_HandleMovingMonFromParty(u8);
+static void Task_ReturnItemToSource(u8);
+static void StartItemFromMonMode(void);
+static void EndItemFromMonMode(void);
+static bool8 CanReturnItemToSource(void);
+static void DestroyBoxMonIconAtPosition(u8);
+static void CreateBoxMonIconAtPos(u8);
 
 // Input handlers
 static u8 InBoxInput_Normal(void);
@@ -1991,6 +2004,7 @@ void EnterPokeStorage(u8 boxOption)
         sStorage->boxOption = boxOption;
         sStorage->isReopening = FALSE;
         sMovingItemId = ITEM_NONE;
+        sItemFromMonMode = FALSE;
         sStorage->state = 0;
         sStorage->taskId = CreateTask(Task_InitPokeStorage, 3);
         sLastUsedBox = StorageGetCurrentBox();
@@ -2146,18 +2160,19 @@ static void Task_InitPokeStorage(u8 taskId)
         if (IsInitBoxActive())
             return;
 
-        if (sStorage->boxOption != OPTION_MOVE_ITEMS)
+        // Project Grounded: ITEM in MOVE POKéMON schakelt tijdelijk naar MOVE ITEMS;
+        // dan zijn zowel de markeringen als de item-iconen nodig.
+        if (sStorage->boxOption != OPTION_MOVE_ITEMS || sItemFromMonMode)
         {
             sStorage->markMenu.baseTileTag = GFXTAG_MARKING_MENU;
             sStorage->markMenu.basePaletteTag = PALTAG_MARKING_MENU;
             InitMonMarkingsMenu(&sStorage->markMenu);
             BufferMonMarkingsMenuTiles();
         }
-        else
-        {
+        if (sStorage->boxOption == OPTION_MOVE_ITEMS || sStorage->boxOption == OPTION_MOVE_MONS)
             CreateItemIconSprites();
+        if (sStorage->boxOption == OPTION_MOVE_ITEMS)
             InitCursorItemIcon();
-        }
         break;
     case 10:
         SetMonIconTransparency();
@@ -2253,6 +2268,10 @@ static void Task_PokeStorageMain(u8 taskId)
     switch (sStorage->state)
     {
     case MSTATE_HANDLE_INPUT:
+        // Project Grounded: item neergelegd/weggezet, terug naar MOVE POKéMON
+        if (sItemFromMonMode && !IsMovingItem() && !IsItemIconAnimActive())
+            EndItemFromMonMode();
+
         switch (HandleInput())
         {
         case INPUT_MOVE_CURSOR:
@@ -2687,6 +2706,12 @@ static void Task_OnSelectedMon(u8 taskId)
             break;
         case MENU_INFO:
             SetPokeStorageTask(Task_ShowItemInfo);
+            break;
+        case MENU_ITEM:
+            PlaySE(SE_RG_BALL_CLICK);
+            ClearBottomWindow();
+            StartItemFromMonMode();
+            SetPokeStorageTask(Task_TakeItemForMoving);
             break;
         }
         break;
@@ -3211,6 +3236,173 @@ static void Task_SwitchSelectedItem(u8 taskId)
     }
 }
 
+// Project Grounded: ITEM in het menu van MOVE POKéMON schakelt tijdelijk naar
+// MOVE ITEMS (zelfde code: item aan de cursor, GIVE/SWITCH, tas). Zodra het item
+// is neergelegd of weggezet, gaat de pc terug naar MOVE POKéMON.
+static void SetAllMonIconsItemBlend(bool8 itemMode)
+{
+    s32 i;
+
+    for (i = 0; i < IN_BOX_COUNT; i++)
+    {
+        if (sStorage->boxMonsSprites[i] != NULL)
+        {
+            if (itemMode && GetCurrentBoxMonData(i, MON_DATA_HELD_ITEM) == ITEM_NONE)
+                sStorage->boxMonsSprites[i]->oam.objMode = ST_OAM_OBJ_BLEND;
+            else
+                sStorage->boxMonsSprites[i]->oam.objMode = ST_OAM_OBJ_NORMAL;
+        }
+    }
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (sStorage->partySprites[i] != NULL)
+        {
+            if (itemMode && GetMonData(&gPlayerParty[i], MON_DATA_HELD_ITEM) == ITEM_NONE)
+                sStorage->partySprites[i]->oam.objMode = ST_OAM_OBJ_BLEND;
+            else
+                sStorage->partySprites[i]->oam.objMode = ST_OAM_OBJ_NORMAL;
+        }
+    }
+}
+
+static void StartItemFromMonMode(void)
+{
+    sItemFromMonMode = TRUE;
+    sItemSourcePos = GetCursorPosition();
+    if (sInPartyMenu)
+    {
+        sItemSourceBox = TOTAL_BOXES_COUNT;
+        sItemSourcePersonality = GetMonData(&gPlayerParty[sItemSourcePos], MON_DATA_PERSONALITY);
+    }
+    else
+    {
+        sItemSourceBox = StorageGetCurrentBox();
+        sItemSourcePersonality = GetCurrentBoxMonData(sItemSourcePos, MON_DATA_PERSONALITY);
+    }
+
+    sStorage->boxOption = OPTION_MOVE_ITEMS;
+    sCurrentBoxOption = OPTION_MOVE_ITEMS; // blijft zo na het hernoemen van een box
+    LoadPalette(sScrollingBgMoveItems_Pal, BG_PLTT_ID(3), sizeof(sScrollingBgMoveItems_Pal));
+    SetGpuReg(REG_OFFSET_BLDCNT, BLDCNT_TGT2_ALL);
+    SetGpuReg(REG_OFFSET_BLDALPHA, BLDALPHA_BLEND(7, 11));
+    SetAllMonIconsItemBlend(TRUE);
+    TryLoadItemIconAtPos(sInPartyMenu ? CURSOR_AREA_IN_PARTY : CURSOR_AREA_IN_BOX, sItemSourcePos);
+}
+
+static void EndItemFromMonMode(void)
+{
+    s32 i;
+
+    sItemFromMonMode = FALSE;
+    sStorage->boxOption = OPTION_MOVE_MONS;
+    sCurrentBoxOption = OPTION_MOVE_MONS;
+    for (i = 0; i < MAX_ITEM_ICONS; i++)
+    {
+        if (sStorage->itemIcons[i].active)
+        {
+            sStorage->itemIcons[i].sprite->callback = SpriteCallbackDummy;
+            SetItemIconActive(i, FALSE);
+        }
+    }
+    sStorage->movingItemId = ITEM_NONE;
+    SetAllMonIconsItemBlend(FALSE);
+    SetGpuReg(REG_OFFSET_BLDCNT, 0);
+    SetGpuReg(REG_OFFSET_BLDALPHA, 0);
+    LoadPalette(sScrollingBg_Pal, BG_PLTT_ID(3), sizeof(sScrollingBg_Pal));
+    if (sCursorArea == CURSOR_AREA_IN_BOX || sCursorArea == CURSOR_AREA_IN_PARTY)
+        StartCursorAnim(CURSOR_ANIM_BOUNCE);
+    else
+        StartCursorAnim(CURSOR_ANIM_STILL);
+    RefreshDisplayMon();
+    PrintDisplayMonInfo();
+}
+
+// B (of de box sluiten) met een item uit MOVE POKéMON: terug naar de Pokémon waar
+// het vandaan kwam, als die er nog staat zonder item. Anders de gewone tasvraag.
+static bool8 CanReturnItemToSource(void)
+{
+    if (sItemSourceBox == TOTAL_BOXES_COUNT)
+    {
+        struct Pokemon *mon;
+
+        if (sItemSourcePos >= PARTY_SIZE)
+            return FALSE;
+        mon = &gPlayerParty[sItemSourcePos];
+        return GetMonData(mon, MON_DATA_SPECIES) != SPECIES_NONE
+            && GetMonData(mon, MON_DATA_PERSONALITY) == sItemSourcePersonality
+            && GetMonData(mon, MON_DATA_HELD_ITEM) == ITEM_NONE;
+    }
+    if (sItemSourceBox >= TOTAL_BOXES_COUNT || sItemSourcePos >= IN_BOX_COUNT)
+        return FALSE;
+    return GetBoxMonDataAt(sItemSourceBox, sItemSourcePos, MON_DATA_SPECIES) != SPECIES_NONE
+        && GetBoxMonDataAt(sItemSourceBox, sItemSourcePos, MON_DATA_PERSONALITY) == sItemSourcePersonality
+        && GetBoxMonDataAt(sItemSourceBox, sItemSourcePos, MON_DATA_HELD_ITEM) == ITEM_NONE;
+}
+
+static void Task_ReturnItemToSource(u8 taskId)
+{
+    u16 itemId;
+    struct BoxPokemon *boxMon;
+    u16 oldSpecies;
+    bool8 atCursor;
+
+    switch (sStorage->state)
+    {
+    case 0:
+        PlaySE(SE_RG_BALL_CLICK);
+        itemId = sStorage->movingItemId;
+        if (sItemSourceBox == TOTAL_BOXES_COUNT)
+        {
+            boxMon = &gPlayerParty[sItemSourcePos].box;
+            SetMonData(&gPlayerParty[sItemSourcePos], MON_DATA_HELD_ITEM, &itemId);
+            atCursor = (sInPartyMenu && GetCursorPosition() == sItemSourcePos);
+        }
+        else
+        {
+            boxMon = &gPokemonStoragePtr->boxes[sItemSourceBox][sItemSourcePos];
+            SetBoxMonData(boxMon, MON_DATA_HELD_ITEM, &itemId);
+            atCursor = (!sInPartyMenu && sCursorArea == CURSOR_AREA_IN_BOX
+                     && StorageGetCurrentBox() == sItemSourceBox && GetCursorPosition() == sItemSourcePos);
+        }
+
+        oldSpecies = GetBoxMonData(boxMon, MON_DATA_SPECIES);
+        SetMonFormPSS(boxMon, FORM_CHANGE_ITEM_HOLD);
+        if (atCursor)
+        {
+            UpdateSpeciesSpritePSS(boxMon);
+        }
+        else
+        {
+            sRefreshDisplayMonGfx = FALSE;
+            if (oldSpecies != GetBoxMonData(boxMon, MON_DATA_SPECIES))
+            {
+                // Vormwissel (bijv. Griseous Orb) van een Pokémon die niet onder de cursor staat
+                if (sItemSourceBox == TOTAL_BOXES_COUNT)
+                {
+                    DestroyAllPartyMonIcons();
+                    CreatePartyMonsSprites(sInPartyMenu);
+                }
+                else if (StorageGetCurrentBox() == sItemSourceBox)
+                {
+                    DestroyBoxMonIconAtPosition(sItemSourcePos);
+                    CreateBoxMonIconAtPos(sItemSourcePos);
+                }
+            }
+        }
+
+        MoveItemFromCursorToBag(); // zelfde wegzet-animatie
+        sStorage->state++;
+        break;
+    case 1:
+        if (!IsItemIconAnimActive())
+        {
+            StartCursorAnim(CURSOR_ANIM_BOUNCE);
+            SetPokeStorageTask(Task_PokeStorageMain);
+        }
+        break;
+    }
+}
+
 static void Task_ShowItemInfo(u8 taskId)
 {
     switch (sStorage->state)
@@ -3602,7 +3794,11 @@ static void Task_OnCloseBoxPressed(u8 taskId)
         }
         else if (IsMovingItem())
         {
-            SetPokeStorageTask(Task_CloseBoxWhileHoldingItem);
+            // Project Grounded: item uit MOVE POKéMON gaat terug naar zijn Pokémon
+            if (sItemFromMonMode && CanReturnItemToSource())
+                SetPokeStorageTask(Task_ReturnItemToSource);
+            else
+                SetPokeStorageTask(Task_CloseBoxWhileHoldingItem);
         }
         else
         {
@@ -3675,7 +3871,11 @@ static void Task_OnBPressed(u8 taskId)
         }
         else if (IsMovingItem())
         {
-            SetPokeStorageTask(Task_CloseBoxWhileHoldingItem);
+            // Project Grounded: item uit MOVE POKéMON gaat terug naar zijn Pokémon
+            if (sItemFromMonMode && CanReturnItemToSource())
+                SetPokeStorageTask(Task_ReturnItemToSource);
+            else
+                SetPokeStorageTask(Task_CloseBoxWhileHoldingItem);
         }
         else
         {
@@ -7198,7 +7398,7 @@ static u8 InBoxInput_Normal(void)
 
         if ((JOY_NEW(A_BUTTON)) && SetSelectionMenuTexts())
         {
-            if (!sAutoActionOn)
+            if (!sAutoActionOn && !sItemFromMonMode)
                 return INPUT_IN_MENU;
 
             if (sStorage->boxOption != OPTION_MOVE_MONS || sIsMonBeingMoved == TRUE)
@@ -7481,7 +7681,7 @@ static u8 HandleInput_InParty(void)
             }
             else if (SetSelectionMenuTexts())
             {
-                if (!sAutoActionOn)
+                if (!sAutoActionOn && !sItemFromMonMode)
                     return INPUT_IN_MENU;
 
                 switch (GetMenuItemTextId(0))
@@ -7771,6 +7971,13 @@ static bool8 SetMenuTexts_Mon(void)
             SetMenuText(MENU_WITHDRAW);
         else
             SetMenuText(MENU_STORE);
+
+        // Project Grounded: vastgehouden item meteen verplaatsen (zoals MOVE ITEMS)
+        if (!sIsMonBeingMoved
+         && !sStorage->displayMonIsEgg
+         && sStorage->displayMonItemId != ITEM_NONE
+         && !ItemIsMail(sStorage->displayMonItemId))
+            SetMenuText(MENU_ITEM);
     }
 
     SetMenuText(MENU_MARK);
@@ -8080,6 +8287,7 @@ static const u8 *const sMenuTexts[] =
     [MENU_POKECENTER] = COMPOUND_STRING("POKéCENTER"),
     [MENU_MACHINE]    = COMPOUND_STRING("MACHINE"),
     [MENU_SIMPLE]     = COMPOUND_STRING("SIMPLE"),
+    [MENU_ITEM]       = COMPOUND_STRING("ITEM"),
 };
 
 static void SetMenuText(u8 textId)
@@ -8840,7 +9048,7 @@ static void CreateItemIconSprites(void)
     struct CompressedSpriteSheet spriteSheet;
     struct SpriteTemplate spriteTemplate;
 
-    if (sStorage->boxOption == OPTION_MOVE_ITEMS)
+    if (sStorage->boxOption == OPTION_MOVE_ITEMS || sStorage->boxOption == OPTION_MOVE_MONS)
     {
         spriteSheet.data = sItemIconGfxBuffer;
         spriteSheet.size = 0x200;

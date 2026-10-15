@@ -453,14 +453,14 @@ static void StartMapNamePopup(void);
 
 void ShowItemPickupPopup(void)
 {
-    u8 *end = StringCopy(sItemPopupText, GetItemName(gSpecialVar_0x8006));
+    // Sinds 12 okt: geen kaartnaam-pop-up meer, maar een korte melding in het tekstvak onderin.
+    // Zet de itemnaam (+ aantal) in gStringVar1; het script toont gText_QuickPickedUpItem.
+    u8 *end = StringCopy(gStringVar1, GetItemName(gSpecialVar_0x8006));
     if (gSpecialVar_0x8007 > 1)
     {
         end = StringCopy(end, COMPOUND_STRING(" x"));
         ConvertIntToDecimalStringN(end, gSpecialVar_0x8007, STR_CONV_MODE_LEFT_ALIGN, 3);
     }
-    sItemPopupPending = TRUE;
-    StartMapNamePopup();
 }
 
 bool8 IsItemObtainedBefore(void)

@@ -31441,6 +31441,7 @@ gBattleAnimGeneral_TurnTrap::
 	jumpargeq 0, TRAP_ANIM_THUNDER_CAGE, Status_Thunder_Cage
 	jumpargeq 0, TRAP_ANIM_MUMMYS_CURSE, Status_MummysCurse
 	jumpargeq 0, TRAP_ANIM_STEEL_TRAP, Status_SteelTrap
+	jumpargeq 0, TRAP_ANIM_HYPHAL_SNARE, Status_HyphalSnare
 	goto Status_BindWrap
 Status_BindWrap:
 	loadspritegfx ANIM_TAG_TENDRILS
@@ -31561,16 +31562,12 @@ Status_Infestation:
 	clearmonbg ANIM_DEF_PARTNER
 	end
 
-@ Project Grounded: korter (Leftovers e.d. komen elke beurt terug): één snelle schuddebeweging i.p.v. drie, geen sterren
 gBattleAnimGeneral_HeldItemEffect::
+	@ Project Grounded (Jordi): kort gehouden, Leftovers e.d. komen elke beurt terug.
+	@ Was: 3x wiebelen + sterrenregen + flits (±2 s); nu alleen flits + ring.
 	loadspritegfx ANIM_TAG_THIN_RING
-	loadspritegfx ANIM_TAG_SPARKLE_2
-	delay 0
-	playsewithpan SE_M_TAKE_DOWN, SOUND_PAN_ATTACKER
-	createvisualtask AnimTask_RotateMonToSideAndRestore, 2, 8, 256, ANIM_ATTACKER, 2
-	waitforvisualfinish
 	playsewithpan SE_SHINY, SOUND_PAN_ATTACKER
-	simple_palette_blend selector=F_PAL_ATTACKER, delay=3, initial_blend_y=7, target_blend_y=0, color=RGB(17, 31, 25)
+	simple_palette_blend selector=F_PAL_ATTACKER, delay=2, initial_blend_y=7, target_blend_y=0, color=RGB(17, 31, 25)
 	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0
 	waitforvisualfinish
 	end
@@ -38896,5 +38893,377 @@ gBattleAnimMove_NineLives::
 	waitforvisualfinish
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 12, 0, RGB_WHITE
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 9, 0, RGB(8, 6, 14)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Hyphal Snare. Parasect slaat toe, een wolk sporen en daarna schieten bleke
+@ schimmeldraden om het doelwit heen die het vastsnoeren; het doelwit kleurt schimmelig wit.
+gBattleAnimMove_HyphalSnare::
+	loadspritegfx ANIM_TAG_TENDRILS
+	loadspritegfx ANIM_TAG_SPORE
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_TENDRILS, 0, 12, 12, RGB(28, 27, 22)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 8, RGB(5, 4, 3)
+	waitforvisualfinish
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 6
+	delay 4
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 8, 1
+	loopsewithpan SE_M_POISON_POWDER, SOUND_PAN_TARGET, 10, 3
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-20, wave_offset=85, duration=50, blend=1
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-10, wave_offset=170, duration=50, blend=1
+	delay 10
+	loopsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET, 6, 3
+	create_constrict_binding_sprite ANIM_TARGET, 4, initial_x=0, initial_y=16, affine_animation=0, squeezes=2
+	delay 7
+	create_constrict_binding_sprite ANIM_TARGET, 2, initial_x=0, initial_y=8, affine_animation=1, squeezes=2
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 10, RGB(27, 26, 21)
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 6, 1
+	playsewithpan SE_M_BIND, SOUND_PAN_TARGET
+	delay 20
+	setarg 7, 0xFFFF
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 10, 0, RGB(27, 26, 21)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 8, 0, RGB(5, 4, 3)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Kelp Shroud. Het water verdonkert paars, Dhelmise slingert naar voren en spookachtig
+@ zeewier wikkelt zich om het doelwit; daarna trekken lichtjes (levenskracht) terug naar Dhelmise.
+gBattleAnimMove_KelpShroud::
+	loadspritegfx ANIM_TAG_TENDRILS
+	loadspritegfx ANIM_TAG_ORBS
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_TENDRILS, 0, 12, 12, RGB(6, 16, 10)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 10, RGB(8, 2, 12)
+	waitforvisualfinish
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 6
+	delay 4
+	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 8, 1
+	loopsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET, 6, 3
+	create_constrict_binding_sprite ANIM_TARGET, 4, initial_x=0, initial_y=16, affine_animation=0, squeezes=2
+	delay 7
+	create_constrict_binding_sprite ANIM_TARGET, 2, initial_x=0, initial_y=8, affine_animation=1, squeezes=2
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 10, RGB(10, 4, 16)
+	playsewithpan SE_M_BIND, SOUND_PAN_TARGET
+	delay 20
+	setarg 7, 0xFFFF
+	waitforvisualfinish
+	playsewithpan SE_M_ABSORB, SOUND_PAN_TARGET
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=0, y=5, wave_amplitude=8, wave_period=26
+	delay 4
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=10, y=-5, wave_amplitude=-8, wave_period=26
+	delay 4
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=-5, y=15, wave_amplitude=16, wave_period=33
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 10, 0, RGB(10, 4, 16)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 10, 0, RGB(8, 2, 12)
+	waitforvisualfinish
+	end
+
+@ Elke beurt: de draden snoeren nog eens aan en er stuift een spore af.
+Status_HyphalSnare:
+	loadspritegfx ANIM_TAG_TENDRILS
+	loadspritegfx ANIM_TAG_SPORE
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_TENDRILS, 0, 12, 12, RGB(28, 27, 22)
+	loopsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET, 6, 2
+	create_constrict_binding_sprite ANIM_TARGET, 4, initial_x=0, initial_y=16, affine_animation=0, squeezes=1
+	create_spore_particle_sprite ANIM_TARGET, 2, x=0, y=-15, wave_offset=0, duration=40, blend=1
+	delay 7
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 0, 9, RGB(27, 26, 21)
+	playsewithpan SE_M_BIND, SOUND_PAN_TARGET
+	delay 12
+	setarg 7, 0xFFFF
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 9, 0, RGB(27, 26, 21)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Cavitation. Golduck zwemt zo snel dat het water om hem heen verdampt: hij verdwijnt
+@ in een streep, een stroom dampbellen schiet naar het doelwit en implodeert daar in een reeks
+@ schokgolven met lichtflitsjes (zoals de klap van een pistoolgarnaal).
+gBattleAnimMove_Cavitation::
+	loadspritegfx ANIM_TAG_BUBBLE
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	loadspritegfx ANIM_TAG_THIN_RING
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_THIN_RING, 0, 12, 12, RGB(24, 30, 31)
+	createvisualtask AnimTask_AttackerStretchAndDisappear, 2
+	playsewithpan SE_M_RAZOR_WIND2, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	delay 1
+	createvisualtask AnimTask_SetAttackerInvisibleWaitForSignal, 2
+	monbg ANIM_DEF_PARTNER
+	setalpha 12, 8
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 7, RGB(2, 8, 18)
+	createsprite gWaterBubbleProjectileSpriteTemplate, ANIM_ATTACKER, 2, 18, 0, 15, -15, 6, 128, 100
+	playsewithpan SE_M_BUBBLE, SOUND_PAN_ATTACKER
+	delay 3
+	createsprite gWaterBubbleProjectileSpriteTemplate, ANIM_ATTACKER, 2, 18, 0, 35, 37, 6, 128, 100
+	delay 3
+	createsprite gWaterBubbleProjectileSpriteTemplate, ANIM_ATTACKER, 2, 18, 0, 10, -37, 6, 128, 100
+	playsewithpan SE_M_BUBBLE, SOUND_PAN_ATTACKER
+	delay 3
+	createsprite gWaterBubbleProjectileSpriteTemplate, ANIM_ATTACKER, 2, 18, 0, 30, 10, 6, 128, 100
+	delay 3
+	createsprite gWaterBubbleProjectileSpriteTemplate, ANIM_ATTACKER, 2, 18, 0, 20, -20, 6, 128, 100
+	waitforvisualfinish
+	call CavitationImplosion_A
+	call CavitationImplosion_B
+	call CavitationImplosion_A
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 1, 0
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=0
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 4, 0, 12, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 12, 0, RGB_WHITE
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 7, 0, RGB(2, 8, 18)
+	createvisualtask AnimTask_ExtremeSpeedMonReappear, 2
+	setarg 7, 0x1000
+	waitforvisualfinish
+	visible ANIM_ATTACKER
+	clearmonbg ANIM_DEF_PARTNER
+	blendoff
+	end
+CavitationImplosion_A:
+	playsewithpan SE_M_BUBBLE2, SOUND_PAN_TARGET
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, -12, -8, 1, 0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 0, 10, 0, RGB_WHITE
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 2, 0, 4, 1
+	delay 5
+	return
+CavitationImplosion_B:
+	playsewithpan SE_M_BUBBLE2, SOUND_PAN_TARGET
+	createsprite gThinRingExpandingSpriteTemplate, ANIM_ATTACKER, 3, 12, 6, 1, 0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 0, 10, 0, RGB_WHITE
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 2, 0, 4, 1
+	delay 5
+	return
+
+@ Project Grounded: Lure Light. De lichtorganen van Lumineon gloeien op en trekken de blik (het
+@ lokaas van een diepzeevis), dan een felle flits die de tegenstanders verblindt.
+gBattleAnimMove_LureLight::
+	loadspritegfx ANIM_TAG_SPARKLE_2
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 12, RGB(1, 2, 8)
+	waitforvisualfinish
+	playsewithpan SE_M_MORNING_SUN, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 0, 12, RGB(20, 31, 31)
+	createsprite gGrantingStarsSpriteTemplate, ANIM_ATTACKER, 2, -15, 0, 0, 0, 32, 60
+	delay 8
+	createsprite gGrantingStarsSpriteTemplate, ANIM_ATTACKER, 2, 12, -5, 0, 0, 32, 60
+	delay 16
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 12, 0, RGB(20, 31, 31)
+	waitforvisualfinish
+	playsewithpan SE_M_LEER, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_Flash, 2
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 12, 0, RGB(1, 2, 8)
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Beaver Dam. Bibarel knaagt, stammen rollen in en takken vallen erop; elke keer
+@ komt er een laag bij (1-3), de lagen eronder staan er al.
+gBattleAnimMove_BeaverDam::
+	loadspritegfx ANIM_TAG_WOOD_HAMMER
+	loadspritegfx ANIM_TAG_BRANCH
+	playsewithpan SE_M_BITE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 2, 0, 6, 1
+	delay 8
+	playsewithpan SE_M_BITE, SOUND_PAN_ATTACKER
+	delay 8
+	createvisualtask AnimTask_GetBeaverDamLayers, 2
+	delay 1
+	jumpreteq 2, BeaverDam_Build2
+	jumpreteq 3, BeaverDam_Build3
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 20, -48, 0, 12, 70, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 20, 48, 0, 12, 64, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 20, -48, 0, 12, 58, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 20, 48, 0, 12, 52, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	delay 8
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -20, 12, 0, -32, 8, 40, 2, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 26, 14, 0, -32, 8, 40, 3, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	goto BeaverDam_Done
+BeaverDam_Build2:
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -20, 12, 0, 0, 1, 82, 2, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 26, 14, 0, 0, 1, 82, 3, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -24, 11, -48, 0, 12, 70, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 0, 11, 48, 0, 12, 64, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 24, 11, -48, 0, 12, 58, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	delay 8
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 10, 3, 0, -32, 8, 40, 1, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -30, 4, 0, -32, 8, 40, 4, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	goto BeaverDam_Done
+BeaverDam_Build3:
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 20, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -20, 12, 0, 0, 1, 82, 2, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 26, 14, 0, 0, 1, 82, 3, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -24, 11, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 0, 11, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 24, 11, 0, 0, 1, 82, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 10, 3, 0, 0, 1, 82, 1, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -30, 4, 0, 0, 1, 82, 4, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 2, -48, 0, 12, 70, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 2, 48, 0, 12, 64, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 2, -48, 0, 12, 58, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 2, 48, 0, 12, 52, 0, 0
+	playsewithpan SE_M_DOUBLE_SLAP, SOUND_PAN_ATTACKER
+	delay 6
+	delay 8
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -6, -6, 0, -32, 8, 40, 2, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 30, -5, 0, -32, 8, 40, 3, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -34, -4, 0, -32, 8, 40, 1, 0
+	playsewithpan SE_M_VITAL_THROW, SOUND_PAN_ATTACKER
+	delay 5
+BeaverDam_Done:
+	waitforvisualfinish
+	end
+
+@ Project Grounded: de dam breekt (Bibarel flauwgevallen): de stammen vliegen alle kanten op en een
+@ vloedgolf spoelt over het veld.
+gBattleAnimGeneral_BeaverDamBreak::
+	loadspritegfx ANIM_TAG_WOOD_HAMMER
+	loadspritegfx ANIM_TAG_BRANCH
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 20, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 20, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 20, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 20, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -20, 12, 0, 0, 1, 14, 2, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 26, 14, 0, 0, 1, 14, 3, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -24, 11, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 0, 11, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 24, 11, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 10, 3, 0, 0, 1, 14, 1, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -30, 4, 0, 0, 1, 14, 4, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 2, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 2, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 2, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 2, 0, 0, 1, 14, 0, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -6, -6, 0, 0, 1, 14, 2, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, 30, -5, 0, 0, 1, 14, 3, 0
+	createsprite gBeaverDamBranchSpriteTemplate, ANIM_ATTACKER, 2, -34, -4, 0, 0, 1, 14, 1, 0
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 3, 0, 12, 1
+	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_ATTACKER
+	delay 14
+	playsewithpan SE_M_SELF_DESTRUCT, SOUND_PAN_ATTACKER
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 20, -60, -48, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 20, -60, -48, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 20, 60, -48, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 20, 60, -48, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -24, 11, -60, -40, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 0, 11, 60, -40, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 24, 11, 60, -40, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -36, 2, -60, -32, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, -12, 2, -60, -32, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 12, 2, 60, -32, 12, 0, 0, 1
+	createsprite gBeaverDamLogSpriteTemplate, ANIM_ATTACKER, 3, 36, 2, 60, -32, 12, 0, 0, 1
+	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
+	delay 12
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Moai Watch. Probopass laadt magnetisch op, de grond schudt en stenen beelden rijzen
+@ draaiend op aan de kant van het doelwit: laag 1 kleine Nosepass-beelden, laag 2 grotere, laag 3
+@ Probopass-beelden. Ze vallen stil met het gezicht naar voren; vonken ertussen.
+gBattleAnimMove_MoaiWatch::
+	loadspritegfx ANIM_TAG_MOAI_STATUE
+	loadspritegfx ANIM_TAG_SPARK_2
+	playsewithpan SE_M_THUNDER_WAVE, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 0, 9, RGB(31, 28, 6)
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 2, 0, 10, 1
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 9, 0, RGB(31, 28, 6)
+	playsewithpan SE_M_EARTHQUAKE, SOUND_PAN_TARGET
+	createvisualtask AnimTask_HorizontalShake, 5, ANIM_TARGET, 4, 30
+	createvisualtask AnimTask_GetMoaiWatchLayers, 2
+	delay 1
+	jumpreteq 2, MoaiWatch_Layer2
+	jumpreteq 3, MoaiWatch_Layer3
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 10, 6, 20, 30, 0, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 10, 6, 20, 24, 0, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 10, 6, 20, 18, 0, 0
+	goto MoaiWatch_Finish
+MoaiWatch_Layer2:
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 10, 6, 20, 30, 1, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 10, 6, 20, 24, 1, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 10, 6, 20, 18, 1, 0
+	goto MoaiWatch_Finish
+MoaiWatch_Layer3:
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 10, 6, 20, 30, 2, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 10, 6, 20, 24, 2, 0
+	delay 6
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 10, 6, 20, 18, 2, 0
+	goto MoaiWatch_Finish
+MoaiWatch_Finish:
+	delay 56
+	playsewithpan SE_M_THUNDERBOLT2, SOUND_PAN_TARGET
+	createsprite gSparkElectricitySpriteTemplate, ANIM_TARGET, 2, -18, 10, 64, 12, ANIM_TARGET, 1, 0
+	createsprite gSparkElectricitySpriteTemplate, ANIM_TARGET, 2, 18, 10, 192, 12, ANIM_TARGET, 1, 0
+	delay 12
+	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
+	waitforvisualfinish
+	end
+
+@ Project Grounded: de beelden van Moai Watch worden opgeruimd en storten in (gebroken versie uit de tileset).
+gBattleAnimGeneral_MoaiCrumble::
+	loadspritegfx ANIM_TAG_MOAI_STATUE
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 10, 0, 0, 16, 0, 0
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 10, 0, 0, 16, 0, 0
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 10, 0, 0, 16, 0, 0
+	createvisualtask AnimTask_HorizontalShake, 5, ANIM_TARGET, 3, 16
+	delay 16
+	playsewithpan SE_M_ROCK_THROW, SOUND_PAN_TARGET
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, -36, 18, 10, 0, 0, 34, 0, 1
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 36, 18, 10, 0, 0, 34, 0, 1
+	createsprite gMoaiStatueSpriteTemplate, ANIM_TARGET, 2, 0, 24, 10, 0, 0, 34, 0, 1
+	delay 6
+	playsewithpan SE_M_EARTHQUAKE, SOUND_PAN_TARGET
 	waitforvisualfinish
 	end

@@ -14,7 +14,7 @@ import spiredata  # noqa: E402
 ROOT = spiredata.ROOT
 
 # Level van de speler per fase = level van de ace van de volgende gymleider (de gymgidsen noemen dat).
-LEVEL_AT_STAGE = [16, 22, 25, 29, 35, 43, 49, 56, 66, 70]
+LEVEL_AT_STAGE = [17, 21, 30, 43, 44, 51, 62, 71, 77, 90]  # gym-ace − 2 (levelcurve 12 okt; was 16..70 van vóór de herijking)
 STAGE_NAMES = ['Roxanne', 'Brawly', 'Wattson', 'Flannery', 'Norman', 'Winona', 'Tate & Liza', 'Wallace',
                'E4 + Champion', 'post-game']
 
@@ -83,7 +83,7 @@ GIFTS = [
 ]
 
 # Evolutie-items: fase waarin je het item kunt hebben.
-ITEM_STAGE = {'ITEM_MOON_STONE': 0, 'ITEM_FIRE_STONE': 3, 'ITEM_THUNDER_STONE': 5, 'ITEM_WATER_STONE': 5,
+ITEM_STAGE = {'ITEM_MOON_STONE': 2,  # Capt. Stern, Slateport (was Petalburg Woods) 'ITEM_FIRE_STONE': 3, 'ITEM_THUNDER_STONE': 5, 'ITEM_WATER_STONE': 5,
               'ITEM_LEAF_STONE': 5, 'ITEM_ICE_STONE': 5, 'ITEM_SHINY_STONE': 5, 'ITEM_DUSK_STONE': 5,
               'ITEM_DAWN_STONE': 5, 'ITEM_SUN_STONE': 6}
 

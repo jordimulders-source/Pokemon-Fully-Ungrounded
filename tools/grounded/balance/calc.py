@@ -309,7 +309,11 @@ def duel(me, foe, my_moves, hp_me, setup=None):
         if setup == 'BELLY_DRUM':
             hp_me -= me.st['hp'] / 2
         turns += 1
+    first_only = [m for m in my_moves if MOVES[m]['effect'] == 'FIRST_TURN_ONLY']
     while turns < 12:
+        if acts['me'] >= 1 and first_only:   # First Impression/Fake Out alleen in de eerste beurt op het veld
+            my_moves = [m for m in my_moves if m not in first_only]
+            first_only = []
         mm, md = best_move(me, foe, my_moves)
         fm, fd = best_move(foe, me, foe.moves)
         if md <= 0 and fd <= 0:

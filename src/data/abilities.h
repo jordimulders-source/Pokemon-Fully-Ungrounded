@@ -37,6 +37,20 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 8,
     },
 
+    [ABILITY_HELIOTROPISM] = // Project Grounded: Sunflora
+    {
+        .name = _("Heliotropism"),
+        .description = COMPOUND_STRING("Sharply ups all stats if it enters in sun."),
+        .aiRating = 7,
+    },
+
+    [ABILITY_HOLE_UP] = // Project Grounded
+    {
+        .name = _("Hole Up"),
+        .description = COMPOUND_STRING("Ducks into its hole after a KO."),
+        .aiRating = 6,
+    },
+
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("Speed Boost"),
@@ -1406,7 +1420,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_PARENTAL_BOND] =
     {
         .name = _("Parental Bond"),
-        .description = COMPOUND_STRING("Moves hit twice."),
+        .description = COMPOUND_STRING("Hits twice above half HP."),
         .aiRating = 10,
     },
 
@@ -1518,7 +1532,7 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     [ABILITY_STEELWORKER] =
     {
         .name = _("Steelworker"),
-        .description = COMPOUND_STRING("Powers up Steel moves."),
+        .description = COMPOUND_STRING("Steel moves up; adds Steel type."),
         .aiRating = 6,
     },
 

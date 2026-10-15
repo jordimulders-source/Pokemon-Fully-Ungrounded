@@ -23,8 +23,8 @@ from variants import read_pal, write_pal  # noqa: E402
 SPECIES = {
     # gekleurde index-groep (donker -> licht), vrije indexen (donker, midden, licht),
     # flip: het gekleurde deel ligt onderaan (Electrode staat op zijn kop)
-    'voltorb': {'ramp': [14, 13, 12, 11, 10, 9], 'pat': [6, 7, 8], 'flip': False},
-    'electrode': {'ramp': [14, 13, 12, 11, 10], 'pat': [6, 7, 8], 'flip': True},
+    'voltorb': {'ramp': [14, 13, 12, 11, 10, 9], 'pat': [6, 7, 8], 'white': [1, 2, 3, 4]},
+    'electrode': {'ramp': [14, 13, 12, 11, 10], 'pat': [6, 7, 8], 'white': [1, 2, 3, 4]},
 }
 
 # Volgorde = variant 1..6 (10%, 6%, 4%, 3%, 1,5%, 0,5%).
@@ -48,33 +48,44 @@ def polyline(p, pts, width):
     return any(seg_dist(p, a, b) < width for a, b in zip(pts, pts[1:]))
 
 
-def in_pattern(name, u, v):
-    """u: -1 links .. 1 rechts, v: -1 bovenkant .. 0 naad (het gekleurde deel).
-    Nagetekend naar de officiële artwork (PokeAPI dream-world-items)."""
-    au = abs(u)
+def near(p, c, r):
+    n = math.sqrt(sum(x * x for x in c))
+    return sum((a - b / n) ** 2 for a, b in zip(p, c)) < r * r
+
+
+SAFARI_SPOTS = [(-0.6, 0.5, 0.4), (0.2, 0.7, 0.6), (0.75, 0.1, 0.5), (-0.2, -0.6, 0.6),
+                (0.6, -0.5, 0.45), (-0.8, -0.2, 0.3), (0.0, 0.1, 0.95), (-0.45, 0.85, 0.15),
+                (0.45, 0.35, 0.2)]
+
+
+def in_pattern(name, sd, fr, up):
+    """Punt op de bol in balcoordinaten: sd = zijwaarts, fr = naar de kijker, up = naar de
+    pool van de gekleurde helft. Nagetekend naar de Gen 4/5-balsprites (alle draaistanden)
+    en de officiële artwork."""
+    a = abs(sd)
+    if up < 0.06:
+        return False
     if name == 'great':
-        # twee rode 'haken' die langs de buitenrand omhoog lopen en bovenin naar binnen buigen
-        return polyline((au, v), [(0.58, -0.18), (0.76, -0.48), (0.70, -0.78), (0.52, -0.94)], 0.16)
+        # twee rode banen van voor naar achter over de flanken: van boven '( )'
+        return 0.50 < a < 0.74 and up > 0.12
     if name == 'ultra':
-        # gele bovenkant met de zwarte H: brede middenbaan en zwarte flanken
-        return au < 0.22 or au > 0.76
+        # gele H op zwart: twee benen van voor naar achter plus een dwarsbalk
+        return 0.28 < a < 0.80 or (a <= 0.28 and abs(fr) < 0.20)
     if name == 'quick':
-        # gele bliksem-X over een lichtblauwe bovenkant
-        bolt = [(-0.62, -0.92), (-0.05, -0.55), (-0.22, -0.46), (0.72, -0.04)]
-        return (polyline((u, v), bolt, 0.11) or polyline((-u, v), bolt, 0.11))
+        # gele X van boven gezien over blauw
+        return abs(a - abs(fr)) < 0.26 and up > 0.10
     if name == 'safari':
-        # donkergroene camouflagevlekken over olijf/kaki
-        spots = [(-0.62, -0.30, 0.24, 0.16), (-0.05, -0.78, 0.30, 0.15), (0.55, -0.55, 0.22, 0.18),
-                 (-0.30, -0.08, 0.20, 0.10), (0.40, -0.12, 0.22, 0.10), (-0.70, -0.75, 0.14, 0.12),
-                 (0.85, -0.25, 0.12, 0.14)]
-        return any(ellipse(u, v, x, y, rx, ry) for x, y, rx, ry in spots)
+        return any(near((sd, fr, up), c, 0.30) for c in SAFARI_SPOTS)
     if name == 'dusk':
-        # groene vlekken op een donkere bal: kap bovenop, ovalen op de flanken en voorop
-        return (ellipse(u, v, 0, -1.0, 0.42, 0.22) or ellipse(au, v, 0.95, -0.35, 0.22, 0.42)
-                or ellipse(u, v, 0, -0.02, 0.42, 0.14))
+        # groene cirkels op een donkere bal: kap bovenop en vier vlakken rondom
+        if up > 0.84:
+            return True
+        k = math.cos(math.radians(25))
+        q = math.sin(math.radians(25))
+        return any(near((sd, fr, up), c, 0.40) for c in ((0, k, q), (k, 0, q), (-k, 0, q), (0, -k, q)))
     if name == 'master':
-        # twee roze bollen linksboven en rechtsboven
-        return ellipse(au, v, 0.52, -0.62, 0.34, 0.30)
+        # twee roze bollen links en rechts van de top
+        return near((sd, fr, up), (0.62, 0.35, 0.65), 0.36) or near((sd, fr, up), (-0.62, 0.35, 0.65), 0.36)
     raise ValueError(name)
 
 
@@ -103,24 +114,62 @@ def shade_slot(idx, ramp):
     return 1 if pos <= (n - 1) // 2 else 2
 
 
+def sphere_frame(src, f, cfg):
+    """Middelpunt, straal en pool (3D) van de bal in frame f. De pool staat loodrecht op de
+    naad tussen gekleurd en wit, zo telt de schuine pose van de sprite mee."""
+    cx, cy, r = ball_geometry(src, 0, f * 64, 64, 64)
+    px = src.load()
+    white = cfg['white']
+    seam, colored = [], []
+
+    def p3(x, y):
+        X = (x + 0.5 - cx) / r
+        Y = -(y + 0.5 - cy) / r
+        return (X, Y, math.sqrt(max(0.0, 1 - X * X - Y * Y)))
+
+    for y in range(f * 64, f * 64 + 64):
+        for x in range(64):
+            i = px[x, y]
+            if i in cfg['ramp']:
+                colored.append(p3(x, y))
+                if any(0 <= x + dx < 64 and px[x + dx, y + dy] in white
+                       for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))
+                       if f * 64 <= y + dy < f * 64 + 64):
+                    seam.append(p3(x, y))
+    # vlak door het middelpunt: kleinste eigenvector van sum p p^T
+    import numpy as np
+    M = np.zeros((3, 3))
+    for p in seam:
+        v = np.array(p)
+        M += np.outer(v, v)
+    w, V = np.linalg.eigh(M)
+    n = V[:, 0]
+    if np.mean([np.dot(n, c) for c in colored]) < 0:
+        n = -n
+    return cx, cy, r, n
+
+
 def make(species, name, picname):
+    import numpy as np
     cfg = SPECIES[species]
     src = Image.open(os.path.join(ROOT, 'graphics/pokemon', species, picname))
     img = src.copy()
     px = img.load()
     w, h = img.size
     for f in range(h // 64):
-        cx, cy, r = ball_geometry(src, 0, f * 64, 64, 64)
+        cx, cy, r, n = sphere_frame(src, f, cfg)
+        front = np.array([0.0, 0.0, 1.0]) - n[2] * n
+        front /= np.linalg.norm(front)
+        side = np.cross(n, front)
         for y in range(f * 64, f * 64 + 64):
             for x in range(64):
                 i = px[x, y]
                 if i not in cfg['ramp']:
                     continue
-                u = (x + 0.5 - cx) / r
-                v = (y + 0.5 - cy) / r
-                if cfg['flip']:
-                    v = -v
-                if v < 0 and in_pattern(name, u, v):
+                X = (x + 0.5 - cx) / r
+                Y = -(y + 0.5 - cy) / r
+                p = np.array([X, Y, math.sqrt(max(0.0, 1 - X * X - Y * Y))])
+                if in_pattern(name, float(np.dot(p, side)), float(np.dot(p, front)), float(np.dot(p, n))):
                     px[x, y] = cfg['pat'][shade_slot(i, cfg['ramp'])]
     out = os.path.join(ROOT, 'graphics/pokemon', species, 'ball_' + name)
     os.makedirs(out, exist_ok=True)

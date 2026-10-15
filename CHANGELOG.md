@@ -18762,3 +18762,12 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - De Devon-onderzoeker in Petalburg Woods geeft nu een **Scope Lens** ("I don't have any balls... literally. Have this."): een held item met een niche vroeg in de game (Super Luck, Sirfetch'd) dat later niet te sterk wordt.
   - De **Moon Stone** krijg je van Capt. Stern na het verslaan van Team Aqua in het Oceanic Museum van Slateport ("It's either a MOON STONE or a very old potato."). Daarmee schuiven ook Nidoqueen/Nidoking, Clefable, Delcatty en Musharna van vóór Roxanne naar na Slateport.
 - **Wigglytuff-revisie bijgesteld** (Jordi: "het is niet logisch dat Wiggly een van de beste walls in de game is"): 140/70/75/95/80/45 (BST 505) → **140/70/65/90/70/45 (BST 480)**, nog +45 t.o.v. vanilla. Met 75/80 had hij meer fysieke én speciale bulk (HP×Def 10.500, HP×SpD 11.200) dan Corviknight, Ferrothorn, Skarmory en Gliscor, en sloeg hij ook nog hard terug, met Sing + Bad Dreams erbij. Nu 9.100 / 9.800: stevig door 140 HP, maar geen topwall. Balanstool: 4,2 → 3,0 gewonnen duels per baasgevecht (bovenste kwart, rond Swampert).
+- **Buffs voor zwakke presteerders** (balanstool + Jordi's keuze):
+  - **Venomoth:** Sp. Atk 105 → 115, Speed 95 → 105 (BST 500).
+  - **Wyrdeer:** Atk 105 → 115, Sp. Atk 105 → 95, Speed 65 → 75; **Sap Sipper** van verborgen naar slot 2 (Frisk wordt verborgen). Stantler idem, zodat het slot meegaat bij evolutie.
+  - **Carnivine:** HP 74 → 84, Atk 100 → 115; slot 2 **Strong Jaw**; leert **Snap Trap** (lv 21) en **Jaw Lock** (lv 34).
+  - **Cofagrigus:** slot 2 **Cursed Body** (Yamask idem); leert **Body Press** (lv 34) en **Pain Split** (lv 41).
+  - **Runerigus:** slot 2 **Cursed Body** (Yamask-Galar idem); leert **Stealth Rock** (lv 20), **Body Press** (lv 34) en **Poltergeist** (lv 47).
+  - **Araquanid:** HP 68 → 78, Atk 70 → 90; leert **Sticky Web** (lv 23) en Leech Life op lv 28 (was 56).
+  - **Slowbro-Galar:** **Regenerator** van verborgen naar slot 2 (Own Tempo wordt verborgen). Stats blijven (Jordi: "heeft al uitstekende stats").
+  - Nog open: Kangaskhan (Parental Bond, Jordi wil het aanpassen), Dhelmise en Dugtrio/Dugtrio-Alola/Wugtrio (nieuw idee).

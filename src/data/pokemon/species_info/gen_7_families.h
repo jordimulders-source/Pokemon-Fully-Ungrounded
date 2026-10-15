@@ -2763,8 +2763,8 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
 
     [SPECIES_ARAQUANID] =
     {
-        .baseHP        = 68,
-        .baseAttack    = 70,
+        .baseHP        = 78,
+        .baseAttack    = 90,
         .baseDefense   = 92,
         .baseSpeed     = 42,
         .baseSpAttack  = 50,

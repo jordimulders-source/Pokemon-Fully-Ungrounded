@@ -33,12 +33,6 @@ FIXES = {
                 ('fill', 'anim_front.png', [(9, 32), (46, 33), (12, 99), (17, 100), (45, 100), (51, 101), (48, 103)],
                  {1, 2, 3}, {2: 15, 3: 13})],
     # staartstukje tussen de benen (lijftint 4) -> eigen index 15 (de staart is van achteren niet te zien)
-    # armbladeren (vulling = lijftint 4) -> eigen index 14; daarvoor gaat de donkerste staarttint 14 op in 1
-    'sceptile2': [('pal', {14: 4}),
-                  ('merge', 14, 1),
-                  ('box', 'anim_front.png', [(5, 17, 13, 23), (42, 16, 51, 23), (2, 86, 10, 90), (40, 84, 47, 90)],
-                   {4: 14}),
-                  ('box', 'back.png', [(43, 28, 63, 47)], {5: 14, 4: 14})],
     'sceptile': [('pal', {15: 4}),
                  ('merge', 15, 6),
                  ('box', 'anim_front.png', [(29, 47, 46, 54), (46, 44, 62, 53), (30, 112, 45, 119), (40, 104, 62, 117)],

@@ -18800,3 +18800,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - `sprite_fixes.py` kan nu ook indexen samenvoegen, vlakvullen vanaf zaadpixels en binnen rechthoeken hernummeren; eenmalig per soort (`sprite_fixes_done.txt`).
 - Treecko-lijn in Mudkip-kleuren: de rode buik/streep is nu oranje als Mudkips wangen (Jordi); Sceptiles armbladeren blijven lijfkleur (geen vrije paletplek zonder een lijftint te verliezen).
 - Sceptiles armbladeren hebben nu een eigen index (oranje in de Mudkip-variant, ook op de achterkant); daarvoor ging de donkerste staarttint op in de bijna gelijke donkerste lijftint. De gewone Sceptile houdt al zijn glans en schaduw.
+- Sceptile terug naar de versie met de oranje buikstreep en armbladeren in lijfkleur (Jordi); de extra index-ingreep is teruggedraaid.
+- **Kleurvarianten, Hoenn-dex groep 2:**
+  - Poochyena-lijn: blauwe merle, rode wolf, poolwolf, albino, Midnight Lycanroc, spookwolf.
+  - Zigzagoon-lijn: wasbeer, rode panda, Galar-kleuren, albino, Sonic, vaporwave.
+  - Wurmple-familie: monarchvlinder (jadegroene cocons), blauwe morpho, maanvlinder, melanisme, Kanto-neven (Caterpie, Metapod, Kakuna, Butterfree, Venomoth), neon.
+  - Lotad-lijn: lotus, Mexico (Jordi), mandarijneend, albino, kappa, neon.
+  - Seedot-lijn: onrijpe eikel, herfst, tengu, albino, sakura, winterdemon (Shiftry is hier Grass/Ice met Snow Warning; Jordi).

@@ -54,6 +54,51 @@ static const u16 sVariants_Marshtomp[] = INCBIN_U16("graphics/pokemon/marshtomp/
 #if (P_FAMILY_MUDKIP)
 static const u16 sVariants_Swampert[] = INCBIN_U16("graphics/pokemon/swampert/variants.gbapal");
 #endif
+#if (P_FAMILY_POOCHYENA)
+static const u16 sVariants_Poochyena[] = INCBIN_U16("graphics/pokemon/poochyena/variants.gbapal");
+#endif
+#if (P_FAMILY_POOCHYENA)
+static const u16 sVariants_Mightyena[] = INCBIN_U16("graphics/pokemon/mightyena/variants.gbapal");
+#endif
+#if (P_FAMILY_ZIGZAGOON)
+static const u16 sVariants_Zigzagoon[] = INCBIN_U16("graphics/pokemon/zigzagoon/variants.gbapal");
+#endif
+#if (P_FAMILY_ZIGZAGOON)
+static const u16 sVariants_Linoone[] = INCBIN_U16("graphics/pokemon/linoone/variants.gbapal");
+#endif
+#if (P_FAMILY_WURMPLE)
+static const u16 sVariants_Wurmple[] = INCBIN_U16("graphics/pokemon/wurmple/variants.gbapal");
+#endif
+#if (P_FAMILY_WURMPLE)
+static const u16 sVariants_Silcoon[] = INCBIN_U16("graphics/pokemon/silcoon/variants.gbapal");
+#endif
+#if (P_FAMILY_WURMPLE)
+static const u16 sVariants_Beautifly[] = INCBIN_U16("graphics/pokemon/beautifly/variants.gbapal");
+#endif
+#if (P_FAMILY_WURMPLE)
+static const u16 sVariants_Cascoon[] = INCBIN_U16("graphics/pokemon/cascoon/variants.gbapal");
+#endif
+#if (P_FAMILY_WURMPLE)
+static const u16 sVariants_Dustox[] = INCBIN_U16("graphics/pokemon/dustox/variants.gbapal");
+#endif
+#if (P_FAMILY_LOTAD)
+static const u16 sVariants_Lotad[] = INCBIN_U16("graphics/pokemon/lotad/variants.gbapal");
+#endif
+#if (P_FAMILY_LOTAD)
+static const u16 sVariants_Lombre[] = INCBIN_U16("graphics/pokemon/lombre/variants.gbapal");
+#endif
+#if (P_FAMILY_LOTAD)
+static const u16 sVariants_Ludicolo[] = INCBIN_U16("graphics/pokemon/ludicolo/variants.gbapal");
+#endif
+#if (P_FAMILY_SEEDOT)
+static const u16 sVariants_Seedot[] = INCBIN_U16("graphics/pokemon/seedot/variants.gbapal");
+#endif
+#if (P_FAMILY_SEEDOT)
+static const u16 sVariants_Nuzleaf[] = INCBIN_U16("graphics/pokemon/nuzleaf/variants.gbapal");
+#endif
+#if (P_FAMILY_SEEDOT)
+static const u16 sVariants_Shiftry[] = INCBIN_U16("graphics/pokemon/shiftry/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -110,6 +155,51 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_MUDKIP)
     {gMonPalette_Swampert, sVariants_Swampert},
+#endif
+#if (P_FAMILY_POOCHYENA)
+    {gMonPalette_Poochyena, sVariants_Poochyena},
+#endif
+#if (P_FAMILY_POOCHYENA)
+    {gMonPalette_Mightyena, sVariants_Mightyena},
+#endif
+#if (P_FAMILY_ZIGZAGOON)
+    {gMonPalette_Zigzagoon, sVariants_Zigzagoon},
+#endif
+#if (P_FAMILY_ZIGZAGOON)
+    {gMonPalette_Linoone, sVariants_Linoone},
+#endif
+#if (P_FAMILY_WURMPLE)
+    {gMonPalette_Wurmple, sVariants_Wurmple},
+#endif
+#if (P_FAMILY_WURMPLE)
+    {gMonPalette_Silcoon, sVariants_Silcoon},
+#endif
+#if (P_FAMILY_WURMPLE)
+    {gMonPalette_Beautifly, sVariants_Beautifly},
+#endif
+#if (P_FAMILY_WURMPLE)
+    {gMonPalette_Cascoon, sVariants_Cascoon},
+#endif
+#if (P_FAMILY_WURMPLE)
+    {gMonPalette_Dustox, sVariants_Dustox},
+#endif
+#if (P_FAMILY_LOTAD)
+    {gMonPalette_Lotad, sVariants_Lotad},
+#endif
+#if (P_FAMILY_LOTAD)
+    {gMonPalette_Lombre, sVariants_Lombre},
+#endif
+#if (P_FAMILY_LOTAD)
+    {gMonPalette_Ludicolo, sVariants_Ludicolo},
+#endif
+#if (P_FAMILY_SEEDOT)
+    {gMonPalette_Seedot, sVariants_Seedot},
+#endif
+#if (P_FAMILY_SEEDOT)
+    {gMonPalette_Nuzleaf, sVariants_Nuzleaf},
+#endif
+#if (P_FAMILY_SEEDOT)
+    {gMonPalette_Shiftry, sVariants_Shiftry},
 #endif
     {NULL, NULL},
 };

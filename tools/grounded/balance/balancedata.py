@@ -14,7 +14,7 @@ import spiredata  # noqa: E402
 ROOT = spiredata.ROOT
 
 # Level van de speler per fase = level van de ace van de volgende gymleider (de gymgidsen noemen dat).
-LEVEL_AT_STAGE = [16, 22, 25, 29, 35, 43, 49, 56, 66, 70]
+LEVEL_AT_STAGE = [17, 21, 30, 43, 44, 51, 62, 71, 77, 90]  # gym-ace − 2 (levelcurve 12 okt; was 16..70 van vóór de herijking)
 STAGE_NAMES = ['Roxanne', 'Brawly', 'Wattson', 'Flannery', 'Norman', 'Winona', 'Tate & Liza', 'Wallace',
                'E4 + Champion', 'post-game']
 

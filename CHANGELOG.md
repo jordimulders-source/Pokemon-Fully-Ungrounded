@@ -18882,3 +18882,15 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Bagon-lijn (mythologische draken): Alduin (Skyrim), Bahamut (platina en goud), Y Ddraig Goch (Welsh), albino, Tiamat (chromatisch), Smaug (rood en goud). Albino met donkerder doel en roze huid, zodat schaduw en lijnen blijven.
   - Beldum-lijn (metalen): koper, goud, patina, gunmetal, roségoud, Iron Man; Metang krijgt een donkerder doelkleur (zijn palet is lichter, anders vlak als een Gen 2-sprite).
   - Glalie: hoorns blijven zwart (de hoornindex kleurt ook de gaten in het gezicht); Hannya-thema met minder kleuren.
+
+- **Kleurvarianten, Hoenn-dex groep 12 (legendaries):**
+  - Regirock: basalt met lava, Regice-kleuren, malachiet, Petra (roze zandsteen), amethistgeode, Regigigas.
+  - Regice: Regirock-kleuren, rozenkwarts, citrien, zwart ijs, smaragd, Regigigas.
+  - Registeel: roest, brons, gegloeid blauw staal, goud, geanodiseerd titanium, Regigigas.
+  - Latias/Latios (per variant contrasterend): Mew en Mewtwo, stealth, lente en nacht, albino, aurora en amber, sterrenstelsel.
+  - Kyogre: abyssaal violet, orka, tsunami (turkoois), ijstijd, Groudon-ruil, Leviathan (goud).
+  - Groudon: woestijn, obsidiaan met lava, Godzilla, Maya-jade, Kyogre-ruil, zonnegod (Inti).
+  - Rayquaza: hemelsblauw, Groudon-rood, gouden drakenkoning, wolkendraak, kosmisch (Deoxys), bloedmaandraak.
+  - Jirachi: zilveren ster, robijnen ster, blauwe wensster, 1-up (groen), zwarte ster, sterrenstelsel.
+  - Deoxys (alle vier de vormen, elk met een eigen paletvolgorde): virus, mutant, omgekeerd, DNA (wit), meteoriet (gloeiend ijzer), kosmisch roze.
+  - Les: ligt de doelkleur op een donkere index (Regirocks steen), dan wordt alles bleek; donkere schaduwindex uit de groep laten.

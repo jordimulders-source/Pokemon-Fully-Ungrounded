@@ -1129,4 +1129,114 @@ LINES = {
             {'naam': 'Iron Man', 'body': '#b82828', 'grey': '#e0b030', 'eye': '#80e0f8'},
         ],
     },
+    # --- Hoenn-dex, groep 12: legendaries ---
+    'regirock': {
+        'species': {'regirock': {'rock': [8, 10, 9, 12, 7], 'orange': [2, 5, 3, 4, 11]}},
+        'variants': [
+            {'naam': 'Basalt met lava', 'rock': '#4a4a50', 'orange': '#e06020'},
+            {'naam': 'Regice-kleuren', 'rock': '#5890b8', 'orange': '#f0d020'},
+            {'naam': 'Malachiet', 'rock': '#2c8a60', 'orange': '#e8e4d0'},
+            {'naam': 'Petra (roze zandsteen)', 'rock': '#d89878', 'orange': '#8a3020'},
+            {'naam': 'Amethistgeode', 'rock': '#6a5a7a', 'orange': '#c060f0'},
+            {'naam': 'Regigigas', 'rock': '#b8b4ac', 'orange': '#3c9a50'},
+        ],
+    },
+    'regice': {
+        'species': {'regice': {'ice': [6, 2, 3, 1, 7, 5], 'dots': [11, 10, 9]}},
+        'variants': [
+            {'naam': 'Regirock-kleuren', 'ice': '#c87048', 'dots': '#f0d0b8'},
+            {'naam': 'Rozenkwarts', 'ice': '#f0a8c0', 'dots': '#e04878'},
+            {'naam': 'Citrien', 'ice': '#e0a830', 'dots': '#f8f0c0'},
+            {'naam': 'Zwart ijs', 'ice': ('#303848', {'l': 1.3}), 'dots': '#40e0f0'},
+            {'naam': 'Smaragd', 'ice': '#40b080', 'dots': '#f0f0e0'},
+            {'naam': 'Regigigas', 'ice': '#e8e4dc', 'dots': '#3c9a50'},
+        ],
+    },
+    'registeel': {
+        'species': {'registeel': {'steel': [2, 1, 4, 9, 5], 'dark': [13, 12, 6], 'dots': [11, 10]}},
+        'variants': [
+            {'naam': 'Roest', 'steel': '#a85830', 'dark': '#5a3020'},
+            {'naam': 'Brons', 'steel': '#c09048', 'dark': '#5a4028'},
+            {'naam': 'Gegloeid blauw staal', 'steel': '#5870b0', 'dark': '#283050', 'dots': '#f0c040'},
+            {'naam': 'Goud', 'steel': '#e0b030', 'dark': '#6a5018'},
+            {'naam': 'Geanodiseerd titanium', 'steel': '#9068c8', 'dark': '#30a0a0', 'dots': '#f0e040'},
+            {'naam': 'Regigigas', 'steel': '#e8e4dc', 'dark': '#3c9a50', 'dots': '#f0c040'},
+        ],
+    },
+    'latias': {
+        # tweeling met Latios: per variant contrasterend
+        'species': {
+            'latias': {'white': [1, 4, 2], 'red': [6, 8, 7, 10], 'triangle': [15, 14], 'eyes': [11, 13]},
+            'latios': {'white': [2, 1, 4, 3, 5], 'blue': [8, 6, 11, 9, 10], 'triangle': [12, 14]},
+        },
+        'variants': [
+            {'naam': 'Mew en Mewtwo', 'red': '#f090c0', 'blue': '#8050b0'},
+            {'naam': 'Stealth', 'latias:white': '#38384a', 'red': '#c02838', 'latios:white': '#5c6070', 'blue': '#202838'},
+            {'naam': 'Lente en nacht', 'red': '#70b838', 'latios:white': '#9890b8', 'blue': '#3a2858', 'triangle': '#f0e060'},
+            {'naam': 'Albino', 'white': ('#ece8e8', ALBINO), 'red': '#f0b8c0', 'blue': '#e0c8d0', 'eyes': '#e02838', 'triangle': '#e02838'},
+            {'naam': 'Aurora en amber', 'red': '#30c0a0', 'blue': '#e8a020', 'triangle': '#f0e060'},
+            {'naam': 'Sterrenstelsel', 'white': '#283060', 'red': '#e070d0', 'blue': '#40e0f0', 'triangle': '#f0f0a0'},
+        ],
+    },
+    'kyogre': {
+        'species': {'kyogre': {'body': [5, 9, 6, 7, 12, 13], 'lines': [11, 10, 8], 'belly': [4, 14, 3]}},
+        'variants': [
+            {'naam': 'Abyssaal violet', 'body': '#302060', 'lines': '#40e0f0'},
+            {'naam': 'Orka', 'body': ('#28282c', {'l': 1.3}), 'belly': '#f4f4f4'},
+            {'naam': 'Tsunami (turkoois)', 'body': '#30a8a0', 'lines': '#f0d040'},
+            {'naam': 'IJstijd', 'body': '#c0d8ec', 'lines': '#4080e0', 'belly': '#f4f8fc'},
+            {'naam': 'Groudon-ruil', 'body': '#a82828', 'lines': '#2050c0', 'belly': '#8c8088'},
+            {'naam': 'Leviathan (goud)', 'body': '#d8a828', 'lines': '#2050c0', 'belly': '#f4ecd0'},
+        ],
+    },
+    'groudon': {
+        'species': {'groudon': {'red': [2, 6, 7, 4, 5, 3], 'grey': [13, 9, 14, 15], 'claws': [12, 10]}},
+        'variants': [
+            {'naam': 'Woestijn', 'red': '#d8a860', 'grey': '#806040'},
+            {'naam': 'Obsidiaan met lava', 'red': ('#2c2830', {'l': 1.3}), 'grey': '#e06020'},
+            {'naam': 'Godzilla', 'red': '#4c6050', 'grey': '#2c3430', 'claws': '#a0e0f0'},
+            {'naam': 'Maya-jade', 'red': '#3a9068', 'grey': '#c8b890'},
+            {'naam': 'Kyogre-ruil', 'red': '#3060b0', 'grey': '#c8d0d8'},
+            {'naam': 'Zonnegod (Inti)', 'red': '#e09820', 'grey': '#e8e0d0'},
+        ],
+    },
+    'rayquaza': {
+        'species': {'rayquaza': {'body': [2, 1, 5, 3], 'lines': [9, 8], 'red': [6, 7]}},
+        'variants': [
+            {'naam': 'Hemelsblauw', 'body': '#4890d0', 'lines': '#f0d040'},
+            {'naam': 'Groudon-rood', 'body': '#b83030', 'lines': '#2c2c30', 'red': '#f0d040'},
+            {'naam': 'Gouden drakenkoning', 'body': '#d8a828', 'lines': '#c02828'},
+            {'naam': 'Wolkendraak (wit)', 'body': '#e0e4ec', 'lines': '#4080e0'},
+            {'naam': 'Kosmisch (Deoxys)', 'body': '#5030a0', 'lines': '#40e0f0', 'red': '#f070c0'},
+            {'naam': 'Bloedmaandraak', 'body': '#601828', 'lines': '#f0d040', 'red': '#e8e8e8'},
+        ],
+    },
+    'jirachi': {
+        'species': {'jirachi': {'gold': [1, 5, 4, 3], 'tags': [7, 6, 8], 'body': [12, 13, 9, 10]}},
+        'variants': [
+            {'naam': 'Zilveren ster', 'gold': '#c0c4d0', 'tags': '#e070a0'},
+            {'naam': 'Robijnen ster', 'gold': '#d03048', 'tags': '#f0d040'},
+            {'naam': 'Blauwe wensster', 'gold': '#5070d0', 'tags': '#f0d040'},
+            {'naam': '1-up (groen)', 'gold': '#50c050', 'tags': '#f0f0f0'},
+            {'naam': 'Zwarte ster', 'gold': ('#383848', {'l': 1.3}), 'tags': '#e04040'},
+            {'naam': 'Sterrenstelsel', 'gold': '#382c70', 'tags': '#f0e060', 'body': '#e8e0f8'},
+        ],
+    },
+    'deoxys': {
+        # vier vormen met elk een eigen paletvolgorde
+        'species': {
+            'deoxys': {'red': [4, 1, 3], 'blue': [7, 8, 5], 'gem': [13, 9, 6]},
+            'deoxys/attack': {'red': [1, 3, 2], 'blue': [8, 6, 5], 'gem': [9, 7]},
+            'deoxys/defense': {'red': [1, 2, 3], 'blue': [8, 7, 6], 'gem': [4, 13, 9]},
+            'deoxys/speed': {'red': [4, 7, 5], 'blue': [1, 2, 3], 'gem': [11, 9]},
+        },
+        'variants': [
+            {'naam': 'Virus (zwart en paars)', 'red': ('#3a3048', {'l': 1.3}), 'blue': '#a050e0', 'gem': '#40f0a0'},
+            {'naam': 'Mutant (groen)', 'red': '#40a060', 'blue': '#f0d040'},
+            {'naam': 'Omgekeerd (blauw en rood)', 'red': '#3060c0', 'blue': '#e04040'},
+            {'naam': 'DNA (wit)', 'red': '#e4e4ec', 'blue': '#4080e0', 'gem': '#e04040'},
+            {'naam': 'Meteoriet (gloeiend ijzer)', 'red': '#6a6460', 'blue': '#e06020'},
+            {'naam': 'Kosmisch roze', 'red': '#f070c0', 'blue': '#40e0f0', 'gem': '#f0e060'},
+        ],
+    },
 }

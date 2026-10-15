@@ -459,6 +459,45 @@ static const u16 sVariants_Metang[] = INCBIN_U16("graphics/pokemon/metang/varian
 #if (P_FAMILY_BELDUM)
 static const u16 sVariants_Metagross[] = INCBIN_U16("graphics/pokemon/metagross/variants.gbapal");
 #endif
+#if (P_FAMILY_REGIROCK)
+static const u16 sVariants_Regirock[] = INCBIN_U16("graphics/pokemon/regirock/variants.gbapal");
+#endif
+#if (P_FAMILY_REGICE)
+static const u16 sVariants_Regice[] = INCBIN_U16("graphics/pokemon/regice/variants.gbapal");
+#endif
+#if (P_FAMILY_REGISTEEL)
+static const u16 sVariants_Registeel[] = INCBIN_U16("graphics/pokemon/registeel/variants.gbapal");
+#endif
+#if (P_FAMILY_LATIAS)
+static const u16 sVariants_Latias[] = INCBIN_U16("graphics/pokemon/latias/variants.gbapal");
+#endif
+#if (P_FAMILY_LATIOS)
+static const u16 sVariants_Latios[] = INCBIN_U16("graphics/pokemon/latios/variants.gbapal");
+#endif
+#if (P_FAMILY_KYOGRE)
+static const u16 sVariants_Kyogre[] = INCBIN_U16("graphics/pokemon/kyogre/variants.gbapal");
+#endif
+#if (P_FAMILY_GROUDON)
+static const u16 sVariants_Groudon[] = INCBIN_U16("graphics/pokemon/groudon/variants.gbapal");
+#endif
+#if (P_FAMILY_RAYQUAZA)
+static const u16 sVariants_Rayquaza[] = INCBIN_U16("graphics/pokemon/rayquaza/variants.gbapal");
+#endif
+#if (P_FAMILY_JIRACHI)
+static const u16 sVariants_Jirachi[] = INCBIN_U16("graphics/pokemon/jirachi/variants.gbapal");
+#endif
+#if (P_FAMILY_DEOXYS)
+static const u16 sVariants_DeoxysNormal[] = INCBIN_U16("graphics/pokemon/deoxys/variants.gbapal");
+#endif
+#if (P_FAMILY_DEOXYS)
+static const u16 sVariants_DeoxysAttack[] = INCBIN_U16("graphics/pokemon/deoxys/attack/variants.gbapal");
+#endif
+#if (P_FAMILY_DEOXYS)
+static const u16 sVariants_DeoxysDefense[] = INCBIN_U16("graphics/pokemon/deoxys/defense/variants.gbapal");
+#endif
+#if (P_FAMILY_DEOXYS)
+static const u16 sVariants_DeoxysSpeed[] = INCBIN_U16("graphics/pokemon/deoxys/speed/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -920,6 +959,45 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_BELDUM)
     {gMonPalette_Metagross, sVariants_Metagross},
+#endif
+#if (P_FAMILY_REGIROCK)
+    {gMonPalette_Regirock, sVariants_Regirock},
+#endif
+#if (P_FAMILY_REGICE)
+    {gMonPalette_Regice, sVariants_Regice},
+#endif
+#if (P_FAMILY_REGISTEEL)
+    {gMonPalette_Registeel, sVariants_Registeel},
+#endif
+#if (P_FAMILY_LATIAS)
+    {gMonPalette_Latias, sVariants_Latias},
+#endif
+#if (P_FAMILY_LATIOS)
+    {gMonPalette_Latios, sVariants_Latios},
+#endif
+#if (P_FAMILY_KYOGRE)
+    {gMonPalette_Kyogre, sVariants_Kyogre},
+#endif
+#if (P_FAMILY_GROUDON)
+    {gMonPalette_Groudon, sVariants_Groudon},
+#endif
+#if (P_FAMILY_RAYQUAZA)
+    {gMonPalette_Rayquaza, sVariants_Rayquaza},
+#endif
+#if (P_FAMILY_JIRACHI)
+    {gMonPalette_Jirachi, sVariants_Jirachi},
+#endif
+#if (P_FAMILY_DEOXYS)
+    {gMonPalette_DeoxysNormal, sVariants_DeoxysNormal},
+#endif
+#if (P_FAMILY_DEOXYS)
+    {gMonPalette_DeoxysAttack, sVariants_DeoxysAttack},
+#endif
+#if (P_FAMILY_DEOXYS)
+    {gMonPalette_DeoxysDefense, sVariants_DeoxysDefense},
+#endif
+#if (P_FAMILY_DEOXYS)
+    {gMonPalette_DeoxysSpeed, sVariants_DeoxysSpeed},
 #endif
     {NULL, NULL},
 };

@@ -2184,6 +2184,9 @@
 #define FLAG_RIVAL_PG_RETIRED                   FLAG_GROUNDED(1761) // Project Grounded: rivaal bij de Battle Tower verslagen (gevecht 8) en met pensioen naar het Paradiso Resort
 #define FLAG_RIVAL_PG_RESORT_MET                FLAG_GROUNDED(1762) // Project Grounded: Guinness-verhaal van de rivaal in het Paradiso Resort al gehoord (daarna korter)
 // }
+// testrun_ronde1 { (met de hand; testrun-fixes Petalburg t/m Rusturf; FLAG_GROUNDED 1800-1819, 1801-1819 nog vrij)
+#define FLAG_RECEIVED_PROFILE_MAN_NUGGET        FLAG_GROUNDED(1800) // Project Grounded: Nugget van de profielman (Petalburg Pokémon Center) na je eerste profiel
+// }
 
 // Special Flags (Stored in EWRAM (sSpecialFlags), not in the SaveBlock)
 #define SPECIAL_FLAGS_START                     0x4000

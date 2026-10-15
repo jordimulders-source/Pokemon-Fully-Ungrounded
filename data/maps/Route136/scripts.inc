@@ -132,7 +132,7 @@ Route136_EventScript_KecclesReveal::
 	playmoncry SPECIES_KECLEON, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	msgbox Route136_Text_KecclesIntro, MSGBOX_DEFAULT
+	call Route136_EventScript_KecclesIntroText
 	trainerbattle_no_intro TRAINER_KECCLES_3, Route136_Text_KecclesDefeat
 	msgbox Route136_Text_KecclesPostBattle, MSGBOX_DEFAULT
 	closemessage
@@ -142,6 +142,21 @@ Route136_EventScript_KecclesReveal::
 	setflag FLAG_HIDE_ROUTE136_KECCLES
 	release
 	end
+
+@ Project Grounded: de intro hangt af van welke Keccles-ontmoetingen de speler al had (Fortree / strand Route 115)
+Route136_EventScript_KecclesIntroText::
+	goto_if_defeated TRAINER_KECCLES_2, Route136_EventScript_KecclesIntroUsual
+	goto_if_defeated TRAINER_KECCLES_1, Route136_EventScript_KecclesIntroBeach
+	msgbox Route136_Text_KecclesIntroFirstMeet, MSGBOX_DEFAULT
+	return
+
+Route136_EventScript_KecclesIntroBeach::
+	msgbox Route136_Text_KecclesIntroBeach, MSGBOX_DEFAULT
+	return
+
+Route136_EventScript_KecclesIntroUsual::
+	msgbox Route136_Text_KecclesIntro, MSGBOX_DEFAULT
+	return
 
 Route136_Movement_KecclesFlee:
 	walk_down
@@ -231,6 +246,29 @@ Route136_Text_KecclesIntro:
 	.string "well as a rival.\p"
 	.string "Let's hone our strength, I have a\n"
 	.string "feeling I might be victorious this time!$"
+
+Route136_Text_KecclesIntroFirstMeet:
+	.string "KECCLES: I wonder, why do so many\n"
+	.string "Americans dress in camo.\p"
+	.string "Oh. You can see me. In the snow.\n"
+	.string "Nobody ever sees me.\p"
+	.string "I'm KECCLES. A KECLEON with a PhD\n"
+	.string "and a lot of dread. Yes, I talk.\p"
+	.string "I had planned to meet you on the\n"
+	.string "beach of ROUTE 115. With a speech.\p"
+	.string "Instead we meet in a blizzard,\n"
+	.string "mid-story. Like a bad sequel.\p"
+	.string "Fine. I choose you as my rival\n"
+	.string "anyway. Let's hone our strength!$"
+
+Route136_Text_KecclesIntroBeach:
+	.string "KECCLES: I wonder, why do so many\n"
+	.string "Americans dress in camo.\p"
+	.string "Oh, {PLAYER}! From the beach.\p"
+	.string "You saw through my camouflage. In\n"
+	.string "the snow. Nobody's done that before.\p"
+	.string "That proves I chose you well as a\n"
+	.string "rival. Let's hone our strength!$"
 
 Route136_Text_KecclesDefeat:
 	.string "KECCLES: Hmmm…$"

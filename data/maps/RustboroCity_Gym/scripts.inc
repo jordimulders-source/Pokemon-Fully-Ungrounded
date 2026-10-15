@@ -157,20 +157,21 @@ RustboroCity_Gym_Text_JoshPostBattle:
 	.string "again.$"
 
 RustboroCity_Gym_Text_TommyIntro:
-	.string "The world is full of Kings and Queens\n"
-	.string "who'll blind your eyes and steal\l"
-	.string "your dreams!\p"
-	.string "I am the Iron Man! Feel the weight\n"
-	.string "of my heavy metal riffs!$"
+	.string "I AM IRON MAN!\p"
+	.string "Well, my ARON is. Iron head, iron\n"
+	.string "body, zero thoughts.\p"
+	.string "Generals gathered in their masses…\n"
+	.string "I gathered a puppy and a crow!$"
 
 RustboroCity_Gym_Text_TommyDefeat:
-	.string "The bells have tolled for me...$"
+	.string "For whom the bell tolls?\n"
+	.string "Me. It tolls for me.$"
 
 RustboroCity_Gym_Text_TommyPostBattle:
-	.string "ROXANNE is the true Master of\n"
-	.string "Reality. If you're not careful,\l"
-	.string "you'll be Paranoid before the\l"
-	.string "final solo!$"
+	.string "People think I'm insane because I am\n"
+	.string "frowning all the time. PARANOID!\p"
+	.string "The MURKROW is only here for the\n"
+	.string "BLACK SABBATH aesthetic.$"
 
 RustboroCity_Gym_Text_MarcIntro:
 	.string "Holy Diver!\p"
@@ -189,31 +190,27 @@ RustboroCity_Gym_Text_MarcPostBattle:
 	.string "Sign of the Southern Cross!$"
 
 RustboroCity_Gym_Text_RoxanneIntro:
-	.string "I am ROXANNE.\n"
-	.string "Listen... I never meant to brag,\l"
-	.string "but I've got you where I want you now!\p"
-	.string "It was never my intention to steal\n"
-	.string "it all away from you... but God,\l"
-	.string "does it feel so good!\p"
-	.string "I'm burning 'cross the breeze with\n"
-	.string "my Rock-types. You'll be spellbound\l"
-	.string "by the rag doll dance!\p"
-	.string "Off with your head! I'll never break\n"
-	.string "the chain of my victories!$"
+	.string "I am ROXANNE.\p"
+	.string "And no, you don't have to put on\n"
+	.string "the red light. Wrong band.\p"
+	.string "I'm just a girl in the world…\n"
+	.string "with a team of solid granite!\p"
+	.string "Wake me up inside? My NOSEPASS\n"
+	.string "hasn't slept since the Stone Age.\p"
+	.string "So hit me with your best shot.\n"
+	.string "Fire away! Rock-types don't mind.$"
 
 RustboroCity_Gym_Text_RoxanneDefeat:
-	.string "It's in your head! In your head!\n"
-	.string "Zombie... Zombie...\p"
-	.string "I'm crazy on you, but you actually\n"
-	.string "found a way through the storm.$"
+	.string "In your head, in your head…\n"
+	.string "ZOMBIE, ZOMBIE. That's my team now.\p"
+	.string "Love is a battlefield, and you\n"
+	.string "just paved mine.$"
 
 RustboroCity_Gym_Text_RoxannePostBattle:
-	.string "Thunder only happens when it's\n"
-	.string "raining... and players only love you\l"
-	.string "when they're playing.\p"
-	.string "I'll just look at you and fade into\n"
-	.string "you. Take the badge and run like\l"
-	.string "the wind!$"
+	.string "I'm only happy when it rains.\n"
+	.string "Rock-types hate rain. I'm conflicted.\p"
+	.string "I love rock 'n' roll. So put another\n"
+	.string "dime in the jukebox and go, baby!$"
 
 RustboroCity_Gym_Text_ReceivedStoneBadge:
 	.string "{PLAYER} received the STONE BADGE from\n"
@@ -225,19 +222,18 @@ RustboroCity_Gym_Text_StoneBadgeInfoTakeThis:
 	.string "power of your POKéMON.\p"
 	.string "It also enables them to use the HM move\n"
 	.string "CUT outside of battle.\p"
-	.string "Please... take this with you, too.\n"
-	.string "Consider it a souvenir of our dance.$"
+	.string "Please… take this with you, too.\n"
+	.string "Don't speak. Just take it.$"
 
 RustboroCity_Gym_Text_ExplainRockTomb:
 	.string "That TECHNICAL MACHINE, TM39,\n"
 	.string "contains STEALTH ROCK.\p"
-	.string "It sets a trap of pointed stones\n"
-	.string "around your foes.\p"
-	.string "Every time they step onto the stage,\n"
-	.string "the rocks will tear them apart.\l"
-	.string "It's a misery business, isn't it?\p"
-	.string "Remember, a TM can be used only once.\n"
-	.string "Don't waste it on a rag doll dance.$"
+	.string "It scatters pointed stones around\n"
+	.string "your foe's side of the field.\p"
+	.string "Every time a foe switches in, the\n"
+	.string "rocks bite. Like a BARRACUDA.\p"
+	.string "And TMs are reusable now.\n"
+	.string "Unlike my last three drummers.$"
 
 RustboroCity_Gym_Text_GymStatue:
 	.string "RUSTBORO CITY POKéMON GYM\p"
@@ -250,10 +246,9 @@ RustboroCity_Gym_Text_GymStatueCertified:
 RustboroCity_Gym_Text_RoxanneRegisterCall:
 	.string "… … … … … … … … … … … Beep!\p"
 	.string "ROXANNE: Hey {PLAYER}, it's ROXANNE!\n"
-	.string "BRAWLY says you're climbing the charts.\l"
-	.string "Number one with a bullet!\p"
-	.string "I'm rehearsing my GYM for a comeback\n"
-	.string "tour. Be there!\p"
+	.string "BRAWLY says you're climbing the charts.\p"
+	.string "Call me! Call me any, anytime.\n"
+	.string "Comeback tour soon. Be there!\p"
 	.string "… … … … … … … … … … … Click!$"
 
 RustboroCity_Gym_Text_RegisteredRoxanne:
@@ -261,21 +256,23 @@ RustboroCity_Gym_Text_RegisteredRoxanne:
 	.string "POKéNAV.$"
 
 RustboroCity_Gym_Text_RoxannePreRematch:
-	.string "ROXANNE: Here I go again… Oh, it's you!\p"
-	.string "It's been a long time since I rock and\n"
-	.string "rolled. Let's battle!$"
+	.string "ROXANNE: Call me… oh, you did!\p"
+	.string "I've been rehearsing my comeback\n"
+	.string "tour. Hit me with your best shot!$"
 
 RustboroCity_Gym_Text_RoxanneRematchDefeat:
-	.string "Another one bites the dust…$"
+	.string "Love is a battlefield.\n"
+	.string "I keep losing the battlefield part.$"
 
 RustboroCity_Gym_Text_RoxannePostRematch:
-	.string "ROXANNE: Don't stop believin'.\p"
+	.string "ROXANNE: Ain't it fun, living in the\n"
+	.string "real world? No. No, it is not.\p"
 	.string "Now go, before I sing the whole album.$"
 
 RustboroCity_Gym_Text_RoxanneRematchNeedTwoMons:
-	.string "ROXANNE: Here I go again… Oh, it's you!\p"
-	.string "It's been a long time since I rock and\n"
-	.string "rolled. Let's battle!\p"
+	.string "ROXANNE: Call me… oh, you did!\p"
+	.string "I've been rehearsing my comeback\n"
+	.string "tour. Hit me with your best shot!\p"
 	.string "…Only one POKéMON? It takes two, baby.\n"
 	.string "Come back with at least two.$"
 

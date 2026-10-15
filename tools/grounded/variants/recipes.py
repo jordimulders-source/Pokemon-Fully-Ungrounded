@@ -8,7 +8,7 @@ genoemd worden, blijven zoals ze zijn. Een sleutel 'soort:onderdeel' geldt maar 
 één soort (voor lijnen die bij het evolueren van kleur wisselen).
 """
 
-ALBINO = {'l': 0.55}
+ALBINO = {'l': 1.0}
 
 LINES = {
     'charmander': {
@@ -25,8 +25,8 @@ LINES = {
              'flame': '#9038e0', 'wings': '#3c6c20'},
             {'naam': 'Axolotl, groene vlam (koper)', 'body': '#d87898', 'belly': '#f8d0dc', 'flame': '#20b040',
              'wings': '#b84878'},
-            {'naam': 'Albino (rode ogen, blauwe gasvlam)', 'body': ('#ddd5d5', ALBINO), 'belly': ('#f4ecd8', ALBINO),
-             'flame': '#3c8cf8', 'eyes': '#d02030', 'wings': ('#d0c4c4', ALBINO)},
+            {'naam': 'Albino (rode ogen, blauwe gasvlam)', 'body': ('#c4baba', ALBINO), 'belly': ('#f4ecd8', ALBINO),
+             'flame': '#3c8cf8', 'eyes': '#d02030', 'wings': ('#bcb0b0', ALBINO)},
             {'naam': 'Mega X (zwart, blauwe vlam)', 'body': ('#343c4c', {'l': 0.8}), 'belly': '#4aa8e0',
              'flame': '#2058ff', 'wings': '#283448', 'eyes': '#e02828'},
             {'naam': 'Synthwave', 'body': '#7038c0', 'belly': '#ff68b8', 'flame': '#18d8f8',
@@ -46,7 +46,7 @@ LINES = {
             {'naam': 'Squirtle-kleuren', 'body': '#5088b8', 'spots': '#285478', 'leaves': '#98601c',
              'flower': '#e8c070'},
             {'naam': 'Pijlgifkikker', 'body': '#1c4cd0', 'spots': '#101828'},
-            {'naam': 'Albino', 'body': ('#e4e4dc', ALBINO), 'spots': ('#b0a4a4', ALBINO),
+            {'naam': 'Albino', 'body': ('#c8c8c0', ALBINO), 'spots': ('#b0a4a4', ALBINO),
              'leaves': ('#e8b4c4', ALBINO), 'flower': ('#f0e4ec', ALBINO), 'eyes': '#e83050'},
             {'naam': 'Sakura', 'leaves': '#e088a8', 'flower': '#f0ecff', 'center': '#f8c8e0'},
             {'naam': 'Radioactief', 'body': ('#232a32', {'l': 0.8}), 'spots': '#38f058',
@@ -66,8 +66,8 @@ LINES = {
             {'naam': 'Charmander-kleuren', 'body': '#d86838', 'shell': '#982818', 'fur': '#f8d048'},
             {'naam': 'Soepschildpad', 'body': '#8a7448', 'shell': '#3c4c1c', 'belly': '#e8d070', 'fur': '#d8e8b0'},
             {'naam': 'Koopa', 'body': '#e0b830', 'shell': '#c82018', 'fur': '#f8f8f0'},
-            {'naam': 'Albino', 'body': ('#e6e6ee', ALBINO), 'shell': ('#e4d4a0', ALBINO),
-             'belly': '#d8ccb4', 'fur': ('#f0f0f8', ALBINO), 'eyes': '#e02030',
+            {'naam': 'Albino', 'body': ('#c4c4d0', ALBINO), 'shell': ('#e4d4a0', ALBINO),
+             'belly': '#d8ccb4', 'fur': ('#dcdce8', ALBINO), 'eyes': '#e02030',
              'lines': '#782028'},
             {'naam': 'Ninja Turtle', 'body': '#4e9a2c', 'shell': '#704414', 'belly': '#f0c838'},
             {'naam': 'Vaporwave', 'body': '#f078b8', 'shell': '#28c0e0', 'belly': '#d0b8ec',

@@ -2189,4 +2189,150 @@ LINES = {
             {'naam': 'Farao (goud)', 'body': ('#c89820', {'h': 0})},
         ],
     },
+    # --- groep 22 (Kanto/Johto) ---
+    'tyrogue': {
+        # vechtsporters
+        'species': {
+            'tyrogue': {'body': [2, 1, 3, 4]},
+            'hitmonlee': {'body': [5, 4, 3, 2, 1]},
+            'hitmonchan': {'body': [5, 4, 3], 'gear': [10, 9, 8, 7]},
+            'hitmontop': {'body': [5, 4, 3, 2], 'gear': [9, 8, 7, 6]},
+        },
+        'variants': [
+            {'naam': 'Bruce Lee', 'body': '#e0c030', 'gear': '#2c2c34'},
+            {'naam': 'Karate-gi', 'body': '#ece8e0', 'gear': '#c02828'},
+            {'naam': 'Luchador', 'body': '#4070c0', 'gear': '#e050a0'},
+            {'naam': 'Shaolin', 'body': '#e08030', 'gear': '#c8a030'},
+            {'naam': 'Ninja', 'body': ('#34343c', {'l': 1.3}), 'gear': '#5070c0'},
+            {'naam': 'Kampioensgordel', 'body': '#d8a828', 'gear': '#c02828'},
+        ],
+    },
+    'lickitung': {
+        'species': {
+            'lickitung': {'body': [14, 13, 12, 11, 10], 'belly': [5, 4, 3]},
+            'lickilicky': {'body': [6, 1, 2, 4, 3]},
+        },
+        'variants': [
+            {'naam': 'Kauwgomblauw', 'body': '#70a0e0'},
+            {'naam': 'Pad (groen)', 'body': '#60a050'},
+            {'naam': 'Druif', 'body': '#8060b0'},
+            {'naam': 'Perzik', 'body': '#f0a070'},
+            {'naam': 'Venom (zwart)', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Mint-chocolade', 'body': '#80d0b0', 'belly': '#6a4030'},
+        ],
+    },
+    'happiny': {
+        'species': {
+            'happiny': {'body': [1, 2, 3]},
+            'chansey': {'body': [15, 14, 13, 12, 11]},
+            'blissey': {'body': [1, 2, 6, 5, 3]},
+        },
+        'variants': [
+            {'naam': 'Lavendel', 'body': '#c0a8e0'},
+            {'naam': 'Citroen', 'body': '#f0e890'},
+            {'naam': 'Perzik', 'body': '#f8c8a0'},
+            {'naam': 'Hemelsblauw', 'body': '#90c0f0'},
+            {'naam': 'Kers', 'body': '#d04050'},
+            {'naam': 'Pruim', 'body': '#5a3a6a'},
+        ],
+    },
+    'tangela': {
+        'species': {
+            'tangela': {'vines': [4, 3, 2, 1]},
+            'tangrowth': {'vines': [4, 5, 7, 6]},
+        },
+        'variants': [
+            {'naam': 'Herfstranken', 'vines': '#c05828'},
+            {'naam': 'Blauweregen', 'vines': '#8060c0'},
+            {'naam': 'Zwarte ranken', 'vines': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Spaghetti', 'vines': '#e8d8a8'},
+            {'naam': 'Bougainville', 'vines': '#e060a0'},
+            {'naam': 'Gouden ranken', 'vines': '#d8a828'},
+        ],
+    },
+    'kangaskhan': {
+        'species': {'kangaskhan': {'body': [1, 10, 9, 12]}},
+        'variants': [
+            {'naam': 'Rode reuzenkangoeroe', 'body': '#a85030'},
+            {'naam': 'Grijze kangoeroe', 'body': '#8a8a90'},
+            {'naam': 'Wallaby', 'body': '#c8a878'},
+            {'naam': 'Albino', 'body': ('#ece4e0', ALBINO)},
+            {'naam': 'Zwarte wallaroo', 'body': ('#3a3a40', {'l': 1.3})},
+            {'naam': 'Goud', 'body': '#d8a828'},
+        ],
+    },
+    'mr_mime': {
+        # Galar-Mr. Mime/Mr. Rime (moderne sprites) nog niet
+        'species': {
+            'mime_jr': {'blue': [6, 7, 8], 'pink': [9, 12, 11, 10]},
+            'mr_mime': {'blue': [1, 2, 3], 'pink': [12, 13, 11, 14]},
+        },
+        'variants': [
+            {'naam': 'Pierrot', 'blue': ('#2c2c34', {'l': 1.3}), 'pink': '#ece8e8'},
+            {'naam': 'Harlekijn', 'blue': '#c02828', 'pink': '#40a050'},
+            {'naam': 'Paarse mime', 'blue': '#7040a0', 'pink': '#f0d040'},
+            {'naam': 'Circusclown', 'blue': '#e08030', 'pink': '#f0e040'},
+            {'naam': 'Barbie', 'blue': '#f080b0', 'pink': '#80c0f0'},
+            {'naam': 'Pennywise', 'blue': '#ece8e8', 'pink': '#c02828'},
+        ],
+    },
+    'scyther': {
+        # bidsprinkhanen; Kleavor (moderne sprite) nog niet
+        'species': {
+            'scyther': {'body': [1, 8, 6, 2]},
+            'scizor': {'body': [1, 4, 5, 2]},
+        },
+        'variants': [
+            {'naam': 'Orchideebidsprinkhaan', 'body': '#f0a0c0'},
+            {'naam': 'Bruine bidsprinkhaan', 'body': '#8a6a40'},
+            {'naam': 'Blauwe bidsprinkhaan', 'body': '#3a70c0'},
+            {'naam': 'Albino', 'body': ('#ece8e0', ALBINO)},
+            {'naam': 'Ninja (zwart)', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Samoerai (goud)', 'body': '#d8a828'},
+        ],
+    },
+    'smoochum': {
+        'species': {
+            'smoochum': {'hair': [1, 3, 2, 15], 'dress': [5, 6, 8]},
+            'jynx': {'hair': [1, 3, 2, 4], 'dress': [14, 13, 10, 11]},
+        },
+        'variants': [
+            {'naam': 'Zomer (bruin haar, oranje jurk)', 'hair': '#7a5030', 'dress': '#e08030'},
+            {'naam': 'Gothic', 'hair': ('#2c2c34', {'l': 1.3}), 'dress': '#5a2a70'},
+            {'naam': 'Zeemeermin (rood haar, groene jurk)', 'hair': '#c03030', 'dress': '#30a070'},
+            {'naam': 'Suikerspin (roze haar, wit)', 'hair': '#f0a0c0', 'dress': '#f0f0f0'},
+            {'naam': 'IJskoningin (Elsa)', 'hair': '#e8f0f8', 'dress': '#80b8e8'},
+            {'naam': 'Zilver en goud', 'hair': '#c8ccd8', 'dress': '#d8a828'},
+        ],
+    },
+    'elekid': {
+        'species': {
+            'elekid': {'body': [4, 1, 3, 10]},
+            'electabuzz': {'body': [5, 1, 4, 3]},
+            'electivire': {'body': [7, 10, 6, 9]},
+        },
+        'variants': [
+            {'naam': 'Blauwe bliksem', 'body': '#4080e0'},
+            {'naam': 'Paarse tijger', 'body': '#9060c0'},
+            {'naam': 'Radioactief groen', 'body': '#70c040'},
+            {'naam': 'Witte tijger', 'body': '#ece8e0'},
+            {'naam': 'Magmar-ruil', 'body': '#e05030'},
+            {'naam': 'Zilver', 'body': '#c0c4d0'},
+        ],
+    },
+    'magby': {
+        'species': {
+            'magby': {'red': [2, 1, 3], 'yellow': [11, 9, 10, 8]},
+            'magmar': {'red': [8, 9, 6, 10], 'yellow': [1, 4, 3, 5]},
+            'magmortar': {'red': [7, 5, 8, 6, 4], 'yellow': [1, 3, 2]},
+        },
+        'variants': [
+            {'naam': 'Blauw vuur', 'red': '#3060d0', 'yellow': '#a0e0f8'},
+            {'naam': 'Groen vuur', 'red': '#40a050', 'yellow': '#d0f080'},
+            {'naam': 'Paars vuur', 'red': '#8040c0', 'yellow': '#f0a0f0'},
+            {'naam': 'Witheet', 'red': '#f0e0c8', 'yellow': '#f8f8f0'},
+            {'naam': 'Electabuzz-ruil', 'red': '#e0c030', 'yellow': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Obsidiaan met lava', 'red': ('#2c2830', {'l': 1.3}), 'yellow': '#f06020'},
+        ],
+    },
 }

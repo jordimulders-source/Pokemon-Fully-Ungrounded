@@ -73,5 +73,17 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Exeggcute/Exeggutor** (ook Alola; eieren en palmbladeren): 10% kersenbloesem (perzik eieren, roze bladeren), 6% paaseieren (pastelblauw, mintblad), 4% dinosaurusei (gespikkeld groen, donkerblad), 3% albino, 1,5% sneeuwpalm, 0,5% Fabergé (robijnrode eieren, gouden blad). Geen oranje blad/gouden eieren: dat zijn de shiny's.
 - **Cubone/Marowak** (de schedel blijft): 10% blauw, 6% rouwgrijs, 4% paars, 3% roze, 1,5% spook (zwart: de Marowak-geest uit de Pokémon Tower), 0,5% farao (goud).
 
+## Groep 22
+- **Tyrogue/Hitmonlee/Hitmonchan/Hitmontop** (vechtsporters; Hitmonchan: tuniek + handschoenen, Hitmontop: lijf + uitrusting): 10% Bruce Lee (geel met zwart), 6% karate-gi (wit met rood), 4% luchador (blauw met roze), 3% Shaolin (oranje met goud), 1,5% ninja (zwart met blauw), 0,5% kampioensgordel (rood met goud).
+- **Lickitung/Lickilicky**: 10% kauwgomblauw, 6% pad (groen), 4% druif, 3% perzik, 1,5% Venom (zwart: Spider-Mans tong-schurk), 0,5% mint-chocolade.
+- **Happiny/Chansey/Blissey** (verpleegsters): 10% lavendel, 6% citroen, 4% perzik, 3% hemelsblauw, 1,5% kers, 0,5% pruim.
+- **Tangela/Tangrowth** (ranken): 10% herfstranken, 6% blauweregen, 4% zwarte ranken, 3% spaghetti, 1,5% bougainville (roze), 0,5% gouden ranken. Geen groen: de shiny is groen.
+- **Kangaskhan**: 10% rode reuzenkangoeroe, 6% grijze kangoeroe, 4% wallaby (zand), 3% albino, 1,5% zwarte wallaroo, 0,5% goud.
+- **Mime Jr./Mr. Mime** (clowns): 10% Pierrot (zwart-wit), 6% harlekijn (rood-groen), 4% paarse mime (geel), 3% circusclown (oranje-geel), 1,5% Barbie (roze met lichtblauw), 0,5% Pennywise (wit met rood).
+- **Scyther/Scizor** (bidsprinkhanen): 10% orchideebidsprinkhaan (roze), 6% bruine bidsprinkhaan, 4% blauwe bidsprinkhaan, 3% albino, 1,5% ninja (zwart), 0,5% samoerai (goud).
+- **Smoochum/Jynx** (haar + jurk): 10% zomer (bruin haar, oranje jurk), 6% gothic (zwart haar, paarse jurk), 4% zeemeermin (rood haar, groene jurk), 3% suikerspin (roze haar, wit), 1,5% IJskoningin Elsa (wit haar, ijsblauwe jurk), 0,5% zilver haar met gouden jurk.
+- **Elekid/Electabuzz/Electivire** (zwarte strepen blijven): 10% blauwe bliksem, 6% paarse tijger, 4% radioactief groen, 3% witte tijger, 1,5% roze bliksem, 0,5% zilver. Geen oranje: de Electabuzz-shiny is oranje.
+- **Magby/Magmar/Magmortar** (vuur): 10% blauw vuur, 6% groen vuur, 4% paars vuur, 3% witheet, 1,5% Electabuzz-ruil (geel met zwart: de eeuwige rivaal), 0,5% obsidiaan met lava.
+
 ## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
-Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.
+Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.

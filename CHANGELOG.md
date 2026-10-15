@@ -18824,5 +18824,6 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Magikarp-lijn (alleen kleuren; levels ongemoeid): omgewisseld (Magikarp blauw, Gyarados oranje; Jordi), kohaku, karasu, drakenpoort (jade), Godzilla, hemelse draak.
   - Azurill-lijn: lavendel, roze, sinaasappel, albino, Sterrennacht (Van Gogh), kerstbal.
   - Geodude-lijn (edelmetalen/-stenen; Jordi): koper, zilver, saffier, robijn, amethist, diamant (geen goud: de shiny is al goud).
-  - Nosepass: basalt, ijzererts, jade (Olmeeks), marmer, robijn, diamant.
+  - Nosepass en Probopass (rituele beelden uit verschillende culturen; Jordi): moai (tufsteen met rode pukao), terracottaleger, Olmeekse jade, Azteeks turkoois-mozaïek, totempaal, Toetanchamon (goud en lapis).
   - Skitty-lijn: Siamees, Doraemon, grijze tabby, albino, Cheshire Cat, Luna (Sailor Moon).
+- Kleurvarianten groep 5 bijgewerkt (Jordi): diamant en zilver van de Geodude-lijn kregen hun schaduw en omlijning terug (doelkleur lag op de donkerste rotstint, alles daarboven werd wit); Magikarps oogwit deelde een index met de vinnen en blijft nu wit (hemelse draak oogde lo-fi); kohaku-Magikarp met diepere schaduw.

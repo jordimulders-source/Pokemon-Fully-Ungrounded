@@ -416,13 +416,14 @@ LINES = {
     },
     'magikarp': {
         'species': {
-            'magikarp': {'body': [3, 4, 8, 9, 12, 14], 'gold': [2, 15], 'fins': [5, 7, 11]},
+            'magikarp': {'body': [3, 4, 8, 9, 12, 14], 'gold': [2, 15], 'fins': [7, 11]},  # 5 = oogwit
             'gyarados': {'body': [3, 5, 6, 7, 9], 'gold': [10, 11, 12], 'fins': [4, 8], 'mouth': [13, 14, 15]},
         },
         'variants': [
             {'naam': 'Omgewisseld (Magikarp blauw, Gyarados oranje)', 'magikarp:body': '#2890b8',
              'magikarp:gold': '#d8c088', 'gyarados:body': '#f07020', 'gyarados:gold': '#f8d828'},
-            {'naam': 'Kohaku (koi)', 'body': '#e8e4dc', 'fins': '#d03020', 'gyarados:gold': '#d03020'},
+            {'naam': 'Kohaku (koi)', 'body': '#e8e4dc', 'magikarp:body': ('#c4c0b8', {'l': 1.2}), 'fins': '#d03020',
+             'magikarp:gold': '#d03020', 'gyarados:gold': '#d03020'},
             {'naam': 'Karasu (zwarte koi)', 'body': ('#2c2c34', {'l': 1.3}), 'fins': '#e87020', 'gold': '#e87020'},
             {'naam': 'Drakenpoort (jade)', 'body': '#38a068', 'gold': '#e0b828', 'fins': '#e8f0d0'},
             {'naam': 'Godzilla', 'body': ('#3c4a3c', {'l': 1.2}), 'fins': '#90c8f0', 'gold': '#707870'},
@@ -452,24 +453,26 @@ LINES = {
         },
         'variants': [
             {'naam': 'Koper', 'rock': '#b86838'},
-            {'naam': 'Zilver', 'rock': '#b8bcc4'},
+            {'naam': 'Zilver', 'rock': ('#7c8490', {'l': 1.2})},
             {'naam': 'Saffier', 'rock': '#2858c0'},
             {'naam': 'Robijn', 'rock': '#c02838'},
             {'naam': 'Amethist', 'rock': '#8848c0'},
-            {'naam': 'Diamant', 'rock': ('#d4e8f8', {'l': 1.2})},
+            {'naam': 'Diamant', 'rock': ('#6c98c0', {'l': 1.25})},
         ],
     },
     'nosepass': {
+        # rituele beelden uit verschillende culturen (Jordi)
         'species': {
             'nosepass': {'body': [1, 2, 3, 4, 5], 'nose': [7, 8, 9, 10, 11]},
+            'probopass': {'body': [9, 10, 11, 12, 13], 'nose': [1, 3, 4, 5], 'beard': [6, 14]},
         },
         'variants': [
-            {'naam': 'Basalt', 'body': '#585860', 'nose': '#c84830'},
-            {'naam': 'IJzererts (roest)', 'body': '#a04828', 'nose': '#c0c4cc'},
-            {'naam': 'Jade (Olmeeks)', 'body': '#48a078', 'nose': '#e0b030'},
-            {'naam': 'Marmer', 'body': '#c8c8d0', 'nose': '#2c2c30'},
-            {'naam': 'Robijn', 'body': '#b02838', 'nose': '#e0b030'},
-            {'naam': 'Diamant', 'body': ('#d4e8f8', {'l': 1.2}), 'nose': '#f088b8'},
+            {'naam': 'Moai (tufsteen met rode pukao)', 'body': '#6c6864', 'nose': '#a84830', 'beard': '#3c3834'},
+            {'naam': 'Terracottaleger', 'body': '#b86838', 'nose': '#4c5c78', 'beard': '#3c3030'},
+            {'naam': 'Olmeekse jade', 'body': '#48a078', 'nose': '#e0b030', 'beard': '#1c4030'},
+            {'naam': 'Azteeks turkoois-mozaïek', 'body': '#30b0a8', 'nose': '#e05038', 'beard': '#1c1c24'},
+            {'naam': 'Totempaal', 'body': '#b83028', 'nose': '#202024', 'beard': '#30a0a0'},
+            {'naam': 'Toetanchamon (goud en lapis)', 'body': '#e0b030', 'nose': '#2848a8', 'beard': '#1c2c68'},
         ],
     },
     'skitty': {

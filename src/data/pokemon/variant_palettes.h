@@ -210,6 +210,9 @@ static const u16 sVariants_Hariyama[] = INCBIN_U16("graphics/pokemon/hariyama/va
 #if (P_FAMILY_NOSEPASS)
 static const u16 sVariants_Nosepass[] = INCBIN_U16("graphics/pokemon/nosepass/variants.gbapal");
 #endif
+#if (P_FAMILY_NOSEPASS) && (P_GEN_4_CROSS_EVOS)
+static const u16 sVariants_Probopass[] = INCBIN_U16("graphics/pokemon/probopass/variants.gbapal");
+#endif
 #if (P_FAMILY_SKITTY)
 static const u16 sVariants_Skitty[] = INCBIN_U16("graphics/pokemon/skitty/variants.gbapal");
 #endif
@@ -428,6 +431,9 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_NOSEPASS)
     {gMonPalette_Nosepass, sVariants_Nosepass},
+#endif
+#if (P_FAMILY_NOSEPASS) && (P_GEN_4_CROSS_EVOS)
+    {gMonPalette_Probopass, sVariants_Probopass},
 #endif
 #if (P_FAMILY_SKITTY)
     {gMonPalette_Skitty, sVariants_Skitty},

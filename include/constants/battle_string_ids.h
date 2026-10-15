@@ -767,6 +767,7 @@ enum StringID
     STRINGID_BEAVERDAMBREAK, // Project Grounded
     STRINGID_BEAVERDAMFLOOD, // Project Grounded
     STRINGID_HOLEUP, // Project Grounded
+    STRINGID_KELPSHROUD, // Project Grounded
     STRINGID_COUNT
 };
 

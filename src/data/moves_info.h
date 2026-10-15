@@ -16482,7 +16482,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Strangles the foe with a\n"
             "chain. The foe can't escape."),
         .effect = EFFECT_HIT,
-        .power = 80,
+        .power = 90, // Project Grounded: was 80
         .type = TYPE_STEEL,
         .accuracy = 100,
         .pp = 20,
@@ -22118,6 +22118,31 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_BeaverDam,
+    },
+
+    [MOVE_KELP_SHROUD] = // Project Grounded: Dhelmise (bezeten zeewier zuigt de levenskracht leeg)
+    {
+        .name = COMPOUND_STRING("Kelp Shroud"),
+        .description = COMPOUND_STRING(
+            "Possessed kelp wraps the foe\n"
+            "and drains it every turn."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_LEECH_SEED,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_KelpShroud,
     },
 
     [MOVE_MOAI_WATCH] = // Project Grounded: Probopass (hazard, beste van Rock/Electric)

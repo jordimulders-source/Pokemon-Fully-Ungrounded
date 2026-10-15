@@ -38929,6 +38929,41 @@ gBattleAnimMove_HyphalSnare::
 	waitforvisualfinish
 	end
 
+@ Project Grounded: Kelp Shroud. Het water verdonkert paars, Dhelmise slingert naar voren en spookachtig
+@ zeewier wikkelt zich om het doelwit; daarna trekken lichtjes (levenskracht) terug naar Dhelmise.
+gBattleAnimMove_KelpShroud::
+	loadspritegfx ANIM_TAG_TENDRILS
+	loadspritegfx ANIM_TAG_ORBS
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_TENDRILS, 0, 12, 12, RGB(6, 16, 10)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 10, RGB(8, 2, 12)
+	waitforvisualfinish
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 4, 6
+	delay 4
+	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 3, x=0, y=0, relative_to=ANIM_TARGET, animation=1
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 8, 1
+	loopsewithpan SE_M_SCRATCH, SOUND_PAN_TARGET, 6, 3
+	create_constrict_binding_sprite ANIM_TARGET, 4, initial_x=0, initial_y=16, affine_animation=0, squeezes=2
+	delay 7
+	create_constrict_binding_sprite ANIM_TARGET, 2, initial_x=0, initial_y=8, affine_animation=1, squeezes=2
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 10, RGB(10, 4, 16)
+	playsewithpan SE_M_BIND, SOUND_PAN_TARGET
+	delay 20
+	setarg 7, 0xFFFF
+	waitforvisualfinish
+	playsewithpan SE_M_ABSORB, SOUND_PAN_TARGET
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=0, y=5, wave_amplitude=8, wave_period=26
+	delay 4
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=10, y=-5, wave_amplitude=-8, wave_period=26
+	delay 4
+	create_absorption_orb_sprite ANIM_ATTACKER, 3, x=-5, y=15, wave_amplitude=16, wave_period=33
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 10, 0, RGB(10, 4, 16)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 10, 0, RGB(8, 2, 12)
+	waitforvisualfinish
+	end
+
 @ Elke beurt: de draden snoeren nog eens aan en er stuift een spore af.
 Status_HyphalSnare:
 	loadspritegfx ANIM_TAG_TENDRILS

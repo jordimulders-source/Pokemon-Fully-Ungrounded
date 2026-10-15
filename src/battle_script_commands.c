@@ -3778,11 +3778,12 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
         gBattlescriptCurrInstr = BattleScript_MoveEffectHaze;
         break;
     case MOVE_EFFECT_LEECH_SEED:
-        if (!IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS) && !gBattleMons[gBattlerTarget].volatiles.leechSeed)
+        // Project Grounded: Kelp Shroud (bezeten zeewier) werkt ook op Grass-types
+        if ((gCurrentMove == MOVE_KELP_SHROUD || !IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS)) && !gBattleMons[gBattlerTarget].volatiles.leechSeed)
         {
             gBattleMons[gBattlerTarget].volatiles.leechSeed = LEECHSEEDED_BY(gBattlerAttacker);
             BattleScriptPush(battleScript);
-            gBattlescriptCurrInstr = BattleScript_MoveEffectLeechSeed;
+            gBattlescriptCurrInstr = gCurrentMove == MOVE_KELP_SHROUD ? BattleScript_MoveEffectKelpShroud : BattleScript_MoveEffectLeechSeed;
         }
         break;
     case MOVE_EFFECT_REFLECT:

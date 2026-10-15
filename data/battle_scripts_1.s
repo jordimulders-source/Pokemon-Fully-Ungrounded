@@ -838,6 +838,12 @@ BattleScript_MoveEffectLeechSeed::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+@ Project Grounded: Kelp Shroud
+BattleScript_MoveEffectKelpShroud::
+	printstring STRINGID_KELPSHROUD
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_MoveEffectReflect::
 	printfromtable gReflectLightScreenSafeguardStringIds
 	waitmessage B_WAIT_TIME_LONG

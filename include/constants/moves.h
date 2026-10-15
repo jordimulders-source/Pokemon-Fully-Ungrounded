@@ -941,7 +941,8 @@
 #define MOVE_BEAVER_DAM 878 // Project Grounded: Bibarel
 #define MOVE_MOAI_WATCH 879 // Project Grounded: Probopass
 
-#define MOVES_COUNT_GEN9 880
+#define MOVE_KELP_SHROUD 880 // Project Grounded: Dhelmise
+#define MOVES_COUNT_GEN9 881
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

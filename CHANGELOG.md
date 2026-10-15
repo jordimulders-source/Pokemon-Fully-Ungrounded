@@ -18847,9 +18847,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Wailmer-lijn: tropisch turkoois, orka, Migaloo (witte bultrug), roze rivierdolfijn, zeppelin, tennisbal (Jordi: baltema).
   - Numel-lijn: dromedaris, basalt en lava, Kawah Ijen (blauw vuur), albino, ijsvulkaan, lavalamp.
 - **Kleurvarianten, Hoenn-dex groep 8:**
-  - Torkoal: steenkool, Delfts blauw, Xuanwu (jadeschildpad), albino, stoomlocomotief (Thomas), groene vlam (koper).
-  - Spoink-lijn: boerderijvarken, wild zwijn, parelmoer, albino, Miss Piggy, discobal.
-  - Spinda (vlekken via index 5-7): reuzenpanda, rode panda, giraf, albino, psychedelisch, kungfumeester.
-  - Trapinch-lijn: obsidiaan, Garchomp-kleuren, glanzende libel, albino, Mars, Ghidorah (goud).
+  - Torkoal (meer met de rook; Jordi): steenkool met aswolk, Delfts blauw, gifgas, albino, zwavelwolk, lavafontein.
+  - Spoink-lijn: boerderijvarken, wild zwijn, parelmoer, albino (meer schaduw), Miss Piggy, Ganon (Zelda).
+  - Spinda (vlekken via index 5-7): reuzenpanda, rode panda, giraf, aardbei, psychedelisch, zwart met goud.
+  - Trapinch-lijn (per evolutie een eigen verloop, zoals normaal/shiny; Flygons lenzen per variant anders): woestijn naar oase, Garchomp-kleuren, libel (nimf naar glans), albino, vuur, Ghidorah (brons naar goud).
   - Cacnea-lijn: opuntia, rode maancactus, pompoenvogelverschrikker, albino, woestijnnacht, snoepcactus.
-  - Swablu-lijn: suikerspin, onweerswolk, zonsondergang, pauw, Kinto-un (Dragon Ball), nachtwolk.
+  - Swablu-lijn: suikerspin, onweerswolk, zonsondergang, pauw, Kinto-un (Dragon Ball), poollicht.

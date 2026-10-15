@@ -151,6 +151,7 @@ Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen
 - Gepaarde soorten (Plusle/Minun, Volbeat/Illumise): binnen één variant contrasteren, niet dezelfde kleur.
 - Pokémon-games als thema (Sableye: Gold/Silver/Crystal enz.) viel goed; een sprite met meerdere edelstenen/onderdelen kan per onderdeel een eigen kleur krijgen (sprite_fixes).
 - Een variant hoeft niet altijd het hele lichaam mee te kleuren (Jordi), maar moet wel opvallen: alleen de schaal van Volbeat/Illumise was saai. Ronde Pokémon: baltema's (tennisbal voor Wailmer/Wailord; niet de Poké Ball).
+- Lijnen waarvan de kleuren per evolutie wisselen (Trapinch → Flygon): ook in de varianten een eigen verloop per stadium, niet één kleur voor de hele lijn.
 - Varianten onderling en t.o.v. shiny vergelijken: twee blauwe in één lijn = één vervangen.
 - **Albino:** gebroken wit met volledige schaduwen (de belichte rand is de hoofdkleur van het lijf: nooit puur wit, anders valt de omlijning weg), **rode ogen**, donkerdere vlekken blijven donkerder, een andere kleur bol/bloem; een witte vlam houdt tinten.
 

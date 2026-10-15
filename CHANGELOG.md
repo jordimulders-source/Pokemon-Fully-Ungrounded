@@ -18813,3 +18813,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Ralts-lijn: lavendel, roos (rood/groen omgedraaid), hemelsblauw, albino, zwarte zwaan (ballet), Hyrule-koninklijk.
   - Surskit-lijn: rode waterjuffer, dagpauwoog, groene glazenmaker, albino, Mothra, Luxury Ball.
   - Shroomish-lijn: vliegenzwam, cantharel, Toad, albino, amethistzwam, lichtgevende zwam.
+- **Kleurvarianten, Hoenn-dex groep 4:**
+  - Slakoth-lijn: grijze luiaard, algenvacht, goudaap, albino, zilverrug, Garfield.
+  - Abra-lijn: rode vos, zilvervos (gouden lepels), tovenaar, albino, Mewtwo-kleuren, Joker.
+  - Nincada-familie: groene cicade, barnsteen, brons, albino, hemels (gouden halo), Japans lakwerk.
+  - Whismur-lijn: luidspreker, olifant, KISS, albino, gouden plaat, banshee.
+  - Makuhita-lijn: Kumamon, kappa-sumo, Hokusai (indigo), albino, lucha libre, Daruma.

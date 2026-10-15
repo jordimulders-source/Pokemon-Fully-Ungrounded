@@ -316,4 +316,86 @@ LINES = {
              'breloom:spots': '#2c5868', 'red': '#60f088'},
         ],
     },
+
+    # --- Hoenn-dex, groep 4 ---
+    'slakoth': {
+        'species': {
+            'slakoth': {'fur': [1, 5, 6, 7], 'face': [3, 4], 'nose': [11, 12, 13]},
+            'vigoroth': {'fur': [6, 7, 10], 'face': [8, 9, 15], 'mane': [1, 2, 4]},
+            'slaking': {'fur': [2, 5, 6], 'face': [8, 9], 'mane': [3, 4, 7], 'nose': [11, 12, 13]},
+        },
+        'variants': [
+            {'naam': 'Grijze luiaard', 'fur': '#80848c', 'vigoroth:fur': '#5c5c64', 'mane': '#d8c8b0'},
+            {'naam': 'Algenvacht (echte luiaards hebben algen)', 'fur': '#7a9050', 'vigoroth:fur': '#a8c080'},
+            {'naam': 'Goudaap', 'fur': '#e0a040', 'face': '#7898c8', 'slaking:face': '#f0e0b8', 'mane': '#f0d088'},
+            {'naam': 'Albino', 'fur': ('#cdc4bc', ALBINO), 'face': ('#e0d8d0', ALBINO), 'nose': '#e08898',
+             'mane': '#e0b0b8'},
+            {'naam': 'Zilverrug', 'fur': ('#2c2c30', {'l': 1.3}), 'vigoroth:fur': '#c4c8d0', 'mane': '#c4c8d0',
+             'face': '#58585c'},
+            {'naam': 'Garfield', 'fur': '#f08820', 'vigoroth:fur': '#f8b048', 'face': '#f8e0a0', 'mane': '#a85010'},
+        ],
+    },
+    'abra': {
+        'species': {
+            'abra': {'yellow': [9, 10, 11, 12, 13, 14], 'brown': [4, 5, 6, 7]},
+            'kadabra': {'yellow': [10, 11, 12, 13, 14], 'brown': [6, 7, 8, 9], 'spoon': [1, 2, 3, 4], 'star': [5]},
+            'alakazam': {'yellow': [11, 12, 13, 14], 'brown': [5, 6, 7, 8], 'spoon': [1, 2, 3, 4]},
+        },
+        'variants': [
+            {'naam': 'Rode vos', 'yellow': '#e07830', 'brown': '#4c3020'},
+            {'naam': 'Zilvervos', 'yellow': '#b8bcc8', 'brown': '#2c2c30', 'spoon': '#e0b030'},
+            {'naam': 'Tovenaar', 'yellow': '#3050b0', 'brown': '#6838a0', 'spoon': '#e0b030', 'star': '#f0d020'},
+            {'naam': 'Albino', 'yellow': ('#d8d0c0', ALBINO), 'brown': ('#bcaca4', ALBINO), 'star': '#d02030'},
+            {'naam': 'Mewtwo-kleuren', 'yellow': '#d4c4e4', 'brown': '#8048a0'},
+            {'naam': 'Joker', 'yellow': '#7838b0', 'brown': '#38a040', 'star': '#e02020'},
+        ],
+    },
+    'nincada': {
+        'species': {
+            'nincada': {'shell': [6, 7, 8, 9, 10, 11], 'wings': [1, 3, 5], 'claws': [12, 13, 14, 15]},
+            'ninjask': {'wings': [1, 3, 8, 11], 'red': [5, 6, 7, 9], 'body': [14, 15], 'yellow': [10, 12, 13]},
+            'shedinja': {'halo': [1, 2, 3, 4], 'shell': [5, 6, 7, 9, 10, 11]},
+        },
+        'variants': [
+            {'naam': 'Groene cicade', 'shell': '#78b858', 'yellow': '#40b878', 'wings': '#d8f0c8'},
+            {'naam': 'Barnsteen', 'shell': '#e09018', 'yellow': '#e09018', 'red': '#a84810', 'wings': '#f8e0a8'},
+            {'naam': 'Brons', 'shell': '#a8743c', 'yellow': '#a8743c', 'red': '#5c3c20', 'halo': '#c89050'},
+            {'naam': 'Albino', 'shell': ('#ccc8c4', ALBINO), 'yellow': ('#e0dcd0', ALBINO), 'red': '#d02838',
+             'claws': '#d8b8b8'},
+            {'naam': 'Hemels', 'shell': '#e8c860', 'halo': '#f0c830', 'wings': '#f0d860', 'yellow': '#f0ece0',
+             'body': '#283058'},
+            {'naam': 'Japans lakwerk', 'shell': ('#2c2028', {'l': 1.3}), 'wings': '#e0b030', 'yellow': '#e0b030',
+             'red': '#e04020', 'body': '#1c1418', 'halo': '#e04020'},
+        ],
+    },
+    'whismur': {
+        'species': {
+            'whismur': {'body': [1, 2, 3, 9, 11], 'yellow': [4, 5, 6, 7]},
+            'loudred': {'body': [1, 2, 3, 4], 'pink': [6, 7, 8, 14], 'yellow': [11, 12, 13]},
+            'exploud': {'body': [5, 6, 7, 8], 'yellow': [1, 2, 4], 'pink': [9, 10, 11, 12]},
+        },
+        'variants': [
+            {'naam': 'Luidspreker', 'body': '#44444c', 'yellow': '#c0c4cc'},
+            {'naam': 'Olifant', 'body': '#9898a0', 'yellow': '#e8e0d0'},
+            {'naam': 'KISS', 'body': '#e0e0e8', 'yellow': '#202024', 'pink': '#d82838'},
+            {'naam': 'Albino', 'body': ('#d0c8cc', ALBINO), 'yellow': ('#e0dcd0', ALBINO), 'pink': '#e090a0'},
+            {'naam': 'Gouden plaat', 'body': '#d8a830', 'yellow': '#28282c'},
+            {'naam': 'Banshee', 'body': '#a8d8b8', 'yellow': '#3c4048', 'pink': '#283028'},
+        ],
+    },
+    'makuhita': {
+        'species': {
+            'makuhita': {'skin': [1, 2, 4, 5, 6, 7], 'belt': [11, 12, 13], 'cheeks': [8, 9]},
+            'hariyama': {'skin': [6, 7, 8, 11, 13, 14, 15], 'hands': [2, 3, 4, 5], 'belt': [9, 10]},
+        },
+        'variants': [
+            {'naam': 'Kumamon', 'skin': ('#2c2c30', {'l': 1.3}), 'hands': '#3c3c44', 'cheeks': '#e02828',
+             'belt': '#d82828'},
+            {'naam': 'Kappa-sumo', 'skin': '#60a848', 'hands': '#3c7c38', 'belt': '#2c58a8'},
+            {'naam': 'Hokusai (indigo)', 'skin': '#ece4d0', 'hands': '#3c58a0', 'belt': '#283c78'},
+            {'naam': 'Albino', 'skin': ('#e0d8cc', ALBINO), 'hands': '#e0b8b0', 'cheeks': '#e88898'},
+            {'naam': 'Lucha libre', 'belt': '#e02890', 'hands': '#e0b030', 'cheeks': '#2858d0'},
+            {'naam': 'Daruma', 'skin': '#c83028', 'hands': '#a82020', 'belt': '#e0b030', 'cheeks': '#f0e8d8'},
+        ],
+    },
 }

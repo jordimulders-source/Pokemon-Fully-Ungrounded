@@ -27,6 +27,15 @@ static const u16 sVariants_Wartortle[] = INCBIN_U16("graphics/pokemon/wartortle/
 #if (P_FAMILY_SQUIRTLE)
 static const u16 sVariants_Blastoise[] = INCBIN_U16("graphics/pokemon/blastoise/variants.gbapal");
 #endif
+#if (P_FAMILY_ABRA)
+static const u16 sVariants_Abra[] = INCBIN_U16("graphics/pokemon/abra/variants.gbapal");
+#endif
+#if (P_FAMILY_ABRA)
+static const u16 sVariants_Kadabra[] = INCBIN_U16("graphics/pokemon/kadabra/variants.gbapal");
+#endif
+#if (P_FAMILY_ABRA)
+static const u16 sVariants_Alakazam[] = INCBIN_U16("graphics/pokemon/alakazam/variants.gbapal");
+#endif
 #if (P_FAMILY_TREECKO)
 static const u16 sVariants_Treecko[] = INCBIN_U16("graphics/pokemon/treecko/variants.gbapal");
 #endif
@@ -135,6 +144,39 @@ static const u16 sVariants_Shroomish[] = INCBIN_U16("graphics/pokemon/shroomish/
 #if (P_FAMILY_SHROOMISH)
 static const u16 sVariants_Breloom[] = INCBIN_U16("graphics/pokemon/breloom/variants.gbapal");
 #endif
+#if (P_FAMILY_SLAKOTH)
+static const u16 sVariants_Slakoth[] = INCBIN_U16("graphics/pokemon/slakoth/variants.gbapal");
+#endif
+#if (P_FAMILY_SLAKOTH)
+static const u16 sVariants_Vigoroth[] = INCBIN_U16("graphics/pokemon/vigoroth/variants.gbapal");
+#endif
+#if (P_FAMILY_SLAKOTH)
+static const u16 sVariants_Slaking[] = INCBIN_U16("graphics/pokemon/slaking/variants.gbapal");
+#endif
+#if (P_FAMILY_NINCADA)
+static const u16 sVariants_Nincada[] = INCBIN_U16("graphics/pokemon/nincada/variants.gbapal");
+#endif
+#if (P_FAMILY_NINCADA)
+static const u16 sVariants_Ninjask[] = INCBIN_U16("graphics/pokemon/ninjask/variants.gbapal");
+#endif
+#if (P_FAMILY_NINCADA)
+static const u16 sVariants_Shedinja[] = INCBIN_U16("graphics/pokemon/shedinja/variants.gbapal");
+#endif
+#if (P_FAMILY_WHISMUR)
+static const u16 sVariants_Whismur[] = INCBIN_U16("graphics/pokemon/whismur/variants.gbapal");
+#endif
+#if (P_FAMILY_WHISMUR)
+static const u16 sVariants_Loudred[] = INCBIN_U16("graphics/pokemon/loudred/variants.gbapal");
+#endif
+#if (P_FAMILY_WHISMUR)
+static const u16 sVariants_Exploud[] = INCBIN_U16("graphics/pokemon/exploud/variants.gbapal");
+#endif
+#if (P_FAMILY_MAKUHITA)
+static const u16 sVariants_Makuhita[] = INCBIN_U16("graphics/pokemon/makuhita/variants.gbapal");
+#endif
+#if (P_FAMILY_MAKUHITA)
+static const u16 sVariants_Hariyama[] = INCBIN_U16("graphics/pokemon/hariyama/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -164,6 +206,15 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_SQUIRTLE)
     {gMonPalette_Blastoise, sVariants_Blastoise},
+#endif
+#if (P_FAMILY_ABRA)
+    {gMonPalette_Abra, sVariants_Abra},
+#endif
+#if (P_FAMILY_ABRA)
+    {gMonPalette_Kadabra, sVariants_Kadabra},
+#endif
+#if (P_FAMILY_ABRA)
+    {gMonPalette_Alakazam, sVariants_Alakazam},
 #endif
 #if (P_FAMILY_TREECKO)
     {gMonPalette_Treecko, sVariants_Treecko},
@@ -272,6 +323,39 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_SHROOMISH)
     {gMonPalette_Breloom, sVariants_Breloom},
+#endif
+#if (P_FAMILY_SLAKOTH)
+    {gMonPalette_Slakoth, sVariants_Slakoth},
+#endif
+#if (P_FAMILY_SLAKOTH)
+    {gMonPalette_Vigoroth, sVariants_Vigoroth},
+#endif
+#if (P_FAMILY_SLAKOTH)
+    {gMonPalette_Slaking, sVariants_Slaking},
+#endif
+#if (P_FAMILY_NINCADA)
+    {gMonPalette_Nincada, sVariants_Nincada},
+#endif
+#if (P_FAMILY_NINCADA)
+    {gMonPalette_Ninjask, sVariants_Ninjask},
+#endif
+#if (P_FAMILY_NINCADA)
+    {gMonPalette_Shedinja, sVariants_Shedinja},
+#endif
+#if (P_FAMILY_WHISMUR)
+    {gMonPalette_Whismur, sVariants_Whismur},
+#endif
+#if (P_FAMILY_WHISMUR)
+    {gMonPalette_Loudred, sVariants_Loudred},
+#endif
+#if (P_FAMILY_WHISMUR)
+    {gMonPalette_Exploud, sVariants_Exploud},
+#endif
+#if (P_FAMILY_MAKUHITA)
+    {gMonPalette_Makuhita, sVariants_Makuhita},
+#endif
+#if (P_FAMILY_MAKUHITA)
+    {gMonPalette_Hariyama, sVariants_Hariyama},
 #endif
     {NULL, NULL},
 };

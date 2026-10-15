@@ -1081,7 +1081,7 @@ LINES = {
         'variants': [
             {'naam': 'Echte coelacant (blauw met witte vlekken)', 'light': '#3c5c98', 'dark': '#d8e0e8'},
             {'naam': 'Lavasteen', 'light': '#5a5a60', 'dark': '#e06020'},
-            {'naam': 'Koi', 'light': '#f4f0e8', 'dark': '#e04020'},
+            {'naam': 'Nautilus (Jules Verne, messing en klinknagels)', 'light': '#b87838', 'dark': '#3c4448'},
             {'naam': 'Albino', 'light': ('#ece4dc', ALBINO), 'dark': ('#d0c8c4', ALBINO)},
             {'naam': 'Jade met goud', 'light': '#4a9a70', 'dark': '#e0c060'},
             {'naam': 'Azteeks relikwie', 'light': '#e8c040', 'dark': '#2c7c90'},
@@ -1108,7 +1108,7 @@ LINES = {
             {'naam': 'Alduin (Skyrim)', 'shell': ('#2c2828', {'l': 1.3}), 'body': ('#2c2828', {'l': 1.3}), 'wings': '#3a3030', 'belly': '#8a3020'},
             {'naam': 'Bahamut (platina en goud)', 'shell': '#a8b0c0', 'body': '#a8b0c0', 'wings': '#e0b030', 'belly': '#f4f0e0'},
             {'naam': 'Y Ddraig Goch (Welsh)', 'shell': '#30a040', 'body': '#c02028', 'wings': '#30a040', 'belly': '#f4f4f4'},
-            {'naam': 'Albino', 'shell': ('#e8e4e4', ALBINO), 'body': ('#ece4e4', ALBINO), 'wings': ('#f0dcdc', ALBINO), 'belly': '#f4f0f0'},
+            {'naam': 'Albino', 'shell': ('#d8d0d0', {'l': 1.3}), 'body': ('#e0d4d4', {'l': 1.3}), 'shelgon:body': '#a08888', 'wings': ('#e4c8c8', {'l': 1.3}), 'belly': '#f0b0a8'},
             {'naam': 'Tiamat (chromatisch)', 'shell': '#6038a0', 'body': '#6038a0', 'wings': '#30a0d0', 'belly': '#e0b030'},
             {'naam': 'Smaug (rood en goud)', 'shell': '#a02828', 'body': '#a02828', 'wings': '#702020', 'belly': '#e0b030'},
         ],

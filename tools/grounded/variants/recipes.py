@@ -605,11 +605,13 @@ LINES = {
         ],
     },
     'roselia': {
-        'species': {'roselia': {'body': [1, 2, 3, 4, 6, 7], 'rose1': [8, 9, 10], 'rose2': [12, 13, 15],
-                                'thorns': [11, 14]}},
+        'species': {'budew': {'body': [4, 1, 5, 2, 12], 'rose1': [6, 8, 7]},
+                    'roselia': {'body': [1, 2, 3, 4, 6, 7], 'rose1': [8, 9, 10], 'rose2': [12, 13, 15],
+                                'thorns': [11, 14]},
+                    'roserade': {'body': [4, 5, 7, 12], 'rose1': [10, 9, 11], 'rose2': [13, 15, 14]}},
         'variants': [
             {'naam': 'Witte en gele roos', 'rose1': '#e4e0e0', 'rose2': '#f0d030'},
-            {'naam': 'Hollandse tulpen', 'rose2': '#f08020'},
+            {'naam': 'Hollandse tulpen', 'rose2': '#f08020', 'budew:rose1': '#f08020'},
             {'naam': 'Cactusbloei', 'body': '#6c9a6c', 'rose1': '#e030a0', 'rose2': '#f0d030'},
             {'naam': 'Albino', 'body': ('#ccd4c8', ALBINO), 'rose1': '#f0c0cc', 'rose2': '#c8d4f0'},
             {'naam': 'Betoverde roos', 'body': ('#2c3c34', {'l': 1.3}), 'rose1': '#f03050', 'rose2': '#e0b030'},
@@ -958,6 +960,7 @@ LINES = {
         'species': {
             'duskull': {'robe': [1, 2, 3, 4], 'skull': [6, 7, 8, 9, 10], 'eye': [11, 12, 13]},
             'dusclops': {'robe': [7, 8, 9, 10], 'skull': [1, 2, 3, 4, 5], 'eye': [13, 14]},
+            'dusknoir': {'robe': [4, 6], 'skull': [9, 8, 7, 12], 'eye': [13]},
         },
         'variants': [
             {'naam': 'Dwaallicht (groen vuur)', 'robe': '#2c8a50', 'skull': '#d8f0c0', 'eye': '#c0f040'},
@@ -981,7 +984,8 @@ LINES = {
     },
     'chimecho': {
         # in deze rom Psychic/Steel
-        'species': {'chimecho': {'body': [7, 8, 9, 11], 'red': [10, 12, 13], 'top': [1, 3, 5, 6, 14]}},
+        'species': {'chingling': {'body': [11, 9, 8, 10], 'red': [1, 2, 3]},
+                    'chimecho': {'body': [7, 8, 9, 11], 'red': [10, 12, 13], 'top': [1, 3, 5, 6, 14]}},
         'variants': [
             {'naam': 'Koperen windgong', 'body': '#c87838', 'red': '#30a0a0'},
             {'naam': 'Zilver', 'body': '#b8bcc8', 'red': '#3058c0'},
@@ -1237,6 +1241,22 @@ LINES = {
             {'naam': 'DNA (wit)', 'red': '#e4e4ec', 'blue': '#4080e0', 'gem': '#e04040'},
             {'naam': 'Meteoriet (gloeiend ijzer)', 'red': '#6a6460', 'blue': '#e06020'},
             {'naam': 'Kosmisch roze', 'red': '#f070c0', 'blue': '#40e0f0', 'gem': '#f0e060'},
+        ],
+    },
+    'zigzagoon_galar': {
+        # Galar-vormen + Obstagoon: punk
+        'species': {
+            'zigzagoon/galar': {'dark': [1, 3, 4], 'light': [6, 7], 'tongue': [8, 10, 13, 12, 11]},
+            'linoone/galar': {'dark': [3, 4, 2], 'light': [5, 6], 'tongue': [8, 9, 10]},
+            'obstagoon': {'dark': [2, 4], 'grey': [8, 7], 'light': [5, 6]},
+        },
+        'variants': [
+            {'naam': 'Tijgerpunk', 'light': '#f08020'},
+            {'naam': 'Rasta-punk', 'dark': '#2c8a40', 'light': '#f0d030', 'grey': '#c03028'},
+            {'naam': 'Ziggy Stardust', 'dark': '#d84020', 'light': '#40a0e0', 'grey': '#e0d8d0'},
+            {'naam': 'Albino', 'dark': ('#d8d0d0', ALBINO), 'grey': ('#e0d8d8', ALBINO), 'tongue': '#e02838'},
+            {'naam': 'Joker', 'dark': '#5a2c8a', 'light': '#80e040', 'grey': '#d8d0e0'},
+            {'naam': 'Daft Punk (goud en zilver)', 'dark': '#c89828', 'light': '#e0e4ec', 'grey': '#b0b8c0'},
         ],
     },
 }

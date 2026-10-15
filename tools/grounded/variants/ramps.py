@@ -13,6 +13,8 @@ from variants import ROOT, read_pal  # noqa: E402
 
 
 def load(folder, picname='anim_front.png'):
+    if picname == 'anim_front.png' and not os.path.exists(os.path.join(folder, picname)):
+        picname = 'front.png'  # nieuwere vormen hebben alleen front.png
     im = Image.open(os.path.join(folder, picname))
     return im, list(im.get_flattened_data()) if hasattr(im, "get_flattened_data") else list(im.getdata()), im.size
 
@@ -29,6 +31,8 @@ def stats(folder):
     count = [0] * 16
     adj = {}
     for pic in ('anim_front.png', 'back.png'):
+        if pic == 'anim_front.png' and not os.path.exists(os.path.join(folder, pic)):
+            pic = 'front.png'
         p = os.path.join(folder, pic)
         if not os.path.exists(p):
             continue

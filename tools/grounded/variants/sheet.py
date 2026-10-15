@@ -19,7 +19,10 @@ LABEL_W = 110
 
 
 def sprite_with(folder, pal):
-    im = Image.open(os.path.join(folder, 'anim_front.png'))
+    pic = os.path.join(folder, 'anim_front.png')
+    if not os.path.exists(pic):
+        pic = os.path.join(folder, 'front.png')
+    im = Image.open(pic)
     im = im.crop((0, 0, 64, 64))
     flat = [v for c in pal for v in c] + [0] * (768 - len(pal) * 3)
     im.putpalette(flat)

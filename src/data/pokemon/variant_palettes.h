@@ -111,6 +111,15 @@ static const u16 sVariants_Zigzagoon[] = INCBIN_U16("graphics/pokemon/zigzagoon/
 #if (P_FAMILY_ZIGZAGOON)
 static const u16 sVariants_Linoone[] = INCBIN_U16("graphics/pokemon/linoone/variants.gbapal");
 #endif
+#if (P_FAMILY_ZIGZAGOON) && (P_GALARIAN_FORMS)
+static const u16 sVariants_ZigzagoonGalar[] = INCBIN_U16("graphics/pokemon/zigzagoon/galar/variants.gbapal");
+#endif
+#if (P_FAMILY_ZIGZAGOON) && (P_GALARIAN_FORMS)
+static const u16 sVariants_LinooneGalar[] = INCBIN_U16("graphics/pokemon/linoone/galar/variants.gbapal");
+#endif
+#if (P_FAMILY_ZIGZAGOON) && (P_GALARIAN_FORMS)
+static const u16 sVariants_Obstagoon[] = INCBIN_U16("graphics/pokemon/obstagoon/variants.gbapal");
+#endif
 #if (P_FAMILY_WURMPLE)
 static const u16 sVariants_Wurmple[] = INCBIN_U16("graphics/pokemon/wurmple/variants.gbapal");
 #endif
@@ -264,8 +273,14 @@ static const u16 sVariants_Volbeat[] = INCBIN_U16("graphics/pokemon/volbeat/vari
 #if (P_FAMILY_VOLBEAT_ILLUMISE)
 static const u16 sVariants_Illumise[] = INCBIN_U16("graphics/pokemon/illumise/variants.gbapal");
 #endif
+#if (P_FAMILY_ROSELIA) && (P_GEN_4_CROSS_EVOS)
+static const u16 sVariants_Budew[] = INCBIN_U16("graphics/pokemon/budew/variants.gbapal");
+#endif
 #if (P_FAMILY_ROSELIA)
 static const u16 sVariants_Roselia[] = INCBIN_U16("graphics/pokemon/roselia/variants.gbapal");
+#endif
+#if (P_FAMILY_ROSELIA) && (P_GEN_4_CROSS_EVOS)
+static const u16 sVariants_Roserade[] = INCBIN_U16("graphics/pokemon/roserade/variants.gbapal");
 #endif
 #if (P_FAMILY_GULPIN)
 static const u16 sVariants_Gulpin[] = INCBIN_U16("graphics/pokemon/gulpin/variants.gbapal");
@@ -399,8 +414,14 @@ static const u16 sVariants_Duskull[] = INCBIN_U16("graphics/pokemon/duskull/vari
 #if (P_FAMILY_DUSKULL)
 static const u16 sVariants_Dusclops[] = INCBIN_U16("graphics/pokemon/dusclops/variants.gbapal");
 #endif
+#if (P_FAMILY_DUSKULL) && (P_GEN_4_CROSS_EVOS)
+static const u16 sVariants_Dusknoir[] = INCBIN_U16("graphics/pokemon/dusknoir/variants.gbapal");
+#endif
 #if (P_FAMILY_TROPIUS)
 static const u16 sVariants_Tropius[] = INCBIN_U16("graphics/pokemon/tropius/variants.gbapal");
+#endif
+#if (P_FAMILY_CHIMECHO) && (P_GEN_4_CROSS_EVOS)
+static const u16 sVariants_Chingling[] = INCBIN_U16("graphics/pokemon/chingling/variants.gbapal");
 #endif
 #if (P_FAMILY_CHIMECHO)
 static const u16 sVariants_Chimecho[] = INCBIN_U16("graphics/pokemon/chimecho/variants.gbapal");
@@ -612,6 +633,15 @@ const struct VariantPalettes gVariantPalettes[] =
 #if (P_FAMILY_ZIGZAGOON)
     {gMonPalette_Linoone, sVariants_Linoone},
 #endif
+#if (P_FAMILY_ZIGZAGOON) && (P_GALARIAN_FORMS)
+    {gMonPalette_ZigzagoonGalar, sVariants_ZigzagoonGalar},
+#endif
+#if (P_FAMILY_ZIGZAGOON) && (P_GALARIAN_FORMS)
+    {gMonPalette_LinooneGalar, sVariants_LinooneGalar},
+#endif
+#if (P_FAMILY_ZIGZAGOON) && (P_GALARIAN_FORMS)
+    {gMonPalette_Obstagoon, sVariants_Obstagoon},
+#endif
 #if (P_FAMILY_WURMPLE)
     {gMonPalette_Wurmple, sVariants_Wurmple},
 #endif
@@ -765,8 +795,14 @@ const struct VariantPalettes gVariantPalettes[] =
 #if (P_FAMILY_VOLBEAT_ILLUMISE)
     {gMonPalette_Illumise, sVariants_Illumise},
 #endif
+#if (P_FAMILY_ROSELIA) && (P_GEN_4_CROSS_EVOS)
+    {gMonPalette_Budew, sVariants_Budew},
+#endif
 #if (P_FAMILY_ROSELIA)
     {gMonPalette_Roselia, sVariants_Roselia},
+#endif
+#if (P_FAMILY_ROSELIA) && (P_GEN_4_CROSS_EVOS)
+    {gMonPalette_Roserade, sVariants_Roserade},
 #endif
 #if (P_FAMILY_GULPIN)
     {gMonPalette_Gulpin, sVariants_Gulpin},
@@ -900,8 +936,14 @@ const struct VariantPalettes gVariantPalettes[] =
 #if (P_FAMILY_DUSKULL)
     {gMonPalette_Dusclops, sVariants_Dusclops},
 #endif
+#if (P_FAMILY_DUSKULL) && (P_GEN_4_CROSS_EVOS)
+    {gMonPalette_Dusknoir, sVariants_Dusknoir},
+#endif
 #if (P_FAMILY_TROPIUS)
     {gMonPalette_Tropius, sVariants_Tropius},
+#endif
+#if (P_FAMILY_CHIMECHO) && (P_GEN_4_CROSS_EVOS)
+    {gMonPalette_Chingling, sVariants_Chingling},
 #endif
 #if (P_FAMILY_CHIMECHO)
     {gMonPalette_Chimecho, sVariants_Chimecho},

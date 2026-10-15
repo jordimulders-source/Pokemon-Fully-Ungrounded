@@ -464,14 +464,14 @@ LINES = {
         # rituele beelden uit verschillende culturen (Jordi)
         'species': {
             'nosepass': {'body': [1, 2, 3, 4, 5], 'nose': [7, 8, 9, 10, 11]},
-            'probopass': {'body': [9, 10, 11, 12, 13], 'nose': [1, 3, 4, 5], 'beard': [6, 14]},
+            'probopass': {'body': [9, 10, 11, 12, 13], 'nose': [1, 3, 4, 5], 'beard': [6, 14]},  # 6 is ook de omlijning: altijd donker
         },
         'variants': [
             {'naam': 'Moai (tufsteen met rode pukao)', 'body': '#6c6864', 'nose': '#a84830', 'beard': '#3c3834'},
             {'naam': 'Terracottaleger', 'body': '#b86838', 'nose': '#4c5c78', 'beard': '#3c3030'},
             {'naam': 'Olmeekse jade', 'body': '#48a078', 'nose': '#e0b030', 'beard': '#1c4030'},
             {'naam': 'Azteeks turkoois-mozaïek', 'body': '#30b0a8', 'nose': '#e05038', 'beard': '#1c1c24'},
-            {'naam': 'Totempaal', 'body': '#b83028', 'nose': '#202024', 'beard': '#30a0a0'},
+            {'naam': 'Totempaal', 'body': '#b83028', 'nose': '#202024', 'beard': '#203434'},  # beard 6 = ook omlijning
             {'naam': 'Toetanchamon (goud en lapis)', 'body': '#e0b030', 'nose': '#2848a8', 'beard': '#1c2c68'},
         ],
     },

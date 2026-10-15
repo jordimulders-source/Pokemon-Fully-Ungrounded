@@ -53,7 +53,7 @@ CHAPTERS = [
                   'LavaridgeTown_Gym_1F'], 'TRAINER_FLANNERY_1'),
     ('Norman', ['PetalburgCity', 'PetalburgCity_Gym'], 'TRAINER_NORMAN_1'),
     ('Winona', ['Route105', 'Route107', 'Route108', 'AbandonedShip_Corridors_1F', 'AbandonedShip_Rooms_1F',
-                'AbandonedShip_Corridors_B1F', 'AbandonedShip_Rooms2_1F', 'Route118', 'Route119',
+                'AbandonedShip_Corridors_B1F', 'AbandonedShip_Rooms2_1F', 'Route118', 'Route119',  # let op: west-Route 118 (Rose, Dalton, Deandre, Wade) is vóór Wattson bereikbaar: 28-29, met de hand
                 'Route119_WeatherInstitute_1F', 'Route119_WeatherInstitute_2F', 'FortreeCity', 'Route120',
                 'FortreeCity_Gym'], 'TRAINER_WINONA_1'),
     ('Tate & Liza', ['Route121', 'Route122', 'MtPyre_1F', 'MtPyre_2F', 'MtPyre_3F', 'MtPyre_4F', 'MtPyre_5F',

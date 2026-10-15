@@ -75,6 +75,8 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Wilde levels | Route 110 (Gulpin lv 14) en de hele middengame lagen ver onder de trainers; 43 tabellen verhoogd tot ±2 onder het trainerlevel, evoluties waar nodig. | ✅ |
 | May Route 110 (ace 29) | Jordi getest met Sandslash 25, Vivillon/Butterfree/Paras 23: eerst achter, daarna snel omgebogen met Stone Axe en First Impression. Levels fair, niets veranderd. | ✅ |
 | Simon (inbreker, 2 badges: lv 26–28) | Jordi verloor 2× met Carkol in het team, won daarna met Sir Leek: lag aan het eigen team, niets veranderd. | ✅ |
+| West-Route 118 trainers 31–32 (Colress 26–27) | Rose/Dalton 28, Deandre/Wade 29 (levelcurve rekende Route 118 tot Winona). | ✅ |
+| Tas vol in Mauville | Items-pocket 30 → 120, oude save blijft werken. | ✅ |
 | Birch op Route 110: nieuwe dialoog van Jordi | | ✅ |
 | EXP-bomgevechten | Miguel (Route 103-oost, 4× Blissey) werkt perfect als compensatie na veel vangen. Idee (Jordi, hardop): meer van zulke gevechten na grote vangmomenten, bijv. Route 113/114 (±37), Route 119 (±47), Route 121/123 (±55), Route 128/129 (±66); eerst testen met de nieuwe wilde levels. Nog maar 3 vrije trainer-id's (851–853). | 💡 |
 | Rhett (Route 103) volledig lv 20, onbedoeld | Nu 26–27 zoals de buren. Andere uitschieters nagelopen; Nolan (Route 114, Whiscash 50), Juan en Aaron (lv 74) blijven bewust (Jordi). | ✅ |

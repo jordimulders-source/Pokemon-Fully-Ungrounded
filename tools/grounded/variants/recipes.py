@@ -1704,4 +1704,104 @@ LINES = {
             {'naam': 'GS Ball (goud en zilver)', 'green': '#c8a030', 'light': '#e0e4ec'},
         ],
     },
+    # --- groep 18 (Kanto/Johto, revisiesoorten eerst) ---
+    'ekans': {
+        # Arbok in deze rom Poison/Dark
+        'species': {
+            'ekans': {'body': [15, 14, 13, 12, 11], 'belly': [9, 8, 7, 6, 5]},
+            'arbok': {'body': [12, 11, 10, 9], 'hood': [7, 4, 13, 6, 3], 'hoodyellow': [2]},
+        },
+        'variants': [
+            {'naam': 'Koraalslang', 'body': '#c02828', 'hood': '#f0d040', 'hoodyellow': '#2c2c34'},
+            {'naam': 'Koperkop', 'body': '#c07040', 'hood': '#5a3020'},
+            {'naam': 'Zwarte mamba', 'body': ('#3a3a40', {'l': 1.3}), 'hood': '#c8c8d0'},
+            {'naam': 'Albino python', 'body': ('#ece8dc', ALBINO), 'belly': '#f0d060', 'hood': '#f0c040'},
+            {'naam': 'Blauwe adder', 'body': '#3a70c0', 'hood': '#e0e8f0'},
+            {'naam': 'Egyptische cobra (turkoois en goud)', 'body': '#30a8a0', 'hood': '#e0b030', 'hoodyellow': '#c02828'},
+        ],
+    },
+    'venonat': {
+        # Venomoth in deze rom Psychic/Poison; nachtvlinders
+        'species': {
+            'venonat': {'body': [14, 13, 12, 11], 'eyes': [7, 6, 5, 4]},
+            'venomoth': {'body': [15, 14, 13, 12, 11]},
+        },
+        'variants': [
+            {'naam': 'Rozenmot (rosy maple moth)', 'body': '#f0a0c0', 'eyes': '#f0d040'},
+            {'naam': 'Lunamot', 'body': '#a0d890', 'eyes': '#c06090'},
+            {'naam': 'Atlasvlinder', 'body': '#a04828', 'eyes': '#f0d040'},
+            {'naam': 'Doodshoofdvlinder', 'body': ('#3a3038', {'l': 1.3}), 'eyes': '#f0c020'},
+            {'naam': 'Witte mot', 'body': '#e8e4dc'},
+            {'naam': 'Mothra', 'body': '#e0a030', 'eyes': '#3060c0'},
+        ],
+    },
+    'seel': {
+        # Dewgong in deze rom Ice/Fairy
+        'species': {
+            'seel': {'body': [4, 3, 2, 1]},
+            'dewgong': {'body': [5, 4, 3, 2, 1]},
+        },
+        'variants': [
+            {'naam': 'Doejong (grijs)', 'body': '#8a9098'},
+            {'naam': 'Zeeolifant', 'body': '#a07858'},
+            {'naam': 'Roze rivierdolfijn', 'body': '#f0b0c0'},
+            {'naam': 'IJsblauw', 'body': '#90c0e0'},
+            {'naam': 'Zwarte zeeleeuw', 'body': ('#3a3a44', {'l': 1.3})},
+            {'naam': 'Amber', 'body': '#e0a040'},
+        ],
+    },
+    'gastly': {
+        'species': {
+            'gastly': {'gas': [10, 11, 12]},
+            'haunter': {'gas': [5, 4, 3, 2]},
+            'gengar': {'gas': [14, 13, 12, 11, 10]},
+        },
+        'variants': [
+            {'naam': 'Slimer-groen', 'gas': '#50a040'},
+            {'naam': 'Bloedrood', 'gas': '#b03040'},
+            {'naam': 'Boo-blauw', 'gas': '#4a70c0'},
+            {'naam': 'Witte Boo (Mario)', 'gas': '#e8e4ec'},
+            {'naam': 'Halloween-oranje', 'gas': '#e07020'},
+            {'naam': 'Gouden spook', 'gas': '#d8a828'},
+        ],
+    },
+    'drowzee': {
+        # Hypno in deze rom Psychic/Dark; tapir en hypnotiseur
+        'species': {
+            'drowzee': {'yellow': [7, 6, 10, 9, 11], 'brown': [2, 3, 4, 5]},
+            'hypno': {'yellow': [2, 3, 4, 5, 6], 'brown': [7, 8]},
+        },
+        'variants': [
+            {'naam': 'Maleise tapir', 'yellow': ('#3a3a42', {'l': 1.3}), 'brown': '#e8e4dc'},
+            {'naam': 'Baku (Japanse droomvreter)', 'yellow': '#5070c0'},
+            {'naam': 'Freddy Krueger', 'yellow': '#a02828', 'brown': '#3a6a30'},
+            {'naam': 'Albino', 'yellow': ('#ece8e0', ALBINO), 'brown': '#e0c8c0'},
+            {'naam': 'Hypnosespiraal (groen)', 'yellow': '#60b060'},
+            {'naam': 'Paars en goud', 'yellow': '#5a3a8a', 'brown': '#e0b030'},
+        ],
+    },
+    'farfetchd': {
+        # Fighting/Flying; Galar-vormen (moderne sprites) nog niet
+        'species': {'farfetchd': {'body': [14, 13, 12], 'leek': [10, 9, 8]}},
+        'variants': [
+            {'naam': 'Grijze gans', 'body': '#8a8a90'},
+            {'naam': 'Wilde eend', 'body': '#3a7050'},
+            {'naam': 'Zwarte eend', 'body': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Albino', 'body': ('#ece8e0', ALBINO)},
+            {'naam': 'Zuurstok', 'body': '#a02828', 'leek': '#f0f0f0'},
+            {'naam': 'Koningsblauw met gouden zwaard', 'body': '#2c4890', 'leek': '#e0b030'},
+        ],
+    },
+    'dunsparce': {
+        # Normal/Ground; Dudunsparce (moderne sprite) nog niet
+        'species': {'dunsparce': {'yellow': [1, 4, 3, 2], 'blue': [13, 12, 10]}},
+        'variants': [
+            {'naam': 'Groene drakenslang', 'yellow': '#80b040'},
+            {'naam': 'Lavendel', 'yellow': '#b098d8', 'blue': '#e0b030'},
+            {'naam': 'Roodbruin', 'yellow': '#a85030'},
+            {'naam': 'Albino', 'yellow': ('#ece8e0', ALBINO), 'blue': '#e0b0c0'},
+            {'naam': 'Koi', 'yellow': '#e07030', 'blue': '#f4f4f4'},
+            {'naam': 'Chinese draak', 'yellow': '#c02828', 'blue': '#e0b030'},
+        ],
+    },
 }

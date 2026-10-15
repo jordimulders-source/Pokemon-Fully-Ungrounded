@@ -32,3 +32,12 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Chinchou/Lanturn** (diepzee): 10% bloedrode diepzeevis, 6% zilveren lantaarnvis (blauw licht), 4% zwart met cyaan licht, 3% albino grottenvis, 1,5% bioluminescent groen, 0,5% goudvis met witte lamp.
 - **Horsea/Seadra/Kingdra** (zeepaardjes): 10% oranje zeepaardje, 6% pygmeezeepaardje (roze), 4% blad-zeedraak (groengeel), 3% zwart zeepaardje (gele vinnen), 1,5% spookzeepaardje (wit), 0,5% robijn en goud.
 - **Celebi** (Fairy/Grass): 10% herfstblad, 6% winter, 4% lavendelfee, 3% bloemgeel, 1,5% tijdreiziger (blauw), 0,5% GS Ball (goud en zilver: het Celebi-event uit Crystal).
+
+## Groep 18 (Kanto/Johto, revisiesoorten)
+- **Ekans/Arbok** (Arbok Poison/Dark, slangensoorten): 10% koraalslang (rood, gele kap), 6% koperkop, 4% zwarte mamba (zilveren kap), 3% albino python (gele buik), 1,5% blauwe adder, 0,5% Egyptische cobra (turkoois met gouden kap). Geen goud: de Arbok-shiny is goud.
+- **Venonat/Venomoth** (nachtvlinders): 10% rozenmot (rosy maple moth: roze met gele ogen), 6% lunamot (lichtgroen), 4% atlasvlinder (roodbruin), 3% doodshoofdvlinder (zwart met gele ogen), 1,5% witte mot, 0,5% Mothra (oranje met blauwe ogen).
+- **Seel/Dewgong** (Dewgong Ice/Fairy, zeezoogdieren; Spheal had al de zeehonden): 10% doejong (grijs; Dewgong = dugong), 6% zeeolifant (bruin), 4% roze rivierdolfijn (boto), 3% ijsblauw, 1,5% zwarte zeeleeuw, 0,5% amber.
+- **Gastly/Haunter/Gengar** (alleen gas/lijf, Gastly's bol blijft): 10% Slimer-groen, 6% bloedrood, 4% Boo-blauw, 3% witte Boo (Mario), 1,5% Halloween-oranje, 0,5% gouden spook.
+- **Drowzee/Hypno** (Hypno Psychic/Dark; tapir en hypnotiseur): 10% Maleise tapir (zwart boven, wit onder), 6% baku (blauw: de Japanse droomvreter), 4% Freddy Krueger (rood met groen), 3% albino, 1,5% hypnosespiraal (groen), 0,5% paars en goud.
+- **Farfetch'd** (Fighting/Flying): 10% grijze gans, 6% wilde eend, 4% zwarte eend, 3% albino, 1,5% zuurstok (rood met witte prei), 0,5% koningsblauw met gouden zwaard. Galar-Farfetch'd/Sirfetch'd nog niet (moderne sprites).
+- **Dunsparce** (Normal/Ground): 10% groene drakenslang, 6% lavendel (gouden ringen), 4% roodbruin, 3% albino, 1,5% koi (oranje met wit), 0,5% Chinese draak (rood en goud). Dudunsparce nog niet (moderne sprite).

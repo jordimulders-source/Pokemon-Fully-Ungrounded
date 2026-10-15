@@ -27,6 +27,12 @@ static const u16 sVariants_Wartortle[] = INCBIN_U16("graphics/pokemon/wartortle/
 #if (P_FAMILY_SQUIRTLE)
 static const u16 sVariants_Blastoise[] = INCBIN_U16("graphics/pokemon/blastoise/variants.gbapal");
 #endif
+#if (P_FAMILY_EKANS)
+static const u16 sVariants_Ekans[] = INCBIN_U16("graphics/pokemon/ekans/variants.gbapal");
+#endif
+#if (P_FAMILY_EKANS)
+static const u16 sVariants_Arbok[] = INCBIN_U16("graphics/pokemon/arbok/variants.gbapal");
+#endif
 #if (P_FAMILY_PIKACHU) && (P_GEN_2_CROSS_EVOS)
 static const u16 sVariants_Pichu[] = INCBIN_U16("graphics/pokemon/pichu/variants.gbapal");
 #endif
@@ -93,6 +99,12 @@ static const u16 sVariants_Vileplume[] = INCBIN_U16("graphics/pokemon/vileplume/
 #if (P_FAMILY_ODDISH) && (P_GEN_2_CROSS_EVOS)
 static const u16 sVariants_Bellossom[] = INCBIN_U16("graphics/pokemon/bellossom/variants.gbapal");
 #endif
+#if (P_FAMILY_VENONAT)
+static const u16 sVariants_Venonat[] = INCBIN_U16("graphics/pokemon/venonat/variants.gbapal");
+#endif
+#if (P_FAMILY_VENONAT)
+static const u16 sVariants_Venomoth[] = INCBIN_U16("graphics/pokemon/venomoth/variants.gbapal");
+#endif
 #if (P_FAMILY_PSYDUCK)
 static const u16 sVariants_Psyduck[] = INCBIN_U16("graphics/pokemon/psyduck/variants.gbapal");
 #endif
@@ -141,11 +153,20 @@ static const u16 sVariants_Magneton[] = INCBIN_U16("graphics/pokemon/magneton/va
 #if (P_FAMILY_MAGNEMITE) && (P_GEN_4_CROSS_EVOS)
 static const u16 sVariants_Magnezone[] = INCBIN_U16("graphics/pokemon/magnezone/variants.gbapal");
 #endif
+#if (P_FAMILY_FARFETCHD)
+static const u16 sVariants_Farfetchd[] = INCBIN_U16("graphics/pokemon/farfetchd/variants.gbapal");
+#endif
 #if (P_FAMILY_DODUO)
 static const u16 sVariants_Doduo[] = INCBIN_U16("graphics/pokemon/doduo/variants.gbapal");
 #endif
 #if (P_FAMILY_DODUO)
 static const u16 sVariants_Dodrio[] = INCBIN_U16("graphics/pokemon/dodrio/variants.gbapal");
+#endif
+#if (P_FAMILY_SEEL)
+static const u16 sVariants_Seel[] = INCBIN_U16("graphics/pokemon/seel/variants.gbapal");
+#endif
+#if (P_FAMILY_SEEL)
+static const u16 sVariants_Dewgong[] = INCBIN_U16("graphics/pokemon/dewgong/variants.gbapal");
 #endif
 #if (P_FAMILY_GRIMER)
 static const u16 sVariants_Grimer[] = INCBIN_U16("graphics/pokemon/grimer/variants.gbapal");
@@ -164,6 +185,21 @@ static const u16 sVariants_GrimerHoenn[] = INCBIN_U16("graphics/pokemon/grimer/h
 #endif
 #if (P_FAMILY_GRIMER)
 static const u16 sVariants_MukHoenn[] = INCBIN_U16("graphics/pokemon/muk/hoenn/variants.gbapal");
+#endif
+#if (P_FAMILY_GASTLY)
+static const u16 sVariants_Gastly[] = INCBIN_U16("graphics/pokemon/gastly/variants.gbapal");
+#endif
+#if (P_FAMILY_GASTLY)
+static const u16 sVariants_Haunter[] = INCBIN_U16("graphics/pokemon/haunter/variants.gbapal");
+#endif
+#if (P_FAMILY_GASTLY)
+static const u16 sVariants_Gengar[] = INCBIN_U16("graphics/pokemon/gengar/variants.gbapal");
+#endif
+#if (P_FAMILY_DROWZEE)
+static const u16 sVariants_Drowzee[] = INCBIN_U16("graphics/pokemon/drowzee/variants.gbapal");
+#endif
+#if (P_FAMILY_DROWZEE)
+static const u16 sVariants_Hypno[] = INCBIN_U16("graphics/pokemon/hypno/variants.gbapal");
 #endif
 #if (P_FAMILY_VOLTORB)
 static const u16 sVariants_Voltorb[] = INCBIN_U16("graphics/pokemon/voltorb/variants.gbapal");
@@ -257,6 +293,9 @@ static const u16 sVariants_Girafarig[] = INCBIN_U16("graphics/pokemon/girafarig/
 #endif
 #if (P_FAMILY_GIRAFARIG) && (P_GEN_9_CROSS_EVOS)
 static const u16 sVariants_Farigiraf[] = INCBIN_U16("graphics/pokemon/farigiraf/variants.gbapal");
+#endif
+#if (P_FAMILY_DUNSPARCE)
+static const u16 sVariants_Dunsparce[] = INCBIN_U16("graphics/pokemon/dunsparce/variants.gbapal");
 #endif
 #if (P_FAMILY_HERACROSS)
 static const u16 sVariants_Heracross[] = INCBIN_U16("graphics/pokemon/heracross/variants.gbapal");
@@ -759,6 +798,12 @@ const struct VariantPalettes gVariantPalettes[] =
 #if (P_FAMILY_SQUIRTLE)
     {gMonPalette_Blastoise, sVariants_Blastoise},
 #endif
+#if (P_FAMILY_EKANS)
+    {gMonPalette_Ekans, sVariants_Ekans},
+#endif
+#if (P_FAMILY_EKANS)
+    {gMonPalette_Arbok, sVariants_Arbok},
+#endif
 #if (P_FAMILY_PIKACHU) && (P_GEN_2_CROSS_EVOS)
     {gMonPalette_Pichu, sVariants_Pichu},
 #endif
@@ -825,6 +870,12 @@ const struct VariantPalettes gVariantPalettes[] =
 #if (P_FAMILY_ODDISH) && (P_GEN_2_CROSS_EVOS)
     {gMonPalette_Bellossom, sVariants_Bellossom},
 #endif
+#if (P_FAMILY_VENONAT)
+    {gMonPalette_Venonat, sVariants_Venonat},
+#endif
+#if (P_FAMILY_VENONAT)
+    {gMonPalette_Venomoth, sVariants_Venomoth},
+#endif
 #if (P_FAMILY_PSYDUCK)
     {gMonPalette_Psyduck, sVariants_Psyduck},
 #endif
@@ -873,11 +924,20 @@ const struct VariantPalettes gVariantPalettes[] =
 #if (P_FAMILY_MAGNEMITE) && (P_GEN_4_CROSS_EVOS)
     {gMonPalette_Magnezone, sVariants_Magnezone},
 #endif
+#if (P_FAMILY_FARFETCHD)
+    {gMonPalette_Farfetchd, sVariants_Farfetchd},
+#endif
 #if (P_FAMILY_DODUO)
     {gMonPalette_Doduo, sVariants_Doduo},
 #endif
 #if (P_FAMILY_DODUO)
     {gMonPalette_Dodrio, sVariants_Dodrio},
+#endif
+#if (P_FAMILY_SEEL)
+    {gMonPalette_Seel, sVariants_Seel},
+#endif
+#if (P_FAMILY_SEEL)
+    {gMonPalette_Dewgong, sVariants_Dewgong},
 #endif
 #if (P_FAMILY_GRIMER)
     {gMonPalette_Grimer, sVariants_Grimer},
@@ -896,6 +956,21 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_GRIMER)
     {gMonPalette_MukHoenn, sVariants_MukHoenn},
+#endif
+#if (P_FAMILY_GASTLY)
+    {gMonPalette_Gastly, sVariants_Gastly},
+#endif
+#if (P_FAMILY_GASTLY)
+    {gMonPalette_Haunter, sVariants_Haunter},
+#endif
+#if (P_FAMILY_GASTLY)
+    {gMonPalette_Gengar, sVariants_Gengar},
+#endif
+#if (P_FAMILY_DROWZEE)
+    {gMonPalette_Drowzee, sVariants_Drowzee},
+#endif
+#if (P_FAMILY_DROWZEE)
+    {gMonPalette_Hypno, sVariants_Hypno},
 #endif
 #if (P_FAMILY_VOLTORB)
     {gMonPalette_Voltorb, sVariants_Voltorb},
@@ -989,6 +1064,9 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_GIRAFARIG) && (P_GEN_9_CROSS_EVOS)
     {gMonPalette_Farigiraf, sVariants_Farigiraf},
+#endif
+#if (P_FAMILY_DUNSPARCE)
+    {gMonPalette_Dunsparce, sVariants_Dunsparce},
 #endif
 #if (P_FAMILY_HERACROSS)
     {gMonPalette_Heracross, sVariants_Heracross},

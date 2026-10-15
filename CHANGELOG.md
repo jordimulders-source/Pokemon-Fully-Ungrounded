@@ -18924,3 +18924,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Kleurvarianten, groep 16 (Hoenn-dex-rest, deel 1):** Igglybuff-lijn, Staryu-lijn, Vulpix-lijn (ook Alola), Pichu-lijn (ook Alola-Raichu; Pikachu-kostuums niet), Psyduck-lijn, Natu-lijn, Girafarig/Farigiraf (moderne sprite: alleen de oranje vacht), Phanpy-lijn. Inspiratie per variant: `tools/grounded/variants/KEURING.md`.
 
 - **Kleurvarianten, groep 17 (Hoenn-dex-rest, deel 2):** Pinsir, Heracross, Rhyhorn-lijn (Rhyperior met eigen, donkerder doelkleuren), Corsola (Galar-Corsola/Cursola nog niet: moderne, bijna witte sprites), Chinchou-lijn, Horsea-lijn, Celebi. Hiermee heeft de hele Hoenn-dex varianten (Castform: per weervorm). Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 18 (Kanto/Johto, revisiesoorten):** Ekans-lijn, Venonat-lijn, Seel-lijn, Gastly-lijn, Drowzee-lijn, Farfetch'd (Galar-vormen nog niet), Dunsparce (Dudunsparce nog niet). Inspiratie: `KEURING.md`.

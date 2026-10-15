@@ -1,4 +1,5 @@
 #include "global.h"
+#include "mon_variants.h"
 #include "malloc.h"
 #include "data.h"
 #include "decompress.h"
@@ -1130,7 +1131,9 @@ void LoadSpecialPokePic(void *dest, s32 species, u32 personality, bool8 isFrontP
     if (species == SPECIES_UNOWN)
         species = GetUnownSpeciesId(personality);
 
-    if (isFrontPic)
+    if (GetVariantMonPic(species, personality, isFrontPic) != NULL)
+        DecompressDataWithHeaderWram(GetVariantMonPic(species, personality, isFrontPic), dest);
+    else if (isFrontPic)
     {
     #if P_GENDER_DIFFERENCES
         if (gSpeciesInfo[species].frontPicFemale != NULL && IsPersonalityFemale(species, personality))

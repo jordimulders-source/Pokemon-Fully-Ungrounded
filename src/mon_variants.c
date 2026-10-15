@@ -2,6 +2,7 @@
 #include "battle_main.h"
 #include "mon_variants.h"
 #include "pokemon.h"
+#include "constants/species.h"
 
 // Kansen in promille, cumulatief: 75% normaal, dan 10 / 6 / 4 / 3 / 1,5 / 0,5%.
 // Debug/emulatortests: 1..7 forceert variant 0..6 voor elke Pokémon.
@@ -86,4 +87,32 @@ u32 ApplyTrainerMonVariant(u32 personality, u32 trainerVariant, u32 nature)
     if (!TRAINER_MON_VARIANTS_RANDOM)
         return SetPersonalityVariant(personality, MON_VARIANT_NORMAL, nature);
     return personality;
+}
+
+// Een paar soorten hebben per variant een eigen sprite (Voltorb/Electrode als Poké Balls).
+struct VariantMonPic
+{
+    u16 species;
+    u8 variant;
+    const u32 *front;
+    const u32 *back;
+};
+
+#include "data/pokemon/variant_pics.h"
+
+// NULL = gewone sprite. De patroonpixels gebruiken vrije paletindexen die in het normale
+// en het shiny-palet dezelfde kleur hebben als de bal, dus een shiny ziet er normaal uit.
+const u32 *GetVariantMonPic(u16 species, u32 personality, bool32 isFrontPic)
+{
+    u32 i, variant;
+
+    if (species != SPECIES_VOLTORB && species != SPECIES_ELECTRODE)
+        return NULL;
+    variant = GetVariantFromPersonality(personality);
+    for (i = 0; i < ARRAY_COUNT(sVariantMonPics); i++)
+    {
+        if (sVariantMonPics[i].species == species && sVariantMonPics[i].variant == variant)
+            return isFrontPic ? sVariantMonPics[i].front : sVariantMonPics[i].back;
+    }
+    return NULL;
 }

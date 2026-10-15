@@ -18834,3 +18834,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Meditite-lijn: Shaolin-monnik, zen, Krishna (blauwe huid), albino, Ryu (Street Fighter), verlicht (goud).
   - Electrike-lijn: teslaspoel, stormwolk, plasma, albino, Raikou-kleuren, Thor.
   - Plusle en Minun samen: omgewisseld, pastelroze, batterij, albino, Halloween, Ladybug en Cat Noir.
+- Kleurvarianten groep 6 bijgewerkt (Jordi):
+  - Sableye naar de Pokémon-games: Gold/Silver/Crystal (ogen goud en zilver, crystal-borststeen), Diamond/Pearl/Platinum, Ruby/Sapphire/Emerald (1,5%); oogranden neutraal donker voor meer contrast; obsidiaan, albino en Gollum blijven.
+  - Medicham-lijn: Z-fighter (Dragon Ball-gi), Akuma, verlicht met rode monnikspij (de laatste drie leken op elkaar).
+  - Electrike-lijn: Zekrom-kleuren i.p.v. stormwolk (leek op de shiny).
+  - Plusle en Minun contrasteren in de middelste varianten: pastel (roze/mint), batterij (koper/zwart), yin en yang.

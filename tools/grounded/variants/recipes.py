@@ -492,16 +492,21 @@ LINES = {
 
     # --- Hoenn-dex, groep 6 ---
     'sableye': {
-        # eye2 = rechteroog (eigen indexen via sprite_fixes.py)
-        'species': {'sableye': {'body': [1, 2, 5], 'eyes': [7, 8, 9, 11], 'eye2': [6, 15], 'gem': [12, 13, 14]}},
+        # eye2 = rechteroog (eigen indexen via sprite_fixes.py); rim = oogrand (beide ogen)
+        'species': {'sableye': {'body': [1, 2, 5], 'eyes': [7, 8], 'rim': [9, 11], 'eye2': [6, 15], 'gem': [12, 13, 14]}},
         'variants': [
-            {'naam': 'Rozenkwarts', 'body': '#d08ca4', 'eyes': '#f0f0f8', 'eye2': '#f0f0f8', 'gem': '#8040b0'},
-            {'naam': 'Obsidiaan', 'body': ('#2c2830', {'l': 1.3}), 'eyes': '#e02838', 'eye2': '#e02838', 'gem': '#30c060'},
-            {'naam': 'Jadegeest', 'body': '#3c8c6c', 'eyes': '#e8f0f8', 'eye2': '#e8f0f8', 'gem': '#e02838'},
-            {'naam': 'Albino', 'body': ('#c8c4d4', ALBINO), 'eyes': '#e02838', 'eye2': '#e02838', 'gem': '#f0a8b8'},
-            {'naam': 'Schatkist (saffier, smaragd, robijn)', 'body': '#7c1c30', 'eyes': '#2858d0', 'eye2': '#20b058',
-             'gem': '#c82838'},
-            {'naam': 'Gollum (my precious)', 'body': '#9ca08c', 'eyes': '#a8d0f0', 'eye2': '#a8d0f0', 'gem': '#e0b030'},
+            {'naam': 'Gold, Silver en Crystal', 'body': ('#34343c', {'l': 1.3}), 'eyes': '#f0c030', 'eye2': '#d0d4e0',
+             'rim': '#202024', 'gem': '#b8f0f8'},
+            {'naam': 'Obsidiaan', 'body': ('#2c2830', {'l': 1.3}), 'eyes': '#e02838', 'eye2': '#e02838', 'rim': '#801820',
+             'gem': '#30c060'},
+            {'naam': 'Diamond, Pearl en Platinum', 'body': ('#2c3448', {'l': 1.3}), 'eyes': '#a8d8f8', 'eye2': '#f4c8d8',
+             'rim': '#202430', 'gem': '#c4c8d0'},
+            {'naam': 'Albino', 'body': ('#c8c4d4', ALBINO), 'eyes': '#e02838', 'eye2': '#e02838', 'rim': '#901828',
+             'gem': '#f0a8b8'},
+            {'naam': 'Ruby, Sapphire en Emerald', 'body': ('#3a2a20', {'l': 1.3}), 'eyes': '#e02030', 'eye2': '#2850e0',
+             'rim': '#1c1418', 'gem': '#20c058'},
+            {'naam': 'Gollum (my precious)', 'body': '#9ca08c', 'eyes': '#a8d0f0', 'eye2': '#a8d0f0', 'rim': '#4888a8',
+             'gem': '#e0b030'},
         ],
     },
     'mawile': {
@@ -536,12 +541,12 @@ LINES = {
             'medicham': {'clothes': [1, 3, 4, 5, 13], 'skin': [6, 7, 8, 9, 10], 'gold': [11, 12, 15]},
         },
         'variants': [
-            {'naam': 'Shaolin-monnik', 'clothes': '#e08820', 'gold': '#c84020'},
+            {'naam': 'Z-fighter (Dragon Ball)', 'clothes': '#f07818', 'gold': '#2850c0', 'red': '#2850c0'},
             {'naam': 'Zen (jadegroen)', 'clothes': '#48a070', 'gold': '#e8e0c8'},
             {'naam': 'Krishna (blauwe huid)', 'skin': '#5878d0', 'clothes': '#f0c030', 'gold': '#e8d8a0'},
             {'naam': 'Albino', 'skin': ('#e0dcdc', ALBINO), 'clothes': ('#e8c8d0', ALBINO), 'red': '#e02838'},
-            {'naam': 'Ryu (Street Fighter)', 'clothes': '#e8e4dc', 'gold': '#d02020', 'red': '#d02020'},
-            {'naam': 'Verlicht (goud)', 'skin': '#e0b030', 'clothes': '#f0ece0', 'gold': '#c82020'},
+            {'naam': 'Akuma (Street Fighter)', 'clothes': ('#2c2c34', {'l': 1.3}), 'gold': '#c02020', 'red': '#c02020'},
+            {'naam': 'Verlicht (goud, monnikspij)', 'skin': '#e0b030', 'clothes': '#a02028', 'gold': '#f0c830'},
         ],
     },
     'electrike': {
@@ -551,7 +556,7 @@ LINES = {
         },
         'variants': [
             {'naam': 'Teslaspoel (koper)', 'body': '#b86838', 'yellow': '#40a0f0'},
-            {'naam': 'Stormwolk', 'body': '#7c8494'},
+            {'naam': 'Zekrom-kleuren', 'body': ('#2c2c34', {'l': 1.3}), 'yellow': '#40a8f0'},
             {'naam': 'Plasma', 'body': '#7040c0', 'yellow': '#40d8f0'},
             {'naam': 'Albino', 'body': ('#d0d0c8', ALBINO), 'yellow': ('#ece8d0', ALBINO)},
             {'naam': 'Raikou-kleuren', 'body': '#e8c030', 'yellow': '#6040a0'},
@@ -566,9 +571,11 @@ LINES = {
         },
         'variants': [
             {'naam': 'Omgewisseld', 'plusle:accent': '#5880e8', 'minun:accent': '#d84840'},
-            {'naam': 'Pastelroze', 'accent': '#f090b8'},
-            {'naam': 'Batterij', 'accent': ('#2c2c30', {'l': 1.3}), 'cream': '#c87838'},
-            {'naam': 'Albino', 'accent': '#e8c0c8', 'cream': ('#ece8e0', ALBINO), 'cheeks': '#e02838'},
+            {'naam': 'Pastel', 'plusle:accent': '#f090b8', 'minun:accent': '#78d4b4'},
+            {'naam': 'Batterij (plus koper, min zwart)', 'plusle:accent': '#d08838', 'plusle:cream': ('#34343c', {'l': 1.3}),
+             'minun:accent': ('#2c2c30', {'l': 1.3}), 'minun:cream': '#d8a060'},
+            {'naam': 'Yin en yang', 'plusle:accent': ('#2c2c30', {'l': 1.3}), 'plusle:cream': '#ece8e0',
+             'minun:accent': '#ece8e0', 'minun:cream': ('#34343c', {'l': 1.3})},
             {'naam': 'Halloween', 'plusle:accent': '#f08020', 'minun:accent': '#7838a8'},
             {'naam': 'Ladybug en Cat Noir', 'plusle:cream': ('#2c2c30', {'l': 1.3}), 'minun:accent': ('#2c2c30', {'l': 1.3}),
              'minun:cream': '#f0d060', 'minun:cheeks': '#40c040'},

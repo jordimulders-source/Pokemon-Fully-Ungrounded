@@ -18901,3 +18901,11 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Duskull-lijn 3%: farao (goud en lapis) terug met nettere afwerking: lichter lapis; Dusknoir omgekeerd (lapis mantel, gouden banden) en zijn olijfgrijze handen (index 9/12) uit de schedelgroep, die werden turkoois. Dusknoir 10/6/4% kregen een iets donkerder mantel en gedempte schedeltint.
   - `ramps.py`/`sheet.py` vallen terug op `front.png` als een vorm geen `anim_front.png` heeft (Galar-vormen).
   - Mega-, Primal- en Gmax-vormen krijgen geen varianten (zitten alleen in de Spire; Jordi).
+
+- **Kleurvarianten, groep 14 (Hoenn-dex-aanvulling, revisiesoorten eerst):**
+  - Zubat-lijn: vampiervleermuis, vosvleerhond, Batman, albino, Dracula, Sterrennacht (Van Gogh).
+  - Tentacool-lijn (echte kwallen): kompaskwal, bloedkwal, oorkwal, spiegeleikwal, gifgroen, sterrenstelselkwal.
+  - Machop-lijn: bronzen beeld, Hulk, Hellboy, albino, Na'vi (Avatar), Super Saiyan God.
+  - Magnemite-lijn: koper, R2-D2, WALL-E, gunmetal, hoefijzermagneet, Gouden Snaai.
+  - Voltorb/Electrode (ook Hisui) als Poké Balls: Ultra, Love, Net, Premier, Dusk, Luxury (Hisui: Master-paars, want de Hisui-shiny is zwart).
+  - Oddish-lijn (bloemen; Oddish' bladeren dragen de kleur van de latere bloem): witte rafflesia, blauwe lotus, lijkbloem, zonnebloem, sakura, alruin (Harry Potter).

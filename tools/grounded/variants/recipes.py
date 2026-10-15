@@ -1264,4 +1264,98 @@ LINES = {
             {'naam': 'Daft Punk (goud en chroom)', 'light': '#e0b030', 'grey': '#c0c8d0'},
         ],
     },
+    # --- groep 14 (Hoenn-dex-aanvulling, revisiesoorten eerst) ---
+    'zubat': {
+        'species': {
+            'zubat': {'body': [9, 8, 7, 6], 'wing': [13, 12, 11]},
+            'golbat': {'body': [8, 7, 6, 5], 'wing': [12, 11, 10, 9]},
+            'crobat': {'body': [1, 2, 7, 3], 'wing': [5, 6, 8]},
+        },
+        'variants': [
+            {'naam': 'Vampiervleermuis', 'body': '#6a4a38', 'wing': '#d89090'},
+            {'naam': 'Vosvleerhond', 'body': '#c87830', 'wing': '#3c2c28'},
+            {'naam': 'Batman', 'body': ('#34343c', {'l': 1.3}), 'wing': '#e0c030'},
+            {'naam': 'Albino', 'body': ('#e4dcdc', ALBINO), 'wing': '#f0b8c0'},
+            {'naam': 'Dracula', 'body': ('#24242c', {'l': 1.3}), 'wing': '#a01828'},
+            {'naam': 'Sterrennacht (Van Gogh)', 'body': '#2c4890', 'wing': '#f0d040'},
+        ],
+    },
+    'tentacool': {
+        'species': {
+            'tentacool': {'body': [4, 5, 6, 7], 'gems': [8, 9, 10, 11], 'tentacles': [12, 13, 14, 15]},
+            'tentacruel': {'body': [14, 13, 12, 11], 'gems': [5, 4, 3, 2], 'tentacles': [9, 8, 7, 6]},
+        },
+        'variants': [
+            {'naam': 'Kompaskwal', 'body': '#e8c070', 'gems': '#a03018', 'tentacles': '#a05030'},
+            {'naam': 'Bloedkwal', 'body': '#d84040', 'gems': '#f4f0f0', 'tentacles': '#f0a0a0'},
+            {'naam': 'Oorkwal (doorzichtig)', 'body': '#d0dcec', 'gems': '#e080c0', 'tentacles': '#e8e0f0'},
+            {'naam': 'Spiegeleikwal', 'body': '#f0e8c0', 'gems': '#f0a020', 'tentacles': '#c8b060'},
+            {'naam': 'Gifgroen', 'body': '#60b040', 'gems': '#8030a0'},
+            {'naam': 'Sterrenstelselkwal', 'body': '#382c70', 'gems': '#f070d0', 'tentacles': '#70e0f0'},
+        ],
+    },
+    'machop': {
+        'species': {
+            'machop': {'body': [2, 3, 4, 5, 6], 'crest': [8, 9, 10, 11], 'eyes': [13, 14]},
+            'machoke': {'body': [3, 4, 5, 6, 7], 'crest': [8, 9, 10, 11], 'briefs': [2]},
+            'machamp': {'body': [3, 4, 5, 6], 'crest': [7, 8, 9, 10, 11], 'briefs': [2]},
+        },
+        'variants': [
+            {'naam': 'Bronzen beeld', 'body': '#b07838', 'crest': '#e0c890'},
+            {'naam': 'Hulk', 'body': '#5aa040', 'briefs': '#6a3c90', 'crest': '#2c2830'},
+            {'naam': 'Hellboy', 'body': '#c03028', 'crest': '#2c2c30', 'briefs': '#2c2c30'},
+            {'naam': 'Albino', 'body': ('#e0d8d8', ALBINO), 'crest': '#f0e8e0', 'eyes': '#e02838'},
+            {'naam': "Na'vi (Avatar)", 'body': '#3c78c8', 'crest': '#2c2830'},
+            {'naam': 'Super Saiyan God', 'body': '#e0b030', 'crest': '#c02828', 'briefs': '#3050b0'},
+        ],
+    },
+    'magnemite': {
+        'species': {
+            'magnemite': {'body': [14, 13, 12, 11], 'steel': [6, 5, 4, 3, 2], 'red': [8, 7], 'blue': [10, 9]},
+            'magneton': {'body': [14, 13, 12, 11], 'steel': [6, 5, 4, 3, 2], 'red': [8, 7], 'blue': [10, 9]},
+            'magnezone': {'body': [12, 10, 9, 11], 'steel': [7, 6], 'red': [14, 13], 'blue': [15], 'antenna': [1, 4]},
+        },
+        'variants': [
+            {'naam': 'Koper', 'body': '#c07838'},
+            {'naam': 'R2-D2 (wit met blauw)', 'body': '#e4e4ec', 'steel': '#3050b0'},
+            {'naam': 'WALL-E (geel en roest)', 'body': '#d8a030', 'steel': '#8a5a38'},
+            {'naam': 'Gunmetal', 'body': ('#3a3c48', {'l': 1.3}), 'red': '#40d0f0', 'blue': '#f0e040'},
+            {'naam': 'Hoefijzermagneet', 'body': '#c83030', 'steel': '#d0d4dc'},
+            {'naam': 'Gouden Snaai (Harry Potter)', 'body': '#e0b030', 'steel': '#f0e8c8', 'antenna': '#f0f0f0'},
+        ],
+    },
+    'voltorb': {
+        # Poké Ball-skins; Hisui-vormen (moderne sprites): alleen het gekleurde deel
+        'species': {
+            'voltorb': {'red': [14, 13, 12, 11, 10, 9], 'white': [4, 3, 2, 1]},
+            'electrode': {'red': [14, 13, 12, 11, 10], 'white': [4, 3, 2, 1]},
+            'voltorb/hisui': {'red': [2, 3, 4, 5, 6, 7]},
+            'electrode/hisui': {'red': [10, 14, 8, 9]},
+        },
+        'variants': [
+            {'naam': 'Ultra Ball (geel)', 'red': '#f0c830'},
+            {'naam': 'Love Ball', 'red': '#f080b0'},
+            {'naam': 'Net Ball', 'red': '#40b0b0'},
+            {'naam': 'Premier Ball', 'red': '#e8e8ec'},
+            {'naam': 'Dusk Ball', 'red': '#40a040', 'white': ('#2c2c30', {'l': 1.3})},
+            {'naam': 'Luxury Ball', 'red': ('#2c2c34', {'l': 1.3}), 'white': '#e8c860', 'voltorb/hisui:red': '#8040c0', 'electrode/hisui:red': '#8040c0'},
+        ],
+    },
+    'oddish': {
+        # bloemkleuren; Oddish' bladeren dragen de kleur van de latere bloem
+        'species': {
+            'oddish': {'petals': [7, 6, 5, 4], 'body': [14, 13, 12]},
+            'gloom': {'petals': [5, 4, 3, 2], 'center': [9, 8, 7], 'body': [14, 13, 12, 11]},
+            'vileplume': {'petals': [8, 6, 7, 10, 9, 1], 'center': [4, 3, 2], 'body': [14, 13, 12]},
+            'bellossom': {'petals': [1, 7, 2], 'center': [6, 5, 4]},
+        },
+        'variants': [
+            {'naam': 'Witte rafflesia', 'petals': '#e8e4dc', 'center': '#a08070'},
+            {'naam': 'Blauwe lotus', 'petals': '#4878d0', 'center': '#f0d040'},
+            {'naam': 'Lijkbloem', 'petals': '#5a2858', 'center': '#e8d8a0', 'body': '#3c4a30'},
+            {'naam': 'Zonnebloem', 'petals': '#f0c020', 'center': '#5a3018'},
+            {'naam': 'Sakura', 'petals': '#f4b0c8', 'center': '#a04868', 'body': '#706078'},
+            {'naam': 'Alruin (Harry Potter)', 'body': '#a07850', 'petals': '#c06080', 'center': '#3a6a30'},
+        ],
+    },
 }

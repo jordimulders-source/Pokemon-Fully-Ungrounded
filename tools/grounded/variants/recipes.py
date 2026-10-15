@@ -674,4 +674,86 @@ LINES = {
             {'naam': 'Lavalamp', 'body': '#8040b0', 'hump': '#f08030', 'rings': '#c8f040'},
         ],
     },
+
+    # --- Hoenn-dex, groep 8 ---
+    'torkoal': {
+        'species': {'torkoal': {'smoke': [1, 2, 3], 'shell': [4, 10, 12], 'body': [5, 6, 7, 8, 9]}},
+        'variants': [
+            {'naam': 'Steenkool', 'shell': ('#2c2c30', {'l': 1.3}), 'smoke': '#707078'},
+            {'naam': 'Delfts blauw', 'shell': '#d8e0f0', 'body': '#3858b0'},
+            {'naam': 'Xuanwu (jadeschildpad)', 'shell': '#3c9c6c', 'body': '#e0b030'},
+            {'naam': 'Albino', 'shell': '#d8d0d0', 'body': ('#f0d0c8', ALBINO)},
+            {'naam': 'Stoomlocomotief (Thomas)', 'body': '#2860c0', 'shell': '#c02828'},
+            {'naam': 'Groene vlam (koper)', 'smoke': '#90e090', 'body': '#c87838', 'shell': '#3c6c48'},
+        ],
+    },
+    'spoink': {
+        'species': {
+            'spoink': {'dark': [7, 8, 9, 10], 'pearl': [1, 2, 3, 5]},
+            'grumpig': {'fur': [6, 8, 9, 10], 'dark': [1, 2, 3, 5], 'pearl': [7, 11, 13, 15]},
+        },
+        'variants': [
+            {'naam': 'Boerderijvarken', 'dark': '#e8a0b0', 'fur': '#f0b8c4'},
+            {'naam': 'Wild zwijn', 'dark': '#6c4c34', 'fur': '#9c7458', 'pearl': '#f0e8d8'},
+            {'naam': 'Parelmoer', 'pearl': '#b8f0f0', 'fur': '#b8a0e0'},
+            {'naam': 'Albino', 'dark': ('#d0ccd0', ALBINO), 'fur': ('#ece0e8', ALBINO), 'pearl': '#e02838'},
+            {'naam': 'Miss Piggy', 'fur': '#f0a0b8', 'dark': '#9070c0', 'pearl': '#f0f0f0'},
+            {'naam': 'Discobal', 'dark': ('#2c2c34', {'l': 1.3}), 'fur': '#c4ccdc', 'pearl': '#e030a0'},
+        ],
+    },
+    'spinda': {
+        # vlekken worden in de game getekend met index 5-7
+        'species': {'spinda': {'body': [1, 2, 3], 'spots': [5, 6, 7], 'ears': [4, 13, 14]}},
+        'variants': [
+            {'naam': 'Reuzenpanda', 'body': '#dcdce0', 'spots': ('#2c2c30', {'l': 1.3}), 'ears': '#2c2c30'},
+            {'naam': 'Rode panda', 'body': '#c06030', 'spots': '#f0e0c8', 'ears': '#4c2818'},
+            {'naam': 'Giraf', 'body': '#e8c860', 'spots': '#7c4c20'},
+            {'naam': 'Albino', 'body': ('#ece8e4', ALBINO), 'spots': '#f0b8c4', 'ears': '#c8b8b8'},
+            {'naam': 'Psychedelisch', 'body': '#f0e890', 'spots': '#d030a0', 'ears': '#3080d0'},
+            {'naam': 'Kungfumeester', 'body': '#c02028', 'spots': '#e8c030', 'ears': '#2c2c30'},
+        ],
+    },
+    'trapinch': {
+        'species': {
+            'trapinch': {'body': [1, 2, 3, 4]},
+            'vibrava': {'body': [7, 8, 11, 12], 'wings': [5, 6, 13]},
+            'flygon': {'body': [10, 12, 14, 15], 'wings': [1, 2, 3, 5], 'red': [6, 7, 9, 11]},
+        },
+        'variants': [
+            {'naam': 'Obsidiaan', 'body': ('#34343c', {'l': 1.3}), 'wings': '#e05028', 'red': '#f0c030'},
+            {'naam': 'Garchomp-kleuren', 'body': '#4c5c98', 'wings': '#c83030', 'red': '#f0c030'},
+            {'naam': 'Glanzende libel', 'body': '#30a8b0', 'wings': '#80d8f0', 'red': '#f0d030'},
+            {'naam': 'Albino', 'body': ('#e0d8d0', ALBINO), 'wings': ('#d4dcd4', ALBINO), 'red': '#e02838'},
+            {'naam': 'Mars', 'body': '#a84828', 'wings': '#f08040', 'red': '#f0d8a0'},
+            {'naam': 'Ghidorah (goud)', 'body': '#e0b030', 'wings': '#c88820', 'red': '#d02020'},
+        ],
+    },
+    'cacnea': {
+        'species': {
+            'cacnea': {'body': [5, 6, 7, 8, 9, 10, 11, 12], 'flower': [3, 4]},
+            'cacturne': {'body': [3, 4, 5, 6, 8, 9, 13, 14], 'dark': [1, 7], 'eyes': [12]},
+        },
+        'variants': [
+            {'naam': 'Opuntia', 'body': '#5c9c9c', 'flower': '#f070a8', 'eyes': '#f070a8'},
+            {'naam': 'Rode maancactus', 'body': '#d03040', 'flower': '#f0e030', 'dark': '#6c1420'},
+            {'naam': 'Pompoenvogelverschrikker', 'body': '#e07828', 'dark': '#2c2028', 'flower': '#58a038', 'eyes': '#f0e030'},
+            {'naam': 'Albino', 'body': ('#dcdcd0', ALBINO), 'flower': '#f0c0c8', 'eyes': '#e02838'},
+            {'naam': 'Woestijnnacht', 'body': '#6848a0', 'dark': '#28203c', 'flower': '#f0f0f8', 'eyes': '#f0f0a0'},
+            {'naam': 'Snoepcactus', 'body': '#80e0c0', 'flower': '#f080c0', 'dark': '#3c8c80', 'eyes': '#f080c0'},
+        ],
+    },
+    'swablu': {
+        'species': {
+            'swablu': {'blue': [1, 2, 3, 4], 'cotton': [6, 7, 8, 9, 10, 11]},
+            'altaria': {'blue': [1, 3, 4, 5, 6], 'cotton': [7, 8, 9, 10, 11]},
+        },
+        'variants': [
+            {'naam': 'Suikerspin', 'cotton': '#f0b8d0'},
+            {'naam': 'Onweerswolk', 'cotton': '#787c88', 'blue': '#f0d020'},
+            {'naam': 'Zonsondergang', 'cotton': '#f8c8a0', 'blue': '#7848b0'},
+            {'naam': 'Pauw', 'blue': '#209890', 'cotton': '#c8d878'},
+            {'naam': 'Kinto-un (Dragon Ball)', 'cotton': '#f0d040', 'blue': '#e07020'},
+            {'naam': 'Nachtwolk', 'cotton': ('#38306a', {'l': 1.2}), 'blue': '#e0b030'},
+        ],
+    },
 }

@@ -285,6 +285,39 @@ static const u16 sVariants_Numel[] = INCBIN_U16("graphics/pokemon/numel/variants
 #if (P_FAMILY_NUMEL)
 static const u16 sVariants_Camerupt[] = INCBIN_U16("graphics/pokemon/camerupt/variants.gbapal");
 #endif
+#if (P_FAMILY_TORKOAL)
+static const u16 sVariants_Torkoal[] = INCBIN_U16("graphics/pokemon/torkoal/variants.gbapal");
+#endif
+#if (P_FAMILY_SPOINK)
+static const u16 sVariants_Spoink[] = INCBIN_U16("graphics/pokemon/spoink/variants.gbapal");
+#endif
+#if (P_FAMILY_SPOINK)
+static const u16 sVariants_Grumpig[] = INCBIN_U16("graphics/pokemon/grumpig/variants.gbapal");
+#endif
+#if (P_FAMILY_SPINDA)
+static const u16 sVariants_Spinda[] = INCBIN_U16("graphics/pokemon/spinda/variants.gbapal");
+#endif
+#if (P_FAMILY_TRAPINCH)
+static const u16 sVariants_Trapinch[] = INCBIN_U16("graphics/pokemon/trapinch/variants.gbapal");
+#endif
+#if (P_FAMILY_TRAPINCH)
+static const u16 sVariants_Vibrava[] = INCBIN_U16("graphics/pokemon/vibrava/variants.gbapal");
+#endif
+#if (P_FAMILY_TRAPINCH)
+static const u16 sVariants_Flygon[] = INCBIN_U16("graphics/pokemon/flygon/variants.gbapal");
+#endif
+#if (P_FAMILY_CACNEA)
+static const u16 sVariants_Cacnea[] = INCBIN_U16("graphics/pokemon/cacnea/variants.gbapal");
+#endif
+#if (P_FAMILY_CACNEA)
+static const u16 sVariants_Cacturne[] = INCBIN_U16("graphics/pokemon/cacturne/variants.gbapal");
+#endif
+#if (P_FAMILY_SWABLU)
+static const u16 sVariants_Swablu[] = INCBIN_U16("graphics/pokemon/swablu/variants.gbapal");
+#endif
+#if (P_FAMILY_SWABLU)
+static const u16 sVariants_Altaria[] = INCBIN_U16("graphics/pokemon/altaria/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -572,6 +605,39 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_NUMEL)
     {gMonPalette_Camerupt, sVariants_Camerupt},
+#endif
+#if (P_FAMILY_TORKOAL)
+    {gMonPalette_Torkoal, sVariants_Torkoal},
+#endif
+#if (P_FAMILY_SPOINK)
+    {gMonPalette_Spoink, sVariants_Spoink},
+#endif
+#if (P_FAMILY_SPOINK)
+    {gMonPalette_Grumpig, sVariants_Grumpig},
+#endif
+#if (P_FAMILY_SPINDA)
+    {gMonPalette_Spinda, sVariants_Spinda},
+#endif
+#if (P_FAMILY_TRAPINCH)
+    {gMonPalette_Trapinch, sVariants_Trapinch},
+#endif
+#if (P_FAMILY_TRAPINCH)
+    {gMonPalette_Vibrava, sVariants_Vibrava},
+#endif
+#if (P_FAMILY_TRAPINCH)
+    {gMonPalette_Flygon, sVariants_Flygon},
+#endif
+#if (P_FAMILY_CACNEA)
+    {gMonPalette_Cacnea, sVariants_Cacnea},
+#endif
+#if (P_FAMILY_CACNEA)
+    {gMonPalette_Cacturne, sVariants_Cacturne},
+#endif
+#if (P_FAMILY_SWABLU)
+    {gMonPalette_Swablu, sVariants_Swablu},
+#endif
+#if (P_FAMILY_SWABLU)
+    {gMonPalette_Altaria, sVariants_Altaria},
 #endif
     {NULL, NULL},
 };

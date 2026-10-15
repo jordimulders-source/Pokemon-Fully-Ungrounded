@@ -18793,3 +18793,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Torchic-lijn: Treecko-kleuren, Mudkip-kleuren, flamingo met cyaan vuur, albino met blauwe vlammen, Ayam Cemani (zwarte kip), Captain Falcon.
   - Mudkip-lijn: Torchic-kleuren, Treecko-kleuren, slijkspringer, albino, koi (Showa), bubblegum.
   - `ramps.py --grid uit.png soort ...` maakt indexkaarten van een hele groep in één beeld.
+- **Kleurvarianten, groep 1 bijgewerkt** (Jordi):
+  - Treecko-lijn in Mudkip-kleuren: hoofdblad en staart in de kleur van Swamperts vinnen, Grovyles armbladeren oranje. Grovyles armbladeren deelden hun indexen met hoofdblad en staart; ze hebben nu eigen indexen (één randtint 13 ging op in de bijna gelijke 5). Sceptiles staartstukje tussen de benen (in lijftint getekend) heeft een eigen index, zodat het met de staart meekleurt. De gewone sprites zien er hetzelfde uit.
+  - Bladstaartgekko vervangen door de **tokeh** (blauwgrijs met oranje).
+  - Mudkip-lijn: twee axolotls, **leucistisch** (roze, roze-rode kieuwen, donkere ogen; i.p.v. albino) en **GFP** (lichtgevend, i.p.v. bubblegum).
+  - `sprite_fixes.py` kan nu ook indexen samenvoegen, vlakvullen vanaf zaadpixels en binnen rechthoeken hernummeren; eenmalig per soort (`sprite_fixes_done.txt`).

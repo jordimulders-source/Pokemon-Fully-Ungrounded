@@ -51,3 +51,17 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Weedle/Kakuna/Beedrill** (wespen en bijen): 10% hoornaar, 6% blauwe houtbij, 4% rode wesp, 3% paarse houtbij, 1,5% albino, 0,5% zwarte hoornaar. Geen groen: de Beedrill-shiny is groen.
 - **Pidgey/Pidgeotto/Pidgeot**: 10% stadsduif, 6% roodborst, 4% pimpelmees (blauw-geel), 3% albino, 1,5% kardinaal (rood met zwarte kuif), 0,5% paradijsvogel (paars met turquoise kuif). Geen goud: de Pidgeot-shiny is goud.
 - **Rattata/Raticate** (ook Alola): 10% witte labrat, 6% chinchilla (blauwgrijs), 4% agouti (roodbruin), 3% naakte molrat (roze), 1,5% fancy rat (oranje), 0,5% gouden rat (Chinese dierenriem).
+
+## Groep 20
+- **Spearow/Fearow** (vogels): 10% torenvalk (roestbruin, blauwgrijze kop), 6% bonte specht (zwart met rood), 4% Vlaamse gaai (beige met blauw), 3% albino, 1,5% groene specht, 0,5% kroonkraanvogel (leigrijs met goud).
+- **Nidoran♀/Nidorina/Nidoqueen**: 10% mint (blauwe vlekken), 6% zand (woestijnkonijn), 4% koraal (gele vlekken), 3% albino, 1,5% zwart (roze vlekken), 0,5% koningin (goud met paarse vlekken).
+- **Nidoran♂/Nidorino/Nidoking**: 10% oranje gif, 6% groen (gele vlekken), 4% grijze haas (rode vlekken), 3% albino, 1,5% zwart (cyaan vlekken), 0,5% koning (goud met rode vlekken). Geen blauw: de ♂-shiny's zijn blauw.
+- **Cleffa/Clefairy/Clefable** (maan): 10% maanwit, 6% maansteen (lila), 4% mint, 3% perzik, 1,5% ruimte (nachtblauw), 0,5% volle maan (goud).
+- **Paras/Parasect** (paddenstoelen): 10% eekhoorntjesbrood, 6% amethistzwam, 4% cordyceps (oranje: de echte parasietzwam achter Parasect), 3% groenplaatzwam, 1,5% indigo-melkzwam (blauw), 0,5% Toad (Mario: wit met rode stippen).
+- **Diglett/Dugtrio** (ook Alola; blond haar blijft): 10% sterneusmol (zwart), 6% gouden mol, 4% mol (grijs), 3% albino, 1,5% naakte molrat (roze), 0,5% amethistgrond.
+- **Meowth/Persian** (ook Alola; katten): 10% rode kater, 6% zwarte kat (groene edelsteen), 4% Siamees, 3% Blauwe Rus (Alola: Abessijn, want Alola is al grijsblauw), 1,5% Sphynx, 0,5% Maneki-neko (wit met rode oren, gouden munt).
+- **Mankey/Primeape** (apen): 10% Japanse makaak (grijs met rode ledematen), 6% gouden stompneusaap (met blauw), 4% gorilla, 3% albino, 1,5% mandril (grijs met rood), 0,5% Sun Wukong (de Apenkoning: goud met rood).
+- **Growlithe/Arcanine** (honden): 10% dobermann (zwart met roest), 6% husky, 4% blauwe chow chow, 3% albino, 1,5% foo-hond (Chinese tempelleeuw: groen en goud), 0,5% blauw vuur.
+
+## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
+Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.

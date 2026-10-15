@@ -1930,4 +1930,143 @@ LINES = {
             {'naam': 'Gouden rat (dierenriem)', 'body': '#d8a828'},
         ],
     },
+    # --- groep 20 (Kanto) ---
+    'spearow': {
+        'species': {
+            'spearow': {'body': [9, 8, 7, 6], 'red': [14, 13, 12, 11, 10]},
+            'fearow': {'body': [6, 5, 4, 3], 'red': [11, 10, 9, 8, 7]},
+        },
+        'variants': [
+            {'naam': 'Torenvalk', 'body': '#a05828', 'red': '#7088a8'},
+            {'naam': 'Bonte specht', 'body': ('#2c2c34', {'l': 1.3}), 'red': '#c02828'},
+            {'naam': 'Vlaamse gaai', 'body': '#c0a090', 'red': '#3a70c0'},
+            {'naam': 'Albino', 'body': ('#ece4e0', ALBINO), 'red': '#f0c8c8'},
+            {'naam': 'Groene specht', 'body': '#4a8a40', 'red': '#c02828'},
+            {'naam': 'Kroonkraanvogel', 'body': '#3a3a48', 'red': '#e0b030'},
+        ],
+    },
+    'nidoran_f': {
+        'species': {
+            'nidoran_f': {'body': [5, 4, 3, 2], 'spots': [8, 10]},
+            'nidorina': {'body': [14, 13, 12, 11], 'spots': [6, 5, 4]},
+            'nidoqueen': {'body': [14, 13, 12, 11]},
+        },
+        'variants': [
+            {'naam': 'Mint', 'body': '#80d0b0', 'spots': '#3060a0'},
+            {'naam': 'Zand (woestijnkonijn)', 'body': '#d0b080', 'spots': '#7a5030'},
+            {'naam': 'Koraal', 'body': '#e06050', 'spots': '#f0d040'},
+            {'naam': 'Albino', 'body': ('#ece4e8', ALBINO), 'spots': '#e0b0c0'},
+            {'naam': 'Zwart', 'body': ('#34343c', {'l': 1.3}), 'spots': '#e04080'},
+            {'naam': 'Koningin (goud)', 'body': '#d8a828', 'spots': '#7040a0'},
+        ],
+    },
+    'nidoran_m': {
+        'species': {
+            'nidoran_m': {'body': [13, 12, 11, 10], 'spots': [8, 7]},
+            'nidorino': {'body': [13, 12, 11, 10], 'spots': [7, 6]},
+            'nidoking': {'body': [14, 13, 12, 11], 'spots': [10, 9, 8]},
+        },
+        'variants': [
+            {'naam': 'Oranje gif', 'body': '#e08030', 'spots': '#3a3a48'},
+            {'naam': 'Groen', 'body': '#50a050', 'spots': '#f0d040'},
+            {'naam': 'Grijze haas', 'body': '#8a8a90', 'spots': '#c02828'},
+            {'naam': 'Albino', 'body': ('#ece4e8', ALBINO), 'spots': '#e0b0c0'},
+            {'naam': 'Zwart', 'body': ('#34343c', {'l': 1.3}), 'spots': '#40c0e0'},
+            {'naam': 'Koning (goud)', 'body': '#d8a828', 'spots': '#c02828'},
+        ],
+    },
+    'clefairy': {
+        'species': {
+            'cleffa': {'body': [5, 1, 4, 3, 2]},
+            'clefairy': {'body': [14, 13, 12, 11]},
+            'clefable': {'body': [8, 7, 6, 4]},
+        },
+        'variants': [
+            {'naam': 'Maanwit', 'body': '#ece8f0'},
+            {'naam': 'Maansteen (lila)', 'body': '#c0a8e8'},
+            {'naam': 'Mint', 'body': '#b0e8c8'},
+            {'naam': 'Perzik', 'body': '#f8c0a0'},
+            {'naam': 'Ruimte (nachtblauw)', 'body': '#384890'},
+            {'naam': 'Volle maan (goud)', 'body': '#f0d060'},
+        ],
+    },
+    'paras': {
+        # Bug/Grass; paddenstoelen
+        'species': {
+            'paras': {'mushroom': [8, 7, 6], 'spots': [4, 5]},
+            'parasect': {'mushroom': [9, 8, 7, 6, 11], 'spots': [5, 4]},
+        },
+        'variants': [
+            {'naam': 'Eekhoorntjesbrood', 'mushroom': '#8a5a30', 'spots': '#e0d0a0'},
+            {'naam': 'Amethistzwam', 'mushroom': '#8050b0', 'spots': '#e0d0f0'},
+            {'naam': 'Cordyceps', 'mushroom': '#e09020', 'spots': '#f8f0c0'},
+            {'naam': 'Groenplaatzwam', 'mushroom': '#60a040', 'spots': '#f0f0d0'},
+            {'naam': 'Indigo-melkzwam', 'mushroom': '#3060b0', 'spots': '#a0c8f0'},
+            {'naam': 'Toad (Mario)', 'mushroom': '#f0f0f0', 'spots': '#d02828'},
+        ],
+    },
+    'diglett': {
+        # mollen; Alola-haar blijft blond
+        'species': {
+            'diglett': {'body': [15, 14, 13, 12]},
+            'dugtrio': {'body': [15, 14, 13, 12]},
+            'diglett/alola': {'body': [3, 1, 6, 5]},
+            'dugtrio/alola': {'body': [5, 1, 4, 3]},
+        },
+        'variants': [
+            {'naam': 'Sterneusmol', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Gouden mol', 'body': ('#c89030', {'h': 0})},
+            {'naam': 'Mol (grijs)', 'body': '#7a7a80'},
+            {'naam': 'Albino', 'body': ('#ece4e0', ALBINO)},
+            {'naam': 'Naakte molrat', 'body': '#f0b0a8'},
+            {'naam': 'Amethistgrond', 'body': '#9070c8'},
+        ],
+    },
+    'meowth': {
+        # katten (Galar-Meowth/Perrserker: moderne sprites, nog niet)
+        'species': {
+            'meowth': {'body': [15, 14, 13, 12], 'ears': [11, 10, 9]},
+            'persian': {'body': [15, 14, 13, 12, 11], 'gem': [6, 5, 4]},
+            'meowth/alola': {'body': [1, 3, 6]},
+            'persian/alola': {'body': [2, 13, 6, 7, 14]},
+        },
+        'variants': [
+            {'naam': 'Rode kater', 'body': '#e09040', 'ears': '#a04818'},
+            {'naam': 'Zwarte kat', 'body': ('#34343c', {'l': 1.3}), 'gem': '#40c060'},
+            {'naam': 'Siamees', 'body': '#e8dcc8', 'ears': '#5a3a28'},
+            {'naam': 'Blauwe Rus / Abessijn', 'body': '#7a8498', 'meowth/alola:body': '#c09060', 'persian/alola:body': '#c09060'},
+            {'naam': 'Sphynx', 'body': '#e8b0a8'},
+            {'naam': 'Maneki-neko', 'body': '#f4f0ec', 'ears': '#c02828', 'gem': '#e0b030'},
+        ],
+    },
+    'mankey': {
+        # apen (Annihilape: moderne sprite, nog niet)
+        'species': {
+            'mankey': {'body': [15, 14, 13, 12], 'brown': [11, 10, 9, 8]},
+            'primeape': {'body': [15, 14, 13, 12], 'brown': [10, 9, 8, 7]},
+        },
+        'variants': [
+            {'naam': 'Japanse makaak', 'body': ('#a8a098', {'h': 0}), 'brown': '#c04848'},
+            {'naam': 'Gouden stompneusaap', 'body': ('#e0b040', {'h': 0}), 'brown': '#5a7090'},
+            {'naam': 'Gorilla', 'body': ('#3a3a40', {'l': 1.3, 'h': 0}), 'brown': '#5a5a60'},
+            {'naam': 'Albino', 'body': ('#ece8e0', {'l': 1.0, 'h': 0}), 'brown': '#f0c8c0'},
+            {'naam': 'Mandril', 'body': ('#6a7080', {'h': 0}), 'brown': '#c03030'},
+            {'naam': 'Sun Wukong (Apenkoning)', 'body': ('#e8c050', {'h': 0}), 'brown': '#c02828'},
+        ],
+    },
+    'growlithe': {
+        # honden (Hisui-vormen: moderne sprites, nog niet)
+        'species': {
+            'growlithe': {'body': [14, 13, 12, 11], 'mane': [10, 9, 8, 7]},
+            'arcanine': {'body': [14, 13, 12, 11], 'mane': [10, 9, 8, 7, 6]},
+        },
+        'variants': [
+            {'naam': 'Dobermann', 'body': ('#34343c', {'l': 1.3}), 'mane': '#c06020'},
+            {'naam': 'Husky', 'body': '#7a8090', 'mane': '#f0f0f0'},
+            {'naam': 'Blauwe chow chow', 'body': '#3a4870', 'mane': '#a0b0d0'},
+            {'naam': 'Albino', 'body': ('#ece4e0', ALBINO), 'mane': '#f8f4f0'},
+            {'naam': 'Foo-hond (groen en goud)', 'body': '#3a8a60', 'mane': '#e0b030'},
+            {'naam': 'Blauw vuur', 'body': '#3070d0', 'mane': '#e8f0f8'},
+        ],
+    },
 }

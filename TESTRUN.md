@@ -1,6 +1,6 @@
 # Testrun Jordi – bevindingen
 
-Jordi speelt de 1.0 (ROM `Pokemon_Ungrounded_1.0_testfix8.gba`, save blijft werken). Per bevinding: wat hij zag, wat we deden, status.
+Jordi speelt de 1.0 (ROM `Pokemon_Ungrounded_1.0_testfix9.gba`, save blijft werken). Per bevinding: wat hij zag, wat we deden, status.
 Status: ✅ opgelost · 👍 goed zo (geen actie) · ⏳ open · 💡 idee/later. Details van oplossingen staan in `CHANGELOG.md` onder [v1.0.0], "Testrun Jordi".
 
 ## Ronde 1 (12 okt): begin t/m Roxanne
@@ -78,7 +78,7 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | West-Route 118 trainers 31–32 (Colress 26–27) | Rose/Dalton 28, Deandre/Wade 29 (levelcurve rekende Route 118 tot Winona). | ✅ |
 | Tas vol in Mauville | Items-pocket 30 → 120, oude save blijft werken. | ✅ |
 | Straight Line 140 met priority te sterk | Opnieuw achter elkaar: x1,5 zonder priority. | ✅ |
-| Wigglytuff met Boomburst vóór gym 1 | Boomburst 50, Hyper Voice 36, Double-Edge 44; Moon Stone van Petalburg Woods naar Capt. Stern (Slateport), Petalburg Woods geeft een Revive. | ✅ |
+| Wigglytuff met Boomburst vóór gym 1 | Boomburst 50, Hyper Voice 36, Double-Edge 44; Moon Stone van Petalburg Woods naar Capt. Stern (Slateport), Petalburg Woods geeft een Scope Lens. | ✅ |
 | Birch op Route 110: nieuwe dialoog van Jordi | | ✅ |
 | EXP-bomgevechten | Miguel (Route 103-oost, 4× Blissey) werkt perfect als compensatie na veel vangen. Idee (Jordi, hardop): meer van zulke gevechten na grote vangmomenten, bijv. Route 113/114 (±37), Route 119 (±47), Route 121/123 (±55), Route 128/129 (±66); eerst testen met de nieuwe wilde levels. Nog maar 3 vrije trainer-id's (851–853). | 💡 |
 | Rhett (Route 103) volledig lv 20, onbedoeld | Nu 26–27 zoals de buren. Andere uitschieters nagelopen; Nolan (Route 114, Whiscash 50), Juan en Aaron (lv 74) blijven bewust (Jordi). | ✅ |

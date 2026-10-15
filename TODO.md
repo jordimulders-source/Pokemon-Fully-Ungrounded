@@ -8,6 +8,9 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 
 ---
 
+## 0. Testrun-aantekeningen (Jordi 15 okt)
+- **Metronome** (held item) en **Muscle Band** krijgen nog een vindplaats (Metronome ligt nergens; Muscle Band alleen in Area Zero). Komt mee met Jordi's kladblok met aanpassingen. Idee: Muscle Band als fysieke tegenhanger van de Wise Glasses (Devon Corp 2F); Metronome bij een niche (Straight Line, Echoed Voice, Fury Cutter, Rollout).
+
 ## 1. Nu (fase: basiskaart vullen)
 Gedaan sinds: Yoshi's Island (v0.9.194), Area Zero (v0.9.193), park-vuur + Ilex-schrijn (v0.9.191), Glimwood (v0.9.189), trog 127 + Chargestone + Spacetime-items (v0.9.188), Virizion-kamer + wild Uncharted Isle (v0.9.186), Swords of Justice/Keldeo/Meltan (v0.9.182), National Park + Ilex (v0.9.181), Spacetime S2 + Chargestone Cave (v0.9.180), Koraalkathedraal + Sea Shards (v0.9.179), Spacetime S1 (v0.9.178), Mega Forest + Zacian/Zamazenta (v0.9.176), Spacetime Cave deel 1 (v0.9.173), Beasts of Ruin (v0.9.170), kratereilanden Sootopolis (v0.9.165), extra dungeons (Granite-kristalgrot, Cave of Origin dieper, Shoal Frozen Depths, luchtbel-grot 128; v0.9.164), Tao-eiland met Reshiram/Zekrom/Kyurem/Ghetsis (v0.9.163), Birth Island weg + Beacon Isle met Lichteiland (v0.9.162), gifts/Deoxys-vormen/Stadium-pool (v0.9.161), Viagra Boys-intro + Kiyo (v0.9.160).
 Gedaan (9 okt): kaartvulling 4 (v0.9.157: wild in alle dungeons, Granite Cave, Mt. Chimney, Shoal Cave eb/vloed, Seafloor, Cave of Origin) en zeevulling 4 (v0.9.159: alle onderwaterkaarten, diepzeetrog). Nog open:

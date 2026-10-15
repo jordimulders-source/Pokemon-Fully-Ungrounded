@@ -1404,6 +1404,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
 
+    // Project Grounded: Fisherman Andrew (Magikarp lv 70) krijgt de Magikarp-transitie van de wilde Magikarp
+    if (trainerId == TRAINER_ANDREW)
+        return B_TRANSITION_MAGIKARP;
+
     // Project Grounded: lichte intro per trainerklasse (gewone trainers; wie hierboven een eigen transitie of mugshot
     // heeft, is al weg). Gaat vóór de route-transitie: de klasse zegt meer over het gevecht dan de plek.
     if (!gStadiumBattle && ClassIntro_HasIntro(trainerClass))

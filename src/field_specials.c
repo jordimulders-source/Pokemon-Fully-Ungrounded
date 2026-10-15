@@ -20,6 +20,7 @@
 #include "graphics.h"
 #include "international_string_util.h"
 #include "item.h"
+#include "move.h"
 #include "item_icon.h"
 #include "link.h"
 #include "list_menu.h"
@@ -1459,7 +1460,7 @@ void LoadWallyZigzagoon(void)
 {
     u16 monData;
     CreateMon(&gPlayerParty[0], SPECIES_ZIGZAGOON, 7, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
-    monData = TRUE;
+    monData = 0; // Project Grounded: slot 0 (Pickup); slot 1 is in deze hack Hustle en sloeg Ralts K.O.
     SetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM, &monData);
     monData = MOVE_TACKLE;
     SetMonData(&gPlayerParty[0], MON_DATA_MOVE1, &monData);
@@ -4425,4 +4426,19 @@ u16 Grounded_BufferWhiteOuts(void)
         n = 9999;
     ConvertIntToDecimalStringN(gStringVar1, n, STR_CONV_MODE_LEFT_ALIGN, 4);
     return n;
+}
+
+// Project Grounded: bij het krijgen/vinden van een TM/HM ook de move noemen ("TM09 BULLET SEED"). Item staat in VAR_0x8006.
+void AppendTMMoveName(void)
+{
+    u16 item = gSpecialVar_0x8006;
+    u16 move;
+
+    if (GetItemPocket(item) != POCKET_TM_HM)
+        return;
+    move = GetItemTMHMMoveId(item);
+    if (move == MOVE_NONE)
+        return;
+    StringAppend(gStringVar2, gText_Space);
+    StringAppend(gStringVar2, GetMoveName(move));
 }

@@ -10,6 +10,7 @@ Std_ObtainItem::
 
 EventScript_ObtainItemMessage::
 	bufferitemnameplural STR_VAR_2, ITEMID, AMOUNT
+	special AppendTMMoveName
 	checkitemtype ITEMID
 	call EventScript_BufferPocketNameAndTryFanfare
 	call_if_eq VAR_0x8007, TRUE, EventScript_ObtainedItem
@@ -113,6 +114,7 @@ Std_FindItem::
 	checkitemspace ITEMID, AMOUNT
 	copyvar VAR_0x8007, VAR_RESULT
 	bufferitemnameplural STR_VAR_2, ITEMID, AMOUNT
+	special AppendTMMoveName
 	@ Project Grounded: al eens gevonden? Dan zonder tekstvak, met een korte pop-up
 	goto_if_eq VAR_0x8007, FALSE, EventScript_FindItemNormal
 	specialvar VAR_RESULT, IsItemObtainedBefore

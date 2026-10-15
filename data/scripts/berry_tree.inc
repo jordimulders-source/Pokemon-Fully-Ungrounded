@@ -153,12 +153,8 @@ BerryTree_EventScript_CheckBerryFullyGrown::
 	lock
 	faceplayer
 	special ObjectEventInteractionGetBerryCountString
-.if OW_BERRY_MUTATIONS == TRUE
-	goto_if_eq VAR_RESULT, TRUE, BerryTree_EventScript_CheckBerryFullyGrown_Mutation
-.endif
-	msgbox BerryTree_Text_WantToPick, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, BerryTree_EventScript_PickBerry
-	goto_if_eq VAR_RESULT, NO, BerryTree_EventScript_CancelPickingBerry
+	@ Project Grounded: geen ja/nee-vraag, rijpe bessen worden meteen geplukt
+	goto BerryTree_EventScript_PickBerry
 
 .set BERRY_NORMAL_BAG_FULL, 0
 .set BERRY_NORMAL_SPACE_IN_BAG, 1
@@ -177,11 +173,8 @@ BerryTree_EventScript_PickBerry::
 	message BerryTree_Text_PickedTheBerry
 	delay 10
 	showberrydescription
+	@ Project Grounded: het deuntje speelt uit, maar je hoeft er niet op te wachten
 	playfanfare MUS_OBTAIN_BERRY
-	waitmessage
-	waitfanfare
-	waitbuttonpress
-	message BerryTree_Text_PutAwayBerry
 	waitmessage
 	waitbuttonpress
 	hideitemdescription
@@ -330,7 +323,8 @@ BerryTree_Text_WantToPick:
 	.string "{STR_VAR_1}?$"
 
 BerryTree_Text_PickedTheBerry:
-	.string "{PLAYER} picked the {STR_VAR_2} {STR_VAR_1}.$"
+	.string "{PLAYER} picked {STR_VAR_2} {STR_VAR_1}\n"
+	.string "and put them in the BAG.$"
 
 BerryTree_Text_PutAwayBerry:
 	.string "{PLAYER} put away the {STR_VAR_1}\n"
@@ -384,10 +378,6 @@ BerryTree_EventScript_PickBerry_Mutation::
 	special ObjectEventInteractionRemoveBerryTree
 	message BerryTree_Text_PickedTheBerry_Mutation
 	playfanfare MUS_OBTAIN_BERRY
-	waitmessage
-	waitfanfare
-	waitbuttonpress
-	message BerryTree_Text_PutAwayBerry_Mutation
 	waitmessage
 	waitbuttonpress
 	release

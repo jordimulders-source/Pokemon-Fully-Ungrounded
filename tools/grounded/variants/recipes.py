@@ -591,8 +591,11 @@ LINES = {
         },
         'variants': [
             {'naam': 'Omgewisseld', 'volbeat:main': '#9850b8', 'illumise:main': '#d84050'},
-            {'naam': 'Nacht en dag', 'volbeat:main': '#283878', 'illumise:main': '#f08838'},
-            {'naam': 'Smaragd en saffier', 'volbeat:main': '#30a060', 'illumise:main': '#3060c0'},
+            {'naam': 'Vuur en ijs', 'volbeat:main': '#f06018', 'volbeat:face': '#f0b040', 'volbeat:dark': '#802018',
+             'illumise:main': '#58b0e8', 'illumise:face': '#e4f0f8', 'illumise:dark': '#283c70', 'illumise:yellow': '#c8e8f8'},
+            {'naam': 'Lieveheersbeestje en goudscarabee', 'volbeat:main': '#e02020', 'volbeat:face': ('#2c2c30', {'l': 1.3}),
+             'volbeat:dark': ('#202024', {'l': 1.3}), 'volbeat:yellow': '#f0f0e8', 'illumise:main': '#30a868',
+             'illumise:face': '#e0b030', 'illumise:dark': '#6c4c1c'},
             {'naam': 'Albino en melanisme', 'volbeat:main': ('#d8ccd0', ALBINO), 'volbeat:face': '#e8dce0',
              'volbeat:dark': '#a8a0a4', 'illumise:main': ('#2c2c34', {'l': 1.3}), 'illumise:face': '#4c4c58'},
             {'naam': 'Mario en Luigi', 'volbeat:dark': '#2848c0', 'volbeat:face': '#f0d0a8', 'illumise:main': '#30a040',
@@ -635,7 +638,7 @@ LINES = {
         },
         'variants': [
             {'naam': 'Witte haai', 'blue': '#7c8490', 'yellow': '#d8dce0'},
-            {'naam': 'Tijgerhaai', 'blue': '#c88848', 'yellow': '#4c3020'},
+            {'naam': 'Vuurvis', 'blue': '#c02830', 'red': '#f0b020', 'yellow': '#f0b020'},
             {'naam': 'Zwarte piranha', 'blue': ('#2c2c34', {'l': 1.3}), 'yellow': '#c0c4cc'},
             {'naam': 'Albino', 'blue': ('#d8d0d4', ALBINO), 'red': '#f0a0b0', 'yellow': ('#ece4d8', ALBINO)},
             {'naam': 'Megalodon (fossiel)', 'blue': '#c8b898', 'yellow': '#6c5034', 'red': '#8c6c50'},
@@ -653,7 +656,7 @@ LINES = {
             {'naam': 'Migaloo (witte bultrug)', 'blue': '#c8ccd8'},
             {'naam': 'Roze rivierdolfijn', 'blue': '#e8a0b0', 'belly': '#f8e0e4'},
             {'naam': 'Zeppelin', 'blue': '#b8bcc4', 'belly': '#c02828'},
-            {'naam': 'Sterrenhemel', 'blue': ('#20206a', {'l': 1.2}), 'belly': '#e0c060'},
+            {'naam': 'Basketbal', 'blue': '#e07020', 'belly': '#f0a050'},
         ],
     },
     'numel': {

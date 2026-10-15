@@ -77,6 +77,9 @@ struct Pokemon
     bool shiny;
     int shiny_line;
 
+    int variant;
+    int variant_line;
+
     int dynamax_level;
     int dynamax_level_line;
 
@@ -1461,6 +1464,16 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
                 if (!token_bool(p, &value, &pokemon->shiny))
                     any_error = !show_parse_error(p);
             }
+            else if (is_literal_token(&key, "Variant"))
+            {
+                if (pokemon->variant_line)
+                    any_error = !set_show_parse_error(p, key.location, "duplicate 'Variant'");
+                pokemon->variant_line = value.location.line;
+                if (!token_int(p, &value, &pokemon->variant))
+                    any_error = !show_parse_error(p);
+                else if (pokemon->variant < 0 || pokemon->variant > 6)
+                    any_error = !set_show_parse_error(p, value.location, "'Variant' must be 0-6");
+            }
             else if (is_literal_token(&key, "Dynamax Level"))
             {
                 if (pokemon->dynamax_level_line)
@@ -1494,7 +1507,7 @@ static bool parse_trainer(struct Parser *p, const struct Parsed *parsed, struct 
             }
             else
             {
-                any_error = !set_show_parse_error(p, key.location, "expected one of 'EVs', 'IVs', 'Ability', 'Level', 'Ball', 'Happiness', 'Nature', 'Shiny', 'Dynamax Level', 'Gigantamax', or 'Tera Type'");
+                any_error = !set_show_parse_error(p, key.location, "expected one of 'EVs', 'IVs', 'Ability', 'Level', 'Ball', 'Happiness', 'Nature', 'Shiny', 'Variant', 'Dynamax Level', 'Gigantamax', or 'Tera Type'");
             }
         }
 
@@ -2035,6 +2048,12 @@ static void fprint_trainers(const char *output_path, FILE *f, struct Parsed *par
                 fprintf(f, "            .isShiny = ");
                 fprint_bool(f, pokemon->shiny);
                 fprintf(f, ",\n");
+            }
+
+            if (pokemon->variant_line)
+            {
+                fprintf(f, "#line %d\n", pokemon->variant_line);
+                fprintf(f, "            .variant = %d,\n", pokemon->variant + 1);
             }
 
             if (pokemon->dynamax_level_line)

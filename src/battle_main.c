@@ -11,6 +11,7 @@
 #include "battle_hold_effects.h"
 #include "battle_interface.h"
 #include "battle_main.h"
+#include "mon_variants.h"
 #include "spire.h"
 #include "stadium.h"
 #include "battle_message.h"
@@ -1981,6 +1982,7 @@ u8 CreateNPCTrainerPartyFromTrainer(struct Pokemon *party, const struct Trainer 
             else if (partyData[monIndex].gender == TRAINER_MON_RANDOM_GENDER)
                 personalityValue = (personalityValue & 0xFFFFFF00) | GeneratePersonalityForGender(Random() & 1 ? MON_MALE : MON_FEMALE, partyData[monIndex].species);
             ModifyPersonalityForNature(&personalityValue, partyData[monIndex].nature);
+            personalityValue = ApplyTrainerMonVariant(personalityValue, partyData[monIndex].variant, partyData[monIndex].nature);
             if (partyData[monIndex].isShiny)
             {
                 otIdType = OT_ID_PRESET;

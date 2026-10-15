@@ -24,6 +24,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pok�
 - **National Dex** is vanaf het begin beschikbaar. **Alle Pokémon zijn te krijgen** (Jordi, 9 okt): geen versie-exclusieve keuzes waarbij een soort voorgoed verdwijnt (Glastrier én Spectrier).
 - **Ruimte is na de 1.0 geen hoofdzaak meer** (Jordi 11 okt: "veel content hoeft en kan er ook niet meer bij, maps, trainers etc"): kies bij klank/beeld voor kwaliteit; de grens hieronder blijft wel gelden.
 - **ROM-ruimte bij de 1.0 (Jordi, 10 okt):** doel ≥ 512 KB vrij, nooit minder dan 256 KB (na de 1.0 komen er alleen nog moves/abilities bij, en eventueel extra shinies). Meld bij elke grote toevoeging de resterende ruimte zodra we onder 1 MB komen. Meten: `grep "__rom_end = " pokeemerald.map`, vrij = 0x0A000000 − dat.
+- **Kleurvarianten zijn skins** (Jordi, 15 okt): herkenbaar anders, passend bij de soort, hoe zeldzamer hoe opvallender. Nooit een variant die nauwelijks van normaal verschilt; geen vloekende kleuren tenzij het een grap is. Recepten en filosofie: `TODO.md` (Kleurvarianten).
 - Merk je een nieuw designprincipe op, stel het eerst aan Jordi voor en voeg het pas na bevestiging toe aan dit bestand.
 
 ## Speelervaring
@@ -220,6 +221,9 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pok�
 - **Gym- en bossteams niet zelf aanpassen na een verloren gevecht** (Jordi 13 okt, Brawly's Spinda: "nee je vervangt niks"): eerst analyseren en voorstellen, pas na akkoord wijzigen. Jordi verliest bewust om te testen.
 - **Bereikbaarheid in grotten:** reken met objecten (rotsen) én gescheurde vloer (`MB_CRACKED_FLOOR*`, Mach Bike) als blokkade, anders zie je omwegen en fiets-routes over het hoofd (Granite Cave, 13 okt).
 - **Savestate na een nieuwe ROM = corrupt** (Jordi's testrun 12 okt): savestates werken alleen op exact dezelfde build. Herstellen: in de `.ss0` (PNG) zit het geheugen in chunk `gbAs` (zlib), met de ROM-CRC32 op offset 8; bouw die commit na (alleen de gewijzigde bestanden terugzetten + incrementele `make`), laad met `load_raw_state` in mGBA (python3.11) met een vooraf aangemaakt flash-bestand van 128 KB `0xFF` (`autoload_save`, anders segfault tijdens het saven), save in het spel en lever de `.sav`. Raad Jordi aan in het spel te saven vóór een nieuwe ROM.
+
+- **Kleurvarianten (v1.0, `src/mon_variants.c`):** variant = hash van de bovenste 16 bits van de personality; elk palet loopt via `GetMonSpritePalFromSpeciesAndPersonality` (Pokédex bewust via `GetMonSpritePalFromSpecies`). Paletten: `variants.pal` (96 kleuren) naast `normal.pal`, tabel `src/data/pokemon/variant_palettes.h`, beide uit `tools/grounded/variants/variants.py`; contactvel met `sheet.py`. Testen: `gDebugForcedVariant` (1–7 = variant 0–6) in het geheugen. Bestandsnamen zonder 'normal' (Alcremie) kregen eerst het origineel overschreven: altijd `git status` op `graphics/pokemon` na het draaien.
+- **libmgba ontbreekt soms in een verse container:** `apt-get install -y libmgba0.10` (daarna werkt `python3.11 -c "import mgba.core"`).
 
 ## Werkwijzen (herhaalde taken)
 

@@ -1,5 +1,6 @@
 #include "global.h"
 #include "battle_tower.h"
+#include "mon_variants.h"
 #include "apprentice.h"
 #include "event_data.h"
 #include "battle_setup.h"
@@ -3011,6 +3012,7 @@ void FillPartnerParty(u16 trainerId)
             else if (partyData[i].gender == TRAINER_MON_FEMALE)
                 personality = (personality & 0xFFFFFF00) | GeneratePersonalityForGender(MON_FEMALE, partyData[i].species);
             ModifyPersonalityForNature(&personality, partyData[i].nature);
+            personality = ApplyTrainerMonVariant(personality, partyData[i].variant, partyData[i].nature);
             CreateMon(&gPlayerParty[i + 3], partyData[i].species, partyData[i].lvl, 0, TRUE, personality, OT_ID_PRESET, otID);
             j = partyData[i].isShiny;
             SetMonData(&gPlayerParty[i + 3], MON_DATA_IS_SHINY, &j);

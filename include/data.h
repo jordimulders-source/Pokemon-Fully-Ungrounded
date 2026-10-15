@@ -76,7 +76,7 @@ struct TrainerMon
     u8 shouldUseDynamax:1;
     u8 padding1:1;
     u8 dynamaxLevel:4;
-    u8 padding2:4;
+    u8 variant:4; // kleurvariant + 1; 0 = uit de personality
     u32 tags;
 };
 

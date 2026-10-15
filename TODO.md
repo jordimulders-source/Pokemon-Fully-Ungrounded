@@ -118,16 +118,28 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - **Na de 1.0:** extra shinies (7 kleurvarianten per Pokémon, afgeleid uit de persoonlijkheid: geen save-ruimte; ±250 KB voor gevechtssprites, ±500 KB met overworld; automatisch genereren + door Jordi laten keuren). Eerst kijken wat er na de 1.0 weg kan. (Jordi 10 okt)
 - **Muziek-lint:** `music_lint.py` en `musiclib.release_ticks` laten rekenen met de echte m4a-envelope (`channel_end()` in `route119_battle_theme.py`); andere nummers kunnen ongemerkt noten verliezen.
 
-## Kleurvarianten ("skins") — start na de wekelijkse token-reset (Jordi 11 okt)
+## Kleurvarianten ("skins") — stap 1 klaar (15 okt), volgende: stap 2 generator
 Besloten:
-- Elke Pokémon krijgt een **kleurvariant** uit zijn personality (geen save-ruimte, blijft bij ruilen/evolueren). Verdeling voorstel: normaal 75%, dan 10 / 6 / 4 / 3 / 1,5 / 0,5% (zeldzamer = opvallender). Geen naam in het summary-scherm.
-- **Shiny blijft apart** en is de enige met sparkle; kans van 1/8192 naar **1/1024** (`SHINY_ODDS` 8 → 64 in `include/constants/pokemon.h`).
-- Varianten werken overal waar het palet gebruikt wordt (gevecht, summary, pc, volger); trainers kunnen een vaste variant krijgen (`Variant:` in trainers.party).
-- Ruimte: 1289 unieke shiny-paletten × 6 × 32 bytes ≈ 242 KB + ±5 KB code (Jordi: prima).
-- Paletten via een generator: rolherkenning per sprite (hoofdkleur, tweede kleur, ogen, vuur/elektro, metaal) + recepten: **zwart** (hoofdkleur bijna zwart, zoals shiny Rayquaza), **albino**, **natuurlijke ondersoorten** (zoals eenden/ganzen), **per element** (blauw/groen vuur, ...), **thema-uitzonderingen** (Voltorb/Electrode = Great/Ultra/Master/Premier Ball; Pikachu = kleuren van de Kanto-starters; Garchomp zwart/rood).
-- Volgorde: (1) techniek, (2) generator, (3) **testbatch Hoenn-dex** (202 soorten) als contactvellen naar Jordi, daarna de rest in batches.
+- Elke Pokémon krijgt een **kleurvariant** uit zijn personality (geen save-ruimte, blijft bij ruilen/evolueren). Verdeling: normaal 75%, dan 10 / 6 / 4 / 3 / 1,5 / 0,5% (zeldzamer = opvallender; Jordi 15 okt: akkoord). Geen naam in het summary-scherm.
+- **Shiny blijft apart** en is de enige met sparkle; kans 1/1024 (gedaan).
+- Varianten gelden overal waar het gevechts-/menupalet gebruikt wordt (gevecht, summary, pc, evolutie, contest); niet in de Pokédex. Volgers staan uit in deze rom, dus geen overworld-paletten nodig.
+- Trainers: `Variant: 0–6` in trainers.party; zonder regel uit de personality (`TRAINER_MON_VARIANTS_RANDOM` in `include/mon_variants.h`).
+- **Evolutielijnen consistent:** variant k van Charmander moet bij variant k van Charizard horen (zelfde recept per lijn).
+- Volgorde: (1) techniek ✔, (2) generator met recepten (`tools/grounded/variants/variants.py`, nu placeholders), (3) **testbatch Hoenn-dex** (202 soorten) als contactvellen (`sheet.py`) naar Jordi, daarna de rest in batches.
 - Schatting: Hoenn-test ±1–1,7 M tokens, rest van de dex ±1–2 M.
-- Open: designprincipe voor CLAUDE.md voorgesteld ("kleurvarianten zijn skins: herkenbaar anders, passend bij de soort, hoe zeldzamer hoe opvallender"), nog niet bevestigd.
+
+Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen):
+- **Zwart** (zoals shiny Rayquaza) en **albino**.
+- **Starters elkaars kleuren:** Bulbasaur/Charmander/Squirtle (en elke startergeneratie) in elkaars neutrale kleuren.
+- **Anime-versies:** bijzondere kleuren uit de anime (Ash's Noctowl, roze Butterfree, de roze Pokémon van het eiland).
+- **Smash Bros-kleuren:** iconische alternatieve kostuums uit Smash horen bij de opties.
+- **Grounded dierenvormen:** echte ondersoorten/kleurvormen (Ducklett als eendensoorten; Grimer/Trubbish als soorten afval).
+- **Esthetisch vet:** felle, crispe kleuren die er gewoon goed uitzien.
+- **Cosplay/job/lore/reference:** clown, mythen/legendes, andere games (Samus, Link, Cuphead, Shovel Knight, Pizza Tower, Yoshi, Mario, ...).
+- **Verwante Pokémon** geven elkaar hun kleurpatroon.
+- Een aantal krijgt **Pikachu-kleuren** of een **Poké Ball-palet** (Voltorb/Electrode: Great/Ultra/Master/Premier).
+- **Neon/cyberpunk** en andere populaire kleurenpaletten.
+- **Vermijden:** echt rare of vloekende kleuren (tenzij specifiek grappig), en varianten die nauwelijks verschillen van normaal (geen "shiny Garchomp"-situatie).
 
 ## Wiki / encyclopedie — start na Jordi's volledige testrun (Jordi 15 okt)
 - Generator `tools/grounded/wiki/build_wiki.py` leest de **code zelf** (species_info, `gen_9.h`, moves_info.h, items.h, wild_encounters.json, trainers.party, map-scripts) en maakt een statische site; opnieuw draaien na elke wijziging.

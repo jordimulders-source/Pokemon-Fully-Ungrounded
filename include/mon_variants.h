@@ -1,0 +1,27 @@
+#ifndef GUARD_MON_VARIANTS_H
+#define GUARD_MON_VARIANTS_H
+
+// Kleurvarianten ("skins"): elke Pokémon krijgt uit zijn personality een variant.
+// 0 = normaal, 1..6 = steeds zeldzamer en opvallender. Shiny staat hier los van.
+#define MON_VARIANT_NORMAL 0
+#define NUM_MON_VARIANTS   7
+
+// Trainer-Pokémon zonder 'Variant:' in trainers.party: TRUE = variant uit de
+// personality (zoals wild), FALSE = altijd normaal.
+#define TRAINER_MON_VARIANTS_RANDOM TRUE
+
+struct VariantPalettes
+{
+    const u16 *normal;
+    const u16 *variants; // (NUM_MON_VARIANTS - 1) * 16 kleuren
+};
+
+// Gegenereerd (src/data/pokemon/variant_palettes.h), eindigt op {NULL, NULL}.
+extern const struct VariantPalettes gVariantPalettes[];
+
+u32 GetVariantFromPersonality(u32 personality);
+const u16 *GetVariantPalette(const u16 *normalPalette, u32 variant);
+u32 SetPersonalityVariant(u32 personality, u32 variant, u32 nature);
+u32 ApplyTrainerMonVariant(u32 personality, u32 trainerVariant, u32 nature);
+
+#endif // GUARD_MON_VARIANTS_H

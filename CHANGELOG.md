@@ -18772,3 +18772,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Slowbro-Galar:** **Regenerator** van verborgen naar slot 2 (Own Tempo wordt verborgen). Stats blijven (Jordi: "heeft al uitstekende stats").
   - Nog open: Kangaskhan (Parental Bond, Jordi wil het aanpassen), Dhelmise en Dugtrio/Dugtrio-Alola/Wugtrio (nieuw idee).
 - **Kangaskhan: Parental Bond** in slot 1 (was Early Bird), maar **alleen boven 50% HP** (Jordi: "dat die goed kan zorgen voor haar kind boven de 50% HP"; niet unga bunga klikken). Tweede klap 25%, zoals Gen 7. Onder de helft slaat moeder alleen. Mega Kangaskhan (Spire) houdt altijd beide klappen. AI rekent ermee (`ParentalBondActive`). Beschrijving: "Hits twice above half HP." Test in `signature_moves.c`.
+- **Kleurvarianten ("skins"), stap 1: de techniek.** Elke Pokémon heeft nu een kleurvariant uit zijn personality (geen save-ruimte; blijft bij ruilen en evolueren): normaal 75%, dan 10 / 6 / 4 / 3 / 1,5 / 0,5%. De kleuren zelf zijn nog **placeholders** (tintverschuivingen, zwart, albino); de echte recepten volgen in stap 2.
+  - Werkt overal waar het gevechts-/menupalet gebruikt wordt (gevecht, beide kanten, summary, pc, evolutie, contest); de Pokédex toont altijd de normale kleuren. Shiny gaat voor en blijft de enige met sparkle.
+  - **Shinykans 1/8192 → 1/1024.**
+  - Trainers: `Variant: 0–6` in `trainers.party` (0 = normaal). Zonder die regel komt de variant uit de personality, net als in het wild (schakelaar `TRAINER_MON_VARIANTS_RANDOM`).
+  - 1288 paletten (Alcremie overgeslagen: die heeft al 63 kleurvormen) als `variants.pal` naast `normal.pal`; generator `tools/grounded/variants/variants.py`, contactvel `sheet.py`. Code: `src/mon_variants.c`. Kosten ±270 KB, **ROM ±583 KB vrij**.

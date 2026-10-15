@@ -3778,12 +3778,30 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
         gBattlescriptCurrInstr = BattleScript_MoveEffectHaze;
         break;
     case MOVE_EFFECT_LEECH_SEED:
-        // Project Grounded: Kelp Shroud (bezeten zeewier) werkt ook op Grass-types
-        if ((gCurrentMove == MOVE_KELP_SHROUD || !IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS)) && !gBattleMons[gBattlerTarget].volatiles.leechSeed)
+        // Project Grounded: Kelp Shroud (bezeten zeewier) werkt ook op Grass-types en stapelt tot 3 lagen
+        if (gCurrentMove == MOVE_KELP_SHROUD)
+        {
+            if (!gBattleMons[gBattlerTarget].volatiles.leechSeed)
+            {
+                gBattleMons[gBattlerTarget].volatiles.leechSeed = LEECHSEEDED_BY(gBattlerAttacker);
+                gDisableStructs[gBattlerTarget].kelpLayers = 1;
+                BattleScriptPush(battleScript);
+                gBattlescriptCurrInstr = BattleScript_MoveEffectKelpShroud;
+            }
+            else if (gDisableStructs[gBattlerTarget].kelpLayers < 3)
+            {
+                gBattleMons[gBattlerTarget].volatiles.leechSeed = LEECHSEEDED_BY(gBattlerAttacker);
+                gDisableStructs[gBattlerTarget].kelpLayers++;
+                BattleScriptPush(battleScript);
+                gBattlescriptCurrInstr = BattleScript_MoveEffectKelpTighten;
+            }
+        }
+        else if (!IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS) && !gBattleMons[gBattlerTarget].volatiles.leechSeed)
         {
             gBattleMons[gBattlerTarget].volatiles.leechSeed = LEECHSEEDED_BY(gBattlerAttacker);
+            gDisableStructs[gBattlerTarget].kelpLayers = 0;
             BattleScriptPush(battleScript);
-            gBattlescriptCurrInstr = gCurrentMove == MOVE_KELP_SHROUD ? BattleScript_MoveEffectKelpShroud : BattleScript_MoveEffectLeechSeed;
+            gBattlescriptCurrInstr = BattleScript_MoveEffectLeechSeed;
         }
         break;
     case MOVE_EFFECT_REFLECT:
@@ -10179,6 +10197,7 @@ static void Cmd_setseeded(void)
     else
     {
         gBattleMons[gBattlerTarget].volatiles.leechSeed = LEECHSEEDED_BY(gBattlerAttacker);
+        gDisableStructs[gBattlerTarget].kelpLayers = 0; // Project Grounded: gewone Leech Seed
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LEECH_SEED_SET;
     }
 

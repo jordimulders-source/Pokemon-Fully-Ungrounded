@@ -22124,8 +22124,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Kelp Shroud"),
         .description = COMPOUND_STRING(
-            "Possessed kelp wraps the foe\n"
-            "and drains it every turn."),
+            "Possessed kelp drains the foe\n"
+            "each turn. Stacks up to 3x."),
         .effect = EFFECT_HIT,
         .power = 70,
         .type = TYPE_GHOST,

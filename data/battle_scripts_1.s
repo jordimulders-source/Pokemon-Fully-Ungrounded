@@ -844,6 +844,11 @@ BattleScript_MoveEffectKelpShroud::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+BattleScript_MoveEffectKelpTighten::
+	printstring STRINGID_KELPTIGHTEN
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_MoveEffectReflect::
 	printfromtable gReflectLightScreenSafeguardStringIds
 	waitmessage B_WAIT_TIME_LONG

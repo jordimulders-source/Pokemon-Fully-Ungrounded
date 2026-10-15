@@ -491,7 +491,9 @@ static bool32 HandleEndTurnLeechSeed(u32 battler)
         gBattlerTarget = gBattleMons[battler].volatiles.leechSeed - 1; // leech seed receiver
         gBattleScripting.animArg1 = gBattlerTarget;
         gBattleScripting.animArg2 = gBattlerAttacker;
-        s32 drainAmount = GetNonDynamaxMaxHP(gBattlerAttacker) / 8;
+        // Project Grounded: Kelp Shroud-lagen zuigen harder (1/8, 1/6, 1/4)
+        u32 kelp = gDisableStructs[battler].kelpLayers;
+        s32 drainAmount = GetNonDynamaxMaxHP(gBattlerAttacker) / (kelp >= 3 ? 4 : kelp == 2 ? 6 : 8);
         s32 healAmount = GetDrainedBigRootHp(gBattlerTarget, drainAmount);
         if (GetBattlerAbility(battler) == ABILITY_LIQUID_OOZE)
         {

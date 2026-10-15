@@ -328,6 +328,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_BEAVERDAMLAYER]                       = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} added a layer\nto its dam! ({B_BUFF1}/3)"),
     [STRINGID_BEAVERDAMBREAK]                       = COMPOUND_STRING("With no one to keep it up,\n{B_SCR_NAME_WITH_PREFIX2}'s dam burst!"),
     [STRINGID_KELPSHROUD]                           = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was shrouded\nin ghostly kelp!"),
+    [STRINGID_KELPTIGHTEN]                          = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is wrapped\neven tighter in kelp!"),
     [STRINGID_HOLEUP]                               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} ducked back\ninto its hole!"),
     [STRINGID_BEAVERDAMFLOOD]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} was swept\naway by the flood!"),
     [STRINGID_PKMNHYPHALSNARE]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} got tangled\nin {B_ATK_NAME_WITH_PREFIX2}'s hyphae! Gross!"),

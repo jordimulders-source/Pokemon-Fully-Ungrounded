@@ -157,19 +157,19 @@ RustboroCity_Gym_Text_JoshPostBattle:
 	.string "again.$"
 
 RustboroCity_Gym_Text_TommyIntro:
-	.string "I AM IRON MAN!\p"
-	.string "Well, my ARON is. Iron head, iron\n"
-	.string "body, zero thoughts.\p"
-	.string "Generals gathered in their masses…\n"
-	.string "I gathered a puppy and a crow!$"
+	.string "Name's TOMMY IOMMI. I invented heavy\n"
+	.string "metal. Don't look it up.\p"
+	.string "Lost two fingertips in a sheet metal\n"
+	.string "factory. Now my ARON is my fingertip.\p"
+	.string "I AM IRON MAN! Well, he is.$"
 
 RustboroCity_Gym_Text_TommyDefeat:
-	.string "For whom the bell tolls?\n"
-	.string "Me. It tolls for me.$"
+	.string "Heaven and Hell… mostly Hell.\n"
+	.string "Good thing I play with my thimbles on.$"
 
 RustboroCity_Gym_Text_TommyPostBattle:
-	.string "People think I'm insane because I am\n"
-	.string "frowning all the time. PARANOID!\p"
+	.string "Every riff you've ever headbanged to?\n"
+	.string "Mine. Tuned down, because it hurts.\p"
 	.string "The MURKROW is only here for the\n"
 	.string "BLACK SABBATH aesthetic.$"
 

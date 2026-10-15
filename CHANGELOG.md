@@ -18920,3 +18920,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Koffing-lijn (Galar-Weezing: alleen de rook, moderne sprite): smog, gifgas, vuurwerkrook, koude damp, kosmische nevel, goudstof.
   - Sandshrew-lijn: schubdier, Petra-rood, egel, albino, roze gordeldier, Shadow the Hedgehog. Alola: smaragdijs, rozenkwarts, koperijs, amethist, goudijs, poolnacht.
   - Skarmory (metalen): koper, brons met patina, gunmetal, geanodiseerd titanium, roségoud, Excalibur.
+
+- **Kleurvarianten, groep 16 (Hoenn-dex-rest, deel 1):** Igglybuff-lijn, Staryu-lijn, Vulpix-lijn (ook Alola), Pichu-lijn (ook Alola-Raichu; Pikachu-kostuums niet), Psyduck-lijn, Natu-lijn, Girafarig/Farigiraf (moderne sprite: alleen de oranje vacht), Phanpy-lijn. Inspiratie per variant: `tools/grounded/variants/KEURING.md`.

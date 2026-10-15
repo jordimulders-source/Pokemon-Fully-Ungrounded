@@ -1478,4 +1478,138 @@ LINES = {
             {'naam': 'Excalibur (zilver en goud)', 'steel': '#c8ccd8', 'red': '#e0b030'},
         ],
     },
+    # --- groep 16 (Hoenn-dex-rest, deel 1) ---
+    'igglybuff': {
+        'species': {
+            'igglybuff': {'body': [1, 4, 6, 3, 2]},
+            'jigglypuff': {'body': [15, 14, 13], 'eyes': [5, 4, 3]},
+            'wigglytuff': {'body': [14, 13, 12, 11, 10], 'eyes': [6, 5, 4]},
+        },
+        'variants': [
+            {'naam': 'Marshmallow', 'body': '#ece4e8'},
+            {'naam': 'Keeby-geel (Kirby)', 'body': '#f0d050'},
+            {'naam': 'Lavendel', 'body': '#c0a8e8', 'eyes': '#40a060'},
+            {'naam': 'Mint', 'body': '#a8e0c0', 'eyes': '#c04880'},
+            {'naam': 'Perzik', 'body': '#f8b890'},
+            {'naam': 'Slaapliedje (nachthemel)', 'body': '#3a4078', 'eyes': '#f0d040'},
+        ],
+    },
+    'staryu': {
+        # in deze rom is Starmie Water/Electric
+        'species': {
+            'staryu': {'body': [2, 5, 1, 6, 3], 'core': [9, 7, 11, 10, 8], 'gem': [14, 12, 13]},
+            'starmie': {'body': [2, 1, 4, 5, 3], 'core': [7, 11, 10, 8, 9], 'gem': [15, 13, 14, 12]},
+        },
+        'variants': [
+            {'naam': 'Rode zeester', 'body': '#c84030'},
+            {'naam': 'Blauwe zeester (Linckia)', 'body': '#3060c0', 'gem': '#f0d040'},
+            {'naam': 'Kussenster', 'body': '#e08030'},
+            {'naam': 'Doornenkroon', 'body': '#706080', 'gem': '#40d0a0'},
+            {'naam': 'Smaragd met robijn', 'body': '#2c8a60', 'core': '#e0e0e8'},
+            {'naam': 'Patrick Star', 'body': '#f090a0', 'core': '#80c040'},
+        ],
+    },
+    'vulpix': {
+        'species': {
+            'vulpix': {'body': [11, 10, 9, 8], 'tail': [15, 14, 13, 12], 'hair': [7, 6]},
+            'ninetales': {'fur': [14, 13, 12, 11], 'tips': [7, 6]},
+        },
+        'variants': [
+            {'naam': 'Grijze vos (Urocyon)', 'body': '#5a5a68', 'tail': '#c8c8d0', 'hair': '#e08040', 'fur': '#7a7a84', 'tips': '#e08040'},
+            {'naam': 'Fennek', 'body': '#e8c890', 'tail': '#f4e8d0', 'hair': '#c89058', 'fur': '#e0b078', 'tips': '#f4e8d0'},
+            {'naam': 'Melanistische vos', 'body': ('#2c2c34', {'l': 1.3}), 'tail': '#5a3060', 'hair': '#a050c0', 'fur': '#484050', 'tips': '#a050c0'},
+            {'naam': 'Albino', 'body': ('#ece4e0', ALBINO), 'tail': ('#e4dcd8', ALBINO), 'hair': '#f0d8d0', 'fur': ('#f0ece8', ALBINO), 'tips': '#f0c8c8'},
+            {'naam': 'Spookvuur (blauw)', 'body': '#3060c0', 'tail': '#80c0f0', 'hair': '#a0e0f8', 'fur': '#a8c8f0', 'tips': '#3060c0'},
+            {'naam': 'Amaterasu (Okami)', 'body': '#f0ece4', 'tail': '#d03030', 'hair': '#d03030', 'fur': '#f4f0ec', 'tips': '#d03030'},
+        ],
+    },
+    'vulpix_alola': {
+        # Ice/Fairy
+        'species': {
+            'vulpix/alola': {'fur': [1, 2, 3], 'curls': [4, 7, 5]},
+            'ninetales/alola': {'fur': [1, 3, 2], 'blue': [9, 4, 5]},
+        },
+        'variants': [
+            {'naam': 'Perzik', 'fur': '#f8c8a0', 'curls': '#fce8d8', 'blue': '#e07040'},
+            {'naam': 'Kanto-ruil (goud en vuur)', 'fur': '#f0e080', 'curls': '#f8f0c8', 'blue': '#e08030'},
+            {'naam': 'Mint', 'fur': '#b0e8d0', 'curls': '#e8f8f0', 'blue': '#30a080'},
+            {'naam': 'Gletsjer', 'fur': '#90c8f0', 'curls': '#e0f0f8', 'blue': '#2050a0'},
+            {'naam': 'Nachtblauw', 'fur': '#384890', 'curls': '#a0b0e0', 'blue': '#f0e080'},
+            {'naam': 'Aurora', 'fur': '#7060c0', 'curls': '#a0f0d0', 'blue': '#40e0a0'},
+        ],
+    },
+    'pichu': {
+        # elektrische knaagdieren (Pikachu-kloons)
+        'species': {
+            'pichu': {'body': [3, 4, 5, 7]},
+            'pikachu': {'body': [5, 4, 3, 2]},
+            'raichu': {'body': [6, 5, 4], 'ears': [12, 11]},
+            'raichu/alola': {'body': [9, 8, 5]},
+        },
+        'variants': [
+            {'naam': 'Celebi-groen', 'body': '#80c040'},
+            {'naam': 'Minun-blauw', 'body': '#60a0e0'},
+            {'naam': 'Emolga-wit', 'body': '#f0ece4'},
+            {'naam': 'Toxel-lila', 'body': '#a890d0'},
+            {'naam': 'Clefairy-roze', 'body': '#f0a8c0'},
+            {'naam': 'Sterrennacht', 'body': '#283078', 'ears': '#f0d040'},
+        ],
+    },
+    'psyduck': {
+        'species': {
+            'psyduck': {'body': [14, 13, 12, 11], 'beak': [4, 3, 2, 1]},
+            'golduck': {'body': [14, 13, 12, 11], 'beak': [9, 8, 7, 6], 'gem': [5, 4, 3]},
+        },
+        'variants': [
+            {'naam': 'Wilde eend (groen)', 'body': '#3a8050'},
+            {'naam': 'Bruine eend', 'body': '#8a6038'},
+            {'naam': 'Roze eend', 'body': '#f0a0c0'},
+            {'naam': 'Albino', 'body': ('#ece8e4', ALBINO), 'beak': '#f0c8a8', 'gem': '#e02838'},
+            {'naam': 'Zwarte zwaan', 'body': ('#2c2c34', {'l': 1.3}), 'beak': '#d02830'},
+            {'naam': 'Robijneend', 'body': '#c02848', 'gem': '#f0d040'},
+        ],
+    },
+    'natu': {
+        'species': {
+            'natu': {'green': [5, 4, 6, 7], 'red': [1, 3, 2], 'yellow': [11, 10, 9]},
+            'xatu': {'green': [3, 1, 5, 2], 'red': [12, 13, 15], 'robe': [10, 11, 14, 9], 'yellow': [7, 4, 6]},
+        },
+        'variants': [
+            {'naam': 'Totempaal', 'green': '#a06838', 'yellow': '#3080c0'},
+            {'naam': 'Kaketoe', 'green': '#e8e4dc', 'yellow': '#f0d040'},
+            {'naam': 'Ara (blauw en geel)', 'green': '#2c70c8', 'yellow': '#f0c820'},
+            {'naam': 'Albino', 'green': ('#e8e4e0', ALBINO), 'red': '#f0b8b8', 'yellow': '#f0e8d0'},
+            {'naam': 'Kraai', 'green': ('#2c2c34', {'l': 1.3}), 'robe': '#585868', 'yellow': '#e0e0e8'},
+            {'naam': 'Azteeks goud', 'green': '#d8a828', 'robe': '#2c6a8a', 'red': '#2c9a80'},
+        ],
+    },
+    'girafarig': {
+        # Farigiraf is een moderne sprite: alleen de lichte vacht
+        'species': {
+            'girafarig': {'body': [6, 7, 8], 'rear': [11, 13, 14, 15]},
+            'farigiraf': {'body': [15, 14]},
+        },
+        'variants': [
+            {'naam': 'Okapi', 'body': '#6a3c28'},
+            {'naam': 'Witte giraf (leucistisch)', 'body': '#ece8e0'},
+            {'naam': 'Lisa Frank-roze', 'body': '#f0a0c0'},
+            {'naam': 'Psychic-blauw', 'body': '#6080d0'},
+            {'naam': 'Zwart en goud', 'body': ('#383040', {'l': 1.3}), 'rear': '#d8a828'},
+            {'naam': 'Kosmisch', 'body': '#2c2060', 'rear': '#e070d0'},
+        ],
+    },
+    'phanpy': {
+        'species': {
+            'phanpy': {'body': [2, 1, 10, 4, 3], 'ears': [6, 7, 8]},
+            'donphan': {'body': [2, 1, 4, 3], 'armor': [9, 6, 11, 7], 'red': [8, 10], 'tusks': [13, 14, 12]},
+        },
+        'variants': [
+            {'naam': 'Mammoet', 'body': '#8a5a38', 'armor': '#a07858', 'tusks': '#f0e8d0'},
+            {'naam': 'Witte olifant', 'body': '#e8e4dc', 'armor': '#f4f0ec'},
+            {'naam': 'Roze olifant', 'body': '#f0a0c0', 'armor': '#f8c8d8'},
+            {'naam': 'Lava-olifant', 'body': ('#3a3038', {'l': 1.3}), 'armor': '#e06020', 'ears': '#f0a020'},
+            {'naam': 'Ganesha (blauw en goud)', 'body': '#3870c8', 'armor': '#3870c8', 'tusks': '#e0b030', 'ears': '#e0b030'},
+            {'naam': 'Thaise tempelolifant (goud)', 'body': '#d8a828', 'armor': '#f0d060', 'ears': '#c02828'},
+        ],
+    },
 }

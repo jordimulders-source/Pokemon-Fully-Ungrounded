@@ -711,7 +711,7 @@ LINES = {
             {'naam': 'Giraf', 'body': '#e8c860', 'spots': '#7c4c20'},
             {'naam': 'Aardbei', 'body': '#f0b0c0', 'spots': '#d02838', 'ears': '#6c1c28'},
             {'naam': 'Psychedelisch', 'body': '#f0e890', 'spots': '#d030a0', 'ears': '#3080d0'},
-            {'naam': 'Kintsugi (porselein met goud)', 'body': '#dcd8d0', 'spots': '#e0b030'},
+            {'naam': 'Lavendel met goud', 'body': '#b8a0d8', 'spots': '#e8b828', 'ears': '#3c2850'},
         ],
     },
     'trapinch': {

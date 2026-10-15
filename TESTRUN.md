@@ -1,6 +1,6 @@
 # Testrun Jordi – bevindingen
 
-Jordi speelt de 1.0 (ROM `Pokemon_Ungrounded.gba`, save blijft werken). Per bevinding: wat hij zag, wat we deden, status.
+Jordi speelt de 1.0 (ROM altijd `Pokemon_Ungrounded_1.0_testfix8.gba`, save blijft werken). Per bevinding: wat hij zag, wat we deden, status.
 Status: ✅ opgelost · 👍 goed zo (geen actie) · ⏳ open · 💡 idee/later. Details van oplossingen staan in `CHANGELOG.md` onder [v1.0.0], "Testrun Jordi".
 
 ## Ronde 1 (12 okt): begin t/m Roxanne

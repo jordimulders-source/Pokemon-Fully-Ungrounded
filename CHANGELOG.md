@@ -18866,9 +18866,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Feebas-lijn: riemvis, pastel, koninklijk, albino, nachtzwart, feniks (rood lijf, goud lint).
   - Castform: elke weervorm is een eigen vorm met een eigen shiny, dus per vorm eigen kleuren binnen één thema: zonsondergang, onweer, noorderlicht, zure regen, bloedmaan, sterrennacht.
   - Kecleon: panterkameleon, opgewonden rood, schorscamouflage, albino, Lisa Frank, glas.
-  - Shuppet-lijn: pompoen, kerstsok, Slimer (Ghostbusters), roze knuffel, Mimikyu-kleuren, harlekijn (Jordi: eerst te veel blauw/zwart/beige).
+  - Shuppet-lijn (horrorpoppen): Billy (Saw), Beetlejuice, Marionette (FNAF), Carrie, Corpse Bride, harlekijn (eerst te veel blauw/zwart/beige, daarna te veel snoepkleuren).
   - Duskull-lijn: dwaallicht (groen vuur), calavera, pompoenlantaarn, farao (goud en lapis), Azteekse turkoois, kristallen schedel.
   - Tropius: herfst, kersenboom, drakenvrucht, albino, ginkgo, winter; de donkere bladnerven en lijflijnen kregen een eigen kleurgroep, zodat de albino zijn lijnen houdt.
   - Chimecho: koper, zilver, amethist (jade lag te dicht bij de shiny), albino, kerstklok, fuurin.
-  - Absol: omgekeerd (zwart), ijswolf, fee (roze en mint), kitsune, sterrenstelsel, qilin; elke variant kleurt nu ook de vacht (Jordi: te vaak een wit lichaam).
+  - Absol: bloedmaanwolf, Lucario, Pest (apocalyptische ruiter), Sylveon, Anubis, Raikou; elke variant kleurt de vacht (Jordi: eerst te vaak wit en te basic).
   - Wynaut-lijn: oranje, groen, paars, albino, SpongeBob, bokszak.

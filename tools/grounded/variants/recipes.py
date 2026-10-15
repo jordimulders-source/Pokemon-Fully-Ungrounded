@@ -942,15 +942,15 @@ LINES = {
     },
     'shuppet': {
         'species': {
-            'shuppet': {'body': [1, 3, 4, 5, 6, 7], 'zipper': [12, 13]},
+            'shuppet': {'body': [1, 3, 4, 5, 6, 7], 'eyes': [8, 9, 10, 11], 'zipper': [12, 13]},
             'banette': {'body': [1, 2, 3, 4, 6], 'zipper': [11, 12, 13, 14, 15], 'eyes': [7, 8, 10]},
         },
         'variants': [
-            {'naam': 'Pompoen', 'body': '#e87820', 'zipper': '#3c2850'},
-            {'naam': 'Kerstsok', 'body': '#c82030', 'zipper': '#38a040'},
-            {'naam': 'Slimer (Ghostbusters)', 'body': '#88d030', 'zipper': '#f0e040'},
-            {'naam': 'Roze knuffel', 'body': '#f090c0', 'zipper': '#70d8c0'},
-            {'naam': 'Mimikyu-kleuren', 'body': '#e8c838', 'zipper': '#3c3028', 'eyes': '#202020'},
+            {'naam': 'Billy (Saw)', 'body': ('#e4dcd0', ALBINO), 'zipper': '#c01818', 'eyes': '#c01818'},
+            {'naam': 'Beetlejuice', 'body': '#6c8c48', 'zipper': '#58307a', 'eyes': '#e02020'},
+            {'naam': 'Marionette (FNAF)', 'body': ('#28242c', {'l': 1.3}), 'zipper': '#f0f0f0', 'eyes': '#e8e8f0'},
+            {'naam': 'Carrie (bloed)', 'body': '#801c24', 'zipper': '#e8e0c8', 'eyes': '#f0e040'},
+            {'naam': 'Corpse Bride', 'body': '#b8d0e0', 'zipper': '#5a3a70', 'eyes': '#283048'},
             {'naam': 'Harlekijn', 'body': '#b82890', 'zipper': '#f0c030', 'eyes': '#40e0f0'},
         ],
     },
@@ -995,12 +995,12 @@ LINES = {
         # in deze rom Dark/Fairy
         'species': {'absol': {'fur': [6, 7, 8, 9, 10], 'dark': [1, 2, 3, 4], 'eyes': [11, 12, 13]}},
         'variants': [
-            {'naam': 'Omgekeerd (zwart)', 'fur': ('#34343c', {'l': 1.3}), 'dark': '#e0e4ec'},
-            {'naam': 'IJswolf', 'fur': '#98c8f0', 'dark': '#2050a0'},
-            {'naam': 'Fee (roze en mint)', 'fur': '#f098c8', 'dark': '#30a890', 'eyes': '#30a890'},
-            {'naam': 'Kitsune', 'fur': '#e89040', 'dark': '#f4ece0', 'eyes': '#f0d020'},
-            {'naam': 'Sterrenstelsel', 'fur': '#383878', 'dark': '#c070f0', 'eyes': '#f0e040'},
-            {'naam': 'Qilin', 'fur': '#e8b830', 'dark': '#2c8c60'},
+            {'naam': 'Bloedmaanwolf', 'fur': '#7a2030', 'dark': '#28242c', 'eyes': '#f0d040'},
+            {'naam': 'Lucario', 'fur': '#4a7cc8', 'dark': '#28283a', 'eyes': '#e02828'},
+            {'naam': 'Pest (apocalyptische ruiter)', 'fur': '#9cac70', 'dark': '#4a3858', 'eyes': '#e0e040'},
+            {'naam': 'Sylveon', 'fur': '#f0b0d0', 'dark': '#4890d0', 'eyes': '#4890d0'},
+            {'naam': 'Anubis', 'fur': ('#262230', {'l': 1.3}), 'dark': '#e0b030', 'eyes': '#30c0b0'},
+            {'naam': 'Raikou', 'fur': '#f0c830', 'dark': '#4a3070', 'eyes': '#e02828'},
         ],
     },
     'wynaut': {

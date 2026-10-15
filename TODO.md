@@ -118,14 +118,14 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - **Na de 1.0:** extra shinies (7 kleurvarianten per Pokémon, afgeleid uit de persoonlijkheid: geen save-ruimte; ±250 KB voor gevechtssprites, ±500 KB met overworld; automatisch genereren + door Jordi laten keuren). Eerst kijken wat er na de 1.0 weg kan. (Jordi 10 okt)
 - **Muziek-lint:** `music_lint.py` en `musiclib.release_ticks` laten rekenen met de echte m4a-envelope (`channel_end()` in `route119_battle_theme.py`); andere nummers kunnen ongemerkt noten verliezen.
 
-## Kleurvarianten ("skins") — stap 1 klaar (15 okt), volgende: stap 2 generator
+## Kleurvarianten ("skins") — techniek klaar; recepten per groepje (eerste groep: Kanto-starters, 15 okt)
 Besloten:
 - Elke Pokémon krijgt een **kleurvariant** uit zijn personality (geen save-ruimte, blijft bij ruilen/evolueren). Verdeling: normaal 75%, dan 10 / 6 / 4 / 3 / 1,5 / 0,5% (zeldzamer = opvallender; Jordi 15 okt: akkoord). Geen naam in het summary-scherm.
 - **Shiny blijft apart** en is de enige met sparkle; kans 1/1024 (gedaan).
 - Varianten gelden overal waar het gevechts-/menupalet gebruikt wordt (gevecht, summary, pc, evolutie, contest); niet in de Pokédex. Volgers staan uit in deze rom, dus geen overworld-paletten nodig.
-- Trainers: `Variant: 0–6` in trainers.party; zonder regel uit de personality (`TRAINER_MON_VARIANTS_RANDOM` in `include/mon_variants.h`).
-- **Evolutielijnen consistent:** variant k van Charmander moet bij variant k van Charizard horen (zelfde recept per lijn).
-- Volgorde: (1) techniek ✔, (2) generator met recepten (`tools/grounded/variants/variants.py`, nu placeholders), (3) **testbatch Hoenn-dex** (202 soorten) als contactvellen (`sheet.py`) naar Jordi, daarna de rest in batches.
+- Trainers (ook Frontier): standaard **normaal** (Jordi 15 okt); vaste variant met `Variant: 0–6` in trainers.party. Later eventueel: Archie/Maxie in Aqua/Magma-kleuren.
+- **Evolutielijnen consistent:** variant k van Charmander hoort bij variant k van Charizard (zelfde recept per lijn); soorten die bij het evolueren van kleur wisselen mogen dat ook in hun varianten (`'soort:onderdeel'` in recipes.py).
+- Werkwijze (Jordi 15 okt): **per groepje** evolutielijnen recepten maken → contactvel (`sheet.py`) → Jordi keurt → volgende groep. Alleen soorten met een recept krijgen varianten (de rest blijft normaal). Per lijn: `ramps.py <map> [indexkaart.png]` voor de kleurgroepen, recept in `recipes.py`, `variants.py` draaien. Delen ogen een index met een ander onderdeel: eigen index via `sprite_fixes.py`. Nog te doen: Mega/Gmax-vormen (submappen) meenemen.
 - Schatting: Hoenn-test ±1–1,7 M tokens, rest van de dex ±1–2 M.
 
 Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen):
@@ -139,7 +139,9 @@ Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen
 - **Verwante Pokémon** geven elkaar hun kleurpatroon.
 - Een aantal krijgt **Pikachu-kleuren** of een **Poké Ball-palet** (Voltorb/Electrode: Great/Ultra/Master/Premier).
 - **Neon/cyberpunk** en andere populaire kleurenpaletten.
-- **Vermijden:** echt rare of vloekende kleuren (tenzij specifiek grappig), en varianten die nauwelijks verschillen van normaal (geen "shiny Garchomp"-situatie).
+- **Vermijden:** echt rare of vloekende kleuren (tenzij specifiek grappig), en varianten die nauwelijks verschillen van normaal (geen "shiny Garchomp"-situatie; bijv. teal Squirtle lijkt op de gewone).
+- **Per onderdeel kleuren, niet één tint over alles** (Jordi 15 okt): een Pokémon bestaat uit meerdere kleurgroepen (lijf, buik, vlam, bloem, ogen); pas er één of meer aan en houd de schaduwen erin. Vuur mag spelen: blauwe, groene, witte vlam (met tinten).
+- **Albino:** wit met schaduwen, **rode ogen**, donkerdere vlekken blijven donkerder, een andere kleur bol/bloem; een witte vlam houdt tinten.
 
 ## Wiki / encyclopedie — start na Jordi's volledige testrun (Jordi 15 okt)
 - Generator `tools/grounded/wiki/build_wiki.py` leest de **code zelf** (species_info, `gen_9.h`, moves_info.h, items.h, wild_encounters.json, trainers.party, map-scripts) en maakt een statische site; opnieuw draaien na elke wijziging.

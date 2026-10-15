@@ -6,12 +6,11 @@ variants.pal (6 x 16 kleuren, variant 1..6) naast normal.pal en genereert
 src/data/pokemon/variant_palettes.h (koppeling normaal palet -> varianten,
 opgenomen in src/pokemon.c na data/graphics/pokemon.h).
 
-Stap 1 (techniek): placeholder-recepten. De echte recepten (rolherkenning, zwart,
-albino, ondersoorten, thema's) komen in stap 2 in recipes.py.
+Alleen soorten met een recept in recipes.py krijgen varianten (kleurgroepen per
+soort: ramps.py; herkleuren: colorlib.py).
 
-Gebruik: python3 tools/grounded/variants/variants.py [--only bulbasaur,charmander]
+Gebruik: python3 tools/grounded/variants/variants.py
 """
-import colorsys
 import os
 import re
 import sys
@@ -82,41 +81,34 @@ def collect_palettes():
     return out
 
 
-# --- placeholder-recepten (stap 1) ------------------------------------------
-
-def _keep(c):
-    """Omlijning, wit en bijna-grijs blijven staan."""
-    h, l, s = colorsys.rgb_to_hls(*(v / 255 for v in c))
-    return l < 0.12 or l > 0.93 or s < 0.08
-
-
-def _hls_map(colors, fn):
-    out = [colors[0]]
-    for c in colors[1:]:
-        if _keep(c):
-            out.append(c)
+def recipe_variants(folder, colors):
+    """6 varianten volgens recipes.py, of None als de soort nog geen recept heeft."""
+    from recipes import LINES
+    from colorlib import recolor
+    from ramps import stats
+    for line in LINES.values():
+        ramps = line['species'].get(folder)
+        if ramps is None:
             continue
-        h, l, s = colorsys.rgb_to_hls(*(v / 255 for v in c))
-        h, l, s = fn(h, l, s)
-        out.append(gba(v * 255 for v in colorsys.hls_to_rgb(h % 1.0, max(0, min(1, l)), max(0, min(1, s)))))
-    return out
-
-
-def placeholder_variants(colors):
-    return [
-        _hls_map(colors, lambda h, l, s: (h + 1 / 6, l, s)),
-        _hls_map(colors, lambda h, l, s: (h + 1 / 3, l, s)),
-        _hls_map(colors, lambda h, l, s: (h + 1 / 2, l, s)),
-        _hls_map(colors, lambda h, l, s: (h - 1 / 6, l, min(1, s * 1.2))),
-        _hls_map(colors, lambda h, l, s: (h, 0.12 + l * 0.35, s * 0.35)),          # zwart
-        _hls_map(colors, lambda h, l, s: (h, 0.75 + l * 0.2, s * 0.15)),           # albino
-    ]
+        count, _ = stats(os.path.join(ROOT, 'graphics/pokemon', folder))
+        out = []
+        for var in line['variants']:
+            pal = list(colors)
+            for part, idxs in ramps.items():
+                spec = var.get('%s:%s' % (folder, part), var.get(part))
+                if spec is None:
+                    continue
+                target, opts = (spec, {}) if isinstance(spec, str) else spec
+                base = max(idxs, key=lambda i: count[i])
+                for i, c in recolor(colors, idxs, base, target, lscale=opts.get('l', 1.0),
+                                    cscale=opts.get('c')).items():
+                    pal[i] = c
+            out.append(pal)
+        return out
+    return None
 
 
 def main():
-    only = None
-    if len(sys.argv) > 2 and sys.argv[1] == '--only':
-        only = set(sys.argv[2].split(','))
     entries = []
     for sym, path, conds in collect_palettes():
         pal = os.path.join(ROOT, path + '.pal')
@@ -127,12 +119,15 @@ def main():
         if '/question_mark/' in path or '/egg/' in path or '/alcremie/' in path:
             continue
         folder = os.path.relpath(os.path.dirname(pal), os.path.join(ROOT, 'graphics/pokemon'))
-        if only and folder.split('/')[0] not in only:
-            continue
         colors = read_pal(pal)[:16]
         colors += [(0, 0, 0)] * (16 - len(colors))
-        variants = placeholder_variants(colors)
         base = os.path.basename(path)
+        vfile = os.path.join(os.path.dirname(path), base.replace('normal', 'variants') if 'normal' in base else base + '_variants')
+        variants = recipe_variants(folder, colors) if base in ('normal', 'normalf') else None
+        if variants is None:
+            if os.path.exists(os.path.join(ROOT, vfile + '.pal')):
+                os.remove(os.path.join(ROOT, vfile + '.pal'))
+            continue
         base = base.replace('normal', 'variants') if 'normal' in base else base + '_variants'
         vpath = os.path.join(os.path.dirname(path), base)
         write_pal(os.path.join(ROOT, vpath + '.pal'), [c for v in variants for c in v])

@@ -1585,6 +1585,7 @@ void CreateFacilityMon(const struct TrainerMon *fmon, u16 level, u8 fixedIV, u32
     }
 
     ModifyPersonalityForNature(&personality, fmon->nature);
+    personality = ApplyTrainerMonVariant(personality, 0, fmon->nature);
     CreateMon(dst, fmon->species, level, fixedIV, TRUE, personality, OT_ID_PRESET, otID);
 
     friendship = MAX_FRIENDSHIP;

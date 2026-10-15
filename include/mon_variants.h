@@ -7,8 +7,8 @@
 #define NUM_MON_VARIANTS   7
 
 // Trainer-Pokémon zonder 'Variant:' in trainers.party: TRUE = variant uit de
-// personality (zoals wild), FALSE = altijd normaal.
-#define TRAINER_MON_VARIANTS_RANDOM TRUE
+// personality (zoals wild), FALSE = altijd normaal (ook Frontier-teams).
+#define TRAINER_MON_VARIANTS_RANDOM FALSE // Jordi 15 okt: trainers eerst altijd normaal
 
 struct VariantPalettes
 {

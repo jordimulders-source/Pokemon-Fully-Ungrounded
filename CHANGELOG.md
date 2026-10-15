@@ -18777,3 +18777,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Shinykans 1/8192 → 1/1024.**
   - Trainers: `Variant: 0–6` in `trainers.party` (0 = normaal). Zonder die regel komt de variant uit de personality, net als in het wild (schakelaar `TRAINER_MON_VARIANTS_RANDOM`).
   - 1288 paletten (Alcremie overgeslagen: die heeft al 63 kleurvormen) als `variants.pal` naast `normal.pal`; generator `tools/grounded/variants/variants.py`, contactvel `sheet.py`. Code: `src/mon_variants.c`. Kosten ±270 KB, **ROM ±583 KB vrij**.
+- **Kleurvarianten, eerste recepten: Kanto-starters** (na Jordi's feedback op de placeholders: "een palette swap is niet zomaar een andere shade"). Elke sprite is opgedeeld in kleurgroepen (lijf, buik, vlam, vleugels, bol/bloem, ogen); een variant kleurt per groep en houdt de schaduwopbouw (OKLCh). Alleen soorten met een recept hebben varianten; de rest blijft voorlopig normaal (ROM ±832 KB vrij).
+  - Charmander-lijn: Squirtle-kleuren met blauwe vlam, Bulbasaur-kleuren met groene vlam, axolotl, albino (rode ogen, witte vlam), Mega X (zwart, blauwe vlam, rode ogen), synthwave.
+  - Bulbasaur-lijn: Charmander-kleuren, Squirtle-kleuren, pijlgifkikker, albino (donkere vlekken, roze bol), sakura, radioactief.
+  - Squirtle-lijn: Charmander-kleuren, soepschildpad, Koopa, albino, Ninja Turtle, vaporwave.
+  - Charizards ogen deelden een paletindex met zijn vleugels; ze hebben nu een eigen index (zelfde kleur, `sprite_fixes.py`), zodat albino rode ogen kan krijgen.
+  - Trainer- en Frontier-Pokémon zijn standaard normaal van kleur (Jordi); een vaste variant kan met `Variant:`.
+  - Gereedschap in `tools/grounded/variants/`: `ramps.py` (kleurgroepen + indexkaart), `colorlib.py`, `recipes.py`, `variants.py`, `sheet.py`, `sprite_fixes.py`.

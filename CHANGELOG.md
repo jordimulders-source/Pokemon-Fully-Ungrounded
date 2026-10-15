@@ -18849,7 +18849,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Kleurvarianten, Hoenn-dex groep 8:**
   - Torkoal (meer met de rook; Jordi): steenkool met aswolk, Delfts blauw, gifgas, albino, zwavelwolk, lavafontein.
   - Spoink-lijn: boerderijvarken, wild zwijn, parelmoer, albino (meer schaduw), Miss Piggy, Ganon (Zelda).
-  - Spinda (vlekken via index 5-7): reuzenpanda, rode panda, giraf, aardbei, psychedelisch, zwart met goud.
+  - Spinda (vlekken via index 5-7): reuzenpanda, rode panda, giraf, aardbei, psychedelisch, kintsugi (porselein met gouden vlekken; de oorgroep bevat ook de spiraalogen, die blijven donker).
   - Trapinch-lijn (per evolutie een eigen verloop, zoals normaal/shiny; Flygons lenzen per variant anders): woestijn naar oase, Garchomp-kleuren, libel (nimf naar glans), albino, vuur, Ghidorah (brons naar goud).
   - Cacnea-lijn: opuntia, rode maancactus, pompoenvogelverschrikker, albino, woestijnnacht, snoepcactus.
   - Swablu-lijn: suikerspin, onweerswolk, zonsondergang, pauw, Kinto-un (Dragon Ball), poollicht.

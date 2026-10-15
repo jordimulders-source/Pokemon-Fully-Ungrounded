@@ -704,14 +704,14 @@ LINES = {
     },
     'spinda': {
         # vlekken worden in de game getekend met index 5-7
-        'species': {'spinda': {'body': [1, 2, 3], 'spots': [5, 6, 7], 'ears': [4, 13, 14]}},
+        'species': {'spinda': {'body': [1, 2, 3], 'spots': [5, 6, 7], 'ears': [4, 13, 14]}},  # ears = ook de spiraalogen: donker houden
         'variants': [
             {'naam': 'Reuzenpanda', 'body': '#dcdce0', 'spots': ('#2c2c30', {'l': 1.3}), 'ears': '#2c2c30'},
             {'naam': 'Rode panda', 'body': '#c06030', 'spots': '#f0e0c8', 'ears': '#4c2818'},
             {'naam': 'Giraf', 'body': '#e8c860', 'spots': '#7c4c20'},
-            {'naam': 'Aardbei', 'body': '#f0b0c0', 'spots': '#d02838', 'ears': '#58a038'},
+            {'naam': 'Aardbei', 'body': '#f0b0c0', 'spots': '#d02838', 'ears': '#6c1c28'},
             {'naam': 'Psychedelisch', 'body': '#f0e890', 'spots': '#d030a0', 'ears': '#3080d0'},
-            {'naam': 'Zwart met goud', 'body': ('#2c2830', {'l': 1.3}), 'spots': '#e8c030', 'ears': '#e8c030'},
+            {'naam': 'Kintsugi (porselein met goud)', 'body': '#dcd8d0', 'spots': '#e0b030'},
         ],
     },
     'trapinch': {

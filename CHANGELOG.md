@@ -18877,7 +18877,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Snorunt-lijn (Glalie, Froslass): rode oni (Hannya), noorderlicht, matcha, albino, Yuki-onna (sakura), Lich King.
   - Spheal-lijn: grijze zeehond, zeeleeuw, zeehondenpup, Pokéball, gouden medaille, orka.
   - Clamperl-lijn (Huntail, Gorebyss): parelmoer, mandarijnvis, diepzeegloed, albino, zwarte parel (Tahiti), Ariel.
-  - Relicanth: echte coelacant (staalblauw), versteend, barnsteen, albino, jadebeeld, Azteeks relikwie.
+  - Relicanth (kop en vlekken in contrasterende kleuren): echte coelacant (blauw met witte vlekken), lavasteen, koi, albino, jade met goud, Azteeks relikwie.
   - Luvdisc: rood hart, chocoladehart, lavendel, albino, gebroken hart, Tiffany (turkoois).
-  - Bagon-lijn: Garchomp, Hydreigon, Kyurem, albino, Dragonite, Smaug (rood en goud).
-  - Beldum-lijn (metalen): koper, goud, patina, gunmetal, roségoud, Iron Man.
+  - Bagon-lijn (mythologische draken): Alduin (Skyrim), Bahamut (platina en goud), Y Ddraig Goch (Welsh), albino, Tiamat (chromatisch), Smaug (rood en goud).
+  - Beldum-lijn (metalen): koper, goud, patina, gunmetal, roségoud, Iron Man; Metang krijgt een donkerder doelkleur (zijn palet is lichter, anders vlak als een Gen 2-sprite).
+  - Glalie: hoorns blijven zwart (de hoornindex kleurt ook de gaten in het gezicht); Hannya-thema met minder kleuren.

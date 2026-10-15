@@ -302,6 +302,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Tilesets: sneeuw (`snow`, routes; nieuwe metatiles **alleen achteraan**, daarna `make data/tilesets/secondary/snow/tiles.4bpp`; ~445/512 tiles), `snow_town_base` (primary) + `snow_town` (secondary) voor Ashfrost: eigen nummering, 362 + 465 van 2×512 tiles; opnieuw genereren mag (alleen Ashfrost gebruikt ze), daarna `ashfrost.py` opnieuw draaien, Cave (kristallen 0x3A5–0x3A7, `-num_tiles 441` in `graphics_file_rules.mk`).
 
 ## Stand van zaken
+- **Save-data:** nieuwe velden alleen achteraan SaveBlock1 (na `bagItems`); oude saves lezen daar nullen.
 - **Werkbranch:** `claude/affectionate-pascal-jc9de8` (12 okt: 1.0 van `claude/funny-edison-d44uts` + Jordi's testrun-fixes); `master` loopt ver achter (v0.9.89).
 - **Testrun Jordi (12 okt):** bevindingen bijhouden in `TESTRUN.md` (per ronde, met status); ronde 1 t/m Roxanne verwerkt (zie onderaan [v1.0.0] in de changelog); levelcurve herijkt: regulier spelen 2–3 onder de gym-ace, inhaal-EXP alleen vangnet, routes vóór Roxanne op de oude levels; spelersnaam blijft 7 tekens. Hoopa-thema staat nog op `claude/hoopa-theme-wip`.
 - **Takenlijst:** `TODO.md` is sinds 9 okt de enige actuele lijst (nu: basiskaart vullen; daarna Tao-eiland, Beacon Isle, Spacetime Cave met warps en Mt. Coronet als laatste quest, Yoshi's Island; pas daarna intro's en muziek). Andere plannings-documenten zijn naslag (statusregel bovenaan). **Lees TODO.md + de "Besloten"-lijst vóór je iets voorstelt of zegt dat er geen plan is.**

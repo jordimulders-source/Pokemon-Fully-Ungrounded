@@ -127,6 +127,9 @@ void MoveSaveBlocks_ResetHeap(void)
     *gSaveBlock1Ptr = *saveBlock1Copy;
     *gPokemonStoragePtr = *pokemonStorageCopy;
 
+    // Project Grounded: oude saves hebben hun items nog in de kleine pocket; verhuis ze (vóór de nieuwe sleutel).
+    MigrateLegacyBagItems();
+
     // heap was destroyed in the copying process, so reset it
     InitHeap(gHeap, HEAP_SIZE);
 

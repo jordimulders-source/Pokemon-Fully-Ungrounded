@@ -2,8 +2,8 @@
 """Kleine sprite-ingrepen voor de varianten: pixels die een paletindex delen met een
 ander onderdeel (Charizards ogen met zijn vleugels, Grovyles armbladeren met zijn
 hoofdblad) krijgen een eigen index met dezelfde kleur in normal.pal en shiny.pal, zodat
-de gewone sprite er hetzelfde uitziet. Eén keer per soort (bijgehouden in
-sprite_fixes_done.txt): python3 tools/grounded/variants/sprite_fixes.py
+de gewone sprite er hetzelfde uitziet. Eén keer per sleutel (bijgehouden in
+sprite_fixes_done.txt; 'sceptile2' = tweede ingreep op dezelfde map): python3 tools/grounded/variants/sprite_fixes.py
 
 Soorten ingrepen:
   ('pixels', bestand, van, naar, [(x, y), ...])
@@ -33,6 +33,12 @@ FIXES = {
                 ('fill', 'anim_front.png', [(9, 32), (46, 33), (12, 99), (17, 100), (45, 100), (51, 101), (48, 103)],
                  {1, 2, 3}, {2: 15, 3: 13})],
     # staartstukje tussen de benen (lijftint 4) -> eigen index 15 (de staart is van achteren niet te zien)
+    # armbladeren (vulling = lijftint 4) -> eigen index 14; daarvoor gaat de donkerste staarttint 14 op in 1
+    'sceptile2': [('pal', {14: 4}),
+                  ('merge', 14, 1),
+                  ('box', 'anim_front.png', [(5, 17, 13, 23), (42, 16, 51, 23), (2, 86, 10, 90), (40, 84, 47, 90)],
+                   {4: 14}),
+                  ('box', 'back.png', [(43, 28, 63, 47)], {5: 14, 4: 14})],
     'sceptile': [('pal', {15: 4}),
                  ('merge', 15, 6),
                  ('box', 'anim_front.png', [(29, 47, 46, 54), (46, 44, 62, 53), (30, 112, 45, 119), (40, 104, 62, 117)],
@@ -41,7 +47,7 @@ FIXES = {
 
 
 def apply(folder, fixes):
-    d = os.path.join(ROOT, 'graphics/pokemon', folder)
+    d = os.path.join(ROOT, 'graphics/pokemon', folder.rstrip('0123456789'))
     ims = {p: Image.open(os.path.join(d, p)) for p in PICS}
     pal_fix = {}
     for fix in fixes:

@@ -1,3 +1,4 @@
 charizard
 grovyle
 sceptile
+sceptile2

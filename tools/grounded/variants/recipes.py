@@ -83,7 +83,8 @@ LINES = {
             'treecko': {'body': [1, 3, 4, 5], 'tail': [13, 14, 15], 'belly': [10, 11, 12], 'eyes': [6, 8, 9]},
             'grovyle': {'body': [5, 6, 7, 8], 'tail': [1, 2, 3], 'armleaves': [13, 15], 'belly': [11, 12, 14],
                         'eyes': [9, 10]},
-            'sceptile': {'body': [1, 2, 3, 4, 5], 'tail': [12, 13, 14, 15], 'belly': [9, 10], 'seeds': [7, 8, 11]},
+            'sceptile': {'body': [1, 2, 3, 4, 5], 'tail': [12, 13, 15], 'armleaves': [14], 'belly': [9, 10],
+                         'seeds': [7, 8, 11]},
         },
         'variants': [
             {'naam': 'Torchic-kleuren', 'body': '#e87828', 'tail': '#c09818', 'armleaves': '#c09818',

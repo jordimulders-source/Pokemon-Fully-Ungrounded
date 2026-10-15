@@ -18799,3 +18799,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Mudkip-lijn: twee axolotls, **leucistisch** (roze, roze-rode kieuwen, donkere ogen; i.p.v. albino) en **GFP** (lichtgevend, i.p.v. bubblegum).
   - `sprite_fixes.py` kan nu ook indexen samenvoegen, vlakvullen vanaf zaadpixels en binnen rechthoeken hernummeren; eenmalig per soort (`sprite_fixes_done.txt`).
 - Treecko-lijn in Mudkip-kleuren: de rode buik/streep is nu oranje als Mudkips wangen (Jordi); Sceptiles armbladeren blijven lijfkleur (geen vrije paletplek zonder een lijftint te verliezen).
+- Sceptiles armbladeren hebben nu een eigen index (oranje in de Mudkip-variant, ook op de achterkant); daarvoor ging de donkerste staarttint op in de bijna gelijke donkerste lijftint. De gewone Sceptile houdt al zijn glans en schaduw.

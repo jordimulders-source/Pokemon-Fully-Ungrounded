@@ -1335,12 +1335,12 @@ LINES = {
             'electrode/hisui': {'hball': [10, 14, 8, 9], 'hwood': [1, 2, 4, 5, 3, 6]},
         },
         'variants': [
-            {'naam': 'Great Ball / Great Ball (Hisui)', 'red': '#3060c8', 'pat': '#e03030', 'hball': '#2850b0'},
-            {'naam': 'Ultra Ball / Feather Ball (Hisui)', 'red': ('#303038', {'l': 1.3}), 'pat': '#f0c828', 'hball': '#70b0e8'},
-            {'naam': 'Quick Ball / Wing Ball (Hisui)', 'red': '#3878d0', 'pat': '#f0d030', 'hball': '#3a9a50'},
-            {'naam': 'Safari Ball / Ultra Ball (Hisui)', 'red': '#6a9a40', 'pat': '#2c5a20', 'white': '#d8c090', 'hball': '#d8c020', 'hwood': '#8a8a90'},
-            {'naam': 'Dusk Ball / Strange Ball (Hisui)', 'red': '#40a848', 'pat': ('#26262a', {'l': 1.2}), 'white': ('#2c2c30', {'l': 1.3}), 'hball': '#c870c0'},
-            {'naam': 'Master Ball / Origin Ball (Hisui, paars)', 'red': '#8040c0', 'electrode:palfile': 'master_ball.pal', 'hball': '#8848c0'},
+            {'naam': 'Great Ball / Great Ball (Hisui)', 'red': '#3070d0', 'pat': '#d83038', 'hball': '#2850b0'},
+            {'naam': 'Ultra Ball / Feather Ball (Hisui)', 'red': '#f0c828', 'pat': ('#34343c', {'l': 1.2}), 'hball': '#70b0e8'},
+            {'naam': 'Quick Ball / Wing Ball (Hisui)', 'red': '#3890e0', 'pat': '#f8e020', 'hball': '#3a9a50'},
+            {'naam': 'Safari Ball / Ultra Ball (Hisui)', 'red': '#8c8c48', 'pat': '#2c6030', 'hball': '#d8c020', 'hwood': '#8a8a90'},
+            {'naam': 'Dusk Ball / Strange Ball (Hisui)', 'red': ('#3a3a40', {'l': 1.3}), 'pat': '#70c040', 'white': ('#38383c', {'l': 1.3}), 'hball': '#c870c0'},
+            {'naam': 'Master Ball / Origin Ball (Hisui, paars)', 'red': '#7838b0', 'pat': '#f060c0', 'electrode:palfile': 'master_ball.pal', 'hball': '#8848c0'},
         ],
     },
     'oddish': {

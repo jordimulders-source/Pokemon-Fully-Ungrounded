@@ -27,8 +27,8 @@ SPECIES = {
     'electrode': {'ramp': [14, 13, 12, 11, 10], 'pat': [6, 7, 8], 'flip': True},
 }
 
-# Volgorde = variant 1..5 (10%, 6%, 4%, 3%, 1,5%); de 0,5% (Master Ball) is alleen palet.
-PATTERNS = ['great', 'ultra', 'quick', 'safari', 'dusk']
+# Volgorde = variant 1..6 (10%, 6%, 4%, 3%, 1,5%, 0,5%).
+PATTERNS = ['great', 'ultra', 'quick', 'safari', 'dusk', 'master']
 
 
 def seg_dist(p, a, b):
@@ -40,28 +40,41 @@ def seg_dist(p, a, b):
     return math.hypot(px - (ax + t * dx), py - (ay + t * dy))
 
 
+def ellipse(u, v, cx, cy, rx, ry):
+    return ((u - cx) / rx) ** 2 + ((v - cy) / ry) ** 2 < 1
+
+
+def polyline(p, pts, width):
+    return any(seg_dist(p, a, b) < width for a, b in zip(pts, pts[1:]))
+
+
 def in_pattern(name, u, v):
-    """u: -1 links .. 1 rechts, v: -1 bovenkant .. 0 naad (het gekleurde deel)."""
+    """u: -1 links .. 1 rechts, v: -1 bovenkant .. 0 naad (het gekleurde deel).
+    Nagetekend naar de officiële artwork (PokeAPI dream-world-items)."""
     au = abs(u)
     if name == 'great':
-        # twee schuine rode banden links en rechts
-        return seg_dist((au, v), (0.80, -0.16), (0.30, -0.84)) < 0.13
+        # twee rode 'haken' die langs de buitenrand omhoog lopen en bovenin naar binnen buigen
+        return polyline((au, v), [(0.58, -0.18), (0.76, -0.48), (0.70, -0.78), (0.52, -0.94)], 0.16)
     if name == 'ultra':
-        # gele H: brede zijbanden, zwart midden en zwarte buitenrand
-        return 0.30 < au < 0.64 and v < -0.10
+        # gele bovenkant met de zwarte H: brede middenbaan en zwarte flanken
+        return au < 0.22 or au > 0.76
     if name == 'quick':
-        # gele bliksemlijnen vanaf de top naar de naad
-        return (seg_dist((au, v), (0.10, -0.98), (0.80, -0.14)) < 0.085
-                or (au < 0.09 and v < -0.55))
+        # gele bliksem-X over een lichtblauwe bovenkant
+        bolt = [(-0.62, -0.92), (-0.05, -0.55), (-0.22, -0.46), (0.72, -0.04)]
+        return (polyline((u, v), bolt, 0.11) or polyline((-u, v), bolt, 0.11))
     if name == 'safari':
-        # camouflagevlekken
-        spots = [(-0.55, -0.35, 0.20), (0.05, -0.70, 0.22), (0.55, -0.45, 0.18),
-                 (-0.20, -0.15, 0.14), (0.35, -0.12, 0.12), (-0.60, -0.80, 0.12)]
-        return any((u - x) ** 2 + ((v - y) * 1.15) ** 2 < r * r for x, y, r in spots)
+        # donkergroene camouflagevlekken over olijf/kaki
+        spots = [(-0.62, -0.30, 0.24, 0.16), (-0.05, -0.78, 0.30, 0.15), (0.55, -0.55, 0.22, 0.18),
+                 (-0.30, -0.08, 0.20, 0.10), (0.40, -0.12, 0.22, 0.10), (-0.70, -0.75, 0.14, 0.12),
+                 (0.85, -0.25, 0.12, 0.14)]
+        return any(ellipse(u, v, x, y, rx, ry) for x, y, rx, ry in spots)
     if name == 'dusk':
-        # zwarte strepen over een groene bovenkant
-        return (seg_dist((au, v), (0.85, -0.25), (0.40, -0.80)) < 0.10
-                or (au < 0.12 and v < -0.35))
+        # groene vlekken op een donkere bal: kap bovenop, ovalen op de flanken en voorop
+        return (ellipse(u, v, 0, -1.0, 0.42, 0.22) or ellipse(au, v, 0.95, -0.35, 0.22, 0.42)
+                or ellipse(u, v, 0, -0.02, 0.42, 0.14))
+    if name == 'master':
+        # twee roze bollen linksboven en rechtsboven
+        return ellipse(au, v, 0.52, -0.62, 0.34, 0.30)
     raise ValueError(name)
 
 

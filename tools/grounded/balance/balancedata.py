@@ -83,7 +83,7 @@ GIFTS = [
 ]
 
 # Evolutie-items: fase waarin je het item kunt hebben.
-ITEM_STAGE = {'ITEM_MOON_STONE': 0, 'ITEM_FIRE_STONE': 3, 'ITEM_THUNDER_STONE': 5, 'ITEM_WATER_STONE': 5,
+ITEM_STAGE = {'ITEM_MOON_STONE': 2,  # Capt. Stern, Slateport (was Petalburg Woods) 'ITEM_FIRE_STONE': 3, 'ITEM_THUNDER_STONE': 5, 'ITEM_WATER_STONE': 5,
               'ITEM_LEAF_STONE': 5, 'ITEM_ICE_STONE': 5, 'ITEM_SHINY_STONE': 5, 'ITEM_DUSK_STONE': 5,
               'ITEM_DAWN_STONE': 5, 'ITEM_SUN_STONE': 6}
 

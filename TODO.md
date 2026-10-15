@@ -128,3 +128,10 @@ Besloten:
 - Volgorde: (1) techniek, (2) generator, (3) **testbatch Hoenn-dex** (202 soorten) als contactvellen naar Jordi, daarna de rest in batches.
 - Schatting: Hoenn-test ±1–1,7 M tokens, rest van de dex ±1–2 M.
 - Open: designprincipe voor CLAUDE.md voorgesteld ("kleurvarianten zijn skins: herkenbaar anders, passend bij de soort, hoe zeldzamer hoe opvallender"), nog niet bevestigd.
+
+## Wiki / encyclopedie — start na Jordi's volledige testrun (Jordi 15 okt)
+- Generator `tools/grounded/wiki/build_wiki.py` leest de **code zelf** (species_info, `gen_9.h`, moves_info.h, items.h, wild_encounters.json, trainers.party, map-scripts) en maakt een statische site; opnieuw draaien na elke wijziging.
+- **Focus op wijzigingen:** automatisch vergelijken met de originele pokeemerald-expansion (labels "gewijzigd"/"nieuw", met oud → nieuw), filters als "alleen gewijzigd".
+- Onderdelen: Pokédex (types, stats, abilities, evolutielevels, learnsets, vindplaatsen), moves, items/TM's met vindplaats, trainers/gyms, tips & tricks/QoL (met de hand, eerste versie uit CLAUDE.md + changelog).
+- Wiki-opzet: een eigen pagina per Pokémon/move/item/locatie met onderlinge links, zoekbalk via een zoekindex in de browser (bijv. Pagefind). Sprites uit `graphics/pokemon/`, ingekleurd per palet: normaal, shiny en de kleurvarianten ("skins") met afbeelding.
+- **Openbaar voor vrienden/testers:** statische HTML naar een apart openbaar repo met GitHub Pages; spoilers (legendaries, post-game, Spacetime) achter uitklapblokken, geen debug-info, geen ROM.

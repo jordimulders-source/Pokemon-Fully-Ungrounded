@@ -79,7 +79,7 @@ FortreeCity_EventScript_UseDevonScope::
 	playmoncry SPECIES_KECLEON, CRY_MODE_ENCOUNTER
 	delay 40
 	waitmoncry
-	msgbox FortreeCity_Text_KecclesSpying, MSGBOX_DEFAULT
+	call FortreeCity_EventScript_KecclesSpyingText
 	trainerbattle_no_intro TRAINER_KECCLES_2, FortreeCity_Text_KecclesDefeat
 	applymovement VAR_LAST_TALKED, FortreeCity_Movement_KecleonFlee
 	waitmovement 0
@@ -87,6 +87,17 @@ FortreeCity_EventScript_UseDevonScope::
 	setflag FLAG_KECLEON_FLED_FORTREE
 	release
 	end
+
+@ Project Grounded: eerste echte kennismaking als de speler Keccles nog nergens had ontmoet (strand van Route 115 of Route 136)
+FortreeCity_EventScript_KecclesSpyingText::
+	goto_if_defeated TRAINER_KECCLES_1, FortreeCity_EventScript_KecclesSpyingMet
+	goto_if_defeated TRAINER_KECCLES_3, FortreeCity_EventScript_KecclesSpyingMet
+	msgbox FortreeCity_Text_KecclesSpyingFirstMeet, MSGBOX_DEFAULT
+	return
+
+FortreeCity_EventScript_KecclesSpyingMet::
+	msgbox FortreeCity_Text_KecclesSpying, MSGBOX_DEFAULT
+	return
 
 FortreeCity_Movement_KecleonFlee:
 	walk_right
@@ -159,6 +170,25 @@ FortreeCity_Text_KecclesSpying:
 	.string "clue about tactics.\p"
 	.string "They can be smart, but they are too\n"
 	.string "obedient.\p"
+	.string "Once they get confined to a POKé BALL,\n"
+	.string "their free will wanes.\p"
+	.string "Sometimes I wonder, what real free will\n"
+	.string "is…\p"
+	.string "Anyways, let's check if we are both\n"
+	.string "ready for WINONA!$"
+
+FortreeCity_Text_KecclesSpyingFirstMeet:
+	.string "KECCLES: Wow, was that necessary?\p"
+	.string "Oh, I was camouflaged? My apologies.\p"
+	.string "I'm KECCLES. A KECLEON with an\n"
+	.string "academic career. Yes, I talk.\p"
+	.string "We were supposed to meet on the\n"
+	.string "beach of ROUTE 115. I had a speech.\p"
+	.string "You never showed up. Rude.\p"
+	.string "Anyway. I was spying on the GYM. Not\n"
+	.string "in a creepy way, in a tactical way.\p"
+	.string "Most POKéMON have no clue about\n"
+	.string "tactics. They're too obedient.\p"
 	.string "Once they get confined to a POKé BALL,\n"
 	.string "their free will wanes.\p"
 	.string "Sometimes I wonder, what real free will\n"

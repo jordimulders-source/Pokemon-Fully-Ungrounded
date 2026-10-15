@@ -559,11 +559,22 @@ BattleFrontier_OutsideEast_EventScript_KecclesReveal::
 	waitmoncry
 	goto_if_set FLAG_RECEIVED_MARSHADOW, BattleFrontier_OutsideEast_EventScript_KecclesRetry
 	msgbox BattleFrontier_OutsideEast_Text_KecclesIntro, MSGBOX_DEFAULT
+	call_if_not_defeated TRAINER_KECCLES_1, BattleFrontier_OutsideEast_EventScript_KecclesSkippedBeach
+	call_if_not_defeated TRAINER_KECCLES_3, BattleFrontier_OutsideEast_EventScript_KecclesSkippedSnow
 	closemessage
 	call BattleFrontier_OutsideEast_EventScript_MarshadowAppears
 	goto_if_eq VAR_RESULT, FALSE, BattleFrontier_OutsideEast_EventScript_MarshadowNoRoom
 	msgbox BattleFrontier_OutsideEast_Text_KecclesTwoAgainstSix, MSGBOX_DEFAULT
 	goto BattleFrontier_OutsideEast_EventScript_KecclesBattle
+
+@ Project Grounded: Keccles merkt het op als je een eerdere ontmoeting oversloeg
+BattleFrontier_OutsideEast_EventScript_KecclesSkippedBeach::
+	msgbox BattleFrontier_OutsideEast_Text_KecclesSkippedBeach, MSGBOX_DEFAULT
+	return
+
+BattleFrontier_OutsideEast_EventScript_KecclesSkippedSnow::
+	msgbox BattleFrontier_OutsideEast_Text_KecclesSkippedSnow, MSGBOX_DEFAULT
+	return
 
 BattleFrontier_OutsideEast_EventScript_KecclesRetry::
 	msgbox BattleFrontier_OutsideEast_Text_KecclesRetry, MSGBOX_DEFAULT
@@ -713,6 +724,18 @@ BattleFrontier_OutsideEast_Text_KecclesRetry:
 	.string "KECCLES: Back for the rematch? Good.\p"
 	.string "Is your shadow coming too?\n"
 	.string "I'll assume yes. I always do now.$"
+
+BattleFrontier_OutsideEast_Text_KecclesSkippedBeach:
+	.string "KECCLES: Also. You never battled me\n"
+	.string "on the beach of ROUTE 115.\p"
+	.string "That was our origin story.\n"
+	.string "You skipped the origin story. Rude.$"
+
+BattleFrontier_OutsideEast_Text_KecclesSkippedSnow:
+	.string "KECCLES: And on ROUTE 136, you walked\n"
+	.string "right past me in the snow.\p"
+	.string "I was invisible, yes.\n"
+	.string "Still rude.$"
 
 BattleFrontier_OutsideEast_Text_KecclesDefeat:
 	.string "KECCLES: Hmmm…$"

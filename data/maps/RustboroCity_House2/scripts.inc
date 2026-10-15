@@ -10,10 +10,15 @@ RustboroCity_House2_EventScript_LittleGirl::
 	end
 
 RustboroCity_House2_Text_TrainerSchoolExcellent:
-	.string "The TRAINER'S SCHOOL is excellent.\p"
-	.string "If you study there, you could become a\n"
-	.string "GYM LEADER.\p"
-	.string "My son wants to be an influencer.$"
+	.string "We live right on top of the TRAINER'S\n"
+	.string "SCHOOL. Same lot. Shared wall.\p"
+	.string "The school bell is my alarm clock.\n"
+	.string "Even on weekends. Even at night.\p"
+	.string "Kids run through my kitchen to get\n"
+	.string "to class. One of them calls me MISS.\p"
+	.string "I've been graded twice. I got a C.\p"
+	.string "My son wants to be an influencer.\n"
+	.string "He streams the fire drills.$"
 
 RustboroCity_House2_Text_RoxanneKnowsALot:
 	.string "ROXANNE knows so much about POKéMON!\p"

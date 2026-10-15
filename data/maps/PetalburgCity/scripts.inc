@@ -791,9 +791,11 @@ PetalburgCity_Text_WellMaybeNot:
 
 PetalburgCity_Text_ImLookingForTalentedTrainers:
 	.string "So what we will do, we will do\n"
-	.string "cross-dressing!\p"
+	.string "cosplay!\p"
 	.string "Next time you see me, I'll be\n"
-	.string "dressed like ROXANNE!$"
+	.string "dressed as PROF. BIRCH.\p"
+	.string "Perfect disguise. Lab coat, sandals,\n"
+	.string "faint smell of POKéMON poop.$"
 	
 
 @ extra_fights { (tools/grounded/maptools/extra_fights.py)

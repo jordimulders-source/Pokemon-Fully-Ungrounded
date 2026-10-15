@@ -2045,14 +2045,14 @@ MatchCall_Text_Roxanne1::
 	.string "rematch. Encore!$"
 
 MatchCall_Text_Roxanne2::
-	.string "ROXANNE: CHAMPION! We are the\n"
-	.string "champions, my friend!\p"
+	.string "ROXANNE: CHAMPION! Oh, make me over!\n"
+	.string "Celebrity skin! I'm so jealous.\p"
 	.string "My GYM needs a little more time. Then,\n"
 	.string "rematch!$"
 
 MatchCall_Text_Roxanne3::
 	.string "ROXANNE: {PLAYER}! My GYM is\n"
-	.string "ready! Here I go again!\p"
+	.string "ready! Here I come, BARRACUDA!\p"
 	.string "Come to RUSTBORO!$"
 
 MatchCall_Text_Roxanne4::

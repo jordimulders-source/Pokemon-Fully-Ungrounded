@@ -841,23 +841,19 @@ RustboroCity_EventScript_MayEncounter::
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
 	setvar VAR_0x8008, 0
-	msgbox RustboroCity_Text_MayPassedBrineyWantToBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleMay
-	msgbox RustboroCity_Text_MayOhHaventRaisedPokemonEnough, MSGBOX_DEFAULT
-	call RustboroCity_EventScript_RestoreBgm
-	releaseall
+	msgbox RustboroCity_Text_MayPassedBrineyWantToBattle, MSGBOX_DEFAULT
+	goto RustboroCity_EventScript_BattleMayStart
 	end
 
 RustboroCity_EventScript_MayAskToBattle::
 	setvar VAR_0x8008, 1
-	msgbox RustboroCity_Text_MayWantToBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleMay
-	msgbox RustboroCity_Text_MayOhHaventRaisedPokemonEnough, MSGBOX_DEFAULT
-	releaseall
+	msgbox RustboroCity_Text_MayWantToBattle, MSGBOX_DEFAULT
+	goto RustboroCity_EventScript_BattleMayStart
 	end
 
 RustboroCity_EventScript_BattleMay::
 	msgbox RustboroCity_Text_MayImNotGoingToLose, MSGBOX_DEFAULT
+RustboroCity_EventScript_BattleMayStart::
 	switch VAR_STARTER_MON
 	case 0, RustboroCity_EventScript_BattleMayTreecko
 	case 1, RustboroCity_EventScript_BattleMayTorchic
@@ -908,22 +904,18 @@ RustboroCity_EventScript_BrendanEncounter::
 	setflag FLAG_ENABLE_RIVAL_MATCH_CALL
 	setvar VAR_RUSTBORO_CITY_STATE, 8
 	setvar VAR_ROUTE104_STATE, 2
-	msgbox RustboroCity_Text_BrendanPassedBrineyWantToBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleBrendan
-	msgbox RustboroCity_Text_BrendanNoConfidenceInPokemon, MSGBOX_DEFAULT
-	call RustboroCity_EventScript_RestoreBgm
-	releaseall
+	msgbox RustboroCity_Text_BrendanPassedBrineyWantToBattle, MSGBOX_DEFAULT
+	goto RustboroCity_EventScript_BattleBrendanStart
 	end
 
 RustboroCity_EventScript_BrendanAskToBattle::
-	msgbox RustboroCity_Text_BrendanWantToBattle, MSGBOX_YESNO
-	goto_if_eq VAR_RESULT, YES, RustboroCity_EventScript_BattleBrendan
-	msgbox RustboroCity_Text_BrendanNoConfidenceInPokemon, MSGBOX_DEFAULT
-	releaseall
+	msgbox RustboroCity_Text_BrendanWantToBattle, MSGBOX_DEFAULT
+	goto RustboroCity_EventScript_BattleBrendanStart
 	end
 
 RustboroCity_EventScript_BattleBrendan::
 	msgbox RustboroCity_Text_BrendanIWontGoEasy, MSGBOX_DEFAULT
+RustboroCity_EventScript_BattleBrendanStart::
 	switch VAR_STARTER_MON
 	case 0, RustboroCity_EventScript_BattleBrendanTreecko
 	case 1, RustboroCity_EventScript_BattleBrendanTorchic
@@ -1134,12 +1126,19 @@ RustboroCity_Text_RegisteredMay:
 	.string "Registered MAY in the POKéNAV.$"
 
 RustboroCity_Text_MayPassedBrineyWantToBattle:
-	.string "MAY: By the way, I passed MR. BRINEY in\n"
-	.string "PETALBURG WOODS.\p"
-	.string "Probably going home to his cottage.\p"
-	.string "How's your POKéDEX? Mine's looking\n"
-	.string "great!\p"
-	.string "So… A little battle?$"
+	.string "MAY: Ugh, I'm all out of money, but\n"
+	.string "there's a stain on my shoe.\p"
+	.string "Oh hey, {PLAYER}! What have you\n"
+	.string "been up to?\p"
+	.string "What, saving an old man and defeating\n"
+	.string "a GYM? Boringggg.\p"
+	.string "I was at ZARA, and then at H&M, then\n"
+	.string "at PRIMARK, then back to ZARA,\p"
+	.string "then I went to COACH, then to this\n"
+	.string "cute second-hand store, back to ZARA…\p"
+	.string "HEY, WHY ARE YOU NOT LISTENING?\p"
+	.string "Pffffff. Feel my rage!\n"
+	.string "POKéMON battle!$"
 
 RustboroCity_Text_MayOhHaventRaisedPokemonEnough:
 	.string "MAY: What's wrong?\p"
@@ -1147,7 +1146,8 @@ RustboroCity_Text_MayOhHaventRaisedPokemonEnough:
 	.string "Bad look for a TRAINER!$"
 
 RustboroCity_Text_MayWantToBattle:
-	.string "MAY: So, how about a little battle?$"
+	.string "MAY: You again? I'm still mad.\n"
+	.string "And the stain is still there. Battle!$"
 
 RustboroCity_Text_MayImNotGoingToLose:
 	.string "MAY: You just became a TRAINER,\n"
@@ -1172,19 +1172,27 @@ RustboroCity_Text_RegisteredBrendan:
 	.string "Registered BRENDAN in the POKéNAV.$"
 
 RustboroCity_Text_BrendanPassedBrineyWantToBattle:
-	.string "BRENDAN: By the way, I passed MR.\n"
-	.string "BRINEY in PETALBURG WOODS.\p"
-	.string "Going home to his cottage, I bet.\p"
-	.string "How's your POKéDEX? Filled any pages?\p"
-	.string "Mine rules.\p"
-	.string "Battle? Let's see how far you got.$"
+	.string "BRENDAN: Ugh, my phone's at 2% and\n"
+	.string "my hair is doing a thing.\p"
+	.string "Oh hey, {PLAYER}! What have you\n"
+	.string "been up to?\p"
+	.string "What, saving an old man and beating\n"
+	.string "a GYM? Boringggg.\p"
+	.string "I was at GAMESTOP, then FOOT LOCKER,\n"
+	.string "then back to GAMESTOP,\p"
+	.string "then I watched a guy fix a bike for\n"
+	.string "three hours, back to GAMESTOP…\p"
+	.string "HEY, WHY ARE YOU NOT LISTENING?\p"
+	.string "Pffffff. Feel my rage!\n"
+	.string "POKéMON battle!$"
 
 RustboroCity_Text_BrendanNoConfidenceInPokemon:
 	.string "BRENDAN: What, no confidence in your\n"
 	.string "POKéMON?$"
 
 RustboroCity_Text_BrendanWantToBattle:
-	.string "BRENDAN: What's up? Battle me?$"
+	.string "BRENDAN: You again? Phone's at 1%.\n"
+	.string "Let's make this quick. Battle!$"
 
 RustboroCity_Text_BrendanIWontGoEasy:
 	.string "BRENDAN: You're new, but I won't go\n"

@@ -420,40 +420,61 @@ RusturfTunnel_EventScript_Mike::
 
 RusturfTunnel_Text_ComeAndGetSome:
 	.string "Coming? Come and get some, then!\p"
-	.string "I'm carbonated!$"
+	.string "I'm carbonated! Shake me and see\n"
+	.string "what happens. Actually, don't.$"
 
 RusturfTunnel_Text_Peeko:
 	.string "PEEKO: Pii pihyoh!$"
 
 RusturfTunnel_Text_GruntIntro:
 	.string "Grah! That hostage PEEKO was useless!\p"
-	.string "I thought it'd lead me to a secret\n"
-	.string "spring.\p"
-	.string "It leads to a boat.$"
+	.string "I asked it for directions. It said\n"
+	.string "“Pii pihyoh.” Rude, honestly.\p"
+	.string "Do you ever think bubbles are just\n"
+	.string "water that's scared?\p"
+	.string "My horoscope said: avoid tunnels.\n"
+	.string "I'm IN a tunnel. That's on me.\p"
+	.string "And who digs a tunnel and just STOPS?\n"
+	.string "Commitment issues. Like my ex.\p"
+	.string "Whatever! I have a DRIZZILE and a\n"
+	.string "grudge! FIGHT ME!$"
 
 RusturfTunnel_Text_GruntDefeat:
 	.string "My career in crime…\p"
-	.string "Flat as still water.$"
+	.string "Flat as still water.\n"
+	.string "Which is to say: disgusting.$"
 
 RusturfTunnel_Text_GruntTakePackage:
 	.string "This is not right…\p"
 	.string "The BOSS said: steal a package from\n"
-	.string "DEVON. Easy.\p"
-	.string "Tch! Take it! It's not even carbonated.$"
+	.string "DEVON. Easy. In and out.\p"
+	.string "Nobody said it'd be a box of PARTS.\n"
+	.string "I thought it was a pizza.\p"
+	.string "Did you know you can't microwave a\n"
+	.string "rock? I tried. In there. Long story.\p"
+	.string "Tch! Take it! Not even carbonated!$"
 
 RusturfTunnel_Text_PeekoGladToSeeYouSafe:
-	.string "PEEKO!\n"
-	.string "Am I glad to see you're safe!$"
+	.string "PEEKO! My first mate! My only mate!\p"
+	.string "Did they make you walk the plank?\n"
+	.string "…There's no plank. It's a tunnel.$"
 
 RusturfTunnel_Text_ThankYouLetsGoHomePeeko:
-	.string "You saved PEEKO's life!\p"
-	.string "They call me MR. BRINEY. And you are?\p"
+	.string "You saved PEEKO! A landlubber,\n"
+	.string "but a hero!\p"
+	.string "They call me MR. BRINEY. PEEKO calls\n"
+	.string "me “Pii.” And you are?\p"
 	.string "… … … … … … … …\p"
-	.string "{PLAYER}{KUN}! Thank you!\p"
-	.string "If anything troubles you, just tell me!\p"
-	.string "I live in a cottage by the sea near\n"
+	.string "{PLAYER}{KUN}! Fine name. Good for a\n"
+	.string "ship. Or a hurricane.\p"
+	.string "Forty years at sea, and I lose PEEKO\n"
+	.string "in a TUNNEL. Inland! The shame!\p"
+	.string "Need anything? Just tell me! I live\n"
+	.string "in a cottage by the sea near\l"
 	.string "PETALBURG WOODS.\p"
-	.string "Come, PEEKO. Home.\p"
+	.string "Knock twice. Then yell. I'm old.\p"
+	.string "Come, PEEKO. Home. I'll make your\n"
+	.string "favorite: fish, with a side of fish.\p"
 	.string "PEEKO: Pihyoh!$"
 
 RusturfTunnel_Text_WhyCantTheyKeepDigging:

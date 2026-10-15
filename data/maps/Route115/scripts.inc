@@ -151,15 +151,33 @@ Route115_Text_MeteorFallsSign:
 Route115_EventScript_Keccles::
 	lock
 	faceplayer
+	goto_if_defeated TRAINER_KECCLES_2, Route115_EventScript_KecclesMetBefore
+	goto_if_defeated TRAINER_KECCLES_3, Route115_EventScript_KecclesMetBefore
 	msgbox Route115_Text_KecclesIntro, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route115_EventScript_KecclesDeclined
 	trainerbattle_no_intro TRAINER_KECCLES_1, Route115_Text_KecclesDefeat
 	msgbox Route115_Text_KecclesPostBattle, MSGBOX_DEFAULT
+Route115_EventScript_KecclesLeave::
 	closemessage
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_ROUTE115_KECCLES
 	setflag FLAG_HIDE_ROUTE115_KECCLES
 	fadescreenswapbuffers FADE_FROM_BLACK
+	release
+	end
+
+@ Project Grounded: Keccles al eerder ontmoet (Fortree of Route 136), het strand overgeslagen
+Route115_EventScript_KecclesMetBefore::
+	msgbox Route115_Text_KecclesIntroMetBefore, MSGBOX_YESNO
+	goto_if_eq VAR_RESULT, NO, Route115_EventScript_KecclesDeclinedMetBefore
+	trainerbattle_no_intro TRAINER_KECCLES_1, Route115_Text_KecclesDefeat
+	msgbox Route115_Text_KecclesPostBattleMetBefore, MSGBOX_DEFAULT
+	goto Route115_EventScript_KecclesLeave
+
+Route115_EventScript_KecclesDeclinedMetBefore::
+	msgbox Route115_Text_KecclesDeclinedMetBefore, MSGBOX_DEFAULT
+	applymovement LOCALID_ROUTE115_KECCLES, Common_Movement_FaceLeft
+	waitmovement 0
 	release
 	end
 
@@ -191,6 +209,26 @@ Route115_Text_KecclesDeclined:
 	.string "Hmm, I get your hesitation,\n"
 	.string "probably the shock of me talking\l"
 	.string "to you.$"
+
+Route115_Text_KecclesIntroMetBefore:
+	.string "KECCLES: Oh. {PLAYER}.\p"
+	.string "This beach was supposed to be where\n"
+	.string "we first met. I had a whole speech.\p"
+	.string "Existential dread, beauty of life,\n"
+	.string "a callback for later. Very moving.\p"
+	.string "You skipped it. Now our backstory is\n"
+	.string "out of order. Like a prequel.\p"
+	.string "Battle me anyway? For continuity?$"
+
+Route115_Text_KecclesDeclinedMetBefore:
+	.string "KECCLES: Skipped twice. Bold.\p"
+	.string "I'll wait here. Tanning. KECLEON\n"
+	.string "can't tan, but I'm trying.$"
+
+Route115_Text_KecclesPostBattleMetBefore:
+	.string "KECCLES: There. Canon restored.\p"
+	.string "Mostly. People will still argue\n"
+	.string "about the timeline online.$"
 
 Route115_Text_KecclesDefeat:
 	.string "Hmmm…$"

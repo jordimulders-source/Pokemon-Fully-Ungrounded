@@ -2263,16 +2263,16 @@ Route116_Text_JosePostBattle:
 	.string "Mine are still in the “crawling” phase.$"
 
 Route116_Text_JaniceIntro:
-	.string "Let me show you how strong my adorable\n"
-	.string "POKéMON are!$"
+	.string "Come hug trees with me!$"
 
 Route116_Text_JaniceDefeat:
-	.string "You're a notch above me… Several\n"
-	.string "notches, actually.$"
+	.string "No, you're not hugging ME…\n"
+	.string "the TREE! You creep!$"
 
 Route116_Text_JanicePostBattle:
-	.string "Cute AND strong. That's the dream.\p"
-	.string "Mine are cute AND hungry.$"
+	.string "I said the TREE! The TREE!\p"
+	.string "Hug it on your own time. Like a\n"
+	.string "normal, well-adjusted weirdo.$"
 
 Route116_Text_JerryIntro:
 	.string "My dream is to become a salaryman like\n"
@@ -2309,15 +2309,18 @@ Route116_Text_JerryPostRematch:
 
 Route116_Text_KarenIntro:
 	.string "I study at school, and on the way home!\p"
-	.string "Today's topic: FOCUS SASH.$"
+	.string "Today's topic: why everyone FEARS me.\n"
+	.string "Take notes. It's on the test.$"
 
 Route116_Text_KarenDefeat:
-	.string "I'm in shock! I lost?$"
+	.string "I'm in shock! Nobody survives\n"
+	.string "the FEAR!$"
 
 Route116_Text_KarenPostBattle:
+	.string "People FEAR me. Mostly classmates.\n"
+	.string "Nobody sits next to me at lunch.\p"
 	.string "I'll never be an elegant TRAINER like\n"
-	.string "ROXANNE this way!\p"
-	.string "She's a rock star.$"
+	.string "ROXANNE this way! She's a rock star.$"
 
 Route116_Text_KarenRegister1:
 	.string "Whoa! Is that a POKéNAV? I have one\n"
@@ -2328,8 +2331,8 @@ Route116_Text_KarenRegister2:
 	.string "too! Register me!$"
 
 Route116_Text_KarenRematchIntro:
-	.string "I studied SO much since last time! Look\n"
-	.string "at my achievements!$"
+	.string "I studied SO much since last time.\n"
+	.string "Now my FEAR has a FEAR!$"
 
 Route116_Text_KarenRematchDefeat:
 	.string "I'm in shock. I lost again?$"

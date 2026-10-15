@@ -100,6 +100,7 @@ kampioen-slot zoals in vanilla Emerald (en in oudere uitleg op internet).
 | SickBlik | `TRAINER_SICKBLIK_DEV` | (nieuw) | 1185 | 0x9A1 | post-game 'developer', per dag in Mauville (3, 9) / Fortree (5, 9) / Lilycove (10, 26) / Pacifidlog (1, 14) (`Grounded_SickBlikSpot`, objectflag `FLAG_HIDE_SICKBLIK_DEV`), lv 100, eenmalig; script `data/scripts/sickblik_dev.inc` |
 | Kapitein Grimsby | `TRAINER_GRIMSBY` | (nieuw) | 1054 | 0x91E | Sailor, spookschip S.S. AGAVE (`GhostShip_CaptainsOffice`, 's nachts via Shipwreck Shoals) + Stadium (`PARTNER_STADIUM_GRIMSBY`) |
 | Spookzeelieden Silas, Morgan, Ned, Percy | `TRAINER_GHOST_SAILOR_SILAS` … `_PERCY` | (nieuw) | 1050–1053 | 0x91A–0x91D | spookschip (dek, gang, hutten) |
+| Garrett | `TRAINER_HOLLOW_GERRIT` | (nieuw; heette in de game Gerrit, constante en tekstlabels `*_Gerrit*` bewust niet hernoemd) | 991 | 0x8DF | Hiker, Toadstool Hollow (via Petalburg Woods) |
 
 De scriptlabels volgen dezelfde namen (bijv. `PetalburgCity_Gym_EventScript_GiHun`,
 `DewfordTown_Gym_EventScript_CheckRomero`, `VictoryRoad_B2F_EventScript_SickBlik`); de tekstlabels niet (zie boven).

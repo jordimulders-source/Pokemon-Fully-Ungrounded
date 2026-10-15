@@ -960,13 +960,14 @@ LINES = {
         'species': {
             'duskull': {'robe': [1, 2, 3, 4], 'skull': [6, 7, 8, 9, 10], 'eye': [11, 12, 13]},
             'dusclops': {'robe': [7, 8, 9, 10], 'skull': [1, 2, 3, 4, 5], 'eye': [13, 14]},
-            'dusknoir': {'robe': [4, 6], 'skull': [9, 8, 7, 12], 'eye': [13]},
+            'dusknoir': {'robe': [4, 6], 'skull': [8, 7], 'eye': [13]},
         },
         'variants': [
             {'naam': 'Dwaallicht (groen vuur)', 'robe': '#2c8a50', 'skull': '#d8f0c0', 'eye': '#c0f040'},
             {'naam': 'Calavera (Día de Muertos)', 'robe': '#e05898', 'skull': '#f0e8d0', 'eye': '#f0a020'},
             {'naam': 'Pompoenlantaarn', 'robe': '#e07020', 'skull': '#f0e0a0', 'eye': '#40d040'},
-            {'naam': 'Zwavelgeest', 'robe': '#c8b828', 'skull': '#f4f0e0', 'eye': '#8040c0'},
+            {'naam': 'Farao (goud en lapis)', 'robe': '#d8a020', 'skull': '#4870d0', 'eye': '#e02020',
+             'dusknoir:robe': '#2c3c88', 'dusknoir:skull': '#d8a838'},
             {'naam': 'Azteekse turkoois', 'robe': '#30b0a0', 'skull': '#e8d8b0', 'eye': '#e03020'},
             {'naam': 'Kristallen schedel', 'robe': '#9070d8', 'skull': '#b0e8f0', 'eye': '#f040b0'},
         ],

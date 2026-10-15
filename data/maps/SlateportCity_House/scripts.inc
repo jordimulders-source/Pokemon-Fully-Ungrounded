@@ -7,8 +7,8 @@ SlateportCity_House_EventScript_PokefanM::
 	faceplayer
 	msgbox SlateportCity_House_Text_NatureToDoWithStatGains, MSGBOX_DEFAULT
 	goto_if_set FLAG_RECEIVED_SLATEPORT_HOUSE_GIFT, SlateportCity_House_EventScript_PokefanM_GiftDone
-	msgbox SlateportCity_House_Text_TakeScopeLens, MSGBOX_DEFAULT
-	giveitem ITEM_SCOPE_LENS
+	msgbox SlateportCity_House_Text_TakeMuscleBand, MSGBOX_DEFAULT
+	giveitem ITEM_MUSCLE_BAND
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	setflag FLAG_RECEIVED_SLATEPORT_HOUSE_GIFT
 SlateportCity_House_EventScript_PokefanM_GiftDone::
@@ -30,8 +30,8 @@ SlateportCity_House_Text_MustBeGoingToBattleTent:
 	.string "TENT.\p"
 	.string "Or the free Wi-Fi. Like everyone else.$"
 
-SlateportCity_House_Text_TakeScopeLens:
-	.string "Here, a SCOPE LENS. It helps a\n"
-	.string "POKéMON find weak spots.\p"
-	.string "Mine already found all of mine.\n"
-	.string "It does not need the help.$"
+SlateportCity_House_Text_TakeMuscleBand:
+	.string "Here, a MUSCLE BAND. Physical moves\n"
+	.string "hit harder with it.\p"
+	.string "Mine wore it once. Now it bites\n"
+	.string "harder. Still hastily.$"

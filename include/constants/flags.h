@@ -2191,7 +2191,7 @@
 #define FLAG_RECEIVED_PETALBURG_HOUSE2_GIFT     FLAG_GROUNDED(1840) // Project Grounded: Petalburg, huis rechtsonder: Bright Powder van de schooljongen
 #define FLAG_RECEIVED_RUSTBORO_HOUSE2_GIFT      FLAG_GROUNDED(1841) // Project Grounded: Rustboro House2: Wide Lens van de moeder van de influencer
 #define FLAG_RECEIVED_DEWFORD_HOUSE1_GIFT       FLAG_GROUNDED(1842) // Project Grounded: Dewford House1: Smoke Ball van Randy (zwijggeld)
-#define FLAG_RECEIVED_SLATEPORT_HOUSE_GIFT      FLAG_GROUNDED(1843) // Project Grounded: Slateport House: Scope Lens van de Pokefan
+#define FLAG_RECEIVED_SLATEPORT_HOUSE_GIFT      FLAG_GROUNDED(1843) // Project Grounded: Slateport House: Muscle Band van de Pokefan
 #define FLAG_RECEIVED_MAUVILLE_RICH_BOY_GIFT    FLAG_GROUNDED(1844) // Project Grounded: Mauville: Expert Belt van de rijkeluiszoon
 #define FLAG_RECEIVED_VERDANTURF_HOUSE_GIFT     FLAG_GROUNDED(1845) // Project Grounded: Verdanturf House: Metronome van de Swiftie
 #define FLAG_HIDDEN_ITEM_RUSTURF_TUNNEL_STAR_PIECE FLAG_GROUNDED(1846) // Project Grounded: Rusturf Tunnel: verborgen Star Piece

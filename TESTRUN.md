@@ -82,3 +82,34 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Birch op Route 110: nieuwe dialoog van Jordi | | ✅ |
 | EXP-bomgevechten | Miguel (Route 103-oost, 4× Blissey) werkt perfect als compensatie na veel vangen. Idee (Jordi, hardop): meer van zulke gevechten na grote vangmomenten, bijv. Route 113/114 (±37), Route 119 (±47), Route 121/123 (±55), Route 128/129 (±66); eerst testen met de nieuwe wilde levels. Nog maar 3 vrije trainer-id's (851–853). | 💡 |
 | Rhett (Route 103) volledig lv 20, onbedoeld | Nu 26–27 zoals de buren. Andere uitschieters nagelopen; Nolan (Route 114, Whiscash 50), Juan en Aaron (lv 74) blijven bewust (Jordi). | ✅ |
+
+## Ronde 3 (15 okt): kladblok t/m Mauville
+| Wat | Bevinding | Status |
+|---|---|---|
+| Wally KO't Ralts in de tutorial | Zigzagoon had Hustle (slot 1); nu Pickup en één Tackle | ✅ |
+| Wally-Ralts-gevecht meteen na de vangst | Nu terug in de Petalburg Gym | ✅ |
+| Lady Cindy te hoog | Lv 10 | ✅ |
+| SickBlik (strand) | Porygon blijft een test; Toedscool lv 10 | ✅ |
+| Tatsugiri (Bubble Beam) bij de eerste Aqua-grunt | Fijne test, lv 11 prima | 👍 |
+| TM-naam bij krijgen | "TM09 Bullet Seed" | ✅ |
+| Pretty Petal, moeder naast de school, Rusturf, Roxanne/Tommy, May 2, Janice, Anna & Meg, rivaal Route 110, Cyclizar | Nieuwe teksten (placeholders in huisstijl; Jordi levert later eigen dialogen) | ✅ |
+| Scott "als Roxanne" | Nu cosplay als PROF. BIRCH | ✅ |
+| Focus Sash-trainer (Karen) spoilt de Sash | FEAR-woordgrap | ✅ |
+| Hiker Gerrit | GARRETT | ✅ |
+| Keccles over te slaan | Teksten vertakken naar wat je oversloeg | ✅ |
+| Wonderful-profielman nutteloos | Databroker, eenmalig een Nugget | ✅ |
+| Petalburg huis rechtsonder + meer giveaways | Zes steden + Rusturf Tunnel | ✅ |
+| Rusturf Tunnel nutteloos / X Sp. Atk | Lepelgraver, 2 verborgen items; X Sp. Atk → Revive | ✅ |
+| Meer X-items vervangen | 5 van 6 | ✅ |
+| Route 104 boven Petalburg Woods | Eigen encountertabel | ✅ |
+| Marts groeien mee | Per badge | ✅ |
+| Move Tutors onbeperkt | | ✅ |
+| Briney Petalburg → Slateport | | ✅ |
+| Josh (Gligar Knock Off) | Gligar zonder Knock Off | ✅ |
+| Colress te zwak, Ground-zwakte | 29–30, geëvolueerd, Air Balloon/Levitate/Ice Beam | ✅ |
+| Hypno Dream Eater zonder slaper | AI-fix | ✅ |
+| Tinkatink 2× Covet | Engine-bug bij meerdere levels tegelijk | ✅ |
+| PokéFan-intro: item als 3e Pokémon | Pikachu-knuffel | ✅ |
+| Fisherman Andrew | Magikarp-transitie | ✅ |
+| Bessen plukken sneller | | ✅ |
+| Melding na move/take van items | Pc: melding bij oppakken; partymenu had hem al | ✅ |

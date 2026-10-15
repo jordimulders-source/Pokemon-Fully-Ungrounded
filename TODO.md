@@ -9,7 +9,6 @@ Eén lijst voor alles wat nog moet. Werkafspraken: `CLAUDE.md`; wat af is: `CHAN
 ---
 
 ## 0. Testrun-aantekeningen (Jordi 15 okt)
-- **Metronome** (held item) en **Muscle Band** krijgen nog een vindplaats (Metronome ligt nergens; Muscle Band alleen in Area Zero). Komt mee met Jordi's kladblok met aanpassingen. Idee: Muscle Band als fysieke tegenhanger van de Wise Glasses (Devon Corp 2F); Metronome bij een niche (Straight Line, Echoed Voice, Fury Cutter, Rollout).
 - **Spire-rekenscripts opnieuw draaien** na de buffs van 15 okt (spire_pool.py + encounters.py): de uitvoer veranderde veel (±500 regels in SPIRE_BALANS/spire_encounters) en encounters.py gaf één keer exit 1; nog niet gecommit, eerst uitzoeken.
 
 ## 1. Nu (fase: basiskaart vullen)

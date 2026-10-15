@@ -76,6 +76,11 @@ PetalburgCity_Gym_OnFrame:
 PetalburgCity_Gym_EventScript_ReturnFromWallyTutorial::
 	lockall
 	msgbox PetalburgCity_Gym_Text_DadSoDidItWorkOut, MSGBOX_DEFAULT
+	@ Project Grounded (Jordi): Wally test zijn net gevangen Ralts hier in de gym (niet meer meteen op straat)
+	msgbox PetalburgCity_Text_WallyRaltsChallenge, MSGBOX_DEFAULT
+	special Grounded_StartWallyRaltsBattle
+	trainerbattle_no_intro TRAINER_WALLY_MAUVILLE, PetalburgCity_Text_WallyRaltsDefeat
+	cleartrainerflag TRAINER_WALLY_MAUVILLE
 	msgbox PetalburgCity_Gym_Text_WallyThankYouBye, MSGBOX_DEFAULT
 	closemessage
 	applymovement LOCALID_PLAYER, Common_Movement_WalkInPlaceFasterDown

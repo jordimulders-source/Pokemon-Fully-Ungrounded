@@ -105,6 +105,7 @@ enum {
     MSG_ITEM_IS_HELD,
     MSG_CHANGED_TO_ITEM,
     MSG_CANT_STORE_MAIL,
+    MSG_TOOK_ITEM, // Project Grounded
 };
 
 // IDs for how to resolve variables in the above messages
@@ -1088,6 +1089,7 @@ static const struct StorageMessage sMessages[] =
     [MSG_ITEM_IS_HELD]         = {COMPOUND_STRING("{DYNAMIC 0} is now held."),   MSG_VAR_ITEM_NAME},
     [MSG_CHANGED_TO_ITEM]      = {COMPOUND_STRING("Changed to {DYNAMIC 0}."),    MSG_VAR_ITEM_NAME},
     [MSG_CANT_STORE_MAIL]      = {COMPOUND_STRING("MAIL can't be stored!"),      MSG_VAR_NONE},
+    [MSG_TOOK_ITEM]            = {COMPOUND_STRING("Took the {DYNAMIC 0}."),      MSG_VAR_ITEM_NAME}, // Project Grounded
 };
 
 static const struct WindowTemplate sYesNoWindowTemplate =
@@ -3094,9 +3096,9 @@ static void Task_TakeItemForMoving(u8 taskId)
         if (!IsItemIconAnimActive())
         {
             StartCursorAnim(CURSOR_ANIM_FIST);
-            ClearBottomWindow();
             RefreshDisplayMon();
             PrintDisplayMonInfo();
+            PrintMessage(MSG_TOOK_ITEM); // Project Grounded: korte melding (blijft staan tot de volgende actie)
             sStorage->state++;
         }
         break;
@@ -3397,6 +3399,7 @@ static void Task_ReturnItemToSource(u8 taskId)
         if (!IsItemIconAnimActive())
         {
             StartCursorAnim(CURSOR_ANIM_BOUNCE);
+            ClearBottomWindow(); // "Took the ..." weg
             SetPokeStorageTask(Task_PokeStorageMain);
         }
         break;

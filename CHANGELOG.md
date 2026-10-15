@@ -18853,3 +18853,11 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Trapinch-lijn (per evolutie een eigen verloop, zoals normaal/shiny; Flygons lenzen per variant anders): woestijn naar oase, Garchomp-kleuren, libel (nimf naar glans), albino, vuur, Ghidorah (brons naar goud).
   - Cacnea-lijn: opuntia, rode maancactus, pompoenvogelverschrikker, albino, woestijnnacht, snoepcactus.
   - Swablu-lijn: suikerspin, onweerswolk, zonsondergang, pauw, Kinto-un (Dragon Ball), poollicht.
+- **Kleurvarianten, Hoenn-dex groep 9:**
+  - Zangoose en Seviper (rivalen, contrasterend paar): omgewisseld, mangoeste en koningscobra, ijs en vuur, melanisme en albino, Spider-Man en Venom, rode en gouden draak.
+  - Lunatone en Solrock: omgewisseld, bloedmaan en zwarte zon, zonsverduistering, maansteen en zonnesteen, Majora's maan en Shine Sprite, Neptunus en Venus.
+  - Barboach-lijn: Europese meerval, goudmeerval, panda-corydoras, albino, Namazu (aardbevingsmythe), sidderaal.
+  - Corphish-lijn: blauwe kreeft, gemarmerde rivierkreeft, paarse kreeft, albino, glasgarnaal, gele kreeft (1 op 30 miljoen).
+  - Baltoy-lijn: terracotta, jade, Ming-porselein, zwartfigurig (Grieks), Dogu (Jomon), ufo.
+  - Lileep-lijn: koraalrif, witte zeeanemoon, versteend, albino, diepzeegloed, ammoniet (parelmoer).
+  - Anorith-lijn: versteend, degenkrab (blauw bloed), trilobiet (zwart en goud), albino, Anomalocaris, samoeraiharnas.

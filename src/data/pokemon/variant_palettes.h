@@ -318,6 +318,48 @@ static const u16 sVariants_Swablu[] = INCBIN_U16("graphics/pokemon/swablu/varian
 #if (P_FAMILY_SWABLU)
 static const u16 sVariants_Altaria[] = INCBIN_U16("graphics/pokemon/altaria/variants.gbapal");
 #endif
+#if (P_FAMILY_ZANGOOSE)
+static const u16 sVariants_Zangoose[] = INCBIN_U16("graphics/pokemon/zangoose/variants.gbapal");
+#endif
+#if (P_FAMILY_SEVIPER)
+static const u16 sVariants_Seviper[] = INCBIN_U16("graphics/pokemon/seviper/variants.gbapal");
+#endif
+#if (P_FAMILY_LUNATONE)
+static const u16 sVariants_Lunatone[] = INCBIN_U16("graphics/pokemon/lunatone/variants.gbapal");
+#endif
+#if (P_FAMILY_SOLROCK)
+static const u16 sVariants_Solrock[] = INCBIN_U16("graphics/pokemon/solrock/variants.gbapal");
+#endif
+#if (P_FAMILY_BARBOACH)
+static const u16 sVariants_Barboach[] = INCBIN_U16("graphics/pokemon/barboach/variants.gbapal");
+#endif
+#if (P_FAMILY_BARBOACH)
+static const u16 sVariants_Whiscash[] = INCBIN_U16("graphics/pokemon/whiscash/variants.gbapal");
+#endif
+#if (P_FAMILY_CORPHISH)
+static const u16 sVariants_Corphish[] = INCBIN_U16("graphics/pokemon/corphish/variants.gbapal");
+#endif
+#if (P_FAMILY_CORPHISH)
+static const u16 sVariants_Crawdaunt[] = INCBIN_U16("graphics/pokemon/crawdaunt/variants.gbapal");
+#endif
+#if (P_FAMILY_BALTOY)
+static const u16 sVariants_Baltoy[] = INCBIN_U16("graphics/pokemon/baltoy/variants.gbapal");
+#endif
+#if (P_FAMILY_BALTOY)
+static const u16 sVariants_Claydol[] = INCBIN_U16("graphics/pokemon/claydol/variants.gbapal");
+#endif
+#if (P_FAMILY_LILEEP)
+static const u16 sVariants_Lileep[] = INCBIN_U16("graphics/pokemon/lileep/variants.gbapal");
+#endif
+#if (P_FAMILY_LILEEP)
+static const u16 sVariants_Cradily[] = INCBIN_U16("graphics/pokemon/cradily/variants.gbapal");
+#endif
+#if (P_FAMILY_ANORITH)
+static const u16 sVariants_Anorith[] = INCBIN_U16("graphics/pokemon/anorith/variants.gbapal");
+#endif
+#if (P_FAMILY_ANORITH)
+static const u16 sVariants_Armaldo[] = INCBIN_U16("graphics/pokemon/armaldo/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -638,6 +680,48 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_SWABLU)
     {gMonPalette_Altaria, sVariants_Altaria},
+#endif
+#if (P_FAMILY_ZANGOOSE)
+    {gMonPalette_Zangoose, sVariants_Zangoose},
+#endif
+#if (P_FAMILY_SEVIPER)
+    {gMonPalette_Seviper, sVariants_Seviper},
+#endif
+#if (P_FAMILY_LUNATONE)
+    {gMonPalette_Lunatone, sVariants_Lunatone},
+#endif
+#if (P_FAMILY_SOLROCK)
+    {gMonPalette_Solrock, sVariants_Solrock},
+#endif
+#if (P_FAMILY_BARBOACH)
+    {gMonPalette_Barboach, sVariants_Barboach},
+#endif
+#if (P_FAMILY_BARBOACH)
+    {gMonPalette_Whiscash, sVariants_Whiscash},
+#endif
+#if (P_FAMILY_CORPHISH)
+    {gMonPalette_Corphish, sVariants_Corphish},
+#endif
+#if (P_FAMILY_CORPHISH)
+    {gMonPalette_Crawdaunt, sVariants_Crawdaunt},
+#endif
+#if (P_FAMILY_BALTOY)
+    {gMonPalette_Baltoy, sVariants_Baltoy},
+#endif
+#if (P_FAMILY_BALTOY)
+    {gMonPalette_Claydol, sVariants_Claydol},
+#endif
+#if (P_FAMILY_LILEEP)
+    {gMonPalette_Lileep, sVariants_Lileep},
+#endif
+#if (P_FAMILY_LILEEP)
+    {gMonPalette_Cradily, sVariants_Cradily},
+#endif
+#if (P_FAMILY_ANORITH)
+    {gMonPalette_Anorith, sVariants_Anorith},
+#endif
+#if (P_FAMILY_ANORITH)
+    {gMonPalette_Armaldo, sVariants_Armaldo},
 #endif
     {NULL, NULL},
 };

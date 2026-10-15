@@ -763,4 +763,116 @@ LINES = {
             {'naam': 'Poollicht', 'cotton': '#70e0b0', 'blue': '#c030a0'},
         ],
     },
+
+    # --- Hoenn-dex, groep 9 ---
+    'zangoose': {
+        # rivalen als contrasterend paar
+        'species': {
+            'zangoose': {'fur': [3, 5, 11], 'red': [4, 6, 7, 10, 12]},
+            'seviper': {'body': [2, 3, 6], 'yellow': [1, 4, 5], 'purple': [7, 9, 12], 'blade': [10, 11, 13]},
+        },
+        'variants': [
+            {'naam': 'Omgewisseld', 'zangoose:fur': '#5c6680', 'zangoose:red': '#e0a048', 'seviper:body': '#c8d4ec',
+             'seviper:yellow': '#e04a6a', 'seviper:purple': '#b43952', 'seviper:blade': '#8c9494'},
+            {'naam': 'Mangoeste en koningscobra', 'zangoose:fur': '#b09068', 'zangoose:red': '#5c3c24',
+             'seviper:body': '#6c6040', 'seviper:yellow': '#e8dcb0', 'seviper:purple': '#3c3424'},
+            {'naam': 'IJs en vuur', 'zangoose:fur': '#b8d8f0', 'zangoose:red': '#30a0d0', 'seviper:body': '#a02818',
+             'seviper:yellow': '#f0a020', 'seviper:purple': '#f06020'},
+            {'naam': 'Melanisme en albino', 'zangoose:fur': ('#34343c', {'l': 1.3}), 'seviper:body': '#d4ccd0',
+             'seviper:yellow': '#f0c0c8', 'seviper:purple': '#e090a0'},
+            {'naam': 'Spider-Man en Venom', 'zangoose:fur': '#c82028', 'zangoose:red': '#2850c0',
+             'seviper:body': ('#202024', {'l': 1.3}), 'seviper:yellow': '#f0f0f0', 'seviper:purple': '#f0f0f0'},
+            {'naam': 'Rode en gouden draak', 'zangoose:fur': '#c01828', 'zangoose:red': '#f0c030', 'seviper:body': '#e0b030',
+             'seviper:yellow': '#c01828', 'seviper:purple': '#c01828'},
+        ],
+    },
+    'lunatone': {
+        'species': {
+            'lunatone': {'body': [1, 2, 3, 4, 5], 'eye': [8, 9, 10]},
+            'solrock': {'rays': [3, 4, 5, 6, 7], 'body': [8, 9, 10, 11, 12]},
+        },
+        'variants': [
+            {'naam': 'Omgewisseld', 'lunatone:body': '#e86020', 'solrock:rays': '#c8b868', 'solrock:body': '#b0a050'},
+            {'naam': 'Bloedmaan en zwarte zon', 'lunatone:body': '#b83028', 'eye': '#f0d020',
+             'solrock:body': ('#2c2c30', {'l': 1.3}), 'solrock:rays': '#a02018'},
+            {'naam': 'Zonsverduistering', 'lunatone:body': ('#34343c', {'l': 1.3}), 'eye': '#e0e4f0',
+             'solrock:body': ('#202024', {'l': 1.3}), 'solrock:rays': '#e8eef8'},
+            {'naam': 'Maansteen en zonnesteen', 'lunatone:body': '#c8d8f0', 'eye': '#6080d0', 'solrock:body': '#e8a090',
+             'solrock:rays': '#f0c8a8'},
+            {'naam': 'Majoras maan en Shine Sprite', 'lunatone:body': '#8c7c6c', 'eye': '#f07020',
+             'solrock:rays': '#f8e040', 'solrock:body': '#f0c020'},
+            {'naam': 'Neptunus en Venus', 'lunatone:body': '#3058c0', 'eye': '#80e0f0', 'solrock:body': '#f0e0a0',
+             'solrock:rays': '#e0b030'},
+        ],
+    },
+    'barboach': {
+        'species': {
+            'barboach': {'blue': [1, 2, 3, 5, 10], 'grey': [7, 8, 9, 11]},
+            'whiscash': {'blue': [4, 5, 6, 7, 9, 10, 13], 'gold': [1, 2, 3]},
+        },
+        'variants': [
+            {'naam': 'Europese meerval', 'blue': '#6c7c48', 'grey': '#7c6c50'},
+            {'naam': 'Goudmeerval', 'blue': '#e0b040', 'gold': '#f0f0e8', 'grey': '#d8c890'},
+            {'naam': 'Panda-corydoras', 'blue': '#d4d4dc', 'grey': ('#2c2c30', {'l': 1.3}), 'gold': '#2c2c30'},
+            {'naam': 'Albino', 'blue': ('#e0d0d0', ALBINO), 'grey': ('#ece4e4', ALBINO), 'gold': '#f0c0c8'},
+            {'naam': 'Namazu (aardbevingsmythe)', 'blue': '#283870', 'gold': '#c03020', 'grey': '#504838'},
+            {'naam': 'Sidderaal', 'blue': '#f0d020', 'gold': '#40d0f0', 'grey': '#3c3c44'},
+        ],
+    },
+    'corphish': {
+        'species': {
+            'corphish': {'red': [2, 3, 4, 5, 6], 'belly': [7, 8, 9, 11]},
+            'crawdaunt': {'red': [6, 7, 8, 9], 'star': [1, 2, 5], 'claws': [10, 11, 14], 'mouth': [12, 13, 15]},
+        },
+        'variants': [
+            {'naam': 'Blauwe kreeft', 'red': '#3060c0', 'star': '#f0f0e8'},
+            {'naam': 'Gemarmerde rivierkreeft', 'red': '#7c6c38', 'star': '#c8b878'},
+            {'naam': 'Paarse kreeft', 'red': '#7840a8', 'star': '#f0d020'},
+            {'naam': 'Albino', 'red': ('#e8d0d0', ALBINO), 'belly': ('#f0ece4', ALBINO), 'star': '#f0d8d8'},
+            {'naam': 'Glasgarnaal', 'red': '#a8d8e8', 'belly': '#e8f4f8', 'star': '#f0f0f8'},
+            {'naam': 'Gele kreeft (1 op 30 miljoen)', 'red': '#f0c030', 'star': '#c02020'},
+        ],
+    },
+    'baltoy': {
+        'species': {
+            'baltoy': {'body': [2, 3, 4, 5, 6], 'red': [7, 8, 9]},
+            'claydol': {'body': [1, 2, 4, 5], 'white': [6, 7, 8], 'red': [9, 10, 11, 12], 'tan': [13, 14]},
+        },
+        'variants': [
+            {'naam': 'Terracotta', 'body': '#c06838', 'red': '#3c3030'},
+            {'naam': 'Jade', 'body': '#48a078', 'red': '#e0b030'},
+            {'naam': 'Ming-porselein', 'body': '#d8e0f0', 'claydol:body': '#d0d8ec', 'red': '#2848a8', 'white': '#2848a8'},
+            {'naam': 'Zwartfigurig (Grieks)', 'body': ('#2c2828', {'l': 1.3}), 'red': '#e07028', 'white': '#e07028'},
+            {'naam': 'Dogu (Jomon)', 'body': '#a04830', 'red': '#f0ece0', 'tan': '#f0ece0'},
+            {'naam': 'Ufo', 'body': '#b8c0cc', 'red': '#58e058', 'white': '#3c4450'},
+        ],
+    },
+    'lileep': {
+        'species': {
+            'lileep': {'tentacles': [1, 2, 3, 4], 'body': [5, 6, 12, 13], 'yellow': [9, 10, 11]},
+            'cradily': {'tentacles': [1, 2, 3, 4, 6], 'body': [7, 8, 9, 10], 'yellow': [11, 12, 13, 14]},
+        },
+        'variants': [
+            {'naam': 'Koraalrif', 'tentacles': '#f0c830', 'body': '#d84850', 'yellow': '#f0f0e0'},
+            {'naam': 'Witte zeeanemoon', 'tentacles': '#e8e4e0'},
+            {'naam': 'Versteend', 'tentacles': '#a8a090', 'body': '#7c6c50', 'yellow': '#d0c0a0'},
+            {'naam': 'Albino', 'tentacles': '#f0d8e0', 'body': ('#dcd8d4', ALBINO), 'yellow': '#f0e8c8'},
+            {'naam': 'Diepzeegloed', 'tentacles': '#60f0f0', 'body': ('#202850', {'l': 1.2}), 'yellow': '#60f0f0'},
+            {'naam': 'Ammoniet (parelmoer)', 'tentacles': '#f0d0e0', 'body': '#a0d8d0', 'yellow': '#e8c050'},
+        ],
+    },
+    'anorith': {
+        'species': {
+            'anorith': {'shell': [2, 3, 10, 11], 'green': [4, 5, 9, 12], 'red': [6, 7, 8]},
+            'armaldo': {'shell': [1, 3, 4, 5, 9], 'red': [11, 12], 'gold': [13, 14]},
+        },
+        'variants': [
+            {'naam': 'Versteend', 'shell': '#b0a080', 'green': '#7c6448', 'red': '#e08038'},
+            {'naam': 'Degenkrab (blauw bloed)', 'shell': '#7c5c3c', 'green': '#5c4430', 'red': '#3060c0'},
+            {'naam': 'Trilobiet (zwart en goud)', 'shell': ('#2c2c30', {'l': 1.3}), 'red': '#e0b030', 'green': '#4c4c54'},
+            {'naam': 'Albino', 'shell': ('#dcd8d8', ALBINO), 'green': '#e0e0d8', 'red': '#e02838'},
+            {'naam': 'Anomalocaris', 'shell': '#d06070', 'green': '#f0a0a8', 'red': '#f0d020'},
+            {'naam': 'Samoeraiharnas', 'shell': '#b02020', 'green': '#801818', 'red': '#202024', 'gold': '#e8c030'},
+        ],
+    },
 }

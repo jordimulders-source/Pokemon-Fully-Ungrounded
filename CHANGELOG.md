@@ -18827,3 +18827,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Nosepass en Probopass (rituele beelden uit verschillende culturen; Jordi): moai (tufsteen met rode pukao), terracottaleger, Olmeekse jade, Azteeks turkoois-mozaïek, totempaal, Toetanchamon (goud en lapis).
   - Skitty-lijn: Siamees, Doraemon, grijze tabby, albino, Cheshire Cat, Luna (Sailor Moon).
 - Kleurvarianten groep 5 bijgewerkt (Jordi): totempaal-Probopass zonder cyane omlijning (de snorindex is ook omlijning); diamant en zilver van de Geodude-lijn kregen hun schaduw en omlijning terug (doelkleur lag op de donkerste rotstint, alles daarboven werd wit); Magikarps oogwit deelde een index met de vinnen en blijft nu wit (hemelse draak oogde lo-fi); kohaku-Magikarp met diepere schaduw.
+- **Kleurvarianten, Hoenn-dex groep 6:**
+  - Sableye (Rock/Ghost): rozenkwarts, obsidiaan, jadegeest, albino, schatkist (elke edelsteen een eigen kleur: saffier, smaragd, robijn; Jordi), Gollum. Het rechteroog heeft daarvoor eigen indexen (paarse lijftint 6 ging op in 5).
+  - Mawile: koper, blauw staal, venusvliegenval, albino, Sadako (The Ring), Harley Quinn.
+  - Aron-lijn (puur Steel): brons, goud, geanodiseerd titanium, gunmetal, roségoud, Gundam.
+  - Meditite-lijn: Shaolin-monnik, zen, Krishna (blauwe huid), albino, Ryu (Street Fighter), verlicht (goud).
+  - Electrike-lijn: teslaspoel, stormwolk, plasma, albino, Raikou-kleuren, Thor.
+  - Plusle en Minun samen: omgewisseld, pastelroze, batterij, albino, Halloween, Ladybug en Cat Noir.

@@ -32,6 +32,11 @@ FIXES = {
                 ('merge', 13, 5),
                 ('fill', 'anim_front.png', [(9, 32), (46, 33), (12, 99), (17, 100), (45, 100), (51, 101), (48, 103)],
                  {1, 2, 3}, {2: 15, 3: 13})],
+    # rechteroog eigen indexen (8 -> 15, 7 -> 6), zodat de edelstenen elk een eigen kleur kunnen krijgen;
+    # paarse lijftint 6 gaat op in 5
+    'sableye': [('pal', {6: 7, 15: 8}),
+                ('merge', 6, 5),
+                ('fill', 'anim_front.png', [(31, 23), (29, 90)], {7, 8, 9, 11}, {8: 15, 7: 6})],
     # staartstukje tussen de benen (lijftint 4) -> eigen index 15 (de staart is van achteren niet te zien)
     'sceptile': [('pal', {15: 4}),
                  ('merge', 15, 6),

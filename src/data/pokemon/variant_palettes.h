@@ -219,6 +219,39 @@ static const u16 sVariants_Skitty[] = INCBIN_U16("graphics/pokemon/skitty/varian
 #if (P_FAMILY_SKITTY)
 static const u16 sVariants_Delcatty[] = INCBIN_U16("graphics/pokemon/delcatty/variants.gbapal");
 #endif
+#if (P_FAMILY_SABLEYE)
+static const u16 sVariants_Sableye[] = INCBIN_U16("graphics/pokemon/sableye/variants.gbapal");
+#endif
+#if (P_FAMILY_MAWILE)
+static const u16 sVariants_Mawile[] = INCBIN_U16("graphics/pokemon/mawile/variants.gbapal");
+#endif
+#if (P_FAMILY_ARON)
+static const u16 sVariants_Aron[] = INCBIN_U16("graphics/pokemon/aron/variants.gbapal");
+#endif
+#if (P_FAMILY_ARON)
+static const u16 sVariants_Lairon[] = INCBIN_U16("graphics/pokemon/lairon/variants.gbapal");
+#endif
+#if (P_FAMILY_ARON)
+static const u16 sVariants_Aggron[] = INCBIN_U16("graphics/pokemon/aggron/variants.gbapal");
+#endif
+#if (P_FAMILY_MEDITITE)
+static const u16 sVariants_Meditite[] = INCBIN_U16("graphics/pokemon/meditite/variants.gbapal");
+#endif
+#if (P_FAMILY_MEDITITE)
+static const u16 sVariants_Medicham[] = INCBIN_U16("graphics/pokemon/medicham/variants.gbapal");
+#endif
+#if (P_FAMILY_ELECTRIKE)
+static const u16 sVariants_Electrike[] = INCBIN_U16("graphics/pokemon/electrike/variants.gbapal");
+#endif
+#if (P_FAMILY_ELECTRIKE)
+static const u16 sVariants_Manectric[] = INCBIN_U16("graphics/pokemon/manectric/variants.gbapal");
+#endif
+#if (P_FAMILY_PLUSLE)
+static const u16 sVariants_Plusle[] = INCBIN_U16("graphics/pokemon/plusle/variants.gbapal");
+#endif
+#if (P_FAMILY_MINUN)
+static const u16 sVariants_Minun[] = INCBIN_U16("graphics/pokemon/minun/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -440,6 +473,39 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_SKITTY)
     {gMonPalette_Delcatty, sVariants_Delcatty},
+#endif
+#if (P_FAMILY_SABLEYE)
+    {gMonPalette_Sableye, sVariants_Sableye},
+#endif
+#if (P_FAMILY_MAWILE)
+    {gMonPalette_Mawile, sVariants_Mawile},
+#endif
+#if (P_FAMILY_ARON)
+    {gMonPalette_Aron, sVariants_Aron},
+#endif
+#if (P_FAMILY_ARON)
+    {gMonPalette_Lairon, sVariants_Lairon},
+#endif
+#if (P_FAMILY_ARON)
+    {gMonPalette_Aggron, sVariants_Aggron},
+#endif
+#if (P_FAMILY_MEDITITE)
+    {gMonPalette_Meditite, sVariants_Meditite},
+#endif
+#if (P_FAMILY_MEDITITE)
+    {gMonPalette_Medicham, sVariants_Medicham},
+#endif
+#if (P_FAMILY_ELECTRIKE)
+    {gMonPalette_Electrike, sVariants_Electrike},
+#endif
+#if (P_FAMILY_ELECTRIKE)
+    {gMonPalette_Manectric, sVariants_Manectric},
+#endif
+#if (P_FAMILY_PLUSLE)
+    {gMonPalette_Plusle, sVariants_Plusle},
+#endif
+#if (P_FAMILY_MINUN)
+    {gMonPalette_Minun, sVariants_Minun},
 #endif
     {NULL, NULL},
 };

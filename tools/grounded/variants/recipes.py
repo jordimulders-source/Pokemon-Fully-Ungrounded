@@ -1017,4 +1017,116 @@ LINES = {
             {'naam': 'Bokszak', 'body': '#c02028', 'mouth': '#f0e8d8', 'tail': '#2c2c30'},
         ],
     },
+    # --- Hoenn-dex, groep 11 ---
+    'snorunt': {
+        'species': {
+            'snorunt': {'hood': [2, 1, 4, 3], 'stripe': [9, 6], 'eyes': [11, 12]},
+            'glalie': {'shell': [9, 5, 8, 7, 6], 'horns': [2, 3, 4], 'eyes': [10, 11, 12]},
+            'froslass': {'robe': [4, 7, 6], 'blue': [5, 1, 2], 'purple': [9, 8], 'eyes': [11, 12], 'obi': [13, 14, 15]},
+        },
+        'variants': [
+            {'naam': 'Rode oni (Hannya)', 'hood': '#c02828', 'stripe': '#f0e0c0', 'shell': '#d84040', 'horns': '#f0e8d0', 'glalie:eyes': '#f0c020',
+             'blue': '#c02838', 'purple': '#2c2830', 'obi': '#e0b030'},
+            {'naam': 'Noorderlicht', 'hood': '#40c890', 'stripe': '#a060e0', 'shell': '#80e0c0', 'horns': '#5838a0', 'glalie:eyes': '#f040b0',
+             'blue': '#40c890', 'purple': '#8048c0', 'obi': '#f070c0'},
+            {'naam': 'Matcha', 'hood': '#68a040', 'stripe': '#f0f0d8', 'shell': '#b8d898', 'horns': '#3c5028',
+             'blue': '#68a040', 'purple': '#3c5028', 'obi': '#c03838'},
+            {'naam': 'Albino', 'hood': ('#e8e0dc', ALBINO), 'stripe': '#f0c8c8', 'eyes': '#e02838',
+             'shell': ('#ece8e8', ALBINO), 'horns': ('#d8d0d0', ALBINO),
+             'blue': ('#e4dcdc', ALBINO), 'purple': '#d8b8c8', 'obi': '#e88898'},
+            {'naam': 'Yuki-onna (sakura)', 'hood': '#f0a0c0', 'stripe': '#e04878', 'shell': '#f4c8d8', 'horns': '#a03058', 'glalie:eyes': '#e04878',
+             'blue': '#f0a0c0', 'purple': '#a03058', 'obi': '#f8f0f8'},
+            {'naam': 'Lich King', 'hood': '#2c3a60', 'stripe': '#7ae0f8', 'snorunt:eyes': '#60f0ff', 'shell': '#506088', 'horns': '#2c2c38', 'glalie:eyes': '#60f0ff',
+             'robe': '#8898b8', 'blue': '#20283c', 'purple': '#40d0f0', 'obi': '#a0b0c8'},
+        ],
+    },
+    'spheal': {
+        'species': {
+            'spheal': {'body': [1, 4, 2, 3, 5], 'belly': [8, 11, 10, 9]},
+            'sealeo': {'body': [3, 2, 1, 4, 5], 'belly': [8, 13, 12, 14]},
+            'walrein': {'body': [1, 4, 10, 7], 'mane': [3, 6], 'tusks': [8, 11, 12]},
+        },
+        'variants': [
+            {'naam': 'Grijze zeehond', 'body': '#8a8c94', 'belly': '#d8d0c0', 'mane': '#d8d8dc'},
+            {'naam': 'Zeeleeuw', 'body': '#6a4a30', 'belly': '#c8a070', 'mane': '#a07848'},
+            {'naam': 'Zeehondenpup', 'body': ('#e4e8ec', ALBINO), 'belly': '#f4f0ec', 'mane': '#f4f4f4'},
+            {'naam': 'Pokéball', 'body': '#d83030', 'belly': '#f4f4f4', 'mane': '#f4f4f4'},
+            {'naam': 'Gouden medaille', 'body': '#e0b030', 'belly': '#f4e8c0', 'mane': '#f4e8c0'},
+            {'naam': 'Orka', 'body': ('#24242c', {'l': 1.3}), 'belly': '#f4f4f4', 'mane': '#f4f4f4'},
+        ],
+    },
+    'clamperl': {
+        'species': {
+            'clamperl': {'shell': [2, 1, 3], 'inner': [8, 10, 14, 13], 'pearl': [9, 11, 12]},
+            'huntail': {'body': [1, 4, 2, 10], 'fins': [5, 6, 7], 'mouth': [12, 13, 14]},
+            'gorebyss': {'body': [1, 7, 5, 4, 12], 'purple': [8, 11, 10, 9]},
+        },
+        'variants': [
+            {'naam': 'Parelmoer', 'shell': '#c8c0e0', 'pearl': '#f4f0f8', 'huntail:body': '#b8b0d0', 'fins': '#80a0d0',
+             'gorebyss:body': '#e8e0f0', 'purple': '#a090c8'},
+            {'naam': 'Mandarijnvis', 'shell': '#f08020', 'pearl': '#2858c8', 'huntail:body': '#f08020', 'fins': '#2858c8',
+             'gorebyss:body': '#2858c8', 'purple': '#f08020'},
+            {'naam': 'Diepzeegloed', 'shell': '#1c2440', 'pearl': '#40e8d8', 'inner': '#304878', 'huntail:body': '#1c2440', 'fins': '#40e8d8',
+             'gorebyss:body': '#30285a', 'purple': '#40e8d8'},
+            {'naam': 'Albino', 'shell': ('#e4dcdc', ALBINO), 'pearl': '#f8e0e8', 'huntail:body': ('#e8e0e0', ALBINO), 'fins': '#f0c8c0',
+             'gorebyss:body': ('#f0e8e8', ALBINO), 'purple': '#e8c0c8'},
+            {'naam': 'Zwarte parel (Tahiti)', 'shell': ('#303038', {'l': 1.3}), 'pearl': '#405860', 'huntail:body': '#2c3038', 'fins': '#60a088',
+             'gorebyss:body': '#383040', 'purple': '#60a088'},
+            {'naam': 'Ariel', 'shell': '#38a888', 'pearl': '#8048b0', 'huntail:body': '#8048b0', 'fins': '#38a888',
+             'gorebyss:body': '#38a888', 'purple': '#8048b0'},
+        ],
+    },
+    'relicanth': {
+        'species': {'relicanth': {'light': [1, 11, 3, 2, 12], 'dark': [10, 6, 13, 9, 7]}},
+        'variants': [
+            {'naam': 'Echte coelacant (staalblauw)', 'light': '#5878a8', 'dark': '#2c3c58'},
+            {'naam': 'Versteend', 'light': '#a8a8a0', 'dark': '#58585c'},
+            {'naam': 'Barnsteen', 'light': '#e0a030', 'dark': '#904818'},
+            {'naam': 'Albino', 'light': ('#ece4dc', ALBINO), 'dark': ('#d0c8c4', ALBINO)},
+            {'naam': 'Jadebeeld', 'light': '#68b088', 'dark': '#2c6048'},
+            {'naam': 'Azteeks relikwie', 'light': '#e8c040', 'dark': '#2c7c90'},
+        ],
+    },
+    'luvdisc': {
+        'species': {'luvdisc': {'body': [2, 1, 7, 6, 5, 3], 'blush': [11, 12], 'eyes': [8, 10]}},
+        'variants': [
+            {'naam': 'Rood hart', 'body': '#e03040'},
+            {'naam': 'Chocoladehart', 'body': '#7a4a30', 'blush': '#f0a0b0'},
+            {'naam': 'Lavendel', 'body': '#b090e0'},
+            {'naam': 'Albino', 'body': ('#f0e8e8', ALBINO), 'eyes': '#e02838'},
+            {'naam': 'Gebroken hart', 'body': '#4a4a58', 'blush': '#8080a0'},
+            {'naam': 'Tiffany (turkoois)', 'body': '#40c0b0', 'blush': '#f0f0f0'},
+        ],
+    },
+    'bagon': {
+        'species': {
+            'bagon': {'shell': [2, 1, 6, 4, 3], 'body': [7, 10, 11], 'belly': [12, 9, 8]},
+            'shelgon': {'shell': [1, 5, 4, 3, 14], 'body': [7, 6, 10]},
+            'salamence': {'wings': [1, 4, 3, 2], 'body': [6, 7, 9, 8], 'belly': [14, 10, 15]},
+        },
+        'variants': [
+            {'naam': 'Garchomp', 'shell': '#3a4a8c', 'body': '#3a4a8c', 'wings': '#c03040', 'belly': '#e8d090'},
+            {'naam': 'Hydreigon', 'shell': '#2c2c38', 'body': '#3c5cc0', 'wings': '#7038a0', 'belly': '#2c2c38'},
+            {'naam': 'Kyurem', 'shell': '#a0a4a8', 'body': '#a0a4a8', 'wings': '#60c0e8', 'belly': '#e0e8f0'},
+            {'naam': 'Albino', 'shell': ('#e8e4e4', ALBINO), 'body': ('#ece4e4', ALBINO), 'wings': ('#f0dcdc', ALBINO), 'belly': '#f4f0f0'},
+            {'naam': 'Dragonite', 'shell': '#f0a040', 'body': '#f0a040', 'wings': '#30a090', 'belly': '#f0e0a0'},
+            {'naam': 'Smaug (rood en goud)', 'shell': '#a02828', 'body': '#a02828', 'wings': '#702020', 'belly': '#e0b030'},
+        ],
+    },
+    'beldum': {
+        # metalen (Steel/Psychic)
+        'species': {
+            'beldum': {'body': [2, 4, 6, 1, 3], 'grey': [13, 12, 11], 'eye': [8, 10, 7]},
+            'metang': {'body': [5, 10, 7, 9, 8], 'grey': [1, 6, 14, 2], 'eye': [12, 11, 13]},
+            'metagross': {'body': [1, 6, 5, 4, 3], 'grey': [9, 8, 7, 10], 'eye': [13, 12]},
+        },
+        'variants': [
+            {'naam': 'Koper', 'body': '#c87838', 'grey': '#e8d0a8'},
+            {'naam': 'Goud', 'body': '#e0b030', 'grey': '#f0e8c8'},
+            {'naam': 'Patina (verdigris)', 'body': '#4a9a80', 'grey': '#a87848'},
+            {'naam': 'Gunmetal', 'body': ('#3a3c48', {'l': 1.3}), 'grey': '#909098', 'eye': '#40d0f0'},
+            {'naam': 'Roségoud', 'body': '#e0a090', 'grey': '#f4e0d8'},
+            {'naam': 'Iron Man', 'body': '#b82828', 'grey': '#e0b030', 'eye': '#80e0f8'},
+        ],
+    },
 }

@@ -408,6 +408,57 @@ static const u16 sVariants_Chimecho[] = INCBIN_U16("graphics/pokemon/chimecho/va
 #if (P_FAMILY_ABSOL)
 static const u16 sVariants_Absol[] = INCBIN_U16("graphics/pokemon/absol/variants.gbapal");
 #endif
+#if (P_FAMILY_SNORUNT)
+static const u16 sVariants_Snorunt[] = INCBIN_U16("graphics/pokemon/snorunt/variants.gbapal");
+#endif
+#if (P_FAMILY_SNORUNT)
+static const u16 sVariants_Glalie[] = INCBIN_U16("graphics/pokemon/glalie/variants.gbapal");
+#endif
+#if (P_FAMILY_SNORUNT) && (P_GEN_4_CROSS_EVOS)
+static const u16 sVariants_Froslass[] = INCBIN_U16("graphics/pokemon/froslass/variants.gbapal");
+#endif
+#if (P_FAMILY_SPHEAL)
+static const u16 sVariants_Spheal[] = INCBIN_U16("graphics/pokemon/spheal/variants.gbapal");
+#endif
+#if (P_FAMILY_SPHEAL)
+static const u16 sVariants_Sealeo[] = INCBIN_U16("graphics/pokemon/sealeo/variants.gbapal");
+#endif
+#if (P_FAMILY_SPHEAL)
+static const u16 sVariants_Walrein[] = INCBIN_U16("graphics/pokemon/walrein/variants.gbapal");
+#endif
+#if (P_FAMILY_CLAMPERL)
+static const u16 sVariants_Clamperl[] = INCBIN_U16("graphics/pokemon/clamperl/variants.gbapal");
+#endif
+#if (P_FAMILY_CLAMPERL)
+static const u16 sVariants_Huntail[] = INCBIN_U16("graphics/pokemon/huntail/variants.gbapal");
+#endif
+#if (P_FAMILY_CLAMPERL)
+static const u16 sVariants_Gorebyss[] = INCBIN_U16("graphics/pokemon/gorebyss/variants.gbapal");
+#endif
+#if (P_FAMILY_RELICANTH)
+static const u16 sVariants_Relicanth[] = INCBIN_U16("graphics/pokemon/relicanth/variants.gbapal");
+#endif
+#if (P_FAMILY_LUVDISC)
+static const u16 sVariants_Luvdisc[] = INCBIN_U16("graphics/pokemon/luvdisc/variants.gbapal");
+#endif
+#if (P_FAMILY_BAGON)
+static const u16 sVariants_Bagon[] = INCBIN_U16("graphics/pokemon/bagon/variants.gbapal");
+#endif
+#if (P_FAMILY_BAGON)
+static const u16 sVariants_Shelgon[] = INCBIN_U16("graphics/pokemon/shelgon/variants.gbapal");
+#endif
+#if (P_FAMILY_BAGON)
+static const u16 sVariants_Salamence[] = INCBIN_U16("graphics/pokemon/salamence/variants.gbapal");
+#endif
+#if (P_FAMILY_BELDUM)
+static const u16 sVariants_Beldum[] = INCBIN_U16("graphics/pokemon/beldum/variants.gbapal");
+#endif
+#if (P_FAMILY_BELDUM)
+static const u16 sVariants_Metang[] = INCBIN_U16("graphics/pokemon/metang/variants.gbapal");
+#endif
+#if (P_FAMILY_BELDUM)
+static const u16 sVariants_Metagross[] = INCBIN_U16("graphics/pokemon/metagross/variants.gbapal");
+#endif
 
 const struct VariantPalettes gVariantPalettes[] =
 {
@@ -818,6 +869,57 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_ABSOL)
     {gMonPalette_Absol, sVariants_Absol},
+#endif
+#if (P_FAMILY_SNORUNT)
+    {gMonPalette_Snorunt, sVariants_Snorunt},
+#endif
+#if (P_FAMILY_SNORUNT)
+    {gMonPalette_Glalie, sVariants_Glalie},
+#endif
+#if (P_FAMILY_SNORUNT) && (P_GEN_4_CROSS_EVOS)
+    {gMonPalette_Froslass, sVariants_Froslass},
+#endif
+#if (P_FAMILY_SPHEAL)
+    {gMonPalette_Spheal, sVariants_Spheal},
+#endif
+#if (P_FAMILY_SPHEAL)
+    {gMonPalette_Sealeo, sVariants_Sealeo},
+#endif
+#if (P_FAMILY_SPHEAL)
+    {gMonPalette_Walrein, sVariants_Walrein},
+#endif
+#if (P_FAMILY_CLAMPERL)
+    {gMonPalette_Clamperl, sVariants_Clamperl},
+#endif
+#if (P_FAMILY_CLAMPERL)
+    {gMonPalette_Huntail, sVariants_Huntail},
+#endif
+#if (P_FAMILY_CLAMPERL)
+    {gMonPalette_Gorebyss, sVariants_Gorebyss},
+#endif
+#if (P_FAMILY_RELICANTH)
+    {gMonPalette_Relicanth, sVariants_Relicanth},
+#endif
+#if (P_FAMILY_LUVDISC)
+    {gMonPalette_Luvdisc, sVariants_Luvdisc},
+#endif
+#if (P_FAMILY_BAGON)
+    {gMonPalette_Bagon, sVariants_Bagon},
+#endif
+#if (P_FAMILY_BAGON)
+    {gMonPalette_Shelgon, sVariants_Shelgon},
+#endif
+#if (P_FAMILY_BAGON)
+    {gMonPalette_Salamence, sVariants_Salamence},
+#endif
+#if (P_FAMILY_BELDUM)
+    {gMonPalette_Beldum, sVariants_Beldum},
+#endif
+#if (P_FAMILY_BELDUM)
+    {gMonPalette_Metang, sVariants_Metang},
+#endif
+#if (P_FAMILY_BELDUM)
+    {gMonPalette_Metagross, sVariants_Metagross},
 #endif
     {NULL, NULL},
 };

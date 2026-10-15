@@ -18872,3 +18872,12 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Chimecho: koper, zilver, amethist (jade lag te dicht bij de shiny), albino, kerstklok, fuurin.
   - Absol: bloedmaanwolf, Lucario, Pest (apocalyptische ruiter), Sylveon, Anubis, Raikou; elke variant kleurt de vacht (Jordi: eerst te vaak wit en te basic).
   - Wynaut-lijn: oranje, groen, paars, albino, SpongeBob, bokszak.
+
+- **Kleurvarianten, Hoenn-dex groep 11:** (Snorunt t/m Metagross; ROM ±805 KB vrij)
+  - Snorunt-lijn (Glalie, Froslass): rode oni (Hannya), noorderlicht, matcha, albino, Yuki-onna (sakura), Lich King.
+  - Spheal-lijn: grijze zeehond, zeeleeuw, zeehondenpup, Pokéball, gouden medaille, orka.
+  - Clamperl-lijn (Huntail, Gorebyss): parelmoer, mandarijnvis, diepzeegloed, albino, zwarte parel (Tahiti), Ariel.
+  - Relicanth: echte coelacant (staalblauw), versteend, barnsteen, albino, jadebeeld, Azteeks relikwie.
+  - Luvdisc: rood hart, chocoladehart, lavendel, albino, gebroken hart, Tiffany (turkoois).
+  - Bagon-lijn: Garchomp, Hydreigon, Kyurem, albino, Dragonite, Smaug (rood en goud).
+  - Beldum-lijn (metalen): koper, goud, patina, gunmetal, roségoud, Iron Man.

@@ -111,7 +111,7 @@ def recipe_variants(folder, colors):
                 base = max(idxs, key=lambda i: count[i])
                 darkest = min(idxs, key=lambda i: to_oklch(colors[i])[0])
                 for i, c in recolor(colors, idxs, base, target, lscale=opts.get('l', 1.0),
-                                    cscale=opts.get('c')).items():
+                                    cscale=opts.get('c'), hshift=opts.get('h', 1.0)).items():
                     # Gekleurde omlijning (pixels langs de rand) blijft donker genoeg,
                     # anders lost een lichte variant op in de achtergrond.
                     if i == darkest and edge[i] >= EDGE_FRAC:

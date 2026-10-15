@@ -42,6 +42,10 @@ FIXES = {
                  ('merge', 15, 6),
                  ('box', 'anim_front.png', [(29, 47, 46, 54), (46, 44, 62, 53), (30, 112, 45, 119), (40, 104, 62, 117)],
                   {4: 15})],
+    # tanden (wit 1/2/3, gedeeld met de bovenkant) -> eigen indexen 8/6/7, zodat ze wit blijven
+    # als de hele bal een kleur krijgt (Cherish Ball)
+    'electrode': [('pal', {6: 2, 7: 3, 8: 1}),
+                  ('box', 'anim_front.png', [(16, 42, 40, 48), (24, 110, 42, 115)], {1: 8, 2: 6, 3: 7})],
 }
 
 

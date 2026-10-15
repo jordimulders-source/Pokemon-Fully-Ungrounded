@@ -1330,7 +1330,7 @@ LINES = {
         # De Electrode-shiny is weer het origineel; zijn Master Ball-palet is nu de 0,5%.
         'species': {
             'voltorb': {'red': [14, 13, 12, 11, 10, 9], 'white': [4, 3, 2, 1]},
-            'electrode': {'red': [14, 13, 12, 11, 10], 'white': [4, 3, 2, 1]},
+            'electrode': {'red': [14, 13, 12, 11, 10], 'white': [4, 3, 2, 1], 'lines': [5]},
             'voltorb/hisui': {'hball': [2, 3, 4, 5, 6, 7], 'hwood': [12, 9, 13]},
             'electrode/hisui': {'hball': [10, 14, 8, 9], 'hwood': [1, 2, 4, 5, 3, 6]},
         },
@@ -1338,8 +1338,8 @@ LINES = {
             {'naam': 'Love Ball / Great Ball (Hisui)', 'red': '#f088b8', 'hball': '#2850b0'},
             {'naam': 'Friend Ball / Feather Ball (Hisui)', 'red': '#50b048', 'hball': '#70b0e8'},
             {'naam': 'Premier Ball / Wing Ball (Hisui)', 'red': '#e8e8ec', 'hball': '#3a9a50'},
-            {'naam': 'Luxury Ball / Ultra Ball (Hisui)', 'red': ('#303038', {'l': 1.3}), 'white': ('#40404a', {'l': 1.3}), 'hball': '#d8c020', 'hwood': '#8a8a90'},
-            {'naam': 'Cherish Ball (twee kanten rood) / Strange Ball (Hisui)', 'red': '#b01828', 'white': '#a01822', 'hball': '#c870c0'},
+            {'naam': 'Fast Ball / Ultra Ball (Hisui)', 'red': '#f0c030', 'hball': '#d8c020', 'hwood': '#8a8a90'},
+            {'naam': 'Cherish Ball (twee kanten rood) / Strange Ball (Hisui)', 'red': ('#b01828', {'h': 0}), 'white': '#b01828', 'lines': '#3a1010', 'hball': '#c870c0'},
             {'naam': 'Master Ball / Origin Ball (Hisui, paars)', 'red': '#7838b0', 'electrode:palfile': 'master_ball.pal', 'hball': '#8848c0'},
         ],
     },

@@ -116,3 +116,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Burglar SIMON post-game tijdverspilling | Alleen met ≥ 3 Pokémon van lv 90+ in het team | ✅ |
 | Simon: bewoners Fallarbor/Lilycove | Cozmo zelf; de Kecleon met spraakverwarring | ✅ |
 | Simon twee keer op rij in dezelfde stad | Kan niet meer | ✅ |
+| Coin Case niet te krijgen (geen Harbor Mail meer) | Mauville House2 geeft hem direct | ✅ |

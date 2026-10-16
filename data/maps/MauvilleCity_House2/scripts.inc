@@ -6,10 +6,8 @@ MauvilleCity_House2_EventScript_Woman::
 	faceplayer
 	goto_if_set FLAG_RECEIVED_COIN_CASE, MauvilleCity_House2_EventScript_ReceivedCoinCase
 	msgbox MauvilleCity_House2_Text_BuyHarborMailAtSlateport, MSGBOX_DEFAULT
-	checkitem ITEM_HARBOR_MAIL
-	goto_if_eq VAR_RESULT, TRUE, MauvilleCity_House2_EventScript_AskToTradeForHarborMail
-	release
-	end
+	@ Project Grounded (Jordi): mail bestaat niet meer, dus geen ruil: ze geeft de COIN CASE gewoon weg
+	goto MauvilleCity_House2_EventScript_AcceptTrade
 
 MauvilleCity_House2_EventScript_AskToTradeForHarborMail::
 	playse SE_PIN
@@ -26,7 +24,6 @@ MauvilleCity_House2_EventScript_AcceptTrade::
 	msgbox MauvilleCity_House2_Text_IllTradeYouCoinCase, MSGBOX_DEFAULT
 	giveitem ITEM_COIN_CASE
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
-	removeitem ITEM_HARBOR_MAIL
 	setflag FLAG_RECEIVED_COIN_CASE
 	goto MauvilleCity_House2_EventScript_ReceivedCoinCase
 	end
@@ -53,8 +50,10 @@ MauvilleCity_House2_Text_TradeHarborMailForCoinCase:
 	.string "a COIN CASE?$"
 
 MauvilleCity_House2_Text_IllTradeYouCoinCase:
-	.string "I'm so happy! Here's the COIN CASE!\p"
-	.string "I'm finally free of it.$"
+	.string "…Oh, forget it. I was going to trade\n"
+	.string "it for HARBOR MAIL. Take it for free.\p"
+	.string "Here's the COIN CASE! I'm finally free\n"
+	.string "of it.$"
 
 MauvilleCity_House2_Text_UseCoinCaseAtGameCorner:
 	.string "Use that COIN CASE at the GAME CORNER.\p"

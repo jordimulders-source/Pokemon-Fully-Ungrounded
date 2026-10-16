@@ -3342,3 +3342,19 @@ LINES = {
         ],
     },
 }
+
+
+# Extra recepten per generatie staan in losse bestanden (recipes_gen4.py e.d.), zodat
+# parallel werken niet botst. Elk bestand definieert een eigen LINES-dict.
+def _load_extra():
+    import glob
+    import importlib
+    import os
+    for path in sorted(glob.glob(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'recipes_*.py'))):
+        mod = importlib.import_module(os.path.basename(path)[:-3])
+        for key, line in mod.LINES.items():
+            assert key not in LINES, 'dubbele lijn: %s' % key
+            LINES[key] = line
+
+
+_load_extra()

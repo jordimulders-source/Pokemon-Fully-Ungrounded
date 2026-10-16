@@ -3341,6 +3341,22 @@ LINES = {
             {'naam': 'Goud', 'body': ('#c89020', {'h': 0}), 'top': '#6a4010', 'accent': '#3060d0', 'pale': '#f0e0b0'},
         ],
     },
+    'geodude_alola': {
+        # magnetische rotsen: gesteente, ijzeren haar/kristallen, vonken (Golem: lijf)
+        'species': {
+            'geodude/alola': {'rock': [3, 2, 1], 'hair': [5, 7, 6]},
+            'graveler/alola': {'rock': [1, 3, 2, 4], 'spark': [10, 9], 'hair': [7, 12, 8, 11]},
+            'golem/alola': {'rock': [3, 1, 2], 'body': [8, 7, 10, 9], 'spark': [6, 5]},
+        },
+        'variants': [
+            {'naam': 'Pyriet (klatergoud, blauwe vonken)', 'rock': '#a88830', 'hair': '#4a3a20', 'spark': '#40c0f0', 'body': '#6a5a40'},
+            {'naam': 'Hematiet (roodzwart, zilveren vonken)', 'rock': '#7a3434', 'hair': '#2c1818', 'spark': '#d0d8e8', 'body': '#3a2020'},
+            {'naam': 'Obsidiaan (paarse stroom)', 'rock': ('#3a3440', {'l': 1.3}), 'hair': '#6a3a90', 'spark': '#c060f0', 'body': ('#2c2834', {'l': 1.3})},
+            {'naam': 'Lapis lazuli (gouden vonken)', 'rock': '#2c4a98', 'hair': '#1c2448', 'spark': '#f0d040', 'body': '#2c3a58'},
+            {'naam': 'Rozenkwarts', 'rock': '#e0a0b0', 'hair': '#7a4a5a', 'spark': '#60c0f0', 'body': '#7a5a68'},
+            {'naam': 'Toermalijn (groen en roze)', 'rock': '#40a070', 'hair': '#a03070', 'spark': '#f070b0', 'body': '#2c5a40'},
+        ],
+    },
 }
 
 

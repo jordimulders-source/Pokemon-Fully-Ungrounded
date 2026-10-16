@@ -238,3 +238,4 @@ Per lijn de inspiratie (10 / 6 / 4 / 3 / 1,5 / 0,5%). Donker blijft donker, acce
 - **Hisui-Sneasel/Sneasler** (vacht, lichte vacht, kap, accent): bergmarter / gifgroen / bloedrood / sneeuwvos / ninja / goud.
 - **Ursaluna (ook Bloodmoon)**: volgt de Teddiursa-reeks; het modderlijf kleurt mee (sneeuw, wit, blauw, grizzly, roze, Winnie's rode shirt).
 - **Wyrdeer**: volgt de Stantler-reeks, de baard kleurt mee (bosgeest, rendier, edelhert, melanistisch, mythisch blauw; 0,5% goud i.p.v. zilver).
+- **Alola-Geodude/Graveler/Golem** (magnetische mineralen; gesteente, ijzerhaar, vonken, Golems lijf): pyriet / hematiet / obsidiaan met paarse stroom / lapis lazuli met goud / rozenkwarts / toermalijn.

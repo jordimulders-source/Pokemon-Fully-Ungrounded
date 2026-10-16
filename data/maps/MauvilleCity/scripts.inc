@@ -474,7 +474,7 @@ MauvilleCity_EventScript_RegisterWallyCall::
 
 MauvilleCity_Text_UncleHesTooPeppy:
 	.string "UNCLE: This kid catches a RALTS with\n"
-	.string "only a few moves and suddenly he\l"
+	.string "only a few moves, and suddenly he\l"
 	.string "thinks he can take on the world.$"
 
 MauvilleCity_Text_WallyWantToChallengeGym:
@@ -484,12 +484,13 @@ MauvilleCity_Text_WallyWantToChallengeGym:
 	.string "Before beatable ZIGZAGOON three.$"
 
 MauvilleCity_Text_UncleYourePushingIt:
-	.string "UNCLE: Now hold on, WALLY. You bigmouth\p"
-	.string "You've beaten 2 ZIGZAGOON that were\n"
-	.string "already close to fainting, because of\l"
-	.string "some kid with overpowered POKéMON\l"
-	.string "walking past and now you're thinking\l"
-	.string "you are the bomb diggity?$"
+	.string "UNCLE: Now hold on, WALLY, you bigmouth.\p"
+	.string "You've beaten two ZIGZAGOON that were\n"
+	.string "already close to fainting, because some\l"
+	.string "kid with overpowered POKéMON walked\l"
+	.string "past.\p"
+	.string "And now you think you're the bomb\n"
+	.string "diggity?$"
 
 MauvilleCity_Text_WallyWeCanBeatAnyone:
 	.string "WALLY: Uncle no understanding have,\n"
@@ -506,8 +507,8 @@ MauvilleCity_Text_WallyMyUncleWontKnowImStrong:
 	.string "Understand heal understand well.$"
 
 MauvilleCity_Text_UncleCanYouBattleWally:
-	.string "UNCLE: {PLAYER}{KUN}, there's my savior.\n"
-	.string "Beat this little brat and get some\l"
+	.string "UNCLE: {PLAYER}{KUN}, there's my savior!\p"
+	.string "Beat this little brat and knock some\n"
 	.string "sense into his little brain!$"
 
 MauvilleCity_Text_WallyPleaseBattleMe:
@@ -527,24 +528,26 @@ MauvilleCity_Text_WallyIllGoBackToVerdanturf:
 	.string "VERDANTURF walk$"
 
 MauvilleCity_Text_ThankYouNotEnoughToBattle:
-	.string "{PLAYER}, thanks a lot.\n"
-	.string "Being a TRAINER is tough, isn't it?\p"
-	.string "But not as tough as doing 9 to 5\n"
-	.string "manual labor in our garden and to be\l"
-	.string "fair I really need this kid to do\l"
-	.string "that for the summer. So man up!$"
+	.string "{PLAYER}, thanks a lot. Being a TRAINER\n"
+	.string "is tough, isn't it?\p"
+	.string "But not as tough as a 9-to-5 of manual\n"
+	.string "labor in our garden.\p"
+	.string "And to be fair, I really need this kid\n"
+	.string "for that this summer.\p"
+	.string "So man up!$"
 
 MauvilleCity_Text_UncleNoNeedToBeDown:
-	.string "UNCLE: WALLY, get yo ass to the garden.\n"
-	.string "Don't forget the apple knife on your\l"
-	.string "way there.$"
+	.string "UNCLE: WALLY, get yo ass to the garden.\p"
+	.string "And don't forget the apple knife on\n"
+	.string "your way there.$"
 
 MauvilleCity_Text_UncleVisitUsSometime:
-	.string "UNCLE: {PLAYER}{KUN}, it just dawned on me\n"
-	.string "that you advised WALLY to get a RALTS,\l"
-	.string "at least a RALTS will grow useful\l"
-	.string "eventually. Thanks for not being\l"
-	.string "an asshole!$"
+	.string "UNCLE: {PLAYER}{KUN}, it just dawned on me:\n"
+	.string "you're the one who told WALLY to get a\l"
+	.string "RALTS.\p"
+	.string "At least a RALTS grows up useful\n"
+	.string "eventually.\p"
+	.string "Thanks for not being an asshole!$"
 
 MauvilleCity_Text_WallyPokenavCall:
 	.string "… … … … … …\n"

@@ -18814,3 +18814,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Wild (land): Route 123 −7 (41–56), Mt. Pyre −5 (42–55), Safari Zone NO/ZO −7 (48–55).
 - **Richting Ashfrost iets hoger** (Jordi: met Surf via Route 115-noord en Coldstep Cave; mag wat hoger dan de route naar Fortree): Route 135 trainers 49–51 (Birch 51), Route 136 50–51 met de rivaal op ace 52 (waren 41–46); wild Route 135/136 +2 (48–51). Keccles blijft 54.
 - **Route 115:** Kangaskhan (1%-slot) van lv 62–67 naar 55–57, in lijn met de rest van de tabel (47–57; na Surf bereikbaar).
+- **Mauville, Wally's oom:** teksten netter (interpunctie, tekstvakken op zinsgrenzen); Wally's gebroken zinnen zonder punten blijven (humor).

@@ -43,7 +43,7 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Dunsparce** (Normal/Ground): 10% groene drakenslang, 6% lavendel (gouden ringen), 4% roodbruin, 3% albino, 1,5% koi (oranje met wit), 0,5% Chinese draak (rood en goud). Dudunsparce nog niet (moderne sprite).
 
 ## Groep 19
-- **Ledyba/Ledian** (lieveheersbeestjes): 10% geel (22-stippig), 6% room (Calvia), 4% zwart met rode stippen, 3% roze lieveheersbeestje, 1,5% groene schildpadtor, 0,5% blauw metallic (Halmus). Geen oranje: de shiny is oranje.
+- **Ledyba/Ledian** (tokusatsu-helden, Jordi): 10% Kamen Rider 1, 6% Ultraman, 4% Super Sentai Blue Ranger, 3% Kamen Rider Black, 1,5% Space Sheriff Gavan, 0,5% Kamen Rider Kuuga Rising (goud).
 - **Remoraid/Octillery** (octopussen): 10% groene octopus, 6% blauwringoctopus (geel met blauwe ringen), 4% mimic-octopus (bruin-wit), 3% albino glasoctopus, 1,5% Dumbo-octopus (roze), 0,5% Kraken (zwart met rode zuignappen).
 - **Poliwag/Poliwhirl/Poliwrath/Politoed** (kikkers, spiraal blijft): 10% oranje pijlgifkikker, 6% pad (bruin), 4% paarse kikker, 3% albino, 1,5% gouden gifkikker, 0,5% aardbeigifkikker (rood).
 - **Porygon/Porygon2/Porygon-Z** (digitaal): 10% wireframe (groen op zwart), 6% Windows 95 (grijs met blauw), 4% Game Boy (groen), 3% Virtual Boy (rood-zwart), 1,5% glitch (MissingNo.: paars met cyaan), 0,5% Game Boy Color Pikachu-editie (geel met blauw).

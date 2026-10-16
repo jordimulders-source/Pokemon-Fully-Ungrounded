@@ -18954,3 +18954,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Tool: `'<map>:parts'` (eigen kleurgroepen per variant), `'_base'` (vaste basisindex), `'<map>:palfile'` voor Omanyte/Omastar.
 
 - **Kleurvarianten, keuring ronde 3:** Pikachu-Charmander houdt zwarte oorpunten (één oor kleurde mee); Rhyperior met vaste basis (lijnen op het lijf kloppen weer bij wit, diamant en goud); Chinchou's oogranden kleuren mee; albino-Politoed met rode buik; Smeargle (popart) met blauwe baret en gele verf zodat de lijnen blijven; Miltank-Galloway en de donkere Lugia's iets lichter zodat de zwarte omlijning niet wegvalt.
+
+- **Kleurvarianten, ronde 4:** Pikachu-Sterrennacht met donkere oorpunt (rechteroor), Miltank 1,5% wordt een Belted Galloway met een witte band om de buik (grijs lijf, geen onomlijnde witte vlakken meer). **Ledyba/Ledian als tokusatsu-helden** (Jordi): Kamen Rider 1 (groen, zilver, rode ogen) / Ultraman (rood en zilver, gloeiende ogen) / Super Sentai Blue Ranger / Kamen Rider Black (zwart en groen) / Space Sheriff Gavan (chroom met blauw) / Kamen Rider Kuuga Rising (goud en zwart); schild, buik, ledematen en ogen kleuren mee.

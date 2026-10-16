@@ -1568,8 +1568,8 @@ LINES = {
              'raichu/alola:body': '#e888b0', 'raichu/alola:tail': '#fcd8e8'},
             {'naam': 'Marill', 'body': '#5890e0', 'tips': '#3050a0', 'ears': '#3050a0', 'tail': '#3070d0', 'belly': '#f0f4f8',
              'raichu/alola:body': '#5890e0', 'raichu/alola:tail': '#f0f4f8'},
-            {'naam': 'Sterrennacht (Van Gogh)', 'body': ('#2c4090', {'l': 1.3}), 'tips': '#f0d040', 'ears': '#f0d040',
-             'tail': '#f0d040', 'belly': '#a8c0f0', 'raichu/alola:tail': '#f0d040'},
+            {'naam': 'Sterrennacht (Van Gogh)', 'body': ('#2c4090', {'l': 1.3}), 'ears': '#f0d040',
+             'tail': '#f0d040', 'belly': '#a8c0f0', 'raichu/alola:tail': '#f0d040', 'tips': ('#202030', {'l': 1.3})},
         ],
     },
     'psyduck': {
@@ -1826,16 +1826,23 @@ LINES = {
     'ledyba': {
         # Ledian in deze rom Bug/Normal; lieveheersbeestjes
         'species': {
-            'ledyba': {'shell': [3, 4, 5, 6]},
-            'ledian': {'shell': [5, 3, 6, 4]},
+            # tokusatsu-helden (Jordi): schild, buik, ledematen en ogen
+            'ledyba': {'shell': [4, 5, 3, 6], 'belly': [10, 11, 12, 13], 'limbs': [7, 9], 'accent': [15, 14]},
+            'ledian': {'shell': [3, 6, 5, 4], 'belly': [12, 13, 11], 'limbs': [10, 14, 15], 'eyes': [9, 7]},
         },
         'variants': [
-            {'naam': 'Geel (22-stippig)', 'shell': '#f0c828'},
-            {'naam': 'Room (Calvia)', 'shell': '#e8dcc8'},
-            {'naam': 'Zwart met rood', 'shell': ('#2c2c34', {'l': 1.3})},
-            {'naam': 'Roze lieveheersbeestje', 'shell': '#f08ab0'},
-            {'naam': 'Groene schildpadtor', 'shell': '#50a040'},
-            {'naam': 'Blauw metallic (Halmus)', 'shell': '#2c50b0'},
+            {'naam': 'Kamen Rider 1 (groen, zilver, rode ogen)', 'shell': '#3a8a50', 'belly': '#c8ccd8', 'limbs': ('#3a3a44', {'l': 1.3}),
+             'eyes': '#e03030', 'accent': '#e03030'},
+            {'naam': 'Ultraman (rood en zilver, gloeiende ogen)', 'shell': '#d02828', 'belly': '#c8ccd8', 'limbs': '#d8dce4',
+             'eyes': '#f8f0a0', 'accent': '#f8f0a0'},
+            {'naam': 'Super Sentai (Blue Ranger)', 'shell': '#2860c8', 'belly': '#f0f0f0', 'limbs': '#f0f0f0',
+             'eyes': ('#2c2c34', {'l': 1.3}), 'accent': '#2c2c34'},
+            {'naam': 'Kamen Rider Black (zwart en groen)', 'shell': ('#2c2c34', {'l': 1.3}), 'belly': '#3a9a50', 'limbs': ('#3a3a44', {'l': 1.3}),
+             'eyes': '#e03030', 'accent': '#e03030'},
+            {'naam': 'Space Sheriff Gavan (chroom met blauw)', 'shell': '#d8dce8', 'belly': ('#2c2c34', {'l': 1.3}), 'limbs': '#3060c0',
+             'eyes': '#40c0f0', 'accent': '#40c0f0'},
+            {'naam': 'Kamen Rider Kuuga Rising (goud en zwart)', 'shell': ('#d8a828', {'h': 0}), 'belly': ('#2c2c34', {'l': 1.3}),
+             'limbs': ('#2c2c34', {'l': 1.3}), 'eyes': '#e03030', 'accent': '#e03030'},
         ],
     },
     'remoraid': {
@@ -2985,13 +2992,14 @@ LINES = {
         ],
     },
     'miltank': {
-        'species': {'miltank': {'body': [10, 9, 7, 13], 'spots': [5, 1]}},
+        'species': {'miltank': {'body': [10, 9, 7, 13], 'spots': [5, 1], 'belly': [13, 15, 12, 8]}},
         'variants': [
             {'naam': 'Holstein (wit)', 'body': '#ece8e4'},
             {'naam': 'Jersey (bruin)', 'body': '#b07848'},
             {'naam': 'Milka (paars)', 'body': '#a080d0'},
             {'naam': 'Hooglander (rood)', 'body': '#b05028'},
-            {'naam': 'Belted Galloway', 'body': ('#5a5a64', {'l': 1.2}), 'spots': '#ece8e4'},
+            {'naam': 'Belted Galloway (witte band om de buik)', 'body': ('#6a6a74', {'l': 1.2}), 'belly': '#f4f4f0',
+             'miltank:parts': {'body': [10, 9, 7, 6], 'belly': [13, 15, 12, 8]}},
             {'naam': 'Gouden kalf', 'body': ('#c89020', {'h': 0})},
         ],
     },

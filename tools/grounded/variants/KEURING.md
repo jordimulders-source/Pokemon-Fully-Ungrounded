@@ -219,22 +219,22 @@ Algemeen: lijnen bij witte/albino-varianten blijven nu donker (tool), en onderde
 
 ## Moderne regionale vormen (Gen 8+ sprites)
 Per lijn de inspiratie (10 / 6 / 4 / 3 / 1,5 / 0,5%). Donker blijft donker, accenten en hoofdkleuren kleuren mee; de huid/het gezicht blijft waar die een index met andere delen deelt.
-- **Galar-Corsola/Cursola** (spookkoraal; takken, lijf, gloed, voet): bloedkoraal / zwart koraal (antipatharia) / dwaallicht-groen / gebleekt bot / diepzee-blauw / goudkoraal.
+- **Galar-Corsola/Cursola** (dood spookkoraal, gedempte tinten met een spookgloed): verdronken blauwgrijs / grauwgroene schimmel / vergeeld bot / verdroogd bloedkoraal / verkoold met sintels / spookviolet.
 - **Galar-Farfetch'd/Sirfetch'd** (ridders; veren en prei-lans/-schild): tempelier (wit, rode lans) / zwarte ridder (paarse ui) / koning Arthur (blauw, gouden Excalibur) / groene ridder Gawain (knoflook) / rode ridder (gele prei) / gouden ridder (zilveren zwaard).
 - **Galar-Meowth/Perrserker** (Viking-metaal; vacht/metaal en ogen): kobalt / bronspatina / roestijzer / chroom / zwart staal / roségoud. Geen goud of koper: de shiny's zijn goud en brons.
 - **Hisui-Growlithe/Arcanine** (vulkaansteen en vuurvacht): obsidiaan met lava / basalt met blauw vuur / zandsteen met paars / marmer met goud / lapis lazuli met goud / robijn met zwart vuur.
 - **Galar-Ponyta/Rapidash** (eenhoorns; lijf, manen, lokken): nachtmerrie / zonne-eenhoorn / kristal / feeënroze met mint / sterrennacht / Twilight Sparkle.
 - **Galar-Slowpoke/Slowbro/Slowking** (lijf, kroon, Shellder): gifkruid / hemelsblauw / Galar-gif (paars, geel) / perzik / Toxapex / Galarica-goud.
 - **Alola-Marowak** (vuurdansers; vlammen, lijf, botten): Halloween / paars spookvuur / blauw vuur / suikerschedel / rood vuur met gouden botten / zonnedans.
-- **Galar-Mr. Mime/Mr. Rime** (tapdansers; haar/jas en blauwe delen): carnaval / rode tapdanser / Riddler / Joker / Fred Astaire / IJskoningin.
+- **Galar-Mr. Mime/Mr. Rime** (tapdansers; haar/jas, blauwe delen en schmink): carnaval (turkoois gezicht) / rode tapdanser (gele schmink) / Riddler (groen) / Joker (wit) / Fred Astaire (lila) / IJskoningin (ijsblauw).
 - **Kleavor** (eigen kleuren, los van Scyther/Scizor; stenen bijlen en lijf): obsidiaan / jade / lapis lazuli / marmer / rode jaspis / goud.
 - **Annihilape** (vacht, ledematen, ogen): woede-rood / spookpaars / zwart met witte ogen / yeti / apenkoning / blauw vuur.
 - **Dudunsparce**: volgt de Dunsparce-reeks (groene drakenslang, lavendel, roodbruin, albino, koi, Chinese draak).
-- **Paldea-Tauros** (Spaanse vechtstieren; lijf + vlam/water-accenten): cárdeno / colorado / ensabanado / jabonero / indigo / gouden stier.
+- **Paldea-Tauros** (lijf, manen, hoorns, vlam/water): bizon / Team Magma (Blaze), Team Aqua (Aqua), Team Galactic (Combat) / colorado / ensabanado / indigo met gouden hoorns / gouden stier.
 - **Galar-Articuno/Zapdos/Moltres** (dragen elkaars kleuren): ruil A / ruil B / ijs, bliksem en wit vuur / ravenzwart / smaragd / goud (Zapdos zilver: zijn shiny is geel).
 - **Hisui-Typhlosion** (vlammen, kern, lijf): blauw spookvuur / groen dwaallicht / Johto-vuur / wit vuur / rood op zwart / goud.
 - **Paldea-Wooper/Clodsire** (gifsalamanders; lijf, kieuwen, buik): blauwe pijlgifkikker / moerasgroen / zwart-rood / roze axolotl / lava / goud.
 - **Hisui-Qwilfish/Overqwil** (lijf, stekels, accenten): zee-egel / koraal / gifkogel / ijsvis / wit met rode stekels / goud met zwarte stekels.
-- **Hisui-Sneasel/Sneasler** (vacht, kap, accent): bergmarter / gifgroen / bloedrood / sneeuwvos / ninja / goud.
-- **Ursaluna (ook Bloodmoon)**: volgt de Teddiursa-reeks (ijsbeer, panda, blauw, grizzly, Troetelbeer, Winnie de Poeh).
-- **Wyrdeer**: volgt de Stantler-reeks (bosgeest, rendier, edelhert, melanistisch, mythisch blauw; 0,5% goud i.p.v. zilver).
+- **Hisui-Sneasel/Sneasler** (vacht, lichte vacht, kap, accent): bergmarter / gifgroen / bloedrood / sneeuwvos / ninja / goud.
+- **Ursaluna (ook Bloodmoon)**: volgt de Teddiursa-reeks; het modderlijf kleurt mee (sneeuw, wit, blauw, grizzly, roze, Winnie's rode shirt).
+- **Wyrdeer**: volgt de Stantler-reeks, de baard kleurt mee (bosgeest, rendier, edelhert, melanistisch, mythisch blauw; 0,5% goud i.p.v. zilver).

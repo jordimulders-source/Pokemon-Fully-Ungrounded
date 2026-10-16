@@ -2510,8 +2510,8 @@ LINES = {
         },
         'variants': [
             {'naam': 'Grizzly', 'body': '#7a5038'},
-            {'naam': 'Panda', 'body': ('#34343c', {'l': 1.3})},
-            {'naam': 'IJsbeer', 'body': '#d8e4f0'},
+            {'naam': 'Panda', 'body': ('#34343c', {'l': 1.3}), 'mud': '#e8e8ec'},
+            {'naam': 'IJsbeer', 'body': '#d8e4f0', 'mud': '#d8dce8'},
             {'naam': 'Totoro (grijs)', 'body': '#8a8a90'},
             {'naam': 'Kirby-honger (roze)', 'body': '#f090b0'},
             {'naam': 'Gouden beeld', 'body': ('#c89820', {'h': 0})},
@@ -2901,16 +2901,16 @@ LINES = {
         'species': {
             'teddiursa': {'body': [1, 2, 4, 3]},
             'ursaring': {'body': [3, 1, 2, 6]},
-            'ursaluna': {'body': [4, 3, 1, 5]},
-            'ursaluna/bloodmoon': {'body': [4, 1, 8]},
+            'ursaluna': {'body': [4, 3, 1, 5], 'mud': [6, 10, 2]},
+            'ursaluna/bloodmoon': {'body': [4, 1, 8], 'mud': [6, 12, 3]},
         },
         'variants': [
             {'naam': 'IJsbeer', 'body': '#ece8e4', 'ursaring:body': ('#c4c0b8', {'l': 1.3})},
             {'naam': 'Panda', 'body': ('#3a3a42', {'l': 1.3})},
-            {'naam': 'Blauwe beer', 'body': '#5070b0'},
-            {'naam': 'Grizzly (grijs)', 'body': '#8a8070'},
-            {'naam': 'Troetelbeer (roze)', 'body': '#f0a0c0'},
-            {'naam': 'Winnie de Poeh', 'body': ('#e0b030', {'h': 0})},
+            {'naam': 'Blauwe beer', 'body': '#5070b0', 'mud': '#40507a'},
+            {'naam': 'Grizzly (grijs)', 'body': '#8a8070', 'mud': '#8a7a60'},
+            {'naam': 'Troetelbeer (roze)', 'body': '#f0a0c0', 'mud': '#f8d0e0'},
+            {'naam': 'Winnie de Poeh', 'body': ('#e0b030', {'h': 0}), 'mud': '#c02828'},
         ],
     },
     'swinub': {
@@ -2971,14 +2971,14 @@ LINES = {
     },
     'stantler': {
         # herten (Wyrdeer: moderne sprite, nog niet)
-        'species': {'stantler': {'body': [3, 1, 9, 10]}, 'wyrdeer': {'body': [9, 8, 7]}},
+        'species': {'stantler': {'body': [3, 1, 9, 10]}, 'wyrdeer': {'body': [9, 8, 7], 'beard': [11, 12]}},
         'variants': [
-            {'naam': 'Bosgeest (mosgroen, Mononoke)', 'body': '#5a8a50'},
-            {'naam': 'Rendier', 'body': '#8a7a68'},
-            {'naam': 'Edelhert (rood)', 'body': '#a04828'},
-            {'naam': 'Melanistisch (zwart)', 'body': ('#3a3a40', {'l': 1.3})},
-            {'naam': 'Mythisch blauw hert', 'body': '#4060b0'},
-            {'naam': 'Zilveren hinde (Artemis; Wyrdeer goud)', 'body': '#b8bcc8', 'wyrdeer:body': ('#d8a828', {'h': 0})},
+            {'naam': 'Bosgeest (mosgroen, Mononoke)', 'body': '#5a8a50', 'beard': '#c0e0a0'},
+            {'naam': 'Rendier', 'body': '#8a7a68', 'beard': '#e8dcc8'},
+            {'naam': 'Edelhert (rood)', 'body': '#a04828', 'beard': '#d8b090'},
+            {'naam': 'Melanistisch (zwart)', 'body': ('#3a3a40', {'l': 1.3}), 'beard': '#8a8a94'},
+            {'naam': 'Mythisch blauw hert', 'body': '#4060b0', 'beard': '#c0d8f8'},
+            {'naam': 'Zilveren hinde (Artemis; Wyrdeer goud)', 'body': '#b8bcc8', 'wyrdeer:body': ('#d8a828', {'h': 0}), 'beard': '#f8f0d0'},
         ],
     },
     'smeargle': {
@@ -3109,12 +3109,12 @@ LINES = {
             'cursola': {'coral': [5, 2, 1, 3, 4, 7, 6, 12], 'body': [15, 14]},
         },
         'variants': [
-            {'naam': 'Bloedkoraal', 'coral': '#b84848', 'body': '#f0e0e0', 'glow': '#f06060', 'rock': '#6a4848'},
-            {'naam': 'Zwart koraal (antipatharia)', 'coral': ('#4a4452', {'l': 1.2}), 'body': '#d8d0e0', 'glow': '#a070f0', 'rock': '#3a3440'},
-            {'naam': 'Dwaallicht (groen)', 'coral': '#7ab090', 'body': '#e0f0e8', 'glow': '#60f0a0', 'rock': '#4a6a58'},
-            {'naam': 'Gebleekt bot', 'coral': '#d8c8a8', 'body': '#f8f0e0', 'glow': '#f0b060', 'rock': '#8a7a60'},
-            {'naam': 'Diepzee (blauw)', 'coral': '#4a70b0', 'body': '#d8e4f4', 'glow': '#60c0f0', 'rock': '#2c3a58'},
-            {'naam': 'Goudkoraal', 'coral': ('#d8a828', {'h': 0}), 'body': '#f8f0d8', 'glow': '#f0d040', 'rock': '#8a6020'},
+            {'naam': 'Verdronken (blauwgrijs, cyaan spookgloed)', 'coral': '#7088a0', 'body': '#d8e0e8', 'glow': '#60e0f0', 'rock': '#384858'},
+            {'naam': 'Schimmel (grauwgroen, groene gloed)', 'coral': '#98ac98', 'body': '#e4ece0', 'glow': '#80f080', 'rock': '#4a5a48'},
+            {'naam': 'Vergeeld bot (oranje gloed)', 'coral': '#c0b090', 'body': '#f0e8d8', 'glow': '#f0a050', 'rock': '#6a5a48'},
+            {'naam': 'Verdroogd bloedkoraal (roestrood)', 'coral': '#9a5c5c', 'body': '#ecdcdc', 'glow': '#f05050', 'rock': '#5a3838'},
+            {'naam': 'Verkoold (zwart, sintels)', 'coral': ('#4a4452', {'l': 1.2}), 'body': '#d0c8d0', 'glow': '#f08030', 'rock': '#2c2830'},
+            {'naam': 'Spookviolet (roze gloed)', 'coral': '#a088b8', 'body': '#ece4f4', 'glow': '#f070c0', 'rock': '#4a3a58'},
         ],
     },
     'farfetchd_galar': {
@@ -3206,18 +3206,18 @@ LINES = {
         ],
     },
     'mr_mime_galar': {
-        # tapdansers: haar/jas, blauwe delen (de huid blijft)
+        # tapdansers: haar/jas, blauwe delen (schmink kleurt mee)
         'species': {
-            'mr_mime/galar': {'blue': [12, 13, 3, 2, 1]},
-            'mr_rime': {'coat': [4, 2, 1], 'blue': [14, 13, 15, 6]},
+            'mr_mime/galar': {'blue': [12, 13, 3, 2, 1], 'skin': [8, 7, 6]},
+            'mr_rime': {'coat': [4, 2, 1], 'blue': [14, 13, 15, 6], 'skin': [9, 5]},
         },
         'variants': [
-            {'naam': 'Carnaval (oranje met turkoois)', 'blue': '#e07020', 'coat': '#9a4010'},
-            {'naam': 'Rode tapdanser', 'blue': '#c03030', 'coat': '#7a1828', 'pink': '#f0d040'},
-            {'naam': 'The Riddler (groen met paars)', 'blue': '#3a9a50', 'coat': '#2c5a38', 'pink': '#a060d0'},
-            {'naam': 'Joker (paars met groen)', 'blue': '#7040a0', 'coat': '#4a2870', 'pink': '#60c040'},
-            {'naam': 'Fred Astaire (goud)', 'blue': ('#d8a828', {'h': 0}), 'coat': '#8a6018', 'pink': '#f080a0'},
-            {'naam': 'IJskoningin (lichtblauw, lila)', 'blue': '#a0d8f0', 'coat': '#5080c0', 'pink': '#c0a0f0'},
+            {'naam': 'Carnaval (oranje met turkoois)', 'blue': '#e07020', 'coat': '#9a4010', 'skin': '#80d0e0'},
+            {'naam': 'Rode tapdanser', 'blue': '#c03030', 'coat': '#7a1828', 'pink': '#f0d040', 'skin': '#f0e0a0'},
+            {'naam': 'The Riddler (groen met paars)', 'blue': '#3a9a50', 'coat': '#2c5a38', 'pink': '#a060d0', 'skin': '#a0d890'},
+            {'naam': 'Joker (paars met groen)', 'blue': '#7040a0', 'coat': '#4a2870', 'pink': '#60c040', 'skin': '#f4f4ec'},
+            {'naam': 'Fred Astaire (goud)', 'blue': ('#d8a828', {'h': 0}), 'coat': '#8a6018', 'pink': '#f080a0', 'skin': '#e0c8f0'},
+            {'naam': 'IJskoningin (lichtblauw, lila)', 'blue': '#a0d8f0', 'coat': '#5080c0', 'pink': '#c0a0f0', 'skin': '#d0e8f8'},
         ],
     },
     'kleavor': {
@@ -3245,19 +3245,24 @@ LINES = {
         ],
     },
     'tauros_paldea': {
-        # Spaanse vechtstieren (pelajes); vlammen/water van Blaze/Aqua kleuren mee
+        # vechtstieren: lijf (1/5), manen voorop (2/6), hoorns; Blaze = Team Magma, Aqua = Team Aqua
         'species': {
-            'tauros/paldea_combat': {'body': [5, 1, 2]},
-            'tauros/paldea_blaze': {'body': [7, 1, 2], 'accent': [6, 5]},
-            'tauros/paldea_aqua': {'body': [5, 1, 3], 'accent': [14, 13]},
+            'tauros/paldea_combat': {'body': [5, 1], 'mane': [2, 6], 'horns': [8, 9, 7, 10]},
+            'tauros/paldea_blaze': {'body': [7, 1], 'mane': [2], 'horns': [11, 10, 9, 8], 'accent': [6, 5]},
+            'tauros/paldea_aqua': {'body': [5, 1], 'mane': [3], 'horns': [11, 9, 7, 6], 'accent': [14, 13]},
         },
         'variants': [
-            {'naam': 'Cárdeno (grijs, gele accenten)', 'body': '#6a6a74', 'accent': '#f0d040'},
-            {'naam': 'Colorado (roodbruin, cyaan)', 'body': '#7a3a28', 'accent': '#40c0f0'},
-            {'naam': 'Ensabanado (wit, rood)', 'body': ('#b8b4ac', {'l': 1.2}), 'accent': '#c02828'},
-            {'naam': 'Jabonero (crème, blauw)', 'body': '#b89060', 'accent': '#3070d0'},
-            {'naam': 'Indigo (oranje)', 'body': '#3a4a80', 'accent': '#f08030'},
-            {'naam': 'Gouden stier (rood)', 'body': ('#c89828', {'h': 0}), 'accent': '#e03030'},
+            {'naam': 'Bizon (bruin, crème hoorns)', 'body': '#7a5434', 'mane': '#4a3020', 'horns': '#e8dcc0', 'accent': '#f0d040'},
+            {'naam': 'Team Magma (Blaze) / Team Aqua (Aqua) / Team Galactic (Combat)',
+             'tauros/paldea_combat:body': '#5a7090', 'tauros/paldea_combat:mane': '#2c3a58', 'tauros/paldea_combat:horns': '#40e0f0',
+             'tauros/paldea_blaze:body': '#b82828', 'tauros/paldea_blaze:mane': ('#2c2c34', {'l': 1.3}), 'tauros/paldea_blaze:horns': '#a0a0a8',
+             'tauros/paldea_blaze:accent': '#f08020',
+             'tauros/paldea_aqua:body': '#2c4aa8', 'tauros/paldea_aqua:mane': ('#1c2440', {'l': 1.3}), 'tauros/paldea_aqua:horns': '#f0f0f8',
+             'tauros/paldea_aqua:accent': '#f0f0f8'},
+            {'naam': 'Colorado (roodbruin, crème hoorns)', 'body': '#8a3a20', 'mane': '#5a2410', 'horns': '#e8d8b0', 'accent': '#40c0f0'},
+            {'naam': 'Ensabanado (wit, donkere hoorns)', 'body': ('#c8c4bc', {'l': 1.3}), 'mane': ('#a8a49c', {'l': 1.3}), 'horns': '#5a4a40', 'accent': '#e03030'},
+            {'naam': 'Indigo met gouden hoorns', 'body': '#3a3a80', 'mane': '#2a2a60', 'horns': '#f0d040', 'accent': '#f0d040'},
+            {'naam': 'Gouden stier', 'body': ('#c89828', {'h': 0}), 'mane': '#a07818', 'horns': '#f0f0f0', 'accent': '#e03030'},
         ],
     },
     'birds_galar': {
@@ -3324,16 +3329,16 @@ LINES = {
     'sneasel_hisui': {
         # gifklimmers: vacht (Sneasler: blauw lijf + paarse kap)
         'species': {
-            'sneasel/hisui': {'body': [7, 12, 14, 15, 11]},
+            'sneasel/hisui': {'body': [7, 12, 14, 15, 11], 'pale': [2, 9, 13]},
             'sneasler': {'body': [11, 14, 9], 'top': [10, 3, 1], 'accent': [7, 5]},
         },
         'variants': [
-            {'naam': 'Bergmarter (bruin)', 'body': '#7a5038', 'top': '#4a2c20', 'accent': '#f0c030'},
-            {'naam': 'Gifgroen', 'body': '#3a7a50', 'top': '#203a28', 'accent': '#d040c0'},
-            {'naam': 'Bloedrood', 'body': '#8a2030', 'top': '#3a1018', 'accent': '#f0e040'},
-            {'naam': 'Sneeuwvos (wit)', 'body': ('#c0c0d0', {'l': 1.3}), 'top': '#5a6a90', 'accent': '#40a0f0'},
-            {'naam': 'Ninja (zwart)', 'body': ('#34343e', {'l': 1.3}), 'top': ('#202028', {'l': 1.3}), 'accent': '#e03030'},
-            {'naam': 'Goud', 'body': ('#c89020', {'h': 0}), 'top': '#6a4010', 'accent': '#3060d0'},
+            {'naam': 'Bergmarter (bruin)', 'body': '#7a5038', 'top': '#4a2c20', 'accent': '#f0c030', 'pale': '#e0c8a8'},
+            {'naam': 'Gifgroen', 'body': '#3a7a50', 'top': '#203a28', 'accent': '#d040c0', 'pale': '#c0e0b0'},
+            {'naam': 'Bloedrood', 'body': '#8a2030', 'top': '#3a1018', 'accent': '#f0e040', 'pale': '#e8c0c0'},
+            {'naam': 'Sneeuwvos (wit)', 'body': ('#c0c0d0', {'l': 1.3}), 'top': '#5a6a90', 'accent': '#40a0f0', 'pale': '#c8d8f0'},
+            {'naam': 'Ninja (zwart)', 'body': ('#34343e', {'l': 1.3}), 'top': ('#202028', {'l': 1.3}), 'accent': '#e03030', 'pale': '#8a8aa0'},
+            {'naam': 'Goud', 'body': ('#c89020', {'h': 0}), 'top': '#6a4010', 'accent': '#3060d0', 'pale': '#f0e0b0'},
         ],
     },
 }

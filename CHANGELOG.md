@@ -18934,3 +18934,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Kleurvarianten, groep 21 (Kanto):** Bellsprout-lijn, Ponyta-lijn, Slowpoke-lijn, Shellder-lijn, Onix/Steelix, Krabby-lijn, Exeggcute-lijn (ook Alola), Cubone-lijn. Galar-Ponyta/-Slowpoke-familie en Alola-Marowak (moderne sprites) nog niet. Inspiratie: `KEURING.md`.
 
 - **Kleurvarianten, groep 22 (Kanto/Johto):** Tyrogue en de Hitmons, Lickitung-lijn, Happiny-lijn, Tangela-lijn, Kangaskhan, Mime Jr./Mr. Mime (Galar nog niet), Scyther/Scizor (Kleavor nog niet), Smoochum/Jynx, Elekid-lijn, Magby-lijn. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 23 (Kanto):** Tauros (Paldea-vormen nog niet), Lapras, Ditto, de hele Eevee-familie (de Eeveelutions ruilen van kleur met elkaar), Omanyte-lijn, Kabuto-lijn, Aerodactyl, Munchlax/Snorlax. Inspiratie: `KEURING.md`.

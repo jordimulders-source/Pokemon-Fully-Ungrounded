@@ -2335,4 +2335,127 @@ LINES = {
             {'naam': 'Obsidiaan met lava', 'red': ('#2c2830', {'l': 1.3}), 'yellow': '#f06020'},
         ],
     },
+    # --- groep 23 (Kanto) ---
+    'tauros': {
+        # runderen (Paldea-vormen: moderne sprites, nog niet)
+        'species': {'tauros': {'body': [12, 14, 8, 13, 7], 'mane': [4, 6, 5, 9]}},
+        'variants': [
+            {'naam': 'Spaanse stier (zwart)', 'body': ('#3a3a40', {'l': 1.3})},
+            {'naam': 'Brahmaan (wit)', 'body': '#e8e4dc'},
+            {'naam': 'Schotse hooglander', 'body': '#b05028', 'mane': '#d89050'},
+            {'naam': 'Bizon', 'body': '#5a3a28', 'mane': '#3a2818'},
+            {'naam': 'Babe de blauwe os', 'body': '#4a70b0'},
+            {'naam': 'Minotaurus', 'body': '#901818', 'mane': '#2c2c30'},
+        ],
+    },
+    'lapras': {
+        'species': {'lapras': {'body': [1, 4, 3, 5], 'shell': [11, 8, 12]}},
+        'variants': [
+            {'naam': 'Nessie (groen)', 'body': '#4a8a50'},
+            {'naam': 'Walvisgrijs', 'body': '#7a8090'},
+            {'naam': 'Roze', 'body': '#e8a0b0'},
+            {'naam': 'Albino', 'body': ('#ece4e4', ALBINO), 'shell': '#e0d8d8'},
+            {'naam': 'Orka', 'body': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Galjoen (goud)', 'body': '#d8a828', 'shell': '#8a5030'},
+        ],
+    },
+    'ditto': {
+        'species': {'ditto': {'body': [2, 1, 7, 4, 3, 5]}},
+        'variants': [
+            {'naam': 'Rode gelei', 'body': '#d03040'},
+            {'naam': 'Groen slijm', 'body': '#60c050'},
+            {'naam': 'Oranje', 'body': '#e08030'},
+            {'naam': 'Wit', 'body': '#ece8f0'},
+            {'naam': 'Venom (zwart)', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Goud', 'body': ('#c89820', {'h': 0})},
+        ],
+    },
+    'eevee': {
+        # de Eeveelutions wisselen van kleur met elkaar (per soort een eigen ruil)
+        'species': {
+            'eevee': {'fur': [5, 2, 1, 3]},
+            'vaporeon': {'body': [1, 2, 12, 10, 11]},
+            'jolteon': {'fur': [2, 5, 4, 3, 7, 6]},
+            'flareon': {'body': [4, 8, 7, 9]},
+            'espeon': {'fur': [1, 4, 5, 2]},
+            'umbreon': {'fur': [11, 1, 7, 2], 'rings': [4, 6, 5]},
+            'leafeon': {'leaves': [1, 3, 2, 9]},
+            'glaceon': {'body': [5, 8, 2, 3, 6, 7]},
+            'sylveon': {'pink': [1, 10, 4, 7], 'blue': [2, 6, 5]},
+        },
+        'variants': [
+            {'naam': 'Broerruil A', 'eevee:fur': '#4a70b0', 'vaporeon:body': '#e0c030', 'jolteon:fur': '#d84838',
+             'flareon:body': '#3a80c0', 'espeon:fur': ('#34343c', {'l': 1.3}), 'umbreon:fur': '#b080b0', 'rings': '#e05090',
+             'leaves': '#60a0d0', 'glaceon:body': '#70b060', 'pink': '#70c890', 'blue': '#f080a0'},
+            {'naam': 'Broerruil B', 'eevee:fur': '#c8a0e0', 'vaporeon:body': '#d84838', 'jolteon:fur': '#3a80c0',
+             'flareon:body': '#3a9a60', 'espeon:fur': '#d84838', 'umbreon:fur': '#3a4880', 'rings': '#70e0f0',
+             'leaves': '#b080b0', 'glaceon:body': '#f090b0', 'pink': ('#34343c', {'l': 1.3}), 'blue': '#f0d040'},
+            {'naam': 'Schaduw', 'eevee:fur': ('#34343c', {'l': 1.3}), 'vaporeon:body': ('#34343c', {'l': 1.3}), 'jolteon:fur': ('#34343c', {'l': 1.3}),
+             'flareon:body': ('#34343c', {'l': 1.3}), 'espeon:fur': ('#34343c', {'l': 1.3}), 'rings': '#d03030',
+             'leaves': ('#34343c', {'l': 1.3}), 'glaceon:body': ('#34343c', {'l': 1.3}), 'pink': ('#34343c', {'l': 1.3})},
+            {'naam': 'Albino', 'eevee:fur': ('#ece4e0', ALBINO), 'vaporeon:body': ('#ece8ec', ALBINO), 'jolteon:fur': ('#f0ece4', ALBINO),
+             'flareon:body': ('#f0e8e4', ALBINO), 'espeon:fur': ('#f0e8f0', ALBINO), 'umbreon:fur': ('#e8e4e4', ALBINO), 'rings': '#f0c0c8',
+             'leaves': ('#ece8e0', ALBINO), 'glaceon:body': ('#ecf0f4', ALBINO), 'pink': ('#f4ecf0', ALBINO), 'blue': '#f0c8d8'},
+            {'naam': 'Sterrennacht', 'eevee:fur': '#283078', 'vaporeon:body': '#283078', 'jolteon:fur': '#283078', 'flareon:body': '#283078',
+             'espeon:fur': '#283078', 'umbreon:fur': '#283078', 'rings': '#f0e070', 'leaves': '#283078', 'glaceon:body': '#283078',
+             'pink': '#283078', 'blue': '#f0e070'},
+            {'naam': 'Zilveren beeld (Eevee: goud)', 'eevee:fur': ('#c89820', {'h': 0}), 'vaporeon:body': '#b8bcc8', 'jolteon:fur': '#b8bcc8',
+             'flareon:body': '#b8bcc8', 'espeon:fur': '#b8bcc8', 'umbreon:fur': '#8a8e98', 'rings': '#e8ecf4', 'leaves': '#b8bcc8',
+             'glaceon:body': '#b8bcc8', 'pink': '#b8bcc8', 'blue': '#e0b030'},
+        ],
+    },
+    'omanyte': {
+        'species': {
+            'omanyte': {'shell': [1, 2, 4, 3, 5], 'body': [8, 7, 10, 9]},
+            'omastar': {'shell': [1, 5, 4, 2, 6], 'body': [8, 7, 10, 9]},
+        },
+        'variants': [
+            {'naam': 'Nautilus', 'shell': '#e8e0d0', 'body': '#d08060'},
+            {'naam': 'Opaalammoniet', 'shell': '#a0e0d0', 'body': '#e070b0'},
+            {'naam': 'Versteend', 'shell': '#9a9690', 'body': '#6a6a70'},
+            {'naam': 'Barnsteen', 'shell': '#d08020'},
+            {'naam': 'Zwarte ammoniet', 'shell': ('#3a3038', {'l': 1.3}), 'body': '#c03040'},
+            {'naam': 'Roze opaal', 'shell': '#e090c0', 'body': '#40d0e0'},
+        ],
+    },
+    'kabuto': {
+        'species': {
+            'kabuto': {'shell': [5, 1, 6, 3, 2]},
+            'kabutops': {'shell': [7, 9, 10, 8, 6]},
+        },
+        'variants': [
+            {'naam': 'Keizerkrab (paars)', 'shell': '#7050a0'},
+            {'naam': 'Trilobiet (grijs)', 'shell': '#7a7a80'},
+            {'naam': 'Blauw bloed', 'shell': '#3060a0'},
+            {'naam': 'Zwart', 'shell': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Kabuto-helm (rood)', 'shell': '#a02020'},
+            {'naam': 'Gouden fossiel', 'shell': ('#c89820', {'h': 0})},
+        ],
+    },
+    'aerodactyl': {
+        'species': {'aerodactyl': {'body': [2, 1, 4, 3], 'wings': [5, 6, 7]}},
+        'variants': [
+            {'naam': 'Zandsteenfossiel', 'body': '#a08060', 'wings': '#d0a070'},
+            {'naam': 'Jurassic-groen', 'body': '#5a8a50', 'wings': '#c05030'},
+            {'naam': 'Quetzalcoatlus (rood)', 'body': '#a83830', 'wings': '#f0c040'},
+            {'naam': 'Albino', 'body': ('#ece4e4', ALBINO), 'wings': '#f0c0c8'},
+            {'naam': 'Zwarte draak', 'body': ('#34343c', {'l': 1.3}), 'wings': '#c02828'},
+            {'naam': 'Barnsteen', 'body': '#d89020', 'wings': '#f0d070'},
+        ],
+    },
+    'snorlax': {
+        # de buik blijft
+        'species': {
+            'munchlax': {'body': [2, 1, 3, 5]},
+            'snorlax': {'body': [15, 2, 4, 3, 6]},
+        },
+        'variants': [
+            {'naam': 'Grizzly', 'body': '#7a5038'},
+            {'naam': 'Panda', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'IJsbeer', 'body': '#d8e4f0'},
+            {'naam': 'Totoro (grijs)', 'body': '#8a8a90'},
+            {'naam': 'Kirby-honger (roze)', 'body': '#f090b0'},
+            {'naam': 'Gouden beeld', 'body': ('#c89820', {'h': 0})},
+        ],
+    },
 }

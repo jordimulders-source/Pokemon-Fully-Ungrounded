@@ -85,5 +85,15 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Elekid/Electabuzz/Electivire** (zwarte strepen blijven): 10% blauwe bliksem, 6% paarse tijger, 4% radioactief groen, 3% witte tijger, 1,5% roze bliksem, 0,5% zilver. Geen oranje: de Electabuzz-shiny is oranje.
 - **Magby/Magmar/Magmortar** (vuur): 10% blauw vuur, 6% groen vuur, 4% paars vuur, 3% witheet, 1,5% Electabuzz-ruil (geel met zwart: de eeuwige rivaal), 0,5% obsidiaan met lava.
 
+## Groep 23
+- **Tauros** (runderen): 10% Spaanse vechtstier (zwart), 6% brahmaan (wit), 4% Schotse hooglander (rood met lichte manen), 3% bizon, 1,5% Babe de blauwe os (Paul Bunyan), 0,5% Minotaurus (bloedrood met zwarte manen). Paldea-vormen nog niet.
+- **Lapras**: 10% Nessie (groen), 6% walvisgrijs, 4% roze, 3% albino, 1,5% orka (zwart), 0,5% galjoen (goud met houten schild).
+- **Ditto**: 10% rode gelei, 6% groen slijm, 4% oranje, 3% wit, 1,5% Venom (zwart), 0,5% goud. Geen blauw: de shiny is blauw.
+- **Eevee-familie** (de Eeveelutions ruilen van kleur): 10% broerruil A (Vaporeon geel, Jolteon rood, Flareon blauw, Espeon zwart, Umbreon lila met roze ringen, Leafeon blauw blad, Glaceon groen, Sylveon mint met roze, Eevee blauw), 6% broerruil B (Vaporeon rood, Jolteon blauw, Flareon groen, Espeon rood, Umbreon blauw met cyaan ringen, Leafeon lila blad, Glaceon roze, Sylveon zwart met geel, Eevee lila), 4% schaduw (allemaal zwart; Umbreon met rode ringen), 3% albino, 1,5% sterrennacht (nachtblauw met gele accenten), 0,5% zilveren beeld (Eevee goud, want zijn shiny is zilver).
+- **Omanyte/Omastar** (ammonieten): 10% nautilus (wit met roodbruin), 6% opaalammoniet (mint met roze), 4% versteend, 3% barnsteen, 1,5% zwarte ammoniet (rode tentakels), 0,5% roze opaal (cyaan tentakels).
+- **Kabuto/Kabutops**: 10% keizerkrab (paars), 6% trilobiet (grijs), 4% blauw bloed (degenkrabben hebben blauw bloed), 3% zwart, 1,5% Kabuto-helm (rood), 0,5% gouden fossiel.
+- **Aerodactyl** (pterosauriërs): 10% zandsteenfossiel, 6% Jurassic-groen (rode vliezen), 4% Quetzalcoatlus (rood met gele vliezen), 3% albino, 1,5% zwarte draak (rode vliezen), 0,5% barnsteen.
+- **Munchlax/Snorlax** (beren; de buik blijft): 10% grizzly, 6% panda, 4% ijsbeer, 3% Totoro (grijs), 1,5% Kirby-honger (roze), 0,5% gouden beeld.
+
 ## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
-Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.
+Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.

@@ -7006,6 +7006,7 @@ static const struct LevelUpMove sStantlerLevelUpLearnset[] = {
     LEVEL_UP_MOVE(13, MOVE_STOMP),
     LEVEL_UP_MOVE(16, MOVE_SAND_ATTACK),
     LEVEL_UP_MOVE(21, MOVE_TAKE_DOWN),
+    LEVEL_UP_MOVE(21, MOVE_PSYSHIELD_BASH), // Project Grounded: nodig voor Wyrdeer (was nergens te leren)
     LEVEL_UP_MOVE(23, MOVE_CONFUSE_RAY),
     LEVEL_UP_MOVE(27, MOVE_CALM_MIND),
     LEVEL_UP_MOVE(32, MOVE_ROLE_PLAY),
@@ -19702,6 +19703,7 @@ static const struct LevelUpMove sDipplinLevelUpLearnset[] = {
     LEVEL_UP_MOVE(12, MOVE_DRAGON_BREATH),
     LEVEL_UP_MOVE(16, MOVE_PROTECT),
     LEVEL_UP_MOVE(20, MOVE_BULLET_SEED),
+    LEVEL_UP_MOVE(24, MOVE_DRAGON_CHEER), // Project Grounded: nodig voor Hydrapple (was nergens te leren)
     LEVEL_UP_MOVE(28, MOVE_SYRUP_BOMB),
     LEVEL_UP_MOVE(32, MOVE_DRAGON_PULSE),
     LEVEL_UP_MOVE(36, MOVE_RECOVER),

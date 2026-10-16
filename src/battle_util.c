@@ -7281,9 +7281,9 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         if (gBattleMons[battlerAtk].volatiles.confusionTurns)
             basePower *= 2;
         break;
-    case EFFECT_STRAIGHT_LINE: // Project Grounded: opnieuw achter elkaar = x1,5 (maar zonder prioriteit, zie GetBattleMovePriority)
+    case EFFECT_STRAIGHT_LINE: // Project Grounded (Jordi 16 okt): 60, opnieuw achter elkaar 100 (maar zonder prioriteit, zie GetBattleMovePriority)
         if (gBattleStruct->metronomeItemCounter[battlerAtk] > 0)
-            basePower = basePower * 3 / 2;
+            basePower = basePower * 5 / 3;
         break;
     case EFFECT_WIND_CHIME: // Project Grounded: met Tailwind dubbel, tegen een doelwit met status x1,5
         if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_TAILWIND)

@@ -111,7 +111,7 @@ DOUBLE_BATTLE_TEST("Venom Dust poisons both opponents and lowers their Speed")
     }
 }
 
-// Straight Line: +1 prioriteit; opnieuw achter elkaar x1,5 zonder prioriteit.
+// Straight Line: 60 met +1 prioriteit; opnieuw achter elkaar 100 (x5/3) zonder prioriteit.
 SINGLE_BATTLE_TEST("Straight Line has +1 priority")
 {
     GIVEN {
@@ -126,7 +126,7 @@ SINGLE_BATTLE_TEST("Straight Line has +1 priority")
     }
 }
 
-SINGLE_BATTLE_TEST("Straight Line gets 1.5x power when used twice in a row", s16 damage1, s16 damage2)
+SINGLE_BATTLE_TEST("Straight Line gets 100 power when used twice in a row", s16 damage1, s16 damage2)
 {
     PARAMETRIZE {}
     GIVEN {
@@ -141,7 +141,7 @@ SINGLE_BATTLE_TEST("Straight Line gets 1.5x power when used twice in a row", s16
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STRAIGHT_LINE, player);
         HP_BAR(opponent, captureDamage: &results[i].damage2);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage1, Q_4_12(1.5), results[0].damage2);
+        EXPECT_MUL_EQ(results[0].damage1, Q_4_12(1.666), results[0].damage2);
     }
 }
 

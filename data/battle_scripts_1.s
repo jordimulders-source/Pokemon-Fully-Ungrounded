@@ -3357,6 +3357,9 @@ BattleScript_EffectFungalControl::
 	attackcanceler
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	jumpifability BS_TARGET_SIDE, ABILITY_AROMA_VEIL, BattleScript_AromaVeilProtects
+	@ Jordi: geen poedermove meer (Grass is niet immuun), maar Overcoat en Safety Goggles houden de sporen tegen
+	jumpifability BS_TARGET, ABILITY_OVERCOAT, BattleScript_PowderMoveNoEffect
+	jumpifholdeffect BS_TARGET, HOLD_EFFECT_SAFETY_GOGGLES, BattleScript_PowderMoveNoEffect, TRUE
 	callnative BS_TryFungalControl
 	.4byte BattleScript_ButItFailed
 	attackanimation

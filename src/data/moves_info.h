@@ -21450,7 +21450,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
-        .powderMove = TRUE,
+        .powderMove = FALSE, // Project Grounded (Jordi): schimmels groeien juist op planten; Overcoat/Safety Goggles blokkeren via het script
         .makesContact = TRUE,
         .magicCoatAffected = TRUE,
         .encoreBanned = TRUE,
@@ -21905,9 +21905,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Straight Line"),
         .description = COMPOUND_STRING(
             "Dashes first. Again in a row:\n"
-            "1.5x power, but no priority."),
+            "100 power, but no priority."),
         .effect = EFFECT_STRAIGHT_LINE,
-        .power = 70,
+        .power = 60,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 10,

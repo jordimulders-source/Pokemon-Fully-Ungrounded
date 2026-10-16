@@ -8402,14 +8402,14 @@ Ability: Levitate
 - Flame Burst
 - Confuse Ray
 
-Illumise @ Bright Powder
-Level: 29
+Rotom_Wash
+Level: 30
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Prankster
-- Encore
-- Moonlight
-- Struggle Bug
-- Charge Beam
+Ability: Levitate
+- Hydro Pump
+- Shock Wave
+- Will-O-Wisp
+- Hex
 
 Voltorb-Hisui @ Air Balloon
 Level: 30
@@ -23194,14 +23194,14 @@ Ability: Levitate
 - Flame Burst
 - Confuse Ray
 
-Illumise @ Bright Powder
+Rotom_Wash @ Leftovers
 Level: 83
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Prankster
-- Encore
-- Moonlight
-- Struggle Bug
-- Charge Beam
+Ability: Levitate
+- Hydro Pump
+- Thunderbolt
+- Will-O-Wisp
+- Volt Switch
 
 Electrode_Hisui @ Air Balloon
 Level: 84
@@ -23256,14 +23256,14 @@ Ability: Levitate
 - Flame Burst
 - Confuse Ray
 
-Illumise @ Bright Powder
+Rotom_Wash @ Leftovers
 Level: 87
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Prankster
-- Encore
-- Moonlight
-- Struggle Bug
-- Charge Beam
+Ability: Levitate
+- Hydro Pump
+- Thunderbolt
+- Will-O-Wisp
+- Volt Switch
 
 Electrode_Hisui @ Air Balloon
 Level: 88
@@ -23318,14 +23318,14 @@ Ability: Levitate
 - Flame Burst
 - Confuse Ray
 
-Illumise @ Bright Powder
+Rotom_Wash @ Leftovers
 Level: 92
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Prankster
-- Encore
-- Moonlight
-- Struggle Bug
-- Charge Beam
+Ability: Levitate
+- Hydro Pump
+- Thunderbolt
+- Will-O-Wisp
+- Volt Switch
 
 Electrode_Hisui @ Air Balloon
 Level: 93
@@ -23380,14 +23380,14 @@ Ability: Levitate
 - Flame Burst
 - Confuse Ray
 
-Illumise @ Bright Powder
+Rotom_Wash @ Leftovers
 Level: 97
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Prankster
-- Encore
-- Moonlight
-- Struggle Bug
-- Charge Beam
+Ability: Levitate
+- Hydro Pump
+- Thunderbolt
+- Will-O-Wisp
+- Volt Switch
 
 Electrode_Hisui @ Air Balloon
 Level: 98

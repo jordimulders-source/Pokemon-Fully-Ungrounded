@@ -127,3 +127,6 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Kangaskhan lv 62–67 op Route 115 | 55–57 | ✅ |
 | Eindmelding Fungal Control sprak over Encore | Eigen tekst | ✅ |
 | Fungal Control kon Uproar niet overschrijven | Wist nu Uproar/rampage/Rollout/Bide | ✅ |
+| Illumise als (laatste) Wattson-Pokémon zwak | Rotom-Wash | ✅ |
+| Fungal Control werkt niet op Grass | Geen poedermove meer; Overcoat/Safety Goggles blokkeren | ✅ |
+| Straight Line te sterk? | 60 / 100 | ✅ |

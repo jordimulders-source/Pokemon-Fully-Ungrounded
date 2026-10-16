@@ -78,3 +78,32 @@ MauvilleCity_House2_EventScript_HiddenStairs::
 MauvilleCity_House2_Text_HiddenStairs:
 	.string "There's a staircase hidden behind\n"
 	.string "the bookcase. TV noise drifts up.$"
+
+@ Project Grounded (Jordi): de man des huizes over de vervloekte tv in de kelder (Rotom-event, MauvilleCity_House2_B1F)
+MauvilleCity_House2_EventScript_CursedTVMan::
+	lock
+	faceplayer
+	goto_if_set FLAG_CAUGHT_MAUVILLE_ROTOM, MauvilleCity_House2_EventScript_CursedTVManAfter
+	msgbox MauvilleCity_House2_Text_CursedTV, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_House2_EventScript_CursedTVManAfter::
+	msgbox MauvilleCity_House2_Text_CursedTVAfter, MSGBOX_DEFAULT
+	release
+	end
+
+MauvilleCity_House2_Text_CursedTV:
+	.string "Our old TV is cursed. It turned itself\n"
+	.string "on at 3 AM and showed our living room.\p"
+	.string "With me in it. Waving. I wasn't\n"
+	.string "waving.\p"
+	.string "So we put it in the basement, behind\n"
+	.string "the bookcase. Like normal people.\p"
+	.string "It still hums at night. My wife calls\n"
+	.string "it background noise. I call it a tenant.$"
+
+MauvilleCity_House2_Text_CursedTVAfter:
+	.string "The basement TV only shows the news\n"
+	.string "now. No ghosts, no waving.\p"
+	.string "Somehow that's worse.$"

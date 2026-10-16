@@ -1562,7 +1562,7 @@ LINES = {
              'raichu/alola:body': '#5aa890', 'raichu/alola:tail': '#4a9a48', 'belly': '#e8f0d8'},
             {'naam': 'Squirtle', 'body': '#7ac0e8', 'tips': '#8a5a30', 'ears': '#9a6838', 'tail': '#9a6838', 'belly': '#f0e0a8',
              'raichu/alola:body': '#5aa0d8', 'raichu/alola:tail': '#c08850'},
-            {'naam': 'Charmander', 'body': '#e85a30', 'tips': '#f0c020', 'ears': '#d03020', 'tail': '#f0c020', 'belly': '#f8e0a0',
+            {'naam': 'Charmander', 'body': '#e85a30', 'ears': '#d03020', 'tail': '#f0c020', 'belly': '#f8e0a0',
              'raichu/alola:body': '#f09040', 'raichu/alola:tail': '#e03020'},
             {'naam': 'Jigglypuff-roze', 'body': '#f8a8c8', 'tips': '#3a3a48', 'ears': '#c06080', 'tail': '#f8d8e8', 'belly': '#fce8f0',
              'raichu/alola:body': '#e888b0', 'raichu/alola:tail': '#fcd8e8'},
@@ -1657,15 +1657,15 @@ LINES = {
         'species': {
             'rhyhorn': {'body': [5, 4, 3, 2, 1]},
             'rhydon': {'body': [14, 13, 12, 11]},
-            'rhyperior': {'body': [3, 6, 1, 2, 5], 'armor': [8, 12, 9, 10]},
+            'rhyperior': {'body': [3, 6, 1, 2, 5], 'armor': [8, 12, 9, 10], '_base': {'body': 1}},
         },
         'variants': [
-            {'naam': 'Bemost', 'body': '#6a8a50', 'rhyperior:body': '#3a5030'},
-            {'naam': 'Witte neushoorn', 'body': '#d8d4cc', 'rhyperior:body': '#a8a4a0'},
-            {'naam': 'Basalt met lava', 'body': ('#3a3038', {'l': 1.3}), 'rhyperior:body': '#2c2830', 'armor': '#f0e040'},
-            {'naam': 'Amethist', 'body': '#8a70b0', 'rhyperior:body': '#4a3a68', 'armor': '#e0c060'},
-            {'naam': 'Diamant', 'body': '#c8e0f0', 'rhyperior:body': '#a8cce8', 'armor': '#58b8e8'},
-            {'naam': 'Goud', 'body': '#c89828', 'rhyperior:body': '#806018', 'armor': '#3060b0'},
+            {'naam': 'Bemost', 'body': '#6a8a50', 'rhyperior:body': '#5a7a48'},
+            {'naam': 'Witte neushoorn', 'body': '#d8d4cc', 'rhyperior:body': ('#c8c4bc', {'l': 1.2})},
+            {'naam': 'Basalt met lava', 'body': ('#3a3038', {'l': 1.3}), 'rhyperior:body': ('#3a3440', {'l': 1.3}), 'armor': '#f0e040'},
+            {'naam': 'Amethist', 'body': '#8a70b0', 'rhyperior:body': '#6a5a98', 'armor': '#e0c060'},
+            {'naam': 'Diamant', 'body': '#c8e0f0', 'rhyperior:body': ('#b0d0ec', {'l': 1.2}), 'armor': '#58b8e8'},
+            {'naam': 'Goud', 'body': '#c89828', 'rhyperior:body': ('#c89828', {'h': 0}), 'armor': '#3060b0'},
         ],
     },
     'corsola': {
@@ -1682,7 +1682,7 @@ LINES = {
     },
     'chinchou': {
         'species': {
-            'chinchou': {'body': [7, 2, 1, 3, 6, 13], 'light': [4, 12, 5, 11]},
+            'chinchou': {'body': [7, 2, 1, 3, 6, 13], 'light': [4, 12, 5, 11, 9, 10]},
             'lanturn': {'body': [7, 4, 8, 5, 12], 'light': [11, 1, 6, 3, 2]},
         },
         'variants': [
@@ -1864,7 +1864,7 @@ LINES = {
             {'naam': 'Oranje pijlgifkikker', 'body': '#e07020', 'spiral': '#284898', 'belly': '#4a4a58'},
             {'naam': 'Pad (bruin)', 'body': '#8a6a40', 'spiral': '#d89838', 'belly': '#e8dcb8'},
             {'naam': 'Paarse kikker', 'body': '#7048a8', 'spiral': '#e0b020', 'belly': '#f0d040'},
-            {'naam': 'Albino', 'body': ('#ece0e0', ALBINO), 'spiral': '#e07090', 'belly': '#f4d8d8'},
+            {'naam': 'Albino', 'body': ('#ece0e0', ALBINO), 'spiral': '#e07090', 'belly': '#d03838'},
             {'naam': 'Gouden gifkikker (zwarte buik)', 'body': '#e8c030', 'spiral': '#a02818', 'belly': '#3a3a48'},
             {'naam': 'Aardbeigifkikker (blauwe jeans)', 'body': '#c82828', 'spiral': '#3050c0', 'belly': '#4068d0'},
         ],
@@ -2974,13 +2974,13 @@ LINES = {
     'smeargle': {
         # de verfkleur van de staart
         # schilders: vacht, baret/oren en verf
-        'species': {'smeargle': {'body': [5, 2, 12], 'hat': [4, 3, 1], 'paint': [13, 8, 9, 11]}},
+        'species': {'smeargle': {'body': [5, 2, 12], 'hat': [4, 1], 'paint': [13, 8, 9, 11]}},
         'variants': [
             {'naam': 'Picasso, blauwe periode', 'body': '#98a8d0', 'hat': '#2c3a70', 'paint': '#f0d040'},
             {'naam': 'Picasso, roze periode', 'body': '#f0c0c8', 'hat': '#a04060', 'paint': '#40a0c0'},
             {'naam': 'Van Gogh (zonnebloemgeel, blauwe verf)', 'body': '#e8c860', 'hat': '#2848a0', 'paint': '#2860d0'},
             {'naam': 'Frida Kahlo (zwarte vlechten, rode bloem)', 'body': '#c89070', 'hat': ('#2c2c34', {'l': 1.3}), 'paint': '#d02838'},
-            {'naam': 'Andy Warhol (popart)', 'body': '#f090c8', 'hat': '#f0e040', 'paint': '#40c0f0'},
+            {'naam': 'Andy Warhol (popart)', 'body': '#f090c8', 'hat': '#3050c0', 'paint': '#f0e040'},
             {'naam': 'Klimt (bladgoud)', 'body': '#d8b048', 'hat': '#3a2a20', 'paint': ('#c89020', {'h': 0})},
         ],
     },
@@ -2991,7 +2991,7 @@ LINES = {
             {'naam': 'Jersey (bruin)', 'body': '#b07848'},
             {'naam': 'Milka (paars)', 'body': '#a080d0'},
             {'naam': 'Hooglander (rood)', 'body': '#b05028'},
-            {'naam': 'Belted Galloway', 'body': ('#3a3a40', {'l': 1.3}), 'spots': '#ece8e4'},
+            {'naam': 'Belted Galloway', 'body': ('#5a5a64', {'l': 1.2}), 'spots': '#ece8e4'},
             {'naam': 'Gouden kalf', 'body': ('#c89020', {'h': 0})},
         ],
     },
@@ -3071,11 +3071,11 @@ LINES = {
     'lugia': {
         'species': {'lugia': {'body': [5, 3, 1, 8], 'blue': [6, 7, 11, 14], 'lines': [2]}},
         'variants': [
-            {'naam': 'Shadow Lugia', 'body': '#5a5a78', 'blue': '#c02848', 'lines': '#2c2c40'},
+            {'naam': 'Shadow Lugia', 'body': ('#70708c', {'l': 0.7}), 'blue': '#c02848', 'lines': '#2c2c40'},
             {'naam': 'Ho-Oh-ruil', 'body': '#f0c040', 'blue': '#c02828', 'lines': '#8a5a20'},
             {'naam': 'Zeegroen', 'body': '#c8f0e0', 'blue': '#30a080', 'lines': '#4a7a70'},
             {'naam': 'Roze', 'body': '#f8d8e8', 'blue': '#e05090', 'lines': '#8a6078'},
-            {'naam': 'Nachtzee (Shadow Lugia uit XD)', 'body': '#3a4878', 'blue': '#e0e8f8', 'lines': '#141828'},
+            {'naam': 'Nachtzee (Shadow Lugia uit XD)', 'body': ('#5060a0', {'l': 0.7}), 'blue': '#e0e8f8', 'lines': '#141828'},
             {'naam': 'Pokémon Silver', 'body': '#c8ccd8', 'blue': '#606878'},
         ],
     },

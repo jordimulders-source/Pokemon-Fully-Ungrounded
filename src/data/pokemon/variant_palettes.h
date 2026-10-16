@@ -294,6 +294,15 @@ static const u16 sVariants_Graveler[] = INCBIN_U16("graphics/pokemon/graveler/va
 #if (P_FAMILY_GEODUDE)
 static const u16 sVariants_Golem[] = INCBIN_U16("graphics/pokemon/golem/variants.gbapal");
 #endif
+#if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
+static const u16 sVariants_GeodudeAlola[] = INCBIN_U16("graphics/pokemon/geodude/alola/variants.gbapal");
+#endif
+#if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
+static const u16 sVariants_GravelerAlola[] = INCBIN_U16("graphics/pokemon/graveler/alola/variants.gbapal");
+#endif
+#if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
+static const u16 sVariants_GolemAlola[] = INCBIN_U16("graphics/pokemon/golem/alola/variants.gbapal");
+#endif
 #if (P_FAMILY_PONYTA)
 static const u16 sVariants_Ponyta[] = INCBIN_U16("graphics/pokemon/ponyta/variants.gbapal");
 #endif
@@ -1736,6 +1745,15 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_GEODUDE)
     {gMonPalette_Golem, sVariants_Golem},
+#endif
+#if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
+    {gMonPalette_GeodudeAlola, sVariants_GeodudeAlola},
+#endif
+#if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
+    {gMonPalette_GravelerAlola, sVariants_GravelerAlola},
+#endif
+#if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
+    {gMonPalette_GolemAlola, sVariants_GolemAlola},
 #endif
 #if (P_FAMILY_PONYTA)
     {gMonPalette_Ponyta, sVariants_Ponyta},

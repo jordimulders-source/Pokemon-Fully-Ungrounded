@@ -678,8 +678,9 @@ LINES = {
         ],
     },
     'yamask_galar': {
-        # Galar: kleitablet, tekens erop, spookoog, schaduwlijf (Runerigus heeft nog geen recept)
-        'species': {'yamask/galar': {'body': [1, 2], 'tablet': [8, 9, 11], 'glyph': [7, 10], 'eye': [5, 4]}},
+        # Galar: kleitablet, tekens erop, spookoog, schaduwlijf (Runerigus volgt mee)
+        'species': {'yamask/galar': {'body': [1, 2], 'tablet': [8, 9, 11], 'glyph': [7, 10], 'eye': [5, 4]},
+                    'runerigus': {'body': [1], 'tablet': [3, 6, 5, 4], 'glyph': [8, 7], 'eye': [9], '_base': {'tablet': 3}}},
         'variants': [
             {'naam': 'Terracotta (oranje klei, groen oog)', 'tablet': '#c87048', 'glyph': '#5a2818', 'eye': '#40c070',
              'body': ('#3a3438', DARK)},

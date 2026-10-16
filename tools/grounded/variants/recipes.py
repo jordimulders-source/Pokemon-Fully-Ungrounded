@@ -2941,4 +2941,99 @@ LINES = {
             {'naam': 'Gouden kalf', 'body': ('#c89020', {'h': 0})},
         ],
     },
+    # --- groep 28 (Johto-rest en legendaries) ---
+    'unown': {
+        # alle letters delen één palet
+        'species': {'unown': {'body': [9, 8, 7, 4]}},
+        'variants': [
+            {'naam': 'Zandsteen (Ruins of Alph)', 'body': '#a08860'},
+            {'naam': 'Hiëroglief-goud', 'body': ('#c89020', {'h': 0})},
+            {'naam': 'Jade', 'body': '#3a8a60'},
+            {'naam': 'Amethist', 'body': '#7a50b0'},
+            {'naam': 'Obsidiaanrood', 'body': '#902020'},
+            {'naam': 'Unown-dimensie (cyaan)', 'body': '#30c0d0'},
+        ],
+    },
+    'shuckle': {
+        'species': {'shuckle': {'body': [4, 1, 3, 2], 'shell': [6, 10, 11]}},
+        'variants': [
+            {'naam': 'Groene schelp', 'shell': '#40a050'},
+            {'naam': 'Paarse schelp', 'shell': '#8040b0'},
+            {'naam': 'Zwarte schelp', 'shell': ('#2c2c34', {'l': 1.3}), 'body': '#e8e4dc'},
+            {'naam': 'Porselein', 'shell': '#ece8e0', 'body': '#f0c060'},
+            {'naam': 'Bessensap', 'shell': '#f08030', 'body': '#f0a0b0'},
+            {'naam': 'Gouden schelp', 'shell': ('#c89020', {'h': 0}), 'body': '#c02828'},
+        ],
+    },
+    'raikou': {
+        # de drie honden dragen elkaars kleuren
+        'species': {'raikou': {'body': [13, 12, 11, 14], 'cloud': [4, 1, 3]}},
+        'variants': [
+            {'naam': 'Entei-bruin', 'body': '#a07050', 'cloud': '#d0d0d0'},
+            {'naam': 'Suicune-blauw', 'body': '#58b8d0', 'cloud': '#a868d0'},
+            {'naam': 'Witte tijger', 'body': '#ece8e0'},
+            {'naam': 'Zwarte tijger', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Groen', 'body': '#60b050'},
+            {'naam': 'Rood', 'body': '#c03030'},
+        ],
+    },
+    'entei': {
+        'species': {'entei': {'body': [1, 15, 3, 4]}},
+        'variants': [
+            {'naam': 'Raikou-geel', 'body': '#e0b030'},
+            {'naam': 'Suicune-blauw', 'body': '#4880b0'},
+            {'naam': 'Witte leeuw', 'body': '#e8e4dc'},
+            {'naam': 'Zwarte leeuw', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Rood vuur', 'body': '#a02020'},
+            {'naam': 'Groen', 'body': '#3a8a50'},
+        ],
+    },
+    'suicune': {
+        'species': {'suicune': {'body': [1, 4, 3, 13], 'mane': [6, 5, 7, 8]}},
+        'variants': [
+            {'naam': 'Raikou-geel', 'body': '#e0b030', 'mane': '#7040a0'},
+            {'naam': 'Entei-bruin', 'body': '#805028', 'mane': '#d0d0d0'},
+            {'naam': 'Roze', 'body': '#f0a0c0'},
+            {'naam': 'Zwart', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Groen', 'body': '#40b080'},
+            {'naam': 'Wit (Lugia-achtig)', 'body': '#e8ecf4'},
+        ],
+    },
+    'larvitar': {
+        'species': {
+            'larvitar': {'body': [1, 3, 2]},
+            'pupitar': {'body': [1, 5, 3, 4]},
+            'tyranitar': {'body': [1, 5, 2, 4]},
+        },
+        'variants': [
+            {'naam': 'Turkoois', 'body': '#30a0a0'},
+            {'naam': 'Lava (rood)', 'body': '#a03828'},
+            {'naam': 'Godzilla (zwart)', 'body': ('#3a3a44', {'l': 1.3})},
+            {'naam': 'IJs (wit)', 'body': '#d8e0e8'},
+            {'naam': 'Blauw', 'body': '#4870c0'},
+            {'naam': 'Kaiju-koning (goud)', 'body': ('#c89020', {'h': 0})},
+        ],
+    },
+    'lugia': {
+        'species': {'lugia': {'body': [5, 3, 1, 8], 'blue': [6, 7, 11, 14]}},
+        'variants': [
+            {'naam': 'Shadow Lugia', 'body': '#5a5a78', 'blue': '#c02848'},
+            {'naam': 'Ho-Oh-ruil', 'body': '#f0c040', 'blue': '#c02828'},
+            {'naam': 'Zeegroen', 'body': '#c8f0e0', 'blue': '#30a080'},
+            {'naam': 'Roze', 'body': '#f8d8e8', 'blue': '#e05090'},
+            {'naam': 'Nachtzee', 'body': '#3a4878', 'blue': '#e0e8f8'},
+            {'naam': 'Pokémon Silver', 'body': '#c8ccd8', 'blue': '#606878'},
+        ],
+    },
+    'ho_oh': {
+        'species': {'ho_oh': {'red': [4, 3, 8, 6], 'green': [1, 2, 5]}},
+        'variants': [
+            {'naam': 'Lugia-ruil', 'red': '#e8ecf4', 'green': '#5070b0'},
+            {'naam': 'Blauw vuur', 'red': '#3070d0'},
+            {'naam': 'Paars', 'red': '#8040c0'},
+            {'naam': 'Shadow Ho-Oh', 'red': ('#34343c', {'l': 1.3})},
+            {'naam': 'Groene feniks', 'red': '#40a050', 'green': '#c02828'},
+            {'naam': 'Zilverfeniks', 'red': '#c8ccd8'},
+        ],
+    },
 }

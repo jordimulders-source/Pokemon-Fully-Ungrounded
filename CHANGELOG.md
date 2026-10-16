@@ -18944,3 +18944,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Kleurvarianten, groep 26 (Johto):** Sunkern-lijn, Yanma-lijn, Wooper-lijn (axolotls; Paldea-vormen nog niet), Murkrow-lijn, Misdreavus-lijn, Pineco-lijn, Gligar-lijn, Snubbull-lijn. Inspiratie: `KEURING.md`.
 
 - **Kleurvarianten, groep 27 (Johto):** Qwilfish, Sneasel/Weavile, Teddiursa/Ursaring, Swinub-lijn, Delibird, Mantyke/Mantine, Houndour/Houndoom, Stantler, Smeargle (de verfkleur), Miltank. Hisui-Qwilfish/-Sneasel, Overqwil, Sneasler, Ursaluna en Wyrdeer (moderne sprites) nog niet. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 28 (Johto, laatste):** Unown (één palet voor alle letters), Shuckle, Raikou/Entei/Suicune (dragen elkaars kleuren), Larvitar-lijn, Lugia, Ho-Oh. Daarmee hebben alle Kanto-, Johto- en Hoenn-soorten varianten; alleen de moderne regionale vormen staan nog open (`KEURING.md`).

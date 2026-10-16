@@ -138,5 +138,16 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Smeargle** (de verf aan de staart): 10% roze, 6% blauw, 4% geel, 3% paars, 1,5% oranje, 0,5% bladgoud. Geen rood: de shiny-verf is rood.
 - **Miltank** (koeien): 10% Holstein (wit), 6% Jersey (bruin), 4% Milka (paars), 3% Schotse hooglander (rood), 1,5% Belted Galloway (zwart met witte band), 0,5% gouden kalf.
 
+## Groep 28
+- **Unown** (één palet voor alle letters): 10% zandsteen (Ruins of Alph), 6% hiëroglief-goud, 4% jade, 3% amethist, 1,5% obsidiaanrood, 0,5% Unown-dimensie (cyaan).
+- **Shuckle** (de schelp): 10% groen, 6% paars, 4% zwart, 3% porselein, 1,5% bessensap (oranje met roze lijf), 0,5% gouden schelp met rood lijf.
+- **Raikou / Entei / Suicune** (de honden dragen elkaars kleuren):
+  - Raikou: 10% Entei-bruin, 6% Suicune-blauw, 4% witte tijger, 3% zwarte tijger, 1,5% groen, 0,5% rood.
+  - Entei: 10% Raikou-geel, 6% Suicune-blauw, 4% witte leeuw, 3% zwarte leeuw, 1,5% rood vuur, 0,5% groen.
+  - Suicune: 10% Raikou-geel, 6% Entei-bruin, 4% roze, 3% zwart, 1,5% groen, 0,5% wit.
+- **Larvitar/Pupitar/Tyranitar** (kaiju): 10% turkoois, 6% lava (rood), 4% Godzilla (zwart), 3% ijs, 1,5% blauw, 0,5% kaiju-koning (goud).
+- **Lugia**: 10% Shadow Lugia, 6% Ho-Oh-kleuren, 4% zeegroen, 3% roze, 1,5% nachtzee, 0,5% Pokémon Silver (zilver).
+- **Ho-Oh**: 10% Lugia-kleuren, 6% blauw vuur, 4% paars, 3% Shadow Ho-Oh, 1,5% groene feniks, 0,5% zilverfeniks.
+
 ## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
 Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Galar-Articuno/-Zapdos/-Moltres, Hisui-Typhlosion, Paldea-Wooper/Clodsire, Hisui-Qwilfish/Overqwil, Hisui-Sneasel/Sneasler, Ursaluna, Wyrdeer, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.

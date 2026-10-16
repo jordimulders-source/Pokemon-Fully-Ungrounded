@@ -747,6 +747,9 @@ static const u16 sVariants_Misdreavus[] = INCBIN_U16("graphics/pokemon/misdreavu
 #if (P_FAMILY_MISDREAVUS) && (P_GEN_4_CROSS_EVOS)
 static const u16 sVariants_Mismagius[] = INCBIN_U16("graphics/pokemon/mismagius/variants.gbapal");
 #endif
+#if (P_FAMILY_UNOWN)
+static const u16 sVariants_Unown[] = INCBIN_U16("graphics/pokemon/unown/variants.gbapal");
+#endif
 #if (P_FAMILY_WOBBUFFET) && (P_GEN_3_CROSS_EVOS)
 static const u16 sVariants_Wynaut[] = INCBIN_U16("graphics/pokemon/wynaut/variants.gbapal");
 #endif
@@ -782,6 +785,9 @@ static const u16 sVariants_Granbull[] = INCBIN_U16("graphics/pokemon/granbull/va
 #endif
 #if (P_FAMILY_QWILFISH)
 static const u16 sVariants_Qwilfish[] = INCBIN_U16("graphics/pokemon/qwilfish/variants.gbapal");
+#endif
+#if (P_FAMILY_SHUCKLE)
+static const u16 sVariants_Shuckle[] = INCBIN_U16("graphics/pokemon/shuckle/variants.gbapal");
 #endif
 #if (P_FAMILY_HERACROSS)
 static const u16 sVariants_Heracross[] = INCBIN_U16("graphics/pokemon/heracross/variants.gbapal");
@@ -854,6 +860,30 @@ static const u16 sVariants_Smeargle[] = INCBIN_U16("graphics/pokemon/smeargle/va
 #endif
 #if (P_FAMILY_MILTANK)
 static const u16 sVariants_Miltank[] = INCBIN_U16("graphics/pokemon/miltank/variants.gbapal");
+#endif
+#if (P_FAMILY_RAIKOU)
+static const u16 sVariants_Raikou[] = INCBIN_U16("graphics/pokemon/raikou/variants.gbapal");
+#endif
+#if (P_FAMILY_ENTEI)
+static const u16 sVariants_Entei[] = INCBIN_U16("graphics/pokemon/entei/variants.gbapal");
+#endif
+#if (P_FAMILY_SUICUNE)
+static const u16 sVariants_Suicune[] = INCBIN_U16("graphics/pokemon/suicune/variants.gbapal");
+#endif
+#if (P_FAMILY_LARVITAR)
+static const u16 sVariants_Larvitar[] = INCBIN_U16("graphics/pokemon/larvitar/variants.gbapal");
+#endif
+#if (P_FAMILY_LARVITAR)
+static const u16 sVariants_Pupitar[] = INCBIN_U16("graphics/pokemon/pupitar/variants.gbapal");
+#endif
+#if (P_FAMILY_LARVITAR)
+static const u16 sVariants_Tyranitar[] = INCBIN_U16("graphics/pokemon/tyranitar/variants.gbapal");
+#endif
+#if (P_FAMILY_LUGIA)
+static const u16 sVariants_Lugia[] = INCBIN_U16("graphics/pokemon/lugia/variants.gbapal");
+#endif
+#if (P_FAMILY_HO_OH)
+static const u16 sVariants_HoOh[] = INCBIN_U16("graphics/pokemon/ho_oh/variants.gbapal");
 #endif
 #if (P_FAMILY_CELEBI)
 static const u16 sVariants_Celebi[] = INCBIN_U16("graphics/pokemon/celebi/variants.gbapal");
@@ -2055,6 +2085,9 @@ const struct VariantPalettes gVariantPalettes[] =
 #if (P_FAMILY_MISDREAVUS) && (P_GEN_4_CROSS_EVOS)
     {gMonPalette_Mismagius, sVariants_Mismagius},
 #endif
+#if (P_FAMILY_UNOWN)
+    {gMonPalette_Unown, sVariants_Unown},
+#endif
 #if (P_FAMILY_WOBBUFFET) && (P_GEN_3_CROSS_EVOS)
     {gMonPalette_Wynaut, sVariants_Wynaut},
 #endif
@@ -2090,6 +2123,9 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_QWILFISH)
     {gMonPalette_Qwilfish, sVariants_Qwilfish},
+#endif
+#if (P_FAMILY_SHUCKLE)
+    {gMonPalette_Shuckle, sVariants_Shuckle},
 #endif
 #if (P_FAMILY_HERACROSS)
     {gMonPalette_Heracross, sVariants_Heracross},
@@ -2162,6 +2198,30 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_MILTANK)
     {gMonPalette_Miltank, sVariants_Miltank},
+#endif
+#if (P_FAMILY_RAIKOU)
+    {gMonPalette_Raikou, sVariants_Raikou},
+#endif
+#if (P_FAMILY_ENTEI)
+    {gMonPalette_Entei, sVariants_Entei},
+#endif
+#if (P_FAMILY_SUICUNE)
+    {gMonPalette_Suicune, sVariants_Suicune},
+#endif
+#if (P_FAMILY_LARVITAR)
+    {gMonPalette_Larvitar, sVariants_Larvitar},
+#endif
+#if (P_FAMILY_LARVITAR)
+    {gMonPalette_Pupitar, sVariants_Pupitar},
+#endif
+#if (P_FAMILY_LARVITAR)
+    {gMonPalette_Tyranitar, sVariants_Tyranitar},
+#endif
+#if (P_FAMILY_LUGIA)
+    {gMonPalette_Lugia, sVariants_Lugia},
+#endif
+#if (P_FAMILY_HO_OH)
+    {gMonPalette_HoOh, sVariants_HoOh},
 #endif
 #if (P_FAMILY_CELEBI)
     {gMonPalette_Celebi, sVariants_Celebi},

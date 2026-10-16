@@ -5466,6 +5466,11 @@ BattleScript_EncoredNoMore::
 	waitmessage B_WAIT_TIME_LONG
 	end2
 
+BattleScript_FungalControlEnded::
+	printstring STRINGID_FUNGALCONTROLENDED
+	waitmessage B_WAIT_TIME_LONG
+	end2
+
 BattleScript_DestinyBondTakesLife::
 	printstring STRINGID_PKMNTOOKFOE
 	waitmessage B_WAIT_TIME_LONG

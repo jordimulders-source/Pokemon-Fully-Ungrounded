@@ -107,6 +107,7 @@ struct DisableStruct
     u8 usedProteanLibero:1;
     u8 flashFireBoosted:1;
     u8 beaverDam:1; // Project Grounded: stockpile-lagen zijn een beverdam (Beaver Dam)
+    u8 fungalControlled:1; // Project Grounded: de encore komt van Fungal Control (eigen eindmelding)
     u8 kelpLayers:2; // Project Grounded: Kelp Shroud-lagen op dit doelwit (drain 1/8, 1/6, 1/4)
     u8 boosterEnergyActivated:1;
     u8 padding1:1;

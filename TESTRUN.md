@@ -125,3 +125,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Oostkant Fortree vóór Winona te hoog (Route 123, Mt. Pyre, Lilycove-rivaal, Safari) | Trainers 52–55 (rivaal 57), wild omlaag | ✅ |
 | Route 135/136 richting Ashfrost | Iets hoger dan Route 119 (49–52) | ✅ |
 | Kangaskhan lv 62–67 op Route 115 | 55–57 | ✅ |
+| Eindmelding Fungal Control sprak over Encore | Eigen tekst | ✅ |

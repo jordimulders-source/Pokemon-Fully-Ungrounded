@@ -292,6 +292,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNMOVEISDISABLED]                   = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX}'s {B_CURRENT_MOVE} is disabled!\p"),
     [STRINGID_PKMNMOVEDISABLEDNOMORE]               = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s move is no longer disabled!"),
     [STRINGID_FUNGALCONTROLCHOOSE]                  = COMPOUND_STRING("Spores seep into\n{B_DEF_NAME_WITH_PREFIX2}'s brain…"),
+    [STRINGID_FUNGALCONTROLENDED]                  = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}\nshook off the fungus!\pIt's back in control!"),
     [STRINGID_FUNGALCONTROLLED]                     = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is now\na fungus puppet!\pIt can only use {B_BUFF1}!"),
     [STRINGID_TRANSMUTED]                           = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was transmuted\ninto {B_BUFF1}!"),
     [STRINGID_BLACKHOLEFORMED]                      = COMPOUND_STRING("The implosion left a black hole!\pEvery hazard, screen and stat change\non the field was swallowed up!"),

@@ -11837,6 +11837,7 @@ static void Cmd_trysetencore(void)
             gBattleStruct->moveTarget[gBattlerTarget] = SetRandomTarget(gBattlerTarget);
 
         // Encore always lasts 3 turns, but we need to account for a scenario where Encore changes the move during the same turn.
+        gDisableStructs[gBattlerTarget].fungalControlled = FALSE; // Project Grounded: gewone Encore
         if (HasBattlerActedThisTurn(gBattlerTarget))
             gDisableStructs[gBattlerTarget].encoreTimer = 4;
         else
@@ -18611,6 +18612,7 @@ void BS_FungalControlChooseMove(void)
 
     gDisableStructs[gBattlerTarget].encoredMove = gBattleMons[gBattlerTarget].moves[pos];
     gDisableStructs[gBattlerTarget].encoredMovePos = pos;
+    gDisableStructs[gBattlerTarget].fungalControlled = TRUE;
     if (gDisableStructs[gBattlerTarget].encoredMove != GetChosenMoveFromPosition(gBattlerTarget))
         gBattleStruct->moveTarget[gBattlerTarget] = SetRandomTarget(gBattlerTarget);
     if (HasBattlerActedThisTurn(gBattlerTarget))

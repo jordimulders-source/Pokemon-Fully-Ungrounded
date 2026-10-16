@@ -18816,3 +18816,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Route 115:** Kangaskhan (1%-slot) van lv 62–67 naar 55–57, in lijn met de rest van de tabel (47–57; na Surf bereikbaar).
 - **Mauville, Wally's oom:** teksten netter (interpunctie, tekstvakken op zinsgrenzen); Wally's gebroken zinnen zonder punten blijven (humor).
 - **Scott in Mauville** verkleed als **WATTSON** ("WATTSON?: WAHAHAHAHA! …It's me, SCOTT. The beard is glued on.").
+- **Fungal Control:** als het effect afloopt, verschijnt nu een eigen melding ("… shook off the fungus! It's back in control!") in plaats van de Encore-tekst (`fungalControlled` in de DisableStruct; een gewone Encore wist de vlag).

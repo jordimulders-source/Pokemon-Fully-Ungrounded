@@ -792,6 +792,7 @@ static bool32 HandleEndTurnEncore(u32 battler)
         {
             gDisableStructs[battler].encoredMove = 0;
             gDisableStructs[battler].encoreTimer = 0;
+            gDisableStructs[battler].fungalControlled = FALSE;
         }
         else if (--gDisableStructs[battler].encoreTimer == 0
          || gBattleMons[battler].pp[gDisableStructs[battler].encoredMovePos] == 0)
@@ -799,7 +800,15 @@ static bool32 HandleEndTurnEncore(u32 battler)
             gDisableStructs[battler].encoredMove = 0;
             gDisableStructs[battler].encoreTimer = 0;
             gBattleScripting.battler = battler;
-            BattleScriptExecute(BattleScript_EncoredNoMore);
+            if (gDisableStructs[battler].fungalControlled) // Project Grounded: Fungal Control heeft een eigen eindmelding
+            {
+                gDisableStructs[battler].fungalControlled = FALSE;
+                BattleScriptExecute(BattleScript_FungalControlEnded);
+            }
+            else
+            {
+                BattleScriptExecute(BattleScript_EncoredNoMore);
+            }
             effect = TRUE;
         }
     }

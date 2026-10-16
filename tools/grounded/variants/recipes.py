@@ -2807,4 +2807,138 @@ LINES = {
             {'naam': 'Goud', 'body': ('#c89020', {'h': 0})},
         ],
     },
+    # --- groep 27 (Johto) ---
+    'qwilfish': {
+        # kogelvissen (Hisui-vorm/Overqwil nog niet)
+        'species': {'qwilfish': {'body': [1, 5, 4, 2], 'spikes': [14, 13, 12, 11]}},
+        'variants': [
+            {'naam': 'Fugu', 'body': '#c8a050', 'spikes': '#7a5030'},
+            {'naam': 'Koraalvis (rood)', 'body': '#c04040'},
+            {'naam': 'Zee-egel (paars)', 'body': '#6a3a90', 'spikes': '#2c2c34'},
+            {'naam': 'Albino', 'body': ('#ece4e4', ALBINO)},
+            {'naam': 'Zwart', 'body': ('#2c2c34', {'l': 1.3}), 'spikes': '#f0d040'},
+            {'naam': 'Mandarijnvis', 'body': '#e07030', 'spikes': '#3060c0'},
+        ],
+    },
+    'sneasel': {
+        # marters (Hisui-Sneasel/Sneasler nog niet)
+        'species': {
+            'sneasel': {'body': [3, 5, 6, 8], 'feather': [1, 2, 4, 14]},
+            'weavile': {'body': [12, 10, 9, 11], 'feather': [2, 1, 3, 4]},
+        },
+        'variants': [
+            {'naam': 'Hermelijn (winterwit)', 'body': '#e8ecf0'},
+            {'naam': 'Marter', 'body': '#7a5038'},
+            {'naam': 'Groen', 'body': '#3a7a50'},
+            {'naam': 'Paars', 'body': '#5a3a80'},
+            {'naam': 'Rood met zwarte veer', 'body': '#901828', 'feather': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Goud met blauwe veer', 'body': ('#c89020', {'h': 0}), 'feather': '#3060d0'},
+        ],
+    },
+    'teddiursa': {
+        # beren (Ursaluna: moderne sprite, nog niet)
+        'species': {
+            'teddiursa': {'body': [1, 2, 4, 3]},
+            'ursaring': {'body': [3, 1, 2, 6]},
+        },
+        'variants': [
+            {'naam': 'IJsbeer', 'body': '#ece8e4'},
+            {'naam': 'Panda', 'body': ('#3a3a42', {'l': 1.3})},
+            {'naam': 'Blauwe beer', 'body': '#5070b0'},
+            {'naam': 'Grizzly (grijs)', 'body': '#8a8070'},
+            {'naam': 'Troetelbeer (roze)', 'body': '#f0a0c0'},
+            {'naam': 'Winnie de Poeh', 'body': ('#e0b030', {'h': 0})},
+        ],
+    },
+    'swinub': {
+        'species': {
+            'swinub': {'body': [6, 1, 3, 2, 5]},
+            'piloswine': {'body': [2, 14, 1, 5, 4, 3]},
+            'mamoswine': {'body': [3, 1, 2]},
+        },
+        'variants': [
+            {'naam': 'Sneeuwzwijn', 'body': '#e0dcd4'},
+            {'naam': 'Duroc (rood)', 'body': '#a05030'},
+            {'naam': 'Wild zwijn (zwart)', 'body': ('#3a3a40', {'l': 1.3})},
+            {'naam': 'Wolharige neushoorn (grijs)', 'body': '#8a8a90'},
+            {'naam': 'Hangbuikzwijn (roze)', 'body': '#e0a0a0'},
+            {'naam': 'Goud', 'body': ('#c89020', {'h': 0})},
+        ],
+    },
+    'delibird': {
+        'species': {'delibird': {'red': [12, 7, 6, 13]}},
+        'variants': [
+            {'naam': 'IJsblauw', 'red': '#3060c0'},
+            {'naam': 'Kerstelf (groen)', 'red': '#30a050'},
+            {'naam': 'Paars', 'red': '#7040a0'},
+            {'naam': 'Pinguïn (zwart)', 'red': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Roze', 'red': '#e070a0'},
+            {'naam': 'Goud', 'red': ('#c89020', {'h': 0})},
+        ],
+    },
+    'mantyke': {
+        # roggen
+        'species': {
+            'mantyke': {'body': [14, 1, 5, 3, 2]},
+            'mantine': {'body': [2, 4, 3, 7]},
+        },
+        'variants': [
+            {'naam': 'Gevlekte adelaarsrog (zwart)', 'body': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Pijlstaartrog (zand)', 'body': '#c8a878'},
+            {'naam': 'Groen', 'body': '#3a7a60'},
+            {'naam': 'Roze', 'body': '#d080a0'},
+            {'naam': 'Rood', 'body': '#a02830'},
+            {'naam': 'Goud', 'body': ('#c89020', {'h': 0})},
+        ],
+    },
+    'houndour': {
+        # hellehonden: de zwarte vacht krijgt een kleur
+        'species': {
+            'houndour': {'body': [1, 2, 3]},
+            'houndoom': {'body': [6, 7, 8]},
+        },
+        'variants': [
+            {'naam': 'Witte hellehond', 'body': '#d8d8e0'},
+            {'naam': 'Bloedrood', 'body': '#6a1818'},
+            {'naam': 'Dobermann (bruin)', 'body': '#5a3820'},
+            {'naam': 'Paars', 'body': '#3a2850'},
+            {'naam': 'Groen', 'body': '#2c4a30'},
+            {'naam': 'Goud', 'body': ('#a87818', {'h': 0})},
+        ],
+    },
+    'stantler': {
+        # herten (Wyrdeer: moderne sprite, nog niet)
+        'species': {'stantler': {'body': [3, 1, 9, 10]}},
+        'variants': [
+            {'naam': 'Wit hert', 'body': '#ece8e0'},
+            {'naam': 'Rendier', 'body': '#8a7a68'},
+            {'naam': 'Edelhert (rood)', 'body': '#a04828'},
+            {'naam': 'Melanistisch (zwart)', 'body': ('#3a3a40', {'l': 1.3})},
+            {'naam': 'Mythisch blauw hert', 'body': '#4060b0'},
+            {'naam': 'Zilveren hinde (Artemis)', 'body': '#b8bcc8'},
+        ],
+    },
+    'smeargle': {
+        # de verfkleur van de staart
+        'species': {'smeargle': {'paint': [13, 8, 9, 11]}},
+        'variants': [
+            {'naam': 'Roze verf', 'paint': '#f070b0'},
+            {'naam': 'Blauwe verf', 'paint': '#2860d0'},
+            {'naam': 'Gele verf', 'paint': '#f0c820'},
+            {'naam': 'Paarse verf', 'paint': '#8030c0'},
+            {'naam': 'Oranje verf', 'paint': '#f07020'},
+            {'naam': 'Bladgoud', 'paint': ('#c89020', {'h': 0})},
+        ],
+    },
+    'miltank': {
+        'species': {'miltank': {'body': [10, 9, 7, 13], 'spots': [5, 1]}},
+        'variants': [
+            {'naam': 'Holstein (wit)', 'body': '#ece8e4'},
+            {'naam': 'Jersey (bruin)', 'body': '#b07848'},
+            {'naam': 'Milka (paars)', 'body': '#a080d0'},
+            {'naam': 'Hooglander (rood)', 'body': '#b05028'},
+            {'naam': 'Belted Galloway', 'body': ('#3a3a40', {'l': 1.3}), 'spots': '#ece8e4'},
+            {'naam': 'Gouden kalf', 'body': ('#c89020', {'h': 0})},
+        ],
+    },
 }

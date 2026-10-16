@@ -126,5 +126,17 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Gligar/Gliscor** (schorpioenen): 10% woestijnschorpioen, 6% groen, 4% rood, 3% albino, 1,5% zwarte schorpioen, 0,5% Serket (Egyptische schorpioengodin, turkoois).
 - **Snubbull/Granbull** (bulldogs): 10% Engelse bulldog (wit), 6% brindle, 4% zwart, 3% fawn, 1,5% blauwe Franse bulldog, 0,5% goud.
 
+## Groep 27
+- **Qwilfish** (kogelvissen): 10% fugu, 6% koraalvis (rood), 4% zee-egel (paars met zwarte stekels), 3% albino, 1,5% zwart met gele stekels, 0,5% mandarijnvis (oranje met blauw).
+- **Sneasel/Weavile** (marters): 10% hermelijn (winterwit), 6% marter, 4% groen, 3% paars, 1,5% rood met zwarte veer, 0,5% goud met blauwe veer.
+- **Teddiursa/Ursaring** (beren): 10% ijsbeer, 6% panda, 4% blauwe beer, 3% grizzly (grijs), 1,5% Troetelbeer (roze), 0,5% Winnie de Poeh (goud).
+- **Swinub/Piloswine/Mamoswine**: 10% sneeuwzwijn, 6% Duroc-varken (rood), 4% wild zwijn (zwart), 3% wolharige neushoorn (grijs), 1,5% hangbuikzwijn (roze), 0,5% goud.
+- **Delibird** (het rode pak): 10% ijsblauw, 6% kerstelf (groen), 4% paars, 3% pinguïn (zwart), 1,5% roze, 0,5% goud.
+- **Mantyke/Mantine** (roggen): 10% gevlekte adelaarsrog (zwart), 6% pijlstaartrog (zand), 4% groen, 3% roze, 1,5% rood, 0,5% goud.
+- **Houndour/Houndoom** (hellehonden, de zwarte vacht kleurt): 10% witte hellehond, 6% bloedrood, 4% dobermann (bruin), 3% paars, 1,5% groen, 0,5% goud. Geen blauw: de shiny is blauw.
+- **Stantler** (herten): 10% wit hert, 6% rendier, 4% edelhert (rood), 3% melanistisch, 1,5% mythisch blauw hert, 0,5% zilveren hinde (Artemis).
+- **Smeargle** (de verf aan de staart): 10% roze, 6% blauw, 4% geel, 3% paars, 1,5% oranje, 0,5% bladgoud. Geen rood: de shiny-verf is rood.
+- **Miltank** (koeien): 10% Holstein (wit), 6% Jersey (bruin), 4% Milka (paars), 3% Schotse hooglander (rood), 1,5% Belted Galloway (zwart met witte band), 0,5% gouden kalf.
+
 ## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
-Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Galar-Articuno/-Zapdos/-Moltres, Hisui-Typhlosion, Paldea-Wooper/Clodsire, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.
+Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Galar-Articuno/-Zapdos/-Moltres, Hisui-Typhlosion, Paldea-Wooper/Clodsire, Hisui-Qwilfish/Overqwil, Hisui-Sneasel/Sneasler, Ursaluna, Wyrdeer, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.

@@ -1758,7 +1758,7 @@
               { "min_level": 55, "max_level": 57, "species": "SPECIES_MILCERY" },
               { "min_level": 57, "max_level": 57, "species": "SPECIES_SCREAM_TAIL" },
               { "min_level": 57, "max_level": 57, "species": "SPECIES_MUNCHLAX" },
-              { "min_level": 62, "max_level": 67, "species": "SPECIES_KANGASKHAN" }
+              { "min_level": 55, "max_level": 57, "species": "SPECIES_KANGASKHAN" }
             ]
           },
           "fishing_mons": {

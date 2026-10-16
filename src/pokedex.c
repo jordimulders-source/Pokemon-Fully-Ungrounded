@@ -4057,8 +4057,10 @@ static void GetColorsScreenRarityLine(u8 *dst, u32 slot)
             StringExpandPlaceholders(dst, sText_FormN);
         }
         StringAppend(dst, gText_Space);
-        StringAppend(dst, gText_Space);
     }
+    StringAppend(dst, GetSpeciesName(species));
+    StringAppend(dst, gText_Space);
+    StringAppend(dst, gText_Space);
     StringAppend(dst, sColorRarity[slot]);
 }
 
@@ -4231,15 +4233,27 @@ static void Task_HandleColorsScreenInput(u8 taskId)
         DrawColorsScreenSlot(taskId);
         PlaySE(SE_DEX_PAGE);
     }
-    else if ((JOY_NEW(DPAD_UP) && sColorFormIndex > 0)
-          || (JOY_NEW(DPAD_DOWN) && sColorFormIndex + 1 < sColorFormCount))
+    else if (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_DOWN))
     {
+        // eerst door de vormen, daarna naar de vorige/volgende geziene Pokémon
         u8 spriteId;
+        bool32 up = JOY_NEW(DPAD_UP);
 
-        if (JOY_NEW(DPAD_UP))
+        if (up && sColorFormIndex > 0)
             sColorFormIndex--;
-        else
+        else if (!up && sColorFormIndex + 1 < sColorFormCount)
             sColorFormIndex++;
+        else if (TryDoInfoScreenScroll())
+        {
+            sPokedexListItem = &sPokedexView->pokedexList[sPokedexView->selectedPokemon];
+            BuildColorsScreenForms();
+            if (up)
+                sColorFormIndex = sColorFormCount - 1;
+        }
+        else
+        {
+            return;
+        }
         FreeAndDestroyMonPicSprite(gTasks[taskId].tColorSpriteId);
         spriteId = CreateMonPicSprite(ColorsScreenSpecies(), FALSE, 0xFF, TRUE, 120, 56, 1, TAG_NONE);
         gSprites[spriteId].oam.priority = 0;

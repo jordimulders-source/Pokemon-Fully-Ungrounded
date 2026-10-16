@@ -3975,6 +3975,13 @@ static void Task_SwitchScreensFromSizeScreen(u8 taskId)
 // de zes varianten; alleen wat de speler gezien heeft is te zien, gevangen = Poké Ball.
 #define tColorSlot     data[0]
 #define tColorSpriteId data[1]
+#define tColorForm     data[2]
+
+// Vormen met eigen kleuren (regionaal, Arceus-types enz.): omhoog/omlaag op de kleurenpagina
+#define MAX_COLOR_FORMS 32
+static EWRAM_DATA u16 sColorForms[MAX_COLOR_FORMS] = {0};
+static EWRAM_DATA u8 sColorFormCount = 0;
+static EWRAM_DATA u8 sColorFormIndex = 0;
 
 static const u8 sColorSlotBits[] = {0, VARIANT_DEX_SHINY, 1, 2, 3, 4, 5, 6};
 static const u8 sText_ColorNormal[] = _("Normal");
@@ -3982,6 +3989,8 @@ static const u8 sText_ColorShiny[] = _("Shiny");
 static const u8 sText_ColorUnknown[] = _("???");
 static const u8 sText_ColorArrows[] = _("{LEFT_ARROW}");
 static const u8 sText_ColorArrowsR[] = _("{RIGHT_ARROW}");
+static const u8 sText_ColorUp[] = _("{UP_ARROW}");
+static const u8 sText_ColorDown[] = _("{DOWN_ARROW}");
 static const u8 sText_Rarity75[] = _("Common  75%");
 static const u8 sText_RarityShiny[] = _("Very Rare  1/1024");
 static const u8 sText_Rarity10[] = _("Variant  10%");
@@ -3995,7 +4004,62 @@ static const u8 *const sColorRarity[] = {sText_Rarity75, sText_RarityShiny, sTex
 
 static u16 ColorsScreenSpecies(void)
 {
-    return NationalPokedexNumToSpecies(sPokedexListItem->dexNum);
+    return sColorForms[sColorFormIndex];
+}
+
+static void BuildColorsScreenForms(void)
+{
+    u16 base = NationalPokedexNumToSpecies(sPokedexListItem->dexNum);
+    const u16 *forms = GetSpeciesFormTable(base);
+    u32 i;
+
+    sColorForms[0] = base;
+    sColorFormCount = 1;
+    sColorFormIndex = 0;
+    for (i = 0; forms != NULL && forms[i] != FORM_SPECIES_END && sColorFormCount < MAX_COLOR_FORMS; i++)
+    {
+        if (forms[i] != base && GetVariantEntry(gSpeciesInfo[forms[i]].palette) != NULL)
+            sColorForms[sColorFormCount++] = forms[i];
+    }
+}
+
+static const u8 sText_FormAlola[] = _("Alolan");
+static const u8 sText_FormGalar[] = _("Galarian");
+static const u8 sText_FormHisui[] = _("Hisuian");
+static const u8 sText_FormPaldea[] = _("Paldean");
+static const u8 sText_FormHoenn[] = _("Hoenn");
+static const u8 sText_FormN[] = _("Form {STR_VAR_1}");
+
+// tweede regel: vormnaam (alleen bij andere vormen) + zeldzaamheid
+static void GetColorsScreenRarityLine(u8 *dst, u32 slot)
+{
+    u16 species = ColorsScreenSpecies();
+    u16 base = sColorForms[0];
+
+    dst[0] = EOS;
+    if (sColorFormIndex != 0)
+    {
+        if (gSpeciesInfo[species].isAlolanForm)
+            StringCopy(dst, sText_FormAlola);
+        else if (gSpeciesInfo[species].isGalarianForm)
+            StringCopy(dst, sText_FormGalar);
+        else if (gSpeciesInfo[species].isHisuianForm)
+            StringCopy(dst, sText_FormHisui);
+        else if (gSpeciesInfo[species].isPaldeanForm)
+            StringCopy(dst, sText_FormPaldea);
+        else if (species == SPECIES_GRIMER_HOENN || species == SPECIES_MUK_HOENN)
+            StringCopy(dst, sText_FormHoenn);
+        else if (base == SPECIES_ARCEUS || base == SPECIES_SILVALLY)
+            StringCopy(dst, gTypesInfo[gSpeciesInfo[species].types[0]].name);
+        else
+        {
+            ConvertIntToDecimalStringN(gStringVar1, sColorFormIndex + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+            StringExpandPlaceholders(dst, sText_FormN);
+        }
+        StringAppend(dst, gText_Space);
+        StringAppend(dst, gText_Space);
+    }
+    StringAppend(dst, sColorRarity[slot]);
 }
 
 static u32 ColorsScreenSlotCount(void)
@@ -4009,7 +4073,7 @@ static bool32 ColorsScreenSeen(u32 bit)
     u8 seen = gSaveBlock1Ptr->variantDexSeen[species];
 
     // oude saves: soort al gezien maar nog geen kleur bekend -> normaal telt als gezien
-    if (bit == 0 && seen == 0 && GetSetPokedexFlag(sPokedexListItem->dexNum, FLAG_GET_SEEN))
+    if (bit == 0 && seen == 0 && sColorFormIndex == 0 && GetSetPokedexFlag(sPokedexListItem->dexNum, FLAG_GET_SEEN))
         return TRUE;
     return (seen >> bit) & 1;
 }
@@ -4023,6 +4087,7 @@ static void DrawColorsScreenSlot(u8 taskId)
     const u8 *name;
     const u16 *pal;
     u32 x;
+    u8 line[48];
 
     if (!ColorsScreenSeen(bit))
     {
@@ -4049,11 +4114,18 @@ static void DrawColorsScreenSlot(u8 taskId)
     FillWindowPixelRect(WIN_INFO, PIXEL_FILL(0), 0, 112, DISPLAY_WIDTH, 32);
     FillWindowPixelRect(WIN_INFO, PIXEL_FILL(0), 16, 40, 16, 16);
     FillWindowPixelRect(WIN_INFO, PIXEL_FILL(0), 208, 40, 16, 16);
+    FillWindowPixelRect(WIN_INFO, PIXEL_FILL(0), 208, 20, 16, 16);
+    FillWindowPixelRect(WIN_INFO, PIXEL_FILL(0), 208, 66, 16, 16);
     x = GetStringCenterAlignXOffset(FONT_NORMAL, name, DISPLAY_WIDTH);
     PrintInfoScreenText(name, x, 113);
     if ((gSaveBlock1Ptr->variantDexCaught[species] >> bit) & 1)
         BlitBitmapToWindow(WIN_INFO, sCaughtBall_Gfx, x - 12, 113, 8, 16);
-    PrintInfoScreenText(sColorRarity[slot], GetStringCenterAlignXOffset(FONT_NORMAL, sColorRarity[slot], DISPLAY_WIDTH), 127);
+    GetColorsScreenRarityLine(line, slot);
+    PrintInfoScreenText(line, GetStringCenterAlignXOffset(FONT_NORMAL, line, DISPLAY_WIDTH), 127);
+    if (sColorFormIndex > 0)
+        PrintInfoScreenText(sText_ColorUp, 210, 21);
+    if (sColorFormIndex + 1 < sColorFormCount)
+        PrintInfoScreenText(sText_ColorDown, 210, 65);
     if (slot > 0)
         PrintInfoScreenText(sText_ColorArrows, 18, 41);
     if (slot + 1 < ColorsScreenSlotCount())
@@ -4080,6 +4152,7 @@ static void Task_LoadColorsScreen(u8 taskId)
             ResetOtherVideoRegisters(DISPCNT_BG1_ON);
             sPokedexView->selectedScreen = COLORS_SCREEN;
             gTasks[taskId].tColorSlot = 0;
+            BuildColorsScreenForms();
             gMain.state = 1;
         }
         break;
@@ -4101,7 +4174,7 @@ static void Task_LoadColorsScreen(u8 taskId)
         gMain.state++;
         break;
     case 4:
-        spriteId = CreateMonSpriteFromNationalDexNumber(sPokedexListItem->dexNum, 120, 56, 1);
+        spriteId = CreateMonPicSprite(ColorsScreenSpecies(), FALSE, 0xFF, TRUE, 120, 56, 1, TAG_NONE);
         gSprites[spriteId].oam.priority = 0;
         gTasks[taskId].tColorSpriteId = spriteId;
         DrawColorsScreenSlot(taskId);
@@ -4158,6 +4231,23 @@ static void Task_HandleColorsScreenInput(u8 taskId)
         DrawColorsScreenSlot(taskId);
         PlaySE(SE_DEX_PAGE);
     }
+    else if ((JOY_NEW(DPAD_UP) && sColorFormIndex > 0)
+          || (JOY_NEW(DPAD_DOWN) && sColorFormIndex + 1 < sColorFormCount))
+    {
+        u8 spriteId;
+
+        if (JOY_NEW(DPAD_UP))
+            sColorFormIndex--;
+        else
+            sColorFormIndex++;
+        FreeAndDestroyMonPicSprite(gTasks[taskId].tColorSpriteId);
+        spriteId = CreateMonPicSprite(ColorsScreenSpecies(), FALSE, 0xFF, TRUE, 120, 56, 1, TAG_NONE);
+        gSprites[spriteId].oam.priority = 0;
+        gTasks[taskId].tColorSpriteId = spriteId;
+        gTasks[taskId].tColorSlot = 0;
+        DrawColorsScreenSlot(taskId);
+        PlaySE(SE_DEX_SCROLL);
+    }
 }
 
 static void Task_SwitchScreensFromColorsScreen(u8 taskId)
@@ -4171,6 +4261,7 @@ static void Task_SwitchScreensFromColorsScreen(u8 taskId)
 
 #undef tColorSlot
 #undef tColorSpriteId
+#undef tColorForm
 
 // Project Grounded: de vierde knop heet COLORS i.p.v. CANCEL (eigen tegels op 0x100)
 #define COLORS_LABEL_TILE 0x100

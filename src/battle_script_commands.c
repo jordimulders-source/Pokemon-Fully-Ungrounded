@@ -3779,9 +3779,28 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
         gBattlescriptCurrInstr = BattleScript_MoveEffectHaze;
         break;
     case MOVE_EFFECT_LEECH_SEED:
-        if (!IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS) && !gBattleMons[gBattlerTarget].volatiles.leechSeed)
+        // Project Grounded: Kelp Shroud (bezeten zeewier) werkt ook op Grass-types en stapelt tot 3 lagen
+        if (gCurrentMove == MOVE_KELP_SHROUD)
+        {
+            if (!gBattleMons[gBattlerTarget].volatiles.leechSeed)
+            {
+                gBattleMons[gBattlerTarget].volatiles.leechSeed = LEECHSEEDED_BY(gBattlerAttacker);
+                gDisableStructs[gBattlerTarget].kelpLayers = 1;
+                BattleScriptPush(battleScript);
+                gBattlescriptCurrInstr = BattleScript_MoveEffectKelpShroud;
+            }
+            else if (gDisableStructs[gBattlerTarget].kelpLayers < 3)
+            {
+                gBattleMons[gBattlerTarget].volatiles.leechSeed = LEECHSEEDED_BY(gBattlerAttacker);
+                gDisableStructs[gBattlerTarget].kelpLayers++;
+                BattleScriptPush(battleScript);
+                gBattlescriptCurrInstr = BattleScript_MoveEffectKelpTighten;
+            }
+        }
+        else if (!IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS) && !gBattleMons[gBattlerTarget].volatiles.leechSeed)
         {
             gBattleMons[gBattlerTarget].volatiles.leechSeed = LEECHSEEDED_BY(gBattlerAttacker);
+            gDisableStructs[gBattlerTarget].kelpLayers = 0;
             BattleScriptPush(battleScript);
             gBattlescriptCurrInstr = BattleScript_MoveEffectLeechSeed;
         }
@@ -7087,6 +7106,20 @@ static void Cmd_moveend(void)
                 effect = TRUE;
                 BattleScriptCall(BattleScript_EffectHitEscape);
             }
+            // Project Grounded: Hole Up - na een KO duikt Dugtrio/Wugtrio weg en wissel je gratis
+            else if (moveEffect != EFFECT_HIT_ESCAPE
+             && GetBattlerAbility(gBattlerAttacker) == ABILITY_HOLE_UP
+             && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+             && !IsBattleMoveStatus(gCurrentMove)
+             && gBattlerAttacker != gBattlerTarget
+             && !IsBattlerAlive(gBattlerTarget)
+             && IsBattlerAlive(gBattlerAttacker)
+             && !NoAliveMonsForBattlerSide(gBattlerTarget))
+            {
+                effect = TRUE;
+                gBattleScripting.battler = gBattlerAttacker;
+                BattleScriptCall(BattleScript_HoleUpActivates);
+            }
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_EJECT_PACK:
@@ -10165,6 +10198,7 @@ static void Cmd_setseeded(void)
     else
     {
         gBattleMons[gBattlerTarget].volatiles.leechSeed = LEECHSEEDED_BY(gBattlerAttacker);
+        gDisableStructs[gBattlerTarget].kelpLayers = 0; // Project Grounded: gewone Leech Seed
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_LEECH_SEED_SET;
     }
 

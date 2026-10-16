@@ -1035,6 +1035,7 @@ extern const u8 gBattleAnimMove_PrimevalWard[];
 extern const u8 gBattleAnimMove_GulpDown[];
 extern const u8 gBattleAnimMove_NineLives[];
 extern const u8 gBattleAnimMove_HyphalSnare[];
+extern const u8 gBattleAnimMove_KelpShroud[];
 extern const u8 gBattleAnimMove_Cavitation[];
 extern const u8 gBattleAnimMove_LureLight[];
 extern const u8 gBattleAnimMove_BeaverDam[];

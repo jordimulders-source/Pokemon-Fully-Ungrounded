@@ -838,6 +838,17 @@ BattleScript_MoveEffectLeechSeed::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
+@ Project Grounded: Kelp Shroud
+BattleScript_MoveEffectKelpShroud::
+	printstring STRINGID_KELPSHROUD
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_MoveEffectKelpTighten::
+	printstring STRINGID_KELPTIGHTEN
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_MoveEffectReflect::
 	printfromtable gReflectLightScreenSafeguardStringIds
 	waitmessage B_WAIT_TIME_LONG
@@ -2425,6 +2436,16 @@ BattleScript_EffectHealBlock::
 	printstring STRINGID_PKMNPREVENTEDFROMHEALING
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
+
+@ Project Grounded: Hole Up
+BattleScript_HoleUpActivates::
+	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_HoleUpEnd
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_HOLEUP
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_EffectHitEscape
+BattleScript_HoleUpEnd:
+	return
 
 BattleScript_EffectHitEscape::
 	jumpiffainted BS_TARGET, FALSE, BattleScript_HitEscapeSwitch

@@ -721,9 +721,6 @@ Route111_EventScript_HeatranCutscene::
 	goto_if_unset FLAG_BADGE03_GET, Route111_EventScript_HeatranNotYet
 	lockall
 	setvar VAR_HEATRAN_CUTSCENE_STATE, 1
-	removeobject LOCALID_ROUTE111_HEATRAN_ROCK_1
-	removeobject LOCALID_ROUTE111_HEATRAN_ROCK_2
-	setflag FLAG_HIDE_ROUTE111_HEATRAN_ROCKS
 	playse SE_M_STRENGTH
 	setvar VAR_0x8004, 2  @ vertical pan
 	setvar VAR_0x8005, 1  @ horizontal pan
@@ -735,10 +732,28 @@ Route111_EventScript_HeatranCutscene::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
+	@ Project Grounded (Jordi 16 okt): de camera gaat naar de stenen, Heatran beukt ze in beeld weg en komt dan naar je toe
+	special SpawnCameraObject
+	applymovement OBJ_EVENT_ID_CAMERA, Route111_Movement_HeatranCameraUp
+	waitmovement 0
 	clearflag FLAG_HIDE_ROUTE111_HEATRAN
 	addobject LOCALID_ROUTE111_HEATRAN
-	applymovement LOCALID_ROUTE111_HEATRAN, Route111_Movement_HeatranWalkDown
+	applymovement LOCALID_ROUTE111_HEATRAN, Route111_Movement_HeatranToRocks
 	waitmovement 0
+	playmoncry SPECIES_HEATRAN, CRY_MODE_ENCOUNTER
+	waitmoncry
+	playse SE_M_ROCK_THROW
+	applymovement LOCALID_ROUTE111_HEATRAN_ROCK_2, Movement_SmashRock
+	applymovement LOCALID_ROUTE111_HEATRAN_ROCK_1, Movement_SmashRock
+	applymovement LOCALID_ROUTE111_ROCK_SMASH_MAN, Common_Movement_ExclamationMark
+	waitmovement 0
+	removeobject LOCALID_ROUTE111_HEATRAN_ROCK_1
+	removeobject LOCALID_ROUTE111_HEATRAN_ROCK_2
+	setflag FLAG_HIDE_ROUTE111_HEATRAN_ROCKS
+	applymovement LOCALID_ROUTE111_HEATRAN, Route111_Movement_HeatranWalkDown
+	applymovement OBJ_EVENT_ID_CAMERA, Route111_Movement_HeatranCameraDown
+	waitmovement 0
+	special RemoveCameraObject
 	playmoncry SPECIES_HEATRAN, CRY_MODE_ENCOUNTER
 	waitmoncry
 	applymovement OBJ_EVENT_ID_PLAYER, Route111_Movement_PlayerStartled
@@ -756,18 +771,86 @@ Route111_EventScript_HeatranCutscene::
 Route111_EventScript_HeatranNotYet::
 	end
 
+Route111_Movement_HeatranCameraUp:
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	walk_fast_up
+	step_end
+
+Route111_Movement_HeatranToRocks:
+	walk_slow_down
+	walk_slow_down
+	face_down
+	step_end
+
 Route111_Movement_HeatranWalkDown:
-	walk_slow_down
-	walk_slow_down
+	walk_right
+	walk_right
 	walk_down
 	walk_down
 	walk_down
 	walk_down
 	walk_down
 	walk_down
-	walk_slow_down
-	walk_slow_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	step_end
+
+Route111_Movement_HeatranCameraDown:
 	delay_16
+	delay_16
+	delay_16
+	delay_16
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
+	walk_down
 	step_end
 
 Route111_Movement_PlayerStartled:

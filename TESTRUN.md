@@ -130,3 +130,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Illumise als (laatste) Wattson-Pokémon zwak | Rotom-Wash | ✅ |
 | Fungal Control werkt niet op Grass | Geen poedermove meer; Overcoat/Safety Goggles blokkeren | ✅ |
 | Straight Line te sterk? | 60 / 100 | ✅ |
+| Heatran-cutscene: stenen niet geraakt | Camera naar de stenen, Heatran beukt ze in beeld | ✅ |

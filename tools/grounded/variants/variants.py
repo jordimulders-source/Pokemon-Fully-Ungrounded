@@ -114,7 +114,10 @@ def recipe_variants(folder, colors):
                 target, opts = (spec, {}) if isinstance(spec, str) else spec
                 # basis = meest gebruikte index, tenzij het recept er een vastlegt
                 # ('_base': {part: idx}), bijv. als de meest gebruikte de omlijning is
-                base = ramps.get('_base', {}).get(part) or max(idxs, key=lambda i: count[i])
+                # een variant kan in zijn eigen groepen ook een basis vastleggen
+                vparts = var.get('%s:parts' % folder) or {}
+                base = (vparts.get('_base', {}).get(part) or ramps.get('_base', {}).get(part)
+                        or max(idxs, key=lambda i: count[i]))
                 darkest = min(idxs, key=lambda i: to_oklch(colors[i])[0])
                 for i, c in recolor(colors, idxs, base, target, lscale=opts.get('l', 1.0),
                                     cscale=opts.get('c'), hshift=opts.get('h', 1.0),

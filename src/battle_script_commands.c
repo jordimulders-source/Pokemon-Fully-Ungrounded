@@ -1,4 +1,5 @@
 #include "global.h"
+#include "mon_variants.h"
 #include "battle.h"
 #include "battle_hold_effects.h"
 #include "battle_message.h"
@@ -14346,6 +14347,7 @@ static void Cmd_trysetcaughtmondexflags(void)
     u32 species = GetMonData(caughtMon, MON_DATA_SPECIES, NULL);
     u32 personality = GetMonData(caughtMon, MON_DATA_PERSONALITY, NULL);
 
+    VariantDex_RecordBoxMon(&caughtMon->box, TRUE);
     if (GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT))
     {
         gBattlescriptCurrInstr = cmd->failInstr;

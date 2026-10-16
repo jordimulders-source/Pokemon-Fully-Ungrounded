@@ -1,0 +1,4500 @@
+{
+ "folders": {
+  "charjabug": {
+   "0": "Catbus",
+   "2": "School Bus",
+   "4": "Knight Bus",
+   "5": "Mystery Machine"
+  }
+ },
+ "lines": {
+  "abra": [
+   "Red Fox",
+   "Silver Fox",
+   "Wizard",
+   "Albino",
+   "Mewtwo Colors",
+   "Joker"
+  ],
+  "absol": [
+   "Blood Moon Wolf",
+   "Lucario",
+   "Plague",
+   "Sylveon",
+   "Anubis",
+   "Raikou"
+  ],
+  "aerodactyl": [
+   "Sandstone Fossil",
+   "Jurassic Green",
+   "Quetzalcoatlus",
+   "Albino",
+   "Black Dragon",
+   "Amber"
+  ],
+  "aipom": [
+   "Capuchin",
+   "Golden Tamarin",
+   "Langur",
+   "Albino",
+   "Green",
+   "Abu"
+  ],
+  "alomomola": [
+   "Mola Mola",
+   "Opah",
+   "Scrubs Green",
+   "Dory",
+   "Deep Sea",
+   "Golden Heart"
+  ],
+  "amaura": [
+   "Green Aurora",
+   "Pink Dawn",
+   "Polar Night",
+   "Elsa",
+   "Iceland",
+   "Aurora Australis"
+  ],
+  "annihilape": [
+   "Rage",
+   "Ghost Purple",
+   "Black White-Eyed",
+   "Yeti",
+   "Monkey King",
+   "Blue Fire"
+  ],
+  "anorith": [
+   "Petrified",
+   "Horseshoe Crab",
+   "Trilobite",
+   "Albino",
+   "Anomalocaris",
+   "Samurai Armor"
+  ],
+  "applin": [
+   "Toffee Apple",
+   "Arkansas Black",
+   "Pink Lady",
+   "Poison Apple",
+   "Ice Apple",
+   "Apple of Discord"
+  ],
+  "arceus": [
+   "Terracotta",
+   "Sky Blue",
+   "Jade",
+   "Silver Grey",
+   "Rose Quartz",
+   "Cosmos"
+  ],
+  "archaludon": [
+   "Golden Gate",
+   "Corten Steel",
+   "Vaporwave Bridge",
+   "Statue of Liberty",
+   "Cast Iron & Lava",
+   "Golden Bridge"
+  ],
+  "archen": [
+   "Velociraptor",
+   "Hyacinth Macaw",
+   "Petrified",
+   "Albino",
+   "Toucan",
+   "Phoenix"
+  ],
+  "aron": [
+   "Bronze",
+   "Gold",
+   "Anodized Titanium",
+   "Gunmetal",
+   "Rose Gold",
+   "Gundam"
+  ],
+  "arrokuda": [
+   "Pike",
+   "Silver Barracuda",
+   "Kohaku Koi",
+   "Mahi-Mahi",
+   "Deep-Sea Hunter",
+   "Asian Arowana"
+  ],
+  "articuno": [
+   "Zapdos Yellow",
+   "Moltres Red",
+   "Emerald",
+   "Snowy Owl",
+   "Polar Night",
+   "Psychic Purple"
+  ],
+  "audino": [
+   "Scrubs Green",
+   "Red Cross",
+   "Maternity Ward",
+   "Chamomile Tea",
+   "Band-Aid",
+   "Nightingale"
+  ],
+  "axew": [
+   "Smaug",
+   "Spyro",
+   "Jade Dragon",
+   "Viserion",
+   "Saphira",
+   "Mechagodzilla"
+  ],
+  "azurill": [
+   "Lavender",
+   "Pink",
+   "Orange",
+   "Albino",
+   "Starry Night",
+   "Christmas Bauble"
+  ],
+  "bagon": [
+   "Alduin",
+   "Bahamut",
+   "Y Ddraig Goch",
+   "Albino",
+   "Tiamat",
+   "Smaug"
+  ],
+  "baltoy": [
+   "Terracotta",
+   "Jade",
+   "Ming Porcelain",
+   "Albino",
+   "Dogu",
+   "UFO"
+  ],
+  "barboach": [
+   "Wels Catfish",
+   "Golden Catfish",
+   "Panda Cory",
+   "Albino",
+   "Namazu",
+   "Electric Eel"
+  ],
+  "basculegion": [
+   "Will-o'-the-Wisp",
+   "Styx Flame",
+   "Blood Moon",
+   "Lanternfish",
+   "Dia de Muertos",
+   "Flying Dutchman"
+  ],
+  "basculin": [
+   "Red Piranha",
+   "Koi",
+   "Black Piranha",
+   "Neon Tetra",
+   "Goldfish",
+   "Arowana"
+  ],
+  "beldum": [
+   "Copper",
+   "Gold",
+   "Patina",
+   "Gunmetal",
+   "Rose Gold",
+   "Iron Man"
+  ],
+  "bellsprout": [
+   "Red Nepenthes",
+   "Venus Flytrap",
+   "Purple Pitcher",
+   "Sakura",
+   "Black Pitcher",
+   "Glass Plant"
+  ],
+  "bergmite": [
+   "Baikal Ice",
+   "Watermelon Snow",
+   "Amethyst Ice",
+   "Black Ice",
+   "Emerald Ice",
+   "Citrine"
+  ],
+  "bidoof": [
+   "Black Beaver",
+   "Golden Hamster",
+   "Grey Squirrel",
+   "Red Squirrel",
+   "Mossy Beaver",
+   "God Bidoof"
+  ],
+  "binacle": [
+   "Coral Reef",
+   "Basalt",
+   "Mussel Bed",
+   "Pearl Oyster",
+   "Lava",
+   "Malachite & Gold"
+  ],
+  "birds_galar": [
+   "Swap A",
+   "Swap B",
+   "Ice Bolt & Flame",
+   "Raven Black",
+   "Emerald",
+   "Gold"
+  ],
+  "blacephalon": [
+   "Joker",
+   "Harley Quinn",
+   "Black Pierrot",
+   "Pastel Circus",
+   "Burger Clown",
+   "Golden Ringmaster"
+  ],
+  "blipbug": [
+   "Black Ladybug",
+   "Jewel Beetle",
+   "Mars Attacks",
+   "Delfts Blauw",
+   "22-Spot Ladybird",
+   "Fabergé Egg"
+  ],
+  "blitzle": [
+   "Quagga",
+   "Tiger",
+   "Negative",
+   "Neon Sign",
+   "Blood Storm",
+   "Gold & Silver"
+  ],
+  "bombirdier": [
+   "Marabou",
+   "Shoebill",
+   "Scarlet Ibis",
+   "Delivery Stork",
+   "Vulture",
+   "Golden Stork"
+  ],
+  "bonsly": [
+   "Cherry Blossom",
+   "Autumn",
+   "Birch",
+   "Juniper Bonsai",
+   "Night Sakura",
+   "Laurelin"
+  ],
+  "bouffalant": [
+   "Bleached Surfer",
+   "Ronald McDonald",
+   "Purple Haze",
+   "Highland Cow",
+   "Disco King",
+   "Golden Calf"
+  ],
+  "bounsweet": [
+   "Blueberry",
+   "Mandarin",
+   "Pineberry",
+   "Grape",
+   "Evil Queen",
+   "Hesperides Apple"
+  ],
+  "bramblin": [
+   "Silver Thistle",
+   "Desert Sunset",
+   "Briar Rose",
+   "Frosted Willow",
+   "Will-o'-the-Wisp",
+   "Golden Tumbleweed"
+  ],
+  "braviary_hisui": [
+   "Roc",
+   "Japanese Phoenix",
+   "Simurgh",
+   "Quetzalcoatl",
+   "Garuda",
+   "Thunderbird"
+  ],
+  "bronzor": [
+   "Polished Bronze",
+   "Cast Iron",
+   "Amethyst",
+   "Silver Temple Bell",
+   "Rose Gold",
+   "Liberty Bell"
+  ],
+  "brute_bonnet": [
+   "Yellow Amanita",
+   "Psilocybe",
+   "Birch Polypore",
+   "Bleeding Tooth",
+   "Glowing Mycena",
+   "Gilded Truffle"
+  ],
+  "bruxish": [
+   "Clownfish",
+   "Dory",
+   "Betta",
+   "Parrotfish",
+   "Ghost Fish",
+   "Golden Arowana"
+  ],
+  "buizel": [
+   "Sea Otter",
+   "Winter Ermine",
+   "Life Buoy",
+   "Tropical Lagoon",
+   "Black Mink",
+   "Kawauso"
+  ],
+  "bulbasaur": [
+   "Charmander Colors",
+   "Squirtle Colors",
+   "Poison Dart Frog",
+   "Albino",
+   "Sakura",
+   "Radioactive"
+  ],
+  "buneary": [
+   "Dutch Rabbit",
+   "Chinchilla Rabbit",
+   "Easter Egg",
+   "Albino",
+   "Moon Rabbit",
+   "Year of the Rabbit"
+  ],
+  "bunnelby": [
+   "Lilac Rabbit",
+   "Tan Rabbit",
+   "Chocolate Bunny",
+   "Vienna Blue",
+   "Excavator",
+   "Chang'e Rabbit"
+  ],
+  "burmy": [
+   "Maple Leaf",
+   "Blue-Green Moss",
+   "Luna Moth",
+   "Lavender Moth",
+   "Snow Cloak",
+   "Imperial Silk"
+  ],
+  "buzzwole": [
+   "Thanos",
+   "Arnold",
+   "Dr. Manhattan",
+   "Tiger Mosquito",
+   "Bubblegum",
+   "Hercules Statue"
+  ],
+  "cacnea": [
+   "Prickly Pear",
+   "Moon Cactus",
+   "Pumpkin Scarecrow",
+   "Albino",
+   "Desert Night",
+   "Candy Cactus"
+  ],
+  "calyrex": [
+   "Autumn King",
+   "Sakura Emperor",
+   "Oberon",
+   "Mushroom King",
+   "Dullahan",
+   "The Sun King"
+  ],
+  "capsakid": [
+   "Habanero",
+   "Carolina Reaper",
+   "Banana Pepper",
+   "Dried Chilies",
+   "Black Pearl",
+   "Ghost Pepper"
+  ],
+  "carbink": [
+   "Rose Quartz",
+   "Emerald in Slate",
+   "Ruby in Granite",
+   "Amethyst Geode",
+   "Obsidian Diamond",
+   "Opal"
+  ],
+  "carnivine": [
+   "Dracula",
+   "Sundew",
+   "Wisteria",
+   "Autumn Plant",
+   "Ghost Plant",
+   "Piranha Plant"
+  ],
+  "carvanha": [
+   "Great White",
+   "Firefish",
+   "Black Piranha",
+   "Albino",
+   "Megalodon",
+   "Gulf Racing"
+  ],
+  "castform": [
+   "Sunset",
+   "Thunderstorm",
+   "Northern Lights",
+   "Acid Rain",
+   "Blood Moon",
+   "Starry Night"
+  ],
+  "caterpie": [
+   "Blue Morpho",
+   "Red Admiral",
+   "Swallowtail",
+   "Venomoth Wink",
+   "Purple Emperor",
+   "Emerald Sphinx"
+  ],
+  "celebi": [
+   "Autumn Leaf",
+   "Winter",
+   "Lavender Fairy",
+   "Flower Yellow",
+   "Time Traveler",
+   "GS Ball"
+  ],
+  "celesteela": [
+   "Bamboo Princess",
+   "Saturn V",
+   "Lapis Rocket",
+   "Charcoal",
+   "Lavender Rocket",
+   "Tintin's Rocket"
+  ],
+  "cetoddle": [
+   "Narwhal",
+   "Woolly Mammoth",
+   "Glacier Blue",
+   "Peach Melba",
+   "Aurora",
+   "Santa Claus"
+  ],
+  "charcadet": [
+   "Green Lantern",
+   "Frozen Fire",
+   "Doctor Strange",
+   "Obsidian & Lava",
+   "Sakura Ronin",
+   "Joan of Arc"
+  ],
+  "charmander": [
+   "Squirtle Colors",
+   "Bulbasaur Colors",
+   "Axolotl",
+   "Albino",
+   "Mega X",
+   "Synthwave"
+  ],
+  "chatot": [
+   "African Grey",
+   "Scarlet Macaw",
+   "Cockatoo",
+   "Lovebird",
+   "Sun Conure",
+   "Gold Record"
+  ],
+  "cherubi": [
+   "Rainier Cherry",
+   "Morello",
+   "White Sakura",
+   "Gooseberry",
+   "Autumn Cherry",
+   "Moonflower"
+  ],
+  "chespin": [
+   "Sea Urchin",
+   "Sonic",
+   "Autumn Acorn",
+   "Knight's Armor",
+   "Black Knight",
+   "Paladin"
+  ],
+  "chewtle": [
+   "Snapping Turtle",
+   "Hawksbill",
+   "Bowser",
+   "Lava Turtle",
+   "Amethyst Turtle",
+   "Kim Quy"
+  ],
+  "chi_yu": [
+   "Lithium Flame",
+   "Green Ghost Fire",
+   "Potassium Flame",
+   "Magnesium",
+   "Black Fire",
+   "Lucky Carp"
+  ],
+  "chien_pao": [
+   "Sabertooth",
+   "Black Panther",
+   "Snow Leopard",
+   "Autumn Tiger",
+   "Bloody Snow",
+   "Jade Tiger"
+  ],
+  "chikorita": [
+   "Cyndaquil Colors",
+   "Totodile Colors",
+   "Torchic Colors",
+   "Albino",
+   "Shadow",
+   "Pokemon Crystal"
+  ],
+  "chimchar": [
+   "Ring-Tailed Lemur",
+   "Blue Flame",
+   "Lion Tamarin",
+   "Wildfire",
+   "Javan Lutung",
+   "Hanuman"
+  ],
+  "chimecho": [
+   "Copper Wind Chime",
+   "Silver",
+   "Amethyst",
+   "Albino",
+   "Christmas Bell",
+   "Furin"
+  ],
+  "chinchou": [
+   "Blood Red Deep-Sea",
+   "Silver Lanternfish",
+   "Black and Cyan",
+   "Albino",
+   "Biolum Green",
+   "Goldfish Lantern"
+  ],
+  "clamperl": [
+   "Mother-of-Pearl",
+   "Mandarinfish",
+   "Deep-Sea Glow",
+   "Albino",
+   "Black Pearl",
+   "Ariel"
+  ],
+  "clauncher": [
+   "Mantis Shrimp",
+   "Cocktail Shrimp",
+   "Albino Lobster",
+   "Purple Lobster",
+   "Black Cannon",
+   "Golden Lobster"
+  ],
+  "clefairy": [
+   "Moon White",
+   "Moon Stone",
+   "Mint",
+   "Blood Moon",
+   "Space",
+   "Full Moon"
+  ],
+  "clobbopus": [
+   "Blue Ring Octopus",
+   "Ursula",
+   "Dumbo Octopus",
+   "Judo",
+   "Akuma",
+   "Champion Belt"
+  ],
+  "cobalion": [
+   "Chestnut",
+   "Friesian",
+   "Palomino",
+   "Dapple Grey",
+   "Strawberry Roan",
+   "Trojan Horse"
+  ],
+  "combee": [
+   "Buckwheat Honey",
+   "Orchid Bee",
+   "Royal Jelly",
+   "Carpenter Bee",
+   "Cuckoo Wasp",
+   "Crystal Honey"
+  ],
+  "comfey": [
+   "Frangipani Lei",
+   "Hydrangea",
+   "Autumn Wreath",
+   "Holly Wreath",
+   "Dia de Muertos",
+   "Golden Laurel"
+  ],
+  "corphish": [
+   "Blue Lobster",
+   "Marbled Crayfish",
+   "Purple Crayfish",
+   "Albino",
+   "Glass Shrimp",
+   "Yellow Crayfish"
+  ],
+  "corsola": [
+   "Brain Coral",
+   "Green Coral",
+   "Red Coral",
+   "Bleached Coral",
+   "Black Coral",
+   "Orange Sea Fan"
+  ],
+  "corsola_galar": [
+   "Drowned",
+   "Moldy",
+   "Yellowed Bone",
+   "Dried Blood Coral",
+   "Charred",
+   "Ghost Violet"
+  ],
+  "cosmog": [
+   "Harvest Moon",
+   "Aurora Borealis",
+   "White Dwarf",
+   "Solar Eclipse",
+   "Orion Nebula",
+   "Golden Cosmos"
+  ],
+  "cottonee": [
+   "Cotton Candy",
+   "Black Sheep",
+   "Blue Rain",
+   "Mint",
+   "Thundercloud",
+   "Golden Fleece"
+  ],
+  "crabrawler": [
+   "Boiled Lobster",
+   "Fiddler Crab",
+   "Ghost Crab",
+   "Rocky Balboa",
+   "Coconut Crab",
+   "Golden Gloves"
+  ],
+  "cramorant": [
+   "Brown Pelican",
+   "Pink Pelican",
+   "Blue-Footed Booby",
+   "Northern Gannet",
+   "Frigatebird",
+   "Golden Goose"
+  ],
+  "cranidos": [
+   "Pachycephalosaurus",
+   "Bighorn Ram",
+   "Comet Impact",
+   "Ice Age",
+   "Amethyst Geode",
+   "Tutankhamun"
+  ],
+  "cresselia": [
+   "Silver Sickle",
+   "Blood Moon",
+   "Harvest Moon",
+   "New Moon",
+   "Blue Moon",
+   "Kaguya-hime"
+  ],
+  "croagunk": [
+   "Red-Eyed Tree Frog",
+   "Muay Thai",
+   "Mantella",
+   "Glass Frog",
+   "Bubblegum",
+   "Champion's Belt"
+  ],
+  "cryogonal": [
+   "Amethyst",
+   "Emerald",
+   "Ruby",
+   "Citrine",
+   "Black Ice",
+   "Opal"
+  ],
+  "cubchoo": [
+   "Grizzly",
+   "Black Bear",
+   "Love-a-Lot Bear",
+   "Glacier Bear",
+   "Gummy Bear",
+   "Winnie the Pooh"
+  ],
+  "cubone": [
+   "Sugar Skull Blue",
+   "Mourning Gray",
+   "Purple Calavera",
+   "Pink Calavera",
+   "Ghost",
+   "Pharaoh"
+  ],
+  "cufant": [
+   "Rusty Iron",
+   "Holi Elephant",
+   "Anodized Titanium",
+   "White Elephant",
+   "Cast Iron",
+   "Tutankhamun"
+  ],
+  "cutiefly": [
+   "Honeybee",
+   "Carpenter Bee",
+   "Lavender",
+   "Strawberry",
+   "Tinker Bell",
+   "Klimt"
+  ],
+  "cyclizar": [
+   "Frilled Lizard",
+   "Basilisk",
+   "Vespa",
+   "Ducati Panigale",
+   "Harley-Davidson",
+   "Light Cycle"
+  ],
+  "cyndaquil": [
+   "Totodile Colors",
+   "Chikorita Colors",
+   "Mudkip Colors",
+   "Albino",
+   "Shadow",
+   "Pokemon Crystal"
+  ],
+  "darkrai": [
+   "Ember Nightmare",
+   "White Specter",
+   "Blood Night",
+   "Forest Spirit",
+   "Cosmic Nightmare",
+   "Golden Dream"
+  ],
+  "darumaka": [
+   "White Daruma",
+   "Black Daruma",
+   "Green Daruma",
+   "Purple Daruma",
+   "Pink Daruma",
+   "Golden Daruma"
+  ],
+  "darumaka_galar": [
+   "Blood Snow",
+   "Glacier",
+   "Pistachio",
+   "Stracciatella",
+   "Northern Lights",
+   "Golden Snow"
+  ],
+  "dedenne": [
+   "House Mouse",
+   "Chocolate Mouse",
+   "White Lab Mouse",
+   "Electric Blue",
+   "Mint Chocolate",
+   "Plasma Ball"
+  ],
+  "deerling": [
+   "Rudolph",
+   "Sika Deer",
+   "Lavender Field",
+   "White Hind",
+   "Shishigami",
+   "Ceryneian Hind"
+  ],
+  "deino": [
+   "Blood Moon",
+   "Amethyst Hydra",
+   "Snow Hydra",
+   "Negative",
+   "Cerberus",
+   "Star Hydra"
+  ],
+  "delibird": [
+   "Ice Blue",
+   "Christmas Elf",
+   "Purple",
+   "Penguin",
+   "Pink",
+   "Gold"
+  ],
+  "deoxys": [
+   "Virus",
+   "Mutant",
+   "Inverted",
+   "DNA",
+   "Meteorite",
+   "Cosmic Pink"
+  ],
+  "dewpider": [
+   "Garden Spider",
+   "Black Widow",
+   "Peacock Spider",
+   "Green Lynx Spider",
+   "Pinktoe Tarantula",
+   "Golden Silk Spider"
+  ],
+  "dhelmise": [
+   "Rusty Anchor",
+   "Flying Dutchman",
+   "Sea Anemone",
+   "Blackbeard",
+   "Titanic",
+   "Black Pearl Hoard"
+  ],
+  "dialga": [
+   "Grandfather Clock",
+   "Crimson Clockwork",
+   "Amethyst Clockwork",
+   "Silver Chronograph",
+   "Primal Dialga",
+   "Golden Hourglass"
+  ],
+  "diancie": [
+   "Aquamarine",
+   "Emerald",
+   "Topaz",
+   "Amethyst",
+   "Black Diamond",
+   "Hope Diamond"
+  ],
+  "diglett": [
+   "Ziggy Stardust",
+   "Gorillaz",
+   "Billie Eilish",
+   "Emo",
+   "Nicki Minaj",
+   "Billy Idol"
+  ],
+  "dipplin": [
+   "Granny Smith",
+   "Pink Lady",
+   "Toffee Apple",
+   "Black Diamond",
+   "Poison Apple",
+   "Silver Moon Apple"
+  ],
+  "ditto": [
+   "Red Jelly",
+   "Green Slime",
+   "Orange",
+   "White",
+   "Venom",
+   "Gold"
+  ],
+  "doduo": [
+   "Ostrich",
+   "Emu",
+   "Flamingo",
+   "Albino",
+   "Cassowary",
+   "Golden Pheasant"
+  ],
+  "dondozo": [
+   "Albino Catfish",
+   "Zander",
+   "Mud Catfish",
+   "Anglerfish",
+   "Orca Catfish",
+   "Showa Koi"
+  ],
+  "drampa": [
+   "New Year Dragon",
+   "Falkor",
+   "Haku",
+   "Storm Dragon",
+   "Spyro",
+   "Imperial Dragon"
+  ],
+  "dratini": [
+   "Sea Dragon",
+   "Chinese Dragon",
+   "Purple",
+   "Albino",
+   "Black",
+   "Galaxy"
+  ],
+  "dreepy": [
+   "Camo Jet",
+   "Blue Angels",
+   "Casper",
+   "Halloween",
+   "The Red Baron",
+   "Apollo"
+  ],
+  "drifloon": [
+   "Pennywise",
+   "Up",
+   "Bubblegum",
+   "New Year's Eve",
+   "Will-o'-the-Wisp",
+   "Jack-o'-Lantern"
+  ],
+  "drilbur": [
+   "Sand Mole",
+   "Diamond Drill",
+   "Rust Bucket",
+   "Albino Mole",
+   "Golden Drill",
+   "Bulldozer"
+  ],
+  "drowzee": [
+   "Malayan Tapir",
+   "Baku",
+   "Freddy Krueger",
+   "Albino",
+   "Hypno Spiral",
+   "Purple and Gold"
+  ],
+  "druddigon": [
+   "Megalon",
+   "Rodan",
+   "Godzilla",
+   "Anguirus",
+   "Destoroyah",
+   "King Ghidorah"
+  ],
+  "ducklett": [
+   "Odile",
+   "Mandarin Duck",
+   "Mallard",
+   "Rubber Duck",
+   "Flamingo",
+   "Cygnus"
+  ],
+  "dunsparce": [
+   "Green Dragon Snake",
+   "Lavender",
+   "Russet",
+   "Albino",
+   "Koi",
+   "Chinese Dragon"
+  ],
+  "duraludon": [
+   "Statue of Liberty",
+   "Tokyo Tower",
+   "Neon Hong Kong",
+   "Tower Crane",
+   "Barbie Dreamhouse",
+   "Ishtar Gate"
+  ],
+  "durant": [
+   "Red Wood Ant",
+   "Honeypot Ant",
+   "Green-Head Ant",
+   "Blue Metallic Ant",
+   "Bullet Ant",
+   "Midas Ant"
+  ],
+  "duskull": [
+   "Will-o'-the-Wisp",
+   "Calavera",
+   "Jack-o'-Lantern",
+   "Pharaoh",
+   "Aztec Turquoise",
+   "Crystal Skull"
+  ],
+  "dwebble": [
+   "Petra",
+   "Granite",
+   "Gold-Veined Marble",
+   "Obsidian & Lava",
+   "Turquoise",
+   "Pineapple House"
+  ],
+  "eevee": [
+   "Sibling Swap A",
+   "Sibling Swap B",
+   "Shadow",
+   "Albino",
+   "Starry Night",
+   "Silver Statue"
+  ],
+  "eiscue": [
+   "Lemon Ice Pop",
+   "Mint Chocolate",
+   "Grape Ice Pop",
+   "Cola Ice Pop",
+   "Blue Raspberry",
+   "Ruby Ice Block"
+  ],
+  "ekans": [
+   "Coral Snake",
+   "Copperhead",
+   "Black Mamba",
+   "Albino Python",
+   "Blue Viper",
+   "Egyptian Cobra"
+  ],
+  "electrike": [
+   "Tesla Coil",
+   "Zekrom Colors",
+   "Plasma",
+   "Albino",
+   "Raikou Colors",
+   "Thor"
+  ],
+  "elekid": [
+   "Blue Lightning",
+   "Purple Tiger",
+   "Radioactive Green",
+   "White Tiger",
+   "Pink Lightning",
+   "Silver"
+  ],
+  "elgyem": [
+   "Little Green Men",
+   "Na'vi",
+   "Mars Attacks",
+   "Red Planet",
+   "Men in Black",
+   "Silver Surfer"
+  ],
+  "emolga": [
+   "Sugar Glider",
+   "Minun Colors",
+   "Red Giant Squirrel",
+   "Albino",
+   "Tron",
+   "Raijin"
+  ],
+  "enamorus": [
+   "Birth of Venus",
+   "Primavera",
+   "Thundercloud",
+   "Sunset",
+   "Selene",
+   "Freya"
+  ],
+  "entei": [
+   "Raikou Yellow",
+   "Suicune Blue",
+   "White Lion",
+   "Black Lion",
+   "Red Fire",
+   "Green"
+  ],
+  "espurr": [
+   "Siamese",
+   "Ginger Tom",
+   "Witch's Cat",
+   "Mint",
+   "Cheshire Cat",
+   "Bastet"
+  ],
+  "eternatus": [
+   "Black Hole",
+   "Blue Supergiant",
+   "Kryptonite",
+   "Solar Flare",
+   "Stardust",
+   "Golden Comet"
+  ],
+  "exeggcute": [
+   "Cherry Blossom",
+   "Easter Eggs",
+   "Dinosaur Egg",
+   "Albino",
+   "Snow Palm",
+   "Faberge"
+  ],
+  "falinks": [
+   "Terracotta Army",
+   "Queen's Guard",
+   "Stormtroopers",
+   "Swiss Guard",
+   "Spartan Hoplites",
+   "Purple Guard"
+  ],
+  "farfetchd": [
+   "Gray Goose",
+   "Mallard",
+   "Black Duck",
+   "Albino",
+   "Candy Cane",
+   "Royal Blue"
+  ],
+  "farfetchd_galar": [
+   "Templar",
+   "Black Knight",
+   "King Arthur",
+   "Green Knight",
+   "Red Knight",
+   "Golden Knight"
+  ],
+  "feebas": [
+   "Oarfish",
+   "Pastel",
+   "Royal",
+   "Albino",
+   "Jet Black",
+   "Phoenix"
+  ],
+  "fennekin": [
+   "Silver Fox",
+   "Ijen Blue Flame",
+   "Halloween Witch",
+   "Miko",
+   "Starry Night",
+   "Wizard of Oz"
+  ],
+  "ferroseed": [
+   "Verdigris",
+   "Chestnut",
+   "Durian",
+   "Rambutan",
+   "Sea Mine",
+   "Gold & Emerald"
+  ],
+  "fidough": [
+   "Pumpernickel",
+   "Matcha Melonpan",
+   "Ube Bun",
+   "Charcoal Bread",
+   "Strawberry Bread",
+   "Red Velvet"
+  ],
+  "finizen": [
+   "Pink River Dolphin",
+   "Orca",
+   "The Flash",
+   "Vaporwave",
+   "Ultraman",
+   "Wonder Woman"
+  ],
+  "finneon": [
+   "Seagrass",
+   "Koi",
+   "Yellow Tang",
+   "Lanternfish",
+   "Purple Betta",
+   "Veiltail Goldfish"
+  ],
+  "flabebe": [
+   "Lavender",
+   "Green Rose",
+   "La Tulipe Noire",
+   "Fuchsia",
+   "Chocolate Cosmos",
+   "Silver Rose"
+  ],
+  "flamigo": [
+   "Black Flamingo",
+   "White Spoonbill",
+   "Great Blue Heron",
+   "Shaolin Crane",
+   "Purple Swamphen",
+   "Miami Vice"
+  ],
+  "fletchling": [
+   "Blue Jay",
+   "Hummingbird",
+   "Spirit Crow",
+   "Snowy Owl",
+   "Gouldian Finch",
+   "Garuda"
+  ],
+  "flittle": [
+   "Emu",
+   "Peacock",
+   "Cassowary",
+   "Lava Lamp",
+   "Albino Ostrich",
+   "Horus"
+  ],
+  "floette_eternal": [
+   "Night Violet",
+   "Mourning Lily",
+   "Blue Rose",
+   "Christmas Rose",
+   "Blood Moon",
+   "Ultimate Weapon"
+  ],
+  "flutter_mane": [
+   "Banshee",
+   "Mismagius Hat",
+   "Blood Rose",
+   "Black Widow",
+   "Onryo",
+   "Red Dawn"
+  ],
+  "fomantis": [
+   "Orchid Mantis",
+   "Hibiscus",
+   "Iris",
+   "Sunflower",
+   "Ghost Mantis",
+   "Black Tulip"
+  ],
+  "foongus": [
+   "Great Ball",
+   "Ultra Ball",
+   "Net Ball",
+   "Premier Ball",
+   "Dusk Ball",
+   "Master Ball"
+  ],
+  "fossils": [
+   "Petrified Fossil",
+   "Barney",
+   "Coral Reef",
+   "Godzilla",
+   "Albino",
+   "Golden Chimera"
+  ],
+  "frigibax": [
+   "Night Dragon",
+   "Emerald Glacier",
+   "Snow-White Dragon",
+   "Amethyst Cave",
+   "Fire & Ice",
+   "Excalibur"
+  ],
+  "frillish": [
+   "Compass Jellyfish",
+   "Fried Egg Jelly",
+   "Mauve Stinger",
+   "Lion's Mane",
+   "Crystal Jelly",
+   "Golden Jellyfish"
+  ],
+  "froakie": [
+   "Red-Eyed Tree Frog",
+   "Naruto",
+   "Tomato Frog",
+   "Glass Frog",
+   "Purple Frog",
+   "Golden Frog"
+  ],
+  "fuecoco": [
+   "Gila Monster",
+   "Sugar Skull",
+   "Copper Flame",
+   "Albino Crocodile",
+   "Mariachi",
+   "Quetzalcoatl"
+  ],
+  "gastly": [
+   "Slimer Green",
+   "Blood Red",
+   "Boo Blue",
+   "White Boo",
+   "Halloween Orange",
+   "Golden Ghost"
+  ],
+  "genesect": [
+   "Zaku II",
+   "Evangelion Unit-00",
+   "Bumblebee",
+   "Tron",
+   "RoboCop",
+   "Unicorn Gundam"
+  ],
+  "geodude": [
+   "Copper",
+   "Silver",
+   "Sapphire",
+   "Ruby",
+   "Amethyst",
+   "Diamond"
+  ],
+  "geodude_alola": [
+   "Pyrite",
+   "Hematite",
+   "Obsidian",
+   "Lapis Lazuli",
+   "Rose Quartz",
+   "Tourmaline"
+  ],
+  "gible": [
+   "Great White Shark",
+   "Blood Dragon",
+   "Western Dragon",
+   "Megalodon Fossil",
+   "Alduin",
+   "King Ghidorah"
+  ],
+  "gimmighoul": [
+   "Silver Hoard",
+   "Copper Pennies",
+   "Jade Hoard",
+   "Rose Gold",
+   "Cursed Aztec Gold",
+   "Amethyst Gold"
+  ],
+  "girafarig": [
+   "Okapi",
+   "White Giraffe",
+   "Lisa Frank Pink",
+   "Psychic Blue",
+   "Black and Gold",
+   "Cosmic"
+  ],
+  "giratina": [
+   "Distortion World",
+   "Hellfire",
+   "Ghost Purple",
+   "Albino Ghost",
+   "Black Hole",
+   "Imperial"
+  ],
+  "glameow": [
+   "Ginger Tom",
+   "Witch's Cat",
+   "Siamese",
+   "Cheshire Cat",
+   "Doraemon",
+   "Hello Kitty"
+  ],
+  "gligar": [
+   "Desert Scorpion",
+   "Green",
+   "Red",
+   "Albino",
+   "Black Scorpion",
+   "Serket"
+  ],
+  "glimmet": [
+   "Ruby",
+   "Emerald",
+   "Imperial Topaz",
+   "Opal",
+   "Toxic Obsidian",
+   "Watermelon Gem"
+  ],
+  "goldeen": [
+   "Goldfish",
+   "Black Moor",
+   "Shubunkin",
+   "Panda Oranda",
+   "Betta",
+   "Nemo"
+  ],
+  "golett": [
+   "Terracotta Army",
+   "Abu Simbel",
+   "Greek Marble",
+   "Basalt",
+   "Gigantor",
+   "Colossus of Rhodes"
+  ],
+  "goomy": [
+   "Bubblegum Slug",
+   "Slime",
+   "Honey",
+   "Lava Lamp",
+   "Petroleum",
+   "Metal Slime"
+  ],
+  "gossifleur": [
+   "Cornflower",
+   "Hibiscus",
+   "Provence Lavender",
+   "Black Tulip",
+   "Cotton Candy",
+   "Rumpelstiltskin"
+  ],
+  "gothita": [
+   "Sweet Lolita",
+   "Classic Lolita",
+   "Sailor Lolita",
+   "Shiro Lolita",
+   "Wa Lolita",
+   "Aristocrat"
+  ],
+  "gouging_fire": [
+   "Black Fire",
+   "Blue Fire",
+   "Raikou Colors",
+   "White-Hot",
+   "Copper Fire",
+   "Ho-Oh"
+  ],
+  "great_tusk": [
+   "Primal Mammoth",
+   "Basalt",
+   "Lascaux",
+   "Ice Age",
+   "Sandstone Fossil",
+   "Maya Obsidian"
+  ],
+  "greavard": [
+   "Terracotta Urn",
+   "Mossy Grave",
+   "Zero",
+   "Angel Grave",
+   "Hellhound",
+   "Pharaoh's Tomb"
+  ],
+  "grimer": [
+   "Blood Red Slime",
+   "Oil",
+   "Bubblegum",
+   "Lava Slime",
+   "Ectoplasm",
+   "Midas"
+  ],
+  "grimer_alola": [
+   "Rainbow Oil",
+   "Candy Cane",
+   "Teal",
+   "Bubblegum",
+   "Lavender and Mint",
+   "Golden Slime"
+  ],
+  "grookey": [
+   "Mandrill",
+   "Snow Monkey",
+   "Sakura Bonsai",
+   "2-D",
+   "Taiko no Tatsujin",
+   "Sun Wukong"
+  ],
+  "groudon": [
+   "Desert",
+   "Obsidian and Lava",
+   "Godzilla",
+   "Maya Jade",
+   "Kyogre Swap",
+   "Sun God"
+  ],
+  "growlithe": [
+   "Doberman",
+   "Husky",
+   "Blue Chow Chow",
+   "Albino",
+   "Foo Dog",
+   "Blue Fire"
+  ],
+  "growlithe_hisui": [
+   "Obsidian and Lava",
+   "Basalt Blue Fire",
+   "Sandstone Purple",
+   "Marble and Gold",
+   "Lapis Lazuli",
+   "Ruby Black Fire"
+  ],
+  "grubbin": [
+   "Duracell",
+   "White Charger",
+   "Glowworm",
+   "Tron",
+   "Jewel Beetle",
+   "Golden Scarab"
+  ],
+  "gulpin": [
+   "Swapped",
+   "Caramel Pudding",
+   "Kirby",
+   "Albino",
+   "Pac-Man",
+   "Biohazard"
+  ],
+  "guzzlord": [
+   "Kirby",
+   "Black Hole",
+   "Lava Stomach",
+   "Swamp Monster",
+   "Cookie Monster",
+   "Mammon"
+  ],
+  "happiny": [
+   "Lavender",
+   "Lemon",
+   "Peach",
+   "Sky Blue",
+   "Cherry",
+   "Plum"
+  ],
+  "hawlucha": [
+   "El Santo",
+   "Rey Mysterio",
+   "Toucan",
+   "Flamingo Luchador",
+   "Hulk Hogan",
+   "Mil Mascaras"
+  ],
+  "heatmor": [
+   "Giant Anteater",
+   "Silky Anteater",
+   "Aardvark",
+   "Cast Iron Stove",
+   "Copper Flame",
+   "Phoenix"
+  ],
+  "heatran": [
+   "Kawah Ijen",
+   "Copper Flame",
+   "Obsidian",
+   "White-Hot",
+   "Purple Magma",
+   "Molten Gold"
+  ],
+  "helioptile": [
+   "Green Anole",
+   "Blue Iguana",
+   "Solar Panel",
+   "Purple Lightning",
+   "Solar Eclipse",
+   "Synthwave"
+  ],
+  "heracross": [
+   "Hercules Beetle",
+   "Japanese Rhino",
+   "Goliath Beetle",
+   "Gold Chafer",
+   "Emerald Beetle",
+   "Kabuto"
+  ],
+  "hippopotas": [
+   "Hippopotamus",
+   "Uluru",
+   "Black Sand",
+   "White Sands",
+   "Swamp Hippo",
+   "Fantasia Hippo"
+  ],
+  "ho_oh": [
+   "Lugia Swap",
+   "Blue Fire",
+   "Purple",
+   "Shadow Ho-Oh",
+   "Green Phoenix",
+   "Silver Phoenix"
+  ],
+  "honedge": [
+   "Katana",
+   "Keyblade",
+   "Master Sword",
+   "Aztec Obsidian",
+   "Lightsaber",
+   "Kusanagi"
+  ],
+  "hoopa": [
+   "Aladdin's Genie",
+   "Purple Djinn",
+   "Jafar",
+   "Persian Tiles",
+   "Ifrit",
+   "Silver Lamp"
+  ],
+  "hoothoot": [
+   "Barn Owl",
+   "Kakapo",
+   "Tawny Owl",
+   "Snowy Owl",
+   "Black Owl",
+   "Owl of Minerva"
+  ],
+  "hoppip": [
+   "Spring",
+   "Summer",
+   "Autumn",
+   "Winter",
+   "Lavender Field",
+   "Starry Night"
+  ],
+  "horsea": [
+   "Orange Seahorse",
+   "Pygmy Seahorse",
+   "Leafy Seadragon",
+   "Black Seahorse",
+   "Ghost Seahorse",
+   "Ruby and Gold"
+  ],
+  "houndour": [
+   "White Hellhound",
+   "Blood Red",
+   "Doberman",
+   "Purple",
+   "Green",
+   "Gold"
+  ],
+  "igglybuff": [
+   "Marshmallow",
+   "Keeby Yellow",
+   "Lavender",
+   "Mint",
+   "Peach",
+   "Lullaby"
+  ],
+  "impidimp": [
+   "Gremlins",
+   "Aka-Oni",
+   "The Grinch",
+   "Pennywise",
+   "Krampus",
+   "Leprechaun"
+  ],
+  "indeedee": [
+   "Geisha",
+   "Pompadour",
+   "Chinchilla",
+   "Bollywood",
+   "Jade Buddha",
+   "Maharaja"
+  ],
+  "inkay": [
+   "Vampire Squid",
+   "Bioluminescent",
+   "Sepia",
+   "Glass Squid",
+   "Splatoon",
+   "Pink Floyd Prism"
+  ],
+  "iron_boulder": [
+   "Cobalion Colors",
+   "Virizion Colors",
+   "Pink Granite",
+   "Lava Rock",
+   "Moonstone",
+   "Golden Fleece"
+  ],
+  "iron_bundle": [
+   "Penguin Bot",
+   "Ice Cold",
+   "The Grinch",
+   "Christmas Bauble",
+   "Krampus",
+   "Golden Star"
+  ],
+  "iron_crown": [
+   "Ruby King",
+   "Emerald King",
+   "Amethyst King",
+   "Diamond King",
+   "Onyx",
+   "Sun Crown"
+  ],
+  "iron_hands": [
+   "Tower Crane",
+   "Mazinger Z",
+   "Yokozuna",
+   "Gipsy Danger",
+   "Pink Boxing Gloves",
+   "Champion Belt"
+  ],
+  "iron_jugulis": [
+   "F-14 Tomcat",
+   "Batwing",
+   "Stealth Bomber",
+   "Blue Angels",
+   "The Red Baron",
+   "Mecha Ghidorah"
+  ],
+  "iron_leaves": [
+   "Autumn Leaf",
+   "Cobalion Colors",
+   "Terrakion Colors",
+   "Keldeo Colors",
+   "Cyber Leaf",
+   "Olympic Laurel"
+  ],
+  "iron_moth": [
+   "Gas Burner",
+   "Uranium Reactor",
+   "Purple Plasma",
+   "Neon Pink",
+   "Black Sun",
+   "Mirror Chrome"
+  ],
+  "iron_thorns": [
+   "Mechagodzilla",
+   "Destoroyah",
+   "Godzilla",
+   "Shin Godzilla",
+   "RX-78 Gundam",
+   "Colossus of Rhodes"
+  ],
+  "iron_treads": [
+   "Tron",
+   "Bulldozer",
+   "Evangelion Unit-01",
+   "Stormtrooper",
+   "Racing Green",
+   "Rose Gold"
+  ],
+  "iron_valiant": [
+   "Ice Sword",
+   "Black Knight",
+   "Red Lotus",
+   "Lavender & Jade",
+   "Sakura Samurai",
+   "Paladin"
+  ],
+  "jangmo_o": [
+   "Silver Samurai",
+   "Greek Hoplite",
+   "Jade Warrior",
+   "Ruby Armor",
+   "Obsidian",
+   "Crystal Dragon"
+  ],
+  "jirachi": [
+   "Silver Star",
+   "Ruby Star",
+   "Blue Wishing Star",
+   "1-Up",
+   "Black Star",
+   "Galaxy"
+  ],
+  "joltik": [
+   "Peacock Spider",
+   "Black Widow",
+   "Goliath Birdeater",
+   "Red-Knee Tarantula",
+   "Green Lynx Spider",
+   "Spider-Man"
+  ],
+  "kabuto": [
+   "Emperor Crab",
+   "Trilobite",
+   "Blue Blood",
+   "Black",
+   "Kabuto Helmet",
+   "Golden Fossil"
+  ],
+  "kangaskhan": [
+   "Red Kangaroo",
+   "Panda Kangaroo",
+   "Tree Kangaroo",
+   "Albino",
+   "Boxing Kangaroo",
+   "Cosmic"
+  ],
+  "karrablast": [
+   "Green Knight",
+   "Black Prince",
+   "Lancelot",
+   "Templar",
+   "Charlemagne",
+   "Gold Saint"
+  ],
+  "kartana": [
+   "Newspaper",
+   "Washi",
+   "Kraft Paper",
+   "Blueprint",
+   "Black Katana",
+   "Golden Crane"
+  ],
+  "kecleon": [
+   "Panther Chameleon",
+   "Excited Red",
+   "Bark Camouflage",
+   "Albino",
+   "Lisa Frank",
+   "Nearly Invisible"
+  ],
+  "keldeo": [
+   "Applejack",
+   "Fluttershy",
+   "Twilight Sparkle",
+   "Rarity",
+   "Pinkie Pie",
+   "Princess Luna"
+  ],
+  "kingambit": [
+   "White King",
+   "Shogun",
+   "Corinthian Bronze",
+   "Byzantine Emperor",
+   "The Night King",
+   "Sun King"
+  ],
+  "klawf": [
+   "Blue Crab",
+   "Coconut Crab",
+   "Halloween Crab",
+   "Ghost Crab",
+   "Kingler",
+   "Cancer"
+  ],
+  "kleavor": [
+   "Obsidian",
+   "Jade",
+   "Lapis Lazuli",
+   "Marble",
+   "Red Jasper",
+   "Golden Axes"
+  ],
+  "klefki": [
+   "Red Copper",
+   "Patina",
+   "Wrought Iron",
+   "Rose Gold",
+   "Anodized Titanium",
+   "St. Peter's Keys"
+  ],
+  "klink": [
+   "Steampunk",
+   "Rusty Cast Iron",
+   "Meccano",
+   "Anodized Aluminum",
+   "RX-78 Gundam",
+   "Gold Pocket Watch"
+  ],
+  "koffing": [
+   "Smog",
+   "Chernobyl",
+   "Holi",
+   "Dry Ice",
+   "Cosmic Nebula",
+   "Royal"
+  ],
+  "komala": [
+   "Real Koala",
+   "Pajamas",
+   "Eucalyptus",
+   "Nightmare",
+   "Sandman",
+   "Dreamland"
+  ],
+  "koraidon": [
+   "Miraidon Colors",
+   "Kawasaki Racer",
+   "Desert Lizard",
+   "KTM",
+   "Chopper",
+   "Aztec Sun Stone"
+  ],
+  "krabby": [
+   "Blue Crab",
+   "Turquoise",
+   "Coconut Crab",
+   "Albino",
+   "Black Crab",
+   "Golden Crab"
+  ],
+  "kricketot": [
+   "Green Bush Cricket",
+   "Tree Cricket",
+   "Blue-Winged Locust",
+   "Jiminy Cricket",
+   "Cave Cricket",
+   "Lucky Cricket"
+  ],
+  "kubfu": [
+   "Giant Panda",
+   "Kodiak Bear",
+   "Shaolin Monk",
+   "Bruce Lee",
+   "Water Style",
+   "Golden Buddha"
+  ],
+  "kyogre": [
+   "Abyssal Violet",
+   "Orca",
+   "Tsunami",
+   "Ice Age",
+   "Groudon Swap",
+   "Leviathan"
+  ],
+  "kyurem": [
+   "Amethyst Ice",
+   "Fire & Ice",
+   "Emerald Ice",
+   "Strawberry Sorbet",
+   "Black Ice",
+   "Golden Ice"
+  ],
+  "landorus": [
+   "Volcanic Earth",
+   "Rice Paddy",
+   "Blue Clay",
+   "Chalk",
+   "Lavender Field",
+   "Golden Harvest"
+  ],
+  "lapras": [
+   "Nessie",
+   "Whale Gray",
+   "Pink",
+   "Albino",
+   "Orca",
+   "Galleon"
+  ],
+  "larvesta": [
+   "Blue Giant",
+   "Solar Eclipse",
+   "Green Flash",
+   "White Dwarf",
+   "Northern Lights",
+   "Eos"
+  ],
+  "larvitar": [
+   "Turquoise",
+   "Lava",
+   "Godzilla",
+   "Ice",
+   "Blue",
+   "Kaiju King"
+  ],
+  "latias": [
+   "Mew and Mewtwo",
+   "Stealth",
+   "Spring and Night",
+   "Albino",
+   "Aurora and Amber",
+   "Galaxy"
+  ],
+  "lechonk": [
+   "Mangalica",
+   "Snowball",
+   "Eau de Lavande",
+   "Tamworth",
+   "Delfts Blauw",
+   "King Midas"
+  ],
+  "ledyba": [
+   "Kamen Rider 1",
+   "Ultraman",
+   "Super Sentai",
+   "Kamen Rider Black",
+   "Sheriff Gavan",
+   "Kuuga Rising"
+  ],
+  "lickitung": [
+   "Bubblegum Blue",
+   "Toad",
+   "Grape",
+   "Peach",
+   "Venom",
+   "Mint Chocolate"
+  ],
+  "lileep": [
+   "Coral Reef",
+   "White Anemone",
+   "Petrified",
+   "Albino",
+   "Deep-Sea Glow",
+   "Ammonite"
+  ],
+  "lillipup": [
+   "Border Collie",
+   "Bluey",
+   "Samoyed",
+   "Wolf",
+   "Clifford",
+   "Anubis"
+  ],
+  "litleo": [
+   "White Lion",
+   "Scar",
+   "Blue Fire",
+   "Aslan",
+   "Leo",
+   "Green Lion"
+  ],
+  "litten": [
+   "Bengal Tiger",
+   "Snow Leopard",
+   "Blue Fire",
+   "Hulkamania",
+   "Nekomata",
+   "Sekhmet"
+  ],
+  "litwick": [
+   "Boron Flame",
+   "Strontium Flame",
+   "Gas Flame",
+   "Ectoplasm",
+   "Magnesium Torch",
+   "Lumiere"
+  ],
+  "lotad": [
+   "Lotus",
+   "Dia de Muertos",
+   "Mandarin Duck",
+   "Albino",
+   "Kappa",
+   "Golden Idol"
+  ],
+  "lugia": [
+   "Shadow Lugia",
+   "Ho-Oh Swap",
+   "Sea Green",
+   "Pink",
+   "Night Sea",
+   "Pokemon Silver"
+  ],
+  "lunatone": [
+   "Swapped",
+   "Blood Moon",
+   "Eclipse",
+   "Moonstone Sunstone",
+   "Majora's Moon",
+   "Neptune and Venus"
+  ],
+  "luvdisc": [
+   "Red Heart",
+   "Chocolate Heart",
+   "Lavender",
+   "Albino",
+   "Broken Heart",
+   "Tiffany"
+  ],
+  "machop": [
+   "Bronze Statue",
+   "Hulk",
+   "Hellboy",
+   "Albino",
+   "Na'vi",
+   "Super Saiyan God"
+  ],
+  "magby": [
+   "Blue Fire",
+   "Green Fire",
+   "Purple Fire",
+   "White-Hot",
+   "Electabuzz Swap",
+   "Obsidian and Lava"
+  ],
+  "magearna": [
+   "Mint & Silver",
+   "Delfts Blauw",
+   "Clockwork",
+   "Lavender Doll",
+   "Gothic Doll",
+   "Fabergé Egg"
+  ],
+  "magikarp": [
+   "Swapped",
+   "Kohaku",
+   "Karasu",
+   "Dragon Gate",
+   "Godzilla",
+   "Celestial Dragon"
+  ],
+  "magnemite": [
+   "Copper",
+   "R2-D2",
+   "WALL-E",
+   "Gunmetal",
+   "Horseshoe Magnet",
+   "Golden Snitch"
+  ],
+  "makuhita": [
+   "Kumamon",
+   "Kappa Sumo",
+   "Hokusai",
+   "Albino",
+   "Lucha Libre",
+   "Daruma"
+  ],
+  "manaphy": [
+   "Sea Anemone",
+   "Seaweed",
+   "Coral Reef",
+   "Deep Sea",
+   "Pearl",
+   "Sea King"
+  ],
+  "mankey": [
+   "Japanese Macaque",
+   "Golden Snub-Nose",
+   "Gorilla",
+   "Albino",
+   "Mandrill",
+   "Sun Wukong"
+  ],
+  "mantyke": [
+   "Spotted Eagle Ray",
+   "Stingray",
+   "Green",
+   "Pink",
+   "Red",
+   "Gold"
+  ],
+  "maractus": [
+   "Blue Agave",
+   "Hibotan",
+   "Blooming Saguaro",
+   "Mariachi",
+   "Purple Pear Cactus",
+   "Dia de Muertos"
+  ],
+  "mareanie": [
+   "Crown-of-Thorns",
+   "Blue Ring Octopus",
+   "Ice Coral",
+   "Durian",
+   "Fire Coral",
+   "Ursula"
+  ],
+  "mareep": [
+   "Black Sheep",
+   "Fox Sheep",
+   "Electric Blue",
+   "Green",
+   "Purple",
+   "Golden Fleece"
+  ],
+  "marowak_alola": [
+   "Halloween",
+   "Purple Ghost Fire",
+   "Blue Fire",
+   "Sugar Skull",
+   "Red Fire Gold Bone",
+   "Sun Dance"
+  ],
+  "marshadow": [
+   "Purple Shadow",
+   "Desert Shadow",
+   "Negative",
+   "Blood Shadow",
+   "Squid Ink",
+   "Zenith"
+  ],
+  "maschiff": [
+   "Rottweiler",
+   "Blue Doberman",
+   "Shiba Inu",
+   "Weimaraner",
+   "Peaky Blinders",
+   "The Godfather"
+  ],
+  "mawile": [
+   "Copper",
+   "Blue Steel",
+   "Venus Flytrap",
+   "Albino",
+   "Sadako",
+   "Harley Quinn"
+  ],
+  "meditite": [
+   "Z Fighter",
+   "Zen",
+   "Krishna",
+   "Albino",
+   "Akuma",
+   "Enlightened"
+  ],
+  "meloetta": [
+   "Kagamine Rin",
+   "Kaito",
+   "Megurine Luka",
+   "Meiko",
+   "Kamui Gakupo",
+   "Hatsune Miku"
+  ],
+  "meltan": [
+   "Statue of Liberty",
+   "Chrome",
+   "Anodized Titanium",
+   "Cast Iron",
+   "Rose Gold",
+   "Pure Gold"
+  ],
+  "meowth": [
+   "Russian Blue",
+   "Black Cat",
+   "Lilac",
+   "Havana Brown",
+   "Sphynx",
+   "Maneki-neko"
+  ],
+  "meowth_alola": [
+   "Ruddy Abyssinian",
+   "Lilac Burmese",
+   "Turkish Angora",
+   "Bombay",
+   "Bengal",
+   "Cheshire Cat"
+  ],
+  "meowth_galar": [
+   "Cobalt",
+   "Bronze Patina",
+   "Rusty Iron",
+   "Chrome",
+   "Black Steel",
+   "Rose Gold"
+  ],
+  "mew": [
+   "Mewtwo Purple",
+   "Mint",
+   "Lemon",
+   "White",
+   "Starry Night",
+   "Ancient Mew"
+  ],
+  "mewtwo": [
+   "Shadow Mewtwo",
+   "Smash Bros. Blue",
+   "Smash Bros. Red",
+   "Smash Bros. Green",
+   "Mew Swap",
+   "Crystal"
+  ],
+  "mienfoo": [
+   "Tigress",
+   "Monkey",
+   "Mantis",
+   "Po",
+   "Master Shifu",
+   "Dragon Warrior"
+  ],
+  "milcery": [
+   "Strawberry Milk",
+   "Chocolate Milk",
+   "Matcha Latte",
+   "Blueberry Yogurt",
+   "Blue Hawaii Slush",
+   "Black Sesame"
+  ],
+  "miltank": [
+   "Holstein",
+   "Jersey",
+   "Milka",
+   "Highland Cow",
+   "Belted Galloway",
+   "Golden Calf"
+  ],
+  "mimikyu": [
+   "Raichu Costume",
+   "Ghost Sheet",
+   "Kawaii Merch",
+   "Gengar Costume",
+   "Zombie Pikachu",
+   "Santa Hat"
+  ],
+  "minccino": [
+   "Violet Chinchilla",
+   "Ebony Chinchilla",
+   "Wilson White",
+   "Golden Hamster",
+   "Doctor Who Scarf",
+   "Cinderella"
+  ],
+  "minior": [
+   "Iron Meteorite",
+   "Pallasite",
+   "Chondrite",
+   "Comet Ice",
+   "Moldavite",
+   "Stardust"
+  ],
+  "miraidon": [
+   "Koraidon Colors",
+   "Tron",
+   "Silver Arrow",
+   "Synthwave",
+   "Green Lightning",
+   "Gold Racer"
+  ],
+  "misdreavus": [
+   "Boo Blue",
+   "Blood Red",
+   "Pale Ghost",
+   "Halloween",
+   "Black",
+   "Gold"
+  ],
+  "moltres": [
+   "Articuno Blue Fire",
+   "Zapdos Yellow",
+   "Purple Fire",
+   "Silver Fire",
+   "Black Phoenix",
+   "Green Fire"
+  ],
+  "morelull": [
+   "Fly Agaric",
+   "Poison Mushroom",
+   "Glowing Mycena",
+   "Indigo Milk Cap",
+   "Bleeding Tooth",
+   "1-UP Mushroom"
+  ],
+  "morpeko": [
+   "Snickers",
+   "Dwarf Hamster",
+   "Pac-Man Ghosts",
+   "Matcha Mochi",
+   "Neapolitan",
+   "Milky Way"
+  ],
+  "mr_mime": [
+   "Pierrot",
+   "Harlequin",
+   "Purple Mime",
+   "Circus Clown",
+   "Barbie",
+   "Pennywise"
+  ],
+  "mr_mime_galar": [
+   "Carnival",
+   "Red Tap Dancer",
+   "The Riddler",
+   "Joker",
+   "Fred Astaire",
+   "Ice Queen"
+  ],
+  "mudbray": [
+   "Dapple Gray",
+   "Palomino",
+   "Terracotta Army",
+   "Black Beauty",
+   "Delfts Blauw",
+   "Thracian Gold"
+  ],
+  "mudkip": [
+   "Torchic Colors",
+   "Treecko Colors",
+   "Mudskipper",
+   "Leucistic Axolotl",
+   "Koi",
+   "Glowing Axolotl"
+  ],
+  "munna": [
+   "Mint Dream",
+   "Peach Daydream",
+   "Malayan Tapir",
+   "Nightmare",
+   "Cotton Candy",
+   "Hypnos"
+  ],
+  "murkrow": [
+   "White Raven",
+   "Turquoise",
+   "Iridescent Green",
+   "Hooded Crow",
+   "Mafia Boss",
+   "Huginn"
+  ],
+  "nacli": [
+   "Black Lava Salt",
+   "Himalayan Salt",
+   "Persian Blue Salt",
+   "Smoked Salt",
+   "Amethyst Geode",
+   "Fool's Gold"
+  ],
+  "natu": [
+   "Scarlet Macaw",
+   "Toucan",
+   "Hyacinth Macaw",
+   "Albino",
+   "Quetzal",
+   "Aztec Gold"
+  ],
+  "necrozma": [
+   "Smoky Quartz",
+   "Amethyst",
+   "Ruby",
+   "Emerald",
+   "Diamond",
+   "Ultra Radiance"
+  ],
+  "nickit": [
+   "Sly Cooper",
+   "Pink Panther",
+   "Kitsune",
+   "Melanistic Fox",
+   "Aladdin",
+   "Gringotts Heist"
+  ],
+  "nidoran_f": [
+   "Mint",
+   "Sand",
+   "Coral",
+   "Albino",
+   "Black",
+   "Queen"
+  ],
+  "nidoran_m": [
+   "Orange Poison",
+   "Green",
+   "Gray Hare",
+   "Albino",
+   "Black",
+   "King"
+  ],
+  "nihilego": [
+   "Mauve Stinger",
+   "Neurotoxin",
+   "Fire Jellyfish",
+   "Ultra Black Glass",
+   "Atolla",
+   "Opal"
+  ],
+  "nincada": [
+   "Green Cicada",
+   "Amber",
+   "Bronze",
+   "Albino",
+   "Heavenly",
+   "Japanese Lacquer"
+  ],
+  "noibat": [
+   "Vampire Bat",
+   "Flying Fox",
+   "Honduran White Bat",
+   "Batman",
+   "Subwoofer",
+   "King Ghidorah"
+  ],
+  "nosepass": [
+   "Moai",
+   "Terracotta Army",
+   "Olmec Jade",
+   "Aztec Turquoise",
+   "Totem Pole",
+   "Tutankhamun"
+  ],
+  "numel": [
+   "Dromedary",
+   "Basalt and Lava",
+   "Kawah Ijen",
+   "Albino",
+   "Ice Volcano",
+   "Lava Lamp"
+  ],
+  "nymble": [
+   "Desert Locust",
+   "Kamen Rider",
+   "Rainbow Hopper",
+   "Pink Katydid",
+   "The Joker",
+   "Jade Cricket"
+  ],
+  "oddish": [
+   "White Rafflesia",
+   "Blue Lotus",
+   "Corpse Flower",
+   "Sunflower",
+   "Sakura",
+   "Mandrake"
+  ],
+  "ogerpon": [
+   "Japanese Maple",
+   "Sakura",
+   "Snowy Pines",
+   "Ginkgo",
+   "Oni Night",
+   "Shuten-doji"
+  ],
+  "okidogi": [
+   "Kibidango",
+   "Toxic Mochi",
+   "Oni",
+   "Porcelain Guard",
+   "Night Watch",
+   "Golden Guardians"
+  ],
+  "omanyte": [
+   "Nautilus",
+   "Opal Ammonite",
+   "Twitch Plays",
+   "Amber",
+   "Black Ammonite",
+   "Pink Opal"
+  ],
+  "onix": [
+   "Sandstone",
+   "Basalt",
+   "Crystal Onix",
+   "Quartz",
+   "Lava",
+   "Gold"
+  ],
+  "oranguru": [
+   "Orangutan",
+   "Gandalf the Grey",
+   "Three Wise Monkeys",
+   "Merlin",
+   "Sun Wukong",
+   "Jade Emperor"
+  ],
+  "oricorio": [
+   "Blue Jay",
+   "Flamingo",
+   "Swan Lake",
+   "Salsa",
+   "Bird of Paradise",
+   "Rio Carnival"
+  ],
+  "oricorio_pau": [
+   "Ti Leaf Skirt",
+   "Orchid Lei",
+   "Indigo Pa'u",
+   "Kukui Lei",
+   "Siva Afi",
+   "Moana"
+  ],
+  "oricorio_pom_pom": [
+   "Dallas Cowboys",
+   "Bring It On",
+   "Lakers Girls",
+   "Seahawks",
+   "Miami Dolphins",
+   "Elle Woods"
+  ],
+  "oricorio_sensu": [
+   "Furisode",
+   "Sakura Kimono",
+   "Kurotomesode",
+   "Momiji",
+   "Uguisu",
+   "Shiromuku"
+  ],
+  "orthworm": [
+   "Earthworm",
+   "Steam Locomotive",
+   "Shinkansen",
+   "Dune Sandworm",
+   "Orient Express",
+   "Golden Spike"
+  ],
+  "oshawott": [
+   "Akazonae",
+   "Ninja",
+   "Kappa",
+   "Sakura",
+   "Shogun",
+   "Kinkaku-ji"
+  ],
+  "pachirisu": [
+   "Flying Squirrel",
+   "Emolga Colors",
+   "Mint Chocolate",
+   "Plusle Red",
+   "Aurora",
+   "Pikachu Clone"
+  ],
+  "palkia": [
+   "Tahitian Pearl",
+   "Moon Pearl",
+   "Lava Lamp",
+   "Space Nebula",
+   "Jade",
+   "Mother-of-Pearl"
+  ],
+  "pancham": [
+   "Red Panda",
+   "Photo Negative",
+   "Jade Warrior",
+   "Polar Bear",
+   "Yakuza",
+   "Golden Panda"
+  ],
+  "panpour": [
+   "Cola",
+   "Grape Juice",
+   "Milk",
+   "Pink Lemonade",
+   "Octopus Ink",
+   "Champagne"
+  ],
+  "pansage": [
+   "Purple Broccoli",
+   "Cauliflower",
+   "Beetroot",
+   "Shiitake",
+   "Blooming Bonsai",
+   "Golden Apple"
+  ],
+  "pansear": [
+   "Embers",
+   "Potassium Flame",
+   "White-Hot",
+   "Fireworks",
+   "Campfire",
+   "Phoenix"
+  ],
+  "paras": [
+   "Porcino",
+   "Amethyst Deceiver",
+   "Cordyceps",
+   "Green Russula",
+   "Indigo Milk Cap",
+   "Toad"
+  ],
+  "passimian": [
+   "Oranje",
+   "Springboks",
+   "Les Bleus",
+   "Mandrill",
+   "Wales",
+   "Golden Ball"
+  ],
+  "patrat": [
+   "Meerkat",
+   "Grey Squirrel",
+   "Swiss Guard",
+   "Albino",
+   "Security Camera",
+   "Night Vision"
+  ],
+  "pawmi": [
+   "Dwarf Hamster",
+   "Chocolate Hamster",
+   "Pikachu Cosplay",
+   "Sonic",
+   "Blackout",
+   "Hulk"
+  ],
+  "pawniard": [
+   "Clubs Soldier",
+   "Spades Soldier",
+   "Diamonds Soldier",
+   "White Queen",
+   "Cheshire Cat",
+   "Golden King"
+  ],
+  "pecharunt": [
+   "Momo Peach",
+   "Matcha Mochi",
+   "Silver Blackberry",
+   "Sakura Mochi",
+   "Black Venom",
+   "Immortal Peach"
+  ],
+  "petilil": [
+   "Poppy",
+   "Lavender",
+   "Sunflower",
+   "White Lily",
+   "Black Tulip",
+   "Blue Rose"
+  ],
+  "phanpy": [
+   "Mammoth",
+   "White Elephant",
+   "Pink Elephant",
+   "Lava Elephant",
+   "Ganesha",
+   "Thai Temple"
+  ],
+  "phantump": [
+   "Cherry Blossom",
+   "Maple",
+   "Haunted Forest",
+   "Pandora",
+   "Frosted Tree",
+   "Yggdrasil"
+  ],
+  "pheromosa": [
+   "Cockroach",
+   "Little Black Dress",
+   "Barbiecore",
+   "Tiffany",
+   "Red Carpet",
+   "Golden Oscar Gown"
+  ],
+  "pichu": [
+   "Bulbasaur",
+   "Squirtle",
+   "Charmander",
+   "Jigglypuff Pink",
+   "Marill",
+   "Starry Night"
+  ],
+  "pidgey": [
+   "City Pigeon",
+   "Robin",
+   "Blue Tit",
+   "Albino",
+   "Cardinal",
+   "Bird-of-Paradise"
+  ],
+  "pidove": [
+   "Turtle Dove",
+   "Dove of Peace",
+   "Crowned Pigeon",
+   "Nicobar Pigeon",
+   "Nevermore",
+   "Peacock"
+  ],
+  "pikipek": [
+   "Green Woodpecker",
+   "Cinnamon",
+   "Woody Woodpecker",
+   "Albino",
+   "Miami Vice",
+   "Golden Cannon"
+  ],
+  "pincurchin": [
+   "Red Urchin",
+   "Green Urchin",
+   "Collector Urchin",
+   "Purple Urchin",
+   "Uni",
+   "Crown Urchin"
+  ],
+  "pineco": [
+   "Blue Spruce",
+   "Fresh Cone",
+   "Rusty Iron",
+   "Frosted",
+   "Black Steel",
+   "Gold"
+  ],
+  "pinsir": [
+   "Black Rhino Beetle",
+   "Stag Beetle",
+   "Gold Beetle",
+   "Jewel Beetle",
+   "Pearl Beetle",
+   "Scarab"
+  ],
+  "piplup": [
+   "King Penguin",
+   "Pingu",
+   "Napoleon",
+   "Byzantine Emperor",
+   "Iceberg",
+   "Club Penguin"
+  ],
+  "plusle": [
+   "Swapped",
+   "Pastel",
+   "Battery",
+   "Yin and Yang",
+   "Halloween",
+   "Ladybug & Cat Noir"
+  ],
+  "poipole": [
+   "Wasp",
+   "Toxic Neon",
+   "Sky Blue",
+   "Ruby",
+   "Coral Reef",
+   "Scorpion King"
+  ],
+  "poliwag": [
+   "Orange Dart Frog",
+   "Toad",
+   "Purple Frog",
+   "Albino",
+   "Golden Dart Frog",
+   "Strawberry Frog"
+  ],
+  "poltchageist": [
+   "Hojicha",
+   "Sakura Tea",
+   "Butterfly Pea Tea",
+   "Earl Grey",
+   "Vermilion Lacquer",
+   "Kintsugi"
+  ],
+  "ponyta": [
+   "Chestnut",
+   "Dapple Gray",
+   "Black Horse",
+   "White Horse",
+   "Ghost Horse",
+   "Golden Horse"
+  ],
+  "ponyta_galar": [
+   "Nightmare",
+   "Sun Unicorn",
+   "Crystal",
+   "Fairy Pink",
+   "Starry Night",
+   "Twilight Sparkle"
+  ],
+  "poochyena": [
+   "Blue Merle",
+   "Red Wolf",
+   "Arctic Wolf",
+   "Albino",
+   "Midnight Lycanroc",
+   "Amaterasu"
+  ],
+  "popplio": [
+   "Sea Lion",
+   "Little Mermaid",
+   "Pierrot",
+   "Orca",
+   "Barbie",
+   "Ranchu Goldfish"
+  ],
+  "porygon": [
+   "Wireframe",
+   "Windows 95",
+   "Super Famicom",
+   "Virtual Boy",
+   "Glitch",
+   "GBC Pikachu"
+  ],
+  "psyduck": [
+   "Mallard",
+   "Brown Duck",
+   "Pink Duck",
+   "Albino",
+   "Black Swan",
+   "Ruby Duck"
+  ],
+  "pumpkaboo": [
+   "Butternut",
+   "Kabocha",
+   "Jarrahdale",
+   "Cinderella's Coach",
+   "Stingy Jack",
+   "Golden Pumpkin"
+  ],
+  "purrloin": [
+   "Black Panther",
+   "Snow Leopard",
+   "Leopard",
+   "Cheshire Cat",
+   "Lupin III",
+   "Neon Thief"
+  ],
+  "pyukumuku": [
+   "Yellow Colochirus",
+   "Namako",
+   "Sea Apple",
+   "Albino",
+   "Tigertail",
+   "Cosmic Cucumber"
+  ],
+  "quaxly": [
+   "Mallard",
+   "Flamenco",
+   "Mandarin Duck",
+   "Rubber Duck",
+   "Swan Lake",
+   "Rio Carnival"
+  ],
+  "qwilfish": [
+   "Fugu",
+   "Coral Fish",
+   "Sea Urchin",
+   "Albino",
+   "Black",
+   "Mandarinfish"
+  ],
+  "qwilfish_hisui": [
+   "Sea Urchin",
+   "Coral",
+   "Poison Bomb",
+   "Icefish",
+   "White Red Spikes",
+   "Gold Black Spikes"
+  ],
+  "raging_bolt": [
+   "Thundercloud",
+   "Pink Sunrise",
+   "Suicune Colors",
+   "Tornado",
+   "Red Lightning",
+   "Zeus"
+  ],
+  "raikou": [
+   "Entei Brown",
+   "Suicune Blue",
+   "White Tiger",
+   "Black Tiger",
+   "Green",
+   "Red"
+  ],
+  "ralts": [
+   "Lavender",
+   "Rose",
+   "Sky Blue",
+   "Albino",
+   "Black Swan",
+   "Hyrule Royal"
+  ],
+  "rattata": [
+   "White Lab Rat",
+   "Chinchilla",
+   "Agouti",
+   "Naked Mole-Rat",
+   "Fancy Rat",
+   "Golden Rat"
+  ],
+  "rattata_alola": [
+   "Sewer Gray",
+   "Pinstripe",
+   "Chestnut",
+   "Midnight Blue",
+   "Sewer Mutant",
+   "White and Gold"
+  ],
+  "rayquaza": [
+   "Sky Blue",
+   "Groudon Red",
+   "Golden Dragon King",
+   "Cloud Dragon",
+   "Cosmic",
+   "Blood Moon Dragon"
+  ],
+  "regice": [
+   "Regirock Colors",
+   "Rose Quartz",
+   "Citrine",
+   "Black Ice",
+   "Emerald",
+   "Regigigas"
+  ],
+  "regidrago": [
+   "Bronze Dragon",
+   "Y Ddraig Goch",
+   "White Dragon",
+   "Bahamut",
+   "Jade Dragon",
+   "King Ghidorah"
+  ],
+  "regieleki": [
+   "Cyan Plasma",
+   "The Flash",
+   "White Spark",
+   "Sunset Current",
+   "Raiden",
+   "Circuit Board"
+  ],
+  "regigigas": [
+   "Jade Temple",
+   "Black Granite",
+   "Regice Ice",
+   "Regirock Lava",
+   "Cherry Blossom",
+   "Regieleki"
+  ],
+  "regirock": [
+   "Basalt and Lava",
+   "Regice Colors",
+   "Malachite",
+   "Petra",
+   "Amethyst Geode",
+   "Regigigas"
+  ],
+  "registeel": [
+   "Rust",
+   "Bronze",
+   "Blued Steel",
+   "Gold",
+   "Anodized Titanium",
+   "Regigigas"
+  ],
+  "relicanth": [
+   "True Coelacanth",
+   "Lava Rock",
+   "Nautilus",
+   "Albino",
+   "Jade and Gold",
+   "Aztec Relic"
+  ],
+  "rellor": [
+   "Jewel Scarab",
+   "Ladybug",
+   "Tutankhamun",
+   "Sun God Ra",
+   "Nebula",
+   "Silver Scarab"
+  ],
+  "remoraid": [
+   "Green Octopus",
+   "Blue-Ring Octopus",
+   "Mimic Octopus",
+   "Albino",
+   "Dumbo Octopus",
+   "Kraken"
+  ],
+  "reshiram": [
+   "Yin",
+   "Sunset",
+   "Blue Fire",
+   "White Gold",
+   "Amethyst Fire",
+   "Ho-Oh Colors"
+  ],
+  "rhyhorn": [
+   "Mossy",
+   "White Rhino",
+   "Basalt and Lava",
+   "Amethyst",
+   "Diamond",
+   "Gold"
+  ],
+  "riolu": [
+   "Silver Fox",
+   "Red Fox Aura",
+   "Jade Aura",
+   "Shiba Inu",
+   "Purple Aura",
+   "Sakura Aura"
+  ],
+  "roaring_moon": [
+   "Black Dragon",
+   "Emerald Dragon",
+   "Purple Dragon King",
+   "White Dragon",
+   "Blood Moon",
+   "King Ghidorah"
+  ],
+  "rockruff": [
+   "Gray Wolf",
+   "Arctic Wolf",
+   "Dobermann",
+   "Amethyst Geode",
+   "Lapis Lazuli",
+   "Capitoline Wolf"
+  ],
+  "roggenrola": [
+   "Malachite",
+   "Amethyst Sandstone",
+   "Obsidian & Lava",
+   "Marble & Jade",
+   "Himalayan Salt",
+   "Pyrite"
+  ],
+  "rolycoly": [
+   "Lapis Lazuli",
+   "Copper Mine",
+   "Hematite",
+   "Diamond",
+   "Amethyst Geode",
+   "Gold Vein"
+  ],
+  "rookidee": [
+   "Magpie",
+   "Copper Armor",
+   "White Raven",
+   "Red Knight",
+   "Glossy Starling",
+   "Huginn & Muninn"
+  ],
+  "roselia": [
+   "White & Gold Rose",
+   "Dutch Tulips",
+   "Cactus Bloom",
+   "Albino",
+   "Enchanted Rose",
+   "Poison Flower"
+  ],
+  "rotom": [
+   "50s Fridge",
+   "Smeg Retro",
+   "Stainless Steel",
+   "Matte Black",
+   "Barbie Kitchen",
+   "Fabergé"
+  ],
+  "rowlet": [
+   "Barn Owl",
+   "Snowy Owl",
+   "Cherry Blossom",
+   "Lapland Owl",
+   "Ghost Archer",
+   "Owl of Athena"
+  ],
+  "rufflet": [
+   "Bundesadler",
+   "Mexico",
+   "Zambia",
+   "Poland",
+   "Egypt",
+   "Kazakhstan"
+  ],
+  "sableye": [
+   "Gold and Silver",
+   "Obsidian",
+   "Diamond and Pearl",
+   "Albino",
+   "Ruby and Sapphire",
+   "Gollum"
+  ],
+  "salandit": [
+   "Gila Monster",
+   "Axolotl",
+   "Blue Poison Frog",
+   "Poison Ivy",
+   "Lava Flow",
+   "Cruella de Vil"
+  ],
+  "sandile": [
+   "Nile Crocodile",
+   "Black Caiman",
+   "Sobek",
+   "Albino Alligator",
+   "Sandstorm",
+   "Pharaoh's Jewel"
+  ],
+  "sandshrew": [
+   "Pangolin",
+   "Petra Red",
+   "Hedgehog",
+   "Albino",
+   "Pink Armadillo",
+   "Shadow"
+  ],
+  "sandshrew_alola": [
+   "Emerald Ice",
+   "Rose Quartz",
+   "Copper Ice",
+   "Amethyst",
+   "Golden Ice",
+   "Polar Night"
+  ],
+  "sandy_shocks": [
+   "Desert Sand",
+   "Horseshoe Magnet",
+   "Malachite",
+   "Fulgurite",
+   "Plasma Magnetite",
+   "Fool's Gold"
+  ],
+  "sandygast": [
+   "North Sea Beach",
+   "Pink Sand Beach",
+   "Snow Castle",
+   "Olivine Beach",
+   "Sea Glass",
+   "Haunted Castle"
+  ],
+  "sawk": [
+   "Kyokushin",
+   "Sensei",
+   "Throh Swap",
+   "Cherry Blossom",
+   "Kung Fu Panda",
+   "Olympic Gold"
+  ],
+  "scatterbug": [
+   "Highland",
+   "Garden",
+   "Marine",
+   "Meadow",
+   "Savanna",
+   "Sun"
+  ],
+  "scorbunny": [
+   "Oranjegekte",
+   "Canarinho",
+   "Brown Hare",
+   "Ghost Fire",
+   "Bugs Bunny",
+   "Ballon d'Or"
+  ],
+  "scraggy": [
+   "Gecko",
+   "Punk",
+   "Fresh Prince",
+   "Albino Gecko",
+   "Mafia",
+   "Vaporwave"
+  ],
+  "scream_tail": [
+   "Cave Bear",
+   "Yeti",
+   "Red Ochre",
+   "Pastel Mint",
+   "The Scream",
+   "Starry Nightmare"
+  ],
+  "scyther": [
+   "Orchid Mantis",
+   "Brown Mantis",
+   "Blue Mantis",
+   "Albino",
+   "Ninja",
+   "Samurai"
+  ],
+  "seedot": [
+   "Unripe Acorn",
+   "Tengu",
+   "Sakura",
+   "Albino",
+   "Oni",
+   "Winter Demon"
+  ],
+  "seel": [
+   "Dugong",
+   "Elephant Seal",
+   "Pink River Dolphin",
+   "Ice Blue",
+   "Black Sea Lion",
+   "Amber"
+  ],
+  "sentret": [
+   "Silver Ferret",
+   "Mongoose",
+   "Polecat",
+   "Albino Ferret",
+   "Meerkat",
+   "Golden Ferret"
+  ],
+  "sewaddle": [
+   "Autumn Leaf",
+   "Copper Beech",
+   "Leaf Insect",
+   "Hoarfrost",
+   "Haute Couture",
+   "Rumpelstiltskin"
+  ],
+  "shaymin": [
+   "Lavender Field",
+   "Sunflower",
+   "Autumn Field",
+   "Cornflower",
+   "Edelweiss",
+   "Klimt"
+  ],
+  "shellder": [
+   "Abalone",
+   "Mussel",
+   "Cockle",
+   "Mother-of-Pearl",
+   "Green-Lip Mussel",
+   "Golden Pearl"
+  ],
+  "shellos": [
+   "Spanish Dancer",
+   "Lemon Nudibranch",
+   "Purple Sea Hare",
+   "Albino",
+   "Black Sea Slug",
+   "Rainbow Nudibranch"
+  ],
+  "shelmet": [
+   "Michelangelo",
+   "Donatello",
+   "Leonardo",
+   "Raphael",
+   "Splinter",
+   "Shredder"
+  ],
+  "shieldon": [
+   "Triceratops",
+   "Brick Castle",
+   "Knight's Armor",
+   "Imperial Jade",
+   "Obsidian & Lava",
+   "Captain America"
+  ],
+  "shinx": [
+   "Eurasian Lynx",
+   "White Tiger",
+   "Pink Panther",
+   "Garfield",
+   "Tron",
+   "Raijin"
+  ],
+  "shroodle": [
+   "Ring-Tailed Lemur",
+   "Banksy",
+   "Neon Graffiti",
+   "Aye-Aye",
+   "Keith Haring",
+   "Dali"
+  ],
+  "shroomish": [
+   "Fly Agaric",
+   "Chanterelle",
+   "Toad",
+   "Albino",
+   "Amethyst Deceiver",
+   "Glowing Mushroom"
+  ],
+  "shuckle": [
+   "Green Shell",
+   "Purple Shell",
+   "Black Shell",
+   "Porcelain",
+   "Berry Juice",
+   "Golden Shell"
+  ],
+  "shuppet": [
+   "Billy",
+   "Beetlejuice",
+   "Marionette",
+   "Carrie",
+   "Corpse Bride",
+   "Harlequin"
+  ],
+  "sigilyph": [
+   "Nazca Lines",
+   "Maya",
+   "Delfts Blauw",
+   "Mondrian",
+   "Warhol Pop Art",
+   "Tron"
+  ],
+  "silicobra": [
+   "Oasis",
+   "White Sands",
+   "Black Sand",
+   "Bermuda Pink Sand",
+   "Shai-Hulud",
+   "Pharaoh's Uraeus"
+  ],
+  "sinistea": [
+   "Tea Ceremony",
+   "Delfts Blauw",
+   "Rosehip Tea",
+   "Kulhad Chai",
+   "Butterfly Pea Tea",
+   "Kintsugi"
+  ],
+  "sizzlipede": [
+   "Giant Centipede",
+   "Green Fire",
+   "Purple Lava",
+   "White-Hot",
+   "Kawah Ijen",
+   "Dragon Dance"
+  ],
+  "skarmory": [
+   "Copper",
+   "Patina Bronze",
+   "Gunmetal",
+   "Anodized Titanium",
+   "Gold",
+   "Excalibur"
+  ],
+  "skiddo": [
+   "Autumn",
+   "Cherry Blossom",
+   "Mountain Goat",
+   "Provence Lavender",
+   "Black Phillip",
+   "Ginkgo"
+  ],
+  "skitty": [
+   "Siamese",
+   "Doraemon",
+   "Gray Tabby",
+   "Albino",
+   "Cheshire Cat",
+   "Luna"
+  ],
+  "skorupi": [
+   "Emperor Scorpion",
+   "Bark Scorpion",
+   "Desert Scorpion",
+   "Blacklight",
+   "Toxic Green",
+   "Scorpion King"
+  ],
+  "skrelp": [
+   "Algal Bloom",
+   "Kelp Forest",
+   "Blue Dragon",
+   "Toxic Waste",
+   "Ink-Black Reef",
+   "Jade Dragon"
+  ],
+  "skwovet": [
+   "Gray Squirrel",
+   "Black Squirrel",
+   "Giant Squirrel",
+   "Albino",
+   "Ratatoskr",
+   "Scrooge McDuck"
+  ],
+  "slakoth": [
+   "Gray Sloth",
+   "Algae Fur",
+   "Golden Monkey",
+   "Albino",
+   "Silverback",
+   "Garfield"
+  ],
+  "slither_wing": [
+   "Atlas Moth",
+   "Luna Moth",
+   "Blue Morpho",
+   "Mourning Cloak",
+   "Rosy Maple Moth",
+   "Phoenix"
+  ],
+  "slowpoke": [
+   "Blue",
+   "Mint",
+   "Sloth Brown",
+   "Albino",
+   "Orange",
+   "Hipster"
+  ],
+  "slowpoke_galar": [
+   "Poison Herb",
+   "Sky Blue",
+   "Galar Poison",
+   "Peach",
+   "Toxapex",
+   "Galarica Gold"
+  ],
+  "slugma": [
+   "Blue Fire",
+   "Copper Flame",
+   "Purple Lava",
+   "Cooled",
+   "White-Hot",
+   "Star Nebula"
+  ],
+  "smeargle": [
+   "Picasso Blue",
+   "Picasso Rose",
+   "Van Gogh",
+   "Frida Kahlo",
+   "Andy Warhol",
+   "Klimt"
+  ],
+  "smoliv": [
+   "Tapenade",
+   "Kalamata",
+   "Cherry Blossom",
+   "Autumn Orchard",
+   "Valencia Orange",
+   "Athena's Olive"
+  ],
+  "smoochum": [
+   "Summer",
+   "Gothic",
+   "Mermaid",
+   "Cotton Candy",
+   "Ice Queen",
+   "Silver and Gold"
+  ],
+  "sneasel": [
+   "Stoat",
+   "Marten",
+   "Green",
+   "Purple",
+   "Red",
+   "Gold"
+  ],
+  "sneasel_hisui": [
+   "Pine Marten",
+   "Toxic Green",
+   "Blood Red",
+   "Snow Fox",
+   "Ninja",
+   "Gold"
+  ],
+  "snivy": [
+   "Maple Leaf",
+   "Cherry Blossom",
+   "Byzantine Purple",
+   "Albino",
+   "Night Serpent",
+   "Golden Empress"
+  ],
+  "snom": [
+   "Aurora",
+   "Citrine Crystal",
+   "Rime on Roses",
+   "Black Ice",
+   "Ruby Ice",
+   "Sapphire & Gold"
+  ],
+  "snorlax": [
+   "Grizzly",
+   "Panda",
+   "Polar Bear",
+   "Totoro",
+   "Hungry Kirby",
+   "Golden Statue"
+  ],
+  "snorunt": [
+   "Red Oni",
+   "Northern Lights",
+   "Matcha",
+   "Albino",
+   "Yuki-onna",
+   "Lich King"
+  ],
+  "snover": [
+   "Snowy Maple",
+   "Snowy Sakura",
+   "Blue Spruce",
+   "Yeti",
+   "Ice Queen",
+   "Lothlorien"
+  ],
+  "snubbull": [
+   "English Bulldog",
+   "Brindle",
+   "Black",
+   "Fawn",
+   "Blue Frenchie",
+   "Gold"
+  ],
+  "sobble": [
+   "Panther Chameleon",
+   "James Bond",
+   "Jackson Chameleon",
+   "Axolotl",
+   "Ghillie Sniper",
+   "Goldfinger"
+  ],
+  "solosis": [
+   "Gram Stain",
+   "Gram-Negative",
+   "Ziehl-Neelsen",
+   "Agar Plate",
+   "Darkfield",
+   "Colloidal Gold"
+  ],
+  "spearow": [
+   "Kestrel",
+   "Woodpecker",
+   "Jay",
+   "Albino",
+   "Green Woodpecker",
+   "Crowned Crane"
+  ],
+  "spheal": [
+   "Gray Seal",
+   "Sea Lion",
+   "Seal Pup",
+   "Poke Ball",
+   "Gold Medal",
+   "Orca"
+  ],
+  "spinarak": [
+   "Black Widow",
+   "Tarantula",
+   "Peacock Spider",
+   "Albino Cave Spider",
+   "Garden Spider",
+   "Venom and Carnage"
+  ],
+  "spinda": [
+   "Giant Panda",
+   "Red Panda",
+   "Giraffe",
+   "Strawberry",
+   "Psychedelic",
+   "Lavender and Gold"
+  ],
+  "spiritomb": [
+   "Blue Spirit Fire",
+   "Blood Moon",
+   "Ectoplasm",
+   "Smoke & Ash",
+   "Black Hole",
+   "108 Golden Souls"
+  ],
+  "spoink": [
+   "Farm Pig",
+   "Wild Boar",
+   "Mother-of-Pearl",
+   "Albino",
+   "Miss Piggy",
+   "Ganon"
+  ],
+  "sprigatito": [
+   "Japanese Maple",
+   "Lavender Field",
+   "Hanami",
+   "Monet's Lilies",
+   "Le Chat Noir",
+   "Klimt's Kiss"
+  ],
+  "spritzee": [
+   "Peach",
+   "Eau de Cologne",
+   "Peppermint",
+   "Chanel No. 5",
+   "Marie Antoinette",
+   "Oud"
+  ],
+  "squawkabilly": [
+   "Kea",
+   "Galah",
+   "Eastern Rosella",
+   "Scarlet Macaw",
+   "Rainbow Lorikeet",
+   "Black Cockatoo"
+  ],
+  "squirtle": [
+   "Charmander Colors",
+   "Soup Turtle",
+   "Koopa",
+   "Albino",
+   "Ninja Turtle",
+   "Vaporwave"
+  ],
+  "stakataka": [
+   "Red Brick",
+   "Sandstone",
+   "Amethyst Wall",
+   "Marble",
+   "Obsidian",
+   "Diamond Block"
+  ],
+  "stantler": [
+   "Forest Spirit",
+   "Reindeer",
+   "Red Deer",
+   "Melanistic",
+   "Mythic Blue Deer",
+   "Silver Hind"
+  ],
+  "starly": [
+   "Summer Starling",
+   "Superb Starling",
+   "Rosy Starling",
+   "Bali Myna",
+   "Magpie",
+   "Quetzal"
+  ],
+  "staryu": [
+   "Red Starfish",
+   "Blue Starfish",
+   "Cushion Star",
+   "Crown-of-Thorns",
+   "Emerald and Ruby",
+   "Patrick Star"
+  ],
+  "stonjourner": [
+   "Petra Sandstone",
+   "Mossy Hunebed",
+   "Moai",
+   "Carrara Marble",
+   "Obsidian",
+   "El Dorado"
+  ],
+  "stufful": [
+   "Teddy Bear",
+   "Polar Bear",
+   "Grumpy Bear",
+   "Gummy Bear",
+   "Lotso",
+   "Steiff Teddy"
+  ],
+  "stunfisk": [
+   "Plaice",
+   "Peacock Flounder",
+   "Peat Bog",
+   "Albino Flatfish",
+   "Tar Pit",
+   "Pikachu Flatfish"
+  ],
+  "stunfisk_galar": [
+   "Rusty Bear Trap",
+   "Venus Flytrap",
+   "Copper Patina",
+   "Cast Iron",
+   "Army Camo",
+   "Gold & Ruby Trap"
+  ],
+  "stunky": [
+   "Striped Skunk",
+   "Toxic Green",
+   "Red Panda",
+   "Garbage Dump",
+   "Sulfur",
+   "Cosmic Nebula"
+  ],
+  "suicune": [
+   "Raikou Yellow",
+   "Entei Brown",
+   "Pink",
+   "Black",
+   "Green",
+   "White"
+  ],
+  "sunkern": [
+   "Velvet Queen",
+   "Italian White",
+   "Pink",
+   "Purple",
+   "Blue",
+   "Van Gogh"
+  ],
+  "surskit": [
+   "Red Damselfly",
+   "Peacock Butterfly",
+   "Green Darner",
+   "Albino",
+   "Mothra",
+   "Luxury Ball"
+  ],
+  "swablu": [
+   "Cotton Candy",
+   "Thundercloud",
+   "Sunset",
+   "Peacock",
+   "Kinto-un",
+   "Aurora"
+  ],
+  "swinub": [
+   "Snow Boar",
+   "Duroc",
+   "Wild Boar",
+   "Woolly Rhino",
+   "Potbellied Pig",
+   "Gold"
+  ],
+  "swirlix": [
+   "Chocolate Mousse",
+   "Matcha",
+   "Bubblegum",
+   "Ube",
+   "Licorice Allsorts",
+   "Gold Leaf Dessert"
+  ],
+  "tadbulb": [
+   "Neon Sign",
+   "Blue Poison Frog",
+   "Strawberry Frog",
+   "Golden Toad",
+   "Firefly",
+   "Tesla Coil"
+  ],
+  "taillow": [
+   "Robin",
+   "Kingfisher",
+   "Cardinal",
+   "Albino",
+   "Blue-Gold Macaw",
+   "Swallowtail"
+  ],
+  "tandemaus": [
+   "House Mouse",
+   "Jerry",
+   "Gouda",
+   "Mickey Mouse",
+   "Sugar Mouse",
+   "Year of the Rat"
+  ],
+  "tangela": [
+   "Autumn Vines",
+   "Wisteria",
+   "Black Vines",
+   "Spaghetti",
+   "Bougainvillea",
+   "Golden Vines"
+  ],
+  "tapu_bulu": [
+   "Moss & Oak",
+   "Highland Cattle",
+   "Traje de Luces",
+   "Kalo",
+   "Birch Bark",
+   "Golden Calf"
+  ],
+  "tapu_fini": [
+   "Sea Mist",
+   "Coral Reef",
+   "Kelp Forest",
+   "Vaadhoo Beach",
+   "Paua Shell",
+   "Sunken Treasure"
+  ],
+  "tapu_koko": [
+   "Red Junglefowl",
+   "Tesla Coil",
+   "White Leghorn",
+   "Green Junglefowl",
+   "Supercell",
+   "Kamehameha Cloak"
+  ],
+  "tapu_lele": [
+   "Brimstone",
+   "Monarch",
+   "Blue Morpho",
+   "Mewtwo",
+   "Luna Moth",
+   "Lisa Frank"
+  ],
+  "tarountula": [
+   "Golden Orb Weaver",
+   "Peacock Spider",
+   "Crab Spider",
+   "Spider-Man",
+   "Black Widow",
+   "Greenbottle Blue"
+  ],
+  "tatsugiri": [
+   "Saba",
+   "Unagi",
+   "Kappa Maki",
+   "Ika Sumi",
+   "Ube Mochi",
+   "Kinpaku"
+  ],
+  "tauros": [
+   "Spanish Bull",
+   "Brahman",
+   "Highland Cattle",
+   "Bison",
+   "Babe the Blue Ox",
+   "Minotaur"
+  ],
+  "tauros_paldea": [
+   "Bison",
+   "Team Magma",
+   "Colorado",
+   "Ensabanado",
+   "Indigo Gold Horns",
+   "Golden Bull"
+  ],
+  "teddiursa": [
+   "Polar Bear",
+   "Panda",
+   "Blue Bear",
+   "Grizzly",
+   "Care Bear",
+   "Winnie the Pooh"
+  ],
+  "tentacool": [
+   "Compass Jellyfish",
+   "Blood Jellyfish",
+   "Moon Jellyfish",
+   "Fried Egg Jelly",
+   "Toxic Green",
+   "Galaxy Jellyfish"
+  ],
+  "tepig": [
+   "Wild Boar",
+   "Pata Negra",
+   "Peppa Pig",
+   "Hampshire Pig",
+   "Chocolate Pig",
+   "Gullinbursti"
+  ],
+  "terapagos": [
+   "Ruby Tera",
+   "Emerald Tera",
+   "Amethyst Tera",
+   "Opal",
+   "Onyx",
+   "Sun Crystal"
+  ],
+  "terrakion": [
+   "Pink Granite",
+   "Basalt",
+   "Uluru",
+   "Marble",
+   "Malachite",
+   "Lapis Lazuli"
+  ],
+  "throh": [
+   "Competition Judo",
+   "Sensei",
+   "Sawk Swap",
+   "Cherry Blossom",
+   "Kung Fu Panda",
+   "Olympic Gold"
+  ],
+  "thundurus": [
+   "Red Sprite",
+   "Ball Lightning",
+   "Storm Cloud",
+   "White Flash",
+   "St. Elmo's Fire",
+   "Zeus"
+  ],
+  "timburr": [
+   "Bob the Builder",
+   "Hulk",
+   "The Thing",
+   "Michelangelo",
+   "Smurf",
+   "Oni"
+  ],
+  "ting_lu": [
+   "Autumn",
+   "Spring",
+   "Winter",
+   "Jade & Lacquer",
+   "The Curse",
+   "Shang Bronze"
+  ],
+  "tinkatink": [
+   "Forge Fire",
+   "Mjolnir",
+   "Harley Quinn",
+   "Mint & Rose Gold",
+   "Gothic",
+   "Hephaestus"
+  ],
+  "tirtouga": [
+   "Koopa Troopa",
+   "Paratroopa",
+   "Leatherback",
+   "Hawksbill",
+   "Coral Reef",
+   "Blue Shell"
+  ],
+  "toedscool": [
+   "Fly Agaric",
+   "Toadsworth",
+   "Blue Pinkgill",
+   "Amethyst Deceiver",
+   "Inky Cap",
+   "Ghost Fungus"
+  ],
+  "togedemaru": [
+   "Brown Hedgehog",
+   "Mint Hedgehog",
+   "Pikachu",
+   "Sonic",
+   "Neon Lightning",
+   "Copper Coil"
+  ],
+  "togepi": [
+   "Kinder Surprise",
+   "Pink Easter Egg",
+   "Mint Choc Chip",
+   "Night Egg",
+   "Blue Faberge",
+   "Golden Blessing"
+  ],
+  "torchic": [
+   "Treecko Colors",
+   "Mudkip Colors",
+   "Flamingo",
+   "Albino",
+   "Ayam Cemani",
+   "Captain Falcon"
+  ],
+  "torkoal": [
+   "Coal and Ash",
+   "Delfts Blauw",
+   "Poison Gas",
+   "Albino",
+   "Sulfur Cloud",
+   "Lava Fountain"
+  ],
+  "tornadus": [
+   "Sirocco",
+   "Mistral",
+   "Harmattan",
+   "Bora",
+   "Santa Ana",
+   "Aeolus"
+  ],
+  "totodile": [
+   "Chikorita Colors",
+   "Cyndaquil Colors",
+   "Treecko Colors",
+   "Albino",
+   "Shadow",
+   "Pokemon Crystal"
+  ],
+  "toxel": [
+   "Iron Maiden",
+   "Ziggy Stardust",
+   "Blue Poison Frog",
+   "Toxic",
+   "Hatsune Miku",
+   "Daft Punk"
+  ],
+  "trapinch": [
+   "Desert to Oasis",
+   "Garchomp Colors",
+   "Dragonfly",
+   "Albino",
+   "Fire",
+   "Ghidorah"
+  ],
+  "treecko": [
+   "Torchic Colors",
+   "Mudkip Colors",
+   "Tokay Gecko",
+   "Albino",
+   "Pikachu",
+   "Cyberpunk"
+  ],
+  "tropius": [
+   "Autumn",
+   "Cherry Tree",
+   "Dragon Fruit",
+   "Albino",
+   "Ginkgo",
+   "Winter"
+  ],
+  "trubbish": [
+   "Black Bin Bag",
+   "Commercial Waste",
+   "Plastic Soup",
+   "Barbie Trash",
+   "Recycling Bag",
+   "Golden Trash Can"
+  ],
+  "turtonator": [
+   "Cooled Lava",
+   "Bowser",
+   "Ice Volcano",
+   "Amethyst Volcano",
+   "White Phosphorus",
+   "Gold & Platinum"
+  ],
+  "turtwig": [
+   "Autumn Maple",
+   "Cherry Blossom",
+   "Galapagos Tortoise",
+   "Winter Forest",
+   "Jacaranda",
+   "Yggdrasil"
+  ],
+  "tympole": [
+   "Natterjack Toad",
+   "Red-Eyed Tree Frog",
+   "Tomato Frog",
+   "Glass Frog",
+   "Subwoofer",
+   "Frog Prince"
+  ],
+  "tynamo": [
+   "Ribbon Eel",
+   "Electric Eel",
+   "Dragon Moray",
+   "Zebra Moray",
+   "Bioluminescence",
+   "Goldtail Moray"
+  ],
+  "type_null": [
+   "Lab Steel",
+   "Rust & Patina",
+   "Evangelion Unit-01",
+   "Camo Prototype",
+   "Gladion",
+   "RKS Prism"
+  ],
+  "typhlosion_hisui": [
+   "Blue Ghost Fire",
+   "Green Wisp",
+   "Johto Fire",
+   "White Fire",
+   "Red on Black",
+   "Golden Fire"
+  ],
+  "tyrogue": [
+   "Bruce Lee",
+   "Karate Gi",
+   "Luchador",
+   "Shaolin",
+   "Ninja",
+   "Championship Belt"
+  ],
+  "tyrunt": [
+   "Toy T. Rex",
+   "Godzilla",
+   "Fossil",
+   "Barney",
+   "Albino",
+   "Amber"
+  ],
+  "unown": [
+   "Sandstone",
+   "Hieroglyph Gold",
+   "Jade",
+   "Amethyst",
+   "Obsidian Red",
+   "Unown Dimension"
+  ],
+  "uxie": [
+   "Trio Swap",
+   "Moon Silver",
+   "Jade Buddha",
+   "Obsidian & Fire",
+   "Stardust",
+   "Three Jewels"
+  ],
+  "vanillite": [
+   "Strawberry",
+   "Chocolate Wafer",
+   "Pistachio",
+   "Ube",
+   "Black Sesame",
+   "Golden Opulence"
+  ],
+  "varoom": [
+   "Rosso Corsa",
+   "Gulf Racing",
+   "Rust Bucket",
+   "Mercedes F1",
+   "Lamborghini Green",
+   "Gold Lowrider"
+  ],
+  "veluza": [
+   "Salmon Fillet",
+   "Bluefin Tuna",
+   "Barracuda",
+   "Kohaku Koi",
+   "Swordfish",
+   "Goldfish"
+  ],
+  "venipede": [
+   "Scolopendra",
+   "Blue Centipede",
+   "Toxic Green",
+   "Skeleton",
+   "Lava",
+   "Chrome"
+  ],
+  "venonat": [
+   "Rosy Maple Moth",
+   "Luna Moth",
+   "Atlas Moth",
+   "Death's-Head Moth",
+   "White Moth",
+   "Mothra"
+  ],
+  "victini": [
+   "Laurel Wreath",
+   "Ferrari",
+   "Mewtwo Colors",
+   "Chocolate Egg",
+   "V for Victory",
+   "Olympic Gold"
+  ],
+  "virizion": [
+   "Autumn Maple",
+   "Holly",
+   "Ginkgo",
+   "Frosted",
+   "Copper Beech",
+   "Silver Fir"
+  ],
+  "vivillon": [
+   "Highland Pattern",
+   "Garden Pattern",
+   "Marine Pattern",
+   "Meadow Pattern",
+   "Savanna Pattern",
+   "Sun Pattern"
+  ],
+  "volbeat": [
+   "Swapped",
+   "Fire and Ice",
+   "Ladybug & Scarab",
+   "Albino & Melanism",
+   "Mario and Luigi",
+   "Daft Punk"
+  ],
+  "volcanion": [
+   "Inverted",
+   "Basalt",
+   "Steampunk",
+   "Purple Magma",
+   "Grand Prismatic",
+   "Gold Steam Engine"
+  ],
+  "voltorb": [
+   "Love Ball",
+   "Friend Ball",
+   "Premier Ball",
+   "Fast Ball",
+   "Cherish Ball",
+   "Master Ball"
+  ],
+  "vullaby": [
+   "Lammergeier",
+   "King Vulture",
+   "Himalayan Vulture",
+   "Calavera",
+   "Wicked Witch",
+   "Golden Vulture"
+  ],
+  "vulpix": [
+   "Gray Fox",
+   "Fennec",
+   "Melanistic Fox",
+   "Albino",
+   "Ghost Fire",
+   "Amaterasu"
+  ],
+  "vulpix_alola": [
+   "Peach",
+   "Kanto Swap",
+   "Mint",
+   "Glacier",
+   "Midnight Blue",
+   "Aurora"
+  ],
+  "wailmer": [
+   "Tropical Turquoise",
+   "Orca",
+   "Migaloo",
+   "Pink River Dolphin",
+   "Zeppelin",
+   "Tennis Ball"
+  ],
+  "walking_wake": [
+   "Mugger Crocodile",
+   "Raikou Colors",
+   "Entei Colors",
+   "Suicune Colors",
+   "Inky Water",
+   "Ho-Oh"
+  ],
+  "wattrel": [
+   "Gannet",
+   "Blue-Footed Booby",
+   "Purple Lightning",
+   "Cardinal",
+   "Thundercloud",
+   "Thunderbird"
+  ],
+  "weedle": [
+   "Hornet",
+   "Carpenter Bee",
+   "Red Wasp",
+   "Violet Carpenter",
+   "Albino",
+   "Black Hornet"
+  ],
+  "weezing_galar": [
+   "Copper Pipes",
+   "Victorian London",
+   "Cast Iron",
+   "Steampunk Brass",
+   "Ghost Factory",
+   "Golden Chimneys"
+  ],
+  "whismur": [
+   "Loudspeaker",
+   "Elephant",
+   "KISS",
+   "Albino",
+   "Gold Record",
+   "Banshee"
+  ],
+  "wiglett": [
+   "Orange Garden Eel",
+   "Green Moray",
+   "Zebra Moray",
+   "Coral Garden",
+   "Sea Krait",
+   "Hydrothermal Vent"
+  ],
+  "wimpod": [
+   "Woodlouse",
+   "Samurai",
+   "Lobster Red",
+   "Round Table Knight",
+   "Deep-Sea Light",
+   "Golden Armor"
+  ],
+  "wingull": [
+   "Brown Pelican",
+   "Puffin",
+   "Galah",
+   "Melanistic",
+   "Mailman",
+   "Thunderbird"
+  ],
+  "wishiwashi": [
+   "Mackerel",
+   "Red Salmon",
+   "Kelp School",
+   "Ghost Fish",
+   "Purple School",
+   "Koi"
+  ],
+  "wo_chien": [
+   "Autumn",
+   "Spring",
+   "Winter",
+   "Jade & Lacquer",
+   "The Curse",
+   "Shang Bronze"
+  ],
+  "woobat": [
+   "Flying Fox",
+   "Honduran White Bat",
+   "Valentine",
+   "Dracula",
+   "Halloween",
+   "Batman"
+  ],
+  "wooloo": [
+   "Drents Heideschaap",
+   "Pink Dyed Sheep",
+   "Herdwick",
+   "Counting Sheep",
+   "Chia Pet",
+   "Golden Fleece"
+  ],
+  "wooper": [
+   "Wild Type",
+   "Golden Axolotl",
+   "Melanistic",
+   "Albino",
+   "Copper",
+   "Lavender"
+  ],
+  "wooper_paldea": [
+   "Blue Dart Frog",
+   "Swamp Green",
+   "Black and Red",
+   "Pink Axolotl",
+   "Lava",
+   "Gold"
+  ],
+  "wurmple": [
+   "Monarch",
+   "Blue Morpho",
+   "Luna Moth",
+   "Melanistic",
+   "Kanto Cousins",
+   "Neon"
+  ],
+  "wynaut": [
+   "Orange",
+   "Green",
+   "Purple",
+   "Albino",
+   "SpongeBob",
+   "Punching Bag"
+  ],
+  "xerneas": [
+   "Sika Deer",
+   "Cernunnos",
+   "Nara Sakura Deer",
+   "Nightwalker",
+   "Autumn Stag",
+   "Ceryneian Hind"
+  ],
+  "xurkitree": [
+   "Copper Wire",
+   "Christmas Lights",
+   "Neon Tube",
+   "Plasma Ball",
+   "Emergency Power",
+   "Gold Fiber Optic"
+  ],
+  "yamask": [
+   "Copper Mask",
+   "Jade Burial Suit",
+   "Dia de Muertos",
+   "Blood Moon",
+   "Obsidian",
+   "Rose Gold & Lapis"
+  ],
+  "yamask_galar": [
+   "Terracotta",
+   "Rosetta Stone",
+   "Gilgamesh Tablet",
+   "Jade Tablet",
+   "Lapis Lazuli",
+   "Sumerian Gold"
+  ],
+  "yamper": [
+   "Doge",
+   "Husky",
+   "101 Dalmatians",
+   "Scooby-Doo",
+   "Tron",
+   "Laika"
+  ],
+  "yanma": [
+   "Blue Hawker",
+   "Emperor Dragonfly",
+   "Purple Dragonfly",
+   "Gold Dragonfly",
+   "Fire Damsel",
+   "Damselfly"
+  ],
+  "yungoos": [
+   "Meerkat",
+   "Sherlock Holmes",
+   "Rikki-Tikki-Tavi",
+   "Film Noir",
+   "Pink Panther",
+   "Golden Badge"
+  ],
+  "yveltal": [
+   "Vulture",
+   "Blue Death Fire",
+   "Necrosis",
+   "Angel of Death",
+   "Nidhogg",
+   "Kronos"
+  ],
+  "zacian": [
+   "Sif",
+   "Fenrir",
+   "The Green Knight",
+   "Royal Purple",
+   "Skoll & Hati",
+   "Tiangou"
+  ],
+  "zangoose": [
+   "Tiger & Mamba",
+   "Leopard & Coral",
+   "Ice and Fire",
+   "Panther & Python",
+   "Siamese & Quetzal",
+   "Bastet & Apophis"
+  ],
+  "zapdos": [
+   "Articuno Blue",
+   "Moltres Red",
+   "Purple Lightning",
+   "White Lightning",
+   "Storm Bird",
+   "Thunderbird"
+  ],
+  "zarude": [
+   "Orangutan",
+   "Snowflake",
+   "Death Vine",
+   "Tropical Night",
+   "Sakura Vine",
+   "Hanuman"
+  ],
+  "zekrom": [
+   "Yang",
+   "Stormy Night",
+   "Blood Storm",
+   "Gamma Radiation",
+   "Raiden",
+   "Zeus"
+  ],
+  "zeraora": [
+   "Black Panther",
+   "Bengal Tiger",
+   "The Flash",
+   "Plasma Purple",
+   "Kawasaki Green",
+   "Magical Girl"
+  ],
+  "zigzagoon": [
+   "Raccoon",
+   "Strawberry Milk",
+   "Pikachu Colors",
+   "Albino",
+   "Sonic",
+   "Vaporwave"
+  ],
+  "zigzagoon_galar": [
+   "Tiger Punk",
+   "Rasta Punk",
+   "Ziggy Stardust",
+   "Cyberpunk",
+   "Joker",
+   "Daft Punk"
+  ],
+  "zorua": [
+   "Silver Fox",
+   "Arctic Fox",
+   "Loki",
+   "Fennec",
+   "Joker",
+   "Kurama"
+  ],
+  "zorua_hisui": [
+   "Will-o'-the-Wisp",
+   "Night Fox",
+   "Inari",
+   "Sakura Spirit",
+   "Sumi-e",
+   "Sunset"
+  ],
+  "zubat": [
+   "Vampire Bat",
+   "Flying Fox",
+   "Batman",
+   "Albino",
+   "Dracula",
+   "Starry Night"
+  ],
+  "zygarde": [
+   "Red Cells",
+   "Tron",
+   "Lava",
+   "Ultra Space",
+   "Desert",
+   "Quetzalcoatl"
+  ]
+ }
+}

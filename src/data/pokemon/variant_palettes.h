@@ -1,5 +1,568 @@
 // Gegenereerd door tools/grounded/variants/variants.py; niet met de hand bewerken.
 
+static const u8 sVariantNames_bulbasaur[] = _("Charmander Colors$Squirtle Colors$Poison Dart Frog$Albino$Sakura$Radioactive");
+static const u8 sVariantNames_charmander[] = _("Squirtle Colors$Bulbasaur Colors$Axolotl$Albino$Mega X$Synthwave");
+static const u8 sVariantNames_squirtle[] = _("Charmander Colors$Soup Turtle$Koopa$Albino$Ninja Turtle$Vaporwave");
+static const u8 sVariantNames_caterpie[] = _("Blue Morpho$Red Admiral$Swallowtail$Venomoth Wink$Purple Emperor$Emerald Sphinx");
+static const u8 sVariantNames_weedle[] = _("Hornet$Carpenter Bee$Red Wasp$Violet Carpenter$Albino$Black Hornet");
+static const u8 sVariantNames_pidgey[] = _("City Pigeon$Robin$Blue Tit$Albino$Cardinal$Bird-of-Paradise");
+static const u8 sVariantNames_rattata[] = _("White Lab Rat$Chinchilla$Agouti$Naked Mole-Rat$Fancy Rat$Golden Rat");
+static const u8 sVariantNames_rattata_alola[] = _("Sewer Gray$Pinstripe$Chestnut$Midnight Blue$Sewer Mutant$White and Gold");
+static const u8 sVariantNames_spearow[] = _("Kestrel$Woodpecker$Jay$Albino$Green Woodpecker$Crowned Crane");
+static const u8 sVariantNames_ekans[] = _("Coral Snake$Copperhead$Black Mamba$Albino Python$Blue Viper$Egyptian Cobra");
+static const u8 sVariantNames_pichu[] = _("Bulbasaur$Squirtle$Charmander$Jigglypuff Pink$Marill$Starry Night");
+static const u8 sVariantNames_sandshrew[] = _("Pangolin$Petra Red$Hedgehog$Albino$Pink Armadillo$Shadow");
+static const u8 sVariantNames_sandshrew_alola[] = _("Emerald Ice$Rose Quartz$Copper Ice$Amethyst$Golden Ice$Polar Night");
+static const u8 sVariantNames_nidoran_f[] = _("Mint$Sand$Coral$Albino$Black$Queen");
+static const u8 sVariantNames_nidoran_m[] = _("Orange Poison$Green$Gray Hare$Albino$Black$King");
+static const u8 sVariantNames_clefairy[] = _("Moon White$Moon Stone$Mint$Blood Moon$Space$Full Moon");
+static const u8 sVariantNames_vulpix[] = _("Gray Fox$Fennec$Melanistic Fox$Albino$Ghost Fire$Amaterasu");
+static const u8 sVariantNames_vulpix_alola[] = _("Peach$Kanto Swap$Mint$Glacier$Midnight Blue$Aurora");
+static const u8 sVariantNames_igglybuff[] = _("Marshmallow$Keeby Yellow$Lavender$Mint$Peach$Lullaby");
+static const u8 sVariantNames_zubat[] = _("Vampire Bat$Flying Fox$Batman$Albino$Dracula$Starry Night");
+static const u8 sVariantNames_oddish[] = _("White Rafflesia$Blue Lotus$Corpse Flower$Sunflower$Sakura$Mandrake");
+static const u8 sVariantNames_paras[] = _("Porcino$Amethyst Deceiver$Cordyceps$Green Russula$Indigo Milk Cap$Toad");
+static const u8 sVariantNames_venonat[] = _("Rosy Maple Moth$Luna Moth$Atlas Moth$Death's-Head Moth$White Moth$Mothra");
+static const u8 sVariantNames_diglett[] = _("Ziggy Stardust$Gorillaz$Billie Eilish$Emo$Nicki Minaj$Billy Idol");
+static const u8 sVariantNames_meowth[] = _("Russian Blue$Black Cat$Lilac$Havana Brown$Sphynx$Maneki-neko");
+static const u8 sVariantNames_meowth_alola[] = _("Ruddy Abyssinian$Lilac Burmese$Turkish Angora$Bombay$Bengal$Cheshire Cat");
+static const u8 sVariantNames_meowth_galar[] = _("Cobalt$Bronze Patina$Rusty Iron$Chrome$Black Steel$Rose Gold");
+static const u8 sVariantNames_psyduck[] = _("Mallard$Brown Duck$Pink Duck$Albino$Black Swan$Ruby Duck");
+static const u8 sVariantNames_mankey[] = _("Japanese Macaque$Golden Snub-Nose$Gorilla$Albino$Mandrill$Sun Wukong");
+static const u8 sVariantNames_annihilape[] = _("Rage$Ghost Purple$Black White-Eyed$Yeti$Monkey King$Blue Fire");
+static const u8 sVariantNames_growlithe[] = _("Doberman$Husky$Blue Chow Chow$Albino$Foo Dog$Blue Fire");
+static const u8 sVariantNames_growlithe_hisui[] = _("Obsidian and Lava$Basalt Blue Fire$Sandstone Purple$Marble and Gold$Lapis Lazuli$Ruby Black Fire");
+static const u8 sVariantNames_poliwag[] = _("Orange Dart Frog$Toad$Purple Frog$Albino$Golden Dart Frog$Strawberry Frog");
+static const u8 sVariantNames_abra[] = _("Red Fox$Silver Fox$Wizard$Albino$Mewtwo Colors$Joker");
+static const u8 sVariantNames_machop[] = _("Bronze Statue$Hulk$Hellboy$Albino$Na'vi$Super Saiyan God");
+static const u8 sVariantNames_bellsprout[] = _("Red Nepenthes$Venus Flytrap$Purple Pitcher$Sakura$Black Pitcher$Glass Plant");
+static const u8 sVariantNames_tentacool[] = _("Compass Jellyfish$Blood Jellyfish$Moon Jellyfish$Fried Egg Jelly$Toxic Green$Galaxy Jellyfish");
+static const u8 sVariantNames_geodude[] = _("Copper$Silver$Sapphire$Ruby$Amethyst$Diamond");
+static const u8 sVariantNames_geodude_alola[] = _("Pyrite$Hematite$Obsidian$Lapis Lazuli$Rose Quartz$Tourmaline");
+static const u8 sVariantNames_ponyta[] = _("Chestnut$Dapple Gray$Black Horse$White Horse$Ghost Horse$Golden Horse");
+static const u8 sVariantNames_ponyta_galar[] = _("Nightmare$Sun Unicorn$Crystal$Fairy Pink$Starry Night$Twilight Sparkle");
+static const u8 sVariantNames_slowpoke[] = _("Blue$Mint$Sloth Brown$Albino$Orange$Hipster");
+static const u8 sVariantNames_slowpoke_galar[] = _("Poison Herb$Sky Blue$Galar Poison$Peach$Toxapex$Galarica Gold");
+static const u8 sVariantNames_magnemite[] = _("Copper$R2-D2$WALL-E$Gunmetal$Horseshoe Magnet$Golden Snitch");
+static const u8 sVariantNames_farfetchd[] = _("Gray Goose$Mallard$Black Duck$Albino$Candy Cane$Royal Blue");
+static const u8 sVariantNames_farfetchd_galar[] = _("Templar$Black Knight$King Arthur$Green Knight$Red Knight$Golden Knight");
+static const u8 sVariantNames_doduo[] = _("Ostrich$Emu$Flamingo$Albino$Cassowary$Golden Pheasant");
+static const u8 sVariantNames_seel[] = _("Dugong$Elephant Seal$Pink River Dolphin$Ice Blue$Black Sea Lion$Amber");
+static const u8 sVariantNames_grimer[] = _("Blood Red Slime$Oil$Bubblegum$Lava Slime$Ectoplasm$Midas");
+static const u8 sVariantNames_grimer_alola[] = _("Rainbow Oil$Candy Cane$Teal$Bubblegum$Lavender and Mint$Golden Slime");
+static const u8 sVariantNames_shellder[] = _("Abalone$Mussel$Cockle$Mother-of-Pearl$Green-Lip Mussel$Golden Pearl");
+static const u8 sVariantNames_gastly[] = _("Slimer Green$Blood Red$Boo Blue$White Boo$Halloween Orange$Golden Ghost");
+static const u8 sVariantNames_onix[] = _("Sandstone$Basalt$Crystal Onix$Quartz$Lava$Gold");
+static const u8 sVariantNames_drowzee[] = _("Malayan Tapir$Baku$Freddy Krueger$Albino$Hypno Spiral$Purple and Gold");
+static const u8 sVariantNames_krabby[] = _("Blue Crab$Turquoise$Coconut Crab$Albino$Black Crab$Golden Crab");
+static const u8 sVariantNames_voltorb[] = _("Love Ball$Friend Ball$Premier Ball$Fast Ball$Cherish Ball$Master Ball");
+static const u8 sVariantNames_exeggcute[] = _("Cherry Blossom$Easter Eggs$Dinosaur Egg$Albino$Snow Palm$Faberge");
+static const u8 sVariantNames_cubone[] = _("Sugar Skull Blue$Mourning Gray$Purple Calavera$Pink Calavera$Ghost$Pharaoh");
+static const u8 sVariantNames_marowak_alola[] = _("Halloween$Purple Ghost Fire$Blue Fire$Sugar Skull$Red Fire Gold Bone$Sun Dance");
+static const u8 sVariantNames_tyrogue[] = _("Bruce Lee$Karate Gi$Luchador$Shaolin$Ninja$Championship Belt");
+static const u8 sVariantNames_lickitung[] = _("Bubblegum Blue$Toad$Grape$Peach$Venom$Mint Chocolate");
+static const u8 sVariantNames_koffing[] = _("Smog$Chernobyl$Holi$Dry Ice$Cosmic Nebula$Royal");
+static const u8 sVariantNames_weezing_galar[] = _("Copper Pipes$Victorian London$Cast Iron$Steampunk Brass$Ghost Factory$Golden Chimneys");
+static const u8 sVariantNames_rhyhorn[] = _("Mossy$White Rhino$Basalt and Lava$Amethyst$Diamond$Gold");
+static const u8 sVariantNames_happiny[] = _("Lavender$Lemon$Peach$Sky Blue$Cherry$Plum");
+static const u8 sVariantNames_tangela[] = _("Autumn Vines$Wisteria$Black Vines$Spaghetti$Bougainvillea$Golden Vines");
+static const u8 sVariantNames_kangaskhan[] = _("Red Kangaroo$Panda Kangaroo$Tree Kangaroo$Albino$Boxing Kangaroo$Cosmic");
+static const u8 sVariantNames_horsea[] = _("Orange Seahorse$Pygmy Seahorse$Leafy Seadragon$Black Seahorse$Ghost Seahorse$Ruby and Gold");
+static const u8 sVariantNames_goldeen[] = _("Goldfish$Black Moor$Shubunkin$Panda Oranda$Betta$Nemo");
+static const u8 sVariantNames_staryu[] = _("Red Starfish$Blue Starfish$Cushion Star$Crown-of-Thorns$Emerald and Ruby$Patrick Star");
+static const u8 sVariantNames_mr_mime[] = _("Pierrot$Harlequin$Purple Mime$Circus Clown$Barbie$Pennywise");
+static const u8 sVariantNames_mr_mime_galar[] = _("Carnival$Red Tap Dancer$The Riddler$Joker$Fred Astaire$Ice Queen");
+static const u8 sVariantNames_scyther[] = _("Orchid Mantis$Brown Mantis$Blue Mantis$Albino$Ninja$Samurai");
+static const u8 sVariantNames_kleavor[] = _("Obsidian$Jade$Lapis Lazuli$Marble$Red Jasper$Golden Axes");
+static const u8 sVariantNames_smoochum[] = _("Summer$Gothic$Mermaid$Cotton Candy$Ice Queen$Silver and Gold");
+static const u8 sVariantNames_elekid[] = _("Blue Lightning$Purple Tiger$Radioactive Green$White Tiger$Pink Lightning$Silver");
+static const u8 sVariantNames_magby[] = _("Blue Fire$Green Fire$Purple Fire$White-Hot$Electabuzz Swap$Obsidian and Lava");
+static const u8 sVariantNames_pinsir[] = _("Black Rhino Beetle$Stag Beetle$Gold Beetle$Jewel Beetle$Pearl Beetle$Scarab");
+static const u8 sVariantNames_tauros[] = _("Spanish Bull$Brahman$Highland Cattle$Bison$Babe the Blue Ox$Minotaur");
+static const u8 sVariantNames_tauros_paldea[] = _("Bison$Team Magma$Colorado$Ensabanado$Indigo Gold Horns$Golden Bull");
+static const u8 sVariantNames_magikarp[] = _("Swapped$Kohaku$Karasu$Dragon Gate$Godzilla$Celestial Dragon");
+static const u8 sVariantNames_lapras[] = _("Nessie$Whale Gray$Pink$Albino$Orca$Galleon");
+static const u8 sVariantNames_ditto[] = _("Red Jelly$Green Slime$Orange$White$Venom$Gold");
+static const u8 sVariantNames_eevee[] = _("Sibling Swap A$Sibling Swap B$Shadow$Albino$Starry Night$Silver Statue");
+static const u8 sVariantNames_porygon[] = _("Wireframe$Windows 95$Super Famicom$Virtual Boy$Glitch$GBC Pikachu");
+static const u8 sVariantNames_omanyte[] = _("Nautilus$Opal Ammonite$Twitch Plays$Amber$Black Ammonite$Pink Opal");
+static const u8 sVariantNames_kabuto[] = _("Emperor Crab$Trilobite$Blue Blood$Black$Kabuto Helmet$Golden Fossil");
+static const u8 sVariantNames_aerodactyl[] = _("Sandstone Fossil$Jurassic Green$Quetzalcoatlus$Albino$Black Dragon$Amber");
+static const u8 sVariantNames_snorlax[] = _("Grizzly$Panda$Polar Bear$Totoro$Hungry Kirby$Golden Statue");
+static const u8 sVariantNames_articuno[] = _("Zapdos Yellow$Moltres Red$Emerald$Snowy Owl$Polar Night$Psychic Purple");
+static const u8 sVariantNames_birds_galar[] = _("Swap A$Swap B$Ice Bolt & Flame$Raven Black$Emerald$Gold");
+static const u8 sVariantNames_zapdos[] = _("Articuno Blue$Moltres Red$Purple Lightning$White Lightning$Storm Bird$Thunderbird");
+static const u8 sVariantNames_moltres[] = _("Articuno Blue Fire$Zapdos Yellow$Purple Fire$Silver Fire$Black Phoenix$Green Fire");
+static const u8 sVariantNames_dratini[] = _("Sea Dragon$Chinese Dragon$Purple$Albino$Black$Galaxy");
+static const u8 sVariantNames_mewtwo[] = _("Shadow Mewtwo$Smash Bros. Blue$Smash Bros. Red$Smash Bros. Green$Mew Swap$Crystal");
+static const u8 sVariantNames_mew[] = _("Mewtwo Purple$Mint$Lemon$White$Starry Night$Ancient Mew");
+static const u8 sVariantNames_chikorita[] = _("Cyndaquil Colors$Totodile Colors$Torchic Colors$Albino$Shadow$Pokemon Crystal");
+static const u8 sVariantNames_cyndaquil[] = _("Totodile Colors$Chikorita Colors$Mudkip Colors$Albino$Shadow$Pokemon Crystal");
+static const u8 sVariantNames_typhlosion_hisui[] = _("Blue Ghost Fire$Green Wisp$Johto Fire$White Fire$Red on Black$Golden Fire");
+static const u8 sVariantNames_totodile[] = _("Chikorita Colors$Cyndaquil Colors$Treecko Colors$Albino$Shadow$Pokemon Crystal");
+static const u8 sVariantNames_sentret[] = _("Silver Ferret$Mongoose$Polecat$Albino Ferret$Meerkat$Golden Ferret");
+static const u8 sVariantNames_hoothoot[] = _("Barn Owl$Kakapo$Tawny Owl$Snowy Owl$Black Owl$Owl of Minerva");
+static const u8 sVariantNames_ledyba[] = _("Kamen Rider 1$Ultraman$Super Sentai$Kamen Rider Black$Sheriff Gavan$Kuuga Rising");
+static const u8 sVariantNames_spinarak[] = _("Black Widow$Tarantula$Peacock Spider$Albino Cave Spider$Garden Spider$Venom and Carnage");
+static const u8 sVariantNames_chinchou[] = _("Blood Red Deep-Sea$Silver Lanternfish$Black and Cyan$Albino$Biolum Green$Goldfish Lantern");
+static const u8 sVariantNames_togepi[] = _("Kinder Surprise$Pink Easter Egg$Mint Choc Chip$Night Egg$Blue Faberge$Golden Blessing");
+static const u8 sVariantNames_natu[] = _("Scarlet Macaw$Toucan$Hyacinth Macaw$Albino$Quetzal$Aztec Gold");
+static const u8 sVariantNames_mareep[] = _("Black Sheep$Fox Sheep$Electric Blue$Green$Purple$Golden Fleece");
+static const u8 sVariantNames_azurill[] = _("Lavender$Pink$Orange$Albino$Starry Night$Christmas Bauble");
+static const u8 sVariantNames_bonsly[] = _("Cherry Blossom$Autumn$Birch$Juniper Bonsai$Night Sakura$Laurelin");
+static const u8 sVariantNames_hoppip[] = _("Spring$Summer$Autumn$Winter$Lavender Field$Starry Night");
+static const u8 sVariantNames_aipom[] = _("Capuchin$Golden Tamarin$Langur$Albino$Green$Abu");
+static const u8 sVariantNames_sunkern[] = _("Velvet Queen$Italian White$Pink$Purple$Blue$Van Gogh");
+static const u8 sVariantNames_yanma[] = _("Blue Hawker$Emperor Dragonfly$Purple Dragonfly$Gold Dragonfly$Fire Damsel$Damselfly");
+static const u8 sVariantNames_wooper[] = _("Wild Type$Golden Axolotl$Melanistic$Albino$Copper$Lavender");
+static const u8 sVariantNames_wooper_paldea[] = _("Blue Dart Frog$Swamp Green$Black and Red$Pink Axolotl$Lava$Gold");
+static const u8 sVariantNames_murkrow[] = _("White Raven$Turquoise$Iridescent Green$Hooded Crow$Mafia Boss$Huginn");
+static const u8 sVariantNames_misdreavus[] = _("Boo Blue$Blood Red$Pale Ghost$Halloween$Black$Gold");
+static const u8 sVariantNames_unown[] = _("Sandstone$Hieroglyph Gold$Jade$Amethyst$Obsidian Red$Unown Dimension");
+static const u8 sVariantNames_wynaut[] = _("Orange$Green$Purple$Albino$SpongeBob$Punching Bag");
+static const u8 sVariantNames_girafarig[] = _("Okapi$White Giraffe$Lisa Frank Pink$Psychic Blue$Black and Gold$Cosmic");
+static const u8 sVariantNames_pineco[] = _("Blue Spruce$Fresh Cone$Rusty Iron$Frosted$Black Steel$Gold");
+static const u8 sVariantNames_dunsparce[] = _("Green Dragon Snake$Lavender$Russet$Albino$Koi$Chinese Dragon");
+static const u8 sVariantNames_gligar[] = _("Desert Scorpion$Green$Red$Albino$Black Scorpion$Serket");
+static const u8 sVariantNames_snubbull[] = _("English Bulldog$Brindle$Black$Fawn$Blue Frenchie$Gold");
+static const u8 sVariantNames_qwilfish[] = _("Fugu$Coral Fish$Sea Urchin$Albino$Black$Mandarinfish");
+static const u8 sVariantNames_qwilfish_hisui[] = _("Sea Urchin$Coral$Poison Bomb$Icefish$White Red Spikes$Gold Black Spikes");
+static const u8 sVariantNames_shuckle[] = _("Green Shell$Purple Shell$Black Shell$Porcelain$Berry Juice$Golden Shell");
+static const u8 sVariantNames_heracross[] = _("Hercules Beetle$Japanese Rhino$Goliath Beetle$Gold Chafer$Emerald Beetle$Kabuto");
+static const u8 sVariantNames_sneasel[] = _("Stoat$Marten$Green$Purple$Red$Gold");
+static const u8 sVariantNames_sneasel_hisui[] = _("Pine Marten$Toxic Green$Blood Red$Snow Fox$Ninja$Gold");
+static const u8 sVariantNames_teddiursa[] = _("Polar Bear$Panda$Blue Bear$Grizzly$Care Bear$Winnie the Pooh");
+static const u8 sVariantNames_slugma[] = _("Blue Fire$Copper Flame$Purple Lava$Cooled$White-Hot$Star Nebula");
+static const u8 sVariantNames_swinub[] = _("Snow Boar$Duroc$Wild Boar$Woolly Rhino$Potbellied Pig$Gold");
+static const u8 sVariantNames_corsola[] = _("Brain Coral$Green Coral$Red Coral$Bleached Coral$Black Coral$Orange Sea Fan");
+static const u8 sVariantNames_corsola_galar[] = _("Drowned$Moldy$Yellowed Bone$Dried Blood Coral$Charred$Ghost Violet");
+static const u8 sVariantNames_remoraid[] = _("Green Octopus$Blue-Ring Octopus$Mimic Octopus$Albino$Dumbo Octopus$Kraken");
+static const u8 sVariantNames_delibird[] = _("Ice Blue$Christmas Elf$Purple$Penguin$Pink$Gold");
+static const u8 sVariantNames_mantyke[] = _("Spotted Eagle Ray$Stingray$Green$Pink$Red$Gold");
+static const u8 sVariantNames_skarmory[] = _("Copper$Patina Bronze$Gunmetal$Anodized Titanium$Gold$Excalibur");
+static const u8 sVariantNames_houndour[] = _("White Hellhound$Blood Red$Doberman$Purple$Green$Gold");
+static const u8 sVariantNames_phanpy[] = _("Mammoth$White Elephant$Pink Elephant$Lava Elephant$Ganesha$Thai Temple");
+static const u8 sVariantNames_stantler[] = _("Forest Spirit$Reindeer$Red Deer$Melanistic$Mythic Blue Deer$Silver Hind");
+static const u8 sVariantNames_smeargle[] = _("Picasso Blue$Picasso Rose$Van Gogh$Frida Kahlo$Andy Warhol$Klimt");
+static const u8 sVariantNames_miltank[] = _("Holstein$Jersey$Milka$Highland Cow$Belted Galloway$Golden Calf");
+static const u8 sVariantNames_raikou[] = _("Entei Brown$Suicune Blue$White Tiger$Black Tiger$Green$Red");
+static const u8 sVariantNames_entei[] = _("Raikou Yellow$Suicune Blue$White Lion$Black Lion$Red Fire$Green");
+static const u8 sVariantNames_suicune[] = _("Raikou Yellow$Entei Brown$Pink$Black$Green$White");
+static const u8 sVariantNames_larvitar[] = _("Turquoise$Lava$Godzilla$Ice$Blue$Kaiju King");
+static const u8 sVariantNames_lugia[] = _("Shadow Lugia$Ho-Oh Swap$Sea Green$Pink$Night Sea$Pokemon Silver");
+static const u8 sVariantNames_ho_oh[] = _("Lugia Swap$Blue Fire$Purple$Shadow Ho-Oh$Green Phoenix$Silver Phoenix");
+static const u8 sVariantNames_celebi[] = _("Autumn Leaf$Winter$Lavender Fairy$Flower Yellow$Time Traveler$GS Ball");
+static const u8 sVariantNames_treecko[] = _("Torchic Colors$Mudkip Colors$Tokay Gecko$Albino$Pikachu$Cyberpunk");
+static const u8 sVariantNames_torchic[] = _("Treecko Colors$Mudkip Colors$Flamingo$Albino$Ayam Cemani$Captain Falcon");
+static const u8 sVariantNames_mudkip[] = _("Torchic Colors$Treecko Colors$Mudskipper$Leucistic Axolotl$Koi$Glowing Axolotl");
+static const u8 sVariantNames_poochyena[] = _("Blue Merle$Red Wolf$Arctic Wolf$Albino$Midnight Lycanroc$Amaterasu");
+static const u8 sVariantNames_zigzagoon[] = _("Raccoon$Strawberry Milk$Pikachu Colors$Albino$Sonic$Vaporwave");
+static const u8 sVariantNames_zigzagoon_galar[] = _("Tiger Punk$Rasta Punk$Ziggy Stardust$Cyberpunk$Joker$Daft Punk");
+static const u8 sVariantNames_wurmple[] = _("Monarch$Blue Morpho$Luna Moth$Melanistic$Kanto Cousins$Neon");
+static const u8 sVariantNames_lotad[] = _("Lotus$Dia de Muertos$Mandarin Duck$Albino$Kappa$Golden Idol");
+static const u8 sVariantNames_seedot[] = _("Unripe Acorn$Tengu$Sakura$Albino$Oni$Winter Demon");
+static const u8 sVariantNames_taillow[] = _("Robin$Kingfisher$Cardinal$Albino$Blue-Gold Macaw$Swallowtail");
+static const u8 sVariantNames_wingull[] = _("Brown Pelican$Puffin$Galah$Melanistic$Mailman$Thunderbird");
+static const u8 sVariantNames_ralts[] = _("Lavender$Rose$Sky Blue$Albino$Black Swan$Hyrule Royal");
+static const u8 sVariantNames_surskit[] = _("Red Damselfly$Peacock Butterfly$Green Darner$Albino$Mothra$Luxury Ball");
+static const u8 sVariantNames_shroomish[] = _("Fly Agaric$Chanterelle$Toad$Albino$Amethyst Deceiver$Glowing Mushroom");
+static const u8 sVariantNames_slakoth[] = _("Gray Sloth$Algae Fur$Golden Monkey$Albino$Silverback$Garfield");
+static const u8 sVariantNames_nincada[] = _("Green Cicada$Amber$Bronze$Albino$Heavenly$Japanese Lacquer");
+static const u8 sVariantNames_whismur[] = _("Loudspeaker$Elephant$KISS$Albino$Gold Record$Banshee");
+static const u8 sVariantNames_makuhita[] = _("Kumamon$Kappa Sumo$Hokusai$Albino$Lucha Libre$Daruma");
+static const u8 sVariantNames_nosepass[] = _("Moai$Terracotta Army$Olmec Jade$Aztec Turquoise$Totem Pole$Tutankhamun");
+static const u8 sVariantNames_skitty[] = _("Siamese$Doraemon$Gray Tabby$Albino$Cheshire Cat$Luna");
+static const u8 sVariantNames_sableye[] = _("Gold and Silver$Obsidian$Diamond and Pearl$Albino$Ruby and Sapphire$Gollum");
+static const u8 sVariantNames_mawile[] = _("Copper$Blue Steel$Venus Flytrap$Albino$Sadako$Harley Quinn");
+static const u8 sVariantNames_aron[] = _("Bronze$Gold$Anodized Titanium$Gunmetal$Rose Gold$Gundam");
+static const u8 sVariantNames_meditite[] = _("Z Fighter$Zen$Krishna$Albino$Akuma$Enlightened");
+static const u8 sVariantNames_electrike[] = _("Tesla Coil$Zekrom Colors$Plasma$Albino$Raikou Colors$Thor");
+static const u8 sVariantNames_plusle[] = _("Swapped$Pastel$Battery$Yin and Yang$Halloween$Ladybug & Cat Noir");
+static const u8 sVariantNames_volbeat[] = _("Swapped$Fire and Ice$Ladybug & Scarab$Albino & Melanism$Mario and Luigi$Daft Punk");
+static const u8 sVariantNames_roselia[] = _("White & Gold Rose$Dutch Tulips$Cactus Bloom$Albino$Enchanted Rose$Poison Flower");
+static const u8 sVariantNames_gulpin[] = _("Swapped$Caramel Pudding$Kirby$Albino$Pac-Man$Biohazard");
+static const u8 sVariantNames_carvanha[] = _("Great White$Firefish$Black Piranha$Albino$Megalodon$Gulf Racing");
+static const u8 sVariantNames_wailmer[] = _("Tropical Turquoise$Orca$Migaloo$Pink River Dolphin$Zeppelin$Tennis Ball");
+static const u8 sVariantNames_numel[] = _("Dromedary$Basalt and Lava$Kawah Ijen$Albino$Ice Volcano$Lava Lamp");
+static const u8 sVariantNames_torkoal[] = _("Coal and Ash$Delfts Blauw$Poison Gas$Albino$Sulfur Cloud$Lava Fountain");
+static const u8 sVariantNames_spoink[] = _("Farm Pig$Wild Boar$Mother-of-Pearl$Albino$Miss Piggy$Ganon");
+static const u8 sVariantNames_spinda[] = _("Giant Panda$Red Panda$Giraffe$Strawberry$Psychedelic$Lavender and Gold");
+static const u8 sVariantNames_trapinch[] = _("Desert to Oasis$Garchomp Colors$Dragonfly$Albino$Fire$Ghidorah");
+static const u8 sVariantNames_cacnea[] = _("Prickly Pear$Moon Cactus$Pumpkin Scarecrow$Albino$Desert Night$Candy Cactus");
+static const u8 sVariantNames_swablu[] = _("Cotton Candy$Thundercloud$Sunset$Peacock$Kinto-un$Aurora");
+static const u8 sVariantNames_zangoose[] = _("Tiger & Mamba$Leopard & Coral$Ice and Fire$Panther & Python$Siamese & Quetzal$Bastet & Apophis");
+static const u8 sVariantNames_lunatone[] = _("Swapped$Blood Moon$Eclipse$Moonstone Sunstone$Majora's Moon$Neptune and Venus");
+static const u8 sVariantNames_barboach[] = _("Wels Catfish$Golden Catfish$Panda Cory$Albino$Namazu$Electric Eel");
+static const u8 sVariantNames_corphish[] = _("Blue Lobster$Marbled Crayfish$Purple Crayfish$Albino$Glass Shrimp$Yellow Crayfish");
+static const u8 sVariantNames_baltoy[] = _("Terracotta$Jade$Ming Porcelain$Albino$Dogu$UFO");
+static const u8 sVariantNames_lileep[] = _("Coral Reef$White Anemone$Petrified$Albino$Deep-Sea Glow$Ammonite");
+static const u8 sVariantNames_anorith[] = _("Petrified$Horseshoe Crab$Trilobite$Albino$Anomalocaris$Samurai Armor");
+static const u8 sVariantNames_feebas[] = _("Oarfish$Pastel$Royal$Albino$Jet Black$Phoenix");
+static const u8 sVariantNames_castform[] = _("Sunset$Thunderstorm$Northern Lights$Acid Rain$Blood Moon$Starry Night");
+static const u8 sVariantNames_kecleon[] = _("Panther Chameleon$Excited Red$Bark Camouflage$Albino$Lisa Frank$Nearly Invisible");
+static const u8 sVariantNames_shuppet[] = _("Billy$Beetlejuice$Marionette$Carrie$Corpse Bride$Harlequin");
+static const u8 sVariantNames_duskull[] = _("Will-o'-the-Wisp$Calavera$Jack-o'-Lantern$Pharaoh$Aztec Turquoise$Crystal Skull");
+static const u8 sVariantNames_tropius[] = _("Autumn$Cherry Tree$Dragon Fruit$Albino$Ginkgo$Winter");
+static const u8 sVariantNames_chimecho[] = _("Copper Wind Chime$Silver$Amethyst$Albino$Christmas Bell$Furin");
+static const u8 sVariantNames_absol[] = _("Blood Moon Wolf$Lucario$Plague$Sylveon$Anubis$Raikou");
+static const u8 sVariantNames_snorunt[] = _("Red Oni$Northern Lights$Matcha$Albino$Yuki-onna$Lich King");
+static const u8 sVariantNames_spheal[] = _("Gray Seal$Sea Lion$Seal Pup$Poke Ball$Gold Medal$Orca");
+static const u8 sVariantNames_clamperl[] = _("Mother-of-Pearl$Mandarinfish$Deep-Sea Glow$Albino$Black Pearl$Ariel");
+static const u8 sVariantNames_relicanth[] = _("True Coelacanth$Lava Rock$Nautilus$Albino$Jade and Gold$Aztec Relic");
+static const u8 sVariantNames_luvdisc[] = _("Red Heart$Chocolate Heart$Lavender$Albino$Broken Heart$Tiffany");
+static const u8 sVariantNames_bagon[] = _("Alduin$Bahamut$Y Ddraig Goch$Albino$Tiamat$Smaug");
+static const u8 sVariantNames_beldum[] = _("Copper$Gold$Patina$Gunmetal$Rose Gold$Iron Man");
+static const u8 sVariantNames_regirock[] = _("Basalt and Lava$Regice Colors$Malachite$Petra$Amethyst Geode$Regigigas");
+static const u8 sVariantNames_regice[] = _("Regirock Colors$Rose Quartz$Citrine$Black Ice$Emerald$Regigigas");
+static const u8 sVariantNames_registeel[] = _("Rust$Bronze$Blued Steel$Gold$Anodized Titanium$Regigigas");
+static const u8 sVariantNames_latias[] = _("Mew and Mewtwo$Stealth$Spring and Night$Albino$Aurora and Amber$Galaxy");
+static const u8 sVariantNames_kyogre[] = _("Abyssal Violet$Orca$Tsunami$Ice Age$Groudon Swap$Leviathan");
+static const u8 sVariantNames_groudon[] = _("Desert$Obsidian and Lava$Godzilla$Maya Jade$Kyogre Swap$Sun God");
+static const u8 sVariantNames_rayquaza[] = _("Sky Blue$Groudon Red$Golden Dragon King$Cloud Dragon$Cosmic$Blood Moon Dragon");
+static const u8 sVariantNames_jirachi[] = _("Silver Star$Ruby Star$Blue Wishing Star$1-Up$Black Star$Galaxy");
+static const u8 sVariantNames_deoxys[] = _("Virus$Mutant$Inverted$DNA$Meteorite$Cosmic Pink");
+static const u8 sVariantNames_turtwig[] = _("Autumn Maple$Cherry Blossom$Galapagos Tortoise$Winter Forest$Jacaranda$Yggdrasil");
+static const u8 sVariantNames_chimchar[] = _("Ring-Tailed Lemur$Blue Flame$Lion Tamarin$Wildfire$Javan Lutung$Hanuman");
+static const u8 sVariantNames_piplup[] = _("King Penguin$Pingu$Napoleon$Byzantine Emperor$Iceberg$Club Penguin");
+static const u8 sVariantNames_starly[] = _("Summer Starling$Superb Starling$Rosy Starling$Bali Myna$Magpie$Quetzal");
+static const u8 sVariantNames_bidoof[] = _("Black Beaver$Golden Hamster$Grey Squirrel$Red Squirrel$Mossy Beaver$God Bidoof");
+static const u8 sVariantNames_kricketot[] = _("Green Bush Cricket$Tree Cricket$Blue-Winged Locust$Jiminy Cricket$Cave Cricket$Lucky Cricket");
+static const u8 sVariantNames_shinx[] = _("Eurasian Lynx$White Tiger$Pink Panther$Garfield$Tron$Raijin");
+static const u8 sVariantNames_cranidos[] = _("Pachycephalosaurus$Bighorn Ram$Comet Impact$Ice Age$Amethyst Geode$Tutankhamun");
+static const u8 sVariantNames_shieldon[] = _("Triceratops$Brick Castle$Knight's Armor$Imperial Jade$Obsidian & Lava$Captain America");
+static const u8 sVariantNames_burmy[] = _("Maple Leaf$Blue-Green Moss$Luna Moth$Lavender Moth$Snow Cloak$Imperial Silk");
+static const u8 sVariantNames_combee[] = _("Buckwheat Honey$Orchid Bee$Royal Jelly$Carpenter Bee$Cuckoo Wasp$Crystal Honey");
+static const u8 sVariantNames_pachirisu[] = _("Flying Squirrel$Emolga Colors$Mint Chocolate$Plusle Red$Aurora$Pikachu Clone");
+static const u8 sVariantNames_buizel[] = _("Sea Otter$Winter Ermine$Life Buoy$Tropical Lagoon$Black Mink$Kawauso");
+static const u8 sVariantNames_cherubi[] = _("Rainier Cherry$Morello$White Sakura$Gooseberry$Autumn Cherry$Moonflower");
+static const u8 sVariantNames_shellos[] = _("Spanish Dancer$Lemon Nudibranch$Purple Sea Hare$Albino$Black Sea Slug$Rainbow Nudibranch");
+static const u8 sVariantNames_drifloon[] = _("Pennywise$Up$Bubblegum$New Year's Eve$Will-o'-the-Wisp$Jack-o'-Lantern");
+static const u8 sVariantNames_buneary[] = _("Dutch Rabbit$Chinchilla Rabbit$Easter Egg$Albino$Moon Rabbit$Year of the Rabbit");
+static const u8 sVariantNames_glameow[] = _("Ginger Tom$Witch's Cat$Siamese$Cheshire Cat$Doraemon$Hello Kitty");
+static const u8 sVariantNames_stunky[] = _("Striped Skunk$Toxic Green$Red Panda$Garbage Dump$Sulfur$Cosmic Nebula");
+static const u8 sVariantNames_bronzor[] = _("Polished Bronze$Cast Iron$Amethyst$Silver Temple Bell$Rose Gold$Liberty Bell");
+static const u8 sVariantNames_chatot[] = _("African Grey$Scarlet Macaw$Cockatoo$Lovebird$Sun Conure$Gold Record");
+static const u8 sVariantNames_spiritomb[] = _("Blue Spirit Fire$Blood Moon$Ectoplasm$Smoke & Ash$Black Hole$108 Golden Souls");
+static const u8 sVariantNames_gible[] = _("Great White Shark$Blood Dragon$Western Dragon$Megalodon Fossil$Alduin$King Ghidorah");
+static const u8 sVariantNames_riolu[] = _("Silver Fox$Red Fox Aura$Jade Aura$Shiba Inu$Purple Aura$Sakura Aura");
+static const u8 sVariantNames_hippopotas[] = _("Hippopotamus$Uluru$Black Sand$White Sands$Swamp Hippo$Fantasia Hippo");
+static const u8 sVariantNames_skorupi[] = _("Emperor Scorpion$Bark Scorpion$Desert Scorpion$Blacklight$Toxic Green$Scorpion King");
+static const u8 sVariantNames_croagunk[] = _("Red-Eyed Tree Frog$Muay Thai$Mantella$Glass Frog$Bubblegum$Champion's Belt");
+static const u8 sVariantNames_carnivine[] = _("Dracula$Sundew$Wisteria$Autumn Plant$Ghost Plant$Piranha Plant");
+static const u8 sVariantNames_finneon[] = _("Seagrass$Koi$Yellow Tang$Lanternfish$Purple Betta$Veiltail Goldfish");
+static const u8 sVariantNames_snover[] = _("Snowy Maple$Snowy Sakura$Blue Spruce$Yeti$Ice Queen$Lothlorien");
+static const u8 sVariantNames_rotom[] = _("50s Fridge$Smeg Retro$Stainless Steel$Matte Black$Barbie Kitchen$Fabergé");
+static const u8 sVariantNames_uxie[] = _("Trio Swap$Moon Silver$Jade Buddha$Obsidian & Fire$Stardust$Three Jewels");
+static const u8 sVariantNames_dialga[] = _("Grandfather Clock$Crimson Clockwork$Amethyst Clockwork$Silver Chronograph$Primal Dialga$Golden Hourglass");
+static const u8 sVariantNames_palkia[] = _("Tahitian Pearl$Moon Pearl$Lava Lamp$Space Nebula$Jade$Mother-of-Pearl");
+static const u8 sVariantNames_heatran[] = _("Kawah Ijen$Copper Flame$Obsidian$White-Hot$Purple Magma$Molten Gold");
+static const u8 sVariantNames_regigigas[] = _("Jade Temple$Black Granite$Regice Ice$Regirock Lava$Cherry Blossom$Regieleki");
+static const u8 sVariantNames_giratina[] = _("Distortion World$Hellfire$Ghost Purple$Albino Ghost$Black Hole$Imperial");
+static const u8 sVariantNames_cresselia[] = _("Silver Sickle$Blood Moon$Harvest Moon$New Moon$Blue Moon$Kaguya-hime");
+static const u8 sVariantNames_manaphy[] = _("Sea Anemone$Seaweed$Coral Reef$Deep Sea$Pearl$Sea King");
+static const u8 sVariantNames_darkrai[] = _("Ember Nightmare$White Specter$Blood Night$Forest Spirit$Cosmic Nightmare$Golden Dream");
+static const u8 sVariantNames_shaymin[] = _("Lavender Field$Sunflower$Autumn Field$Cornflower$Edelweiss$Klimt");
+static const u8 sVariantNames_arceus[] = _("Terracotta$Sky Blue$Jade$Silver Grey$Rose Quartz$Cosmos");
+static const u8 sVariantNames_victini[] = _("Laurel Wreath$Ferrari$Mewtwo Colors$Chocolate Egg$V for Victory$Olympic Gold");
+static const u8 sVariantNames_snivy[] = _("Maple Leaf$Cherry Blossom$Byzantine Purple$Albino$Night Serpent$Golden Empress");
+static const u8 sVariantNames_tepig[] = _("Wild Boar$Pata Negra$Peppa Pig$Hampshire Pig$Chocolate Pig$Gullinbursti");
+static const u8 sVariantNames_oshawott[] = _("Akazonae$Ninja$Kappa$Sakura$Shogun$Kinkaku-ji");
+static const u8 sVariantNames_patrat[] = _("Meerkat$Grey Squirrel$Swiss Guard$Albino$Security Camera$Night Vision");
+static const u8 sVariantNames_lillipup[] = _("Border Collie$Bluey$Samoyed$Wolf$Clifford$Anubis");
+static const u8 sVariantNames_purrloin[] = _("Black Panther$Snow Leopard$Leopard$Cheshire Cat$Lupin III$Neon Thief");
+static const u8 sVariantNames_pansage[] = _("Purple Broccoli$Cauliflower$Beetroot$Shiitake$Blooming Bonsai$Golden Apple");
+static const u8 sVariantNames_pansear[] = _("Embers$Potassium Flame$White-Hot$Fireworks$Campfire$Phoenix");
+static const u8 sVariantNames_panpour[] = _("Cola$Grape Juice$Milk$Pink Lemonade$Octopus Ink$Champagne");
+static const u8 sVariantNames_munna[] = _("Mint Dream$Peach Daydream$Malayan Tapir$Nightmare$Cotton Candy$Hypnos");
+static const u8 sVariantNames_pidove[] = _("Turtle Dove$Dove of Peace$Crowned Pigeon$Nicobar Pigeon$Nevermore$Peacock");
+static const u8 sVariantNames_blitzle[] = _("Quagga$Tiger$Negative$Neon Sign$Blood Storm$Gold & Silver");
+static const u8 sVariantNames_roggenrola[] = _("Malachite$Amethyst Sandstone$Obsidian & Lava$Marble & Jade$Himalayan Salt$Pyrite");
+static const u8 sVariantNames_woobat[] = _("Flying Fox$Honduran White Bat$Valentine$Dracula$Halloween$Batman");
+static const u8 sVariantNames_drilbur[] = _("Sand Mole$Diamond Drill$Rust Bucket$Albino Mole$Golden Drill$Bulldozer");
+static const u8 sVariantNames_audino[] = _("Scrubs Green$Red Cross$Maternity Ward$Chamomile Tea$Band-Aid$Nightingale");
+static const u8 sVariantNames_timburr[] = _("Bob the Builder$Hulk$The Thing$Michelangelo$Smurf$Oni");
+static const u8 sVariantNames_tympole[] = _("Natterjack Toad$Red-Eyed Tree Frog$Tomato Frog$Glass Frog$Subwoofer$Frog Prince");
+static const u8 sVariantNames_throh[] = _("Competition Judo$Sensei$Sawk Swap$Cherry Blossom$Kung Fu Panda$Olympic Gold");
+static const u8 sVariantNames_sawk[] = _("Kyokushin$Sensei$Throh Swap$Cherry Blossom$Kung Fu Panda$Olympic Gold");
+static const u8 sVariantNames_sewaddle[] = _("Autumn Leaf$Copper Beech$Leaf Insect$Hoarfrost$Haute Couture$Rumpelstiltskin");
+static const u8 sVariantNames_venipede[] = _("Scolopendra$Blue Centipede$Toxic Green$Skeleton$Lava$Chrome");
+static const u8 sVariantNames_cottonee[] = _("Cotton Candy$Black Sheep$Blue Rain$Mint$Thundercloud$Golden Fleece");
+static const u8 sVariantNames_petilil[] = _("Poppy$Lavender$Sunflower$White Lily$Black Tulip$Blue Rose");
+static const u8 sVariantNames_basculin[] = _("Red Piranha$Koi$Black Piranha$Neon Tetra$Goldfish$Arowana");
+static const u8 sVariantNames_basculegion[] = _("Will-o'-the-Wisp$Styx Flame$Blood Moon$Lanternfish$Dia de Muertos$Flying Dutchman");
+static const u8 sVariantNames_sandile[] = _("Nile Crocodile$Black Caiman$Sobek$Albino Alligator$Sandstorm$Pharaoh's Jewel");
+static const u8 sVariantNames_darumaka[] = _("White Daruma$Black Daruma$Green Daruma$Purple Daruma$Pink Daruma$Golden Daruma");
+static const u8 sVariantNames_darumaka_galar[] = _("Blood Snow$Glacier$Pistachio$Stracciatella$Northern Lights$Golden Snow");
+static const u8 sVariantNames_maractus[] = _("Blue Agave$Hibotan$Blooming Saguaro$Mariachi$Purple Pear Cactus$Dia de Muertos");
+static const u8 sVariantNames_dwebble[] = _("Petra$Granite$Gold-Veined Marble$Obsidian & Lava$Turquoise$Pineapple House");
+static const u8 sVariantNames_scraggy[] = _("Gecko$Punk$Fresh Prince$Albino Gecko$Mafia$Vaporwave");
+static const u8 sVariantNames_sigilyph[] = _("Nazca Lines$Maya$Delfts Blauw$Mondrian$Warhol Pop Art$Tron");
+static const u8 sVariantNames_yamask[] = _("Copper Mask$Jade Burial Suit$Dia de Muertos$Blood Moon$Obsidian$Rose Gold & Lapis");
+static const u8 sVariantNames_yamask_galar[] = _("Terracotta$Rosetta Stone$Gilgamesh Tablet$Jade Tablet$Lapis Lazuli$Sumerian Gold");
+static const u8 sVariantNames_tirtouga[] = _("Koopa Troopa$Paratroopa$Leatherback$Hawksbill$Coral Reef$Blue Shell");
+static const u8 sVariantNames_archen[] = _("Velociraptor$Hyacinth Macaw$Petrified$Albino$Toucan$Phoenix");
+static const u8 sVariantNames_trubbish[] = _("Black Bin Bag$Commercial Waste$Plastic Soup$Barbie Trash$Recycling Bag$Golden Trash Can");
+static const u8 sVariantNames_zorua[] = _("Silver Fox$Arctic Fox$Loki$Fennec$Joker$Kurama");
+static const u8 sVariantNames_zorua_hisui[] = _("Will-o'-the-Wisp$Night Fox$Inari$Sakura Spirit$Sumi-e$Sunset");
+static const u8 sVariantNames_minccino[] = _("Violet Chinchilla$Ebony Chinchilla$Wilson White$Golden Hamster$Doctor Who Scarf$Cinderella");
+static const u8 sVariantNames_gothita[] = _("Sweet Lolita$Classic Lolita$Sailor Lolita$Shiro Lolita$Wa Lolita$Aristocrat");
+static const u8 sVariantNames_solosis[] = _("Gram Stain$Gram-Negative$Ziehl-Neelsen$Agar Plate$Darkfield$Colloidal Gold");
+static const u8 sVariantNames_ducklett[] = _("Odile$Mandarin Duck$Mallard$Rubber Duck$Flamingo$Cygnus");
+static const u8 sVariantNames_vanillite[] = _("Strawberry$Chocolate Wafer$Pistachio$Ube$Black Sesame$Golden Opulence");
+static const u8 sVariantNames_deerling[] = _("Rudolph$Sika Deer$Lavender Field$White Hind$Shishigami$Ceryneian Hind");
+static const u8 sVariantNames_emolga[] = _("Sugar Glider$Minun Colors$Red Giant Squirrel$Albino$Tron$Raijin");
+static const u8 sVariantNames_karrablast[] = _("Green Knight$Black Prince$Lancelot$Templar$Charlemagne$Gold Saint");
+static const u8 sVariantNames_foongus[] = _("Great Ball$Ultra Ball$Net Ball$Premier Ball$Dusk Ball$Master Ball");
+static const u8 sVariantNames_frillish[] = _("Compass Jellyfish$Fried Egg Jelly$Mauve Stinger$Lion's Mane$Crystal Jelly$Golden Jellyfish");
+static const u8 sVariantNames_alomomola[] = _("Mola Mola$Opah$Scrubs Green$Dory$Deep Sea$Golden Heart");
+static const u8 sVariantNames_joltik[] = _("Peacock Spider$Black Widow$Goliath Birdeater$Red-Knee Tarantula$Green Lynx Spider$Spider-Man");
+static const u8 sVariantNames_ferroseed[] = _("Verdigris$Chestnut$Durian$Rambutan$Sea Mine$Gold & Emerald");
+static const u8 sVariantNames_klink[] = _("Steampunk$Rusty Cast Iron$Meccano$Anodized Aluminum$RX-78 Gundam$Gold Pocket Watch");
+static const u8 sVariantNames_tynamo[] = _("Ribbon Eel$Electric Eel$Dragon Moray$Zebra Moray$Bioluminescence$Goldtail Moray");
+static const u8 sVariantNames_elgyem[] = _("Little Green Men$Na'vi$Mars Attacks$Red Planet$Men in Black$Silver Surfer");
+static const u8 sVariantNames_litwick[] = _("Boron Flame$Strontium Flame$Gas Flame$Ectoplasm$Magnesium Torch$Lumiere");
+static const u8 sVariantNames_axew[] = _("Smaug$Spyro$Jade Dragon$Viserion$Saphira$Mechagodzilla");
+static const u8 sVariantNames_cubchoo[] = _("Grizzly$Black Bear$Love-a-Lot Bear$Glacier Bear$Gummy Bear$Winnie the Pooh");
+static const u8 sVariantNames_cryogonal[] = _("Amethyst$Emerald$Ruby$Citrine$Black Ice$Opal");
+static const u8 sVariantNames_shelmet[] = _("Michelangelo$Donatello$Leonardo$Raphael$Splinter$Shredder");
+static const u8 sVariantNames_stunfisk[] = _("Plaice$Peacock Flounder$Peat Bog$Albino Flatfish$Tar Pit$Pikachu Flatfish");
+static const u8 sVariantNames_stunfisk_galar[] = _("Rusty Bear Trap$Venus Flytrap$Copper Patina$Cast Iron$Army Camo$Gold & Ruby Trap");
+static const u8 sVariantNames_mienfoo[] = _("Tigress$Monkey$Mantis$Po$Master Shifu$Dragon Warrior");
+static const u8 sVariantNames_druddigon[] = _("Megalon$Rodan$Godzilla$Anguirus$Destoroyah$King Ghidorah");
+static const u8 sVariantNames_golett[] = _("Terracotta Army$Abu Simbel$Greek Marble$Basalt$Gigantor$Colossus of Rhodes");
+static const u8 sVariantNames_pawniard[] = _("Clubs Soldier$Spades Soldier$Diamonds Soldier$White Queen$Cheshire Cat$Golden King");
+static const u8 sVariantNames_kingambit[] = _("White King$Shogun$Corinthian Bronze$Byzantine Emperor$The Night King$Sun King");
+static const u8 sVariantNames_bouffalant[] = _("Bleached Surfer$Ronald McDonald$Purple Haze$Highland Cow$Disco King$Golden Calf");
+static const u8 sVariantNames_rufflet[] = _("Bundesadler$Mexico$Zambia$Poland$Egypt$Kazakhstan");
+static const u8 sVariantNames_braviary_hisui[] = _("Roc$Japanese Phoenix$Simurgh$Quetzalcoatl$Garuda$Thunderbird");
+static const u8 sVariantNames_vullaby[] = _("Lammergeier$King Vulture$Himalayan Vulture$Calavera$Wicked Witch$Golden Vulture");
+static const u8 sVariantNames_heatmor[] = _("Giant Anteater$Silky Anteater$Aardvark$Cast Iron Stove$Copper Flame$Phoenix");
+static const u8 sVariantNames_durant[] = _("Red Wood Ant$Honeypot Ant$Green-Head Ant$Blue Metallic Ant$Bullet Ant$Midas Ant");
+static const u8 sVariantNames_deino[] = _("Blood Moon$Amethyst Hydra$Snow Hydra$Negative$Cerberus$Star Hydra");
+static const u8 sVariantNames_larvesta[] = _("Blue Giant$Solar Eclipse$Green Flash$White Dwarf$Northern Lights$Eos");
+static const u8 sVariantNames_cobalion[] = _("Chestnut$Friesian$Palomino$Dapple Grey$Strawberry Roan$Trojan Horse");
+static const u8 sVariantNames_terrakion[] = _("Pink Granite$Basalt$Uluru$Marble$Malachite$Lapis Lazuli");
+static const u8 sVariantNames_virizion[] = _("Autumn Maple$Holly$Ginkgo$Frosted$Copper Beech$Silver Fir");
+static const u8 sVariantNames_tornadus[] = _("Sirocco$Mistral$Harmattan$Bora$Santa Ana$Aeolus");
+static const u8 sVariantNames_thundurus[] = _("Red Sprite$Ball Lightning$Storm Cloud$White Flash$St. Elmo's Fire$Zeus");
+static const u8 sVariantNames_reshiram[] = _("Yin$Sunset$Blue Fire$White Gold$Amethyst Fire$Ho-Oh Colors");
+static const u8 sVariantNames_zekrom[] = _("Yang$Stormy Night$Blood Storm$Gamma Radiation$Raiden$Zeus");
+static const u8 sVariantNames_landorus[] = _("Volcanic Earth$Rice Paddy$Blue Clay$Chalk$Lavender Field$Golden Harvest");
+static const u8 sVariantNames_enamorus[] = _("Birth of Venus$Primavera$Thundercloud$Sunset$Selene$Freya");
+static const u8 sVariantNames_kyurem[] = _("Amethyst Ice$Fire & Ice$Emerald Ice$Strawberry Sorbet$Black Ice$Golden Ice");
+static const u8 sVariantNames_keldeo[] = _("Applejack$Fluttershy$Twilight Sparkle$Rarity$Pinkie Pie$Princess Luna");
+static const u8 sVariantNames_meloetta[] = _("Kagamine Rin$Kaito$Megurine Luka$Meiko$Kamui Gakupo$Hatsune Miku");
+static const u8 sVariantNames_genesect[] = _("Zaku II$Evangelion Unit-00$Bumblebee$Tron$RoboCop$Unicorn Gundam");
+static const u8 sVariantNames_chespin[] = _("Sea Urchin$Sonic$Autumn Acorn$Knight's Armor$Black Knight$Paladin");
+static const u8 sVariantNames_fennekin[] = _("Silver Fox$Ijen Blue Flame$Halloween Witch$Miko$Starry Night$Wizard of Oz");
+static const u8 sVariantNames_froakie[] = _("Red-Eyed Tree Frog$Naruto$Tomato Frog$Glass Frog$Purple Frog$Golden Frog");
+static const u8 sVariantNames_bunnelby[] = _("Lilac Rabbit$Tan Rabbit$Chocolate Bunny$Vienna Blue$Excavator$Chang'e Rabbit");
+static const u8 sVariantNames_fletchling[] = _("Blue Jay$Hummingbird$Spirit Crow$Snowy Owl$Gouldian Finch$Garuda");
+static const u8 sVariantNames_scatterbug[] = _("Highland$Garden$Marine$Meadow$Savanna$Sun");
+static const u8 sVariantNames_vivillon[] = _("Highland Pattern$Garden Pattern$Marine Pattern$Meadow Pattern$Savanna Pattern$Sun Pattern");
+static const u8 sVariantNames_litleo[] = _("White Lion$Scar$Blue Fire$Aslan$Leo$Green Lion");
+static const u8 sVariantNames_flabebe[] = _("Lavender$Green Rose$La Tulipe Noire$Fuchsia$Chocolate Cosmos$Silver Rose");
+static const u8 sVariantNames_floette_eternal[] = _("Night Violet$Mourning Lily$Blue Rose$Christmas Rose$Blood Moon$Ultimate Weapon");
+static const u8 sVariantNames_skiddo[] = _("Autumn$Cherry Blossom$Mountain Goat$Provence Lavender$Black Phillip$Ginkgo");
+static const u8 sVariantNames_pancham[] = _("Red Panda$Photo Negative$Jade Warrior$Polar Bear$Yakuza$Golden Panda");
+static const u8 sVariantNames_espurr[] = _("Siamese$Ginger Tom$Witch's Cat$Mint$Cheshire Cat$Bastet");
+static const u8 sVariantNames_honedge[] = _("Katana$Keyblade$Master Sword$Aztec Obsidian$Lightsaber$Kusanagi");
+static const u8 sVariantNames_spritzee[] = _("Peach$Eau de Cologne$Peppermint$Chanel No. 5$Marie Antoinette$Oud");
+static const u8 sVariantNames_swirlix[] = _("Chocolate Mousse$Matcha$Bubblegum$Ube$Licorice Allsorts$Gold Leaf Dessert");
+static const u8 sVariantNames_inkay[] = _("Vampire Squid$Bioluminescent$Sepia$Glass Squid$Splatoon$Pink Floyd Prism");
+static const u8 sVariantNames_binacle[] = _("Coral Reef$Basalt$Mussel Bed$Pearl Oyster$Lava$Malachite & Gold");
+static const u8 sVariantNames_skrelp[] = _("Algal Bloom$Kelp Forest$Blue Dragon$Toxic Waste$Ink-Black Reef$Jade Dragon");
+static const u8 sVariantNames_clauncher[] = _("Mantis Shrimp$Cocktail Shrimp$Albino Lobster$Purple Lobster$Black Cannon$Golden Lobster");
+static const u8 sVariantNames_helioptile[] = _("Green Anole$Blue Iguana$Solar Panel$Purple Lightning$Solar Eclipse$Synthwave");
+static const u8 sVariantNames_tyrunt[] = _("Toy T. Rex$Godzilla$Fossil$Barney$Albino$Amber");
+static const u8 sVariantNames_amaura[] = _("Green Aurora$Pink Dawn$Polar Night$Elsa$Iceland$Aurora Australis");
+static const u8 sVariantNames_hawlucha[] = _("El Santo$Rey Mysterio$Toucan$Flamingo Luchador$Hulk Hogan$Mil Mascaras");
+static const u8 sVariantNames_dedenne[] = _("House Mouse$Chocolate Mouse$White Lab Mouse$Electric Blue$Mint Chocolate$Plasma Ball");
+static const u8 sVariantNames_carbink[] = _("Rose Quartz$Emerald in Slate$Ruby in Granite$Amethyst Geode$Obsidian Diamond$Opal");
+static const u8 sVariantNames_goomy[] = _("Bubblegum Slug$Slime$Honey$Lava Lamp$Petroleum$Metal Slime");
+static const u8 sVariantNames_klefki[] = _("Red Copper$Patina$Wrought Iron$Rose Gold$Anodized Titanium$St. Peter's Keys");
+static const u8 sVariantNames_phantump[] = _("Cherry Blossom$Maple$Haunted Forest$Pandora$Frosted Tree$Yggdrasil");
+static const u8 sVariantNames_pumpkaboo[] = _("Butternut$Kabocha$Jarrahdale$Cinderella's Coach$Stingy Jack$Golden Pumpkin");
+static const u8 sVariantNames_bergmite[] = _("Baikal Ice$Watermelon Snow$Amethyst Ice$Black Ice$Emerald Ice$Citrine");
+static const u8 sVariantNames_noibat[] = _("Vampire Bat$Flying Fox$Honduran White Bat$Batman$Subwoofer$King Ghidorah");
+static const u8 sVariantNames_xerneas[] = _("Sika Deer$Cernunnos$Nara Sakura Deer$Nightwalker$Autumn Stag$Ceryneian Hind");
+static const u8 sVariantNames_yveltal[] = _("Vulture$Blue Death Fire$Necrosis$Angel of Death$Nidhogg$Kronos");
+static const u8 sVariantNames_zygarde[] = _("Red Cells$Tron$Lava$Ultra Space$Desert$Quetzalcoatl");
+static const u8 sVariantNames_diancie[] = _("Aquamarine$Emerald$Topaz$Amethyst$Black Diamond$Hope Diamond");
+static const u8 sVariantNames_hoopa[] = _("Aladdin's Genie$Purple Djinn$Jafar$Persian Tiles$Ifrit$Silver Lamp");
+static const u8 sVariantNames_volcanion[] = _("Inverted$Basalt$Steampunk$Purple Magma$Grand Prismatic$Gold Steam Engine");
+static const u8 sVariantNames_rowlet[] = _("Barn Owl$Snowy Owl$Cherry Blossom$Lapland Owl$Ghost Archer$Owl of Athena");
+static const u8 sVariantNames_litten[] = _("Bengal Tiger$Snow Leopard$Blue Fire$Hulkamania$Nekomata$Sekhmet");
+static const u8 sVariantNames_popplio[] = _("Sea Lion$Little Mermaid$Pierrot$Orca$Barbie$Ranchu Goldfish");
+static const u8 sVariantNames_pikipek[] = _("Green Woodpecker$Cinnamon$Woody Woodpecker$Albino$Miami Vice$Golden Cannon");
+static const u8 sVariantNames_yungoos[] = _("Meerkat$Sherlock Holmes$Rikki-Tikki-Tavi$Film Noir$Pink Panther$Golden Badge");
+static const u8 sVariantNames_grubbin[] = _("Duracell$White Charger$Glowworm$Tron$Jewel Beetle$Golden Scarab");
+static const u8 sVariantNames_charjabug[] = _("Catbus$White Charger$School Bus$Tron$Knight Bus$Mystery Machine");
+static const u8 sVariantNames_crabrawler[] = _("Boiled Lobster$Fiddler Crab$Ghost Crab$Rocky Balboa$Coconut Crab$Golden Gloves");
+static const u8 sVariantNames_oricorio[] = _("Blue Jay$Flamingo$Swan Lake$Salsa$Bird of Paradise$Rio Carnival");
+static const u8 sVariantNames_oricorio_pom_pom[] = _("Dallas Cowboys$Bring It On$Lakers Girls$Seahawks$Miami Dolphins$Elle Woods");
+static const u8 sVariantNames_oricorio_pau[] = _("Ti Leaf Skirt$Orchid Lei$Indigo Pa'u$Kukui Lei$Siva Afi$Moana");
+static const u8 sVariantNames_oricorio_sensu[] = _("Furisode$Sakura Kimono$Kurotomesode$Momiji$Uguisu$Shiromuku");
+static const u8 sVariantNames_cutiefly[] = _("Honeybee$Carpenter Bee$Lavender$Strawberry$Tinker Bell$Klimt");
+static const u8 sVariantNames_rockruff[] = _("Gray Wolf$Arctic Wolf$Dobermann$Amethyst Geode$Lapis Lazuli$Capitoline Wolf");
+static const u8 sVariantNames_wishiwashi[] = _("Mackerel$Red Salmon$Kelp School$Ghost Fish$Purple School$Koi");
+static const u8 sVariantNames_mareanie[] = _("Crown-of-Thorns$Blue Ring Octopus$Ice Coral$Durian$Fire Coral$Ursula");
+static const u8 sVariantNames_mudbray[] = _("Dapple Gray$Palomino$Terracotta Army$Black Beauty$Delfts Blauw$Thracian Gold");
+static const u8 sVariantNames_dewpider[] = _("Garden Spider$Black Widow$Peacock Spider$Green Lynx Spider$Pinktoe Tarantula$Golden Silk Spider");
+static const u8 sVariantNames_fomantis[] = _("Orchid Mantis$Hibiscus$Iris$Sunflower$Ghost Mantis$Black Tulip");
+static const u8 sVariantNames_morelull[] = _("Fly Agaric$Poison Mushroom$Glowing Mycena$Indigo Milk Cap$Bleeding Tooth$1-UP Mushroom");
+static const u8 sVariantNames_salandit[] = _("Gila Monster$Axolotl$Blue Poison Frog$Poison Ivy$Lava Flow$Cruella de Vil");
+static const u8 sVariantNames_stufful[] = _("Teddy Bear$Polar Bear$Grumpy Bear$Gummy Bear$Lotso$Steiff Teddy");
+static const u8 sVariantNames_bounsweet[] = _("Blueberry$Mandarin$Pineberry$Grape$Evil Queen$Hesperides Apple");
+static const u8 sVariantNames_comfey[] = _("Frangipani Lei$Hydrangea$Autumn Wreath$Holly Wreath$Dia de Muertos$Golden Laurel");
+static const u8 sVariantNames_oranguru[] = _("Orangutan$Gandalf the Grey$Three Wise Monkeys$Merlin$Sun Wukong$Jade Emperor");
+static const u8 sVariantNames_passimian[] = _("Oranje$Springboks$Les Bleus$Mandrill$Wales$Golden Ball");
+static const u8 sVariantNames_wimpod[] = _("Woodlouse$Samurai$Lobster Red$Round Table Knight$Deep-Sea Light$Golden Armor");
+static const u8 sVariantNames_sandygast[] = _("North Sea Beach$Pink Sand Beach$Snow Castle$Olivine Beach$Sea Glass$Haunted Castle");
+static const u8 sVariantNames_pyukumuku[] = _("Yellow Colochirus$Namako$Sea Apple$Albino$Tigertail$Cosmic Cucumber");
+static const u8 sVariantNames_type_null[] = _("Lab Steel$Rust & Patina$Evangelion Unit-01$Camo Prototype$Gladion$RKS Prism");
+static const u8 sVariantNames_minior[] = _("Iron Meteorite$Pallasite$Chondrite$Comet Ice$Moldavite$Stardust");
+static const u8 sVariantNames_komala[] = _("Real Koala$Pajamas$Eucalyptus$Nightmare$Sandman$Dreamland");
+static const u8 sVariantNames_turtonator[] = _("Cooled Lava$Bowser$Ice Volcano$Amethyst Volcano$White Phosphorus$Gold & Platinum");
+static const u8 sVariantNames_togedemaru[] = _("Brown Hedgehog$Mint Hedgehog$Pikachu$Sonic$Neon Lightning$Copper Coil");
+static const u8 sVariantNames_mimikyu[] = _("Raichu Costume$Ghost Sheet$Kawaii Merch$Gengar Costume$Zombie Pikachu$Santa Hat");
+static const u8 sVariantNames_bruxish[] = _("Clownfish$Dory$Betta$Parrotfish$Ghost Fish$Golden Arowana");
+static const u8 sVariantNames_drampa[] = _("New Year Dragon$Falkor$Haku$Storm Dragon$Spyro$Imperial Dragon");
+static const u8 sVariantNames_dhelmise[] = _("Rusty Anchor$Flying Dutchman$Sea Anemone$Blackbeard$Titanic$Black Pearl Hoard");
+static const u8 sVariantNames_jangmo_o[] = _("Silver Samurai$Greek Hoplite$Jade Warrior$Ruby Armor$Obsidian$Crystal Dragon");
+static const u8 sVariantNames_tapu_koko[] = _("Red Junglefowl$Tesla Coil$White Leghorn$Green Junglefowl$Supercell$Kamehameha Cloak");
+static const u8 sVariantNames_tapu_lele[] = _("Brimstone$Monarch$Blue Morpho$Mewtwo$Luna Moth$Lisa Frank");
+static const u8 sVariantNames_tapu_bulu[] = _("Moss & Oak$Highland Cattle$Traje de Luces$Kalo$Birch Bark$Golden Calf");
+static const u8 sVariantNames_tapu_fini[] = _("Sea Mist$Coral Reef$Kelp Forest$Vaadhoo Beach$Paua Shell$Sunken Treasure");
+static const u8 sVariantNames_cosmog[] = _("Harvest Moon$Aurora Borealis$White Dwarf$Solar Eclipse$Orion Nebula$Golden Cosmos");
+static const u8 sVariantNames_nihilego[] = _("Mauve Stinger$Neurotoxin$Fire Jellyfish$Ultra Black Glass$Atolla$Opal");
+static const u8 sVariantNames_buzzwole[] = _("Thanos$Arnold$Dr. Manhattan$Tiger Mosquito$Bubblegum$Hercules Statue");
+static const u8 sVariantNames_pheromosa[] = _("Cockroach$Little Black Dress$Barbiecore$Tiffany$Red Carpet$Golden Oscar Gown");
+static const u8 sVariantNames_xurkitree[] = _("Copper Wire$Christmas Lights$Neon Tube$Plasma Ball$Emergency Power$Gold Fiber Optic");
+static const u8 sVariantNames_celesteela[] = _("Bamboo Princess$Saturn V$Lapis Rocket$Charcoal$Lavender Rocket$Tintin's Rocket");
+static const u8 sVariantNames_kartana[] = _("Newspaper$Washi$Kraft Paper$Blueprint$Black Katana$Golden Crane");
+static const u8 sVariantNames_guzzlord[] = _("Kirby$Black Hole$Lava Stomach$Swamp Monster$Cookie Monster$Mammon");
+static const u8 sVariantNames_necrozma[] = _("Smoky Quartz$Amethyst$Ruby$Emerald$Diamond$Ultra Radiance");
+static const u8 sVariantNames_magearna[] = _("Mint & Silver$Delfts Blauw$Clockwork$Lavender Doll$Gothic Doll$Fabergé Egg");
+static const u8 sVariantNames_marshadow[] = _("Purple Shadow$Desert Shadow$Negative$Blood Shadow$Squid Ink$Zenith");
+static const u8 sVariantNames_poipole[] = _("Wasp$Toxic Neon$Sky Blue$Ruby$Coral Reef$Scorpion King");
+static const u8 sVariantNames_stakataka[] = _("Red Brick$Sandstone$Amethyst Wall$Marble$Obsidian$Diamond Block");
+static const u8 sVariantNames_blacephalon[] = _("Joker$Harley Quinn$Black Pierrot$Pastel Circus$Burger Clown$Golden Ringmaster");
+static const u8 sVariantNames_zeraora[] = _("Black Panther$Bengal Tiger$The Flash$Plasma Purple$Kawasaki Green$Magical Girl");
+static const u8 sVariantNames_meltan[] = _("Statue of Liberty$Chrome$Anodized Titanium$Cast Iron$Rose Gold$Pure Gold");
+static const u8 sVariantNames_grookey[] = _("Mandrill$Snow Monkey$Sakura Bonsai$2-D$Taiko no Tatsujin$Sun Wukong");
+static const u8 sVariantNames_scorbunny[] = _("Oranjegekte$Canarinho$Brown Hare$Ghost Fire$Bugs Bunny$Ballon d'Or");
+static const u8 sVariantNames_sobble[] = _("Panther Chameleon$James Bond$Jackson Chameleon$Axolotl$Ghillie Sniper$Goldfinger");
+static const u8 sVariantNames_skwovet[] = _("Gray Squirrel$Black Squirrel$Giant Squirrel$Albino$Ratatoskr$Scrooge McDuck");
+static const u8 sVariantNames_rookidee[] = _("Magpie$Copper Armor$White Raven$Red Knight$Glossy Starling$Huginn & Muninn");
+static const u8 sVariantNames_blipbug[] = _("Black Ladybug$Jewel Beetle$Mars Attacks$Delfts Blauw$22-Spot Ladybird$Fabergé Egg");
+static const u8 sVariantNames_nickit[] = _("Sly Cooper$Pink Panther$Kitsune$Melanistic Fox$Aladdin$Gringotts Heist");
+static const u8 sVariantNames_gossifleur[] = _("Cornflower$Hibiscus$Provence Lavender$Black Tulip$Cotton Candy$Rumpelstiltskin");
+static const u8 sVariantNames_wooloo[] = _("Drents Heideschaap$Pink Dyed Sheep$Herdwick$Counting Sheep$Chia Pet$Golden Fleece");
+static const u8 sVariantNames_chewtle[] = _("Snapping Turtle$Hawksbill$Bowser$Lava Turtle$Amethyst Turtle$Kim Quy");
+static const u8 sVariantNames_yamper[] = _("Doge$Husky$101 Dalmatians$Scooby-Doo$Tron$Laika");
+static const u8 sVariantNames_rolycoly[] = _("Lapis Lazuli$Copper Mine$Hematite$Diamond$Amethyst Geode$Gold Vein");
+static const u8 sVariantNames_applin[] = _("Toffee Apple$Arkansas Black$Pink Lady$Poison Apple$Ice Apple$Apple of Discord");
+static const u8 sVariantNames_dipplin[] = _("Granny Smith$Pink Lady$Toffee Apple$Black Diamond$Poison Apple$Silver Moon Apple");
+static const u8 sVariantNames_silicobra[] = _("Oasis$White Sands$Black Sand$Bermuda Pink Sand$Shai-Hulud$Pharaoh's Uraeus");
+static const u8 sVariantNames_cramorant[] = _("Brown Pelican$Pink Pelican$Blue-Footed Booby$Northern Gannet$Frigatebird$Golden Goose");
+static const u8 sVariantNames_arrokuda[] = _("Pike$Silver Barracuda$Kohaku Koi$Mahi-Mahi$Deep-Sea Hunter$Asian Arowana");
+static const u8 sVariantNames_toxel[] = _("Iron Maiden$Ziggy Stardust$Blue Poison Frog$Toxic$Hatsune Miku$Daft Punk");
+static const u8 sVariantNames_sizzlipede[] = _("Giant Centipede$Green Fire$Purple Lava$White-Hot$Kawah Ijen$Dragon Dance");
+static const u8 sVariantNames_clobbopus[] = _("Blue Ring Octopus$Ursula$Dumbo Octopus$Judo$Akuma$Champion Belt");
+static const u8 sVariantNames_sinistea[] = _("Tea Ceremony$Delfts Blauw$Rosehip Tea$Kulhad Chai$Butterfly Pea Tea$Kintsugi");
+static const u8 sVariantNames_impidimp[] = _("Gremlins$Aka-Oni$The Grinch$Pennywise$Krampus$Leprechaun");
+static const u8 sVariantNames_milcery[] = _("Strawberry Milk$Chocolate Milk$Matcha Latte$Blueberry Yogurt$Blue Hawaii Slush$Black Sesame");
+static const u8 sVariantNames_falinks[] = _("Terracotta Army$Queen's Guard$Stormtroopers$Swiss Guard$Spartan Hoplites$Purple Guard");
+static const u8 sVariantNames_pincurchin[] = _("Red Urchin$Green Urchin$Collector Urchin$Purple Urchin$Uni$Crown Urchin");
+static const u8 sVariantNames_snom[] = _("Aurora$Citrine Crystal$Rime on Roses$Black Ice$Ruby Ice$Sapphire & Gold");
+static const u8 sVariantNames_stonjourner[] = _("Petra Sandstone$Mossy Hunebed$Moai$Carrara Marble$Obsidian$El Dorado");
+static const u8 sVariantNames_eiscue[] = _("Lemon Ice Pop$Mint Chocolate$Grape Ice Pop$Cola Ice Pop$Blue Raspberry$Ruby Ice Block");
+static const u8 sVariantNames_indeedee[] = _("Geisha$Pompadour$Chinchilla$Bollywood$Jade Buddha$Maharaja");
+static const u8 sVariantNames_morpeko[] = _("Snickers$Dwarf Hamster$Pac-Man Ghosts$Matcha Mochi$Neapolitan$Milky Way");
+static const u8 sVariantNames_cufant[] = _("Rusty Iron$Holi Elephant$Anodized Titanium$White Elephant$Cast Iron$Tutankhamun");
+static const u8 sVariantNames_fossils[] = _("Petrified Fossil$Barney$Coral Reef$Godzilla$Albino$Golden Chimera");
+static const u8 sVariantNames_duraludon[] = _("Statue of Liberty$Tokyo Tower$Neon Hong Kong$Tower Crane$Barbie Dreamhouse$Ishtar Gate");
+static const u8 sVariantNames_archaludon[] = _("Golden Gate$Corten Steel$Vaporwave Bridge$Statue of Liberty$Cast Iron & Lava$Golden Bridge");
+static const u8 sVariantNames_dreepy[] = _("Camo Jet$Blue Angels$Casper$Halloween$The Red Baron$Apollo");
+static const u8 sVariantNames_zacian[] = _("Sif$Fenrir$The Green Knight$Royal Purple$Skoll & Hati$Tiangou");
+static const u8 sVariantNames_eternatus[] = _("Black Hole$Blue Supergiant$Kryptonite$Solar Flare$Stardust$Golden Comet");
+static const u8 sVariantNames_kubfu[] = _("Giant Panda$Kodiak Bear$Shaolin Monk$Bruce Lee$Water Style$Golden Buddha");
+static const u8 sVariantNames_zarude[] = _("Orangutan$Snowflake$Death Vine$Tropical Night$Sakura Vine$Hanuman");
+static const u8 sVariantNames_regieleki[] = _("Cyan Plasma$The Flash$White Spark$Sunset Current$Raiden$Circuit Board");
+static const u8 sVariantNames_regidrago[] = _("Bronze Dragon$Y Ddraig Goch$White Dragon$Bahamut$Jade Dragon$King Ghidorah");
+static const u8 sVariantNames_calyrex[] = _("Autumn King$Sakura Emperor$Oberon$Mushroom King$Dullahan$The Sun King");
+static const u8 sVariantNames_sprigatito[] = _("Japanese Maple$Lavender Field$Hanami$Monet's Lilies$Le Chat Noir$Klimt's Kiss");
+static const u8 sVariantNames_fuecoco[] = _("Gila Monster$Sugar Skull$Copper Flame$Albino Crocodile$Mariachi$Quetzalcoatl");
+static const u8 sVariantNames_quaxly[] = _("Mallard$Flamenco$Mandarin Duck$Rubber Duck$Swan Lake$Rio Carnival");
+static const u8 sVariantNames_lechonk[] = _("Mangalica$Snowball$Eau de Lavande$Tamworth$Delfts Blauw$King Midas");
+static const u8 sVariantNames_tarountula[] = _("Golden Orb Weaver$Peacock Spider$Crab Spider$Spider-Man$Black Widow$Greenbottle Blue");
+static const u8 sVariantNames_nymble[] = _("Desert Locust$Kamen Rider$Rainbow Hopper$Pink Katydid$The Joker$Jade Cricket");
+static const u8 sVariantNames_pawmi[] = _("Dwarf Hamster$Chocolate Hamster$Pikachu Cosplay$Sonic$Blackout$Hulk");
+static const u8 sVariantNames_tandemaus[] = _("House Mouse$Jerry$Gouda$Mickey Mouse$Sugar Mouse$Year of the Rat");
+static const u8 sVariantNames_fidough[] = _("Pumpernickel$Matcha Melonpan$Ube Bun$Charcoal Bread$Strawberry Bread$Red Velvet");
+static const u8 sVariantNames_smoliv[] = _("Tapenade$Kalamata$Cherry Blossom$Autumn Orchard$Valencia Orange$Athena's Olive");
+static const u8 sVariantNames_squawkabilly[] = _("Kea$Galah$Eastern Rosella$Scarlet Macaw$Rainbow Lorikeet$Black Cockatoo");
+static const u8 sVariantNames_nacli[] = _("Black Lava Salt$Himalayan Salt$Persian Blue Salt$Smoked Salt$Amethyst Geode$Fool's Gold");
+static const u8 sVariantNames_charcadet[] = _("Green Lantern$Frozen Fire$Doctor Strange$Obsidian & Lava$Sakura Ronin$Joan of Arc");
+static const u8 sVariantNames_tadbulb[] = _("Neon Sign$Blue Poison Frog$Strawberry Frog$Golden Toad$Firefly$Tesla Coil");
+static const u8 sVariantNames_wattrel[] = _("Gannet$Blue-Footed Booby$Purple Lightning$Cardinal$Thundercloud$Thunderbird");
+static const u8 sVariantNames_maschiff[] = _("Rottweiler$Blue Doberman$Shiba Inu$Weimaraner$Peaky Blinders$The Godfather");
+static const u8 sVariantNames_shroodle[] = _("Ring-Tailed Lemur$Banksy$Neon Graffiti$Aye-Aye$Keith Haring$Dali");
+static const u8 sVariantNames_bramblin[] = _("Silver Thistle$Desert Sunset$Briar Rose$Frosted Willow$Will-o'-the-Wisp$Golden Tumbleweed");
+static const u8 sVariantNames_toedscool[] = _("Fly Agaric$Toadsworth$Blue Pinkgill$Amethyst Deceiver$Inky Cap$Ghost Fungus");
+static const u8 sVariantNames_klawf[] = _("Blue Crab$Coconut Crab$Halloween Crab$Ghost Crab$Kingler$Cancer");
+static const u8 sVariantNames_capsakid[] = _("Habanero$Carolina Reaper$Banana Pepper$Dried Chilies$Black Pearl$Ghost Pepper");
+static const u8 sVariantNames_rellor[] = _("Jewel Scarab$Ladybug$Tutankhamun$Sun God Ra$Nebula$Silver Scarab");
+static const u8 sVariantNames_flittle[] = _("Emu$Peacock$Cassowary$Lava Lamp$Albino Ostrich$Horus");
+static const u8 sVariantNames_tinkatink[] = _("Forge Fire$Mjolnir$Harley Quinn$Mint & Rose Gold$Gothic$Hephaestus");
+static const u8 sVariantNames_wiglett[] = _("Orange Garden Eel$Green Moray$Zebra Moray$Coral Garden$Sea Krait$Hydrothermal Vent");
+static const u8 sVariantNames_bombirdier[] = _("Marabou$Shoebill$Scarlet Ibis$Delivery Stork$Vulture$Golden Stork");
+static const u8 sVariantNames_finizen[] = _("Pink River Dolphin$Orca$The Flash$Vaporwave$Ultraman$Wonder Woman");
+static const u8 sVariantNames_varoom[] = _("Rosso Corsa$Gulf Racing$Rust Bucket$Mercedes F1$Lamborghini Green$Gold Lowrider");
+static const u8 sVariantNames_cyclizar[] = _("Frilled Lizard$Basilisk$Vespa$Ducati Panigale$Harley-Davidson$Light Cycle");
+static const u8 sVariantNames_orthworm[] = _("Earthworm$Steam Locomotive$Shinkansen$Dune Sandworm$Orient Express$Golden Spike");
+static const u8 sVariantNames_glimmet[] = _("Ruby$Emerald$Imperial Topaz$Opal$Toxic Obsidian$Watermelon Gem");
+static const u8 sVariantNames_greavard[] = _("Terracotta Urn$Mossy Grave$Zero$Angel Grave$Hellhound$Pharaoh's Tomb");
+static const u8 sVariantNames_flamigo[] = _("Black Flamingo$White Spoonbill$Great Blue Heron$Shaolin Crane$Purple Swamphen$Miami Vice");
+static const u8 sVariantNames_cetoddle[] = _("Narwhal$Woolly Mammoth$Glacier Blue$Peach Melba$Aurora$Santa Claus");
+static const u8 sVariantNames_veluza[] = _("Salmon Fillet$Bluefin Tuna$Barracuda$Kohaku Koi$Swordfish$Goldfish");
+static const u8 sVariantNames_dondozo[] = _("Albino Catfish$Zander$Mud Catfish$Anglerfish$Orca Catfish$Showa Koi");
+static const u8 sVariantNames_tatsugiri[] = _("Saba$Unagi$Kappa Maki$Ika Sumi$Ube Mochi$Kinpaku");
+static const u8 sVariantNames_great_tusk[] = _("Primal Mammoth$Basalt$Lascaux$Ice Age$Sandstone Fossil$Maya Obsidian");
+static const u8 sVariantNames_scream_tail[] = _("Cave Bear$Yeti$Red Ochre$Pastel Mint$The Scream$Starry Nightmare");
+static const u8 sVariantNames_brute_bonnet[] = _("Yellow Amanita$Psilocybe$Birch Polypore$Bleeding Tooth$Glowing Mycena$Gilded Truffle");
+static const u8 sVariantNames_flutter_mane[] = _("Banshee$Mismagius Hat$Blood Rose$Black Widow$Onryo$Red Dawn");
+static const u8 sVariantNames_slither_wing[] = _("Atlas Moth$Luna Moth$Blue Morpho$Mourning Cloak$Rosy Maple Moth$Phoenix");
+static const u8 sVariantNames_sandy_shocks[] = _("Desert Sand$Horseshoe Magnet$Malachite$Fulgurite$Plasma Magnetite$Fool's Gold");
+static const u8 sVariantNames_iron_treads[] = _("Tron$Bulldozer$Evangelion Unit-01$Stormtrooper$Racing Green$Rose Gold");
+static const u8 sVariantNames_iron_bundle[] = _("Penguin Bot$Ice Cold$The Grinch$Christmas Bauble$Krampus$Golden Star");
+static const u8 sVariantNames_iron_hands[] = _("Tower Crane$Mazinger Z$Yokozuna$Gipsy Danger$Pink Boxing Gloves$Champion Belt");
+static const u8 sVariantNames_iron_jugulis[] = _("F-14 Tomcat$Batwing$Stealth Bomber$Blue Angels$The Red Baron$Mecha Ghidorah");
+static const u8 sVariantNames_iron_moth[] = _("Gas Burner$Uranium Reactor$Purple Plasma$Neon Pink$Black Sun$Mirror Chrome");
+static const u8 sVariantNames_iron_thorns[] = _("Mechagodzilla$Destoroyah$Godzilla$Shin Godzilla$RX-78 Gundam$Colossus of Rhodes");
+static const u8 sVariantNames_frigibax[] = _("Night Dragon$Emerald Glacier$Snow-White Dragon$Amethyst Cave$Fire & Ice$Excalibur");
+static const u8 sVariantNames_gimmighoul[] = _("Silver Hoard$Copper Pennies$Jade Hoard$Rose Gold$Cursed Aztec Gold$Amethyst Gold");
+static const u8 sVariantNames_wo_chien[] = _("Autumn$Spring$Winter$Jade & Lacquer$The Curse$Shang Bronze");
+static const u8 sVariantNames_chien_pao[] = _("Sabertooth$Black Panther$Snow Leopard$Autumn Tiger$Bloody Snow$Jade Tiger");
+static const u8 sVariantNames_ting_lu[] = _("Autumn$Spring$Winter$Jade & Lacquer$The Curse$Shang Bronze");
+static const u8 sVariantNames_chi_yu[] = _("Lithium Flame$Green Ghost Fire$Potassium Flame$Magnesium$Black Fire$Lucky Carp");
+static const u8 sVariantNames_roaring_moon[] = _("Black Dragon$Emerald Dragon$Purple Dragon King$White Dragon$Blood Moon$King Ghidorah");
+static const u8 sVariantNames_iron_valiant[] = _("Ice Sword$Black Knight$Red Lotus$Lavender & Jade$Sakura Samurai$Paladin");
+static const u8 sVariantNames_koraidon[] = _("Miraidon Colors$Kawasaki Racer$Desert Lizard$KTM$Chopper$Aztec Sun Stone");
+static const u8 sVariantNames_miraidon[] = _("Koraidon Colors$Tron$Silver Arrow$Synthwave$Green Lightning$Gold Racer");
+static const u8 sVariantNames_walking_wake[] = _("Mugger Crocodile$Raikou Colors$Entei Colors$Suicune Colors$Inky Water$Ho-Oh");
+static const u8 sVariantNames_iron_leaves[] = _("Autumn Leaf$Cobalion Colors$Terrakion Colors$Keldeo Colors$Cyber Leaf$Olympic Laurel");
+static const u8 sVariantNames_poltchageist[] = _("Hojicha$Sakura Tea$Butterfly Pea Tea$Earl Grey$Vermilion Lacquer$Kintsugi");
+static const u8 sVariantNames_okidogi[] = _("Kibidango$Toxic Mochi$Oni$Porcelain Guard$Night Watch$Golden Guardians");
+static const u8 sVariantNames_ogerpon[] = _("Japanese Maple$Sakura$Snowy Pines$Ginkgo$Oni Night$Shuten-doji");
+static const u8 sVariantNames_gouging_fire[] = _("Black Fire$Blue Fire$Raikou Colors$White-Hot$Copper Fire$Ho-Oh");
+static const u8 sVariantNames_raging_bolt[] = _("Thundercloud$Pink Sunrise$Suicune Colors$Tornado$Red Lightning$Zeus");
+static const u8 sVariantNames_iron_boulder[] = _("Cobalion Colors$Virizion Colors$Pink Granite$Lava Rock$Moonstone$Golden Fleece");
+static const u8 sVariantNames_iron_crown[] = _("Ruby King$Emerald King$Amethyst King$Diamond King$Onyx$Sun Crown");
+static const u8 sVariantNames_terapagos[] = _("Ruby Tera$Emerald Tera$Amethyst Tera$Opal$Onyx$Sun Crystal");
+static const u8 sVariantNames_pecharunt[] = _("Momo Peach$Matcha Mochi$Silver Blackberry$Sakura Mochi$Black Venom$Immortal Peach");
+
 #if (P_FAMILY_BULBASAUR)
 static const u16 sVariants_Bulbasaur[] = INCBIN_U16("graphics/pokemon/bulbasaur/variants.gbapal");
 #endif
@@ -3580,3580 +4143,3580 @@ static const u16 sVariants_Pecharunt[] = INCBIN_U16("graphics/pokemon/pecharunt/
 const struct VariantPalettes gVariantPalettes[] =
 {
 #if (P_FAMILY_BULBASAUR)
-    {gMonPalette_Bulbasaur, sVariants_Bulbasaur},
+    {gMonPalette_Bulbasaur, sVariants_Bulbasaur, sVariantNames_bulbasaur},
 #endif
 #if (P_FAMILY_BULBASAUR)
-    {gMonPalette_Ivysaur, sVariants_Ivysaur},
+    {gMonPalette_Ivysaur, sVariants_Ivysaur, sVariantNames_bulbasaur},
 #endif
 #if (P_FAMILY_BULBASAUR)
-    {gMonPalette_Venusaur, sVariants_Venusaur},
+    {gMonPalette_Venusaur, sVariants_Venusaur, sVariantNames_bulbasaur},
 #endif
 #if (P_FAMILY_CHARMANDER)
-    {gMonPalette_Charmander, sVariants_Charmander},
+    {gMonPalette_Charmander, sVariants_Charmander, sVariantNames_charmander},
 #endif
 #if (P_FAMILY_CHARMANDER)
-    {gMonPalette_Charmeleon, sVariants_Charmeleon},
+    {gMonPalette_Charmeleon, sVariants_Charmeleon, sVariantNames_charmander},
 #endif
 #if (P_FAMILY_CHARMANDER)
-    {gMonPalette_Charizard, sVariants_Charizard},
+    {gMonPalette_Charizard, sVariants_Charizard, sVariantNames_charmander},
 #endif
 #if (P_FAMILY_SQUIRTLE)
-    {gMonPalette_Squirtle, sVariants_Squirtle},
+    {gMonPalette_Squirtle, sVariants_Squirtle, sVariantNames_squirtle},
 #endif
 #if (P_FAMILY_SQUIRTLE)
-    {gMonPalette_Wartortle, sVariants_Wartortle},
+    {gMonPalette_Wartortle, sVariants_Wartortle, sVariantNames_squirtle},
 #endif
 #if (P_FAMILY_SQUIRTLE)
-    {gMonPalette_Blastoise, sVariants_Blastoise},
+    {gMonPalette_Blastoise, sVariants_Blastoise, sVariantNames_squirtle},
 #endif
 #if (P_FAMILY_CATERPIE)
-    {gMonPalette_Caterpie, sVariants_Caterpie},
+    {gMonPalette_Caterpie, sVariants_Caterpie, sVariantNames_caterpie},
 #endif
 #if (P_FAMILY_CATERPIE)
-    {gMonPalette_Metapod, sVariants_Metapod},
+    {gMonPalette_Metapod, sVariants_Metapod, sVariantNames_caterpie},
 #endif
 #if (P_FAMILY_CATERPIE)
-    {gMonPalette_Butterfree, sVariants_Butterfree},
+    {gMonPalette_Butterfree, sVariants_Butterfree, sVariantNames_caterpie},
 #endif
 #if (P_FAMILY_WEEDLE)
-    {gMonPalette_Weedle, sVariants_Weedle},
+    {gMonPalette_Weedle, sVariants_Weedle, sVariantNames_weedle},
 #endif
 #if (P_FAMILY_WEEDLE)
-    {gMonPalette_Kakuna, sVariants_Kakuna},
+    {gMonPalette_Kakuna, sVariants_Kakuna, sVariantNames_weedle},
 #endif
 #if (P_FAMILY_WEEDLE)
-    {gMonPalette_Beedrill, sVariants_Beedrill},
+    {gMonPalette_Beedrill, sVariants_Beedrill, sVariantNames_weedle},
 #endif
 #if (P_FAMILY_PIDGEY)
-    {gMonPalette_Pidgey, sVariants_Pidgey},
+    {gMonPalette_Pidgey, sVariants_Pidgey, sVariantNames_pidgey},
 #endif
 #if (P_FAMILY_PIDGEY)
-    {gMonPalette_Pidgeotto, sVariants_Pidgeotto},
+    {gMonPalette_Pidgeotto, sVariants_Pidgeotto, sVariantNames_pidgey},
 #endif
 #if (P_FAMILY_PIDGEY)
-    {gMonPalette_Pidgeot, sVariants_Pidgeot},
+    {gMonPalette_Pidgeot, sVariants_Pidgeot, sVariantNames_pidgey},
 #endif
 #if (P_FAMILY_RATTATA)
-    {gMonPalette_Rattata, sVariants_Rattata},
+    {gMonPalette_Rattata, sVariants_Rattata, sVariantNames_rattata},
 #endif
 #if (P_FAMILY_RATTATA)
-    {gMonPalette_Raticate, sVariants_Raticate},
+    {gMonPalette_Raticate, sVariants_Raticate, sVariantNames_rattata},
 #endif
 #if (P_FAMILY_RATTATA) && (P_ALOLAN_FORMS)
-    {gMonPalette_RattataAlola, sVariants_RattataAlola},
+    {gMonPalette_RattataAlola, sVariants_RattataAlola, sVariantNames_rattata_alola},
 #endif
 #if (P_FAMILY_RATTATA) && (P_ALOLAN_FORMS)
-    {gMonPalette_RaticateAlola, sVariants_RaticateAlola},
+    {gMonPalette_RaticateAlola, sVariants_RaticateAlola, sVariantNames_rattata_alola},
 #endif
 #if (P_FAMILY_SPEAROW)
-    {gMonPalette_Spearow, sVariants_Spearow},
+    {gMonPalette_Spearow, sVariants_Spearow, sVariantNames_spearow},
 #endif
 #if (P_FAMILY_SPEAROW)
-    {gMonPalette_Fearow, sVariants_Fearow},
+    {gMonPalette_Fearow, sVariants_Fearow, sVariantNames_spearow},
 #endif
 #if (P_FAMILY_EKANS)
-    {gMonPalette_Ekans, sVariants_Ekans},
+    {gMonPalette_Ekans, sVariants_Ekans, sVariantNames_ekans},
 #endif
 #if (P_FAMILY_EKANS)
-    {gMonPalette_Arbok, sVariants_Arbok},
+    {gMonPalette_Arbok, sVariants_Arbok, sVariantNames_ekans},
 #endif
 #if (P_FAMILY_PIKACHU) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Pichu, sVariants_Pichu},
+    {gMonPalette_Pichu, sVariants_Pichu, sVariantNames_pichu},
 #endif
 #if (P_FAMILY_PIKACHU)
-    {gMonPalette_Pikachu, sVariants_Pikachu},
+    {gMonPalette_Pikachu, sVariants_Pikachu, sVariantNames_pichu},
 #endif
 #if (P_FAMILY_PIKACHU)
-    {gMonPalette_Raichu, sVariants_Raichu},
+    {gMonPalette_Raichu, sVariants_Raichu, sVariantNames_pichu},
 #endif
 #if (P_FAMILY_PIKACHU) && (P_ALOLAN_FORMS)
-    {gMonPalette_RaichuAlola, sVariants_RaichuAlola},
+    {gMonPalette_RaichuAlola, sVariants_RaichuAlola, sVariantNames_pichu},
 #endif
 #if (P_FAMILY_SANDSHREW)
-    {gMonPalette_Sandshrew, sVariants_Sandshrew},
+    {gMonPalette_Sandshrew, sVariants_Sandshrew, sVariantNames_sandshrew},
 #endif
 #if (P_FAMILY_SANDSHREW)
-    {gMonPalette_Sandslash, sVariants_Sandslash},
+    {gMonPalette_Sandslash, sVariants_Sandslash, sVariantNames_sandshrew},
 #endif
 #if (P_FAMILY_SANDSHREW) && (P_ALOLAN_FORMS)
-    {gMonPalette_SandshrewAlola, sVariants_SandshrewAlola},
+    {gMonPalette_SandshrewAlola, sVariants_SandshrewAlola, sVariantNames_sandshrew_alola},
 #endif
 #if (P_FAMILY_SANDSHREW) && (P_ALOLAN_FORMS)
-    {gMonPalette_SandslashAlola, sVariants_SandslashAlola},
+    {gMonPalette_SandslashAlola, sVariants_SandslashAlola, sVariantNames_sandshrew_alola},
 #endif
 #if (P_FAMILY_NIDORAN)
-    {gMonPalette_NidoranF, sVariants_NidoranF},
+    {gMonPalette_NidoranF, sVariants_NidoranF, sVariantNames_nidoran_f},
 #endif
 #if (P_FAMILY_NIDORAN)
-    {gMonPalette_Nidorina, sVariants_Nidorina},
+    {gMonPalette_Nidorina, sVariants_Nidorina, sVariantNames_nidoran_f},
 #endif
 #if (P_FAMILY_NIDORAN)
-    {gMonPalette_Nidoqueen, sVariants_Nidoqueen},
+    {gMonPalette_Nidoqueen, sVariants_Nidoqueen, sVariantNames_nidoran_f},
 #endif
 #if (P_FAMILY_NIDORAN)
-    {gMonPalette_NidoranM, sVariants_NidoranM},
+    {gMonPalette_NidoranM, sVariants_NidoranM, sVariantNames_nidoran_m},
 #endif
 #if (P_FAMILY_NIDORAN)
-    {gMonPalette_Nidorino, sVariants_Nidorino},
+    {gMonPalette_Nidorino, sVariants_Nidorino, sVariantNames_nidoran_m},
 #endif
 #if (P_FAMILY_NIDORAN)
-    {gMonPalette_Nidoking, sVariants_Nidoking},
+    {gMonPalette_Nidoking, sVariants_Nidoking, sVariantNames_nidoran_m},
 #endif
 #if (P_FAMILY_CLEFAIRY) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Cleffa, sVariants_Cleffa},
+    {gMonPalette_Cleffa, sVariants_Cleffa, sVariantNames_clefairy},
 #endif
 #if (P_FAMILY_CLEFAIRY)
-    {gMonPalette_Clefairy, sVariants_Clefairy},
+    {gMonPalette_Clefairy, sVariants_Clefairy, sVariantNames_clefairy},
 #endif
 #if (P_FAMILY_CLEFAIRY)
-    {gMonPalette_Clefable, sVariants_Clefable},
+    {gMonPalette_Clefable, sVariants_Clefable, sVariantNames_clefairy},
 #endif
 #if (P_FAMILY_VULPIX)
-    {gMonPalette_Vulpix, sVariants_Vulpix},
+    {gMonPalette_Vulpix, sVariants_Vulpix, sVariantNames_vulpix},
 #endif
 #if (P_FAMILY_VULPIX)
-    {gMonPalette_Ninetales, sVariants_Ninetales},
+    {gMonPalette_Ninetales, sVariants_Ninetales, sVariantNames_vulpix},
 #endif
 #if (P_FAMILY_VULPIX) && (P_ALOLAN_FORMS)
-    {gMonPalette_VulpixAlola, sVariants_VulpixAlola},
+    {gMonPalette_VulpixAlola, sVariants_VulpixAlola, sVariantNames_vulpix_alola},
 #endif
 #if (P_FAMILY_VULPIX) && (P_ALOLAN_FORMS)
-    {gMonPalette_NinetalesAlola, sVariants_NinetalesAlola},
+    {gMonPalette_NinetalesAlola, sVariants_NinetalesAlola, sVariantNames_vulpix_alola},
 #endif
 #if (P_FAMILY_JIGGLYPUFF) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Igglybuff, sVariants_Igglybuff},
+    {gMonPalette_Igglybuff, sVariants_Igglybuff, sVariantNames_igglybuff},
 #endif
 #if (P_FAMILY_JIGGLYPUFF)
-    {gMonPalette_Jigglypuff, sVariants_Jigglypuff},
+    {gMonPalette_Jigglypuff, sVariants_Jigglypuff, sVariantNames_igglybuff},
 #endif
 #if (P_FAMILY_JIGGLYPUFF)
-    {gMonPalette_Wigglytuff, sVariants_Wigglytuff},
+    {gMonPalette_Wigglytuff, sVariants_Wigglytuff, sVariantNames_igglybuff},
 #endif
 #if (P_FAMILY_ZUBAT)
-    {gMonPalette_Zubat, sVariants_Zubat},
+    {gMonPalette_Zubat, sVariants_Zubat, sVariantNames_zubat},
 #endif
 #if (P_FAMILY_ZUBAT)
-    {gMonPalette_Golbat, sVariants_Golbat},
+    {gMonPalette_Golbat, sVariants_Golbat, sVariantNames_zubat},
 #endif
 #if (P_FAMILY_ZUBAT) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Crobat, sVariants_Crobat},
+    {gMonPalette_Crobat, sVariants_Crobat, sVariantNames_zubat},
 #endif
 #if (P_FAMILY_ODDISH)
-    {gMonPalette_Oddish, sVariants_Oddish},
+    {gMonPalette_Oddish, sVariants_Oddish, sVariantNames_oddish},
 #endif
 #if (P_FAMILY_ODDISH)
-    {gMonPalette_Gloom, sVariants_Gloom},
+    {gMonPalette_Gloom, sVariants_Gloom, sVariantNames_oddish},
 #endif
 #if (P_FAMILY_ODDISH)
-    {gMonPalette_Vileplume, sVariants_Vileplume},
+    {gMonPalette_Vileplume, sVariants_Vileplume, sVariantNames_oddish},
 #endif
 #if (P_FAMILY_ODDISH) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Bellossom, sVariants_Bellossom},
+    {gMonPalette_Bellossom, sVariants_Bellossom, sVariantNames_oddish},
 #endif
 #if (P_FAMILY_PARAS)
-    {gMonPalette_Paras, sVariants_Paras},
+    {gMonPalette_Paras, sVariants_Paras, sVariantNames_paras},
 #endif
 #if (P_FAMILY_PARAS)
-    {gMonPalette_Parasect, sVariants_Parasect},
+    {gMonPalette_Parasect, sVariants_Parasect, sVariantNames_paras},
 #endif
 #if (P_FAMILY_VENONAT)
-    {gMonPalette_Venonat, sVariants_Venonat},
+    {gMonPalette_Venonat, sVariants_Venonat, sVariantNames_venonat},
 #endif
 #if (P_FAMILY_VENONAT)
-    {gMonPalette_Venomoth, sVariants_Venomoth},
+    {gMonPalette_Venomoth, sVariants_Venomoth, sVariantNames_venonat},
 #endif
 #if (P_FAMILY_DIGLETT)
-    {gMonPalette_Diglett, sVariants_Diglett},
+    {gMonPalette_Diglett, sVariants_Diglett, sVariantNames_diglett},
 #endif
 #if (P_FAMILY_DIGLETT)
-    {gMonPalette_Dugtrio, sVariants_Dugtrio},
+    {gMonPalette_Dugtrio, sVariants_Dugtrio, sVariantNames_diglett},
 #endif
 #if (P_FAMILY_DIGLETT) && (P_ALOLAN_FORMS)
-    {gMonPalette_DiglettAlola, sVariants_DiglettAlola},
+    {gMonPalette_DiglettAlola, sVariants_DiglettAlola, sVariantNames_diglett},
 #endif
 #if (P_FAMILY_DIGLETT) && (P_ALOLAN_FORMS)
-    {gMonPalette_DugtrioAlola, sVariants_DugtrioAlola},
+    {gMonPalette_DugtrioAlola, sVariants_DugtrioAlola, sVariantNames_diglett},
 #endif
 #if (P_FAMILY_MEOWTH)
-    {gMonPalette_Meowth, sVariants_Meowth},
+    {gMonPalette_Meowth, sVariants_Meowth, sVariantNames_meowth},
 #endif
 #if (P_FAMILY_MEOWTH)
-    {gMonPalette_Persian, sVariants_Persian},
+    {gMonPalette_Persian, sVariants_Persian, sVariantNames_meowth},
 #endif
 #if (P_FAMILY_MEOWTH) && (P_ALOLAN_FORMS)
-    {gMonPalette_MeowthAlola, sVariants_MeowthAlola},
+    {gMonPalette_MeowthAlola, sVariants_MeowthAlola, sVariantNames_meowth_alola},
 #endif
 #if (P_FAMILY_MEOWTH) && (P_ALOLAN_FORMS)
-    {gMonPalette_PersianAlola, sVariants_PersianAlola},
+    {gMonPalette_PersianAlola, sVariants_PersianAlola, sVariantNames_meowth_alola},
 #endif
 #if (P_FAMILY_MEOWTH) && (P_GALARIAN_FORMS)
-    {gMonPalette_MeowthGalar, sVariants_MeowthGalar},
+    {gMonPalette_MeowthGalar, sVariants_MeowthGalar, sVariantNames_meowth_galar},
 #endif
 #if (P_FAMILY_MEOWTH) && (P_GALARIAN_FORMS)
-    {gMonPalette_Perrserker, sVariants_Perrserker},
+    {gMonPalette_Perrserker, sVariants_Perrserker, sVariantNames_meowth_galar},
 #endif
 #if (P_FAMILY_PSYDUCK)
-    {gMonPalette_Psyduck, sVariants_Psyduck},
+    {gMonPalette_Psyduck, sVariants_Psyduck, sVariantNames_psyduck},
 #endif
 #if (P_FAMILY_PSYDUCK)
-    {gMonPalette_Golduck, sVariants_Golduck},
+    {gMonPalette_Golduck, sVariants_Golduck, sVariantNames_psyduck},
 #endif
 #if (P_FAMILY_MANKEY)
-    {gMonPalette_Mankey, sVariants_Mankey},
+    {gMonPalette_Mankey, sVariants_Mankey, sVariantNames_mankey},
 #endif
 #if (P_FAMILY_MANKEY)
-    {gMonPalette_Primeape, sVariants_Primeape},
+    {gMonPalette_Primeape, sVariants_Primeape, sVariantNames_mankey},
 #endif
 #if (P_FAMILY_MANKEY) && (P_GEN_9_CROSS_EVOS)
-    {gMonPalette_Annihilape, sVariants_Annihilape},
+    {gMonPalette_Annihilape, sVariants_Annihilape, sVariantNames_annihilape},
 #endif
 #if (P_FAMILY_GROWLITHE)
-    {gMonPalette_Growlithe, sVariants_Growlithe},
+    {gMonPalette_Growlithe, sVariants_Growlithe, sVariantNames_growlithe},
 #endif
 #if (P_FAMILY_GROWLITHE)
-    {gMonPalette_Arcanine, sVariants_Arcanine},
+    {gMonPalette_Arcanine, sVariants_Arcanine, sVariantNames_growlithe},
 #endif
 #if (P_FAMILY_GROWLITHE) && (P_HISUIAN_FORMS)
-    {gMonPalette_GrowlitheHisui, sVariants_GrowlitheHisui},
+    {gMonPalette_GrowlitheHisui, sVariants_GrowlitheHisui, sVariantNames_growlithe_hisui},
 #endif
 #if (P_FAMILY_GROWLITHE) && (P_HISUIAN_FORMS)
-    {gMonPalette_ArcanineHisui, sVariants_ArcanineHisui},
+    {gMonPalette_ArcanineHisui, sVariants_ArcanineHisui, sVariantNames_growlithe_hisui},
 #endif
 #if (P_FAMILY_POLIWAG)
-    {gMonPalette_Poliwag, sVariants_Poliwag},
+    {gMonPalette_Poliwag, sVariants_Poliwag, sVariantNames_poliwag},
 #endif
 #if (P_FAMILY_POLIWAG)
-    {gMonPalette_Poliwhirl, sVariants_Poliwhirl},
+    {gMonPalette_Poliwhirl, sVariants_Poliwhirl, sVariantNames_poliwag},
 #endif
 #if (P_FAMILY_POLIWAG)
-    {gMonPalette_Poliwrath, sVariants_Poliwrath},
+    {gMonPalette_Poliwrath, sVariants_Poliwrath, sVariantNames_poliwag},
 #endif
 #if (P_FAMILY_POLIWAG) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Politoed, sVariants_Politoed},
+    {gMonPalette_Politoed, sVariants_Politoed, sVariantNames_poliwag},
 #endif
 #if (P_FAMILY_ABRA)
-    {gMonPalette_Abra, sVariants_Abra},
+    {gMonPalette_Abra, sVariants_Abra, sVariantNames_abra},
 #endif
 #if (P_FAMILY_ABRA)
-    {gMonPalette_Kadabra, sVariants_Kadabra},
+    {gMonPalette_Kadabra, sVariants_Kadabra, sVariantNames_abra},
 #endif
 #if (P_FAMILY_ABRA)
-    {gMonPalette_Alakazam, sVariants_Alakazam},
+    {gMonPalette_Alakazam, sVariants_Alakazam, sVariantNames_abra},
 #endif
 #if (P_FAMILY_MACHOP)
-    {gMonPalette_Machop, sVariants_Machop},
+    {gMonPalette_Machop, sVariants_Machop, sVariantNames_machop},
 #endif
 #if (P_FAMILY_MACHOP)
-    {gMonPalette_Machoke, sVariants_Machoke},
+    {gMonPalette_Machoke, sVariants_Machoke, sVariantNames_machop},
 #endif
 #if (P_FAMILY_MACHOP)
-    {gMonPalette_Machamp, sVariants_Machamp},
+    {gMonPalette_Machamp, sVariants_Machamp, sVariantNames_machop},
 #endif
 #if (P_FAMILY_BELLSPROUT)
-    {gMonPalette_Bellsprout, sVariants_Bellsprout},
+    {gMonPalette_Bellsprout, sVariants_Bellsprout, sVariantNames_bellsprout},
 #endif
 #if (P_FAMILY_BELLSPROUT)
-    {gMonPalette_Weepinbell, sVariants_Weepinbell},
+    {gMonPalette_Weepinbell, sVariants_Weepinbell, sVariantNames_bellsprout},
 #endif
 #if (P_FAMILY_BELLSPROUT)
-    {gMonPalette_Victreebel, sVariants_Victreebel},
+    {gMonPalette_Victreebel, sVariants_Victreebel, sVariantNames_bellsprout},
 #endif
 #if (P_FAMILY_TENTACOOL)
-    {gMonPalette_Tentacool, sVariants_Tentacool},
+    {gMonPalette_Tentacool, sVariants_Tentacool, sVariantNames_tentacool},
 #endif
 #if (P_FAMILY_TENTACOOL)
-    {gMonPalette_Tentacruel, sVariants_Tentacruel},
+    {gMonPalette_Tentacruel, sVariants_Tentacruel, sVariantNames_tentacool},
 #endif
 #if (P_FAMILY_GEODUDE)
-    {gMonPalette_Geodude, sVariants_Geodude},
+    {gMonPalette_Geodude, sVariants_Geodude, sVariantNames_geodude},
 #endif
 #if (P_FAMILY_GEODUDE)
-    {gMonPalette_Graveler, sVariants_Graveler},
+    {gMonPalette_Graveler, sVariants_Graveler, sVariantNames_geodude},
 #endif
 #if (P_FAMILY_GEODUDE)
-    {gMonPalette_Golem, sVariants_Golem},
+    {gMonPalette_Golem, sVariants_Golem, sVariantNames_geodude},
 #endif
 #if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
-    {gMonPalette_GeodudeAlola, sVariants_GeodudeAlola},
+    {gMonPalette_GeodudeAlola, sVariants_GeodudeAlola, sVariantNames_geodude_alola},
 #endif
 #if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
-    {gMonPalette_GravelerAlola, sVariants_GravelerAlola},
+    {gMonPalette_GravelerAlola, sVariants_GravelerAlola, sVariantNames_geodude_alola},
 #endif
 #if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
-    {gMonPalette_GolemAlola, sVariants_GolemAlola},
+    {gMonPalette_GolemAlola, sVariants_GolemAlola, sVariantNames_geodude_alola},
 #endif
 #if (P_FAMILY_PONYTA)
-    {gMonPalette_Ponyta, sVariants_Ponyta},
+    {gMonPalette_Ponyta, sVariants_Ponyta, sVariantNames_ponyta},
 #endif
 #if (P_FAMILY_PONYTA)
-    {gMonPalette_Rapidash, sVariants_Rapidash},
+    {gMonPalette_Rapidash, sVariants_Rapidash, sVariantNames_ponyta},
 #endif
 #if (P_FAMILY_PONYTA) && (P_GALARIAN_FORMS)
-    {gMonPalette_PonytaGalar, sVariants_PonytaGalar},
+    {gMonPalette_PonytaGalar, sVariants_PonytaGalar, sVariantNames_ponyta_galar},
 #endif
 #if (P_FAMILY_PONYTA) && (P_GALARIAN_FORMS)
-    {gMonPalette_RapidashGalar, sVariants_RapidashGalar},
+    {gMonPalette_RapidashGalar, sVariants_RapidashGalar, sVariantNames_ponyta_galar},
 #endif
 #if (P_FAMILY_SLOWPOKE)
-    {gMonPalette_Slowpoke, sVariants_Slowpoke},
+    {gMonPalette_Slowpoke, sVariants_Slowpoke, sVariantNames_slowpoke},
 #endif
 #if (P_FAMILY_SLOWPOKE)
-    {gMonPalette_Slowbro, sVariants_Slowbro},
+    {gMonPalette_Slowbro, sVariants_Slowbro, sVariantNames_slowpoke},
 #endif
 #if (P_FAMILY_SLOWPOKE) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Slowking, sVariants_Slowking},
+    {gMonPalette_Slowking, sVariants_Slowking, sVariantNames_slowpoke},
 #endif
 #if (P_FAMILY_SLOWPOKE) && (P_GALARIAN_FORMS)
-    {gMonPalette_SlowpokeGalar, sVariants_SlowpokeGalar},
+    {gMonPalette_SlowpokeGalar, sVariants_SlowpokeGalar, sVariantNames_slowpoke_galar},
 #endif
 #if (P_FAMILY_SLOWPOKE) && (P_GALARIAN_FORMS)
-    {gMonPalette_SlowbroGalar, sVariants_SlowbroGalar},
+    {gMonPalette_SlowbroGalar, sVariants_SlowbroGalar, sVariantNames_slowpoke_galar},
 #endif
 #if (P_FAMILY_SLOWPOKE) && (P_GALARIAN_FORMS) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_SlowkingGalar, sVariants_SlowkingGalar},
+    {gMonPalette_SlowkingGalar, sVariants_SlowkingGalar, sVariantNames_slowpoke_galar},
 #endif
 #if (P_FAMILY_MAGNEMITE)
-    {gMonPalette_Magnemite, sVariants_Magnemite},
+    {gMonPalette_Magnemite, sVariants_Magnemite, sVariantNames_magnemite},
 #endif
 #if (P_FAMILY_MAGNEMITE)
-    {gMonPalette_Magneton, sVariants_Magneton},
+    {gMonPalette_Magneton, sVariants_Magneton, sVariantNames_magnemite},
 #endif
 #if (P_FAMILY_MAGNEMITE) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Magnezone, sVariants_Magnezone},
+    {gMonPalette_Magnezone, sVariants_Magnezone, sVariantNames_magnemite},
 #endif
 #if (P_FAMILY_FARFETCHD)
-    {gMonPalette_Farfetchd, sVariants_Farfetchd},
+    {gMonPalette_Farfetchd, sVariants_Farfetchd, sVariantNames_farfetchd},
 #endif
 #if (P_FAMILY_FARFETCHD) && (P_GALARIAN_FORMS)
-    {gMonPalette_FarfetchdGalar, sVariants_FarfetchdGalar},
+    {gMonPalette_FarfetchdGalar, sVariants_FarfetchdGalar, sVariantNames_farfetchd_galar},
 #endif
 #if (P_FAMILY_FARFETCHD) && (P_GALARIAN_FORMS)
-    {gMonPalette_Sirfetchd, sVariants_Sirfetchd},
+    {gMonPalette_Sirfetchd, sVariants_Sirfetchd, sVariantNames_farfetchd_galar},
 #endif
 #if (P_FAMILY_DODUO)
-    {gMonPalette_Doduo, sVariants_Doduo},
+    {gMonPalette_Doduo, sVariants_Doduo, sVariantNames_doduo},
 #endif
 #if (P_FAMILY_DODUO)
-    {gMonPalette_Dodrio, sVariants_Dodrio},
+    {gMonPalette_Dodrio, sVariants_Dodrio, sVariantNames_doduo},
 #endif
 #if (P_FAMILY_SEEL)
-    {gMonPalette_Seel, sVariants_Seel},
+    {gMonPalette_Seel, sVariants_Seel, sVariantNames_seel},
 #endif
 #if (P_FAMILY_SEEL)
-    {gMonPalette_Dewgong, sVariants_Dewgong},
+    {gMonPalette_Dewgong, sVariants_Dewgong, sVariantNames_seel},
 #endif
 #if (P_FAMILY_GRIMER)
-    {gMonPalette_Grimer, sVariants_Grimer},
+    {gMonPalette_Grimer, sVariants_Grimer, sVariantNames_grimer},
 #endif
 #if (P_FAMILY_GRIMER)
-    {gMonPalette_Muk, sVariants_Muk},
+    {gMonPalette_Muk, sVariants_Muk, sVariantNames_grimer},
 #endif
 #if (P_FAMILY_GRIMER) && (P_ALOLAN_FORMS)
-    {gMonPalette_GrimerAlola, sVariants_GrimerAlola},
+    {gMonPalette_GrimerAlola, sVariants_GrimerAlola, sVariantNames_grimer_alola},
 #endif
 #if (P_FAMILY_GRIMER) && (P_ALOLAN_FORMS)
-    {gMonPalette_MukAlola, sVariants_MukAlola},
+    {gMonPalette_MukAlola, sVariants_MukAlola, sVariantNames_grimer_alola},
 #endif
 #if (P_FAMILY_GRIMER)
-    {gMonPalette_GrimerHoenn, sVariants_GrimerHoenn},
+    {gMonPalette_GrimerHoenn, sVariants_GrimerHoenn, sVariantNames_grimer},
 #endif
 #if (P_FAMILY_GRIMER)
-    {gMonPalette_MukHoenn, sVariants_MukHoenn},
+    {gMonPalette_MukHoenn, sVariants_MukHoenn, sVariantNames_grimer},
 #endif
 #if (P_FAMILY_SHELLDER)
-    {gMonPalette_Shellder, sVariants_Shellder},
+    {gMonPalette_Shellder, sVariants_Shellder, sVariantNames_shellder},
 #endif
 #if (P_FAMILY_SHELLDER)
-    {gMonPalette_Cloyster, sVariants_Cloyster},
+    {gMonPalette_Cloyster, sVariants_Cloyster, sVariantNames_shellder},
 #endif
 #if (P_FAMILY_GASTLY)
-    {gMonPalette_Gastly, sVariants_Gastly},
+    {gMonPalette_Gastly, sVariants_Gastly, sVariantNames_gastly},
 #endif
 #if (P_FAMILY_GASTLY)
-    {gMonPalette_Haunter, sVariants_Haunter},
+    {gMonPalette_Haunter, sVariants_Haunter, sVariantNames_gastly},
 #endif
 #if (P_FAMILY_GASTLY)
-    {gMonPalette_Gengar, sVariants_Gengar},
+    {gMonPalette_Gengar, sVariants_Gengar, sVariantNames_gastly},
 #endif
 #if (P_FAMILY_ONIX)
-    {gMonPalette_Onix, sVariants_Onix},
+    {gMonPalette_Onix, sVariants_Onix, sVariantNames_onix},
 #endif
 #if (P_FAMILY_ONIX) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Steelix, sVariants_Steelix},
+    {gMonPalette_Steelix, sVariants_Steelix, sVariantNames_onix},
 #endif
 #if (P_FAMILY_DROWZEE)
-    {gMonPalette_Drowzee, sVariants_Drowzee},
+    {gMonPalette_Drowzee, sVariants_Drowzee, sVariantNames_drowzee},
 #endif
 #if (P_FAMILY_DROWZEE)
-    {gMonPalette_Hypno, sVariants_Hypno},
+    {gMonPalette_Hypno, sVariants_Hypno, sVariantNames_drowzee},
 #endif
 #if (P_FAMILY_KRABBY)
-    {gMonPalette_Krabby, sVariants_Krabby},
+    {gMonPalette_Krabby, sVariants_Krabby, sVariantNames_krabby},
 #endif
 #if (P_FAMILY_KRABBY)
-    {gMonPalette_Kingler, sVariants_Kingler},
+    {gMonPalette_Kingler, sVariants_Kingler, sVariantNames_krabby},
 #endif
 #if (P_FAMILY_VOLTORB)
-    {gMonPalette_Voltorb, sVariants_Voltorb},
+    {gMonPalette_Voltorb, sVariants_Voltorb, sVariantNames_voltorb},
 #endif
 #if (P_FAMILY_VOLTORB)
-    {gMonPalette_Electrode, sVariants_Electrode},
+    {gMonPalette_Electrode, sVariants_Electrode, sVariantNames_voltorb},
 #endif
 #if (P_FAMILY_VOLTORB) && (P_HISUIAN_FORMS)
-    {gMonPalette_VoltorbHisui, sVariants_VoltorbHisui},
+    {gMonPalette_VoltorbHisui, sVariants_VoltorbHisui, sVariantNames_voltorb},
 #endif
 #if (P_FAMILY_VOLTORB) && (P_HISUIAN_FORMS)
-    {gMonPalette_ElectrodeHisui, sVariants_ElectrodeHisui},
+    {gMonPalette_ElectrodeHisui, sVariants_ElectrodeHisui, sVariantNames_voltorb},
 #endif
 #if (P_FAMILY_EXEGGCUTE)
-    {gMonPalette_Exeggcute, sVariants_Exeggcute},
+    {gMonPalette_Exeggcute, sVariants_Exeggcute, sVariantNames_exeggcute},
 #endif
 #if (P_FAMILY_EXEGGCUTE)
-    {gMonPalette_Exeggutor, sVariants_Exeggutor},
+    {gMonPalette_Exeggutor, sVariants_Exeggutor, sVariantNames_exeggcute},
 #endif
 #if (P_FAMILY_EXEGGCUTE) && (P_ALOLAN_FORMS)
-    {gMonPalette_ExeggutorAlola, sVariants_ExeggutorAlola},
+    {gMonPalette_ExeggutorAlola, sVariants_ExeggutorAlola, sVariantNames_exeggcute},
 #endif
 #if (P_FAMILY_CUBONE)
-    {gMonPalette_Cubone, sVariants_Cubone},
+    {gMonPalette_Cubone, sVariants_Cubone, sVariantNames_cubone},
 #endif
 #if (P_FAMILY_CUBONE)
-    {gMonPalette_Marowak, sVariants_Marowak},
+    {gMonPalette_Marowak, sVariants_Marowak, sVariantNames_cubone},
 #endif
 #if (P_FAMILY_CUBONE) && (P_ALOLAN_FORMS)
-    {gMonPalette_MarowakAlola, sVariants_MarowakAlola},
+    {gMonPalette_MarowakAlola, sVariants_MarowakAlola, sVariantNames_marowak_alola},
 #endif
 #if (P_FAMILY_HITMONS) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Tyrogue, sVariants_Tyrogue},
+    {gMonPalette_Tyrogue, sVariants_Tyrogue, sVariantNames_tyrogue},
 #endif
 #if (P_FAMILY_HITMONS)
-    {gMonPalette_Hitmonlee, sVariants_Hitmonlee},
+    {gMonPalette_Hitmonlee, sVariants_Hitmonlee, sVariantNames_tyrogue},
 #endif
 #if (P_FAMILY_HITMONS)
-    {gMonPalette_Hitmonchan, sVariants_Hitmonchan},
+    {gMonPalette_Hitmonchan, sVariants_Hitmonchan, sVariantNames_tyrogue},
 #endif
 #if (P_FAMILY_HITMONS) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Hitmontop, sVariants_Hitmontop},
+    {gMonPalette_Hitmontop, sVariants_Hitmontop, sVariantNames_tyrogue},
 #endif
 #if (P_FAMILY_LICKITUNG)
-    {gMonPalette_Lickitung, sVariants_Lickitung},
+    {gMonPalette_Lickitung, sVariants_Lickitung, sVariantNames_lickitung},
 #endif
 #if (P_FAMILY_LICKITUNG) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Lickilicky, sVariants_Lickilicky},
+    {gMonPalette_Lickilicky, sVariants_Lickilicky, sVariantNames_lickitung},
 #endif
 #if (P_FAMILY_KOFFING)
-    {gMonPalette_Koffing, sVariants_Koffing},
+    {gMonPalette_Koffing, sVariants_Koffing, sVariantNames_koffing},
 #endif
 #if (P_FAMILY_KOFFING)
-    {gMonPalette_Weezing, sVariants_Weezing},
+    {gMonPalette_Weezing, sVariants_Weezing, sVariantNames_koffing},
 #endif
 #if (P_FAMILY_KOFFING) && (P_GALARIAN_FORMS)
-    {gMonPalette_WeezingGalar, sVariants_WeezingGalar},
+    {gMonPalette_WeezingGalar, sVariants_WeezingGalar, sVariantNames_weezing_galar},
 #endif
 #if (P_FAMILY_RHYHORN)
-    {gMonPalette_Rhyhorn, sVariants_Rhyhorn},
+    {gMonPalette_Rhyhorn, sVariants_Rhyhorn, sVariantNames_rhyhorn},
 #endif
 #if (P_FAMILY_RHYHORN)
-    {gMonPalette_Rhydon, sVariants_Rhydon},
+    {gMonPalette_Rhydon, sVariants_Rhydon, sVariantNames_rhyhorn},
 #endif
 #if (P_FAMILY_RHYHORN) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Rhyperior, sVariants_Rhyperior},
+    {gMonPalette_Rhyperior, sVariants_Rhyperior, sVariantNames_rhyhorn},
 #endif
 #if (P_FAMILY_CHANSEY) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Happiny, sVariants_Happiny},
+    {gMonPalette_Happiny, sVariants_Happiny, sVariantNames_happiny},
 #endif
 #if (P_FAMILY_CHANSEY)
-    {gMonPalette_Chansey, sVariants_Chansey},
+    {gMonPalette_Chansey, sVariants_Chansey, sVariantNames_happiny},
 #endif
 #if (P_FAMILY_CHANSEY) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Blissey, sVariants_Blissey},
+    {gMonPalette_Blissey, sVariants_Blissey, sVariantNames_happiny},
 #endif
 #if (P_FAMILY_TANGELA)
-    {gMonPalette_Tangela, sVariants_Tangela},
+    {gMonPalette_Tangela, sVariants_Tangela, sVariantNames_tangela},
 #endif
 #if (P_FAMILY_TANGELA) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Tangrowth, sVariants_Tangrowth},
+    {gMonPalette_Tangrowth, sVariants_Tangrowth, sVariantNames_tangela},
 #endif
 #if (P_FAMILY_KANGASKHAN)
-    {gMonPalette_Kangaskhan, sVariants_Kangaskhan},
+    {gMonPalette_Kangaskhan, sVariants_Kangaskhan, sVariantNames_kangaskhan},
 #endif
 #if (P_FAMILY_HORSEA)
-    {gMonPalette_Horsea, sVariants_Horsea},
+    {gMonPalette_Horsea, sVariants_Horsea, sVariantNames_horsea},
 #endif
 #if (P_FAMILY_HORSEA)
-    {gMonPalette_Seadra, sVariants_Seadra},
+    {gMonPalette_Seadra, sVariants_Seadra, sVariantNames_horsea},
 #endif
 #if (P_FAMILY_HORSEA) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Kingdra, sVariants_Kingdra},
+    {gMonPalette_Kingdra, sVariants_Kingdra, sVariantNames_horsea},
 #endif
 #if (P_FAMILY_GOLDEEN)
-    {gMonPalette_Goldeen, sVariants_Goldeen},
+    {gMonPalette_Goldeen, sVariants_Goldeen, sVariantNames_goldeen},
 #endif
 #if (P_FAMILY_GOLDEEN)
-    {gMonPalette_Seaking, sVariants_Seaking},
+    {gMonPalette_Seaking, sVariants_Seaking, sVariantNames_goldeen},
 #endif
 #if (P_FAMILY_STARYU)
-    {gMonPalette_Staryu, sVariants_Staryu},
+    {gMonPalette_Staryu, sVariants_Staryu, sVariantNames_staryu},
 #endif
 #if (P_FAMILY_STARYU)
-    {gMonPalette_Starmie, sVariants_Starmie},
+    {gMonPalette_Starmie, sVariants_Starmie, sVariantNames_staryu},
 #endif
 #if (P_FAMILY_MR_MIME) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_MimeJr, sVariants_MimeJr},
+    {gMonPalette_MimeJr, sVariants_MimeJr, sVariantNames_mr_mime},
 #endif
 #if (P_FAMILY_MR_MIME)
-    {gMonPalette_MrMime, sVariants_MrMime},
+    {gMonPalette_MrMime, sVariants_MrMime, sVariantNames_mr_mime},
 #endif
 #if (P_FAMILY_MR_MIME) && (P_GALARIAN_FORMS)
-    {gMonPalette_MrMimeGalar, sVariants_MrMimeGalar},
+    {gMonPalette_MrMimeGalar, sVariants_MrMimeGalar, sVariantNames_mr_mime_galar},
 #endif
 #if (P_FAMILY_MR_MIME) && (P_GALARIAN_FORMS)
-    {gMonPalette_MrRime, sVariants_MrRime},
+    {gMonPalette_MrRime, sVariants_MrRime, sVariantNames_mr_mime_galar},
 #endif
 #if (P_FAMILY_SCYTHER)
-    {gMonPalette_Scyther, sVariants_Scyther},
+    {gMonPalette_Scyther, sVariants_Scyther, sVariantNames_scyther},
 #endif
 #if (P_FAMILY_SCYTHER) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Scizor, sVariants_Scizor},
+    {gMonPalette_Scizor, sVariants_Scizor, sVariantNames_scyther},
 #endif
 #if (P_FAMILY_SCYTHER) && (P_GEN_8_CROSS_EVOS)
-    {gMonPalette_Kleavor, sVariants_Kleavor},
+    {gMonPalette_Kleavor, sVariants_Kleavor, sVariantNames_kleavor},
 #endif
 #if (P_FAMILY_JYNX) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Smoochum, sVariants_Smoochum},
+    {gMonPalette_Smoochum, sVariants_Smoochum, sVariantNames_smoochum},
 #endif
 #if (P_FAMILY_JYNX)
-    {gMonPalette_Jynx, sVariants_Jynx},
+    {gMonPalette_Jynx, sVariants_Jynx, sVariantNames_smoochum},
 #endif
 #if (P_FAMILY_ELECTABUZZ) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Elekid, sVariants_Elekid},
+    {gMonPalette_Elekid, sVariants_Elekid, sVariantNames_elekid},
 #endif
 #if (P_FAMILY_ELECTABUZZ)
-    {gMonPalette_Electabuzz, sVariants_Electabuzz},
+    {gMonPalette_Electabuzz, sVariants_Electabuzz, sVariantNames_elekid},
 #endif
 #if (P_FAMILY_ELECTABUZZ) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Electivire, sVariants_Electivire},
+    {gMonPalette_Electivire, sVariants_Electivire, sVariantNames_elekid},
 #endif
 #if (P_FAMILY_MAGMAR) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Magby, sVariants_Magby},
+    {gMonPalette_Magby, sVariants_Magby, sVariantNames_magby},
 #endif
 #if (P_FAMILY_MAGMAR)
-    {gMonPalette_Magmar, sVariants_Magmar},
+    {gMonPalette_Magmar, sVariants_Magmar, sVariantNames_magby},
 #endif
 #if (P_FAMILY_MAGMAR) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Magmortar, sVariants_Magmortar},
+    {gMonPalette_Magmortar, sVariants_Magmortar, sVariantNames_magby},
 #endif
 #if (P_FAMILY_PINSIR)
-    {gMonPalette_Pinsir, sVariants_Pinsir},
+    {gMonPalette_Pinsir, sVariants_Pinsir, sVariantNames_pinsir},
 #endif
 #if (P_FAMILY_TAUROS)
-    {gMonPalette_Tauros, sVariants_Tauros},
+    {gMonPalette_Tauros, sVariants_Tauros, sVariantNames_tauros},
 #endif
 #if (P_FAMILY_TAUROS) && (P_PALDEAN_FORMS)
-    {gMonPalette_TaurosPaldeaCombat, sVariants_TaurosPaldeaCombat},
+    {gMonPalette_TaurosPaldeaCombat, sVariants_TaurosPaldeaCombat, sVariantNames_tauros_paldea},
 #endif
 #if (P_FAMILY_TAUROS) && (P_PALDEAN_FORMS)
-    {gMonPalette_TaurosPaldeaBlaze, sVariants_TaurosPaldeaBlaze},
+    {gMonPalette_TaurosPaldeaBlaze, sVariants_TaurosPaldeaBlaze, sVariantNames_tauros_paldea},
 #endif
 #if (P_FAMILY_TAUROS) && (P_PALDEAN_FORMS)
-    {gMonPalette_TaurosPaldeaAqua, sVariants_TaurosPaldeaAqua},
+    {gMonPalette_TaurosPaldeaAqua, sVariants_TaurosPaldeaAqua, sVariantNames_tauros_paldea},
 #endif
 #if (P_FAMILY_MAGIKARP)
-    {gMonPalette_Magikarp, sVariants_Magikarp},
+    {gMonPalette_Magikarp, sVariants_Magikarp, sVariantNames_magikarp},
 #endif
 #if (P_FAMILY_MAGIKARP)
-    {gMonPalette_Gyarados, sVariants_Gyarados},
+    {gMonPalette_Gyarados, sVariants_Gyarados, sVariantNames_magikarp},
 #endif
 #if (P_FAMILY_LAPRAS)
-    {gMonPalette_Lapras, sVariants_Lapras},
+    {gMonPalette_Lapras, sVariants_Lapras, sVariantNames_lapras},
 #endif
 #if (P_FAMILY_DITTO)
-    {gMonPalette_Ditto, sVariants_Ditto},
+    {gMonPalette_Ditto, sVariants_Ditto, sVariantNames_ditto},
 #endif
 #if (P_FAMILY_EEVEE)
-    {gMonPalette_Eevee, sVariants_Eevee},
+    {gMonPalette_Eevee, sVariants_Eevee, sVariantNames_eevee},
 #endif
 #if (P_FAMILY_EEVEE)
-    {gMonPalette_Vaporeon, sVariants_Vaporeon},
+    {gMonPalette_Vaporeon, sVariants_Vaporeon, sVariantNames_eevee},
 #endif
 #if (P_FAMILY_EEVEE)
-    {gMonPalette_Jolteon, sVariants_Jolteon},
+    {gMonPalette_Jolteon, sVariants_Jolteon, sVariantNames_eevee},
 #endif
 #if (P_FAMILY_EEVEE)
-    {gMonPalette_Flareon, sVariants_Flareon},
+    {gMonPalette_Flareon, sVariants_Flareon, sVariantNames_eevee},
 #endif
 #if (P_FAMILY_EEVEE) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Espeon, sVariants_Espeon},
+    {gMonPalette_Espeon, sVariants_Espeon, sVariantNames_eevee},
 #endif
 #if (P_FAMILY_EEVEE) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Umbreon, sVariants_Umbreon},
+    {gMonPalette_Umbreon, sVariants_Umbreon, sVariantNames_eevee},
 #endif
 #if (P_FAMILY_EEVEE) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Leafeon, sVariants_Leafeon},
+    {gMonPalette_Leafeon, sVariants_Leafeon, sVariantNames_eevee},
 #endif
 #if (P_FAMILY_EEVEE) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Glaceon, sVariants_Glaceon},
+    {gMonPalette_Glaceon, sVariants_Glaceon, sVariantNames_eevee},
 #endif
 #if (P_FAMILY_EEVEE) && (P_GEN_6_CROSS_EVOS)
-    {gMonPalette_Sylveon, sVariants_Sylveon},
+    {gMonPalette_Sylveon, sVariants_Sylveon, sVariantNames_eevee},
 #endif
 #if (P_FAMILY_PORYGON)
-    {gMonPalette_Porygon, sVariants_Porygon},
+    {gMonPalette_Porygon, sVariants_Porygon, sVariantNames_porygon},
 #endif
 #if (P_FAMILY_PORYGON) && (P_GEN_2_CROSS_EVOS)
-    {gMonPalette_Porygon2, sVariants_Porygon2},
+    {gMonPalette_Porygon2, sVariants_Porygon2, sVariantNames_porygon},
 #endif
 #if (P_FAMILY_PORYGON) && (P_GEN_2_CROSS_EVOS) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_PorygonZ, sVariants_PorygonZ},
+    {gMonPalette_PorygonZ, sVariants_PorygonZ, sVariantNames_porygon},
 #endif
 #if (P_FAMILY_OMANYTE)
-    {gMonPalette_Omanyte, sVariants_Omanyte},
+    {gMonPalette_Omanyte, sVariants_Omanyte, sVariantNames_omanyte},
 #endif
 #if (P_FAMILY_OMANYTE)
-    {gMonPalette_Omastar, sVariants_Omastar},
+    {gMonPalette_Omastar, sVariants_Omastar, sVariantNames_omanyte},
 #endif
 #if (P_FAMILY_KABUTO)
-    {gMonPalette_Kabuto, sVariants_Kabuto},
+    {gMonPalette_Kabuto, sVariants_Kabuto, sVariantNames_kabuto},
 #endif
 #if (P_FAMILY_KABUTO)
-    {gMonPalette_Kabutops, sVariants_Kabutops},
+    {gMonPalette_Kabutops, sVariants_Kabutops, sVariantNames_kabuto},
 #endif
 #if (P_FAMILY_AERODACTYL)
-    {gMonPalette_Aerodactyl, sVariants_Aerodactyl},
+    {gMonPalette_Aerodactyl, sVariants_Aerodactyl, sVariantNames_aerodactyl},
 #endif
 #if (P_FAMILY_SNORLAX) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Munchlax, sVariants_Munchlax},
+    {gMonPalette_Munchlax, sVariants_Munchlax, sVariantNames_snorlax},
 #endif
 #if (P_FAMILY_SNORLAX)
-    {gMonPalette_Snorlax, sVariants_Snorlax},
+    {gMonPalette_Snorlax, sVariants_Snorlax, sVariantNames_snorlax},
 #endif
 #if (P_FAMILY_ARTICUNO)
-    {gMonPalette_Articuno, sVariants_Articuno},
+    {gMonPalette_Articuno, sVariants_Articuno, sVariantNames_articuno},
 #endif
 #if (P_FAMILY_ARTICUNO) && (P_GALARIAN_FORMS)
-    {gMonPalette_ArticunoGalar, sVariants_ArticunoGalar},
+    {gMonPalette_ArticunoGalar, sVariants_ArticunoGalar, sVariantNames_birds_galar},
 #endif
 #if (P_FAMILY_ZAPDOS)
-    {gMonPalette_Zapdos, sVariants_Zapdos},
+    {gMonPalette_Zapdos, sVariants_Zapdos, sVariantNames_zapdos},
 #endif
 #if (P_FAMILY_ZAPDOS) && (P_GALARIAN_FORMS)
-    {gMonPalette_ZapdosGalar, sVariants_ZapdosGalar},
+    {gMonPalette_ZapdosGalar, sVariants_ZapdosGalar, sVariantNames_birds_galar},
 #endif
 #if (P_FAMILY_MOLTRES)
-    {gMonPalette_Moltres, sVariants_Moltres},
+    {gMonPalette_Moltres, sVariants_Moltres, sVariantNames_moltres},
 #endif
 #if (P_FAMILY_MOLTRES) && (P_GALARIAN_FORMS)
-    {gMonPalette_MoltresGalar, sVariants_MoltresGalar},
+    {gMonPalette_MoltresGalar, sVariants_MoltresGalar, sVariantNames_birds_galar},
 #endif
 #if (P_FAMILY_DRATINI)
-    {gMonPalette_Dratini, sVariants_Dratini},
+    {gMonPalette_Dratini, sVariants_Dratini, sVariantNames_dratini},
 #endif
 #if (P_FAMILY_DRATINI)
-    {gMonPalette_Dragonair, sVariants_Dragonair},
+    {gMonPalette_Dragonair, sVariants_Dragonair, sVariantNames_dratini},
 #endif
 #if (P_FAMILY_DRATINI)
-    {gMonPalette_Dragonite, sVariants_Dragonite},
+    {gMonPalette_Dragonite, sVariants_Dragonite, sVariantNames_dratini},
 #endif
 #if (P_FAMILY_MEWTWO)
-    {gMonPalette_Mewtwo, sVariants_Mewtwo},
+    {gMonPalette_Mewtwo, sVariants_Mewtwo, sVariantNames_mewtwo},
 #endif
 #if (P_FAMILY_MEW)
-    {gMonPalette_Mew, sVariants_Mew},
+    {gMonPalette_Mew, sVariants_Mew, sVariantNames_mew},
 #endif
 #if (P_FAMILY_CHIKORITA)
-    {gMonPalette_Chikorita, sVariants_Chikorita},
+    {gMonPalette_Chikorita, sVariants_Chikorita, sVariantNames_chikorita},
 #endif
 #if (P_FAMILY_CHIKORITA)
-    {gMonPalette_Bayleef, sVariants_Bayleef},
+    {gMonPalette_Bayleef, sVariants_Bayleef, sVariantNames_chikorita},
 #endif
 #if (P_FAMILY_CHIKORITA)
-    {gMonPalette_Meganium, sVariants_Meganium},
+    {gMonPalette_Meganium, sVariants_Meganium, sVariantNames_chikorita},
 #endif
 #if (P_FAMILY_CYNDAQUIL)
-    {gMonPalette_Cyndaquil, sVariants_Cyndaquil},
+    {gMonPalette_Cyndaquil, sVariants_Cyndaquil, sVariantNames_cyndaquil},
 #endif
 #if (P_FAMILY_CYNDAQUIL)
-    {gMonPalette_Quilava, sVariants_Quilava},
+    {gMonPalette_Quilava, sVariants_Quilava, sVariantNames_cyndaquil},
 #endif
 #if (P_FAMILY_CYNDAQUIL)
-    {gMonPalette_Typhlosion, sVariants_Typhlosion},
+    {gMonPalette_Typhlosion, sVariants_Typhlosion, sVariantNames_cyndaquil},
 #endif
 #if (P_FAMILY_CYNDAQUIL) && (P_HISUIAN_FORMS)
-    {gMonPalette_TyphlosionHisui, sVariants_TyphlosionHisui},
+    {gMonPalette_TyphlosionHisui, sVariants_TyphlosionHisui, sVariantNames_typhlosion_hisui},
 #endif
 #if (P_FAMILY_TOTODILE)
-    {gMonPalette_Totodile, sVariants_Totodile},
+    {gMonPalette_Totodile, sVariants_Totodile, sVariantNames_totodile},
 #endif
 #if (P_FAMILY_TOTODILE)
-    {gMonPalette_Croconaw, sVariants_Croconaw},
+    {gMonPalette_Croconaw, sVariants_Croconaw, sVariantNames_totodile},
 #endif
 #if (P_FAMILY_TOTODILE)
-    {gMonPalette_Feraligatr, sVariants_Feraligatr},
+    {gMonPalette_Feraligatr, sVariants_Feraligatr, sVariantNames_totodile},
 #endif
 #if (P_FAMILY_SENTRET)
-    {gMonPalette_Sentret, sVariants_Sentret},
+    {gMonPalette_Sentret, sVariants_Sentret, sVariantNames_sentret},
 #endif
 #if (P_FAMILY_SENTRET)
-    {gMonPalette_Furret, sVariants_Furret},
+    {gMonPalette_Furret, sVariants_Furret, sVariantNames_sentret},
 #endif
 #if (P_FAMILY_HOOTHOOT)
-    {gMonPalette_Hoothoot, sVariants_Hoothoot},
+    {gMonPalette_Hoothoot, sVariants_Hoothoot, sVariantNames_hoothoot},
 #endif
 #if (P_FAMILY_HOOTHOOT)
-    {gMonPalette_Noctowl, sVariants_Noctowl},
+    {gMonPalette_Noctowl, sVariants_Noctowl, sVariantNames_hoothoot},
 #endif
 #if (P_FAMILY_LEDYBA)
-    {gMonPalette_Ledyba, sVariants_Ledyba},
+    {gMonPalette_Ledyba, sVariants_Ledyba, sVariantNames_ledyba},
 #endif
 #if (P_FAMILY_LEDYBA)
-    {gMonPalette_Ledian, sVariants_Ledian},
+    {gMonPalette_Ledian, sVariants_Ledian, sVariantNames_ledyba},
 #endif
 #if (P_FAMILY_SPINARAK)
-    {gMonPalette_Spinarak, sVariants_Spinarak},
+    {gMonPalette_Spinarak, sVariants_Spinarak, sVariantNames_spinarak},
 #endif
 #if (P_FAMILY_SPINARAK)
-    {gMonPalette_Ariados, sVariants_Ariados},
+    {gMonPalette_Ariados, sVariants_Ariados, sVariantNames_spinarak},
 #endif
 #if (P_FAMILY_CHINCHOU)
-    {gMonPalette_Chinchou, sVariants_Chinchou},
+    {gMonPalette_Chinchou, sVariants_Chinchou, sVariantNames_chinchou},
 #endif
 #if (P_FAMILY_CHINCHOU)
-    {gMonPalette_Lanturn, sVariants_Lanturn},
+    {gMonPalette_Lanturn, sVariants_Lanturn, sVariantNames_chinchou},
 #endif
 #if (P_FAMILY_TOGEPI)
-    {gMonPalette_Togepi, sVariants_Togepi},
+    {gMonPalette_Togepi, sVariants_Togepi, sVariantNames_togepi},
 #endif
 #if (P_FAMILY_TOGEPI)
-    {gMonPalette_Togetic, sVariants_Togetic},
+    {gMonPalette_Togetic, sVariants_Togetic, sVariantNames_togepi},
 #endif
 #if (P_FAMILY_TOGEPI) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Togekiss, sVariants_Togekiss},
+    {gMonPalette_Togekiss, sVariants_Togekiss, sVariantNames_togepi},
 #endif
 #if (P_FAMILY_NATU)
-    {gMonPalette_Natu, sVariants_Natu},
+    {gMonPalette_Natu, sVariants_Natu, sVariantNames_natu},
 #endif
 #if (P_FAMILY_NATU)
-    {gMonPalette_Xatu, sVariants_Xatu},
+    {gMonPalette_Xatu, sVariants_Xatu, sVariantNames_natu},
 #endif
 #if (P_FAMILY_MAREEP)
-    {gMonPalette_Mareep, sVariants_Mareep},
+    {gMonPalette_Mareep, sVariants_Mareep, sVariantNames_mareep},
 #endif
 #if (P_FAMILY_MAREEP)
-    {gMonPalette_Flaaffy, sVariants_Flaaffy},
+    {gMonPalette_Flaaffy, sVariants_Flaaffy, sVariantNames_mareep},
 #endif
 #if (P_FAMILY_MAREEP)
-    {gMonPalette_Ampharos, sVariants_Ampharos},
+    {gMonPalette_Ampharos, sVariants_Ampharos, sVariantNames_mareep},
 #endif
 #if (P_FAMILY_MARILL) && (P_GEN_3_CROSS_EVOS)
-    {gMonPalette_Azurill, sVariants_Azurill},
+    {gMonPalette_Azurill, sVariants_Azurill, sVariantNames_azurill},
 #endif
 #if (P_FAMILY_MARILL)
-    {gMonPalette_Marill, sVariants_Marill},
+    {gMonPalette_Marill, sVariants_Marill, sVariantNames_azurill},
 #endif
 #if (P_FAMILY_MARILL)
-    {gMonPalette_Azumarill, sVariants_Azumarill},
+    {gMonPalette_Azumarill, sVariants_Azumarill, sVariantNames_azurill},
 #endif
 #if (P_FAMILY_SUDOWOODO) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Bonsly, sVariants_Bonsly},
+    {gMonPalette_Bonsly, sVariants_Bonsly, sVariantNames_bonsly},
 #endif
 #if (P_FAMILY_SUDOWOODO)
-    {gMonPalette_Sudowoodo, sVariants_Sudowoodo},
+    {gMonPalette_Sudowoodo, sVariants_Sudowoodo, sVariantNames_bonsly},
 #endif
 #if (P_FAMILY_HOPPIP)
-    {gMonPalette_Hoppip, sVariants_Hoppip},
+    {gMonPalette_Hoppip, sVariants_Hoppip, sVariantNames_hoppip},
 #endif
 #if (P_FAMILY_HOPPIP)
-    {gMonPalette_Skiploom, sVariants_Skiploom},
+    {gMonPalette_Skiploom, sVariants_Skiploom, sVariantNames_hoppip},
 #endif
 #if (P_FAMILY_HOPPIP)
-    {gMonPalette_Jumpluff, sVariants_Jumpluff},
+    {gMonPalette_Jumpluff, sVariants_Jumpluff, sVariantNames_hoppip},
 #endif
 #if (P_FAMILY_AIPOM)
-    {gMonPalette_Aipom, sVariants_Aipom},
+    {gMonPalette_Aipom, sVariants_Aipom, sVariantNames_aipom},
 #endif
 #if (P_FAMILY_AIPOM) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Ambipom, sVariants_Ambipom},
+    {gMonPalette_Ambipom, sVariants_Ambipom, sVariantNames_aipom},
 #endif
 #if (P_FAMILY_SUNKERN)
-    {gMonPalette_Sunkern, sVariants_Sunkern},
+    {gMonPalette_Sunkern, sVariants_Sunkern, sVariantNames_sunkern},
 #endif
 #if (P_FAMILY_SUNKERN)
-    {gMonPalette_Sunflora, sVariants_Sunflora},
+    {gMonPalette_Sunflora, sVariants_Sunflora, sVariantNames_sunkern},
 #endif
 #if (P_FAMILY_YANMA)
-    {gMonPalette_Yanma, sVariants_Yanma},
+    {gMonPalette_Yanma, sVariants_Yanma, sVariantNames_yanma},
 #endif
 #if (P_FAMILY_YANMA) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Yanmega, sVariants_Yanmega},
+    {gMonPalette_Yanmega, sVariants_Yanmega, sVariantNames_yanma},
 #endif
 #if (P_FAMILY_WOOPER)
-    {gMonPalette_Wooper, sVariants_Wooper},
+    {gMonPalette_Wooper, sVariants_Wooper, sVariantNames_wooper},
 #endif
 #if (P_FAMILY_WOOPER)
-    {gMonPalette_Quagsire, sVariants_Quagsire},
+    {gMonPalette_Quagsire, sVariants_Quagsire, sVariantNames_wooper},
 #endif
 #if (P_FAMILY_WOOPER) && (P_PALDEAN_FORMS)
-    {gMonPalette_WooperPaldea, sVariants_WooperPaldea},
+    {gMonPalette_WooperPaldea, sVariants_WooperPaldea, sVariantNames_wooper_paldea},
 #endif
 #if (P_FAMILY_WOOPER) && (P_PALDEAN_FORMS)
-    {gMonPalette_Clodsire, sVariants_Clodsire},
+    {gMonPalette_Clodsire, sVariants_Clodsire, sVariantNames_wooper_paldea},
 #endif
 #if (P_FAMILY_MURKROW)
-    {gMonPalette_Murkrow, sVariants_Murkrow},
+    {gMonPalette_Murkrow, sVariants_Murkrow, sVariantNames_murkrow},
 #endif
 #if (P_FAMILY_MURKROW) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Honchkrow, sVariants_Honchkrow},
+    {gMonPalette_Honchkrow, sVariants_Honchkrow, sVariantNames_murkrow},
 #endif
 #if (P_FAMILY_MISDREAVUS)
-    {gMonPalette_Misdreavus, sVariants_Misdreavus},
+    {gMonPalette_Misdreavus, sVariants_Misdreavus, sVariantNames_misdreavus},
 #endif
 #if (P_FAMILY_MISDREAVUS) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Mismagius, sVariants_Mismagius},
+    {gMonPalette_Mismagius, sVariants_Mismagius, sVariantNames_misdreavus},
 #endif
 #if (P_FAMILY_UNOWN)
-    {gMonPalette_Unown, sVariants_Unown},
+    {gMonPalette_Unown, sVariants_Unown, sVariantNames_unown},
 #endif
 #if (P_FAMILY_WOBBUFFET) && (P_GEN_3_CROSS_EVOS)
-    {gMonPalette_Wynaut, sVariants_Wynaut},
+    {gMonPalette_Wynaut, sVariants_Wynaut, sVariantNames_wynaut},
 #endif
 #if (P_FAMILY_WOBBUFFET)
-    {gMonPalette_Wobbuffet, sVariants_Wobbuffet},
+    {gMonPalette_Wobbuffet, sVariants_Wobbuffet, sVariantNames_wynaut},
 #endif
 #if (P_FAMILY_GIRAFARIG)
-    {gMonPalette_Girafarig, sVariants_Girafarig},
+    {gMonPalette_Girafarig, sVariants_Girafarig, sVariantNames_girafarig},
 #endif
 #if (P_FAMILY_GIRAFARIG) && (P_GEN_9_CROSS_EVOS)
-    {gMonPalette_Farigiraf, sVariants_Farigiraf},
+    {gMonPalette_Farigiraf, sVariants_Farigiraf, sVariantNames_girafarig},
 #endif
 #if (P_FAMILY_PINECO)
-    {gMonPalette_Pineco, sVariants_Pineco},
+    {gMonPalette_Pineco, sVariants_Pineco, sVariantNames_pineco},
 #endif
 #if (P_FAMILY_PINECO)
-    {gMonPalette_Forretress, sVariants_Forretress},
+    {gMonPalette_Forretress, sVariants_Forretress, sVariantNames_pineco},
 #endif
 #if (P_FAMILY_DUNSPARCE)
-    {gMonPalette_Dunsparce, sVariants_Dunsparce},
+    {gMonPalette_Dunsparce, sVariants_Dunsparce, sVariantNames_dunsparce},
 #endif
 #if (P_FAMILY_DUNSPARCE) && (P_GEN_9_CROSS_EVOS)
-    {gMonPalette_Dudunsparce, sVariants_Dudunsparce},
+    {gMonPalette_Dudunsparce, sVariants_Dudunsparce, sVariantNames_dunsparce},
 #endif
 #if (P_FAMILY_GLIGAR)
-    {gMonPalette_Gligar, sVariants_Gligar},
+    {gMonPalette_Gligar, sVariants_Gligar, sVariantNames_gligar},
 #endif
 #if (P_FAMILY_GLIGAR) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Gliscor, sVariants_Gliscor},
+    {gMonPalette_Gliscor, sVariants_Gliscor, sVariantNames_gligar},
 #endif
 #if (P_FAMILY_SNUBBULL)
-    {gMonPalette_Snubbull, sVariants_Snubbull},
+    {gMonPalette_Snubbull, sVariants_Snubbull, sVariantNames_snubbull},
 #endif
 #if (P_FAMILY_SNUBBULL)
-    {gMonPalette_Granbull, sVariants_Granbull},
+    {gMonPalette_Granbull, sVariants_Granbull, sVariantNames_snubbull},
 #endif
 #if (P_FAMILY_QWILFISH)
-    {gMonPalette_Qwilfish, sVariants_Qwilfish},
+    {gMonPalette_Qwilfish, sVariants_Qwilfish, sVariantNames_qwilfish},
 #endif
 #if (P_FAMILY_QWILFISH) && (P_HISUIAN_FORMS)
-    {gMonPalette_QwilfishHisui, sVariants_QwilfishHisui},
+    {gMonPalette_QwilfishHisui, sVariants_QwilfishHisui, sVariantNames_qwilfish_hisui},
 #endif
 #if (P_FAMILY_QWILFISH) && (P_HISUIAN_FORMS)
-    {gMonPalette_Overqwil, sVariants_Overqwil},
+    {gMonPalette_Overqwil, sVariants_Overqwil, sVariantNames_qwilfish_hisui},
 #endif
 #if (P_FAMILY_SHUCKLE)
-    {gMonPalette_Shuckle, sVariants_Shuckle},
+    {gMonPalette_Shuckle, sVariants_Shuckle, sVariantNames_shuckle},
 #endif
 #if (P_FAMILY_HERACROSS)
-    {gMonPalette_Heracross, sVariants_Heracross},
+    {gMonPalette_Heracross, sVariants_Heracross, sVariantNames_heracross},
 #endif
 #if (P_FAMILY_SNEASEL)
-    {gMonPalette_Sneasel, sVariants_Sneasel},
+    {gMonPalette_Sneasel, sVariants_Sneasel, sVariantNames_sneasel},
 #endif
 #if (P_FAMILY_SNEASEL) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Weavile, sVariants_Weavile},
+    {gMonPalette_Weavile, sVariants_Weavile, sVariantNames_sneasel},
 #endif
 #if (P_FAMILY_SNEASEL) && (P_HISUIAN_FORMS)
-    {gMonPalette_SneaselHisui, sVariants_SneaselHisui},
+    {gMonPalette_SneaselHisui, sVariants_SneaselHisui, sVariantNames_sneasel_hisui},
 #endif
 #if (P_FAMILY_SNEASEL) && (P_HISUIAN_FORMS)
-    {gMonPalette_Sneasler, sVariants_Sneasler},
+    {gMonPalette_Sneasler, sVariants_Sneasler, sVariantNames_sneasel_hisui},
 #endif
 #if (P_FAMILY_TEDDIURSA)
-    {gMonPalette_Teddiursa, sVariants_Teddiursa},
+    {gMonPalette_Teddiursa, sVariants_Teddiursa, sVariantNames_teddiursa},
 #endif
 #if (P_FAMILY_TEDDIURSA)
-    {gMonPalette_Ursaring, sVariants_Ursaring},
+    {gMonPalette_Ursaring, sVariants_Ursaring, sVariantNames_teddiursa},
 #endif
 #if (P_FAMILY_TEDDIURSA) && (P_GEN_8_CROSS_EVOS)
-    {gMonPalette_Ursaluna, sVariants_Ursaluna},
+    {gMonPalette_Ursaluna, sVariants_Ursaluna, sVariantNames_teddiursa},
 #endif
 #if (P_FAMILY_TEDDIURSA) && (P_GEN_8_CROSS_EVOS)
-    {gMonPalette_UrsalunaBloodmoon, sVariants_UrsalunaBloodmoon},
+    {gMonPalette_UrsalunaBloodmoon, sVariants_UrsalunaBloodmoon, sVariantNames_teddiursa},
 #endif
 #if (P_FAMILY_SLUGMA)
-    {gMonPalette_Slugma, sVariants_Slugma},
+    {gMonPalette_Slugma, sVariants_Slugma, sVariantNames_slugma},
 #endif
 #if (P_FAMILY_SLUGMA)
-    {gMonPalette_Magcargo, sVariants_Magcargo},
+    {gMonPalette_Magcargo, sVariants_Magcargo, sVariantNames_slugma},
 #endif
 #if (P_FAMILY_SWINUB)
-    {gMonPalette_Swinub, sVariants_Swinub},
+    {gMonPalette_Swinub, sVariants_Swinub, sVariantNames_swinub},
 #endif
 #if (P_FAMILY_SWINUB)
-    {gMonPalette_Piloswine, sVariants_Piloswine},
+    {gMonPalette_Piloswine, sVariants_Piloswine, sVariantNames_swinub},
 #endif
 #if (P_FAMILY_SWINUB) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Mamoswine, sVariants_Mamoswine},
+    {gMonPalette_Mamoswine, sVariants_Mamoswine, sVariantNames_swinub},
 #endif
 #if (P_FAMILY_CORSOLA)
-    {gMonPalette_Corsola, sVariants_Corsola},
+    {gMonPalette_Corsola, sVariants_Corsola, sVariantNames_corsola},
 #endif
 #if (P_FAMILY_CORSOLA) && (P_GALARIAN_FORMS)
-    {gMonPalette_CorsolaGalar, sVariants_CorsolaGalar},
+    {gMonPalette_CorsolaGalar, sVariants_CorsolaGalar, sVariantNames_corsola_galar},
 #endif
 #if (P_FAMILY_CORSOLA) && (P_GALARIAN_FORMS)
-    {gMonPalette_Cursola, sVariants_Cursola},
+    {gMonPalette_Cursola, sVariants_Cursola, sVariantNames_corsola_galar},
 #endif
 #if (P_FAMILY_REMORAID)
-    {gMonPalette_Remoraid, sVariants_Remoraid},
+    {gMonPalette_Remoraid, sVariants_Remoraid, sVariantNames_remoraid},
 #endif
 #if (P_FAMILY_REMORAID)
-    {gMonPalette_Octillery, sVariants_Octillery},
+    {gMonPalette_Octillery, sVariants_Octillery, sVariantNames_remoraid},
 #endif
 #if (P_FAMILY_DELIBIRD)
-    {gMonPalette_Delibird, sVariants_Delibird},
+    {gMonPalette_Delibird, sVariants_Delibird, sVariantNames_delibird},
 #endif
 #if (P_FAMILY_MANTINE) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Mantyke, sVariants_Mantyke},
+    {gMonPalette_Mantyke, sVariants_Mantyke, sVariantNames_mantyke},
 #endif
 #if (P_FAMILY_MANTINE)
-    {gMonPalette_Mantine, sVariants_Mantine},
+    {gMonPalette_Mantine, sVariants_Mantine, sVariantNames_mantyke},
 #endif
 #if (P_FAMILY_SKARMORY)
-    {gMonPalette_Skarmory, sVariants_Skarmory},
+    {gMonPalette_Skarmory, sVariants_Skarmory, sVariantNames_skarmory},
 #endif
 #if (P_FAMILY_HOUNDOUR)
-    {gMonPalette_Houndour, sVariants_Houndour},
+    {gMonPalette_Houndour, sVariants_Houndour, sVariantNames_houndour},
 #endif
 #if (P_FAMILY_HOUNDOUR)
-    {gMonPalette_Houndoom, sVariants_Houndoom},
+    {gMonPalette_Houndoom, sVariants_Houndoom, sVariantNames_houndour},
 #endif
 #if (P_FAMILY_PHANPY)
-    {gMonPalette_Phanpy, sVariants_Phanpy},
+    {gMonPalette_Phanpy, sVariants_Phanpy, sVariantNames_phanpy},
 #endif
 #if (P_FAMILY_PHANPY)
-    {gMonPalette_Donphan, sVariants_Donphan},
+    {gMonPalette_Donphan, sVariants_Donphan, sVariantNames_phanpy},
 #endif
 #if (P_FAMILY_STANTLER)
-    {gMonPalette_Stantler, sVariants_Stantler},
+    {gMonPalette_Stantler, sVariants_Stantler, sVariantNames_stantler},
 #endif
 #if (P_FAMILY_STANTLER) && (P_GEN_8_CROSS_EVOS)
-    {gMonPalette_Wyrdeer, sVariants_Wyrdeer},
+    {gMonPalette_Wyrdeer, sVariants_Wyrdeer, sVariantNames_stantler},
 #endif
 #if (P_FAMILY_SMEARGLE)
-    {gMonPalette_Smeargle, sVariants_Smeargle},
+    {gMonPalette_Smeargle, sVariants_Smeargle, sVariantNames_smeargle},
 #endif
 #if (P_FAMILY_MILTANK)
-    {gMonPalette_Miltank, sVariants_Miltank},
+    {gMonPalette_Miltank, sVariants_Miltank, sVariantNames_miltank},
 #endif
 #if (P_FAMILY_RAIKOU)
-    {gMonPalette_Raikou, sVariants_Raikou},
+    {gMonPalette_Raikou, sVariants_Raikou, sVariantNames_raikou},
 #endif
 #if (P_FAMILY_ENTEI)
-    {gMonPalette_Entei, sVariants_Entei},
+    {gMonPalette_Entei, sVariants_Entei, sVariantNames_entei},
 #endif
 #if (P_FAMILY_SUICUNE)
-    {gMonPalette_Suicune, sVariants_Suicune},
+    {gMonPalette_Suicune, sVariants_Suicune, sVariantNames_suicune},
 #endif
 #if (P_FAMILY_LARVITAR)
-    {gMonPalette_Larvitar, sVariants_Larvitar},
+    {gMonPalette_Larvitar, sVariants_Larvitar, sVariantNames_larvitar},
 #endif
 #if (P_FAMILY_LARVITAR)
-    {gMonPalette_Pupitar, sVariants_Pupitar},
+    {gMonPalette_Pupitar, sVariants_Pupitar, sVariantNames_larvitar},
 #endif
 #if (P_FAMILY_LARVITAR)
-    {gMonPalette_Tyranitar, sVariants_Tyranitar},
+    {gMonPalette_Tyranitar, sVariants_Tyranitar, sVariantNames_larvitar},
 #endif
 #if (P_FAMILY_LUGIA)
-    {gMonPalette_Lugia, sVariants_Lugia},
+    {gMonPalette_Lugia, sVariants_Lugia, sVariantNames_lugia},
 #endif
 #if (P_FAMILY_HO_OH)
-    {gMonPalette_HoOh, sVariants_HoOh},
+    {gMonPalette_HoOh, sVariants_HoOh, sVariantNames_ho_oh},
 #endif
 #if (P_FAMILY_CELEBI)
-    {gMonPalette_Celebi, sVariants_Celebi},
+    {gMonPalette_Celebi, sVariants_Celebi, sVariantNames_celebi},
 #endif
 #if (P_FAMILY_TREECKO)
-    {gMonPalette_Treecko, sVariants_Treecko},
+    {gMonPalette_Treecko, sVariants_Treecko, sVariantNames_treecko},
 #endif
 #if (P_FAMILY_TREECKO)
-    {gMonPalette_Grovyle, sVariants_Grovyle},
+    {gMonPalette_Grovyle, sVariants_Grovyle, sVariantNames_treecko},
 #endif
 #if (P_FAMILY_TREECKO)
-    {gMonPalette_Sceptile, sVariants_Sceptile},
+    {gMonPalette_Sceptile, sVariants_Sceptile, sVariantNames_treecko},
 #endif
 #if (P_FAMILY_TORCHIC)
-    {gMonPalette_Torchic, sVariants_Torchic},
+    {gMonPalette_Torchic, sVariants_Torchic, sVariantNames_torchic},
 #endif
 #if (P_FAMILY_TORCHIC)
-    {gMonPalette_Combusken, sVariants_Combusken},
+    {gMonPalette_Combusken, sVariants_Combusken, sVariantNames_torchic},
 #endif
 #if (P_FAMILY_TORCHIC)
-    {gMonPalette_Blaziken, sVariants_Blaziken},
+    {gMonPalette_Blaziken, sVariants_Blaziken, sVariantNames_torchic},
 #endif
 #if (P_FAMILY_MUDKIP)
-    {gMonPalette_Mudkip, sVariants_Mudkip},
+    {gMonPalette_Mudkip, sVariants_Mudkip, sVariantNames_mudkip},
 #endif
 #if (P_FAMILY_MUDKIP)
-    {gMonPalette_Marshtomp, sVariants_Marshtomp},
+    {gMonPalette_Marshtomp, sVariants_Marshtomp, sVariantNames_mudkip},
 #endif
 #if (P_FAMILY_MUDKIP)
-    {gMonPalette_Swampert, sVariants_Swampert},
+    {gMonPalette_Swampert, sVariants_Swampert, sVariantNames_mudkip},
 #endif
 #if (P_FAMILY_POOCHYENA)
-    {gMonPalette_Poochyena, sVariants_Poochyena},
+    {gMonPalette_Poochyena, sVariants_Poochyena, sVariantNames_poochyena},
 #endif
 #if (P_FAMILY_POOCHYENA)
-    {gMonPalette_Mightyena, sVariants_Mightyena},
+    {gMonPalette_Mightyena, sVariants_Mightyena, sVariantNames_poochyena},
 #endif
 #if (P_FAMILY_ZIGZAGOON)
-    {gMonPalette_Zigzagoon, sVariants_Zigzagoon},
+    {gMonPalette_Zigzagoon, sVariants_Zigzagoon, sVariantNames_zigzagoon},
 #endif
 #if (P_FAMILY_ZIGZAGOON)
-    {gMonPalette_Linoone, sVariants_Linoone},
+    {gMonPalette_Linoone, sVariants_Linoone, sVariantNames_zigzagoon},
 #endif
 #if (P_FAMILY_ZIGZAGOON) && (P_GALARIAN_FORMS)
-    {gMonPalette_ZigzagoonGalar, sVariants_ZigzagoonGalar},
+    {gMonPalette_ZigzagoonGalar, sVariants_ZigzagoonGalar, sVariantNames_zigzagoon_galar},
 #endif
 #if (P_FAMILY_ZIGZAGOON) && (P_GALARIAN_FORMS)
-    {gMonPalette_LinooneGalar, sVariants_LinooneGalar},
+    {gMonPalette_LinooneGalar, sVariants_LinooneGalar, sVariantNames_zigzagoon_galar},
 #endif
 #if (P_FAMILY_ZIGZAGOON) && (P_GALARIAN_FORMS)
-    {gMonPalette_Obstagoon, sVariants_Obstagoon},
+    {gMonPalette_Obstagoon, sVariants_Obstagoon, sVariantNames_zigzagoon_galar},
 #endif
 #if (P_FAMILY_WURMPLE)
-    {gMonPalette_Wurmple, sVariants_Wurmple},
+    {gMonPalette_Wurmple, sVariants_Wurmple, sVariantNames_wurmple},
 #endif
 #if (P_FAMILY_WURMPLE)
-    {gMonPalette_Silcoon, sVariants_Silcoon},
+    {gMonPalette_Silcoon, sVariants_Silcoon, sVariantNames_wurmple},
 #endif
 #if (P_FAMILY_WURMPLE)
-    {gMonPalette_Beautifly, sVariants_Beautifly},
+    {gMonPalette_Beautifly, sVariants_Beautifly, sVariantNames_wurmple},
 #endif
 #if (P_FAMILY_WURMPLE)
-    {gMonPalette_Cascoon, sVariants_Cascoon},
+    {gMonPalette_Cascoon, sVariants_Cascoon, sVariantNames_wurmple},
 #endif
 #if (P_FAMILY_WURMPLE)
-    {gMonPalette_Dustox, sVariants_Dustox},
+    {gMonPalette_Dustox, sVariants_Dustox, sVariantNames_wurmple},
 #endif
 #if (P_FAMILY_LOTAD)
-    {gMonPalette_Lotad, sVariants_Lotad},
+    {gMonPalette_Lotad, sVariants_Lotad, sVariantNames_lotad},
 #endif
 #if (P_FAMILY_LOTAD)
-    {gMonPalette_Lombre, sVariants_Lombre},
+    {gMonPalette_Lombre, sVariants_Lombre, sVariantNames_lotad},
 #endif
 #if (P_FAMILY_LOTAD)
-    {gMonPalette_Ludicolo, sVariants_Ludicolo},
+    {gMonPalette_Ludicolo, sVariants_Ludicolo, sVariantNames_lotad},
 #endif
 #if (P_FAMILY_SEEDOT)
-    {gMonPalette_Seedot, sVariants_Seedot},
+    {gMonPalette_Seedot, sVariants_Seedot, sVariantNames_seedot},
 #endif
 #if (P_FAMILY_SEEDOT)
-    {gMonPalette_Nuzleaf, sVariants_Nuzleaf},
+    {gMonPalette_Nuzleaf, sVariants_Nuzleaf, sVariantNames_seedot},
 #endif
 #if (P_FAMILY_SEEDOT)
-    {gMonPalette_Shiftry, sVariants_Shiftry},
+    {gMonPalette_Shiftry, sVariants_Shiftry, sVariantNames_seedot},
 #endif
 #if (P_FAMILY_TAILLOW)
-    {gMonPalette_Taillow, sVariants_Taillow},
+    {gMonPalette_Taillow, sVariants_Taillow, sVariantNames_taillow},
 #endif
 #if (P_FAMILY_TAILLOW)
-    {gMonPalette_Swellow, sVariants_Swellow},
+    {gMonPalette_Swellow, sVariants_Swellow, sVariantNames_taillow},
 #endif
 #if (P_FAMILY_WINGULL)
-    {gMonPalette_Wingull, sVariants_Wingull},
+    {gMonPalette_Wingull, sVariants_Wingull, sVariantNames_wingull},
 #endif
 #if (P_FAMILY_WINGULL)
-    {gMonPalette_Pelipper, sVariants_Pelipper},
+    {gMonPalette_Pelipper, sVariants_Pelipper, sVariantNames_wingull},
 #endif
 #if (P_FAMILY_RALTS)
-    {gMonPalette_Ralts, sVariants_Ralts},
+    {gMonPalette_Ralts, sVariants_Ralts, sVariantNames_ralts},
 #endif
 #if (P_FAMILY_RALTS)
-    {gMonPalette_Kirlia, sVariants_Kirlia},
+    {gMonPalette_Kirlia, sVariants_Kirlia, sVariantNames_ralts},
 #endif
 #if (P_FAMILY_RALTS)
-    {gMonPalette_Gardevoir, sVariants_Gardevoir},
+    {gMonPalette_Gardevoir, sVariants_Gardevoir, sVariantNames_ralts},
 #endif
 #if (P_FAMILY_RALTS) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Gallade, sVariants_Gallade},
+    {gMonPalette_Gallade, sVariants_Gallade, sVariantNames_ralts},
 #endif
 #if (P_FAMILY_SURSKIT)
-    {gMonPalette_Surskit, sVariants_Surskit},
+    {gMonPalette_Surskit, sVariants_Surskit, sVariantNames_surskit},
 #endif
 #if (P_FAMILY_SURSKIT)
-    {gMonPalette_Masquerain, sVariants_Masquerain},
+    {gMonPalette_Masquerain, sVariants_Masquerain, sVariantNames_surskit},
 #endif
 #if (P_FAMILY_SHROOMISH)
-    {gMonPalette_Shroomish, sVariants_Shroomish},
+    {gMonPalette_Shroomish, sVariants_Shroomish, sVariantNames_shroomish},
 #endif
 #if (P_FAMILY_SHROOMISH)
-    {gMonPalette_Breloom, sVariants_Breloom},
+    {gMonPalette_Breloom, sVariants_Breloom, sVariantNames_shroomish},
 #endif
 #if (P_FAMILY_SLAKOTH)
-    {gMonPalette_Slakoth, sVariants_Slakoth},
+    {gMonPalette_Slakoth, sVariants_Slakoth, sVariantNames_slakoth},
 #endif
 #if (P_FAMILY_SLAKOTH)
-    {gMonPalette_Vigoroth, sVariants_Vigoroth},
+    {gMonPalette_Vigoroth, sVariants_Vigoroth, sVariantNames_slakoth},
 #endif
 #if (P_FAMILY_SLAKOTH)
-    {gMonPalette_Slaking, sVariants_Slaking},
+    {gMonPalette_Slaking, sVariants_Slaking, sVariantNames_slakoth},
 #endif
 #if (P_FAMILY_NINCADA)
-    {gMonPalette_Nincada, sVariants_Nincada},
+    {gMonPalette_Nincada, sVariants_Nincada, sVariantNames_nincada},
 #endif
 #if (P_FAMILY_NINCADA)
-    {gMonPalette_Ninjask, sVariants_Ninjask},
+    {gMonPalette_Ninjask, sVariants_Ninjask, sVariantNames_nincada},
 #endif
 #if (P_FAMILY_NINCADA)
-    {gMonPalette_Shedinja, sVariants_Shedinja},
+    {gMonPalette_Shedinja, sVariants_Shedinja, sVariantNames_nincada},
 #endif
 #if (P_FAMILY_WHISMUR)
-    {gMonPalette_Whismur, sVariants_Whismur},
+    {gMonPalette_Whismur, sVariants_Whismur, sVariantNames_whismur},
 #endif
 #if (P_FAMILY_WHISMUR)
-    {gMonPalette_Loudred, sVariants_Loudred},
+    {gMonPalette_Loudred, sVariants_Loudred, sVariantNames_whismur},
 #endif
 #if (P_FAMILY_WHISMUR)
-    {gMonPalette_Exploud, sVariants_Exploud},
+    {gMonPalette_Exploud, sVariants_Exploud, sVariantNames_whismur},
 #endif
 #if (P_FAMILY_MAKUHITA)
-    {gMonPalette_Makuhita, sVariants_Makuhita},
+    {gMonPalette_Makuhita, sVariants_Makuhita, sVariantNames_makuhita},
 #endif
 #if (P_FAMILY_MAKUHITA)
-    {gMonPalette_Hariyama, sVariants_Hariyama},
+    {gMonPalette_Hariyama, sVariants_Hariyama, sVariantNames_makuhita},
 #endif
 #if (P_FAMILY_NOSEPASS)
-    {gMonPalette_Nosepass, sVariants_Nosepass},
+    {gMonPalette_Nosepass, sVariants_Nosepass, sVariantNames_nosepass},
 #endif
 #if (P_FAMILY_NOSEPASS) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Probopass, sVariants_Probopass},
+    {gMonPalette_Probopass, sVariants_Probopass, sVariantNames_nosepass},
 #endif
 #if (P_FAMILY_SKITTY)
-    {gMonPalette_Skitty, sVariants_Skitty},
+    {gMonPalette_Skitty, sVariants_Skitty, sVariantNames_skitty},
 #endif
 #if (P_FAMILY_SKITTY)
-    {gMonPalette_Delcatty, sVariants_Delcatty},
+    {gMonPalette_Delcatty, sVariants_Delcatty, sVariantNames_skitty},
 #endif
 #if (P_FAMILY_SABLEYE)
-    {gMonPalette_Sableye, sVariants_Sableye},
+    {gMonPalette_Sableye, sVariants_Sableye, sVariantNames_sableye},
 #endif
 #if (P_FAMILY_MAWILE)
-    {gMonPalette_Mawile, sVariants_Mawile},
+    {gMonPalette_Mawile, sVariants_Mawile, sVariantNames_mawile},
 #endif
 #if (P_FAMILY_ARON)
-    {gMonPalette_Aron, sVariants_Aron},
+    {gMonPalette_Aron, sVariants_Aron, sVariantNames_aron},
 #endif
 #if (P_FAMILY_ARON)
-    {gMonPalette_Lairon, sVariants_Lairon},
+    {gMonPalette_Lairon, sVariants_Lairon, sVariantNames_aron},
 #endif
 #if (P_FAMILY_ARON)
-    {gMonPalette_Aggron, sVariants_Aggron},
+    {gMonPalette_Aggron, sVariants_Aggron, sVariantNames_aron},
 #endif
 #if (P_FAMILY_MEDITITE)
-    {gMonPalette_Meditite, sVariants_Meditite},
+    {gMonPalette_Meditite, sVariants_Meditite, sVariantNames_meditite},
 #endif
 #if (P_FAMILY_MEDITITE)
-    {gMonPalette_Medicham, sVariants_Medicham},
+    {gMonPalette_Medicham, sVariants_Medicham, sVariantNames_meditite},
 #endif
 #if (P_FAMILY_ELECTRIKE)
-    {gMonPalette_Electrike, sVariants_Electrike},
+    {gMonPalette_Electrike, sVariants_Electrike, sVariantNames_electrike},
 #endif
 #if (P_FAMILY_ELECTRIKE)
-    {gMonPalette_Manectric, sVariants_Manectric},
+    {gMonPalette_Manectric, sVariants_Manectric, sVariantNames_electrike},
 #endif
 #if (P_FAMILY_PLUSLE)
-    {gMonPalette_Plusle, sVariants_Plusle},
+    {gMonPalette_Plusle, sVariants_Plusle, sVariantNames_plusle},
 #endif
 #if (P_FAMILY_MINUN)
-    {gMonPalette_Minun, sVariants_Minun},
+    {gMonPalette_Minun, sVariants_Minun, sVariantNames_plusle},
 #endif
 #if (P_FAMILY_VOLBEAT_ILLUMISE)
-    {gMonPalette_Volbeat, sVariants_Volbeat},
+    {gMonPalette_Volbeat, sVariants_Volbeat, sVariantNames_volbeat},
 #endif
 #if (P_FAMILY_VOLBEAT_ILLUMISE)
-    {gMonPalette_Illumise, sVariants_Illumise},
+    {gMonPalette_Illumise, sVariants_Illumise, sVariantNames_volbeat},
 #endif
 #if (P_FAMILY_ROSELIA) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Budew, sVariants_Budew},
+    {gMonPalette_Budew, sVariants_Budew, sVariantNames_roselia},
 #endif
 #if (P_FAMILY_ROSELIA)
-    {gMonPalette_Roselia, sVariants_Roselia},
+    {gMonPalette_Roselia, sVariants_Roselia, sVariantNames_roselia},
 #endif
 #if (P_FAMILY_ROSELIA) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Roserade, sVariants_Roserade},
+    {gMonPalette_Roserade, sVariants_Roserade, sVariantNames_roselia},
 #endif
 #if (P_FAMILY_GULPIN)
-    {gMonPalette_Gulpin, sVariants_Gulpin},
+    {gMonPalette_Gulpin, sVariants_Gulpin, sVariantNames_gulpin},
 #endif
 #if (P_FAMILY_GULPIN)
-    {gMonPalette_Swalot, sVariants_Swalot},
+    {gMonPalette_Swalot, sVariants_Swalot, sVariantNames_gulpin},
 #endif
 #if (P_FAMILY_CARVANHA)
-    {gMonPalette_Carvanha, sVariants_Carvanha},
+    {gMonPalette_Carvanha, sVariants_Carvanha, sVariantNames_carvanha},
 #endif
 #if (P_FAMILY_CARVANHA)
-    {gMonPalette_Sharpedo, sVariants_Sharpedo},
+    {gMonPalette_Sharpedo, sVariants_Sharpedo, sVariantNames_carvanha},
 #endif
 #if (P_FAMILY_WAILMER)
-    {gMonPalette_Wailmer, sVariants_Wailmer},
+    {gMonPalette_Wailmer, sVariants_Wailmer, sVariantNames_wailmer},
 #endif
 #if (P_FAMILY_WAILMER)
-    {gMonPalette_Wailord, sVariants_Wailord},
+    {gMonPalette_Wailord, sVariants_Wailord, sVariantNames_wailmer},
 #endif
 #if (P_FAMILY_NUMEL)
-    {gMonPalette_Numel, sVariants_Numel},
+    {gMonPalette_Numel, sVariants_Numel, sVariantNames_numel},
 #endif
 #if (P_FAMILY_NUMEL)
-    {gMonPalette_Camerupt, sVariants_Camerupt},
+    {gMonPalette_Camerupt, sVariants_Camerupt, sVariantNames_numel},
 #endif
 #if (P_FAMILY_TORKOAL)
-    {gMonPalette_Torkoal, sVariants_Torkoal},
+    {gMonPalette_Torkoal, sVariants_Torkoal, sVariantNames_torkoal},
 #endif
 #if (P_FAMILY_SPOINK)
-    {gMonPalette_Spoink, sVariants_Spoink},
+    {gMonPalette_Spoink, sVariants_Spoink, sVariantNames_spoink},
 #endif
 #if (P_FAMILY_SPOINK)
-    {gMonPalette_Grumpig, sVariants_Grumpig},
+    {gMonPalette_Grumpig, sVariants_Grumpig, sVariantNames_spoink},
 #endif
 #if (P_FAMILY_SPINDA)
-    {gMonPalette_Spinda, sVariants_Spinda},
+    {gMonPalette_Spinda, sVariants_Spinda, sVariantNames_spinda},
 #endif
 #if (P_FAMILY_TRAPINCH)
-    {gMonPalette_Trapinch, sVariants_Trapinch},
+    {gMonPalette_Trapinch, sVariants_Trapinch, sVariantNames_trapinch},
 #endif
 #if (P_FAMILY_TRAPINCH)
-    {gMonPalette_Vibrava, sVariants_Vibrava},
+    {gMonPalette_Vibrava, sVariants_Vibrava, sVariantNames_trapinch},
 #endif
 #if (P_FAMILY_TRAPINCH)
-    {gMonPalette_Flygon, sVariants_Flygon},
+    {gMonPalette_Flygon, sVariants_Flygon, sVariantNames_trapinch},
 #endif
 #if (P_FAMILY_CACNEA)
-    {gMonPalette_Cacnea, sVariants_Cacnea},
+    {gMonPalette_Cacnea, sVariants_Cacnea, sVariantNames_cacnea},
 #endif
 #if (P_FAMILY_CACNEA)
-    {gMonPalette_Cacturne, sVariants_Cacturne},
+    {gMonPalette_Cacturne, sVariants_Cacturne, sVariantNames_cacnea},
 #endif
 #if (P_FAMILY_SWABLU)
-    {gMonPalette_Swablu, sVariants_Swablu},
+    {gMonPalette_Swablu, sVariants_Swablu, sVariantNames_swablu},
 #endif
 #if (P_FAMILY_SWABLU)
-    {gMonPalette_Altaria, sVariants_Altaria},
+    {gMonPalette_Altaria, sVariants_Altaria, sVariantNames_swablu},
 #endif
 #if (P_FAMILY_ZANGOOSE)
-    {gMonPalette_Zangoose, sVariants_Zangoose},
+    {gMonPalette_Zangoose, sVariants_Zangoose, sVariantNames_zangoose},
 #endif
 #if (P_FAMILY_SEVIPER)
-    {gMonPalette_Seviper, sVariants_Seviper},
+    {gMonPalette_Seviper, sVariants_Seviper, sVariantNames_zangoose},
 #endif
 #if (P_FAMILY_LUNATONE)
-    {gMonPalette_Lunatone, sVariants_Lunatone},
+    {gMonPalette_Lunatone, sVariants_Lunatone, sVariantNames_lunatone},
 #endif
 #if (P_FAMILY_SOLROCK)
-    {gMonPalette_Solrock, sVariants_Solrock},
+    {gMonPalette_Solrock, sVariants_Solrock, sVariantNames_lunatone},
 #endif
 #if (P_FAMILY_BARBOACH)
-    {gMonPalette_Barboach, sVariants_Barboach},
+    {gMonPalette_Barboach, sVariants_Barboach, sVariantNames_barboach},
 #endif
 #if (P_FAMILY_BARBOACH)
-    {gMonPalette_Whiscash, sVariants_Whiscash},
+    {gMonPalette_Whiscash, sVariants_Whiscash, sVariantNames_barboach},
 #endif
 #if (P_FAMILY_CORPHISH)
-    {gMonPalette_Corphish, sVariants_Corphish},
+    {gMonPalette_Corphish, sVariants_Corphish, sVariantNames_corphish},
 #endif
 #if (P_FAMILY_CORPHISH)
-    {gMonPalette_Crawdaunt, sVariants_Crawdaunt},
+    {gMonPalette_Crawdaunt, sVariants_Crawdaunt, sVariantNames_corphish},
 #endif
 #if (P_FAMILY_BALTOY)
-    {gMonPalette_Baltoy, sVariants_Baltoy},
+    {gMonPalette_Baltoy, sVariants_Baltoy, sVariantNames_baltoy},
 #endif
 #if (P_FAMILY_BALTOY)
-    {gMonPalette_Claydol, sVariants_Claydol},
+    {gMonPalette_Claydol, sVariants_Claydol, sVariantNames_baltoy},
 #endif
 #if (P_FAMILY_LILEEP)
-    {gMonPalette_Lileep, sVariants_Lileep},
+    {gMonPalette_Lileep, sVariants_Lileep, sVariantNames_lileep},
 #endif
 #if (P_FAMILY_LILEEP)
-    {gMonPalette_Cradily, sVariants_Cradily},
+    {gMonPalette_Cradily, sVariants_Cradily, sVariantNames_lileep},
 #endif
 #if (P_FAMILY_ANORITH)
-    {gMonPalette_Anorith, sVariants_Anorith},
+    {gMonPalette_Anorith, sVariants_Anorith, sVariantNames_anorith},
 #endif
 #if (P_FAMILY_ANORITH)
-    {gMonPalette_Armaldo, sVariants_Armaldo},
+    {gMonPalette_Armaldo, sVariants_Armaldo, sVariantNames_anorith},
 #endif
 #if (P_FAMILY_FEEBAS)
-    {gMonPalette_Feebas, sVariants_Feebas},
+    {gMonPalette_Feebas, sVariants_Feebas, sVariantNames_feebas},
 #endif
 #if (P_FAMILY_FEEBAS)
-    {gMonPalette_Milotic, sVariants_Milotic},
+    {gMonPalette_Milotic, sVariants_Milotic, sVariantNames_feebas},
 #endif
 #if (P_FAMILY_CASTFORM)
-    {gMonPalette_CastformNormal, sVariants_CastformNormal},
+    {gMonPalette_CastformNormal, sVariants_CastformNormal, sVariantNames_castform},
 #endif
 #if (P_FAMILY_CASTFORM)
-    {gMonPalette_CastformSunny, sVariants_CastformSunny},
+    {gMonPalette_CastformSunny, sVariants_CastformSunny, sVariantNames_castform},
 #endif
 #if (P_FAMILY_CASTFORM)
-    {gMonPalette_CastformRainy, sVariants_CastformRainy},
+    {gMonPalette_CastformRainy, sVariants_CastformRainy, sVariantNames_castform},
 #endif
 #if (P_FAMILY_CASTFORM)
-    {gMonPalette_CastformSnowy, sVariants_CastformSnowy},
+    {gMonPalette_CastformSnowy, sVariants_CastformSnowy, sVariantNames_castform},
 #endif
 #if (P_FAMILY_KECLEON)
-    {gMonPalette_Kecleon, sVariants_Kecleon},
+    {gMonPalette_Kecleon, sVariants_Kecleon, sVariantNames_kecleon},
 #endif
 #if (P_FAMILY_SHUPPET)
-    {gMonPalette_Shuppet, sVariants_Shuppet},
+    {gMonPalette_Shuppet, sVariants_Shuppet, sVariantNames_shuppet},
 #endif
 #if (P_FAMILY_SHUPPET)
-    {gMonPalette_Banette, sVariants_Banette},
+    {gMonPalette_Banette, sVariants_Banette, sVariantNames_shuppet},
 #endif
 #if (P_FAMILY_DUSKULL)
-    {gMonPalette_Duskull, sVariants_Duskull},
+    {gMonPalette_Duskull, sVariants_Duskull, sVariantNames_duskull},
 #endif
 #if (P_FAMILY_DUSKULL)
-    {gMonPalette_Dusclops, sVariants_Dusclops},
+    {gMonPalette_Dusclops, sVariants_Dusclops, sVariantNames_duskull},
 #endif
 #if (P_FAMILY_DUSKULL) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Dusknoir, sVariants_Dusknoir},
+    {gMonPalette_Dusknoir, sVariants_Dusknoir, sVariantNames_duskull},
 #endif
 #if (P_FAMILY_TROPIUS)
-    {gMonPalette_Tropius, sVariants_Tropius},
+    {gMonPalette_Tropius, sVariants_Tropius, sVariantNames_tropius},
 #endif
 #if (P_FAMILY_CHIMECHO) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Chingling, sVariants_Chingling},
+    {gMonPalette_Chingling, sVariants_Chingling, sVariantNames_chimecho},
 #endif
 #if (P_FAMILY_CHIMECHO)
-    {gMonPalette_Chimecho, sVariants_Chimecho},
+    {gMonPalette_Chimecho, sVariants_Chimecho, sVariantNames_chimecho},
 #endif
 #if (P_FAMILY_ABSOL)
-    {gMonPalette_Absol, sVariants_Absol},
+    {gMonPalette_Absol, sVariants_Absol, sVariantNames_absol},
 #endif
 #if (P_FAMILY_SNORUNT)
-    {gMonPalette_Snorunt, sVariants_Snorunt},
+    {gMonPalette_Snorunt, sVariants_Snorunt, sVariantNames_snorunt},
 #endif
 #if (P_FAMILY_SNORUNT)
-    {gMonPalette_Glalie, sVariants_Glalie},
+    {gMonPalette_Glalie, sVariants_Glalie, sVariantNames_snorunt},
 #endif
 #if (P_FAMILY_SNORUNT) && (P_GEN_4_CROSS_EVOS)
-    {gMonPalette_Froslass, sVariants_Froslass},
+    {gMonPalette_Froslass, sVariants_Froslass, sVariantNames_snorunt},
 #endif
 #if (P_FAMILY_SPHEAL)
-    {gMonPalette_Spheal, sVariants_Spheal},
+    {gMonPalette_Spheal, sVariants_Spheal, sVariantNames_spheal},
 #endif
 #if (P_FAMILY_SPHEAL)
-    {gMonPalette_Sealeo, sVariants_Sealeo},
+    {gMonPalette_Sealeo, sVariants_Sealeo, sVariantNames_spheal},
 #endif
 #if (P_FAMILY_SPHEAL)
-    {gMonPalette_Walrein, sVariants_Walrein},
+    {gMonPalette_Walrein, sVariants_Walrein, sVariantNames_spheal},
 #endif
 #if (P_FAMILY_CLAMPERL)
-    {gMonPalette_Clamperl, sVariants_Clamperl},
+    {gMonPalette_Clamperl, sVariants_Clamperl, sVariantNames_clamperl},
 #endif
 #if (P_FAMILY_CLAMPERL)
-    {gMonPalette_Huntail, sVariants_Huntail},
+    {gMonPalette_Huntail, sVariants_Huntail, sVariantNames_clamperl},
 #endif
 #if (P_FAMILY_CLAMPERL)
-    {gMonPalette_Gorebyss, sVariants_Gorebyss},
+    {gMonPalette_Gorebyss, sVariants_Gorebyss, sVariantNames_clamperl},
 #endif
 #if (P_FAMILY_RELICANTH)
-    {gMonPalette_Relicanth, sVariants_Relicanth},
+    {gMonPalette_Relicanth, sVariants_Relicanth, sVariantNames_relicanth},
 #endif
 #if (P_FAMILY_LUVDISC)
-    {gMonPalette_Luvdisc, sVariants_Luvdisc},
+    {gMonPalette_Luvdisc, sVariants_Luvdisc, sVariantNames_luvdisc},
 #endif
 #if (P_FAMILY_BAGON)
-    {gMonPalette_Bagon, sVariants_Bagon},
+    {gMonPalette_Bagon, sVariants_Bagon, sVariantNames_bagon},
 #endif
 #if (P_FAMILY_BAGON)
-    {gMonPalette_Shelgon, sVariants_Shelgon},
+    {gMonPalette_Shelgon, sVariants_Shelgon, sVariantNames_bagon},
 #endif
 #if (P_FAMILY_BAGON)
-    {gMonPalette_Salamence, sVariants_Salamence},
+    {gMonPalette_Salamence, sVariants_Salamence, sVariantNames_bagon},
 #endif
 #if (P_FAMILY_BELDUM)
-    {gMonPalette_Beldum, sVariants_Beldum},
+    {gMonPalette_Beldum, sVariants_Beldum, sVariantNames_beldum},
 #endif
 #if (P_FAMILY_BELDUM)
-    {gMonPalette_Metang, sVariants_Metang},
+    {gMonPalette_Metang, sVariants_Metang, sVariantNames_beldum},
 #endif
 #if (P_FAMILY_BELDUM)
-    {gMonPalette_Metagross, sVariants_Metagross},
+    {gMonPalette_Metagross, sVariants_Metagross, sVariantNames_beldum},
 #endif
 #if (P_FAMILY_REGIROCK)
-    {gMonPalette_Regirock, sVariants_Regirock},
+    {gMonPalette_Regirock, sVariants_Regirock, sVariantNames_regirock},
 #endif
 #if (P_FAMILY_REGICE)
-    {gMonPalette_Regice, sVariants_Regice},
+    {gMonPalette_Regice, sVariants_Regice, sVariantNames_regice},
 #endif
 #if (P_FAMILY_REGISTEEL)
-    {gMonPalette_Registeel, sVariants_Registeel},
+    {gMonPalette_Registeel, sVariants_Registeel, sVariantNames_registeel},
 #endif
 #if (P_FAMILY_LATIAS)
-    {gMonPalette_Latias, sVariants_Latias},
+    {gMonPalette_Latias, sVariants_Latias, sVariantNames_latias},
 #endif
 #if (P_FAMILY_LATIOS)
-    {gMonPalette_Latios, sVariants_Latios},
+    {gMonPalette_Latios, sVariants_Latios, sVariantNames_latias},
 #endif
 #if (P_FAMILY_KYOGRE)
-    {gMonPalette_Kyogre, sVariants_Kyogre},
+    {gMonPalette_Kyogre, sVariants_Kyogre, sVariantNames_kyogre},
 #endif
 #if (P_FAMILY_GROUDON)
-    {gMonPalette_Groudon, sVariants_Groudon},
+    {gMonPalette_Groudon, sVariants_Groudon, sVariantNames_groudon},
 #endif
 #if (P_FAMILY_RAYQUAZA)
-    {gMonPalette_Rayquaza, sVariants_Rayquaza},
+    {gMonPalette_Rayquaza, sVariants_Rayquaza, sVariantNames_rayquaza},
 #endif
 #if (P_FAMILY_JIRACHI)
-    {gMonPalette_Jirachi, sVariants_Jirachi},
+    {gMonPalette_Jirachi, sVariants_Jirachi, sVariantNames_jirachi},
 #endif
 #if (P_FAMILY_DEOXYS)
-    {gMonPalette_DeoxysNormal, sVariants_DeoxysNormal},
+    {gMonPalette_DeoxysNormal, sVariants_DeoxysNormal, sVariantNames_deoxys},
 #endif
 #if (P_FAMILY_DEOXYS)
-    {gMonPalette_DeoxysAttack, sVariants_DeoxysAttack},
+    {gMonPalette_DeoxysAttack, sVariants_DeoxysAttack, sVariantNames_deoxys},
 #endif
 #if (P_FAMILY_DEOXYS)
-    {gMonPalette_DeoxysDefense, sVariants_DeoxysDefense},
+    {gMonPalette_DeoxysDefense, sVariants_DeoxysDefense, sVariantNames_deoxys},
 #endif
 #if (P_FAMILY_DEOXYS)
-    {gMonPalette_DeoxysSpeed, sVariants_DeoxysSpeed},
+    {gMonPalette_DeoxysSpeed, sVariants_DeoxysSpeed, sVariantNames_deoxys},
 #endif
 #if (P_FAMILY_TURTWIG)
-    {gMonPalette_Turtwig, sVariants_Turtwig},
+    {gMonPalette_Turtwig, sVariants_Turtwig, sVariantNames_turtwig},
 #endif
 #if (P_FAMILY_TURTWIG)
-    {gMonPalette_Grotle, sVariants_Grotle},
+    {gMonPalette_Grotle, sVariants_Grotle, sVariantNames_turtwig},
 #endif
 #if (P_FAMILY_TURTWIG)
-    {gMonPalette_Torterra, sVariants_Torterra},
+    {gMonPalette_Torterra, sVariants_Torterra, sVariantNames_turtwig},
 #endif
 #if (P_FAMILY_CHIMCHAR)
-    {gMonPalette_Chimchar, sVariants_Chimchar},
+    {gMonPalette_Chimchar, sVariants_Chimchar, sVariantNames_chimchar},
 #endif
 #if (P_FAMILY_CHIMCHAR)
-    {gMonPalette_Monferno, sVariants_Monferno},
+    {gMonPalette_Monferno, sVariants_Monferno, sVariantNames_chimchar},
 #endif
 #if (P_FAMILY_CHIMCHAR)
-    {gMonPalette_Infernape, sVariants_Infernape},
+    {gMonPalette_Infernape, sVariants_Infernape, sVariantNames_chimchar},
 #endif
 #if (P_FAMILY_PIPLUP)
-    {gMonPalette_Piplup, sVariants_Piplup},
+    {gMonPalette_Piplup, sVariants_Piplup, sVariantNames_piplup},
 #endif
 #if (P_FAMILY_PIPLUP)
-    {gMonPalette_Prinplup, sVariants_Prinplup},
+    {gMonPalette_Prinplup, sVariants_Prinplup, sVariantNames_piplup},
 #endif
 #if (P_FAMILY_PIPLUP)
-    {gMonPalette_Empoleon, sVariants_Empoleon},
+    {gMonPalette_Empoleon, sVariants_Empoleon, sVariantNames_piplup},
 #endif
 #if (P_FAMILY_STARLY)
-    {gMonPalette_Starly, sVariants_Starly},
+    {gMonPalette_Starly, sVariants_Starly, sVariantNames_starly},
 #endif
 #if (P_FAMILY_STARLY)
-    {gMonPalette_Staravia, sVariants_Staravia},
+    {gMonPalette_Staravia, sVariants_Staravia, sVariantNames_starly},
 #endif
 #if (P_FAMILY_STARLY)
-    {gMonPalette_Staraptor, sVariants_Staraptor},
+    {gMonPalette_Staraptor, sVariants_Staraptor, sVariantNames_starly},
 #endif
 #if (P_FAMILY_BIDOOF)
-    {gMonPalette_Bidoof, sVariants_Bidoof},
+    {gMonPalette_Bidoof, sVariants_Bidoof, sVariantNames_bidoof},
 #endif
 #if (P_FAMILY_BIDOOF)
-    {gMonPalette_Bibarel, sVariants_Bibarel},
+    {gMonPalette_Bibarel, sVariants_Bibarel, sVariantNames_bidoof},
 #endif
 #if (P_FAMILY_KRICKETOT)
-    {gMonPalette_Kricketot, sVariants_Kricketot},
+    {gMonPalette_Kricketot, sVariants_Kricketot, sVariantNames_kricketot},
 #endif
 #if (P_FAMILY_KRICKETOT)
-    {gMonPalette_Kricketune, sVariants_Kricketune},
+    {gMonPalette_Kricketune, sVariants_Kricketune, sVariantNames_kricketot},
 #endif
 #if (P_FAMILY_SHINX)
-    {gMonPalette_Shinx, sVariants_Shinx},
+    {gMonPalette_Shinx, sVariants_Shinx, sVariantNames_shinx},
 #endif
 #if (P_FAMILY_SHINX)
-    {gMonPalette_Luxio, sVariants_Luxio},
+    {gMonPalette_Luxio, sVariants_Luxio, sVariantNames_shinx},
 #endif
 #if (P_FAMILY_SHINX)
-    {gMonPalette_Luxray, sVariants_Luxray},
+    {gMonPalette_Luxray, sVariants_Luxray, sVariantNames_shinx},
 #endif
 #if (P_FAMILY_CRANIDOS)
-    {gMonPalette_Cranidos, sVariants_Cranidos},
+    {gMonPalette_Cranidos, sVariants_Cranidos, sVariantNames_cranidos},
 #endif
 #if (P_FAMILY_CRANIDOS)
-    {gMonPalette_Rampardos, sVariants_Rampardos},
+    {gMonPalette_Rampardos, sVariants_Rampardos, sVariantNames_cranidos},
 #endif
 #if (P_FAMILY_SHIELDON)
-    {gMonPalette_Shieldon, sVariants_Shieldon},
+    {gMonPalette_Shieldon, sVariants_Shieldon, sVariantNames_shieldon},
 #endif
 #if (P_FAMILY_SHIELDON)
-    {gMonPalette_Bastiodon, sVariants_Bastiodon},
+    {gMonPalette_Bastiodon, sVariants_Bastiodon, sVariantNames_shieldon},
 #endif
 #if (P_FAMILY_BURMY)
-    {gMonPalette_BurmyPlant, sVariants_BurmyPlant},
+    {gMonPalette_BurmyPlant, sVariants_BurmyPlant, sVariantNames_burmy},
 #endif
 #if (P_FAMILY_BURMY)
-    {gMonPalette_WormadamPlant, sVariants_WormadamPlant},
+    {gMonPalette_WormadamPlant, sVariants_WormadamPlant, sVariantNames_burmy},
 #endif
 #if (P_FAMILY_BURMY)
-    {gMonPalette_Mothim, sVariants_Mothim},
+    {gMonPalette_Mothim, sVariants_Mothim, sVariantNames_burmy},
 #endif
 #if (P_FAMILY_COMBEE)
-    {gMonPalette_Combee, sVariants_Combee},
+    {gMonPalette_Combee, sVariants_Combee, sVariantNames_combee},
 #endif
 #if (P_FAMILY_COMBEE) && (P_GENDER_DIFFERENCES)
-    {gMonPalette_CombeeF, sVariants_CombeeF},
+    {gMonPalette_CombeeF, sVariants_CombeeF, sVariantNames_combee},
 #endif
 #if (P_FAMILY_COMBEE)
-    {gMonPalette_Vespiquen, sVariants_Vespiquen},
+    {gMonPalette_Vespiquen, sVariants_Vespiquen, sVariantNames_combee},
 #endif
 #if (P_FAMILY_PACHIRISU)
-    {gMonPalette_Pachirisu, sVariants_Pachirisu},
+    {gMonPalette_Pachirisu, sVariants_Pachirisu, sVariantNames_pachirisu},
 #endif
 #if (P_FAMILY_BUIZEL)
-    {gMonPalette_Buizel, sVariants_Buizel},
+    {gMonPalette_Buizel, sVariants_Buizel, sVariantNames_buizel},
 #endif
 #if (P_FAMILY_BUIZEL)
-    {gMonPalette_Floatzel, sVariants_Floatzel},
+    {gMonPalette_Floatzel, sVariants_Floatzel, sVariantNames_buizel},
 #endif
 #if (P_FAMILY_CHERUBI)
-    {gMonPalette_Cherubi, sVariants_Cherubi},
+    {gMonPalette_Cherubi, sVariants_Cherubi, sVariantNames_cherubi},
 #endif
 #if (P_FAMILY_CHERUBI)
-    {gMonPalette_CherrimOvercast, sVariants_CherrimOvercast},
+    {gMonPalette_CherrimOvercast, sVariants_CherrimOvercast, sVariantNames_cherubi},
 #endif
 #if (P_FAMILY_CHERUBI)
-    {gMonPalette_CherrimSunshine, sVariants_CherrimSunshine},
+    {gMonPalette_CherrimSunshine, sVariants_CherrimSunshine, sVariantNames_cherubi},
 #endif
 #if (P_FAMILY_SHELLOS)
-    {gMonPalette_ShellosWestSea, sVariants_ShellosWestSea},
+    {gMonPalette_ShellosWestSea, sVariants_ShellosWestSea, sVariantNames_shellos},
 #endif
 #if (P_FAMILY_SHELLOS)
-    {gMonPalette_ShellosEast, sVariants_ShellosEast},
+    {gMonPalette_ShellosEast, sVariants_ShellosEast, sVariantNames_shellos},
 #endif
 #if (P_FAMILY_SHELLOS)
-    {gMonPalette_GastrodonWestSea, sVariants_GastrodonWestSea},
+    {gMonPalette_GastrodonWestSea, sVariants_GastrodonWestSea, sVariantNames_shellos},
 #endif
 #if (P_FAMILY_SHELLOS)
-    {gMonPalette_GastrodonEast, sVariants_GastrodonEast},
+    {gMonPalette_GastrodonEast, sVariants_GastrodonEast, sVariantNames_shellos},
 #endif
 #if (P_FAMILY_DRIFLOON)
-    {gMonPalette_Drifloon, sVariants_Drifloon},
+    {gMonPalette_Drifloon, sVariants_Drifloon, sVariantNames_drifloon},
 #endif
 #if (P_FAMILY_DRIFLOON)
-    {gMonPalette_Drifblim, sVariants_Drifblim},
+    {gMonPalette_Drifblim, sVariants_Drifblim, sVariantNames_drifloon},
 #endif
 #if (P_FAMILY_BUNEARY)
-    {gMonPalette_Buneary, sVariants_Buneary},
+    {gMonPalette_Buneary, sVariants_Buneary, sVariantNames_buneary},
 #endif
 #if (P_FAMILY_BUNEARY)
-    {gMonPalette_Lopunny, sVariants_Lopunny},
+    {gMonPalette_Lopunny, sVariants_Lopunny, sVariantNames_buneary},
 #endif
 #if (P_FAMILY_GLAMEOW)
-    {gMonPalette_Glameow, sVariants_Glameow},
+    {gMonPalette_Glameow, sVariants_Glameow, sVariantNames_glameow},
 #endif
 #if (P_FAMILY_GLAMEOW)
-    {gMonPalette_Purugly, sVariants_Purugly},
+    {gMonPalette_Purugly, sVariants_Purugly, sVariantNames_glameow},
 #endif
 #if (P_FAMILY_STUNKY)
-    {gMonPalette_Stunky, sVariants_Stunky},
+    {gMonPalette_Stunky, sVariants_Stunky, sVariantNames_stunky},
 #endif
 #if (P_FAMILY_STUNKY)
-    {gMonPalette_Skuntank, sVariants_Skuntank},
+    {gMonPalette_Skuntank, sVariants_Skuntank, sVariantNames_stunky},
 #endif
 #if (P_FAMILY_BRONZOR)
-    {gMonPalette_Bronzor, sVariants_Bronzor},
+    {gMonPalette_Bronzor, sVariants_Bronzor, sVariantNames_bronzor},
 #endif
 #if (P_FAMILY_BRONZOR)
-    {gMonPalette_Bronzong, sVariants_Bronzong},
+    {gMonPalette_Bronzong, sVariants_Bronzong, sVariantNames_bronzor},
 #endif
 #if (P_FAMILY_CHATOT)
-    {gMonPalette_Chatot, sVariants_Chatot},
+    {gMonPalette_Chatot, sVariants_Chatot, sVariantNames_chatot},
 #endif
 #if (P_FAMILY_SPIRITOMB)
-    {gMonPalette_Spiritomb, sVariants_Spiritomb},
+    {gMonPalette_Spiritomb, sVariants_Spiritomb, sVariantNames_spiritomb},
 #endif
 #if (P_FAMILY_GIBLE)
-    {gMonPalette_Gible, sVariants_Gible},
+    {gMonPalette_Gible, sVariants_Gible, sVariantNames_gible},
 #endif
 #if (P_FAMILY_GIBLE)
-    {gMonPalette_Gabite, sVariants_Gabite},
+    {gMonPalette_Gabite, sVariants_Gabite, sVariantNames_gible},
 #endif
 #if (P_FAMILY_GIBLE)
-    {gMonPalette_Garchomp, sVariants_Garchomp},
+    {gMonPalette_Garchomp, sVariants_Garchomp, sVariantNames_gible},
 #endif
 #if (P_FAMILY_RIOLU)
-    {gMonPalette_Riolu, sVariants_Riolu},
+    {gMonPalette_Riolu, sVariants_Riolu, sVariantNames_riolu},
 #endif
 #if (P_FAMILY_RIOLU)
-    {gMonPalette_Lucario, sVariants_Lucario},
+    {gMonPalette_Lucario, sVariants_Lucario, sVariantNames_riolu},
 #endif
 #if (P_FAMILY_HIPPOPOTAS)
-    {gMonPalette_Hippopotas, sVariants_Hippopotas},
+    {gMonPalette_Hippopotas, sVariants_Hippopotas, sVariantNames_hippopotas},
 #endif
 #if (P_FAMILY_HIPPOPOTAS) && (P_GENDER_DIFFERENCES)
-    {gMonPalette_HippopotasF, sVariants_HippopotasF},
+    {gMonPalette_HippopotasF, sVariants_HippopotasF, sVariantNames_hippopotas},
 #endif
 #if (P_FAMILY_HIPPOPOTAS)
-    {gMonPalette_Hippowdon, sVariants_Hippowdon},
+    {gMonPalette_Hippowdon, sVariants_Hippowdon, sVariantNames_hippopotas},
 #endif
 #if (P_FAMILY_HIPPOPOTAS) && (P_GENDER_DIFFERENCES)
-    {gMonPalette_HippowdonF, sVariants_HippowdonF},
+    {gMonPalette_HippowdonF, sVariants_HippowdonF, sVariantNames_hippopotas},
 #endif
 #if (P_FAMILY_SKORUPI)
-    {gMonPalette_Skorupi, sVariants_Skorupi},
+    {gMonPalette_Skorupi, sVariants_Skorupi, sVariantNames_skorupi},
 #endif
 #if (P_FAMILY_SKORUPI)
-    {gMonPalette_Drapion, sVariants_Drapion},
+    {gMonPalette_Drapion, sVariants_Drapion, sVariantNames_skorupi},
 #endif
 #if (P_FAMILY_CROAGUNK)
-    {gMonPalette_Croagunk, sVariants_Croagunk},
+    {gMonPalette_Croagunk, sVariants_Croagunk, sVariantNames_croagunk},
 #endif
 #if (P_FAMILY_CROAGUNK)
-    {gMonPalette_Toxicroak, sVariants_Toxicroak},
+    {gMonPalette_Toxicroak, sVariants_Toxicroak, sVariantNames_croagunk},
 #endif
 #if (P_FAMILY_CARNIVINE)
-    {gMonPalette_Carnivine, sVariants_Carnivine},
+    {gMonPalette_Carnivine, sVariants_Carnivine, sVariantNames_carnivine},
 #endif
 #if (P_FAMILY_FINNEON)
-    {gMonPalette_Finneon, sVariants_Finneon},
+    {gMonPalette_Finneon, sVariants_Finneon, sVariantNames_finneon},
 #endif
 #if (P_FAMILY_FINNEON)
-    {gMonPalette_Lumineon, sVariants_Lumineon},
+    {gMonPalette_Lumineon, sVariants_Lumineon, sVariantNames_finneon},
 #endif
 #if (P_FAMILY_SNOVER)
-    {gMonPalette_Snover, sVariants_Snover},
+    {gMonPalette_Snover, sVariants_Snover, sVariantNames_snover},
 #endif
 #if (P_FAMILY_SNOVER)
-    {gMonPalette_Abomasnow, sVariants_Abomasnow},
+    {gMonPalette_Abomasnow, sVariants_Abomasnow, sVariantNames_snover},
 #endif
 #if (P_FAMILY_ROTOM)
-    {gMonPalette_Rotom, sVariants_Rotom},
+    {gMonPalette_Rotom, sVariants_Rotom, sVariantNames_rotom},
 #endif
 #if (P_FAMILY_ROTOM)
-    {gMonPalette_RotomHeat, sVariants_RotomHeat},
+    {gMonPalette_RotomHeat, sVariants_RotomHeat, sVariantNames_rotom},
 #endif
 #if (P_FAMILY_ROTOM)
-    {gMonPalette_RotomWash, sVariants_RotomWash},
+    {gMonPalette_RotomWash, sVariants_RotomWash, sVariantNames_rotom},
 #endif
 #if (P_FAMILY_ROTOM)
-    {gMonPalette_RotomFrost, sVariants_RotomFrost},
+    {gMonPalette_RotomFrost, sVariants_RotomFrost, sVariantNames_rotom},
 #endif
 #if (P_FAMILY_ROTOM)
-    {gMonPalette_RotomFan, sVariants_RotomFan},
+    {gMonPalette_RotomFan, sVariants_RotomFan, sVariantNames_rotom},
 #endif
 #if (P_FAMILY_ROTOM)
-    {gMonPalette_RotomMow, sVariants_RotomMow},
+    {gMonPalette_RotomMow, sVariants_RotomMow, sVariantNames_rotom},
 #endif
 #if (P_FAMILY_UXIE)
-    {gMonPalette_Uxie, sVariants_Uxie},
+    {gMonPalette_Uxie, sVariants_Uxie, sVariantNames_uxie},
 #endif
 #if (P_FAMILY_MESPRIT)
-    {gMonPalette_Mesprit, sVariants_Mesprit},
+    {gMonPalette_Mesprit, sVariants_Mesprit, sVariantNames_uxie},
 #endif
 #if (P_FAMILY_AZELF)
-    {gMonPalette_Azelf, sVariants_Azelf},
+    {gMonPalette_Azelf, sVariants_Azelf, sVariantNames_uxie},
 #endif
 #if (P_FAMILY_DIALGA)
-    {gMonPalette_Dialga, sVariants_Dialga},
+    {gMonPalette_Dialga, sVariants_Dialga, sVariantNames_dialga},
 #endif
 #if (P_FAMILY_DIALGA)
-    {gMonPalette_DialgaOrigin, sVariants_DialgaOrigin},
+    {gMonPalette_DialgaOrigin, sVariants_DialgaOrigin, sVariantNames_dialga},
 #endif
 #if (P_FAMILY_PALKIA)
-    {gMonPalette_Palkia, sVariants_Palkia},
+    {gMonPalette_Palkia, sVariants_Palkia, sVariantNames_palkia},
 #endif
 #if (P_FAMILY_PALKIA)
-    {gMonPalette_PalkiaOrigin, sVariants_PalkiaOrigin},
+    {gMonPalette_PalkiaOrigin, sVariants_PalkiaOrigin, sVariantNames_palkia},
 #endif
 #if (P_FAMILY_HEATRAN)
-    {gMonPalette_Heatran, sVariants_Heatran},
+    {gMonPalette_Heatran, sVariants_Heatran, sVariantNames_heatran},
 #endif
 #if (P_FAMILY_REGIGIGAS)
-    {gMonPalette_Regigigas, sVariants_Regigigas},
+    {gMonPalette_Regigigas, sVariants_Regigigas, sVariantNames_regigigas},
 #endif
 #if (P_FAMILY_GIRATINA)
-    {gMonPalette_GiratinaAltered, sVariants_GiratinaAltered},
+    {gMonPalette_GiratinaAltered, sVariants_GiratinaAltered, sVariantNames_giratina},
 #endif
 #if (P_FAMILY_GIRATINA)
-    {gMonPalette_GiratinaOrigin, sVariants_GiratinaOrigin},
+    {gMonPalette_GiratinaOrigin, sVariants_GiratinaOrigin, sVariantNames_giratina},
 #endif
 #if (P_FAMILY_CRESSELIA)
-    {gMonPalette_Cresselia, sVariants_Cresselia},
+    {gMonPalette_Cresselia, sVariants_Cresselia, sVariantNames_cresselia},
 #endif
 #if (P_FAMILY_MANAPHY)
-    {gMonPalette_Phione, sVariants_Phione},
+    {gMonPalette_Phione, sVariants_Phione, sVariantNames_manaphy},
 #endif
 #if (P_FAMILY_MANAPHY)
-    {gMonPalette_Manaphy, sVariants_Manaphy},
+    {gMonPalette_Manaphy, sVariants_Manaphy, sVariantNames_manaphy},
 #endif
 #if (P_FAMILY_DARKRAI)
-    {gMonPalette_Darkrai, sVariants_Darkrai},
+    {gMonPalette_Darkrai, sVariants_Darkrai, sVariantNames_darkrai},
 #endif
 #if (P_FAMILY_SHAYMIN)
-    {gMonPalette_ShayminLand, sVariants_ShayminLand},
+    {gMonPalette_ShayminLand, sVariants_ShayminLand, sVariantNames_shaymin},
 #endif
 #if (P_FAMILY_SHAYMIN)
-    {gMonPalette_ShayminSky, sVariants_ShayminSky},
+    {gMonPalette_ShayminSky, sVariants_ShayminSky, sVariantNames_shaymin},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusNormal, sVariants_ArceusNormal},
+    {gMonPalette_ArceusNormal, sVariants_ArceusNormal, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusFighting, sVariants_ArceusFighting},
+    {gMonPalette_ArceusFighting, sVariants_ArceusFighting, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusFlying, sVariants_ArceusFlying},
+    {gMonPalette_ArceusFlying, sVariants_ArceusFlying, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusPoison, sVariants_ArceusPoison},
+    {gMonPalette_ArceusPoison, sVariants_ArceusPoison, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusGround, sVariants_ArceusGround},
+    {gMonPalette_ArceusGround, sVariants_ArceusGround, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusRock, sVariants_ArceusRock},
+    {gMonPalette_ArceusRock, sVariants_ArceusRock, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusBug, sVariants_ArceusBug},
+    {gMonPalette_ArceusBug, sVariants_ArceusBug, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusGhost, sVariants_ArceusGhost},
+    {gMonPalette_ArceusGhost, sVariants_ArceusGhost, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusSteel, sVariants_ArceusSteel},
+    {gMonPalette_ArceusSteel, sVariants_ArceusSteel, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusFire, sVariants_ArceusFire},
+    {gMonPalette_ArceusFire, sVariants_ArceusFire, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusWater, sVariants_ArceusWater},
+    {gMonPalette_ArceusWater, sVariants_ArceusWater, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusGrass, sVariants_ArceusGrass},
+    {gMonPalette_ArceusGrass, sVariants_ArceusGrass, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusElectric, sVariants_ArceusElectric},
+    {gMonPalette_ArceusElectric, sVariants_ArceusElectric, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusPsychic, sVariants_ArceusPsychic},
+    {gMonPalette_ArceusPsychic, sVariants_ArceusPsychic, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusIce, sVariants_ArceusIce},
+    {gMonPalette_ArceusIce, sVariants_ArceusIce, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusDragon, sVariants_ArceusDragon},
+    {gMonPalette_ArceusDragon, sVariants_ArceusDragon, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusDark, sVariants_ArceusDark},
+    {gMonPalette_ArceusDark, sVariants_ArceusDark, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_ARCEUS)
-    {gMonPalette_ArceusFairy, sVariants_ArceusFairy},
+    {gMonPalette_ArceusFairy, sVariants_ArceusFairy, sVariantNames_arceus},
 #endif
 #if (P_FAMILY_VICTINI)
-    {gMonPalette_Victini, sVariants_Victini},
+    {gMonPalette_Victini, sVariants_Victini, sVariantNames_victini},
 #endif
 #if (P_FAMILY_SNIVY)
-    {gMonPalette_Snivy, sVariants_Snivy},
+    {gMonPalette_Snivy, sVariants_Snivy, sVariantNames_snivy},
 #endif
 #if (P_FAMILY_SNIVY)
-    {gMonPalette_Servine, sVariants_Servine},
+    {gMonPalette_Servine, sVariants_Servine, sVariantNames_snivy},
 #endif
 #if (P_FAMILY_SNIVY)
-    {gMonPalette_Serperior, sVariants_Serperior},
+    {gMonPalette_Serperior, sVariants_Serperior, sVariantNames_snivy},
 #endif
 #if (P_FAMILY_TEPIG)
-    {gMonPalette_Tepig, sVariants_Tepig},
+    {gMonPalette_Tepig, sVariants_Tepig, sVariantNames_tepig},
 #endif
 #if (P_FAMILY_TEPIG)
-    {gMonPalette_Pignite, sVariants_Pignite},
+    {gMonPalette_Pignite, sVariants_Pignite, sVariantNames_tepig},
 #endif
 #if (P_FAMILY_TEPIG)
-    {gMonPalette_Emboar, sVariants_Emboar},
+    {gMonPalette_Emboar, sVariants_Emboar, sVariantNames_tepig},
 #endif
 #if (P_FAMILY_OSHAWOTT)
-    {gMonPalette_Oshawott, sVariants_Oshawott},
+    {gMonPalette_Oshawott, sVariants_Oshawott, sVariantNames_oshawott},
 #endif
 #if (P_FAMILY_OSHAWOTT)
-    {gMonPalette_Dewott, sVariants_Dewott},
+    {gMonPalette_Dewott, sVariants_Dewott, sVariantNames_oshawott},
 #endif
 #if (P_FAMILY_OSHAWOTT)
-    {gMonPalette_Samurott, sVariants_Samurott},
+    {gMonPalette_Samurott, sVariants_Samurott, sVariantNames_oshawott},
 #endif
 #if (P_FAMILY_OSHAWOTT) && (P_HISUIAN_FORMS)
-    {gMonPalette_SamurottHisui, sVariants_SamurottHisui},
+    {gMonPalette_SamurottHisui, sVariants_SamurottHisui, sVariantNames_oshawott},
 #endif
 #if (P_FAMILY_PATRAT)
-    {gMonPalette_Patrat, sVariants_Patrat},
+    {gMonPalette_Patrat, sVariants_Patrat, sVariantNames_patrat},
 #endif
 #if (P_FAMILY_PATRAT)
-    {gMonPalette_Watchog, sVariants_Watchog},
+    {gMonPalette_Watchog, sVariants_Watchog, sVariantNames_patrat},
 #endif
 #if (P_FAMILY_LILLIPUP)
-    {gMonPalette_Lillipup, sVariants_Lillipup},
+    {gMonPalette_Lillipup, sVariants_Lillipup, sVariantNames_lillipup},
 #endif
 #if (P_FAMILY_LILLIPUP)
-    {gMonPalette_Herdier, sVariants_Herdier},
+    {gMonPalette_Herdier, sVariants_Herdier, sVariantNames_lillipup},
 #endif
 #if (P_FAMILY_LILLIPUP)
-    {gMonPalette_Stoutland, sVariants_Stoutland},
+    {gMonPalette_Stoutland, sVariants_Stoutland, sVariantNames_lillipup},
 #endif
 #if (P_FAMILY_PURRLOIN)
-    {gMonPalette_Purrloin, sVariants_Purrloin},
+    {gMonPalette_Purrloin, sVariants_Purrloin, sVariantNames_purrloin},
 #endif
 #if (P_FAMILY_PURRLOIN)
-    {gMonPalette_Liepard, sVariants_Liepard},
+    {gMonPalette_Liepard, sVariants_Liepard, sVariantNames_purrloin},
 #endif
 #if (P_FAMILY_PANSAGE)
-    {gMonPalette_Pansage, sVariants_Pansage},
+    {gMonPalette_Pansage, sVariants_Pansage, sVariantNames_pansage},
 #endif
 #if (P_FAMILY_PANSAGE)
-    {gMonPalette_Simisage, sVariants_Simisage},
+    {gMonPalette_Simisage, sVariants_Simisage, sVariantNames_pansage},
 #endif
 #if (P_FAMILY_PANSEAR)
-    {gMonPalette_Pansear, sVariants_Pansear},
+    {gMonPalette_Pansear, sVariants_Pansear, sVariantNames_pansear},
 #endif
 #if (P_FAMILY_PANSEAR)
-    {gMonPalette_Simisear, sVariants_Simisear},
+    {gMonPalette_Simisear, sVariants_Simisear, sVariantNames_pansear},
 #endif
 #if (P_FAMILY_PANPOUR)
-    {gMonPalette_Panpour, sVariants_Panpour},
+    {gMonPalette_Panpour, sVariants_Panpour, sVariantNames_panpour},
 #endif
 #if (P_FAMILY_PANPOUR)
-    {gMonPalette_Simipour, sVariants_Simipour},
+    {gMonPalette_Simipour, sVariants_Simipour, sVariantNames_panpour},
 #endif
 #if (P_FAMILY_MUNNA)
-    {gMonPalette_Munna, sVariants_Munna},
+    {gMonPalette_Munna, sVariants_Munna, sVariantNames_munna},
 #endif
 #if (P_FAMILY_MUNNA)
-    {gMonPalette_Musharna, sVariants_Musharna},
+    {gMonPalette_Musharna, sVariants_Musharna, sVariantNames_munna},
 #endif
 #if (P_FAMILY_PIDOVE)
-    {gMonPalette_Pidove, sVariants_Pidove},
+    {gMonPalette_Pidove, sVariants_Pidove, sVariantNames_pidove},
 #endif
 #if (P_FAMILY_PIDOVE)
-    {gMonPalette_Tranquill, sVariants_Tranquill},
+    {gMonPalette_Tranquill, sVariants_Tranquill, sVariantNames_pidove},
 #endif
 #if (P_FAMILY_PIDOVE)
-    {gMonPalette_Unfezant, sVariants_Unfezant},
+    {gMonPalette_Unfezant, sVariants_Unfezant, sVariantNames_pidove},
 #endif
 #if (P_FAMILY_PIDOVE) && (P_GENDER_DIFFERENCES)
-    {gMonPalette_UnfezantF, sVariants_UnfezantF},
+    {gMonPalette_UnfezantF, sVariants_UnfezantF, sVariantNames_pidove},
 #endif
 #if (P_FAMILY_BLITZLE)
-    {gMonPalette_Blitzle, sVariants_Blitzle},
+    {gMonPalette_Blitzle, sVariants_Blitzle, sVariantNames_blitzle},
 #endif
 #if (P_FAMILY_BLITZLE)
-    {gMonPalette_Zebstrika, sVariants_Zebstrika},
+    {gMonPalette_Zebstrika, sVariants_Zebstrika, sVariantNames_blitzle},
 #endif
 #if (P_FAMILY_ROGGENROLA)
-    {gMonPalette_Roggenrola, sVariants_Roggenrola},
+    {gMonPalette_Roggenrola, sVariants_Roggenrola, sVariantNames_roggenrola},
 #endif
 #if (P_FAMILY_ROGGENROLA)
-    {gMonPalette_Boldore, sVariants_Boldore},
+    {gMonPalette_Boldore, sVariants_Boldore, sVariantNames_roggenrola},
 #endif
 #if (P_FAMILY_ROGGENROLA)
-    {gMonPalette_Gigalith, sVariants_Gigalith},
+    {gMonPalette_Gigalith, sVariants_Gigalith, sVariantNames_roggenrola},
 #endif
 #if (P_FAMILY_WOOBAT)
-    {gMonPalette_Woobat, sVariants_Woobat},
+    {gMonPalette_Woobat, sVariants_Woobat, sVariantNames_woobat},
 #endif
 #if (P_FAMILY_WOOBAT)
-    {gMonPalette_Swoobat, sVariants_Swoobat},
+    {gMonPalette_Swoobat, sVariants_Swoobat, sVariantNames_woobat},
 #endif
 #if (P_FAMILY_DRILBUR)
-    {gMonPalette_Drilbur, sVariants_Drilbur},
+    {gMonPalette_Drilbur, sVariants_Drilbur, sVariantNames_drilbur},
 #endif
 #if (P_FAMILY_DRILBUR)
-    {gMonPalette_Excadrill, sVariants_Excadrill},
+    {gMonPalette_Excadrill, sVariants_Excadrill, sVariantNames_drilbur},
 #endif
 #if (P_FAMILY_AUDINO)
-    {gMonPalette_Audino, sVariants_Audino},
+    {gMonPalette_Audino, sVariants_Audino, sVariantNames_audino},
 #endif
 #if (P_FAMILY_TIMBURR)
-    {gMonPalette_Timburr, sVariants_Timburr},
+    {gMonPalette_Timburr, sVariants_Timburr, sVariantNames_timburr},
 #endif
 #if (P_FAMILY_TIMBURR)
-    {gMonPalette_Gurdurr, sVariants_Gurdurr},
+    {gMonPalette_Gurdurr, sVariants_Gurdurr, sVariantNames_timburr},
 #endif
 #if (P_FAMILY_TIMBURR)
-    {gMonPalette_Conkeldurr, sVariants_Conkeldurr},
+    {gMonPalette_Conkeldurr, sVariants_Conkeldurr, sVariantNames_timburr},
 #endif
 #if (P_FAMILY_TYMPOLE)
-    {gMonPalette_Tympole, sVariants_Tympole},
+    {gMonPalette_Tympole, sVariants_Tympole, sVariantNames_tympole},
 #endif
 #if (P_FAMILY_TYMPOLE)
-    {gMonPalette_Palpitoad, sVariants_Palpitoad},
+    {gMonPalette_Palpitoad, sVariants_Palpitoad, sVariantNames_tympole},
 #endif
 #if (P_FAMILY_TYMPOLE)
-    {gMonPalette_Seismitoad, sVariants_Seismitoad},
+    {gMonPalette_Seismitoad, sVariants_Seismitoad, sVariantNames_tympole},
 #endif
 #if (P_FAMILY_THROH)
-    {gMonPalette_Throh, sVariants_Throh},
+    {gMonPalette_Throh, sVariants_Throh, sVariantNames_throh},
 #endif
 #if (P_FAMILY_SAWK)
-    {gMonPalette_Sawk, sVariants_Sawk},
+    {gMonPalette_Sawk, sVariants_Sawk, sVariantNames_sawk},
 #endif
 #if (P_FAMILY_SEWADDLE)
-    {gMonPalette_Sewaddle, sVariants_Sewaddle},
+    {gMonPalette_Sewaddle, sVariants_Sewaddle, sVariantNames_sewaddle},
 #endif
 #if (P_FAMILY_SEWADDLE)
-    {gMonPalette_Swadloon, sVariants_Swadloon},
+    {gMonPalette_Swadloon, sVariants_Swadloon, sVariantNames_sewaddle},
 #endif
 #if (P_FAMILY_SEWADDLE)
-    {gMonPalette_Leavanny, sVariants_Leavanny},
+    {gMonPalette_Leavanny, sVariants_Leavanny, sVariantNames_sewaddle},
 #endif
 #if (P_FAMILY_VENIPEDE)
-    {gMonPalette_Venipede, sVariants_Venipede},
+    {gMonPalette_Venipede, sVariants_Venipede, sVariantNames_venipede},
 #endif
 #if (P_FAMILY_VENIPEDE)
-    {gMonPalette_Whirlipede, sVariants_Whirlipede},
+    {gMonPalette_Whirlipede, sVariants_Whirlipede, sVariantNames_venipede},
 #endif
 #if (P_FAMILY_VENIPEDE)
-    {gMonPalette_Scolipede, sVariants_Scolipede},
+    {gMonPalette_Scolipede, sVariants_Scolipede, sVariantNames_venipede},
 #endif
 #if (P_FAMILY_COTTONEE)
-    {gMonPalette_Cottonee, sVariants_Cottonee},
+    {gMonPalette_Cottonee, sVariants_Cottonee, sVariantNames_cottonee},
 #endif
 #if (P_FAMILY_COTTONEE)
-    {gMonPalette_Whimsicott, sVariants_Whimsicott},
+    {gMonPalette_Whimsicott, sVariants_Whimsicott, sVariantNames_cottonee},
 #endif
 #if (P_FAMILY_PETILIL)
-    {gMonPalette_Petilil, sVariants_Petilil},
+    {gMonPalette_Petilil, sVariants_Petilil, sVariantNames_petilil},
 #endif
 #if (P_FAMILY_PETILIL)
-    {gMonPalette_Lilligant, sVariants_Lilligant},
+    {gMonPalette_Lilligant, sVariants_Lilligant, sVariantNames_petilil},
 #endif
 #if (P_FAMILY_PETILIL) && (P_HISUIAN_FORMS)
-    {gMonPalette_LilligantHisui, sVariants_LilligantHisui},
+    {gMonPalette_LilligantHisui, sVariants_LilligantHisui, sVariantNames_petilil},
 #endif
 #if (P_FAMILY_BASCULIN)
-    {gMonPalette_BasculinRedStriped, sVariants_BasculinRedStriped},
+    {gMonPalette_BasculinRedStriped, sVariants_BasculinRedStriped, sVariantNames_basculin},
 #endif
 #if (P_FAMILY_BASCULIN) && (P_HISUIAN_FORMS)
-    {gMonPalette_BasculegionM, sVariants_BasculegionM},
+    {gMonPalette_BasculegionM, sVariants_BasculegionM, sVariantNames_basculegion},
 #endif
 #if (P_FAMILY_BASCULIN) && (P_HISUIAN_FORMS)
-    {gMonPalette_BasculegionF, sVariants_BasculegionF},
+    {gMonPalette_BasculegionF, sVariants_BasculegionF, sVariantNames_basculegion},
 #endif
 #if (P_FAMILY_SANDILE)
-    {gMonPalette_Sandile, sVariants_Sandile},
+    {gMonPalette_Sandile, sVariants_Sandile, sVariantNames_sandile},
 #endif
 #if (P_FAMILY_SANDILE)
-    {gMonPalette_Krokorok, sVariants_Krokorok},
+    {gMonPalette_Krokorok, sVariants_Krokorok, sVariantNames_sandile},
 #endif
 #if (P_FAMILY_SANDILE)
-    {gMonPalette_Krookodile, sVariants_Krookodile},
+    {gMonPalette_Krookodile, sVariants_Krookodile, sVariantNames_sandile},
 #endif
 #if (P_FAMILY_DARUMAKA)
-    {gMonPalette_Darumaka, sVariants_Darumaka},
+    {gMonPalette_Darumaka, sVariants_Darumaka, sVariantNames_darumaka},
 #endif
 #if (P_FAMILY_DARUMAKA)
-    {gMonPalette_DarmanitanStandard, sVariants_DarmanitanStandard},
+    {gMonPalette_DarmanitanStandard, sVariants_DarmanitanStandard, sVariantNames_darumaka},
 #endif
 #if (P_FAMILY_DARUMAKA)
-    {gMonPalette_DarmanitanZen, sVariants_DarmanitanZen},
+    {gMonPalette_DarmanitanZen, sVariants_DarmanitanZen, sVariantNames_darumaka},
 #endif
 #if (P_FAMILY_DARUMAKA) && (P_GALARIAN_FORMS)
-    {gMonPalette_DarumakaGalar, sVariants_DarumakaGalar},
+    {gMonPalette_DarumakaGalar, sVariants_DarumakaGalar, sVariantNames_darumaka_galar},
 #endif
 #if (P_FAMILY_DARUMAKA) && (P_GALARIAN_FORMS)
-    {gMonPalette_DarmanitanGalarStandard, sVariants_DarmanitanGalarStandard},
+    {gMonPalette_DarmanitanGalarStandard, sVariants_DarmanitanGalarStandard, sVariantNames_darumaka_galar},
 #endif
 #if (P_FAMILY_DARUMAKA) && (P_GALARIAN_FORMS)
-    {gMonPalette_DarmanitanGalarZen, sVariants_DarmanitanGalarZen},
+    {gMonPalette_DarmanitanGalarZen, sVariants_DarmanitanGalarZen, sVariantNames_darumaka_galar},
 #endif
 #if (P_FAMILY_MARACTUS)
-    {gMonPalette_Maractus, sVariants_Maractus},
+    {gMonPalette_Maractus, sVariants_Maractus, sVariantNames_maractus},
 #endif
 #if (P_FAMILY_DWEBBLE)
-    {gMonPalette_Dwebble, sVariants_Dwebble},
+    {gMonPalette_Dwebble, sVariants_Dwebble, sVariantNames_dwebble},
 #endif
 #if (P_FAMILY_DWEBBLE)
-    {gMonPalette_Crustle, sVariants_Crustle},
+    {gMonPalette_Crustle, sVariants_Crustle, sVariantNames_dwebble},
 #endif
 #if (P_FAMILY_SCRAGGY)
-    {gMonPalette_Scraggy, sVariants_Scraggy},
+    {gMonPalette_Scraggy, sVariants_Scraggy, sVariantNames_scraggy},
 #endif
 #if (P_FAMILY_SCRAGGY)
-    {gMonPalette_Scrafty, sVariants_Scrafty},
+    {gMonPalette_Scrafty, sVariants_Scrafty, sVariantNames_scraggy},
 #endif
 #if (P_FAMILY_SIGILYPH)
-    {gMonPalette_Sigilyph, sVariants_Sigilyph},
+    {gMonPalette_Sigilyph, sVariants_Sigilyph, sVariantNames_sigilyph},
 #endif
 #if (P_FAMILY_YAMASK)
-    {gMonPalette_Yamask, sVariants_Yamask},
+    {gMonPalette_Yamask, sVariants_Yamask, sVariantNames_yamask},
 #endif
 #if (P_FAMILY_YAMASK)
-    {gMonPalette_Cofagrigus, sVariants_Cofagrigus},
+    {gMonPalette_Cofagrigus, sVariants_Cofagrigus, sVariantNames_yamask},
 #endif
 #if (P_FAMILY_YAMASK) && (P_GALARIAN_FORMS)
-    {gMonPalette_YamaskGalar, sVariants_YamaskGalar},
+    {gMonPalette_YamaskGalar, sVariants_YamaskGalar, sVariantNames_yamask_galar},
 #endif
 #if (P_FAMILY_YAMASK) && (P_GALARIAN_FORMS)
-    {gMonPalette_Runerigus, sVariants_Runerigus},
+    {gMonPalette_Runerigus, sVariants_Runerigus, sVariantNames_yamask_galar},
 #endif
 #if (P_FAMILY_TIRTOUGA)
-    {gMonPalette_Tirtouga, sVariants_Tirtouga},
+    {gMonPalette_Tirtouga, sVariants_Tirtouga, sVariantNames_tirtouga},
 #endif
 #if (P_FAMILY_TIRTOUGA)
-    {gMonPalette_Carracosta, sVariants_Carracosta},
+    {gMonPalette_Carracosta, sVariants_Carracosta, sVariantNames_tirtouga},
 #endif
 #if (P_FAMILY_ARCHEN)
-    {gMonPalette_Archen, sVariants_Archen},
+    {gMonPalette_Archen, sVariants_Archen, sVariantNames_archen},
 #endif
 #if (P_FAMILY_ARCHEN)
-    {gMonPalette_Archeops, sVariants_Archeops},
+    {gMonPalette_Archeops, sVariants_Archeops, sVariantNames_archen},
 #endif
 #if (P_FAMILY_TRUBBISH)
-    {gMonPalette_Trubbish, sVariants_Trubbish},
+    {gMonPalette_Trubbish, sVariants_Trubbish, sVariantNames_trubbish},
 #endif
 #if (P_FAMILY_TRUBBISH)
-    {gMonPalette_Garbodor, sVariants_Garbodor},
+    {gMonPalette_Garbodor, sVariants_Garbodor, sVariantNames_trubbish},
 #endif
 #if (P_FAMILY_ZORUA)
-    {gMonPalette_Zorua, sVariants_Zorua},
+    {gMonPalette_Zorua, sVariants_Zorua, sVariantNames_zorua},
 #endif
 #if (P_FAMILY_ZORUA)
-    {gMonPalette_Zoroark, sVariants_Zoroark},
+    {gMonPalette_Zoroark, sVariants_Zoroark, sVariantNames_zorua},
 #endif
 #if (P_FAMILY_ZORUA) && (P_HISUIAN_FORMS)
-    {gMonPalette_ZoruaHisui, sVariants_ZoruaHisui},
+    {gMonPalette_ZoruaHisui, sVariants_ZoruaHisui, sVariantNames_zorua_hisui},
 #endif
 #if (P_FAMILY_ZORUA) && (P_HISUIAN_FORMS)
-    {gMonPalette_ZoroarkHisui, sVariants_ZoroarkHisui},
+    {gMonPalette_ZoroarkHisui, sVariants_ZoroarkHisui, sVariantNames_zorua_hisui},
 #endif
 #if (P_FAMILY_MINCCINO)
-    {gMonPalette_Minccino, sVariants_Minccino},
+    {gMonPalette_Minccino, sVariants_Minccino, sVariantNames_minccino},
 #endif
 #if (P_FAMILY_MINCCINO)
-    {gMonPalette_Cinccino, sVariants_Cinccino},
+    {gMonPalette_Cinccino, sVariants_Cinccino, sVariantNames_minccino},
 #endif
 #if (P_FAMILY_GOTHITA)
-    {gMonPalette_Gothita, sVariants_Gothita},
+    {gMonPalette_Gothita, sVariants_Gothita, sVariantNames_gothita},
 #endif
 #if (P_FAMILY_GOTHITA)
-    {gMonPalette_Gothorita, sVariants_Gothorita},
+    {gMonPalette_Gothorita, sVariants_Gothorita, sVariantNames_gothita},
 #endif
 #if (P_FAMILY_GOTHITA)
-    {gMonPalette_Gothitelle, sVariants_Gothitelle},
+    {gMonPalette_Gothitelle, sVariants_Gothitelle, sVariantNames_gothita},
 #endif
 #if (P_FAMILY_SOLOSIS)
-    {gMonPalette_Solosis, sVariants_Solosis},
+    {gMonPalette_Solosis, sVariants_Solosis, sVariantNames_solosis},
 #endif
 #if (P_FAMILY_SOLOSIS)
-    {gMonPalette_Duosion, sVariants_Duosion},
+    {gMonPalette_Duosion, sVariants_Duosion, sVariantNames_solosis},
 #endif
 #if (P_FAMILY_SOLOSIS)
-    {gMonPalette_Reuniclus, sVariants_Reuniclus},
+    {gMonPalette_Reuniclus, sVariants_Reuniclus, sVariantNames_solosis},
 #endif
 #if (P_FAMILY_DUCKLETT)
-    {gMonPalette_Ducklett, sVariants_Ducklett},
+    {gMonPalette_Ducklett, sVariants_Ducklett, sVariantNames_ducklett},
 #endif
 #if (P_FAMILY_DUCKLETT)
-    {gMonPalette_Swanna, sVariants_Swanna},
+    {gMonPalette_Swanna, sVariants_Swanna, sVariantNames_ducklett},
 #endif
 #if (P_FAMILY_VANILLITE)
-    {gMonPalette_Vanillite, sVariants_Vanillite},
+    {gMonPalette_Vanillite, sVariants_Vanillite, sVariantNames_vanillite},
 #endif
 #if (P_FAMILY_VANILLITE)
-    {gMonPalette_Vanillish, sVariants_Vanillish},
+    {gMonPalette_Vanillish, sVariants_Vanillish, sVariantNames_vanillite},
 #endif
 #if (P_FAMILY_VANILLITE)
-    {gMonPalette_Vanilluxe, sVariants_Vanilluxe},
+    {gMonPalette_Vanilluxe, sVariants_Vanilluxe, sVariantNames_vanillite},
 #endif
 #if (P_FAMILY_DEERLING)
-    {gMonPalette_DeerlingSpring, sVariants_DeerlingSpring},
+    {gMonPalette_DeerlingSpring, sVariants_DeerlingSpring, sVariantNames_deerling},
 #endif
 #if (P_FAMILY_DEERLING)
-    {gMonPalette_SawsbuckSpring, sVariants_SawsbuckSpring},
+    {gMonPalette_SawsbuckSpring, sVariants_SawsbuckSpring, sVariantNames_deerling},
 #endif
 #if (P_FAMILY_EMOLGA)
-    {gMonPalette_Emolga, sVariants_Emolga},
+    {gMonPalette_Emolga, sVariants_Emolga, sVariantNames_emolga},
 #endif
 #if (P_FAMILY_KARRABLAST)
-    {gMonPalette_Karrablast, sVariants_Karrablast},
+    {gMonPalette_Karrablast, sVariants_Karrablast, sVariantNames_karrablast},
 #endif
 #if (P_FAMILY_KARRABLAST)
-    {gMonPalette_Escavalier, sVariants_Escavalier},
+    {gMonPalette_Escavalier, sVariants_Escavalier, sVariantNames_karrablast},
 #endif
 #if (P_FAMILY_FOONGUS)
-    {gMonPalette_Foongus, sVariants_Foongus},
+    {gMonPalette_Foongus, sVariants_Foongus, sVariantNames_foongus},
 #endif
 #if (P_FAMILY_FOONGUS)
-    {gMonPalette_Amoonguss, sVariants_Amoonguss},
+    {gMonPalette_Amoonguss, sVariants_Amoonguss, sVariantNames_foongus},
 #endif
 #if (P_FAMILY_FRILLISH)
-    {gMonPalette_Frillish, sVariants_Frillish},
+    {gMonPalette_Frillish, sVariants_Frillish, sVariantNames_frillish},
 #endif
 #if (P_FAMILY_FRILLISH) && (P_GENDER_DIFFERENCES)
-    {gMonPalette_FrillishF, sVariants_FrillishF},
+    {gMonPalette_FrillishF, sVariants_FrillishF, sVariantNames_frillish},
 #endif
 #if (P_FAMILY_FRILLISH)
-    {gMonPalette_Jellicent, sVariants_Jellicent},
+    {gMonPalette_Jellicent, sVariants_Jellicent, sVariantNames_frillish},
 #endif
 #if (P_FAMILY_FRILLISH) && (P_GENDER_DIFFERENCES)
-    {gMonPalette_JellicentF, sVariants_JellicentF},
+    {gMonPalette_JellicentF, sVariants_JellicentF, sVariantNames_frillish},
 #endif
 #if (P_FAMILY_ALOMOMOLA)
-    {gMonPalette_Alomomola, sVariants_Alomomola},
+    {gMonPalette_Alomomola, sVariants_Alomomola, sVariantNames_alomomola},
 #endif
 #if (P_FAMILY_JOLTIK)
-    {gMonPalette_Joltik, sVariants_Joltik},
+    {gMonPalette_Joltik, sVariants_Joltik, sVariantNames_joltik},
 #endif
 #if (P_FAMILY_JOLTIK)
-    {gMonPalette_Galvantula, sVariants_Galvantula},
+    {gMonPalette_Galvantula, sVariants_Galvantula, sVariantNames_joltik},
 #endif
 #if (P_FAMILY_FERROSEED)
-    {gMonPalette_Ferroseed, sVariants_Ferroseed},
+    {gMonPalette_Ferroseed, sVariants_Ferroseed, sVariantNames_ferroseed},
 #endif
 #if (P_FAMILY_FERROSEED)
-    {gMonPalette_Ferrothorn, sVariants_Ferrothorn},
+    {gMonPalette_Ferrothorn, sVariants_Ferrothorn, sVariantNames_ferroseed},
 #endif
 #if (P_FAMILY_KLINK)
-    {gMonPalette_Klink, sVariants_Klink},
+    {gMonPalette_Klink, sVariants_Klink, sVariantNames_klink},
 #endif
 #if (P_FAMILY_KLINK)
-    {gMonPalette_Klang, sVariants_Klang},
+    {gMonPalette_Klang, sVariants_Klang, sVariantNames_klink},
 #endif
 #if (P_FAMILY_KLINK)
-    {gMonPalette_Klinklang, sVariants_Klinklang},
+    {gMonPalette_Klinklang, sVariants_Klinklang, sVariantNames_klink},
 #endif
 #if (P_FAMILY_TYNAMO)
-    {gMonPalette_Tynamo, sVariants_Tynamo},
+    {gMonPalette_Tynamo, sVariants_Tynamo, sVariantNames_tynamo},
 #endif
 #if (P_FAMILY_TYNAMO)
-    {gMonPalette_Eelektrik, sVariants_Eelektrik},
+    {gMonPalette_Eelektrik, sVariants_Eelektrik, sVariantNames_tynamo},
 #endif
 #if (P_FAMILY_TYNAMO)
-    {gMonPalette_Eelektross, sVariants_Eelektross},
+    {gMonPalette_Eelektross, sVariants_Eelektross, sVariantNames_tynamo},
 #endif
 #if (P_FAMILY_ELGYEM)
-    {gMonPalette_Elgyem, sVariants_Elgyem},
+    {gMonPalette_Elgyem, sVariants_Elgyem, sVariantNames_elgyem},
 #endif
 #if (P_FAMILY_ELGYEM)
-    {gMonPalette_Beheeyem, sVariants_Beheeyem},
+    {gMonPalette_Beheeyem, sVariants_Beheeyem, sVariantNames_elgyem},
 #endif
 #if (P_FAMILY_LITWICK)
-    {gMonPalette_Litwick, sVariants_Litwick},
+    {gMonPalette_Litwick, sVariants_Litwick, sVariantNames_litwick},
 #endif
 #if (P_FAMILY_LITWICK)
-    {gMonPalette_Lampent, sVariants_Lampent},
+    {gMonPalette_Lampent, sVariants_Lampent, sVariantNames_litwick},
 #endif
 #if (P_FAMILY_LITWICK)
-    {gMonPalette_Chandelure, sVariants_Chandelure},
+    {gMonPalette_Chandelure, sVariants_Chandelure, sVariantNames_litwick},
 #endif
 #if (P_FAMILY_AXEW)
-    {gMonPalette_Axew, sVariants_Axew},
+    {gMonPalette_Axew, sVariants_Axew, sVariantNames_axew},
 #endif
 #if (P_FAMILY_AXEW)
-    {gMonPalette_Fraxure, sVariants_Fraxure},
+    {gMonPalette_Fraxure, sVariants_Fraxure, sVariantNames_axew},
 #endif
 #if (P_FAMILY_AXEW)
-    {gMonPalette_Haxorus, sVariants_Haxorus},
+    {gMonPalette_Haxorus, sVariants_Haxorus, sVariantNames_axew},
 #endif
 #if (P_FAMILY_CUBCHOO)
-    {gMonPalette_Cubchoo, sVariants_Cubchoo},
+    {gMonPalette_Cubchoo, sVariants_Cubchoo, sVariantNames_cubchoo},
 #endif
 #if (P_FAMILY_CUBCHOO)
-    {gMonPalette_Beartic, sVariants_Beartic},
+    {gMonPalette_Beartic, sVariants_Beartic, sVariantNames_cubchoo},
 #endif
 #if (P_FAMILY_CRYOGONAL)
-    {gMonPalette_Cryogonal, sVariants_Cryogonal},
+    {gMonPalette_Cryogonal, sVariants_Cryogonal, sVariantNames_cryogonal},
 #endif
 #if (P_FAMILY_SHELMET)
-    {gMonPalette_Shelmet, sVariants_Shelmet},
+    {gMonPalette_Shelmet, sVariants_Shelmet, sVariantNames_shelmet},
 #endif
 #if (P_FAMILY_SHELMET)
-    {gMonPalette_Accelgor, sVariants_Accelgor},
+    {gMonPalette_Accelgor, sVariants_Accelgor, sVariantNames_shelmet},
 #endif
 #if (P_FAMILY_STUNFISK)
-    {gMonPalette_Stunfisk, sVariants_Stunfisk},
+    {gMonPalette_Stunfisk, sVariants_Stunfisk, sVariantNames_stunfisk},
 #endif
 #if (P_FAMILY_STUNFISK) && (P_GALARIAN_FORMS)
-    {gMonPalette_StunfiskGalar, sVariants_StunfiskGalar},
+    {gMonPalette_StunfiskGalar, sVariants_StunfiskGalar, sVariantNames_stunfisk_galar},
 #endif
 #if (P_FAMILY_MIENFOO)
-    {gMonPalette_Mienfoo, sVariants_Mienfoo},
+    {gMonPalette_Mienfoo, sVariants_Mienfoo, sVariantNames_mienfoo},
 #endif
 #if (P_FAMILY_MIENFOO)
-    {gMonPalette_Mienshao, sVariants_Mienshao},
+    {gMonPalette_Mienshao, sVariants_Mienshao, sVariantNames_mienfoo},
 #endif
 #if (P_FAMILY_DRUDDIGON)
-    {gMonPalette_Druddigon, sVariants_Druddigon},
+    {gMonPalette_Druddigon, sVariants_Druddigon, sVariantNames_druddigon},
 #endif
 #if (P_FAMILY_GOLETT)
-    {gMonPalette_Golett, sVariants_Golett},
+    {gMonPalette_Golett, sVariants_Golett, sVariantNames_golett},
 #endif
 #if (P_FAMILY_GOLETT)
-    {gMonPalette_Golurk, sVariants_Golurk},
+    {gMonPalette_Golurk, sVariants_Golurk, sVariantNames_golett},
 #endif
 #if (P_FAMILY_PAWNIARD)
-    {gMonPalette_Pawniard, sVariants_Pawniard},
+    {gMonPalette_Pawniard, sVariants_Pawniard, sVariantNames_pawniard},
 #endif
 #if (P_FAMILY_PAWNIARD)
-    {gMonPalette_Bisharp, sVariants_Bisharp},
+    {gMonPalette_Bisharp, sVariants_Bisharp, sVariantNames_pawniard},
 #endif
 #if (P_FAMILY_PAWNIARD) && (P_GEN_9_CROSS_EVOS)
-    {gMonPalette_Kingambit, sVariants_Kingambit},
+    {gMonPalette_Kingambit, sVariants_Kingambit, sVariantNames_kingambit},
 #endif
 #if (P_FAMILY_BOUFFALANT)
-    {gMonPalette_Bouffalant, sVariants_Bouffalant},
+    {gMonPalette_Bouffalant, sVariants_Bouffalant, sVariantNames_bouffalant},
 #endif
 #if (P_FAMILY_RUFFLET)
-    {gMonPalette_Rufflet, sVariants_Rufflet},
+    {gMonPalette_Rufflet, sVariants_Rufflet, sVariantNames_rufflet},
 #endif
 #if (P_FAMILY_RUFFLET)
-    {gMonPalette_Braviary, sVariants_Braviary},
+    {gMonPalette_Braviary, sVariants_Braviary, sVariantNames_rufflet},
 #endif
 #if (P_FAMILY_RUFFLET) && (P_HISUIAN_FORMS)
-    {gMonPalette_BraviaryHisui, sVariants_BraviaryHisui},
+    {gMonPalette_BraviaryHisui, sVariants_BraviaryHisui, sVariantNames_braviary_hisui},
 #endif
 #if (P_FAMILY_VULLABY)
-    {gMonPalette_Vullaby, sVariants_Vullaby},
+    {gMonPalette_Vullaby, sVariants_Vullaby, sVariantNames_vullaby},
 #endif
 #if (P_FAMILY_VULLABY)
-    {gMonPalette_Mandibuzz, sVariants_Mandibuzz},
+    {gMonPalette_Mandibuzz, sVariants_Mandibuzz, sVariantNames_vullaby},
 #endif
 #if (P_FAMILY_HEATMOR)
-    {gMonPalette_Heatmor, sVariants_Heatmor},
+    {gMonPalette_Heatmor, sVariants_Heatmor, sVariantNames_heatmor},
 #endif
 #if (P_FAMILY_DURANT)
-    {gMonPalette_Durant, sVariants_Durant},
+    {gMonPalette_Durant, sVariants_Durant, sVariantNames_durant},
 #endif
 #if (P_FAMILY_DEINO)
-    {gMonPalette_Deino, sVariants_Deino},
+    {gMonPalette_Deino, sVariants_Deino, sVariantNames_deino},
 #endif
 #if (P_FAMILY_DEINO)
-    {gMonPalette_Zweilous, sVariants_Zweilous},
+    {gMonPalette_Zweilous, sVariants_Zweilous, sVariantNames_deino},
 #endif
 #if (P_FAMILY_DEINO)
-    {gMonPalette_Hydreigon, sVariants_Hydreigon},
+    {gMonPalette_Hydreigon, sVariants_Hydreigon, sVariantNames_deino},
 #endif
 #if (P_FAMILY_LARVESTA)
-    {gMonPalette_Larvesta, sVariants_Larvesta},
+    {gMonPalette_Larvesta, sVariants_Larvesta, sVariantNames_larvesta},
 #endif
 #if (P_FAMILY_LARVESTA)
-    {gMonPalette_Volcarona, sVariants_Volcarona},
+    {gMonPalette_Volcarona, sVariants_Volcarona, sVariantNames_larvesta},
 #endif
 #if (P_FAMILY_COBALION)
-    {gMonPalette_Cobalion, sVariants_Cobalion},
+    {gMonPalette_Cobalion, sVariants_Cobalion, sVariantNames_cobalion},
 #endif
 #if (P_FAMILY_TERRAKION)
-    {gMonPalette_Terrakion, sVariants_Terrakion},
+    {gMonPalette_Terrakion, sVariants_Terrakion, sVariantNames_terrakion},
 #endif
 #if (P_FAMILY_VIRIZION)
-    {gMonPalette_Virizion, sVariants_Virizion},
+    {gMonPalette_Virizion, sVariants_Virizion, sVariantNames_virizion},
 #endif
 #if (P_FAMILY_TORNADUS)
-    {gMonPalette_TornadusIncarnate, sVariants_TornadusIncarnate},
+    {gMonPalette_TornadusIncarnate, sVariants_TornadusIncarnate, sVariantNames_tornadus},
 #endif
 #if (P_FAMILY_TORNADUS)
-    {gMonPalette_TornadusTherian, sVariants_TornadusTherian},
+    {gMonPalette_TornadusTherian, sVariants_TornadusTherian, sVariantNames_tornadus},
 #endif
 #if (P_FAMILY_THUNDURUS)
-    {gMonPalette_ThundurusIncarnate, sVariants_ThundurusIncarnate},
+    {gMonPalette_ThundurusIncarnate, sVariants_ThundurusIncarnate, sVariantNames_thundurus},
 #endif
 #if (P_FAMILY_THUNDURUS)
-    {gMonPalette_ThundurusTherian, sVariants_ThundurusTherian},
+    {gMonPalette_ThundurusTherian, sVariants_ThundurusTherian, sVariantNames_thundurus},
 #endif
 #if (P_FAMILY_RESHIRAM)
-    {gMonPalette_Reshiram, sVariants_Reshiram},
+    {gMonPalette_Reshiram, sVariants_Reshiram, sVariantNames_reshiram},
 #endif
 #if (P_FAMILY_ZEKROM)
-    {gMonPalette_Zekrom, sVariants_Zekrom},
+    {gMonPalette_Zekrom, sVariants_Zekrom, sVariantNames_zekrom},
 #endif
 #if (P_FAMILY_LANDORUS)
-    {gMonPalette_LandorusIncarnate, sVariants_LandorusIncarnate},
+    {gMonPalette_LandorusIncarnate, sVariants_LandorusIncarnate, sVariantNames_landorus},
 #endif
 #if (P_FAMILY_LANDORUS)
-    {gMonPalette_LandorusTherian, sVariants_LandorusTherian},
+    {gMonPalette_LandorusTherian, sVariants_LandorusTherian, sVariantNames_landorus},
 #endif
 #if (P_FAMILY_ENAMORUS)
-    {gMonPalette_EnamorusIncarnate, sVariants_EnamorusIncarnate},
+    {gMonPalette_EnamorusIncarnate, sVariants_EnamorusIncarnate, sVariantNames_enamorus},
 #endif
 #if (P_FAMILY_ENAMORUS)
-    {gMonPalette_EnamorusTherian, sVariants_EnamorusTherian},
+    {gMonPalette_EnamorusTherian, sVariants_EnamorusTherian, sVariantNames_enamorus},
 #endif
 #if (P_FAMILY_KYUREM)
-    {gMonPalette_Kyurem, sVariants_Kyurem},
+    {gMonPalette_Kyurem, sVariants_Kyurem, sVariantNames_kyurem},
 #endif
 #if (P_FAMILY_KYUREM) && (P_FUSION_FORMS)
-    {gMonPalette_KyuremWhite, sVariants_KyuremWhite},
+    {gMonPalette_KyuremWhite, sVariants_KyuremWhite, sVariantNames_kyurem},
 #endif
 #if (P_FAMILY_KYUREM) && (P_FUSION_FORMS)
-    {gMonPalette_KyuremBlack, sVariants_KyuremBlack},
+    {gMonPalette_KyuremBlack, sVariants_KyuremBlack, sVariantNames_kyurem},
 #endif
 #if (P_FAMILY_KELDEO)
-    {gMonPalette_KeldeoOrdinary, sVariants_KeldeoOrdinary},
+    {gMonPalette_KeldeoOrdinary, sVariants_KeldeoOrdinary, sVariantNames_keldeo},
 #endif
 #if (P_FAMILY_KELDEO)
-    {gMonPalette_KeldeoResolute, sVariants_KeldeoResolute},
+    {gMonPalette_KeldeoResolute, sVariants_KeldeoResolute, sVariantNames_keldeo},
 #endif
 #if (P_FAMILY_MELOETTA)
-    {gMonPalette_MeloettaAria, sVariants_MeloettaAria},
+    {gMonPalette_MeloettaAria, sVariants_MeloettaAria, sVariantNames_meloetta},
 #endif
 #if (P_FAMILY_MELOETTA)
-    {gMonPalette_MeloettaPirouette, sVariants_MeloettaPirouette},
+    {gMonPalette_MeloettaPirouette, sVariants_MeloettaPirouette, sVariantNames_meloetta},
 #endif
 #if (P_FAMILY_GENESECT)
-    {gMonPalette_Genesect, sVariants_Genesect},
+    {gMonPalette_Genesect, sVariants_Genesect, sVariantNames_genesect},
 #endif
 #if (P_FAMILY_CHESPIN)
-    {gMonPalette_Chespin, sVariants_Chespin},
+    {gMonPalette_Chespin, sVariants_Chespin, sVariantNames_chespin},
 #endif
 #if (P_FAMILY_CHESPIN)
-    {gMonPalette_Quilladin, sVariants_Quilladin},
+    {gMonPalette_Quilladin, sVariants_Quilladin, sVariantNames_chespin},
 #endif
 #if (P_FAMILY_CHESPIN)
-    {gMonPalette_Chesnaught, sVariants_Chesnaught},
+    {gMonPalette_Chesnaught, sVariants_Chesnaught, sVariantNames_chespin},
 #endif
 #if (P_FAMILY_FENNEKIN)
-    {gMonPalette_Fennekin, sVariants_Fennekin},
+    {gMonPalette_Fennekin, sVariants_Fennekin, sVariantNames_fennekin},
 #endif
 #if (P_FAMILY_FENNEKIN)
-    {gMonPalette_Braixen, sVariants_Braixen},
+    {gMonPalette_Braixen, sVariants_Braixen, sVariantNames_fennekin},
 #endif
 #if (P_FAMILY_FENNEKIN)
-    {gMonPalette_Delphox, sVariants_Delphox},
+    {gMonPalette_Delphox, sVariants_Delphox, sVariantNames_fennekin},
 #endif
 #if (P_FAMILY_FROAKIE)
-    {gMonPalette_Froakie, sVariants_Froakie},
+    {gMonPalette_Froakie, sVariants_Froakie, sVariantNames_froakie},
 #endif
 #if (P_FAMILY_FROAKIE)
-    {gMonPalette_Frogadier, sVariants_Frogadier},
+    {gMonPalette_Frogadier, sVariants_Frogadier, sVariantNames_froakie},
 #endif
 #if (P_FAMILY_FROAKIE)
-    {gMonPalette_Greninja, sVariants_Greninja},
+    {gMonPalette_Greninja, sVariants_Greninja, sVariantNames_froakie},
 #endif
 #if (P_FAMILY_BUNNELBY)
-    {gMonPalette_Bunnelby, sVariants_Bunnelby},
+    {gMonPalette_Bunnelby, sVariants_Bunnelby, sVariantNames_bunnelby},
 #endif
 #if (P_FAMILY_BUNNELBY)
-    {gMonPalette_Diggersby, sVariants_Diggersby},
+    {gMonPalette_Diggersby, sVariants_Diggersby, sVariantNames_bunnelby},
 #endif
 #if (P_FAMILY_FLETCHLING)
-    {gMonPalette_Fletchling, sVariants_Fletchling},
+    {gMonPalette_Fletchling, sVariants_Fletchling, sVariantNames_fletchling},
 #endif
 #if (P_FAMILY_FLETCHLING)
-    {gMonPalette_Fletchinder, sVariants_Fletchinder},
+    {gMonPalette_Fletchinder, sVariants_Fletchinder, sVariantNames_fletchling},
 #endif
 #if (P_FAMILY_FLETCHLING)
-    {gMonPalette_Talonflame, sVariants_Talonflame},
+    {gMonPalette_Talonflame, sVariants_Talonflame, sVariantNames_fletchling},
 #endif
 #if (P_FAMILY_SCATTERBUG)
-    {gMonPalette_Scatterbug, sVariants_Scatterbug},
+    {gMonPalette_Scatterbug, sVariants_Scatterbug, sVariantNames_scatterbug},
 #endif
 #if (P_FAMILY_SCATTERBUG)
-    {gMonPalette_Spewpa, sVariants_Spewpa},
+    {gMonPalette_Spewpa, sVariants_Spewpa, sVariantNames_scatterbug},
 #endif
 #if (P_FAMILY_SCATTERBUG)
-    {gMonPalette_VivillonIcySnow, sVariants_VivillonIcySnow},
+    {gMonPalette_VivillonIcySnow, sVariants_VivillonIcySnow, sVariantNames_vivillon},
 #endif
 #if (P_FAMILY_LITLEO)
-    {gMonPalette_Litleo, sVariants_Litleo},
+    {gMonPalette_Litleo, sVariants_Litleo, sVariantNames_litleo},
 #endif
 #if (P_FAMILY_LITLEO)
-    {gMonPalette_Pyroar, sVariants_Pyroar},
+    {gMonPalette_Pyroar, sVariants_Pyroar, sVariantNames_litleo},
 #endif
 #if (P_FAMILY_FLABEBE)
-    {gMonPalette_FlabebeRed, sVariants_FlabebeRed},
+    {gMonPalette_FlabebeRed, sVariants_FlabebeRed, sVariantNames_flabebe},
 #endif
 #if (P_FAMILY_FLABEBE)
-    {gMonPalette_FloetteRed, sVariants_FloetteRed},
+    {gMonPalette_FloetteRed, sVariants_FloetteRed, sVariantNames_flabebe},
 #endif
 #if (P_FAMILY_FLABEBE)
-    {gMonPalette_FloetteEternal, sVariants_FloetteEternal},
+    {gMonPalette_FloetteEternal, sVariants_FloetteEternal, sVariantNames_floette_eternal},
 #endif
 #if (P_FAMILY_FLABEBE)
-    {gMonPalette_FlorgesRed, sVariants_FlorgesRed},
+    {gMonPalette_FlorgesRed, sVariants_FlorgesRed, sVariantNames_flabebe},
 #endif
 #if (P_FAMILY_SKIDDO)
-    {gMonPalette_Skiddo, sVariants_Skiddo},
+    {gMonPalette_Skiddo, sVariants_Skiddo, sVariantNames_skiddo},
 #endif
 #if (P_FAMILY_SKIDDO)
-    {gMonPalette_Gogoat, sVariants_Gogoat},
+    {gMonPalette_Gogoat, sVariants_Gogoat, sVariantNames_skiddo},
 #endif
 #if (P_FAMILY_PANCHAM)
-    {gMonPalette_Pancham, sVariants_Pancham},
+    {gMonPalette_Pancham, sVariants_Pancham, sVariantNames_pancham},
 #endif
 #if (P_FAMILY_PANCHAM)
-    {gMonPalette_Pangoro, sVariants_Pangoro},
+    {gMonPalette_Pangoro, sVariants_Pangoro, sVariantNames_pancham},
 #endif
 #if (P_FAMILY_ESPURR)
-    {gMonPalette_Espurr, sVariants_Espurr},
+    {gMonPalette_Espurr, sVariants_Espurr, sVariantNames_espurr},
 #endif
 #if (P_FAMILY_ESPURR)
-    {gMonPalette_MeowsticM, sVariants_MeowsticM},
+    {gMonPalette_MeowsticM, sVariants_MeowsticM, sVariantNames_espurr},
 #endif
 #if (P_FAMILY_ESPURR)
-    {gMonPalette_MeowsticF, sVariants_MeowsticF},
+    {gMonPalette_MeowsticF, sVariants_MeowsticF, sVariantNames_espurr},
 #endif
 #if (P_FAMILY_HONEDGE)
-    {gMonPalette_Honedge, sVariants_Honedge},
+    {gMonPalette_Honedge, sVariants_Honedge, sVariantNames_honedge},
 #endif
 #if (P_FAMILY_HONEDGE)
-    {gMonPalette_Doublade, sVariants_Doublade},
+    {gMonPalette_Doublade, sVariants_Doublade, sVariantNames_honedge},
 #endif
 #if (P_FAMILY_HONEDGE)
-    {gMonPalette_AegislashShield, sVariants_AegislashShield},
+    {gMonPalette_AegislashShield, sVariants_AegislashShield, sVariantNames_honedge},
 #endif
 #if (P_FAMILY_HONEDGE)
-    {gMonPalette_AegislashBlade, sVariants_AegislashBlade},
+    {gMonPalette_AegislashBlade, sVariants_AegislashBlade, sVariantNames_honedge},
 #endif
 #if (P_FAMILY_SPRITZEE)
-    {gMonPalette_Spritzee, sVariants_Spritzee},
+    {gMonPalette_Spritzee, sVariants_Spritzee, sVariantNames_spritzee},
 #endif
 #if (P_FAMILY_SPRITZEE)
-    {gMonPalette_Aromatisse, sVariants_Aromatisse},
+    {gMonPalette_Aromatisse, sVariants_Aromatisse, sVariantNames_spritzee},
 #endif
 #if (P_FAMILY_SWIRLIX)
-    {gMonPalette_Swirlix, sVariants_Swirlix},
+    {gMonPalette_Swirlix, sVariants_Swirlix, sVariantNames_swirlix},
 #endif
 #if (P_FAMILY_SWIRLIX)
-    {gMonPalette_Slurpuff, sVariants_Slurpuff},
+    {gMonPalette_Slurpuff, sVariants_Slurpuff, sVariantNames_swirlix},
 #endif
 #if (P_FAMILY_INKAY)
-    {gMonPalette_Inkay, sVariants_Inkay},
+    {gMonPalette_Inkay, sVariants_Inkay, sVariantNames_inkay},
 #endif
 #if (P_FAMILY_INKAY)
-    {gMonPalette_Malamar, sVariants_Malamar},
+    {gMonPalette_Malamar, sVariants_Malamar, sVariantNames_inkay},
 #endif
 #if (P_FAMILY_BINACLE)
-    {gMonPalette_Binacle, sVariants_Binacle},
+    {gMonPalette_Binacle, sVariants_Binacle, sVariantNames_binacle},
 #endif
 #if (P_FAMILY_BINACLE)
-    {gMonPalette_Barbaracle, sVariants_Barbaracle},
+    {gMonPalette_Barbaracle, sVariants_Barbaracle, sVariantNames_binacle},
 #endif
 #if (P_FAMILY_SKRELP)
-    {gMonPalette_Skrelp, sVariants_Skrelp},
+    {gMonPalette_Skrelp, sVariants_Skrelp, sVariantNames_skrelp},
 #endif
 #if (P_FAMILY_SKRELP)
-    {gMonPalette_Dragalge, sVariants_Dragalge},
+    {gMonPalette_Dragalge, sVariants_Dragalge, sVariantNames_skrelp},
 #endif
 #if (P_FAMILY_CLAUNCHER)
-    {gMonPalette_Clauncher, sVariants_Clauncher},
+    {gMonPalette_Clauncher, sVariants_Clauncher, sVariantNames_clauncher},
 #endif
 #if (P_FAMILY_CLAUNCHER)
-    {gMonPalette_Clawitzer, sVariants_Clawitzer},
+    {gMonPalette_Clawitzer, sVariants_Clawitzer, sVariantNames_clauncher},
 #endif
 #if (P_FAMILY_HELIOPTILE)
-    {gMonPalette_Helioptile, sVariants_Helioptile},
+    {gMonPalette_Helioptile, sVariants_Helioptile, sVariantNames_helioptile},
 #endif
 #if (P_FAMILY_HELIOPTILE)
-    {gMonPalette_Heliolisk, sVariants_Heliolisk},
+    {gMonPalette_Heliolisk, sVariants_Heliolisk, sVariantNames_helioptile},
 #endif
 #if (P_FAMILY_TYRUNT)
-    {gMonPalette_Tyrunt, sVariants_Tyrunt},
+    {gMonPalette_Tyrunt, sVariants_Tyrunt, sVariantNames_tyrunt},
 #endif
 #if (P_FAMILY_TYRUNT)
-    {gMonPalette_Tyrantrum, sVariants_Tyrantrum},
+    {gMonPalette_Tyrantrum, sVariants_Tyrantrum, sVariantNames_tyrunt},
 #endif
 #if (P_FAMILY_AMAURA)
-    {gMonPalette_Amaura, sVariants_Amaura},
+    {gMonPalette_Amaura, sVariants_Amaura, sVariantNames_amaura},
 #endif
 #if (P_FAMILY_AMAURA)
-    {gMonPalette_Aurorus, sVariants_Aurorus},
+    {gMonPalette_Aurorus, sVariants_Aurorus, sVariantNames_amaura},
 #endif
 #if (P_FAMILY_HAWLUCHA)
-    {gMonPalette_Hawlucha, sVariants_Hawlucha},
+    {gMonPalette_Hawlucha, sVariants_Hawlucha, sVariantNames_hawlucha},
 #endif
 #if (P_FAMILY_DEDENNE)
-    {gMonPalette_Dedenne, sVariants_Dedenne},
+    {gMonPalette_Dedenne, sVariants_Dedenne, sVariantNames_dedenne},
 #endif
 #if (P_FAMILY_CARBINK)
-    {gMonPalette_Carbink, sVariants_Carbink},
+    {gMonPalette_Carbink, sVariants_Carbink, sVariantNames_carbink},
 #endif
 #if (P_FAMILY_GOOMY)
-    {gMonPalette_Goomy, sVariants_Goomy},
+    {gMonPalette_Goomy, sVariants_Goomy, sVariantNames_goomy},
 #endif
 #if (P_FAMILY_GOOMY)
-    {gMonPalette_Sliggoo, sVariants_Sliggoo},
+    {gMonPalette_Sliggoo, sVariants_Sliggoo, sVariantNames_goomy},
 #endif
 #if (P_FAMILY_GOOMY) && (P_HISUIAN_FORMS)
-    {gMonPalette_SliggooHisui, sVariants_SliggooHisui},
+    {gMonPalette_SliggooHisui, sVariants_SliggooHisui, sVariantNames_goomy},
 #endif
 #if (P_FAMILY_GOOMY)
-    {gMonPalette_Goodra, sVariants_Goodra},
+    {gMonPalette_Goodra, sVariants_Goodra, sVariantNames_goomy},
 #endif
 #if (P_FAMILY_GOOMY) && (P_HISUIAN_FORMS)
-    {gMonPalette_GoodraHisui, sVariants_GoodraHisui},
+    {gMonPalette_GoodraHisui, sVariants_GoodraHisui, sVariantNames_goomy},
 #endif
 #if (P_FAMILY_KLEFKI)
-    {gMonPalette_Klefki, sVariants_Klefki},
+    {gMonPalette_Klefki, sVariants_Klefki, sVariantNames_klefki},
 #endif
 #if (P_FAMILY_PHANTUMP)
-    {gMonPalette_Phantump, sVariants_Phantump},
+    {gMonPalette_Phantump, sVariants_Phantump, sVariantNames_phantump},
 #endif
 #if (P_FAMILY_PHANTUMP)
-    {gMonPalette_Trevenant, sVariants_Trevenant},
+    {gMonPalette_Trevenant, sVariants_Trevenant, sVariantNames_phantump},
 #endif
 #if (P_FAMILY_PUMPKABOO)
-    {gMonPalette_Pumpkaboo, sVariants_Pumpkaboo},
+    {gMonPalette_Pumpkaboo, sVariants_Pumpkaboo, sVariantNames_pumpkaboo},
 #endif
 #if (P_FAMILY_PUMPKABOO)
-    {gMonPalette_Gourgeist, sVariants_Gourgeist},
+    {gMonPalette_Gourgeist, sVariants_Gourgeist, sVariantNames_pumpkaboo},
 #endif
 #if (P_FAMILY_BERGMITE)
-    {gMonPalette_Bergmite, sVariants_Bergmite},
+    {gMonPalette_Bergmite, sVariants_Bergmite, sVariantNames_bergmite},
 #endif
 #if (P_FAMILY_BERGMITE)
-    {gMonPalette_Avalugg, sVariants_Avalugg},
+    {gMonPalette_Avalugg, sVariants_Avalugg, sVariantNames_bergmite},
 #endif
 #if (P_FAMILY_BERGMITE) && (P_HISUIAN_FORMS)
-    {gMonPalette_AvaluggHisui, sVariants_AvaluggHisui},
+    {gMonPalette_AvaluggHisui, sVariants_AvaluggHisui, sVariantNames_bergmite},
 #endif
 #if (P_FAMILY_NOIBAT)
-    {gMonPalette_Noibat, sVariants_Noibat},
+    {gMonPalette_Noibat, sVariants_Noibat, sVariantNames_noibat},
 #endif
 #if (P_FAMILY_NOIBAT)
-    {gMonPalette_Noivern, sVariants_Noivern},
+    {gMonPalette_Noivern, sVariants_Noivern, sVariantNames_noibat},
 #endif
 #if (P_FAMILY_XERNEAS)
-    {gMonPalette_XerneasNeutral, sVariants_XerneasNeutral},
+    {gMonPalette_XerneasNeutral, sVariants_XerneasNeutral, sVariantNames_xerneas},
 #endif
 #if (P_FAMILY_XERNEAS)
-    {gMonPalette_XerneasActive, sVariants_XerneasActive},
+    {gMonPalette_XerneasActive, sVariants_XerneasActive, sVariantNames_xerneas},
 #endif
 #if (P_FAMILY_YVELTAL)
-    {gMonPalette_Yveltal, sVariants_Yveltal},
+    {gMonPalette_Yveltal, sVariants_Yveltal, sVariantNames_yveltal},
 #endif
 #if (P_FAMILY_ZYGARDE)
-    {gMonPalette_Zygarde50, sVariants_Zygarde50},
+    {gMonPalette_Zygarde50, sVariants_Zygarde50, sVariantNames_zygarde},
 #endif
 #if (P_FAMILY_ZYGARDE)
-    {gMonPalette_Zygarde10, sVariants_Zygarde10},
+    {gMonPalette_Zygarde10, sVariants_Zygarde10, sVariantNames_zygarde},
 #endif
 #if (P_FAMILY_ZYGARDE)
-    {gMonPalette_ZygardeComplete, sVariants_ZygardeComplete},
+    {gMonPalette_ZygardeComplete, sVariants_ZygardeComplete, sVariantNames_zygarde},
 #endif
 #if (P_FAMILY_DIANCIE)
-    {gMonPalette_Diancie, sVariants_Diancie},
+    {gMonPalette_Diancie, sVariants_Diancie, sVariantNames_diancie},
 #endif
 #if (P_FAMILY_HOOPA)
-    {gMonPalette_HoopaConfined, sVariants_HoopaConfined},
+    {gMonPalette_HoopaConfined, sVariants_HoopaConfined, sVariantNames_hoopa},
 #endif
 #if (P_FAMILY_HOOPA)
-    {gMonPalette_HoopaUnbound, sVariants_HoopaUnbound},
+    {gMonPalette_HoopaUnbound, sVariants_HoopaUnbound, sVariantNames_hoopa},
 #endif
 #if (P_FAMILY_VOLCANION)
-    {gMonPalette_Volcanion, sVariants_Volcanion},
+    {gMonPalette_Volcanion, sVariants_Volcanion, sVariantNames_volcanion},
 #endif
 #if (P_FAMILY_ROWLET)
-    {gMonPalette_Rowlet, sVariants_Rowlet},
+    {gMonPalette_Rowlet, sVariants_Rowlet, sVariantNames_rowlet},
 #endif
 #if (P_FAMILY_ROWLET)
-    {gMonPalette_Dartrix, sVariants_Dartrix},
+    {gMonPalette_Dartrix, sVariants_Dartrix, sVariantNames_rowlet},
 #endif
 #if (P_FAMILY_ROWLET)
-    {gMonPalette_Decidueye, sVariants_Decidueye},
+    {gMonPalette_Decidueye, sVariants_Decidueye, sVariantNames_rowlet},
 #endif
 #if (P_FAMILY_ROWLET) && (P_HISUIAN_FORMS)
-    {gMonPalette_DecidueyeHisui, sVariants_DecidueyeHisui},
+    {gMonPalette_DecidueyeHisui, sVariants_DecidueyeHisui, sVariantNames_rowlet},
 #endif
 #if (P_FAMILY_LITTEN)
-    {gMonPalette_Litten, sVariants_Litten},
+    {gMonPalette_Litten, sVariants_Litten, sVariantNames_litten},
 #endif
 #if (P_FAMILY_LITTEN)
-    {gMonPalette_Torracat, sVariants_Torracat},
+    {gMonPalette_Torracat, sVariants_Torracat, sVariantNames_litten},
 #endif
 #if (P_FAMILY_LITTEN)
-    {gMonPalette_Incineroar, sVariants_Incineroar},
+    {gMonPalette_Incineroar, sVariants_Incineroar, sVariantNames_litten},
 #endif
 #if (P_FAMILY_POPPLIO)
-    {gMonPalette_Popplio, sVariants_Popplio},
+    {gMonPalette_Popplio, sVariants_Popplio, sVariantNames_popplio},
 #endif
 #if (P_FAMILY_POPPLIO)
-    {gMonPalette_Brionne, sVariants_Brionne},
+    {gMonPalette_Brionne, sVariants_Brionne, sVariantNames_popplio},
 #endif
 #if (P_FAMILY_POPPLIO)
-    {gMonPalette_Primarina, sVariants_Primarina},
+    {gMonPalette_Primarina, sVariants_Primarina, sVariantNames_popplio},
 #endif
 #if (P_FAMILY_PIKIPEK)
-    {gMonPalette_Pikipek, sVariants_Pikipek},
+    {gMonPalette_Pikipek, sVariants_Pikipek, sVariantNames_pikipek},
 #endif
 #if (P_FAMILY_PIKIPEK)
-    {gMonPalette_Trumbeak, sVariants_Trumbeak},
+    {gMonPalette_Trumbeak, sVariants_Trumbeak, sVariantNames_pikipek},
 #endif
 #if (P_FAMILY_PIKIPEK)
-    {gMonPalette_Toucannon, sVariants_Toucannon},
+    {gMonPalette_Toucannon, sVariants_Toucannon, sVariantNames_pikipek},
 #endif
 #if (P_FAMILY_YUNGOOS)
-    {gMonPalette_Yungoos, sVariants_Yungoos},
+    {gMonPalette_Yungoos, sVariants_Yungoos, sVariantNames_yungoos},
 #endif
 #if (P_FAMILY_YUNGOOS)
-    {gMonPalette_Gumshoos, sVariants_Gumshoos},
+    {gMonPalette_Gumshoos, sVariants_Gumshoos, sVariantNames_yungoos},
 #endif
 #if (P_FAMILY_GRUBBIN)
-    {gMonPalette_Grubbin, sVariants_Grubbin},
+    {gMonPalette_Grubbin, sVariants_Grubbin, sVariantNames_grubbin},
 #endif
 #if (P_FAMILY_GRUBBIN)
-    {gMonPalette_Charjabug, sVariants_Charjabug},
+    {gMonPalette_Charjabug, sVariants_Charjabug, sVariantNames_charjabug},
 #endif
 #if (P_FAMILY_GRUBBIN)
-    {gMonPalette_Vikavolt, sVariants_Vikavolt},
+    {gMonPalette_Vikavolt, sVariants_Vikavolt, sVariantNames_grubbin},
 #endif
 #if (P_FAMILY_CRABRAWLER)
-    {gMonPalette_Crabrawler, sVariants_Crabrawler},
+    {gMonPalette_Crabrawler, sVariants_Crabrawler, sVariantNames_crabrawler},
 #endif
 #if (P_FAMILY_CRABRAWLER)
-    {gMonPalette_Crabominable, sVariants_Crabominable},
+    {gMonPalette_Crabominable, sVariants_Crabominable, sVariantNames_crabrawler},
 #endif
 #if (P_FAMILY_ORICORIO)
-    {gMonPalette_OricorioBaile, sVariants_OricorioBaile},
+    {gMonPalette_OricorioBaile, sVariants_OricorioBaile, sVariantNames_oricorio},
 #endif
 #if (P_FAMILY_ORICORIO)
-    {gMonPalette_OricorioPomPom, sVariants_OricorioPomPom},
+    {gMonPalette_OricorioPomPom, sVariants_OricorioPomPom, sVariantNames_oricorio_pom_pom},
 #endif
 #if (P_FAMILY_ORICORIO)
-    {gMonPalette_OricorioPau, sVariants_OricorioPau},
+    {gMonPalette_OricorioPau, sVariants_OricorioPau, sVariantNames_oricorio_pau},
 #endif
 #if (P_FAMILY_ORICORIO)
-    {gMonPalette_OricorioSensu, sVariants_OricorioSensu},
+    {gMonPalette_OricorioSensu, sVariants_OricorioSensu, sVariantNames_oricorio_sensu},
 #endif
 #if (P_FAMILY_CUTIEFLY)
-    {gMonPalette_Cutiefly, sVariants_Cutiefly},
+    {gMonPalette_Cutiefly, sVariants_Cutiefly, sVariantNames_cutiefly},
 #endif
 #if (P_FAMILY_CUTIEFLY)
-    {gMonPalette_Ribombee, sVariants_Ribombee},
+    {gMonPalette_Ribombee, sVariants_Ribombee, sVariantNames_cutiefly},
 #endif
 #if (P_FAMILY_ROCKRUFF)
-    {gMonPalette_Rockruff, sVariants_Rockruff},
+    {gMonPalette_Rockruff, sVariants_Rockruff, sVariantNames_rockruff},
 #endif
 #if (P_FAMILY_ROCKRUFF)
-    {gMonPalette_LycanrocMidday, sVariants_LycanrocMidday},
+    {gMonPalette_LycanrocMidday, sVariants_LycanrocMidday, sVariantNames_rockruff},
 #endif
 #if (P_FAMILY_ROCKRUFF)
-    {gMonPalette_LycanrocMidnight, sVariants_LycanrocMidnight},
+    {gMonPalette_LycanrocMidnight, sVariants_LycanrocMidnight, sVariantNames_rockruff},
 #endif
 #if (P_FAMILY_ROCKRUFF)
-    {gMonPalette_LycanrocDusk, sVariants_LycanrocDusk},
+    {gMonPalette_LycanrocDusk, sVariants_LycanrocDusk, sVariantNames_rockruff},
 #endif
 #if (P_FAMILY_WISHIWASHI)
-    {gMonPalette_WishiwashiSolo, sVariants_WishiwashiSolo},
+    {gMonPalette_WishiwashiSolo, sVariants_WishiwashiSolo, sVariantNames_wishiwashi},
 #endif
 #if (P_FAMILY_WISHIWASHI)
-    {gMonPalette_WishiwashiSchool, sVariants_WishiwashiSchool},
+    {gMonPalette_WishiwashiSchool, sVariants_WishiwashiSchool, sVariantNames_wishiwashi},
 #endif
 #if (P_FAMILY_MAREANIE)
-    {gMonPalette_Mareanie, sVariants_Mareanie},
+    {gMonPalette_Mareanie, sVariants_Mareanie, sVariantNames_mareanie},
 #endif
 #if (P_FAMILY_MAREANIE)
-    {gMonPalette_Toxapex, sVariants_Toxapex},
+    {gMonPalette_Toxapex, sVariants_Toxapex, sVariantNames_mareanie},
 #endif
 #if (P_FAMILY_MUDBRAY)
-    {gMonPalette_Mudbray, sVariants_Mudbray},
+    {gMonPalette_Mudbray, sVariants_Mudbray, sVariantNames_mudbray},
 #endif
 #if (P_FAMILY_MUDBRAY)
-    {gMonPalette_Mudsdale, sVariants_Mudsdale},
+    {gMonPalette_Mudsdale, sVariants_Mudsdale, sVariantNames_mudbray},
 #endif
 #if (P_FAMILY_DEWPIDER)
-    {gMonPalette_Dewpider, sVariants_Dewpider},
+    {gMonPalette_Dewpider, sVariants_Dewpider, sVariantNames_dewpider},
 #endif
 #if (P_FAMILY_DEWPIDER)
-    {gMonPalette_Araquanid, sVariants_Araquanid},
+    {gMonPalette_Araquanid, sVariants_Araquanid, sVariantNames_dewpider},
 #endif
 #if (P_FAMILY_FOMANTIS)
-    {gMonPalette_Fomantis, sVariants_Fomantis},
+    {gMonPalette_Fomantis, sVariants_Fomantis, sVariantNames_fomantis},
 #endif
 #if (P_FAMILY_FOMANTIS)
-    {gMonPalette_Lurantis, sVariants_Lurantis},
+    {gMonPalette_Lurantis, sVariants_Lurantis, sVariantNames_fomantis},
 #endif
 #if (P_FAMILY_MORELULL)
-    {gMonPalette_Morelull, sVariants_Morelull},
+    {gMonPalette_Morelull, sVariants_Morelull, sVariantNames_morelull},
 #endif
 #if (P_FAMILY_MORELULL)
-    {gMonPalette_Shiinotic, sVariants_Shiinotic},
+    {gMonPalette_Shiinotic, sVariants_Shiinotic, sVariantNames_morelull},
 #endif
 #if (P_FAMILY_SALANDIT)
-    {gMonPalette_Salandit, sVariants_Salandit},
+    {gMonPalette_Salandit, sVariants_Salandit, sVariantNames_salandit},
 #endif
 #if (P_FAMILY_SALANDIT)
-    {gMonPalette_Salazzle, sVariants_Salazzle},
+    {gMonPalette_Salazzle, sVariants_Salazzle, sVariantNames_salandit},
 #endif
 #if (P_FAMILY_STUFFUL)
-    {gMonPalette_Stufful, sVariants_Stufful},
+    {gMonPalette_Stufful, sVariants_Stufful, sVariantNames_stufful},
 #endif
 #if (P_FAMILY_STUFFUL)
-    {gMonPalette_Bewear, sVariants_Bewear},
+    {gMonPalette_Bewear, sVariants_Bewear, sVariantNames_stufful},
 #endif
 #if (P_FAMILY_BOUNSWEET)
-    {gMonPalette_Bounsweet, sVariants_Bounsweet},
+    {gMonPalette_Bounsweet, sVariants_Bounsweet, sVariantNames_bounsweet},
 #endif
 #if (P_FAMILY_BOUNSWEET)
-    {gMonPalette_Steenee, sVariants_Steenee},
+    {gMonPalette_Steenee, sVariants_Steenee, sVariantNames_bounsweet},
 #endif
 #if (P_FAMILY_BOUNSWEET)
-    {gMonPalette_Tsareena, sVariants_Tsareena},
+    {gMonPalette_Tsareena, sVariants_Tsareena, sVariantNames_bounsweet},
 #endif
 #if (P_FAMILY_COMFEY)
-    {gMonPalette_Comfey, sVariants_Comfey},
+    {gMonPalette_Comfey, sVariants_Comfey, sVariantNames_comfey},
 #endif
 #if (P_FAMILY_ORANGURU)
-    {gMonPalette_Oranguru, sVariants_Oranguru},
+    {gMonPalette_Oranguru, sVariants_Oranguru, sVariantNames_oranguru},
 #endif
 #if (P_FAMILY_PASSIMIAN)
-    {gMonPalette_Passimian, sVariants_Passimian},
+    {gMonPalette_Passimian, sVariants_Passimian, sVariantNames_passimian},
 #endif
 #if (P_FAMILY_WIMPOD)
-    {gMonPalette_Wimpod, sVariants_Wimpod},
+    {gMonPalette_Wimpod, sVariants_Wimpod, sVariantNames_wimpod},
 #endif
 #if (P_FAMILY_WIMPOD)
-    {gMonPalette_Golisopod, sVariants_Golisopod},
+    {gMonPalette_Golisopod, sVariants_Golisopod, sVariantNames_wimpod},
 #endif
 #if (P_FAMILY_SANDYGAST)
-    {gMonPalette_Sandygast, sVariants_Sandygast},
+    {gMonPalette_Sandygast, sVariants_Sandygast, sVariantNames_sandygast},
 #endif
 #if (P_FAMILY_SANDYGAST)
-    {gMonPalette_Palossand, sVariants_Palossand},
+    {gMonPalette_Palossand, sVariants_Palossand, sVariantNames_sandygast},
 #endif
 #if (P_FAMILY_PYUKUMUKU)
-    {gMonPalette_Pyukumuku, sVariants_Pyukumuku},
+    {gMonPalette_Pyukumuku, sVariants_Pyukumuku, sVariantNames_pyukumuku},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_TypeNull, sVariants_TypeNull},
+    {gMonPalette_TypeNull, sVariants_TypeNull, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyNormal, sVariants_SilvallyNormal},
+    {gMonPalette_SilvallyNormal, sVariants_SilvallyNormal, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyFighting, sVariants_SilvallyFighting},
+    {gMonPalette_SilvallyFighting, sVariants_SilvallyFighting, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyFlying, sVariants_SilvallyFlying},
+    {gMonPalette_SilvallyFlying, sVariants_SilvallyFlying, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyPoison, sVariants_SilvallyPoison},
+    {gMonPalette_SilvallyPoison, sVariants_SilvallyPoison, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyGround, sVariants_SilvallyGround},
+    {gMonPalette_SilvallyGround, sVariants_SilvallyGround, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyRock, sVariants_SilvallyRock},
+    {gMonPalette_SilvallyRock, sVariants_SilvallyRock, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyBug, sVariants_SilvallyBug},
+    {gMonPalette_SilvallyBug, sVariants_SilvallyBug, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyGhost, sVariants_SilvallyGhost},
+    {gMonPalette_SilvallyGhost, sVariants_SilvallyGhost, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallySteel, sVariants_SilvallySteel},
+    {gMonPalette_SilvallySteel, sVariants_SilvallySteel, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyFire, sVariants_SilvallyFire},
+    {gMonPalette_SilvallyFire, sVariants_SilvallyFire, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyWater, sVariants_SilvallyWater},
+    {gMonPalette_SilvallyWater, sVariants_SilvallyWater, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyGrass, sVariants_SilvallyGrass},
+    {gMonPalette_SilvallyGrass, sVariants_SilvallyGrass, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyElectric, sVariants_SilvallyElectric},
+    {gMonPalette_SilvallyElectric, sVariants_SilvallyElectric, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyPsychic, sVariants_SilvallyPsychic},
+    {gMonPalette_SilvallyPsychic, sVariants_SilvallyPsychic, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyIce, sVariants_SilvallyIce},
+    {gMonPalette_SilvallyIce, sVariants_SilvallyIce, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyDragon, sVariants_SilvallyDragon},
+    {gMonPalette_SilvallyDragon, sVariants_SilvallyDragon, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyDark, sVariants_SilvallyDark},
+    {gMonPalette_SilvallyDark, sVariants_SilvallyDark, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_TYPE_NULL)
-    {gMonPalette_SilvallyFairy, sVariants_SilvallyFairy},
+    {gMonPalette_SilvallyFairy, sVariants_SilvallyFairy, sVariantNames_type_null},
 #endif
 #if (P_FAMILY_MINIOR)
-    {gMonPalette_MiniorMeteor, sVariants_MiniorMeteor},
+    {gMonPalette_MiniorMeteor, sVariants_MiniorMeteor, sVariantNames_minior},
 #endif
 #if (P_FAMILY_KOMALA)
-    {gMonPalette_Komala, sVariants_Komala},
+    {gMonPalette_Komala, sVariants_Komala, sVariantNames_komala},
 #endif
 #if (P_FAMILY_TURTONATOR)
-    {gMonPalette_Turtonator, sVariants_Turtonator},
+    {gMonPalette_Turtonator, sVariants_Turtonator, sVariantNames_turtonator},
 #endif
 #if (P_FAMILY_TOGEDEMARU)
-    {gMonPalette_Togedemaru, sVariants_Togedemaru},
+    {gMonPalette_Togedemaru, sVariants_Togedemaru, sVariantNames_togedemaru},
 #endif
 #if (P_FAMILY_MIMIKYU)
-    {gMonPalette_MimikyuDisguised, sVariants_MimikyuDisguised},
+    {gMonPalette_MimikyuDisguised, sVariants_MimikyuDisguised, sVariantNames_mimikyu},
 #endif
 #if (P_FAMILY_MIMIKYU)
-    {gMonPalette_MimikyuBusted, sVariants_MimikyuBusted},
+    {gMonPalette_MimikyuBusted, sVariants_MimikyuBusted, sVariantNames_mimikyu},
 #endif
 #if (P_FAMILY_BRUXISH)
-    {gMonPalette_Bruxish, sVariants_Bruxish},
+    {gMonPalette_Bruxish, sVariants_Bruxish, sVariantNames_bruxish},
 #endif
 #if (P_FAMILY_DRAMPA)
-    {gMonPalette_Drampa, sVariants_Drampa},
+    {gMonPalette_Drampa, sVariants_Drampa, sVariantNames_drampa},
 #endif
 #if (P_FAMILY_DHELMISE)
-    {gMonPalette_Dhelmise, sVariants_Dhelmise},
+    {gMonPalette_Dhelmise, sVariants_Dhelmise, sVariantNames_dhelmise},
 #endif
 #if (P_FAMILY_JANGMO_O)
-    {gMonPalette_JangmoO, sVariants_JangmoO},
+    {gMonPalette_JangmoO, sVariants_JangmoO, sVariantNames_jangmo_o},
 #endif
 #if (P_FAMILY_JANGMO_O)
-    {gMonPalette_HakamoO, sVariants_HakamoO},
+    {gMonPalette_HakamoO, sVariants_HakamoO, sVariantNames_jangmo_o},
 #endif
 #if (P_FAMILY_JANGMO_O)
-    {gMonPalette_KommoO, sVariants_KommoO},
+    {gMonPalette_KommoO, sVariants_KommoO, sVariantNames_jangmo_o},
 #endif
 #if (P_FAMILY_TAPU_KOKO)
-    {gMonPalette_TapuKoko, sVariants_TapuKoko},
+    {gMonPalette_TapuKoko, sVariants_TapuKoko, sVariantNames_tapu_koko},
 #endif
 #if (P_FAMILY_TAPU_LELE)
-    {gMonPalette_TapuLele, sVariants_TapuLele},
+    {gMonPalette_TapuLele, sVariants_TapuLele, sVariantNames_tapu_lele},
 #endif
 #if (P_FAMILY_TAPU_BULU)
-    {gMonPalette_TapuBulu, sVariants_TapuBulu},
+    {gMonPalette_TapuBulu, sVariants_TapuBulu, sVariantNames_tapu_bulu},
 #endif
 #if (P_FAMILY_TAPU_FINI)
-    {gMonPalette_TapuFini, sVariants_TapuFini},
+    {gMonPalette_TapuFini, sVariants_TapuFini, sVariantNames_tapu_fini},
 #endif
 #if (P_FAMILY_COSMOG)
-    {gMonPalette_Cosmog, sVariants_Cosmog},
+    {gMonPalette_Cosmog, sVariants_Cosmog, sVariantNames_cosmog},
 #endif
 #if (P_FAMILY_COSMOG)
-    {gMonPalette_Cosmoem, sVariants_Cosmoem},
+    {gMonPalette_Cosmoem, sVariants_Cosmoem, sVariantNames_cosmog},
 #endif
 #if (P_FAMILY_COSMOG)
-    {gMonPalette_Solgaleo, sVariants_Solgaleo},
+    {gMonPalette_Solgaleo, sVariants_Solgaleo, sVariantNames_cosmog},
 #endif
 #if (P_FAMILY_COSMOG)
-    {gMonPalette_Lunala, sVariants_Lunala},
+    {gMonPalette_Lunala, sVariants_Lunala, sVariantNames_cosmog},
 #endif
 #if (P_FAMILY_NIHILEGO)
-    {gMonPalette_Nihilego, sVariants_Nihilego},
+    {gMonPalette_Nihilego, sVariants_Nihilego, sVariantNames_nihilego},
 #endif
 #if (P_FAMILY_BUZZWOLE)
-    {gMonPalette_Buzzwole, sVariants_Buzzwole},
+    {gMonPalette_Buzzwole, sVariants_Buzzwole, sVariantNames_buzzwole},
 #endif
 #if (P_FAMILY_PHEROMOSA)
-    {gMonPalette_Pheromosa, sVariants_Pheromosa},
+    {gMonPalette_Pheromosa, sVariants_Pheromosa, sVariantNames_pheromosa},
 #endif
 #if (P_FAMILY_XURKITREE)
-    {gMonPalette_Xurkitree, sVariants_Xurkitree},
+    {gMonPalette_Xurkitree, sVariants_Xurkitree, sVariantNames_xurkitree},
 #endif
 #if (P_FAMILY_CELESTEELA)
-    {gMonPalette_Celesteela, sVariants_Celesteela},
+    {gMonPalette_Celesteela, sVariants_Celesteela, sVariantNames_celesteela},
 #endif
 #if (P_FAMILY_KARTANA)
-    {gMonPalette_Kartana, sVariants_Kartana},
+    {gMonPalette_Kartana, sVariants_Kartana, sVariantNames_kartana},
 #endif
 #if (P_FAMILY_GUZZLORD)
-    {gMonPalette_Guzzlord, sVariants_Guzzlord},
+    {gMonPalette_Guzzlord, sVariants_Guzzlord, sVariantNames_guzzlord},
 #endif
 #if (P_FAMILY_NECROZMA)
-    {gMonPalette_Necrozma, sVariants_Necrozma},
+    {gMonPalette_Necrozma, sVariants_Necrozma, sVariantNames_necrozma},
 #endif
 #if (P_FAMILY_NECROZMA) && (P_FUSION_FORMS)
-    {gMonPalette_NecrozmaDuskMane, sVariants_NecrozmaDuskMane},
+    {gMonPalette_NecrozmaDuskMane, sVariants_NecrozmaDuskMane, sVariantNames_necrozma},
 #endif
 #if (P_FAMILY_NECROZMA) && (P_FUSION_FORMS)
-    {gMonPalette_NecrozmaDawnWings, sVariants_NecrozmaDawnWings},
+    {gMonPalette_NecrozmaDawnWings, sVariants_NecrozmaDawnWings, sVariantNames_necrozma},
 #endif
 #if (P_FAMILY_MAGEARNA)
-    {gMonPalette_Magearna, sVariants_Magearna},
+    {gMonPalette_Magearna, sVariants_Magearna, sVariantNames_magearna},
 #endif
 #if (P_FAMILY_MAGEARNA)
-    {gMonPalette_MagearnaOriginal, sVariants_MagearnaOriginal},
+    {gMonPalette_MagearnaOriginal, sVariants_MagearnaOriginal, sVariantNames_magearna},
 #endif
 #if (P_FAMILY_MARSHADOW)
-    {gMonPalette_Marshadow, sVariants_Marshadow},
+    {gMonPalette_Marshadow, sVariants_Marshadow, sVariantNames_marshadow},
 #endif
 #if (P_FAMILY_POIPOLE)
-    {gMonPalette_Poipole, sVariants_Poipole},
+    {gMonPalette_Poipole, sVariants_Poipole, sVariantNames_poipole},
 #endif
 #if (P_FAMILY_POIPOLE)
-    {gMonPalette_Naganadel, sVariants_Naganadel},
+    {gMonPalette_Naganadel, sVariants_Naganadel, sVariantNames_poipole},
 #endif
 #if (P_FAMILY_STAKATAKA)
-    {gMonPalette_Stakataka, sVariants_Stakataka},
+    {gMonPalette_Stakataka, sVariants_Stakataka, sVariantNames_stakataka},
 #endif
 #if (P_FAMILY_BLACEPHALON)
-    {gMonPalette_Blacephalon, sVariants_Blacephalon},
+    {gMonPalette_Blacephalon, sVariants_Blacephalon, sVariantNames_blacephalon},
 #endif
 #if (P_FAMILY_ZERAORA)
-    {gMonPalette_Zeraora, sVariants_Zeraora},
+    {gMonPalette_Zeraora, sVariants_Zeraora, sVariantNames_zeraora},
 #endif
 #if (P_FAMILY_MELTAN)
-    {gMonPalette_Meltan, sVariants_Meltan},
+    {gMonPalette_Meltan, sVariants_Meltan, sVariantNames_meltan},
 #endif
 #if (P_FAMILY_MELTAN)
-    {gMonPalette_Melmetal, sVariants_Melmetal},
+    {gMonPalette_Melmetal, sVariants_Melmetal, sVariantNames_meltan},
 #endif
 #if (P_FAMILY_GROOKEY)
-    {gMonPalette_Grookey, sVariants_Grookey},
+    {gMonPalette_Grookey, sVariants_Grookey, sVariantNames_grookey},
 #endif
 #if (P_FAMILY_GROOKEY)
-    {gMonPalette_Thwackey, sVariants_Thwackey},
+    {gMonPalette_Thwackey, sVariants_Thwackey, sVariantNames_grookey},
 #endif
 #if (P_FAMILY_GROOKEY)
-    {gMonPalette_Rillaboom, sVariants_Rillaboom},
+    {gMonPalette_Rillaboom, sVariants_Rillaboom, sVariantNames_grookey},
 #endif
 #if (P_FAMILY_SCORBUNNY)
-    {gMonPalette_Scorbunny, sVariants_Scorbunny},
+    {gMonPalette_Scorbunny, sVariants_Scorbunny, sVariantNames_scorbunny},
 #endif
 #if (P_FAMILY_SCORBUNNY)
-    {gMonPalette_Raboot, sVariants_Raboot},
+    {gMonPalette_Raboot, sVariants_Raboot, sVariantNames_scorbunny},
 #endif
 #if (P_FAMILY_SCORBUNNY)
-    {gMonPalette_Cinderace, sVariants_Cinderace},
+    {gMonPalette_Cinderace, sVariants_Cinderace, sVariantNames_scorbunny},
 #endif
 #if (P_FAMILY_SOBBLE)
-    {gMonPalette_Sobble, sVariants_Sobble},
+    {gMonPalette_Sobble, sVariants_Sobble, sVariantNames_sobble},
 #endif
 #if (P_FAMILY_SOBBLE)
-    {gMonPalette_Drizzile, sVariants_Drizzile},
+    {gMonPalette_Drizzile, sVariants_Drizzile, sVariantNames_sobble},
 #endif
 #if (P_FAMILY_SOBBLE)
-    {gMonPalette_Inteleon, sVariants_Inteleon},
+    {gMonPalette_Inteleon, sVariants_Inteleon, sVariantNames_sobble},
 #endif
 #if (P_FAMILY_SKWOVET)
-    {gMonPalette_Skwovet, sVariants_Skwovet},
+    {gMonPalette_Skwovet, sVariants_Skwovet, sVariantNames_skwovet},
 #endif
 #if (P_FAMILY_SKWOVET)
-    {gMonPalette_Greedent, sVariants_Greedent},
+    {gMonPalette_Greedent, sVariants_Greedent, sVariantNames_skwovet},
 #endif
 #if (P_FAMILY_ROOKIDEE)
-    {gMonPalette_Rookidee, sVariants_Rookidee},
+    {gMonPalette_Rookidee, sVariants_Rookidee, sVariantNames_rookidee},
 #endif
 #if (P_FAMILY_ROOKIDEE)
-    {gMonPalette_Corvisquire, sVariants_Corvisquire},
+    {gMonPalette_Corvisquire, sVariants_Corvisquire, sVariantNames_rookidee},
 #endif
 #if (P_FAMILY_ROOKIDEE)
-    {gMonPalette_Corviknight, sVariants_Corviknight},
+    {gMonPalette_Corviknight, sVariants_Corviknight, sVariantNames_rookidee},
 #endif
 #if (P_FAMILY_BLIPBUG)
-    {gMonPalette_Blipbug, sVariants_Blipbug},
+    {gMonPalette_Blipbug, sVariants_Blipbug, sVariantNames_blipbug},
 #endif
 #if (P_FAMILY_BLIPBUG)
-    {gMonPalette_Dottler, sVariants_Dottler},
+    {gMonPalette_Dottler, sVariants_Dottler, sVariantNames_blipbug},
 #endif
 #if (P_FAMILY_BLIPBUG)
-    {gMonPalette_Orbeetle, sVariants_Orbeetle},
+    {gMonPalette_Orbeetle, sVariants_Orbeetle, sVariantNames_blipbug},
 #endif
 #if (P_FAMILY_NICKIT)
-    {gMonPalette_Nickit, sVariants_Nickit},
+    {gMonPalette_Nickit, sVariants_Nickit, sVariantNames_nickit},
 #endif
 #if (P_FAMILY_NICKIT)
-    {gMonPalette_Thievul, sVariants_Thievul},
+    {gMonPalette_Thievul, sVariants_Thievul, sVariantNames_nickit},
 #endif
 #if (P_FAMILY_GOSSIFLEUR)
-    {gMonPalette_Gossifleur, sVariants_Gossifleur},
+    {gMonPalette_Gossifleur, sVariants_Gossifleur, sVariantNames_gossifleur},
 #endif
 #if (P_FAMILY_GOSSIFLEUR)
-    {gMonPalette_Eldegoss, sVariants_Eldegoss},
+    {gMonPalette_Eldegoss, sVariants_Eldegoss, sVariantNames_gossifleur},
 #endif
 #if (P_FAMILY_WOOLOO)
-    {gMonPalette_Wooloo, sVariants_Wooloo},
+    {gMonPalette_Wooloo, sVariants_Wooloo, sVariantNames_wooloo},
 #endif
 #if (P_FAMILY_WOOLOO)
-    {gMonPalette_Dubwool, sVariants_Dubwool},
+    {gMonPalette_Dubwool, sVariants_Dubwool, sVariantNames_wooloo},
 #endif
 #if (P_FAMILY_CHEWTLE)
-    {gMonPalette_Chewtle, sVariants_Chewtle},
+    {gMonPalette_Chewtle, sVariants_Chewtle, sVariantNames_chewtle},
 #endif
 #if (P_FAMILY_CHEWTLE)
-    {gMonPalette_Drednaw, sVariants_Drednaw},
+    {gMonPalette_Drednaw, sVariants_Drednaw, sVariantNames_chewtle},
 #endif
 #if (P_FAMILY_YAMPER)
-    {gMonPalette_Yamper, sVariants_Yamper},
+    {gMonPalette_Yamper, sVariants_Yamper, sVariantNames_yamper},
 #endif
 #if (P_FAMILY_YAMPER)
-    {gMonPalette_Boltund, sVariants_Boltund},
+    {gMonPalette_Boltund, sVariants_Boltund, sVariantNames_yamper},
 #endif
 #if (P_FAMILY_ROLYCOLY)
-    {gMonPalette_Rolycoly, sVariants_Rolycoly},
+    {gMonPalette_Rolycoly, sVariants_Rolycoly, sVariantNames_rolycoly},
 #endif
 #if (P_FAMILY_ROLYCOLY)
-    {gMonPalette_Carkol, sVariants_Carkol},
+    {gMonPalette_Carkol, sVariants_Carkol, sVariantNames_rolycoly},
 #endif
 #if (P_FAMILY_ROLYCOLY)
-    {gMonPalette_Coalossal, sVariants_Coalossal},
+    {gMonPalette_Coalossal, sVariants_Coalossal, sVariantNames_rolycoly},
 #endif
 #if (P_FAMILY_APPLIN)
-    {gMonPalette_Applin, sVariants_Applin},
+    {gMonPalette_Applin, sVariants_Applin, sVariantNames_applin},
 #endif
 #if (P_FAMILY_APPLIN)
-    {gMonPalette_Flapple, sVariants_Flapple},
+    {gMonPalette_Flapple, sVariants_Flapple, sVariantNames_applin},
 #endif
 #if (P_FAMILY_APPLIN)
-    {gMonPalette_Appletun, sVariants_Appletun},
+    {gMonPalette_Appletun, sVariants_Appletun, sVariantNames_applin},
 #endif
 #if (P_FAMILY_APPLIN) && (P_GEN_9_CROSS_EVOS)
-    {gMonPalette_Dipplin, sVariants_Dipplin},
+    {gMonPalette_Dipplin, sVariants_Dipplin, sVariantNames_dipplin},
 #endif
 #if (P_FAMILY_APPLIN) && (P_GEN_9_CROSS_EVOS)
-    {gMonPalette_Hydrapple, sVariants_Hydrapple},
+    {gMonPalette_Hydrapple, sVariants_Hydrapple, sVariantNames_dipplin},
 #endif
 #if (P_FAMILY_SILICOBRA)
-    {gMonPalette_Silicobra, sVariants_Silicobra},
+    {gMonPalette_Silicobra, sVariants_Silicobra, sVariantNames_silicobra},
 #endif
 #if (P_FAMILY_SILICOBRA)
-    {gMonPalette_Sandaconda, sVariants_Sandaconda},
+    {gMonPalette_Sandaconda, sVariants_Sandaconda, sVariantNames_silicobra},
 #endif
 #if (P_FAMILY_CRAMORANT)
-    {gMonPalette_Cramorant, sVariants_Cramorant},
+    {gMonPalette_Cramorant, sVariants_Cramorant, sVariantNames_cramorant},
 #endif
 #if (P_FAMILY_CRAMORANT)
-    {gMonPalette_CramorantGulping, sVariants_CramorantGulping},
+    {gMonPalette_CramorantGulping, sVariants_CramorantGulping, sVariantNames_cramorant},
 #endif
 #if (P_FAMILY_CRAMORANT)
-    {gMonPalette_CramorantGorging, sVariants_CramorantGorging},
+    {gMonPalette_CramorantGorging, sVariants_CramorantGorging, sVariantNames_cramorant},
 #endif
 #if (P_FAMILY_ARROKUDA)
-    {gMonPalette_Arrokuda, sVariants_Arrokuda},
+    {gMonPalette_Arrokuda, sVariants_Arrokuda, sVariantNames_arrokuda},
 #endif
 #if (P_FAMILY_ARROKUDA)
-    {gMonPalette_Barraskewda, sVariants_Barraskewda},
+    {gMonPalette_Barraskewda, sVariants_Barraskewda, sVariantNames_arrokuda},
 #endif
 #if (P_FAMILY_TOXEL)
-    {gMonPalette_Toxel, sVariants_Toxel},
+    {gMonPalette_Toxel, sVariants_Toxel, sVariantNames_toxel},
 #endif
 #if (P_FAMILY_TOXEL)
-    {gMonPalette_ToxtricityAmped, sVariants_ToxtricityAmped},
+    {gMonPalette_ToxtricityAmped, sVariants_ToxtricityAmped, sVariantNames_toxel},
 #endif
 #if (P_FAMILY_TOXEL)
-    {gMonPalette_ToxtricityLowKey, sVariants_ToxtricityLowKey},
+    {gMonPalette_ToxtricityLowKey, sVariants_ToxtricityLowKey, sVariantNames_toxel},
 #endif
 #if (P_FAMILY_SIZZLIPEDE)
-    {gMonPalette_Sizzlipede, sVariants_Sizzlipede},
+    {gMonPalette_Sizzlipede, sVariants_Sizzlipede, sVariantNames_sizzlipede},
 #endif
 #if (P_FAMILY_SIZZLIPEDE)
-    {gMonPalette_Centiskorch, sVariants_Centiskorch},
+    {gMonPalette_Centiskorch, sVariants_Centiskorch, sVariantNames_sizzlipede},
 #endif
 #if (P_FAMILY_CLOBBOPUS)
-    {gMonPalette_Clobbopus, sVariants_Clobbopus},
+    {gMonPalette_Clobbopus, sVariants_Clobbopus, sVariantNames_clobbopus},
 #endif
 #if (P_FAMILY_CLOBBOPUS)
-    {gMonPalette_Grapploct, sVariants_Grapploct},
+    {gMonPalette_Grapploct, sVariants_Grapploct, sVariantNames_clobbopus},
 #endif
 #if (P_FAMILY_SINISTEA)
-    {gMonPalette_Sinistea, sVariants_Sinistea},
+    {gMonPalette_Sinistea, sVariants_Sinistea, sVariantNames_sinistea},
 #endif
 #if (P_FAMILY_SINISTEA)
-    {gMonPalette_Polteageist, sVariants_Polteageist},
+    {gMonPalette_Polteageist, sVariants_Polteageist, sVariantNames_sinistea},
 #endif
 #if (P_FAMILY_IMPIDIMP)
-    {gMonPalette_Impidimp, sVariants_Impidimp},
+    {gMonPalette_Impidimp, sVariants_Impidimp, sVariantNames_impidimp},
 #endif
 #if (P_FAMILY_IMPIDIMP)
-    {gMonPalette_Morgrem, sVariants_Morgrem},
+    {gMonPalette_Morgrem, sVariants_Morgrem, sVariantNames_impidimp},
 #endif
 #if (P_FAMILY_IMPIDIMP)
-    {gMonPalette_Grimmsnarl, sVariants_Grimmsnarl},
+    {gMonPalette_Grimmsnarl, sVariants_Grimmsnarl, sVariantNames_impidimp},
 #endif
 #if (P_FAMILY_MILCERY)
-    {gMonPalette_Milcery, sVariants_Milcery},
+    {gMonPalette_Milcery, sVariants_Milcery, sVariantNames_milcery},
 #endif
 #if (P_FAMILY_FALINKS)
-    {gMonPalette_Falinks, sVariants_Falinks},
+    {gMonPalette_Falinks, sVariants_Falinks, sVariantNames_falinks},
 #endif
 #if (P_FAMILY_PINCURCHIN)
-    {gMonPalette_Pincurchin, sVariants_Pincurchin},
+    {gMonPalette_Pincurchin, sVariants_Pincurchin, sVariantNames_pincurchin},
 #endif
 #if (P_FAMILY_SNOM)
-    {gMonPalette_Snom, sVariants_Snom},
+    {gMonPalette_Snom, sVariants_Snom, sVariantNames_snom},
 #endif
 #if (P_FAMILY_SNOM)
-    {gMonPalette_Frosmoth, sVariants_Frosmoth},
+    {gMonPalette_Frosmoth, sVariants_Frosmoth, sVariantNames_snom},
 #endif
 #if (P_FAMILY_STONJOURNER)
-    {gMonPalette_Stonjourner, sVariants_Stonjourner},
+    {gMonPalette_Stonjourner, sVariants_Stonjourner, sVariantNames_stonjourner},
 #endif
 #if (P_FAMILY_EISCUE)
-    {gMonPalette_EiscueIce, sVariants_EiscueIce},
+    {gMonPalette_EiscueIce, sVariants_EiscueIce, sVariantNames_eiscue},
 #endif
 #if (P_FAMILY_EISCUE)
-    {gMonPalette_EiscueNoice, sVariants_EiscueNoice},
+    {gMonPalette_EiscueNoice, sVariants_EiscueNoice, sVariantNames_eiscue},
 #endif
 #if (P_FAMILY_INDEEDEE)
-    {gMonPalette_IndeedeeM, sVariants_IndeedeeM},
+    {gMonPalette_IndeedeeM, sVariants_IndeedeeM, sVariantNames_indeedee},
 #endif
 #if (P_FAMILY_INDEEDEE)
-    {gMonPalette_IndeedeeF, sVariants_IndeedeeF},
+    {gMonPalette_IndeedeeF, sVariants_IndeedeeF, sVariantNames_indeedee},
 #endif
 #if (P_FAMILY_MORPEKO)
-    {gMonPalette_MorpekoFullBelly, sVariants_MorpekoFullBelly},
+    {gMonPalette_MorpekoFullBelly, sVariants_MorpekoFullBelly, sVariantNames_morpeko},
 #endif
 #if (P_FAMILY_MORPEKO)
-    {gMonPalette_MorpekoHangry, sVariants_MorpekoHangry},
+    {gMonPalette_MorpekoHangry, sVariants_MorpekoHangry, sVariantNames_morpeko},
 #endif
 #if (P_FAMILY_CUFANT)
-    {gMonPalette_Cufant, sVariants_Cufant},
+    {gMonPalette_Cufant, sVariants_Cufant, sVariantNames_cufant},
 #endif
 #if (P_FAMILY_CUFANT)
-    {gMonPalette_Copperajah, sVariants_Copperajah},
+    {gMonPalette_Copperajah, sVariants_Copperajah, sVariantNames_cufant},
 #endif
 #if (P_FAMILY_DRACOZOLT)
-    {gMonPalette_Dracozolt, sVariants_Dracozolt},
+    {gMonPalette_Dracozolt, sVariants_Dracozolt, sVariantNames_fossils},
 #endif
 #if (P_FAMILY_ARCTOZOLT)
-    {gMonPalette_Arctozolt, sVariants_Arctozolt},
+    {gMonPalette_Arctozolt, sVariants_Arctozolt, sVariantNames_fossils},
 #endif
 #if (P_FAMILY_DRACOVISH)
-    {gMonPalette_Dracovish, sVariants_Dracovish},
+    {gMonPalette_Dracovish, sVariants_Dracovish, sVariantNames_fossils},
 #endif
 #if (P_FAMILY_ARCTOVISH)
-    {gMonPalette_Arctovish, sVariants_Arctovish},
+    {gMonPalette_Arctovish, sVariants_Arctovish, sVariantNames_fossils},
 #endif
 #if (P_FAMILY_DURALUDON)
-    {gMonPalette_Duraludon, sVariants_Duraludon},
+    {gMonPalette_Duraludon, sVariants_Duraludon, sVariantNames_duraludon},
 #endif
 #if (P_FAMILY_DURALUDON) && (P_GEN_9_CROSS_EVOS)
-    {gMonPalette_Archaludon, sVariants_Archaludon},
+    {gMonPalette_Archaludon, sVariants_Archaludon, sVariantNames_archaludon},
 #endif
 #if (P_FAMILY_DREEPY)
-    {gMonPalette_Dreepy, sVariants_Dreepy},
+    {gMonPalette_Dreepy, sVariants_Dreepy, sVariantNames_dreepy},
 #endif
 #if (P_FAMILY_DREEPY)
-    {gMonPalette_Drakloak, sVariants_Drakloak},
+    {gMonPalette_Drakloak, sVariants_Drakloak, sVariantNames_dreepy},
 #endif
 #if (P_FAMILY_DREEPY)
-    {gMonPalette_Dragapult, sVariants_Dragapult},
+    {gMonPalette_Dragapult, sVariants_Dragapult, sVariantNames_dreepy},
 #endif
 #if (P_FAMILY_ZACIAN)
-    {gMonPalette_ZacianHero, sVariants_ZacianHero},
+    {gMonPalette_ZacianHero, sVariants_ZacianHero, sVariantNames_zacian},
 #endif
 #if (P_FAMILY_ZACIAN)
-    {gMonPalette_ZacianCrowned, sVariants_ZacianCrowned},
+    {gMonPalette_ZacianCrowned, sVariants_ZacianCrowned, sVariantNames_zacian},
 #endif
 #if (P_FAMILY_ZAMAZENTA)
-    {gMonPalette_ZamazentaHero, sVariants_ZamazentaHero},
+    {gMonPalette_ZamazentaHero, sVariants_ZamazentaHero, sVariantNames_zacian},
 #endif
 #if (P_FAMILY_ZAMAZENTA)
-    {gMonPalette_ZamazentaCrowned, sVariants_ZamazentaCrowned},
+    {gMonPalette_ZamazentaCrowned, sVariants_ZamazentaCrowned, sVariantNames_zacian},
 #endif
 #if (P_FAMILY_ETERNATUS)
-    {gMonPalette_Eternatus, sVariants_Eternatus},
+    {gMonPalette_Eternatus, sVariants_Eternatus, sVariantNames_eternatus},
 #endif
 #if (P_FAMILY_ETERNATUS)
-    {gMonPalette_EternatusEternamax, sVariants_EternatusEternamax},
+    {gMonPalette_EternatusEternamax, sVariants_EternatusEternamax, sVariantNames_eternatus},
 #endif
 #if (P_FAMILY_KUBFU)
-    {gMonPalette_Kubfu, sVariants_Kubfu},
+    {gMonPalette_Kubfu, sVariants_Kubfu, sVariantNames_kubfu},
 #endif
 #if (P_FAMILY_KUBFU)
-    {gMonPalette_UrshifuSingleStrike, sVariants_UrshifuSingleStrike},
+    {gMonPalette_UrshifuSingleStrike, sVariants_UrshifuSingleStrike, sVariantNames_kubfu},
 #endif
 #if (P_FAMILY_KUBFU)
-    {gMonPalette_UrshifuRapidStrike, sVariants_UrshifuRapidStrike},
+    {gMonPalette_UrshifuRapidStrike, sVariants_UrshifuRapidStrike, sVariantNames_kubfu},
 #endif
 #if (P_FAMILY_ZARUDE)
-    {gMonPalette_Zarude, sVariants_Zarude},
+    {gMonPalette_Zarude, sVariants_Zarude, sVariantNames_zarude},
 #endif
 #if (P_FAMILY_ZARUDE)
-    {gMonPalette_ZarudeDada, sVariants_ZarudeDada},
+    {gMonPalette_ZarudeDada, sVariants_ZarudeDada, sVariantNames_zarude},
 #endif
 #if (P_FAMILY_REGIELEKI)
-    {gMonPalette_Regieleki, sVariants_Regieleki},
+    {gMonPalette_Regieleki, sVariants_Regieleki, sVariantNames_regieleki},
 #endif
 #if (P_FAMILY_REGIDRAGO)
-    {gMonPalette_Regidrago, sVariants_Regidrago},
+    {gMonPalette_Regidrago, sVariants_Regidrago, sVariantNames_regidrago},
 #endif
 #if (P_FAMILY_GLASTRIER)
-    {gMonPalette_Glastrier, sVariants_Glastrier},
+    {gMonPalette_Glastrier, sVariants_Glastrier, sVariantNames_calyrex},
 #endif
 #if (P_FAMILY_SPECTRIER)
-    {gMonPalette_Spectrier, sVariants_Spectrier},
+    {gMonPalette_Spectrier, sVariants_Spectrier, sVariantNames_calyrex},
 #endif
 #if (P_FAMILY_CALYREX)
-    {gMonPalette_Calyrex, sVariants_Calyrex},
+    {gMonPalette_Calyrex, sVariants_Calyrex, sVariantNames_calyrex},
 #endif
 #if (P_FAMILY_CALYREX) && (P_FUSION_FORMS)
-    {gMonPalette_CalyrexIce, sVariants_CalyrexIce},
+    {gMonPalette_CalyrexIce, sVariants_CalyrexIce, sVariantNames_calyrex},
 #endif
 #if (P_FAMILY_CALYREX) && (P_FUSION_FORMS)
-    {gMonPalette_CalyrexShadow, sVariants_CalyrexShadow},
+    {gMonPalette_CalyrexShadow, sVariants_CalyrexShadow, sVariantNames_calyrex},
 #endif
 #if (P_FAMILY_SPRIGATITO)
-    {gMonPalette_Sprigatito, sVariants_Sprigatito},
+    {gMonPalette_Sprigatito, sVariants_Sprigatito, sVariantNames_sprigatito},
 #endif
 #if (P_FAMILY_SPRIGATITO)
-    {gMonPalette_Floragato, sVariants_Floragato},
+    {gMonPalette_Floragato, sVariants_Floragato, sVariantNames_sprigatito},
 #endif
 #if (P_FAMILY_SPRIGATITO)
-    {gMonPalette_Meowscarada, sVariants_Meowscarada},
+    {gMonPalette_Meowscarada, sVariants_Meowscarada, sVariantNames_sprigatito},
 #endif
 #if (P_FAMILY_FUECOCO)
-    {gMonPalette_Fuecoco, sVariants_Fuecoco},
+    {gMonPalette_Fuecoco, sVariants_Fuecoco, sVariantNames_fuecoco},
 #endif
 #if (P_FAMILY_FUECOCO)
-    {gMonPalette_Crocalor, sVariants_Crocalor},
+    {gMonPalette_Crocalor, sVariants_Crocalor, sVariantNames_fuecoco},
 #endif
 #if (P_FAMILY_FUECOCO)
-    {gMonPalette_Skeledirge, sVariants_Skeledirge},
+    {gMonPalette_Skeledirge, sVariants_Skeledirge, sVariantNames_fuecoco},
 #endif
 #if (P_FAMILY_QUAXLY)
-    {gMonPalette_Quaxly, sVariants_Quaxly},
+    {gMonPalette_Quaxly, sVariants_Quaxly, sVariantNames_quaxly},
 #endif
 #if (P_FAMILY_QUAXLY)
-    {gMonPalette_Quaxwell, sVariants_Quaxwell},
+    {gMonPalette_Quaxwell, sVariants_Quaxwell, sVariantNames_quaxly},
 #endif
 #if (P_FAMILY_QUAXLY)
-    {gMonPalette_Quaquaval, sVariants_Quaquaval},
+    {gMonPalette_Quaquaval, sVariants_Quaquaval, sVariantNames_quaxly},
 #endif
 #if (P_FAMILY_LECHONK)
-    {gMonPalette_Lechonk, sVariants_Lechonk},
+    {gMonPalette_Lechonk, sVariants_Lechonk, sVariantNames_lechonk},
 #endif
 #if (P_FAMILY_LECHONK)
-    {gMonPalette_OinkologneM, sVariants_OinkologneM},
+    {gMonPalette_OinkologneM, sVariants_OinkologneM, sVariantNames_lechonk},
 #endif
 #if (P_FAMILY_LECHONK)
-    {gMonPalette_OinkologneF, sVariants_OinkologneF},
+    {gMonPalette_OinkologneF, sVariants_OinkologneF, sVariantNames_lechonk},
 #endif
 #if (P_FAMILY_TAROUNTULA)
-    {gMonPalette_Tarountula, sVariants_Tarountula},
+    {gMonPalette_Tarountula, sVariants_Tarountula, sVariantNames_tarountula},
 #endif
 #if (P_FAMILY_TAROUNTULA)
-    {gMonPalette_Spidops, sVariants_Spidops},
+    {gMonPalette_Spidops, sVariants_Spidops, sVariantNames_tarountula},
 #endif
 #if (P_FAMILY_NYMBLE)
-    {gMonPalette_Nymble, sVariants_Nymble},
+    {gMonPalette_Nymble, sVariants_Nymble, sVariantNames_nymble},
 #endif
 #if (P_FAMILY_NYMBLE)
-    {gMonPalette_Lokix, sVariants_Lokix},
+    {gMonPalette_Lokix, sVariants_Lokix, sVariantNames_nymble},
 #endif
 #if (P_FAMILY_PAWMI)
-    {gMonPalette_Pawmi, sVariants_Pawmi},
+    {gMonPalette_Pawmi, sVariants_Pawmi, sVariantNames_pawmi},
 #endif
 #if (P_FAMILY_PAWMI)
-    {gMonPalette_Pawmo, sVariants_Pawmo},
+    {gMonPalette_Pawmo, sVariants_Pawmo, sVariantNames_pawmi},
 #endif
 #if (P_FAMILY_PAWMI)
-    {gMonPalette_Pawmot, sVariants_Pawmot},
+    {gMonPalette_Pawmot, sVariants_Pawmot, sVariantNames_pawmi},
 #endif
 #if (P_FAMILY_TANDEMAUS)
-    {gMonPalette_Tandemaus, sVariants_Tandemaus},
+    {gMonPalette_Tandemaus, sVariants_Tandemaus, sVariantNames_tandemaus},
 #endif
 #if (P_FAMILY_TANDEMAUS)
-    {gMonPalette_Maushold, sVariants_Maushold},
+    {gMonPalette_Maushold, sVariants_Maushold, sVariantNames_tandemaus},
 #endif
 #if (P_FAMILY_FIDOUGH)
-    {gMonPalette_Fidough, sVariants_Fidough},
+    {gMonPalette_Fidough, sVariants_Fidough, sVariantNames_fidough},
 #endif
 #if (P_FAMILY_FIDOUGH)
-    {gMonPalette_Dachsbun, sVariants_Dachsbun},
+    {gMonPalette_Dachsbun, sVariants_Dachsbun, sVariantNames_fidough},
 #endif
 #if (P_FAMILY_SMOLIV)
-    {gMonPalette_Smoliv, sVariants_Smoliv},
+    {gMonPalette_Smoliv, sVariants_Smoliv, sVariantNames_smoliv},
 #endif
 #if (P_FAMILY_SMOLIV)
-    {gMonPalette_Dolliv, sVariants_Dolliv},
+    {gMonPalette_Dolliv, sVariants_Dolliv, sVariantNames_smoliv},
 #endif
 #if (P_FAMILY_SMOLIV)
-    {gMonPalette_Arboliva, sVariants_Arboliva},
+    {gMonPalette_Arboliva, sVariants_Arboliva, sVariantNames_smoliv},
 #endif
 #if (P_FAMILY_SQUAWKABILLY)
-    {gMonPalette_SquawkabillyGreen, sVariants_SquawkabillyGreen},
+    {gMonPalette_SquawkabillyGreen, sVariants_SquawkabillyGreen, sVariantNames_squawkabilly},
 #endif
 #if (P_FAMILY_SQUAWKABILLY)
-    {gMonPalette_SquawkabillyBlue, sVariants_SquawkabillyBlue},
+    {gMonPalette_SquawkabillyBlue, sVariants_SquawkabillyBlue, sVariantNames_squawkabilly},
 #endif
 #if (P_FAMILY_SQUAWKABILLY)
-    {gMonPalette_SquawkabillyYellow, sVariants_SquawkabillyYellow},
+    {gMonPalette_SquawkabillyYellow, sVariants_SquawkabillyYellow, sVariantNames_squawkabilly},
 #endif
 #if (P_FAMILY_SQUAWKABILLY)
-    {gMonPalette_SquawkabillyWhite, sVariants_SquawkabillyWhite},
+    {gMonPalette_SquawkabillyWhite, sVariants_SquawkabillyWhite, sVariantNames_squawkabilly},
 #endif
 #if (P_FAMILY_NACLI)
-    {gMonPalette_Nacli, sVariants_Nacli},
+    {gMonPalette_Nacli, sVariants_Nacli, sVariantNames_nacli},
 #endif
 #if (P_FAMILY_NACLI)
-    {gMonPalette_Naclstack, sVariants_Naclstack},
+    {gMonPalette_Naclstack, sVariants_Naclstack, sVariantNames_nacli},
 #endif
 #if (P_FAMILY_NACLI)
-    {gMonPalette_Garganacl, sVariants_Garganacl},
+    {gMonPalette_Garganacl, sVariants_Garganacl, sVariantNames_nacli},
 #endif
 #if (P_FAMILY_CHARCADET)
-    {gMonPalette_Charcadet, sVariants_Charcadet},
+    {gMonPalette_Charcadet, sVariants_Charcadet, sVariantNames_charcadet},
 #endif
 #if (P_FAMILY_CHARCADET)
-    {gMonPalette_Armarouge, sVariants_Armarouge},
+    {gMonPalette_Armarouge, sVariants_Armarouge, sVariantNames_charcadet},
 #endif
 #if (P_FAMILY_CHARCADET)
-    {gMonPalette_Ceruledge, sVariants_Ceruledge},
+    {gMonPalette_Ceruledge, sVariants_Ceruledge, sVariantNames_charcadet},
 #endif
 #if (P_FAMILY_TADBULB)
-    {gMonPalette_Tadbulb, sVariants_Tadbulb},
+    {gMonPalette_Tadbulb, sVariants_Tadbulb, sVariantNames_tadbulb},
 #endif
 #if (P_FAMILY_TADBULB)
-    {gMonPalette_Bellibolt, sVariants_Bellibolt},
+    {gMonPalette_Bellibolt, sVariants_Bellibolt, sVariantNames_tadbulb},
 #endif
 #if (P_FAMILY_WATTREL)
-    {gMonPalette_Wattrel, sVariants_Wattrel},
+    {gMonPalette_Wattrel, sVariants_Wattrel, sVariantNames_wattrel},
 #endif
 #if (P_FAMILY_WATTREL)
-    {gMonPalette_Kilowattrel, sVariants_Kilowattrel},
+    {gMonPalette_Kilowattrel, sVariants_Kilowattrel, sVariantNames_wattrel},
 #endif
 #if (P_FAMILY_MASCHIFF)
-    {gMonPalette_Maschiff, sVariants_Maschiff},
+    {gMonPalette_Maschiff, sVariants_Maschiff, sVariantNames_maschiff},
 #endif
 #if (P_FAMILY_MASCHIFF)
-    {gMonPalette_Mabosstiff, sVariants_Mabosstiff},
+    {gMonPalette_Mabosstiff, sVariants_Mabosstiff, sVariantNames_maschiff},
 #endif
 #if (P_FAMILY_SHROODLE)
-    {gMonPalette_Shroodle, sVariants_Shroodle},
+    {gMonPalette_Shroodle, sVariants_Shroodle, sVariantNames_shroodle},
 #endif
 #if (P_FAMILY_SHROODLE)
-    {gMonPalette_Grafaiai, sVariants_Grafaiai},
+    {gMonPalette_Grafaiai, sVariants_Grafaiai, sVariantNames_shroodle},
 #endif
 #if (P_FAMILY_BRAMBLIN)
-    {gMonPalette_Bramblin, sVariants_Bramblin},
+    {gMonPalette_Bramblin, sVariants_Bramblin, sVariantNames_bramblin},
 #endif
 #if (P_FAMILY_BRAMBLIN)
-    {gMonPalette_Brambleghast, sVariants_Brambleghast},
+    {gMonPalette_Brambleghast, sVariants_Brambleghast, sVariantNames_bramblin},
 #endif
 #if (P_FAMILY_TOEDSCOOL)
-    {gMonPalette_Toedscool, sVariants_Toedscool},
+    {gMonPalette_Toedscool, sVariants_Toedscool, sVariantNames_toedscool},
 #endif
 #if (P_FAMILY_TOEDSCOOL)
-    {gMonPalette_Toedscruel, sVariants_Toedscruel},
+    {gMonPalette_Toedscruel, sVariants_Toedscruel, sVariantNames_toedscool},
 #endif
 #if (P_FAMILY_KLAWF)
-    {gMonPalette_Klawf, sVariants_Klawf},
+    {gMonPalette_Klawf, sVariants_Klawf, sVariantNames_klawf},
 #endif
 #if (P_FAMILY_CAPSAKID)
-    {gMonPalette_Capsakid, sVariants_Capsakid},
+    {gMonPalette_Capsakid, sVariants_Capsakid, sVariantNames_capsakid},
 #endif
 #if (P_FAMILY_CAPSAKID)
-    {gMonPalette_Scovillain, sVariants_Scovillain},
+    {gMonPalette_Scovillain, sVariants_Scovillain, sVariantNames_capsakid},
 #endif
 #if (P_FAMILY_RELLOR)
-    {gMonPalette_Rellor, sVariants_Rellor},
+    {gMonPalette_Rellor, sVariants_Rellor, sVariantNames_rellor},
 #endif
 #if (P_FAMILY_RELLOR)
-    {gMonPalette_Rabsca, sVariants_Rabsca},
+    {gMonPalette_Rabsca, sVariants_Rabsca, sVariantNames_rellor},
 #endif
 #if (P_FAMILY_FLITTLE)
-    {gMonPalette_Flittle, sVariants_Flittle},
+    {gMonPalette_Flittle, sVariants_Flittle, sVariantNames_flittle},
 #endif
 #if (P_FAMILY_FLITTLE)
-    {gMonPalette_Espathra, sVariants_Espathra},
+    {gMonPalette_Espathra, sVariants_Espathra, sVariantNames_flittle},
 #endif
 #if (P_FAMILY_TINKATINK)
-    {gMonPalette_Tinkatink, sVariants_Tinkatink},
+    {gMonPalette_Tinkatink, sVariants_Tinkatink, sVariantNames_tinkatink},
 #endif
 #if (P_FAMILY_TINKATINK)
-    {gMonPalette_Tinkatuff, sVariants_Tinkatuff},
+    {gMonPalette_Tinkatuff, sVariants_Tinkatuff, sVariantNames_tinkatink},
 #endif
 #if (P_FAMILY_TINKATINK)
-    {gMonPalette_Tinkaton, sVariants_Tinkaton},
+    {gMonPalette_Tinkaton, sVariants_Tinkaton, sVariantNames_tinkatink},
 #endif
 #if (P_FAMILY_WIGLETT)
-    {gMonPalette_Wiglett, sVariants_Wiglett},
+    {gMonPalette_Wiglett, sVariants_Wiglett, sVariantNames_wiglett},
 #endif
 #if (P_FAMILY_WIGLETT)
-    {gMonPalette_Wugtrio, sVariants_Wugtrio},
+    {gMonPalette_Wugtrio, sVariants_Wugtrio, sVariantNames_wiglett},
 #endif
 #if (P_FAMILY_BOMBIRDIER)
-    {gMonPalette_Bombirdier, sVariants_Bombirdier},
+    {gMonPalette_Bombirdier, sVariants_Bombirdier, sVariantNames_bombirdier},
 #endif
 #if (P_FAMILY_FINIZEN)
-    {gMonPalette_Finizen, sVariants_Finizen},
+    {gMonPalette_Finizen, sVariants_Finizen, sVariantNames_finizen},
 #endif
 #if (P_FAMILY_FINIZEN)
-    {gMonPalette_PalafinZero, sVariants_PalafinZero},
+    {gMonPalette_PalafinZero, sVariants_PalafinZero, sVariantNames_finizen},
 #endif
 #if (P_FAMILY_FINIZEN)
-    {gMonPalette_PalafinHero, sVariants_PalafinHero},
+    {gMonPalette_PalafinHero, sVariants_PalafinHero, sVariantNames_finizen},
 #endif
 #if (P_FAMILY_VAROOM)
-    {gMonPalette_Varoom, sVariants_Varoom},
+    {gMonPalette_Varoom, sVariants_Varoom, sVariantNames_varoom},
 #endif
 #if (P_FAMILY_VAROOM)
-    {gMonPalette_Revavroom, sVariants_Revavroom},
+    {gMonPalette_Revavroom, sVariants_Revavroom, sVariantNames_varoom},
 #endif
 #if (P_FAMILY_CYCLIZAR)
-    {gMonPalette_Cyclizar, sVariants_Cyclizar},
+    {gMonPalette_Cyclizar, sVariants_Cyclizar, sVariantNames_cyclizar},
 #endif
 #if (P_FAMILY_ORTHWORM)
-    {gMonPalette_Orthworm, sVariants_Orthworm},
+    {gMonPalette_Orthworm, sVariants_Orthworm, sVariantNames_orthworm},
 #endif
 #if (P_FAMILY_GLIMMET)
-    {gMonPalette_Glimmet, sVariants_Glimmet},
+    {gMonPalette_Glimmet, sVariants_Glimmet, sVariantNames_glimmet},
 #endif
 #if (P_FAMILY_GLIMMET)
-    {gMonPalette_Glimmora, sVariants_Glimmora},
+    {gMonPalette_Glimmora, sVariants_Glimmora, sVariantNames_glimmet},
 #endif
 #if (P_FAMILY_GREAVARD)
-    {gMonPalette_Greavard, sVariants_Greavard},
+    {gMonPalette_Greavard, sVariants_Greavard, sVariantNames_greavard},
 #endif
 #if (P_FAMILY_GREAVARD)
-    {gMonPalette_Houndstone, sVariants_Houndstone},
+    {gMonPalette_Houndstone, sVariants_Houndstone, sVariantNames_greavard},
 #endif
 #if (P_FAMILY_FLAMIGO)
-    {gMonPalette_Flamigo, sVariants_Flamigo},
+    {gMonPalette_Flamigo, sVariants_Flamigo, sVariantNames_flamigo},
 #endif
 #if (P_FAMILY_CETODDLE)
-    {gMonPalette_Cetoddle, sVariants_Cetoddle},
+    {gMonPalette_Cetoddle, sVariants_Cetoddle, sVariantNames_cetoddle},
 #endif
 #if (P_FAMILY_CETODDLE)
-    {gMonPalette_Cetitan, sVariants_Cetitan},
+    {gMonPalette_Cetitan, sVariants_Cetitan, sVariantNames_cetoddle},
 #endif
 #if (P_FAMILY_VELUZA)
-    {gMonPalette_Veluza, sVariants_Veluza},
+    {gMonPalette_Veluza, sVariants_Veluza, sVariantNames_veluza},
 #endif
 #if (P_FAMILY_DONDOZO)
-    {gMonPalette_Dondozo, sVariants_Dondozo},
+    {gMonPalette_Dondozo, sVariants_Dondozo, sVariantNames_dondozo},
 #endif
 #if (P_FAMILY_TATSUGIRI)
-    {gMonPalette_TatsugiriCurly, sVariants_TatsugiriCurly},
+    {gMonPalette_TatsugiriCurly, sVariants_TatsugiriCurly, sVariantNames_tatsugiri},
 #endif
 #if (P_FAMILY_TATSUGIRI)
-    {gMonPalette_TatsugiriDroopy, sVariants_TatsugiriDroopy},
+    {gMonPalette_TatsugiriDroopy, sVariants_TatsugiriDroopy, sVariantNames_tatsugiri},
 #endif
 #if (P_FAMILY_TATSUGIRI)
-    {gMonPalette_TatsugiriStretchy, sVariants_TatsugiriStretchy},
+    {gMonPalette_TatsugiriStretchy, sVariants_TatsugiriStretchy, sVariantNames_tatsugiri},
 #endif
 #if (P_FAMILY_GREAT_TUSK)
-    {gMonPalette_GreatTusk, sVariants_GreatTusk},
+    {gMonPalette_GreatTusk, sVariants_GreatTusk, sVariantNames_great_tusk},
 #endif
 #if (P_FAMILY_SCREAM_TAIL)
-    {gMonPalette_ScreamTail, sVariants_ScreamTail},
+    {gMonPalette_ScreamTail, sVariants_ScreamTail, sVariantNames_scream_tail},
 #endif
 #if (P_FAMILY_BRUTE_BONNET)
-    {gMonPalette_BruteBonnet, sVariants_BruteBonnet},
+    {gMonPalette_BruteBonnet, sVariants_BruteBonnet, sVariantNames_brute_bonnet},
 #endif
 #if (P_FAMILY_FLUTTER_MANE)
-    {gMonPalette_FlutterMane, sVariants_FlutterMane},
+    {gMonPalette_FlutterMane, sVariants_FlutterMane, sVariantNames_flutter_mane},
 #endif
 #if (P_FAMILY_SLITHER_WING)
-    {gMonPalette_SlitherWing, sVariants_SlitherWing},
+    {gMonPalette_SlitherWing, sVariants_SlitherWing, sVariantNames_slither_wing},
 #endif
 #if (P_FAMILY_SANDY_SHOCKS)
-    {gMonPalette_SandyShocks, sVariants_SandyShocks},
+    {gMonPalette_SandyShocks, sVariants_SandyShocks, sVariantNames_sandy_shocks},
 #endif
 #if (P_FAMILY_IRON_TREADS)
-    {gMonPalette_IronTreads, sVariants_IronTreads},
+    {gMonPalette_IronTreads, sVariants_IronTreads, sVariantNames_iron_treads},
 #endif
 #if (P_FAMILY_IRON_BUNDLE)
-    {gMonPalette_IronBundle, sVariants_IronBundle},
+    {gMonPalette_IronBundle, sVariants_IronBundle, sVariantNames_iron_bundle},
 #endif
 #if (P_FAMILY_IRON_HANDS)
-    {gMonPalette_IronHands, sVariants_IronHands},
+    {gMonPalette_IronHands, sVariants_IronHands, sVariantNames_iron_hands},
 #endif
 #if (P_FAMILY_IRON_JUGULIS)
-    {gMonPalette_IronJugulis, sVariants_IronJugulis},
+    {gMonPalette_IronJugulis, sVariants_IronJugulis, sVariantNames_iron_jugulis},
 #endif
 #if (P_FAMILY_IRON_MOTH)
-    {gMonPalette_IronMoth, sVariants_IronMoth},
+    {gMonPalette_IronMoth, sVariants_IronMoth, sVariantNames_iron_moth},
 #endif
 #if (P_FAMILY_IRON_THORNS)
-    {gMonPalette_IronThorns, sVariants_IronThorns},
+    {gMonPalette_IronThorns, sVariants_IronThorns, sVariantNames_iron_thorns},
 #endif
 #if (P_FAMILY_FRIGIBAX)
-    {gMonPalette_Frigibax, sVariants_Frigibax},
+    {gMonPalette_Frigibax, sVariants_Frigibax, sVariantNames_frigibax},
 #endif
 #if (P_FAMILY_FRIGIBAX)
-    {gMonPalette_Arctibax, sVariants_Arctibax},
+    {gMonPalette_Arctibax, sVariants_Arctibax, sVariantNames_frigibax},
 #endif
 #if (P_FAMILY_FRIGIBAX)
-    {gMonPalette_Baxcalibur, sVariants_Baxcalibur},
+    {gMonPalette_Baxcalibur, sVariants_Baxcalibur, sVariantNames_frigibax},
 #endif
 #if (P_FAMILY_GIMMIGHOUL)
-    {gMonPalette_GimmighoulChest, sVariants_GimmighoulChest},
+    {gMonPalette_GimmighoulChest, sVariants_GimmighoulChest, sVariantNames_gimmighoul},
 #endif
 #if (P_FAMILY_GIMMIGHOUL)
-    {gMonPalette_GimmighoulRoaming, sVariants_GimmighoulRoaming},
+    {gMonPalette_GimmighoulRoaming, sVariants_GimmighoulRoaming, sVariantNames_gimmighoul},
 #endif
 #if (P_FAMILY_GIMMIGHOUL)
-    {gMonPalette_Gholdengo, sVariants_Gholdengo},
+    {gMonPalette_Gholdengo, sVariants_Gholdengo, sVariantNames_gimmighoul},
 #endif
 #if (P_FAMILY_WO_CHIEN)
-    {gMonPalette_WoChien, sVariants_WoChien},
+    {gMonPalette_WoChien, sVariants_WoChien, sVariantNames_wo_chien},
 #endif
 #if (P_FAMILY_CHIEN_PAO)
-    {gMonPalette_ChienPao, sVariants_ChienPao},
+    {gMonPalette_ChienPao, sVariants_ChienPao, sVariantNames_chien_pao},
 #endif
 #if (P_FAMILY_TING_LU)
-    {gMonPalette_TingLu, sVariants_TingLu},
+    {gMonPalette_TingLu, sVariants_TingLu, sVariantNames_ting_lu},
 #endif
 #if (P_FAMILY_CHI_YU)
-    {gMonPalette_ChiYu, sVariants_ChiYu},
+    {gMonPalette_ChiYu, sVariants_ChiYu, sVariantNames_chi_yu},
 #endif
 #if (P_FAMILY_ROARING_MOON)
-    {gMonPalette_RoaringMoon, sVariants_RoaringMoon},
+    {gMonPalette_RoaringMoon, sVariants_RoaringMoon, sVariantNames_roaring_moon},
 #endif
 #if (P_FAMILY_IRON_VALIANT)
-    {gMonPalette_IronValiant, sVariants_IronValiant},
+    {gMonPalette_IronValiant, sVariants_IronValiant, sVariantNames_iron_valiant},
 #endif
 #if (P_FAMILY_KORAIDON)
-    {gMonPalette_Koraidon, sVariants_Koraidon},
+    {gMonPalette_Koraidon, sVariants_Koraidon, sVariantNames_koraidon},
 #endif
 #if (P_FAMILY_MIRAIDON)
-    {gMonPalette_Miraidon, sVariants_Miraidon},
+    {gMonPalette_Miraidon, sVariants_Miraidon, sVariantNames_miraidon},
 #endif
 #if (P_FAMILY_WALKING_WAKE)
-    {gMonPalette_WalkingWake, sVariants_WalkingWake},
+    {gMonPalette_WalkingWake, sVariants_WalkingWake, sVariantNames_walking_wake},
 #endif
 #if (P_FAMILY_IRON_LEAVES)
-    {gMonPalette_IronLeaves, sVariants_IronLeaves},
+    {gMonPalette_IronLeaves, sVariants_IronLeaves, sVariantNames_iron_leaves},
 #endif
 #if (P_FAMILY_POLTCHAGEIST)
-    {gMonPalette_Poltchageist, sVariants_Poltchageist},
+    {gMonPalette_Poltchageist, sVariants_Poltchageist, sVariantNames_poltchageist},
 #endif
 #if (P_FAMILY_POLTCHAGEIST)
-    {gMonPalette_Sinistcha, sVariants_Sinistcha},
+    {gMonPalette_Sinistcha, sVariants_Sinistcha, sVariantNames_poltchageist},
 #endif
 #if (P_FAMILY_OKIDOGI)
-    {gMonPalette_Okidogi, sVariants_Okidogi},
+    {gMonPalette_Okidogi, sVariants_Okidogi, sVariantNames_okidogi},
 #endif
 #if (P_FAMILY_MUNKIDORI)
-    {gMonPalette_Munkidori, sVariants_Munkidori},
+    {gMonPalette_Munkidori, sVariants_Munkidori, sVariantNames_okidogi},
 #endif
 #if (P_FAMILY_FEZANDIPITI)
-    {gMonPalette_Fezandipiti, sVariants_Fezandipiti},
+    {gMonPalette_Fezandipiti, sVariants_Fezandipiti, sVariantNames_okidogi},
 #endif
 #if (P_FAMILY_OGERPON)
-    {gMonPalette_OgerponTeal, sVariants_OgerponTeal},
+    {gMonPalette_OgerponTeal, sVariants_OgerponTeal, sVariantNames_ogerpon},
 #endif
 #if (P_FAMILY_OGERPON)
-    {gMonPalette_OgerponWellspring, sVariants_OgerponWellspring},
+    {gMonPalette_OgerponWellspring, sVariants_OgerponWellspring, sVariantNames_ogerpon},
 #endif
 #if (P_FAMILY_OGERPON)
-    {gMonPalette_OgerponHearthflame, sVariants_OgerponHearthflame},
+    {gMonPalette_OgerponHearthflame, sVariants_OgerponHearthflame, sVariantNames_ogerpon},
 #endif
 #if (P_FAMILY_OGERPON)
-    {gMonPalette_OgerponCornerstone, sVariants_OgerponCornerstone},
+    {gMonPalette_OgerponCornerstone, sVariants_OgerponCornerstone, sVariantNames_ogerpon},
 #endif
 #if (P_FAMILY_GOUGING_FIRE)
-    {gMonPalette_GougingFire, sVariants_GougingFire},
+    {gMonPalette_GougingFire, sVariants_GougingFire, sVariantNames_gouging_fire},
 #endif
 #if (P_FAMILY_RAGING_BOLT)
-    {gMonPalette_RagingBolt, sVariants_RagingBolt},
+    {gMonPalette_RagingBolt, sVariants_RagingBolt, sVariantNames_raging_bolt},
 #endif
 #if (P_FAMILY_IRON_BOULDER)
-    {gMonPalette_IronBoulder, sVariants_IronBoulder},
+    {gMonPalette_IronBoulder, sVariants_IronBoulder, sVariantNames_iron_boulder},
 #endif
 #if (P_FAMILY_IRON_CROWN)
-    {gMonPalette_IronCrown, sVariants_IronCrown},
+    {gMonPalette_IronCrown, sVariants_IronCrown, sVariantNames_iron_crown},
 #endif
 #if (P_FAMILY_TERAPAGOS)
-    {gMonPalette_TerapagosNormal, sVariants_TerapagosNormal},
+    {gMonPalette_TerapagosNormal, sVariants_TerapagosNormal, sVariantNames_terapagos},
 #endif
 #if (P_FAMILY_TERAPAGOS)
-    {gMonPalette_TerapagosTerastal, sVariants_TerapagosTerastal},
+    {gMonPalette_TerapagosTerastal, sVariants_TerapagosTerastal, sVariantNames_terapagos},
 #endif
 #if (P_FAMILY_TERAPAGOS)
-    {gMonPalette_TerapagosStellar, sVariants_TerapagosStellar},
+    {gMonPalette_TerapagosStellar, sVariants_TerapagosStellar, sVariantNames_terapagos},
 #endif
 #if (P_FAMILY_PECHARUNT)
-    {gMonPalette_Pecharunt, sVariants_Pecharunt},
+    {gMonPalette_Pecharunt, sVariants_Pecharunt, sVariantNames_pecharunt},
 #endif
-    {NULL, NULL},
+    {NULL, NULL, NULL},
 };

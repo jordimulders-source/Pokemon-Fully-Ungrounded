@@ -11,6 +11,7 @@ soort: ramps.py; herkleuren: colorlib.py).
 
 Gebruik: python3 tools/grounded/variants/variants.py
 """
+import json
 import os
 import re
 import sys
@@ -158,23 +159,46 @@ def main():
         base = base.replace('normal', 'variants') if 'normal' in base else base + '_variants'
         vpath = os.path.join(os.path.dirname(path), base)
         write_pal(os.path.join(ROOT, vpath + '.pal'), [c for v in variants for c in v])
-        entries.append((sym, vpath, conds))
+        entries.append((sym, vpath, conds, folder))
+
+    # Engelse namen voor de Pokédex-pagina (names_en.json: per lijn, met uitzonderingen per map)
+    from recipes import LINES
+    names = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'names_en.json')))
+    def line_key(folder):
+        for key, line in LINES.items():
+            if folder in line['species']:
+                return key
+    def name_sym(folder):
+        key = line_key(folder)
+        return 'sVariantNames_' + (folder.replace('/', '_') if folder in names['folders'] else key)
+    def name_list(folder):
+        lst = list(names['lines'][line_key(folder)])
+        for i, n in names['folders'].get(folder, {}).items():
+            lst[int(i)] = n
+        return lst
 
     lines = ['// Gegenereerd door tools/grounded/variants/variants.py; niet met de hand bewerken.', '']
-    for sym, vpath, conds in entries:
+    done = set()
+    for sym, vpath, conds, folder in entries:
+        ns = name_sym(folder)
+        if ns not in done:
+            done.add(ns)
+            lines.append('static const u8 %s[] = _("%s");' % (ns, '$'.join(name_list(folder))))
+    lines.append('')
+    for sym, vpath, conds, folder in entries:
         if conds:
             lines.append('#if ' + ' && '.join(conds))
         lines.append('static const u16 sVariants_%s[] = INCBIN_U16("%s.gbapal");' % (sym[len('gMonPalette_'):], vpath))
         if conds:
             lines.append('#endif')
     lines += ['', 'const struct VariantPalettes gVariantPalettes[] =', '{']
-    for sym, vpath, conds in entries:
+    for sym, vpath, conds, folder in entries:
         if conds:
             lines.append('#if ' + ' && '.join(conds))
-        lines.append('    {%s, sVariants_%s},' % (sym, sym[len('gMonPalette_'):]))
+        lines.append('    {%s, sVariants_%s, %s},' % (sym, sym[len('gMonPalette_'):], name_sym(folder)))
         if conds:
             lines.append('#endif')
-    lines += ['    {NULL, NULL},', '};', '']
+    lines += ['    {NULL, NULL, NULL},', '};', '']
     with open(OUT_H, 'w') as f:
         f.write('\n'.join(lines))
     print('%d paletten' % len(entries))

@@ -1182,6 +1182,8 @@ struct SaveBlock1
     u8 groundedFlags[NUM_GROUNDED_FLAGS / 8]; // Project Grounded: extra flags (GROUNDED_FLAGS_START)
     // Project Grounded: nieuwe velden alleen hieronder toevoegen (oude saves lezen hier nullen, zie HandleWriteSector).
     struct ItemSlot bagItems[BAG_ITEMS_COUNT]; // Items-pocket (was bag.items met 30 plekken)
+    u8 variantDexSeen[NUM_SPECIES];   // Pokédex-kleurenpagina: bit 0 normaal, 1..6 varianten, 7 shiny
+    u8 variantDexCaught[NUM_SPECIES];
     // sizeof: 0x3???
 };
 

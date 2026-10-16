@@ -35,8 +35,24 @@ MauvilleCity_House2_B1F_EventScript_Caught::
 	releaseall
 	end
 
+@ Project Grounded (Jordi): vóór de 3e badge geen ruis maar luide telesell-reclames met een subliminale boodschap
 MauvilleCity_House2_B1F_EventScript_Static::
-	msgbox MauvilleCity_House2_B1F_Text_Static, MSGBOX_DEFAULT
+	playse SE_PC_ON
+	random 3
+	switch VAR_RESULT
+	case 0, MauvilleCity_House2_B1F_EventScript_Ad0
+	case 1, MauvilleCity_House2_B1F_EventScript_Ad1
+	msgbox MauvilleCity_House2_B1F_Text_Ad2, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MauvilleCity_House2_B1F_EventScript_Ad0::
+	msgbox MauvilleCity_House2_B1F_Text_Ad0, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MauvilleCity_House2_B1F_EventScript_Ad1::
+	msgbox MauvilleCity_House2_B1F_Text_Ad1, MSGBOX_DEFAULT
 	releaseall
 	end
 
@@ -51,6 +67,38 @@ MauvilleCity_House2_B1F_Text_Static:
 	.string "The TV seems to be waiting for\l"
 	.string "someone with more badges.\p"
 	.string "Rude, but fair.$"
+
+MauvilleCity_House2_B1F_Text_Ad0:
+	.string "ARE YOU TIRED of POKé BALLS that just\n"
+	.string "SIT THERE?! Introducing the\l"
+	.string "BALL-O-MATIC 3000! It spins! It beeps!\p"
+	.string "It's a ball!\p"
+	.string "But WAIT, there's MORE! Order now and\n"
+	.string "get a SECOND ball! Same ball! Again!\p"
+	.string "Operators are standing by. Operators\n"
+	.string "are always standing. Help them.\p"
+	.string "(For a split second, the screen reads:\n"
+	.string "GET MORE BADGES. GET MORE BADGES.)$"
+
+MauvilleCity_House2_B1F_Text_Ad1:
+	.string "HI, BILLY HERE for SUPER SHINE!\n"
+	.string "It cleans GYM BADGES! Look at this!\p"
+	.string "This BADGE was FILTHY! Now it's\n"
+	.string "SPARKLING! And LONELY!\p"
+	.string "Two badges? THAT'S NOT A COLLECTION.\n"
+	.string "THAT'S A PAIR OF EARRINGS!\p"
+	.string "Call NOW! Before your badges call YOU!\n"
+	.string "…You only have two? Ha. HA HA.$"
+
+MauvilleCity_House2_B1F_Text_Ad2:
+	.string "~ Moo-moo MILTANK MILK! ~\n"
+	.string "~ Moo-moo MILTANK MILK! ~\p"
+	.string "~ Drink it once, drink it twice,\n"
+	.string "win your THIRD BADGE, that'd be nice! ~\p"
+	.string "~ Moo-moo MILTANK MILK! ~\n"
+	.string "~ (b a d g e s) ~\p"
+	.string "The jingle is now stuck in your head.\n"
+	.string "Forever.$"
 
 MauvilleCity_House2_B1F_Text_TrashTV:
 	.string "The TV flickers on by itself.\p"

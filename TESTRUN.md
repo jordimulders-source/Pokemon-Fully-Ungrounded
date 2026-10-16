@@ -118,3 +118,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Simon twee keer op rij in dezelfde stad | Kan niet meer | ✅ |
 | Coin Case niet te krijgen (geen Harbor Mail meer) | Mauville House2 geeft hem direct | ✅ |
 | NPC over de vervloekte tv (Rotom-kelder) ontbrak | Man des huizes in Mauville House2 | ✅ |
+| Rotom-tv vóór 3 badges | Telesell-reclames met subliminale badge-boodschap | ✅ |

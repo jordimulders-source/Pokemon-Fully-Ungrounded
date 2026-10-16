@@ -18801,3 +18801,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Burglar SIMON nooit twee keer op rij in dezelfde stad** (ook niet na een verloren gevecht): `VAR_BURGLAR_LAST_TOWN` (0x40FF, was ongebruikt).
 - **Coin Case weer verkrijgbaar** (Jordi): Harbor Mail bestaat niet meer, dus de vrouw in Mauville (House2) geeft de COIN CASE na haar mail-grap gewoon weg.
 - **Mauville House2:** de man des huizes vertelt over de vervloekte tv die ze in de kelder achter de boekenkast hebben gezet (wijst naar het Rotom-event); na het vangen van Rotom: alleen nog nieuws, "somehow that's worse".
+- **Rotom-tv vóór de 3e badge** (Jordi): geen ruis meer maar willekeurig een van drie gruwelijk irritante telesell-reclames (BALL-O-MATIC 3000, SUPER SHINE voor gymbadges, de MILTANK MILK-jingle), elk met een subliminale boodschap dat je meer badges nodig hebt.

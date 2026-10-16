@@ -18817,3 +18817,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Mauville, Wally's oom:** teksten netter (interpunctie, tekstvakken op zinsgrenzen); Wally's gebroken zinnen zonder punten blijven (humor).
 - **Scott in Mauville** verkleed als **WATTSON** ("WATTSON?: WAHAHAHAHA! …It's me, SCOTT. The beard is glued on.").
 - **Fungal Control:** als het effect afloopt, verschijnt nu een eigen melding ("… shook off the fungus! It's back in control!") in plaats van de Encore-tekst (`fungalControlled` in de DisableStruct; een gewone Encore wist de vlag).
+- **Fungal Control overschrijft vastgezette moves** (Jordi): een lopende Uproar, Outrage/Thrash/Petal Dance, Rollout/Ice Ball of Bide stopt meteen; het doelwit moet de gekozen move gebruiken (zelfde reset als Sky Drop). Tests in `test/battle/grounded/fungal_control.c` (de test-ROM past momenteel niet in de ROM-ruimte, dus niet gedraaid).

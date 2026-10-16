@@ -18613,6 +18613,12 @@ void BS_FungalControlChooseMove(void)
     gDisableStructs[gBattlerTarget].encoredMove = gBattleMons[gBattlerTarget].moves[pos];
     gDisableStructs[gBattlerTarget].encoredMovePos = pos;
     gDisableStructs[gBattlerTarget].fungalControlled = TRUE;
+    // Jordi: de schimmel neemt het over, ook van een lopende Uproar/Outrage/Rollout/Bide
+    gBattleMons[gBattlerTarget].volatiles.uproarTurns = 0;
+    gBattleMons[gBattlerTarget].volatiles.bideTurns = 0;
+    gBattleMons[gBattlerTarget].volatiles.multipleTurns = 0;
+    gBattleMons[gBattlerTarget].volatiles.lockConfusionTurns = 0;
+    gDisableStructs[gBattlerTarget].rolloutTimer = 0;
     if (gDisableStructs[gBattlerTarget].encoredMove != GetChosenMoveFromPosition(gBattlerTarget))
         gBattleStruct->moveTarget[gBattlerTarget] = SetRandomTarget(gBattlerTarget);
     if (HasBattlerActedThisTurn(gBattlerTarget))

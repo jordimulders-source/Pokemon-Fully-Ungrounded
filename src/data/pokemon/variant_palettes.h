@@ -2823,18 +2823,6 @@ static const u16 sVariants_HakamoO[] = INCBIN_U16("graphics/pokemon/hakamo_o/var
 #if (P_FAMILY_JANGMO_O)
 static const u16 sVariants_KommoO[] = INCBIN_U16("graphics/pokemon/kommo_o/variants.gbapal");
 #endif
-#if (P_FAMILY_TAPU_KOKO)
-static const u16 sVariants_TapuKoko[] = INCBIN_U16("graphics/pokemon/tapu_koko/variants.gbapal");
-#endif
-#if (P_FAMILY_TAPU_LELE)
-static const u16 sVariants_TapuLele[] = INCBIN_U16("graphics/pokemon/tapu_lele/variants.gbapal");
-#endif
-#if (P_FAMILY_TAPU_BULU)
-static const u16 sVariants_TapuBulu[] = INCBIN_U16("graphics/pokemon/tapu_bulu/variants.gbapal");
-#endif
-#if (P_FAMILY_TAPU_FINI)
-static const u16 sVariants_TapuFini[] = INCBIN_U16("graphics/pokemon/tapu_fini/variants.gbapal");
-#endif
 #if (P_FAMILY_COSMOG)
 static const u16 sVariants_Cosmog[] = INCBIN_U16("graphics/pokemon/cosmog/variants.gbapal");
 #endif
@@ -6392,18 +6380,6 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_JANGMO_O)
     {gMonPalette_KommoO, sVariants_KommoO},
-#endif
-#if (P_FAMILY_TAPU_KOKO)
-    {gMonPalette_TapuKoko, sVariants_TapuKoko},
-#endif
-#if (P_FAMILY_TAPU_LELE)
-    {gMonPalette_TapuLele, sVariants_TapuLele},
-#endif
-#if (P_FAMILY_TAPU_BULU)
-    {gMonPalette_TapuBulu, sVariants_TapuBulu},
-#endif
-#if (P_FAMILY_TAPU_FINI)
-    {gMonPalette_TapuFini, sVariants_TapuFini},
 #endif
 #if (P_FAMILY_COSMOG)
     {gMonPalette_Cosmog, sVariants_Cosmog},

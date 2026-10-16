@@ -2576,4 +2576,120 @@ LINES = {
             {'naam': 'Pokémon Crystal', 'blue': '#a8d8f0', 'red': '#4080d0'},
         ],
     },
+    # --- groep 25 (Johto) ---
+    'sentret': {
+        'species': {
+            'sentret': {'body': [12, 1, 3, 7, 11, 9, 8]},
+            'furret': {'body': [1, 3, 6, 8, 7, 2, 5, 9]},
+        },
+        'variants': [
+            {'naam': 'Zilverfret', 'body': '#6a6a74'},
+            {'naam': 'Mangoest', 'body': '#b05828'},
+            {'naam': 'Bunzing', 'body': ('#2c2c34', {'l': 1.3}), 'cream': '#f0ece4'},
+            {'naam': 'Albino fret', 'body': ('#ece4e0', ALBINO), 'cream': '#f4f0ec'},
+            {'naam': 'Stokstaartje', 'body': '#c8a070'},
+            {'naam': 'Gouden fret', 'body': ('#c89020', {'h': 0})},
+        ],
+    },
+    'hoothoot': {
+        'species': {
+            'hoothoot': {'body': [5, 4, 6, 3], 'cream': [12, 13]},
+            'noctowl': {'body': [6, 4, 1, 7], 'cream': [5, 3]},
+        },
+        'variants': [
+            {'naam': 'Kerkuil', 'body': '#d8a060', 'cream': '#f8f0e8'},
+            {'naam': 'Kakapo (groen)', 'body': '#60a050', 'cream': '#e0d890'},
+            {'naam': 'Bosuil (rood)', 'body': '#a04830'},
+            {'naam': 'Sneeuwuil', 'body': '#ece8e4', 'cream': '#f8f8f8'},
+            {'naam': 'Zwarte uil', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Uil van Minerva (goud)', 'body': ('#c89020', {'h': 0})},
+        ],
+    },
+    'spinarak': {
+        'species': {
+            'spinarak': {'body': [2, 6, 4, 5]},
+            'ariados': {'body': [8, 9, 10, 11], 'legs': [7, 5, 6]},
+        },
+        'variants': [
+            {'naam': 'Zwarte weduwe', 'body': ('#2c2c34', {'l': 1.3}), 'legs': '#c02828'},
+            {'naam': 'Vogelspin', 'body': '#a06030', 'legs': '#e0a060'},
+            {'naam': 'Pauwspin', 'body': '#3070d0', 'legs': '#f08030'},
+            {'naam': 'Albino grotspin', 'body': ('#ece4e0', ALBINO), 'legs': '#e0c8d0'},
+            {'naam': 'Kruisspin', 'body': '#e0a030', 'legs': '#7a5030'},
+            {'naam': 'Venom', 'body': ('#2c2c34', {'l': 1.3}), 'legs': '#f0f0f0'},
+        ],
+    },
+    'mareep': {
+        'species': {
+            'mareep': {'wool': [5, 2, 8, 7], 'skin': [13, 12, 15, 14]},
+            'flaaffy': {'body': [11, 7, 9, 8, 10]},
+            'ampharos': {'body': [5, 4, 3, 7]},
+        },
+        'variants': [
+            {'naam': 'Zwart schaap', 'wool': ('#3a3a42', {'l': 1.3}), 'body': ('#3a3a42', {'l': 1.3})},
+            {'naam': 'Vosschaap (oranje)', 'wool': '#e8a060', 'body': '#e08040'},
+            {'naam': 'Elektrisch blauw', 'wool': '#a0c8f0', 'body': '#4080e0'},
+            {'naam': 'Groen', 'wool': '#b0e0a0', 'body': '#70c060'},
+            {'naam': 'Paars', 'wool': '#c0a8e8', 'body': '#a080d0'},
+            {'naam': 'Gulden vlies', 'wool': ('#e0b030', {'h': 0}), 'body': ('#e0b030', {'h': 0}), 'ampharos:body': '#c07020'},
+        ],
+    },
+    'togepi': {
+        'species': {
+            'togepi': {'shell': [14, 10, 8]},
+            'togetic': {'body': [1, 4, 5, 2]},
+            'togekiss': {'body': [3, 2, 1, 4]},
+        },
+        'variants': [
+            {'naam': 'Roze paasei', 'shell': '#f8c8d8', 'togepi:shell': '#e090b0', 'body': '#f8c8d8'},
+            {'naam': 'Mint', 'shell': '#c0f0d8', 'togepi:shell': '#80d0a8', 'body': '#c0f0d8'},
+            {'naam': 'Lavendel', 'shell': '#d8c8f8', 'togepi:shell': '#a890e0', 'body': '#d8c8f8'},
+            {'naam': 'Citroen', 'shell': '#f8f0b0', 'togepi:shell': '#e0d060', 'body': '#f8f0b0'},
+            {'naam': 'Hemelsblauw', 'shell': '#b0d8f8', 'togepi:shell': '#80b0e0', 'body': '#b0d8f8'},
+            {'naam': 'Gouden ei', 'shell': '#e8c860', 'togepi:shell': '#d0a030', 'body': '#e8c860'},
+        ],
+    },
+    'bonsly': {
+        'species': {
+            'bonsly': {'body': [7, 6, 8, 9], 'leaves': [1, 2, 4, 3]},
+            'sudowoodo': {'body': [1, 5, 4, 10, 3], 'leaves': [6, 9, 8, 7]},
+        },
+        'variants': [
+            {'naam': 'Kersenbloesem', 'leaves': '#f0a0c0'},
+            {'naam': 'Herfst', 'leaves': '#d07028'},
+            {'naam': 'Berk (wit hout)', 'body': '#e8e4dc'},
+            {'naam': 'Jeneverbesbonsai (zilverhout)', 'body': '#a8a8b0', 'leaves': '#3a7050'},
+            {'naam': 'Nachtsakura (paars)', 'leaves': '#8050c0'},
+            {'naam': 'Gouden boom', 'leaves': ('#e0b030', {'h': 0})},
+        ],
+    },
+    'hoppip': {
+        'species': {
+            'hoppip': {'body': [8, 6, 9, 7]},
+            'skiploom': {'body': [8, 11, 9, 10]},
+            'jumpluff': {'body': [11, 9, 10, 12]},
+        },
+        'variants': [
+            {'naam': 'Lavendel', 'body': '#a080d0'},
+            {'naam': 'Mint', 'body': '#80d0a0', 'skiploom:body': '#40a0a0'},
+            {'naam': 'Oranje', 'body': '#f09040'},
+            {'naam': 'Pluiswit', 'body': '#ece8e4'},
+            {'naam': 'Rood', 'body': '#d03838'},
+            {'naam': 'Sterrennacht', 'body': '#283078'},
+        ],
+    },
+    'aipom': {
+        'species': {
+            'aipom': {'body': [2, 1, 4, 3]},
+            'ambipom': {'body': [8, 9, 11, 10]},
+        },
+        'variants': [
+            {'naam': 'Kapucijnaap', 'body': '#7a5038'},
+            {'naam': 'Goudleeuwaapje', 'body': '#e09030'},
+            {'naam': 'Langoer (grijs)', 'body': '#9a9aa0'},
+            {'naam': 'Albino', 'body': ('#ece4e0', ALBINO)},
+            {'naam': 'Groen', 'body': '#50a050'},
+            {'naam': 'Abu (Aladdin, blauw vest)', 'body': '#3a60c0'},
+        ],
+    },
 }

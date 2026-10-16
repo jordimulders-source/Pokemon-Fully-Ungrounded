@@ -106,5 +106,15 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Cyndaquil/Quilava/Typhlosion**: 10% Totodile-kleuren (blauwe rug, rode vlammen), 6% Chikorita-kleuren (groene rug, groene vlammen), 4% Mudkip-kleuren (lichtblauw met oranje vlammen), 3% albino, 1,5% schaduw (paarse vlammen), 0,5% Pokémon Crystal (blauwe vlammen). Hisui-Typhlosion nog niet.
 - **Totodile/Croconaw/Feraligatr**: 10% Chikorita-kleuren (lichtgroen met donkergroene stekels), 6% Cyndaquil-kleuren (marine met vlamoranje stekels), 4% Treecko-kleuren (groen met rode stekels), 3% albino, 1,5% schaduw (zwart met cyaan), 0,5% Pokémon Crystal.
 
+## Groep 25
+- **Sentret/Furret** (marterachtigen): 10% zilverfret, 6% mangoest, 4% bunzing (zwart-wit), 3% albino fret, 1,5% stokstaartje, 0,5% gouden fret.
+- **Hoothoot/Noctowl** (uilen): 10% kerkuil, 6% kakapo (de groene uilpapegaai), 4% bosuil (roodbruin), 3% sneeuwuil, 1,5% zwarte uil, 0,5% uil van Minerva (goud).
+- **Spinarak/Ariados** (spinnen): 10% zwarte weduwe (rode poten), 6% vogelspin, 4% pauwspin (blauw met oranje), 3% albino grotspin, 1,5% kruisspin, 0,5% Venom (zwart met witte poten).
+- **Mareep/Flaaffy/Ampharos** (wol + lijf): 10% zwart schaap, 6% vosschaap (oranje), 4% elektrisch blauw, 3% groen, 1,5% paars, 0,5% Gulden Vlies (Ampharos amber). Geen roze: de shiny's zijn roze.
+- **Togepi/Togetic/Togekiss** (pastel paaseieren; Togepi's schaal): 10% roze, 6% mint, 4% lavendel, 3% citroen, 1,5% hemelsblauw, 0,5% gouden ei.
+- **Bonsly/Sudowoodo** (bomen): 10% kersenbloesem, 6% herfst, 4% berk (wit hout), 3% jeneverbesbonsai (zilverhout, donkergroen), 1,5% nachtsakura (paars), 0,5% gouden boom.
+- **Hoppip/Skiploom/Jumpluff** (lijfkleur; pluizen en bloem blijven): 10% lavendel, 6% mint (Skiploom teal), 4% oranje, 3% pluiswit, 1,5% rood, 0,5% sterrennacht.
+- **Aipom/Ambipom** (apen): 10% kapucijnaap, 6% goudleeuwaapje, 4% langoer (grijs), 3% albino, 1,5% groen, 0,5% Abu (Aladdin: blauw). Geen roze: de shiny is roze.
+
 ## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
 Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Galar-Articuno/-Zapdos/-Moltres, Hisui-Typhlosion, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.

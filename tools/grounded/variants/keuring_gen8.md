@@ -3,7 +3,7 @@
 Contactvellen (kolommen: normaal, shiny, 10%, 6%, 4%, 3%, 1,5%, 0,5%): `keuring_gen8_01.png` t/m `_10.png` in de scratchmap van de agent (`agent_gen8/`).
 
 ## Vel 01
-- **Grookey/Thwackey/Rillaboom** (lijf/vacht, blad/haar, gezicht, bruin (oren/staart, stok, drumhout), neus, trommel): 10% mandril (olijfgrijs, blauwe snuit, rode neus, gele baard), 6% Japanse sneeuwaap (grijswit, rood gezicht, sneeuw op de kruin), 4% kersenbloesem-bonsai, 3% goudstompneusaap (blauwe snuit), 1,5% Taiko no Tatsujin (Don-chan rood, Katsu-chan blauw, witte trommel), 0,5% Sun Wukong (goud met rood).
+- **Grookey/Thwackey/Rillaboom** (lijf/vacht, blad/haar, gezicht, bruin (oren/staart, stok, drumhout), neus, trommel): 10% mandril (olijfgrijs, blauwe snuit, rode neus, gele baard), 6% Japanse sneeuwaap (grijswit, rood gezicht, sneeuw op de kruin), 4% kersenbloesem-bonsai, 3% 2-D (Gorillaz), 1,5% Taiko no Tatsujin (Don-chan rood, Katsu-chan blauw, witte trommel), 0,5% Sun Wukong (goud met rood).
 - **Scorbunny/Raboot/Cinderace** (vacht, vuur (oren/voeten, trui, broek), geel, shirt, broek): 10% Oranjegekte (oranje, blauw, wit), 6% Seleção canarinho (Brazilië: geel, groen, blauw), 4% veldhaas (zwarte oorpunten), 3% spookvuur (zwart konijn, cyaan vlammen), 1,5% Bugs Bunny (grijs, roze oren), 0,5% Ballon d'Or (goud, witheet vuur, zwart tenue).
 - **Sobble/Drizzile/Inteleon** (lijf, kopvin, strepen, buik, handen, jas, oog): 10% pantherkameleon (rood, turquoise), 6% James Bond (smoking, wit overhemd, rode anjer), 4% Jackson-kameleon (groen, gele kam), 3% axolotl (leucistisch roze, magenta kieuwen), 1,5% Ghillie-sluipschutter (camouflage), 0,5% Goldfinger.
 
@@ -11,14 +11,14 @@ Contactvellen (kolommen: normaal, shiny, 10%, 6%, 4%, 3%, 1,5%, 0,5%): `keuring_
 - **Skwovet/Greedent** (lijf, staart (Greedent ook buik), lichte vacht/tanden, wangen): 10% grijze eekhoorn, 6% zwarte eekhoorn (oranje wangen), 4% Indische reuzeneekhoorn (kastanjepaars, crème), 3% albino, 1,5% Ratatoskr (bemoste eekhoorn uit Yggdrasil), 0,5% Dagobert Duck (geldpakhuis vol goud).
 - **Rookidee/Corvisquire/Corviknight** (verenkleed/harnas, kop/vleugels, buik, poten, oog): 10% ekster (zwart-wit met blauwgroene glans; Corviknight donker groenblauw, want de shiny is zwartgrijs), 6% koperen harnas met turquoise patina, 4% witte raaf (leucistisch, blauwe ogen), 3% Rode Ridder (karmijn, gouden ogen), 1,5% glansspreeuw (smaragd en paars), 0,5% Odins raven Huginn en Muninn (gouden harnas).
 - **Blipbug/Dottler/Orbeetle** (schild/buik, stippen/lijf, gezicht, ogen): 10% zwart lieveheersbeestje met rode stippen, 6% juweelkever (smaragd met goud), 4% Mars Attacks! (roze breinen, groene marsmannetjes), 3% Delfts blauw, 1,5% tweeëntwintigstippelig lieveheersbeestje (citroengeel met zwart), 0,5% Fabergé-ei (goud, robijn, saffier).
-- **Nickit/Thievul** (vacht, donkere poten/snor, lichte vacht, ogen): 10% fennek, 6% De Roze Panter (de diamant uit de film), 4% kitsune (witte vos met rode markering), 3% melanistische vos, 1,5% Aladdin (straatrat: paars vest, rode fez), 0,5% goudroof bij Gringotts.
+- **Nickit/Thievul** (vacht, donkere poten/snor, lichte vacht, ogen): 10% Sly Cooper, 6% De Roze Panter (de diamant uit de film), 4% kitsune (witte vos met rode markering), 3% melanistische vos, 1,5% Aladdin (straatrat: paars vest, rode fez), 0,5% goudroof bij Gringotts.
 - **Gossifleur/Eldegoss** (bloemblaadjes/bloem, rode rok, groen blad, katoen, gezicht): 10% korenbloem, 6% hibiscus, 4% lavendelvelden van de Provence, 3% de zwarte tulp (Dumas, tulpenmanie), 1,5% suikerspin (kermis), 0,5% Repelsteeltje (stro tot goud gesponnen: gouden katoen).
 
 ## Vel 03
 - **Wooloo/Dubwool** (wol, gezicht/lijf, poten/hoeven, hoorns, ogen, neus): 10% Drents heideschaap (strokleurig), 6% geverfd Schots heuvelschaap (felroze), 4% Herdwick (leigrijze wol, witte kop), 3% schaapjes tellen (nachtblauw, maangele ogen), 1,5% Chia Pet (kiemgroene wol), 0,5% het Gulden Vlies. Geen bruin/zwart: de shiny is donker.
 - **Chewtle/Drednaw** (hoorn, huid, schild, kaak/buik): 10% alligatorschildpad (modderolijf), 6% karetschildpad (crème huid, amber schild), 4% Bowser (gele huid, groen schild, rood haar), 3% lavaschildpad, 1,5% amethistschildpad, 0,5% Kim Quy (de gouden schildpad uit de Vietnamese legende). Geen groen lijf: de shiny is groen.
 - **Yamper/Boltund** (vacht/donker lijf, bliksem (geel), wit, tong, ogen): 10% Shiba Inu (Doge: rossig, rode bliksem), 6% husky (ijsblauwe bliksem), 4% 101 Dalmatiërs (wit met zwart), 3% Scooby-Doo (bruin, blauwe halsband), 1,5% Tron (zwart met neoncyaan), 0,5% Laika (de ruimtehond: nachtblauw met sterrenzilver).
-- **Rolycoly/Carkol/Coalossal** (steen/kar, kool, gloed): 10% zwavel (blauwe vlam), 6% kopermijn (malachiet met koperen gloed), 4% hematiet, 3% diamant (kool onder druk: wit met ijsblauw vuur), 1,5% amethistgeode, 0,5% goudader (witheet).
+- **Rolycoly/Carkol/Coalossal** (steen/kar, kool, gloed): 10% Lapis lazuli, 6% kopermijn (malachiet met koperen gloed), 4% hematiet, 3% diamant (kool onder druk: wit met ijsblauw vuur), 1,5% amethistgeode, 0,5% goudader (witheet).
 
 ## Vel 04
 - **Applin/Flapple/Appletun** (appel (Flapple vleugels, Appletun kop), groen, vruchtvlees/taart): 10% toffee-appel, 6% Arkansas Black (bijna zwarte appel), 4% Pink Lady, 3% gifappel van Sneeuwwitje (paars met gifgroen), 1,5% ijsappel, 0,5% twistappel van Eris (goud met zilverblad). Geen groene appel: de shiny is groen.
@@ -28,15 +28,15 @@ Contactvellen (kolommen: normaal, shiny, 10%, 6%, 4%, 3%, 1,5%, 0,5%): `keuring_
 
 ## Vel 05
 - **Toxel/Toxtricity** (Amped en Low Key; lijf, buik, stekels, stroom (per vorm een eigen kleur), roze strepen): 10% Iron Maiden (Eddie: grauwgrijs met vuur), 6% Ziggy Stardust (bleek met rode/blauwe bliksemflits), 4% blauwe pijlgifkikker, 3% Toxic (Britney: gifgroen met magenta), 1,5% Hatsune Miku, 0,5% Daft Punk (zwart pak; Amped gouden, Low Key zilveren helm). Geen roze: de Toxel-shiny.
-- **Sizzlipede/Centiskorch** (lijf, vuur, donkere poten): 10% reuzenduizendpoot (zwart met oranje poten), 6% groen vuur, 4% paarse lava, 3% witheet, 1,5% zwavel van de Kawah Ijen, 0,5% hemelse drakendans (goud met jadegroen vuur).
+- **Sizzlipede/Centiskorch** (lijf, vuur, donkere poten): 10% reuzenduizendpoot (zwart met oranje poten), 6% groen vuur, 4% paarse lava, 3% witheet, 1,5% Lapis lazuli, 0,5% hemelse drakendans (goud met jadegroen vuur).
 - **Clobbopus/Grapploct** (lijf, accent (oranje/geel gezicht), donkere armen, oog): 10% blauwgeringde octopus, 6% Ursula (lila met zwart), 4% dumbo-octopus (diepzeeroze), 3% judo (witte gi, zwarte band), 1,5% Akuma (Street Fighter), 0,5% kampioensriem. Geen rood: de Grapploct-shiny.
 - **Sinistea/Polteageist** (echte en namaak delen het palet; gouden rand, porselein, sierrand, bloemetjes, thee): 10% Japanse theeceremonie (raku, matcha), 6% Delfts blauw met Earl Grey, 4% rozenbottelthee, 3% chai in een kulhad, 1,5% vlinderbloemthee in celadon (blauwe thee), 0,5% kintsugi (zwart, met goud gelijmd). Geen roze porselein: de shiny.
 
 ## Vel 06
 - **Hatenna/Hattrem/Hatterene** (haar/hoed, roze, wit): 10% lavendelheks (lila met mint), 6% Elphaba (Wicked), 4% Halloween, 3% snoepheks van Hans en Grietje, 1,5% Scarlet Witch, 0,5% sterrenwichelaar (nachtblauw met goud).
-- **Impidimp/Morgrem/Grimmsnarl** (huid, haar (Grimmsnarl: lijf), groen, ogen): 10% Noorse trol (mos en steen), 6% aka-oni (rode duivel, gouden manen), 4% de Grinch, 3% Pennywise (Grimmsnarl: zilveren pak met oranje haar), 1,5% Krampus, 0,5% leprechaun (groen pak, pot met goud). Geen blauw/wit: de shiny's.
+- **Impidimp/Morgrem/Grimmsnarl** (huid, haar (Grimmsnarl: lijf), groen, ogen): 10% Gremlins, 6% aka-oni (rode duivel, gouden manen), 4% de Grinch, 3% Pennywise (Grimmsnarl: zilveren pak met oranje haar), 1,5% Krampus, 0,5% leprechaun (groen pak, pot met goud). Geen blauw/wit: de shiny's.
 - **Milcery** (Alcremie bewust overgeslagen): 10% aardbeienmelk, 6% chocolademelk, 4% matcha latte, 3% bosbessenyoghurt, 1,5% blauwe-hawaiiaanse slush, 0,5% zwarte-sesamijs.
-- **Falinks** (helm/schild, kuif/schildhart, wit, donker, ogen): 10% terracottaleger, 6% Britse koninklijke garde, 4% stormtroopers, 3% Zwitserse Garde, 1,5% leger van Mordor (zwart ijzer, oranje oog), 0,5% paarse keizerlijke garde.
+- **Falinks** (helm/schild, kuif/schildhart, wit, donker, ogen): 10% terracottaleger, 6% Britse koninklijke garde, 4% stormtroopers, 3% Zwitserse Garde, 1,5% leger van Spartaanse hoplieten, oranje oog), 0,5% paarse keizerlijke garde.
 - **Pincurchin** (stekels, lijf, geel, stroompuntjes): 10% rode zee-egel, 6% groene zee-egel, 4% collector-zee-egel (wit met oranje), 3% paarse zee-egel, 1,5% uni (sushi), 0,5% kroon-zee-egel (goud met robijn).
 - **Snom/Frosmoth** (ijs/vleugels, lijf, ogen): 10% noorderlicht, 6% citrienkristal, 4% rijp op rozen, 3% zwart ijs, 1,5% robijnijs, 0,5% saffier met goud.
 
@@ -49,7 +49,7 @@ Contactvellen (kolommen: normaal, shiny, 10%, 6%, 4%, 3%, 1,5%, 0,5%): `keuring_
 - **Fossielen Dracozolt/Arctozolt/Dracovish/Arctovish** (één recept per helft: vogel, vis, draak + schubben, ijs + vinnen, zodat elke chimaera dezelfde zes thema's heeft): 10% versteend fossiel (zandsteen en barnsteen), 6% Barney, 4% koraalrif, 3% Godzilla (antraciet met blauw atoomvuur), 1,5% albino, 0,5% gouden chimaera (goud met robijn en saffier).
 
 ## Vel 08
-- **Duraludon** (metaal, blauwe accenten, ogen): 10% Vrijheidsbeeld (kopatina), 6% Tokyo Tower, 4% Darth Vader-staal, 3% bouwkraan (geel met zwart), 1,5% Barbie Dreamhouse, 0,5% Ishtarpoort van Babylon (lapis met goud).
+- **Duraludon** (metaal, blauwe accenten, ogen): 10% Vrijheidsbeeld (kopatina), 6% Tokyo Tower, 4% Cyberpunk Hong Kong, 3% bouwkraan (geel met zwart), 1,5% Barbie Dreamhouse, 0,5% Ishtarpoort van Babylon (lapis met goud).
 - **Dreepy/Drakloak/Dragapult** (spooklijf, romp, roze vinnen, gele ogen, lichtbruin): 10% camouflage-straaljager, 6% Blue Angels, 4% Casper het vriendelijke spookje, 3% Halloween, 1,5% de Rode Baron, 0,5% Apollo (goudfolie van de maanlander).
 - **Zacian/Zamazenta** (ook de gekroonde vormen; Zacians vacht en Zamazenta's manen, Zacians manen en Zamazenta's lijf, lichtbruin, zwaard/schild, grijs): 10% Sif (Dark Souls), 6% Fenrir (zwart met bloedrood; Zamazenta: rode manen, zwart lijf), 4% de Groene Ridder (Sir Gawain), 3% koninklijk purper en goud, 1,5% Sköll en Hati (de wolven die zon en maan najagen), 0,5% Tiangou (de hemelhond: wit met goud).
 

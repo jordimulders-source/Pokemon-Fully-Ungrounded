@@ -3060,15 +3060,6 @@ static const u16 sVariants_Sinistea[] = INCBIN_U16("graphics/pokemon/sinistea/va
 #if (P_FAMILY_SINISTEA)
 static const u16 sVariants_Polteageist[] = INCBIN_U16("graphics/pokemon/polteageist/variants.gbapal");
 #endif
-#if (P_FAMILY_HATENNA)
-static const u16 sVariants_Hatenna[] = INCBIN_U16("graphics/pokemon/hatenna/variants.gbapal");
-#endif
-#if (P_FAMILY_HATENNA)
-static const u16 sVariants_Hattrem[] = INCBIN_U16("graphics/pokemon/hattrem/variants.gbapal");
-#endif
-#if (P_FAMILY_HATENNA)
-static const u16 sVariants_Hatterene[] = INCBIN_U16("graphics/pokemon/hatterene/variants.gbapal");
-#endif
 #if (P_FAMILY_IMPIDIMP)
 static const u16 sVariants_Impidimp[] = INCBIN_U16("graphics/pokemon/impidimp/variants.gbapal");
 #endif
@@ -6638,15 +6629,6 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_SINISTEA)
     {gMonPalette_Polteageist, sVariants_Polteageist},
-#endif
-#if (P_FAMILY_HATENNA)
-    {gMonPalette_Hatenna, sVariants_Hatenna},
-#endif
-#if (P_FAMILY_HATENNA)
-    {gMonPalette_Hattrem, sVariants_Hattrem},
-#endif
-#if (P_FAMILY_HATENNA)
-    {gMonPalette_Hatterene, sVariants_Hatterene},
 #endif
 #if (P_FAMILY_IMPIDIMP)
     {gMonPalette_Impidimp, sVariants_Impidimp},

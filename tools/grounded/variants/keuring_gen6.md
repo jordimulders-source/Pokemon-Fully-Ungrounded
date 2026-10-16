@@ -35,7 +35,7 @@ Contactvellen (kolommen: normaal, shiny, 10%, 6%, 4%, 3%, 1,5%, 0,5%): `keuring_
 
 ## Vel 06
 - **Carbink** (steen, witte en blauwe kristallen, ogen): 10% rozenkwarts, 6% smaragd in leisteen, 4% robijn in graniet, 3% amethistgeode, 1,5% obsidiaan met diamant, 0,5% opaal.
-- **Goomy/Sliggoo/Goodra** (ook Hisui; lijf, onderkant, stippen/buik, slakkenhuis): 10% kauwgomslak, 6% blauwe bessengelei (messing huis), 4% honing (houten huis), 3% lavalamp, 1,5% petroleum, 0,5% Metal Slime (Dragon Quest: het zeldzame zilveren slijm, gouden huis).
+- **Goomy/Sliggoo/Goodra** (ook Hisui; lijf, onderkant, stippen/buik, slakkenhuis): 10% kauwgomslak, 6% Slime (Dragon Quest), 4% honing (houten huis), 3% lavalamp, 1,5% petroleum, 0,5% Metal Slime (Dragon Quest: het zeldzame zilveren slijm, gouden huis).
 - **Klefki** (ring, sleutels, tong): 10% roodkoper, 6% patina (Vrijheidsbeeld), 4% gotisch smeedijzer, 3% roségoud, 1,5% geanodiseerd titanium, 0,5% sleutels van Sint-Petrus (goud en zilver). Geen goud als ring vóór 0,5%: de shiny is goud.
 - **Phantump/Trevenant** (hout, bladeren, spooklijf, ogen): 10% kersenbloesem, 6% esdoorn, 4% spookbos (zwart hout, paars blad), 3% Pandora (Avatar: lichtgevend blauw), 1,5% berijpte boom, 0,5% Yggdrasil (gouden bladeren). Geen oranje blad/grijs hout: de shiny's.
 

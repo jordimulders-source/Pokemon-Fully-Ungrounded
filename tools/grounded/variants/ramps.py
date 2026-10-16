@@ -55,7 +55,7 @@ def hls(c):
 
 
 def describe(folder):
-    pal = read_pal(os.path.join(folder, 'normal.pal'))[:16]
+    pal = (read_pal(os.path.join(folder, 'normal.pal')) + [(0, 0, 0)] * 16)[:16]
     count, adj = stats(folder)
     rows = []
     for i in range(1, 16):
@@ -70,7 +70,7 @@ def describe(folder):
 def index_map(folder, out, S=12):
     """Sprite vergroot, met per pixel het indexnummer erop (alleen voor kijken)."""
     im, data, (w, h) = load(folder)
-    pal = read_pal(os.path.join(folder, 'normal.pal'))[:16]
+    pal = (read_pal(os.path.join(folder, 'normal.pal')) + [(0, 0, 0)] * 16)[:16]
     img = Image.new('RGB', (64 * S + 260, 64 * S), (255, 255, 255))
     d = ImageDraw.Draw(img)
     for y in range(64):

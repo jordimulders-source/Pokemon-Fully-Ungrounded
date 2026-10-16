@@ -217,5 +217,24 @@ Algemeen: lijnen bij witte/albino-varianten blijven nu donker (tool), en onderde
 - **Tyranitar** (buik): koraal / gloeiend / atoomblauw / ijsblauw / goud / rood.
 - **Lugia**: de lijnen kleuren mee (1,5% nu Shadow Lugia uit XD met donkere lijnen).
 
-## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
-Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Galar-Articuno/-Zapdos/-Moltres, Hisui-Typhlosion, Paldea-Wooper/Clodsire, Hisui-Qwilfish/Overqwil, Hisui-Sneasel/Sneasler, Ursaluna, Wyrdeer, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.
+## Moderne regionale vormen (Gen 8+ sprites)
+Per lijn de inspiratie (10 / 6 / 4 / 3 / 1,5 / 0,5%). Donker blijft donker, accenten en hoofdkleuren kleuren mee; de huid/het gezicht blijft waar die een index met andere delen deelt.
+- **Galar-Corsola/Cursola** (spookkoraal; takken, lijf, gloed, voet): bloedkoraal / zwart koraal (antipatharia) / dwaallicht-groen / gebleekt bot / diepzee-blauw / goudkoraal.
+- **Galar-Farfetch'd/Sirfetch'd** (ridders; veren en prei-lans/-schild): tempelier (wit, rode lans) / zwarte ridder (paarse ui) / koning Arthur (blauw, gouden Excalibur) / groene ridder Gawain (knoflook) / rode ridder (gele prei) / gouden ridder (zilveren zwaard).
+- **Galar-Meowth/Perrserker** (Viking-metaal; vacht/metaal en ogen): kobalt / bronspatina / roestijzer / chroom / zwart staal / roségoud. Geen goud of koper: de shiny's zijn goud en brons.
+- **Hisui-Growlithe/Arcanine** (vulkaansteen en vuurvacht): obsidiaan met lava / basalt met blauw vuur / zandsteen met paars / marmer met goud / lapis lazuli met goud / robijn met zwart vuur.
+- **Galar-Ponyta/Rapidash** (eenhoorns; lijf, manen, lokken): nachtmerrie / zonne-eenhoorn / kristal / feeënroze met mint / sterrennacht / Twilight Sparkle.
+- **Galar-Slowpoke/Slowbro/Slowking** (lijf, kroon, Shellder): gifkruid / hemelsblauw / Galar-gif (paars, geel) / perzik / Toxapex / Galarica-goud.
+- **Alola-Marowak** (vuurdansers; vlammen, lijf, botten): Halloween / paars spookvuur / blauw vuur / suikerschedel / rood vuur met gouden botten / zonnedans.
+- **Galar-Mr. Mime/Mr. Rime** (tapdansers; haar/jas en blauwe delen): carnaval / rode tapdanser / Riddler / Joker / Fred Astaire / IJskoningin.
+- **Kleavor** (eigen kleuren, los van Scyther/Scizor; stenen bijlen en lijf): obsidiaan / jade / lapis lazuli / marmer / rode jaspis / goud.
+- **Annihilape** (vacht, ledematen, ogen): woede-rood / spookpaars / zwart met witte ogen / yeti / apenkoning / blauw vuur.
+- **Dudunsparce**: volgt de Dunsparce-reeks (groene drakenslang, lavendel, roodbruin, albino, koi, Chinese draak).
+- **Paldea-Tauros** (Spaanse vechtstieren; lijf + vlam/water-accenten): cárdeno / colorado / ensabanado / jabonero / indigo / gouden stier.
+- **Galar-Articuno/Zapdos/Moltres** (dragen elkaars kleuren): ruil A / ruil B / ijs, bliksem en wit vuur / ravenzwart / smaragd / goud (Zapdos zilver: zijn shiny is geel).
+- **Hisui-Typhlosion** (vlammen, kern, lijf): blauw spookvuur / groen dwaallicht / Johto-vuur / wit vuur / rood op zwart / goud.
+- **Paldea-Wooper/Clodsire** (gifsalamanders; lijf, kieuwen, buik): blauwe pijlgifkikker / moerasgroen / zwart-rood / roze axolotl / lava / goud.
+- **Hisui-Qwilfish/Overqwil** (lijf, stekels, accenten): zee-egel / koraal / gifkogel / ijsvis / wit met rode stekels / goud met zwarte stekels.
+- **Hisui-Sneasel/Sneasler** (vacht, kap, accent): bergmarter / gifgroen / bloedrood / sneeuwvos / ninja / goud.
+- **Ursaluna (ook Bloodmoon)**: volgt de Teddiursa-reeks (ijsbeer, panda, blauw, grizzly, Troetelbeer, Winnie de Poeh).
+- **Wyrdeer**: volgt de Stantler-reeks (bosgeest, rendier, edelhert, melanistisch, mythisch blauw; 0,5% goud i.p.v. zilver).

@@ -1811,8 +1811,9 @@ LINES = {
         ],
     },
     'dunsparce': {
-        # Normal/Ground; Dudunsparce (moderne sprite) nog niet
-        'species': {'dunsparce': {'yellow': [1, 4, 3, 2], 'blue': [13, 12, 10]}},
+        # Normal/Ground
+        'species': {'dunsparce': {'yellow': [1, 4, 3, 2], 'blue': [13, 12, 10]},
+                    'dudunsparce': {'yellow': [12, 6, 4, 7], 'blue': [11, 8, 5]}},
         'variants': [
             {'naam': 'Groene drakenslang', 'yellow': '#80b040'},
             {'naam': 'Lavendel', 'yellow': '#b098d8', 'blue': '#e0b030'},
@@ -2395,7 +2396,7 @@ LINES = {
     },
     # --- groep 23 (Kanto) ---
     'tauros': {
-        # runderen (Paldea-vormen: moderne sprites, nog niet)
+        # runderen (Paldea-vormen: eigen reeks)
         'species': {'tauros': {'body': [12, 14, 8, 13, 7], 'mane': [4, 6, 5, 9]}},
         'variants': [
             {'naam': 'Spaanse stier (zwart)', 'body': ('#3a3a40', {'l': 1.3})},
@@ -2900,6 +2901,8 @@ LINES = {
         'species': {
             'teddiursa': {'body': [1, 2, 4, 3]},
             'ursaring': {'body': [3, 1, 2, 6]},
+            'ursaluna': {'body': [4, 3, 1, 5]},
+            'ursaluna/bloodmoon': {'body': [4, 1, 8]},
         },
         'variants': [
             {'naam': 'IJsbeer', 'body': '#ece8e4', 'ursaring:body': ('#c4c0b8', {'l': 1.3})},
@@ -2968,14 +2971,14 @@ LINES = {
     },
     'stantler': {
         # herten (Wyrdeer: moderne sprite, nog niet)
-        'species': {'stantler': {'body': [3, 1, 9, 10]}},
+        'species': {'stantler': {'body': [3, 1, 9, 10]}, 'wyrdeer': {'body': [9, 8, 7]}},
         'variants': [
             {'naam': 'Bosgeest (mosgroen, Mononoke)', 'body': '#5a8a50'},
             {'naam': 'Rendier', 'body': '#8a7a68'},
             {'naam': 'Edelhert (rood)', 'body': '#a04828'},
             {'naam': 'Melanistisch (zwart)', 'body': ('#3a3a40', {'l': 1.3})},
             {'naam': 'Mythisch blauw hert', 'body': '#4060b0'},
-            {'naam': 'Zilveren hinde (Artemis)', 'body': '#b8bcc8'},
+            {'naam': 'Zilveren hinde (Artemis; Wyrdeer goud)', 'body': '#b8bcc8', 'wyrdeer:body': ('#d8a828', {'h': 0})},
         ],
     },
     'smeargle': {
@@ -3096,6 +3099,241 @@ LINES = {
             {'naam': 'Shadow Ho-Oh', 'red': ('#34343c', {'l': 1.3})},
             {'naam': 'Groene feniks', 'red': '#40a050', 'green': '#c02828'},
             {'naam': 'Zilverfeniks', 'red': '#c8ccd8'},
+        ],
+    },
+    # --- moderne regionale vormen (Gen 8+ sprites, alleen front.png) ---
+    'corsola_galar': {
+        # spookkoraal: takken, lijf, gloed (Cursola: tentakels + schelpvoet)
+        'species': {
+            'corsola/galar': {'coral': [4, 2, 1, 3, 14], 'body': [13, 7, 5], 'glow': [6], 'rock': [9, 12]},
+            'cursola': {'coral': [5, 2, 1, 3, 4, 7, 6, 12], 'body': [15, 14]},
+        },
+        'variants': [
+            {'naam': 'Bloedkoraal', 'coral': '#b84848', 'body': '#f0e0e0', 'glow': '#f06060', 'rock': '#6a4848'},
+            {'naam': 'Zwart koraal (antipatharia)', 'coral': ('#4a4452', {'l': 1.2}), 'body': '#d8d0e0', 'glow': '#a070f0', 'rock': '#3a3440'},
+            {'naam': 'Dwaallicht (groen)', 'coral': '#7ab090', 'body': '#e0f0e8', 'glow': '#60f0a0', 'rock': '#4a6a58'},
+            {'naam': 'Gebleekt bot', 'coral': '#d8c8a8', 'body': '#f8f0e0', 'glow': '#f0b060', 'rock': '#8a7a60'},
+            {'naam': 'Diepzee (blauw)', 'coral': '#4a70b0', 'body': '#d8e4f4', 'glow': '#60c0f0', 'rock': '#2c3a58'},
+            {'naam': 'Goudkoraal', 'coral': ('#d8a828', {'h': 0}), 'body': '#f8f0d8', 'glow': '#f0d040', 'rock': '#8a6020'},
+        ],
+    },
+    'farfetchd_galar': {
+        # ridders: veren, prei-lans/-schild, snavel blijft
+        'species': {
+            'farfetchd/galar': {'body': [1, 2, 5], 'leek': [14, 15, 4]},
+            'sirfetchd': {'body': [7, 12, 5, 8], 'leek': [2, 3, 1, 10, 9]},
+        },
+        'variants': [
+            {'naam': 'Tempelier (wit met rode lans)', 'body': '#b8b0a8', 'sirfetchd:body': '#f0ece8', 'leek': '#c03030'},
+            {'naam': 'Zwarte ridder (paarse ui)', 'body': ('#34343c', {'l': 1.3}), 'sirfetchd:body': ('#4a4a58', {'l': 1.3}), 'leek': '#a040c0'},
+            {'naam': 'Koning Arthur (blauw, gouden Excalibur)', 'body': '#3a58a0', 'leek': '#e0b030'},
+            {'naam': 'Groene ridder (Sir Gawain, knoflook)', 'body': '#3a6a40', 'leek': '#e8dcb0'},
+            {'naam': 'Rode ridder (gele prei)', 'body': '#a03028', 'leek': '#f0d040'},
+            {'naam': 'Gouden ridder (zilveren zwaard)', 'body': ('#d8a828', {'h': 0}), 'leek': '#d8dce8'},
+        ],
+    },
+    'meowth_galar': {
+        # Viking-katten van metaal: vacht/metaal, ogen
+        'species': {
+            'meowth/galar': {'body': [3, 5, 4], 'eyes': [10]},
+            'perrserker': {'body': [13, 14, 12], 'metal': [5, 2, 1, 11], 'eyes': [8, 9]},
+        },
+        'variants': [
+            {'naam': 'Kobalt (oranje ogen)', 'body': '#3a60b0', 'metal': '#4a70c0', 'eyes': '#f0a040'},
+            {'naam': 'Bronspatina (roze ogen)', 'body': '#4a9a80', 'metal': '#5aa890', 'eyes': '#f04080'},
+            {'naam': 'Roestijzer (gele ogen)', 'body': '#a04020', 'metal': '#a85030', 'eyes': '#f0e040'},
+            {'naam': 'Chroom (rode ogen)', 'body': '#c8ccd8', 'metal': '#d0d4e0', 'eyes': '#e03030'},
+            {'naam': 'Zwart staal (ijsblauwe ogen)', 'body': ('#3a3a44', {'l': 1.3}), 'metal': ('#4a4a58', {'l': 1.3}), 'eyes': '#40e0f0'},
+            {'naam': 'Roségoud (groene ogen)', 'body': '#e0a090', 'metal': '#e8b0a0', 'eyes': '#40c060'},
+        ],
+    },
+    'growlithe_hisui': {
+        # vulkaanhonden: steen (helm/vacht) en vuurvacht
+        'species': {
+            'growlithe/hisui': {'stone': [4, 3, 6, 2], 'fur': [7, 9, 8]},
+            'arcanine/hisui': {'stone': [4, 2, 1], 'fur': [8, 7, 6, 5]},
+        },
+        'variants': [
+            {'naam': 'Obsidiaan met lava', 'stone': ('#3a3440', {'l': 1.2}), 'fur': '#f08020'},
+            {'naam': 'Basalt met blauw vuur', 'stone': '#5a6070', 'fur': '#3070e0'},
+            {'naam': 'Zandsteen met paars vuur', 'stone': '#c8a878', 'fur': '#8040b0'},
+            {'naam': 'Marmer met goud', 'stone': ('#d8d4d0', {'l': 1.2}), 'fur': '#e0b030'},
+            {'naam': 'Lapis lazuli met goud', 'stone': '#2c4a98', 'fur': '#f0c030'},
+            {'naam': 'Robijn met zwart vuur', 'stone': '#8a2028', 'fur': ('#3a3440', {'l': 1.3})},
+        ],
+    },
+    'ponyta_galar': {
+        # eenhoorns: lijf, manen, cyaan lokken
+        'species': {
+            'ponyta/galar': {'body': [10, 11, 12, 13], 'mane': [6, 5, 4, 9], 'cyan': [1, 2, 3]},
+            'rapidash/galar': {'body': [6, 11, 12, 10], 'mane': [7, 5, 9, 8], 'cyan': [3, 2, 1]},
+        },
+        'variants': [
+            {'naam': 'Nachtmerrie (zwart, rode manen)', 'body': ('#3a3440', {'l': 1.3}), 'mane': '#c02838', 'cyan': '#f08030'},
+            {'naam': 'Zonne-eenhoorn (crème, oranje manen)', 'body': '#f8e8c0', 'mane': '#f0a030', 'cyan': '#f05050'},
+            {'naam': 'Kristal (ijsblauw)', 'body': '#e0f0f8', 'mane': '#80b0f0', 'cyan': '#f4f4ff'},
+            {'naam': 'Feeënroze met mint', 'body': '#f8e0ec', 'mane': '#f080b0', 'cyan': '#80e0b0'},
+            {'naam': 'Sterrennacht', 'body': ('#2c3878', {'l': 1.3}), 'mane': '#f0d040', 'cyan': '#a0c0f0'},
+            {'naam': 'Twilight Sparkle (lila, paars, roze)', 'body': '#c8b0e8', 'mane': '#4a2a80', 'cyan': '#f070c0'},
+        ],
+    },
+    'slowpoke_galar': {
+        # Galar-luiaards: lijf, kroon/kop, Shellder
+        'species': {
+            'slowpoke/galar': {'body': [10, 5, 4, 6], 'crown': [3, 2, 1]},
+            'slowbro/galar': {'body': [4, 8, 7], 'arm': [5, 13, 12], 'crown': [2, 1]},
+            'slowking/galar': {'body': [3, 1, 2, 15, 5], 'arm': [12, 11, 10]},
+        },
+        'variants': [
+            {'naam': 'Gifkruid (mint, magenta)', 'body': '#80c8a0', 'crown': '#c040a0', 'arm': '#7060a0'},
+            {'naam': 'Hemelsblauw (oranje kroon)', 'body': '#80b0e8', 'crown': '#f0a030', 'arm': '#e0e0ec'},
+            {'naam': 'Galar-gif (paars, geel)', 'body': '#9060c0', 'crown': '#e0e040', 'arm': '#40a080'},
+            {'naam': 'Perzik (lichtblauw)', 'body': '#f8b890', 'crown': '#80d0f0', 'arm': '#806090'},
+            {'naam': 'Toxapex (zwart, roze)', 'body': ('#3a3440', {'l': 1.3}), 'crown': '#f070c0', 'arm': '#40c0a0'},
+            {'naam': 'Galarica-goud (blauwe kroon)', 'body': '#e8c050', 'crown': '#40c0f0', 'arm': '#c03050'},
+        ],
+    },
+    'marowak_alola': {
+        # vuurdansers: vlammen, lijf, botten
+        'species': {'marowak/alola': {'flames': [1, 2, 3, 4], 'body': [12, 14, 11, 10], 'bones': [8, 7, 9, 5]}},
+        'variants': [
+            {'naam': 'Halloween (oranje vuur, zwart lijf)', 'flames': '#f08020', 'body': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Paars spookvuur', 'flames': '#b060f0', 'body': '#2c3a50', 'bones': '#e0d8f0'},
+            {'naam': 'Blauw vuur (vergeeld bot)', 'flames': '#40a0f0', 'body': '#5a2c40', 'bones': '#f0e0c0'},
+            {'naam': 'Suikerschedel (roze vuur en botten)', 'flames': '#f070c0', 'body': '#2c2848', 'bones': '#f0c0d8'},
+            {'naam': 'Rood vuur met gouden botten', 'flames': '#e03030', 'body': '#3a2050', 'bones': '#f0d060'},
+            {'naam': 'Zonnedans (goud vuur)', 'flames': '#f0d040', 'body': '#2c4a3a', 'bones': '#f8f8f8'},
+        ],
+    },
+    'mr_mime_galar': {
+        # tapdansers: haar/jas, blauwe delen (de huid blijft)
+        'species': {
+            'mr_mime/galar': {'blue': [12, 13, 3, 2, 1]},
+            'mr_rime': {'coat': [4, 2, 1], 'blue': [14, 13, 15, 6]},
+        },
+        'variants': [
+            {'naam': 'Carnaval (oranje met turkoois)', 'blue': '#e07020', 'coat': '#9a4010'},
+            {'naam': 'Rode tapdanser', 'blue': '#c03030', 'coat': '#7a1828', 'pink': '#f0d040'},
+            {'naam': 'The Riddler (groen met paars)', 'blue': '#3a9a50', 'coat': '#2c5a38', 'pink': '#a060d0'},
+            {'naam': 'Joker (paars met groen)', 'blue': '#7040a0', 'coat': '#4a2870', 'pink': '#60c040'},
+            {'naam': 'Fred Astaire (goud)', 'blue': ('#d8a828', {'h': 0}), 'coat': '#8a6018', 'pink': '#f080a0'},
+            {'naam': 'IJskoningin (lichtblauw, lila)', 'blue': '#a0d8f0', 'coat': '#5080c0', 'pink': '#c0a0f0'},
+        ],
+    },
+    'kleavor': {
+        # Hisui-bijlen: stenen armen en lijf (eigen kleuren, los van Scyther/Scizor)
+        'species': {'kleavor': {'stone': [2, 4, 1], 'body': [9, 6, 5, 12, 11, 10]}},
+        'variants': [
+            {'naam': 'Obsidiaan (oranje lijf)', 'stone': ('#3a3440', {'l': 1.3}), 'body': '#d08040'},
+            {'naam': 'Jade', 'stone': '#4a8a68', 'body': '#e0d0a0'},
+            {'naam': 'Lapis lazuli', 'stone': '#2c4a98', 'body': '#e8c070'},
+            {'naam': 'Marmer (roze lijf)', 'stone': ('#c8c4c0', {'l': 1.2}), 'body': '#e0a0a0'},
+            {'naam': 'Rode jaspis', 'stone': '#a03028', 'body': '#c8b090'},
+            {'naam': 'Gouden bijlen', 'stone': ('#d8a828', {'h': 0}), 'body': '#806040'},
+        ],
+    },
+    'annihilape': {
+        # spookaap: vacht, armen/benen, ogen
+        'species': {'annihilape': {'fur': [1, 6, 5], 'limbs': [12, 13, 10, 14], 'eyes': [7]}},
+        'variants': [
+            {'naam': 'Woede (rood, gele ogen)', 'fur': '#a04040', 'limbs': '#3a2028', 'eyes': '#f0e040'},
+            {'naam': 'Spookpaars (groene ogen)', 'fur': '#8a70b0', 'limbs': '#3a2c50', 'eyes': '#40f0a0'},
+            {'naam': 'Zwart met witte ogen', 'fur': ('#3a3a44', {'l': 1.3}), 'limbs': ('#202028', {'l': 1.3}), 'eyes': '#f0f0f0'},
+            {'naam': 'Yeti (wit, blauwe ogen)', 'fur': ('#d0d0d8', {'l': 1.2}), 'limbs': '#7080a0', 'eyes': '#3080e0'},
+            {'naam': 'Apenkoning (goud)', 'fur': ('#d8a838', {'h': 0}), 'limbs': '#8a3020', 'eyes': '#e03030'},
+            {'naam': 'Blauw vuur (oranje ogen)', 'fur': '#5a80c0', 'limbs': '#202c50', 'eyes': '#f08030'},
+        ],
+    },
+    'tauros_paldea': {
+        # Spaanse vechtstieren (pelajes); vlammen/water van Blaze/Aqua kleuren mee
+        'species': {
+            'tauros/paldea_combat': {'body': [5, 1, 2]},
+            'tauros/paldea_blaze': {'body': [7, 1, 2], 'accent': [6, 5]},
+            'tauros/paldea_aqua': {'body': [5, 1, 3], 'accent': [14, 13]},
+        },
+        'variants': [
+            {'naam': 'Cárdeno (grijs, gele accenten)', 'body': '#6a6a74', 'accent': '#f0d040'},
+            {'naam': 'Colorado (roodbruin, cyaan)', 'body': '#7a3a28', 'accent': '#40c0f0'},
+            {'naam': 'Ensabanado (wit, rood)', 'body': ('#b8b4ac', {'l': 1.2}), 'accent': '#c02828'},
+            {'naam': 'Jabonero (crème, blauw)', 'body': '#b89060', 'accent': '#3070d0'},
+            {'naam': 'Indigo (oranje)', 'body': '#3a4a80', 'accent': '#f08030'},
+            {'naam': 'Gouden stier (rood)', 'body': ('#c89828', {'h': 0}), 'accent': '#e03030'},
+        ],
+    },
+    'birds_galar': {
+        # de Galar-vogels dragen elkaars kleuren; 'main' = kenmerkende kleur, 'dark' = tweede kleur
+        'species': {
+            'articuno/galar': {'main': [8, 10, 11], 'dark': [5, 9, 1, 3]},
+            'zapdos/galar': {'main': [3, 5, 1, 2], 'dark': [6, 9]},
+            'moltres/galar': {'main': [1, 3, 9, 12, 10, 6, 8], 'dark': [4, 5, 2]},
+        },
+        'variants': [
+            {'naam': 'Ruil A (Articuno oranje, Zapdos karmozijn, Moltres paars)',
+             'articuno/galar:main': '#f07828', 'articuno/galar:dark': '#8a3018', 'zapdos/galar:main': '#e03050', 'zapdos/galar:dark': '#3a4450', 'moltres/galar:main': '#b080e0', 'moltres/galar:dark': '#3a3060'},
+            {'naam': 'Ruil B (Articuno karmozijn, Zapdos paars, Moltres ijsblauw)',
+             'articuno/galar:main': '#e03050', 'articuno/galar:dark': '#3a4450', 'zapdos/galar:main': '#a070d0', 'zapdos/galar:dark': '#3a2c60', 'moltres/galar:main': '#60b0f0', 'moltres/galar:dark': '#2c3a60'},
+            {'naam': 'IJs, bliksem en wit vuur',
+             'articuno/galar:main': ('#d8e4f0', {'l': 1.2}), 'articuno/galar:dark': '#3070c0', 'zapdos/galar:main': '#4870d0', 'zapdos/galar:dark': '#3a3020', 'moltres/galar:main': ('#e8e8f4', {'l': 1.2}), 'moltres/galar:dark': '#3a3048'},
+            {'naam': 'Ravenzwart (rood; Moltres zwart vuur op een zilveren lijf)', 'main': ('#3a3a48', {'l': 1.3}), 'dark': '#a03040', 'moltres/galar:dark': ('#b8bcc8', {'l': 1.2})},
+            {'naam': 'Smaragd', 'main': '#40b080', 'dark': '#1c3a30'},
+            {'naam': 'Goud (Zapdos zilver)', 'main': ('#e0b030', {'h': 0}), 'dark': '#4a3010', 'zapdos/galar:main': ('#c8ccd8', {'l': 1.2})},
+        ],
+    },
+    'typhlosion_hisui': {
+        # spookvuur: vlammen, kern, lijf
+        'species': {'typhlosion/hisui': {'flames': [2, 1, 3], 'core': [4], 'body': [8, 5, 7, 6]}},
+        'variants': [
+            {'naam': 'Blauw spookvuur', 'flames': '#3070f0', 'core': '#80e0f0', 'body': '#2c3048'},
+            {'naam': 'Groen dwaallicht', 'flames': '#40d060', 'core': '#e0f060', 'body': '#203828'},
+            {'naam': 'Johto-vuur (oranje)', 'flames': '#f08020', 'core': '#f0d040', 'body': '#2c3a58'},
+            {'naam': 'Wit vuur', 'flames': ('#d8d8f0', {'l': 1.2}), 'core': '#a0b0f0', 'body': ('#3a3448', {'l': 1.3})},
+            {'naam': 'Rood vuur op zwart', 'flames': '#d02828', 'core': '#f0a040', 'body': ('#2c2c34', {'l': 1.3})},
+            {'naam': 'Gouden vuur', 'flames': '#f0c030', 'core': '#f06020', 'body': '#4a2c60'},
+        ],
+    },
+    'wooper_paldea': {
+        # gifsalamanders: lijf, kieuwen/vinnen, buik (Clodsire)
+        'species': {
+            'wooper/paldea': {'body': [7, 3, 4, 6, 10], 'gills': [8, 1, 2]},
+            'clodsire': {'body': [8, 9, 7, 10, 11], 'belly': [4, 5, 6], 'gills': [14, 15, 13]},
+        },
+        'variants': [
+            {'naam': 'Blauwe pijlgifkikker (gele kieuwen)', 'body': '#3060b0', 'gills': '#f0d040', 'belly': '#a8c0e8'},
+            {'naam': 'Moerasgroen (oranje kieuwen)', 'body': '#4a7040', 'gills': '#f08030', 'belly': '#a8c090'},
+            {'naam': 'Zwart met rood', 'body': ('#34343c', {'l': 1.3}), 'gills': '#d03030', 'belly': '#7a7a84'},
+            {'naam': 'Roze axolotl', 'body': '#e8a0b0', 'gills': '#d04070', 'belly': '#f8d8e0'},
+            {'naam': 'Lava (cyaan kieuwen)', 'body': '#a03020', 'gills': '#60e0f0', 'belly': '#e09060'},
+            {'naam': 'Goud (paarse kieuwen)', 'body': ('#c89828', {'h': 0}), 'gills': '#7040b0', 'belly': '#f0e0a0'},
+        ],
+    },
+    'qwilfish_hisui': {
+        # Hisui-kogelvissen: lijf, stekels, roze/paarse accenten
+        'species': {
+            'qwilfish/hisui': {'body': [4, 6, 5, 10], 'spikes': [8, 9, 13], 'pink': [2, 7, 1]},
+            'overqwil': {'body': [2, 4, 1], 'spikes': [12, 14, 6, 3], 'pink': [8, 9, 5], 'purple': [7, 10, 11]},
+        },
+        'variants': [
+            {'naam': 'Zee-egel (paars, witte stekels)', 'body': '#4a3a68', 'spikes': '#e0e0f0', 'pink': '#f0d040', 'purple': '#f0a020'},
+            {'naam': 'Koraal (oranje)', 'body': '#c06030', 'spikes': '#f0e0b0', 'pink': '#30a0c0', 'purple': '#2c6090'},
+            {'naam': 'Gifkogel (groen)', 'body': '#3a6a40', 'spikes': '#e0c060', 'pink': '#f04080', 'purple': '#a040c0'},
+            {'naam': 'IJsvis', 'body': '#8098c0', 'spikes': '#f0f4f8', 'pink': '#40c0f0', 'purple': '#3060c0'},
+            {'naam': 'Wit met rode stekels', 'body': ('#c0c0cc', {'l': 1.3}), 'spikes': '#c02828', 'pink': '#3a3a48', 'purple': '#808090'},
+            {'naam': 'Goud met zwarte stekels', 'body': ('#c89020', {'h': 0}), 'spikes': ('#3a3a44', {'l': 1.3}), 'pink': '#c02848', 'purple': '#7040a0'},
+        ],
+    },
+    'sneasel_hisui': {
+        # gifklimmers: vacht (Sneasler: blauw lijf + paarse kap)
+        'species': {
+            'sneasel/hisui': {'body': [7, 12, 14, 15, 11]},
+            'sneasler': {'body': [11, 14, 9], 'top': [10, 3, 1], 'accent': [7, 5]},
+        },
+        'variants': [
+            {'naam': 'Bergmarter (bruin)', 'body': '#7a5038', 'top': '#4a2c20', 'accent': '#f0c030'},
+            {'naam': 'Gifgroen', 'body': '#3a7a50', 'top': '#203a28', 'accent': '#d040c0'},
+            {'naam': 'Bloedrood', 'body': '#8a2030', 'top': '#3a1018', 'accent': '#f0e040'},
+            {'naam': 'Sneeuwvos (wit)', 'body': ('#c0c0d0', {'l': 1.3}), 'top': '#5a6a90', 'accent': '#40a0f0'},
+            {'naam': 'Ninja (zwart)', 'body': ('#34343e', {'l': 1.3}), 'top': ('#202028', {'l': 1.3}), 'accent': '#e03030'},
+            {'naam': 'Goud', 'body': ('#c89020', {'h': 0}), 'top': '#6a4010', 'accent': '#3060d0'},
         ],
     },
 }

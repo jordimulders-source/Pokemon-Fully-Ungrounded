@@ -149,5 +149,73 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Lugia**: 10% Shadow Lugia, 6% Ho-Oh-kleuren, 4% zeegroen, 3% roze, 1,5% nachtzee, 0,5% Pokémon Silver (zilver).
 - **Ho-Oh**: 10% Lugia-kleuren, 6% blauw vuur, 4% paars, 3% Shadow Ho-Oh, 1,5% groene feniks, 0,5% zilverfeniks.
 
+## Ronde 2 (16 okt): aanpassingen na Jordi's keuring
+Algemeen: lijnen bij witte/albino-varianten blijven nu donker (tool), en onderdelen kleuren mee. Per lijn de nieuwe of gewijzigde inspiratie (10 / 6 / 4 / 3 / 1,5 / 0,5%):
+- **Koffing/Weezing** (rook contrasteert met het lijf): LA-smog (grijs, bruinoranje smog) / Tsjernobyl (olijf, radioactief groen) / Holi (oranje, roze poederwolken) / droogijs (diepblauw, witte damp) / kosmische nevel / koninklijk (goud, paarse rook).
+- **Galar-Weezing** (eigen reeks, lijf + schoorstenen kleuren mee, de rookhoed als lichte tint van het gas): koperen pijpen / Victoriaans Londen (erwtensoepmist) / gietijzer met zwavelgeel / steampunk-messing / spookfabriek (paars, roze damp) / gouden schoorstenen.
+- **Skarmory**: 1,5% is nu goud zoals Mega Skarmory (was roségoud).
+- **Staryu/Starmie** (kern contrasteert): rood met obsidiaan kern en gouden juweel / Linckia-blauw met koraal kern / kussenster met turkoois kern / doornenkroon met rode kern; laatste twee ongewijzigd.
+- **Pichu/Pikachu/Raichu** (starters en vrienden): Bulbasaur / Squirtle / Charmander / Jigglypuff-roze / Marill / Sterrennacht (Van Gogh: diepblauw met gele oorpunten en staart).
+- **Psyduck/Golduck**: de snavel kleurt mee (geel bij de wilde eend, oranje bij de bruine, perzik bij de roze).
+- **Natu/Xatu** (tropisch, de vleugels/mantel kleuren mee): rode ara / toekan / hyacintara / albino / quetzal / Azteeks goud.
+- **Girafarig/Farigiraf**: het staarthoofd kleurt mee (okapi met crème kop, witte giraf met bruine, roze met paarse, blauw met gouden).
+- **Pinsir**: paarlemoerkever krijgt zwarte hoorns. **Heracross**: Goliathkever met meer schaduw.
+- **Rhyhorn-lijn**: roze marmer wordt diamant (ijsblauw met cyaan facetten).
+- **Horsea-lijn**: spookzeepaardje grijzer zodat ogen en lijnen zichtbaar blijven.
+- **Gastly-lijn** (bol en ogen kleuren mee): Slimer (paarse bol, gele ogen) / bloedrood, bij Haunter/Gengar grijsblauw met blauwe ogen / Boo-blauw (oranje ogen) / witte Boo (roze ogen) / Halloween (groene bol en ogen) / gouden spook (rode ogen).
+- **Drowzee/Hypno**: Hypno's lijnen zitten nu in de kleurgroep (geen bruine/witte lijnen meer).
+- **Farfetch'd** (prei wordt een andere ui): rode ui / knoflook / bieslookbloem / gele ui; zuurstok en gouden zwaard blijven.
+- **Poliwag-lijn** (spiraal en Politoed-buik contrasteren): pijlgifkikker (blauwe spiraal, donkere buik) / pad (oranje spiraal, crème buik) / paars (gouden spiraal, gele buik) / albino (roze spiraal) / gouden gifkikker (rode spiraal, zwarte buik) / aardbeigifkikker (blauwe 'jeans').
+- **Porygon-lijn**: de Game Boy wordt Super Famicom: lichtgrijs met per evolutie een knopkleur (Porygon groen Y, Porygon2 geel B, Porygon-Z rood A).
+- **Caterpie-lijn** (voelspriet, ogen en voeten contrasteren, vleugellijnen blijven donker): morpho / rode admiraal / koninginnenpage (oranje nekvork) / Venomoth-knipoog (lila vleugels, paars lijf) / weerschijnvlinder / smaragdpijlstaart.
+- **Weedle-lijn** (neus/ogen en stekel): hoornaar (zwarte ogen, gouden stekel) / houtbij (gele ogen) / rode wesp (cyaan ogen) / paarse houtbij (groene ogen) / albino (rode ogen) / zwarte hoornaar (oranje ogen, rode stekel).
+- **Pidgey-lijn / Spearow-lijn**: albino's met zichtbare veerlijnen.
+- **Alola-Rattata/Raticate** (eigen reeks): rioolgrijs / maffiapaars / kastanje / nachtblauw / riool-mutant (TMNT-groen) / wit-goud (de Peetvader).
+- **Cleffa-lijn**: perzik wordt bloedmaan.
+- **Diglett/Dugtrio**: de neus kleurt mee; Alola-haar = een band: Ziggy Stardust (rood) / Gorillaz (blauw) / Billie Eilish (groen) / emo (zwart, op albino) / Nicki Minaj (roze) / Billy Idol (platinablond).
+- **Meowth/Persian**: Blauwe Rus / zwarte kat / lilac / Havana Brown / Sphynx / Maneki-neko (wit, rode oren, gouden munt).
+- **Alola-Meowth/Persian** (eigen reeks): rode Abessijn / lila Burmees / witte Turkse Angora (blauwe ogen) / Bombay / Bengaal / Cheshire Cat.
+- **Mankey/Primeape**: de neus kleurt mee met de armen (mandril: blauwe neus).
+- **Bellsprout-lijn** (bladeren kleuren mee): Nepenthes (geel blad) / venusvliegenval / paars met herfstblad / sakura (wit lijf, roze bladeren) / zwart met bloedrood blad / glasplant met bladgoud.
+- **Ponyta/Rapidash** (lijf en vlamrand kleuren mee): vos met groen vuur / schimmel met paars vuur / zwart paard met wit vuur / wit paard met bloedrood vuur / spookpaard / Sleipnir.
+- **Shellder/Cloyster** (tong en parelhoofd): abalone / mossel (oranje vlees) / kokkel / parelmoer / groenlipmossel / gouden parel.
+- **Onix/Steelix**: amethist wordt kristallen Onix/Steelix (anime).
+- **Krabby/Kingler**: albino met zichtbare lijnen.
+- **Exeggutor** (stam kleurt mee): kersenhout / rieten mand / cycas / berk / berijpt / Fabergé-blauw.
+- **Cubone/Marowak** (Día de los Muertos): roze suikerschedel / zwarte schedel / turkoois calavera / mint calavera / lichtgevend skelet / gouden faraomasker.
+- **Lickitung/Lickilicky** (snoeptong): kauwgom-roze / blauwe snoeptong / zure appel / druivensnoep / Venom / citroen.
+- **Chansey** (het ei): eendenei / century egg / groen paasei / kwartelei / Fabergé / drakenei. Bij Happiny en Blissey deelt het ei een index met schort en vleugels, daar kleurt het niet mee.
+- **Kangaskhan** (buik en hoofdplaten): rode reuzenkangoeroe / panda / boomkangoeroe (rood met goud) / albino / boxing kangaroo (groen en goud) / kosmisch.
+- **Mr. Mime**: Pennywise met oranje haar en rood.
+- **Scyther/Scizor** (Scizor eigen kleur behalve albino): orchidee/paars / bruin/brons / blauw/patina / albino / ninja/indigo / samoerai goud/zilver.
+- **Omanyte/Omastar**: versteend wordt Game Boy-grijs (Twitch Plays, Lord Helix).
+- **Kabutops** (zwaarden): jade / roestrood / goud / rood / zwart / zilver.
+- **Jolteon/Umbreon**: albino met zichtbare schaduw.
+- **Zapdos**: groen wordt Thunderbird (totemrood met turkoois).
+- **Mewtwo**: Shadow blijft; Smash Bros. blauw / rood / groen; Mew-ruil en kristal blijven.
+- **Sentret/Furret, Hoothoot**: albino met lijnen; Hoothoots ogen kleuren mee.
+- **Spinarak/Ariados** (pootbanden): zwarte weduwe / vogelspin / pauwspin / albino / kruisspin (witte banden) / Venom-Carnage.
+- **Mareep-lijn** (bol, wol, gezicht): zwart schaap (rode bol) / vosschaap (blauwe bol) / elektrisch blauw (gele bol) / groen (roze bol) / paars (mint bol) / gulden vlies (robijn).
+- **Togepi-lijn** (opnieuw; kop en driehoekjes kleuren mee): Kinder Surprise / roze paasei met gele kop / mint-chocolade-ijsje / nachtei (zwart met goud) / Fabergé-blauw / gouden zegen-ei.
+- **Bonsly/Sudowoodo** (stam kleurt mee): kersenhout / sequoia / berk / jeneverbes / zwart hout met paars blad / Laurelin (gouden blad, zilveren stam).
+- **Hoppip-lijn** (seizoenen; blad, bloem en katoen kleuren mee): lente / zomer / herfst / winter / lavendelveld / sterrennacht.
+- **Aipom/Ambipom** (gezicht en handen): kapucijnaap / goudleeuwaapje / langoer / albino / groen met roze handen / Abu met rode fez.
+- **Sunkern/Sunflora** (bladeren niet meer groen): aubergine / blauwgrijs / herfstbruin / goudgeel / berijpt zilver / Van Gogh.
+- **Yanma/Yanmega** (lijf kleurt mee): glazenmaker / keizerlibel / paars / goud / vuurjuffer (rood met zwart) / juffer.
+- **Murkrow / Pineco**: witte varianten met lijnen. **Forretress** (binnenkant): oranje / geel / turkoois / blauw / gloeiend groen / paars.
+- **Gligar/Gliscor** (vlies): oranje / geel / zwart / roze / rood / goud.
+- **Snubbull/Granbull** (vlekken en halsband): Engelse bulldog / brindle / zwart-wit / fawn met masker / blauwe Franse bulldog / goud met diamanten halsband.
+- **Sneasel/Weavile**: de veren kleuren nu ook mee bij 6/4/3% (geel / oranje / turkoois).
+- **Teddiursa-, Swinub-lijn**: albino's met lijnen (Piloswine met vaste basis: alle varianten natuurlijker).
+- **Mantyke/Mantine** (buik): zwart/wit / zand/roze / groen/geel / roze/lila / rood/oranje / goud/blauw.
+- **Houndour/Houndoom** (hoorns en botten): wit met zwarte hoorns / bloedrood / Dobermann (roestrode hoorns) / paars (lila) / groen (gifgroen) / goud (rood).
+- **Stantler**: het eerste witte hert wordt een bosgeest (mosgroen, Princess Mononoke).
+- **Smeargle** (opnieuw: lijf, baret en verf): Picasso blauw / Picasso roze / Van Gogh / Frida Kahlo / Andy Warhol / Klimt.
+- **Delibird** (het wit kleurt mee): ijsblauw / kerstelf met goud / lila / pinguïn / vanille / zwart pak met goud.
+- **Shuckle**: het lijf kleurt ook mee bij de groene (paars lijf) en paarse (mint lijf) schelp.
+- **Raikou** (wolk): stormgrijs / goud / indigo / zwart bij de laatste vier. **Entei** (stekels): paars / wit / rood / vuurrood / zwart / goud. **Suicune** (ruiten): lichtblauw / geel / lila / cyaan / lichtgeel / blauw.
+- **Tyranitar** (buik): koraal / gloeiend / atoomblauw / ijsblauw / goud / rood.
+- **Lugia**: de lijnen kleuren mee (1,5% nu Shadow Lugia uit XD met donkere lijnen).
+
 ## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
 Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Galar-Articuno/-Zapdos/-Moltres, Hisui-Typhlosion, Paldea-Wooper/Clodsire, Hisui-Qwilfish/Overqwil, Hisui-Sneasel/Sneasler, Ursaluna, Wyrdeer, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.

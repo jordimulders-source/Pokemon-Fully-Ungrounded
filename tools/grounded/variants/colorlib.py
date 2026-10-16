@@ -56,7 +56,7 @@ def gba(c):
     return tuple((v >> 3) << 3 for v in c)
 
 
-def recolor(colors, idxs, base, target, lscale=1.0, cscale=None, hshift=1.0):
+def recolor(colors, idxs, base, target, lscale=1.0, cscale=None, hshift=1.0, lines=True):
     """Herkleur de indexen `idxs` zodat `base` de doelkleur krijgt en de andere
     indexen hun verschil t.o.v. base (lichtheid, verzadiging, tint) houden."""
     tL, tC, th = to_oklch(hexrgb(target) if isinstance(target, str) else target)
@@ -67,6 +67,14 @@ def recolor(colors, idxs, base, target, lscale=1.0, cscale=None, hshift=1.0):
     hi, lo = max(dL.values()), min(dL.values())
     up = (0.97 - tL) / hi if hi > 0 and tL + hi > 0.97 else 1.0
     down = (tL - 0.12) / -lo if lo < 0 and tL + lo < 0.12 else 1.0
+    # Lichte doelkleur (wit, albino, pastel): de schaduwkant uitrekken zodat de
+    # donkerste tint (lijnen, veerranden) niet veel lichter wordt dan het origineel;
+    # anders vallen de lijnen weg tegen het wit (Jordi: 'belijning bij albino').
+    if lines and lo < 0 and tL > 0.78 and tL > bL:
+        dark0 = bL + lo / lscale if lscale else bL + lo
+        want = min(dark0 + 0.04, tL - 0.32)
+        if tL + lo > want:
+            down = min(3.5, (tL - want) / -lo)
     out = {}
     for i in idxs:
         L, C, h = to_oklch(colors[i])

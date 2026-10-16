@@ -103,15 +103,22 @@ def recipe_variants(folder, colors):
                 # vast handgemaakt palet (bijv. Electrode als Master Ball)
                 out.append(read_pal(os.path.join(ROOT, 'graphics/pokemon', folder, palfile))[:16])
                 continue
-            for part, idxs in ramps.items():
+            # een variant kan eigen kleurgroepen geven ('<map>:parts'), bijv. Umbreons
+            # lichtere lijnen die bij een witte variant donker moeten worden
+            for part, idxs in var.get('%s:parts' % folder, ramps).items():
+                if part == '_base':
+                    continue
                 spec = var.get('%s:%s' % (folder, part), var.get(part))
                 if spec is None:
                     continue
                 target, opts = (spec, {}) if isinstance(spec, str) else spec
-                base = max(idxs, key=lambda i: count[i])
+                # basis = meest gebruikte index, tenzij het recept er een vastlegt
+                # ('_base': {part: idx}), bijv. als de meest gebruikte de omlijning is
+                base = ramps.get('_base', {}).get(part) or max(idxs, key=lambda i: count[i])
                 darkest = min(idxs, key=lambda i: to_oklch(colors[i])[0])
                 for i, c in recolor(colors, idxs, base, target, lscale=opts.get('l', 1.0),
-                                    cscale=opts.get('c'), hshift=opts.get('h', 1.0)).items():
+                                    cscale=opts.get('c'), hshift=opts.get('h', 1.0),
+                                    lines=opts.get('lines', True)).items():
                     # Gekleurde omlijning (pixels langs de rand) blijft donker genoeg,
                     # anders lost een lichte variant op in de achtergrond.
                     if i == darkest and edge[i] >= EDGE_FRAC:

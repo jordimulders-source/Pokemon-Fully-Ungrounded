@@ -113,3 +113,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Fisherman Andrew | Magikarp-transitie | ✅ |
 | Bessen plukken sneller | | ✅ |
 | Melding na move/take van items | Pc: melding bij oppakken; partymenu had hem al | ✅ |
+| Burglar SIMON post-game tijdverspilling | Alleen met ≥ 3 Pokémon van lv 90+ in het team | ✅ |

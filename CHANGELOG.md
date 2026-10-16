@@ -18796,3 +18796,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Move Tutors onbeperkt** (alle 10): na de eerste keer "Back for more …? I have no hobbies."
   - **Briney vaart vanuit zijn huis ook direct naar Slateport** (keuze DEWFORD/SLATEPORT/EXIT, na de brief, tot het pakket bij Stern is), zonder animatie. Getest.
   - ROM ±830 KB vrij.
+- **Burglar SIMON na de Hall of Fame** (Jordi): komt alleen nog als je minstens 3 Pokémon van lv 90+ in je team hebt (eieren tellen niet), anders is het tijdverspilling (`Burglar_OnMapEnter`).

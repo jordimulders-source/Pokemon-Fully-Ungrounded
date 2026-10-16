@@ -72,6 +72,19 @@ static s32 FindHouseForCurrentMap(void)
     return -1;
 }
 
+static u32 CountPartyMonsAtLeastLevel(u32 level)
+{
+    u32 i, n = 0;
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES) != SPECIES_NONE
+         && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
+         && GetMonData(&gPlayerParty[i], MON_DATA_LEVEL) >= level)
+            n++;
+    }
+    return n;
+}
+
 static u32 CountBadges(void)
 {
     u32 n = 0;
@@ -119,6 +132,9 @@ void Burglar_OnMapEnter(void)
         return;
     }
     if (!FlagGet(FLAG_SYS_POKEMON_GET) || !FlagGet(FLAG_BADGE01_GET))
+        return;
+    // Post-game (Jordi): alleen als je minstens 3 Pokémon van lv 90+ bij je hebt, anders is het tijdverspilling
+    if (FlagGet(FLAG_SYS_GAME_CLEAR) && CountPartyMonsAtLeastLevel(90) < 3)
         return;
     // Gegarandeerd: na badge 2, 4 en 6 komt hij bij het eerstvolgende bezoek aan een inbrekersstad, tot hij zo vaak
     // verslagen is (dus minstens 3 keer per playthrough, telkens met het team van dat moment). Ook als hij vandaag al

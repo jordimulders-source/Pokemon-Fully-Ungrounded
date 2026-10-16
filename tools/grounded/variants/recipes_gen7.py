@@ -688,36 +688,6 @@ LINES = {
              'dark': '#6880a0', 'red': '#f04080'},
         ],
     },
-    'tapu_koko': {
-        # De vier Tapu's als één set (beschermgeesten; geen evolutielijn): schaal (hoofdkleur van het
-        # masker/schild), accent, donker lijf, wit. Dezelfde thema's, per Tapu een eigen uitwerking.
-        'species': {
-            'tapu_koko': {'shell': [1, 2, 4, 14], 'accent': [5, 6, 7], 'body': [9, 10], 'white': [11, 12],
-                          '_base': {'shell': 4}},
-            'tapu_lele': {'shell': [1, 2, 5, 14], 'accent': [9, 10, 11], 'body': [3, 4], 'white': [6, 7]},
-            'tapu_bulu': {'shell': [7, 8, 9, 14], 'accent': [4, 5, 12], 'body': [2, 6], 'white': [10, 11]},
-            'tapu_fini': {'shell': [1, 2, 6, 14], 'accent': [7, 8, 9], 'body': [3, 5, 10], 'white': [11, 12]},
-        },
-        'variants': [
-            {'naam': 'Pounamu (Maori-groensteen met eigen accent)', 'shell': '#3a8a50',
-             'tapu_koko:accent': '#f0d020', 'tapu_lele:accent': '#90d8b0', 'tapu_bulu:accent': '#e03030',
-             'tapu_fini:accent': '#8060e0', 'body': '#585850', 'white': '#f0f0e0'},
-            {'naam': 'Koa-hout (gesneden houten masker)', 'shell': '#a06838', 'accent': '#e0c080',
-             'body': '#504030', 'white': '#f0e8d8'},
-            {'naam': 'Rollenwissel (elke Tapu in de kleuren van een andere)', 'tapu_koko:shell': '#e03030',
-             'tapu_lele:shell': '#f0d020', 'tapu_bulu:shell': '#8060c8', 'tapu_fini:shell': '#f08cb8',
-             'tapu_koko:accent': '#f0d020', 'tapu_lele:accent': '#f08020', 'tapu_bulu:accent': '#70b0f0',
-             'tapu_fini:accent': '#c03060', 'body': '#585858', 'white': '#f8f8f8'},
-            {'naam': 'Gebleekt koraal (wit schild, eigen accent)', 'shell': '#e8e4dc', 'tapu_koko:accent': '#f0a020',
-             'tapu_lele:accent': '#f0c040', 'tapu_bulu:accent': '#e0b020', 'tapu_fini:accent': '#5080e0',
-             'body': '#686870', 'white': '#f8f8f8'},
-            {'naam': 'Lapis lazuli (diepblauw met goud)', 'shell': '#2840a0', 'accent': '#e0b030',
-             'body': '#303850', 'white': '#f0e8c0'},
-            {'naam': "Ho'okupu (gouden offergave)", 'shell': ('#d8a830', {'h': 0}), 'tapu_koko:shell': '#b06818',
-             'tapu_koko:accent': '#f8f0c0', 'tapu_lele:accent': '#f8f0d8', 'tapu_bulu:accent': '#30a040',
-             'tapu_fini:accent': '#3070d0', 'body': '#605040', 'white': '#f8f0c8'},
-        ],
-    },
     'cosmog': {
         # nevel (Cosmog-wolk, Cosmoem-kern), paars, goud (sterren, schaal, manen, maansikkel), roze,
         # Solgaleo: lijf, donker, rood, blauw; Lunala: lijf (zilver), blauw (teal)

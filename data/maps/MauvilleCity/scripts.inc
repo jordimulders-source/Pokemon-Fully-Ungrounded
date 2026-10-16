@@ -562,8 +562,11 @@ MauvilleCity_Text_RegisteredWally:
 	.string "Registered WALLY in the POKéNAV.$"
 
 MauvilleCity_Text_ScottYouDidntHoldBack:
-	.string "SCOTT: Hehe…\n"
-	.string "I was watching that match like the\l"
+	.string "WATTSON?: WAHAHAHAHA!\n"
+	.string "…Ahem. WAHAHA.\p"
+	.string "It's me, SCOTT. Don't tell the real\n"
+	.string "WATTSON. The beard is glued on.\p"
+	.string "I was watching that match like the\n"
 	.string "creep that I am!\p"
 	.string "You're friends with that boy WALLY,\n"
 	.string "aren't you?\p"

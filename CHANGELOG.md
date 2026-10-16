@@ -18809,3 +18809,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Ashfrost Mart verkoopt Ice Stones** (de Lodge-meid zei het al).
 - **Hint voor het luik op Route 110** (Regieleki): de Cyclizar-kijker zegt dat er achter het luik in de pijler iets zoemt.
 - **Zygarde Cube:** krijg je na het vangen van Zygarde in de Desert Underpass (anders kon hij nooit van vorm wisselen).
+- **Levels oostelijk van Fortree vóór Winona** (Jordi: je kunt zonder Fortree-badge door naar Lilycove; Winona ace 55, gymtrainers 51–53):
+  - Trainers: Route 123 (56–57 → 52–53), Mt. Pyre 2F–6F (54–55 → 52–53), Aqua-grunts op de top (55–56 → 53–54), Wally op Mt. Pyre (ace 56 → 55), rivaal in Lilycove (60 → 56, ace 57). Route 120–122 waren al in orde.
+  - Wild (land): Route 123 −7 (41–56), Mt. Pyre −5 (42–55), Safari Zone NO/ZO −7 (48–55).
+- **Richting Ashfrost iets hoger** (Jordi: met Surf via Route 115-noord en Coldstep Cave; mag wat hoger dan de route naar Fortree): Route 135 trainers 49–51 (Birch 51), Route 136 50–51 met de rivaal op ace 52 (waren 41–46); wild Route 135/136 +2 (48–51). Keccles blijft 54.

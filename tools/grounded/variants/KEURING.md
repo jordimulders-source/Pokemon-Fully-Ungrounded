@@ -116,5 +116,15 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Hoppip/Skiploom/Jumpluff** (lijfkleur; pluizen en bloem blijven): 10% lavendel, 6% mint (Skiploom teal), 4% oranje, 3% pluiswit, 1,5% rood, 0,5% sterrennacht.
 - **Aipom/Ambipom** (apen): 10% kapucijnaap, 6% goudleeuwaapje, 4% langoer (grijs), 3% albino, 1,5% groen, 0,5% Abu (Aladdin: blauw). Geen roze: de shiny is roze.
 
+## Groep 26
+- **Sunkern/Sunflora** (zonnebloemsoorten): 10% Velvet Queen (rood), 6% Italiaanse witte, 4% roze, 3% paars, 1,5% blauw, 0,5% Van Gogh (goud met blauwe bladeren).
+- **Yanma/Yanmega** (libellen): 10% blauwe glazenmaker, 6% keizerlibel (groen met blauw), 4% paarse libel, 3% goudlibel, 1,5% zwarte heidelibel, 0,5% juffer (cyaan).
+- **Wooper/Quagsire** (axolotlvormen): 10% wildtype (olijf), 6% goudaxolotl, 4% melanistisch (zwart), 3% albino, 1,5% koper, 0,5% lavendel (Quagsire turkoois, want zijn shiny is lila). Geen roze: de Wooper-shiny is roze.
+- **Murkrow/Honchkrow** (raven; snavel blijft): 10% witte raaf, 6% turkoois, 4% iriserend groen, 3% bonte kraai, 1,5% maffiabaas (wijnrood), 0,5% Hugin (Odins raaf, goud). Geen paars: de shiny is paars.
+- **Misdreavus/Mismagius** (heksen): 10% Boo-blauw, 6% bloedrood, 4% bleke geest, 3% Halloween (paarse hoed), 1,5% zwart (rode hoed/haren), 0,5% goud.
+- **Pineco/Forretress** (kegels/pantser): 10% blauwspar, 6% verse kegel (groen), 4% roestijzer, 3% berijpt, 1,5% zwart staal, 0,5% goud. Geen bruin: de Pineco-shiny is bruin.
+- **Gligar/Gliscor** (schorpioenen): 10% woestijnschorpioen, 6% groen, 4% rood, 3% albino, 1,5% zwarte schorpioen, 0,5% Serket (Egyptische schorpioengodin, turkoois).
+- **Snubbull/Granbull** (bulldogs): 10% Engelse bulldog (wit), 6% brindle, 4% zwart, 3% fawn, 1,5% blauwe Franse bulldog, 0,5% goud.
+
 ## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
-Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Galar-Articuno/-Zapdos/-Moltres, Hisui-Typhlosion, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.
+Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Galar-Articuno/-Zapdos/-Moltres, Hisui-Typhlosion, Paldea-Wooper/Clodsire, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.

@@ -18940,3 +18940,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Kleurvarianten, groep 24:** Articuno, Zapdos, Moltres (dragen elkaars kleuren; Galar-vormen nog niet), Dratini-lijn, Mewtwo, Mew, Chikorita-, Cyndaquil- en Totodile-lijn (dragen elkaars kleuren, plus de Hoenn-starters). Inspiratie: `KEURING.md`.
 
 - **Kleurvarianten, groep 25 (Johto):** Sentret-lijn, Hoothoot-lijn, Spinarak-lijn, Mareep-lijn, Togepi-lijn, Bonsly/Sudowoodo, Hoppip-lijn, Aipom/Ambipom. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 26 (Johto):** Sunkern-lijn, Yanma-lijn, Wooper-lijn (axolotls; Paldea-vormen nog niet), Murkrow-lijn, Misdreavus-lijn, Pineco-lijn, Gligar-lijn, Snubbull-lijn. Inspiratie: `KEURING.md`.

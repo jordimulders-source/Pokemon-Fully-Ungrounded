@@ -2692,4 +2692,119 @@ LINES = {
             {'naam': 'Abu (Aladdin, blauw vest)', 'body': '#3a60c0'},
         ],
     },
+    # --- groep 26 (Johto) ---
+    'sunkern': {
+        'species': {
+            'sunkern': {'petals': [8, 7, 9], 'leaves': [3, 1, 4, 2]},
+            'sunflora': {'petals': [4, 1, 5, 3, 6, 7], 'leaves': [12, 11, 13, 14]},
+        },
+        'variants': [
+            {'naam': 'Velvet Queen (rode zonnebloem)', 'petals': '#b03028'},
+            {'naam': 'Italiaanse witte', 'petals': '#f0ece0'},
+            {'naam': 'Roze', 'petals': '#f080b0'},
+            {'naam': 'Paars', 'petals': '#8060c0'},
+            {'naam': 'Blauw', 'petals': '#4a80d0'},
+            {'naam': 'Van Gogh (goud op blauw)', 'petals': '#e0a020', 'leaves': '#2848a0'},
+        ],
+    },
+    'yanma': {
+        'species': {
+            'yanma': {'body': [5, 8, 6, 9, 4], 'green': [10, 12, 11, 13]},
+            'yanmega': {'body': [3, 1, 2], 'green': [10, 13, 12, 11]},
+        },
+        'variants': [
+            {'naam': 'Blauwe glazenmaker', 'body': '#3070d0'},
+            {'naam': 'Keizerlibel', 'body': '#40a050', 'green': '#2c5a90'},
+            {'naam': 'Paarse libel', 'body': '#8040b0'},
+            {'naam': 'Goudlibel', 'body': '#e0b030'},
+            {'naam': 'Zwarte heidelibel', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Juffer (cyaan)', 'body': '#30c0c0', 'green': '#2c3a70'},
+        ],
+    },
+    'wooper': {
+        # axolotls (Paldea-Wooper/Clodsire: moderne sprites, nog niet)
+        'species': {
+            'wooper': {'body': [12, 11, 4, 5, 7, 6], 'gills': [3, 1, 8, 2]},
+            'quagsire': {'body': [1, 2, 3, 4]},
+        },
+        'variants': [
+            {'naam': 'Wildtype (olijf)', 'body': '#6a7040', 'gills': '#a04060'},
+            {'naam': 'Goudaxolotl', 'body': '#e8c060', 'gills': '#e06040'},
+            {'naam': 'Melanistisch (zwart)', 'body': ('#3a3a44', {'l': 1.3}), 'gills': '#7a3a60'},
+            {'naam': 'Albino', 'body': ('#f4ece8', ALBINO), 'gills': '#f08090'},
+            {'naam': 'Koper', 'body': '#c07040', 'gills': '#f0a060'},
+            {'naam': 'Lavendel', 'body': '#a090d8', 'quagsire:body': '#40b0a0', 'gills': '#f0a0e0'},
+        ],
+    },
+    'murkrow': {
+        # raven en kraaien; de snavel blijft
+        'species': {
+            'murkrow': {'body': [1, 4, 2, 8]},
+            'honchkrow': {'body': [3, 2, 1]},
+        },
+        'variants': [
+            {'naam': 'Witte raaf', 'body': '#e8e4e0'},
+            {'naam': 'Turkoois', 'body': '#2c7a8a'},
+            {'naam': 'Iriserend groen', 'body': '#2a5a40'},
+            {'naam': 'Bonte kraai', 'body': '#7a7a84'},
+            {'naam': 'Maffiabaas (wijnrood)', 'body': '#5a2030'},
+            {'naam': 'Hugin (goud)', 'body': ('#c89020', {'h': 0})},
+        ],
+    },
+    'misdreavus': {
+        'species': {
+            'misdreavus': {'body': [6, 7, 5, 8], 'hat': [4, 1, 3]},
+            'mismagius': {'body': [7, 4, 6], 'hat': [2, 3, 1]},
+        },
+        'variants': [
+            {'naam': 'Boo-blauw', 'body': '#4a70c0'},
+            {'naam': 'Bloedrood', 'body': '#901828'},
+            {'naam': 'Bleke geest', 'body': '#d8d8e8'},
+            {'naam': 'Halloween', 'body': '#e07020', 'hat': '#3a2850'},
+            {'naam': 'Zwart', 'body': ('#2c2c34', {'l': 1.3}), 'hat': '#c02848'},
+            {'naam': 'Goud', 'body': ('#c89020', {'h': 0})},
+        ],
+    },
+    'pineco': {
+        'species': {
+            'pineco': {'shell': [1, 2, 4, 3, 9]},
+            'forretress': {'shell': [3, 1, 5, 2, 12]},
+        },
+        'variants': [
+            {'naam': 'Blauwspar', 'shell': '#6a88a8'},
+            {'naam': 'Verse kegel (groen)', 'shell': '#4a8a40'},
+            {'naam': 'Roestijzer', 'shell': '#904020'},
+            {'naam': 'Berijpt', 'shell': '#e0e8f0'},
+            {'naam': 'Zwart staal', 'shell': ('#3a3a44', {'l': 1.3})},
+            {'naam': 'Goud', 'shell': ('#c89020', {'h': 0})},
+        ],
+    },
+    'gligar': {
+        'species': {
+            'gligar': {'body': [1, 5, 4, 2]},
+            'gliscor': {'body': [3, 1, 5, 2, 4]},
+        },
+        'variants': [
+            {'naam': 'Woestijnschorpioen', 'body': '#c8a060'},
+            {'naam': 'Groen', 'body': '#50a050'},
+            {'naam': 'Rood', 'body': '#b03030'},
+            {'naam': 'Albino', 'body': ('#ece4e8', ALBINO)},
+            {'naam': 'Zwarte schorpioen', 'body': ('#34343c', {'l': 1.3})},
+            {'naam': 'Serket (turkoois)', 'body': '#30a0a0'},
+        ],
+    },
+    'snubbull': {
+        'species': {
+            'snubbull': {'body': [4, 3, 6, 7]},
+            'granbull': {'body': [1, 3, 4, 2]},
+        },
+        'variants': [
+            {'naam': 'Engelse bulldog (wit)', 'body': '#ece8e4'},
+            {'naam': 'Brindle', 'body': '#8a6040'},
+            {'naam': 'Zwart', 'body': ('#3a3a42', {'l': 1.3})},
+            {'naam': 'Fawn', 'body': '#d8b080'},
+            {'naam': 'Blauwe Franse bulldog', 'body': '#7a8aa8'},
+            {'naam': 'Goud', 'body': ('#c89020', {'h': 0})},
+        ],
+    },
 }

@@ -19001,3 +19001,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Kelp Shroud stapelt** (Jordi): tot 3 lagen op hetzelfde doelwit, drain per beurt 1/8 → 1/6 → 1/4 van zijn max. HP (zelfde stappen als Moai Watch). Elke extra laag: "X is wrapped even tighter in kelp!". Wisselen of Rapid Spin haalt alles weg; een gewone Leech Seed blijft 1/8. Beschrijving: "Possessed kelp drains the foe / each turn. Stacks up to 3x." In de emulator getest.
 
 - **Pokédex-lijst:** links/rechts vasthouden blijft per pagina (7 nummers) doorspringen, net als omhoog/omlaag vasthouden (was: één sprong per druk).
+
+- **Pokédex: eigen pagina per vorm.** De infopagina toont nu de gekozen vorm met zijn eigen Pokédex-tekst, categorie, lengte, gewicht, sprite en kreet (bijv. Alola-Grimer "There are a hundred or so…", Hoenn-Grimer "Dung Pokémon"). Wisselen met SELECT op de infopagina, of door op de kleurenpagina een vorm te kiezen en met B terug te gaan. Alleen vormen die je gezien hebt (geen spoilers); de basisvorm altijd.

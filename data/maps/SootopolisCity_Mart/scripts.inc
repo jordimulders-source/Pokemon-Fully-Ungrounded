@@ -15,7 +15,6 @@ SootopolisCity_Mart_EventScript_Clerk::
 SootopolisCity_Mart_Pokemart:
 	.2byte ITEM_X_ATTACK
 	.2byte ITEM_X_DEFENSE
-	.2byte ITEM_SHADOW_MAIL
 	pokemartlistend
 
 SootopolisCity_Mart_EventScript_FatMan::

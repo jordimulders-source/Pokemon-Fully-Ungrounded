@@ -13,4 +13,5 @@ AshfrostTown_Mart_EventScript_Clerk::
 
 	.align 2
 AshfrostTown_Mart_Pokemart:
+	.2byte ITEM_ICE_STONE
 	pokemartlistend

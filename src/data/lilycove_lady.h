@@ -308,9 +308,9 @@ static const u16 sQuizLadyQuizAnswers[] =
 
 static const u16 sQuizLadyPrizes[] =
 {
-    ITEM_GLITTER_MAIL,
-    ITEM_BEAD_MAIL,
-    ITEM_TROPIC_MAIL,
+    ITEM_PP_UP, // Project Grounded: geen mail meer (was Glitter/Bead/Tropic Mail)
+    ITEM_STAR_PIECE,
+    ITEM_NUGGET,
     ITEM_MAX_ETHER,
     ITEM_MAX_ETHER,
     ITEM_MAX_ETHER,

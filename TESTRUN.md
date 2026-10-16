@@ -119,3 +119,6 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Coin Case niet te krijgen (geen Harbor Mail meer) | Mauville House2 geeft hem direct | ✅ |
 | NPC over de vervloekte tv (Rotom-kelder) ontbrak | Man des huizes in Mauville House2 | ✅ |
 | Rotom-tv vóór 3 badges | Telesell-reclames met subliminale badge-boodschap | ✅ |
+| Route 111-zuid lv 34 boven Mauville | 29–31, Dave ongewijzigd | ✅ |
+| Mail bestaat nog | Overal weg en vervangen | ✅ |
+| Audit: Hydrapple/Wyrdeer, Ice Stone Ashfrost, luik Route 110, Zygarde Cube | Opgelost | ✅ |

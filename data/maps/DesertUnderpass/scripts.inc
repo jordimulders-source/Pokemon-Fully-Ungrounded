@@ -129,8 +129,17 @@ DesertUnderpass_EventScript_Zygarde_Caught::
 	removeobject LOCALID_LEGENDS_ZYGARDE
 	setflag FLAG_HIDE_LEGENDS_ZYGARDE
 	setflag FLAG_CAUGHT_ZYGARDE
+	@ Project Grounded: Zygarde Cube erbij, anders kan Zygarde nooit van vorm wisselen
+	msgbox DesertUnderpass_Text_ZygardeCube, MSGBOX_DEFAULT
+	giveitem ITEM_ZYGARDE_CUBE
 	release
 	end
+
+DesertUnderpass_Text_ZygardeCube:
+	.string "Something green and boxy was left\n"
+	.string "behind where ZYGARDE stood.\p"
+	.string "It hums. It's either a ZYGARDE CUBE\n"
+	.string "or a very judgmental lunchbox.$"
 
 DesertUnderpass_Text_Zygarde:
 	.string "Grrrooo...\p"

@@ -13,7 +13,8 @@ SlateportCity_Mart_EventScript_Clerk::
 
 	.align 2
 SlateportCity_Mart_Pokemart:
-	.2byte ITEM_HARBOR_MAIL
+	.2byte ITEM_DIVE_BALL
+	.2byte ITEM_NET_BALL
 	pokemartlistend
 
 SlateportCity_Mart_EventScript_BlackBelt::

@@ -18803,3 +18803,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Mauville House2:** de man des huizes vertelt over de vervloekte tv die ze in de kelder achter de boekenkast hebben gezet (wijst naar het Rotom-event); na het vangen van Rotom: alleen nog nieuws, "somehow that's worse".
 - **Rotom-tv vóór de 3e badge** (Jordi): geen ruis meer maar willekeurig een van drie gruwelijk irritante telesell-reclames (BALL-O-MATIC 3000, SUPER SHINE voor gymbadges, de MILTANK MILK-jingle), elk met een subliminale boodschap dat je meer badges nodig hebt.
 - **Onverkrijgbare evoluties gerepareerd** (audit 16 okt): Dipplin leert **Dragon Cheer** op lv 24 (nodig voor Hydrapple; stond in geen enkele learnset), Stantler leert **Psyshield Bash** op lv 21 (nodig voor Wyrdeer: 10× gebruiken). `dex_check.py` controleert move-voorwaarden van evoluties nog niet.
+- **Route 111-zuid** (direct boven Mauville, vóór Wattson): Tyron, Celina, Bianca en Hayden van lv 34 naar 29–31 (ace 30, Tyron's Excadrill 31); Dave blijft zoals hij is (Jordi).
+- **Dipplin leert Dragon Cheer op lv 35, Stantler Psyshield Bash op lv 30** (Jordi; eerder 24/21).
+- **Mail helemaal uit het spel** (Jordi): uit de Marts (Petalburg Orange, Slateport Harbor → nu Dive Ball + Net Ball, Fortree Wood, Sootopolis Shadow), item-bal Abandoned Ship (Harbor Mail → Dive Ball), Trick House-ballen (Great Ball, Super Potion, Revive, Ultra Ball, Hyper Potion, PP Up, Star Piece, Full Restore, Max Revive), prijzen Quiz Lady (PP Up, Star Piece, Nugget) en de Meowth-ruil (Amulet Coin i.p.v. Retro Mail).
+- **Ashfrost Mart verkoopt Ice Stones** (de Lodge-meid zei het al).
+- **Hint voor het luik op Route 110** (Regieleki): de Cyclizar-kijker zegt dat er achter het luik in de pijler iets zoemt.
+- **Zygarde Cube:** krijg je na het vangen van Zygarde in de Desert Underpass (anders kon hij nooit van vorm wisselen).

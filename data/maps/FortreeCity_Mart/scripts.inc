@@ -14,7 +14,6 @@ FortreeCity_Mart_EventScript_Clerk::
 	.align 2
 FortreeCity_Mart_Pokemart:
 	.2byte ITEM_SIX_PACK
-	.2byte ITEM_WOOD_MAIL
 	pokemartlistend
 
 FortreeCity_Mart_EventScript_Woman::

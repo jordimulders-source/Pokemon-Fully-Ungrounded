@@ -346,7 +346,7 @@ LINES = {
         'species': {
             'shroodle': {'body': [6, 7, 1], 'blue': [10, 8, 5], 'cream': [2, 4], 'face': [9, 12], 'paint': [14]},
             'grafaiai': {'body': [5, 6], 'blue': [10, 11], 'cream': [4, 3, 1], 'face': [8, 9, 7], 'paint': [13, 12],
-                         'paint2': [14, 15], '_base': {'body': 6}},
+                         'paint2': [14, 15], '_base': {'body': 6, 'face': 9}},
         },
         'variants': [
             {'naam': 'Ringstaartmaki (grijs, oranje ogen)', 'body': '#7a7a80', 'blue': '#3a3a40', 'cream': '#f0f0e8',
@@ -427,7 +427,7 @@ LINES = {
         # pepers: lijf, blad/steel, peper (Scovillains rode kop, Capsakids oranje), zaadjes/crème
         'species': {
             'capsakid': {'body': [7, 9, 8, 10], 'leaf': [13, 4, 1], 'seed': [3, 5, 2], 'pepper': [12]},
-            'scovillain': {'body': [8, 6, 14, 13, 12, 15], 'leaf': [3, 4, 1], 'pepper': [7, 5, 9, 11], '_base': {'pepper': 7}},
+            'scovillain': {'body': [8, 6, 14, 13, 12, 15], 'leaf': [3, 4, 1], 'pepper': [7, 5, 9, 11], '_base': {'pepper': 7, 'leaf': 3}},
         },
         'variants': [
             {'naam': 'Habanero (oranje en geel)', 'body': '#e87818', 'leaf': '#3a8a30', 'pepper': '#f0c020', 'seed': '#f8e8c0',

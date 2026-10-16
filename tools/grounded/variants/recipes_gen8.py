@@ -40,8 +40,8 @@ LINES = {
             'cinderace': {'fur': [4, 3, 1], 'fire': [8, 7, 9], 'yellow': [5, 10, 6, 14], 'shirt': [12, 13]},
         },
         'variants': [
-            {'naam': 'Oranjegekte (Nederlands elftal: oranje, wit en zwart)', 'fur': ('#e86010', {'l': 1.2}),
-             'fire': ('#24242a', DARK), 'yellow': '#f8f8f8', 'shirt': '#e86010', 'pants': ('#24242a', DARK)},
+            {'naam': 'Oranjegekte (Nederlands elftal: oranje, wit en zwart)', 'fur': ('#e85000', {'l': 0.6, 'c': 1.0}),
+             'fire': ('#24242a', DARK), 'yellow': '#f8f8f8', 'shirt': '#ec5000', 'pants': ('#24242a', DARK)},
             {'naam': 'Seleção canarinho (Brazilië: geel, groen, blauw)', 'fur': '#f0d040', 'fire': '#30a050',
              'yellow': '#2850c0', 'shirt': '#2850c0', 'pants': '#2850c0'},
             {'naam': 'Veldhaas (agouti met zwarte oorpunten)', 'fur': '#a88a68', 'fire': ('#3a2a24', DARK),

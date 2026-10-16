@@ -33,10 +33,10 @@ Contactvellen: `keuring_gen5a_01.png` t/m `_09.png` (normaal | shiny | 10% | 6% 
 - **Maractus** (lijf, benen, bloemen, stippen): 10% blauwe agave, 6% Hibotan (rode entcactus), 4% saguaro in bloei, 3% mariachi, 1,5% paarse schijfcactus, 0,5% Día de los Muertos.
 - **Dwebble/Crustle** (rotshuis, ader, krab): 10% Petra (rode zandsteen, blauwe krab), 6% graniet, 4% marmer met goudader, 3% obsidiaan met lava, 1,5% turkoois, 0,5% ananashuis (SpongeBob, met Mr. Krabs erin).
 - **Scraggy/Scrafty** (huid, broek, kuif): 10% gekko, 6% punk, 4% Fresh Prince, 3% albino gekko, 1,5% maffia, 0,5% vaporwave.
-- **Sigilyph** (Psychic/Flying; geel, blauw, rood, groen, zwart lijf): 10% Nazca-lijnen, 6% Maya (jade en obsidiaan), 4% Delfts blauw, 3% Mondriaan, 1,5% Warhol-popart, 0,5% Toetanchamon (goud op lapis).
+- **Sigilyph** (Psychic/Flying; geel, blauw, rood, groen, zwart lijf): 10% Nazca-lijnen, 6% Maya (jade en obsidiaan), 4% Delfts blauw, 3% Mondriaan, 1,5% Warhol-popart, 0,5% Tron (neoncyaan en oranje op zwart) (goud op lapis).
 - **Yamask/Cofagrigus** (schaduw, masker/sarcofaag, oog, tekening): 10% kopermasker, 6% jade-lijkwade, 4% Día de los Muertos, 3% bloedmaan, 1,5% obsidiaan (groen spookvuur), 0,5% rozengoud op lapis. Geen zilver: dat is de Cofagrigus-shiny.
 - **Galar-Yamask** (kleitablet, tekens, oog, schaduw): 10% terracotta, 6% Rosettasteen, 4% kleitablet van Gilgamesj, 3% jadetablet, 1,5% lapis met goud, 0,5% Sumerisch goud. Runerigus hoort erbij maar stond niet op mijn lijst (zie rapport).
-- **Tirtouga/Carracosta** (vinnen, schild, buik): 10% fossiel, 6% soepschildpad, 4% lederschildpad, 3% karetschildpad, 1,5% koraalrif, 0,5% Kim Qui (de gouden schildpad uit Hanoi).
+- **Tirtouga/Carracosta** (vinnen, schild, buik): 10% fossiel, 6% soepschildpad, 4% lederschildpad, 3% karetschildpad, 1,5% koraalrif, 0,5% Blauw schild (Mario Kart) (de gouden schildpad uit Hanoi).
 - **Archen/Archeops** (rood, blauw, geel, teal): 10% velociraptor, 6% hyacinth-ara, 4% versteend, 3% albino, 1,5% toekan, 0,5% feniks.
 - **Trubbish/Garbodor** (zak/slijm, afval/lijf, roze en blauwe rommel): 10% zwarte vuilniszak, 6% gele zak, 4% plasticsoep, 3% Barbie-afval, 1,5% PMD-zak, 0,5% gouden vuilnisbak.
 - **Zorua/Zoroark** (vacht, poten, manen, ogen): 10% zilvervos, 6% poolvos, 4% Loki, 3% fennek, 1,5% Joker, 0,5% Kurama (negenstaartige vos).

@@ -85,9 +85,15 @@ Burglar_Text_Resident1::
 	.string "Hand it over, landlubber.$"
 
 Burglar_Text_Resident2::
-	.string "My painting! It's called “Man Staring at\n"
-	.string "a Wall,” and it took me nine years.\p"
-	.string "The wall took me two. Give it.$"
+	.string "KECLEON: Kekleh! Ke-KEH! Kekekeh!\p"
+	.string "…KECCLES? Is that you? Since when do\n"
+	.string "you live in LILYCOVE?\p"
+	.string "KECLEON: …Ke?\p"
+	.string "Oh wait. The only KECLEON that can\n"
+	.string "talk is KECCLES.\p"
+	.string "This one just wants its painting back.\n"
+	.string "Probably. It's pointing at it with its\l"
+	.string "whole face.$"
 
 Burglar_Text_Resident3::
 	.string "My sock! My whole pension is in that\n"
@@ -103,10 +109,10 @@ Burglar_Text_Resident4::
 	.string "Hand him over, please.$"
 
 Burglar_Text_Resident5::
-	.string "Not the meteorite! My husband talks to\n"
-	.string "that rock more than he talks to me.\p"
-	.string "...Actually, keep it. No, wait. He'd only\n"
-	.string "start talking to me again. Give it back.$"
+	.string "COZMO: Not my METEORITE! I talk to\n"
+	.string "that rock more than to my wife!\p"
+	.string "…Please don't tell her. She thinks it's\n"
+	.string "the other way around. Give it back!$"
 
 Burglar_Text_Resident6::
 	.string "That's NORMAN's napkin! He used it at my\n"
@@ -121,6 +127,13 @@ Burglar_Text_Flee::
 Burglar_Text_Dropped::
 	.string "SIMON dropped something while running\n"
 	.string "away!$"
+
+Burglar_Text_ThanksKecleon::
+	.string "KECLEON: Kekleh!\p"
+	.string "It turned the same color as the\n"
+	.string "painting. That's probably a thank you.\p"
+	.string "Keep whatever he dropped. The KECLEON\n"
+	.string "has no use for money. Or pockets.$"
 
 Burglar_Text_Thanks::
 	.string "Thank you, kid. HOENN has no police. We\n"

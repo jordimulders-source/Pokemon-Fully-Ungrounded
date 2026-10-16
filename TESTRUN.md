@@ -114,3 +114,5 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Bessen plukken sneller | | ✅ |
 | Melding na move/take van items | Pc: melding bij oppakken; partymenu had hem al | ✅ |
 | Burglar SIMON post-game tijdverspilling | Alleen met ≥ 3 Pokémon van lv 90+ in het team | ✅ |
+| Simon: bewoners Fallarbor/Lilycove | Cozmo zelf; de Kecleon met spraakverwarring | ✅ |
+| Simon twee keer op rij in dezelfde stad | Kan niet meer | ✅ |

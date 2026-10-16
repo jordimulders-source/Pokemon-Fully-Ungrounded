@@ -141,7 +141,8 @@ Burglar_EventScript_BigNugget::
 Burglar_EventScript_Thanks::
 	applymovement LOCALID_BURGLAR_RESIDENT, Burglar_Movement_FaceAround
 	waitmovement LOCALID_BURGLAR_RESIDENT
-	msgbox Burglar_Text_Thanks, MSGBOX_DEFAULT
+	call_if_eq VAR_0x8004, 2, Burglar_EventScript_ThanksKecleon
+	call_if_ne VAR_0x8004, 2, Burglar_EventScript_ThanksDefault
 	special Burglar_ResidentGoHome
 	waitmovement LOCALID_BURGLAR_RESIDENT
 	opendoor VAR_0x8005, VAR_0x8006
@@ -189,7 +190,17 @@ Burglar_EventScript_Resident0::
 Burglar_EventScript_Resident1::
 	msgbox Burglar_Text_Resident1, MSGBOX_DEFAULT
 	return
+Burglar_EventScript_ThanksKecleon::
+	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
+	waitmoncry
+	msgbox Burglar_Text_ThanksKecleon, MSGBOX_DEFAULT
+	return
+Burglar_EventScript_ThanksDefault::
+	msgbox Burglar_Text_Thanks, MSGBOX_DEFAULT
+	return
 Burglar_EventScript_Resident2::
+	playmoncry SPECIES_KECLEON, CRY_MODE_NORMAL
+	waitmoncry
 	msgbox Burglar_Text_Resident2, MSGBOX_DEFAULT
 	return
 Burglar_EventScript_Resident3::

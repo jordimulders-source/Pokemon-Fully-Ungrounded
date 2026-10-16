@@ -35,10 +35,10 @@ static const struct BurglarHouse sHouses[] =
 {
     { MAP_MAUVILLE_CITY,   19, 14, OBJ_EVENT_GFX_WOMAN_3 },    // 0 Mauville, House2: de tv
     { MAP_SLATEPORT_CITY,  21, 44, OBJ_EVENT_GFX_POKEFAN_M },  // 1 Slateport, House: een anker
-    { MAP_LILYCOVE_CITY,   42,  6, OBJ_EVENT_GFX_EXPERT_M },   // 2 Lilycove, House1: een schilderij
+    { MAP_LILYCOVE_CITY,   42,  6, OBJ_EVENT_GFX_KECLEON },    // 2 Lilycove, House1: een schilderij (de Kecleon komt naar buiten, Jordi)
     { MAP_RUSTBORO_CITY,   26, 46, OBJ_EVENT_GFX_OLD_MAN },    // 3 Rustboro, House3: een sok vol pensioen
     { MAP_VERDANTURF_TOWN, 17, 15, OBJ_EVENT_GFX_WOMAN_5 },    // 4 Verdanturf, House: opa's urn
-    { MAP_FALLARBOR_TOWN,   6, 17, OBJ_EVENT_GFX_WOMAN_2 },    // 5 Fallarbor, Cozmo's huis: een meteorietje
+    { MAP_FALLARBOR_TOWN,   6, 17, OBJ_EVENT_GFX_SCIENTIST_1 },// 5 Fallarbor, Cozmo's huis: een meteorietje (Cozmo zelf, Jordi)
     { MAP_PETALBURG_CITY,  20, 24, OBJ_EVENT_GFX_POKEFAN_F },  // 6 Petalburg, House2: Normans servet
 };
 
@@ -132,6 +132,9 @@ void Burglar_OnMapEnter(void)
         return;
     }
     if (!FlagGet(FLAG_SYS_POKEMON_GET) || !FlagGet(FLAG_BADGE01_GET))
+        return;
+    // Jordi: nooit twee keer op rij in dezelfde stad (ook niet na een verloren gevecht)
+    if (VarGet(VAR_BURGLAR_LAST_TOWN) == house + 1)
         return;
     // Post-game (Jordi): alleen als je minstens 3 Pokémon van lv 90+ bij je hebt, anders is het tijdverspilling
     if (FlagGet(FLAG_SYS_GAME_CLEAR) && CountPartyMonsAtLeastLevel(90) < 3)
@@ -241,6 +244,7 @@ bool8 Burglar_TryTriggerOnStep(s16 px, s16 py)
 
     sSceneHouse = sArmedHouse - 1;
     sArmedHouse = 0;
+    VarSet(VAR_BURGLAR_LAST_TOWN, sSceneHouse + 1);
     ScriptContext_SetupScript(Burglar_EventScript_Scene);
     return TRUE;
 }

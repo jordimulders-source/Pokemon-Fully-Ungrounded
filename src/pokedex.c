@@ -2646,7 +2646,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         CreateMonListEntry(2, selectedMon, ignored);
         PlaySE(SE_DEX_SCROLL);
     }
-    else if (JOY_NEW(DPAD_LEFT) && (selectedMon > 0))
+    else if (JOY_REPEAT(DPAD_LEFT) && (selectedMon > 0))
     {
         startingPos = selectedMon;
 
@@ -2657,7 +2657,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         CreateMonSpritesAtPos(selectedMon, 0xE);
         PlaySE(SE_DEX_PAGE);
     }
-    else if (JOY_NEW(DPAD_RIGHT) && (selectedMon < sPokedexView->pokemonListCount - 1))
+    else if (JOY_REPEAT(DPAD_RIGHT) && (selectedMon < sPokedexView->pokemonListCount - 1))
     {
         startingPos = selectedMon;
         for (i = 0; i < 7; i++)

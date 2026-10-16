@@ -95,5 +95,16 @@ Na keuring: opmerkingen per groep teruggeven; deze lijst daarna opruimen.
 - **Aerodactyl** (pterosauriërs): 10% zandsteenfossiel, 6% Jurassic-groen (rode vliezen), 4% Quetzalcoatlus (rood met gele vliezen), 3% albino, 1,5% zwarte draak (rode vliezen), 0,5% barnsteen.
 - **Munchlax/Snorlax** (beren; de buik blijft): 10% grizzly, 6% panda, 4% ijsbeer, 3% Totoro (grijs), 1,5% Kirby-honger (roze), 0,5% gouden beeld.
 
+## Groep 24
+- **Articuno**: 10% Zapdos-geel, 6% Moltres-rood, 4% smaragd, 3% sneeuwuil (wit), 1,5% poolnacht, 0,5% Psychic-paars.
+- **Zapdos**: 10% Articuno-blauw, 6% Moltres-rood (gele snavel), 4% paarse bliksem, 3% witte bliksem (blauwe poten), 1,5% stormvogel (zwart met cyaan), 0,5% groene bliksem.
+- **Moltres**: 10% Articuno-blauw vuur, 6% Zapdos-geel, 4% paars vuur, 3% zilvervuur, 1,5% zwarte feniks (rood lijf), 0,5% groen vuur.
+- **Dratini/Dragonair/Dragonite**: 10% zeedraak (groen; Dragonite teal, want zijn shiny is groen), 6% Chinese draak (rood met gouden vleugels), 4% paars, 3% albino, 1,5% zwart (rode vleugels), 0,5% sterrenstelsel (gele vleugels). Geen roze: de Dratini-shiny is roze.
+- **Mewtwo**: 10% Shadow Mewtwo (zwart met rode staart), 6% blauwe staart (Mega X-tint), 4% rood, 3% gouden Mewtwo, 1,5% Mew-ruil (roze), 0,5% kristal. Geen groen: de shiny-staart is groen.
+- **Mew** (kan alles worden): 10% Mewtwo-paars, 6% mint, 4% citroen, 3% wit, 1,5% sterrennacht, 0,5% Ancient Mew (goud, de beroemde kaart). Geen blauw: de shiny is blauw.
+- **Chikorita/Bayleef/Meganium**: 10% Cyndaquil-kleuren (marine met rood blad), 6% Totodile-kleuren (blauw met rood blad), 4% Torchic-kleuren (oranje met geel blad), 3% albino, 1,5% schaduw (zwart met rood), 0,5% Pokémon Crystal (kristalblauw).
+- **Cyndaquil/Quilava/Typhlosion**: 10% Totodile-kleuren (blauwe rug, rode vlammen), 6% Chikorita-kleuren (groene rug, groene vlammen), 4% Mudkip-kleuren (lichtblauw met oranje vlammen), 3% albino, 1,5% schaduw (paarse vlammen), 0,5% Pokémon Crystal (blauwe vlammen). Hisui-Typhlosion nog niet.
+- **Totodile/Croconaw/Feraligatr**: 10% Chikorita-kleuren (lichtgroen met donkergroene stekels), 6% Cyndaquil-kleuren (marine met vlamoranje stekels), 4% Treecko-kleuren (groen met rode stekels), 3% albino, 1,5% schaduw (zwart met cyaan), 0,5% Pokémon Crystal.
+
 ## Nog open: moderne vormen (alleen front.png, ruizige schaduw)
-Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.
+Galar-Weezing (alleen rook gedaan), Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Dudunsparce, Galar-Meowth/Perrserker, Annihilape, Hisui-Growlithe/-Arcanine, Galar-Ponyta/-Rapidash, Galar-Slowpoke/-Slowbro/-Slowking, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Paldea-Tauros, Galar-Articuno/-Zapdos/-Moltres, Hisui-Typhlosion, Farigiraf (alleen vacht gedaan). Voorstel: per vorm alleen accentkleuren, donker blijft donker. Graag eerst Jordi's oordeel over Galar-Weezing/Farigiraf.

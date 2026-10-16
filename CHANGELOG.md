@@ -18936,3 +18936,5 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Kleurvarianten, groep 22 (Kanto/Johto):** Tyrogue en de Hitmons, Lickitung-lijn, Happiny-lijn, Tangela-lijn, Kangaskhan, Mime Jr./Mr. Mime (Galar nog niet), Scyther/Scizor (Kleavor nog niet), Smoochum/Jynx, Elekid-lijn, Magby-lijn. Inspiratie: `KEURING.md`.
 
 - **Kleurvarianten, groep 23 (Kanto):** Tauros (Paldea-vormen nog niet), Lapras, Ditto, de hele Eevee-familie (de Eeveelutions ruilen van kleur met elkaar), Omanyte-lijn, Kabuto-lijn, Aerodactyl, Munchlax/Snorlax. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 24:** Articuno, Zapdos, Moltres (dragen elkaars kleuren; Galar-vormen nog niet), Dratini-lijn, Mewtwo, Mew, Chikorita-, Cyndaquil- en Totodile-lijn (dragen elkaars kleuren, plus de Hoenn-starters). Inspiratie: `KEURING.md`.

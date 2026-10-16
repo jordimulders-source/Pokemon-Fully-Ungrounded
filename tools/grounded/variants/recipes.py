@@ -2458,4 +2458,122 @@ LINES = {
             {'naam': 'Gouden beeld', 'body': ('#c89820', {'h': 0})},
         ],
     },
+    # --- groep 24 (Kanto-legendaries, Dratini, Johto-starters) ---
+    'articuno': {
+        # de drie vogels dragen elkaars kleuren (Galar-vormen: moderne sprites, nog niet)
+        'species': {'articuno': {'body': [6, 1, 3, 7, 4, 2]}},
+        'variants': [
+            {'naam': 'Zapdos-geel', 'body': '#f0c830'},
+            {'naam': 'Moltres-rood', 'body': '#e05030'},
+            {'naam': 'Smaragd', 'body': '#40b080'},
+            {'naam': 'Sneeuwuil (wit)', 'body': ('#ecf0f4', ALBINO)},
+            {'naam': 'Poolnacht', 'body': '#283078'},
+            {'naam': 'Psychic-paars', 'body': '#8050c0'},
+        ],
+    },
+    'zapdos': {
+        'species': {'zapdos': {'body': [3, 1, 5, 7, 2], 'orange': [11, 10, 9]}},
+        'variants': [
+            {'naam': 'Articuno-blauw', 'body': '#4a90e0'},
+            {'naam': 'Moltres-rood', 'body': '#e05030', 'orange': '#f0d040'},
+            {'naam': 'Paarse bliksem', 'body': '#9060d0'},
+            {'naam': 'Witte bliksem', 'body': '#ece8e0', 'orange': '#40a0f0'},
+            {'naam': 'Stormvogel (zwart)', 'body': ('#34343c', {'l': 1.3}), 'orange': '#40e0f0'},
+            {'naam': 'Groene bliksem', 'body': '#60c050'},
+        ],
+    },
+    'moltres': {
+        'species': {'moltres': {'body': [1, 2, 7, 8], 'yellow': [4, 6, 9]}},
+        'variants': [
+            {'naam': 'Articuno-blauw vuur', 'body': '#3070e0', 'yellow': '#a0e0f8'},
+            {'naam': 'Zapdos-geel', 'body': '#f0c830', 'yellow': '#f8f0c0'},
+            {'naam': 'Paars vuur', 'body': '#9040c0', 'yellow': '#f0a0f0'},
+            {'naam': 'Zilvervuur', 'body': '#b8bcc8', 'yellow': '#f0f0f8'},
+            {'naam': 'Zwarte feniks', 'body': ('#34343c', {'l': 1.3}), 'yellow': '#e02020'},
+            {'naam': 'Groen vuur', 'body': '#40b050', 'yellow': '#d0f080'},
+        ],
+    },
+    'dratini': {
+        'species': {
+            'dratini': {'body': [6, 5, 8, 7]},
+            'dragonair': {'body': [5, 13, 6, 10, 7, 14, 9]},
+            'dragonite': {'body': [7, 1, 3, 6, 5], 'wings': [12, 13, 14]},
+        },
+        'variants': [
+            {'naam': 'Zeedraak (groen)', 'body': '#40a070', 'dragonite:body': '#40a0a0'},
+            {'naam': 'Chinese draak (rood)', 'body': '#c03030', 'wings': '#e0b030'},
+            {'naam': 'Paars', 'body': '#8050c0'},
+            {'naam': 'Albino', 'body': ('#ece8e8', ALBINO), 'wings': '#f0c8c8'},
+            {'naam': 'Zwart', 'body': ('#34343c', {'l': 1.3}), 'wings': '#c02828'},
+            {'naam': 'Sterrenstelsel', 'body': '#283078', 'wings': '#f0e070'},
+        ],
+    },
+    'mewtwo': {
+        'species': {'mewtwo': {'body': [3, 1, 4, 2, 6], 'tail': [11, 7, 8, 10]}},
+        'variants': [
+            {'naam': 'Shadow Mewtwo', 'body': ('#3a3a44', {'l': 1.3}), 'tail': '#c02040'},
+            {'naam': 'Blauwe staart', 'tail': '#3060d0'},
+            {'naam': 'Rood', 'body': '#e8d8d8', 'tail': '#c03030'},
+            {'naam': 'Gouden Mewtwo', 'body': '#e0c880', 'tail': '#c08020'},
+            {'naam': 'Mew-ruil (roze)', 'body': '#f8c8e0', 'tail': '#e070b0'},
+            {'naam': 'Kristal', 'body': '#c0e0f0', 'tail': '#40b0d0'},
+        ],
+    },
+    'mew': {
+        'species': {'mew': {'body': [4, 1, 3, 5, 2]}},
+        'variants': [
+            {'naam': 'Mewtwo-paars', 'body': '#b0a0c8'},
+            {'naam': 'Mint', 'body': '#a0e0c0'},
+            {'naam': 'Citroen', 'body': '#f0e080'},
+            {'naam': 'Wit', 'body': '#f0f0f4'},
+            {'naam': 'Sterrennacht', 'body': '#283078'},
+            {'naam': 'Ancient Mew (goud)', 'body': ('#c89820', {'h': 0})},
+        ],
+    },
+    'chikorita': {
+        # de Johto-starters dragen elkaars kleuren
+        'species': {
+            'chikorita': {'body': [10, 8, 9, 7], 'leaf': [2, 1, 4, 3]},
+            'bayleef': {'body': [9, 8, 6, 7], 'leaf': [1, 2, 4, 3]},
+            'meganium': {'body': [5, 4, 7, 6], 'petals': [11, 10, 13, 12]},
+        },
+        'variants': [
+            {'naam': 'Cyndaquil-kleuren', 'body': '#3a5a7a', 'leaf': '#e04020', 'petals': '#f0c020'},
+            {'naam': 'Totodile-kleuren', 'body': '#60a8e0', 'leaf': '#d04030', 'petals': '#f0d050'},
+            {'naam': 'Torchic-kleuren', 'body': '#f0a050', 'leaf': '#f0d040', 'petals': '#f06030'},
+            {'naam': 'Albino', 'body': ('#ece8e0', ALBINO), 'leaf': '#e0e8d8', 'petals': '#f0c8d0'},
+            {'naam': 'Schaduw', 'body': ('#34343c', {'l': 1.3}), 'leaf': '#c02040', 'petals': '#c02040'},
+            {'naam': 'Pokémon Crystal', 'body': '#a8d8f0', 'leaf': '#4080d0', 'petals': '#80e0f0'},
+        ],
+    },
+    'cyndaquil': {
+        'species': {
+            'cyndaquil': {'back': [9, 4, 5, 3], 'flames': [1, 2, 6, 8]},
+            'quilava': {'back': [15, 6, 5, 7], 'flames': [9, 1, 2, 4, 3]},
+            'typhlosion': {'back': [6, 15, 5, 7], 'flames': [1, 2, 4, 3]},
+        },
+        'variants': [
+            {'naam': 'Totodile-kleuren', 'back': '#3080c8', 'flames': ('#d03020', {'h': 0})},
+            {'naam': 'Chikorita-kleuren', 'back': '#70a840', 'flames': '#80d040'},
+            {'naam': 'Mudkip-kleuren', 'back': '#80c8f0', 'flames': '#f08030'},
+            {'naam': 'Albino', 'back': ('#ece4e0', ALBINO), 'flames': '#f0c0a0'},
+            {'naam': 'Schaduw', 'back': ('#34343c', {'l': 1.3}), 'flames': '#a050e0'},
+            {'naam': 'Pokémon Crystal', 'back': '#a8d8f0', 'flames': '#4080f0'},
+        ],
+    },
+    'totodile': {
+        'species': {
+            'totodile': {'blue': [2, 1, 3, 4], 'red': [9, 11, 10, 12]},
+            'croconaw': {'blue': [6, 7, 8, 9], 'red': [1, 5, 4, 2, 11, 12]},
+            'feraligatr': {'blue': [5, 7, 6, 8], 'red': [1, 4, 2]},
+        },
+        'variants': [
+            {'naam': 'Chikorita-kleuren', 'blue': '#a0d070', 'red': '#408030'},
+            {'naam': 'Cyndaquil-kleuren', 'blue': '#2c4870', 'red': '#f06020'},
+            {'naam': 'Treecko-kleuren', 'blue': '#3a8a40', 'red': '#c02828'},
+            {'naam': 'Albino', 'blue': ('#ece8e8', ALBINO), 'red': '#f0b0b0'},
+            {'naam': 'Schaduw', 'blue': ('#34343c', {'l': 1.3}), 'red': '#40e0f0'},
+            {'naam': 'Pokémon Crystal', 'blue': '#a8d8f0', 'red': '#4080d0'},
+        ],
+    },
 }

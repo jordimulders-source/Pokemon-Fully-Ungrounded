@@ -582,6 +582,57 @@ static const u16 sVariants_Munchlax[] = INCBIN_U16("graphics/pokemon/munchlax/va
 #if (P_FAMILY_SNORLAX)
 static const u16 sVariants_Snorlax[] = INCBIN_U16("graphics/pokemon/snorlax/variants.gbapal");
 #endif
+#if (P_FAMILY_ARTICUNO)
+static const u16 sVariants_Articuno[] = INCBIN_U16("graphics/pokemon/articuno/variants.gbapal");
+#endif
+#if (P_FAMILY_ZAPDOS)
+static const u16 sVariants_Zapdos[] = INCBIN_U16("graphics/pokemon/zapdos/variants.gbapal");
+#endif
+#if (P_FAMILY_MOLTRES)
+static const u16 sVariants_Moltres[] = INCBIN_U16("graphics/pokemon/moltres/variants.gbapal");
+#endif
+#if (P_FAMILY_DRATINI)
+static const u16 sVariants_Dratini[] = INCBIN_U16("graphics/pokemon/dratini/variants.gbapal");
+#endif
+#if (P_FAMILY_DRATINI)
+static const u16 sVariants_Dragonair[] = INCBIN_U16("graphics/pokemon/dragonair/variants.gbapal");
+#endif
+#if (P_FAMILY_DRATINI)
+static const u16 sVariants_Dragonite[] = INCBIN_U16("graphics/pokemon/dragonite/variants.gbapal");
+#endif
+#if (P_FAMILY_MEWTWO)
+static const u16 sVariants_Mewtwo[] = INCBIN_U16("graphics/pokemon/mewtwo/variants.gbapal");
+#endif
+#if (P_FAMILY_MEW)
+static const u16 sVariants_Mew[] = INCBIN_U16("graphics/pokemon/mew/variants.gbapal");
+#endif
+#if (P_FAMILY_CHIKORITA)
+static const u16 sVariants_Chikorita[] = INCBIN_U16("graphics/pokemon/chikorita/variants.gbapal");
+#endif
+#if (P_FAMILY_CHIKORITA)
+static const u16 sVariants_Bayleef[] = INCBIN_U16("graphics/pokemon/bayleef/variants.gbapal");
+#endif
+#if (P_FAMILY_CHIKORITA)
+static const u16 sVariants_Meganium[] = INCBIN_U16("graphics/pokemon/meganium/variants.gbapal");
+#endif
+#if (P_FAMILY_CYNDAQUIL)
+static const u16 sVariants_Cyndaquil[] = INCBIN_U16("graphics/pokemon/cyndaquil/variants.gbapal");
+#endif
+#if (P_FAMILY_CYNDAQUIL)
+static const u16 sVariants_Quilava[] = INCBIN_U16("graphics/pokemon/quilava/variants.gbapal");
+#endif
+#if (P_FAMILY_CYNDAQUIL)
+static const u16 sVariants_Typhlosion[] = INCBIN_U16("graphics/pokemon/typhlosion/variants.gbapal");
+#endif
+#if (P_FAMILY_TOTODILE)
+static const u16 sVariants_Totodile[] = INCBIN_U16("graphics/pokemon/totodile/variants.gbapal");
+#endif
+#if (P_FAMILY_TOTODILE)
+static const u16 sVariants_Croconaw[] = INCBIN_U16("graphics/pokemon/croconaw/variants.gbapal");
+#endif
+#if (P_FAMILY_TOTODILE)
+static const u16 sVariants_Feraligatr[] = INCBIN_U16("graphics/pokemon/feraligatr/variants.gbapal");
+#endif
 #if (P_FAMILY_LEDYBA)
 static const u16 sVariants_Ledyba[] = INCBIN_U16("graphics/pokemon/ledyba/variants.gbapal");
 #endif
@@ -1685,6 +1736,57 @@ const struct VariantPalettes gVariantPalettes[] =
 #endif
 #if (P_FAMILY_SNORLAX)
     {gMonPalette_Snorlax, sVariants_Snorlax},
+#endif
+#if (P_FAMILY_ARTICUNO)
+    {gMonPalette_Articuno, sVariants_Articuno},
+#endif
+#if (P_FAMILY_ZAPDOS)
+    {gMonPalette_Zapdos, sVariants_Zapdos},
+#endif
+#if (P_FAMILY_MOLTRES)
+    {gMonPalette_Moltres, sVariants_Moltres},
+#endif
+#if (P_FAMILY_DRATINI)
+    {gMonPalette_Dratini, sVariants_Dratini},
+#endif
+#if (P_FAMILY_DRATINI)
+    {gMonPalette_Dragonair, sVariants_Dragonair},
+#endif
+#if (P_FAMILY_DRATINI)
+    {gMonPalette_Dragonite, sVariants_Dragonite},
+#endif
+#if (P_FAMILY_MEWTWO)
+    {gMonPalette_Mewtwo, sVariants_Mewtwo},
+#endif
+#if (P_FAMILY_MEW)
+    {gMonPalette_Mew, sVariants_Mew},
+#endif
+#if (P_FAMILY_CHIKORITA)
+    {gMonPalette_Chikorita, sVariants_Chikorita},
+#endif
+#if (P_FAMILY_CHIKORITA)
+    {gMonPalette_Bayleef, sVariants_Bayleef},
+#endif
+#if (P_FAMILY_CHIKORITA)
+    {gMonPalette_Meganium, sVariants_Meganium},
+#endif
+#if (P_FAMILY_CYNDAQUIL)
+    {gMonPalette_Cyndaquil, sVariants_Cyndaquil},
+#endif
+#if (P_FAMILY_CYNDAQUIL)
+    {gMonPalette_Quilava, sVariants_Quilava},
+#endif
+#if (P_FAMILY_CYNDAQUIL)
+    {gMonPalette_Typhlosion, sVariants_Typhlosion},
+#endif
+#if (P_FAMILY_TOTODILE)
+    {gMonPalette_Totodile, sVariants_Totodile},
+#endif
+#if (P_FAMILY_TOTODILE)
+    {gMonPalette_Croconaw, sVariants_Croconaw},
+#endif
+#if (P_FAMILY_TOTODILE)
+    {gMonPalette_Feraligatr, sVariants_Feraligatr},
 #endif
 #if (P_FAMILY_LEDYBA)
     {gMonPalette_Ledyba, sVariants_Ledyba},

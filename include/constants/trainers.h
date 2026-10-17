@@ -215,6 +215,7 @@
 #define TRAINER_BACK_PIC_KECLEON                8 // Project Grounded: Keccles als partner
 #define TRAINER_BACK_PIC_CALYREX                9 // Project Grounded: Calyrex als partner (National Park)
 #define TRAINER_BACK_PIC_YOSHI                  10 // Project Grounded: Yoshi als partner (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
+#define TRAINER_BACK_PIC_JOEY                   11 // Project Grounded: Joey als partner tegen Gabby & Ty (tools/grounded/joey_back.py)
 
 #define FACILITY_CLASS_HIKER                 0x0
 #define FACILITY_CLASS_AQUA_GRUNT_M          0x1

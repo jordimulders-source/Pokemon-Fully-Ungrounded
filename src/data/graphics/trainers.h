@@ -475,6 +475,8 @@ const u8 gTrainerBackPic_Calyrex[] = INCBIN_U8("graphics/trainers/back_pics/caly
 const u16 gTrainerBackPicPalette_Calyrex[] = INCBIN_U16("graphics/trainers/back_pics/calyrex.gbapal");
 const u8 gTrainerBackPic_Yoshi[] = INCBIN_U8("graphics/trainers/back_pics/yoshi.4bpp"); // Project Grounded: Yoshi als partner (tools/grounded/yoshi_sprites.py)
 const u16 gTrainerBackPicPalette_Yoshi[] = INCBIN_U16("graphics/trainers/back_pics/yoshi.gbapal");
+const u8 gTrainerBackPic_Joey[] = INCBIN_U8("graphics/trainers/back_pics/joey.4bpp"); // Project Grounded: Joey als partner (tools/grounded/joey_back.py)
+const u16 gTrainerBackPicPalette_Joey[] = INCBIN_U16("graphics/trainers/back_pics/joey.gbapal");
 const u16 gTrainerBackPicPalette_Leaf[] = INCBIN_U16("graphics/trainers/back_pics/leaf.gbapal");
 
 // The first two parameters invoke a front pic and palette by
@@ -757,4 +759,5 @@ const struct TrainerBacksprite gTrainerBacksprites[] =
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_KECLEON, 4, gTrainerBackPic_Kecleon, gTrainerBackPicPalette_Kecleon, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_CALYREX, 4, gTrainerBackPic_Calyrex, gTrainerBackPicPalette_Calyrex, sBackAnims_Hoenn),
     TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_YOSHI, 4, gTrainerBackPic_Yoshi, gTrainerBackPicPalette_Yoshi, sBackAnims_Hoenn),
+    TRAINER_BACK_SPRITE(TRAINER_BACK_PIC_JOEY, 5, gTrainerBackPic_Joey, gTrainerBackPicPalette_Joey, sBackAnims_Kanto),
 };

@@ -211,20 +211,30 @@ Route114_EventScript_EF_ZinniaRoute114::
 
 Route114_Text_EF_ZinniaRoute114Intro:
 	.string "ZINNIA: Shh. Listen. Hear that?\p"
-	.string "A lake full of meteors, crashing\n"
-	.string "down for ten thousand years.\p"
-	.string "My people wrote a song about it.\n"
-	.string "Forty-seven verses.\p"
-	.string "I'll hum it while I beat you.$"
+	.string "The falls are humming. Rocks from\n"
+	.string "the sky, ten thousand years old.\p"
+	.string "My people guard a story about the\n"
+	.string "sky. About the one who lives above\l"
+	.string "the clouds and never comes down.\p"
+	.string "It came down once. Before. When the\n"
+	.string "sky was falling.\p"
+	.string "Lately my dragons won't sleep.\n"
+	.string "Neither do I. Let's see if you're\l"
+	.string "worth worrying about.$"
 
 Route114_Text_EF_ZinniaRoute114Defeat:
-	.string "Verse thirty-two is about you now.\n"
-	.string "It's not flattering.$"
+	.string "Huh. You hit like someone the\n"
+	.string "story forgot to mention.$"
 
 Route114_Text_EF_ZinniaRoute114PostBattle:
-	.string "ZINNIA: Somewhere up there, a rock\n"
-	.string "is still falling.\p"
-	.string "Ten thousand years of falling.\n"
-	.string "Honestly? Relatable.$"
+	.string "ZINNIA: Something is coming. Not\n"
+	.string "today. Not tomorrow. But soon.\p"
+	.string "I can feel it in the falls, in my\n"
+	.string "dragons, in my teeth.\p"
+	.string "When the sky starts falling, the\n"
+	.string "old guardian will have to wake up.\p"
+	.string "And someone will have to make it.\n"
+	.string "…Aster thinks that's you. Aster is\l"
+	.string "usually wrong. Usually.$"
 
 @ }

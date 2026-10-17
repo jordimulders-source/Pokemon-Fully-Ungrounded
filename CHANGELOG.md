@@ -19070,3 +19070,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Torens** op lv 26–30, dezelfde soorten in een jongere vorm: Darkness: Vesper Zorua 26/Inkay 27, Kage Liepard/Scraggy 28, Obsidian Krokorok/Pawniard 29 + Absol 30. Waters: Marina Floatzel 26/Clauncher 27, Ryu Poliwhirl/Mareanie 28 (Toxic → Recover/Poison Jab), Tide Frogadier/Wimpod 29 + Drednaw 30. Met alle EXP voor Kubfu evolueert hij rond lv 32–33.
   - **Mustard** lv 41–42 → **34–35** (Luxray, Corvisquire, Jangmo-o, Mienfoo 34; Urshifu Rapid Strike 35).
   - In de emulator getest: alleen Kubfu in het gevecht, team terug na verlies, geen white-out.
+- **Rest House-dame (Route 111):** na het rusten geen tweede ja/nee meer. Ze zeurt dat je moet blijven ("I made soup. I'll make more soup.") en beantwoordt het zelf: "…Oh, you're leaving. Of course you are. Everyone leaves. See you soon, dear. Very soon. I'll be right here. By the window." (Jordi).

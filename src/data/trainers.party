@@ -32472,8 +32472,8 @@ Music: Suspicious
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Zoroark
-Level: 38
+Zorua
+Level: 26
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Illusion
 - Snarl
@@ -32481,8 +32481,8 @@ Ability: Illusion
 - Feint Attack
 - Hone Claws
 
-Malamar
-Level: 38
+Inkay
+Level: 27
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Contrary
 - Superpower
@@ -32499,17 +32499,8 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Scrafty
-Level: 39
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-Ability: Intimidate
-- Brick Break
-- Payback
-- Fake Out
-- Sand Attack
-
 Liepard
-Level: 39
+Level: 28
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Prankster
 - Sucker Punch
@@ -32517,14 +32508,14 @@ Ability: Prankster
 - Fake Out
 - Assurance
 
-Pancham
-Level: 39
+Scraggy
+Level: 28
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-Ability: Iron Fist
-- Arm Thrust
-- Work Up
-- Karate Chop
-- Circle Throw
+Ability: Intimidate
+- Brick Break
+- Payback
+- Fake Out
+- Sand Attack
 
 === TRAINER_DOJO_DARK_KEEPER ===
 Name: OBSIDIAN
@@ -32535,8 +32526,8 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Krookodile
-Level: 39
+Krokorok
+Level: 29
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Ability: Intimidate
 - Crunch
@@ -32544,8 +32535,8 @@ Ability: Intimidate
 - Sand Tomb
 - Swagger
 
-Bisharp
-Level: 39
+Pawniard
+Level: 29
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Ability: Defiant
 - Metal Claw
@@ -32554,7 +32545,7 @@ Ability: Defiant
 - Fury Cutter
 
 Absol @ Black Glasses
-Level: 40
+Level: 30
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Ability: Serene Grace
 - Night Slash
@@ -32572,7 +32563,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Floatzel
-Level: 38
+Level: 26
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Swift Swim
 - Aqua Jet
@@ -32580,8 +32571,8 @@ Ability: Swift Swim
 - Water Pulse
 - Swift
 
-Clawitzer
-Level: 38
+Clauncher
+Level: 27
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Mega Launcher
 - Water Pulse
@@ -32599,7 +32590,7 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
 Poliwhirl
-Level: 39
+Level: 28
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Water Absorb
 - Bubble Beam
@@ -32607,23 +32598,14 @@ Ability: Water Absorb
 - Body Slam
 - Double Slap
 
-Toxapex
-Level: 39
+Mareanie
+Level: 28
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Merciless
-- Toxic
-- Venoshock
+- Poison Jab
 - Bite
 - Pin Missile
-
-Mienfoo
-Level: 39
-IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-Ability: Regenerator
-- Force Palm
-- Fake Out
-- U-turn
-- Detect
+- Recover
 
 === TRAINER_DOJO_WATER_KEEPER ===
 Name: TIDE
@@ -32634,8 +32616,8 @@ Music: Intense
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability
 
-Greninja
-Level: 39
+Frogadier
+Level: 29
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Ability: Protean
 - Water Pulse
@@ -32644,7 +32626,7 @@ Ability: Protean
 - Smokescreen
 
 Wimpod
-Level: 39
+Level: 29
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Ability: Wimp Out
 - Bug Bite
@@ -32653,7 +32635,7 @@ Ability: Wimp Out
 - Defense Curl
 
 Drednaw @ Mystic Water
-Level: 40
+Level: 30
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Ability: Strong Jaw
 - Bite
@@ -32671,8 +32653,8 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching
 Mugshot: Yellow
 
-Luxio
-Level: 41
+Luxray
+Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Intimidate
 - Spark
@@ -32681,7 +32663,7 @@ Ability: Intimidate
 - Swagger
 
 Corvisquire
-Level: 41
+Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Big Pecks
 - Pluck
@@ -32690,7 +32672,7 @@ Ability: Big Pecks
 - Fury Attack
 
 Jangmo-o
-Level: 41
+Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Bulletproof
 - Dragon Tail
@@ -32699,7 +32681,7 @@ Ability: Bulletproof
 - Protect
 
 Mienfoo
-Level: 41
+Level: 34
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Regenerator
 - Drain Punch
@@ -32708,7 +32690,7 @@ Ability: Regenerator
 - Bounce
 
 Urshifu_Rapid_Strike @ Sitrus Berry
-Level: 42
+Level: 35
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Unseen Fist
 - Surging Strikes

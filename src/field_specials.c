@@ -4293,6 +4293,52 @@ void Grounded_EvolveKubfu(void)
     BeginEvolutionScene(&gPlayerParty[slot], target, FALSE, slot);
 }
 
+// Project Grounded: in de Kubfu-torens vecht alleen Kubfu (zoals in Sword/Shield). Bij de start van een gevecht
+// tegen een torentrainer gaat de rest van het team even opzij en wordt Kubfu genezen; aan het eind (ook bij
+// verlies) komt het team terug, met Kubfu op zijn eigen plek. Zonder Kubfu in het team vecht je gewoon met
+// je hele team (na de evolutie zijn de torens dan gewone gevechten).
+EWRAM_DATA static struct Pokemon sKubfuTowerParty[PARTY_SIZE] = {0};
+EWRAM_DATA static u8 sKubfuTowerActive = FALSE;
+EWRAM_DATA static u8 sKubfuTowerSlot = 0;
+EWRAM_DATA static u8 sKubfuTowerCount = 0;
+
+void Grounded_KubfuTowerBattleStart(u16 trainerId)
+{
+    s32 slot, i;
+
+    if (trainerId != TRAINER_DOJO_DARK_1 && trainerId != TRAINER_DOJO_DARK_2 && trainerId != TRAINER_DOJO_DARK_KEEPER
+     && trainerId != TRAINER_DOJO_WATER_1 && trainerId != TRAINER_DOJO_WATER_2 && trainerId != TRAINER_DOJO_WATER_KEEPER)
+        return;
+    slot = FindPartyKubfu();
+    if (slot < 0)
+        return;
+    sKubfuTowerSlot = slot;
+    sKubfuTowerCount = gPlayerPartyCount;
+    for (i = 0; i < PARTY_SIZE; i++)
+        sKubfuTowerParty[i] = gPlayerParty[i];
+    gPlayerParty[0] = sKubfuTowerParty[slot];
+    HealPokemon(&gPlayerParty[0]);
+    for (i = 1; i < PARTY_SIZE; i++)
+        ZeroMonData(&gPlayerParty[i]);
+    gPlayerPartyCount = 1;
+    sKubfuTowerActive = TRUE;
+}
+
+void Grounded_KubfuTowerBattleEnd(void)
+{
+    s32 i;
+    struct Pokemon kubfu;
+
+    if (!sKubfuTowerActive)
+        return;
+    kubfu = gPlayerParty[0];
+    for (i = 0; i < PARTY_SIZE; i++)
+        gPlayerParty[i] = sKubfuTowerParty[i];
+    gPlayerParty[sKubfuTowerSlot] = kubfu;
+    gPlayerPartyCount = sKubfuTowerCount;
+    sKubfuTowerActive = FALSE;
+}
+
 // Project Grounded: Deoxys van vorm wisselen bij de meteoriet in Mossdeep.
 // Grounded_FindPartyDeoxys: gSpecialVar_Result = plek van de eerste Deoxys (elke vorm, geen ei), anders PARTY_SIZE;
 // gSpecialVar_0x8005 = huidige vorm (0 Normal, 1 Attack, 2 Defense, 3 Speed).

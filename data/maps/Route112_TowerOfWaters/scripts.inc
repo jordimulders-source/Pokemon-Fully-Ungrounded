@@ -21,6 +21,7 @@ Route112_TowerOfWaters_EventScript_Keeper::
 Route112_TowerOfWaters_EventScript_Ritual::
 	lock
 	faceplayer
+	goto_if_not_defeated TRAINER_DOJO_WATER_KEEPER, Route112_TowerOfWaters_EventScript_KeeperLost @ verloren: geen white-out, gewoon opnieuw proberen
 	goto_if_set FLAG_KUBFU_EVOLVED, Route112_TowerOfWaters_EventScript_AlreadyDone
 	specialvar VAR_RESULT, Grounded_PartyHasKubfu
 	goto_if_eq VAR_RESULT, FALSE, Route112_TowerOfWaters_EventScript_NoKubfu
@@ -31,6 +32,10 @@ Route112_TowerOfWaters_EventScript_Ritual::
 	waitstate
 	setflag FLAG_KUBFU_EVOLVED
 	msgbox Route112_TowerOfWaters_Text_AfterRitual, MSGBOX_DEFAULT
+	release
+	end
+
+Route112_TowerOfWaters_EventScript_KeeperLost::
 	release
 	end
 

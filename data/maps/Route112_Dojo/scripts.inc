@@ -11,7 +11,7 @@ Route112_Dojo_EventScript_Mustard::
 	goto_if_set FLAG_RECEIVED_KUBFU, Route112_Dojo_EventScript_MustardHint
 	msgbox Route112_Dojo_Text_MustardIntro, MSGBOX_DEFAULT
 	setvar VAR_TEMP_TRANSFERRED_SPECIES, SPECIES_KUBFU
-	givemon SPECIES_KUBFU, 22
+	givemon SPECIES_KUBFU, 27
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PARTY, Route112_Dojo_EventScript_KubfuReceived
 	goto_if_eq VAR_RESULT, MON_GIVEN_TO_PC, Route112_Dojo_EventScript_KubfuToPC
 	goto Common_EventScript_NoMoreRoomForPokemon
@@ -36,6 +36,25 @@ Route112_Dojo_EventScript_KubfuFanfare::
 	waitmessage
 	waitfanfare
 	return
+
+@ Project Grounded: de torens zijn alleen voor Kubfu. Zonder Kubfu in je team (en zolang hij nog niet geëvolueerd is)
+@ houdt Mustard je tegen bij de trap.
+Route112_Dojo_EventScript_TowerGate::
+	goto_if_set FLAG_KUBFU_EVOLVED, Route112_Dojo_EventScript_TowerGateOpen
+	specialvar VAR_RESULT, Grounded_PartyHasKubfu
+	goto_if_eq VAR_RESULT, TRUE, Route112_Dojo_EventScript_TowerGateOpen
+	lockall
+	applymovement LOCALID_DOJO_MUSTARD, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox Route112_Dojo_Text_TowerGate, MSGBOX_DEFAULT
+	closemessage
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_WalkDown
+	waitmovement 0
+	releaseall
+	end
+
+Route112_Dojo_EventScript_TowerGateOpen::
+	end
 
 Route112_Dojo_EventScript_ExplainTowers::
 	msgbox Route112_Dojo_Text_ExplainTowers, MSGBOX_DEFAULT
@@ -96,15 +115,20 @@ Route112_Dojo_Text_ExplainTowers:
 	.string "strike, big hurt.\p"
 	.string "Right: the TOWER OF WATERS. Many\n"
 	.string "strikes, many small hurts.\p"
-	.string "Beat the keeper at the top with KUBFU\n"
-	.string "in your team, and it picks a path.\l"
-	.string "Forever. No refunds.$"
+	.string "Only KUBFU fights up there. Your other\n"
+	.string "POKéMON wait down here with me. We'll\l"
+	.string "play cards. I cheat.\p"
+	.string "Lose, and you just try again. Nobody\n"
+	.string "faints for real in my dojo. My\l"
+	.string "insurance doesn't cover it.\p"
+	.string "Beat the keeper at the top, and KUBFU\n"
+	.string "picks a path. Forever. No refunds.$"
 
 Route112_Dojo_Text_MustardHint:
 	.string "Left stairs: DARKNESS. Single Strike.\n"
 	.string "Right stairs: WATERS. Rapid Strike.\p"
-	.string "Bring KUBFU, or the keepers will just\n"
-	.string "beat you up for free.$"
+	.string "Only KUBFU fights up there. The rest\n"
+	.string "of your team plays cards with me.$"
 
 Route112_Dojo_Text_MustardChallenge:
 	.string "Oh ho! It evolved! I'm so proud I could\n"
@@ -135,3 +159,8 @@ Route112_Dojo_Text_Student2:
 	.string "three years. Wax on, wax off.\p"
 	.string "I still can't fight. But that fence\n"
 	.string "looks amazing.$"
+
+Route112_Dojo_Text_TowerGate:
+	.string "MUSTARD: Oh ho! Where's KUBFU?\p"
+	.string "Those towers are KUBFU-only. Like a\n"
+	.string "kids' menu, but with punching.$"

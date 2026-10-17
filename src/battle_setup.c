@@ -51,6 +51,7 @@
 #include "constants/items.h"
 #include "constants/songs.h"
 #include "constants/trainers.h"
+#include "field_specials.h"
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
 #include "fishing.h"
@@ -1847,6 +1848,7 @@ static void TrySetInverseBattleFlag(void)
 
 void BattleSetup_StartTrainerBattle(void)
 {
+    Grounded_KubfuTowerBattleStart(TRAINER_BATTLE_PARAM.opponentA); // Project Grounded: Kubfu-torens, alleen Kubfu vecht
     if (gNoOfApproachingTrainers == 2)
     {
         if (FollowerNPCIsBattlePartner())
@@ -1958,6 +1960,7 @@ static void HandleBattleVariantEndParty(void)
 
 static void CB2_EndTrainerBattle(void)
 {
+    Grounded_KubfuTowerBattleEnd(); // Project Grounded: team terug na een Kubfu-torengevecht (ook bij verlies: geen white-out)
     HandleBattleVariantEndParty();
     FlagClear(B_FLAG_INVERSE_BATTLE);
 

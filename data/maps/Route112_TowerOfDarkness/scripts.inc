@@ -21,6 +21,7 @@ Route112_TowerOfDarkness_EventScript_Keeper::
 Route112_TowerOfDarkness_EventScript_Ritual::
 	lock
 	faceplayer
+	goto_if_not_defeated TRAINER_DOJO_DARK_KEEPER, Route112_TowerOfDarkness_EventScript_KeeperLost @ verloren: geen white-out, gewoon opnieuw proberen
 	goto_if_set FLAG_KUBFU_EVOLVED, Route112_TowerOfDarkness_EventScript_AlreadyDone
 	specialvar VAR_RESULT, Grounded_PartyHasKubfu
 	goto_if_eq VAR_RESULT, FALSE, Route112_TowerOfDarkness_EventScript_NoKubfu
@@ -31,6 +32,10 @@ Route112_TowerOfDarkness_EventScript_Ritual::
 	waitstate
 	setflag FLAG_KUBFU_EVOLVED
 	msgbox Route112_TowerOfDarkness_Text_AfterRitual, MSGBOX_DEFAULT
+	release
+	end
+
+Route112_TowerOfDarkness_EventScript_KeeperLost::
 	release
 	end
 

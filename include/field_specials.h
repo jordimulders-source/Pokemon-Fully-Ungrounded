@@ -37,4 +37,7 @@ bool32 CheckObjectAtXY(u32, u32);
 bool32 CheckPartyHasSpecies(u32);
 bool8 IsNightTime(void); // Project Grounded
 
+void Grounded_KubfuTowerBattleStart(u16 trainerId);
+void Grounded_KubfuTowerBattleEnd(void);
+
 #endif // GUARD_FIELD_SPECIALS_H

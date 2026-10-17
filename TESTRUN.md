@@ -136,3 +136,4 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Eerste Gabby & Ty-gevecht klopte niet (Brad, alleen Magnemite, levels) | Brad weg; Joey rent binnen en vecht mee (2 tegen 1), eigen camera+Poochyena-transitie; alle 6 teams nieuw | ✅ |
 | Winstrates too much (24 Pokémon achter elkaar) | 3 Pokémon per persoon, lv 29–31, geen Toxic Spikes | ✅ |
 | Coldstep Cave-muziek | Dark Cave (HGSS) | ✅ |
+| Kubfu lv 22 tegen torens van lv 38, Mustard 41–42 | Torens alleen met Kubfu (SwSh), Kubfu 27, torens 26–30, Mustard 34–35 | ✅ |

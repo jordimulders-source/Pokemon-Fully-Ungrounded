@@ -1,4 +1,5 @@
 #include "global.h"
+#include "mon_variants.h"
 #include "battle_main.h"
 #include "battle_script_commands.h"
 #include "bg.h"
@@ -51,7 +52,7 @@ enum
     AREA_SCREEN,
     CRY_SCREEN,
     SIZE_SCREEN,
-    CANCEL_SCREEN,
+    COLORS_SCREEN, // Project Grounded: kleurenpagina (was CANCEL; B sluit al af)
     SCREEN_COUNT
 };
 
@@ -124,6 +125,20 @@ static EWRAM_DATA struct PokedexView *sPokedexView = NULL;
 static EWRAM_DATA u16 sLastSelectedPokemon = 0;
 static EWRAM_DATA u8 sPokeBallRotation = 0;
 static EWRAM_DATA struct PokedexListItem *sPokedexListItem = NULL;
+// Project Grounded: vormen (regionaal, Arceus-types enz.) op de kleurenpagina, en de vorm
+// die de infopagina toont (eigen tekst, lengte/gewicht, sprite en kreet)
+#define MAX_COLOR_FORMS 32
+static EWRAM_DATA u16 sColorForms[MAX_COLOR_FORMS] = {0};
+static EWRAM_DATA u8 sColorFormCount = 0;
+static EWRAM_DATA u8 sColorFormIndex = 0;
+static EWRAM_DATA u16 sDexFormDexNum = 0;
+static EWRAM_DATA u16 sDexFormSpecies = SPECIES_NONE;
+static void BuildColorsScreenForms(void);
+static u16 DexInfoSpecies(void);
+static void SetDexInfoSpecies(u16 species);
+static bool32 DexFormSeen(u16 species);
+static u16 CreateDexInfoMonSprite(s16 x, s16 y, u16 paletteSlot);
+static u32 GetPokedexMonPersonality(u16 species);
 
 // This is written to, but never read.
 COMMON_DATA u8 gUnusedPokedexU8 = 0;
@@ -270,6 +285,7 @@ static void LoadPlayArrowPalette(bool8);
 static void Task_LoadSizeScreen(u8);
 static void Task_HandleSizeScreenInput(u8);
 static void Task_SwitchScreensFromSizeScreen(u8);
+static void Task_LoadColorsScreen(u8);
 static void LoadScreenSelectBarMain(u16);
 static void LoadScreenSelectBarSubmenu(u16);
 static void HighlightScreenSelectBarItem(u8, u16);
@@ -278,7 +294,7 @@ static void Task_DisplayCaughtMonDexPage(u8);
 static void Task_HandleCaughtMonPageInput(u8);
 static void Task_ExitCaughtMonPage(u8);
 static void SpriteCB_SlideCaughtMonToCenter(struct Sprite *sprite);
-static void PrintMonInfo(u32 num, u32, u32 owned, u32 newEntry);
+static void PrintMonInfo(u32 num, u32, u32 owned, u32 newEntry, u16 species);
 static u32 GetMeasurementTextPositions(u32 textElement);
 static void PrintUnknownMonMeasurements(void);
 static u8* GetUnknownMonHeightString(void);
@@ -1616,6 +1632,7 @@ void CB2_OpenPokedex(void)
     {
     case 0:
     default:
+        VariantDex_SweepOwned();
         SetVBlankCallback(NULL);
         ResetOtherVideoRegisters(0);
         DmaFillLarge16(3, 0, (u8 *)VRAM, VRAM_SIZE, 0x1000);
@@ -2643,7 +2660,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         CreateMonListEntry(2, selectedMon, ignored);
         PlaySE(SE_DEX_SCROLL);
     }
-    else if (JOY_NEW(DPAD_LEFT) && (selectedMon > 0))
+    else if (JOY_REPEAT(DPAD_LEFT) && (selectedMon > 0))
     {
         startingPos = selectedMon;
 
@@ -2654,7 +2671,7 @@ static u16 TryDoPokedexScroll(u16 selectedMon, u16 ignored)
         CreateMonSpritesAtPos(selectedMon, 0xE);
         PlaySE(SE_DEX_PAGE);
     }
-    else if (JOY_NEW(DPAD_RIGHT) && (selectedMon < sPokedexView->pokemonListCount - 1))
+    else if (JOY_REPEAT(DPAD_RIGHT) && (selectedMon < sPokedexView->pokemonListCount - 1))
     {
         startingPos = selectedMon;
         for (i = 0; i < 7; i++)
@@ -3316,7 +3333,7 @@ static void Task_LoadInfoScreen(u8 taskId)
         FillWindowPixelBuffer(WIN_INFO, PIXEL_FILL(0));
         PutWindowTilemap(WIN_INFO);
         PutWindowTilemap(WIN_FOOTPRINT);
-        DrawFootprint(WIN_FOOTPRINT, NationalPokedexNumToSpecies(sPokedexListItem->dexNum));
+        DrawFootprint(WIN_FOOTPRINT, DexInfoSpecies());
         CopyWindowToVram(WIN_FOOTPRINT, COPYWIN_GFX);
         gMain.state++;
         break;
@@ -3330,7 +3347,7 @@ static void Task_LoadInfoScreen(u8 taskId)
         gMain.state++;
         break;
     case 4:
-        PrintMonInfo(sPokedexListItem->dexNum, sPokedexView->dexMode == DEX_MODE_HOENN ? FALSE : TRUE, sPokedexListItem->owned, 0);
+        PrintMonInfo(sPokedexListItem->dexNum, sPokedexView->dexMode == DEX_MODE_HOENN ? FALSE : TRUE, sPokedexListItem->owned, 0, DexInfoSpecies());
         if (!sPokedexListItem->owned)
             LoadPalette(&gPlttBufferUnfaded[BG_PLTT_ID(0) + 1], BG_PLTT_ID(3) + 1, PLTT_SIZEOF(16 - 1));
         CopyWindowToVram(WIN_INFO, COPYWIN_FULL);
@@ -3342,7 +3359,7 @@ static void Task_LoadInfoScreen(u8 taskId)
     case 5:
         if (!gTasks[taskId].tMonSpriteDone)
         {
-            gTasks[taskId].tMonSpriteId = (u16)CreateMonSpriteFromNationalDexNumber(sPokedexListItem->dexNum, MON_PAGE_X, MON_PAGE_Y, 0);
+            gTasks[taskId].tMonSpriteId = CreateDexInfoMonSprite(MON_PAGE_X, MON_PAGE_Y, 0);
             gSprites[gTasks[taskId].tMonSpriteId].oam.priority = 0;
         }
         gMain.state++;
@@ -3378,7 +3395,7 @@ static void Task_LoadInfoScreen(u8 taskId)
             if (!gTasks[taskId].tSkipCry)
             {
                 StopCryAndClearCrySongs();
-                PlayCry_NormalNoDucking(NationalPokedexNumToSpecies(sPokedexListItem->dexNum), 0, CRY_VOLUME_RS, CRY_PRIORITY_NORMAL);
+                PlayCry_NormalNoDucking(DexInfoSpecies(), 0, CRY_VOLUME_RS, CRY_PRIORITY_NORMAL);
             }
             else
             {
@@ -3437,6 +3454,25 @@ static void Task_HandleInfoScreenInput(u8 taskId)
         PlaySE(SE_PC_OFF);
         return;
     }
+    if (JOY_NEW(SELECT_BUTTON))
+    {
+        // Project Grounded: SELECT wisselt tussen de vormen (eigen Pokédex-tekst)
+        u32 i, next;
+
+        BuildColorsScreenForms();
+        for (i = 1; i < sColorFormCount; i++)
+        {
+            next = (sColorFormIndex + i) % sColorFormCount;
+            if (DexFormSeen(sColorForms[next]))
+            {
+                SetDexInfoSpecies(sColorForms[next]);
+                StartInfoScreenScroll(sPokedexListItem, taskId);
+                PlaySE(SE_DEX_PAGE);
+                break;
+            }
+        }
+        return;
+    }
     if (JOY_NEW(A_BUTTON))
     {
         switch (sPokedexView->selectedScreen)
@@ -3466,10 +3502,11 @@ static void Task_HandleInfoScreenInput(u8 taskId)
                 PlaySE(SE_PIN);
             }
             break;
-        case CANCEL_SCREEN:
-            BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 0x10, RGB_BLACK);
-            gTasks[taskId].func = Task_ExitInfoScreen;
-            PlaySE(SE_PC_OFF);
+        case COLORS_SCREEN:
+            BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), 0, 0, 0x10, RGB_BLACK);
+            sPokedexView->screenSwitchState = 4;
+            gTasks[taskId].func = Task_SwitchScreensFromInfoScreen;
+            PlaySE(SE_PIN);
             break;
         }
         return;
@@ -3485,7 +3522,7 @@ static void Task_HandleInfoScreenInput(u8 taskId)
     }
     if ((JOY_NEW(DPAD_RIGHT)
      || (JOY_NEW(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR))
-     && sPokedexView->selectedScreen < CANCEL_SCREEN)
+     && sPokedexView->selectedScreen < COLORS_SCREEN)
     {
         sPokedexView->selectedScreen++;
         HighlightScreenSelectBarItem(sPokedexView->selectedScreen, 0xD);
@@ -3510,6 +3547,9 @@ static void Task_SwitchScreensFromInfoScreen(u8 taskId)
             break;
         case 3:
             gTasks[taskId].func = Task_LoadSizeScreen;
+            break;
+        case 4:
+            gTasks[taskId].func = Task_LoadColorsScreen;
             break;
         }
     }
@@ -3659,7 +3699,7 @@ static void Task_LoadCryScreen(u8 taskId)
         gMain.state++;
         break;
     case 5:
-        gTasks[taskId].tMonSpriteId = CreateMonSpriteFromNationalDexNumber(sPokedexListItem->dexNum, MON_PAGE_X, MON_PAGE_Y, 0);
+        gTasks[taskId].tMonSpriteId = CreateDexInfoMonSprite(MON_PAGE_X, MON_PAGE_Y, 0);
         gSprites[gTasks[taskId].tMonSpriteId].oam.priority = 0;
         gDexCryScreenState = 0;
         gMain.state++;
@@ -3867,7 +3907,7 @@ static void Task_LoadSizeScreen(u8 taskId)
         gMain.state++;
         break;
     case 6:
-        spriteId = CreateMonSpriteFromNationalDexNumber(sPokedexListItem->dexNum, 88, 56, 1);
+        spriteId = CreateDexInfoMonSprite(88, 56, 1);
         gSprites[spriteId].oam.affineMode = ST_OAM_AFFINE_NORMAL;
         gSprites[spriteId].oam.matrixNum = 2;
         gSprites[spriteId].oam.priority = 0;
@@ -3925,6 +3965,14 @@ static void Task_HandleSizeScreenInput(u8 taskId)
         gTasks[taskId].func = Task_SwitchScreensFromSizeScreen;
         PlaySE(SE_DEX_PAGE);
     }
+    else if (JOY_NEW(DPAD_RIGHT)
+     || (JOY_NEW(R_BUTTON) && gSaveBlock2Ptr->optionsButtonMode == OPTIONS_BUTTON_MODE_LR))
+    {
+        BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), 0, 0, 0x10, RGB_BLACK);
+        sPokedexView->screenSwitchState = 3;
+        gTasks[taskId].func = Task_SwitchScreensFromSizeScreen;
+        PlaySE(SE_DEX_PAGE);
+    }
 }
 
 static void Task_SwitchScreensFromSizeScreen(u8 taskId)
@@ -3942,6 +3990,9 @@ static void Task_SwitchScreensFromSizeScreen(u8 taskId)
         case 2:
             gTasks[taskId].func = Task_LoadCryScreen;
             break;
+        case 3:
+            gTasks[taskId].func = Task_LoadColorsScreen;
+            break;
         }
     }
 }
@@ -3953,9 +4004,359 @@ static void Task_SwitchScreensFromSizeScreen(u8 taskId)
 #undef tMonSpriteId
 #undef tTrainerSpriteId
 
+// Project Grounded: kleurenpagina. Bladeren met links/rechts door normaal, shiny en
+// de zes varianten; alleen wat de speler gezien heeft is te zien, gevangen = Poké Ball.
+#define tColorSlot     data[0]
+#define tColorSpriteId data[1]
+#define tColorForm     data[2]
+
+
+static const u8 sColorSlotBits[] = {0, VARIANT_DEX_SHINY, 1, 2, 3, 4, 5, 6};
+static const u8 sText_ColorNormal[] = _("Normal");
+static const u8 sText_ColorShiny[] = _("Shiny");
+static const u8 sText_ColorUnknown[] = _("???");
+static const u8 sText_ColorArrows[] = _("{LEFT_ARROW}");
+static const u8 sText_ColorArrowsR[] = _("{RIGHT_ARROW}");
+static const u8 sText_ColorUp[] = _("{UP_ARROW}");
+static const u8 sText_ColorDown[] = _("{DOWN_ARROW}");
+static const u8 sText_Rarity75[] = _("Common  75%");
+static const u8 sText_RarityShiny[] = _("Very Rare  1/1024");
+static const u8 sText_Rarity10[] = _("Variant  10%");
+static const u8 sText_Rarity6[] = _("Variant  6%");
+static const u8 sText_Rarity4[] = _("Variant  4%");
+static const u8 sText_Rarity3[] = _("Variant  3%");
+static const u8 sText_Rarity15[] = _("Variant  1.5%");
+static const u8 sText_Rarity05[] = _("Variant  0.5%");
+static const u8 *const sColorRarity[] = {sText_Rarity75, sText_RarityShiny, sText_Rarity10, sText_Rarity6,
+                                          sText_Rarity4, sText_Rarity3, sText_Rarity15, sText_Rarity05};
+
+static u16 ColorsScreenSpecies(void)
+{
+    return sColorForms[sColorFormIndex];
+}
+
+static void BuildColorsScreenForms(void)
+{
+    u16 base = NationalPokedexNumToSpecies(sPokedexListItem->dexNum);
+    u16 current = DexInfoSpecies();
+    const u16 *forms = GetSpeciesFormTable(base);
+    u32 i;
+
+    sColorForms[0] = base;
+    sColorFormCount = 1;
+    sColorFormIndex = 0;
+    for (i = 0; forms != NULL && forms[i] != FORM_SPECIES_END && sColorFormCount < MAX_COLOR_FORMS; i++)
+    {
+        if (forms[i] != base && GetVariantEntry(gSpeciesInfo[forms[i]].palette) != NULL)
+        {
+            if (forms[i] == current)
+                sColorFormIndex = sColorFormCount;
+            sColorForms[sColorFormCount++] = forms[i];
+        }
+    }
+}
+
+static u16 DexInfoSpecies(void)
+{
+    if (sDexFormSpecies != SPECIES_NONE && sDexFormDexNum == sPokedexListItem->dexNum)
+        return sDexFormSpecies;
+    return NationalPokedexNumToSpecies(sPokedexListItem->dexNum);
+}
+
+// andere vormen pas op de infopagina als de speler ze gezien heeft (geen spoilers)
+static bool32 DexFormSeen(u16 species)
+{
+    return species == NationalPokedexNumToSpecies(sPokedexListItem->dexNum) || gSaveBlock1Ptr->variantDexSeen[species] != 0;
+}
+
+static void SetDexInfoSpecies(u16 species)
+{
+    if (!DexFormSeen(species))
+        species = SPECIES_NONE;
+    sDexFormDexNum = sPokedexListItem->dexNum;
+    sDexFormSpecies = species;
+}
+
+static u16 CreateDexInfoMonSprite(s16 x, s16 y, u16 paletteSlot)
+{
+    u16 species = DexInfoSpecies();
+    return CreateMonPicSprite(species, FALSE, GetPokedexMonPersonality(species), TRUE, x, y, paletteSlot, TAG_NONE);
+}
+
+static const u8 sText_FormAlola[] = _("Alolan");
+static const u8 sText_FormGalar[] = _("Galarian");
+static const u8 sText_FormHisui[] = _("Hisuian");
+static const u8 sText_FormPaldea[] = _("Paldean");
+static const u8 sText_FormHoenn[] = _("Hoenn");
+static const u8 sText_FormN[] = _("Form {STR_VAR_1}");
+
+// tweede regel: vormnaam (alleen bij andere vormen) + zeldzaamheid
+static void GetColorsScreenRarityLine(u8 *dst, u32 slot)
+{
+    u16 species = ColorsScreenSpecies();
+    u16 base = sColorForms[0];
+
+    dst[0] = EOS;
+    if (sColorFormIndex != 0)
+    {
+        if (gSpeciesInfo[species].isAlolanForm)
+            StringCopy(dst, sText_FormAlola);
+        else if (gSpeciesInfo[species].isGalarianForm)
+            StringCopy(dst, sText_FormGalar);
+        else if (gSpeciesInfo[species].isHisuianForm)
+            StringCopy(dst, sText_FormHisui);
+        else if (gSpeciesInfo[species].isPaldeanForm)
+            StringCopy(dst, sText_FormPaldea);
+        else if (species == SPECIES_GRIMER_HOENN || species == SPECIES_MUK_HOENN)
+            StringCopy(dst, sText_FormHoenn);
+        else if (base == SPECIES_ARCEUS || base == SPECIES_SILVALLY)
+            StringCopy(dst, gTypesInfo[gSpeciesInfo[species].types[0]].name);
+        else
+        {
+            ConvertIntToDecimalStringN(gStringVar1, sColorFormIndex + 1, STR_CONV_MODE_LEFT_ALIGN, 2);
+            StringExpandPlaceholders(dst, sText_FormN);
+        }
+        StringAppend(dst, gText_Space);
+    }
+    StringAppend(dst, GetSpeciesName(species));
+    StringAppend(dst, gText_Space);
+    StringAppend(dst, gText_Space);
+    StringAppend(dst, sColorRarity[slot]);
+}
+
+static u32 ColorsScreenSlotCount(void)
+{
+    return GetVariantEntry(gSpeciesInfo[ColorsScreenSpecies()].palette) != NULL ? ARRAY_COUNT(sColorSlotBits) : 2;
+}
+
+static bool32 ColorsScreenSeen(u32 bit)
+{
+    u16 species = ColorsScreenSpecies();
+    u8 seen = gSaveBlock1Ptr->variantDexSeen[species];
+
+    // oude saves: soort al gezien maar nog geen kleur bekend -> normaal telt als gezien
+    if (bit == 0 && seen == 0 && sColorFormIndex == 0 && GetSetPokedexFlag(sPokedexListItem->dexNum, FLAG_GET_SEEN))
+        return TRUE;
+    return (seen >> bit) & 1;
+}
+
+static void DrawColorsScreenSlot(u8 taskId)
+{
+    u16 species = ColorsScreenSpecies();
+    u32 slot = gTasks[taskId].tColorSlot;
+    u32 bit = sColorSlotBits[slot];
+    const struct VariantPalettes *entry = GetVariantEntry(gSpeciesInfo[species].palette);
+    const u8 *name;
+    const u16 *pal;
+    u32 x;
+    u8 line[48];
+
+    if (!ColorsScreenSeen(bit))
+    {
+        name = sText_ColorUnknown;
+        pal = sSizeScreenSilhouette_Pal;
+    }
+    else if (bit == 0)
+    {
+        name = sText_ColorNormal;
+        pal = gSpeciesInfo[species].palette;
+    }
+    else if (bit == VARIANT_DEX_SHINY)
+    {
+        name = sText_ColorShiny;
+        pal = gSpeciesInfo[species].shinyPalette;
+    }
+    else
+    {
+        name = GetVariantName(entry, bit);
+        pal = GetVariantPalette(gSpeciesInfo[species].palette, bit);
+    }
+    LoadPalette(pal, OBJ_PLTT_ID(gSprites[gTasks[taskId].tColorSpriteId].oam.paletteNum), PLTT_SIZE_4BPP);
+
+    FillWindowPixelRect(WIN_INFO, PIXEL_FILL(0), 0, 112, DISPLAY_WIDTH, 32);
+    FillWindowPixelRect(WIN_INFO, PIXEL_FILL(0), 16, 40, 16, 16);
+    FillWindowPixelRect(WIN_INFO, PIXEL_FILL(0), 208, 40, 16, 16);
+    FillWindowPixelRect(WIN_INFO, PIXEL_FILL(0), 208, 20, 16, 16);
+    FillWindowPixelRect(WIN_INFO, PIXEL_FILL(0), 208, 66, 16, 16);
+    x = GetStringCenterAlignXOffset(FONT_NORMAL, name, DISPLAY_WIDTH);
+    PrintInfoScreenText(name, x, 113);
+    if ((gSaveBlock1Ptr->variantDexCaught[species] >> bit) & 1)
+        BlitBitmapToWindow(WIN_INFO, sCaughtBall_Gfx, x - 12, 113, 8, 16);
+    GetColorsScreenRarityLine(line, slot);
+    PrintInfoScreenText(line, GetStringCenterAlignXOffset(FONT_NORMAL, line, DISPLAY_WIDTH), 127);
+    if (sColorFormIndex > 0)
+        PrintInfoScreenText(sText_ColorUp, 210, 21);
+    if (sColorFormIndex + 1 < sColorFormCount)
+        PrintInfoScreenText(sText_ColorDown, 210, 65);
+    if (slot > 0)
+        PrintInfoScreenText(sText_ColorArrows, 18, 41);
+    if (slot + 1 < ColorsScreenSlotCount())
+        PrintInfoScreenText(sText_ColorArrowsR, 210, 41);
+    CopyWindowToVram(WIN_INFO, COPYWIN_GFX);
+}
+
+static void Task_HandleColorsScreenInput(u8 taskId);
+static void Task_SwitchScreensFromColorsScreen(u8 taskId);
+
+static void Task_LoadColorsScreen(u8 taskId)
+{
+    u8 spriteId;
+
+    switch (gMain.state)
+    {
+    default:
+    case 0:
+        if (!gPaletteFade.active)
+        {
+            sPokedexView->currentPage = PAGE_SIZE;
+            gPokedexVBlankCB = gMain.vblankCallback;
+            SetVBlankCallback(NULL);
+            ResetOtherVideoRegisters(DISPCNT_BG1_ON);
+            sPokedexView->selectedScreen = COLORS_SCREEN;
+            gTasks[taskId].tColorSlot = 0;
+            BuildColorsScreenForms();
+            gMain.state = 1;
+        }
+        break;
+    case 1:
+        DecompressAndLoadBgGfxUsingHeap(3, gPokedexMenu_Gfx, 0x2000, 0, 0);
+        CopyToBgTilemapBuffer(3, gPokedexSizeScreen_Tilemap, 0, 0);
+        FillWindowPixelBuffer(WIN_INFO, PIXEL_FILL(0));
+        PutWindowTilemap(WIN_INFO);
+        gMain.state++;
+        break;
+    case 2:
+        LoadScreenSelectBarMain(0xD);
+        HighlightScreenSelectBarItem(COLORS_SCREEN, 0xD);
+        LoadPokedexBgPalette(sPokedexView->isSearchResults);
+        gMain.state++;
+        break;
+    case 3:
+        ResetPaletteFade();
+        gMain.state++;
+        break;
+    case 4:
+        spriteId = CreateMonPicSprite(ColorsScreenSpecies(), FALSE, 0xFF, TRUE, 120, 56, 1, TAG_NONE);
+        gSprites[spriteId].oam.priority = 0;
+        gTasks[taskId].tColorSpriteId = spriteId;
+        DrawColorsScreenSlot(taskId);
+        CopyWindowToVram(WIN_INFO, COPYWIN_FULL);
+        CopyBgTilemapBufferToVram(1);
+        CopyBgTilemapBufferToVram(2);
+        CopyBgTilemapBufferToVram(3);
+        gMain.state++;
+        break;
+    case 5:
+        BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), 0, 0x10, 0, RGB_BLACK);
+        SetVBlankCallback(gPokedexVBlankCB);
+        gMain.state++;
+        break;
+    case 6:
+        SetGpuReg(REG_OFFSET_BLDCNT, 0);
+        SetGpuReg(REG_OFFSET_BLDALPHA, 0);
+        SetGpuReg(REG_OFFSET_BLDY, 0);
+        SetGpuReg(REG_OFFSET_DISPCNT, DISPCNT_OBJ_1D_MAP | DISPCNT_OBJ_ON);
+        HideBg(0);
+        ShowBg(1);
+        ShowBg(2);
+        ShowBg(3);
+        gMain.state++;
+        break;
+    case 7:
+        if (!gPaletteFade.active)
+        {
+            sPokedexView->screenSwitchState = 0;
+            gMain.state = 0;
+            gTasks[taskId].func = Task_HandleColorsScreenInput;
+        }
+        break;
+    }
+}
+
+static void Task_HandleColorsScreenInput(u8 taskId)
+{
+    if (JOY_NEW(B_BUTTON))
+    {
+        BeginNormalPaletteFade(PALETTES_ALL & ~(0x14), 0, 0, 0x10, RGB_BLACK);
+        gTasks[taskId].func = Task_SwitchScreensFromColorsScreen;
+        PlaySE(SE_PC_OFF);
+    }
+    else if (JOY_NEW(DPAD_LEFT) && gTasks[taskId].tColorSlot > 0)
+    {
+        gTasks[taskId].tColorSlot--;
+        DrawColorsScreenSlot(taskId);
+        PlaySE(SE_DEX_PAGE);
+    }
+    else if (JOY_NEW(DPAD_RIGHT) && gTasks[taskId].tColorSlot + 1 < (s32)ColorsScreenSlotCount())
+    {
+        gTasks[taskId].tColorSlot++;
+        DrawColorsScreenSlot(taskId);
+        PlaySE(SE_DEX_PAGE);
+    }
+    else if (JOY_NEW(DPAD_UP) || JOY_NEW(DPAD_DOWN))
+    {
+        // eerst door de vormen, daarna naar de vorige/volgende geziene Pokémon
+        u8 spriteId;
+        bool32 up = JOY_NEW(DPAD_UP);
+
+        if (up && sColorFormIndex > 0)
+            sColorFormIndex--;
+        else if (!up && sColorFormIndex + 1 < sColorFormCount)
+            sColorFormIndex++;
+        else if (TryDoInfoScreenScroll())
+        {
+            sPokedexListItem = &sPokedexView->pokedexList[sPokedexView->selectedPokemon];
+            BuildColorsScreenForms();
+            sColorFormIndex = up ? sColorFormCount - 1 : 0;
+        }
+        else
+        {
+            return;
+        }
+        FreeAndDestroyMonPicSprite(gTasks[taskId].tColorSpriteId);
+        spriteId = CreateMonPicSprite(ColorsScreenSpecies(), FALSE, 0xFF, TRUE, 120, 56, 1, TAG_NONE);
+        gSprites[spriteId].oam.priority = 0;
+        gTasks[taskId].tColorSpriteId = spriteId;
+        gTasks[taskId].tColorSlot = 0;
+        DrawColorsScreenSlot(taskId);
+        PlaySE(SE_DEX_SCROLL);
+    }
+}
+
+static void Task_SwitchScreensFromColorsScreen(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        FreeAndDestroyMonPicSprite(gTasks[taskId].tColorSpriteId);
+        SetDexInfoSpecies(ColorsScreenSpecies());
+        gTasks[taskId].func = Task_LoadInfoScreen;
+    }
+}
+
+#undef tColorSlot
+#undef tColorSpriteId
+#undef tColorForm
+
+// Project Grounded: de vierde knop heet COLORS i.p.v. CANCEL (eigen tegels op 0x100)
+#define COLORS_LABEL_TILE 0x100
+static const u32 sColorsLabel_Gfx[] = INCBIN_U32("graphics/pokedex/colors_label.4bpp");
+
 static void LoadScreenSelectBarMain(u16 unused)
 {
+    u16 *map;
+    u32 i;
+
     CopyToBgTilemapBuffer(1, gPokedexScreenSelectBarMain_Tilemap, 0, 0);
+    LoadBgTiles(1, sColorsLabel_Gfx, sizeof(sColorsLabel_Gfx), COLORS_LABEL_TILE);
+    map = GetBgTilemapBuffer(1);
+    for (i = 0; i < 6; i++)
+    {
+        map[22 + i] = (map[22 + i] & 0xF000) | (COLORS_LABEL_TILE + i);
+        map[22 + i + 32] = (map[22 + i + 32] & 0xF000) | (COLORS_LABEL_TILE + 6 + i);
+    }
+    // rechterrand zoals bij AREA/CRY/SIZE (gespiegelde linkerrand)
+    map[28] = (map[28] & 0xF000) | 0x420;
+    map[28 + 32] = (map[28 + 32] & 0xF000) | 0x430;
 }
 
 static void LoadScreenSelectBarSubmenu(u16 unused)
@@ -4044,7 +4445,7 @@ u8 DisplayCaughtMonDexPage(u16 species, bool32 isShiny, u32 personality)
 
 static void LoadDexMonPalette(u32 taskId, bool32 isShiny)
 {
-    const u16 *paletteData = GetMonSpritePalFromSpeciesAndPersonality(gTasks[taskId].tSpecies, isShiny, GetWordTaskArg(taskId, tPersonalityLo));
+    const u16 *paletteData = GetMonSpritePalFromSpecies(gTasks[taskId].tSpecies, isShiny, IsPersonalityFemale(gTasks[taskId].tSpecies, GetWordTaskArg(taskId, tPersonalityLo)));
     u32 paletteNum = gSprites[gTasks[taskId].tMonSpriteId].oam.paletteNum;
     LoadPalette(paletteData, OBJ_PLTT_ID(paletteNum), PLTT_SIZE_4BPP);
 }
@@ -4100,7 +4501,7 @@ static void Task_DisplayCaughtMonDexPage(u8 taskId)
         gTasks[taskId].tState++;
         break;
     case 3:
-        PrintMonInfo(dexNum, IsNationalPokedexEnabled(), 1, 1);
+        PrintMonInfo(dexNum, IsNationalPokedexEnabled(), 1, 1, species);
         CopyWindowToVram(WIN_INFO, COPYWIN_FULL);
         CopyBgTilemapBufferToVram(2);
         CopyBgTilemapBufferToVram(3);
@@ -4200,11 +4601,10 @@ static void SpriteCB_SlideCaughtMonToCenter(struct Sprite *sprite)
 #undef tPersonalityHi
 
 // u32 value is re-used, but passed as a bool that's TRUE if national dex is enabled
-static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
+static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry, u16 species)
 {
     u8 str[0x10];
     u8 str2[0x30];
-    u16 species;
     const u8 *name;
     const u8 *category;
     const u8 *description;
@@ -4219,7 +4619,6 @@ static void PrintMonInfo(u32 num, u32 value, u32 owned, u32 newEntry)
 
     ConvertIntToDecimalStringN(StringCopy(str, gText_NumberClear01), value, STR_CONV_MODE_LEADING_ZEROS, digitCount);
     PrintInfoScreenText(str, 0x60, 0x19);
-    species = NationalPokedexNumToSpecies(num);
     if (species)
         name = GetSpeciesName(species);
     else

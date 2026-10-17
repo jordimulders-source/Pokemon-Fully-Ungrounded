@@ -38,6 +38,7 @@
 #include "pokeblock.h"
 #include "pokemon.h"
 #include "ultra_space.h"
+#include "mon_variants.h"
 #include "pokemon_animation.h"
 #include "pokemon_icon.h"
 #include "pokemon_summary_screen.h"
@@ -697,6 +698,7 @@ const struct NatureInfo gNaturesInfo[NUM_NATURES] =
 #define OW_PIC_STORAGE
 #endif
 #include "data/graphics/pokemon.h"
+#include "data/pokemon/variant_palettes.h"
 
 #include "data/pokemon/trainer_class_lookups.h"
 #include "data/pokemon/experience_tables.h"
@@ -6795,7 +6797,15 @@ const u16 *GetMonFrontSpritePal(struct Pokemon *mon)
 
 const u16 *GetMonSpritePalFromSpeciesAndPersonality(u16 species, bool32 isShiny, u32 personality)
 {
-    return GetMonSpritePalFromSpecies(species, isShiny, IsPersonalityFemale(species, personality));
+    const u16 *palette = GetMonSpritePalFromSpecies(species, isShiny, IsPersonalityFemale(species, personality));
+
+    if (!isShiny)
+    {
+        const u16 *variant = GetVariantPalette(palette, GetVariantFromPersonality(personality));
+        if (variant != NULL)
+            return variant;
+    }
+    return palette;
 }
 
 const u16 *GetMonSpritePalFromSpecies(u16 species, bool32 isShiny, bool32 isFemale)

@@ -18772,11 +18772,237 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Slowbro-Galar:** **Regenerator** van verborgen naar slot 2 (Own Tempo wordt verborgen). Stats blijven (Jordi: "heeft al uitstekende stats").
   - Nog open: Kangaskhan (Parental Bond, Jordi wil het aanpassen), Dhelmise en Dugtrio/Dugtrio-Alola/Wugtrio (nieuw idee).
 - **Kangaskhan: Parental Bond** in slot 1 (was Early Bird), maar **alleen boven 50% HP** (Jordi: "dat die goed kan zorgen voor haar kind boven de 50% HP"; niet unga bunga klikken). Tweede klap 25%, zoals Gen 7. Onder de helft slaat moeder alleen. Mega Kangaskhan (Spire) houdt altijd beide klappen. AI rekent ermee (`ParentalBondActive`). Beschrijving: "Hits twice above half HP." Test in `signature_moves.c`.
+- **Kleurvarianten ("skins"), stap 1: de techniek.** Elke Pokémon heeft nu een kleurvariant uit zijn personality (geen save-ruimte; blijft bij ruilen en evolueren): normaal 75%, dan 10 / 6 / 4 / 3 / 1,5 / 0,5%. De kleuren zelf zijn nog **placeholders** (tintverschuivingen, zwart, albino); de echte recepten volgen in stap 2.
+  - Werkt overal waar het gevechts-/menupalet gebruikt wordt (gevecht, beide kanten, summary, pc, evolutie, contest); de Pokédex toont altijd de normale kleuren. Shiny gaat voor en blijft de enige met sparkle.
+  - **Shinykans 1/8192 → 1/1024.**
+  - Trainers: `Variant: 0–6` in `trainers.party` (0 = normaal). Zonder die regel komt de variant uit de personality, net als in het wild (schakelaar `TRAINER_MON_VARIANTS_RANDOM`).
+  - 1288 paletten (Alcremie overgeslagen: die heeft al 63 kleurvormen) als `variants.pal` naast `normal.pal`; generator `tools/grounded/variants/variants.py`, contactvel `sheet.py`. Code: `src/mon_variants.c`. Kosten ±270 KB, **ROM ±583 KB vrij**.
+- **Kleurvarianten, eerste recepten: Kanto-starters** (na Jordi's feedback op de placeholders: "een palette swap is niet zomaar een andere shade"). Elke sprite is opgedeeld in kleurgroepen (lijf, buik, vlam, vleugels, bol/bloem, ogen); een variant kleurt per groep en houdt de schaduwopbouw (OKLCh). Alleen soorten met een recept hebben varianten; de rest blijft voorlopig normaal (ROM ±832 KB vrij).
+  - Charmander-lijn: Squirtle-kleuren met blauwe vlam, Bulbasaur-kleuren met groene vlam, axolotl, albino (rode ogen, witte vlam), Mega X (zwart, blauwe vlam, rode ogen), synthwave.
+  - Bulbasaur-lijn: Charmander-kleuren, Squirtle-kleuren, pijlgifkikker, albino (donkere vlekken, roze bol), sakura, radioactief.
+  - Squirtle-lijn: Charmander-kleuren, soepschildpad, Koopa, albino, Ninja Turtle, vaporwave.
+  - Charizards ogen deelden een paletindex met zijn vleugels; ze hebben nu een eigen index (zelfde kleur, `sprite_fixes.py`), zodat albino rode ogen kan krijgen.
+  - Trainer- en Frontier-Pokémon zijn standaard normaal van kleur (Jordi); een vaste variant kan met `Variant:`.
+  - Gereedschap in `tools/grounded/variants/`: `ramps.py` (kleurgroepen + indexkaart), `colorlib.py`, `recipes.py`, `variants.py`, `sheet.py`, `sprite_fixes.py`.
+- **Kleurvarianten: omlijning blijft zichtbaar** (Jordi: witte varianten "lijken onderdeel van de achtergrond te worden"). Moderne sprites hebben naast zwart ook een gekleurde omlijning (de donkerste tint van lijf of vlam); bij albino werd die bijna wit. Paletindexen die voor ≥ 30% langs de rand liggen, worden in een variant nooit lichter dan het origineel of OKLab-lichtheid 0,5.
+- **Kleurvarianten: vlammen contrasteren met de huid** (Jordi: "de vlam in een andere kleur dan de huidskleur maakt de laatste twee cool"). Charmander-lijn: blauw lijf met witheet vuur, teal lijf met violette vlam (kalium), axolotl met groene vlam (koper), albino met blauwe gasvlam; Mega X (blauw) en synthwave (cyaan) blijven. Radioactieve Bulbasaur-lijn houdt zijn rode ogen (de gele waren niet mooi).
+- **Kleurvarianten: buiken en hoofdlijnen** (Jordi: Squirtle's buik en rand vielen weg, net als de lijn die het hoofd afmaakt bij Charmander/Charmeleon). Lichte tinten van een groep worden nu samengedrukt i.p.v. tegen wit afgekapt; de gekleurde omlijning (donkerste tint van een groep langs de rand) wordt nooit lichter dan in het origineel; Squirtle's kinlijn (deelt een index met de pupillen) blijft donker en wordt bij albino donkerrood. Albino- en vaporwave-buiken van de Squirtle-lijn iets donkerder gekozen.
+- **Kleurvarianten: albino beter belijnd** (Jordi: Wartortles oren, Blastoises hoofd en de hoofden van Squirtle/Charmander vielen weg). Aan de belichte kant gebruiken moderne sprites de hoofdkleur van het lijf als rand; bij een bijna wit lijf viel die weg tegen lichte achtergronden. Albino houdt nu de volledige schaduwopbouw (niet meer samengedrukt) en het lijf is gebroken wit/lichtgrijs; alleen de lichtste tinten zijn wit.
+- **Kleurvarianten, Hoenn-dex groep 1: starters.**
+  - Treecko-lijn: Torchic-kleuren, Mudkip-kleuren, bladstaartgekko, albino, Pikachu, cyberpunk.
+  - Torchic-lijn: Treecko-kleuren, Mudkip-kleuren, flamingo met cyaan vuur, albino met blauwe vlammen, Ayam Cemani (zwarte kip), Captain Falcon.
+  - Mudkip-lijn: Torchic-kleuren, Treecko-kleuren, slijkspringer, albino, koi (Showa), bubblegum.
+  - `ramps.py --grid uit.png soort ...` maakt indexkaarten van een hele groep in één beeld.
+- **Kleurvarianten, groep 1 bijgewerkt** (Jordi):
+  - Treecko-lijn in Mudkip-kleuren: hoofdblad en staart in de kleur van Swamperts vinnen, Grovyles armbladeren oranje. Grovyles armbladeren deelden hun indexen met hoofdblad en staart; ze hebben nu eigen indexen (één randtint 13 ging op in de bijna gelijke 5). Sceptiles staartstukje tussen de benen (in lijftint getekend) heeft een eigen index, zodat het met de staart meekleurt. De gewone sprites zien er hetzelfde uit.
+  - Bladstaartgekko vervangen door de **tokeh** (blauwgrijs met oranje).
+  - Mudkip-lijn: twee axolotls, **leucistisch** (roze, roze-rode kieuwen, donkere ogen; i.p.v. albino) en **GFP** (lichtgevend, i.p.v. bubblegum).
+  - `sprite_fixes.py` kan nu ook indexen samenvoegen, vlakvullen vanaf zaadpixels en binnen rechthoeken hernummeren; eenmalig per soort (`sprite_fixes_done.txt`).
+- Treecko-lijn in Mudkip-kleuren: de rode buik/streep is nu oranje als Mudkips wangen (Jordi); Sceptiles armbladeren blijven lijfkleur (geen vrije paletplek zonder een lijftint te verliezen).
+- Sceptiles armbladeren hebben nu een eigen index (oranje in de Mudkip-variant, ook op de achterkant); daarvoor ging de donkerste staarttint op in de bijna gelijke donkerste lijftint. De gewone Sceptile houdt al zijn glans en schaduw.
+- Sceptile terug naar de versie met de oranje buikstreep en armbladeren in lijfkleur (Jordi); de extra index-ingreep is teruggedraaid.
+- **Kleurvarianten, Hoenn-dex groep 2:**
+  - Poochyena-lijn: blauwe merle, rode wolf, poolwolf, albino, Midnight Lycanroc, Amaterasu (Okami; Jordi koos hem boven de spookwolf).
+  - Zigzagoon-lijn: wasbeer, aardbeienmelk, Pikachu-kleuren, albino, Sonic, vaporwave (rode panda leek op de shiny, Galar-kleuren verwarrend; Jordi).
+  - Wurmple-familie: monarchvlinder (jadegroene cocons), blauwe morpho, maanvlinder, melanisme, Kanto-neven (Caterpie, Metapod, Kakuna, Butterfree, Venomoth), neon.
+  - Lotad-lijn: lotus, Día de los Muertos (goudsbloem-oranje, botwit met zwarte zigzag, paars en magenta; Jordi), mandarijneend, albino, kappa, gouden idool (Jordi koos hem boven neon).
+  - Seedot-lijn: onrijpe eikel, tengu, sakura, albino, oni (Jordi), winterdemon (Shiftry is hier Grass/Ice met Snow Warning; Jordi).
+- **Kleurvarianten, Hoenn-dex groep 3:**
+  - Taillow-lijn: roodborst, ijsvogel, kardinaal, albino, blauw-gele ara, zwaluwstaart (rokkostuum).
+  - Wingull-lijn: bruine pelikaan, papegaaiduiker, galah, melanisme, postbode (PostNL), onweersvogel.
+  - Ralts-lijn: lavendel, roos (rood/groen omgedraaid), hemelsblauw, albino, zwarte zwaan (ballet), Hyrule-koninklijk.
+  - Surskit-lijn: rode waterjuffer, dagpauwoog, groene glazenmaker, albino, Mothra, Luxury Ball.
+  - Shroomish-lijn: vliegenzwam, cantharel, Toad, albino, amethistzwam, lichtgevende zwam.
+- **Kleurvarianten, Hoenn-dex groep 4:**
+  - Slakoth-lijn: grijze luiaard, algenvacht, goudaap, albino, zilverrug, Garfield.
+  - Abra-lijn: rode vos, zilvervos (gouden lepels), tovenaar, albino, Mewtwo-kleuren, Joker.
+  - Nincada-familie: groene cicade, barnsteen, brons, albino, hemels (gouden halo), Japans lakwerk.
+  - Whismur-lijn: luidspreker, olifant, KISS, albino, gouden plaat, banshee.
+  - Makuhita-lijn: Kumamon, kappa-sumo, Hokusai (indigo), albino, lucha libre, Daruma.
+- **Kleurvarianten, Hoenn-dex groep 5:**
+  - Goldeen-lijn: goudvis, Black Moor, shubunkin, panda-oranda, kempvis, Nemo.
+  - Magikarp-lijn (alleen kleuren; levels ongemoeid): omgewisseld (Magikarp blauw, Gyarados oranje; Jordi), kohaku, karasu, drakenpoort (jade), Godzilla, hemelse draak.
+  - Azurill-lijn: lavendel, roze, sinaasappel, albino, Sterrennacht (Van Gogh), kerstbal.
+  - Geodude-lijn (edelmetalen/-stenen; Jordi): koper, zilver, saffier, robijn, amethist, diamant (geen goud: de shiny is al goud).
+  - Nosepass en Probopass (rituele beelden uit verschillende culturen; Jordi): moai (tufsteen met rode pukao), terracottaleger, Olmeekse jade, Azteeks turkoois-mozaïek, totempaal, Toetanchamon (goud en lapis).
+  - Skitty-lijn: Siamees, Doraemon, grijze tabby, albino, Cheshire Cat, Luna (Sailor Moon).
+- Kleurvarianten groep 5 bijgewerkt (Jordi): totempaal-Probopass zonder cyane omlijning (de snorindex is ook omlijning); diamant en zilver van de Geodude-lijn kregen hun schaduw en omlijning terug (doelkleur lag op de donkerste rotstint, alles daarboven werd wit); Magikarps oogwit deelde een index met de vinnen en blijft nu wit (hemelse draak oogde lo-fi); kohaku-Magikarp met diepere schaduw.
+- **Kleurvarianten, Hoenn-dex groep 6:**
+  - Sableye (Rock/Ghost): rozenkwarts, obsidiaan, jadegeest, albino, schatkist (elke edelsteen een eigen kleur: saffier, smaragd, robijn; Jordi), Gollum. Het rechteroog heeft daarvoor eigen indexen (paarse lijftint 6 ging op in 5).
+  - Mawile: koper, blauw staal, venusvliegenval, albino, Sadako (The Ring), Harley Quinn.
+  - Aron-lijn (puur Steel): brons, goud, geanodiseerd titanium, gunmetal, roségoud, Gundam.
+  - Meditite-lijn: Shaolin-monnik, zen, Krishna (blauwe huid), albino, Ryu (Street Fighter), verlicht (goud).
+  - Electrike-lijn: teslaspoel, stormwolk, plasma, albino, Raikou-kleuren, Thor.
+  - Plusle en Minun samen: omgewisseld, pastelroze, batterij, albino, Halloween, Ladybug en Cat Noir.
+- Kleurvarianten groep 6 bijgewerkt (Jordi):
+  - Sableye naar de Pokémon-games: Gold/Silver/Crystal (ogen goud en zilver, crystal-borststeen), Diamond/Pearl/Platinum, Ruby/Sapphire/Emerald (1,5%); oogranden neutraal donker voor meer contrast; obsidiaan, albino en Gollum blijven.
+  - Medicham-lijn: Z-fighter (Dragon Ball-gi), Akuma, verlicht met rode monnikspij (de laatste drie leken op elkaar).
+  - Electrike-lijn: Zekrom-kleuren i.p.v. stormwolk (leek op de shiny).
+  - Plusle en Minun contrasteren in de middelste varianten: pastel (roze/mint), batterij (koper/zwart), yin en yang.
+- **Kleurvarianten, Hoenn-dex groep 7:**
+  - Volbeat en Illumise (contrasterend paar): omgewisseld, vuur en ijs, lieveheersbeestje en goudscarabee (hele lichaam; Jordi vond de eerste versies saai), albino en melanisme, Mario en Luigi, Daft Punk.
+  - Roselia: witte en gele roos, Hollandse tulpen, cactusbloei, albino, betoverde roos, gifbloem.
+  - Gulpin-lijn: omgewisseld, karamelpudding, Kirby, albino, Pac-Man, biohazard.
+  - Carvanha-lijn: witte haai, vuurvis, zwarte piranha, albino, megalodon (fossiel), Gulf-racekleuren.
+  - Wailmer-lijn: tropisch turkoois, orka, Migaloo (witte bultrug), roze rivierdolfijn, zeppelin, tennisbal (Jordi: baltema).
+  - Numel-lijn: dromedaris, basalt en lava, Kawah Ijen (blauw vuur), albino, ijsvulkaan, lavalamp.
+- **Kleurvarianten, Hoenn-dex groep 8:**
+  - Torkoal (meer met de rook; Jordi): steenkool met aswolk, Delfts blauw, gifgas, albino, zwavelwolk, lavafontein.
+  - Spoink-lijn: boerderijvarken, wild zwijn, parelmoer, albino (meer schaduw), Miss Piggy, Ganon (Zelda).
+  - Spinda (vlekken via index 5-7): reuzenpanda, rode panda, giraf, aardbei, psychedelisch, lavendel met gouden vlekken (de oorgroep bevat ook de spiraalogen, die blijven donker).
+  - Trapinch-lijn (per evolutie een eigen verloop, zoals normaal/shiny; Flygons lenzen per variant anders): woestijn naar oase, Garchomp-kleuren, libel (nimf naar glans), albino, vuur, Ghidorah (brons naar goud).
+  - Cacnea-lijn: opuntia, rode maancactus, pompoenvogelverschrikker, albino, woestijnnacht, snoepcactus.
+  - Swablu-lijn: suikerspin, onweerswolk, zonsondergang, pauw, Kinto-un (Dragon Ball), poollicht.
+- **Kleurvarianten, Hoenn-dex groep 9:**
+  - Zangoose en Seviper (rivalen, contrasterend paar; katachtigen en slangen, Jordi): tijger en groene mamba, sneeuwluipaard en koraalslang, ijs en vuur, zwarte panter en albinopython, Siamese kat en Quetzalcoatl, Bastet en Apophis. De gekleurde randtinten horen nu bij hun kleurgroep (de lijnen tussen patroon en lijf waren lelijk).
+  - Lunatone en Solrock: omgewisseld, bloedmaan en zwarte zon, zonsverduistering, maansteen en zonnesteen, Majora's maan en Shine Sprite, Neptunus en Venus.
+  - Barboach-lijn: Europese meerval, goudmeerval, panda-corydoras, albino, Namazu (aardbevingsmythe), sidderaal.
+  - Corphish-lijn: blauwe kreeft, gemarmerde rivierkreeft, paarse kreeft, albino, glasgarnaal, gele kreeft (1 op 30 miljoen).
+  - Baltoy-lijn: terracotta, jade, Ming-porselein, albino (i.p.v. zwartfigurig), Dogu (Jomon), ufo.
+  - Lileep-lijn: koraalrif, witte zeeanemoon, versteend, albino, diepzeegloed, ammoniet (parelmoer).
+  - Anorith-lijn: versteend, degenkrab (blauw bloed), trilobiet (zwart en goud), albino, Anomalocaris, samoeraiharnas.
+
+- **Kleurvarianten, Hoenn-dex groep 10:** (Feebas t/m Wobbuffet; ROM ±808 KB vrij)
+  - Feebas-lijn: riemvis, pastel, koninklijk, albino, nachtzwart, feniks (rood lijf, goud lint).
+  - Castform: elke weervorm is een eigen vorm met een eigen shiny, dus per vorm eigen kleuren binnen één thema: zonsondergang, onweer, noorderlicht, zure regen, bloedmaan, sterrennacht.
+  - Kecleon: panterkameleon, opgewonden rood, schorscamouflage, albino, Lisa Frank, glas.
+  - Shuppet-lijn (horrorpoppen): Billy (Saw), Beetlejuice, Marionette (FNAF), Carrie, Corpse Bride, harlekijn (eerst te veel blauw/zwart/beige, daarna te veel snoepkleuren).
+  - Duskull-lijn: dwaallicht (groen vuur), calavera, pompoenlantaarn, farao (goud en lapis), Azteekse turkoois, kristallen schedel.
+  - Tropius: herfst, kersenboom, drakenvrucht, albino, ginkgo, winter; de donkere bladnerven en lijflijnen kregen een eigen kleurgroep, zodat de albino zijn lijnen houdt.
+  - Chimecho: koper, zilver, amethist (jade lag te dicht bij de shiny), albino, kerstklok, fuurin.
+  - Absol: bloedmaanwolf, Lucario, Pest (apocalyptische ruiter), Sylveon, Anubis, Raikou; elke variant kleurt de vacht (Jordi: eerst te vaak wit en te basic).
+  - Wynaut-lijn: oranje, groen, paars, albino, SpongeBob, bokszak.
+
+- **Kleurvarianten, Hoenn-dex groep 11:** (Snorunt t/m Metagross; ROM ±805 KB vrij)
+  - Snorunt-lijn (Glalie, Froslass): rode oni (Hannya), noorderlicht, matcha, albino, Yuki-onna (sakura), Lich King.
+  - Spheal-lijn: grijze zeehond, zeeleeuw, zeehondenpup, Pokéball, gouden medaille, orka.
+  - Clamperl-lijn (Huntail, Gorebyss): parelmoer, mandarijnvis, diepzeegloed, albino, zwarte parel (Tahiti), Ariel.
+  - Relicanth (kop en vlekken in contrasterende kleuren): echte coelacant (blauw met witte vlekken), lavasteen, Nautilus (Jules Verne: messing en ijzer), albino, jade met goud, Azteeks relikwie.
+  - Luvdisc: rood hart, chocoladehart, lavendel, albino, gebroken hart, Tiffany (turkoois).
+  - Bagon-lijn (mythologische draken): Alduin (Skyrim), Bahamut (platina en goud), Y Ddraig Goch (Welsh), albino, Tiamat (chromatisch), Smaug (rood en goud). Albino met donkerder doel en roze huid, zodat schaduw en lijnen blijven.
+  - Beldum-lijn (metalen): koper, goud, patina, gunmetal, roségoud, Iron Man; Metang krijgt een donkerder doelkleur (zijn palet is lichter, anders vlak als een Gen 2-sprite).
+  - Glalie: hoorns blijven zwart (de hoornindex kleurt ook de gaten in het gezicht); Hannya-thema met minder kleuren.
+
+- **Kleurvarianten, Hoenn-dex groep 12 (legendaries):**
+  - Regirock: basalt met lava, Regice-kleuren, malachiet, Petra (roze zandsteen), amethistgeode, Regigigas.
+  - Regice: Regirock-kleuren, rozenkwarts, citrien, zwart ijs, smaragd, Regigigas.
+  - Registeel: roest, brons, gegloeid blauw staal, goud, geanodiseerd titanium, Regigigas.
+  - Latias/Latios (per variant contrasterend): Mew en Mewtwo, stealth, lente en nacht, albino, aurora en amber, sterrenstelsel.
+  - Kyogre: abyssaal violet, orka, tsunami (turkoois), ijstijd, Groudon-ruil, Leviathan (goud).
+  - Groudon: woestijn, obsidiaan met lava, Godzilla, Maya-jade, Kyogre-ruil, zonnegod (Inti).
+  - Rayquaza: hemelsblauw, Groudon-rood, gouden drakenkoning, wolkendraak, kosmisch (Deoxys), bloedmaandraak.
+  - Jirachi: zilveren ster, robijnen ster, blauwe wensster, 1-up (groen), zwarte ster, sterrenstelsel.
+  - Deoxys (alle vier de vormen, elk met een eigen paletvolgorde): virus, mutant, omgekeerd, DNA (wit), meteoriet (gloeiend ijzer), kosmisch roze.
+  - Les: ligt de doelkleur op een donkere index (Regirocks steen), dan wordt alles bleek; donkere schaduwindex uit de groep laten.
+
+- **Kleurvarianten, groep 13 (ontbrekende evoluties en Galar-vormen):**
+  - Budew en Roserade bij de Roselia-lijn, Dusknoir bij de Duskull-lijn, Chingling bij Chimecho (zelfde thema's, eigen kleurgroepen per soort).
+  - Galar-Zigzagoon, -Linoone en Obstagoon (punk): tijgerpunk, rasta-punk, Ziggy Stardust, cyberpunk, Joker, Daft Punk (goud en chroom). Moderne sprites hebben ruizige schaduw: donkere delen blijven donker, vooral de lichte strepen kleuren; geen albino.
+  - Duskull-lijn 3%: farao (goud en lapis) terug met nettere afwerking: lichter lapis; Dusknoir omgekeerd (lapis mantel, gouden banden) en zijn olijfgrijze handen (index 9/12) uit de schedelgroep, die werden turkoois. Dusknoir 10/6/4% kregen een iets donkerder mantel en gedempte schedeltint.
+  - `ramps.py`/`sheet.py` vallen terug op `front.png` als een vorm geen `anim_front.png` heeft (Galar-vormen).
+  - Mega-, Primal- en Gmax-vormen krijgen geen varianten (zitten alleen in de Spire; Jordi).
+
+- **Kleurvarianten, groep 14 (Hoenn-dex-aanvulling, revisiesoorten eerst):**
+  - Zubat-lijn: vampiervleermuis, vosvleerhond, Batman, albino, Dracula, Sterrennacht (Van Gogh).
+  - Tentacool-lijn (echte kwallen): kompaskwal, bloedkwal, oorkwal, spiegeleikwal, gifgroen, sterrenstelselkwal.
+  - Machop-lijn: bronzen beeld, Hulk, Hellboy, albino, Na'vi (Avatar), Super Saiyan God.
+  - Magnemite-lijn: koper, R2-D2, WALL-E, gunmetal, hoefijzermagneet, Gouden Snaai.
+  - Voltorb/Electrode als Poké Ball-kleuren (alleen palet; patronen met eigen sprites geprobeerd en weer verwijderd, Jordi: 'dit wordt hem niet'): Love Ball, Friend Ball, Premier Ball, Fast Ball, Cherish Ball (hele bal rood; Electrode met donkere ogen/wenkbrauwen en witte tanden: tanden kregen eigen indexen 6–8 via `sprite_fixes.py`), Master Ball. Recepten kunnen nu ook `{'h': 0}` gebruiken (tintverschillen binnen een groep gelijktrekken). Geen Great Ball (de shiny is al blauw). De Electrode-shiny is weer het origineel (`shiny_original.pal`); het oude Master Ball-palet staat in `master_ball.pal` en is de 0,5% (`palfile`).
+  - Hisui-Voltorb/-Electrode als Legends: Arceus-ballen: Great, Feather, Wing, Ultra (grijs onderstuk), Strange, Origin.
+  - Machamp-albino: kuif met eigen schaduw; Magnezone per thema een eigen kleur voor de koepel en donkerder doelkleur; Bellossoms twee groene bladeren kleuren mee.
+  - Tentacool-lijn: meer contrast (geen vlakke Gen 2-look), Machamp-albino met meer tintverschil, Magnezone donkerder doel met kleinere lichtsprong, Bellossoms lijf en hoofd kleuren mee.
+  - Oddish-lijn (bloemen; Oddish' bladeren dragen de kleur van de latere bloem): witte rafflesia, blauwe lotus, lijkbloem, zonnebloem, sakura, alruin (Harry Potter).
+
+- **Kleurvarianten, groep 15:**
+  - Doduo-lijn (loopvogels): struisvogel, emoe, flamingo, albino, kasuaris, goudfazant.
+  - Slugma-lijn (lava): blauw vuur (Kawah Ijen), koperen vlam (groen), paarse lava, afgekoeld (obsidiaan), witheet, sterrennevel.
+  - Grimer-lijn (ook de Hoenn-vorm): bloedrood slijm, olie, kauwgom, lavaslijm, ectoplasma, Midas (goud). Alola-vormen: olie met regenboog, zuurstok, teal, kauwgom, lavendel en mint, gouden slijm.
+  - Koffing-lijn (Galar-Weezing: alleen de rook, moderne sprite): smog, gifgas, vuurwerkrook, koude damp, kosmische nevel, goudstof.
+  - Sandshrew-lijn: schubdier, Petra-rood, egel, albino, roze gordeldier, Shadow the Hedgehog. Alola: smaragdijs, rozenkwarts, koperijs, amethist, goudijs, poolnacht.
+  - Skarmory (metalen): koper, brons met patina, gunmetal, geanodiseerd titanium, roségoud, Excalibur.
+
+- **Kleurvarianten, groep 16 (Hoenn-dex-rest, deel 1):** Igglybuff-lijn, Staryu-lijn, Vulpix-lijn (ook Alola), Pichu-lijn (ook Alola-Raichu; Pikachu-kostuums niet), Psyduck-lijn, Natu-lijn, Girafarig/Farigiraf (moderne sprite: alleen de oranje vacht), Phanpy-lijn. Inspiratie per variant: `tools/grounded/variants/KEURING.md`.
+
+- **Kleurvarianten, groep 17 (Hoenn-dex-rest, deel 2):** Pinsir, Heracross, Rhyhorn-lijn (Rhyperior met eigen, donkerder doelkleuren), Corsola (Galar-Corsola/Cursola nog niet: moderne, bijna witte sprites), Chinchou-lijn, Horsea-lijn, Celebi. Hiermee heeft de hele Hoenn-dex varianten (Castform: per weervorm). Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 18 (Kanto/Johto, revisiesoorten):** Ekans-lijn, Venonat-lijn, Seel-lijn, Gastly-lijn, Drowzee-lijn, Farfetch'd (Galar-vormen nog niet), Dunsparce (Dudunsparce nog niet). Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 19 (Kanto/Johto):** Ledyba-lijn, Remoraid-lijn, Poliwag-lijn met Politoed, Porygon-lijn, Caterpie-lijn, Weedle-lijn, Pidgey-lijn, Rattata-lijn (ook Alola). Recepten kunnen nu `{'h': 0}` gebruiken. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 20 (Kanto):** Spearow-lijn, Nidoran♀-lijn, Nidoran♂-lijn, Clefairy-lijn (met Cleffa), Paras-lijn, Diglett-lijn (ook Alola, het blonde haar blijft), Meowth-lijn (ook Alola), Mankey-lijn, Growlithe-lijn. Moderne vormen (Galar-Meowth, Perrserker, Annihilape, Hisui-Growlithe/-Arcanine) nog niet. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 21 (Kanto):** Bellsprout-lijn, Ponyta-lijn, Slowpoke-lijn, Shellder-lijn, Onix/Steelix, Krabby-lijn, Exeggcute-lijn (ook Alola), Cubone-lijn. Galar-Ponyta/-Slowpoke-familie en Alola-Marowak (moderne sprites) nog niet. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 22 (Kanto/Johto):** Tyrogue en de Hitmons, Lickitung-lijn, Happiny-lijn, Tangela-lijn, Kangaskhan, Mime Jr./Mr. Mime (Galar nog niet), Scyther/Scizor (Kleavor nog niet), Smoochum/Jynx, Elekid-lijn, Magby-lijn. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 23 (Kanto):** Tauros (Paldea-vormen nog niet), Lapras, Ditto, de hele Eevee-familie (de Eeveelutions ruilen van kleur met elkaar), Omanyte-lijn, Kabuto-lijn, Aerodactyl, Munchlax/Snorlax. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 24:** Articuno, Zapdos, Moltres (dragen elkaars kleuren; Galar-vormen nog niet), Dratini-lijn, Mewtwo, Mew, Chikorita-, Cyndaquil- en Totodile-lijn (dragen elkaars kleuren, plus de Hoenn-starters). Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 25 (Johto):** Sentret-lijn, Hoothoot-lijn, Spinarak-lijn, Mareep-lijn, Togepi-lijn, Bonsly/Sudowoodo, Hoppip-lijn, Aipom/Ambipom. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 26 (Johto):** Sunkern-lijn, Yanma-lijn, Wooper-lijn (axolotls; Paldea-vormen nog niet), Murkrow-lijn, Misdreavus-lijn, Pineco-lijn, Gligar-lijn, Snubbull-lijn. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 27 (Johto):** Qwilfish, Sneasel/Weavile, Teddiursa/Ursaring, Swinub-lijn, Delibird, Mantyke/Mantine, Houndour/Houndoom, Stantler, Smeargle (de verfkleur), Miltank. Hisui-Qwilfish/-Sneasel, Overqwil, Sneasler, Ursaluna en Wyrdeer (moderne sprites) nog niet. Inspiratie: `KEURING.md`.
+
+- **Kleurvarianten, groep 28 (Johto, laatste):** Unown (één palet voor alle letters), Shuckle, Raikou/Entei/Suicune (dragen elkaars kleuren), Larvitar-lijn, Lugia, Ho-Oh. Daarmee hebben alle Kanto-, Johto- en Hoenn-soorten varianten; alleen de moderne regionale vormen staan nog open (`KEURING.md`).
+
+- **Kleurvarianten, keuring ronde 2 (Kanto/Johto, na Jordi's feedback van 16 okt):** twee terugkerende punten opgelost.
+  - **Lijnen bij witte/albino-varianten:** de tool rekt bij lichte doelkleuren de schaduwkant op, zodat de donkerste tint (lijnen, veerranden) bijna zo donker blijft als in het origineel (`colorlib.recolor`, `lines`). Waar de meest gebruikte index een schaduw is, een donkerder doel of een vaste basis (`'_base'`, bijv. Piloswine, Alola-Dugtrio).
+  - **Onderdelen kleuren mee:** onder meer de rook van Koffing, het lijf van Galar-Weezing, Staryu's kern, Psyducks snavel, Xatu's vleugels, Farigirafs hoofd, Gastly's bol en Gengars ogen, de prei van Farfetch'd, de spiraal en buik van de Poliwag-lijn, Caterpies voelspriet, Butterfree's ogen/voeten, Weedles neus/stekel, Diglett's neus en het Alola-haar (bands), Mankeys neus, de bladeren van Bellsprout (met sakura), lijf en vlamrand van Ponyta, tong/hoofd van Shellder/Cloyster, Exeggutors stam, Cubones schedel (Día de los Muertos), Licki-tongen, Chansey's ei, Kangaskhans buik en hoofdplaten, Kabutops' zwaarden, Hoothoots ogen, Spinarak-poten, Mareep's bol/wol, de Togepi-lijn (opnieuw, met kop en driehoekjes), Sudowoodo's stam, Hoppip-lijn (seizoenen), Aipom-gezicht/handen, Sunkern-bladeren, Yanma's lijf, Forretress' binnenkant, Gligars vlies, Snubbulls vlekken en halsband, Sneasels veren, Mantyke-buik, Houndour-hoorns, Smeargle (lijf + baret, schilders), Delibirds wit, Shuckles lijf, Raikou's wolk, Entei's stekels, Suicune's ruiten, Tyranitars buik en Lugia's lijnen.
+  - **Nieuwe of vervangen varianten:** Pikachu-lijn als Bulbasaur/Squirtle/Charmander/Jigglypuff/Marill/Sterrennacht, Skarmory goud (Mega), Rhyperior diamant, Porygon Super Famicom (per evolutie een knopkleur), Venomoth-knipoog bij Butterfree, eigen reeksen voor Alola-Rattata en Alola-Meowth, Galar-Weezing eigen reeks, bloedmaan bij Cleffa, kristallen Onix/Steelix, Omanyte/Omastar in Game Boy-grijs (Twitch Plays), Scizor eigen kleuren, Mewtwo in Smash Bros.-kleuren, Zapdos Thunderbird, Stantler bosgeest. Inspiratie per lijn: `KEURING.md` (ronde 2).
+  - Tool: `'<map>:parts'` (eigen kleurgroepen per variant), `'_base'` (vaste basisindex), `'<map>:palfile'` voor Omanyte/Omastar.
+
+- **Kleurvarianten, keuring ronde 3:** Pikachu-Charmander houdt zwarte oorpunten (één oor kleurde mee); Rhyperior met vaste basis (lijnen op het lijf kloppen weer bij wit, diamant en goud); Chinchou's oogranden kleuren mee; albino-Politoed met rode buik; Smeargle (popart) met blauwe baret en gele verf zodat de lijnen blijven; Miltank-Galloway en de donkere Lugia's iets lichter zodat de zwarte omlijning niet wegvalt.
+
+- **Kleurvarianten, ronde 4:** Pikachu-Sterrennacht met donkere oorpunt (rechteroor), Miltank 1,5% wordt een Belted Galloway met een witte band om de buik (grijs lijf, geen onomlijnde witte vlakken meer). **Ledyba/Ledian als tokusatsu-helden** (Jordi): Kamen Rider 1 (groen, zilver, rode ogen) / Ultraman (rood en zilver, gloeiende ogen) / Super Sentai Blue Ranger / Kamen Rider Black (zwart en groen) / Space Sheriff Gavan (chroom met blauw) / Kamen Rider Kuuga Rising (goud en zwart); schild, buik, ledematen en ogen kleuren mee.
+
+- **Kleurvarianten: moderne regionale vormen.** Galar-Corsola/Cursola, Galar-Farfetch'd/Sirfetch'd, Galar-Meowth/Perrserker, Hisui-Growlithe/Arcanine, Galar-Ponyta/Rapidash, Galar-Slowpoke-lijn, Alola-Marowak, Galar-Mr. Mime/Mr. Rime, Kleavor, Annihilape, Dudunsparce, Paldea-Tauros (alle drie), Galar-vogels, Hisui-Typhlosion, Paldea-Wooper/Clodsire, Hisui-Qwilfish/Overqwil, Hisui-Sneasel/Sneasler, Ursaluna (+Bloodmoon) en Wyrdeer. Inspiratie per lijn: `KEURING.md`. Daarmee hebben alle Kanto-, Johto- en Hoenn-lijnen inclusief regionale vormen varianten (480 paletten; ROM ±740 KB vrij).
+
+- **Kleurvarianten moderne vormen, ronde 2:** Galar-Corsola/Cursola meer dood spookkoraal (gedempte tinten met spookgloed); de schmink van Galar-Mr. Mime/Mr. Rime kleurt mee; Paldea-Tauros opnieuw (lijf, manen en hoorns apart; Blaze als Team Magma, Aqua als Team Aqua, Combat als Team Galactic); lichte vacht van Hisui-Sneasel, het modderlijf van beide Ursaluna's en de baard van Wyrdeer kleuren mee.
+
+- **Kleurvarianten Sinnoh (gen 4):** alle 42 lijnen (90 mappen) inclusief Rotom-vormen, Origin-vormen, Shaymin Sky, Shellos/Gastrodon oost en west, Burmy/Wormadam (plantmantel) en Arceus: het lijf draagt de variant, de typekleur van de plate blijft, met exact dezelfde lijfkleuren voor alle 17 types. Recepten in `recipes_gen4.py`, inspiratie in `keuring_gen4.md`.
+
+- **Kleurvarianten Kalos (gen 6):** 38 lijnen, incl. Hisui-Sliggoo/Goodra/Avalugg, Aegislash (beide standen), Meowstic ♀, Xerneas actief, Hoopa Unbound, Zygarde (alle vormen) en Floette Eternal. Vivillon voorlopig met zes patroonpaletten op de basissprite (zie de vraag aan Jordi); Ash-Greninja, de Flabébé-kleurvormen en de Furfrou-trims zonder varianten. Recepten in `recipes_gen6.py`, inspiratie in `keuring_gen6.md`.
+
+- **Kleurvarianten Unova, deel 1 (gen 5a):** 41 lijnen van Victini t/m Deerling (incl. Hisui-Samurott/-Lilligant/-Zorua/-Zoroark, Galar-Darumaka/-Darmanitan (+Zen), Galar-Yamask met Runerigus). Deerling/Sawsbuck: alleen de lentevorm; de seizoensvormen hebben nu de lente-shiny met hun eigen seizoensdelen (Jordi). Unfezant-vrouwtje omgenummerd naar de indexen van het mannetje (beeld ongewijzigd). Recepten in `recipes_gen5a.py`, inspiratie in `keuring_gen5a.md`.
+
+- **Kleurvarianten Unova, deel 2 (gen 5b):** 47 lijnen van Minccino t/m Meloetta, incl. Galar-Stunfisk, Hisui-Braviary, Kyurem zwart/wit, Basculegion ♂/♀, Keldeo resoluut en de therian-vormen; Genesect-drives overgeslagen (kleurvormen). Jellicent-vrouwtje omgenummerd naar de indexen van het mannetje (beeld ongewijzigd). Recepten in `recipes_gen5b.py`, inspiratie in `keuring_gen5b.md`.
+
+- **Kleurvarianten Unova 1, keuring Jordi:** Victini krijgt een aparte donkere iris (oogrand blijft zichtbaar bij Chocolade-paasei en Blauw vuur); Tepig-lijn Hampshire, albino-Excadrill (diepere roze buik), Gigalith Himalayazout, Timburr-lijn Smurf en Krokorok Zwarte kaaiman (strepen houden hun donkere schaduw) met betere lijnen; Sigilyph 0,5% wordt Tron (neoncyaan en oranje op zwart); Tirtouga/Carracosta: 10% Koopa Troopa, 6% Paratroopa, 0,5% Blauw schild (Mario Kart).
+
+- **Kleurvarianten Galar (gen 8):** 42 lijnen (97 mappen), incl. de vier fossiel-chimaera's in één recept, Zacian/Zamazenta (+gekroond), Calyrex met Glastrier/Spectrier en beide rijvormen, Toxtricity (beide vormen), Morpeko (Hangry), Eiscue (Noice), Indeedee ♀, Zarude (Dada), Enamorus (therian) en Eternamax. Overgeslagen: Gmax-vormen, Alcremie (Milcery wel). Cramorant houdt zijn gele snavel (Arrokuda/Pikachu in de keel delen die indexen). Recepten in `recipes_gen8.py`, inspiratie in `keuring_gen8.md`. ROM: ±649 KB vrij.
+
+- **Kleurvarianten Alola (gen 7):** 52 lijnen (113 mappen), incl. Hisui-Decidueye, Lycanroc (alle vormen), Mimikyu (+busted, als vermommingen), Necrozma (+Dawn Wings/Dusk Mane), Magearna (+Original Color), Wishiwashi (+school), Minior (alleen meteoor), Oricorio (alleen Baile), de Tapu's in één recept, Cosmog-lijn en alle Ultra Beasts. Silvally zoals Arceus: Type: Null, de basis en alle 17 memory-mappen met dezelfde doelkleuren; kuif/staartvin blijven de typekleur. Recepten in `recipes_gen7.py`, inspiratie in `keuring_gen7.md`. ROM: ±627 KB vrij.
+
+- **Kleurvarianten Unova 2, keuring Jordi:** Gothitelle Shiro Lolita met zwartere strikken en een donkere buitenrand; Emolga albino met schaduw in de vacht (eigen basis per variant: `_base` in `<map>:parts`, nieuw in `variants.py`), ogen weer zichtbaar bij Tron (lichtere buik) en Raijin; Vanillite-lijn zwart sesamijs met witte ogen; Volcarona: het grijze middenstuk hoort niet meer bij de vacht, zodat kop en vachtlijnen in alle varianten blijven staan.
+
+- **Kleurvarianten Paldea (gen 9):** 73 lijnen (129 mappen), incl. Oinkologne ♀, Squawkabilly (zes papegaaivarianten voor alle vier verenkleden), Tatsugiri (drie vormen, zes sushi-skins), Palafin (+Hero), Gimmighoul (kist/roaming) met Gholdengo, alle Paradoxen, de Schatten van de Ondergang, Koraidon/Miraidon, Dipplin/Hydrapple, Poltchageist/Sinistcha, de Trouwe Drie in één recept, Ogerpon (basis + maskers; de maskers zelf blijven), Archaludon, Terapagos (+Terastal/Stellar) en Pecharunt. Recepten in `recipes_gen9.py`, inspiratie in `keuring_gen9.md`. ROM: ±601 KB vrij.
+
+- **Kleurvarianten Sinnoh, keuring Jordi:** betere lijnen bij Chimchar-lijn 0,5% (Hanuman), Starly-lijn albino (Balispreeuw), Buizel/Floatzel Hermelijn, Cherubi/Cherrim Witte sakura en Gible-lijn Megalodon (meer contrast); Shinx-lijn Witte tijger met donkerblauwe ogen; Drapion/Skorupi met ogen die afsteken tegen het pantser (limoen, donkerpaars, bloedrood, lapis). Piplup-lijn: Pingu vervangt de Rotspinguïn (6%); Shinx-lijn Witte tijger met een donkere oogrand.
+
+- **Kleurvarianten Kalos en Galar, keuring Jordi:** Helioptile-lijn Zonsverduistering met oranjerode ogen; Amaura/Aurorus-edelstenen (die ook de ogen zijn) gekleurd i.p.v. wit; Hawlucha Toekan met getekende buik; Goomy-lijn 6% wordt Slime (Dragon Quest) naast Metal Slime; Vivillon Zon-patroon met donkere omlijning (`vivillon/variant_sun.pal`). Galar: Grookey-lijn 3% wordt 2-D (Gorillaz); Oranjegekte in donkerder oranje, wit en zwart; Nickit/Thievul 10% wordt Sly Cooper; Rolycoly-lijn: Zwavel wordt Lapis lazuli, Diamant met lijnen; Sinistea/Polteageist: groepen rechtgezet (kopje, thee = het spookje, vlekjes), zodat de matcha echt groen is en Delfts blauw een blauw kopje met zwarte thee; Impidimp-lijn 10% wordt Gremlins; Falinks: Spartaanse hoplieten (donker brons, rode kuif en mantel) i.p.v. Mordor; Zarude Sneeuwvlok met donkerder gezicht rond de ogen; Duraludon: Cyberpunk Hong Kong i.p.v. Darth Vader.
+
+- **Kleurvarianten Alola, keuring Jordi (deel 1):** Charjabug krijgt bus-skins binnen de Grubbin-thema's: Kattenbus (Totoro, 10%), Amerikaanse schoolbus (4%), de Collectebus uit Harry Potter (1,5%) en de Mystery Machine (0,5%); een Londense bus viel af omdat de shiny van Charjabug al rood is. Mareanie/Toxapex 3%: Durian i.p.v. Gifgroen. Morelull/Shiinotic: Gifpaddenstoel (Super Mario) i.p.v. Cantharel, en de 1-UP heldergroen met wit. Turtonator Bowser met ivoren stekels en crème schildrand. Het gezamenlijke Tapu-recept is weg (vier aparte lijnen volgen).
+
+- **Kleurvarianten Alola, keuring Jordi (deel 2):** de vier Tapu's als aparte lijnen, elk met eigen thema's (Koko: hoenders, teslaspoel, Kamehameha's veren mantel; Lele: vlinders, Lisa Frank; Bulu: Schotse hooglander, matadorpak, gouden kalf; Fini: zeemist, kelpwoud, lichtgevend plankton, verzonken schat). Oricorio Pa'u (hula-kostuums, Moana), Pom-Pom (cheerleaderteams, Elle Woods) en Sensu (kimono's, shiromuku) hebben nu ook varianten, als andere kostuums binnen hun dansstijl. Recepten in `recipes_gen7b.py`, inspiratie in `keuring_gen7b.md`.
+
+- **Kleurvarianten Paldea, keuring Jordi:** Smoliv-lijn 6%: Kalamata i.p.v. Gevulde olijf; Grafaiai met donkere schaduw (basis op de lichtere lijftint) zodat kop en lijnen blijven; Toedscruel Vliegenzwam met lijnen in het wit, Cantharel wordt Toadsworth; Klawf 1,5%: Kingler-paletwissel i.p.v. Groene strandkrab; Scovillain: beide koppen kleuren consequent mee (Habanero oranje + geel, Carolina Reaper twee rode koppen op groen, Banaanpeper, 3% wordt Gedroogde Mexicaanse chilis, Ghost pepper met lijnen); Revavroom Rosso Corsa roder, Batmobiel wordt Mercedes F1; Cyclizar Vespa met zichtbare kop; Glimmet/Glimmora Opaal en Frigibax-lijn wit met lijnen; Scream Tail 4% donkere ogen, 0,5% Sterrennacht als nachtmerrie; Sinistcha houdt het gezichtje op de kom.
+
+- **Kleurvarianten, laatste keuring:** Oranjegekte (Scorbunny-lijn) fel KNVB-oranje (#e85000, vlakke verzadiging); Grafaiai-ogen donkerder met lijnen (basis op de lichtste oogtint); Scovillains rechterkop houdt zijn lijnen bij lichte kleuren. Alle generaties zijn nu door Jordi goedgekeurd.
+
+- **Pokédex: kleurenpagina (COLORS):** de vierde knop op de soortpagina heet nu COLORS i.p.v. CANCEL (B sluit nog steeds af; vanaf SIZE kom je er ook met rechts). Met links/rechts blader je door normaal, shiny (1/1024) en de zes varianten, met de Engelse naam en de kans; niet gezien = silhouet met ???, gevangen = Poké Ball. Bijhouden per soort in `SaveBlock1` (`variantDexSeen/Caught`, 2 × NUM_SPECIES bytes, achteraan: oude saves blijven werken); gezien bij elk gevecht (tegenstanders die in de strijd kwamen), gevangen bij vangen en bij elke opening van de Pokédex (team + pc, dus ook eieren, ruilen, evoluties en oude saves). Namen: `tools/grounded/variants/names_en.json` (kort Engels, Nederlands waar het niet vertaalt: Delfts Blauw, Oranjegekte), door `variants.py` in `variant_palettes.h` gezet; knop: `tools/grounded/dex_colors_label.py`. ROM: ±556 KB vrij.
+  - Vormen met eigen kleuren (Alola/Galar/Hisui/Paldea, Hoenn-Grimer/Muk, Arceus- en Silvally-types, overige vormen als "Form N") staan op dezelfde kleurenpagina: wisselen met omhoog/omlaag (pijltjes rechts in het venster), de vorm staat voor de zeldzaamheid ("Alolan Common 75%").
+  - Omhoog/omlaag op de kleurenpagina gaat eerst door de vormen en daarna naar de vorige/volgende geziene Pokémon (zoals op de infopagina), zonder eerst B te drukken; B gaat terug naar de infopagina van de Pokémon waar je bent. De soortnaam staat nu in de onderste regel ("Alolan Rattata  Common 75%").
 - **Learnsets Dugtrio-lijnen:** Dugtrio leert Rock Slide (lv 28) en Swords Dance (lv 33); Dugtrio-Alola Swords Dance (lv 33); Wugtrio Liquidation op lv 38 (was 54) en Wave Crash (lv 46). Beide Dugtrios ook Drill Run (lv 39; Headlong Rush vond Jordi niet grounded). Geen Swords Dance voor Wugtrio (geen klauwen), geen Stone Edge (Jordi: "too much"). Hun nieuwe ability (molshoop/palinggat, wegduiken na een KO) volgt.
 - **Nieuwe ability: Hole Up** (Dugtrio, Dugtrio-Alola: slot 1 i.p.v. Sand Veil; Wugtrio: slot 2 i.p.v. Rattled; Jordi koos de naam). Maakt hij met een aanval een tegenstander KO, dan duikt hij weg ("Dugtrio ducked back into its hole!") en wissel je gratis, zoals U-turn. Alleen als de tegenstander nog Pokémon heeft en er iemand is om naar te wisselen. Hit-and-run voor snelle, breekbare drie-koppen. In de emulator getest (Earthquake KO't Purrloin → popup, tekst, partyscherm).
 - **Steelworker voegt het Steel-type toe** (Dhelmise; Jordi akkoord, idee van Reddit): zolang de ability actief is, is Dhelmise Ghost/Grass/**Steel**, zoals een derde type door Forest's Curse. Steel-moves blijven ×1,5. Nieuw: immuun voor Poison, resists Bug/Dragon/Fairy/Psychic/Rock/Steel, Grass ¼, Ice en Flying neutraal; **Fire 4×**, Ground neutraal. Gastro Acid, Skill Swap e.d. halen het type weg (`GetBattlerTypes`). Beschrijving: "Steel moves up; adds Steel type." In de emulator getest (Sludge Bomb: "It doesn't affect the wild Dhelmise…").
 - **Nieuwe move: Kelp Shroud** (Dhelmise, signature; naar de Pokédex: de prooi wordt in zeewier gewikkeld en leeggezogen). Ghost, fysiek, 70, 100%, 10 PP, contact. Het doelwit wordt "shrouded in ghostly kelp": zoals Leech Seed verliest het elke beurt 1/8 van zijn max. HP en Dhelmise krijgt dat terug, tot het wisselt. Werkt ook op Grass-types (bezeten zeewier, geen zaadje). Zet níet vast: dat doet **Anchor Shot** (power 80 → 90). Dhelmise leert Kelp Shroud op lv 1 en 24 en **Ingrain** op lv 30 ("houdt zichzelf in stand door nieuw zeewier en afval aan zijn lichaam toe te voegen"). Animatie: water kleurt paars, Dhelmise slingert naar voren, groen zeewier wikkelt zich om het doelwit, lichtjes trekken naar Dhelmise. In de emulator getest (tegen Wailord, Dhelmises favoriete prooi).
 - **Kelp Shroud stapelt** (Jordi): tot 3 lagen op hetzelfde doelwit, drain per beurt 1/8 → 1/6 → 1/4 van zijn max. HP (zelfde stappen als Moai Watch). Elke extra laag: "X is wrapped even tighter in kelp!". Wisselen of Rapid Spin haalt alles weg; een gewone Leech Seed blijft 1/8. Beschrijving: "Possessed kelp drains the foe / each turn. Stacks up to 3x." In de emulator getest.
+
+- **Pokédex-lijst:** links/rechts vasthouden blijft per pagina (7 nummers) doorspringen, net als omhoog/omlaag vasthouden (was: één sprong per druk).
+
+- **Pokédex: eigen pagina per vorm.** De infopagina toont nu de gekozen vorm met zijn eigen Pokédex-tekst, categorie, lengte, gewicht, sprite en kreet (bijv. Alola-Grimer "There are a hundred or so…", Hoenn-Grimer "Dung Pokémon"). Wisselen met SELECT op de infopagina, of door op de kleurenpagina een vorm te kiezen en met B terug te gaan. Alleen vormen die je gezien hebt (geen spoilers); de basisvorm altijd.
 - **Testrun Jordi, kladblok t/m Mauville (15 okt):**
   - **Wally-tutorial:** de Zigzagoon kreeg ability-slot 1 (in deze hack Hustle) en sloeg Ralts met twee Tackles K.O. Nu Pickup en één Tackle (`LoadWallyZigzagoon`, `battle_controller_wally.c`); getest: 4/4 keer gevangen. **Wally's Ralts-gevecht** gebeurt nu terug in de Petalburg Gym (na "DAD: WTF?"), niet meer meteen op straat.
   - **Bessen plukken:** geen ja/nee-vraag en geen tweede tekstvak meer; het deuntje speelt uit zonder dat je wacht.

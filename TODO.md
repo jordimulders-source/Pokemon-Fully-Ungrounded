@@ -117,13 +117,46 @@ Trainer-id's: op (1184 en 854 gebruikt voor SickBlik); 851–853 vanilla Red/Lea
 - **Na de 1.0:** extra shinies (7 kleurvarianten per Pokémon, afgeleid uit de persoonlijkheid: geen save-ruimte; ±250 KB voor gevechtssprites, ±500 KB met overworld; automatisch genereren + door Jordi laten keuren). Eerst kijken wat er na de 1.0 weg kan. (Jordi 10 okt)
 - **Muziek-lint:** `music_lint.py` en `musiclib.release_ticks` laten rekenen met de echte m4a-envelope (`channel_end()` in `route119_battle_theme.py`); andere nummers kunnen ongemerkt noten verliezen.
 
-## Kleurvarianten ("skins") — start na de wekelijkse token-reset (Jordi 11 okt)
+## Kleurvarianten ("skins") — techniek klaar; recepten per groepje (eerste groep: Kanto-starters, 15 okt)
 Besloten:
-- Elke Pokémon krijgt een **kleurvariant** uit zijn personality (geen save-ruimte, blijft bij ruilen/evolueren). Verdeling voorstel: normaal 75%, dan 10 / 6 / 4 / 3 / 1,5 / 0,5% (zeldzamer = opvallender). Geen naam in het summary-scherm.
-- **Shiny blijft apart** en is de enige met sparkle; kans van 1/8192 naar **1/1024** (`SHINY_ODDS` 8 → 64 in `include/constants/pokemon.h`).
-- Varianten werken overal waar het palet gebruikt wordt (gevecht, summary, pc, volger); trainers kunnen een vaste variant krijgen (`Variant:` in trainers.party).
-- Ruimte: 1289 unieke shiny-paletten × 6 × 32 bytes ≈ 242 KB + ±5 KB code (Jordi: prima).
-- Paletten via een generator: rolherkenning per sprite (hoofdkleur, tweede kleur, ogen, vuur/elektro, metaal) + recepten: **zwart** (hoofdkleur bijna zwart, zoals shiny Rayquaza), **albino**, **natuurlijke ondersoorten** (zoals eenden/ganzen), **per element** (blauw/groen vuur, ...), **thema-uitzonderingen** (Voltorb/Electrode = Great/Ultra/Master/Premier Ball; Pikachu = kleuren van de Kanto-starters; Garchomp zwart/rood).
-- Volgorde: (1) techniek, (2) generator, (3) **testbatch Hoenn-dex** (202 soorten) als contactvellen naar Jordi, daarna de rest in batches.
+- Elke Pokémon krijgt een **kleurvariant** uit zijn personality (geen save-ruimte, blijft bij ruilen/evolueren). Verdeling: normaal 75%, dan 10 / 6 / 4 / 3 / 1,5 / 0,5% (zeldzamer = opvallender; Jordi 15 okt: akkoord). Geen naam in het summary-scherm.
+- **Shiny blijft apart** en is de enige met sparkle; kans 1/1024 (gedaan).
+- Varianten gelden overal waar het gevechts-/menupalet gebruikt wordt (gevecht, summary, pc, evolutie, contest); niet in de Pokédex. Volgers staan uit in deze rom, dus geen overworld-paletten nodig.
+- Trainers (ook Frontier): standaard **normaal** (Jordi 15 okt); vaste variant met `Variant: 0–6` in trainers.party. Later eventueel: Archie/Maxie in Aqua/Magma-kleuren.
+- **Evolutielijnen consistent:** variant k van Charmander hoort bij variant k van Charizard (zelfde recept per lijn); soorten die bij het evolueren van kleur wisselen mogen dat ook in hun varianten (`'soort:onderdeel'` in recipes.py).
+- Werkwijze (Jordi 15 okt): Hoenn-dex eerst (vanilla 202, volgorde `HOENN_DEX_*`; groep 1 starters ✔, groep 2 ✔, groep 3 Taillow–Breloom ✔, groep 4 ✔, groep 5 ✔, groep 6 ✔, groep 7 ✔, groep 8 ✔, groep 9 ✔, groep 10 ✔, groep 11 ✔, groep 12 legendaries ✔, groep 13 ✔, groep 14 Zubat/Tentacool/Machop/Magnemite/Voltorb/Oddish (wacht op Jordi). Nog Hoenn-dexsoorten zonder recept (Doduo, Slugma, Grimer, Koffing, Sandshrew, Skarmory, Igglybuff, Staryu, Vulpix, Pichu, Psyduck, Natu, Girafarig, Phanpy, Pinsir, Heracross, Rhyhorn, Corsola, Chinchou, Horsea, Celebi): eerst die, met voorrang voor soorten met een Pokémon Revisie in de changelog (Jordi 15 okt); daarna de rest van de dex, ook dan revisiesoorten eerst), **per groepje** evolutielijnen recepten maken → contactvel (`sheet.py`) → Jordi keurt → volgende groep. Alleen soorten met een recept krijgen varianten (de rest blijft normaal). Per lijn: `ramps.py <map> [indexkaart.png]` voor de kleurgroepen, recept in `recipes.py`, `variants.py` draaien. Delen ogen een index met een ander onderdeel: eigen index via `sprite_fixes.py`. Mega/Primal/Gmax-vormen overslaan (Jordi 15 okt: zitten alleen in de Spire, daar geen shinies/varianten); regionale vormen en andere vormen (submappen) wel meenemen.
 - Schatting: Hoenn-test ±1–1,7 M tokens, rest van de dex ±1–2 M.
-- Open: designprincipe voor CLAUDE.md voorgesteld ("kleurvarianten zijn skins: herkenbaar anders, passend bij de soort, hoe zeldzamer hoe opvallender"), nog niet bevestigd.
+
+Recepten (Jordi 15 okt; niet 1000 × 7 handpicken, maar deze filosofie toepassen):
+- **Zwart** (zoals shiny Rayquaza) en **albino**.
+- **Starters elkaars kleuren:** Bulbasaur/Charmander/Squirtle (en elke startergeneratie) in elkaars neutrale kleuren.
+- **Anime-versies:** bijzondere kleuren uit de anime (Ash's Noctowl, roze Butterfree, de roze Pokémon van het eiland).
+- **Smash Bros-kleuren:** iconische alternatieve kostuums uit Smash horen bij de opties.
+- **Grounded dierenvormen:** echte ondersoorten/kleurvormen (Ducklett als eendensoorten; Grimer/Trubbish als soorten afval).
+- **Esthetisch vet:** felle, crispe kleuren die er gewoon goed uitzien.
+- **Cosplay/job/lore/reference:** clown, mythen/legendes, andere games (Samus, Link, Cuphead, Shovel Knight, Pizza Tower, Yoshi, Mario, ...).
+- **Verwante Pokémon** geven elkaar hun kleurpatroon.
+- Een aantal krijgt **Pikachu-kleuren** of een **Poké Ball-palet** (Voltorb/Electrode: Great/Ultra/Master/Premier).
+- **Neon/cyberpunk** en andere populaire kleurenpaletten.
+- **Vermijden:** echt rare of vloekende kleuren (tenzij specifiek grappig), en varianten die nauwelijks verschillen van normaal (geen "shiny Garchomp"-situatie; bijv. teal Squirtle lijkt op de gewone).
+- **Per onderdeel kleuren, niet één tint over alles** (Jordi 15 okt): een Pokémon bestaat uit meerdere kleurgroepen (lijf, buik, vlam, bloem, ogen); pas er één of meer aan en houd de schaduwen erin. Vuur mag spelen: blauwe, groene, witte vlam (met tinten); **vlam in contrast met de huid** (Jordi 15 okt), liefst realistische vlamkleuren (wit, blauw, groen, violet, karmijn).
+- **Zwart:** schaduwen juist versterken (`'l': 1.3`), anders wordt een kleine sprite een vormloze vlek.
+- Past bij de rom zelf: typing/abilities van revisies meenemen (Shiftry Grass/Ice = winterdemon).
+- Geen kleuren van een echte regionale vorm van dezelfde soort (Galar-Zigzagoon: verwarrend; Jordi).
+- **0,5% gevarieerd houden** (Jordi 15 okt): neon/vaporwave niet standaard; meer soorten patronen en thema's (popcultuur, mythen, materialen). Hoogtepunt volgens Jordi: Oni-Shiftry (thema dat bij de soort past).
+- **Metalen en edelstenen** (Jordi 15 okt): goud, zilver, brons, koper, diamant, robijn, smaragd, saffier enz. voor Pokémon die op erts/gesteente gebaseerd zijn (Geodude, Nosepass, Aron, Carbink...).
+- **Shiny eerst bekijken** (kolom 2 van het contactvel) vóór je een thema kiest: Geodude/Graveler goud, Azumarill geel, Skitty oranje, Nosepass bruin.
+- Voorbeelden die Jordi geniaal vond: Toad (Breloom), amethistzwam, Kumamon, Mewtwo-kleuren (Abra), Garfield, Oni-Shiftry, Okami-Poochyena; en evolutiewissels (Magikarp ↔ Gyarados).
+- Gepaarde soorten (Plusle/Minun, Volbeat/Illumise): binnen één variant contrasteren, niet dezelfde kleur.
+- Pokémon-games als thema (Sableye: Gold/Silver/Crystal enz.) viel goed; een sprite met meerdere edelstenen/onderdelen kan per onderdeel een eigen kleur krijgen (sprite_fixes).
+- Een variant hoeft niet altijd het hele lichaam mee te kleuren (Jordi), maar moet wel opvallen: alleen de schaal van Volbeat/Illumise was saai. Ronde Pokémon: baltema's (tennisbal voor Wailmer/Wailord; niet de Poké Ball).
+- Lijnen waarvan de kleuren per evolutie wisselen (Trapinch → Flygon): ook in de varianten een eigen verloop per stadium, niet één kleur voor de hele lijn.
+- Varianten onderling en t.o.v. shiny vergelijken: twee blauwe in één lijn = één vervangen.
+- **Albino:** gebroken wit met volledige schaduwen (de belichte rand is de hoofdkleur van het lijf: nooit puur wit, anders valt de omlijning weg), **rode ogen**, donkerdere vlekken blijven donkerder, een andere kleur bol/bloem; een witte vlam houdt tinten.
+
+## Wiki / encyclopedie — start na Jordi's volledige testrun (Jordi 15 okt)
+- Generator `tools/grounded/wiki/build_wiki.py` leest de **code zelf** (species_info, `gen_9.h`, moves_info.h, items.h, wild_encounters.json, trainers.party, map-scripts) en maakt een statische site; opnieuw draaien na elke wijziging.
+- **Focus op wijzigingen:** automatisch vergelijken met de originele pokeemerald-expansion (labels "gewijzigd"/"nieuw", met oud → nieuw), filters als "alleen gewijzigd".
+- Onderdelen: Pokédex (types, stats, abilities, evolutielevels, learnsets, vindplaatsen), moves, items/TM's met vindplaats, trainers/gyms, tips & tricks/QoL (met de hand, eerste versie uit CLAUDE.md + changelog).
+- Wiki-opzet: een eigen pagina per Pokémon/move/item/locatie met onderlinge links, zoekbalk via een zoekindex in de browser (bijv. Pagefind). Sprites uit `graphics/pokemon/`, ingekleurd per palet: normaal, shiny en de kleurvarianten ("skins") met afbeelding.
+- **Openbaar voor vrienden/testers:** statische HTML naar een apart openbaar repo met GitHub Pages; spoilers (legendaries, post-game, Spacetime) achter uitklapblokken, geen debug-info, geen ROM.

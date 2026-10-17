@@ -15231,6 +15231,21 @@ void ApplyExperienceMultipliers(s32 *expAmount, u8 expGetterMonId, u8 faintedBat
 
         *expAmount = value + 1;
     }
+
+    // Project Grounded (Jordi 17 okt): lage Pokémon snel bruikbaar maken. Per level dat de EXP-krijger onder de
+    // verslagen Pokémon zit +B_LOWLEVEL_EXP_STEP procent, max. +B_LOWLEVEL_EXP_MAX. Bovenop de inhaal-EXP; geen effect
+    // op wie even hoog of hoger is.
+    {
+        u32 faintedLevel = gBattleMons[faintedBattler].level;
+        u32 expGetterLevel = GetMonData(&gPlayerParty[expGetterMonId], MON_DATA_LEVEL);
+        if (expGetterLevel < faintedLevel)
+        {
+            u32 bonus = (faintedLevel - expGetterLevel) * B_LOWLEVEL_EXP_STEP;
+            if (bonus > B_LOWLEVEL_EXP_MAX)
+                bonus = B_LOWLEVEL_EXP_MAX;
+            *expAmount = (u64)*expAmount * (100 + bonus) / 100;
+        }
+    }
 }
 
 void BS_ItemRestoreHP(void)

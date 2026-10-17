@@ -423,12 +423,33 @@ Route111_EventScript_RockSmashTipFatMan::
 	lockall
 	applymovement LOCALID_ROUTE111_ROCK_SMASH_MAN, Common_Movement_FacePlayer
 	waitmovement 0
-	msgbox Route111_Text_MauvilleUncleToldMeToTakeRockSmash, MSGBOX_DEFAULT
+	call_if_ge VAR_HEATRAN_CUTSCENE_STATE, 1, Route111_EventScript_RockSmashManAfterHeatran
+	call_if_eq VAR_HEATRAN_CUTSCENE_STATE, 0, Route111_EventScript_RockSmashManTip
 	closemessage
 	applymovement LOCALID_ROUTE111_ROCK_SMASH_MAN, Common_Movement_FaceOriginalDirection
 	waitmovement 0
+	@ Project Grounded (Jordi): na zijn dialoog komt Heatran de stenen wegbeuken (vanaf de 3e badge, eenmalig)
+	goto_if_unset FLAG_BADGE03_GET, Route111_EventScript_RockSmashManEnd
+	goto_if_eq VAR_HEATRAN_CUTSCENE_STATE, 0, Route111_EventScript_HeatranScene
+Route111_EventScript_RockSmashManEnd::
 	releaseall
 	end
+
+Route111_EventScript_RockSmashManTip::
+	msgbox Route111_Text_MauvilleUncleToldMeToTakeRockSmash, MSGBOX_DEFAULT
+	return
+
+Route111_EventScript_RockSmashManAfterHeatran::
+	msgbox Route111_Text_RockSmashManAfterHeatran, MSGBOX_DEFAULT
+	return
+
+Route111_Text_RockSmashManAfterHeatran:
+	.string "Unbelievable. UNBELIEVABLE!\p"
+	.string "I gave you that HM for NOTHING!\n"
+	.string "Do you know what I had to do for it?\p"
+	.string "…What do you mean, I never gave you\n"
+	.string "anything? I gave you EMOTIONAL\l"
+	.string "SUPPORT. That's worth more than a HM.$"
 
 Route111_EventScript_Drew::
 	trainerbattle_single TRAINER_DREW, Route111_Text_DrewIntro, Route111_Text_DrewDefeat
@@ -719,7 +740,10 @@ Route111_Text_TrainerHillSign:
 @ Project Grounded: na Wattson beukt Heatran de stenen boven Mauville weg, loopt langs, ruikt aan je en gaat naar het noorden.
 Route111_EventScript_HeatranCutscene::
 	goto_if_unset FLAG_BADGE03_GET, Route111_EventScript_HeatranNotYet
+	@ Staat de Rock Smash-man er nog, dan komt Heatran pas na zijn dialoog (zie RockSmashTipFatMan)
+	goto_if_unset FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY, Route111_EventScript_HeatranNotYet
 	lockall
+Route111_EventScript_HeatranScene::
 	setvar VAR_HEATRAN_CUTSCENE_STATE, 1
 	playse SE_M_STRENGTH
 	setvar VAR_0x8004, 2  @ vertical pan
@@ -732,10 +756,7 @@ Route111_EventScript_HeatranCutscene::
 	closemessage
 	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_FaceUp
 	waitmovement 0
-	@ Project Grounded (Jordi 16 okt): de camera gaat naar de stenen, Heatran beukt ze in beeld weg en komt dan naar je toe
-	special SpawnCameraObject
-	applymovement OBJ_EVENT_ID_CAMERA, Route111_Movement_HeatranCameraUp
-	waitmovement 0
+	@ Project Grounded (Jordi 17 okt): pas als je zelf bij de stenen staat; Heatran beukt ze in beeld weg
 	clearflag FLAG_HIDE_ROUTE111_HEATRAN
 	addobject LOCALID_ROUTE111_HEATRAN
 	applymovement LOCALID_ROUTE111_HEATRAN, Route111_Movement_HeatranToRocks
@@ -751,9 +772,7 @@ Route111_EventScript_HeatranCutscene::
 	removeobject LOCALID_ROUTE111_HEATRAN_ROCK_2
 	setflag FLAG_HIDE_ROUTE111_HEATRAN_ROCKS
 	applymovement LOCALID_ROUTE111_HEATRAN, Route111_Movement_HeatranWalkDown
-	applymovement OBJ_EVENT_ID_CAMERA, Route111_Movement_HeatranCameraDown
 	waitmovement 0
-	special RemoveCameraObject
 	playmoncry SPECIES_HEATRAN, CRY_MODE_ENCOUNTER
 	waitmoncry
 	applymovement OBJ_EVENT_ID_PLAYER, Route111_Movement_PlayerStartled
@@ -765,92 +784,33 @@ Route111_EventScript_HeatranCutscene::
 	removeobject LOCALID_ROUTE111_HEATRAN
 	setflag FLAG_HIDE_ROUTE111_HEATRAN
 	msgbox Route111_Text_HeatranGone, MSGBOX_DEFAULT
+	goto_if_set FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY, Route111_EventScript_HeatranSceneEnd
+	applymovement LOCALID_ROUTE111_ROCK_SMASH_MAN, Common_Movement_FacePlayer
+	waitmovement 0
+	msgbox Route111_Text_RockSmashManAfterHeatran, MSGBOX_DEFAULT
+	closemessage
+	applymovement LOCALID_ROUTE111_ROCK_SMASH_MAN, Common_Movement_FaceOriginalDirection
+	waitmovement 0
+Route111_EventScript_HeatranSceneEnd::
 	releaseall
 	end
 
 Route111_EventScript_HeatranNotYet::
 	end
 
-Route111_Movement_HeatranCameraUp:
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	walk_fast_up
-	step_end
-
 Route111_Movement_HeatranToRocks:
+	walk_slow_down
 	walk_slow_down
 	walk_slow_down
 	face_down
 	step_end
 
 Route111_Movement_HeatranWalkDown:
-	walk_right
-	walk_right
+	walk_down
+	walk_left
 	walk_down
 	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	step_end
-
-Route111_Movement_HeatranCameraDown:
 	delay_16
-	delay_16
-	delay_16
-	delay_16
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
-	walk_down
 	step_end
 
 Route111_Movement_PlayerStartled:
@@ -864,9 +824,6 @@ Route111_Movement_HeatranWalkAway:
 	delay_16
 	face_up
 	delay_16
-	walk_up
-	walk_up
-	walk_up
 	walk_up
 	walk_up
 	walk_up

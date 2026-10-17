@@ -131,3 +131,5 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Fungal Control werkt niet op Grass | Geen poedermove meer; Overcoat/Safety Goggles blokkeren | ✅ |
 | Straight Line te sterk? | 60 / 100 | ✅ |
 | Heatran-cutscene: stenen niet geraakt | Camera naar de stenen, Heatran beukt ze in beeld | ✅ |
+| Heatran-scene te vroeg/stenen buiten beeld | Na de dialoog van de Rock Smash-man, stenen in beeld | ✅ |
+| Nieuwe Pokémon blijven te lang onbruikbaar | +10%/level onder de tegenstander, max +150% | ✅ (kijken t/m Norman) |

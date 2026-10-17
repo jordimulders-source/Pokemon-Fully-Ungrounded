@@ -658,8 +658,8 @@ Route119_Text_EF_ZinniaRoute119Intro:
 	.string "notices us. Aster, sing!$"
 
 Route119_Text_EF_ZinniaRoute119Defeat:
-	.string "Aster sang flat. Aster always\n"
-	.string "sings flat. I love her anyway.$"
+	.string "Aster sang flat from the sidelines.\n"
+	.string "Aster always sings flat. I love her.$"
 
 Route119_Text_EF_ZinniaRoute119PostBattle:
 	.string "ZINNIA: Keep climbing. The sky\n"

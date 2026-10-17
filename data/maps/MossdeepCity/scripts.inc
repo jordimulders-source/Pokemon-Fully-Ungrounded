@@ -87,7 +87,7 @@ MossdeepCity_Text_ZinniaDeltaIntro:
 	.string "It eats the ozone layer for breakfast.\p"
 	.string "But first I want to know if you\n"
 	.string "deserve the trip. ASTER, wake up.\l"
-	.string "We're fighting the CHAMPION.$"
+	.string "You'll want to watch this.$"
 
 MossdeepCity_Text_ZinniaDeltaDefeat:
 	.string "Fine. FINE. The sky likes you.\n"

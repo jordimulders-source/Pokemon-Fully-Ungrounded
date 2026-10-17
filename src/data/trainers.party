@@ -9693,6 +9693,10 @@ Music: Twins
 Double Battle: No
 AI: Check Bad Move / Try To Faint
 
+Dodrio @ Oran Berry
+Level: 29
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
 Vibrava @ Oran Berry
 Level: 29
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
@@ -10088,6 +10092,10 @@ Gender: Female
 Music: Intense
 Double Battle: No
 AI: Basic Trainer
+
+Lunatone
+Level: 30
+IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Bronzong
 Level: 30

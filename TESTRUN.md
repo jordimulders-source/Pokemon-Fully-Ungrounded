@@ -134,5 +134,5 @@ TV-teksten Mom/Dad, pc's van May/Brendan, Galar-Zigzagoon, Birch achtervolgd doo
 | Heatran-scene te vroeg/stenen buiten beeld | Na de dialoog van de Rock Smash-man, stenen in beeld | ✅ |
 | Nieuwe Pokémon blijven te lang onbruikbaar | +10%/level onder de tegenstander, max +150% | ✅ (kijken t/m Norman) |
 | Eerste Gabby & Ty-gevecht klopte niet (Brad, alleen Magnemite, levels) | Brad weg; Joey rent binnen en vecht mee (2 tegen 1), eigen camera+Poochyena-transitie; alle 6 teams nieuw | ✅ |
-| Winstrates too much (24 Pokémon achter elkaar) | 3/2/3/2 Pokémon, lv 29–31 | ✅ |
+| Winstrates too much (24 Pokémon achter elkaar) | 3 Pokémon per persoon, lv 29–31, geen Toxic Spikes | ✅ |
 | Coldstep Cave-muziek | Dark Cave (HGSS) | ✅ |

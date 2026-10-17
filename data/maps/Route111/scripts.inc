@@ -47,6 +47,7 @@ Route111_OnTransition:
 	call Route111_EventScript_CheckSetSandstorm
 	call Route111_EventScript_UpdateHoopaRing
 	call GabbyAndTy_EventScript_UpdateLocation
+	setflag FLAG_TEMP_14 @ Project Grounded: Joey verschijnt alleen in de Gabby & Ty-scène
 	goto_if_not_defeated TRAINER_VICKY, Route111_EventScript_SetWinstratesNotDefeated
 	end
 

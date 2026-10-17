@@ -2698,11 +2698,13 @@ gTVPokemonBattleUpdateText07::
 
 GabbyAndTy_Text_GabbyPreFirstBattle:
 	.string "GABBY: We are here… live… on location.\p"
-	.string "Where a TRAINER… of unknown origin…\n"
-	.string "has appeared.\p"
-	.string "Sources close to the tall grass…\n"
-	.string "describe the TRAINER as…\l"
-	.string "“tough-looking.”\p"
+	.string "A source… a man in a… very convincing\n"
+	.string "PROFESSOR costume… with a notepad…\l"
+	.string "and no boundaries… contacted us.\p"
+	.string "He says… you are… a CHILD PRODIGY.\n"
+	.string "The next… CHAMPION.\p"
+	.string "He also asked… for your… shoe size.\n"
+	.string "We did not… ask… why.\p"
 	.string "Ty. Roll camera.$"
 
 GabbyAndTy_Text_GabbyIntro:

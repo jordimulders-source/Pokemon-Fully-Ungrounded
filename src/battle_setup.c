@@ -1313,7 +1313,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
         return B_TRANSITION_BIRCH;
 
     // Project Grounded: Gabby & Ty filmen je; Joey's Poochyena valt je aan
-    if ((trainerId >= TRAINER_GABBY_AND_TY_1 && trainerId <= TRAINER_GABBY_AND_TY_6) || trainerId == TRAINER_LOCAL_CELEBRITY)
+    // (eerste keer: Joey vecht mee en zijn Poochyena springt voor de camera)
+    if (trainerId == TRAINER_GABBY_AND_TY_1 && gPartnerTrainerId == TRAINER_PARTNER(PARTNER_JOEY))
+        return B_TRANSITION_GABBY_TY_JOEY;
+    if (trainerId >= TRAINER_GABBY_AND_TY_1 && trainerId <= TRAINER_GABBY_AND_TY_6)
         return B_TRANSITION_GABBY_TY;
     if (trainerId == TRAINER_JOEY)
         return B_TRANSITION_POOCHYENA;

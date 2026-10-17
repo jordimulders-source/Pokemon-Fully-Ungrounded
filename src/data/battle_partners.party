@@ -184,6 +184,39 @@ EVs: 252 HP / 252 Atk / 4 SpD
 - Stomping Tantrum
 - Morning Sun
 
+=== PARTNER_JOEY ===
+Name: JOEY
+Class: Youngster
+Pic: Youngster
+Gender: Male
+Music: Male
+Back Pic: Brendan
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Poochyena @ Eviolite
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Fire Fang
+- Psychic Fangs
+- Sucker Punch
+
+Poochyena @ Eviolite
+Level: 31
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Crunch
+- Thunder Fang
+- Ice Fang
+- Protect
+
+Poochyena @ Eviolite
+Level: 32
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Play Rough
+- Crunch
+- Poison Fang
+- Howl
+
 /* --- Battle Stadium (gegenereerd door tools/grounded/stadium/pool.py) --- */
 
 === PARTNER_STADIUM_BRENDAN ===
@@ -429,6 +462,15 @@ Music: Male
 Back Pic: Brendan
 AI: Basic Trainer
 
+Rotom_Wash @ Leftovers
+Level: 50
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+Ability: Levitate
+- Hydro Pump
+- Thunderbolt
+- Will-O-Wisp
+- Volt Switch
+
 Magnezone @ Eviolite
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
@@ -436,14 +478,6 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Thunder Wave
 - Sonic Boom
 - Metal Sound
-
-Exploud @ Magnet
-Level: 50
-IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Nuzzle
-- Chilling Water
-- Echoed Voice
-- Swift
 
 Manectric @ Sitrus Berry
 Level: 50

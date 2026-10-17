@@ -91,6 +91,7 @@ enum BattleTransition
     B_TRANSITION_KOFFING, // Project Grounded: wilde Koffing/Weezing, schedel-en-botten-teken op paars
     B_TRANSITION_GABBY_TY, // Project Grounded: Gabby & Ty, camerazoeker met REC
     B_TRANSITION_POOCHYENA, // Project Grounded: Joey, Poochyena springt op je af
+    B_TRANSITION_GABBY_TY_JOEY, // Project Grounded: Gabby & Ty filmen, Joey's Poochyena springt voor de camera
     B_TRANSITION_BEACHBALL, // Project Grounded: strand van Route 109, strandbal in je gezicht
     B_TRANSITION_COLRESS, // Project Grounded: Colress, mugshot en dan twee tandwielen die op je af komen
     B_TRANSITION_ZANGOOSE, // Project Grounded: wilde Zangoose, een reuzenklauw scheurt het scherm open

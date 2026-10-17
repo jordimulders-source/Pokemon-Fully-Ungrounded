@@ -165,6 +165,7 @@ static void Task_Psyduck(u8); // Project Grounded
 static void Task_Koffing(u8); // Project Grounded
 static void Task_GabbyTy(u8); // Project Grounded
 static void Task_Poochyena(u8); // Project Grounded
+static void Task_GabbyTyJoey(u8); // Project Grounded
 static void Task_Beachball(u8); // Project Grounded
 static void Task_Colress(u8); // Project Grounded
 static void Task_Zangoose(u8); // Project Grounded
@@ -701,6 +702,7 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_KOFFING] = Task_Koffing, // Project Grounded
     [B_TRANSITION_GABBY_TY] = Task_GabbyTy, // Project Grounded
     [B_TRANSITION_POOCHYENA] = Task_Poochyena, // Project Grounded
+    [B_TRANSITION_GABBY_TY_JOEY] = Task_GabbyTyJoey, // Project Grounded
     [B_TRANSITION_BEACHBALL] = Task_Beachball, // Project Grounded
     [B_TRANSITION_COLRESS] = Task_Colress, // Project Grounded
     [B_TRANSITION_ZANGOOSE] = Task_Zangoose, // Project Grounded
@@ -7354,6 +7356,76 @@ static const struct RouteTransition sRT_GabbyTy =
 static void Task_GabbyTy(u8 taskId)
 {
     RouteTransition_Run(taskId, &sRT_GabbyTy);
+}
+
+// ---------------- Gabby & Ty + Joey (Route 111, eerste gevecht): de camera loopt, REC knippert, en dan springt
+// Joey's Poochyena vol in beeld. De zoeker schudt, REC valt uit, hap.
+static void RTGabbyTyJoey_Init(struct Task *task)
+{
+    RT_CreateSprite(task, sPoochyenaSprite_Gfx, sPoochyenaSprite_Palette, 120, 70);
+    RT_SetSprite(task, 120, 70, 48, 0);
+    gSprites[task->tRtSprite].invisible = TRUE;
+}
+
+static bool8 RTGabbyTyJoey_Update(struct Task *task)
+{
+    u16 *tilemap = RT_Tilemap();
+    s32 t = task->tRtTimer, o = max(1, 8 - t / 2), d = 0, p, lunge, phase, scale, y;
+
+    if (t >= 48)
+        d = (Random() % 3) - 1; // de cameraman schrikt
+    CpuFill16(0, tilemap, BG_SCREEN_SIZE);
+    RT_PutBlock(tilemap, o + d, o, 1, 2, 2);
+    RT_PutBlock(tilemap, 28 - o + d, o, 5, 2, 2);
+    RT_PutBlock(tilemap, o + d, 18 - o, 9, 2, 2);
+    RT_PutBlock(tilemap, 28 - o + d, 18 - o, 13, 2, 2);
+    if (t >= 16 && (t < 48 || (t / 3) % 2 == 0)) // REC hapert zodra de Poochyena er is
+    {
+        if ((t / 10) % 2 == 0)
+            RT_PutBlock(tilemap, 3, 3, 19, 2, 2);
+        RT_PutBlock(tilemap, 5, 3, 23, 5, 2);
+        RT_PutBlock(tilemap, 23, 3, 33, 3, 2);
+    }
+    if (t == 16)
+        PlaySE(SE_CLICK);
+    if (t < 44)
+    {
+        BlendPalettes(RT_SceneWithoutSprite(), min(t / 8, 4), RGB(12, 12, 12));
+        return FALSE;
+    }
+    // vanaf hier: de Poochyena van RTPoochyena_Update, vanaf zijn tweede sprong
+    p = t - 44 + 14;
+    lunge = p / 14;
+    phase = p % 14;
+    if (t == 44)
+    {
+        gSprites[task->tRtSprite].invisible = FALSE;
+        PlayCry_Normal(SPECIES_POOCHYENA, 0);
+    }
+    scale = 48 + lunge * 90 + (phase < 5 ? phase * 18 : 90);
+    y = 70 + lunge * 4 - (phase < 5 ? Sin((phase * 26) & 0xFF, 10) : 0);
+    if (phase == 0 && lunge > 1 && lunge < 5)
+        PlaySE(SE_M_COMET_PUNCH);
+    BlendPalettes(RT_SceneWithoutSprite(), 4 + min((t - 44) / 6, 6), RGB(10, 0, 0));
+    RT_SetSprite(task, 120 + ((phase > 6) ? (Random() % 3) - 1 : 0), y, min(scale, 512), 0);
+    if (p >= 70)
+    {
+        if (p == 70)
+            PlaySE(SE_M_BITE);
+        BlendPalettes(PALETTES_ALL, min((p - 70) * 3, 16), RGB(28, 0, 0)); // hap! (in de camera)
+        return p >= 76;
+    }
+    return FALSE;
+}
+
+static const struct RouteTransition sRT_GabbyTyJoey =
+{
+    sGabbyTy_Tileset, RT_SMOL, sGabbyTy_Palette, 1, 1, 0, RTGabbyTyJoey_Init, RTGabbyTyJoey_Update, RT_FinishSprite
+};
+
+static void Task_GabbyTyJoey(u8 taskId)
+{
+    RouteTransition_Run(taskId, &sRT_GabbyTyJoey);
 }
 
 // ---------------- Koffing/Weezing: het schedel-en-botten-teken op paars, met het weef-effect van de Aqua/Magma-logo's

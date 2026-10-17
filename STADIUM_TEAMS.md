@@ -7,7 +7,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 |---|---|---|---|---|
 | ROXANNE_5 | 512 | Golem, Cradily, Shuckle, Probopass | Golem, Cradily, Probopass | - |
 | BRAWLY_5 | 488 | Farfetch'd, Machamp, Medicham, Hariyama | Machamp, Medicham, Hariyama | - |
-| WATTSON_5 | 515 | Electrode, Magnezone, Exploud, Manectric | Magnezone, Exploud, Manectric | - |
+| WATTSON_5 | 522 | Rotom, Magnezone, Exploud, Manectric | Rotom, Magnezone, Manectric | - |
 | FLANNERY_5 | 498 | Ninetales, Scovillain, Talonflame, Magcargo | Ninetales, Scovillain, Magcargo | zon |
 | NORMAN_5 | 541 | Wobbuffet, Arboliva, Ursaluna, Slaking | Arboliva, Ursaluna, Slaking | Trick Room |
 | WINONA_5 | 509 | Xatu, Dodrio, Ninjask, Altaria | Xatu, Ninjask, Altaria | - |
@@ -38,7 +38,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_MISTY | 528 | Politoed, Kingdra, Lapras, Starmie | Politoed, Kingdra, Starmie | regen |
 | STADIUM_LT_SURGE | 539 | Electrode, Jolteon, Magnezone, Electivire | Electrode, Magnezone, Electivire | - |
 | STADIUM_ERIKA | 498 | Ninetales, Victreebel, Lilligant, Vileplume | Ninetales, Victreebel, Vileplume | zon |
-| STADIUM_KOGA | 515 | Weezing, Venomoth, Muk, Crobat | Weezing, Muk, Crobat | zure regen |
+| STADIUM_KOGA | 520 | Weezing, Venomoth, Muk, Crobat | Weezing, Muk, Crobat | zure regen |
 | STADIUM_SABRINA | 518 | Espeon, Gardevoir, Hypno, Alakazam | Gardevoir, Hypno, Alakazam | - |
 | STADIUM_BLAINE | 532 | Ninetales, Arcanine, Camerupt, Magmortar | Ninetales, Camerupt, Magmortar | zon |
 | STADIUM_GIOVANNI | 518 | Hippowdon, Nidoqueen, Excadrill, Rhyperior | Hippowdon, Excadrill, Rhyperior | zand |
@@ -184,10 +184,10 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 5800 | MAYLENE |
 | 5900 | COLRESS |
 | 6000 | SICKBLIK |
-| 6100 | RILEY |
-| 6200 | GLACIA |
-| 6300 | BARRY |
-| 6400 | WATTSON |
+| 6100 | WATTSON |
+| 6200 | RILEY |
+| 6300 | GLACIA |
+| 6400 | BARRY |
 | 6500 | BLAINE |
 | 6600 | MISTY |
 | 6700 | OAK |

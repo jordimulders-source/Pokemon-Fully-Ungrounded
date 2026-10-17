@@ -19055,3 +19055,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Extra EXP voor lage Pokémon: maximum +50%** (Jordi: +200% was too much; Gen 5-schaling en inhaal-EXP doen bij hele lage Pokémon al het meeste). Een verse lv 5 tegen lv 28 staat na één KO op ±17, na twee op ±20.
 - **Samengevoegd (17 okt):** `serene-wozniak` (kleurvarianten voor de hele dex, Pokédex-kleurenpagina en -infopagina per vorm) en de TODO's van `jolly-faraday` in deze branch; audit 0 FOUT. ROM ±552 KB vrij.
 - **Rotom (Mauville-kelder):** lv 40 → **32** (Jordi: meteen na Wattson te hoog; nu gelijk aan Wattson's ace).
+- **Jagged Pass:** Jangmo-o (1%-slot) van lv 41–47 naar 38–41, niet meer boven de trainers daar (40–41).

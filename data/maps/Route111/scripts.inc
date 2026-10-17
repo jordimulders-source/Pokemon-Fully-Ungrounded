@@ -743,6 +743,8 @@ Route111_EventScript_HeatranCutscene::
 	@ Staat de Rock Smash-man er nog, dan komt Heatran pas na zijn dialoog (zie RockSmashTipFatMan)
 	goto_if_unset FLAG_HIDE_ROUTE_111_ROCK_SMASH_TIP_GUY, Route111_EventScript_HeatranNotYet
 	lockall
+	goto Route111_EventScript_HeatranScene
+
 Route111_EventScript_HeatranScene::
 	setvar VAR_HEATRAN_CUTSCENE_STATE, 1
 	playse SE_M_STRENGTH

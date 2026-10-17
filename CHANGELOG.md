@@ -19064,3 +19064,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Coldstep Cave** speelt nu **Dark Cave** (HGSS, al in de ROM als wild-gevechtskeuze) i.p.v. de Mt. Pyre-dungeonmuziek, als ode aan Gen 2 (Jordi).
 - **Winstrates: geen Toxic Spikes meer** (Jordi: "funest" in een reeks zonder heal; vergif blijft tussen de gevechten): Victoria's Roserade kende hem standaard via zijn learnset, nu vaste moves Magical Leaf, Giga Drain, Dazzling Gleam, Poison Jab.
 - **Winstrates: allemaal 3 Pokémon** (Jordi: 4 volle teams achter elkaar was te veel, 3 per persoon is goed): Victoria krijgt Dodrio (29) terug, Vicky Lunatone (30). Nu 4 × 3 = 12 Pokémon, lv 29–31.
+- **Picknicker/Camper-intro:** de bessen vallen een halve tel eerder (de eerste zodra het kleed ligt), zodat de laatste bes nog helemaal landt vóór het beeld wegvalt (Jordi: kapte te vroeg af). In de emulator gecontroleerd.

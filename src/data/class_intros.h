@@ -1557,7 +1557,7 @@ static bool32 CIPicnic_Update(s32 t)
         PlaySE(SE_M_TAIL_WHIP);
     for (i = 0; i < (s32)ARRAY_COUNT(sCI_Berries); i++)
     {
-        s32 at = TI_Beat2(5 + i);
+        s32 at = TI_Beat2(4 + i); // eerste bes zodra het kleed ligt; de laatste heeft een hele tel om te landen
         if (TI_AT(at))
         {
             struct TIPart *p = TI_Part(sTI->v[i], 40 + i * 40, -16, TI_RandRange(-8, 8), 20, 3, 0);

@@ -797,7 +797,10 @@ static bool32 CINinja2_Update(s32 t)
             TI_Show(sTI->v[NB_LEAF + i], FALSE);
     }
     if (TI_AT(h10))
+    {
+        m4aSongNumStop(SE_M_GUST); // Gust herhaalt zichzelf: stoppen bij de grote poef
         PlaySE(SE_M_EXPLOSION);
+    }
     if (t >= h10 + 8)
     {
         TI_Show(sTI->v[NB_END], TRUE);

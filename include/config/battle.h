@@ -17,8 +17,8 @@
 #define B_CATCHUP_EXP_STEP          25    // procent extra EXP per level achterstand (Jordi 12 okt: was 100, gaf inflatie aan het begin)
 #define B_CATCHUP_EXP_MAX           200   // maximaal extra (procent): x3 (was x10)
 #define B_CATCHUP_EXP_BELOW_ACE     9     // inhaal-EXP alleen onder (ace volgende mijlpaal − dit): vangnet, geen boost (Jordi 12 okt)
-#define B_LOWLEVEL_EXP_STEP         10    // Project Grounded (Jordi 17 okt): +% EXP per level onder de verslagen Pokémon
-#define B_LOWLEVEL_EXP_MAX          150   // maximaal extra (procent): x2,5
+#define B_LOWLEVEL_EXP_STEP         50    // Project Grounded (Jordi 17 okt): progressief, +d²·STEP/100 % EXP bij d levels onder de verslagen Pokémon
+#define B_LOWLEVEL_EXP_MAX          200   // maximaal extra (procent): x3 (vanaf 20 levels verschil)
 #define B_TRAINER_EXP_MULTIPLIER    GEN_7 // In Gen7+, trainer battles no longer give a 1.5 multiplier to EXP gain.
 #define B_SPLIT_EXP                 GEN_5 // In Gen6+, all participating mon get full experience.
 #define B_SCALED_EXP                GEN_5 // In Gen5 and Gen7+, experience is weighted by level difference.

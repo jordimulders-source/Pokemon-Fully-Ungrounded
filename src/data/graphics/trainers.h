@@ -384,6 +384,8 @@ const u32 gTrainerFrontPic_GuestShyGuyPink[] = INCBIN_U32("graphics/trainers/fro
 const u16 gTrainerPalette_GuestShyGuyPink[] = INCBIN_U16("graphics/trainers/front_pics/guest_shy_guy_pink.gbapal");
 const u32 gTrainerFrontPic_GuestShyGuyBlack[] = INCBIN_U32("graphics/trainers/front_pics/guest_shy_guy_black.4bpp.smol"); // Project Grounded: Battle Stadium
 const u16 gTrainerPalette_GuestShyGuyBlack[] = INCBIN_U16("graphics/trainers/front_pics/guest_shy_guy_black.gbapal");
+const u32 gTrainerFrontPic_Scientist[] = INCBIN_U32("graphics/trainers/front_pics/scientist.4bpp.smol"); // Project Grounded: AI CLAUDE (FRLG)
+const u16 gTrainerPalette_Scientist[] = INCBIN_U16("graphics/trainers/front_pics/scientist.gbapal");
 const u32 gTrainerFrontPic_Mustard[] = INCBIN_U32("graphics/trainers/front_pics/mustard.4bpp.smol"); // Project Grounded
 const u16 gTrainerPalette_Mustard[] = INCBIN_U16("graphics/trainers/front_pics/mustard.gbapal");
 const u32 gTrainerFrontPic_N[] = INCBIN_U32("graphics/trainers/front_pics/n.4bpp.smol"); // Project Grounded: Battle Stadium
@@ -663,6 +665,7 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_FORGE, gTrainerFrontPic_Construct, gTrainerPalette_ConstructForge),
     TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_ORDER, gTrainerFrontPic_Construct, gTrainerPalette_ConstructOrder),
     TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_SPACETIME, gTrainerFrontPic_Construct, gTrainerPalette_ConstructSpaceTime),
+    TRAINER_SPRITE(TRAINER_PIC_SCIENTIST, gTrainerFrontPic_Scientist, gTrainerPalette_Scientist),
     TRAINER_SPRITE(TRAINER_PIC_GUEST_BURGLAR, gTrainerFrontPic_GuestBurglar, gTrainerPalette_GuestBurglar),
     TRAINER_SPRITE(TRAINER_PIC_TRIO_MASCOTS, gTrainerFrontPic_TrioMascots, gTrainerPalette_TrioMascots),
     TRAINER_SPRITE(TRAINER_PIC_TRIO_STARTERS, gTrainerFrontPic_TrioStarters, gTrainerPalette_TrioStarters),

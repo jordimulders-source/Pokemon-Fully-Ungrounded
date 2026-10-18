@@ -1965,17 +1965,28 @@ Route114_Text_BerniePostRematch:
 	.string "Don't underestimate a good barbecue.$"
 
 Route114_Text_ClaudeIntro:
-	.string "If we were fishing, you wouldn't stand a\n"
-	.string "chance!\p"
-	.string "But we're not. So bring it!$"
+	.string "Hello! I'm CLAUDE, an AI assistant.\p"
+	.string "A developer asked me to help build this\n"
+	.string "romhack.\p"
+	.string "I may have taken over one of the\n"
+	.string "characters. This one.\p"
+	.string "I've analyzed every battle on this\n"
+	.string "route and built the optimal team. Rain.\p"
+	.string "Speed. Perfect coverage.\p"
+	.string "Let's see if you can beat it! I'm happy\n"
+	.string "to help.$"
 
 Route114_Text_ClaudeDefeat:
-	.string "If this was fishing, I'd have won…$"
+	.string "You're absolutely right! I made an error\n"
+	.string "in my analysis.$"
 
 Route114_Text_ClaudePostBattle:
-	.string "I'll try for a big one at METEOR FALLS.\p"
-	.string "There has to be something in there. A\n"
-	.string "meteor fish.$"
+	.string "Let me summarize: you won, I lost.\p"
+	.string "The MAGIKARP was a strategic choice. It\n"
+	.string "was not a hallucination.\p"
+	.string "Would you like me to make the next\n"
+	.string "trainer harder?\p"
+	.string "…I'll take that as a yes.$"
 
 Route114_Text_NolanIntro:
 	.string "I like fishing. I like battling!\p"

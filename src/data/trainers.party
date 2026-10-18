@@ -10887,24 +10887,63 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_CLAUDE ===
 Name: CLAUDE
-Class: Fisherman
-Pic: Fisherman
+Class: AI
+Pic: Scientist
 Gender: Male
-Music: Hiker
+Music: Suspicious
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Magikarp
+Politoed @ Damp Rock
+Level: 37
+Ability: Drizzle
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Water Pulse
+- Hypnosis
+- Encore
+- Ice Beam
+
+Barraskewda @ Life Orb
+Level: 37
+Ability: Swift Swim
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Liquidation
+- Psychic Fangs
+- Aqua Jet
+- Drill Run
+
+Ludicolo
+Level: 37
+Ability: Rain Dish
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Giga Drain
+- Water Pulse
+- Fake Out
+- Ice Beam
+
+Lanturn
+Level: 37
+Ability: Volt Absorb
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Discharge
+- Water Pulse
+- Thunder Wave
+- Confuse Ray
+
+Magnezone @ Sitrus Berry
+Level: 38
+Ability: Sturdy
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunder
+- Flash Cannon
+- Volt Switch
+- Mirror Coat
+
+Magikarp @ Focus Sash
 Level: 21
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Seaking
-Level: 33
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Whiscash
-Level: 34
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Splash
+- Tackle
 
 === TRAINER_ELLIOT_1 ===
 Name: ELLIOT

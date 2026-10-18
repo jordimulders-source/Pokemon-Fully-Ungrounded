@@ -201,7 +201,8 @@
 #define TRAINER_PIC_CONSTRUCT_FORGE       183 // Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py)
 #define TRAINER_PIC_CONSTRUCT_ORDER       184 // Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py)
 #define TRAINER_PIC_CONSTRUCT_SPACETIME   185 // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
-#define TRAINER_PIC_COUNT                 186
+#define TRAINER_PIC_SCIENTIST             186 // Project Grounded: AI CLAUDE (Route 114), FRLG-scientist uit pret/pokefirered
+#define TRAINER_PIC_COUNT                 187
 
 // The player back pics are assumed to alternate according to the gender values (MALE/FEMALE)
 #define TRAINER_BACK_PIC_BRENDAN                0
@@ -471,6 +472,7 @@ enum TrainerClassID
     TRAINER_CLASS_ZERO_LAB, // Project Grounded: Area Zero (beveiligings- en alarmsysteem)
     TRAINER_CLASS_SHY_SQUAD, // Project Grounded: Yoshi's Island (Shy Guys, parodie op een evil team)
     TRAINER_CLASS_CONSTRUCT, // Project Grounded: construct van Arceus, Hall of Origin (tools/grounded/construct_sprites.py)
+    TRAINER_CLASS_AI, // Project Grounded: AI CLAUDE (Route 114)
     TRAINER_CLASS_COUNT,
 };
 

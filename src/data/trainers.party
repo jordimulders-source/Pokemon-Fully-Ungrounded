@@ -1119,7 +1119,7 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Check Viability
+AI: Check Bad Move / Try To Faint / Check Viability / Ace Pokemon
 
 aaabaaajss (Pidgeot) @ Sharp Beak
 Level: 69
@@ -1129,7 +1129,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Mirror Move
 - Roost
 
-Omastar
+Lord Helix (Omastar)
 Level: 52
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Shell Smash

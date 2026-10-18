@@ -1146,11 +1146,11 @@ Route110_Text_JasminePostBattle:
 	.string "Could you unclip me? Please?$"
 
 Route110_Text_EdwardIntro:
-	.string "I have foreseen your intentions! The\n"
-	.string "cards never lie!$"
+	.string "I just got a magic wand!\p"
+	.string "ABRA… KADABRA…$"
 
 Route110_Text_EdwardDefeated:
-	.string "The cards lied!$"
+	.string "Oh. Just ABRA.$"
 
 Route110_Text_EdwardPostBattle:
 	.string "I see your future… A shining light… No,\n"
@@ -1517,11 +1517,11 @@ Route111_Text_BrandenPostBattle:
 	.string "I don't get any. It's fine.$"
 
 Route111_Text_TyronIntro:
-	.string "This is my favorite kind of POKéMON!\p"
-	.string "Look at them! LOOK!$"
+	.string "Camping in real life is so different from\n"
+	.string "camping in COUNTER-STRIKE.$"
 
 Route111_Text_TyronDefeat:
-	.string "Wait! Did you even look at my POKéMON?$"
+	.string "At least you won't get sniped here.$"
 
 Route111_Text_TyronPostBattle:
 	.string "I love showing off my POKéMON in battle.\p"
@@ -1539,10 +1539,11 @@ Route111_Text_CelinaPostBattle:
 	.string "Let this groove get you to move!$"
 
 Route111_Text_HaydenIntro:
-	.string "I'm starving! No room for pity!$"
+	.string "I have a fire. I have no food.\p"
+	.string "Hmm. Your POKéMON look tasty, though.$"
 
 Route111_Text_HaydenDefeat:
-	.string "Groan… The desert is not for me.$"
+	.string "But I wanted to share!$"
 
 Route111_Text_HaydenPostBattle:
 	.string "My stomach is growling!\p"
@@ -1574,18 +1575,18 @@ Route112_Text_BricePostBattle:
 	.string "HYUCK!$"
 
 Route112_Text_TrentIntro:
-	.string "My legs are solid from pounding these\n"
-	.string "mountains!\p"
-	.string "They won't buckle easily!$"
+	.string "You hear that? That's the sound of\n"
+	.string "nothing exploding.\p"
+	.string "I hate that sound.$"
 
 Route112_Text_TrentDefeat:
-	.string "Ouch! My legs cramped!$"
+	.string "No boom? NO BOOM?!$"
 
 Route112_Text_TrentPostBattle:
-	.string "Try hiking with a pack of dozens of\n"
-	.string "pounds.\p"
-	.string "It'll get you in shape.\p"
-	.string "Or in a hospital.$"
+	.string "My doctor says I should stop blowing\n"
+	.string "things up.\p"
+	.string "My doctor has never seen a GRAVELER go\n"
+	.string "off at sunrise.$"
 
 Route112_Text_TrentRegister:
 	.string "My legs cramped… Grab me bandages from\n"
@@ -1633,31 +1634,35 @@ Route112_Text_CarolPostBattle:
 	.string "battle.$"
 
 Route112_Text_BryantIntro:
-	.string "I caught hot POKéMON in FIERY PATH!\n"
-	.string "Look!$"
+	.string "I'm not a pyromaniac. I'm a fire\n"
+	.string "enthusiast.\p"
+	.string "The fire department keeps saying it's\n"
+	.string "the same thing.$"
 
 Route112_Text_BryantDefeat:
-	.string "What a bumpy ride!$"
+	.string "Put me out. Please. Metaphorically.$"
 
 Route112_Text_BryantPostBattle:
-	.string "I like your battle style. It has flair.\p"
-	.string "My eyebrows have less flair. They\n"
-	.string "burned off.$"
+	.string "I brought a WEEZING for the smoke and a\n"
+	.string "SPINDA because the smoke makes\l"
+	.string "everyone dizzy anyway.\p"
+	.string "It's called ambience.$"
 
 Route112_Text_ShaylaIntro:
-	.string "Aren't you adorable! I need a romantic\n"
-	.string "battle!\p"
-	.string "I'm somewhat decent! At battling. And\n"
-	.string "at romance, somewhat.$"
+	.string "Breathe in. Lavender. Eucalyptus. A hint\n"
+	.string "of VENUSAUR.\p"
+	.string "Now breathe out your will to win.$"
 
 Route112_Text_ShaylaDefeat:
-	.string "Oh, how strong you are!$"
+	.string "You breathed through your mouth.\n"
+	.string "Cheater.$"
 
 Route112_Text_ShaylaPostBattle:
-	.string "Are you busy? We could battle again\n"
-	.string "right now…\p"
-	.string "No? That's fine. I'll wait. I'm good at\n"
-	.string "waiting.$"
+	.string "My AUDINO listens to my heartbeat\n"
+	.string "every morning.\p"
+	.string "It says I'm stressed. I said that's why\n"
+	.string "I do aromatherapy.\p"
+	.string "It says it's not working.$"
 
 Route113_Text_JaylenIntro:
 	.string "Hey! You're here too? Gramps told me\n"

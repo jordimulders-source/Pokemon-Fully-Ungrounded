@@ -995,3 +995,16 @@ Route111_Text_GalarZapdosFled:
 	.string "It'll be back. It never actually leaves\l"
 	.string "the track.$"
 @ --- einde legends2 ---
+
+@ Project Grounded: NPC verderop dan Dave (Route 111), die zich als BLUE verkleedt.
+Route111_EventScript_DaveBlueGossip::
+	msgbox Route111_Text_DaveBlueGossip, MSGBOX_NPC
+	end
+
+Route111_Text_DaveBlueGossip:
+	.string "Did you see that guy back there? Spiky\n"
+	.string "hair, purple shirt, attitude?\p"
+	.string "He's cosplaying as BLUE. From KANTO.\n"
+	.string "He thinks nobody notices.\p"
+	.string "Everybody notices.\p"
+	.string "Smell him later, I guess.$"

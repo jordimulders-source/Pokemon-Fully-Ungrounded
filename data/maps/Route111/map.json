@@ -672,7 +672,7 @@
     },
     {
       "local_id": "LOCALID_EF_DAVE_ROUTE_111",
-      "graphics_id": "OBJ_EVENT_GFX_MAN_3",
+      "graphics_id": "OBJ_EVENT_GFX_BLUE",
       "x": 26,
       "y": 117,
       "elevation": 3,
@@ -725,6 +725,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "Route111_EventScript_GalarZapdos",
       "flag": "FLAG_HIDE_LEGENDS_GALAR_ZAPDOS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_LASS",
+      "x": 22,
+      "y": 108,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_FACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Route111_EventScript_DaveBlueGossip",
+      "flag": "0"
     }
   ],
   "warp_events": [

@@ -2576,7 +2576,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 === TRAINER_DAVE ===
 Name: Dave
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Blue
 Gender: Male
 Music: Cool
 Items: Full Restore / Full Restore
@@ -38744,7 +38744,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 === TRAINER_DAVE_ROUTE_111 ===
 Name: Dave
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Blue
 Gender: Male
 Music: Cool
 Items: Super Potion
@@ -38810,7 +38810,7 @@ Nature: Adamant
 === TRAINER_DAVE_PETALBURG ===
 Name: Dave
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Blue
 Gender: Male
 Music: Cool
 Items: Super Potion / Super Potion
@@ -39113,7 +39113,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 === TRAINER_DAVE_SOOTOPOLIS ===
 Name: Dave
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Blue
 Gender: Male
 Music: Cool
 Items: Hyper Potion / Hyper Potion
@@ -43783,7 +43783,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 === TRAINER_DAVE_PARADISO ===
 Name: Dave
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Blue
 Gender: Male
 Music: Cool
 Items: Full Restore / Full Restore

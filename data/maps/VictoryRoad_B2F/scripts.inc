@@ -86,16 +86,24 @@ VictoryRoad_B2F_Text_JuliePostBattle:
 	.string "The jerkoffs in this cave included.$"
 
 VictoryRoad_B2F_Text_FelixIntro:
-	.string "I made it this far, but the stress gives\n"
-	.string "me stomach cramps…$"
+	.string "UP. UP. LEFT. START. START. START.\p"
+	.string "We are 80,000 people controlling one\n"
+	.string "TRAINER.\p"
+	.string "It took us sixteen days to get here.\p"
+	.string "Consult the HELIX FOSSIL! …It says:\n"
+	.string "battle.$"
 
 VictoryRoad_B2F_Text_FelixDefeat:
-	.string "Ooh… It hurts…$"
+	.string "ANARCHY! …DEMOCRACY! …ANARCHY!$"
 
 VictoryRoad_B2F_Text_FelixPostBattle:
-	.string "The LEAGUE is so close. I'm so tense.\p"
-	.string "Is there a toilet in this cave? Asking\n"
-	.string "urgently.$"
+	.string "We walked off the same ledge four\n"
+	.string "hundred times.\p"
+	.string "We released half our team on BLOODY\n"
+	.string "SUNDAY.\p"
+	.string "But BIRD JESUS carried us. And we never\n"
+	.string "forget THE FONZ.\p"
+	.string "PRAISE HELIX.$"
 
 VictoryRoad_B2F_Text_DianneIntro:
 	.string "The elite of the elite gather in this\n"

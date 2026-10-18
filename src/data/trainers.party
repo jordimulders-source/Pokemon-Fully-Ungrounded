@@ -1091,26 +1091,62 @@ Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 === TRAINER_FELIX ===
-Name: FELIX
+Name: CHAT
 Class: Cooltrainer
 Pic: Cooltrainer M
 Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Aerodactyl
-Level: 73
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+BIRD JESUS (Pidgeot) @ Sharp Beak
+Level: 75
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Brave Bird
+- Quick Attack
+- Mirror Move
+- Roost
 
-Jolteon
+LORD HELIX (Omastar)
 Level: 73
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Shell Smash
+- Surf
+- Ice Beam
+- Ancient Power
 
-Arcanine
+ATV (Venomoth)
 Level: 73
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Quiver Dance
+- Bug Buzz
+- Psychic
+- Sleep Powder
+
+AIIIIIIRRR (Lapras)
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Surf
+- Ice Beam
+- Thunderbolt
+- Perish Song
+
+ABBBBBBK (Nidoking)
+Level: 73
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Earth Power
+- Sludge Wave
+- Ice Beam
+- Thunderbolt
+
+AA-J (Zapdos)
+Level: 74
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
+- Thunderbolt
+- Drill Peck
+- Roost
+- Thunder Wave
 
 === TRAINER_VIOLET ===
 Name: VIOLET
@@ -6142,32 +6178,58 @@ Pic: Guitarist
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Manectric
+Toxtricity_Amped
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Punk Rock
+- Overdrive
+- Boomburst
+- Sludge Bomb
+- Volt Switch
 
-Toxtricity
+Toxtricity_Low_Key
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Punk Rock
+- Overdrive
+- Hyper Voice
+- Sludge Bomb
+- Shift Gear
 
-Primarina
+Chatot
 Level: 53
-Ability: Liquid Voice
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Boomburst
+- Chatter
+- Heat Wave
+- Nasty Plot
+
+Kricketune
+Level: 53
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Technician
+- Bug Buzz
+- Fell Stinger
+- Sticky Web
+- Sing
 
 Exploud
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Boomburst
+- Fire Blast
+- Ice Beam
+- Surf
 
-Wigglytuff
-Level: 53
+Rillaboom
+Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Gengar
-Level: 53
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Drum Beating
+- Grassy Glide
+- Knock Off
+- U-turn
 
 === TRAINER_DALTON_1 ===
 Name: DALTON
@@ -25898,32 +25960,58 @@ Pic: Guitarist
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Manectric
+Toxtricity_Amped
 Level: 64
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Ability: Punk Rock
+- Overdrive
+- Boomburst
+- Sludge Bomb
+- Volt Switch
 
-Toxtricity
+Toxtricity_Low_Key
 Level: 64
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Ability: Punk Rock
+- Overdrive
+- Hyper Voice
+- Sludge Bomb
+- Shift Gear
 
-Primarina
+Chatot
 Level: 64
-Ability: Liquid Voice
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Boomburst
+- Chatter
+- Heat Wave
+- Nasty Plot
+
+Kricketune
+Level: 64
+IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+Ability: Technician
+- Bug Buzz
+- Fell Stinger
+- Sticky Web
+- Sing
 
 Exploud
 Level: 64
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Boomburst
+- Fire Blast
+- Ice Beam
+- Surf
 
-Wigglytuff
-Level: 64
+Rillaboom
+Level: 65
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
-
-Gengar
-Level: 64
-IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Drum Beating
+- Grassy Glide
+- Knock Off
+- U-turn
 
 === TRAINER_FERNANDO_3 ===
 Name: FERNANDO
@@ -25932,32 +26020,58 @@ Pic: Guitarist
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Manectric
+Toxtricity_Amped
 Level: 66
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Ability: Punk Rock
+- Overdrive
+- Boomburst
+- Sludge Bomb
+- Volt Switch
 
-Toxtricity
+Toxtricity_Low_Key
 Level: 66
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Ability: Punk Rock
+- Overdrive
+- Hyper Voice
+- Sludge Bomb
+- Shift Gear
 
-Primarina
+Chatot
 Level: 66
-Ability: Liquid Voice
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Boomburst
+- Chatter
+- Heat Wave
+- Nasty Plot
+
+Kricketune
+Level: 66
+IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+Ability: Technician
+- Bug Buzz
+- Fell Stinger
+- Sticky Web
+- Sing
 
 Exploud
 Level: 66
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Boomburst
+- Fire Blast
+- Ice Beam
+- Surf
 
-Wigglytuff
-Level: 66
+Rillaboom
+Level: 67
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
-
-Gengar
-Level: 66
-IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Drum Beating
+- Grassy Glide
+- Knock Off
+- U-turn
 
 === TRAINER_FERNANDO_4 ===
 Name: FERNANDO
@@ -25966,32 +26080,58 @@ Pic: Guitarist
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Manectric
+Toxtricity_Amped
 Level: 68
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Ability: Punk Rock
+- Overdrive
+- Boomburst
+- Sludge Bomb
+- Volt Switch
 
-Toxtricity
+Toxtricity_Low_Key
 Level: 68
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Ability: Punk Rock
+- Overdrive
+- Hyper Voice
+- Sludge Bomb
+- Shift Gear
 
-Primarina
+Chatot
 Level: 68
-Ability: Liquid Voice
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Boomburst
+- Chatter
+- Heat Wave
+- Nasty Plot
+
+Kricketune
+Level: 68
+IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+Ability: Technician
+- Bug Buzz
+- Fell Stinger
+- Sticky Web
+- Sing
 
 Exploud
 Level: 68
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Boomburst
+- Fire Blast
+- Ice Beam
+- Surf
 
-Wigglytuff
-Level: 68
+Rillaboom
+Level: 69
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
-
-Gengar
-Level: 68
-IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Drum Beating
+- Grassy Glide
+- Knock Off
+- U-turn
 
 === TRAINER_FERNANDO_5 ===
 Name: FERNANDO
@@ -26000,32 +26140,58 @@ Pic: Guitarist
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Manectric
+Toxtricity_Amped
 Level: 70
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Ability: Punk Rock
+- Overdrive
+- Boomburst
+- Sludge Bomb
+- Volt Switch
 
-Toxtricity
+Toxtricity_Low_Key
 Level: 70
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Ability: Punk Rock
+- Overdrive
+- Hyper Voice
+- Sludge Bomb
+- Shift Gear
 
-Primarina
+Chatot
 Level: 70
-Ability: Liquid Voice
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Boomburst
+- Chatter
+- Heat Wave
+- Nasty Plot
+
+Kricketune
+Level: 70
+IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+Ability: Technician
+- Bug Buzz
+- Fell Stinger
+- Sticky Web
+- Sing
 
 Exploud
 Level: 70
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Boomburst
+- Fire Blast
+- Ice Beam
+- Surf
 
-Wigglytuff
-Level: 70
+Rillaboom
+Level: 71
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
-
-Gengar
-Level: 70
-IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Drum Beating
+- Grassy Glide
+- Knock Off
+- U-turn
 
 === TRAINER_SAWYER_2 ===
 Name: SAWYER

@@ -18898,19 +18898,48 @@ Pic: Hiker
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Sudowoodo
+Conkeldurr
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Iron Fist
+- Hammer Arm
+- Mach Punch
+- Rock Slide
+- Bulk Up
 
-Naclstack
+Tinkatuff
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Play Rough
+- Brutal Swing
+- Fake Out
+- Rock Smash
 
-Mudsdale
+Kingler
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Crabhammer
+- Metal Claw
+- Vise Grip
+- Swords Dance
+
+Klang
+Level: 37
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Gear Grind
+- Shift Gear
+- Charge Beam
+- Metal Sound
+
+Rotom_Mow
+Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leaf Storm
+- Thunder Wave
+- Hex
+- Discharge
 
 === TRAINER_LUCAS_1 ===
 Name: LUCAS
@@ -18930,6 +18959,10 @@ Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 Piloswine
+Level: 37
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Typhlosion
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 

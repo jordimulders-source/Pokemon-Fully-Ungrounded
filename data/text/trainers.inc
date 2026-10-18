@@ -1846,19 +1846,22 @@ Route113_Text_WyattPostBattle:
 	.string "grass. With real POKéMON in it.$"
 
 Route114_Text_LennyIntro:
-	.string "Yodelayhihoo!\p"
-	.string "… …\p"
-	.string "You shout “yodelayhihoo” back, since it\n"
-	.string "doesn't echo here!$"
+	.string "THERE'S ALWAYS SOMETHING TO DO!\p"
+	.string "I came up this mountain for a shelf\n"
+	.string "bracket.\p"
+	.string "Now I'm building a second mountain.$"
 
 Route114_Text_LennyDefeat:
-	.string "Yodelayhee-HOOOO! …That's the sound\n"
-	.string "of defeat.$"
+	.string "Thirty-day return policy. Receipt\n"
+	.string "required.$"
 
 Route114_Text_LennyPostBattle:
-	.string "As a kid, I thought someone was copying\n"
-	.string "me: “Yodelayhihoo.”\p"
-	.string "It was my brother. He still does it.$"
+	.string "My wife asked for a spice rack. I built\n"
+	.string "an extension.\p"
+	.string "Then a garage for the extension. Then a\n"
+	.string "shed for the garage.\p"
+	.string "She left. I'm building her a new house to\n"
+	.string "win her back. Yippie-ya-yeah.$"
 
 Route114_Text_LucasIntro:
 	.string "If you're not prepared, don't go up\n"

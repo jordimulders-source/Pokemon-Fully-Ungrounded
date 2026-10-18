@@ -1200,7 +1200,7 @@ Breloom
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Technician
-- Stun Spore
+- Spore
 - Mach Punch
 - Bullet Seed
 - Rock Tomb
@@ -1208,16 +1208,16 @@ Ability: Technician
 Parasect
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Sleep Powder
-- Poison Powder
+- Spore
 - Seed Bomb
 - Shadow Claw
+- X-Scissor
 
 Shiinotic
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Strength Sap
-- Sleep Powder
+- Spore
 - Moonblast
 - Giga Drain
 

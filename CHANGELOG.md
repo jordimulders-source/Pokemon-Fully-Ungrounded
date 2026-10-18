@@ -19117,3 +19117,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Violet**: alle zes waren zwak tegen Flying (Breloom 4×; Parasect is in deze hack Ghost/Grass, dus 2×). Parasect blijft (Sleep Powder, Poison Powder, Seed Bomb, Shadow Claw); **Toedscruel → Ferrothorn** @ Leftovers (Grass/Steel: Flying neutraal, Iron Barbs, Gyro Ball, Power Whip, Leech Seed, Thunder Wave). Correctie: eerder stond hier dat Parasect 4× zwak is en Ferrothorn Flying resisteert; beide klopten niet.
 - **CHAT**: Omastar heet **Lord Helix**; met de AI-vlag Ace Pokemon komt AA-j (Zapdos) pas als laatste, Bird Jesus begint (Jordi).
 - **CHAT**: Lord Helix heeft de Game Boy-grijze kleurvariant "Twitch Plays" (`Variant: 3`).
+- **Violet**: Spore terug bij Breloom, Parasect en Shiinotic (Jordi: Spore is gewoon beter; de opmerking was alleen dat Pollen Haze er niets aan toevoegt). Ribombee houdt Stun Spore.

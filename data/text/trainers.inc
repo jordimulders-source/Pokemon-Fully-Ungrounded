@@ -3090,30 +3090,34 @@ Route120_Text_RobertPostRematch:
 	.string "I'm 1.62 m. It's not going well.$"
 
 Route120_Text_LorenzoIntro:
-	.string "Let me check if your POKéMON are fit\n"
-	.string "for the outdoors.$"
+	.string "The jungle is calling! OOH OOH AH AH!\p"
+	.string "I raised every one of my POKéMON on\n"
+	.string "bananas and bad decisions.$"
 
 Route120_Text_LorenzoDefeat:
-	.string "With POKéMON like that, you won't need\n"
-	.string "rescuing!$"
+	.string "Monkey see, monkey lose.$"
 
 Route120_Text_LorenzoPostBattle:
-	.string "Going wherever your heart desires with\n"
-	.string "POKéMON…\p"
-	.string "That's the joy of a TRAINER.\p"
-	.string "And the reason I rescue so many of\n"
-	.string "them.$"
+	.string "Some people say I spend too much time\n"
+	.string "with monkeys.\p"
+	.string "Those people have never been hugged by\n"
+	.string "a PASSIMIAN.$"
 
 Route120_Text_JennaIntro:
-	.string "How's your fitness? Unfit people have a\n"
-	.string "rough time in emergencies.$"
+	.string "My hobby is running headfirst into this\n"
+	.string "tree.\p"
+	.string "Sometimes I forget what I did earlier\n"
+	.string "today. But I also forget all my worries!\p"
+	.string "Have we battled before? Doesn't\n"
+	.string "matter. Let's battle!$"
 
 Route120_Text_JennaDefeat:
-	.string "I'm totally fit, but my POKéMON aren't…$"
+	.string "Wait… did we battle already? Did I win?$"
 
 Route120_Text_JennaPostBattle:
-	.string "I run with my POKéMON every day.\p"
-	.string "TROPIUS can't run. We still try.$"
+	.string "Who are you again? Nice to meet you!\p"
+	.string "Excuse me. The tree and I have\n"
+	.string "unfinished business.$"
 
 Route120_Text_JeffreyIntro:
 	.string "… … … … … …\n"

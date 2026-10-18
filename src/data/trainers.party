@@ -773,14 +773,14 @@ Ability: Steadfast
 - Close Combat
 - Knock Off
 
-Gallade
+Mudsdale
 Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-Ability: Justified
-- Sacred Sword
-- Psycho Cut
-- Leaf Blade
-- Swords Dance
+Ability: Stamina
+- High Horsepower
+- Heavy Slam
+- Rock Slide
+- Iron Defense
 
 Aegislash
 Level: 53
@@ -17001,19 +17001,57 @@ Gender: Male
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Shiftry
+Ambipom
 Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Technician
+- Fake Out
+- Double Hit
+- U-turn
+- Taunt
 
-Leavanny
+Simisage
 Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Seed Bomb
+- Acrobatics
+- Crunch
+- Nasty Plot
 
-Deerling
+Simipour
 Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Scald
+- Acrobatics
+- Crunch
+- Nasty Plot
+
+Simisear
+Level: 49
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Flamethrower
+- Acrobatics
+- Crunch
+- Nasty Plot
+
+Passimian
+Level: 49
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Receiver
+- Close Combat
+- Gunk Shot
+- Knock Off
+- U-turn
+
+Rillaboom
+Level: 50
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Drum Beating
+- Knock Off
+- Grassy Glide
+- U-turn
 
 === TRAINER_SEBASTIAN ===
 Name: SEBASTIAN
@@ -17195,19 +17233,41 @@ Gender: Female
 Music: Cool
 Items: Full Restore
 Double Battle: No
-AI: Check Bad Move / Try To Faint / Force Setup First Turn
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Ludicolo
+Bouffalant
 Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Reckless
+- Head Charge
+- Zen Headbutt
+- Iron Head
+- Megahorn
 
-Tropius
+Ursaluna
 Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Headlong Rush
+- Zen Headbutt
+- Iron Head
+- Rest
 
 Torterra
 Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Head Smash
+- Wood Hammer
+- Zen Headbutt
+- Headbutt
+
+Rampardos @ Rock Gem
+Level: 50
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Mold Breaker
+- Head Smash
+- Zen Headbutt
+- Iron Head
+- Headbutt
 
 === TRAINER_SOPHIA ===
 Name: SOPHIA

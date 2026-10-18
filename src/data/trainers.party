@@ -21384,6 +21384,15 @@ Sandslash_Alola
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Swoobat
+Level: 37
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Simple
+- Air Slash
+- Psychic
+- Calm Mind
+- Heart Stamp
+
 === TRAINER_WYATT ===
 Name: WYATT
 Class: Pokemaniac

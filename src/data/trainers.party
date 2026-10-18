@@ -1193,7 +1193,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Spore
 - Giga Drain
 - Sludge Bomb
-- Clear Smog
+- Foul Play
 
 Breloom
 Level: 53
@@ -1204,13 +1204,14 @@ Ability: Technician
 - Bullet Seed
 - Rock Tomb
 
-Parasect
+Ferrothorn @ Leftovers
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Sleep Powder
-- Poison Powder
-- Seed Bomb
-- X-Scissor
+Ability: Iron Barbs
+- Gyro Ball
+- Power Whip
+- Leech Seed
+- Thunder Wave
 
 Shiinotic
 Level: 53
@@ -1226,7 +1227,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Stun Spore
 - Giga Drain
 - Earth Power
-- Knock Off
+- Power Gem
 
 === TRAINER_ROSE_2 ===
 Name: ROSE

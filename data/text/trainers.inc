@@ -2060,16 +2060,28 @@ Route114_Text_CharlottePostBattle:
 	.string "boyfriends.$"
 
 Route114_Text_AngelinaIntro:
-	.string "Have you evolved your POKéMON a lot?$"
+	.string "None of my POKéMON will evolve! I've\n"
+	.string "tried EVERYTHING.\p"
+	.string "I told my FEEBAS it's beautiful every\n"
+	.string "day.\p"
+	.string "I spun around with MILCERY until I\n"
+	.string "threw up.\p"
+	.string "The internet says GALARIAN FARFETCH'D\n"
+	.string "needs three critical hits in one battle.\p"
+	.string "Is that a sport?$"
 
 Route114_Text_AngelinaDefeat:
-	.string "Oh, I see. Good to know.$"
+	.string "Maybe they evolve when you lose? …No.\n"
+	.string "Still the same.$"
 
 Route114_Text_AngelinaPostBattle:
-	.string "Some POKéMON change so much when they\n"
-	.string "evolve!\p"
-	.string "My cute POLIWAG will turn into a hairy\n"
-	.string "wrestler. I'm not ready.$"
+	.string "My YAMASK has to take damage and then\n"
+	.string "walk under a stone arch.\p"
+	.string "I've been walking it under bridges for\n"
+	.string "weeks.\p"
+	.string "My DUNSPARCE needs a move called HYPER\n"
+	.string "DRILL. I bought it a drill.\p"
+	.string "It's not the same.$"
 
 Route115_Text_TimothyIntro:
 	.string "Hm… You seem capable…\p"
@@ -2102,19 +2114,18 @@ Route115_Text_TimothyPostRematch:
 	.string "I was napping.$"
 
 Route115_Text_KoichiIntro:
-	.string "You!\p"
-	.string "My MACHOP!\p"
-	.string "Demand a battle!\p"
-	.string "…It evolved. MACHOKE. Demands a battle.$"
+	.string "My MACHAMP has four arms. I have two.\p"
+	.string "Guess who does the dishes in my house.$"
 
 Route115_Text_KoichiDefeat:
-	.string "Ouch, ouch, ouch! My karate chop!$"
+	.string "Four arms and still no hand to help me\n"
+	.string "up.$"
 
 Route115_Text_KoichiPostBattle:
-	.string "My fighting crew!\p"
-	.string "As long as they seek power, I'll grow\n"
-	.string "with them!\p"
-	.string "We also share protein shakes.$"
+	.string "I took a TOXICROAK and a STARMIE to\n"
+	.string "round out my crew.\p"
+	.string "My sensei says that's not real karate.\n"
+	.string "My sensei also lost to a STARMIE.$"
 
 Route115_Text_NobIntro:
 	.string "My strongest skill: busting bricks with\n"

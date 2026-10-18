@@ -4181,7 +4181,7 @@ Breloom
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Chatot
+Milotic
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -5691,11 +5691,11 @@ Machamp
 Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Spinda
+Toxicroak
 Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
-Pinsir
+Starmie
 Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 
@@ -5706,27 +5706,48 @@ Pic: Black Belt
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
 Machamp
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: No Guard
+- Dynamic Punch
+- Stone Edge
+- Knock Off
+- Bullet Punch
 
 Blaziken
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Blaze Kick
+- Sky Uppercut
+- Thunder Punch
+- Protect
 
-Hitmontop
+Hitmontop @ Focus Sash
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Fake Out
+- Sucker Punch
+- Triple Axel
+- Rapid Spin
 
 Hitmonchan
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Ice Punch
+- Thunder Punch
+- Bullet Punch
+- Mach Punch
 
-Hawlucha
+Hawlucha @ Sitrus Berry
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Flying Press
+- Poison Jab
+- Swords Dance
+- Roost
 
 === TRAINER_NOB_2 ===
 Name: NOB
@@ -10142,11 +10163,11 @@ Medicham
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Hariyama
+Simisear
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Mienfoo
+Torkoal
 Level: 40
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -13519,6 +13540,14 @@ Conkeldurr
 Level: 39
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
+Gallade
+Level: 39
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Psycho Cut
+- Leaf Blade
+- Night Slash
+- Close Combat
+
 === TRAINER_CORA ===
 Name: CORA
 Class: Battle Girl
@@ -15720,11 +15749,11 @@ Mawile
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Carbink
+Komala
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Stunfisk
+Runerigus
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -19064,15 +19093,16 @@ Gigalith
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Rhydon
+Rhyperior
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Donphan
+Iron_Treads
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 /* Project Grounded: Hall of Origin, top: emissary van de orde (de bouwers) (hall_of_origin.py) */
+
 === TRAINER_HOO_ORDO ===
 Name: ORDO
 Class: Construct
@@ -20684,13 +20714,22 @@ Hariyama
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Gallade
+Slowking
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Psychic
+- Surf
+- Trick Room
+- Slack Off
 
-Pangoro
+Oranguru
 Level: 45
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+Ability: Inner Focus
+- Instruct
+- Psychic
+- Foul Play
+- Calm Mind
 
 === TRAINER_JOHN_AND_JAY_2 ===
 Name: JOHN & JAY
@@ -21507,15 +21546,27 @@ Music: Girl
 Double Battle: No
 AI: Check Bad Move
 
-Greninja
+Feebas
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Seismitoad
+Milcery
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Poliwhirl
+Yamask_Galar
+Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Farfetchd_Galar
+Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Dunsparce
+Level: 38
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Sneasel_Hisui
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -22389,19 +22440,31 @@ Pic: Battle Girl
 Gender: Female
 Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
 Scrafty
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Drain Punch
+- Crunch
+- Poison Jab
+- Ice Punch
 
 Throh
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Storm Throw
+- Rock Slide
+- Payback
+- Ice Punch
 
 Bewear
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Hammer Arm
+- Shadow Claw
+- Poison Jab
+- Rock Slide
 
 === TRAINER_MARLENE ===
 Name: MARLENE
@@ -22416,11 +22479,11 @@ Grumpig
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Espurr
+Delphox
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Munna
+Mismagius
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
@@ -38599,14 +38662,14 @@ Ability: Mold Breaker
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Dragon Claw
 - Crunch
-- Dual Chop
+- Iron Tail
 - Scary Face
 
 Swablu
 Level: 36
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Dragon Breath
-- Fairy Wind
+- Steel Wing
 - Sing
 - Round
 
@@ -38615,15 +38678,15 @@ Level: 36
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Air Cutter
 - Bite
-- Supersonic
+- Super Fang
 - Screech
 
 Bagon @ Dragon Fang
 Level: 38
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Dragon Breath
+- Fire Fang
 - Headbutt
-- Leer
 - Focus Energy
 
 === TRAINER_ZINNIA_ROUTE_119 ===

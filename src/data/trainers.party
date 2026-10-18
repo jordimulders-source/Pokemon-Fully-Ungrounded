@@ -117,19 +117,40 @@ Pic: Aqua Grunt M
 Gender: Male
 Music: Aqua
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Garbodor @ Black Sludge
+Level: 58
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Air Pollution
+- Gunk Shot
+- Venoshock
+- Drain Punch
+- Acid Rain
 
 Slowbro_Galar
 Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Shell Side Arm
+- Psychic
+- Surf
+- Slack Off
 
 Slowking_Galar
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 58
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Sludge Bomb
+- Psychic
+- Flamethrower
+- Slack Off
 
 Muk_Alola
 Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Poison Jab
+- Knock Off
+- Venoshock
+- Shadow Sneak
 
 === TRAINER_GRUNT_SEAFLOOR_CAVERN_1 ===
 Name: GRUNT
@@ -1155,27 +1176,57 @@ Pic: Aroma Lady
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
+
+Ribombee
+Level: 53
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Pollen Season
+- Pollen Puff
+- Moonblast
+- Quiver Dance
+- Stun Spore
 
 Amoonguss
 Level: 53
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Spore
+- Giga Drain
+- Sludge Bomb
+- Clear Smog
 
 Breloom
 Level: 53
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+Ability: Technician
+- Spore
+- Mach Punch
+- Bullet Seed
+- Rock Tomb
 
 Parasect
 Level: 53
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Spore
+- Seed Bomb
+- X-Scissor
+- Leech Life
 
 Shiinotic
 Level: 53
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Strength Sap
+- Spore
+- Moonblast
+- Giga Drain
 
 Toedscruel
-Level: 53
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 54
+IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Spore
+- Giga Drain
+- Earth Power
+- Knock Off
 
 === TRAINER_ROSE_2 ===
 Name: ROSE
@@ -10703,27 +10754,49 @@ Pic: Youngster
 Gender: Male
 Music: Male
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
 Weezing
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Air Pollution
+- Venoshock
+- Will-O-Wisp
+- Clear Smog
+- Acid Rain
 
-Grimer
+Grimer @ Eviolite
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Venoshock
+- Poison Jab
+- Minimize
+- Shadow Sneak
+
+Toxapex
+Level: 36
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Venoshock
+- Recover
+- Baneful Bunker
+- Liquidation
 
 Crobat
 Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Cross Poison
+- Venoshock
+- Air Slash
+- U-turn
 
 Raticate
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Murkrow
-Level: 36
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Level: 37
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+Ability: Guts
+- Hyper Fang
+- Crunch
+- Sucker Punch
+- Swords Dance
 
 === TRAINER_CALVIN_2 ===
 Name: CALVIN
@@ -21573,19 +21646,41 @@ Pic: Aroma Lady
 Gender: Female
 Music: Female
 Double Battle: No
-AI: Check Bad Move
-
-Comfey
-Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+AI: Check Bad Move / Try To Faint / Check Viability
 
 Eldegoss
 Level: 29
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Pollen Season
+- Pollen Puff
+- Leech Seed
+- Cotton Guard
+- Synthesis
+
+Ledian
+Level: 29
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Bug Bite
+- Air Slash
+- Mach Punch
+- Agility
+
+Comfey
+Level: 29
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+Ability: Triage
+- Draining Kiss
+- Magical Leaf
+- Floral Healing
+- Sweet Kiss
 
 Exeggutor
 Level: 30
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Seed Bomb
+- Psyshock
+- Leech Seed
+- Synthesis
 
 === TRAINER_BIANCA ===
 Name: BIANCA

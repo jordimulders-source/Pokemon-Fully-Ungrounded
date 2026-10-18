@@ -1205,14 +1205,13 @@ Ability: Technician
 - Bullet Seed
 - Rock Tomb
 
-Ferrothorn @ Leftovers
+Parasect
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-Ability: Iron Barbs
-- Gyro Ball
-- Power Whip
-- Leech Seed
-- Thunder Wave
+- Sleep Powder
+- Poison Powder
+- Seed Bomb
+- Shadow Claw
 
 Shiinotic
 Level: 53
@@ -1222,13 +1221,14 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Moonblast
 - Giga Drain
 
-Toedscruel
-Level: 54
+Ferrothorn @ Leftovers
+Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Stun Spore
-- Giga Drain
-- Earth Power
-- Power Gem
+Ability: Iron Barbs
+- Gyro Ball
+- Power Whip
+- Leech Seed
+- Thunder Wave
 
 === TRAINER_ROSE_2 ===
 Name: ROSE

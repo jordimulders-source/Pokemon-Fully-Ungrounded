@@ -19113,3 +19113,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Acid Rain, laat: Aqua-grunt 4** (Aqua Hideout B2F, de R&D-chemicus van de zure regen): Garbodor @ Black Sludge (Air Pollution, 8 beurten), Galar-Slowbro, Galar-Slowking en Alola-Muk.
   - De Burglar houdt zijn Dark-team, zonder Acid Rain (Jordi).
 - **Violet**: Spore was al 100% raak, dus de +20 uit Pollen Haze deed niets (Jordi). Alleen Amoonguss houdt Spore; de rest gebruikt poeders die wél profiteren (75% → 95%): Breloom en Toedscruel Stun Spore, Parasect Sleep Powder + Poison Powder, Shiinotic Sleep Powder (Ribombee had al Stun Spore).
+- **CHAT: echte Hall of Fame van TPP Red** (lijst van Jordi): AA-j (Zapdos) 81, aaabaaajss "Bird Jesus" (Pidgeot) 69, AAAAAAAAAA "The Fonz" (Nidoking) 54, Omastar "Lord Helix" 52 (zonder bijnaam), AATTVVV (Venomoth) 39, AIIIIIIRRR (Lapras) 31, met de echte bijnamen.

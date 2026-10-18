@@ -3636,18 +3636,21 @@ Route123_Text_JazmynPostBattle:
 	.string "More HERBA MYSTICA.$"
 
 Route123_Text_FrederickIntro:
-	.string "Hello, child! Can you spare some time?\p"
-	.string "I'm a grown man approaching children on\n"
-	.string "a road. Totally normal.$"
+	.string "HALT! I am SIR FREDRICK of the ORDER OF\n"
+	.string "THE BLADE.\p"
+	.string "My armor is cardboard. My horse is a\n"
+	.string "FALINKS. My resolve is steel.\p"
+	.string "Draw your POKéMON, squire!$"
 
 Route123_Text_FrederickDefeat:
-	.string "A capable child! Let me add to your\n"
-	.string "allowance.$"
+	.string "'Tis but a scratch! …It is several\n"
+	.string "scratches.$"
 
 Route123_Text_FrederickPostBattle:
-	.string "Add to your allowance?\p"
-	.string "Wasn't the prize money enough?\p"
-	.string "Kids today.$"
+	.string "A true knight accepts defeat with\n"
+	.string "honor.\p"
+	.string "I accept it with honor and a small\n"
+	.string "amount of crying inside my helmet.$"
 
 Route123_Text_AlbertoIntro:
 	.string "BIRD POKéMON are my obsession!\p"

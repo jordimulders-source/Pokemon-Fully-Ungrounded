@@ -19096,3 +19096,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Mt. Chimney: **Shelby** Hariyama/Mienfoo → Simisear (badende aap) en Torkoal (stoom). **Sheila** Chatot → Milotic.
   - Jagged Pass: **Eric** Rhydon → Rhyperior, Donphan → Iron Treads.
 - **Dave** heeft de sprite van **Blue** (Jordi): trainerfoto `Pic: Blue` en overworld `OBJ_EVENT_GFX_BLUE` bij al zijn gevechten (Route 111, Petalburg, Sootopolis, Paradiso, Victory Road). Op Route 111 staat verderop (22,108) een Lass: "He's cosplaying as BLUE. From KANTO. He thinks nobody notices. Everybody notices. Smell him later, I guess." Er was geen Praise Helix-grap met Omastar (Omastar zit alleen in Brocks Stadium-team, Omanyte bij een museumgrunt).
+- **Weinig gebruikte soorten erbij (Jordi):**
+  - **Fearow** 2× vroeg-midden: Deandre (Youngster, Route 118, lv 29: Drill Peck, Pursuit, Agility, Quick Attack) en Branden (Camper, Route 111, lv 35, Sniper: Drill Run, Drill Peck, Focus Energy, U-turn).
+  - **Donphan** 2×: Drew (Camper, Route 111, lv 32, Sturdy: Rollout, Ice Shard, Knock Off, Defense Curl) en Jaylen (Youngster, Route 113, lv 36: Earthquake, Rapid Spin, Ice Shard, Gunk Shot).
+  - **Forretress** bij Lucas (Hiker, Route 114, team zwak tegen Grass/Water; Sturdy: Gyro Ball, Volt Switch, Explosion, Bug Bite).
+  - **Sandaconda** leidt een zandstormteam: Ruin Maniac **Chip** (Route 120): Sandaconda @ Smooth Rock (Sand Spit, zet zelf ook Sandstorm), Excadrill en Sandslash (Sand Rush), Gliscor (Sand Veil), Claydol (Magic Bounce). Slimmere AI.
+  - **Chesnaught** in een riddersteam: Expert **Fredrick** (Route 123) is nu SIR FREDRICK of the ORDER OF THE BLADE ("My armor is cardboard. My horse is a FALINKS.") met Chesnaught, Falinks, Sirfetch'd, Gallade, Aegislash en Kingambit (lv 53–54).

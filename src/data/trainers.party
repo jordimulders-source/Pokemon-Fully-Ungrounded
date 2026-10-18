@@ -744,27 +744,61 @@ Pic: Expert M
 Gender: Male
 Music: Intense
 Double Battle: No
-AI: Basic Trainer
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Hariyama
+Chesnaught
 Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Machamp
-Level: 53
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Pangoro
-Level: 53
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-
-Crabominable
-Level: 53
-IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Bulletproof
+- Spiky Shield
+- Wood Hammer
+- Body Press
+- Iron Defense
 
 Falinks
 Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Battle Armor
+- No Retreat
+- Megahorn
+- Close Combat
+- Iron Head
+
+Sirfetch'd @ Leek
+Level: 53
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Steadfast
+- Leaf Blade
+- Brave Bird
+- Close Combat
+- Knock Off
+
+Gallade
+Level: 53
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Justified
+- Sacred Sword
+- Psycho Cut
+- Leaf Blade
+- Swords Dance
+
+Aegislash
+Level: 53
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Stance Change
+- King's Shield
+- Shadow Ball
+- Iron Head
+- Sacred Sword
+
+Kingambit
+Level: 54
+IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+Ability: Supreme Overlord
+- Kowtow Cleave
+- Iron Head
+- Sucker Punch
+- Swords Dance
 
 === TRAINER_MATT ===
 Name: MATT
@@ -1271,19 +1305,52 @@ Pic: Ruin Maniac
 Gender: Male
 Music: Hiker
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Claydol
+Sandaconda @ Smooth Rock
+Level: 50
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Sand Spit
+- Sandstorm
+- Earthquake
+- Glare
+- Rock Slide
+
+Excadrill
 Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-
-Sandslash_Alola
-Level: 49
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Sand Rush
+- Earthquake
+- Iron Head
+- Rock Slide
+- Swords Dance
 
 Sandslash
 Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Sand Rush
+- Earthquake
+- Knock Off
+- Rapid Spin
+- Swords Dance
+
+Gliscor
+Level: 49
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Sand Veil
+- Earthquake
+- Acrobatics
+- Knock Off
+- Roost
+
+Claydol
+Level: 49
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Magic Bounce
+- Earth Power
+- Psychic
+- Reflect
+- Rapid Spin
 
 === TRAINER_FOSTER ===
 Name: FOSTER
@@ -6590,6 +6657,14 @@ Conkeldurr
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Donphan
+Level: 32
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Sturdy
+- Rollout
+- Ice Shard
+- Knock Off
+- Defense Curl
 
 === TRAINER_BEAU ===
 Name: BEAU
@@ -10550,6 +10625,14 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Meowstic
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Donphan
+Level: 36
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Earthquake
+- Rapid Spin
+- Ice Shard
+- Gunk Shot
 
 === TRAINER_DILLON ===
 Name: DILLON
@@ -19034,6 +19117,15 @@ Typhlosion
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Forretress
+Level: 37
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Sturdy
+- Gyro Ball
+- Volt Switch
+- Explosion
+- Bug Bite
+
 === TRAINER_ALAN ===
 Name: ALAN
 Class: Hiker
@@ -21633,6 +21725,14 @@ Trumbeak
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Fearow
+Level: 29
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Drill Peck
+- Pursuit
+- Agility
+- Quick Attack
+
 === TRAINER_GRUNT_MAGMA_HIDEOUT_1 ===
 Name: GRUNT
 Class: Team Magma
@@ -22315,6 +22415,15 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Zoroark
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+
+Fearow
+Level: 35
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+Ability: Sniper
+- Drill Run
+- Drill Peck
+- Focus Energy
+- U-turn
 
 === TRAINER_BRYANT ===
 Name: BRYANT

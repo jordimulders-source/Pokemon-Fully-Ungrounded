@@ -1199,7 +1199,7 @@ Breloom
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Technician
-- Spore
+- Stun Spore
 - Mach Punch
 - Bullet Seed
 - Rock Tomb
@@ -1207,23 +1207,23 @@ Ability: Technician
 Parasect
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Spore
+- Sleep Powder
+- Poison Powder
 - Seed Bomb
 - X-Scissor
-- Leech Life
 
 Shiinotic
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Strength Sap
-- Spore
+- Sleep Powder
 - Moonblast
 - Giga Drain
 
 Toedscruel
 Level: 54
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Spore
+- Stun Spore
 - Giga Drain
 - Earth Power
 - Knock Off

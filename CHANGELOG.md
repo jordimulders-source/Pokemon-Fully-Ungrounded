@@ -19116,3 +19116,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **CHAT: echte Hall of Fame van TPP Red** (lijst van Jordi): AA-j (Zapdos) 81, aaabaaajss "Bird Jesus" (Pidgeot) 69, AAAAAAAAAA "The Fonz" (Nidoking) 54, Omastar "Lord Helix" 52 (zonder bijnaam), AATTVVV (Venomoth) 39, AIIIIIIRRR (Lapras) 31, met de echte bijnamen.
 - **Violet**: alle zes waren zwak tegen Flying (Breloom en Parasect zelfs 4×). Parasect → **Ferrothorn** @ Leftovers (Iron Barbs, resisteert Flying; Fire 4× maar Pollen Haze halveert Fire; Gyro Ball, Power Whip, Leech Seed, Thunder Wave), Toedscruel Power Gem tegen vliegers.
 - **CHAT**: Omastar heet **Lord Helix**; met de AI-vlag Ace Pokemon komt AA-j (Zapdos) pas als laatste, Bird Jesus begint (Jordi).
+- **CHAT**: Lord Helix heeft de Game Boy-grijze kleurvariant "Twitch Plays" (`Variant: 3`).

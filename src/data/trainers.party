@@ -39,7 +39,7 @@ AI: Check Bad Move
 Barraskewda
 Level: 59
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bubble Beam
+- Seltzer Surge
 - Dive
 - Focus Energy
 - Crunch
@@ -47,7 +47,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Blastoise
 Level: 59
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bubble Beam
+- Seltzer Surge
 - Rain Dance
 - Aqua Tail
 - Shell Smash
@@ -781,7 +781,7 @@ Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Ability: Battle Armor
 - No Retreat
-- Megahorn
+- Othismos
 - Close Combat
 - Iron Head
 
@@ -834,7 +834,7 @@ AI: Basic Trainer
 Wailord
 Level: 62
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Bubble Beam
+- Whale Song
 - Bounce
 - Aurora Beam
 - Body Slam
@@ -1211,7 +1211,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Spore
 - Seed Bomb
 - Shadow Claw
-- X-Scissor
+- Hyphal Snare
 
 Shiinotic
 Level: 53
@@ -1437,7 +1437,7 @@ Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Ability: Magic Bounce
 - Earth Power
-- Psychic
+- Laser Beam
 - Reflect
 - Rapid Spin
 
@@ -3533,6 +3533,10 @@ AI: Basic Trainer
 Chimecho
 Level: 72
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Wind Chime
+- Moonblast
+- Boomburst
+- Healing Wish
 
 Kleavor
 Level: 72
@@ -3587,6 +3591,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Lumineon
 Level: 73
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Lure Light
+- U-turn
+- Bounce
+- Tailwind
 
 === TRAINER_JULIE ===
 Name: JULIE
@@ -3799,6 +3807,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Banette
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Shadow Siphon
+- Memento
+- Trick
+- Destiny Bond
 
 Trevenant
 Level: 53
@@ -4340,6 +4352,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Milotic
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Vintage Spill
+- Aqua Ring
+- Moonblast
+- Surf
 
 Meganium
 Level: 40
@@ -5366,6 +5382,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Golduck
 Level: 60
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Cavitation
+- Hydro Pump
+- Psychic
+- Ice Beam
 
 Swanna
 Level: 60
@@ -5854,6 +5874,10 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Starmie
 Level: 37
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Laser Beam
+- Scald
+- Light Screen
+- Power Gem
 
 === TRAINER_NOB_1 ===
 Name: NOB
@@ -7218,6 +7242,10 @@ AI: Check Bad Move
 Dustox
 Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Venom Dust
+- Light Screen
+- Roost
+- Pollen Haze
 
 Beautifly
 Level: 28
@@ -13951,6 +13979,14 @@ Weepinbell
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Luvdisc
+Level: 36
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Heartbreak
+- Water Pulse
+- Attract
+- Sweet Kiss
+
 === TRAINER_CLARISSA ===
 Name: CLARISSA
 Class: Parasol Lady
@@ -14947,6 +14983,14 @@ Ursaring
 Level: 33
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
+Delcatty
+Level: 33
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Nine Lives
+- Fake Out
+- Body Slam
+- Sing
+
 === TRAINER_DIANA_2 ===
 Name: DIANA
 Class: Picnicker
@@ -15422,6 +15466,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Dhelmise
 Level: 22
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Kelp Shroud
+- Mega Drain
+- Growth
+- Gyro Ball
 
 Mareanie
 Level: 22
@@ -15779,6 +15827,10 @@ AI: Check Bad Move
 Castform
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Weather Report
+- Weather Ball
+- Ice Beam
+- Thunderbolt
 
 Politoed
 Level: 53
@@ -16747,6 +16799,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Metagross
 Level: 72
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Laser Beam
+- Iron Defense
+- Heavy Slam
+- Agility
 
 Reuniclus
 Level: 72
@@ -17698,6 +17754,15 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Roserade
 Level: 40
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+
+Mightyena
+Level: 40
+IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Intimidate
+- Pack Howl
+- Crunch
+- Fire Fang
+- Sucker Punch
 
 === TRAINER_DIO ===
 Name: DIO
@@ -19204,6 +19269,14 @@ Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ability: Levitate
 
+Probopass
+Level: 35
+IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Moai Watch
+- Power Gem
+- Thunder Wave
+- Iron Defense
+
 === TRAINER_TRENT_1 ===
 Name: TRENT
 Class: Hiker
@@ -20631,6 +20704,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Relicanth
 Level: 63
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Primeval Ward
+- Wave Crash
+- Head Smash
+- Hydro Pump
 
 === TRAINER_HENRY ===
 Name: HENRY
@@ -20890,18 +20967,34 @@ AI: Check Bad Move
 Spinda
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tipsy Waltz
+- Drain Punch
+- Blaze Kick
+- Submission
 
 Spinda
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tipsy Waltz
+- Drain Punch
+- Blaze Kick
+- Submission
 
 Spinda
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tipsy Waltz
+- Drain Punch
+- Blaze Kick
+- Submission
 
 Spinda
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tipsy Waltz
+- Drain Punch
+- Blaze Kick
+- Submission
 
 === TRAINER_KIM_AND_IRIS ===
 Name: KIM & IRIS
@@ -21197,6 +21290,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Relicanth
 Level: 60
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Primeval Ward
+- Wave Crash
+- Head Smash
+- Hydro Pump
 
 === TRAINER_LILA_AND_ROY_2 ===
 Name: LILA & ROY
@@ -21368,13 +21465,21 @@ Whiscash
 Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-Octillery
+Stunfisk
 Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Zap Trap
+- Mud Bomb
+- Thunder Wave
+- Bounce
 
-Poliwrath
+Stunfisk_Galar
 Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Steel Trap
+- Earthquake
+- Crunch
+- Sucker Punch
 
 === TRAINER_DAWSON ===
 Name: DAWSON
@@ -21498,6 +21603,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Bibarel
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Beaver Dam
+- Headbutt
+- Taunt
+- Yawn
 
 === TRAINER_KALEB ===
 Name: KALEB
@@ -21932,9 +22041,13 @@ Music: Male
 Double Battle: No
 AI: Check Bad Move
 
-Raticate
+Linoone
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Straight Line
+- Headbutt
+- Slash
+- Belly Drum
 
 Aron
 Level: 29
@@ -22609,6 +22722,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Cofagrigus
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Mummy's Curse
+- Mean Look
+- Grudge
+- Body Press
 
 Garganacl
 Level: 35
@@ -22672,6 +22789,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Spinda
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Tipsy Waltz
+- Drain Punch
+- Blaze Kick
+- Submission
 
 === TRAINER_SHAYLA ===
 Name: SHAYLA
@@ -22693,6 +22814,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Parasect
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Fungal Control
+- Pollen Haze
+- Hyphal Snare
+- Shadow Claw
 
 === TRAINER_KYRA ===
 Name: KYRA
@@ -23040,6 +23165,10 @@ AI: Basic Trainer
 Magnezone
 Level: 49
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Laser Beam
+- Flash Cannon
+- Discharge
+- Metal Sound
 
 Tinkaton
 Level: 49

@@ -170,6 +170,13 @@ extern const u8 BattleScript_EffectPrimevalWard[];
 extern const u8 BattleScript_PrimevalWardProtected[];
 extern const u8 BattleScript_EffectNineLives[];
 extern const u8 BattleScript_NineLivesActivates[];
+extern const u8 BattleScript_EffectBurrowMaze[]; // Project Grounded
+extern const u8 BattleScript_EffectPraiseHelix[];
+extern const u8 BattleScript_PitcherTrapEffect[];
+extern const u8 BattleScript_PitcherTrapDrain[];
+extern const u8 BattleScript_SilkTrapEffect[];
+extern const u8 BattleScript_HiveQueenClearsHazards[];
+extern const u8 BattleScript_LandfillActivates[];
 extern const u8 BattleScript_GulpDownBerry[];
 extern const u8 BattleScript_GulpDownKept[];
 extern const u8 BattleScript_GulpDownUseless[];

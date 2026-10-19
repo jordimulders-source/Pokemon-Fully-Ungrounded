@@ -147,6 +147,7 @@ enum RandomTag
     RNG_LOADED_DICE,
     RNG_METRONOME,
     RNG_MACHINE_LEARNING, // Project Grounded: hallucinatiekans
+    RNG_PRAISE_HELIX, // Project Grounded: uitkomst van Praise Helix
     RNG_MOODY_INCREASE,
     RNG_MOODY_DECREASE,
     RNG_PARALYSIS,

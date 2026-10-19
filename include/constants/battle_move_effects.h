@@ -371,6 +371,8 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_NINE_LIVES, // Project Grounded: één keer per gevecht een KO overleven
     EFFECT_TWIN_LANCE, // Project Grounded: vergif per klap, al vergiftigd wordt badly poisoned
     EFFECT_FLYTRAP, // Project Grounded: drain, dubbele kracht tegen Bug/Flying
+    EFFECT_BURROW_MAZE, // Project Grounded: Furret graaft uitwegen (max. 3); elke uitweg ontwijkt één aanval
+    EFFECT_PRAISE_HELIX, // Project Grounded: Omastar raadpleegt de Helix (4 willekeurige uitkomsten)
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

@@ -951,7 +951,10 @@
 #define MOVE_IPPON 887 // Project Grounded: Throh
 #define MOVE_FLYTRAP 888 // Project Grounded: Carnivine
 #define MOVE_COLOSSAL_CLAW 889 // Project Grounded: Kingler
-#define MOVES_COUNT_GEN9 890
+#define MOVE_BURROW_MAZE 890 // Project Grounded: Furret
+#define MOVE_PITCHER_TRAP 891 // Project Grounded: Victreebel
+#define MOVE_PRAISE_HELIX 892 // Project Grounded: Omastar
+#define MOVES_COUNT_GEN9 893
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

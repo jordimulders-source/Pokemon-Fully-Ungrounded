@@ -1420,6 +1420,22 @@ static bool32 JumpIfMoveAffectedByProtect(u32 move, u32 battler, u32 shouldJump,
     return affected;
 }
 
+// Project Grounded: Burrow Maze. Een aanval (ook een statusmove) van een ander dan een bondgenoot
+// verdwijnt in een uitweg, zolang het doelwit nog kan ontsnappen. Moves die altijd raken, zijn
+// al afgevangen door CanMoveSkipAccuracyCalc.
+static bool32 CanBurrowMazeDodge(u32 battlerAtk, u32 battlerDef)
+{
+    if (gBattleMons[battlerDef].volatiles.burrowMaze == 0
+     || battlerAtk == battlerDef
+     || IsBattlerAlly(battlerAtk, battlerDef))
+        return FALSE;
+    if (GetBattlerHoldEffect(battlerDef) == HOLD_EFFECT_SHED_SHELL)
+        return TRUE;
+    if (!CanBattlerEscape(battlerDef) || IsAbilityPreventingEscape(battlerDef))
+        return FALSE;
+    return TRUE;
+}
+
 static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u8 *failInstr, u16 move)
 {
     if (move == ACC_CURR_MOVE)
@@ -1504,6 +1520,15 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
             if (JumpIfMoveAffectedByProtect(move, battlerDef, FALSE, failInstr)
              || CanMoveSkipAccuracyCalc(gBattlerAttacker, battlerDef, abilityAtk, abilityDef, move, RUN_SCRIPT))
                 continue;
+
+            if (CanBurrowMazeDodge(gBattlerAttacker, battlerDef)) // Project Grounded: Burrow Maze
+            {
+                gBattleMons[battlerDef].volatiles.burrowMaze--;
+                gBattleStruct->moveResultFlags[battlerDef] = MOVE_RESULT_MISSED;
+                gBattleStruct->missStringId[battlerDef] = gBattleCommunication[MISS_TYPE] = B_MSG_BURROWED;
+                numMisses++;
+                continue;
+            }
 
             u32 holdEffectDef = GetBattlerHoldEffect(battlerDef);
             u32 accuracy = GetTotalAccuracy(gBattlerAttacker,
@@ -6358,10 +6383,26 @@ static void Cmd_moveend(void)
                 case PROTECT_SILK_TRAP:
                     if (!IsProtectivePadsProtected(gBattlerAttacker, GetBattlerHoldEffect(gBattlerAttacker)))
                     {
+                        // Project Grounded: -2 Speed, en de aanvaller zit vast tot hij zelf wisselt of flauwvalt
+                        bool32 newlyTrapped = !gBattleMons[gBattlerAttacker].volatiles.silkTrapped
+                                           && CanBattlerEscape(gBattlerAttacker)
+                                           && !(GetConfig(B_GHOSTS_ESCAPE) >= GEN_6 && IS_BATTLER_OF_TYPE(gBattlerAttacker, TYPE_GHOST));
+                        gBattleMons[gBattlerAttacker].volatiles.silkTrapped = TRUE;
                         gProtectStructs[gBattlerAttacker].touchedProtectLike = FALSE;
                         SWAP(gBattlerAttacker, gBattlerTarget, i); // gBattlerTarget and gBattlerAttacker are swapped in order to activate Defiant, if applicable
-                        gBattleScripting.moveEffect = MOVE_EFFECT_SPD_MINUS_1;
-                        BattleScriptCall(BattleScript_KingsShieldEffect);
+                        gBattleScripting.moveEffect = MOVE_EFFECT_SPD_MINUS_2;
+                        BattleScriptCall(newlyTrapped ? BattleScript_SilkTrapEffect : BattleScript_KingsShieldEffect);
+                        effect = 1;
+                    }
+                    break;
+                case PROTECT_PITCHER_TRAP: // Project Grounded: Victreebel
+                    gProtectStructs[gBattlerAttacker].touchedProtectLike = FALSE;
+                    if (!gBattleMons[gBattlerAttacker].volatiles.pitcherTrappedBy
+                     && !IsProtectivePadsProtected(gBattlerAttacker, GetBattlerHoldEffect(gBattlerAttacker))
+                     && IsBattlerAlive(gBattlerAttacker))
+                    {
+                        gBattleMons[gBattlerAttacker].volatiles.pitcherTrappedBy = gBattlerTarget + 1;
+                        BattleScriptCall(BattleScript_PitcherTrapEffect);
                         effect = 1;
                     }
                     break;
@@ -8270,6 +8311,18 @@ static bool32 DoSwitchInEffectsForBattler(u32 battler)
             BattleScriptCall(BattleScript_EmergencyExit);
         else
             BattleScriptCall(BattleScript_EmergencyExitWild);
+    }
+    else if (!gDisableStructs[battler].hazardsDone && GetBattlerAbility(battler) == ABILITY_HIVE_QUEEN) // Project Grounded
+    {
+        // De zwerm ruimt alle hazards aan de eigen kant op; Vespiquen zelf raakt er niets van.
+        gDisableStructs[battler].hazardsDone = TRUE;
+        gBattleStruct->hazardsCounter = 0;
+        if (AreAnyHazardsOnSide(side))
+        {
+            RemoveAllHazardsFromField(side);
+            gBattleScripting.battler = battler;
+            BattleScriptCall(BattleScript_HiveQueenClearsHazards);
+        }
     }
     else if (!gDisableStructs[battler].hazardsDone)
     {
@@ -18823,6 +18876,29 @@ void BS_TrySetNineLives(void)
     }
     gBattleStruct->nineLivesUsed[side] |= bit;
     gBattleStruct->nineLivesArmed[side] |= bit;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: Burrow Maze. Eén uitweg erbij, max. 3 (geen afnemend succes, wel falen bij 3).
+void BS_TrySetBurrowMaze(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+
+    if (gBattleMons[gBattlerAttacker].volatiles.burrowMaze >= BURROW_MAZE_MAX)
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+        return;
+    }
+    gBattleMons[gBattlerAttacker].volatiles.burrowMaze++;
+    PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 1, gBattleMons[gBattlerAttacker].volatiles.burrowMaze);
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: Praise Helix. Zet cMULTISTRING_CHOOSER op 0 DEMOCRACY, 1 ANARCHY, 2 BIRD JESUS, 3 stilte.
+void BS_PraiseHelixRoll(void)
+{
+    NATIVE_ARGS();
+    gBattleCommunication[MULTISTRING_CHOOSER] = RandomUniform(RNG_PRAISE_HELIX, 0, 3);
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 

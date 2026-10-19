@@ -337,6 +337,9 @@ enum __attribute__((packed)) Ability
     ABILITY_POLLEN_SEASON = 313, // Project Grounded: zet Pollen Haze bij binnenkomst
     ABILITY_HELIOTROPISM = 314, // Project Grounded: Sunflora, alle stats +2 bij binnenkomst in de zon
     ABILITY_HOLE_UP = 315, // Project Grounded: Dugtrio/Wugtrio, duikt na een KO weg (gratis wissel)
+    ABILITY_FAKE_FOLIAGE = 316, // Project Grounded: Sudowoodo, doet alsof hij Grass is
+    ABILITY_LANDFILL = 317, // Project Grounded: Garbodor, +1 Def/SpDef per beurt in Acid Rain
+    ABILITY_HIVE_QUEEN = 318, // Project Grounded: Vespiquen, ruimt eigen hazards op en negeert ze
     ABILITIES_COUNT_GEN9,
     ABILITIES_COUNT = ABILITIES_COUNT_GEN9,
 };

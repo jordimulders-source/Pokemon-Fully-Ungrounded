@@ -1202,6 +1202,19 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 4,
     },
 
+    [EFFECT_BURROW_MAZE] = // Project Grounded
+    {
+        .battleScript = BattleScript_EffectBurrowMaze,
+        .battleTvScore = 3,
+        .encourageEncore = TRUE,
+    },
+
+    [EFFECT_PRAISE_HELIX] = // Project Grounded
+    {
+        .battleScript = BattleScript_EffectPraiseHelix,
+        .battleTvScore = 3,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

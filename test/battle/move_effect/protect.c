@@ -65,7 +65,7 @@ SINGLE_BATTLE_TEST("Protect: King's Shield, Silk Trap and Obstruct protect from 
     static const u16 protectMoves[][3] =
     {   // Move             Stat      Stages
         {MOVE_KINGS_SHIELD, STAT_ATK,   (B_KINGS_SHIELD_LOWER_ATK >= GEN_8) ? 1 : 2},
-        {MOVE_SILK_TRAP,    STAT_SPEED, 1},
+        {MOVE_SILK_TRAP,    STAT_SPEED, 2}, // Project Grounded: -2 i.p.v. -1
         {MOVE_OBSTRUCT,     STAT_DEF,   2},
     };
     u16 protectMove = MOVE_NONE;
@@ -105,7 +105,7 @@ SINGLE_BATTLE_TEST("Protect: King's Shield, Silk Trap and Obstruct protect from 
                     MESSAGE("Wobbuffet's Attack harshly fell!");
                     #endif
                 } else if (statId == STAT_SPEED) {
-                    MESSAGE("Wobbuffet's Speed fell!");
+                    MESSAGE("Wobbuffet's Speed harshly fell!"); // Project Grounded
                 } else if (statId == STAT_DEF) {
                     if (lowersBy == 2) {
                         MESSAGE("Wobbuffet's Defense harshly fell!");

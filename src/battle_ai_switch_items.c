@@ -552,7 +552,8 @@ static bool32 FindMonThatAbsorbsOpponentsMove(u32 battler)
     if (incomingType == TYPE_GROUND || (isOpposingBattlerChargingOrInvulnerable && incomingType == TYPE_GROUND))
     {
         absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_EARTH_EATER;
-        absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LEVITATE;
+        if (!MoveIgnoresTypeIfFlyingAndUngrounded(incomingMove)) // Project Grounded: Bonemerang raakt Levitate
+            absorbingTypeAbilities[numAbsorbingAbilities++] = ABILITY_LEVITATE;
     }
     if (IsSoundMove(incomingMove) || (isOpposingBattlerChargingOrInvulnerable && IsSoundMove(incomingMove)))
     {
@@ -1100,6 +1101,8 @@ static bool32 ShouldSwitchIfAttackingStatsLowered(u32 battler)
 static bool32 CanBattlerConsiderSwitch(u32 battler)
 {
     if (gBattleMons[battler].volatiles.wrapped)
+        return FALSE;
+    if (gBattleMons[battler].volatiles.silkTrapped || gBattleMons[battler].volatiles.pitcherTrappedBy) // Project Grounded
         return FALSE;
     if (gBattleMons[battler].volatiles.escapePrevention)
         return FALSE;

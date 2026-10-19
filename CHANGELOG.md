@@ -19157,3 +19157,13 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Kira & Dan 2–5: Nidoking Tyrant Horn i.p.v. Sludge Wave, Nidoqueen Queen's Weight i.p.v. Protect.
 - ROM: ±541 KB vrij (grens 512 KB).
 - **Grafaiai** leert Sketch op lv 1 (Smeargle-niche: na het sketchen kan hij Sketch opnieuw leren bij de Move Relearner).
+
+### Signature moves ronde 2b (v1.0.0)
+- **Burrow Maze** (Furret, Ground status): graaft een uitweg (max. 3); elke uitweg ontwijkt één aanval ("slipped into a burrow!"), werkt niet als Furret vastzit. Verdwijnt bij wisselen.
+- **Pitcher Trap** (Victreebel, Grass, +4, zoals Spiky Shield): wie hem met contact raakt, glijdt de beker in: kan niet wisselen en verliest elke beurt 1/8 HP (Bug 1/4), Victreebel heelt dat bedrag.
+- **Praise Helix** (Omastar, Rock status): raadpleegt de Helix Fossil, 25% elk: DEMOCRACY (+1 SpAtk/Speed), ANARCHY (+2 Atk/SpAtk/Speed, −1 Def/SpDef), BIRD JESUS (heelt 50%) of stilte (+2 Def).
+- **Silk Trap**: contact geeft nu −2 Speed en de aanvaller zit vast tot hij zelf wisselt of flauwvalt.
+- Nieuwe abilities: **Fake Foliage** (Bonsly/Sudowoodo slot 2, i.p.v. Rock Head: STAB op Grass-moves, +1 Speed bij een Water-treffer, heelt in Pollen Haze), **Landfill** (Trubbish/Garbodor slot 2, i.p.v. Sticky Hold/Weak Armor: +1 Def en +1 SpDef per beurt in Acid Rain), **Hive Queen** (Vespiquen slot 2: ruimt bij binnenkomst alle hazards aan de eigen kant op en heeft er zelf nooit last van).
+- Learnsets: Furret Burrow Maze, Victreebel Pitcher Trap, Omastar Praise Helix (bij evolutie). Tests: `signature_moves_6.c`.
+- Fix: `RemoveAllHazardsFromField` zette Moai Watch niet terug.
+- AI: weet nu dat Bonemerang Flying- en Levitate-Pokémon raakt (ook bij wisselkeuzes); test `bonemerang_ai.c`.

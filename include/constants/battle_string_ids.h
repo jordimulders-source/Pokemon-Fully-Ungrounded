@@ -770,6 +770,17 @@ enum StringID
     STRINGID_HOLEUP, // Project Grounded
     STRINGID_KELPSHROUD, // Project Grounded
     STRINGID_KELPTIGHTEN, // Project Grounded
+    STRINGID_BURROWMAZEDUG, // Project Grounded
+    STRINGID_BURROWMAZEDODGE, // Project Grounded
+    STRINGID_PITCHERTRAPPED, // Project Grounded
+    STRINGID_PITCHERDIGESTING, // Project Grounded
+    STRINGID_SILKTRAPSTUCK, // Project Grounded
+    STRINGID_HELIXCONSULTED, // Project Grounded
+    STRINGID_HELIXDEMOCRACY, // Project Grounded
+    STRINGID_HELIXANARCHY, // Project Grounded
+    STRINGID_HELIXBIRDJESUS, // Project Grounded
+    STRINGID_HELIXSILENT, // Project Grounded
+    STRINGID_HIVEQUEENCLEARED, // Project Grounded
     STRINGID_COUNT
 };
 
@@ -794,6 +805,7 @@ enum MissStringID
 {
     B_MSG_MISSED,
     B_MSG_PROTECTED,
+    B_MSG_BURROWED, // Project Grounded: Burrow Maze
     B_MSG_AVOIDED_ATK,
     // Ability-related messages need to be below this comment
     B_MSG_AVOIDED_DMG,

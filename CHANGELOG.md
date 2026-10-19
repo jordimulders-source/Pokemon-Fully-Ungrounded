@@ -19149,3 +19149,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Cinccino** (Pat): Tail Slap, Rock Blast, Bullet Seed, Sing. **Dustox** (Derek): Bug Buzz i.p.v. Light Screen. **Dusclops** (Quincy): Night Shade i.p.v. Skill Swap.
   - Bewust niet aangepast: grap-sets (Ditto, Metronome-team, Smeargle, Magikarp, Eviolite-Zubat), Jordi's rematches van Kira & Dan (Nidoking/Nidoqueen/Clamperl hebben daar nog standaardsets). Moves die een soort officieel niet leert (bijv. Bubble Beam, Trick Room-Wobbuffet) blijven: trainers mogen dat.
 - **Kira & Dan 2–5** (op verzoek van Jordi): Nidoking Earth Power/Sludge Wave/Ice Beam/Thunderbolt, Nidoqueen Earth Power/Sludge Bomb/Ice Beam/Protect, Clamperl Shell Smash/Surf/Ice Beam/Whirlpool (waren standaardsets met Growl/Peck/Water Gun).
+
+### Signature moves ronde 2a (v1.0.0)
+- Nieuwe moves: **Twin Lance** (Beedrill, Bug 60×2, 25% gif per klap, maakt van gif badly poisoned; kan in één beurt beide), **Tyrant Horn** (Nidoking, Poison+Ground 85, 30% gif, STAB voor beide types), **Queen's Weight** (Nidoqueen, Ground 80, rekent met Defense), **Sky Spear** (Fearow, Flying 90/95, hoge crit), **Ancient Scythe** (Kabutops, Rock 80, hoge crit, snijdend), **Mawashi Geri** (Sawk, Fighting 80, hoge crit, door Protect/Substitute), **Ippon** (Throh, Fighting 70, −6, altijd crit, dwingt een wissel), **Flytrap** (Carnivine, Grass 80, bijtend, heelt 50%, 2× tegen Bug/Flying), **Colossal Claw** (Kingler, Water 150/85, daarna −2 Attack). Tests in `test/battle/grounded/signature_moves_3.c`.
+- Aangepast: **Bonemerang** 60×2/95 en raakt Flying/Levitate (neutraal), **Bone Club** 85/100 met 20% flinch, **Pay Day** 60.
+- Learnsets: Beedrill, Nidoking, Nidoqueen, Fearow en Kabutops bij evolutie; Sawk/Throh lv 32, Carnivine lv 30, Kingler lv 44.
+- Kira & Dan 2–5: Nidoking Tyrant Horn i.p.v. Sludge Wave, Nidoqueen Queen's Weight i.p.v. Protect.
+- ROM: ±541 KB vrij (grens 512 KB).

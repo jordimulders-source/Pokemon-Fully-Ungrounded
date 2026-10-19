@@ -231,6 +231,7 @@ static const struct LevelUpMove sKakunaLevelUpLearnset[] = {
 
 static const struct LevelUpMove sBeedrillLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_FURY_ATTACK),
+    LEVEL_UP_MOVE( 0, MOVE_TWIN_LANCE), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_BUG_BITE),
     LEVEL_UP_MOVE( 1, MOVE_FURY_ATTACK),
     LEVEL_UP_MOVE( 1, MOVE_POISON_STING),
@@ -415,6 +416,7 @@ static const struct LevelUpMove sSpearowLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sFearowLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_SKY_SPEAR), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_DRILL_RUN),
     LEVEL_UP_MOVE( 1, MOVE_PLUCK),
     LEVEL_UP_MOVE( 1, MOVE_PECK),
@@ -731,6 +733,7 @@ static const struct LevelUpMove sNidorinaLevelUpLearnset[] = {
 
 static const struct LevelUpMove sNidoqueenLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_SUPERPOWER),
+    LEVEL_UP_MOVE( 0, MOVE_QUEENS_WEIGHT), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_SLUDGE_WAVE),
     LEVEL_UP_MOVE( 1, MOVE_SUPERPOWER),
     LEVEL_UP_MOVE( 1, MOVE_FURY_SWIPES),
@@ -787,6 +790,7 @@ static const struct LevelUpMove sNidorinoLevelUpLearnset[] = {
 
 static const struct LevelUpMove sNidokingLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_MEGAHORN),
+    LEVEL_UP_MOVE( 0, MOVE_TYRANT_HORN), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_SLUDGE_WAVE),
     LEVEL_UP_MOVE( 1, MOVE_MEGAHORN),
     LEVEL_UP_MOVE( 1, MOVE_FURY_ATTACK),
@@ -2991,6 +2995,7 @@ static const struct LevelUpMove sKinglerLevelUpLearnset[] = {
     LEVEL_UP_MOVE(31, MOVE_FLAIL),
     LEVEL_UP_MOVE(36, MOVE_RAZOR_SHELL),
     LEVEL_UP_MOVE(42, MOVE_SLAM),
+    LEVEL_UP_MOVE(44, MOVE_COLOSSAL_CLAW), // Project Grounded
     LEVEL_UP_MOVE(48, MOVE_SWORDS_DANCE),
     LEVEL_UP_MOVE(54, MOVE_CRABHAMMER),
     LEVEL_UP_MOVE(60, MOVE_GUILLOTINE),
@@ -4674,6 +4679,7 @@ static const struct LevelUpMove sKabutoLevelUpLearnset[] = {
 
 static const struct LevelUpMove sKabutopsLevelUpLearnset[] = {
     LEVEL_UP_MOVE( 0, MOVE_SLASH),
+    LEVEL_UP_MOVE( 0, MOVE_ANCIENT_SCYTHE), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_NIGHT_SLASH),
     LEVEL_UP_MOVE( 1, MOVE_FEINT),
@@ -11836,6 +11842,7 @@ static const struct LevelUpMove sCarnivineLevelUpLearnset[] = {
     LEVEL_UP_MOVE(21, MOVE_INGRAIN),
     LEVEL_UP_MOVE(21, MOVE_SNAP_TRAP), // Project Grounded
     LEVEL_UP_MOVE(27, MOVE_GRASS_KNOT),
+    LEVEL_UP_MOVE(30, MOVE_FLYTRAP), // Project Grounded
     LEVEL_UP_MOVE(31, MOVE_LEAF_TORNADO),
     LEVEL_UP_MOVE(34, MOVE_JAW_LOCK), // Project Grounded
     LEVEL_UP_MOVE(37, MOVE_STOCKPILE),
@@ -13126,6 +13133,7 @@ static const struct LevelUpMove sThrohLevelUpLearnset[] = {
     LEVEL_UP_MOVE(20, MOVE_REVENGE),
     LEVEL_UP_MOVE(25, MOVE_BULK_UP),
     LEVEL_UP_MOVE(30, MOVE_STORM_THROW),
+    LEVEL_UP_MOVE(32, MOVE_IPPON), // Project Grounded
     LEVEL_UP_MOVE(35, MOVE_VITAL_THROW),
     LEVEL_UP_MOVE(40, MOVE_SEISMIC_TOSS),
     LEVEL_UP_MOVE(45, MOVE_ENDURE),
@@ -13145,6 +13153,7 @@ static const struct LevelUpMove sSawkLevelUpLearnset[] = {
     LEVEL_UP_MOVE(20, MOVE_LOW_SWEEP),
     LEVEL_UP_MOVE(25, MOVE_BULK_UP),
     LEVEL_UP_MOVE(30, MOVE_RETALIATE),
+    LEVEL_UP_MOVE(32, MOVE_MAWASHI_GERI), // Project Grounded
     LEVEL_UP_MOVE(35, MOVE_BRICK_BREAK),
     LEVEL_UP_MOVE(40, MOVE_COUNTER),
     LEVEL_UP_MOVE(45, MOVE_ENDURE),

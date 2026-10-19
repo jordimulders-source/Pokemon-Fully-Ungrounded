@@ -23374,8 +23374,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Marionette"),
         .description = COMPOUND_STRING(
-            "Makes the foe hit itself\n"
-            "with its last-used move."),
+            "Foe uses its chosen attack\n"
+            "on itself. Fails vs. status."),
         .effect = EFFECT_MARIONETTE,
         .power = 0,
         .type = TYPE_GHOST,

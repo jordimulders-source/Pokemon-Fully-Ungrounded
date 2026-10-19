@@ -9869,9 +9869,10 @@ BattleScript_OliveOilRestoreBg:
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG
 	goto BattleScript_MoveEnd
 
-@ Project Grounded: Marionette (Banette). Het doelwit raakt zichzelf met zijn laatst gebruikte move
-@ (eigen stats, type-effectiviteit tegen zichzelf, STAB, geen crit, geen bijeffecten). Eenmalig per keer
-@ in het veld; faalt zonder vorige move, bij een statusmove of een move zonder vaste kracht.
+@ Project Grounded: Marionette (Banette), een gok zoals Sucker Punch. Het doelwit raakt zichzelf met de
+@ aanval die het deze beurt koos (en zijn eigen actie vervalt), of met zijn laatst gebruikte move als het al
+@ gehandeld heeft (eigen stats, type-effectiviteit tegen zichzelf, STAB, geen crit, geen bijeffecten).
+@ Faalt bij een statusmove, wissel, item of een move zonder vaste kracht.
 BattleScript_EffectMarionette::
 	attackcanceler
 	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE

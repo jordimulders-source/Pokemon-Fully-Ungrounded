@@ -101,6 +101,12 @@ extern const u8 BattleScript_NoMovesLeft[];
 extern const u8 BattleScript_SelectingMoveWithNoPP[];
 extern const u8 BattleScript_NoPPForMove[];
 extern const u8 BattleScript_SelectingTormentedMove[];
+extern const u8 BattleScript_SelectingColdShoulderMove[]; // Project Grounded
+extern const u8 BattleScript_ColdShoulder[]; // Project Grounded
+extern const u8 BattleScript_BramblesSprang[]; // Project Grounded
+extern const u8 BattleScript_CounterfeitBallMaster[]; // Project Grounded
+extern const u8 BattleScript_DimMakUnaware[]; // Project Grounded
+extern const u8 BattleScript_TradeWindActivates[]; // Project Grounded
 extern const u8 BattleScript_MoveUsedIsTormented[];
 extern const u8 BattleScript_SelectingTormentedMoveInPalace[];
 extern const u8 BattleScript_SelectingNotAllowedMoveTaunt[];

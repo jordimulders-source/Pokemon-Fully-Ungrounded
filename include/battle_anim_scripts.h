@@ -1048,6 +1048,8 @@ extern const u8 gBattleAnimMove_InnardPunch[]; // Project Grounded
 extern const u8 gBattleAnimMove_Combination[]; // Project Grounded
 extern const u8 gBattleAnimMove_SpinningBackfist[]; // Project Grounded
 extern const u8 gBattleAnimMove_Abduction[]; // Project Grounded
+extern const u8 gBattleAnimMove_CounterfeitBall[]; // Project Grounded
+extern const u8 gBattleAnimMove_HotTake[]; // Project Grounded
 
 // special animations
 extern const u8 gBattleAnimSpecial_LevelUp[];

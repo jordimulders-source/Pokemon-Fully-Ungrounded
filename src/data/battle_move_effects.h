@@ -1300,6 +1300,36 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 3,
     },
 
+    [EFFECT_COLD_SHOULDER] = // Project Grounded: Cold Shoulder
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
+    [EFFECT_JUMP_SCARE] = // Project Grounded: Jump Scare
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
+    [EFFECT_DIM_MAK] = // Project Grounded: Dim Mak
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
+    [EFFECT_UPDRAFT] = // Project Grounded: Updraft
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_BRAMBLE_LASH] = // Project Grounded: Bramblin/Brambleghast
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

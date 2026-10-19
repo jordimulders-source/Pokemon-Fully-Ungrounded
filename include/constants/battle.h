@@ -315,6 +315,7 @@ enum Hazards
     HAZARDS_STEALTH_ROCK,
     HAZARDS_STEELSURGE,
     HAZARDS_MOAI_WATCH, // Project Grounded: Probopass
+    HAZARDS_BRAMBLES, // Project Grounded: Bramble Lash (een laag, 1/16)
     HAZARDS_MAX_COUNT,
 };
 

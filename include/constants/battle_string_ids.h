@@ -787,6 +787,15 @@ enum StringID
     STRINGID_BUBBLEDOMEPOPPED, // Project Grounded
     STRINGID_PKMNBEARHUGGED, // Project Grounded
     STRINGID_TWINTAILSSNATCH, // Project Grounded
+    STRINGID_COLDSHOULDER, // Project Grounded
+    STRINGID_COLDSHOULDERCANTUSE, // Project Grounded
+    STRINGID_DIMMAKUNAWARE, // Project Grounded
+    STRINGID_FAKEMASTERBALL, // Project Grounded
+    STRINGID_HOTTAKECONFUSED, // Project Grounded
+    STRINGID_BRAMBLESSPRANG, // Project Grounded
+    STRINGID_BRAMBLESDMG, // Project Grounded
+    STRINGID_BRAMBLESDISAPPEARED, // Project Grounded
+    STRINGID_PKMNBLEWAWAYBRAMBLES, // Project Grounded
     STRINGID_COUNT
 };
 
@@ -1237,6 +1246,8 @@ enum DmgHazardStringID
     B_MSG_SPIKESSCATTERED,
     B_MSG_SHARPSTEELFLOATS,
     B_MSG_MOAIWATCHDMG, // Project Grounded
+    B_MSG_BRAMBLESDMG, // Project Grounded
+    B_MSG_BRAMBLESSPRANG, // Project Grounded
 };
 
 // gDamageNonTypesStartStringIds

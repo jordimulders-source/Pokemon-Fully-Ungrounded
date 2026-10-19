@@ -387,6 +387,11 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_ROLLING_THUNDER, // Project Grounded: gaat door Protect heen en raakt dan altijd
     EFFECT_KUSARIGAMA, // Project Grounded: x2 als het doelwit deze beurt wisselt
     EFFECT_INNARD_PUNCH, // Project Grounded: deze beurt geraakt: 2x de schade terug, anders een gewone klap
+    EFFECT_COLD_SHOULDER, // Project Grounded: het doelwit kan zijn laatste move de volgende beurt niet gebruiken
+    EFFECT_JUMP_SCARE, // Project Grounded: x2 in de eerste beurt van de gebruiker (zoals Fake Out)
+    EFFECT_DIM_MAK, // Project Grounded: negeert Defense-boosts, werkt niet op Unaware
+    EFFECT_UPDRAFT, // Project Grounded: x1,5 met Tailwind aan de eigen kant
+    EFFECT_BRAMBLE_LASH, // Project Grounded: legt doornen (hazard, 1/16) bij het doelwit
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

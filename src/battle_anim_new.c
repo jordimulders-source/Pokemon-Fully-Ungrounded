@@ -23,6 +23,7 @@
 #include "constants/pokemon.h"
 #include "battle_util.h"
 #include "constants/songs.h"
+#include "pokeball.h" // Project Grounded: Counterfeit Ball
 
 // function declarations
 static void AnimTask_DynamaxGrowthStep(u8 taskId);
@@ -10622,6 +10623,148 @@ void AnimTask_Kusarigama(u8 taskId)
 #undef tKSickle
 #undef tKLink0
 #undef tKSpin
+
+// Project Grounded: Counterfeit Ball. Per klap een spervuur van drie verschillende Poke Balls (de echte
+// bal-graphics van het werpen) kort na elkaar in een boog naar het doelwit; elke bal gaat open, flitst leeg
+// en verdwijnt (er komt niets uit). Bij de nep-Master Ball (laatste klap, gBattleStruct->counterfeitMasterBall)
+// is de laatste bal van het salvo een Master Ball. Geeft TRUE terug als het de Master Ball is (extra flits).
+// Sprites: 3 ballen + de lege flitsen (Poke Ball-partikels, die zelf 8 sprites vrijhouden).
+static const u8 sCounterfeitBalls[] =
+{
+    BALL_POKE, BALL_GREAT, BALL_ULTRA, BALL_PREMIER, BALL_DUSK, BALL_NET, BALL_TIMER,
+    BALL_LUXURY, BALL_HEAL, BALL_QUICK, BALL_DIVE, BALL_NEST, BALL_REPEAT,
+};
+static const s8 sCounterfeitBallOffsets[][2] = {{-10, -6}, {10, 4}, {0, -2}};
+
+#define CB_SALVO       ARRAY_COUNT(sCounterfeitBallOffsets)
+#define CB_STAGGER     5   // frames tussen twee worpen
+#define CB_FLIGHT      12  // vluchtduur
+#define CB_OPEN_TIME   20  // zo lang blijft een open bal liggen
+
+#define tCBFrame   data[0]
+#define tCBSprite  data[1] // 1..3
+#define tCBBall    data[4] // 4..6
+#define tCBState   data[7] // 7..9: 0 wacht, 1 vliegt, 2+ open (frame van openen + 2), -1 klaar
+#define tCBLoaded  data[10]
+
+static void AnimTask_CounterfeitBall_Step(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    u32 k, done = 0;
+
+    for (k = 0; k < CB_SALVO; k++)
+    {
+        struct Sprite *sprite;
+        s16 *state = &task->data[7 + k];
+
+        if (*state == -1 || task->data[1 + k] == MAX_SPRITES)
+        {
+            done++;
+            continue;
+        }
+        sprite = &gSprites[task->data[1 + k]];
+        if (*state == 0)
+        {
+            if (task->tCBFrame >= (s32)(k * CB_STAGGER))
+            {
+                sprite->invisible = FALSE;
+                PlaySE12WithPanning(SE_BALL_THROW, BattleAnimAdjustPanning(SOUND_PAN_ATTACKER));
+                *state = 1;
+            }
+        }
+        else if (*state == 1)
+        {
+            if (TranslateAnimHorizontalArc(sprite))
+            {
+                SetSpritePrimaryCoordsFromSecondaryCoords(sprite);
+                StartSpriteAffineAnim(sprite, BALL_AFFINE_ANIM_0);
+                StartSpriteAnim(sprite, 1); // open
+                AnimateBallOpenParticles(sprite->x, sprite->y, sprite->oam.priority, sprite->subpriority,
+                                         task->data[4 + k] == BALL_MASTER ? BALL_MASTER : BALL_POKE);
+                *state = task->tCBFrame + 2;
+            }
+        }
+        else
+        {
+            s32 t = task->tCBFrame - (*state - 2);
+            if (t > CB_OPEN_TIME - 8)
+                sprite->invisible = (t & 2) != 0;
+            if (t >= CB_OPEN_TIME)
+            {
+                FreeSpriteOamMatrix(sprite);
+                DestroySprite(sprite);
+                *state = -1;
+            }
+        }
+    }
+    task->tCBFrame++;
+
+    if (done == CB_SALVO)
+    {
+        for (k = 0; k < CB_SALVO; k++)
+        {
+            if (task->tCBLoaded & (1 << k))
+                FreeBallGfx(task->data[4 + k]);
+        }
+        DestroyAnimVisualTask(taskId);
+    }
+}
+
+void AnimTask_CounterfeitBall(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    bool32 master = (!IsContest() && gBattleStruct->counterfeitMasterBall && gMultiHitCounter == 1);
+    s16 startX = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    s16 startY = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+    s16 endX = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    s16 endY = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET);
+    u32 k;
+
+    gBattleAnimArgs[ARG_RET_ID] = master;
+    task->tCBFrame = 0;
+    task->tCBLoaded = 0;
+    for (k = 0; k < CB_SALVO; k++)
+    {
+        u32 ball;
+        u8 spriteId;
+        struct Sprite *sprite;
+
+        if (master && k == CB_SALVO - 1)
+            ball = BALL_MASTER;
+        else
+            ball = sCounterfeitBalls[(gAnimMoveTurn * CB_SALVO + k + gBattleTurnCounter * 5) % ARRAY_COUNT(sCounterfeitBalls)];
+        task->data[4 + k] = ball;
+        task->data[7 + k] = 0;
+        if (GetSpriteTileStartByTag(gBallSpriteTemplates[ball].tileTag) == TAG_NONE)
+            task->tCBLoaded |= 1 << k;
+        LoadBallGfx(ball);
+        spriteId = CreateSprite(&gBallSpriteTemplates[ball], startX, startY, GetBattlerSpriteSubpriority(gBattleAnimTarget) - 1 - k);
+        task->data[1 + k] = spriteId;
+        if (spriteId == MAX_SPRITES)
+            continue;
+        sprite = &gSprites[spriteId];
+        sprite->invisible = TRUE;
+        sprite->callback = SpriteCallbackDummy;
+        sprite->oam.priority = GetBattlerSpriteBGPriority(gBattleAnimTarget);
+        sprite->data[0] = CB_FLIGHT;
+        sprite->data[2] = endX + sCounterfeitBallOffsets[k][0];
+        sprite->data[4] = endY + sCounterfeitBallOffsets[k][1];
+        sprite->data[5] = -24 - 6 * (s32)k;
+        InitAnimArcTranslation(sprite);
+        StartSpriteAffineAnim(sprite, IsOnPlayerSide(gBattleAnimAttacker) ? BALL_ROTATE_RIGHT : BALL_ROTATE_LEFT);
+    }
+    task->func = AnimTask_CounterfeitBall_Step;
+}
+
+#undef CB_SALVO
+#undef CB_STAGGER
+#undef CB_FLIGHT
+#undef CB_OPEN_TIME
+#undef tCBFrame
+#undef tCBSprite
+#undef tCBBall
+#undef tCBState
+#undef tCBLoaded
 
 // Project Grounded: Combination (Hitmonchan). Is dit de derde klap (de cross)?
 void AnimTask_IsCombinationCross(u8 taskId)

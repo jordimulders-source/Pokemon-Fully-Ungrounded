@@ -315,6 +315,7 @@ enum Hazards
     HAZARDS_STEALTH_ROCK,
     HAZARDS_STEELSURGE,
     HAZARDS_MOAI_WATCH, // Project Grounded: Probopass
+    HAZARDS_OVERKILL, // Project Grounded: overtollige schade van Overkill
     HAZARDS_MAX_COUNT,
 };
 

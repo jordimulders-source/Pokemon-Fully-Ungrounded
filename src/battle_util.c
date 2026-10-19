@@ -7720,7 +7720,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
         break;
     case ABILITY_ANALYTIC:
-        if (IsLastMonToMove(battlerAtk) && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE)
+        if (IsLastMonToMove(battlerAtk) && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE && move != MOVE_SUPER_SPLASH)
            modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         break;
     case ABILITY_TOUGH_CLAWS:
@@ -9411,6 +9411,34 @@ s32 GetStealthHazardDamageByTypesAndHP(enum TypeSideHazard hazardType, enum Type
 // Project Grounded: Moai Watch - de beelden slaan toe met de beste van Rock (steen) of Electric
 // (de magnetische Mini-Noses) tegen de nieuwkomer: 1/8 max. HP x die effectiviteit.
 // Lagen: 1 = 1/8, 2 = 1/6, 3 = 1/4 (x effectiviteit), nooit meer dan de helft van de max. HP.
+// Project Grounded: Overkill. Viel het doelwit flauw, dan blijft de overtollige schade aan zijn kant
+// liggen als eenmalige hazard voor de volgende Pokémon die daar binnenkomt.
+void TryStoreOverkillDamage(u32 battler, u32 overflow)
+{
+    u32 side = GetBattlerSide(battler);
+    u32 total;
+
+    if (overflow == 0)
+        return;
+    total = gSideTimers[side].overkillDamage + overflow;
+    if (total > 0xFFFF)
+        total = 0xFFFF;
+    gSideTimers[side].overkillDamage = total;
+    if (!IsHazardOnSide(side, HAZARDS_OVERKILL))
+        PushHazardTypeToQueue(side, HAZARDS_OVERKILL);
+}
+
+// Hoogstens de helft van de max-HP van wie binnenkomt.
+s32 GetOverkillHazardDamage(u32 side, u32 maxHp)
+{
+    s32 dmg = gSideTimers[side].overkillDamage;
+    if (dmg > (s32)(maxHp / 2))
+        dmg = maxHp / 2;
+    if (dmg == 0 && gSideTimers[side].overkillDamage != 0)
+        dmg = 1;
+    return dmg;
+}
+
 s32 GetMoaiWatchDamageByTypesAndHP(enum Type type1, enum Type type2, u32 maxHp, u32 layers)
 {
     s32 rock = GetStealthHazardDamageByTypesAndHP((enum TypeSideHazard)TYPE_ROCK, type1, type2, maxHp);
@@ -11195,6 +11223,8 @@ bool32 IsHazardOnSideAndClear(u32 side, enum Hazards hazardType)
                 gSideTimers[side].toxicSpikesAmount = 0;
             else if (hazardType == HAZARDS_MOAI_WATCH) // Project Grounded
                 gSideTimers[side].moaiWatchAmount = 0;
+            else if (hazardType == HAZARDS_OVERKILL) // Project Grounded
+                gSideTimers[side].overkillDamage = 0;
             return TRUE;
         }
     }
@@ -11206,6 +11236,7 @@ void RemoveAllHazardsFromField(u32 side)
     gSideTimers[side].spikesAmount = 0;
     gSideTimers[side].toxicSpikesAmount = 0;
     gSideTimers[side].moaiWatchAmount = 0; // Project Grounded
+    gSideTimers[side].overkillDamage = 0; // Project Grounded
     gBattleStruct->numHazards[side] = 0;
     for (u32 i = 0; i < HAZARDS_MAX_COUNT; i++)
         gBattleStruct->hazardsQueue[side][i] = HAZARDS_NONE;
@@ -11226,6 +11257,8 @@ void RemoveHazardFromField(u32 side, enum Hazards hazardType)
                 gSideTimers[side].toxicSpikesAmount = 0;
             else if (hazardType == HAZARDS_MOAI_WATCH) // Project Grounded
                 gSideTimers[side].moaiWatchAmount = 0;
+            else if (hazardType == HAZARDS_OVERKILL) // Project Grounded
+                gSideTimers[side].overkillDamage = 0;
             break;
         }
     }

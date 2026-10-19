@@ -5673,6 +5673,11 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
          && (GetBattleMoveCategory(predictedMove) == DAMAGE_CATEGORY_SPECIAL))
             ADJUST_SCORE(GOOD_EFFECT);
         break;
+    case EFFECT_OVERKILL: // Project Grounded: een KO laat schade liggen voor de volgende
+        if (CanIndexMoveFaintTarget(battlerAtk, battlerDef, movesetIndex, AI_ATTACKING)
+         && CountUsablePartyMons(battlerDef) > 0)
+            ADJUST_SCORE(DECENT_EFFECT);
+        break;
     case EFFECT_INNARD_PUNCH: // Project Grounded: Pyukumuku slaat terug als hij de klap overleeft
         if ((!IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef]) && predictedMove != MOVE_NONE)
          && (GetNoOfHitsToKOBattler(battlerDef, battlerAtk, predictedMoveSlot, AI_DEFENDING) >= 2)
@@ -6760,6 +6765,7 @@ bool32 DoesSideHaveDamagingHazards(u32 side)
         case HAZARDS_STEALTH_ROCK:
         case HAZARDS_STEELSURGE:
         case HAZARDS_MOAI_WATCH: // Project Grounded
+        case HAZARDS_OVERKILL: // Project Grounded
             return TRUE;
         default:
             return FALSE;

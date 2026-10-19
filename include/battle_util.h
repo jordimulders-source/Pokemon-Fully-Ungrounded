@@ -313,6 +313,8 @@ uq4_12_t GetOverworldTypeEffectiveness(struct Pokemon *mon, enum Type moveType);
 void UpdateMoveResultFlags(uq4_12_t modifier, u16 *resultFlags);
 bool32 ParentalBondActive(u32 battler);
 s32 GetMoaiWatchDamageByTypesAndHP(enum Type type1, enum Type type2, u32 maxHp, u32 layers); // Project Grounded
+void TryStoreOverkillDamage(u32 battler, u32 overflow); // Project Grounded
+s32 GetOverkillHazardDamage(u32 side, u32 maxHp); // Project Grounded
 s32 GetStealthHazardDamage(enum TypeSideHazard hazardType, u32 battler);
 s32 GetStealthHazardDamageByTypesAndHP(enum TypeSideHazard hazardType, enum Type type1, enum Type type2, u32 maxHp);
 bool32 CanMegaEvolve(u32 battler);

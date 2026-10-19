@@ -278,6 +278,8 @@ static bool32 HandleEndTurnFutureSight(u32 battler)
 
         if (gWishFutureKnock.futureSightMove[battler] == MOVE_FUTURE_SIGHT)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
+        else if (gWishFutureKnock.futureSightMove[battler] == MOVE_SUPER_SPLASH) // Project Grounded
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SUPER_SPLASH;
         else
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
 

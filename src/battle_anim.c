@@ -261,6 +261,7 @@ static const u8* const sBattleAnims_General[NUM_B_ANIMS_GENERAL] =
     [B_ANIM_POLLEN_HAZE_CONTINUES]  = gBattleAnimGeneral_PollenHaze, // Project Grounded
     [B_ANIM_BEAVER_DAM_BREAK]       = gBattleAnimGeneral_BeaverDamBreak, // Project Grounded
     [B_ANIM_MOAI_CRUMBLE]           = gBattleAnimGeneral_MoaiCrumble, // Project Grounded
+    [B_ANIM_SUPER_SPLASH_HIT]       = gBattleAnimGeneral_SuperSplashHit, // Project Grounded
 };
 
 static const u8* const sBattleAnims_Special[NUM_B_ANIMS_SPECIAL] =
@@ -388,6 +389,7 @@ void LaunchBattleAnimation(u32 animType, u32 animId)
         case B_ANIM_SNATCH_MOVE:
         case B_ANIM_FUTURE_SIGHT_HIT:
         case B_ANIM_DOOM_DESIRE_HIT:
+        case B_ANIM_SUPER_SPLASH_HIT: // Project Grounded
         case B_ANIM_WISH_HEAL:
         case B_ANIM_MEGA_EVOLUTION:
         case B_ANIM_PRIMAL_REVERSION:

@@ -10707,3 +10707,156 @@ const struct SpriteTemplate gAbductionRingSpriteTemplate =
     .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimAbductionRing,
 };
+
+// Project Grounded: Super Splash. Begint als Splash, maar daarna gaat de aanvaller volledig tekeer:
+// steeds hoger en sneller op en neer, schuddend. arg0: battler, arg1: aantal frames
+#define tSpriteId data[0]
+#define tFrame    data[1]
+#define tFrames   data[2]
+#define tPhase    data[3]
+
+static void AnimTask_SuperSplashFrenzy_Step(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    struct Sprite *sprite = &gSprites[task->tSpriteId];
+    s32 t = task->tFrame;
+    s32 amp, speed;
+
+    if (t >= task->tFrames)
+    {
+        sprite->x2 = 0;
+        sprite->y2 = 0;
+        DestroyAnimVisualTask(taskId);
+        return;
+    }
+    // Hoogte loopt op van 6 naar 30 px, tempo van 10 naar 28 (een sprong per 128 eenheden)
+    amp = 6 + (24 * t) / task->tFrames;
+    speed = 10 + (18 * t) / task->tFrames;
+    task->tPhase = (task->tPhase + speed) & 0x7F;
+    sprite->y2 = -Sin(task->tPhase, amp);
+    // Schudden: elke frame een andere kant op, harder naarmate het erger wordt
+    sprite->x2 = (t & 1) ? (1 + amp / 8) : -(1 + amp / 8);
+    task->tFrame++;
+}
+
+void AnimTask_SuperSplashFrenzy(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    task->tSpriteId = GetAnimBattlerSpriteId(gBattleAnimArgs[0]);
+    task->tFrame = 0;
+    task->tFrames = gBattleAnimArgs[1] > 0 ? gBattleAnimArgs[1] : 1;
+    task->tPhase = 0;
+    task->func = AnimTask_SuperSplashFrenzy_Step;
+}
+
+#undef tSpriteId
+#undef tFrame
+#undef tFrames
+#undef tPhase
+
+// Project Grounded: Disco Inferno. Discolichten: het palet van een partikel-tag en de achtergrond wisselen
+// om de paar frames van kleur. arg0: partikel-tag, arg1: aantal frames, arg2: frames per kleur
+static const u16 sDiscoColors[] =
+{
+    RGB(31, 4, 8), RGB(31, 24, 0), RGB(6, 31, 6), RGB(2, 26, 31), RGB(8, 8, 31), RGB(29, 6, 31),
+};
+
+#define tFrame    data[0]
+#define tFrames   data[1]
+#define tHold     data[2]
+#define tPalIndex data[3]
+#define tColor    data[4]
+
+static void DiscoLights_Apply(struct Task *task, u32 color, u32 bgCoeff, u32 objCoeff)
+{
+    u32 bgMask = UnpackSelectedBattlePalettes(F_PAL_BG);
+    u32 i;
+
+    for (i = 0; i < 16; i++)
+    {
+        if (bgMask & (1u << i))
+            BlendPalette(BG_PLTT_ID(i), 16, bgCoeff, color);
+    }
+    if (task->tPalIndex != 0xFF)
+        BlendPalette(OBJ_PLTT_ID(task->tPalIndex), 16, objCoeff, color);
+}
+
+static void AnimTask_DiscoLights_Step(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+
+    if (task->tFrame >= task->tFrames)
+    {
+        DiscoLights_Apply(task, RGB_BLACK, 0, 0);
+        DestroyAnimVisualTask(taskId);
+        return;
+    }
+    if (task->tFrame % task->tHold == 0)
+    {
+        task->tColor = (task->tColor + 1) % ARRAY_COUNT(sDiscoColors);
+        DiscoLights_Apply(task, sDiscoColors[task->tColor], 5, 11);
+    }
+    task->tFrame++;
+}
+
+void AnimTask_DiscoLights(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    u8 pal = IndexOfSpritePaletteTag(gBattleAnimArgs[0]);
+
+    task->tPalIndex = pal;
+    task->tFrame = 0;
+    task->tFrames = gBattleAnimArgs[1];
+    task->tHold = gBattleAnimArgs[2] > 0 ? gBattleAnimArgs[2] : 4;
+    task->tColor = 0;
+    task->func = AnimTask_DiscoLights_Step;
+}
+
+#undef tFrame
+#undef tFrames
+#undef tHold
+#undef tPalIndex
+#undef tColor
+
+// Project Grounded: Disco Inferno, een lichtje van de discobal dat in een ellips om de aanvaller draait.
+// arg0: beginhoek, arg1: straal x, arg2: straal y, arg3: snelheid, arg4: duur, arg5: y-offset
+static void AnimDiscoLight_Step(struct Sprite *sprite)
+{
+    sprite->data[1] = (sprite->data[1] + sprite->data[4]) & 0xFF;
+    sprite->x2 = Sin(sprite->data[1], sprite->data[2]);
+    sprite->y2 = Cos(sprite->data[1], sprite->data[3]);
+    if (--sprite->data[0] <= 0)
+        DestroyAnimSprite(sprite);
+}
+
+static void AnimDiscoLight(struct Sprite *sprite)
+{
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[5];
+    sprite->data[1] = gBattleAnimArgs[0];
+    sprite->data[2] = gBattleAnimArgs[1];
+    sprite->data[3] = gBattleAnimArgs[2];
+    sprite->data[4] = gBattleAnimArgs[3];
+    sprite->data[0] = gBattleAnimArgs[4] > 0 ? gBattleAnimArgs[4] : 1;
+    sprite->callback = AnimDiscoLight_Step;
+    sprite->callback(sprite);
+}
+
+const struct SpriteTemplate gDiscoLightSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_SPARKLE_2,
+    .paletteTag = ANIM_TAG_SPARKLE_2,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gGrantingStarsAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimDiscoLight,
+};
+
+// Project Grounded: Overkill. Valt het doelwit door deze klap flauw met schade over? (voor de nagloed)
+void AnimTask_IsOverkillOverflow(u8 taskId)
+{
+    gBattleAnimArgs[ARG_RET_ID] = (gBattleStruct->moveDamage[gBattleAnimTarget] > (s32)gBattleMons[gBattleAnimTarget].hp);
+    DestroyAnimVisualTask(taskId);
+}

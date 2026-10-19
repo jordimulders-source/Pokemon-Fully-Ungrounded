@@ -387,6 +387,7 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_ROLLING_THUNDER, // Project Grounded: gaat door Protect heen en raakt dan altijd
     EFFECT_KUSARIGAMA, // Project Grounded: x2 als het doelwit deze beurt wisselt
     EFFECT_INNARD_PUNCH, // Project Grounded: deze beurt geraakt: 2x de schade terug, anders een gewone klap
+    EFFECT_OVERKILL, // Project Grounded: overtollige KO-schade blijft liggen voor de volgende die binnenkomt
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

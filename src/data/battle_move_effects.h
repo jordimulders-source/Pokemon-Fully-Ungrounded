@@ -1300,6 +1300,12 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 3,
     },
 
+    [EFFECT_OVERKILL] = // Project Grounded: Overkill
+    {
+        .battleScript = BattleScript_EffectOverkill,
+        .battleTvScore = 2,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

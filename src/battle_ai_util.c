@@ -3354,6 +3354,8 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
         hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_SHARP_STEEL, type1, type2, maxHp);
     if (IsHazardOnSide(side, HAZARDS_MOAI_WATCH)) // Project Grounded
         hazardDamage += GetMoaiWatchDamageByTypesAndHP(type1, type2, maxHp, gSideTimers[side].moaiWatchAmount);
+    if (IsHazardOnSide(side, HAZARDS_OVERKILL)) // Project Grounded
+        hazardDamage += GetOverkillHazardDamage(side, maxHp);
 
     if (IsHazardOnSide(side, HAZARDS_SPIKES) && ((type1 != TYPE_FLYING && type2 != TYPE_FLYING
         && ability != ABILITY_LEVITATE && holdEffect != HOLD_EFFECT_AIR_BALLOON)

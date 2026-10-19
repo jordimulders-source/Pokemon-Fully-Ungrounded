@@ -39502,3 +39502,162 @@ AbductionRings:
 	createsprite gAbductionRingSpriteTemplate, ANIM_TARGET, 2, 0, 24, 3, 20
 	delay 4
 	return
+
+@ Project Grounded: Super Splash. Het begint als een gewone Splash, maar dan gaat de aanvaller volledig
+@ tekeer: steeds hoger, sneller en schuddend. Het resultaat: een klein plonsje. Verder niets. Voorlopig.
+gBattleAnimMove_SuperSplash::
+	loadspritegfx ANIM_TAG_SWEAT_BEAD
+	loadspritegfx ANIM_TAG_WATER_IMPACT
+	createvisualtask AnimTask_Splash, 2, ANIM_ATTACKER, 2
+	delay 8
+	loopsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER, 38, 2
+	waitforvisualfinish
+	createvisualtask AnimTask_SuperSplashFrenzy, 2, ANIM_ATTACKER, 70
+	loopsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER, 7, 10
+	waitforvisualfinish
+	delay 6
+	playsewithpan SE_M_BUBBLE2, SOUND_PAN_ATTACKER
+	createsprite gWaterHitSplatSpriteTemplate, ANIM_ATTACKER, 3, 0, 26, ANIM_ATTACKER, 2
+	createsprite gSprayWaterDropletSpriteTemplate, ANIM_ATTACKER, 5, 0, 0
+	createsprite gSprayWaterDropletSpriteTemplate, ANIM_ATTACKER, 5, 1, 0
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Super Splash, de inslag een beurt later. Het veld kleurt zeeblauw, een tsunami
+@ (Surf-golf) rolt over het doelwit, het scherm en het doelwit schudden hard.
+gBattleAnimGeneral_SuperSplashHit::
+	createvisualtask AnimTask_SetAnimTargetToBattlerTarget, 2
+	loadspritegfx ANIM_TAG_WATER_IMPACT
+	loadspritegfx ANIM_TAG_SMALL_BUBBLES
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 9, RGB(0, 6, 16)
+	playsewithpan SE_M_WHIRLPOOL, SOUND_PAN_TARGET
+	waitforvisualfinish
+	createvisualtask AnimTask_CreateSurfWave, 2, ANIM_SURF_PAL_SURF
+	panse SE_M_SURF, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	delay 16
+	createvisualtask AnimTask_HorizontalShake, 5, (MAX_BATTLERS_COUNT + 1), 6, 40
+	createvisualtask AnimTask_HorizontalShake, 5, MAX_BATTLERS_COUNT, 6, 40
+	delay 8
+	playsewithpan SE_M_WATERFALL, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 7, 0, 28, 1
+	call SuperSplashTsunamiHits
+	delay 6
+	call SuperSplashTsunamiHits
+	waitforvisualfinish
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 9, 0, RGB(0, 6, 16)
+	waitforvisualfinish
+	end
+SuperSplashTsunamiHits:
+	createsprite gWaterHitSplatSpriteTemplate, ANIM_ATTACKER, 3, -12, 16, ANIM_TARGET, 1
+	createsprite gSmallDriftingBubblesSpriteTemplate, ANIM_ATTACKER, 4, 0, 16
+	delay 2
+	createsprite gWaterHitSplatSpriteTemplate, ANIM_ATTACKER, 3, 10, 4, ANIM_TARGET, 1
+	createsprite gSmallDriftingBubblesSpriteTemplate, ANIM_ATTACKER, 4, 0, 4
+	delay 2
+	createsprite gWaterHitSplatSpriteTemplate, ANIM_ATTACKER, 3, -4, -8, ANIM_TARGET, 1
+	createsprite gSmallDriftingBubblesSpriteTemplate, ANIM_ATTACKER, 4, 0, -8
+	return
+
+@ Project Grounded: Disco Inferno. Discobal-lichtjes in wisselende kleuren draaien om de aanvaller terwijl het
+@ veld meekleurt; de aanvaller danst als een dolle (draaien, wiebelen), stormt naar het doel en deelt drie
+@ dansende trappen/klappen uit waar telkens vuur vanaf spat.
+gBattleAnimMove_DiscoInferno::
+	loadspritegfx ANIM_TAG_SPARKLE_2
+	loadspritegfx ANIM_TAG_SMALL_EMBER
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_DiscoLights, 2, ANIM_TAG_SPARKLE_2, 66, 4
+	createsprite gDiscoLightSpriteTemplate, ANIM_ATTACKER, 2, 0, 30, 10, 6, 60, -6
+	createsprite gDiscoLightSpriteTemplate, ANIM_ATTACKER, 2, 85, 30, 10, 6, 60, -6
+	createsprite gDiscoLightSpriteTemplate, ANIM_ATTACKER, 2, 170, 30, 10, 6, 60, -6
+	createsprite gDiscoLightSpriteTemplate, ANIM_ATTACKER, 2, 42, 22, 6, -8, 60, -26
+	createsprite gDiscoLightSpriteTemplate, ANIM_ATTACKER, 2, 128, 22, 6, -8, 60, -26
+	createsprite gDiscoLightSpriteTemplate, ANIM_ATTACKER, 2, 213, 22, 6, -8, 60, -26
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_SpinMonHorizontally, 2, ANIM_ATTACKER, 12
+	delay 12
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 5, 0, 6, 1
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
+	delay 12
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_SpinMonHorizontally, 2, ANIM_ATTACKER, 10
+	delay 10
+	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 14, 6, 1, 4
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 24, 0, 0, 4
+	delay 4
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_TARGET
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, -12, -8, 6, 1, 1
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=-12, y=-8, relative_to=ANIM_TARGET, animation=2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 4, 1
+	call DiscoInfernoFlames
+	delay 7
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_TARGET
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, 12, 0, 6, 1, 0
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=12, y=0, relative_to=ANIM_TARGET, animation=2
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 4, 1
+	call DiscoInfernoFlames
+	delay 7
+	playsewithpan SE_M_EMBER, SOUND_PAN_TARGET
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, 0, -4, 10, 1, 1
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=0, y=-4, relative_to=ANIM_TARGET, animation=0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 9, RGB_RED
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 5, 0, 14, 1
+	call FireSpreadEffect
+	delay 8
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 0, 6
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 9, 0, RGB_RED
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+DiscoInfernoFlames:
+	createsprite gFireSpreadSpriteTemplate, ANIM_TARGET, 1, 0, 10, 192, 176, 30
+	createsprite gFireSpreadSpriteTemplate, ANIM_TARGET, 1, 0, 10, -192, 240, 30
+	createsprite gFireSpreadSpriteTemplate, ANIM_TARGET, 1, 0, 10, 160, -160, 30
+	createsprite gFireSpreadSpriteTemplate, ANIM_TARGET, 1, 0, 10, -160, -112, 30
+	return
+
+@ Project Grounded: Overkill. Het veld wordt donker, een dubbele klap (vuist en natrap); viel het doelwit met
+@ schade over, dan blijft er een donkere nagloed hangen: de schade die blijft liggen voor de volgende.
+gBattleAnimMove_Overkill::
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 0, 12, RGB(2, 0, 5)
+	waitforvisualfinish
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 24, 0, 0, 4
+	delay 4
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 8, 1, 0
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=0, y=0, relative_to=ANIM_TARGET, animation=0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 5, 0, 10, 1
+	delay 8
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, 10, -10, 8, 1, 1
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=10, y=-10, relative_to=ANIM_TARGET, animation=0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 8, RGB_WHITE
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 6, 0, 12, 1
+	delay 4
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 8, 0, RGB_WHITE
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 0, 6
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	createvisualtask AnimTask_IsOverkillOverflow, 2
+	jumpretfalse OverkillEnd
+	playsewithpan SE_M_NIGHTMARE, SOUND_PAN_TARGET
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 3, 0, 14, RGB(8, 0, 12)
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 1, 0, 16, 2
+	waitforvisualfinish
+	delay 10
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 3, 14, 6, RGB(8, 0, 12)
+	waitforvisualfinish
+OverkillEnd:
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 12, 0, RGB(2, 0, 5)
+	waitforvisualfinish
+	end

@@ -981,7 +981,11 @@
 #define MOVE_COMBINATION 917 // Project Grounded: Hitmonchan
 #define MOVE_SPINNING_BACKFIST 918 // Project Grounded: Hitmonchan
 #define MOVE_ABDUCTION 919 // Project Grounded: Beheeyem, Orbeetle
-#define MOVES_COUNT_GEN9 920
+// 920-926: gereserveerd voor de moves van een andere agent (worden bij het samenvoegen ingevuld)
+#define MOVE_SUPER_SPLASH 927 // Project Grounded: TM100, Splash maar dan echt
+#define MOVE_DISCO_INFERNO 928 // Project Grounded: TM99, dansende vuurtrappen
+#define MOVE_OVERKILL 929 // Project Grounded: overtollige schade blijft liggen voor de volgende
+#define MOVES_COUNT_GEN9 930
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

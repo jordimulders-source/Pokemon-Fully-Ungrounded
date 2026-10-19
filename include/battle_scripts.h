@@ -97,6 +97,7 @@ extern const u8 BattleScript_WrapFree[];
 extern const u8 BattleScript_LeechSeedFree[];
 extern const u8 BattleScript_SpinHazardsAway[];
 extern const u8 BattleScript_MonTookFutureAttack[];
+extern const u8 BattleScript_EffectOverkill[]; // Project Grounded
 extern const u8 BattleScript_NoMovesLeft[];
 extern const u8 BattleScript_SelectingMoveWithNoPP[];
 extern const u8 BattleScript_NoPPForMove[];

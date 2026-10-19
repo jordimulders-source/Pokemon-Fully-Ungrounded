@@ -765,6 +765,10 @@ enum StringID
     STRINGID_MOAIWATCHDMG, // Project Grounded
     STRINGID_MOAIDISAPPEARED, // Project Grounded
     STRINGID_PKMNBLEWAWAYMOAI, // Project Grounded
+    STRINGID_OVERKILLDMG, // Project Grounded
+    STRINGID_OVERKILLDISAPPEARED, // Project Grounded
+    STRINGID_PKMNBLEWAWAYOVERKILL, // Project Grounded
+    STRINGID_OVERKILLSTORED, // Project Grounded
     STRINGID_BEAVERDAMBREAK, // Project Grounded
     STRINGID_BEAVERDAMFLOOD, // Project Grounded
     STRINGID_HOLEUP, // Project Grounded
@@ -787,6 +791,8 @@ enum StringID
     STRINGID_BUBBLEDOMEPOPPED, // Project Grounded
     STRINGID_PKMNBEARHUGGED, // Project Grounded
     STRINGID_TWINTAILSSNATCH, // Project Grounded
+    STRINGID_SUPERSPLASHNOTHING, // Project Grounded
+    STRINGID_SUPERSPLASHTSUNAMI, // Project Grounded
     STRINGID_COUNT
 };
 
@@ -987,6 +993,7 @@ enum FutureMoveUsedStringID
 {
     B_MSG_FUTURE_SIGHT,
     B_MSG_DOOM_DESIRE,
+    B_MSG_SUPER_SPLASH, // Project Grounded
 };
 
 // gItemSwapStringIds
@@ -1237,6 +1244,7 @@ enum DmgHazardStringID
     B_MSG_SPIKESSCATTERED,
     B_MSG_SHARPSTEELFLOATS,
     B_MSG_MOAIWATCHDMG, // Project Grounded
+    B_MSG_OVERKILLDMG, // Project Grounded
 };
 
 // gDamageNonTypesStartStringIds

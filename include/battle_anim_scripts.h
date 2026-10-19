@@ -1018,6 +1018,7 @@ extern const u8 gBattleAnimGeneral_AcidRain[];
 extern const u8 gBattleAnimGeneral_PollenHaze[];
 extern const u8 gBattleAnimGeneral_BeaverDamBreak[];
 extern const u8 gBattleAnimGeneral_MoaiCrumble[];
+extern const u8 gBattleAnimGeneral_SuperSplashHit[]; // Project Grounded
 extern const u8 gBattleAnimMove_PollenHaze[];
 extern const u8 gBattleAnimMove_MummysCurse[];
 extern const u8 gBattleAnimMove_ZapTrap[];
@@ -1048,6 +1049,9 @@ extern const u8 gBattleAnimMove_InnardPunch[]; // Project Grounded
 extern const u8 gBattleAnimMove_Combination[]; // Project Grounded
 extern const u8 gBattleAnimMove_SpinningBackfist[]; // Project Grounded
 extern const u8 gBattleAnimMove_Abduction[]; // Project Grounded
+extern const u8 gBattleAnimMove_SuperSplash[]; // Project Grounded
+extern const u8 gBattleAnimMove_DiscoInferno[]; // Project Grounded
+extern const u8 gBattleAnimMove_Overkill[]; // Project Grounded
 
 // special animations
 extern const u8 gBattleAnimSpecial_LevelUp[];

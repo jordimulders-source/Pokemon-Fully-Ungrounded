@@ -966,7 +966,7 @@ Level: 48
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Bubble Beam
 - Mud Shot
-- Ancient Power
+- Ancient Scythe
 - Brine
 
 Aerodactyl
@@ -5423,6 +5423,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Dhelmise
 Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Whirlpool
+- Heavy Slam
+- Slam
+- Kelp Shroud
 
 === TRAINER_DAVID ===
 Name: DAVID
@@ -8829,7 +8833,7 @@ Absol @ Life Orb
 Level: 78
 Ability: Serene Grace
 - Play Rough
-- Night Slash
+- Omen Strike
 - Air Slash
 - Swords Dance
 
@@ -8888,8 +8892,8 @@ Parasect @ Leftovers
 Level: 79
 Ability: Cursed Body
 - Spore
-- Last Respects
-- Strength Sap
+- Hyphal Snare
+- Fungal Control
 - Leech Life
 
 === TRAINER_GLACIA ===
@@ -8923,7 +8927,7 @@ Mr. Rime @ Heavy-Duty Boots
 Level: 79
 Ability: Screen Cleaner
 - Psychic
-- Freeze Dry
+- Frosty Tap Dance
 - Fake Out
 - Slack Off
 
@@ -9294,7 +9298,7 @@ Arboliva @ Leftovers
 Level: 46
 Ability: Seed Sower
 IVs: 31 HP / 0 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-- Strength Sap
+- Olive Oil
 - Giga Drain
 - Hyper Voice
 - Earth Power
@@ -9303,7 +9307,7 @@ Bewear @ Choice Band
 Level: 46
 Ability: Fluffy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
-- Hammer Arm
+- Bear Hug
 - Double-Edge
 - Darkest Lariat
 - Ice Punch
@@ -9314,7 +9318,7 @@ Ability: Tough Claws
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 0 Spe
 - First Impression
 - Belly Drum
-- Extreme Speed
+- Straight Line
 - Crush Claw
 
 Ursaluna @ Flame Orb
@@ -9350,7 +9354,7 @@ Xatu @ Focus Sash
 Level: 51
 Ability: Magic Bounce
 - Tailwind
-- Psychic
+- Totem Gaze
 - Air Slash
 - Roost
 
@@ -9416,7 +9420,7 @@ Ability: Regenerator
 Beheeyem @ Expert Belt
 Level: 63
 Ability: Dimensional Warp
-- Photon Geyser
+- Abduction
 - Signal Beam
 - Calm Mind
 - Ice Beam
@@ -9425,7 +9429,7 @@ Solrock @ Focus Sash
 Level: 63
 Ability: Levitate
 - Stone Axe
-- Zen Headbutt
+- Eclipse
 - Flare Blitz
 - Earthquake
 
@@ -9450,7 +9454,7 @@ Level: 64
 Ability: Levitate
 - Trick Room
 - Power Gem
-- Psychic
+- Eclipse
 - Lunar Blessing
 
 === TRAINER_WALLACE_1 ===
@@ -9468,7 +9472,7 @@ Masquerain @ Focus Sash
 Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Drizzle
-- Quiver Dance
+- Eye Spots
 - Hurricane
 - Muddy Water
 - Bug Buzz
@@ -9495,7 +9499,7 @@ Golduck @ Life Orb
 Level: 72
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Swift Swim
-- Hydro Pump
+- Cavitation
 - Psychic
 - Nasty Plot
 - Ice Beam
@@ -9507,7 +9511,7 @@ Ability: Rock Head
 - Head Smash
 - Wave Crash
 - Earthquake
-- Slack Off
+- Primeval Ward
 
 Milotic @ Sitrus Berry
 Level: 73
@@ -10723,7 +10727,7 @@ Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Strength Sap
 - Pollen Haze
-- Fungal Control
+- Hyphal Snare
 - X-Scissor
 
 === TRAINER_TIMOTHY_2 ===
@@ -16827,10 +16831,18 @@ Beheeyem
 Level: 61
 Ability: Dimensional Warp
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Meteor Beam
+- Calm Mind
+- Steel Beam
+- Abduction
 
 Escavalier
 Level: 61
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Iron Head
+- Bug Buzz
+- Giga Impact
+- Joust
 
 Snorlax
 Level: 62
@@ -17299,6 +17311,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Lopunny
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Quick Attack
+- Double Kick
+- Charm
+- Bunny Hop
 
 Vespiquen
 Level: 27
@@ -17333,6 +17349,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Lopunny
 Level: 47
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Headbutt
+- Agility
+- Entrainment
+- Bunny Hop
 
 Vespiquen
 Level: 47
@@ -17381,6 +17401,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Lopunny
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Quick Attack
+- Double Kick
+- Charm
+- Bunny Hop
 
 Vespiquen
 Level: 27
@@ -17415,6 +17439,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Lopunny
 Level: 48
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Agility
+- Entrainment
+- Bunny Hop
+- Bounce
 
 Vespiquen
 Level: 47
@@ -17463,6 +17491,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Lopunny
 Level: 28
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Quick Attack
+- Double Kick
+- Charm
+- Bunny Hop
 
 Snorunt
 Level: 27
@@ -17497,6 +17529,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Lopunny
 Level: 48
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Agility
+- Entrainment
+- Bunny Hop
+- Bounce
 
 Froslass
 Level: 48
@@ -20098,7 +20134,7 @@ Level: 39
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Strength Sap
 - Pollen Haze
-- Fungal Control
+- Hyphal Snare
 - X-Scissor
 
 === TRAINER_JAMES_3 ===
@@ -21640,6 +21676,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Lopunny
 Level: 56
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Flatter
+- Bounce
+- Bunny Hop
+- High Jump Kick
 
 Vespiquen
 Level: 56
@@ -21674,6 +21714,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Lopunny
 Level: 56
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Flatter
+- Bounce
+- Bunny Hop
+- High Jump Kick
 
 Vespiquen
 Level: 56
@@ -21708,6 +21752,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Lopunny
 Level: 56
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Flatter
+- Bounce
+- Bunny Hop
+- High Jump Kick
 
 Froslass
 Level: 56
@@ -21982,7 +22030,7 @@ Relicanth @ Damp Rock
 Level: 74
 Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Slack Off
+- Primeval Ward
 - Earthquake
 - Wave Crash
 - Head Smash
@@ -24580,7 +24628,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nuzzle
 - Magnet Rise
 - Rock Tomb
-- Pain Split
+- Moai Watch
 
 === TRAINER_ROXANNE_3 ===
 Name: ROXANNE
@@ -24641,7 +24689,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nuzzle
 - Magnet Rise
 - Rock Tomb
-- Pain Split
+- Moai Watch
 
 === TRAINER_ROXANNE_4 ===
 Name: ROXANNE
@@ -24702,7 +24750,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nuzzle
 - Magnet Rise
 - Rock Tomb
-- Pain Split
+- Moai Watch
 
 === TRAINER_ROXANNE_5 ===
 Name: ROXANNE
@@ -24763,7 +24811,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nuzzle
 - Magnet Rise
 - Rock Tomb
-- Pain Split
+- Moai Watch
 
 === TRAINER_BRAWLY_2 ===
 Name: BRAWLY
@@ -24780,7 +24828,7 @@ Spinda @ Silk Scarf
 Level: 84
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Pure Power
-- Dizzy Punch
+- Tipsy Waltz
 - Drain Punch
 - Teeter Dance
 - Sucker Punch
@@ -24842,7 +24890,7 @@ Spinda @ Silk Scarf
 Level: 88
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Pure Power
-- Dizzy Punch
+- Tipsy Waltz
 - Drain Punch
 - Teeter Dance
 - Sucker Punch
@@ -24904,7 +24952,7 @@ Spinda @ Silk Scarf
 Level: 93
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Pure Power
-- Dizzy Punch
+- Tipsy Waltz
 - Drain Punch
 - Teeter Dance
 - Sucker Punch
@@ -24966,7 +25014,7 @@ Spinda @ Silk Scarf
 Level: 98
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Pure Power
-- Dizzy Punch
+- Tipsy Waltz
 - Drain Punch
 - Teeter Dance
 - Sucker Punch
@@ -25545,7 +25593,7 @@ Arboliva @ Leftovers
 Level: 86
 Ability: Seed Sower
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Strength Sap
+- Olive Oil
 - Giga Drain
 - Hyper Voice
 - Earth Power
@@ -25554,7 +25602,7 @@ Bewear @ Choice Band
 Level: 86
 Ability: Fluffy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hammer Arm
+- Bear Hug
 - Double-Edge
 - Darkest Lariat
 - Ice Punch
@@ -25565,7 +25613,7 @@ Ability: Tough Claws
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - First Impression
 - Belly Drum
-- Extreme Speed
+- Straight Line
 - Crush Claw
 
 Ursaluna @ Flame Orb
@@ -25610,7 +25658,7 @@ Arboliva @ Leftovers
 Level: 90
 Ability: Seed Sower
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Strength Sap
+- Olive Oil
 - Giga Drain
 - Hyper Voice
 - Earth Power
@@ -25619,7 +25667,7 @@ Bewear @ Choice Band
 Level: 90
 Ability: Fluffy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hammer Arm
+- Bear Hug
 - Double-Edge
 - Darkest Lariat
 - Ice Punch
@@ -25630,7 +25678,7 @@ Ability: Tough Claws
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - First Impression
 - Belly Drum
-- Extreme Speed
+- Straight Line
 - Crush Claw
 
 Ursaluna @ Flame Orb
@@ -25675,7 +25723,7 @@ Arboliva @ Leftovers
 Level: 95
 Ability: Seed Sower
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Strength Sap
+- Olive Oil
 - Giga Drain
 - Hyper Voice
 - Earth Power
@@ -25684,7 +25732,7 @@ Bewear @ Choice Band
 Level: 95
 Ability: Fluffy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hammer Arm
+- Bear Hug
 - Double-Edge
 - Darkest Lariat
 - Ice Punch
@@ -25695,7 +25743,7 @@ Ability: Tough Claws
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - First Impression
 - Belly Drum
-- Extreme Speed
+- Straight Line
 - Crush Claw
 
 Ursaluna @ Flame Orb
@@ -25740,7 +25788,7 @@ Arboliva @ Leftovers
 Level: 100
 Ability: Seed Sower
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Strength Sap
+- Olive Oil
 - Giga Drain
 - Hyper Voice
 - Earth Power
@@ -25749,7 +25797,7 @@ Bewear @ Choice Band
 Level: 100
 Ability: Fluffy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Hammer Arm
+- Bear Hug
 - Double-Edge
 - Darkest Lariat
 - Ice Punch
@@ -25760,7 +25808,7 @@ Ability: Tough Claws
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - First Impression
 - Belly Drum
-- Extreme Speed
+- Straight Line
 - Crush Claw
 
 Ursaluna @ Flame Orb
@@ -25796,7 +25844,7 @@ Xatu @ Focus Sash
 Level: 84
 Ability: Magic Bounce
 - Tailwind
-- Psychic
+- Totem Gaze
 - Air Slash
 - Roost
 
@@ -25855,7 +25903,7 @@ Xatu @ Focus Sash
 Level: 88
 Ability: Magic Bounce
 - Tailwind
-- Psychic
+- Totem Gaze
 - Air Slash
 - Roost
 
@@ -25914,7 +25962,7 @@ Xatu @ Focus Sash
 Level: 93
 Ability: Magic Bounce
 - Tailwind
-- Psychic
+- Totem Gaze
 - Air Slash
 - Roost
 
@@ -25973,7 +26021,7 @@ Xatu @ Focus Sash
 Level: 98
 Ability: Magic Bounce
 - Tailwind
-- Psychic
+- Totem Gaze
 - Air Slash
 - Roost
 
@@ -26039,7 +26087,7 @@ Ability: Regenerator
 Beheeyem @ Expert Belt
 Level: 85
 Ability: Dimensional Warp
-- Photon Geyser
+- Abduction
 - Signal Beam
 - Calm Mind
 - Ice Beam
@@ -26048,7 +26096,7 @@ Solrock @ Focus Sash
 Level: 85
 Ability: Levitate
 - Stone Axe
-- Zen Headbutt
+- Eclipse
 - Flare Blitz
 - Earthquake
 
@@ -26073,7 +26121,7 @@ Level: 86
 Ability: Levitate
 - Trick Room
 - Power Gem
-- Psychic
+- Eclipse
 - Lunar Blessing
 
 === TRAINER_TATE_AND_LIZA_3 ===
@@ -26098,7 +26146,7 @@ Ability: Regenerator
 Beheeyem @ Expert Belt
 Level: 89
 Ability: Dimensional Warp
-- Photon Geyser
+- Abduction
 - Signal Beam
 - Calm Mind
 - Ice Beam
@@ -26107,7 +26155,7 @@ Solrock @ Focus Sash
 Level: 89
 Ability: Levitate
 - Stone Axe
-- Zen Headbutt
+- Eclipse
 - Flare Blitz
 - Earthquake
 
@@ -26132,7 +26180,7 @@ Level: 90
 Ability: Levitate
 - Trick Room
 - Power Gem
-- Psychic
+- Eclipse
 - Lunar Blessing
 
 === TRAINER_TATE_AND_LIZA_4 ===
@@ -26157,7 +26205,7 @@ Ability: Regenerator
 Beheeyem @ Expert Belt
 Level: 94
 Ability: Dimensional Warp
-- Photon Geyser
+- Abduction
 - Signal Beam
 - Calm Mind
 - Ice Beam
@@ -26166,7 +26214,7 @@ Solrock @ Focus Sash
 Level: 94
 Ability: Levitate
 - Stone Axe
-- Zen Headbutt
+- Eclipse
 - Flare Blitz
 - Earthquake
 
@@ -26191,7 +26239,7 @@ Level: 95
 Ability: Levitate
 - Trick Room
 - Power Gem
-- Psychic
+- Eclipse
 - Lunar Blessing
 
 === TRAINER_TATE_AND_LIZA_5 ===
@@ -26216,7 +26264,7 @@ Ability: Regenerator
 Beheeyem @ Expert Belt
 Level: 99
 Ability: Dimensional Warp
-- Photon Geyser
+- Abduction
 - Signal Beam
 - Calm Mind
 - Ice Beam
@@ -26225,7 +26273,7 @@ Solrock @ Focus Sash
 Level: 99
 Ability: Levitate
 - Stone Axe
-- Zen Headbutt
+- Eclipse
 - Flare Blitz
 - Earthquake
 
@@ -26250,7 +26298,7 @@ Level: 100
 Ability: Levitate
 - Trick Room
 - Power Gem
-- Psychic
+- Eclipse
 - Lunar Blessing
 
 === TRAINER_WALLACE_2 ===
@@ -26268,7 +26316,7 @@ Masquerain @ Focus Sash
 Level: 85
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Drizzle
-- Quiver Dance
+- Eye Spots
 - Hurricane
 - Muddy Water
 - Bug Buzz
@@ -26295,7 +26343,7 @@ Golduck @ Life Orb
 Level: 85
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Swift Swim
-- Hydro Pump
+- Cavitation
 - Psychic
 - Nasty Plot
 - Ice Beam
@@ -26307,7 +26355,7 @@ Ability: Rock Head
 - Head Smash
 - Wave Crash
 - Earthquake
-- Slack Off
+- Primeval Ward
 
 Milotic @ Sitrus Berry
 Level: 86
@@ -26333,7 +26381,7 @@ Masquerain @ Focus Sash
 Level: 89
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Drizzle
-- Quiver Dance
+- Eye Spots
 - Hurricane
 - Muddy Water
 - Bug Buzz
@@ -26360,7 +26408,7 @@ Golduck @ Life Orb
 Level: 89
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Swift Swim
-- Hydro Pump
+- Cavitation
 - Psychic
 - Nasty Plot
 - Ice Beam
@@ -26372,7 +26420,7 @@ Ability: Rock Head
 - Head Smash
 - Wave Crash
 - Earthquake
-- Slack Off
+- Primeval Ward
 
 Milotic @ Sitrus Berry
 Level: 90
@@ -26398,7 +26446,7 @@ Masquerain @ Focus Sash
 Level: 94
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Drizzle
-- Quiver Dance
+- Eye Spots
 - Hurricane
 - Muddy Water
 - Bug Buzz
@@ -26425,7 +26473,7 @@ Golduck @ Life Orb
 Level: 94
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Swift Swim
-- Hydro Pump
+- Cavitation
 - Psychic
 - Nasty Plot
 - Ice Beam
@@ -26437,7 +26485,7 @@ Ability: Rock Head
 - Head Smash
 - Wave Crash
 - Earthquake
-- Slack Off
+- Primeval Ward
 
 Milotic @ Sitrus Berry
 Level: 95
@@ -26463,7 +26511,7 @@ Masquerain @ Focus Sash
 Level: 99
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Drizzle
-- Quiver Dance
+- Eye Spots
 - Hurricane
 - Muddy Water
 - Bug Buzz
@@ -26490,7 +26538,7 @@ Golduck @ Life Orb
 Level: 99
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Swift Swim
-- Hydro Pump
+- Cavitation
 - Psychic
 - Nasty Plot
 - Ice Beam
@@ -26502,7 +26550,7 @@ Ability: Rock Head
 - Head Smash
 - Wave Crash
 - Earthquake
-- Slack Off
+- Primeval Ward
 
 Milotic @ Sitrus Berry
 Level: 100
@@ -28882,7 +28930,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Play Rough
-- Knock Off
+- Omen Strike
 - Sucker Punch
 - Swords Dance
 
@@ -28958,7 +29006,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Play Rough
-- Knock Off
+- Omen Strike
 - Sucker Punch
 - Swords Dance
 
@@ -29088,7 +29136,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Fake Out
-- Double-Edge
+- Bunny Hop
 - High Jump Kick
 - Ice Punch
 
@@ -29164,7 +29212,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Fake Out
-- Double-Edge
+- Bunny Hop
 - High Jump Kick
 - Ice Punch
 
@@ -29240,7 +29288,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Fake Out
-- Double-Edge
+- Bunny Hop
 - High Jump Kick
 - Ice Punch
 
@@ -30087,7 +30135,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Wailord
 Level: 59
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Water Spout
+- Whale Song
 - Rest
 - Sleep Talk
 - Heavy Slam
@@ -30115,7 +30163,7 @@ Beheeyem
 Level: 29
 Ability: Dimensional Warp
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Psybeam
+- Abduction
 - Thunder Wave
 - Headbutt
 - Calm Mind
@@ -30179,7 +30227,7 @@ Beheeyem
 Level: 56
 Ability: Dimensional Warp
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Psychic
+- Abduction
 - Shadow Ball
 - Thunderbolt
 - Recover
@@ -30207,7 +30255,7 @@ Level: 56
 Ability: Filter
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Gunk Shot
-- Spin Out
+- Rev Up
 - Taunt
 - Shift Gear
 
@@ -30331,7 +30379,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Adamant
 - Liquidation
-- Stone Edge
+- Ancient Scythe
 - Swords Dance
 - Aqua Jet
 
@@ -30341,7 +30389,7 @@ Ability: Shell Armor
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Modest
-- Shell Smash
+- Praise Helix
 - Hydro Pump
 - Power Gem
 - Ice Beam
@@ -30394,7 +30442,7 @@ Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
-- Hydro Pump
+- Cavitation
 - Psychic
 - Ice Beam
 - Calm Mind
@@ -30547,7 +30595,7 @@ Nature: Adamant
 - Power Whip
 - Sludge Bomb
 - Sucker Punch
-- Swords Dance
+- Pitcher Trap
 
 Lilligant @ Focus Sash
 Level: 50
@@ -30855,7 +30903,7 @@ Ability: Sheer Force
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 SpA / 4 SpD
 Nature: Modest
-- Earth Power
+- Queen's Weight
 - Sludge Wave
 - Ice Beam
 - Flamethrower
@@ -30867,7 +30915,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
 - Earth Power
-- Sludge Wave
+- Tyrant Horn
 - Ice Beam
 - Thunderbolt
 
@@ -30994,7 +31042,7 @@ Ability: Unburden
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
-- High Jump Kick
+- Rolling Thunder
 - Knock Off
 - Stone Edge
 - Blaze Kick
@@ -31005,7 +31053,7 @@ Ability: Iron Fist
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
 Nature: Adamant
-- Drain Punch
+- Combination
 - Ice Punch
 - Thunder Punch
 - Mach Punch
@@ -31447,7 +31495,7 @@ Nature: Modest
 - Power Gem
 - Earth Power
 - Flash Cannon
-- Thunder Wave
+- Moai Watch
 
 Aerodactyl @ Focus Sash
 Level: 50
@@ -31669,7 +31717,7 @@ Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Adamant
-- Wave Crash
+- Life Buoy
 - Ice Spinner
 - Bulk Up
 - Aqua Jet
@@ -32334,7 +32382,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 4 Def / 252 SpD
 Nature: Careful
 - Foul Play
-- Shadow Sneak
+- Keystone Curse
 - Will-O-Wisp
 - Pain Split
 
@@ -32505,7 +32553,7 @@ Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Adamant
-- Wave Crash
+- Life Buoy
 - Ice Spinner
 - Bulk Up
 - Aqua Jet
@@ -32580,7 +32628,7 @@ Ability: Aftermath
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Adamant
-- Gunk Shot
+- Skunk Spray
 - Sucker Punch
 - Fire Blast
 - Defog
@@ -32688,7 +32736,7 @@ Ability: Aftermath
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Adamant
-- Gunk Shot
+- Skunk Spray
 - Sucker Punch
 - Fire Blast
 - Crunch
@@ -33930,7 +33978,7 @@ Ability: Gluttony
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 Nature: Relaxed
-- Gunk Shot
+- Gulp Down
 - Stockpile
 - Swallow
 - Spit Up
@@ -34006,7 +34054,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 4 Def / 252 SpD
 Nature: Careful
 - Foul Play
-- Shadow Sneak
+- Keystone Curse
 - Will-O-Wisp
 - Pain Split
 
@@ -34101,7 +34149,7 @@ EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Shift Gear
 - Gunk Shot
-- Iron Head
+- Rev Up
 - High Horsepower
 
 Mew @ Leftovers
@@ -34163,7 +34211,7 @@ Ability: Mummy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 Nature: Bold
-- Shadow Ball
+- Mummy's Curse
 - Will-O-Wisp
 - Trick Room
 - Pain Split
@@ -34205,7 +34253,7 @@ Ability: Protean
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
 Nature: Adamant
-- Shadow Sneak
+- Mimic Shade
 - Knock Off
 - Drain Punch
 - Power Whip
@@ -34230,7 +34278,7 @@ Nature: Timid
 - Hurricane
 - Bug Buzz
 - Sticky Web
-- Quiver Dance
+- Eye Spots
 
 Zarude @ Choice Scarf
 Level: 50
@@ -34366,7 +34414,7 @@ Ability: Mummy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 Nature: Relaxed
-- Shadow Ball
+- Mummy's Curse
 - Toxic Spikes
 - Trick Room
 - Will-O-Wisp
@@ -34442,7 +34490,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 Def / 252 HP / 252 SpD
 Nature: Calm
 - Thief
-- Hex
+- Keystone Curse
 - Will-O-Wisp
 - Pain Split
 
@@ -34905,7 +34953,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 Nature: Adamant
 - Crunch
 - Play Rough
-- Sucker Punch
+- Pack Howl
 - Fire Fang
 
 Obstagoon @ Flame Orb
@@ -34925,7 +34973,7 @@ Ability: Tough Claws
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
-- Extreme Speed
+- Straight Line
 - Belly Drum
 - Seed Bomb
 - Shadow Claw
@@ -35120,7 +35168,7 @@ Nature: Bold
 - Recover
 - Toxic
 - Soak
-- Counter
+- Innard Punch
 
 Wishiwashi @ Leftovers
 Level: 50
@@ -35140,7 +35188,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
 Nature: Adamant
 - Head Smash
-- Wave Crash
+- Primeval Ward
 - Earthquake
 - Double-Edge
 
@@ -36143,7 +36191,7 @@ Ability: Snow Warning
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Modest
-- Blizzard
+- Brain Freeze
 - Freeze-Dry
 - Aurora Veil
 - Flash Cannon
@@ -36198,7 +36246,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 Nature: Bold
 - Will-O-Wisp
-- Hex
+- Mummy's Curse
 - Toxic Spikes
 - Pain Split
 
@@ -36857,7 +36905,7 @@ Ability: Ice Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Modest
-- Blizzard
+- Brain Freeze
 - Freeze-Dry
 - Flash Cannon
 - Ice Beam
@@ -36911,7 +36959,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Play Rough
-- Knock Off
+- Omen Strike
 - Sucker Punch
 - Swords Dance
 
@@ -39103,7 +39151,7 @@ Wailord @ Sitrus Berry
 Level: 62
 Ability: Multiscale
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Water Spout
+- Whale Song
 - Ice Beam
 - Heavy Slam
 - Rest
@@ -39139,7 +39187,7 @@ Level: 64
 Ability: Steelworker
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Anchor Shot
-- Phantom Force
+- Kelp Shroud
 - Power Whip
 - Earthquake
 
@@ -39494,7 +39542,7 @@ Ability: Innards Out
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 - Toxic
 - Recover
-- Counter
+- Innard Punch
 - Soak
 
 Muk_Hoenn
@@ -45849,7 +45897,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Xatu
 Level: 56
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Psychic
+- Totem Gaze
 - Air Slash
 - Thunder Wave
 - Roost
@@ -45873,7 +45921,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Cofagrigus
 Level: 56
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Shadow Ball
+- Mummy's Curse
 - Will-O-Wisp
 - Nasty Plot
 - Trick Room

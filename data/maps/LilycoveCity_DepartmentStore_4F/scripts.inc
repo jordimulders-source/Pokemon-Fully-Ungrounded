@@ -13,6 +13,24 @@ LilycoveCity_DepartmentStore_4F_EventScript_Youngster::
 	msgbox LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves, MSGBOX_NPC
 	end
 
+@ Project Grounded: Hyper Beam is niet meer te koop; deze fan deelt hem uit.
+LilycoveCity_DepartmentStore_4F_EventScript_HyperFan::
+	lock
+	faceplayer
+	goto_if_set FLAG_RECEIVED_TM_HYPER_BEAM, LilycoveCity_DepartmentStore_4F_EventScript_HyperFanAfter
+	msgbox LilycoveCity_DepartmentStore_4F_Text_HyperFan, MSGBOX_DEFAULT
+	giveitem ITEM_TM_HYPER_BEAM
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
+	setflag FLAG_RECEIVED_TM_HYPER_BEAM
+	msgbox LilycoveCity_DepartmentStore_4F_Text_HyperFanExplain, MSGBOX_DEFAULT
+	release
+	end
+
+LilycoveCity_DepartmentStore_4F_EventScript_HyperFanAfter::
+	msgbox LilycoveCity_DepartmentStore_4F_Text_HyperFanAfter, MSGBOX_DEFAULT
+	release
+	end
+
 LilycoveCity_DepartmentStore_4F_EventScript_ClerkLeft::
 	lock
 	faceplayer
@@ -28,7 +46,6 @@ LilycoveCity_DepartmentStore_4F_Pokemart_AttackTMs:
 	.2byte ITEM_TM_FIRE_BLAST
 	.2byte ITEM_TM_THUNDER
 	.2byte ITEM_TM_BLIZZARD
-	.2byte ITEM_TM_HYPER_BEAM
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_4F_EventScript_ClerkRight::
@@ -59,8 +76,8 @@ LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:
 	.string "off the stage. My blood boils.$"
 
 LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs:
-	.string "There are fifty kinds of TMs.\p"
-	.string "I have 49.\p"
+	.string "There are a hundred kinds of TMs.\p"
+	.string "I have 99.\p"
 	.string "I can't sleep.$"
 
 LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves:
@@ -68,3 +85,24 @@ LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves:
 	.string "INCINEROAR only needs two: Fake Out\l"
 	.string "and Parting Shot.$"
 
+
+LilycoveCity_DepartmentStore_4F_Text_HyperFan:
+	.string "HYPER BEAM!\p"
+	.string "THE MOST POWERFUL MOVE\n"
+	.string "IN POKéMON!\p"
+	.string "NOT EVEN SUPER!\n"
+	.string "BUT HYPER!!\p"
+	.string "They stopped SELLING it here.\n"
+	.string "Cowards. Take mine.$"
+
+LilycoveCity_DepartmentStore_4F_Text_HyperFanExplain:
+	.string "After you fire it, your POKéMON\n"
+	.string "has to recharge for a turn.\p"
+	.string "That's not a weakness. That's it\n"
+	.string "catching its breath after being\l"
+	.string "THAT AWESOME.$"
+
+LilycoveCity_DepartmentStore_4F_Text_HyperFanAfter:
+	.string "Did you use it yet? DID YOU?\p"
+	.string "Don't tell me if it missed.\n"
+	.string "I don't want to know.$"

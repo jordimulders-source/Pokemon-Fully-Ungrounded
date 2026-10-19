@@ -19221,3 +19221,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - TM-tas vergroot naar 100 plekken (nieuwe pocket achteraan SaveBlock1, oude saves verhuizen hun TM's bij het laden).
 - Compatibiliteit uit alle games; Rolling Thunder: soorten die High Jump Kick, Jump Kick, Blaze Kick of Rolling Kick leren + Tyrogue-lijn en Sawk (43 soorten). Skarmory Baton Pass, Dusknoir Knock Off.
 - **TM50 is nu Flare Blitz** (was Overheat; Fire had vier speciale TM's en geen fysieke). Flannery geeft hem nog steeds, met een nieuwe uitlegtekst ("You set yourself on fire and run straight at the problem."). Wie Overheat al kent, houdt hem.
+- **Hyper Beam (TM15)** is niet meer te koop in Lilycove Dept. Store 4F; een fan daar (nieuw object, `FLAG_RECEIVED_TM_HYPER_BEAM` = FLAG_GROUNDED(1001)) geeft hem weg: "THE MOST POWERFUL MOVE IN POKéMON! NOT EVEN SUPER! BUT HYPER!!". De TM-verzamelaar daar heeft er nu 99 van de honderd.

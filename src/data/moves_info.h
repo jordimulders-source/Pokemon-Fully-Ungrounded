@@ -22475,6 +22475,226 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_CalmMind,
     },
 
+    [MOVE_EYE_SPOTS] = // Project Grounded: Masquerain (oogvlekken op de vleugels)
+    {
+        .name = COMPOUND_STRING("Eye Spots"),
+        .description = COMPOUND_STRING(
+            "Glaring wing eyes cut Atk\n"
+            "and Spe. Confuses in pollen."),
+        .effect = EFFECT_EYE_SPOTS,
+        .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .magicCoatAffected = TRUE,
+        .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ScaryFace,
+    },
+
+    [MOVE_OMEN_STRIKE] = // Project Grounded: Absol (voelt het onheil aankomen)
+    {
+        .name = COMPOUND_STRING("Omen Strike"),
+        .description = COMPOUND_STRING(
+            "Double power if the foe\n"
+            "switches or uses a status."),
+        .effect = EFFECT_OMEN_STRIKE,
+        .power = 75,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = 1,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_NightSlash,
+    },
+
+    [MOVE_MIMIC_SHADE] = // Project Grounded: Kecleon (neemt de kleur aan van wat hem raakte)
+    {
+        .name = COMPOUND_STRING("Mimic Shade"),
+        .description = COMPOUND_STRING(
+            "Takes the type of the last\n"
+            "move that hit the user."),
+        .effect = EFFECT_MIMIC_SHADE,
+        .power = 70,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FeintAttack,
+    },
+
+    [MOVE_BUNNY_HOP] = // Project Grounded: Lopunny (Dragon Dance-kloon)
+    {
+        .name = COMPOUND_STRING("Bunny Hop"),
+        .description = COMPOUND_STRING(
+            "A bouncy hop that raises\n"
+            "Attack and Speed."),
+        .effect = EFFECT_DRAGON_DANCE,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 20,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .danceMove = TRUE,
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_VictoryDance,
+    },
+
+    [MOVE_SKUNK_SPRAY] = // Project Grounded: Skuntank (stinkwolk die alle boosts wegspoelt)
+    {
+        .name = COMPOUND_STRING("Skunk Spray"),
+        .description = COMPOUND_STRING(
+            "A stench that erases stat\n"
+            "changes. May cause flinch."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CLEAR_SMOG,
+        },{
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 20,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ClearSmog,
+    },
+
+    [MOVE_BRAIN_FREEZE] = // Project Grounded: Vanilluxe (ijshoofdpijn; in Snow/Hail altijd een crit)
+    {
+        .name = COMPOUND_STRING("Brain Freeze"),
+        .description = COMPOUND_STRING(
+            "May confuse. Always crits\n"
+            "in snow or hail."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 20,
+        }),
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FreezeDry,
+    },
+
+    [MOVE_JOUST] = // Project Grounded: Escavalier (lans tegen een aanstormende ridder)
+    {
+        .name = COMPOUND_STRING("Joust"),
+        .description = COMPOUND_STRING(
+            "Strikes first and harder\n"
+            "if the foe is faster."),
+        .effect = EFFECT_JOUST,
+        .power = 60,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SmartStrike,
+    },
+
+    [MOVE_SOLSTICE_GATE] = // Project Grounded: Stonjourner (zonnewende-poort; zon of sneeuw x1,5)
+    {
+        .name = COMPOUND_STRING("Solstice Gate"),
+        .description = COMPOUND_STRING(
+            "Hits both foes. Stronger\n"
+            "in sun, snow or hail."),
+        .effect = EFFECT_SOLSTICE_GATE,
+        .power = 100,
+        .type = TYPE_ROCK,
+        .accuracy = 90,
+        .pp = 10,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DiamondStorm,
+    },
+
+    [MOVE_REV_UP] = // Project Grounded: Revavroom (gas geven: snel en daarna sterker)
+    {
+        .name = COMPOUND_STRING("Rev Up"),
+        .description = COMPOUND_STRING(
+            "A fast ram that raises the\n"
+            "user's Attack and Speed."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
+            .self = TRUE,
+            .chance = 100,
+        },{
+            .moveEffect = MOVE_EFFECT_ATK_PLUS_1,
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SpinOut,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

@@ -1659,6 +1659,12 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             else if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_DEF))
                 ADJUST_SCORE(-8);
             break;
+        case EFFECT_EYE_SPOTS: // Project Grounded
+            if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK)
+             && !CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPEED)
+             && !(IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE) && CanBeConfused(battlerDef)))
+                ADJUST_SCORE(-10);
+            break;
         case EFFECT_FLASH:
             if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ACC)
              && !CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK)
@@ -5213,6 +5219,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ATK));
         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_DEF));
         break;
+    case EFFECT_EYE_SPOTS: // Project Grounded
+        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ATK));
+        ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_SPEED));
+        if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE))
+            IncreaseConfusionScore(battlerAtk, battlerDef, move, &score);
+        break;
     case EFFECT_FLASH:
         // Accuracy plus de relevantste van Attack / Sp. Atk, zodat Flash niet zwaarder weegt dan Tickle
         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ACC));
@@ -6170,6 +6182,7 @@ static s32 AI_ForceSetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 
     case EFFECT_IMPRISON:
     case EFFECT_TICKLE:
     case EFFECT_FLASH:
+    case EFFECT_EYE_SPOTS: // Project Grounded
     case EFFECT_COSMIC_POWER:
     case EFFECT_BULK_UP:
     case EFFECT_CALM_MIND:
@@ -6487,6 +6500,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_MIRROR_COAT:
             case EFFECT_TICKLE:
             case EFFECT_FLASH:
+            case EFFECT_EYE_SPOTS: // Project Grounded
             case EFFECT_SUNNY_DAY:
             case EFFECT_SANDSTORM:
             case EFFECT_HAIL:
@@ -6554,6 +6568,7 @@ static s32 AI_HPAware(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             case EFFECT_SAFEGUARD:
             case EFFECT_TICKLE:
             case EFFECT_FLASH:
+            case EFFECT_EYE_SPOTS: // Project Grounded
             case EFFECT_COSMIC_POWER:
             case EFFECT_BULK_UP:
             case EFFECT_CALM_MIND:

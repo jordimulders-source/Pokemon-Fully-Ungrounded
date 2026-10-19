@@ -954,7 +954,16 @@
 #define MOVE_BURROW_MAZE 890 // Project Grounded: Furret
 #define MOVE_PITCHER_TRAP 891 // Project Grounded: Victreebel
 #define MOVE_PRAISE_HELIX 892 // Project Grounded: Omastar
-#define MOVES_COUNT_GEN9 893
+#define MOVE_EYE_SPOTS 893 // Project Grounded: Masquerain
+#define MOVE_OMEN_STRIKE 894 // Project Grounded: Absol
+#define MOVE_MIMIC_SHADE 895 // Project Grounded: Kecleon
+#define MOVE_BUNNY_HOP 896 // Project Grounded: Lopunny
+#define MOVE_SKUNK_SPRAY 897 // Project Grounded: Skuntank
+#define MOVE_BRAIN_FREEZE 898 // Project Grounded: Vanilluxe
+#define MOVE_JOUST 899 // Project Grounded: Escavalier
+#define MOVE_SOLSTICE_GATE 900 // Project Grounded: Stonjourner
+#define MOVE_REV_UP 901 // Project Grounded: Revavroom
+#define MOVES_COUNT_GEN9 902
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

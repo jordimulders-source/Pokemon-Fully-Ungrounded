@@ -1069,6 +1069,7 @@ extern u16 gLastPrintedMoves[MAX_BATTLERS_COUNT];
 extern u16 gLastMoves[MAX_BATTLERS_COUNT];
 extern u16 gLastLandedMoves[MAX_BATTLERS_COUNT];
 extern u16 gLastHitByType[MAX_BATTLERS_COUNT];
+extern u8 gMimicShadeType[MAX_BATTLERS_COUNT]; // Project Grounded
 extern u16 gLastUsedMoveType[MAX_BATTLERS_COUNT];
 extern u16 gLastResultingMoves[MAX_BATTLERS_COUNT];
 extern u16 gLockedMoves[MAX_BATTLERS_COUNT];

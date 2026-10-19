@@ -4603,6 +4603,36 @@ BattleScript_FlashTryLowerSpAtk::
 BattleScript_FlashEnd::
 	goto BattleScript_MoveEnd
 
+@ Project Grounded: Eye Spots (Masquerain): -2 Attack en -1 Speed; in Pollen Haze ook verward
+BattleScript_EffectEyeSpots::
+	attackcanceler
+	jumpifweatheraffected B_WEATHER_POLLEN_HAZE, BattleScript_EyeSpotsDoMoveAnim
+	jumpifstat BS_TARGET, CMP_GREATER_THAN, STAT_ATK, MIN_STAT_STAGE, BattleScript_EyeSpotsDoMoveAnim
+	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPEED, MIN_STAT_STAGE, BattleScript_CantLowerMultipleStats
+BattleScript_EyeSpotsDoMoveAnim::
+	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
+	attackanimation
+	waitanimation
+	setstatchanger STAT_ATK, 2, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_ALLOW_PTR, BattleScript_EyeSpotsTryLowerSpeed, BIT_SPEED
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_EyeSpotsTryLowerSpeed
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_EyeSpotsTryLowerSpeed::
+	setstatchanger STAT_SPEED, 1, TRUE
+	statbuffchange BS_TARGET, STAT_CHANGE_ALLOW_PTR, BattleScript_EyeSpotsTryConfuse
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_EyeSpotsTryConfuse
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_EyeSpotsTryConfuse::
+	jumpifweatheraffected B_WEATHER_POLLEN_HAZE, BattleScript_EyeSpotsConfuse
+	goto BattleScript_MoveEnd
+BattleScript_EyeSpotsConfuse::
+	jumpifsubstituteblocks BattleScript_MoveEnd
+	jumpifsafeguard BattleScript_MoveEnd
+	seteffectprimary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_CONFUSION
+	goto BattleScript_MoveEnd
+
 BattleScript_CantLowerMultipleStats::
 	pause B_WAIT_TIME_SHORT
 	setmoveresultflags MOVE_RESULT_FAILED

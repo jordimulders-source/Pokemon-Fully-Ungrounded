@@ -1705,6 +1705,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
     }
     else if (gBattleMons[battlerAtk].volatiles.laserFocus
           || MoveAlwaysCrits(move)
+          || (move == MOVE_BRAIN_FREEZE && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SNOW | B_WEATHER_HAIL)) // Project Grounded
           || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
     {
         critChance = CRITICAL_HIT_ALWAYS;
@@ -1790,6 +1791,7 @@ s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     // Guaranteed crits
     else if (gBattleMons[battlerAtk].volatiles.laserFocus
              || MoveAlwaysCrits(move)
+             || (move == MOVE_BRAIN_FREEZE && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SNOW | B_WEATHER_HAIL)) // Project Grounded
              || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
     {
         critChance = CRITICAL_HIT_ALWAYS;
@@ -6736,6 +6738,7 @@ static void Cmd_moveend(void)
                     {
                         gLastLandedMoves[gBattlerTarget] = gCurrentMove;
                         gLastHitByType[gBattlerTarget] = GetBattleMoveType(gCurrentMove);
+                        gMimicShadeType[gBattlerTarget] = GetBattleMoveType(gCurrentMove); // Project Grounded
                         if (!gSpecialStatuses[gBattlerAttacker].dancerUsedMove)
                         {
                             gLastUsedMove = gCurrentMove;

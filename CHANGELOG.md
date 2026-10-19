@@ -19174,3 +19174,15 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Via bestaande TM's** (`GROUNDED_EXTRA_TM_SPECIES` in `make_teachables.py`): Farfetch'd Brick Break, Wynaut/Wobbuffet Trick Room, Regice Calm Mind, Porygon-lijn Volt Switch, Abra-lijn Thunderbolt, Woobat/Swoobat Dazzling Gleam, Helioptile/Heliolisk Flamethrower, Ursaluna Iron Head.
   - **Trainers aangepast:** Tate & Liza 1–5 Slowking → Galar-Slowking; Wally (Meteor Falls) Mankey → Primeape; Eleven Grumpig speciaal (Calm Mind, Psychic, Shadow Ball, Zen Headbutt), Wyrdeer Shadow Ball i.p.v. Hyper Voice; Jenna Torterra Earthquake i.p.v. Head Smash; Fernando 1–5 Toxtricity Volt Switch i.p.v. Shift Gear; Hollis Cradily Ancient Power; Leilani Lilligant Giga Drain; Yi Shy Guy Lilligant Pollen Haze i.p.v. Hurricane; Jonas Porygon2 Ice Beam; Gina & Mia Shroomish Stun Spore; Pip & Pep Slurpuff Fake Tears.
   - Blijft (bewust): Bubble Beam bij Aqua/Magma en Matt, Horatio's OHKO-team, Johnson/Ditto-grappen. Skarmory Baton Pass (Steven) en Dusknoir Knock Off (Stadium Boo) komen goed zodra Baton Pass en Knock Off TM's worden.
+
+### Signature moves ronde 3a (v1.0.0)
+- **Eye Spots** (Masquerain, bij evolutie): Bug status, doel −2 Attack en −1 Speed; in Pollen Haze ook verward.
+- **Omen Strike** (Absol, lv 36): Dark 75, hoge crit; dubbele kracht als het doel deze beurt een statusmove koos of wisselt (de binnenkomende Pokémon krijgt dan de dubbele klap).
+- **Mimic Shade** (Kecleon, lv 32): 70, krijgt het type van de laatste move die Kecleon raakte (anders Normal).
+- **Bunny Hop** (Lopunny, bij evolutie): dans, +1 Attack en +1 Speed.
+- **Skunk Spray** (Skuntank, bij evolutie): Poison 70 zonder contact, wist de stat-veranderingen van het doel, 20% flinch.
+- **Brain Freeze** (Vanilluxe, bij evolutie): Ice 80 speciaal, 20% verwarring, altijd een crit in Snow/Hail.
+- **Joust** (Escavalier, bij evolutie): Steel 60; tegen een sneller doel +1 prioriteit en 100 BP.
+- **Solstice Gate** (Stonjourner, lv 36): Rock 100/90, raakt beide tegenstanders, 1,5× in zon of sneeuw.
+- **Rev Up** (Revavroom, bij evolutie): Steel 40, +1 prioriteit, daarna +1 Speed en +1 Attack.
+- Tests: `signature_moves_4.c`.

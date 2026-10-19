@@ -11035,7 +11035,6 @@ static void AnimTask_SuperSplashFrenzy_Step(u8 taskId)
     struct Task *task = &gTasks[taskId];
     struct Sprite *sprite = &gSprites[task->tSpriteId];
     s32 t = task->tFrame;
-    s32 amp, speed;
 
     if (t >= task->tFrames)
     {
@@ -11044,13 +11043,10 @@ static void AnimTask_SuperSplashFrenzy_Step(u8 taskId)
         DestroyAnimVisualTask(taskId);
         return;
     }
-    // Hoogte loopt op van 6 naar 30 px, tempo van 10 naar 28 (een sprong per 128 eenheden)
-    amp = 6 + (24 * t) / task->tFrames;
-    speed = 10 + (18 * t) / task->tFrames;
-    task->tPhase = (task->tPhase + speed) & 0x7F;
-    sprite->y2 = -Sin(task->tPhase, amp);
-    // Schudden: elke frame een andere kant op, harder naarmate het erger wordt
-    sprite->x2 = (t & 1) ? (1 + amp / 8) : -(1 + amp / 8);
+    // Zelfde huppeltjes als Splash (lage sprongen), maar hyper: een sprong per 4 frames en trillen.
+    task->tPhase = (task->tPhase + 16) & 0x3F;
+    sprite->y2 = -Sin(task->tPhase * 2, 8);
+    sprite->x2 = (t & 1) ? 1 : -1;
     task->tFrame++;
 }
 

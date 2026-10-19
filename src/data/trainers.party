@@ -347,6 +347,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Togekiss
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Thunder Wave
 
 === TRAINER_ED ===
 Name: ED
@@ -2712,6 +2716,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Togekiss
 Level: 71
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Thunder Wave
 
 Roserade
 Level: 71
@@ -3123,6 +3131,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Heliolisk
 Level: 69
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Thunderbolt
+- Volt Switch
+- Bulldoze
+- Thunder Wave
 
 Cherrim
 Level: 69
@@ -4174,6 +4186,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Togekiss
 Level: 85
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Thunder Wave
 
 === TRAINER_CINDY_3 ===
 Name: CINDY
@@ -5147,6 +5163,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Golduck
 Level: 42
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Cavitation
+- Psychic
+- Nasty Plot
+- Power Gem
 
 Poliwrath
 Level: 42
@@ -6900,6 +6920,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Whimsicott
 Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Moonblast
+- Giga Drain
+- Stun Spore
+- Pollen Haze
 
 Stonjourner
 Level: 35
@@ -7288,8 +7312,8 @@ AI: Check Bad Move
 Dustox
 Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Bug Buzz
 - Venom Dust
-- Light Screen
 - Roost
 - Pollen Haze
 
@@ -7907,6 +7931,10 @@ AI: Check Bad Move
 Wobbuffet
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Destiny Bond
 
 Xatu
 Level: 53
@@ -10727,9 +10755,9 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Dusclops
 Level: 71
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Skill Swap
+- Night Shade
 - Protect
-- Will O Wisp
+- Will-O-Wisp
 - Toxic
 
 Octillery
@@ -12042,6 +12070,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Lucario
 Level: 42
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Drain Punch
+- Iron Tail
+- Bone Rush
+- Swords Dance
 
 Poltchageist
 Level: 41
@@ -12075,6 +12107,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Lucario
 Level: 45
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Drain Punch
+- Iron Tail
+- Bone Rush
+- Swords Dance
 
 Poltchageist
 Level: 44
@@ -13050,6 +13086,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Togekiss
 Level: 51
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Thunder Wave
 
 Mantine
 Level: 51
@@ -13578,6 +13618,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Lucario
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Force Palm
+- Metal Claw
+- Bone Rush
+- Swords Dance
 
 Mimikyu
 Level: 36
@@ -13937,6 +13981,10 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Togekiss
 Level: 46
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Thunder Wave
 
 === TRAINER_CYNDY_4 ===
 Name: CYNDY
@@ -13966,6 +14014,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Togekiss
 Level: 49
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Thunder Wave
 
 Ditto
 Level: 49
@@ -13999,6 +14051,10 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Togekiss
 Level: 52
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Thunder Wave
 
 Ditto
 Level: 52
@@ -14362,6 +14418,10 @@ AI: Check Bad Move
 Golduck
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Cavitation
+- Psychic
+- Nasty Plot
+- Power Gem
 
 Lumineon
 Level: 42
@@ -14995,6 +15055,10 @@ AI: Check Bad Move
 Wobbuffet
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Destiny Bond
 
 Bronzong
 Level: 53
@@ -16795,6 +16859,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Wobbuffet
 Level: 27
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Charm
 
 Mime Jr.
 Level: 27
@@ -16882,6 +16950,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Wobbuffet
 Level: 38
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Destiny Bond
 
 Mr_Mime
 Level: 38
@@ -16919,6 +16991,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Wobbuffet
 Level: 41
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Destiny Bond
 
 Mr_Mime
 Level: 41
@@ -16952,6 +17028,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Wobbuffet
 Level: 44
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Destiny Bond
 
 Mr_Mime
 Level: 44
@@ -16985,6 +17065,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Wobbuffet
 Level: 47
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Destiny Bond
 
 Mr_Mime
 Level: 47
@@ -17463,6 +17547,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Whimsicott
 Level: 47
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Moonblast
+- Giga Drain
+- Stun Spore
+- Pollen Haze
 
 === TRAINER_JENNA ===
 Name: JENNA
@@ -17529,6 +17617,10 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Whimsicott
 Level: 44
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+- Moonblast
+- Giga Drain
+- Stun Spore
+- Pollen Haze
 
 Bellossom
 Level: 44
@@ -17555,6 +17647,10 @@ IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
 Whimsicott
 Level: 54
 IVs: 7 HP / 7 Atk / 7 Def / 7 SpA / 7 SpD / 7 Spe
+- Moonblast
+- Giga Drain
+- Stun Spore
+- Pollen Haze
 
 Toxicroak
 Level: 53
@@ -17581,6 +17677,10 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Whimsicott
 Level: 57
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Moonblast
+- Giga Drain
+- Stun Spore
+- Pollen Haze
 
 Toxicroak
 Level: 56
@@ -17611,6 +17711,10 @@ IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 Whimsicott
 Level: 60
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Moonblast
+- Giga Drain
+- Stun Spore
+- Pollen Haze
 
 Toxicroak
 Level: 59
@@ -17645,6 +17749,10 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 Whimsicott
 Level: 63
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Moonblast
+- Giga Drain
+- Stun Spore
+- Pollen Haze
 
 Toxicroak
 Level: 62
@@ -17992,6 +18100,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Heliolisk
 Level: 63
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Thunderbolt
+- Volt Switch
+- Bulldoze
+- Thunder Wave
 
 === TRAINER_HARRISON ===
 Name: HARRISON
@@ -18216,6 +18328,10 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Wobbuffet
 Level: 62
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Destiny Bond
 
 Veluza
 Level: 62
@@ -18741,6 +18857,10 @@ AI: Basic Trainer
 Wobbuffet
 Level: 29
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Charm
 
 Diggersby
 Level: 29
@@ -19829,6 +19949,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Whimsicott
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Moonblast
+- Giga Drain
+- Stun Spore
+- Pollen Haze
 
 === TRAINER_LEA_AND_JED ===
 Name: LEA & JED
@@ -21062,6 +21186,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Togekiss
 Level: 60
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Air Slash
+- Dazzling Gleam
+- Aura Sphere
+- Thunder Wave
 
 Wigglytuff
 Level: 60
@@ -21982,6 +22110,10 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Lucario
 Level: 37
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Force Palm
+- Metal Claw
+- Bone Rush
+- Swords Dance
 
 Lilligant_Hisui
 Level: 37
@@ -22450,6 +22582,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Heliolisk
 Level: 58
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Thunderbolt
+- Volt Switch
+- Bulldoze
+- Thunder Wave
 
 Scovillain
 Level: 58
@@ -23227,6 +23363,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Heliolisk
 Level: 49
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Thunderbolt
+- Volt Switch
+- Bulldoze
+- Thunder Wave
 
 === TRAINER_CALLIE ===
 Name: CALLIE
@@ -23335,6 +23475,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Cinccino
 Level: 52
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Tail Slap
+- Rock Blast
+- Bullet Seed
+- Sing
 
 === TRAINER_CRISTIN_1 ===
 Name: CRISTIN
@@ -26844,6 +26988,10 @@ Double Battle: No
 Wobbuffet
 Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Destiny Bond
 
 Persian
 Level: 46
@@ -38992,6 +39140,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Wobbuffet
 Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Counter
+- Mirror Coat
+- Encore
+- Destiny Bond
 
 Indeedee
 Level: 66

@@ -19137,3 +19137,14 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Marowak** en **Alola-Marowak** 75/95/110/50/80/55 (was 60/80/110/50/80/45). **Omastar** 75/60/125/120/80/65 (was 70/60/125/115/70/55). **Kabutops** 70/120/105/65/75/90 (was 60/115/105/65/70/80), Sharpness in slot 2 (ook in Brocks Stadium-team).
   - **Garbodor** Recover lv 36. **Gimmighoul** en **Gholdengo** leren Pay Day (lv 1).
   - Signature moves en de nieuwe abilities (Fake Foliage, Landfill, Hive Queen) volgen in ronde 2.
+
+### Set-audit trainers (v1.0.0)
+- Alle trainersets nagelopen (script: leerbaarheid, dubbele moves, geen/alleen zwakke aanvallen). Trainers zonder vaste moves kregen bij Pokémon die alles op lv 1 leren (steen-/vriendschapsevoluties) of eindigen op rare level-moves een zwakke standaardset; die hebben nu een vaste set:
+  - **Togekiss** (Alberto, Cyndy 3–5, Edgar, Jared, Kim & Iris, Naomi): Air Slash, Dazzling Gleam, Aura Sphere, Thunder Wave (was Growl/Pound/Sweet Kiss/Life Dew).
+  - **Golduck** (Alice, Douglas): Cavitation, Psychic, Nasty Plot, Power Gem (was Cosmic Power/Psych Up/Amnesia/Stored Power).
+  - **Heliolisk** (Athena, Leonel, Warren, Magma-grunt): Thunderbolt, Volt Switch, Bulldoze, Thunder Wave.
+  - **Whimsicott** (Catherine 1–5, Dez & Luke, Larry, Sophia): Moonblast, Giga Drain, Stun Spore, Pollen Haze.
+  - **Wobbuffet** (Isaac 1–5, Vivi, Honey, Cedric, Everett, Kayla, Nicholas): Counter, Mirror Coat, Encore, Destiny Bond (Charm op lage levels) i.p.v. Charm/Encore/Tickle/Splash.
+  - **Lucario** (Lung, Wyatt, Dylan 2–3): Force Palm/Drain Punch, Metal Claw/Iron Tail, Bone Rush, Swords Dance.
+  - **Cinccino** (Pat): Tail Slap, Rock Blast, Bullet Seed, Sing. **Dustox** (Derek): Bug Buzz i.p.v. Light Screen. **Dusclops** (Quincy): Night Shade i.p.v. Skill Swap.
+  - Bewust niet aangepast: grap-sets (Ditto, Metronome-team, Smeargle, Magikarp, Eviolite-Zubat), Jordi's rematches van Kira & Dan (Nidoking/Nidoqueen/Clamperl hebben daar nog standaardsets). Moves die een soort officieel niet leert (bijv. Bubble Beam, Trick Room-Wobbuffet) blijven: trainers mogen dat.

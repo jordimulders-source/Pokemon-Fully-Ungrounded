@@ -991,7 +991,8 @@
 #define MOVE_SUPER_SPLASH 927 // Project Grounded: TM100, Splash maar dan echt
 #define MOVE_DISCO_INFERNO 928 // Project Grounded: TM99, dansende vuurtrappen
 #define MOVE_OVERKILL 929 // Project Grounded: overtollige schade blijft liggen voor de volgende
-#define MOVES_COUNT_GEN9 930
+#define MOVE_MARIONETTE 930 // Project Grounded: Banette
+#define MOVES_COUNT_GEN9 931
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

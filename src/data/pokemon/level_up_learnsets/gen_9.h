@@ -9813,7 +9813,9 @@ static const struct LevelUpMove sShuppetLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sBanetteLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_MARIONETTE), // Project Grounded: signature
     LEVEL_UP_MOVE( 0, MOVE_DARK_VOID),
+    LEVEL_UP_MOVE( 1, MOVE_MARIONETTE), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_DARK_VOID),
     LEVEL_UP_MOVE( 1, MOVE_MAGIC_COAT),
     LEVEL_UP_MOVE( 1, MOVE_KNOCK_OFF),       

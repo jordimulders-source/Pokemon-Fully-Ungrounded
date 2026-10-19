@@ -9163,6 +9163,59 @@ s32 CalculateMoveDamageVars(struct DamageContext *ctx)
     return DoMoveDamageCalcVars(ctx);
 }
 
+// Project Grounded: Marionette (Banette). Het doelwit valt zichzelf aan met zijn laatst gebruikte move:
+// eigen Attack/Sp. Atk tegen eigen Defense/Sp. Def, type-effectiviteit tegen zichzelf, STAB, geen crit.
+// Geeft -1 als Marionette faalt (al gebruikt sinds het inwisselen, geen vorige move, statusmove, move
+// zonder vaste kracht), anders de schade (0 = immuun). Met roll = FALSE de gemiddelde rol (voor de AI).
+s32 GetMarionetteDamage(u32 battlerAtk, u32 battlerDef, bool32 roll, uq4_12_t *effectiveness)
+{
+    struct DamageContext ctx = {0};
+    u32 move = gLastMoves[battlerDef];
+    s32 dmg;
+
+    if (gDisableStructs[battlerAtk].marionetteUsed)
+        return -1;
+    if (move == MOVE_NONE || move == MOVE_UNAVAILABLE || move >= MOVES_COUNT || IsZMove(move) || IsMaxMove(move))
+        return -1;
+    if (IsBattleMoveStatus(move) || GetMovePower(move) <= 1)
+        return -1;
+    switch (GetMoveEffect(move))
+    {
+    case EFFECT_FUTURE_SIGHT:
+    case EFFECT_BEAT_UP:
+    case EFFECT_LEVEL_DAMAGE:
+    case EFFECT_PSYWAVE:
+    case EFFECT_FIXED_HP_DAMAGE:
+    case EFFECT_FIXED_PERCENT_DAMAGE:
+    case EFFECT_FINAL_GAMBIT:
+        return -1;
+    default:
+        break;
+    }
+
+    ctx.battlerAtk = ctx.battlerDef = battlerDef;
+    ctx.move = ctx.chosenMove = move;
+    ctx.moveType = GetMoveType(move);
+    ctx.isCrit = FALSE;
+    ctx.randomFactor = FALSE;
+    ctx.updateFlags = FALSE;
+    ctx.isSelfInflicted = FALSE;
+    dmg = CalculateMoveDamage(&ctx);
+    if (effectiveness != NULL)
+        *effectiveness = ctx.typeEffectivenessModifier;
+    if (ctx.typeEffectivenessModifier == UQ_4_12(0.0) || dmg <= 0)
+        return 0;
+
+    if (roll)
+        dmg = dmg * (DMG_ROLL_PERCENT_HI - RandomUniform(RNG_DAMAGE_MODIFIER, 0, DMG_ROLL_PERCENT_HI - DMG_ROLL_PERCENT_LO)) / 100;
+    else
+        dmg = dmg * (DMG_ROLL_PERCENT_HI + DMG_ROLL_PERCENT_LO) / 200;
+    dmg = ApplyModifiersAfterDmgRoll(&ctx, dmg);
+    if (dmg <= 0)
+        dmg = 1;
+    return dmg;
+}
+
 static inline void MulByTypeEffectiveness(struct DamageContext *ctx, uq4_12_t *modifier, enum Type defType)
 {
     uq4_12_t mod = GetTypeModifier(ctx->moveType, defType);

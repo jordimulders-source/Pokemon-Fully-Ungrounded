@@ -1446,6 +1446,10 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
              && !BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPATK))
                 ADJUST_SCORE(-10);
             break;
+        case EFFECT_MARIONETTE: // Project Grounded: faalt zonder bruikbare vorige move van het doelwit
+            if (GetMarionetteDamage(battlerAtk, battlerDef, FALSE, NULL) <= 0)
+                ADJUST_SCORE(-20);
+            break;
         case EFFECT_OLIVE_OIL: // Project Grounded
             if (AI_BattlerAtMaxHp(battlerAtk) && (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN))
                 ADJUST_SCORE(-10);
@@ -4791,6 +4795,18 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
          && AI_ShouldSetUpHazards(battlerAtk, battlerDef, move, aiData))
             ADJUST_SCORE(DECENT_EFFECT);
         break;
+    case EFFECT_MARIONETTE: // Project Grounded: hoog als het doelwit zichzelf hard raakt
+    {
+        s32 dmg = GetMarionetteDamage(battlerAtk, battlerDef, FALSE, NULL);
+        u32 hp = gBattleMons[battlerDef].hp;
+        if (dmg >= (s32)hp)
+            ADJUST_SCORE(BEST_EFFECT);
+        else if (dmg * 2 >= (s32)hp)
+            ADJUST_SCORE(GOOD_EFFECT);
+        else if (dmg * 4 >= (s32)hp)
+            ADJUST_SCORE(DECENT_EFFECT);
+        break;
+    }
     case EFFECT_COLD_SHOULDER: // Project Grounded: zinvol als het doelwit al iets gebruikt heeft
         if (gLastMoves[battlerDef] != MOVE_NONE && gLastMoves[battlerDef] != MOVE_UNAVAILABLE
          && !IsColdShoulderActive(battlerDef))

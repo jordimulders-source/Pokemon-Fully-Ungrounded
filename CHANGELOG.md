@@ -19241,3 +19241,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Disco Inferno** (wordt TM99): Fire fysiek 85, dansmove (Dancer kopieert), 20% verwarring, 10% brand. Animatie: discolichten in wisselende kleuren, een dolle dans en drie vurige trappen.
 - **Overkill** (wordt TM45): Dark fysiek 90. Bij een KO blijft de overtollige schade liggen; de volgende Pokémon die binnenkomt krijgt hem ("The leftover beating hit …!", max. 50% HP, eenmalig). Boots en Magic Guard beschermen; Rapid Spin en Defog ruimen hem op. Animatie: donker veld, dubbele klap, paarse nagloed bij overtollige schade.
 - Tests: `signature_moves_10.c`.
+
+### Marionette, nieuwe Hot Take-animatie (v1.0.0)
+- **Marionette** (Banette, bij evolutie): Ghost status. Banette trekt aan de touwtjes: het doel raakt zichzelf met zijn laatst gebruikte aanval (eigen Attack tegen eigen Defense, type-effectiviteit tegen zichzelf, STAB, geen crit/bijeffecten). Faalt zonder vorige move, na een statusmove of vaste-schade-move, en de tweede keer sinds Banette binnenkwam. Met Prankster immuun voor Dark-types. Animatie: poppenspelersdraden, het doel schokt als een marionet en slaat zichzelf. Tests: `signature_moves_11.c`.
+- **Hot Take** heeft een eigen animatie i.p.v. een Flamethrower-straal: Magmar blaast zich op en roept (rode geluidsringen, boze uitroeptekens), drie korte vuurstoten, het doel wordt rood van woede.

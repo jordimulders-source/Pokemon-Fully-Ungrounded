@@ -1054,6 +1054,7 @@ extern const u8 gBattleAnimMove_HotTake[]; // Project Grounded
 extern const u8 gBattleAnimMove_SuperSplash[]; // Project Grounded
 extern const u8 gBattleAnimMove_DiscoInferno[]; // Project Grounded
 extern const u8 gBattleAnimMove_Overkill[]; // Project Grounded
+extern const u8 gBattleAnimMove_Marionette[]; // Project Grounded
 
 // special animations
 extern const u8 gBattleAnimSpecial_LevelUp[];

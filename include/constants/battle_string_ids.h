@@ -802,6 +802,8 @@ enum StringID
     STRINGID_PKMNBLEWAWAYBRAMBLES, // Project Grounded
     STRINGID_SUPERSPLASHNOTHING, // Project Grounded
     STRINGID_SUPERSPLASHTSUNAMI, // Project Grounded
+    STRINGID_MARIONETTEPULL, // Project Grounded
+    STRINGID_MARIONETTEHIT, // Project Grounded
     STRINGID_COUNT
 };
 

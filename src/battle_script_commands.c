@@ -19427,6 +19427,32 @@ void BS_JumpIfCantBeDrowsy(void)
 }
 
 // Project Grounded: Olive Oil (Arboliva). Faalt alleen als er niets te helen én geen terrein te zetten is.
+// Project Grounded: Marionette (Banette). Berekent de schade die het doelwit zichzelf doet met zijn
+// laatst gebruikte move (GetMarionetteDamage) en zet die klaar als passieve schade. Springt bij falen of
+// immuniteit. MULTISTRING_CHOOSER: 0 gewoon, 1 super effective, 2 not very effective.
+void BS_TryMarionette(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+    uq4_12_t effectiveness = UQ_4_12(1.0);
+    s32 dmg = GetMarionetteDamage(gBattlerAttacker, gBattlerTarget, TRUE, &effectiveness);
+
+    if (dmg <= 0)
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+        return;
+    }
+    gDisableStructs[gBattlerAttacker].marionetteUsed = TRUE;
+    PREPARE_MOVE_BUFFER(gBattleTextBuff1, gLastMoves[gBattlerTarget]);
+    SetPassiveDamageAmount(gBattlerTarget, dmg);
+    if (effectiveness > UQ_4_12(1.0))
+        gBattleCommunication[MULTISTRING_CHOOSER] = 1;
+    else if (effectiveness < UQ_4_12(1.0))
+        gBattleCommunication[MULTISTRING_CHOOSER] = 2;
+    else
+        gBattleCommunication[MULTISTRING_CHOOSER] = 0;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 void BS_JumpIfOliveOilFails(void)
 {
     NATIVE_ARGS(const u8 *jumpInstr);

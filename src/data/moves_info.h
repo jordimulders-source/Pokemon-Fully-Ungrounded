@@ -23370,6 +23370,29 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Overkill,
     },
 
+    [MOVE_MARIONETTE] = // Project Grounded: Banette (de pop trekt nu zelf aan de touwtjes)
+    {
+        .name = COMPOUND_STRING("Marionette"),
+        .description = COMPOUND_STRING(
+            "Makes the foe hit itself\n"
+            "with its last-used move."),
+        .effect = EFFECT_MARIONETTE,
+        .power = 0,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresSubstitute = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Marionette,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

@@ -39385,22 +39385,74 @@ CounterfeitBall_Normal:
 	waitforvisualfinish
 	end
 
-@ Project Grounded: Hot Take. Eerst een luidruchtige mening (Uproar-ring en gekartelde noten), dan het vuur.
+@ Project Grounded: Hot Take. Een hete mening wordt geroepen: de gebruiker zet een grote mond op (opblazen,
+@ rood/oranje geluidsringen, oranje 'uitroeptekens'), drie losse vurige woorden vliegen naar het doelwit
+@ (korte vuurstoten, geen straal) en het doelwit loopt rood aan van woede en schudt.
 gBattleAnimMove_HotTake::
-	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
 	loadspritegfx ANIM_TAG_THIN_RING
-	createvisualtask AnimTask_UproarDistortion, 2, 0
-	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB_RED, 8
+	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
+	loadspritegfx ANIM_TAG_SMALL_EMBER
+	loadspritegfx ANIM_TAG_ANGER
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_JAGGED_MUSIC_NOTE, 0, 12, 12, RGB(31, 10, 0)
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -6, -6, 6, ANIM_ATTACKER, 0
 	createvisualtask SoundTask_PlayDoubleCry, 2, ANIM_ATTACKER, DOUBLE_CRY_GROWL
+	createvisualtask AnimTask_UproarDistortion, 2, 0
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB(31, 14, 0), 10
 	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, 29, -12, 0
 	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, -12, -29, 1
-	delay 16
+	delay 10
 	createvisualtask AnimTask_UproarDistortion, 2, 0
-	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB_RED, 8
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB_RED, 12
 	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, 24, -24, 1
 	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, -24, -24, 0
+	delay 14
+	loopsewithpan SE_M_EMBER, SOUND_PAN_ATTACKER, 6, 3
+	createsprite gEmberSpriteTemplate, ANIM_TARGET, 2, 20, 0, -14, -8, 16, 0
+	delay 6
+	createsprite gEmberSpriteTemplate, ANIM_TARGET, 2, 20, 0, 12, 4, 16, 0
+	delay 6
+	createsprite gEmberSpriteTemplate, ANIM_TARGET, 2, 20, 0, 0, -2, 16, 0
+	delay 10
+	playsewithpan SE_M_FLAME_WHEEL, SOUND_PAN_TARGET
+	call EmberFireHit
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 0, 13, RGB_RED
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 3, 0, 16, 1
+	createsprite gAngerMarkSpriteTemplate, ANIM_TARGET, 2, 1, -20, -28
+	playsewithpan SE_M_SWAGGER2, SOUND_PAN_TARGET
+	call EmberFireHit
+	delay 10
+	createsprite gAngerMarkSpriteTemplate, ANIM_TARGET, 2, 1, 20, -28
+	playsewithpan SE_M_SWAGGER2, SOUND_PAN_TARGET
+	delay 8
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 13, 0, RGB_RED
 	waitforvisualfinish
-	goto gBattleAnimMove_Flamethrower
+	end
+
+@ Project Grounded: Marionette (Banette). Dunne poppenspelersdraden van Banette naar het doelwit
+@ (AnimTask_Marionette), het doelwit wordt schokkerig omhooggetrokken als een marionet en slaat zichzelf.
+gBattleAnimMove_Marionette::
+	loadspritegfx ANIM_TAG_IMPACT
+	simple_palette_blend selector=F_PAL_BG, delay=1, initial_blend_y=0, target_blend_y=9, color=RGB(5, 0, 9)
+	waitforvisualfinish
+	createvisualtask AnimTask_Marionette, 2
+	playsewithpan SE_M_STRING_SHOT, SOUND_PAN_ATTACKER
+	delay 14
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_TARGET
+	delay 12
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_TARGET
+	delay 12
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_TARGET
+	delay 12
+	playsewithpan SE_M_TAIL_WHIP, SOUND_PAN_TARGET
+	delay 14
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_TARGET, 2, x=0, y=0, relative_to=ANIM_TARGET, animation=0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 10, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 10, 0, RGB_WHITE
+	waitforvisualfinish
+	simple_palette_blend selector=F_PAL_BG, delay=1, initial_blend_y=9, target_blend_y=0, color=RGB(5, 0, 9)
+	waitforvisualfinish
+	end
 
 @ Project Grounded: Kusarigama. Accelgor zwiept een sikkel aan een ketting in een boog naar het doelwit;
 @ de sikkel bijt vast (snee + schok) en wordt rammelend teruggetrokken.

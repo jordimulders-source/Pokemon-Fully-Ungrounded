@@ -132,6 +132,10 @@ GROUNDED_CUSTOM_TEACHABLES["MOVE_LASER_BEAM"] = {"like": set(), "types": set(), 
     "Inkay", "Malamar", "Hatterene", "Espathra", "Calyrex", "CalyrexIce", "CalyrexShadow", "Girafarig", "Farigiraf",
 }}
 # Machine Learning (TM54, Wattson): machine-Pokémon, vooral die door een soort AI bestuurd kunnen worden.
+# Pyukumuku is Water maar kan geen water spuiten (Jordi): geen water-aanvallen via TM.
+NO_WATER_ATTACKS = {"Pyukumuku"}
+for _m in ("MOVE_SELTZER_SURGE", "MOVE_LAGER_LAGOON", "MOVE_VINTAGE_SPILL"):
+    GROUNDED_CUSTOM_TEACHABLES[_m]["exclude"] = NO_WATER_ATTACKS
 GROUNDED_CUSTOM_TEACHABLES["MOVE_MACHINE_LEARNING"] = {"like": set(), "types": set(), "species": {
     "Porygon", "Porygon2", "PorygonZ", "Magnemite", "Magneton", "Magnezone", "Rotom", "Klink", "Klang", "Klinklang",
     "Genesect", "Magearna", "IronBundle", "IronHands", "IronJugulis", "IronMoth", "IronThorns", "IronValiant",
@@ -210,7 +214,7 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
 
         repo_species_teachables = list(filter(lambda m: m in repo_teachables, all_learnables[species_upper]))
         for move, rule in GROUNDED_CUSTOM_TEACHABLES.items():
-            if move in repo_teachables and move not in repo_species_teachables and (
+            if move in repo_teachables and move not in repo_species_teachables and species.group("name") not in rule.get("exclude", set()) and (
                 ({rule["like"]} if isinstance(rule["like"], str) else rule["like"]) & set(all_learnables[species_upper])
                 or learnset_types.get(species.group("name"), set()) & rule["types"]
                 or species.group("name") in rule.get("species", set())

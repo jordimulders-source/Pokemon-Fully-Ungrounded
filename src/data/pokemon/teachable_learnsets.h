@@ -30076,9 +30076,6 @@ static const u16 sPyukumukuTeachableLearnset[] = {
     MOVE_SWAGGER,
     MOVE_TAUNT,
     MOVE_TOXIC,
-    MOVE_SELTZER_SURGE,
-    MOVE_LAGER_LAGOON,
-    MOVE_VINTAGE_SPILL,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PYUKUMUKU

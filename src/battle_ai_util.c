@@ -1905,6 +1905,7 @@ bool32 IsHazardMove(u32 move)
     case EFFECT_STICKY_WEB:
     case EFFECT_STONE_AXE:
     case EFFECT_TOXIC_SPIKES:
+    case EFFECT_BRAMBLE_LASH: // Project Grounded
         return TRUE;
     }
 
@@ -3354,6 +3355,8 @@ static bool32 PartyBattlerShouldAvoidHazards(u32 currBattler, u32 switchBattler)
         hazardDamage += GetStealthHazardDamageByTypesAndHP(TYPE_SIDE_HAZARD_SHARP_STEEL, type1, type2, maxHp);
     if (IsHazardOnSide(side, HAZARDS_MOAI_WATCH)) // Project Grounded
         hazardDamage += GetMoaiWatchDamageByTypesAndHP(type1, type2, maxHp, gSideTimers[side].moaiWatchAmount);
+    if (IsHazardOnSide(side, HAZARDS_BRAMBLES)) // Project Grounded: Bramble Lash, 1/16 voor iedereen
+        hazardDamage += max(1, maxHp / 16);
 
     if (IsHazardOnSide(side, HAZARDS_SPIKES) && ((type1 != TYPE_FLYING && type2 != TYPE_FLYING
         && ability != ABILITY_LEVITATE && holdEffect != HOLD_EFFECT_AIR_BALLOON)

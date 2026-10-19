@@ -1465,6 +1465,12 @@ bool32 IsBelchPreventingMove(u32 battler, u32 move)
 // Dynamax bypasses all selection prevention except Taunt and Assault Vest.
 #define DYNAMAX_BYPASS_CHECK    (!IsGimmickSelected(battler, GIMMICK_DYNAMAX) && GetActiveGimmick(battler) != GIMMICK_DYNAMAX)
 
+// Project Grounded: Cold Shoulder geldt alleen in de beurt na de klap (zie HandleMoveEndMoveBlock)
+bool32 IsColdShoulderActive(u32 battler)
+{
+    return gDisableStructs[battler].coldShoulderTurn != 0 && gDisableStructs[battler].coldShoulderTurn == gBattleTurnCounter;
+}
+
 u32 TrySetCantSelectMoveBattleScript(u32 battler)
 {
     u32 limitations = 0;
@@ -1519,6 +1525,22 @@ u32 TrySetCantSelectMoveBattleScript(u32 battler)
         else
         {
             gSelectionBattleScripts[battler] = BattleScript_SelectingTormentedMove;
+            limitations++;
+        }
+    }
+
+    // Project Grounded: Cold Shoulder, de laatst gebruikte move kan deze beurt niet
+    if (DYNAMAX_BYPASS_CHECK && GetActiveGimmick(battler) != GIMMICK_Z_MOVE && move == gLastMoves[battler] && move != MOVE_STRUGGLE && IsColdShoulderActive(battler))
+    {
+        gCurrentMove = move;
+        if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
+        {
+            gPalaceSelectionBattleScripts[battler] = BattleScript_SelectingTormentedMoveInPalace;
+            gProtectStructs[battler].palaceUnableToUseMove = TRUE;
+        }
+        else
+        {
+            gSelectionBattleScripts[battler] = BattleScript_SelectingColdShoulderMove;
             limitations++;
         }
     }
@@ -1755,7 +1777,8 @@ u32 CheckMoveLimitations(u32 battler, u8 unusableMoves, u16 check)
         else if (check & MOVE_LIMITATION_DISABLED && move == gDisableStructs[battler].disabledMove)
             unusableMoves |= 1u << i;
         // Torment
-        else if (check & MOVE_LIMITATION_TORMENTED && move == gLastMoves[battler] && gBattleMons[battler].volatiles.torment == TRUE)
+        else if (check & MOVE_LIMITATION_TORMENTED && move == gLastMoves[battler] && move != MOVE_STRUGGLE
+              && (gBattleMons[battler].volatiles.torment == TRUE || IsColdShoulderActive(battler))) // Project Grounded: Cold Shoulder
             unusableMoves |= 1u << i;
         // Taunt
         else if (check & MOVE_LIMITATION_TAUNT && gDisableStructs[battler].tauntTimer && IsBattleMoveStatus(move))
@@ -2969,6 +2992,9 @@ static enum MoveCanceler CancelerMultihitMoves(struct BattleContext *ctx)
             SetRandomMultiHitCounter();
         }
 
+        // Project Grounded: Counterfeit Ball, 1 op 10 is de laatste bal een nep-Master Ball (altijd een crit)
+        gBattleStruct->counterfeitMasterBall = (ctx->currentMove == MOVE_COUNTERFEIT_BALL && RandomChance(RNG_COUNTERFEIT_BALL, 1, 10));
+
         PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
     }
     else if (GetMoveStrikeCount(ctx->currentMove) > 1)
@@ -3558,6 +3584,10 @@ bool32 CanAbilityBlockMove(u32 battlerAtk, u32 battlerDef, enum Ability abilityA
     case ABILITY_BULLETPROOF:
         if (IsBallisticMove(move))
             battleScriptBlocksMove = BattleScript_SoundproofProtected;
+        break;
+    case ABILITY_UNAWARE: // Project Grounded: Dim Mak, wie niets merkt heeft geen drukpunten
+        if (GetMoveEffect(move) == EFFECT_DIM_MAK)
+            battleScriptBlocksMove = BattleScript_DimMakUnaware;
         break;
     case ABILITY_GOOD_AS_GOLD:
         if (IsBattleMoveStatus(move))
@@ -4365,6 +4395,19 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
             if (TryChangeBattleWeather(battler, BATTLE_WEATHER_POLLEN_HAZE, gLastUsedAbility))
             {
                 BattleScriptPushCursorAndCallback(BattleScript_PollenSeasonActivates);
+                effect++;
+            }
+            break;
+        case ABILITY_TRADE_WIND: // Project Grounded: Pidove-lijn en Ducklett-lijn, 3 beurten Tailwind
+            if (!gSpecialStatuses[battler].switchInAbilityDone
+             && !(gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND))
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
+                gSideStatuses[GetBattlerSide(battler)] |= SIDE_STATUS_TAILWIND;
+                gSideTimers[GetBattlerSide(battler)].tailwindTimer = 3;
+                SaveBattlerAttacker(gBattlerAttacker);
+                gBattlerAttacker = battler;
+                BattleScriptPushCursorAndCallback(BattleScript_TradeWindActivates);
                 effect++;
             }
             break;
@@ -7409,6 +7452,14 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
     case EFFECT_KUSARIGAMA: // Project Grounded: Accelgor, de ketting-sikkel vangt wie wegvlucht
         if (IsBattlerSwitchingThisTurn(battlerDef))
             basePower *= 2;
+        break;
+    case EFFECT_JUMP_SCARE: // Project Grounded: Boo! In de eerste beurt na het binnenkomen (zoals Fake Out) dubbel
+        if (gDisableStructs[battlerAtk].isFirstTurn)
+            basePower *= 2;
+        break;
+    case EFFECT_UPDRAFT: // Project Grounded: opwaartse wind met Tailwind in de rug
+        if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_TAILWIND)
+            basePower = basePower * 3 / 2;
         break;
     case EFFECT_JOUST: // Project Grounded: Escavalier, lans tegen een snellere aanvaller
         if (IsJoustTargetFaster(battlerAtk, battlerDef))

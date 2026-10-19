@@ -4101,6 +4101,7 @@ static const struct LevelUpMove sMagbyLevelUpLearnset[] = {
     LEVEL_UP_MOVE(24, MOVE_SCARY_FACE),
     LEVEL_UP_MOVE(28, MOVE_FIRE_PUNCH),
     LEVEL_UP_MOVE(32, MOVE_LAVA_PLUME),
+    LEVEL_UP_MOVE(33, MOVE_HOT_TAKE), // Project Grounded: signature
     LEVEL_UP_MOVE(36, MOVE_LOW_KICK),
     LEVEL_UP_MOVE(40, MOVE_FLAMETHROWER),
     LEVEL_UP_MOVE(44, MOVE_SUNNY_DAY),
@@ -4119,6 +4120,7 @@ static const struct LevelUpMove sMagmarLevelUpLearnset[] = {
     LEVEL_UP_MOVE(20, MOVE_CONFUSE_RAY),
     LEVEL_UP_MOVE(24, MOVE_SCARY_FACE),
     LEVEL_UP_MOVE(28, MOVE_FIRE_PUNCH),
+    LEVEL_UP_MOVE(33, MOVE_HOT_TAKE), // Project Grounded: signature
     LEVEL_UP_MOVE(34, MOVE_LAVA_PLUME),
     LEVEL_UP_MOVE(40, MOVE_LOW_KICK),
     LEVEL_UP_MOVE(46, MOVE_FLAMETHROWER),
@@ -4130,6 +4132,8 @@ static const struct LevelUpMove sMagmarLevelUpLearnset[] = {
 
 #if P_GEN_4_CROSS_EVOS
 static const struct LevelUpMove sMagmortarLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_HOT_TAKE), // Project Grounded: signature
+    LEVEL_UP_MOVE( 1, MOVE_HOT_TAKE), // Project Grounded
     LEVEL_UP_MOVE( 1, MOVE_LEER),
     LEVEL_UP_MOVE( 1, MOVE_EMBER),
     LEVEL_UP_MOVE( 1, MOVE_SMOKESCREEN),
@@ -21794,6 +21798,7 @@ static const struct LevelUpMove sBramblinLevelUpLearnset[] = {
     LEVEL_UP_MOVE(21, MOVE_HEX),
     LEVEL_UP_MOVE(25, MOVE_MEGA_DRAIN),
     LEVEL_UP_MOVE(29, MOVE_DISABLE),
+    LEVEL_UP_MOVE(30, MOVE_BRAMBLE_LASH), // Project Grounded: signature
     LEVEL_UP_MOVE(35, MOVE_PHANTOM_FORCE),
     LEVEL_UP_MOVE(40, MOVE_GIGA_DRAIN),
     LEVEL_UP_MOVE(45, MOVE_CURSE),
@@ -21803,6 +21808,7 @@ static const struct LevelUpMove sBramblinLevelUpLearnset[] = {
 };
 
 static const struct LevelUpMove sBrambleghastLevelUpLearnset[] = {
+    LEVEL_UP_MOVE( 0, MOVE_BRAMBLE_LASH), // Project Grounded: signature
     LEVEL_UP_MOVE( 1, MOVE_DEFENSE_CURL),
     LEVEL_UP_MOVE( 1, MOVE_ROLLOUT),
     LEVEL_UP_MOVE( 1, MOVE_ASTONISH),
@@ -21813,6 +21819,7 @@ static const struct LevelUpMove sBrambleghastLevelUpLearnset[] = {
     LEVEL_UP_MOVE(21, MOVE_HEX),
     LEVEL_UP_MOVE(25, MOVE_MEGA_DRAIN),
     LEVEL_UP_MOVE(29, MOVE_DISABLE),
+    LEVEL_UP_MOVE(30, MOVE_BRAMBLE_LASH), // Project Grounded
     LEVEL_UP_MOVE(35, MOVE_PHANTOM_FORCE),
     LEVEL_UP_MOVE(40, MOVE_GIGA_DRAIN),
     LEVEL_UP_MOVE(45, MOVE_CURSE),

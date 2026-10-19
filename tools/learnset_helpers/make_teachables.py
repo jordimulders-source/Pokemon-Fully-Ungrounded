@@ -164,6 +164,45 @@ GROUNDED_CUSTOM_TEACHABLES["MOVE_POLLEN_HAZE"] = {"like": set(), "types": {"TYPE
 GROUNDED_CUSTOM_TEACHABLES["MOVE_ROLLING_THUNDER"] = {"like": {
     "MOVE_HIGH_JUMP_KICK", "MOVE_JUMP_KICK", "MOVE_BLAZE_KICK", "MOVE_ROLLING_KICK",  # zonder Triple Axel/Kick (Milotic, Articuno)
 }, "types": set(), "species": {"Tyrogue", "Hitmonlee", "Sawk"}}
+# VOORSTEL (nog niet actief; activeren zodra de TM's in tms_hms.h staan), moves 920-924:
+# # Cold Shoulder: Ice-types plus koude/afstandelijke soorten die iemand links laten liggen.
+# GROUNDED_CUSTOM_TEACHABLES["MOVE_COLD_SHOULDER"] = {"like": set(), "types": {"TYPE_ICE"}, "species": {
+#     "Persian", "Liepard", "Purrloin", "Meowstic", "Espeon", "Umbreon", "Glameow", "Purugly",
+#     "Absol", "Houndoom", "Zangoose", "Seviper", "Milotic", "Tsareena", "Toxtricity",
+#     "Gothita", "Gothorita", "Gothitelle", "Hatterene", "Grimmsnarl", "Mandibuzz", "Kingambit", "Bisharp",
+#     "Empoleon", "Prinplup", "Piplup", "Dewgong", "Lapras", "Walrein", "Kingdra", "Gyarados",
+# }}
+# # Jump Scare: Ghost-types plus schrikaanjagers (verstoppen zich, springen tevoorschijn, bang maken).
+# GROUNDED_CUSTOM_TEACHABLES["MOVE_JUMP_SCARE"] = {"like": set(), "types": {"TYPE_GHOST"}, "species": {
+#     "Zorua", "Zoroark", "ZoruaHisui", "ZoroarkHisui", "Kecleon", "Sudowoodo", "Ditto", "Smeargle",
+#     "Gengar", "Sableye", "Mawile", "Murkrow", "Honchkrow", "Noibat", "Noivern", "Woobat", "Swoobat",
+#     "Zubat", "Golbat", "Crobat", "Gligar", "Gliscor", "Spinarak", "Ariados", "Joltik", "Galvantula",
+#     "Trapinch", "Wobbuffet", "Wynaut", "Impidimp", "Morgrem", "Grimmsnarl", "Mimikyu", "Hoothoot", "Noctowl",
+#     "Exploud", "Loudred", "Whismur", "Jigglypuff", "Wigglytuff", "Ekans", "Arbok", "Krookodile", "Sandaconda",
+# }}
+# # Dim Mak: vechtsporters/kungfu en Psychic-soorten met handen.
+# GROUNDED_CUSTOM_TEACHABLES["MOVE_DIM_MAK"] = {"like": {"MOVE_FORCE_PALM", "MOVE_DRAIN_PUNCH"}, "types": set(), "species": {
+#     "Mienfoo", "Mienshao", "Hitmonlee", "Hitmonchan", "Hitmontop", "Tyrogue", "Meditite", "Medicham",
+#     "Riolu", "Lucario", "Throh", "Sawk", "Kubfu", "Urshifu", "UrshifuRapidStrike", "Pangoro", "Hawlucha",
+#     "Gallade", "Abra", "Kadabra", "Alakazam", "MrMime", "MrMimeGalar", "MrRime", "MimeJr", "Hypno", "Drowzee",
+#     "Jynx", "Smoochum", "Gothitelle", "Malamar", "Grumpig", "Oranguru", "Slowking", "Lopunny", "Infernape",
+# }}
+# # Updraft: vliegers die met hun vleugels wind maken (zweefvliegers en windmakers), geen ballonnen/zwevers.
+# GROUNDED_CUSTOM_TEACHABLES["MOVE_UPDRAFT"] = {"like": {"MOVE_GUST", "MOVE_TAILWIND", "MOVE_AIR_SLASH"}, "types": set(), "species": {
+#     "Pelipper", "Wingull", "Swanna", "Ducklett", "Unfezant", "Tranquill", "Pidove", "Braviary", "Mandibuzz",
+#     "Vullaby", "Rufflet", "Skarmory", "Corviknight", "Altaria", "Swablu", "Tropius", "Mantine", "Mantyke",
+#     "Kilowattrel", "Wattrel", "Bombirdier", "Flamigo", "Tornadus", "Lugia", "HoOh", "Rayquaza",
+# }}
+# # Counterfeit Ball (wens Jordi): Pokemon die oplichten of voor de gek houden, plus dieven met handen die kunnen gooien.
+# GROUNDED_CUSTOM_TEACHABLES["MOVE_COUNTERFEIT_BALL"] = {"like": set(), "types": set(), "species": {
+#     "Meowth", "Persian", "MeowthAlola", "PersianAlola", "MeowthGalar", "Perrserker",
+#     "Purrloin", "Liepard", "Zorua", "Zoroark", "ZoruaHisui", "ZoroarkHisui", "Sableye", "Mimikyu",
+#     "Impidimp", "Morgrem", "Grimmsnarl", "Croagunk", "Toxicroak", "Nickit", "Thievul", "Grafaiai",
+#     "Murkrow", "Honchkrow", "Sneasel", "Weavile", "SneaselHisui", "Sneasler", "Scraggy", "Scrafty",
+#     "Sandile", "Krokorok", "Krookodile", "Inkay", "Malamar", "Gastly", "Haunter", "Gengar", "Banette",
+#     "MrMime", "MrMimeGalar", "MrRime", "MimeJr", "Shiftry", "Cottonee", "Whimsicott", "Spinda",
+#     "Kecleon", "Gimmighoul", "Gholdengo", "Aipom", "Ambipom", "Hoopa", "HoopaUnbound",
+# }}
 # Set-audit (Jordi 19 okt): bestaande TM's die deze soorten van Jordi ook mogen leren.
 GROUNDED_EXTRA_TM_SPECIES = {
     "MOVE_BATON_PASS": {"Skarmory"},   # TM79 (19 okt): Skarmory-sets van Jordi

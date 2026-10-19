@@ -148,6 +148,7 @@ enum RandomTag
     RNG_METRONOME,
     RNG_MACHINE_LEARNING, // Project Grounded: hallucinatiekans
     RNG_PRAISE_HELIX, // Project Grounded: uitkomst van Praise Helix
+    RNG_COUNTERFEIT_BALL, // Project Grounded: nep-Master Ball bij Counterfeit Ball
     RNG_MOODY_INCREASE,
     RNG_MOODY_DECREASE,
     RNG_PARALYSIS,

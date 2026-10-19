@@ -1722,6 +1722,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
           || MoveAlwaysCrits(move)
           || (move == MOVE_BRAIN_FREEZE && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SNOW | B_WEATHER_HAIL)) // Project Grounded
           || (move == MOVE_COMBINATION && gMultiHitCounter == 1) // Project Grounded: de cross na twee rake jabs
+          || (move == MOVE_COUNTERFEIT_BALL && gMultiHitCounter == 1 && gBattleStruct->counterfeitMasterBall) // Project Grounded: nep-Master Ball
           || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
     {
         critChance = CRITICAL_HIT_ALWAYS;
@@ -1809,6 +1810,7 @@ s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
              || MoveAlwaysCrits(move)
              || (move == MOVE_BRAIN_FREEZE && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SNOW | B_WEATHER_HAIL)) // Project Grounded
              || (move == MOVE_COMBINATION && gMultiHitCounter == 1) // Project Grounded: de cross na twee rake jabs
+             || (move == MOVE_COUNTERFEIT_BALL && gMultiHitCounter == 1 && gBattleStruct->counterfeitMasterBall) // Project Grounded: nep-Master Ball
              || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
     {
         critChance = CRITICAL_HIT_ALWAYS;
@@ -6334,6 +6336,28 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
             effect = TRUE;
         }
         break;
+    case EFFECT_COLD_SHOULDER: // Project Grounded: de volgende beurt kan het doelwit zijn laatste move niet gebruiken
+        if (IsBattlerTurnDamaged(gBattlerTarget)
+         && IsBattlerAlive(gBattlerTarget)
+         && !DoesSubstituteBlockMove(gBattlerAttacker, gBattlerTarget, gCurrentMove)
+         && gDisableStructs[gBattlerTarget].coldShoulderTurn != gBattleTurnCounter + 1)
+        {
+            gDisableStructs[gBattlerTarget].coldShoulderTurn = gBattleTurnCounter + 1;
+            BattleScriptCall(BattleScript_ColdShoulder);
+            effect = TRUE;
+        }
+        break;
+    case EFFECT_BRAMBLE_LASH: // Project Grounded: legt doornen bij het doelwit (een laag)
+        if (!IsHazardOnSide(side, HAZARDS_BRAMBLES)
+         && IsBattlerTurnDamaged(gBattlerTarget)
+         && IsBattlerAlive(gBattlerAttacker))
+        {
+            PushHazardTypeToQueue(side, HAZARDS_BRAMBLES);
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_BRAMBLESSPRANG;
+            BattleScriptCall(BattleScript_BramblesSprang);
+            effect = TRUE;
+        }
+        break;
     case EFFECT_STONE_AXE:
         if (!IsHazardOnSide(side, HAZARDS_STEALTH_ROCK)
          && IsBattlerTurnDamaged(gBattlerTarget)
@@ -6986,6 +7010,8 @@ static void Cmd_moveend(void)
              && gMultiHitCounter
              && !(moveEffect == EFFECT_PRESENT && gBattleStruct->presentBasePower == 0)) // Parental Bond edge case
             {
+                // Project Grounded: Counterfeit Ball, de laatste bal was een nep-Master Ball
+                bool32 fakeMasterBall = (gCurrentMove == MOVE_COUNTERFEIT_BALL && gMultiHitCounter == 1 && gBattleStruct->counterfeitMasterBall);
                 gMultiHitCounter--;
                 if (!IsBattlerAlive(gBattlerTarget) && moveEffect != EFFECT_DRAGON_DARTS)
                     gMultiHitCounter = 0;
@@ -6993,7 +7019,9 @@ static void Cmd_moveend(void)
                 gBattleScripting.multihitString[4]++;
                 if (gMultiHitCounter == 0)
                 {
-                    if (moveEffect == EFFECT_MULTI_HIT
+                    if (fakeMasterBall)
+                        BattleScriptCall(BattleScript_CounterfeitBallMaster);
+                    else if (moveEffect == EFFECT_MULTI_HIT
                      && GetMoveEffectArg_MoveProperty(gCurrentMove) == MOVE_EFFECT_SCALE_SHOT
                      && !NoAliveMonsForEitherParty())
                         BattleScriptCall(BattleScript_ScaleShot);
@@ -8383,6 +8411,13 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
             gBattleStruct->passiveHpUpdate[battler] = GetStealthHazardDamage(TYPE_SIDE_HAZARD_SHARP_STEEL, battler);
             if (gBattleStruct->passiveHpUpdate[battler] != 0)
                 SetDmgHazardsBattlescript(battler, B_MSG_SHARPSTEELDMG);
+        }
+        break;
+    case HAZARDS_BRAMBLES: // Project Grounded: doornen op de grond, ook voor vliegers (alleen Boots/Magic Guard)
+        if (IsBattlerAffectedByHazards(battler, FALSE) && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        {
+            SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+            SetDmgHazardsBattlescript(battler, B_MSG_BRAMBLESDMG);
         }
         break;
     case HAZARDS_MOAI_WATCH: // Project Grounded

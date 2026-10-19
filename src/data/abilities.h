@@ -72,6 +72,13 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
+    [ABILITY_TRADE_WIND] = // Project Grounded: Pidove-lijn en Ducklett-lijn
+    {
+        .name = _("Trade Wind"),
+        .description = COMPOUND_STRING("Brings a Tailwind on entry."),
+        .aiRating = 7,
+    },
+
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("Speed Boost"),

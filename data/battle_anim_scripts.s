@@ -39367,6 +39367,41 @@ gBattleAnimMove_TheOldDays::
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG | F_PAL_BATTLERS, 1, 11, 0, RGB(22, 16, 7)
 	waitforvisualfinish
 	end
+
+@ Project Grounded: Counterfeit Ball. Per klap een spervuur van drie verschillende (nep-)Poke Balls die
+@ openklappen zonder dat er iets uitkomt (AnimTask_CounterfeitBall). Bij de nep-Master Ball (de laatste bal
+@ van de laatste klap, zie counterfeitMasterBall) flitst het doelwit.
+gBattleAnimMove_CounterfeitBall::
+	createvisualtask AnimTask_CounterfeitBall, 2
+	delay 12
+	playsewithpan SE_BALL_BOUNCE_1, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 2, 0, 12, 1
+	jumpretfalse CounterfeitBall_Normal
+	delay 10
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 12, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 14, 0, RGB_WHITE
+CounterfeitBall_Normal:
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Hot Take. Eerst een luidruchtige mening (Uproar-ring en gekartelde noten), dan het vuur.
+gBattleAnimMove_HotTake::
+	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
+	loadspritegfx ANIM_TAG_THIN_RING
+	createvisualtask AnimTask_UproarDistortion, 2, 0
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB_RED, 8
+	createvisualtask SoundTask_PlayDoubleCry, 2, ANIM_ATTACKER, DOUBLE_CRY_GROWL
+	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, 29, -12, 0
+	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, -12, -29, 1
+	delay 16
+	createvisualtask AnimTask_UproarDistortion, 2, 0
+	createsprite gUproarRingSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 0, 0, RGB_RED, 8
+	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, 24, -24, 1
+	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, -24, -24, 0
+	waitforvisualfinish
+	goto gBattleAnimMove_Flamethrower
+
 @ Project Grounded: Kusarigama. Accelgor zwiept een sikkel aan een ketting in een boog naar het doelwit;
 @ de sikkel bijt vast (snee + schok) en wordt rammelend teruggetrokken.
 gBattleAnimMove_Kusarigama::

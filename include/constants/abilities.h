@@ -340,6 +340,7 @@ enum __attribute__((packed)) Ability
     ABILITY_FAKE_FOLIAGE = 316, // Project Grounded: Sudowoodo, doet alsof hij Grass is
     ABILITY_LANDFILL = 317, // Project Grounded: Garbodor, +1 Def/SpDef per beurt in Acid Rain
     ABILITY_HIVE_QUEEN = 318, // Project Grounded: Vespiquen, ruimt eigen hazards op en negeert ze
+    ABILITY_TRADE_WIND = 319, // Project Grounded: Pidove-lijn/Ducklett-lijn, Tailwind bij binnenkomst
     ABILITIES_COUNT_GEN9,
     ABILITIES_COUNT = ABILITIES_COUNT_GEN9,
 };

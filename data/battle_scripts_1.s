@@ -5902,6 +5902,11 @@ BattleScript_SelectingTormentedMove::
 	printselectionstring STRINGID_PKMNCANTUSEMOVETORMENT
 	endselectionscript
 
+@ Project Grounded: Cold Shoulder
+BattleScript_SelectingColdShoulderMove::
+	printselectionstring STRINGID_COLDSHOULDERCANTUSE
+	endselectionscript
+
 BattleScript_MoveUsedIsTormented::
 	printstring STRINGID_PKMNCANTUSEMOVETORMENT
 	waitmessage B_WAIT_TIME_LONG
@@ -6797,7 +6802,12 @@ BattleScript_EffectPackHowl::
 
 BattleScript_MoveEffectConfusion::
 	volatileanimation BS_EFFECT_BATTLER, VOLATILE_CONFUSION
+	jumpifmove MOVE_HOT_TAKE, BattleScript_MoveEffectConfusionHotTake @ Project Grounded
 	printstring STRINGID_PKMNWASCONFUSED
+	waitmessage B_WAIT_TIME_LONG
+	return
+BattleScript_MoveEffectConfusionHotTake:
+	printstring STRINGID_HOTTAKECONFUSED
 	waitmessage B_WAIT_TIME_LONG
 	return
 
@@ -9689,6 +9699,51 @@ BattleScript_HeliotropismSpDef:
 BattleScript_HeliotropismEnd:
 	restoreattacker
 	destroyabilitypopup
+	end3
+
+@ Project Grounded: Cold Shoulder (TM)
+BattleScript_ColdShoulder::
+	printstring STRINGID_COLDSHOULDER
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+@ Project Grounded: Bramble Lash (Bramblin/Brambleghast) legt doornen
+BattleScript_BramblesSprang::
+	printfromtable gDmgHazardsStringIds
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+@ Project Grounded: Counterfeit Ball, de laatste bal was een nep-Master Ball
+BattleScript_CounterfeitBallMaster::
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	printstring STRINGID_FAKEMASTERBALL
+	waitmessage B_WAIT_TIME_LONG
+	copyarray gBattleTextBuff1, sMULTIHIT_STRING, 6
+	printstring STRINGID_HITXTIMES
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+@ Project Grounded: Dim Mak werkt niet op Unaware
+BattleScript_DimMakUnaware::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	printstring STRINGID_DIMMAKUNAWARE
+	waitmessage B_WAIT_TIME_LONG
+	setmoveresultflags MOVE_RESULT_DOESNT_AFFECT_FOE
+	goto BattleScript_MoveEnd
+
+@ Project Grounded: Trade Wind (Pidove-lijn, Ducklett-lijn), 3 beurten Tailwind bij binnenkomst
+BattleScript_TradeWindActivates::
+	pause B_WAIT_TIME_SHORT
+	call BattleScript_AbilityPopUp
+	destroyabilitypopup
+	playanimation BS_ATTACKER, B_ANIM_TAILWIND
+	waitanimation
+	printstring STRINGID_TAILWINDBLEW
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_TryTailwindAbilitiesLoop
+	restoreattacker
 	end3
 
 @ Project Grounded: de stenen beelden van Moai Watch storten in als ze opgeruimd worden.

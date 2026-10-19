@@ -4785,6 +4785,16 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
                 ADJUST_SCORE(DECENT_EFFECT);
         }
         break;
+    case EFFECT_BRAMBLE_LASH: // Project Grounded: doornen leggen, alleen als ze er nog niet liggen
+        if (!IsHazardOnSide(GetBattlerSide(battlerDef), HAZARDS_BRAMBLES)
+         && AI_ShouldSetUpHazards(battlerAtk, battlerDef, move, aiData))
+            ADJUST_SCORE(DECENT_EFFECT);
+        break;
+    case EFFECT_COLD_SHOULDER: // Project Grounded: zinvol als het doelwit al iets gebruikt heeft
+        if (gLastMoves[battlerDef] != MOVE_NONE && gLastMoves[battlerDef] != MOVE_UNAVAILABLE
+         && !IsColdShoulderActive(battlerDef))
+            ADJUST_SCORE(WEAK_EFFECT);
+        break;
     case EFFECT_FORESIGHT:
         if (aiData->abilities[battlerAtk] == ABILITY_SCRAPPY || aiData->abilities[battlerAtk] == ABILITY_MINDS_EYE)
             break;
@@ -6277,6 +6287,7 @@ static s32 AI_ForceSetupFirstTurn(u32 battlerAtk, u32 battlerDef, u32 move, s32 
     case EFFECT_VICTORY_DANCE:
     case EFFECT_CEASELESS_EDGE:
     case EFFECT_STONE_AXE:
+    case EFFECT_BRAMBLE_LASH: // Project Grounded
         ADJUST_SCORE(DECENT_EFFECT);
         break;
     default:
@@ -6760,6 +6771,7 @@ bool32 DoesSideHaveDamagingHazards(u32 side)
         case HAZARDS_STEALTH_ROCK:
         case HAZARDS_STEELSURGE:
         case HAZARDS_MOAI_WATCH: // Project Grounded
+        case HAZARDS_BRAMBLES: // Project Grounded
             return TRUE;
         default:
             return FALSE;

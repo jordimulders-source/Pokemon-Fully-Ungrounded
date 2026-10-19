@@ -122,6 +122,7 @@ struct DisableStruct
     u8 machineLearningCount; // Project Grounded: aantal opeenvolgende beurten Machine Learning
     u8 machineLearningStats; // Project Grounded: stats (bits) die deze beurt nog omhoog gaan
     u16 machineLearningTurn; // Project Grounded: beurt waarin Machine Learning het laatst gebruikt werd
+    u16 coldShoulderTurn; // Project Grounded: in deze beurt kan de laatst gebruikte move niet (Cold Shoulder)
     u8 endured:1;
     u8 tryEjectPack:1;
     u8 octolockedBy:3;
@@ -788,6 +789,7 @@ struct BattleStruct
     u8 nineLivesUsed[NUM_BATTLE_SIDES];
     u8 nineLivesTriggered; // bitmasker per battler, voor het bericht
     u8 bubbleDomeSides; // Project Grounded: Bubble Dome, bit 0/1 per kant met schermen van Bubble Dome, bit 4/5 = net geknapt (melding)
+    bool8 counterfeitMasterBall; // Project Grounded: Counterfeit Ball, de laatste bal is een nep-Master Ball
 };
 
 struct AiBattleData

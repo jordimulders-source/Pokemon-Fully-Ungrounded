@@ -341,6 +341,15 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_HELIXBIRDJESUS]                       = COMPOUND_STRING("BIRD JESUS!"),
     [STRINGID_HELIXSILENT]                          = COMPOUND_STRING("The HELIX is silent."),
     [STRINGID_HIVEQUEENCLEARED]                     = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s\nswarm cleared the way!"),
+    [STRINGID_COLDSHOULDER] = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} gave {B_DEF_NAME_WITH_PREFIX2} the cold shoulder!"), // Project Grounded
+    [STRINGID_COLDSHOULDERCANTUSE] = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} is still getting the cold shoulder and can't bring itself to use {B_CURRENT_MOVE}!\p"), // Project Grounded
+    [STRINGID_DIMMAKUNAWARE] = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} doesn't know where its pressure points are!"), // Project Grounded
+    [STRINGID_FAKEMASTERBALL] = COMPOUND_STRING("It was a fake MASTER BALL! It still hurt."), // Project Grounded
+    [STRINGID_HOTTAKECONFUSED] = COMPOUND_STRING("{B_EFF_NAME_WITH_PREFIX} got ratioed and became confused!"), // Project Grounded
+    [STRINGID_BRAMBLESSPRANG] = COMPOUND_STRING("Thorny brambles sprang up around {B_DEF_TEAM2} team!"), // Project Grounded
+    [STRINGID_BRAMBLESDMG] = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} got snagged on the brambles!"), // Project Grounded
+    [STRINGID_BRAMBLESDISAPPEARED] = COMPOUND_STRING("The brambles around {B_ATK_TEAM2} team withered away!"), // Project Grounded
+    [STRINGID_PKMNBLEWAWAYBRAMBLES] = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} cleared away the brambles!"), // Project Grounded
     [STRINGID_TOTEMGAZEREADY]                       = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} stared into\nthe future. It didn't blink."),
     [STRINGID_TOTEMGAZEDODGE]                       = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} saw it coming!"),
     [STRINGID_BUBBLEDOME]                           = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} blew a dome\nof bubbles over {B_ATK_TEAM2} team!"),
@@ -1025,6 +1034,8 @@ const u16 gDmgHazardsStringIds[] =
     [B_MSG_SPIKESSCATTERED]    = STRINGID_SPIKESSCATTERED,
     [B_MSG_SHARPSTEELFLOATS]   = STRINGID_SHARPSTEELFLOATS,
     [B_MSG_MOAIWATCHDMG]       = STRINGID_MOAIWATCHDMG, // Project Grounded
+    [B_MSG_BRAMBLESDMG]        = STRINGID_BRAMBLESDMG, // Project Grounded
+    [B_MSG_BRAMBLESSPRANG]     = STRINGID_BRAMBLESSPRANG, // Project Grounded
 };
 
 const u16 gSwitchInAbilityStringIds[] =
@@ -1453,6 +1464,7 @@ const u16 gDefogHazardsStringIds[] =
     [HAZARDS_STEALTH_ROCK] = STRINGID_STEALTHROCKDISAPPEAREDFROMTEAM,
     [HAZARDS_STEELSURGE] = STRINGID_SHARPSTEELDISAPPEAREDFROMTEAM,
     [HAZARDS_MOAI_WATCH] = STRINGID_MOAIDISAPPEARED,
+    [HAZARDS_BRAMBLES] = STRINGID_BRAMBLESDISAPPEARED, // Project Grounded
 };
 
 const u16 gSpinHazardsStringIds[] =
@@ -1463,6 +1475,7 @@ const u16 gSpinHazardsStringIds[] =
     [HAZARDS_STEALTH_ROCK] = STRINGID_PKMNBLEWAWAYSTEALTHROCK,
     [HAZARDS_STEELSURGE] = STRINGID_PKMNBLEWAWAYSHARPSTEEL,
     [HAZARDS_MOAI_WATCH] = STRINGID_PKMNBLEWAWAYMOAI,
+    [HAZARDS_BRAMBLES] = STRINGID_PKMNBLEWAWAYBRAMBLES, // Project Grounded
 };
 
 const u8 gText_PkmnIsEvolving[] = _("What?\n{STR_VAR_1} is evolving!");

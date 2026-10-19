@@ -23128,6 +23128,172 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_Abduction,
     },
 
+    [MOVE_COLD_SHOULDER] = // Project Grounded: TM (de koude schouder, Ice)
+    {
+        .name = COMPOUND_STRING("Cold Shoulder"),
+        .description = COMPOUND_STRING(
+            "An icy snub. The foe can't\n"
+            "repeat its last move."),
+        .effect = EFFECT_COLD_SHOULDER,
+        .power = 75,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_HAIL},
+        .battleAnimScript = gBattleAnimMove_IcePunch,
+    },
+
+    [MOVE_JUMP_SCARE] = // Project Grounded: TM (boe!)
+    {
+        .name = COMPOUND_STRING("Jump Scare"),
+        .description = COMPOUND_STRING(
+            "Boo! May flinch. Doubled\n"
+            "on the user's first turn."),
+        .effect = EFFECT_JUMP_SCARE,
+        .power = 80,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Astonish,
+    },
+
+    [MOVE_DIM_MAK] = // Project Grounded: TM (kungfu-drukpunt met een vinger)
+    {
+        .name = COMPOUND_STRING("Dim Mak"),
+        .description = COMPOUND_STRING(
+            "A one-finger strike. Skips\n"
+            "boosts; may paralyze."),
+        .effect = EFFECT_DIM_MAK,
+        .power = 75,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .ignoresTargetDefenseEvasionStages = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_PARALYSIS,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_CALM_MIND},
+        .battleAnimScript = gBattleAnimMove_ForcePalm,
+    },
+
+    [MOVE_UPDRAFT] = // Project Grounded: TM (opwaartse wind)
+    {
+        .name = COMPOUND_STRING("Updraft"),
+        .description = COMPOUND_STRING(
+            "Rising winds strike. 1.5x\n"
+            "power with a Tailwind."),
+        .effect = EFFECT_UPDRAFT,
+        .power = 80,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Twister,
+    },
+
+    [MOVE_COUNTERFEIT_BALL] = // Project Grounded: TM (namaak-Poke Balls)
+    {
+        .name = COMPOUND_STRING("Counterfeit Ball"),
+        .description = COMPOUND_STRING(
+            "Throws 2-5 fake Poké Balls.\n"
+            "Rarely, a fake MASTER BALL."),
+        .effect = EFFECT_MULTI_HIT,
+        .power = 25,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ballisticMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_CounterfeitBall,
+    },
+
+    [MOVE_HOT_TAKE] = // Project Grounded: Magby, Magmar en Magmortar (een omstreden mening)
+    {
+        .name = COMPOUND_STRING("Hot Take"),
+        .description = COMPOUND_STRING(
+            "Spits a fiery opinion. May\n"
+            "leave the foe confused."),
+        .effect = EFFECT_HIT,
+        .power = 85,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 20,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_SUNNY_DAY},
+        .battleAnimScript = gBattleAnimMove_HotTake,
+    },
+
+    [MOVE_BRAMBLE_LASH] = // Project Grounded: Bramblin en Brambleghast (doornranken)
+    {
+        .name = COMPOUND_STRING("Bramble Lash"),
+        .description = COMPOUND_STRING(
+            "Whips with thorns, leaving\n"
+            "brambles on the foe's side."),
+        .effect = EFFECT_BRAMBLE_LASH,
+        .power = 80,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_GROWTH},
+        .battleAnimScript = gBattleAnimMove_PowerWhip,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

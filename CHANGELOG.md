@@ -19208,3 +19208,7 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Abduction** (Beheeyem en Orbeetle, bij evolutie): Psychic 80, −6, dwingt een wissel; in Trick Room prioriteit 0. UFO-animatie.
 - Tests: `signature_moves_5.c`, `_7.c`, `_8.c`.
 - ROM-ruimte: zes ongebruikte vanilla-graphics uit de ROM gehaald (rennende Ruby/Sapphire-Brendan/May, ongebruikte vrouw, ongebruikt gras, kopie van Cut-gras, ongebruikt overworld-palet), ±7,5 KB. Gecontroleerd met een build waarin alle kandidaten `static` waren: alleen deze zes verdwenen.
+
+### Signature moves bij trainers (v1.0.0)
+- 445 trainer-Pokémon die hun signature move al kunnen leren hebben hem nu in hun set (script `sigapply.py` in de sessie-scratchpad: vervangt de zwakste aanval van hetzelfde type, anders een dubbele/zwakke aanval of een statusmove; bij een standaardset wordt de set eerst vast gemaakt). Implosion en Transmutation niet (geen signature).
+- Niet aangepast: gymleiders, Elite Four, Steven, Wally, rivalen, Archie/Maxie en admins, Zinnia, Birch, Stadium-teams en iconische personages (Colress, Keccles, Mimi, Grimsby, SickBlik, Dave), grap-trainers (Johnson, Ditto, Horatio), plus 15 thema-sets zonder zwakke aanval (o.a. Jacki's Explosion-Lunatones, Wailords met Giga Drain).

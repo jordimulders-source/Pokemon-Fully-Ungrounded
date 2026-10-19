@@ -101,6 +101,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Skuntank
 Level: 59
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Acid Rain
+- Night Slash
+- Skunk Spray
+- Explosion
 
 Seismitoad
 Level: 59
@@ -247,6 +251,10 @@ AI: Check Bad Move
 Delcatty
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Nine Lives
+- Covet
+- Double-Edge
+- Hyper Voice
 
 Liepard
 Level: 53
@@ -255,6 +263,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Linoone
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Belly Drum
+- Play Rough
+- Straight Line
+- Rest
 
 Ludicolo
 Level: 53
@@ -322,6 +334,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Victreebel
 Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Sleep Powder
+- Sweet Scent
+- Pitcher Trap
+- Leaf Blade
 
 Dewgong
 Level: 52
@@ -343,6 +359,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Xatu
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Guard Swap
+- Cosmic Power
+- Totem Gaze
+- Giga Drain
 
 Togekiss
 Level: 53
@@ -405,7 +425,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Golduck
 Level: 65
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bubble Beam
+- Cavitation
 - Psych Up
 - Amnesia
 - Stored Power
@@ -531,6 +551,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Dhelmise
 Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Heavy Slam
+- Slam
+- Kelp Shroud
+- Metal Sound
 
 Dusclops
 Level: 48
@@ -599,6 +623,10 @@ Beheeyem
 Level: 61
 Ability: Dimensional Warp
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Meteor Beam
+- Calm Mind
+- Steel Beam
+- Abduction
 
 Claydol
 Level: 61
@@ -645,6 +673,10 @@ AI: Check Bad Move
 Swalot
 Level: 54
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Giga Drain
+- Gulp Down
+- Strength Sap
+- Earth Power
 
 Manectric
 Level: 54
@@ -695,7 +727,7 @@ AI: Check Bad Move
 Relicanth
 Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Bubble Beam
+- Primeval Ward
 - Rock Slide
 - Brine
 - Take Down
@@ -887,10 +919,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Sawk
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Brick Break
+- Mawashi Geri
+- Endure
+- Reversal
 
 Throh
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Vital Throw
+- Ippon
+- Endure
+- Reversal
 
 Mienshao
 Level: 53
@@ -1056,6 +1096,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Cofagrigus
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Curse
+- Pain Split
+- Mummy's Curse
+- Dark Pulse
 
 Golurk
 Level: 53
@@ -1137,7 +1181,7 @@ Lord Helix (Omastar)
 Level: 52
 Variant: 3
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Shell Smash
+- Praise Helix
 - Surf
 - Ice Beam
 - Ancient Power
@@ -1162,7 +1206,7 @@ AAAAAAAAAA (Nidoking)
 Level: 54
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Earth Power
-- Sludge Wave
+- Tyrant Horn
 - Ice Beam
 - Thunderbolt
 
@@ -1212,7 +1256,7 @@ Ability: Technician
 Parasect
 Level: 53
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Spore
+- Fungal Control
 - Seed Bomb
 - Shadow Claw
 - Hyphal Snare
@@ -1845,6 +1889,10 @@ AI: Check Bad Move
 Floatzel
 Level: 23
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Soak
+- Life Buoy
+- Bite
+- Swift
 
 Drifblim
 Level: 23
@@ -1870,6 +1918,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Delcatty
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Assist
+- Sucker Punch
+- Nine Lives
+- Covet
 
 Squawkabilly
 Level: 42
@@ -2020,7 +2072,7 @@ Linoone
 Level: 22
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Sand Attack
-- Headbutt
+- Straight Line
 - Tail Whip
 - Surf
 
@@ -2119,7 +2171,7 @@ Linoone
 Level: 40
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Sand Attack
-- Headbutt
+- Straight Line
 - Tail Whip
 - Surf
 
@@ -2152,7 +2204,7 @@ Level: 40
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Sand Attack
 - Headbutt
-- Tail Whip
+- Burrow Maze
 - Surf
 
 Audino
@@ -2176,7 +2228,7 @@ Linoone
 Level: 43
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Sand Attack
-- Headbutt
+- Straight Line
 - Tail Whip
 - Surf
 
@@ -2209,7 +2261,7 @@ Level: 43
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Sand Attack
 - Headbutt
-- Tail Whip
+- Burrow Maze
 - Surf
 
 Audino
@@ -2233,7 +2285,7 @@ Linoone
 Level: 46
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Sand Attack
-- Headbutt
+- Straight Line
 - Tail Whip
 - Surf
 
@@ -2266,7 +2318,7 @@ Level: 46
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Sand Attack
 - Headbutt
-- Tail Whip
+- Burrow Maze
 - Surf
 
 Audino
@@ -2290,7 +2342,7 @@ Linoone
 Level: 49
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Sand Attack
-- Headbutt
+- Straight Line
 - Tail Whip
 - Surf
 
@@ -2323,7 +2375,7 @@ Level: 49
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Sand Attack
 - Headbutt
-- Tail Whip
+- Burrow Maze
 - Surf
 
 Audino
@@ -2402,7 +2454,7 @@ Ability: Contrary
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Teeter Dance
 - Superpower
-- Dizzy Punch
+- Tipsy Waltz
 - Substitute
 
 Porygon2
@@ -2424,7 +2476,7 @@ Xatu
 Level: 44
 Ability: Magic Bounce
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Future Sight
+- Totem Gaze
 - Night Shade
 - Confuse Ray
 - Teleport
@@ -2712,6 +2764,10 @@ AI: Basic Trainer
 Spiritomb
 Level: 71
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Keystone Curse
+- Dark Pulse
+- Hypnosis
+- Dream Eater
 
 Togekiss
 Level: 71
@@ -3075,6 +3131,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Wailord
 Level: 49
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Body Slam
+- Giga Drain
+- Amnesia
+- Whale Song
 
 Rhydon
 Level: 49
@@ -3109,6 +3169,10 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Wailord
 Level: 52
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+- Giga Drain
+- Amnesia
+- Whale Song
+- Gyro Ball
 
 Rhydon
 Level: 52
@@ -3168,7 +3232,7 @@ Ability: Wonder Skin
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Block
 - Thunder Wave
-- Entrainment
+- Nine Lives
 - Sucker Punch
 
 Doublade @ Eviolite
@@ -3205,7 +3269,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Draco Meteor
 - Hyper Voice
 - Extrasensory
-- Roost
+- The Old Days
 
 Pyroar @ Charcoal
 Level: 44
@@ -3527,6 +3591,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Vanilluxe
 Level: 72
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mirror Coat
+- Brain Freeze
+- Blizzard
+- Sheer Cold
 
 Tinkaton
 Level: 72
@@ -3621,6 +3689,10 @@ AI: Basic Trainer
 Drampa
 Level: 73
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- The Old Days
+- Fly
+- Hyper Voice
+- Outrage
 
 Rhyperior
 Level: 73
@@ -3927,6 +3999,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Spiritomb
 Level: 62
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Keystone Curse
+- Dark Pulse
+- Hypnosis
+- Dream Eater
 
 === TRAINER_VALERIE_3 ===
 Name: VALERIE
@@ -3952,6 +4028,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Spiritomb
 Level: 64
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Keystone Curse
+- Dark Pulse
+- Hypnosis
+- Dream Eater
 
 Sinistcha
 Level: 64
@@ -3981,6 +4061,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Spiritomb
 Level: 68
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Keystone Curse
+- Dark Pulse
+- Hypnosis
+- Dream Eater
 
 Sinistcha
 Level: 68
@@ -4014,6 +4098,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Spiritomb
 Level: 70
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Keystone Curse
+- Dark Pulse
+- Hypnosis
+- Dream Eater
 
 Sinistcha
 Level: 70
@@ -4212,6 +4300,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Lopunny @ Nugget
 Level: 39
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Charm
+- Baton Pass
+- Headbutt
+- Bunny Hop
 
 Granbull @ Nugget
 Level: 39
@@ -4242,6 +4334,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Lopunny @ Nugget
 Level: 42
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Baton Pass
+- Headbutt
+- Agility
+- Bunny Hop
 
 Granbull @ Nugget
 Level: 42
@@ -4276,6 +4372,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Lopunny @ Nugget
 Level: 45
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Headbutt
+- Agility
+- Entrainment
+- Bunny Hop
 
 Granbull @ Nugget
 Level: 45
@@ -4310,6 +4410,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Lopunny @ Nugget
 Level: 42
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Baton Pass
+- Headbutt
+- Agility
+- Bunny Hop
 
 Granbull @ Nugget
 Level: 42
@@ -4347,6 +4451,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Lopunny
 Level: 40
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Baton Pass
+- Headbutt
+- Agility
+- Bunny Hop
 
 Vespiquen
 Level: 40
@@ -4414,6 +4522,10 @@ AI: Check Bad Move
 Kecleon
 Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Flower Trick
+- Conversion 2
+- Flower Shield
+- Mimic Shade
 
 Seviper
 Level: 51
@@ -4430,6 +4542,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Mr. Rime
 Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Mirror Coat
+- Sucker Punch
+- Frosty Tap Dance
+- Psychic
 
 Tangrowth
 Level: 51
@@ -4489,6 +4605,10 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Araquanid
 Level: 70
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Bubble Dome
+- Lunge
+- Liquidation
+- Mirror Coat
 
 === TRAINER_OLIVIA ===
 Name: OLIVIA
@@ -4511,11 +4631,19 @@ Kabutops
 Level: 71
 Ability: Swift Swim
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Leech Life
+- Liquidation
+- Metal Sound
+- Ancient Scythe
 
 Golduck
 Level: 71
 Ability: Swift Swim
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Cavitation
+- Wonder Room
+- Future Sight
+- Teleport
 
 === TRAINER_TIFFANY ===
 Name: TIFFANY
@@ -4550,6 +4678,10 @@ AI: Check Bad Move
 Kecleon
 Level: 65
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Synthesis
+- Foul Play
+- Power Whip
+- Mimic Shade
 
 Seviper
 Level: 65
@@ -4566,6 +4698,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Mr. Rime
 Level: 65
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Sucker Punch
+- Frosty Tap Dance
+- Psychic
+- Teeter Dance
 
 Tangrowth
 Level: 65
@@ -4583,6 +4719,10 @@ AI: Check Bad Move
 Kecleon
 Level: 68
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Synthesis
+- Foul Play
+- Power Whip
+- Mimic Shade
 
 Seviper
 Level: 68
@@ -4599,6 +4739,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Mr. Rime
 Level: 68
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Sucker Punch
+- Frosty Tap Dance
+- Psychic
+- Teeter Dance
 
 Tangrowth
 Level: 68
@@ -4616,6 +4760,10 @@ AI: Check Bad Move
 Kecleon
 Level: 71
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Synthesis
+- Foul Play
+- Power Whip
+- Mimic Shade
 
 Seviper
 Level: 71
@@ -4632,6 +4780,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Mr. Rime
 Level: 71
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Sucker Punch
+- Frosty Tap Dance
+- Psychic
+- Teeter Dance
 
 Tangrowth
 Level: 71
@@ -4649,6 +4801,10 @@ AI: Check Bad Move
 Kecleon
 Level: 74
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Synthesis
+- Foul Play
+- Power Whip
+- Mimic Shade
 
 Seviper
 Level: 74
@@ -4665,6 +4821,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Mr. Rime
 Level: 74
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Sucker Punch
+- Frosty Tap Dance
+- Psychic
+- Teeter Dance
 
 Tangrowth
 Level: 74
@@ -5192,6 +5352,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Masquerain
 Level: 45
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Eye Spots
+- Giga Drain
+- Muddy Water
+- Thunderbolt
 
 === TRAINER_TONY_1 ===
 Name: TONY
@@ -5230,6 +5394,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Lumineon
 Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Lure Light
+- Ice Beam
+- Whirlpool
+- Hurricane
 
 Mantine
 Level: 45
@@ -5272,6 +5440,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Luvdisc
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sweet Kiss
+- Strength Sap
+- Heartbreak
+- Scald
 
 Kilowattrel
 Level: 42
@@ -5402,6 +5574,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Bewear
 Level: 60
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Thrash
+- Pain Split
+- Double-Edge
+- Bear Hug
 
 Eldegoss
 Level: 60
@@ -5504,7 +5680,7 @@ Level: 67
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Toxic
 - Recover
-- Counter
+- Innard Punch
 - Mirror Coat
 
 === TRAINER_HERMAN ===
@@ -5523,6 +5699,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Bibarel
 Level: 67
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Swords Dance
+- Amnesia
+- Superpower
+- Beaver Dam
 
 Roserade
 Level: 67
@@ -5565,6 +5745,10 @@ AI: Check Bad Move
 Relicanth
 Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Primeval Ward
+- Head Smash
+- Hydro Pump
+- Earthquake
 
 Cursola
 Level: 68
@@ -5623,6 +5807,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Dhelmise
 Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Anchor Shot
+- Energy Ball
+- Kelp Shroud
+- Power Whip
 
 Swellow
 Level: 68
@@ -5652,8 +5840,13 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Furret
 Level: 69
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Amnesia
+- Burrow Maze
+- Double-Edge
+- Hyper Voice
 
 /* Project Grounded: Hall of Origin, trap: emissary van de zee (hall_of_origin.py) */
+
 === TRAINER_HOO_THALASSA ===
 Name: THALASSA
 Class: Construct
@@ -5807,6 +6000,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Wailord
 Level: 58
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 === TRAINER_TONY_5 ===
 Name: TONY
@@ -5840,6 +6037,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Wailord
 Level: 61
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 === TRAINER_TITO ===
 Name: TITO
@@ -5886,6 +6087,10 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Falinks
 Level: 69
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
+- Iron Defense
+- Close Combat
+- Megahorn
+- Othismos
 
 Lucario
 Level: 69
@@ -5985,7 +6190,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Ice Punch
 - Thunder Punch
 - Bullet Punch
-- Mach Punch
+- Combination
 
 Hawlucha @ Sitrus Berry
 Level: 39
@@ -6019,6 +6224,10 @@ IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
 Hitmonchan
 Level: 44
 IVs: 13 HP / 13 Atk / 13 Def / 13 SpA / 13 SpD / 13 Spe
+- Close Combat
+- Combination
+- Spinning Backfist
+- Focus Punch
 
 Hawlucha
 Level: 44
@@ -6052,6 +6261,10 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Hitmonchan
 Level: 46
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Close Combat
+- Combination
+- Spinning Backfist
+- Focus Punch
 
 Hawlucha
 Level: 46
@@ -6085,6 +6298,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Hitmonchan
 Level: 48
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Close Combat
+- Combination
+- Spinning Backfist
+- Focus Punch
 
 Hawlucha
 Level: 48
@@ -6118,6 +6335,10 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Hitmonchan
 Level: 50
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+- Close Combat
+- Combination
+- Spinning Backfist
+- Focus Punch
 
 Hawlucha
 Level: 50
@@ -6692,6 +6913,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Araquanid
 Level: 38
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Crunch
+- Leech Life
+- Soak
+- Bubble Dome
 
 Palossand
 Level: 38
@@ -6721,10 +6946,18 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Arboliva
 Level: 44
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Seed Bomb
+- Pollen Haze
+- Energy Ball
+- Olive Oil
 
 Araquanid
 Level: 44
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Leech Life
+- Soak
+- Bubble Dome
+- Lunge
 
 Palossand
 Level: 44
@@ -6754,10 +6987,18 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Arboliva
 Level: 47
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Pollen Haze
+- Energy Ball
+- Olive Oil
+- Terrain Pulse
 
 Araquanid
 Level: 47
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Leech Life
+- Soak
+- Bubble Dome
+- Lunge
 
 Palossand
 Level: 47
@@ -6787,10 +7028,18 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Arboliva
 Level: 50
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Pollen Haze
+- Energy Ball
+- Olive Oil
+- Terrain Pulse
 
 Araquanid
 Level: 50
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Soak
+- Bubble Dome
+- Lunge
+- Liquidation
 
 Palossand
 Level: 50
@@ -6820,10 +7069,18 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Arboliva
 Level: 53
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Energy Ball
+- Olive Oil
+- Terrain Pulse
+- Petal Blizzard
 
 Araquanid
 Level: 53
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Soak
+- Bubble Dome
+- Lunge
+- Liquidation
 
 Palossand
 Level: 53
@@ -6866,7 +7123,7 @@ Donphan
 Level: 32
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ability: Sturdy
-- Rollout
+- Tusk Tumble
 - Ice Shard
 - Knock Off
 - Defense Curl
@@ -6991,6 +7248,10 @@ AI: Check Bad Move
 Linoone
 Level: 41
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Straight Line
+- Seed Bomb
+- Stomping Tantrum
+- Belly Drum
 
 Swellow
 Level: 41
@@ -7095,6 +7356,10 @@ AI: Check Bad Move
 Linoone
 Level: 46
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Stomping Tantrum
+- Belly Drum
+- Play Rough
+- Straight Line
 
 Swellow
 Level: 46
@@ -7128,6 +7393,10 @@ AI: Check Bad Move
 Linoone
 Level: 48
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Belly Drum
+- Play Rough
+- Straight Line
+- Rest
 
 Swellow
 Level: 48
@@ -7161,6 +7430,10 @@ AI: Check Bad Move
 Linoone
 Level: 51
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Belly Drum
+- Play Rough
+- Straight Line
+- Rest
 
 Swellow
 Level: 51
@@ -7194,10 +7467,18 @@ AI: Check Bad Move
 Masquerain
 Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Eye Spots
+- Muddy Water
+- Thunderbolt
+- Bug Buzz
 
 Orbeetle
 Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Abduction
+- Psychic
+- After You
+- Calm Mind
 
 Buzzwole
 Level: 47
@@ -7210,6 +7491,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Beedrill
 Level: 47
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Poison Jab
+- Agility
+- Endeavor
+- Twin Lance
 
 === TRAINER_DONALD ===
 Name: DONALD
@@ -7283,6 +7568,10 @@ AI: Check Bad Move
 Araquanid
 Level: 49
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leech Life
+- Soak
+- Bubble Dome
+- Lunge
 
 Larvesta
 Level: 49
@@ -7299,6 +7588,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Accelgor
 Level: 49
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Kusarigama
+- Recover
+- Bug Buzz
+- Final Gambit
 
 === TRAINER_DEREK ===
 Name: DEREK
@@ -7336,6 +7629,10 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Escavalier
 Level: 28
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Acid Spray
+- Headbutt
+- Joust
+- Iron Defense
 
 === TRAINER_JEFFREY_2 ===
 Name: JEFFREY
@@ -7349,6 +7646,10 @@ AI: Check Bad Move
 Araquanid
 Level: 54
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Soak
+- Bubble Dome
+- Lunge
+- Liquidation
 
 Larvesta
 Level: 54
@@ -7365,6 +7666,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Accelgor
 Level: 54
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Recover
+- Kusarigama
+- Final Gambit
+- Toxic
 
 Yanmega
 Level: 53
@@ -7382,6 +7687,10 @@ AI: Check Bad Move
 Araquanid
 Level: 57
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Soak
+- Bubble Dome
+- Lunge
+- Liquidation
 
 Larvesta
 Level: 57
@@ -7398,6 +7707,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Accelgor
 Level: 57
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Recover
+- Kusarigama
+- Final Gambit
+- Toxic
 
 Yanmega
 Level: 56
@@ -7415,6 +7728,10 @@ AI: Check Bad Move
 Araquanid
 Level: 59
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Soak
+- Bubble Dome
+- Lunge
+- Liquidation
 
 Volcarona
 Level: 59
@@ -7431,6 +7748,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Accelgor
 Level: 59
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Recover
+- Kusarigama
+- Final Gambit
+- Toxic
 
 Yanmega
 Level: 58
@@ -7448,6 +7769,10 @@ AI: Check Bad Move
 Araquanid
 Level: 61
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Soak
+- Bubble Dome
+- Lunge
+- Liquidation
 
 Volcarona
 Level: 61
@@ -7464,6 +7789,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Accelgor
 Level: 61
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Recover
+- Kusarigama
+- Final Gambit
+- Toxic
 
 Yanmega
 Level: 60
@@ -7534,7 +7863,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Kinesis
 - Snowscape
 - Psychic
-- Blizzard
+- Frosty Tap Dance
 
 === TRAINER_VIRGIL ===
 Name: VIRGIL
@@ -7635,6 +7964,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Beheeyem
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Transmutation
+- Recover
+- Meteor Beam
+- Abduction
 
 === TRAINER_JOSHUA ===
 Name: JOSHUA
@@ -7652,10 +7985,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Solrock
 Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Heat Crash
+- Eclipse
+- Stone Edge
+- Sunny Day
 
 Lunatone
 Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Lunar Blessing
+- Eclipse
+- Earth Power
+- Magic Room
 
 Oranguru
 Level: 46
@@ -7664,6 +8005,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Golduck
 Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Psych Up
+- Amnesia
+- Stored Power
+- Cavitation
 
 Porygon2
 Level: 46
@@ -7681,6 +8026,10 @@ AI: Check Bad Move
 Solrock
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Sunny Day
+- Eclipse
+- Implosion
+- Earthquake
 
 Gothitelle
 Level: 53
@@ -7702,6 +8051,10 @@ AI: Check Bad Move
 Solrock
 Level: 62
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Implosion
+- Earthquake
+- Explosion
+- Eclipse
 
 Gothitelle
 Level: 62
@@ -7727,6 +8080,10 @@ AI: Check Bad Move
 Solrock
 Level: 67
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Implosion
+- Earthquake
+- Explosion
+- Eclipse
 
 Gothitelle
 Level: 67
@@ -7756,6 +8113,10 @@ AI: Check Bad Move
 Solrock
 Level: 70
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Implosion
+- Earthquake
+- Explosion
+- Eclipse
 
 Gothitelle
 Level: 70
@@ -7789,6 +8150,10 @@ AI: Check Bad Move
 Solrock
 Level: 74
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Implosion
+- Earthquake
+- Explosion
+- Eclipse
 
 Gothitelle
 Level: 74
@@ -7864,6 +8229,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Orbeetle
 Level: 62
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Abduction
+- After You
+- Calm Mind
+- Psychic Terrain
 
 === TRAINER_SAMANTHA ===
 Name: SAMANTHA
@@ -7939,6 +8308,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Xatu
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Guard Swap
+- Cosmic Power
+- Totem Gaze
+- Giga Drain
 
 Alakazam
 Level: 53
@@ -7968,6 +8341,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Xatu
 Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Power Swap
+- Guard Swap
+- Cosmic Power
+- Totem Gaze
 
 Oranguru
 Level: 46
@@ -7976,6 +8353,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Golduck
 Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Psych Up
+- Amnesia
+- Stored Power
+- Cavitation
 
 === TRAINER_JACKI_1 ===
 Name: JACKI
@@ -8001,6 +8382,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Chimecho
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Heal Bell
+- Flash Cannon
+- Wind Chime
+- Moonblast
 
 === TRAINER_JACKI_2 ===
 Name: JACKI
@@ -8026,6 +8411,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Chimecho
 Level: 63
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Wind Chime
+- Moonblast
+- Boomburst
+- Healing Wish
 
 Malamar
 Level: 62
@@ -8055,6 +8444,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Chimecho
 Level: 66
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Wind Chime
+- Moonblast
+- Boomburst
+- Healing Wish
 
 Malamar
 Level: 65
@@ -8088,6 +8481,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Chimecho
 Level: 69
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Wind Chime
+- Moonblast
+- Boomburst
+- Healing Wish
 
 Malamar
 Level: 68
@@ -8121,6 +8518,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Chimecho
 Level: 72
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Wind Chime
+- Moonblast
+- Boomburst
+- Healing Wish
 
 Malamar
 Level: 71
@@ -8158,6 +8559,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Mightyena
 Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Snarl
+- Pack Howl
+- Play Rough
+- Psychic Fangs
 
 Arcanine
 Level: 50
@@ -8249,6 +8654,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Mightyena
 Level: 63
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Snarl
+- Pack Howl
+- Play Rough
+- Psychic Fangs
 
 Arcanine
 Level: 63
@@ -8282,6 +8691,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Mightyena
 Level: 65
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Snarl
+- Pack Howl
+- Play Rough
+- Psychic Fangs
 
 Arcanine
 Level: 65
@@ -8315,6 +8728,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Mightyena
 Level: 68
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Snarl
+- Pack Howl
+- Play Rough
+- Psychic Fangs
 
 Arcanine
 Level: 68
@@ -8348,6 +8765,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Mightyena
 Level: 70
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Snarl
+- Pack Howl
+- Play Rough
+- Psychic Fangs
 
 Arcanine
 Level: 70
@@ -9395,6 +9816,7 @@ Level: 35
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Endeavor
 - Vacuum Wave
+- Cavitation
 
 Delibird @ Focus Sash
 Level: 35
@@ -9413,6 +9835,7 @@ Level: 35
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 - Endeavor
 - Aqua Jet
+- Heartbreak
 
 Volbeat @ Focus Sash
 Level: 35
@@ -9443,6 +9866,7 @@ Level: 38
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Endeavor
 - Vacuum Wave
+- Cavitation
 
 Delibird @ Focus Sash
 Level: 38
@@ -9461,6 +9885,7 @@ Level: 38
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 - Endeavor
 - Aqua Jet
+- Heartbreak
 
 Volbeat @ Focus Sash
 Level: 38
@@ -9490,6 +9915,7 @@ Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Endeavor
 - Vacuum Wave
+- Cavitation
 
 Delibird @ Focus Sash
 Level: 41
@@ -9508,6 +9934,7 @@ Level: 41
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 - Endeavor
 - Aqua Jet
+- Heartbreak
 
 Volbeat @ Focus Sash
 Level: 41
@@ -9537,6 +9964,7 @@ Level: 44
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Endeavor
 - Vacuum Wave
+- Cavitation
 
 Delibird @ Focus Sash
 Level: 44
@@ -9555,6 +9983,7 @@ Level: 44
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 - Endeavor
 - Aqua Jet
+- Heartbreak
 
 Volbeat @ Focus Sash
 Level: 44
@@ -9582,6 +10011,10 @@ AI: Check Bad Move
 Spinda
 Level: 50
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Superpower
+- Tipsy Waltz
+- Hammer Arm
+- Close Combat
 
 Slaking
 Level: 51
@@ -9590,6 +10023,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Luvdisc
 Level: 51
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Heal Pulse
+- Scald
+- Heartbreak
+- Safeguard
 
 Sinistcha
 Level: 51
@@ -9815,6 +10252,10 @@ AI: Check Bad Move
 Delcatty @ Scope Lens
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Encore
+- Charm
+- Nine Lives
+- Sucker Punch
 
 Blissey @ Lucky Egg
 Level: 29
@@ -9891,7 +10332,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Assist
 - Charm
 - Feint Attack
-- Heal Bell
+- Nine Lives
 
 === TRAINER_MIGUEL_2 ===
 Name: MIGUEL
@@ -10282,7 +10723,7 @@ Level: 38
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Strength Sap
 - Pollen Haze
-- Growth
+- Fungal Control
 - X-Scissor
 
 === TRAINER_TIMOTHY_2 ===
@@ -10313,6 +10754,10 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Parasect
 Level: 48
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+- Nightmare
+- Hyphal Snare
+- Destiny Bond
+- Fungal Control
 
 Blissey
 Level: 47
@@ -10334,6 +10779,10 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 Drampa
 Level: 51
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Dragon Pulse
+- The Old Days
+- Fly
+- Hyper Voice
 
 Kommo_O
 Level: 51
@@ -10346,6 +10795,10 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 Parasect
 Level: 51
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Hyphal Snare
+- Destiny Bond
+- Fungal Control
+- Last Respects
 
 Blissey
 Level: 50
@@ -10367,6 +10820,10 @@ IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 Drampa
 Level: 54
 IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+- Dragon Pulse
+- The Old Days
+- Fly
+- Hyper Voice
 
 Kommo_O
 Level: 54
@@ -10379,6 +10836,10 @@ IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 Parasect
 Level: 54
 IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+- Destiny Bond
+- Aromatherapy
+- Hyphal Snare
+- Fungal Control
 
 Blissey
 Level: 53
@@ -10400,6 +10861,10 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 Drampa
 Level: 57
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+- The Old Days
+- Fly
+- Hyper Voice
+- Outrage
 
 Kommo_O
 Level: 57
@@ -10412,6 +10877,10 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 Parasect
 Level: 57
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+- Aromatherapy
+- Hyphal Snare
+- Fungal Control
+- X-Scissor
 
 Blissey
 Level: 56
@@ -10516,6 +10985,10 @@ IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
 Sawk
 Level: 50
 IVs: 26 HP / 26 Atk / 26 Def / 26 SpA / 26 SpD / 26 Spe
+- Brick Break
+- Mawashi Geri
+- Endure
+- Reversal
 
 === TRAINER_SHELBY_4 ===
 Name: SHELBY
@@ -10541,6 +11014,10 @@ IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
 Sawk
 Level: 53
 IVs: 27 HP / 27 Atk / 27 Def / 27 SpA / 27 SpD / 27 Spe
+- Brick Break
+- Mawashi Geri
+- Endure
+- Reversal
 
 === TRAINER_SHELBY_5 ===
 Name: SHELBY
@@ -10566,6 +11043,10 @@ IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 Sawk
 Level: 56
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
+- Mawashi Geri
+- Endure
+- Reversal
+- Close Combat
 
 === TRAINER_CALVIN_1 ===
 Name: CALVIN
@@ -10846,7 +11327,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Donphan
 Level: 36
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Earthquake
+- Tusk Tumble
 - Rapid Spin
 - Ice Shard
 - Gunk Shot
@@ -10914,6 +11395,10 @@ AI: Check Bad Move
 Mightyena
 Level: 33
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Yawn
+- Poison Fang
+- Pack Howl
+- Jaw Lock
 
 Passimian
 Level: 36
@@ -10943,6 +11428,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Mightyena
 Level: 36
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Poison Fang
+- Confuse Ray
+- Jaw Lock
+- Pack Howl
 
 Scrafty
 Level: 39
@@ -10972,10 +11461,18 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Linoone
 Level: 35
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Dig
+- Straight Line
+- Crush Claw
+- Seed Bomb
 
 Mightyena
 Level: 39
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Confuse Ray
+- Jaw Lock
+- Pack Howl
+- Snarl
 
 Scrafty
 Level: 41
@@ -11005,10 +11502,18 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Linoone
 Level: 38
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Straight Line
+- Crush Claw
+- Seed Bomb
+- Stomping Tantrum
 
 Mightyena
 Level: 42
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Jaw Lock
+- Parting Shot
+- Snarl
+- Pack Howl
 
 Scrafty
 Level: 42
@@ -11162,7 +11667,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Play Rough
-- Knock Off
+- Omen Strike
 - Sucker Punch
 - Swords Dance
 
@@ -11221,7 +11726,7 @@ Level: 12
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Baton Pass
 - Harden
-- Counter
+- Innard Punch
 - Taunt
 
 Arrokuda
@@ -12384,10 +12889,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Skuntank
 Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Memento
+- Acid Rain
+- Night Slash
+- Skunk Spray
 
 Swalot
 Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Spit Up
+- Acid Rain
+- Giga Drain
+- Gulp Down
 
 Grumpig
 Level: 46
@@ -12413,6 +12926,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Golduck
 Level: 64
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Cavitation
+- Wonder Room
+- Future Sight
+- Teleport
 
 Blaziken
 Level: 64
@@ -12500,6 +13017,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Revavroom
 Level: 74
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Poison Jab
+- Uproar
+- Rev Up
+- Gunk Shot
 
 === TRAINER_ISAIAH_3 ===
 Name: ISAIAH
@@ -12525,10 +13046,18 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Revavroom
 Level: 77
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Poison Jab
+- Uproar
+- Rev Up
+- Gunk Shot
 
 Wailord
 Level: 76
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 === TRAINER_ISAIAH_4 ===
 Name: ISAIAH
@@ -12554,10 +13083,18 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Revavroom
 Level: 80
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Poison Jab
+- Uproar
+- Rev Up
+- Gunk Shot
 
 Wailord
 Level: 79
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Sharpedo
 Level: 79
@@ -12587,10 +13124,18 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Revavroom
 Level: 83
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Poison Jab
+- Uproar
+- Rev Up
+- Gunk Shot
 
 Wailord
 Level: 82
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Sharpedo
 Level: 82
@@ -12608,6 +13153,10 @@ AI: Check Bad Move
 Revavroom
 Level: 66
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Poison Jab
+- Uproar
+- Rev Up
+- Gunk Shot
 
 Cyclizar
 Level: 66
@@ -12616,6 +13165,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Dhelmise
 Level: 66
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Anchor Shot
+- Energy Ball
+- Kelp Shroud
+- Power Whip
 
 === TRAINER_DONNY ===
 Name: DONNY
@@ -12658,6 +13211,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Revavroom
 Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Poison Jab
+- Uproar
+- Rev Up
+- Gunk Shot
 
 Rhyperior
 Level: 68
@@ -12702,7 +13259,7 @@ Level: 67
 IVs: 29 HP / 29 Atk / 29 Def / 29 SpA / 29 SpD / 29 Spe
 - Toxic
 - Recover
-- Counter
+- Innard Punch
 - Mirror Coat
 
 === TRAINER_KATELYN_2 ===
@@ -12729,6 +13286,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Wailord
 Level: 73
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 === TRAINER_KATELYN_3 ===
 Name: KATELYN
@@ -12754,6 +13315,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Wailord
 Level: 76
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Sharpedo
 Level: 76
@@ -12783,6 +13348,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Wailord
 Level: 79
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Sharpedo
 Level: 79
@@ -12791,6 +13360,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Relicanth
 Level: 79
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Head Smash
+- Primeval Ward
+- Earthquake
+- Zen Headbutt
 
 === TRAINER_KATELYN_5 ===
 Name: KATELYN
@@ -12816,6 +13389,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Wailord
 Level: 82
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Sharpedo
 Level: 82
@@ -12824,6 +13401,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Relicanth
 Level: 82
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Head Smash
+- Primeval Ward
+- Earthquake
+- Zen Headbutt
 
 === TRAINER_NICOLAS_1 ===
 Name: NICOLAS
@@ -12948,6 +13529,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Drampa
 Level: 51
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Dragon Pulse
+- The Old Days
+- Fly
+- Hyper Voice
 
 Turtonator
 Level: 51
@@ -12981,6 +13566,10 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Drampa
 Level: 54
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+- Dragon Pulse
+- The Old Days
+- Fly
+- Hyper Voice
 
 Turtonator
 Level: 54
@@ -13144,6 +13733,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Xatu
 Level: 60
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Totem Gaze
+- Giga Drain
+- Future Sight
+- Heat Wave
 
 Sigilyph
 Level: 60
@@ -13327,6 +13920,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Kecleon
 Level: 57
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Flower Shield
+- Mimic Shade
+- Foul Play
+- Power Whip
 
 === TRAINER_ROBERT_4 ===
 Name: ROBERT
@@ -13360,6 +13957,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Kecleon
 Level: 60
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Flower Shield
+- Mimic Shade
+- Foul Play
+- Power Whip
 
 === TRAINER_ROBERT_5 ===
 Name: ROBERT
@@ -13393,6 +13994,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Kecleon
 Level: 63
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Synthesis
+- Foul Play
+- Power Whip
+- Mimic Shade
 
 === TRAINER_ALEX ===
 Name: ALEX
@@ -13406,6 +14011,10 @@ AI: Check Bad Move
 Xatu
 Level: 69
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Totem Gaze
+- Giga Drain
+- Future Sight
+- Heat Wave
 
 Swellow
 Level: 69
@@ -13590,6 +14199,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Water Shuriken
 - Bug Buzz
 - Toxic
+- Kusarigama
 
 Greninja
 Level: 37
@@ -14151,6 +14761,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Victreebel
 Level: 46
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Sleep Powder
+- Sweet Scent
+- Pitcher Trap
+- Leaf Blade
 
 Skarmory
 Level: 45
@@ -14176,6 +14790,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Victreebel
 Level: 49
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Sleep Powder
+- Sweet Scent
+- Pitcher Trap
+- Leaf Blade
 
 Skarmory
 Level: 48
@@ -14209,6 +14827,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Victreebel
 Level: 51
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Sleep Powder
+- Sweet Scent
+- Pitcher Trap
+- Leaf Blade
 
 Skarmory
 Level: 50
@@ -14246,6 +14868,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Victreebel
 Level: 54
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Sleep Powder
+- Sweet Scent
+- Pitcher Trap
+- Leaf Blade
 
 Skarmory
 Level: 53
@@ -14271,10 +14897,18 @@ AI: Check Bad Move
 Floatzel
 Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aqua Jet
+- Double Hit
+- Life Buoy
+- Liquidation
 
 Lumineon
 Level: 44
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Lure Light
+- Ice Beam
+- Whirlpool
+- Hurricane
 
 Jellicent
 Level: 44
@@ -14363,6 +14997,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Masquerain
 Level: 45
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Eye Spots
+- Giga Drain
+- Muddy Water
+- Thunderbolt
 
 === TRAINER_TARA ===
 Name: TARA
@@ -14426,6 +15064,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Lumineon
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Safeguard
+- Lure Light
+- Ice Beam
+- Whirlpool
 
 Slowbro
 Level: 42
@@ -14489,6 +15131,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Lumineon
 Level: 60
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Hurricane
+- U-turn
+- Bounce
+- Lure Light
 
 Bruxish
 Level: 60
@@ -14556,6 +15202,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Lumineon
 Level: 66
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Hurricane
+- U-turn
+- Bounce
+- Lure Light
 
 === TRAINER_KATIE ===
 Name: KATIE
@@ -14577,6 +15227,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Lumineon
 Level: 67
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Hurricane
+- U-turn
+- Bounce
+- Lure Light
 
 === TRAINER_SUSIE ===
 Name: SUSIE
@@ -14600,7 +15254,7 @@ Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Toxic
 - Recover
-- Counter
+- Innard Punch
 - Mirror Coat
 
 === TRAINER_KARA ===
@@ -14640,6 +15294,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Lumineon
 Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Hurricane
+- U-turn
+- Bounce
+- Lure Light
 
 Palafin_Zero
 Level: 68
@@ -15346,6 +16004,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Dustox
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Silver Wind
+- Sludge Bomb
+- Bug Buzz
+- Venom Dust
 
 Lokix
 Level: 53
@@ -15356,6 +16018,7 @@ Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
 /* Project Grounded: Hall of Origin, atrium: emissary van de geest (hall_of_origin.py) */
+
 === TRAINER_HOO_NOUS ===
 Name: NOUS
 Class: Construct
@@ -16059,14 +16722,26 @@ AI: Check Bad Move
 Wailord
 Level: 69
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Throh
 Level: 69
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Ippon
+- Endure
+- Reversal
+- Superpower
 
 Bibarel
 Level: 69
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Swords Dance
+- Amnesia
+- Superpower
+- Beaver Dam
 
 === TRAINER_CONOR ===
 Name: CONOR
@@ -16888,6 +17563,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Escavalier
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Iron Head
+- Bug Buzz
+- Giga Impact
+- Joust
 
 Crustle
 Level: 53
@@ -16909,6 +17588,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Solrock
 Level: 72
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Implosion
+- Earthquake
+- Explosion
+- Eclipse
 
 Metagross
 Level: 72
@@ -16966,6 +17649,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Chimecho
 Level: 38
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Recover
+- Tailwind
+- Wind Chime
+- Hyper Voice
 
 === TRAINER_ISAAC_3 ===
 Name: ISAAC
@@ -17003,6 +17690,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Chimecho
 Level: 41
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Tailwind
+- Calm Mind
+- Hyper Voice
+- Wind Chime
 
 === TRAINER_ISAAC_4 ===
 Name: ISAAC
@@ -17040,6 +17731,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Chimecho
 Level: 44
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Calm Mind
+- Hyper Voice
+- Wind Chime
+- Flash Cannon
 
 === TRAINER_ISAAC_5 ===
 Name: ISAAC
@@ -17077,6 +17772,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Chimecho
 Level: 47
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Calm Mind
+- Hyper Voice
+- Wind Chime
+- Flash Cannon
 
 === TRAINER_LYDIA_1 ===
 Name: LYDIA
@@ -17140,6 +17839,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Spiritomb
 Level: 72
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Keystone Curse
+- Dark Pulse
+- Hypnosis
+- Dream Eater
 
 === TRAINER_GARRISON ===
 Name: GARRISON
@@ -17182,6 +17885,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Arboliva
 Level: 38
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Grassy Terrain
+- Seed Bomb
+- Olive Oil
+- Energy Ball
 
 Lokix
 Level: 38
@@ -17215,6 +17922,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Arboliva
 Level: 41
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Seed Bomb
+- Pollen Haze
+- Energy Ball
+- Olive Oil
 
 Lokix
 Level: 41
@@ -17248,6 +17959,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Arboliva
 Level: 44
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Seed Bomb
+- Pollen Haze
+- Energy Ball
+- Olive Oil
 
 Lokix
 Level: 44
@@ -17281,6 +17996,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Arboliva
 Level: 47
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Pollen Haze
+- Energy Ball
+- Olive Oil
+- Terrain Pulse
 
 Lokix
 Level: 47
@@ -17331,7 +18050,7 @@ Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Ability: Technician
 - Fake Out
-- Double Hit
+- Twin Tails
 - U-turn
 - Taunt
 
@@ -17457,6 +18176,10 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Ambipom
 Level: 56
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Double Hit
+- Fling
+- Nasty Plot
+- Twin Tails
 
 === TRAINER_JACKSON_4 ===
 Name: JACKSON
@@ -17487,6 +18210,10 @@ IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 Ambipom
 Level: 59
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Double Hit
+- Fling
+- Nasty Plot
+- Twin Tails
 
 Zoroark
 Level: 59
@@ -17521,6 +18248,10 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 Ambipom
 Level: 61
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Double Hit
+- Fling
+- Nasty Plot
+- Twin Tails
 
 Zoroark
 Level: 61
@@ -17566,7 +18297,7 @@ Bouffalant
 Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Ability: Reckless
-- Head Charge
+- Afro Charge
 - Zen Headbutt
 - Iron Head
 - Megahorn
@@ -17689,6 +18420,10 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 Ambipom
 Level: 56
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+- Double Hit
+- Fling
+- Nasty Plot
+- Twin Tails
 
 === TRAINER_CATHERINE_4 ===
 Name: CATHERINE
@@ -17723,6 +18458,10 @@ IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
 Ambipom
 Level: 59
 IVs: 9 HP / 9 Atk / 9 Def / 9 SpA / 9 SpD / 9 Spe
+- Double Hit
+- Fling
+- Nasty Plot
+- Twin Tails
 
 Zoroark
 Level: 59
@@ -17761,6 +18500,10 @@ IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
 Ambipom
 Level: 62
 IVs: 10 HP / 10 Atk / 10 Def / 10 SpA / 10 SpD / 10 Spe
+- Double Hit
+- Fling
+- Nasty Plot
+- Twin Tails
 
 Zoroark
 Level: 62
@@ -17959,6 +18702,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Hitmonchan
 Level: 21
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Combination
+- Detect
+- Bullet Punch
+- Quick Guard
 
 Machop
 Level: 21
@@ -18074,6 +18821,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Floatzel
 Level: 66
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aqua Tail
+- Agility
+- Life Buoy
+- Wave Crash
 
 === TRAINER_ATHENA ===
 Name: ATHENA
@@ -18125,6 +18876,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Dhelmise
 Level: 64
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Anchor Shot
+- Energy Ball
+- Kelp Shroud
+- Power Whip
 
 === TRAINER_GRUNT_MT_CHIMNEY_2 ===
 Name: GRUNT
@@ -18245,7 +19000,7 @@ Xatu
 Level: 62
 Ability: Magic Bounce
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Expanding Force
+- Totem Gaze
 - Miracle Eye
 - Tailwind
 - Air Slash
@@ -18311,6 +19066,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Golduck
 Level: 61
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 0 Spe
+- Cavitation
+- Wonder Room
+- Future Sight
+- Teleport
 
 Porygon2 @ Eviolite
 Level: 61
@@ -18395,6 +19154,10 @@ AI: Check Bad Move
 Dustox
 Level: 62
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Silver Wind
+- Sludge Bomb
+- Bug Buzz
+- Venom Dust
 
 Lycanroc
 Level: 62
@@ -18441,6 +19204,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Revavroom
 Level: 62
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Poison Jab
+- Uproar
+- Rev Up
+- Gunk Shot
 
 Grafaiai
 Level: 62
@@ -18548,6 +19315,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Hitmonchan
 Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Close Combat
+- Combination
+- Spinning Backfist
+- Focus Punch
 
 === TRAINER_ISABELLA ===
 Name: ISABELLA
@@ -18645,6 +19416,10 @@ AI: Check Bad Move / Try To Faint / Force Setup First Turn
 Kecleon
 Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Synthesis
+- Foul Play
+- Power Whip
+- Mimic Shade
 
 Exploud
 Level: 68
@@ -19193,14 +19968,26 @@ AI: Check Bad Move
 Escavalier
 Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- X-Scissor
+- Swords Dance
+- Joust
+- Bug Buzz
 
 Araquanid
 Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Leech Life
+- Soak
+- Bubble Dome
+- Lunge
 
 Beedrill
 Level: 47
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Poison Jab
+- Agility
+- Endeavor
+- Twin Lance
 
 === TRAINER_GREG ===
 Name: GREG
@@ -19297,6 +20084,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Masquerain
 Level: 38
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Pollen Haze
+- Eye Spots
+- Giga Drain
+- Muddy Water
 
 Frosmoth
 Level: 40
@@ -19307,7 +20098,7 @@ Level: 39
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 - Strength Sap
 - Pollen Haze
-- Growth
+- Fungal Control
 - X-Scissor
 
 === TRAINER_JAMES_3 ===
@@ -19334,6 +20125,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Masquerain
 Level: 40
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Pollen Haze
+- Eye Spots
+- Giga Drain
+- Muddy Water
 
 Frosmoth
 Level: 42
@@ -19342,6 +20137,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Parasect
 Level: 41
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Growth
+- Hyphal Snare
+- Fungal Control
+- Giga Drain
 
 === TRAINER_JAMES_4 ===
 Name: JAMES
@@ -19367,6 +20166,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Masquerain
 Level: 42
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Eye Spots
+- Giga Drain
+- Muddy Water
+- Thunderbolt
 
 Frosmoth
 Level: 44
@@ -19375,6 +20178,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Parasect
 Level: 43
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Growth
+- Hyphal Snare
+- Fungal Control
+- Giga Drain
 
 === TRAINER_JAMES_5 ===
 Name: JAMES
@@ -19400,6 +20207,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Masquerain
 Level: 44
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Eye Spots
+- Giga Drain
+- Muddy Water
+- Thunderbolt
 
 Frosmoth
 Level: 46
@@ -19408,6 +20219,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Parasect
 Level: 45
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Hyphal Snare
+- Nightmare
+- Giga Drain
+- Fungal Control
 
 === TRAINER_BRICE ===
 Name: BRICE
@@ -19937,10 +20752,18 @@ AI: Check Bad Move
 Delcatty
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Nine Lives
+- Covet
+- Double-Edge
+- Hyper Voice
 
 Mightyena
 Level: 53
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Snarl
+- Pack Howl
+- Play Rough
+- Psychic Fangs
 
 Dewgong
 Level: 53
@@ -20289,10 +21112,18 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Skuntank
 Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Acid Rain
+- Night Slash
+- Skunk Spray
+- Explosion
 
 Accelgor
 Level: 48
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Kusarigama
+- Recover
+- Bug Buzz
+- Final Gambit
 
 === TRAINER_KEIGO ===
 Name: KEIGO
@@ -20939,6 +21770,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Stunfisk_Galar
 Level: 63
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Muddy Water
+- Snap Trap
+- Steel Trap
+- Fissure
 
 === TRAINER_ROGER ===
 Name: ROGER
@@ -21004,6 +21839,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Probopass
 Level: 64
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Volt Switch
+- Earth Power
+- Flash Cannon
+- Moai Watch
 
 Krookodile
 Level: 64
@@ -21046,6 +21885,10 @@ AI: Check Bad Move
 Wailord
 Level: 64
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Drednaw
 Level: 64
@@ -21280,6 +22123,10 @@ AI: Check Bad Move
 Dustox
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Silver Wind
+- Sludge Bomb
+- Bug Buzz
+- Venom Dust
 
 Beautifly
 Level: 42
@@ -21479,6 +22326,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Golduck
 Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Cavitation
+- Wonder Room
+- Future Sight
+- Teleport
 
 === TRAINER_LILA_AND_ROY_1 ===
 Name: LILA & ROY
@@ -21533,6 +22384,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Relicanth
 Level: 71
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Head Smash
+- Primeval Ward
+- Earthquake
+- Zen Headbutt
 
 Dondozo
 Level: 70
@@ -21562,6 +22417,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Relicanth
 Level: 74
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Head Smash
+- Primeval Ward
+- Earthquake
+- Zen Headbutt
 
 Dondozo
 Level: 73
@@ -21570,6 +22429,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Wailord
 Level: 73
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 === TRAINER_LILA_AND_ROY_4 ===
 Name: LILA & ROY
@@ -21595,6 +22458,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Relicanth
 Level: 77
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Head Smash
+- Primeval Ward
+- Earthquake
+- Zen Headbutt
 
 Dondozo
 Level: 76
@@ -21603,6 +22470,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Wailord
 Level: 76
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 === TRAINER_LILA_AND_ROY_5 ===
 Name: LILA & ROY
@@ -21628,6 +22499,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Relicanth
 Level: 80
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Head Smash
+- Primeval Ward
+- Earthquake
+- Zen Headbutt
 
 Dondozo
 Level: 79
@@ -21636,6 +22511,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Wailord
 Level: 79
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 === TRAINER_LISA_AND_RAY ===
 Name: LISA & RAY
@@ -21780,6 +22659,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Araquanid
 Level: 24
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bubble Beam
+- Aqua Ring
+- Headbutt
+- Bubble Dome
 
 Pawmo
 Level: 24
@@ -21800,7 +22683,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Surf
 - Quick Attack
 - Fury Swipes
-- Defense Curl
+- Burrow Maze
 
 Linoone_Galar
 Level: 24
@@ -22278,7 +23161,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Fearow
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Drill Peck
+- Sky Spear
 - Pursuit
 - Agility
 - Quick Attack
@@ -22295,6 +23178,10 @@ AI: Check Bad Move
 Parasect
 Level: 57
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aromatherapy
+- Hyphal Snare
+- Fungal Control
+- X-Scissor
 
 Minior
 Level: 57
@@ -22358,6 +23245,10 @@ AI: Check Bad Move
 Spinda
 Level: 58
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Close Combat
+- Tipsy Waltz
+- Outrage
+- Raging Fury
 
 Zweilous
 Level: 58
@@ -22442,6 +23333,10 @@ AI: Check Bad Move
 Mightyena
 Level: 57
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Snarl
+- Pack Howl
+- Play Rough
+- Psychic Fangs
 
 Ninjask
 Level: 58
@@ -22597,6 +23492,10 @@ AI: Check Bad Move
 Bewear
 Level: 58
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Bear Hug
+- Thrash
+- Pain Split
+- Double-Edge
 
 Raichu
 Level: 58
@@ -22742,6 +23641,10 @@ AI: Check Bad Move
 Floatzel
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Aqua Jet
+- Double Hit
+- Life Buoy
+- Liquidation
 
 Clawitzer
 Level: 42
@@ -22767,6 +23670,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Lumineon
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Safeguard
+- Lure Light
+- Ice Beam
+- Whirlpool
 
 Seismitoad
 Level: 42
@@ -22979,7 +23886,7 @@ Level: 35
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Ability: Sniper
 - Drill Run
-- Drill Peck
+- Sky Spear
 - Focus Energy
 - U-turn
 
@@ -23082,6 +23989,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Swalot
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Swallow
+- Gulp Down
+- Acid Rain
+- Giga Drain
 
 === TRAINER_ALIX ===
 Name: ALIX
@@ -23128,7 +24039,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Throh
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Storm Throw
+- Ippon
 - Rock Slide
 - Payback
 - Ice Punch
@@ -23136,7 +24047,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Bewear
 Level: 39
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-- Hammer Arm
+- Bear Hug
 - Shadow Claw
 - Poison Jab
 - Rock Slide
@@ -23259,6 +24170,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Xatu
 Level: 28
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Signal Beam
+- Confuse Ray
+- Totem Gaze
+- Psycho Shift
 
 Duosion
 Level: 28
@@ -23280,6 +24195,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Bewear
 Level: 29
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Brutal Swing
+- Endure
+- Bear Hug
+- Take Down
 
 Scraggy
 Level: 29
@@ -23306,6 +24225,10 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 Bewear
 Level: 68
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Thrash
+- Pain Split
+- Double-Edge
+- Bear Hug
 
 Primarina
 Level: 68
@@ -23503,10 +24426,18 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Furret
 Level: 52
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Sucker Punch
+- Amnesia
+- Burrow Maze
+- Double-Edge
 
 Delcatty
 Level: 52
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Nine Lives
+- Covet
+- Double-Edge
+- Hyper Voice
 
 Liepard
 Level: 52
@@ -25958,6 +26889,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Dhelmise
 Level: 55
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Slam
+- Kelp Shroud
+- Metal Sound
+- Anchor Shot
 
 === TRAINER_CORY_4 ===
 Name: CORY
@@ -25987,6 +26922,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Dhelmise
 Level: 57
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Kelp Shroud
+- Metal Sound
+- Anchor Shot
+- Energy Ball
 
 Squawkabilly
 Level: 57
@@ -26020,6 +26959,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Dhelmise
 Level: 59
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Kelp Shroud
+- Metal Sound
+- Anchor Shot
+- Energy Ball
 
 Squawkabilly
 Level: 59
@@ -26181,6 +27124,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Wailord
 Level: 70
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 === TRAINER_KOJI_3 ===
 Name: KOJI
@@ -26206,6 +27153,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Wailord
 Level: 72
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Palafin
 Level: 72
@@ -26235,6 +27186,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Wailord
 Level: 74
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Palafin
 Level: 74
@@ -26268,6 +27223,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Wailord
 Level: 76
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Palafin
 Level: 76
@@ -26340,6 +27299,10 @@ IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 Kecleon
 Level: 66
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Synthesis
+- Foul Play
+- Power Whip
+- Mimic Shade
 
 === TRAINER_CRISTIN_4 ===
 Name: CRISTIN
@@ -26374,6 +27337,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Kecleon
 Level: 68
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Synthesis
+- Foul Play
+- Power Whip
+- Mimic Shade
 
 === TRAINER_CRISTIN_5 ===
 Name: CRISTIN
@@ -26408,6 +27375,10 @@ IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
 Kecleon
 Level: 70
 IVs: 17 HP / 17 Atk / 17 Def / 17 SpA / 17 SpD / 17 Spe
+- Synthesis
+- Foul Play
+- Power Whip
+- Mimic Shade
 
 === TRAINER_FERNANDO_2 ===
 Name: FERNANDO
@@ -26744,6 +27715,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Sawk
 Level: 50
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Brick Break
+- Mawashi Geri
+- Endure
+- Reversal
 
 Golem
 Level: 49
@@ -26761,6 +27736,10 @@ AI: Check Bad Move
 Delcatty
 Level: 60
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Nine Lives
+- Covet
+- Double-Edge
+- Hyper Voice
 
 Liepard
 Level: 60
@@ -26769,6 +27748,10 @@ IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
 Linoone
 Level: 60
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Belly Drum
+- Play Rough
+- Straight Line
+- Rest
 
 Ludicolo
 Level: 60
@@ -26794,6 +27777,10 @@ AI: Check Bad Move
 Delcatty
 Level: 62
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Nine Lives
+- Covet
+- Double-Edge
+- Hyper Voice
 
 Liepard
 Level: 62
@@ -26802,6 +27789,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Linoone
 Level: 62
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Belly Drum
+- Play Rough
+- Straight Line
+- Rest
 
 Ludicolo
 Level: 62
@@ -26827,6 +27818,10 @@ AI: Check Bad Move
 Delcatty
 Level: 64
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Nine Lives
+- Covet
+- Double-Edge
+- Hyper Voice
 
 Liepard
 Level: 64
@@ -26835,6 +27830,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Linoone
 Level: 64
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Belly Drum
+- Play Rough
+- Straight Line
+- Rest
 
 Ludicolo
 Level: 64
@@ -26860,6 +27859,10 @@ AI: Check Bad Move
 Delcatty
 Level: 66
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Nine Lives
+- Covet
+- Double-Edge
+- Hyper Voice
 
 Liepard
 Level: 66
@@ -26868,6 +27871,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Linoone
 Level: 66
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Belly Drum
+- Play Rough
+- Straight Line
+- Rest
 
 Ludicolo
 Level: 66
@@ -26893,6 +27900,10 @@ AI: Check Bad Move
 Wailord
 Level: 56
 IVs: 1 HP / 1 Atk / 1 Def / 1 SpA / 1 SpD / 1 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Kingdra
 Level: 56
@@ -26914,6 +27925,10 @@ AI: Check Bad Move
 Wailord
 Level: 58
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Kingdra
 Level: 58
@@ -26926,6 +27941,10 @@ IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
 Luvdisc
 Level: 57
 IVs: 2 HP / 2 Atk / 2 Def / 2 SpA / 2 SpD / 2 Spe
+- Scald
+- Heartbreak
+- Safeguard
+- Healing Wish
 
 === TRAINER_THALIA_4 ===
 Name: THALIA
@@ -26939,6 +27958,10 @@ AI: Check Bad Move
 Wailord
 Level: 60
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Kingdra
 Level: 60
@@ -26951,6 +27974,10 @@ IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
 Luvdisc
 Level: 59
 IVs: 3 HP / 3 Atk / 3 Def / 3 SpA / 3 SpD / 3 Spe
+- Scald
+- Heartbreak
+- Safeguard
+- Healing Wish
 
 === TRAINER_THALIA_5 ===
 Name: THALIA
@@ -26964,6 +27991,10 @@ AI: Check Bad Move
 Wailord
 Level: 62
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Kingdra
 Level: 62
@@ -26976,6 +28007,10 @@ IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
 Luvdisc
 Level: 61
 IVs: 4 HP / 4 Atk / 4 Def / 4 SpA / 4 SpD / 4 Spe
+- Scald
+- Heartbreak
+- Safeguard
+- Healing Wish
 
 === TRAINER_MARIELA ===
 Name: MARIELA
@@ -26988,6 +28023,10 @@ Double Battle: No
 Chimecho
 Level: 46
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+- Calm Mind
+- Hyper Voice
+- Wind Chime
+- Flash Cannon
 
 Espeon
 Level: 46
@@ -27106,7 +28145,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Play Rough
-- Knock Off
+- Omen Strike
 - Sucker Punch
 - Swords Dance
 
@@ -27696,7 +28735,7 @@ Stonjourner
 Level: 49
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
 - Wide Guard
-- Rock Slide
+- Solstice Gate
 - Stomping Tantrum
 - Body Slam
 
@@ -28449,7 +29488,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Vanilluxe
 Level: 50
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Ice Beam
+- Brain Freeze
 - Flash Cannon
 - Mirror Coat
 - Acid Armor
@@ -33630,7 +34669,7 @@ Floatzel
 Level: 26
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Ability: Swift Swim
-- Aqua Jet
+- Life Buoy
 - Bite
 - Water Pulse
 - Swift
@@ -34549,7 +35588,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Bold
 - Memento
 - Will-O-Wisp
-- Shadow Ball
+- Mummy's Curse
 - Pain Split
 
 Gengar @ Focus Sash
@@ -34578,7 +35617,7 @@ Ability: Infiltrator
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Careful
 - Sucker Punch
-- Shadow Sneak
+- Keystone Curse
 - Will-O-Wisp
 - Pain Split
 
@@ -34601,7 +35640,6 @@ Nature: Adamant
 - Body Press
 - Play Rough
 - Will-O-Wisp
-
 
 === TRAINER_VICTORY_V ===
 Name: V
@@ -34628,7 +35666,7 @@ Level: 92
 Ability: Snow Warning
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Modest
-- Blizzard
+- Brain Freeze
 - Freeze-Dry
 - Aurora Veil
 - Flash Cannon
@@ -35584,7 +36622,7 @@ AI: Check Bad Move / Try To Faint
 Accelgor
 Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Bug Buzz
+- Kusarigama
 - Acid Spray
 - Focus Blast
 - Me First
@@ -36223,7 +37261,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Stonjourner
 Level: 54
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Stone Edge
+- Solstice Gate
 - Heat Crash
 - Rock Polish
 - Body Press
@@ -36240,7 +37278,7 @@ AI: Check Bad Move / Try To Faint
 Beheeyem
 Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Psychic
+- Abduction
 - Thunderbolt
 - Shadow Ball
 - Calm Mind
@@ -36248,7 +37286,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Orbeetle
 Level: 53
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Psychic
+- Abduction
 - Bug Buzz
 - Sticky Web
 - Reflect
@@ -36338,7 +37376,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Lunatone
 Level: 54
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Psychic
+- Eclipse
 - Ice Beam
 - Moonblast
 - Stealth Rock
@@ -36347,7 +37385,7 @@ Solrock
 Level: 54
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 - Rock Slide
-- Zen Headbutt
+- Eclipse
 - Sunny Day
 - Explosion
 
@@ -37136,7 +38174,7 @@ Ability: Water Bubble
 - Liquidation
 - Leech Life
 - Mirror Coat
-- Aqua Ring
+- Bubble Dome
 
 Drednaw
 Level: 51
@@ -37271,7 +38309,7 @@ AI: Check Bad Move / Try To Faint
 Carnivine
 Level: 51
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Power Whip
+- Flytrap
 - Crunch
 - Sleep Powder
 - Knock Off
@@ -37312,7 +38350,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Skuntank
 Level: 51
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Poison Jab
+- Skunk Spray
 - Sucker Punch
 - Toxic
 - Explosion
@@ -37428,7 +38466,7 @@ Sawk @ Focus Sash
 Level: 91
 Ability: Sturdy
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Close Combat
+- Mawashi Geri
 - Knock Off
 - Poison Jab
 - Bulk Up
@@ -37464,7 +38502,7 @@ Cofagrigus @ Leftovers
 Level: 91
 Ability: Mummy
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Shadow Ball
+- Mummy's Curse
 - Will-O-Wisp
 - Nasty Plot
 - Energy Ball
@@ -37525,7 +38563,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
 Nature: Adamant
 - Megahorn
-- Iron Head
+- Joust
 - Drill Run
 - Knock Off
 
@@ -37713,7 +38751,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Play Rough
-- Knock Off
+- Omen Strike
 - Sucker Punch
 - Swords Dance
 
@@ -37809,7 +38847,7 @@ Ability: Ice Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Modest
-- Blizzard
+- Brain Freeze
 - Freeze-Dry
 - Flash Cannon
 - Ice Beam
@@ -37956,7 +38994,7 @@ AI: Check Bad Move / Try To Faint
 Cofagrigus
 Level: 59
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
-- Shadow Ball
+- Mummy's Curse
 - Will-O-Wisp
 - Trick Room
 - Nasty Plot
@@ -38132,7 +39170,7 @@ Ability: Swift Swim
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
-- Hydro Pump
+- Cavitation
 - Psychic
 - Ice Beam
 - Calm Mind
@@ -38211,7 +39249,7 @@ Nature: Adamant
 - Power Whip
 - Sludge Bomb
 - Sucker Punch
-- Swords Dance
+- Pitcher Trap
 
 Lilligant @ Focus Sash
 Level: 93
@@ -38349,7 +39387,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 4 Def / 252 SpD
 Nature: Careful
 - Foul Play
-- Shadow Sneak
+- Keystone Curse
 - Will-O-Wisp
 - Pain Split
 
@@ -38496,7 +39534,7 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Kingler
 Level: 45
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
-- Crabhammer
+- Colossal Claw
 - Metal Claw
 - Swords Dance
 - Protect
@@ -38557,7 +39595,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Dragon Pulse
 - Hyper Voice
 - Fly
-- Glare
+- The Old Days
 
 Slowking_Galar
 Level: 65
@@ -38570,7 +39608,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Cofagrigus
 Level: 66
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
-- Shadow Ball
+- Mummy's Curse
 - Will-O-Wisp
 - Trick Room
 - Protect
@@ -38821,7 +39859,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 Bewear
 Level: 92
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Hammer Arm
+- Bear Hug
 - Double-Edge
 - Darkest Lariat
 - Swords Dance
@@ -38849,7 +39887,7 @@ Level: 92
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Liquidation
 - Leech Life
-- Sticky Web
+- Bubble Dome
 - Mirror Coat
 
 Toxapex
@@ -38873,7 +39911,7 @@ Level: 92
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Anchor Shot
 - Power Whip
-- Poltergeist
+- Kelp Shroud
 - Earthquake
 
 Wishiwashi
@@ -38955,7 +39993,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Shadow Ball
 - Will-O-Wisp
 - Protect
-- Hex
+- Mummy's Curse
 
 Dudunsparce
 Level: 52
@@ -38985,10 +40023,18 @@ AI: Check Bad Move / Try To Faint
 Floatzel
 Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Life Buoy
+- Liquidation
+- Aqua Tail
+- Agility
 
 Bibarel
 Level: 52
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Take Down
+- Super Fang
+- Swords Dance
+- Beaver Dam
 
 Bruxish
 Level: 53
@@ -39041,7 +40087,7 @@ Level: 59
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Anchor Shot
 - Power Whip
-- Shadow Claw
+- Kelp Shroud
 - Rapid Spin
 
 Eelektross
@@ -39080,7 +40126,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Bewear
 Level: 63
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
-- Hammer Arm
+- Bear Hug
 - Double-Edge
 - Bulk Up
 - Shadow Claw
@@ -39090,7 +40136,7 @@ Level: 63
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 - No Retreat
 - Megahorn
-- Close Combat
+- Othismos
 - First Impression
 
 Lucario
@@ -39133,6 +40179,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Lopunny
 Level: 41
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Baton Pass
+- Headbutt
+- Agility
+- Bunny Hop
 
 Breloom
 Level: 42
@@ -39150,6 +40200,10 @@ AI: Check Bad Move / Try To Faint
 Delcatty
 Level: 67
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Nine Lives
+- Covet
+- Double-Edge
+- Hyper Voice
 
 Furfrou
 Level: 67
@@ -39204,10 +40258,18 @@ AI: Check Bad Move / Try To Faint
 Throh
 Level: 67
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Ippon
+- Endure
+- Reversal
+- Superpower
 
 Sawk
 Level: 67
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Mawashi Geri
+- Endure
+- Reversal
+- Close Combat
 
 Lycanroc
 Level: 67
@@ -39261,7 +40323,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Lopunny
 Level: 69
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Fake Out
+- Bunny Hop
 - High Jump Kick
 - Bounce
 - Ice Punch
@@ -39282,6 +40344,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Accelgor
 Level: 68
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Recover
+- Kusarigama
+- Final Gambit
+- Toxic
 
 Lokix
 Level: 69
@@ -40020,7 +41086,7 @@ Falinks
 Level: 69
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - No Retreat
-- Close Combat
+- Othismos
 - Iron Head
 - Megahorn
 
@@ -40052,7 +41118,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Lopunny
 Level: 69
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Fake Out
+- Bunny Hop
 - High Jump Kick
 - Ice Punch
 - Quick Attack
@@ -40076,7 +41142,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Bewear
 Level: 69
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Hammer Arm
+- Bear Hug
 - Double-Edge
 - Swords Dance
 - Payback
@@ -40225,6 +41291,10 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Bibarel
 Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Swords Dance
+- Amnesia
+- Superpower
+- Beaver Dam
 
 Ursaring
 Level: 67
@@ -40328,7 +41398,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 128 HP / 128 SpD
 Nature: Calm
 - Thief
-- Hex
+- Keystone Curse
 - Will-O-Wisp
 - Pain Split
 
@@ -40404,7 +41474,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 EVs: 4 Def / 252 HP / 252 SpD
 Nature: Calm
 - Thief
-- Hex
+- Keystone Curse
 - Will-O-Wisp
 - Pain Split
 
@@ -40480,7 +41550,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 Def / 252 HP / 252 SpD
 Nature: Calm
 - Thief
-- Hex
+- Keystone Curse
 - Will-O-Wisp
 - Pain Split
 
@@ -40618,7 +41688,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Bewear
 Level: 48
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Hammer Arm
+- Bear Hug
 - Double-Edge
 - Payback
 - Bulk Up
@@ -40838,7 +41908,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Scald
 - U-turn
 - Ice Beam
-- Rain Dance
+- Lure Light
 
 Lanturn @ Leftovers
 Level: 57
@@ -40852,6 +41922,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 /* --- einde beacon_dragon --- */
 
 /* --- Hoopa-quest (Mirage Bazaar): Salim, handelaar en eigenaar van de Prison Bottle --- */
+
 === TRAINER_SALIM ===
 Name: SALIM
 Class: Collector
@@ -40888,7 +41959,7 @@ Level: 92
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Mummy
 Nature: Bold
-- Shadow Ball
+- Mummy's Curse
 - Will-O-Wisp
 - Trick Room
 - Nasty Plot
@@ -40983,6 +42054,10 @@ AI: Check Bad Move / Try To Faint
 Floatzel
 Level: 60
 IVs: 14 HP / 14 Atk / 14 Def / 14 SpA / 14 SpD / 14 Spe
+- Liquidation
+- Aqua Tail
+- Agility
+- Life Buoy
 
 Dewgong
 Level: 60
@@ -41058,6 +42133,10 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Dhelmise
 Level: 62
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Metal Sound
+- Anchor Shot
+- Energy Ball
+- Kelp Shroud
 
 Basculegion
 Level: 63
@@ -41079,6 +42158,10 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Relicanth
 Level: 62
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
+- Double-Edge
+- Primeval Ward
+- Head Smash
+- Hydro Pump
 
 Barraskewda
 Level: 63
@@ -41096,6 +42179,10 @@ AI: Check Bad Move / Try To Faint
 Floatzel
 Level: 59
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Liquidation
+- Aqua Tail
+- Agility
+- Life Buoy
 
 Pelipper
 Level: 59
@@ -41117,6 +42204,10 @@ AI: Check Bad Move / Try To Faint
 Wailord
 Level: 59
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
+- Amnesia
+- Whale Song
+- Gyro Ball
+- Water Spout
 
 Clawitzer
 Level: 59
@@ -41152,7 +42243,7 @@ Level: 56
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Anchor Shot
 - Power Whip
-- Shadow Claw
+- Kelp Shroud
 - Rapid Spin
 
 Lanturn
@@ -41229,6 +42320,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Araquanid
 Level: 66
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Bubble Dome
+- Lunge
+- Liquidation
+- Mirror Coat
 
 Golisopod
 Level: 67
@@ -41312,10 +42407,18 @@ IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 Golduck
 Level: 66
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Cavitation
+- Wonder Room
+- Future Sight
+- Teleport
 
 Floatzel
 Level: 67
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Aqua Tail
+- Agility
+- Life Buoy
+- Wave Crash
 
 === TRAINER_RUIN_MANIAC_DORIAN ===
 Name: DORIAN
@@ -41333,6 +42436,10 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 Relicanth
 Level: 68
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Primeval Ward
+- Head Smash
+- Hydro Pump
+- Earthquake
 
 Golurk
 Level: 68
@@ -41431,7 +42538,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Dragon Pulse
 - Hyper Voice
 - Flamethrower
-- Glare
+- The Old Days
 
 === TRAINER_TAO_SAELA ===
 Name: SAELA
@@ -41599,7 +42706,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 Nature: Bold
 - Will-O-Wisp
-- Hex
+- Mummy's Curse
 - Toxic Spikes
 - Pain Split
 
@@ -41609,7 +42716,7 @@ Ability: Sap Sipper
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
 Nature: Adamant
-- Head Charge
+- Afro Charge
 - Close Combat
 - Earthquake
 - Megahorn
@@ -41912,13 +43019,13 @@ Level: 91
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Night Slash
 - Psycho Cut
-- Sucker Punch
+- Omen Strike
 - Swords Dance
 
 Xatu
 Level: 91
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Psychic
+- Totem Gaze
 - Air Slash
 - Roost
 - Confuse Ray
@@ -42001,7 +43108,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Cofagrigus
 Level: 92
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Shadow Ball
+- Mummy's Curse
 - Will-O-Wisp
 - Trick Room
 - Nasty Plot
@@ -42118,13 +43225,13 @@ Level: 92
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Power Whip
 - Anchor Shot
-- Shadow Claw
+- Kelp Shroud
 - Earthquake
 
 Beheeyem
 Level: 92
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Psychic
+- Abduction
 - Shadow Ball
 - Thunderbolt
 - Trick Room
@@ -42174,7 +43281,7 @@ Spiritomb
 Level: 92
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Sucker Punch
-- Shadow Sneak
+- Keystone Curse
 - Foul Play
 - Will-O-Wisp
 
@@ -42347,7 +43454,7 @@ Skuntank
 Level: 92
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Crunch
-- Poison Jab
+- Skunk Spray
 - Fire Blast
 - Sucker Punch
 
@@ -42463,7 +43570,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 Nidoqueen
 Level: 94
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Earth Power
+- Queen's Weight
 - Sludge Wave
 - Ice Beam
 - Flamethrower
@@ -42480,7 +43587,7 @@ Nidoking @ Life Orb
 Level: 95
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Earth Power
-- Sludge Wave
+- Tyrant Horn
 - Ice Beam
 - Thunderbolt
 
@@ -42649,7 +43756,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Waterfall
 - U-turn
 - Ice Beam
-- Aqua Ring
+- Lure Light
 
 Cursola
 Level: 59
@@ -42818,7 +43925,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Power Gem
 - Flash Cannon
 - Earth Power
-- Thunder Wave
+- Moai Watch
 
 Bronzong
 Level: 92
@@ -42927,7 +44034,7 @@ Escavalier
 Level: 91
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Megahorn
-- Iron Head
+- Joust
 - Drill Run
 - Swords Dance
 
@@ -42954,7 +44061,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Hyper Voice
 - Energy Ball
 - Earth Power
-- Leech Seed
+- Olive Oil
 
 Dachsbun
 Level: 91
@@ -43000,7 +44107,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Mr. Rime
 Level: 92
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Freeze-Dry
+- Frosty Tap Dance
 - Psychic
 - Rapid Spin
 - Focus Blast
@@ -43220,14 +44327,14 @@ Orbeetle
 Level: 91
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Bug Buzz
-- Psychic
+- Abduction
 - Sticky Web
 - Calm Mind
 
 Mr. Rime
 Level: 91
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Freeze-Dry
+- Frosty Tap Dance
 - Psychic
 - Rapid Spin
 - Focus Blast
@@ -43653,7 +44760,7 @@ Escavalier
 Level: 93
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Megahorn
-- Iron Head
+- Joust
 - Drill Run
 - Swords Dance
 
@@ -43729,7 +44836,7 @@ Spiritomb
 Level: 94
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Foul Play
-- Shadow Sneak
+- Keystone Curse
 - Will-O-Wisp
 - Pain Split
 
@@ -43802,7 +44909,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Bewear
 Level: 94
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
-- Hammer Arm
+- Bear Hug
 - Double-Edge
 - Payback
 - Bulk Up
@@ -43899,7 +45006,7 @@ Ambipom
 Level: 93
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Fake Out
-- Double Hit
+- Twin Tails
 - U-turn
 - Knock Off
 
@@ -44066,7 +45173,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Beheeyem
 Level: 95
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Psychic
+- Abduction
 - Shadow Ball
 - Thunderbolt
 - Trick Room
@@ -44230,7 +45337,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 Lunatone
 Level: 96
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Psychic
+- Eclipse
 - Moonblast
 - Earth Power
 - Rock Polish
@@ -44238,7 +45345,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 Solrock
 Level: 96
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Psychic
+- Eclipse
 - Flare Blitz
 - Stone Edge
 - Morning Sun
@@ -44263,7 +45370,7 @@ Orbeetle
 Level: 96
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Bug Buzz
-- Psychic
+- Abduction
 - Sticky Web
 - Light Screen
 

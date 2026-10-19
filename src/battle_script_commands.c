@@ -1721,6 +1721,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
     else if (gBattleMons[battlerAtk].volatiles.laserFocus
           || MoveAlwaysCrits(move)
           || (move == MOVE_BRAIN_FREEZE && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SNOW | B_WEATHER_HAIL)) // Project Grounded
+          || (move == MOVE_COMBINATION && gMultiHitCounter == 1) // Project Grounded: de cross na twee rake jabs
           || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
     {
         critChance = CRITICAL_HIT_ALWAYS;
@@ -1807,6 +1808,7 @@ s32 CalcCritChanceStageGen1(u32 battlerAtk, u32 battlerDef, u32 move, bool32 rec
     else if (gBattleMons[battlerAtk].volatiles.laserFocus
              || MoveAlwaysCrits(move)
              || (move == MOVE_BRAIN_FREEZE && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SNOW | B_WEATHER_HAIL)) // Project Grounded
+             || (move == MOVE_COMBINATION && gMultiHitCounter == 1) // Project Grounded: de cross na twee rake jabs
              || (abilityAtk == ABILITY_MERCILESS && gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
     {
         critChance = CRITICAL_HIT_ALWAYS;
@@ -2572,6 +2574,14 @@ static void MoveDamageDataHpUpdate(u32 battler, u32 scriptBattler, const u8 *nex
         gProtectStructs[battler].specialDmg = gBattleStruct->moveDamage[battler] + 1;
         gSpecialStatuses[battler].specialDmg = gBattleStruct->moveDamage[battler] + 1;
         gProtectStructs[battler].specialBattlerId = gBattlerAttacker;
+    }
+
+    // Project Grounded: Innard Punch telt alle schade die een tegenstander deze beurt deed
+    if (gBattleStruct->moveDamage[battler] > 0 && !IsBattlerAlly(battler, gBattlerAttacker))
+    {
+        u32 total = gProtectStructs[battler].innardPunchDmg + gBattleStruct->moveDamage[battler];
+        gProtectStructs[battler].innardPunchDmg = min(total, 0xFFFF);
+        gProtectStructs[battler].innardPunchBattlerId = gBattlerAttacker;
     }
 
     if (IsBattlerTurnDamaged(gBattlerTarget) && GetMoveCategory(gCurrentMove) != DAMAGE_CATEGORY_STATUS)
@@ -15122,6 +15132,34 @@ void BS_CalcMetalBurstDmg(void)
     else
     {
         gBattlescriptCurrInstr = cmd->failInstr;
+    }
+}
+
+// Project Grounded: Innard Punch (Pyukumuku). Is de gebruiker deze beurt door een tegenstander geraakt, dan
+// doet hij 2x de totale schade van deze beurt terug op de laatste tegenstander die hem raakte.
+void BS_CalcInnardPunchDmg(void)
+{
+    NATIVE_ARGS(const u8 *normalInstr);
+
+    u32 damager = gProtectStructs[gBattlerAttacker].innardPunchBattlerId;
+    u32 total = gProtectStructs[gBattlerAttacker].innardPunchDmg;
+
+    if (total != 0
+     && damager < gBattlersCount
+     && !IsBattlerAlly(gBattlerAttacker, damager)
+     && IsBattlerAlive(damager))
+    {
+        u32 sideTarget = GetBattlerSide(damager);
+        if (IsAffectedByFollowMe(gBattlerAttacker, sideTarget, gCurrentMove))
+            gBattlerTarget = gSideTimers[sideTarget].followmeTarget;
+        else
+            gBattlerTarget = damager;
+        gBattleStruct->moveDamage[gBattlerTarget] = total * 2;
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    }
+    else
+    {
+        gBattlescriptCurrInstr = cmd->normalInstr;
     }
 }
 

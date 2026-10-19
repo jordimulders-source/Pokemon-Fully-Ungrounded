@@ -385,6 +385,8 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_LIFE_BUOY, // Project Grounded: +1 prioriteit in regen; bij uitwisselen 1/4 HP terug
     EFFECT_KEYSTONE_CURSE, // Project Grounded: +20 BP per flauwgevallen teamlid (max 160)
     EFFECT_ROLLING_THUNDER, // Project Grounded: gaat door Protect heen en raakt dan altijd
+    EFFECT_KUSARIGAMA, // Project Grounded: x2 als het doelwit deze beurt wisselt
+    EFFECT_INNARD_PUNCH, // Project Grounded: deze beurt geraakt: 2x de schade terug, anders een gewone klap
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

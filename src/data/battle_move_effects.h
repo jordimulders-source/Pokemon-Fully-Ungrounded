@@ -1288,6 +1288,18 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 3,
     },
 
+    [EFFECT_KUSARIGAMA] = // Project Grounded: Accelgor
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
+    [EFFECT_INNARD_PUNCH] = // Project Grounded: Pyukumuku
+    {
+        .battleScript = BattleScript_EffectInnardPunch,
+        .battleTvScore = 3,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

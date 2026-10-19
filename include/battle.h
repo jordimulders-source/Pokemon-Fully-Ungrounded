@@ -166,6 +166,8 @@ struct ProtectStruct
     u16 specialDmg;
     u8 physicalBattlerId:4;
     u8 specialBattlerId:4;
+    u8 innardPunchBattlerId; // Project Grounded: laatste tegenstander die deze beurt schade deed
+    u16 innardPunchDmg; // Project Grounded: totale schade van tegenstanders deze beurt (Innard Punch)
 };
 
 // Cleared at the start of HandleAction_ActionFinished

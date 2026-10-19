@@ -23011,6 +23011,123 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_RollingKick,
     },
 
+    [MOVE_KUSARIGAMA] = // Project Grounded: Accelgor (ninja met een ketting-sikkel)
+    {
+        .name = COMPOUND_STRING("Kusarigama"),
+        .description = COMPOUND_STRING(
+            "A chained sickle. Double\n"
+            "power if the foe switches."),
+        .effect = EFFECT_KUSARIGAMA,
+        .power = 80,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Kusarigama,
+    },
+
+    [MOVE_INNARD_PUNCH] = // Project Grounded: Pyukumuku (de witte vuist uit zijn lijf)
+    {
+        .name = COMPOUND_STRING("Innard Punch"),
+        .description = COMPOUND_STRING(
+            "Moves last. If hit first,\n"
+            "deals 2x the damage taken."),
+        .effect = EFFECT_INNARD_PUNCH,
+        .power = 50,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -4,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .punchingMove = TRUE,
+        .meFirstBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_InnardPunch,
+    },
+
+    [MOVE_COMBINATION] = // Project Grounded: Hitmonchan (jab, jab, cross)
+    {
+        .name = COMPOUND_STRING("Combination"),
+        .description = COMPOUND_STRING(
+            "Jab, jab, cross. The cross\n"
+            "crits if all three land."),
+        .effect = EFFECT_TRIPLE_KICK, // kracht per klap: zie CalcMoveBasePower (20, 20, 60)
+        .power = 20,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .punchingMove = TRUE,
+        .strikeCount = 3,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Combination,
+    },
+
+    [MOVE_SPINNING_BACKFIST] = // Project Grounded: Hitmonchan (draaiende achterwaartse vuist)
+    {
+        .name = COMPOUND_STRING("Spinning Backfist"),
+        .description = COMPOUND_STRING(
+            "Ignores stat boosts and\n"
+            "hits through substitutes."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .punchingMove = TRUE,
+        .ignoresTargetDefenseEvasionStages = TRUE,
+        .ignoresSubstitute = TRUE,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_MONS_WITH_GOOD_APPEALS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SpinningBackfist,
+    },
+
+    [MOVE_ABDUCTION] = // Project Grounded: Beheeyem en Orbeetle (UFO-tractorstraal)
+    {
+        .name = COMPOUND_STRING("Abduction"),
+        .description = COMPOUND_STRING(
+            "Moves last; first in Trick\n"
+            "Room. Beams the foe away."),
+        .effect = EFFECT_HIT_SWITCH_TARGET,
+        .power = 80,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -6, // in Trick Room 0: zie GetBattleMovePriority
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_LATER,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Abduction,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

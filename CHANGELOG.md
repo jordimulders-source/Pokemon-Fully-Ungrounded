@@ -19187,3 +19187,23 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Rev Up** (Revavroom, bij evolutie): Steel 40, +1 prioriteit, daarna +1 Speed en +1 Attack.
 - Tests: `signature_moves_4.c`.
 - **Wally (Meteor Falls)**: Darmanitan, Arctibax en Primeape (was Darumaka/Frigibax/Mankey op lv 39); Kirlia blijft Kirlia (Jordi: ook op Mt. Chimney). **Ditto-trainer**: Tinkaton (was Tinkatuff @ Eviolite) met Gigaton Hammer.
+
+### Signature moves ronde 3b–3d (v1.0.0)
+- **Totem Gaze** (Xatu, bij evolutie): Psychic 80; daarna mist de eerstvolgende schadelijke move tegen Xatu ("saw it coming!", vervalt bij wisselen). Eigen animatie: twee totempalen van ogen die opengaan, psychische ringen naar het doel.
+- **Tusk Tumble** (Donphan, bij evolutie): Ground 30, rolt 5 beurten zoals Rollout; elke treffer ruimt eigen hazards op, de eerste legt 1 laag Spikes bij de tegenstander.
+- **Afro Charge** (Bouffalant, lv 40): Normal 120, 1/4 recoil, gaat door Protect; neemt het type van het terrein aan.
+- **Bubble Dome** (Araquanid, bij evolutie): Reflect + Light Screen tegelijk, alleen voor Araquanid; een snijdende move knapt de koepel ("Pop.").
+- **The Old Days** (Drampa, lv 30): doel wordt slaperig (Yawn), Drampa +1 Sp. Atk. Eigen animatie: sepia-flashback, gedachtewolk, Drampa die kwebbelt, doel dat knikkebolt.
+- **Bear Hug** (Bewear, bij evolutie): Fighting 80, knuffelt 4–5 beurten vast (1/8 HP per beurt).
+- **Face Off** (Eiscue, lv 30): Ice 85, dubbele kracht met intacte Ice Face.
+- **Olive Oil** (Arboliva, bij evolutie): heelt 1/2 (Pollen Haze 2/3) en zet Grassy Terrain.
+- **Twin Tails** (Ambipom, bij evolutie): Normal 40×2, steelt één stat-boost van het doel.
+- **Life Buoy** (Floatzel, bij evolutie): Water 80, +1 prioriteit in regen, heelt 1/4 bij uitwisselen.
+- **Keystone Curse** (Spiritomb, lv 35): Ghost 60, +20 per flauwgevallen teamlid (max 160).
+- **Frosty Tap Dance** (Mr. Rime, bij evolutie): Ice 70 dans, +1 Speed (in sneeuw ook +1 Sp. Atk).
+- **Rolling Thunder** (Hitmonlee, lv 40; wordt later een TM): Fighting 100/90, gaat door Protect-varianten en raakt dan altijd.
+- **Kusarigama** (Accelgor, bij evolutie): Bug 80 zonder contact, dubbel tegen een wisselende tegenstander. Eigen animatie: sikkel aan een ketting.
+- **Innard Punch** (Pyukumuku, lv 1): Fighting, −4; deze beurt geraakt: 2× de ontvangen schade terug, anders 50 BP. De witte vuist schiet uit zijn lijf.
+- **Combination** (Hitmonchan, bij evolutie): jab-jab-cross (20/20/60), derde klap altijd crit als alles raakt. **Spinning Backfist** (Hitmonchan, lv 40): Fighting 90, negeert boosts van het doel en raakt door Substitute.
+- **Abduction** (Beheeyem en Orbeetle, bij evolutie): Psychic 80, −6, dwingt een wissel; in Trick Room prioriteit 0. UFO-animatie.
+- Tests: `signature_moves_5.c`, `_7.c`, `_8.c`.

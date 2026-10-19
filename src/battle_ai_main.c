@@ -5673,6 +5673,12 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
          && (GetBattleMoveCategory(predictedMove) == DAMAGE_CATEGORY_SPECIAL))
             ADJUST_SCORE(GOOD_EFFECT);
         break;
+    case EFFECT_INNARD_PUNCH: // Project Grounded: Pyukumuku slaat terug als hij de klap overleeft
+        if ((!IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef]) && predictedMove != MOVE_NONE)
+         && (GetNoOfHitsToKOBattler(battlerDef, battlerAtk, predictedMoveSlot, AI_DEFENDING) >= 2)
+         && !IsBattleMoveStatus(predictedMove))
+            ADJUST_SCORE(GOOD_EFFECT);
+        break;
     case EFFECT_SHORE_UP:
         if ((AI_GetWeather() & B_WEATHER_SANDSTORM) && ShouldRecover(battlerAtk, battlerDef, move, 67))
             ADJUST_SCORE(DECENT_EFFECT);
@@ -6778,6 +6784,9 @@ static s32 AI_PredictSwitch(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
     // Switch benefit
     switch (moveEffect)
     {
+    case EFFECT_KUSARIGAMA: // Project Grounded: dubbele kracht op wie inwisselt
+        ADJUST_SCORE(GOOD_EFFECT);
+        break;
     case EFFECT_PURSUIT:
     {
         u32 hitsToKO = GetNoOfHitsToKOBattler(battlerAtk, battlerDef, gAiThinkingStruct->movesetIndex, AI_ATTACKING);

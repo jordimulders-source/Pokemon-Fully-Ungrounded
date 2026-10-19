@@ -79,6 +79,29 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 7,
     },
 
+    [ABILITY_EELEVATE] = // Project Grounded: Eelektross
+    {
+        .name = _("Eelevate"),
+        .description = COMPOUND_STRING("Floats. KOs boost best stat."),
+        .aiRating = 8,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_AURA_GUARD] = // Project Grounded: Lucario
+    {
+        .name = _("Aura Guard"),
+        .description = COMPOUND_STRING("Halves contact damage."),
+        .aiRating = 6,
+        .breakable = TRUE,
+    },
+
+    [ABILITY_SPICY_SPRAY] = // Project Grounded: Scovillain
+    {
+        .name = _("Spicy Spray"),
+        .description = COMPOUND_STRING("Burns foes that hit it."),
+        .aiRating = 6,
+    },
+
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("Speed Boost"),

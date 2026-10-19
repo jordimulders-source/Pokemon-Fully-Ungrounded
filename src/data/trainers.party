@@ -29305,7 +29305,7 @@ Nature: Impish
 
 Eelektross @ Assault Vest
 Level: 51
-Ability: Levitate
+Ability: Eelevate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 SpA / 4 SpD
 Nature: Modest
@@ -29889,7 +29889,7 @@ Mugshot: Yellow
 Scovillain @ Charcoal
 Level: 67
 Ball: Poke Ball
-Ability: Insomnia
+Ability: Spicy Spray
 Nature: Modest
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
@@ -31682,7 +31682,7 @@ Nature: Jolly
 
 Lucario @ Life Orb
 Level: 50
-Ability: Inner Focus
+Ability: Aura Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
 Nature: Hasty
@@ -32410,7 +32410,7 @@ Nature: Timid
 
 Lucario @ Life Orb
 Level: 50
-Ability: Inner Focus
+Ability: Aura Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
 Nature: Hasty
@@ -33182,7 +33182,7 @@ Nature: Adamant
 
 Lucario @ Life Orb
 Level: 50
-Ability: Inner Focus
+Ability: Aura Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
 Nature: Hasty
@@ -35266,7 +35266,7 @@ Nature: Bold
 
 Lucario @ Life Orb
 Level: 50
-Ability: Inner Focus
+Ability: Aura Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 SpA
 Nature: Naive
@@ -35441,7 +35441,7 @@ Nature: Adamant
 
 Lucario @ Life Orb
 Level: 92
-Ability: Inner Focus
+Ability: Aura Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Adamant
 - Swords Dance
@@ -35893,7 +35893,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 Scovillain @ Charcoal
 Level: 93
-Ability: Insomnia
+Ability: Spicy Spray
 Nature: Modest
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Flamethrower
@@ -36263,7 +36263,7 @@ Nature: Modest
 
 Eelektross @ Assault Vest
 Level: 50
-Ability: Levitate
+Ability: Eelevate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 SpA / 4 SpD
 Nature: Modest
@@ -38566,7 +38566,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
 Eelektross @ Assault Vest
 Level: 92
-Ability: Levitate
+Ability: Eelevate
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Thunderbolt
 - Flamethrower
@@ -39463,7 +39463,7 @@ Nature: Timid
 
 Lucario @ Life Orb
 Level: 98
-Ability: Inner Focus
+Ability: Aura Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
 Nature: Hasty
@@ -41943,7 +41943,7 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 
 Eelektross
 Level: 55
-Ability: Levitate
+Ability: Eelevate
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Wild Charge
 - Crunch
@@ -42782,7 +42782,7 @@ Nature: Modest
 
 Eelektross @ Assault Vest
 Level: 98
-Ability: Levitate
+Ability: Eelevate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 SpA / 4 SpD
 Nature: Modest
@@ -42824,7 +42824,7 @@ AI: Check Bad Move / Try To Faint / Check Viability
 
 Eelektross
 Level: 86
-Ability: Levitate
+Ability: Eelevate
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Wild Charge
 - Crunch

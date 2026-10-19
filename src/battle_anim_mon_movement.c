@@ -1293,3 +1293,52 @@ static void AnimTask_RotateVerticallyStep(u8 taskId)
 #undef tFrames
 #undef tPlayerSide
 #undef tRotMax
+
+// Project Grounded: de battler draait één keer horizontaal om zijn as (Spinning Backfist).
+// De x-schaal volgt een cosinus van 256 naar -256 en terug; negatief = gespiegeld.
+// arg0: battler, arg1: aantal frames voor de volle draai
+#define tSpriteId data[0]
+#define tFrame    data[1]
+#define tFrames   data[2]
+#define tStep     data[3]
+
+static void AnimTask_SpinMonHorizontally_Step(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    s32 width;
+
+    if (++task->tFrame >= task->tFrames)
+    {
+        ResetSpriteRotScale(task->tSpriteId);
+        DestroyAnimVisualTask(taskId);
+        return;
+    }
+    // Zichtbare breedte = cos(fase); de matrix werkt omgekeerd (schaal 0x200 = halve breedte).
+    width = Cos((task->tFrame * task->tStep) >> 4 & 0xFF, 256);
+    if (width >= 0 && width < 16)
+        width = 16;
+    else if (width < 0 && width > -16)
+        width = -16;
+    SetSpriteRotScale(task->tSpriteId, 0x10000 / width, 256, 0);
+}
+
+void AnimTask_SpinMonHorizontally(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    u8 spriteId = GetAnimBattlerSpriteId(gBattleAnimArgs[0]);
+
+    if (gBattleAnimArgs[1] < 2)
+        gBattleAnimArgs[1] = 2;
+    task->tSpriteId = spriteId;
+    task->tFrame = 0;
+    task->tFrames = gBattleAnimArgs[1];
+    task->tStep = (256 << 4) / gBattleAnimArgs[1];
+    PrepareBattlerSpriteForRotScale(spriteId, ST_OAM_OBJ_NORMAL);
+    SetSpriteRotScale(spriteId, 256, 256, 0);
+    task->func = AnimTask_SpinMonHorizontally_Step;
+}
+
+#undef tSpriteId
+#undef tFrame
+#undef tFrames
+#undef tStep

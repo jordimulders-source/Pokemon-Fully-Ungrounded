@@ -182,6 +182,7 @@ testrunner (onder `TESTING` staat de omleiding uit). Verslagen-flag wordt gedeel
 | `TRAINER_RIVAL_POSTGAME_TREECKO` | `TRAINER_WALLACE_OLD_CHAMPION` | 335 | 0x64F | Pacifidlog (18, 14), Battle Tower (OutsideEast 18, 16), Paradiso Resort (27, 9) |
 | `TRAINER_RIVAL_POSTGAME_TORCHIC` | `TRAINER_RED` (alleen de testrunner) | 851 | 0x853 | idem |
 | `TRAINER_RIVAL_POSTGAME_MUDKIP` | `TRAINER_LEAF` (alleen de testrunner) | 852 | 0x854 | idem |
+| Psychic Dua (zweeft op het water, zingt Levitating) | `TRAINER_DUA` | `TRAINER_SPENCER` | 159 | 0x59F | Route 124 (`Route124/scripts.inc`) |
 
 Flags: `FLAG_RIVAL_PG_PACIFIDLOG_DONE` (gevecht 7), `FLAG_RIVAL_PG_RETIRED` (gevecht 8, verhuisd naar Paradiso),
 `FLAG_RIVAL_PG_RESORT_MET` (Guinness-verhaal gehoord), `FLAG_DAILY_REMATCH_RIVAL` (vandaag al verslagen). Levels: fase 1

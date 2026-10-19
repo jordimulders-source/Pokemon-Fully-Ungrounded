@@ -162,7 +162,7 @@
 #define TRAINER_JEROME                      156
 #define TRAINER_MATTHEW                     157
 #define TRAINER_DAVID                       158
-#define TRAINER_SPENCER                     159
+#define TRAINER_DUA                     159
 #define TRAINER_ROLAND                      160
 #define TRAINER_NOLEN                       161
 #define TRAINER_STAN                        162

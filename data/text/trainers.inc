@@ -3706,16 +3706,20 @@ Route123_Text_KayleyPostBattle:
 	.string "Also of losing. Apparently.$"
 
 Route124_Text_SpencerIntro:
-	.string "Lost at sea?\p"
-	.string "Beat my POKéMON and I'll be your pilot.$"
+	.string "I got you, moonlight,\n"
+	.string "you're my starlight\p"
+	.string "I need you all night,\n"
+	.string "come on, dance with me\p"
+	.string "I'm levitating$"
 
 Route124_Text_SpencerDefeat:
-	.string "I lost my bearings!$"
+	.string "Okay, I'm… landing. Gently. With dignity.$"
 
 Route124_Text_SpencerPostBattle:
-	.string "Lots of people get lost at sea.\p"
-	.string "Check the POKéNAV MAP.\p"
-	.string "Or follow the Wailord. They know.$"
+	.string "Yes, I'm standing on the ocean. No, I\n"
+	.string "can't swim.\p"
+	.string "Why would I need to? None of my POKéMON\n"
+	.string "touch the ground either.$"
 
 Route124_Text_RolandIntro:
 	.string "You're riding a POKéMON? I want to surf\n"

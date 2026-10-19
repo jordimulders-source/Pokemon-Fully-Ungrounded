@@ -5257,22 +5257,68 @@ Kilowattrel
 Level: 42
 IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 
-=== TRAINER_SPENCER ===
-Name: SPENCER
-Class: Swimmer M
-Pic: Swimmer M
-Gender: Male
-Music: Swimmer
+=== TRAINER_DUA ===
+Name: DUA
+Class: Psychic
+Pic: Psychic F
+Gender: Female
+Music: Intense
 Double Battle: No
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
-Gyarados
-Level: 59
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
-
-Empoleon
+Chimecho
 Level: 58
-IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Levitate
+- Wind Chime
+- Psychic
+- Heal Bell
+- Calm Mind
+
+Lunatone
+Level: 58
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Levitate
+- Eclipse
+- Moonblast
+- Earth Power
+- Rock Polish
+
+Solrock
+Level: 58
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Levitate
+- Eclipse
+- Stone Edge
+- Zen Headbutt
+- Morning Sun
+
+Bronzong
+Level: 58
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Levitate
+- Laser Beam
+- Gyro Ball
+- Trick Room
+- Earthquake
+
+Mismagius
+Level: 58
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Levitate
+- Shadow Ball
+- Mystical Fire
+- Nasty Plot
+- Thunderbolt
+
+Hydreigon
+Level: 60
+IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
+Ability: Levitate
+- Dark Pulse
+- Draco Meteor
+- Flamethrower
+- Earth Power
 
 === TRAINER_ROLAND ===
 Name: ROLAND

@@ -13,7 +13,7 @@ Route124_EventScript_HuntersHouseSign::
 	end
 
 Route124_EventScript_Spencer::
-	trainerbattle_single TRAINER_SPENCER, Route124_Text_SpencerIntro, Route124_Text_SpencerDefeat
+	trainerbattle_single TRAINER_DUA, Route124_Text_SpencerIntro, Route124_Text_SpencerDefeat
 	msgbox Route124_Text_SpencerPostBattle, MSGBOX_AUTOCLOSE
 	end
 

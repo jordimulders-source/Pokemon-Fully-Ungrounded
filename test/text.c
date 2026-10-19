@@ -57,6 +57,7 @@ TEST("Move names fit on Contest Screen")
     case MOVE_STOMPING_TANTRUM:
     case MOVE_NATURES_MADNESS:
     case MOVE_DOUBLE_IRON_BASH:
+    case MOVE_FROSTY_TAP_DANCE: // Project Grounded
         EXPECT_GT(GetStringWidth(fontId, GetMoveName(move), 0), widthPx);
         break;
     default:
@@ -716,6 +717,7 @@ TEST("Battle strings fit on the battle message window")
     case STRINGID_TARGETABILITYSTATLOWER:
     case STRINGID_SCRIPTINGABILITYSTATRAISE:
     case STRINGID_STATWASHEIGHTENED:
+    case STRINGID_TWINTAILSSNATCH: // Project Grounded
         StringCopy(gBattleTextBuff1, gStatNamesTable[longStatName]);
         break;
     // Buffer Type name to B_BUFF1

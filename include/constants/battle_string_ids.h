@@ -786,6 +786,7 @@ enum StringID
     STRINGID_BUBBLEDOME, // Project Grounded
     STRINGID_BUBBLEDOMEPOPPED, // Project Grounded
     STRINGID_PKMNBEARHUGGED, // Project Grounded
+    STRINGID_TWINTAILSSNATCH, // Project Grounded
     STRINGID_COUNT
 };
 

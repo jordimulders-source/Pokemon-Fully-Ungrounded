@@ -346,6 +346,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_BUBBLEDOME]                           = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} blew a dome\nof bubbles over {B_ATK_TEAM2} team!"),
     [STRINGID_BUBBLEDOMEPOPPED]                     = COMPOUND_STRING("The Bubble Dome was sliced\nopen! Pop."),
     [STRINGID_PKMNBEARHUGGED]                       = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is being hugged\ntightly! There is no escape."),
+    [STRINGID_TWINTAILSSNATCH]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} snatched\n{B_DEF_NAME_WITH_PREFIX2}'s\l{B_BUFF1} boost!"), // Project Grounded: Twin Tails
     [STRINGID_HOLEUP]                               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} ducked back\ninto its hole!"),
     [STRINGID_BEAVERDAMFLOOD]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} was swept\naway by the flood!"),
     [STRINGID_PKMNHYPHALSNARE]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} got tangled\nin {B_ATK_NAME_WITH_PREFIX2}'s hyphae! Gross!"),

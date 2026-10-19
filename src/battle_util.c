@@ -6856,6 +6856,21 @@ static bool32 IsCraftyShieldProtected(u32 battlerAtk, u32 battlerDef, u32 move)
     return FALSE;
 }
 
+// Project Grounded: Keystone Curse, aantal flauwgevallen Pokémon in het team van de gebruiker
+u32 CountFaintedPartyMons(u32 battler)
+{
+    u32 i, count = 0;
+    struct Pokemon *party = GetBattlerParty(battler);
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u32 species = GetMonData(&party[i], MON_DATA_SPECIES_OR_EGG);
+        if (species != SPECIES_NONE && species != SPECIES_EGG && GetMonData(&party[i], MON_DATA_HP) == 0)
+            count++;
+    }
+    return count;
+}
+
 bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
 {
     if (gProtectStructs[battlerDef].protected == PROTECT_NONE
@@ -7380,6 +7395,9 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
     case EFFECT_JOUST: // Project Grounded: Escavalier, lans tegen een snellere aanvaller
         if (IsJoustTargetFaster(battlerAtk, battlerDef))
             basePower = 100;
+        break;
+    case EFFECT_KEYSTONE_CURSE: // Project Grounded: Spiritomb, +20 BP per flauwgevallen teamlid (max 160)
+        basePower = min(160, basePower + 20 * CountFaintedPartyMons(battlerAtk));
         break;
     case EFFECT_SOLSTICE_GATE: // Project Grounded: Stonjourner, zonnewende (zon) of winterwende (sneeuw)
         if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SUN | B_WEATHER_SNOW | B_WEATHER_HAIL))
@@ -11260,6 +11278,10 @@ bool32 CanMoveSkipAccuracyCalc(u32 battlerAtk, u32 battlerDef, enum Ability abil
         {
             effect = FALSE;
         }
+    }
+    else if (moveEffect == EFFECT_ROLLING_THUNDER && gProtectStructs[battlerDef].protected != PROTECT_NONE)
+    {
+        effect = TRUE; // Project Grounded: Rolling Thunder trapt door een bescherming heen en raakt dan altijd
     }
     else if (B_MINIMIZE_DMG_ACC >= GEN_6
      && gBattleMons[battlerDef].volatiles.minimize

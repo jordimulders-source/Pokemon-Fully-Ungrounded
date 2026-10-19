@@ -393,6 +393,7 @@ bool32 CanGetFrostbite(u32 battlerAtk, u32 battlerDef, enum Ability abilityDef);
 bool32 CanSetNonVolatileStatus(u32 battlerAtk, u32 battlerDef, enum Ability abilityAtk, enum Ability abilityDef, enum MoveEffect secondaryMoveEffect, enum FunctionCallOption option);
 bool32 CanBeConfused(u32 battler);
 bool32 IsJoustTargetFaster(u32 battlerAtk, u32 battlerDef); // Project Grounded
+u32 CountFaintedPartyMons(u32 battler); // Project Grounded
 bool32 IsSafeguardProtected(u32 battlerAtk, u32 battlerDef, u32 abilityAtk);
 u32 GetBattlerAffectionHearts(u32 battler);
 void TryToRevertMimicryAndFlags(void);

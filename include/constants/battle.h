@@ -224,7 +224,8 @@ enum VolatileFlags
     F(VOLATILE_BURROW_MAZE,                 burrowMaze,                    (u32, 3)) /* Project Grounded: Furret, aantal uitwegen */ \
     F(VOLATILE_PITCHER_TRAPPED_BY,          pitcherTrappedBy,              (enum BattlerId, MAX_BITS(4))) /* Project Grounded: Victreebel + 1 */ \
     F(VOLATILE_SILK_TRAPPED,                silkTrapped,                   (u32, 1)) /* Project Grounded: Silk Trap, kan niet ontsnappen */ \
-    F(VOLATILE_TOTEM_GAZE,                  totemGaze,                     (u32, 1)) /* Project Grounded: Xatu */
+    F(VOLATILE_TOTEM_GAZE,                  totemGaze,                     (u32, 1)) /* Project Grounded: Xatu */ \
+    F(VOLATILE_LIFE_BUOY,                   lifeBuoy,                      (u32, 1)) /* Project Grounded: Life Buoy, 1/4 HP terug bij uitwisselen */
 
 
 /* Use within a macro to get the maximum allowed value for a volatile. Requires _typeMaxValue as input. */
@@ -529,6 +530,7 @@ enum __attribute__((packed)) MoveEffect
     MOVE_EFFECT_FIRE_SPIN_SIDE,
     MOVE_EFFECT_FIXED_POWER,
     MOVE_EFFECT_MUMMIFY, // Project Grounded: Mummy's Curse, ability van het doelwit wordt Mummy
+    MOVE_EFFECT_TWIN_TAILS, // Project Grounded: Twin Tails, steelt één positieve stat-boost (eerste klap)
     // Max move effects end. They can be used for (custom) normal moves.
 
     NUM_MOVE_EFFECTS

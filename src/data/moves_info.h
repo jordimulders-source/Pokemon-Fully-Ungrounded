@@ -22888,6 +22888,129 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_GrassyTerrain,
     },
 
+    [MOVE_TWIN_TAILS] = // Project Grounded: Ambipom (twee staarthanden, één graait een boost weg)
+    {
+        .name = COMPOUND_STRING("Twin Tails"),
+        .description = COMPOUND_STRING(
+            "Hits twice. Steals one of\n"
+            "the foe's stat boosts."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .strikeCount = 2,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_TWIN_TAILS,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DoubleHit,
+    },
+
+    [MOVE_LIFE_BUOY] = // Project Grounded: Floatzel (zwemvest; snel in regen, redt zichzelf bij het wisselen)
+    {
+        .name = COMPOUND_STRING("Life Buoy"),
+        .description = COMPOUND_STRING(
+            "Goes first in rain. Heals\n"
+            "the user when it switches."),
+        .effect = EFFECT_LIFE_BUOY,
+        .power = 80,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_AquaJet,
+    },
+
+    [MOVE_KEYSTONE_CURSE] = // Project Grounded: Spiritomb (108 zielen in de sleutelsteen)
+    {
+        .name = COMPOUND_STRING("Keystone Curse"),
+        .description = COMPOUND_STRING(
+            "Stronger for each fainted\n"
+            "Pokémon in the user's team."),
+        .effect = EFFECT_KEYSTONE_CURSE,
+        .power = 60,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LastRespects,
+    },
+
+    [MOVE_FROSTY_TAP_DANCE] = // Project Grounded: Mr. Rime (tapdansen op het ijs; in sneeuw ook +1 Sp. Atk)
+    {
+        .name = COMPOUND_STRING("Frosty Tap Dance"),
+        .description = COMPOUND_STRING(
+            "A dance that ups Speed.\n"
+            "Also Sp. Atk in snow/hail."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .danceMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
+            .self = TRUE,
+            .chance = 100,
+        },{
+            .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1, // alleen in Snow/Hail (CanApplyAdditionalEffect)
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_TripleAxel,
+    },
+
+    [MOVE_ROLLING_THUNDER] = // Project Grounded: Hitmonlee (MMA-draaitrap, wordt later een TM)
+    {
+        .name = COMPOUND_STRING("Rolling Thunder"),
+        .description = COMPOUND_STRING(
+            "A spinning kick that breaks\n"
+            "through Protect and hits."),
+        .effect = EFFECT_ROLLING_THUNDER,
+        .power = 100,
+        .type = TYPE_FIGHTING,
+        .accuracy = 90,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .ignoresProtect = TRUE,
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_RollingKick,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

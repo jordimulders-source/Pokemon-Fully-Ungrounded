@@ -164,6 +164,7 @@ extern const u8 BattleScript_MoveEffectToxic[];
 extern const u8 BattleScript_MoveEffectPayDay[];
 extern const u8 BattleScript_MoveEffectWrap[];
 extern const u8 BattleScript_MoveEffectMummify[];
+extern const u8 BattleScript_MoveEffectTwinTails[]; // Project Grounded
 extern const u8 BattleScript_EffectWeatherReport[];
 extern const u8 BattleScript_EffectWindChime[];
 extern const u8 BattleScript_EffectPrimevalWard[];

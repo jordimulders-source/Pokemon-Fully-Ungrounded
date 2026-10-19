@@ -6772,6 +6772,13 @@ BattleScript_MoveEffectMummify::
 	tryendneutralizinggas
 	return
 
+@ Project Grounded: Twin Tails steelt een stat-boost; de stages zijn al verschoven in SetMoveEffect
+BattleScript_MoveEffectTwinTails::
+	playanimation BS_ATTACKER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	printstring STRINGID_TWINTAILSSNATCH
+	waitmessage B_WAIT_TIME_LONG
+	return
+
 @ Project Grounded: Pack Howl. Met een partner: +1 Atk voor beiden (zoals Howl); alleen: +1 Atk en +1 Spe.
 BattleScript_EffectPackHowl::
 	jumpifnoally BS_ATTACKER, BattleScript_EffectDragonDance

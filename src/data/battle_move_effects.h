@@ -1270,6 +1270,24 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .encourageEncore = TRUE,
     },
 
+    [EFFECT_LIFE_BUOY] = // Project Grounded: Floatzel
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
+    [EFFECT_KEYSTONE_CURSE] = // Project Grounded: Spiritomb
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_ROLLING_THUNDER] = // Project Grounded: Hitmonlee
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

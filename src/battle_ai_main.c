@@ -6032,6 +6032,19 @@ static s32 AI_CalcAdditionalEffectScore(u32 battlerAtk, u32 battlerDef, u32 move
                 if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_WATER) || IS_BATTLER_OF_TYPE(battlerDef, TYPE_STEEL))
                     ADJUST_SCORE(DECENT_EFFECT);
                 break;
+            case MOVE_EFFECT_TWIN_TAILS: // Project Grounded: Ambipom steelt een boost
+            {
+                u32 stat;
+                for (stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
+                {
+                    if (gBattleMons[battlerDef].statStages[stat] > DEFAULT_STAT_STAGE)
+                    {
+                        ADJUST_SCORE(DECENT_EFFECT);
+                        break;
+                    }
+                }
+                break;
+            }
             case MOVE_EFFECT_SUN:
                 if (ShouldSetWeather(battlerAtk, B_WEATHER_SUN))
                     ADJUST_SCORE(DECENT_EFFECT);

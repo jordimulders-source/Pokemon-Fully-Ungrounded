@@ -1820,8 +1820,6 @@ static const u16 sClefableTeachableLearnset[] = {
     MOVE_DIM_MAK,
     MOVE_UPDRAFT,
     MOVE_SUPER_SPLASH,
-    MOVE_ROOST,
-    MOVE_TAILWIND,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_CLEFAIRY
@@ -5035,7 +5033,6 @@ static const u16 sGrimerTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_ACID_RAIN,
     MOVE_DIM_MAK,
-    MOVE_HIGH_HORSEPOWER,
     MOVE_UNAVAILABLE,
 };
 
@@ -5085,7 +5082,6 @@ static const u16 sMukTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_ACID_RAIN,
     MOVE_DIM_MAK,
-    MOVE_HIGH_HORSEPOWER,
     MOVE_UNAVAILABLE,
 };
 
@@ -7884,8 +7880,6 @@ static const u16 sPinsirTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_X_SCISSOR,
     MOVE_POLLEN_HAZE,
-    MOVE_ROOST,
-    MOVE_TAILWIND,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_PINSIR
@@ -8075,8 +8069,6 @@ static const u16 sGyaradosTeachableLearnset[] = {
     MOVE_COLD_SHOULDER,
     MOVE_OVERKILL,
     MOVE_DISCO_INFERNO,
-    MOVE_KNOCK_OFF,
-    MOVE_SNARL,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_MAGIKARP
@@ -21624,7 +21616,6 @@ static const u16 sLopunnyTeachableLearnset[] = {
     MOVE_DIM_MAK,
     MOVE_DISCO_INFERNO,
     MOVE_SUPER_SPLASH,
-    MOVE_BULK_UP,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_BUNEARY
@@ -22630,7 +22621,6 @@ static const u16 sRotomTeachableLearnset[] = {
     MOVE_MACHINE_LEARNING,
     MOVE_POLLEN_HAZE,
     MOVE_COLD_SHOULDER,
-    MOVE_ENERGY_BALL,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_ROTOM

@@ -1648,7 +1648,7 @@
 #define FLAG_GROUNDED(n)                        (GROUNDED_FLAGS_START + (n))
 // Verdeling (houd bij!): 0-49 Hoopa-quest, 50-99 Forces-trio, 100-149 vuurtoren/Dragon Island, 150-199 Battle Stadium
 // (omroeper), 200-329 kaartvulling 4 (kaart_vulling_4.py), 330-359 zeevulling 4, 360-399 gifts (Type: Null, Magearna,
-// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840-879 nieuwe items (nieuwe_items.py), 1760-1769 rivaal post-game (blok rival_postgame), 880+ vrij.
+// regionale vormen), 400-429 Beacon Isle (beacon_isle.py), 430-469 Tao-eiland (tao_island.py), 470-499 extra dungeons (dungeon_extra.py), 500-529 kratereilanden (sootopolis_craters.py), 530-559 Beasts of Ruin (ruin_beasts.py), 560-619 Spacetime Cave deel 1 (spacetime_cave.py), 620-659 Mega Forest (mega_forest.py), 660-699 Koraalkathedraal + Sea Shards (coral_cathedral.py), 700-759 National Park/Ilex (national_park.py), 760-799 Chargestone Cave (chargestone.py), 800-839 Swords of Justice/Keldeo/Meltan, 840-879 nieuwe items (nieuwe_items.py), 1000-1019 TM-plaatsing (blok tm_plaatsing), 1760-1769 rivaal post-game (blok rival_postgame), 880+ vrij.
 // lakes { (tools/grounded/maptools/lakes.py; FLAG_GROUNDED 1120-1159: 1120-1125 meren, 1140-1148 nieuwe items (nieuwe_items.py), 1126-1139 en 1149-1159 nog vrij)
 #define FLAG_HIDE_LAKE_ACUITY_UXIE                       FLAG_GROUNDED(1120) // Project Grounded: Lake Acuity: Uxie gevangen of verslagen (verbergt het object)
 #define FLAG_HIDE_LAKE_VALOR_AZELF                       FLAG_GROUNDED(1121) // Project Grounded: Lake Valor: Azelf gevangen of verslagen (verbergt het object)
@@ -1753,6 +1753,9 @@
 #define FLAG_ITEM_AREA_ZERO_CRYSTAL_MAX_REVIVE           FLAG_GROUNDED(935) // Project Grounded: Area Zero, kristalgrot: Max Revive
 #define FLAG_ITEM_AREA_ZERO_FUTURE_PP_MAX                FLAG_GROUNDED(936) // Project Grounded: Area Zero, toekomst: PP Max
 #define FLAG_ITEM_AREA_ZERO_PAST_RARE_CANDY              FLAG_GROUNDED(937) // Project Grounded: Area Zero, verleden: Rare Candy
+// }
+// tm_plaatsing { (met de hand, TM60-TM88, zie TM_PLAATSING.md; FLAG_GROUNDED 1000-1019: 1000 in gebruik, 1001-1019 nog vrij)
+#define FLAG_RECEIVED_TM_ROLLING_THUNDER                 FLAG_GROUNDED(1000) // Project Grounded: TM73 Rolling Thunder van Mustard (Kubfu-dojo) gekregen
 // }
 // glimwood { (tools/grounded/maptools/glimwood.py; FLAG_GROUNDED 880-919, 895-919 nog vrij)
 #define FLAG_GLIMWOOD_MET_WITCH                          FLAG_GROUNDED(880) // Project Grounded: Glimwood: de heks heeft zich voorgesteld

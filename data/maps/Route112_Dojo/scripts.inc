@@ -71,6 +71,15 @@ Route112_Dojo_EventScript_MustardChallenge::
 	msgbox Route112_Dojo_Text_MustardChallenge, MSGBOX_YESNO
 	goto_if_eq VAR_RESULT, NO, Route112_Dojo_EventScript_MustardDeclined
 	trainerbattle_no_intro TRAINER_MUSTARD, Route112_Dojo_Text_MustardDefeat
+	goto Route112_Dojo_EventScript_MustardGiveTM
+	end
+
+@ Project Grounded: na de overwinning geeft Mustard TM73 Rolling Thunder (ook later nog, voor wie hem al versloeg).
+Route112_Dojo_EventScript_MustardGiveTM::
+	msgbox Route112_Dojo_Text_MustardGiveTM, MSGBOX_DEFAULT
+	giveitem ITEM_TM_ROLLING_THUNDER
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_TM_ROLLING_THUNDER
 	msgbox Route112_Dojo_Text_MustardPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -81,6 +90,7 @@ Route112_Dojo_EventScript_MustardDeclined::
 	end
 
 Route112_Dojo_EventScript_MustardDefeated::
+	goto_if_unset FLAG_RECEIVED_TM_ROLLING_THUNDER, Route112_Dojo_EventScript_MustardGiveTM
 	msgbox Route112_Dojo_Text_MustardPostBattle, MSGBOX_DEFAULT
 	release
 	end
@@ -142,6 +152,13 @@ Route112_Dojo_Text_MustardDeclined:
 Route112_Dojo_Text_MustardDefeat:
 	.string "Oh ho ho! Beaten by my own slipper\n"
 	.string "thief! Retirement suits me after all.$"
+
+Route112_Dojo_Text_MustardGiveTM:
+	.string "Oh ho! Take this. My signature kick,\n"
+	.string "on a disc. Like a fitness DVD, but it\l"
+	.string "actually works.\p"
+	.string "Spin, kick, ignore their PROTECT. Also\n"
+	.string "works on door-to-door salesmen.$"
 
 Route112_Dojo_Text_MustardPostBattle:
 	.string "Go on, take on the world.\p"

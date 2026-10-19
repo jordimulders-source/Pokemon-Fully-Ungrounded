@@ -131,7 +131,7 @@
       "x": 4,
       "y": 25,
       "elevation": 3,
-      "item": "ITEM_STAR_PIECE",
+      "item": "ITEM_TM_HEAT_WAVE",
       "flag": "FLAG_HIDDEN_ITEM_MT_CHIMNEY_SUMMIT_STAR_PIECE"
     },
     {

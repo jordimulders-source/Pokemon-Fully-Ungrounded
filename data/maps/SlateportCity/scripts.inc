@@ -540,6 +540,8 @@ SlateportCity_EventScript_PowerTMClerk::
 SlateportCity_Pokemart_PowerTMs:
 	.2byte ITEM_TM_HIDDEN_POWER
 	.2byte ITEM_TM_SECRET_POWER
+	.2byte ITEM_TM_THUNDER_WAVE @ Project Grounded: TM65
+	.2byte ITEM_TM_ICY_WIND @ Project Grounded: TM66
 	pokemartlistend
 
 @ Scene with Capt Sterns interview and Team Aqua announcing plans to steal Submarine

@@ -159,8 +159,15 @@ GROUNDED_CUSTOM_TEACHABLES["MOVE_ACID_RAIN"] = {"like": set(), "types": {"TYPE_P
 }}
 # Pollen Haze (TM58, Bug Maniac op Route 119): alle Bug- en Grass-types.
 GROUNDED_CUSTOM_TEACHABLES["MOVE_POLLEN_HAZE"] = {"like": set(), "types": {"TYPE_BUG", "TYPE_GRASS"}}
+# Rolling Thunder (TM73, Mustard in de Kubfu-dojo): de MMA-draaitrap. Iedereen die al een echte trap kan leren,
+# plus de Hitmonlee-lijn.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_ROLLING_THUNDER"] = {"like": {
+    "MOVE_HIGH_JUMP_KICK", "MOVE_JUMP_KICK", "MOVE_BLAZE_KICK", "MOVE_ROLLING_KICK", "MOVE_TRIPLE_KICK", "MOVE_TRIPLE_AXEL",
+}, "types": set(), "species": {"Tyrogue", "Hitmonlee"}}
 # Set-audit (Jordi 19 okt): bestaande TM's die deze soorten van Jordi ook mogen leren.
 GROUNDED_EXTRA_TM_SPECIES = {
+    "MOVE_BATON_PASS": {"Skarmory"},   # TM79 (19 okt): Skarmory-sets van Jordi
+    "MOVE_KNOCK_OFF": {"Dusknoir"},    # TM81 (19 okt): Dusknoir-sets van Jordi
     "MOVE_BRICK_BREAK": {"Farfetchd"},
     "MOVE_TRICK_ROOM": {"Wynaut", "Wobbuffet"},
     "MOVE_CALM_MIND": {"Regice"},

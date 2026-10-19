@@ -139,26 +139,31 @@ void ApplyNewEncryptionKeyToBagItems(u32 newKey)
     }
 }
 
-// Project Grounded: de Items-pocket staat sinds de grotere tas in gSaveBlock1Ptr->bagItems.
-// Items uit de oude pocket (oude saves) verhuizen daarheen; de oude plekken worden leeg.
-void MigrateLegacyBagItems(void)
+// Project Grounded: de Items-pocket staat sinds de grotere tas in gSaveBlock1Ptr->bagItems, de TM/HM-pocket
+// sinds TM60-TM88 in gSaveBlock1Ptr->bagTMsHMs. Items uit de oude pockets (oude saves) verhuizen daarheen;
+// de oude plekken worden leeg.
+static void MigrateLegacyPocket(struct ItemSlot *legacy, u32 legacyCount, struct ItemSlot *items, u32 count)
 {
     u32 i, j = 0;
-    struct ItemSlot *legacy = gSaveBlock1Ptr->bag.itemsLegacy;
-    struct ItemSlot *items = gSaveBlock1Ptr->bagItems;
 
-    for (i = 0; i < BAG_ITEMS_COUNT_LEGACY; i++)
+    for (i = 0; i < legacyCount; i++)
     {
         if (legacy[i].itemId == ITEM_NONE)
             continue;
-        while (j < BAG_ITEMS_COUNT && items[j].itemId != ITEM_NONE)
+        while (j < count && items[j].itemId != ITEM_NONE)
             j++;
-        if (j >= BAG_ITEMS_COUNT)
+        if (j >= count)
             break;
         items[j] = legacy[i]; // quantity blijft versleuteld met dezelfde sleutel
         legacy[i].itemId = ITEM_NONE;
         legacy[i].quantity = 0;
     }
+}
+
+void MigrateLegacyBagItems(void)
+{
+    MigrateLegacyPocket(gSaveBlock1Ptr->bag.itemsLegacy, BAG_ITEMS_COUNT_LEGACY, gSaveBlock1Ptr->bagItems, BAG_ITEMS_COUNT);
+    MigrateLegacyPocket(gSaveBlock1Ptr->bag.TMsHMsLegacy, BAG_TMHM_COUNT_LEGACY, gSaveBlock1Ptr->bagTMsHMs, BAG_TMHM_COUNT);
 }
 
 void SetBagItemsPointers(void)
@@ -175,7 +180,7 @@ void SetBagItemsPointers(void)
     gBagPockets[POCKET_POKE_BALLS].capacity = BAG_POKEBALLS_COUNT;
     gBagPockets[POCKET_POKE_BALLS].id = POCKET_POKE_BALLS;
 
-    gBagPockets[POCKET_TM_HM].itemSlots = gSaveBlock1Ptr->bag.TMsHMs;
+    gBagPockets[POCKET_TM_HM].itemSlots = gSaveBlock1Ptr->bagTMsHMs;
     gBagPockets[POCKET_TM_HM].capacity = BAG_TMHM_COUNT;
     gBagPockets[POCKET_TM_HM].id = POCKET_TM_HM;
 
@@ -583,6 +588,7 @@ void ClearBag(void)
 {
     CpuFastFill(0, &gSaveBlock1Ptr->bag, sizeof(struct Bag));
     CpuFastFill(0, gSaveBlock1Ptr->bagItems, sizeof(gSaveBlock1Ptr->bagItems));
+    CpuFastFill(0, gSaveBlock1Ptr->bagTMsHMs, sizeof(gSaveBlock1Ptr->bagTMsHMs));
 }
 
 static inline u16 NONNULL BagPocket_CountTotalItemQuantity(struct BagPocket *pocket, u16 itemId)

@@ -2412,7 +2412,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Recover
 - Tri Attack
 - Thunder Wave
-- Confuse Ray
+- Ice Beam
 
 Ditto
 Level: 44
@@ -3305,7 +3305,7 @@ Ability: Intimidate
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Calm Mind
 - Psyshield Bash
-- Hyper Voice
+- Shadow Ball
 - Thunderbolt
 
 Farigiraf @ Leftovers
@@ -3339,10 +3339,10 @@ Grumpig @ Sitrus Berry
 Level: 44
 Ability: Simple
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Belly Drum
-- Body Slam
+- Calm Mind
+- Psychic
 - Zen Headbutt
-- Crunch
+- Shadow Ball
 
 === TRAINER_SCARLET ===
 Name: SCARLET
@@ -6339,7 +6339,7 @@ Ability: Punk Rock
 - Overdrive
 - Hyper Voice
 - Sludge Bomb
-- Shift Gear
+- Volt Switch
 
 Chatot
 Level: 53
@@ -8984,7 +8984,7 @@ Double Battle: Yes
 AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_PREDICT_SWITCH
 Mugshot: Purple
 
-Slowking @ King's Rock
+Slowking_Galar @ King's Rock
 Level: 63
 Ability: Regenerator
 - Sludge Bomb
@@ -15320,7 +15320,7 @@ IVs: 0 HP / 0 Atk / 0 Def / 0 SpA / 0 SpD / 0 Spe
 - Growth
 - Leech Seed
 - Absorb
-- Growl
+- Stun Spore
 
 Nuzleaf
 Level: 12
@@ -17582,7 +17582,7 @@ IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
 Torterra
 Level: 49
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Head Smash
+- Earthquake
 - Wood Hammer
 - Zen Headbutt
 - Headbutt
@@ -25097,7 +25097,7 @@ Double Battle: Yes
 AI: Basic Trainer
 Mugshot: Purple
 
-Slowking @ King's Rock
+Slowking_Galar @ King's Rock
 Level: 85
 Ability: Regenerator
 - Sludge Bomb
@@ -25156,7 +25156,7 @@ Double Battle: Yes
 AI: Basic Trainer
 Mugshot: Purple
 
-Slowking @ King's Rock
+Slowking_Galar @ King's Rock
 Level: 89
 Ability: Regenerator
 - Sludge Bomb
@@ -25215,7 +25215,7 @@ Double Battle: Yes
 AI: Basic Trainer
 Mugshot: Purple
 
-Slowking @ King's Rock
+Slowking_Galar @ King's Rock
 Level: 94
 Ability: Regenerator
 - Sludge Bomb
@@ -25274,7 +25274,7 @@ Double Battle: Yes
 AI: Basic Trainer
 Mugshot: Purple
 
-Slowking @ King's Rock
+Slowking_Galar @ King's Rock
 Level: 99
 Ability: Regenerator
 - Sludge Bomb
@@ -26434,7 +26434,7 @@ Ability: Punk Rock
 - Overdrive
 - Hyper Voice
 - Sludge Bomb
-- Shift Gear
+- Volt Switch
 
 Chatot
 Level: 64
@@ -26494,7 +26494,7 @@ Ability: Punk Rock
 - Overdrive
 - Hyper Voice
 - Sludge Bomb
-- Shift Gear
+- Volt Switch
 
 Chatot
 Level: 66
@@ -26554,7 +26554,7 @@ Ability: Punk Rock
 - Overdrive
 - Hyper Voice
 - Sludge Bomb
-- Shift Gear
+- Volt Switch
 
 Chatot
 Level: 68
@@ -26614,7 +26614,7 @@ Ability: Punk Rock
 - Overdrive
 - Hyper Voice
 - Sludge Bomb
-- Shift Gear
+- Volt Switch
 
 Chatot
 Level: 70
@@ -27434,7 +27434,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Icy Wind
 - Bite
 
-Mankey
+Primeape
 Level: 39
 Ability: Defiant
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
@@ -38665,7 +38665,7 @@ IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 - Play Rough
 - Cotton Guard
 - Draining Kiss
-- Fling
+- Fake Tears
 
 Aromatisse
 Level: 63
@@ -38775,7 +38775,7 @@ IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Quiver Dance
 - Petal Dance
 - Sleep Powder
-- Dazzling Gleam
+- Giga Drain
 
 Ribombee
 Level: 91
@@ -40153,7 +40153,7 @@ Cradily
 Level: 90
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Giga Drain
-- Power Gem
+- Ancient Power
 - Recover
 - Stealth Rock
 
@@ -43992,7 +43992,7 @@ IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 - Petal Dance
 - Quiver Dance
 - Sleep Powder
-- Hurricane
+- Pollen Haze
 
 /* --- einde yoshis_island --- */
 

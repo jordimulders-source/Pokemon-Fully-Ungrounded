@@ -3142,6 +3142,7 @@ static const u16 sAbraTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_TRICK_ROOM,
     MOVE_LASER_BEAM,
+    MOVE_THUNDERBOLT,
     MOVE_UNAVAILABLE,
 };
 
@@ -3186,6 +3187,7 @@ static const u16 sKadabraTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_TRICK_ROOM,
     MOVE_LASER_BEAM,
+    MOVE_THUNDERBOLT,
     MOVE_UNAVAILABLE,
 };
 
@@ -3233,6 +3235,7 @@ static const u16 sAlakazamTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_TRICK_ROOM,
     MOVE_LASER_BEAM,
+    MOVE_THUNDERBOLT,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_ABRA
@@ -4318,6 +4321,7 @@ static const u16 sFarfetchdTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TOXIC,
     MOVE_U_TURN,
+    MOVE_BRICK_BREAK,
     MOVE_UNAVAILABLE,
 };
 
@@ -7638,6 +7642,7 @@ static const u16 sPorygonTeachableLearnset[] = {
     MOVE_TRICK_ROOM,
     MOVE_LASER_BEAM,
     MOVE_MACHINE_LEARNING,
+    MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
 
@@ -7673,6 +7678,7 @@ static const u16 sPorygon2TeachableLearnset[] = {
     MOVE_TRICK_ROOM,
     MOVE_LASER_BEAM,
     MOVE_MACHINE_LEARNING,
+    MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
 
@@ -7710,6 +7716,7 @@ static const u16 sPorygonZTeachableLearnset[] = {
     MOVE_TRICK_ROOM,
     MOVE_LASER_BEAM,
     MOVE_MACHINE_LEARNING,
+    MOVE_VOLT_SWITCH,
     MOVE_UNAVAILABLE,
 };
 #endif //P_GEN_4_CROSS_EVOS
@@ -10257,12 +10264,14 @@ static const u16 sUnownTeachableLearnset[] = {
 #if P_GEN_3_CROSS_EVOS
 static const u16 sWynautTeachableLearnset[] = {
     MOVE_COUNTER,
+    MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
 #endif //P_GEN_3_CROSS_EVOS
 
 static const u16 sWobbuffetTeachableLearnset[] = {
     MOVE_COUNTER,
+    MOVE_TRICK_ROOM,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_WOBBUFFET
@@ -11107,6 +11116,7 @@ static const u16 sUrsalunaTeachableLearnset[] = {
     MOVE_SWORDS_DANCE,
     MOVE_TAUNT,
     MOVE_THUNDER_PUNCH,
+    MOVE_IRON_HEAD,
     MOVE_UNAVAILABLE,
 };
 
@@ -17395,6 +17405,7 @@ static const u16 sRegiceTeachableLearnset[] = {
     MOVE_THUNDER_PUNCH,
     MOVE_THUNDER_WAVE,
     MOVE_TOXIC,
+    MOVE_CALM_MIND,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_REGICE
@@ -21869,6 +21880,7 @@ static const u16 sWoobatTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_TRICK_ROOM,
     MOVE_U_TURN,
+    MOVE_DAZZLING_GLEAM,
     MOVE_UNAVAILABLE,
 };
 
@@ -21902,6 +21914,7 @@ static const u16 sSwoobatTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_TRICK_ROOM,
     MOVE_U_TURN,
+    MOVE_DAZZLING_GLEAM,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_WOOBAT
@@ -27538,6 +27551,7 @@ static const u16 sHelioptileTeachableLearnset[] = {
     MOVE_TOXIC,
     MOVE_U_TURN,
     MOVE_VOLT_SWITCH,
+    MOVE_FLAMETHROWER,
     MOVE_UNAVAILABLE,
 };
 
@@ -27577,6 +27591,7 @@ static const u16 sHelioliskTeachableLearnset[] = {
     MOVE_U_TURN,
     MOVE_VOLT_SWITCH,
     MOVE_WEATHER_BALL,
+    MOVE_FLAMETHROWER,
     MOVE_UNAVAILABLE,
 };
 #endif //P_FAMILY_HELIOPTILE

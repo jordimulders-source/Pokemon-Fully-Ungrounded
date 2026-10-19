@@ -159,6 +159,20 @@ GROUNDED_CUSTOM_TEACHABLES["MOVE_ACID_RAIN"] = {"like": set(), "types": {"TYPE_P
 }}
 # Pollen Haze (TM58, Bug Maniac op Route 119): alle Bug- en Grass-types.
 GROUNDED_CUSTOM_TEACHABLES["MOVE_POLLEN_HAZE"] = {"like": set(), "types": {"TYPE_BUG", "TYPE_GRASS"}}
+# Set-audit (Jordi 19 okt): bestaande TM's die deze soorten van Jordi ook mogen leren.
+GROUNDED_EXTRA_TM_SPECIES = {
+    "MOVE_BRICK_BREAK": {"Farfetchd"},
+    "MOVE_TRICK_ROOM": {"Wynaut", "Wobbuffet"},
+    "MOVE_CALM_MIND": {"Regice"},
+    "MOVE_VOLT_SWITCH": {"Porygon", "Porygon2", "PorygonZ"},
+    "MOVE_THUNDERBOLT": {"Abra", "Kadabra", "Alakazam"},
+    "MOVE_DAZZLING_GLEAM": {"Woobat", "Swoobat"},
+    "MOVE_FLAMETHROWER": {"Helioptile", "Heliolisk"},
+    "MOVE_IRON_HEAD": {"Ursaluna"},
+}
+for _m, _sp in GROUNDED_EXTRA_TM_SPECIES.items():
+    _r = GROUNDED_CUSTOM_TEACHABLES.setdefault(_m, {"like": set(), "types": set()})
+    _r["species"] = _r.get("species", set()) | _sp
 SPECIES_BLOCK_PAT = re.compile(r"\[SPECIES_\w+\]\s*=")
 LEARNSET_REF_PAT = re.compile(r"\.teachableLearnset\s*=\s*s(\w+)TeachableLearnset")
 TYPE_PAT = re.compile(r"TYPE_[A-Z]+")

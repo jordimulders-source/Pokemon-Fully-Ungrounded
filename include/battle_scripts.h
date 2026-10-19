@@ -189,6 +189,7 @@ extern const u8 BattleScript_EffectBubbleDome[]; // Project Grounded
 extern const u8 BattleScript_BubbleDomePopped[]; // Project Grounded
 extern const u8 BattleScript_EffectTheOldDays[]; // Project Grounded
 extern const u8 BattleScript_EffectOliveOil[]; // Project Grounded
+extern const u8 BattleScript_EffectMarionette[]; // Project Grounded
 extern const u8 BattleScript_TuskTumbleEffects[]; // Project Grounded
 extern const u8 BattleScript_TuskTumbleSpikes[]; // Project Grounded
 extern const u8 BattleScript_GulpDownBerry[];

@@ -988,7 +988,9 @@
 #define MOVE_COUNTERFEIT_BALL 924 // Project Grounded: TM
 #define MOVE_HOT_TAKE 925 // Project Grounded: Magby, Magmar, Magmortar
 #define MOVE_BRAMBLE_LASH 926 // Project Grounded: Bramblin, Brambleghast
-#define MOVES_COUNT_GEN9 927
+// 927-929: Project Grounded, in gebruik door een andere signature-ronde
+#define MOVE_MARIONETTE 930 // Project Grounded: Banette
+#define MOVES_COUNT_GEN9 931
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

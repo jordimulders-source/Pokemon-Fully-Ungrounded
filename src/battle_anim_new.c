@@ -10624,6 +10624,178 @@ void AnimTask_Kusarigama(u8 taskId)
 #undef tKLink0
 #undef tKSpin
 
+// Project Grounded: Marionette (Banette). Drie dunne poppenspelersdraden schieten van Banette naar het
+// hoofd en de 'armen' van het doelwit; het doelwit wordt vier keer schokkerig omhooggetrokken en valt
+// terug, hangt even (het script laat het zichzelf slaan) en de draden worden naar Banette teruggehaald.
+// Een draad = een rij 32x8-sprites met een lijn van 1+1 pixel (licht + schaduw), gedraaid naar het doel.
+#define MARIONETTE_TAG       0x7A30
+#define MARIONETTE_THREADS   3
+#define MARIONETTE_SEGS      5
+#define MARIONETTE_EXTEND    14
+#define MARIONETTE_JERK_T    12
+#define MARIONETTE_JERKS     4
+#define MARIONETTE_JERK_END  (MARIONETTE_EXTEND + MARIONETTE_JERK_T * MARIONETTE_JERKS)
+#define MARIONETTE_HOLD_END  (MARIONETTE_JERK_END + 26)
+#define MARIONETTE_END       (MARIONETTE_HOLD_END + 12)
+
+#define MARIONETTE_ROW(r) (((r) == 3) ? 0x11111111 : ((r) == 4) ? 0x22222222 : 0)
+#define MARIONETTE_TILE MARIONETTE_ROW(0), MARIONETTE_ROW(1), MARIONETTE_ROW(2), MARIONETTE_ROW(3), \
+                        MARIONETTE_ROW(4), MARIONETTE_ROW(5), MARIONETTE_ROW(6), MARIONETTE_ROW(7)
+static const u32 sMarionetteThreadGfx[] = {MARIONETTE_TILE, MARIONETTE_TILE, MARIONETTE_TILE, MARIONETTE_TILE};
+static const u16 sMarionetteThreadPal[16] = {RGB(0, 0, 0), RGB(29, 28, 31), RGB(13, 11, 17)};
+static const s8 sMarionetteStart[MARIONETTE_THREADS][2] = {{-14, -16}, {0, -30}, {14, -16}};
+static const s8 sMarionetteEnd[MARIONETTE_THREADS][2] = {{-18, -4}, {0, -26}, {18, -4}};
+static const s8 sMarionetteJerkY[MARIONETTE_JERK_T] = {-6, -11, -12, -10, -7, -4, -2, 0, 1, 0, 0, 0};
+
+static const struct OamData sOamData_MarionetteThread =
+{
+    .affineMode = ST_OAM_AFFINE_DOUBLE,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(32x8),
+    .size = SPRITE_SIZE(32x8),
+    .priority = 2,
+};
+
+static const struct SpriteTemplate sMarionetteThreadSpriteTemplate =
+{
+    .tileTag = MARIONETTE_TAG,
+    .paletteTag = MARIONETTE_TAG,
+    .oam = &sOamData_MarionetteThread,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+#define tMTimer   data[0] // data[1..15]: de draadsprites
+
+static void MarionettePlaceThreads(struct Task *task, s32 progress, s32 offX, s32 offY, bool32 flip)
+{
+    u32 t, i;
+    s32 atkX = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    s32 atkY = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+    s32 defX = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    s32 defY = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET);
+
+    for (t = 0; t < MARIONETTE_THREADS; t++)
+    {
+        s32 sx = atkX + (flip ? -sMarionetteStart[t][0] : sMarionetteStart[t][0]);
+        s32 sy = atkY + sMarionetteStart[t][1];
+        s32 ex = defX + sMarionetteEnd[t][0] + offX;
+        s32 ey = defY + sMarionetteEnd[t][1] + offY;
+        s32 dx = ex - sx, dy = ey - sy;
+        s32 len = Sqrt(dx * dx + dy * dy);
+        s32 reach = (len * progress) / 256;
+        u16 angle = ArcTan2Neg(dx, dy);
+
+        for (i = 0; i < MARIONETTE_SEGS; i++)
+        {
+            u32 id = task->data[1 + t * MARIONETTE_SEGS + i];
+            struct Sprite *seg;
+            s32 dist;
+
+            if (id >= MAX_SPRITES)
+                continue;
+            seg = &gSprites[id];
+            if (len == 0 || reach <= 0 || 32 * (s32)i >= reach)
+            {
+                seg->invisible = TRUE;
+                continue;
+            }
+            // het laatste stuk eindigt precies op de punt van de draad
+            dist = 32 * i + 16;
+            if (dist + 16 > reach)
+                dist = reach - 16;
+            seg->invisible = FALSE;
+            seg->x = sx + (dx * dist) / len;
+            seg->y = sy + (dy * dist) / len;
+            TrySetSpriteRotScale(seg, FALSE, 0x100, 0x100, angle);
+        }
+    }
+}
+
+static void AnimTask_Marionette_Step(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    struct Sprite *target = &gSprites[gBattlerSpriteIds[gBattleAnimTarget]];
+    s32 t = task->tMTimer++;
+    s32 progress;
+    bool32 flip = !IsOnPlayerSide(gBattleAnimAttacker);
+    u32 i;
+
+    if (t < MARIONETTE_EXTEND)
+    {
+        progress = (256 * (t + 1)) / MARIONETTE_EXTEND;
+    }
+    else if (t < MARIONETTE_JERK_END)
+    {
+        s32 k = (t - MARIONETTE_EXTEND) % MARIONETTE_JERK_T;
+        s32 jerk = (t - MARIONETTE_EXTEND) / MARIONETTE_JERK_T;
+        progress = 256;
+        target->y2 = sMarionetteJerkY[k];
+        // de armen flappen bij elke ruk naar een andere kant
+        target->x2 = (k < 5) ? ((jerk & 1) ? 3 : -3) : 0;
+    }
+    else if (t < MARIONETTE_HOLD_END)
+    {
+        progress = 256;
+        if (t == MARIONETTE_JERK_END)
+            target->x2 = target->y2 = 0;
+    }
+    else if (t < MARIONETTE_END)
+    {
+        progress = 256 - (256 * (t - MARIONETTE_HOLD_END + 1)) / (MARIONETTE_END - MARIONETTE_HOLD_END);
+    }
+    else
+    {
+        for (i = 0; i < MARIONETTE_THREADS * MARIONETTE_SEGS; i++)
+        {
+            u32 id = task->data[1 + i];
+            if (id >= MAX_SPRITES)
+                continue;
+            FreeSpriteOamMatrix(&gSprites[id]);
+            DestroySprite(&gSprites[id]);
+        }
+        target->y2 = 0;
+        FreeSpriteTilesByTag(MARIONETTE_TAG);
+        FreeSpritePaletteByTag(MARIONETTE_TAG);
+        DestroyAnimVisualTask(taskId);
+        return;
+    }
+
+    if (t < MARIONETTE_HOLD_END)
+        MarionettePlaceThreads(task, progress, target->x2, target->y2, flip);
+    else
+        MarionettePlaceThreads(task, progress, 0, 0, flip);
+}
+
+void AnimTask_Marionette(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    struct SpriteSheet sheet = {sMarionetteThreadGfx, sizeof(sMarionetteThreadGfx), MARIONETTE_TAG};
+    struct SpritePalette pal = {sMarionetteThreadPal, MARIONETTE_TAG};
+    u8 subpriority = GetBattlerSpriteSubpriority(gBattleAnimTarget);
+    u32 i;
+
+    LoadSpriteSheet(&sheet);
+    LoadSpritePalette(&pal);
+    s32 x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    s32 y = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+
+    task->tMTimer = 0;
+    for (i = 0; i < MARIONETTE_THREADS * MARIONETTE_SEGS; i++)
+    {
+        u8 id = CreateSprite(&sMarionetteThreadSpriteTemplate, x, y, subpriority - 1);
+        if (id != MAX_SPRITES)
+            gSprites[id].invisible = TRUE;
+        task->data[1 + i] = id;
+    }
+    task->func = AnimTask_Marionette_Step;
+}
+
+#undef tMTimer
+
 // Project Grounded: Counterfeit Ball. Per klap een spervuur van drie verschillende Poke Balls (de echte
 // bal-graphics van het werpen) kort na elkaar in een boog naar het doelwit; elke bal gaat open, flitst leeg
 // en verdwijnt (er komt niets uit). Bij de nep-Master Ball (laatste klap, gBattleStruct->counterfeitMasterBall)

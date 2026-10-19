@@ -2534,3 +2534,9 @@
 	callnative BS_JumpIfOliveOilFails
 	.4byte \jumpInstr
 	.endm
+
+	@ Project Grounded: Marionette (Banette)
+	.macro trymarionette failInstr:req
+	callnative BS_TryMarionette
+	.4byte \failInstr
+	.endm

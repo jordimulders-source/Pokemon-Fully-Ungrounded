@@ -9841,3 +9841,32 @@ BattleScript_OliveOilTerrain:
 BattleScript_OliveOilRestoreBg:
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG
 	goto BattleScript_MoveEnd
+
+@ Project Grounded: Marionette (Banette). Het doelwit raakt zichzelf met zijn laatst gebruikte move
+@ (eigen stats, type-effectiviteit tegen zichzelf, STAB, geen crit, geen bijeffecten). Eenmalig per keer
+@ in het veld; faalt zonder vorige move, bij een statusmove of een move zonder vaste kracht.
+BattleScript_EffectMarionette::
+	attackcanceler
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	trymarionette BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_MARIONETTEPULL
+	waitmessage B_WAIT_TIME_MED
+	printstring STRINGID_MARIONETTEHIT
+	waitmessage B_WAIT_TIME_MED
+	healthbarupdate BS_TARGET, PASSIVE_HP_UPDATE
+	datahpupdate BS_TARGET, PASSIVE_HP_UPDATE
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 1, BattleScript_MarionetteSuper
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 2, BattleScript_MarionetteWeak
+	goto BattleScript_MarionetteFaint
+BattleScript_MarionetteSuper:
+	printstring STRINGID_SUPEREFFECTIVE
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MarionetteFaint
+BattleScript_MarionetteWeak:
+	printstring STRINGID_NOTVERYEFFECTIVE
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_MarionetteFaint:
+	tryfaintmon BS_TARGET
+	goto BattleScript_MoveEnd

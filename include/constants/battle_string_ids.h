@@ -796,6 +796,8 @@ enum StringID
     STRINGID_BRAMBLESDMG, // Project Grounded
     STRINGID_BRAMBLESDISAPPEARED, // Project Grounded
     STRINGID_PKMNBLEWAWAYBRAMBLES, // Project Grounded
+    STRINGID_MARIONETTEPULL, // Project Grounded
+    STRINGID_MARIONETTEHIT, // Project Grounded
     STRINGID_COUNT
 };
 

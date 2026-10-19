@@ -418,7 +418,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 - Nuzzle
 - Magnet Rise
 - Rock Tomb
-- Pain Split
+- Moai Watch
 
 === PARTNER_STADIUM_BRAWLY ===
 Name: BRAWLY
@@ -537,7 +537,7 @@ Arboliva @ Leftovers
 Level: 50
 Ability: Seed Sower
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Strength Sap
+- Olive Oil
 - Giga Drain
 - Hyper Voice
 - Earth Power
@@ -573,7 +573,7 @@ Xatu @ Focus Sash
 Level: 50
 Ability: Magic Bounce
 - Tailwind
-- Psychic
+- Totem Gaze
 - Air Slash
 - Roost
 
@@ -602,7 +602,7 @@ Music: Female
 Back Pic: Brendan
 AI: Basic Trainer
 
-Slowking @ King's Rock
+Slowking_Galar @ King's Rock
 Level: 50
 Ability: Regenerator
 - Sludge Bomb
@@ -614,7 +614,7 @@ Solrock @ Focus Sash
 Level: 50
 Ability: Levitate
 - Stone Axe
-- Zen Headbutt
+- Eclipse
 - Flare Blitz
 - Earthquake
 
@@ -623,7 +623,7 @@ Level: 50
 Ability: Levitate
 - Trick Room
 - Power Gem
-- Psychic
+- Eclipse
 - Lunar Blessing
 
 === PARTNER_STADIUM_WALLACE ===
@@ -639,7 +639,7 @@ Masquerain @ Focus Sash
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Drizzle
-- Quiver Dance
+- Eye Spots
 - Hurricane
 - Muddy Water
 - Bug Buzz
@@ -648,7 +648,7 @@ Golduck @ Life Orb
 Level: 50
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Swift Swim
-- Hydro Pump
+- Cavitation
 - Psychic
 - Nasty Plot
 - Ice Beam
@@ -691,7 +691,7 @@ Absol @ Life Orb
 Level: 50
 Ability: Serene Grace
 - Play Rough
-- Night Slash
+- Omen Strike
 - Air Slash
 - Swords Dance
 
@@ -724,8 +724,8 @@ Parasect @ Leftovers
 Level: 50
 Ability: Cursed Body
 - Spore
-- Last Respects
-- Strength Sap
+- Hyphal Snare
+- Fungal Control
 - Leech Life
 
 === PARTNER_STADIUM_GLACIA ===
@@ -825,7 +825,7 @@ Relicanth @ Damp Rock
 Level: 50
 Ability: Rock Head
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-- Slack Off
+- Primeval Ward
 - Earthquake
 - Wave Crash
 - Head Smash
@@ -973,7 +973,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Wailord
 Level: 50
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
-- Water Spout
+- Whale Song
 - Rest
 - Sleep Talk
 - Heavy Slam
@@ -1100,19 +1100,19 @@ Pic: Interviewer
 Gender: Male
 Music: Interviewer
 Back Pic: Brendan
-AI: Check Bad Move
+AI: Check Bad Move / Try To Faint / Check Viability
 
 Magnezone
 Level: 50
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Farigiraf
 Level: 50
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 Sigilyph
 Level: 50
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
 === PARTNER_STADIUM_JOEY ===
 Name: JOEY
@@ -1131,7 +1131,7 @@ EVs: 252 HP / 252 Atk / 4 SpD
 Nature: Adamant
 - Crunch
 - Play Rough
-- Sucker Punch
+- Pack Howl
 - Fire Fang
 
 Obstagoon @ Flame Orb
@@ -1256,7 +1256,7 @@ AI: Basic Trainer
 Wailord
 Level: 50
 IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
-- Bubble Beam
+- Whale Song
 - Bounce
 - Aurora Beam
 - Body Slam
@@ -1311,10 +1311,18 @@ Beheeyem
 Level: 50
 Ability: Dimensional Warp
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Meteor Beam
+- Calm Mind
+- Steel Beam
+- Abduction
 
 Escavalier
 Level: 50
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Iron Head
+- Bug Buzz
+- Giga Impact
+- Joust
 
 Snorlax
 Level: 50
@@ -1340,16 +1348,16 @@ Nature: Adamant
 - Stealth Rock
 - Earthquake
 
-Aerodactyl @ Focus Sash
+Kabutops @ Life Orb
 Level: 50
-Ability: Unnerve
+Ability: Sharpness
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
-Nature: Jolly
-- Rock Slide
-- Dual Wingbeat
-- Tailwind
-- Taunt
+Nature: Adamant
+- Liquidation
+- Ancient Scythe
+- Swords Dance
+- Aqua Jet
 
 Steelix @ Leftovers
 Level: 50
@@ -1475,7 +1483,7 @@ Nature: Adamant
 - Power Whip
 - Sludge Bomb
 - Sucker Punch
-- Swords Dance
+- Pitcher Trap
 
 Vileplume @ Life Orb
 Level: 50
@@ -1979,7 +1987,7 @@ Nature: Modest
 - Power Gem
 - Earth Power
 - Flash Cannon
-- Thunder Wave
+- Moai Watch
 
 Rampardos @ Choice Scarf
 Level: 50
@@ -2659,7 +2667,7 @@ Ability: Aftermath
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Adamant
-- Gunk Shot
+- Skunk Spray
 - Sucker Punch
 - Fire Blast
 - Crunch
@@ -3225,7 +3233,7 @@ Ability: Snow Warning
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Modest
-- Blizzard
+- Brain Freeze
 - Freeze-Dry
 - Aurora Veil
 - Flash Cannon
@@ -3320,7 +3328,7 @@ Ability: Ice Body
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Modest
-- Blizzard
+- Brain Freeze
 - Freeze-Dry
 - Flash Cannon
 - Ice Beam
@@ -3546,7 +3554,7 @@ Nature: Timid
 === PARTNER_STADIUM_DAVE ===
 Name: Dave
 Class: Cooltrainer
-Pic: Cooltrainer M
+Pic: Blue
 Gender: Male
 Music: Cool
 Back Pic: Brendan
@@ -3841,7 +3849,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 4 Def / 252 SpD
 Nature: Careful
 - Foul Play
-- Shadow Sneak
+- Keystone Curse
 - Will-O-Wisp
 - Pain Split
 
@@ -3895,7 +3903,7 @@ EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Jolly
 - Shift Gear
 - Gunk Shot
-- Iron Head
+- Rev Up
 - High Horsepower
 
 Mew @ Leftovers
@@ -3969,7 +3977,7 @@ Nature: Timid
 - Hurricane
 - Bug Buzz
 - Sticky Web
-- Quiver Dance
+- Eye Spots
 
 Zarude @ Choice Scarf
 Level: 50
@@ -4221,7 +4229,7 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Atk / 4 SpD
 Nature: Adamant
 - Head Smash
-- Wave Crash
+- Primeval Ward
 - Earthquake
 - Double-Edge
 
@@ -4326,7 +4334,7 @@ Level: 50
 Ability: Snow Warning
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Nature: Modest
-- Blizzard
+- Brain Freeze
 - Freeze-Dry
 - Aurora Veil
 - Flash Cannon
@@ -4406,7 +4414,7 @@ Wailord @ Sitrus Berry
 Level: 50
 Ability: Multiscale
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
-- Water Spout
+- Whale Song
 - Ice Beam
 - Heavy Slam
 - Rest
@@ -4425,7 +4433,7 @@ Level: 50
 Ability: Steelworker
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 - Anchor Shot
-- Phantom Force
+- Kelp Shroud
 - Power Whip
 - Earthquake
 
@@ -4446,13 +4454,14 @@ IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 - Mirror Coat
 - Light Screen
 
-Lumineon
+Eelektross
 Level: 50
+Ability: Eelevate
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
-- Scald
-- U-turn
-- Ice Beam
-- Rain Dance
+- Wild Charge
+- Crunch
+- Drain Punch
+- Coil
 
 Lanturn @ Leftovers
 Level: 50

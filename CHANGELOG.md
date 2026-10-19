@@ -19229,3 +19229,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Signature: **Hot Take** (Magby lv 33, Magmar lv 33, Magmortar bij evolutie; Fire speciaal 85, 20% verwarring: "got ratioed and became confused!"), **Bramble Lash** (Bramblin lv 30, Brambleghast bij evolutie en lv 30; Grass fysiek 80, legt de hazard Brambles: 1/16 HP bij binnenkomst, ook voor vliegers; Boots/Magic Guard immuun).
 - Ability **Trade Wind**: 3 beurten Tailwind bij binnenkomst. Slot 2 van Pidove/Tranquill/Unfezant (was Super Luck) en Ducklett/Swanna (was Big Pecks). Plasma-uitkijk's Unfezant heeft nu Trade Wind.
 - Tests: `signature_moves_9.c`.
+
+### Abilities Eelevate, Aura Guard, Spicy Spray (v1.0.0)
+- **Eelevate** (Eelektross, slot 1 i.p.v. Levitate): zweeft precies zoals Levitate (Ground-immuun behalve Thousand Arrows, geen Spikes/Toxic Spikes/Sticky Web/terrein; weg bij Gravity, Iron Ball, Ingrain, Smack Down) en na elke KO +1 op de hoogste stat (zoals Beast Boost). Tynamo en Eelektrik houden Levitate.
+- **Aura Guard** (Riolu/Lucario, slot 2 i.p.v. Inner Focus): halveert schade van contact-moves; tegen Long Reach normale schade.
+- **Spicy Spray** (Capsakid/Scovillain, slot 2 i.p.v. Insomnia): elke schadelijke treffer van een tegenstander (ook speciaal, ook bij een KO, per klap van een multi-hit, ook als de aanvaller achter een Substitute zit) verbrandt de aanvaller; niet als Scovillain zelf achter een Substitute zit.
+- Trainers met de oude abilities omgezet (o.a. Maxie's Scovillain, Eelektross van May/Ghetsis/Jun/Wick, Lucario van de Stadium-teams van Maylene, Cynthia, Riley en Johnson), ook in battle partners, de rivaal-post-game en de Spire-elite "Terror Eel". Stadium-pool opnieuw gegenereerd. Tests: `abilities_2.c`.

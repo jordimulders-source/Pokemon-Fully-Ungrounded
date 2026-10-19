@@ -29,12 +29,12 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | MIMI | 418 | Pikachu, Pachirisu, Dedenne, Mimikyu | Pachirisu, Dedenne, Mimikyu | - |
 | GABBY_AND_TY_6 | 522 | Magnezone, Exploud, Farigiraf, Sigilyph | Magnezone, Farigiraf, Sigilyph | - |
 | STADIUM_JOEY | 480 | Rattata, Mightyena, Obstagoon, Poochyena | Mightyena, Obstagoon, Poochyena | - |
-| STADIUM_WINSTON | 496 | Clodsire, Rabsca, Obstagoon, Gholdengo | Rabsca, Obstagoon, Gholdengo | - |
+| STADIUM_WINSTON | 510 | Rabsca, Persian, Obstagoon, Gholdengo | Rabsca, Obstagoon, Gholdengo | - |
 | STADIUM_MUSTARD | 542 | Kommo-o, Corviknight, Luxray, Urshifu | Kommo-o, Luxray, Urshifu | - |
 | MATT | 543 | Wailord, Snorlax, Dondozo, Cetitan | Wailord, Snorlax, Cetitan | - |
 | SHELLY_SEAFLOOR_CAVERN | 503 | Sneasler, Alomomola, Samurott | Sneasler, Alomomola, Samurott | - |
 | TABITHA_MOSSDEEP | 507 | Beheeyem, Escavalier, Snorlax | Beheeyem, Escavalier, Snorlax | - |
-| STADIUM_BROCK | 530 | Tyranitar, Aerodactyl, Kabutops, Steelix | Tyranitar, Aerodactyl, Steelix | zand |
+| STADIUM_BROCK | 538 | Tyranitar, Aerodactyl, Kabutops, Steelix | Tyranitar, Kabutops, Steelix | zand |
 | STADIUM_MISTY | 528 | Politoed, Kingdra, Lapras, Starmie | Politoed, Kingdra, Starmie | regen |
 | STADIUM_LT_SURGE | 539 | Electrode, Jolteon, Magnezone, Electivire | Electrode, Magnezone, Electivire | - |
 | STADIUM_ERIKA | 498 | Ninetales, Victreebel, Lilligant, Vileplume | Ninetales, Victreebel, Vileplume | zon |
@@ -95,7 +95,7 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_GOLBAT | 449 | Zubat, Porygon-Z, Crobat, Golbat | Zubat, Porygon-Z, Golbat | - |
 | STADIUM_GRIMER | 531 | Weezing, Toxapex, Goodra, Muk | Weezing, Goodra, Muk | zure regen |
 | STADIUM_BOO | 539 | Froslass, Spiritomb, Dusknoir, Dragapult | Spiritomb, Dusknoir, Dragapult | Trick Room |
-| STADIUM_MEW | 458 | Marill, Clefable, Revavroom, Mew | Marill, Revavroom, Mew | - |
+| STADIUM_MEW | 454 | Marill, Marowak, Revavroom, Mew | Marill, Revavroom, Mew | - |
 | STADIUM_SHY_GUY_RED | 512 | Scizor, Talonflame, Hawlucha, Ogerpon | Scizor, Hawlucha, Ogerpon | - |
 | STADIUM_SHY_GUY_GREEN | 541 | Decidueye, Masquerain, Zarude, Ogerpon | Masquerain, Zarude, Ogerpon | regen |
 | STADIUM_SHY_GUY_PINK | 517 | Hatterene, Sylveon, Clefable, Ogerpon | Hatterene, Sylveon, Ogerpon | - |
@@ -104,12 +104,12 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | STADIUM_DITTO | 485 | Tangrowth, Tinkaton, Pikachu, Snorlax | Tangrowth, Pikachu, Snorlax | - |
 | STADIUM_DONALD | 520 | Ditto, Ditto, Ditto, Ditto | Ditto, Ditto, Ditto | - |
 | STADIUM_IVAN | 415 | Magikarp, Relicanth, Barraskewda, Bruxish | Magikarp, Relicanth, Bruxish | - |
-| STADIUM_JOHNSON | 506 | Machamp, Electivire, Chansey, Lucario | Machamp, Electivire, Lucario | - |
+| STADIUM_JOHNSON | 516 | Machamp, Persian, Electivire, Lucario | Machamp, Electivire, Lucario | - |
 | STADIUM_LYLE | 513 | Scizor, Yanmega, Golisopod, Ninjask | Scizor, Yanmega, Ninjask | - |
 | VICTORY_V | 528 | Vanilluxe, Vaporeon, Vikavolt, Volcarona | Vanilluxe, Vaporeon, Volcarona | sneeuw |
 | PLASMA_NIGEL | 512 | Conkeldurr, Excadrill, Escavalier, Haxorus | Conkeldurr, Excadrill, Haxorus | - |
 | GRIMSBY | 534 | Wailord, Cursola, Basculegion, Dhelmise | Wailord, Basculegion, Dhelmise | - |
-| WICK | 502 | Magnezone, Eelektross, Lumineon, Lanturn | Magnezone, Lumineon, Lanturn | regen |
+| WICK | 510 | Ampharos, Magnezone, Eelektross, Lanturn | Magnezone, Eelektross, Lanturn | - |
 | SALIM | 510 | Hippowdon, Cofagrigus, Sableye, Gholdengo | Hippowdon, Sableye, Gholdengo | Trick Room, zand |
 | DRACONID_ELDER | 585 | Kingdra, Goodra, Dragonite, Hydreigon | Kingdra, Dragonite, Hydreigon | regen |
 | VR_REGINALD | 601 | Tyranitar, Metagross, Magnezone, Slaking | Tyranitar, Metagross, Slaking | zand |
@@ -135,12 +135,12 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 900 | DITTO |
 | 1000 | BURGLAR |
 | 1100 | ROOD |
-| 1200 | WICK |
-| 1300 | PLASMA_GRUNT_M |
-| 1400 | SHELLY |
-| 1500 | WARIO |
-| 1600 | TABITHA |
-| 1700 | LYLE |
+| 1200 | PLASMA_GRUNT_M |
+| 1300 | SHELLY |
+| 1400 | WARIO |
+| 1500 | TABITHA |
+| 1600 | LYLE |
+| 1700 | WICK |
 | 1800 | MAXIE |
 | 1900 | SHADOW_TRIAD |
 | 2000 | HELIA |
@@ -204,11 +204,11 @@ synergie (weer/terrein met zijn zetter, Trick Room met trage Pokémon, typedekki
 | 7800 | ROARK |
 | 7900 | AARON |
 | 8000 | BOO |
-| 8100 | BROCK |
-| 8200 | BERTHA |
-| 8300 | LT_SURGE |
-| 8400 | PHOEBE |
-| 8500 | WALLACE |
+| 8100 | BERTHA |
+| 8200 | LT_SURGE |
+| 8300 | PHOEBE |
+| 8400 | WALLACE |
+| 8500 | BROCK |
 | 8600 | LORELEI |
 | 8700 | DAVE |
 | 8800 | SELENE |

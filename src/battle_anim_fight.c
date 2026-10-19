@@ -115,6 +115,29 @@ const struct SpriteTemplate gFistFootSpriteTemplate =
     .callback = AnimBasicFistOrFoot,
 };
 
+// Project Grounded: Spinning Backfist, de vuist een kwartslag gedraaid zodat de rug van de hand naar het doel wijst.
+static const union AffineAnimCmd sAffineAnim_Backfist[] =
+{
+    AFFINEANIMCMD_FRAME(0x100, 0x100, -64, 0),
+    AFFINEANIMCMD_END,
+};
+
+static const union AffineAnimCmd *const sAffineAnims_Backfist[] =
+{
+    sAffineAnim_Backfist,
+};
+
+const struct SpriteTemplate gBackfistSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_HANDS_AND_FEET,
+    .paletteTag = ANIM_TAG_HANDS_AND_FEET,
+    .oam = &gOamData_AffineNormal_ObjNormal_32x32,
+    .anims = gAnims_HandsAndFeet,
+    .images = NULL,
+    .affineAnims = sAffineAnims_Backfist,
+    .callback = AnimBasicFistOrFoot,
+};
+
 const struct SpriteTemplate gFistFootRandomPosSpriteTemplate =
 {
     .tileTag = ANIM_TAG_HANDS_AND_FEET,

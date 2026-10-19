@@ -19156,3 +19156,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - Learnsets: Beedrill, Nidoking, Nidoqueen, Fearow en Kabutops bij evolutie; Sawk/Throh lv 32, Carnivine lv 30, Kingler lv 44.
 - Kira & Dan 2–5: Nidoking Tyrant Horn i.p.v. Sludge Wave, Nidoqueen Queen's Weight i.p.v. Protect.
 - ROM: ±541 KB vrij (grens 512 KB).
+- **Grafaiai** leert Sketch op lv 1 (Smeargle-niche: na het sketchen kan hij Sketch opnieuw leren bij de Move Relearner).

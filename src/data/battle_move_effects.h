@@ -1190,6 +1190,18 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 2,
     },
 
+    [EFFECT_TWIN_LANCE] = // Project Grounded: Beedrill
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
+    [EFFECT_FLYTRAP] = // Project Grounded: Carnivine
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 4,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

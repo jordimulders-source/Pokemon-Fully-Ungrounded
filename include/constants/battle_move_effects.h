@@ -369,6 +369,8 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_PRIMEVAL_WARD, // Project Grounded: +1 Def/SpDef en geen stat-verlagingen tot wisselen
     EFFECT_GULP_DOWN, // Project Grounded: slikt het item van het doelwit in
     EFFECT_NINE_LIVES, // Project Grounded: één keer per gevecht een KO overleven
+    EFFECT_TWIN_LANCE, // Project Grounded: vergif per klap, al vergiftigd wordt badly poisoned
+    EFFECT_FLYTRAP, // Project Grounded: drain, dubbele kracht tegen Bug/Flying
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

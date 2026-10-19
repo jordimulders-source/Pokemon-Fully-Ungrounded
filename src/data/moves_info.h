@@ -264,7 +264,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Throws coins at the foe.\n"
             "Money is recovered after."),
         .effect = EFFECT_HIT,
-        .power = 40,
+        .power = 60, // Project Grounded: was 40
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
@@ -3424,16 +3424,16 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Clubs the foe with a bone.\n"
             "May cause flinching."),
         .effect = EFFECT_HIT,
-        .power = 65,
+        .power = 85, // Project Grounded: was 65
         .type = TYPE_GROUND,
-        .accuracy = 95,
+        .accuracy = 100, // Project Grounded: was 95
         .pp = 20,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 10,
+            .chance = 20, // Project Grounded: was 10
         }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_REPETITION_NOT_BORING : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
@@ -4219,14 +4219,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Throws a bone boomerang\n"
             "that strikes twice."),
         .effect = EFFECT_HIT,
-        .power = 50,
+        .power = 60, // Project Grounded: was 50
         .type = TYPE_GROUND,
-        .accuracy = 90,
+        .accuracy = 95, // Project Grounded: was 90
         .pp = 10,
         .target = MOVE_TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .strikeCount = 2,
+        .ignoreTypeIfFlyingAndUngrounded = TRUE, // Project Grounded: raakt ook Flying/Levitate (zonder te grounden)
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL : CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_BONEMERANG,
@@ -22166,6 +22167,230 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_MoaiWatch,
+    },
+
+    [MOVE_TWIN_LANCE] = // Project Grounded: Beedrill (twee lansen, gif dat zich opstapelt)
+    {
+        .name = COMPOUND_STRING("Twin Lance"),
+        .description = COMPOUND_STRING(
+            "Stabs twice. May poison;\n"
+            "worsens existing poison."),
+        .effect = EFFECT_TWIN_LANCE,
+        .power = 60,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .strikeCount = 2,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_POISON,
+            .chance = 25,
+        }),
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Twineedle,
+    },
+
+    [MOVE_TYRANT_HORN] = // Project Grounded: Nidoking (Poison én Ground tegelijk, zoals Flying Press)
+    {
+        .name = COMPOUND_STRING("Tyrant Horn"),
+        .description = COMPOUND_STRING(
+            "A Poison- and Ground-type\n"
+            "horn strike. May poison."),
+        .effect = EFFECT_TWO_TYPED_MOVE,
+        .power = 85,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .type = TYPE_GROUND },
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_POISON,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Megahorn,
+    },
+
+    [MOVE_QUEENS_WEIGHT] = // Project Grounded: Nidoqueen (Body Press, maar Ground)
+    {
+        .name = COMPOUND_STRING("Queen's Weight"),
+        .description = COMPOUND_STRING(
+            "Crushes the foe. Uses the\n"
+            "user's Def. as its Attack."),
+        .effect = EFFECT_BODY_PRESS,
+        .power = 80,
+        .type = TYPE_GROUND,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_BodyPress,
+    },
+
+    [MOVE_SKY_SPEAR] = // Project Grounded: Fearow (snavel als speer)
+    {
+        .name = COMPOUND_STRING("Sky Spear"),
+        .description = COMPOUND_STRING(
+            "Dives beak-first like a\n"
+            "spear. High critical ratio."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_FLYING,
+        .accuracy = 95,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = 1,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DrillPeck,
+    },
+
+    [MOVE_ANCIENT_SCYTHE] = // Project Grounded: Kabutops (snijdt, Sharpness)
+    {
+        .name = COMPOUND_STRING("Ancient Scythe"),
+        .description = COMPOUND_STRING(
+            "Slashes with fossil blades.\n"
+            "High critical-hit ratio."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = 1,
+        .makesContact = TRUE,
+        .slicingMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_NightSlash,
+    },
+
+    [MOVE_MAWASHI_GERI] = // Project Grounded: Sawk (roundhouse kick, door Protect en Substitute)
+    {
+        .name = COMPOUND_STRING("Mawashi Geri"),
+        .description = COMPOUND_STRING(
+            "A roundhouse kick through\n"
+            "guards. High critical ratio."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = 1,
+        .makesContact = TRUE,
+        .ignoresProtect = TRUE,
+        .ignoresSubstitute = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_RollingKick,
+    },
+
+    [MOVE_IPPON] = // Project Grounded: Throh (altijd een crit, gooit het doelwit eruit)
+    {
+        .name = COMPOUND_STRING("Ippon"),
+        .description = COMPOUND_STRING(
+            "A perfect throw. Always a\n"
+            "crit; forces a switch."),
+        .effect = EFFECT_HIT_SWITCH_TARGET,
+        .power = 70,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -6,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .alwaysCriticalHit = TRUE,
+        .makesContact = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_LATER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_CircleThrow,
+    },
+
+    [MOVE_FLYTRAP] = // Project Grounded: Carnivine (vleesetende plant, x2 tegen Bug/Flying)
+    {
+        .name = COMPOUND_STRING("Flytrap"),
+        .description = COMPOUND_STRING(
+            "Bites and drains HP. Twice\n"
+            "as strong vs. Bug/Flying."),
+        .effect = EFFECT_FLYTRAP,
+        .power = 80,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .absorbPercentage = 50 },
+        .makesContact = TRUE,
+        .bitingMove = TRUE,
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONE,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Crunch,
+    },
+
+    [MOVE_COLOSSAL_CLAW] = // Project Grounded: Kingler (enorme schaar, -2 Atk)
+    {
+        .name = COMPOUND_STRING("Colossal Claw"),
+        .description = COMPOUND_STRING(
+            "A colossal pincer slam.\n"
+            "Harshly lowers the Attack."),
+        .effect = EFFECT_HIT,
+        .power = 150,
+        .type = TYPE_WATER,
+        .accuracy = 85,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ATK_MINUS_2,
+            .self = TRUE,
+        }),
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Crabhammer,
     },
 
     // Z-Moves

@@ -3169,6 +3169,14 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
     case MOVE_EFFECT_FROSTBITE:
         if (IsSafeguardProtected(gBattlerAttacker, gEffectBattler, GetBattlerAbility(gBattlerAttacker)) && !primary)
             gBattlescriptCurrInstr = battleScript;
+        else if (moveEffect == MOVE_EFFECT_POISON
+              && GetMoveEffect(gCurrentMove) == EFFECT_TWIN_LANCE
+              && (gBattleMons[gEffectBattler].status1 & STATUS1_POISON))
+        {
+            // Project Grounded: Twin Lance maakt een al vergiftigd doelwit badly poisoned
+            gBattleMons[gEffectBattler].status1 &= ~STATUS1_POISON;
+            SetNonVolatileStatus(gEffectBattler, MOVE_EFFECT_TOXIC, battleScript, TRIGGER_ON_MOVE);
+        }
         else if (CanSetNonVolatileStatus(
                     gBattlerAttacker,
                     gEffectBattler,
@@ -6424,6 +6432,7 @@ static void Cmd_moveend(void)
             {
             case EFFECT_ABSORB:
             case EFFECT_DREAM_EATER:
+            case EFFECT_FLYTRAP: // Project Grounded
                 if (!gBattleMons[gBattlerAttacker].volatiles.healBlock
                      && gBattleStruct->moveDamage[gBattlerTarget] > 0
                      && IsBattlerAlive(gBattlerAttacker))

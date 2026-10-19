@@ -2235,13 +2235,13 @@ void AnimTask_Splash(u8 taskId)
     }
 }
 
-// Project Grounded: Super Splash. Precies Splash, maar elke frame drie stappen: hyper snel.
+// Project Grounded: Super Splash. Precies Splash, maar elke frame vier stappen: hyper snel.
 // arg 0: anim battler, arg 1: aantal sprongen
 static void AnimTask_SplashFast_Step(u8 taskId)
 {
     u32 i;
 
-    for (i = 0; i < 3; i++)
+    for (i = 0; i < 4; i++)
     {
         AnimTask_Splash_Step(taskId);
         if (!gTasks[taskId].isActive || gTasks[taskId].func != AnimTask_SplashFast_Step)

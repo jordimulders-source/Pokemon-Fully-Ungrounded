@@ -6,7 +6,13 @@ LilycoveCity_DepartmentStore_4F_EventScript_Gentleman::
 	end
 
 LilycoveCity_DepartmentStore_4F_EventScript_Woman::
+	goto_if_set FLAG_RECEIVED_TM_SUPER_SPLASH, LilycoveCity_DepartmentStore_4F_EventScript_WomanTM100
 	msgbox LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs, MSGBOX_NPC
+	end
+
+@ Project Grounded: zodra je TM100 (Super Splash) hebt, weet ze dat er een honderdste bestaat.
+LilycoveCity_DepartmentStore_4F_EventScript_WomanTM100::
+	msgbox LilycoveCity_DepartmentStore_4F_Text_HundredTMs, MSGBOX_NPC
 	end
 
 LilycoveCity_DepartmentStore_4F_EventScript_Youngster::
@@ -76,9 +82,16 @@ LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:
 	.string "off the stage. My blood boils.$"
 
 LilycoveCity_DepartmentStore_4F_Text_FiftyDifferentTMs:
-	.string "There are a hundred kinds of TMs.\p"
-	.string "I have 99.\p"
+	.string "There are 99 kinds of TMs.\p"
+	.string "I have 98.\p"
 	.string "I can't sleep.$"
+
+LilycoveCity_DepartmentStore_4F_Text_HundredTMs:
+	.string "Is that… TM100?\p"
+	.string "There are A HUNDRED kinds now?\n"
+	.string "Since WHEN?\p"
+	.string "I have 98. Two missing.\p"
+	.string "I'm never sleeping again.$"
 
 LilycoveCity_DepartmentStore_4F_Text_PokemonOnlyHaveFourMoves:
 	.string "A POKéMON can learn four moves.\n"

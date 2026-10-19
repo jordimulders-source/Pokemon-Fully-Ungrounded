@@ -963,7 +963,13 @@
 #define MOVE_JOUST 899 // Project Grounded: Escavalier
 #define MOVE_SOLSTICE_GATE 900 // Project Grounded: Stonjourner
 #define MOVE_REV_UP 901 // Project Grounded: Revavroom
-#define MOVES_COUNT_GEN9 902
+// 902-914: gereserveerd voor de moves van de andere agents (worden bij het samenvoegen ingevuld)
+#define MOVE_KUSARIGAMA 915 // Project Grounded: Accelgor
+#define MOVE_INNARD_PUNCH 916 // Project Grounded: Pyukumuku
+#define MOVE_COMBINATION 917 // Project Grounded: Hitmonchan
+#define MOVE_SPINNING_BACKFIST 918 // Project Grounded: Hitmonchan
+#define MOVE_ABDUCTION 919 // Project Grounded: Beheeyem, Orbeetle
+#define MOVES_COUNT_GEN9 920
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

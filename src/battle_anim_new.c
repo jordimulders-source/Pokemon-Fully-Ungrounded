@@ -1,5 +1,7 @@
 #include "global.h"
 #include "battle_anim.h"
+#include "palette.h"
+#include "constants/rgb.h"
 #include "item_menu_icons.h"
 #include "sprite.h"
 #include "random.h"
@@ -10334,3 +10336,265 @@ void AnimTask_GetMoaiWatchLayers(u8 taskId)
     gBattleAnimArgs[ARG_RET_ID] = (layers >= 1 && layers <= 3) ? layers : 1;
     DestroyAnimVisualTask(taskId);
 }
+
+// Project Grounded: Kusarigama (Accelgor) - een sikkel (Punishment-mes, staalgrijs gekleurd) aan een
+// ketting (Anchor Shot) zwiept in een boog naar het doelwit, bijt even vast en wordt teruggetrokken.
+// De kettingschakels liggen op een rechte lijn van de aanvaller naar de sikkel en draaien mee.
+// arg0: frames heen, arg1: frames vasthouden, arg2: frames terug
+#define KUSA_LINKS      4
+#define KUSA_LINK_STEP  26
+#define tKTimer     data[0]
+#define tKThrow     data[1]
+#define tKHold      data[2]
+#define tKRetract   data[3]
+#define tKStartX    data[4]
+#define tKStartY    data[5]
+#define tKEndX      data[6]
+#define tKEndY      data[7]
+#define tKSickle    data[8]
+#define tKLink0     data[9] // t/m data[9 + KUSA_LINKS - 1]
+#define tKSpin      data[14]
+
+static const struct OamData sOamData_KusarigamaChain =
+{
+    .affineMode = ST_OAM_AFFINE_DOUBLE,
+    .objMode = ST_OAM_OBJ_NORMAL,
+    .bpp = ST_OAM_4BPP,
+    .shape = SPRITE_SHAPE(32x8),
+    .size = SPRITE_SIZE(32x8),
+    .priority = 2,
+};
+
+static const struct SpriteTemplate sKusarigamaChainSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_CHAIN_LINK,
+    .paletteTag = ANIM_TAG_CHAIN_LINK,
+    .oam = &sOamData_KusarigamaChain,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static const struct SpriteTemplate sKusarigamaSickleSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_PUNISHMENT_BLADES,
+    .paletteTag = ANIM_TAG_PUNISHMENT_BLADES,
+    .oam = &gOamData_AffineDouble_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = SpriteCallbackDummy,
+};
+
+static void KusarigamaPlace(struct Task *task, s32 progress, s32 arc)
+{
+    s32 i, x, y, dx, dy, len;
+    u16 angle;
+    struct Sprite *sickle = &gSprites[task->tKSickle];
+
+    x = task->tKStartX + ((task->tKEndX - task->tKStartX) * progress) / 256;
+    y = task->tKStartY + ((task->tKEndY - task->tKStartY) * progress) / 256 - arc;
+    sickle->x = x;
+    sickle->y = y;
+
+    dx = x - task->tKStartX;
+    dy = y - task->tKStartY;
+    len = Sqrt(dx * dx + dy * dy);
+    angle = ArcTan2Neg(dx, dy);
+    for (i = 0; i < KUSA_LINKS; i++)
+    {
+        struct Sprite *link = &gSprites[task->data[9 + i]];
+        s32 dist = 12 + KUSA_LINK_STEP * i;
+        if (task->data[9 + i] == MAX_SPRITES)
+            continue;
+        if (len == 0 || dist + 8 > len)
+        {
+            link->invisible = TRUE;
+            continue;
+        }
+        link->invisible = FALSE;
+        link->x = task->tKStartX + (dx * dist) / len;
+        link->y = task->tKStartY + (dy * dist) / len;
+        TrySetSpriteRotScale(link, FALSE, 0x100, 0x100, angle);
+    }
+}
+
+static void AnimTask_Kusarigama_Step(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    s32 t = task->tKTimer++;
+    s32 progress, arc = 0, i;
+
+    if (t < task->tKThrow)
+    {
+        // snel weg, afremmend bij het doelwit; hoge boog
+        s32 left = task->tKThrow - t;
+        progress = 256 - (256 * left * left) / (task->tKThrow * task->tKThrow);
+        arc = Sin(progress / 2, 22);
+        task->tKSpin += 0x1C00;
+    }
+    else if (t < task->tKThrow + task->tKHold)
+    {
+        // vastgebeten: kleine ruk
+        progress = 256;
+        task->tKSpin = 0xE000 + ((t & 2) ? 0x400 : 0);
+    }
+    else if (t < task->tKThrow + task->tKHold + task->tKRetract)
+    {
+        // terugtrekken, steeds sneller
+        s32 u = t - task->tKThrow - task->tKHold;
+        progress = 256 - (256 * u * u) / (task->tKRetract * task->tKRetract);
+        arc = Sin(progress / 2, 10);
+        task->tKSpin -= 0x1800;
+    }
+    else
+    {
+        for (i = 0; i < KUSA_LINKS + 1; i++)
+        {
+            u32 id = task->data[8 + i]; // sikkel (data[8]) en de schakels (data[9..])
+            if (id == MAX_SPRITES)
+                continue;
+            FreeSpriteOamMatrix(&gSprites[id]);
+            DestroySprite(&gSprites[id]);
+        }
+        DestroyAnimVisualTask(taskId);
+        return;
+    }
+
+    if (task->tKSickle == MAX_SPRITES)
+        return;
+    TrySetSpriteRotScale(&gSprites[task->tKSickle], FALSE, 0x100, 0x100, task->tKSpin);
+    KusarigamaPlace(task, progress, arc);
+}
+
+void AnimTask_Kusarigama(u8 taskId)
+{
+    struct Task *task = &gTasks[taskId];
+    u32 i, palOffset;
+    u8 subpriority = GetBattlerSpriteSubpriority(gBattleAnimTarget);
+
+    // het Punishment-mes staalgrijs kleuren (wordt aan het eind van de animatie weer vrijgegeven)
+    palOffset = OBJ_PLTT_ID(IndexOfSpritePaletteTag(ANIM_TAG_PUNISHMENT_BLADES));
+    gPlttBufferUnfaded[palOffset + 1] = gPlttBufferFaded[palOffset + 1] = RGB(5, 6, 8);
+    gPlttBufferUnfaded[palOffset + 2] = gPlttBufferFaded[palOffset + 2] = RGB(25, 26, 28);
+    gPlttBufferUnfaded[palOffset + 3] = gPlttBufferFaded[palOffset + 3] = RGB(15, 16, 19);
+
+    task->tKThrow = gBattleAnimArgs[0] > 0 ? gBattleAnimArgs[0] : 1;
+    task->tKHold = gBattleAnimArgs[1];
+    task->tKRetract = gBattleAnimArgs[2] > 0 ? gBattleAnimArgs[2] : 1;
+    task->tKStartX = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    task->tKStartY = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET);
+    task->tKEndX = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    task->tKEndY = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET);
+    task->tKSpin = 0;
+    task->tKTimer = 0;
+
+    for (i = 0; i < KUSA_LINKS; i++)
+    {
+        u8 id = CreateSprite(&sKusarigamaChainSpriteTemplate, task->tKStartX, task->tKStartY, subpriority - 1);
+        gSprites[id].invisible = TRUE;
+        task->data[9 + i] = id;
+    }
+    task->tKSickle = CreateSprite(&sKusarigamaSickleSpriteTemplate, task->tKStartX, task->tKStartY, subpriority - 2);
+    if (task->tKSickle != MAX_SPRITES)
+        KusarigamaPlace(task, 0, 0);
+    task->func = AnimTask_Kusarigama_Step;
+}
+
+#undef tKTimer
+#undef tKThrow
+#undef tKHold
+#undef tKRetract
+#undef tKStartX
+#undef tKStartY
+#undef tKEndX
+#undef tKEndY
+#undef tKSickle
+#undef tKLink0
+#undef tKSpin
+
+// Project Grounded: Combination (Hitmonchan). Is dit de derde klap (de cross)?
+void AnimTask_IsCombinationCross(u8 taskId)
+{
+    gBattleAnimArgs[ARG_RET_ID] = (gAnimMoveTurn >= 2);
+    DestroyAnimVisualTask(taskId);
+}
+
+// Project Grounded: Innard Punch (Pyukumuku) - een witte vuist schiet uit de aanvaller naar het doelwit
+// en groeit onderweg. arg0: duur van de vlucht
+static void AnimInnardPunchFist_Step(struct Sprite *sprite)
+{
+    s32 t = ++sprite->data[0];
+    s32 dur = sprite->data[1];
+
+    if (t <= dur)
+    {
+        sprite->x = sprite->data[2] + ((sprite->data[4] - sprite->data[2]) * t) / dur;
+        sprite->y = sprite->data[3] + ((sprite->data[5] - sprite->data[3]) * t) / dur;
+        {
+            s16 scale = 0x200 - (0x100 * t) / dur; // groeit van 0,5x naar 1x (kleinere waarde = groter)
+            TrySetSpriteRotScale(sprite, FALSE, scale, scale, 0);
+        }
+    }
+    else if (t > dur + 6)
+    {
+        DestroyAnimSprite(sprite);
+    }
+}
+
+static void AnimInnardPunchFist(struct Sprite *sprite)
+{
+    sprite->data[0] = 0;
+    sprite->data[1] = gBattleAnimArgs[0] > 0 ? gBattleAnimArgs[0] : 1;
+    sprite->data[2] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2);
+    sprite->data[3] = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET) + 4;
+    sprite->data[4] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2);
+    sprite->data[5] = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET);
+    sprite->x = sprite->data[2];
+    sprite->y = sprite->data[3];
+    TrySetSpriteRotScale(sprite, FALSE, 0x200, 0x200, 0);
+    sprite->callback = AnimInnardPunchFist_Step;
+}
+
+const struct SpriteTemplate gInnardPunchFistSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_HANDS_AND_FEET,
+    .paletteTag = ANIM_TAG_HANDS_AND_FEET,
+    .oam = &gOamData_AffineDouble_ObjNormal_32x32,
+    .anims = gAnims_HandsAndFeet,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimInnardPunchFist,
+};
+
+// Project Grounded: Abduction (Beheeyem/Orbeetle) - ringen van een tractorstraal stijgen op boven het doelwit
+// (Psybeam-ring, een kwartslag gedraaid zodat hij plat ligt).
+// arg0: x-offset, arg1: y-offset t.o.v. het doelwit, arg2: pixels omhoog per frame, arg3: duur
+static void AnimAbductionRing_Step(struct Sprite *sprite)
+{
+    sprite->y2 -= sprite->data[1];
+    if (--sprite->data[0] <= 0)
+        DestroyAnimSprite(sprite);
+}
+
+static void AnimAbductionRing(struct Sprite *sprite)
+{
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2) + gBattleAnimArgs[0];
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[1];
+    sprite->data[1] = gBattleAnimArgs[2];
+    sprite->data[0] = gBattleAnimArgs[3] > 0 ? gBattleAnimArgs[3] : 1;
+    TrySetSpriteRotScale(sprite, FALSE, 0x140, 0x100, 0x4000); // 32 breed, plat
+    sprite->callback = AnimAbductionRing_Step;
+}
+
+const struct SpriteTemplate gAbductionRingSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_GOLD_RING,
+    .paletteTag = ANIM_TAG_GOLD_RING,
+    .oam = &gOamData_AffineDouble_ObjNormal_16x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimAbductionRing,
+};

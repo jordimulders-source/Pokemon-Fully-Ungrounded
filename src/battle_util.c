@@ -6469,6 +6469,12 @@ static bool32 CanSleepDueToSleepClause(u32 battlerAtk, u32 battlerDef, enum Func
     return FALSE;
 }
 
+// Project Grounded: Omen Strike en Kusarigama. Wisselt dit doelwit deze beurt (ook: het is net ingewisseld)?
+bool32 IsBattlerSwitchingThisTurn(u32 battler)
+{
+    return gChosenActionByBattler[battler] == B_ACTION_SWITCH;
+}
+
 // Project Grounded: Joust (Escavalier). Is het doelwit sneller dan de gebruiker?
 bool32 IsJoustTargetFaster(u32 battlerAtk, u32 battlerDef)
 {
@@ -7298,7 +7304,15 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         basePower = gBattleStruct->presentBasePower;
         break;
     case EFFECT_TRIPLE_KICK:
-        basePower *= 1 + GetMoveStrikeCount(move) - gMultiHitCounter;
+        if (move == MOVE_COMBINATION) // Project Grounded: jab, jab, cross (20, 20, 60)
+        {
+            if (gMultiHitCounter == 1)
+                basePower *= 3;
+        }
+        else
+        {
+            basePower *= 1 + GetMoveStrikeCount(move) - gMultiHitCounter;
+        }
         break;
     case EFFECT_SPIT_UP:
         basePower = 100 * gDisableStructs[battlerAtk].stockpileCounter;
@@ -7367,10 +7381,14 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         }
         break;
     case EFFECT_OMEN_STRIKE: // Project Grounded: Absol ziet een wissel of statusmove aankomen
-        if (gChosenActionByBattler[battlerDef] == B_ACTION_SWITCH
+        if (IsBattlerSwitchingThisTurn(battlerDef)
          || (!HasBattlerActedThisTurn(battlerDef)
           && gChosenActionByBattler[battlerDef] == B_ACTION_USE_MOVE
           && IsBattleMoveStatus(GetChosenMoveFromPosition(battlerDef))))
+            basePower *= 2;
+        break;
+    case EFFECT_KUSARIGAMA: // Project Grounded: Accelgor, de ketting-sikkel vangt wie wegvlucht
+        if (IsBattlerSwitchingThisTurn(battlerDef))
             basePower *= 2;
         break;
     case EFFECT_JOUST: // Project Grounded: Escavalier, lans tegen een snellere aanvaller

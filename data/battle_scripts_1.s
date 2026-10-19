@@ -2074,6 +2074,17 @@ BattleScript_EffectMetalBurst::
 	adjustdamage
 	goto BattleScript_HitFromAtkAnimation
 
+@ Project Grounded: Innard Punch (Pyukumuku). Deze beurt geraakt: 2x de schade terug op wie hem het laatst
+@ raakte; anders een gewone klap (50 BP).
+BattleScript_EffectInnardPunch::
+	attackcanceler
+	innardpunchdamagecalculator BattleScript_HitFromAccCheck
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	typecalc
+	clearmoveresultflags MOVE_RESULT_NOT_VERY_EFFECTIVE | MOVE_RESULT_SUPER_EFFECTIVE
+	adjustdamage
+	goto BattleScript_HitFromAtkAnimation
+
 BattleScript_EffectHealingWish::
 	attackcanceler
 	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_ButItFailed

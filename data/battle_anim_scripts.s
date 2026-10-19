@@ -39267,3 +39267,138 @@ gBattleAnimGeneral_MoaiCrumble::
 	playsewithpan SE_M_EARTHQUAKE, SOUND_PAN_TARGET
 	waitforvisualfinish
 	end
+
+@ Project Grounded: Kusarigama. Accelgor zwiept een sikkel aan een ketting in een boog naar het doelwit;
+@ de sikkel bijt vast (snee + schok) en wordt rammelend teruggetrokken.
+gBattleAnimMove_Kusarigama::
+	loadspritegfx ANIM_TAG_PUNISHMENT_BLADES
+	loadspritegfx ANIM_TAG_CHAIN_LINK
+	loadspritegfx ANIM_TAG_CUT
+	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_Kusarigama, 2, 16, 12, 14
+	delay 15
+	playsewithpan SE_M_CUT, SOUND_PAN_TARGET
+	createsprite gCuttingSliceSpriteTemplate, ANIM_ATTACKER, 2, 40, -32, 0
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 10, 1
+	delay 12
+	loopsewithpan SE_SHINY, SOUND_PAN_ATTACKER, 4, 3
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Innard Punch. Pyukumuku trekt samen en een witte vuist schiet uit zijn lijf naar het
+@ doelwit, groeit onderweg en slaat in.
+gBattleAnimMove_InnardPunch::
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_IMPACT
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_HANDS_AND_FEET, 0, 7, 7, RGB_WHITE
+	createvisualtask AnimTask_ScaleMonAndRestore, 5, -6, 8, 6, ANIM_ATTACKER, 0
+	playsewithpan SE_M_BUBBLE3, SOUND_PAN_ATTACKER
+	delay 8
+	playsewithpan SE_M_JUMP_KICK, SOUND_PAN_ATTACKER
+	createsprite gInnardPunchFistSpriteTemplate, ANIM_ATTACKER, 3, 10
+	delay 10
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_TARGET, 2, x=0, y=0, relative_to=ANIM_TARGET, animation=0
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 4, 0, 12, 1
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 0, RGB_WHITE
+	waitforvisualfinish
+	end
+
+@ Project Grounded: Combination. Twee snelle jabs (links, rechts) en als derde klap een zware cross:
+@ Hitmonchan stapt naar voren, grote vuist, witte flits en een harde schok.
+gBattleAnimMove_Combination::
+	loadspritegfx ANIM_TAG_IMPACT
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createvisualtask AnimTask_IsCombinationCross, 2
+	jumprettrue CombinationCross
+	choosetwoturnanim CombinationJabLeft, CombinationJabRight
+CombinationJabContinue:
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 3, 0, 5, 1
+	playsewithpan SE_M_COMET_PUNCH, SOUND_PAN_TARGET
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+CombinationJabLeft:
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 3, 2
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=-10, y=-6, relative_to=ANIM_TARGET, animation=2
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, -10, -4, 6, 1, 0
+	goto CombinationJabContinue
+CombinationJabRight:
+	createsprite gHorizontalLungeSpriteTemplate, ANIM_ATTACKER, 2, 3, 2
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=8, y=-2, relative_to=ANIM_TARGET, animation=2
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, 8, 0, 6, 1, 0
+	goto CombinationJabContinue
+CombinationCross:
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 22, 0, 0, 4
+	delay 4
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	createsprite gFistFootSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 12, 1, 0
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=0, y=0, relative_to=ANIM_TARGET, animation=0
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 8, RGB_WHITE
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_TARGET, 5, 0, 14, 1
+	delay 4
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 8, 0, RGB_WHITE
+	delay 4
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 0, 6
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+
+@ Project Grounded: Spinning Backfist. Hitmonchan draait om zijn as (Rolling Kick) en de draaiende
+@ vuist slaat met de rug van de hand in.
+gBattleAnimMove_SpinningBackfist::
+	loadspritegfx ANIM_TAG_HANDS_AND_FEET
+	loadspritegfx ANIM_TAG_IMPACT
+	monbg ANIM_TARGET
+	setalpha 12, 8
+	createvisualtask AnimTask_TranslateMonEllipticalRespectSide, 2, ANIM_ATTACKER, 18, 6, 1, 4
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	delay 6
+	playsewithpan SE_M_DOUBLE_TEAM, SOUND_PAN_ATTACKER
+	waitforvisualfinish
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 20, 0, 0, 4
+	playsewithpan SE_M_RAZOR_WIND, SOUND_PAN_TARGET
+	createsprite gSpinningHandOrFootSpriteTemplate, ANIM_TARGET, 3, 0, 0, 0, 14
+	delay 14
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
+	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=0, y=0, relative_to=ANIM_TARGET, animation=0
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 5, 0, 8, 1
+	waitforvisualfinish
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 0, 8
+	waitforvisualfinish
+	clearmonbg ANIM_TARGET
+	blendoff
+	end
+
+@ Project Grounded: Abduction. Het veld wordt donker, een groene tractorstraal van ringen stijgt op uit
+@ het doelwit; het doelwit licht op, zweeft omhoog en verdwijnt bijna in het licht, en valt dan terug.
+gBattleAnimMove_Abduction::
+	loadspritegfx ANIM_TAG_GOLD_RING
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_GOLD_RING, 0, 11, 11, RGB(12, 31, 16)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 2, 0, 12, RGB(1, 2, 6)
+	waitforvisualfinish
+	playsewithpan SE_M_TELEPORT, SOUND_PAN_TARGET
+	call AbductionRings
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 2, 0, 14, RGB(24, 31, 26)
+	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_TARGET, 0, -18, 0, 24
+	call AbductionRings
+	call AbductionRings
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 2, 0, 6, 1
+	call AbductionRings
+	waitforvisualfinish
+	playsewithpan SE_M_MEGA_KICK2, SOUND_PAN_TARGET
+	createsprite gSlideMonToOriginalPosSpriteTemplate, ANIM_ATTACKER, 2, ANIM_TARGET, 0, 4
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_TARGET, 1, 14, 0, RGB(24, 31, 26)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG, 1, 12, 0, RGB(1, 2, 6)
+	waitforvisualfinish
+	end
+AbductionRings:
+	createsprite gAbductionRingSpriteTemplate, ANIM_TARGET, 2, 0, 24, 3, 20
+	delay 4
+	createsprite gAbductionRingSpriteTemplate, ANIM_TARGET, 2, 0, 24, 3, 20
+	delay 4
+	return

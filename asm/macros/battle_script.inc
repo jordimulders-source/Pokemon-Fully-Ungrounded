@@ -1378,6 +1378,12 @@
 	.4byte \failInstr
 	.endm
 
+	@ Project Grounded: Innard Punch. Niet geraakt deze beurt: spring naar normalInstr (gewone klap).
+	.macro innardpunchdamagecalculator normalInstr:req
+	callnative BS_CalcInnardPunchDmg
+	.4byte \normalInstr
+	.endm
+
 	.macro allyswitchswapbattlers
 	callnative BS_AllySwitchSwapBattler
 	.endm

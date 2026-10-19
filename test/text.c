@@ -57,6 +57,7 @@ TEST("Move names fit on Contest Screen")
     case MOVE_STOMPING_TANTRUM:
     case MOVE_NATURES_MADNESS:
     case MOVE_DOUBLE_IRON_BASH:
+    case MOVE_SPINNING_BACKFIST: // Project Grounded: 61 px, in contests iets afgekapt
         EXPECT_GT(GetStringWidth(fontId, GetMoveName(move), 0), widthPx);
         break;
     default:

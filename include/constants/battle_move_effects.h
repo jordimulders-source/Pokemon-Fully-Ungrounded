@@ -378,6 +378,8 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_MIMIC_SHADE, // Project Grounded: type van de laatste move die de gebruiker raakte
     EFFECT_JOUST, // Project Grounded: tegen een sneller doelwit +1 prioriteit en 100 BP
     EFFECT_SOLSTICE_GATE, // Project Grounded: x1,5 in zon of Snow/Hail
+    EFFECT_KUSARIGAMA, // Project Grounded: x2 als het doelwit deze beurt wisselt
+    EFFECT_INNARD_PUNCH, // Project Grounded: deze beurt geraakt: 2x de schade terug, anders een gewone klap
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

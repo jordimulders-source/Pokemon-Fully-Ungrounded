@@ -4995,6 +4995,10 @@ s32 GetBattleMovePriority(u32 battler, enum Ability ability, u32 move)
      && gBattleStruct->metronomeItemCounter[battler] > 0)
         priority = 0;
 
+    // Project Grounded: Abduction (UFO) landt in Trick Room als eerste: prioriteit 0 i.p.v. -6.
+    if (move == MOVE_ABDUCTION && (gFieldStatuses & STATUS_FIELD_TRICK_ROOM))
+        priority = 0;
+
     // Max Guard check
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX && GetMoveCategory(move) == DAMAGE_CATEGORY_STATUS)
         return GetMovePriority(MOVE_MAX_GUARD);

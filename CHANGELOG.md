@@ -19148,3 +19148,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - **Lucario** (Lung, Wyatt, Dylan 2–3): Force Palm/Drain Punch, Metal Claw/Iron Tail, Bone Rush, Swords Dance.
   - **Cinccino** (Pat): Tail Slap, Rock Blast, Bullet Seed, Sing. **Dustox** (Derek): Bug Buzz i.p.v. Light Screen. **Dusclops** (Quincy): Night Shade i.p.v. Skill Swap.
   - Bewust niet aangepast: grap-sets (Ditto, Metronome-team, Smeargle, Magikarp, Eviolite-Zubat), Jordi's rematches van Kira & Dan (Nidoking/Nidoqueen/Clamperl hebben daar nog standaardsets). Moves die een soort officieel niet leert (bijv. Bubble Beam, Trick Room-Wobbuffet) blijven: trainers mogen dat.
+- **Kira & Dan 2–5** (op verzoek van Jordi): Nidoking Earth Power/Sludge Wave/Ice Beam/Thunderbolt, Nidoqueen Earth Power/Sludge Bomb/Ice Beam/Protect, Clamperl Shell Smash/Surf/Ice Beam/Whirlpool (waren standaardsets met Growl/Peck/Water Gun).

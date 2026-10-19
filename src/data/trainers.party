@@ -27443,14 +27443,13 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Vacuum Wave
 - Seismic Toss
 
-Gallade @ Oran Berry
+Kirlia @ Oran Berry
 Level: 41
-Ability: Sharpness
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Psycho Cut
-- Leaf Blade
-- Night Slash
-- Swords Dance
+- Calm Mind
+- Confusion
+- Magical Leaf
+- Draining Kiss
 
 === TRAINER_TABITHA_MT_CHIMNEY_TAG ===
 Name: TABITHA

@@ -60,7 +60,36 @@
     F(SHADOW_SIPHON) /* Project Grounded: TM56, Mt. Pyre 3F */ \
     F(ACID_RAIN) /* Project Grounded: TM57, van een Aqua-grunt in de Aqua Hideout */ \
     F(POLLEN_HAZE) /* Project Grounded: TM58, van een Bug Maniac boven de Mimic Circle (Route 119) */ \
-    F(WEATHER_BALL) /* Project Grounded: TM59, Scorched Slab (zonnesanctum) */
+    F(WEATHER_BALL) /* Project Grounded: TM59, Scorched Slab (zonnesanctum) */ \
+    F(ROCK_TOMB) /* Project Grounded: TM60, Granite Cave 1F */ \
+    F(SNARL) /* Project Grounded: TM61, Route 116 */ \
+    F(ROOST) /* Project Grounded: TM62, Route 104 */ \
+    F(BULK_UP) /* Project Grounded: TM63, Route 115 */ \
+    F(CHARGE_BEAM) /* Project Grounded: TM64, Route 110 */ \
+    F(THUNDER_WAVE) /* Project Grounded: TM65, winkel Slateport */ \
+    F(ICY_WIND) /* Project Grounded: TM66, winkel Slateport */ \
+    F(POISON_JAB) /* Project Grounded: TM67, Route 117 */ \
+    F(WILL_O_WISP) /* Project Grounded: TM68, Jagged Pass */ \
+    F(TAILWIND) /* Project Grounded: TM69, Route 113 */ \
+    F(X_SCISSOR) /* Project Grounded: TM70, Route 114 */ \
+    F(HEAT_WAVE) /* Project Grounded: TM71, Mt. Chimney Summit (verborgen) */ \
+    F(WILD_CHARGE) /* Project Grounded: TM72, New Mauville */ \
+    F(ROLLING_THUNDER) /* Project Grounded: TM73, Mustard (Kubfu-dojo) */ \
+    F(HEAVY_SLAM) /* Project Grounded: TM74, Route 118 */ \
+    F(ENERGY_BALL) /* Project Grounded: TM75, Route 119 */ \
+    F(BUG_BUZZ) /* Project Grounded: TM76, Route 120 */ \
+    F(HEX) /* Project Grounded: TM77, Mt. Pyre 2F */ \
+    F(SUBSTITUTE) /* Project Grounded: TM78, Lilycove Dept. Store 4F */ \
+    F(BATON_PASS) /* Project Grounded: TM79, Lilycove Dept. Store 4F */ \
+    F(FOCUS_BLAST) /* Project Grounded: TM80, Route 121 */ \
+    F(KNOCK_OFF) /* Project Grounded: TM81, Aqua Hideout B2F */ \
+    F(EARTH_POWER) /* Project Grounded: TM82, Magma Hideout 3F */ \
+    F(DRAGON_PULSE) /* Project Grounded: TM83, Meteor Falls (grot achter de waterval) */ \
+    F(STONE_EDGE) /* Project Grounded: TM84, Victory Road B2F */ \
+    F(HIGH_HORSEPOWER) /* Project Grounded: TM85, Victory Road 1F (verborgen) */ \
+    F(DRAGON_DANCE) /* Project Grounded: TM86, Meteor Falls (Draconid-gangen) */ \
+    F(CLOSE_COMBAT) /* Project Grounded: TM87, Artisan Cave B1F (post-game) */ \
+    F(SWORDS_DANCE) /* Project Grounded: TM88, Artisan Cave 1F (post-game) */
 
 #define FOREACH_HM(F) \
     F(CUT) \

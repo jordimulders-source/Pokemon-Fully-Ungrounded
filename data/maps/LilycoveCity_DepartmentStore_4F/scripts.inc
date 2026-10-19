@@ -47,6 +47,8 @@ LilycoveCity_DepartmentStore_4F_Pokemart_DefenseTMs:
 	.2byte ITEM_TM_U_TURN
 	.2byte ITEM_TM_REFLECT
 	.2byte ITEM_TM_LIGHT_SCREEN
+	.2byte ITEM_TM_SUBSTITUTE @ Project Grounded: TM78
+	.2byte ITEM_TM_BATON_PASS @ Project Grounded: TM79
 	pokemartlistend
 
 LilycoveCity_DepartmentStore_4F_Text_AttackOrDefenseTM:

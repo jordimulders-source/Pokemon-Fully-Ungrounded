@@ -1067,7 +1067,7 @@ struct Bag
     struct ItemSlot itemsLegacy[BAG_ITEMS_COUNT_LEGACY]; // Project Grounded: wordt bij het laden naar bagItems verhuisd
     struct ItemSlot keyItems[BAG_KEYITEMS_COUNT];
     struct ItemSlot pokeBalls[BAG_POKEBALLS_COUNT];
-    struct ItemSlot TMsHMs[BAG_TMHM_COUNT];
+    struct ItemSlot TMsHMsLegacy[BAG_TMHM_COUNT_LEGACY]; // Project Grounded: wordt bij het laden naar bagTMsHMs verhuisd
     struct ItemSlot berries[BAG_BERRIES_COUNT];
 };
 
@@ -1184,6 +1184,7 @@ struct SaveBlock1
     struct ItemSlot bagItems[BAG_ITEMS_COUNT]; // Items-pocket (was bag.items met 30 plekken)
     u8 variantDexSeen[NUM_SPECIES];   // Pokédex-kleurenpagina: bit 0 normaal, 1..6 varianten, 7 shiny
     u8 variantDexCaught[NUM_SPECIES];
+    struct ItemSlot bagTMsHMs[BAG_TMHM_COUNT]; // TM/HM-pocket (was bag.TMsHMs met 64 plekken; TM60-TM88 erbij)
     // sizeof: 0x3???
 };
 

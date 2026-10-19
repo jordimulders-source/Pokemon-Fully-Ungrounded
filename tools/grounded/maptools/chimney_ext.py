@@ -354,7 +354,7 @@ def summit():
             local_id='LOCALID_SUMMIT_VOLCARONA'),
         obj('OBJ_EVENT_GFX_SCIENTIST_1', 23, 9, 'MtChimney_Summit_EventScript_Volcanologist', move='MOVEMENT_TYPE_FACE_LEFT'),
     ]
-    bgs = [hidden(4, 25, 'ITEM_STAR_PIECE', 'FLAG_HIDDEN_ITEM_MT_CHIMNEY_SUMMIT_STAR_PIECE'),
+    bgs = [hidden(4, 25, 'ITEM_TM_HEAT_WAVE', 'FLAG_HIDDEN_ITEM_MT_CHIMNEY_SUMMIT_STAR_PIECE'),
            sign(28, 9, 'MtChimney_Summit_EventScript_SummitSign')]
     rng = random.Random(1137)
     starts = [(17, 37)]

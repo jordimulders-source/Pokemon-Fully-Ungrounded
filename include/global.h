@@ -1184,7 +1184,7 @@ struct SaveBlock1
     struct ItemSlot bagItems[BAG_ITEMS_COUNT]; // Items-pocket (was bag.items met 30 plekken)
     u8 variantDexSeen[NUM_SPECIES];   // Pokédex-kleurenpagina: bit 0 normaal, 1..6 varianten, 7 shiny
     u8 variantDexCaught[NUM_SPECIES];
-    struct ItemSlot bagTMsHMs[BAG_TMHM_COUNT]; // TM/HM-pocket (was bag.TMsHMs met 64 plekken; TM60-TM88 erbij)
+    struct ItemSlot bagTMsHMs[BAG_TMHM_COUNT]; // TM/HM-pocket (was bag.TMsHMs met 64 plekken; TM60-TM100 erbij, 108 plekken)
     // sizeof: 0x3???
 };
 

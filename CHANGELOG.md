@@ -19253,3 +19253,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **TM100 Super Splash**: na gym 6 belt Devon R&D direct na Scott ("Yes, we have a SPLASH division. The budget cuts never found us."). De wetenschapper in Devon Corp. 2F geeft hem (`FLAG_DEVON_SUPER_SPLASH_CALL` = FLAG_GROUNDED(1003)).
 - TM-tas naar 108 plekken (100 TM's + 8 HM's).
 - Compatibiliteit: Overkill 103 soorten, Cold Shoulder 90, Jump Scare 114, Dim Mak 164, Updraft 188, Power Gem 91, Wood Hammer 31, Dragon Rush 83, Counterfeit Ball 54, Shell Smash 34, Fake Out 149, Disco Inferno 215, Super Splash 23 (alleen wie Splash via level-up leert). Voorstellen voor bredere compat van bestaande-move-TM's: `TM_COMPAT_VOORSTEL.md` (nog niet doorgevoerd).
+- **OU-balansonderzoek** (`BALANS_OU.md`, simulator `tools/grounded/balance/ousim.py` + `ou_analysis.py`, ijkingstests `balance_sim.c`): 583 soorten 1-tegen-1 tegen 44 Gen 9 OU-sets, plus 9 teams. Geen game-data gewijzigd.

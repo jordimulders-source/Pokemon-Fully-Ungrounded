@@ -2896,6 +2896,7 @@ bool32 IsStatLoweringEffect(enum BattleMoveEffects effect)
     case EFFECT_EVASION_DOWN_2:
     case EFFECT_TICKLE:
     case EFFECT_FLASH:
+    case EFFECT_EYE_SPOTS: // Project Grounded
     case EFFECT_CAPTIVATE:
     case EFFECT_NOBLE_ROAR:
     case EFFECT_MEMENTO:

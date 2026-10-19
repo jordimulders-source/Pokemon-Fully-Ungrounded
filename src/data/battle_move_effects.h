@@ -1202,6 +1202,36 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 4,
     },
 
+    [EFFECT_EYE_SPOTS] = // Project Grounded: Masquerain
+    {
+        .battleScript = BattleScript_EffectEyeSpots,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_OMEN_STRIKE] = // Project Grounded: Absol
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
+    [EFFECT_MIMIC_SHADE] = // Project Grounded: Kecleon
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 2,
+    },
+
+    [EFFECT_JOUST] = // Project Grounded: Escavalier
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
+    [EFFECT_SOLSTICE_GATE] = // Project Grounded: Stonjourner
+    {
+        .battleScript = BattleScript_EffectHit,
+        .battleTvScore = 3,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

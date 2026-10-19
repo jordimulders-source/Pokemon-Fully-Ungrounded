@@ -6444,6 +6444,17 @@ static bool32 CanSleepDueToSleepClause(u32 battlerAtk, u32 battlerDef, enum Func
     return FALSE;
 }
 
+// Project Grounded: Joust (Escavalier). Is het doelwit sneller dan de gebruiker?
+bool32 IsJoustTargetFaster(u32 battlerAtk, u32 battlerDef)
+{
+    if (battlerDef >= gBattlersCount || battlerDef == battlerAtk || IsBattlerAlly(battlerAtk, battlerDef))
+        battlerDef = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battlerAtk)));
+    if (!IsBattlerAlive(battlerDef))
+        return FALSE;
+    return GetBattlerTotalSpeedStat(battlerDef, GetBattlerAbility(battlerDef), GetBattlerHoldEffect(battlerDef))
+         > GetBattlerTotalSpeedStat(battlerAtk, GetBattlerAbility(battlerAtk), GetBattlerHoldEffect(battlerAtk));
+}
+
 bool32 CanBeConfused(u32 battler)
 {
     enum Ability ability = GetBattlerAbility(battler);
@@ -7326,6 +7337,21 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             else
                 basePower = sTrumpCardPowerTable[gBattleMons[battlerAtk].pp[i]];
         }
+        break;
+    case EFFECT_OMEN_STRIKE: // Project Grounded: Absol ziet een wissel of statusmove aankomen
+        if (gChosenActionByBattler[battlerDef] == B_ACTION_SWITCH
+         || (!HasBattlerActedThisTurn(battlerDef)
+          && gChosenActionByBattler[battlerDef] == B_ACTION_USE_MOVE
+          && IsBattleMoveStatus(GetChosenMoveFromPosition(battlerDef))))
+            basePower *= 2;
+        break;
+    case EFFECT_JOUST: // Project Grounded: Escavalier, lans tegen een snellere aanvaller
+        if (IsJoustTargetFaster(battlerAtk, battlerDef))
+            basePower = 100;
+        break;
+    case EFFECT_SOLSTICE_GATE: // Project Grounded: Stonjourner, zonnewende (zon) of winterwende (sneeuw)
+        if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SUN | B_WEATHER_SNOW | B_WEATHER_HAIL))
+            basePower = basePower * 3 / 2;
         break;
     case EFFECT_FLYTRAP: // Project Grounded: Carnivine eet insecten en vogels
         if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_BUG) || IS_BATTLER_OF_TYPE(battlerDef, TYPE_FLYING))

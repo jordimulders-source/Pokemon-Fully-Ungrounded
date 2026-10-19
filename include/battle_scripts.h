@@ -731,6 +731,7 @@ extern const u8 BattleScript_EffectHitEscape[];
 extern const u8 BattleScript_EffectMudSport[];
 extern const u8 BattleScript_EffectTickle[];
 extern const u8 BattleScript_EffectFlash[];
+extern const u8 BattleScript_EffectEyeSpots[]; // Project Grounded
 extern const u8 BattleScript_EffectFungalControl[];
 extern const u8 BattleScript_EffectTransmutation[];
 extern const u8 BattleScript_EffectMachineLearning[];

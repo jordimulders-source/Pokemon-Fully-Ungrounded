@@ -190,6 +190,7 @@ EWRAM_DATA u16 gLastPrintedMoves[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gLastMoves[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gLastLandedMoves[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gLastHitByType[MAX_BATTLERS_COUNT] = {0};
+EWRAM_DATA u8 gMimicShadeType[MAX_BATTLERS_COUNT] = {0}; // Project Grounded: type van de laatste move die raakte (blijft na een misser)
 EWRAM_DATA u16 gLastUsedMoveType[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gLastResultingMoves[MAX_BATTLERS_COUNT] = {0};
 EWRAM_DATA u16 gLockedMoves[MAX_BATTLERS_COUNT] = {0};
@@ -3108,6 +3109,7 @@ static void BattleStartClearSetData(void)
         gLastMoves[i] = MOVE_NONE;
         gLastLandedMoves[i] = MOVE_NONE;
         gLastHitByType[i] = 0;
+        gMimicShadeType[i] = 0;
         gLastUsedMoveType[i] = 0;
         gLastResultingMoves[i] = MOVE_NONE;
         gLastHitBy[i] = 0xFF;
@@ -3315,6 +3317,7 @@ void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
     gLastMoves[battler] = MOVE_NONE;
     gLastLandedMoves[battler] = MOVE_NONE;
     gLastHitByType[battler] = 0;
+    gMimicShadeType[battler] = 0;
     gLastUsedMoveType[battler] = 0;
     gLastResultingMoves[battler] = MOVE_NONE;
     gLastPrintedMoves[battler] = MOVE_NONE;
@@ -3437,6 +3440,7 @@ const u8* FaintClearSetData(u32 battler)
     gLastMoves[battler] = MOVE_NONE;
     gLastLandedMoves[battler] = MOVE_NONE;
     gLastHitByType[battler] = 0;
+    gMimicShadeType[battler] = 0;
     gLastUsedMoveType[battler] = 0;
     gLastResultingMoves[battler] = MOVE_NONE;
     gLastPrintedMoves[battler] = MOVE_NONE;
@@ -5015,6 +5019,11 @@ s32 GetBattleMovePriority(u32 battler, enum Ability ability, u32 move)
         priority += 3;
     }
 
+    // Project Grounded: Joust gaat voor als het doelwit sneller is
+    if (GetMoveEffect(move) == EFFECT_JOUST && GetActiveGimmick(battler) != GIMMICK_DYNAMAX
+     && IsJoustTargetFaster(battler, gBattleStruct->moveTarget[battler]))
+        priority++;
+
     return priority;
 }
 
@@ -6063,6 +6072,11 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
         {
             return TYPE_ROCK;
         }
+        break;
+    case EFFECT_MIMIC_SHADE: // Project Grounded: Kecleon neemt de kleur aan van wat hem raakte
+        if (state == MON_IN_BATTLE && gMimicShadeType[battler] != TYPE_NONE
+         && gMimicShadeType[battler] != TYPE_MYSTERY && gMimicShadeType[battler] < TYPE_STELLAR)
+            return gMimicShadeType[battler];
         break;
     case EFFECT_WEATHER_REPORT: // Project Grounded: zoals Weather Ball
     case EFFECT_WEATHER_BALL:

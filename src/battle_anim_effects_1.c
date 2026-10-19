@@ -6927,6 +6927,7 @@ static void SwapBattlerMoveData(u32 battler1, u32 battler2)
     SWAP(gLastMoves[battler1],          gLastMoves[battler2], temp);
     SWAP(gLastLandedMoves[battler1],    gLastLandedMoves[battler2], temp);
     SWAP(gLastHitByType[battler1],      gLastHitByType[battler2], temp);
+    SWAP(gMimicShadeType[battler1],     gMimicShadeType[battler2], temp); // Project Grounded
     SWAP(gLastUsedMoveType[battler1],   gLastUsedMoveType[battler2], temp);
     SWAP(gLastResultingMoves[battler1], gLastResultingMoves[battler2], temp);
     SWAP(gLastHitBy[battler1],          gLastHitBy[battler2], temp);

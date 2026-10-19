@@ -36,7 +36,7 @@ SINGLE_BATTLE_TEST("Counter is not affected by Protect effects")
             } else if (move == MOVE_KINGS_SHIELD) {
                 MESSAGE("Wobbuffet's Attack fell!");
             } else if (move == MOVE_SILK_TRAP) {
-                MESSAGE("Wobbuffet's Speed fell!");
+                MESSAGE("Wobbuffet's Speed harshly fell!");
             } else if (move == MOVE_OBSTRUCT) {
                 MESSAGE("Wobbuffet's Defense harshly fell!");
             }

@@ -9394,6 +9394,159 @@ BattleScript_NineLivesActivates::
 	waitstate
 	return
 
+@ Project Grounded: Burrow Maze (Furret). Graaft een uitweg erbij (max. 3); elke uitweg ontwijkt één aanval.
+BattleScript_EffectBurrowMaze::
+	attackcanceler
+	trysetburrowmaze BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_BURROWMAZEDUG
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+@ Project Grounded: Praise Helix (Omastar). Eén van vier uitkomsten, elk 25%.
+BattleScript_EffectPraiseHelix::
+	attackcanceler
+	attackanimation
+	waitanimation
+	printstring STRINGID_HELIXCONSULTED
+	waitmessage B_WAIT_TIME_LONG
+	praisehelixroll
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 1, BattleScript_PraiseHelixAnarchy
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 2, BattleScript_PraiseHelixBirdJesus
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 3, BattleScript_PraiseHelixSilent
+	printstring STRINGID_HELIXDEMOCRACY
+	waitmessage B_WAIT_TIME_LONG
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixDemocracySpeed, BIT_SPEED
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixDemocracySpeed
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PraiseHelixDemocracySpeed:
+	setstatchanger STAT_SPEED, 1, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_PraiseHelixEnd
+
+BattleScript_PraiseHelixAnarchy:
+	printstring STRINGID_HELIXANARCHY
+	waitmessage B_WAIT_TIME_LONG
+	setstatchanger STAT_DEF, 1, TRUE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR | STAT_CHANGE_CERTAIN, BattleScript_PraiseHelixAnarchySpDef, BIT_SPDEF
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixAnarchySpDef
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PraiseHelixAnarchySpDef:
+	setstatchanger STAT_SPDEF, 1, TRUE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR | STAT_CHANGE_CERTAIN, BattleScript_PraiseHelixAnarchyAtk
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixAnarchyAtk
+	printfromtable gStatDownStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PraiseHelixAnarchyAtk:
+	setstatchanger STAT_ATK, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixAnarchySpAtk, BIT_SPATK | BIT_SPEED
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixAnarchySpAtk
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PraiseHelixAnarchySpAtk:
+	setstatchanger STAT_SPATK, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixAnarchySpeed, BIT_SPEED
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixAnarchySpeed
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PraiseHelixAnarchySpeed:
+	setstatchanger STAT_SPEED, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_PraiseHelixEnd
+
+BattleScript_PraiseHelixBirdJesus:
+	printstring STRINGID_HELIXBIRDJESUS
+	waitmessage B_WAIT_TIME_LONG
+	jumpifvolatile BS_ATTACKER, VOLATILE_HEAL_BLOCK, BattleScript_PraiseHelixEnd
+	tryhealhalfhealth BS_ATTACKER, BattleScript_AlreadyAtFullHp
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_PraiseHelixEnd
+
+BattleScript_PraiseHelixSilent:
+	printstring STRINGID_HELIXSILENT
+	waitmessage B_WAIT_TIME_LONG
+	setstatchanger STAT_DEF, 2, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_PraiseHelixEnd:
+	goto BattleScript_MoveEnd
+
+@ Project Grounded: Pitcher Trap (Victreebel). Wie contact maakt, glijdt in de bekerplant.
+@ gBattlerAttacker = de aanvaller, gBattlerTarget = Victreebel.
+BattleScript_PitcherTrapEffect::
+	jumpifabsent BS_ATTACKER, BattleScript_PitcherTrapEffectRet
+	clearmoveresultflags MOVE_RESULT_NO_EFFECT
+	printstring STRINGID_PITCHERTRAPPED
+	waitmessage B_WAIT_TIME_LONG
+	setmoveresultflags MOVE_RESULT_MISSED
+BattleScript_PitcherTrapEffectRet:
+	return
+
+@ Eind van de beurt: gBattlerAttacker = de gevangene, gBattlerTarget = Victreebel.
+BattleScript_PitcherTrapDrain::
+	playanimation BS_ATTACKER, B_ANIM_LEECH_SEED_DRAIN, sB_ANIM_ARG1
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	printstring STRINGID_PITCHERDIGESTING
+	waitmessage B_WAIT_TIME_LONG
+	tryfaintmon BS_ATTACKER
+	tryactivateitem BS_ATTACKER, ACTIVATION_ON_HP_THRESHOLD
+	jumpifvolatile BS_TARGET, VOLATILE_HEAL_BLOCK, BattleScript_PitcherTrapDrainEnd
+	jumpiffullhp BS_TARGET, BattleScript_PitcherTrapDrainEnd
+	healthbarupdate BS_TARGET, PASSIVE_HP_UPDATE
+	datahpupdate BS_TARGET, PASSIVE_HP_UPDATE
+BattleScript_PitcherTrapDrainEnd:
+	end2
+
+@ Project Grounded: Silk Trap. Zoals King's Shield (-2 Speed), en daarna zit de aanvaller vast.
+BattleScript_SilkTrapEffect::
+	call BattleScript_KingsShieldEffect
+	printstring STRINGID_SILKTRAPSTUCK
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+@ Project Grounded: Landfill (Garbodor). +1 Def en +1 SpDef aan het eind van elke beurt in Acid Rain.
+BattleScript_LandfillActivates::
+	call BattleScript_AbilityPopUp
+	setstatchanger STAT_DEF, 1, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_LandfillSpDef
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_LandfillSpDef
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_LandfillSpDef:
+	setstatchanger STAT_SPDEF, 1, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_LandfillEnd
+	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_LandfillEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_LandfillEnd:
+	destroyabilitypopup
+	restoreattacker
+	end2
+
+@ Project Grounded: Hive Queen (Vespiquen). De zwerm ruimt bij binnenkomst de hazards aan de eigen kant op.
+BattleScript_HiveQueenClearsHazards::
+	call BattleScript_AbilityPopUpScripting
+	printstring STRINGID_HIVEQUEENCLEARED
+	waitmessage B_WAIT_TIME_LONG
+	destroyabilitypopup
+	return
+
 @ Project Grounded: Gulp Down (Swalot).
 BattleScript_GulpDownCommon:
 	printstring STRINGID_GULPEDDOWN

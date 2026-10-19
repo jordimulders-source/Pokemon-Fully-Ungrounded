@@ -4851,6 +4851,17 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
                     effect++;
                 }
                 break;
+            case ABILITY_LANDFILL: // Project Grounded: Garbodor stapelt het afval op in de zure regen
+                if (gBattleWeather & B_WEATHER_ACID_RAIN && HasWeatherEffect()
+                 && (CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility)
+                  || CompareStat(battler, STAT_SPDEF, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility)))
+                {
+                    SaveBattlerAttacker(gBattlerAttacker);
+                    gBattlerAbility = gBattleScripting.battler = battler;
+                    BattleScriptExecute(BattleScript_LandfillActivates);
+                    effect++;
+                }
+                break;
             case ABILITY_SPEED_BOOST:
                 if (CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility) && gDisableStructs[battler].isFirstTurn != 2)
                 {
@@ -5055,6 +5066,18 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, u32 battler, enum Ability ab
             if (IsBattlerTurnDamaged(battler)
              && IsBattlerAlive(battler)
              && (moveType == TYPE_DARK || moveType == TYPE_BUG || moveType == TYPE_GHOST)
+             && CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
+            {
+                gEffectBattler = gBattlerAbility = battler;
+                SET_STATCHANGER(STAT_SPEED, 1, FALSE);
+                BattleScriptCall(BattleScript_TargetAbilityStatRaiseRet);
+                effect++;
+            }
+            break;
+        case ABILITY_FAKE_FOLIAGE: // Project Grounded: Sudowoodo schrikt van water
+            if (IsBattlerTurnDamaged(battler)
+             && IsBattlerAlive(battler)
+             && moveType == TYPE_WATER
              && CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
             {
                 gEffectBattler = gBattlerAbility = battler;
@@ -5976,6 +5999,8 @@ bool32 CanBattlerEscape(u32 battler) // no ability check
         return FALSE;
     else if (gBattleMons[battler].volatiles.wrapped)
         return FALSE;
+    else if (gBattleMons[battler].volatiles.silkTrapped || gBattleMons[battler].volatiles.pitcherTrappedBy) // Project Grounded
+        return FALSE;
     else if (gBattleMons[battler].volatiles.root)
         return FALSE;
     else if (gFieldStatuses & STATUS_FIELD_FAIRY_LOCK)
@@ -6847,6 +6872,8 @@ bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
         isProtected = TRUE;
     else if (gProtectStructs[battlerDef].protected == PROTECT_SPIKY_SHIELD)
         isProtected = TRUE;
+    else if (gProtectStructs[battlerDef].protected == PROTECT_PITCHER_TRAP) // Project Grounded
+        isProtected = TRUE;
     else if (gProtectStructs[battlerDef].protected == PROTECT_MAX_GUARD)
         isProtected = TRUE;
     else if (gProtectStructs[battlerDef].protected == PROTECT_BANEFUL_BUNKER)
@@ -6886,6 +6913,7 @@ u32 GetProtectType(enum ProtectMethod method)
     case PROTECT_OBSTRUCT:
     case PROTECT_SILK_TRAP:
     case PROTECT_MAX_GUARD:
+    case PROTECT_PITCHER_TRAP: // Project Grounded
         return PROTECT_TYPE_SINGLE;
     case PROTECT_WIDE_GUARD:
     case PROTECT_QUICK_GUARD:
@@ -8413,7 +8441,9 @@ static inline uq4_12_t GetSameTypeAttackBonusModifier(struct DamageContext *ctx)
         return UQ_4_12(1.0);
     else if (gBattleStruct->pledgeMove && IS_BATTLER_OF_TYPE(BATTLE_PARTNER(ctx->battlerAtk), ctx->moveType))
         return (ctx->abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
-    else if (!IS_BATTLER_OF_TYPE(ctx->battlerAtk, ctx->moveType) || ctx->move == MOVE_STRUGGLE || ctx->move == MOVE_NONE)
+    else if ((!IS_BATTLER_OF_TYPE(ctx->battlerAtk, ctx->moveType)
+           && !(ctx->abilityAtk == ABILITY_FAKE_FOLIAGE && ctx->moveType == TYPE_GRASS)) // Project Grounded: Sudowoodo
+          || ctx->move == MOVE_STRUGGLE || ctx->move == MOVE_NONE)
         return UQ_4_12(1.0);
     return (ctx->abilityAtk == ABILITY_ADAPTABILITY) ? UQ_4_12(2.0) : UQ_4_12(1.5);
 }
@@ -10249,6 +10279,8 @@ bool32 IsBattlerAffectedByHazards(u32 battler, bool32 toxicSpikes)
 {
     bool32 ret = TRUE;
     enum HoldEffect holdEffect = GetBattlerHoldEffect(battler);
+    if (GetBattlerAbility(battler) == ABILITY_HIVE_QUEEN) // Project Grounded: de zwerm vliegt eroverheen
+        return FALSE;
     if (toxicSpikes && holdEffect == HOLD_EFFECT_HEAVY_DUTY_BOOTS && !IS_BATTLER_OF_TYPE(battler, TYPE_POISON))
     {
         ret = FALSE;
@@ -11100,6 +11132,7 @@ void RemoveAllHazardsFromField(u32 side)
 {
     gSideTimers[side].spikesAmount = 0;
     gSideTimers[side].toxicSpikesAmount = 0;
+    gSideTimers[side].moaiWatchAmount = 0; // Project Grounded
     gBattleStruct->numHazards[side] = 0;
     for (u32 i = 0; i < HAZARDS_MAX_COUNT; i++)
         gBattleStruct->hazardsQueue[side][i] = HAZARDS_NONE;

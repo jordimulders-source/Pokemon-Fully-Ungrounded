@@ -1429,6 +1429,12 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             if (gBattleMons[battlerAtk].volatiles.primevalWard && !BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_DEF))
                 ADJUST_SCORE(-10);
             break;
+        case EFFECT_BURROW_MAZE: // Project Grounded: faalt bij 3 uitwegen, nutteloos als hij vastzit
+            if (gBattleMons[battlerAtk].volatiles.burrowMaze >= BURROW_MAZE_MAX)
+                ADJUST_SCORE(-20);
+            else if (!AI_CanBattlerEscape(battlerAtk) && IsBattlerTrapped(battlerDef, battlerAtk))
+                ADJUST_SCORE(-10);
+            break;
         case EFFECT_COSMIC_POWER:
             if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_DEF))
                 ADJUST_SCORE(-10);
@@ -5210,6 +5216,17 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ACC));
         ADJUST_SCORE(max(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ATK),
                          IncreaseStatDownScore(battlerAtk, battlerDef, STAT_SPATK)));
+        break;
+    case EFFECT_BURROW_MAZE: // Project Grounded: de eerste uitweg is het meest waard
+        if (gBattleMons[battlerAtk].volatiles.burrowMaze == 0)
+            ADJUST_SCORE(GOOD_EFFECT);
+        else if (gBattleMons[battlerAtk].volatiles.burrowMaze < BURROW_MAZE_MAX)
+            ADJUST_SCORE(DECENT_EFFECT);
+        break;
+    case EFFECT_PRAISE_HELIX: // Project Grounded: gemiddeld een flinke boost, soms een heal
+        ADJUST_SCORE(DECENT_EFFECT);
+        if (!AI_BattlerAtMaxHp(battlerAtk))
+            ADJUST_SCORE(WEAK_EFFECT);
         break;
     case EFFECT_PRIMEVAL_WARD: // Project Grounded
     case EFFECT_COSMIC_POWER:

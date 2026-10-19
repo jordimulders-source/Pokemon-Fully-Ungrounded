@@ -2489,6 +2489,15 @@
 	callnative BS_NineLivesCureStatus
 	.endm
 
+	.macro trysetburrowmaze failInstr:req
+	callnative BS_TrySetBurrowMaze
+	.4byte \failInstr
+	.endm
+
+	.macro praisehelixroll
+	callnative BS_PraiseHelixRoll
+	.endm
+
 	.macro trywindchimeheal battler:req, failInstr:req
 	callnative BS_TryWindChimeHeal
 	.byte \battler

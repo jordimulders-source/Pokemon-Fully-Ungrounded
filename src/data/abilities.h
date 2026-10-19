@@ -51,6 +51,27 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .aiRating = 6,
     },
 
+    [ABILITY_FAKE_FOLIAGE] = // Project Grounded: Sudowoodo
+    {
+        .name = _("Fake Foliage"),
+        .description = COMPOUND_STRING("Fakes Grass. Fears water."),
+        .aiRating = 5,
+    },
+
+    [ABILITY_LANDFILL] = // Project Grounded: Garbodor
+    {
+        .name = _("Landfill"),
+        .description = COMPOUND_STRING("Toughens up in Acid Rain."),
+        .aiRating = 6,
+    },
+
+    [ABILITY_HIVE_QUEEN] = // Project Grounded: Vespiquen
+    {
+        .name = _("Hive Queen"),
+        .description = COMPOUND_STRING("Swarm clears own hazards."),
+        .aiRating = 6,
+    },
+
     [ABILITY_SPEED_BOOST] =
     {
         .name = _("Speed Boost"),

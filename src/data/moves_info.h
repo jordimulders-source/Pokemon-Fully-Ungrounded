@@ -19852,8 +19852,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Silk Trap"),
         .description = COMPOUND_STRING(
-            "Protects itself, lowering\n"
-            "Speed on contact."),
+            "Protects. Contact harshly\n"
+            "slows and traps the foe."), // Project Grounded: -2 Speed en vast
         .effect = EFFECT_PROTECT,
         .power = 0,
         .type = TYPE_BUG,
@@ -22166,6 +22166,88 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_MoaiWatch,
+    },
+
+    [MOVE_BURROW_MAZE] = // Project Grounded: Furret (elke uitweg ontwijkt één aanval, max. 3)
+    {
+        .name = COMPOUND_STRING("Burrow Maze"),
+        .description = COMPOUND_STRING(
+            "Digs an escape tunnel (x3).\n"
+            "Each one dodges an attack."),
+        .effect = EFFECT_BURROW_MAZE,
+        .power = 0,
+        .type = TYPE_GROUND,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_EVSN_UP_1 },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Detect,
+    },
+
+    [MOVE_PITCHER_TRAP] = // Project Grounded: Victreebel (Spiky Shield-variant, vangt en verteert)
+    {
+        .name = COMPOUND_STRING("Pitcher Trap"),
+        .description = COMPOUND_STRING(
+            "Protects. Contact traps the\n"
+            "foe and digests it each turn."),
+        .effect = EFFECT_PROTECT,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 4,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .argument = { .protectMethod = PROTECT_PITCHER_TRAP },
+        .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SpikyShield,
+    },
+
+    [MOVE_PRAISE_HELIX] = // Project Grounded: Omastar (Twitch Plays Pokémon)
+    {
+        .name = COMPOUND_STRING("Praise Helix"),
+        .description = COMPOUND_STRING(
+            "Consults the HELIX FOSSIL.\n"
+            "Its will is unknowable."),
+        .effect = EFFECT_PRAISE_HELIX,
+        .power = 0,
+        .type = TYPE_ROCK,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_CalmMind,
     },
 
     // Z-Moves

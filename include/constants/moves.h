@@ -942,7 +942,11 @@
 #define MOVE_MOAI_WATCH 879 // Project Grounded: Probopass
 
 #define MOVE_KELP_SHROUD 880 // Project Grounded: Dhelmise
-#define MOVES_COUNT_GEN9 881
+// 881-889: Project Grounded, andere agent (wordt bij de merge ingevuld)
+#define MOVE_BURROW_MAZE 890 // Project Grounded: Furret
+#define MOVE_PITCHER_TRAP 891 // Project Grounded: Victreebel
+#define MOVE_PRAISE_HELIX 892 // Project Grounded: Omastar
+#define MOVES_COUNT_GEN9 893
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

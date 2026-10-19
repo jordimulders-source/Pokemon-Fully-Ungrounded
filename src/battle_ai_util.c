@@ -491,6 +491,8 @@ bool32 IsBattlerTrapped(u32 battlerAtk, u32 battlerDef)
         return TRUE;
     if (gBattleMons[battlerDef].volatiles.escapePrevention)
         return TRUE;
+    if (gBattleMons[battlerDef].volatiles.silkTrapped || gBattleMons[battlerDef].volatiles.pitcherTrappedBy) // Project Grounded
+        return TRUE;
     if (gBattleMons[battlerDef].volatiles.semiInvulnerable == STATE_SKY_DROP)
         return TRUE;
     if (gBattleMons[battlerDef].volatiles.root)
@@ -1986,6 +1988,7 @@ bool32 IsAllyProtectingFromMove(u32 battlerAtk, u32 attackerMove, u32 allyMove)
         return IsSpreadMove(GetBattlerMoveTargetType(battlerAtk, attackerMove));
     case PROTECT_NORMAL:
     case PROTECT_SPIKY_SHIELD:
+    case PROTECT_PITCHER_TRAP: // Project Grounded
     case PROTECT_MAX_GUARD:
     case PROTECT_BANEFUL_BUNKER:
     case PROTECT_BURNING_BULWARK:

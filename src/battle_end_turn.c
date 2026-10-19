@@ -154,7 +154,8 @@ static bool32 HandleEndTurnWeatherDamage(u32 battler)
         }
         break;
     case BATTLE_WEATHER_POLLEN_HAZE: // Project Grounded: Grass herstelt 1/16
-        if (IS_BATTLER_OF_TYPE(battler, TYPE_GRASS) && !IsBattlerAtMaxHp(battler) && !gBattleMons[battler].volatiles.healBlock)
+        if ((IS_BATTLER_OF_TYPE(battler, TYPE_GRASS) || ability == ABILITY_FAKE_FOLIAGE) // Project Grounded: Sudowoodo doet alsof
+         && !IsBattlerAtMaxHp(battler) && !gBattleMons[battler].volatiles.healBlock)
         {
             gBattlerAttacker = battler;
             SetHealAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
@@ -517,6 +518,31 @@ static bool32 HandleEndTurnLeechSeed(u32 battler)
     }
 
     return effect;
+}
+
+// Project Grounded: Pitcher Trap. De gevangene verliest 1/8 (Bug: 1/4) en Victreebel krijgt precies dat terug.
+static bool32 HandleEndTurnPitcherTrap(u32 battler)
+{
+    u32 trapper = gBattleMons[battler].volatiles.pitcherTrappedBy;
+
+    gBattleStruct->eventState.endTurnBattler++;
+
+    if (trapper == 0
+     || !IsBattlerAlive(battler)
+     || !IsBattlerAlive(trapper - 1)
+     || IsAbilityAndRecord(battler, GetBattlerAbility(battler), ABILITY_MAGIC_GUARD))
+        return FALSE;
+
+    s32 amount = GetNonDynamaxMaxHP(battler) / (IS_BATTLER_OF_TYPE(battler, TYPE_BUG) ? 4 : 8);
+    if (amount > gBattleMons[battler].hp)
+        amount = gBattleMons[battler].hp;
+    gBattlerTarget = trapper - 1;
+    gBattleScripting.animArg1 = gBattlerTarget;
+    gBattleScripting.animArg2 = battler;
+    SetPassiveDamageAmount(battler, amount);
+    SetHealAmount(gBattlerTarget, amount);
+    BattleScriptExecute(BattleScript_PitcherTrapDrain);
+    return TRUE;
 }
 
 static bool32 HandleEndTurnPoison(u32 battler)
@@ -1347,6 +1373,7 @@ static bool32 HandleEndTurnThirdEventBlock(u32 battler)
         case ABILITY_MOODY:
         case ABILITY_PICKUP:
         case ABILITY_SPEED_BOOST:
+        case ABILITY_LANDFILL: // Project Grounded
             if (AbilityBattleEffects(ABILITYEFFECT_ENDTURN, battler, ability, 0, MOVE_NONE))
                 effect = TRUE;
             break;
@@ -1459,6 +1486,7 @@ static bool32 (*const sEndTurnEffectHandlers[])(u32 battler) =
     [ENDTURN_AQUA_RING] = HandleEndTurnAquaRing,
     [ENDTURN_INGRAIN] = HandleEndTurnIngrain,
     [ENDTURN_LEECH_SEED] = HandleEndTurnLeechSeed,
+    [ENDTURN_PITCHER_TRAP] = HandleEndTurnPitcherTrap, // Project Grounded
     [ENDTURN_POISON] = HandleEndTurnPoison,
     [ENDTURN_BURN] = HandleEndTurnBurn,
     [ENDTURN_FROSTBITE] = HandleEndTurnFrostbite,

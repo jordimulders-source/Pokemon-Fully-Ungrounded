@@ -1101,6 +1101,8 @@ static bool32 CanBattlerConsiderSwitch(u32 battler)
 {
     if (gBattleMons[battler].volatiles.wrapped)
         return FALSE;
+    if (gBattleMons[battler].volatiles.silkTrapped || gBattleMons[battler].volatiles.pitcherTrappedBy) // Project Grounded
+        return FALSE;
     if (gBattleMons[battler].volatiles.escapePrevention)
         return FALSE;
     if (gBattleMons[battler].volatiles.root)

@@ -1028,13 +1028,20 @@ BattleScript_DefDown_Ret:
 
 BattleScript_EffectPurify::
 	attackcanceler
-	jumpifweatheraffected B_WEATHER_ACID_RAIN, BattleScript_AcidRainBlocksCure @ Project Grounded
 	accuracycheck BattleScript_ButItFailed, NO_ACC_CALC_CHECK_LOCK_ON
+	jumpifweatheraffected B_WEATHER_ACID_RAIN, BattleScript_PurifyAcidRain @ Project Grounded: Purify neutraliseert de zure regen
 	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_PurifyWorks
 	goto BattleScript_ButItFailed
+BattleScript_PurifyAcidRain:
+	attackanimation
+	waitanimation
+	tryclearacidrain 1
+	jumpifstatus BS_TARGET, STATUS1_ANY, BattleScript_PurifyCure
+	goto BattleScript_MoveEnd
 BattleScript_PurifyWorks:
 	attackanimation
 	waitanimation
+BattleScript_PurifyCure:
 	curestatus BS_TARGET
 	updatestatusicon BS_TARGET
 	printstring STRINGID_ATTACKERCUREDTARGETSTATUS
@@ -2354,6 +2361,7 @@ BattleScript_EffectTailwind::
 	waitanimation
 	printstring STRINGID_TAILWINDBLEW
 	waitmessage B_WAIT_TIME_LONG
+	tryclearacidrain 0 @ Project Grounded: de wind blaast de zure wolken weg
 	call BattleScript_TryTailwindAbilitiesLoop
 	goto BattleScript_MoveEnd
 
@@ -3465,6 +3473,12 @@ BattleScript_AcidRainHeal::
 
 BattleScript_AcidRainEnded_Ret::
 	printstring STRINGID_ACIDRAINBLOWNAWAY
+	waitmessage B_WAIT_TIME_LONG
+	call BattleScript_ActivateWeatherAbilities
+	return
+
+BattleScript_AcidRainNeutralized_Ret:: @ Project Grounded: Purify
+	printstring STRINGID_ACIDRAINNEUTRALIZED
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_ActivateWeatherAbilities
 	return

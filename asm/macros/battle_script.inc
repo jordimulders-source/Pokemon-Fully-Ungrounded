@@ -2540,3 +2540,9 @@
 	callnative BS_TryMarionette
 	.4byte \failInstr
 	.endm
+
+	@ Project Grounded: Tailwind en Purify halen Acid Rain weg (0 = weggeblazen, 1 = geneutraliseerd)
+	.macro tryclearacidrain neutralize:req
+	callnative BS_TryClearAcidRain
+	.byte \neutralize
+	.endm

@@ -16127,6 +16127,22 @@ void BS_TryHealPulse(void)
     }
 }
 
+// Project Grounded: Tailwind blaast de zure wolken weg, Purify neutraliseert de zure regen.
+void BS_TryClearAcidRain(void)
+{
+    NATIVE_ARGS(u8 neutralize);
+
+    if (gBattleWeather & B_WEATHER_ACID_RAIN)
+    {
+        gBattleWeather &= ~B_WEATHER_ACID_RAIN;
+        gWishFutureKnock.weatherDuration = 0;
+        gBattlescriptCurrInstr = cmd->nextInstr;
+        BattleScriptCall(cmd->neutralize ? BattleScript_AcidRainNeutralized_Ret : BattleScript_AcidRainEnded_Ret);
+        return;
+    }
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 void BS_TryDefog(void)
 {
     NATIVE_ARGS(u8 clear, const u8 *failInstr);

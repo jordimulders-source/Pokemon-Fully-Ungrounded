@@ -307,6 +307,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_PKMNSOAKEDUPACIDRAIN]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} soaks up\nthe acid rain. Delicious!"),
     [STRINGID_ACIDRAINBLOCKSCURE]                   = COMPOUND_STRING("The acid rain keeps\npoisoning everything!"),
     [STRINGID_ACIDRAINBLOWNAWAY]                    = COMPOUND_STRING("The acid clouds were\nblown away!"),
+    [STRINGID_ACIDRAINNEUTRALIZED]                  = COMPOUND_STRING("The acid rain was\nneutralized!"), // Project Grounded: Purify
     [STRINGID_PKMNMADEACIDRAIN]                     = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s {B_SCR_ABILITY}\nmade acid rain fall!"),
     [STRINGID_STARTEDPOLLENHAZE]                    = COMPOUND_STRING("Pollen filled the air!"),
     [STRINGID_POLLENHAZECONTINUES]                  = COMPOUND_STRING("Pollen drifts across the field."),

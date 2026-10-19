@@ -766,6 +766,7 @@ extern const u8 BattleScript_PollenHazeBlownAway[];
 extern const u8 BattleScript_AirPollutionActivates[];
 extern const u8 BattleScript_AcidRainHeal[];
 extern const u8 BattleScript_AcidRainEnded_Ret[];
+extern const u8 BattleScript_AcidRainNeutralized_Ret[]; // Project Grounded
 extern const u8 BattleScript_MachineLearningHallucination[];
 extern const u8 BattleScript_FaintAttackerForImplosion[];
 extern const u8 BattleScript_BlackHoleSwitchIn[];

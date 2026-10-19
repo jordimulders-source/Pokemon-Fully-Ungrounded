@@ -143,7 +143,7 @@ ENCOUNTERS = {
           foes=[dict(s='WOOPER', m=['RAIN_DANCE', 'MUD_SHOT', 'WATER_PULSE', 'YAWN'], a='DAMP', p=[1, 2, 3, 2]),
                 dict(s='LOTAD', m=['RAIN_DANCE', 'BUBBLE_BEAM', 'MEGA_DRAIN', 'GROWL'], a='SWIFT_SWIM', p=[2, 2, 3])]),
         E(kind='elite', name='Terror Eel', hint='Eelektross holds back until half HP, then lets go. Burst it from half to zero.',
-          foes=[dict(s='EELEKTROSS', m=['CHARGE_BEAM', 'DISCHARGE', 'COIL', 'WILD_CHARGE'], a='LEVITATE', lv=-6, hp=2.0,
+          foes=[dict(s='EELEKTROSS', m=['CHARGE_BEAM', 'DISCHARGE', 'COIL', 'WILD_CHARGE'], a='EELEVATE', lv=-6, hp=2.0,
                      i='ITEM_PETAYA_BERRY', p=[3, 1, 2]),
                 dict(s='TYNAMO', m=['SPARK', 'TACKLE', 'THUNDER_WAVE', 'CHARGE_BEAM'])]),
         E(kind='elite', name='Skulking Colony', hint='Corsola ignores small hits. Hit hard or not at all.',

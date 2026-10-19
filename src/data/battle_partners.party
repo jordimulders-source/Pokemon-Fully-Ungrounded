@@ -920,7 +920,7 @@ AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI
 Scovillain @ Charcoal
 Level: 50
 Ball: Poke Ball
-Ability: Insomnia
+Ability: Spicy Spray
 Nature: Modest
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
@@ -2067,7 +2067,7 @@ Nature: Jolly
 
 Lucario @ Life Orb
 Level: 50
-Ability: Inner Focus
+Ability: Aura Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
 Nature: Hasty
@@ -2907,7 +2907,7 @@ Nature: Adamant
 
 Lucario @ Life Orb
 Level: 50
-Ability: Inner Focus
+Ability: Aura Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 128 Atk / 124 SpA / 252 Spe
 Nature: Hasty
@@ -4264,7 +4264,7 @@ Nature: Naive
 
 Lucario @ Life Orb
 Level: 50
-Ability: Inner Focus
+Ability: Aura Guard
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 SpA
 Nature: Naive

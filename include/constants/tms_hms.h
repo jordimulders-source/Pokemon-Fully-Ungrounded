@@ -2,7 +2,7 @@
 #define GUARD_CONSTANTS_TMS_HMS_H
 
 #define FOREACH_TM(F) \
-    F(FOCUS_PUNCH) \
+    F(DEFOG) /* Project Grounded: TM01, was Focus Punch */ \
     F(DRAGON_CLAW) \
     F(SCALD) \
     F(CALM_MIND) \

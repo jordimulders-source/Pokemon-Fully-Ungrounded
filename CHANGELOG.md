@@ -19207,3 +19207,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Combination** (Hitmonchan, bij evolutie): jab-jab-cross (20/20/60), derde klap altijd crit als alles raakt. **Spinning Backfist** (Hitmonchan, lv 40): Fighting 90, negeert boosts van het doel en raakt door Substitute.
 - **Abduction** (Beheeyem en Orbeetle, bij evolutie): Psychic 80, −6, dwingt een wissel; in Trick Room prioriteit 0. UFO-animatie.
 - Tests: `signature_moves_5.c`, `_7.c`, `_8.c`.
+- ROM-ruimte: zes ongebruikte vanilla-graphics uit de ROM gehaald (rennende Ruby/Sapphire-Brendan/May, ongebruikte vrouw, ongebruikt gras, kopie van Cut-gras, ongebruikt overworld-palet), ±7,5 KB. Gecontroleerd met een build waarin alle kandidaten `static` waren: alleen deze zes verdwenen.

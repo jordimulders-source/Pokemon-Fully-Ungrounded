@@ -473,6 +473,12 @@ Route119_EventScript_ScottWonAtFortreeGymCall::
 	waitmessage
 	clearflag FLAG_SCOTT_CALL_FORTREE_GYM
 	addvar VAR_SCOTT_STATE, 1
+	goto_if_set FLAG_DEVON_SUPER_SPLASH_CALL, Route119_EventScript_ScottCallEnd
+	delay 30
+	pokenavcall Route119_Text_DevonSuperSplashCall
+	waitmessage
+	setflag FLAG_DEVON_SUPER_SPLASH_CALL
+Route119_EventScript_ScottCallEnd:
 	releaseall
 	end
 
@@ -535,6 +541,23 @@ Route119_Text_ScottYouWonAtFortreeGym:
 	.string "… … … … … … … … … … … Beep!\p"
 	.string "SCOTT: Congrats on the FEATHER BADGE.\n"
 	.string "Nice outfit today.\p"
+	.string "… … … … … … … … … … … Click!$"
+
+Route119_Text_DevonSuperSplashCall:
+	.string "… … … … … … … … … … … Beep!\p"
+	.string "Hello? {PLAYER}? This is DEVON\n"
+	.string "R&D, SPLASH division.\p"
+	.string "Yes, we have a SPLASH division.\n"
+	.string "The budget cuts never found us.\p"
+	.string "How did we get your number?\n"
+	.string "We made your POKéNAV.\p"
+	.string "After years of research, we\n"
+	.string "made SPLASH do something.\p"
+	.string "We call it SUPER SPLASH. Legal\n"
+	.string "calls it a tsunami.\p"
+	.string "Pick it up at DEVON CORP. in\n"
+	.string "RUSTBORO, second floor.\p"
+	.string "Please come. Nobody visits.\p"
 	.string "… … … … … … … … … … … Click!$"
 
 Route119_Text_StayAwayFromWeatherInstitute:

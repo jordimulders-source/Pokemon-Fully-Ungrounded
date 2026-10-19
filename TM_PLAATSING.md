@@ -1,4 +1,4 @@
-# TM-plaatsing TM60–TM88
+# TM-plaatsing TM60–TM100 (en TM45)
 
 Nieuwe TM's (Jordi, 19 okt). Alle TM's zijn herbruikbaar: elke TM ligt precies één keer in de wereld (of is op één plek te koop).
 Item balls en verborgen items houden hun oude flag (alleen het item is vervangen); alleen Mustards beloning heeft een nieuwe flag
@@ -38,11 +38,38 @@ Item balls en verborgen items houden hun oude flag (alleen het item is vervangen
 | TM87 | Close Combat | Artisan Cave B1F (32,38) (Battle Frontier) | item ball | post-game | HP Up |
 | TM88 | Swords Dance | Artisan Cave 1F (14,5) (Battle Frontier) | item ball | post-game | Carbos |
 
+### Ronde 2 (19 okt): TM45 en TM89–TM100
+
+| TM | Move | Kaart / plek | Hoe | Fase | Vervangt |
+|---|---|---|---|---|---|
+| TM45 | Overkill (was Attract) | Verdanturf Battle Tent, de NPC in de lobby (oude Attract-plek, `FLAG_RECEIVED_TM_ATTRACT`) | NPC-cadeau | badge 3 | Attract (TM45). De Trainer Hill-prijs die ook Attract was, is nu Black Glasses (TM's maar op één plek) |
+| TM98 | Fake Out | Petalburg Woods (4,8) | item ball | vóór badge 1 | Ether |
+| TM91 | Dim Mak | Granite Cave B1F (5,12) (Dewford, Brawly's vechtsporteiland) | item ball | badge 1–2 | Poké Ball |
+| TM96 | Counterfeit Ball | Rusturf Tunnel (3,1) (waar de Aqua-dief de Devon Goods jatte) | item ball | badge 1–2 | Poké Ball |
+| TM99 | Disco Inferno | Lavaridge Town (4,5) (warmwaterbronnen-feest) | verborgen item | badge 3–4 | Ice Heal |
+| TM90 | Jump Scare | Abandoned Ship, Rooms 2 1F (4,4) (spookschip) | item ball | badge 5 (Surf) | Revive |
+| TM92 | Updraft | Route 119 (24,42) (Weather Institute, wind) | item ball | badge 5–6 | Elixir (`FLAG_ITEM_ROUTE_119_ELIXIR_2`) |
+| TM94 | Wood Hammer | Fortree Jungle (37,21) | item ball | badge 6 | Max Revive |
+| TM93 | Power Gem | Lilycove Department Store 4F, linkerverkoper (plek van Hyper Beam) | winkel (3000) | badge 6 | – |
+| TM89 | Cold Shoulder | Shoal Cave, Stairs Room bij eb (13,12) (ijsgrot) | item ball | badge 6–7 | Ice Heal |
+| TM97 | Shell Smash | Route 133 (48,28) (open zee, schelpen) | item ball | badge 7 | Max Revive |
+| TM95 | Dragon Rush | Meteor Falls, echokamer (MeteorFalls_EchoChamber (14,7)) | item ball | badge 8 (Waterfall) | Max Ether |
+| TM100 | Super Splash | Devon Corp. 2F (Rustboro), wetenschapper op (4,7), na het telefoontje | NPC-beloning | na badge 6 | – |
+
+**Super Splash (TM100):** na de Feather Badge belt eerst Scott (vanilla, na 10 stappen op een route/in een stad) en
+direct daarna Devon R&D ("SPLASH division"), in hetzelfde script (`Route119_EventScript_ScottWonAtFortreeGymCall`), dat
+`FLAG_DEVON_SUPER_SPLASH_CALL` (`FLAG_GROUNDED(1003)`) zet. De wetenschapper in Devon Corp. 2F praat vóór het telefoontje
+alleen over zijn Splash-onderzoek; daarna geeft hij TM100 en zet hij `FLAG_RECEIVED_TM_SUPER_SPLASH` (`FLAG_GROUNDED(1002)`).
+
+Compatibiliteit: `tools/learnset_helpers/make_teachables.py` (regels per move; Overkill kijkt naar fysieke Dark-types,
+Disco Inferno naar dansmoves en de ability Dancer, Super Splash naar wie Splash via level-up leert in `gen_9.h`).
+Voorstellen voor extra soorten bij bestaande-move-TM's: `TM_COMPAT_VOORSTEL.md` (nog niet doorgevoerd).
+
 ## Generatoren
 De vervangen items in kaarten van een bouwscript staan ook in dat script, zodat opnieuw draaien ze niet terugzet:
-`meteor_falls_ext.py` (Hidden Falls, Tunnels) en `chimney_ext.py` (Summit, verborgen item). De flagnamen bleven gelijk
+`meteor_falls_ext.py` (Hidden Falls, Tunnels, Echo Chamber), `chimney_ext.py` (Summit, verborgen item) en `fortree_jungle.py` (Wood Hammer). De flagnamen bleven gelijk
 (bijv. `FLAG_ITEM_METEOR_FALLS_TUNNELS_STARDUST`), zodat bestaande saves kloppen.
 
 ## Tas
-De TM/HM-pocket had 64 plekken (te weinig: 88 TM's + 8 HM's). Hij staat nu achteraan SaveBlock1 (`bagTMsHMs`, 100 plekken);
+De TM/HM-pocket had 64 plekken (te weinig: 88 TM's + 8 HM's). Hij staat nu achteraan SaveBlock1 (`bagTMsHMs`, 100 plekken; sinds TM89–TM100 108 plekken: 100 TM's + 8 HM's);
 oude saves verhuizen hun TM's bij het laden (`MigrateLegacyBagItems`), net als eerder de Items-pocket.

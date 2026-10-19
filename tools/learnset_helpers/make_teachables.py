@@ -164,45 +164,66 @@ GROUNDED_CUSTOM_TEACHABLES["MOVE_POLLEN_HAZE"] = {"like": set(), "types": {"TYPE
 GROUNDED_CUSTOM_TEACHABLES["MOVE_ROLLING_THUNDER"] = {"like": {
     "MOVE_HIGH_JUMP_KICK", "MOVE_JUMP_KICK", "MOVE_BLAZE_KICK", "MOVE_ROLLING_KICK",  # zonder Triple Axel/Kick (Milotic, Articuno)
 }, "types": set(), "species": {"Tyrogue", "Hitmonlee", "Sawk"}}
-# VOORSTEL (nog niet actief; activeren zodra de TM's in tms_hms.h staan), moves 920-924:
-# # Cold Shoulder: Ice-types plus koude/afstandelijke soorten die iemand links laten liggen.
-# GROUNDED_CUSTOM_TEACHABLES["MOVE_COLD_SHOULDER"] = {"like": set(), "types": {"TYPE_ICE"}, "species": {
-#     "Persian", "Liepard", "Purrloin", "Meowstic", "Espeon", "Umbreon", "Glameow", "Purugly",
-#     "Absol", "Houndoom", "Zangoose", "Seviper", "Milotic", "Tsareena", "Toxtricity",
-#     "Gothita", "Gothorita", "Gothitelle", "Hatterene", "Grimmsnarl", "Mandibuzz", "Kingambit", "Bisharp",
-#     "Empoleon", "Prinplup", "Piplup", "Dewgong", "Lapras", "Walrein", "Kingdra", "Gyarados",
-# }}
-# # Jump Scare: Ghost-types plus schrikaanjagers (verstoppen zich, springen tevoorschijn, bang maken).
-# GROUNDED_CUSTOM_TEACHABLES["MOVE_JUMP_SCARE"] = {"like": set(), "types": {"TYPE_GHOST"}, "species": {
-#     "Zorua", "Zoroark", "ZoruaHisui", "ZoroarkHisui", "Kecleon", "Sudowoodo", "Ditto", "Smeargle",
-#     "Gengar", "Sableye", "Mawile", "Murkrow", "Honchkrow", "Noibat", "Noivern", "Woobat", "Swoobat",
-#     "Zubat", "Golbat", "Crobat", "Gligar", "Gliscor", "Spinarak", "Ariados", "Joltik", "Galvantula",
-#     "Trapinch", "Wobbuffet", "Wynaut", "Impidimp", "Morgrem", "Grimmsnarl", "Mimikyu", "Hoothoot", "Noctowl",
-#     "Exploud", "Loudred", "Whismur", "Jigglypuff", "Wigglytuff", "Ekans", "Arbok", "Krookodile", "Sandaconda",
-# }}
-# # Dim Mak: vechtsporters/kungfu en Psychic-soorten met handen.
-# GROUNDED_CUSTOM_TEACHABLES["MOVE_DIM_MAK"] = {"like": {"MOVE_FORCE_PALM", "MOVE_DRAIN_PUNCH"}, "types": set(), "species": {
-#     "Mienfoo", "Mienshao", "Hitmonlee", "Hitmonchan", "Hitmontop", "Tyrogue", "Meditite", "Medicham",
-#     "Riolu", "Lucario", "Throh", "Sawk", "Kubfu", "Urshifu", "UrshifuRapidStrike", "Pangoro", "Hawlucha",
-#     "Gallade", "Abra", "Kadabra", "Alakazam", "MrMime", "MrMimeGalar", "MrRime", "MimeJr", "Hypno", "Drowzee",
-#     "Jynx", "Smoochum", "Gothitelle", "Malamar", "Grumpig", "Oranguru", "Slowking", "Lopunny", "Infernape",
-# }}
-# # Updraft: vliegers die met hun vleugels wind maken (zweefvliegers en windmakers), geen ballonnen/zwevers.
-# GROUNDED_CUSTOM_TEACHABLES["MOVE_UPDRAFT"] = {"like": {"MOVE_GUST", "MOVE_TAILWIND", "MOVE_AIR_SLASH"}, "types": set(), "species": {
-#     "Pelipper", "Wingull", "Swanna", "Ducklett", "Unfezant", "Tranquill", "Pidove", "Braviary", "Mandibuzz",
-#     "Vullaby", "Rufflet", "Skarmory", "Corviknight", "Altaria", "Swablu", "Tropius", "Mantine", "Mantyke",
-#     "Kilowattrel", "Wattrel", "Bombirdier", "Flamigo", "Tornadus", "Lugia", "HoOh", "Rayquaza",
-# }}
-# # Counterfeit Ball (wens Jordi): Pokemon die oplichten of voor de gek houden, plus dieven met handen die kunnen gooien.
-# GROUNDED_CUSTOM_TEACHABLES["MOVE_COUNTERFEIT_BALL"] = {"like": set(), "types": set(), "species": {
-#     "Meowth", "Persian", "MeowthAlola", "PersianAlola", "MeowthGalar", "Perrserker",
-#     "Purrloin", "Liepard", "Zorua", "Zoroark", "ZoruaHisui", "ZoroarkHisui", "Sableye", "Mimikyu",
-#     "Impidimp", "Morgrem", "Grimmsnarl", "Croagunk", "Toxicroak", "Nickit", "Thievul", "Grafaiai",
-#     "Murkrow", "Honchkrow", "Sneasel", "Weavile", "SneaselHisui", "Sneasler", "Scraggy", "Scrafty",
-#     "Sandile", "Krokorok", "Krookodile", "Inkay", "Malamar", "Gastly", "Haunter", "Gengar", "Banette",
-#     "MrMime", "MrMimeGalar", "MrRime", "MimeJr", "Shiftry", "Cottonee", "Whimsicott", "Spinda",
-#     "Kecleon", "Gimmighoul", "Gholdengo", "Aipom", "Ambipom", "Hoopa", "HoopaUnbound",
-# }}
+# Moves 920-924 (TM89-92, TM96), voorstel geactiveerd 19 okt.
+# Cold Shoulder (TM89): Ice-types plus koude/afstandelijke soorten die iemand links laten liggen.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_COLD_SHOULDER"] = {"like": set(), "types": {"TYPE_ICE"}, "species": {
+    "Persian", "Liepard", "Purrloin", "MeowsticM", "MeowsticF", "Espeon", "Umbreon", "Glameow", "Purugly",
+    "Absol", "Houndoom", "Zangoose", "Seviper", "Milotic", "Tsareena", "ToxtricityAmped", "ToxtricityLowKey",
+    "Gothita", "Gothorita", "Gothitelle", "Hatterene", "Grimmsnarl", "Mandibuzz", "Kingambit", "Bisharp",
+    "Empoleon", "Prinplup", "Piplup", "Dewgong", "Lapras", "Walrein", "Kingdra", "Gyarados",
+}}
+# Jump Scare (TM90): Ghost-types plus schrikaanjagers (verstoppen zich, springen tevoorschijn, bang maken).
+GROUNDED_CUSTOM_TEACHABLES["MOVE_JUMP_SCARE"] = {"like": set(), "types": {"TYPE_GHOST"}, "species": {
+    "Zorua", "Zoroark", "ZoruaHisui", "ZoroarkHisui", "Kecleon", "Sudowoodo", "Ditto", "Smeargle",
+    "Gengar", "Sableye", "Mawile", "Murkrow", "Honchkrow", "Noibat", "Noivern", "Woobat", "Swoobat",
+    "Zubat", "Golbat", "Crobat", "Gligar", "Gliscor", "Spinarak", "Ariados", "Joltik", "Galvantula",
+    "Trapinch", "Wobbuffet", "Wynaut", "Impidimp", "Morgrem", "Grimmsnarl", "Mimikyu", "Hoothoot", "Noctowl",
+    "Exploud", "Loudred", "Whismur", "Jigglypuff", "Wigglytuff", "Ekans", "Arbok", "Krookodile", "Sandaconda",
+}}
+# Dim Mak (TM91): vechtsporters/kungfu en Psychic-soorten met handen.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_DIM_MAK"] = {"like": {"MOVE_FORCE_PALM", "MOVE_DRAIN_PUNCH"}, "types": set(), "species": {
+    "Mienfoo", "Mienshao", "Hitmonlee", "Hitmonchan", "Hitmontop", "Tyrogue", "Meditite", "Medicham",
+    "Riolu", "Lucario", "Throh", "Sawk", "Kubfu", "UrshifuSingleStrike", "UrshifuRapidStrike", "Pangoro", "Hawlucha",
+    "Gallade", "Abra", "Kadabra", "Alakazam", "MrMime", "MrMimeGalar", "MrRime", "MimeJr", "Hypno", "Drowzee",
+    "Jynx", "Smoochum", "Gothitelle", "Malamar", "Grumpig", "Oranguru", "Slowking", "Lopunny", "Infernape",
+}}
+# Updraft (TM92): vliegers die met hun vleugels wind maken (zweefvliegers en windmakers), geen ballonnen/zwevers.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_UPDRAFT"] = {"like": {"MOVE_GUST", "MOVE_TAILWIND", "MOVE_AIR_SLASH"}, "types": set(), "species": {
+    "Pelipper", "Wingull", "Swanna", "Ducklett", "Unfezant", "Tranquill", "Pidove", "Braviary", "Mandibuzz",
+    "Vullaby", "Rufflet", "Skarmory", "Corviknight", "Altaria", "Swablu", "Tropius", "Mantine", "Mantyke",
+    "Kilowattrel", "Wattrel", "Bombirdier", "Flamigo", "Tornadus", "Lugia", "HoOh", "Rayquaza",
+}}
+# Counterfeit Ball (TM96, wens Jordi): Pokemon die oplichten of voor de gek houden, plus dieven met handen die kunnen gooien.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_COUNTERFEIT_BALL"] = {"like": set(), "types": set(), "species": {
+    "Meowth", "Persian", "MeowthAlola", "PersianAlola", "MeowthGalar", "Perrserker",
+    "Purrloin", "Liepard", "Zorua", "Zoroark", "ZoruaHisui", "ZoroarkHisui", "Sableye", "Mimikyu",
+    "Impidimp", "Morgrem", "Grimmsnarl", "Croagunk", "Toxicroak", "Nickit", "Thievul", "Grafaiai",
+    "Murkrow", "Honchkrow", "Sneasel", "Weavile", "SneaselHisui", "Sneasler", "Scraggy", "Scrafty",
+    "Sandile", "Krokorok", "Krookodile", "Inkay", "Malamar", "Gastly", "Haunter", "Gengar", "Banette",
+    "MrMime", "MrMimeGalar", "MrRime", "MimeJr", "Shiftry", "Cottonee", "Whimsicott", "Spinda",
+    "Kecleon", "Gimmighoul", "Gholdengo", "Aipom", "Ambipom", "HoopaConfined", "HoopaUnbound",
+}}
+# Overkill (TM45, was Attract): fysieke Dark-types (Attack >= Sp. Atk, in dit project) plus brute, genadeloze soorten.
+GROUNDED_CUSTOM_TEACHABLES["MOVE_OVERKILL"] = {"like": set(), "types": set(), "phys_types": {"TYPE_DARK"}, "species": {
+    "Arbok", "Houndoom", "Hydreigon", "Larvitar", "Pupitar", "Tyranitar", "Gyarados", "Teddiursa", "Ursaring",
+    "Ursaluna", "UrsalunaBloodmoon", "Axew", "Fraxure", "Haxorus", "Gible", "Gabite", "Garchomp", "Salamence",
+    "Tyrunt", "Tyrantrum", "Rhydon", "Rhyperior", "Machamp", "Conkeldurr", "Hariyama", "Primeape", "Annihilape",
+    "Scizor", "Kleavor", "Zangoose", "Seviper", "Escavalier", "Golisopod", "Darmanitan", "Mamoswine",
+    "Feraligatr", "Bewear", "Granbull", "Barraskewda", "KommoO", "Guzzlord",
+}}
+# Disco Inferno (TM99): alleen dansers. Vuur-dansers, plus iedereen met Dancer of een dansmove (geen Swords Dance).
+GROUNDED_CUSTOM_TEACHABLES["MOVE_DISCO_INFERNO"] = {"like": {
+    "MOVE_QUIVER_DANCE", "MOVE_FEATHER_DANCE", "MOVE_TEETER_DANCE", "MOVE_LUNAR_DANCE", "MOVE_VICTORY_DANCE",
+    "MOVE_REVELATION_DANCE", "MOVE_PETAL_DANCE", "MOVE_DRAGON_DANCE", "MOVE_FIERY_DANCE", "MOVE_AQUA_STEP",
+}, "types": set(), "abilities": {"ABILITY_DANCER"}, "species": {
+    "Magby", "Magmar", "Magmortar", "Cyndaquil", "Quilava", "Typhlosion", "TyphlosionHisui",
+    "Torchic", "Combusken", "Blaziken", "Chimchar", "Monferno", "Infernape", "Pansear", "Simisear",
+    "Fennekin", "Braixen", "Delphox", "Litten", "Torracat", "Incineroar", "Scorbunny", "Raboot", "Cinderace",
+    "Charcadet", "Armarouge", "Ceruledge", "Charmander", "Charmeleon", "Charizard", "Cubone", "MarowakAlola",
+    "Oricorio", "Blacephalon", "Victini", "Capsakid", "Scovillain",
+}}
+# Super Splash (TM100, Devon): alleen wie Splash via level-up leert (gen_9.h).
+GROUNDED_CUSTOM_TEACHABLES["MOVE_SUPER_SPLASH"] = {"like": set(), "types": set(), "levelup": {"MOVE_SPLASH"}}
 # Set-audit (Jordi 19 okt): bestaande TM's die deze soorten van Jordi ook mogen leren.
 GROUNDED_EXTRA_TM_SPECIES = {
     "MOVE_BATON_PASS": {"Skarmory"},   # TM79 (19 okt): Skarmory-sets van Jordi
@@ -215,6 +236,30 @@ GROUNDED_EXTRA_TM_SPECIES = {
     "MOVE_DAZZLING_GLEAM": {"Woobat", "Swoobat"},
     "MOVE_FLAMETHROWER": {"Helioptile", "Heliolisk"},
     "MOVE_IRON_HEAD": {"Ursaluna"},
+    # TM93 Power Gem: edelstenen, kristallen en parels.
+    "MOVE_POWER_GEM": {"Lileep", "Cradily", "Omanyte", "Omastar", "Roggenrola", "Bergmite", "Avalugg", "AvaluggHisui",
+                       "Dwebble", "Crustle", "Clamperl", "Huntail", "Gorebyss", "Cryogonal"},
+    # TM94 Wood Hammer (lijst van Jordi) plus evolutielijnen.
+    "MOVE_WOOD_HAMMER": {"Bonsly", "Tropius", "Turtwig", "Grotle", "Dartrix", "Decidueye", "DecidueyeHisui",
+                         "Nuzleaf", "Shiftry", "Breloom", "Lombre", "Ludicolo"},
+    # TM95 Dragon Rush: draken die kunnen aanstormen en draakachtigen.
+    "MOVE_DRAGON_RUSH": {"Aerodactyl", "Tyrunt", "Tyrantrum", "Sceptile", "Seadra", "Kingdra", "Axew", "Fraxure",
+                         "Haxorus", "Druddigon", "Feraligatr", "JangmoO", "HakamoO", "KommoO", "Turtonator",
+                         "ExeggutorAlola", "Tropius", "Dreepy", "Rayquaza", "Latias", "Latios", "Zekrom", "Reshiram",
+                         "Kyurem", "Dialga", "Palkia", "Giratina", "Koraidon", "Miraidon", "Regidrago", "Zygarde",
+                         "RagingBolt"},
+    # TM97 Shell Smash: schelpen en pantsers.
+    "MOVE_SHELL_SMASH": {"Kabuto", "Kabutops", "Slowbro", "SlowbroGalar", "Shelmet", "Escavalier"},
+    # TM98 Fake Out: handen/poten om te verrassen (apen, katten, vechters, dieven, Normal-types met armen).
+    "MOVE_FAKE_OUT": {
+        "Mankey", "Primeape", "Annihilape", "Pansage", "Simisage", "Pansear", "Simisear", "Panpour", "Simipour",
+        "Oranguru", "Passimian", "Sprigatito", "Floragato", "Meowscarada", "Litleo", "Pyroar",
+        "Machop", "Machoke", "Machamp", "Riolu", "Lucario", "Throh", "Sawk", "Timburr", "Gurdurr", "Conkeldurr",
+        "Pancham", "Pangoro", "Hawlucha", "Crabrawler", "Crabominable", "Kubfu", "UrshifuSingleStrike",
+        "UrshifuRapidStrike", "Stufful", "Bewear", "Nickit", "Thievul", "Zorua", "Zoroark", "ZoruaHisui",
+        "ZoroarkHisui", "Shroodle", "Grafaiai", "Teddiursa", "Ursaring", "Slakoth", "Vigoroth", "Slaking",
+        "Zangoose", "Smeargle", "Lickitung", "Lickilicky", "Miltank", "Loudred", "Exploud", "Snubbull", "Granbull",
+    },
 }
 for _m, _sp in GROUNDED_EXTRA_TM_SPECIES.items():
     _r = GROUNDED_CUSTOM_TEACHABLES.setdefault(_m, {"like": set(), "types": set()})
@@ -243,6 +288,41 @@ def grounded_learnset_types() -> dict[str, set[str]]:
     return result
 
 
+LEVELUP_REF_PAT = re.compile(r"\.levelUpLearnset\s*=\s*s(\w+)LevelUpLearnset")
+LEVELUP_ARRAY_PAT = re.compile(r"static const struct LevelUpMove s(\w+)LevelUpLearnset\[\] = \{(.*?)\};", re.S)
+
+
+def grounded_learnset_info() -> dict[str, dict]:
+    """
+    Per teachable-learnset name: "physical" (baseAttack >= baseSpAttack of the first species using it),
+    "abilities" (all abilities) and "levelup" (moves learned by level-up in gen_9.h).
+    """
+    with open("./src/data/pokemon/level_up_learnsets/gen_9.h", "r") as fp:
+        levelup = {m.group(1): set(re.findall(r"MOVE_\w+", m.group(2))) for m in LEVELUP_ARRAY_PAT.finditer(fp.read())}
+    result: dict[str, dict] = {}
+    for fname in glob.glob("./src/data/pokemon/species_info/*.h"):
+        with open(fname, "r") as fp:
+            text = fp.read()
+        starts = [m.start() for m in SPECIES_BLOCK_PAT.finditer(text)] + [len(text)]
+        for b, e in zip(starts, starts[1:]):
+            block = text[b:e]
+            ref = LEARNSET_REF_PAT.search(block)
+            if not ref:
+                continue
+            entry = result.setdefault(ref.group(1), {"abilities": set(), "levelup": set()})
+            atk = re.search(r"\.baseAttack\s*=\s*(\d+)", block)
+            spa = re.search(r"\.baseSpAttack\s*=\s*(\d+)", block)
+            if atk and spa and "physical" not in entry:
+                entry["physical"] = int(atk.group(1)) >= int(spa.group(1))
+            abil = re.search(r"\.abilities\s*=\s*\{([^}]*)\}", block)
+            if abil:
+                entry["abilities"].update(re.findall(r"ABILITY_\w+", abil.group(1)))
+            lvl = LEVELUP_REF_PAT.search(block)
+            if lvl:
+                entry["levelup"] |= levelup.get(lvl.group(1), set())
+    return result
+
+
 def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str], header: str) -> str:
     """
     Build the file content for teachable_learnsets.h.
@@ -252,6 +332,7 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
 
     cursor = 0
     learnset_types = grounded_learnset_types()
+    info = grounded_learnset_info()
     new = header + dedent("""
     static const u16 sNoneTeachableLearnset[] = {
         MOVE_UNAVAILABLE,
@@ -278,6 +359,9 @@ def prepare_output(all_learnables: dict[str, set[str]], repo_teachables: set[str
                 ({rule["like"]} if isinstance(rule["like"], str) else rule["like"]) & set(all_learnables[species_upper])
                 or learnset_types.get(species.group("name"), set()) & rule["types"]
                 or species.group("name") in rule.get("species", set())
+                or (info.get(species.group("name"), {}).get("physical") and learnset_types.get(species.group("name"), set()) & rule.get("phys_types", set()))
+                or info.get(species.group("name"), {}).get("abilities", set()) & rule.get("abilities", set())
+                or info.get(species.group("name"), {}).get("levelup", set()) & rule.get("levelup", set())
             ):
                 repo_species_teachables.append(move)
 

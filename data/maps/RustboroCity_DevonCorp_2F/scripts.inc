@@ -466,3 +466,53 @@ RustboroCity_DevonCorp_2F_Text_TypeNullMemoriesAfter:
 	.string "Not even the FRONTIER. Buy them back\l"
 	.string "there once it trusts you enough to\l"
 	.string "become SILVALLY.$"
+
+@ Project Grounded: TM100 Super Splash (na het telefoontje na gym 6)
+RustboroCity_DevonCorp_2F_EventScript_SuperSplashScientist::
+	lock
+	faceplayer
+	call_if_eq VAR_FOSSIL_RESURRECTION_STATE, 1, RustboroCity_DevonCorp_2F_EventScript_SetFossilReady
+	goto_if_set FLAG_RECEIVED_TM_SUPER_SPLASH, RustboroCity_DevonCorp_2F_EventScript_SuperSplashAfter
+	goto_if_unset FLAG_DEVON_SUPER_SPLASH_CALL, RustboroCity_DevonCorp_2F_EventScript_SuperSplashBefore
+	msgbox RustboroCity_DevonCorp_2F_Text_SuperSplashYouCame, MSGBOX_DEFAULT
+	giveitem ITEM_TM_SUPER_SPLASH
+	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
+	setflag FLAG_RECEIVED_TM_SUPER_SPLASH
+	msgbox RustboroCity_DevonCorp_2F_Text_SuperSplashExplain, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_EventScript_SuperSplashBefore::
+	msgbox RustboroCity_DevonCorp_2F_Text_SuperSplashResearch, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_EventScript_SuperSplashAfter::
+	msgbox RustboroCity_DevonCorp_2F_Text_SuperSplashAfter, MSGBOX_DEFAULT
+	release
+	end
+
+RustboroCity_DevonCorp_2F_Text_SuperSplashResearch:
+	.string "I research SPLASH.\p"
+	.string "Every morning I ask myself:\n"
+	.string "what if it did something?\p"
+	.string "Every evening, it didn't.\n"
+	.string "I'm so close.$"
+
+RustboroCity_DevonCorp_2F_Text_SuperSplashYouCame:
+	.string "{PLAYER}! You came! Nobody comes.\p"
+	.string "Behold: SPLASH, but it hits.\n"
+	.string "The board called it reckless.\p"
+	.string "I called it SUPER SPLASH.\n"
+	.string "Then I called my mom. Take it!$"
+
+RustboroCity_DevonCorp_2F_Text_SuperSplashExplain:
+	.string "Only POKéMON that already know\n"
+	.string "how to SPLASH can learn it.\p"
+	.string "MAGIKARP finally has a career.\n"
+	.string "So do I, technically.$"
+
+RustboroCity_DevonCorp_2F_Text_SuperSplashAfter:
+	.string "Years of research. One TM.\p"
+	.string "My mother still thinks I work\n"
+	.string "in insurance.$"

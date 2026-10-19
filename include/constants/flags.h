@@ -1754,10 +1754,11 @@
 #define FLAG_ITEM_AREA_ZERO_FUTURE_PP_MAX                FLAG_GROUNDED(936) // Project Grounded: Area Zero, toekomst: PP Max
 #define FLAG_ITEM_AREA_ZERO_PAST_RARE_CANDY              FLAG_GROUNDED(937) // Project Grounded: Area Zero, verleden: Rare Candy
 // }
-// tm_plaatsing { (met de hand, TM60-TM88, zie TM_PLAATSING.md; FLAG_GROUNDED 1000-1019: 1000-1002 in gebruik, 1003-1019 nog vrij)
+// tm_plaatsing { (met de hand, TM60-TM88, zie TM_PLAATSING.md; FLAG_GROUNDED 1000-1019: 1000-1003 in gebruik, 1004-1019 nog vrij)
 #define FLAG_RECEIVED_TM_ROLLING_THUNDER                 FLAG_GROUNDED(1000) // Project Grounded: TM73 Rolling Thunder van Mustard (Kubfu-dojo) gekregen
 #define FLAG_RECEIVED_TM_HYPER_BEAM                      FLAG_GROUNDED(1001) // Project Grounded: TM15 Hyper Beam van de fan in Lilycove Dept. Store 4F
 #define FLAG_RECEIVED_TM_SUPER_SPLASH                    FLAG_GROUNDED(1002) // Project Grounded: TM100 Super Splash van de Devon-wetenschapper (na gym 6)
+#define FLAG_DEVON_SUPER_SPLASH_CALL                     FLAG_GROUNDED(1003) // Project Grounded: Devon heeft na gym 6 gebeld over Super Splash (TM100)
 // }
 // glimwood { (tools/grounded/maptools/glimwood.py; FLAG_GROUNDED 880-919, 895-919 nog vrij)
 #define FLAG_GLIMWOOD_MET_WITCH                          FLAG_GROUNDED(880) // Project Grounded: Glimwood: de heks heeft zich voorgesteld

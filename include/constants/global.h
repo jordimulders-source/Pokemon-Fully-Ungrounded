@@ -98,7 +98,7 @@
 #define BAG_KEYITEMS_COUNT 30
 #define BAG_POKEBALLS_COUNT 16
 #define BAG_TMHM_COUNT_LEGACY 64 // Project Grounded: oude TM/HM-pocket in struct Bag (alleen nog voor oude saves)
-#define BAG_TMHM_COUNT 100        // Project Grounded: TM/HM-pocket staat nu achteraan SaveBlock1 (bagTMsHMs): 88 TM's + 8 HM's
+#define BAG_TMHM_COUNT 108        // Project Grounded: TM/HM-pocket staat nu achteraan SaveBlock1 (bagTMsHMs): 100 TM's + 8 HM's
 #define BAG_BERRIES_COUNT 46
 
 // Number of facilities for Ranking Hall.

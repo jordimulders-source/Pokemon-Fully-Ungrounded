@@ -46,7 +46,7 @@
     F(FACADE) \
     F(SECRET_POWER) \
     F(REST) \
-    F(ATTRACT) \
+    F(OVERKILL) /* Project Grounded: TM45, was Attract */ \
     F(TRICK_ROOM) \
     F(FLASH_CANNON) \
     F(DARK_PULSE) \
@@ -89,7 +89,19 @@
     F(HIGH_HORSEPOWER) /* Project Grounded: TM85, Victory Road 1F (verborgen) */ \
     F(DRAGON_DANCE) /* Project Grounded: TM86, Meteor Falls (Draconid-gangen) */ \
     F(CLOSE_COMBAT) /* Project Grounded: TM87, Artisan Cave B1F (post-game) */ \
-    F(SWORDS_DANCE) /* Project Grounded: TM88, Artisan Cave 1F (post-game) */
+    F(SWORDS_DANCE) /* Project Grounded: TM88, Artisan Cave 1F (post-game) */ \
+    F(COLD_SHOULDER) /* Project Grounded: TM89 */ \
+    F(JUMP_SCARE) /* Project Grounded: TM90 */ \
+    F(DIM_MAK) /* Project Grounded: TM91 */ \
+    F(UPDRAFT) /* Project Grounded: TM92 */ \
+    F(POWER_GEM) /* Project Grounded: TM93 */ \
+    F(WOOD_HAMMER) /* Project Grounded: TM94 */ \
+    F(DRAGON_RUSH) /* Project Grounded: TM95 */ \
+    F(COUNTERFEIT_BALL) /* Project Grounded: TM96 */ \
+    F(SHELL_SMASH) /* Project Grounded: TM97 */ \
+    F(FAKE_OUT) /* Project Grounded: TM98 */ \
+    F(DISCO_INFERNO) /* Project Grounded: TM99 */ \
+    F(SUPER_SPLASH) /* Project Grounded: TM100 */
 
 #define FOREACH_HM(F) \
     F(CUT) \

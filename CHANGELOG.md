@@ -19125,3 +19125,15 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Waar een Pokémon geen vaste moves had, kreeg hij zijn eigen level-up-moves met de showcase-move erbij.
 - **Psychic Dua** (Route 124, vervangt Swimmer Spencer; `TRAINER_DUA`): staat op het water (ze zweeft), zingt als intro het refrein van "Levitating" (tekst van Jordi) tot en met "I'm levitating", en vecht met alleen Levitate-Pokémon: Chimecho (Wind Chime), Lunatone en Solrock (Eclipse), Bronzong (Laser Beam, Trick Room), Mismagius en Hydreigon (lv 58–60). "Yes, I'm standing on the ocean. No, I can't swim."
 - **TM's**: Jordi koos 26 nieuwe TM's (Swords Dance, Stone Edge, X-Scissor, Poison Jab, Close Combat, Wild Charge, Heavy Slam, High Horsepower, Energy Ball, Focus Blast, Earth Power, Heat Wave, Bug Buzz, Dragon Pulse, Hex, Dragon Dance, Bulk Up, Thunder Wave, Will-O-Wisp, Substitute, Roost, Tailwind, Icy Wind, Charge Beam, Rock Tomb, Snarl); nog niet ingebouwd (eerst nieuwe moves). Dan blijven er 15 plekken over tot TM100.
+- **Buffs, ronde 1: stats, abilities en learnsets (Jordi):**
+  - **Beedrill** 75/115/55/45/80/105 (was 65/90/40/45/80/75), Sniper in slot 2.
+  - **Spidops** 70/90/102/52/96/45 (was 60/79/92/52/86/35), Stakeout in slot 2 (ook Tarountula), Leech Life lv 20.
+  - **Furret** 90/90/65/45/60/115 (was 85/76/64/45/55/90), Technician in slot 2 (ook Sentret), Dig lv 28.
+  - **Fearow** 70/105/70/61/66/115 (was 65/90/65/61/61/100), Super Luck in slot 1 en Sniper in slot 2 (ook Spearow; je kiest er één), Dual Wingbeat lv 30.
+  - **Persian** 75/85/65/75/70/120 (was 65/70/60/65/65/115). **Perrserker** 75/120/105/50/70/65 (was 70/110/100/50/60/50), Tough Claws in slot 1.
+  - **Kingler** 75 HP (+20), Sheer Force in slot 2 (ook Krabby), Crush Claw vanaf lv 1.
+  - **Maractus** 75/86/77/111/77/80 (was 75/86/67/106/67/60), Dancer in slot 2, muzikale moves: Round (1), Grass Whistle (12), Echoed Voice (22), Teeter Dance (30), Quiver Dance (38); Petal Dance had hij al.
+  - **Nidoking/Nidoqueen** (en de hele lijn): Sheer Force in slot 2.
+  - **Marowak** en **Alola-Marowak** 75/95/110/50/80/55 (was 60/80/110/50/80/45). **Omastar** 75/60/125/120/80/65 (was 70/60/125/115/70/55). **Kabutops** 70/120/105/65/75/90 (was 60/115/105/65/70/80), Sharpness in slot 2 (ook in Brocks Stadium-team).
+  - **Garbodor** Recover lv 36. **Gimmighoul** en **Gholdengo** leren Pay Day (lv 1).
+  - Signature moves en de nieuwe abilities (Fake Foliage, Landfill, Hive Queen) volgen in ronde 2.

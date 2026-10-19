@@ -5418,12 +5418,12 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
 #if P_FAMILY_MARACTUS
     [SPECIES_MARACTUS] =
     {
-        .baseHP        = 75,
-        .baseAttack    = 86,
-        .baseDefense   = 67,
-        .baseSpeed     = 60,
-        .baseSpAttack  = 106,
-        .baseSpDefense = 67,
+        .baseHP        = 75, // Project Grounded
+        .baseAttack    = 86, // Project Grounded
+        .baseDefense   = 77, // Project Grounded
+        .baseSpeed     = 80, // Project Grounded
+        .baseSpAttack  = 111, // Project Grounded
+        .baseSpDefense = 77, // Project Grounded
         .types = MON_TYPES(TYPE_GRASS),
         .catchRate = 255,
         .expYield = 161,
@@ -5434,7 +5434,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .friendship = STANDARD_FRIENDSHIP,
         .growthRate = GROWTH_MEDIUM_FAST,
         .eggGroups = MON_EGG_GROUPS(EGG_GROUP_GRASS),
-        .abilities = { ABILITY_WATER_ABSORB, ABILITY_CHLOROPHYLL, ABILITY_STORM_DRAIN },
+        .abilities = { ABILITY_WATER_ABSORB, ABILITY_DANCER, ABILITY_STORM_DRAIN }, // Project Grounded
         .bodyColor = BODY_COLOR_GREEN,
         .speciesName = _("Maractus"),
         .cryId = CRY_MARACTUS,

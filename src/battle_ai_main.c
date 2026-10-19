@@ -1086,6 +1086,26 @@ void BattleAI_DoAIProcessing_PredictedSwitchin(struct AiThinkingStruct *aiThink,
 
 // AI Score Functions
 // AI_FLAG_CHECK_BAD_MOVE - decreases move scores
+// Project Grounded: Marionette. Verwachte zelfschade van het doelwit: met de voorspelde move als de AI
+// voorspelt (een statusmove = 0, Marionette faalt dan), anders met de sterkste aanval die het doelwit kent.
+static s32 AI_MarionetteExpectedDamage(u32 battlerDef, u32 predictedMove)
+{
+    u16 *moves = GetMovesArray(battlerDef);
+    s32 best = 0, dmg;
+    u32 i;
+
+    if (predictedMove != MOVE_NONE && predictedMove != MOVE_UNAVAILABLE
+     && gAiLogicData->predictingMove && CanAiPredictMove())
+        return GetMarionetteDamage(battlerDef, predictedMove, FALSE, NULL);
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        dmg = GetMarionetteDamage(battlerDef, moves[i], FALSE, NULL);
+        if (dmg > best)
+            best = dmg;
+    }
+    return best;
+}
+
 static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
 {
     if (IsTargetingPartner(battlerAtk, battlerDef))
@@ -1446,9 +1466,12 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
              && !BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPATK))
                 ADJUST_SCORE(-10);
             break;
-        case EFFECT_MARIONETTE: // Project Grounded: faalt zonder bruikbare vorige move van het doelwit
-            if (GetMarionetteDamage(battlerAtk, battlerDef, FALSE, NULL) <= 0)
+        case EFFECT_MARIONETTE: // Project Grounded: een gok zoals Sucker Punch
+            if (AI_MarionetteExpectedDamage(battlerDef, predictedMove) <= 0)
                 ADJUST_SCORE(-20);
+            else if ((HasMoveWithCategory(battlerDef, DAMAGE_CATEGORY_STATUS) && RandomPercentage(RNG_AI_SUCKER_PUNCH, SUCKER_PUNCH_CHANCE)) // doelwit heeft een statusmove
+             || (IsBattleMoveStatus(predictedMove) && RandomPercentage(RNG_AI_SUCKER_PUNCH, SUCKER_PUNCH_PREDICTION_CHANCE) && (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_PREDICT_MOVE)))
+                ADJUST_SCORE(-10);
             break;
         case EFFECT_OLIVE_OIL: // Project Grounded
             if (AI_BattlerAtMaxHp(battlerAtk) && (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN))
@@ -4797,7 +4820,7 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
         break;
     case EFFECT_MARIONETTE: // Project Grounded: hoog als het doelwit zichzelf hard raakt
     {
-        s32 dmg = GetMarionetteDamage(battlerAtk, battlerDef, FALSE, NULL);
+        s32 dmg = AI_MarionetteExpectedDamage(battlerDef, predictedMove);
         u32 hp = gBattleMons[battlerDef].hp;
         if (dmg >= (s32)hp)
             ADJUST_SCORE(BEST_EFFECT);

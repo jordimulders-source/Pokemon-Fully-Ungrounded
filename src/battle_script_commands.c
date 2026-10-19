@@ -19427,23 +19427,71 @@ void BS_JumpIfCantBeDrowsy(void)
 }
 
 // Project Grounded: Olive Oil (Arboliva). Faalt alleen als er niets te helen én geen terrein te zetten is.
-// Project Grounded: Marionette (Banette). Berekent de schade die het doelwit zichzelf doet met zijn
-// laatst gebruikte move (GetMarionetteDamage) en zet die klaar als passieve schade. Springt bij falen of
-// immuniteit. MULTISTRING_CHOOSER: 0 gewoon, 1 super effective, 2 not very effective.
+// Project Grounded: Marionette (Banette), een gok zoals Sucker Punch. Heeft het doelwit deze beurt nog
+// niet gehandeld, dan gebruikt het zijn gekozen aanval nu op zichzelf en vervalt zijn eigen actie (PP eraf,
+// telt als laatst gebruikte move). Koos het een statusmove, wissel of item: falen. Heeft het al gehandeld,
+// dan zijn laatst gebruikte move. Zet de schade klaar als passieve schade; springt bij falen of immuniteit.
+// MULTISTRING_CHOOSER: 0 gewoon, 1 super effective, 2 not very effective.
 void BS_TryMarionette(void)
 {
     NATIVE_ARGS(const u8 *failInstr);
+    u32 target = gBattlerTarget;
+    u32 move, movePos = MAX_MON_MOVES, i;
+    bool32 pulled = !HasBattlerActedThisTurn(target);
     uq4_12_t effectiveness = UQ_4_12(1.0);
-    s32 dmg = GetMarionetteDamage(gBattlerAttacker, gBattlerTarget, TRUE, &effectiveness);
+    s32 dmg;
 
+    if (pulled)
+        move = GetMarionetteChosenMove(target, &movePos);
+    else if (gChosenActionByBattler[target] != B_ACTION_USE_MOVE)
+        move = MOVE_NONE;
+    else
+        move = gLastMoves[target];
+
+    dmg = GetMarionetteDamage(target, move, TRUE, &effectiveness);
     if (dmg <= 0)
     {
         gBattlescriptCurrInstr = cmd->failInstr;
         return;
     }
-    gDisableStructs[gBattlerAttacker].marionetteUsed = TRUE;
-    PREPARE_MOVE_BUFFER(gBattleTextBuff1, gLastMoves[gBattlerTarget]);
-    SetPassiveDamageAmount(gBattlerTarget, dmg);
+
+    if (pulled)
+    {
+        // De eigen actie van het doelwit vervalt.
+        for (i = gCurrentTurnActionNumber + 1; i < gBattlersCount; i++)
+        {
+            if (gBattlerByTurnOrder[i] == target)
+                gActionsByTurnOrder[i] = B_ACTION_NOTHING_FAINTED;
+        }
+        gProtectStructs[target].noValidMoves = FALSE;
+        if (gBattleMons[target].volatiles.multipleTurns)
+            CancelMultiTurnMoves(target, SKY_DROP_IGNORE);
+
+        // De move telt als gebruikt.
+        if (movePos < MAX_MON_MOVES && gBattleMons[target].pp[movePos] != 0)
+        {
+            gBattleMons[target].pp[movePos]--;
+            if (!(gDisableStructs[target].mimickedMoves & (1u << movePos))
+             && !(gBattleMons[target].volatiles.transformed))
+            {
+                BtlController_EmitSetMonData(target, B_COMM_TO_CONTROLLER, REQUEST_PPMOVE1_BATTLE + movePos, 0, sizeof(gBattleMons[target].pp[movePos]), &gBattleMons[target].pp[movePos]);
+                MarkBattlerForControllerExec(target);
+            }
+            gDisableStructs[target].usedMoves |= 1u << movePos;
+        }
+        if (move != MOVE_STRUGGLE
+         && (gBattleStruct->choicedMove[target] == MOVE_NONE || gBattleStruct->choicedMove[target] == MOVE_UNAVAILABLE)
+         && (IsHoldEffectChoice(GetBattlerHoldEffect(target)) || GetBattlerAbility(target) == ABILITY_GORILLA_TACTICS))
+            gBattleStruct->choicedMove[target] = move;
+        gLastMoves[target] = move;
+        gLastResultingMoves[target] = move;
+        gLastPrintedMoves[target] = move;
+        gLastUsedMoveType[target] = GetMoveType(move);
+        RecordKnownMove(target, move);
+    }
+
+    PREPARE_MOVE_BUFFER(gBattleTextBuff1, move);
+    SetPassiveDamageAmount(target, dmg);
     if (effectiveness > UQ_4_12(1.0))
         gBattleCommunication[MULTISTRING_CHOOSER] = 1;
     else if (effectiveness < UQ_4_12(1.0))

@@ -9163,18 +9163,15 @@ s32 CalculateMoveDamageVars(struct DamageContext *ctx)
     return DoMoveDamageCalcVars(ctx);
 }
 
-// Project Grounded: Marionette (Banette). Het doelwit valt zichzelf aan met zijn laatst gebruikte move:
+// Project Grounded: Marionette (Banette). Het doelwit valt zichzelf aan met een move:
 // eigen Attack/Sp. Atk tegen eigen Defense/Sp. Def, type-effectiviteit tegen zichzelf, STAB, geen crit.
-// Geeft -1 als Marionette faalt (al gebruikt sinds het inwisselen, geen vorige move, statusmove, move
-// zonder vaste kracht), anders de schade (0 = immuun). Met roll = FALSE de gemiddelde rol (voor de AI).
-s32 GetMarionetteDamage(u32 battlerAtk, u32 battlerDef, bool32 roll, uq4_12_t *effectiveness)
+// Geeft -1 als de move niet bruikbaar is (geen move, statusmove, move zonder vaste kracht), anders de
+// schade (0 = immuun). Met roll = FALSE de gemiddelde rol (voor de AI).
+s32 GetMarionetteDamage(u32 battlerDef, u32 move, bool32 roll, uq4_12_t *effectiveness)
 {
     struct DamageContext ctx = {0};
-    u32 move = gLastMoves[battlerDef];
     s32 dmg;
 
-    if (gDisableStructs[battlerAtk].marionetteUsed)
-        return -1;
     if (move == MOVE_NONE || move == MOVE_UNAVAILABLE || move >= MOVES_COUNT || IsZMove(move) || IsMaxMove(move))
         return -1;
     if (IsBattleMoveStatus(move) || GetMovePower(move) <= 1)
@@ -9214,6 +9211,29 @@ s32 GetMarionetteDamage(u32 battlerAtk, u32 battlerDef, bool32 roll, uq4_12_t *e
     if (dmg <= 0)
         dmg = 1;
     return dmg;
+}
+
+// Project Grounded: Marionette. De move die het doelwit deze beurt nog gaat gebruiken (zoals
+// HandleAction_UseMove hem kiest), of MOVE_NONE als het geen move gebruikt (wissel, item, opladen na
+// Hyper Beam). *movePos krijgt de plek voor de PP (MAX_MON_MOVES = geen PP, bijv. Struggle).
+u32 GetMarionetteChosenMove(u32 battler, u32 *movePos)
+{
+    u32 pos = gBattleStruct->chosenMovePositions[battler];
+
+    *movePos = MAX_MON_MOVES;
+    if (gChosenActionByBattler[battler] != B_ACTION_USE_MOVE || gDisableStructs[battler].rechargeTimer > 0)
+        return MOVE_NONE;
+    if (gProtectStructs[battler].noValidMoves)
+        return MOVE_STRUGGLE;
+    if (gBattleMons[battler].volatiles.multipleTurns)
+        return gLockedMoves[battler];
+    if (gDisableStructs[battler].encoredMove != MOVE_NONE
+     && gDisableStructs[battler].encoredMove == gBattleMons[battler].moves[gDisableStructs[battler].encoredMovePos])
+        pos = gDisableStructs[battler].encoredMovePos;
+    if (pos >= MAX_MON_MOVES)
+        return MOVE_NONE;
+    *movePos = pos;
+    return gBattleMons[battler].moves[pos];
 }
 
 static inline void MulByTypeEffectiveness(struct DamageContext *ctx, uq4_12_t *modifier, enum Type defType)

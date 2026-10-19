@@ -110,7 +110,6 @@ struct DisableStruct
     u8 fungalControlled:1; // Project Grounded: de encore komt van Fungal Control (eigen eindmelding)
     u8 kelpLayers:2; // Project Grounded: Kelp Shroud-lagen op dit doelwit (drain 1/8, 1/6, 1/4)
     u8 boosterEnergyActivated:1;
-    u8 marionetteUsed:1; // Project Grounded: Marionette al gebruikt sinds het inwisselen
     u16 overwrittenAbility;   // abilities overwritten during battle (keep separate from battle history in case of switching)
     u8 roostActive:1;
     u8 unburdenActive:1;

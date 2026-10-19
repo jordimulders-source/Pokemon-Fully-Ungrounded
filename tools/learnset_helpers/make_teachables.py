@@ -261,6 +261,37 @@ GROUNDED_EXTRA_TM_SPECIES = {
         "Zangoose", "Smeargle", "Lickitung", "Lickilicky", "Miltank", "Loudred", "Exploud", "Snubbull", "Granbull",
     },
 }
+# TM_COMPAT_VOORSTEL.md, door Jordi goedgekeurd op 19 okt (zonder Wood Hammer en Super Splash).
+GROUNDED_COMPAT_VOORSTEL = {
+    "MOVE_FLARE_BLITZ": {"Groudon", "Sizzlipede"},
+    "MOVE_ROCK_TOMB": {"Nacli", "Naclstack"},
+    "MOVE_SNARL": {"Gyarados", "Huntail", "Noctowl", "Hypno", "Cacturne", "Banette", "Dusknoir", "Inkay", "Malamar", "Greninja", "Grimmsnarl", "Impidimp", "Morgrem", "Overqwil"},
+    "MOVE_ROOST": {"Clefable", "Pinsir", "Torchic", "Combee", "Delibird", "Celesteela", "Tornadus", "Thundurus", "Landorus", "Rayquaza", "ArticunoGalar", "ZapdosGalar", "MoltresGalar"},
+    "MOVE_BULK_UP": {"Lopunny", "Spinda", "Farfetchd", "FarfetchdGalar", "Sirfetchd", "Pawmo", "LilligantHisui", "Cobalion", "Terrakion", "Virizion"},
+    "MOVE_CHARGE_BEAM": {"Loudred", "Exploud", "Nosepass", "Probopass", "Starmie", "Yamper", "Boltund", "Toxel", "Stunfisk", "Zeraora", "TapuKoko"},
+    "MOVE_THUNDER_WAVE": {"Loudred", "Exploud", "Toxel", "Oricorio"},
+    "MOVE_ICY_WIND": {"DarumakaGalar", "DarmanitanGalar"},
+    "MOVE_POISON_JAB": {"Muk", "Grimer", "Crobat", "Golbat", "Zubat", "Weedle", "Kakuna"},
+    "MOVE_WILL_O_WISP": {"Volbeat", "Parasect", "Golett", "Golurk", "Honedge", "Doublade", "Aegislash", "Sandygast", "Palossand", "Annihilape", "Dreepy", "Decidueye"},
+    "MOVE_TAILWIND": {"Clefable", "Pinsir", "Torchic", "Rowlet", "Ninjask", "Celesteela", "Thundurus", "Landorus"},
+    "MOVE_X_SCISSOR": {"Heracross", "Pheromosa", "Buzzwole", "Wimpod", "Flygon", "Vibrava", "Trapinch", "Shelmet"},
+    "MOVE_WILD_CHARGE": {"Loudred", "Nosepass", "Tynamo", "Porygon"},
+    "MOVE_HEAVY_SLAM": {"Loudred", "Mawile", "Scizor", "Kingambit", "Bisharp", "Excadrill", "Durant", "SandslashAlola", "Klinklang"},
+    "MOVE_ENERGY_BALL": {"Applin", "Rotom"},
+    "MOVE_BUG_BUZZ": {"Crustle", "Shuckle", "Kricketot", "Paras"},
+    "MOVE_HEX": {"Parasect", "Honedge", "Doublade", "Aegislash", "Annihilape", "Oricorio", "Dreepy"},
+    "MOVE_FOCUS_BLAST": {"Spinda", "Farfetchd", "Tyrogue"},
+    "MOVE_KNOCK_OFF": {"Gyarados", "Huntail", "Sharpedo", "Carvanha", "Mightyena", "Poochyena", "Honchkrow", "Murkrow", "Kingambit", "Deino", "Zweilous", "Sandile", "Spiritomb"},
+    "MOVE_STONE_EDGE": {"Sableye", "Anorith"},
+    "MOVE_HIGH_HORSEPOWER": {"Dodrio", "Doduo", "Muk", "Grimer", "Golurk", "Golett", "Cubone", "Marowak", "Marshtomp", "Seismitoad", "Trapinch", "Garchomp", "Gible", "Gabite", "Larvitar", "TingLu", "Dunsparce", "Dudunsparce"},
+    "MOVE_DRAGON_DANCE": {"Druddigon", "Gible", "Gabite", "Garchomp", "Deino", "Zweilous", "Dracozolt", "Dracovish", "Frigibax", "Arctibax", "Koraidon", "Giratina", "Guzzlord"},
+    "MOVE_CLOSE_COMBAT": {"Throh", "Tyrogue", "Pancham", "Pawmo", "Stufful", "Spinda"},
+    "MOVE_POWER_GEM": {"Kabuto", "Amaura", "Aurorus", "Golem", "Shuckle"},
+    "MOVE_DRAGON_RUSH": {"Applin"},
+    "MOVE_FAKE_OUT": {"Blaziken", "Combusken", "Emboar", "Breloom", "Heracross", "Gallade", "Poliwrath", "Chesnaught", "Quaquaval", "Okidogi", "Clobbopus", "Grapploct"},
+}
+for _m, _sp in GROUNDED_COMPAT_VOORSTEL.items():
+    GROUNDED_EXTRA_TM_SPECIES[_m] = GROUNDED_EXTRA_TM_SPECIES.get(_m, set()) | _sp
 for _m, _sp in GROUNDED_EXTRA_TM_SPECIES.items():
     _r = GROUNDED_CUSTOM_TEACHABLES.setdefault(_m, {"like": set(), "types": set()})
     _r["species"] = _r.get("species", set()) | _sp

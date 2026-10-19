@@ -341,6 +341,7 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_HELIXBIRDJESUS]                       = COMPOUND_STRING("BIRD JESUS!"),
     [STRINGID_HELIXSILENT]                          = COMPOUND_STRING("The HELIX is silent."),
     [STRINGID_HIVEQUEENCLEARED]                     = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX}'s\nswarm cleared the way!"),
+    [STRINGID_TWINTAILSSNATCH]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} snatched\n{B_DEF_NAME_WITH_PREFIX2}'s\l{B_BUFF1} boost!"), // Project Grounded: Twin Tails
     [STRINGID_HOLEUP]                               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} ducked back\ninto its hole!"),
     [STRINGID_BEAVERDAMFLOOD]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} was swept\naway by the flood!"),
     [STRINGID_PKMNHYPHALSNARE]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} got tangled\nin {B_ATK_NAME_WITH_PREFIX2}'s hyphae! Gross!"),

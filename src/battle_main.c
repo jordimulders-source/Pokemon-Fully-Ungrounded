@@ -5023,6 +5023,11 @@ s32 GetBattleMovePriority(u32 battler, enum Ability ability, u32 move)
         priority += 3;
     }
 
+    // Project Grounded: Life Buoy gaat voor in de regen
+    if (GetMoveEffect(move) == EFFECT_LIFE_BUOY && GetActiveGimmick(battler) != GIMMICK_DYNAMAX
+     && IsBattlerWeatherAffected(battler, B_WEATHER_RAIN))
+        priority++;
+
     // Project Grounded: Joust gaat voor als het doelwit sneller is
     if (GetMoveEffect(move) == EFFECT_JOUST && GetActiveGimmick(battler) != GIMMICK_DYNAMAX
      && IsJoustTargetFaster(battler, gBattleStruct->moveTarget[battler]))

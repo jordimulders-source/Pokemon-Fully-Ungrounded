@@ -3878,6 +3878,37 @@ void SetMoveEffect(u32 battler, u32 effectBattler, enum MoveEffect moveEffect, c
             gBattlescriptCurrInstr = BattleScript_MoveEffectMummify;
         }
         break;
+    case MOVE_EFFECT_TWIN_TAILS: // Project Grounded: Ambipom steelt één positieve stat-boost, alleen bij de eerste klap
+    {
+        u32 stat, bestStat = 0, bestStage = DEFAULT_STAT_STAGE;
+        if (!gSpecialStatuses[gBattlerAttacker].multiHitOn && IsBattlerAlive(gBattlerAttacker))
+        {
+            for (stat = STAT_ATK; stat < NUM_BATTLE_STATS; stat++)
+            {
+                if (gBattleMons[gEffectBattler].statStages[stat] > bestStage)
+                {
+                    bestStage = gBattleMons[gEffectBattler].statStages[stat];
+                    bestStat = stat;
+                }
+            }
+        }
+        if (bestStat == 0)
+        {
+            gBattlescriptCurrInstr = battleScript;
+        }
+        else
+        {
+            gBattleMons[gEffectBattler].statStages[bestStat]--;
+            if (gBattleMons[gBattlerAttacker].statStages[bestStat] < MAX_STAT_STAGE)
+                gBattleMons[gBattlerAttacker].statStages[bestStat]++;
+            PREPARE_STAT_BUFFER(gBattleTextBuff1, bestStat);
+            gBattleScripting.animArg1 = GET_STAT_BUFF_ID(bestStat) + STAT_ANIM_PLUS1;
+            gBattleScripting.animArg2 = 0;
+            BattleScriptPush(battleScript);
+            gBattlescriptCurrInstr = BattleScript_MoveEffectTwinTails;
+        }
+        break;
+    }
     case MOVE_EFFECT_SALT_CURE:
         if (!gBattleMons[gBattlerTarget].volatiles.saltCure)
         {
@@ -4312,6 +4343,12 @@ static bool32 CanApplyAdditionalEffect(const struct AdditionalEffect *additional
 
     // Certain additional effects only apply on a two-turn move's charge turn
     if (additionalEffect->onChargeTurnOnly != gProtectStructs[gBattlerAttacker].chargingTurn)
+        return FALSE;
+
+    // Project Grounded: Frosty Tap Dance geeft alleen in Snow/Hail ook +1 Sp. Atk
+    if (gCurrentMove == MOVE_FROSTY_TAP_DANCE
+     && additionalEffect->moveEffect == MOVE_EFFECT_SP_ATK_PLUS_1
+     && !IsBattlerWeatherAffected(gBattlerAttacker, B_WEATHER_SNOW | B_WEATHER_HAIL))
         return FALSE;
 
     return TRUE;
@@ -6924,6 +6961,11 @@ static void Cmd_moveend(void)
             break;
         }
         case MOVEEND_MOVE_BLOCK:
+            // Project Grounded: Life Buoy, de gebruiker heelt 1/4 HP als hij later uitwisselt
+            if (moveEffect == EFFECT_LIFE_BUOY
+             && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+             && IsBattlerAlive(gBattlerAttacker))
+                gBattleMons[gBattlerAttacker].volatiles.lifeBuoy = TRUE;
             // Project Grounded: windmoves (Gust, Heat Wave, Hurricane, Tailwind, ...) blazen Pollen Haze weg
             if (gBattleWeather & B_WEATHER_POLLEN_HAZE && IsWindMove(gCurrentMove) && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE))
             {
@@ -13577,12 +13619,15 @@ static void Cmd_switchoutabilities(void)
         }
     }
 
+    bool32 emitted = FALSE; // Project Grounded: Life Buoy, max. één SetMonData per keer
+
     switch (GetBattlerAbility(battler))
     {
     case ABILITY_NATURAL_CURE:
         if (gBattleMons[battler].status1 & STATUS1_SLEEP)
             TryDeactivateSleepClause(GetBattlerSide(battler), gBattlerPartyIndexes[battler]);
 
+        emitted = TRUE;
         gBattleMons[battler].status1 = 0;
         BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_STATUS_BATTLE,
                                         1u << gBattleStruct->battlerPartyIndexes[battler],
@@ -13593,6 +13638,10 @@ static void Cmd_switchoutabilities(void)
     case ABILITY_REGENERATOR:
     {
         u32 regenerate = GetNonDynamaxMaxHP(battler) / 3;
+        // Project Grounded: Life Buoy telt op bij Regenerator (één SetMonData)
+        if (gBattleMons[battler].volatiles.lifeBuoy)
+            regenerate += GetNonDynamaxMaxHP(battler) / 4;
+        gBattleMons[battler].volatiles.lifeBuoy = FALSE;
         regenerate += gBattleMons[battler].hp;
         if (regenerate > gBattleMons[battler].maxHP)
             regenerate = gBattleMons[battler].maxHP;
@@ -13605,6 +13654,35 @@ static void Cmd_switchoutabilities(void)
     }
     default:
         break;
+    }
+
+    // Project Grounded: Life Buoy, 1/4 HP terug bij uitwisselen (niet na flauwvallen)
+    if (gBattleMons[battler].volatiles.lifeBuoy)
+    {
+        gBattleMons[battler].volatiles.lifeBuoy = FALSE;
+        if (IsBattlerAlive(battler) && !IsBattlerAtMaxHp(battler))
+        {
+            u32 heal = GetNonDynamaxMaxHP(battler) / 4;
+            if (heal == 0)
+                heal = 1;
+            heal += gBattleMons[battler].hp;
+            if (heal > gBattleMons[battler].maxHP)
+                heal = gBattleMons[battler].maxHP;
+            if (emitted)
+            {
+                // Natural Cure gebruikt de controller al: HP direct in de party zetten
+                gBattleMons[battler].hp = heal;
+                SetMonData(&GetBattlerParty(battler)[gBattlerPartyIndexes[battler]], MON_DATA_HP, &heal);
+            }
+            else
+            {
+                BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_HP_BATTLE,
+                                                1u << gBattleStruct->battlerPartyIndexes[battler],
+                                                sizeof(heal),
+                                                &heal);
+                MarkBattlerForControllerExec(battler);
+            }
+        }
     }
 
     gBattlescriptCurrInstr = cmd->nextInstr;

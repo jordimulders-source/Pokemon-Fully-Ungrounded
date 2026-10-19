@@ -963,7 +963,13 @@
 #define MOVE_JOUST 899 // Project Grounded: Escavalier
 #define MOVE_SOLSTICE_GATE 900 // Project Grounded: Stonjourner
 #define MOVE_REV_UP 901 // Project Grounded: Revavroom
-#define MOVES_COUNT_GEN9 902
+// 902-909: gereserveerd voor een andere ronde signature moves (hoofdsessie vult dit gat)
+#define MOVE_TWIN_TAILS 910 // Project Grounded: Ambipom
+#define MOVE_LIFE_BUOY 911 // Project Grounded: Floatzel
+#define MOVE_KEYSTONE_CURSE 912 // Project Grounded: Spiritomb
+#define MOVE_FROSTY_TAP_DANCE 913 // Project Grounded: Mr. Rime
+#define MOVE_ROLLING_THUNDER 914 // Project Grounded: Hitmonlee
+#define MOVES_COUNT_GEN9 915
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

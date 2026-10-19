@@ -781,6 +781,7 @@ enum StringID
     STRINGID_HELIXBIRDJESUS, // Project Grounded
     STRINGID_HELIXSILENT, // Project Grounded
     STRINGID_HIVEQUEENCLEARED, // Project Grounded
+    STRINGID_TWINTAILSSNATCH, // Project Grounded
     STRINGID_COUNT
 };
 

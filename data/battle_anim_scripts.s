@@ -39462,8 +39462,9 @@ gBattleAnimMove_SpinningBackfist::
 	waitforvisualfinish
 	createsprite gSlideMonToOffsetSpriteTemplate, ANIM_ATTACKER, 2, ANIM_ATTACKER, 24, 0, 0, 4
 	delay 4
-	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
 	createsprite gBackfistSpriteTemplate, ANIM_ATTACKER, 3, 0, 0, 10, 1, 0
+	delay 5
+	playsewithpan SE_M_VITAL_THROW2, SOUND_PAN_TARGET
 	create_basic_hitsplat_sprite ANIM_ATTACKER, 2, x=0, y=0, relative_to=ANIM_TARGET, animation=0
 	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 5, 0, 8, 1
 	delay 6

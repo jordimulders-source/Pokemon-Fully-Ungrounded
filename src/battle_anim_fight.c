@@ -115,6 +115,8 @@ const struct SpriteTemplate gFistFootSpriteTemplate =
     .callback = AnimBasicFistOrFoot,
 };
 
+static void AnimBackfist(struct Sprite *sprite);
+
 // Project Grounded: Spinning Backfist, de vuist een kwartslag gedraaid zodat de rug van de hand naar het doel wijst.
 static const union AffineAnimCmd sAffineAnim_Backfist[] =
 {
@@ -135,7 +137,7 @@ const struct SpriteTemplate gBackfistSpriteTemplate =
     .anims = gAnims_HandsAndFeet,
     .images = NULL,
     .affineAnims = sAffineAnims_Backfist,
-    .callback = AnimBasicFistOrFoot,
+    .callback = AnimBackfist,
 };
 
 const struct SpriteTemplate gFistFootRandomPosSpriteTemplate =
@@ -556,6 +558,38 @@ void AnimBasicFistOrFoot(struct Sprite *sprite)
     sprite->data[0] = gBattleAnimArgs[2];
     sprite->callback = WaitAnimForDuration;
     StoreSpriteCallbackInData6(sprite, DestroyAnimSprite);
+}
+
+// Project Grounded: Spinning Backfist. De vuist zwiept van opzij (vanaf de speler gezien van links) naar het doel,
+// blijft even staan en verdwijnt. Args: 0-1 offset, 2 duur na de inslag, 3 battler, 4 frame.
+#define BACKFIST_SWIPE_FRAMES 5
+#define BACKFIST_SWIPE_DIST   40
+
+static void AnimBackfist_Step(struct Sprite *sprite)
+{
+    if (sprite->data[1] < BACKFIST_SWIPE_FRAMES)
+    {
+        sprite->data[1]++;
+        sprite->x2 = sprite->data[2] * (BACKFIST_SWIPE_FRAMES - sprite->data[1]) / BACKFIST_SWIPE_FRAMES;
+    }
+    else if (sprite->data[0]-- == 0)
+    {
+        DestroyAnimSprite(sprite);
+    }
+}
+
+static void AnimBackfist(struct Sprite *sprite)
+{
+    StartSpriteAnim(sprite, gBattleAnimArgs[4]);
+    if (gBattleAnimArgs[3] == ANIM_ATTACKER)
+        InitSpritePosToAnimAttacker(sprite, TRUE);
+    else
+        InitSpritePosToAnimTarget(sprite, TRUE);
+    sprite->data[0] = gBattleAnimArgs[2];
+    sprite->data[1] = 0;
+    sprite->data[2] = GetBattlerSide(gBattleAnimAttacker) == B_SIDE_PLAYER ? -BACKFIST_SWIPE_DIST : BACKFIST_SWIPE_DIST;
+    sprite->x2 = sprite->data[2];
+    sprite->callback = AnimBackfist_Step;
 }
 
 static void AnimFistOrFootRandomPos(struct Sprite *sprite)

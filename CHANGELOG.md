@@ -19220,3 +19220,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - 23 bestaande item balls/verborgen items kregen een TM i.p.v. een gewoon item (zelfde flag: wie dat item al pakte, krijgt de TM daar niet meer). Mustard geeft TM73 ook als je hem al versloeg.
 - TM-tas vergroot naar 100 plekken (nieuwe pocket achteraan SaveBlock1, oude saves verhuizen hun TM's bij het laden).
 - Compatibiliteit uit alle games; Rolling Thunder: soorten die High Jump Kick, Jump Kick, Blaze Kick of Rolling Kick leren + Tyrogue-lijn en Sawk (43 soorten). Skarmory Baton Pass, Dusknoir Knock Off.
+- **TM50 is nu Flare Blitz** (was Overheat; Fire had vier speciale TM's en geen fysieke). Flannery geeft hem nog steeds, met een nieuwe uitlegtekst ("You set yourself on fire and run straight at the problem."). Wie Overheat al kent, houdt hem.

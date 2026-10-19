@@ -79,7 +79,7 @@ LavaridgeTown_Gym_1F_EventScript_FlanneryDefeated::
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
-	giveitem ITEM_TM_OVERHEAT
+	giveitem ITEM_TM_FLARE_BLITZ
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_ShowBagIsFull
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_OVERHEAT
@@ -87,7 +87,7 @@ LavaridgeTown_Gym_1F_EventScript_GiveOverheat2::
 	end
 
 LavaridgeTown_Gym_1F_EventScript_GiveOverheat::
-	giveitem ITEM_TM_OVERHEAT
+	giveitem ITEM_TM_FLARE_BLITZ
 	goto_if_eq VAR_RESULT, FALSE, Common_EventScript_BagIsFull
 	msgbox LavaridgeTown_Gym_1F_Text_ExplainOverheat, MSGBOX_DEFAULT
 	setflag FLAG_RECEIVED_TM_OVERHEAT
@@ -402,13 +402,11 @@ LavaridgeTown_Gym_1F_Text_ExplainHeatBadgeTakeThis:
 	.string "Don't be shy about taking it!$"
 
 LavaridgeTown_Gym_1F_Text_ExplainOverheat:
-	.string "That TM50 contains OVERHEAT.\p"
-	.string "It inflicts serious damage, but it\n"
-	.string "sharply cuts your SP. ATK.\p"
-	.string "It’s like my WiFi router... it works\n"
-	.string "great for five minutes, then it\l"
-	.string "overheats and I have to go back to\l"
-	.string "staring at the fire. It’s a sign!$"
+	.string "That TM50 contains FLARE BLITZ.\p"
+	.string "You set yourself on fire and run\n"
+	.string "straight at the problem.\p"
+	.string "It hurts you too. That's how you\n"
+	.string "know it's working. It's a sign!$"
 
 LavaridgeTown_Gym_1F_Text_RegisteredFlannery:
 	.string "Registered GYM LEADER FLANNERY in the\n"

@@ -51,7 +51,7 @@
     F(FLASH_CANNON) \
     F(DARK_PULSE) \
     F(PLAY_ROUGH) \
-    F(OVERHEAT) \
+    F(FLARE_BLITZ) /* Project Grounded: TM50, was Overheat (Flannery) */ \
     F(SELTZER_SURGE) /* Project Grounded: TM51, Team Aqua's bruiswater */ \
     F(LAGER_LAGOON) /* Project Grounded: TM52, bier-Surf */ \
     F(VINTAGE_SPILL) /* Project Grounded: TM53, wijn; beloning van de laatste gym */ \

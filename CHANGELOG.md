@@ -19186,3 +19186,4 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Solstice Gate** (Stonjourner, lv 36): Rock 100/90, raakt beide tegenstanders, 1,5× in zon of sneeuw.
 - **Rev Up** (Revavroom, bij evolutie): Steel 40, +1 prioriteit, daarna +1 Speed en +1 Attack.
 - Tests: `signature_moves_4.c`.
+- **Wally (Meteor Falls)**: Darmanitan, Arctibax, Primeape en Gallade (was Darumaka/Frigibax/Mankey/Kirlia op lv 39–41; Jordi). **Ditto-trainer**: Tinkaton (was Tinkatuff @ Eviolite) met Gigaton Hammer.

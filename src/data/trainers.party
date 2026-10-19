@@ -27407,9 +27407,9 @@ Double Battle: No
 AI: AI_FLAG_ACE_POKEMON
 Mugshot: Purple
 
-Darumaka
+Darmanitan
 Level: 39
-Ability: Hustle
+Ability: Sheer Force
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Fire Fang
 - Headbutt
@@ -27425,7 +27425,7 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Tickle
 - Curse
 
-Frigibax
+Arctibax
 Level: 39
 Ability: Thermal Exchange
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
@@ -27443,13 +27443,14 @@ IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
 - Vacuum Wave
 - Seismic Toss
 
-Kirlia @ Oran Berry
+Gallade @ Oran Berry
 Level: 41
+Ability: Sharpness
 IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Calm Mind
-- Confusion
-- Magical Leaf
-- Draining Kiss
+- Psycho Cut
+- Leaf Blade
+- Night Slash
+- Swords Dance
 
 === TRAINER_TABITHA_MT_CHIMNEY_TAG ===
 Name: TABITHA
@@ -34296,7 +34297,7 @@ Nature: Impish
 - Body Slam
 - Seed Bomb
 
-Tinkatuff @ Eviolite
+Tinkaton
 Level: 37
 Ability: Mold Breaker
 Nature: Jolly
@@ -34322,7 +34323,6 @@ Nature: Careful
 - Body Slam
 - Seed Bomb
 - Rest
-
 
 === TRAINER_VICTORY_VANCE ===
 Name: VANCE

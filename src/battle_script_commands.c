@@ -1501,8 +1501,23 @@ static void AccuracyCheck(bool32 recalcDragonDarts, const u8 *nextInstr, const u
 
             numTargets++;
             enum Ability abilityDef = GetBattlerAbility(battlerDef);
-            if (JumpIfMoveAffectedByProtect(move, battlerDef, FALSE, failInstr)
-             || CanMoveSkipAccuracyCalc(gBattlerAttacker, battlerDef, abilityAtk, abilityDef, move, RUN_SCRIPT))
+            if (JumpIfMoveAffectedByProtect(move, battlerDef, FALSE, failInstr))
+                continue;
+
+            // Project Grounded: Totem Gaze. Xatu zag deze aanval aankomen: hij mist, ook als hij anders altijd raakt.
+            if (gBattleMons[battlerDef].volatiles.totemGaze
+             && battlerDef != gBattlerAttacker
+             && !IsBattleMoveStatus(move)
+             && IsBattlerAlive(battlerDef))
+            {
+                gBattleMons[battlerDef].volatiles.totemGaze = FALSE;
+                gBattleStruct->moveResultFlags[battlerDef] = MOVE_RESULT_MISSED;
+                gBattleStruct->missStringId[battlerDef] = gBattleCommunication[MISS_TYPE] = B_MSG_TOTEM_GAZE;
+                numMisses++;
+                continue;
+            }
+
+            if (CanMoveSkipAccuracyCalc(gBattlerAttacker, battlerDef, abilityAtk, abilityDef, move, RUN_SCRIPT))
                 continue;
 
             u32 holdEffectDef = GetBattlerHoldEffect(battlerDef);
@@ -2990,6 +3005,7 @@ static inline bool32 TrySetReflect(u32 battler)
     if (!(gSideStatuses[side] & SIDE_STATUS_REFLECT))
     {
         gSideStatuses[side] |= SIDE_STATUS_REFLECT;
+        gBattleStruct->bubbleDomeSides &= ~(1u << side); // Project Grounded: Bubble Dome zet de bit daarna zelf
         if (GetBattlerHoldEffect(battler) == HOLD_EFFECT_LIGHT_CLAY)
             gSideTimers[side].reflectTimer = 8;
         else
@@ -3011,6 +3027,7 @@ static inline bool32 TrySetLightScreen(u32 battler)
     if (!(gSideStatuses[side] & SIDE_STATUS_LIGHTSCREEN))
     {
         gSideStatuses[side] |= SIDE_STATUS_LIGHTSCREEN;
+        gBattleStruct->bubbleDomeSides &= ~(1u << side); // Project Grounded: Bubble Dome zet de bit daarna zelf
         if (GetBattlerHoldEffect(battler) == HOLD_EFFECT_LIGHT_CLAY)
             gSideTimers[side].lightscreenTimer = 8;
         else
@@ -6211,6 +6228,19 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
             effect = TRUE;
         }
         break;
+    case EFFECT_ROLLOUT: // Project Grounded: Tusk Tumble ruimt hazards op, de eerste klap legt Spikes
+        if (gCurrentMove == MOVE_TUSK_TUMBLE
+         && IsBattlerTurnDamaged(gBattlerTarget)
+         && IsBattlerAlive(gBattlerAttacker))
+        {
+            if (gDisableStructs[gBattlerAttacker].rolloutTimer == gDisableStructs[gBattlerAttacker].rolloutTimerStartValue - 1
+             && !gBattleStruct->isSkyBattle)
+                BattleScriptCall(BattleScript_TuskTumbleSpikes);
+            else
+                BattleScriptCall(BattleScript_TuskTumbleEffects);
+            effect = TRUE;
+        }
+        break;
     case EFFECT_FELL_STINGER:
         if (IsBattlerAlive(gBattlerAttacker)
          && !IsBattlerAlive(gBattlerTarget)
@@ -6261,6 +6291,29 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
     }
 
     return effect;
+}
+
+// Project Grounded: Bubble Dome. Raakt een snijdende move een kant met de koepel, dan knappen beide schermen.
+static bool32 TryPopBubbleDome(void)
+{
+    u32 battler;
+    for (battler = 0; battler < gBattlersCount; battler++)
+    {
+        u32 side = GetBattlerSide(battler);
+        if (battler == gBattlerAttacker
+         || !(gBattleStruct->bubbleDomeSides & (1u << side))
+         || !IsBattlerTurnDamaged(battler))
+            continue;
+        gBattleStruct->bubbleDomeSides &= ~(1u << side);
+        if (!(gSideStatuses[side] & (SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN)))
+            continue;
+        gSideStatuses[side] &= ~(SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN);
+        gSideTimers[side].reflectTimer = 0;
+        gSideTimers[side].lightscreenTimer = 0;
+        BattleScriptCall(BattleScript_BubbleDomePopped);
+        return TRUE;
+    }
+    return FALSE;
 }
 
 static void Cmd_moveend(void)
@@ -6886,6 +6939,14 @@ static void Cmd_moveend(void)
                 gBattleWeather &= ~B_WEATHER_POLLEN_HAZE;
                 gWishFutureKnock.weatherDuration = 0;
                 BattleScriptCall(BattleScript_PollenHazeBlownAway);
+                effect = TRUE;
+                break;
+            }
+            // Project Grounded: een snijdende move prikt de Bubble Dome (Reflect + Light Screen) door
+            if (IsSlicingMove(gCurrentMove)
+             && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+             && TryPopBubbleDome())
+            {
                 effect = TRUE;
                 break;
             }
@@ -12672,7 +12733,14 @@ static void Cmd_recoverbasedonsunlight(void)
     if (gBattleMons[gBattlerAttacker].hp != gBattleMons[gBattlerAttacker].maxHP)
     {
         s32 recoverAmount = 0;
-        if (GetMoveEffect(gCurrentMove) == EFFECT_SHORE_UP)
+        if (GetMoveEffect(gCurrentMove) == EFFECT_OLIVE_OIL) // Project Grounded: Arboliva, 2/3 in Pollen Haze
+        {
+            if (HasWeatherEffect() && gBattleWeather & B_WEATHER_POLLEN_HAZE)
+                recoverAmount = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
+            else
+                recoverAmount = GetNonDynamaxMaxHP(gBattlerAttacker) / 2;
+        }
+        else if (GetMoveEffect(gCurrentMove) == EFFECT_SHORE_UP)
         {
             if (HasWeatherEffect() && gBattleWeather & B_WEATHER_SANDSTORM)
                 recoverAmount = 20 * GetNonDynamaxMaxHP(gBattlerAttacker) / 30;
@@ -15520,6 +15588,7 @@ void BS_SetTerrain(void)
         }
         break;
     case EFFECT_GRASSY_TERRAIN:
+    case EFFECT_OLIVE_OIL: // Project Grounded
         if (!(gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN))
         {
             statusFlag = STATUS_FIELD_GRASSY_TERRAIN;
@@ -19033,4 +19102,59 @@ void BS_BeaverDamFloodNext(void)
     }
     gBattleScripting.battler = sBeaverDamOwner;
     gBattlescriptCurrInstr = cmd->endInstr;
+}
+
+// Project Grounded: Bubble Dome (Araquanid). Reflect en Light Screen tegelijk; faalt voor andere soorten
+// en als beide schermen er al liggen.
+void BS_TrySetBubbleDome(void)
+{
+    NATIVE_ARGS(const u8 *failInstr);
+    u32 side = GetBattlerSide(gBattlerAttacker);
+    u32 species = gBattleMons[gBattlerAttacker].species;
+    bool32 reflect, lightScreen;
+
+    if (species != SPECIES_ARAQUANID && species != SPECIES_ARAQUANID_TOTEM)
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+        return;
+    }
+    reflect = TrySetReflect(gBattlerAttacker);
+    lightScreen = TrySetLightScreen(gBattlerAttacker);
+    if (!reflect && !lightScreen)
+    {
+        gBattlescriptCurrInstr = cmd->failInstr;
+        return;
+    }
+    gBattleStruct->bubbleDomeSides |= 1u << side;
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: The Old Days (Drampa). Springt als het doelwit niet slaperig kan worden (zoals Yawn).
+void BS_JumpIfCantBeDrowsy(void)
+{
+    NATIVE_ARGS(const u8 *jumpInstr);
+    enum Ability abilityDef = GetBattlerAbility(gBattlerTarget);
+    enum HoldEffect holdEffectDef = GetBattlerHoldEffect(gBattlerTarget);
+
+    if (gBattleMons[gBattlerTarget].volatiles.yawn
+     || gBattleMons[gBattlerTarget].status1 & STATUS1_ANY
+     || !IsBattlerAlive(gBattlerTarget)
+     || DoesSubstituteBlockMove(gBattlerAttacker, gBattlerTarget, gCurrentMove)
+     || IsBattlerTerrainAffected(gBattlerTarget, abilityDef, holdEffectDef, STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_MISTY_TERRAIN)
+     || !CanBeSlept(gBattlerAttacker, gBattlerTarget, abilityDef, BLOCKED_BY_SLEEP_CLAUSE))
+        gBattlescriptCurrInstr = cmd->jumpInstr;
+    else
+        gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
+// Project Grounded: Olive Oil (Arboliva). Faalt alleen als er niets te helen én geen terrein te zetten is.
+void BS_JumpIfOliveOilFails(void)
+{
+    NATIVE_ARGS(const u8 *jumpInstr);
+
+    if (gBattleMons[gBattlerAttacker].hp == gBattleMons[gBattlerAttacker].maxHP
+     && ((gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN) || gBattleStruct->isSkyBattle))
+        gBattlescriptCurrInstr = cmd->jumpInstr;
+    else
+        gBattlescriptCurrInstr = cmd->nextInstr;
 }

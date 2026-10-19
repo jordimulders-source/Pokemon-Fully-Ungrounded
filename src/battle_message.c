@@ -330,6 +330,11 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_BEAVERDAMBREAK]                       = COMPOUND_STRING("With no one to keep it up,\n{B_SCR_NAME_WITH_PREFIX2}'s dam burst!"),
     [STRINGID_KELPSHROUD]                           = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} was shrouded\nin ghostly kelp!"),
     [STRINGID_KELPTIGHTEN]                          = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is wrapped\neven tighter in kelp!"),
+    [STRINGID_TOTEMGAZEREADY]                       = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} stared into\nthe future. It didn't blink."),
+    [STRINGID_TOTEMGAZEDODGE]                       = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} saw it coming!"),
+    [STRINGID_BUBBLEDOME]                           = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} blew a dome\nof bubbles over {B_ATK_TEAM2} team!"),
+    [STRINGID_BUBBLEDOMEPOPPED]                     = COMPOUND_STRING("The Bubble Dome was sliced\nopen! Pop."),
+    [STRINGID_PKMNBEARHUGGED]                       = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is being hugged\ntightly! There is no escape."),
     [STRINGID_HOLEUP]                               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} ducked back\ninto its hole!"),
     [STRINGID_BEAVERDAMFLOOD]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} was swept\naway by the flood!"),
     [STRINGID_PKMNHYPHALSNARE]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} got tangled\nin {B_ATK_NAME_WITH_PREFIX2}'s hyphae! Gross!"),
@@ -1035,6 +1040,7 @@ const u16 gMissStringIds[] =
 {
     [B_MSG_MISSED]      = STRINGID_ATTACKMISSED,
     [B_MSG_PROTECTED]   = STRINGID_PKMNPROTECTEDITSELF,
+    [B_MSG_TOTEM_GAZE]  = STRINGID_TOTEMGAZEDODGE, // Project Grounded
     [B_MSG_AVOIDED_ATK] = STRINGID_PKMNAVOIDEDATTACK,
     [B_MSG_AVOIDED_DMG] = STRINGID_AVOIDEDDAMAGE,
     [B_MSG_GROUND_MISS] = STRINGID_PKMNMAKESGROUNDMISS
@@ -1183,6 +1189,7 @@ const u16 gWrappedStringIds[NUM_TRAPPING_MOVES] =
     [B_MSG_WRAPPED_MUMMY]       = STRINGID_PKMNMUMMYWRAPPED,       // MOVE_MUMMYS_CURSE (Project Grounded)
     [B_MSG_WRAPPED_STEEL_TRAP]  = STRINGID_PKMNINSTEELTRAP,        // MOVE_STEEL_TRAP (Project Grounded)
     [B_MSG_WRAPPED_HYPHAL_SNARE] = STRINGID_PKMNHYPHALSNARE,       // MOVE_HYPHAL_SNARE (Project Grounded)
+    [B_MSG_WRAPPED_BEAR_HUG]    = STRINGID_PKMNBEARHUGGED,         // MOVE_BEAR_HUG (Project Grounded)
 };
 
 const u16 gMistUsedStringIds[] =

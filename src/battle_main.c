@@ -6051,6 +6051,20 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, u32 move, u32 battler, enum Mo
         type3 = TYPE_MYSTERY;
     }
 
+    // Project Grounded: Afro Charge (Bouffalant) neemt het type van het terrein aan, zoals Terrain Pulse
+    if (move == MOVE_AFRO_CHARGE && state == MON_IN_BATTLE
+     && IsBattlerTerrainAffected(battler, ability, holdEffect, STATUS_FIELD_TERRAIN_ANY))
+    {
+        if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+            return TYPE_ELECTRIC;
+        else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
+            return TYPE_GRASS;
+        else if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
+            return TYPE_FAIRY;
+        else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
+            return TYPE_PSYCHIC;
+    }
+
     switch (moveEffect)
     {
     case EFFECT_ECLIPSE: // Project Grounded: fysiek = Rock (zon), speciaal = Psychic (maan)

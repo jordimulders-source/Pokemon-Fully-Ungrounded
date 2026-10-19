@@ -220,7 +220,8 @@ enum VolatileFlags
     F(VOLATILE_SWORD_OF_RUIN,               swordOfRuin,                   (u32, 1)) \
     F(VOLATILE_TABLETS_OF_RUIN,             tabletsOfRuin,                 (u32, 1)) \
     F(VOLATILE_BEADS_OF_RUIN,               beadsOfRuin,                   (u32, 1)) \
-    F(VOLATILE_PRIMEVAL_WARD,               primevalWard,                  (u32, 1)) /* Project Grounded: Relicanth */
+    F(VOLATILE_PRIMEVAL_WARD,               primevalWard,                  (u32, 1)) /* Project Grounded: Relicanth */ \
+    F(VOLATILE_TOTEM_GAZE,                  totemGaze,                     (u32, 1)) /* Project Grounded: Xatu */
 
 
 /* Use within a macro to get the maximum allowed value for a volatile. Requires _typeMaxValue as input. */

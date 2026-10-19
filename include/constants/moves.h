@@ -951,7 +951,16 @@
 #define MOVE_IPPON 887 // Project Grounded: Throh
 #define MOVE_FLYTRAP 888 // Project Grounded: Carnivine
 #define MOVE_COLOSSAL_CLAW 889 // Project Grounded: Kingler
-#define MOVES_COUNT_GEN9 890
+
+#define MOVE_TOTEM_GAZE 902 // Project Grounded: Xatu
+#define MOVE_TUSK_TUMBLE 903 // Project Grounded: Donphan
+#define MOVE_AFRO_CHARGE 904 // Project Grounded: Bouffalant
+#define MOVE_BUBBLE_DOME 905 // Project Grounded: Araquanid
+#define MOVE_THE_OLD_DAYS 906 // Project Grounded: Drampa
+#define MOVE_BEAR_HUG 907 // Project Grounded: Bewear
+#define MOVE_FACE_OFF 908 // Project Grounded: Eiscue
+#define MOVE_OLIVE_OIL 909 // Project Grounded: Arboliva
+#define MOVES_COUNT_GEN9 910
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

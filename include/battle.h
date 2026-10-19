@@ -785,6 +785,7 @@ struct BattleStruct
     u8 nineLivesArmed[NUM_BATTLE_SIDES]; // Project Grounded: Nine Lives, bitmasker per teamlid
     u8 nineLivesUsed[NUM_BATTLE_SIDES];
     u8 nineLivesTriggered; // bitmasker per battler, voor het bericht
+    u8 bubbleDomeSides; // Project Grounded: Bubble Dome, bit per kant waarvan de schermen van Bubble Dome komen
 };
 
 struct AiBattleData

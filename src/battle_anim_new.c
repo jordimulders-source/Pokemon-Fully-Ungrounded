@@ -10131,6 +10131,115 @@ const struct SpriteTemplate gTipsyDuckSpriteTemplate =
     .callback = AnimTipsyDuck,
 };
 
+// Project Grounded: Totem Gaze - ogen die als een totempaal naast Xatu omhoog schuiven en opengaan.
+// arg0: x-offset, arg1: y-offset (t.o.v. het midden van de aanvaller), arg2: frames open blijven
+static const union AnimCmd sAnim_TotemEyeOpen[] =
+{
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_FRAME(16, 4),
+    ANIMCMD_FRAME(32, 4),
+    ANIMCMD_FRAME(48, 8),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd sAnim_TotemEyeClose[] =
+{
+    ANIMCMD_FRAME(32, 3),
+    ANIMCMD_FRAME(16, 3),
+    ANIMCMD_FRAME(0, 4),
+    ANIMCMD_END,
+};
+
+static const union AnimCmd *const sAnims_TotemEye[] =
+{
+    sAnim_TotemEyeOpen,
+    sAnim_TotemEyeClose,
+};
+
+#define tEyeState data[0]
+#define tEyeTimer data[1]
+static void AnimTotemEye_Step(struct Sprite *sprite)
+{
+    switch (sprite->tEyeState)
+    {
+    case 0: // omhoog schuiven, als een nieuw blok op de paal
+        sprite->y2 -= 2;
+        if (sprite->y2 <= 0)
+        {
+            sprite->y2 = 0;
+            sprite->tEyeState++;
+        }
+        break;
+    case 1: // open blijven
+        if (--sprite->tEyeTimer <= 0)
+        {
+            StartSpriteAnim(sprite, 1);
+            sprite->tEyeState++;
+        }
+        break;
+    case 2:
+        if (sprite->animEnded)
+            DestroyAnimSprite(sprite);
+        break;
+    }
+}
+
+static void AnimTotemEye(struct Sprite *sprite)
+{
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_X_2) + gBattleAnimArgs[0];
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimAttacker, BATTLER_COORD_Y_PIC_OFFSET) + gBattleAnimArgs[1];
+    if (IsOnPlayerSide(gBattleAnimAttacker))
+        sprite->y -= 22; // anders valt de onderkant van de paal achter het tekstvak
+    sprite->y2 = 12;
+    sprite->tEyeState = 0;
+    sprite->tEyeTimer = gBattleAnimArgs[2];
+    sprite->callback = AnimTotemEye_Step;
+}
+#undef tEyeState
+#undef tEyeTimer
+
+const struct SpriteTemplate gTotemGazeEyeSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_OPENING_EYE,
+    .paletteTag = ANIM_TAG_OPENING_EYE,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = sAnims_TotemEye,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimTotemEye,
+};
+
+// Project Grounded: The Old Days - een Z die knikkebollend boven het doelwit opstijgt.
+// arg0: x-offset, arg1: y-offset (t.o.v. het hoofd van het doelwit), arg2: duur (frames)
+static void AnimOldDaysZ_Step(struct Sprite *sprite)
+{
+    sprite->data[0]++;
+    sprite->x2 = Sin((sprite->data[0] * 8) & 0xFF, 6);
+    sprite->y2 = -(sprite->data[0] / 2);
+    if (sprite->data[0] >= sprite->data[1])
+        DestroyAnimSprite(sprite);
+}
+
+static void AnimOldDaysZ(struct Sprite *sprite)
+{
+    sprite->x = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2) + gBattleAnimArgs[0];
+    sprite->y = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET) - 8 + gBattleAnimArgs[1];
+    sprite->data[0] = 0;
+    sprite->data[1] = gBattleAnimArgs[2];
+    sprite->callback = AnimOldDaysZ_Step;
+}
+
+const struct SpriteTemplate gOldDaysZSpriteTemplate =
+{
+    .tileTag = ANIM_TAG_LETTER_Z,
+    .paletteTag = ANIM_TAG_LETTER_Z,
+    .oam = &gOamData_AffineOff_ObjNormal_32x32,
+    .anims = gDummySpriteAnimTable,
+    .images = NULL,
+    .affineAnims = gDummySpriteAffineAnimTable,
+    .callback = AnimOldDaysZ,
+};
+
 // Project Grounded: Beaver Dam - stammen (Wood Hammer) en takken (Branch Poke) vormen een dam voor
 // de aanvaller. arg0/arg1: eindpositie t.o.v. de aanvaller, arg2/arg3: startoffset (schuift naar 0),
 // arg4: aantal stappen (deelt arg2/arg3 precies), arg5: frames blijven staan, arg6: draaiing (affine),

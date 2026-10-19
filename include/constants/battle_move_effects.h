@@ -371,6 +371,10 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_NINE_LIVES, // Project Grounded: één keer per gevecht een KO overleven
     EFFECT_TWIN_LANCE, // Project Grounded: vergif per klap, al vergiftigd wordt badly poisoned
     EFFECT_FLYTRAP, // Project Grounded: drain, dubbele kracht tegen Bug/Flying
+    EFFECT_TOTEM_GAZE, // Project Grounded: na de klap mist de volgende schadelijke move tegen de gebruiker
+    EFFECT_BUBBLE_DOME, // Project Grounded: Reflect + Light Screen (alleen Araquanid), breekt door snijdende moves
+    EFFECT_THE_OLD_DAYS, // Project Grounded: Yawn op het doelwit, +1 Sp. Atk voor de gebruiker
+    EFFECT_OLIVE_OIL, // Project Grounded: heelt 1/2 (Pollen Haze 2/3) en zet Grassy Terrain
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

@@ -61,7 +61,8 @@ SINGLE_BATTLE_TEST("Twin Lance turns regular poison into bad poison")
     PARAMETRIZE { effect = TRUE; }
     GIVEN {
         PLAYER(SPECIES_BEEDRILL);
-        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); }
+        // Veel HP: twee super-effectieve klappen + gifschade waren een KO (en flauwvallen wist de status)
+        OPPONENT(SPECIES_WOBBUFFET) { Status1(STATUS1_POISON); MaxHP(999); HP(999); }
     } WHEN {
         TURN { MOVE(player, MOVE_TWIN_LANCE, WITH_RNG(RNG_SECONDARY_EFFECT, effect)); }
     } THEN {

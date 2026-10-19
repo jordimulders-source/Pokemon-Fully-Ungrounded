@@ -34,7 +34,7 @@ TEST("Project Grounded signature moves round 4 have the agreed data")
 SINGLE_BATTLE_TEST("Eye Spots lowers Attack by 2 and Speed by 1")
 {
     GIVEN {
-        PLAYER(SPECIES_MASQUERAIN);
+        PLAYER(SPECIES_MASQUERAIN) { Ability(ABILITY_UNNERVE); } // niet Intimidate: die verlaagt Attack al
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
         TURN { MOVE(player, MOVE_EYE_SPOTS); }
@@ -50,7 +50,7 @@ SINGLE_BATTLE_TEST("Eye Spots lowers Attack by 2 and Speed by 1")
 SINGLE_BATTLE_TEST("Eye Spots also confuses in Pollen Haze")
 {
     GIVEN {
-        PLAYER(SPECIES_MASQUERAIN) { Speed(1); }
+        PLAYER(SPECIES_MASQUERAIN) { Speed(1); Ability(ABILITY_UNNERVE); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(100); }
     } WHEN {
         TURN { MOVE(opponent, MOVE_POLLEN_HAZE); MOVE(player, MOVE_EYE_SPOTS); }
@@ -72,8 +72,9 @@ SINGLE_BATTLE_TEST("Omen Strike doubles in power against a status move or a swit
     PARAMETRIZE { type = 2; }
     GIVEN {
         PLAYER(SPECIES_ABSOL) { Speed(100); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); }
+        // Veel HP: de verdubbelde klap is anders een KO en dan komt TURN 1 niet rond
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); Defense(10); MaxHP(9999); HP(9999); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(1); Defense(10); MaxHP(9999); HP(9999); }
     } WHEN {
         if (type == 0)
             TURN { MOVE(opponent, MOVE_SCRATCH); MOVE(player, MOVE_OMEN_STRIKE, criticalHit: FALSE); }
@@ -85,8 +86,12 @@ SINGLE_BATTLE_TEST("Omen Strike doubles in power against a status move or a swit
         ANIMATION(ANIM_TYPE_MOVE, MOVE_OMEN_STRIKE, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(2.0), results[1].damage);
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(2.0), results[2].damage);
+        // Relatieve marge (1%): EXPECT_MUL_EQ heeft een vaste marge van ±2, maar de vaste +2 in de
+        // schadeformule wordt niet mee vermenigvuldigd, waardoor x2 op de schade een paar punten afwijkt.
+        EXPECT_GE(results[1].damage * 100, results[0].damage * 198);
+        EXPECT_LE(results[1].damage * 100, results[0].damage * 202);
+        EXPECT_GE(results[2].damage * 100, results[0].damage * 198);
+        EXPECT_LE(results[2].damage * 100, results[0].damage * 202);
     }
 }
 
@@ -203,15 +208,20 @@ SINGLE_BATTLE_TEST("Solstice Gate is boosted in sun and snow", s16 damage)
     PARAMETRIZE { move = MOVE_SNOWSCAPE; }
     GIVEN {
         PLAYER(SPECIES_STONJOURNER) { Speed(1); }
-        OPPONENT(SPECIES_WOBBUFFET) { Speed(100); }
+        // Grote schade voor een nauwkeurige verhouding
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(100); Defense(10); MaxHP(9999); HP(9999); }
     } WHEN {
         TURN { MOVE(opponent, move); MOVE(player, MOVE_SOLSTICE_GATE, hit: TRUE, criticalHit: FALSE); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_SOLSTICE_GATE, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.5), results[1].damage);
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(1.5), results[2].damage);
+        // Relatieve marge (1%): EXPECT_MUL_EQ heeft een vaste marge van ±2, maar de vaste +2 in de
+        // schadeformule wordt niet mee vermenigvuldigd, waardoor x1,5 op de schade een paar punten afwijkt.
+        EXPECT_GE(results[1].damage * 200, results[0].damage * 297);
+        EXPECT_LE(results[1].damage * 200, results[0].damage * 303);
+        EXPECT_GE(results[2].damage * 200, results[0].damage * 297);
+        EXPECT_LE(results[2].damage * 200, results[0].damage * 303);
     }
 }
 

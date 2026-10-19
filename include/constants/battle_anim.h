@@ -602,7 +602,8 @@
 #define B_ANIM_POLLEN_HAZE_CONTINUES    57 // Project Grounded
 #define B_ANIM_BEAVER_DAM_BREAK         58 // Project Grounded
 #define B_ANIM_MOAI_CRUMBLE             59 // Project Grounded
-#define NUM_B_ANIMS_GENERAL             60
+#define B_ANIM_SUPER_SPLASH_HIT         60 // Project Grounded
+#define NUM_B_ANIMS_GENERAL             61
 
 // special animations table (sBattleAnims_Special)
 #define B_ANIM_LVL_UP                   0

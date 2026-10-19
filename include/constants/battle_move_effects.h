@@ -392,6 +392,7 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_DIM_MAK, // Project Grounded: negeert Defense-boosts, werkt niet op Unaware
     EFFECT_UPDRAFT, // Project Grounded: x1,5 met Tailwind aan de eigen kant
     EFFECT_BRAMBLE_LASH, // Project Grounded: legt doornen (hazard, 1/16) bij het doelwit
+    EFFECT_OVERKILL, // Project Grounded: overtollige KO-schade blijft liggen voor de volgende die binnenkomt
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

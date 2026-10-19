@@ -2555,6 +2555,9 @@ static void MoveDamageDataHpUpdate(u32 battler, u32 scriptBattler, const u8 *nex
             }
             else
             {
+                // Project Grounded: Overkill bewaart wat er over is na het flauwvallen
+                if (gCurrentMove == MOVE_OVERKILL && scriptBattler == BS_TARGET)
+                    TryStoreOverkillDamage(battler, gBattleStruct->moveDamage[battler] - gBattleMons[battler].hp);
                 gBattleStruct->moveDamage[battler] = gBattleMons[battler].hp;
                 gBattleMons[battler].hp = 0;
             }
@@ -8431,6 +8434,16 @@ void TryHazardsOnSwitchIn(u32 battler, u32 side, enum Hazards hazardType)
                 SetDmgHazardsBattlescript(battler, B_MSG_MOAIWATCHDMG);
         }
         break;
+    case HAZARDS_OVERKILL: // Project Grounded: eenmalig; Boots en Magic Guard laten hem liggen
+        if (IsBattlerAffectedByHazards(battler, FALSE) && GetBattlerAbility(battler) != ABILITY_MAGIC_GUARD)
+        {
+            gBattleStruct->passiveHpUpdate[battler] = GetOverkillHazardDamage(side, gBattleMons[battler].maxHP);
+            gBattleStruct->hazardsCounter--; // de wachtrij schuift op: de volgende hazard staat nu op deze plek
+            RemoveHazardFromField(side, HAZARDS_OVERKILL);
+            if (gBattleStruct->passiveHpUpdate[battler] != 0)
+                SetDmgHazardsBattlescript(battler, B_MSG_OVERKILLDMG);
+        }
+        break;
     case HAZARDS_MAX_COUNT:
         break;
     }
@@ -10133,6 +10146,7 @@ void BS_CourtChangeSwapSideStatuses(void)
     SWAP(sideTimerPlayer->spikesAmount, sideTimerOpp->spikesAmount, temp);
     SWAP(sideTimerPlayer->toxicSpikesAmount, sideTimerOpp->toxicSpikesAmount, temp);
     SWAP(sideTimerPlayer->moaiWatchAmount, sideTimerOpp->moaiWatchAmount, temp); // Project Grounded
+    SWAP(sideTimerPlayer->overkillDamage, sideTimerOpp->overkillDamage, temp); // Project Grounded
 
     // Change battler IDs of swapped effects. Needed for the correct string when they expire
     UPDATE_COURTCHANGED_BATTLER(stickyWebBattlerId);
@@ -13003,7 +13017,12 @@ static void Cmd_setfutureattack(void)
     gWishFutureKnock.futureSightPartyIndex[gBattlerTarget] = gBattlerPartyIndexes[gBattlerAttacker];
     gWishFutureKnock.futureSightCounter[gBattlerTarget] = 3;
 
-    if (gCurrentMove == MOVE_DOOM_DESIRE)
+    if (gCurrentMove == MOVE_SUPER_SPLASH) // Project Grounded: de tsunami komt al aan het eind van de volgende beurt
+    {
+        gWishFutureKnock.futureSightCounter[gBattlerTarget] = 2;
+        gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SUPER_SPLASH;
+    }
+    else if (gCurrentMove == MOVE_DOOM_DESIRE)
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
     else
         gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
@@ -18869,6 +18888,19 @@ static u32 FungalControl_AutoPick(u32 battler)
         }
     }
     return best;
+}
+
+// Project Grounded: Overkill, alleen een melding als er deze klap schade is blijven liggen.
+void BS_JumpIfOverkillNotStored(void)
+{
+    NATIVE_ARGS(const u8 *jumpInstr);
+
+    if (gBattleMons[gBattlerTarget].hp == 0
+     && IsHazardOnSide(GetBattlerSide(gBattlerTarget), HAZARDS_OVERKILL)
+     && !(gBattleStruct->moveResultFlags[gBattlerTarget] & MOVE_RESULT_NO_EFFECT))
+        gBattlescriptCurrInstr = cmd->nextInstr;
+    else
+        gBattlescriptCurrInstr = cmd->jumpInstr;
 }
 
 void BS_TryFungalControl(void)

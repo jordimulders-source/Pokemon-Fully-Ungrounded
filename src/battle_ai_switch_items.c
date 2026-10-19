@@ -1593,6 +1593,9 @@ static u32 GetSwitchinHazardsDamage(u32 battler, struct BattlePokemon *battleMon
         // Project Grounded: Bramble Lash
         if (IsHazardOnSide(side, HAZARDS_BRAMBLES) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS)
             hazardDamage += max(1, maxHP / 16);
+        // Project Grounded: Overkill
+        if (IsHazardOnSide(side, HAZARDS_OVERKILL) && heldItemEffect != HOLD_EFFECT_HEAVY_DUTY_BOOTS)
+            hazardDamage += GetOverkillHazardDamage(side, battleMon->maxHP);
         // Spikes
         if (IsHazardOnSide(side, HAZARDS_SPIKES) && IsMonGrounded(heldItemEffect, ability, defType1, defType2))
         {

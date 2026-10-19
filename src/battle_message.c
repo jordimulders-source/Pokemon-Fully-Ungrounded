@@ -325,6 +325,10 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_MOAIWATCHDMG]                         = COMPOUND_STRING("The stone statues turned on\n{B_SCR_NAME_WITH_PREFIX2}!"),
     [STRINGID_MOAIDISAPPEARED]                      = COMPOUND_STRING("The stone statues around\n{B_ATK_TEAM2} team crumbled away!"),
     [STRINGID_PKMNBLEWAWAYMOAI]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} toppled\nthe stone statues!"),
+    [STRINGID_OVERKILLDMG]                          = COMPOUND_STRING("The leftover beating hit\n{B_SCR_NAME_WITH_PREFIX2}!"), // Project Grounded: Overkill
+    [STRINGID_OVERKILLDISAPPEARED]                  = COMPOUND_STRING("The leftover beating aimed at\n{B_ATK_TEAM2} team fizzled out!"), // Project Grounded: Overkill
+    [STRINGID_PKMNBLEWAWAYOVERKILL]                 = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} shook off\nthe leftover beating!"), // Project Grounded: Overkill
+    [STRINGID_OVERKILLSTORED]                       = COMPOUND_STRING("The leftover beating is waiting\nfor the next one in line…"), // Project Grounded: Overkill
     [STRINGID_LURELIGHTDAZZLED]                     = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} was dazzled\nby {B_DEF_NAME_WITH_PREFIX2}'s lure!"),
     [STRINGID_BEAVERDAMLAYER]                       = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} added a layer\nto its dam! ({B_BUFF1}/3)"),
     [STRINGID_BEAVERDAMBREAK]                       = COMPOUND_STRING("With no one to keep it up,\n{B_SCR_NAME_WITH_PREFIX2}'s dam burst!"),
@@ -356,6 +360,8 @@ const u8 *const gBattleStringsTable[STRINGID_COUNT] =
     [STRINGID_BUBBLEDOMEPOPPED]                     = COMPOUND_STRING("The Bubble Dome was sliced\nopen! Pop."),
     [STRINGID_PKMNBEARHUGGED]                       = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} is being hugged\ntightly! There is no escape."),
     [STRINGID_TWINTAILSSNATCH]                      = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} snatched\n{B_DEF_NAME_WITH_PREFIX2}'s\l{B_BUFF1} boost!"), // Project Grounded: Twin Tails
+    [STRINGID_SUPERSPLASHNOTHING]                   = COMPOUND_STRING("But nothing happened… yet!"), // Project Grounded: Super Splash
+    [STRINGID_SUPERSPLASHTSUNAMI]                   = COMPOUND_STRING("A tsunami crashed into\n{B_DEF_NAME_WITH_PREFIX2}!"), // Project Grounded: Super Splash
     [STRINGID_HOLEUP]                               = COMPOUND_STRING("{B_ATK_NAME_WITH_PREFIX} ducked back\ninto its hole!"),
     [STRINGID_BEAVERDAMFLOOD]                       = COMPOUND_STRING("{B_SCR_NAME_WITH_PREFIX} was swept\naway by the flood!"),
     [STRINGID_PKMNHYPHALSNARE]                      = COMPOUND_STRING("{B_DEF_NAME_WITH_PREFIX} got tangled\nin {B_ATK_NAME_WITH_PREFIX2}'s hyphae! Gross!"),
@@ -1036,6 +1042,7 @@ const u16 gDmgHazardsStringIds[] =
     [B_MSG_MOAIWATCHDMG]       = STRINGID_MOAIWATCHDMG, // Project Grounded
     [B_MSG_BRAMBLESDMG]        = STRINGID_BRAMBLESDMG, // Project Grounded
     [B_MSG_BRAMBLESSPRANG]     = STRINGID_BRAMBLESSPRANG, // Project Grounded
+    [B_MSG_OVERKILLDMG]        = STRINGID_OVERKILLDMG, // Project Grounded
 };
 
 const u16 gSwitchInAbilityStringIds[] =
@@ -1324,7 +1331,8 @@ const u16 gPartyStatusHealStringIds[] =
 const u16 gFutureMoveUsedStringIds[] =
 {
     [B_MSG_FUTURE_SIGHT] = STRINGID_PKMNFORESAWATTACK,
-    [B_MSG_DOOM_DESIRE]  = STRINGID_PKMNCHOSEXASDESTINY
+    [B_MSG_DOOM_DESIRE]  = STRINGID_PKMNCHOSEXASDESTINY,
+    [B_MSG_SUPER_SPLASH] = STRINGID_SUPERSPLASHNOTHING, // Project Grounded
 };
 
 const u16 gBallEscapeStringIds[] =
@@ -1465,6 +1473,7 @@ const u16 gDefogHazardsStringIds[] =
     [HAZARDS_STEELSURGE] = STRINGID_SHARPSTEELDISAPPEAREDFROMTEAM,
     [HAZARDS_MOAI_WATCH] = STRINGID_MOAIDISAPPEARED,
     [HAZARDS_BRAMBLES] = STRINGID_BRAMBLESDISAPPEARED, // Project Grounded
+    [HAZARDS_OVERKILL] = STRINGID_OVERKILLDISAPPEARED, // Project Grounded
 };
 
 const u16 gSpinHazardsStringIds[] =
@@ -1476,6 +1485,7 @@ const u16 gSpinHazardsStringIds[] =
     [HAZARDS_STEELSURGE] = STRINGID_PKMNBLEWAWAYSHARPSTEEL,
     [HAZARDS_MOAI_WATCH] = STRINGID_PKMNBLEWAWAYMOAI,
     [HAZARDS_BRAMBLES] = STRINGID_PKMNBLEWAWAYBRAMBLES, // Project Grounded
+    [HAZARDS_OVERKILL] = STRINGID_PKMNBLEWAWAYOVERKILL, // Project Grounded
 };
 
 const u8 gText_PkmnIsEvolving[] = _("What?\n{STR_VAR_1} is evolving!");

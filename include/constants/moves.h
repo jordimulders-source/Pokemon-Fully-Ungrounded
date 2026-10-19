@@ -988,7 +988,10 @@
 #define MOVE_COUNTERFEIT_BALL 924 // Project Grounded: TM
 #define MOVE_HOT_TAKE 925 // Project Grounded: Magby, Magmar, Magmortar
 #define MOVE_BRAMBLE_LASH 926 // Project Grounded: Bramblin, Brambleghast
-#define MOVES_COUNT_GEN9 927
+#define MOVE_SUPER_SPLASH 927 // Project Grounded: TM100, Splash maar dan echt
+#define MOVE_DISCO_INFERNO 928 // Project Grounded: TM99, dansende vuurtrappen
+#define MOVE_OVERKILL 929 // Project Grounded: overtollige schade blijft liggen voor de volgende
+#define MOVES_COUNT_GEN9 930
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

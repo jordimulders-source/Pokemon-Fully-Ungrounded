@@ -19235,3 +19235,9 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Aura Guard** (Riolu/Lucario, slot 2 i.p.v. Inner Focus): halveert schade van contact-moves; tegen Long Reach normale schade.
 - **Spicy Spray** (Capsakid/Scovillain, slot 2 i.p.v. Insomnia): elke schadelijke treffer van een tegenstander (ook speciaal, ook bij een KO, per klap van een multi-hit, ook als de aanvaller achter een Substitute zit) verbrandt de aanvaller; niet als Scovillain zelf achter een Substitute zit.
 - Trainers met de oude abilities omgezet (o.a. Maxie's Scovillain, Eelektross van May/Ghetsis/Jun/Wick, Lucario van de Stadium-teams van Maylene, Cynthia, Riley en Johnson), ook in battle partners, de rivaal-post-game en de Spire-elite "Terror Eel". Stadium-pool opnieuw gegenereerd. Tests: `abilities_2.c`.
+
+### Super Splash, Disco Inferno, Overkill (v1.0.0)
+- **Super Splash** (wordt TM100): Water fysiek 120, "Splash, EVOLVED." Bij gebruik "But nothing happened… yet!"; aan het eind van de volgende beurt "A tsunami crashed into …!" (Future Sight met 1 beurt vertraging, op Attack, niet stapelbaar). Animatie: Splash die steeds wilder wordt, een miezerig plonsje; bij de inslag een tsunami over het veld.
+- **Disco Inferno** (wordt TM99): Fire fysiek 85, dansmove (Dancer kopieert), 20% verwarring, 10% brand. Animatie: discolichten in wisselende kleuren, een dolle dans en drie vurige trappen.
+- **Overkill** (wordt TM45): Dark fysiek 90. Bij een KO blijft de overtollige schade liggen; de volgende Pokémon die binnenkomt krijgt hem ("The leftover beating hit …!", max. 50% HP, eenmalig). Boots en Magic Guard beschermen; Rapid Spin en Defog ruimen hem op. Animatie: donker veld, dubbele klap, paarse nagloed bij overtollige schade.
+- Tests: `signature_moves_10.c`.

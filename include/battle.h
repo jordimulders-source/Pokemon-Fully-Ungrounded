@@ -233,6 +233,7 @@ struct SideTimer
     u16 rainbowTimer;
     u16 seaOfFireTimer;
     u16 swampTimer;
+    u16 overkillDamage; // Project Grounded: opgespaarde schade van Overkill voor de volgende die binnenkomt
 };
 
 struct FieldTimer

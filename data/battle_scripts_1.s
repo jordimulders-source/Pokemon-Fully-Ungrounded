@@ -2488,6 +2488,22 @@ BattleScript_MoveEnd::
 	moveendall
 	end
 
+@ Project Grounded: Overkill. Gewone klap; valt het doelwit flauw, dan blijft de overtollige schade liggen
+@ (opgeslagen in datahpupdate) en wordt dat gemeld.
+BattleScript_EffectOverkill::
+	attackcanceler
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	critcalc
+	damagecalc
+	adjustdamage
+	call BattleScript_Hit_RetFromAtkAnimation
+	tryfaintmon BS_TARGET
+	callnative BS_JumpIfOverkillNotStored
+	.4byte BattleScript_MoveEnd
+	printstring STRINGID_OVERKILLSTORED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
 BattleScript_EffectHit_Ret::
 	attackcanceler
 BattleScript_EffectHit_RetFromAccCheck::
@@ -5835,6 +5851,7 @@ BattleScript_DefogClearHazards::
 	return
 
 BattleScript_MonTookFutureAttack::
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_SUPER_SPLASH, BattleScript_SuperSplashTsunami
 	printstring STRINGID_PKMNTOOKATTACK
 	waitmessage B_WAIT_TIME_LONG
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_FUTURE_SIGHT, BattleScript_CheckDoomDesireMiss
@@ -5847,8 +5864,12 @@ BattleScript_FutureAttackAnimate::
 	damagecalc
 	adjustdamage
 	jumpifmovehadnoeffect BattleScript_DoFutureAttackResult
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_SUPER_SPLASH, BattleScript_FutureHitAnimSuperSplash
 	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, B_MSG_FUTURE_SIGHT, BattleScript_FutureHitAnimDoomDesire
 	playanimation BS_ATTACKER, B_ANIM_FUTURE_SIGHT_HIT
+	goto BattleScript_DoFutureAttackHit
+BattleScript_FutureHitAnimSuperSplash::
+	playanimation BS_ATTACKER, B_ANIM_SUPER_SPLASH_HIT
 	goto BattleScript_DoFutureAttackHit
 BattleScript_FutureHitAnimDoomDesire::
 	playanimation BS_ATTACKER, B_ANIM_DOOM_DESIRE_HIT
@@ -5873,6 +5894,12 @@ BattleScript_FutureAttackEnd::
 	moveendcase MOVEEND_ITEM_EFFECTS_TARGET
 	moveendfromto MOVEEND_SYMBIOSIS, MOVEEND_UPDATE_LAST_MOVES
 	goto BattleScript_FutureAttackClearResults
+@ Project Grounded: Super Splash, de tsunami van de vorige beurt slaat in.
+BattleScript_SuperSplashTsunami::
+	printstring STRINGID_SUPERSPLASHTSUNAMI
+	waitmessage B_WAIT_TIME_LONG
+	accuracycheck BattleScript_FutureAttackMiss, MOVE_SUPER_SPLASH
+	goto BattleScript_FutureAttackAnimate
 BattleScript_FutureAttackMiss::
 	pause B_WAIT_TIME_SHORT
 	setmoveresultflags MOVE_RESULT_FAILED

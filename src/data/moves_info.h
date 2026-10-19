@@ -23294,6 +23294,82 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_PowerWhip,
     },
 
+    [MOVE_SUPER_SPLASH] = // Project Grounded: TM100, Splash maar dan echt (vertraagde tsunami, zoals Future Sight)
+    {
+        .name = COMPOUND_STRING("Super Splash"),
+        .description = COMPOUND_STRING(
+            "Splash, EVOLVED.\n"
+            "A tsunami hits next turn."),
+        .effect = EFFECT_FUTURE_SIGHT, // 1 beurt vertraging i.p.v. 2: zie Cmd_setfutureattack
+        .power = 120,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SuperSplash,
+    },
+
+    [MOVE_DISCO_INFERNO] = // Project Grounded: TM99, dansende vuurtrappen onder de discobal
+    {
+        .name = COMPOUND_STRING("Disco Inferno"),
+        .description = COMPOUND_STRING(
+            "Fiery dance kicks. May\n"
+            "confuse or burn the foe."),
+        .effect = EFFECT_HIT,
+        .power = 85,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .danceMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION, // discokoorts
+            .chance = 20,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_BURN,
+            .chance = 10,
+        }),
+        .contestEffect = CONTEST_EFFECT_EXCITE_AUDIENCE_IN_ANY_CONTEST,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DiscoInferno,
+    },
+
+    [MOVE_OVERKILL] = // Project Grounded: wat er na een KO overblijft, krijgt de volgende
+    {
+        .name = COMPOUND_STRING("Overkill"),
+        .description = COMPOUND_STRING(
+            "Excess KO damage hits\n"
+            "the next foe sent in."),
+        .effect = EFFECT_OVERKILL,
+        .power = 90,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Overkill,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

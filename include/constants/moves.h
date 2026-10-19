@@ -942,7 +942,16 @@
 #define MOVE_MOAI_WATCH 879 // Project Grounded: Probopass
 
 #define MOVE_KELP_SHROUD 880 // Project Grounded: Dhelmise
-#define MOVES_COUNT_GEN9 881
+#define MOVE_TWIN_LANCE 881 // Project Grounded: Beedrill
+#define MOVE_TYRANT_HORN 882 // Project Grounded: Nidoking
+#define MOVE_QUEENS_WEIGHT 883 // Project Grounded: Nidoqueen
+#define MOVE_SKY_SPEAR 884 // Project Grounded: Fearow
+#define MOVE_ANCIENT_SCYTHE 885 // Project Grounded: Kabutops
+#define MOVE_MAWASHI_GERI 886 // Project Grounded: Sawk
+#define MOVE_IPPON 887 // Project Grounded: Throh
+#define MOVE_FLYTRAP 888 // Project Grounded: Carnivine
+#define MOVE_COLOSSAL_CLAW 889 // Project Grounded: Kingler
+#define MOVES_COUNT_GEN9 890
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

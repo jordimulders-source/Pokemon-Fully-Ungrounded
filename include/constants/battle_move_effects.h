@@ -378,6 +378,10 @@ enum __attribute__((packed)) BattleMoveEffects
     EFFECT_MIMIC_SHADE, // Project Grounded: type van de laatste move die de gebruiker raakte
     EFFECT_JOUST, // Project Grounded: tegen een sneller doelwit +1 prioriteit en 100 BP
     EFFECT_SOLSTICE_GATE, // Project Grounded: x1,5 in zon of Snow/Hail
+    EFFECT_TOTEM_GAZE, // Project Grounded: na de klap mist de volgende schadelijke move tegen de gebruiker
+    EFFECT_BUBBLE_DOME, // Project Grounded: Reflect + Light Screen (alleen Araquanid), breekt door snijdende moves
+    EFFECT_THE_OLD_DAYS, // Project Grounded: Yawn op het doelwit, +1 Sp. Atk voor de gebruiker
+    EFFECT_OLIVE_OIL, // Project Grounded: heelt 1/2 (Pollen Haze 2/3) en zet Grassy Terrain
     NUM_BATTLE_MOVE_EFFECTS,
 };
 

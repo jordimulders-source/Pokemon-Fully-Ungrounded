@@ -1041,6 +1041,8 @@ extern const u8 gBattleAnimMove_LureLight[];
 extern const u8 gBattleAnimMove_BeaverDam[];
 extern const u8 gBattleAnimMove_MoaiWatch[];
 extern const u8 gBattleAnimMove_AcidRain[];
+extern const u8 gBattleAnimMove_TotemGaze[];
+extern const u8 gBattleAnimMove_TheOldDays[];
 
 // special animations
 extern const u8 gBattleAnimSpecial_LevelUp[];

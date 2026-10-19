@@ -39267,3 +39267,103 @@ gBattleAnimGeneral_MoaiCrumble::
 	playsewithpan SE_M_EARTHQUAKE, SOUND_PAN_TARGET
 	waitforvisualfinish
 	end
+
+@ Project Grounded: Totem Gaze (Xatu). Xatu gloeit goud op, aan weerszijden schuift een totempaal van
+@ ogen omhoog (van onder naar boven gaan ze open), de ogen lichten op en een psychische golf rolt
+@ naar het doelwit.
+gBattleAnimMove_TotemGaze::
+	loadspritegfx ANIM_TAG_OPENING_EYE
+	loadspritegfx ANIM_TAG_BLUE_RING
+	playsewithpan SE_M_PSYBEAM, SOUND_PAN_ATTACKER
+	call SetPsychicBackground
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 0, 10, RGB(31, 26, 8)
+	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 8, 1
+	createsprite gTotemGazeEyeSpriteTemplate, ANIM_ATTACKER, 3, -34, 22, 64
+	createsprite gTotemGazeEyeSpriteTemplate, ANIM_ATTACKER, 3, 34, 22, 64
+	playsewithpan SE_M_DETECT, SOUND_PAN_ATTACKER
+	delay 10
+	createsprite gTotemGazeEyeSpriteTemplate, ANIM_ATTACKER, 3, -34, -6, 54
+	createsprite gTotemGazeEyeSpriteTemplate, ANIM_ATTACKER, 3, 34, -6, 54
+	playsewithpan SE_M_DETECT, SOUND_PAN_ATTACKER
+	delay 10
+	createsprite gTotemGazeEyeSpriteTemplate, ANIM_ATTACKER, 3, -34, -34, 44
+	createsprite gTotemGazeEyeSpriteTemplate, ANIM_ATTACKER, 3, 34, -34, 44
+	playsewithpan SE_M_DETECT, SOUND_PAN_ATTACKER
+	delay 22
+	playsewithpan SE_M_LEER, SOUND_PAN_ATTACKER
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_OPENING_EYE, 0, 0, 13, RGB(31, 30, 12)
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 0, 10, 12, RGB(31, 30, 20)
+	delay 8
+	createvisualtask AnimTask_BlendParticle, 5, ANIM_TAG_OPENING_EYE, 0, 13, 0, RGB(31, 30, 12)
+	createvisualtask AnimTask_StartSinAnimTimer, 5, 100
+	createsoundtask SoundTask_LoopSEAdjustPanning, SE_M_TELEPORT, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, 2, 9, 0, 10
+	call PsywaveRings
+	call PsywaveRings
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_TARGET, 4, 0, 16, 1
+	blend_color_cycle selector=F_PAL_TARGET, delay=1, num_blends=3, initial_blend_y=0, target_blend_y=12, color=RGB(31, 18, 31)
+	call PsywaveRings
+	call PsywaveRings
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 12, 0, RGB(31, 26, 8)
+	waitforvisualfinish
+	delay 1
+	call UnsetPsychicBg
+	end
+
+@ Project Grounded: The Old Days (Drampa). Alles vergeelt (flashback), Drampa praat en praat (bubbel
+@ met herinneringen, kwebbelnoten, een eindeloos verhaal dat naar het doelwit drijft) en het doelwit
+@ knikkebolt en gaapt.
+gBattleAnimMove_TheOldDays::
+	loadspritegfx ANIM_TAG_THOUGHT_BUBBLE
+	loadspritegfx ANIM_TAG_JAGGED_MUSIC_NOTE
+	loadspritegfx ANIM_TAG_MUSIC_NOTES
+	loadspritegfx ANIM_TAG_LETTER_Z
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG | F_PAL_BATTLERS, 1, 0, 11, RGB(22, 16, 7)
+	waitforvisualfinish
+	createsprite gThoughtBubbleSpriteTemplate, ANIM_ATTACKER, 11, 0, 110
+	playsewithpan SE_M_METRONOME, SOUND_PAN_ATTACKER
+	delay 16
+	createvisualtask SoundTask_PlayDoubleCry, 2, ANIM_ATTACKER, DOUBLE_CRY_GROWL
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 0, 2, 12, 2
+	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, 29, -12, 0
+	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, -12, -29, 1
+	delay 16
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 0, 2, 12, 2
+	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, 12, -29, 1
+	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, -29, -12, 0
+	playsewithpan SE_M_SWAGGER, SOUND_PAN_ATTACKER
+	delay 16
+	createvisualtask SoundTask_PlayDoubleCry, 2, ANIM_ATTACKER, DOUBLE_CRY_GROWL
+	createvisualtask AnimTask_ShakeMon, 2, ANIM_ATTACKER, 0, 2, 12, 2
+	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, 24, -24, 1
+	createsprite gJaggedMusicNoteSpriteTemplate, ANIM_ATTACKER, 2, 0, -24, -24, 0
+	delay 12
+	createvisualtask AnimTask_MusicNotesRainbowBlend, 2
+	waitforvisualfinish
+	panse SE_M_SING, SOUND_PAN_ATTACKER, SOUND_PAN_TARGET, +2, 0
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 7, 0, 12
+	delay 6
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 6, 1, 12
+	delay 6
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 1, 2, 12
+	delay 6
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 2, 3, 12
+	delay 6
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 3, 0, 12
+	delay 6
+	createsprite gWavyMusicNotesSpriteTemplate, ANIM_TARGET, 2, 5, 1, 12
+	createvisualtask AnimTask_RotateMonToSideAndRestore, 2, 12, -256, ANIM_TARGET, 2
+	delay 20
+	createsprite gOldDaysZSpriteTemplate, ANIM_TARGET, 2, 10, -4, 40
+	playsewithpan SE_M_SNORE, SOUND_PAN_TARGET
+	delay 12
+	createvisualtask AnimTask_RotateMonToSideAndRestore, 2, 12, -320, ANIM_TARGET, 2
+	createsprite gOldDaysZSpriteTemplate, ANIM_TARGET, 2, 20, -14, 40
+	delay 24
+	createvisualtask AnimTask_DeepInhale, 2, ANIM_TARGET
+	playsewithpan SE_M_YAWN, SOUND_PAN_TARGET
+	createsprite gOldDaysZSpriteTemplate, ANIM_TARGET, 2, 4, -20, 40
+	waitforvisualfinish
+	createvisualtask AnimTask_MusicNotesClearRainbowBlend, 2
+	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_BG | F_PAL_BATTLERS, 1, 11, 0, RGB(22, 16, 7)
+	waitforvisualfinish
+	end

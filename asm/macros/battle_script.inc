@@ -2512,3 +2512,19 @@
 	.macro recalcmovetype
 	callnative BS_RecalcMoveType
 	.endm
+
+	@ Project Grounded: signature moves ronde 3b
+	.macro trysetbubbledome failInstr:req
+	callnative BS_TrySetBubbleDome
+	.4byte \failInstr
+	.endm
+
+	.macro jumpifcantbedrowsy jumpInstr:req
+	callnative BS_JumpIfCantBeDrowsy
+	.4byte \jumpInstr
+	.endm
+
+	.macro jumpifoliveoilfails jumpInstr:req
+	callnative BS_JumpIfOliveOilFails
+	.4byte \jumpInstr
+	.endm

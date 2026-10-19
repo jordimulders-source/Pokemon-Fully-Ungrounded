@@ -1245,6 +1245,31 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
         .battleTvScore = 3,
     },
 
+    [EFFECT_TOTEM_GAZE] = // Project Grounded: Xatu
+    {
+        .battleScript = BattleScript_EffectTotemGaze,
+        .battleTvScore = 4,
+    },
+
+    [EFFECT_BUBBLE_DOME] = // Project Grounded: Araquanid
+    {
+        .battleScript = BattleScript_EffectBubbleDome,
+        .battleTvScore = 7,
+    },
+
+    [EFFECT_THE_OLD_DAYS] = // Project Grounded: Drampa
+    {
+        .battleScript = BattleScript_EffectTheOldDays,
+        .battleTvScore = 5,
+    },
+
+    [EFFECT_OLIVE_OIL] = // Project Grounded: Arboliva
+    {
+        .battleScript = BattleScript_EffectOliveOil,
+        .battleTvScore = 6,
+        .encourageEncore = TRUE,
+    },
+
     [EFFECT_COSMIC_POWER] =
     {
         .battleScript = BattleScript_EffectCosmicPower,

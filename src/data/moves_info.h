@@ -22695,6 +22695,199 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_SpinOut,
     },
 
+    [MOVE_TOTEM_GAZE] = // Project Grounded: Xatu (ziet de toekomst, ontwijkt de volgende aanval)
+    {
+        .name = COMPOUND_STRING("Totem Gaze"),
+        .description = COMPOUND_STRING(
+            "Foresees the future. The\n"
+            "next attack on it misses."),
+        .effect = EFFECT_TOTEM_GAZE,
+        .power = 80,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_CALM_MIND},
+        .battleAnimScript = gBattleAnimMove_TotemGaze,
+    },
+
+    [MOVE_TUSK_TUMBLE] = // Project Grounded: Donphan (Rollout dat hazards opruimt en Spikes legt)
+    {
+        .name = COMPOUND_STRING("Tusk Tumble"),
+        .description = COMPOUND_STRING(
+            "Rolls for 5 turns, clearing\n"
+            "hazards and laying Spikes."),
+        .effect = EFFECT_ROLLOUT,
+        .power = 30,
+        .type = TYPE_GROUND,
+        .accuracy = 90,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .instructBanned = TRUE,
+        .parentalBondBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_DEFENSE_CURL, COMBO_STARTER_HARDEN},
+        .battleAnimScript = gBattleAnimMove_Rollout,
+    },
+
+    [MOVE_AFRO_CHARGE] = // Project Grounded: Bouffalant (door Protect heen, neemt het terreintype aan)
+    {
+        .name = COMPOUND_STRING("Afro Charge"),
+        .description = COMPOUND_STRING(
+            "An afro charge through any\n"
+            "guard. Takes terrain's type."),
+        .effect = EFFECT_RECOIL,
+        .power = 120,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .recoilPercentage = 25 },
+        .makesContact = TRUE,
+        .ignoresProtect = TRUE,
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HeadCharge,
+    },
+
+    [MOVE_BUBBLE_DOME] = // Project Grounded: Araquanid (Reflect + Light Screen, alleen Araquanid)
+    {
+        .name = COMPOUND_STRING("Bubble Dome"),
+        .description = COMPOUND_STRING(
+            "Araquanid only. Sets both\n"
+            "screens; slashes pop it."),
+        .effect = EFFECT_BUBBLE_DOME,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPDEF_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .snatchAffected = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_RAIN_DANCE},
+        .battleAnimScript = gBattleAnimMove_AquaRing,
+    },
+
+    [MOVE_THE_OLD_DAYS] = // Project Grounded: Drampa (praat over vroeger: doelwit slaperig, +1 Sp. Atk)
+    {
+        .name = COMPOUND_STRING("The Old Days"),
+        .description = COMPOUND_STRING(
+            "Rambles on: makes the foe\n"
+            "drowsy, ups the Sp. Atk."),
+        .effect = EFFECT_THE_OLD_DAYS,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_TheOldDays,
+    },
+
+    [MOVE_BEAR_HUG] = // Project Grounded: Bewear (knuffel waar je niet meer uitkomt)
+    {
+        .name = COMPOUND_STRING("Bear Hug"),
+        .description = COMPOUND_STRING(
+            "A crushing hug that traps\n"
+            "the foe for 4-5 turns."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WRAP,
+            .multistring.wrapped = B_MSG_WRAPPED_BEAR_HUG,
+        }),
+        .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Bind,
+    },
+
+    [MOVE_FACE_OFF] = // Project Grounded: Eiscue (kopstoot met het ijsblok, x2 met Ice Face)
+    {
+        .name = COMPOUND_STRING("Face Off"),
+        .description = COMPOUND_STRING(
+            "An ice-block headbutt. x2\n"
+            "if Eiscue's face is intact."),
+        .effect = EFFECT_HIT,
+        .power = 85,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_IceHammer,
+    },
+
+    [MOVE_OLIVE_OIL] = // Project Grounded: Arboliva (heelt en zet Grassy Terrain)
+    {
+        .name = COMPOUND_STRING("Olive Oil"),
+        .description = COMPOUND_STRING(
+            "Heals half its HP and sets\n"
+            "Grassy Terrain. Pollen: 2/3."),
+        .effect = EFFECT_OLIVE_OIL,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .healingMove = TRUE,
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_QUALITY_DEPENDS_ON_TIMING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_GrassyTerrain,
+    },
+
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {

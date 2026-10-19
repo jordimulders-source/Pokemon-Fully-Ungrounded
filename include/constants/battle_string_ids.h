@@ -781,6 +781,11 @@ enum StringID
     STRINGID_HELIXBIRDJESUS, // Project Grounded
     STRINGID_HELIXSILENT, // Project Grounded
     STRINGID_HIVEQUEENCLEARED, // Project Grounded
+    STRINGID_TOTEMGAZEREADY, // Project Grounded
+    STRINGID_TOTEMGAZEDODGE, // Project Grounded
+    STRINGID_BUBBLEDOME, // Project Grounded
+    STRINGID_BUBBLEDOMEPOPPED, // Project Grounded
+    STRINGID_PKMNBEARHUGGED, // Project Grounded
     STRINGID_COUNT
 };
 
@@ -806,6 +811,7 @@ enum MissStringID
     B_MSG_MISSED,
     B_MSG_PROTECTED,
     B_MSG_BURROWED, // Project Grounded: Burrow Maze
+    B_MSG_TOTEM_GAZE, // Project Grounded: Totem Gaze zag de aanval aankomen
     B_MSG_AVOIDED_ATK,
     // Ability-related messages need to be below this comment
     B_MSG_AVOIDED_DMG,
@@ -1204,6 +1210,7 @@ enum __attribute__((packed)) WrappedStringID
     B_MSG_WRAPPED_MUMMY, // Project Grounded: Mummy's Curse
     B_MSG_WRAPPED_STEEL_TRAP, // Project Grounded: Steel Trap
     B_MSG_WRAPPED_HYPHAL_SNARE, // Project Grounded: Hyphal Snare
+    B_MSG_WRAPPED_BEAR_HUG, // Project Grounded: Bear Hug
     NUM_TRAPPING_MOVES,
 };
 

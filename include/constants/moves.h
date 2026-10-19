@@ -963,7 +963,15 @@
 #define MOVE_JOUST 899 // Project Grounded: Escavalier
 #define MOVE_SOLSTICE_GATE 900 // Project Grounded: Stonjourner
 #define MOVE_REV_UP 901 // Project Grounded: Revavroom
-#define MOVES_COUNT_GEN9 902
+#define MOVE_TOTEM_GAZE 902 // Project Grounded: Xatu
+#define MOVE_TUSK_TUMBLE 903 // Project Grounded: Donphan
+#define MOVE_AFRO_CHARGE 904 // Project Grounded: Bouffalant
+#define MOVE_BUBBLE_DOME 905 // Project Grounded: Araquanid
+#define MOVE_THE_OLD_DAYS 906 // Project Grounded: Drampa
+#define MOVE_BEAR_HUG 907 // Project Grounded: Bewear
+#define MOVE_FACE_OFF 908 // Project Grounded: Eiscue
+#define MOVE_OLIVE_OIL 909 // Project Grounded: Arboliva
+#define MOVES_COUNT_GEN9 910
 
 #define MOVES_COUNT         MOVES_COUNT_GEN9
 

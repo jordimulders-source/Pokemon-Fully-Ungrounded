@@ -1435,6 +1435,23 @@ static s32 AI_CheckBadMove(u32 battlerAtk, u32 battlerDef, u32 move, s32 score)
             else if (!AI_CanBattlerEscape(battlerAtk) && IsBattlerTrapped(battlerDef, battlerAtk))
                 ADJUST_SCORE(-10);
             break;
+        case EFFECT_BUBBLE_DOME: // Project Grounded: alleen Araquanid
+            if (gBattleMons[battlerAtk].species != SPECIES_ARAQUANID && gBattleMons[battlerAtk].species != SPECIES_ARAQUANID_TOTEM)
+                ADJUST_SCORE(-20);
+            else if ((gSideStatuses[GetBattlerSide(battlerAtk)] & (SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN)) == (SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN))
+                ADJUST_SCORE(-10);
+            break;
+        case EFFECT_THE_OLD_DAYS: // Project Grounded
+            if ((gBattleMons[battlerDef].volatiles.yawn || !AI_CanPutToSleep(battlerAtk, battlerDef, aiData->abilities[battlerDef], move, aiData->partnerMove))
+             && !BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_SPATK))
+                ADJUST_SCORE(-10);
+            break;
+        case EFFECT_OLIVE_OIL: // Project Grounded
+            if (AI_BattlerAtMaxHp(battlerAtk) && (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN))
+                ADJUST_SCORE(-10);
+            else if (aiData->hpPercents[battlerAtk] >= 90 && (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN))
+                ADJUST_SCORE(-9);
+            break;
         case EFFECT_COSMIC_POWER:
             if (!BattlerStatCanRise(battlerAtk, aiData->abilities[battlerAtk], STAT_DEF))
                 ADJUST_SCORE(-10);
@@ -5240,6 +5257,29 @@ static s32 AI_CalcMoveEffectScore(u32 battlerAtk, u32 battlerDef, u32 move, stru
     case EFFECT_PRAISE_HELIX: // Project Grounded: gemiddeld een flinke boost, soms een heal
         ADJUST_SCORE(DECENT_EFFECT);
         if (!AI_BattlerAtMaxHp(battlerAtk))
+            ADJUST_SCORE(WEAK_EFFECT);
+        break;
+    case EFFECT_BUBBLE_DOME: // Project Grounded: Reflect + Light Screen in één beurt
+        if (ShouldSetScreen(battlerAtk, battlerDef, EFFECT_REFLECT) || ShouldSetScreen(battlerAtk, battlerDef, EFFECT_LIGHT_SCREEN))
+        {
+            ADJUST_SCORE(BEST_EFFECT);
+            if (aiData->holdEffects[battlerAtk] == HOLD_EFFECT_LIGHT_CLAY)
+                ADJUST_SCORE(DECENT_EFFECT);
+        }
+        break;
+    case EFFECT_THE_OLD_DAYS: // Project Grounded: Yawn + Sp. Atk
+        if (!gBattleMons[battlerDef].volatiles.yawn)
+            IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK));
+        break;
+    case EFFECT_OLIVE_OIL: // Project Grounded
+        if (ShouldRecover(battlerAtk, battlerDef, move, (AI_GetWeather() & B_WEATHER_POLLEN_HAZE) ? 67 : 50))
+            ADJUST_SCORE(GOOD_EFFECT);
+        if (!(gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN))
+            ADJUST_SCORE(WEAK_EFFECT);
+        break;
+    case EFFECT_TOTEM_GAZE: // Project Grounded: een gratis ontwijking is altijd welkom
+        if (!gBattleMons[battlerAtk].volatiles.totemGaze)
             ADJUST_SCORE(WEAK_EFFECT);
         break;
     case EFFECT_PRIMEVAL_WARD: // Project Grounded

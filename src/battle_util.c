@@ -7258,6 +7258,10 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
     if (GetActiveGimmick(battlerAtk) == GIMMICK_DYNAMAX)
         return GetMaxMovePower(move);
 
+    // Project Grounded: Face Off (Eiscue) slaat dubbel zo hard met een heel ijsblok (Ice Face)
+    if (move == MOVE_FACE_OFF && gBattleMons[battlerAtk].species == SPECIES_EISCUE_ICE)
+        basePower *= 2;
+
     switch (moveEffect)
     {
     case EFFECT_PLEDGE:

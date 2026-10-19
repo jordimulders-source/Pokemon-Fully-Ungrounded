@@ -177,6 +177,13 @@ extern const u8 BattleScript_PitcherTrapDrain[];
 extern const u8 BattleScript_SilkTrapEffect[];
 extern const u8 BattleScript_HiveQueenClearsHazards[];
 extern const u8 BattleScript_LandfillActivates[];
+extern const u8 BattleScript_EffectTotemGaze[]; // Project Grounded
+extern const u8 BattleScript_EffectBubbleDome[]; // Project Grounded
+extern const u8 BattleScript_BubbleDomePopped[]; // Project Grounded
+extern const u8 BattleScript_EffectTheOldDays[]; // Project Grounded
+extern const u8 BattleScript_EffectOliveOil[]; // Project Grounded
+extern const u8 BattleScript_TuskTumbleEffects[]; // Project Grounded
+extern const u8 BattleScript_TuskTumbleSpikes[]; // Project Grounded
 extern const u8 BattleScript_GulpDownBerry[];
 extern const u8 BattleScript_GulpDownKept[];
 extern const u8 BattleScript_GulpDownUseless[];

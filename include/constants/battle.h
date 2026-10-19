@@ -223,7 +223,8 @@ enum VolatileFlags
     F(VOLATILE_PRIMEVAL_WARD,               primevalWard,                  (u32, 1)) /* Project Grounded: Relicanth */ \
     F(VOLATILE_BURROW_MAZE,                 burrowMaze,                    (u32, 3)) /* Project Grounded: Furret, aantal uitwegen */ \
     F(VOLATILE_PITCHER_TRAPPED_BY,          pitcherTrappedBy,              (enum BattlerId, MAX_BITS(4))) /* Project Grounded: Victreebel + 1 */ \
-    F(VOLATILE_SILK_TRAPPED,                silkTrapped,                   (u32, 1)) /* Project Grounded: Silk Trap, kan niet ontsnappen */
+    F(VOLATILE_SILK_TRAPPED,                silkTrapped,                   (u32, 1)) /* Project Grounded: Silk Trap, kan niet ontsnappen */ \
+    F(VOLATILE_TOTEM_GAZE,                  totemGaze,                     (u32, 1)) /* Project Grounded: Xatu */
 
 
 /* Use within a macro to get the maximum allowed value for a volatile. Requires _typeMaxValue as input. */

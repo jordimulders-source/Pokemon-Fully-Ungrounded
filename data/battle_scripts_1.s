@@ -9680,3 +9680,91 @@ BattleScript_TryMoaiCrumble::
 	waitanimation
 BattleScript_TryMoaiCrumbleRet:
 	return
+
+@ Project Grounded: Totem Gaze (Xatu). Na de klap ziet Xatu de toekomst: de eerstvolgende schadelijke
+@ move tegen Xatu mist (één keer, vervalt bij wisselen; zie AccuracyCheck).
+BattleScript_EffectTotemGaze::
+	call BattleScript_EffectHit_Ret
+	tryfaintmon BS_TARGET
+	jumpifhasnohp BS_ATTACKER, BattleScript_MoveEnd
+	jumpifvolatile BS_ATTACKER, VOLATILE_TOTEM_GAZE, BattleScript_MoveEnd
+	setvolatile BS_ATTACKER, VOLATILE_TOTEM_GAZE
+	printstring STRINGID_TOTEMGAZEREADY
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+@ Project Grounded: Tusk Tumble (Donphan). Elke klap ruimt hazards aan de eigen kant op (Rapid Spin),
+@ de eerste klap legt bovendien een laag Spikes bij de tegenstander.
+BattleScript_TuskTumbleEffects::
+	rapidspinfree
+	return
+
+BattleScript_TuskTumbleSpikes::
+	rapidspinfree
+	trysetspikes BattleScript_TuskTumbleSpikesRet
+	printstring STRINGID_SPIKESSCATTERED
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_TuskTumbleSpikesRet:
+	return
+
+@ Project Grounded: Bubble Dome (Araquanid). Reflect én Light Screen tegelijk; een snijdende move
+@ prikt de koepel door (zie MOVEEND_MOVE_BLOCK).
+BattleScript_EffectBubbleDome::
+	attackcanceler
+	trysetbubbledome BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	printstring STRINGID_BUBBLEDOME
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+BattleScript_BubbleDomePopped::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_BUBBLEDOMEPOPPED
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+@ Project Grounded: The Old Days (Drampa). Het doelwit wordt slaperig (Yawn), Drampa krijgt +1 Sp. Atk.
+BattleScript_EffectTheOldDays::
+	attackcanceler
+	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
+	jumpifcantbedrowsy BattleScript_TheOldDaysNoYawn
+	attackanimation
+	waitanimation
+	setvolatile BS_TARGET, VOLATILE_YAWN, 2
+	printstring STRINGID_PKMNWASMADEDROWSY
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_TheOldDaysSpAtk
+BattleScript_TheOldDaysNoYawn:
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPATK, MAX_STAT_STAGE, BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+BattleScript_TheOldDaysSpAtk:
+	setstatchanger STAT_SPATK, 1, FALSE
+	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_MoveEnd
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_MoveEnd
+	printfromtable gStatUpStringIds
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+@ Project Grounded: Olive Oil (Arboliva). Heelt 1/2 (in Pollen Haze 2/3) en zet Grassy Terrain.
+BattleScript_EffectOliveOil::
+	attackcanceler
+	jumpifoliveoilfails BattleScript_ButItFailed
+	attackanimation
+	waitanimation
+	recoverbasedonsunlight BattleScript_OliveOilTerrain
+	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	printstring STRINGID_PKMNREGAINEDHEALTH
+	waitmessage B_WAIT_TIME_LONG
+BattleScript_OliveOilTerrain:
+	setterrain BattleScript_OliveOilRestoreBg
+	printfromtable gTerrainStringIds
+	waitmessage B_WAIT_TIME_LONG
+	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG
+	call BattleScript_ActivateTerrainEffects
+	goto BattleScript_MoveEnd
+BattleScript_OliveOilRestoreBg:
+	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG
+	goto BattleScript_MoveEnd

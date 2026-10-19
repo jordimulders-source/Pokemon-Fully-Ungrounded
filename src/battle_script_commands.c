@@ -1897,6 +1897,9 @@ static inline void CalculateAndSetMoveDamage(struct DamageContext *ctx)
     }
 }
 
+#define BUBBLE_DOME_POPPED_SHIFT 4 // Project Grounded: zie TryPopBubbleDomeBeforeDamage
+static void TryPopBubbleDomeBeforeDamage(u32 battlerDef);
+
 static void Cmd_damagecalc(void)
 {
     CMD_ARGS();
@@ -1928,12 +1931,14 @@ static void Cmd_damagecalc(void)
                 continue;
 
             ctx.battlerDef = battlerDef;
+            TryPopBubbleDomeBeforeDamage(battlerDef); // Project Grounded
             CalculateAndSetMoveDamage(&ctx);
         }
     }
     else
     {
         ctx.battlerDef = gBattlerTarget;
+        TryPopBubbleDomeBeforeDamage(gBattlerTarget); // Project Grounded
         CalculateAndSetMoveDamage(&ctx);
     }
 
@@ -6367,23 +6372,36 @@ static bool32 HandleMoveEndMoveBlock(u32 moveEffect)
     return effect;
 }
 
-// Project Grounded: Bubble Dome. Raakt een snijdende move een kant met de koepel, dan knappen beide schermen.
+// Project Grounded: Bubble Dome. Een snijdende move prikt de koepel vóór de schadeberekening door
+// (zoals Brick Break), zodat die treffer zelf niet meer wordt afgezwakt. Alleen schermen van Bubble Dome.
+// Bit 0/1 = kant heeft een koepel, bit 4/5 = koepel van die kant is net geknapt (melding in moveend).
+static void TryPopBubbleDomeBeforeDamage(u32 battlerDef)
+{
+    u32 side = GetBattlerSide(battlerDef);
+
+    if (!IsSlicingMove(gCurrentMove)
+     || battlerDef == gBattlerAttacker
+     || !(gBattleStruct->bubbleDomeSides & (1u << side))
+     || gBattleStruct->moveResultFlags[battlerDef] & MOVE_RESULT_NO_EFFECT)
+        return;
+    gBattleStruct->bubbleDomeSides &= ~(1u << side);
+    if (!(gSideStatuses[side] & (SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN)))
+        return;
+    gSideStatuses[side] &= ~(SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN);
+    gSideTimers[side].reflectTimer = 0;
+    gSideTimers[side].lightscreenTimer = 0;
+    gBattleStruct->bubbleDomeSides |= 1u << (side + BUBBLE_DOME_POPPED_SHIFT);
+}
+
+// Melding na de treffer: "The Bubble Dome was sliced open! Pop."
 static bool32 TryPopBubbleDome(void)
 {
-    u32 battler;
-    for (battler = 0; battler < gBattlersCount; battler++)
+    u32 side;
+    for (side = 0; side < NUM_BATTLE_SIDES; side++)
     {
-        u32 side = GetBattlerSide(battler);
-        if (battler == gBattlerAttacker
-         || !(gBattleStruct->bubbleDomeSides & (1u << side))
-         || !IsBattlerTurnDamaged(battler))
+        if (!(gBattleStruct->bubbleDomeSides & (1u << (side + BUBBLE_DOME_POPPED_SHIFT))))
             continue;
-        gBattleStruct->bubbleDomeSides &= ~(1u << side);
-        if (!(gSideStatuses[side] & (SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN)))
-            continue;
-        gSideStatuses[side] &= ~(SIDE_STATUS_REFLECT | SIDE_STATUS_LIGHTSCREEN);
-        gSideTimers[side].reflectTimer = 0;
-        gSideTimers[side].lightscreenTimer = 0;
+        gBattleStruct->bubbleDomeSides &= ~(1u << (side + BUBBLE_DOME_POPPED_SHIFT));
         BattleScriptCall(BattleScript_BubbleDomePopped);
         return TRUE;
     }
@@ -7038,10 +7056,8 @@ static void Cmd_moveend(void)
                 effect = TRUE;
                 break;
             }
-            // Project Grounded: een snijdende move prikt de Bubble Dome (Reflect + Light Screen) door
-            if (IsSlicingMove(gCurrentMove)
-             && !(gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
-             && TryPopBubbleDome())
+            // Project Grounded: melding als een snijdende move de Bubble Dome vóór de schade doorprikte
+            if (TryPopBubbleDome())
             {
                 effect = TRUE;
                 break;

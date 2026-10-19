@@ -179,6 +179,48 @@ SINGLE_BATTLE_TEST("Bubble Dome pops when a slicing move hits")
     }
 }
 
+// Zoals Brick Break: de koepel knapt vóór de schadeberekening, dus de snijdende treffer zelf is niet afgezwakt.
+SINGLE_BATTLE_TEST("Bubble Dome does not weaken the slicing move that pops it", s16 damage)
+{
+    u32 move;
+    PARAMETRIZE { move = MOVE_CELEBRATE; }
+    PARAMETRIZE { move = MOVE_BUBBLE_DOME; }
+    GIVEN {
+        ASSUME(IsSlicingMove(MOVE_SLASH));
+        ASSUME(GetMoveCategory(MOVE_SLASH) == DAMAGE_CATEGORY_PHYSICAL);
+        PLAYER(SPECIES_ARAQUANID) { Speed(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(50); }
+    } WHEN {
+        TURN { MOVE(player, move); MOVE(opponent, MOVE_SLASH, criticalHit: FALSE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SLASH, opponent);
+        HP_BAR(player, captureDamage: &results[i].damage);
+        if (move == MOVE_BUBBLE_DOME)
+            MESSAGE("The Bubble Dome was sliced\nopen! Pop.");
+    } FINALLY {
+        EXPECT_EQ(results[0].damage, results[1].damage);
+    }
+}
+
+SINGLE_BATTLE_TEST("Bubble Dome still weakens a non-slicing move", s16 damage)
+{
+    u32 move;
+    PARAMETRIZE { move = MOVE_CELEBRATE; }
+    PARAMETRIZE { move = MOVE_BUBBLE_DOME; }
+    GIVEN {
+        ASSUME(!IsSlicingMove(MOVE_SCRATCH));
+        PLAYER(SPECIES_ARAQUANID) { Speed(100); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(50); }
+    } WHEN {
+        TURN { MOVE(player, move); MOVE(opponent, MOVE_SCRATCH, criticalHit: FALSE); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, opponent);
+        HP_BAR(player, captureDamage: &results[i].damage);
+    } FINALLY {
+        EXPECT_LT(results[1].damage, results[0].damage);
+    }
+}
+
 // The Old Days: Yawn op het doelwit en +1 Sp. Atk.
 SINGLE_BATTLE_TEST("The Old Days makes the target drowsy and raises Sp. Atk")
 {
@@ -236,13 +278,17 @@ SINGLE_BATTLE_TEST("Face Off doubles in power while Eiscue has its Ice Face", s1
     PARAMETRIZE { species = SPECIES_EISCUE_ICE; }
     GIVEN {
         PLAYER(species);
-        OPPONENT(SPECIES_WOBBUFFET);
+        // Grote schade voor een nauwkeurige verhouding
+        OPPONENT(SPECIES_WOBBUFFET) { Defense(10); MaxHP(9999); HP(9999); }
     } WHEN {
         TURN { MOVE(player, MOVE_FACE_OFF); }
     } SCENE {
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
-        EXPECT_MUL_EQ(results[0].damage, Q_4_12(2.0), results[1].damage);
+        // Relatieve marge (1%): EXPECT_MUL_EQ heeft een vaste marge van ±2, maar de vaste +2 in de
+        // schadeformule wordt niet mee vermenigvuldigd, waardoor x2 op de schade een paar punten afwijkt.
+        EXPECT_GE(results[1].damage * 100, results[0].damage * 198);
+        EXPECT_LE(results[1].damage * 100, results[0].damage * 202);
     }
 }
 

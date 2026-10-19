@@ -9726,7 +9726,7 @@ BattleScript_TuskTumbleSpikesRet:
 	return
 
 @ Project Grounded: Bubble Dome (Araquanid). Reflect én Light Screen tegelijk; een snijdende move
-@ prikt de koepel door (zie MOVEEND_MOVE_BLOCK).
+@ prikt de koepel vóór de schade door (TryPopBubbleDomeBeforeDamage), melding in MOVEEND_MOVE_BLOCK.
 BattleScript_EffectBubbleDome::
 	attackcanceler
 	trysetbubbledome BattleScript_ButItFailed

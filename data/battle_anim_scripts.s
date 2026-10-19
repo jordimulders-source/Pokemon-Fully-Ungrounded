@@ -39595,8 +39595,9 @@ AbductionRings:
 gBattleAnimMove_SuperSplash::
 	loadspritegfx ANIM_TAG_SWEAT_BEAD
 	loadspritegfx ANIM_TAG_WATER_IMPACT
-	createvisualtask AnimTask_SuperSplashFrenzy, 2, ANIM_ATTACKER, 64
-	loopsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER, 4, 16
+	createvisualtask AnimTask_SplashFast, 2, ANIM_ATTACKER, 8
+	delay 3
+	loopsewithpan SE_M_TAIL_WHIP, SOUND_PAN_ATTACKER, 13, 8
 	waitforvisualfinish
 	delay 6
 	playsewithpan SE_M_BUBBLE2, SOUND_PAN_ATTACKER

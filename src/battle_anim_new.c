@@ -11030,37 +11030,6 @@ const struct SpriteTemplate gAbductionRingSpriteTemplate =
 #define tFrames   data[2]
 #define tPhase    data[3]
 
-static void AnimTask_SuperSplashFrenzy_Step(u8 taskId)
-{
-    struct Task *task = &gTasks[taskId];
-    struct Sprite *sprite = &gSprites[task->tSpriteId];
-    s32 t = task->tFrame;
-
-    if (t >= task->tFrames)
-    {
-        sprite->x2 = 0;
-        sprite->y2 = 0;
-        DestroyAnimVisualTask(taskId);
-        return;
-    }
-    // Zelfde huppeltjes als Splash (lage sprongen), maar hyper: een sprong per 4 frames en trillen.
-    task->tPhase = (task->tPhase + 16) & 0x3F;
-    sprite->y2 = -Sin(task->tPhase * 2, 8);
-    sprite->x2 = (t & 1) ? 1 : -1;
-    task->tFrame++;
-}
-
-void AnimTask_SuperSplashFrenzy(u8 taskId)
-{
-    struct Task *task = &gTasks[taskId];
-
-    task->tSpriteId = GetAnimBattlerSpriteId(gBattleAnimArgs[0]);
-    task->tFrame = 0;
-    task->tFrames = gBattleAnimArgs[1] > 0 ? gBattleAnimArgs[1] : 1;
-    task->tPhase = 0;
-    task->func = AnimTask_SuperSplashFrenzy_Step;
-}
-
 #undef tSpriteId
 #undef tFrame
 #undef tFrames

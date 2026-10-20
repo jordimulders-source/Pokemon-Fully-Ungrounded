@@ -19600,20 +19600,35 @@ Gender: Male
 Music: Magma
 Items: Super Potion / Super Potion
 Double Battle: No
-AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_TRY_TO_FAINT / AI_FLAG_CHECK_VIABILITY / AI_FLAG_ACE_POKEMON
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_PREDICT_SWITCH / AI_FLAG_PREDICT_MOVE / AI_FLAG_HP_AWARE / AI_FLAG_WEIGH_ABILITY_PREDICTION / AI_FLAG_ACE_POKEMON
 Mugshot: Yellow
 
-Hippowdon
+Hippowdon @ Smooth Rock
 Level: 40
+Ability: Sand Stream
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Stealth Rock
+- Earthquake
+- Slack Off
+- Whirlwind
 
-Ferrothorn
+Ferrothorn @ Leftovers
 Level: 40
+Ability: Iron Barbs
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Leech Seed
+- Power Whip
+- Gyro Ball
+- Spikes
 
-Camerupt
+Camerupt @ Sitrus Berry
 Level: 42
+Ability: Solid Rock
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
+- Earth Power
+- Lava Plume
+- Yawn
+- Slack Off
 
 === TRAINER_TIANA ===
 Name: TIANA

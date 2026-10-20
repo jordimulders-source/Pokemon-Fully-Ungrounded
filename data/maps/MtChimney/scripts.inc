@@ -120,6 +120,8 @@ MtChimney_EventScript_DoWallyTagBattle::
 MtChimney_EventScript_DefeatedMaxieWithWally::
 	msgbox MtChimney_Text_MaxieYouHaventSeenLastOfMagma, MSGBOX_DEFAULT
 	closemessage
+	msgbox MtChimney_Text_WallyFlutterMane, MSGBOX_DEFAULT @ Project Grounded: Wally over zijn Flutter Mane
+	closemessage
 	delay 30
 	fadescreenswapbuffers FADE_TO_BLACK
 	removeobject LOCALID_MT_CHIMNEY_MAXIE
@@ -927,6 +929,16 @@ MtChimney_Movement_WallyRunIn:
 	walk_fast_right
 	face_up
 	step_end
+
+MtChimney_Text_WallyFlutterMane:
+	.string "WALLY: Mane of Flutter seen.\n"
+	.string "Like Drevusmis lookings!\p"
+	.string "Pretty POKéMON.\n"
+	.string "Feeling has strength.\p"
+	.string "Girl who young had scaredy\n"
+	.string "when me seen.\p"
+	.string "Lolly given to not have\n"
+	.string "scarings.$"
 
 MtChimney_Text_WallyWhoopWhoop:
 	.string "WALLY: Whoopwhoop, hot {PLAYER}\n"

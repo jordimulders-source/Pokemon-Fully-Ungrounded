@@ -31295,7 +31295,8 @@ UnsetSolarBeamBg:
 gBattleAnimStatus_Poison::
 	loopsewithpan SE_M_TOXIC, SOUND_PAN_TARGET, 10, 3
 	createvisualtask AnimTask_ShakeMon2, 2, ANIM_ATTACKER, 1, 0, 9, 2
-	blend_color_cycle selector=F_PAL_ATTACKER, delay=1, num_blends=1, initial_blend_y=0, target_blend_y=12, color=RGB(30, 0, 31)
+	@ Project Grounded: num_blends 2 (heen en terug); met 1 bleef de Pokémon magenta tot de volgende paletfade
+	blend_color_cycle selector=F_PAL_ATTACKER, delay=1, num_blends=2, initial_blend_y=0, target_blend_y=12, color=RGB(30, 0, 31)
 	end
 
 gBattleAnimStatus_Confusion::

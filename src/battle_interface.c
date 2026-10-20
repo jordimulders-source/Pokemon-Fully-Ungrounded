@@ -208,6 +208,7 @@ static void Task_FreeAbilityPopUpGfx(u8);
 static void SpriteCB_LastUsedBall(struct Sprite *);
 static void SpriteCB_LastUsedBallWin(struct Sprite *);
 static void SpriteCB_MoveInfoWin(struct Sprite *sprite);
+static void SpriteCB_WildInfoWin(struct Sprite *sprite);
 
 static const struct OamData sOamData_64x32 =
 {
@@ -2669,6 +2670,33 @@ static inline bool32 IsAnyAbilityPopUpActive(void)
     return activeAbilityPopUps;
 }
 
+// Project Grounded: popup-boekhouding robuust maken. gBattleStruct onthoudt per battler de sprite-ids van zijn popup;
+// zijn die sprites al weg (opnieuw opgebouwd scherm na partymenu/tas, of een tweede popup voor dezelfde battler), dan
+// wijzen de ids naar andere sprites, bijv. een Pokémon-sprite. Zonder controle maakte ForceHideAbilityPopUps die
+// elke beurt onzichtbaar en bleef de vlag hangen (popup zonder palet: zwart).
+static bool32 IsAbilityPopUpSprite(u32 spriteId)
+{
+    return spriteId < MAX_SPRITES && gSprites[spriteId].inUse && gSprites[spriteId].callback == SpriteCb_AbilityPopUp;
+}
+
+// Het popup-palet wordt gedeeld met de Move Info-, last-ball- en L INFO-vensters: alleen vrijgeven als geen
+// enkele sprite het nog gebruikt (anders neemt een animatiepalet het slot over en wordt de popup zwart/bont).
+static void TryFreeAbilityPopUpPalette(void)
+{
+    u32 i, index = IndexOfSpritePaletteTag(TAG_ABILITY_POP_UP);
+
+    if (index == 0xFF)
+        return;
+    for (i = 0; i < MAX_SPRITES; i++)
+    {
+        if (gSprites[i].inUse && gSprites[i].oam.paletteNum == index
+         && (gSprites[i].callback == SpriteCb_AbilityPopUp || gSprites[i].callback == SpriteCB_LastUsedBallWin
+          || gSprites[i].callback == SpriteCB_MoveInfoWin || gSprites[i].callback == SpriteCB_WildInfoWin))
+            return;
+    }
+    FreeSpritePaletteByTag(TAG_ABILITY_POP_UP);
+}
+
 void CreateAbilityPopUp(u8 battler, enum Ability ability, bool32 isDoubleBattle)
 {
     u8 *spriteIds;
@@ -2686,8 +2714,19 @@ void CreateAbilityPopUp(u8 battler, enum Ability ability, bool32 isDoubleBattle)
             return;
     }
 
-    if (!IsAnyAbilityPopUpActive())
-        LoadSpritePalette(&sSpritePalette_AbilityPopUp);
+    // Project Grounded: altijd laden (doet niets als het palet er al is); een hangende vlag liet de popup anders
+    // zonder palet. Een popup die deze battler nog toonde, eerst opruimen, anders wijzen de oude ids nergens meer heen.
+    LoadSpritePalette(&sSpritePalette_AbilityPopUp);
+    spriteIds = gBattleStruct->abilityPopUpSpriteIds[battler];
+    if (gBattleStruct->battlerState[battler].activeAbilityPopUps)
+    {
+        for (u32 i = 0; i < 2; i++)
+        {
+            if (IsAbilityPopUpSprite(spriteIds[i]))
+                DestroySprite(&gSprites[spriteIds[i]]);
+        }
+        gBattleStruct->battlerState[battler].activeAbilityPopUps = FALSE;
+    }
 
     tileTag = (TAG_ABILITY_POP_UP_PLAYER1 + battler);
     if (IndexOfSpriteTileTag(tileTag) == 0xFF)
@@ -2718,7 +2757,7 @@ void CreateAbilityPopUp(u8 battler, enum Ability ability, bool32 isDoubleBattle)
 
     // Create only one instance, as it's only used for
     // tracking the SpriteSheet(s) and SpritePalette.
-    if (!IsAnyAbilityPopUpActive())
+    if (!FuncIsActiveTask(Task_FreeAbilityPopUpGfx)) // Project Grounded: was !IsAnyAbilityPopUpActive() (hangende vlag = geen opruimtaak)
         CreateTask(Task_FreeAbilityPopUpGfx, 5);
 
     gBattleStruct->battlerState[battler].activeAbilityPopUps = TRUE;
@@ -2810,8 +2849,14 @@ void DestroyAbilityPopUp(u8 battler)
 {
     if (gBattleStruct->battlerState[battler].activeAbilityPopUps)
     {
-        gSprites[gBattleStruct->abilityPopUpSpriteIds[battler][0]].sAutoDestroy = TRUE;
-        gSprites[gBattleStruct->abilityPopUpSpriteIds[battler][1]].sAutoDestroy = TRUE;
+        // Project Grounded: alleen echte popup-sprites (zie IsAbilityPopUpSprite)
+        for (u32 i = 0; i < 2; i++)
+        {
+            if (IsAbilityPopUpSprite(gBattleStruct->abilityPopUpSpriteIds[battler][i]))
+                gSprites[gBattleStruct->abilityPopUpSpriteIds[battler][i]].sAutoDestroy = TRUE;
+        }
+        if (!IsAbilityPopUpSprite(gBattleStruct->abilityPopUpSpriteIds[battler][0]))
+            gBattleStruct->battlerState[battler].activeAbilityPopUps = FALSE;
     }
 }
 
@@ -2823,9 +2868,15 @@ void ForceHideAbilityPopUps(void)
     {
         if (!gBattleStruct->battlerState[battler].activeAbilityPopUps)
             continue;
+        // Hangende vlag (sprites al weg en de ids hergebruikt): alleen de vlag wissen, de sprites niet aanraken.
+        // Anders werd hier elke beurt een Pokémon-sprite onzichtbaar gemaakt (Jordi, Tabitha's Tauros).
+        if (!IsAbilityPopUpSprite(gBattleStruct->abilityPopUpSpriteIds[battler][0]))
+            gBattleStruct->battlerState[battler].activeAbilityPopUps = FALSE;
         for (u32 i = 0; i < 2; i++)
         {
             struct Sprite *sprite = &gSprites[gBattleStruct->abilityPopUpSpriteIds[battler][i]];
+            if (!IsAbilityPopUpSprite(gBattleStruct->abilityPopUpSpriteIds[battler][i]))
+                continue;
             sprite->invisible = TRUE;
             sprite->sAutoDestroy = TRUE;
             sprite->sState = APU_STATE_END;
@@ -2843,7 +2894,7 @@ static void Task_FreeAbilityPopUpGfx(u8 taskId)
             if (IndexOfSpriteTileTag(TAG_ABILITY_POP_UP_PLAYER1 + battler) != 0xFF)
                 FreeSpriteTilesByTag(TAG_ABILITY_POP_UP_PLAYER1 + battler);
         }
-        FreeSpritePaletteByTag(TAG_ABILITY_POP_UP);
+        TryFreeAbilityPopUpPalette(); // Project Grounded: niet vrijgeven zolang het Move Info-venster het gebruikt
         DestroyTask(taskId);
     }
 }
@@ -3025,9 +3076,8 @@ void TryAddLastUsedBallItemSprites(void)
 static void DestroyLastUsedBallWinGfx(struct Sprite *sprite)
 {
     FreeSpriteTilesByTag(TAG_LAST_BALL_WINDOW);
-    if (GetSpriteTileStartByTag(MOVE_INFO_WINDOW_TAG) == 0xFFFF && GetSpriteTileStartByTag(WILD_INFO_WINDOW_TAG) == 0xFFFF)
-        FreeSpritePaletteByTag(TAG_ABILITY_POP_UP);
     DestroySprite(sprite);
+    TryFreeAbilityPopUpPalette(); // Project Grounded: gedeeld met de ability-popups; alleen vrij als niemand het gebruikt
     gBattleStruct->ballSpriteIds[1] = MAX_SPRITES;
 }
 
@@ -3060,15 +3110,17 @@ void TryToAddMoveInfoWindow(void)
 
 void TryToHideMoveInfoWindow(void)
 {
-    gSprites[gBattleStruct->moveInfoSpriteId].sHide = TRUE;
+    // Project Grounded: alleen als het id nog echt het Move Info-venster is (sHide = data[0] van een andere sprite)
+    u32 spriteId = gBattleStruct->moveInfoSpriteId;
+    if (spriteId < MAX_SPRITES && gSprites[spriteId].inUse && gSprites[spriteId].callback == SpriteCB_MoveInfoWin)
+        gSprites[spriteId].sHide = TRUE;
 }
 
 static void DestroyMoveInfoWinGfx(struct Sprite *sprite)
 {
     FreeSpriteTilesByTag(MOVE_INFO_WINDOW_TAG);
-    if (GetSpriteTileStartByTag(TAG_LAST_BALL_WINDOW) == 0xFFFF && GetSpriteTileStartByTag(WILD_INFO_WINDOW_TAG) == 0xFFFF)
-        FreeSpritePaletteByTag(TAG_ABILITY_POP_UP);
     DestroySprite(sprite);
+    TryFreeAbilityPopUpPalette(); // Project Grounded: gedeeld met de ability-popups; alleen vrij als niemand het gebruikt
     gBattleStruct->moveInfoSpriteId = MAX_SPRITES;
 }
 
@@ -3179,9 +3231,8 @@ static bool32 IsWildInfoSprite(u32 spriteId)
 static void DestroyWildInfoWinGfx(struct Sprite *sprite)
 {
     FreeSpriteTilesByTag(WILD_INFO_WINDOW_TAG);
-    if (GetSpriteTileStartByTag(TAG_LAST_BALL_WINDOW) == 0xFFFF && GetSpriteTileStartByTag(MOVE_INFO_WINDOW_TAG) == 0xFFFF)
-        FreeSpritePaletteByTag(TAG_ABILITY_POP_UP);
     DestroySprite(sprite);
+    TryFreeAbilityPopUpPalette(); // Project Grounded: gedeeld met de ability-popups; alleen vrij als niemand het gebruikt
     gBattleStruct->wildInfoSpriteId = MAX_SPRITES;
 }
 

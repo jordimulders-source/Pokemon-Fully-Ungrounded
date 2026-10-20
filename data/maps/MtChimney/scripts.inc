@@ -932,7 +932,7 @@ MtChimney_Movement_WallyRunIn:
 
 MtChimney_Text_WallyFlutterMane:
 	.string "WALLY: Mane of Flutter seen.\n"
-	.string "Like Drevusmis lookings!\p"
+	.string "Like DREVUSMIS lookings!\p"
 	.string "Pretty POKéMON.\n"
 	.string "Feeling has strength.\p"
 	.string "Girl who young had scaredy\n"

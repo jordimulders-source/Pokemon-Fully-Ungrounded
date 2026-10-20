@@ -55,28 +55,28 @@ Back Pic: Wally
 AI: AI_FLAG_ACE_POKEMON
 
 Primeape
-Level: 28
+Level: 38
 Ability: Defiant
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Rage Fist
 - Low Sweep
 - Rock Tomb
-- Seismic Toss
+- Bulk Up
 
 Dondozo
-Level: 28
+Level: 38
 Ability: Unaware
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
-- Water Pulse
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Waterfall
 - Body Slam
-- Tickle
+- Rest
 - Curse
 
 Kirlia
-Level: 30
-IVs: 8 HP / 8 Atk / 8 Def / 8 SpA / 8 SpD / 8 Spe
+Level: 39
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Calm Mind
-- Confusion
+- Psychic
 - Magical Leaf
 - Draining Kiss
 

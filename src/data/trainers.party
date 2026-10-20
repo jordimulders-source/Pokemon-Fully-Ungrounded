@@ -19413,31 +19413,61 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_PREDICT_SWITCH
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_PREDICT_SWITCH / AI_FLAG_PREDICT_MOVE / AI_FLAG_HP_AWARE / AI_FLAG_WEIGH_ABILITY_PREDICTION
 
-Numel
+Numel @ Eviolite
 Level: 35
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Simple
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Curse
+- Earth Power
+- Lava Plume
+- Slack Off
 
-Arcanine
+Arcanine @ Sitrus Berry
 Level: 37
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Intimidate
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Flare Blitz
+- Crunch
+- Extreme Speed
+- Will-O-Wisp
 
-Arcanine_Hisui
+Arcanine_Hisui @ Life Orb
 Level: 39
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Rock Head
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Flare Blitz
+- Head Smash
+- Extreme Speed
+- Crunch
 
-Jynx
+Jynx @ Light Clay
 Level: 39
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Dry Skin
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Lovely Kiss
+- Ice Beam
+- Psychic
+- Nasty Plot
 
-Tauros
+Tauros @ Choice Band
 Level: 39
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Sheer Force
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Raging Bull
+- Earthquake
+- Zen Headbutt
+- Close Combat
 
-Magmar
+Magmar @ Expert Belt
 Level: 39
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Flame Body
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Hot Take
+- Thunder Punch
+- Focus Blast
+- Will-O-Wisp
 
 === TRAINER_JONATHAN ===
 Name: JONATHAN
@@ -28545,19 +28575,34 @@ Pic: Magma Admin
 Gender: Male
 Music: Magma
 Double Battle: No
-AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_ACE_POKEMON
+AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_SMART_SWITCHING / AI_FLAG_SMART_MON_CHOICES / AI_FLAG_PREDICT_SWITCH / AI_FLAG_PREDICT_MOVE / AI_FLAG_HP_AWARE / AI_FLAG_WEIGH_ABILITY_PREDICTION
 
-Arcanine
+Arcanine @ Sitrus Berry
 Level: 38
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Intimidate
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Flare Blitz
+- Crunch
+- Extreme Speed
+- Will-O-Wisp
 
-Magmar
+Magmar @ Expert Belt
 Level: 38
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Flame Body
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Hot Take
+- Thunder Punch
+- Focus Blast
+- Will-O-Wisp
 
-Arcanine_Hisui
+Arcanine_Hisui @ Life Orb
 Level: 39
-IVs: 6 HP / 6 Atk / 6 Def / 6 SpA / 6 SpD / 6 Spe
+Ability: Rock Head
+IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
+- Flare Blitz
+- Head Smash
+- Extreme Speed
+- Crunch
 
 === TRAINER_BIRCH ===
 Name: BIRCH

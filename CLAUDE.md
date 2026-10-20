@@ -231,6 +231,9 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pok�
 - **Types, abilities en evoluties altijd uit de repo** (`src/data/pokemon/species_info/`, `types_info.h`), nooit uit het geheugen of van internet: veel soorten zijn herzien (Parasect is Ghost/Grass, Toxicroak evolueert tot Lumineon, Ludicolo heeft geen Swift Swim). Jordi 18 okt: "gebruik de repo-documentatie".
 - **libmgba ontbreekt soms in een verse container:** `apt-get install -y libmgba0.10` (daarna werkt `python3.11 -c "import mgba.core"`).
 
+- **Sprite-ids in `gBattleStruct`** (ability-popups, Move Info) kunnen na het partymenu of bij hangende vlaggen naar andere sprites wijzen: altijd `inUse` + callback controleren vóór je erin schrijft (v1.0, onzichtbare Tauros). `blend_color_cycle` met `num_blends=1` blendt nooit terug (magenta gif-animatie). Jordi's .sav + dezelfde commit nabouwen + debugscript (`cleartrainerflag`) is de snelste reproductie; hulpscripts `drive.py`/`bootsav.py` (scratchpad sprites/).
+- **Compat-voorstellen van agents** controleren tegen de repo-types vóór je ze aan Jordi voorlegt (Gyarados "Dark", Clefable "Flying" waren fout).
+
 ## Werkwijzen (herhaalde taken)
 
 ### Een route bouwen

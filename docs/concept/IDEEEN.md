@@ -62,3 +62,7 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - Mug als bug (Jordi): iets minder early route, een beetje zoals Kricketot in Sinnoh; verschijnt zodra je in lager/warmer gebied komt (boven ±3000 m bijna geen muggen).
 - Viscacha (Jordi heeft ze gezien, bijv. in Lípez/Atacama): kandidaat voor de vroege knager op de hoogvlakte. Familie Chinchillidae (neef van de chinchilla), lange konijnenoren, lange krulstaart, zit te zonnen op rotsen.
 - Vlieg: er is nog geen Pokémon op een (huis)vlieg gebaseerd (Jordi). Kandidaat voor de jungle of de stad.
+
+## Verhaal: tegenstanders (Jordi, 22 okt)
+- Niet één evil team, maar **verschillende gangs** en een soort **overheid/regering die de natuur wil vernietigen**, waardoor de **legendary Pokémon woedend worden** (enraged).
+- Past bij het serieuze thema (verdwijnende gletsjers, mijnbouw, ontbossing) en bij de mythologie (Pachamama, het Inca-trio).

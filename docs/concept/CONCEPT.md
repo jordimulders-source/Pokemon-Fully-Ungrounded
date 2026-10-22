@@ -19,7 +19,7 @@ Wat in de conceptdocumenten staat, is **besloten** door Jordi. Losse ideeën sta
 - 8 gyms en een Elite 4. **Gymvolgorde lineair** (houdt de levelcurve gezond), maar **de kaart niet** (zie `REGIO.md`). E4 rond lv 80–90.
 
 ## Gyms en Elite 4
-- **Gymtypes:** Dark, Ice, Bug, Dragon, Ground, Grass, Fire, Poison. **Gym 1: Ground in Uyuni** (direct vanuit La Paz naar de zoutvlakte), **gym 2: Ice**; de rest van de volgorde is nog open.
+- **Gymtypes:** Dark, Ice, Bug, Dragon, Ground, Grass, Fire, Poison. **Gym 1: Ground in Uyuni** (direct vanuit La Paz naar de zoutvlakte), **gym 2: Ice**, **gym 8: Bug** (Jordi: Bug wordt altijd als early-game-type gezien; juist daarom als laatste). De volgorde mag **onconventioneel en onverwacht**; 3–7 nog open.
 - **Elite 4:** Electric, Flying, Ghost, Steel.
 - **Pokémon League in Machu Picchu.** Cuzco bezoek je al eerder en je komt er meerdere keren terug. De League staat **los van het verhaal** (zoals in bijna elke game behalve B/W).
 - Niet als gym/E4: Normal, Water, Fighting, Psychic, Rock, Fairy (kampioen open).

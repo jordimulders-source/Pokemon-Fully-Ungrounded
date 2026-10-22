@@ -5,11 +5,11 @@ Verschil met ronde 2 (bron in ../ronde2/bron/build.py):
 - palet zoals Game Freak het kiest (Espeon-lavendel met violette schaduw, Ralts-wit voor het
   zilver, Whismur-roze voor het accent) in plaats van pastel;
 - schaduw als vlakken met een vaste breedte langs de onder-/rechterkant van elke vorm
-  (verschuif-methode, zoals bij Abra) plus slagschaduw onder kop en kraag, in plaats van
+  (verschuif-methode, zoals bij Abra) plus slagschaduw onder kop en armen, in plaats van
   elliptische verlopen; hooglicht als klein vlekje linksboven;
 - omlijning: boven/links de donkerste tint (selout), onder/rechts zwart, binnenlijnen donkerste tint;
 - ogen: lege maanschijven zonder pupil (frame 1), pupil + glans (frame 2);
-- handen in de schoot (meditatiemudra), zilveren geschulpte kraag (zaadje van de healer-mantel);
+- handen houden een gloeiende maanparel voor de buik (zaadje van de genezer);
 - iets kleiner.
 """
 import sys, os
@@ -21,7 +21,7 @@ from layerlib import *
 PAL = [hexc(h) for h in [
     '#94CD9C',                                   # 0 transparant
     '#E6CDF6', '#B49CDE', '#8373BD', '#4A396A',  # 1-4 vacht licht->donker (2 basis, 4 selout/binnenlijn)
-    '#F6F6FF', '#CDCDE6', '#9CA4C5',             # 5-7 zilver (kraag, sikkels, snuit)
+    '#F6F6FF', '#CDCDE6', '#9CA4C5',             # 5-7 zilver (sikkels, snuit)
     '#FFA4D5', '#E65AA4', '#9C2962',             # 8-10 magenta (edelsteen, oren, neus, vingertoppen, staartpunt)
     '#EEFFFF', '#62C5DE', '#293973',             # 11-13 ogen (maansikkel, gloed, nacht)
     '#FFFFFF',                                   # 14 glans
@@ -113,7 +113,13 @@ def render(P):
             behind = [d for d, v in n.items() if 0 <= v < z]
             if out:
                 ox = sum(d[0] for d in out); oy = sum(d[1] for d in out)
-                idx[y, x] = dark if (oy < 0 or (ox < 0 and oy <= 0)) else 15
+                # selout: bovenkant de schaduwtint, linkerkant de donkerste tint, rest zwart
+                if oy < 0:
+                    idx[y, x] = SH[P[z].part]
+                elif ox < 0 and oy <= 0:
+                    idx[y, x] = dark
+                else:
+                    idx[y, x] = 15
             elif behind:
                 bx = sum(d[0] for d in behind); by = sum(d[1] for d in behind)
                 # binnenlijn: donkerste tint, aan de schaduwkant (onder/rechts) zwart
@@ -134,6 +140,15 @@ def disk(cx, cy, r):
     return ellipse(cx, cy, r, r)
 
 
+EYE1 = [' ddbbd ',
+        'dbbdddd',
+        'dbddddd',
+        'bdddddd',
+        'dddddcd',
+        'ddddccc',
+        ' dcccc ']
+
+
 def eyes(idx, frame):
     """Frame 1: grote donkere nachtogen zonder zichtbare pupil, met een maansikkel als
     weerspiegeling en een zwakke gloed onderin. Frame 2: de iris licht op, kleine pupil."""
@@ -144,10 +159,9 @@ def eyes(idx, frame):
         inner = disk(cx, cy, r - 1.0)
         rim = E & ~inner
         if frame == 1:
-            idx[inner] = 13
-            idx[inner & ~disk(cx + 0.6, cy - 1.2, 3.7)] = 12     # gloed rechtsonder
-            moon = disk(cx - 1.0, cy - 1.0, 2.6) & ~disk(cx + 0.2, cy - 1.4, 2.4)
-            idx[inner & moon] = 11                               # maansikkel als glans
+            # met de hand: maansikkel als glans linksboven, zwakke gloed rechtsonder
+            C = Canvas(); C.idx = idx
+            C.stamp(int(cx - 3.5), int(cy - 3.5), EYE1, {'b': 11, 'c': 12, 'd': 13})
         else:
             idx[inner] = 12
             idx[inner & disk(cx - 0.6, cy - 0.6, 2.6)] = 11
@@ -176,14 +190,6 @@ def forehead(idx):
 
 
 # handen houden een kleine gloeiende maanparel voor de buik (zaadje van de genezer)
-ORB = ['...XXXX...',
-       '..XebbcX..',
-       '.X9bbbbc9X',
-       'X19bbbcc93X'[:10],
-       'X11cbccd33',
-       'X111cdd23X',
-       '.X11XX22X.',
-       '..XX..XX..']
 ORB = ['...XXXX...',
        '..XebbcX..',
        '.X9bbbbc9X',

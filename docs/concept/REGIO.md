@@ -1,5 +1,8 @@
 # Regio
 
+## Naam
+- De regionaam wordt een **woordgrap in het Spaans met 'ver weg' (faraway)** (Jordi). Benoemen zoals Pokémon dat deed bij Kalos, Alola en Paldea: een verzonnen, korte naam met een herkenbare knipoog naar de taal/cultuur. Jordi wacht op een inspiratiemoment.
+
 ## Opzet
 - **Start in een La Paz-achtige stad** (hoog, kabelbanen), met een **ijsgebied** ernaast (Cordillera Real). Sneeuw vroeg in de game, niet als eindgebied. Geen standaardopening met kleine stad en grasroute.
 - **Verkennen in metroidvania-stijl:** HM-achtige obstakels die na bijv. een gym opengaan; je komt terug in gebieden die je al kende en vindt nieuwe paden. Een obstakel ruim je **één keer** op (badge + middel, geen Pokémon nodig, zoals de HM-QoL uit Ungrounded) en daarna is het voorgoed weg.

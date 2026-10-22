@@ -108,6 +108,7 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - **Alternatief: een regional form van Cacnea of Maractus** in plaats van een nieuwe lijn (Jordi). Voorstel van Claude:
   - Cacnea/Cacturne als **cardón van Incahuasi**. Cacturne staat al rechtop als een vogelverschrikker, dus een zuilcactus ligt voor de hand. Eventueel Rock (versteend koraal van het eiland) of Ghost (de eeuwenoude wachter).
   - Maractus als **San Pedro-cactus** (Grass/Psychic, ziener van Chavín).
+- **Maractus verdient meer love** (Jordi). Ideeën van Claude: een regionale **evolutie** (of pre-evolutie) die het muziekthema doortrekt. Bijvoorbeeld een cactus-percussionist van de batucada (samba), met de *cajón* (Peruaanse kistdrum) of een *charango*. De maraca's groeien uit tot een heel orkest. Of een aparte regional form met een Dancer-achtige ability.
 - Mogelijke invalshoeken (Claude):
   - de **reuzencardón van Isla Incahuasi**: oeroud, langzaam, een wachter op het zoutvlak;
   - de **San Pedro-cactus** (*huachuma*), die in Chavín ceremonieel gebruikt werd. Die kan samenvallen met het idee van de ruïne-Pokémon (Grass/Psychic of Rock/Psychic: ziener).

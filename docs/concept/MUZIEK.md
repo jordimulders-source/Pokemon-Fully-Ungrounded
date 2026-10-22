@@ -2,6 +2,7 @@
 
 ## Besloten
 - De soundtrack wordt gebaseerd op diverse **Zuid-Amerikaanse en Latijns-Amerikaanse muziekstijlen** (Jordi, 22 okt). Welke stijlen: zie hieronder (wordt aangevuld).
+- **Grotendeels een nieuwe OST** (Jordi, 22 okt): alle Ungrounded-muziek (remixes, gym-/legendary-/gebiedsthema's, rips) is eruit; alleen de vanilla Emerald-nummers en Keccles' thema's bleven. Vanilla-nummers zijn plaatshouders; een groot deel (of alles) wordt opnieuw gemaakt.
 
 ## Stijlen
 - **Kijk goed naar wat de GBA-klank kan namaken** (Jordi): niet elke stijl komt er even mooi uit. Ervaring uit Ungrounded: noten met (eigen) samples werken, gesampelde opnames blijven dof; max. 16 sporen per nummer; eigen samples max. 11 kHz (DPCM); korte stoten van een aangehouden sample klinken als accordeon.

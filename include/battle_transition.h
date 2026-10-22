@@ -146,9 +146,6 @@ enum BattleTransition
     B_TRANSITION_ZAMAZENTA, // Project Grounded: Zamazenta, dezelfde open plek, ademen, Iron Defense, Behemoth Bash
     B_TRANSITION_XERNEAS, // Project Grounded: Xerneas, grauw Ballonlea, de kleur stroomt vanuit de heksenkring terug
     B_TRANSITION_YVELTAL, // Project Grounded: Yveltal, een schaduw landt in de kring, de kleur trekt weg, Oblivion Wing, zwart
-    B_TRANSITION_WARIO, // Project Grounded: Wario, knoflook wordt opgegeten, de W dreunt erin, poses, de W neemt het beeld over
-    B_TRANSITION_BOO, // Project Grounded: Boos (spookhuis uit Yoshi's Island), Kamek tovert er een tot Commander Boo
-    B_TRANSITION_SHY_GUY, // Project Grounded: Shy Guys op Sunset Wilds, staan in 1-1, eentje beseft dat hij moet vechten
     B_TRANSITION_DIALGA, // Project Grounded: Dialga, de wandklok uit je kamer slaat op hol, staat stil, blauwe kracht, tijdtunnel
     B_TRANSITION_PALKIA, // Project Grounded: Palkia, vijf Hoenn-steden op de maat, roze kruipt binnen, alles door elkaar, Spear Pillar, ruimtetunnel
     B_TRANSITION_ARCEUS, // Project Grounded: Arceus, de wereld trilt en vervormt in heilig licht, het teken slaat drie keer in op de maat

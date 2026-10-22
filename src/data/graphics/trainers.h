@@ -308,20 +308,6 @@ const u32 gTrainerFrontPic_Blue[] = INCBIN_U32("graphics/trainers/front_pics/cha
 const u16 gTrainerPalette_Blue[] = INCBIN_U16("graphics/trainers/front_pics/champion_blue.gbapal");
 const u32 gTrainerFrontPic_Cynthia[] = INCBIN_U32("graphics/trainers/front_pics/champion_cynthia.4bpp.smol"); // Project Grounded
 const u16 gTrainerPalette_Cynthia[] = INCBIN_U16("graphics/trainers/front_pics/champion_cynthia.gbapal");
-const u32 gTrainerFrontPic_GuestWario[] = INCBIN_U32("graphics/trainers/front_pics/guest_wario.4bpp.smol"); // Project Grounded
-const u16 gTrainerPalette_GuestWario[] = INCBIN_U16("graphics/trainers/front_pics/guest_wario.gbapal");
-const u32 gTrainerFrontPic_GuestYoshi[] = INCBIN_U32("graphics/trainers/front_pics/guest_yoshi.4bpp.smol"); // Project Grounded
-const u16 gTrainerPalette_GuestYoshi[] = INCBIN_U16("graphics/trainers/front_pics/guest_yoshi.gbapal");
-const u32 gTrainerFrontPic_GuestBoo[] = INCBIN_U32("graphics/trainers/front_pics/guest_boo.4bpp.smol"); // Project Grounded
-const u16 gTrainerPalette_GuestBoo[] = INCBIN_U16("graphics/trainers/front_pics/guest_boo.gbapal");
-const u32 gTrainerFrontPic_GuestShyGuyRed[] = INCBIN_U32("graphics/trainers/front_pics/guest_shy_guy_red.4bpp.smol"); // Project Grounded
-const u16 gTrainerPalette_GuestShyGuyRed[] = INCBIN_U16("graphics/trainers/front_pics/guest_shy_guy_red.gbapal");
-const u32 gTrainerFrontPic_GuestShyGuyGreen[] = INCBIN_U32("graphics/trainers/front_pics/guest_shy_guy_green.4bpp.smol"); // Project Grounded
-const u16 gTrainerPalette_GuestShyGuyGreen[] = INCBIN_U16("graphics/trainers/front_pics/guest_shy_guy_green.gbapal");
-const u32 gTrainerFrontPic_GuestShyGuyPink[] = INCBIN_U32("graphics/trainers/front_pics/guest_shy_guy_pink.4bpp.smol"); // Project Grounded
-const u16 gTrainerPalette_GuestShyGuyPink[] = INCBIN_U16("graphics/trainers/front_pics/guest_shy_guy_pink.gbapal");
-const u32 gTrainerFrontPic_GuestShyGuyBlack[] = INCBIN_U32("graphics/trainers/front_pics/guest_shy_guy_black.4bpp.smol"); // Project Grounded
-const u16 gTrainerPalette_GuestShyGuyBlack[] = INCBIN_U16("graphics/trainers/front_pics/guest_shy_guy_black.gbapal");
 const u32 gTrainerFrontPic_Scientist[] = INCBIN_U32("graphics/trainers/front_pics/scientist.4bpp.smol"); // Project Grounded: AI CLAUDE (FRLG)
 const u16 gTrainerPalette_Scientist[] = INCBIN_U16("graphics/trainers/front_pics/scientist.gbapal");
 const u32 gTrainerFrontPic_Mustard[] = INCBIN_U32("graphics/trainers/front_pics/mustard.4bpp.smol"); // Project Grounded
@@ -344,20 +330,6 @@ const u32 gTrainerFrontPic_RocketGruntF[] = INCBIN_U32("graphics/trainers/front_
 const u16 gTrainerPalette_RocketGruntF[] = INCBIN_U16("graphics/trainers/front_pics/rocket_grunt_f.gbapal");
 const u32 gTrainerFrontPic_Petrel[] = INCBIN_U32("graphics/trainers/front_pics/petrel.4bpp.smol"); // Project Grounded: Rocket-sidequest
 const u16 gTrainerPalette_Petrel[] = INCBIN_U16("graphics/trainers/front_pics/petrel.gbapal");
-const u32 gTrainerFrontPic_ZeroSecurity[] = INCBIN_U32("graphics/trainers/front_pics/zero_security.4bpp.smol"); // Project Grounded: Area Zero
-const u16 gTrainerPalette_ZeroSecurity[] = INCBIN_U16("graphics/trainers/front_pics/zero_security.gbapal");
-const u32 gTrainerFrontPic_ZeroAlarm[] = INCBIN_U32("graphics/trainers/front_pics/zero_alarm.4bpp.smol"); // Project Grounded: Area Zero
-const u16 gTrainerPalette_ZeroAlarm[] = INCBIN_U16("graphics/trainers/front_pics/zero_alarm.gbapal");
-const u32 gTrainerFrontPic_Construct[] = INCBIN_U32("graphics/trainers/front_pics/construct.4bpp.smol"); // Project Grounded: construct van Arceus, alle thema's (tools/grounded/construct_sprites.py)
-const u16 gTrainerPalette_ConstructSky[] = INCBIN_U16("graphics/trainers/front_pics/construct_sky.gbapal");
-const u16 gTrainerPalette_ConstructSea[] = INCBIN_U16("graphics/trainers/front_pics/construct_sea.gbapal");
-const u16 gTrainerPalette_ConstructLand[] = INCBIN_U16("graphics/trainers/front_pics/construct_land.gbapal");
-const u16 gTrainerPalette_ConstructMind[] = INCBIN_U16("graphics/trainers/front_pics/construct_mind.gbapal");
-const u16 gTrainerPalette_ConstructDream[] = INCBIN_U16("graphics/trainers/front_pics/construct_dream.gbapal");
-const u16 gTrainerPalette_ConstructJustice[] = INCBIN_U16("graphics/trainers/front_pics/construct_justice.gbapal");
-const u16 gTrainerPalette_ConstructForge[] = INCBIN_U16("graphics/trainers/front_pics/construct_forge.gbapal");
-const u16 gTrainerPalette_ConstructOrder[] = INCBIN_U16("graphics/trainers/front_pics/construct_order.gbapal");
-const u16 gTrainerPalette_ConstructSpaceTime[] = INCBIN_U16("graphics/trainers/front_pics/construct_spacetime.gbapal");
 const u32 gTrainerFrontPic_GuestDitto[] = INCBIN_U32("graphics/trainers/front_pics/guest_ditto.4bpp.smol"); // Project Grounded
 const u16 gTrainerPalette_GuestDitto[] = INCBIN_U16("graphics/trainers/front_pics/guest_ditto.gbapal");
 const u32 gTrainerFrontPic_GuestBurglar[] = INCBIN_U32("graphics/trainers/front_pics/guest_burglar.4bpp.smol"); // Project Grounded
@@ -506,13 +478,6 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_AGATHA, gTrainerFrontPic_Agatha, gTrainerPalette_Agatha),
     TRAINER_SPRITE(TRAINER_PIC_BLUE, gTrainerFrontPic_Blue, gTrainerPalette_Blue),
     TRAINER_SPRITE(TRAINER_PIC_CYNTHIA, gTrainerFrontPic_Cynthia, gTrainerPalette_Cynthia),
-    TRAINER_SPRITE(TRAINER_PIC_GUEST_WARIO, gTrainerFrontPic_GuestWario, gTrainerPalette_GuestWario),
-    TRAINER_SPRITE(TRAINER_PIC_GUEST_YOSHI, gTrainerFrontPic_GuestYoshi, gTrainerPalette_GuestYoshi),
-    TRAINER_SPRITE(TRAINER_PIC_GUEST_BOO, gTrainerFrontPic_GuestBoo, gTrainerPalette_GuestBoo),
-    TRAINER_SPRITE(TRAINER_PIC_GUEST_SHY_GUY_RED, gTrainerFrontPic_GuestShyGuyRed, gTrainerPalette_GuestShyGuyRed),
-    TRAINER_SPRITE(TRAINER_PIC_GUEST_SHY_GUY_GREEN, gTrainerFrontPic_GuestShyGuyGreen, gTrainerPalette_GuestShyGuyGreen),
-    TRAINER_SPRITE(TRAINER_PIC_GUEST_SHY_GUY_PINK, gTrainerFrontPic_GuestShyGuyPink, gTrainerPalette_GuestShyGuyPink),
-    TRAINER_SPRITE(TRAINER_PIC_GUEST_SHY_GUY_BLACK, gTrainerFrontPic_GuestShyGuyBlack, gTrainerPalette_GuestShyGuyBlack),
     TRAINER_SPRITE(TRAINER_PIC_GUEST_DITTO, gTrainerFrontPic_GuestDitto, gTrainerPalette_GuestDitto),
     TRAINER_SPRITE(TRAINER_PIC_MUSTARD, gTrainerFrontPic_Mustard, gTrainerPalette_Mustard),
     TRAINER_SPRITE(TRAINER_PIC_GHETSIS, gTrainerFrontPic_Ghetsis, gTrainerPalette_Ghetsis),
@@ -524,17 +489,6 @@ const struct TrainerSprite gTrainerSprites[] =
     TRAINER_SPRITE(TRAINER_PIC_ROCKET_GRUNT_M, gTrainerFrontPic_RocketGruntM, gTrainerPalette_RocketGruntM),
     TRAINER_SPRITE(TRAINER_PIC_ROCKET_GRUNT_F, gTrainerFrontPic_RocketGruntF, gTrainerPalette_RocketGruntF),
     TRAINER_SPRITE(TRAINER_PIC_PETREL, gTrainerFrontPic_Petrel, gTrainerPalette_Petrel),
-    TRAINER_SPRITE(TRAINER_PIC_ZERO_SECURITY, gTrainerFrontPic_ZeroSecurity, gTrainerPalette_ZeroSecurity),
-    TRAINER_SPRITE(TRAINER_PIC_ZERO_ALARM, gTrainerFrontPic_ZeroAlarm, gTrainerPalette_ZeroAlarm),
-    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_SKY, gTrainerFrontPic_Construct, gTrainerPalette_ConstructSky),
-    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_SEA, gTrainerFrontPic_Construct, gTrainerPalette_ConstructSea),
-    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_LAND, gTrainerFrontPic_Construct, gTrainerPalette_ConstructLand),
-    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_MIND, gTrainerFrontPic_Construct, gTrainerPalette_ConstructMind),
-    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_DREAM, gTrainerFrontPic_Construct, gTrainerPalette_ConstructDream),
-    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_JUSTICE, gTrainerFrontPic_Construct, gTrainerPalette_ConstructJustice),
-    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_FORGE, gTrainerFrontPic_Construct, gTrainerPalette_ConstructForge),
-    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_ORDER, gTrainerFrontPic_Construct, gTrainerPalette_ConstructOrder),
-    TRAINER_SPRITE(TRAINER_PIC_CONSTRUCT_SPACETIME, gTrainerFrontPic_Construct, gTrainerPalette_ConstructSpaceTime),
     TRAINER_SPRITE(TRAINER_PIC_SCIENTIST, gTrainerFrontPic_Scientist, gTrainerPalette_Scientist),
     TRAINER_SPRITE(TRAINER_PIC_GUEST_BURGLAR, gTrainerFrontPic_GuestBurglar, gTrainerPalette_GuestBurglar),
 };

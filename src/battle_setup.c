@@ -986,11 +986,6 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
 
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
-    // Project Grounded: Glimwood Tangle (ondergronds vanwege de eigen verlichting, maar het is een bos)
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_GLIMWOOD_TANGLE)
-     && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_GLIMWOOD_TANGLE)
-      || gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_GLIMWOOD_TANGLE_BALLONLEA)))
-        return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_LONG_GRASS;
     if (MetatileBehavior_IsSandOrDeepSand(tileBehavior))
@@ -1325,7 +1320,7 @@ enum BattleTransition GetTrainerBattleTransition(void)
         return B_TRANSITION_WEATHER_SERVICE;
 
     // Project Grounded: Colress: eerst de mugshot, dan twee tandwielen die op je af komen
-    if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA || trainerId == TRAINER_CHARGESTONE_COLRESS)
+    if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)
         return B_TRANSITION_COLRESS;
 
     // Project Grounded: Youngster Calvin (Route 102, "Short shorts, cigarette."): het Viagra Boys-logo
@@ -1351,16 +1346,6 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if ((trainerId >= TRAINER_BURGLAR_1 && trainerId <= TRAINER_BURGLAR_5)
      || (trainerId >= TRAINER_BURGLAR_6 && trainerId <= TRAINER_BURGLAR_9))
         return B_TRANSITION_BURGLAR;
-    // Project Grounded: Wario (eindbaas van het Yoshi's Island-fort): knoflook, de W, poses
-    if (trainerId == TRAINER_YI_WARIO)
-        return B_TRANSITION_WARIO;
-    // Project Grounded: de Boos (Commander Boo op Yoshi's Island): Kamek tovert een Boo groot
-    if (trainerId == TRAINER_YI_COMMANDER_BOO)
-        return B_TRANSITION_BOO;
-    // Project Grounded: de Shy Guys (Shy Squad op Yoshi's Island, de woestijn): op de maat van
-    // Sunset Wilds staan ze in level 1-1, eentje draait zich om: het is zijn beurt
-    if (trainerId == TRAINER_SHY_GUY_DESERT || trainerClass == TRAINER_CLASS_SHY_SQUAD)
-        return B_TRANSITION_SHY_GUY;
 
     // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)
     if (trainerClass == TRAINER_CLASS_NEO_PLASMA || trainerClass == TRAINER_CLASS_SHADOW_TRIAD || trainerClass == TRAINER_CLASS_SAGE)
@@ -1368,9 +1353,6 @@ enum BattleTransition GetTrainerBattleTransition(void)
     // Project Grounded: Team Rocket (grunts en Petrel): een stempelende rode R
     if (trainerClass == TRAINER_CLASS_TEAM_ROCKET || trainerClass == TRAINER_CLASS_ROCKET_EXEC)
         return B_TRANSITION_ROCKET;
-    // Project Grounded: Area Zero, de beveiligings-/alarmdrones (placeholder-transitie)
-    if (trainerClass == TRAINER_CLASS_ZERO_LAB)
-        return B_TRANSITION_FRONTIER_SQUARES_SCROLL;
 
     // Project Grounded: Steven (kampioen, post-game en Battle Stadium): zijn verzamelkast, de badges in de facetten van
     // een gloeiende steen. Vervangt de mugshot: de film stelt Steven zelf al voor, en mugshot + film samen duurt te lang.

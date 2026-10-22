@@ -6116,19 +6116,6 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
      && trainerId == TRAINER_PROF_OAK)
         return MUS_RG_OAK_LAB;
 
-    // Project Grounded: de Shy Guys vechten op Sunset Wilds (Mario Kart: Super Circuit)
-    if (trainerId == TRAINER_SHY_GUY_DESERT
-     || trainerClass == TRAINER_CLASS_SHY_SQUAD) // Project Grounded: ook de Shy Squad op Yoshi's Island
-        return MUS_GROUNDED_VS_SUNSET_WILDS;
-
-    // Project Grounded: Wario (eindbaas in het fort op Yoshi's Island) vecht op Fiery Cavern (Wario Land 4)
-    if (trainerId == TRAINER_YI_WARIO)
-        return MUS_GROUNDED_WL4_FIERY_CAVERN;
-
-    // Project Grounded: de Boos (Commander Boo op Yoshi's Island) vechten op Boo Lake & Broken Pier
-    if (trainerId == TRAINER_YI_COMMANDER_BOO)
-        return MUS_GROUNDED_VS_BROKEN_PIER;
-
     // Project Grounded: Dave (Cooltrainer, Victory Road; ook in het Stadium) vecht op Freed From Desire (Gala)
     if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_111 || trainerId == TRAINER_DAVE_PETALBURG
      || trainerId == TRAINER_DAVE_SOOTOPOLIS || trainerId == TRAINER_DAVE_PARADISO)
@@ -6219,8 +6206,6 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
         return MUS_RG_VS_TRAINER;
     case TRAINER_CLASS_ROCKET_EXEC: // Project Grounded: Petrel
         return MUS_RG_VS_GYM_LEADER;
-    case TRAINER_CLASS_ZERO_LAB: // Project Grounded: Area Zero (placeholder tot Battle! Area Zero op het originele battle theme is gebouwd)
-        return trainerId == TRAINER_AREA_ZERO_ALARM ? MUS_RG_VS_LEGEND : MUS_VS_FRONTIER_BRAIN;
     case TRAINER_CLASS_AQUA_LEADER:
     case TRAINER_CLASS_MAGMA_LEADER:
     case TRAINER_CLASS_BOSS: // Project Grounded: Battle Stadium

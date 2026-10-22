@@ -108,82 +108,16 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_Grounded_2[] =
 
 static const struct DebugMenuOption sDebugMenu_ZoneWarp_Spacetime_0[] =
 {
-    { COMPOUND_STRING("LavenderTown"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVENDER_TOWN },
-    { COMPOUND_STRING("LavenderTown_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVENDER_TOWN_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("LavenderTown_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVENDER_TOWN_POKEMON_CENTER_2F },
-    { COMPOUND_STRING("LavenderTown_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVENDER_TOWN_MART },
-    { COMPOUND_STRING("LavenderTown_Volunteer"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVENDER_TOWN_VOLUNTEER_HOUSE },
-    { COMPOUND_STRING("LavenderTown_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVENDER_TOWN_HOUSE1 },
-    { COMPOUND_STRING("LavenderTown_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVENDER_TOWN_HOUSE2 },
-    { COMPOUND_STRING("PokemonTower_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_POKEMON_TOWER_1F },
-    { COMPOUND_STRING("PokemonTower_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_POKEMON_TOWER_2F },
-    { COMPOUND_STRING("PokemonTower_3F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_POKEMON_TOWER_3F },
-    { COMPOUND_STRING("PokemonTower_4F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_POKEMON_TOWER_4F },
-    { COMPOUND_STRING("PokemonTower_5F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_POKEMON_TOWER_5F },
-    { COMPOUND_STRING("CeruleanCave_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_CERULEAN_CAVE_1F },
-    { COMPOUND_STRING("CeruleanCave_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_CERULEAN_CAVE_2F },
-    { COMPOUND_STRING("CeruleanCave_B1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_CERULEAN_CAVE_B1F },
-    { COMPOUND_STRING("SpacetimeCave"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SPACETIME_CAVE },
-    { COMPOUND_STRING("ChargestoneCave_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_CHARGESTONE_CAVE_1F },
-    { COMPOUND_STRING("ChargestoneCave_B1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_CHARGESTONE_CAVE_B1F },
-    { COMPOUND_STRING("ChargestoneCave_B2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_CHARGESTONE_CAVE_B2F },
-    { COMPOUND_STRING("NationalPark"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_NATIONAL_PARK },
-    { COMPOUND_STRING("NationalPark_Gate"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_NATIONAL_PARK_GATE },
-    { COMPOUND_STRING("IlexForest"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ILEX_FOREST },
-    { COMPOUND_STRING("GlimwoodTangle"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_GLIMWOOD_TANGLE },
-    { COMPOUND_STRING("GlimwoodTangle_Ballonl"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_GLIMWOOD_TANGLE_BALLONLEA },
-    { COMPOUND_STRING("AreaZero_Rim"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_AREA_ZERO_RIM },
-    { COMPOUND_STRING("AreaZero_Depths"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_AREA_ZERO_DEPTHS },
-    { COMPOUND_STRING("AreaZero_Crystal"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_AREA_ZERO_CRYSTAL },
-    { COMPOUND_STRING("AreaZero_Future"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_AREA_ZERO_FUTURE },
-    { COMPOUND_STRING("AreaZero_Past"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_AREA_ZERO_PAST },
-    { COMPOUND_STRING("AreaZero_TeraCave"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_AREA_ZERO_TERA_CAVE },
-    { COMPOUND_STRING("YoshisIsland_Beach"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_YOSHIS_ISLAND_BEACH },
-    { COMPOUND_STRING("YoshisIsland_Hills"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_YOSHIS_ISLAND_HILLS },
-    { COMPOUND_STRING("YoshisIsland_BooMansio"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_YOSHIS_ISLAND_BOO_MANSION },
-    { COMPOUND_STRING("YoshisIsland_WarioFort"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_YOSHIS_ISLAND_WARIO_FORT },
-    { COMPOUND_STRING("LakeAcuity"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAKE_ACUITY },
-    { COMPOUND_STRING("LakeAcuity_Cavern"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAKE_ACUITY_CAVERN },
-    { COMPOUND_STRING("LakeValor"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAKE_VALOR },
-    { COMPOUND_STRING("LakeValor_Cavern"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAKE_VALOR_CAVERN },
-    { COMPOUND_STRING("LakeVerity"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAKE_VERITY },
-    { COMPOUND_STRING("LakeVerity_Cavern"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAKE_VERITY_CAVERN },
-    { COMPOUND_STRING("MtCoronet_4F_Room1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MT_CORONET_4F_ROOM1 },
-    { COMPOUND_STRING("MtCoronet_4F_Outside"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MT_CORONET_4F_OUTSIDE },
-    { COMPOUND_STRING("MtCoronet_4F_Room2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MT_CORONET_4F_ROOM2 },
-    { COMPOUND_STRING("MtCoronet_4F_Room3"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MT_CORONET_4F_ROOM3 },
-    { COMPOUND_STRING("MtCoronet_5F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MT_CORONET_5F },
     { NULL }
 };
 
 static const struct DebugMenuOption sDebugMenu_ZoneWarp_Spacetime_1[] =
 {
-    { COMPOUND_STRING("MtCoronet_6F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MT_CORONET_6F },
-    { COMPOUND_STRING("SpearPillar"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SPEAR_PILLAR },
-    { COMPOUND_STRING("YoshisIsland_Jungle"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_YOSHIS_ISLAND_JUNGLE },
-    { COMPOUND_STRING("YoshisIsland_Cave"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_YOSHIS_ISLAND_CAVE },
-    { COMPOUND_STRING("YoshisIsland_Flowers"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_YOSHIS_ISLAND_FLOWERS },
-    { COMPOUND_STRING("HallOfOrigin_Stairway"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_HALL_OF_ORIGIN_STAIRWAY },
-    { COMPOUND_STRING("HallOfOrigin_Atrium"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_HALL_OF_ORIGIN_ATRIUM },
-    { COMPOUND_STRING("HallOfOrigin_Summit"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_HALL_OF_ORIGIN_SUMMIT },
-    { COMPOUND_STRING("YoshisIsland_YoshiHous"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_YOSHIS_ISLAND_YOSHI_HOUSE },
     { NULL }
 };
 
 static const struct DebugMenuOption sDebugMenu_ZoneWarp_UltraSpace_0[] =
 {
-    { COMPOUND_STRING("UltraSpace_Nihilego"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_NIHILEGO },
-    { COMPOUND_STRING("UltraSpace_Buzzwole"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_BUZZWOLE },
-    { COMPOUND_STRING("UltraSpace_Pheromosa"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_PHEROMOSA },
-    { COMPOUND_STRING("UltraSpace_Xurkitree"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_XURKITREE },
-    { COMPOUND_STRING("UltraSpace_Celesteela"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_CELESTEELA },
-    { COMPOUND_STRING("UltraSpace_Kartana"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_KARTANA },
-    { COMPOUND_STRING("UltraSpace_Guzzlord"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_GUZZLORD },
-    { COMPOUND_STRING("UltraSpace_Poipole"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_POIPOLE },
-    { COMPOUND_STRING("UltraSpace_Stakataka"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_STAKATAKA },
-    { COMPOUND_STRING("UltraSpace_Blacephalon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_BLACEPHALON },
-    { COMPOUND_STRING("UltraSpace_Necrozma"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_NECROZMA },
-    { COMPOUND_STRING("UltraSpace_Hub"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ULTRA_SPACE_HUB },
     { NULL }
 };
 

@@ -85,44 +85,11 @@ extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuK
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuLele;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuBulu;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuFini;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueCelebi;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyRed;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyGreen;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyPink;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ShyGuyBlack;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoopaRing;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinSeal;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UltraWormhole;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_UltraEye;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedSwordOW;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedShieldOW;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantLog;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_BooOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_WarioOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_PoochyOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_QCloudOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_NepEnutOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiGreenOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiRedOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiYellowOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiLightBlueOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiPinkOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiPurpleOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiBrownOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiBlackOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiWhiteOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_YoshiBlueOw;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructSky;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructSea;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructLand;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructMind;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructDream;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructJustice;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructForge;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructOrder;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_ConstructSpaceTime;
-extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Gen1Ghost;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Misty;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_LtSurge;
 extern const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Erika;
@@ -415,43 +382,10 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_STATUE_TAPU_LELE] = &gObjectEventGraphicsInfo_StatueTapuLele, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
     [OBJ_EVENT_GFX_STATUE_TAPU_BULU] = &gObjectEventGraphicsInfo_StatueTapuBulu, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
     [OBJ_EVENT_GFX_STATUE_TAPU_FINI] = &gObjectEventGraphicsInfo_StatueTapuFini, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
-    [OBJ_EVENT_GFX_STATUE_CELEBI] = &gObjectEventGraphicsInfo_StatueCelebi, // Project Grounded: stenen Celebi-beeld, schrijn in Ilex Forest (tools/grounded/statue_sprites.py)
-    [OBJ_EVENT_GFX_SHY_GUY_RED] = &gObjectEventGraphicsInfo_ShyGuyRed, // Project Grounded: Shy Guy
-    [OBJ_EVENT_GFX_SHY_GUY_GREEN] = &gObjectEventGraphicsInfo_ShyGuyGreen, // Project Grounded: Shy Guy
-    [OBJ_EVENT_GFX_SHY_GUY_PINK] = &gObjectEventGraphicsInfo_ShyGuyPink, // Project Grounded: Shy Guy
-    [OBJ_EVENT_GFX_SHY_GUY_BLACK] = &gObjectEventGraphicsInfo_ShyGuyBlack, // Project Grounded: Shy Guy
     [OBJ_EVENT_GFX_HOOPA_RING] = &gObjectEventGraphicsInfo_HoopaRing, // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
     [OBJ_EVENT_GFX_RUIN_SEAL] = &gObjectEventGraphicsInfo_RuinSeal, // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
-    [OBJ_EVENT_GFX_ULTRA_WORMHOLE] = &gObjectEventGraphicsInfo_UltraWormhole, // Project Grounded: Ultra Wormhole (Ultra Space, tools/grounded/ultra_wormhole_sprite.py)
-    [OBJ_EVENT_GFX_ULTRA_EYE] = &gObjectEventGraphicsInfo_UltraEye, // Project Grounded: oog in het Stakataka-doolhof (Ultra Space, tools/grounded/ultra_eye_sprite.py)
     [OBJ_EVENT_GFX_RUSTED_SWORD_OW] = &gObjectEventGraphicsInfo_RustedSwordOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_RUSTED_SHIELD_OW] = &gObjectEventGraphicsInfo_RustedShieldOW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
-    [OBJ_EVENT_GFX_GEN1_GHOST] = &gObjectEventGraphicsInfo_Gen1Ghost, // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI_BLUE] = &gObjectEventGraphicsInfo_YoshiBlueOw, // Project Grounded: blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI_WHITE] = &gObjectEventGraphicsInfo_YoshiWhiteOw, // Project Grounded: white Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI_BLACK] = &gObjectEventGraphicsInfo_YoshiBlackOw, // Project Grounded: black Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI_BROWN] = &gObjectEventGraphicsInfo_YoshiBrownOw, // Project Grounded: brown Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI_PURPLE] = &gObjectEventGraphicsInfo_YoshiPurpleOw, // Project Grounded: purple Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI_PINK] = &gObjectEventGraphicsInfo_YoshiPinkOw, // Project Grounded: pink Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI_LIGHT_BLUE] = &gObjectEventGraphicsInfo_YoshiLightBlueOw, // Project Grounded: light blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI_YELLOW] = &gObjectEventGraphicsInfo_YoshiYellowOw, // Project Grounded: yellow Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI_RED] = &gObjectEventGraphicsInfo_YoshiRedOw, // Project Grounded: red Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI_GREEN] = &gObjectEventGraphicsInfo_YoshiGreenOw, // Project Grounded: green Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_NEP_ENUT] = &gObjectEventGraphicsInfo_NepEnutOw, // Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_CONSTRUCT_SPACETIME] = &gObjectEventGraphicsInfo_ConstructSpaceTime, // Project Grounded: construct van Arceus, spacetime (tools/grounded/construct_sprites.py)
-    [OBJ_EVENT_GFX_CONSTRUCT_ORDER] = &gObjectEventGraphicsInfo_ConstructOrder, // Project Grounded: construct van Arceus, order (tools/grounded/construct_sprites.py)
-    [OBJ_EVENT_GFX_CONSTRUCT_FORGE] = &gObjectEventGraphicsInfo_ConstructForge, // Project Grounded: construct van Arceus, forge (tools/grounded/construct_sprites.py)
-    [OBJ_EVENT_GFX_CONSTRUCT_JUSTICE] = &gObjectEventGraphicsInfo_ConstructJustice, // Project Grounded: construct van Arceus, justice (tools/grounded/construct_sprites.py)
-    [OBJ_EVENT_GFX_CONSTRUCT_DREAM] = &gObjectEventGraphicsInfo_ConstructDream, // Project Grounded: construct van Arceus, dream (tools/grounded/construct_sprites.py)
-    [OBJ_EVENT_GFX_CONSTRUCT_MIND] = &gObjectEventGraphicsInfo_ConstructMind, // Project Grounded: construct van Arceus, mind (tools/grounded/construct_sprites.py)
-    [OBJ_EVENT_GFX_CONSTRUCT_LAND] = &gObjectEventGraphicsInfo_ConstructLand, // Project Grounded: construct van Arceus, land (tools/grounded/construct_sprites.py)
-    [OBJ_EVENT_GFX_CONSTRUCT_SEA] = &gObjectEventGraphicsInfo_ConstructSea, // Project Grounded: construct van Arceus, sea (tools/grounded/construct_sprites.py)
-    [OBJ_EVENT_GFX_CONSTRUCT_SKY] = &gObjectEventGraphicsInfo_ConstructSky, // Project Grounded: construct van Arceus, sky (tools/grounded/construct_sprites.py)
-    [OBJ_EVENT_GFX_QCLOUD] = &gObjectEventGraphicsInfo_QCloudOw, // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_POOCHY] = &gObjectEventGraphicsInfo_PoochyOw, // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_WARIO] = &gObjectEventGraphicsInfo_WarioOw, // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_COMMANDER_BOO] = &gObjectEventGraphicsInfo_BooOw, // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    [OBJ_EVENT_GFX_YOSHI] = &gObjectEventGraphicsInfo_YoshiOw, // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
     [OBJ_EVENT_GFX_GIANT_LOG] = &gObjectEventGraphicsInfo_GiantLog, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     [OBJ_EVENT_GFX_MISTY] =                     &gObjectEventGraphicsInfo_Misty, // Project Grounded (FRLG)
     [OBJ_EVENT_GFX_LT_SURGE] =                  &gObjectEventGraphicsInfo_LtSurge, // Project Grounded (FRLG)

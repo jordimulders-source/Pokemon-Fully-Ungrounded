@@ -466,13 +466,6 @@ static const struct SpriteFrameImage sPicTable_StatueTapuBulu[] = { // Project G
 static const struct SpriteFrameImage sPicTable_StatueTapuFini[] = { // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
     obj_frame_tiles(gObjectEventPic_StatueTapuFini),
 };
-static const struct SpriteFrameImage sPicTable_StatueCelebi[] = { // Project Grounded: stenen Celebi-beeld (tools/grounded/statue_sprites.py)
-    obj_frame_tiles(gObjectEventPic_StatueCelebi),
-};
-
-static const struct SpriteFrameImage sPicTable_ShyGuy[] = { // Project Grounded: Shy Guy (32x32)
-    overworld_ascending_frames(gObjectEventPic_ShyGuy, 4, 4),
-};
 
 static const struct SpriteFrameImage sPicTable_HoopaRing[] = { // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
     obj_frame_tiles(gObjectEventPic_HoopaRing),
@@ -480,93 +473,11 @@ static const struct SpriteFrameImage sPicTable_HoopaRing[] = { // Project Ground
 static const struct SpriteFrameImage sPicTable_RuinSeal[] = { // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
     obj_frame_tiles(gObjectEventPic_RuinSeal),
 };
-static const struct SpriteFrameImage sPicTable_UltraWormhole[] = { // Project Grounded: Ultra Wormhole (Ultra Space, tools/grounded/ultra_wormhole_sprite.py)
-    obj_frame_tiles(gObjectEventPic_UltraWormhole),
-};
 static const struct SpriteFrameImage sPicTable_RustedSwordOW[] = { // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     obj_frame_tiles(gObjectEventPic_RustedSwordOW),
 };
 static const struct SpriteFrameImage sPicTable_RustedShieldOW[] = { // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
     obj_frame_tiles(gObjectEventPic_RustedShieldOW),
-};
-static const struct SpriteFrameImage sPicTable_YoshiOw[] = { // Project Grounded: Yoshi (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_BooOw[] = { // Project Grounded: Commander Boo (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_BooOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_WarioOw[] = { // Project Grounded: Wario (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_WarioOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_PoochyOw[] = { // Project Grounded: Poochy (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_PoochyOw, 8, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_QCloudOw[] = { // Project Grounded: gevleugelde ?-wolk (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_QCloudOw, 8, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_NepEnutOw[] = { // Project Grounded: Nep-Enut, het watermonster uit het meertje (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 0),
-    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 1),
-    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 0),
-    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 1),
-    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 2),
-    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 1),
-    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 2),
-    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 1),
-    overworld_frame(gObjectEventPic_NepEnutOw, 16, 16, 2),
-};
-
-static const struct SpriteFrameImage sPicTable_YoshiGreenOw[] = { // Project Grounded: green Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiGreenOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_YoshiRedOw[] = { // Project Grounded: red Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiRedOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_YoshiYellowOw[] = { // Project Grounded: yellow Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiYellowOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_YoshiLightBlueOw[] = { // Project Grounded: light blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiLightBlueOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_YoshiPinkOw[] = { // Project Grounded: pink Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiPinkOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_YoshiPurpleOw[] = { // Project Grounded: purple Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiPurpleOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_YoshiBrownOw[] = { // Project Grounded: brown Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiBrownOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_YoshiBlackOw[] = { // Project Grounded: black Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiBlackOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_YoshiWhiteOw[] = { // Project Grounded: white Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiWhiteOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_YoshiBlueOw[] = { // Project Grounded: blue Yoshi, Yoshi-huis (Yoshi's Island) (tools/grounded/yoshi_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_YoshiBlueOw, 4, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_Construct[] = { // Project Grounded: construct van Arceus, alle thema's (tools/grounded/construct_sprites.py)
-    overworld_ascending_frames(gObjectEventPic_Construct, 2, 4),
-};
-
-static const struct SpriteFrameImage sPicTable_Gen1Ghost[] = { // Project Grounded: Gen 1-GHOST in Lavender Town (tools/grounded/gen1_ghost_sprites.py)
-    obj_frame_tiles(gObjectEventPic_Gen1Ghost),
 };
 
 static const struct SpriteFrameImage sPicTable_GiantLog[] = { // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
@@ -1584,6 +1495,3 @@ static const struct SpriteFrameImage sPicTable_ApricornTree[] = {
     overworld_frame(gObjectEventPic_ApricornTree, 2, 2, 0),
 };
 
-static const struct SpriteFrameImage sPicTable_UltraEye[] = { // Project Grounded: oog in het Stakataka-doolhof (Ultra Space, tools/grounded/ultra_eye_sprite.py)
-    overworld_ascending_frames(gObjectEventPic_UltraEye, 2, 2),
-};

@@ -52,10 +52,7 @@ def head(c, dy=0):
     c.poly('oor1', 'vacht', [(14, 13 + dy), (15, 9 + dy), (19, 12 + dy)])
     c.ellipse('oor2', 'vacht', 34.5, 13 + dy, 4, 4.8, rot=25, shade=2)
     c.poly('oor2', 'vacht', [(32, 10 + dy), (37, 7 + dy), (37, 12 + dy)])
-    # pluk: korte, naar achteren gestreken lok (eigen object achter de kop, zonder lijn)
-    c.ellipse('kop', 'vacht', 26, 23 + dy, 11.5, 10.5, shade=2.5, hl=(20.5, 15.5 + dy, 3.5))
-    # pluk: één brutale lok die voor op de kop ligt en naar achteren omhoog steekt
-    c.poly('pluk', 'vacht', [(22, 15 + dy), (24, 10 + dy), (28, 7 + dy), (33, 5.5 + dy), (30, 9 + dy), (33, 10 + dy), (28, 13 + dy), (25, 15.5 + dy)], shade=1.2, line='dark', hl=(25, 11 + dy, 2.5))
+    c.ellipse('kop', 'vacht', 26, 23 + dy, 11.5, 10.5, shade=2.5, hl=(20, 16 + dy, 3))
     c.ellipse('snuit', 'creme', 16.5, 27.5 + dy, 5, 3.6, shade=2)
 
 
@@ -87,8 +84,19 @@ def face(idx, dy=0, closed=False):
     patch(idx, 16, 11 + dy, ['M', 'M', 'M'], K)
     patch(idx, 35, 9 + dy, ['M', 'M', 'M', 'M'], K)
     patch(idx, 13, 17 + dy, FACE_CLOSED if closed else FACE_OPEN, K)
+    # pluk: één brutale lok die van het voorhoofd naar achteren omhoog steekt
+    patch(idx, 24, 4 + dy, [
+        '........ddo',
+        '......ddhvo',
+        '.....dhvvo.',
+        '....dhvvso.',
+        '...dhvvso..',
+        '..dhvvsso..',
+        '..hvvvss...',
+        '...vvvs....',
+    ], K)
     # opgetrokken wenkbrauw boven het dichtste oog
-    patch(idx, 27, 14 + dy, ['...ddd.', '.dd...d', 'd......'], K)
+    patch(idx, 27, 14 + dy, ['....dd.', '..dd..d', '.d.....'], K)
     # neus
     patch(idx, 11, 25 + dy, ['ooo', 'oo.'], K)
     if not closed:

@@ -6,7 +6,7 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 - Vervolg op Pokémon Ungrounded, ambitieuzer en groter dan Hoenn. Fork van Ungrounded op pokeemerald-expansion: revisies, nieuwe moves/abilities en QoL blijven.
 - Nieuwe regio gebaseerd op Zuid-Amerika: geïnspireerd, niet nagemeten (zoals Hoenn op Kyushu). Eigen kaart en eigen namen.
 - 8 gyms en een Elite 4. **Gymvolgorde lineair** (houdt de levelcurve gezond), maar **de kaart niet**: lussen, plekken die je op meerdere manieren bereikt, backtracken, optionele dungeons en content waar je later (met nieuwe middelen) naar terugkomt. E4 rond lv 80–90.
-- **Toon:** verhaal serieuzer dan Ungrounded; humor mag, maar is geen gimmick.
+- **Toon:** verhaal serieuzer dan Ungrounded; humor mag, maar is geen gimmick. **Niet zwart-wit, mag op momenten filosofisch zijn, zeker niet edgelord** (Jordi).
 
 ## Regio
 - **Start in een La Paz-achtige stad** (hoog, kabelbanen), met een **ijsgebied** ernaast (Cordillera Real). Sneeuw vroeg in de game, niet als eindgebied. Geen standaardopening met kleine stad en grasroute.

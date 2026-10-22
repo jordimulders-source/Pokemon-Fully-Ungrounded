@@ -15,6 +15,7 @@
 - **Cumbia en chicha:** Los Mirlos, Juaneco y su Combo (Amazone-chicha), Los Destellos, Bomba Estéreo (moderne Colombiaanse cumbia).
 - **Brazilië:** Antônio Carlos Jobim, Gilberto Gil, Jorge Ben Jor, Os Mutantes (tropicália).
 - **Salsa en bachata (niet Zuid-Amerikaans, wel overal gedraaid):** Héctor Lavoe, Joe Arroyo (Colombia), Grupo Niche, Juan Luis Guerra, Romeo Santos/Aventura.
+- **Reggaeton** (Jordi): Daddy Yankee, J Balvin en Karol G (Colombia), Bad Bunny. Idee: **een van de rivaliserende gangs krijgt reggaeton-thema's** (Jordi).
 - **Nueva canción:** Mercedes Sosa, Víctor Jara, Violeta Parra (past bij de serieuze, menselijke toon).
 
 ## Haalbaarheid per stijl (inschatting Claude, 22 okt; nog te testen)
@@ -31,6 +32,7 @@
 | Samba / batucada | surdo, tamborim, caixa, cuíca, agogô | **lastig** | veel gelijktijdige percussie kost kanalen; cuíca is moeilijk na te maken; een uitgedunde versie kan |
 | Bossa nova | nylongitaar-akkoorden, zachte zang | **lastig** | ingetogen akkoorden en stem zijn waar de GBA het zwakst is; als melodie op fluit kan het wel |
 | Vallenato / kaseko | accordeon, caja/snaredrum, guacharaca | **goed** | vergelijkbaar met cumbia |
+| Reggaeton | dembow-ritme (kick, snare, hi-hat), synthbas, synth-stabs | **goed** | vooral ritme en een vette bas: de GBA-drums en een eigen 808-achtige bas doen het werk; zang wordt een synthlead |
 | Bachata | twee gitaren (requinto-arpeggio's), bongo, güira | **goed** | heldere tokkelende gitaarlijn + ritme; eigen gitaarsample |
 | Latin rock (Soda Stereo-achtig) | elektrische gitaar met chorus/delay, bas, synths, drums | **redelijk** | GBA-rock werkt (vgl. bestaande gevechtsmuziek); de chorusgitaar vraagt een eigen sample |
 | Nueva canción / folk | akoestische gitaar, stem, charango | **redelijk** | zonder stem moet een melodie-instrument de zang overnemen (quena, fluit) |

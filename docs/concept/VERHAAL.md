@@ -7,6 +7,7 @@
 
 ## Tegenstanders
 - Geen één evil team, maar **verschillende gangs** (die verschillen in serieusheid) en een **overheid** die de natuur vernietigt (bossen kappen, ruïnes weghalen), waardoor de **legendaries woedend worden**.
+- Een van de gangs zou **reggaeton-thema's** kunnen krijgen (Jordi; zie `MUZIEK.md`).
 - **De overheid heeft geen echte bad guy: het systeem is de tegenstander** ("beetje The Wire-achtig"). Het systeem laat mensen met een grijze moraliteit foute dingen doen; er is geen schurk aan de top. Er zijn uiteindelijk wel slechte mensen.
 
 ## Conclusie

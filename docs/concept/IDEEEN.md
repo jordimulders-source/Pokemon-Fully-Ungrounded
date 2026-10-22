@@ -86,7 +86,8 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - **Vleermuis-lijn (3 stadia)** blijft erin (Jordi), los van de starters. **Eindigt als fruitvampier** die op zijn kop hangt en ook ondersteboven vliegt (Jordi). Zuid-Amerika heeft echte fruitetende vleermuizen (bijv. Artibeus); de vampier zuigt sap uit fruit (chirimoya, mango) in plaats van bloed. Haakjes: Moche-vleermuisgoden en het goud van Sipán, buisliplevleermuis (tong 1,5x zijn lijf, bestuift nachtbloemen). Let op overlap met Woobat/Zubat/Noibat.
 - **Rode oeakari** (Jordi vindt hem tof): kaal vuurrood gezicht, ziet er duivels uit, is een rustige vruchteneter. Idee: losse fakemon als **zonne-tegenhanger** van de maan-starter (Inti en Mama Killa zijn in de mythe man en vrouw): rood gezicht = het gezicht in Inti's zonneschijf.
 
-## Gymvolgorde en -locaties: voorstel Claude (22 okt, Jordi heeft zelf ook al een idee)
+## Gymvolgorde en -locaties: OUD voorstel Claude (22 okt, vervangen)
+- **Vervangen door Jordi's eigen indeling in `CONCEPT.md`** (Dark in Rio, Grass in Paramaribo; Potosí is geen gymstad). Alleen als naslag.
 1. Ground – Uyuni (zoutvlakte)
 2. Ice – Lípez (besneeuwde pas bij de Licancabur)
 3. Fire – San Pedro de Atacama (geisers, vulkanen; van sneeuw naar woestijn)

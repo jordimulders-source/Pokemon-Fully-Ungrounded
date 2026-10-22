@@ -363,19 +363,6 @@ static void TI_Shake(s32 amp)
     }
 }
 
-static void TI_HideField(void)
-{
-    u32 i;
-    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
-        if (gObjectEvents[i].active && !gObjectEvents[i].invisible)
-        {
-            gObjectEvents[i].invisible = TRUE;   // anders zet de kaart ze elke frame weer zichtbaar
-            sTI->hiddenObjEvents |= 1u << i;     // gObjectEvents blijft na het gevecht bestaan: in TI_Free terugzetten
-        }
-    for (i = 0; i < sTI->nfield; i++)
-        gSprites[sTI->field[i]].invisible = TRUE;
-}
-
 // ---------------------------------------------------------------------------------------------------------------------
 // BG0 als tekenvel (palet 15; tiles worden aangemaakt waar getekend wordt)
 
@@ -1091,7 +1078,6 @@ static const struct TIntro sCI_Swim = {CISwim_Init, CISwim_Update};
 
 // Hiker, Psychic, Bird Keeper en Battle Girl: zie src/data/class_intros2_b.h
 static const u16 sCI_CrackPal[4] = {0, RGB(2, 2, 3), RGB(20, 20, 22), RGB(31, 31, 31)};
-
 
 // ---------------- Kindler: vlammen komen van onderen, de lucht trilt van de hitte
 #define KD_N 8

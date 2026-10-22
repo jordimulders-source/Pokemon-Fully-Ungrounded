@@ -42,7 +42,6 @@ struct LCWork
 static EWRAM_DATA struct LCWork *sLC = NULL;
 static EWRAM_DATA u32 *sLCCanvas = NULL; // tiles 16 .. LC_MAX_TILES-1, eerst in EWRAM getekend
 
-static const u8 sLC_Bayer[16] = {0, 8, 2, 10, 12, 4, 14, 6, 3, 11, 1, 9, 15, 7, 13, 5};
 static const u32 sLC_BlankTile[8] = {0};
 static const u16 sLC_Pal0[16] = {0};
 
@@ -51,12 +50,6 @@ typedef u32 (*LCCell)(s32 cx, s32 cy);  // palet << 12, of LC_EMPTY
 
 #define LC_EMPTY 0xFFFF
 #define LC_PLAIN 0x0800   // cel hangt alleen van de rij af (gradiënt)
-
-static u32 LC_Rand(void)
-{
-    sLC->seed = sLC->seed * 1103515245 + 12345;
-    return (sLC->seed >> 16) & 0x7FFF;
-}
 
 static u32 *LC_Tile(u32 n)
 {
@@ -102,101 +95,6 @@ static s32 LC_R(s32 t)
 static bool32 LC_Cross(struct Task *task, s32 t, s32 x)
 {
     return task->tLcLast < x && t >= x;
-}
-
-// gradiënt over 'rows' beeldlijnen: rowv[y] = positie * 16 (voor de Bayer-dither)
-static void LC_RowGradient(u32 y0, u32 y1, u32 n)
-{
-    u32 y;
-    for (y = y0; y < y1 && y < DISPLAY_HEIGHT; y++)
-        sLC->rowv[y] = (y - y0) * (n - 1) * 16 / (y1 - y0);
-}
-
-static u32 LC_Grad(s32 x, s32 y, u32 n)
-{
-    u32 i = 1 + ((sLC->rowv[y] + sLC_Bayer[(y & 3) * 4 + (x & 3)]) >> 4);
-    return i > n ? n : i;
-}
-
-// tekent rij r0 tot r1 (32 kolommen) in de tilemapbuffer; gelijke tiles naast elkaar worden gedeeld, en een LC_PLAIN-
-// cel krijgt de tile van de eerste LC_PLAIN-cel in zijn rij (zonder te tekenen)
-static void LC_PaintRows(LCPixel px, LCCell cell, u32 r0, u32 r1)
-{
-    u32 buf[8], prev[8];
-    u32 cx, cy, x, y, any, prevTile, c, plain, plainTile;
-    bool32 prevOk;
-
-    for (cy = r0; cy < r1 && cy < 20; cy++)
-    {
-        prevOk = FALSE;
-        prevTile = 0;
-        plainTile = 0;
-        for (cx = 0; cx < 32; cx++)
-        {
-            u16 *m = &sLC->map[cy * 32 + cx];
-            c = cell(cx, cy);
-            if (c == LC_EMPTY)
-            {
-                *m = 0;
-                prevOk = FALSE;
-                continue;
-            }
-            plain = c & LC_PLAIN;
-            c &= ~LC_PLAIN;
-            if (plain && plainTile)
-            {
-                *m = plainTile;
-                continue;
-            }
-            any = 0;
-            for (y = 0; y < 8; y++)
-            {
-                u32 w = 0;
-                for (x = 0; x < 8; x++)
-                    w |= (px(cx * 8 + x, cy * 8 + y) & 15) << (x * 4);
-                buf[y] = w;
-                any |= w;
-            }
-            if (any == 0)
-            {
-                *m = 0;
-                continue;
-            }
-            if (prevOk && memcmp(buf, prev, sizeof(buf)) == 0)
-            {
-                *m = prevTile | c;
-            }
-            else if (sLC->nextTile >= LC_MAX_TILES)
-            {
-                *m = prevOk ? (prevTile | c) : 0;
-            }
-            else
-            {
-                CpuCopy32(buf, LC_Tile(sLC->nextTile), 32);
-                memcpy(prev, buf, sizeof(buf));
-                prevTile = sLC->nextTile++;
-                prevOk = TRUE;
-                *m = prevTile | c;
-            }
-            if (plain)
-                plainTile = *m;
-        }
-    }
-}
-
-// het beeld tekenen, 'rows' rijen per aanroep; geeft TRUE als het klaar is
-static bool32 LC_GenRows(struct Task *task, LCPixel px, LCCell cell, u32 rows)
-{
-    if (sLC == NULL || task->tLcGen >= 20)
-        return TRUE;
-    LC_PaintRows(px, cell, task->tLcGen, task->tLcGen + rows);
-    task->tLcGen += rows;
-    return task->tLcGen >= 20;
-}
-
-static bool32 LC_Gen(struct Task *task, s32 t, LCPixel px, LCCell cell)
-{
-    return LC_GenRows(task, px, cell, 20);
 }
 
 // zoals LC_PaintRows, maar ontdubbelt over het hele beeld (hash per tile; voor herhalende patronen zoals een raster)
@@ -270,52 +168,6 @@ static void LC_SetBgPal(u32 n, const u16 *cols)
     CpuCopy16(cols, &gPlttBufferFaded[BG_PLTT_ID(13 + n)], PLTT_SIZE_4BPP);
 }
 
-// een palet naar een kleurverloop van 'dark' (donker) tot 'light' (licht) op helderheid
-static const u16 *LC_Tint(const u16 *src, u16 dark, u16 light)
-{
-    u32 i;
-    sLC->tmp[0] = src[0];
-    for (i = 1; i < 16; i++)
-    {
-        u16 c = src[i];
-        s32 l = ((c & 31) * 2 + ((c >> 5) & 31) * 3 + ((c >> 10) & 31)) * 16 / (31 * 6);
-        sLC->tmp[i] = Tapu_Blend(dark, light, l);
-    }
-    return sLC->tmp;
-}
-
-// kleuren in een palet ronddraaien: r -> g -> b
-static const u16 *LC_Rotate(const u16 *src, u32 times)
-{
-    u32 i, k;
-    for (i = 0; i < 16; i++)
-    {
-        u16 c = src[i];
-        for (k = 0; k < times; k++)
-            c = ((c & 31) << 5) | (((c >> 5) & 31) << 10) | ((c >> 10) & 31);
-        sLC->tmp[i] = c;
-    }
-    return sLC->tmp;
-}
-
-static u16 LC_Mix3(u16 a, u16 b, u16 c, s32 k, s32 n)
-{
-    // k van 0 tot n: a -> b -> c
-    if (k * 2 <= n)
-        return Tapu_Blend(a, b, k * 32 / n);
-    return Tapu_Blend(b, c, (k * 2 - n) * 16 / n);
-}
-
-// een sprite die met een gedeelde matrix schaalt en draait (affine, dubbele grootte)
-static void LC_UseMatrix(struct Sprite *s, u8 mat, u8 shape, u8 size)
-{
-    if (mat == 0xFF || s == NULL)
-        return;
-    s->oam.affineMode = ST_OAM_AFFINE_DOUBLE;
-    s->oam.matrixNum = mat;
-    CalcCenterToCornerVec(s, shape, size, ST_OAM_AFFINE_DOUBLE);
-}
-
 static void LC_FreeMatrices(u32 n)
 {
     u32 i;
@@ -386,24 +238,6 @@ static void LC_FinishCommon(struct Task *task)
     TRY_FREE_AND_SET_NULL(sLCCanvas);
 }
 
-// boomsilhouet (dennen): top[x] = bovenkant van het bos in kolom x
-static void LC_Pines(u32 base, u32 lo, u32 hi, u32 spacing, u32 slope)
-{
-    s32 x, cx;
-    for (x = 0; x < 256; x++)
-        sLC->top[x] = base;
-    for (cx = -8; cx < 264; cx += spacing / 2 + LC_Rand() % spacing)
-    {
-        s32 peak = lo + LC_Rand() % (hi - lo + 1);
-        for (x = max(cx - 40, 0); x < min(cx + 40, 256); x++)
-        {
-            s32 d = abs(x - cx), v = peak + d * slope / 4 + ((d % 6) >= 4 ? 1 : 0);
-            if (v < sLC->top[x])
-                sLC->top[x] = v;
-        }
-    }
-}
-
 // =====================================================================================================================
 // ---------------- lijnen (slagen, scheuren, strepen) als BG0-beeld dat optelt bij de wereld
 // Elke lijn: kern (index idx + stap) en gloed (index idx + stap + 7) langs de lijn in 'steps' stappen (zo kan een slag
@@ -418,111 +252,6 @@ struct LCStroke
 
 #define LC_MAX_STROKES 16
 #define LC_STROKES_PER_FRAME 3
-static EWRAM_DATA const struct LCStroke *sLCStrokes = NULL;
-static EWRAM_DATA u8 sLCStrokeN = 0;
-
-static void LC_StrokesInit(const struct LCStroke *st, u32 n)
-{
-    sLCStrokes = st;
-    sLCStrokeN = min(n, LC_MAX_STROKES);
-    TRY_FREE_AND_SET_NULL(sLCCanvas);
-    sLCCanvas = AllocZeroed((LC_MAX_TILES - 16) * 32);
-}
-
-// rang: kern > gloed > aura > leeg
-static u32 LC_Rank(u32 v)
-{
-    if (v == 0)
-        return 0;
-    if (v == 15)
-        return 1;
-    return v >= 8 ? 2 : 3;
-}
-
-static void LC_Plot(s32 x, s32 y, u32 v, u32 pal)
-{
-    u32 cell, n, shift, *w;
-    if (x < 0 || x >= 256 || y < 0 || y >= DISPLAY_HEIGHT)
-        return;
-    cell = (y >> 3) * 32 + (x >> 3);
-    n = sLC->map[cell] & 0x3FF;
-    if (n == 0)
-    {
-        if (sLC->nextTile >= LC_MAX_TILES)
-            return;
-        n = sLC->nextTile++;
-        sLC->map[cell] = n | ((13 + pal) << 12);
-    }
-    w = &sLCCanvas[(n - 16) * 8 + (y & 7)];
-    shift = (x & 7) * 4;
-    if (LC_Rank(v) >= LC_Rank((*w >> shift) & 15))
-        *w = (*w & ~(15 << shift)) | (v << shift);
-}
-
-// een lijn rasteren: langs de lijn per pixel, dwars van -breedte tot +breedte
-static void LC_RasterStroke(const struct LCStroke *st)
-{
-    s32 dx = st->x1 - st->x0, dy = st->y1 - st->y0, len = 1, s, o, w = max(st->glow, st->aura);
-    s32 ux, uy, nx, ny;
-    while (len * len < dx * dx + dy * dy)
-        len++;
-    ux = dx * 256 / len;
-    uy = dy * 256 / len;
-    nx = -uy;
-    ny = ux;
-    for (s = 0; s <= len; s++)
-    {
-        s32 along = s * 255 / len, cx = st->x0 * 256 + ux * s, cy = st->y0 * 256 + uy * s, shift = 0;
-        u32 step = st->idx + along * st->steps / 256;
-        if (st->jag)
-            shift = (abs(((along * st->jag) & 63) - 32) - 16) * 5 / 16;
-        for (o = -w; o <= w; o++)
-        {
-            s32 d = abs(o), v;
-            if (d < st->core)
-                v = step;
-            else if (d < st->glow)
-                v = step + 7;
-            else if (d < st->aura)
-                v = 15;
-            else
-                continue;
-            LC_Plot((cx + nx * (o + shift) + 128) >> 8, (cy + ny * (o + shift) + 128) >> 8, v, st->pal);
-            // halve stap ernaast: geen gaatjes in schuine lijnen
-            LC_Plot((cx + nx * (o + shift) + ux / 2 + 128) >> 8, (cy + ny * (o + shift) + uy / 2 + 128) >> 8, v, st->pal);
-        }
-    }
-}
-
-// een paar lijnen per frame; als ze allemaal getekend zijn naar VRAM en tonen. TRUE zodra het beeld er is.
-static bool32 LC_GenStrokes(struct Task *task)
-{
-    u32 i;
-    if (sLC == NULL || sLCCanvas == NULL)
-        return TRUE;
-    if (task->tLcGen > sLCStrokeN)
-        return TRUE;
-    for (i = 0; i < LC_STROKES_PER_FRAME && task->tLcGen < sLCStrokeN; i++)
-        LC_RasterStroke(&sLCStrokes[task->tLcGen++]);
-    if (task->tLcGen < sLCStrokeN)
-        return FALSE;
-    CpuCopy32(sLCCanvas, LC_Tile(16), (sLC->nextTile - 16) * 32);
-    LC_ShowMap();
-    TRY_FREE_AND_SET_NULL(sLCCanvas);
-    task->tLcGen = sLCStrokeN + 1;
-    return TRUE;
-}
-
-// kleur van een slag-index: zwart voor 'from', twee frames wit, dan 'hot' dat in 'fade' frames zakt naar 'cool'
-static u16 LC_SlashColor(s32 t, s32 from, u16 hot, u16 cool, s32 fade)
-{
-    s32 k = t - from;
-    if (k < 0)
-        return 0;
-    if (k < 2)
-        return RGB_WHITE;
-    return Tapu_Blend(hot, cool, min(16, (k - 2) * 16 / fade));
-}
 
 // =====================================================================================================================
 // Zygarde (alle vormen; Jordi: "google hoe Zygarde behandeld wordt in de games, die Z is heel anders"): de Order-

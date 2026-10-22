@@ -49,55 +49,10 @@ static void LI_DestroySprites(void)
     }
 }
 
-// een frontsprite die kan schalen en draaien (affine, dubbele grootte)
-static u8 LI_MonPicAffine(u16 species, s16 x, s16 y)
-{
-    u8 id = GI_MonPic(species, x, y);
-    struct Sprite *s;
-    if (id >= MAX_SPRITES)
-        return id;
-    s = &gSprites[id];
-    s->oam.matrixNum = AllocOamMatrix();
-    if (s->oam.matrixNum == 0xFF)
-    {
-        s->oam.matrixNum = 0;
-        return id;
-    }
-    s->oam.affineMode = ST_OAM_AFFINE_DOUBLE;
-    s->affineAnimPaused = TRUE;
-    CalcCenterToCornerVec(s, SPRITE_SHAPE(64x64), SPRITE_SIZE(64x64), ST_OAM_AFFINE_DOUBLE);
-    SetOamMatrixRotationScaling(s->oam.matrixNum, 256, 256, 0);
-    return id;
-}
-
 static void LI_Affine(u8 id, s32 scale, u16 rot)
 {
     if (id < MAX_SPRITES && gSprites[id].oam.affineMode != ST_OAM_AFFINE_OFF)
         SetOamMatrixRotationScaling(gSprites[id].oam.matrixNum, scale, scale, rot);
-}
-
-static void LI_DestroyMonPic(u8 id)
-{
-    if (id >= MAX_SPRITES)
-        return;
-    if (gSprites[id].oam.affineMode != ST_OAM_AFFINE_OFF)
-    {
-        FreeOamMatrix(gSprites[id].oam.matrixNum);
-        gSprites[id].oam.affineMode = ST_OAM_AFFINE_OFF;
-        gSprites[id].oam.matrixNum = 0;
-    }
-    FreeAndDestroyMonPicSprite(id);
-}
-
-// HBlank-DMA op BG0HOFS (golven, scheeftrekken); de buffer is gScanlineEffectRegBuffers[0]
-static void LI_InitWave(void)
-{
-    InitTransitionData();
-    ScanlineEffect_Clear();
-    CpuFill16(0, gScanlineEffectRegBuffers[0], DISPLAY_HEIGHT * 2);
-    CpuFill16(0, gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2);
-    sTransitionData->VBlank_DMA = TRUE;
-    SetVBlankCallback(VBlankCB_PatternWeave);
 }
 
 static void LI_EndWave(void)

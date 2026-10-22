@@ -133,118 +133,25 @@ static void Task_Regice(u8);
 static void Task_Registeel(u8);
 static void Task_Regirock(u8);
 static void Task_Kyogre(u8);
-static void Task_Aurora(u8); // Project Grounded
 static void Task_Regidrago(u8); // Project Grounded
 static void Task_Regieleki(u8); // Project Grounded
 static void Task_Regigigas(u8); // Project Grounded
-static void Task_Dave(u8); // Project Grounded
 static void Task_Deoxys(u8); // Project Grounded
-static void Task_Birch(u8); // Project Grounded
-static void Task_Raikou(u8); // Project Grounded
-static void Task_Entei(u8); // Project Grounded
 static void Task_RouteWave(u8); // Project Grounded
-static void Task_RouteBeach(u8); // Project Grounded
 static void Task_RouteBubbles(u8); // Project Grounded
-static void Task_RouteSnow(u8); // Project Grounded
-static void Task_RouteAsh(u8); // Project Grounded
-static void Task_RouteSand(u8); // Project Grounded
-static void Task_RouteHeat(u8); // Project Grounded
-static void Task_RouteCycling(u8); // Project Grounded
-static void Task_RoutePyre(u8); // Project Grounded
-static void Task_RouteSky(u8); // Project Grounded
-static void Task_RouteShort(u8); // Project Grounded
-static void Task_RoutePaint(u8); // Project Grounded
-static void Task_RouteSafari(u8); // Project Grounded
-static void Task_RouteMeteor(u8); // Project Grounded
-static void Task_RouteJagged(u8); // Project Grounded
-static void Task_RouteRainforest(u8); // Project Grounded
 static void Task_Pikachu(u8); // Project Grounded
 static void Task_Magikarp(u8); // Project Grounded
-static void Task_ViagraBoys(u8); // Project Grounded
 static void Task_Psyduck(u8); // Project Grounded
 static void Task_Koffing(u8); // Project Grounded
-static void Task_GabbyTy(u8); // Project Grounded
-static void Task_Poochyena(u8); // Project Grounded
-static void Task_GabbyTyJoey(u8); // Project Grounded
-static void Task_Beachball(u8); // Project Grounded
-static void Task_Colress(u8); // Project Grounded
 static void Task_Zangoose(u8); // Project Grounded
 static void Task_Seviper(u8); // Project Grounded
-static void Task_Heatran(u8); // Project Grounded
-static void Task_Shaymin(u8); // Project Grounded
-static void Task_Genesect(u8); // Project Grounded
-static void Task_Mewtwo(u8); // Project Grounded
-static void Task_Giratina(u8); // Project Grounded
-static void Task_Victini(u8); // Project Grounded
-static void Task_Jirachi(u8); // Project Grounded
-static void Task_Darkrai(u8); // Project Grounded
-static void Task_NeoPlasma(u8); // Project Grounded
-static void Task_SickBlik(u8); // Project Grounded
-static void Task_Steven(u8); // Project Grounded
-static void Task_WallyVhs(u8); // Project Grounded
-static void Task_RayquazaPillar(u8); // Project Grounded
-static void Task_Mimi(u8); // Project Grounded
 static void Task_Keccles(u8); // Project Grounded
-static void Task_Burglar(u8); // Project Grounded
-static void Task_GymRoxanne(u8); // Project Grounded (src/data/gym_intros_a.h)
-static void Task_GymBrawly(u8); // Project Grounded
-static void Task_GymWattson(u8); // Project Grounded
-static void Task_GymFlannery(u8); // Project Grounded
 
-static void Task_TapuKoko(u8); // Project Grounded
-static void Task_TapuLele(u8);
-static void Task_TapuBulu(u8);
-static void Task_TapuFini(u8);
-static void Task_GymNorman(u8); // Project Grounded (src/data/gym_intros_b.h)
-static void Task_GymWinona(u8); // Project Grounded (src/data/gym_intros_b.h)
-static void Task_GymTateLiza(u8); // Project Grounded (src/data/gym_intros_b.h)
-static void Task_GymWallace(u8); // Project Grounded (src/data/gym_intros_b.h)
-static void Task_LegendLugia(u8); // Project Grounded (src/data/legend_intros.h)
-static void Task_LegendHooh(u8);
 static void Task_LegendVolcanion(u8);
-static void Task_LegendHoopa(u8);
-static void Task_LegendForces(u8);
-static void Task_LegendArticuno(u8); // Project Grounded (src/data/legend_intros2.h)
-static void Task_LegendZapdos(u8);
-static void Task_LegendMoltres(u8);
-static void Task_LegendZacian(u8);
-static void Task_LegendZamazenta(u8);
-static void Task_LegendXerneas(u8);
-static void Task_LegendYveltal(u8);
-static void Task_LegendDialga(u8); // Project Grounded (src/data/legend_intros_dp.h)
-static void Task_LegendPalkia(u8);
-static void Task_LegendArceus(u8);
 static void Task_LegendMew(u8);
-static void Task_LegendCrown(u8); // Project Grounded (src/data/legend_intros_cheap2.h)
-static void Task_LegendCelebi(u8);
-static void Task_LegendLake(u8);
-static void Task_LegendMeloetta(u8);
-static void Task_LegendZeraora(u8);
 static void Task_LegendZygarde(u8);
-static void Task_LegendEon(u8);
-static void Task_LegendCresselia(u8);
-static void Task_LegendNecrozma(u8);
-static void Task_LegendGalarZapdos(u8);
-static void Task_LegendGalarMoltres(u8);
-static void Task_LegendSwords(u8); // Project Grounded (src/data/legend_intros_cheap1.h)
-static void Task_LegendUltraBeast(u8);
-static void Task_LegendParadoxPast(u8);
-static void Task_LegendParadoxFuture(u8);
-static void Task_LegendEternatus(u8);
-static void Task_LegendMarshadow(u8);
-static void Task_LegendTerapagos(u8);
-static void Task_LegendPecharunt(u8);
-static void Task_RivalIntro(u8); // Project Grounded (src/data/rival_intros.h)
 static void Task_ClassIntro(u8); // Project Grounded (src/data/class_intros.h)
-static void Task_KyogreMural(u8); // Project Grounded
-static void Task_GroudonMural(u8); // Project Grounded
-static void Task_Ogerpon(u8); // Project Grounded
-static void Task_WeatherService(u8); // Project Grounded
-static void Task_Rocket(u8); // Project Grounded
 static void Task_Zarude(u8); // Project Grounded
-static void Task_PoisonChain(u8); // Project Grounded
-static void Task_AquaMagma(u8); // Project Grounded
-static bool8 AquaMagma_Init(struct Task *);
 static bool8 Regidrago_Init(struct Task *);
 static bool8 Regieleki_Init(struct Task *);
 static bool8 Regigigas_Init(struct Task *);
@@ -430,8 +337,6 @@ static const u32 sBigPokeball_Tileset[] = INCBIN_U32("graphics/battle_transition
 static const u32 sPokeballTrail_Tileset[] = INCBIN_U32("graphics/battle_transitions/pokeball_trail.4bpp");
 static const u8 sPokeball_Gfx[] = INCBIN_U8("graphics/battle_transitions/pokeball.4bpp");
 static const u32 sEliteFour_Tileset[] = INCBIN_U32("graphics/battle_transitions/elite_four_bg.4bpp");
-static const u8 sUnusedBrendan_Gfx[] = INCBIN_U8("graphics/battle_transitions/unused_brendan.4bpp");
-static const u8 sUnusedLass_Gfx[] = INCBIN_U8("graphics/battle_transitions/unused_lass.4bpp");
 static const u32 sShrinkingBoxTileset[] = INCBIN_U32("graphics/battle_transitions/shrinking_box.4bpp");
 static const u16 sEvilTeam_Palette[] = INCBIN_U16("graphics/battle_transitions/evil_team.gbapal");
 static const u32 sTeamAqua_Tileset[] = INCBIN_U32("graphics/battle_transitions/team_aqua.4bpp.smol");
@@ -445,17 +350,12 @@ static const u16 sRegirock_Palette[] = INCBIN_U16("graphics/battle_transitions/r
 static const u32 sRegice_Tilemap[] = INCBIN_U32("graphics/battle_transitions/regice.bin");
 static const u32 sRegisteel_Tilemap[] = INCBIN_U32("graphics/battle_transitions/registeel.bin");
 static const u32 sRegirock_Tilemap[] = INCBIN_U32("graphics/battle_transitions/regirock.bin");
-static const u16 sUnused_Palette[] = INCBIN_U16("graphics/battle_transitions/unused.gbapal");
 static const u32 sKyogre_Tileset[] = INCBIN_U32("graphics/battle_transitions/kyogre.4bpp.smol");
 static const u32 sKyogre_Tilemap[] = INCBIN_U32("graphics/battle_transitions/kyogre.bin.smolTM");
 static const u32 sGroudon_Tileset[] = INCBIN_U32("graphics/battle_transitions/groudon.4bpp.smol");
 static const u32 sGroudon_Tilemap[] = INCBIN_U32("graphics/battle_transitions/groudon.bin.smolTM");
 static const u16 sKyogre1_Palette[] = INCBIN_U16("graphics/battle_transitions/kyogre_pt1.gbapal");
 static const u16 sKyogre2_Palette[] = INCBIN_U16("graphics/battle_transitions/kyogre_pt2.gbapal");
-// Project Grounded: noorderlicht-transitie (Suicune), gegenereerd met tools/grounded/aurora_transition.py
-static const u32 sAurora_Tileset[] = INCBIN_U32("graphics/battle_transitions/aurora.4bpp.smol");
-static const u16 sAurora_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aurora.bin");
-static const u16 sAurora_Palette[] = INCBIN_U16("graphics/battle_transitions/aurora.gbapal");
 static const u32 sRegidrago_Tileset[] = INCBIN_U32("graphics/battle_transitions/regidrago.4bpp.smol");
 static const u16 sRegidrago_Tilemap[] = INCBIN_U16("graphics/battle_transitions/regidrago.bin");
 static const u16 sRegidrago_Palette[] = INCBIN_U16("graphics/battle_transitions/regidrago.gbapal");
@@ -468,45 +368,10 @@ static const u16 sRegigigas_Palette[] = INCBIN_U16("graphics/battle_transitions/
 static const u16 sDeoxys_Tileset[] = INCBIN_U16("graphics/battle_transitions/deoxys.4bpp");
 static const u16 sDeoxys_Tilemap[] = INCBIN_U16("graphics/battle_transitions/deoxys.bin");
 static const u16 sDeoxys_Palette[] = INCBIN_U16("graphics/battle_transitions/deoxys.gbapal");
-static const u16 sBirch_Tileset[] = INCBIN_U16("graphics/battle_transitions/birch.4bpp");
-static const u16 sBirch_Palette[] = INCBIN_U16("graphics/battle_transitions/birch.gbapal");
-static const u32 sRaikou_Tileset[] = INCBIN_U32("graphics/battle_transitions/raikou.4bpp.smol");
-static const u16 sRaikou_Tilemap[] = INCBIN_U16("graphics/battle_transitions/raikou.bin");
-static const u16 sRaikou_Palette[] = INCBIN_U16("graphics/battle_transitions/raikou.gbapal");
-static const u16 sEntei_Tileset[] = INCBIN_U16("graphics/battle_transitions/entei.4bpp");
-static const u16 sEntei_Palette[] = INCBIN_U16("graphics/battle_transitions/entei.gbapal");
 static const u32 sRouteWave_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_wave.4bpp.smol");
 static const u16 sRouteWave_Palette[] = INCBIN_U16("graphics/battle_transitions/route_wave.gbapal");
-static const u32 sRouteBeach_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_beach.4bpp.smol");
-static const u16 sRouteBeach_Palette[] = INCBIN_U16("graphics/battle_transitions/route_beach.gbapal");
 static const u32 sRouteBubbles_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_bubbles.4bpp.smol");
 static const u16 sRouteBubbles_Palette[] = INCBIN_U16("graphics/battle_transitions/route_bubbles.gbapal");
-static const u32 sRouteSnow_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_snow.4bpp.smol");
-static const u16 sRouteSnow_Palette[] = INCBIN_U16("graphics/battle_transitions/route_snow.gbapal");
-static const u32 sRouteAsh_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_ash.4bpp.smol");
-static const u16 sRouteAsh_Palette[] = INCBIN_U16("graphics/battle_transitions/route_ash.gbapal");
-static const u32 sRouteSand_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_sand.4bpp.smol");
-static const u16 sRouteSand_Palette[] = INCBIN_U16("graphics/battle_transitions/route_sand.gbapal");
-static const u32 sRouteCycling_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_cycling.4bpp.smol");
-static const u16 sRouteCycling_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_cycling.bin");
-static const u16 sRouteCycling_Palette[] = INCBIN_U16("graphics/battle_transitions/route_cycling.gbapal");
-static const u32 sRoutePyre_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_pyre.4bpp.smol");
-static const u16 sRoutePyre_Palette[] = INCBIN_U16("graphics/battle_transitions/route_pyre.gbapal");
-static const u32 sRouteSky_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_sky.4bpp.smol");
-static const u16 sRouteSky_Palette[] = INCBIN_U16("graphics/battle_transitions/route_sky.gbapal");
-static const u16 sRouteShort_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_short.4bpp");
-static const u16 sRouteShort_Palette[] = INCBIN_U16("graphics/battle_transitions/route_short.gbapal");
-static const u32 sRoutePaint_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_paint.4bpp.smol");
-static const u16 sRoutePaint_Palette[] = INCBIN_U16("graphics/battle_transitions/route_paint.gbapal");
-static const u32 sRouteSafari_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_safari.4bpp.smol");
-static const u16 sRouteSafari_Palette[] = INCBIN_U16("graphics/battle_transitions/route_safari.gbapal");
-static const u32 sRouteMeteor_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_meteor.4bpp.smol");
-static const u16 sRouteMeteor_Palette[] = INCBIN_U16("graphics/battle_transitions/route_meteor.gbapal");
-static const u32 sRouteJagged_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_jagged.4bpp.smol");
-static const u16 sRouteJagged_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_jagged.bin");
-static const u16 sRouteJagged_Palette[] = INCBIN_U16("graphics/battle_transitions/route_jagged.gbapal");
-static const u32 sRouteRainforest_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_rainforest.4bpp.smol");
-static const u16 sRouteRainforest_Palette[] = INCBIN_U16("graphics/battle_transitions/route_rainforest.gbapal");
 static const u16 sPikachu_Tileset[] = INCBIN_U16("graphics/battle_transitions/route_pikachu.4bpp");
 static const u16 sPikachu_Palette[] = INCBIN_U16("graphics/battle_transitions/route_pikachu.gbapal");
 static const u32 sMagikarp_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_magikarp.4bpp.smol");
@@ -516,93 +381,25 @@ static const u16 sMagikarpPile_Tilemap[] = INCBIN_U16("graphics/battle_transitio
 static const u16 sMagikarpPile_Palette[] = INCBIN_U16("graphics/battle_transitions/route_magikarp_pile.gbapal");
 static const u32 sMagikarpSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_magikarp.4bpp");
 static const u16 sMagikarpSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_magikarp.gbapal");
-static const u32 sGabbyTy_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_camera.4bpp.smol");
-static const u16 sGabbyTy_Palette[] = INCBIN_U16("graphics/battle_transitions/route_camera.gbapal");
 static const u32 sKoffing_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_koffing.4bpp.smol");
 static const u16 sKoffing_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_koffing.bin");
 static const u16 sKoffing_Palette[] = INCBIN_U16("graphics/battle_transitions/route_koffing.gbapal");
-static const u32 sBeachball_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_beachball.4bpp.smol");
-static const u16 sBeachball_Tilemap[] = INCBIN_U16("graphics/battle_transitions/route_beachball.bin");
-static const u16 sBeachball_Palette[] = INCBIN_U16("graphics/battle_transitions/route_beachball.gbapal");
 static const u32 sQuestionSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_question.4bpp");
 static const u16 sQuestionSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_question.gbapal");
-static const u32 sPoochyenaSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_poochyena.4bpp");
-static const u16 sPoochyenaSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_poochyena.gbapal");
-static const u32 sGearSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_gear.4bpp");
-static const u16 sGearSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_gear.gbapal");
 static const u32 sZangoose_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_zangoose.4bpp.smol");
 static const u16 sZangoose_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zangoose.gbapal");
 static const u32 sZangooseClaw_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_zangoose_claw.4bpp");
 static const u16 sZangooseClaw_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_zangoose_claw.gbapal");
 static const u32 sSeviper_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_seviper.4bpp.smol");
-static const u32 sHeatran_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_heatran.4bpp.smol");
-static const u16 sHeatran_Palette[] = INCBIN_U16("graphics/battle_transitions/route_heatran.gbapal");
-static const u32 sShaymin_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_shaymin.4bpp.smol");
-static const u16 sShaymin_Palette[] = INCBIN_U16("graphics/battle_transitions/route_shaymin.gbapal");
-static const u8 sShaymin_Petals[] = INCBIN_U8("graphics/battle_transitions/route_shaymin_petals.bin");
-static const u8 sShaymin_Carpet[] = INCBIN_U8("graphics/battle_transitions/route_shaymin_carpet.bin");
-static const u32 sGenesect_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_genesect.4bpp.smol");
-static const u16 sGenesect_Palette[] = INCBIN_U16("graphics/battle_transitions/route_genesect.gbapal");
-static const u32 sMewtwo_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_mewtwo.4bpp.smol");
-static const u16 sMewtwo_Palette[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo.gbapal");
-static const u16 sMewtwo_Lab[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_lab.bin");
-static const u16 sMewtwo_Crack[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_crack.bin");
-static const u16 sMewtwo_Page[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_page.bin");
-static const u16 sMewtwo_Burst[] = INCBIN_U16("graphics/battle_transitions/route_mewtwo_burst.bin");
-static const u32 sGiratina_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_giratina.4bpp.smol");
-static const u16 sGiratina_Palette[] = INCBIN_U16("graphics/battle_transitions/route_giratina.gbapal");
-static const u16 sGiratina_Crack[] = INCBIN_U16("graphics/battle_transitions/route_giratina_crack.bin");
-static const u8 sGiratina_CrackTime[] = INCBIN_U8("graphics/battle_transitions/route_giratina_crack_t.bin");
-static const u16 sGiratina_Wing[] = INCBIN_U16("graphics/battle_transitions/route_giratina_wing.bin");
-static const u32 sVictini_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_victini.4bpp.smol");
-static const u16 sVictini_Palette[] = INCBIN_U16("graphics/battle_transitions/route_victini.gbapal");
-static const u16 sVictini_V[] = INCBIN_U16("graphics/battle_transitions/route_victini_v.bin");
-static const u32 sJirachi_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_jirachi.4bpp.smol");
-static const u16 sJirachi_Palette[] = INCBIN_U16("graphics/battle_transitions/route_jirachi.gbapal");
-static const u32 sJirachiStar_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_jirachi_star.4bpp");
-static const u16 sJirachiStar_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_jirachi_star.gbapal");
-static const u32 sDarkrai_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_darkrai.4bpp.smol");
-static const u32 sNeoPlasma_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_neo_plasma.4bpp.smol"); // Project Grounded
-static const u16 sNeoPlasma_Palette[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.gbapal");
-static const u16 sNeoPlasma_Maps[] = INCBIN_U16("graphics/battle_transitions/route_neo_plasma.bin");
-// Project Grounded: SickBlik (tools/grounded/sickblik_transition.py)
-static const u32 sSickBlik_TableTiles[] = INCBIN_U32("graphics/battle_transitions/sickblik_table_tiles.bin");
-static const u16 sSickBlik_TableMap[] = INCBIN_U16("graphics/battle_transitions/sickblik_table_map.bin");
-static const u16 sSickBlik_TablePals[] = INCBIN_U16("graphics/battle_transitions/sickblik_table_pals.bin");
-static const u32 sSickBlik_TopStatic[] = INCBIN_U32("graphics/battle_transitions/sickblik_top_static.bin");
-static const u32 sSickBlik_TopDyn[] = INCBIN_U32("graphics/battle_transitions/sickblik_top_dyn_lz.bin"); // LZ77 per sleutelbeeld
-static const u16 sSickBlik_TopMaps[] = INCBIN_U16("graphics/battle_transitions/sickblik_top_maps.bin");
-static const u16 sSickBlik_TopPals[] = INCBIN_U16("graphics/battle_transitions/sickblik_top_pals.bin");
-static const u16 sDarkrai_Palette[] = INCBIN_U16("graphics/battle_transitions/route_darkrai.gbapal");
-static const u32 sDarkraiEye_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_darkrai_eye.4bpp");
-static const u16 sDarkraiEye_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_darkrai_eye.gbapal");
-static const u32 sRocket_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_rocket.4bpp.smol");
-static const u16 sRocket_Palette[] = INCBIN_U16("graphics/battle_transitions/route_rocket.gbapal");
-static const u32 sRocketR_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_rocket_r.4bpp");
-static const u16 sRocketR_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_rocket_r.gbapal");
 static const u32 sZarude_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_zarude.4bpp.smol"); // Project Grounded
 static const u16 sZarude_Palette[] = INCBIN_U16("graphics/battle_transitions/route_zarude.gbapal");
 static const u16 sZarude_Claws[] = INCBIN_U16("graphics/battle_transitions/route_zarude_claws.bin");
 static const u8 sZarude_Depth[] = INCBIN_U8("graphics/battle_transitions/route_zarude_depth.bin");
-static const u32 sDave_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_dave.4bpp.smol"); // Project Grounded
-static const u16 sDave_Palette[] = INCBIN_U16("graphics/battle_transitions/route_dave.gbapal");
-static const u16 sDave_Maps[] = INCBIN_U16("graphics/battle_transitions/route_dave.bin");
-static const s16 sDave_Ball[] = INCBIN_S16("graphics/battle_transitions/route_dave_ball.bin");
-static const u32 sDaveBall_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_dave_ball.4bpp");
-static const u16 sDaveBall_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_dave_ball.gbapal");
-static const u32 sPoisonChain_Tileset[] = INCBIN_U32("graphics/battle_transitions/route_poisonchain.4bpp.smol"); // Project Grounded
-static const u16 sPoisonChain_Palette[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain.gbapal");
-static const u16 sPoisonChain_Map[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_map.bin");
-static const u16 sPoisonChain_Anim[] = INCBIN_U16("graphics/battle_transitions/route_poisonchain_anim.bin");
 static const u32 sZarudeSil_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_zarude_silhouette.4bpp");
 static const u16 sZarudeSil_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_zarude_silhouette.gbapal");
 static const u16 sSeviper_Palette[] = INCBIN_U16("graphics/battle_transitions/route_seviper.gbapal");
 static const u16 sSeviper_Upper[] = INCBIN_U16("graphics/battle_transitions/route_seviper_upper.bin");
 static const u16 sSeviper_Lower[] = INCBIN_U16("graphics/battle_transitions/route_seviper_lower.bin");
-static const u32 sBeachballSprite_Gfx[] = INCBIN_U32("graphics/battle_transitions/sprite_beachball.4bpp");
-static const u16 sBeachballSprite_Palette[] = INCBIN_U16("graphics/battle_transitions/sprite_beachball.gbapal");
-static const u32 sAquaMagma_Tileset[] = INCBIN_U32("graphics/battle_transitions/aqua_magma.4bpp.smol");
-static const u16 sAquaMagma_Tilemap[] = INCBIN_U16("graphics/battle_transitions/aqua_magma.bin");
 static const u16 sGroudon1_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt1.gbapal");
 static const u16 sGroudon2_Palette[] = INCBIN_U16("graphics/battle_transitions/groudon_pt2.gbapal");
 static const u16 sRayquaza_Palette[] = INCBIN_U16("graphics/battle_transitions/rayquaza.gbapal");
@@ -752,17 +549,6 @@ static const TransitionStateFunc sRegice_Funcs[] =
     PatternWeave_Blend1,
     PatternWeave_Blend2,
     PatternWeave_FinishAppear,
-    PatternWeave_CircularMask
-};
-
-// Project Grounded: Aqua- en Magma-logo naast elkaar (Archie + Maxie, Sootopolis)
-static const TransitionStateFunc sAquaMagma_Funcs[] =
-{
-    AquaMagma_Init,
-    PatternWeave_Blend1,
-    PatternWeave_Blend2,
-    PatternWeave_FinishAppear,
-    FramesCountdown,
     PatternWeave_CircularMask
 };
 
@@ -1142,66 +928,6 @@ static const struct SpriteTemplate sSpriteTemplate_Pokeball =
     .callback = SpriteCB_FldEffPokeballTrail
 };
 
-static const struct OamData sOam_UnusedBrendanLass =
-{
-    .y = 0,
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .objMode = ST_OAM_OBJ_NORMAL,
-    .mosaic = FALSE,
-    .bpp = ST_OAM_4BPP,
-    .shape = SPRITE_SHAPE(64x64),
-    .x = 0,
-    .matrixNum = 0,
-    .size = SPRITE_SIZE(64x64),
-    .tileNum = 0,
-    .priority = 0,
-    .paletteNum = 0,
-    .affineParam = 0,
-};
-
-static const struct SpriteFrameImage sImageTable_UnusedBrendan[] =
-{
-    {sUnusedBrendan_Gfx, sizeof(sUnusedBrendan_Gfx)}
-};
-
-static const struct SpriteFrameImage sImageTable_UnusedLass[] =
-{
-    {sUnusedLass_Gfx, sizeof(sUnusedLass_Gfx)}
-};
-
-static const union AnimCmd sSpriteAnim_UnusedBrendanLass[] =
-{
-    ANIMCMD_FRAME(0, 1),
-    ANIMCMD_END
-};
-
-static const union AnimCmd *const sSpriteAnimTable_UnusedBrendanLass[] =
-{
-    sSpriteAnim_UnusedBrendanLass
-};
-
-static const struct SpriteTemplate sSpriteTemplate_UnusedBrendan =
-{
-    .tileTag = TAG_NONE,
-    .paletteTag = PALTAG_UNUSED_MUGSHOT,
-    .oam = &sOam_UnusedBrendanLass,
-    .anims = sSpriteAnimTable_UnusedBrendanLass,
-    .images = sImageTable_UnusedBrendan,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCB_MugshotTrainerPic
-};
-
-static const struct SpriteTemplate sSpriteTemplate_UnusedLass =
-{
-    .tileTag = TAG_NONE,
-    .paletteTag = PALTAG_UNUSED_MUGSHOT,
-    .oam = &sOam_UnusedBrendanLass,
-    .anims = sSpriteAnimTable_UnusedBrendanLass,
-    .images = sImageTable_UnusedLass,
-    .affineAnims = gDummySpriteAffineAnimTable,
-    .callback = SpriteCB_MugshotTrainerPic
-};
-
 static const u16 sFieldEffectPal_Pokeball[] = INCBIN_U16("graphics/field_effects/palettes/pokeball.gbapal");
 
 const struct SpritePalette gSpritePalette_Pokeball = {sFieldEffectPal_Pokeball, FLDEFF_PAL_TAG_POKEBALL_TRAIL};
@@ -1228,9 +954,6 @@ static const u16 *const sPlayerMugshotsPals[GENDER_COUNT] =
     [MALE] = sMugshotPal_Brendan,
     [FEMALE] = sMugshotPal_May
 };
-
-static const u16 sUnusedTrainerPalette[] = INCBIN_U16("graphics/battle_transitions/unused_trainer.gbapal");
-static const struct SpritePalette sSpritePalette_UnusedTrainer = {sUnusedTrainerPalette, PALTAG_UNUSED_MUGSHOT};
 
 static const u16 sBigPokeball_Tilemap[] = INCBIN_U16("graphics/battle_transitions/big_pokeball_map.bin");
 static const u16 sMugshotsTilemap[] = INCBIN_U16("graphics/battle_transitions/elite_four_bg_map.bin");
@@ -1693,11 +1416,6 @@ static void Task_Regirock(u8 taskId)
     while (sRegirock_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
 }
 
-static void Task_AquaMagma(u8 taskId)
-{
-    while (sAquaMagma_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
-}
-
 static void Task_Regidrago(u8 taskId)
 {
     while (sRegidrago_Funcs[gTasks[taskId].tState](&gTasks[taskId]));
@@ -1803,12 +1521,6 @@ static void NewRegi_SetGfx(struct Task *task, const void *tileset_, u32 tilesetS
     CpuCopy16(tilemap_, tilemap, 0x500);
     SetSinWave((s16*)gScanlineEffectRegBuffers[0], 0, task->tSinIndex, 132, task->tAmplitude, DISPLAY_HEIGHT);
     task->tState++;
-}
-
-static bool8 AquaMagma_Init(struct Task *task)
-{
-    NewRegi_SetGfx(task, sAquaMagma_Tileset, RT_SMOL, sAquaMagma_Tilemap, sEvilTeam_Palette);
-    return FALSE;
 }
 
 static bool8 Regidrago_Init(struct Task *task)
@@ -3077,7 +2789,6 @@ static void SpriteCB_MugshotTrainerPicPartner(struct Sprite *sprite)
 {
     while (sMugshotTrainerPicFuncsPartner[sprite->sState](sprite));
 }
-
 
 // Wait until IncrementTrainerPicState is called
 static bool8 MugshotTrainerPic_Pause(struct Sprite *sprite)
@@ -6332,22 +6043,6 @@ static void Film_PlaySfx(s32 t, const struct FilmSfx *sfx, u32 n)
             PlaySE(sfx[i].se);
     }
 }
-
-// trillen (amp px) tussen t0 en t1, anders stil
-static void Film_Shake(s32 t, s32 t0, s32 t1, u32 amp)
-{
-    if (t >= t0 && t < t1)
-    {
-        SetGpuReg(REG_OFFSET_BG0HOFS, ((s32)(Random() % (2 * amp + 1)) - (s32)amp) & 0x1FF);
-        SetGpuReg(REG_OFFSET_BG0VOFS, ((s32)(Random() % (2 * amp + 1)) - (s32)amp) & 0x1FF);
-    }
-    else
-    {
-        SetGpuReg(REG_OFFSET_BG0HOFS, 0);
-        SetGpuReg(REG_OFFSET_BG0VOFS, 0);
-    }
-}
-
 
 // ---------------- Keccles (Kecleon, een droge, echt wijze denker; ook in het Battle Stadium): een verlaten lab vol
 // schoolborden. De camera zoekt (handheld): het lege lab, de aantekeningen (waarneming, camouflage, geduld), THE PLAN

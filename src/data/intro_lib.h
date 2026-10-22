@@ -70,20 +70,6 @@ static void GI_ShowMap(u32 n)
     CpuCopy16(&tilemap[0], &tilemap[31 * 32], 32 * 2);
 }
 
-// alleen rij r0 t/m r1-1 uit beeld n
-static void GI_ShowRows(u32 n, u32 r0, u32 r1)
-{
-    u16 *tilemap = RT_Tilemap();
-    const u16 *map;
-    u32 r;
-
-    if (sGymIntro_Maps == NULL)
-        return;
-    map = &sGymIntro_Maps[n * GI_MAP_SIZE];
-    for (r = r0; r < r1; r++)
-        CpuCopy16(&map[r * 30], &tilemap[r * 32], 30 * 2);
-}
-
 // een blok van w x h vakken uit beeld n (vanaf sx, sy) naar dx, dy op het scherm
 static void GI_PutRect(u32 n, s32 sx, s32 sy, s32 w, s32 h, s32 dx, s32 dy)
 {
@@ -134,24 +120,6 @@ static u32 GI_SpritePalBit(u16 tag)
     return idx == 0xFF ? 0 : 1 << (16 + idx);
 }
 
-static u8 GI_TrainerPic(u16 pic, s16 x, s16 y)
-{
-    u8 id = CreateTrainerSprite(pic, x, y, 0, NULL);
-    gSprites[id].oam.priority = 0;
-    return id;
-}
-
-static u32 GI_TrainerPalBit(u16 pic)
-{
-    return GI_SpritePalBit(gTrainerSprites[pic].palette.tag);
-}
-
-static void GI_DestroyTrainerPic(u8 id)
-{
-    FreeSpriteOamMatrix(&gSprites[id]);
-    DestroySpriteAndFreeResources(&gSprites[id]);
-}
-
 static void GI_Shake(s32 amp)
 {
     if (amp <= 0)
@@ -163,14 +131,6 @@ static void GI_Shake(s32 amp)
     SetGpuReg(REG_OFFSET_BG0HOFS, ((Random() % (amp * 2 + 1)) - amp) & 0x1FF);
     SetGpuReg(REG_OFFSET_BG0VOFS, ((Random() % (amp * 2 + 1)) - amp) & 0x1FF);
 }
-
-static const struct OamData sGI_Oam64 =
-{
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .shape = SPRITE_SHAPE(64x64),
-    .size = SPRITE_SIZE(64x64),
-    .priority = 0,
-};
 
 static const struct OamData sGI_Oam64Affine =
 {
@@ -244,65 +204,12 @@ static void GI_FreeTag(u16 tag)
     FreeSpritePaletteByTag(tag);
 }
 
-// spotlight/lichtbundel: venster 0 per beeldlijn (HBlank-DMA op WIN0H) met 'lichter maken' erin
-static void GI_InitWindow(void)
-{
-    InitTransitionData();
-    ScanlineEffect_Clear();
-    CpuFill16(0, gScanlineEffectRegBuffers[0], DISPLAY_HEIGHT * 2);
-    CpuFill16(0, gScanlineEffectRegBuffers[1], DISPLAY_HEIGHT * 2);
-    sTransitionData->WININ = WININ_WIN0_ALL;
-    sTransitionData->WINOUT = WINOUT_WIN01_BG_ALL | WINOUT_WIN01_OBJ;
-    sTransitionData->WIN0V = DISPLAY_HEIGHT;
-    sTransitionData->BLDCNT = 0;
-    sTransitionData->VBlank_DMA = TRUE;
-    SetGpuReg(REG_OFFSET_BLDY, 0);
-    ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN1_ON | DISPCNT_OBJWIN_ON);
-    SetGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-    SetVBlankCallback(VBlankCB_CircularMask);
-}
-
-static void GI_EndWindow(void)
-{
-    sTransitionData->BLDCNT = 0;
-    SetGpuReg(REG_OFFSET_BLDCNT, 0);
-    SetGpuReg(REG_OFFSET_BLDY, 0);
-    ClearGpuRegBits(REG_OFFSET_DISPCNT, DISPCNT_WIN0_ON);
-    SetVBlankCallback(VBlankCB_BattleTransition);
-}
-
 #include "trainer_pokemon_sprites.h"
-
-// een Pokémon (zijn eigen frontsprite) als sprite; het palet krijgt de soort als tag
-static u8 GI_MonPic(u16 species, s16 x, s16 y)
-{
-    u16 id = CreateMonPicSprite(species, FALSE, 0, TRUE, x, y, 0, species);
-    if (id >= MAX_SPRITES)
-        return MAX_SPRITES;
-    gSprites[id].oam.priority = 0;
-    gSprites[id].invisible = TRUE;
-    return id;
-}
-
-static void GI_DestroyMonPic(u8 id)
-{
-    if (id < MAX_SPRITES)
-        FreeAndDestroyMonPicSprite(id);
-}
 
 static struct Sprite *GI_Sprite(u8 id)
 {
     static EWRAM_DATA struct Sprite sDummy = {0};
     return id < MAX_SPRITES ? &gSprites[id] : &sDummy;
-}
-
-// venster 0 als rechthoek (alleen daarbinnen BG en sprites, daarbuiten de zwarte achtergrond)
-static void GI_SetRectWindow(s32 x0, s32 y0, s32 x1, s32 y1)
-{
-    u16 *win = gScanlineEffectRegBuffers[0];
-    s32 y;
-    for (y = 0; y < DISPLAY_HEIGHT; y++)
-        win[y] = (y >= y0 && y < y1 && x1 > x0) ? WIN_RANGE(x0, x1) : 0;
 }
 
 // de wereld zwart (eerste frames uitfaden) en aan het eind wit; geeft TRUE op het laatste frame
@@ -323,31 +230,6 @@ static bool32 GI_WhiteOut(s32 t, s32 end, u32 keep)
     BlendPalettes(GI_BG_PALS | keep, k, RGB_WHITE);
     GI_FillField(keep, RGB(k * 31 / 16, k * 31 / 16, k * 31 / 16));
     return t >= end;
-}
-
-static void GI_Flash(s32 t, s32 start, s32 len, s32 from, u32 keep, u16 color)
-{
-    s32 k;
-    if (t < start || t >= start + len)
-        return;
-    k = from - (t - start) * from / len;
-    BlendPalettes(GI_BG_PALS | keep, k, color);
-}
-
-static const struct OamData sGI_Oam8x32 =
-{
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .shape = SPRITE_SHAPE(8x32),
-    .size = SPRITE_SIZE(8x32),
-    .priority = 0,
-};
-
-static u16 GI_MixColor(u16 a, u16 b, s32 k, s32 n)
-{
-    s32 r = GET_R(a) + (GET_R(b) - GET_R(a)) * k / n;
-    s32 g = GET_G(a) + (GET_G(b) - GET_G(a)) * k / n;
-    s32 bl = GET_B(a) + (GET_B(b) - GET_B(a)) * k / n;
-    return RGB(r, g, bl);
 }
 
 // ---------------- tijd en kleurmenging (uit de vroegere Tapu-intro's)
@@ -376,7 +258,6 @@ static s32 Tapu_Elapsed(void)
     return gMain.vblankCounter1 - start;
 }
 
-
 // 32x32-sprites (uit de vroegere gymleider-intro's)
 static const struct OamData sGI_Oam32 =
 {
@@ -390,27 +271,6 @@ static const struct OamData sGI_Oam32 =
 #define LI2_PALS_MAP   (0x3F << 10)    // BG 10-15
 #define LI2_PALS_DIM   (0x3F << 4)     // BG 4-9
 
-static const struct OamData sLI2_Oam16x32 =
-{
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .shape = SPRITE_SHAPE(16x32),
-    .size = SPRITE_SIZE(16x32),
-    .priority = 0,
-};
-
-static const struct OamData sLI2_Oam32x16 =
-{
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .shape = SPRITE_SHAPE(32x16),
-    .size = SPRITE_SIZE(32x16),
-    .priority = 0,
-};
-
-static u32 LI2_MonBit(u8 id)
-{
-    return id < MAX_SPRITES ? 1 << (16 + gSprites[id].oam.paletteNum) : 0;
-}
-
 // alle paletten behalve 'bg' (onze BG-paletten) en 'keep' (onze sprites) op een kleur
 static void LI2_FillField(u32 bg, u32 keep, u16 color)
 {
@@ -423,15 +283,6 @@ static void LI2_FillField(u32 bg, u32 keep, u16 color)
     }
 }
 
-// de wereld in 8 frames naar zwart; vanaf 'start' is ons beeld er en blijft de rest zwart
-static void LI2_FadeWorld(s32 t, s32 start, u32 bg, u32 keep)
-{
-    if (t < start)
-        BlendPalettes(PALETTES_ALL & ~keep, min(t * 2, 16), RGB_BLACK);
-    else
-        LI2_FillField(bg, keep, RGB_BLACK);
-}
-
 static bool32 LI2_WhiteOut(s32 t, s32 end, u32 bg, u32 keep)
 {
     s32 k;
@@ -441,21 +292,5 @@ static bool32 LI2_WhiteOut(s32 t, s32 end, u32 bg, u32 keep)
     BlendPalettes(bg | keep, k, RGB_WHITE);
     LI2_FillField(bg, keep, RGB(k * 31 / 16, k * 31 / 16, k * 31 / 16));
     return t >= end;
-}
-
-// het beeld komt in 8 frames uit het zwart op
-static void LI2_FadeIn(s32 t, s32 start, u32 bg)
-{
-    if (t >= start && t < start + 8)
-        BlendPalettes(bg, 16 - (t - start) * 2, RGB_BLACK);
-}
-
-// HBlank-golf op BG0HOFS (hitte, splijten); waarde per beeldlijn. Vóór 'start' is de golf nog niet aan (de kaart kan
-// de scanline-buffer nog gebruiken, bijv. het licht in een donkere grot): dan een eigen kladbuffer.
-static EWRAM_DATA s16 sLI2_NoHofs[DISPLAY_HEIGHT] = {0};
-
-static s16 *LI2_Hofs(s32 t, s32 start)
-{
-    return t > start ? (s16 *)gScanlineEffectRegBuffers[0] : sLI2_NoHofs;
 }
 

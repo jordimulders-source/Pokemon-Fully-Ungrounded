@@ -28,22 +28,6 @@ static EWRAM_DATA s16 sDP_Var[8] = {0};
 
 static const u16 sDP_Black16[16] = {0};
 
-static const struct OamData sDP_Oam64Affine =
-{
-    .affineMode = ST_OAM_AFFINE_NORMAL,
-    .shape = SPRITE_SHAPE(64x64),
-    .size = SPRITE_SIZE(64x64),
-    .priority = 0,
-};
-
-static const struct OamData sDP_Oam8 =
-{
-    .affineMode = ST_OAM_AFFINE_OFF,
-    .shape = SPRITE_SHAPE(8x8),
-    .size = SPRITE_SIZE(8x8),
-    .priority = 0,
-};
-
 static const struct OamData sDP_Oam32x16Blend =
 {
     .affineMode = ST_OAM_AFFINE_OFF,
@@ -52,20 +36,6 @@ static const struct OamData sDP_Oam32x16Blend =
     .size = SPRITE_SIZE(32x16),
     .priority = 0,
 };
-
-static const struct OamData sDP_Oam64AffineBlend =
-{
-    .affineMode = ST_OAM_AFFINE_DOUBLE,
-    .objMode = ST_OAM_OBJ_BLEND,
-    .shape = SPRITE_SHAPE(64x64),
-    .size = SPRITE_SIZE(64x64),
-    .priority = 0,
-};
-
-static u32 DP_Hash(u32 a, u32 b, u32 c)
-{
-    return ((a * 73 + b * 151 + c * 233 + 17) * 2654435761u) >> 24;
-}
 
 // tijd in VBlanks sinds de muziek startte
 static s32 DP_Time(void)
@@ -212,38 +182,6 @@ static void DP_Finish(void)
     LI_DestroySprites();
     DP_FreeMaps();
     DP_ShowWorld();
-}
-
-static void DP_SetBgPal(u32 pal, const u16 *cols)
-{
-    CpuCopy16(cols, &gPlttBufferUnfaded[BG_PLTT_ID(pal)], PLTT_SIZE_4BPP);
-    CpuCopy16(cols, &gPlttBufferFaded[BG_PLTT_ID(pal)], PLTT_SIZE_4BPP);
-}
-
-static s32 DP_Clamp(s32 v, s32 lo, s32 hi)
-{
-    return v < lo ? lo : (v > hi ? hi : v);
-}
-
-// een puls die op 'at' begint met 'amp' en in 'len' frames uitdooft
-static s32 DP_Pulse(s32 t, s32 at, s32 amp, s32 len)
-{
-    if (t < at || t >= at + len)
-        return 0;
-    return amp - (t - at) * amp / len;
-}
-
-// affine sprite (NORMAL, 64x64) draaien (graden, met de klok mee) en schalen (256 = 1x)
-static void DP_RotScale(struct Sprite *s, s32 deg, s32 scale)
-{
-    s32 sn, cs, inv;
-    deg %= 360;
-    if (deg < 0)
-        deg += 360;
-    sn = Sin2(deg) / 16;
-    cs = Cos2(deg) / 16;
-    inv = 65536 / max(scale, 16);
-    SetOamMatrix(s->oam.matrixNum, cs * inv >> 8, sn * inv >> 8, -sn * inv >> 8, cs * inv >> 8);
 }
 
 // =====================================================================================================================

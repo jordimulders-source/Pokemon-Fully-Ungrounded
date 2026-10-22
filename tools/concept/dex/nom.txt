@@ -353,7 +353,7 @@ DEWPIDER|B|AMA|Waterspinnen|
 FOMANTIS|C||Orchideebidsprinkhaan (Azië)|
 MORELULL|B|AMA|Lichtgevende paddenstoelen|
 SALANDIT|B||Jordi 22 okt: erin. Salamander; Poison genoeg|
-STUFFUL|C||Beer; brilbeer via Teddiursa|
+STUFFUL|B||Jordi 22 okt: erin. Beer; brilbeer via Teddiursa|
 BOUNSWEET|C||Fruit: zuidamerikaans fruit liever als fakemon|
 COMFEY|C||Lei (Hawaï)|
 ORANGURU|C||Orang-oetan: rol gaat naar de oeakari (besloten)|

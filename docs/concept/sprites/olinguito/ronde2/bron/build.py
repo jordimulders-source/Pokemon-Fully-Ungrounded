@@ -85,15 +85,14 @@ def face(idx, dy=0, closed=False):
     patch(idx, 35, 9 + dy, ['M', 'M', 'M', 'M'], K)
     patch(idx, 13, 17 + dy, FACE_CLOSED if closed else FACE_OPEN, K)
     # pluk: één brutale lok die van het voorhoofd naar achteren omhoog steekt
-    patch(idx, 24, 4 + dy, [
-        '........ddo',
-        '......ddhvo',
-        '.....dhvvo.',
-        '....dhvvso.',
-        '...dhvvso..',
-        '..dhvvsso..',
-        '..hvvvss...',
-        '...vvvs....',
+    patch(idx, 22, 6 + dy, [
+        '......do',
+        '.....dho',
+        '....dhvo',
+        '...dhvso',
+        '..dhvvs.',
+        '..hvvs..',
+        '..vvvs..',
     ], K)
     # opgetrokken wenkbrauw boven het dichtste oog
     patch(idx, 27, 14 + dy, ['....dd.', '..dd..d', '.d.....'], K)

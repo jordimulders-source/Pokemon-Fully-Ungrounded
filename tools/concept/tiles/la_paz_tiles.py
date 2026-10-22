@@ -185,35 +185,40 @@ def stairs(kind):
 
 
 def clay_cliff(part):
-    """Uitgesleten kleiwand (zoals de hellingen van de kom). Rechte rechthoeken (les: kliffen)."""
+    """Uitgesleten kleiwand (de hellingen van de kom): geulen per 16 px, rechte rechthoeken (les: kliffen)."""
     c = Canvas(16, 16)
-    top = clay()
+    ground = clay(0)
+    flutes = [(0, 5), (5, 9), (9, 16)]
+    y_from = {'top': 8, 'mid': 0, 'base': 0}[part]
+    y_to = {'top': 15, 'mid': 15, 'base': 10}[part]
     for y in range(16):
         for x in range(16):
-            # verticale geulen
-            f = (x * 5 + (x // 4) * 3) % 8
-            col = CL[1] if f < 3 else (CL[2] if f < 6 else CL[0])
-            if x % 4 == 0:
-                col = CL[0]
-            if x % 4 == 1:
-                col = CL[3] if part != 'base' else CL[2]
-            c.px(x, y, col)
-    if part == 'top':      # rand: grond boven, lip met licht, dan wand
-        for y in range(6):
-            for x in range(16):
-                c.px(x, y, top.get(x, y))
+            c.px(x, y, ground.get(x, y))
+    for x0, x1 in flutes:
+        for y in range(y_from, y_to + 1):
+            for x in range(x0, x1):
+                col = CL[2]
+                if x == x0:
+                    col = CL[0]
+                elif x == x0 + 1:
+                    col = CL[3]
+                elif x == x1 - 1:
+                    col = CL[1]
+                c.px(x, y, col)
+        if part == 'top':  # afgeronde koppen van de geulen
+            c.px(x0 + 1, 8, CL[2]); c.px(x1 - 1, 8, CL[2])
+    if part == 'top':
         c.hline(0, 15, 6, CL[3]); c.hline(0, 15, 7, OL6)
-        for x in range(0, 16, 5):
-            c.px(x, 8, OL6)
-    if part == 'base':     # voet: schaduw en puin op de grond
-        for y in range(11, 16):
-            for x in range(16):
-                c.px(x, y, CL[2] if y > 12 else CL[1])
-        c.hline(0, 15, 11, OL6)
-        c.hline(0, 15, 12, CL[0])
-        for x in (2, 9, 13):
+    if part == 'mid':  # gelaagdheid
+        for x in range(16):
+            if c.get(x, 9) != CL[0]:
+                c.px(x, 9, CL[1])
+    if part == 'base':
+        c.hline(0, 15, 11, OL6); c.hline(0, 15, 12, CL[1])
+        for x in (3, 11):
             c.px(x, 14, CL[1]); c.px(x + 1, 14, CL[3])
     return c
+
 
 
 def side_edge(base, side):
@@ -478,9 +483,9 @@ for row in (0, 1):
 # gevels
 for tex in ('brick', 'plaster'):
     t = 'b' if tex == 'brick' else 'p'
-    for piece in ('l', 'm', 'r', 'win', 'curtain'):
+    for piece in ('l', 'm', 'r', 'win', 'curtain') if t == 'b' else ('l', 'r', 'win', 'curtain'):
         ts.add(f'up{t}_{piece}', facade('up', piece, tex))
-    for piece in ('l', 'm', 'r', 'door', 'shutter', 'shop', 'win'):
+    for piece in ('l', 'm', 'r', 'door', 'shutter', 'shop', 'win') if t == 'b' else ('l', 'r', 'door', 'win'):
         cv = facade('gf', piece, tex)
         ts.add(f'gf{t}_{piece}_0', cv.sub(0, 0, 16, 16))
         ts.add(f'gf{t}_{piece}_1', cv.sub(0, 16, 16, 16))
@@ -488,92 +493,97 @@ for piece in ('open', 'openl', 'openr'):
     ts.add(f'upb_{piece}', facade('up', piece, 'brick'))
 
 # ------------------------------------------------------------------ cholet (palet 10)
-def cholet_a():
-    """Cholet: neo-Andees feestgebouw, 4 breed x 7 hoog; bovenop het 'chalet' van de eigenaar."""
-    c = Canvas(64, 112)
-    # chalet bovenop (rij 0-1): klein huisje met puntdak, iets ingesprongen
-    c.rect(8, 6, 55, 31, WHC)
-    for y in range(4, 20):           # puntdak paars
-        half = 26 - (19 - y) // 1 if False else None
-    for y in range(4, 18):
-        x0, x1 = 12 + (17 - y) // 2 - 4, 51 - (17 - y) // 2 + 4
-        c.hline(x0, x1, y, PU[0] if y % 3 == 0 else PU[1])
-    c.hline(6, 57, 18, OLC); c.hline(6, 57, 17, PU[0])
-    c.rect(10, 19, 53, 31, WHC)
-    for x in (16, 30, 44):
-        c.rect(x, 22, x + 5, 28, MG[1]); c.box(x - 1, 21, x + 6, 29, OLC); c.px(x + 1, 23, MG[2]); c.px(x + 2, 22, MG[2])
-    c.rect(4, 30, 59, 31, GYC)
-    # gevel (rij 2..6): spiegelglas met felle geometrische banden
-    c.rect(0, 32, 63, 111, WHC)
-    c.rect(2, 32, 61, 33, OLC)
-    for fl, y0 in enumerate((34, 52, 70)):
-        # band met trappenkruis-motief (chakana) en zigzag
-        band = [PK[0], ORC, LIC][fl]
-        band2 = [YEC, PU[1], PK[1]][fl]
-        c.rect(2, y0, 61, y0 + 3, band)
-        for x in range(2, 62):
-            if (x // 2) % 4 == (y0 // 2) % 4:
-                c.px(x, y0 + 1, band2); c.px(x, y0 + 2, band2)
-        # spiegelglas
-        c.rect(6, y0 + 5, 57, y0 + 15, MG[1])
-        c.rect(6, y0 + 12, 57, y0 + 15, MG[0])
-        for k in range(4):
-            c.px(8 + k * 13, y0 + 8, MG[2]); c.px(9 + k * 13, y0 + 7, MG[2]); c.px(10 + k * 13, y0 + 6, MG[2])
-        for x in (5, 18, 31, 32, 45, 58):
-            c.vline(x, y0 + 4, y0 + 16, GDC if x in (31, 32) else WHC)
-        c.hline(5, 58, y0 + 4, WHC); c.hline(5, 58, y0 + 16, GYC)
-        # zijpilaren met trapmotief
-        for side in (0, 1):
-            x = 1 if side == 0 else 59
-            c.rect(x, y0 + 4, x + 3, y0 + 17, band)
-            c.rect(x + 1, y0 + 7, x + 2, y0 + 13, band2)
-    # begane grond (zaal): grote glazen deuren, naambord
-    c.rect(2, 88, 61, 93, PU[0])
-    for x in range(4, 60, 6):
-        c.rect(x, 89, x + 3, 92, YEC if (x // 6) % 2 else PK[1])
-    c.rect(4, 95, 59, 111, OLC)
-    c.rect(6, 96, 29, 110, MG[0]); c.rect(34, 96, 57, 110, MG[0])
-    for x in (12, 18, 24, 40, 46, 52):
-        c.vline(x, 96, 110, MG[1])
-    c.rect(30, 95, 33, 111, GDC)
-    c.px(8, 98, MG[2]); c.px(9, 97, MG[2]); c.px(36, 98, MG[2]); c.px(37, 97, MG[2])
-    c.vline(0, 32, 111, OLC); c.vline(63, 32, 111, OLC)
+def cholet_row(kind, piece, scheme=0):
+    """Modulaire cholet (palet 10): rijen van 16 px, stukken l/m/m2/r (m herhaalbaar).
+    kind: roof, crown, floor, hall0, hall1. scheme 0..2 = kleurenset van de banden."""
+    band, band2 = [(PK[0], YEC), (ORC, PU[1]), (LIC, PK[1])][scheme]
+    c = Canvas(16, 16, WHC)
+    if kind == 'roof':  # plat wit dak, borstwering
+        c.rect(0, 0, 15, 15, GYC)
+        c.hline(0, 15, 0, OLC); c.hline(0, 15, 1, WHC); c.hline(0, 15, 13, OLC); c.hline(0, 15, 14, WHC); c.hline(0, 15, 15, band)
+        for x in range(2, 16, 8):
+            c.px(x, 6, WHC); c.px(x + 4, 10, WHC)
+    if kind == 'crown':  # kroonlijst met trapmotief (chakana-treden)
+        c.rect(0, 0, 15, 15, band)
+        for x in range(16):
+            s = x % 8
+            h = [0, 1, 2, 3, 3, 2, 1, 0][s]
+            c.vline(x, 9 - h * 2, 13, band2)
+        c.hline(0, 15, 0, OLC); c.hline(0, 15, 1, WHC); c.hline(0, 15, 14, WHC); c.hline(0, 15, 15, OLC)
+    if kind == 'floor':
+        c.rect(0, 0, 15, 2, band)
+        for x in range(0, 16, 4):
+            c.px(x + 1, 1, band2); c.px(x + 2, 1, band2)
+        c.rect(0, 3, 15, 13, MG[1]); c.rect(0, 10, 15, 13, MG[0])
+        for x in (0, 8):
+            c.vline(x, 3, 13, WHC)
+        c.px(3, 5, MG[2]); c.px(4, 4, MG[2]); c.px(11, 5, MG[2]); c.px(12, 4, MG[2])
+        c.hline(0, 15, 14, WHC); c.hline(0, 15, 15, GYC)
+        if piece == 'm2':  # ruitmotief tussen de ramen
+            c.rect(6, 4, 10, 12, WHC)
+            c.px(8, 5, band); c.rect(7, 6, 9, 10, band); c.px(8, 11, band); c.px(8, 8, band2)
+    if kind in ('hall0', 'hall1'):
+        if kind == 'hall0':
+            c.rect(0, 0, 15, 2, WHC); c.rect(0, 3, 15, 9, PU[0])
+            for x in range(1, 16, 4):
+                c.rect(x, 5, x + 1, 7, YEC)
+            c.hline(0, 15, 10, OLC)
+            c.rect(0, 11, 15, 15, MG[0])
+            for x in (3, 7, 11, 15):
+                c.vline(x, 11, 15, MG[1])
+        else:
+            c.rect(0, 0, 15, 15, MG[0])
+            for x in (3, 7, 11, 15):
+                c.vline(x, 0, 14, MG[1])
+            c.hline(0, 15, 15, OLC)
+        if piece == 'door':
+            c.rect(6, 11 if kind == 'hall0' else 0, 9, 15, GDC)
+            c.vline(7, 11 if kind == 'hall0' else 0, 14, YEC)
+            if kind == 'hall0':
+                c.rect(1, 12, 4, 13, MG[2])
+    if piece == 'l':
+        c.rect(0, 0, 3, 15, band if kind not in ('roof',) else GYC)
+        c.vline(0, 0, 15, OLC); c.vline(1, 0, 15, band2 if kind in ('floor', 'hall1') else WHC)
+        if kind == 'roof':
+            c.vline(1, 1, 14, WHC); c.hline(0, 3, 0, OLC); c.hline(0, 3, 13, OLC)
+    if piece == 'r':
+        c.rect(12, 0, 15, 15, band if kind not in ('roof',) else GYC)
+        c.vline(15, 0, 15, OLC); c.vline(14, 0, 15, band2 if kind in ('floor', 'hall1') else WHC)
+        if kind == 'roof':
+            c.vline(14, 1, 14, WHC); c.hline(12, 15, 0, OLC); c.hline(12, 15, 13, OLC)
     return c
 
 
-def cholet_b():
-    """Smallere cholet (3 x 6) in groen/oranje met trapgevel."""
-    c = Canvas(48, 96)
-    # getrapte top (rij 0)
-    steps = [(16, 31, 2), (10, 37, 6), (4, 43, 10)]
-    for x0, x1, y0 in steps:
-        c.rect(x0, y0, x1, 15, LIC if y0 != 6 else ORC)
-        c.hline(x0, x1, y0, OLC)
-        c.vline(x0, y0, 15, OLC); c.vline(x1, y0, 15, OLC)
-    c.rect(20, 5, 27, 12, MG[1]); c.box(19, 4, 28, 13, OLC); c.px(21, 6, MG[2])
-    c.rect(0, 16, 47, 95, WHC)
-    c.vline(0, 16, 95, OLC); c.vline(47, 16, 95, OLC); c.hline(0, 47, 16, OLC)
-    for fl, y0 in enumerate((18, 40)):
-        c.rect(2, y0, 45, y0 + 2, ORC)
-        for x in range(2, 46, 4):
-            c.px(x + 1, y0 + 1, YEC)
-        # drie ramen met een diamantmotief ertussen
-        for k, x in enumerate((4, 18, 32)):
-            c.rect(x, y0 + 5, x + 11, y0 + 17, MG[1]); c.box(x - 1, y0 + 4, x + 12, y0 + 18, OLC)
-            c.rect(x, y0 + 14, x + 11, y0 + 17, MG[0])
-            c.px(x + 2, y0 + 7, MG[2]); c.px(x + 3, y0 + 6, MG[2])
-        for x in (16, 30):
-            c.px(x + 1, y0 + 9, PK[0]); c.rect(x, y0 + 10, x + 2, y0 + 12, PK[0]); c.px(x + 1, y0 + 13, PK[0])
-        c.rect(2, y0 + 19, 45, y0 + 21, LIC)
-    c.rect(2, 64, 45, 69, PU[0])
-    for x in range(4, 44, 5):
-        c.rect(x, 65, x + 2, 68, YEC)
-    c.rect(3, 71, 44, 95, OLC)
-    c.rect(5, 72, 21, 94, MG[0]); c.rect(26, 72, 42, 94, MG[0])
-    c.rect(22, 71, 25, 95, GDC)
-    for x in (9, 13, 17, 30, 34, 38):
-        c.vline(x, 72, 94, MG[1])
+def chalet():
+    """Het 'chalet' van de eigenaar bovenop een cholet (3 x 2), staat op het cholet-dak."""
+    c = Canvas(48, 32)
+    for x in range(3):
+        c.paste(cholet_row('roof', 'm'), x * 16, 0)
+        c.paste(cholet_row('roof', 'm'), x * 16, 16)
+    for y in range(2, 14):  # schuin dak paars
+        x0, x1 = 6 + (13 - y) // 2, 41 - (13 - y) // 2
+        c.hline(x0, x1, y, PU[1] if (y // 2) % 2 else PU[0])
+    c.hline(4, 43, 14, OLC); c.hline(6, 41, 1, OLC)
+    c.rect(6, 15, 41, 29, WHC); c.vline(6, 15, 29, OLC); c.vline(41, 15, 29, OLC); c.hline(6, 41, 29, OLC)
+    for x in (10, 30):
+        c.rect(x, 18, x + 6, 24, MG[1]); c.box(x - 1, 17, x + 7, 25, OLC); c.px(x + 1, 19, MG[2])
+    c.rect(20, 18, 27, 29, GDC); c.box(19, 17, 28, 29, OLC); c.vline(23, 18, 28, YEC)
     return c
+
+
+for k in ('roof', 'crown'):
+    for p in ('l', 'm', 'r'):
+        for sch in ((0, 1, 2) if k == 'crown' else (0,)):
+            ts.add(f'cholet_{k}{sch}_{p}', cholet_row(k, p, sch))
+for sch in (0, 1, 2):
+    for p in ('l', 'm', 'm2', 'r'):
+        ts.add(f'cholet_floor{sch}_{p}', cholet_row('floor', p, sch))
+for k in ('hall0', 'hall1'):
+    for p in ('l', 'm', 'door', 'r'):
+        ts.add(f'cholet_{k}_{p}', cholet_row(k, p))
+CHALET = chalet()
+OBJ = {}
+
 
 
 def slice_obj(name, cv, ground, top_rows=(), beh=None):
@@ -597,9 +607,7 @@ def slice_obj(name, cv, ground, top_rows=(), beh=None):
 
 
 COB = cobble(0)
-OBJ = {}
-OBJ['cholet_a'] = slice_obj('cholet_a', cholet_a(), COB, top_rows=(0,))
-OBJ['cholet_b'] = slice_obj('cholet_b', cholet_b(), COB, top_rows=(0,))
+OBJ['chalet'] = slice_obj('chalet', CHALET, COB)
 
 
 # ------------------------------------------------------------------ kabelbaan (palet 11)
@@ -765,7 +773,7 @@ def stall_goods(kind):
     return c
 
 
-for scheme in ('blue', 'red', 'yellow'):
+for scheme in ('blue', 'red'):
     OBJ[f'tent_{scheme}'] = slice_obj(f'tent_{scheme}', slateport_tent(scheme), COB, top_rows=(0,))
 GOODS = {}
 for k in ('potatoes', 'fruit', 'aguayo', 'sacks', 'crate', 'herbs'):
@@ -847,124 +855,71 @@ ts.add('planter_flowers', COB, planter('flowers'))
 
 
 def illimani():
-    """De Illimani als decor (14 x 6): drie besneeuwde toppen boven kale kleiheuvels."""
-    W_, H_ = 224, 96
+    """De Illimani als decor (12 x 5): drie besneeuwde toppen, hellingen van 45 graden zodat de
+    tegels langs de kammen herhalen (tegelzuinig). Boven de kam: hoger sneeuwveld."""
+    W_, H_ = 192, 80
     c = Canvas(W_, H_)
-    # silhouet: drie toppen
-    peaks = [(52, 6), (110, 2), (168, 10)]
+    peaks = [(40, 16), (96, 0), (152, 24)]
 
     def ridge(x):
-        h = 0
-        for px_, py in peaks:
-            h = max(h, H_ - (py + abs(x - px_) * 0.9))
-        return H_ - h
-    top = [int(ridge(x)) for x in range(W_)]
-    # lichte golving in de kam (vaste seed)
-    rnd = random.Random(3)
+        return min(py + abs(x - px_) for px_, py in peaks)
+
+    def tri(v, period=16, amp=8):
+        v %= period
+        return v if v < period // 2 else period - v
     for x in range(W_):
-        top[x] += (1 if (x // 6) % 3 == 0 else 0)
-    snowline = [44 + int(6 * np.sin(x / 13.0)) + (x // 8) % 2 * 2 for x in range(W_)]
-    for x in range(W_):
-        for y in range(top[x], H_):
-            # zijde t.o.v. dichtstbijzijnde top: licht van links
-            px_ = min(peaks, key=lambda p: abs(p[0] - x))[0]
-            left = x < px_
-            if y < snowline[x]:
-                col = SN[0] if left else SN[1]
-                # sneeuwgeulen
-                if not left and (x + y // 2) % 9 == 0:
+        top = ridge(x)
+        px_, py = min(peaks, key=lambda p: p[1] + abs(x - p[0]))
+        left = x < px_
+        for y in range(H_):
+            if y < top:
+                col = SN[1]
+                if (x * 3 + y * 5) % 32 == 0:
                     col = SN[2]
-                if left and (x - y // 2) % 11 == 0:
-                    col = SN[1]
-            elif y < snowline[x] + 3:
-                col = SN[2] if (x + y) % 3 else RK[1]
+            elif y == top:
+                col = OLN
             else:
-                col = RK[2] if left else RK[1]
-                if (x * 3 + y) % 13 == 0:
-                    col = RK[0]
+                snowline = 40 + tri(x + (8 if left else 0))
+                if y < snowline:
+                    col = SN[0] if left else SN[1]
+                    if not left and (x + y) % 8 == 0:
+                        col = SN[2]
+                    if left and (x - y) % 16 == 0 and y > top + 2:
+                        col = SN[1]
+                elif y == snowline:
+                    col = SN[2]
+                else:
+                    col = RK[2] if left else RK[1]
+                    if (x + 2 * y) % 16 == 0:
+                        col = RK[0] if not left else RK[1]
+                if x == px_ and y > top:
+                    col = SN[1] if y < snowline else RK[1]
+            if y > 75:
+                col = None
+            elif y == 75:
+                col = OLN
             c.px(x, y, col)
-        c.px(x, top[x], OLN)
-    # rotsribben die de sneeuw breken
-    for px_, py in peaks:
-        for d in range(4, 40, 2):
-            for s in (-1, 1):
-                x = px_ + s * (d // 3 + 2)
-                y = py + d
-                if 0 <= x < W_ and c.get(x, y) in (SN[1],):
-                    c.px(x, y, RK[1])
-    # voet: kleiheuvels van de kom
-    for x in range(W_):
-        hy = 80 + int(4 * np.sin(x / 9.0) + 3 * np.sin(x / 4.3))
-        for y in range(hy, H_):
-            col = CL[2] if y > hy + 1 else CL[3]
-            c.px(x, y, col)
-        c.px(x, hy - 1, OLN)
     return c
 
 
 ILL = illimani()
 
 
-def slice_mountain(name, cv):
-    """Berg: lege cellen bovenaan blijven 'lucht' -> hier: lege metatile (de kaart toont er de rand)."""
-    ids = []
-    for my in range(cv.h // 16):
-        row = []
-        for mx in range(cv.w // 16):
-            s = cv.sub(mx * 16, my * 16, 16, 16)
-            if not s.a[:, :, 3].any():
-                row.append(None)
-                continue
-            # kleur van de lucht/achtergrond: lichte hemel bestaat niet in top-down; vul transparant met sneeuwveld
-            if not s.a[:, :, 3].all():
-                bg = Canvas(16, 16, SN[1])
-                row.append(ts.add(f'{name}_{mx}_{my}', bg, s, layer='normal'))
-            else:
-                row.append(ts.add(f'{name}_{mx}_{my}', s))
-        ids.append(row)
-    return ids
-
-
-# de klei-onderkant van de berg gebruikt palet 6 en 12 door elkaar: knip de voet apart
-def split_palettes(cv):
-    a, b = Canvas(cv.w, cv.h), Canvas(cv.w, cv.h)
-    clay_cols = set(CL)
-    for y in range(cv.h):
-        for x in range(cv.w):
-            col = cv.get(x, y)
-            if col is None:
-                continue
-            (a if col in clay_cols else b).px(x, y, col)
-    return a, b
-
-
-SNOWBG = Canvas(16, 16, SN[0])
-
-
 def slice_ill(cv):
+    """Rotsrand onderaan over kleigrond (2 lagen); de rest is dekkend palet 12."""
     ids = []
-    clay_part, rock_part = split_palettes(cv)
     for my in range(cv.h // 16):
         row = []
         for mx in range(cv.w // 16):
             s = cv.sub(mx * 16, my * 16, 16, 16)
-            cp = clay_part.sub(mx * 16, my * 16, 16, 16)
-            rp = rock_part.sub(mx * 16, my * 16, 16, 16)
             nm = f'illimani_{mx}_{my}'
-            if not s.a[:, :, 3].any():
-                row.append(None)
-                continue
-            if cp.a[:, :, 3].any() and rp.a[:, :, 3].any():
-                # onderlaag klei (aangevuld met kleigrond), bovenlaag berg
-                base = clay(0)
-                base.paste(cp, 0, 0)
-                row.append(ts.add(nm, base, rp, layer='covered'))
-            elif s.a[:, :, 3].all():
+            if s.a[:, :, 3].all():
                 row.append(ts.add(nm, s))
             else:
-                row.append(ts.add(nm, SNOWBG, s, layer='covered'))
+                row.append(ts.add(nm, clay(0), s, layer='covered'))
         ids.append(row)
     return ids
+
 
 
 OBJ['illimani'] = slice_ill(ILL)
@@ -1017,6 +972,25 @@ def house(g, x, y, w, floors=2, roof='flat', tex='b', pal=7, extras=(), gf=None,
             row.append(m)
         ids.append(row)
     put(g, x, y, ids)
+
+
+def cholet(g, x, y, w, floors=3, scheme=0, chalet=False):
+    rows = []
+    if chalet:
+        rows += [[None] * w]
+    rows.append([f'cholet_roof0_l'] + ['cholet_roof0_m'] * (w - 2) + ['cholet_roof0_r'])
+    rows.append([f'cholet_crown{scheme}_l'] + [f'cholet_crown{scheme}_m'] * (w - 2) + [f'cholet_crown{scheme}_r'])
+    for f in range(floors):
+        sch = (scheme + f) % 3
+        mid = [f'cholet_floor{sch}_m' if (i % 2 == 0) else f'cholet_floor{sch}_m2' for i in range(w - 2)]
+        rows.append([f'cholet_floor{sch}_l'] + mid + [f'cholet_floor{sch}_r'])
+    for k in ('hall0', 'hall1'):
+        mid = [f'cholet_{k}_m'] * (w - 2)
+        mid[(w - 2) // 2] = f'cholet_{k}_door'
+        rows.append([f'cholet_{k}_l'] + mid + [f'cholet_{k}_r'])
+    put(g, x, y, [[N[n] if n else None for n in r] for r in rows])
+    if chalet:  # chalet staat op het dak (rij 2 = dak); 2 rijen erboven
+        put(g, x + (w - 3) // 2, y, OBJ['chalet'])
 
 
 overlay_cache = {}
@@ -1080,9 +1054,9 @@ def mockup():
         g[y][12] = N['rwall' if y > 11 else 'sidewalk']
     house(g, 9, 7, 3, floors=2, tex='b', extras=[(0, 'roof_l_rebar'), (1, 'roof_m_rebar'), (2, 'roof_r_rebar')],
           upper={0: ['upb_openl', 'upb_open', 'upb_openr']}, gf=['gfb_l', 'gfb_shutter', 'gfb_r'])
-    put(g, 14, 5, OBJ['cholet_a'])
+    cholet(g, 14, 4, 4, floors=3, scheme=0, chalet=True)
     house(g, 18, 7, 4, floors=2, tex='p', pal=9, extras=[(2, 'roof_m_laundry')])
-    put(g, 22, 6, OBJ['cholet_b'])
+    cholet(g, 22, 6, 3, floors=2, scheme=1)
     house(g, 25, 7, 3, floors=2, tex='b', extras=[(1, 'roof_m_dish')])
     house(g, 28, 8, 2, floors=1, tex='p', pal=8, roof='gable')
     # straat met stoep y 12..13
@@ -1102,7 +1076,6 @@ def mockup():
     put(g, 14, 14, OBJ['tent_blue']); put(g, 18, 14, OBJ['tent_red'])
     g[17][14] = GOODS['potatoes']; g[17][15] = GOODS['sacks']; g[17][16] = GOODS['fruit']
     g[17][18] = GOODS['herbs']; g[17][19] = GOODS['aguayo']; g[17][20] = GOODS['crate']
-    put(g, 14, 18, OBJ['tent_yellow'][:1])
     g[19][14] = GOODS['aguayo']; g[19][16] = GOODS['fruit']
     put(g, 25, 14, OBJ['eucalyptus'])
     put(g, 23, 15, OBJ['lamp']); put(g, 28, 15, OBJ['lamp'])
@@ -1127,6 +1100,7 @@ def mockup():
     return g
 
 
+BASE_TILES, BASE_MTS = len(ts.tiles), len(ts.mts)
 g = mockup()
 ts.write(OUT)
 prim = Prim('general')
@@ -1138,10 +1112,11 @@ ts.tiles_sheet(OUT + '/tiles_sheet.png')
 palette_strip(ts, OUT + '/paletten.png')
 ref = render_repo_map('SlateportCity', 20, 40, 0, 30)
 side_by_side(img, ref, OUT + '/vergelijking.png')
-print('tegels', len(ts.tiles), '/ 512   metatiles', len(ts.mts), '/ 512')
+print('tegels', len(ts.tiles), '/ 512   metatiles', len(ts.mts), '/ 512   (waarvan voor kabel-combinaties in de mock-up:',
+      len(ts.tiles) - BASE_TILES, 'tegels,', len(ts.mts) - BASE_MTS, 'metatiles)')
 if ts.errors:
     from collections import Counter
-    print('PALETFOUTEN', Counter(str(e) for e in ts.errors).most_common(10))
+    print('kleur benaderd (kabel over ander palet):', Counter(str(e) for e in ts.errors).most_common(10))
 from tilelib import budget
 GROUPS = ['cobble', 'sidewalk', 'plaza', 'clay', 'curb', 'stairs', 'cliff', 'rwall', 'roof', 'gable', 'up', 'gf',
           'cholet', 'station', 'mast', 'cable', 'tent', 'goods', 'lamp', 'bench', 'manhole', 'eucalyptus', 'planter', 'illimani']

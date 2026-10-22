@@ -47,7 +47,7 @@ def sil_C():
 
 if __name__ == '__main__':
     out = sys.argv[1]
-    sils = [('A zittend, staart opzij', sil_A()), ('B halo', sil_B()), ('C zwevend', sil_C())]
+    sils = [('A zittend, staart opzij (GEKOZEN)', sil_A()), ('B halo', sil_B()), ('C zwevend', sil_C())]
     z = 4
     sheet = Image.new('RGB', (len(sils) * (64 * z + 70) + 10, 64 * z + 40), (250, 249, 244))
     d = ImageDraw.Draw(sheet)

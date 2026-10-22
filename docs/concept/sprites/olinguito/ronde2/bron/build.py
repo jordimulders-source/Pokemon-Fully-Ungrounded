@@ -29,6 +29,47 @@ RAMPS = {
     'munt': [9, 10, 11, 11],
     'doek': [12, 12, 13, 13],
 }
+# Alles is ontworpen op een groter raster en wordt met S verkleind rond het steunpunt
+# (midden onder): lijf en kop worden kleiner (fase-1-maat), klauwen en ogen blijven
+# even groot in pixels (relatief dus langer/groter, zoals bij echte basisvormen).
+S, AX, AY = 0.84, 32.0, 59.0
+
+
+def T(x, y):
+    return AX + S * (x - AX), AY + S * (y - AY)
+
+
+def Ti(x, y):
+    a, b = T(x, y)
+    return int(round(a)), int(round(b))
+
+
+class SCanvas(Canvas):
+    def ellipse(self, name, part, cx, cy, rx, ry, rot=0.0, **kw):
+        cx, cy = T(cx, cy)
+        return Canvas.ellipse(self, name, part, cx, cy, rx * S, ry * S, rot, **kw)
+
+    def ellipse_mask(self, cx, cy, rx, ry, rot=0.0, raw=False):
+        if not raw:
+            cx, cy = T(cx, cy); rx, ry = rx * S, ry * S
+        return Canvas.ellipse_mask(self, cx, cy, rx, ry, rot)
+
+    def poly(self, name, part, pts, **kw):
+        return Canvas.poly(self, name, part, [T(x, y) for x, y in pts], **kw)
+
+    def tube(self, name, part, pts, widths, **kw):
+        return Canvas.tube(self, name, part, [T(x, y) for x, y in pts], [w * S for w in widths], **kw)
+
+
+def shift_claws(claws):
+    out = []
+    for p in claws:
+        bx, by = p[0]
+        nx, ny = Ti(bx, by)
+        out.append([(x - bx + nx, y - by + ny) for x, y in p])
+    return out
+
+
 K = {'h': 1, 'v': 2, 's': 3, 'd': 4, 'm': 5, 'M': 6, 'c': 7, 'C': 8,
      'i': 9, 'g': 10, 'G': 11, 'n': 12, 'N': 13, 'w': 14, 'o': 15}
 
@@ -48,10 +89,8 @@ def ringed_tail(c, pts, widths, rings, tipdark=0.84):
 
 
 def head(c, dy=0):
-    c.ellipse('oor1', 'vacht', 17, 14.5 + dy, 3.4, 4.4, rot=-25, shade=2)
-    c.poly('oor1', 'vacht', [(14, 13 + dy), (15, 9 + dy), (19, 12 + dy)])
-    c.ellipse('oor2', 'vacht', 34.5, 13 + dy, 4, 4.8, rot=25, shade=2)
-    c.poly('oor2', 'vacht', [(32, 10 + dy), (37, 7 + dy), (37, 12 + dy)])
+    c.ellipse('oor1', 'vacht', 16.5, 13.5 + dy, 3.6, 4, rot=-25, shade=2)
+    c.ellipse('oor2', 'vacht', 35, 12 + dy, 4, 4.4, rot=25, shade=2)
     c.ellipse('kop', 'vacht', 26, 23 + dy, 11.5, 10.5, shade=2.5, hl=(20, 16 + dy, 3))
     c.ellipse('snuit', 'creme', 16.5, 27.5 + dy, 5, 3.6, shade=2)
 
@@ -125,7 +164,7 @@ def common_body(c, dy=0):
 
 
 def frame1():
-    c = Canvas(64, 64, RAMPS)
+    c = SCanvas(64, 64, RAMPS)
     Canvas.selout_parts = {'vacht', 'creme', 'doek'}
     ringed_tail(c, [(37, 53), (46, 52), (51.5, 46), (53.5, 38), (52, 30), (48, 25), (44, 23.5)],
                 [6.5, 7, 7, 6.5, 6, 4.5, 1.5], rings=[(0.22, 0.29), (0.43, 0.5), (0.63, 0.7)])
@@ -146,19 +185,20 @@ def frame1():
     # munt: geslagen teken (ster/kroon) en rand
     patch(idx, 23, 49, ['.G.', 'G.G', '.G.'], K)
     # klauwen: bungelend (3), om de munt (2), achtervoet (2)
-    hooks(idx, [
-        [(10, 45), (10, 46), (10, 47), (9, 48), (9, 49), (8, 50), (7, 51), (6, 51)],
-        [(13, 45), (13, 46), (13, 47), (13, 48), (13, 49), (12, 50), (12, 51), (11, 52)],
-        [(16, 44), (16, 45), (16, 46), (16, 47), (17, 48), (17, 49), (16, 50), (16, 51)],
-        [(31, 47), (30, 46), (29, 45), (28, 44), (27, 44), (26, 45)],
+    hooks(idx, shift_claws([
+        [(10, 45), (10, 46), (10, 47), (9, 48), (9, 49), (8, 50), (7, 50), (6, 49)],
+        [(13, 45), (13, 46), (13, 47), (13, 48), (13, 49), (12, 50), (12, 51), (11, 52), (10, 52)],
+        [(16, 44), (16, 45), (16, 46), (16, 47), (16, 48), (16, 49), (15, 50), (15, 51), (14, 52)],
+        [(29, 48), (28, 47), (27, 47)],
+        [(29, 52), (28, 53), (27, 53)],
         [(17, 55), (16, 55), (15, 55), (14, 56), (13, 56)],
         [(18, 57), (17, 58), (16, 58), (15, 58)],
-    ], keep=(5, 6))
-    return fix_outline(idx)
+    ]), keep=(5, 6))
+    return fix_outline(idx, selout=(4, 8, 13))
 
 
 def frame2():
-    c = Canvas(64, 64, RAMPS)
+    c = SCanvas(64, 64, RAMPS)
     Canvas.selout_parts = {'vacht', 'creme', 'doek'}
     ringed_tail(c, [(37, 53), (47, 53), (53, 47), (56, 39), (55, 31), (52, 26), (48, 24)],
                 [6.5, 7, 7, 6.5, 6, 4.5, 1.5], rings=[(0.22, 0.29), (0.43, 0.5), (0.63, 0.7)])
@@ -177,7 +217,7 @@ def frame2():
     idx = c.render()
     face(idx, dy=-1, closed=True)
     patch(idx, 46, 7, ['i', 'g', 'G'], K)
-    hooks(idx, [
+    hooks(idx, shift_claws([
         [(8, 32), (7, 31), (6, 30), (5, 29), (5, 28), (4, 27), (4, 26)],
         [(8, 34), (7, 34), (6, 34), (5, 33), (4, 33), (3, 32), (2, 31)],
         [(9, 37), (8, 37), (7, 38), (6, 38), (5, 38), (4, 37), (3, 36)],
@@ -186,8 +226,8 @@ def frame2():
         [(46, 27), (47, 26), (48, 26), (49, 25), (50, 25), (51, 26)],
         [(17, 55), (16, 55), (15, 55), (14, 56), (13, 56)],
         [(18, 57), (17, 58), (16, 58), (15, 58)],
-    ], keep=(5, 6))
-    return fix_outline(idx)
+    ]), keep=(5, 6))
+    return fix_outline(idx, selout=(4, 8, 13))
 
 
 if __name__ == '__main__':

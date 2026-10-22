@@ -227,8 +227,10 @@ def hooks(idx, claws, light=9, shade=11, keep=(), wide=2):
     return pix
 
 
-def fix_outline(idx):
-    """Pixels die buiten de figuur uitsteken zonder rand krijgen er alsnog een (na patches)."""
+def fix_outline(idx, selout=()):
+    """Pixels die buiten de figuur uitsteken zonder rand krijgen er alsnog een (na patches).
+    Een randpixel met een selout-kleur (`selout`, bijv. de donkerste vachttint) aan de
+    boven- of linkerkant geldt al als omlijning en krijgt geen extra zwarte rand."""
     h, w = idx.shape
     fig = idx > 0
     out = idx.copy()
@@ -238,6 +240,8 @@ def fix_outline(idx):
                 for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
                     nx, ny = x + dx, y + dy
                     if 0 <= nx < w and 0 <= ny < h and not fig[ny, nx]:
+                        if idx[y, x] in selout and (dx, dy) in ((-1, 0), (0, -1)):
+                            continue
                         out[ny, nx] = OUTLINE
     return out
 

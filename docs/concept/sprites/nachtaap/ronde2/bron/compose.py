@@ -41,7 +41,7 @@ def sil(im):
 Z = 3; T = 64 * Z; PER = 7; BG = (250, 249, 244)
 rows = (len(items) + PER - 1) // PER
 W = PER * (T + 6) + 10
-H = 20 + rows * (T + 16) + 30 + 70 + 30 + 140 + 10
+H = 20 + rows * (T + 16) + 400
 sheet = Image.new('RGB', (W, H), BG); dr = ImageDraw.Draw(sheet)
 dr.text((6, 4), 'Nachtaap fase 1, ronde 2 ("Maanogen") naast Psychic-referenties en de Hoenn-starters (in-game sprites)', fill=(0, 0, 0))
 y = 20

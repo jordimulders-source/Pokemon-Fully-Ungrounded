@@ -146,12 +146,14 @@ class Tileset:
             cands = [best]
         p = pal_pref if pal_pref in cands else cands[0]
         lut = {c: i for i, c in enumerate(self.pals[p]) if i}
+        for c in cols - set(lut):  # vreemde kleur (bijv. kabel over een boom): dichtstbijzijnde kleur
+            lut[c] = min(range(1, 16), key=lambda i: sum((a - b) ** 2 for a, b in zip(c, self.pals[p][i])))
         idx = np.zeros((8, 8), np.uint8)
         for y in range(8):
             for x in range(8):
                 if block[y, x, 3]:
                     c = tuple(int(v) for v in block[y, x, :3])
-                    idx[y, x] = lut.get(c, 1)
+                    idx[y, x] = lut[c]
         for hf in (0, 1):
             for vf in (0, 1):
                 t = idx[:, ::-1] if hf else idx

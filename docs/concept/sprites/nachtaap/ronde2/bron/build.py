@@ -33,21 +33,21 @@ def body(frame):
     up = 1 if frame == 2 else 0
     # staart: steel vanachter het lijf en de Nazca-spiraal (1 3/4 slag, 2 px dik)
     tp = tail_pts(up)
-    C.layer(stroke(tp, 2.05), 'vacht', light=(SX - 3, SY - 3 - up, 12, 12), shade=(0.6, -0.55),
+    C.layer(stroke(tp, 2.05), 'vacht', light=(SX - 3, SY - 3 - up, 12, 12), shade=(0.6, -0.8),
             inner=stroke(tp, 1.05))
     # oortjes (achter de kop)
-    for ex in (HX - 14, HX + 14):
-        C.layer(ellipse(ex, HY - 7, 4.2, 4.2), 'vacht', light=(ex, HY - 7, 4.2, 4.2))
+    for ex in (HX - 15, HX + 15):
+        C.layer(ellipse(ex, HY - 4, 3.4, 3.6), 'vacht', light=(ex, HY - 4, 3.4, 3.6))
     # gevouwen benen en peerlijf
-    C.layer(ellipse(HX, 53.5, 12, 4.2), 'vacht', light=(HX - 3, 51, 12, 4.5), shade=(0.6, -0.45))
-    C.layer(ellipse(HX, 45, 10, 9.5), 'vacht', light=(HX - 3, 42, 10, 9.5), shade=(0.6, -0.45))
+    C.layer(ellipse(HX, 53.5, 12, 4.2), 'vacht', light=(HX - 3, 51, 12, 4.5), shade=(0.6, -0.8))
+    C.layer(ellipse(HX, 45, 10, 9.5), 'vacht', light=(HX - 3, 42, 10, 9.5), shade=(0.6, -0.75))
     # zilveren borst
-    C.layer(ellipse(HX, 46.5, 5.5, 6), 'zilver', light=(HX - 2, 44, 5.5, 6), shade=(0.35, -0.95))
+    C.layer(ellipse(HX, 46.5, 5.5, 6), 'zilver', light=(HX - 2, 44, 5.5, 6), shade=(0.35, -1.15))
     # voeten met de tenen naar buiten
     C.layer(ellipse(HX - 12, 56.3, 5.0, 2.1), 'vacht', light=(HX - 13, 55.5, 5.0, 2.1))
     C.layer(ellipse(HX + 12, 56.3, 5.0, 2.1), 'vacht', light=(HX + 11, 55.5, 5.0, 2.1))
     # kop
-    C.layer(ellipse(HX, HY, 15.5, 12.5), 'vacht', light=(HX - 3, HY - 3, 15.5, 12.5), shade=(0.5, -0.62))
+    C.layer(ellipse(HX, HY, 15.5, 12.5), 'vacht', light=(HX - 3, HY - 3, 15.5, 12.5), shade=(0.5, -0.78))
     # armen: schouder -> elleboog langs het lijf -> hand voor de borst
     C.layer(stroke_var([(HX + 8, 38), (HX + 8, 43), (HX + 4, 45)], [2.0, 2.0, 1.7]), 'vacht',
             light=(HX + 6, 40, 4, 6), shade=(0.3, -0.2))
@@ -76,7 +76,7 @@ def eyes(C, frame):
         inner = E & ~rim
         if frame == 1:
             # oogleden halfdicht: alleen een gloeiende maansikkel onderin
-            lid = inner & disk(cx, cy - 2.0, 4.4)
+            lid = inner & disk(cx, cy - 2.5, 4.2)
             moon = inner & ~lid
             idx[lid] = 3
             idx[lid & disk(cx - 1.5, cy - 3.0, 2.4)] = 2
@@ -116,23 +116,23 @@ def forehead(C):
 
 
 HANDS1 = ['....ss....',
+          '...s89s...',
           '...s99s...',
-          '...s12s...',
-          '..s11s2s..',
-          '..s1ss2s..',
-          '.s11..22s.',
-          '.s1s..s2s.',
-          '.s11ss23s.',
+          '...s13s...',
+          '..s1132s..',
+          '..s1132s..',
+          '.s111322s.',
+          '.s111322s.',
           '..ssssss..']
-HANDS2 = ['....ss....',
-          '....s9s...',
-          '....s2s...',
-          '....s22s..',
-          '.....s2s..',
-          '.....s2s..',
-          '.....s23s.',
-          '.....s33s.',
-          '......ss..']
+HANDS2 = ['..........',
+          '..........',
+          '....ss....',
+          '...s92s...',
+          '...s322s..',
+          '...s3222s.',
+          '...s3222s.',
+          '....sssss.',
+          '..........']
 RAISED = ['.s..s..s.',
           's9ss9ss9s',
           's1ss1ss1s',
@@ -152,8 +152,8 @@ def details(C, frame):
     if frame == 2:
         C.stamp(HX - 1, HY + 10, ['00'], {'0': 10})
     # binnenkant oren
-    for ex in (HX - 14, HX + 14):
-        C.stamp(ex - 2, HY - 9, ['89', '99', '90'], {'8': 8, '9': 9, '0': 10})
+    for ex, ox in ((HX - 15, -2), (HX + 15, 0)):
+        C.stamp(ex + ox, HY - 6, ['89', '90'], {'8': 8, '9': 9, '0': 10})
     # vingertoppen tegen elkaar voor de borst
     C.stamp(HX - 5, 37, HANDS1 if frame == 1 else HANDS2, KEY)
     if frame == 2:

@@ -21,3 +21,4 @@
 
 ## Ronde 4 (22 okt)
 - **Nachtaap:** de ogen zijn "helemaal verknald" in ronde 4; het lichaam is wel beter. Volgende stap: lichaam van ronde 4 met de ogen van ronde 2/3 (die vond Jordi "geinig"), mysterieus maar niet verveeld of slaperig.
+- **Alpaca en olinguito:** iets beter, maar nog niet perfect. Volgende stap (voorstel tekenaars): lijf en poten met de hand per pixel afwerken op basis van ronde 4.

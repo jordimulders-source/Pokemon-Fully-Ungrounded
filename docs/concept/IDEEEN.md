@@ -95,3 +95,9 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 6. Poison – Buenos Aires (industriële haven, de vervuilde Riachuelo: het systeem-thema)
 7. Grass – Rio de Janeiro (Tijuca, het grootste stadsbos ter wereld: Grass in een metropool)
 8. Bug – diep in de jungle (besloten)
+
+## Mysterieuze ruïne-Pokémon (Jordi denkt nog na, 22 okt)
+- Type **Rock/Ghost** of **Rock/Psychic**. Inspiratievoorstellen van Claude:
+  - **Rock/Ghost:** de *chullpa's* van Sillustani bij het Titicacameer, stenen grafttorens waarin voorouders zittend werden begraven. De ingang wijst naar de opkomende zon, zodat de ziel herboren kan worden.
+  - **Rock/Psychic:** de *cabezas clavas* van Chavín de Huántar, stenen koppen in de tempelmuur die de verandering van sjamaan naar jaguar tonen (onder invloed van de San Pedro-cactus). Of de perfect gezaagde H-blokken van Puma Punku (Tiwanaku), waar niemand precies weet hoe ze gemaakt zijn.
+  - Kan in de ruïnes leven: Tiwanaku, Chavín, Kuélap, Sillustani.

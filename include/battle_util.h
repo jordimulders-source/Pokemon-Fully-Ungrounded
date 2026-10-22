@@ -214,6 +214,7 @@ enum EjectPackTiming
 };
 
 void HandleAction_ThrowBall(void);
+bool32 OverworldFogMakesMistyTerrain(void);
 u32 GetCurrentBattleWeather(void);
 bool32 EndOrContinueWeather(void);
 bool32 IsUnnerveBlocked(u32 battler, u32 itemId);

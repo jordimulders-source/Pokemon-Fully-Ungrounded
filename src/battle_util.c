@@ -58,6 +58,17 @@
 #include "debug.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
+#include "constants/maps.h"
+
+// Project Grounded: de stoom in de Lavaridge-gym is overworld-mist, maar hoort geen Misty Terrain te geven.
+bool32 OverworldFogMakesMistyTerrain(void)
+{
+    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LAVARIDGE_TOWN_GYM_1F)
+     && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LAVARIDGE_TOWN_GYM_1F)
+      || gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LAVARIDGE_TOWN_GYM_B1F)))
+        return FALSE;
+    return TRUE;
+}
 
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable
@@ -3979,6 +3990,7 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
         }
         else if (B_OVERWORLD_FOG >= GEN_8
               && (GetCurrentWeather() == WEATHER_FOG_HORIZONTAL || GetCurrentWeather() == WEATHER_FOG_DIAGONAL)
+              && OverworldFogMakesMistyTerrain()
               && !(gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN))
         {
             gFieldStatuses = STATUS_FIELD_MISTY_TERRAIN;

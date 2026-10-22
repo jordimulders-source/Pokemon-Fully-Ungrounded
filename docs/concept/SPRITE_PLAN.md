@@ -7,6 +7,82 @@ Illustraties: `docs/concept/sprite_studie/` (1 t/m 6).
 
 ---
 
+## Pokémon-design (niet alleen pixeltechniek)
+
+*Toegevoegd na kritiekronde 1 (22 okt, zie `sprites/KRITIEK_RONDE1.md`). Jordi: "Het zijn gewoon dieren en geen Pokémon."* De rest van dit plan gaat over **hoe** je pixelt. Deze sectie gaat over **wat** je tekent, en komt dus eerst: een technisch perfecte sprite van een gewoon dier is nog geen Pokémon.
+
+### Een Pokémon is dier × idee × type
+- **Dier:** het echte dier (alpaca, olinguito, nachtaap).
+- **Idee:** een rol, een archetype, een voorwerp of een mythe (bokser, dief, ziener; kampioen, Robin Hood, genezer).
+- **Type:** het element of de energie, zichtbaar zonder uitleg.
+
+Een sprite die alleen het dier toont, faalt. Toets bij elk ontwerp of je alle drie in één oogopslag ziet. De maatstaf (Jordi): "als je een Oranguru ziet, weet je vrijwel zeker dat het Psychic is, zelfde met een Abra of een Espurr."
+
+### De facetten die een dier tot een Pokémon maken
+1. **Stilering: eerst een vorm, dan een dier.** Een basisvorm draagt het ontwerp: een bal (Wooloo, Jigglypuff, Voltorb, Rowlet), een ei of peer (Torchic, Mudkip), een wolk (Mareep, Swablu, Altaria), een druppel (Ralts, Hatenna) of een cilinder (Snorlax, Wynaut). Anatomie wordt vereenvoudigd: poten als stompjes, gewrichten verdwijnen in het lijf.
+2. **Overdreven proporties.** In fase 1 is de kop 40–60% van de hoogte, met grote ogen. Precies **één** lichaamsdeel is uitvergroot: de oren van Pikachu, de staart van Treecko, de handen van Makuhita, de kop van Elgyem, de klauwen van Sneasel.
+3. **Eén onrealistisch kenmerk** (de "twist"), ook bij gewone dieren: de bol aan de staart van Mareep, de buikcirkel van Sentret, de ringen van Furret, de hand aan de staart van Aipom, de sjaalstaart van Minccino, de schedel van Cubone, de prei van Farfetch'd, de lokstaart van Slowpoke, de bladmanen van Skiddo, de bloem van Deerling, de modderlaarzen van Mudbray.
+4. **Element-onderdelen:** lichaamsdelen van het element. Vuur: de staartvlam van Charmander, de rugvlammen van Cyndaquil, de kuif van Torchic, de vlam op het achterwerk van Chimchar. Water: de vin van Mudkip, de schuimsjaal van Froakie, de neusballon van Popplio. Gras: de bol van Bulbasaur, het blad van Chikorita, het spruitje van Turtwig, de bloemvorm in het patroon van Sprigatito. Elektrisch: de wangen van Pichu. Steen: de kristallen van Roggenrola.
+5. **Ogen en gezicht met karakter:** grote ogen met een grote glans, plus een ooglid of wenkbrauw die een houding uitdrukt. Grookey is ondeugend, Litten afstandelijk, Pancham dwars, Fuecoco goofy, Riolu alert, Purrloin zelfvoldaan en Espurr leeg. Gekleurde oogwitten (Poochyena), dichte ogen (Abra) en een oogpatroon (Meowstic) zijn al een typesignaal.
+6. **Kleur:** 2–3 **grote, egale hoofdkleuren** plus één accent, gekozen op het type en vaak **onnatuurlijk** voor het dier: een blauwe Mudkip en Totodile, een groene Snivy, een goudgele Abra, een roze Munna, een lavendelkleurige Espurr. Natuurlijke vachtkleuren (beige, bruin, grijs) lezen als Normal of als "gewoon dier", tenzij een type-accent of een sterk contrast het overneemt (Nickit: roodbruin, maar met zwarte sokken en sluwe ogen).
+7. **Geometrische tekeningen**, die op afstand leesbaar zijn: ringen, strepen, cirkels en symmetrie. Denk aan de buikcirkel van Sentret, de ringen van Furret en Umbreon, de strepen van Galar-Zigzagoon, de spiraal van Stufful, de schouderstukken van Abra, de totemtekening van Xatu en de Nazca-patronen van Sigilyph.
+8. **"Kleding" uit het eigen lijf:** de cape van Piplup, het strikje van Rowlet en de capuchon van Decidueye, de riem van Incineroar, het masker van Hawlucha, de mouwen van Mienfoo, de slobberbroek van Scraggy, de hoed van Murkrow, de cape van Meowscarada en de manen van Oranguru. Een **voorwerp** kan ook: de balk van Timburr, de prei van Farfetch'd, de lepels van Alakazam, de waaier van Oranguru, de munt van Meowth.
+9. **Persoonlijkheid in pose en frame 2:** de houding vertelt de rol. Riolu staat klaar, Abra mediteert, Purrloin zit "onschuldig" en Nickit sluipt. Frame 2 is een karaktermoment, niet alleen "bek open".
+10. **Een uniek silhouet:** het element-onderdeel of de twist breekt de omtrek (de kuif van Torchic, de vin van Mudkip, de staart van Treecko, de oren van Fennekin). Zwart op 1× moet de soort herkenbaar blijven en niet verwisselbaar zijn met een bestaande.
+11. **Fase 1 belooft de eindvorm:** Litten wordt Incineroar, Froakie wordt Greninja, Rowlet wordt Decidueye, Fennekin wordt Delphox, Sprigatito wordt Meowscarada. Het zaadje van het kostuum of het idee zit er al in.
+12. **Gespriet als Pokémon, niet geïllustreerd:** grote egale vlakken met een paar duidelijke schaduwvormen, en geen textuurruis. Fluffy maak je met een **geschulpte buitenrand** (Wooloo, Mareep), niet met vlekken binnenin.
+
+### Type zichtbaar maken: vaste middelen per type
+Typekleur = de kleur van het type-icoon in de games. "Typisch palet" = wat de Pokémon zelf meestal gebruiken (dat wijkt soms af: Dark-Pokémon zijn zelden bruin zoals hun icoon).
+
+| type | typisch palet | vormtaal en motieven | voorbeelden |
+|---|---|---|---|
+| Normal | beige, bruin, crème, roze, wit | rond en zacht, natuurlijke vachtkleuren, één schattige twist | Sentret, Zigzagoon, Wooloo, Lillipup, Bidoof, Skwovet |
+| Fire | rood, oranje, geel + donkere basis | vlammen als kuif, staart of kraag, gloeiende vlekken, rook | Charmander, Cyndaquil, Torchic, Litten, Fuecoco, Houndour |
+| Water | blauw, cyaan, wit, crème | vinnen, kieuwen, schelpen, schuim en bubbels, gladde rondingen | Mudkip, Froakie, Popplio, Sobble, Quaxly, Wooper |
+| Grass | groen + crème, roze of geel bloem-accent | bladeren, knoppen, bloemen, spruiten, zaden | Bulbasaur, Chikorita, Treecko, Snivy, Sprigatito, Skiddo |
+| Electric | geel + zwart of blauw | bliksemvormen, staartbollen, wangvlekken, gekartelde punten | Pichu, Mareep, Shinx, Emolga, Yamper |
+| Ice | lichtblauw, wit, lila | kristallen, ijspegels, sneeuwkragen, zesvoudige symmetrie | Snorunt, Spheal, Snom, Vanillite, Cubchoo |
+| Fighting | rood, roodbruin, huidtinten, blauw-grijs, zwart-wit contrast | vuisten, handschoenen, tape, gordels, maskers, knotjes, wenkbrauwen, een klaarstaande houding | Riolu, Makuhita, Pancham, Hawlucha, Kubfu, Clobbopus, Stufful |
+| Poison | paars, magenta, giftig groen | vlekken, druppels, stekels, gasbellen, bulten | Grimer, Ekans, Skrelp, Toxel, Shroodle |
+| Ground | zandbruin, oker, aarde | schubben, graafklauwen, modder, botten | Sandshrew, Cubone, Mudbray, Hippopotas, Diglett |
+| Flying | wit, hemelblauw + een vogelkleur | vleugels, veren, kuiven, staartwaaiers | Swablu, Pidgey, Rookidee, Wingull |
+| Psychic | roze/magenta, violet, lavendel, goud, pastelblauw | ogen die iets onnatuurlijks doen, nadruk op het voorhoofd, symmetrie, frontaliteit, zweven of mediteren, sterren/manen/spiralen, edelstenen, lepels, parels | Abra, Espurr, Oranguru, Natu, Munna, Elgyem, Hatenna, Espeon |
+| Bug | geelgroen, rood, oranje + zwart | segmenten, antennes, voelers, schildpatronen | Caterpie, Wurmple, Grubbin, Nymble |
+| Rock | grijs, bruin, zandsteen | hoekige vormen, scheuren, kristallen, platen | Geodude, Roggenrola, Rockruff, Nacli |
+| Ghost | paars, donkerblauw, grijs-wit | zweven, transparantie, rafelranden, één oog, kaarsen, dekens | Gastly, Shuppet, Litwick, Sinistea, Greavard |
+| Dragon | blauw, groen, rood + crème buik | hoorns, vinnen, schubben, oervormen, wiggenkoppen | Dratini, Bagon, Gible, Axew, Jangmo-o |
+| Dark | zwart, antraciet, indigo, diep paars; warm-donker (roest, kastanje) alleen met zwart | **één gloeiend accent** (rood, geel, goud, magenta), meestal **op de ogen**; spleet- of halfgesloten ogen, gekleurde oogwitten, een scheve grijns of hoektand, maskers, sokken, puntige plukken, klauwen; kleding van een schurk (hoed, capuchon, cape) | Poochyena, Sneasel, Zorua, Nickit, Purrloin, Murkrow, Umbreon, Galar-Zigzagoon |
+| Steel | zilvergrijs, blauwgrijs + een accent | platen, bouten, magneten, scherpe randen | Aron, Klink, Pawniard, Tinkatink |
+| Fairy | roze, wit, pastel | strikjes, linten, harten, sterren, bloemen, zachte krullen | Flabébé, Swirlix, Hatenna, Impidimp (Dark/Fairy) |
+
+**Nadruk voor de starters:**
+- **Fighting** (Stufful/Bewear, Makuhita, Pancham, Riolu, Kubfu, Clobbopus): het type zit in **wat het lijf doet en draagt**. Handschoenen, tape of wanten uit het eigen lijf, kleurblokken als een uniform (gordel, mawashi, masker, mouwen), een knot of hoofdband, een **wenkbrauw in een V** en een **houding die klaarstaat**. Schattigheid blijft kan: een zacht lijf met één of twee harde signalen.
+- **Dark** (Nickit/Thievul, Purrloin, Sneasel, Murkrow, Galar-Zigzagoon): het type zit in **palet + ogen + grijns**. Een donkere of zwart-gecontrasteerde basis, één gloeiend accent op de ogen, halfgesloten of schuine ogen, een scheve grijns, maskers, sokken en klauwen. Dieven sluipen en houden **buit** vast. Bewijs: Galar-Zigzagoon is hetzelfde dier als Zigzagoon, maar zwart-wit met rode ogen en een tong uit, en meteen Dark.
+- **Psychic** (Abra, Espurr, Oranguru, Natu/Xatu, Elgyem, Hatenna): het type zit in **ogen + kop + stilte**. Dichte, lege, verborgen, patroon- of gloeiende ogen, een groot hoofd met een teken op het voorhoofd, een symmetrische en frontale houding die zweeft of mediteert, violet/roze/goud, en symbolen (manen, sterren, spiralen). Let op: de **nacht** is in Pokémon het terrein van Dark (Umbreon; Noctowl is in deze repo Flying/Dark). Een nachtelijke Psychic heeft dus extra Psychic-signalen nodig en mag geen zwart met geel of rood gebruiken, en geen tanden.
+
+### Kleurstrategie
+- Kies **2–3 hoofdkleuren** als grote egale vlakken en **één accent**. Het accent zit op het type-onderdeel (de vlam, de handschoen, de ogen), niet ergens willekeurig.
+- Gebruik **of** een verzadigde typekleur als basis (gemeten: fase 1 van de starters heeft gemiddeld 0,54 verzadiging), **of** een neutrale basis (wit, grijs) met één fel accent in de typekleur (Scorbunny, Oshawott, Rowlet).
+- Contrast in **helderheid** maakt het silhouet: een lichte basis met een donker accent, of omgekeerd. Ton-sur-ton (beige op crème) wordt een vlek.
+- Een starterstrio vormt samen een **driehoek**: duidelijk verschillende tinten én helderheden, zodat ze naast elkaar in het keuzescherm niet op elkaar lijken.
+- Een natuurlijke dierkleur mag, maar dan moet een ander middel het type dragen (het patroon, de ogen, kleding uit het eigen lijf).
+
+### Checklist Pokémon-design (vóór stap 2 "Silhouet" van §3, en opnieuw bij de keuring in §6)
+- [ ] **Dier × idee × type:** kan iemand zonder uitleg het dier, de rol én het type noemen? Test het op iemand die de tekst niet kent.
+- [ ] **Type herkenbaar** volgens de tabel hierboven: minstens drie middelen van het type tegelijk (kleur + onderdeel + ogen/houding).
+- [ ] **Een basisvorm** draagt het ontwerp; de anatomie is vereenvoudigd (geen realistische gewrichten, knieën of snuit).
+- [ ] **Precies één iconisch, onrealistisch kenmerk** dat op 1× leesbaar is en het silhouet breekt.
+- [ ] **Silhouettest:** zwart op 1× naast vergelijkbare Pokémon (`sprites/kritiek/grid.py`, groep "Silhouet"): niet te verwarren met een bestaande soort of een gewoon dier.
+- [ ] **Kleur:** 2–3 hoofdkleuren + één accent; de basis is ofwel de typekleur, ofwel neutraal met een type-accent; voldoende helderheidscontrast.
+- [ ] **Gezicht:** grote ogen met een glans plus een ooglid of wenkbrauw die de persoonlijkheid geeft; frame 2 is een karaktermoment.
+- [ ] **Vooruitwijzing:** het zaadje van de eindvorm (kostuum, motief, kenmerk) zit al in fase 1, en elke fase heeft hetzelfde vaste kenmerk (zoals de klauwen of de spiraal).
+- [ ] **Starters:** naast alle 27 starters van fase 1 (vel `sprites/kritiek/1_starters_gen1-9.png`) valt hij niet weg als "het dier zonder thema"; het trio vormt een kleurendriehoek.
+- [ ] **Andere Pokémon van hetzelfde dier** (bijv. Wooloo/Mareep, Sentret/Zigzagoon, Oranguru) bekeken: wat doen die om Pokémon te worden, en wat doet de onze anders?
+- [ ] **Gespriet, niet geïllustreerd:** egale vlakken, duidelijke schaduwvormen, geen textuurruis. Fluffy zit in de buitenrand.
+
+---
+
 ## 0. Eerst weten: welke sprites zie je eigenlijk in de game?
 
 Elke soort heeft twee sets in `graphics/pokemon/<soort>/`:

@@ -1460,8 +1460,12 @@
       "name": "AREA ZERO"
     },
     {
-      "id": "MAPSEC_YOSHIS_ISLAND",
-      "name": "YOSHI'S ISLAND"
+      "id": "MAPSEC_START_TOWN",
+      "name": "START TOWN",
+      "x": 4,
+      "y": 11,
+      "width": 1,
+      "height": 1
     },
     {
       "id": "MAPSEC_LAKE_ACUITY",

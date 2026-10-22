@@ -77,6 +77,160 @@
       ],
       "encounters": [
         {
+          "map": "MAP_TEST_MAP",
+          "base_label": "gTestMap",
+          "land_mons": {
+            "encounter_rate": 20,
+            "mons": [
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_ZIGZAGOON"
+              },
+              {
+                "min_level": 6,
+                "max_level": 7,
+                "species": "SPECIES_LOTAD"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_POOCHYENA"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_WURMPLE"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_SEEDOT"
+              },
+              {
+                "min_level": 6,
+                "max_level": 6,
+                "species": "SPECIES_SKWOVET"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_RALTS"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_RELLOR"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_NICKIT"
+              },
+              {
+                "min_level": 7,
+                "max_level": 7,
+                "species": "SPECIES_SPINARAK"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_PIKIPEK"
+              },
+              {
+                "min_level": 8,
+                "max_level": 8,
+                "species": "SPECIES_BONSLY"
+              }
+            ]
+          },
+          "water_mons": {
+            "encounter_rate": 4,
+            "mons": [
+              {
+                "min_level": 27,
+                "max_level": 37,
+                "species": "SPECIES_MARILL"
+              },
+              {
+                "min_level": 15,
+                "max_level": 27,
+                "species": "SPECIES_SURSKIT"
+              },
+              {
+                "min_level": 34,
+                "max_level": 39,
+                "species": "SPECIES_MASQUERAIN"
+              },
+              {
+                "min_level": 7,
+                "max_level": 15,
+                "species": "SPECIES_UNOWN"
+              },
+              {
+                "min_level": 27,
+                "max_level": 37,
+                "species": "SPECIES_TOGETIC"
+              }
+            ]
+          },
+          "fishing_mons": {
+            "encounter_rate": 30,
+            "mons": [
+              {
+                "min_level": 5,
+                "max_level": 10,
+                "species": "SPECIES_MAGIKARP"
+              },
+              {
+                "min_level": 7,
+                "max_level": 15,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 15,
+                "max_level": 37,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 15,
+                "max_level": 37,
+                "species": "SPECIES_GOLDEEN"
+              },
+              {
+                "min_level": 15,
+                "max_level": 37,
+                "species": "SPECIES_BARBOACH"
+              },
+              {
+                "min_level": 32,
+                "max_level": 37,
+                "species": "SPECIES_WHISCASH"
+              },
+              {
+                "min_level": 37,
+                "max_level": 42,
+                "species": "SPECIES_CRAWDAUNT"
+              },
+              {
+                "min_level": 27,
+                "max_level": 32,
+                "species": "SPECIES_CORPHISH"
+              },
+              {
+                "min_level": 42,
+                "max_level": 47,
+                "species": "SPECIES_BASCULIN_RED_STRIPED"
+              },
+              {
+                "min_level": 47,
+                "max_level": 52,
+                "species": "SPECIES_SEISMITOAD"
+              }
+            ]
+          }
+        },
+        {
             "map": "MAP_ROUTE101",
             "base_label": "gRoute101",
             "land_mons": {

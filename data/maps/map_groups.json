@@ -34,7 +34,8 @@
     "gMapGroup_IndoorRoute123",
     "gMapGroup_IndoorRoute119",
     "gMapGroup_IndoorRoute124",
-    "gMapGroup_Grounded"
+    "gMapGroup_Grounded",
+    "gMapGroup_FullyUngrounded"
   ],
   "gMapGroup_TownsAndRoutes": [
     "PetalburgCity",
@@ -753,5 +754,19 @@
     "CrownTundra",
     "AbandonedShip_NightDeck",
     "AbandonedShip_NightCabins"
+  ],
+  "gMapGroup_FullyUngrounded": [
+    "StartTown",
+    "StartTown_PokemonCenter_1F",
+    "StartTown_PokemonCenter_2F",
+    "StartTown_Mart",
+    "Stock_House1",
+    "Stock_House2",
+    "Stock_HouseWithBed",
+    "Stock_SmallHouse",
+    "Stock_TwoStory_1F",
+    "Stock_TwoStory_2F",
+    "Stock_Lab",
+    "TestMap"
   ]
 }

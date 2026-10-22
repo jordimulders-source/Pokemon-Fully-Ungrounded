@@ -5521,6 +5521,26 @@
       "secondary_tileset": "gTileset_InsideShip",
       "border_filepath": "data/layouts/AbandonedShip_NightCabins/border.bin",
       "blockdata_filepath": "data/layouts/AbandonedShip_NightCabins/map.bin"
+    },
+    {
+      "id": "LAYOUT_START_TOWN",
+      "name": "StartTown_Layout",
+      "width": 20,
+      "height": 20,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/StartTown/border.bin",
+      "blockdata_filepath": "data/layouts/StartTown/map.bin"
+    },
+    {
+      "id": "LAYOUT_TEST_MAP",
+      "name": "TestMap_Layout",
+      "width": 50,
+      "height": 32,
+      "primary_tileset": "gTileset_General",
+      "secondary_tileset": "gTileset_Petalburg",
+      "border_filepath": "data/layouts/TestMap/border.bin",
+      "blockdata_filepath": "data/layouts/TestMap/map.bin"
     }
   ]
 }

@@ -69,15 +69,10 @@ def parts(frame):
     P.append(Part(ellipse(HX, 46.5, 10.0, 8.5), 'vacht', k=(3, 3), hl=ellipse(HX - 6, 43, 1.5, 2)))
     # armen langs het lijf naar de schoot (frame 2: linkerarm omhoog, zegenend)
     if frame == 1:
-        P.append(Part(stroke_var([(HX - 8, 41), (HX - 9, 47), (HX - 4, 51)], [1.9, 1.9, 1.7]), 'vacht', k=(1, 2)))
+        P.append(Part(stroke_var([(HX - 8, 41), (HX - 8.5, 46), (HX - 4, 48)], [1.9, 1.9, 1.7]), 'vacht', k=(1, 2)))
     else:
         P.append(Part(stroke_var([(HX - 8, 40), (HX - 13, 40), (HX - 15, 35)], [1.9, 1.9, 1.7]), 'vacht', k=(2, 2)))
-    P.append(Part(stroke_var([(HX + 8, 41), (HX + 9, 47), (HX + 4, 51)], [1.9, 1.9, 1.7]), 'vacht', k=(2, 2)))
-    # zilveren slab met geschulpte onderrand (zaadje van de mantel van de genezer)
-    bib = ellipse(HX, 39.5, 6.5, 3.2)
-    for dx in (-4, 0, 4):
-        bib |= ellipse(HX + dx, 42.2, 2.3, 2.1)
-    P.append(Part(bib, 'zilver', k=(2, 2), hl=ellipse(HX - 3, 39.2, 2.0, 0.9)))
+    P.append(Part(stroke_var([(HX + 8, 41), (HX + 8.5, 46), (HX + 4, 48)], [1.9, 1.9, 1.7]), 'vacht', k=(2, 2)))
     # kop
     P.append(Part(ellipse(HX, HY, 14, 11.5), 'vacht', k=(4, 4), hl=ellipse(HX - 7, HY - 7, 3.2, 1.6)))
     # snuit
@@ -180,23 +175,38 @@ def forehead(idx):
                               '.40.'], {'4': 4, '8': 8, '9': 9, '0': 10})
 
 
-HANDS = ['.ss....ss.',      # handen in de schoot, vingertoppen tegen elkaar
-         's11s..s23s',
-         's111ss223s',
-         '.s19ss93s.',
-         '..ssssss..']
-HANDS_R = ['......ss..',
-           '.....s23s.',
-           '....ss223s',
-           '....s993s.',
-           '.....sss..']
+# handen houden een kleine gloeiende maanparel voor de buik (zaadje van de genezer)
+ORB = ['...XXXX...',
+       '..XebbcX..',
+       '.X9bbbbc9X',
+       'X19bbbcc93X'[:10],
+       'X11cbccd33',
+       'X111cdd23X',
+       '.X11XX22X.',
+       '..XX..XX..']
+ORB = ['...XXXX...',
+       '..XebbcX..',
+       '.X9bbbbc9X',
+       'X19bbbcc9X',
+       'X11cbccd3X',
+       'X111cdd23X',
+       '.X11XX23X.',
+       '..XX..XX..']
+ORB2 = ['...XXXX...',              # frame 2: één hand houdt de parel
+        '..XebbcX..',
+        '..XbbbbcX.',
+        '..XbbbccX.',
+        '..XcbccdX.',
+        '..XcddX23X',
+        '...XXX223X',
+        '......XXX.']
 RAISED = ['.s.s.s.',
           's9s9s9s',
           's1s1s2s',
           's11112s',
           '.s1123s',
           '..sss..']
-KEY = {'s': 15, '9': 9, '8': 8, '1': 1, '2': 2, '3': 3, '4': 4}
+KEY = {'s': 15, 'X': 15, '9': 9, '8': 8, '1': 1, '2': 2, '3': 3, '4': 4, 'b': 11, 'c': 12, 'd': 13, 'e': 14}
 
 
 def details(idx, frame):
@@ -207,7 +217,7 @@ def details(idx, frame):
         C.stamp(HX - 1, HY + 9, ['00'], {'0': 10})
     for ex, ox in ((HX - 14, -1), (HX + 14, -1)):                           # binnenkant oren
         C.stamp(ex + ox, HY - 5, ['89', '90'], {'8': 8, '9': 9, '0': 10})
-    C.stamp(HX - 5, 49, HANDS if frame == 1 else HANDS_R, KEY)
+    C.stamp(HX - 5, 43, ORB if frame == 1 else ORB2, KEY)
     if frame == 2:
         C.stamp(HX - 19, 29, RAISED, KEY)
     tp = tail_pts(up)                                                       # gloeiende staartpunt

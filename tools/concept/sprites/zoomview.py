@@ -8,6 +8,8 @@ z = int(sys.argv[3]) if len(sys.argv) > 3 and sys.argv[3].isdigit() else 8
 im = Image.open(src); a = np.array(im); p = im.getpalette()
 rgb = np.array(p[:48]).reshape(16, 3)
 n = a.shape[0] // 64
+only = [int(v) for v in sys.argv[4:] if v.isdigit()]
+crop = None
 W = n * (64 * z + 8) + 64 * 2 + 140
 sheet = Image.new('RGB', (W, 64 * z + 8), (200, 200, 200)); d = ImageDraw.Draw(sheet)
 for k in range(n):
@@ -20,6 +22,9 @@ for k in range(n):
     x0 = 4 + k * (64 * z + 8)
     sheet.paste(big, (x0, 4))
     if '--grid' in sys.argv:
+        for i in range(0, 64, 2):
+            d.text((x0 + i * z + 1, 4), str(i), fill=(0, 0, 160))
+            d.text((x0 + 1, 4 + i * z + 1), str(i), fill=(0, 0, 160))
         for i in range(0, 65, 8):
             d.line([(x0 + i * z, 4), (x0 + i * z, 4 + 64 * z)], fill=(150, 150, 255))
             d.line([(x0, 4 + i * z), (x0 + 64 * z, 4 + i * z)], fill=(150, 150, 255))

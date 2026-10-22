@@ -57,7 +57,8 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 ## Dex-besluiten (op basis van `DEX_NOMINATIES.md`)
 - **Ronde 1 (Jordi, 22 okt), eruit:** Kanto-starters (voorlopig), Onix/Steelix, Rhyhorn-lijn, Electabuzz-lijn, Magmar-lijn, Ralts-lijn, Mawile, Clamperl-lijn, Shellos-lijn, Riolu-lijn, Carnivine, Finneon-lijn, Roggenrola-lijn, Audino, Sewaddle-lijn, Dwebble-lijn, Druddigon, Binacle-lijn, Carbink, Cutiefly-lijn, Bruxish.
 - **Ronde 1, erin:** Zangoose, Mankey-lijn, Oddish-lijn, Corsola-lijn, Pineco-lijn, Shuppet-lijn, Kricketot-lijn, Drowzee-lijn, Voltorb-lijn (de normale), Spinda, Toxel-lijn, Tinkatink-lijn, Tatsugiri.
-- Stand na ronde 1: 204 lijnen, 430 soorten genomineerd.
+- **Ronde 2, erin:** Pinsir, Heracross, Spheal-lijn, Mimikyu (stonden er al in), Salandit-lijn (nieuw).
+- Stand na ronde 2: 205 lijnen, 432 soorten genomineerd.
 
 ## Bestaande soorten in de regio
 - Alolan Exeggutor in de waspalmenvallei (Salento).

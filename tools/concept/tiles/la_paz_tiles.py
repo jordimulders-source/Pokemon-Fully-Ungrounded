@@ -1142,3 +1142,8 @@ print('tegels', len(ts.tiles), '/ 512   metatiles', len(ts.mts), '/ 512')
 if ts.errors:
     from collections import Counter
     print('PALETFOUTEN', Counter(str(e) for e in ts.errors).most_common(10))
+from tilelib import budget
+GROUPS = ['cobble', 'sidewalk', 'plaza', 'clay', 'curb', 'stairs', 'cliff', 'rwall', 'roof', 'gable', 'up', 'gf',
+          'cholet', 'station', 'mast', 'cable', 'tent', 'goods', 'lamp', 'bench', 'manhole', 'eucalyptus', 'planter', 'illimani']
+for k, v in budget(ts, GROUPS).items():
+    print(f'  {k:12s} {v}')

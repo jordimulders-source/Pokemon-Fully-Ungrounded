@@ -126,6 +126,7 @@ class Tileset:
         self.names = {}
         self.hint = {}          # kleur -> palet (voorkeur)
         self.errors = []
+        self.cost = {}          # metatile-naam -> nieuwe tegels
 
     def colors_of(self, p):
         return set(self.pals[p][1:])
@@ -167,6 +168,7 @@ class Tileset:
         """bottom/top: Canvas 16x16 (of None). Onderlaag moet dekkend zijn."""
         if name in self.names:
             raise ValueError('dubbele naam ' + name)
+        n0 = len(self.tiles)
         ents = []
         for lay in (bottom, top):
             for k in range(4):
@@ -177,6 +179,7 @@ class Tileset:
                 blk = lay.a[oy:oy + 8, ox:ox + 8]
                 ents.append(self._tile(blk, pal_pref))
         attr = BEH[beh] | (LAYER[layer] << 12)
+        self.cost[name] = len(self.tiles) - n0
         self.names[name] = 512 + len(self.mts)
         self.mts.append((name, ents, attr))
         return self.names[name]
@@ -394,3 +397,12 @@ def repo_top_layer(mapname, x0, y0, x1, y1):
                         if tp[yy, xx]:
                             c.px(ox + xx, oy + yy, tuple(int(q) for q in pal[pn][tp[yy, xx]]))
     return c
+
+
+def budget(ts, groups):
+    """Tegels per groep (prefixen) voor NOTITIES.md."""
+    out = {}
+    for name, c in ts.cost.items():
+        g = next((k for k in groups if name.startswith(k)), 'overig')
+        out[g] = out.get(g, 0) + c
+    return out

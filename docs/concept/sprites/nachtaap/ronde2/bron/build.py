@@ -39,10 +39,10 @@ def body(frame):
     for ex in (HX - 14, HX + 14):
         C.layer(ellipse(ex, HY - 7, 4.2, 4.2), 'vacht', light=(ex, HY - 7, 4.2, 4.2))
     # gevouwen benen en peerlijf
-    C.layer(ellipse(HX, 53.5, 12, 4.2), 'vacht', light=(HX - 2, 52, 12, 4.5), shade=(0.6, -0.3))
-    C.layer(ellipse(HX, 45, 10, 9.5), 'vacht', light=(HX - 2, 43, 10, 9.5))
+    C.layer(ellipse(HX, 53.5, 12, 4.2), 'vacht', light=(HX - 3, 51, 12, 4.5), shade=(0.6, -0.45))
+    C.layer(ellipse(HX, 45, 10, 9.5), 'vacht', light=(HX - 3, 42, 10, 9.5), shade=(0.6, -0.45))
     # zilveren borst
-    C.layer(ellipse(HX, 46.5, 5.5, 6), 'zilver', light=(HX - 1, 45, 5.5, 6), shade=(0.4, -0.3))
+    C.layer(ellipse(HX, 46.5, 5.5, 6), 'zilver', light=(HX - 2, 44, 5.5, 6), shade=(0.35, -0.5))
     # voeten met de tenen naar buiten
     C.layer(ellipse(HX - 12, 56.3, 5.0, 2.1), 'vacht', light=(HX - 13, 55.5, 5.0, 2.1))
     C.layer(ellipse(HX + 12, 56.3, 5.0, 2.1), 'vacht', light=(HX + 11, 55.5, 5.0, 2.1))

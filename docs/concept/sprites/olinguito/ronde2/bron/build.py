@@ -53,30 +53,34 @@ def head(c, dy=0):
     c.ellipse('oor2', 'vacht', 34.5, 13 + dy, 4, 4.8, rot=25, shade=2)
     c.poly('oor2', 'vacht', [(32, 10 + dy), (37, 7 + dy), (37, 12 + dy)])
     # pluk: korte, naar achteren gestreken lok (eigen object achter de kop, zonder lijn)
-    c.poly('pluk', 'vacht', [(23, 15 + dy), (25, 9 + dy), (28, 7 + dy), (32, 6.5 + dy), (30, 9 + dy), (32, 10.5 + dy), (29, 14 + dy)], shade=1)
     c.ellipse('kop', 'vacht', 26, 23 + dy, 11.5, 10.5, shade=2.5, hl=(20.5, 15.5 + dy, 3.5))
+    # pluk: één brutale lok die voor op de kop ligt en naar achteren omhoog steekt
+    c.poly('pluk', 'vacht', [(22, 15 + dy), (24, 10 + dy), (28, 7 + dy), (33, 5.5 + dy), (30, 9 + dy), (33, 10 + dy), (28, 13 + dy), (25, 15.5 + dy)], shade=1.2, line='dark', hl=(25, 11 + dy, 2.5))
     c.ellipse('snuit', 'creme', 16.5, 27.5 + dy, 5, 3.6, shade=2)
 
 
 FACE_OPEN = [
-    # x13..x38: masker (m/M), ogen met zware leden, gouden iris, spleetpupil, glans
-    '......mmmmmm....mmmmmmmm..',
-    '...mmmmmmmmmmmmmmmmmmmmmmm',
-    '.mmmoooooommmoooooooooommM',
+    # x13..x38: masker (m/M) dik rond de ogen, smal over de neusbrug, punten naar achteren;
+    # ogen met zware leden, gouden iris, spleetpupil en glans
+    '.......mmmm......mmmmmmm..',
+    '....mmmmmmmmm...mmmmmmmmmm',
+    '..mmoooooommmoooooooooommM',
     'mmmmowggGommmowgggggGommM.',
-    'mmmmmoGGommmmogggoGGGommM.',
-    '.MmmmmooommmmmoooooooommM.',
-    '..MMMMMMMMMMMMMMMMMMMMMMM.',
+    '.mmmmoGGommmmogggoGGGommM.',
+    '..MmmmooomM..moooooooomM..',
+    '...MMMMMM.....MMMMMMMMM...',
 ]
 FACE_CLOSED = [
-    '......mmmmmm....mmmmmmmm..',
-    '...mmmmmmmmmmmmmmmmmmmmmmm',
-    '.mmmmmoommmmmmmmooommmmmmM',
-    'mmmmmoggommmmmmoggGommmmM.',
-    'mmmmoGmmGommmmoGmmmGommmM.',
-    '.MmmommmmommmmommmmmommmM.',
-    '..MMMMMMMMMMMMMMMMMMMMMMM.',
+    '.......mmmm......mmmmmmm..',
+    '....mmmmmmmmm...mmmmmmmmmm',
+    '..mmmmoomm...mmmmooommmmmM',
+    'mmmmoggommmmmmmoggGommmmM.',
+    '.mmmoGmmGommmmoGmmmGommmM.',
+    '..MmmmmmmM..mmmmmmmmmmM...',
+    '...MMMMMM.....MMMMMMMMM...',
 ]
+for _r in FACE_OPEN + FACE_CLOSED:
+    assert len(_r) == 26, _r
 
 
 def face(idx, dy=0, closed=False):
@@ -125,7 +129,7 @@ def frame1():
     c.tube('hand1', 'donker', [(22, 39.5), (15, 41)], [5, 4.5], line='black', shade=2)
     c.ellipse('hand1', 'donker', 13, 42, 3.6, 3)
     # munt op schoot
-    c.ellipse('munt', 'munt', 23, 50, 4.4, 4.4, line='black', shade=2, hl=(21.5, 48, 2))
+    c.ellipse('munt', 'munt', 24.5, 50, 4.4, 4.4, line='black', shade=2, hl=(23, 48, 2))
     # dichtste arm naar de munt
     c.tube('arm2', 'vacht', [(37, 39), (38, 44)], [6, 5.5], line='dark', shade=2)
     c.tube('hand2', 'donker', [(38, 44), (35, 48.5), (31.5, 50)], [5.5, 5, 4.5], line='black', shade=2)
@@ -133,14 +137,13 @@ def frame1():
     idx = c.render()
     face(idx)
     # munt: geslagen teken (ster/kroon) en rand
-    patch(idx, 22, 49, ['.G.', 'G.G', '.G.'], K)
+    patch(idx, 23, 49, ['.G.', 'G.G', '.G.'], K)
     # klauwen: bungelend (3), om de munt (2), achtervoet (2)
     hooks(idx, [
         [(10, 45), (10, 46), (10, 47), (9, 48), (9, 49), (8, 50), (7, 51), (6, 51)],
         [(13, 45), (13, 46), (13, 47), (13, 48), (13, 49), (12, 50), (12, 51), (11, 52)],
         [(16, 44), (16, 45), (16, 46), (16, 47), (17, 48), (17, 49), (16, 50), (16, 51)],
-        [(30, 47), (29, 46), (28, 45), (27, 45), (26, 45), (25, 46)],
-        [(30, 51), (29, 52), (28, 53), (27, 54), (26, 54)],
+        [(31, 47), (30, 46), (29, 45), (28, 44), (27, 44), (26, 45)],
         [(17, 55), (16, 55), (15, 55), (14, 56), (13, 56)],
         [(18, 57), (17, 58), (16, 58), (15, 58)],
     ], keep=(5, 6))

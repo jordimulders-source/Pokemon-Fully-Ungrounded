@@ -18,11 +18,16 @@ CH = '.123456789abcdef'
 def parse(path):
     frames = []
     cur = None
+    ox = oy = 0
     for line in open(path).read().split('\n'):
         s = line.strip()
         if not s or s.startswith('#'):
             continue
+        if s.startswith('@'):
+            ox, oy = (int(v) for v in s[1:].split())
+            continue
         if s.startswith('=='):
+            ox = oy = 0
             parts = s.split()
             n = int(parts[2])
             base = [p[5:] for p in parts if p.startswith('base=')]
@@ -36,17 +41,18 @@ def parse(path):
             frames.append(cur)
             continue
         y, rest = s.split(':', 1)
-        y = int(y)
+        y = int(y) + oy
         for seg in rest.split('|'):
             seg = seg.strip()
             if not seg:
                 continue
             x, txt = seg.split(None, 1) if ' ' in seg else (seg, '')
-            x = int(x)
+            x = int(x) + ox
             for i, ch in enumerate(txt.strip()):
                 if ch == '_':
                     continue
-                cur[y, x + i] = CH.index(ch)
+                if 0 <= y < 64 and 0 <= x + i < 64:
+                    cur[y, x + i] = CH.index(ch)
     return frames
 
 

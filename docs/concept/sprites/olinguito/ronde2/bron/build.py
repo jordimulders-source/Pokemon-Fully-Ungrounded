@@ -96,7 +96,7 @@ def ringed_tail(c, pts, widths, rings, tipdark=0.84):
 def head(c, dy=0):
     c.ellipse('oor1', 'vacht', 16.5, 14 + dy, 4.3, 4.5, shade=2)
     c.ellipse('oor2', 'vacht', 35, 12.5 + dy, 4.6, 4.8, shade=2)
-    c.ellipse('kop', 'vacht', 26, 23 + dy, 11.5, 10.5, shade=2.5, hl=(20, 16 + dy, 3))
+    c.ellipse('kop', 'vacht', 26, 23 + dy, 11.5, 10.5, shade=2.1, hl=(20, 16 + dy, 3.5))
     c.ellipse('snuit', 'creme', 16.5, 27.5 + dy, 5, 3.6, shade=2)
 
 
@@ -132,33 +132,32 @@ def face(idx, dy=0, closed=False):
     if os.environ.get('NOPATCH'):
         return
     # binnenoren donker (het masker-donker: hoort bij de 'inbrekerskleuren')
-    x, y = Ti(16.5, 14); patch(idx, x - 1, y - 1 + dy, ['.M', 'MM', 'M.'], K)
-    x, y = Ti(35, 12.5); patch(idx, x - 1, y - 1 + dy, ['MM', 'MM', '.M'], K)
+    x, y = Ti(16.5, 14); patch(idx, x - 1, y - 2 + dy, ['.M', 'MM', 'M.'], K)
+    x, y = Ti(35, 12.5); patch(idx, x - 1, y - 2 + dy, ['MM', 'MM', '.M'], K)
     for (x, y), ch in (FACE_CLOSED if closed else FACE_OPEN).items():
         idx[y + dy, x] = K[ch]
-    # opgetrokken wenkbrauw boven het dichtste oog
-    patch(idx, 30, 21 + dy, ['..dd.', 'dd..d'], K)
     # neus
     patch(idx, 13, 30 + dy, ['ooo', 'oo.'], K)
     if not closed:
-        # scheve grijns met hoektand
-        patch(idx, 14, 32 + dy, [
-            '.........o',
-            '.oooooooo.',
-            '......w...',
+        # scheve grijns: één mondhoek omhoog, hoektand
+        patch(idx, 16, 32 + dy, [
+            'o.....o',
+            '.ooooo.',
+            '....w..',
         ], K)
     else:
-        patch(idx, 14, 32 + dy, [
-            '.ooooooooo',
-            '..owddddo.',
-            '...oddddo.',
-            '....oooo..',
+        # bek open ("hehe")
+        patch(idx, 16, 32 + dy, [
+            'o.oooooo',
+            '.owdddo.',
+            '..oddo..',
+            '...oo...',
         ], K)
 
 
 def common_body(c, dy=0):
     c.ellipse('voet2', 'donker', 39, 56, 4, 2.2, line='black')
-    c.ellipse('lijf', 'vacht', 31, 45, 10, 11, shade=3, hl=(26, 39, 3))
+    c.ellipse('lijf', 'vacht', 31, 45, 10, 11, shade=2.2, hl=(26, 39, 3))
     b = c.ellipse('buik', 'creme', 27.5, 47.5, 5, 7, shade=2)
     b.mask &= c.ellipse_mask(31, 45, 9.5, 10.5)
     c.poly('doek', 'doek', [(19, 31 + dy), (37, 30 + dy), (37, 34 + dy), (30, 41 + dy), (27, 41 + dy), (21, 35 + dy)], shade=2, line='dark')
@@ -173,26 +172,26 @@ def frame1():
     common_body(c)
     head(c)
     # verste arm (bungelt voor de borst), zwarte handschoen tot de elleboog
-    c.tube('arm1', 'vacht', [(25, 38), (21, 39.5)], [5.5, 5], line='dark', shade=2)
-    c.tube('hand1', 'donker', [(22, 39.5), (15, 41)], [5, 4.5], line='black', shade=2)
-    c.ellipse('hand1', 'donker', 13, 42, 3.6, 3)
+    c.tube('arm1', 'vacht', [(25, 38), (21, 38)], [5.5, 5], line='dark', shade=2)
+    c.tube('hand1', 'donker', [(22, 38), (15, 38)], [5, 4.5], line='black', shade=2)
+    c.ellipse('hand1', 'donker', 13, 39, 3.6, 3)
     # munt op schoot
-    c.ellipse('munt', 'munt', 24.5, 50, 4.4, 4.4, line='black', shade=2, hl=(23, 48, 2))
+    c.ellipse('munt', 'munt', 26.5, 50.5, 5, 5, line='black', shade=2, hl=(25, 48.5, 1.6))
     # dichtste arm naar de munt
     c.tube('arm2', 'vacht', [(37, 39), (38, 44)], [6, 5.5], line='dark', shade=2)
-    c.tube('hand2', 'donker', [(38, 44), (35, 48.5), (31.5, 50)], [5.5, 5, 4.5], line='black', shade=2)
+    c.tube('hand2', 'donker', [(38, 44), (36, 48.5), (33.5, 50.5)], [5.5, 5, 4.5], line='black', shade=2)
     c.ellipse('voet1', 'donker', 22, 55.5, 5.5, 2.6, line='black', shade=1.5)
     idx = c.render()
     face(idx)
     # munt: geslagen teken (ster/kroon) en rand
-    patch(idx, 25, 50, ['.G.', 'G.G', '.G.'], K)
+    x, y = Ti(26.5, 50.5); patch(idx, x - 1, y - 1, ['.G.', 'G.G', '.G.'], K)
     # klauwen: bungelend (3), om de munt (2), achtervoet (2)
     hooks(idx, shift_claws([
-        [(10, 45), (10, 46), (10, 47), (9, 48), (9, 49), (8, 50), (7, 50), (6, 49)],
-        [(13, 45), (13, 46), (13, 47), (13, 48), (13, 49), (12, 50), (12, 51), (11, 52), (10, 52)],
-        [(16, 44), (16, 45), (16, 46), (16, 47), (16, 48), (16, 49), (15, 50), (15, 51), (14, 52)],
-        [(29, 48), (28, 47), (27, 47)],
-        [(29, 52), (28, 53), (27, 53)],
+        [(10, 42), (10, 43), (9, 44), (8, 45), (7, 46), (6, 47), (5, 47), (4, 46)],
+        [(13, 42), (13, 43), (13, 44), (13, 45), (13, 46), (13, 47), (12, 48), (12, 49), (11, 50), (10, 50)],
+        [(16, 42), (16, 43), (17, 44), (18, 45), (18, 46), (19, 47), (19, 48), (18, 49), (17, 50)],
+        [(31, 48), (30, 47), (29, 47)],
+        [(31, 52), (30, 53), (29, 53)],
         [(17, 55), (16, 55), (15, 55), (14, 56), (13, 56)],
         [(18, 57), (17, 58), (16, 58), (15, 58)],
     ]), keep=(5, 6))

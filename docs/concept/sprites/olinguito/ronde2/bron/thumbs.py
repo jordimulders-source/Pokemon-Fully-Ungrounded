@@ -66,7 +66,7 @@ def sil(c):
 
 if __name__ == '__main__':
     out = sys.argv[1]
-    z = 4; names = ['A Zakkenroller', 'B Sluiper', 'C Taxateur']
+    z = 4; names = ['A Zakkenroller (gekozen)', 'B Sluiper', 'C Taxateur']
     sheet = Image.new('RGB', (3 * (64 * z + 8) + 3 * 72, 64 * z + 20), (240, 238, 230)); d = ImageDraw.Draw(sheet)
     for i, f in enumerate((A, B, C)):
         m = sil(f()); a = np.full((64, 64, 3), 240, np.uint8); a[..., 1] = 238; a[..., 2] = 230; a[m] = (20, 20, 20)

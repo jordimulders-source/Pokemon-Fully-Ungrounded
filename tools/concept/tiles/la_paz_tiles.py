@@ -84,30 +84,31 @@ def ascii_canvas(rows, cmap):
 
 # ------------------------------------------------------------------ grond
 def cobble(var=0):
-    """Kasseien (adoquines) 7x3 met 1 px voeg, rijen verspringen 4 px; periode 16."""
-    c = Canvas(16, 16, CB[1])
+    """Kasseien (adoquines) 7x3 met 1 px voeg, rijen verspringen 4 px; periode 16. Rustig en licht
+    zoals de bestrating van Slateport."""
+    c = Canvas(16, 16, CB[2])
     rnd = random.Random(10 + var)
     for row in range(4):
         y0 = row * 4
         off = 4 if row % 2 else 0
         for k in range(3):
             x0 = k * 8 - off
-            base = CB[3] if rnd.random() > (0.25 + 0.15 * var) else CB[2]
+            hl = rnd.random() > 0.25
             for dy in range(3):
                 for dx in range(7):
                     x = (x0 + dx) % 16
-                    if (dx in (0, 6)) and dy in (0, 2):
-                        continue  # afgeronde hoeken
-                    col = base
-                    if dy == 0 and dx < 5:
-                        col = CB[4] if base == CB[3] else CB[3]
-                    if dy == 2 and dx > 1:
-                        col = CB[2] if base == CB[3] else CB[1]
+                    if dx in (0, 6) and dy in (0, 2):
+                        continue
+                    col = CB[3]
+                    if dy == 0 and 1 <= dx <= 4 and hl:
+                        col = CB[4]
                     c.px(x, y0 + dy, col)
+            for dx in range(2, 6):
+                c.px((x0 + dx) % 16, (y0 + 3) % 16, CB[1])
     if var == 2:  # onkruid in de voegen
-        for x, y in [(3, 7), (4, 7), (12, 15), (11, 15), (12, 14)]:
+        for x, y in [(3, 7), (4, 7), (12, 15), (11, 15)]:
             c.px(x, y, GR[0])
-        c.px(4, 6, GR[1]); c.px(12, 13, GR[1])
+        c.px(4, 6, GR[1]); c.px(12, 14, GR[1])
     return c
 
 
@@ -123,17 +124,16 @@ def sidewalk():
 
 
 def plaza():
-    """Plaza-tegels: rood-wit ruitpatroon."""
+    """Plaza: grote lichte platen met een klein rood ruitje op de kruisingen."""
     c = Canvas(16, 16, CB[4])
     for y in range(16):
         for x in range(16):
-            d = abs((x % 16) - 7.5) + abs((y % 16) - 7.5)
-            if d < 5:
-                c.px(x, y, RT6)
-            elif d < 6:
-                c.px(x, y, CB[2])
-            if x == 0 or y == 0:
+            if (x // 8 + y // 8) % 2:
                 c.px(x, y, CB[3])
+            if x % 16 == 15 or y % 16 == 15:
+                c.px(x, y, CB[2])
+    for dx, dy in ((0, -1), (-1, 0), (0, 0), (1, 0), (0, 1), (0, -2), (-2, 0), (2, 0), (0, 2)):
+        c.px((15 + dx) % 16, (15 + dy) % 16, RT6 if abs(dx) + abs(dy) < 2 else CB[2])
     return c
 
 
@@ -184,49 +184,77 @@ def stairs(kind):
     return c
 
 
+def lumps_band(lumps, w=32, h=16, wrapy=False):
+    """Rotsbrokken in Hoenn-stijl (zoals de rotswanden van General), in kleikleuren: per pixel de
+    dichtstbijzijnde brok; licht linksboven, schaduw rechtsonder, donkere voegen ertussen."""
+    out = {}
+    for y in range(h):
+        for x in range(w):
+            best = None
+            for cx, cy, rx, ry in lumps:
+                for ox in (-w, 0, w):
+                    for oy in ((-h, 0, h) if wrapy else (0,)):
+                        dx, dy = (x + .5 - cx - ox) / rx, (y + .5 - cy - oy) / ry
+                        d = dx * dx + dy * dy
+                        if best is None or d < best[0]:
+                            best = (d, dx, dy)
+            d, dx, dy = best
+            t = dx + dy
+            if d > 1.0:
+                col = OL6 if d > 1.5 else CL[0]
+            elif d > 0.62:   # rand van de brok
+                col = CL[3] if t < -0.5 else (CL[0] if t > 0.55 else (CL[1] if t > 0 else CL[2]))
+            else:
+                col = CL[3] if t < -0.55 else (CL[1] if t > 0.55 else CL[2])
+            out[(x, y)] = col
+    return out
+
+
+_MID = lumps_band([(5, 4, 7, 6), (17, 4, 8, 6), (28, 5, 6, 7), (10, 12, 7, 6), (23, 12, 8, 6)], wrapy=True)
+_TOP = lumps_band([(4, 11, 7, 7), (15, 12, 7, 6), (26, 11, 8, 7)])
+_BASE = lumps_band([(6, 4, 8, 6), (19, 3, 7, 6), (29, 5, 6, 6)])
+
+
 def clay_cliff(part, half=0):
-    """Uitgesleten kleiwand (de hellingen van de kom), periode 32 px (stukken a/b). Rechte rechthoeken
-    (les: kliffen). Geulen lopen vanaf de rand naar beneden en vanaf de voet omhoog, de wand zelf is
-    gelaagd. part: top (rand + wand), mid (wand, stapelbaar), base (wand + voet)."""
+    """Kleiwand van de hellingen van de kom: Hoenn-rotswand (General) als vorm, in de rode klei van
+    La Paz. Periode 32 px (stukken a/b); rechte rechthoeken (les: kliffen).
+    part: top (rand + wand), mid (wand, stapelbaar), base (wand + voet)."""
     c = Canvas(16, 16, CL[2])
     X0 = half * 16
-
-    def P(X, y, col):
-        if X0 <= X < X0 + 16:
-            c.px(X - X0, y, col)
-    # gelaagdheid (licht golvend)
-    for X in range(X0, X0 + 16):
-        w = 1 if (X // 6) % 2 else 0
-        for yy in ((3 + w, 11 - w) if part == 'mid' else ((12 + w,) if part == 'top' else (4 + w,))):
-            P(X, yy, CL[3]); P(X, yy + 1, CL[1])
-
-    def crevice(X, y0, y1):
-        for y in range(y0, y1 + 1):
-            P(X, y, OL6 if y0 < y < y1 else CL0b)
-            P(X - 1, y, CL[1]); P(X + 1, y, CL[3])
-    CL0b = CL[0]
+    for y in range(16):
+        for x in range(16):
+            X = X0 + x
+            if part == 'mid':
+                c.px(x, y, _MID[(X, y)])
+            elif part == 'top':
+                if y < 5:
+                    col = CL[2]
+                elif y == 5:
+                    col = CL[3]
+                elif y == 6:
+                    col = OL6
+                else:
+                    col = _TOP[(X, y)]
+                    if col == OL6 and y > 6:
+                        col = CL[0] if y < 9 else col
+                c.px(x, y, col)
+            else:
+                if y <= 9:
+                    c.px(x, y, _BASE[(X, y)])
+                elif y == 10:
+                    c.px(x, y, OL6)
+                elif y == 11:
+                    c.px(x, y, CL[0])
+                else:
+                    c.px(x, y, CL[2])
     if part == 'top':
-        for X in range(X0, X0 + 16):
-            for y in range(0, 6):
-                P(X, y, CL[2])
         for X, y in ((4, 2), (21, 3), (13, 1)):
-            P(X, y, CL[1]); P(X + 1, y, CL[3])
-        for X in range(X0, X0 + 16):
-            P(X, 5, CL[3]); P(X, 6, OL6); P(X, 7, CL[1])
-        for X, ln in ((5, 7), (14, 4), (22, 8), (29, 5)):
-            crevice(X, 7, 7 + ln)
-    if part == 'mid':
-        for X, y0, y1 in ((9, 6, 10), (26, 1, 6)):
-            crevice(X, y0, y1)
+            if X0 <= X < X0 + 16:
+                c.px(X - X0, y, CL[1]); c.px(X - X0 + 1, y, CL[3])
     if part == 'base':
-        for X, ln in ((3, 5), (12, 3), (19, 6), (27, 4)):
-            crevice(X, 11 - ln, 10)
-        for X in range(X0, X0 + 16):
-            P(X, 11, OL6); P(X, 12, CL[0])
-            for y in (13, 14, 15):
-                P(X, y, CL[2])
         for X in (6, 17, 25):
-            P(X, 13, CL[1]); P(X + 1, 13, CL[3]); P(X, 14, CL[1])
+            if X0 <= X < X0 + 16:
+                c.px(X - X0, 13, CL[1]); c.px(X - X0 + 1, 13, CL[3]); c.px(X - X0, 14, CL[1])
     return c
 
 
@@ -406,17 +434,23 @@ def facade(kind, piece, tex='brick'):
     return c
 
 
-def flat_roof(piece, extra=None):
-    """Plat betonnen dak (bovenaanzicht) van 1 rij: borstwering rondom."""
+def flat_roof(piece, row, extra=None):
+    """Plat betonnen dak (bovenaanzicht), 2 rijen diep zoals Hoenn-daken: borstwering rondom."""
     c = Canvas(16, 16, K[1])
-    for (x, y) in [(4, 6), (5, 6), (11, 9), (12, 10), (8, 12), (2, 10)]:
+    for (x, y) in ([(4, 9), (5, 9), (11, 12)] if row == 0 else [(12, 3), (2, 6), (8, 8)]):
         c.px(x, y, K[0] if (x + y) % 3 else K[2])
-    c.hline(0, 15, 0, OLB); c.hline(0, 15, 1, K[3]); c.hline(0, 15, 2, K[2]); c.hline(0, 15, 3, K[0])
-    c.hline(0, 15, 13, K[0]); c.hline(0, 15, 14, K[3]); c.hline(0, 15, 15, K[2])
+    if row == 0:
+        c.hline(0, 15, 0, OLB); c.hline(0, 15, 1, K[3]); c.hline(0, 15, 2, K[2]); c.hline(0, 15, 3, K[0])
+    else:
+        c.hline(0, 15, 11, K[0]); c.hline(0, 15, 12, K[3]); c.hline(0, 15, 13, K[2]); c.hline(0, 15, 14, K[1])
+        c.hline(0, 15, 15, OLB)
+    y0, y1 = (0, 15)
     if piece == 'l':
-        c.vline(0, 0, 15, OLB); c.vline(1, 1, 14, K[3]); c.vline(2, 2, 13, K[2]); c.vline(3, 4, 12, K[0])
+        c.vline(0, y0, y1, OLB); c.vline(1, 1 if row == 0 else 0, 14, K[3]); c.vline(2, 2 if row == 0 else 0, 13, K[2])
+        c.vline(3, 4 if row == 0 else 0, 10 if row else 15, K[0])
     if piece == 'r':
-        c.vline(15, 0, 15, OLB); c.vline(14, 1, 14, K[2]); c.vline(13, 2, 13, K[1]); c.vline(12, 4, 12, K[3])
+        c.vline(15, y0, y1, OLB); c.vline(14, 1 if row == 0 else 0, 14, K[2]); c.vline(13, 2 if row == 0 else 0, 13, K[1])
+        c.vline(12, 4 if row == 0 else 0, 10 if row else 15, K[3])
     if extra == 'tank':  # zwarte watertank (tinaco)
         tk = ascii_canvas([
             "...oooo...",
@@ -429,10 +463,11 @@ def flat_roof(piece, extra=None):
             "oggggggggo",
             ".oooooooo.",
         ], {'o': OLB, 'g': G[0], 't': G[1]})
-        c.paste(tk, 3, 4)
+        c.paste(tk, 3, 5)
     if extra == 'rebar':  # wachtijzers op de kolommen (bouwt later verder)
+        yb = 4 if row == 0 else 6
         for x in ((2, 4) if piece == 'l' else (11, 13) if piece == 'r' else (7, 9)):
-            c.vline(x, 4, 9, W[0]); c.px(x, 3, W[1])
+            c.vline(x, yb, yb + 5, W[0]); c.px(x, yb - 1, W[1])
     if extra == 'laundry':
         c.hline(1, 14, 5, OLB)
         for x, col in [(3, R[2]), (4, R[2]), (7, W[2]), (8, W[2]), (11, G[2]), (12, G[2])]:
@@ -480,10 +515,12 @@ def add_grid(name, grid_canvases, layers=None):
 
 
 # platte daken
-for p in ('l', 'm', 'r'):
-    ts.add(f'roof_{p}', flat_roof(p))
-for p, e in [('m', 'tank'), ('m', 'laundry'), ('m', 'dish'), ('l', 'rebar'), ('r', 'rebar'), ('m', 'rebar')]:
-    ts.add(f'roof_{p}_{e}', flat_roof(p, e))
+for row in (0, 1):
+    for p in ('l', 'm', 'r'):
+        ts.add(f'roof{row}_{p}', flat_roof(p, row))
+for row, p, e in [(0, 'm', 'tank'), (1, 'm', 'laundry'), (0, 'l', 'rebar'), (0, 'r', 'rebar'), (0, 'm', 'rebar'),
+                  (0, 'm', 'dish')]:
+    ts.add(f'roof{row}_{p}_{e}', flat_roof(p, row, e))
 # golfplaatdaken
 for row in (0, 1):
     for p in ('l', 'm', 'r'):
@@ -492,7 +529,7 @@ for row in (0, 1):
 # gevels
 for tex in ('brick', 'plaster'):
     t = 'b' if tex == 'brick' else 'p'
-    for piece in ('l', 'm', 'r', 'win', 'curtain') if t == 'b' else ('l', 'r', 'win', 'curtain'):
+    for piece in ('l', 'm', 'r', 'win', 'curtain') if t == 'b' else ('l', 'r', 'win'):
         ts.add(f'up{t}_{piece}', facade('up', piece, tex))
     for piece in ('l', 'm', 'r', 'door', 'shutter', 'shop', 'win') if t == 'b' else ('l', 'r', 'door', 'win'):
         cv = facade('gf', piece, tex)
@@ -859,7 +896,6 @@ def planter(kind):
 
 
 OBJ['eucalyptus'] = slice_obj('eucalyptus', eucalyptus(), COB, top_rows=(0, 1))
-ts.add('planter', COB, planter('green'))
 ts.add('planter_flowers', COB, planter('flowers'))
 
 
@@ -883,8 +919,6 @@ def illimani():
         for y in range(H_):
             if y < top:
                 col = SN[1]
-                if (x * 3 + y * 5) % 64 == 0:
-                    col = SN[2]
             elif y == top:
                 col = OLN
             else:
@@ -942,8 +976,6 @@ def cordillera():
         for y in range(H_):
             if y < top:
                 col = SN[1]
-                if (x * 3 + y * 5) % 64 == 0:
-                    col = SN[2]
             elif y == top:
                 col = OLN
             elif y < 52 + abs((x % 16) - 8) // 2 * 2 and y < top + 10:
@@ -990,15 +1022,18 @@ def house(g, x, y, w, floors=2, roof='flat', tex='b', pal=7, extras=(), gf=None,
     """Zet een huis neer vanaf (x, y) = linkerbovenhoek van het dak."""
     rows = []
     if roof == 'flat':
-        r = ['roof_l'] + ['roof_m'] * (w - 2) + ['roof_r']
-        for i, e in extras:
-            r[i] = e
-        rows.append(r)
+        for rr in (0, 1):
+            r = [f'roof{rr}_l'] + [f'roof{rr}_m'] * (w - 2) + [f'roof{rr}_r']
+            for i, e in extras:
+                if e.startswith(f'roof{rr}_'):
+                    r[i] = e
+            rows.append(r)
     else:
         rows.append(['gable0_l'] + ['gable0_m'] * (w - 2) + ['gable0_r'])
         r = ['gable1_l'] + ['gable1_m'] * (w - 2) + ['gable1_r']
         for i, e in extras:
-            r[i] = e
+            if e.startswith('gable1'):
+                r[i] = e
         rows.append(r)
     for f in range(floors - 1):
         u = (upper or {}).get(f) or ([f'up{tex}_l'] + [f'up{tex}_win'] * (w - 2) + [f'up{tex}_r'])
@@ -1038,6 +1073,30 @@ def cholet(g, x, y, w, floors=3, scheme=0, chalet=False):
     put(g, x, y, [[N[n] if n else None for n in r] for r in rows])
     if chalet:  # chalet staat op het dak (rij 2 = dak); 2 rijen erboven
         put(g, x + (w - 3) // 2, y, OBJ['chalet'])
+
+
+def reground(ids, ground):
+    """Zelfde object op een andere grond (alleen de onderlaag wisselt: 0 extra tegels)."""
+    gb = ts.mts[N[ground] - 512][1][:4]
+    cob = ts.mts[N['cobble0'] - 512][1][:4]
+    out = []
+    for row in ids:
+        r = []
+        for m in row:
+            if m is None:
+                r.append(None)
+                continue
+            name, ents, attr = ts.mts[m - 512]
+            if list(ents[:4]) != list(cob):
+                r.append(m)
+                continue
+            nn = f'{name}@{ground}'
+            if nn not in N:
+                N[nn] = 512 + len(ts.mts)
+                ts.mts.append((nn, list(gb) + list(ents[4:]), attr))
+            r.append(N[nn])
+        out.append(r)
+    return out
 
 
 overlay_cache = {}
@@ -1090,11 +1149,11 @@ def mockup():
     for y, part in ((6, 'top'), (7, 'mid'), (8, 'base')):
         g[y][13] = N[f'cliffstairs_{part}']
     # bovenste huizenrij
-    house(g, 0, 11, 3, floors=2, tex='b', extras=[(1, 'roof_m_tank')])
-    house(g, 3, 11, 3, floors=2, tex='p', pal=8, extras=[(2, 'roof_r_rebar')],
-          upper={0: ['upp_l', 'upp_curtain', 'upp_r']})
+    house(g, 0, 10, 3, floors=2, tex='b', extras=[(1, 'roof0_m_tank')])
+    house(g, 3, 10, 3, floors=2, tex='p', pal=8, extras=[(2, 'roof0_r_rebar')],
+          upper={0: ['upp_l', 'upp_win', 'upp_r']})
     house(g, 6, 11, 3, floors=1, tex='b', roof='gable', extras=[(1, 'gable1_m_stones')])
-    house(g, 9, 10, 3, floors=3, tex='b', extras=[(0, 'roof_l_rebar'), (1, 'roof_m_rebar'), (2, 'roof_r_rebar')],
+    house(g, 9, 9, 3, floors=3, tex='b', extras=[(0, 'roof0_l_rebar'), (1, 'roof0_m_rebar'), (2, 'roof0_r_rebar')],
           upper={0: ['upb_openl', 'upb_open', 'upb_openr'], 1: ['upb_l', 'upb_curtain', 'upb_r']},
           gf=['gfb_l', 'gfb_shutter', 'gfb_r'])
     for y in range(9, Hm):
@@ -1102,9 +1161,9 @@ def mockup():
     for y in range(9, 15):
         g[y][12] = N['rwall_top' if y == 9 else 'rwall']
     cholet(g, 14, 7, 4, floors=3, scheme=0, chalet=True)
-    house(g, 18, 11, 4, floors=2, tex='p', pal=9, extras=[(2, 'roof_m_laundry')])
-    cholet(g, 22, 8, 3, floors=2, scheme=1)
-    house(g, 25, 10, 3, floors=3, tex='b', extras=[(1, 'roof_m_dish')], pal=9)
+    house(g, 18, 10, 4, floors=2, tex='p', pal=9, extras=[(2, 'roof1_m_laundry'), (1, 'roof0_m_dish')])
+    cholet(g, 22, 9, 3, floors=2, scheme=1)
+    house(g, 25, 9, 3, floors=3, tex='b', extras=[(1, 'roof0_m_tank')], pal=9)
     house(g, 28, 12, 2, floors=1, tex='p', pal=8, roof='gable')
     for y in (9, 10, 11):
         for x in range(Wm):
@@ -1118,7 +1177,7 @@ def mockup():
         g[16][x] = N['cobble2' if x % 5 == 2 else 'cobble0']
     # onderste rij: station, mast, markt, plein
     put(g, 0, 17, OBJ['station'])
-    put(g, 7, 15, OBJ['mast_ew'])
+    put(g, 7, 17, OBJ['mast_ew'])
     for x in range(20, Wm):
         for y in range(17, Hm):
             g[y][x] = N['plaza']
@@ -1126,19 +1185,17 @@ def mockup():
     g[20][15] = GOODS['potatoes']; g[20][16] = GOODS['sacks']; g[19][18] = GOODS['fruit']
     g[23][15] = GOODS['herbs']; g[23][16] = GOODS['aguayo']; g[21][18] = GOODS['crate']
     g[19][19] = GOODS['aguayo']; g[22][19] = GOODS['fruit']
-    put(g, 24, 18, OBJ['eucalyptus'])
-    put(g, 21, 18, OBJ['lamp']); put(g, 28, 18, OBJ['lamp'])
-    g[21][22] = N['bench']; g[21][27] = N['bench']
-    g[20][21] = N['planter_flowers']; g[20][28] = N['planter']; g[23][21] = N['planter']
+    put(g, 24, 18, reground(OBJ['eucalyptus'], 'plaza'))
+    put(g, 21, 18, reground(OBJ['lamp'], 'plaza')); put(g, 28, 18, reground(OBJ['lamp'], 'plaza'))
+    g[21][22] = reground([[N['bench']]], 'plaza')[0][0]; g[21][27] = g[21][22]
+    g[20][21] = reground([[N['planter_flowers']]], 'plaza')[0][0]; g[20][28] = g[20][21]
     g[22][9] = N['manhole']
     put(g, 10, 18, OBJ['mast_ns'])
-    # kabelbaan oost-west vanaf het station (rij 18), over de markt en het plein
-    cy = 18
+    # kabelbaan oost-west vanaf het station (rij 17), over de markt en het plein
+    cy = 17
     for x in range(8, Wm):
-        if (x, cy) in ((10, 18),):
-            continue
         g[cy][x] = overlay(g[cy][x], CABLE['ew'], 'cable_ew')
-    for x, col in [(12, 'red'), (25, 'green')]:
+    for x, col in [(12, 'red'), (19, 'yellow')]:
         gc = GONDOLA[col]
         base0 = N[ts.mts[g[cy][x] - 512][0].split('+')[0]]
         g[cy][x] = overlay(base0, gc.sub(0, 0, 16, 16), 'gondola_' + col + '0')

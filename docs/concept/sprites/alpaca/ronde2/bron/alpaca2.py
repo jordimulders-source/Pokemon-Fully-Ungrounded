@@ -55,7 +55,7 @@ def puffs(c, cx, cy, rx, ry, n, br, a0=0.0, glob=None, mix=0.7, curl=(0.15, 2.4)
 # naar boven: elk hoger bolletje ligt vóór het lagere, met een lavendel boogje langs
 # zijn onderrand (de 'schubben' van Swablu/Altaria/Mareep).
 BODY = [(28, 52, 4.4), (34, 53, 4.4), (40, 53, 4.4), (46, 50, 4.4),
-        (25, 47, 4.0), (31, 47, 4.6), (38, 47, 4.8), (46, 44, 4.6),
+        (25, 47, 4.0), (31, 47, 4.6), (38, 47, 4.8), (46, 44, 4.6), (49, 48, 3.6),
         (30, 40, 4.6), (37, 40, 4.8), (44, 38, 4.2),
         (26, 35, 3.4), (31, 34, 3.6), (36, 35, 3.6)]
 
@@ -85,7 +85,6 @@ def frame(f2=False):
     c.ellipse(30, 56.5, 3, 3, 'vacht'); c.ellipse(42, 56.5, 3, 3, 'vacht', shift=1)
     # achterste arm + handschoen (ver, een tint donkerder) achter het lijf in frame 2
     if f2:
-        c.poly([(40, 44), (45, 42), (50, 39), (47, 36)], 'vacht', shift=1)
         glove(c, 50, 37, 4.6, far=True, band_dir=(-1, 1))
     # wollen lijf: wolk met geschulpte rand
     body_puffs(c, lean)
@@ -111,8 +110,8 @@ def frame(f2=False):
     c.put([(hx - 7, hy - 8), (hx + 8, hy - 8)], 2)
     # voorste arm + handschoen (jab)
     if f2:
-        c.poly([(27, 44), (30, 40), (16, 35), (13, 39)], 'vacht')
-        glove(c, 9, 36, 6.4, band_dir=(1, 0.3))
+        c.poly([(27, 46), (30, 42), (16, 39), (13, 43)], 'vacht')
+        glove(c, 8, 40, 6.4, band_dir=(1, 0.3))
     else:
         c.poly([(30, 46), (32, 42), (21, 39), (18, 43)], 'vacht')
         glove(c, 15, 40, 6.2, band_dir=(1, 0.25))

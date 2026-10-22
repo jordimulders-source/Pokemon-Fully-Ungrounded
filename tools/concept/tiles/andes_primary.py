@@ -137,6 +137,8 @@ def build():
                 pair.add_drawn(nm, s, pals=(4,), target='P', slot=free.pop(0))
             else:
                 pair.add_drawn(nm, None, s, pals=(4,), target='P', slot=free.pop(0), bottom_ents=grass_ents)
+    sky = Canvas(16, 16, pair.pals[4][11])
+    pair.add_drawn('andes_sky', sky, pals=(4,), target='P', slot=free.pop(0))
     lp = lamp()
     pair.add_drawn('andes_lamp_0', None, lp.sub(0, 0, 16, 16), pals=(0, 1), layer='normal', target='P',
                    slot=free.pop(0), bottom_ents=grass_ents)

@@ -403,7 +403,7 @@ def illimani():
         px_, py = min(peaks, key=lambda p: p[1] + abs(x - p[0]))
         top = py + abs(x - px_)
         left = x < px_
-        snowline = 42 + (x // 4) % 3 * 2 + (4 if (x // 16) % 2 else 0)
+        snowline = 42 + (x // 8) % 2 * 2 + (4 if (x // 16) % 2 else 0)
         for y in range(H_):
             if y < top:
                 col = SKY
@@ -421,7 +421,7 @@ def illimani():
                 col = SH if (x + y) % 2 else RK[0]
             else:
                 col = RK[0] if left else RK[1]
-                if (y - snowline) % 6 == 0 or (x * 2 + y) % 11 == 0:
+                if (y - snowline) % 6 == 0 or (x + y) % 8 == 0:
                     col = RK[1] if left else RK[2]
             if y > 75:
                 col = None
@@ -507,6 +507,26 @@ def cholet(g, x, y, w, floors=3, scheme=0, chal=False):
 ovc = {}
 
 
+def reground(ids, ground, from_row=0):
+    """Zelfde object op andere grond: alleen de onderlaag wisselt (0 extra tegels)."""
+    gb = pair.ents(ground)[:4]
+    out = []
+    for i, row in enumerate(ids):
+        r = []
+        for m in row:
+            if i < from_row:
+                r.append(m)
+                continue
+            nm = f'{name_of(m)}@{name_of(ground)}'
+            if nm not in pair.names:
+                e = pair.ents(m)
+                attr = pair.pa[m] if m < 512 else pair.sa[m - 512]
+                pair.add_mt(nm, list(gb) + list(e[4:]), attr)
+            r.append(pair.names[nm])
+        out.append(r)
+    return out
+
+
 def overlay(base, top_cv, key):
     """Kabel/gondel boven op een bestaande metatile (eigen combinatie)."""
     if (base, key) in ovc:
@@ -536,12 +556,9 @@ def mockup():
     Wm, Hm = 30, 24
     g = [[GROUND] * Wm for _ in range(Hm)]
     for x in range(0, Wm, 4):
-        put(g, x, 0, [[N[f'andes_range_{mx}_{my}'] for mx in range(4)] for my in range(3)])
-        put(g, x, 3, [[GROUND] * 4])
+        put(g, x, 0, [[N['andes_sky']] * 4] * 2)
+        put(g, x, 2, [[N[f'andes_range_{mx}_{my}'] for mx in range(4)] for my in range(3)])
     put(g, 9, 0, OBJ['illimani'])
-    for x in range(0, 9):
-        for y in (3, 4):
-            g[y][x] = GROUND
     # kleiterras (General-rotsen in rode klei): zuidwand 0x7C boven, 0x79 onder
     for x in range(Wm):
         g[5][x] = 0x7C; g[6][x] = 0x79
@@ -559,7 +576,13 @@ def mockup():
     # trappenstraat door het midden (Hoenn-paadje), kantuta's ernaast
     for y in range(5, 13):
         g[y][13] = 0x121; g[y][14] = 0x121
-    g[12][12] = N['andes_kantuta']
+    for y in (5, 6):
+        g[y][13] = 0xaf; g[y][14] = 0xaf
+    # leven op de puna-strook voor de huizen: bloemen, kantuta, struikjes, bordjes
+    for (x, y, m) in ((2, 11, 0x004), (3, 11, 0x004), (6, 12, N['andes_kantuta']), (9, 12, 0x00e), (11, 11, 0x004),
+                      (12, 12, N['andes_kantuta']), (20, 12, 0x004), (21, 12, 0x004), (22, 11, 0x00e),
+                      (25, 12, N['andes_kantuta']), (26, 12, 0x003)):
+        g[y][x] = m
     # straat: Slateport-kasseien
     for y in (13, 14):
         for x in range(Wm):
@@ -584,6 +607,9 @@ def mockup():
     for (x, y) in ((22, 20), (23, 20), (22, 21), (24, 22), (25, 22), (21, 23)):
         g[y][x] = 0x004
     g[21][24] = N['andes_kantuta']; g[23][27] = N['andes_kantuta']; g[16][21] = 0x003
+    # straatlantaarns op de kasseien
+    for x in (5, 12, 20):
+        put(g, x, 12, reground([[N['andes_lamp_0']], [N['andes_lamp_1']]], COBBLE, 1))
     # kabelbaan: oost-west op rij 15 (koppen van de mast), noord-zuid over de huizen
     cy = 15
     for x in range(8, Wm):

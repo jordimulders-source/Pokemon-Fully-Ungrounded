@@ -65,7 +65,7 @@ def far_range(pair):
         left = ((x - px_) % W_) >= W_ // 2
         for y in range(H_):
             if y < top:
-                col = None
+                col = P4[11]  # heiige lucht/gletsjer achter de keten
             elif y == top:
                 col = OL
             elif y < top + 9 + ((x // 3) % 3):

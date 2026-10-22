@@ -29,10 +29,15 @@
 | Tango / milonga | bandoneon, strijkers, piano | **redelijk** | bandoneon ≈ accordeon-sample; staccato strijkers werken, legato-strijkers worden dun |
 | Chicha (Amazone-cumbia) | surfgitaar, orgel, timbales | **redelijk** | gitaar met tremolo moet een eigen sample zijn; orgel gaat goed |
 | Salsa | koperblazers, piano-montuno, congas, timbales | **goed (bewezen)** | het salsa-thema van Keccles in Ungrounded is erg goed gelukt (Jordi): `tools/grounded/keccles_theme.py`/`keccles_samples.py` als voorbeeld |
-| Samba / batucada | surdo, tamborim, caixa, cuíca, agogô | **lastig** | veel gelijktijdige percussie kost kanalen; cuíca is moeilijk na te maken; een uitgedunde versie kan |
+| Samba / batucada | surdo, tamborim, caixa, cuíca, agogô | **lastig, maar moet erin** (Jordi: hoort bij het Brazilië-deel) | zie aanpak hieronder |
 | Bossa nova | nylongitaar-akkoorden, zachte zang | **lastig** | ingetogen akkoorden en stem zijn waar de GBA het zwakst is; als melodie op fluit kan het wel |
 | Vallenato / kaseko | accordeon, caja/snaredrum, guacharaca | **goed** | vergelijkbaar met cumbia |
 | Reggaeton | dembow-ritme (kick, snare, hi-hat), synthbas, synth-stabs | **goed** | vooral ritme en een vette bas: de GBA-drums en een eigen 808-achtige bas doen het werk; zang wordt een synthlead |
 | Bachata | twee gitaren (requinto-arpeggio's), bongo, güira | **goed** | heldere tokkelende gitaarlijn + ritme; eigen gitaarsample |
 | Latin rock (Soda Stereo-achtig) | elektrische gitaar met chorus/delay, bas, synths, drums | **redelijk** | GBA-rock werkt (vgl. bestaande gevechtsmuziek); de chorusgitaar vraagt een eigen sample |
 | Nueva canción / folk | akoestische gitaar, stem, charango | **redelijk** | zonder stem moet een melodie-instrument de zang overnemen (quena, fluit) |
+
+## Samba op de GBA (aanpak, nog te testen)
+- **Uitdunnen tot de kern:** surdo (één sample, twee toonhoogtes voor de wisselende slagen), caixa (snare in 16e), tamborim (hoog patroon), agogô (twee bellen), cuíca (één kort sample met pitch bend), cavaquinho (korte akkoordslagen) en één melodie.
+- **Kanalen sparen:** agogô en tamborim op de PSG-kanalen (square/noise), zodat de DirectSound-kanalen vrij blijven voor surdo, caixa, cavaquinho en melodie.
+- **Eerst een korte proef** (±20 s) en die laten horen, vóór er een volledig nummer komt.

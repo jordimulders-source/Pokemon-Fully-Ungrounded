@@ -5,12 +5,10 @@
 // Fully Ungrounded: verdwenen Hoenn-kaarten die de code nog noemt. Elke kaart heeft een eigen waarde in een
 // groep die niet bestaat (0x40 + oude groep), dus een test erop is nooit waar. Opruimen per systeem
 // (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen tot hij leeg is en weg kan.
-// 241 kaarten, 21 layouts, 23 heal locations, 76 local ids.
+// 233 kaarten, 21 layouts, 23 heal locations, 76 local ids.
 
 // kaarten
 enum {
-    MAP_ABANDONED_SHIP_ROOMS2_1F = (62 | (0x58 << 8)),
-    MAP_ABANDONED_SHIP_ROOMS_1F = (56 | (0x58 << 8)),
     MAP_ALTERING_CAVE = (106 | (0x58 << 8)),
     MAP_ANCIENT_TOMB = (68 | (0x58 << 8)),
     MAP_ASHFROST_TOWN = (56 | (0x40 << 8)),
@@ -70,7 +68,6 @@ enum {
     MAP_FORTREE_CITY_POKEMON_CENTER_1F = (2 | (0x4C << 8)),
     MAP_FORTREE_CITY_POKEMON_CENTER_2F = (3 | (0x4C << 8)),
     MAP_ISLAND_CAVE = (67 | (0x58 << 8)),
-    MAP_JAGGED_PASS = (13 | (0x58 << 8)),
     MAP_LAVARIDGE_TOWN = (12 | (0x40 << 8)),
     MAP_LAVARIDGE_TOWN_GYM_1F = (1 | (0x44 << 8)),
     MAP_LAVARIDGE_TOWN_GYM_B1F = (2 | (0x44 << 8)),
@@ -100,7 +97,6 @@ enum {
     MAP_MAUVILLE_CITY_POKEMON_CENTER_1F = (5 | (0x4A << 8)),
     MAP_MAUVILLE_CITY_POKEMON_CENTER_2F = (6 | (0x4A << 8)),
     MAP_METEOR_FALLS_1F_1R = (0 | (0x58 << 8)),
-    MAP_METEOR_FALLS_1F_2R = (1 | (0x58 << 8)),
     MAP_METEOR_SPACE = (120 | (0x58 << 8)),
     MAP_MOSSDEEP_CITY = (6 | (0x40 << 8)),
     MAP_MOSSDEEP_CITY_GYM = (0 | (0x4E << 8)),
@@ -109,10 +105,7 @@ enum {
     MAP_MOSSDEEP_CITY_POKEMON_CENTER_2F = (4 | (0x4E << 8)),
     MAP_MOSSDEEP_CITY_SPACE_CENTER_1F = (9 | (0x4E << 8)),
     MAP_MOSSDEEP_CITY_SPACE_CENTER_2F = (10 | (0x4E << 8)),
-    MAP_MT_CHIMNEY = (12 | (0x58 << 8)),
     MAP_MT_CHIMNEY_CABLE_CAR_STATION = (1 | (0x53 << 8)),
-    MAP_MT_PYRE_3F = (17 | (0x58 << 8)),
-    MAP_MT_PYRE_6F = (20 | (0x58 << 8)),
     MAP_MT_PYRE_SUMMIT = (22 | (0x58 << 8)),
     MAP_NEW_MAUVILLE_INSIDE = (53 | (0x58 << 8)),
     MAP_OLDALE_TOWN = (10 | (0x40 << 8)),
@@ -249,7 +242,6 @@ enum {
     MAP_VERDANTURF_TOWN_MART = (3 | (0x46 << 8)),
     MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F = (4 | (0x46 << 8)),
     MAP_VERDANTURF_TOWN_POKEMON_CENTER_2F = (5 | (0x46 << 8)),
-    MAP_VICTORY_ROAD_1F = (43 | (0x58 << 8)),
 };
 
 // layouts

@@ -4932,8 +4932,6 @@ BattleScript_LocalBattleWonLoseTexts::
 	waitstate
 	printstring STRINGID_TRAINER2LOSETEXT
 BattleScript_LocalBattleWonReward::
-	jumpifbyte CMP_NOT_EQUAL, gCasinoBattle, FALSE, BattleScript_CasinoBattleWonEnd
-	jumpifbyte CMP_NOT_EQUAL, gStadiumBattle, FALSE, BattleScript_PayDayMoneyAndPickUpItems
 	getmoneyreward
 	printstring STRINGID_PLAYERGOTMONEY
 	waitmessage B_WAIT_TIME_LONG
@@ -4942,15 +4940,9 @@ BattleScript_PayDayMoneyAndPickUpItems::
 	pickup
 	end2
 
-@ Project Grounded: Battle Casino, geen geld, Pay Day of Pickup voor het geleende team
-BattleScript_CasinoBattleWonEnd::
-	end2
-
 BattleScript_LocalBattleLost::
 	jumpifbattletype BATTLE_TYPE_DOME, BattleScript_CheckDomeDrew
 	jumpifbattletype BATTLE_TYPE_FRONTIER, BattleScript_LocalBattleLostPrintTrainersWinText
-	jumpifbyte CMP_NOT_EQUAL, gStadiumBattle, FALSE, BattleScript_LocalBattleLostPrintTrainersWinText
-	jumpifbyte CMP_NOT_EQUAL, gCasinoBattle, FALSE, BattleScript_LocalBattleLostPrintTrainersWinText
 	jumpifbattletype BATTLE_TYPE_TRAINER_HILL, BattleScript_LocalBattleLostPrintTrainersWinText
 	jumpifbattletype BATTLE_TYPE_EREADER_TRAINER, BattleScript_LocalBattleLostEnd
 	jumpifhalfword CMP_EQUAL, gTrainerBattleParameter + 2, TRAINER_SECRET_BASE, BattleScript_LocalBattleLostEnd
@@ -9382,32 +9374,6 @@ BattleScript_DimensionalWarpActivates::
     waitmessage B_WAIT_TIME_LONG
     playanimation BS_BATTLER_0, B_ANIM_TRICK_ROOM
     end3
-
-@ Project Grounded: The Spire - DEFEND en blok
-BattleScript_SpireDefendSelf::
-	printstring STRINGID_SPIREDEFENDSELF
-	waitmessage B_WAIT_TIME_MED
-	end2
-
-BattleScript_SpireDefendAlly::
-	printstring STRINGID_SPIREDEFENDALLY
-	waitmessage B_WAIT_TIME_MED
-	end2
-
-BattleScript_SpireDefendBoth::
-	printstring STRINGID_SPIREDEFENDBOTH
-	waitmessage B_WAIT_TIME_MED
-	end2
-
-BattleScript_SpireBlockAbsorbed::
-	printstring STRINGID_SPIREBLOCKABSORBED
-	waitmessage B_WAIT_TIME_MED
-	return
-
-BattleScript_SpireBlockSoftened::
-	printstring STRINGID_SPIREBLOCKSOFTENED
-	waitmessage B_WAIT_TIME_MED
-	return
 
 @ Project Grounded: Weather Report (Castform). Zet het weer waar het doelwit het zwakst tegen is en slaat dan toe.
 BattleScript_EffectWeatherReport::

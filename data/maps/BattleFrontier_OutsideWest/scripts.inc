@@ -514,31 +514,3 @@ BattleFrontier_OutsideWest_Text_MonWithLongTailInFrontier:
 	.string "It must be adorable. I'm sure of it…\p"
 	.string "Oh, challenges can wait. I feel driven\n"
 	.string "to find the delightful creature!$"
-
-
-@ Project Grounded: bord en praters bij The Spire
-BattleFrontier_OutsideWest_EventScript_SpireSign::
-	msgbox BattleFrontier_OutsideWest_Text_SpireSign, MSGBOX_SIGN
-	end
-
-BattleFrontier_OutsideWest_EventScript_SpireTalker1::
-	msgbox BattleFrontier_OutsideWest_Text_SpireTalker1, MSGBOX_NPC
-	end
-
-BattleFrontier_OutsideWest_EventScript_SpireTalker2::
-	msgbox BattleFrontier_OutsideWest_Text_SpireTalker2, MSGBOX_NPC
-	end
-
-BattleFrontier_OutsideWest_Text_SpireSign:
-	.string "THE SPIRE\n"
-	.string "Climb. Lose everything. Climb again.$"
-
-BattleFrontier_OutsideWest_Text_SpireTalker1:
-	.string "I made it to the second act once.\p"
-	.string "Then a SNORLAX ate my relics.\n"
-	.string "All of them. It didn't even chew.$"
-
-BattleFrontier_OutsideWest_Text_SpireTalker2:
-	.string "They say nobody has reached the top.\p"
-	.string "They also say there is no top.\n"
-	.string "I'm not sure which part scares me.$"

@@ -623,9 +623,6 @@
     "NavelRock_Down11",
     "NavelRock_Bottom",
     "TrainerHill_Elevator",
-    "BattleFrontier_SpireLobby",
-    "BattleFrontier_StadiumLobby",
-    "BattleFrontier_StadiumArena",
     "LibertyGarden",
     "FlowerParadise_Shore",
     "FlowerParadise_Meadow"
@@ -756,7 +753,6 @@
     "UnchartedIsle",
     "MangroveMire_VirizionGlade",
     "CrownTundra",
-    "BattleFrontier_BattleCasino",
     "AbandonedShip_NightDeck",
     "AbandonedShip_NightCabins"
   ],

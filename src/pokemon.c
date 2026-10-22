@@ -13,7 +13,6 @@
 #include "battle_tower.h"
 #include "battle_z_move.h"
 #include "data.h"
-#include "stadium.h" // Project Grounded: gStadiumBattle (trainerklasse-remixes)
 #include "daycare.h"
 #include "dexnav.h"
 #include "event_data.h"
@@ -48,7 +47,6 @@
 #include "regions.h"
 #include "rtc.h"
 #include "sound.h"
-#include "spire.h"
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
@@ -6118,19 +6116,17 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
      && trainerId == TRAINER_PROF_OAK)
         return MUS_RG_OAK_LAB;
 
-    // Project Grounded: de Shy Guys (Stadium) vechten op Sunset Wilds (Mario Kart: Super Circuit)
-    if (trainerId == TRAINER_STADIUM_SHY_GUY_RED || trainerId == TRAINER_STADIUM_SHY_GUY_GREEN
-     || trainerId == TRAINER_STADIUM_SHY_GUY_PINK || trainerId == TRAINER_STADIUM_SHY_GUY_BLACK
-     || trainerId == TRAINER_SHY_GUY_DESERT
+    // Project Grounded: de Shy Guys vechten op Sunset Wilds (Mario Kart: Super Circuit)
+    if (trainerId == TRAINER_SHY_GUY_DESERT
      || trainerClass == TRAINER_CLASS_SHY_SQUAD) // Project Grounded: ook de Shy Squad op Yoshi's Island
         return MUS_GROUNDED_VS_SUNSET_WILDS;
 
-    // Project Grounded: Wario (eindbaas in het fort op Yoshi's Island, ook in het Stadium) vecht op Fiery Cavern (Wario Land 4)
-    if (trainerId == TRAINER_YI_WARIO || trainerId == TRAINER_STADIUM_WARIO)
+    // Project Grounded: Wario (eindbaas in het fort op Yoshi's Island) vecht op Fiery Cavern (Wario Land 4)
+    if (trainerId == TRAINER_YI_WARIO)
         return MUS_GROUNDED_WL4_FIERY_CAVERN;
 
-    // Project Grounded: de Boos (Commander Boo op Yoshi's Island, Boo in het Stadium) vechten op Boo Lake & Broken Pier
-    if (trainerId == TRAINER_YI_COMMANDER_BOO || trainerId == TRAINER_STADIUM_BOO)
+    // Project Grounded: de Boos (Commander Boo op Yoshi's Island) vechten op Boo Lake & Broken Pier
+    if (trainerId == TRAINER_YI_COMMANDER_BOO)
         return MUS_GROUNDED_VS_BROKEN_PIER;
 
     // Project Grounded: Dave (Cooltrainer, Victory Road; ook in het Stadium) vecht op Freed From Desire (Gala)
@@ -6207,7 +6203,7 @@ static u16 GetTrainerBattleBGM(u16 trainerId)
 
     switch (trainerClass)
     {
-    case TRAINER_CLASS_BURGLAR: // Project Grounded: SIMON de inbreker (TRAINER_BURGLAR_1-9, ook TRAINER_STADIUM_BURGLAR)
+    case TRAINER_CLASS_BURGLAR: // Project Grounded: SIMON de inbreker (TRAINER_BURGLAR_1-9)
         return MUS_GROUNDED_VS_BURGLAR;
     case TRAINER_CLASS_SCIENTIST: // Project Grounded: Colress
         return MUS_GROUNDED_VS_COLRESS;
@@ -6690,11 +6686,10 @@ u16 GetBattleBGM(void)
         song = MUS_GROUNDED_VS_MAGIKARP; // Project Grounded: een team van alleen Magikarp (Gyarados niet)
     // Project Grounded: trainerklasse-remix (zee, berg, natuur, ...) i.p.v. de standaard trainermuziek. Elk eigen thema
     // hierboven (gymleiders, Elite Four, rivalen, teams, Tower, Magikarp, ...) gaat voor; niet in de Frontier, de
-    // Trainer Hill, het Battle Stadium, geheime bases of e-Reader-gevechten, en niet als de speler zelf een thema koos.
+    // Trainer Hill, geheime bases of e-Reader-gevechten, en niet als de speler zelf een thema koos.
     if (song == GetChosenTrainerBattleMusic()
      && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SECRET_BASE
                               | BATTLE_TYPE_EREADER_TRAINER | BATTLE_TYPE_RECORDED))
-     && !gStadiumBattle
      && TrainerClassRemixAllowed())
     {
         u16 remix = GetTrainerClassRemixBGM(TRAINER_BATTLE_PARAM.opponentA);
@@ -6964,8 +6959,6 @@ static inline bool32 CanFirstMonBoostHeldItemRarity(void)
 
 void SetWildMonHeldItem(void)
 {
-    if (gSpireBattle) // Project Grounded: The Spire, vijanden hebben alleen hun vaste items
-        return;
     if (!(gBattleTypeFlags & (BATTLE_TYPE_LEGENDARY | BATTLE_TYPE_TRAINER | BATTLE_TYPE_PYRAMID | BATTLE_TYPE_PIKE)))
     {
         u16 rnd;

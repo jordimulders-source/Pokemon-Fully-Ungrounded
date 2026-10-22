@@ -306,11 +306,3 @@ BattleScript_TrainerBSlideMsgEnd2::
 	call BattleScript_TrainerBSlideMsgRet
 	end2
 
-@ Project Grounded: Battle Stadium (doubles): beide tegenstanders praten vóór de eerste beurt, om beurten
-BattleScript_StadiumTrainerABSlideMsgEnd2::
-	call BattleScript_TrainerASlideMsgRet
-	callnative BS_StadiumTrainerBSlide
-	.4byte BattleScript_StadiumTrainerABSlideEnd
-	call BattleScript_TrainerBSlideMsgRet
-BattleScript_StadiumTrainerABSlideEnd:
-	end2

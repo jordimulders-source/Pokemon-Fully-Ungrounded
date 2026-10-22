@@ -7,9 +7,7 @@
 #include "battle_ai_main.h"
 #include "battle_ai_util.h"
 #include "battle_scripts.h"
-#include "spire.h"
 #include "debug.h"
-#include "stadium.h"
 #include "battle_environment.h"
 #include "battle_z_move.h"
 #include "item.h"
@@ -1736,8 +1734,7 @@ s32 CalcCritChanceStage(u32 battlerAtk, u32 battlerDef, u32 move, bool32 recordA
                     + (GetBattlerSwallowedHoldEffect(battlerAtk) == HOLD_EFFECT_SCOPE_LENS ? 1 : 0) // Project Grounded: Gulp Down
                     + ((B_AFFECTION_MECHANICS == TRUE && GetBattlerAffectionHearts(battlerAtk) == AFFECTION_FIVE_HEARTS) ? 2 : 0)
                     + (abilityAtk == ABILITY_SUPER_LUCK ? 1 : 0)
-                    + gBattleMons[battlerAtk].volatiles.bonusCritStages
-                    + ((gSpireBattle && IsOnPlayerSide(battlerAtk) && Spire_HasRelic(SPIRE_RELIC_DIRE_HIT)) ? 1 : 0); // Project Grounded
+                    + gBattleMons[battlerAtk].volatiles.bonusCritStages;
 
         if (critChance >= ARRAY_COUNT(sCriticalHitOdds))
             critChance = ARRAY_COUNT(sCriticalHitOdds) - 1;
@@ -2018,8 +2015,6 @@ static void Cmd_adjustdamage(void)
             continue;
         }
 
-        Spire_AbsorbDamage(battlerDef); // Project Grounded: The Spire, blok vangt eerst op
-
         if (gBattleMons[battlerDef].hp > gBattleStruct->moveDamage[battlerDef])
             continue;
 
@@ -2059,17 +2054,12 @@ static void Cmd_adjustdamage(void)
             gLastUsedAbility = ABILITY_STURDY;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_STURDIED;
         }
-        else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && (IsBattlerAtMaxHp(battlerDef) || gSpireBattle)) // Project Grounded: Spire, op elke HP
+        else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && IsBattlerAtMaxHp(battlerDef))
         {
             enduredHit |= 1u << battlerDef;
             RecordItemEffectBattle(battlerDef, holdEffect);
             gLastUsedItem = gBattleMons[battlerDef].item;
             gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_HUNG_ON;
-        }
-        else if (Spire_TryRelicEndure(battlerDef)) // Project Grounded: The Spire, relic Resist Feather
-        {
-            enduredHit |= 1u << battlerDef;
-            gBattleStruct->moveResultFlags[battlerDef] |= MOVE_RESULT_FOE_ENDURED;
         }
         else if (B_AFFECTION_MECHANICS == TRUE && IsOnPlayerSide(battlerDef) && affectionScore >= AFFECTION_THREE_HEARTS)
         {
@@ -2727,9 +2717,6 @@ static void Cmd_resultmessage(void)
     u16 *moveResultFlags = &gBattleStruct->moveResultFlags[gBattlerTarget];
 
     if (gBattleControllerExecFlags)
-        return;
-
-    if (Spire_TryPrintBlockAbsorbed()) // Project Grounded: The Spire
         return;
 
     // TODO: Convert this to a proper FORM_CHANGE type.
@@ -4785,10 +4772,6 @@ FEATURE_FLAG_ASSERT(I_EXP_SHARE_FLAG, YouNeedToSetTheExpShareFlagToAnUnusedFlag)
 
 static bool32 BattleTypeAllowsExp(void)
 {
-    if (gSpireBattle) // Project Grounded: rentals in The Spire krijgen geen exp
-        return FALSE;
-    if (gStadiumBattle || gCasinoBattle) // Project Grounded: Battle Stadium (level-50-kopieën), Battle Casino
-        return FALSE;
     if (RECORDED_WILD_BATTLE)
         return TRUE;
     else if (gBattleTypeFlags &
@@ -5185,11 +5168,8 @@ bool32 NoAliveMonsForPlayer(void)
             ineligibleMonsCount++;
     }
 
-    // Project Grounded: in het Stadium is de opgeslagen party het echte team buiten het toernooi
-    // (doet niet mee); verloren pas als jij én je partner niets meer hebben (HP_count hieronder).
     if (B_MULTI_BATTLE_WHITEOUT > GEN_3 && gBattleTypeFlags & (BATTLE_TYPE_MULTI | BATTLE_TYPE_INGAME_PARTNER)
-     && !(gBattleTypeFlags & BATTLE_TYPE_ARENA) && !(IsMultibattleTest()) // Multibattle tests appear to not save the player party data for the check below.
-     && !gStadiumBattle)
+     && !(gBattleTypeFlags & BATTLE_TYPE_ARENA) && !(IsMultibattleTest())) // Multibattle tests appear to not save the player party data for the check below.
     {
         for (i = 0; i < PARTY_SIZE; i++)
         {
@@ -10824,11 +10804,6 @@ static u32 ChangeStatBuffs(u32 battler, s8 statValue, enum Stat statId, union St
         statValue = (SET_STAT_BUFF_VALUE(GET_STAT_BUFF_VALUE(statValue) * 2)) | ((statValue <= -1) ? STAT_BUFF_NEGATIVE : 0);
         RecordAbilityBattle(battler, battlerAbility);
     }
-    // Project Grounded: The Spire, statusmove+ verandert een stat één stap meer
-    if (!flags.onlyChecking && IsBattleMoveStatus(gCurrentMove) && Spire_IsMoveUpgraded(gBattlerAttacker, gCurrentMove)
-     && GET_STAT_BUFF_VALUE(statValue) < 6)
-        statValue = (SET_STAT_BUFF_VALUE(GET_STAT_BUFF_VALUE(statValue) + 1)) | ((statValue <= -1) ? STAT_BUFF_NEGATIVE : 0);
-
     PREPARE_STAT_BUFFER(gBattleTextBuff1, statId);
 
     if (statValue <= -1) // Stat decrease.
@@ -11551,7 +11526,7 @@ static void Cmd_tryKO(void)
         endured = FOCUS_BANDED;
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
     }
-    else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && (IsBattlerAtMaxHp(gBattlerTarget) || gSpireBattle)) // Project Grounded: Spire, op elke HP
+    else if (holdEffect == HOLD_EFFECT_FOCUS_SASH && IsBattlerAtMaxHp(gBattlerTarget))
     {
         endured = FOCUS_SASHED;
         RecordItemEffectBattle(gBattlerTarget, holdEffect);
@@ -15156,17 +15131,6 @@ void BS_RestoreAttacker(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
-// Project Grounded: Battle Stadium (doubles): bericht van tegenstander B klaarzetten, anders naar noSlideInstr
-void BS_StadiumTrainerBSlide(void)
-{
-    NATIVE_ARGS(const u8 *noSlideInstr);
-
-    if (Stadium_SetTrainerBFirstTurnSlide())
-        gBattlescriptCurrInstr = cmd->nextInstr;
-    else
-        gBattlescriptCurrInstr = cmd->noSlideInstr;
-}
-
 void BS_CalcMetalBurstDmg(void)
 {
     NATIVE_ARGS(const u8 *failInstr);
@@ -17168,7 +17132,7 @@ void BS_JumpIfNoWhiteOut(void)
 {
     NATIVE_ARGS(const u8 *jumpInstr);
 
-    if (FlagGet(B_FLAG_NO_WHITEOUT) || gSpireBattle) // Project Grounded: geen whiteout/geldverlies in The Spire
+    if (FlagGet(B_FLAG_NO_WHITEOUT))
         gBattlescriptCurrInstr = cmd->jumpInstr;
     else
         gBattlescriptCurrInstr = cmd->nextInstr;
@@ -19309,7 +19273,7 @@ static bool32 Grounded_ShouldWarnObedience(void)
 {
     if (gBattleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_RECORDED_LINK | BATTLE_TYPE_RECORDED | BATTLE_TYPE_FRONTIER))
         return FALSE;
-    if (gSpireBattle || gDebugBattleTest)
+    if (gDebugBattleTest)
         return FALSE;
     return GetPlayerObedienceLevel() < MAX_LEVEL;
 }

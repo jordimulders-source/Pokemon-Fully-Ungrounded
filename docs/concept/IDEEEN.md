@@ -101,3 +101,10 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
   - **Rock/Ghost:** de *chullpa's* van Sillustani bij het Titicacameer, stenen grafttorens waarin voorouders zittend werden begraven. De ingang wijst naar de opkomende zon, zodat de ziel herboren kan worden.
   - **Rock/Psychic:** de *cabezas clavas* van Chavín de Huántar, stenen koppen in de tempelmuur die de verandering van sjamaan naar jaguar tonen (onder invloed van de San Pedro-cactus). Of de perfect gezaagde H-blokken van Puma Punku (Tiwanaku), waar niemand precies weet hoe ze gemaakt zijn.
   - Kan in de ruïnes leven: Tiwanaku, Chavín, Kuélap, Sillustani.
+
+## Nieuwe cactus-Pokémon? (Jordi denkt nog na, 22 okt)
+- Twijfel: Cacnea- en Maractus-lijn zitten al in de dex. Een nieuwe cactus moet dus duidelijk iets anders doen.
+- Mogelijke invalshoeken (Claude):
+  - de **reuzencardón van Isla Incahuasi**: oeroud, langzaam, een wachter op het zoutvlak;
+  - de **San Pedro-cactus** (*huachuma*), die in Chavín ceremonieel gebruikt werd. Die kan samenvallen met het idee van de ruïne-Pokémon (Grass/Psychic of Rock/Psychic: ziener).
+  - de **Puya raimondii** staat al op de lijst met iconische planten, maar is geen cactus.

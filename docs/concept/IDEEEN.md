@@ -26,6 +26,9 @@ Alles wat Jordi tijdens het brainstormen noemt, in steekwoorden. Het concept (`d
 ## Personages
 - Bij voorkeur nieuwe personages; een paar cameo's is leuk.
 
+## Toon
+- Verhaal serieuzer dan Ungrounded (dat was 100% humor). Humor niet verboden, maar minder een gimmick.
+
 ## Eten en cultuur
 - Aardappels en maïs zijn extreem populair over het hele continent: daar moet iets mee (Pokémon, items, een quest, een stad die erom draait?). Andes = bakermat van de aardappel (duizenden soorten), maïs overal (choclo, chicha, mote).
 - Empanadas (natuurlijk). Per land/regio een andere vulling en vouw: verzamelobject, item, of een Pokémon met regionale vormen.

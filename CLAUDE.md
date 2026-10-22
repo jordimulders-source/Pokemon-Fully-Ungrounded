@@ -21,7 +21,7 @@ Vervolg op **Pokémon Ungrounded** (Project Grounded), gebouwd als fork daarvan 
 - **Debugmenu blijft aan** (`DEBUG_OVERWORLD_MENU` en `DEBUG_BATTLE_MENU` in `include/config/debug.h`).
 - **Mail en Magikarp-levels** niet aanpassen.
 - **Grap-trainers blijven een grap:** extreem lage levels op sterke Pokémon zijn bewust (bijv. Ivan's Gyarados lv 3, Lyle's Scizor/Yanmega lv 6). Ze moeten schrikken, niet onverslaanbaar zijn. Alleen **vroeg in de game** (Jordi, 6 okt: "die Gyarados zo laag aan het begin is omdat die anders niet te verslaan is"); laat in de game is een laag level tijdverspilling: daar krijgen grap-trainers een echt team.
-- **Humor:** dialogen zijn bewust absurd en donker-humoristisch. Niet "netjes maken"; wel tekstregels afbreken zodat ze passen (`\n`, `\l`, `\p`).
+- **Toon (Jordi, 22 okt):** het verhaal van Fully Ungrounded is **serieuzer** dan Ungrounded (dat was 100% humor). Humor mag, maar is geen gimmick meer: droog en op zijn plek (NPC's, zijpaden), niet in elke regel en niet ten koste van het hoofdverhaal. Bestaande Ungrounded-teksten die meekomen niet "netjes maken"; wel tekstregels afbreken zodat ze passen (`\n`, `\l`, `\p`).
 - **Intro kort houden:** geen truck-intro, geen tv-scène. Mom houdt haar humoristische standaardtekst; healen, PokéNav-registratie en post-game-dialoog werken wel.
 - **(Ungrounded, voorlopig niet van toepassing) Battle Stadium-pool (Jordi):** alleen echt iconische personages komen in de toernooipool (met hun sterkste team): iets bijzonders zoals een eigen sprite, een eigen verhaal/quest of een gevecht dat je onthoudt (bijv. Colress, Zinnia, Mimi, Keccles, Grimsby). Geen gewone NPC's of routetrainers met alleen een naam en een standaardsprite (Jordi, 6 okt: "geen nono's en NPC's").
 - **Elemental monkeys** (Pansage/Pansear/Panpour-lijnen) mogen sinds 9 okt op routes waar ze passen (Jordi).
@@ -260,7 +260,7 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Nieuwe mapsec: `region_map_sections.json`, beide popup-tabellen in `src/map_name_popup.c`, en op de Town Map (zie Stand van zaken).
 
 ### Nieuwe NPC's en trainers
-- Teams en levels: zie "Trainer parties". Teksten: **meteen een humoristische placeholder in de huisstijl van deze romhack** (Jordi, 5 okt: "dat mag je voortaan doen"): droog, absurd, donker, self-aware, popcultuur, soms de vierde wand doorbrekend. Lees eerst wat bestaande teksten van Jordi en de humor-entries in de changelog (v0.6.x). Kort houden. Geldt ook voor teksten die subagents schrijven: geef ze deze opdracht mee. Jordi herschrijft wat hij wil via de Dialoogstudio.
+- Teams en levels: zie "Trainer parties". Teksten: **meteen een placeholder in de toon van dit project** (serieuzer verhaal, droge humor waar het past; zie Toon) (Jordi, 5 okt: "dat mag je voortaan doen"): droog, absurd, donker, self-aware, popcultuur, soms de vierde wand doorbrekend. Lees eerst wat bestaande teksten van Jordi en de humor-entries in de changelog (v0.6.x). Kort houden. Geldt ook voor teksten die subagents schrijven: geef ze deze opdracht mee. Jordi herschrijft wat hij wil via de Dialoogstudio.
 
 ### Testen
 - `python3 tools/grounded/maptools/testrom.py <scratchmap> "regels script 1" ["regels script 2" ...]` bouwt een test-ROM met tijdelijke debug-scripts (bijv. `warp MAP_X, x, y; waitstate`) en zet `debug.inc` terug. Daarna in Python: `Emu(rom)`, `load(e, intro)`, `debug_script(e, 1)` (`emu.py`). Bouw daarna opnieuw voor een schone ROM.

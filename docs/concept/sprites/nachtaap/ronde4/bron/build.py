@@ -31,9 +31,9 @@ def shift(m, dx, dy):
 
 
 def tail_shape(up=0):
-    pts = bezier((38, 50), (46, 57), (50.5, 48.5)) + bezier((50.5, 48.5), (53.5, 42), (53, 37.5 - up))[1:] + \
-        spiral(48.8, 32.5 - up, 6.3, 1.3, 50, 50 - 450, 120)[1:]
-    r = np.linspace(2.0, 1.25, len(pts))
+    pts = bezier((38, 50), (46, 57), (50.5, 48.5)) + bezier((50.5, 48.5), (55, 42), (55.5, 35 - up))[1:] + \
+        spiral(48.0, 30.0 - up, 8.2, 1.8, 50, 50 - 450, 140)[1:]
+    r = np.linspace(2.5, 1.75, len(pts))
     return pts, stroke_var(pts, list(r)), stroke_var(pts, list(r - 1.0))
 
 
@@ -46,12 +46,11 @@ def shapes(frame):
     up = 1 if frame == 2 else 0
     pts, tm, ti = tail_shape(up)
     L = [S(tm, k=(1, 1), inner=ti),
-         S(ellipse(40, 18.5 - up, 2.5, 2.7), k=(1, 1)),                          # verre oor
+         S(ellipse(39.5, 18.5 - up, 2.3, 2.5), k=(1, 1)),                          # verre oor
          S(ellipse(36.5, 51, 5.5, 4.6), k=(4, 3)),                               # verre dij
          S(ellipse(40.5, 56, 4.0, 1.8), k=(2, 1)),                               # verre voet
          S(ellipse(28, 47.5, 9.0, 8.0) | ellipse(27.5, 41, 6.5, 5), k=(4, 3),    # peerlijf
            hl=ellipse(23, 41, 1.6, 1.4)),
-         S(ellipse(29, 48.5, 4.5, 4.5), 'z', k=(2, 2)),                          # lichte buik
          S(ellipse(21, 51.5, 6.5, 4.8), k=(4, 3), hl=ellipse(18, 49, 2.0, 1.2)),  # nabije dij
          S(ellipse(15.5, 56, 5.0, 2.0), k=(2, 1)),                               # nabije voet
          S(stroke_var([(34, 40), (35.5, 44.5), (31.5, 47)], [1.8, 1.8, 1.6]), k=(2, 2))]   # verre arm
@@ -120,20 +119,28 @@ def stamp(idx, x0, y0, rows):
 # ---- handgetekende delen (x0, y0 = linksboven) ----
 # gezicht: nachtaapmasker (donkere middenstreep, zijstrepen), witte vlekken boven de ogen,
 # halve oogleden (Espurr/Natu), donkere iris met 1 glanspixel en 2 px maangloed onderin.
-FACE = [  # x 15..34, y 18..30 (c0 = x15); nabij oog x17..23, verre oog x27..32, middenstreep x25
-    '          4         ',
-    '          4         ',
-    '   55555  4  5555   ',
-    '  5666665 4 566665  ',
-    ' 4 66666  4  6666  4',
-    ' 4333333324233333324',
-    ' 4333333324233333324',
-    ' 4XXXXXXX242XXXXXX24',
-    ' 4deddddd222dedddd24',
-    ' 4ddddddd222dddddd24',
-    ' 4dddddcd222ddddcd24',
-    ' 43dddcc32223dddc324',
-    '  344444322234444 4 ',
+# gezicht als losse stukken (x, y, rijen); ' ' laat de ondergrond staan
+NEAR_EYE = [' 333333 ',     # halve oogleden (Espurr/Natu): rechte lidlijn
+            'XXXXXXXX',
+            'dceccccd',     # gloeiende maan-iris zonder pupil, 1 glanspixel, donkere rand
+            'dccbbccd',
+            'dccbbccd',
+            ' dccccd ',
+            '  dddd  ']
+FAR_EYE = [' 3333 ',
+           'XXXXXX',
+           'deccdd',
+           'dcbbcd',
+           'dcbbcd',
+           ' dccd ',
+           '  dd  ']
+FACE = [
+    (16, 23, NEAR_EYE), (28, 23, FAR_EYE),
+    (17, 20, ['  5555 ', ' 566665', '  6666 ']),       # witte vlek boven het nabije oog
+    (28, 20, [' 5555', '56665', ' 666 ']),             # boven het verre oog
+    (25, 16, ['4', '44', '44', '44', '44', '44', '44', '4']),  # middenstreep tot tussen de ogen
+    (14, 26, ['44', '44']), (15, 28, ['44', '44']), (16, 30, ['44']), (17, 31, ['4']),  # zijstreep nabij
+    (34, 26, ['44', '44']), (33, 28, ['44', '4']),                                      # zijstreep ver
 ]
 MUZZLE = [  # x 20..27, y 31..34
     ' 566667 ',
@@ -168,20 +175,21 @@ HAND_UP = [  # zwaaiende handpalm met 3 vingers, in lijfkleur
     ' 41223X',
     '  4XX  ',
 ]
-TOES = [  # nabije voet: 3 teentjes
-    'X.X.X',
-]
+TOES = [(12, 56, ['4 4']), (39, 56, ['4'])]   # teenscheidingen op de voeten
 
 
 def build(frame):
     up = 1 if frame == 2 else 0
     L = shapes(frame)
     idx = render(L)
-    stamp(idx, 15, 18 - up, FACE)
+    for x0, y0, rows in FACE:
+        stamp(idx, x0, y0 - up, rows)
     stamp(idx, 20, 31 - up, MUZZLE)
     for x0, y0, rows in EARS[frame]:
         stamp(idx, x0, y0, rows)
     stamp(idx, 22, 42, PEARL if frame == 1 else PEARL2)
+    for x0, y0, rows in TOES:
+        stamp(idx, x0, y0, rows)
     if frame == 2:
         stamp(idx, 9, 31, HAND_UP)
     # staartpunt licht roze op

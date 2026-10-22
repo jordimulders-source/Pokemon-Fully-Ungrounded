@@ -28,7 +28,7 @@ P = pair.pals
 fal = load_set('secondary', 'fallarbor')
 F = [[tuple(int(v) for v in c) for c in fal['pals'][i]] for i in range(16)]
 
-BARK = [(240, 168, 128), (216, 120, 88), (176, 80, 56), (136, 48, 40), (80, 32, 24)]
+BARK = [(232, 176, 120), (200, 136, 88), (168, 104, 64), (120, 72, 48), (72, 40, 24)]
 LEAF = [(168, 200, 120), (104, 152, 88), (56, 104, 64), (32, 56, 32)]
 TREE = {1: LEAF[0], 2: LEAF[1], 3: LEAF[2], 4: LEAF[3], 5: PUNA[0], 6: PUNA[2], 7: PUNA[3],
         9: BARK[0], 10: BARK[1], 11: BARK[2], 12: BARK[3], 13: BARK[4], 14: CLAY[4], 15: CLAY[5]}
@@ -51,18 +51,55 @@ P[12] = [(255, 0, 255), (41, 49, 90)] + BO + WA + [PUNA[0], PUNA[1], PUNA[2], (2
                                                     (40, 64, 40)]
 assert len(P[12]) == 16
 
+GROUND = 0x001
 FMAP = {6: 6, 7: 7, 8: 8, 9: 9, 11: 11, 3: 10}
 FMAP_CLAY = {6: 6, 7: 7, 8: 8, 9: 9, 11: 11}
-HOUSE = pair.import_region(fal, 'Route114', 28, 2, 32, 6, FMAP, 'fal')
-TREE2 = pair.import_region(fal, 'Route114', 32, 3, 34, 5, FMAP, 'fal')
-CLIFF = pair.import_region(fal, 'Route114', 7, 2, 11, 6, FMAP, 'fal')
+
+
+def adobify(idx, srcpal):
+    """Muurpixels (index 1-4 van Fallarbor-palet 7) -> grote leemblokken (8 x 4, verspringend)."""
+    if srcpal != 7:
+        return idx
+    out = idx.copy()
+    for y in range(8):
+        for x in range(8):
+            if idx[y, x] in (1, 2, 3, 4):
+                row, r = y // 4, y % 4
+                bx = (x + row * 4) % 8
+                out[y, x] = 3 if (r == 3 or bx == 7) else (1 if (r == 0 and bx < 4) else (4 if (r == 2 and bx > 4) else 2))
+    return out
+
+
+HOUSE = []
+for y in range(2, 6):
+    row = []
+    for x in range(28, 32):
+        pass
+    HOUSE.append(row)
+_hg = [[0x344, 0x345, 0x345, 0x346], [0x285, 0x286, 0x286, 0x287], [0x28d, 0x29d, 0x29e, 0x28f],
+       [0x295, 0x2a5, 0x2a6, 0x297]]
+HOUSE = [[(pair.names.get(f'adobe_{m:03x}') or pair.import_mt(fal, m, FMAP, f'adobe_{m:03x}',
+                                                              tilemap=adobify if r >= 2 else None))
+          for m in row] for r, row in enumerate(_hg)]
+TREE2 = []
+for row in ((0x204, 0x205), (0x20c, 0x20d)):
+    r = []
+    for m in row:
+        nm = f'tree_{m:03x}'
+        pair.import_mt(fal, m, FMAP, nm + '_src')
+        e = pair.sm[pair.names[nm + '_src'] - 512]
+        r.append(pair.add_mt(nm, list(pair.ents(GROUND)[:4]) + e[4:], (1 << 12)))
+    TREE2.append(r)
+for m in (0x31e, 0x269, 0x271, 0x268, 0x270):
+    pair.import_mt(fal, m, FMAP, f'fal_{m:03x}')
+CLIFF = [[pair.names['fal_31e']] * 4, [pair.names['fal_269']] * 4, [pair.names['fal_269']] * 4,
+         [pair.names['fal_271']] * 4]
 FIELD = pair.import_region(fal, 'Route114', 33, 6, 36, 9, FMAP_CLAY, 'chacra')
 LEDGE = pair.import_region(fal, 'Route113', 20, 4, 26, 5, FMAP, 'fal')
 for m in (0x218, 0x20a, 0x2e8, 0x2ea, 0x2f0, 0x2f2, 0x279, 0x21b, 0x21d, 0x225, 0x21e, 0x226, 0x229):
     if f'fal_{m:03x}' not in pair.names:
         pair.import_mt(fal, m, FMAP, f'fal_{m:03x}')
 N = pair.names
-GROUND = 0x001
 
 
 # ------------------------------------------------------------------ zelf getekend
@@ -250,19 +287,17 @@ def mockup():
         put(g, x, 0, [[N['andes_sky']] * 4] * 2)
         put(g, x, 2, [[N[f'andes_range_{mx}_{my}'] for mx in range(4)] for my in range(3)])
     # droge puna (Route 113-asgrond) als vlakken
-    for y in range(5, 6):
-        for x in range(18, 30):
+    for y in range(14, 20):
+        for x in range(18, 24):
             g[y][x] = N['fal_218']
     for y in range(12, 20):
         for x in range(0, 6):
             g[y][x] = N['fal_218']
     # klifwand (Route 114) rechtsboven, met richel (Route 113) eronder
     for x in range(18, 30, 4):
-        put(g, x, 6, CLIFF[1:])
-    for x in range(18, 30):
-        g[5][x] = N['fal_21c']
+        put(g, x, 5, CLIFF)
     # ichu (hoog gras, primary) en paja brava (Route 113-asgras)
-    for (x0, y0, x1, y1, m) in ((1, 13, 5, 18, 0x0D), (19, 5, 24, 5, N['fal_20a']), (7, 15, 12, 19, 0x0D),
+    for (x0, y0, x1, y1, m) in ((1, 13, 5, 18, 0x0D), (19, 15, 22, 18, N['fal_20a']), (7, 15, 12, 19, 0x0D),
                                 (24, 14, 29, 19, 0x0D)):
         for y in range(y0, y1 + 1):
             for x in range(x0, x1 + 1):
@@ -297,7 +332,8 @@ def mockup():
             g[y][x] = BOF['e_' + k] if k else BOF[('pool', 'c', 'pool2', 'c')[(x * 3 + y) % 4]]
     put(g, 13, 8, OBJ['apacheta'])
     for (x, y, m) in ((0, 9, 0x004), (12, 4 + 1, 0x004), (17, 18, N['andes_kantuta']), (22, 16, 0x004),
-                      (5, 11, N['andes_kantuta']), (29, 10, 0x004)):
+                      (5, 11, N['andes_kantuta']), (29, 10, 0x004), (17, 6, 0xe0), (0, 11, 0xe0), (12, 18, 0xe0),
+                      (27, 10, 0xe0)):
         g[y][x] = m
     return g
 

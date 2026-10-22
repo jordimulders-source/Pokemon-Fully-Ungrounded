@@ -12,6 +12,9 @@
 - **Na gym 1** (Uyuni) meteen hot springs, een vulkaan en een sneeuwgebied (de Lípez-tour: Laguna Colorada, geisers, Licancabur).
 - **Laguna Colorada komt er zeker in** (Jordi, 22 okt): het rode meer ten zuiden van de Salar de Uyuni (±4300 m). Het water is rood door algen en pigmenten, met witte borax-eilanden, en er staan duizenden flamingo's (Flamigo en zijn evolutie, zie `POKEMON.md`). Ijzige wind en een kale vulkaanrand. Een eigen kaart in de Lípez-route na gym 1, met de rode tint in het waterpalet.
 - **Isla Incahuasi (het cactuseiland) komt er ook in** (Jordi, 22 okt): een rotseiland midden in de witte zoutvlakte van Uyuni. Het staat vol reuzencactussen (cardón, tot ±10 m hoog en soms meer dan 1000 jaar oud) en heeft versteend koraal, want de salar was ooit een meer. Je kunt er bij gym 1 (Uyuni) heen; het eiland past bij Cacnea/Maractus-achtige soorten of een cardón-fakemon en bij een uitkijkpunt over de zoutvlakte.
+- **Het zuiden van Bolivia wordt veel groter dan in het echt** (Jordi, 22 okt): rond Uyuni, Potosí en Lípez valt zoveel toe te voegen dat het gebied naar verhouding flink groter wordt. Vaste plekken:
+  - **Mijnschacht bij Potosí** (Jordi): de Cerro Rico, de 'zilverberg' die de Spanjaarden eeuwenlang leeggroeven (zilver voor Europa, miljoenen dode mijnwerkers). Er wordt nog steeds gewerkt, in gangen vol stof. Een grote **mijndungeon** met El Tío en de carbunclo (zie `MYTHOLOGIE.md`), en het systeem-thema zonder preek: kinderen en ouderen die er nog werken, coca tegen de honger.
+  - **Treinkerkhof bij Uyuni** (Jordi): het Cementerio de Trenes, tientallen roestende stoomlocomotieven uit de mijnbouwtijd op de vlakte, vlak buiten de stad. Een sfeervolle plek voor Steel/Ghost-Pokémon en schroot (vgl. Klink, Varoom), en een mooie eerste indruk van Uyuni.
 
 ## Grote steden
 - **De startstad (La Paz-achtig) wordt enorm**, met een **teleférico (kabelbaan) dwars door de stad**. Een stad waar je meermaals terugkomt (Jordi).

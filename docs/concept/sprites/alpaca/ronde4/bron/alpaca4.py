@@ -23,8 +23,8 @@ def glove(c, cx, cy, r, far=False):
     """Ronde bokshandschoen (duim aan de voorkant) met een smalle gouden polsband."""
     m = disk(cx, cy, r, r * 0.88) | disk(cx - r * 0.62, cy - r * 0.2, r * 0.48)
     top = cy - r * 0.88
-    band = poly([(cx - r * 0.3, top - 1.6), (cx + r * 0.6, top - 1.6),
-                 (cx + r * 0.6, top + 0.6), (cx - r * 0.3, top + 0.6)]) & ~m
+    band = poly([(cx - r * 0.3, top - 1.2), (cx + r * 0.6, top - 1.2),
+                 (cx + r * 0.6, top + 0.4), (cx - r * 0.3, top + 0.4)]) & ~m
     cel(c, band, 'goud', tones=FAR['goud'] if far else (11, 11, 12, 12), light=0, shade=(0, 1), deep=0)
     cel(c, m, 'rood', tones=FAR['rood'] if far else None, light=1 if not far else 0, shade=(2, 2), deep=1)
 
@@ -36,31 +36,34 @@ def lumps(c, items, light=1, shade=(2, 2), edge=4):
         cel(c, disk(x, y, r, r * 0.92), 'wol', light=light, shade=shade, deep=0, edge=edge)
 
 
-def frame(f2=False):
+def frame(f2=False, stand=False):
     c = Canvas(R)
     # --- verre poten (achter het lijf): donkerder, kleiner, hoger ---
-    cel(c, poly([(47.5, 41), (51, 41), (51, 49), (47.5, 49)]), 'vacht', tones=FAR['vacht'], light=0, deep=0)
-    cel(c, poly([(47, 49), (51.5, 49), (51.5, 51), (47, 51)]), 'vacht', tones=(7, 7, 7, 7), light=0, deep=0)
+    cel(c, poly([(45, 41), (48.5, 41), (48.5, 49), (45, 49)]), 'vacht', tones=FAR['vacht'], light=0, deep=0)
+    cel(c, poly([(44.5, 49), (49, 49), (49, 51), (44.5, 51)]), 'vacht', tones=(7, 7, 7, 7), light=0, deep=0)
     cel(c, poly([(29, 42), (32.5, 42), (32.5, 47), (29, 47)]), 'vacht', tones=FAR['vacht'], light=0, deep=0)
     glove(c, 31.5, 50, 3.5, far=True)
     # --- staart ---
-    cel(c, disk(51.5, 30, 3.0), 'wol', light=1, shade=(1, 2), deep=0)
+    cel(c, disk(49, 31, 3.0), 'wol', light=1, shade=(1, 2), deep=0)
     # --- wollen lijf: één wolk met een geschulpte rand, cel-geschaduwd als geheel ---
-    body = disk(37, 38, 10, 6.5)
-    for x, y, r in [(29, 34, 4.2), (35, 31.5, 4.4), (42, 31.5, 4.4), (47.5, 34.5, 3.8), (49.5, 40, 3.6),
-                    (46, 45, 3.8), (39.5, 46.5, 4.0), (33, 46.5, 4.0), (27.5, 43, 4.0), (26.5, 38, 4.0)]:
+    body = disk(36, 38.5, 9, 6.5)
+    for x, y, r in [(29, 34, 4.2), (35, 31.5, 4.4), (41.5, 32, 4.2), (46, 35.5, 3.8), (47, 41, 3.6),
+                    (43.5, 45.5, 3.8), (37.5, 46.5, 4.0), (31.5, 46.5, 4.0), (27, 43, 4.0), (26.5, 38, 4.0)]:
         body |= disk(x, y, r, r * 0.92)
     cel(c, body, 'wol', light=2, shade=(2, 3), deep=1)
     # --- nabije achterpoot ---
-    cel(c, poly([(41.5, 46), (46, 46), (45.5, 51.5), (42, 51.5)]), 'vacht', light=1, shade=(2, 0), deep=0, edge=15)
-    cel(c, poly([(41.5, 51.5), (46, 51.5), (46.5, 54), (41, 54)]), 'vacht', tones=(7, 7, 7, 7), light=0, deep=0)
+    cel(c, poly([(39.5, 46), (44, 46), (43.5, 51.5), (40, 51.5)]), 'vacht', light=1, shade=(2, 0), deep=0, edge=15)
+    cel(c, poly([(39.5, 51.5), (44, 51.5), (44.5, 54), (39, 54)]), 'vacht', tones=(7, 7, 7, 7), light=0, deep=0)
     # --- hals (wol) + borst ---
-    neck = disk(24.5, 37, 4.4, 5.5) | disk(23.5, 30.5, 4.0, 4.4)
+    neck = disk(25.5, 38, 4.6, 5.2) | disk(23.5, 32, 4.4, 4.6) | disk(21.5, 28, 4.0, 3.6)
     cel(c, neck, 'wol', light=1, shade=(2, 2), deep=1, edge=3)
     # --- nabije voorpoot + handschoen ---
     if f2:   # stoot naar voren
-        cel(c, poly([(25, 40), (27.5, 43), (18, 44.5), (16, 41.5)]), 'vacht', light=1, shade=(1, 2), deep=0, edge=15)
+        cel(c, poly([(25, 39), (28, 43.5), (18, 45.5), (15.5, 40.5)]), 'vacht', light=1, shade=(1, 2), deep=0, edge=15)
         glove(c, 12.5, 42, 5.0)
+    elif stand:   # alternatief (thumbnail): staat op beide handschoenen
+        cel(c, poly([(21, 42), (25.5, 42), (24, 47.5), (20, 47.5)]), 'vacht', light=1, shade=(1, 2), deep=0, edge=15)
+        glove(c, 21, 51, 4.8)
     else:    # opgeheven in de dekking (staat op drie poten, zoals Ponyta's voorbeen)
         cel(c, poly([(22, 41), (26.5, 42), (22.5, 47.5), (18.5, 46)]), 'vacht', light=1, shade=(1, 2), deep=0, edge=15)
         glove(c, 18, 47.5, 4.8)

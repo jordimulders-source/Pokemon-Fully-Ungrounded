@@ -38,7 +38,7 @@ SELOUT = (4, 8, 13)
 
 
 def ringed_tail(c, pts, widths, rings, tipdark=0.86):
-    o = c.tube('staart', 'vacht', pts, widths, shade=2)
+    o = c.tube('staart', 'vacht', pts, widths, shade=1.6)
     t = o.t
 
     def paint(x, y, cur):
@@ -101,8 +101,8 @@ def mask_map(spans):
 MASK = {20: [(23, 28)], 21: [(15, 18), (22, 30)], 22: [(14, 19), (21, 31)], 23: [(14, 32)],
         24: [(14, 19), (22, 32)], 25: [(15, 18), (22, 31)], 26: [(23, 29)], 27: [(25, 28)]}
 # Gen 3-ogen (Poochyena): zwart lid + glans boven de pupil, iris van licht naar donker
-EYE_NEAR = ['owoGGG', 'Goiggs']        # 6x2, pupil voorin (naar de snuit)
-EYE_FAR = ['wo', 'oG']                 # 2x2, verste oog (driekwart: smaller)
+EYE_NEAR = ['oowooo', 'oGoigG', '.Gogg.']   # 6x3, zwaar lid, glans boven de pupil voorin
+EYE_FAR = ['oow', 'Go.', 'G..']        # verste oog, smaller (driekwart)
 EYE_NEAR_SHUT = ['.oooo.', 'o....o']   # ^-oog voor "hehe"
 EYE_FAR_SHUT = ['oo', '.o']
 
@@ -113,10 +113,10 @@ def face(idx, ox=0, oy=0, closed=False):
             idx[y + oy, x + ox] = K[ch]
     K2 = dict(K); K2['s'] = 6    # binnen het masker is de 'schaduw' van de iris het masker-donker
     if not closed:
-        patch(idx, 24 + ox, 23 + oy, EYE_NEAR, K)
-        patch(idx, 17 + ox, 23 + oy, EYE_FAR, K)
+        patch(idx, 24 + ox, 22 + oy, EYE_NEAR, K)
+        patch(idx, 16 + ox, 22 + oy, EYE_FAR, K)
         # zwaar ooglid: één donkere pixel die het lid naar achteren verlengt (sluw)
-        idx[22 + oy, 29 + ox] = 15
+        idx[21 + oy, 29 + ox] = 15
     else:
         patch(idx, 24 + ox, 23 + oy, EYE_NEAR_SHUT, K)
         patch(idx, 17 + ox, 23 + oy, EYE_FAR_SHUT, K)
@@ -139,11 +139,11 @@ def body(c, oy=0, tail=None):
     c.tube('poot2', 'vacht', [(39, 50), (43, 55)], [5, 4], tone=2, shade=1.5, line='dark')
     c.ellipse('voet2', 'donker', 45, 56.5, 3, 1.8, tone=2, line='black')
     # lijf: schuin naar voren (sluiphouding)
-    c.ellipse('lijf', 'vacht', 32, 44 + oy, 8, 9.5, rot=-28, shade=2.5, hl=(28, 38 + oy, 2.5))
+    c.ellipse('lijf', 'vacht', 32, 44 + oy, 8, 9.5, rot=-28, shade=2, hl=(28, 38 + oy, 2.5))
     b = c.ellipse('buik', 'creme', 28.5, 45 + oy, 4, 6.5, rot=-28, shade=2)
     b.mask &= c.ellipse_mask(32, 44 + oy, 7.4, 8.9, rot=-28)
     # dichtste achterpoot: dij + sok op de tenen
-    c.ellipse('dij', 'vacht', 33.5, 51, 5.5, 5, rot=-20, shade=2.2)
+    c.ellipse('dij', 'vacht', 33.5, 51, 5.5, 5, rot=-20, shade=1.8)
     c.objs[-1].nocast = True
     c.tube('voet1', 'donker', [(31, 55.5), (27.5, 57)], [3.6, 3], line='black', shade=1.2)
 
@@ -156,8 +156,8 @@ def doek(c, oy=0, knot=((33, 30), (39, 28.5), (38, 31), (40, 33.5), (33.5, 33)))
 
 def head(c, ox=0, oy=0):
     c.ellipse('oor1', 'vacht', 16.5 + ox, 15.5 + oy, 3.2, 3.4, tone=2, shade=1.5)
-    c.ellipse('oor2', 'vacht', 31 + ox, 14 + oy, 3.9, 4.1, shade=2, hl=(30 + ox, 12 + oy, 1.5))
-    k = c.ellipse('kop', 'vacht', 23.5 + ox, 23.5 + oy, 10.5, 9.3, shade=2.2, hl=(18.5 + ox, 18.5 + oy, 2.2))
+    c.ellipse('oor2', 'vacht', 31 + ox, 14 + oy, 3.9, 4.1, shade=2)
+    k = c.ellipse('kop', 'vacht', 23.5 + ox, 23.5 + oy, 10.5, 9.3, shade=1.8, hl=(18.5 + ox, 18.5 + oy, 2.2))
     c.ellipse('snuit', 'creme', 14 + ox, 27.5 + oy, 4.6, 3.2, shade=1.6)
     return k
 

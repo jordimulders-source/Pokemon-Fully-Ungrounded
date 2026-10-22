@@ -26,7 +26,7 @@ REPO = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)),
 
 C_SOURCES = [
     'src/floating_market.c', 'src/fishing_tournament.c', 'src/apricorn_tree.c', 'src/new_game.c', 'src/gen1_ghost.c',
-    'src/battle_casino.c', 'src/bp_shop.c', 'src/lottery_corner.c', 'src/pokemon_jump.c', 'src/dodrio_berry_picking.c',
+    'src/bp_shop.c', 'src/lottery_corner.c', 'src/pokemon_jump.c', 'src/dodrio_berry_picking.c',
     'src/data/battle_frontier/battle_frontier_exchange_corner.h', 'src/data/battle_frontier/trainer_hill.h',
 ]
 # alleen bepaalde arrays uit een bestand (de rest is logica)

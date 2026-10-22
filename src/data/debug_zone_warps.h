@@ -96,7 +96,6 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_Grounded_1[] =
     { COMPOUND_STRING("UnchartedIsle"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_UNCHARTED_ISLE },
     { COMPOUND_STRING("MangroveMire_VirizionG"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MANGROVE_MIRE_VIRIZION_GLADE },
     { COMPOUND_STRING("CrownTundra"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_CROWN_TUNDRA },
-    { COMPOUND_STRING("BattleFrontier_BattleC"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_BATTLE_CASINO },
     { NULL }
 };
 
@@ -877,14 +876,11 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_SpecialArea_1[] =
     { COMPOUND_STRING("NavelRock_Down11"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_NAVEL_ROCK_DOWN11 },
     { COMPOUND_STRING("NavelRock_Bottom"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_NAVEL_ROCK_BOTTOM },
     { COMPOUND_STRING("TrainerHill_Elevator"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_TRAINER_HILL_ELEVATOR },
-    { COMPOUND_STRING("BattleFrontier_SpireLo"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_SPIRE_LOBBY },
     { NULL }
 };
 
 static const struct DebugMenuOption sDebugMenu_ZoneWarp_SpecialArea_2[] =
 {
-    { COMPOUND_STRING("BattleFrontier_Stadium"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_STADIUM_LOBBY },
-    { COMPOUND_STRING("BattleFrontier_Stadium"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_STADIUM_ARENA },
     { COMPOUND_STRING("LibertyGarden"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LIBERTY_GARDEN },
     { COMPOUND_STRING("FlowerParadise_Shore"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FLOWER_PARADISE_SHORE },
     { COMPOUND_STRING("FlowerParadise_Meadow"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FLOWER_PARADISE_MEADOW },

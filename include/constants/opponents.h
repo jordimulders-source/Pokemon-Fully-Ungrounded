@@ -900,71 +900,6 @@
 #define TRAINER_COLRESS_MAGMA                   889 // Project Grounded: Colress in de Magma Hideout
 #define TRAINER_ZINNIA                          890 // Project Grounded: Zinnia voor de Sky Pillar
 
-// Project Grounded: Battle Stadium (toernooi, alles lv 50)
-#define TRAINER_STADIUM_BROCK                   891
-#define TRAINER_STADIUM_MISTY                   892
-#define TRAINER_STADIUM_LT_SURGE                893
-#define TRAINER_STADIUM_ERIKA                   894
-#define TRAINER_STADIUM_KOGA                    895
-#define TRAINER_STADIUM_SABRINA                 896
-#define TRAINER_STADIUM_BLAINE                  897
-#define TRAINER_STADIUM_GIOVANNI                898
-#define TRAINER_STADIUM_LORELEI                 899
-#define TRAINER_STADIUM_BRUNO                   900
-#define TRAINER_STADIUM_AGATHA                  901
-#define TRAINER_STADIUM_LANCE                   902
-#define TRAINER_STADIUM_BLUE                    903
-#define TRAINER_STADIUM_RED                     904
-#define TRAINER_STADIUM_OAK                     905
-#define TRAINER_STADIUM_ROARK                   906
-#define TRAINER_STADIUM_GARDENIA                907
-#define TRAINER_STADIUM_MAYLENE                 908
-#define TRAINER_STADIUM_WAKE                    909
-#define TRAINER_STADIUM_FANTINA                 910
-#define TRAINER_STADIUM_BYRON                   911
-#define TRAINER_STADIUM_CANDICE                 912
-#define TRAINER_STADIUM_VOLKNER                 913
-#define TRAINER_STADIUM_AARON                   914
-#define TRAINER_STADIUM_BERTHA                  915
-#define TRAINER_STADIUM_FLINT                   916
-#define TRAINER_STADIUM_LUCIAN                  917
-#define TRAINER_STADIUM_CYNTHIA                 918
-#define TRAINER_STADIUM_CYRUS                   919
-#define TRAINER_STADIUM_BARRY                   920
-#define TRAINER_STADIUM_MARS                    921
-#define TRAINER_STADIUM_JUPITER                 922
-#define TRAINER_STADIUM_SATURN                  923
-#define TRAINER_STADIUM_PALMER                  924
-#define TRAINER_STADIUM_THORTON                 925
-#define TRAINER_STADIUM_ARGENTA                 926
-#define TRAINER_STADIUM_DAHLIA                  927
-#define TRAINER_STADIUM_RILEY                   928
-#define TRAINER_STADIUM_ANABEL                  929
-#define TRAINER_STADIUM_TUCKER                  930
-#define TRAINER_STADIUM_SPENSER                 931
-#define TRAINER_STADIUM_GRETA                   932
-#define TRAINER_STADIUM_NOLAND                  933
-#define TRAINER_STADIUM_LUCY                    934
-#define TRAINER_STADIUM_BRANDON                 935
-// Project Grounded: Battle Stadium, gasten, Ditto en meme-trainers
-#define TRAINER_STADIUM_WARIO                   936
-#define TRAINER_STADIUM_YOSHI                   937
-#define TRAINER_STADIUM_GOLBAT                  938
-#define TRAINER_STADIUM_GRIMER                  939
-#define TRAINER_STADIUM_BOO                     940
-#define TRAINER_STADIUM_MEW                     941
-#define TRAINER_STADIUM_SHY_GUY_RED             942
-#define TRAINER_STADIUM_SHY_GUY_GREEN           943
-#define TRAINER_STADIUM_SHY_GUY_PINK            944
-#define TRAINER_STADIUM_SHY_GUY_BLACK           945
-#define TRAINER_STADIUM_BURGLAR                 946
-#define TRAINER_STADIUM_DITTO                   947
-#define TRAINER_STADIUM_JOEY                    948
-#define TRAINER_STADIUM_WINSTON                 949
-#define TRAINER_STADIUM_DONALD                  950
-#define TRAINER_STADIUM_IVAN                    951
-#define TRAINER_STADIUM_JOHNSON                 952
-#define TRAINER_STADIUM_LYLE                    953
 #define TRAINER_DITTO                           954
 #define TRAINER_VICTORY_VANCE                   955
 #define TRAINER_VICTORY_VERNON                  956
@@ -979,7 +914,6 @@
 #define TRAINER_DOJO_WATER_2                964
 #define TRAINER_DOJO_WATER_KEEPER           965
 #define TRAINER_MUSTARD                     966
-#define TRAINER_STADIUM_MUSTARD             967
 #define TRAINER_ZINNIA_DELTA                968 // Project Grounded: Zinnia in Mossdeep (Delta Episode)
 #define TRAINER_ARCHIE_SERVICE_1               969 // Project Grounded: werkstraf in het Weather Institute, ronde 1
 #define TRAINER_MAXIE_SERVICE_1               970 // Project Grounded: werkstraf in het Weather Institute, ronde 1
@@ -989,10 +923,6 @@
 #define TRAINER_MAXIE_SERVICE_3               974 // Project Grounded: werkstraf in het Weather Institute, ronde 3
 #define TRAINER_ARCHIE_SERVICE_4               975 // Project Grounded: werkstraf in het Weather Institute, ronde 4
 #define TRAINER_MAXIE_SERVICE_4               976 // Project Grounded: werkstraf in het Weather Institute, ronde 4
-
-// Project Grounded: Battle Stadium (Pokémon Black/White)
-#define TRAINER_STADIUM_N                   977
-#define TRAINER_STADIUM_GHETSIS             978
 
 #define TRAINER_BURGLAR_1                   979 // Project Grounded: inbreker-event in de steden, 1 badge (_2-_8: 2-8 badges, _9: na de HoF)
 #define TRAINER_BURGLAR_2                   980 // 2 badges
@@ -1010,21 +940,12 @@
 #define TRAINER_HOLLOW_MORELLE              990 // Project Grounded: Toadstool Hollow
 #define TRAINER_HOLLOW_GERRIT               991 // Project Grounded: Toadstool Hollow
 
-// Project Grounded: Battle Stadium (Neo Team Plasma, Pokémon Black 2/White 2)
-#define TRAINER_STADIUM_ZINZOLIN            992
-#define TRAINER_STADIUM_SHADOW_TRIAD        993
-#define TRAINER_STADIUM_PLASMA_GRUNT_M      994
-#define TRAINER_STADIUM_PLASMA_GRUNT_F      995
-#define TRAINER_STADIUM_ROOD                996
-
-
 #define TRAINER_METEOR_DRAKE                997 // Project Grounded: Meteor Falls B1F (Bagon-bekken)
 #define TRAINER_METEOR_BOULDERMAN           998 // Project Grounded: Meteor Falls, Draconid-gangen
 #define TRAINER_METEOR_ORION                999 // Project Grounded: Meteor Falls, Draconid-gangen
 #define TRAINER_METEOR_VESPER               1000 // Project Grounded: Meteor Falls, Draconid-gangen
 #define TRAINER_METEOR_NOVA                 1001 // Project Grounded: Meteor Falls, Draconid-gangen
 #define TRAINER_DRACONID_ELDER              1002 // Project Grounded: Meteor Falls, Draconid-schrijn
-
 
 #define TRAINER_VR_BRENT                    1003 // Project Grounded: Victory Road, wachtkamer (gauntlet 1)
 #define TRAINER_VR_NADIA                    1004 // gauntlet 2
@@ -1034,7 +955,6 @@
 #define TRAINER_SLAB_RAY                    1013 // Project Grounded: Scorched Slab, zonnezaal (Kindler)
 #define TRAINER_SLAB_MARCO                  1014 // Project Grounded: Scorched Slab, koele bron (verdwaalde duiker)
 #define TRAINER_SLAB_HELIA                  1015 // Project Grounded: Scorched Slab, zonnesanctum (hogepriesteres)
-#define TRAINER_STADIUM_PETREL              1016 // Project Grounded: Battle Stadium (Rocket-executive, vermommingen)
 
 #define TRAINER_LAVA_TUBE_HANK              1007 // Project Grounded: Jagged Pass, lavabuis
 #define TRAINER_LAVA_TUBE_IGNACE            1008 // Project Grounded: Jagged Pass, lavabuis
@@ -1092,7 +1012,6 @@
 #define TRAINER_SIRENA                      1104 // Project Grounded (zeevulling 1): Route 126, zeemeermin-fan (grap-trainer); Battle Stadium
 #define TRAINER_TWINS_PIP_AND_PEP           1105 // Project Grounded (zeevulling 1): Route 127, tweeling (dubbel)
 #define TRAINER_RANGER_MARISOL              1106 // Project Grounded (zeevulling 1): Route 127, bij de gestrande Wailmer
-
 
 #define TRAINER_BLACK_BELT_KAIMANA          1130 // Project Grounded: Tapu-eiland, pad naar de bliksemruine (Koko)
 #define TRAINER_AROMA_LADY_LEILANI          1131 // Project Grounded: Tapu-eiland, pad naar de bloemenruine (Lele)

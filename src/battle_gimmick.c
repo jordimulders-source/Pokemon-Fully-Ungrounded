@@ -1,7 +1,6 @@
 #include "global.h"
 #include "battle_setup.h"
 #include "constants/opponents.h" // Project Grounded: Area Zero
-#include "spire.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
@@ -47,9 +46,9 @@ bool32 IsAreaZeroTeraBattle(void)
 // Returns whether a battler is able to use a gimmick. Checks consumption and gimmick specific functions.
 bool32 CanActivateGimmick(u32 battler, enum Gimmick gimmick)
 {
-    // Project Grounded: Mega, Z-moves, Dynamax, Tera e.d. alleen in The Spire (Jordi), voor iedereen.
+    // Project Grounded: Mega, Z-moves, Dynamax, Tera e.d. staan in gewone gevechten uit (Jordi).
     // Uitzondering: het alarmsysteem van Area Zero (area_zero.py) terastaliseert; de speler niet.
-    if (!TESTING && !gSpireBattle && !(gimmick == GIMMICK_TERA && IsAreaZeroTeraBattle() && !IsOnPlayerSide(battler)))
+    if (!TESTING && !(gimmick == GIMMICK_TERA && IsAreaZeroTeraBattle() && !IsOnPlayerSide(battler)))
         return FALSE;
     return gGimmicksInfo[gimmick].CanActivate != NULL && gGimmicksInfo[gimmick].CanActivate(battler);
 }

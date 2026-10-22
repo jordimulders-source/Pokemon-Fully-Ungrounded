@@ -101,7 +101,7 @@ static EWRAM_DATA u8 sSG_Variant = 0;
 static u32 SG_GetVariant(void)
 {
     u16 t = TRAINER_BATTLE_PARAM.opponentA;
-    if (t == TRAINER_STADIUM_SHY_GUY_PINK || t == TRAINER_YI_SHY_GUY_CAMP_A1)   // "FLY GUY"
+    if (t == TRAINER_YI_SHY_GUY_CAMP_A1)   // "FLY GUY"
         return SG_V_FLY;
     if (t == TRAINER_YI_SHY_GUY_CAMP_B1)                                        // "SPEAR GUY"
         return SG_V_SPEAR;

@@ -463,13 +463,6 @@ extern const u8 Debug_EventScript_BattleTest[];
 extern const u8 Debug_EventScript_BurglarForce[];
 extern const u8 Debug_EventScript_ForcedEncounterSet[];
 extern const u8 Debug_EventScript_ForcedEncounterOff[];
-extern const u8 Debug_EventScript_SpirePrototype[];
-extern const u8 Debug_EventScript_SpireResetRun[];
-extern const u8 Debug_EventScript_SpireWarp[];
-extern const u8 Debug_EventScript_StadiumWarp[];
-extern const u8 BattleStadium_EventScript_Singles[];
-extern const u8 BattleStadium_EventScript_Doubles[];
-extern const u8 Debug_EventScript_StadiumUnlockAll[];
 extern const u8 Debug_EventScript_PrintTimeOfDay[];
 extern const u8 Debug_EventScript_TellTheTime[];
 extern const u8 Debug_EventScript_FakeRTCNotEnabled[];
@@ -757,9 +750,8 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
     { COMPOUND_STRING("Brock (Kanto Gym)"),      DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_BROCK, TRAINER_NONE) },
     { COMPOUND_STRING("Colress"),                DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_COLRESS_MAUVILLE, TRAINER_NONE) },
     { COMPOUND_STRING("Zinnia"),                 DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_ZINNIA, TRAINER_NONE) },
-    { COMPOUND_STRING("N"),                      DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_N, TRAINER_NONE) },
-    { COMPOUND_STRING("Ghetsis"),                DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_GHETSIS, TRAINER_NONE) },
-    { COMPOUND_STRING("Neo Plasma grunt"),       DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_PLASMA_GRUNT_M, TRAINER_NONE) },
+    { COMPOUND_STRING("Ghetsis"),                DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_TAO_GHETSIS, TRAINER_NONE) },
+    { COMPOUND_STRING("Neo Plasma grunt"),       DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_PLASMA_ISLE_GUARD, TRAINER_NONE) },
     { COMPOUND_STRING("Rocket grunt"),           DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_ROCKET_GUARD, TRAINER_NONE) },
     { COMPOUND_STRING("Petrel (Rocket exec)"),   DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_PETREL, TRAINER_NONE) },
     { COMPOUND_STRING("Archie + Maxie"),         DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_ARCHIE_SOOTOPOLIS, TRAINER_MAXIE_SOOTOPOLIS) },
@@ -781,10 +773,8 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
     { COMPOUND_STRING("SickBlik (hotpot)"),      DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_SICKBLIK, TRAINER_NONE) },
     { COMPOUND_STRING("Mimi"),                   DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_MIMI, TRAINER_NONE) },
     { COMPOUND_STRING("Burglar"),                DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_BURGLAR_1, TRAINER_NONE) },
-    { COMPOUND_STRING("Shy Guy (Sunset Wilds)"),  DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_SHY_GUY_RED, TRAINER_NONE) },
-    { COMPOUND_STRING("Shy Guy: green"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_SHY_GUY_GREEN, TRAINER_NONE) },
-    { COMPOUND_STRING("Shy Guy: black"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_SHY_GUY_BLACK, TRAINER_NONE) },
-    { COMPOUND_STRING("Shy Guy: Fly Guy"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_STADIUM_SHY_GUY_PINK, TRAINER_NONE) },
+    { COMPOUND_STRING("Shy Guy (Sunset Wilds)"),  DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_SHY_GUY_DESERT, TRAINER_NONE) },
+    { COMPOUND_STRING("Shy Guy: Fly Guy"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_YI_SHY_GUY_CAMP_A1, TRAINER_NONE) },
     { COMPOUND_STRING("Commander Boo"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_YI_COMMANDER_BOO, TRAINER_NONE) },
     { COMPOUND_STRING("Wario"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_YI_WARIO, TRAINER_NONE) },
     { COMPOUND_STRING("Agatha (Poke Tower)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_TOWER_AGATHA, TRAINER_NONE) },
@@ -913,8 +903,6 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
 static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
 {
     { COMPOUND_STRING("Zone warp…"),       DebugAction_OpenSubMenu, sDebugMenu_Actions_ZoneWarp },
-    { COMPOUND_STRING("Warp to the Spire"), DebugAction_ExecuteScript, Debug_EventScript_SpireWarp },
-    { COMPOUND_STRING("Warp to the Stadium"), DebugAction_ExecuteScript, Debug_EventScript_StadiumWarp },
     { COMPOUND_STRING("Fly to map…"),       DebugAction_Util_Fly },
     { COMPOUND_STRING("Warp to map warp…"), DebugAction_Util_Warp_Warp },
     { COMPOUND_STRING("Set weather…"),      DebugAction_Util_Weather },
@@ -932,11 +920,6 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Burglar: force"),    DebugAction_ExecuteScript, Debug_EventScript_BurglarForce },
     { COMPOUND_STRING("Force encounter…"),  DebugAction_Util_ForceEncounter },
     { COMPOUND_STRING("Force encounter: off"), DebugAction_ExecuteScript, Debug_EventScript_ForcedEncounterOff },
-    { COMPOUND_STRING("The Spire"),         DebugAction_ExecuteScript, Debug_EventScript_SpirePrototype },
-    { COMPOUND_STRING("Spire: reset run"),  DebugAction_ExecuteScript, Debug_EventScript_SpireResetRun },
-    { COMPOUND_STRING("Stadium: singles"),  DebugAction_ExecuteScript, BattleStadium_EventScript_Singles },
-    { COMPOUND_STRING("Stadium: doubles"),  DebugAction_ExecuteScript, BattleStadium_EventScript_Doubles },
-    { COMPOUND_STRING("Stadium: unlock all"), DebugAction_ExecuteScript, Debug_EventScript_StadiumUnlockAll },
     { NULL }
 };
 

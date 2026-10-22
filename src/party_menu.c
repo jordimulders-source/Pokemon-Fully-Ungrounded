@@ -60,7 +60,6 @@
 #include "script.h"
 #include "sound.h"
 #include "sprite.h"
-#include "stadium.h"
 #include "start_menu.h"
 #include "string_util.h"
 #include "strings.h"
@@ -7476,8 +7475,6 @@ static bool8 GetBattleEntryEligibility(struct Pokemon *mon)
 
     switch (VarGet(VAR_FRONTIER_FACILITY))
     {
-    case FACILITY_STADIUM: // Project Grounded: Battle Stadium, alles mag (wordt level 50)
-        return TRUE;
     case FACILITY_MULTI_OR_EREADER:
         if (GetMonData(mon, MON_DATA_HP) != 0)
             return TRUE;
@@ -7510,7 +7507,7 @@ static u8 CheckBattleEntriesAndGetMessage(void)
     }
 
     facility = VarGet(VAR_FRONTIER_FACILITY);
-    if (facility == FACILITY_UNION_ROOM || facility == FACILITY_MULTI_OR_EREADER || facility == FACILITY_STADIUM)
+    if (facility == FACILITY_UNION_ROOM || facility == FACILITY_MULTI_OR_EREADER)
         return 0xFF;
 
     maxBattlers = GetMaxBattleEntries();
@@ -7599,7 +7596,6 @@ static u8 GetBattleEntryLevelCap(void)
 {
     switch (VarGet(VAR_FRONTIER_FACILITY))
     {
-    case FACILITY_STADIUM:
     case FACILITY_MULTI_OR_EREADER:
         return MAX_LEVEL;
     case FACILITY_UNION_ROOM:
@@ -8045,12 +8041,6 @@ static void Task_WaitAfterMultiPartnerPartySlideIn(u8 taskId)
     // data[0] used as a timer afterwards rather than the x pos
     if (FollowerNPCIsBattlePartner()) {
         if (++data[0] == 128)
-            Task_ClosePartyMenu(taskId);
-    }
-    // Project Grounded: Battle Stadium (Jordi): de teamvoorvertoning een kwart korter (256 + 32 schuiven -> 176 + 32)
-    else if (gStadiumBattle)
-    {
-        if (++data[0] == 176)
             Task_ClosePartyMenu(taskId);
     }
     else if (++data[0] == 256)

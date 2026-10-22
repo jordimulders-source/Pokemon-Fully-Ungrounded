@@ -54,7 +54,6 @@
 #include "constants/songs.h"
 #include "constants/species.h"
 #include "constants/trainers.h"
-#include "spire.h"
 #include "debug.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
@@ -561,8 +560,6 @@ void HandleAction_UseMove(void)
                 IncrementGameStat(GAME_STAT_USED_SPLASH);
             else if (gCurrentMove == MOVE_STRUGGLE)
                 IncrementGameStat(GAME_STAT_USED_STRUGGLE);
-            else if (gCurrentMove == MOVE_IMPLOSION)
-                FlagSet(FLAG_USED_IMPLOSION);
         }
     }
 
@@ -732,12 +729,6 @@ bool32 TryRunFromBattle(u32 battler)
     u8 pyramidMultiplier;
     u8 speedVar;
 
-    if (gSpireBattle) // Project Grounded: in The Spire is RUN = pauzeren, lukt altijd
-    {
-        gCurrentTurnActionNumber = gBattlersCount;
-        gBattleOutcome = B_OUTCOME_RAN;
-        return TRUE;
-    }
     // If this flag is set, running will never be successful under any circumstances.
     if (FlagGet(B_FLAG_NO_RUNNING))
         return effect;
@@ -6756,7 +6747,7 @@ u8 GetAttackerObedienceForAction()
 
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && GetBattlerPosition(gBattlerAttacker) == B_POSITION_PLAYER_RIGHT)
         return OBEYS;
-    if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER || gSpireBattle) // Project Grounded: rentals in The Spire
+    if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
         return OBEYS;
     if (gDebugBattleTest) // Project Grounded: testteam van debugmenu "Battle test"
         return OBEYS;
@@ -8565,8 +8556,6 @@ static inline s32 CalculateBaseDamage(u32 power, u32 userFinalAttack, u32 level,
 
 static inline uq4_12_t GetTargetDamageModifier(struct DamageContext *ctx)
 {
-    if (gSpireBattle && IsOnPlayerSide(ctx->battlerAtk) && Spire_HasRelic(SPIRE_RELIC_WIDE_LENS))
-        return UQ_4_12(1.0); // Project Grounded: The Spire, relic Wide Lens
     if (IsDoubleBattle())
 	{
         if (GetMoveTargetCount(ctx) == 2)
@@ -8908,9 +8897,6 @@ static inline uq4_12_t GetOtherModifiers(struct DamageContext *ctx)
     u32 unmodifiedDefenderSpeed = gBattleMons[ctx->battlerDef].speed;
 
     //TODO: Behemoth Blade, Behemoth Bash, Dynamax Cannon (Dynamax)
-    if (gSpireBattle) // Project Grounded: The Spire, relics (Muscle Band, Scanner, Dubious Disc, ...)
-        DAMAGE_MULTIPLY_MODIFIER(Spire_RelicDamageModifier(ctx->battlerAtk, ctx->battlerDef, ctx->isCrit, ctx->typeEffectivenessModifier));
-    DAMAGE_MULTIPLY_MODIFIER(Spire_UpgradeDamageModifier(ctx->battlerAtk, ctx->move)); // Project Grounded: move+
     DAMAGE_MULTIPLY_MODIFIER(GetMinimizeModifier(ctx->move, ctx->battlerDef));
     DAMAGE_MULTIPLY_MODIFIER(GetUndergroundModifier(ctx->move, ctx->battlerDef));
     DAMAGE_MULTIPLY_MODIFIER(GetDiveModifier(ctx->move, ctx->battlerDef));
@@ -10457,8 +10443,6 @@ void TryRestoreHeldItems(void)
 {
     u32 i;
 
-    if (gSpireBattle) // Project Grounded: The Spire, een gebruikt item (Focus Sash, bessen) is weg voor de rest van de run
-        return;
     bool32 returnNPCItems = B_RETURN_STOLEN_NPC_ITEMS >= GEN_5 && gBattleTypeFlags & BATTLE_TYPE_TRAINER;
 
     for (i = 0; i < PARTY_SIZE; i++)
@@ -10725,7 +10709,6 @@ void RecalcBattlerStats(u32 battler, struct Pokemon *mon, bool32 isDynamaxing)
     u32 hp = GetMonData(mon, MON_DATA_HP);
     u32 oldMaxHp = GetMonData(mon, MON_DATA_MAX_HP);
     CalculateMonStats(mon);
-    Spire_RescaleAfterRecalc(battler, mon, hp, oldMaxHp); // Project Grounded: The Spire, ×HP blijft na een vormwissel (Schooling)
     if (GetActiveGimmick(battler) == GIMMICK_DYNAMAX && gChosenActionByBattler[battler] != B_ACTION_SWITCH)
     {
         ApplyDynamaxHPMultiplier(mon);
@@ -11530,8 +11513,6 @@ u32 GetTotalAccuracy(u32 battlerAtk, u32 battlerDef, u32 move, enum Ability atkA
     u32 defParam = GetBattlerHoldEffectParam(battlerDef);
 
     gPotentialItemEffectBattler = battlerDef;
-    if (IsBattleMoveStatus(move) && Spire_IsMoveUpgraded(battlerAtk, move)) // Project Grounded: statusmove+ mist niet
-        return 100;
     accStage = gBattleMons[battlerAtk].statStages[STAT_ACC];
     evasionStage = gBattleMons[battlerDef].statStages[STAT_EVASION];
     if (atkAbility == ABILITY_UNAWARE || atkAbility == ABILITY_KEEN_EYE || atkAbility == ABILITY_MINDS_EYE

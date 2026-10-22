@@ -35,7 +35,6 @@
 #include "constants/trainer_hill.h"
 #include "constants/weather.h"
 #include "trainer_slide.h"
-#include "stadium.h"
 #include "battle_message.h"
 
 static u32 BattlerHPPercentage(u32 battler, u32 operation, u32 threshold);
@@ -54,11 +53,11 @@ static void SetTrainerSlideParamters(u32 battler, u32* firstId, u32* lastId, u32
 static bool32 IsSlideInitalizedOrPlayed(enum TrainerSlideType slideId);
 
 // Project Grounded: spaarzame tabel i.p.v. [DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_SLIDE_COUNT] pointers
-// (scheelde ±245 KB ROM, bijna alles NULL). Alleen DIFFICULTY_NORMAL; geen Frontier-slides.
+// (scheelde ±245 KB ROM, bijna alles NULL). Alleen DIFFICULTY_NORMAL; geen Frontier-slides. Nu leeg (één eindregel).
 struct TrainerSlideEntry { u16 trainerId; u8 slideId; const u8 *text; };
 static const struct TrainerSlideEntry sTrainerSlideEntries[] =
 {
-#include "data/stadium_slides.h" // Project Grounded: Battle Stadium
+    { TRAINER_NONE, TRAINER_SLIDE_COUNT, NULL },
 };
 
 static const u8* const sTestTrainerSlides[DIFFICULTY_COUNT][TRAINERS_COUNT][TRAINER_SLIDE_COUNT] =
@@ -234,8 +233,6 @@ enum TrainerSlideTargets ShouldDoTrainerSlide(u32 battler, enum TrainerSlideType
 
     if (!(gBattleTypeFlags & BATTLE_TYPE_TRAINER) || IsOnPlayerSide(battler))
         return TRAINER_SLIDE_TARGET_NONE;
-    if (gCasinoBattle) // Project Grounded: Battle Casino, geen introducties of tussendoortjes
-        return TRAINER_SLIDE_TARGET_NONE;
 
     SetTrainerSlideParamters(battler, &firstId, &lastId, &trainerId, &retValue);
     enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
@@ -293,23 +290,6 @@ enum TrainerSlideTargets ShouldDoTrainerSlide(u32 battler, enum TrainerSlideType
     MarkTrainerSlideAsPlayed(slideId);
     SetTrainerSlideMessage(difficulty,trainerId,slideId);
     return retValue;
-}
-
-// Project Grounded: Battle Stadium (doubles). Vóór de eerste beurt praat ook tegenstander B (de engine doet alleen A).
-// Zet het bericht en de battler voor BattleScript_TrainerBSlideMsgRet; FALSE als B niets te zeggen heeft.
-bool32 Stadium_SetTrainerBFirstTurnSlide(void)
-{
-    u32 trainerId;
-    enum DifficultyLevel difficulty = GetCurrentDifficultyLevel();
-
-    if (!gStadiumBattle || !(gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS))
-        return FALSE;
-    trainerId = SanitizeTrainerId(TRAINER_BATTLE_PARAM.opponentB);
-    if (!DoesTrainerHaveSlideMessage(difficulty, trainerId, TRAINER_SLIDE_BEFORE_FIRST_TURN))
-        return FALSE;
-    gBattleScripting.battler = GetBattlerAtPosition(B_POSITION_OPPONENT_RIGHT);
-    SetTrainerSlideMessage(difficulty, trainerId, TRAINER_SLIDE_BEFORE_FIRST_TURN);
-    return TRUE;
 }
 
 static bool32 IsSlideInitalizedOrPlayed(enum TrainerSlideType slideId)

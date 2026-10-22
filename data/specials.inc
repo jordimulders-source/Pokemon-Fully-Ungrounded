@@ -576,27 +576,7 @@ gSpecials::
 	def_special ShowItemPickupPopup
 	def_special IsItemObtainedBefore
 	def_special GetMonsStateToDoubles
-	def_special Spire_Enter
-	def_special Spire_ResetRun
-	def_special Spire_DebugOpen
-	def_special Spire_IsRunActive
-	def_special Spire_GiveUpFromField
-	def_special Stadium_PrepareChooseParty
-	def_special Stadium_StartTournament
-	def_special Stadium_ShowNextMatch
-	def_special Stadium_StartMatch
 	def_special Grounded_StartWallyRaltsBattle
-	def_special Stadium_AfterMatch
-	def_special Stadium_EndTournament
-	def_special Stadium_ChooseCompanion
-	def_special Stadium_ShowUnlocks
-	def_special Stadium_HasNewUnlocks
-	def_special Stadium_DebugUnlockAll
-	def_special Stadium_GetRecord
-	def_special Stadium_SetArenaGfx
-	def_special Stadium_GetMatchNames
-	def_special Stadium_GetBpText
-	def_special Stadium_GetAnnouncerLine
 	def_special Grounded_PartyHasKubfu
 	def_special Grounded_EvolveKubfu
 	def_special Grounded_FindPartyDeoxys
@@ -635,14 +615,6 @@ gSpecials::
 	def_special Grounded_BufferWhiteOuts
 	def_special AzureFlute_GetHint
 	def_special AzureFlute_DebugCatchAll
-	def_special Casino_HasBp
-	def_special Casino_OpenCard
-	def_special Casino_StartArenaBattle
-	def_special Casino_SetArenaGfx
-	def_special Casino_Resolve
-	def_special Casino_CheckUnlock
-	def_special Casino_DebugUnlockAll
-	def_special Casino_GetTip
 	def_special Ultra_PickPortal
 	def_special Ultra_CountOpen
 	def_special Ultra_FindPartySunMoon

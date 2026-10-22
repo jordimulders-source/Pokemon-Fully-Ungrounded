@@ -5,7 +5,6 @@
 #include "battle_anim.h"
 #include "battle_ai_util.h"
 #include "battle_ai_main.h"
-#include "spire.h"
 #include "battle_controllers.h"
 #include "battle_factory.h"
 #include "battle_setup.h"
@@ -27,7 +26,6 @@
 #include "constants/moves.h"
 #include "constants/items.h"
 #include "constants/trainers.h"
-#include "stadium.h"
 
 #define AI_ACTION_DONE          (1 << 0)
 #define AI_ACTION_FLEE          (1 << 1)
@@ -274,10 +272,6 @@ void BattleAI_SetupFlags(void)
     if (gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER)
     {
         gAiThinkingStruct->aiFlags[B_POSITION_PLAYER_RIGHT] = GetAiFlags(gPartnerTrainerId, B_POSITION_PLAYER_RIGHT);
-        // Project Grounded: Battle Stadium (Jordi, 8 okt). De compagnon denkt precies zo goed (of slecht) na als zijn
-        // tegenstanderversie: de AI van zijn bron-trainer. Trio's (geen bron-trainer) houden hun eigen partner-AI.
-        if (gStadiumBattle && Stadium_CompanionSourceTrainer() != TRAINER_NONE)
-            gAiThinkingStruct->aiFlags[B_POSITION_PLAYER_RIGHT] = GetAiFlags(Stadium_CompanionSourceTrainer(), B_POSITION_PLAYER_RIGHT);
     }
     else if (IsDoubleBattle() && IsAiVsAiBattle())
     {
@@ -289,18 +283,6 @@ void BattleAI_SetupFlags(void)
         | GetAiFlags(TRAINER_BATTLE_PARAM.opponentB, B_POSITION_OPPONENT_RIGHT);
         gAiThinkingStruct->aiFlags[B_POSITION_PLAYER_RIGHT] = aiFlags;
         gAiThinkingStruct->aiFlags[B_POSITION_PLAYER_LEFT] = aiFlags;
-    }
-
-    // Project Grounded: Battle Casino. Elke kant denkt minstens fatsoenlijk na (ook trainers zonder AI-flags)
-    if (gCasinoBattle)
-    {
-        u32 i;
-        for (i = 0; i < MAX_BATTLERS_COUNT; i++)
-        {
-            gAiThinkingStruct->aiFlags[i] |= AI_FLAG_CHECK_BAD_MOVE | AI_FLAG_TRY_TO_FAINT | AI_FLAG_CHECK_VIABILITY;
-            if (IsDoubleBattle())
-                gAiThinkingStruct->aiFlags[i] |= AI_FLAG_DOUBLE_BATTLE;
-        }
     }
 }
 
@@ -396,7 +378,6 @@ void ComputeBattlerDecisions(u32 battler)
 
         // AI's move scoring
         gAiBattleData->chosenMoveIndex[battler] = BattleAI_ChooseMoveIndex(battler); // Calculate score and chose move index
-        Spire_ApplyPattern(battler); // Project Grounded: The Spire, vaste patronen (intenties)
         if (isAiBattler)
             BattlerChooseNonMoveAction();
         ModifySwitchAfterMoveScoring(battler);

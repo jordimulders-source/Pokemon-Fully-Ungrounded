@@ -14,7 +14,6 @@
 #include "fieldmap.h"
 #include "follower_npc.h"
 #include "random.h"
-#include "stadium.h"
 #include "starter_choose.h"
 #include "script_pokemon_util.h"
 #include "palette.h"
@@ -473,12 +472,6 @@ void BattleSetup_StartLatiBattle(void)
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
     TryUpdateGymLeaderRematchFromWild();
-}
-
-// Project Grounded: The Spire (src/spire.c zet partijen en het eindcallback klaar)
-void BattleSetup_StartSpireBattle(void)
-{
-    CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_FRONTIER_BRAIN);
 }
 
 // Project Grounded: debugmenu "Battle test…": een trainergevecht met dezelfde transitie en muziek als in de game,
@@ -1322,10 +1315,8 @@ enum BattleTransition GetTrainerBattleTransition(void)
     if (trainerId == TRAINER_JOEY)
         return B_TRANSITION_POOCHYENA;
 
-    // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar. In het Battle Stadium alleen
-    // als ze samen een duo vormen; los krijgen ze hun eigen mugshot (blauw/geel), zoals in het verhaal.
-    if ((trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
-     && (!gStadiumBattle || TRAINER_BATTLE_PARAM.opponentB == TRAINER_ARCHIE_SOOTOPOLIS || TRAINER_BATTLE_PARAM.opponentB == TRAINER_MAXIE_SOOTOPOLIS))
+    // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar.
+    if (trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
         return B_TRANSITION_AQUA_MAGMA;
 
     // Project Grounded: Archie en Maxie met werkstraf (Weather Institute): het prikbord van de pauzeruimte
@@ -1358,19 +1349,17 @@ enum BattleTransition GetTrainerBattleTransition(void)
      || trainerId == TRAINER_KECCLES_FRONTIER)
         return B_TRANSITION_KECCLES;
     if ((trainerId >= TRAINER_BURGLAR_1 && trainerId <= TRAINER_BURGLAR_5)
-     || (trainerId >= TRAINER_BURGLAR_6 && trainerId <= TRAINER_BURGLAR_9) || trainerId == TRAINER_STADIUM_BURGLAR)
+     || (trainerId >= TRAINER_BURGLAR_6 && trainerId <= TRAINER_BURGLAR_9))
         return B_TRANSITION_BURGLAR;
-    // Project Grounded: Wario (eindbaas van het Yoshi's Island-fort, en gast in het Battle Stadium): knoflook, de W, poses
-    if (trainerId == TRAINER_YI_WARIO || trainerId == TRAINER_STADIUM_WARIO)
+    // Project Grounded: Wario (eindbaas van het Yoshi's Island-fort): knoflook, de W, poses
+    if (trainerId == TRAINER_YI_WARIO)
         return B_TRANSITION_WARIO;
-    // Project Grounded: de Boos (Commander Boo op Yoshi's Island, Boo in het Stadium): Kamek tovert een Boo groot
-    if (trainerId == TRAINER_YI_COMMANDER_BOO || trainerId == TRAINER_STADIUM_BOO)
+    // Project Grounded: de Boos (Commander Boo op Yoshi's Island): Kamek tovert een Boo groot
+    if (trainerId == TRAINER_YI_COMMANDER_BOO)
         return B_TRANSITION_BOO;
-    // Project Grounded: de Shy Guys (Shy Squad op Yoshi's Island, de Stadium-Shy Guys, de woestijn): op de maat van
+    // Project Grounded: de Shy Guys (Shy Squad op Yoshi's Island, de woestijn): op de maat van
     // Sunset Wilds staan ze in level 1-1, eentje draait zich om: het is zijn beurt
-    if (trainerId == TRAINER_STADIUM_SHY_GUY_RED || trainerId == TRAINER_STADIUM_SHY_GUY_GREEN
-     || trainerId == TRAINER_STADIUM_SHY_GUY_PINK || trainerId == TRAINER_STADIUM_SHY_GUY_BLACK
-     || trainerId == TRAINER_SHY_GUY_DESERT || trainerClass == TRAINER_CLASS_SHY_SQUAD)
+    if (trainerId == TRAINER_SHY_GUY_DESERT || trainerClass == TRAINER_CLASS_SHY_SQUAD)
         return B_TRANSITION_SHY_GUY;
 
     // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)
@@ -1429,7 +1418,7 @@ enum BattleTransition GetTrainerBattleTransition(void)
 
     // Project Grounded: lichte intro per trainerklasse (gewone trainers; wie hierboven een eigen transitie of mugshot
     // heeft, is al weg). Gaat vóór de route-transitie: de klasse zegt meer over het gevecht dan de plek.
-    if (!gStadiumBattle && ClassIntro_HasIntro(trainerClass))
+    if (ClassIntro_HasIntro(trainerClass))
         return B_TRANSITION_CLASS_INTRO;
 
     // Project Grounded: route-transitie voor de plek (zee, strand, onder water, sneeuw, ...)

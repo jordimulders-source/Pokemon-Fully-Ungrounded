@@ -1716,10 +1716,7 @@
 #define FLAG_RECEIVED_REINS_OF_UNITY                     FLAG_GROUNDED(1284) // Project Grounded: Crown Tundra: REINS OF UNITY gekregen van Calyrex
 #define FLAG_CROWN_CALYREX_DONE                          FLAG_GROUNDED(1285) // Project Grounded: Crown Tundra: CALYREX gevangen (quest klaar)
 // }
-// battle_casino { (met de hand, src/battle_casino.c; FLAG_GROUNDED 1320-1359: 1320-1321 in gebruik, 1322-1359 nog vrij)
-#define FLAG_CASINO_AI_VS_AI                             FLAG_GROUNDED(1320) // Project Grounded: Battle Casino: alleen tijdens een casinogevecht gezet (B_FLAG_AI_VS_AI_BATTLE, AI speelt beide kanten)
-#define FLAG_CASINO_INTRO_SEEN                           FLAG_GROUNDED(1321) // Project Grounded: Battle Casino: uitleg van de croupier gezien
-// }
+// FLAG_GROUNDED 1320-1359: vrij (was het Battle Casino)
 // national_park { (tools/grounded/maptools/national_park.py; FLAG_GROUNDED 700-759, 712-759 nog vrij)
 #define FLAG_NATIONAL_PARK_REVEALED                      FLAG_GROUNDED(700) // Project Grounded: National Park: Calyrex heeft de illusie opgeheven (brandend park)
 #define FLAG_NATIONAL_PARK_CELEBI_DONE                   FLAG_GROUNDED(701) // Project Grounded: Ilex Forest: Celebi gevangen
@@ -2009,9 +2006,8 @@
 #define FLAG_ITEM_TAO_FROST_NEVER_MELT_ICE               FLAG_GROUNDED(443) // Project Grounded: Frost Hollow: Never-Melt Ice
 #define FLAG_ITEM_TAO_FROST_ICE_STONE                    FLAG_GROUNDED(444) // Project Grounded: Frost Hollow: Ice Stone
 // }
-// Battle Stadium-omroeper (src/stadium.c, AnnouncePlayer)
+// Game stats 53+ (white-outs e.d., waren voor de omroeper van het verwijderde Battle Stadium); FLAG_GROUNDED 151-199 vrij
 #define FLAG_GROUNDED_STATS_V1                  FLAG_GROUNDED(150) // game stats 53+ (white-outs e.d.) zijn op 0 gezet
-#define FLAG_USED_IMPLOSION                     FLAG_GROUNDED(151) // de speler heeft ooit IMPLOSION gebruikt
 // beacon_dragon { (tools/grounded/maptools/beacon_dragon.py; FLAG_GROUNDED 100-149)
 #define FLAG_HIDDEN_ITEM_BEACON_ISLE_BIG_PEARL           FLAG_GROUNDED(100) // Project Grounded: Beacon Isle: verborgen Big Pearl
 #define FLAG_HIDDEN_ITEM_BEACON_ISLE_PEARL_STRING        FLAG_GROUNDED(101) // Project Grounded: Beacon Isle: verborgen Pearl String

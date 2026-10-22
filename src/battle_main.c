@@ -12,8 +12,6 @@
 #include "battle_interface.h"
 #include "battle_main.h"
 #include "mon_variants.h"
-#include "spire.h"
-#include "stadium.h"
 #include "battle_message.h"
 #include "battle_pyramid.h"
 #include "battle_scripts.h"
@@ -417,7 +415,6 @@ static void (*const sTurnActionsFuncsTable[])(void) =
     [B_ACTION_FINISHED]               = HandleAction_ActionFinished,
     [B_ACTION_NOTHING_FAINTED]        = HandleAction_NothingIsFainted,
     [B_ACTION_THROW_BALL]             = HandleAction_ThrowBall,
-    [B_ACTION_SPIRE_DEFEND]           = HandleAction_SpireDefend, // Project Grounded: The Spire
 };
 
 static void (*const sEndTurnFuncsTable[])(void) =
@@ -554,8 +551,6 @@ static void CB2_InitBattleInternal(void)
     {
         gBattleEnvironment = BattleSetup_GetEnvironmentId();
     }
-    if (gSpireBattle) // Project Grounded: The Spire, achtergrond van het biome
-        gBattleEnvironment = gSpireEnvironment;
     if (gBattleTypeFlags & BATTLE_TYPE_RECORDED)
         gBattleEnvironment = BATTLE_ENVIRONMENT_BUILDING;
     if (TestRunner_Battle_GetForcedEnvironment())
@@ -564,8 +559,7 @@ static void CB2_InitBattleInternal(void)
     if (gBattleTypeFlags & BATTLE_TYPE_TRAINER && !(gBattleTypeFlags & (BATTLE_TYPE_FRONTIER
                                                                         | BATTLE_TYPE_EREADER_TRAINER
                                                                         | BATTLE_TYPE_TRAINER_HILL
-                                                                        | BATTLE_TYPE_RECORDED))
-        && !gStadiumBattle && !gCasinoBattle) // Project Grounded: het Stadium en het Casino bepalen zelf singles of doubles
+                                                                        | BATTLE_TYPE_RECORDED)))
     {
         switch (GetTrainerBattleType(TRAINER_BATTLE_PARAM.opponentA))
         {
@@ -606,7 +600,6 @@ static void CB2_InitBattleInternal(void)
                 CreateNPCTrainerParty(&gEnemyParty[PARTY_SIZE / 2], TRAINER_BATTLE_PARAM.opponentB, FALSE);
             SetWildMonHeldItem();
             CalculateEnemyPartyCount();
-            Spire_OnEnemyPartyCreated(); // Project Grounded: The Spire (HP-vermenigvuldigers)
         }
     }
 
@@ -1787,13 +1780,6 @@ static void CB2_HandleStartMultiBattle(void)
     }
 }
 
-// Project Grounded: Battle Casino, de melding "Skipping to the result..." blijft printen tijdens het uitfaden
-static void CB2_CasinoSkipBattle(void)
-{
-    RunTextPrinters();
-    CB2_QuitRecordedBattle();
-}
-
 void BattleMainCB2(void)
 {
     AnimateSprites();
@@ -1802,14 +1788,7 @@ void BattleMainCB2(void)
     UpdatePaletteFade();
     RunTasks();
 
-    // Project Grounded: Battle Casino, START = meteen naar de uitslag (zelfde afsluiting als een opgenomen gevecht)
-    if (Casino_TrySkipBattle())
-    {
-        ResetPaletteFadeControl();
-        BeginNormalPaletteFade(PALETTES_ALL, 3, 0, 16, RGB_BLACK);
-        SetMainCallback2(CB2_CasinoSkipBattle);
-    }
-    else if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
+    if (JOY_HELD(B_BUTTON) && gBattleTypeFlags & BATTLE_TYPE_RECORDED && RecordedBattle_CanStopPlayback())
     {
         // Player pressed B during recorded battle playback, end battle
         gSpecialVar_Result = gBattleOutcome = B_OUTCOME_PLAYER_TELEPORTED;
@@ -2097,10 +2076,6 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
         CreateMaleMon(&party[0], SPECIES_RALTS, 5);
         return 1;
     }
-    if (gCasinoBattle) // Project Grounded: Battle Casino, teams van de kaart
-        return Casino_BuildEnemyParty(party, trainerNum, firstTrainer);
-    if (gStadiumBattle) // Project Grounded: Battle Stadium, keuze uit de pool op level 50
-        return Stadium_BuildTrainerParty(party, trainerNum, firstTrainer);
     if (GetTrainerStructFromId(trainerNum)->overrideTrainer)
     {
         struct Trainer tempTrainer;
@@ -3855,11 +3830,6 @@ static void DoBattleIntro(void)
                 gBattleStruct->startingStatus = GetTrainerStartingStatusFromId(TRAINER_BATTLE_PARAM.opponentA);
                 gBattleStruct->startingStatusTimer = 0; // infinite
             }
-            else if (gSpireBattle) // Project Grounded: The Spire, beginveld van de ontmoeting
-            {
-                gBattleStruct->startingStatus = gSpireStartingStatus;
-                gBattleStruct->startingStatusTimer = 0;
-            }
             else if (gForcesStartingStatus) // Project Grounded: Forces op routes (Tornadus: Tailwind)
             {
                 gBattleStruct->startingStatus = gForcesStartingStatus;
@@ -4047,7 +4017,6 @@ static void TryDoEventsBeforeFirstTurn(void)
         memset(&gSpecialStatuses, 0, sizeof(gSpecialStatuses));
         BattlePutTextOnWindow(gText_EmptyString3, B_WIN_MSG);
         AssignUsableGimmicks();
-        Spire_OnFirstTurn(); // Project Grounded: The Spire, relic Iron Plate (blok in de eerste beurt)
         gBattleMainFunc = HandleTurnActionSelectionState;
         ResetSentPokesToOpponentValue();
 
@@ -4071,18 +4040,7 @@ static void TryDoEventsBeforeFirstTurn(void)
         }
 
         if ((i = ShouldDoTrainerSlide(GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT), TRAINER_SLIDE_BEFORE_FIRST_TURN)))
-        {
-            // Project Grounded: Battle Stadium (doubles): daarna praat tegenstander B ook (zie BS_StadiumTrainerBSlide)
-            if (i == 1 && gStadiumBattle && (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS))
-                BattleScriptExecute(BattleScript_StadiumTrainerABSlideMsgEnd2);
-            else
-                BattleScriptExecute(i == 1 ? BattleScript_TrainerASlideMsgEnd2 : BattleScript_TrainerBSlideMsgEnd2);
-        }
-        else if (Stadium_SetTrainerBFirstTurnSlide())
-        {
-            MarkTrainerSlideAsPlayed(TRAINER_SLIDE_BEFORE_FIRST_TURN);
-            BattleScriptExecute(BattleScript_TrainerBSlideMsgEnd2);
-        }
+            BattleScriptExecute(i == 1 ? BattleScript_TrainerASlideMsgEnd2 : BattleScript_TrainerBSlideMsgEnd2);
         gBattleStruct->eventState.beforeFirstTurn = 0;
         break;
     }
@@ -4125,9 +4083,6 @@ void BattleTurnPassed(void)
         return;
 
     gBattleStruct->eventState.faintedAction = 0;
-    // Project Grounded: blok vervalt aan het eind van de beurt, patronen schuiven door. Hier (niet bovenaan):
-    // BattleTurnPassed wordt opnieuw aangeroepen na elk effect aan het eind van de beurt (gif, weer, Leftovers).
-    Spire_EndTurn();
 
     TurnValuesCleanUp(FALSE);
     gHitMarker &= ~HITMARKER_UNABLE_TO_USE_MOVE;
@@ -4203,9 +4158,6 @@ u8 IsRunningFromBattleImpossible(u32 battler)
 {
     enum HoldEffect holdEffect;
     u32 i;
-
-    if (gSpireBattle) // Project Grounded: RUN = pauzeren in The Spire
-        return BATTLE_RUN_SUCCESS;
 
     if (FlagGet(B_FLAG_NO_RUNNING))
     {
@@ -4442,7 +4394,7 @@ static void HandleTurnActionSelectionState(void)
                     }
                     break;
                 case B_ACTION_USE_ITEM:
-                    if ((ShouldBattleRestrictionsApply(battler) && !IsAllowedToUseBag()) || gSpireBattle) // Project Grounded: geen tas in The Spire
+                    if (ShouldBattleRestrictionsApply(battler) && !IsAllowedToUseBag())
                     {
                         RecordedBattle_ClearBattlerAction(battler, 1);
                         gSelectionBattleScripts[battler] = BattleScript_ActionSelectionItemsCantBeUsed;
@@ -4553,9 +4505,6 @@ static void HandleTurnActionSelectionState(void)
                 case B_ACTION_DEBUG:
                     BtlController_EmitDebugMenu(battler, B_COMM_TO_CONTROLLER);
                     MarkBattlerForControllerExec(battler);
-                    break;
-                case B_ACTION_SPIRE_DEFEND: // Project Grounded: doel zit in byte 2
-                    gSpireDefendTarget[battler] = gBattleResources->bufferB[battler][2];
                     break;
                 }
 
@@ -4736,9 +4685,6 @@ static void HandleTurnActionSelectionState(void)
                     break;
                 case B_ACTION_DEBUG:
                     gBattleCommunication[battler] = STATE_BEFORE_ACTION_CHOSEN;
-                    break;
-                case B_ACTION_SPIRE_DEFEND:
-                    gBattleCommunication[battler]++;
                     break;
                 }
             }
@@ -5236,8 +5182,7 @@ static void SetActionsAndBattlersTurnOrder(void)
             {
                 if (gChosenActionByBattler[battler] == B_ACTION_USE_ITEM
                   || gChosenActionByBattler[battler] == B_ACTION_SWITCH
-                  || gChosenActionByBattler[battler] == B_ACTION_THROW_BALL
-                  || gChosenActionByBattler[battler] == B_ACTION_SPIRE_DEFEND)
+                  || gChosenActionByBattler[battler] == B_ACTION_THROW_BALL)
                 {
                     gActionsByTurnOrder[turnOrderId] = gChosenActionByBattler[battler];
                     gBattlerByTurnOrder[turnOrderId] = battler;
@@ -5248,8 +5193,7 @@ static void SetActionsAndBattlersTurnOrder(void)
             {
                 if (gChosenActionByBattler[battler] != B_ACTION_USE_ITEM
                   && gChosenActionByBattler[battler] != B_ACTION_SWITCH
-                  && gChosenActionByBattler[battler] != B_ACTION_THROW_BALL
-                  && gChosenActionByBattler[battler] != B_ACTION_SPIRE_DEFEND)
+                  && gChosenActionByBattler[battler] != B_ACTION_THROW_BALL)
                 {
                     gActionsByTurnOrder[turnOrderId] = gChosenActionByBattler[battler];
                     gBattlerByTurnOrder[turnOrderId] = battler;
@@ -5276,9 +5220,7 @@ static void SetActionsAndBattlersTurnOrder(void)
                         && gActionsByTurnOrder[i] != B_ACTION_SWITCH
                         && gActionsByTurnOrder[j] != B_ACTION_SWITCH
                         && gActionsByTurnOrder[i] != B_ACTION_THROW_BALL
-                        && gActionsByTurnOrder[j] != B_ACTION_THROW_BALL
-                        && gActionsByTurnOrder[i] != B_ACTION_SPIRE_DEFEND
-                        && gActionsByTurnOrder[j] != B_ACTION_SPIRE_DEFEND)
+                        && gActionsByTurnOrder[j] != B_ACTION_THROW_BALL)
                     {
                         if (GetWhichBattlerFaster(&ctx, FALSE) == -1)
                             SwapTurnOrder(i, j);
@@ -6373,8 +6315,6 @@ void ScriptSetTotemBoost(struct ScriptContext *ctx)
 
 bool32 IsWildMonSmart(void)
 {
-    if (gSpireBattle) // Project Grounded: The Spire, losse Pokémon met trainer-AI (intenties)
-        return TRUE;
 #if B_SMART_WILD_AI_FLAG != 0
     return (FlagGet(B_SMART_WILD_AI_FLAG));
 #else

@@ -46,7 +46,6 @@
 #include "pokemon_summary_screen.h"
 #include "type_icons.h"
 #include "pokedex.h"
-#include "spire.h"
 #include "test/battle.h"
 #include "test/test_runner_battle.h"
 
@@ -79,8 +78,6 @@ static void PlayerHandleLinkStandbyMsg(u32 battler);
 static void PlayerHandleResetActionMoveSelection(u32 battler);
 static void PlayerHandleEndLinkBattle(u32 battler);
 static void PlayerHandleBattleDebug(u32 battler);
-static void HandleInputSpireDefendTarget(u32 battler);
-static void SpireShowDefendTarget(u32 battler);
 
 static void PlayerBufferRunCommand(u32 battler);
 static void MoveSelectionDisplayPpNumber(u32 battler);
@@ -321,18 +318,6 @@ static void HandleInputChooseAction(u32 battler)
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_USE_ITEM, 0);
             break;
         case 2: // Bottom left
-            if (gSpireBattle) // Project Grounded: The Spire - DEFEND in plaats van wisselen
-            {
-                if (!IsBattlerAlive(BATTLE_PARTNER(battler)) || !IsDoubleBattle())
-                {
-                    BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_SPIRE_DEFEND, battler);
-                    break;
-                }
-                gMultiUsePlayerCursor = 0;
-                SpireShowDefendTarget(battler);
-                gBattlerControllerFuncs[battler] = HandleInputSpireDefendTarget;
-                return;
-            }
             BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_SWITCH, 0);
             break;
         case 3: // Bottom right
@@ -486,99 +471,6 @@ static void WildInfo_OpenSummary(u32 battler)
         // Kopie: een pointer naar gEnemyParty ziet het summary-scherm als een link-tegenstander (leest gLinkPlayers)
         sWildInfoMon = gEnemyParty[gBattlerPartyIndexes[sWildInfoTarget]];
         ShowWildPokemonSummaryScreen(&sWildInfoMon, CB2_SetUpReshowBattleScreenAfterMenu);
-    }
-}
-
-// Knipperen als doel van DEFEND. Alleen starten als hij nog niet knippert en alleen stoppen als hij knippert:
-// SpriteCB_ShowAsMoveTarget onthoudt de huidige zichtbaarheid (data[4]) en HideAsMoveTarget zet die terug.
-// Opnieuw starten tijdens een onzichtbare knipperfase, of stoppen zonder te knipperen (data[4] van een
-// andere callback), liet de sprite onzichtbaar achter (Jordi: "de sprite valt soms weg").
-static EWRAM_DATA u8 sSpireDefendBlinkMask = 0;
-
-static void SpireSetDefendBlink(u32 battler, bool32 on)
-{
-    struct Sprite *sprite = &gSprites[gBattlerSpriteIds[battler]];
-
-    if (on && !(sSpireDefendBlinkMask & (1u << battler)))
-    {
-        sSpireDefendBlinkMask |= 1u << battler;
-        SpriteCB_ShowAsMoveTarget(sprite);
-    }
-    else if (!on && (sSpireDefendBlinkMask & (1u << battler)))
-    {
-        sSpireDefendBlinkMask &= ~(1u << battler);
-        SpriteCB_HideAsMoveTarget(sprite);
-    }
-}
-
-// Project Grounded: The Spire - DEFEND op jezelf (0), je partner (1) of beide (2), met de blokwaarde erbij.
-static void SpireShowDefendTarget(u32 battler)
-{
-    static const u8 sText_DefendOne[] = _("DEFEND: {B_BUFF2}\n{LEFT_ARROW}{RIGHT_ARROW} Block: {B_BUFF1}% HP");
-    static const u8 sText_DefendBoth[] = _("DEFEND: both\n{LEFT_ARROW}{RIGHT_ARROW} Block: {B_BUFF1}%/{B_BUFF2}%");
-    u32 partner = BATTLE_PARTNER(battler);
-    u32 amount = Spire_BlockAmount(battler);
-    u32 choice = gMultiUsePlayerCursor;
-
-    SpireSetDefendBlink(battler, choice != 1);
-    SpireSetDefendBlink(partner, choice != 0);
-    if (choice == 2)
-    {
-        u32 left = GetBattlerAtPosition(B_POSITION_PLAYER_LEFT), right = GetBattlerAtPosition(B_POSITION_PLAYER_RIGHT);
-
-        amount = amount * Spire_BlockSplit() / 100;
-        PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, Spire_BlockPercent(amount, left));
-        PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff2, 3, Spire_BlockPercent(amount, right));
-        BattleStringExpandPlaceholdersToDisplayedString(sText_DefendBoth);
-    }
-    else
-    {
-        u32 target = (choice == 0) ? battler : partner;
-
-        PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 3, Spire_BlockPercent(amount, target));
-        PREPARE_MON_NICK_BUFFER(gBattleTextBuff2, target, gBattlerPartyIndexes[target]);
-        BattleStringExpandPlaceholdersToDisplayedString(sText_DefendOne);
-    }
-    BattlePutTextOnWindow(gDisplayedStringBattle, B_WIN_ACTION_PROMPT);
-}
-
-static void HandleInputSpireDefendTarget(u32 battler)
-{
-    u32 partner = BATTLE_PARTNER(battler);
-
-    if (JOY_NEW(A_BUTTON))
-    {
-        static const u8 sTargets[] = {0, 1, SPIRE_DEFEND_BOTH};
-        u32 target = sTargets[gMultiUsePlayerCursor];
-
-        if (target == 0)
-            target = battler;
-        else if (target == 1)
-            target = partner;
-        PlaySE(SE_RG_BALL_CLICK);
-        SpireSetDefendBlink(battler, FALSE);
-        SpireSetDefendBlink(partner, FALSE);
-        BtlController_EmitTwoReturnValues(battler, B_COMM_TO_ENGINE, B_ACTION_SPIRE_DEFEND, target);
-        BtlController_Complete(battler);
-    }
-    else if (JOY_NEW(B_BUTTON))
-    {
-        PlaySE(SE_RG_BALL_CLICK);
-        SpireSetDefendBlink(battler, FALSE);
-        SpireSetDefendBlink(partner, FALSE);
-        PlayerHandleChooseAction(battler);
-    }
-    else if (JOY_NEW(DPAD_LEFT | DPAD_UP))
-    {
-        PlaySE(SE_RG_BALL_CLICK);
-        gMultiUsePlayerCursor = (gMultiUsePlayerCursor + 2) % 3;
-        SpireShowDefendTarget(battler);
-    }
-    else if (JOY_NEW(DPAD_RIGHT | DPAD_DOWN))
-    {
-        PlaySE(SE_RG_BALL_CLICK);
-        gMultiUsePlayerCursor = (gMultiUsePlayerCursor + 1) % 3;
-        SpireShowDefendTarget(battler);
     }
 }
 
@@ -1814,8 +1706,6 @@ static void MoveSelectionDisplayMoveNames(u32 battler)
             StringCopy(gDisplayedStringBattle, GetMoveName(GetMaxMove(battler, moveInfo->moves[i])));
         else
             StringCopy(gDisplayedStringBattle, GetMoveName(moveInfo->moves[i]));
-        if (moveInfo->moves[i] != MOVE_NONE && Spire_IsMoveUpgraded(battler, moveInfo->moves[i])) // Project Grounded: move+
-            StringAppend(gDisplayedStringBattle, COMPOUND_STRING("+"));
         // Prints on windows B_WIN_MOVE_NAME_1, B_WIN_MOVE_NAME_2, B_WIN_MOVE_NAME_3, B_WIN_MOVE_NAME_4
         BattlePutTextOnWindow(gDisplayedStringBattle, i + B_WIN_MOVE_NAME_1);
         if (moveInfo->moves[i] != MOVE_NONE)
@@ -2175,10 +2065,7 @@ static void PlayerHandleChooseAction(u32 battler)
 
     gBattlerControllerFuncs[battler] = HandleChooseActionAfterDma3;
     BattleTv_ClearExplosionFaintCause();
-    if (gSpireBattle) // Project Grounded: The Spire - DEFEND i.p.v. POKéMON
-        BattlePutTextOnWindow(COMPOUND_STRING("Battle{CLEAR_TO 56}Bag\nDefend{CLEAR_TO 56}Run"), B_WIN_ACTION_MENU);
-    else
-        BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
+    BattlePutTextOnWindow(gText_BattleMenu, B_WIN_ACTION_MENU);
 
     for (i = 0; i < 4; i++)
         ActionSelectionDestroyCursorAt(i);
@@ -2188,29 +2075,7 @@ static void PlayerHandleChooseAction(u32 battler)
     PREPARE_MON_NICK_BUFFER(gBattleTextBuff1, battler, gBattlerPartyIndexes[battler]);
     BattleStringExpandPlaceholdersToDisplayedString(gText_WhatWillPkmnDo);
 
-    if (gSpireBattle) // Project Grounded: The Spire - intenties van de tegenstanders (boven = linker tegenstander)
-    {
-        u8 *dst = gStringVar4;
-        u32 opp;
-
-        *dst++ = EXT_CTRL_CODE_BEGIN;
-        *dst++ = EXT_CTRL_CODE_FONT;
-        *dst++ = FONT_SMALL_NARROW;
-        for (opp = 0; opp < 2; opp++)
-        {
-            u32 foe = GetBattlerAtPosition(opp == 0 ? B_POSITION_OPPONENT_LEFT : B_POSITION_OPPONENT_RIGHT);
-
-            if (opp == 1)
-                *dst++ = CHAR_NEWLINE;
-            if (foe >= gBattlersCount || !IsBattlerAlive(foe))
-                continue;
-            *dst++ = CHAR_BLACK_TRIANGLE;
-            dst = Spire_GetIntentText(dst, foe);
-        }
-        *dst = EOS;
-        BattlePutTextOnWindow(gStringVar4, B_WIN_ACTION_PROMPT);
-    }
-    else     if (B_SHOW_PARTNER_TARGET && gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && IsBattlerAlive(B_POSITION_PLAYER_RIGHT))
+    if (B_SHOW_PARTNER_TARGET && gBattleTypeFlags & BATTLE_TYPE_INGAME_PARTNER && IsBattlerAlive(B_POSITION_PLAYER_RIGHT))
     {
         StringCopy(gStringVar1, COMPOUND_STRING("Partner will use:\n"));
         u32 move = GetChosenMoveFromPosition(B_POSITION_PLAYER_RIGHT);

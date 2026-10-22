@@ -20,7 +20,7 @@ ROUTE = [hexc(c) for c in ('#e6a400', '#eebd39', '#f6d552', '#eee673', '#eee6ac'
 SAND = [hexc('#eee6ac'), hexc('#cdcd94')]          # Hoenn-zand (strepen)
 SAND_HI = [hexc('#f6eec5'), hexc('#eee6ac')]
 SNOW = [hexc('#ffffff'), hexc('#cdcdcd')]
-SALT = [hexc('#ffffff'), hexc('#e6e6e6')]
+SALT = [hexc('#ffffff'), hexc('#cdcdcd')]
 
 # ---------- ruis ----------
 def value_noise(seed, scale):
@@ -73,8 +73,68 @@ for _ in range(10):
     p = np.pad(pad, 1)
     pad = pad | p[:-2, 1:-1] | p[2:, 1:-1] | p[1:-1, :-2] | p[1:-1, 2:]
 near = pad & ~land
-dots = near & (value_noise(66, 3) > 0.84) & ((cy < 5) | (cy > 30) | (cx > 33))
+dots = near & (value_noise(66, 5) > 0.8) & ((cy < 5) | (cy > 30) | (cx > 33))
 land |= dots
+
+# ---------- pixelhulpjes ----------
+from collections import deque
+def components(mask):
+    """Labels van samenhangende stukken (4-buren); geeft (labels, groottes)."""
+    lab = np.full(mask.shape, -1, int)
+    sizes = []
+    hh, ww = mask.shape
+    for y0, x0 in zip(*np.nonzero(mask)):
+        if lab[y0, x0] >= 0:
+            continue
+        k = len(sizes)
+        lab[y0, x0] = k
+        dq, nn = deque([(y0, x0)]), 0
+        while dq:
+            y, x = dq.popleft()
+            nn += 1
+            for ny, nx in ((y + 1, x), (y - 1, x), (y, x + 1), (y, x - 1)):
+                if 0 <= ny < hh and 0 <= nx < ww and mask[ny, nx] and lab[ny, nx] < 0:
+                    lab[ny, nx] = k
+                    dq.append((ny, nx))
+        sizes.append(nn)
+    return lab, np.array(sizes)
+
+def drop_small(mask, minsize):
+    lab, sizes = components(mask)
+    if not len(sizes):
+        return mask
+    keep = sizes >= minsize
+    return mask & keep[np.maximum(lab, 0)] & (lab >= 0)
+
+def erode(m):
+    q = np.pad(m, 1)
+    return m & q[:-2, 1:-1] & q[2:, 1:-1] & q[1:-1, :-2] & q[1:-1, 2:]
+
+def dilate(m):
+    q = np.pad(m, 1)
+    return m | q[:-2, 1:-1] | q[2:, 1:-1] | q[1:-1, :-2] | q[1:-1, 2:]
+
+def dist_in(m, maxd=16):
+    """Afstand (in stappen) van elk pixel in m tot de rand van m."""
+    d = np.zeros(m.shape, int)
+    cur = m.copy()
+    for i in range(maxd):
+        d[cur] = i + 1
+        cur = erode(cur)
+    return d
+
+# Hoenn heeft geen losse pixels in zee: de kleinste eilandjes zijn klodders van ±25 px, en de kust heeft
+# geen spikkels. Kleine stukjes land en kleine gaatjes zee weg.
+land = drop_small(land, 24)
+land = ~drop_small(~land, 16)
+# kustlijn iets gladder (Hoenn: trapjes van 1-2 px, geen losse uitsteeksels van één pixel)
+for _ in range(2):
+    q = np.pad(land, 1, mode='edge').astype(int)
+    nb = sum(np.roll(np.roll(q, dy, 0), dx, 1) for dy in (-1, 0, 1) for dx in (-1, 0, 1))[1:-1, 1:-1]
+    land = np.where(nb >= 6, True, np.where(nb <= 3, False, land))
+land = drop_small(land, 24)
+land_lab, land_sizes = components(land)
+mainland = land & (land_lab == int(np.argmax(land_sizes)))
 
 # ---------- hoogte ----------
 ridge = wc + 3.0 + 0.6 * np.sin(cy * 0.45)
@@ -100,13 +160,13 @@ for _ in range(520):
     bumps = np.maximum(bumps, hgt * np.exp(-(u * u + v * v)))
 elev = (np.maximum(andes * 0.6, plateau * 0.5) + brazil * 0.6 + tepui * 0.7
         + bumps * 1.35 + (hills - 0.5) * 0.2 + 0.0 - amazon * 0.12 - pantanal * 0.25)
-# donkergroene rand langs de kust
-coast = np.zeros_like(land)
-p = land.copy()
-for _ in range(3):
-    q = np.pad(p, 1)
-    p = p & q[:-2, 1:-1] & q[2:, 1:-1] & q[1:-1, :-2] & q[1:-1, 2:]
-coast = land & ~p
+# donkergroene rand langs de kust: in Hoenn meestal 2-8 px breed (mediaan ±4), grillig
+dsea = dist_in(land, 20)
+coastw = 3 + np.round((value_noise(81, 12) - 0.5) * 5 + (value_noise(82, 5) - 0.5) * 2).astype(int)
+coast = land & (dsea <= np.clip(coastw, 2, 7))
+# eilanden: donkere rand, daarbinnen lichter naar het midden (zoals de Hoenn-eilandjes)
+isl = land & ~mainland
+elev = np.where(isl, np.maximum(elev, (dsea - 2) * 0.12 + bumps * 0.6), elev)
 lvl = np.digitize(elev, [0.28, 0.42, 0.6, 0.8])   # 0..4
 # losse pixels weg (meerderheid in 3x3), zoals de gladde vlakken in Hoenn
 for _ in range(2):
@@ -120,7 +180,7 @@ lvl[coast] = 0
 biome = np.zeros((PH, PW), int)   # 0 groen, 2 woestijn, 3 sneeuw, 4 zout
 desert = land & (cy > 15.5) & (cy < 31) & (cx < ridge - 0.8 + (n - 0.5) * 2)
 desert |= land & ellipse(14.5, 27, 3.6, 2.6)                                       # Atacama-hoogland/Lípez
-desert |= land & ellipse(32.5, 12.2, 1.4, 0.7) & (fine > 0.3)                     # Lençóis Maranhenses
+desert |= land & ellipse(32.5, 12.2, 1.4, 0.7)                                    # Lençóis Maranhenses
 biome[desert] = 2
 snow = land & (((lvl >= 4) & (cy > 14) & (cy < 31) & (andes > 0.75) & (biome != 2))
                | ((cy > 31) & (lvl >= 3)) | (cy > 37.8)
@@ -144,7 +204,8 @@ def draw_river(points, width=1, wobble=2.0):
             t = i / steps
             x, y = (x0 + (x1 - x0) * t) * 8, (y0 + (y1 - y0) * t) * 8
             y += math.sin(t * 9 + x0) * wobble
-            river[max(0, int(y) - width):int(y) + width + 1, max(0, int(x) - width):int(x) + width + 1] = True
+            hi = width + 1 + (width == 0)   # minstens 2 px breed, anders worden de strepen spikkels
+            river[max(0, int(y) - width):int(y) + hi, max(0, int(x) - width):int(x) + hi] = True
 draw_river([(12.5, 12.5), (16, 11.8), (20, 12.4), (22.5, 12.0)], 1)
 draw_river([(22.5, 12.0), (26, 11.6), (30, 10.8), (34, 10.4), (37.5, 10)], 2, 1.0)   # Amazone (bevaarbaar)
 draw_river([(14.5, 8), (17, 10), (19, 12.1)], 0)
@@ -155,25 +216,37 @@ draw_river([(19.5, 26.5), (21, 28), (23.6, 30.6)], 0)
 river &= land
 
 # ---------- schilderen ----------
+# Alleen kleuren die de Hoenn-kaart zelf gebruikt. Vormtaal van Hoenn: hoger terrein = geneste vlekken die naar
+# binnen lichter worden; vlakke oppervlakken (zee, zand) = horizontale strepen van 1 px; al het water heeft een
+# donkergroene oever.
 img = np.zeros((PH, PW, 3), np.uint8)
 stripes = ys.astype(int) % 2
 def paint(mask, pal, idx):
     for i, c in enumerate(pal):
         img[mask & (idx == i)] = c
+water_in = (lakes | river) & land
+# rivieren en meren met een donkergroene oever van 1 px (zoals elke kust in Hoenn)
+wbank = dilate(water_in) & land & ~water_in
 paint(~land, SEA, stripes)
-paint(land & (biome == 0), GREEN, lvl)
-paint(land & (biome == 2) & (lvl <= 1), SAND, stripes)
-paint(land & (biome == 2) & (lvl >= 2), [hexc('#e6cd8b'), hexc('#cdcd94'), hexc('#eee6ac'), hexc('#f6eec5'), hexc('#fff6de')], lvl)
-snowedge = np.zeros_like(land)
-sm = land & (biome == 3)
-q = np.pad(sm, 1)
-snowedge = sm & ~(q[:-2, 1:-1] & q[2:, 1:-1] & q[1:-1, :-2] & q[1:-1, 2:])
-paint(sm, [GREEN[0], GREEN[1], hexc('#cdcdcd'), hexc('#e6e6ee'), hexc('#ffffff')], np.maximum(lvl, 2))
-img[snowedge & (lvl >= 2)] = SNOW[1]
-crack = ((xs.astype(int) + ys.astype(int) * 2) % 7 == 0) | ((xs.astype(int) - ys.astype(int) * 2) % 9 == 0)
-paint(land & (biome == 4), SALT, crack.astype(int))
-paint(lakes | river, SEA, stripes)
-img[coast & (biome == 2)] = SAND[1]
+paint(land & ((biome == 0) | (coast & (biome == 3))), GREEN, lvl)
+# woestijn: vlak zand in Hoenn-strepen (zoals Route 111 en de stranden); duinen/hoogland als geneste vlekken
+# in dezelfde twee zandkleuren
+dz = land & (biome == 2)
+dlv = np.where(coast, 0, lvl)
+paint(dz & (dlv <= 2), SAND, stripes)
+dhi = dz & (dlv >= 3)
+img[dhi] = SAND[1]
+img[erode(dhi) & (dlv >= 4) | erode(erode(dhi))] = SAND[0]
+# sneeuw: witte toppen met een grijze rand, op de groene ondergrond; de kust blijft donkergroen
+sm = land & (biome == 3) & ~coast
+img[sm] = SNOW[1]
+img[erode(sm) & ((lvl >= 3) | (dist_in(sm) >= 3))] = SNOW[0]
+# zoutvlakte: vlak en spiegelend, dus strepen (wit/grijs) zoals de zee
+sa = land & (biome == 4)
+paint(sa, SALT, stripes)
+img[sa & ~erode(sa)] = SNOW[1]
+img[wbank] = GREEN[0]
+paint(water_in, SEA, stripes)
 
 # ---------- plaatsen (vakcoördinaten) ----------
 # soort: 'cityh'/'cityv' = rode pil (stad), 'town' = blauwe stip (dorp of hub in de natuur), 'spot' = rode stip
@@ -324,10 +397,15 @@ img[bank] = GREEN[0]
 rmask = np.kron(route, np.ones((8, 8), bool))
 smask = np.kron(sea_route, np.ones((8, 8), bool))
 pl = lvl.copy()
-pl[(biome == 2) | (biome == 3) | (biome == 4)] = 4
-pl[lakes | river | ~land] = 1
+pl[biome == 2] = np.clip(lvl[biome == 2] + 1, 2, 3)   # over zand: oranje blijft zichtbaar tegen de zandkleur
+pl[(biome == 3) | (biome == 4)] = 4
+pl[coast] = 0
 paint(rmask, ROUTE, pl)
-paint(smask, SEAROUTE, stripes)
+# water op een landroute wordt waterroute-blauw (zoals het meertje op Route 120 in Hoenn)
+paint(rmask & (water_in | ~land), SEAROUTE, stripes)
+# zeeroutes alleen over water; land dat in een zeeroutevak valt, blijft land (Hoenn: eilanden liggen erbovenop)
+rrmask = np.kron(river_route, np.ones((8, 8), bool))
+paint((smask & ~land) | rrmask, SEAROUTE, stripes)
 
 # ---------- stadsiconen uit de Hoenn-kaart ----------
 d = 'graphics/pokenav/region_map/'

@@ -70,3 +70,8 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - De gangs verschillen in serieusheid (Jordi): van bijna komisch tot echt gevaarlijk.
 - **Voetbal-Pokémon** (Jordi): met een voetbalthema, maar niet de bal zelf, en anders dan de Scorbunny-lijn.
 - **Voetbal-minigame in de Argentinië-regio** (Jordi), als het technisch kan. (Uitzondering op "minigames eruit": dit is een eigen, optionele attractie.)
+
+## Starters: inspiratie Dark en Psychic (voorstellen Claude, 22 okt)
+- Rode draad: elke eindvorm draagt een Boliviaanse traditie, zoals de bombín van de alpaca-lijn (La Paz = start).
+- **Dark:** Andeskat (gato andino, de zeldzaamste wilde kat; "titi" in het Aymara, vgl. Titicaca) → eindvorm in **diablada**-kostuum (duivelsdans van het carnaval van Oruro). Alternatieven: jaguar (nachtjager, Chavín-katgod), culpeo-vos (de listige vos uit Andes-verhalen), vampiervleermuis, coati (dief).
+- **Psychic:** cavia/cuy (de "limpia de cuy": genezers lezen ziektes af met een cavia) → eindvorm als **yatiri/kallawaya** (Andes-genezer die cocabladeren leest, met kruidentas). Alternatieven: kolibrie (Nazca, zon), nachtaap (grote ogen, nachtdier), roze rivierdolfijn (boto, mythe van gedaanteverwisseling), guácharo (grotvogel die in het donker 'ziet').

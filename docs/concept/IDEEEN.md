@@ -109,3 +109,8 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
   - de **reuzencardón van Isla Incahuasi**: oeroud, langzaam, een wachter op het zoutvlak;
   - de **San Pedro-cactus** (*huachuma*), die in Chavín ceremonieel gebruikt werd. Die kan samenvallen met het idee van de ruïne-Pokémon (Grass/Psychic of Rock/Psychic: ziener).
   - de **Puya raimondii** staat al op de lijst met iconische planten, maar is geen cactus.
+
+## Jaguar (idee, Jordi 22 okt)
+- Er bestaat nog geen echte jaguar-Pokémon (Liepard = luipaard, Incineroar = tijger, Raikou/Entei = legendaries, Luxray = lynx, Pyroar = leeuw).
+- Inspiratie: het heilige dier van de Amazone en van Chavín (sjamanen die in jaguars veranderen, zie de ruïne-Pokémon); jaagt ook in het water, met een beet door de schedel; in het Pantanal en de Amazone.
+- Let op de overlap met de poema van het legendary-trio (Kay Pacha). Naast elkaar kan het wel, net als de twee condors.

@@ -10,6 +10,7 @@ Wat in de conceptdocumenten staat, is **besloten** door Jordi. Losse ideeën sta
 | `POKEMON.md` | starters, legendaries, fakemon en regional forms, met per Pokémon de inspiratie (los van de plek in de regio) |
 | `SPRITE_PLAN.md` | hoe we sprites maken (Hoenn-sprites als leidraad) |
 | `MUZIEK.md` | soundtrack: Zuid-Amerikaanse en Latijns-Amerikaanse stijlen |
+| `DUNGEONS.md` | originele dungeons (natuurverschijnselen met een eigen mechaniek, à la Chargestone) |
 | `MYTHOLOGIE.md` | legendes en mythen uit Zuid-Amerika als bron voor plekken en Pokémon (opties) |
 | `IDEEEN.md` | ruwe verzameling van alle ideeën |
 | `regiokaart*.png` | schetsen van de regiokaart (`tools/concept/regiokaart*.py`) |

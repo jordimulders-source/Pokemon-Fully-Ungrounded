@@ -3,7 +3,7 @@
 Vervolg op **Pokémon Ungrounded** (Project Grounded), gebouwd als fork daarvan op pokeemerald-expansion: alle revisies van Pokémon, moves en abilities, de nieuwe moves/abilities en de QoL blijven. Nieuwe, originele regio gebaseerd op **Zuid-Amerika** (geïnspireerd, niet nagemeten, zoals Hoenn op Kyushu). In code en tools heten veel dingen nog "Grounded" (`tools/grounded/`, `FLAG_GROUNDED`); dat blijft zo. De eigenaar (Jordi) communiceert in het Nederlands; antwoord en schrijf de changelog in het Nederlands.
 
 - **Repo:** `jordimulders-source/Pokemon-Fully-Ungrounded` (branch `main`, volledige geschiedenis van Ungrounded + expansion, dus upstream mergen kan). Het oude project staat in `jordimulders-source/projectgrounded`; de Ungrounded-documenten (changelog, plannen) staan als naslag in `docs/ungrounded/`.
-- **Concept:** ideeën van Jordi verzamelen in `docs/concept/IDEEEN.md`; daaruit groeit `docs/concept/CONCEPT.md`. Jordi gooit hersenspinsels; Claude maakt er een geheel van.
+- **Concept:** ideeën van Jordi verzamelen in `docs/concept/IDEEEN.md`; besloten punten in `docs/concept/` (overzicht `CONCEPT.md`, verder `REGIO.md`, `VERHAAL.md`, `POKEMON.md` met per Pokémon de inspiratie, `SPRITE_PLAN.md`). Alles wat we doen goed documenteren, verdeeld over deze documenten (Jordi). Jordi gooit hersenspinsels; Claude maakt er een geheel van.
 - **Lessen hieronder** komen grotendeels uit Ungrounded en gelden technisch nog steeds; regels over Hoenn-kaarten, het Stadium, de Spire en Spacetime zijn naslag tot die content weer terugkomt.
 
 ## Zuinig met tokens

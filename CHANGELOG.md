@@ -19277,3 +19277,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 ### Fix: geen Misty Terrain in de Lavaridge-gym (v1.0.0)
 - De stoom in de Lavaridge-gym is technisch overworld-mist (`WEATHER_FOG_HORIZONTAL`, al zo in vanilla), en expansion zet bij mist elk gevecht in Misty Terrain (`B_OVERWORLD_FOG`, Gen 8+). In de gym staat dat nu uit (`OverworldFogMakesMistyTerrain`); de stoom blijft zichtbaar. Andere mistkaarten (Rusturf Tunnel, Mt. Pyre-top e.a.) houden Misty Terrain. Ook Weather Ball/Terrain Pulse worden daar geen Fairy meer.
 - Regressietest `stone_axe_volbeat.c`: Stone Axe-rotsen doen 25% bij een Fire/Electric-Volbeat (Jordi zag 50%; de engine rekent correct).
+
+### Flannery: Infernape i.p.v. Coalossal, slimmere AI (v1.0.0)
+- Testrun Jordi: met Garganacl, Solrock, Sandslash en Swampert was de Lavaridge-gym een peuleschil; Flannery's hele team was zwak tegen Rock en Ground (Coalossal/Magcargo 4× tegen Ground en Water) en niets raakte Rock-types hard.
+- **Coalossal → Infernape** @ Expert Belt, lv 44, Blaze: Aura Sphere, Grass Knot, Flamethrower, Vacuum Wave. Snelle speciale counter tegen Rock (om de hoge Defense heen); Grass Knot doet 120 tegen Garganacl.
+- AI: Smart Trainer + voorspellen (move, wissel, inkomende Pokémon), HP-bewust en ability-voorspelling. Bewust geen ace-flag: Magcargo hoort vroeg in het gevecht te kunnen komen, anders heeft Desolate Land geen zin.

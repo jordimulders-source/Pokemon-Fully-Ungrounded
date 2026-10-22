@@ -9217,7 +9217,7 @@ Gender: Female
 Music: Female
 Items: Hyper Potion / Hyper Potion
 Double Battle: No
-AI: AI_FLAG_OMNISCIENT / AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICT_SWITCH / AI_FLAG_SMART_SWITCHING / AI_FLAG_TRY_TO_FAINT
+AI: AI_FLAG_SMART_TRAINER / AI_FLAG_PREDICT_SWITCH / AI_FLAG_PREDICT_INCOMING_MON / AI_FLAG_PREDICT_MOVE / AI_FLAG_HP_AWARE / AI_FLAG_WEIGH_ABILITY_PREDICTION
 Mugshot: Pink
 
 Ninetales @ Heat Rock
@@ -9256,14 +9256,14 @@ Ability: Gale Wings
 - Roost
 - Agility
 
-Coalossal @ Rocky Helmet
+Infernape @ Expert Belt
 Level: 44
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: Flash Fire
-- Stealth Rock
-- Ancient Power
-- Heat Crash
-- Tar Shot
+Ability: Blaze
+- Aura Sphere
+- Grass Knot
+- Flamethrower
+- Vacuum Wave
 
 Magcargo @ White Herb
 Level: 45

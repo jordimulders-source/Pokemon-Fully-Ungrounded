@@ -12,6 +12,11 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 - **Start in een La Paz-achtige stad** (hoog, kabelbanen), met een **ijsgebied** ernaast (Cordillera Real). Sneeuw vroeg in de game, niet als eindgebied. Geen standaardopening met kleine stad en grasroute.
 - Steden geïnspireerd op: La Paz, Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buenos Aires, Cartagena, Paramaribo, Uyuni, Bariloche, Medellín; plus originele plekken.
 
+## Gyms en Elite 4
+- **Gymtypes** (volgorde nog open): Dark, Ice, Bug, Dragon, Ground, Grass, Fire, Poison.
+- **Elite 4:** Electric, Flying, Ghost, Steel.
+- Niet als gym/E4: Normal, Water, Fighting, Psychic, Rock, Fairy (kampioen open).
+
 ## Mythologie
 - Speelt een rol. Verhouding zoals nu: weinig mensen geloven er letterlijk in, maar de goden en geesten worden nog geëerd (traditie).
 - **Legendary-trio: de drie Inca-werelden.**

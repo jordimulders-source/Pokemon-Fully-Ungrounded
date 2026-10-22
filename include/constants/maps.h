@@ -27,4 +27,7 @@ enum
 // use the given coordinates rather than the coordinates of a target warp.
 #define WARP_ID_NONE (-1)
 
+// Fully Ungrounded: verdwenen Hoenn-kaarten/-layouts die de code nog noemt (zie tools/grounded/maptools/map_compat.py)
+#include "constants/map_compat.h"
+
 #endif  // GUARD_CONSTANTS_MAPS_H

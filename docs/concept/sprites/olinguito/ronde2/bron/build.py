@@ -94,8 +94,8 @@ def ringed_tail(c, pts, widths, rings, tipdark=0.84):
 
 
 def head(c, dy=0):
-    c.ellipse('oor1', 'vacht', 16.5, 13.5 + dy, 3.6, 4, rot=-25, shade=2)
-    c.ellipse('oor2', 'vacht', 35, 12 + dy, 4, 4.4, rot=25, shade=2)
+    c.ellipse('oor1', 'vacht', 16.5, 14 + dy, 4.3, 4.5, shade=2)
+    c.ellipse('oor2', 'vacht', 35, 12.5 + dy, 4.6, 4.8, shade=2)
     c.ellipse('kop', 'vacht', 26, 23 + dy, 11.5, 10.5, shade=2.5, hl=(20, 16 + dy, 3))
     c.ellipse('snuit', 'creme', 16.5, 27.5 + dy, 5, 3.6, shade=2)
 
@@ -131,23 +131,13 @@ FACE_CLOSED = _face_rows([
 def face(idx, dy=0, closed=False):
     if os.environ.get('NOPATCH'):
         return
-    # binnenoren donker
-    patch(idx, 16, 17 + dy, ['M', 'MM', '.M'], K)
-    patch(idx, 34, 16 + dy, ['MM', 'MM', 'M.'], K)
-    # pluk: één brutale lok die van het voorhoofd naar achteren omhoog steekt
-    patch(idx, 22, 14 + dy, [
-        '......do',
-        '.....dho',
-        '....dhvo',
-        '...dhvso',
-        '..dhvvs.',
-        '..hvvs..',
-        '..vvvs..',
-    ], K)
+    # binnenoren donker (het masker-donker: hoort bij de 'inbrekerskleuren')
+    x, y = Ti(16.5, 14); patch(idx, x - 1, y - 1 + dy, ['.M', 'MM', 'M.'], K)
+    x, y = Ti(35, 12.5); patch(idx, x - 1, y - 1 + dy, ['MM', 'MM', '.M'], K)
     for (x, y), ch in (FACE_CLOSED if closed else FACE_OPEN).items():
         idx[y + dy, x] = K[ch]
     # opgetrokken wenkbrauw boven het dichtste oog
-    patch(idx, 28, 20 + dy, ['..ddd', 'dd...'], K)
+    patch(idx, 30, 21 + dy, ['..dd.', 'dd..d'], K)
     # neus
     patch(idx, 13, 30 + dy, ['ooo', 'oo.'], K)
     if not closed:

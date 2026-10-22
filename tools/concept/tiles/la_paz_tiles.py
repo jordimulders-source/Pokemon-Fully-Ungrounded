@@ -185,51 +185,48 @@ def stairs(kind):
 
 
 def clay_cliff(part, half=0):
-    """Uitgesleten kleiwand (de hellingen van de kom): ronde zuilen van ongelijke breedte en hoogte
-    (periode 32 px = twee stukken a/b), licht links, schaduw rechts, rechte rechthoeken (les: kliffen).
-    part: top (rand + wand), mid (wand), base (wand + voet)."""
-    c = Canvas(16, 16)
-    ground = clay(0)
-    for y in range(16):
-        for x in range(16):
-            c.px(x, y, ground.get(x, y))
-    cols = [(0, 7, 1), (7, 12, 3), (12, 21, 0), (21, 27, 2), (27, 32, 1)]  # (x0, x1, kopverlaging)
-    for x0, x1, drop in cols:
-        for X in range(x0, x1):
-            x = X - half * 16
-            if not 0 <= x < 16:
-                continue
-            ytop = {'top': 7 + drop, 'mid': 0, 'base': 0}[part]
-            ybot = {'top': 15, 'mid': 15, 'base': 9 + (drop % 2) * 2}[part]
-            for y in range(ytop, ybot + 1):
-                col = CL[2]
-                if X == x0:
-                    col = OL6 if y > ytop + 1 else CL[1]
-                elif X == x0 + 1:
-                    col = CL[3]
-                elif X == x1 - 1:
-                    col = CL[1]
-                elif X == x1 - 2 and (y + X) % 3 == 0:
-                    col = CL[1]
-                # lagen in de klei
-                if part == 'mid' and y in (5 + drop, 12 - drop) and X not in (x0,):
-                    col = CL[1] if X != x0 + 1 else CL[2]
-                c.px(x, y, col)
-            if part == 'top':  # ronde kop
-                c.px(x, ytop, CL[3] if X not in (x0, x1 - 1) else ground.get(x, ytop))
-                if X in (x0 + 1, x1 - 2):
-                    c.px(x, ytop, CL[2])
-            if part == 'base':
-                c.px(x, ybot + 1, OL6)
-                c.px(x, ybot + 2, CL[1])
+    """Uitgesleten kleiwand (de hellingen van de kom), periode 32 px (stukken a/b). Rechte rechthoeken
+    (les: kliffen). Geulen lopen vanaf de rand naar beneden en vanaf de voet omhoog, de wand zelf is
+    gelaagd. part: top (rand + wand), mid (wand, stapelbaar), base (wand + voet)."""
+    c = Canvas(16, 16, CL[2])
+    X0 = half * 16
+
+    def P(X, y, col):
+        if X0 <= X < X0 + 16:
+            c.px(X - X0, y, col)
+    # gelaagdheid (licht golvend)
+    for X in range(X0, X0 + 16):
+        w = 1 if (X // 6) % 2 else 0
+        for yy in ((3 + w, 11 - w) if part == 'mid' else ((12 + w,) if part == 'top' else (4 + w,))):
+            P(X, yy, CL[3]); P(X, yy + 1, CL[1])
+
+    def crevice(X, y0, y1):
+        for y in range(y0, y1 + 1):
+            P(X, y, OL6 if y0 < y < y1 else CL0b)
+            P(X - 1, y, CL[1]); P(X + 1, y, CL[3])
+    CL0b = CL[0]
     if part == 'top':
-        c.hline(0, 15, 5, CL[3])
-        for x in range(16):
-            if c.get(x, 6) == ground.get(x, 6):
-                c.px(x, 6, CL[1])
+        for X in range(X0, X0 + 16):
+            for y in range(0, 6):
+                P(X, y, CL[2])
+        for X, y in ((4, 2), (21, 3), (13, 1)):
+            P(X, y, CL[1]); P(X + 1, y, CL[3])
+        for X in range(X0, X0 + 16):
+            P(X, 5, CL[3]); P(X, 6, OL6); P(X, 7, CL[1])
+        for X, ln in ((5, 7), (14, 4), (22, 8), (29, 5)):
+            crevice(X, 7, 7 + ln)
+    if part == 'mid':
+        for X, y0, y1 in ((9, 6, 10), (26, 1, 6)):
+            crevice(X, y0, y1)
     if part == 'base':
-        for x in (3, 11):
-            c.px(x, 14, CL[1]); c.px(x + 1, 14, CL[3])
+        for X, ln in ((3, 5), (12, 3), (19, 6), (27, 4)):
+            crevice(X, 11 - ln, 10)
+        for X in range(X0, X0 + 16):
+            P(X, 11, OL6); P(X, 12, CL[0])
+            for y in (13, 14, 15):
+                P(X, y, CL[2])
+        for X in (6, 17, 25):
+            P(X, 13, CL[1]); P(X + 1, 13, CL[3]); P(X, 14, CL[1])
     return c
 
 
@@ -886,7 +883,7 @@ def illimani():
         for y in range(H_):
             if y < top:
                 col = SN[1]
-                if (x * 3 + y * 5) % 32 == 0:
+                if (x * 3 + y * 5) % 64 == 0:
                     col = SN[2]
             elif y == top:
                 col = OLN
@@ -894,16 +891,14 @@ def illimani():
                 snowline = 40 + tri(x + (8 if left else 0))
                 if y < snowline:
                     col = SN[0] if left else SN[1]
-                    if not left and (x + y) % 8 == 0:
+                    if not left and (x - y) % 16 == 0 and y > top + 3:
                         col = SN[2]
-                    if left and (x - y) % 16 == 0 and y > top + 2:
-                        col = SN[1]
                 elif y == snowline:
                     col = SN[2]
                 else:
                     col = RK[2] if left else RK[1]
-                    if (x + 2 * y) % 16 == 0:
-                        col = RK[0] if not left else RK[1]
+                    if (x - y) % 16 == 0 and y < 70:
+                        col = RK[1] if left else RK[0]
                 if x == px_ and y > top:
                     col = SN[1] if y < snowline else RK[1]
             if y > 75:
@@ -947,7 +942,7 @@ def cordillera():
         for y in range(H_):
             if y < top:
                 col = SN[1]
-                if (x * 3 + y * 5) % 32 == 0:
+                if (x * 3 + y * 5) % 64 == 0:
                     col = SN[2]
             elif y == top:
                 col = OLN
@@ -955,7 +950,7 @@ def cordillera():
                 col = SN[0] if left else SN[2]
             else:
                 col = RK[2] if left else RK[1]
-                if (x + 2 * y) % 16 == 0:
+                if (x - y) % 16 == 0 and y < 70:
                     col = RK[1] if left else RK[0]
             if y > 75:
                 col = None
@@ -1128,8 +1123,8 @@ def mockup():
         for y in range(17, Hm):
             g[y][x] = N['plaza']
     put(g, 14, 18, OBJ['tent_blue']); put(g, 14, 21, OBJ['tent_red'])
-    g[21][15] = GOODS['potatoes']; g[21][16] = GOODS['sacks']; g[20][18] = GOODS['fruit']
-    g[23][14] = GOODS['herbs']; g[23][15] = GOODS['aguayo']; g[23][17] = GOODS['crate']
+    g[20][15] = GOODS['potatoes']; g[20][16] = GOODS['sacks']; g[19][18] = GOODS['fruit']
+    g[23][15] = GOODS['herbs']; g[23][16] = GOODS['aguayo']; g[21][18] = GOODS['crate']
     g[19][19] = GOODS['aguayo']; g[22][19] = GOODS['fruit']
     put(g, 24, 18, OBJ['eucalyptus'])
     put(g, 21, 18, OBJ['lamp']); put(g, 28, 18, OBJ['lamp'])

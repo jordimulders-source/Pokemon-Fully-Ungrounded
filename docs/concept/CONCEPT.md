@@ -19,6 +19,7 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
   - **Kay Pacha** – deze wereld (mensen, het leven) – **poema**.
   - **Uku Pacha** – de onderwereld (doden, voorouders, zaad en oorsprong) – **slang**.
   - Typen, namen, rol in het verhaal: nog open.
+- **Opper-legendary: gebaseerd op Pachamama** (Moeder Aarde; "pacha" = wereld én tijd). Staat boven het trio: de drie werelden zijn delen van haar. Type, naam en rol: nog open.
 
 ## Pokémon
 - **Starters: Fighting → Dark → Psychic.**

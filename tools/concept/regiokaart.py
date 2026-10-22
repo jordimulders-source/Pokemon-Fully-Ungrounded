@@ -191,7 +191,9 @@ lvl[coast] = 0
 # ---------- biomen (in Hoenn-kleuren) ----------
 biome = np.zeros((PH, PW), int)   # 0 groen, 2 woestijn, 3 sneeuw, 4 zout
 desert = land & (cy > 15.5) & (cy < 31) & (cx < ridge - 0.8 + (n - 0.5) * 2)
-desert |= land & rellipse(14.5 + (n - 0.5) * 1.6, 27 + (n - 0.5) * 1.6, 3.2, 2.2, 70)   # Atacama-hoogland/Lípez
+pn = fbm(97, (24, 12, 6))
+pn = 0.5 + (pn - pn.mean()) / pn.std() * 0.22   # sterkere ruis: grillige randen
+desert |= land & (cy > 23.2 + (pn - 0.5) * 3) & (cy < 30.5 + (pn - 0.5) * 2) & (cx < ridge + 2.6 + (pn - 0.5) * 6)   # Atacama-hoogland/Lípez (puna), grillige oostrand
 desert |= land & ellipse(32.5 + (value_noise(93, 5) - 0.5) * 1.2, 12.2 + (value_noise(94, 5) - 0.5) * 0.6, 1.4, 0.7)                                  # Lençóis Maranhenses
 biome[desert] = 2
 snow = land & (((lvl >= 4) & (cy > 14) & (cy < 31) & (andes > 0.75) & (biome != 2))
@@ -256,8 +258,10 @@ paint(land & ((biome == 0) | (coast & (biome == 3))), GREEN, glvl)
 # in dezelfde twee zandkleuren
 dz = land & (biome == 2)
 dlv = np.where(coast, 0, lvl)
-paint(dz & (dlv <= 2), SAND, stripes)
-dhi = dz & (dlv >= 3)
+dune = value_noise(95, 7) * 0.55 + value_noise(96, 3) * 0.2 + n * 0.25   # grillige duinvlekken, geen cirkels
+dhi = dz & (dlv >= 1) & (dune > 0.56)
+paint(dz & ~dhi, SAND, stripes)
+dlv = np.where(dune > 0.66, 4, dlv)
 img[dhi] = SAND[1]
 img[erode(dhi) & (dlv >= 4) | erode(erode(dhi))] = SAND[0]
 # sneeuw: witte toppen met een grijze rand, op de groene ondergrond; de kust blijft donkergroen

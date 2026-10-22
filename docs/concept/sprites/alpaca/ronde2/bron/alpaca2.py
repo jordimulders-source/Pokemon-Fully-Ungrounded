@@ -51,6 +51,33 @@ def puffs(c, cx, cy, rx, ry, n, br, a0=0.0, glob=None, mix=0.7, curl=(0.15, 2.4)
     return cs
 
 
+# Wolbolletjes van het lijf (x, y, straal), met de hand geplaatst. Getekend van onder
+# naar boven: elk hoger bolletje ligt vóór het lagere, met een lavendel boogje langs
+# zijn onderrand (de 'schubben' van Swablu/Altaria/Mareep).
+BODY = [(28, 52, 4.4), (34, 53, 4.4), (40, 53, 4.4), (46, 50, 4.4),
+        (25, 47, 4.0), (31, 47, 4.6), (38, 47, 4.8), (46, 44, 4.6),
+        (30, 40, 4.6), (37, 40, 4.8), (44, 38, 4.2),
+        (26, 35, 3.4), (31, 34, 3.6), (36, 35, 3.6)]
+
+
+def body_puffs(c, dx=0):
+    glob = (35 + dx, 42, 17, 15)
+    c.fill(c.m_ellipse(37 + dx, 45, 12, 9), 'wol', *glob, edge=False)
+    wool = c.part == 'wol'
+    for bx, by, r in sorted(BODY, key=lambda p: -p[1]):
+        bx += dx
+        m = c.m_ellipse(bx, by, r, r)
+        c.fill(m, 'wol', bx, by, r, r, glob=glob, mix=0.6, edge=False)
+        y, x = np.mgrid[0:64, 0:64]
+        lower = (y - by) > 0.25 * r
+        nb_w = np.zeros_like(m)
+        for oy, ox in ((1, 0), (0, 1), (0, -1)):
+            nb_w |= np.roll(np.roll(wool & ~m, -oy, 0), -ox, 1)
+        line = m & lower & nb_w
+        c.idx[line] = np.where(c.idx[line] >= 3, 4, 3)
+        wool = c.part == 'wol'
+
+
 def frame(f2=False):
     c = Canvas(R, thresholds=TH)
     lean = -2 if f2 else 0          # frame 2: naar voren
@@ -61,9 +88,7 @@ def frame(f2=False):
         c.poly([(40, 44), (45, 42), (50, 39), (47, 36)], 'vacht', shift=1)
         glove(c, 50, 37, 4.6, far=True, band_dir=(-1, 1))
     # wollen lijf: wolk met geschulpte rand
-    puffs(c, 37 + lean, 46.5, 14.5, 10.5, 11, 4.2, a0=0.1, mix=0.45)
-    # wollen kraag onder de kop
-    puffs(c, 31 + lean, 38, 8.5, 5, 6, 3.2, a0=0.5, glob=(33 + lean, 40, 14, 12))
+    body_puffs(c, lean)
     hx, hy = 28 + lean, 27 + (1 if f2 else 0)
     # oren (banaanvorm) met rode wollen kwastjes
     if f2:   # oren plat naar achteren

@@ -1081,74 +1081,76 @@ def overlay(base_id, top_canvas, key):
 
 
 def mockup():
-    Wm, Hm = 30, 20
-    g = grid_fill(Wm, Hm, 'clay0')
-    # Illimani boven, breder gemaakt met kleigrond eromheen
-    put(g, 8, 0, OBJ['illimani'])
-    for x in list(range(0, 8)) + list(range(22, 30)):
-        for y in range(0, 5):
-            g[y][x] = N['clay1' if (x + y) % 3 else 'clay2']
-    # hoogste terras: kleiwand
+    Wm, Hm = 30, 24
+    g = grid_fill(Wm, Hm, 'cobble0')
+    # bergen: cordillera links en rechts, Illimani in het midden
+    for x in range(0, Wm, 2):
+        put(g, x, 0, OBJ['range'])
+    put(g, 9, 0, OBJ['illimani'])
+    # rand van de kom (El Alto-kant): kleigrond, dan de uitgesleten wand
     for x in range(Wm):
-        g[5][x] = N['cliff_top']; g[6][x] = N['cliff_base']
-    g[5][0] = N['cliff_top_l']; g[6][0] = N['cliff_base_l']
-    g[5][13] = N['cliffstairs_top']; g[6][13] = N['cliffstairs_base']
-    # bovenste rij huizen (op klei) y 7..10
-    for x in range(Wm):
-        for y in range(7, 12):
-            g[y][x] = N['cobble1' if (x * 7 + y) % 5 == 0 else 'cobble0']
-    house(g, 0, 7, 3, floors=2, tex='b', extras=[(1, 'roof_m_tank')])
-    house(g, 3, 7, 3, floors=2, tex='p', pal=8, roof='flat', extras=[(2, 'roof_r_rebar')],
+        g[5][x] = N['clay2' if x % 7 == 3 else 'clay0']
+        for y, part in ((6, 'top'), (7, 'mid'), (8, 'base')):
+            g[y][x] = N[f'cliff_{part}_{"ab"[x % 2]}']
+    for y, part in ((6, 'top'), (7, 'mid'), (8, 'base')):
+        g[y][13] = N[f'cliffstairs_{part}']
+    # bovenste huizenrij
+    house(g, 0, 11, 3, floors=2, tex='b', extras=[(1, 'roof_m_tank')])
+    house(g, 3, 11, 3, floors=2, tex='p', pal=8, extras=[(2, 'roof_r_rebar')],
           upper={0: ['upp_l', 'upp_curtain', 'upp_r']})
-    house(g, 6, 8, 3, floors=1, tex='b', roof='gable', extras=[(1, 'gable1_m_stones')])
-    for y in range(7, 20):
+    house(g, 6, 11, 3, floors=1, tex='b', roof='gable', extras=[(1, 'gable1_m_stones')])
+    house(g, 9, 10, 3, floors=3, tex='b', extras=[(0, 'roof_l_rebar'), (1, 'roof_m_rebar'), (2, 'roof_r_rebar')],
+          upper={0: ['upb_openl', 'upb_open', 'upb_openr'], 1: ['upb_l', 'upb_curtain', 'upb_r']},
+          gf=['gfb_l', 'gfb_shutter', 'gfb_r'])
+    for y in range(9, Hm):
         g[y][13] = N['stairs_y' if y % 3 == 0 else 'stairs_lr']
-        g[y][12] = N['rwall' if y > 11 else 'sidewalk']
-    house(g, 9, 7, 3, floors=2, tex='b', extras=[(0, 'roof_l_rebar'), (1, 'roof_m_rebar'), (2, 'roof_r_rebar')],
-          upper={0: ['upb_openl', 'upb_open', 'upb_openr']}, gf=['gfb_l', 'gfb_shutter', 'gfb_r'])
-    cholet(g, 14, 4, 4, floors=3, scheme=0, chalet=True)
-    house(g, 18, 7, 4, floors=2, tex='p', pal=9, extras=[(2, 'roof_m_laundry')])
-    cholet(g, 22, 6, 3, floors=2, scheme=1)
-    house(g, 25, 7, 3, floors=2, tex='b', extras=[(1, 'roof_m_dish')])
-    house(g, 28, 8, 2, floors=1, tex='p', pal=8, roof='gable')
-    # straat met stoep y 12..13
+    for y in range(9, 15):
+        g[y][12] = N['rwall_top' if y == 9 else 'rwall']
+    cholet(g, 14, 7, 4, floors=3, scheme=0, chalet=True)
+    house(g, 18, 11, 4, floors=2, tex='p', pal=9, extras=[(2, 'roof_m_laundry')])
+    cholet(g, 22, 8, 3, floors=2, scheme=1)
+    house(g, 25, 10, 3, floors=3, tex='b', extras=[(1, 'roof_m_dish')], pal=9)
+    house(g, 28, 12, 2, floors=1, tex='p', pal=8, roof='gable')
+    for y in (9, 10, 11):
+        for x in range(Wm):
+            if g[y][x] == N['cobble0']:
+                g[y][x] = N['clay0' if y < 10 else 'sidewalk']
+    # straat met stoep
     for x in range(Wm):
-        if x in (12, 13):
+        if x == 13:
             continue
-        g[12][x] = N['curb_s']; g[13][x] = N['cobble0' if x % 4 else 'cobble2']
-    # onderste rij: station + markt + plaza
-    put(g, 0, 13, OBJ['station'])
-    for x in range(7, 12):
-        for y in range(14, 20):
-            g[y][x] = N['cobble0']
-    put(g, 7, 14, OBJ['mast_ew'])
-    for x in range(14, 30):
-        for y in range(14, 20):
-            g[y][x] = N['plaza'] if x >= 23 else N['cobble0']
-    put(g, 14, 14, OBJ['tent_blue']); put(g, 18, 14, OBJ['tent_red'])
-    g[17][14] = GOODS['potatoes']; g[17][15] = GOODS['sacks']; g[17][16] = GOODS['fruit']
-    g[17][18] = GOODS['herbs']; g[17][19] = GOODS['aguayo']; g[17][20] = GOODS['crate']
-    g[19][14] = GOODS['aguayo']; g[19][16] = GOODS['fruit']
-    put(g, 25, 14, OBJ['eucalyptus'])
-    put(g, 23, 15, OBJ['lamp']); put(g, 28, 15, OBJ['lamp'])
-    g[18][24] = N['bench']; g[18][27] = N['bench']
-    g[17][23] = N['planter_flowers']; g[17][29] = N['planter']
-    g[19][9] = N['manhole']
-    # kabelbaan: van het station oostwaarts over de markt en de huizen (rij 13: kabel op y 3 en 11)
-    cy = 14
-    for x in range(7, 30):
-        if x == 7:
+        g[15][x] = N['curb_s']
+        g[16][x] = N['cobble2' if x % 5 == 2 else 'cobble0']
+    # onderste rij: station, mast, markt, plein
+    put(g, 0, 17, OBJ['station'])
+    put(g, 7, 15, OBJ['mast_ew'])
+    for x in range(20, Wm):
+        for y in range(17, Hm):
+            g[y][x] = N['plaza']
+    put(g, 14, 18, OBJ['tent_blue']); put(g, 14, 21, OBJ['tent_red'])
+    g[21][15] = GOODS['potatoes']; g[21][16] = GOODS['sacks']; g[20][18] = GOODS['fruit']
+    g[23][14] = GOODS['herbs']; g[23][15] = GOODS['aguayo']; g[23][17] = GOODS['crate']
+    g[19][19] = GOODS['aguayo']; g[22][19] = GOODS['fruit']
+    put(g, 24, 18, OBJ['eucalyptus'])
+    put(g, 21, 18, OBJ['lamp']); put(g, 28, 18, OBJ['lamp'])
+    g[21][22] = N['bench']; g[21][27] = N['bench']
+    g[20][21] = N['planter_flowers']; g[20][28] = N['planter']; g[23][21] = N['planter']
+    g[22][9] = N['manhole']
+    put(g, 10, 18, OBJ['mast_ns'])
+    # kabelbaan oost-west vanaf het station (rij 18), over de markt en het plein
+    cy = 18
+    for x in range(8, Wm):
+        if (x, cy) in ((10, 18),):
             continue
         g[cy][x] = overlay(g[cy][x], CABLE['ew'], 'cable_ew')
-    # gondels
-    for x, col in [(10, 'red'), (20, 'yellow'), (27, 'green')]:
+    for x, col in [(12, 'red'), (25, 'green')]:
         gc = GONDOLA[col]
-        g[cy][x] = overlay(g[cy][x] if not ts.mts[g[cy][x] - 512][0].endswith('+cable_ew') else
-                           N[ts.mts[g[cy][x] - 512][0].split('+')[0]], gc.sub(0, 0, 16, 16), 'gondola_' + col + '0')
+        base0 = N[ts.mts[g[cy][x] - 512][0].split('+')[0]]
+        g[cy][x] = overlay(base0, gc.sub(0, 0, 16, 16), 'gondola_' + col + '0')
         g[cy + 1][x] = overlay(g[cy + 1][x], gc.sub(0, 16, 16, 16), 'gondola_' + col + '1')
-    # tweede lijn noord-zuid langs de trap (over de huizen)
-    for y in range(0, 14):
-        g[y][11] = overlay(g[y][11], CABLE['ns'], 'cable_ns')
+    # tweede lijn noord-zuid over de huizen, van de mast naar de rand van de kom
+    for y in range(6, 18):
+        g[y][10] = overlay(g[y][10], CABLE['ns'], 'cable_ns')
     return g
 
 

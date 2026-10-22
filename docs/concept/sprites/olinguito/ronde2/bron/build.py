@@ -100,38 +100,42 @@ def head(c, dy=0):
     c.ellipse('snuit', 'creme', 16.5, 27.5 + dy, 5, 3.6, shade=2)
 
 
-FACE_OPEN = [
-    # x13..x38: masker (m/M) dik rond de ogen, smal over de neusbrug, punten naar achteren;
-    # ogen met zware leden, gouden iris, spleetpupil en glans
-    '.......mmmm......mmmmmmm..',
-    '....mmmmmmmmm...mmmmmmmmmm',
-    '..mmoooooommmoooooooooommM',
-    'mmmmowggGommmowgggggGommM.',
-    '.mmmmoGGommmmogggoGGGommM.',
-    '..MmmmooomM..moooooooomM..',
-    '...MMMMMM.....MMMMMMMMM...',
-]
-FACE_CLOSED = [
-    '.......mmmm......mmmmmmm..',
-    '....mmmmmmmmm...mmmmmmmmmm',
-    '..mmmmoomm...mmmmooommmmmM',
-    'mmmmoggommmmmmmoggGommmmM.',
-    '.mmmoGmmGommmmoGmmmGommmM.',
-    '..MmmmmmmM..mmmmmmmmmmM...',
-    '...MMMMMM.....MMMMMMMMM...',
-]
-for _r in FACE_OPEN + FACE_CLOSED:
-    assert len(_r) == 26, _r
+def _face_rows(eyes):
+    """Masker (x16..x36, y23..y28) met ogen erover. eyes: lijst (x, y, rijen)."""
+    rows = {23: [(19, 23), (27, 34)], 24: [(17, 35)], 25: [(16, 36)], 26: [(16, 36)],
+            27: [(17, 35)], 28: [(18, 23), (26, 34)]}
+    g = {}
+    for y, spans in rows.items():
+        for a, b in spans:
+            for x in range(a, b + 1):
+                g[(x, y)] = 'M' if y == 28 or x in (a, b) and y >= 26 else 'm'
+    g[(36, 25)] = 'M'
+    for ex, ey, er in eyes:
+        for dy, row in enumerate(er):
+            for dx, ch in enumerate(row):
+                if ch != '.':
+                    g[(ex + dx, ey + dy)] = ch
+    return g
+
+
+FACE_OPEN = _face_rows([
+    (18, 25, ['ooooo', 'owgGo', '.ooo.']),
+    (26, 24, ['oooooooo', 'owggoggo', 'oggGoGGo', '.oooooo.']),
+])
+FACE_CLOSED = _face_rows([
+    (18, 25, ['..o..', '.ogo.', 'og.go']),
+    (26, 24, ['..oooo..', '.oggggo.', 'ogG..Ggo', 'o......o']),
+])
 
 
 def face(idx, dy=0, closed=False):
     if os.environ.get('NOPATCH'):
         return
-    patch(idx, 16, 11 + dy, ['M', 'M', 'M'], K)
-    patch(idx, 35, 9 + dy, ['M', 'M', 'M', 'M'], K)
-    patch(idx, 13, 17 + dy, FACE_CLOSED if closed else FACE_OPEN, K)
+    # binnenoren donker
+    patch(idx, 16, 17 + dy, ['M', 'MM', '.M'], K)
+    patch(idx, 34, 16 + dy, ['MM', 'MM', 'M.'], K)
     # pluk: één brutale lok die van het voorhoofd naar achteren omhoog steekt
-    patch(idx, 22, 6 + dy, [
+    patch(idx, 22, 14 + dy, [
         '......do',
         '.....dho',
         '....dhvo',
@@ -140,24 +144,25 @@ def face(idx, dy=0, closed=False):
         '..hvvs..',
         '..vvvs..',
     ], K)
+    for (x, y), ch in (FACE_CLOSED if closed else FACE_OPEN).items():
+        idx[y + dy, x] = K[ch]
     # opgetrokken wenkbrauw boven het dichtste oog
-    patch(idx, 27, 14 + dy, ['....dd.', '..dd..d', '.d.....'], K)
+    patch(idx, 28, 20 + dy, ['..ddd', 'dd...'], K)
     # neus
-    patch(idx, 11, 25 + dy, ['ooo', 'oo.'], K)
+    patch(idx, 13, 30 + dy, ['ooo', 'oo.'], K)
     if not closed:
         # scheve grijns met hoektand
-        patch(idx, 12, 27 + dy, [
-            '..........o',
-            '.ooooooooo.',
-            '......w....',
+        patch(idx, 14, 32 + dy, [
+            '.........o',
+            '.oooooooo.',
+            '......w...',
         ], K)
     else:
-        patch(idx, 12, 27 + dy, [
-            '..........o',
-            '.oooooooooo',
-            '..owddddo..',
-            '...oddddo..',
-            '....oooo...',
+        patch(idx, 14, 32 + dy, [
+            '.ooooooooo',
+            '..owddddo.',
+            '...oddddo.',
+            '....oooo..',
         ], K)
 
 
@@ -190,7 +195,7 @@ def frame1():
     idx = c.render()
     face(idx)
     # munt: geslagen teken (ster/kroon) en rand
-    patch(idx, 23, 49, ['.G.', 'G.G', '.G.'], K)
+    patch(idx, 25, 50, ['.G.', 'G.G', '.G.'], K)
     # klauwen: bungelend (3), om de munt (2), achtervoet (2)
     hooks(idx, shift_claws([
         [(10, 45), (10, 46), (10, 47), (9, 48), (9, 49), (8, 50), (7, 50), (6, 49)],
@@ -209,8 +214,8 @@ def frame2():
     Canvas.selout_parts = {'vacht', 'creme', 'doek'}
     ringed_tail(c, [(37, 53), (47, 53), (53, 47), (56, 39), (55, 31), (52, 26), (48, 24)],
                 [6.5, 7, 7, 6.5, 6, 4.5, 1.5], rings=[(0.22, 0.29), (0.43, 0.5), (0.63, 0.7)])
-    common_body(c, dy=-1)
-    head(c, dy=-1)
+    common_body(c, dy=-1 / S)
+    head(c, dy=-1 / S)
     # verste arm wijd naar links-omhoog
     c.tube('arm1', 'vacht', [(24, 37), (19, 36)], [5.5, 5], line='dark', shade=2)
     c.tube('hand1', 'donker', [(20, 36), (13, 34.5)], [5, 4.5], line='black', shade=2)
@@ -223,7 +228,7 @@ def frame2():
     c.ellipse('voet1', 'donker', 22, 55.5, 5.5, 2.6, line='black', shade=1.5)
     idx = c.render()
     face(idx, dy=-1, closed=True)
-    patch(idx, 46, 7, ['i', 'g', 'G'], K)
+    patch(idx, 44, 15, ['i', 'g', 'G'], K)
     hooks(idx, shift_claws([
         [(8, 32), (7, 31), (6, 30), (5, 29), (5, 28), (4, 27), (4, 26)],
         [(8, 34), (7, 34), (6, 34), (5, 33), (4, 33), (3, 32), (2, 31)],

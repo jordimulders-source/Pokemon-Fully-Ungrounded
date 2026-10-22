@@ -59,7 +59,7 @@ VOLTORB|B||Jordi 22 okt: erin. Pokéball-grap; Electric is al gevuld|Voltorb her
 VOLTORB_HISUI|C||idem|
 EXEGGCUTE|A|NEV|Alolan Exeggutor in de waspalmenvallei (besloten); Exeggcute komt mee|
 CUBONE|C||Geen band; Alolan Marowak hoort bij Hawaï|
-TYROGUE|B|STAD|Vechtsporters in de steden (capoeira!); Hitmontop is een capoeirista avant la lettre|
+TYROGUE|C|STAD|Jordi 22 okt: Tyrogue-lijn niet; alleen een regionale capoeira-Hitmontop (zie POKEMON.md). Vechtsporters in de steden (capoeira!); Hitmontop is een capoeirista avant la lettre|
 LICKITUNG|C||Geen band|
 KOFFING|B|STAD,GROT|Smog van steden en mijnen; Poison-gym en het thema natuurvernietiging|Koffing-lijn herzien
 RHYHORN|C|ALT,ATA|Jordi 22 okt: geschrapt. Rock-tank; pure Rock in Ungrounded|Pure Rock-lijn

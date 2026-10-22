@@ -87,7 +87,7 @@ desert = land & (cy > 16) & (cy < 31) & (cx < ridge - 0.6 + (n - 0.5) * 2)
 biome[desert] = 2
 puna = land & ellipse(14.5, 26.5, 4, 3) & (lvl >= 1)          # Atacama-hoogland
 biome[puna] = 2
-snow = land & (((lvl >= 4) & (cy < 31)) | ((cy > 31) & (lvl >= 2)) | (cy > 37.3)
+snow = land & (((lvl >= 4) & (cy < 31) & (n > 0.5) & (cy > 14)) | ((cy > 31) & (lvl >= 2)) | (cy > 37.3)
                | (ellipse(18, 18.5, 1.8, 2.3) & (lvl >= 2)))   # Cordillera Real naast de startstad
 biome[snow] = 3
 salt = ellipse(14.2, 24.2, 2.2, 1.2) & (n > 0.3)
@@ -127,7 +127,8 @@ def paint(mask, pal, idx):
         img[mask & (idx == i)] = c
 
 paint(land & (biome == 0), GREEN, lvl)
-paint(land & (biome == 1), JUNGLE, np.clip(((n * 7).astype(int) + (cx * 2).astype(int)) % 3, 0, 2))
+jn = value_noise(77, 3)
+paint(land & (biome == 1), JUNGLE, np.digitize(jn, [0.35, 0.7]))
 paint(land & (biome == 2), SAND, np.clip(lvl, 0, 3))
 paint(land & (biome == 3), SNOW, np.clip(lvl - 1, 0, 3))
 crack = ((xs.astype(int) + ys.astype(int) * 2) % 7 == 0) | ((xs.astype(int) - ys.astype(int) * 2) % 9 == 0)
@@ -152,7 +153,7 @@ PLACES = {
     'Lima':                (8, 15, 'cityv'),
     'Nazca':               (9, 19, 'spot'),
     'Uyuni':               (17, 24, 'town'),
-    'San Pedro de Atacama': (12, 28, 'cityh'),
+    'San Pedro':           (11, 28, 'cityh'),
     'Salta':               (17, 28, 'town'),
     'Mendoza':             (13, 31, 'cityh'),
     'Aconcagua (League?)': (11, 30, 'spot'),
@@ -192,8 +193,8 @@ path((12, 15), (8, 15))                            # Cuzco -> Lima (afdaling)
 path((8, 15), (8, 19), (9, 19))                    # kust naar Nazca
 path((9, 19), (11, 19), (11, 21), (14, 21))        # Nazca terug omhoog: lus
 path((16, 20), (16, 24), (17, 24))                 # La Paz -> Uyuni
-path((17, 24), (12, 24), (12, 28))                 # over de zoutvlakte naar San Pedro
-path((12, 28), (17, 28))                           # de busrit: San Pedro -> Salta
+path((17, 24), (12, 24), (12, 27), (11, 27), (11, 28))                 # over de zoutvlakte naar San Pedro
+path((11, 28), (17, 28))                           # de busrit: San Pedro -> Salta
 path((17, 28), (17, 31), (13, 31))                 # Salta -> Mendoza
 path((13, 31), (11, 31), (11, 30))                 # Aconcagua
 path((13, 31), (13, 35), (15, 35))                 # Mendoza -> Bariloche
@@ -270,6 +271,8 @@ small = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 14
 for name, (x, y, kind) in PLACES.items():
     w = 2 if kind == 'cityh' else 1
     tx, ty = (x + w) * 8 * S + 4, y * 8 * S + 2
+    if name == 'San Pedro':
+        ty -= 22
     if x > 30:
         tx = x * 8 * S - dr.textlength(name, font=font) - 4
     dr.text((tx, ty), name, font=font, fill=(255, 255, 255), stroke_width=3, stroke_fill=(20, 30, 50))

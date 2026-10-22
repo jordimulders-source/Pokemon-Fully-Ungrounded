@@ -9248,11 +9248,11 @@ Ability: Drought
 Torkoal @ Leftovers
 Level: 42
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
-Ability: White Smoke
-- Rapid Spin
-- Clear Smog
-- Body Press
+Ability: Drought
+- Earth Power
+- Solar Beam
 - Lava Plume
+- Yawn
 
 Scovillain @ Life Orb
 Level: 43
@@ -9260,17 +9260,17 @@ IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Chlorophyll
 - Solar Beam
 - Flamethrower
-- Zen Headbutt
+- Giga Drain
 - Sunny Day
 
-Talonflame @ Sharp Beak
+Talonflame @ Power Herb
 Level: 43
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 Ability: Gale Wings
-- Acrobatics
-- Flame Charge
-- Roost
-- Agility
+- Tailwind
+- Updraft
+- Heat Wave
+- Solar Beam
 
 Infernape @ Expert Belt
 Level: 44

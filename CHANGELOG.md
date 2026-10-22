@@ -19290,3 +19290,8 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
   - Jeff: Flareon → **Ursaring** (de beer bij de tent): Hammer Arm, High Horsepower, Crunch, Body Slam; Ninetales → **Trevenant** (brandhout dat terugpraat): Wood Hammer, Shadow Claw, Will-O-Wisp, Leech Seed.
   - Eli (Lampent, Houndoom: nachtploeg): Darmanitan → **Noctowl**: Air Slash, Moonblast, Hypnosis, Roost.
   - Keegan: Heatmor → **Bewear** (knuffelt je tent plat): Hammer Arm, Drain Punch, Body Slam, Bulk Up.
+
+### Flannery: Torkoal, Scovillain en Talonflame bijgewerkt (v1.0.0)
+- **Torkoal** @ Leftovers: Drought (was White Smoke), Earth Power, Solar Beam, Lava Plume, Yawn. De zon blijft staan als Ninetales weg is, dus het hele team heeft Solar Beam in één beurt tegen Rock/Ground/Water.
+- **Scovillain**: Zen Headbutt → Giga Drain (Grass-schade ook zonder zon).
+- **Talonflame** @ Power Herb (was Sharp Beak): Tailwind, Updraft, Heat Wave, Solar Beam. Gale Wings geeft Tailwind en Updraft voorrang bij volle HP; daarna is Flannery's team 4 beurten sneller, en Updraft (TM92) doet 120 in Tailwind. Power Herb: één keer Solar Beam zonder oplaadbeurt, ook zonder zon.

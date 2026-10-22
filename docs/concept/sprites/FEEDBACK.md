@@ -8,3 +8,9 @@
 - **Nachtaap:** ogen zijn geinig, maar mogen nog mysterieuzer; de knieën zijn wat groot; krulstaart is geinig.
 - **Alpaca-lijn:** mag ook verwijzingen naar vechtsporten maken, niet per se Zuid-Amerikaans (Jordi).
 - Capoeira is voor de **regionale Hitmontop** (Jordi); de alpaca-lijn gebruikt andere vechtsporten.
+
+## Ronde 2 (22 okt)
+- **Alpaca:** moet **op 4 poten blijven staan**; humor als de **2 voorpoten bokshandschoenen** hebben, maar **niet te veel Hitmonchan**. Is nu **geen duidelijke alpaca** meer.
+- **Olinguito:** de **nagels staan te los van elkaar**.
+- **Nachtaap:** **enorme verbetering**; moet nu alleen **meer lijken op bestaande Pokémon-sprites qua kleuren, shading en belijning**.
+- Jordi is het eens met wat de tekenaars zelf nog zwak vonden (alpaca te groot, zwevende handschoen; olinguito masker als skibril, munt onleesbaar op 1×; nachtaap handen als driehoekje, ogen ogen slaperig).

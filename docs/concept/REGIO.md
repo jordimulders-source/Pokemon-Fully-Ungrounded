@@ -6,6 +6,7 @@
 ## Opzet
 - **Start in een La Paz-achtige stad** (hoog, kabelbanen), met een **ijsgebied** ernaast (Cordillera Real). Sneeuw vroeg in de game, niet als eindgebied. Geen standaardopening met kleine stad en grasroute.
 - **Verkennen in metroidvania-stijl:** HM-achtige obstakels die na bijv. een gym opengaan; je komt terug in gebieden die je al kende en vindt nieuwe paden. Een obstakel ruim je **één keer** op (badge + middel, geen Pokémon nodig, zoals de HM-QoL uit Ungrounded) en daarna is het voorgoed weg.
+- **HM's liggen helemaal open** (Jordi, 22 okt): we houden de Emerald-volgorde (en wanneer je Fly krijgt) niet vast, en misschien gooien we de HM's helemaal om (andere obstakels, andere middelen; zie de metroidvania-regel hierboven). De QoL uit Ungrounded (badge + middel, geen Pokémon nodig) blijft het uitgangspunt.
 - **Gymvolgorde lineair, kaart niet:** lussen, plekken die je op meerdere manieren bereikt, backtracken, optionele dungeons, content waar je later naar terugkomt.
 - **Veel natuur, minder grote steden:** zoveel mogelijk aandacht voor de veelzijdige natuur van de regio. Pokémon Centers en kleine hubs in de natuur (refugio's, lodges, berghutten).
 - **De Amazone:** bevaarbaar tot aan zee én dwars doorheen te verkennen (jungleroutes, zijrivieren, lussen). Het diepe binnenland is **late game of post-game**.

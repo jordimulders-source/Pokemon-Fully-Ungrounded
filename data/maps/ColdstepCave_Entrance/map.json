@@ -2,7 +2,7 @@
   "id": "MAP_COLDSTEP_CAVE_ENTRANCE",
   "name": "ColdstepCave_Entrance",
   "layout": "LAYOUT_COLDSTEP_CAVE_ENTRANCE",
-  "music": "MUS_GROUNDED_VS_DARK_CAVE",
+  "music": "MUS_CAVE_OF_ORIGIN",
   "region_map_section": "MAPSEC_COLDSTEP_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

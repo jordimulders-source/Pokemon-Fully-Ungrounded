@@ -2,7 +2,7 @@
   "id": "MAP_MANGROVE_MIRE",
   "name": "MangroveMire",
   "layout": "LAYOUT_MANGROVE_MIRE",
-  "music": "MUS_GROUNDED_WL4_MONSOON_JUNGLE",
+  "music": "MUS_ROUTE119",
   "region_map_section": "MAPSEC_MANGROVE_MIRE",
   "requires_flash": false,
   "weather": "WEATHER_JUNGLE_CYCLE",

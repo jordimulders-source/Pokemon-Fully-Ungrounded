@@ -103,6 +103,7 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
   - Kan in de ruïnes leven: Tiwanaku, Chavín, Kuélap, Sillustani.
 
 ## Nieuwe cactus-Pokémon? (Jordi denkt nog na, 22 okt)
+- **Alles hieronder zijn opties; er is nog niets besloten** (Jordi).
 - Twijfel: Cacnea- en Maractus-lijn zitten al in de dex. Een nieuwe cactus moet dus duidelijk iets anders doen.
 - Cacnea is ontworpen als **bolcactus** (barrel cactus, Jordi). De hoge **zuilcactus** (cardón) is dus nog vrij: een ander silhouet.
 - **Alternatief: een regional form van Cacnea of Maractus** in plaats van een nieuwe lijn (Jordi). Voorstel van Claude:

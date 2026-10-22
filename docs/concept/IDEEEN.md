@@ -82,3 +82,4 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - **Nachtaap (Psychic):** baby met enorme ogen → leest de sterren → eindvorm met de 'donkere sterrenbeelden' van de Inca's in zijn vacht (in de donkere vlekken van de Melkweg zagen zij een lama, een slang en een pad). Psychic/Dark of Psychic/Fairy.
 - **Roze rivierdolfijn (Psychic):** grijs jong (boto's worden echt pas roze met de leeftijd) → roze → gedaanteverwisselaar met witte hoed (de mythe: hij verbergt zijn blaasgat onder een hoed). Psychic/Water.
 - **Guácharo (Psychic):** dik kuiken → grotvogel die met geluid ziet → orakel van de onderwereld (in Venezuela gold de guácharo-grot als ingang naar het dodenrijk; link met Uku Pacha). Psychic/Ghost.
+- **Venezolaanse poedelmot** (Jordi, voor later): pluizige witte mot met grote zwarte ogen (2009 gefotografeerd in de Gran Sabana, nauwelijks onderzocht). Fakemon.

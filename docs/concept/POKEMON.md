@@ -50,6 +50,10 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Rode oeakari en witgezichtsaki:** twee single-stage tegenhangers à la Oranguru/Passimian, met een Inca-achtige godenlook. Oeakari = zon (kaal vuurrood gezicht als het gezicht in Inti's zonneschijf), witgezichtsaki = maan (wit gezicht als de maanschijf van Mama Killa). Inspiratie: beide Amazone-apen die er eng uitzien maar rustige vruchteneters zijn.
 - **Vleermuislijn (3 stadia):** eindigt als **fruitvampier** die op zijn kop hangt en ook ondersteboven vliegt. Inspiratie: Zuid-Amerikaanse fruitvleermuizen (*Artibeus*), Moche-vleermuisgoden en het goud van Sipán, buisliplevleermuis. Let op overlap met Woobat/Zubat/Noibat.
 - **Mug: Poison/Electric** (Jordi, 22 okt). Iets na de start, Kricketot-rol (zie `IDEEEN.md`): verschijnt zodra je in lager, warmer gebied komt. Inspiratie: het zoemen (Electric, vleugelslag als elektrisch gezoem), de steek en de ziektes die muggen overbrengen (Poison: malaria, dengue). Ideeën: een steek die gif + verlamming kan geven; zwermen in de Amazone en het Pantanal.
+- **Flamigo krijgt een evolutie** (Jordi, 22 okt). Voorstellen van Claude, nog open:
+  - een evolutie: de **leider van de kolonie**, gebaseerd op de groepsdans (flamingo's marcheren in de balts in rijen synchroon heen en weer; dat past bij Fighting);
+  - of een pre-evolutie: het **grijze donzige kuiken**. Flamingokuikens worden met honderden samen in een crèche opgevangen en zijn pas na ±3 jaar roze.
+  - Inspiratie: de Andes-, James- en Chileense flamingo's van de Laguna Colorada in Lípez. Ze kleuren roze en rood door de algen in de lagune (de 'rode lagune').
 - **Vaste lijst:** lama, alpaca, vicuña, guanaco, coati, capibara, condor, pinguïns (naast Eiscue; meerdere pinguïns is geen probleem, Jordi). Eiscue is de koudeminnende pinguïn (Patagonië/ijs); de fakemon kan juist een pinguïn van een **milder klimaat** zijn, zoals de Humboldtpinguïn (Peru/Chili) of de Galápagospinguïn (Ecuador), Jordi.
 
 ## Regional forms (besloten)

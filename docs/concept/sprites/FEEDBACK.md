@@ -18,3 +18,6 @@
 ## Ronde 3 (22 okt)
 - **Nachtaap:** het dichtst bij voltooid. Laat een onafhankelijke agent hem keuren t.o.v. andere Pokémon.
 - **Alpaca en olinguito:** dichter in de buurt; **als schets voltooid qua kleurgebruik en algemeen design**. Maar: de **verhoudingen kloppen niet helemaal**, de **ogen zijn geen typische Pokémon-ogen**, de **vormen zijn wat clumsy**, de **shading is niet zoals Pokémon**, en ze staan er **niet dynamisch genoeg** bij (bij de meeste Pokémon zie je een perspectief). Ze moeten **meer Gen 3-sprites** worden.
+
+## Ronde 4 (22 okt)
+- **Nachtaap:** de ogen zijn "helemaal verknald" in ronde 4; het lichaam is wel beter. Volgende stap: lichaam van ronde 4 met de ogen van ronde 2/3 (die vond Jordi "geinig"), mysterieus maar niet verveeld of slaperig.

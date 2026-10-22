@@ -47,15 +47,15 @@ Nieuwe hulpscripts (alleen toegevoegd, niets bestaands veranderd):
 | index | onderdeel | kleur |
 |---|---|---|
 | 0 | transparant | #94cd9c |
-| 1–4 | **wol** (lijf, kraag, bolhoedkuif, wenkbrauwen; basis = 2, 4 = selout/krullijn) | #ffffff #f6eee6 #cdc5d5 #837b94 |
-| 5–7 | **vacht** (gezicht, snoet, oren, arm, pootjes) | #e6a473 #b47352 #7b3929 |
-| 8–10 | **rood**: handschoenen + oorkwastjes | #ff7b73 #e6393e #9c1839 |
-| 11–12 | **goud**: polsbanden | #f6c541 #b47b29 |
+| 1–4 | **wol** (lijf, kraag, bolhoedkuif, wenkbrauwen; basis = 2, 4 = selout/krullijn) | #fffff6 #f6eee6 #cdc5d5 #837b94 |
+| 5–7 | **vacht** (gezicht, snoet, oren, arm, pootjes) | #de9c73 #b4734a #7b4129 |
+| 8–10 | **rood**: handschoenen + oorkwastjes | #ff7b6a #e63939 #9c1831 |
+| 11–12 | **goud**: polsbanden | #f6c541 #ac7b29 |
 | 13 | mond binnenkant | #d54a5a |
 | 14 | wit (oogglans, tandje) | #ffffff |
 | 15 | omlijning, pupillen | #101010 |
 
-(De waarden zijn afgerond op 15-bit GBA-kleuren. Index 1 komt daardoor op #ffffff uit, net als de witte glans op 14. Dat zijn wel twee aparte indexen, dus een variant kan ze los kleuren.)
+(De waarden zijn afgerond op 15-bit GBA-kleuren. Het wolhooglicht (1) en het glanswit (14) zijn aparte indexen, dus een variant kan ze los kleuren.)
 
 Recept: `{'wol': [1,2,3,4], 'vacht': [5,6,7], 'rood': [8,9,10], 'goud': [11,12], 'mond': [13]}`.
 

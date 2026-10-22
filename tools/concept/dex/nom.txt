@@ -175,7 +175,7 @@ TORKOAL|A|GAL,VULK|Reuzenschildpad op de vulkanen van de Galápagos|Torkoal herz
 SPOINK|C||Geen band|Psychic/Normal
 SPINDA|B||Jordi 22 okt: erin. Geen band; Ungrounded-grap|Normal/Fighting 'Drunken Master'
 TRAPINCH|B|ATA|Woestijnlibel; Flygon voor Dragon- en Ground-gym|Trapinch-lijn herzien
-CACNEA|A|ATA|Cardón-cactussen van Atacama en Salta|Cacnea-lijn herzien
+CACNEA|A|ATA|Bolcactus (barrel cactus) in de woestijnen van Atacama en Salta|Cacnea-lijn herzien
 SWABLU|B|PAT,NEV|Wolkenvogel; Altaria voor Dragon-gym/Flying-E4|Swablu/Altaria herzien
 ZANGOOSE|B||Jordi 22 okt: erin. Mangoest|Zangoose herzien
 SEVIPER|B|PAM,AMA|Poison/Steel uniek in Ungrounded; slangen van de Chaco|Seviper Poison/Steel, Merciless

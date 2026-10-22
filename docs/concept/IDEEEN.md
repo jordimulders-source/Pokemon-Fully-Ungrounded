@@ -104,6 +104,7 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 
 ## Nieuwe cactus-Pokémon? (Jordi denkt nog na, 22 okt)
 - Twijfel: Cacnea- en Maractus-lijn zitten al in de dex. Een nieuwe cactus moet dus duidelijk iets anders doen.
+- Cacnea is ontworpen als **bolcactus** (barrel cactus, Jordi). De hoge **zuilcactus** (cardón) is dus nog vrij: een ander silhouet.
 - Mogelijke invalshoeken (Claude):
   - de **reuzencardón van Isla Incahuasi**: oeroud, langzaam, een wachter op het zoutvlak;
   - de **San Pedro-cactus** (*huachuma*), die in Chavín ceremonieel gebruikt werd. Die kan samenvallen met het idee van de ruïne-Pokémon (Grass/Psychic of Rock/Psychic: ziener).

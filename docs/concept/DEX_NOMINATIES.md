@@ -11,7 +11,7 @@
 | **Genomineerd (1 + 2)** | **212** | **444** |
 | 3. Twijfel / bewust niet (geen legendaries) | 236 | 501 |
 | Legendaries/mythicals (apart, sectie 4) | 24 | – |
-| Regional forms (sectie 5) | 25 lijnen (waarvan 1 besloten: Venomoth) | – |
+| Regional forms (sectie 5) | 28 lijnen (waarvan 1 besloten: Venomoth) | – |
 
 - **444 soorten** uit de National Dex, binnen het doel van 400–500. Met ±100 fakemon en ±10–15 regional forms komt de regionale dex op ±575–600. Wil Jordi richting 400, dan zijn de B-lijnen zonder Zuid-Amerikaanse band en zonder Ungrounded-revisie het eerst te schrappen (Kanto-starters, Munchlax, Audino, Ditto, Happiny, Mimikyu e.d.).
 - Telling per soort: elke evolutie telt mee, ook baby's; Mega's en Gmax tellen niet. Regionale vormen van andere regio's tellen alleen mee als ze zelf genomineerd zijn (Alolan Sandshrew/Vulpix/Exeggutor, Hoenn-Grimer).
@@ -61,7 +61,7 @@ Gebaseerd op een Zuid-Amerikaans dier, plant of mythe, of ecologisch heel plausi
 | Carvanha → Sharpedo | Water/Dark | Piranha (Amazone); Sharpedo als hamerhaai van de Galápagos | AMA, GAL | Strong Jaw |
 | Wailmer → Wailord | Water | Bultruggen voor Brazilië en Patagonië (Península Valdés) | KUST, PAT | Wailmer-lijn herzien |
 | Torkoal | Fire | Reuzenschildpad op de vulkanen van de Galápagos | GAL, VULK | Torkoal herzien (Drought) |
-| Cacnea → Cacturne | Cacnea: Grass; Cacturne: Grass/Dark | Cardón-cactussen van Atacama en Salta | ATA | Cacnea-lijn herzien |
+| Cacnea → Cacturne | Cacnea: Grass; Cacturne: Grass/Dark | Bolcactus (barrel cactus) in de woestijnen van Atacama en Salta | ATA | Cacnea-lijn herzien |
 | Lunatone | Rock/Psychic | Mama Killa (maan); meteorieten in de Atacama | ALT, ATA | Lunatone herzien |
 | Solrock | Rock/Psychic | Inti (zon); zonneschijf van de Inca's | ALT, ATA | Solrock herzien |
 | Barboach → Whiscash | Water/Ground | Reuzenmeervallen van de Amazone (piraíba) | AMA | Barboach-lijn herzien |
@@ -560,6 +560,9 @@ Bestaande lijnen die een Zuid-Amerikaanse vorm kunnen krijgen: een andere habita
 |  | Gimmighoul → Gholdengo | Alasitas-vorm: verzamelt miniaturen in plaats van munten; Gholdengo als Ekeko met volle handen | Ekeko en de Alasitas-markt in La Paz | ALT (La Paz) |
 |  | Unown | Quipu-vorm: knopen in plaats van letters (puzzels in ruïnes) | quipu, het knopenschrift van de Inca's | STAD (ruïnes) |
 |  | Glameow → Purugly | Rock/Dark: dikke staart met ringen, schuw, rotsen boven 4000 m | gato andino (titi), de zeldzaamste wilde kat | ALT, LIP |
+| 1 | Lotad → Lombre → Ludicolo | Neiging Jordi (22 okt): grotere lotushoofden; overworld-stapstenen op water | Victoria amazonica (reuzenwaterlelie) | AMA, PAN |
+| 1 | Natu → Xatu | Nominatie (Jordi, 22 okt). Voorstel Claude: Xatu als de Nazca-kolibrie (geoglief), vleugels met lijnpatronen; staart naar de zon (Inti) op de hoogvlakte; Natu als klein Tiwanaku-/Inca-totembeeldje | Nazca-lijnen (kolibrie, condor), zonaanbidding Inti, Poort van de Zon (Tiwanaku) | ATA (Nazca), ALT (ruïnes) |
+| 1 | Yanma → Yanmega | Dragon (Jordi, 22 okt); Bug/Dragon of Dragon/Flying open | reuzenjuffer Megaloprepus caerulatus; libélula/dragonfly | AMA, NEV |
 
 ### Top 10 sterkste kandidaten
 
@@ -573,6 +576,9 @@ Bestaande lijnen die een Zuid-Amerikaanse vorm kunnen krijgen: een andere habita
 8. **Buizel → Floatzel**: reuzenotter (Water/Dark).
 9. **Tympole → Palpitoad → Seismitoad**: Titicaca-waterkikker (Water/Ice).
 10. **Deerling → Sawsbuck**: pudú en huemul (Grass/Ice).
+1. **Lotad → Lombre → Ludicolo**: Victoria amazonica (Neiging Jordi (22 okt)).
+1. **Natu → Xatu**: Nazca-lijnen (Nominatie (Jordi, 22 okt). Voorstel Claude).
+1. **Yanma → Yanmega**: reuzenjuffer Megaloprepus caerulatus (Dragon (Jordi, 22 okt); Bug/Dragon of Dragon/Flying open).
 
 Waarom deze tien: ze geven een bestaande soort een echt ander dier of een echte mythe uit de regio (geen kleurwissel), vullen biomes die anders leeg blijven (Golett en Tympole vroeg rond La Paz, El Tío in de mijnen, Boitatá en Mapinguari in de Amazone), en een deel ervan raakt het hoofdthema: natuur die verdwijnt (Boitatá beschermt het bos tegen branden, de Mapinguari is een uitgestorven reus, de brilbeer en reuzenotter zijn bedreigd).
 

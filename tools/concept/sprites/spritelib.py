@@ -32,7 +32,8 @@ def hoenn_species():
 def read_pal(path):
     lines = open(path).read().split('\n')
     n = int(lines[2])
-    return [tuple(int(v) for v in lines[3 + k].split()[:3]) for k in range(n)]
+    pal = [tuple(int(v) for v in lines[3 + k].split()[:3]) for k in range(n)]
+    return pal + [(0, 0, 0)] * (16 - len(pal))
 
 
 def load_png(path):
@@ -83,8 +84,10 @@ def load_icon(sp, which='gba'):
     p = os.path.join(GFX, sp, n)
     if not os.path.exists(p):
         return None, None
-    im = Image.open(p).convert('RGBA')
-    return np.array(im), None
+    im = Image.open(p)
+    a = np.array(im.convert('RGBA'))
+    a[np.array(im) == 0] = 0          # index 0 = transparant
+    return a, None
 
 
 def rgb_img(idx, pal, bg=(0, 0, 0, 0)):

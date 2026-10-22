@@ -1206,6 +1206,11 @@ def mockup():
     return g
 
 
+# alle gebouwstukken ook in palet 8 (oker + roest) en 9 (lichtblauw + rood): 0 extra tegels
+for _n in [m[0] for m in ts.mts if m[0].split('_')[0] in ('roof0', 'roof1', 'gable0', 'gable1', 'upb', 'upp')
+           or m[0].startswith(('gfb_', 'gfp_'))]:
+    for _p in (8, 9):
+        ts.add_palvariant(f'{_n}@{_p}', _n, 7, _p)
 BASE_TILES, BASE_MTS = len(ts.tiles), len(ts.mts)
 g = mockup()
 ts.write(OUT)

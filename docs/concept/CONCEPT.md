@@ -47,5 +47,6 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 
 ## Personages
 - **Geen stille protagonist** (Jordi: een cliché waar hij geen fan van is). De speler praat en heeft een eigen karakter: **een vast karakter** (Jordi), zoals Geralt of Shepard, geen dialoogkeuzes die zijn persoonlijkheid bepalen. **Keuze man/vrouw** (Jordi), beide met dezelfde vaste achtergrond.
+- **Einde van de reis van de protagonist** (Jordi): raakt zo verknocht aan de regio dat hij niet terugkeert van zijn sabbatical en blijft; als kampioen is er genoeg te doen en te verdienen.
 - **De protagonist is geen tiener** (Jordi): een **dertiger die klaar is met zijn kantoorbaan, in een quarter-life crisis zit en daarom naar deze regio trekt**. Geen inwoner dus: hij komt van buiten. **Nooit de ambitie gehad om trainer te worden**, maar komt in zo'n situatie terecht.
 - Bij voorkeur nieuwe personages; een paar cameo's mag.

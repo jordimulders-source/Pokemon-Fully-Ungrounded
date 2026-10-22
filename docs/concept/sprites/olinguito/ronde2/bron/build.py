@@ -47,11 +47,10 @@ def Ti(x, y):
 class SCanvas(Canvas):
     def ellipse(self, name, part, cx, cy, rx, ry, rot=0.0, **kw):
         cx, cy = T(cx, cy)
-        return Canvas.ellipse(self, name, part, cx, cy, rx * S, ry * S, rot, **kw)
+        return self._add(name, part, Canvas.ellipse_mask(self, cx, cy, rx * S, ry * S, rot), **kw)
 
-    def ellipse_mask(self, cx, cy, rx, ry, rot=0.0, raw=False):
-        if not raw:
-            cx, cy = T(cx, cy); rx, ry = rx * S, ry * S
+    def ellipse_mask(self, cx, cy, rx, ry, rot=0.0):
+        cx, cy = T(cx, cy); rx, ry = rx * S, ry * S
         return Canvas.ellipse_mask(self, cx, cy, rx, ry, rot)
 
     def poly(self, name, part, pts, **kw):
@@ -229,6 +228,8 @@ def frame2():
     ]), keep=(5, 6))
     return fix_outline(idx, selout=(4, 8, 13))
 
+
+NOPATCH = os.environ.get('NOPATCH')
 
 if __name__ == '__main__':
     out = sys.argv[1] if len(sys.argv) > 1 else '.'

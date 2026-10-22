@@ -1,0 +1,3 @@
+Ekat's Public Tiles (179 sheets), terug uit de Ungrounded-repo (graphics/Ekats Public Tiles.zip, verwijderd bij de opruiming van v0.0.1).
+Maker: Ekat99 (Ekat op DeviantArt en Eevee Expo), met per sheet extra makers: zie Credits.txt in deze map.
+Gebruik: vrij met credits. Bij gebruik in de game: maker(s) van die sheet in CREDITS.md zetten (zoals in Ungrounded).

@@ -47,4 +47,5 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 
 ## Personages
 - **Geen stille protagonist** (Jordi: een cliché waar hij geen fan van is). De speler praat en heeft een eigen karakter.
+- **De protagonist is geen tiener** (Jordi): een volwassene.
 - Bij voorkeur nieuwe personages; een paar cameo's mag.

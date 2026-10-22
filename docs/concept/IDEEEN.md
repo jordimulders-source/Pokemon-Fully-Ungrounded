@@ -19,7 +19,7 @@ Alles wat Jordi tijdens het brainstormen noemt, in steekwoorden. Het concept (`d
 - Dex: ±400–500 soorten uit de National Dex, plus regional forms en ±100 fakemon, veel gebaseerd op Zuid-Amerika.
 - **Altijd mee:** alle soorten gebaseerd op Zuid-Amerikaanse dieren (Slakoth-lijn, Pikipek-lijn, Flamigo, …) en Sigilyph (Nazca).
 - **Starters: Fighting → Dark → Psychic** (perfecte driehoek).
-- Fakemon zeker: **lama, alpaca, vicuña, guanaco** (er moet iets met alle vier: lama stamt af van guanaco, alpaca van vicuña → wild vs. gedomesticeerd?), **coati**, **capibara**, **condor**.
+- Fakemon zeker: **lama, alpaca, vicuña, guanaco** (er moet iets met alle vier: lama stamt af van guanaco, alpaca van vicuña → wild vs. gedomesticeerd?), **coati**, **capibara**, **condor**, **pinguïns**.
 - Sprites: oefenen/trainen; regional forms en evoluties lukten al goed in Ungrounded.
 
 ## Personages

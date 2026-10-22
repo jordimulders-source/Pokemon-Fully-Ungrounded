@@ -5,7 +5,7 @@ Zelfde tegelnummers, metatiles, gedrag en animaties (water, bloemen, watervallen
 werkt blijft werken en Hoenn-secondaries erop passen. Anders:
 - paletten omgekleurd: gras -> goudgele puna, Hoenn-zand -> lichte onverharde weg, mauve rotsbergen -> rode klei,
   bomen iets olijfgroener; de vaste 'grasindex' 15 van elk palet wordt de puna-grond;
-- hoog gras -> ichu (de pixels van de grastegel naar de goudtinten van de grond);
+- hoog gras -> ichu: alleen via het palet (de grastegel gebruikt de grondindexen);
 - in ongebruikte General-metatiles (nergens op een kaart en niet in metatile_labels.h): een verre bergketen,
   lantaarn, bank en kantuta-bloemen (Bolivia's nationale bloem) in vrije tegels.
 
@@ -21,10 +21,10 @@ from tilelib import ellipse_mask
 
 OUT = 'tilesets/eigen/andes_primary'
 GRASS = (115, 197, 164)
-PUNA = [(240, 224, 152), (216, 192, 112), (184, 160, 80), (144, 120, 56)]   # licht, basis, donker, donkerst
+PUNA = [(248, 232, 160), (216, 192, 112), (192, 160, 80), (168, 128, 48)]   # licht, basis, donker, donkerst
 CLAY = [(248, 208, 176), (232, 168, 128), (200, 128, 96), (168, 96, 72), (128, 64, 56), (88, 48, 48)]
 ROAD = [(248, 232, 192), (232, 208, 160), (208, 176, 128), (184, 144, 104)]
-GREEN = [(200, 232, 136), (144, 184, 88), (72, 128, 56), (48, 80, 24)]
+GREEN = [(192, 232, 128), (136, 184, 88), (64, 128, 56), (72, 64, 16)]
 MTN = [(152, 152, 184), (112, 112, 152), (80, 80, 120)]
 
 # vrije metatile-slots in General: nergens gebruikt en niet in metatile_labels.h
@@ -123,12 +123,8 @@ def build():
     used = {int(e) & 0x3FF for e in g['mts'].flatten()}
     pair.free_prim = [t for t in range(1, 512) if t not in used]
     # ichu: de tegels van het hoge gras naar de goudtinten van palet 2 (grond)
-    remap = {1: 12, 2: 12, 3: 14, 4: 15}
-    for e in g['mts'][TALL_GRASS]:
-        t = int(e) & 0x3FF
-        if t:
-            pair.pt[t] = np.vectorize(lambda v: remap.get(int(v), v))(pair.pt[t]).astype(np.uint8)
-    pair._index()
+    # hoog gras = ichu: de Hoenn-grastegel gebruikt al de grondindexen (12 licht, 13 basis, 15 sprieten) en 4
+    # (omlijning); met het puna-palet wordt het vanzelf een goudgele pol. Geen pixelwijziging nodig.
     free = list(FREE_MTS)
     grass_ents = list(pair.pm[0x01][:4])  # gewone grond
     # verre bergketen (4 x 3)

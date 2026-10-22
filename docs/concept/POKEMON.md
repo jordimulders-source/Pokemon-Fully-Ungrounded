@@ -49,7 +49,7 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Guácharo (oliegier):** komt er, niet als starter. Inspiratie: grotvogel die met klikgeluiden "ziet", kuikens zwaarder dan de ouders, rode oogglans; de guácharo-grot gold als ingang naar het dodenrijk.
 - **Rode oeakari en witgezichtsaki:** twee single-stage tegenhangers à la Oranguru/Passimian, met een Inca-achtige godenlook. Oeakari = zon (kaal vuurrood gezicht als het gezicht in Inti's zonneschijf), witgezichtsaki = maan (wit gezicht als de maanschijf van Mama Killa). Inspiratie: beide Amazone-apen die er eng uitzien maar rustige vruchteneters zijn.
 - **Vleermuislijn (3 stadia):** eindigt als **fruitvampier** die op zijn kop hangt en ook ondersteboven vliegt. Inspiratie: Zuid-Amerikaanse fruitvleermuizen (*Artibeus*), Moche-vleermuisgoden en het goud van Sipán, buisliplevleermuis. Let op overlap met Woobat/Zubat/Noibat.
-- **Vaste lijst:** lama, alpaca, vicuña, guanaco, coati, capibara, condor, pinguïns.
+- **Vaste lijst:** lama, alpaca, vicuña, guanaco, coati, capibara, condor, pinguïns (naast Eiscue; meerdere pinguïns is geen probleem, Jordi).
 
 ## Regional forms (besloten)
 - **Hitmontop-regional form: capoeira** (Jordi, als extra Fighting). Hitmontop draait al op zijn kop; capoeira heeft precies die bewegingen (de *pião de cabeça*-kopspin, de *ginga*, de *meia lua*-trappen). Inspiratie: Afro-Braziliaanse vechtkunst vermomd als dans, met berimbau-muziek. Daarom gaat capoeira níet naar de alpaca-lijn (fase 2 wordt een andere vechtsport). **Zonder de rest van de Tyrogue-lijn** (Tyrogue, Hitmonlee, Hitmonchan niet in de dex). Open (Jordi): misschien krijgt de capoeira-Hitmontop een **eigen evolutie**.

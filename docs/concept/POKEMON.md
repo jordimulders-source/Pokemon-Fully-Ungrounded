@@ -52,6 +52,7 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Vaste lijst:** lama, alpaca, vicuña, guanaco, coati, capibara, condor, pinguïns.
 
 ## Regional forms (besloten)
+- **Hitmontop-regional form: capoeira** (Jordi, als extra Fighting). Hitmontop draait al op zijn kop; capoeira heeft precies die bewegingen (de *pião de cabeça*-kopspin, de *ginga*, de *meia lua*-trappen). Inspiratie: Afro-Braziliaanse vechtkunst vermomd als dans, met berimbau-muziek. Daarom gaat capoeira níet naar de alpaca-lijn (fase 2 wordt een andere vechtsport). Open: hoe Tyrogue er hier naar evolueert.
 - **Venomoth-regional form:** bestaat al (eerder ontwerp, Jordi wil hem gebruiken). Bestanden nog toevoegen aan de repo.
 
 ## Dex-besluiten (op basis van `DEX_NOMINATIES.md`)

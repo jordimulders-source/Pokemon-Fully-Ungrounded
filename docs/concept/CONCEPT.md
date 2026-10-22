@@ -9,6 +9,7 @@ Wat in de conceptdocumenten staat, is **besloten** door Jordi. Losse ideeën sta
 | `VERHAAL.md` | toon, verhaal, protagonist, Keccles, tegenstanders, mythologie |
 | `POKEMON.md` | starters, legendaries, fakemon en regional forms, met per Pokémon de inspiratie (los van de plek in de regio) |
 | `SPRITE_PLAN.md` | hoe we sprites maken (Hoenn-sprites als leidraad) |
+| `MUZIEK.md` | soundtrack: Zuid-Amerikaanse en Latijns-Amerikaanse stijlen |
 | `IDEEEN.md` | ruwe verzameling van alle ideeën |
 | `regiokaart*.png` | schetsen van de regiokaart (`tools/concept/regiokaart*.py`) |
 

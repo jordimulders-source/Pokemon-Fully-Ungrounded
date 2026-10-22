@@ -24,3 +24,10 @@ Wens van Jordi (22 okt): dungeons die nog nooit in Pokémon zijn voorgekomen, me
 - **Desierto florido** (Atacama): na een zeldzame regenbui bloeit de droogste woestijn ter wereld. Bij terugkeer in Atacama is de woestijn in bloei, met andere Pokémon (past bij "nieuwe dungeons in Atacama").
 - **Rainbow Mountain** (Vinicunca): gekleurde aardlagen; ook een kleurpuzzel, als Caño Cristales niet wordt gebruikt.
 - **Camanchaca** (de zeemist van de Chileense kust, die de mist-oase laat leven): mistnetten vangen water. Een mistdungeon waarin paden pas verschijnen als je water verzamelt.
+
+## Mystieke Psychic-dungeon (Jordi neigt ernaar, 22 okt)
+Kandidaten (Claude):
+- **Chavín de Huántar** (Peru, ±900 v.Chr.). Onder de tempel ligt een netwerk van pikdonkere, smalle **galerijen**, gebouwd om bezoekers te desoriënteren. Waterkanalen eronder laten het brullen als een jaguar, schelphoorns (*pututus*) galmen door de gangen, en gepolijste stenen spiegels vangen het licht. Midden in een kruisvormige gang staat de **Lanzón**, een stenen godheid. → **De sterkste kandidaat:** een Psychic-doolhof dat je zintuigen misleidt: gangen die na elke bocht anders zijn, geluid dat van de verkeerde kant komt, spiegels die een pad tonen dat er niet is, en de Lanzón als eindpunt. Hier zitten ook de *cabezas clavas* (de ruïne-Pokémon Rock/Psychic, zie `IDEEEN.md`).
+- **Marcahuasi** (Peru, ±4000 m). Een plateau vol rotsformaties die op gezichten en dieren lijken (het 'Monument voor de Mensheid'); er gaan verhalen over energie en verloren beschavingen. → Een Psychic/Rock-gebied waarin de rotsen je aankijken en meebewegen.
+- **Cerro Uritorco** (Argentinië, Capilla del Monte). De ufo-hoofdstad van Argentinië: lichtverschijnselen, mensen die er mediteren en de 'verborgen stad Erks' zoeken. → Psychic met droge humor (Elgyem/Beheeyem, Sigilyph, NPC's die naar de hemel staren); past in de route door Noord-Argentinië.
+- **De chincanas van Sacsayhuamán** (Cuzco). Legende: tunnels onder de vesting die naar de Coricancha (de Zonnetempel) leiden; wie erin ging, kwam niet terug, of kwam eruit met een gouden maiskolf. → Een verborgen Psychic-labyrint onder Cuzco (de Dragon-gym-stad).

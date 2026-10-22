@@ -48,6 +48,13 @@ fine = value_noise(40, 4)
 def ellipse(x0, y0, rx, ry):
     return ((cx - x0) / rx) ** 2 + ((cy - y0) / ry) ** 2 < 1
 
+def rellipse(x0, y0, rx, ry, deg):
+    t = math.radians(deg)
+    dx, dy = cx - x0, cy - y0
+    u = (dx * math.cos(t) + dy * math.sin(t)) / rx
+    v = (-dx * math.sin(t) + dy * math.cos(t)) / ry
+    return u * u + v * v < 1
+
 # ---------- land: een gestileerd continent (geïnspireerd, niet nagemeten) ----------
 def interp(pts, y):
     return np.interp(y, [p[0] for p in pts], [p[1] for p in pts])
@@ -142,7 +149,9 @@ mainland = land & (land_lab == int(np.argmax(land_sizes)))
 # ---------- hoogte ----------
 ridge = wc + 3.0 + 0.6 * np.sin(cy * 0.45)
 andes = np.exp(-((cx - ridge) / 2.6) ** 2)
-plateau = np.exp(-(((cx - 15.5) / 4.0) ** 2 + ((cy - 20.5) / 4.5) ** 2) ** 1.5)    # altiplano
+# altiplano: een langgerekte hoogvlakte tussen de twee bergketens, met een grillige rand (geen cirkel)
+plateau = (np.exp(-((cx - (wc + 6.3 + (n - 0.5) * 3)) / 2.4) ** 2)
+           * np.clip(1 - np.abs(cy - 22) / 7 + (n - 0.5) * 0.6, 0, 1))
 brazil = 0.35 * np.exp(-(((cx - 31) / 4.5) ** 2 + ((cy - 17) / 5) ** 2))
 tepui = 0.35 * np.exp(-(((cx - 25) / 4) ** 2 + ((cy - 5.5) / 2) ** 2))
 amazon = np.exp(-(((cx - 25) / 9) ** 2 + ((cy - 11) / 5) ** 2))
@@ -182,7 +191,7 @@ lvl[coast] = 0
 # ---------- biomen (in Hoenn-kleuren) ----------
 biome = np.zeros((PH, PW), int)   # 0 groen, 2 woestijn, 3 sneeuw, 4 zout
 desert = land & (cy > 15.5) & (cy < 31) & (cx < ridge - 0.8 + (n - 0.5) * 2)
-desert |= land & ellipse(14.5, 27, 3.6, 2.6)                                       # Atacama-hoogland/Lípez
+desert |= land & rellipse(14.5 + (n - 0.5) * 1.6, 27 + (n - 0.5) * 1.6, 3.2, 2.2, 70)   # Atacama-hoogland/Lípez
 desert |= land & ellipse(32.5 + (value_noise(93, 5) - 0.5) * 1.2, 12.2 + (value_noise(94, 5) - 0.5) * 0.6, 1.4, 0.7)                                  # Lençóis Maranhenses
 biome[desert] = 2
 snow = land & (((lvl >= 4) & (cy > 14) & (cy < 31) & (andes > 0.75) & (biome != 2))
@@ -190,9 +199,18 @@ snow = land & (((lvl >= 4) & (cy > 14) & (cy < 31) & (andes > 0.75) & (biome != 
                | (ellipse(18.3, 18.3, 1.2, 1.6) & (lvl >= 2))                      # Cordillera Real
                | (ellipse(13.4, 28.3, 0.7, 0.5)))                                 # vulkanen/sneeuw van Lípez
 biome[snow] = 3
-salt = ellipse(14.2, 24.2, 2.2, 1.1) & (n > 0.3)
+sn = (value_noise(92, 4) - 0.5) * 0.7
+salt = ((rellipse(14.0, 24.2, 1.9 + sn, 0.9 + sn, -15) | rellipse(15.2, 23.6, 0.9 + sn, 0.5 + sn, 30)
+         | rellipse(12.9, 24.9, 0.7 + sn, 0.45, 10)) & ~ellipse(14.3, 24.3, 0.25, 0.15))   # Uyuni + Coipasa-lob, Isla Incahuasi
 biome[salt] = 4
-lakes = ((ellipse(13.4, 18.7, 1.5, 0.75) & (n > 0.3))                            # Titicaca
+# Titicaca: langgerekt noordwest-zuidoost, groot meer + klein zuidoostelijk meer via een smalle zeestraat,
+# met een grillige oever, het schiereiland van Copacabana en de Isla del Sol
+tn = (value_noise(91, 4) - 0.5) * 0.5
+titicaca = ((rellipse(12.9, 18.0, 2.0 + tn, 0.8 + tn, 38) | rellipse(14.5, 19.55, 0.85 + tn, 0.45 + tn / 2, 20)
+             | rellipse(13.85, 19.05, 0.45, 0.12, 40))
+            & ~rellipse(13.75, 18.85, 0.5, 0.22, -20)        # schiereiland van Copacabana
+            & ~ellipse(13.2, 18.15, 0.28, 0.16))             # Isla del Sol
+lakes = (titicaca
          | ellipse(13.3, 34.6, 0.5, 0.3) | ellipse(14.4, 35.6, 0.6, 0.35) | ellipse(15.1, 33.4, 0.4, 0.3)
          | ellipse(13.6, 26.4, 0.45, 0.3)                                         # Laguna Colorada
          | (ellipse(25, 19.6, 1.8, 1.2) & (value_noise(70, 4) > 0.55)))          # Pantanal
@@ -316,7 +334,7 @@ path((13, 26), (13, 27), (12, 27), (12, 28))               # Lípez -> San Pedro
 path((17, 24), (19, 24), (19, 23))                         # Uyuni -> Potosí
 path((19, 23), (19, 21), (18, 21), (18, 18))               # Potosí -> Cordillera Real
 path((16, 20), (18, 20))                                   # La Paz -> Cordillera Real
-path((16, 20), (14, 20), (14, 16), (12, 16), (12, 15))     # langs het Titicacameer naar Cuzco
+path((16, 20), (15, 20), (15, 16), (12, 16), (12, 15))     # langs het Titicacameer naar Cuzco
 path((12, 15), (10, 15), (10, 13))                         # Machu Picchu
 path((12, 15), (8, 15))                                    # Cuzco -> Lima
 path((8, 15), (8, 18), (9, 18), (9, 20))                   # Lima -> Huacachina -> Nazca

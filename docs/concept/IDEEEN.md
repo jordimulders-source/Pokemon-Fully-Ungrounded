@@ -61,3 +61,4 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - Capibara als inspiratie voor de vroege routeknager/-zoogdier (Jordi). Let op immersie: capibara's leven in laagland bij water, niet op de altiplano rond La Paz/Uyuni (daar: viscacha, cavia/cuy, chinchilla).
 - Mug als bug (Jordi): iets minder early route, een beetje zoals Kricketot in Sinnoh; verschijnt zodra je in lager/warmer gebied komt (boven ±3000 m bijna geen muggen).
 - Viscacha (Jordi heeft ze gezien, bijv. in Lípez/Atacama): kandidaat voor de vroege knager op de hoogvlakte. Familie Chinchillidae (neef van de chinchilla), lange konijnenoren, lange krulstaart, zit te zonnen op rotsen.
+- Vlieg: er is nog geen Pokémon op een (huis)vlieg gebaseerd (Jordi). Kandidaat voor de jungle of de stad.

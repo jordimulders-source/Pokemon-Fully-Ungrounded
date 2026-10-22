@@ -16,6 +16,13 @@
     - **Wat je onderweg nieuw ziet:** de terugweg gaat langs plekken die je op de heenweg niet kon bereiken (Potosí en de mijn, of Oruro met de Diablada), dus het voelt als nieuw gebied.
     - **Verkorting naar La Paz:** de kabelbaan of de El Alto-kant brengt je direct naar de bergen, zonder de hele stad door te lopen.
     - **De stad is veranderd:** bij terugkomst in La Paz staan er nieuwe NPC's, gebeurtenissen en winkels, en Keccles heeft iets te doen. Herhaling wordt ontwikkeling.
+    - **Mythologische plekken langs de lus** (Jordi: ja, ook legendes; bronnen in `MYTHOLOGIE.md`):
+      - **Potosí:** de mijn met **El Tío** en de **carbunclo** (Carbink).
+      - **Oruro:** de **Diablada** (Supay, de duivelsmaskers), een carnavalsstad halverwege de lijn Uyuni–La Paz.
+      - **Titicaca en Tiwanaku** (een zijtak van de route): het **Isla del Sol** (Viracocha, Manco Cápac), de verzonken stad **Wanaku** (duik-dungeon) en de **Poort van de Zon** (ruïne-Pokémon).
+      - **Cordillera Real:** de bergen als **achachilas** (voorouder-geesten). De Aymara-legende: de berg Mururata wilde hoger zijn dan de Illimani, waarop een god zijn top eraf sloeg. De top vloog weg en werd de Sajama, daarom is de Mururata plat. Een mooie plek-legende voor de ijsgym (de gymleider vertelt hem, of het is een puzzel).
+      - **De gletsjer:** de **ukukus** (de beermannen die het ijs naar beneden dragen). Dat is een Peruaans gebruik, maar het mag als inspiratie dienen: een pelgrimstocht naar de verdwijnende gletsjer.
+      - **La Paz:** **Ekeko** en de **Alasitas**-markt (miniaturen van wat je wenst) bij terugkomst. Laat de markt pas na gym 1 openen, dan is er bij terugkomst iets nieuws.
     - **Fly komt niet vroeg** (Fly vanuit de kaart pas na de 6e badge), dus de route zelf moet het werk doen: kort, met een nieuw stuk en zonder lege gangen.
 - **Laguna Colorada komt er zeker in** (Jordi, 22 okt): het rode meer ten zuiden van de Salar de Uyuni (±4300 m). Het water is rood door algen en pigmenten, met witte borax-eilanden, en er staan duizenden flamingo's (Flamigo en zijn evolutie, zie `POKEMON.md`). Ijzige wind en een kale vulkaanrand. Een eigen kaart in de Lípez-route na gym 1, met de rode tint in het waterpalet.
 - **Isla Incahuasi (het cactuseiland) komt er ook in** (Jordi, 22 okt): een rotseiland midden in de witte zoutvlakte van Uyuni. Het staat vol reuzencactussen (cardón, tot ±10 m hoog en soms meer dan 1000 jaar oud) en heeft versteend koraal, want de salar was ooit een meer. Je kunt er bij gym 1 (Uyuni) heen; het eiland past bij Cacnea/Maractus-achtige soorten of een cardón-fakemon en bij een uitkijkpunt over de zoutvlakte.

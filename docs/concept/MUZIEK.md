@@ -16,7 +16,7 @@
 | Afro-Peruaans (landó, festejo) | cajón, gitaar, quijada | **goed** | cajón is één goed sample; spaarzame bezetting |
 | Tango / milonga | bandoneon, strijkers, piano | **redelijk** | bandoneon ≈ accordeon-sample; staccato strijkers werken, legato-strijkers worden dun |
 | Chicha (Amazone-cumbia) | surfgitaar, orgel, timbales | **redelijk** | gitaar met tremolo moet een eigen sample zijn; orgel gaat goed |
-| Salsa | koperblazers, piano-montuno, congas, timbales | **redelijk** | koper goed, maar veel lagen tegelijk: let op 16 sporen en kanalen |
+| Salsa | koperblazers, piano-montuno, congas, timbales | **goed (bewezen)** | het salsa-thema van Keccles in Ungrounded is erg goed gelukt (Jordi): `tools/grounded/keccles_theme.py`/`keccles_samples.py` als voorbeeld |
 | Samba / batucada | surdo, tamborim, caixa, cuíca, agogô | **lastig** | veel gelijktijdige percussie kost kanalen; cuíca is moeilijk na te maken; een uitgedunde versie kan |
 | Bossa nova | nylongitaar-akkoorden, zachte zang | **lastig** | ingetogen akkoorden en stem zijn waar de GBA het zwakst is; als melodie op fluit kan het wel |
 | Vallenato / kaseko | accordeon, caja/snaredrum, guacharaca | **goed** | vergelijkbaar met cumbia |

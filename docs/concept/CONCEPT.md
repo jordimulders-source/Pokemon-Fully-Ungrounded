@@ -7,7 +7,7 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 - Nieuwe regio gebaseerd op Zuid-Amerika: geïnspireerd, niet nagemeten (zoals Hoenn op Kyushu). Eigen kaart en eigen namen.
 - 8 gyms en een Elite 4. **Gymvolgorde lineair** (houdt de levelcurve gezond), maar **de kaart niet**: lussen, plekken die je op meerdere manieren bereikt, backtracken, optionele dungeons en content waar je later (met nieuwe middelen) naar terugkomt. E4 rond lv 80–90.
 - **Toon:** verhaal serieuzer dan Ungrounded; humor mag, maar is geen gimmick. **Niet zwart-wit, mag op momenten filosofisch zijn, zeker niet edgelord** (Jordi). Een paar puur kwaadaardige figuren mogen er best tussen zitten.
-- **De overheid heeft geen echte bad guy: het systeem is de tegenstander** (Jordi, "beetje The Wire-achtig"). Mensen binnen de overheid doen hun deel van een geheel dat de natuur vernietigt (regels, deadlines, belangen), zonder één schurk aan de top. Het pure kwaad zit eventueel bij sommige gangs.
+- **De overheid heeft geen echte bad guy: het systeem is de tegenstander** (Jordi, "beetje The Wire-achtig"). Het systeem laat mensen met een grijze moraliteit foute dingen doen (regels, deadlines, belangen); er is geen schurk aan de top. Het pure kwaad zit eventueel bij sommige gangs.
 
 ## Regio
 - **Start in een La Paz-achtige stad** (hoog, kabelbanen), met een **ijsgebied** ernaast (Cordillera Real). Sneeuw vroeg in de game, niet als eindgebied. Geen standaardopening met kleine stad en grasroute.

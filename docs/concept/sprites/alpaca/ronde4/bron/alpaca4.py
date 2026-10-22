@@ -19,68 +19,58 @@ R = {'wol': [1, 2, 3, 4], 'vacht': [5, 6, 7], 'rood': [8, 9, 10], 'goud': [11, 1
 FAR = {'vacht': (6, 7, 7, 7), 'rood': (9, 10, 10, 10), 'goud': (12, 12, 12, 12)}
 
 
-def glove(c, cx, cy, r, far=False, cuff=True):
-    tr = FAR['rood'] if far else None
-    if cuff:
-        cel(c, poly([(cx - r * 0.5, cy - r - 1.6), (cx + r * 0.7, cy - r - 1.6), (cx + r * 0.7, cy - r + 1.2), (cx - r * 0.5, cy - r + 1.2)]),
-            'goud', tones=FAR['goud'] if far else (11, 11, 12, 12), light=0, shade=(0, 2), deep=0)
-    m = disk(cx, cy, r, r * 0.86) | disk(cx - r * 0.55, cy - r * 0.25, r * 0.5)
-    cel(c, m, 'rood', tones=tr, light=1 if not far else 0, shade=(2, 2), deep=1, edge=None)
+def glove(c, cx, cy, r, far=False):
+    """Ronde bokshandschoen (duim aan de voorkant) met een smalle gouden polsband."""
+    m = disk(cx, cy, r, r * 0.88) | disk(cx - r * 0.62, cy - r * 0.2, r * 0.48)
+    band = poly([(cx - r * 0.35, cy - r - 1.2), (cx + r * 0.75, cy - r - 1.2),
+                 (cx + r * 0.75, cy - r + 0.9), (cx - r * 0.35, cy - r + 0.9)]) & ~m
+    cel(c, band, 'goud', tones=FAR['goud'] if far else (11, 11, 12, 12), light=0, shade=(0, 1), deep=0)
+    cel(c, m, 'rood', tones=FAR['rood'] if far else None, light=1 if not far else 0, shade=(2, 2), deep=1)
+
+
+def lumps(c, items, light=1, shade=(2, 2), edge=4):
+    """Wolbolletjes van achter (eerst) naar voor; elk een eigen klein balletje met
+    hooglicht linksboven en schaduwband rechtsonder (Mareep)."""
+    for x, y, r in items:
+        cel(c, disk(x, y, r, r * 0.92), 'wol', light=light, shade=shade, deep=0, edge=edge)
 
 
 def frame(f2=False):
     c = Canvas(R)
     # --- verre poten (achter het lijf): donkerder, kleiner, hoger ---
-    cel(c, poly([(48, 42), (52, 42), (52, 50), (48, 50)]), 'vacht', tones=FAR['vacht'], light=0, deep=0)
-    cel(c, poly([(48, 50), (52, 50), (52.5, 52), (47.5, 52)]), 'vacht', tones=(7, 7, 7, 7), light=0, deep=0)
-    cel(c, poly([(29, 43), (32.5, 43), (32.5, 47), (29, 47)]), 'vacht', tones=FAR['vacht'], light=0, deep=0)
-    glove(c, 31, 50, 3.6, far=True)
+    cel(c, poly([(47.5, 41), (51, 41), (51, 49), (47.5, 49)]), 'vacht', tones=FAR['vacht'], light=0, deep=0)
+    cel(c, poly([(47, 49), (51.5, 49), (51.5, 51), (47, 51)]), 'vacht', tones=(7, 7, 7, 7), light=0, deep=0)
+    cel(c, poly([(29, 42), (32.5, 42), (32.5, 47), (29, 47)]), 'vacht', tones=FAR['vacht'], light=0, deep=0)
+    glove(c, 31.5, 50, 3.5, far=True)
     # --- staart ---
-    cel(c, disk(53, 31, 3.2), 'wol', light=1, shade=(1, 2), deep=0)
-    # --- wollen lijf: bolletjes, cel-geschaduwd t.o.v. het hele lijf ---
-    lumps = [(38, 39, 12, 7.5), (31, 34, 5.5, 5.5), (38, 32.5, 5.5, 5.5), (45, 33, 5, 5), (50, 37, 4.5, 4.5),
-             (26, 41, 5, 5), (31, 45, 4.6, 4.6), (38, 46, 4.6, 4.6), (45, 45, 4.4, 4.4), (50, 42, 3.6, 3.6)]
-    body = np.zeros((64, 64), bool)
-    for x, y, rx, ry in lumps:
-        body |= disk(x, y, rx, ry)
-    cel(c, body, 'wol', light=0, shade=(2, 3), deep=1)
-    # lichte kapjes linksboven op elk bovenste bolletje
-    for x, y, rx, ry in lumps[1:5]:
-        m = disk(x, y, rx, ry) & ~disk(x + 1.6, y + 1.6, rx, ry) & body
-        c.idx[m & (c.idx == 2)] = 1
-    # krulboogjes: onderrand van de bovenste bolletjes waar ze op het lijf liggen
-    for x, y, rx, ry in lumps[1:5]:
-        m = disk(x, y, rx, ry)
-        rim = m & ~disk(x - 0.8, y - 1.3, rx, ry) & body
-        inner = rim & np.roll(body, -2, 0) & np.roll(body, -2, 1)
-        c.idx[inner & (c.idx == 2)] = 3
-    # --- hals (wol) ---
-    neck = disk(24, 33, 5.2, 6) | disk(22.5, 27, 4.6, 4.6)
-    cel(c, neck, 'wol', light=1, shade=(2, 2), deep=1, edge=3)
+    lumps(c, [(52.5, 30, 3.0)])
+    # --- wollen lijf: achterste bolletjes eerst, voorste (links/onder) laatst ---
+    cel(c, disk(39, 38, 11, 7), 'wol', light=0, shade=(2, 3), deep=1)
+    lumps(c, [(49, 35, 4.0), (44, 31.5, 4.4), (49, 41, 3.8), (37, 31, 4.8), (44, 38, 4.6),
+              (44, 44, 4.2), (37, 37, 5.0), (30, 33, 4.8), (37, 44.5, 4.4), (31, 39, 5.0), (30, 45, 4.2)])
     # --- nabije achterpoot ---
-    cel(c, poly([(42, 46), (47, 46), (46.5, 52), (42.5, 52)]), 'vacht', light=1, shade=(2, 0), deep=0)
-    cel(c, poly([(42.5, 52), (46.5, 52), (47, 54.5), (42, 54.5)]), 'vacht', tones=(7, 7, 7, 7), light=0, deep=0)
+    cel(c, poly([(41.5, 46), (46, 46), (45.5, 51.5), (42, 51.5)]), 'vacht', light=1, shade=(2, 0), deep=0, edge=15)
+    cel(c, poly([(41.5, 51.5), (46, 51.5), (46.5, 54), (41, 54)]), 'vacht', tones=(7, 7, 7, 7), light=0, deep=0)
+    # --- hals (wol) + borst ---
+    lumps(c, [(25, 39, 4.6), (24.5, 33.5, 4.6), (23.5, 29, 4.2)])
     # --- nabije voorpoot + handschoen ---
-    if f2:
-        cel(c, poly([(25, 42), (29, 44), (20, 46), (17, 43)]), 'vacht', light=1, shade=(1, 2), deep=0, edge=7)
-        glove(c, 13, 44, 5.2)
-    else:
-        cel(c, poly([(21, 43), (26, 43), (24.5, 48), (20.5, 48)]), 'vacht', light=1, shade=(2, 1), deep=0, edge=7)
-        glove(c, 21, 50.5, 4.8)
+    if f2:   # stoot naar voren
+        cel(c, poly([(25, 40), (27.5, 43), (18, 44.5), (16, 41.5)]), 'vacht', light=1, shade=(1, 2), deep=0, edge=15)
+        glove(c, 12.5, 42, 5.0)
+    else:    # opgeheven in de dekking (staat op drie poten, zoals Ponyta's voorbeen)
+        cel(c, poly([(22, 41), (26.5, 42), (22.5, 47.5), (18.5, 46)]), 'vacht', light=1, shade=(1, 2), deep=0, edge=15)
+        glove(c, 18, 47.5, 4.8)
     # --- kop (naar de kijker gedraaid) ---
-    hx, hy = (20, 21) if not f2 else (19, 22)
-    # oren (banaan) + hangende kwastjes
-    cel(c, poly([(hx + 5, hy - 5), (hx + 7, hy - 12), (hx + 9.5, hy - 11.5), (hx + 8.5, hy - 4)]), 'vacht', tones=FAR['vacht'], light=0, deep=0)
-    cel(c, poly([(hx - 6, hy - 4), (hx - 8.5, hy - 11.5), (hx - 6, hy - 12.5), (hx - 3, hy - 5)]), 'vacht', light=1, shade=(2, 1), deep=0)
-    cel(c, disk(hx + 10.5, hy - 9.5, 2, 2.2), 'rood', tones=FAR['rood'], light=0, deep=0)
-    cel(c, disk(hx - 9.5, hy - 9.5, 2.4, 2.6), 'rood', light=1, shade=(1, 1), deep=0)
-    head = disk(hx + 1, hy, 8, 6.8)
-    cel(c, head, 'vacht', light=1, shade=(2, 2), deep=1)
-    snout = disk(hx - 5.5, hy + 3.4, 4.6, 3.3)
-    cel(c, snout, 'vacht', tones=(5, 5, 6, 6), light=0, shade=(1, 2), deep=0)
-    # mini-bolhoedje: koepel + rand
-    cel(c, disk(hx + 1.5, hy - 7.6, 4.2, 3.0), 'wol', light=1, shade=(1, 2), deep=0)
-    cel(c, disk(hx + 1, hy - 5.4, 6.6, 1.4), 'wol', tones=(2, 2, 3, 3), light=0, shade=(1, 1), deep=0)
+    hx, hy = (20, 20) if not f2 else (19, 21)
+    cel(c, poly([(hx + 5, hy - 4), (hx + 7.5, hy - 11), (hx + 10, hy - 10.5), (hx + 8.5, hy - 3)]), 'vacht', tones=FAR['vacht'], light=0, deep=0)
+    cel(c, poly([(hx - 5.5, hy - 3.5), (hx - 8, hy - 11), (hx - 5.5, hy - 12), (hx - 2.5, hy - 4.5)]), 'vacht', light=1, shade=(2, 1), deep=0)
+    cel(c, disk(hx + 11, hy - 8.5, 1.8, 2.1), 'rood', tones=FAR['rood'], light=0, deep=0)
+    cel(c, disk(hx - 9.3, hy - 8.8, 2.2, 2.5), 'rood', light=1, shade=(1, 1), deep=0)
+    cel(c, disk(hx + 1, hy, 8, 6.6), 'vacht', light=1, shade=(2, 2), deep=1)
+    cel(c, disk(hx - 5, hy + 3.4, 4.6, 3.2), 'vacht', tones=(5, 5, 6, 6), light=0, shade=(1, 2), deep=0)
+    # mini-bolhoedje
+    cel(c, disk(hx + 1.5, hy - 7.4, 4.0, 2.8), 'wol', light=1, shade=(1, 2), deep=0)
+    cel(c, disk(hx + 1, hy - 5.3, 6.4, 1.3), 'wol', tones=(2, 2, 3, 3), light=0, shade=(1, 1), deep=0)
     c.outline()
     return c
 

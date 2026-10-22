@@ -392,7 +392,9 @@ path((34, 6), (34, 6))                                     # Salento -> Medellí
 path((36, 5), (38, 5), (38, 4))                            # Medellín -> Cartagena
 path((35, 7), (35, 9), (36, 9))                            # Medellín -> reuzentepui
 path((38, 9), (40, 9), (40, 8))                            # tepui -> Paramaribo
-path((22, 15), (22, 18), (32, 18), (32, 17))               # dwars door de jungle naar de zuidoever van de binnenzee (late game)
+path((31, 23), (34, 23), (34, 21))                         # Salvador -> Lençóis
+path((36, 21), (38, 21), (38, 17), (39, 17))               # Lençóis -> Belém
+path((30, 22), (30, 16))                                   # Salvador -> door de jungle naar de binnenzee (late game)
 
 river_route = np.zeros((H, W), bool)
 from collections import deque

@@ -180,7 +180,7 @@ lvl[coast] = 0
 biome = np.zeros((PH, PW), int)   # 0 groen, 2 woestijn, 3 sneeuw, 4 zout
 desert = land & (cy > 15.5) & (cy < 31) & (cx < ridge - 0.8 + (n - 0.5) * 2)
 desert |= land & ellipse(14.5, 27, 3.6, 2.6)                                       # Atacama-hoogland/Lípez
-desert |= land & ellipse(32.5, 12.2, 1.4, 0.7)                                    # Lençóis Maranhenses
+desert |= land & ellipse(32.5 + (n - 0.5) * 1.6, 12.2, 1.4, 0.7)                                  # Lençóis Maranhenses
 biome[desert] = 2
 snow = land & (((lvl >= 4) & (cy > 14) & (cy < 31) & (andes > 0.75) & (biome != 2))
                | ((cy > 31) & (lvl >= 3)) | (cy > 37.8)
@@ -240,7 +240,7 @@ img[erode(dhi) & (dlv >= 4) | erode(erode(dhi))] = SAND[0]
 # sneeuw: witte toppen met een grijze rand, op de groene ondergrond; de kust blijft donkergroen
 sm = land & (biome == 3) & ~coast
 img[sm] = SNOW[1]
-img[erode(sm) & ((lvl >= 3) | (dist_in(sm) >= 3))] = SNOW[0]
+img[erode(sm) & (lvl >= 3)] = SNOW[0]
 # zoutvlakte: vlak en spiegelend, dus strepen (wit/grijs) zoals de zee
 sa = land & (biome == 4)
 paint(sa, SALT, stripes)
@@ -402,10 +402,11 @@ pl[(biome == 3) | (biome == 4)] = 4
 pl[coast] = 0
 paint(rmask, ROUTE, pl)
 # water op een landroute wordt waterroute-blauw (zoals het meertje op Route 120 in Hoenn)
-paint(rmask & (water_in | ~land), SEAROUTE, stripes)
-# zeeroutes alleen over water; land dat in een zeeroutevak valt, blijft land (Hoenn: eilanden liggen erbovenop)
-rrmask = np.kron(river_route, np.ones((8, 8), bool))
-paint((smask & ~land) | rrmask, SEAROUTE, stripes)
+paint(rmask & ((lakes & land) | ~land), SEAROUTE, stripes)
+# zeeroutes: vakken die vooral land zijn (het stukje van de stad naar de kust) worden landroute
+cwater = np.kron((cell_water >= 0.5) | river_route, np.ones((8, 8), bool))
+paint(smask & ~cwater & land, ROUTE, pl)
+paint(smask & (cwater | ~land), SEAROUTE, stripes)
 
 # ---------- stadsiconen uit de Hoenn-kaart ----------
 d = 'graphics/pokenav/region_map/'

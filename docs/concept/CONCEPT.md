@@ -20,7 +20,7 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 ## Gyms en Elite 4
 - **Gymtypes:** Dark, Ice, Bug, Dragon, Ground, Grass, Fire, Poison. **Gym 1: Ground in Uyuni** (direct vanuit La Paz naar de zoutvlakte), **gym 2: Ice** (ijsgebied naast de startstad); de rest van de volgorde is nog open.
 - **Elite 4:** Electric, Flying, Ghost, Steel.
-- **Pokémon League in Machu Picchu.** Cuzco bezoek je al eerder en je komt er meerdere keren terug (Jordi).
+- **Pokémon League in Machu Picchu.** Cuzco bezoek je al eerder en je komt er meerdere keren terug (Jordi). De League staat **los van het verhaal** (zoals in bijna elke game behalve B/W).
 - Niet als gym/E4: Normal, Water, Fighting, Psychic, Rock, Fairy (kampioen open).
 
 ## Regiokaart

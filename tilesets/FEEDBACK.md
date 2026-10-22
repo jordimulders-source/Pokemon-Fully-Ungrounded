@@ -5,3 +5,4 @@
 - **Andes-primary: akkoord** (Jordi): gedeelde primary voor grond, kliffen, bergen en straatmeubilair voor La Paz, de altiplano en latere Andes-gebieden.
 - Gebruik desnoods de Hoenn-assets als basis en bouw die om (Jordi).
 - Zo efficiënt mogelijk (Jordi): Andes-primary als omgebouwde kopie van General, Hoenn-tegels maximaal hergebruiken, alleen het echt nieuwe zelf tekenen.
+- "Het hoeft ook geen GTA 6 te worden, het is een GBA-game" (Jordi): Emerald-niveau is het doel, niet meer.

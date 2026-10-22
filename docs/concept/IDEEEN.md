@@ -50,3 +50,4 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - Muisca (Colombia): El Dorado (de gouden man op het Guatavitameer), Bachué.
 - Mapuche (Patagonië): Tren Tren en Kai Kai (aarde- en waterslang die vechten om de wereld: een Groudon/Kyogre-achtig duo, maar dan eigen).
 - Nazca-lijnen, moai (Paaseiland).
+- **Verhouding (Jordi):** zoals nu in het echt: weinig mensen geloven er nog letterlijk in, maar de goden en geesten worden nog wel geëerd (offers aan Pachamama, Ekeko op de Alasitas, El Tío in de mijn, feesten). Traditie, geen religie in het verhaal.

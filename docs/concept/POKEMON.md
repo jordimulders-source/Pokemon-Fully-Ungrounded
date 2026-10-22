@@ -51,6 +51,9 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Vleermuislijn (3 stadia):** eindigt als **fruitvampier** die op zijn kop hangt en ook ondersteboven vliegt. Inspiratie: Zuid-Amerikaanse fruitvleermuizen (*Artibeus*), Moche-vleermuisgoden en het goud van Sipán, buisliplevleermuis. Let op overlap met Woobat/Zubat/Noibat.
 - **Vaste lijst:** lama, alpaca, vicuña, guanaco, coati, capibara, condor, pinguïns.
 
+## Regional forms (besloten)
+- **Venomoth-regional form:** bestaat al (eerder ontwerp, Jordi wil hem gebruiken). Bestanden nog toevoegen aan de repo.
+
 ## Bestaande soorten in de regio
 - Alolan Exeggutor in de waspalmenvallei (Salento).
 - Minccino-lijn (chinchilla) naast de viscacha (neven, beide Chinchillidae).

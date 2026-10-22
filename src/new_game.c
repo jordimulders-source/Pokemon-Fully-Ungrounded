@@ -127,11 +127,8 @@ static void ClearFrontierRecord(void)
 
 static void WarpToTruck(void)
 {
-    // Project Grounded: start voor de deur van je eigen huis (Brendan links, May rechts)
-    if (gSaveBlock2Ptr->playerGender == MALE)
-        SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), WARP_ID_NONE, 5, 9);
-    else
-        SetWarpDestination(MAP_GROUP(MAP_LITTLEROOT_TOWN), MAP_NUM(MAP_LITTLEROOT_TOWN), WARP_ID_NONE, 14, 9);
+    // Fully Ungrounded: start midden in StartTown (plaatshouder voor de echte startstad)
+    SetWarpDestination(MAP_GROUP(MAP_START_TOWN), MAP_NUM(MAP_START_TOWN), WARP_ID_NONE, 9, 12);
     WarpIntoMap();
 }
 
@@ -200,39 +197,8 @@ void NewGameInitData(void)
 
     RunScriptImmediately(EventScript_ResetAllMapFlags);
 
-    if (gSaveBlock2Ptr->playerGender == MALE)
-    {
-        VarSet(VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 1); 
-        VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 0);     
-        
-        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL);
-        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL);
-
-        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
-        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
-        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_MOM);
-        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_RIVAL_SIBLING);
-        // Project Grounded: de truck-intro (die dit deed) is eruit; zonder dit witte je uit naar Petalburg
-        SetLastHealLocationWarp(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F);
-    }
-    else
-    {
-        VarSet(VAR_LITTLEROOT_HOUSES_STATE_MAY, 1); 
-        VarSet(VAR_LITTLEROOT_HOUSES_STATE_BRENDAN, 0);
-        
-        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_2F_POKE_BALL);
-        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F_POKE_BALL);
-
-        FlagClear(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_MOM);
-        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_MOM);
-        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_MOM);
-        FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_RIVAL_SIBLING);
-        SetLastHealLocationWarp(HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F);
-    }
-
-    VarSet(VAR_LITTLEROOT_INTRO_STATE, 4); 
-    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_BRENDANS_HOUSE_TRUCK);
-    FlagSet(FLAG_HIDE_LITTLEROOT_TOWN_MAYS_HOUSE_TRUCK);
+    // Fully Ungrounded: start in StartTown (plaatshouder); uitwitten brengt je naar het Pokémon Center daar
+    SetLastHealLocationWarp(HEAL_LOCATION_START_TOWN);
     FlagSet(FLAG_SYS_B_DASH);
     FlagSet(FLAG_RECEIVED_RUNNING_SHOES);
     EnableNationalPokedex(); // Project Grounded: National Dex vanaf het begin

@@ -1,0 +1,43 @@
+def pose(f):
+    cv = Canvas()
+    # staart (achter alles) met Nazca-spiraal
+    tail = [(40, 50), (46, 52), (50.5, 49), (52.5, 43), (52.5, 36)]
+    cx, cy, R0 = 49.6, 30.0, 4.3
+    a0 = math.atan2(36 - cy, 52.5 - cx)
+    sp = []
+    n = 34
+    for i in range(1, n + 1):
+        t = i / n
+        a = a0 - t * 2 * math.pi * 1.25
+        r = R0 * (1 - 0.72 * t)
+        sp.append((cx + r * math.cos(a), cy + r * math.sin(a)))
+    pts = tail + sp
+    cv.capsule(pts, [1.5] * len(tail) + [1.5 - 0.4 * i / n for i in range(1, n + 1)], 'fur', group=100, bias=0.1)
+    # verre been: voet + dij
+    cv.capsule([(36.5, 55.5), (43, 56.5), (48, 57.0)], [1.8, 1.6, 1.4], 'fur', group=10, bias=-0.15)
+    cv.ellipse(39.5, 47.5, 5.5, 6.5, 'fur', group=11, bias=-0.1, hard=True)
+    # lijf
+    cv.ellipse(31.0, 40.5, 9.0, 10.0, 'fur', group=1)
+    cv.ellipse(28.5, 42.0, 5.0, 6.5, 'belly', group=1)
+    # verre arm naar de verre knie
+    cv.capsule([(36.5, 36.5), (39.5, 41.5), (37.5, 44.5)], [2.0, 1.8, 1.6], 'fur', group=12, hard=True, bias=-0.05)
+    # nabije voet + dij
+    cv.capsule([(27.5, 55.5), (20, 56.5), (14.5, 57.0)], [1.9, 1.7, 1.4], 'fur', group=13, hard=True)
+    cv.ellipse(23.0, 48.5, 6.6, 6.2, 'fur', group=14, hard=True)
+    # nabije arm naar de nabije knie
+    cv.capsule([(24.5, 36), (19.5, 41.0), (19.5, 44.5)], [2.3, 2.0, 1.7], 'fur', group=15, hard=True)
+    # oren
+    cv.ellipse(16.5, 13.5, 3.2, 3.6, 'fur', group=20)
+    cv.ellipse(42.0, 12.5, 2.6, 3.6, 'fur', group=21, bias=-0.1)
+    # kop
+    cv.ellipse(29.0, 21.5, 13.5, 11.8, 'fur', group=2)
+    return cv
+
+
+def render(f):
+    cv = pose(f)
+    eye(cv, 22.3, 22.0, 5.2, 5.4)
+    eye(cv, 33.6, 21.6, 4.6, 5.2)
+    return cv.shade()
+
+

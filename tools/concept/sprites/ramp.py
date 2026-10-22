@@ -18,6 +18,7 @@ import sys, os, colorsys
 from PIL import Image, ImageDraw
 
 PROFILE = {  # (V, S-factor t.o.v. middentint) van donker naar licht
+    2: ([0.80, 1.00], [1.00, 0.70]),     # klein accent (klauw, neus): basis + hooglicht
     3: ([0.55, 0.84, 1.00], [0.94, 1.00, 0.80]),
     4: ([0.48, 0.71, 0.87, 1.00], [0.97, 1.00, 0.90, 0.65]),
     5: ([0.45, 0.67, 0.84, 0.93, 1.00], [0.81, 1.00, 0.87, 0.78, 0.54]),
@@ -43,6 +44,8 @@ def shift_hue(h, deg):
 def ramp(base, n=4, hue=4.0):
     """Ramp van n tinten; 'base' = de meest gebruikte tint = de op een na lichtste
     (zo is het in de Hoenn-sprites: Treecko 9cd54a, Mudkip 5aace6)."""
+    if n == 1:                                   # los accent (bijv. iris): alleen de basis
+        return [gba(base)]
     r, g, b = [v / 255 for v in base]
     h, s, v = colorsys.rgb_to_hsv(r, g, b)
     h *= 360

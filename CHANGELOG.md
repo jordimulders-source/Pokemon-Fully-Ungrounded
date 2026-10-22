@@ -19280,5 +19280,6 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 
 ### Flannery: Infernape i.p.v. Coalossal, slimmere AI (v1.0.0)
 - Testrun Jordi: met Garganacl, Solrock, Sandslash en Swampert was de Lavaridge-gym een peuleschil; Flannery's hele team was zwak tegen Rock en Ground (Coalossal/Magcargo 4× tegen Ground en Water) en niets raakte Rock-types hard.
-- **Coalossal → Infernape** @ Expert Belt, lv 44, Blaze: Aura Sphere, Grass Knot, Flamethrower, Vacuum Wave. Snelle speciale counter tegen Rock (om de hoge Defense heen); Grass Knot doet 120 tegen Garganacl.
+- **Coalossal → Infernape** @ Expert Belt, lv 44, Blaze: Vacuum Wave, Scorching Sands, Flamethrower, Aura Sphere (speciale set, Jordi). Snelle speciale counter tegen Rock (om de hoge Defense heen).
+- Infernape-lijn leert nu via level-up wat hij officieel via TM/tutor/ei leert maar hier niet kon: Vacuum Wave (Monferno en Infernape lv 23), Scorching Sands (Infernape 38), Aura Sphere (Infernape 44).
 - AI: Smart Trainer + voorspellen (move, wissel, inkomende Pokémon), HP-bewust en ability-voorspelling. Bewust geen ace-flag: Magcargo hoort vroeg in het gevecht te kunnen komen, anders heeft Desolate Land geen zin.

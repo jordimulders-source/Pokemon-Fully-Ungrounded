@@ -66,3 +66,5 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 ## Verhaal: tegenstanders (Jordi, 22 okt)
 - Niet één evil team, maar **verschillende gangs** en een soort **overheid/regering die de natuur wil vernietigen**, waardoor de **legendary Pokémon woedend worden** (enraged).
 - Past bij het serieuze thema (verdwijnende gletsjers, mijnbouw, ontbossing) en bij de mythologie (Pachamama, het Inca-trio).
+- De overheid: bossen kappen, ruïnes weghalen e.d. (Jordi).
+- De gangs verschillen in serieusheid (Jordi): van bijna komisch tot echt gevaarlijk.

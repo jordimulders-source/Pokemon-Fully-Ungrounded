@@ -1,5 +1,4 @@
 #include "global.h"
-#include "gen1_ghost.h"
 #include "forces.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -377,10 +376,7 @@ const struct TrainerClass gTrainerClasses[TRAINER_CLASS_COUNT] =
     [TRAINER_CLASS_NEO_PLASMA] = { _("NEO PLASMA"), 20, BALL_POKE }, // Project Grounded: Battle Stadium (Neo Plasma-grunts)
     [TRAINER_CLASS_TEAM_ROCKET] = { _("TEAM ROCKET"), 10 }, // Project Grounded: Rocket-sidequest
     [TRAINER_CLASS_ROCKET_EXEC] = { _("ROCKET EXEC"), 25, BALL_ULTRA }, // Project Grounded: Rocket-sidequest
-    [TRAINER_CLASS_ZERO_LAB] = { _("ZERO LAB"), 0, BALL_MASTER }, // Project Grounded: Area Zero
-    [TRAINER_CLASS_CONSTRUCT] = { _("CONSTRUCT"), 40, BALL_CHERISH }, // Project Grounded: construct van Arceus, Hall of Origin (tools/grounded/construct_sprites.py)
     [TRAINER_CLASS_AI] = { _("AI"), 1, BALL_POKE }, // Project Grounded: AI CLAUDE (Route 114), betaalt in tokens
-    [TRAINER_CLASS_SHY_SQUAD] = { _("SHY SQUAD"), 30, BALL_POKE }, // Project Grounded: Yoshi's Island
     [TRAINER_CLASS_BUG_CATCHER] = { _("BUG CATCHER"), 4 },
     [TRAINER_CLASS_PKMN_RANGER] = { _("{PKMN} RANGER"), 12 },
     [TRAINER_CLASS_MAGMA_LEADER] = { _("MAGMA LEADER"), 20, BALL_MASTER },
@@ -463,7 +459,6 @@ void CB2_InitBattle(void)
     AllocateBattleSpritesData();
     AllocateMonSpritesGfx();
     RecordedBattle_ClearFrontierPassFlag();
-    Gen1Ghost_OnBattleStart(); // Project Grounded
 
 #if T_SHOULD_RUN_MOVE_ANIM
     gLoadFail = FALSE;
@@ -3187,20 +3182,6 @@ static void BattleStartClearSetData(void)
 
 #define UNPACK_VOLATILE_BATON_PASSABLES(_enum, _fieldName, _typeMaxValue, ...) __VA_OPT__(if ((FIRST(__VA_ARGS__)) & V_BATON_PASSABLE) gBattleMons[battler].volatiles._fieldName = volatilesCopy->_fieldName;)
 
-// Project Grounded: National Park, gevecht tegen Eternatus (na het herstel van het park, tot de quest klaar is):
-// Celebi's kracht geeft elke Pokémon van de speler bij binnenkomst +1 op Atk, Def, Spe, SpA en SpD (omniboost).
-static void TryNationalParkOmniboost(u32 battler)
-{
-    u32 i;
-
-    if (!IsOnPlayerSide(battler) || (gBattleTypeFlags & BATTLE_TYPE_TRAINER)
-     || !FlagGet(FLAG_NATIONAL_PARK_RESTORED) || FlagGet(FLAG_NATIONAL_PARK_DONE)
-     || GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) != SPECIES_ETERNATUS)
-        return;
-    for (i = STAT_ATK; i <= STAT_SPDEF; i++)
-        gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE + 1;
-}
-
 void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
 {
     s32 i;
@@ -3212,7 +3193,6 @@ void SwitchInClearSetData(u32 battler, struct Volatiles *volatilesCopy)
     {
         for (i = 0; i < NUM_BATTLE_STATS; i++)
             gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
-        TryNationalParkOmniboost(battler); // Project Grounded
         for (i = 0; i < gBattlersCount; i++)
         {
             if (gBattleMons[i].volatiles.escapePrevention && gDisableStructs[i].battlerPreventingEscape == battler)
@@ -3566,8 +3546,7 @@ static void DoBattleIntro(void)
                 memset(&gBattleMons[battler].volatiles, 0, sizeof(struct Volatiles));
                 for (i = 0; i < NUM_BATTLE_STATS; i++)
                     gBattleMons[battler].statStages[i] = DEFAULT_STAT_STAGE;
-                TryNationalParkOmniboost(battler); // Project Grounded
-                #if TESTING
+                        #if TESTING
                 if (gTestRunnerEnabled)
                 {
                     u32 array = (!IsPartnerMonFromSameTrainer(battler)) ? battler : GetBattlerSide(battler);

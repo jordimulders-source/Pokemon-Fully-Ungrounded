@@ -19,11 +19,9 @@ SkyPillar_Top_OnTransition:
 	call_if_lt VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_SetCleanLayout
 	call_if_ge VAR_SKY_PILLAR_STATE, 2, SkyPillar_Top_EventScript_TryShowRayquaza
 	call SkyPillar_Top_EventScript_TryShowShinyRayquaza
-	call SkyPillar_Top_EventScript_ArmHallOfOrigin @ Project Grounded: Arceus (data/scripts/azure_flute.inc)
 	end
 
 SkyPillar_Top_OnFrame:
-	map_script_2 VAR_TEMP_4, 1, SkyPillar_Top_EventScript_HallOfOriginScene
 	.2byte 0
 
 @ Project Grounded: Delta Episode. Is de gewone Rayquaza gevangen, dan wacht er een tweede, shiny Rayquaza.

@@ -613,8 +613,4 @@ gSpecials::
 	def_special Enamorus_DebugForceTown
 	def_special Grounded_SickBlikSpot
 	def_special Grounded_BufferWhiteOuts
-	def_special AzureFlute_GetHint
-	def_special AzureFlute_DebugCatchAll
-	def_special Ultra_PickPortal
-	def_special Ultra_CountOpen
 	def_special Ultra_FindPartySunMoon

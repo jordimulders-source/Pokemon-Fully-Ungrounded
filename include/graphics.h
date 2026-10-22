@@ -613,8 +613,6 @@ extern const u16 gItemIconPalette_Honey[];
 extern const u32 gItemIcon_OddKeystone[];
 extern const u16 gItemIconPalette_OddKeystone[];
 extern const u32 gItemIcon_PrettyFeather[];
-extern const u32 gItemIcon_AzureFlute[]; // Project Grounded
-extern const u16 gItemIconPalette_AzureFlute[];
 extern const u16 gItemIconPalette_PrettyFeather[];
 extern const u32 gItemIcon_RelicCoin[];
 extern const u16 gItemIconPalette_RelicCopper[];

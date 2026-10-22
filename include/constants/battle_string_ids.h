@@ -752,8 +752,6 @@ enum StringID
     STRINGID_NINELIVESUSED,
     STRINGID_OBEYWARN_LEVELUP, // Project Grounded
     STRINGID_OBEYWARN_CAUGHT, // Project Grounded
-    STRINGID_GEN1GHOST_SCARED, // Project Grounded
-    STRINGID_GEN1GHOST_GETOUT, // Project Grounded
     STRINGID_PKMNHYPHALSNARE, // Project Grounded
     STRINGID_BEAVERDAMLAYER, // Project Grounded
     STRINGID_LURELIGHTDAZZLED, // Project Grounded

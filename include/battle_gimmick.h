@@ -25,7 +25,6 @@ struct GimmickInfo
 
 void AssignUsableGimmicks(void);
 bool32 CanActivateGimmick(u32 battler, enum Gimmick gimmick);
-bool32 IsAreaZeroTeraBattle(void); // Project Grounded: Area Zero
 bool32 IsGimmickSelected(u32 battler, enum Gimmick gimmick);
 void SetActiveGimmick(u32 battler, enum Gimmick gimmick);
 enum Gimmick GetActiveGimmick(u32 battler);

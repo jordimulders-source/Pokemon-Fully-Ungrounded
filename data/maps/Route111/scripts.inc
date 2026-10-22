@@ -889,26 +889,6 @@ Route111_Text_EF_DaveRoute111PostBattle:
 	.string "I've now broken both.\n"
 	.string "Great session. Bye!$"
 
-Route111_EventScript_EF_ShyGuyDesert::
-	trainerbattle_single TRAINER_SHY_GUY_DESERT, Route111_Text_EF_ShyGuyDesertIntro, Route111_Text_EF_ShyGuyDesertDefeat
-	msgbox Route111_Text_EF_ShyGuyDesertPostBattle, MSGBOX_AUTOCLOSE
-	end
-
-Route111_Text_EF_ShyGuyDesertIntro:
-	.string "…………\p"
-	.string "(A SHY GUY was hiding in the sand.\n"
-	.string "He is mortified that you found him.)$"
-
-Route111_Text_EF_ShyGuyDesertDefeat:
-	.string "…!\p"
-	.string "(He wants to be buried again.\n"
-	.string "Preferably forever.)$"
-
-Route111_Text_EF_ShyGuyDesertPostBattle:
-	.string "…\p"
-	.string "(He is pretending to be a cactus.\n"
-	.string "It is not going well.)$"
-
 @ }
 
 @ Project Grounded: Hoopa-quest. Na de Hall of Fame hangt een ring van Hoopa in de zandstorm; erdoor kom je in de

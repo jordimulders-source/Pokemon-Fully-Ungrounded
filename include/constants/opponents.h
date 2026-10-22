@@ -120,7 +120,6 @@
 #define TRAINER_CINDY_1                     114
 #define TRAINER_DAPHNE                      115
 #define TRAINER_GRUNT_SPACE_CENTER_2        116
-#define TRAINER_HOO_STRATOS                 117 // Project Grounded: Hall of Origin, trap: emissary van de lucht (was TRAINER_CINDY_2, ongebruikt)
 #define TRAINER_BRIANNA                     118
 #define TRAINER_NAOMI                       119
 #define TRAINER_CINDY_3                     120
@@ -176,7 +175,6 @@
 #define TRAINER_FRANKLIN                    170
 #define TRAINER_KEVIN                       171
 #define TRAINER_JACK                        172
-#define TRAINER_HOO_THALASSA                173 // Project Grounded: Hall of Origin, trap: emissary van de zee (was TRAINER_DUDLEY, ongebruikt)
 #define TRAINER_CHAD                        174
 #define TRAINER_TONY_2                      175
 #define TRAINER_TONY_3                      176
@@ -465,7 +463,6 @@
 #define TRAINER_SIENNA                      459
 #define TRAINER_DEBRA                       460
 #define TRAINER_LINDA                       461
-#define TRAINER_HOO_BEDROCK                 462 // Project Grounded: Hall of Origin, trap: emissary van het land (was TRAINER_KAYLEE, ongebruikt)
 #define TRAINER_LAUREL                      463
 #define TRAINER_CARLEE                      464
 #define TRAINER_JENNY_2                     465
@@ -488,8 +485,6 @@
 #define TRAINER_AMY_AND_LIV_2               482
 #define TRAINER_GINA_AND_MIA_1              483
 #define TRAINER_MIU_AND_YUKI                484
-#define TRAINER_HOO_NOUS                    485 // Project Grounded: Hall of Origin, atrium: emissary van de geest (was TRAINER_AMY_AND_LIV_3, ongebruikt)
-#define TRAINER_HOO_SOMNIA                  486 // Project Grounded: Hall of Origin, atrium: emissary van de dromen (was TRAINER_GINA_AND_MIA_2, ongebruikt)
 #define TRAINER_AMY_AND_LIV_4               487
 #define TRAINER_AMY_AND_LIV_5               488
 #define TRAINER_AMY_AND_LIV_6               489
@@ -571,7 +566,6 @@
 #define TRAINER_CATHERINE_5                 565
 #define TRAINER_JULIO                       566
 #define TRAINER_GRUNT_SEAFLOOR_CAVERN_5     567
-#define TRAINER_HOO_GLADIUS                 568 // Project Grounded: Hall of Origin, atrium: emissary van de rechtvaardigheid (was TRAINER_GRUNT_UNUSED, ongebruikt)
 #define TRAINER_GRUNT_MT_PYRE_4             569
 #define TRAINER_GRUNT_JAGGED_PASS           570
 #define TRAINER_DIO                         571
@@ -584,7 +578,6 @@
 #define TRAINER_HARRISON                    578
 #define TRAINER_GRUNT_MT_CHIMNEY_2          579
 #define TRAINER_CLARENCE                    580
-#define TRAINER_HOO_HEPHAEST                581 // Project Grounded: Hall of Origin, atrium: emissary van het vuur (de smidse) (was TRAINER_TERRY, ongebruikt)
 #define TRAINER_NATE                        582
 #define TRAINER_KATHLEEN                    583
 #define TRAINER_CLIFFORD                    584
@@ -636,8 +629,6 @@
 #define TRAINER_ALAN                        630
 #define TRAINER_CLARK                       631
 #define TRAINER_ERIC                        632
-#define TRAINER_HOO_ORDO                    633 // Project Grounded: Hall of Origin, top: emissary van de orde (de bouwers) (was TRAINER_LUCAS_2, ongebruikt)
-#define TRAINER_HOO_KAIROS                  634 // Project Grounded: Hall of Origin, top: emissary van tijd en ruimte (de laatste) (was TRAINER_MIKE_1, ongebruikt)
 #define TRAINER_MIKE_2                      635
 #define TRAINER_TRENT_2                     636
 #define TRAINER_TRENT_3                     637
@@ -1046,7 +1037,6 @@
 #define TRAINER_MITCH_ROUTE_121             1141 // Project Grounded: extra gevecht (Route121)
 #define TRAINER_SICKBLIK_ROUTE_104          1142 // Project Grounded: extra gevecht (Route104)
 #define TRAINER_SICKBLIK_ROUTE_113          1143 // Project Grounded: extra gevecht (Route113)
-#define TRAINER_SHY_GUY_DESERT              1144 // Project Grounded: extra gevecht (Route111)
 #define TRAINER_DAVE_SOOTOPOLIS             1145 // Project Grounded: extra gevecht (SootopolisCity)
 // }
 
@@ -1125,22 +1115,6 @@
 // }
 
 // spacetime_cave { (tools/grounded/maptools/spacetime_cave.py; id 1159-1169, 1195-1199)
-#define TRAINER_TOWER_MAYA                  1159 // Project Grounded: Pokemon Tower (Spacetime Cave), MAYA
-#define TRAINER_TOWER_PATRICIA              1160 // Project Grounded: Pokemon Tower (Spacetime Cave), PATRICIA
-#define TRAINER_TOWER_CARLY                 1161 // Project Grounded: Pokemon Tower (Spacetime Cave), CARLY
-#define TRAINER_TOWER_HOPE                  1162 // Project Grounded: Pokemon Tower (Spacetime Cave), HOPE
-#define TRAINER_TOWER_LAUREL                1163 // Project Grounded: Pokemon Tower (Spacetime Cave), LAUREL
-#define TRAINER_TOWER_JODY                  1164 // Project Grounded: Pokemon Tower (Spacetime Cave), JODY
-#define TRAINER_TOWER_PAULA                 1165 // Project Grounded: Pokemon Tower (Spacetime Cave), PAULA
-#define TRAINER_TOWER_RUTH                  1166 // Project Grounded: Pokemon Tower (Spacetime Cave), RUTH
-#define TRAINER_TOWER_TAMMY                 1167 // Project Grounded: Pokemon Tower (Spacetime Cave), TAMMY
-#define TRAINER_TOWER_KARINA                1168 // Project Grounded: Pokemon Tower (Spacetime Cave), KARINA
-#define TRAINER_TOWER_AGATHA                1169 // Project Grounded: Pokemon Tower 5F: bezeten Agatha (Lavender-quest)
-#define TRAINER_CC_GRUNT_ARLO               1195 // Project Grounded: Cerulean Cave 1F: Rocket die Mewtwo zoekt
-#define TRAINER_CC_GRUNT_VERA               1196 // Project Grounded: Cerulean Cave 2F: Rocket die Mewtwo zoekt
-#define TRAINER_CC_GRUNT_DUNCAN             1197 // Project Grounded: Cerulean Cave 2F: Rocket die Mewtwo zoekt
-#define TRAINER_CC_GRUNT_MAXINE             1198 // Project Grounded: Cerulean Cave B1F: Rocket die Mewtwo zoekt
-#define TRAINER_CC_GIOVANNI                 1199 // Project Grounded: Cerulean Cave B1F: Giovanni, vlak voor Mewtwo
 // }
 
 // coral_cathedral { (tools/grounded/maptools/coral_cathedral.py; id's 1080-1089)
@@ -1148,65 +1122,20 @@
 #define TRAINER_FISHERMAN_DORIAN            1081 // Project Grounded: Koraalkathedraal: vist in een kerk, voelt zich er niet schuldig over
 // }
 // national_park { (tools/grounded/maptools/national_park.py; id 1090-1097)
-#define TRAINER_NP_BUG_CATCHER_DOUGLAS      1090 // Project Grounded: National Park, insectenwedstrijd
-#define TRAINER_NP_PICNICKER_SIENNA         1091 // Project Grounded: National Park, picknick
-#define TRAINER_NP_GENTLEMAN_WALDORF        1092 // Project Grounded: National Park, wandelt met zijn wandelstok
-#define TRAINER_NP_AROMA_LADY_PETUNIA       1093 // Project Grounded: National Park, ruikt aan alles
-#define TRAINER_NP_SHADOW_ASH               1094 // Project Grounded: brandend park, schim
-#define TRAINER_NP_SHADOW_CINDER            1095 // Project Grounded: brandend park, schim
-#define TRAINER_NP_SHADOW_EMBER             1096 // Project Grounded: brandend park, schim
-#define TRAINER_NP_SHADOW_SOOT              1097 // Project Grounded: brandend park, schim
 // }
 
 // chargestone { (tools/grounded/maptools/chargestone.py; id 1124-1128)
-#define TRAINER_CHARGESTONE_GRUNT_1F        1124 // Project Grounded: Chargestone Cave 1F, Colress-assistent
-#define TRAINER_CHARGESTONE_GRUNT_B1F_1     1125 // Project Grounded: Chargestone Cave B1F, Colress-assistent bij het stenenhek
-#define TRAINER_CHARGESTONE_GRUNT_B1F_2     1126 // Project Grounded: Chargestone Cave B1F, Colress-assistent in de grote grot
-#define TRAINER_CHARGESTONE_GRUNT_B2F       1127 // Project Grounded: Chargestone Cave B2F, Colress-assistent voor het lab
-#define TRAINER_CHARGESTONE_COLRESS         1128 // Project Grounded: Chargestone Cave B2F, COLRESS uit een andere dimensie (hier wel evil)
 // }
 
 // glimwood { (tools/grounded/maptools/glimwood.py; id 1098, 1099, 1107, 1108)
-#define TRAINER_GLIMWOOD_HEX_MANIAC_MORWEN  1098 // Project Grounded: Glimwood, verzamelt vervloekte theekopjes
-#define TRAINER_GLIMWOOD_PSYCHIC_SILAS      1099 // Project Grounded: Glimwood, pelgrim die al eeuwen rondjes loopt
-#define TRAINER_GLIMWOOD_BEAUTY_ODETTE      1107 // Project Grounded: Glimwood, feeën-cosplay
-#define TRAINER_BALLONLEA_GENTLEMAN_ARTHUR  1108 // Project Grounded: Ballonlea, theatercriticus
 // }
 
 // area_zero { (tools/grounded/maptools/area_zero.py; id 1180-1182)
-#define TRAINER_AREA_ZERO_SECURITY_FUTURE   1180 // Project Grounded: Area Zero, toekomst: beveiligingssysteem na MIRAIDON
-#define TRAINER_AREA_ZERO_SECURITY_PAST     1181 // Project Grounded: Area Zero, verleden: beveiligingssysteem na KORAIDON
-#define TRAINER_AREA_ZERO_ALARM             1182 // Project Grounded: Area Zero, Tera-grot: alarmsysteem (terastaliseert, elk teamlid)
 // }
 // yoshis_island { (tools/grounded/maptools/yoshis_island.py; id 1017, 1018, 1019, 1026, 1027, 1028, 1029, 1049, 1055, 1056, 1109, 1129, 1183)
-#define TRAINER_YI_SHY_GUY_BEACH_A          1017 // Project Grounded: Yoshi's Island, strand, pijpwachter 1
-#define TRAINER_YI_SHY_GUY_BEACH_B          1018 // Project Grounded: Yoshi's Island, strand, pijpwachter 2
-#define TRAINER_YI_SHY_GUY_CAMP_A1          1019 // Project Grounded: Yoshi's Island, kamp, bende A
-#define TRAINER_YI_SHY_GUY_CAMP_A2          1026 // Project Grounded: Yoshi's Island, kamp, bende A
-#define TRAINER_YI_SHY_GUY_CAMP_B1          1027 // Project Grounded: Yoshi's Island, heuvels, bende B (spookhuis)
-#define TRAINER_YI_SHY_GUY_CAMP_B2          1028 // Project Grounded: Yoshi's Island, heuvels, bende B (spookhuis)
-#define TRAINER_YI_COMMANDER_BOO            1029 // Project Grounded: Yoshi's Island, spookhuis, baas
-#define TRAINER_YI_SHY_GUY_FORT_A           1049 // Project Grounded: Yoshi's Island, fort, wachter
-#define TRAINER_YI_SHY_GUY_FORT_B           1055 // Project Grounded: Yoshi's Island, fort, wachter
-#define TRAINER_YI_WARIO                    1056 // Project Grounded: Yoshi's Island, fort, eindbaas
-#define TRAINER_YI_SHY_GUY_JUNGLE           1109 // Project Grounded: Yoshi's Island, jungle, naast het pad
-#define TRAINER_YI_SHY_GUY_CAVE             1129 // Project Grounded: Yoshi's Island, kristalgrot, mijnwerker
-#define TRAINER_YI_SHY_GUY_FLOWERS          1183 // Project Grounded: Yoshi's Island, bloemenveld, flowerpower
 // }
 
 // coronet { (tools/grounded/maptools/coronet.py; id 1057-1059, 1068, 1069, 1082-1088)
-#define TRAINER_CORONET_TICK                1057 // Project Grounded: Mt. Coronet 4F kamer 1, projectie van Dialga
-#define TRAINER_CORONET_PARALLAX            1058 // Project Grounded: Mt. Coronet 4F kamer 1, projectie van Palkia
-#define TRAINER_CORONET_AEON                1059 // Project Grounded: Mt. Coronet 4F buiten, projectie van Dialga
-#define TRAINER_CORONET_VOIDA               1068 // Project Grounded: Mt. Coronet 4F buiten, projectie van Palkia
-#define TRAINER_CORONET_MOMENTUM            1069 // Project Grounded: Mt. Coronet 4F buiten, projectie van Dialga
-#define TRAINER_CORONET_ORBIT               1082 // Project Grounded: Mt. Coronet 4F buiten, projectie van Palkia
-#define TRAINER_CORONET_EPOCH               1083 // Project Grounded: Mt. Coronet 4F buiten, projectie van Dialga (fossielen: tijd)
-#define TRAINER_CORONET_VERTEX              1084 // Project Grounded: Mt. Coronet 4F kamer 3, projectie van Palkia
-#define TRAINER_CORONET_DEJAVU              1085 // Project Grounded: Mt. Coronet 5F, projectie van Dialga
-#define TRAINER_CORONET_NEBULA              1086 // Project Grounded: Mt. Coronet 5F, projectie van Palkia
-#define TRAINER_CORONET_CHRONOS             1087 // Project Grounded: Mt. Coronet 6F, de laatste projectie van Dialga
-#define TRAINER_CORONET_SPATIA              1088 // Project Grounded: Mt. Coronet 6F, de laatste projectie van Palkia
 // }
 
 // Post-game lv 100 (met de hand, geen generator)

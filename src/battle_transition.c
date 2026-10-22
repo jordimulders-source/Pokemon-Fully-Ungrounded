@@ -211,9 +211,6 @@ static void Task_LegendZacian(u8);
 static void Task_LegendZamazenta(u8);
 static void Task_LegendXerneas(u8);
 static void Task_LegendYveltal(u8);
-static void Task_Wario(u8); // Project Grounded (src/data/wario_intro.h)
-static void Task_Boo(u8); // Project Grounded (src/data/boo_intro.h)
-static void Task_ShyGuy(u8); // Project Grounded (src/data/shyguy_intro.h)
 static void Task_LegendDialga(u8); // Project Grounded (src/data/legend_intros_dp.h)
 static void Task_LegendPalkia(u8);
 static void Task_LegendArceus(u8);
@@ -752,8 +749,6 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_ZAMAZENTA] = Task_LegendZamazenta,
     [B_TRANSITION_XERNEAS] = Task_LegendXerneas,
     [B_TRANSITION_YVELTAL] = Task_LegendYveltal,
-    [B_TRANSITION_WARIO] = Task_Wario, // Project Grounded (src/data/wario_intro.h)
-    [B_TRANSITION_SHY_GUY] = Task_ShyGuy, // Project Grounded (src/data/shyguy_intro.h)
     [B_TRANSITION_DIALGA] = Task_LegendDialga, // Project Grounded (src/data/legend_intros_dp.h)
     [B_TRANSITION_PALKIA] = Task_LegendPalkia,
     [B_TRANSITION_ARCEUS] = Task_LegendArceus,
@@ -762,7 +757,6 @@ static const TaskFunc sTasks_Main[B_TRANSITION_COUNT] =
     [B_TRANSITION_GROUDON_MURAL] = Task_GroudonMural, // Project Grounded
     [B_TRANSITION_OGERPON] = Task_Ogerpon, // Project Grounded
     [B_TRANSITION_WEATHER_SERVICE] = Task_WeatherService, // Project Grounded
-    [B_TRANSITION_BOO] = Task_Boo, // Project Grounded (src/data/boo_intro.h)
     [B_TRANSITION_LEGEND_CROWN] = Task_LegendCrown, // Project Grounded (src/data/legend_intros_cheap2.h)
     [B_TRANSITION_LEGEND_CELEBI] = Task_LegendCelebi,
     [B_TRANSITION_LEGEND_LAKE] = Task_LegendLake,
@@ -10595,9 +10589,6 @@ static void Task_TapuFini(u8 taskId) { Tapu_Run(taskId, TAPU_FINI); }
 // Project Grounded: legendary-intro's (Lugia, Ho-Oh, Volcanion, Hoopa, Forces of Nature)
 #include "data/legend_intros.h"
 #include "data/legend_intros2.h"
-#include "data/wario_intro.h"
-#include "data/boo_intro.h"
-#include "data/shyguy_intro.h"
 #include "data/legend_intros_dp.h"
 // Project Grounded: goedkope legendary-intro's (Calyrex, Celebi, meren-trio, Meloetta, ...)
 #include "data/legend_intros_cheap2.h"

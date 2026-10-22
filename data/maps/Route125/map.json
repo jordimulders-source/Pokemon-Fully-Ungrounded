@@ -168,13 +168,6 @@
       "elevation": 0,
       "dest_map": "MAP_SHOAL_CAVE_LOW_TIDE_ENTRANCE_ROOM",
       "dest_warp_id": "0"
-    },
-    {
-      "x": 45,
-      "y": 28,
-      "elevation": 3,
-      "dest_map": "MAP_SPACETIME_CAVE",
-      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],

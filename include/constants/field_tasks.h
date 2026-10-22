@@ -9,6 +9,5 @@
 #define STEP_CB_TRUCK               5
 #define STEP_CB_SECRET_BASE         6
 #define STEP_CB_CRACKED_FLOOR       7
-#define STEP_CB_ULTRA_WORLDS        8   // Project Grounded: Ultra Space-werelden (src/ultra_worlds.c)
 
 #endif // GUARD_CONSTANTS_FIELD_TASKS_H

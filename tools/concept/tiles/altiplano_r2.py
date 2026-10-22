@@ -42,7 +42,8 @@ P[8] = recolor(F[8], {1: (248, 232, 184), 2: (232, 208, 152), 3: (208, 176, 120)
 DRY = [(240, 224, 176), (216, 200, 144), (192, 168, 112), (168, 144, 96), (136, 112, 72), (104, 88, 56)]
 P[11] = recolor(F[11], {1: DRY[0], 2: DRY[1], 3: DRY[1], 4: DRY[3], 9: DRY[0], 10: DRY[1], 11: DRY[2],
                         12: DRY[3], 13: DRY[4], 14: DRY[5], 15: PUNA[1]})
-P[10] = recolor(F[10], {13: PUNA[1], 12: PUNA[0], 14: PUNA[2], 15: PUNA[3]})
+# 10: kopie van primary-palet 3 met de rots/grondtinten als puna: grond onder bomen en klifvoeten sluit zo aan
+P[10] = recolor(P[3], {9: (248, 240, 184), 10: PUNA[0], 11: PUNA[1], 12: PUNA[2], 13: PUNA[3], 14: (120, 88, 40)})
 # 12: bofedal (eigen): veengroen, water, puna voor de geditherde rand
 BO = [(56, 96, 56), (80, 136, 72), (120, 176, 88), (168, 208, 112)]
 WA = [(65, 90, 189), (82, 106, 213), (139, 164, 222), (222, 230, 238)]
@@ -50,11 +51,12 @@ P[12] = [(255, 0, 255), (41, 49, 90)] + BO + WA + [PUNA[0], PUNA[1], PUNA[2], (2
                                                     (40, 64, 40)]
 assert len(P[12]) == 16
 
-FMAP = {6: 6, 7: 7, 8: 8, 9: 9, 10: 10, 11: 11}
+FMAP = {6: 6, 7: 7, 8: 8, 9: 9, 11: 11, 3: 10}
+FMAP_CLAY = {6: 6, 7: 7, 8: 8, 9: 9, 11: 11}
 HOUSE = pair.import_region(fal, 'Route114', 28, 2, 32, 6, FMAP, 'fal')
 TREE2 = pair.import_region(fal, 'Route114', 32, 3, 34, 5, FMAP, 'fal')
-CLIFF = pair.import_region(fal, 'Route114', 24, 1, 28, 6, FMAP, 'fal')
-FIELD = pair.import_region(fal, 'Route114', 32, 6, 37, 9, FMAP, 'fal')
+CLIFF = pair.import_region(fal, 'Route114', 7, 2, 11, 6, FMAP, 'fal')
+FIELD = pair.import_region(fal, 'Route114', 33, 6, 36, 9, FMAP_CLAY, 'chacra')
 LEDGE = pair.import_region(fal, 'Route113', 20, 4, 26, 5, FMAP, 'fal')
 for m in (0x218, 0x20a, 0x2e8, 0x2ea, 0x2f0, 0x2f2, 0x279, 0x21b, 0x21d, 0x225, 0x21e, 0x226, 0x229):
     if f'fal_{m:03x}' not in pair.names:
@@ -248,18 +250,19 @@ def mockup():
         put(g, x, 0, [[N['andes_sky']] * 4] * 2)
         put(g, x, 2, [[N[f'andes_range_{mx}_{my}'] for mx in range(4)] for my in range(3)])
     # droge puna (Route 113-asgrond) als vlakken
-    for y in range(5, 9):
+    for y in range(5, 6):
         for x in range(18, 30):
             g[y][x] = N['fal_218']
     for y in range(12, 20):
         for x in range(0, 6):
             g[y][x] = N['fal_218']
     # klifwand (Route 114) rechtsboven, met richel (Route 113) eronder
-    put(g, 26, 5, CLIFF)
-    for x in range(18, 26):
-        g[9][x] = N['fal_21c']
+    for x in range(18, 30, 4):
+        put(g, x, 6, CLIFF[1:])
+    for x in range(18, 30):
+        g[5][x] = N['fal_21c']
     # ichu (hoog gras, primary) en paja brava (Route 113-asgras)
-    for (x0, y0, x1, y1, m) in ((1, 13, 5, 18, 0x0D), (19, 5, 24, 7, N['fal_20a']), (7, 15, 12, 19, 0x0D),
+    for (x0, y0, x1, y1, m) in ((1, 13, 5, 18, 0x0D), (19, 5, 24, 5, N['fal_20a']), (7, 15, 12, 19, 0x0D),
                                 (24, 14, 29, 19, 0x0D)):
         for y in range(y0, y1 + 1):
             for x in range(x0, x1 + 1):

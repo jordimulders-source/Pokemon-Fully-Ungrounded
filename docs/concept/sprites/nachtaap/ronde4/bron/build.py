@@ -61,7 +61,7 @@ def shapes(frame):
         L.append(S(stroke_var([(20.5, 40), (18.5, 44.5), (22.5, 47)], [1.9, 1.9, 1.7]), k=(1, 1)))
     else:                                                                        # zwaaiende arm
         L.append(S(stroke_var([(20.5, 40), (15, 41), (12.5, 36)], [1.9, 1.9, 1.7]), k=(1, 1)))
-    L.append(S(ellipse(22.5, 33.2 - up, 4.2, 2.7), 'z', k=(1, 1)))              # snuit
+    L.append(S(ellipse(24, 33.0 - up, 4.3, 2.6), 'z', k=(1, 1)))              # snuit
     return L
 
 
@@ -120,29 +120,28 @@ def stamp(idx, x0, y0, rows):
 # ---- handgetekende delen (x0, y0 = linksboven) ----
 # gezicht: nachtaapmasker (donkere middenstreep, zijstrepen), witte vlekken boven de ogen,
 # halve oogleden (Espurr/Natu), donkere iris met 1 glanspixel en 2 px maangloed onderin.
-FACE = [  # x 15..38, y 18..31
-    '        44              ',
-    '        44              ',
-    '   55555 4 5555         ',
-    '  566665 4 56665        ',
-    ' 4  6665 4 5666 4       ',
-    ' 4 3333334333333 4      ',
-    ' 4 3333333 33333 4      ',
-    ' 4XXXXXXX2XXXXXXX4      ',
-    ' 4ddeddddXdedddd 4      ',
-    ' 4dddddddXddddddd4      ',
-    ' 4ddddcdd2dddddcd4      ',
-    '  4dddcc4 3ddccdd4      ',
-    '   4XXX4   4XXXX4       ',
-    '                        ',
+FACE = [  # x 15..34, y 18..30 (c0 = x15); nabij oog x17..23, verre oog x27..32, middenstreep x25
+    '          4         ',
+    '          4         ',
+    '   55555  4  5555   ',
+    '  5666665 4 566665  ',
+    ' 4 66666  4  6666  4',
+    ' 4333333324233333324',
+    ' 4333333324233333324',
+    ' 4XXXXXXX242XXXXXX24',
+    ' 4deddddd222dedddd24',
+    ' 4ddddddd222dddddd24',
+    ' 4dddddcd222ddddcd24',
+    ' 43dddcc32223dddc324',
+    '  344444322234444 4 ',
 ]
-MUZZLE = [  # x 19..27, y 31..35
-    ' 56666  ',
-    '56989667',
-    '5666a667',
-    ' 6744777',
+MUZZLE = [  # x 20..27, y 31..34
+    ' 566667 ',
+    '56699667',
+    '56677667',
+    ' 677777 ',
 ]
-EARS = {1: [(12, 19, ['aa', 'a9'])], 2: [(12, 18, ['aa', 'a9'])]}
+EARS = {1: [(12, 20, ['44', '43']), (40, 18, ['4'])], 2: [(12, 19, ['44', '43']), (40, 17, ['4'])]}
 PEARL = [  # x 22..31, y 42..48: parel in beide handen, vingers om de parel
     '   XXXX  ',
     '  Xbebb4 ',
@@ -179,7 +178,7 @@ def build(frame):
     L = shapes(frame)
     idx = render(L)
     stamp(idx, 15, 18 - up, FACE)
-    stamp(idx, 19, 31 - up, MUZZLE)
+    stamp(idx, 20, 31 - up, MUZZLE)
     for x0, y0, rows in EARS[frame]:
         stamp(idx, x0, y0, rows)
     stamp(idx, 22, 42, PEARL if frame == 1 else PEARL2)

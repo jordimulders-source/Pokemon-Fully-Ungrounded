@@ -15,6 +15,8 @@
 - **De startstad (La Paz-achtig) wordt enorm**, met een **teleférico (kabelbaan) dwars door de stad**. Een stad waar je meermaals terugkomt (Jordi).
 - Dat geldt ook voor de **andere grote steden**: groot, met meerdere wijken, en je komt er vaker terug.
 
+- **Paramaribo-achtige stad (Grass-gym): culinaire hoofdstad en melting pot van Zuid-Amerika** (Jordi). Inspiratie: Hindoestaanse, Javaanse, Creoolse, Chinese, Marron-, inheemse en Nederlandse invloeden naast elkaar (moskee en synagoge naast elkaar, roti, pom, bami, saoto), houten koloniale huizen, regenwoud aan de rand.
+
 ## Steden (inspiratie)
 La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buenos Aires, Cartagena, Paramaribo, Uyuni, Bariloche, Medellín; plus originele plekken. Plekken waar Jordi geweest is, zijn de kern (Machu Picchu, Nazca, Cuzco, Rainbow Mountain, Amazone, Salar de Uyuni, La Paz, Salento, Cartagena, Buenos Aires, Atacama, Salta, Iguazú).
 

@@ -11,7 +11,7 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 ## Regio
 - **Start in een La Paz-achtige stad** (hoog, kabelbanen), met een **ijsgebied** ernaast (Cordillera Real). Sneeuw vroeg in de game, niet als eindgebied. Geen standaardopening met kleine stad en grasroute.
 - **De Amazone:** bevaarbaar tot aan zee én dwars doorheen te verkennen (jungleroutes, zijrivieren, lussen). Het diepe binnenland is **late game of post-game**.
-- **Verkennen in metroidvania-stijl** (Jordi): HM-achtige obstakels die na bijv. een gym opengaan; je komt terug in gebieden die je al kende en vindt nieuwe paden.
+- **Verkennen in metroidvania-stijl** (Jordi): HM-achtige obstakels die na bijv. een gym opengaan; je komt terug in gebieden die je al kende en vindt nieuwe paden. Een obstakel gebruik je **één keer** op (zoals de HM-QoL uit Ungrounded: badge + middel, geen Pokémon nodig) en daarna is het voorgoed weg.
 - **Veel natuur, minder grote steden** (Jordi): Pokémon Centers en kleine hubs in de natuur (refugio's, lodges, berghutten).
 - Steden geïnspireerd op: La Paz, Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buenos Aires, Cartagena, Paramaribo, Uyuni, Bariloche, Medellín; plus originele plekken.
 

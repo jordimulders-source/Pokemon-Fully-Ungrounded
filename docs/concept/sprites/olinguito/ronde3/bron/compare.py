@@ -1,13 +1,13 @@
-"""Vergelijkingsvel ronde 2: ronde 1 en ronde 2 naast Dark-dieven en de Hoenn-starters.
+"""Vergelijkingsvel ronde 3: ronde 1, 2 en 3 naast Dark-dieven en de Hoenn-starters.
 Rij 1: 3x; rij 2: 1x; rij 3: silhouet 2x; rij 4: silhouet 1x.
-python3 compare.py <ronde2/anim_front.png> <ronde1/anim_front.png> <uit.png>"""
+python3 compare.py <ronde3/anim_front.png> <ronde1/anim_front.png> <ronde2/anim_front.png> <uit.png>"""
 import sys
 sys.path.insert(0, '/home/user/projectgrounded/tools/concept/sprites')
 import numpy as np
 from PIL import Image, ImageDraw
 import spritelib as L
 
-r2, r1, out = sys.argv[1:4]
+r3, r1, r2, out = sys.argv[1:5]
 
 
 def own(path, k):
@@ -24,7 +24,7 @@ def mon(sp):
             pass
 
 
-cols = [('ronde 1', own(r1, 0)), ('ronde 2 f1', own(r2, 0)), ('ronde 2 f2', own(r2, 1))]
+cols = [('ronde 1', own(r1, 0)), ('ronde 2', own(r2, 0)), ('ronde 3 f1', own(r3, 0)), ('ronde 3 f2', own(r3, 1))]
 for sp in ['nickit', 'purrloin', 'sneasel', 'zigzagoon/galar', 'impidimp', 'treecko', 'torchic', 'mudkip']:
     cols.append((sp, mon(sp)))
 
@@ -40,7 +40,7 @@ sheet = Image.new('RGB', (W, H), (244, 242, 236)); d = ImageDraw.Draw(sheet)
 y = 2
 for i, (n, im) in enumerate(cols):
     x = G + i * (S + G)
-    d.text((x, y), n, fill=(150, 20, 20) if n.startswith('ronde 2') else (0, 0, 0))
+    d.text((x, y), n, fill=(150, 20, 20) if n.startswith('ronde 3') else (0, 0, 0))
     sheet.paste(L.checker_bg(S, S, 4 * z).convert('RGB'), (x, y + 12))
     bg = L.checker_bg(S, S, 4 * z); bg.alpha_composite(L.scaled(im, z)); sheet.paste(bg.convert('RGB'), (x, y + 12))
 y += 12 + S + 4
@@ -49,7 +49,7 @@ for i, (n, im) in enumerate(cols):
     b = Image.new('RGBA', (64, 64), (248, 248, 248, 255)); b.alpha_composite(im)
     sheet.paste(b.convert('RGB'), (G + i * 70, y))
 y += 64 + 4
-d.text((G, y), 'silhouettest (2x en 1x): leest ronde 2 nog als Sentret/eekhoorn?', fill=(0, 0, 0)); y += 12
+d.text((G, y), 'silhouettest (2x en 1x): klauwhand en dief zonder kleur?', fill=(0, 0, 0)); y += 12
 for i, (n, im) in enumerate(cols):
     b = Image.new('RGBA', (64, 64), (248, 248, 248, 255)); b.alpha_composite(sil(im))
     sheet.paste(b.convert('RGB').resize((128, 128), Image.NEAREST), (G + i * 134, y))

@@ -1,4 +1,4 @@
-"""Olinguito ronde 2 ("Zakkenroller"): bouwt anim_front.png + normal.pal.
+"""Olinguito ronde 3 ("Zakkenroller", gebundelde klauwen, organisch masker, leesbare munt): bouwt anim_front.png + normal.pal.
 
   python3 build.py <uitmap>
 
@@ -101,15 +101,21 @@ def head(c, dy=0):
 
 
 def _face_rows(eyes):
-    """Masker (x16..x36, y23..y28) met ogen erover. eyes: lijst (x, y, rijen)."""
-    rows = {23: [(19, 23), (27, 34)], 24: [(17, 35)], 25: [(16, 36)], 26: [(16, 36)],
-            27: [(17, 35)], 28: [(18, 23), (26, 34)]}
+    """Bandietenmasker als organische vlek: twee afgeronde oogvlekken met een smalle brug,
+    een 'traan' onder elk oog en een zachte punt naar achteren (geen rechte band).
+    eyes: lijst (x, y, rijen) die eroverheen gaan."""
+    rows = {22: [(28, 32)], 23: [(19, 22), (26, 34)], 24: [(17, 23), (25, 35)],
+            25: [(16, 36)], 26: [(16, 37)], 27: [(17, 23), (26, 36)],
+            28: [(18, 22), (27, 34)], 29: [(19, 21), (30, 32)]}
     g = {}
     for y, spans in rows.items():
         for a, b in spans:
             for x in range(a, b + 1):
-                g[(x, y)] = 'M' if y == 28 or x in (a, b) and y >= 26 else 'm'
-    g[(36, 25)] = 'M'
+                g[(x, y)] = 'm'
+    # schaduwrand (index 6) onderaan elke kolom en aan de achterkant
+    for (x, y) in list(g):
+        if (x, y + 1) not in g or (x + 1, y) not in g and x > 30:
+            g[(x, y)] = 'M'
     for ex, ey, er in eyes:
         for dy, row in enumerate(er):
             for dx, ch in enumerate(row):
@@ -126,6 +132,41 @@ FACE_CLOSED = _face_rows([
     (18, 25, ['..o..', '.ogo.', 'og.go']),
     (26, 24, ['..oooo..', '.oggggo.', 'ogG..Ggo', 'o......o']),
 ])
+
+
+def coin(idx, cx, cy, rx, ry):
+    """Munt per pixel: zwarte rand, ring (licht linksboven, donker rechtsonder),
+    goud vlak, geslagen teken in het midden. Leesbaar op 1x als munt."""
+    for y in range(int(cy - ry - 2), int(cy + ry + 3)):
+        for x in range(int(cx - rx - 2), int(cx + rx + 3)):
+            d = ((x + .5 - cx) / rx) ** 2 + ((y + .5 - cy) / ry) ** 2
+            if d > (1 + 1.2 / min(rx, ry)) ** 2:
+                continue
+            if d > 1:
+                v = 15
+            elif d > (1 - 1.1 / min(rx, ry)) ** 2:
+                v = 9 if (x + .5 - cx) + (y + .5 - cy) < -1 else 11
+            else:
+                v = 10
+            idx[y, x] = v
+    ix, iy = int(cx), int(cy)
+    if rx >= 3.5:
+        patch(idx, ix - 1, iy - 2, ['.G.', 'GgG', 'G.G', '.G.'][:0] or ['.G', 'GGG', '.G'], {'G': 11, 'g': 10})
+        idx[iy - 2, ix - 2] = 9      # glansje op het vlak
+    else:
+        idx[iy, ix] = 11; idx[iy - 1, ix] = 11
+        idx[iy - 2, ix - 1] = 9
+
+
+def bundle(bx, by, rel, n=3, step=(3, 0), trim=(1, 0, 2)):
+    """n evenwijdige nagels uit één poot: dezelfde kromming, vlak naast elkaar
+    (1 px zwart ertussen), zodat ze samen als één klauwhand lezen."""
+    out = []
+    for k in range(n):
+        p = [(bx + k * step[0] + x, by + k * step[1] + y) for x, y in rel]
+        t = trim[k] if k < len(trim) else 0
+        out.append(p[:len(p) - t] if t else p)
+    return out
 
 
 def face(idx, dy=0, closed=False):
@@ -164,70 +205,69 @@ def common_body(c, dy=0):
     c.poly('doek', 'doek', [(36, 31 + dy), (41, 32 + dy), (42, 36 + dy), (39, 37 + dy), (36, 35 + dy)])
 
 
-def frame1():
+CLAW_STYLES = {
+    # A: haken samen omlaag en naar voren gekromd
+    'A': (12, 45, [(0, 0), (0, 1), (0, 2), (-1, 3), (-1, 4), (-2, 5), (-3, 6), (-4, 6), (-5, 5)], (3, 0)),
+    # B: recht omlaag hangende nagels, alleen de punten gekruld ("Freddy")
+    'B': (12, 45, [(0, 0), (0, 1), (0, 2), (0, 3), (0, 4), (0, 5), (-1, 6), (-2, 6)], (3, 0)),
+    # C: nagels naar voren, onder elkaar, punten hangen over (gekozen)
+    'C': (12, 42, [(0, 0), (-1, 0), (-2, 0), (-3, 1), (-4, 1), (-5, 2), (-6, 3), (-6, 4)], (0, 3)),
+}
+
+
+def frame1(style='C'):
     c = SCanvas(64, 64, RAMPS)
     Canvas.selout_parts = {'vacht', 'creme', 'doek'}
     ringed_tail(c, [(37, 53), (46, 52), (51.5, 46), (53.5, 38), (52, 30), (48, 25), (44, 23.5)],
                 [6.5, 7, 7, 6.5, 6, 4.5, 1.5], rings=[(0.22, 0.29), (0.43, 0.5), (0.63, 0.7)])
     common_body(c)
     head(c)
-    # verste arm (bungelt voor de borst), zwarte handschoen tot de elleboog
-    c.tube('arm1', 'vacht', [(25, 38), (21, 38)], [5.5, 5], line='dark', shade=2)
-    c.tube('hand1', 'donker', [(22, 38), (15, 38)], [5, 4.5], line='black', shade=2)
-    c.ellipse('hand1', 'donker', 13, 39, 3.6, 3)
-    # munt op schoot
-    c.ellipse('munt', 'munt', 26.5, 50.5, 5, 5, line='black', shade=2, hl=(25, 48.5, 1.6))
+    # verste arm: bovenarm schuin omlaag, elleboog, handschoen, slap afhangende pols (bungelt)
+    c.tube('arm1', 'vacht', [(25.5, 37), (21, 39.5)], [5.5, 5], line='dark', shade=2)
+    c.tube('hand1', 'donker', [(21.5, 39.5), (16.5, 38.5)], [5, 4.4], line='black', shade=2)
+    c.ellipse('hand1', 'donker', 14, 40.5, 4.2, 3.4, rot=-20)
     # dichtste arm naar de munt
     c.tube('arm2', 'vacht', [(37, 39), (38, 44)], [6, 5.5], line='dark', shade=2)
-    c.tube('hand2', 'donker', [(38, 44), (36, 48.5), (33.5, 50.5)], [5.5, 5, 4.5], line='black', shade=2)
+    c.tube('hand2', 'donker', [(38, 44), (37, 47.5), (34.5, 48.5)], [5.5, 5, 4.5], line='black', shade=2)
     c.ellipse('voet1', 'donker', 22, 55.5, 5.5, 2.6, line='black', shade=1.5)
     idx = c.render()
     face(idx)
-    # munt: geslagen teken (ster/kroon) en rand
-    x, y = Ti(26.5, 50.5); patch(idx, x - 1, y - 1, ['.G.', 'G.G', '.G.'], K)
-    # klauwen: bungelend (3), om de munt (2), achtervoet (2)
-    hooks(idx, shift_claws([
-        [(10, 42), (10, 43), (9, 44), (8, 45), (7, 46), (6, 47), (5, 47), (4, 46)],
-        [(13, 42), (13, 43), (13, 44), (13, 45), (13, 46), (13, 47), (12, 48), (12, 49), (11, 50), (10, 50)],
-        [(16, 42), (16, 43), (17, 44), (18, 45), (18, 46), (19, 47), (19, 48), (18, 49), (17, 50)],
-        [(31, 48), (30, 47), (29, 47)],
-        [(31, 52), (30, 53), (29, 53)],
-        [(17, 55), (16, 55), (15, 55), (14, 56), (13, 56)],
-        [(18, 57), (17, 58), (16, 58), (15, 58)],
-    ]), keep=(5, 6))
+    # munt groot en vrij op schoot
+    coin(idx, 27.5, 48.5, 4.9, 4.9)
+    # klauwen: één klauwhand (3 nagels samen), twee nageltoppen om de muntrand, achtervoet
+    bx, by, rel, step = CLAW_STYLES[style]
+    hand = bundle(bx, by, rel, step=step)
+    hooks(idx, hand, keep=(5, 6), wide=2)
+    hooks(idx, bundle(32, 45, [(0, 0), (-1, 0), (-2, 0), (-3, 1)], n=2, step=(0, 3), trim=(0, 1)), keep=(5, 6, 10, 9, 11), wide=1)
+    hooks(idx, bundle(17, 55, [(0, 0), (-1, 0), (-2, 0), (-3, 1), (-4, 1)], n=2, step=(1, 2), trim=(0, 1)), keep=(5, 6), wide=2)
     return fix_outline(idx, selout=(4, 8, 13))
 
 
 def frame2():
     c = SCanvas(64, 64, RAMPS)
     Canvas.selout_parts = {'vacht', 'creme', 'doek'}
-    ringed_tail(c, [(37, 53), (47, 53), (53, 47), (56, 39), (55, 31), (52, 26), (48, 24)],
+    ringed_tail(c, [(37, 53), (47, 53), (54, 48), (58, 41), (59, 34), (58, 28.5), (55, 25.5)],
                 [6.5, 7, 7, 6.5, 6, 4.5, 1.5], rings=[(0.22, 0.29), (0.43, 0.5), (0.63, 0.7)])
     common_body(c, dy=-1 / S)
     head(c, dy=-1 / S)
-    # verste arm wijd naar links-omhoog
-    c.tube('arm1', 'vacht', [(24, 37), (19, 36)], [5.5, 5], line='dark', shade=2)
-    c.tube('hand1', 'donker', [(20, 36), (13, 34.5)], [5, 4.5], line='black', shade=2)
-    c.ellipse('hand1', 'donker', 11, 34, 3.2, 3.2)
+    # verste arm naar voren gestoken: klauwhand grijpt ("geef op")
+    c.tube('arm1', 'vacht', [(24.5, 38), (19.5, 39.5)], [5.5, 5], line='dark', shade=2)
+    c.tube('hand1', 'donker', [(20, 39.5), (12, 40)], [5, 4.5], line='black', shade=2)
+    c.ellipse('hand1', 'donker', 10, 40, 3.4, 4, rot=0)
     # dichtste arm omhoog rechts, munt opgegooid
-    c.tube('arm2', 'vacht', [(36, 38), (40, 34)], [6, 5.5], line='dark', shade=2)
-    c.tube('hand2', 'donker', [(40, 34), (43, 29)], [5.5, 4.5], line='black', shade=2)
-    c.ellipse('hand2', 'donker', 43.5, 28, 3.3, 3)
-    c.ellipse('munt', 'munt', 47, 8.5, 2.6, 4.2, line='black', shade=1.5)
+    c.tube('arm2', 'vacht', [(36, 38), (41, 34)], [6, 5.5], line='dark', shade=2)
+    c.tube('hand2', 'donker', [(41, 34), (45, 29.5)], [5.5, 4.5], line='black', shade=2)
+    c.ellipse('hand2', 'donker', 46, 28, 4, 3.3)
     c.ellipse('voet1', 'donker', 22, 55.5, 5.5, 2.6, line='black', shade=1.5)
     idx = c.render()
     face(idx, dy=-1, closed=True)
-    patch(idx, 44, 15, ['i', 'g', 'G'], K)
-    hooks(idx, shift_claws([
-        [(8, 32), (7, 31), (6, 30), (5, 29), (5, 28), (4, 27), (4, 26)],
-        [(8, 34), (7, 34), (6, 34), (5, 33), (4, 33), (3, 32), (2, 31)],
-        [(9, 37), (8, 37), (7, 38), (6, 38), (5, 38), (4, 37), (3, 36)],
-        [(41, 25), (41, 24), (40, 23), (40, 22), (40, 21), (41, 20), (42, 19)],
-        [(44, 25), (44, 24), (45, 23), (45, 22), (46, 21), (47, 20), (48, 20)],
-        [(46, 27), (47, 26), (48, 26), (49, 25), (50, 25), (51, 26)],
-        [(17, 55), (16, 55), (15, 55), (14, 56), (13, 56)],
-        [(18, 57), (17, 58), (16, 58), (15, 58)],
-    ]), keep=(5, 6))
+    coin(idx, 46.5, 12.5, 3.2, 4.4)
+    # beide klauwhanden: nagels samen, omhoog en naar voren gekromd (graaigebaar)
+    up = [(0, 0), (0, -1), (0, -2), (-1, -3), (-1, -4), (-2, -5), (-3, -6), (-4, -6), (-5, -5)]
+    fwd = [(0, 0), (-1, 0), (-2, 0), (-3, 1), (-4, 1), (-5, 2), (-6, 3), (-6, 4), (-5, 5)]
+    hooks(idx, bundle(11, 40, fwd, step=(0, 3), trim=(2, 0, 1)), keep=(5, 6), wide=2)
+    hooks(idx, bundle(41, 30, up, step=(3, 0), trim=(1, 0, 2)), keep=(5, 6), wide=2)
+    hooks(idx, bundle(17, 55, [(0, 0), (-1, 0), (-2, 0), (-3, 1), (-4, 1)], n=2, step=(1, 2), trim=(0, 1)), keep=(5, 6), wide=2)
     return fix_outline(idx, selout=(4, 8, 13))
 
 

@@ -46,39 +46,40 @@ def leg(c, x0, y0, x1, y1, w, far=False):
 
 def frame(f2=False):
     c = Canvas(R, thresholds=TH)
-    # achterpoten (ver = donkerder)
-    leg(c, 49, 46, 50, 56, 4, far=True); c.ellipse(50, 56.5, 2.4, 1.6, 'vacht', tone=7)
-    leg(c, 43, 47, 43, 57, 4.4); c.ellipse(43, 57.5, 2.6, 1.6, 'vacht', tone=7)
-    # verre voorpoot met handschoen (staat op de grond)
-    leg(c, 32, 46, 32, 52, 3.6, far=True)
-    glove(c, 32, 55, 4.2, far=True)
-    # staart (wolbolletje)
-    puffs(c, [(53, 39, 3.0)], (52, 37, 5, 5), mix=0.4)
+    # achterpoten: korte stompjes met donkere hoefjes
+    leg(c, 49, 50, 50, 56, 4.2, far=True); c.ellipse(50, 56.5, 2.5, 1.6, 'vacht', tone=7)
+    leg(c, 43, 51, 43, 57, 4.6); c.ellipse(43, 57.5, 2.7, 1.6, 'vacht', tone=7)
+    # verre voorpoot met handschoen (staat op de handschoen)
+    leg(c, 32, 49, 32, 52, 3.8, far=True)
+    glove(c, 32, 55, 4.4, far=True)
+    # staart
+    puffs(c, [(53, 41, 3.0)], (52, 39, 5, 5), mix=0.4)
     # wollen lijf
-    glob = (36, 39, 17, 12)
-    c.fill(c.m_ellipse(39, 44, 11, 6.5), 'wol', *glob, edge=False)
-    puffs(c, [(29, 47, 3.8), (35, 49, 4.0), (41, 49, 4.0), (47, 47, 3.8), (51, 43, 3.4),
-              (33, 42, 4.2), (40, 42, 4.4), (47, 40, 3.8), (36, 37, 3.6), (43, 36, 3.6)], glob)
-    # hals (wolzuil) en kop
+    glob = (36, 41, 17, 12)
+    c.fill(c.m_ellipse(39, 46, 11, 6.5), 'wol', *glob, edge=False)
+    puffs(c, [(29, 49, 3.8), (35, 51, 4.0), (41, 51, 4.0), (47, 49, 3.8), (51, 45, 3.4),
+              (33, 44, 4.2), (40, 44, 4.4), (47, 42, 3.8), (36, 39, 3.6), (43, 38, 3.6)], glob)
+    # korte, dikke wolhals
     lean = 1 if f2 else 0
-    hx, hy = 23 - lean, 25 + lean
-    puffs(c, [(27, 41, 4.0), (26, 36, 3.8), (25, 31, 3.6)], (24, 33, 7, 10), mix=0.5)
+    hx, hy = 24 - lean, 27 + lean
+    puffs(c, [(29, 43, 4.4), (27, 38, 4.2), (25, 34, 3.8)], (24, 36, 8, 10), mix=0.5)
     # oren + kwastjes
-    c.poly([(hx + 3, hy - 4), (hx + 6, hy - 11), (hx + 8, hy - 10), (hx + 6, hy - 3)], 'vacht', shift=1)
-    c.poly([(hx - 4, hy - 3), (hx - 6, hy - 10), (hx - 4, hy - 11), (hx - 2, hy - 4)], 'vacht')
-    c.ellipse(hx + 7.5, hy - 11.5, 2.0, 2.0, 'rood'); c.ellipse(hx - 5.5, hy - 11.5, 2.0, 2.0, 'rood')
-    c.ellipse(hx, hy, 6.5, 5.6, 'vacht')
-    c.ellipse(hx - 5, hy + 2.6, 3.8, 2.8, 'vacht', tone=5)   # snoet
+    c.poly([(hx + 4, hy - 5), (hx + 7, hy - 12), (hx + 9, hy - 11), (hx + 7, hy - 4)], 'vacht', shift=1)
+    c.poly([(hx - 5, hy - 4), (hx - 7, hy - 11), (hx - 5, hy - 12), (hx - 3, hy - 5)], 'vacht')
+    c.ellipse(hx + 8.5, hy - 12.5, 2.2, 2.2, 'rood'); c.ellipse(hx - 6.5, hy - 12.5, 2.2, 2.2, 'rood')
+    # grote kop (schattig)
+    c.ellipse(hx, hy, 7.8, 6.6, 'vacht')
+    c.ellipse(hx - 5.2, hy + 3.0, 3.7, 2.8, 'vacht', tone=5)   # snoet
     # mini-bolhoedje (wolkuif)
-    c.ellipse(hx + 0.5, hy - 6.6, 3.6, 2.6, 'wol')
-    c.fill(c.m_ellipse(hx + 0.2, hy - 4.6, 5.6, 1.3), 'wol', hx, hy - 6, 6, 4)
+    c.ellipse(hx + 0.5, hy - 8.4, 4.0, 2.8, 'wol')
+    c.fill(c.m_ellipse(hx + 0.2, hy - 6.2, 6.2, 1.4), 'wol', hx, hy - 8, 7, 4)
     # nabije voorpoot met handschoen
-    if f2:   # opgeheven: jab naar voren
-        leg(c, 28, 44, 20, 42, 4.4)
-        glove(c, 15, 42, 4.8)
+    if f2:   # opgeheven: stoot naar voren
+        leg(c, 29, 47, 21, 45, 4.6)
+        glove(c, 16, 45, 5.0)
     else:
-        leg(c, 26, 45, 24, 51, 4.2)
-        glove(c, 23, 54, 4.8)
+        leg(c, 27, 48, 25, 51, 4.4)
+        glove(c, 24, 54, 5.0)
     c.outline()
     return c, hx, hy
 

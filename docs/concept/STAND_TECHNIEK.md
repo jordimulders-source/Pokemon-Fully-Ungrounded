@@ -13,7 +13,7 @@ Stap 3, deel 1: Spacetime, Yoshi's Island en Ultra Space zijn eruit. Het bouwt (
 ## Bewust laten staan
 - Keccles (alles) en Cozmo's Cosmog-lijn (evolutieregel in `ultra_space.c`).
 - De mapsecs van de verwijderde gebieden (`region_map_sections.json` en de popup-tabellen). Magnezone/Vikavolt evolueren via `MAPSEC_CHARGESTONE_CAVE`; dat moet in de nieuwe regio een nieuwe plek krijgen.
-- Flags in `flags.h` (ongebruikt, kosten niets), de trainerfoto's van Giovanni/Agatha, de klassen Boss/Commander/Guest Star en de legendary-intro's (die zijn generiek en gaan op soort).
+- Flags in `flags.h` (ongebruikt, kosten niets), de trainerfoto's van Giovanni/Agatha, de klassen Boss/Commander/Guest Star. (De legendary-intro's zijn later alsnog weggehaald, zie hieronder.)
 - Route 125: de rotstegel van de grotopening blijft staan (alleen de warp en `setmetatile` zijn weg).
 
 ## Nog te doen (stap 3)
@@ -23,8 +23,25 @@ Stap 3, deel 1: Spacetime, Yoshi's Island en Ultra Space zijn eruit. Het bouwt (
   - kaarten: Ashfrost → `MUS_FALLARBOR`, Coldstep Cave → `MUS_CAVE_OF_ORIGIN`, Fortree Jungle/Mangrove Mire → `MUS_ROUTE119`, Game Corner → `MUS_GAME_CORNER`, Mirage Tower → `MUS_MT_CHIMNEY` (vanilla).
   - ROM-ruimte: vóór 1,94 MB vrij (`__rom_end` 0x09E0EAEC), na 7,48 MB vrij (0x09885C38), dus 5,53 MB erbij.
   - Blijft: HQ-mixer, 16 BGM-sporen, mixer 21 kHz, de algemene muziektools. `bronnen/muziek/` (bronbestanden, niet in de ROM) is niet aangeraakt.
-- Bouwscripts in `tools/grounded/maptools/` opruimen (spacetime_cave, yoshis_island, ultra_space, ultra_worlds_a/b, glimwood, chargestone, coronet, hall_of_origin, lakes, national_park(_tiles)), en ook `graphics/grounded/yoshis_island` en `bronnen/muziek/yoshis_island_gsf`.
-- De overige punten uit TODO-stap 3 (intro's/films, Battle Frontier/Tents/Trick House) zijn niet aangeraakt.
+- ~~Bouwscripts opruimen~~ (gedaan met de intro's, zie hieronder). `graphics/grounded/yoshis_island` blijft (Jordi: assets blijven).
+- **Intro's en films: afgerond (intro-agent, 22 okt).**
+  - Weg: alle legendary-intro's (per soort, beasts, Rayquaza-film, muurschilderingen, Tapu's, Deoxys, Regidrago/
+    Regieleki/Regigigas, Mew, Zygarde, Volcanion, legend_intros*), de per-soort wilde intro's (Pikachu, Magikarp ook
+    bij Magikarp-trainers, Psyduck, Koffing, Zangoose, Seviper, Zarude), de gym-/rivaal-/personage-intro's en films
+    (Steven, Wally, Colress, SickBlik, Maxie/Archie, mugshot-koppelingen), de route-transities per gebied, hun
+    generatorscripts (37 stuks in `tools/grounded/`, o.a. `legend_intros*.py`, `gym_intro_lib.py`, `*_transition.py`)
+    en 335 graphics-bestanden in `graphics/battle_transitions/` die alleen daarbij hoorden.
+  - Legendaries vallen terug op vanilla: `BattleSetup_StartLegendaryBattle` kent alleen nog Groudon/Kyogre/Rayquaza
+    (hun vanilla-transities), Deoxys, Mew/Jirachi, Mewtwo en de beasts (vanilla-muziek); de rest Blur +
+    `MUS_RG_VS_LEGEND`. Regi's: vanilla Regirock/Regice/Registeel, overige Grid Squares.
+  - Blijft: klasse-intro's (`src/data/class_intros*.h`, hulpjes in `intro_lib.h`), Keccles (film + `film.py`,
+    `film_art.py`, `film_delta.py`, `keccles_transition.py`), zee-/onderwatertransitie (`route_transitions.py`), de
+    vanilla-transities, en `graphics/grounded/yoshis_island/{boo,shyguy}_intro` (bronsprites).
+  - Ook weg: bouwscripts van Spacetime/Yoshi's Island/Ultra Space/Glimwood/Chargestone/Coronet/Hall of Origin/
+    meren/National Park in `tools/grounded/maptools/` en `bronnen/muziek/yoshis_island_gsf`. `area_zero.py` importeerde
+    `chargestone.py` en werkt niet meer (gaat mee met de Hoenn-opruiming).
+  - ROM-ruimte: vóór 7,42 MB vrij (`__rom_end` 0x098946F4), na 9,36 MB vrij (0x096A41C8), dus 1,94 MB erbij.
+- Battle Frontier/Tents/Trick House: zie `docs/concept/PLAN_HOENN_ERUIT.md` (stappenplan voor de hele Hoenn-wereld).
 
 ## Stap 4 (expansion 1.14.4 → 1.17.1)
 Niet begonnen. Remote `upstream` bestaat al in de repo.

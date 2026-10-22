@@ -1,5 +1,5 @@
 // Project Grounded: lichte trainerklasse-intro's (Jordi: "misschien kunnen we specifieke trainer class intros bouwen, wel
-// allemaal licht") en de gedeelde runner voor de rivaal-intro's (src/data/rival_intros.h).
+// allemaal licht") met hun gedeelde runner.
 // Geen nieuwe graphics: alles is code (paletrekenwerk, scroll/vensters per beeldlijn, tiles en tekst die tijdens het spelen
 // worden getekend) plus gevechtsanimatie-art en item-iconen die al in de ROM staan.
 // Wordt onderaan src/battle_transition.c ingevoegd. Timing: echte VBlanks vanaf de start van de transitie (= start van de
@@ -361,19 +361,6 @@ static void TI_Shake(s32 amp)
         sTI->bg0x = sTI->wx;
         sTI->bg0y = sTI->wy;
     }
-}
-
-static void TI_HideField(void)
-{
-    u32 i;
-    for (i = 0; i < OBJECT_EVENTS_COUNT; i++)
-        if (gObjectEvents[i].active && !gObjectEvents[i].invisible)
-        {
-            gObjectEvents[i].invisible = TRUE;   // anders zet de kaart ze elke frame weer zichtbaar
-            sTI->hiddenObjEvents |= 1u << i;     // gObjectEvents blijft na het gevecht bestaan: in TI_Free terugzetten
-        }
-    for (i = 0; i < sTI->nfield; i++)
-        gSprites[sTI->field[i]].invisible = TRUE;
 }
 
 // ---------------------------------------------------------------------------------------------------------------------
@@ -1091,7 +1078,6 @@ static const struct TIntro sCI_Swim = {CISwim_Init, CISwim_Update};
 
 // Hiker, Psychic, Bird Keeper en Battle Girl: zie src/data/class_intros2_b.h
 static const u16 sCI_CrackPal[4] = {0, RGB(2, 2, 3), RGB(20, 20, 22), RGB(31, 31, 31)};
-
 
 // ---------------- Kindler: vlammen komen van onderen, de lucht trilt van de hitte
 #define KD_N 8

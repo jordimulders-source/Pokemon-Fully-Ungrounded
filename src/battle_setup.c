@@ -467,7 +467,7 @@ void BattleSetup_StartLatiBattle(void)
     LockPlayerFieldControls();
     gMain.savedCallback = CB2_EndScriptedWildBattle;
     gBattleTypeFlags = BATTLE_TYPE_LEGENDARY;
-    CreateBattleStartTask(B_TRANSITION_LEGEND_EON, 0); // Project Grounded: eonlicht (legend_intros_cheap2.h)
+    CreateBattleStartTask(GetWildBattleTransition(), 0);
     IncrementGameStat(GAME_STAT_TOTAL_BATTLES);
     IncrementGameStat(GAME_STAT_WILD_BATTLES);
     IncrementDailyWildBattles();
@@ -495,24 +495,7 @@ void BattleSetup_StartBattleTestTrainer(u16 trainerA, u16 trainerB, void (*endCa
     CreateBattleStartTask(GetTrainerBattleTransition(), 0);
 }
 
-// Project Grounded: de Tapu's (eigen intro per Tapu, eindigt op de grote drumslag van hun thema)
-#define TAPU_BATTLE_MUSIC MUS_RG_VS_LEGEND // Fully Ungrounded: het eigen Tapu-thema is weg
-
-static enum BattleTransition GetTapuBattleTransition(void)
-{
-    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
-    {
-    case SPECIES_TAPU_LELE:
-        return B_TRANSITION_TAPU_LELE;
-    case SPECIES_TAPU_BULU:
-        return B_TRANSITION_TAPU_BULU;
-    case SPECIES_TAPU_FINI:
-        return B_TRANSITION_TAPU_FINI;
-    default:
-        return B_TRANSITION_TAPU_KOKO;
-    }
-}
-
+// Fully Ungrounded: alle eigen legendary-intro's zijn weg; vanilla-transities, vanilla-muziek
 void BattleSetup_StartLegendaryBattle(void)
 {
     LockPlayerFieldControls();
@@ -522,321 +505,37 @@ void BattleSetup_StartLegendaryBattle(void)
     switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL))
     {
     default:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_LEGEND);
+        break;
     case SPECIES_GROUDON:
     case SPECIES_GROUDON_PRIMAL:
-        // Project Grounded: muurschildering die barst, lava door de barsten (Terra Cave); de oude blijft bestaan
-        CreateBattleStartTask(B_TRANSITION_GROUDON_MURAL, MUS_VS_KYOGRE_GROUDON);
+        CreateBattleStartTask(B_TRANSITION_GROUDON, MUS_VS_KYOGRE_GROUDON);
         break;
     case SPECIES_KYOGRE:
     case SPECIES_KYOGRE_PRIMAL:
-        // Project Grounded: dezelfde schildering, water door de barsten (Marine Cave)
-        CreateBattleStartTask(B_TRANSITION_KYOGRE_MURAL, MUS_VS_KYOGRE_GROUDON);
+        CreateBattleStartTask(B_TRANSITION_KYOGRE, MUS_VS_KYOGRE_GROUDON);
         break;
     case SPECIES_RAYQUAZA:
     case SPECIES_RAYQUAZA_MEGA:
-        // Project Grounded: eigen film (groene ring rond de Sky Pillar); de oude B_TRANSITION_RAYQUAZA blijft bestaan
-        CreateBattleStartTask(B_TRANSITION_RAYQUAZA_PILLAR, MUS_VS_RAYQUAZA); // gamelan-remix
+        CreateBattleStartTask(B_TRANSITION_RAYQUAZA, MUS_VS_RAYQUAZA);
         break;
     case SPECIES_DEOXYS_NORMAL:
     case SPECIES_DEOXYS_ATTACK:
     case SPECIES_DEOXYS_DEFENSE:
     case SPECIES_DEOXYS_SPEED:
-        CreateBattleStartTask(B_TRANSITION_DEOXYS, MUS_RG_VS_DEOXYS); // Project Grounded: ruimte + DNA-helix
-        break;
-    case SPECIES_LUGIA: // Project Grounded: zinken, zilveren veer, het oog gaat open, draaikolk en storm; eigen thema
-        CreateBattleStartTask(B_TRANSITION_LUGIA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_HO_OH: // Project Grounded: Bell Tower bij schemering, regenboog, vlammenmuur, gouden vleugels; eigen thema
-        CreateBattleStartTask(B_TRANSITION_HO_OH, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_MANAPHY: // Project Grounded: zeetempel (Route 128), rimpelingen + legendary-thema
-    case SPECIES_PHIONE:
-        CreateBattleStartTask(B_TRANSITION_RIPPLE, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_MEW: // Project Grounded: eigen thema, remix van Battle! Mewtwo (het origineel, nieuwsgierig)
-        CreateBattleStartTask(B_TRANSITION_MEW, MUS_VS_MEW);
-        break;
-    case SPECIES_RAIKOU: // Project Grounded: de legendary beasts krijgen hun eigen thema, Raikou met bliksems
-        CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_C_VS_LEGEND_BEAST);
-        break;
-    case SPECIES_ENTEI: // Project Grounded: steekvlam die het hele scherm overneemt
-        CreateBattleStartTask(B_TRANSITION_ENTEI, MUS_C_VS_LEGEND_BEAST);
-        break;
-    case SPECIES_SUICUNE: // Project Grounded: noorderlicht-transitie
-        CreateBattleStartTask(B_TRANSITION_AURORA, MUS_C_VS_LEGEND_BEAST);
-        break;
-    case SPECIES_WO_CHIEN: // Project Grounded: Treasures of Ruin, eigen thema (SV-gevechtsthema in GBA-stijl, ruinous_theme.py)
-    case SPECIES_CHIEN_PAO:
-    case SPECIES_TING_LU:
-    case SPECIES_CHI_YU:
-        CreateBattleStartTask(B_TRANSITION_BLACKHOLE_PULSATE, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ZACIAN_HERO: // Project Grounded: Mega Forest, drie zwaardhalen en het beeld splijt eigen thema (zwaard en schild)
-    case SPECIES_ZACIAN_CROWNED:
-        CreateBattleStartTask(B_TRANSITION_ZACIAN, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ZAMAZENTA_HERO: // Project Grounded: Mega Forest, ademen en Behemoth Bash, eigen thema (zelfde als Zacian)
-    case SPECIES_ZAMAZENTA_CROWNED:
-        CreateBattleStartTask(B_TRANSITION_ZAMAZENTA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_HEATRAN: // Project Grounded: lavapluimen en een uitbarsting
-        CreateBattleStartTask(B_TRANSITION_HEATRAN, MUS_RG_VS_LEGEND); // eigen thema (stoner rock à la Kyuss)
-        break;
-    case SPECIES_SHAYMIN_LAND: // Project Grounded: wervelwind van bloemen in alle kleuren
-    case SPECIES_SHAYMIN_SKY:
-        CreateBattleStartTask(B_TRANSITION_SHAYMIN, MUS_RG_VS_LEGEND); // eigen thema (relaxte bloemenweide, 6/8)
-        break;
-    case SPECIES_GENESECT: // Project Grounded: scanlijnen, rood vizier en Techno Blast
-    case SPECIES_GENESECT_DOUSE:
-    case SPECIES_GENESECT_SHOCK:
-    case SPECIES_GENESECT_BURN:
-    case SPECIES_GENESECT_CHILL:
-        CreateBattleStartTask(B_TRANSITION_GENESECT, MUS_RG_VS_LEGEND); // eigen thema (industrial/big beat + hard techno)
-        break;
-    case SPECIES_MEWTWO: // Project Grounded: kweektank in het Cinnabar-lab die uiteenspat, het Mewtwo-thema uit FRLG
-        CreateBattleStartTask(B_TRANSITION_MEWTWO, MUS_RG_VS_MEWTWO); // eigen thema (trance, de imperfecte kloon)
-        break;
-    case SPECIES_GIRATINA_ALTERED: // Project Grounded: scheur, omklappen naar de Distortion World, schaduwvleugels
-    case SPECIES_GIRATINA_ORIGIN:
-        CreateBattleStartTask(B_TRANSITION_GIRATINA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_VICTINI: // Project Grounded: een grote V in vuur (V-create), eigen thema (anime-overwinningsfanfare)
-        CreateBattleStartTask(B_TRANSITION_VICTINI, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_SCREAM_TAIL: // Project Grounded: Area Zero, de eerste paradoxen (Battle! Area Zero, remix); cheap1: verleden/toekomst
-        CreateBattleStartTask(B_TRANSITION_PARADOX_PAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_IRON_HANDS:
-        CreateBattleStartTask(B_TRANSITION_PARADOX_FUTURE, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_IRON_LEAVES: // Project Grounded: Area Zero, toekomst (Battle! Area Zero, remix)
-    case SPECIES_IRON_BOULDER:
-    case SPECIES_IRON_CROWN:
-        CreateBattleStartTask(B_TRANSITION_PARADOX_FUTURE, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_WALKING_WAKE: // Project Grounded: Area Zero, verleden (Battle! Area Zero, remix)
-    case SPECIES_GOUGING_FIRE:
-    case SPECIES_RAGING_BOLT:
-        CreateBattleStartTask(B_TRANSITION_PARADOX_PAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_MIRAIDON: // Project Grounded: Area Zero, toekomst (Battle! Area Zero, remix)
-        CreateBattleStartTask(B_TRANSITION_PARADOX_FUTURE, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_KORAIDON: // Project Grounded: Area Zero, verleden (Battle! Area Zero, remix)
-        CreateBattleStartTask(B_TRANSITION_PARADOX_PAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_TERAPAGOS_NORMAL: // Project Grounded: Area Zero, Tera-grot (Battle! Area Zero, remix)
-    case SPECIES_TERAPAGOS_TERASTAL:
-    case SPECIES_TERAPAGOS_STELLAR:
-        CreateBattleStartTask(B_TRANSITION_TERAPAGOS, MUS_RG_VS_LEGEND); // cheap1: ronddraaiende Tera-kristallen
-        break;
-    case SPECIES_NIHILEGO: // Project Grounded: Ultra Space, Battle! Ultra Beast (ub_theme.py); intro: storing + Ultra Wormhole (cheap1)
-        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_BUZZWOLE:
-        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_PHEROMOSA:
-        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_XURKITREE:
-        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_CELESTEELA:
-        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_KARTANA:
-        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_GUZZLORD:
-        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_STAKATAKA:
-        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_BLACEPHALON:
-        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_POIPOLE: // Project Grounded: (nog) geen gevecht, Poipole is een gift; voor het geval dat
-    case SPECIES_NAGANADEL:
-        CreateBattleStartTask(B_TRANSITION_ULTRA_BEAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_NECROZMA: // Project Grounded: Ultra Space, prismagrot (Battle! Legendary Pokémon)
-    case SPECIES_NECROZMA_DUSK_MANE:
-    case SPECIES_NECROZMA_DAWN_WINGS:
-    case SPECIES_NECROZMA_ULTRA: // licht verslinden (legend_intros_cheap2.h)
-        CreateBattleStartTask(B_TRANSITION_LEGEND_NECROZMA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_XERNEAS: // Project Grounded: Glimwood Tangle, de kleur stroomt terug in het bos (muziek: Battle! Legendary Pokémon)
-    case SPECIES_XERNEAS_ACTIVE:
-        CreateBattleStartTask(B_TRANSITION_XERNEAS, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_YVELTAL: // Project Grounded: Glimwood Tangle, de kleur trekt weg, Oblivion Wing (Battle! Legendary Pokémon)
-        CreateBattleStartTask(B_TRANSITION_YVELTAL, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ARTICUNO: // Project Grounded (legends2): Shoal Cave, Frozen Depths; het beeld vriest dicht (muziek: placeholder)
-        CreateBattleStartTask(B_TRANSITION_ARTICUNO, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ZAPDOS: // Project Grounded (legends2): Route 119, silhouet in het onweer boven het Weather Institute (muziek: placeholder)
-        CreateBattleStartTask(B_TRANSITION_ZAPDOS, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_MOLTRES: // Project Grounded (legends2): lavameer van Mt. Chimney, Sky Attack (muziek: placeholder)
-        CreateBattleStartTask(B_TRANSITION_MOLTRES, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ARTICUNO_GALAR: // Project Grounded (legends2): Mossdeep, sterrenkijken; de ijsvarens van Articuno in psychisch paars
-        CreateBattleStartTask(B_TRANSITION_ARTICUNO, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ZAPDOS_GALAR: // Project Grounded (legends2): Route 111, rent rondjes; sprint en trap (legend_intros_cheap2.h)
-        CreateBattleStartTask(B_TRANSITION_LEGEND_GALAR_ZAPDOS, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_MOLTRES_GALAR: // Project Grounded (legends2): Route 120, mist bij de tombe; zwarte vlammen (legend_intros_cheap2.h)
-        CreateBattleStartTask(B_TRANSITION_LEGEND_GALAR_MOLTRES, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_MELOETTA_ARIA: // Project Grounded (legends2): Route 123, na de Poke Flute (placeholder, golvend als muziek)
-    case SPECIES_MELOETTA_PIROUETTE:
-        CreateBattleStartTask(B_TRANSITION_LEGEND_MELOETTA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ZYGARDE_50: // Project Grounded (legends2): Desert Underpass, de cellen (placeholder, rasters)
-    case SPECIES_ZYGARDE_10_AURA_BREAK:
-    case SPECIES_ZYGARDE_COMPLETE:
-        CreateBattleStartTask(B_TRANSITION_LEGEND_ZYGARDE, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_PECHARUNT: // Project Grounded: Yoshi's Island (Battle! Legendary Pokémon, bestaande transitie)
-        CreateBattleStartTask(B_TRANSITION_PECHARUNT, MUS_RG_VS_LEGEND); // cheap1: gifnevel, pecha-bessen
-        break;
-    case SPECIES_DIALGA: // Project Grounded: Spear Pillar, de klok draait rond; Battle! Dialga/Palkia (D/P)
-    case SPECIES_DIALGA_ORIGIN:
-        CreateBattleStartTask(B_TRANSITION_DIALGA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_PALKIA: // Project Grounded: Spear Pillar, de ruimte rimpelt; Battle! Dialga/Palkia (D/P)
-    case SPECIES_PALKIA_ORIGIN:
-        CreateBattleStartTask(B_TRANSITION_PALKIA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ARCEUS_NORMAL: // Project Grounded: Hall of Origin (Battle! Arceus uit DPPt, het licht valt in banen)
-        CreateBattleStartTask(B_TRANSITION_ARCEUS, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ZERAORA: // Project Grounded: Chargestone Cave, Plasma Fists (legend_intros_cheap2.h)
-        CreateBattleStartTask(B_TRANSITION_LEGEND_ZERAORA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_CELEBI: // Project Grounded: Ilex Forest, GS-intro in GBC-groen (legend_intros_cheap2.h)
-        CreateBattleStartTask(B_TRANSITION_LEGEND_CELEBI, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_UXIE: // Project Grounded: de Gen 4-meren in de Spacetime Cave (rimpelingen), Battle! Legendary Pokémon (Jordi: generieker thema)
-    case SPECIES_MESPRIT:
-    case SPECIES_AZELF:
-        CreateBattleStartTask(B_TRANSITION_LEGEND_LAKE, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ETERNATUS: // Project Grounded: National Park (Battle! Legendary Pokémon, bestaande transitie)
-    case SPECIES_ETERNATUS_ETERNAMAX:
-        CreateBattleStartTask(B_TRANSITION_ETERNATUS, MUS_RG_VS_LEGEND); // cheap1: rode hemel, de grond scheurt
-        break;
-    case SPECIES_GLASTRIER: // Project Grounded: Crown Tundra, Calyrex-quest (Battle! Legendary Pokémon, ijs dat splijt)
-        CreateBattleStartTask(B_TRANSITION_LEGEND_CROWN, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_SPECTRIER: // Project Grounded: Crown Tundra, Calyrex-quest (Battle! Legendary Pokémon, spookstappen)
-        CreateBattleStartTask(B_TRANSITION_LEGEND_CROWN, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_CALYREX: // Project Grounded: Crown Tundra, de koning zelf (Battle! Legendary Pokémon)
-    case SPECIES_CALYREX_ICE:
-    case SPECIES_CALYREX_SHADOW:
-        CreateBattleStartTask(B_TRANSITION_LEGEND_CROWN, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_VOLCANION: // Project Grounded: stoomgrot op het Stoomeiland; manometer in het rood, dan stoom
-        CreateBattleStartTask(B_TRANSITION_VOLCANION, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_CRESSELIA: // Project Grounded: Fullmoon Island, 's nachts; de volle maan (legend_intros_cheap2.h)
-        CreateBattleStartTask(B_TRANSITION_LEGEND_CRESSELIA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_JIRACHI: // Project Grounded: een tuimelende wensster, eigen thema (hoopvol, sterrenhemel)
-        CreateBattleStartTask(B_TRANSITION_JIRACHI, MUS_VS_MEW);
-        break;
-    case SPECIES_DARKRAI: // Project Grounded: nachtmerrierook en een blauw oog, eigen thema (ontsporend wiegelied, 7/8)
-        CreateBattleStartTask(B_TRANSITION_DARKRAI, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ZARUDE: // Project Grounded: de jungle groeit dicht, klauwkrassen op de taiko, eigen "Battle! Zarude"
-    case SPECIES_ZARUDE_DADA:
-        CreateBattleStartTask(B_TRANSITION_ZARUDE, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_OKIDOGI: // Project Grounded: Ogerpon-quest, de Loyal Three: hun paarse Poison Chain
-    case SPECIES_MUNKIDORI:
-    case SPECIES_FEZANDIPITI:
-        CreateBattleStartTask(B_TRANSITION_POISON_CHAIN, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_TAPU_KOKO: // Project Grounded: de Tapu's, gesloten schild dat op de drumslag opengaat
-    case SPECIES_TAPU_LELE:
-    case SPECIES_TAPU_BULU:
-    case SPECIES_TAPU_FINI:
-        CreateBattleStartTask(GetTapuBattleTransition(), TAPU_BATTLE_MUSIC);
-        break;
-    case SPECIES_OGERPON_TEAL: // Project Grounded: Ogerpon in Fortree Jungle, door het regenwoud
-    case SPECIES_OGERPON_WELLSPRING:
-    case SPECIES_OGERPON_HEARTHFLAME:
-    case SPECIES_OGERPON_CORNERSTONE:
-        // Project Grounded: maskerkraam op een nachtfestival, het Teal-masker kijkt terug (was het regenwoud)
-        CreateBattleStartTask(B_TRANSITION_OGERPON, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_HOOPA_CONFINED: // Project Grounded: ringportaal, er valt van alles uit, de hand grijpt de camera
-    case SPECIES_HOOPA_UNBOUND:
-        CreateBattleStartTask(B_TRANSITION_HOOPA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_TORNADUS_INCARNATE: // Project Grounded: Forces of Nature, een weerbericht dat ontspoort; elk een eigen thema
-    case SPECIES_TORNADUS_THERIAN:
-        CreateBattleStartTask(B_TRANSITION_FORCES, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_THUNDURUS_INCARNATE:
-    case SPECIES_THUNDURUS_THERIAN:
-        CreateBattleStartTask(B_TRANSITION_FORCES, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_LANDORUS_INCARNATE:
-    case SPECIES_LANDORUS_THERIAN:
-        CreateBattleStartTask(B_TRANSITION_FORCES, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ENAMORUS_INCARNATE: // Project Grounded: liefdesdag in een stadje (Battle! Legendary Pokémon, bestaande transitie)
-    case SPECIES_ENAMORUS_THERIAN:
-        CreateBattleStartTask(B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL, MUS_RG_VS_LEGEND);
-        break;
-    // Project Grounded: Swords of Justice + Keldeo (swords_keldeo.py). Placeholders: bestaande transities;
-    // muziek: Battle! Legendary Pokémon; Jordi bedenkt de eigen intro's nog.
-    case SPECIES_COBALION:
-    case SPECIES_TERRAKION:
-    case SPECIES_VIRIZION:
-        CreateBattleStartTask(B_TRANSITION_SWORDS_SLASH, MUS_RG_VS_LEGEND); // cheap1: het beeld in stukken gesneden
-        break;
-    case SPECIES_KELDEO_ORDINARY:
-    case SPECIES_KELDEO_RESOLUTE:
-        CreateBattleStartTask(B_TRANSITION_SWORDS_SLASH, MUS_RG_VS_LEGEND);
-        break;
-    // Project Grounded: het Tao-trio (Tao-eiland). Placeholders: bestaande transities; muziek: Battle! Legendary Pokémon;
-    // Jordi bedenkt de eigen intro's nog.
-    case SPECIES_RESHIRAM: // witte vlam: de steekvlam van Entei
-        CreateBattleStartTask(B_TRANSITION_ENTEI, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_ZEKROM: // zwarte bliksem: de bliksems van Raikou
-        CreateBattleStartTask(B_TRANSITION_RAIKOU, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_KYUREM: // ijs: het noorderlicht van Suicune
-    case SPECIES_KYUREM_WHITE:
-    case SPECIES_KYUREM_BLACK:
-        CreateBattleStartTask(B_TRANSITION_AURORA, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_MARSHADOW: // Project Grounded (cheap1): een schaduw neemt het beeld over (nu nergens als wild gevecht)
-        CreateBattleStartTask(B_TRANSITION_MARSHADOW, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_GREAT_TUSK: // Project Grounded (cheap1): de overige paradoxen (nu alleen wild), voor het geval dat
-    case SPECIES_BRUTE_BONNET:
-    case SPECIES_FLUTTER_MANE:
-    case SPECIES_SLITHER_WING:
-    case SPECIES_SANDY_SHOCKS:
-    case SPECIES_ROARING_MOON:
-        CreateBattleStartTask(B_TRANSITION_PARADOX_PAST, MUS_RG_VS_LEGEND);
-        break;
-    case SPECIES_IRON_TREADS:
-    case SPECIES_IRON_BUNDLE:
-    case SPECIES_IRON_JUGULIS:
-    case SPECIES_IRON_MOTH:
-    case SPECIES_IRON_THORNS:
-    case SPECIES_IRON_VALIANT:
-        CreateBattleStartTask(B_TRANSITION_PARADOX_FUTURE, MUS_RG_VS_LEGEND);
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_DEOXYS);
+        break;
+    case SPECIES_MEW:
+    case SPECIES_JIRACHI:
+        CreateBattleStartTask(B_TRANSITION_GRID_SQUARES, MUS_VS_MEW);
+        break;
+    case SPECIES_MEWTWO:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_RG_VS_MEWTWO);
+        break;
+    case SPECIES_RAIKOU:
+    case SPECIES_ENTEI:
+    case SPECIES_SUICUNE:
+        CreateBattleStartTask(B_TRANSITION_BLUR, MUS_C_VS_LEGEND_BEAST);
         break;
     }
 
@@ -883,15 +582,6 @@ void StartRegiBattle(void)
         break;
     case SPECIES_REGISTEEL:
         transitionId = B_TRANSITION_REGISTEEL;
-        break;
-    case SPECIES_REGIDRAGO:
-        transitionId = B_TRANSITION_REGIDRAGO;
-        break;
-    case SPECIES_REGIELEKI:
-        transitionId = B_TRANSITION_REGIELEKI;
-        break;
-    case SPECIES_REGIGIGAS:
-        transitionId = B_TRANSITION_REGIGIGAS;
         break;
     default:
         transitionId = B_TRANSITION_GRID_SQUARES;
@@ -1094,68 +784,13 @@ static u8 GetSumOfEnemyPartyLevel(u16 opponentId, u8 numMons)
     return sum;
 }
 
-// Project Grounded: route-transities. Geeft de transitie voor de plek waar de speler nu is, of -1 voor de standaard.
-// Unieke transities (legendaries, gymleiders, rivalen, Birch, ...) worden eerder gekozen en gaan hier niet langs.
-#define AT_MAP(map) (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(map) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(map))
-
-static bool32 IsSeaRoute(void)
-{
-    return AT_MAP(MAP_ROUTE105) || AT_MAP(MAP_ROUTE106) || AT_MAP(MAP_ROUTE107) || AT_MAP(MAP_ROUTE108)
-        || AT_MAP(MAP_ROUTE109) || AT_MAP(MAP_ROUTE122) || AT_MAP(MAP_ROUTE124) || AT_MAP(MAP_ROUTE125)
-        || AT_MAP(MAP_ROUTE126) || AT_MAP(MAP_ROUTE127) || AT_MAP(MAP_ROUTE128) || AT_MAP(MAP_ROUTE129)
-        || AT_MAP(MAP_ROUTE130) || AT_MAP(MAP_ROUTE131) || AT_MAP(MAP_ROUTE132) || AT_MAP(MAP_ROUTE133)
-        || AT_MAP(MAP_ROUTE134);
-}
-
+// Project Grounded: transitie voor de manier waarop je er bent (onder water, surfend), of -1 voor de standaard.
 static s32 GetGroundedRouteTransition(void)
 {
     if (gMapHeader.mapType == MAP_TYPE_UNDERWATER)
         return B_TRANSITION_ROUTE_BUBBLES;
     if (TestPlayerAvatarFlags(PLAYER_AVATAR_FLAG_SURFING))
         return B_TRANSITION_ROUTE_WAVE;
-    // het strand voor Slateport: strandbal in je gezicht
-    if (AT_MAP(MAP_ROUTE109))
-        return B_TRANSITION_BEACHBALL;
-    if (IsSeaRoute())
-        return B_TRANSITION_ROUTE_BEACH;
-    if (AT_MAP(MAP_ROUTE135) || AT_MAP(MAP_ROUTE136))
-        return B_TRANSITION_ROUTE_SNOW;
-    if (AT_MAP(MAP_ROUTE113))
-        return B_TRANSITION_ROUTE_ASH;
-    if (AT_MAP(MAP_DESERT_RUINS))
-        return B_TRANSITION_ROUTE_SAND;
-    if (AT_MAP(MAP_ROUTE111))
-    {
-        s16 x, y;
-        PlayerGetDestCoords(&x, &y);
-        if (MetatileBehavior_IsSandOrDeepSand(MapGridGetMetatileBehaviorAt(x, y)))
-            return B_TRANSITION_ROUTE_SAND;
-    }
-    if (AT_MAP(MAP_FIERY_PATH) || AT_MAP(MAP_MT_CHIMNEY))
-        return B_TRANSITION_ROUTE_HEAT;
-    if (AT_MAP(MAP_MT_PYRE_1F) || AT_MAP(MAP_MT_PYRE_2F) || AT_MAP(MAP_MT_PYRE_3F) || AT_MAP(MAP_MT_PYRE_4F)
-     || AT_MAP(MAP_MT_PYRE_5F) || AT_MAP(MAP_MT_PYRE_6F) || AT_MAP(MAP_MT_PYRE_EXTERIOR) || AT_MAP(MAP_MT_PYRE_SUMMIT))
-        return B_TRANSITION_ROUTE_PYRE;
-    if (AT_MAP(MAP_SKY_PILLAR_ENTRANCE) || AT_MAP(MAP_SKY_PILLAR_OUTSIDE) || AT_MAP(MAP_SKY_PILLAR_1F) || AT_MAP(MAP_SKY_PILLAR_2F)
-     || AT_MAP(MAP_SKY_PILLAR_3F) || AT_MAP(MAP_SKY_PILLAR_4F) || AT_MAP(MAP_SKY_PILLAR_5F) || AT_MAP(MAP_SKY_PILLAR_TOP))
-        return B_TRANSITION_ROUTE_SKY;
-    if (AT_MAP(MAP_NEW_MAUVILLE_ENTRANCE) || AT_MAP(MAP_NEW_MAUVILLE_INSIDE) || AT_MAP(MAP_NEW_MAUVILLE_THUNDER_CAVE))
-        return B_TRANSITION_ROUTE_SHORT;
-    if (AT_MAP(MAP_ARTISAN_CAVE_1F) || AT_MAP(MAP_ARTISAN_CAVE_B1F))
-        return B_TRANSITION_ROUTE_PAINT;
-    if (AT_MAP(MAP_SAFARI_ZONE_NORTH) || AT_MAP(MAP_SAFARI_ZONE_NORTHEAST) || AT_MAP(MAP_SAFARI_ZONE_NORTHWEST)
-     || AT_MAP(MAP_SAFARI_ZONE_SOUTH) || AT_MAP(MAP_SAFARI_ZONE_SOUTHEAST) || AT_MAP(MAP_SAFARI_ZONE_SOUTHWEST))
-        return B_TRANSITION_ROUTE_SAFARI;
-    if (AT_MAP(MAP_METEOR_FALLS_1F_1R) || AT_MAP(MAP_METEOR_FALLS_1F_2R) || AT_MAP(MAP_METEOR_FALLS_B1F_1R)
-     || AT_MAP(MAP_METEOR_FALLS_B1F_2R) || AT_MAP(MAP_METEOR_FALLS_CRATER_ROOM) || AT_MAP(MAP_METEOR_FALLS_STEVENS_CAVE))
-        return B_TRANSITION_ROUTE_METEOR;
-    if (AT_MAP(MAP_JAGGED_PASS))
-        return B_TRANSITION_ROUTE_JAGGED;
-    if (AT_MAP(MAP_ROUTE119) || AT_MAP(MAP_ROUTE120) || AT_MAP(MAP_FORTREE_CITY))
-        return B_TRANSITION_ROUTE_RAINFOREST;
-    // Cycling Road: de verhoogde weg over Route 110 (hoogte 4)
-    if (AT_MAP(MAP_ROUTE110) && gObjectEvents[gPlayerAvatar.objectEventId].currentElevation == 4)
-        return B_TRANSITION_ROUTE_CYCLING;
     return -1;
 }
 
@@ -1166,86 +801,6 @@ enum BattleTransition GetWildBattleTransition(void)
     u8 playerLevel = GetSumOfPlayerPartyLevel(1);
     s32 routeTransition = GetGroundedRouteTransition();
 
-    // Project Grounded: sommige wilde Pokemon hebben hun eigen transitie
-    switch (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES))
-    {
-    case SPECIES_TAPU_KOKO:
-    case SPECIES_TAPU_LELE:
-    case SPECIES_TAPU_BULU:
-    case SPECIES_TAPU_FINI:
-        return GetTapuBattleTransition();
-    case SPECIES_PIKACHU:
-        return B_TRANSITION_PIKACHU;
-    case SPECIES_MAGIKARP:
-        return B_TRANSITION_MAGIKARP;
-    case SPECIES_PSYDUCK:
-        return B_TRANSITION_PSYDUCK;
-    case SPECIES_KOFFING:
-    case SPECIES_WEEZING:
-    case SPECIES_WEEZING_GALAR:
-        return B_TRANSITION_KOFFING;
-    case SPECIES_ZANGOOSE:
-        return B_TRANSITION_ZANGOOSE;
-    case SPECIES_SEVIPER:
-        return B_TRANSITION_SEVIPER;
-    case SPECIES_LUGIA: // Project Grounded: legendary-intro's, ook als ze via een gewoon wild gevecht starten
-        return B_TRANSITION_LUGIA;
-    case SPECIES_HO_OH:
-        return B_TRANSITION_HO_OH;
-    case SPECIES_VOLCANION:
-        return B_TRANSITION_VOLCANION;
-    case SPECIES_HOOPA_CONFINED:
-    case SPECIES_HOOPA_UNBOUND:
-        return B_TRANSITION_HOOPA;
-    case SPECIES_TORNADUS_INCARNATE:
-    case SPECIES_TORNADUS_THERIAN:
-    case SPECIES_THUNDURUS_INCARNATE:
-    case SPECIES_THUNDURUS_THERIAN:
-    case SPECIES_LANDORUS_INCARNATE:
-    case SPECIES_LANDORUS_THERIAN:
-        return B_TRANSITION_FORCES;
-    case SPECIES_ARTICUNO:
-        return B_TRANSITION_ARTICUNO;
-    case SPECIES_ZAPDOS:
-        return B_TRANSITION_ZAPDOS;
-    case SPECIES_MOLTRES:
-        return B_TRANSITION_MOLTRES;
-    case SPECIES_ZACIAN_HERO:
-    case SPECIES_ZACIAN_CROWNED:
-        return B_TRANSITION_ZACIAN;
-    case SPECIES_ZAMAZENTA_HERO:
-    case SPECIES_ZAMAZENTA_CROWNED:
-        return B_TRANSITION_ZAMAZENTA;
-    case SPECIES_XERNEAS:
-    case SPECIES_XERNEAS_ACTIVE:
-        return B_TRANSITION_XERNEAS;
-    case SPECIES_YVELTAL:
-        return B_TRANSITION_YVELTAL;
-    case SPECIES_GREAT_TUSK: // Project Grounded (cheap1): paradoxen, ook de wilde in Area Zero
-    case SPECIES_SCREAM_TAIL:
-    case SPECIES_BRUTE_BONNET:
-    case SPECIES_FLUTTER_MANE:
-    case SPECIES_SLITHER_WING:
-    case SPECIES_SANDY_SHOCKS:
-    case SPECIES_ROARING_MOON:
-    case SPECIES_WALKING_WAKE:
-    case SPECIES_GOUGING_FIRE:
-    case SPECIES_RAGING_BOLT:
-    case SPECIES_KORAIDON:
-        return B_TRANSITION_PARADOX_PAST;
-    case SPECIES_IRON_TREADS:
-    case SPECIES_IRON_BUNDLE:
-    case SPECIES_IRON_HANDS:
-    case SPECIES_IRON_JUGULIS:
-    case SPECIES_IRON_MOTH:
-    case SPECIES_IRON_THORNS:
-    case SPECIES_IRON_VALIANT:
-    case SPECIES_IRON_LEAVES:
-    case SPECIES_IRON_BOULDER:
-    case SPECIES_IRON_CROWN:
-    case SPECIES_MIRAIDON:
-        return B_TRANSITION_PARADOX_FUTURE;
-    }
     if (routeTransition >= 0)
         return routeTransition;
 
@@ -1274,107 +829,10 @@ enum BattleTransition GetTrainerBattleTransition(void)
     u32 trainerId = SanitizeTrainerId(TRAINER_BATTLE_PARAM.opponentA);
     enum TrainerClassID trainerClass = GetTrainerClassFromId(TRAINER_BATTLE_PARAM.opponentA);
 
-    // Project Grounded: de rivaal (May/Brendan) krijgt een eigen intro die per gevecht escaleert (i.p.v. de mugshot)
-    if (RivalIntro_IsRival(trainerId))
-        return B_TRANSITION_RIVAL_INTRO;
-    // Project Grounded (Jordi): een trainer met alleen Magikarp (Fisherman Darian) krijgt de Magikarp-intro
-    if (!(gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS) && trainerId != TRAINER_NONE)
-    {
-        const struct Trainer *magikarpTrainer = GetTrainerStructFromId(trainerId);
-        u32 i;
-        bool32 onlyMagikarp = magikarpTrainer->partySize != 0;
-        for (i = 0; i < magikarpTrainer->partySize; i++)
-        {
-            if (magikarpTrainer->party[i].species != SPECIES_MAGIKARP)
-                onlyMagikarp = FALSE;
-        }
-        if (onlyMagikarp)
-            return B_TRANSITION_MAGIKARP;
-    }
-
-    // Project Grounded: Birch krijgt zijn eigen (poep-)transitie i.p.v. de mugshot
-    if (trainerId == TRAINER_BIRCH || trainerId == TRAINER_BIRCH_VERDANTURF || trainerId == TRAINER_BIRCH_2 || trainerId == TRAINER_BIRCH_MOSSDEEP || trainerId == TRAINER_BIRCH_UNDERWATER || trainerId == TRAINER_BIRCH_RESORT)
-        return B_TRANSITION_BIRCH;
-
-    // Project Grounded: Gabby & Ty filmen je; Joey's Poochyena valt je aan
-    // (eerste keer: Joey vecht mee en zijn Poochyena springt voor de camera)
-    if (trainerId == TRAINER_GABBY_AND_TY_1 && gPartnerTrainerId == TRAINER_PARTNER(PARTNER_JOEY))
-        return B_TRANSITION_GABBY_TY_JOEY;
-    if (trainerId >= TRAINER_GABBY_AND_TY_1 && trainerId <= TRAINER_GABBY_AND_TY_6)
-        return B_TRANSITION_GABBY_TY;
-    if (trainerId == TRAINER_JOEY)
-        return B_TRANSITION_POOCHYENA;
-
-    // Project Grounded: Archie en Maxie samen (Sootopolis): beide logo's naast elkaar.
-    if (trainerId == TRAINER_ARCHIE_SOOTOPOLIS || trainerId == TRAINER_MAXIE_SOOTOPOLIS)
-        return B_TRANSITION_AQUA_MAGMA;
-
-    // Project Grounded: Archie en Maxie met werkstraf (Weather Institute): het prikbord van de pauzeruimte
-    if ((trainerId >= TRAINER_ARCHIE_SERVICE_1 && trainerId <= TRAINER_ARCHIE_SERVICE_4)
-     || (trainerId >= TRAINER_MAXIE_SERVICE_1 && trainerId <= TRAINER_MAXIE_SERVICE_4))
-        return B_TRANSITION_WEATHER_SERVICE;
-
-    // Project Grounded: Colress: eerst de mugshot, dan twee tandwielen die op je af komen
-    if (trainerId == TRAINER_COLRESS_MAUVILLE || trainerId == TRAINER_COLRESS_MAGMA)
-        return B_TRANSITION_COLRESS;
-
-    // Project Grounded: Youngster Calvin (Route 102, "Short shorts, cigarette."): het Viagra Boys-logo
-    if (trainerId == TRAINER_CALVIN_1 || trainerId == TRAINER_CALVIN_2 || trainerId == TRAINER_CALVIN_3
-     || trainerId == TRAINER_CALVIN_4 || trainerId == TRAINER_CALVIN_5)
-        return B_TRANSITION_VIAGRA_BOYS;
-
-    // Project Grounded: Dave (Freed From Desire): een penalty strak in de winkelhaak, dan GOAL!
-    if (trainerId == TRAINER_DAVE || trainerId == TRAINER_DAVE_ROUTE_111 || trainerId == TRAINER_DAVE_PETALBURG
-     || trainerId == TRAINER_DAVE_SOOTOPOLIS || trainerId == TRAINER_DAVE_PARADISO)
-        return B_TRANSITION_DAVE;
-    // Project Grounded: SickBlik (Jordi zelf): mugshot, dan de hotpot die een Poké Ball wordt (ook in het Battle Stadium)
-    if (trainerId == TRAINER_SICKBLIK || trainerId == TRAINER_SICKBLIK_ROUTE_104 || trainerId == TRAINER_SICKBLIK_ROUTE_113
-     || trainerId == TRAINER_SICKBLIK_BEACH || trainerId == TRAINER_SICKBLIK_DEV || trainerId == TRAINER_SICKBLIK_MOTEL)
-        return B_TRANSITION_SICKBLIK;
-    // Project Grounded: Mimi (poppenkast), Keccles (camouflage in het lab) en de Burglar (bewakingscamera), ook in het
-    // Battle Stadium. Vervangen de mugshot, zoals bij Steven.
-    if (trainerId == TRAINER_MIMI)
-        return B_TRANSITION_MIMI;
+    // Project Grounded: Keccles (camouflage in het lab), vervangt de mugshot
     if (trainerId == TRAINER_KECCLES_1 || trainerId == TRAINER_KECCLES_2 || trainerId == TRAINER_KECCLES_3
      || trainerId == TRAINER_KECCLES_FRONTIER)
         return B_TRANSITION_KECCLES;
-    if ((trainerId >= TRAINER_BURGLAR_1 && trainerId <= TRAINER_BURGLAR_5)
-     || (trainerId >= TRAINER_BURGLAR_6 && trainerId <= TRAINER_BURGLAR_9))
-        return B_TRANSITION_BURGLAR;
-
-    // Project Grounded: Neo Team Plasma (Battle Stadium): de BW2-transitie (P, bliksem-Z, schild, bliksems)
-    if (trainerClass == TRAINER_CLASS_NEO_PLASMA || trainerClass == TRAINER_CLASS_SHADOW_TRIAD || trainerClass == TRAINER_CLASS_SAGE)
-        return B_TRANSITION_NEO_PLASMA;
-    // Project Grounded: Team Rocket (grunts en Petrel): een stempelende rode R
-    if (trainerClass == TRAINER_CLASS_TEAM_ROCKET || trainerClass == TRAINER_CLASS_ROCKET_EXEC)
-        return B_TRANSITION_ROCKET;
-
-    // Project Grounded: Steven (kampioen, post-game en Battle Stadium): zijn verzamelkast, de badges in de facetten van
-    // een gloeiende steen. Vervangt de mugshot: de film stelt Steven zelf al voor, en mugshot + film samen duurt te lang.
-    if (trainerId == TRAINER_CHAMPION_STEVEN || trainerId == TRAINER_STEVEN)
-        return B_TRANSITION_STEVEN;
-    // Project Grounded: het laatste Wally-gevecht (Victory Road): een VHS-band van zijn groei
-    if (trainerId == TRAINER_WALLY_VR_1)
-        return B_TRANSITION_WALLY_VHS;
-
-    // Project Grounded: gymleider-intro's (ook de rematches en het Battle Stadium). Vervangen de mugshot: de intro stelt
-    // de leider zelf voor, en mugshot + intro samen duurt te lang.
-    if (trainerId == TRAINER_ROXANNE_1 || (trainerId >= TRAINER_ROXANNE_2 && trainerId <= TRAINER_ROXANNE_5))
-        return B_TRANSITION_GYM_ROXANNE;
-    if (trainerId == TRAINER_BRAWLY_1 || (trainerId >= TRAINER_BRAWLY_2 && trainerId <= TRAINER_BRAWLY_5))
-        return B_TRANSITION_GYM_BRAWLY;
-    if (trainerId == TRAINER_WATTSON_1 || (trainerId >= TRAINER_WATTSON_2 && trainerId <= TRAINER_WATTSON_5))
-        return B_TRANSITION_GYM_WATTSON;
-    if (trainerId == TRAINER_FLANNERY_1 || (trainerId >= TRAINER_FLANNERY_2 && trainerId <= TRAINER_FLANNERY_5))
-        return B_TRANSITION_GYM_FLANNERY;
-    if (trainerId == TRAINER_NORMAN_1 || (trainerId >= TRAINER_NORMAN_2 && trainerId <= TRAINER_NORMAN_5))
-        return B_TRANSITION_GYM_NORMAN;
-    if (trainerId == TRAINER_WINONA_1 || (trainerId >= TRAINER_WINONA_2 && trainerId <= TRAINER_WINONA_5))
-        return B_TRANSITION_GYM_WINONA;
-    if (trainerId == TRAINER_TATE_AND_LIZA_1 || (trainerId >= TRAINER_TATE_AND_LIZA_2 && trainerId <= TRAINER_TATE_AND_LIZA_5))
-        return B_TRANSITION_GYM_TATE_LIZA;
-    if (trainerId == TRAINER_WALLACE_1 || (trainerId >= TRAINER_WALLACE_2 && trainerId <= TRAINER_WALLACE_5))
-        return B_TRANSITION_GYM_WALLACE;
 
     if (DoesTrainerHaveMugshot(trainerId))
         return B_TRANSITION_MUGSHOT;
@@ -1389,16 +847,12 @@ enum BattleTransition GetTrainerBattleTransition(void)
         || trainerClass == TRAINER_CLASS_AQUA_ADMIN)
         return B_TRANSITION_AQUA;
 
-    // Project Grounded: Fisherman Andrew (Magikarp lv 70) krijgt de Magikarp-transitie van de wilde Magikarp
-    if (trainerId == TRAINER_ANDREW)
-        return B_TRANSITION_MAGIKARP;
-
     // Project Grounded: lichte intro per trainerklasse (gewone trainers; wie hierboven een eigen transitie of mugshot
     // heeft, is al weg). Gaat vóór de route-transitie: de klasse zegt meer over het gevecht dan de plek.
     if (ClassIntro_HasIntro(trainerClass))
         return B_TRANSITION_CLASS_INTRO;
 
-    // Project Grounded: route-transitie voor de plek (zee, strand, onder water, sneeuw, ...)
+    // Project Grounded: onder water of surfend
     if (GetGroundedRouteTransition() >= 0)
         return GetGroundedRouteTransition();
 

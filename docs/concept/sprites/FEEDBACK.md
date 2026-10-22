@@ -14,3 +14,7 @@
 - **Olinguito:** de **nagels staan te los van elkaar**.
 - **Nachtaap:** **enorme verbetering**; moet nu alleen **meer lijken op bestaande Pokémon-sprites qua kleuren, shading en belijning**.
 - Jordi is het eens met wat de tekenaars zelf nog zwak vonden (alpaca te groot, zwevende handschoen; olinguito masker als skibril, munt onleesbaar op 1×; nachtaap handen als driehoekje, ogen ogen slaperig).
+
+## Ronde 3 (22 okt)
+- **Nachtaap:** het dichtst bij voltooid. Laat een onafhankelijke agent hem keuren t.o.v. andere Pokémon.
+- **Alpaca en olinguito:** dichter in de buurt; **als schets voltooid qua kleurgebruik en algemeen design**. Maar: de **verhoudingen kloppen niet helemaal**, de **ogen zijn geen typische Pokémon-ogen**, de **vormen zijn wat clumsy**, de **shading is niet zoals Pokémon**, en ze staan er **niet dynamisch genoeg** bij (bij de meeste Pokémon zie je een perspectief). Ze moeten **meer Gen 3-sprites** worden.

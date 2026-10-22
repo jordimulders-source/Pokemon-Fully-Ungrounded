@@ -56,4 +56,4 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - Na gym 1 (Uyuni) meteen hot springs, een vulkaan en een sneeuwgebied (Jordi). Klopt met de echte Uyuni-tour door Sur Lípez: Laguna Colorada (rood meer vol flamingo's: Flamigo!), geisers Sol de Mañana, warmwaterbron Polques, vulkaan Licancabur, Laguna Verde, steenbomen (Árbol de Piedra) in de Siloli-woestijn.
 - Natuur staat centraal (Jordi): zoveel mogelijk aandacht voor de veelzijdige natuur van de regio.
 
-- Kameelachtigen: de starter is de lamoïden-lijn (zie CONCEPT). Of vicuña/guanaco daarnaast nog als wilde Pokémon komen: open.
+- Kameelachtigen: de starter is de lamoïden-lijn (zie CONCEPT). Later (Jordi): een wilde lijn vicuña → guanaco.

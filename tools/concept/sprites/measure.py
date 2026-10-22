@@ -13,6 +13,10 @@ import spritelib as L
 NB4 = [(-1, 0), (1, 0), (0, -1), (0, 1)]
 
 
+def chroma(c):
+    return (max(c) - min(c)) / 255
+
+
 def shift(a, dy, dx, fill=0):
     h, w = a.shape
     out = np.full_like(a, fill)
@@ -49,12 +53,29 @@ def ramps(idxs, pal, outline):
         for j in used:
             if i < j and i not in outline and j not in outline and A[i, j] > 0:
                 pairs.append((A[i, j] / min(cnt[i], cnt[j]), i, j))
+    members = {k: [k] for k in used}
+    def compatible(ga, gb):
+        for a in ga:
+            for b in gb:
+                (h1, s1, l1), (h2, s2, l2) = hs[a], hs[b]
+                c1, c2 = chroma(pal[a]), chroma(pal[b])
+                if c1 < 0.10 and c2 < 0.10:
+                    continue                          # twee grijzen
+                if (c1 < 0.10) != (c2 < 0.10):
+                    if max(c1, c2) > 0.22:
+                        return False                  # grijs bij een felle kleur: aparte groep
+                    continue
+                dh = min(abs(h1 - h2), 360 - abs(h1 - h2))
+                if dh > 45:
+                    return False
+        return True
     for strength, i, j in sorted(pairs, reverse=True):
-        (h1, s1, l1), (h2, s2, l2) = hs[i], hs[j]
-        dh = min(abs(h1 - h2), 360 - abs(h1 - h2))
-        grey = s1 < 0.12 and s2 < 0.12
-        if strength > 0.08 and (dh < 40 or grey or min(s1, s2) < 0.12 and abs(l1 - l2) < 0.35):
-            parent[f(i)] = f(j)
+        a, b = f(i), f(j)
+        if a == b or strength < 0.05:
+            continue
+        if compatible(members[a], members[b]):
+            parent[a] = b
+            members[b] += members.pop(a)
     groups = {}
     for k in used:
         if k in outline:
@@ -157,6 +178,14 @@ def measure_sprite(frames, back, pal):
     r['dither_px'] = int(chk.sum())
     iso = (c > 0) & (up == dn) & (dn == lf) & (lf == rt) & (up != c) & (up > 0)
     r['isolated_px'] = int(iso.sum())
+    # 2x2-schaakbordblokjes [[a,b],[b,a]] (a != b, beide opaak, geen omlijning): gedekte pixels
+    a_, b_, c_, d_ = c[:-1, :-1], c[:-1, 1:], c[1:, :-1], c[1:, 1:]
+    blk = (a_ == d_) & (b_ == c_) & (a_ != b_) & (a_ > 0) & (b_ > 0) & (a_ != darkest) & (b_ != darkest)
+    cov = np.zeros_like(c, bool)
+    for oy, ox in [(0, 0), (0, 1), (1, 0), (1, 1)]:
+        cov[oy:oy + 63, ox:ox + 63] |= blk
+    r['checker_px'] = int(cov.sum())
+    r['checker_frac'] = round(float(cov.sum() / m.sum()), 4)
     # frames
     if len(frames) > 1:
         f1 = frames[1]

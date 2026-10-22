@@ -8,7 +8,7 @@ import numpy as np
 NUM = ['w', 'h', 'top', 'bottom', 'area', 'mass_cx', 'colors', 'darkest_lum', 'edge_darkest', 'edge_dark',
        'edge_light', 'edge_lum_tl', 'edge_lum_br', 'inner_darkest_frac', 'double_outline', 'n_ramps',
        'ramp_dl', 'ramp_dh', 'ramp_dh_signed', 'ramp_ds', 'light_dx', 'light_dy', 'shadow_frac',
-       'highlight_frac', 'dither_px', 'isolated_px', 'frame_diff', 'frame_diff_after_shift',
+       'highlight_frac', 'dither_px', 'isolated_px', 'checker_px', 'checker_frac', 'frame_diff', 'frame_diff_after_shift',
        'back_w', 'back_h', 'back_bottom', 'back_area', 'back_cut']
 
 

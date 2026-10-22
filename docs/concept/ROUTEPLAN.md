@@ -27,4 +27,5 @@ Opzet van Claude (22 okt) om alle plekken, dungeons en legendes uit `REGIO.md`, 
   - **Kay Pacha (poema):** Cuzco zelf (de stad is volgens de overlevering in de vorm van een poema aangelegd, met Sacsayhuamán als kop);
   - **Uku Pacha (slang):** onder de grond of het water: Wanaku onder het Titicacameer, de chincanas onder Cuzco, of de mijn van Potosí;
   - **Pachamama:** waar de drie samenkomen, bijv. Tiwanaku (de Poort van de Zon) of Titicaca, de bakermat van de Inca's.
+- **Zarude: diep in de jungle** (Jordi, 22 okt), dus in het Amazone-segment rond gym 8 of post-game in het binnenland.
 - Het slangenduo Cai Cai/Tren Tren (als dat er komt) hoort bij Chili/Mapuche, dus elders.

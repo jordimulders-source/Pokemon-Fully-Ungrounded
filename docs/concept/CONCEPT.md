@@ -25,6 +25,7 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 - **Starters: Fighting → Dark → Psychic.**
 - Dex: ±400–500 soorten uit de National Dex, plus regional forms en ±100 fakemon. Alle soorten gebaseerd op Zuid-Amerikaanse dieren gaan mee (Slakoth-lijn, Pikipek-lijn, Flamigo, …) en Sigilyph.
 - Fakemon zeker: lama, alpaca, vicuña, guanaco (alle vier, met iets met hun verwantschap), coati, capibara, condor, pinguïns.
+- Waar een bestaande Pokémon al past (Alolan Exeggutor bij de waspalmen), kan het twee kanten op: gewoon gebruiken, of een eigen regional form/kleurvariant. Per geval kiezen.
 - Spritewerk: oefenen, beginnend met regional forms en evoluties.
 
 ## Personages

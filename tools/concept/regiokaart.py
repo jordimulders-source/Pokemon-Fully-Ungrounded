@@ -54,7 +54,7 @@ WEST = [(1, 11), (5, 7.5), (9, 6.5), (14, 6), (18, 8), (22, 9.5), (27, 10.5), (3
 EAST = [(1, 19), (3, 30), (6, 36.5), (10, 38), (15, 37.8), (20, 36.6), (25, 32.6), (29, 26.5), (32, 22.8), (35.5, 19.6), (39, 18)]
 wc, ec = interp(WEST, cy), interp(EAST, cy)
 # kleine kustruis (±2-4 px): Hoenn-kusten hebben veel kleine bultjes en inhammen, geen gladde bochten
-cn = n + (value_noise(91, 6) - 0.5) * 0.35 + (value_noise(92, 3) - 0.5) * 0.12
+cn = n + ((value_noise(91, 6) - 0.5) * 0.35 + (value_noise(92, 3) - 0.5) * 0.12) * (cy < 30)   # fjordkust is al grillig
 land = (cx > wc + (cn - 0.5) * 2.4) & (cx < ec + (cn - 0.5) * 2.8) & (cy > 1.2 + (cn - 0.5) * 2) & (cy < 38.3)
 land &= ~((cy < 3.5) & (cx > 20) & (cx < 27) & (n < 0.55))                      # Caribische baai
 land &= ~(ellipse(37.5, 9.6, 2.2, 1.1) & ~ellipse(36.3, 10.6, 0.9, 0.5))          # Amazonemonding, Marajó blijft

@@ -59,4 +59,4 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - Kameelachtigen: de starter is de lamoïden-lijn (zie CONCEPT). Later (Jordi): een wilde lijn vicuña → guanaco.
 - Voorstel vogellijn: condorkuiken (pluizig grijs) → jonge condor (bruin, zonder kraag) → volwassen condor (zwart, witte kraag). Kolibrie als losse lijn (kandidaat Psychic-starter of Flying/Fairy). Jordi: kolibrie wordt een **losse lijn** (vogellijn dus condorkuiken → condor).
 - Capibara als inspiratie voor de vroege routeknager/-zoogdier (Jordi). Let op immersie: capibara's leven in laagland bij water, niet op de altiplano rond La Paz/Uyuni (daar: viscacha, cavia/cuy, chinchilla).
-- Mug als vroege route-bug (Jordi). Zelfde immersiepunt: boven ±3000 m zijn bijna geen muggen; past in laagland/jungle.
+- Mug als bug (Jordi): iets minder early route, een beetje zoals Kricketot in Sinnoh; verschijnt zodra je in lager/warmer gebied komt (boven ±3000 m bijna geen muggen).

@@ -18,3 +18,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Concept:** opgesplitst in CONCEPT/REGIO/VERHAAL/POKEMON/MUZIEK; dex-selectie voorlopig af (±441 soorten); gymlocaties; protagonist, Keccles als compagnon.
 - **Sprites:** starters fase 1, rondes 1–4 (`docs/concept/sprites/`), spriteplan met Pokémon-design-sectie.
 - **Tilesets:** assetbibliotheek (`tilesets/`), Andes-primary, La Paz en altiplano ronde 2, `TILESET_PLAN.md`.
+
+### [v0.0.4] - Alle Ungrounded-muziek eruit; concept aangevuld
+- **Verwijderd:** alle eigen muziek van Ungrounded (songs 610–725: eigen composities, covers, gym-/legendary-/personagethema's, alle remixes, nachtversies, YI/MKSC/WL4-rips, Area Zero, Poké Tower-remix), 143 voicegroups, 490 samples, 72 generatorscripts. Alleen de vanilla-/FRLG-muziek en **Battle! Keccles** (nu song 610) blijven; HQ-mixer blijft. Legendaries vechten op vanilla-muziek (Rayquaza, Regi, Mew, Mewtwo, Deoxys, beasts, overige `MUS_RG_VS_LEGEND`). ROM: 1,94 MB → 7,42 MB vrij.
+- **Concept:** de OST wordt grotendeels nieuw; Quaxly-lijn in de dex (444 soorten); Kecleon vast in de dex; legendaries voorlopig alleen Mew, Mewtwo, Zarude; regional forms: Lotad (reuzenwaterlelie, stapstenen), Yanma (Dragon), Natu/Xatu (nominatie, Nazca-kolibrie); fakemon: mug (Poison/Electric), Flamigo-evolutie, pauw/zonneral met carnavalsinspiratie; Laguna Colorada en Isla Incahuasi komen in de game.

@@ -40,6 +40,7 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 ## Legendaries
 - **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor**; Kay Pacha (deze wereld) = **poema**; Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.
 - **Opper-legendary: Pachamama** (Moeder Aarde; "pacha" = wereld én tijd); de drie werelden zijn delen van haar. Type, naam en rol: open.
+- **Bestaande legendaries: voorlopig alleen Mew, Mewtwo en Zarude** (Jordi, 22 okt: de meeste legendaries komen niet in deze game).
 - In het verhaal worden de legendaries woedend door de vernietiging van de natuur (zie `VERHAAL.md`).
 
 ## Overige fakemon (besloten)
@@ -54,6 +55,7 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
   - een evolutie: de **leider van de kolonie**, gebaseerd op de groepsdans (flamingo's marcheren in de balts in rijen synchroon heen en weer; dat past bij Fighting);
   - of een pre-evolutie: het **grijze donzige kuiken**. Flamingokuikens worden met honderden samen in een crèche opgevangen en zijn pas na ±3 jaar roze.
   - Inspiratie: de Andes-, James- en Chileense flamingo's van de Laguna Colorada in Lípez. Ze kleuren roze en rood door de algen in de lagune (de 'rode lagune').
+- **Pauw met carnavalsinspiratie** (Jordi, 22 okt: misschien, fakemon of regional form). Inspiratie: de verenpakken van de sambascholen in Rio (*destaques* met enorme verenwaaiers op de rug). Pauwen komen niet uit Zuid-Amerika (immersie). Voorstel van Claude: baseer hem op de **zonneral** (*Eurypyga helias*, Amazone). In Brazilië heet die *pavãozinho-do-pará*, 'pauwtje van Pará': een onopvallende vogel die bij dreiging zijn vleugels openslaat en twee grote zon-'ogen' toont. Een carnavalsdanser die zich pas op het podium onthult; Dancer- of Intimidate-achtige vibe. Type nog open.
 - **Vaste lijst:** lama, alpaca, vicuña, guanaco, coati, capibara, condor, pinguïns (naast Eiscue; meerdere pinguïns is geen probleem, Jordi). Eiscue is de koudeminnende pinguïn (Patagonië/ijs); de fakemon kan juist een pinguïn van een **milder klimaat** zijn, zoals de Humboldtpinguïn (Peru/Chili) of de Galápagospinguïn (Ecuador), Jordi.
 
 ## Regional forms (besloten)

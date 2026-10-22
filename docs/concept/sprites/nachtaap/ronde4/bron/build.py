@@ -14,7 +14,7 @@ from layerlib import ellipse, stroke_var, bezier, spiral, XX, YY, save_indexed, 
 
 PAL = [hexc(h) for h in [
     '#94CD9C',                                   # 0 transparant
-    '#E6D5FF', '#AC94DE', '#7362B4', '#3E2E66',  # 1-4 vacht (2 basis, 3 schaduw, 4 donker: lijn + masker)
+    '#E6D5FF', '#AC94DE', '#7362B4', '#4D3D83',  # 1-4 vacht (2 basis, 3 schaduw, 4 donker: lijn + masker)
     '#F6F6FF', '#C5C5E6', '#8B94BD',             # 5-7 zilver: wenkbrauwvlekken, snuit, buik
     '#FFA4D5', '#E65AA4', '#9C2962',             # 8-10 roze: neus, staartpunt, binnenkant oren
     '#DEFFFF', '#5ABDDE', '#202C5E',             # 11-13 maan: parel + ogen (13 iris)

@@ -74,6 +74,7 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Ronde 3, erin:** Galar-Meowth, Cubone-lijn (normaal), beide Corsola-lijnen, Litwick-lijn, Eiscue, beide Slowpoke-lijnen, Dunsparce, Charcadet-lijn, Orthworm, Oricorio.
 - **Quaxly-lijn erin** (Jordi, 22 okt): Quaquaval is een samba-/carnavalsdanser (Rio).
 - **Kecleon zit sowieso in de dex** (Jordi, 22 okt), ook los van Keccles.
+- **Carbink toch erin** (Jordi, 22 okt; in ronde 1 geschrapt): hij blijkt op een mythologisch figuur gebaseerd.
 - **Dit deel is voorlopig af** (Jordi, 22 okt). Stand: zie DEX_NOMINATIES.md.
 
 ## Bestaande soorten in de regio

@@ -327,7 +327,7 @@ TYRUNT|C||Fossiel|
 AMAURA|C||Fossiel|
 HAWLUCHA|C||Lucha libre: botst met de cholita-luchadora-starter|
 DEDENNE|C||Geen band|
-CARBINK|C|GROT|Jordi 22 okt: geschrapt. Edelstenen in de mijnen|
+CARBINK|B|GROT|Jordi 22 okt: toch erin (gebaseerd op een mythologisch figuur). Edelstenen in de mijnen|
 GOOMY|B|AMA|Slakken in de regen; Dragon-gym|
 KLEFKI|C||Sleutels|
 PHANTUMP|B|NEV,AMA|Boomgeest; bossen die gekapt worden|

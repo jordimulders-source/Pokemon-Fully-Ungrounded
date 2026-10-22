@@ -7,13 +7,13 @@
 | Categorie | Lijnen | Soorten |
 |---|---|---|
 | 1. Past in Zuid-Amerika | 84 | 159 |
-| 2. Niet Zuid-Amerikaans, hoort er toch in (iconisch of Ungrounded-revisie) | 128 | 285 |
-| **Genomineerd (1 + 2)** | **212** | **444** |
-| 3. Twijfel / bewust niet (geen legendaries) | 236 | 501 |
+| 2. Niet Zuid-Amerikaans, hoort er toch in (iconisch of Ungrounded-revisie) | 129 | 286 |
+| **Genomineerd (1 + 2)** | **213** | **445** |
+| 3. Twijfel / bewust niet (geen legendaries) | 235 | 500 |
 | Legendaries/mythicals (apart, sectie 4) | 24 | – |
 | Regional forms (sectie 5) | 28 lijnen (waarvan 1 besloten: Venomoth) | – |
 
-- **444 soorten** uit de National Dex, binnen het doel van 400–500. Met ±100 fakemon en ±10–15 regional forms komt de regionale dex op ±575–600. Wil Jordi richting 400, dan zijn de B-lijnen zonder Zuid-Amerikaanse band en zonder Ungrounded-revisie het eerst te schrappen (Kanto-starters, Munchlax, Audino, Ditto, Happiny, Mimikyu e.d.).
+- **445 soorten** uit de National Dex, binnen het doel van 400–500. Met ±100 fakemon en ±10–15 regional forms komt de regionale dex op ±575–600. Wil Jordi richting 400, dan zijn de B-lijnen zonder Zuid-Amerikaanse band en zonder Ungrounded-revisie het eerst te schrappen (Kanto-starters, Munchlax, Audino, Ditto, Happiny, Mimikyu e.d.).
 - Telling per soort: elke evolutie telt mee, ook baby's; Mega's en Gmax tellen niet. Regionale vormen van andere regio's tellen alleen mee als ze zelf genomineerd zijn (Alolan Sandshrew/Vulpix/Exeggutor, Hoenn-Grimer).
 - **Opvallendste nominaties:** Hippopotas (Escobars nijlpaarden in Colombia), Nosepass (moai, Paaseiland), Bidoof (bevers als ecologische ramp in Vuurland), Yamask (Chinchorro-mummies), Smeargle (Cueva de las Manos), Bouffalant (waterbuffelpolitie op Marajó), Combee (Afrikaanse 'killer bees' uit Brazilië), Tynamo (sidderaal), Squawkabilly (monniksparkieten-'bendes' in de steden), Mew (volgens de lore ontdekt in Guyana).
 - **Grootste gaten** (sectie 6–8): Fire en Fighting zijn het dunst; tepuis, Lípez/Uyuni, Galápagos en de vulkanen hebben te weinig bestaande soorten; de altiplano mist vroege Grass, Bug en Flying. Die plekken zijn voor de fakemon.
@@ -111,7 +111,7 @@ Gebaseerd op een Zuid-Amerikaans dier, plant of mythe, of ecologisch heel plausi
 | Oricorio | Fire/Flying | Jordi 22 okt: erin. Dansvogel: kandidaat voor tango/samba/cueca-stijlen als regionale vormen | PAM, STAD | – |
 | Squawkabilly | Normal/Flying | Monniksparkiet uit Argentinië: leeft in luidruchtige 'bendes' in steden | STAD, PAM | – |
 
-## 2. Niet Zuid-Amerikaans, hoort er toch in (128 lijnen, 285 soorten)
+## 2. Niet Zuid-Amerikaans, hoort er toch in (129 lijnen, 286 soorten)
 
 Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dekking van gyms/E4, of uniek veranderd in Ungrounded. Biome = waar hij het minst uit de toon valt.
 
@@ -210,6 +210,7 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Deino → Zweilous → Hydreigon | Dark/Dragon | Pseudo-legendary; Dark/Dragon voor Dark- en Dragon-gym | NEV | – |
 | Skrelp → Dragalge | Skrelp: Poison/Water; Dragalge: Poison/Dragon | Poison/Dragon voor Poison- en Dragon-gym (kelpwouden) | KUST | – |
 | Clauncher → Clawitzer | Water | Pistoolgarnalen | KUST | – |
+| Carbink | Rock/Fairy | Jordi 22 okt: toch erin (gebaseerd op een mythologisch figuur). Edelstenen in de mijnen | GROT | – |
 | Goomy → Sliggoo → Goodra | Dragon | Slakken in de regen; Dragon-gym | AMA | – |
 | Phantump → Trevenant | Ghost/Grass | Boomgeest; bossen die gekapt worden | NEV, AMA | – |
 | Bergmite → Avalugg | Ice | Gletsjers (Perito Moreno) | IJS, PAT | – |
@@ -246,7 +247,7 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Tatsugiri | Dragon/Water | Jordi 22 okt: erin. Sushi | – | – |
 | Basculin → Basculegion | Basculin: Water; Basculegion: Water/Ghost | Rivierroofvis; kandidaat paiche/arapaima-vorm | AMA | – |
 
-## 3. Twijfelgevallen en bewust niet (236 lijnen, 501 soorten)
+## 3. Twijfelgevallen en bewust niet (235 lijnen, 500 soorten)
 
 Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze soorten post-game komen (Safari, Spacetime, ruilen) zonder in de regionale dex te staan.
 
@@ -346,7 +347,7 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Cetoddle → Cetitan | Ice | IJswalvis; ijsniche is gevuld |
 | Sinistea → Polteageist | Ghost | Thee; mate gaat via Poltchageist |
 
-### 3b. Geen band met de regio (eventueel post-game) (145 lijnen)
+### 3b. Geen band met de regio (eventueel post-game) (144 lijnen)
 
 | Lijn | Types (repo) | Reden |
 |---|---|---|
@@ -443,7 +444,6 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Swirlix → Slurpuff | Fairy | Snoep |
 | Binacle → Barbaracle | Rock/Water | Jordi 22 okt: geschrapt. Rotskust |
 | Dedenne | Electric/Fairy | Geen band |
-| Carbink | Rock/Fairy | Jordi 22 okt: geschrapt. Edelstenen in de mijnen |
 | Klefki | Steel/Fairy | Sleutels |
 | Pumpkaboo → Gourgeist | Ghost/Grass | Halloween |
 | Furfrou | Normal | Poedel |
@@ -603,9 +603,9 @@ Soorten = elke soort met dat type (dubbeltypes tellen bij beide). Lijnen = lijne
 | Fire | gym | 31 | 18 | Dunst van de gymtypes: Vulpix, Ponyta, Magby, Slugma, Houndour, Torkoal, Charmander, Volbeat, Heatmor, Larvesta, Sizzlipede, Scovillain. **Gat voor fakemon**; de regional forms Boitatá (Fire/Ghost) en huaco (Ground/Fire) helpen ook. |
 | Dragon | gym | 30 | 15 | Genoeg lijnen (zes pseudo-achtigen), maar weinig Zuid-Amerikaans: alleen Tropius, Alolan Exeggutor. Eigen draak (pitahaya-idee, Grass/Dragon) welkom. |
 | Ice | gym 2 | 27 | 15 | Genoeg voor gym 2 als de Cordillera vroeg komt: Alolan Sandshrew/Vulpix, Snorunt, Snover, Swinub, Sneasel, Snom, Cryogonal, Bergmite. Pinguïns en ijs-fakemon vullen aan. |
-| Rock | – | 23 | 13 |  |
+| Rock | – | 24 | 14 |  |
 | Fighting | – | 21 | 12 | Laag, maar geen gym; de Fighting-starter (lama) en Flamigo vullen aan. |
-| Fairy | – | 19 | 10 | Laag; geen gym. Kandidaten voor fakemon (Pachamama-sfeer, bloemen). |
+| Fairy | – | 20 | 11 | Laag; geen gym. Kandidaten voor fakemon (Pachamama-sfeer, bloemen). |
 
 ## 7. Biome-analyse (genomineerd, categorie 1 + 2)
 
@@ -628,7 +628,7 @@ Een lijn kan in meerdere biomes staan.
 | Kust (Caribisch, Atlantisch, Humboldt) (`KUST`) | 23 | 43 | Tentacool, Shellder, Krabby, Horsea, Staryu, Qwilfish, Corsola, Remoraid, Mantyke, Wingull, Wailmer, Tropius, Bouffalant, Inkay, Skrelp, Clauncher, Mareanie, Sandygast, Dhelmise, Arrokuda, Quaxly, Wattrel, Finizen |
 | Open zee/diepzee (`ZEE`) | 5 | 10 | Tentacool, Chinchou, Frillish, Inkay, Wimpod |
 | Steden/ruïnes (`STAD`) | 38 | 92 | Pichu, Cleffa, Growlithe, Abra, Machop, Magnemite, Gastly, Koffing, Happiny, Ditto, Eevee, Porygon, Munchlax, Natu, Misdreavus, Houndour, Taillow, Whismur, Baltoy, Duskull, Bronzor, Spiritomb, Hippopotas, Rotom, Timburr, Scraggy, Trubbish, Golett, Pawniard, Flabébé, Mimikyu, Impidimp, Dreepy, Quaxly, Gimmighoul, Oricorio, Squawkabilly, Unown |
-| Grotten/mijnen (`GROT`) | 12 | 30 | Machop, Geodude, Magnemite, Gastly, Koffing, Larvitar, Sableye, Aron, Drilbur, Rolycoly, Glimmet, Gimmighoul |
+| Grotten/mijnen (`GROT`) | 13 | 31 | Machop, Geodude, Magnemite, Gastly, Koffing, Larvitar, Sableye, Aron, Drilbur, Carbink, Rolycoly, Glimmet, Gimmighoul |
 
 ## 8. Vroege game (La Paz, Cordillera, Uyuni/Lípez)
 

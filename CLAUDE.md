@@ -318,7 +318,11 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - Commit en push na elk afgerond stuk, met een changelogsectie in `CHANGELOG.md` (nieuw project: versies 0.0.x tijdens het skelet).
 
 ## Stand van zaken
-- **Fase: skelet** (22 okt). Basis = Ungrounded `claude/dazzling-babbage-ud6oxr` (3640fd64). Zie `TODO.md` voor de volgorde: modi eruit → expansion 1.14.4 → 1.17.1 → nieuwe startkaart → Hoenn-kaarten en halve dex eruit.
+- **Fase: concept + skelet** (22 okt). Repo `Pokemon-Fully-Ungrounded` (branch `main`); dezelfde commits staan ook op `projectgrounded`, branch `claude/vibrant-wright-j33xkl`. Push naar beide (`git push fu HEAD:main` en `git push origin HEAD`).
+- **Concept:** `docs/concept/` (CONCEPT, REGIO, VERHAAL, POKEMON, MUZIEK, IDEEEN, DEX_NOMINATIES, SPRITE_PLAN). Regiokaart: variant 2 (`tools/concept/regiokaart2.py`). Dex-selectie voorlopig af (±441 soorten; scripts in `tools/concept/dex/`).
+- **Sprites starters fase 1:** ronde 1–4 in `docs/concept/sprites/{alpaca,olinguito,nachtaap}/rondeN/`; feedback van Jordi in `docs/concept/sprites/FEEDBACK.md` (leidend). Stand: kleuren en design als schets goed; nu naar echte Gen 3-sprites (verhoudingen, Pokémon-ogen, Gen 3-shading, dynamische 3/4-pose). Volgende stap volgens de tekenaars: lijf/poten met de hand per pixel. Onafhankelijke keuring nachtaap ronde 3: `nachtaap/KEURING_RONDE3.md`.
+- **Tilesets:** assetbibliotheek in `tilesets/` (bestaand, Ekat, Jordi's DeviantArt-sheets; `BEHOEFTE.md`, `FEEDBACK.md`). La Paz + altiplano: ronde 1 te kaal/"EarthBound"; ronde 2 bezig in `tilesets/eigen/*/ronde2/` met een Andes-primary (omgebouwde kopie van General, akkoord van Jordi), Hoenn-tegels als basis, GBA-niveau maar consistent Pokémon.
+- **Techniek:** Spire/Stadium/Casino zijn eruit. Een agent werkte in een worktree aan het opruimen van Spacetime/Yoshi/Ultra Space (Keccles blijft) en daarna expansion 1.14.4 → 1.17.1; stand in `docs/concept/STAND_TECHNIEK.md` (als die er is). Nog niet gemerged in `main`.
 - **Save-data:** nieuwe velden alleen achteraan SaveBlock1 (na `bagItems`).
 - **Grenzen:** flags via `FLAG_GROUNDED(n)` (verdeling in flags.h), trainer-id's max 1199 (zie Lessen), max 128 kaarten per kaartgroep.
 - Emulator: `python3.11` (mgba); zie Lessen.

@@ -41,3 +41,12 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - Bariloche: meren, chocolade, Zwitsers aandoende bergstad: tweede, andere kou dan La Paz.
 - Mendoza: wijn, voet van de Aconcagua (hoogste berg buiten Azië).
 - Medellín: van berucht naar innovatief (roltrappen in de heuvelwijken, kabelbanen zoals La Paz), bloemenfestival.
+
+## Mythologie (Jordi: mag een rol spelen)
+- Inca: Inti (zon), Mama Killa (maan), Viracocha (schepper, kwam uit het Titicacameer), Pachamama (aarde), Mama Qucha (zee), Illapa (donder), Supay (onderwereld). De drie werelden: Hanan Pacha (boven, condor), Kay Pacha (hier, poema), Uku Pacha (onder, slang): een legendary-trio dat al dier-symbolen heeft.
+- Andes/Aymara: Ekeko (overvloed, Alasitas in La Paz), El Tío (duivel van de mijn), de apus (berggeesten: elke grote berg is een geest).
+- Amazone: Curupira, Boitatá, Mapinguari, de boto (rivierdolfijn die mens wordt), Yacumama, Chullachaqui.
+- Chiloé (Chili): Caleuche (spookschip), Pincoya, Trauco.
+- Muisca (Colombia): El Dorado (de gouden man op het Guatavitameer), Bachué.
+- Mapuche (Patagonië): Tren Tren en Kai Kai (aarde- en waterslang die vechten om de wereld: een Groudon/Kyogre-achtig duo, maar dan eigen).
+- Nazca-lijnen, moai (Paaseiland).

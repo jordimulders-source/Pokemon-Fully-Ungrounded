@@ -1,7 +1,8 @@
 # Fully Ungrounded: schets van de regiokaart in de stijl van de Emerald-regiokaart.
 # Kleuren en stadsiconen komen uit graphics/pokenav/region_map (Hoenn). Eén vak = 8x8 pixels, zoals op de GBA.
-# Stijlregels (afgekeken van Hoenn): overal kleine hoogtevlekken in vijf groentinten, een donkergroene rand langs
-# de kust, verspreide eilandjes, routes half doorzichtig (lichter boven hoger terrein), zee in strepen.
+# Stijlregels (afgekeken van Hoenn): alleen Hoenn-kleuren; hoogte = geneste vlekken die naar binnen lichter worden
+# (lichtste groen zeldzaam), donkergroene rand van 2-7 px langs elke kust en elk meer, geen spikkels (eilandjes >= 24 px,
+# licht midden), vlakke oppervlakken (zee, zand, zout) in strepen van 1 px, routes lichter boven hoger terrein.
 # Uitvoer: docs/concept/regiokaart.png (kaal) en docs/concept/regiokaart_namen.png (met namen en legenda).
 import math, random
 import numpy as np
@@ -182,7 +183,7 @@ lvl[coast] = 0
 biome = np.zeros((PH, PW), int)   # 0 groen, 2 woestijn, 3 sneeuw, 4 zout
 desert = land & (cy > 15.5) & (cy < 31) & (cx < ridge - 0.8 + (n - 0.5) * 2)
 desert |= land & ellipse(14.5, 27, 3.6, 2.6)                                       # Atacama-hoogland/Lípez
-desert |= land & ellipse(32.5 + (n - 0.5) * 1.6, 12.2, 1.4, 0.7)                                  # Lençóis Maranhenses
+desert |= land & ellipse(32.5 + (value_noise(93, 5) - 0.5) * 1.2, 12.2 + (value_noise(94, 5) - 0.5) * 0.6, 1.4, 0.7)                                  # Lençóis Maranhenses
 biome[desert] = 2
 snow = land & (((lvl >= 4) & (cy > 14) & (cy < 31) & (andes > 0.75) & (biome != 2))
                | ((cy > 31) & (lvl >= 3)) | (cy > 37.8)
@@ -245,7 +246,9 @@ img[erode(dhi) & (dlv >= 4) | erode(erode(dhi))] = SAND[0]
 sm = land & (biome == 3) & ~coast
 # twee tinten zoals de heuvels: grijs lager, wit hoger, met een grijze rand van 1 px
 img[sm] = SNOW[1]
-img[erode(sm) & ((lvl >= 4) | ((lvl >= 2) & (elev > 0.62 + (hills - 0.5) * 0.3)))] = SNOW[0]
+selev = elev + bumps * 0.8
+thr = np.quantile(selev[sm], 0.3) if sm.any() else 0
+img[erode(sm) & (selev > thr)] = SNOW[0]
 # zoutvlakte: vlak en spiegelend, dus strepen (wit/grijs) zoals de zee
 sa = land & (biome == 4)
 paint(sa, SALT, stripes)

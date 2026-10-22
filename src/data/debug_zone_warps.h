@@ -1,5 +1,22 @@
 // Gegenereerd door tools/grounded/debug_zone_warps.py, niet met de hand bewerken.
 
+static const struct DebugMenuOption sDebugMenu_ZoneWarp_FullyUngrounded_0[] =
+{
+    { COMPOUND_STRING("StartTown"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_START_TOWN },
+    { COMPOUND_STRING("StartTown_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_START_TOWN_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("StartTown_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_START_TOWN_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("StartTown_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_START_TOWN_MART },
+    { COMPOUND_STRING("Stock_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_STOCK_HOUSE1 },
+    { COMPOUND_STRING("Stock_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_STOCK_HOUSE2 },
+    { COMPOUND_STRING("Stock_HouseWithBed"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_STOCK_HOUSE_WITH_BED },
+    { COMPOUND_STRING("Stock_SmallHouse"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_STOCK_SMALL_HOUSE },
+    { COMPOUND_STRING("Stock_TwoStory_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_STOCK_TWO_STORY_1F },
+    { COMPOUND_STRING("Stock_TwoStory_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_STOCK_TWO_STORY_2F },
+    { COMPOUND_STRING("Stock_Lab"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_STOCK_LAB },
+    { COMPOUND_STRING("TestMap"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_TEST_MAP },
+    { NULL }
+};
+
 static const struct DebugMenuOption sDebugMenu_ZoneWarp_Grounded_0[] =
 {
     { COMPOUND_STRING("Route112_Dojo"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ROUTE112_DOJO },
@@ -96,28 +113,13 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_Grounded_1[] =
     { COMPOUND_STRING("UnchartedIsle"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_UNCHARTED_ISLE },
     { COMPOUND_STRING("MangroveMire_VirizionG"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MANGROVE_MIRE_VIRIZION_GLADE },
     { COMPOUND_STRING("CrownTundra"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_CROWN_TUNDRA },
+    { COMPOUND_STRING("AbandonedShip_NightDec"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ABANDONED_SHIP_NIGHT_DECK },
     { NULL }
 };
 
 static const struct DebugMenuOption sDebugMenu_ZoneWarp_Grounded_2[] =
 {
-    { COMPOUND_STRING("AbandonedShip_NightDec"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ABANDONED_SHIP_NIGHT_DECK },
     { COMPOUND_STRING("AbandonedShip_NightCab"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ABANDONED_SHIP_NIGHT_CABINS },
-    { NULL }
-};
-
-static const struct DebugMenuOption sDebugMenu_ZoneWarp_Spacetime_0[] =
-{
-    { NULL }
-};
-
-static const struct DebugMenuOption sDebugMenu_ZoneWarp_Spacetime_1[] =
-{
-    { NULL }
-};
-
-static const struct DebugMenuOption sDebugMenu_ZoneWarp_UltraSpace_0[] =
-{
     { NULL }
 };
 
@@ -185,8 +187,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_TownsAndRoutes_1[] =
     { COMPOUND_STRING("Underwater_Route136"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_UNDERWATER_ROUTE136 },
     { COMPOUND_STRING("Route136_SuicuneCave"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ROUTE136_SUICUNE_CAVE },
     { COMPOUND_STRING("AshfrostTown"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ASHFROST_TOWN },
-    { COMPOUND_STRING("AshfrostTown_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ASHFROST_TOWN_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("AshfrostTown_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ASHFROST_TOWN_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("AshfrostTown_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ASHFROST_TOWN_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("AshfrostTown_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ASHFROST_TOWN_POKEMON_CENTER_2F },
     { COMPOUND_STRING("AshfrostTown_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ASHFROST_TOWN_MART },
     { COMPOUND_STRING("AshfrostTown_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ASHFROST_TOWN_HOUSE1 },
     { COMPOUND_STRING("AshfrostTown_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_ASHFROST_TOWN_HOUSE2 },
@@ -217,8 +219,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorOldale_0[] =
 {
     { COMPOUND_STRING("OldaleTown_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_OLDALE_TOWN_HOUSE1 },
     { COMPOUND_STRING("OldaleTown_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_OLDALE_TOWN_HOUSE2 },
-    { COMPOUND_STRING("OldaleTown_PokemonCent"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_OLDALE_TOWN_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("OldaleTown_PokemonCent"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_OLDALE_TOWN_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("OldaleTown_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_OLDALE_TOWN_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("OldaleTown_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_OLDALE_TOWN_POKEMON_CENTER_2F },
     { COMPOUND_STRING("OldaleTown_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_OLDALE_TOWN_MART },
     { NULL }
 };
@@ -226,8 +228,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorOldale_0[] =
 static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorDewford_0[] =
 {
     { COMPOUND_STRING("DewfordTown_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_DEWFORD_TOWN_HOUSE1 },
-    { COMPOUND_STRING("DewfordTown_PokemonCen"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_DEWFORD_TOWN_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("DewfordTown_PokemonCen"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_DEWFORD_TOWN_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("DewfordTown_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_DEWFORD_TOWN_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("DewfordTown_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_DEWFORD_TOWN_POKEMON_CENTER_2F },
     { COMPOUND_STRING("DewfordTown_Gym"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_DEWFORD_TOWN_GYM },
     { COMPOUND_STRING("DewfordTown_Hall"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_DEWFORD_TOWN_HALL },
     { COMPOUND_STRING("DewfordTown_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_DEWFORD_TOWN_HOUSE2 },
@@ -241,8 +243,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorLavaridge_0[] =
     { COMPOUND_STRING("LavaridgeTown_Gym_B1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVARIDGE_TOWN_GYM_B1F },
     { COMPOUND_STRING("LavaridgeTown_House"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVARIDGE_TOWN_HOUSE },
     { COMPOUND_STRING("LavaridgeTown_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVARIDGE_TOWN_MART },
-    { COMPOUND_STRING("LavaridgeTown_PokemonC"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("LavaridgeTown_PokemonC"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVARIDGE_TOWN_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("LavaridgeTown_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("LavaridgeTown_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LAVARIDGE_TOWN_POKEMON_CENTER_2F },
     { NULL }
 };
 
@@ -252,8 +254,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorFallarbor_0[] =
     { COMPOUND_STRING("FallarborTown_BattleTe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FALLARBOR_TOWN_BATTLE_TENT_LOBBY },
     { COMPOUND_STRING("FallarborTown_BattleTe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FALLARBOR_TOWN_BATTLE_TENT_CORRIDOR },
     { COMPOUND_STRING("FallarborTown_BattleTe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FALLARBOR_TOWN_BATTLE_TENT_BATTLE_ROOM },
-    { COMPOUND_STRING("FallarborTown_PokemonC"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("FallarborTown_PokemonC"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FALLARBOR_TOWN_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("FallarborTown_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("FallarborTown_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FALLARBOR_TOWN_POKEMON_CENTER_2F },
     { COMPOUND_STRING("FallarborTown_CozmosHo"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FALLARBOR_TOWN_COZMOS_HOUSE },
     { COMPOUND_STRING("FallarborTown_MoveRele"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FALLARBOR_TOWN_MOVE_RELEARNERS_HOUSE },
     { NULL }
@@ -265,8 +267,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorVerdanturf_0[] =
     { COMPOUND_STRING("VerdanturfTown_BattleT"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_VERDANTURF_TOWN_BATTLE_TENT_CORRIDOR },
     { COMPOUND_STRING("VerdanturfTown_BattleT"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_VERDANTURF_TOWN_BATTLE_TENT_BATTLE_ROOM },
     { COMPOUND_STRING("VerdanturfTown_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_VERDANTURF_TOWN_MART },
-    { COMPOUND_STRING("VerdanturfTown_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("VerdanturfTown_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_VERDANTURF_TOWN_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("VerdanturfTown_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("VerdanturfTown_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_VERDANTURF_TOWN_POKEMON_CENTER_2F },
     { COMPOUND_STRING("VerdanturfTown_WandasH"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_VERDANTURF_TOWN_WANDAS_HOUSE },
     { COMPOUND_STRING("VerdanturfTown_Friends"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_VERDANTURF_TOWN_FRIENDSHIP_RATERS_HOUSE },
     { COMPOUND_STRING("VerdanturfTown_House"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_VERDANTURF_TOWN_HOUSE },
@@ -275,8 +277,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorVerdanturf_0[] =
 
 static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorPacifidlog_0[] =
 {
-    { COMPOUND_STRING("PacifidlogTown_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("PacifidlogTown_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("PacifidlogTown_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("PacifidlogTown_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_2F },
     { COMPOUND_STRING("PacifidlogTown_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PACIFIDLOG_TOWN_HOUSE1 },
     { COMPOUND_STRING("PacifidlogTown_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PACIFIDLOG_TOWN_HOUSE2 },
     { COMPOUND_STRING("PacifidlogTown_House3"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PACIFIDLOG_TOWN_HOUSE3 },
@@ -291,8 +293,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorPetalburg_0[] =
     { COMPOUND_STRING("PetalburgCity_Gym"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PETALBURG_CITY_GYM },
     { COMPOUND_STRING("PetalburgCity_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PETALBURG_CITY_HOUSE1 },
     { COMPOUND_STRING("PetalburgCity_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PETALBURG_CITY_HOUSE2 },
-    { COMPOUND_STRING("PetalburgCity_PokemonC"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PETALBURG_CITY_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("PetalburgCity_PokemonC"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PETALBURG_CITY_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("PetalburgCity_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PETALBURG_CITY_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("PetalburgCity_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PETALBURG_CITY_POKEMON_CENTER_2F },
     { COMPOUND_STRING("PetalburgCity_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_PETALBURG_CITY_MART },
     { NULL }
 };
@@ -310,8 +312,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorSlateport_0[] =
     { COMPOUND_STRING("SlateportCity_OceanicM"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SLATEPORT_CITY_OCEANIC_MUSEUM_2F },
     { COMPOUND_STRING("SlateportCity_Harbor"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SLATEPORT_CITY_HARBOR },
     { COMPOUND_STRING("SlateportCity_House"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SLATEPORT_CITY_HOUSE },
-    { COMPOUND_STRING("SlateportCity_PokemonC"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SLATEPORT_CITY_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("SlateportCity_PokemonC"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SLATEPORT_CITY_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("SlateportCity_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SLATEPORT_CITY_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("SlateportCity_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SLATEPORT_CITY_POKEMON_CENTER_2F },
     { COMPOUND_STRING("SlateportCity_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SLATEPORT_CITY_MART },
     { NULL }
 };
@@ -323,8 +325,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorMauville_0[] =
     { COMPOUND_STRING("MauvilleCity_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MAUVILLE_CITY_HOUSE1 },
     { COMPOUND_STRING("MauvilleCity_GameCorne"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MAUVILLE_CITY_GAME_CORNER },
     { COMPOUND_STRING("MauvilleCity_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MAUVILLE_CITY_HOUSE2 },
-    { COMPOUND_STRING("MauvilleCity_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MAUVILLE_CITY_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("MauvilleCity_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MAUVILLE_CITY_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("MauvilleCity_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MAUVILLE_CITY_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("MauvilleCity_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MAUVILLE_CITY_POKEMON_CENTER_2F },
     { COMPOUND_STRING("MauvilleCity_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MAUVILLE_CITY_MART },
     { COMPOUND_STRING("MauvilleCity_House2_B1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MAUVILLE_CITY_HOUSE2_B1F },
     { NULL }
@@ -337,8 +339,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorRustboro_0[] =
     { COMPOUND_STRING("RustboroCity_DevonCorp"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_RUSTBORO_CITY_DEVON_CORP_3F },
     { COMPOUND_STRING("RustboroCity_Gym"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_RUSTBORO_CITY_GYM },
     { COMPOUND_STRING("RustboroCity_PokemonSc"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_RUSTBORO_CITY_POKEMON_SCHOOL },
-    { COMPOUND_STRING("RustboroCity_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_RUSTBORO_CITY_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("RustboroCity_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_RUSTBORO_CITY_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("RustboroCity_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_RUSTBORO_CITY_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("RustboroCity_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_RUSTBORO_CITY_POKEMON_CENTER_2F },
     { COMPOUND_STRING("RustboroCity_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_RUSTBORO_CITY_MART },
     { COMPOUND_STRING("RustboroCity_Flat1_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_RUSTBORO_CITY_FLAT1_1F },
     { COMPOUND_STRING("RustboroCity_Flat1_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_RUSTBORO_CITY_FLAT1_2F },
@@ -356,8 +358,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorFortree_0[] =
 {
     { COMPOUND_STRING("FortreeCity_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FORTREE_CITY_HOUSE1 },
     { COMPOUND_STRING("FortreeCity_Gym"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FORTREE_CITY_GYM },
-    { COMPOUND_STRING("FortreeCity_PokemonCen"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FORTREE_CITY_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("FortreeCity_PokemonCen"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FORTREE_CITY_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("FortreeCity_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FORTREE_CITY_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("FortreeCity_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FORTREE_CITY_POKEMON_CENTER_2F },
     { COMPOUND_STRING("FortreeCity_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FORTREE_CITY_MART },
     { COMPOUND_STRING("FortreeCity_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FORTREE_CITY_HOUSE2 },
     { COMPOUND_STRING("FortreeCity_House3"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FORTREE_CITY_HOUSE3 },
@@ -375,8 +377,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorLilycove_0[] =
     { COMPOUND_STRING("LilycoveCity_LilycoveM"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LILYCOVE_CITY_LILYCOVE_MUSEUM_2F },
     { COMPOUND_STRING("LilycoveCity_ContestLo"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LILYCOVE_CITY_CONTEST_LOBBY },
     { COMPOUND_STRING("LilycoveCity_ContestHa"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LILYCOVE_CITY_CONTEST_HALL },
-    { COMPOUND_STRING("LilycoveCity_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LILYCOVE_CITY_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("LilycoveCity_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LILYCOVE_CITY_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("LilycoveCity_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LILYCOVE_CITY_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("LilycoveCity_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LILYCOVE_CITY_POKEMON_CENTER_2F },
     { COMPOUND_STRING("LilycoveCity_UnusedMar"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LILYCOVE_CITY_UNUSED_MART },
     { COMPOUND_STRING("LilycoveCity_PokemonTr"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LILYCOVE_CITY_POKEMON_TRAINER_FAN_CLUB },
     { COMPOUND_STRING("LilycoveCity_Harbor"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LILYCOVE_CITY_HARBOR },
@@ -400,8 +402,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorMossdeep_0[] =
     { COMPOUND_STRING("MossdeepCity_Gym"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MOSSDEEP_CITY_GYM },
     { COMPOUND_STRING("MossdeepCity_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MOSSDEEP_CITY_HOUSE1 },
     { COMPOUND_STRING("MossdeepCity_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MOSSDEEP_CITY_HOUSE2 },
-    { COMPOUND_STRING("MossdeepCity_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MOSSDEEP_CITY_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("MossdeepCity_PokemonCe"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MOSSDEEP_CITY_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("MossdeepCity_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MOSSDEEP_CITY_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("MossdeepCity_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MOSSDEEP_CITY_POKEMON_CENTER_2F },
     { COMPOUND_STRING("MossdeepCity_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MOSSDEEP_CITY_MART },
     { COMPOUND_STRING("MossdeepCity_House3"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MOSSDEEP_CITY_HOUSE3 },
     { COMPOUND_STRING("MossdeepCity_StevensHo"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_MOSSDEEP_CITY_STEVENS_HOUSE },
@@ -417,8 +419,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorSootopolis_0[] =
 {
     { COMPOUND_STRING("SootopolisCity_Gym_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SOOTOPOLIS_CITY_GYM_1F },
     { COMPOUND_STRING("SootopolisCity_Gym_B1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SOOTOPOLIS_CITY_GYM_B1F },
-    { COMPOUND_STRING("SootopolisCity_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SOOTOPOLIS_CITY_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("SootopolisCity_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SOOTOPOLIS_CITY_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("SootopolisCity_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SOOTOPOLIS_CITY_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("SootopolisCity_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SOOTOPOLIS_CITY_POKEMON_CENTER_2F },
     { COMPOUND_STRING("SootopolisCity_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SOOTOPOLIS_CITY_MART },
     { COMPOUND_STRING("SootopolisCity_House1"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SOOTOPOLIS_CITY_HOUSE1 },
     { COMPOUND_STRING("SootopolisCity_House2"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_SOOTOPOLIS_CITY_HOUSE2 },
@@ -447,8 +449,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorEverGrande_0[] =
     { COMPOUND_STRING("EverGrandeCity_Hall5"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_EVER_GRANDE_CITY_HALL5 },
     { COMPOUND_STRING("EverGrandeCity_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F },
     { COMPOUND_STRING("EverGrandeCity_HallOfF"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_EVER_GRANDE_CITY_HALL_OF_FAME },
-    { COMPOUND_STRING("EverGrandeCity_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_EVER_GRANDE_CITY_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("EverGrandeCity_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_EVER_GRANDE_CITY_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("EverGrandeCity_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_EVER_GRANDE_CITY_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("EverGrandeCity_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_EVER_GRANDE_CITY_POKEMON_CENTER_2F },
     { COMPOUND_STRING("EverGrandeCity_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_2F },
     { NULL }
 };
@@ -774,8 +776,8 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_SpecialArea_1[] =
     { COMPOUND_STRING("BattleFrontier_Recepti"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_RECEPTION_GATE },
     { COMPOUND_STRING("BattleFrontier_Lounge8"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_LOUNGE8 },
     { COMPOUND_STRING("BattleFrontier_Lounge9"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_LOUNGE9 },
-    { COMPOUND_STRING("BattleFrontier_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F },
-    { COMPOUND_STRING("BattleFrontier_Pokemon"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_POKEMON_CENTER_2F },
+    { COMPOUND_STRING("BattleFrontier_PC_1F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F },
+    { COMPOUND_STRING("BattleFrontier_PC_2F"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_POKEMON_CENTER_2F },
     { COMPOUND_STRING("BattleFrontier_Mart"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_BATTLE_FRONTIER_MART },
     { COMPOUND_STRING("FarawayIsland_Entrance"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FARAWAY_ISLAND_ENTRANCE },
     { COMPOUND_STRING("FarawayIsland_Interior"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FARAWAY_ISLAND_INTERIOR },
@@ -810,12 +812,12 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_SpecialArea_1[] =
     { COMPOUND_STRING("NavelRock_Down11"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_NAVEL_ROCK_DOWN11 },
     { COMPOUND_STRING("NavelRock_Bottom"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_NAVEL_ROCK_BOTTOM },
     { COMPOUND_STRING("TrainerHill_Elevator"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_TRAINER_HILL_ELEVATOR },
+    { COMPOUND_STRING("LibertyGarden"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LIBERTY_GARDEN },
     { NULL }
 };
 
 static const struct DebugMenuOption sDebugMenu_ZoneWarp_SpecialArea_2[] =
 {
-    { COMPOUND_STRING("LibertyGarden"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_LIBERTY_GARDEN },
     { COMPOUND_STRING("FlowerParadise_Shore"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FLOWER_PARADISE_SHORE },
     { COMPOUND_STRING("FlowerParadise_Meadow"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)MAP_FLOWER_PARADISE_MEADOW },
     { NULL }
@@ -880,12 +882,10 @@ static const struct DebugMenuOption sDebugMenu_ZoneWarp_IndoorRoute124_0[] =
 
 static const struct DebugMenuOption sDebugMenu_Actions_ZoneWarp[] =
 {
+    { COMPOUND_STRING("Fully Ungrounded…"), DebugAction_OpenSubMenu, sDebugMenu_ZoneWarp_FullyUngrounded_0 },
     { COMPOUND_STRING("Eilanden/quests 1…"), DebugAction_OpenSubMenu, sDebugMenu_ZoneWarp_Grounded_0 },
     { COMPOUND_STRING("Eilanden/quests 2…"), DebugAction_OpenSubMenu, sDebugMenu_ZoneWarp_Grounded_1 },
     { COMPOUND_STRING("Eilanden/quests 3…"), DebugAction_OpenSubMenu, sDebugMenu_ZoneWarp_Grounded_2 },
-    { COMPOUND_STRING("Spacetime 1…"), DebugAction_OpenSubMenu, sDebugMenu_ZoneWarp_Spacetime_0 },
-    { COMPOUND_STRING("Spacetime 2…"), DebugAction_OpenSubMenu, sDebugMenu_ZoneWarp_Spacetime_1 },
-    { COMPOUND_STRING("Ultra Space…"), DebugAction_OpenSubMenu, sDebugMenu_ZoneWarp_UltraSpace_0 },
     { COMPOUND_STRING("TownsAndRoutes 1…"), DebugAction_OpenSubMenu, sDebugMenu_ZoneWarp_TownsAndRoutes_0 },
     { COMPOUND_STRING("TownsAndRoutes 2…"), DebugAction_OpenSubMenu, sDebugMenu_ZoneWarp_TownsAndRoutes_1 },
     { COMPOUND_STRING("IndoorLittleroot…"), DebugAction_OpenSubMenu, sDebugMenu_ZoneWarp_IndoorLittleroot_0 },

@@ -1,10 +1,11 @@
 #!/usr/bin/env python3
 """Project Grounded: debugmenu Utilities > "Zone warp…": warpt naar elke kaart van de game, per kaartgroep
-(eerst gMapGroup_Grounded, gMapGroup_Spacetime, gMapGroup_UltraSpace). Doel = warp 0 van de kaart (zonder warps: het midden).
+(eerst gMapGroup_FullyUngrounded, de skeletkaarten). Doel = warp 0 van de kaart (zonder warps: het midden).
 Genereert src/data/debug_zone_warps.h. Opnieuw draaien na nieuwe kaarten."""
 import json, re
 G = json.load(open('data/maps/map_groups.json'))
-FIRST = [('gMapGroup_Grounded', 'Eilanden/quests'), ('gMapGroup_Spacetime', 'Spacetime'), ('gMapGroup_UltraSpace', 'Ultra Space')]
+FIRST = [(g, l) for g, l in [('gMapGroup_FullyUngrounded', 'Fully Ungrounded'), ('gMapGroup_Grounded', 'Eilanden/quests')]
+         if g in G]
 # Jordi: 'eigenlijk alle areas in de game': eerst de post-game/eigen groepen, daarna elke andere kaartgroep
 GROUPS = FIRST + [(g, g[len('gMapGroup_'):][:18]) for g in G['group_order'] if g not in dict(FIRST)]
 def const(m):
@@ -20,7 +21,7 @@ for g, label in GROUPS:
         out.append('static const struct DebugMenuOption %s[] =\n{' % name)
         for m in chunk:
             mid = json.load(open('data/maps/%s/map.json' % m))['id']
-            out.append('    { COMPOUND_STRING("%s"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)%s },' % (m[:22], mid))
+            out.append('    { COMPOUND_STRING("%s"), DebugAction_Util_ZoneWarp, (const void *)(uintptr_t)%s },' % (m.replace("PokemonCenter", "PC")[:22], mid))
         out += ['    { NULL }', '};', '']
         menus.append((title, name))
 out.append('static const struct DebugMenuOption sDebugMenu_Actions_ZoneWarp[] =\n{')

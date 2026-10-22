@@ -12,3 +12,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Bewust blijven staan: 7 ongebruikte Kanto/N-overworldsprites (hernummeren is riskant), Stadium-trainerklassen, de trainerfoto-generatoren (maken ook nog gebruikte foto's), de Frontier-kaarten (gaan mee met Hoenn).
 - **Concept:** `docs/concept/CONCEPT.md` (besloten: starters Fighting → Dark → Psychic, gym 1 Ground in Uyuni, gym 2 Ice, gymtypes en E4, Inca-trio + Pachamama, toon) en `docs/concept/IDEEEN.md`.
 - **Regiokaart, schets 1:** `docs/concept/regiokaart_namen.png`, met `tools/concept/regiokaart.py` in de stijl van de Emerald-kaart (kleuren en stadsiconen uit `graphics/pokenav/region_map`).
+
+### [v0.0.3] - Spacetime en Ultra Space eruit (deel 1); concept, sprites en tilesets
+- **Verwijderd:** de kaartgroepen Spacetime en Ultra Space (66 kaarten, 63 layouts, 65 tilesets), Azure Flute, Gen 1-GHOST, Ultra-portalen, 71 trainers (o.a. Shy Guy), 18 trainerfoto's, Yoshi/Calyrex-partners, 33 overworld-sprites, de Wario/Boo/Shy Guy-transities. Keccles blijft. ROM: 814 KB → 1,94 MB vrij. Muziek van die gebieden staat er nog (zie `docs/concept/STAND_TECHNIEK.md`).
+- **Concept:** opgesplitst in CONCEPT/REGIO/VERHAAL/POKEMON/MUZIEK; dex-selectie voorlopig af (±441 soorten); gymlocaties; protagonist, Keccles als compagnon.
+- **Sprites:** starters fase 1, rondes 1–4 (`docs/concept/sprites/`), spriteplan met Pokémon-design-sectie.
+- **Tilesets:** assetbibliotheek (`tilesets/`), Andes-primary, La Paz en altiplano ronde 2, `TILESET_PLAN.md`.

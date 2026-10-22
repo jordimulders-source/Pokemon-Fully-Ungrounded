@@ -132,6 +132,8 @@ for _ in range(2):
     q = np.pad(land, 1, mode='edge').astype(int)
     nb = sum(np.roll(np.roll(q, dy, 0), dx, 1) for dy in (-1, 0, 1) for dx in (-1, 0, 1))[1:-1, 1:-1]
     land = np.where(nb >= 6, True, np.where(nb <= 3, False, land))
+# fjorden: stroken land van 1-2 px breed weg (Hoenn-eilanden zijn minstens ±5 px breed)
+land = np.where(cy > 30, dilate(erode(land)) & land, land)
 land = drop_small(land, 24)
 land_lab, land_sizes = components(land)
 mainland = land & (land_lab == int(np.argmax(land_sizes)))
@@ -228,7 +230,9 @@ water_in = (lakes | river) & land
 # rivieren en meren met een donkergroene oever van 1 px (zoals elke kust in Hoenn)
 wbank = dilate(water_in) & land & ~water_in
 paint(~land, SEA, stripes)
-paint(land & ((biome == 0) | (coast & (biome == 3))), GREEN, lvl)
+# de lichtste groentint is in Hoenn zeldzaam (alleen de toppen van de hoogste heuvels)
+glvl = np.where((lvl == 4) & (elev < 0.95), 3, lvl)
+paint(land & ((biome == 0) | (coast & (biome == 3))), GREEN, glvl)
 # woestijn: vlak zand in Hoenn-strepen (zoals Route 111 en de stranden); duinen/hoogland als geneste vlekken
 # in dezelfde twee zandkleuren
 dz = land & (biome == 2)
@@ -239,8 +243,9 @@ img[dhi] = SAND[1]
 img[erode(dhi) & (dlv >= 4) | erode(erode(dhi))] = SAND[0]
 # sneeuw: witte toppen met een grijze rand, op de groene ondergrond; de kust blijft donkergroen
 sm = land & (biome == 3) & ~coast
+# twee tinten zoals de heuvels: grijs lager, wit hoger, met een grijze rand van 1 px
 img[sm] = SNOW[1]
-img[erode(sm) & (lvl >= 3)] = SNOW[0]
+img[erode(sm) & ((lvl >= 4) | ((lvl >= 2) & (elev > 0.62 + (hills - 0.5) * 0.3)))] = SNOW[0]
 # zoutvlakte: vlak en spiegelend, dus strepen (wit/grijs) zoals de zee
 sa = land & (biome == 4)
 paint(sa, SALT, stripes)
@@ -397,8 +402,8 @@ img[bank] = GREEN[0]
 rmask = np.kron(route, np.ones((8, 8), bool))
 smask = np.kron(sea_route, np.ones((8, 8), bool))
 pl = lvl.copy()
-pl[biome == 2] = np.clip(lvl[biome == 2] + 1, 2, 3)   # over zand: oranje blijft zichtbaar tegen de zandkleur
-pl[(biome == 3) | (biome == 4)] = 4
+pl[biome == 2] = np.clip(lvl[biome == 2], 1, 2)   # over zand: donkerder oranje, anders valt de route weg in het zand
+pl[(biome == 3) | (biome == 4)] = 3   # over sneeuw/zout: licht geel (niet de zandkleur)
 pl[coast] = 0
 paint(rmask, ROUTE, pl)
 # water op een landroute wordt waterroute-blauw (zoals het meertje op Route 120 in Hoenn)

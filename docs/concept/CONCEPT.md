@@ -36,7 +36,7 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 - **Starters: Fighting → Dark → Psychic.**
   - **Fighting-starter: een schattige, fluffy alpaca** (Jordi). Het is de **lamoïden-lijn** (Lamini): binnen de lijn spelen met de soorten (alpaca, lama, vicuña, guanaco) als evolutiestadia; **geen vertakking** (Jordi). Evolueert naar een **lama** (groter, sterker). **Laatste evolutie draagt de bolhoed (bombín) van de Boliviaanse cholita** (Jordi: "ijzersterk"), in cholita-luchadora-stijl.
 - Dex: ±400–500 soorten uit de National Dex, plus regional forms en ±100 fakemon. Alle soorten gebaseerd op Zuid-Amerikaanse dieren gaan mee (Slakoth-lijn, Pikipek-lijn, Flamigo, …) en Sigilyph.
-- **Regionale vogel (Pidgey-rol): eindevolutie is een condor** (Jordi). Let op: het legendary van Hanan Pacha is ook een condor; die twee moeten duidelijk verschillen.
+- **Regionale vogel (Pidgey-rol): eindevolutie is een condor** (Jordi). Het legendary van Hanan Pacha is ook een condor; twee condors is geen probleem (Jordi: "Kanto had al meerdere muizen").
 - Fakemon zeker: lama, alpaca, vicuña, guanaco (alle vier, met iets met hun verwantschap), coati, capibara, condor, pinguïns.
 - Waar een bestaande Pokémon al past (Alolan Exeggutor bij de waspalmen), kan het twee kanten op: gewoon gebruiken, of een eigen regional form/kleurvariant. Per geval kiezen.
 - Spritewerk: oefenen, beginnend met regional forms en evoluties.

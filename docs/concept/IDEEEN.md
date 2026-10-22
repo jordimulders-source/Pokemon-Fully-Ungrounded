@@ -57,3 +57,4 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - Natuur staat centraal (Jordi): zoveel mogelijk aandacht voor de veelzijdige natuur van de regio.
 
 - Kameelachtigen: de starter is de lamoïden-lijn (zie CONCEPT). Later (Jordi): een wilde lijn vicuña → guanaco.
+- Voorstel vogellijn: condorkuiken (pluizig grijs) → jonge condor (bruin, zonder kraag) → volwassen condor (zwart, witte kraag). Kolibrie als losse lijn (kandidaat Psychic-starter of Flying/Fairy). Jordi twijfelt nog: kolibrie → condor of los.

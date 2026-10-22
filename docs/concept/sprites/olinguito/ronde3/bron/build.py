@@ -1,0 +1,242 @@
+"""Olinguito ronde 2 ("Zakkenroller"): bouwt anim_front.png + normal.pal.
+
+  python3 build.py <uitmap>
+
+Vormen + automatische schaduw/selout via tools/concept/sprites/shapepaint.py,
+daarna gezicht, munt en details met de hand als ASCII-patches.
+"""
+import sys, os
+sys.path.insert(0, '/home/user/projectgrounded/tools/concept/sprites')
+import numpy as np
+from shapepaint import Canvas, patch, fix_outline, save_indexed, save_pal, hexc, hooks
+
+PAL = [hexc(h) for h in [
+    '#7BD5A4',  # 0 transparant
+    '#C8805A', '#A65A34', '#7A3E2A', '#4E2621',   # 1-4 vacht: hooglicht, BASIS, schaduw, donkerst (selout, plooien, mond)
+    '#5A4A5E', '#2E2436',                         # 5-6 donker: handschoenen, sokken, masker, ringen (BASIS 5? zie notities)
+    '#EAD2A4', '#B8946A',                         # 7-8 crème: snuit, buik, binnenoor
+    '#FFF2C4', '#F5C842', '#B0802C',              # 9-11 goud: ivoor-hooglicht, GOUD (iris, munt, klauwen), schaduw
+    '#4A9E58', '#28683E',                         # 12-13 halsdoek: BASIS, schaduw
+    '#FFFFFF',                                    # 14 wit: glans, hoektand
+    '#101010',                                    # 15 omlijning
+]]
+
+RAMPS = {
+    'vacht': [1, 2, 3, 4],
+    'donker': [5, 5, 6, 6],
+    'creme': [7, 7, 8, 8],
+    'klauw': [9, 9, 11, 11],
+    'munt': [9, 10, 11, 11],
+    'doek': [12, 12, 13, 13],
+}
+# Alles is ontworpen op een groter raster en wordt met S verkleind rond het steunpunt
+# (midden onder): lijf en kop worden kleiner (fase-1-maat), klauwen en ogen blijven
+# even groot in pixels (relatief dus langer/groter, zoals bij echte basisvormen).
+S, AX, AY = 0.84, 32.0, 59.0
+
+
+def T(x, y):
+    return AX + S * (x - AX), AY + S * (y - AY)
+
+
+def Ti(x, y):
+    a, b = T(x, y)
+    return int(round(a)), int(round(b))
+
+
+class SCanvas(Canvas):
+    def _add(self, name, part, mask, **kw):
+        if kw.get('hl'):
+            hx, hy, hr = kw['hl']
+            kw['hl'] = (*T(hx, hy), hr * S)
+        return Canvas._add(self, name, part, mask, **kw)
+
+    def ellipse(self, name, part, cx, cy, rx, ry, rot=0.0, **kw):
+        cx, cy = T(cx, cy)
+        return self._add(name, part, Canvas.ellipse_mask(self, cx, cy, rx * S, ry * S, rot), **kw)
+
+    def ellipse_mask(self, cx, cy, rx, ry, rot=0.0):
+        cx, cy = T(cx, cy); rx, ry = rx * S, ry * S
+        return Canvas.ellipse_mask(self, cx, cy, rx, ry, rot)
+
+    def poly(self, name, part, pts, **kw):
+        return Canvas.poly(self, name, part, [T(x, y) for x, y in pts], **kw)
+
+    def tube(self, name, part, pts, widths, **kw):
+        return Canvas.tube(self, name, part, [T(x, y) for x, y in pts], [w * S for w in widths], **kw)
+
+
+def shift_claws(claws):
+    out = []
+    for p in claws:
+        bx, by = p[0]
+        nx, ny = Ti(bx, by)
+        out.append([(x - bx + nx, y - by + ny) for x, y in p])
+    return out
+
+
+K = {'h': 1, 'v': 2, 's': 3, 'd': 4, 'm': 5, 'M': 6, 'c': 7, 'C': 8,
+     'i': 9, 'g': 10, 'G': 11, 'n': 12, 'N': 13, 'w': 14, 'o': 15}
+
+
+def ringed_tail(c, pts, widths, rings, tipdark=0.84):
+    o = c.tube('staart', 'vacht', pts, widths, shade=2.5)
+    t = o.t
+
+    def paint(x, y, cur):
+        tv = t[y, x]
+        dark = tv >= tipdark or any(a <= tv < b for a, b in rings)
+        if dark:
+            return 6 if cur in (3, 4) else 5
+        return None
+    o.paint = paint
+    return o
+
+
+def head(c, dy=0):
+    c.ellipse('oor1', 'vacht', 16.5, 14 + dy, 4.3, 4.5, shade=2)
+    c.ellipse('oor2', 'vacht', 35, 12.5 + dy, 4.6, 4.8, shade=2)
+    c.ellipse('kop', 'vacht', 26, 23 + dy, 11.5, 10.5, shade=2.1, hl=(20, 16 + dy, 3.5))
+    c.ellipse('snuit', 'creme', 16.5, 27.5 + dy, 5, 3.6, shade=2)
+
+
+def _face_rows(eyes):
+    """Masker (x16..x36, y23..y28) met ogen erover. eyes: lijst (x, y, rijen)."""
+    rows = {23: [(19, 23), (27, 34)], 24: [(17, 35)], 25: [(16, 36)], 26: [(16, 36)],
+            27: [(17, 35)], 28: [(18, 23), (26, 34)]}
+    g = {}
+    for y, spans in rows.items():
+        for a, b in spans:
+            for x in range(a, b + 1):
+                g[(x, y)] = 'M' if y == 28 or x in (a, b) and y >= 26 else 'm'
+    g[(36, 25)] = 'M'
+    for ex, ey, er in eyes:
+        for dy, row in enumerate(er):
+            for dx, ch in enumerate(row):
+                if ch != '.':
+                    g[(ex + dx, ey + dy)] = ch
+    return g
+
+
+FACE_OPEN = _face_rows([
+    (18, 25, ['ooooo', 'owgGo', '.ooo.']),
+    (26, 24, ['oooooooo', 'owggoggo', 'oggGoGGo', '.oooooo.']),
+])
+FACE_CLOSED = _face_rows([
+    (18, 25, ['..o..', '.ogo.', 'og.go']),
+    (26, 24, ['..oooo..', '.oggggo.', 'ogG..Ggo', 'o......o']),
+])
+
+
+def face(idx, dy=0, closed=False):
+    if os.environ.get('NOPATCH'):
+        return
+    # binnenoren donker (het masker-donker: hoort bij de 'inbrekerskleuren')
+    x, y = Ti(16.5, 14); patch(idx, x - 1, y - 2 + dy, ['.M', 'MM', 'M.'], K)
+    x, y = Ti(35, 12.5); patch(idx, x - 1, y - 2 + dy, ['MM', 'MM', '.M'], K)
+    for (x, y), ch in (FACE_CLOSED if closed else FACE_OPEN).items():
+        idx[y + dy, x] = K[ch]
+    # neus
+    patch(idx, 13, 30 + dy, ['ooo', 'oo.'], K)
+    if not closed:
+        # scheve grijns: één mondhoek omhoog, hoektand
+        patch(idx, 16, 32 + dy, [
+            'o.....o',
+            '.ooooo.',
+            '....w..',
+        ], K)
+    else:
+        # bek open ("hehe")
+        patch(idx, 16, 32 + dy, [
+            'o.oooooo',
+            '.owdddo.',
+            '..oddo..',
+            '...oo...',
+        ], K)
+
+
+def common_body(c, dy=0):
+    c.ellipse('voet2', 'donker', 39, 56, 4, 2.2, line='black')
+    c.ellipse('lijf', 'vacht', 31, 45, 10, 11, shade=2.2, hl=(26, 39, 3))
+    b = c.ellipse('buik', 'creme', 27.5, 47.5, 5, 7, shade=2)
+    b.mask &= c.ellipse_mask(31, 45, 9.5, 10.5)
+    c.poly('doek', 'doek', [(19, 31 + dy), (37, 30 + dy), (37, 34 + dy), (30, 41 + dy), (27, 41 + dy), (21, 35 + dy)], shade=2, line='dark')
+    c.poly('doek', 'doek', [(36, 31 + dy), (41, 32 + dy), (42, 36 + dy), (39, 37 + dy), (36, 35 + dy)])
+
+
+def frame1():
+    c = SCanvas(64, 64, RAMPS)
+    Canvas.selout_parts = {'vacht', 'creme', 'doek'}
+    ringed_tail(c, [(37, 53), (46, 52), (51.5, 46), (53.5, 38), (52, 30), (48, 25), (44, 23.5)],
+                [6.5, 7, 7, 6.5, 6, 4.5, 1.5], rings=[(0.22, 0.29), (0.43, 0.5), (0.63, 0.7)])
+    common_body(c)
+    head(c)
+    # verste arm (bungelt voor de borst), zwarte handschoen tot de elleboog
+    c.tube('arm1', 'vacht', [(25, 38), (21, 38)], [5.5, 5], line='dark', shade=2)
+    c.tube('hand1', 'donker', [(22, 38), (15, 38)], [5, 4.5], line='black', shade=2)
+    c.ellipse('hand1', 'donker', 13, 39, 3.6, 3)
+    # munt op schoot
+    c.ellipse('munt', 'munt', 26.5, 50.5, 5, 5, line='black', shade=2, hl=(25, 48.5, 1.6))
+    # dichtste arm naar de munt
+    c.tube('arm2', 'vacht', [(37, 39), (38, 44)], [6, 5.5], line='dark', shade=2)
+    c.tube('hand2', 'donker', [(38, 44), (36, 48.5), (33.5, 50.5)], [5.5, 5, 4.5], line='black', shade=2)
+    c.ellipse('voet1', 'donker', 22, 55.5, 5.5, 2.6, line='black', shade=1.5)
+    idx = c.render()
+    face(idx)
+    # munt: geslagen teken (ster/kroon) en rand
+    x, y = Ti(26.5, 50.5); patch(idx, x - 1, y - 1, ['.G.', 'G.G', '.G.'], K)
+    # klauwen: bungelend (3), om de munt (2), achtervoet (2)
+    hooks(idx, shift_claws([
+        [(10, 42), (10, 43), (9, 44), (8, 45), (7, 46), (6, 47), (5, 47), (4, 46)],
+        [(13, 42), (13, 43), (13, 44), (13, 45), (13, 46), (13, 47), (12, 48), (12, 49), (11, 50), (10, 50)],
+        [(16, 42), (16, 43), (17, 44), (18, 45), (18, 46), (19, 47), (19, 48), (18, 49), (17, 50)],
+        [(31, 48), (30, 47), (29, 47)],
+        [(31, 52), (30, 53), (29, 53)],
+        [(17, 55), (16, 55), (15, 55), (14, 56), (13, 56)],
+        [(18, 57), (17, 58), (16, 58), (15, 58)],
+    ]), keep=(5, 6))
+    return fix_outline(idx, selout=(4, 8, 13))
+
+
+def frame2():
+    c = SCanvas(64, 64, RAMPS)
+    Canvas.selout_parts = {'vacht', 'creme', 'doek'}
+    ringed_tail(c, [(37, 53), (47, 53), (53, 47), (56, 39), (55, 31), (52, 26), (48, 24)],
+                [6.5, 7, 7, 6.5, 6, 4.5, 1.5], rings=[(0.22, 0.29), (0.43, 0.5), (0.63, 0.7)])
+    common_body(c, dy=-1 / S)
+    head(c, dy=-1 / S)
+    # verste arm wijd naar links-omhoog
+    c.tube('arm1', 'vacht', [(24, 37), (19, 36)], [5.5, 5], line='dark', shade=2)
+    c.tube('hand1', 'donker', [(20, 36), (13, 34.5)], [5, 4.5], line='black', shade=2)
+    c.ellipse('hand1', 'donker', 11, 34, 3.2, 3.2)
+    # dichtste arm omhoog rechts, munt opgegooid
+    c.tube('arm2', 'vacht', [(36, 38), (40, 34)], [6, 5.5], line='dark', shade=2)
+    c.tube('hand2', 'donker', [(40, 34), (43, 29)], [5.5, 4.5], line='black', shade=2)
+    c.ellipse('hand2', 'donker', 43.5, 28, 3.3, 3)
+    c.ellipse('munt', 'munt', 47, 8.5, 2.6, 4.2, line='black', shade=1.5)
+    c.ellipse('voet1', 'donker', 22, 55.5, 5.5, 2.6, line='black', shade=1.5)
+    idx = c.render()
+    face(idx, dy=-1, closed=True)
+    patch(idx, 44, 15, ['i', 'g', 'G'], K)
+    hooks(idx, shift_claws([
+        [(8, 32), (7, 31), (6, 30), (5, 29), (5, 28), (4, 27), (4, 26)],
+        [(8, 34), (7, 34), (6, 34), (5, 33), (4, 33), (3, 32), (2, 31)],
+        [(9, 37), (8, 37), (7, 38), (6, 38), (5, 38), (4, 37), (3, 36)],
+        [(41, 25), (41, 24), (40, 23), (40, 22), (40, 21), (41, 20), (42, 19)],
+        [(44, 25), (44, 24), (45, 23), (45, 22), (46, 21), (47, 20), (48, 20)],
+        [(46, 27), (47, 26), (48, 26), (49, 25), (50, 25), (51, 26)],
+        [(17, 55), (16, 55), (15, 55), (14, 56), (13, 56)],
+        [(18, 57), (17, 58), (16, 58), (15, 58)],
+    ]), keep=(5, 6))
+    return fix_outline(idx, selout=(4, 8, 13))
+
+
+NOPATCH = os.environ.get('NOPATCH')
+
+if __name__ == '__main__':
+    out = sys.argv[1] if len(sys.argv) > 1 else '.'
+    os.makedirs(out, exist_ok=True)
+    f1, f2 = frame1(), frame2()
+    save_indexed(os.path.join(out, 'anim_front.png'), [f1, f2], PAL)
+    save_pal(os.path.join(out, 'normal.pal'), PAL)
+    print('ok', out)

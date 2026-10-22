@@ -7,13 +7,13 @@
 | Categorie | Lijnen | Soorten |
 |---|---|---|
 | 1. Past in Zuid-Amerika | 84 | 159 |
-| 2. Niet Zuid-Amerikaans, hoort er toch in (iconisch of Ungrounded-revisie) | 123 | 276 |
-| **Genomineerd (1 + 2)** | **207** | **435** |
-| 3. Twijfel / bewust niet (geen legendaries) | 241 | 510 |
+| 2. Niet Zuid-Amerikaans, hoort er toch in (iconisch of Ungrounded-revisie) | 124 | 279 |
+| **Genomineerd (1 + 2)** | **208** | **438** |
+| 3. Twijfel / bewust niet (geen legendaries) | 240 | 507 |
 | Legendaries/mythicals (apart, sectie 4) | 24 | – |
 | Regional forms (sectie 5) | 25 lijnen (waarvan 1 besloten: Venomoth) | – |
 
-- **435 soorten** uit de National Dex, binnen het doel van 400–500. Met ±100 fakemon en ±10–15 regional forms komt de regionale dex op ±575–600. Wil Jordi richting 400, dan zijn de B-lijnen zonder Zuid-Amerikaanse band en zonder Ungrounded-revisie het eerst te schrappen (Kanto-starters, Munchlax, Audino, Ditto, Happiny, Mimikyu e.d.).
+- **438 soorten** uit de National Dex, binnen het doel van 400–500. Met ±100 fakemon en ±10–15 regional forms komt de regionale dex op ±575–600. Wil Jordi richting 400, dan zijn de B-lijnen zonder Zuid-Amerikaanse band en zonder Ungrounded-revisie het eerst te schrappen (Kanto-starters, Munchlax, Audino, Ditto, Happiny, Mimikyu e.d.).
 - Telling per soort: elke evolutie telt mee, ook baby's; Mega's en Gmax tellen niet. Regionale vormen van andere regio's tellen alleen mee als ze zelf genomineerd zijn (Alolan Sandshrew/Vulpix/Exeggutor, Hoenn-Grimer).
 - **Opvallendste nominaties:** Hippopotas (Escobars nijlpaarden in Colombia), Nosepass (moai, Paaseiland), Bidoof (bevers als ecologische ramp in Vuurland), Yamask (Chinchorro-mummies), Smeargle (Cueva de las Manos), Bouffalant (waterbuffelpolitie op Marajó), Combee (Afrikaanse 'killer bees' uit Brazilië), Tynamo (sidderaal), Squawkabilly (monniksparkieten-'bendes' in de steden), Mew (volgens de lore ontdekt in Guyana).
 - **Grootste gaten** (sectie 6–8): Fire en Fighting zijn het dunst; tepuis, Lípez/Uyuni, Galápagos en de vulkanen hebben te weinig bestaande soorten; de altiplano mist vroege Grass, Bug en Flying. Die plekken zijn voor de fakemon.
@@ -111,7 +111,7 @@ Gebaseerd op een Zuid-Amerikaans dier, plant of mythe, of ecologisch heel plausi
 | Oricorio | Fire/Flying | Dansvogel: kandidaat voor tango/samba/cueca-stijlen als regionale vormen | PAM, STAD | – |
 | Squawkabilly | Normal/Flying | Monniksparkiet uit Argentinië: leeft in luidruchtige 'bendes' in steden | STAD, PAM | – |
 
-## 2. Niet Zuid-Amerikaans, hoort er toch in (123 lijnen, 276 soorten)
+## 2. Niet Zuid-Amerikaans, hoort er toch in (124 lijnen, 279 soorten)
 
 Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dekking van gyms/E4, of uniek veranderd in Ungrounded. Biome = waar hij het minst uit de toon valt.
 
@@ -192,6 +192,7 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Rotom | Electric/Ghost | Iconisch; Electric-E4 | STAD | – |
 | Drilbur → Excadrill | Drilbur: Ground; Excadrill: Ground/Steel | Ground voor gym 1; Excadrill populair | ALT, GROT | – |
 | Timburr → Gurdurr → Conkeldurr | Fighting | Bouwvakkers in de steden; iconisch | STAD | – |
+| Sandile → Krokorok → Krookodile | Ground/Dark | Jordi 22 okt: erin (vroege Ground voor gym 1; kandidaat kaaiman-vorm). Woestijnkrokodil; wel kandidaat voor een kaaiman-vorm (sectie 5) | – | – |
 | Scraggy → Scrafty | Dark/Fighting | Straatbendes; past bij de gangs | STAD | – |
 | Trubbish → Garbodor | Poison | Afval in de steden; natuurvernietiging; Poison-gym | STAD | – |
 | Frillish → Jellicent | Water/Ghost | Ghost/Water in zee | ZEE | – |
@@ -241,7 +242,7 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Tatsugiri | Dragon/Water | Jordi 22 okt: erin. Sushi | – | – |
 | Basculin → Basculegion | Basculin: Water; Basculegion: Water/Ghost | Rivierroofvis; kandidaat paiche/arapaima-vorm | AMA | – |
 
-## 3. Twijfelgevallen en bewust niet (241 lijnen, 510 soorten)
+## 3. Twijfelgevallen en bewust niet (240 lijnen, 507 soorten)
 
 Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze soorten post-game komen (Safari, Spacetime, ruilen) zonder in de regionale dex te staan.
 
@@ -345,7 +346,7 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Cetoddle → Cetitan | Ice | IJswalvis; ijsniche is gevuld |
 | Sinistea → Polteageist | Ghost | Thee; mate gaat via Poltchageist |
 
-### 3b. Geen band met de regio (eventueel post-game) (146 lijnen)
+### 3b. Geen band met de regio (eventueel post-game) (145 lijnen)
 
 | Lijn | Types (repo) | Reden |
 |---|---|---|
@@ -420,7 +421,6 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Sewaddle → Swadloon → Leavanny | Bug/Grass | Jordi 22 okt: geschrapt. Bladsnijders; Bug/Grass voor het Bug-gym |
 | Cottonee → Whimsicott | Grass/Fairy | Katoen; zwakke band |
 | Petilil → Lilligant | Grass | Geen band |
-| Sandile → Krokorok → Krookodile | Ground/Dark | Woestijnkrokodil; wel kandidaat voor een kaaiman-vorm (sectie 5) |
 | Dwebble → Crustle | Bug/Rock | Jordi 22 okt: geschrapt. Heremietkreeften |
 | Gothita → Gothorita → Gothitelle | Psychic | Gothic |
 | Solosis → Duosion → Reuniclus | Psychic | Geen band |
@@ -584,13 +584,13 @@ Soorten = elke soort met dat type (dubbeltypes tellen bij beide). Lijnen = lijne
 |---|---|---|---|---|
 | Water | – | 81 | 42 | Ruim (zee, rivieren, binnenzee). |
 | Bug | gym | 57 | 27 | Ruim; veel echte Amazone-insecten. |
+| Ground | gym 1 | 47 | 24 | Goed voor gym 1 (Sandshrew, Nacli-zout is Rock, Gligar, Drilbur, Wooper, Silicobra, Hippopotas, Hoenn-Grimer, Doduo, Stunfisk). |
 | Grass | gym | 47 | 23 | Ruim, maar vooral laagland. Weinig Grass op de altiplano. |
 | Poison | gym | 46 | 23 | Goed (Croagunk, Venipede, Skorupi, Stunky, Foongus, Bellsprout, Spinarak, Hoenn-Grimer, Koffing, Trubbish, Mareanie, Skrelp, Glimmet). |
 | Flying | E4 | 45 | 30 | Goed, veel echte vogels uit de regio; condor- en kolibrie-fakemon komen erbij. |
-| Ground | gym 1 | 44 | 23 | Goed voor gym 1 (Sandshrew, Nacli-zout is Rock, Gligar, Drilbur, Wooper, Silicobra, Hippopotas, Hoenn-Grimer, Doduo, Stunfisk). |
 | Normal | – | 44 | 27 |  |
+| Dark | gym | 43 | 25 | Ruim (Sneasel, Houndour, Purrloin, Zorua, Nickit, Stunky, Deino, Pawniard, Scraggy, Maschiff, Inkay, Carvanha). |
 | Ghost | E4 | 40 | 24 | Ruim (Gastly, Duskull, Misdreavus, Yamask, Sableye, Parasect, Gimmighoul, Dreepy, Phantump, Mimikyu, Sandygast, Dhelmise, Spiritomb). |
-| Dark | gym | 40 | 24 | Ruim (Sneasel, Houndour, Purrloin, Zorua, Nickit, Stunky, Deino, Pawniard, Scraggy, Maschiff, Inkay, Carvanha). |
 | Electric | E4 | 35 | 19 | Goed (Pichu, Elekid, Magnemite, Tynamo, Joltik, Grubbin, Rotom, Porygon, Wattrel, Exploud, Volbeat/Illumise, Chinchou, Stunfisk). |
 | Steel | E4 | 30 | 16 | Goed (Magnemite, Skarmory, Aron, Beldum, Mawile, Pawniard, Durant, Bronzor, Riolu, Gholdengo, Alolan Sandshrew, Seviper, Exploud). |
 | Psychic | – | 30 | 18 |  |

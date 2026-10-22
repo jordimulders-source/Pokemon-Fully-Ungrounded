@@ -258,7 +258,7 @@ SEWADDLE|C|AMA|Jordi 22 okt: geschrapt. Bladsnijders; Bug/Grass voor het Bug-gym
 VENIPEDE|A|AMA|Reuzenduizendpoot (Scolopendra gigantea) van de Amazone; Bug/Poison|
 COTTONEE|C||Katoen; zwakke band|
 PETILIL|C||Geen band|
-SANDILE|C||Woestijnkrokodil; wel kandidaat voor een kaaiman-vorm (sectie 5)|
+SANDILE|B||Jordi 22 okt: erin (vroege Ground voor gym 1; kandidaat kaaiman-vorm). Woestijnkrokodil; wel kandidaat voor een kaaiman-vorm (sectie 5)|
 DARUMAKA|C||Daruma (Japan)|
 MARACTUS|A|ATA,PAM|Maraca-cactus: Latijns-Amerikaanse muziek en woestijn|
 DWEBBLE|C|KUST|Jordi 22 okt: geschrapt. Heremietkreeften|

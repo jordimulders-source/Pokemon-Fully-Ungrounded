@@ -68,3 +68,5 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - Past bij het serieuze thema (verdwijnende gletsjers, mijnbouw, ontbossing) en bij de mythologie (Pachamama, het Inca-trio).
 - De overheid: bossen kappen, ruïnes weghalen e.d. (Jordi).
 - De gangs verschillen in serieusheid (Jordi): van bijna komisch tot echt gevaarlijk.
+- **Voetbal-Pokémon** (Jordi): met een voetbalthema, maar niet de bal zelf, en anders dan de Scorbunny-lijn.
+- **Voetbal-minigame in de Argentinië-regio** (Jordi), als het technisch kan. (Uitzondering op "minigames eruit": dit is een eigen, optionele attractie.)

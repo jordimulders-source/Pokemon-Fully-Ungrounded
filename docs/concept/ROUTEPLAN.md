@@ -17,6 +17,12 @@ Opzet van Claude (22 okt) om alle plekken, dungeons en legendes uit `REGIO.md`, 
 | 9 | **League: Machu Picchu** | Inca Trail (Victory Road) → Intipunku (Zonnepoort) → League | | |
 | PG | **Post-game** | — | spiegel van Uyuni, El Dorado, boot Rio–Amazone, Chiloé, Paititi | |
 
+## Metroidvania-opening na gym 6 en 7 (Jordi, 22 okt)
+Na gym 6 en gym 7 gaan **extra optionele plekken** open in gebieden die je al kent (nieuw obstakel-middel per badge). Ze geven ook de EXP-marge voor de sprongen 54 → 63 → 75 (geen grinden). Kandidaten (Claude):
+- **Na gym 6:** Wanaku (duiken in Titicaca), de Dodenweg (Yungas), Chiloé (Caleuche), de diepere gangen van de mijn van Potosí, de Valle de la Luna-grotten.
+- **Na gym 7:** de Mew-dungeon in Guyana, het Catatumbo-onweer, de ijsgrotten onder de gletsjers, de Cueva del Milodón.
+- Per opening een herkenbaar middel uit de wereld (zie REGIO: HM's liggen open), bijv. duikuitrusting, klimgerei, een vergunning, een boot.
+
 ## Open vragen
 - De ijsgrotten, Perito Moreno en de Mapinguari-grot: allemaal in segment 5, of één ervan post-game?
 - Chavín (Peru) ligt in het echt dicht bij Cuzco; hoort hij bij segment 4 (bij Cuzco) of bij de terugweg door de Andes-noordkant (segment 7)?

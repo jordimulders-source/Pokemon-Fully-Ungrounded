@@ -181,7 +181,11 @@ def renamed(text):
 def build_pc_mart():
     for src in ['OldaleTown_PokemonCenter_1F', 'OldaleTown_PokemonCenter_2F', 'OldaleTown_Mart']:
         dst = src.replace('OldaleTown', 'StartTown')
-        write('data/maps/%s/map.json' % dst, renamed(git('data/maps/%s/map.json' % src)))
+        d = json.loads(renamed(git('data/maps/%s/map.json' % src)))
+        # warps naar kaarten buiten de groep (Union Room, Trade Center) vallen weg
+        ids = {map_id(m) for m in MAPS}
+        d['warp_events'] = [w for w in d['warp_events'] if w['dest_map'] in ids]
+        write('data/maps/%s/map.json' % dst, dump(d))
         write('data/maps/%s/scripts.inc' % dst, renamed(git('data/maps/%s/scripts.inc' % src)))
 
 

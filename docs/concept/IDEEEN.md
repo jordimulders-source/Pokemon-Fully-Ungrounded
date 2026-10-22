@@ -31,3 +31,10 @@ Alles wat Jordi tijdens het brainstormen noemt, in steekwoorden. Het concept (`d
 - Empanadas (natuurlijk). Per land/regio een andere vulling en vouw: verzamelobject, item, of een Pokémon met regionale vormen.
 - Ceviche: rauwe vis 'gegaard' in limoensap (Peru). Idee: een vis-Pokémon die met een limoen/citrus-item of in een kuststad evolueert (Water/Grass? "gaart" zonder vuur).
 - Mate (yerba mate uit een kalebas met bombilla; Argentinië/Uruguay/Paraguay/Zuid-Brazilië): idee van Jordi. Bijv. een kalebas-Pokémon met een rietje, of mate als item dat iets herstelt; mate wordt gedeeld in een kring (een move/ability die het team helpt?).
+
+## Steden (inspiratie, Jordi 22 okt)
+La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buenos Aires, Cartagena, Paramaribo, het plaatsje naast de Salar de Uyuni (Uyuni: treinkerkhof), Bariloche, Medellín.
+- Paramaribo: Nederlandstalig. Kans voor een knipoog naar Nederland/de speler (NPC's die Nederlands praten?).
+- Bariloche: meren, chocolade, Zwitsers aandoende bergstad: tweede, andere kou dan La Paz.
+- Mendoza: wijn, voet van de Aconcagua (hoogste berg buiten Azië).
+- Medellín: van berucht naar innovatief (roltrappen in de heuvelwijken, kabelbanen zoals La Paz), bloemenfestival.

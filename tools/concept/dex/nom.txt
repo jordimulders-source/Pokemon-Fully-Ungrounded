@@ -410,7 +410,7 @@ DREEPY|B|STAD|Pseudo-legendary Ghost/Dragon; Ghost-E4 en Dragon-gym|
 # ---------- Gen 9 ----------
 SPRIGATITO|C||Starter|
 FUECOCO|C||Starter|
-QUAXLY|C||Starter|
+QUAXLY|B|STAD,KUST|Jordi 22 okt: erin; Quaquaval is een samba-/carnavalsdanser (Rio)|
 LECHONK|C|NEV,AMA|Jordi 22 okt: geschrapt. Pekari's (navelzwijnen); vroege Normal in het laagland|
 TAROUNTULA|C||Spin genoeg|
 NYMBLE|C||Krekel|

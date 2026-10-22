@@ -85,3 +85,13 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - **Venezolaanse poedelmot** (Jordi, voor later): pluizige witte mot met grote zwarte ogen (2009 gefotografeerd in de Gran Sabana, nauwelijks onderzocht). Fakemon.
 - **Vleermuis-lijn (3 stadia)** blijft erin (Jordi), los van de starters. **Eindigt als fruitvampier** die op zijn kop hangt en ook ondersteboven vliegt (Jordi). Zuid-Amerika heeft echte fruitetende vleermuizen (bijv. Artibeus); de vampier zuigt sap uit fruit (chirimoya, mango) in plaats van bloed. Haakjes: Moche-vleermuisgoden en het goud van Sipán, buisliplevleermuis (tong 1,5x zijn lijf, bestuift nachtbloemen). Let op overlap met Woobat/Zubat/Noibat.
 - **Rode oeakari** (Jordi vindt hem tof): kaal vuurrood gezicht, ziet er duivels uit, is een rustige vruchteneter. Idee: losse fakemon als **zonne-tegenhanger** van de maan-starter (Inti en Mama Killa zijn in de mythe man en vrouw): rood gezicht = het gezicht in Inti's zonneschijf.
+
+## Gymvolgorde en -locaties: voorstel Claude (22 okt, Jordi heeft zelf ook al een idee)
+1. Ground – Uyuni (zoutvlakte)
+2. Ice – Lípez (besneeuwde pas bij de Licancabur)
+3. Fire – San Pedro de Atacama (geisers, vulkanen; van sneeuw naar woestijn)
+4. Dragon – Cuzco (Amaru, de Inca-slangdraak; eerste bezoek aan Cuzco; jonge draken: onconventioneel vroeg)
+5. Dark – Potosí (El Tío, de duivel van de zilvermijn)
+6. Poison – Buenos Aires (industriële haven, de vervuilde Riachuelo: het systeem-thema)
+7. Grass – Rio de Janeiro (Tijuca, het grootste stadsbos ter wereld: Grass in een metropool)
+8. Bug – diep in de jungle (besloten)

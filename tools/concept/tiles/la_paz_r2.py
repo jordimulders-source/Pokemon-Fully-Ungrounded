@@ -44,8 +44,8 @@ P[8] = house_pal([(232, 248, 255), (184, 224, 240), (136, 184, 224), (104, 144, 
                  [(192, 240, 152), (128, 200, 104), (80, 160, 80), (56, 112, 64)])       # groen
 P[9] = [tuple(int(v) for v in c) for c in sl['pals'][9]]
 S6 = [tuple(int(v) for v in c) for c in sl['pals'][6]]
-P[10] = recolor(S6, {3: (224, 216, 200), 4: (216, 200, 184), 11: (240, 232, 216), 12: (216, 200, 184),
-                     13: (184, 168, 152), 14: (144, 128, 120), 15: GR15})
+P[10] = recolor(S6, {3: (224, 208, 192), 4: (208, 192, 176), 11: (232, 216, 200), 12: (208, 184, 168),
+                     13: (168, 144, 136), 14: (128, 104, 104), 15: GR15})
 P[11] = recolor([tuple(int(v) for v in c) for c in sl['pals'][7]], {})
 # 12: cholet + kabelbaan (eigen), Hoenn-omlijning en glas
 NAVY, NAVY2 = (65, 74, 106), (41, 49, 90)
@@ -189,7 +189,7 @@ for k in HOUSE_KEYS:
 
 # ------------------------------------------------------------------ markt en straat (Slateport)
 SLMAP = {6: 10, 7: 11, 9: 9}
-TENT = pair.import_region(sl, 'SlateportCity', 9, 41, 13, 44, SLMAP, 'sl')
+TENT = pair.import_region(sl, 'SlateportCity', 10, 41, 14, 44, SLMAP, 'sl')
 for mid in (0x211, 0x210, 0x212, 0x23a, 0x33f, 0x344, 0x20c, 0x213, 0x23b, 0x219):
     if f'sl_{mid:03x}' not in pair.names:
         pair.import_mt(sl, mid, SLMAP, f'sl_{mid:03x}')

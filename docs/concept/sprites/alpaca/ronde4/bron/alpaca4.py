@@ -22,8 +22,9 @@ FAR = {'vacht': (6, 7, 7, 7), 'rood': (9, 10, 10, 10), 'goud': (12, 12, 12, 12)}
 def glove(c, cx, cy, r, far=False):
     """Ronde bokshandschoen (duim aan de voorkant) met een smalle gouden polsband."""
     m = disk(cx, cy, r, r * 0.88) | disk(cx - r * 0.62, cy - r * 0.2, r * 0.48)
-    band = poly([(cx - r * 0.35, cy - r - 1.2), (cx + r * 0.75, cy - r - 1.2),
-                 (cx + r * 0.75, cy - r + 0.9), (cx - r * 0.35, cy - r + 0.9)]) & ~m
+    top = cy - r * 0.88
+    band = poly([(cx - r * 0.3, top - 1.6), (cx + r * 0.6, top - 1.6),
+                 (cx + r * 0.6, top + 0.6), (cx - r * 0.3, top + 0.6)]) & ~m
     cel(c, band, 'goud', tones=FAR['goud'] if far else (11, 11, 12, 12), light=0, shade=(0, 1), deep=0)
     cel(c, m, 'rood', tones=FAR['rood'] if far else None, light=1 if not far else 0, shade=(2, 2), deep=1)
 
@@ -43,16 +44,19 @@ def frame(f2=False):
     cel(c, poly([(29, 42), (32.5, 42), (32.5, 47), (29, 47)]), 'vacht', tones=FAR['vacht'], light=0, deep=0)
     glove(c, 31.5, 50, 3.5, far=True)
     # --- staart ---
-    lumps(c, [(52.5, 30, 3.0)])
-    # --- wollen lijf: achterste bolletjes eerst, voorste (links/onder) laatst ---
-    cel(c, disk(39, 38, 11, 7), 'wol', light=0, shade=(2, 3), deep=1)
-    lumps(c, [(49, 35, 4.0), (44, 31.5, 4.4), (49, 41, 3.8), (37, 31, 4.8), (44, 38, 4.6),
-              (44, 44, 4.2), (37, 37, 5.0), (30, 33, 4.8), (37, 44.5, 4.4), (31, 39, 5.0), (30, 45, 4.2)])
+    cel(c, disk(51.5, 30, 3.0), 'wol', light=1, shade=(1, 2), deep=0)
+    # --- wollen lijf: één wolk met een geschulpte rand, cel-geschaduwd als geheel ---
+    body = disk(37, 38, 10, 6.5)
+    for x, y, r in [(29, 34, 4.2), (35, 31.5, 4.4), (42, 31.5, 4.4), (47.5, 34.5, 3.8), (49.5, 40, 3.6),
+                    (46, 45, 3.8), (39.5, 46.5, 4.0), (33, 46.5, 4.0), (27.5, 43, 4.0), (26.5, 38, 4.0)]:
+        body |= disk(x, y, r, r * 0.92)
+    cel(c, body, 'wol', light=2, shade=(2, 3), deep=1)
     # --- nabije achterpoot ---
     cel(c, poly([(41.5, 46), (46, 46), (45.5, 51.5), (42, 51.5)]), 'vacht', light=1, shade=(2, 0), deep=0, edge=15)
     cel(c, poly([(41.5, 51.5), (46, 51.5), (46.5, 54), (41, 54)]), 'vacht', tones=(7, 7, 7, 7), light=0, deep=0)
     # --- hals (wol) + borst ---
-    lumps(c, [(25, 39, 4.6), (24.5, 33.5, 4.6), (23.5, 29, 4.2)])
+    neck = disk(24.5, 37, 4.4, 5.5) | disk(23.5, 30.5, 4.0, 4.4)
+    cel(c, neck, 'wol', light=1, shade=(2, 2), deep=1, edge=3)
     # --- nabije voorpoot + handschoen ---
     if f2:   # stoot naar voren
         cel(c, poly([(25, 40), (27.5, 43), (18, 44.5), (16, 41.5)]), 'vacht', light=1, shade=(1, 2), deep=0, edge=15)

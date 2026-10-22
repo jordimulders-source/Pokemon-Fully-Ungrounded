@@ -98,8 +98,8 @@ def mask_map(spans):
 
 # masker: twee afgeronde oogvlekken met een smalle brug, traan onder het dichtste oog,
 # zachte punt naar achteren richting oor
-MASK = {20: [(23, 28)], 21: [(15, 18), (22, 30)], 22: [(14, 31)], 23: [(14, 32)],
-        24: [(14, 32)], 25: [(15, 19), (22, 31)], 26: [(16, 18), (23, 29)], 27: [(25, 28)]}
+MASK = {20: [(23, 28)], 21: [(15, 18), (22, 30)], 22: [(14, 19), (21, 31)], 23: [(14, 32)],
+        24: [(14, 19), (22, 32)], 25: [(15, 18), (22, 31)], 26: [(23, 29)], 27: [(25, 28)]}
 # Gen 3-ogen (Poochyena): zwart lid + glans boven de pupil, iris van licht naar donker
 EYE_NEAR = ['owoGGG', 'Goiggs']        # 6x2, pupil voorin (naar de snuit)
 EYE_FAR = ['wo', 'oG']                 # 2x2, verste oog (driekwart: smaller)
@@ -143,12 +143,13 @@ def body(c, oy=0, tail=None):
     b = c.ellipse('buik', 'creme', 28.5, 45 + oy, 4, 6.5, rot=-28, shade=2)
     b.mask &= c.ellipse_mask(32, 44 + oy, 7.4, 8.9, rot=-28)
     # dichtste achterpoot: dij + sok op de tenen
-    c.ellipse('dij', 'vacht', 34, 51.5, 5, 4.5, rot=-20, shade=2, line='dark', hl=(32, 49, 2))
+    c.ellipse('dij', 'vacht', 33.5, 51, 5.5, 5, rot=-20, shade=2.2)
+    c.objs[-1].nocast = True
     c.tube('voet1', 'donker', [(31, 55.5), (27.5, 57)], [3.6, 3], line='black', shade=1.2)
 
 
-def doek(c, oy=0, knot=((36, 30), (43, 27.5), (41.5, 31), (44, 34), (36, 33.5))):
-    d = c.poly('doek', 'doek', [(18, 31 + oy), (35, 29.5 + oy), (36, 33 + oy), (27, 39 + oy), (24, 38.5 + oy), (20, 35 + oy)], shade=2, line='dark')
+def doek(c, oy=0, knot=((33, 30), (39, 28.5), (38, 31), (40, 33.5), (33.5, 33))):
+    d = c.poly('doek', 'doek', [(19, 31 + oy), (34, 30 + oy), (34.5, 33 + oy), (27, 37.5 + oy), (25, 37 + oy), (21, 34 + oy)], shade=2, line='dark')
     c.poly('doek', 'doek', [(x, y + oy) for x, y in knot])
     return d
 
@@ -156,7 +157,7 @@ def doek(c, oy=0, knot=((36, 30), (43, 27.5), (41.5, 31), (44, 34), (36, 33.5)))
 def head(c, ox=0, oy=0):
     c.ellipse('oor1', 'vacht', 16.5 + ox, 15.5 + oy, 3.2, 3.4, tone=2, shade=1.5)
     c.ellipse('oor2', 'vacht', 31 + ox, 14 + oy, 3.9, 4.1, shade=2, hl=(30 + ox, 12 + oy, 1.5))
-    k = c.ellipse('kop', 'vacht', 23.5 + ox, 23.5 + oy, 10.5, 9.3, shade=2.2, hl=(19 + ox, 18 + oy, 3.2))
+    k = c.ellipse('kop', 'vacht', 23.5 + ox, 23.5 + oy, 10.5, 9.3, shade=2.2, hl=(18.5 + ox, 18.5 + oy, 2.2))
     c.ellipse('snuit', 'creme', 14 + ox, 27.5 + oy, 4.6, 3.2, shade=1.6)
     return k
 
@@ -192,7 +193,7 @@ def frame2():
     c.tube('arm1', 'vacht', [(23, 35), (17, 36)], [4.5, 4], tone=2, shade=1.5, line='dark')
     c.tube('hand1', 'donker', [(17.5, 36), (12.5, 35.5)], [4, 3.6], tone=2, line='black', shade=1)
     c.ellipse('hand1', 'donker', 11, 35.5, 3.2, 3, tone=2)
-    doek(c, oy=-1, knot=((36, 29), (44, 25), (42, 29.5), (45.5, 31.5), (36, 32.5)))
+    doek(c, oy=-1, knot=((33, 29), (40, 26), (38.5, 29.5), (41.5, 31.5), (33.5, 32)))
     head(c, oy=-1)
     # dichtste arm omhoog: heeft de munt opgegooid
     c.tube('arm2', 'vacht', [(34, 37), (38, 32)], [5, 4.5], shade=2, line='dark')

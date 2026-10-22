@@ -240,6 +240,12 @@ path((10, 9), (9, 9), (9, 10))                             # Quito
 path((10, 7), (10, 4), (11, 4), (11, 3))                   # Medellín -> Cartagena
 path((22, 8), (24, 8), (24, 6))                            # tepuis
 path((24, 8), (28, 8), (28, 4), (30, 4))                   # -> Paramaribo
+path((22, 12), (22, 16), (20, 16), (20, 19), (22, 19), (22, 21))   # dwars door de jungle naar de Pantanal
+path((22, 16), (25, 16), (25, 14))                        # jungle-lus naar het oosten
+path((28, 12), (28, 16), (31, 16), (31, 19), (34, 19))    # Amazone-lodge -> zuid door de jungle -> Rio/Salvador
+# waterroutes: zijrivieren
+path((24, 13), (24, 15), sea=True)
+path((28, 9), (28, 7), sea=True)
 # waterroutes: de Amazone af naar zee, kust en eilanden
 path((23, 11), (27, 11), (27, 12), (28, 12), (29, 12), (29, 10), (34, 10), (34, 9), sea=True)
 path((35, 9), (36, 9), (36, 12), (34, 12), (34, 13), (33, 13), sea=True)          # Belém -> Lençóis
@@ -306,7 +312,7 @@ lines = [('Pokémon Fully Ungrounded', font), ('Regiokaart – schets 2', small)
          ('Wit: sneeuw, ijs, zout', small), ('', small),
          ('Gym 1: Uyuni (Ground)', small), ('Gym 2: Ice (plek open)', small), ('League: Machu Picchu', small),
          ('   (Cuzco al eerder bezocht)', small), ('', small),
-         ('De Amazone is bevaarbaar', small), ('tot aan zee (Belém).', small)]
+         ('De Amazone is bevaarbaar', small), ('tot aan zee (Belém) en je', small), ('kunt er dwars doorheen.', small)]
 yy = 16
 for text, f in lines:
     dr.text((lx, yy), text, font=f, fill=(255, 255, 255))

@@ -61,6 +61,7 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Ronde 2, erin:** Pinsir, Heracross, Spheal-lijn, Mimikyu, Heatmor, Ponyta-lijn (de oorspronkelijke; stonden er al in), Salandit-lijn, Turtonator, Stufful-lijn, Sandile-lijn (nieuw).
 - **Ronde 3, eruit:** Wurmple-lijn, Snorunt-lijn, Pincurchin, Lechonk-lijn, Maschiff-lijn, Wiglett-lijn, Tyrogue-lijn (alleen een regionale capoeira-Hitmontop).
 - **Ronde 3, erin:** Galar-Meowth, Cubone-lijn (normaal), beide Corsola-lijnen, Litwick-lijn, Eiscue, beide Slowpoke-lijnen, Dunsparce, Charcadet-lijn, Orthworm, Oricorio.
+- **Kecleon zit sowieso in de dex** (Jordi, 22 okt), ook los van Keccles.
 - **Dit deel is voorlopig af** (Jordi, 22 okt). Stand: zie DEX_NOMINATIES.md.
 
 ## Bestaande soorten in de regio

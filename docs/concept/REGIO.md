@@ -8,6 +8,10 @@
 - **De Amazone:** bevaarbaar tot aan zee én dwars doorheen te verkennen (jungleroutes, zijrivieren, lussen). Het diepe binnenland is **late game of post-game**.
 - **Na gym 1** (Uyuni) meteen hot springs, een vulkaan en een sneeuwgebied (de Lípez-tour: Laguna Colorada, geisers, Licancabur).
 
+## Grote steden
+- **De startstad (La Paz-achtig) wordt enorm**, met een **teleférico (kabelbaan) dwars door de stad**. Een stad waar je meermaals terugkomt (Jordi).
+- Dat geldt ook voor de **andere grote steden**: groot, met meerdere wijken, en je komt er vaker terug.
+
 ## Steden (inspiratie)
 La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buenos Aires, Cartagena, Paramaribo, Uyuni, Bariloche, Medellín; plus originele plekken. Plekken waar Jordi geweest is, zijn de kern (Machu Picchu, Nazca, Cuzco, Rainbow Mountain, Amazone, Salar de Uyuni, La Paz, Salento, Cartagena, Buenos Aires, Atacama, Salta, Iguazú).
 

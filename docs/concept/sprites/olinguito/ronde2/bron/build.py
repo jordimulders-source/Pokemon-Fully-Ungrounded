@@ -45,6 +45,12 @@ def Ti(x, y):
 
 
 class SCanvas(Canvas):
+    def _add(self, name, part, mask, **kw):
+        if kw.get('hl'):
+            hx, hy, hr = kw['hl']
+            kw['hl'] = (*T(hx, hy), hr * S)
+        return Canvas._add(self, name, part, mask, **kw)
+
     def ellipse(self, name, part, cx, cy, rx, ry, rot=0.0, **kw):
         cx, cy = T(cx, cy)
         return self._add(name, part, Canvas.ellipse_mask(self, cx, cy, rx * S, ry * S, rot), **kw)
@@ -119,6 +125,8 @@ for _r in FACE_OPEN + FACE_CLOSED:
 
 
 def face(idx, dy=0, closed=False):
+    if os.environ.get('NOPATCH'):
+        return
     patch(idx, 16, 11 + dy, ['M', 'M', 'M'], K)
     patch(idx, 35, 9 + dy, ['M', 'M', 'M', 'M'], K)
     patch(idx, 13, 17 + dy, FACE_CLOSED if closed else FACE_OPEN, K)

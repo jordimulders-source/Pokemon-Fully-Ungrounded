@@ -184,41 +184,53 @@ def stairs(kind):
     return c
 
 
-def clay_cliff(part):
-    """Uitgesleten kleiwand (de hellingen van de kom): geulen per 16 px, rechte rechthoeken (les: kliffen)."""
+def clay_cliff(part, half=0):
+    """Uitgesleten kleiwand (de hellingen van de kom): ronde zuilen van ongelijke breedte en hoogte
+    (periode 32 px = twee stukken a/b), licht links, schaduw rechts, rechte rechthoeken (les: kliffen).
+    part: top (rand + wand), mid (wand), base (wand + voet)."""
     c = Canvas(16, 16)
     ground = clay(0)
-    flutes = [(0, 5), (5, 9), (9, 16)]
-    y_from = {'top': 8, 'mid': 0, 'base': 0}[part]
-    y_to = {'top': 15, 'mid': 15, 'base': 10}[part]
     for y in range(16):
         for x in range(16):
             c.px(x, y, ground.get(x, y))
-    for x0, x1 in flutes:
-        for y in range(y_from, y_to + 1):
-            for x in range(x0, x1):
+    cols = [(0, 7, 1), (7, 12, 3), (12, 21, 0), (21, 27, 2), (27, 32, 1)]  # (x0, x1, kopverlaging)
+    for x0, x1, drop in cols:
+        for X in range(x0, x1):
+            x = X - half * 16
+            if not 0 <= x < 16:
+                continue
+            ytop = {'top': 7 + drop, 'mid': 0, 'base': 0}[part]
+            ybot = {'top': 15, 'mid': 15, 'base': 9 + (drop % 2) * 2}[part]
+            for y in range(ytop, ybot + 1):
                 col = CL[2]
-                if x == x0:
-                    col = CL[0]
-                elif x == x0 + 1:
+                if X == x0:
+                    col = OL6 if y > ytop + 1 else CL[1]
+                elif X == x0 + 1:
                     col = CL[3]
-                elif x == x1 - 1:
+                elif X == x1 - 1:
                     col = CL[1]
+                elif X == x1 - 2 and (y + X) % 3 == 0:
+                    col = CL[1]
+                # lagen in de klei
+                if part == 'mid' and y in (5 + drop, 12 - drop) and X not in (x0,):
+                    col = CL[1] if X != x0 + 1 else CL[2]
                 c.px(x, y, col)
-        if part == 'top':  # afgeronde koppen van de geulen
-            c.px(x0 + 1, 8, CL[2]); c.px(x1 - 1, 8, CL[2])
+            if part == 'top':  # ronde kop
+                c.px(x, ytop, CL[3] if X not in (x0, x1 - 1) else ground.get(x, ytop))
+                if X in (x0 + 1, x1 - 2):
+                    c.px(x, ytop, CL[2])
+            if part == 'base':
+                c.px(x, ybot + 1, OL6)
+                c.px(x, ybot + 2, CL[1])
     if part == 'top':
-        c.hline(0, 15, 6, CL[3]); c.hline(0, 15, 7, OL6)
-    if part == 'mid':  # gelaagdheid
+        c.hline(0, 15, 5, CL[3])
         for x in range(16):
-            if c.get(x, 9) != CL[0]:
-                c.px(x, 9, CL[1])
+            if c.get(x, 6) == ground.get(x, 6):
+                c.px(x, 6, CL[1])
     if part == 'base':
-        c.hline(0, 15, 11, OL6); c.hline(0, 15, 12, CL[1])
         for x in (3, 11):
             c.px(x, 14, CL[1]); c.px(x + 1, 14, CL[3])
     return c
-
 
 
 def side_edge(base, side):
@@ -255,17 +267,17 @@ for i in range(3):
     ts.add(f'cobble{i}', cobble(i))
 ts.add('sidewalk', sidewalk())
 ts.add('plaza', plaza())
-for i in range(3):
+for i in (0, 2):
     ts.add(f'clay{i}', clay(i))
 for s in 'nsew':
     ts.add(f'curb_{s}', curb(s))
 for k in ('l', 'm', 'r', 'lr', 'y'):
     ts.add(f'stairs_{k}', stairs(k))
 for part in ('top', 'mid', 'base'):
-    b = clay_cliff(part)
-    ts.add(f'cliff_{part}', b)
-    ts.add(f'cliff_{part}_l', side_edge(b, 'l'))
-    ts.add(f'cliff_{part}_r', side_edge(b, 'r'))
+    for half in (0, 1):
+        ts.add(f'cliff_{part}_{"ab"[half]}', clay_cliff(part, half))
+    ts.add(f'cliff_{part}_l', side_edge(clay_cliff(part, 0), 'l'))
+    ts.add(f'cliff_{part}_r', side_edge(clay_cliff(part, 1), 'r'))
 ts.add('rwall_top', retaining_wall('top'))
 ts.add('rwall', retaining_wall('mid'))
 
@@ -273,7 +285,7 @@ ts.add('rwall', retaining_wall('mid'))
 # trap in een kleiwand: treden met wangen van klei
 def cliff_stairs(part):
     c = Canvas(16, 16)
-    c.paste(clay_cliff(part), 0, 0)
+    c.paste(clay_cliff(part, 0), 0, 0)
     s = stairs('lr')
     y0 = 6 if part == 'top' else 0
     y1 = 12 if part == 'base' else 16
@@ -923,6 +935,46 @@ def slice_ill(cv):
 
 
 OBJ['illimani'] = slice_ill(ILL)
+
+
+def cordillera():
+    """Lagere bergkam (2 x 5, naadloos herhaalbaar) links en rechts van de Illimani."""
+    W_, H_ = 32, 80
+    c = Canvas(W_, H_)
+    for x in range(W_):
+        top = 40 + abs((x % 32) - 16)  # top op x=16, y=40
+        left = (x % 32) < 16
+        for y in range(H_):
+            if y < top:
+                col = SN[1]
+                if (x * 3 + y * 5) % 32 == 0:
+                    col = SN[2]
+            elif y == top:
+                col = OLN
+            elif y < 52 + abs((x % 16) - 8) // 2 * 2 and y < top + 10:
+                col = SN[0] if left else SN[2]
+            else:
+                col = RK[2] if left else RK[1]
+                if (x + 2 * y) % 16 == 0:
+                    col = RK[1] if left else RK[0]
+            if y > 75:
+                col = None
+            elif y == 75:
+                col = OLN
+            c.px(x, y, col)
+    return c
+
+
+CORD = cordillera()
+ids = []
+for my in range(5):
+    row = []
+    for mx in range(2):
+        s_ = CORD.sub(mx * 16, my * 16, 16, 16)
+        nm = f'illimani_range_{mx}_{my}'
+        row.append(ts.add(nm, s_) if s_.a[:, :, 3].all() else ts.add(nm, clay(0), s_, layer='covered'))
+    ids.append(row)
+OBJ['range'] = ids
 
 # ------------------------------------------------------------------ mock-up
 N = ts.names

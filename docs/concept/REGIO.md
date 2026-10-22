@@ -10,6 +10,8 @@
 - **Veel natuur, minder grote steden:** zoveel mogelijk aandacht voor de veelzijdige natuur van de regio. Pokémon Centers en kleine hubs in de natuur (refugio's, lodges, berghutten).
 - **De Amazone:** bevaarbaar tot aan zee én dwars doorheen te verkennen (jungleroutes, zijrivieren, lussen). Het diepe binnenland is **late game of post-game**.
 - **Na gym 1** (Uyuni) meteen hot springs, een vulkaan en een sneeuwgebied (de Lípez-tour: Laguna Colorada, geisers, Licancabur).
+- **Laguna Colorada komt er zeker in** (Jordi, 22 okt): het rode meer ten zuiden van de Salar de Uyuni (±4300 m). Het water is rood door algen en pigmenten, met witte borax-eilanden, en er staan duizenden flamingo's (Flamigo en zijn evolutie, zie `POKEMON.md`). Ijzige wind en een kale vulkaanrand. Een eigen kaart in de Lípez-route na gym 1, met de rode tint in het waterpalet.
+- **Isla Incahuasi (het cactuseiland) komt er ook in** (Jordi, 22 okt): een rotseiland midden in de witte zoutvlakte van Uyuni. Het staat vol reuzencactussen (cardón, tot ±10 m hoog en soms meer dan 1000 jaar oud) en heeft versteend koraal, want de salar was ooit een meer. Je kunt er bij gym 1 (Uyuni) heen; het eiland past bij Cacnea/Maractus-achtige soorten of een cardón-fakemon en bij een uitkijkpunt over de zoutvlakte.
 
 ## Grote steden
 - **De startstad (La Paz-achtig) wordt enorm**, met een **teleférico (kabelbaan) dwars door de stad**. Een stad waar je meermaals terugkomt (Jordi).

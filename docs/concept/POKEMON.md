@@ -49,11 +49,19 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Guácharo (oliegier):** komt er, niet als starter. Inspiratie: grotvogel die met klikgeluiden "ziet", kuikens zwaarder dan de ouders, rode oogglans; de guácharo-grot gold als ingang naar het dodenrijk.
 - **Rode oeakari en witgezichtsaki:** twee single-stage tegenhangers à la Oranguru/Passimian, met een Inca-achtige godenlook. Oeakari = zon (kaal vuurrood gezicht als het gezicht in Inti's zonneschijf), witgezichtsaki = maan (wit gezicht als de maanschijf van Mama Killa). Inspiratie: beide Amazone-apen die er eng uitzien maar rustige vruchteneters zijn.
 - **Vleermuislijn (3 stadia):** eindigt als **fruitvampier** die op zijn kop hangt en ook ondersteboven vliegt. Inspiratie: Zuid-Amerikaanse fruitvleermuizen (*Artibeus*), Moche-vleermuisgoden en het goud van Sipán, buisliplevleermuis. Let op overlap met Woobat/Zubat/Noibat.
+- **Mug: Poison/Electric** (Jordi, 22 okt). Iets na de start, Kricketot-rol (zie `IDEEEN.md`): verschijnt zodra je in lager, warmer gebied komt. Inspiratie: het zoemen (Electric, vleugelslag als elektrisch gezoem), de steek en de ziektes die muggen overbrengen (Poison: malaria, dengue). Ideeën: een steek die gif + verlamming kan geven; zwermen in de Amazone en het Pantanal.
+- **Flamigo krijgt een evolutie** (Jordi, 22 okt). Voorstellen van Claude, nog open:
+  - een evolutie: de **leider van de kolonie**, gebaseerd op de groepsdans (flamingo's marcheren in de balts in rijen synchroon heen en weer; dat past bij Fighting);
+  - of een pre-evolutie: het **grijze donzige kuiken**. Flamingokuikens worden met honderden samen in een crèche opgevangen en zijn pas na ±3 jaar roze.
+  - Inspiratie: de Andes-, James- en Chileense flamingo's van de Laguna Colorada in Lípez. Ze kleuren roze en rood door de algen in de lagune (de 'rode lagune').
 - **Vaste lijst:** lama, alpaca, vicuña, guanaco, coati, capibara, condor, pinguïns (naast Eiscue; meerdere pinguïns is geen probleem, Jordi). Eiscue is de koudeminnende pinguïn (Patagonië/ijs); de fakemon kan juist een pinguïn van een **milder klimaat** zijn, zoals de Humboldtpinguïn (Peru/Chili) of de Galápagospinguïn (Ecuador), Jordi.
 
 ## Regional forms (besloten)
 - **Hitmontop-regional form: capoeira** (Jordi, als extra Fighting). Hitmontop draait al op zijn kop; capoeira heeft precies die bewegingen (de *pião de cabeça*-kopspin, de *ginga*, de *meia lua*-trappen). Inspiratie: Afro-Braziliaanse vechtkunst vermomd als dans, met berimbau-muziek. Daarom gaat capoeira níet naar de alpaca-lijn (fase 2 wordt een andere vechtsport). **Zonder de rest van de Tyrogue-lijn** (Tyrogue, Hitmonlee, Hitmonchan niet in de dex). Open (Jordi): misschien krijgt de capoeira-Hitmontop een **eigen evolutie**.
 - **Venomoth-regional form:** bestaat al (eerder ontwerp, Jordi wil hem gebruiken). Bestanden nog toevoegen aan de repo.
+- **Lotad-lijn als regional form (Jordi neigt ernaar, 22 okt):** inspiratie *Victoria amazonica*, de reuzenwaterlelie uit de Amazone en het Pantanal (bladeren tot ±3 m, met opstaande rand, dragen een kind). Lotad, Lombre en Ludicolo krijgen grotere lotushoofden. In de overworld liggen ze als **stapstenen** op het water: je loopt over hun bladeren (een metroidvania-route zonder Surf, of een verbinding die pas open is als ze er liggen). Ludicolo blijft de feestganger (carnaval, Dancer). Types, stats en ontwerp nog open.
+- **Yanma-regional form: Dragon** (Jordi, 22 okt). Past bij het Spaanse *libélula* en het Engelse *dragonfly*. Inspiratie: de reuzenjuffer *Megaloprepus caerulatus* uit de Midden- en Zuid-Amerikaanse regenwouden (grootste vleugelspanwijdte van alle libellen, blauwwitte vleugelpunten) en de oerlibellen (*Meganeura*). Type-combinatie (Bug/Dragon of Dragon/Flying) en of Yanmega meegaat nog open.
+- **Natu/Xatu: genomineerd voor een regional form** (Jordi, 22 okt). Voorstel van Claude: Xatu als de **Nazca-kolibrie** (een van de bekendste geogliefen), met vleugels vol lijnpatronen; hij staart nog steeds naar de zon (Inti). Natu als klein totembeeldje in de stijl van Tiwanaku/de Poort van de Zon. Type en ontwerp nog open.
 
 ## Dex-besluiten (op basis van `DEX_NOMINATIES.md`)
 - **Ronde 1 (Jordi, 22 okt), eruit:** Kanto-starters (voorlopig), Onix/Steelix, Rhyhorn-lijn, Electabuzz-lijn, Magmar-lijn, Ralts-lijn, Mawile, Clamperl-lijn, Shellos-lijn, Riolu-lijn, Carnivine, Finneon-lijn, Roggenrola-lijn, Audino, Sewaddle-lijn, Dwebble-lijn, Druddigon, Binacle-lijn, Carbink, Cutiefly-lijn, Bruxish.
@@ -61,6 +69,8 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Ronde 2, erin:** Pinsir, Heracross, Spheal-lijn, Mimikyu, Heatmor, Ponyta-lijn (de oorspronkelijke; stonden er al in), Salandit-lijn, Turtonator, Stufful-lijn, Sandile-lijn (nieuw).
 - **Ronde 3, eruit:** Wurmple-lijn, Snorunt-lijn, Pincurchin, Lechonk-lijn, Maschiff-lijn, Wiglett-lijn, Tyrogue-lijn (alleen een regionale capoeira-Hitmontop).
 - **Ronde 3, erin:** Galar-Meowth, Cubone-lijn (normaal), beide Corsola-lijnen, Litwick-lijn, Eiscue, beide Slowpoke-lijnen, Dunsparce, Charcadet-lijn, Orthworm, Oricorio.
+- **Quaxly-lijn erin** (Jordi, 22 okt): Quaquaval is een samba-/carnavalsdanser (Rio).
+- **Kecleon zit sowieso in de dex** (Jordi, 22 okt), ook los van Keccles.
 - **Dit deel is voorlopig af** (Jordi, 22 okt). Stand: zie DEX_NOMINATIES.md.
 
 ## Bestaande soorten in de regio

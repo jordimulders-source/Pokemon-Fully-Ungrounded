@@ -1,5 +1,5 @@
 // Project Grounded: lichte trainerklasse-intro's (Jordi: "misschien kunnen we specifieke trainer class intros bouwen, wel
-// allemaal licht") en de gedeelde runner voor de rivaal-intro's (src/data/rival_intros.h).
+// allemaal licht") met hun gedeelde runner.
 // Geen nieuwe graphics: alles is code (paletrekenwerk, scroll/vensters per beeldlijn, tiles en tekst die tijdens het spelen
 // worden getekend) plus gevechtsanimatie-art en item-iconen die al in de ROM staan.
 // Wordt onderaan src/battle_transition.c ingevoegd. Timing: echte VBlanks vanaf de start van de transitie (= start van de

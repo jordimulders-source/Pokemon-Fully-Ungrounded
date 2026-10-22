@@ -61,23 +61,9 @@ enum BattleTransition
     B_TRANSITION_FRONTIER_CIRCLES_CROSS_IN_SEQ,
     B_TRANSITION_FRONTIER_CIRCLES_ASYMMETRIC_SPIRAL_IN_SEQ,
     B_TRANSITION_FRONTIER_CIRCLES_SYMMETRIC_SPIRAL_IN_SEQ,
-    B_TRANSITION_REGIDRAGO, // Project Grounded
-    B_TRANSITION_REGIELEKI, // Project Grounded
-    B_TRANSITION_DEOXYS, // Project Grounded: ruimte + DNA-helix
     B_TRANSITION_ROUTE_WAVE, // Project Grounded: zee/surfen, golf van rechts naar links
     B_TRANSITION_ROUTE_BUBBLES, // Project Grounded: onder water, luchtbellen
-    B_TRANSITION_PIKACHU, // Project Grounded: wilde Pikachu, geel scherm met wangen en "Pika!"
-    B_TRANSITION_MAGIKARP, // Project Grounded: wilde Magikarp, scherm vol spartelende Magikarp
-    B_TRANSITION_PSYDUCK, // Project Grounded: wilde Psyduck, enorm draaiend vraagteken
-    B_TRANSITION_KOFFING, // Project Grounded: wilde Koffing/Weezing, schedel-en-botten-teken op paars
-    B_TRANSITION_ZANGOOSE, // Project Grounded: wilde Zangoose, een reuzenklauw scheurt het scherm open
-    B_TRANSITION_SEVIPER, // Project Grounded: wilde Seviper, een schermvullende Poison Fang
-    B_TRANSITION_ZARUDE, // Project Grounded: Zarude, de jungle groeit dicht, lianen, drie klauwkrassen en een silhouet met rode ogen
-    B_TRANSITION_REGIGIGAS, // Project Grounded: Regigigas, zes ogen (rood/blauw/wit) in het Regi-weefeffect
     B_TRANSITION_KECCLES, // Project Grounded: Keccles, lab vol schoolborden, de camouflage golft weg
-    B_TRANSITION_VOLCANION, // Project Grounded: Volcanion, manometer in het rood, klinknagels schieten eruit, stoom
-    B_TRANSITION_MEW, // Project Grounded: Mew, Guyana bij zonsopgang in parallax, een roze glinstering, Mews staart zwiept door beeld
-    B_TRANSITION_LEGEND_ZYGARDE, // Project Grounded: Zygarde, een groene Z als Zorro en het beeld splijt
     B_TRANSITION_CLASS_INTRO, // Project Grounded (class_intros.h): lichte intro per trainerklasse
     B_TRANSITION_COUNT
 };

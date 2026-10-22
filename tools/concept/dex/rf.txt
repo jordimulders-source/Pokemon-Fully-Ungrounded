@@ -24,3 +24,6 @@ Baltoy → Claydol|Ground/Fire: gebakken aardewerk met portretgezichten|huaco re
 Gimmighoul → Gholdengo|Alasitas-vorm: verzamelt miniaturen in plaats van munten; Gholdengo als Ekeko met volle handen|Ekeko en de Alasitas-markt in La Paz|ALT (La Paz)|
 Unown|Quipu-vorm: knopen in plaats van letters (puzzels in ruïnes)|quipu, het knopenschrift van de Inca's|STAD (ruïnes)|
 Glameow → Purugly|Rock/Dark: dikke staart met ringen, schuw, rotsen boven 4000 m|gato andino (titi), de zeldzaamste wilde kat|ALT, LIP|
+Lotad → Lombre → Ludicolo|Neiging Jordi (22 okt): grotere lotushoofden; overworld-stapstenen op water|Victoria amazonica (reuzenwaterlelie)|AMA, PAN|1
+Natu → Xatu|Nominatie (Jordi, 22 okt). Voorstel Claude: Xatu als de Nazca-kolibrie (geoglief), vleugels met lijnpatronen; staart naar de zon (Inti) op de hoogvlakte; Natu als klein Tiwanaku-/Inca-totembeeldje|Nazca-lijnen (kolibrie, condor), zonaanbidding Inti, Poort van de Zon (Tiwanaku)|ATA (Nazca), ALT (ruïnes)|1
+Yanma → Yanmega|Dragon (Jordi, 22 okt); Bug/Dragon of Dragon/Flying open|reuzenjuffer Megaloprepus caerulatus; libélula/dragonfly|AMA, NEV|1

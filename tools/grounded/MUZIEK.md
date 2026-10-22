@@ -93,6 +93,14 @@ herkennen is, komt ook als controle in `music_lint.py`.
 - Jordi geeft feedback met tijdstempels; gebruik die om noten op te zoeken (tick = s × 1e6 / tempo × tpb).
 
 ## Status per nummer
+**Fully Ungrounded (22 okt): alle Ungrounded-muziek is uit de ROM, behalve Battle! Keccles** (nu song 610,
+`keccles_theme.py` + `keccles_samples.py`). Weg: alle eigen composities, legendary-/personage-/gymthema's, de
+gym-, trainerklasse-, wild- en nachtremixes, Ashfrost, de covers (Colress, Cyrus, N, Ghetsis, Zinnia, ...), de
+rips (YI, MKSC, WL4, Boo/Broken Pier, Sunset Wilds), Area Zero en de Poké Tower-remix: MIDI's, voicegroups,
+keysplits, samples (`grounded/`, `rip/`) en de generatoren (`*_theme.py`, `*_samples.py`, `gym_remixes*.py`,
+`regio_theme*.py`, `night_towns.py`). De tabel hieronder is naslag (scripts en MIDI's staan in de git-geschiedenis,
+t/m commit 6da62e55c2). Algemene tools (lint, musiclib, gm_samples, recpcm/batchrec, spc2gba, mp2k_rip) blijven.
+
 | Nummer | Script | Status | Waar in de log |
 |---|---|---|---|
 | Zarude | `zarude_theme.py` | goedgekeurd (v10) | "Zarude" |

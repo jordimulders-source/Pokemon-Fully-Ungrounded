@@ -21,6 +21,7 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 - Niet als gym/E4: Normal, Water, Fighting, Psychic, Rock, Fairy (kampioen open).
 
 ## Regiokaart
+- Variant 2 (Jordi koos richting 1, 2, 3 en 5): `regiokaart2_namen.png` (`tools/concept/regiokaart2.py`): continent gedraaid en liggend zoals Hoenn/Kyushu, Amazonebekken als binnenzee met verdronken woud, grilliger Atlantische kust met baaien en eilanden, landmarks (reuzentepui, vulkaaneiland in de Titicaca, Nazca-kolibrie op de kaart).
 - Schets 2 (schets 1 overschreven): `regiokaart.png` / `regiokaart_namen.png` (gemaakt met `tools/concept/regiokaart.py`, in de stijl van de Emerald-regiokaart).
 
 ## Mythologie

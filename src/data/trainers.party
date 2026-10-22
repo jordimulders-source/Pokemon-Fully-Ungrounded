@@ -6790,17 +6790,25 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Flareon
+Ursaring
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Hammer Arm
+- High Horsepower
+- Crunch
+- Body Slam
 
 Marowak_Alola
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Ninetales
+Trevenant
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Wood Hammer
+- Shadow Claw
+- Will-O-Wisp
+- Leech Seed
 
 Arcanine
 Level: 43
@@ -6856,9 +6864,13 @@ Torkoal
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Rapidash
+Breloom
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Spore
+- Mach Punch
+- Bullet Seed
+- Rock Tomb
 
 Volbeat
 Level: 43
@@ -6893,9 +6905,13 @@ Blaziken
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
 
-Heatmor
+Bewear
 Level: 42
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Hammer Arm
+- Drain Punch
+- Body Slam
+- Bulk Up
 
 === TRAINER_BERNIE_1 ===
 Name: BERNIE
@@ -16512,9 +16528,13 @@ Music: Hiker
 Double Battle: No
 AI: Check Bad Move
 
-Darmanitan_Standard
+Noctowl
 Level: 43
 IVs: 12 HP / 12 Atk / 12 Def / 12 SpA / 12 SpD / 12 Spe
+- Air Slash
+- Moonblast
+- Hypnosis
+- Roost
 
 Lampent
 Level: 43

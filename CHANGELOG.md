@@ -19283,3 +19283,10 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Coalossal → Infernape** @ Expert Belt, lv 44, Blaze: Vacuum Wave, Scorching Sands, Flamethrower, Aura Sphere (speciale set, Jordi). Snelle speciale counter tegen Rock (om de hoge Defense heen).
 - Infernape-lijn leert nu via level-up wat hij officieel via TM/tutor/ei leert maar hier niet kon: Vacuum Wave (Monferno en Infernape lv 23), Scorching Sands (Infernape 38), Aura Sphere (Infernape 44).
 - AI: Smart Trainer + voorspellen (move, wissel, inkomende Pokémon), HP-bewust en ability-voorspelling. Bewust geen ace-flag: Magcargo hoort vroeg in het gevecht te kunnen komen, anders heeft Desolate Land geen zin.
+
+### Lavaridge-gym: kampeerders met minder pure Fire (v1.0.0)
+- De Kindlers stoken een kampvuur; hun teams krijgen nu ook kampeer-Pokémon die Rock en Ground beter aankunnen (Jordi). Axle (alle starters), Cole, Danielle en Gerald blijven zoals ze waren.
+  - Jace: Rapidash → **Breloom** (paddenstoelen zoeken): Spore, Mach Punch, Bullet Seed, Rock Tomb.
+  - Jeff: Flareon → **Ursaring** (de beer bij de tent): Hammer Arm, High Horsepower, Crunch, Body Slam; Ninetales → **Trevenant** (brandhout dat terugpraat): Wood Hammer, Shadow Claw, Will-O-Wisp, Leech Seed.
+  - Eli (Lampent, Houndoom: nachtploeg): Darmanitan → **Noctowl**: Air Slash, Moonblast, Hypnosis, Roost.
+  - Keegan: Heatmor → **Bewear** (knuffelt je tent plat): Hammer Arm, Drain Punch, Body Slam, Bulk Up.

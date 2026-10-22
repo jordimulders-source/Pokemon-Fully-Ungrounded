@@ -113,4 +113,4 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 ## Jaguar (idee, Jordi 22 okt)
 - Er bestaat nog geen echte jaguar-Pokémon (Liepard = luipaard, Incineroar = tijger, Raikou/Entei = legendaries, Luxray = lynx, Pyroar = leeuw).
 - Inspiratie: het heilige dier van de Amazone en van Chavín (sjamanen die in jaguars veranderen, zie de ruïne-Pokémon); jaagt ook in het water, met een beet door de schedel; in het Pantanal en de Amazone.
-- Let op de overlap met de poema van het legendary-trio (Kay Pacha). Naast elkaar kan het wel, net als de twee condors.
+- Geen probleem naast de poema van het legendary-trio (Kay Pacha): jaguars en poema's zijn sowieso anders (Jordi). De jaguar is gevlekt, gedrongen, een jager in jungle en water; de poema is effen, slank, een bergkat van de Andes.

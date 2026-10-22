@@ -54,6 +54,11 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 ## Regional forms (besloten)
 - **Venomoth-regional form:** bestaat al (eerder ontwerp, Jordi wil hem gebruiken). Bestanden nog toevoegen aan de repo.
 
+## Dex-besluiten (op basis van `DEX_NOMINATIES.md`)
+- **Ronde 1 (Jordi, 22 okt), eruit:** Kanto-starters (voorlopig), Onix/Steelix, Rhyhorn-lijn, Electabuzz-lijn, Magmar-lijn, Ralts-lijn, Mawile, Clamperl-lijn, Shellos-lijn, Riolu-lijn, Carnivine, Finneon-lijn, Roggenrola-lijn, Audino, Sewaddle-lijn, Dwebble-lijn, Druddigon, Binacle-lijn, Carbink, Cutiefly-lijn, Bruxish.
+- **Ronde 1, erin:** Zangoose, Mankey-lijn, Oddish-lijn, Corsola-lijn, Pineco-lijn, Shuppet-lijn, Kricketot-lijn, Drowzee-lijn, Voltorb-lijn (de normale), Spinda, Toxel-lijn, Tinkatink-lijn, Tatsugiri.
+- Stand na ronde 1: 204 lijnen, 430 soorten genomineerd.
+
 ## Bestaande soorten in de regio
 - Alolan Exeggutor in de waspalmenvallei (Salento).
 - Minccino-lijn (chinchilla) naast de viscacha (neven, beide Chinchillidae).

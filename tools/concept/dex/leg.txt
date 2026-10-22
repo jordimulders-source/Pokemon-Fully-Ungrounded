@@ -1,0 +1,24 @@
+MEW|A|AMA,TEP|Volgens de Pokémon-lore ontdekt in de jungle van Guyana (Zuid-Amerika); post-game-mythical rond Paramaribo/de tepuis
+ZARUDE|A|AMA|Jungle-mythical (apenkoning van het regenwoud); past in het diepe Amazone-binnenland (post-game)
+VOLCANION|B|LIP|Stoom: de geisers van Sol de Mañana en Laguna Colorada; optionele mythical
+ZYGARDE_50|B|AMA,PAT|Bewaker van het ecosysteem: past precies bij het verhaal (natuur wordt vernietigd); post-game
+DEOXYS_NORMAL|B|ATA|Meteorieten en sterrenwachten van de Atacama (ALMA); post-game
+REGIROCK|B|STAD|Regi-puzzels in ruïnes: braille kan quipu (knopenschrift) worden; post-game
+REGICE|B|IJS|idem; gletsjergrot|
+REGISTEEL|B|GROT|idem; mijn|
+REGIELEKI|B|STAD|idem|
+REGIDRAGO|B|STAD|idem|
+REGIGIGAS|B|STAD|Sleutel van de Regi-puzzel|
+HEATRAN|C||Vulkanen genoeg; eigen trio/Pachamama nemen de spotlight
+GROUDON|C||Land/zee-duo wordt eigen (Tren Tren en Kai Kai, Mapuche)
+KYOGRE|C||idem
+RAYQUAZA|C||Hoenn-verhaal
+HO_OH|C||Zonnevogel: botst met het condor-legendary (Hanan Pacha)
+LUGIA|C||Geen band
+COSMOG|C||Zon/maan: Inti en Mama Killa krijgen eigen invulling
+TORNADUS_INCARNATE|C||Krachten der natuur: botst met Pachamama/het trio
+UXIE|C||Meergeesten: Titicaca/Viracocha liever eigen
+DIALGA|C||'Pacha' = wereld én tijd: Pachamama neemt die rol
+GIRATINA_ALTERED|C||Onderwereld: botst met Uku Pacha (slang)
+ARTICUNO|C||Kanto-vogels; eventueel post-game
+GREAT_TUSK|C||Paradox-soorten (Area Zero); horen bij Spacetime/post-game, niet in de regionale dex

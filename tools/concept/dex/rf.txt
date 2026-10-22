@@ -1,0 +1,26 @@
+# lijn | idee (type/uiterlijk) | inspiratie | waar | top
+Venonat → Venomoth|Besloten: bestaand ontwerp van Jordi (bestanden nog toevoegen); geen andere Venomoth-vorm|eerder ontwerp|zie POKEMON.md|0
+Teddiursa → Ursaring → Ursaluna|Normal/Grass: lichte 'bril' rond de ogen, klimt in bomen en eet bromelia's; Ursaluna als oude, bemoste nevelwoudbeer|brilbeer (oso de anteojos), de enige beer van Zuid-Amerika; Paddington komt 'uit het donkerste Peru'|NEV (nevelwoud, Machu Picchu-hellingen)|1
+Finizen → Palafin|Water/Psychic: grijs jong dat met de leeftijd roze wordt; de Hero-vorm wordt een gedaanteverwisselaar met witte hoed|roze rivierdolfijn (boto) en de mythe van de dolfijn die als man met hoed naar feesten gaat|AMA (verdronken woud, binnenzee)|2
+Golett → Golurk|Rock/Ghost of Ground/Psychic: monoliet met vierkant gezicht en de Zonnepoort-reliëfs; Golurk als 'wakker geworden' Tiwanaku-beeld|Tiwanaku (Ponce- en Bennett-monoliet, Puerta del Sol) vlak bij La Paz|ALT (ruïnes bij de startstad; vroeg)|3
+Impidimp → Morgrem → Grimmsnarl|Dark/Rock: mijnduivel met hoorns en diablada-masker; krijgt coca en sigaretten als offer|El Tío (heer van de mijn in Potosí/Oruro) en de diablada, de duivelsdans die mijnwerkers van Oruro voor hem dansen; alternatief: de Trauco van Chiloé|GROT (mijnen), STAD (carnaval van Oruro)|4
+Ekans → Arbok|Fire/Ghost: slang met enorme vurige ogen; het kapmotief wordt een vlammenpatroon|Boitatá (Braziliaanse vuurslang die het bos beschermt tegen wie het platbrandt); past bij het natuurthema|AMA, PAM (verbrand bos)|5
+Slakoth → Vigoroth → Slaking (split)|Ground/Dark: tweede eindvorm 'Mapinguari', reuzenluiaard met één oog en een bek op de buik|Mapinguari (Amazone-mythe, waarschijnlijk een herinnering aan de uitgestorven reuzengrondluiaard Megatherium)|AMA (diep binnenland, late game)|6
+Poltchageist → Sinistcha|Grass/Water of Grass/Ghost: mate-kalebas met bombilla; ability die het team helpt ('mate wordt in een kring gedeeld')|yerba mate (Argentinië, Uruguay, Paraguay, Zuid-Brazilië); idee van Jordi|PAM (Buenos Aires, Mendoza)|7
+Buizel → Floatzel|Water/Dark: 'rivierwolf', jaagt in familiegroepen, wit keelvlekpatroon per individu|reuzenotter (lobo de río) van de Amazone en Pantanal|AMA, PAN|8
+Tympole → Palpitoad → Seismitoad|Water/Ice: kikker met slobberige huidplooien (ademt door de huid in ijskoud water)|Titicaca-waterkikker (Telmatobius culeus) op 3800 m|ALT (Titicacameer; vroeg)|9
+Deerling → Sawsbuck|Grass/Ice: Deerling als pudú (kleinste hert ter wereld), Sawsbuck als huemul (wapen van Chili); seizoenen = Patagonische seizoenen|pudú en huemul|PAT (Valdiviaans regenwoud, Andes)|10
+Rufflet → Braviary|Flying/Fighting: harpij met dubbele kuif, jaagt op luiaards en apen|harpij-arend (Amazone)|AMA|
+Cherubi → Cherrim|Grass/Ground: bloeit alleen na zeldzame regen; in de zon openen de bloemen|desierto florido (de bloeiende Atacama)|ATA|
+Oricorio (nieuwe stijlen)|Nieuwe dansstijlen met eigen nectar: tango (Dark/Flying), samba (Fire/Flying of Fairy), cueca/marinera (Normal/Flying)|tango (Buenos Aires), samba (Rio), cueca (Chili), marinera (Peru)|STAD|
+Sandile → Krokorok → Krookodile|Water/Dark: kaaiman met brede snuit, ligt in groepen op de oever|yacaré-kaaiman van de Pantanal|PAN|
+Diglett → Dugtrio|Ground/Normal: knager met grote tanden in plaats van een mol; roept 'tuc-tuc' onder de grond|tuco-tuco (Ctenomys) van de altiplano, pampa en Patagonië|ALT, PAT (vroege Ground voor gym 1)|
+Chewtle → Drednaw|Water/Grass: plat, blad-achtig schild, zuigt prooi op|matamata-schildpad (Amazone)|AMA|
+Drowzee → Hypno|Water/Psychic: zwemmende tapir, droomt in de rivier|laaglandtapir (de baku-mythe van Drowzee is al op de tapir gebaseerd)|AMA, PAN|
+Archen → Archeops (levende vorm)|Poison/Flying: geen fossiel maar een stinkende jungle-vogel met klauwtjes aan de vleugels|hoatzin (de 'stinkvogel', kuikens hebben klauwen)|AMA|
+Basculin|Water/Rock: gepantserde reuzenvis die naar adem hapt aan het oppervlak|paiche/arapaima, een van de grootste zoetwatervissen|AMA|
+Caterpie → Metapod → Butterfree|Bug/Psychic: Butterfree met glimmend blauwe vleugels die de vijand verblinden|morphovlinder|AMA|
+Baltoy → Claydol|Ground/Fire: gebakken aardewerk met portretgezichten|huaco retrato (Moche-aardewerk, Peru)|ATA, STAD (graven)|
+Gimmighoul → Gholdengo|Alasitas-vorm: verzamelt miniaturen in plaats van munten; Gholdengo als Ekeko met volle handen|Ekeko en de Alasitas-markt in La Paz|ALT (La Paz)|
+Unown|Quipu-vorm: knopen in plaats van letters (puzzels in ruïnes)|quipu, het knopenschrift van de Inca's|STAD (ruïnes)|
+Glameow → Purugly|Rock/Dark: dikke staart met ringen, schuw, rotsen boven 4000 m|gato andino (titi), de zeldzaamste wilde kat|ALT, LIP|

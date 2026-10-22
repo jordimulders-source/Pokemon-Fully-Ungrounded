@@ -1,0 +1,458 @@
+# KEY | cat | biomes | reden | Ungrounded-revisie
+# ---------- Gen 1 ----------
+BULBASAUR|C|AMA|Jordi 22 okt: geschrapt. Kanto-starter, iconisch; als gift (zoals in X/Y), niet wild|
+CHARMANDER|C|VULK|Jordi 22 okt: geschrapt. Kanto-starter, iconisch; als gift, Charizard is publiekstrekker|
+SQUIRTLE|C|KUST|Jordi 22 okt: geschrapt. Kanto-starter, iconisch; als gift|Blastoise Water/Steel
+CATERPIE|A|AMA,NEV|Zuid-Amerika heeft de meeste vlindersoorten ter wereld (morphovlinder); vroege Bug voor het Bug-gym; kandidaat morpho-vorm|
+WEEDLE|C||Bijen/wespen-niche gaat naar Combee (Afrikaanse 'killer bees' in Brazilië) en de mug-fakemon|
+PIDGEY|C||Pidgey-rol is voor de condor-lijn (fakemon)|
+RATTATA|C||Vroege knager-rol is voor viscacha/cavia (fakemon); eventueel later in steden|
+SPEAROW|C||Overlap met condor-lijn en vroege vogels|
+EKANS|C||Cobra (Azië); als gewone soort niet, wel kandidaat voor een Boitatá-vorm (sectie 5)|
+PICHU|B|NEV,STAD|Mascotte; hoort in elke game|Raichu: 'Dynamo Fatso' met Galvanize; Alolan Raichu herzien
+SANDSHREW|A|ALT,ATA|Gordeldier (quirquincho, waarvan in de Andes charango's werden gemaakt); vroege Ground voor gym 1|Sand Rush / Tough Claws
+SANDSHREW_ALOLA|A|IJS|IJs-gordeldier voor de Cordillera, vroege Ice/Steel naast het Ice-gym|
+NIDORAN_F|C||Konijn/egel uit Kanto; viscacha neemt de oorrol|
+NIDORAN_M|C||idem|
+CLEFFA|B|ALT,STAD|Iconisch; maanfee past bij Mama Killa en de sterrenhemel van de altiplano|
+VULPIX|A|ATA,VULK,LIP|Culpeo/Andesvos (Atoq uit de Andes-verhalen); vuurvos rond de vulkanen van Lípez|Ninetales herzien
+VULPIX_ALOLA|A|IJS|Dezelfde vos in de sneeuw van de Cordillera; vroege Ice|Alolan Ninetales herzien
+IGGLYBUFF|C||Weinig band; Fairy is al gevuld|Jigglypuff-lijn herzien
+ZUBAT|C||Grotvleermuis; botst met de geplande vleermuislijn en de vampiervleermuis-insteek|Zubat-lijn herzien
+ODDISH|B||Jordi 22 okt: erin. Mandragora; Grass/Poison-plaats gaat naar Bellsprout (tepui-bekerplanten)|
+PARAS|A|AMA|Zombieschimmel (Ophiocordyceps) op mieren in het regenwoud; Ghost/Grass maakt hem een echte zombie|Parasect Ghost/Grass
+VENONAT|A|AMA,NEV|Besloten Venomoth-regional form (zie POKEMON.md); de lijn komt mee met die vorm|Venomoth Psychic/Poison, Magic Guard
+DIGLETT|C||Mol; als gewone soort niet, wel kandidaat voor een tuco-tuco-vorm (sectie 5)|
+DIGLETT_ALOLA|C||idem|
+MEOWTH|C||Geen band; katten-rol voor jaguar/ocelot (Liepard) en fakemon|
+MEOWTH_ALOLA|C||idem|
+MEOWTH_GALAR|C||idem|
+PSYDUCK|B|ALT,PAN|Iconisch; vroege Water in de hooglandlagunes; Water/Psychic is een eigen invulling|Water/Psychic
+MANKEY|B||Jordi 22 okt: erin. Apen-niche is voor de eigen apen (nachtaap, oeakari, saki)|
+GROWLITHE|B|STAD,PAM|Iconische hond, populair; politiehond in de steden|
+GROWLITHE_HISUI|C||Hisui-vorm; beter een eigen vorm|
+POLIWAG|B|PAN,AMA|Kikkervisjes in het moeras; Politoed herzien|Politoed Water/Normal, Liquid Voice
+ABRA|B|STAD|Iconische Psychic; vroege teleporter|Abra-lijn herzien
+MACHOP|B|GROT,STAD|Mijnwerkers in Potosí en bouwvakkers in de steden; iconisch|Machop-lijn herzien
+BELLSPROUT|A|TEP|Heliamphora (zonnebekerplanten) groeien alleen op de tepuis; vroege Grass/Poison|
+TENTACOOL|B|KUST,ZEE|Standaard zee-Pokémon; Poison voor het Poison-gym|Tentacool-lijn herzien
+GEODUDE|B|ALT,GROT|Rotsen en mijnen van de Andes; vroege Rock|Geodude-lijn herzien
+GEODUDE_ALOLA|C||Dubbele Geodude niet nodig|
+PONYTA|A|PAM|Criollo-paard van de gaucho's in de pampa|
+PONYTA_GALAR|C||Eenhoorn uit Galar|
+SLOWPOKE|C||Geen band|
+SLOWPOKE_GALAR|C||idem|
+MAGNEMITE|B|STAD,GROT|Steel/Electric voor de E4 (Electric en Steel); elektriciteitsnet van de steden en mijnen|Magnemite-lijn herzien
+FARFETCHD|C||Prei-eend uit Japan|Fighting/Flying met Moxie/Moody
+FARFETCHD_GALAR|C||idem|
+DODUO|A|PAM,PAT|Nandoe (rhea) van de pampa en Patagonische steppe; Ground/Flying past bij een loopvogel|Ground/Flying
+SEEL|A|PAT|Zeeleeuwen en -olifanten van Patagonië; Ice/Fairy-Dewgong (selkie) uniek|Dewgong Ice/Fairy, Pixilate
+GRIMER|C||Gewone Grimer niet nodig naast de Hoenn-vorm|
+GRIMER_ALOLA|C||idem|
+GRIMER_HOENN|B|ALT,PAM|Eigen Ungrounded-vorm (mest/'Dung'); Poison/Ground voor het Ground- én Poison-gym; lamamest is overal in de Andes|Eigen Hoenn-vorm Poison/Ground, Earth Eater
+SHELLDER|B|KUST|Schelpdier voor de kust; Cloyster sterk|
+GASTLY|B|STAD,GROT|Iconische Ghost voor de Ghost-E4|Gengar pure Ghost, Perish Body
+ONIX|C|GROT|Jordi 22 okt: geschrapt. Iconisch; Steelix voor de Steel-E4|
+DROWZEE|B||Jordi 22 okt: erin. Tapir-droometer: de tapir is wél Zuid-Amerikaans, maar beter als regional form (sectie 5)|Hypno Psychic/Dark
+KRABBY|A|GAL,KUST|Sally Lightfoot-krab, de rode krab op de lavarotsen van de Galápagos|
+VOLTORB|B||Jordi 22 okt: erin. Pokéball-grap; Electric is al gevuld|Voltorb herzien
+VOLTORB_HISUI|C||idem|
+EXEGGCUTE|A|NEV|Alolan Exeggutor in de waspalmenvallei (besloten); Exeggcute komt mee|
+CUBONE|C||Geen band; Alolan Marowak hoort bij Hawaï|
+TYROGUE|B|STAD|Vechtsporters in de steden (capoeira!); Hitmontop is een capoeirista avant la lettre|
+LICKITUNG|C||Geen band|
+KOFFING|B|STAD,GROT|Smog van steden en mijnen; Poison-gym en het thema natuurvernietiging|Koffing-lijn herzien
+RHYHORN|C|ALT,ATA|Jordi 22 okt: geschrapt. Rock-tank; pure Rock in Ungrounded|Pure Rock-lijn
+HAPPINY|B|STAD|Pokémon Center-gezicht, iconisch|
+TANGELA|A|AMA|Lianen/ayahuasca-liana van het regenwoud|
+KANGASKHAN|C||Australië|
+HORSEA|B|KUST|Zeepaardjes; Kingdra voor het Dragon-gym|Horsea-lijn herzien
+GOLDEEN|C||Vijvervis; niche gaat naar Basculin/Barboach/Arrokuda|Goldeen-lijn herzien
+STARYU|B|KUST,GAL|Zeesterren; Starmie iconisch|Staryu/Starmie herzien
+MIME_JR|C||Mime/Rime passen niet|
+SCYTHER|B|AMA|Iconisch; Scizor voor de Steel-E4 (bidsprinkhanen in het regenwoud)|
+SMOOCHUM|C||Geen band|
+ELEKID|C|STAD|Jordi 22 okt: geschrapt. Electric voor de E4; iconisch|
+MAGBY|C|VULK|Jordi 22 okt: geschrapt. Fire voor het Fire-gym|
+PINSIR|B|AMA|Reuzenkevers van de Amazone (titankever); Bug-gym|Hyper Cutter / Moxie
+TAUROS|A|PAM|Runderen van de pampa (asado, gaucho's)|
+TAUROS_PALDEA_COMBAT|C||Spaanse vechtstier; gewone Tauros volstaat|
+MAGIKARP|B|ALT,AMA,PAN|Iconisch; forel-achtige vulling van de Titicaca; Gyarados|Gyarados Water/Flying, Moxie
+LAPRAS|B|PAT|Iconisch; fjorden van Patagonië|
+DITTO|B|STAD|Fokken; iconisch|
+EEVEE|B|ALT,STAD|Iconisch; Leafeon/Glaceon passen bij jungle en Cordillera|
+PORYGON|B|STAD|Electric/Ghost-Porygon-Z uniek voor Electric/Ghost-E4|Porygon-Z Electric/Ghost
+OMANYTE|C||Fossiel; regio krijgt liever eigen fossielen (megafauna, zie gaten)|
+KABUTO|C||idem|
+AERODACTYL|C||idem|
+MUNCHLAX|B|STAD|Iconisch; snackt empanadas|
+DRATINI|B|PAT,AMA|Pseudo-legendary, iconisch; Dragon-gym|
+# ---------- Gen 2 ----------
+CHIKORITA|C||Starter andere regio (eventueel post-game/Safari)|
+CYNDAQUIL|C||idem|
+TOTODILE|C||Krokodil: kaaimannen zijn Zuid-Amerikaans, maar beter als fakemon of regional form|
+SENTRET|C||Fret; viscacha neemt de rol|
+HOOTHOOT|B|PAM,NEV|Holenuil (pampa) als vroege nachtvogel; Noctowl Flying/Dark|Noctowl Flying/Dark
+LEDYBA|C||Lieveheersbeestje|Ledian Bug/Normal
+SPINARAK|A|AMA|Vogelspin (Goliath birdeater) van de Amazone; Bug/Poison|
+CHINCHOU|B|ZEE|Diepzee-lantaarnvis; Electric/Water|Chinchou-lijn herzien
+TOGEPI|C||Geen band|
+NATU|A|STAD,ALT|Xatu staart naar de zon: zonaanbidding (Inti), totems; ruïnes|Natu/Xatu herzien
+MAREEP|C||Schaap/wol botst met alpaca-starter en Wooloo|
+AZURILL|C||Geen band|Marill-lijn herzien
+BONSLY|C||Japanse bonsai|
+HOPPIP|C||Geen band|
+AIPOM|A|AMA|Grijpstaart = Nieuwe-Wereldaap (doodshoofdaapje); andere niche dan de geplande apen|
+SUNKERN|C||Zonnebloem (Noord-Amerika)|
+YANMA|B|AMA,PAN|Reuzenlibellen; Yanmega voor het Bug-gym|
+WOOPER|B|ALT,PAN|Vroege Water/Ground bij de Titicaca en voor gym 1|
+WOOPER_PALDEA|C||Paldea-vorm, dubbel|
+MURKROW|C||Kraai; heksen-thema past niet|
+MISDREAVUS|B|STAD|Ghost-E4; spookverhalen (La Llorona)|
+WYNAUT|C||Geen band|Wobbuffet Psychic/Normal
+GIRAFARIG|C||Afrika|
+PINECO|B||Jordi 22 okt: erin. Dennenappel; araucaria-idee beter als fakemon|
+DUNSPARCE|C||Geen band|Dunsparce/Dudunsparce herzien
+GLIGAR|B|ATA,LIP|Ground/Flying voor gym 1; Gliscor vampierachtig|
+SNUBBULL|C||Bulldog|
+QWILFISH|B|KUST|Kogelvis; Poison-gym|
+QWILFISH_HISUI|C||Hisui-vorm|
+SHUCKLE|C||Geen band|
+HERACROSS|A|AMA|Herculeskever (Dynastes hercules) leeft in Zuid-Amerika|Skill Link / Moxie
+SNEASEL|B|IJS|Dark/Ice voor de Cordillera en het Dark- én Ice-gym|
+SNEASEL_HISUI|C||Hisui-vorm|
+TEDDIURSA|A|NEV|Brilbeer (oso de anteojos), de enige beer van Zuid-Amerika (Paddington komt uit Peru); kandidaat regional form|
+SLUGMA|B|VULK,LIP|Lava van de vulkanen|
+SWINUB|B|IJS|Vroege Ice/Ground in de Cordillera; Mamoswine (ijstijd-megafauna)|
+CORSOLA|A|KUST|Jordi 22 okt: erin. Koraalriffen van de Caribische kust|Corsola herzien
+CORSOLA_GALAR|C||Gebleekt koraal: sterk natuurthema, maar dubbel; eventueel post-game|
+REMORAID|B|KUST|Zee-vulling; Octillery herzien|Octillery herzien
+DELIBIRD|C||Kerst-pinguïn; botst met de pinguïn-fakemon|Atk/Spe omhoog, Freeze-Dry
+MANTYKE|A|GAL,KUST|Reuzenmanta's rond de Galápagos en Ecuador|
+SKARMORY|B|ATA,ALT|Steel/Flying voor Steel- en Flying-E4|Skarmory herzien
+HOUNDOUR|B|VULK,STAD|Dark/Fire voor Dark- en Fire-gym; zwerfhonden in steden|
+PHANPY|C||Olifant (Azië/Afrika)|Phanpy/Donphan herzien
+STANTLER|C||Eland; hertenniche via Deerling (pudú/huemul)|
+SMEARGLE|A|PAT|Cueva de las Manos in Patagonië: 9000 jaar oude handafdrukken; Smeargle als kunstenaar|
+MILTANK|A|PAM|Melkkoeien van de pampa (dulce de leche!)|
+LARVITAR|B|ALT,GROT|Pseudo-legendary; bergen en mijnen|
+# ---------- Gen 3 ----------
+TREECKO|C||Hoenn-starter (eventueel gift voor Ungrounded-fans)|Treecko-lijn herzien
+TORCHIC|C||idem|Torchic-lijn herzien
+MUDKIP|C||idem|Mudkip-lijn herzien
+POOCHYENA|C||Hyena (Afrika); Dark-gym heeft genoeg|Strong Jaw / Moxie
+ZIGZAGOON|C||Wasbeer: botst met de coati/wasbeer-starter|Zigzagoon-lijn herzien
+ZIGZAGOON_GALAR|C||idem|Galar-lijn herzien
+WURMPLE|B|AMA,NEV|Vroege Bug; Beautifly/Dustox herzien|Beautifly Pollen Season, Dustox bulky
+LOTAD|A|AMA,PAN|Lotad als Victoria amazonica (reuzenwaterlelie); Ludicolo als feestganger (carnaval)|Ludicolo herzien (Dancer)
+SEEDOT|C||Tengu (Japan)|Nuzleaf Grass/Fairy, Shiftry Grass/Ice
+TAILLOW|B|PAM,STAD|Boerenzwaluwen overwinteren in Zuid-Amerika; pure Flying voor de Flying-E4|Swellow pure Flying, Gale Wings
+WINGULL|A|KUST|Meeuwen en de Peruaanse pelikaan van de Humboldt-kust|Wingull/Pelipper herzien
+RALTS|C|STAD|Jordi 22 okt: geschrapt. Iconisch, fan-favoriet|Ralts-lijn herzien
+SURSKIT|B|AMA,PAN|Schaatsenrijders op stil water|Surskit-lijn herzien
+SHROOMISH|B|AMA|Paddenstoelen van het regenwoud; Breloom|Breloom Technician/Poison Heal
+SLAKOTH|A|AMA|Luiaard (besloten)|Slakoth-lijn herzien
+NINCADA|B|PAM|Cicades; Shedinja|Nincada-lijn herzien
+WHISMUR|B|STAD|Unieke Steel/Electric-lijn (luidsprekers, carnaval, sound systems)|Loudred/Exploud Steel/Electric, Galvanize
+MAKUHITA|C||Sumo|Purifying Salt
+NOSEPASS|A|GAL|Nosepass is op de moai van Paaseiland gebaseerd|Nosepass/Probopass herzien
+SKITTY|C||Huiskat|Skitty-lijn herzien
+SABLEYE|A|GROT|Edelstenen eten: Muzo-smaragden (Colombia), mijnen; Ghost-E4|Sableye herzien
+MAWILE|C|GROT|Jordi 22 okt: geschrapt. Steel/Fairy voor de Steel-E4|Intimidate / Sheer Force
+ARON|B|GROT,ALT|IJzer eten in de mijnen; Steel-E4|Aron-lijn herzien
+MEDITITE|C||Yoga|Meditite-lijn herzien
+ELECTRIKE|C||Electric genoeg|Electrike-lijn herzien
+PLUSLE|C||Geen band|Nasty Plot
+MINUN|C||idem|Volt Absorb
+VOLBEAT|A|AMA,PAN|Vuurvliegjes in de jungle; Fire/Electric uniek|Volbeat Fire/Electric, Prankster
+ILLUMISE|A|AMA,PAN|idem|Illumise Bug/Electric
+BUDEW|A|NEV|Orchideeën: Colombia heeft er de meeste ter wereld|Roserade Technician
+GULPIN|C||Geen band|Gulpin-lijn herzien
+CARVANHA|A|AMA,GAL|Piranha (Amazone); Sharpedo als hamerhaai van de Galápagos|Strong Jaw
+WAILMER|A|KUST,PAT|Bultruggen voor Brazilië en Patagonië (Península Valdés)|Wailmer-lijn herzien
+NUMEL|C||Kameel: botst met de kameelachtigen-fakemon (lama, alpaca, vicuña, guanaco)|Numel-lijn herzien
+TORKOAL|A|GAL,VULK|Reuzenschildpad op de vulkanen van de Galápagos|Torkoal herzien (Drought)
+SPOINK|C||Geen band|Psychic/Normal
+SPINDA|B||Jordi 22 okt: erin. Geen band; Ungrounded-grap|Normal/Fighting 'Drunken Master'
+TRAPINCH|B|ATA|Woestijnlibel; Flygon voor Dragon- en Ground-gym|Trapinch-lijn herzien
+CACNEA|A|ATA|Cardón-cactussen van Atacama en Salta|Cacnea-lijn herzien
+SWABLU|B|PAT,NEV|Wolkenvogel; Altaria voor Dragon-gym/Flying-E4|Swablu/Altaria herzien
+ZANGOOSE|B||Jordi 22 okt: erin. Mangoest|Zangoose herzien
+SEVIPER|B|PAM,AMA|Poison/Steel uniek in Ungrounded; slangen van de Chaco|Seviper Poison/Steel, Merciless
+LUNATONE|A|ALT,ATA|Mama Killa (maan); meteorieten in de Atacama|Lunatone herzien
+SOLROCK|A|ALT,ATA|Inti (zon); zonneschijf van de Inca's|Solrock herzien
+BARBOACH|A|AMA|Reuzenmeervallen van de Amazone (piraíba)|Barboach-lijn herzien
+CORPHISH|C||Invasieve rivierkreeft; dubbel met Krabby/Crabrawler|Corphish-lijn herzien
+BALTOY|B|ATA,STAD|Kleibeeldjes: kandidaat voor een huaco-vorm (Moche-aardewerk)|Baltoy-lijn herzien
+LILEEP|C||Fossiel|Lileep-lijn herzien
+ANORITH|C||Fossiel|Anorith-lijn herzien
+FEEBAS|B|AMA,PAN|Iconisch; Milotic|Feebas/Milotic herzien
+CASTFORM|A|ALT,LIP|Weer-Pokémon voor het extreme hooglandweer (hagel, zon, regen op één dag); Psychic in Ungrounded|Psychic, Forecast
+KECLEON|B|AMA|Keccles is een Kecleon (vaste compagnon); camouflage in de jungle|Grass, Protean
+SHUPPET|B||Jordi 22 okt: erin. Pop; Ghost genoeg|Banette Ghost/Dark
+DUSKULL|B|STAD,ALT|Ghost-E4; Día de los Muertos-sfeer, Ñatitas (schedelfeest in La Paz)|Dusknoir Ghost/Dark
+TROPIUS|A|AMA,NEV,KUST|Bananen en tropisch fruit (Ecuador); Grass/Dragon voor Grass- en Dragon-gym|Grass/Dragon
+CHINGLING|C||Windgong|Chimecho herzien
+ABSOL|B|IJS,ALT|Dark/Fairy uniek; bergen en rampen (gletsjers die verdwijnen)|Dark/Fairy, Serene Grace
+SNORUNT|B|IJS|Vroege Ice in de Cordillera|Snorunt-lijn herzien
+SPHEAL|A|PAT|Zeehonden en zeeleeuwen van Patagonië|Spheal-lijn herzien
+CLAMPERL|C|ZEE|Jordi 22 okt: geschrapt. Diepzee|evolueert ook op lv 30
+RELICANTH|C||Coelacant (Afrika/Indonesië)|Relicanth Trick Room
+LUVDISC|C||Geen band|Luvdisc herzien
+BAGON|B||Pseudo-legendary, Dragon-gym|Sheer Force / Moxie
+BELDUM|B|ATA|Pseudo-legendary; meteorieten in de Atacama; Steel-E4|Metang/Metagross herzien
+# ---------- Gen 4 ----------
+TURTWIG|C||Starter andere regio|
+CHIMCHAR|C||Aap; apen-niche voor eigen fakemon|
+PIPLUP|C||Pinguïn: botst met de pinguïn-fakemon|
+STARLY|C||Spreeuw; condor-lijn neemt vogelrol|
+BIDOOF|A|PAT|Bevers in Vuurland: ingevoerd, nu een ecologische ramp (past bij het natuurthema)|
+KRICKETOT|B||Jordi 22 okt: erin. Rol gaat naar de mug-fakemon|
+SHINX|C||Lynx|
+CRANIDOS|C||Fossiel|
+SHIELDON|C||Fossiel|
+BURMY|C||Geen band|
+COMBEE|A|AMA,PAM|Afrikaanse honingbijen ('killer bees') ontsnapten in 1957 in Brazilië|
+PACHIRISU|C||Eekhoorn|
+BUIZEL|A|AMA|Reuzenotter van de Amazone; kandidaat regional form|
+CHERUBI|C||Kers; wel kandidaat voor een desierto florido-vorm (sectie 5)|
+SHELLOS|C|KUST,PAT|Jordi 22 okt: geschrapt. Oost/West-vorm past bij Pacifische en Atlantische kust|
+DRIFLOON|C||Ballonnen; Ghost genoeg|
+BUNEARY|C||Konijn; viscacha neemt de rol|
+GLAMEOW|C||Kat; wel kandidaat voor een gato andino-vorm (sectie 5)|
+STUNKY|A|PAM,ATA|Stinkdier (zorrino, Conepatus) van pampa en Andes; Poison/Dark|
+BRONZOR|B|STAD,ALT|Steel/Psychic; kandidaat voor een gouden zonneschijf-vorm (Inca-goud)|
+CHATOT|A|AMA|Papegaaien en ara's van de Amazone|
+SPIRITOMB|B|STAD|Ghost/Dark; ruïnes|
+GIBLE|B|ATA|Pseudo-legendary; Dragon/Ground voor Dragon- en Ground-gym|
+RIOLU|C|ALT|Jordi 22 okt: geschrapt. Iconisch (Lucario); Steel-E4|
+HIPPOPOTAS|A|ATA,STAD|De 'cocaïne-nijlpaarden' van Escobar zwerven echt door Colombia (Medellín)|
+SKORUPI|A|ATA,PAM|Schorpioenen van de Atacama en de Chaco; Poison-gym|
+CROAGUNK|A|AMA|Gifkikkers (pijlgifkikkers) van de Amazone; Poison/Fighting|
+CARNIVINE|C|AMA,TEP|Jordi 22 okt: geschrapt. Vleesetende plant; Grass in Ungrounded|Pure Grass
+FINNEON|C|ZEE,KUST|Jordi 22 okt: geschrapt. Zee-vulling|Lumineon SpA omhoog, Scald/Hurricane
+SNOVER|B|IJS|Vroege Grass/Ice in de Cordillera (Polylepis-bosjes)|
+ROTOM|B|STAD|Iconisch; Electric-E4|
+# ---------- Gen 5 ----------
+SNIVY|C||Starter andere regio|
+TEPIG|C||idem|
+OSHAWOTT|C||Zeeotter: kandidaat via Buizel-vorm|
+PATRAT|C||Knager; viscacha|
+LILLIPUP|C||Hond; Growlithe volstaat|
+PURRLOIN|A|AMA,NEV|Liepard als ocelot/jaguar; Dark-gym|
+PANSAGE|C||Elemental monkeys; apen-niche gaat naar fakemon|
+PANSEAR|C||idem|
+PANPOUR|C||idem|
+MUNNA|C||Tapir: tapir past, maar beter een eigen tapir-vorm (zie RF Drowzee/Munna)|
+PIDOVE|C||Duif|
+BLITZLE|C||Zebra (Afrika)|
+ROGGENROLA|C|GROT,ALT|Jordi 22 okt: geschrapt. Rock voor de vroege grotten|
+WOOBAT|C||Vleermuis: botst met de vleermuislijn|
+DRILBUR|B|ALT,GROT|Ground voor gym 1; Excadrill populair|
+AUDINO|C|STAD|Jordi 22 okt: geschrapt. EXP-bron, healer|
+TIMBURR|B|STAD|Bouwvakkers in de steden; iconisch|
+TYMPOLE|A|AMA,PAN|Agapad (cane toad) is Zuid-Amerikaans|
+THROH|C||Judo/karate|
+SAWK|C||idem|
+SEWADDLE|C|AMA|Jordi 22 okt: geschrapt. Bladsnijders; Bug/Grass voor het Bug-gym|
+VENIPEDE|A|AMA|Reuzenduizendpoot (Scolopendra gigantea) van de Amazone; Bug/Poison|
+COTTONEE|C||Katoen; zwakke band|
+PETILIL|C||Geen band|
+SANDILE|C||Woestijnkrokodil; wel kandidaat voor een kaaiman-vorm (sectie 5)|
+DARUMAKA|C||Daruma (Japan)|
+MARACTUS|A|ATA,PAM|Maraca-cactus: Latijns-Amerikaanse muziek en woestijn|
+DWEBBLE|C|KUST|Jordi 22 okt: geschrapt. Heremietkreeften|
+SCRAGGY|B|STAD|Straatbendes; past bij de gangs|
+SIGILYPH|A|ATA|Nazca-lijnen (besloten)|Tinted Lens / Magic Guard
+YAMASK|A|ATA|Chinchorro-mummies (de oudste ter wereld, Atacama) droegen maskers|
+YAMASK_GALAR|C||Galar-vorm|
+TIRTOUGA|C||Fossiel|
+ARCHEN|C||Fossiel; wel kandidaat voor een levende hoatzin-vorm (sectie 5)|
+TRUBBISH|B|STAD|Afval in de steden; natuurvernietiging; Poison-gym|
+ZORUA|A|NEV,AMA|Naam van 'zorro' (vos); illusie past bij gedaanteverwisselaars uit de mythen|
+ZORUA_HISUI|C||Hisui-vorm|
+MINCCINO|A|ALT|Chinchilla (besloten)|
+GOTHITA|C||Gothic|
+SOLOSIS|C||Geen band|
+DUCKLETT|A|PAT|Zwarthalszwanen van Patagonië|
+VANILLITE|C||IJsje|
+DEERLING|A|PAT,NEV|Herten van de Andes (huemul, pudú); kandidaat regional form|
+EMOLGA|C||Vliegende eekhoorn (Azië)|
+KARRABLAST|C||Geen band|
+FOONGUS|A|AMA|Schimmels van het regenwoud; Grass/Poison|
+FRILLISH|B|ZEE|Ghost/Water in zee|
+ALOMOMOLA|C||Maanvis; zwak|
+JOLTIK|B|AMA|Bug/Electric; kleine spinnen|
+FERROSEED|B|NEV|Grass/Steel|
+KLINK|C||Tandwielen|
+TYNAMO|A|AMA|De sidderaal leeft alleen in Zuid-Amerika|
+ELGYEM|B|ATA|Knipoog naar de 'Nazca-aliens'; sterrenwachten in de Atacama|
+LITWICK|C||Kaarsen; Ghost genoeg|
+AXEW|C||Dragon genoeg|
+CUBCHOO|C||IJsbeer (noordpool)|
+CRYOGONAL|B|IJS|IJskristal in de Cordillera|
+SHELMET|C||Geen band|
+STUNFISK|B|PAN|Platvis in de modder; Ground/Electric voor gym 1|
+STUNFISK_GALAR|C||Galar-vorm|
+MIENFOO|C||Kungfu|
+DRUDDIGON|C|GROT|Jordi 22 okt: geschrapt. Dragon voor het Dragon-gym|
+GOLETT|A|ALT,STAD|Tiwanaku-monolieten (bij La Paz) als oeroude golems; kandidaat regional form|
+PAWNIARD|B|STAD|Dark/Steel; bendes; Kingambit|
+BOUFFALANT|A|AMA,KUST|Waterbuffels op het eiland Marajó (de politie rijdt erop)|
+RUFFLET|B|PAT|Adelaar; kandidaat harpij-vorm|
+VULLABY|C||Gier: botst met de condor-lijn|
+HEATMOR|A|PAM,AMA|Reuzenmiereneter (besloten); Fire-gym|
+DURANT|A|AMA|Legermieren en bladsnijders; prooi van Heatmor; Bug/Steel|
+DEINO|B|NEV|Pseudo-legendary; Dark/Dragon voor Dark- en Dragon-gym|
+LARVESTA|A|AMA,VULK|Zonnemot (Volcarona) als zonnegod: Inti; vlinderrijkdom|
+# ---------- Gen 6 ----------
+CHESPIN|C||Starter andere regio|
+FENNEKIN|C||idem|
+FROAKIE|C||idem|
+BUNNELBY|C||Konijn; viscacha|
+FLETCHLING|C||Overlap condor-lijn|
+LITLEO|C||Leeuw|
+SKIDDO|C||Geit; kameelachtigen nemen de rol|
+PANCHAM|C||Panda|
+ESPURR|C||Kat|
+HONEDGE|C||Zwaard|
+SPRITZEE|C||Parfum|
+SWIRLIX|C||Snoep|
+INKAY|A|KUST,ZEE|Humboldt-inktvis (jumbo squid) van de Peruaanse kust|
+BINACLE|C|KUST|Jordi 22 okt: geschrapt. Rotskust|
+SKRELP|B|KUST|Poison/Dragon voor Poison- en Dragon-gym (kelpwouden)|
+CLAUNCHER|B|KUST|Pistoolgarnalen|
+HELIOPTILE|C||Kraaghagedis (Australië)|
+TYRUNT|C||Fossiel|
+AMAURA|C||Fossiel|
+HAWLUCHA|C||Lucha libre: botst met de cholita-luchadora-starter|
+DEDENNE|C||Geen band|
+CARBINK|C|GROT|Jordi 22 okt: geschrapt. Edelstenen in de mijnen|
+GOOMY|B|AMA|Slakken in de regen; Dragon-gym|
+KLEFKI|C||Sleutels|
+PHANTUMP|B|NEV,AMA|Boomgeest; bossen die gekapt worden|
+PUMPKABOO|C||Halloween|
+BERGMITE|B|IJS,PAT|Gletsjers (Perito Moreno)|
+NOIBAT|C||Vleermuis: botst met de vleermuislijn (alleen als Dragon tekortkomt)|
+SCATTERBUG|A|AMA,PAM|Vivillon-patronen (Jungle, Savanna, Sun, High Plains) passen bij de biomes|
+FLABEBE|A|NEV,STAD|Bloemenfestival van Medellín (Feria de las Flores)|
+FURFROU|C||Poedel|
+# ---------- Gen 7 ----------
+ROWLET|C||Starter andere regio|
+LITTEN|C||Worstelaar: botst met de luchadora-starter|
+POPPLIO|C||Starter; zeeleeuwen via Seel/Spheal|
+PIKIPEK|A|AMA,NEV|Toekan (besloten)|
+YUNGOOS|C||Mangoest|
+GRUBBIN|B|AMA|Bug/Electric voor het Bug-gym|
+CRABRAWLER|C||Krab genoeg|
+CUTIEFLY|C|NEV|Jordi 22 okt: geschrapt. Bestuivers; Bug/Fairy|
+ROCKRUFF|C||Hond|
+MAREANIE|B|KUST|Poison/Water voor het Poison-gym|
+MUDBRAY|A|ALT|Muilezels en ezels als lastdier in de Andes (naast de lama's)|
+DEWPIDER|B|AMA|Waterspinnen|
+FOMANTIS|C||Orchideebidsprinkhaan (Azië)|
+MORELULL|B|AMA|Lichtgevende paddenstoelen|
+SALANDIT|C||Salamander; Poison genoeg|
+STUFFUL|C||Beer; brilbeer via Teddiursa|
+BOUNSWEET|C||Fruit: zuidamerikaans fruit liever als fakemon|
+COMFEY|C||Lei (Hawaï)|
+ORANGURU|C||Orang-oetan: rol gaat naar de oeakari (besloten)|
+PASSIMIAN|C||Rol gaat naar de witgezichtsaki (besloten)|
+WIMPOD|B|ZEE|Diepzee-isopode|
+SANDYGAST|B|KUST|Zandkastelen op de stranden (Copacabana)|
+PYUKUMUKU|C||Zeekomkommer|
+TYPE_NULL|C||Lab-Pokémon|
+KOMALA|C||Koala|
+TURTONATOR|C||Geen band|
+TOGEDEMARU|C||Egel|
+MIMIKYU|B|STAD|Iconisch, fan-favoriet|
+BRUXISH|C|KUST|Jordi 22 okt: geschrapt. Tropische vis (Caribisch)|
+DRAMPA|C||Geen band|
+DHELMISE|B|KUST,PAT|Scheepswrak-geest: de Caleuche van Chiloé|
+JANGMO_O|C||Dragon genoeg|
+# ---------- Gen 8 ----------
+GROOKEY|C||Aap; starter|
+SCORBUNNY|C||Voetbal-starter: de eigen voetbal-Pokémon moet juist anders zijn|
+SOBBLE|C||Starter|
+SKWOVET|C||Eekhoorn|
+ROOKIDEE|C||Raaf; overlap condor|
+BLIPBUG|C||Geen band|
+NICKIT|B|ALT,PAM|Listige vos (Atoq) voor het Dark-gym; tweede vos naast Vulpix|
+GOSSIFLEUR|C||Paardebloem|
+WOOLOO|A|PAT|Schapen-estancia's van Patagonië|
+CHEWTLE|B|AMA,PAN|Bijtschildpad; kandidaat matamata-vorm|
+YAMPER|C||Corgi|
+ROLYCOLY|B|GROT|Steenkool en mijnen|
+APPLIN|C||Appel|
+SILICOBRA|A|ATA|'Sandaconda': anaconda + woestijn; Ground voor gym 1|
+CRAMORANT|A|GAL|De vliegloze aalscholver van de Galápagos|
+ARROKUDA|B|KUST|Barracuda's van de Caribische kust|
+TOXEL|B||Jordi 22 okt: erin. Punk; geen band|
+SIZZLIPEDE|B|ATA,VULK|Fire/Bug voor Fire- en Bug-gym|
+CLOBBOPUS|C||Octopus; Fighting genoeg|
+HATENNA|C||Heks|
+IMPIDIMP|B|PAT,STAD|Dark/Fairy; kobold: kandidaat Trauco-vorm (Chiloé)|
+MILCERY|C||Room; dulce de leche-vorm is een grap-idee|
+FALINKS|C||Militair|
+PINCURCHIN|B|KUST|Zee-egels|
+SNOM|B|IJS|Vroege Ice/Bug: brug tussen Ice- en Bug-gym|
+STONJOURNER|C||Stonehenge; Tiwanaku via Golett|
+EISCUE|C||Pinguïn: botst met de pinguïn-fakemon|
+INDEEDEE|C||Butler|
+MORPEKO|C||Hamster|
+CUFANT|C||Olifant; koper-thema (Chili) beter met een andere soort|
+DRACOZOLT|C||Fossiel-fusie|
+ARCTOZOLT|C||idem|
+DRACOVISH|C||idem|
+ARCTOVISH|C||idem|
+DURALUDON|C||Geen band|
+DREEPY|B|STAD|Pseudo-legendary Ghost/Dragon; Ghost-E4 en Dragon-gym|
+# ---------- Gen 9 ----------
+SPRIGATITO|C||Starter|
+FUECOCO|C||Starter|
+QUAXLY|C||Starter|
+LECHONK|B|NEV,AMA|Pekari's (navelzwijnen); vroege Normal in het laagland|
+TAROUNTULA|C||Spin genoeg|
+NYMBLE|C||Krekel|
+PAWMI|C||Muis|
+TANDEMAUS|C||Muis|
+FIDOUGH|C||Brood|
+SMOLIV|C||Olijf (Mendoza): zwak; eventueel|
+NACLI|A|LIP|Zout van de Salar de Uyuni; Rock voor gym 1|
+CHARCADET|C||Geen band|
+TADBULB|C||Geen band|
+WATTREL|A|GAL,KUST|Fregatvogels van de Galápagos; Electric/Flying voor beide E4|
+MASCHIFF|B|STAD|Dark-gym; waakhonden van de bendes|
+SHROODLE|C||Aap; overlap met eigen apen|
+BRAMBLIN|B|ATA,PAT|Rollende distels van de steppe|
+TOEDSCOOL|C||Geen band|
+KLAWF|C||Krab genoeg|
+CAPSAKID|A|NEV,AMA|De chilipeper (ají) komt uit Bolivia/Zuid-Amerika|
+RELLOR|C||Mestkever (Egypte)|
+FLITTLE|C||Geen band|
+TINKATINK|B||Jordi 22 okt: erin. Smid|
+WIGLETT|B|KUST|Zandbank|
+BOMBIRDIER|A|PAN|Ooievaar: de jabiru van de Pantanal|
+FINIZEN|B|KUST|Dolfijnen; kandidaat boto-vorm|
+VAROOM|C||Motor|
+CYCLIZAR|C||Geen band|
+ORTHWORM|C||Geen band|
+GLIMMET|B|GROT,ATA|Kristallen in de mijnen; Poison-gym|
+GREAVARD|C||Spookhond|
+FLAMIGO|A|LIP|Laguna Colorada vol flamingo's (besloten)|
+CETODDLE|C||IJswalvis; ijsniche is gevuld|
+VELUZA|C||Geen band|
+DONDOZO|C||Geen band|
+FRIGIBAX|B|IJS|Pseudo-legendary Dragon/Ice; past bij de vroege sneeuw (late evolutie)|
+GIMMIGHOUL|A|STAD,GROT|El Dorado: goud en schatten; Gholdengo voor Steel/Ghost-E4|
+POLTCHAGEIST|A|PAM|Kandidaat mate-vorm (kalebas met bombilla); Grass/Ghost|
+SINISTEA|C||Thee; mate gaat via Poltchageist|
+ORICORIO|A|PAM,STAD|Dansvogel: kandidaat voor tango/samba/cueca-stijlen als regionale vormen|
+SQUAWKABILLY|A|STAD,PAM|Monniksparkiet uit Argentinië: leeft in luidruchtige 'bendes' in steden|
+WISHIWASHI|C||Geen band|
+MINIOR|C||Meteoriet; Atacama-meteorieten gaan naar Lunatone/Solrock/Beldum|
+UNOWN|B|STAD|Ruïnes; kandidaat quipu-vorm (knopenschrift van de Inca's)|
+TATSUGIRI|B||Jordi 22 okt: erin. Sushi|
+MIENFOO|C||Kungfu|
+BASCULIN|B|AMA|Rivierroofvis; kandidaat paiche/arapaima-vorm|
+BURMY|C||Geen band|

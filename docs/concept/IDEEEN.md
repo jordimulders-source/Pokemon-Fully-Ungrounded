@@ -75,3 +75,10 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - Rode draad: elke eindvorm draagt een Boliviaanse traditie, zoals de bombín van de alpaca-lijn (La Paz = start).
 - **Dark:** Andeskat (gato andino, de zeldzaamste wilde kat; "titi" in het Aymara, vgl. Titicaca) → eindvorm in **diablada**-kostuum (duivelsdans van het carnaval van Oruro). Alternatieven: jaguar (nachtjager, Chavín-katgod), culpeo-vos (de listige vos uit Andes-verhalen), vampiervleermuis, coati (dief).
 - **Psychic:** cavia/cuy (de "limpia de cuy": genezers lezen ziektes af met een cavia) → eindvorm als **yatiri/kallawaya** (Andes-genezer die cocabladeren leest, met kruidentas). Alternatieven: kolibrie (Nazca, zon), nachtaap (grote ogen, nachtdier), roze rivierdolfijn (boto, mythe van gedaanteverwisseling), guácharo (grotvogel die in het donker 'ziet').
+
+## Evolutiepitches (Claude, 22 okt)
+- **Coati (Dark):** kit dat bessen pikt → tiener-bandiet met gestolen toeristentas aan de staart → eindvorm A: Robin Hood van de jungle (steelt van de rijken, past bij de arc "voorvechter voor de zwakkeren"; coati's leven in groepen die 'bandas' heten, knipoog naar de gangs) of eindvorm B: diablada-duivel (Dark/Fire). Signature: steel-en-wegwezen (schade + item stelen + wisselen).
+- **Kolibrie (Psychic):** kuiken → zwaardsnavelkolibrie (snavel langer dan zijn lijf, bestaat echt) → Nazca-zonnebode met gouden zonneschijf (Psychic/Flying).
+- **Nachtaap (Psychic):** baby met enorme ogen → leest de sterren → eindvorm met de 'donkere sterrenbeelden' van de Inca's in zijn vacht (in de donkere vlekken van de Melkweg zagen zij een lama, een slang en een pad). Psychic/Dark of Psychic/Fairy.
+- **Roze rivierdolfijn (Psychic):** grijs jong (boto's worden echt pas roze met de leeftijd) → roze → gedaanteverwisselaar met witte hoed (de mythe: hij verbergt zijn blaasgat onder een hoed). Psychic/Water.
+- **Guácharo (Psychic):** dik kuiken → grotvogel die met geluid ziet → orakel van de onderwereld (in Venezuela gold de guácharo-grot als ingang naar het dodenrijk; link met Uku Pacha). Psychic/Ghost.

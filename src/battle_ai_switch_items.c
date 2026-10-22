@@ -1120,6 +1120,144 @@ static bool32 CanBattlerConsiderSwitch(u32 battler)
     return TRUE;
 }
 
+// Project Grounded: weerzetters (Drought, Drizzle, Sand Stream, Snow Warning) slim inzetten.
+// Is het weer weg en hebben teamgenoten er iets aan, dan brengt de AI de weerzetter terug;
+// staat het weer nog, dan bewaart ze hem tot het op is.
+static u32 GetWeatherFromSetterAbility(enum Ability ability)
+{
+    switch (ability)
+    {
+    case ABILITY_DROUGHT:      return B_WEATHER_SUN;
+    case ABILITY_DRIZZLE:      return B_WEATHER_RAIN;
+    case ABILITY_SAND_STREAM:  return B_WEATHER_SANDSTORM;
+    case ABILITY_SNOW_WARNING: return B_WEATHER_SNOW | B_WEATHER_HAIL;
+    default:                   return 0;
+    }
+}
+
+static bool32 MonBenefitsFromWeather(struct Pokemon *mon, u32 weather)
+{
+    enum Ability ability = GetMonAbility(mon);
+    u32 i;
+
+    if (weather & B_WEATHER_SUN)
+    {
+        if (ability == ABILITY_CHLOROPHYLL || ability == ABILITY_SOLAR_POWER || ability == ABILITY_FLOWER_GIFT
+         || ability == ABILITY_PROTOSYNTHESIS || ability == ABILITY_LEAF_GUARD || ability == ABILITY_HARVEST)
+            return TRUE;
+    }
+    else if (weather & B_WEATHER_RAIN)
+    {
+        if (ability == ABILITY_SWIFT_SWIM || ability == ABILITY_RAIN_DISH || ability == ABILITY_HYDRATION || ability == ABILITY_DRY_SKIN)
+            return TRUE;
+    }
+    else if (weather & B_WEATHER_SANDSTORM)
+    {
+        if (ability == ABILITY_SAND_RUSH || ability == ABILITY_SAND_FORCE || ability == ABILITY_SAND_VEIL)
+            return TRUE;
+    }
+    else
+    {
+        if (ability == ABILITY_SLUSH_RUSH || ability == ABILITY_ICE_BODY || ability == ABILITY_SNOW_CLOAK)
+            return TRUE;
+    }
+
+    for (i = 0; i < MAX_MON_MOVES; i++)
+    {
+        u32 move = GetMonData(mon, MON_DATA_MOVE1 + i);
+        enum BattleMoveEffects effect;
+        if (move == MOVE_NONE)
+            continue;
+        effect = GetMoveEffect(move);
+        if (effect == EFFECT_WEATHER_BALL)
+            return TRUE;
+        if (weather & B_WEATHER_SUN)
+        {
+            if (effect == EFFECT_SOLAR_BEAM || effect == EFFECT_GROWTH || effect == EFFECT_MORNING_SUN || effect == EFFECT_SYNTHESIS
+             || (!IsBattleMoveStatus(move) && GetMoveType(move) == TYPE_FIRE))
+                return TRUE;
+        }
+        else if (weather & B_WEATHER_RAIN)
+        {
+            if (move == MOVE_THUNDER || move == MOVE_HURRICANE || move == MOVE_ELECTRO_SHOT
+             || (!IsBattleMoveStatus(move) && GetMoveType(move) == TYPE_WATER))
+                return TRUE;
+        }
+        else if (weather & B_WEATHER_SANDSTORM)
+        {
+            if (effect == EFFECT_SHORE_UP)
+                return TRUE;
+        }
+        else
+        {
+            if (move == MOVE_BLIZZARD || effect == EFFECT_AURORA_VEIL)
+                return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+// Aantal andere levende teamleden (ook die in het veld) die iets aan dit weer hebben.
+static u32 CountPartyWeatherDependents(struct Pokemon *party, int firstId, int lastId, u32 excludeId, u32 weather)
+{
+    u32 i, count = 0;
+    for (i = firstId; i < lastId; i++)
+    {
+        if (i == excludeId || !IsValidForBattle(&party[i]))
+            continue;
+        if (MonBenefitsFromWeather(&party[i], weather))
+            count++;
+    }
+    return count;
+}
+
+// Weer staat nog en is niet bijna op.
+static bool32 IsWeatherStillUp(u32 weather)
+{
+    if (!(gBattleWeather & weather))
+        return FALSE;
+    if (gBattleWeather & B_WEATHER_PRIMAL_ANY)
+        return TRUE;
+    return gWishFutureKnock.weatherDuration > 1;
+}
+
+static bool32 ShouldSwitchToRestoreWeather(u32 battler)
+{
+    struct Pokemon *party;
+    s32 firstId, lastId, i;
+    u32 battlerPartyId = gBattlerPartyIndexes[battler];
+
+    if (IsDoubleBattle() || !(gAiThinkingStruct->aiFlags[battler] & AI_FLAG_SMART_SWITCHING))
+        return FALSE;
+    if (AiExpectsToFaintPlayer(battler))
+        return FALSE;
+    if (gBattleWeather & B_WEATHER_PRIMAL_ANY) // gewone weerzetters kunnen primal weer niet vervangen
+        return FALSE;
+
+    GetAIPartyIndexes(battler, &firstId, &lastId);
+    party = GetBattlerParty(battler);
+
+    for (i = firstId; i < lastId; i++)
+    {
+        u32 weather;
+        if (i == battlerPartyId || !IsValidForBattle(&party[i]) || IsAceMon(battler, i)
+         || i == gBattleStruct->monToSwitchIntoId[battler])
+            continue;
+        weather = GetWeatherFromSetterAbility(GetMonAbility(&party[i]));
+        if (weather == 0 || IsWeatherStillUp(weather))
+            continue;
+        // De Pokémon in het veld moet zelf iets aan het weer hebben, en de weerzetter moet nog wat kunnen hebben.
+        if (!MonBenefitsFromWeather(&party[battlerPartyId], weather))
+            continue;
+        if (GetMonData(&party[i], MON_DATA_HP) * 2 < GetMonData(&party[i], MON_DATA_MAX_HP))
+            continue;
+        if (RandomPercentage(RNG_AI_SWITCH_WEATHER, 50))
+            return SetSwitchinAndSwitch(battler, i);
+        return FALSE;
+    }
+    return FALSE;
+}
+
 bool32 ShouldSwitch(u32 battler)
 {
     u32 battlerIn1, battlerIn2;
@@ -1203,6 +1341,8 @@ bool32 ShouldSwitch(u32 battler)
     if (ShouldSwitchIfBadlyStatused(battler))
         return TRUE;
     if (ShouldSwitchIfAbilityBenefit(battler))
+        return TRUE;
+    if (ShouldSwitchToRestoreWeather(battler))
         return TRUE;
     if (ShouldSwitchIfHasBadOdds(battler))
         return TRUE;
@@ -2147,6 +2287,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
 {
     int revengeKillerId = PARTY_SIZE, slowRevengeKillerId = PARTY_SIZE, fastThreatenId = PARTY_SIZE, slowThreatenId = PARTY_SIZE, damageMonId = PARTY_SIZE, generic1v1MonId = PARTY_SIZE;
     int batonPassId = PARTY_SIZE, typeMatchupId = PARTY_SIZE, typeMatchupEffectiveId = PARTY_SIZE, defensiveMonId = PARTY_SIZE, aceMonId = PARTY_SIZE, trapperId = PARTY_SIZE;
+    int weatherRestoreId = PARTY_SIZE, weatherReserveId = PARTY_SIZE; // Project Grounded
     int i, j, aliveCount = 0, bits = 0, aceMonCount = 0;
     s32 defensiveMonHitKOThreshold = 3; // 3HKO threshold that candidate defensive mons must exceed
     s32 playerMonHP = gBattleMons[opposingBattler].hp, maxDamageDealt = 0, damageDealt = 0, monMaxDamage = 0;
@@ -2178,7 +2319,18 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
             continue;
         }
         else
+        {
+            // Project Grounded: weerzetter bewaren zolang zijn weer nog staat
+            u32 setterWeather = GetWeatherFromSetterAbility(GetMonAbility(&party[i]));
+            if (setterWeather != 0 && IsWeatherStillUp(setterWeather)
+             && CountPartyWeatherDependents(party, firstId, lastId, i, setterWeather) > 0)
+            {
+                weatherReserveId = i;
+                invalidMons |= 1u << i;
+                continue;
+            }
             aliveCount++;
+        }
 
         InitializeSwitchinCandidate(&party[i]);
 
@@ -2190,6 +2342,15 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         hitsToKOAI = GetSwitchinHitsToKO(GetMaxDamagePlayerCouldDealToSwitchin(battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, &bestPlayerMove), battler);
         hitsToKOAIPriority = GetSwitchinHitsToKO(GetMaxPriorityDamagePlayerCouldDealToSwitchin(battler, opposingBattler, gAiLogicData->switchinCandidate.battleMon, &bestPlayerPriorityMove), battler);
         typeMatchup = GetBattleMonTypeMatchup(gBattleMons[opposingBattler], gAiLogicData->switchinCandidate.battleMon);
+
+        // Project Grounded: weerzetter terugbrengen als zijn weer weg is en het team er iets aan heeft
+        if (weatherRestoreId == PARTY_SIZE && hitsToKOAI > 1)
+        {
+            u32 setterWeather = GetWeatherFromSetterAbility(gAiLogicData->switchinCandidate.battleMon.ability);
+            if (setterWeather != 0 && !IsWeatherStillUp(setterWeather) && !(gBattleWeather & B_WEATHER_PRIMAL_ANY)
+             && CountPartyWeatherDependents(party, firstId, lastId, i, setterWeather) > 0)
+                weatherRestoreId = i;
+        }
 
         monMaxDamage = 0;
 
@@ -2315,6 +2476,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
         // Return Trapper > Revenge Killer > Type Matchup > Baton Pass > Best Damage
         if (trapperId != PARTY_SIZE)                    return trapperId;
         else if (revengeKillerId != PARTY_SIZE)         return revengeKillerId;
+        else if (weatherRestoreId != PARTY_SIZE)        return weatherRestoreId; // Project Grounded
         else if (slowRevengeKillerId != PARTY_SIZE)     return slowRevengeKillerId;
         else if (fastThreatenId != PARTY_SIZE)          return fastThreatenId;
         else if (slowThreatenId != PARTY_SIZE)          return slowThreatenId;
@@ -2328,6 +2490,7 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
     {
         // Return Trapper > Type Matchup > Best Defensive > Baton Pass
         if (trapperId != PARTY_SIZE)                    return trapperId;
+        else if (weatherRestoreId != PARTY_SIZE)        return weatherRestoreId; // Project Grounded
         else if (typeMatchupEffectiveId != PARTY_SIZE)  return typeMatchupEffectiveId;
         else if (typeMatchupId != PARTY_SIZE)           return typeMatchupId;
         else if (defensiveMonId != PARTY_SIZE)          return defensiveMonId;
@@ -2342,6 +2505,10 @@ static u32 GetBestMonIntegrated(struct Pokemon *party, int firstId, int lastId, 
     u32 bestMonId = GetFirstNonInvalidMon(firstId, lastId, invalidMons);
     if (bestMonId != PARTY_SIZE)
         return bestMonId;
+
+    // Project Grounded: bewaarde weerzetter als er niemand anders meer is
+    if (weatherReserveId != PARTY_SIZE)
+        return weatherReserveId;
 
     // If ace mon is the last available Pokemon and U-Turn/Volt Switch or Eject Pack/Button was used - switch to the mon.
     if (aceMonId != PARTY_SIZE && CountUsablePartyMons(battler) <= aceMonCount)

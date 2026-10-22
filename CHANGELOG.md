@@ -19295,3 +19295,11 @@ Jordi over v2: "lijkt nog nergens op … instrumenten gaan isoleren". Nu speelt 
 - **Torkoal** @ Leftovers: Drought (was White Smoke), Earth Power, Solar Beam, Lava Plume, Yawn. De zon blijft staan als Ninetales weg is, dus het hele team heeft Solar Beam in één beurt tegen Rock/Ground/Water.
 - **Scovillain**: Zen Headbutt → Giga Drain (Grass-schade ook zonder zon).
 - **Talonflame** @ Power Herb (was Sharp Beak): Tailwind, Updraft, Heat Wave, Solar Beam. Gale Wings geeft Tailwind en Updraft voorrang bij volle HP; daarna is Flannery's team 4 beurten sneller, en Updraft (TM92) doet 120 in Tailwind. Power Herb: één keer Solar Beam zonder oplaadbeurt, ook zonder zon.
+
+### AI: weerzetters slim inzetten; Torkoal met Rapid Spin (v1.0.0)
+- Slimme trainers (Smart Switching / Smart Mon Choices, alleen singles) gaan nu bewust om met Drought, Drizzle, Sand Stream en Snow Warning (`battle_ai_switch_items.c`):
+  - **Weer terugbrengen:** is het weer weg (of bijna op) en heeft een teamgenoot er iets aan (Solar Beam, Weather Ball, Fire-aanvallen in zon / Water-aanvallen, Thunder, Hurricane in regen, Chlorophyll, Swift Swim, Sand Rush, Slush Rush e.d.), dan krijgt de weerzetter voorrang bij de keuze na een KO (na een snelle revenge killer) en wisselt de AI er ook halverwege naartoe (50%, niet als ze de speler deze beurt kan uitschakelen). Werkt niet tegen primal weer (Desolate Land e.d.).
+  - **Weerzetter bewaren:** staat zijn weer nog, dan blijft hij achter de hand tot er niemand anders meer is.
+- Voorbeeld Flannery: valt Ninetales terwijl de zon nog schijnt, dan bewaart ze Torkoal; is de zon weg, dan brengt ze Torkoal terug voor haar Solar Beams.
+- Flannery's Torkoal: Yawn → **Rapid Spin** (haalt Stealth Rock e.d. weg; Jordi).
+- Tests: `test/battle/grounded/ai_weather_setter.c` (3 gevallen). Bestaande AI-wisseltests: zelfde 12 bekende failures als zonder deze wijziging.

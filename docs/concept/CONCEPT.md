@@ -46,4 +46,5 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 - Spritewerk: oefenen, beginnend met regional forms en evoluties.
 
 ## Personages
+- **Geen stille protagonist** (Jordi: een cliché waar hij geen fan van is). De speler praat en heeft een eigen karakter.
 - Bij voorkeur nieuwe personages; een paar cameo's mag.

@@ -2,7 +2,7 @@
   "id": "MAP_FORTREE_JUNGLE",
   "name": "FortreeJungle",
   "layout": "LAYOUT_FORTREE_JUNGLE",
-  "music": "MUS_GROUNDED_WL4_MONSOON_JUNGLE",
+  "music": "MUS_ROUTE119",
   "region_map_section": "MAPSEC_FORTREE_JUNGLE",
   "requires_flash": false,
   "weather": "WEATHER_JUNGLE_CYCLE",

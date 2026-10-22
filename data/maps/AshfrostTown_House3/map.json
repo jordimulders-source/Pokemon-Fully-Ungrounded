@@ -2,7 +2,7 @@
   "id": "MAP_ASHFROST_TOWN_HOUSE3",
   "name": "AshfrostTown_House3",
   "layout": "LAYOUT_HOUSE3",
-  "music": "MUS_GROUNDED_ASHFROST",
+  "music": "MUS_FALLARBOR",
   "region_map_section": "MAPSEC_ASHFROST_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

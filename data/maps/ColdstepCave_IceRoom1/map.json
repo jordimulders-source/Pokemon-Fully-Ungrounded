@@ -2,7 +2,7 @@
   "id": "MAP_COLDSTEP_CAVE_ICE_ROOM_1",
   "name": "ColdstepCave_IceRoom1",
   "layout": "LAYOUT_COLDSTEP_CAVE_ICE_ROOM_1",
-  "music": "MUS_GROUNDED_VS_DARK_CAVE",
+  "music": "MUS_CAVE_OF_ORIGIN",
   "region_map_section": "MAPSEC_COLDSTEP_CAVE",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

@@ -76,6 +76,3 @@ ProgrammableWaveData_24::
 
 ProgrammableWaveData_25::
 	.incbin "sound/programmable_wave_samples/25.pcm"
-
-ProgrammableWaveData_gym2_saw::
-	.incbin "sound/programmable_wave_samples/gym2_saw.pcm"

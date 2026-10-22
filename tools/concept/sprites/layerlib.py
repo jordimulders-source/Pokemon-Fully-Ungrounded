@@ -12,7 +12,8 @@ Een laag die later komt, ligt ervoor. De rand van een laag krijgt een lijn:
 tegen transparant zwart (index 15) aan de onder-/rechterkant en de donkerste tint
 van het eigen onderdeel aan de boven-/linkerkant (selout); tegen een laag erachter
 de donkerste tint van het eigen onderdeel.
-RAMPS = {'onderdeel': [hooglicht, basis, schaduw, selout]} (indexen).
+RAMPS = {'onderdeel': [hooglicht, basis, schaduw, selout(, lichte buitenrand)]} (indexen);
+de optionele vijfde index is de buitenlijn aan de lichtkant (anders = selout).
 """
 import numpy as np
 from PIL import Image, ImageDraw
@@ -88,7 +89,7 @@ class Canvas:
         inner = optioneel masker van de vulling; de rest van mask wordt lijn
         (voor dunne vormen die over zichzelf lopen, zoals een spiraalstaart)."""
         self.layers.append(dict(mask=mask.copy(), part=part, light=light,
-                                shade=shade or (0.55, -0.15), flat=flat,
+                                shade=shade or (0.55, -0.3), flat=flat,
                                 inner=None if inner is None else inner & mask))
 
     def render(self, ramps, lx=-0.55, ly=-0.85):
@@ -108,7 +109,7 @@ class Canvas:
         idx = np.zeros((H, W), np.uint8)
         for z, L in enumerate(self.layers):
             m = zbuf == z
-            hl, base, sh, so = ramps[L['part']]
+            hl, base, sh, so = ramps[L['part']][:4]
             if L['flat'] or L['light'] is None:
                 idx[m] = base
             else:
@@ -134,7 +135,8 @@ class Canvas:
                     # richting naar buiten: boven/links = selout, anders zwart
                     ox = sum(d[0] for d in out); oy = sum(d[1] for d in out)
                     lit = oy < 0 or (ox < 0 and oy <= 0)
-                    idx[y, x] = so if lit else 15
+                    r = ramps[part[y, x]]
+                    idx[y, x] = (r[4] if len(r) > 4 else so) if lit else 15
                 elif behind:
                     idx[y, x] = so
         # lagen met een expliciete vulling: alles buiten de vulling is lijn

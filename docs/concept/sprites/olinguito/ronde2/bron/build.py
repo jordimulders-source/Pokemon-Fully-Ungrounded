@@ -33,20 +33,17 @@ K = {'h': 1, 'v': 2, 's': 3, 'd': 4, 'm': 5, 'M': 6, 'c': 7, 'C': 8,
      'i': 9, 'g': 10, 'G': 11, 'n': 12, 'N': 13, 'w': 14, 'o': 15}
 
 
-def ringed_tail(c, pts, widths, rings, tip):
+def ringed_tail(c, pts, widths, rings, tipdark=0.84):
     o = c.tube('staart', 'vacht', pts, widths, shade=2.5)
     t = o.t
 
     def paint(x, y, cur):
         tv = t[y, x]
-        for a, b in rings:
-            if a <= tv < b:
-                return 6 if cur in (3, 4) else 5
+        dark = tv >= tipdark or any(a <= tv < b for a, b in rings)
+        if dark:
+            return 6 if cur in (3, 4) else 5
         return None
     o.paint = paint
-    # donkere, getande staartpunt (eigen object zonder lijn ertussen)
-    p = c.poly('staartpunt', 'donker', tip, shade=1.5)
-    p.paint = None
     return o
 
 
@@ -55,40 +52,56 @@ def head(c, dy=0):
     c.poly('oor1', 'vacht', [(14, 13 + dy), (15, 9 + dy), (19, 12 + dy)])
     c.ellipse('oor2', 'vacht', 34.5, 13 + dy, 4, 4.8, rot=25, shade=2)
     c.poly('oor2', 'vacht', [(32, 10 + dy), (37, 7 + dy), (37, 12 + dy)])
-    c.ellipse('kop', 'vacht', 26, 23 + dy, 11.5, 10.5, shade=3, hl=(21, 16 + dy, 4))
-    # pluk: één naar achteren gestreken lok
-    c.poly('kop', 'vacht', [(22, 14 + dy), (25, 9 + dy), (29, 6 + dy), (33, 5 + dy), (31, 8 + dy), (33, 9 + dy), (30, 13 + dy)])
-    c.ellipse('snuit', 'creme', 16.5, 26.5 + dy, 5, 3.7, shade=2)
+    # pluk: korte, naar achteren gestreken lok (eigen object achter de kop, zonder lijn)
+    c.poly('pluk', 'vacht', [(23, 15 + dy), (25, 9 + dy), (28, 7 + dy), (32, 6.5 + dy), (30, 9 + dy), (32, 10.5 + dy), (29, 14 + dy)], shade=1)
+    c.ellipse('kop', 'vacht', 26, 23 + dy, 11.5, 10.5, shade=2.5, hl=(20.5, 15.5 + dy, 3.5))
+    c.ellipse('snuit', 'creme', 16.5, 27.5 + dy, 5, 3.6, shade=2)
+
+
+FACE_OPEN = [
+    # x13..x38: masker (m/M), ogen met zware leden, gouden iris, spleetpupil, glans
+    '......mmmmmm....mmmmmmmm..',
+    '...mmmmmmmmmmmmmmmmmmmmmmm',
+    '.mmmoooooommmoooooooooommM',
+    'mmmmowggGommmowgggggGommM.',
+    'mmmmmoGGommmmogggoGGGommM.',
+    '.MmmmmooommmmmoooooooommM.',
+    '..MMMMMMMMMMMMMMMMMMMMMMM.',
+]
+FACE_CLOSED = [
+    '......mmmmmm....mmmmmmmm..',
+    '...mmmmmmmmmmmmmmmmmmmmmmm',
+    '.mmmmmoommmmmmmmooommmmmmM',
+    'mmmmmoggommmmmmoggGommmmM.',
+    'mmmmoGmmGommmmoGmmmGommmM.',
+    '.MmmommmmommmmommmmmommmM.',
+    '..MMMMMMMMMMMMMMMMMMMMMMM.',
+]
 
 
 def face(idx, dy=0, closed=False):
-    # binnenoren donker
-    patch(idx, 15, 11 + dy, ['.M', 'MM', 'MM'], K)
-    patch(idx, 34, 9 + dy, ['.M', 'MM', 'MM', 'M.'], K)
-    # masker: donkere band over beide ogen met punten naar achteren
-    patch(idx, 12, 16 + dy, [
-        '.........mmmm.....mmmmmmm..',
-        '.....mmmmmmmmmm.mmmmmmmmmmm',
-        '...mmmmmmmmmmmmmmmmmmmmmmmM',
-        '..mmmmmmmmmmmmmmmmmmmmmmmM.',
-        '..MmmmmmmmmmMMmmmmmmmmmMM..',
-        '...MMMMMMMM..MMMMMMMMMM....',
-    ], K)
+    patch(idx, 16, 11 + dy, ['M', 'M', 'M'], K)
+    patch(idx, 35, 9 + dy, ['M', 'M', 'M', 'M'], K)
+    patch(idx, 13, 17 + dy, FACE_CLOSED if closed else FACE_OPEN, K)
+    # opgetrokken wenkbrauw boven het dichtste oog
+    patch(idx, 27, 14 + dy, ['...ddd.', '.dd...d', 'd......'], K)
+    # neus
+    patch(idx, 11, 25 + dy, ['ooo', 'oo.'], K)
     if not closed:
-        # verste oog (klein, driekwart) en dichtste oog: zware leden, gouden iris, spleetpupil, glans
-        patch(idx, 14, 18 + dy, ['ooooo', 'owggo', '.oGo.'], K)
-        patch(idx, 24, 17 + dy, [
-            'ooooooo',
-            'owgggGo',
-            'oggogGo',
-            '.ooooo.',
+        # scheve grijns met hoektand
+        patch(idx, 12, 27 + dy, [
+            '..........o',
+            '.ooooooooo.',
+            '......w....',
         ], K)
-        # opgetrokken wenkbrauw
-        patch(idx, 25, 14 + dy, ['..dd.', '.d..d', 'd....'], K)
     else:
-        patch(idx, 14, 18 + dy, ['.o.', 'ogo', 'o.o'], K)
-        patch(idx, 25, 17 + dy, ['..oo..', '.oggo.', 'og..go', 'o....o'], K)
-        patch(idx, 25, 14 + dy, ['..dd.', '.d..d', 'd....'], K)
+        patch(idx, 12, 27 + dy, [
+            '..........o',
+            '.oooooooooo',
+            '..owddddo..',
+            '...oddddo..',
+            '....oooo...',
+        ], K)
 
 
 def common_body(c, dy=0):
@@ -103,9 +116,8 @@ def common_body(c, dy=0):
 def frame1():
     c = Canvas(64, 64, RAMPS)
     Canvas.selout_parts = {'vacht', 'creme', 'doek'}
-    ringed_tail(c, [(37, 53), (46, 52), (51.5, 46), (53.5, 38), (52, 30), (48, 25.5)],
-                [6.5, 7, 7, 6.5, 6, 5.5], rings=[(0.24, 0.31), (0.47, 0.54), (0.69, 0.76)],
-                tip=[(50, 28), (45, 23), (47, 22), (43, 20), (47, 19), (45, 17), (50, 20), (53, 25)])
+    ringed_tail(c, [(37, 53), (46, 52), (51.5, 46), (53.5, 38), (52, 30), (48, 25), (44, 23.5)],
+                [6.5, 7, 7, 6.5, 6, 4.5, 1.5], rings=[(0.22, 0.29), (0.43, 0.5), (0.63, 0.7)])
     common_body(c)
     head(c)
     # verste arm (bungelt voor de borst), zwarte handschoen tot de elleboog
@@ -113,7 +125,7 @@ def frame1():
     c.tube('hand1', 'donker', [(22, 39.5), (15, 41)], [5, 4.5], line='black', shade=2)
     c.ellipse('hand1', 'donker', 13, 42, 3.6, 3)
     # munt op schoot
-    c.ellipse('munt', 'munt', 24.5, 50.5, 4.6, 4.6, line='black', shade=2, hl=(23, 48.5, 2))
+    c.ellipse('munt', 'munt', 23, 50, 4.4, 4.4, line='black', shade=2, hl=(21.5, 48, 2))
     # dichtste arm naar de munt
     c.tube('arm2', 'vacht', [(37, 39), (38, 44)], [6, 5.5], line='dark', shade=2)
     c.tube('hand2', 'donker', [(38, 44), (35, 48.5), (31.5, 50)], [5.5, 5, 4.5], line='black', shade=2)
@@ -121,14 +133,14 @@ def frame1():
     idx = c.render()
     face(idx)
     # munt: geslagen teken (ster/kroon) en rand
-    patch(idx, 22, 49, ['.G.', 'GgG', '.G.'], K)
+    patch(idx, 22, 49, ['.G.', 'G.G', '.G.'], K)
     # klauwen: bungelend (3), om de munt (2), achtervoet (2)
     hooks(idx, [
         [(10, 45), (10, 46), (10, 47), (9, 48), (9, 49), (8, 50), (7, 51), (6, 51)],
         [(13, 45), (13, 46), (13, 47), (13, 48), (13, 49), (12, 50), (12, 51), (11, 52)],
         [(16, 44), (16, 45), (16, 46), (16, 47), (17, 48), (17, 49), (16, 50), (16, 51)],
-        [(30, 47), (29, 46), (28, 46), (27, 45), (26, 45), (25, 45), (24, 46)],
-        [(30, 51), (29, 52), (28, 53), (27, 54), (26, 54), (25, 54)],
+        [(30, 47), (29, 46), (28, 45), (27, 45), (26, 45), (25, 46)],
+        [(30, 51), (29, 52), (28, 53), (27, 54), (26, 54)],
         [(17, 55), (16, 55), (15, 55), (14, 56), (13, 56)],
         [(18, 57), (17, 58), (16, 58), (15, 58)],
     ], keep=(5, 6))
@@ -138,9 +150,8 @@ def frame1():
 def frame2():
     c = Canvas(64, 64, RAMPS)
     Canvas.selout_parts = {'vacht', 'creme', 'doek'}
-    ringed_tail(c, [(37, 53), (47, 53), (53, 47), (56, 39), (55, 31), (52, 27)],
-                [6.5, 7, 7, 6.5, 6, 5.5], rings=[(0.24, 0.31), (0.47, 0.54), (0.69, 0.76)],
-                tip=[(53, 30), (49, 25), (51, 24), (47, 22), (51, 21), (50, 18), (54, 22), (57, 27)])
+    ringed_tail(c, [(37, 53), (47, 53), (53, 47), (56, 39), (55, 31), (52, 26), (48, 24)],
+                [6.5, 7, 7, 6.5, 6, 4.5, 1.5], rings=[(0.22, 0.29), (0.43, 0.5), (0.63, 0.7)])
     common_body(c, dy=-1)
     head(c, dy=-1)
     # verste arm wijd naar links-omhoog
@@ -155,14 +166,6 @@ def frame2():
     c.ellipse('voet1', 'donker', 22, 55.5, 5.5, 2.6, line='black', shade=1.5)
     idx = c.render()
     face(idx, dy=-1, closed=True)
-    # open bek met hoektand ("hehe")
-    patch(idx, 12, 26, [
-        'Cc........o',
-        '.oCcccccoo.',
-        '..owddddo..',
-        '...oddddo..',
-        '....oooo...',
-    ], K)
     patch(idx, 46, 7, ['i', 'g', 'G'], K)
     hooks(idx, [
         [(8, 32), (7, 31), (6, 30), (5, 29), (5, 28), (4, 27), (4, 26)],

@@ -145,9 +145,9 @@ def eyes(idx, frame):
         rim = E & ~inner
         if frame == 1:
             idx[inner] = 13
-            idx[inner & ~disk(cx, cy - 1.6, 3.6)] = 12          # gloed onderin
-            moon = disk(cx - 1.2, cy - 1.2, 1.9) & ~disk(cx - 0.4, cy - 1.7, 1.7)
-            idx[inner & moon] = 11                               # sikkel als glans
+            idx[inner & ~disk(cx + 0.6, cy - 1.2, 3.7)] = 12     # gloed rechtsonder
+            moon = disk(cx - 1.0, cy - 1.0, 2.6) & ~disk(cx + 0.2, cy - 1.4, 2.4)
+            idx[inner & moon] = 11                               # maansikkel als glans
         else:
             idx[inner] = 12
             idx[inner & disk(cx - 0.6, cy - 0.6, 2.6)] = 11

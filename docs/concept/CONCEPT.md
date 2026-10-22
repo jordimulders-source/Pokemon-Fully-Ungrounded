@@ -47,5 +47,5 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 
 ## Personages
 - **Geen stille protagonist** (Jordi: een cliché waar hij geen fan van is). De speler praat en heeft een eigen karakter.
-- **De protagonist is geen tiener** (Jordi): een **dertiger die klaar is met zijn kantoorbaan, in een quarter-life crisis zit en daarom naar deze regio trekt**. Geen inwoner dus: hij komt van buiten.
+- **De protagonist is geen tiener** (Jordi): een **dertiger die klaar is met zijn kantoorbaan, in een quarter-life crisis zit en daarom naar deze regio trekt**. Geen inwoner dus: hij komt van buiten. **Nooit de ambitie gehad om trainer te worden**, maar komt in zo'n situatie terecht.
 - Bij voorkeur nieuwe personages; een paar cameo's mag.

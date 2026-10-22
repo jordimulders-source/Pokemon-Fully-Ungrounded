@@ -363,7 +363,7 @@ SANDYGAST|B|KUST|Zandkastelen op de stranden (Copacabana)|
 PYUKUMUKU|C||Zeekomkommer|
 TYPE_NULL|C||Lab-Pokémon|
 KOMALA|C||Koala|
-TURTONATOR|C||Geen band|
+TURTONATOR|B||Jordi 22 okt: erin. Geen band|
 TOGEDEMARU|C||Egel|
 MIMIKYU|B|STAD|Iconisch, fan-favoriet|
 BRUXISH|C|KUST|Jordi 22 okt: geschrapt. Tropische vis (Caribisch)|

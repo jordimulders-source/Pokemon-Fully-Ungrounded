@@ -61,7 +61,7 @@ def frame(f2=False):
         c.poly([(40, 44), (45, 42), (50, 39), (47, 36)], 'vacht', shift=1)
         glove(c, 50, 37, 4.6, far=True, band_dir=(-1, 1))
     # wollen lijf: wolk met geschulpte rand
-    puffs(c, 37 + lean, 46.5, 14, 10.5, 10, 4.4, a0=0.15)
+    puffs(c, 37 + lean, 46.5, 14.5, 10.5, 11, 4.2, a0=0.1, mix=0.45)
     # wollen kraag onder de kop
     puffs(c, 31 + lean, 38, 8.5, 5, 6, 3.2, a0=0.5, glob=(33 + lean, 40, 14, 12))
     hx, hy = 28 + lean, 27 + (1 if f2 else 0)
@@ -80,7 +80,7 @@ def frame(f2=False):
     c.ellipse(hx, hy, 8.5, 7.5, 'vacht')
     c.ellipse(hx - 6, hy + 3.5, 4.8, 3.6, 'vacht', tone=5)             # snoet licht
     # bolhoedkuif: koepel + krulrand
-    c.ellipse(hx + 1, hy - 11, 5.2, 4.4, 'wol')
+    c.ellipse(hx + 1, hy - 9.6, 5.4, 3.4, 'wol')
     c.fill(c.m_ellipse(hx + 0.5, hy - 7.2, 7.6, 1.9), 'wol', hx, hy - 9, 9, 5)
     # krulrand: de uiteinden van de rand krullen op (bolhoed)
     c.put([(hx - 7, hy - 8), (hx + 8, hy - 8)], 2)

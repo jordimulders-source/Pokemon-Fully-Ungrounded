@@ -33,7 +33,7 @@ def body(frame):
     up = 1 if frame == 2 else 0
     # staart: steel vanachter het lijf en de Nazca-spiraal (1 3/4 slag, 2 px dik)
     tp = tail_pts(up)
-    C.layer(stroke(tp, 2.05), 'vacht', light=(SX - 3, SY - 3 - up, 12, 12), shade=(0.5, -0.3),
+    C.layer(stroke(tp, 2.05), 'vacht', light=(SX - 3, SY - 3 - up, 12, 12), shade=(0.6, -0.55),
             inner=stroke(tp, 1.05))
     # oortjes (achter de kop)
     for ex in (HX - 14, HX + 14):
@@ -42,12 +42,12 @@ def body(frame):
     C.layer(ellipse(HX, 53.5, 12, 4.2), 'vacht', light=(HX - 3, 51, 12, 4.5), shade=(0.6, -0.45))
     C.layer(ellipse(HX, 45, 10, 9.5), 'vacht', light=(HX - 3, 42, 10, 9.5), shade=(0.6, -0.45))
     # zilveren borst
-    C.layer(ellipse(HX, 46.5, 5.5, 6), 'zilver', light=(HX - 2, 44, 5.5, 6), shade=(0.35, -0.5))
+    C.layer(ellipse(HX, 46.5, 5.5, 6), 'zilver', light=(HX - 2, 44, 5.5, 6), shade=(0.35, -0.95))
     # voeten met de tenen naar buiten
     C.layer(ellipse(HX - 12, 56.3, 5.0, 2.1), 'vacht', light=(HX - 13, 55.5, 5.0, 2.1))
     C.layer(ellipse(HX + 12, 56.3, 5.0, 2.1), 'vacht', light=(HX + 11, 55.5, 5.0, 2.1))
     # kop
-    C.layer(ellipse(HX, HY, 15.5, 12.5), 'vacht', light=(HX - 3, HY - 3, 15.5, 12.5), shade=(0.5, -0.42))
+    C.layer(ellipse(HX, HY, 15.5, 12.5), 'vacht', light=(HX - 3, HY - 3, 15.5, 12.5), shade=(0.5, -0.62))
     # armen: schouder -> elleboog langs het lijf -> hand voor de borst
     C.layer(stroke_var([(HX + 8, 38), (HX + 8, 43), (HX + 4, 45)], [2.0, 2.0, 1.7]), 'vacht',
             light=(HX + 6, 40, 4, 6), shade=(0.3, -0.2))

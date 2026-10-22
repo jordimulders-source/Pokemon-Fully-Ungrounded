@@ -143,7 +143,8 @@ class Canvas:
         for z, L in enumerate(self.layers):
             if L['inner'] is None: continue
             m = (zbuf == z) & ~L['inner']
-            so = ramps[L['part']][3]
+            r = ramps[L['part']]
+            so = r[4] if len(r) > 4 else r[3]
             fill = L['inner']; pf = np.pad(fill, 1)
             for y, x in zip(*np.nonzero(m)):
                 # lijn aan de boven-/linkerkant van de vulling = selout

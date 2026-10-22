@@ -6,8 +6,8 @@
 
 | Categorie | Lijnen | Soorten |
 |---|---|---|
-| 1. Past in Zuid-Amerika | 84 | 159 |
-| 2. Niet Zuid-Amerikaans, hoort er toch in (iconisch of Ungrounded-revisie) | 129 | 286 |
+| 1. Past in Zuid-Amerika | 85 | 160 |
+| 2. Niet Zuid-Amerikaans, hoort er toch in (iconisch of Ungrounded-revisie) | 128 | 285 |
 | **Genomineerd (1 + 2)** | **213** | **445** |
 | 3. Twijfel / bewust niet (geen legendaries) | 235 | 500 |
 | Legendaries/mythicals (apart, sectie 4) | 24 | – |
@@ -20,7 +20,7 @@
 
 **Biomes (codes in de tabellen):** `ALT` Altiplano/puna (La Paz, Titicaca); `IJS` Cordillera/gletsjers; `LIP` Uyuni/Lípez (zout, lagunes, geisers); `VULK` Vulkanen; `ATA` Atacama; `NEV` Nevelwoud/yungas (Salento, Machu Picchu); `AMA` Amazone/verdronken woud; `PAN` Pantanal/llanos (moeras); `TEP` Tepuis/Gran Sabana; `PAM` Pampa/Chaco; `PAT` Patagonië; `GAL` Galápagos/eilanden; `KUST` Kust (Caribisch, Atlantisch, Humboldt); `ZEE` Open zee/diepzee; `STAD` Steden/ruïnes; `GROT` Grotten/mijnen.
 
-## 1. Past in Zuid-Amerika (84 lijnen, 159 soorten)
+## 1. Past in Zuid-Amerika (85 lijnen, 160 soorten)
 
 Gebaseerd op een Zuid-Amerikaans dier, plant of mythe, of ecologisch heel plausibel in een van de biomes. Besloten soorten (Slakoth, Pikipek, Flamigo, Minccino, Sigilyph, Heatmor, Alolan Exeggutor, Venomoth-vorm) staan er ook in.
 
@@ -94,6 +94,7 @@ Gebaseerd op een Zuid-Amerikaans dier, plant of mythe, of ecologisch heel plausi
 | Durant | Bug/Steel | Legermieren en bladsnijders; prooi van Heatmor; Bug/Steel | AMA | – |
 | Larvesta → Volcarona | Bug/Fire | Zonnemot (Volcarona) als zonnegod: Inti; vlinderrijkdom | AMA, VULK | – |
 | Inkay → Malamar | Dark/Psychic | Humboldt-inktvis (jumbo squid) van de Peruaanse kust | KUST, ZEE | – |
+| Carbink | Rock/Fairy | Jordi 22 okt: toch erin. Gebaseerd op de carbunclo (carbuncle): wezentje met een gloeiende edelsteen, uit de mijnwerkerslegendes van de Andes (Potosí, Chili) en Chiloé | GROT | – |
 | Scatterbug → Spewpa → Vivillon | Scatterbug, Spewpa: Bug; Vivillon: Bug/Flying | Vivillon-patronen (Jungle, Savanna, Sun, High Plains) passen bij de biomes | AMA, PAM | – |
 | Flabébé → Floette → Florges | Fairy | Bloemenfestival van Medellín (Feria de las Flores) | NEV, STAD | – |
 | Pikipek → Trumbeak → Toucannon | Normal/Flying | Toekan (besloten) | AMA, NEV | – |
@@ -111,7 +112,7 @@ Gebaseerd op een Zuid-Amerikaans dier, plant of mythe, of ecologisch heel plausi
 | Oricorio | Fire/Flying | Jordi 22 okt: erin. Dansvogel: kandidaat voor tango/samba/cueca-stijlen als regionale vormen | PAM, STAD | – |
 | Squawkabilly | Normal/Flying | Monniksparkiet uit Argentinië: leeft in luidruchtige 'bendes' in steden | STAD, PAM | – |
 
-## 2. Niet Zuid-Amerikaans, hoort er toch in (129 lijnen, 286 soorten)
+## 2. Niet Zuid-Amerikaans, hoort er toch in (128 lijnen, 285 soorten)
 
 Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dekking van gyms/E4, of uniek veranderd in Ungrounded. Biome = waar hij het minst uit de toon valt.
 
@@ -210,7 +211,6 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Deino → Zweilous → Hydreigon | Dark/Dragon | Pseudo-legendary; Dark/Dragon voor Dark- en Dragon-gym | NEV | – |
 | Skrelp → Dragalge | Skrelp: Poison/Water; Dragalge: Poison/Dragon | Poison/Dragon voor Poison- en Dragon-gym (kelpwouden) | KUST | – |
 | Clauncher → Clawitzer | Water | Pistoolgarnalen | KUST | – |
-| Carbink | Rock/Fairy | Jordi 22 okt: toch erin (gebaseerd op een mythologisch figuur). Edelstenen in de mijnen | GROT | – |
 | Goomy → Sliggoo → Goodra | Dragon | Slakken in de regen; Dragon-gym | AMA | – |
 | Phantump → Trevenant | Ghost/Grass | Boomgeest; bossen die gekapt worden | NEV, AMA | – |
 | Bergmite → Avalugg | Ice | Gletsjers (Perito Moreno) | IJS, PAT | – |

@@ -22,4 +22,9 @@ Opzet van Claude (22 okt) om alle plekken, dungeons en legendes uit `REGIO.md`, 
 - Chavín (Peru) ligt in het echt dicht bij Cuzco; hoort hij bij segment 4 (bij Cuzco) of bij de terugweg door de Andes-noordkant (segment 7)?
 - De Nazca-lijnen: bij segment 4 (zuid-Peru, op weg naar Cuzco) of later?
 - Gaat het segment 7 eerst naar de Galápagos of eerst door Colombia?
-- Waar komen de grote legendary-plekken (het Inca-trio en Pachamama, en het duo Cai Cai/Tren Tren als dat er komt)?
+- ~~Waar komen de legendary-plekken?~~ **Besloten (Jordi, 22 okt):** de plekken van het Inca-trio en Pachamama liggen in het **Andes-hart rond het startgebied** (La Paz, Titicaca, Cuzco), omdat ze op Inca-goden gebaseerd zijn. Ideeën (Claude):
+  - **Hanan Pacha (condor):** de hoogste top, bijv. een besneeuwde apu in de Cordillera Real of het Isla del Sol (Viracocha, de zon);
+  - **Kay Pacha (poema):** Cuzco zelf (de stad is volgens de overlevering in de vorm van een poema aangelegd, met Sacsayhuamán als kop);
+  - **Uku Pacha (slang):** onder de grond of het water: Wanaku onder het Titicacameer, de chincanas onder Cuzco, of de mijn van Potosí;
+  - **Pachamama:** waar de drie samenkomen, bijv. Tiwanaku (de Poort van de Zon) of Titicaca, de bakermat van de Inca's.
+- Het slangenduo Cai Cai/Tren Tren (als dat er komt) hoort bij Chili/Mapuche, dus elders.

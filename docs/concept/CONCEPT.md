@@ -5,7 +5,7 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 ## Basis
 - Vervolg op Pokémon Ungrounded, ambitieuzer en groter dan Hoenn. Fork van Ungrounded op pokeemerald-expansion: revisies, nieuwe moves/abilities en QoL blijven.
 - Nieuwe regio gebaseerd op Zuid-Amerika: geïnspireerd, niet nagemeten (zoals Hoenn op Kyushu). Eigen kaart en eigen namen.
-- 8 gyms en een Elite 4, met een interessantere progressie dan een rechte lijn. E4 rond lv 80–90.
+- 8 gyms en een Elite 4. **Gymvolgorde lineair** (houdt de levelcurve gezond), maar **de kaart niet**: lussen, zijgebieden, kortere wegen en plekken die later opengaan. E4 rond lv 80–90.
 - **Toon:** verhaal serieuzer dan Ungrounded; humor mag, maar is geen gimmick.
 
 ## Regio
@@ -13,7 +13,7 @@ Wat hier staat, is **besloten** (door Jordi). Losse ideeën staan in `IDEEEN.md`
 - Steden geïnspireerd op: La Paz, Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buenos Aires, Cartagena, Paramaribo, Uyuni, Bariloche, Medellín; plus originele plekken.
 
 ## Gyms en Elite 4
-- **Gymtypes** (volgorde nog open): Dark, Ice, Bug, Dragon, Ground, Grass, Fire, Poison.
+- **Gymtypes:** Dark, Ice, Bug, Dragon, Ground, Grass, Fire, Poison. **Ice is gym 2** (bij het ijsgebied naast de startstad); de rest van de volgorde is nog open.
 - **Elite 4:** Electric, Flying, Ghost, Steel.
 - Niet als gym/E4: Normal, Water, Fighting, Psychic, Rock, Fairy (kampioen open).
 

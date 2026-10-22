@@ -1,0 +1,18 @@
+{
+ "andes_range_0_0": "0xc",
+ "andes_range_1_0": "0x23",
+ "andes_range_2_0": "0x2a",
+ "andes_range_3_0": "0x2e",
+ "andes_range_0_1": "0x2f",
+ "andes_range_1_1": "0x35",
+ "andes_range_2_1": "0x46",
+ "andes_range_3_1": "0x5c",
+ "andes_range_0_2": "0x7e",
+ "andes_range_1_2": "0x7f",
+ "andes_range_2_2": "0x97",
+ "andes_range_3_2": "0x9d",
+ "andes_lamp_0": "0x9e",
+ "andes_lamp_1": "0xa5",
+ "andes_bench": "0xa6",
+ "andes_kantuta": "0xad"
+}

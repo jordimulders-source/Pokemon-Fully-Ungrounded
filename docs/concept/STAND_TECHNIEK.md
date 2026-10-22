@@ -41,7 +41,19 @@ Stap 3, deel 1: Spacetime, Yoshi's Island en Ultra Space zijn eruit. Het bouwt (
     meren/National Park in `tools/grounded/maptools/` en `bronnen/muziek/yoshis_island_gsf`. `area_zero.py` importeerde
     `chargestone.py` en werkt niet meer (gaat mee met de Hoenn-opruiming).
   - ROM-ruimte: vóór 7,42 MB vrij (`__rom_end` 0x098946F4), na 9,36 MB vrij (0x096A41C8), dus 1,94 MB erbij.
-- Battle Frontier/Tents/Trick House: zie `docs/concept/PLAN_HOENN_ERUIT.md` (stappenplan voor de hele Hoenn-wereld).
+- **Hoenn-wereld eruit, stap 1–6: afgerond (Hoenn-agent, 22 okt).** Details en wat er over is: `docs/concept/PLAN_HOENN_ERUIT.md`
+  (sectie "Stand").
+  - Over: één kaartgroep `gMapGroup_FullyUngrounded` met StartTown (Oldale-kopie), Pokémon Center 1F/2F, Mart,
+    zeven stock-kaarten (zes interieurs) en de TestMap (Route 102 + huizen, wild, water, Keccles, PC). Nieuw spel
+    start in StartTown; respawn bij het Pokémon Center.
+  - Weg: alle 648 Hoenn-/Ungrounded-kaarten (ook Frontier, Tents, Trick House, Trainer Hill, Safari, alle oude
+    groepen), 542 layoutmappen, 22 heal locations, de wilde tabellen, 1036 trainerteams (Keccles blijft, plus wat
+    algemene scripts nog bevechten). Rematchtabel, Match Call-trainers en gymleider-rematches zijn plaatshouders.
+    Tilesets en graphics staan er nog.
+  - Overgangslaag: `include/constants/map_compat.h` + `data/scripts/map_compat_stubs.inc` (`map_compat.py`) houden de
+    oude code compileerbaar; ze krimpen bij stap 7 (C-code per systeem) en 8 (Frontier/contest, eerst Jordi).
+  - ROM-ruimte: vóór 9,36 MB vrij (`__rom_end` 0x096A41C8), na 11,47 MB vrij (0x09488034), dus 2,11 MB erbij.
+  - Oude saves/savestates zijn ongeldig: nieuw spel.
 
 ## Stap 4 (expansion 1.14.4 → 1.17.1)
 Niet begonnen. Remote `upstream` bestaat al in de repo.

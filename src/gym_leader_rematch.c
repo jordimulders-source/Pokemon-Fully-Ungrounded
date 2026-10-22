@@ -16,15 +16,10 @@ struct GymLeaderRematch
     u16 dailyFlag;
 };
 
+// Fully Ungrounded: de Hoenn-gymleiders zijn weg. Plaatshouder (één regel als voorbeeld) tot de nieuwe regio
+// gymleiders heeft; gRematchTable is leeg, dus deze leider staat nooit klaar.
 static const struct GymLeaderRematch sGymLeaderRematches[] = {
     { REMATCH_ROXANNE,       FLAG_DAILY_REMATCH_ROXANNE },
-    { REMATCH_BRAWLY,        FLAG_DAILY_REMATCH_BRAWLY },
-    { REMATCH_WATTSON,       FLAG_DAILY_REMATCH_WATTSON },
-    { REMATCH_FLANNERY,      FLAG_DAILY_REMATCH_FLANNERY },
-    { REMATCH_NORMAN,        FLAG_DAILY_REMATCH_NORMAN },
-    { REMATCH_WINONA,        FLAG_DAILY_REMATCH_WINONA },
-    { REMATCH_TATE_AND_LIZA, FLAG_DAILY_REMATCH_TATE_AND_LIZA },
-    { REMATCH_WALLACE,          FLAG_DAILY_REMATCH_WALLACE },
 };
 
 static s32 GetGymLeaderEntry(u32 rematchIdx)
@@ -41,9 +36,6 @@ static s32 GetGymLeaderEntry(u32 rematchIdx)
 static bool32 IsGymLeaderInGym(u32 rematchIdx)
 {
     if (!FlagGet(FLAG_SYS_GAME_CLEAR))
-        return FALSE;
-    // Wattson staat pas weer in zijn gym na de New Mauville-opdracht.
-    if (rematchIdx == REMATCH_WATTSON && !FlagGet(FLAG_WATTSON_REMATCH_AVAILABLE))
         return FALSE;
     return HasTrainerBeenFought(gRematchTable[rematchIdx].trainerIds[0]);
 }
@@ -98,57 +90,12 @@ void GymLeaderRematch_OnRematchWon(u16 trainerId)
         FlagSet(sGymLeaderRematches[entry].dailyFlag);
 }
 
-static const u8 sText_RefuseRoxanne[] = _(
-    "ROXANNE: Again? Today?\n"
-    "My rocks need rest.\p"
-    "So does my dignity. Call me\n"
-    "tomorrow. Rock bottom has\l"
-    "opening hours.$");
-static const u8 sText_RefuseBrawly[] = _(
-    "BRAWLY: Bro, I still see\n"
-    "three of you. Two too many.\p"
-    "Tomorrow. The ringing stops\n"
-    "at midnight. Usually.$");
-static const u8 sText_RefuseWattson[] = _(
-    "WATTSON: Wahahahah! Again?\n"
-    "My heart monitor says no.\p"
-    "Loudly. Try tomorrow, if the\n"
-    "pacemaker holds!$");
-static const u8 sText_RefuseFlannery[] = _(
-    "FLANNERY: I already lost to\n"
-    "you today! I'm still on fire.\p"
-    "Emotionally. And a little bit\n"
-    "literally. Tomorrow!$");
-static const u8 sText_RefuseNorman[] = _(
-    "DAD: Not today, {PLAYER}.\n"
-    "My back made a noise.\p"
-    "A sad noise. Tomorrow.\n"
-    "Tell your mother I'm fine.$");
-static const u8 sText_RefuseWinona[] = _(
-    "WINONA: My birds have\n"
-    "unionized. One battle a day.\p"
-    "It's in writing.\n"
-    "Fly by tomorrow.$");
-static const u8 sText_RefuseTateLiza[] = _(
-    "TATE: We foresaw this call.\p"
-    "LIZA: We also foresaw\n"
-    "saying no. Tomorrow!$");
-static const u8 sText_RefuseWallace[] = _(
-    "WALLACE: Again? I'm two\n"
-    "glasses into forgetting\l"
-    "today's battle.\p"
-    "Tomorrow, darling.\n"
-    "Let us both breathe.$");
+static const u8 sText_RefusePlaceholder[] = _(
+    "Again? Today?\n"
+    "Call me tomorrow.$");
 
 static const u8 *const sRefuseTexts[] = {
-    sText_RefuseRoxanne,
-    sText_RefuseBrawly,
-    sText_RefuseWattson,
-    sText_RefuseFlannery,
-    sText_RefuseNorman,
-    sText_RefuseWinona,
-    sText_RefuseTateLiza,
-    sText_RefuseWallace,
+    sText_RefusePlaceholder,
 };
 
 // Match Call: de speler belt een gymleider en vraagt om een rematch.

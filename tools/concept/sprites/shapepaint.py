@@ -35,6 +35,7 @@ class Obj:
     def __init__(self, name, part, mask, line=None, shade=2.0, hl=None, flat=False, tone=1, z=0):
         self.name, self.part, self.mask = name, part, mask
         self.line, self.shade, self.hl, self.flat, self.tone, self.z = line, shade, hl, flat, tone, z
+        self.nocast = False  # True: werpt geen slagschaduw (render3)
         self.paint = None   # optionele functie (x, y) -> index of None (eigen patroon, bijv. ringen)
 
 
@@ -186,6 +187,89 @@ class Canvas:
         return idx
 
     selout_parts = set()
+
+    def render3(self):
+        """Gen 3-schaduw (Teddiursa/Poochyena als voorbeeld): vaste schaduwvlakken langs
+        onder/rechts (verschoven masker), een extra donkere binnenrand onderaan, slagschaduw
+        onder voorliggende delen (kop op lijf, arm op buik), een strak hooglicht linksboven.
+        Geen verlopen of dithering. Daarna dezelfde binnenlijnen, omlijning en selout als render()."""
+        h, w = self.h, self.w
+        owner = np.full((h, w), -1)
+        for i, o in enumerate(self.objs):
+            owner[o.mask] = i
+        idx = np.zeros((h, w), np.uint8)
+
+        def at(m, x, y):
+            return 0 <= x < w and 0 <= y < h and m[y, x]
+
+        for i, o in enumerate(self.objs):
+            r = self.ramps[o.part]
+            t = o.tone
+            ys, xs = np.nonzero(owner == i)
+            for y, x in zip(ys, xs):
+                c = r[t]
+                if not o.flat:
+                    s = o.shade
+                    dx, dy = int(round(s * 0.6)), int(round(s))
+                    shadow = not at(o.mask, x + dx, y + dy) or not at(o.mask, x + dx + 1, y + dy // 2)
+                    for ddx, ddy in ((0, -1), (0, -2), (-1, -1)):
+                        nx, ny = x + ddx, y + ddy
+                        if 0 <= nx < w and 0 <= ny < h and owner[ny, nx] > i and not self.objs[owner[ny, nx]].nocast:
+                            shadow = True
+                    deep = not at(o.mask, x, y + 1) and not at(o.mask, x + 1, y + 1)
+                    if deep and len(r) > t + 2:
+                        c = r[t + 2]
+                    elif shadow:
+                        c = r[min(t + 1, len(r) - 1)]
+                    elif o.hl is not None and t > 0:
+                        hx, hy, hr = o.hl
+                        if (x + 0.5 - hx) ** 2 + (y + 0.5 - hy) ** 2 <= hr * hr:
+                            c = r[t - 1]
+                if o.paint is not None:
+                    p = o.paint(x, y, c)
+                    if p is not None:
+                        c = p
+                idx[y, x] = c
+        return self._lines_and_outline(idx, owner)
+
+    def _lines_and_outline(self, idx, owner):
+        h, w = self.h, self.w
+        fig = owner >= 0
+        out = idx.copy()
+        for i, o in enumerate(self.objs):
+            if not o.line:
+                continue
+            ys, xs = np.nonzero(owner == i)
+            for y, x in zip(ys, xs):
+                for ddx, ddy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                    nx, ny = x + ddx, y + ddy
+                    if 0 <= nx < w and 0 <= ny < h and 0 <= owner[ny, nx] < i and not o.mask[ny, nx]:
+                        out[y, x] = OUTLINE if o.line == 'black' else self.ramps[o.part][-1]
+                        break
+        idx = out
+        ys, xs = np.nonzero(fig)
+        shell = np.zeros((h, w), bool)
+        for y, x in zip(ys, xs):
+            for ddx, ddy in ((1, 0), (-1, 0), (0, 1), (0, -1)):
+                nx, ny = x + ddx, y + ddy
+                if 0 <= nx < w and 0 <= ny < h and not fig[ny, nx]:
+                    shell[ny, nx] = True
+        ys, xs = np.nonzero(shell)
+        for y, x in zip(ys, xs):
+            c = OUTLINE
+            right = x + 1 < w and fig[y, x + 1]
+            below = y + 1 < h and fig[y + 1, x]
+            left = x - 1 >= 0 and fig[y, x - 1]
+            above = y - 1 >= 0 and fig[y - 1, x]
+            if (right or below) and not left and not above:
+                ny_, nx_ = (y + 1, x) if below else (y, x + 1)
+                o = self.objs[owner[ny_, nx_]]
+                if o.part in self.selout_parts:
+                    c = self.ramps[o.part][-1]
+            idx[y, x] = c
+        self.owner = owner
+        return idx
+
 
 
 def patch(idx, x0, y0, rows, key):

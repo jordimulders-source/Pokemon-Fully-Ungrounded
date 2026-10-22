@@ -30,3 +30,4 @@ Alles wat Jordi tijdens het brainstormen noemt, in steekwoorden. Het concept (`d
 - Aardappels en maïs zijn extreem populair over het hele continent: daar moet iets mee (Pokémon, items, een quest, een stad die erom draait?). Andes = bakermat van de aardappel (duizenden soorten), maïs overal (choclo, chicha, mote).
 - Empanadas (natuurlijk). Per land/regio een andere vulling en vouw: verzamelobject, item, of een Pokémon met regionale vormen.
 - Ceviche: rauwe vis 'gegaard' in limoensap (Peru). Idee: een vis-Pokémon die met een limoen/citrus-item of in een kuststad evolueert (Water/Grass? "gaart" zonder vuur).
+- Mate (yerba mate uit een kalebas met bombilla; Argentinië/Uruguay/Paraguay/Zuid-Brazilië): idee van Jordi. Bijv. een kalebas-Pokémon met een rietje, of mate als item dat iets herstelt; mate wordt gedeeld in een kring (een move/ability die het team helpt?).

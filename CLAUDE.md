@@ -1,6 +1,10 @@
-# Project Grounded – werkafspraken voor Claude
+# Pokémon Fully Ungrounded – werkafspraken voor Claude
 
-Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pokémon Ungrounded** (sinds 11 okt, titelscherm via `tools/grounded/title_banner.py`), "Project Grounded" blijft de projectnaam in code en tools. De eigenaar (Jordi) communiceert in het Nederlands; antwoord en schrijf de changelog in het Nederlands.
+Vervolg op **Pokémon Ungrounded** (Project Grounded), gebouwd als fork daarvan op pokeemerald-expansion: alle revisies van Pokémon, moves en abilities, de nieuwe moves/abilities en de QoL blijven. Nieuwe, originele regio gebaseerd op **Zuid-Amerika** (geïnspireerd, niet nagemeten, zoals Hoenn op Kyushu). In code en tools heten veel dingen nog "Grounded" (`tools/grounded/`, `FLAG_GROUNDED`); dat blijft zo. De eigenaar (Jordi) communiceert in het Nederlands; antwoord en schrijf de changelog in het Nederlands.
+
+- **Repo:** `jordimulders-source/Pokemon-Fully-Ungrounded` (branch `main`, volledige geschiedenis van Ungrounded + expansion, dus upstream mergen kan). Het oude project staat in `jordimulders-source/projectgrounded`; de Ungrounded-documenten (changelog, plannen) staan als naslag in `docs/ungrounded/`.
+- **Concept:** ideeën van Jordi verzamelen in `docs/concept/IDEEEN.md`; daaruit groeit `docs/concept/CONCEPT.md`. Jordi gooit hersenspinsels; Claude maakt er een geheel van.
+- **Lessen hieronder** komen grotendeels uit Ungrounded en gelden technisch nog steeds; regels over Hoenn-kaarten, het Stadium, de Spire en Spacetime zijn naslag tot die content weer terugkomt.
 
 ## Zuinig met tokens
 - **Humor herhaalt niet:** de "X: YES."-grap is op (Jordi, 9 okt); varieer grappen en check met grep of een vorm al vaak voorkomt.
@@ -19,7 +23,7 @@ Pokémon Emerald-romhack op basis van pokeemerald-expansion; de game heet **Pok�
 - **Grap-trainers blijven een grap:** extreem lage levels op sterke Pokémon zijn bewust (bijv. Ivan's Gyarados lv 3, Lyle's Scizor/Yanmega lv 6). Ze moeten schrikken, niet onverslaanbaar zijn. Alleen **vroeg in de game** (Jordi, 6 okt: "die Gyarados zo laag aan het begin is omdat die anders niet te verslaan is"); laat in de game is een laag level tijdverspilling: daar krijgen grap-trainers een echt team.
 - **Humor:** dialogen zijn bewust absurd en donker-humoristisch. Niet "netjes maken"; wel tekstregels afbreken zodat ze passen (`\n`, `\l`, `\p`).
 - **Intro kort houden:** geen truck-intro, geen tv-scène. Mom houdt haar humoristische standaardtekst; healen, PokéNav-registratie en post-game-dialoog werken wel.
-- **Battle Stadium-pool (Jordi):** alleen echt iconische personages komen in de toernooipool (met hun sterkste team): iets bijzonders zoals een eigen sprite, een eigen verhaal/quest of een gevecht dat je onthoudt (bijv. Colress, Zinnia, Mimi, Keccles, Grimsby). Geen gewone NPC's of routetrainers met alleen een naam en een standaardsprite (Jordi, 6 okt: "geen nono's en NPC's").
+- **(Ungrounded, voorlopig niet van toepassing) Battle Stadium-pool (Jordi):** alleen echt iconische personages komen in de toernooipool (met hun sterkste team): iets bijzonders zoals een eigen sprite, een eigen verhaal/quest of een gevecht dat je onthoudt (bijv. Colress, Zinnia, Mimi, Keccles, Grimsby). Geen gewone NPC's of routetrainers met alleen een naam en een standaardsprite (Jordi, 6 okt: "geen nono's en NPC's").
 - **Elemental monkeys** (Pansage/Pansear/Panpour-lijnen) mogen sinds 9 okt op routes waar ze passen (Jordi).
 - **National Dex** is vanaf het begin beschikbaar. **Alle Pokémon zijn te krijgen** (Jordi, 9 okt): geen versie-exclusieve keuzes waarbij een soort voorgoed verdwijnt (Glastrier én Spectrier).
 - **Ruimte is na de 1.0 geen hoofdzaak meer** (Jordi 11 okt: "veel content hoeft en kan er ook niet meer bij, maps, trainers etc"): kies bij klank/beeld voor kwaliteit; de grens hieronder blijft wel gelden.
@@ -309,18 +313,12 @@ Blauwdruk: **Coldstep Cave** (randen af, geen onafgemaakte sprites) en `Route136
 - De Dialoogstudio **niet** automatisch bijwerken na scriptwijzigingen (bespaart tokens). Alleen op verzoek van Jordi: `python3 tools/dialogen/export.py <dialogen.json>` en dat bestand opnieuw publiceren bij de pagina.
 
 ## Sessies en overdracht
-- **Takenlijst:** `TODO.md` (openstaande taken op volgorde, goedgekeurde QoL, backlog). Afgeronde taken daar weghalen en in de changelog zetten.
+- **Takenlijst:** `TODO.md` (fases van het skelet en daarna). Afgeronde taken daar weghalen en in de changelog zetten.
 - Elke sessie begint vers; dit bestand is het geheugen. Werk **Stand van zaken** bij aan het eind van elk afgerond stuk werk (in dezelfde commit).
-- Branch: `claude/wonderful-brahmagupta-xz8pik` (fase 0.9, bevat youthful-bohr; nog geen PR naar `master`). Is die gemerged, begin dan een nieuwe branch vanaf `master`.
-- Commit en push na elk afgerond stuk, met een changelogsectie.
-- Tilesets: sneeuw (`snow`, routes; nieuwe metatiles **alleen achteraan**, daarna `make data/tilesets/secondary/snow/tiles.4bpp`; ~445/512 tiles), `snow_town_base` (primary) + `snow_town` (secondary) voor Ashfrost: eigen nummering, 362 + 465 van 2×512 tiles; opnieuw genereren mag (alleen Ashfrost gebruikt ze), daarna `ashfrost.py` opnieuw draaien, Cave (kristallen 0x3A5–0x3A7, `-num_tiles 441` in `graphics_file_rules.mk`).
+- Commit en push na elk afgerond stuk, met een changelogsectie in `CHANGELOG.md` (nieuw project: versies 0.0.x tijdens het skelet).
 
 ## Stand van zaken
-- **Save-data:** nieuwe velden alleen achteraan SaveBlock1 (na `bagItems`); oude saves lezen daar nullen.
-- **Werkbranch:** `claude/dazzling-babbage-ud6oxr` (17 okt: bevat serene-wozniak met de kleurvarianten/Pokédex, affectionate-pascal en de testrun t/m Mauville). Andere sessies: eerst hierin mergen. `master` loopt ver achter. ROM ±552 KB vrij (grens 512 KB).
-- **Testrun Jordi (12 okt):** bevindingen bijhouden in `TESTRUN.md` (per ronde, met status); ronde 1 t/m Roxanne verwerkt (zie onderaan [v1.0.0] in de changelog); levelcurve herijkt: regulier spelen 2–3 onder de gym-ace, inhaal-EXP alleen vangnet, routes vóór Roxanne op de oude levels; spelersnaam blijft 7 tekens. Hoopa-thema staat nog op `claude/hoopa-theme-wip`.
-- **Takenlijst:** `TODO.md` is sinds 9 okt de enige actuele lijst (nu: basiskaart vullen; daarna Tao-eiland, Beacon Isle, Spacetime Cave met warps en Mt. Coronet als laatste quest, Yoshi's Island; pas daarna intro's en muziek). Andere plannings-documenten zijn naslag (statusregel bovenaan). **Lees TODO.md + de "Besloten"-lijst vóór je iets voorstelt of zegt dat er geen plan is.**
-- **Grenzen:** flags via `FLAG_GROUNDED(n)` (verdeling in flags.h), trainer-id's max 1199 (zie Lessen), `gMapGroup_Grounded` max 128 kaarten.
+- **Fase: skelet** (22 okt). Basis = Ungrounded `claude/dazzling-babbage-ud6oxr` (3640fd64). Zie `TODO.md` voor de volgorde: modi eruit → expansion 1.14.4 → 1.17.1 → nieuwe startkaart → Hoenn-kaarten en halve dex eruit.
+- **Save-data:** nieuwe velden alleen achteraan SaveBlock1 (na `bagItems`).
+- **Grenzen:** flags via `FLAG_GROUNDED(n)` (verdeling in flags.h), trainer-id's max 1199 (zie Lessen), max 128 kaarten per kaartgroep.
 - Emulator: `python3.11` (mgba); zie Lessen.
-- **Versie blijft 1.0** (Jordi 11 okt): geen v1.0.x-secties; alle wijzigingen gaan in de `[v1.0.0]`-sectie tot de muziekronde en Mitch klaar zijn.
-- **Definitieve 1.0-ROM opgeleverd (11 okt), als Pokémon Ungrounded.** Vanaf nu: Jordi's testrun en bugfixes; na de 1.0 alleen nog moves/abilities (en eventueel shinies). Open: Mitch (komt nog in de 1.0), Rainbow Road/Bowser Castle zonder functie, mogelijk een Legendary Birds-thema, muziek-lint met echte envelope (TODO). ROM 1,0 MB vrij. Playthrough-sweepscripts: zie Lessen.

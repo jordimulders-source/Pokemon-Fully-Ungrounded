@@ -102,7 +102,7 @@ desert = land & (cy > 15.5) & (cy < 31) & (cx < ridge - 0.8 + (n - 0.5) * 2)
 desert |= land & ellipse(14.5, 27, 3.6, 2.6)                                       # Atacama-hoogland/Lípez
 desert |= land & ellipse(32.5, 12.2, 1.4, 0.7) & (fine > 0.3)                     # Lençóis Maranhenses
 biome[desert] = 2
-snow = land & (((lvl >= 4) & (cy > 14) & (cy < 31) & (n > 0.5))
+snow = land & (((lvl >= 4) & (cy > 14) & (cy < 31) & (hills > 0.6) & (n > 0.5))
                | ((cy > 31) & (lvl >= 3)) | (cy > 37.8)
                | (ellipse(18.3, 18.3, 1.2, 1.6) & (lvl >= 2))                      # Cordillera Real
                | (ellipse(13.4, 28.3, 0.7, 0.5)))                                 # vulkanen/sneeuw van Lípez

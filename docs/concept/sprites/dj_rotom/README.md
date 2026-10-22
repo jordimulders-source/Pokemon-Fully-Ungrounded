@@ -1,5 +1,7 @@
 # DJ Rotom (boombox-vorm)
 
+**Type: Electric/Steel** (Jordi, 22 okt).
+
 Inspiratie van Jordi (22 okt): fanmade sprite work van de boombox-/stereo-Rotom uit *Pokémon Pokopia*. Niet voor direct gebruik in de game (fanart van anderen); alleen als referentie.
 
 - `inspiratie/dlkf051-….png`: frontsprite-achtige tekening (176×176): oranje Rotom-kop als middendeel tussen twee speakers, muzieknoot-bliksem als antenne, groene equalizer als mond, mintgroene elektrische gloed rond het silhouet.

@@ -59,7 +59,9 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Ronde 1 (Jordi, 22 okt), eruit:** Kanto-starters (voorlopig), Onix/Steelix, Rhyhorn-lijn, Electabuzz-lijn, Magmar-lijn, Ralts-lijn, Mawile, Clamperl-lijn, Shellos-lijn, Riolu-lijn, Carnivine, Finneon-lijn, Roggenrola-lijn, Audino, Sewaddle-lijn, Dwebble-lijn, Druddigon, Binacle-lijn, Carbink, Cutiefly-lijn, Bruxish.
 - **Ronde 1, erin:** Zangoose, Mankey-lijn, Oddish-lijn, Corsola-lijn, Pineco-lijn, Shuppet-lijn, Kricketot-lijn, Drowzee-lijn, Voltorb-lijn (de normale), Spinda, Toxel-lijn, Tinkatink-lijn, Tatsugiri.
 - **Ronde 2, erin:** Pinsir, Heracross, Spheal-lijn, Mimikyu, Heatmor, Ponyta-lijn (de oorspronkelijke; stonden er al in), Salandit-lijn, Turtonator, Stufful-lijn, Sandile-lijn (nieuw).
-- Stand na ronde 2: zie DEX_NOMINATIES.md.
+- **Ronde 3, eruit:** Wurmple-lijn, Snorunt-lijn, Pincurchin, Lechonk-lijn, Maschiff-lijn, Wiglett-lijn, Tyrogue-lijn (alleen een regionale capoeira-Hitmontop).
+- **Ronde 3, erin:** Galar-Meowth, Cubone-lijn (normaal), beide Corsola-lijnen, Litwick-lijn, Eiscue, beide Slowpoke-lijnen, Dunsparce, Charcadet-lijn, Orthworm, Oricorio.
+- **Dit deel is voorlopig af** (Jordi, 22 okt). Stand: zie DEX_NOMINATIES.md.
 
 ## Bestaande soorten in de regio
 - Alolan Exeggutor in de waspalmenvallei (Salento).

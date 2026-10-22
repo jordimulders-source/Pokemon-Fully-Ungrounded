@@ -7,13 +7,13 @@
 | Categorie | Lijnen | Soorten |
 |---|---|---|
 | 1. Past in Zuid-Amerika | 84 | 159 |
-| 2. Niet Zuid-Amerikaans, hoort er toch in (iconisch of Ungrounded-revisie) | 123 | 275 |
-| **Genomineerd (1 + 2)** | **207** | **434** |
-| 3. Twijfel / bewust niet (geen legendaries) | 241 | 511 |
+| 2. Niet Zuid-Amerikaans, hoort er toch in (iconisch of Ungrounded-revisie) | 127 | 282 |
+| **Genomineerd (1 + 2)** | **211** | **441** |
+| 3. Twijfel / bewust niet (geen legendaries) | 237 | 504 |
 | Legendaries/mythicals (apart, sectie 4) | 24 | – |
 | Regional forms (sectie 5) | 25 lijnen (waarvan 1 besloten: Venomoth) | – |
 
-- **434 soorten** uit de National Dex, binnen het doel van 400–500. Met ±100 fakemon en ±10–15 regional forms komt de regionale dex op ±575–600. Wil Jordi richting 400, dan zijn de B-lijnen zonder Zuid-Amerikaanse band en zonder Ungrounded-revisie het eerst te schrappen (Kanto-starters, Munchlax, Audino, Ditto, Happiny, Mimikyu e.d.).
+- **441 soorten** uit de National Dex, binnen het doel van 400–500. Met ±100 fakemon en ±10–15 regional forms komt de regionale dex op ±575–600. Wil Jordi richting 400, dan zijn de B-lijnen zonder Zuid-Amerikaanse band en zonder Ungrounded-revisie het eerst te schrappen (Kanto-starters, Munchlax, Audino, Ditto, Happiny, Mimikyu e.d.).
 - Telling per soort: elke evolutie telt mee, ook baby's; Mega's en Gmax tellen niet. Regionale vormen van andere regio's tellen alleen mee als ze zelf genomineerd zijn (Alolan Sandshrew/Vulpix/Exeggutor, Hoenn-Grimer).
 - **Opvallendste nominaties:** Hippopotas (Escobars nijlpaarden in Colombia), Nosepass (moai, Paaseiland), Bidoof (bevers als ecologische ramp in Vuurland), Yamask (Chinchorro-mummies), Smeargle (Cueva de las Manos), Bouffalant (waterbuffelpolitie op Marajó), Combee (Afrikaanse 'killer bees' uit Brazilië), Tynamo (sidderaal), Squawkabilly (monniksparkieten-'bendes' in de steden), Mew (volgens de lore ontdekt in Guyana).
 - **Grootste gaten** (sectie 6–8): Fire en Fighting zijn het dunst; tepuis, Lípez/Uyuni, Galápagos en de vulkanen hebben te weinig bestaande soorten; de altiplano mist vroege Grass, Bug en Flying. Die plekken zijn voor de fakemon.
@@ -46,7 +46,7 @@ Gebaseerd op een Zuid-Amerikaans dier, plant of mythe, of ecologisch heel plausi
 | Aipom → Ambipom | Normal | Grijpstaart = Nieuwe-Wereldaap (doodshoofdaapje); andere niche dan de geplande apen | AMA | – |
 | Heracross | Bug/Fighting | Herculeskever (Dynastes hercules) leeft in Zuid-Amerika | AMA | Skill Link / Moxie |
 | Teddiursa → Ursaring → Ursaluna | Teddiursa, Ursaring: Normal; Ursaluna: Ground/Normal | Brilbeer (oso de anteojos), de enige beer van Zuid-Amerika (Paddington komt uit Peru); kandidaat regional form | NEV | – |
-| Corsola | Water/Rock | Jordi 22 okt: erin. Koraalriffen van de Caribische kust | KUST | Corsola herzien |
+| Corsola | Water/Rock | Jordi 22 okt: erin. Jordi 22 okt: erin. Koraalriffen van de Caribische kust | KUST | Corsola herzien |
 | Mantyke → Mantine | Water/Flying | Reuzenmanta's rond de Galápagos en Ecuador | GAL, KUST | – |
 | Smeargle | Normal | Cueva de las Manos in Patagonië: 9000 jaar oude handafdrukken; Smeargle als kunstenaar | PAT | – |
 | Miltank | Normal | Melkkoeien van de pampa (dulce de leche!) | PAM | – |
@@ -108,10 +108,10 @@ Gebaseerd op een Zuid-Amerikaans dier, plant of mythe, of ecologisch heel plausi
 | Flamigo | Flying/Fighting | Laguna Colorada vol flamingo's (besloten) | LIP | – |
 | Gimmighoul → Gholdengo | Gimmighoul: Ghost; Gholdengo: Steel/Ghost | El Dorado: goud en schatten; Gholdengo voor Steel/Ghost-E4 | STAD, GROT | – |
 | Poltchageist → Sinistcha | Grass/Ghost | Kandidaat mate-vorm (kalebas met bombilla); Grass/Ghost | PAM | – |
-| Oricorio | Fire/Flying | Dansvogel: kandidaat voor tango/samba/cueca-stijlen als regionale vormen | PAM, STAD | – |
+| Oricorio | Fire/Flying | Jordi 22 okt: erin. Dansvogel: kandidaat voor tango/samba/cueca-stijlen als regionale vormen | PAM, STAD | – |
 | Squawkabilly | Normal/Flying | Monniksparkiet uit Argentinië: leeft in luidruchtige 'bendes' in steden | STAD, PAM | – |
 
-## 2. Niet Zuid-Amerikaans, hoort er toch in (123 lijnen, 275 soorten)
+## 2. Niet Zuid-Amerikaans, hoort er toch in (127 lijnen, 282 soorten)
 
 Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dekking van gyms/E4, of uniek veranderd in Ungrounded. Biome = waar hij het minst uit de toon valt.
 
@@ -120,6 +120,7 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Pichu → Pikachu → Raichu | Electric | Mascotte; hoort in elke game | NEV, STAD | Raichu: 'Dynamo Fatso' met Galvanize; Alolan Raichu herzien |
 | Cleffa → Clefairy → Clefable | Fairy | Iconisch; maanfee past bij Mama Killa en de sterrenhemel van de altiplano | ALT, STAD | – |
 | Oddish → Gloom → Vileplume → Bellossom | Oddish, Gloom, Vileplume: Grass/Poison; Bellossom: Grass | Jordi 22 okt: erin. Mandragora; Grass/Poison-plaats gaat naar Bellsprout (tepui-bekerplanten) | – | – |
+| Meowth (Galar) → Perrserker | Steel | Jordi 22 okt: erin. idem | – | – |
 | Psyduck → Golduck | Water/Psychic | Iconisch; vroege Water in de hooglandlagunes; Water/Psychic is een eigen invulling | ALT, PAN | Water/Psychic |
 | Mankey → Primeape → Annihilape | Mankey, Primeape: Fighting; Annihilape: Fighting/Ghost | Jordi 22 okt: erin. Apen-niche is voor de eigen apen (nachtaap, oeakari, saki) | – | – |
 | Growlithe → Arcanine | Fire | Iconische hond, populair; politiehond in de steden | STAD, PAM | – |
@@ -128,12 +129,15 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Machop → Machoke → Machamp | Fighting | Mijnwerkers in Potosí en bouwvakkers in de steden; iconisch | GROT, STAD | Machop-lijn herzien |
 | Tentacool → Tentacruel | Water/Poison | Standaard zee-Pokémon; Poison voor het Poison-gym | KUST, ZEE | Tentacool-lijn herzien |
 | Geodude → Graveler → Golem | Rock/Ground | Rotsen en mijnen van de Andes; vroege Rock | ALT, GROT | Geodude-lijn herzien |
+| Slowpoke → Slowbro → Slowking | Water/Psychic | Jordi 22 okt: erin. Geen band | – | – |
+| Slowpoke (Galar) → Slowbro (Galar) → Slowking (Galar) | Slowpoke (Galar): Psychic; Slowbro (Galar), Slowking (Galar): Poison/Psychic | Jordi 22 okt: erin. idem | – | – |
 | Magnemite → Magneton → Magnezone | Electric/Steel | Steel/Electric voor de E4 (Electric en Steel); elektriciteitsnet van de steden en mijnen | STAD, GROT | Magnemite-lijn herzien |
 | Grimer (Hoenn) → Muk (Hoenn) | Poison/Ground | Eigen Ungrounded-vorm (mest/'Dung'); Poison/Ground voor het Ground- én Poison-gym; lamamest is overal in de Andes | ALT, PAM | Eigen Hoenn-vorm Poison/Ground, Earth Eater |
 | Shellder → Cloyster | Shellder: Water; Cloyster: Water/Ice | Schelpdier voor de kust; Cloyster sterk | KUST | – |
 | Gastly → Haunter → Gengar | Gastly: Ghost/Poison; Haunter, Gengar: Ghost | Iconische Ghost voor de Ghost-E4 | STAD, GROT | Gengar pure Ghost, Perish Body |
 | Drowzee → Hypno | Drowzee: Psychic; Hypno: Psychic/Dark | Jordi 22 okt: erin. Tapir-droometer: de tapir is wél Zuid-Amerikaans, maar beter als regional form (sectie 5) | – | Hypno Psychic/Dark |
 | Voltorb → Electrode | Electric | Jordi 22 okt: erin. Pokéball-grap; Electric is al gevuld | – | Voltorb herzien |
+| Cubone → Marowak | Ground | Jordi 22 okt: erin. Geen band; Alolan Marowak hoort bij Hawaï | – | – |
 | Koffing → Weezing | Poison | Smog van steden en mijnen; Poison-gym en het thema natuurvernietiging | STAD, GROT | Koffing-lijn herzien |
 | Happiny → Chansey → Blissey | Normal | Pokémon Center-gezicht, iconisch | STAD | – |
 | Horsea → Seadra → Kingdra | Horsea, Seadra: Water; Kingdra: Water/Dragon | Zeepaardjes; Kingdra voor het Dragon-gym | KUST | Horsea-lijn herzien |
@@ -153,16 +157,17 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Wooper → Quagsire | Water/Ground | Vroege Water/Ground bij de Titicaca en voor gym 1 | ALT, PAN | – |
 | Misdreavus → Mismagius | Ghost | Ghost-E4; spookverhalen (La Llorona) | STAD | – |
 | Pineco → Forretress | Pineco: Bug; Forretress: Bug/Steel | Jordi 22 okt: erin. Dennenappel; araucaria-idee beter als fakemon | – | – |
+| Dunsparce → Dudunsparce | Normal/Ground | Jordi 22 okt: erin. Geen band | – | Dunsparce/Dudunsparce herzien |
 | Gligar → Gliscor | Ground/Flying | Ground/Flying voor gym 1; Gliscor vampierachtig | ATA, LIP | – |
 | Qwilfish | Water/Poison | Kogelvis; Poison-gym | KUST | – |
 | Sneasel → Weavile | Dark/Ice | Dark/Ice voor de Cordillera en het Dark- én Ice-gym | IJS | – |
 | Slugma → Magcargo | Slugma: Fire; Magcargo: Fire/Rock | Lava van de vulkanen | VULK, LIP | – |
 | Swinub → Piloswine → Mamoswine | Ice/Ground | Vroege Ice/Ground in de Cordillera; Mamoswine (ijstijd-megafauna) | IJS | – |
+| Corsola (Galar) → Cursola | Ghost | Jordi 22 okt: erin. Gebleekt koraal: sterk natuurthema, maar dubbel; eventueel post-game | – | – |
 | Remoraid → Octillery | Water | Zee-vulling; Octillery herzien | KUST | Octillery herzien |
 | Skarmory | Steel/Flying | Steel/Flying voor Steel- en Flying-E4 | ATA, ALT | Skarmory herzien |
 | Houndour → Houndoom | Dark/Fire | Dark/Fire voor Dark- en Fire-gym; zwerfhonden in steden | VULK, STAD | – |
 | Larvitar → Pupitar → Tyranitar | Larvitar, Pupitar: Rock/Ground; Tyranitar: Rock/Dark | Pseudo-legendary; bergen en mijnen | ALT, GROT | – |
-| Wurmple → Silcoon → Beautifly → Cascoon → Dustox | Wurmple, Silcoon: Bug; Beautifly: Bug/Flying; Cascoon: Bug; Dustox: Bug/Poison | Vroege Bug; Beautifly/Dustox herzien | AMA, NEV | Beautifly Pollen Season, Dustox bulky |
 | Taillow → Swellow | Flying | Boerenzwaluwen overwinteren in Zuid-Amerika; pure Flying voor de Flying-E4 | PAM, STAD | Swellow pure Flying, Gale Wings |
 | Surskit → Masquerain | Bug/Water | Schaatsenrijders op stil water | AMA, PAN | Surskit-lijn herzien |
 | Shroomish → Breloom | Shroomish: Grass; Breloom: Grass/Fighting | Paddenstoelen van het regenwoud; Breloom | AMA | Breloom Technician/Poison Heal |
@@ -180,7 +185,6 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Shuppet → Banette | Shuppet: Ghost; Banette: Ghost/Dark | Jordi 22 okt: erin. Pop; Ghost genoeg | – | Banette Ghost/Dark |
 | Duskull → Dusclops → Dusknoir | Duskull, Dusclops: Ghost; Dusknoir: Ghost/Dark | Ghost-E4; Día de los Muertos-sfeer, Ñatitas (schedelfeest in La Paz) | STAD, ALT | Dusknoir Ghost/Dark |
 | Absol | Dark/Fairy | Dark/Fairy uniek; bergen en rampen (gletsjers die verdwijnen) | IJS, ALT | Dark/Fairy, Serene Grace |
-| Snorunt → Glalie → Froslass | Snorunt, Glalie: Ice; Froslass: Ice/Ghost | Vroege Ice in de Cordillera | IJS | Snorunt-lijn herzien |
 | Bagon → Shelgon → Salamence | Bagon, Shelgon: Dragon; Salamence: Dragon/Flying | Pseudo-legendary, Dragon-gym | – | Sheer Force / Moxie |
 | Beldum → Metang → Metagross | Steel/Psychic | Pseudo-legendary; meteorieten in de Atacama; Steel-E4 | ATA | Metang/Metagross herzien |
 | Kricketot → Kricketune | Bug | Jordi 22 okt: erin. Rol gaat naar de mug-fakemon | – | – |
@@ -198,6 +202,7 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Joltik → Galvantula | Bug/Electric | Bug/Electric; kleine spinnen | AMA | – |
 | Ferroseed → Ferrothorn | Grass/Steel | Grass/Steel | NEV | – |
 | Elgyem → Beheeyem | Psychic | Knipoog naar de 'Nazca-aliens'; sterrenwachten in de Atacama | ATA | – |
+| Litwick → Lampent → Chandelure | Ghost/Fire | Jordi 22 okt: erin. Kaarsen; Ghost genoeg | – | – |
 | Cryogonal | Ice | IJskristal in de Cordillera | IJS | – |
 | Stunfisk | Ground/Electric | Platvis in de modder; Ground/Electric voor gym 1 | PAN | – |
 | Pawniard → Bisharp → Kingambit | Dark/Steel | Dark/Steel; bendes; Kingambit | STAD | – |
@@ -226,26 +231,25 @@ Iconisch (mascottes, fan-favorieten, pseudo-legendaries), nodig voor de type-dek
 | Toxel → Toxtricity | Electric/Poison | Jordi 22 okt: erin. Punk; geen band | – | – |
 | Sizzlipede → Centiskorch | Fire/Bug | Fire/Bug voor Fire- en Bug-gym | ATA, VULK | – |
 | Impidimp → Morgrem → Grimmsnarl | Dark/Fairy | Dark/Fairy; kobold: kandidaat Trauco-vorm (Chiloé) | PAT, STAD | – |
-| Pincurchin | Electric | Zee-egels | KUST | – |
 | Snom → Frosmoth | Ice/Bug | Vroege Ice/Bug: brug tussen Ice- en Bug-gym | IJS | – |
+| Eiscue | Ice | Jordi 22 okt: erin. Pinguïn: botst met de pinguïn-fakemon | – | – |
 | Dreepy → Drakloak → Dragapult | Dragon/Ghost | Pseudo-legendary Ghost/Dragon; Ghost-E4 en Dragon-gym | STAD | – |
-| Lechonk → Oinkologne | Normal | Pekari's (navelzwijnen); vroege Normal in het laagland | NEV, AMA | – |
-| Maschiff → Mabosstiff | Dark | Dark-gym; waakhonden van de bendes | STAD | – |
+| Charcadet → Armarouge → Ceruledge | Charcadet: Fire; Armarouge: Fire/Psychic; Ceruledge: Fire/Ghost | Jordi 22 okt: erin. Geen band | – | – |
 | Bramblin → Brambleghast | Grass/Ghost | Rollende distels van de steppe | ATA, PAT | – |
 | Tinkatink → Tinkatuff → Tinkaton | Fairy/Steel | Jordi 22 okt: erin. Smid | – | – |
-| Wiglett → Wugtrio | Water | Zandbank | KUST | – |
 | Finizen → Palafin | Water | Dolfijnen; kandidaat boto-vorm | KUST | – |
+| Orthworm | Steel | Jordi 22 okt: erin. Geen band | – | – |
 | Glimmet → Glimmora | Rock/Poison | Kristallen in de mijnen; Poison-gym | GROT, ATA | – |
 | Frigibax → Arctibax → Baxcalibur | Dragon/Ice | Pseudo-legendary Dragon/Ice; past bij de vroege sneeuw (late evolutie) | IJS | – |
 | Unown | Psychic | Ruïnes; kandidaat quipu-vorm (knopenschrift van de Inca's) | STAD | – |
 | Tatsugiri | Dragon/Water | Jordi 22 okt: erin. Sushi | – | – |
 | Basculin → Basculegion | Basculin: Water; Basculegion: Water/Ghost | Rivierroofvis; kandidaat paiche/arapaima-vorm | AMA | – |
 
-## 3. Twijfelgevallen en bewust niet (241 lijnen, 511 soorten)
+## 3. Twijfelgevallen en bewust niet (237 lijnen, 504 soorten)
 
 Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze soorten post-game komen (Safari, Spacetime, ruilen) zonder in de regionale dex te staan.
 
-### 3a. Botst met fakemon of immersie (95 lijnen)
+### 3a. Botst met fakemon of immersie (91 lijnen)
 
 | Lijn | Types (repo) | Reden |
 |---|---|---|
@@ -262,7 +266,6 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Ponyta (Galar) → Rapidash (Galar) | Ponyta (Galar): Psychic; Rapidash (Galar): Psychic/Fairy | Eenhoorn uit Galar |
 | Farfetch'd | Fighting/Flying | Prei-eend uit Japan |
 | Farfetch'd (Galar) → Sirfetch'd | Fighting | Prei-eend uit Japan |
-| Cubone → Marowak | Ground | Geen band; Alolan Marowak hoort bij Hawaï |
 | Kangaskhan | Normal | Australië |
 | Goldeen → Seaking | Water | Vijvervis; niche gaat naar Basculin/Barboach/Arrokuda |
 | Tauros (Paldea) | Fighting | Spaanse vechtstier; gewone Tauros volstaat |
@@ -277,7 +280,6 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Girafarig → Farigiraf | Normal/Psychic | Afrika |
 | Qwilfish (Hisui) → Overqwil | Dark/Poison | Hisui-vorm |
 | Sneasel (Hisui) → Sneasler | Fighting/Poison | Hisui-vorm |
-| Corsola (Galar) → Cursola | Ghost | Gebleekt koraal: sterk natuurthema, maar dubbel; eventueel post-game |
 | Delibird | Ice/Flying | Kerst-pinguïn; botst met de pinguïn-fakemon |
 | Phanpy → Donphan | Ground | Olifant (Azië/Afrika) |
 | Stantler → Wyrdeer | Stantler: Normal; Wyrdeer: Normal/Psychic | Eland; hertenniche via Deerling (pudú/huemul) |
@@ -310,7 +312,6 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Archen → Archeops | Rock/Flying | Fossiel; wel kandidaat voor een levende hoatzin-vorm (sectie 5) |
 | Zorua (Hisui) → Zoroark (Hisui) | Normal/Ghost | Hisui-vorm |
 | Emolga | Electric/Flying | Vliegende eekhoorn (Azië) |
-| Litwick → Lampent → Chandelure | Ghost/Fire | Kaarsen; Ghost genoeg |
 | Axew → Fraxure → Haxorus | Dragon | Dragon genoeg |
 | Cubchoo → Beartic | Ice | IJsbeer (noordpool) |
 | Stunfisk (Galar) | Ground/Steel | Galar-vorm |
@@ -333,7 +334,6 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Rookidee → Corvisquire → Corviknight | Rookidee, Corvisquire: Flying; Corviknight: Flying/Steel | Raaf; overlap condor |
 | Clobbopus → Grapploct | Fighting | Octopus; Fighting genoeg |
 | Stonjourner | Rock | Stonehenge; Tiwanaku via Golett |
-| Eiscue | Ice | Pinguïn: botst met de pinguïn-fakemon |
 | Cufant → Copperajah | Steel | Olifant; koper-thema (Chili) beter met een andere soort |
 | Dracozolt | Electric/Dragon | Fossiel-fusie |
 | Arctozolt | Electric/Ice | Fossiel-fusie |
@@ -357,9 +357,6 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Diglett → Dugtrio | Ground | Mol; als gewone soort niet, wel kandidaat voor een tuco-tuco-vorm (sectie 5) |
 | Diglett (Alola) → Dugtrio (Alola) | Ground/Steel | Mol |
 | Meowth (Alola) → Persian (Alola) | Dark | Geen band |
-| Meowth (Galar) → Perrserker | Steel | Geen band |
-| Slowpoke → Slowbro → Slowking | Water/Psychic | Geen band |
-| Slowpoke (Galar) → Slowbro (Galar) → Slowking (Galar) | Slowpoke (Galar): Psychic; Slowbro (Galar), Slowking (Galar): Poison/Psychic | Geen band |
 | Grimer → Muk | Poison | Gewone Grimer niet nodig naast de Hoenn-vorm |
 | Grimer (Alola) → Muk (Alola) | Poison/Dark | Gewone Grimer niet nodig naast de Hoenn-vorm |
 | Onix → Steelix | Onix: Rock/Ground; Steelix: Steel/Ground | Jordi 22 okt: geschrapt. Iconisch; Steelix voor de Steel-E4 |
@@ -380,12 +377,12 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Sunkern → Sunflora | Grass | Zonnebloem (Noord-Amerika) |
 | Murkrow → Honchkrow | Dark/Flying | Kraai; heksen-thema past niet |
 | Wynaut → Wobbuffet | Wynaut: Normal; Wobbuffet: Psychic/Normal | Geen band |
-| Dunsparce → Dudunsparce | Normal/Ground | Geen band |
 | Snubbull → Granbull | Fairy | Bulldog |
 | Shuckle | Bug/Rock | Geen band |
 | Treecko → Grovyle → Sceptile | Grass | Hoenn-starter (eventueel gift voor Ungrounded-fans) |
 | Torchic → Combusken → Blaziken | Torchic: Fire/Flying; Combusken, Blaziken: Fire/Fighting | Hoenn-starter (eventueel gift voor Ungrounded-fans) |
 | Mudkip → Marshtomp → Swampert | Mudkip: Water; Marshtomp, Swampert: Water/Ground | Hoenn-starter (eventueel gift voor Ungrounded-fans) |
+| Wurmple → Silcoon → Beautifly → Cascoon → Dustox | Wurmple, Silcoon: Bug; Beautifly: Bug/Flying; Cascoon: Bug; Dustox: Bug/Poison | Jordi 22 okt: geschrapt. Vroege Bug; Beautifly/Dustox herzien |
 | Ralts → Kirlia → Gardevoir → Gallade | Ralts, Kirlia, Gardevoir: Psychic/Fairy; Gallade: Psychic/Fighting | Jordi 22 okt: geschrapt. Iconisch, fan-favoriet |
 | Makuhita → Hariyama | Fighting | Sumo |
 | Skitty → Delcatty | Normal | Huiskat |
@@ -396,6 +393,7 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Gulpin → Swalot | Poison | Geen band |
 | Spoink → Grumpig | Psychic/Normal | Geen band |
 | Chingling → Chimecho | Psychic/Steel | Windgong |
+| Snorunt → Glalie → Froslass | Snorunt, Glalie: Ice; Froslass: Ice/Ghost | Jordi 22 okt: geschrapt. Vroege Ice in de Cordillera |
 | Clamperl → Huntail → Gorebyss | Clamperl: Water; Huntail: Water/Dark; Gorebyss: Water/Psychic | Jordi 22 okt: geschrapt. Diepzee |
 | Luvdisc | Water | Geen band |
 | Turtwig → Grotle → Torterra | Turtwig, Grotle: Grass; Torterra: Grass/Ground | Starter andere regio |
@@ -469,25 +467,27 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Hatenna → Hattrem → Hatterene | Hatenna, Hattrem: Psychic; Hatterene: Psychic/Fairy | Heks |
 | Milcery → Alcremie | Fairy | Room; dulce de leche-vorm is een grap-idee |
 | Falinks | Fighting | Militair |
+| Pincurchin | Electric | Jordi 22 okt: geschrapt. Zee-egels |
 | Indeedee | Psychic/Normal | Butler |
 | Morpeko | Electric/Dark | Hamster |
 | Duraludon → Archaludon | Steel/Dragon | Geen band |
 | Sprigatito → Floragato → Meowscarada | Sprigatito, Floragato: Grass; Meowscarada: Grass/Dark | Starter |
 | Fuecoco → Crocalor → Skeledirge | Fuecoco, Crocalor: Fire; Skeledirge: Fire/Ghost | Starter |
 | Quaxly → Quaxwell → Quaquaval | Quaxly, Quaxwell: Water; Quaquaval: Water/Fighting | Starter |
+| Lechonk → Oinkologne | Normal | Jordi 22 okt: geschrapt. Pekari's (navelzwijnen); vroege Normal in het laagland |
 | Nymble → Lokix | Nymble: Bug; Lokix: Bug/Dark | Krekel |
 | Pawmi → Pawmo → Pawmot | Pawmi: Electric; Pawmo, Pawmot: Electric/Fighting | Muis |
 | Tandemaus → Maushold | Normal | Muis |
 | Fidough → Dachsbun | Fairy | Brood |
 | Smoliv → Dolliv → Arboliva | Grass/Normal | Olijf (Mendoza): zwak; eventueel |
-| Charcadet → Armarouge → Ceruledge | Charcadet: Fire; Armarouge: Fire/Psychic; Ceruledge: Fire/Ghost | Geen band |
 | Tadbulb → Bellibolt | Electric | Geen band |
+| Maschiff → Mabosstiff | Dark | Jordi 22 okt: geschrapt. Dark-gym; waakhonden van de bendes |
 | Toedscool → Toedscruel | Ground/Grass | Geen band |
 | Rellor → Rabsca | Rellor: Bug; Rabsca: Bug/Psychic | Mestkever (Egypte) |
 | Flittle → Espathra | Psychic | Geen band |
+| Wiglett → Wugtrio | Water | Jordi 22 okt: geschrapt. Zandbank |
 | Varoom → Revavroom | Steel/Poison | Motor |
 | Cyclizar | Dragon/Normal | Geen band |
-| Orthworm | Steel | Geen band |
 | Greavard → Houndstone | Ghost | Spookhond |
 | Veluza | Water/Psychic | Geen band |
 | Dondozo | Water | Geen band |
@@ -582,21 +582,21 @@ Soorten = elke soort met dat type (dubbeltypes tellen bij beide). Lijnen = lijne
 
 | Type | Rol | Soorten | Lijnen | Opmerking |
 |---|---|---|---|---|
-| Water | – | 81 | 42 | Ruim (zee, rivieren, binnenzee). |
-| Bug | gym | 57 | 27 | Ruim; veel echte Amazone-insecten. |
-| Ground | gym 1 | 47 | 24 | Goed voor gym 1 (Sandshrew, Nacli-zout is Rock, Gligar, Drilbur, Wooper, Silicobra, Hippopotas, Hoenn-Grimer, Doduo, Stunfisk). |
+| Water | – | 82 | 42 | Ruim (zee, rivieren, binnenzee). |
+| Bug | gym | 52 | 26 | Ruim; veel echte Amazone-insecten. |
+| Ground | gym 1 | 51 | 26 | Goed voor gym 1 (Sandshrew, Nacli-zout is Rock, Gligar, Drilbur, Wooper, Silicobra, Hippopotas, Hoenn-Grimer, Doduo, Stunfisk). |
 | Grass | gym | 47 | 23 | Ruim, maar vooral laagland. Weinig Grass op de altiplano. |
-| Poison | gym | 46 | 23 | Goed (Croagunk, Venipede, Skorupi, Stunky, Foongus, Bellsprout, Spinarak, Hoenn-Grimer, Koffing, Trubbish, Mareanie, Skrelp, Glimmet). |
-| Flying | E4 | 45 | 30 | Goed, veel echte vogels uit de regio; condor- en kolibrie-fakemon komen erbij. |
+| Poison | gym | 47 | 23 | Goed (Croagunk, Venipede, Skorupi, Stunky, Foongus, Bellsprout, Spinarak, Hoenn-Grimer, Koffing, Trubbish, Mareanie, Skrelp, Glimmet). |
+| Ghost | E4 | 45 | 26 | Ruim (Gastly, Duskull, Misdreavus, Yamask, Sableye, Parasect, Gimmighoul, Dreepy, Phantump, Mimikyu, Sandygast, Dhelmise, Spiritomb). |
+| Flying | E4 | 44 | 29 | Goed, veel echte vogels uit de regio; condor- en kolibrie-fakemon komen erbij. |
 | Normal | – | 44 | 27 |  |
-| Dark | gym | 43 | 25 | Ruim (Sneasel, Houndour, Purrloin, Zorua, Nickit, Stunky, Deino, Pawniard, Scraggy, Maschiff, Inkay, Carvanha). |
-| Ghost | E4 | 40 | 24 | Ruim (Gastly, Duskull, Misdreavus, Yamask, Sableye, Parasect, Gimmighoul, Dreepy, Phantump, Mimikyu, Sandygast, Dhelmise, Spiritomb). |
-| Electric | E4 | 35 | 19 | Goed (Pichu, Elekid, Magnemite, Tynamo, Joltik, Grubbin, Rotom, Porygon, Wattrel, Exploud, Volbeat/Illumise, Chinchou, Stunfisk). |
-| Steel | E4 | 30 | 16 | Goed (Magnemite, Skarmory, Aron, Beldum, Mawile, Pawniard, Durant, Bronzor, Riolu, Gholdengo, Alolan Sandshrew, Seviper, Exploud). |
-| Psychic | – | 30 | 18 |  |
+| Dark | gym | 41 | 24 | Ruim (Sneasel, Houndour, Purrloin, Zorua, Nickit, Stunky, Deino, Pawniard, Scraggy, Maschiff, Inkay, Carvanha). |
+| Psychic | – | 37 | 21 |  |
+| Electric | E4 | 34 | 18 | Goed (Pichu, Elekid, Magnemite, Tynamo, Joltik, Grubbin, Rotom, Porygon, Wattrel, Exploud, Volbeat/Illumise, Chinchou, Stunfisk). |
+| Steel | E4 | 33 | 18 | Goed (Magnemite, Skarmory, Aron, Beldum, Mawile, Pawniard, Durant, Bronzor, Riolu, Gholdengo, Alolan Sandshrew, Seviper, Exploud). |
+| Fire | gym | 31 | 18 | Dunst van de gymtypes: Vulpix, Ponyta, Magby, Slugma, Houndour, Torkoal, Charmander, Volbeat, Heatmor, Larvesta, Sizzlipede, Scovillain. **Gat voor fakemon**; de regional forms Boitatá (Fire/Ghost) en huaco (Ground/Fire) helpen ook. |
 | Dragon | gym | 30 | 15 | Genoeg lijnen (zes pseudo-achtigen), maar weinig Zuid-Amerikaans: alleen Tropius, Alolan Exeggutor. Eigen draak (pitahaya-idee, Grass/Dragon) welkom. |
-| Ice | gym 2 | 29 | 15 | Genoeg voor gym 2 als de Cordillera vroeg komt: Alolan Sandshrew/Vulpix, Snorunt, Snover, Swinub, Sneasel, Snom, Cryogonal, Bergmite. Pinguïns en ijs-fakemon vullen aan. |
-| Fire | gym | 25 | 16 | Dunst van de gymtypes: Vulpix, Ponyta, Magby, Slugma, Houndour, Torkoal, Charmander, Volbeat, Heatmor, Larvesta, Sizzlipede, Scovillain. **Gat voor fakemon**; de regional forms Boitatá (Fire/Ghost) en huaco (Ground/Fire) helpen ook. |
+| Ice | gym 2 | 27 | 15 | Genoeg voor gym 2 als de Cordillera vroeg komt: Alolan Sandshrew/Vulpix, Snorunt, Snover, Swinub, Sneasel, Snom, Cryogonal, Bergmite. Pinguïns en ijs-fakemon vullen aan. |
 | Rock | – | 23 | 13 |  |
 | Fighting | – | 20 | 11 | Laag, maar geen gym; de Fighting-starter (lama) en Flamigo vullen aan. |
 | Fairy | – | 19 | 10 | Laag; geen gym. Kandidaten voor fakemon (Pachamama-sfeer, bloemen). |
@@ -608,20 +608,20 @@ Een lijn kan in meerdere biomes staan.
 | Biome | Lijnen | Soorten | Lijnen (eerste stadium) |
 |---|---|---|---|
 | Altiplano/puna (La Paz, Titicaca) (`ALT`) | 23 | 53 | Sandshrew, Cleffa, Psyduck, Geodude, Grimer (Hoenn), Magikarp, Eevee, Natu, Wooper, Skarmory, Larvitar, Aron, Lunatone, Solrock, Castform, Duskull, Absol, Bronzor, Drilbur, Minccino, Golett, Mudbray, Nickit |
-| Cordillera/gletsjers (`IJS`) | 11 | 23 | Sandshrew (Alola), Vulpix (Alola), Sneasel, Swinub, Absol, Snorunt, Snover, Cryogonal, Bergmite, Snom, Frigibax |
+| Cordillera/gletsjers (`IJS`) | 10 | 20 | Sandshrew (Alola), Vulpix (Alola), Sneasel, Swinub, Absol, Snover, Cryogonal, Bergmite, Snom, Frigibax |
 | Uyuni/Lípez (zout, lagunes, geisers) (`LIP`) | 6 | 11 | Vulpix, Gligar, Slugma, Castform, Nacli, Flamigo |
 | Vulkanen (`VULK`) | 6 | 11 | Vulpix, Slugma, Houndour, Torkoal, Larvesta, Sizzlipede |
 | Atacama (`ATA`) | 22 | 42 | Sandshrew, Vulpix, Gligar, Skarmory, Trapinch, Cacnea, Lunatone, Solrock, Baltoy, Beldum, Stunky, Gible, Hippopotas, Skorupi, Maractus, Sigilyph, Yamask, Elgyem, Silicobra, Sizzlipede, Bramblin, Glimmet |
-| Nevelwoud/yungas (Salento, Machu Picchu) (`NEV`) | 20 | 50 | Caterpie, Pichu, Venonat, Exeggcute, Hoothoot, Teddiursa, Wurmple, Budew, Swablu, Tropius, Purrloin, Zorua, Deerling, Ferroseed, Deino, Phantump, Flabébé, Pikipek, Lechonk, Capsakid |
-| Amazone/verdronken woud (`AMA`) | 52 | 110 | Caterpie, Paras, Venonat, Poliwag, Tangela, Scyther, Pinsir, Magikarp, Dratini, Spinarak, Aipom, Yanma, Heracross, Wurmple, Lotad, Surskit, Shroomish, Slakoth, Volbeat, Illumise, Carvanha, Seviper, Barboach, Feebas, Kecleon, Tropius, Combee, Buizel, Chatot, Croagunk, Purrloin, Tympole, Venipede, Zorua, Foongus, Joltik, Tynamo, Bouffalant, Heatmor, Durant, Larvesta, Goomy, Phantump, Scatterbug, Pikipek, Grubbin, Dewpider, Morelull, Chewtle, Lechonk, Capsakid, Basculin |
+| Nevelwoud/yungas (Salento, Machu Picchu) (`NEV`) | 18 | 43 | Caterpie, Pichu, Venonat, Exeggcute, Hoothoot, Teddiursa, Budew, Swablu, Tropius, Purrloin, Zorua, Deerling, Ferroseed, Deino, Phantump, Flabébé, Pikipek, Capsakid |
+| Amazone/verdronken woud (`AMA`) | 50 | 103 | Caterpie, Paras, Venonat, Poliwag, Tangela, Scyther, Pinsir, Magikarp, Dratini, Spinarak, Aipom, Yanma, Heracross, Lotad, Surskit, Shroomish, Slakoth, Volbeat, Illumise, Carvanha, Seviper, Barboach, Feebas, Kecleon, Tropius, Combee, Buizel, Chatot, Croagunk, Purrloin, Tympole, Venipede, Zorua, Foongus, Joltik, Tynamo, Bouffalant, Heatmor, Durant, Larvesta, Goomy, Phantump, Scatterbug, Pikipek, Grubbin, Dewpider, Morelull, Chewtle, Capsakid, Basculin |
 | Pantanal/llanos (moeras) (`PAN`) | 14 | 28 | Psyduck, Poliwag, Magikarp, Yanma, Wooper, Lotad, Surskit, Volbeat, Illumise, Feebas, Tympole, Stunfisk, Chewtle, Bombirdier |
 | Tepuis/Gran Sabana (`TEP`) | 1 | 3 | Bellsprout |
 | Pampa/Chaco (`PAM`) | 20 | 35 | Growlithe, Ponyta, Doduo, Grimer (Hoenn), Tauros, Hoothoot, Miltank, Taillow, Nincada, Seviper, Combee, Stunky, Skorupi, Maractus, Heatmor, Scatterbug, Nickit, Poltchageist, Oricorio, Squawkabilly |
 | Patagonië (`PAT`) | 17 | 34 | Doduo, Seel, Lapras, Dratini, Smeargle, Wailmer, Swablu, Spheal, Bidoof, Ducklett, Deerling, Rufflet, Bergmite, Dhelmise, Wooloo, Impidimp, Bramblin |
 | Galápagos/eilanden (`GAL`) | 8 | 14 | Krabby, Staryu, Mantyke, Nosepass, Carvanha, Torkoal, Cramorant, Wattrel |
-| Kust (Caribisch, Atlantisch, Humboldt) (`KUST`) | 24 | 43 | Tentacool, Shellder, Krabby, Horsea, Staryu, Qwilfish, Corsola, Remoraid, Mantyke, Wingull, Wailmer, Tropius, Bouffalant, Inkay, Skrelp, Clauncher, Mareanie, Sandygast, Dhelmise, Arrokuda, Pincurchin, Wattrel, Wiglett, Finizen |
+| Kust (Caribisch, Atlantisch, Humboldt) (`KUST`) | 22 | 40 | Tentacool, Shellder, Krabby, Horsea, Staryu, Qwilfish, Corsola, Remoraid, Mantyke, Wingull, Wailmer, Tropius, Bouffalant, Inkay, Skrelp, Clauncher, Mareanie, Sandygast, Dhelmise, Arrokuda, Wattrel, Finizen |
 | Open zee/diepzee (`ZEE`) | 5 | 10 | Tentacool, Chinchou, Frillish, Inkay, Wimpod |
-| Steden/ruïnes (`STAD`) | 38 | 91 | Pichu, Cleffa, Growlithe, Abra, Machop, Magnemite, Gastly, Koffing, Happiny, Ditto, Eevee, Porygon, Munchlax, Natu, Misdreavus, Houndour, Taillow, Whismur, Baltoy, Duskull, Bronzor, Spiritomb, Hippopotas, Rotom, Timburr, Scraggy, Trubbish, Golett, Pawniard, Flabébé, Mimikyu, Impidimp, Dreepy, Maschiff, Gimmighoul, Oricorio, Squawkabilly, Unown |
+| Steden/ruïnes (`STAD`) | 37 | 89 | Pichu, Cleffa, Growlithe, Abra, Machop, Magnemite, Gastly, Koffing, Happiny, Ditto, Eevee, Porygon, Munchlax, Natu, Misdreavus, Houndour, Taillow, Whismur, Baltoy, Duskull, Bronzor, Spiritomb, Hippopotas, Rotom, Timburr, Scraggy, Trubbish, Golett, Pawniard, Flabébé, Mimikyu, Impidimp, Dreepy, Gimmighoul, Oricorio, Squawkabilly, Unown |
 | Grotten/mijnen (`GROT`) | 12 | 30 | Machop, Geodude, Magnemite, Gastly, Koffing, Larvitar, Sableye, Aron, Drilbur, Rolycoly, Glimmet, Gimmighoul |
 
 ## 8. Vroege game (La Paz, Cordillera, Uyuni/Lípez)

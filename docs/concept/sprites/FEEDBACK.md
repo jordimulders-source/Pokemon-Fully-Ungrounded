@@ -6,3 +6,4 @@
 - **Alpaca:** mag nog fluffier.
 - **Olinguito:** pose wordt gewaardeerd; langere klauwen en wat donkerder van kleur.
 - **Nachtaap:** ogen zijn geinig, maar mogen nog mysterieuzer; de knieën zijn wat groot; krulstaart is geinig.
+- **Alpaca-lijn:** mag ook verwijzingen naar vechtsporten maken, niet per se Zuid-Amerikaans (Jordi).

@@ -408,7 +408,8 @@ static enum CancelerResult CancelerConfused(struct BattleCalcValues *cv)
         if (vol->confusionTimer)
         {
              // confusion dmg
-            if (RandomPercentage(RNG_CONFUSION, (GetConfig(B_CONFUSION_SELF_DMG_CHANCE) >= GEN_7 ? 33 : 50)))
+            if (cv->moveEffect != EFFECT_TIPSY_WALTZ // Project Grounded: Spinda danst er gewoon doorheen
+             && RandomPercentage(RNG_CONFUSION, (GetConfig(B_CONFUSION_SELF_DMG_CHANCE) >= GEN_7 ? 33 : 50)))
             {
                 gBattleCommunication[MULTISTRING_CHOOSER] = TRUE;
                 gBattlerTarget = gBattlerAttacker;
@@ -548,6 +549,18 @@ static enum CancelerResult CancelerCallSubmove(struct BattleCalcValues *cv)
     case EFFECT_METRONOME:
         calledMove = GetMetronomeMove();
         battleScript = BattleScript_MetronomeAttackstring;
+        break;
+    case EFFECT_MACHINE_LEARNING: // Project Grounded: 20% kans op hallucinatie (willekeurige move, zonder Metronome-animatie)
+        if (RandomPercentage(RNG_MACHINE_LEARNING, 20))
+        {
+            gBattleMons[cv->battlerAtk].volatiles.machineLearningTurn = gBattleTurnCounter; // de reeks loopt door
+            calledMove = GetMetronomeMove();
+            battleScript = BattleScript_MachineLearningHallucination;
+        }
+        else
+        {
+            noEffect = TRUE;
+        }
         break;
     case EFFECT_ASSIST:
         calledMove = GetAssistMove();
@@ -2339,6 +2352,12 @@ static enum CancelerResult CancelerMultihitMoves(struct BattleCalcValues *cv)
         {
             gMultiHitCounter = GetMoveSpeciesPowerOverride_NumOfHits(cv->move);
         }
+        else if (cv->move == MOVE_OTHISMOS)
+        {
+            // Project Grounded: de falanx is zo sterk als de gebruiker gezond is: 1 + 4 x HP/maxHP treffers (5 bij volle HP)
+            u32 hits = 1 + (gBattleMons[cv->battlerAtk].hp * 4) / gBattleMons[cv->battlerAtk].maxHP;
+            gMultiHitCounter = min(hits, 5);
+        }
         else if (cv->abilities[cv->battlerAtk] == ABILITY_SKILL_LINK)
         {
             gMultiHitCounter = 5;
@@ -2347,6 +2366,9 @@ static enum CancelerResult CancelerMultihitMoves(struct BattleCalcValues *cv)
         {
             SetRandomMultiHitCounter(cv->holdEffects[cv->battlerAtk]);
         }
+
+        // Project Grounded: Counterfeit Ball, 1 op 10 is de laatste bal een nep-Master Ball (altijd een crit)
+        gBattleStruct->counterfeitMasterBall = (cv->move == MOVE_COUNTERFEIT_BALL && RandomChance(RNG_COUNTERFEIT_BALL, 1, 10));
 
         PREPARE_BYTE_NUMBER_BUFFER(gBattleScripting.multihitString, 1, 0)
     }

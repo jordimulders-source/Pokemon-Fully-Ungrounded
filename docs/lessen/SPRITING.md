@@ -178,3 +178,10 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 
 ## 22. Lessen uit olinguito ronde 14
 - **Een romp leest rechthoekig als de buiklijn vlak loopt en de achterkant verticaal valt.** Laat de onderrand vanaf de diepe borst met toenemende stappen per rij (4,3,2,1) naar een hoog ingetrokken lies stijgen en rond de heup af met stappen 2,2,1,1,0,1; zet de achterpoot zó dat de dij de achterkant van die boog vormt (Mightyena).
+
+## 23. Lessen uit alpaca ronde 13 (combineren)
+- **Wat Jordi goedkeurt, blijft letterlijk staan:** "meer Pokémon" uitvoeren in palet/shading/details, nooit door goedgekeurde verhoudingen (kop, nek, pose) te veranderen; ronde 12 werd daardoor "Chernobyl" (Jordi).
+- **Een pose-wijziging die niemand vroeg eerst als variant opleveren,** niet als enige versie.
+- **Kop van ronde X op lijf van ronde Y:** neem de neklengte mee met de kop en laat het lijf beginnen waar de rug start.
+- **Glans hoort binnen het zwart:** een glanspixel op de rand van een klein oog laat het oog grijs lezen; een 2 px breed verre oog helemaal zwart.
+- **Twee vuisten naast elkaar:** één kolom lucht ertussen, anders één klomp op 1×.

@@ -145,3 +145,12 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Oppervlak sparen zonder de soort te verliezen:** een lange nek kost weinig als hij smal is (9–10 px); de meeste winst zat in een lijf dat 1 kolom korter is, kortere achterpoten (die staan verder weg en dus hoger) en een kop zonder lege wangen (1030 → 869 px).
 - **Diepte via voethoogte:** dichtbije voorvoet het laagst, verre voorvoet 3 px hoger, achtervoeten nog 2–4 px hoger; zo staat een viervoeter 3/4 in plaats van in profiel, ook als het lijf zelf nog vrij zijwaarts is.
 - **Een fringe-schaduwlijn vlak boven de ogen leest op 1× als boze wenkbrauw:** houd de pixels direct boven een oog licht en zet de franjepunten tussen de ogen.
+
+## 18. Lessen uit alpaca ronde 12
+- **Witte/crème vacht: hue-shift, niet "donkerder beige".** Gemeten Gen 3: Altaria/Swablu wit→lavendel (200,200,224)→152,152,192→paarsblauwe rand; Zangoose wit→lichtblauw→grijze rand; Mareep/Ponyta crème→oker→bruin (warm, verzadigder). Kies koel óf warm en houd ±40–50 luma per stap; de referentietabel staat in `docs/concept/sprites/alpaca/ronde12/NOTITIES.md`.
+- **Palet wisselen kost niets als de letters vast liggen** (W w v u V): eerst vormen tekenen, daarna de kleuren in `palet.txt` stellen tot de stappen op 1× uit elkaar liggen.
+- **Een pompon/kuif in dezelfde vachtkleur leest pas als bol** met een eigen omlijning en een donkere onderrand (u) op de kruin; zonder die rand smelt hij met de kop.
+- **Een vuist op een horizontale onderarm leest als een stok met een bal** (rammelaar); zet de vuist dicht op de borst met een wolpluim als overgang, dan groeit hij uit het lijf.
+- **Wol is mat:** een witte glanspixel maakt een wolbal plastic; gebruik alleen de hooglichtkleur van de groep en één vouwlijn voor textuur.
+- **Een snuit van 1 px naar voren** (3 rijen op x−1, nabije rijen erboven/onder op de oude rand) maakt van een vlakke koprand een muil zonder het oppervlak op te blazen.
+- **Heredoc-Python in een worktree-agent kan geweigerd worden;** zet bewerkscripts als bestand in de scratchpad en draai ze met het pad als argument.

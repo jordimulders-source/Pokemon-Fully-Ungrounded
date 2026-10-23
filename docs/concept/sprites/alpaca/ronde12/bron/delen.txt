@@ -1,0 +1,119 @@
+# Alpaca ronde 12: met de hand geschreven rijen 'y x0 pixels' ('.' = overslaan), van achter naar voor.
+# K donker | W vacht-hl w vacht v schaduw1 u schaduw2 V omlijning | R r s S vuist | M Y T weefband | P roze | B oogreflectie
+# '@ dx dy' verschuift de hele figuur.
+@ 3 3
+## staart
+22 41 VK
+23 40 VWvK
+24 39 VWwvK
+25 38 VWwvuK
+26 39 VvuuK
+27 41 uuK
+## achterpoot_ver
+35 35 vuuK
+36 35 VvuK
+37 36 VvuK
+38 36 VvuK
+39 36 VvuK
+40 35 VvuK
+41 35 VvuK
+42 35 VvuK
+43 34 VvvuK
+44 34 KKKKK
+## voorpoot_ver
+36 24 VvuK
+37 24 VvuK
+38 23 VvuK
+39 22 VvvuuK
+40 22 SMMMMS
+41 22 SYTYTS
+42 21 SRRrrrsK
+43 21 SRrrrssK
+44 21 SrrrsrsK
+45 21 SrrsrssK
+46 21 KsssssK
+47 22 KKKKK
+## lijf
+24 16 .VWWwwwwwwvvuK
+25 16 .VWwwwwwwwwvvVVVVVVK
+26 16 .VWwwwwwwwwwvWWWWWWwvK
+27 16 .VWwwwwwwwwwwvWWWwwwwvvK
+28 16 VWWwwwwwwwwwwwvWwwwwwwvuK
+29 16 VWwwwwwwwwwwwwvwwwwwwvvuK
+30 16 VWwwwwwwwwwwwvvwwwwwvvvuK
+31 16 VwwwwwwwwwwwvvvwwwvvvvuuK
+32 16 VvwwwwwwwwwvvvuvvvvvvuuuK
+33 16 .VvwwwwwwwvvvuuuvvvvuuuuK
+34 16 .VvvvwwwvvvuuuuuvuuuuuK
+35 16 ..VuvvvvvuuuuuuuuuuuuK
+36 16 ...KuuvvvuuKKKKKKKKKK
+## achterpoot_voor
+36 29 VwwvK
+37 29 VWwvK
+38 30 VwvK
+39 31 VwvK
+40 31 VwvK
+41 30 VwvK
+42 30 VwvK
+43 30 VwvK
+44 30 VwvK
+45 29 VwvvK
+46 29 VwwvK
+47 28 VwwvvK
+48 28 KKKKKK
+## nek
+20 17 VuuuvvvvuuK
+21 17 VWvvwwwwvuK
+22 17 VWwwwwwwvvuK
+23 17 VWWwwwwwwvvuK
+## vuist_voor
+# wolvuist dicht bij de borst (bewaking), gebreide band, wolpluim waar de poot uit de borst groeit
+30 5 ...sSSS...
+31 5 .ssRRrrSS.
+32 5 sRRRRrrrrS
+33 5 sRRRrrsrrs
+34 5 SRRrrsrrrs
+35 5 SRrrrsrrss
+36 5 SrrrrrrssS
+37 5 SsrrrrsssS
+38 5 .KssssssK.
+39 5 ...KKKK...
+32 15 SSS
+33 15 MYM
+34 15 MTM
+35 15 MYM
+36 15 MTM
+37 15 MYM
+38 15 SSS
+31 18 .VVV.
+32 18 VWWwV
+33 18 WWwwvV
+34 18 Wwwwvu
+35 18 wwwvvu
+36 18 wwvvuK
+37 18 vvvuuK
+38 18 vuuuK
+39 18 KKKK
+## kop 1
+1 10 ........................V.
+2 10 ..V.......VVV.VVV......VK.
+3 10 ..VK.....VWWWVWWvK....VPK.
+4 10 ..VvK...VWWWwWWwwvK..VPvK.
+5 10 ...VvK.VWWwwwwwwwvvKVPvK..
+6 10 ...VvvKVWWwwwwwwvvuKVPvK..
+7 10 ..VWwvuVWwwwwwwwvvuKwvvK..
+8 10 .VWWwwwwVvwwwwwvvuKwvvvvK.
+9 10 .VWwwwwwwVuuuuuuuKvvvvvuK.
+10 10 .VWwwwwwwwwuwwwKKKwvvvvuK.
+11 10 .VWwwwwwKKwwwwKWKKVwvvvuK.
+12 10 VWwwwwwKWKwwwwKKKKvwvvuuK.
+13 9 V
+13 10 WwwwwwwKKKwwwwKKKBvwvvuK..
+14 9 V
+14 10 KvvwwwwvKKwwwwwKKvwwvvuK..
+15 9 V
+15 10 KvvwwwwwwwwwwwwvvwwvvuK...
+16 10 VKvvwwwwwwwwwwwwwvvvuK....
+17 10 .VvvvwwwwwwwwwwwvvvuK.....
+18 10 .KuuvvvwwwwwwwwvvvuK......
+19 10 ..KKKuuvvvvwwwvvuK........

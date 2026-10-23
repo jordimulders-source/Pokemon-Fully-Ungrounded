@@ -154,3 +154,7 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Delen die in frame 2 bewegen:** laat het stilstaande deel eronder (hier het lijf onder de kop) 4–6 px doorlopen, anders komt in frame 2 een rand zonder omlijning bloot.
 - **Een mond die direct boven de kaaklijn ligt, smelt ermee samen:** laat één pixel room tussen lip en kaakrand, en een wit tandje onder de lip maakt hem leesbaar op 1×.
 - **Sandbox-valkuil:** in een worktree weigert de omgeving samengestelde shell-regels (heredoc + `&&`, `cd ..`); zet bewerkingen in een los script in de scratchpad en roep dat met één `python3`-regel aan.
+
+## 19. Lessen uit olinguito ronde 13 (3/4-constructie van een viervoeter)
+- **Verre poten staan links van én hoger dan de dichtbije** bij een 3/4 naar links-voor (de verre kant draait naar achteren; zie Mightyena, Poochyena). Een verre poot rechts van de dichtbije, of een dichtbije poot midden onder de buik ver van de heup, geeft een Escher-pose: dan klopt de overlap niet met de diepte. Check: hangt elke poot onder zijn eigen schouder of heup?
+- **Eerst een constructieschets over de vorige ronde** (twee ovalen voor borst en heup, middellijn de diepte in, schouder-/heupas dwars erop, poten als lijnen; `docs/concept/sprites/olinguito/ronde13/bron/constructie.py`), dan pas pixels. Vaak hoeft er weinig opnieuw: hier ging de bestaande dichtbije achterpoot ongewijzigd 9 px naar rechts en alleen de onderkant van de romp en de verre poot werden nieuw getekend.

@@ -7649,6 +7649,35 @@ static void Cmd_switchoutabilities(void)
         break;
     }
 
+    // Project Grounded: Life Buoy, 1/4 HP terug bij uitwisselen (niet na flauwvallen)
+    if (gBattleMons[battler].volatiles.lifeBuoy)
+    {
+        gBattleMons[battler].volatiles.lifeBuoy = FALSE;
+        if (IsBattlerAlive(battler) && !IsBattlerAtMaxHp(battler))
+        {
+            u32 heal = GetNonDynamaxMaxHP(battler) / 4;
+            if (heal == 0)
+                heal = 1;
+            heal += gBattleMons[battler].hp;
+            if (heal > gBattleMons[battler].maxHP)
+                heal = gBattleMons[battler].maxHP;
+            if (emitted)
+            {
+                // Natural Cure gebruikt de controller al: HP direct in de party zetten
+                gBattleMons[battler].hp = heal;
+                SetMonData(&GetBattlerParty(battler)[gBattlerPartyIndexes[battler]], MON_DATA_HP, &heal);
+            }
+            else
+            {
+                BtlController_EmitSetMonData(battler, B_COMM_TO_CONTROLLER, REQUEST_HP_BATTLE,
+                                                1u << gBattlerPartyIndexes[battler],
+                                                sizeof(heal),
+                                                &heal);
+                MarkBattlerForControllerExec(battler);
+            }
+        }
+    }
+
     gBattleStruct->battlerState[battler].notOnField = TRUE;
 
     if (gBattleStruct->battlerState[battler].originalBattlerPartyId == PARTY_SIZE)
@@ -12938,21 +12967,22 @@ void BS_NineLivesCureStatus(void)
 
 // Project Grounded: Wind Chime. Healt de gebruiker en zijn partner één keer per gebruik (bij het eerste doelwit).
 // battler: BS_ATTACKER of BS_ATTACKER_PARTNER; springt naar failInstr als er niets te healen valt.
+
 void BS_TryWindChimeHeal(void)
 {
     NATIVE_ARGS(u8 battler, const u8 *failInstr);
     u32 battler = GetBattlerForBattleScript(cmd->battler);
-    u32 i;
-    bool32 firstTarget = TRUE;
-
-    for (i = 0; i < gBattlersCount; i++)
+    // 1.17: het battlescript draait per geraakt doelwit; per zet heelt elke Pokémon maar één keer
+    u32 key = (gBattleTurnCounter << 4) | (gBattlerAttacker << 2);
+    if (battler < gBattlersCount && gBattleStruct->windChimeHealKey[battler] == key + 1)
     {
-        if (gBattleStruct->battlerState[gBattlerAttacker].targetsDone[i])
-            firstTarget = FALSE;
+        gBattlescriptCurrInstr = cmd->failInstr;
+        return;
     }
+    if (battler < gBattlersCount)
+        gBattleStruct->windChimeHealKey[battler] = key + 1;
 
-    if (!firstTarget
-     || gBattleStruct->unableToUseMove
+    if (gBattleStruct->unableToUseMove
      || battler >= gBattlersCount
      || !IsBattlerAlive(battler)
      || IsBattlerAtMaxHp(battler)

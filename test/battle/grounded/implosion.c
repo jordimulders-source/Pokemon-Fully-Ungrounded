@@ -20,7 +20,7 @@ SINGLE_BATTLE_TEST("Implosion makes the user faint and forms a black hole that l
         TURN { MOVE(player, MOVE_IMPLOSION); SEND_OUT(player, 1); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_IMPLOSION, player);
-        MESSAGE("The implosion left a black hole!\pAll hazards on the field were\nswallowed up!");
+        MESSAGE("The implosion left a black hole!\pEvery hazard, screen and stat change\non the field was swallowed up!");
         MESSAGE("Wobbuffet fainted!");
         MESSAGE("Wynaut is pulled\ntoward the black hole!");
         MESSAGE("Wynaut's Attack fell!");

@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Fungal Control fails on a target that is already controlled"
 SINGLE_BATTLE_TEST("Fungal Control overrides an ongoing Uproar")
 {
     GIVEN {
-        ASSUME(MoveHasAdditionalEffect(MOVE_UPROAR, MOVE_EFFECT_UPROAR));
+        ASSUME(MoveHasAdditionalEffectSelf(MOVE_UPROAR, MOVE_EFFECT_UPROAR));
         PLAYER(SPECIES_WOBBUFFET) { Speed(10); Moves(MOVE_FUNGAL_CONTROL, MOVE_CELEBRATE); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(20); Moves(MOVE_UPROAR, MOVE_CELEBRATE); }
     } WHEN {

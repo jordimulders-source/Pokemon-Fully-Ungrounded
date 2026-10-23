@@ -6941,6 +6941,7 @@ BattleScript_CounterfeitBallMaster::
 	printstring STRINGID_FAKEMASTERBALL
 	waitmessage B_WAIT_TIME_LONG
 	copyarray gBattleTextBuff1, sMULTIHIT_STRING, 6
+	multihitplurality
 	printstring STRINGID_HITXTIMES
 	waitmessage B_WAIT_TIME_LONG
 	return
@@ -7169,6 +7170,7 @@ BattleScript_EffectOverkill::
 	resultmessage
 	waitmessage B_WAIT_TIME_LONG
 	setadditionaleffects
+	tryfaintmon BS_TARGET
 	callnative BS_JumpIfOverkillNotStored
 	.4byte BattleScript_MoveEnd
 	printstring STRINGID_OVERKILLSTORED

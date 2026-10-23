@@ -55,7 +55,7 @@ SINGLE_BATTLE_TEST("Twin Lance strikes twice")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TWIN_LANCE, player);
         HP_BAR(opponent);
         HP_BAR(opponent);
-        MESSAGE("The Pokémon was hit 2 time(s)!");
+        MESSAGE("The Pokémon was hit 2 times!");
     }
 }
 
@@ -265,6 +265,6 @@ SINGLE_BATTLE_TEST("Bonemerang hits Flying types and Levitate users")
         ANIMATION(ANIM_TYPE_MOVE, MOVE_BONEMERANG, player);
         HP_BAR(opponent);
         HP_BAR(opponent);
-        MESSAGE("The Pokémon was hit 2 time(s)!");
+        MESSAGE("The Pokémon was hit 2 times!");
     }
 }

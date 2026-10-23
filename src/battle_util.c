@@ -298,18 +298,22 @@ const struct BattleWeatherInfo gBattleWeatherInfo[BATTLE_WEATHER_COUNT] = {
     {
         .flag = B_WEATHER_ACID_RAIN,
         .rock = HOLD_EFFECT_BLACK_SLUDGE,
+        .moveStartMessage = B_MSG_STARTED_ACID_RAIN,
         .endMessage = B_MSG_WEATHER_END_ACID_RAIN,
         .continuesMessage = B_MSG_WEATHER_TURN_ACID_RAIN,
         .animation = B_ANIM_ACID_RAIN_CONTINUES,
+        .type = BATTLE_WEATHER_ACID_RAIN,
     },
 
     [BATTLE_WEATHER_POLLEN_HAZE] = // Project Grounded
     {
         .flag = B_WEATHER_POLLEN_HAZE,
         .rock = HOLD_EFFECT_NONE,
+        .moveStartMessage = B_MSG_STARTED_POLLEN_HAZE,
         .endMessage = B_MSG_WEATHER_END_POLLEN_HAZE,
         .continuesMessage = B_MSG_WEATHER_TURN_POLLEN_HAZE,
         .animation = B_ANIM_POLLEN_HAZE_CONTINUES,
+        .type = BATTLE_WEATHER_POLLEN_HAZE,
     },
 };
 

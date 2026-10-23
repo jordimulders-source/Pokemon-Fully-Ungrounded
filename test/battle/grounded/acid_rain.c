@@ -5,7 +5,8 @@
 // Poison Def x1.5, Poison-moves x1.5, Fire en Water x0.5, gifkansen verdubbeld, Venoshock altijd sterk.
 ASSUMPTIONS
 {
-    ASSUME(GetMoveEffect(MOVE_ACID_RAIN) == EFFECT_ACID_RAIN);
+    ASSUME(GetMoveEffect(MOVE_ACID_RAIN) == EFFECT_WEATHER);
+    ASSUME(GetMoveWeatherType(MOVE_ACID_RAIN) == BATTLE_WEATHER_ACID_RAIN);
 }
 
 SINGLE_BATTLE_TEST("Acid Rain hurts non-Poison, non-Steel Pokémon and heals Poison types")

@@ -12,7 +12,7 @@ SINGLE_BATTLE_TEST("Othismos hits 5 times at full HP")
         TURN { MOVE(player, MOVE_OTHISMOS); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_OTHISMOS, player);
-        MESSAGE("The Pokémon was hit 5 time(s)!");
+        MESSAGE("The Pokémon was hit 5 times!");
     }
 }
 
@@ -25,7 +25,7 @@ SINGLE_BATTLE_TEST("Othismos hits 3 times at half HP")
         TURN { MOVE(player, MOVE_OTHISMOS); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_OTHISMOS, player);
-        MESSAGE("The Pokémon was hit 3 time(s)!");
+        MESSAGE("The Pokémon was hit 3 times!");
     }
 }
 
@@ -38,6 +38,6 @@ SINGLE_BATTLE_TEST("Othismos hits once below a quarter HP")
         TURN { MOVE(player, MOVE_OTHISMOS); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_OTHISMOS, player);
-        MESSAGE("The Pokémon was hit 1 time(s)!");
+        MESSAGE("The Pokémon was hit 1 time!");
     }
 }

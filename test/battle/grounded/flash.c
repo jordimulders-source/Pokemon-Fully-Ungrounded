@@ -5,7 +5,7 @@
 SINGLE_BATTLE_TEST("Flash lowers the target's Accuracy, Attack and Sp. Atk")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_FLASH) == EFFECT_FLASH);
+        ASSUME(GetMoveEffect(MOVE_FLASH) == EFFECT_STAT_CHANGE);
         ASSUME(GetMoveCategory(MOVE_FLASH) == DAMAGE_CATEGORY_STATUS);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
@@ -13,9 +13,7 @@ SINGLE_BATTLE_TEST("Flash lowers the target's Accuracy, Attack and Sp. Atk")
         TURN { MOVE(player, MOVE_FLASH); }
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FLASH, player);
-        MESSAGE("The opposing Wobbuffet's accuracy fell!");
-        MESSAGE("The opposing Wobbuffet's Attack fell!");
-        MESSAGE("The opposing Wobbuffet's Sp. Atk fell!");
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, opponent); // 1.17: alle stats in een keer
     } THEN {
         EXPECT_EQ(opponent->statStages[STAT_ACC], DEFAULT_STAT_STAGE - 1);
         EXPECT_EQ(opponent->statStages[STAT_ATK], DEFAULT_STAT_STAGE - 1);

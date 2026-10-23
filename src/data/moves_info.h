@@ -24398,6 +24398,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .additionalEffects = ADDITIONAL_EFFECTS({ // 1.17: Toxic Thread-effecten lezen de stat uit de movedata
+            .moveEffect = STAT_CHANGE_EFFECT_MINUS,
+            .speed = 1,
+        }),
         .battleAnimScript = gBattleAnimMove_VenomDust,
     },
     [MOVE_STRAIGHT_LINE] =
@@ -24609,6 +24613,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
+        .additionalEffects = ADDITIONAL_EFFECTS({ // 1.17: Stockpile-effecten lezen de stats uit de movedata
+            .moveEffect = STAT_CHANGE_EFFECT_PLUS,
+            .defense = 1,
+            .spDef = 1,
+        }),
         .battleAnimScript = gBattleAnimMove_BeaverDam,
     },
     [MOVE_KELP_SHROUD] = // Project Grounded: Dhelmise (bezeten zeewier zuigt de levenskracht leeg)

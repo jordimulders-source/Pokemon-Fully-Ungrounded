@@ -757,6 +757,7 @@ struct BattleStruct
     u8 nineLivesTriggered; // bitmasker per battler, voor het bericht
     u8 bubbleDomeSides; // Project Grounded: Bubble Dome, bit 0/1 per kant met schermen van Bubble Dome, bit 4/5 = net geknapt (melding)
     bool8 counterfeitMasterBall; // Project Grounded: Counterfeit Ball, de laatste bal is een nep-Master Ball
+    u32 windChimeHealKey[MAX_BATTLERS_COUNT]; // Project Grounded: Wind Chime heelt elke Pokémon één keer per zet
 };
 
 struct AiBattleData

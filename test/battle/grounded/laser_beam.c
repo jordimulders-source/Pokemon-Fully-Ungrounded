@@ -33,7 +33,7 @@ SINGLE_BATTLE_TEST("Laser Beam breaks Light Screen")
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_LIGHT_SCREEN, opponent);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_LASER_BEAM, player);
-        MESSAGE("The wall shattered!");
+        MESSAGE("The opposing side's Light Screen wore off!");
     }
 }
 

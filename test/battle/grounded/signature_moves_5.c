@@ -92,8 +92,8 @@ SINGLE_BATTLE_TEST("Tusk Tumble clears the user's hazards and lays one layer of 
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_STEALTH_ROCK, opponent);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TUSK_TUMBLE, player);
-        MESSAGE("Donphan blew away Stealth Rock!");
-        MESSAGE("Spikes were scattered on the ground all around the opposing team!");
+        MESSAGE("The pointed stones disappeared from your side!");
+        MESSAGE("Spikes were scattered on the ground all around the opposing side!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_TUSK_TUMBLE, player);
     } THEN {
         EXPECT(gSideTimers[B_SIDE_OPPONENT].spikesAmount == 1);

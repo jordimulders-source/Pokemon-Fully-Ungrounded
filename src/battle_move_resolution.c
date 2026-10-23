@@ -4656,7 +4656,7 @@ static enum MoveEndResult MoveEndMoveBlock(struct BattleCalcValues *cv)
              && IsBattlerTurnDamaged(battlerDef, INCLUDING_SUBSTITUTES)
              && IsBattlerAlive(cv->battlerAtk))
             {
-                if (gBattleMons[cv->battlerAtk].volatiles.rolloutTimer <= 1 // eerste klap (de teller loopt nu op van 0 naar 5)
+                if (gBattleMons[cv->battlerAtk].volatiles.rolloutTimer == 0 // eerste klap (MOVEEND_SET_VALUES telt pas vanaf de tweede klap op)
                  && !gBattleStruct->isSkyBattle)
                     BattleScriptCall(BattleScript_TuskTumbleSpikes);
                 else

@@ -5,7 +5,8 @@
 // Grass herstelt 1/16, Fire x0.5, poedermoves +20 acc, windmoves blazen het weg.
 ASSUMPTIONS
 {
-    ASSUME(GetMoveEffect(MOVE_POLLEN_HAZE) == EFFECT_POLLEN_HAZE);
+    ASSUME(GetMoveEffect(MOVE_POLLEN_HAZE) == EFFECT_WEATHER);
+    ASSUME(GetMoveWeatherType(MOVE_POLLEN_HAZE) == BATTLE_WEATHER_POLLEN_HAZE);
 }
 
 SINGLE_BATTLE_TEST("Pollen Haze heals Grass types")

@@ -354,8 +354,8 @@ SINGLE_BATTLE_TEST("Moai Watch damages a switched-in foe with the better of Rock
         TURN { SWITCH(opponent, 1); }
     } SCENE {
         MESSAGE("Stone statues now stand watch around the opposing team!");
-        MESSAGE("The stone statues turned on the opposing Wingull!");
         HP_BAR(opponent, captureDamage: &damage);
+        MESSAGE("The stone statues turned on the opposing Wingull!");
     } THEN {
         EXPECT_EQ(damage, GetMonData(&OPPONENT_PARTY[1], MON_DATA_MAX_HP) / 2);
     }
@@ -406,8 +406,8 @@ SINGLE_BATTLE_TEST("Parental Bond only hits twice above half HP")
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
         if (hp > 100)
-            MESSAGE("The Pokémon was hit 2 time(s)!");
+            MESSAGE("The Pokémon was hit 2 times!");
         else
-            NOT MESSAGE("The Pokémon was hit 2 time(s)!");
+            NOT MESSAGE("The Pokémon was hit 2 times!");
     }
 }

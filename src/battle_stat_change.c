@@ -20,6 +20,7 @@ static void TryPlayStatChangeAnimation(struct BattleCalcValues *cv, struct StatC
 // Failure handling
 static bool32 IsSubstituteBlocked(struct BattleCalcValues *cv, struct StatChange *st);
 static bool32 IsMistProtected(struct BattleCalcValues *cv, struct StatChange *st);
+static bool32 IsPrimevalWardProtected(struct BattleCalcValues *cv, struct StatChange *st);
 static bool32 IsFlowerVeilBlocked(struct BattleCalcValues *cv, struct StatChange *st);
 static bool32 IsClearAmuletBlocked(struct BattleCalcValues *cv, struct StatChange *st);
 static bool32 IsIntimidateBlocked(struct BattleCalcValues *cv, struct StatChange *st);
@@ -295,6 +296,7 @@ enum StatChangeResult TryStatChange(struct BattleCalcValues *cv, struct StatChan
 static enum StatChangeResult CanDecreaseStat(struct BattleCalcValues *cv, struct StatChange *st)
 {
     if (IsMistProtected(cv, st)
+     || IsPrimevalWardProtected(cv, st)
      || IsIntimidateBlocked(cv, st)
      || IsFlowerVeilBlocked(cv, st)
      || IsClearAmuletBlocked(cv, st)
@@ -573,6 +575,25 @@ static bool32 IsMistProtected(struct BattleCalcValues *cv, struct StatChange *st
         MarkStatsAsDone(st, NUM_BATTLE_STATS);
         gBattleScripting.battler = cv->battlerDef;
         st->script = BattleScript_MistProtected;
+    }
+
+    return TRUE;
+}
+
+// Project Grounded: Primeval Ward (Relicanth) laat geen stat verlagen door anderen
+static bool32 IsPrimevalWardProtected(struct BattleCalcValues *cv, struct StatChange *st)
+{
+    if (!gBattleMons[cv->battlerDef].volatiles.primevalWard
+     || st->certain
+     || cv->move == MOVE_CURSE
+     || cv->battlerAtk == cv->battlerDef)
+        return FALSE;
+
+    if (!st->onlyChecking)
+    {
+        MarkStatsAsDone(st, NUM_BATTLE_STATS);
+        gBattleScripting.battler = cv->battlerDef;
+        st->script = BattleScript_PrimevalWardProtected;
     }
 
     return TRUE;

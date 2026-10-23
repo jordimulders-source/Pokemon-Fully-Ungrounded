@@ -36,10 +36,8 @@
 //   have the species. These are circular sprites that flash twice. The positions of the sprites is
 //   determined by the data for the corresponding MAPSEC in gRegionMapEntries.
 
-// Only maps in the following map groups have their encounters considered for the area screen
-#define MAP_GROUP_TOWNS_AND_ROUTES MAP_GROUP(MAP_START_TOWN) // Fully Ungrounded: de skeletgroep (TestMap); was MAP_PETALBURG_CITY
-#define MAP_GROUP_DUNGEONS MAP_GROUP(MAP_METEOR_FALLS_1F_1R)
-#define MAP_GROUP_SPECIAL_AREA MAP_GROUP(MAP_SAFARI_ZONE_NORTHWEST)
+// Fully Ungrounded: vanilla koos glow of marker op kaartgroep (steden/routes, grotten, speciale gebieden). Er is nu
+// één kaartgroep, dus het kaarttype beslist: buiten (stad, route, zee) = glow, binnen/onder de grond = marker.
 
 #define AREA_SCREEN_WIDTH 32
 #define AREA_SCREEN_HEIGHT 20
@@ -149,12 +147,6 @@ static const mapsec_u16_t sMovingRegionMapSections[3] =
     MAPSEC_MARINE_CAVE,
     MAPSEC_UNDERWATER_MARINE_CAVE,
     MAPSEC_TERRA_CAVE
-};
-
-static const u16 sFeebasData[][3] =
-{
-    {SPECIES_FEEBAS, MAP_GROUP(MAP_ROUTE119), MAP_NUM(MAP_ROUTE119)},
-    {NUM_SPECIES}
 };
 
 static const mapsec_u16_t sLandmarkData[][2] =
@@ -318,39 +310,21 @@ static void FindMapsWithMon(u16 species)
             return;
     }
 
-    // Add Pokémon with special encounter circumstances (i.e. not listed
-    // in the regular wild encounter table) to the area map.
-    // This only applies to Feebas on Route 119, but it was clearly set
-    // up to allow handling others.
-    for (i = 0; sFeebasData[i][0] != NUM_SPECIES; i++)
-    {
-        if (species == sFeebasData[i][0])
-        {
-            switch (sFeebasData[i][1])
-            {
-            case MAP_GROUP_TOWNS_AND_ROUTES:
-                SetAreaHasMon(sFeebasData[i][1], sFeebasData[i][2]);
-                break;
-            case MAP_GROUP_DUNGEONS:
-            case MAP_GROUP_SPECIAL_AREA:
-                SetSpecialMapHasMon(sFeebasData[i][1], sFeebasData[i][2]);
-                break;
-            }
-        }
-    }
-
     // Add regular species to the area map
     for (i = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED); i++)
     {
         if (MapHasSpecies(&gWildMonHeaders[i].encounterTypes[gAreaTimeOfDay], species))
         {
-            switch (gWildMonHeaders[i].mapGroup)
+            switch (GetMapTypeByGroupAndId(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum))
             {
-            case MAP_GROUP_TOWNS_AND_ROUTES:
+            case MAP_TYPE_TOWN:
+            case MAP_TYPE_CITY:
+            case MAP_TYPE_ROUTE:
+            case MAP_TYPE_UNDERWATER:
+            case MAP_TYPE_OCEAN_ROUTE:
                 SetAreaHasMon(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum);
                 break;
-            case MAP_GROUP_DUNGEONS:
-            case MAP_GROUP_SPECIAL_AREA:
+            default:
                 SetSpecialMapHasMon(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum);
                 break;
             }
@@ -361,11 +335,14 @@ static void FindMapsWithMon(u16 species)
     for (i = 0; i < ROAMER_COUNT; i++)
     {
         roamer = &gSaveBlock1Ptr->roamer[i];
-        if (species == roamer->species && roamer->active)
+        if (species == roamer->species && roamer->active && sPokedexAreaScreen->numOverworldAreas < MAX_AREA_HIGHLIGHTS)
         {
             // This is a roamer's species, show where this roamer is currently
             struct OverworldArea *roamerLocation = &sPokedexAreaScreen->overworldAreasWithMons[sPokedexAreaScreen->numOverworldAreas];
             GetRoamerLocation(i, &roamerLocation->mapGroup, &roamerLocation->mapNum);
+            // Fully Ungrounded: zonder routetabel staat een roamer nergens (MAP_UNDEFINED)
+            if (roamerLocation->mapNum == MAP_NUM(MAP_UNDEFINED) || roamerLocation->mapGroup >= MAP_GROUPS_COUNT)
+                continue;
             roamerLocation->regionMapSectionId = Overworld_GetMapHeaderByGroupAndId(roamerLocation->mapGroup, roamerLocation->mapNum)->regionMapSectionId;
             sPokedexAreaScreen->numOverworldAreas++;
         }

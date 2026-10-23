@@ -118,16 +118,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Repeatedly punches the foe\n"
             "2 to 5 times."),
-<<<<<<< HEAD
-        .effect = EFFECT_MULTI_HIT,
-        .power = 25,
-||||||| abeb86837a
-        .effect = EFFECT_MULTI_HIT,
-        .power = 18,
-=======
         .effect = EFFECT_HIT,
-        .power = 18,
->>>>>>> expansion/1.17.1
+        .power = 25,
         .type = TYPE_NORMAL,
         .accuracy = 85,
         .pp = 15,
@@ -175,7 +167,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Throws coins at the foe.\n"
             "Money is recovered after."),
         .effect = EFFECT_HIT,
-        .power = 60, // Project Grounded: was 40
+        .power = 60, // Project Grounded: was 40,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
@@ -306,8 +298,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Vise Grip"),
         .description = COMPOUND_STRING(
-            "Grips the foe with pincers.\n"
-            "The foe can't escape."),
+"Grips the foe with pincers.\n"
+"The foe can't escape."),
         .effect = EFFECT_HIT,
         .power = 65,
         .type = TYPE_NORMAL,
@@ -317,15 +309,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_PREVENT_ESCAPE,
-            .chance = 100,
-        }),
         .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_VICE_GRIP,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_ViseGrip,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+.moveEffect = MOVE_EFFECT_PREVENT_ESCAPE,
+.chance = 100,
+}), // Project Grounded
     },
 
     [MOVE_GUILLOTINE] =
@@ -363,7 +355,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "high critical-hit ratio."),
         #endif
         .effect = EFFECT_TWO_TURNS_ATTACK,
-        .power = 140,
+        .power = 80,
         .type = TYPE_NORMAL,
         .accuracy = B_UPDATED_MOVE_DATA >= GEN_3 ? 100 : 75,
     #if B_UPDATED_MOVE_DATA >= GEN_4
@@ -386,6 +378,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_RazorWind,
+        .power = 140, // Project Grounded
     },
 
     [MOVE_SWORDS_DANCE] =
@@ -532,8 +525,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Fly"),
         .description = COMPOUND_STRING(
-            "Flies up, raising evasion,\n"
-            "then strikes next turn."),
+"Flies up, raising evasion,\n"
+"then strikes next turn."),
         .effect = EFFECT_SEMI_INVULNERABLE,
         .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 90 : 70,
         .type = TYPE_FLYING,
@@ -542,11 +535,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_EVS_PLUS_1,
-            .self = TRUE,
-            .onChargeTurnOnly = TRUE,
-        }),
         .makesContact = TRUE,
         .gravityBanned = TRUE,
         .sleepTalkBanned = TRUE,
@@ -559,6 +547,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_Fly,
         .validApprenticeMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+.moveEffect = MOVE_EFFECT_STAT_PLUS,
+            .evasion = 1,
+.self = TRUE,
+.onChargeTurnOnly = TRUE,
+}), // Project Grounded
     },
 
     [MOVE_BIND] =
@@ -764,9 +758,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .ignoresKingsRock = B_UPDATED_MOVE_FLAGS < GEN_3,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 50,
-        }),
+.moveEffect = MOVE_EFFECT_FLINCH,
+.chance = 50,
+}),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_BADLY_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -1361,7 +1355,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Disable"),
         .description = COMPOUND_STRING(
         #if B_DISABLE_TURNS >= GEN_5
-                "For 4 turns, prevents foe\n"
+            "For 4 turns, prevents foe\n"
         #elif B_DISABLE_TURNS == GEN_4
             "For 4-7 turns, prevents foe\n"
         #else
@@ -1397,8 +1391,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Acid"),
         .description = COMPOUND_STRING(
-            "Sprays a hide-melting acid.\n"
-            "Lowers Def. and Sp. Def."),
+"Sprays a hide-melting acid.\n"
+"Lowers Def. and Sp. Def."),
+        #else
+            "May lower Defense."),
+        #endif
         .effect = EFFECT_HIT,
         .power = 40,
         .type = TYPE_POISON,
@@ -1407,37 +1404,44 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_BOTH,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-<<<<<<< HEAD
-        // Project Grounded: verlaagt Def en Sp. Def van het doelwit.
-        // Niet MOVE_EFFECT_DEF_SPDEF_DOWN gebruiken: dat is het Close Combat-effect en verlaagt altijd de stats van de gebruiker zelf.
-        .additionalEffects = ADDITIONAL_EFFECTS(
-            {
-                .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
-                .chance = 100,
-            },
-            {
-                .moveEffect = MOVE_EFFECT_SP_DEF_MINUS_1,
-                .chance = 100,
-            }
-        ),
-||||||| abeb86837a
-            .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = B_UPDATED_MOVE_DATA >= GEN_4 ? MOVE_EFFECT_SP_DEF_MINUS_1 : MOVE_EFFECT_DEF_MINUS_1,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33,
-        }),
-=======
             .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = MOVE_EFFECT_STAT_MINUS,
             .defense = B_UPDATED_MOVE_DATA < GEN_4 ? 1 : 0,
             .spDef = B_UPDATED_MOVE_DATA >= GEN_4 ? 1 : 0,
             .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33,
         }),
->>>>>>> expansion/1.17.1
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_Acid,
+        .accuracy = 100, // Project Grounded
+        .additionalEffects = ADDITIONAL_EFFECTS(
+{
+.moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .defense = 1,
+.chance = 100,
+},
+{
+.moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .spDef = 1,
+.chance = 100,
+}
+), // Project Grounded
+        .battleAnimScript = gBattleAnimMove_Acid, // Project Grounded
+        .category = DAMAGE_CATEGORY_SPECIAL,
+// Project Grounded: verlaagt Def en Sp. Def van het doelwit.
+// Niet MOVE_EFFECT_DEF_SPDEF_DOWN gebruiken: dat is het Close Combat-effect en verlaagt altijd de stats van de gebruiker zelf., // Project Grounded
+        .contestCategory = CONTEST_CATEGORY_SMART, // Project Grounded
+        .contestComboMoves = {0}, // Project Grounded
+        .contestComboStarterId = 0, // Project Grounded
+        .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS : CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON, // Project Grounded
+        .effect = EFFECT_HIT, // Project Grounded
+        .power = 40, // Project Grounded
+        .pp = 30, // Project Grounded
+        .priority = 0, // Project Grounded
+        .target = MOVE_TARGET_BOTH, // Project Grounded
+        .type = TYPE_POISON, // Project Grounded
     },
 
     [MOVE_EMBER] =
@@ -1708,8 +1712,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Aurora Beam"),
         .description = COMPOUND_STRING(
-            "Fires a rainbow-colored\n"
-            "beam that lowers Attack."),
+"Fires a rainbow-colored\n"
+"beam that lowers Attack."),
         .effect = EFFECT_HIT,
         .power = 75,
         .type = TYPE_ICE,
@@ -1719,18 +1723,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
-<<<<<<< HEAD
-            .moveEffect = MOVE_EFFECT_ATK_MINUS_1,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 100 : 33,
-||||||| abeb86837a
-            .moveEffect = MOVE_EFFECT_ATK_MINUS_1,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33,
-=======
-            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+.moveEffect = MOVE_EFFECT_STAT_MINUS,
             .attack = 1,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33,
->>>>>>> expansion/1.17.1
-        }),
+.chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 100 : 33,
+}),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_PREV_MON : CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -1802,7 +1798,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .power = 80,
         .type = TYPE_FLYING,
         .accuracy = 100,
-        .criticalHitStage = 1,
         .pp = 20,
         .target = TARGET_SELECTED,
         .priority = 0,
@@ -1814,6 +1809,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_PECK},
         .battleAnimScript = gBattleAnimMove_DrillPeck,
         .validApprenticeMove = TRUE,
+        .criticalHitStage = 1, // Project Grounded
     },
 
     [MOVE_SUBMISSION] =
@@ -1934,8 +1930,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Strength"),
         .description = COMPOUND_STRING(
-            "Slams the foe with great\n"
-            "power. Lowers Defense."),
+"Slams the foe with great\n"
+"power. Lowers Defense."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_NORMAL,
@@ -1945,16 +1941,17 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
-            .chance = 100,
-        }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_Strength,
         .validApprenticeMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+.moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .defense = 1,
+.chance = 100,
+}), // Project Grounded
     },
 
     [MOVE_ABSORB] =
@@ -2205,23 +2202,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "A rampage of 2 to 3 turns\n"
             "that confuses the user."),
-<<<<<<< HEAD
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 150,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .power = 90,
-        #else
-            .power = 70,
-        #endif
-||||||| abeb86837a
-        #if B_UPDATED_MOVE_DATA >= GEN_5
-            .power = 120,
-        #elif B_UPDATED_MOVE_DATA == GEN_4
-            .power = 90,
-        #else
-            .power = 70,
-        #endif
-=======
     #if B_UPDATED_MOVE_DATA >= GEN_5
         .power = 120,
     #elif B_UPDATED_MOVE_DATA == GEN_4
@@ -2229,7 +2209,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     #else
         .power = 70,
     #endif
->>>>>>> expansion/1.17.1
         .effect = EFFECT_HIT,
         .type = TYPE_GRASS,
         .accuracy = 100,
@@ -2443,8 +2422,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Rock Throw"),
         .description = COMPOUND_STRING(
-            "Throws small rocks at the\n"
-            "foe. May cause flinching."),
+"Throws small rocks at the\n"
+"foe. May cause flinching."),
         .effect = EFFECT_HIT,
         .power = 50,
         .type = TYPE_ROCK,
@@ -2453,15 +2432,15 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 20,
-        }),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_ROCK_THROW,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_RockThrow,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+.moveEffect = MOVE_EFFECT_FLINCH,
+.chance = 20,
+}), // Project Grounded
     },
 
     [MOVE_EARTHQUAKE] =
@@ -2517,8 +2496,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Dig"),
         .description = COMPOUND_STRING(
-            "Digs in, raising Defense,\n"
-            "then strikes next turn."),
+"Digs in, raising Defense,\n"
+"then strikes next turn."),
         .effect = EFFECT_SEMI_INVULNERABLE,
     #if B_UPDATED_MOVE_DATA >= GEN_4
         .power = 80,
@@ -2533,11 +2512,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_DEF_PLUS_1,
-            .self = TRUE,
-            .onChargeTurnOnly = TRUE,
-        }),
         .makesContact = TRUE,
         .sleepTalkBanned = TRUE,
         .instructBanned = TRUE,
@@ -2550,6 +2524,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_Dig,
         .validApprenticeMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+.moveEffect = MOVE_EFFECT_STAT_PLUS,
+            .defense = 1,
+.self = TRUE,
+.onChargeTurnOnly = TRUE,
+}), // Project Grounded
     },
 
     [MOVE_TOXIC] =
@@ -2744,16 +2724,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Raises the user's Attack\n"
             "every time it is hit."),
-<<<<<<< HEAD
-        .effect = EFFECT_RAGE,
-        .power = 60,
-||||||| abeb86837a
-        .effect = EFFECT_RAGE,
-        .power = 20,
-=======
         .effect = EFFECT_HIT,
-        .power = 20,
->>>>>>> expansion/1.17.1
+        .power = 60,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
@@ -3478,17 +3450,17 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Clubs the foe with a bone.\n"
             "May cause flinching."),
         .effect = EFFECT_HIT,
-        .power = 85, // Project Grounded: was 65
+        .power = 85, // Project Grounded: was 65,
         .type = TYPE_GROUND,
-        .accuracy = 100, // Project Grounded: was 95
+        .accuracy = 100, // Project Grounded: was 95,
         .pp = 20,
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 20, // Project Grounded: was 10
-        }),
+.moveEffect = MOVE_EFFECT_FLINCH,
+.chance = 20, // Project Grounded: was 10
+}),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_REPETITION_NOT_BORING : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_BONE_CLUB,
@@ -3649,16 +3621,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Launches sharp spikes that\n"
             "strike 2 to 5 times."),
-<<<<<<< HEAD
-        .effect = EFFECT_MULTI_HIT,
-        .power = 40,
-||||||| abeb86837a
-        .effect = EFFECT_MULTI_HIT,
-        .power = 20,
-=======
         .effect = EFFECT_HIT,
-        .power = 20,
->>>>>>> expansion/1.17.1
+        .power = 40,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 15,
@@ -3677,8 +3641,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Constrict"),
         .description = COMPOUND_STRING(
-            "Constricts to inflict pain.\n"
-            "Sharply lowers Speed."),
+"Constricts to inflict pain.\n"
+"Sharply lowers Speed."),
         .effect = EFFECT_HIT,
         .power = 10,
         .type = TYPE_NORMAL,
@@ -3689,18 +3653,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-<<<<<<< HEAD
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_2,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 100 : 33,
-||||||| abeb86837a
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33,
-=======
-            .moveEffect = MOVE_EFFECT_STAT_MINUS,
-            .speed = 1,
-            .chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 10 : 33,
->>>>>>> expansion/1.17.1
-        }),
+.moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .speed = 2,
+.chance = B_UPDATED_MOVE_DATA >= GEN_2 ? 100 : 33,
+}),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS : CONTEST_EFFECT_STARTLE_PREV_MON,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -3742,17 +3698,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Kinesis"),
         .description = COMPOUND_STRING(
-            "Distracts the foe.\n"
-<<<<<<< HEAD
-            "Sharply lowers accuracy."),
-        .effect = EFFECT_ACCURACY_DOWN_2,
-||||||| abeb86837a
-            "May lower accuracy."),
-        .effect = EFFECT_ACCURACY_DOWN,
-=======
-            "Lowers accuracy."),
+"Distracts the foe.\n"
+"Sharply lowers accuracy."),
         .effect = EFFECT_STAT_CHANGE,
->>>>>>> expansion/1.17.1
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 65,
@@ -3768,7 +3716,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_CONFUSION, COMBO_STARTER_PSYCHIC},
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = STAT_CHANGE_EFFECT_MINUS,
-            .accuracy = 1,
+            .accuracy = 2, // Project Grounded: Kinesis -2
         }),
         .battleAnimScript = gBattleAnimMove_Kinesis,
         .validApprenticeMove = TRUE,
@@ -3866,14 +3814,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Dream Eater"),
         .description = COMPOUND_STRING(
-<<<<<<< HEAD
-            "Takes half the damage\n"
-||||||| abeb86837a
-            "Takes one half the damage\n"
-=======
-            "Absorbs one half the damage\n"
->>>>>>> expansion/1.17.1
-            "inflicted on a sleeping foe."),
+"Takes half the damage\n"
+"inflicted on a sleeping foe."),
         .effect = EFFECT_DREAM_EATER,
         .power = 160,
         .type = TYPE_PSYCHIC,
@@ -3935,16 +3877,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Hurls round objects at the\n"
             "foe 2 to 5 times."),
-<<<<<<< HEAD
-        .effect = EFFECT_MULTI_HIT,
-        .power = 35,
-||||||| abeb86837a
-        .effect = EFFECT_MULTI_HIT,
-        .power = 15,
-=======
         .effect = EFFECT_HIT,
-        .power = 15,
->>>>>>> expansion/1.17.1
+        .power = 35,
         .type = TYPE_NORMAL,
         .accuracy = 100,
         .pp = 20,
@@ -4171,19 +4105,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Flash"),
         .description = COMPOUND_STRING(
-<<<<<<< HEAD
-            "Blinds the foe to cut\n"
-            "Acc, Atk, and Sp. Atk."),
-        .effect = EFFECT_FLASH, // Project Grounded: verlaagt Accuracy, Attack en Sp. Atk
-||||||| abeb86837a
-            "Looses a powerful blast of\n"
-            "light that cuts accuracy."),
-        .effect = EFFECT_ACCURACY_DOWN,
-=======
-            "Looses a powerful blast of\n"
-            "light that lowers accuracy."),
+"Blinds the foe to cut\n"
+"Acc, Atk, and Sp. Atk."),
         .effect = EFFECT_STAT_CHANGE,
->>>>>>> expansion/1.17.1
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -4200,6 +4124,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .additionalEffects = ADDITIONAL_EFFECTS({
             .moveEffect = STAT_CHANGE_EFFECT_MINUS,
             .accuracy = 1,
+            .attack = 1, // Project Grounded: Flash verlaagt ook Attack en Sp. Atk
+            .spAtk = 1,
         }),
         .battleAnimScript = gBattleAnimMove_Flash,
         .validApprenticeMove = TRUE,
@@ -4367,21 +4293,21 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Throws a bone boomerang\n"
             "that strikes twice."),
         .effect = EFFECT_HIT,
-        .power = 60, // Project Grounded: was 50
+        .power = 60, // Project Grounded: was 50,
         .type = TYPE_GROUND,
-        .accuracy = 95, // Project Grounded: was 90
+        .accuracy = 95, // Project Grounded: was 90,
         .pp = 10,
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .strikeCount = 2,
-        .ignoreTypeIfFlyingAndUngrounded = TRUE, // Project Grounded: raakt ook Flying/Levitate (zonder te grounden)
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL : CONTEST_EFFECT_HIGHLY_APPEALING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = COMBO_STARTER_BONEMERANG,
         .contestComboMoves = {COMBO_STARTER_BONE_CLUB, COMBO_STARTER_BONE_RUSH, COMBO_STARTER_SHADOW_BONE},
         .battleAnimScript = gBattleAnimMove_Bonemerang,
         .validApprenticeMove = TRUE,
+        .ignoreTypeIfFlyingAndUngrounded = TRUE, // Project Grounded: raakt ook Flying/Levitate (zonder te grounden), // Project Grounded
     },
 
     [MOVE_REST] =
@@ -4537,8 +4463,37 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     #if B_UPDATED_MOVE_DATA >= GEN_2
         #if B_USE_FROSTBITE
         .description = COMPOUND_STRING(
-            "Fires three types of beams.\n"
-            "May burn/parlyz/frostbite."),
+"Fires three types of beams.\n"
+#if B_USE_FROSTBITE == TRUE
+"May burn/para/frostbite."),
+#else
+"May burn/paralyze/freeze."),
+#endif
+#else
+.description = COMPOUND_STRING(
+"A triangular field of energy\n"
+"is created and launched."),
+#endif
+.effect = EFFECT_HIT,
+.power = 80,
+.type = TYPE_NORMAL,
+.accuracy = 100,
+.pp = 10,
+.target = MOVE_TARGET_SELECTED,
+.priority = 0,
+.category = DAMAGE_CATEGORY_SPECIAL,
+#if B_UPDATED_MOVE_DATA >= GEN_2
+.additionalEffects = ADDITIONAL_EFFECTS({
+.moveEffect = MOVE_EFFECT_TRI_ATTACK,
+.chance = 50,
+}),
+#endif
+.contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_QUALITY_DEPENDS_ON_TIMING : CONTEST_EFFECT_STARTLE_PREV_MONS,
+.contestCategory = CONTEST_CATEGORY_BEAUTY,
+.contestComboStarterId = 0,
+.contestComboMoves = {COMBO_STARTER_LOCK_ON},
+.battleAnimScript = gBattleAnimMove_TriAttack,
+.validApprenticeMove = TRUE,
         #else
         .description = COMPOUND_STRING(
             "Fires three types of beams.\n"
@@ -4562,22 +4517,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
-<<<<<<< HEAD
-        #if B_UPDATED_MOVE_DATA >= GEN_2
-            .additionalEffects = ADDITIONAL_EFFECTS({
-                .moveEffect = MOVE_EFFECT_TRI_ATTACK,
-                .chance = 50,
-            }),
-        #endif
-||||||| abeb86837a
-        #if B_UPDATED_MOVE_DATA >= GEN_2
-            .additionalEffects = ADDITIONAL_EFFECTS({
-                .moveEffect = MOVE_EFFECT_TRI_ATTACK,
-                .chance = 20,
-            }),
-        #endif
-=======
->>>>>>> expansion/1.17.1
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_QUALITY_DEPENDS_ON_TIMING : CONTEST_EFFECT_STARTLE_PREV_MONS,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -5374,18 +5313,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_SPECIAL,
         .ballisticMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-<<<<<<< HEAD
-            .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
-            .chance = 30,
-||||||| abeb86837a
-            .moveEffect = MOVE_EFFECT_ACC_MINUS_1,
-            .chance = 50,
-=======
-            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+.moveEffect = MOVE_EFFECT_STAT_MINUS,
             .accuracy = 1,
-            .chance = 50,
->>>>>>> expansion/1.17.1
-        }),
+.chance = 30,
+}),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_REPETITION_NOT_BORING : CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -6647,23 +6578,28 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Hidden Power"),
         .description = COMPOUND_STRING(
-            "The effectiveness varies\n"
-            "with the user."),
-<<<<<<< HEAD
-        #else
-            "The type and effectiveness\n"
-            "vary with the user."),
-        #endif
-        .power = B_HIDDEN_POWER_DMG >= GEN_6 ? 80 : 1,
-||||||| abeb86837a
-        #else
-            "The type and effectiveness\n"
-            "vary with the user."),
-        #endif
+#if B_HIDDEN_POWER_DMG >= GEN_6
+"The type varies\n"
+"with the user."),
+#else
+"The type and effectiveness\n"
+"vary with the user."),
+#endif
+.power = B_HIDDEN_POWER_DMG >= GEN_6 ? 80 : 1,
+.effect = EFFECT_HIDDEN_POWER,
+.type = TYPE_NORMAL,
+.accuracy = 100,
+.pp = 15,
+.target = MOVE_TARGET_SELECTED,
+.priority = 0,
+.category = DAMAGE_CATEGORY_SPECIAL,
+.contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+.contestCategory = CONTEST_CATEGORY_SMART,
+.contestComboStarterId = 0,
+.contestComboMoves = {0},
+.battleAnimScript = gBattleAnimMove_HiddenPower,
+.validApprenticeMove = TRUE,
         .power = B_HIDDEN_POWER_DMG >= GEN_6 ? 60 : 1,
-=======
-        .power = B_HIDDEN_POWER_DMG >= GEN_6 ? 60 : 1,
->>>>>>> expansion/1.17.1
         .effect = EFFECT_HIDDEN_POWER,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -6721,9 +6657,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .damagesAirborneDoubleDamage = TRUE,
         .windMove = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 40,
-        }),
+.moveEffect = MOVE_EFFECT_FLINCH,
+.chance = 40,
+}),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -6994,8 +6930,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Rock Smash"),
         .description = COMPOUND_STRING(
-            "A rock-crushing attack\n"
-            "that lowers Defense."),
+"A rock-crushing attack\n"
+"that lowers Defense."),
         .effect = EFFECT_HIT,
         .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 40 : 20,
         .type = TYPE_FIGHTING,
@@ -7006,18 +6942,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-<<<<<<< HEAD
-            .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
-            .chance = 100,
-||||||| abeb86837a
-            .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
-            .chance = 50,
-=======
-            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+.moveEffect = MOVE_EFFECT_STAT_MINUS,
             .defense = 1,
-            .chance = 50,
->>>>>>> expansion/1.17.1
-        }),
+.chance = 100,
+}),
         .contestEffect = C_UPDATED_MOVE_EFFECTS >= GEN_6 ? CONTEST_EFFECT_HIGHLY_APPEALING : CONTEST_EFFECT_BETTER_WITH_GOOD_CONDITION,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -7256,35 +7184,16 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .validApprenticeMove = TRUE,
     },
 
-    // Project Grounded: Hail heet Snow Storm: schade per beurt én Ice-types +50% Def (zoals Snowscape)
     [MOVE_HAIL] =
     {
-<<<<<<< HEAD
         .name = COMPOUND_STRING("Snow Storm"),
-||||||| abeb86837a
-        .name = COMPOUND_STRING("Hail"),
-=======
-        .name = COMPOUND_STRING("Hail"),
+#if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_SNOW,
         .description = COMPOUND_STRING(
->>>>>>> expansion/1.17.1
-        #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_SNOW
-            "Boosts the Defense of Ice-\n"
-            "type Pokémon for 5 turns."),
+"A biting snow storm that\n"
+"strikes every turn."),
         #else
-<<<<<<< HEAD
-            .description = COMPOUND_STRING(
-                "A biting snow storm that\n"
-                "strikes every turn."),
-            .effect = EFFECT_HAIL,
-||||||| abeb86837a
-            .description = COMPOUND_STRING(
-                "Summons a hailstorm that\n"
-                "strikes every turn."),
-            .effect = EFFECT_HAIL,
-=======
             "Summons a hailstorm that\n"
             "strikes every turn."),
->>>>>>> expansion/1.17.1
         #endif
         .effect = EFFECT_WEATHER,
         .power = 0,
@@ -8192,8 +8101,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Dive"),
         .description = COMPOUND_STRING(
-            "Dives in, raising Sp. Def,\n"
-            "then strikes next turn."),
+"Dives in, raising Sp. Def,\n"
+"then strikes next turn."),
         .effect = EFFECT_SEMI_INVULNERABLE,
         .power = B_UPDATED_MOVE_DATA >= GEN_4 ? 80 : 60,
         .type = TYPE_WATER,
@@ -8202,11 +8111,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .target = TARGET_SELECTED,
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SP_DEF_PLUS_1,
-            .self = TRUE,
-            .onChargeTurnOnly = TRUE,
-        }),
         .makesContact = TRUE,
         .sleepTalkBanned = TRUE,
         .instructBanned = TRUE,
@@ -8219,6 +8123,12 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_RAIN_DANCE, COMBO_STARTER_SURF},
         .battleAnimScript = gBattleAnimMove_Dive,
         .validApprenticeMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+.moveEffect = MOVE_EFFECT_STAT_PLUS,
+            .spDef = 1,
+.self = TRUE,
+.onChargeTurnOnly = TRUE,
+}), // Project Grounded
     },
 
     [MOVE_ARM_THRUST] =
@@ -8607,41 +8517,23 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Crush Claw"),
         .description = COMPOUND_STRING(
-            "Tears at the foe with sharp\n"
-            "claws. Lowers Defense on hit."),
+"Tears at the foe with sharp\n"
+"claws. Lowers Defense on hit."),
         .effect = EFFECT_HIT,
         .power = 80,
         .type = TYPE_NORMAL,
-<<<<<<< HEAD
         .accuracy = 100,
         .pp = 15,
-        .target = MOVE_TARGET_SELECTED,
-||||||| abeb86837a
-        .accuracy = 95,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-=======
-        .accuracy = 95,
-        .pp = 10,
         .target = TARGET_SELECTED,
->>>>>>> expansion/1.17.1
         .priority = 0,
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .slicingMove = B_UPDATED_MOVE_FLAGS >= GEN_CHAMPIONS,
         .additionalEffects = ADDITIONAL_EFFECTS({
-<<<<<<< HEAD
-            .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
-            .chance = 100,
-||||||| abeb86837a
-            .moveEffect = MOVE_EFFECT_DEF_MINUS_1,
-            .chance = 50,
-=======
-            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+.moveEffect = MOVE_EFFECT_STAT_MINUS,
             .defense = 1,
-            .chance = 50,
->>>>>>> expansion/1.17.1
-        }),
+.chance = 100,
+}),
         .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
         .contestCategory = CONTEST_CATEGORY_COOL,
         .contestComboStarterId = 0,
@@ -8759,9 +8651,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .minimizeDoubleDamage = B_UPDATED_MOVE_FLAGS < GEN_4,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 50,
-        }),
+.moveEffect = MOVE_EFFECT_FLINCH,
+.chance = 50,
+}),
         .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
         .contestCategory = C_UPDATED_MOVE_CATEGORIES >= GEN_6 ? CONTEST_CATEGORY_CUTE : CONTEST_CATEGORY_SMART,
         .contestComboStarterId = 0,
@@ -9318,16 +9210,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Shoots 2 to 5 seeds in a row\n"
             "to strike the foe."),
-<<<<<<< HEAD
-        .effect = EFFECT_MULTI_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 30 : 10,
-||||||| abeb86837a
-        .effect = EFFECT_MULTI_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 25 : 10,
-=======
         .effect = EFFECT_HIT,
-        .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 25 : 10,
->>>>>>> expansion/1.17.1
+        .power = B_UPDATED_MOVE_DATA >= GEN_5 ? 30 : 10,
         .type = TYPE_GRASS,
         .accuracy = 100,
         .pp = 30,
@@ -14357,16 +14241,10 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_SPECIAL,
         .additionalEffects = ADDITIONAL_EFFECTS({
-<<<<<<< HEAD
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_2,
-||||||| abeb86837a
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
-=======
-            .moveEffect = MOVE_EFFECT_STAT_MINUS,
-            .speed = 1,
->>>>>>> expansion/1.17.1
-            .chance = 100,
-        }),
+.moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .speed = 2,
+.chance = 100,
+}),
         .contestEffect = CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
         .contestCategory = CONTEST_CATEGORY_BEAUTY,
         .contestComboStarterId = 0,
@@ -14459,9 +14337,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .makesContact = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 50,
-        }),
+.moveEffect = MOVE_EFFECT_FLINCH,
+.chance = 50,
+}),
         .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
         .contestCategory = CONTEST_CATEGORY_CUTE,
         .contestComboStarterId = 0,
@@ -14614,9 +14492,9 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .makesContact = TRUE,
         .minimizeDoubleDamage = TRUE,
         .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 50,
-        }),
+.moveEffect = MOVE_EFFECT_FLINCH,
+.chance = 50,
+}),
         .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
         .contestCategory = CONTEST_CATEGORY_TOUGH,
         .contestComboStarterId = 0,
@@ -14782,13 +14660,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Throws two steel gears\n"
             "that strike twice."),
         .effect = EFFECT_HIT,
-<<<<<<< HEAD
         .power = 70,
-||||||| abeb86837a
-        .power = 50,
-=======
-        .power = B_UPDATED_MOVE_DATA >= GEN_CHAMPIONS ? 60 : 50,
->>>>>>> expansion/1.17.1
         .type = TYPE_STEEL,
         .accuracy = B_UPDATED_MOVE_DATA >= GEN_CHAMPIONS ? 90 : 85,
         .pp = 15,
@@ -15351,7 +15223,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "is sharply raised."),
         #endif
         .effect = EFFECT_FELL_STINGER,
-        .power = B_UPDATED_MOVE_DATA >= GEN_7 ? 80 : 30,
+        .power = B_UPDATED_MOVE_DATA >= GEN_7 ? 50 : 30,
         .type = TYPE_BUG,
         .accuracy = 100,
         .pp = 25,
@@ -15364,6 +15236,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboStarterId = 0,
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_FellStinger,
+        .power = B_UPDATED_MOVE_DATA >= GEN_7 ? 80 : 30, // Project Grounded
     },
 
     [MOVE_PHANTOM_FORCE] =
@@ -17330,13 +17203,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "Strangles the foe with a\n"
             "chain. The foe can't escape."),
         .effect = EFFECT_HIT,
-<<<<<<< HEAD
-        .power = 90, // Project Grounded: was 80
-||||||| abeb86837a
-        .power = 80,
-=======
-        .power = B_UPDATED_MOVE_DATA >= GEN_CHAMPIONS ? 90 : 80,
->>>>>>> expansion/1.17.1
+        .power = 90, // Project Grounded: was 80,
         .type = TYPE_STEEL,
         .accuracy = 100,
         .pp = 20,
@@ -17764,7 +17631,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
             "only usable with snow."),
         #elif B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_BOTH
             "Weakens all attacks if\n"
-            "used in snowy weather."),
+            "used in hail or snow."),
         #else
             "Weakens all attacks, but\n"
             "only usable with hail."),
@@ -20826,8 +20693,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Silk Trap"),
         .description = COMPOUND_STRING(
-            "Protects. Contact harshly\n"
-            "slows and traps the foe."), // Project Grounded: -2 Speed en vast
+"Protects. Contact harshly\n"
+"slows and traps the foe."), // Project Grounded: -2 Speed en vast,
         .effect = EFFECT_PROTECT,
         .power = 0,
         .type = TYPE_BUG,
@@ -21471,20 +21338,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .name = COMPOUND_STRING("Snowscape"),
             .description = COMPOUND_STRING(
         #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_HAIL
-<<<<<<< HEAD
-            .description = COMPOUND_STRING(
-                "A biting snow storm that\n"
-                "strikes every turn."),
-            .effect = EFFECT_HAIL,
-||||||| abeb86837a
-            .description = COMPOUND_STRING(
-                "Summons a hailstorm that\n"
-                "strikes every turn."),
-            .effect = EFFECT_HAIL,
-=======
             "Summons a hailstorm that\n"
             "strikes every turn."),
->>>>>>> expansion/1.17.1
         #else
             "Boosts the Defense of Ice-\n"
             "type Pokémon for 5 turns."),
@@ -22372,2073 +22227,6 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_MalignantChain,
     },
 
-    // Project Grounded: Team Aqua's bruiswater-golf (Surf met bubbels): 80 power, 20% Speed -1, 10% confusion, alleen beide tegenstanders.
-    [MOVE_SELTZER_SURGE] =
-    {
-        .name = COMPOUND_STRING("Seltzer Surge"),
-        .description = COMPOUND_STRING(
-            "A fizzing wave that may\n"
-            "lower Speed or confuse."),
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
-            .chance = 20,
-        },
-        {
-            .moveEffect = MOVE_EFFECT_CONFUSION,
-            .chance = 10,
-        }),
-        .damagesUnderwater = TRUE,
-        .skyBattleBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_DIVE, COMBO_STARTER_RAIN_DANCE},
-        .battleAnimScript = gBattleAnimMove_SeltzerSurge,
-    },
-
-    // Project Grounded: bier-Surf met gele golven en schuim: 65 power, 50% confusion, raakt ook de partner.
-    [MOVE_LAGER_LAGOON] =
-    {
-        .name = COMPOUND_STRING("Lager Lagoon"),
-        .description = COMPOUND_STRING(
-            "A foaming wave of beer.\n"
-            "Often confuses everyone."),
-        .effect = EFFECT_HIT,
-        .power = 65,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_CONFUSION,
-            .chance = 50,
-        }),
-        .damagesUnderwater = TRUE,
-        .skyBattleBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_DIVE, COMBO_STARTER_RAIN_DANCE},
-        .battleAnimScript = gBattleAnimMove_LagerLagoon,
-    },
-
-    // Project Grounded: wijn morsen (Water Sport in bordeaux): 60 power; confusion 50 -> 100% per treffer
-    // op hetzelfde doelwit (teller in gDisableStructs, verdwijnt bij wisselen). Zie Cmd_setadditionaleffects.
-    [MOVE_VINTAGE_SPILL] =
-    {
-        .name = COMPOUND_STRING("Vintage Spill"),
-        .description = COMPOUND_STRING(
-            "Splashes fine wine. Each\n"
-            "hit is likelier to confuse."),
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_CONFUSION,
-            .chance = 50,
-        }),
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_VintageSpill,
-    },
-
-    // Project Grounded: Falinks-signature, Grieks voor "duwen" in een hoplieten-falanx.
-    // 20 power per treffer; 5 treffers bij volle HP, minder naarmate de HP daalt (zie CancelerMultihitMoves).
-    [MOVE_OTHISMOS] =
-    {
-        .name = COMPOUND_STRING("Othismos"),
-        .description = COMPOUND_STRING(
-            "A hoplite shoving push.\n"
-            "Hits more at higher HP."),
-        .effect = EFFECT_MULTI_HIT,
-        .power = 20,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY},
-        .battleAnimScript = gBattleAnimMove_ArmThrust,
-    },
-
-    [MOVE_FUNGAL_CONTROL] =
-    {
-        .name = COMPOUND_STRING("Fungal Control"),
-        .description = COMPOUND_STRING(
-            "Spores hijack the foe. You\n"
-            "pick its move for 3 turns."),
-        .effect = EFFECT_FUNGAL_CONTROL,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 60,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .powderMove = FALSE, // Project Grounded (Jordi): schimmels groeien juist op planten; Overcoat/Safety Goggles blokkeren via het script
-        .makesContact = TRUE,
-        .magicCoatAffected = TRUE,
-        .encoreBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_FungalControl,
-    },
-
-    [MOVE_TRANSMUTATION] =
-    {
-        .name = COMPOUND_STRING("Transmutation"),
-        .description = COMPOUND_STRING(
-            "Turns the foe into a copy\n"
-            "of the user. 5 PP per move."),
-        .effect = EFFECT_TRANSMUTATION,
-        .power = 0,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .magicCoatAffected = TRUE,
-        .mimicBanned = TRUE,
-        .metronomeBanned = TRUE,
-        .copycatBanned = TRUE,
-        .instructBanned = TRUE,
-        .encoreBanned = TRUE,
-        .assistBanned = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONES,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Transform,
-    },
-
-    [MOVE_IMPLOSION] =
-    {
-        .name = COMPOUND_STRING("Implosion"),
-        .description = COMPOUND_STRING(
-            "The user collapses into a\n"
-            "black hole. User faints."),
-        .effect = EFFECT_EXPLOSION,
-        .power = 200,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 5,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .parentalBondBanned = TRUE,
-        .dampBanned = TRUE,
-        .metronomeBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_GREAT_APPEAL_BUT_NO_MORE_MOVES,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Implosion,
-    },
-
-    [MOVE_LASER_BEAM] =
-    {
-        .name = COMPOUND_STRING("Laser Beam"),
-        .description = COMPOUND_STRING(
-            "A laser that burns through\n"
-            "Protect, screens and boosts."),
-        .effect = EFFECT_BRICK_BREAK,
-        .power = 75,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .ignoresProtect = TRUE,
-        .ignoresTargetDefenseEvasionStages = TRUE,
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_LaserBeam,
-    },
-
-    [MOVE_MACHINE_LEARNING] =
-    {
-        .name = COMPOUND_STRING("Machine Learning"),
-        .description = COMPOUND_STRING(
-            "Trains each turn: more stats\n"
-            "rise. May hallucinate."),
-        .effect = EFFECT_MACHINE_LEARNING,
-        .power = 0,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .snatchAffected = FALSE,
-        .ignoresProtect = TRUE,
-        .mimicBanned = TRUE,
-        .metronomeBanned = TRUE,
-        .copycatBanned = TRUE,
-        .assistBanned = TRUE,
-        .sleepTalkBanned = TRUE,
-        .instructBanned = TRUE,
-        .encoreBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Charge,
-    },
-
-    [MOVE_SHADOW_SIPHON] =
-    {
-        .name = COMPOUND_STRING("Shadow Siphon"),
-        .description = COMPOUND_STRING(
-            "Siphons the foe's life away.\n"
-            "Restores a lot of HP."),
-        .effect = EFFECT_ABSORB,
-        .power = 50,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .argument = { .absorbPercentage = 75 },
-        .makesContact = TRUE,
-        .healingMove = B_HEAL_BLOCKING >= GEN_6,
-        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONES,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_ShadowSiphon,
-    },
-
-    [MOVE_ACID_RAIN] =
-    {
-        .name = COMPOUND_STRING("Acid Rain"),
-        .description = COMPOUND_STRING(
-            "Summons acid rain for 5\n"
-            "turns. Poison thrives."),
-        .effect = EFFECT_ACID_RAIN,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 0,
-        .pp = 5,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_AcidRain,
-    },
-
-    [MOVE_POLLEN_HAZE] =
-    {
-        .name = COMPOUND_STRING("Pollen Haze"),
-        .description = COMPOUND_STRING(
-            "Fills the air with pollen for\n"
-            "5 turns. Bug and Grass thrive."),
-        .effect = EFFECT_POLLEN_HAZE,
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 0,
-        .pp = 5,
-        .target = MOVE_TARGET_ALL_BATTLERS,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_PollenHaze,
-    },
-
-    [MOVE_MUMMYS_CURSE] =
-    {
-        .name = COMPOUND_STRING("Mummy's Curse"),
-        .description = COMPOUND_STRING(
-            "Binds the foe in cursed wraps.\n"
-            "Its ability becomes Mummy."),
-        .effect = EFFECT_HIT,
-        .power = 60,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_WRAP,
-            .multistring.wrapped = B_MSG_WRAPPED_MUMMY,
-        },
-        {
-            .moveEffect = MOVE_EFFECT_MUMMIFY,
-        }),
-        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_MummysCurse,
-    },
-
-    [MOVE_ZAP_TRAP] =
-    {
-        .name = COMPOUND_STRING("Zap Trap"),
-        .description = COMPOUND_STRING(
-            "Snaps shut on the foe like a\n"
-            "trap. No escape. May paralyze."),
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_ELECTRIC,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .bitingMove = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_PREVENT_ESCAPE,
-        },
-        {
-            .moveEffect = MOVE_EFFECT_PARALYSIS,
-            .chance = 30,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_ZapTrap,
-    },
-
-    [MOVE_STEEL_TRAP] =
-    {
-        .name = COMPOUND_STRING("Steel Trap"),
-        .description = COMPOUND_STRING(
-            "Clamps the foe in a bear trap\n"
-            "for 4-5 turns. Lowers Speed."),
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .bitingMove = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_WRAP,
-            .multistring.wrapped = B_MSG_WRAPPED_STEEL_TRAP,
-        },
-        {
-            .moveEffect = MOVE_EFFECT_SPD_MINUS_1,
-            .chance = 100,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_SteelTrap,
-    },
-
-    [MOVE_PACK_HOWL] =
-    {
-        .name = COMPOUND_STRING("Pack Howl"),
-        .description = COMPOUND_STRING(
-            "Calls the pack. Raises Attack\n"
-            "of allies, or Atk/Spd if alone."),
-        .effect = EFFECT_PACK_HOWL,
-        .power = 0,
-        .type = TYPE_DARK,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER, // Targeting is handled through the script
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_ATK_UP_1 },
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .soundMove = TRUE,
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_PackHowl,
-    },
-
-    [MOVE_WHALE_SONG] =
-    {
-        .name = COMPOUND_STRING("Whale Song"),
-        .description = COMPOUND_STRING(
-            "A deep song that hits all\n"
-            "others. May cause sleep."),
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_FOES_AND_ALLY,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .soundMove = TRUE,
-        .ignoresSubstitute = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SLEEP,
-            .chance = 30,
-        }),
-        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_WhaleSong,
-    },
-
-    [MOVE_HEARTBREAK] =
-    {
-        .name = COMPOUND_STRING("Heartbreak"),
-        .description = COMPOUND_STRING(
-            "It's over. Double power vs.\n"
-            "the other gender. Cuts Sp.Atk."),
-        .effect = EFFECT_HEARTBREAK,
-        .power = 60,
-        .type = TYPE_FAIRY,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SP_ATK_MINUS_1,
-            .chance = 100,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Heartbreak,
-    },
-
-    [MOVE_ECLIPSE] =
-    {
-        .name = COMPOUND_STRING("Eclipse"),
-        .description = COMPOUND_STRING(
-            "Rock if Atk is higher, else\n"
-            "Psychic. Sun/moon time: x1.5."),
-        .effect = EFFECT_ECLIPSE,
-        .power = 80,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Eclipse,
-    },
-
-    [MOVE_TIPSY_WALTZ] =
-    {
-        .name = COMPOUND_STRING("Tipsy Waltz"),
-        .description = COMPOUND_STRING(
-            "A wobbly dance. May confuse.\n"
-            "Stronger if the user is dizzy."),
-        .effect = EFFECT_TIPSY_WALTZ,
-        .power = 80,
-        .type = TYPE_NORMAL,
-        .accuracy = 90,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .danceMove = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_CONFUSION,
-            .chance = 50,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_TipsyWaltz,
-    },
-
-    [MOVE_WEATHER_REPORT] =
-    {
-        .name = COMPOUND_STRING("Weather Report"),
-        .description = COMPOUND_STRING(
-            "Sets the weather the foe is\n"
-            "weakest to, then strikes."),
-        .effect = EFFECT_WEATHER_REPORT,
-        .power = 50,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .ballisticMove = TRUE,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_WeatherReport,
-    },
-
-    [MOVE_VENOM_DUST] =
-    {
-        .name = COMPOUND_STRING("Venom Dust"),
-        .description = COMPOUND_STRING(
-            "Scatters toxic scales. Poisons\n"
-            "both foes and lowers Speed."),
-        .effect = EFFECT_TOXIC_THREAD,
-        .power = 0,
-        .type = TYPE_POISON,
-        .accuracy = 90,
-        .pp = 15,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
-        .powderMove = TRUE,
-        .magicCoatAffected = TRUE,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_VenomDust,
-    },
-
-    [MOVE_STRAIGHT_LINE] =
-    {
-        .name = COMPOUND_STRING("Straight Line"),
-        .description = COMPOUND_STRING(
-            "Dashes first. Again in a row:\n"
-            "100 power, but no priority."),
-        .effect = EFFECT_STRAIGHT_LINE,
-        .power = 60,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_StraightLine,
-    },
-
-    [MOVE_WIND_CHIME] =
-    {
-        .name = COMPOUND_STRING("Wind Chime"),
-        .description = COMPOUND_STRING(
-            "Hits foes, heals the team.\n"
-            "Tailwind/status boost it."),
-        .effect = EFFECT_WIND_CHIME,
-        .power = 60,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .soundMove = TRUE,
-        .ignoresSubstitute = TRUE,
-        .healingMove = B_HEAL_BLOCKING >= GEN_6,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_WindChime,
-    },
-
-    [MOVE_PRIMEVAL_WARD] =
-    {
-        .name = COMPOUND_STRING("Primeval Ward"),
-        .description = COMPOUND_STRING(
-            "Ups Def and Sp. Def. Foes\n"
-            "can't lower its stats."),
-        .effect = EFFECT_PRIMEVAL_WARD,
-        .power = 0,
-        .type = TYPE_ROCK,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_PrimevalWard,
-    },
-
-    [MOVE_GULP_DOWN] =
-    {
-        .name = COMPOUND_STRING("Gulp Down"),
-        .description = COMPOUND_STRING(
-            "Swallows the foe's item and\n"
-            "heals. Swalot keeps its use."),
-        .effect = EFFECT_GULP_DOWN,
-        .power = 70,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_GulpDown,
-    },
-
-    [MOVE_NINE_LIVES] =
-    {
-        .name = COMPOUND_STRING("Nine Lives"),
-        .description = COMPOUND_STRING(
-            "Once per battle: survives the\n"
-            "next KO with 1 HP, cures."),
-        .effect = EFFECT_NINE_LIVES,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 5,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .metronomeBanned = TRUE,
-        .copycatBanned = TRUE,
-        .assistBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_NineLives,
-    },
-
-    [MOVE_HYPHAL_SNARE] = // Project Grounded: Parasect
-    {
-        .name = COMPOUND_STRING("Hyphal Snare"),
-        .description = COMPOUND_STRING(
-            "Fungal threads snare the foe\n"
-            "for 4-5 turns. Not on Grass."),
-        .effect = EFFECT_HIT,
-        .power = 75,
-        .type = TYPE_GRASS,
-        .accuracy = 95,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_WRAP,
-            .multistring.wrapped = B_MSG_WRAPPED_HYPHAL_SNARE,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_HyphalSnare,
-    },
-
-    [MOVE_CAVITATION] = // Project Grounded: Golduck
-    {
-        .name = COMPOUND_STRING("Cavitation"),
-        .description = COMPOUND_STRING(
-            "Imploding bubbles from its\n"
-            "speed. Faster = stronger."),
-        .effect = EFFECT_ELECTRO_BALL,
-        .power = 1,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Cavitation,
-    },
-
-    [MOVE_LURE_LIGHT] = // Project Grounded: Lumineon (Follow Me + Flash)
-    {
-        .name = COMPOUND_STRING("Lure Light"),
-        .description = COMPOUND_STRING(
-            "A glowing lure draws all\n"
-            "attacks, then dazzles foes."),
-        .effect = EFFECT_FOLLOW_ME,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER,
-        .priority = 2,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .metronomeBanned = TRUE,
-        .copycatBanned = TRUE,
-        .assistBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_LureLight,
-    },
-
-    [MOVE_BEAVER_DAM] = // Project Grounded: Bibarel (Stockpile-lagen + vloed bij flauwvallen)
-    {
-        .name = COMPOUND_STRING("Beaver Dam"),
-        .description = COMPOUND_STRING(
-            "Adds a layer to its dam (x3).\n"
-            "Ups Def/Sp. Def. Bursts on KO."),
-        .effect = EFFECT_STOCKPILE,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_RECOVER_HP },
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_BeaverDam,
-    },
-
-    [MOVE_KELP_SHROUD] = // Project Grounded: Dhelmise (bezeten zeewier zuigt de levenskracht leeg)
-    {
-        .name = COMPOUND_STRING("Kelp Shroud"),
-        .description = COMPOUND_STRING(
-            "Possessed kelp drains the foe\n"
-            "each turn. Stacks up to 3x."),
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_LEECH_SEED,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_KelpShroud,
-    },
-
-    [MOVE_MOAI_WATCH] = // Project Grounded: Probopass (hazard, beste van Rock/Electric)
-    {
-        .name = COMPOUND_STRING("Moai Watch"),
-        .description = COMPOUND_STRING(
-            "Statues guard the foe's side.\n"
-            "They strike all who enter."),
-        .effect = EFFECT_STEALTH_ROCK,
-        .power = 0,
-        .type = TYPE_ROCK,
-        .accuracy = 0,
-        .pp = 20,
-        .target = MOVE_TARGET_OPPONENTS_FIELD,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
-        .magicCoatAffected = TRUE,
-        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_MoaiWatch,
-    },
-
-    [MOVE_TWIN_LANCE] = // Project Grounded: Beedrill (twee lansen, gif dat zich opstapelt)
-    {
-        .name = COMPOUND_STRING("Twin Lance"),
-        .description = COMPOUND_STRING(
-            "Stabs twice. May poison;\n"
-            "worsens existing poison."),
-        .effect = EFFECT_TWIN_LANCE,
-        .power = 60,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .strikeCount = 2,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_POISON,
-            .chance = 25,
-        }),
-        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Twineedle,
-    },
-
-    [MOVE_TYRANT_HORN] = // Project Grounded: Nidoking (Poison én Ground tegelijk, zoals Flying Press)
-    {
-        .name = COMPOUND_STRING("Tyrant Horn"),
-        .description = COMPOUND_STRING(
-            "A Poison- and Ground-type\n"
-            "horn strike. May poison."),
-        .effect = EFFECT_TWO_TYPED_MOVE,
-        .power = 85,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .argument = { .type = TYPE_GROUND },
-        .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_POISON,
-            .chance = 30,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Megahorn,
-    },
-
-    [MOVE_QUEENS_WEIGHT] = // Project Grounded: Nidoqueen (Body Press, maar Ground)
-    {
-        .name = COMPOUND_STRING("Queen's Weight"),
-        .description = COMPOUND_STRING(
-            "Crushes the foe. Uses the\n"
-            "user's Def. as its Attack."),
-        .effect = EFFECT_BODY_PRESS,
-        .power = 80,
-        .type = TYPE_GROUND,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_BodyPress,
-    },
-
-    [MOVE_SKY_SPEAR] = // Project Grounded: Fearow (snavel als speer)
-    {
-        .name = COMPOUND_STRING("Sky Spear"),
-        .description = COMPOUND_STRING(
-            "Dives beak-first like a\n"
-            "spear. High critical ratio."),
-        .effect = EFFECT_HIT,
-        .power = 90,
-        .type = TYPE_FLYING,
-        .accuracy = 95,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .criticalHitStage = 1,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_DrillPeck,
-    },
-
-    [MOVE_ANCIENT_SCYTHE] = // Project Grounded: Kabutops (snijdt, Sharpness)
-    {
-        .name = COMPOUND_STRING("Ancient Scythe"),
-        .description = COMPOUND_STRING(
-            "Slashes with fossil blades.\n"
-            "High critical-hit ratio."),
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_ROCK,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .criticalHitStage = 1,
-        .makesContact = TRUE,
-        .slicingMove = TRUE,
-        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_NightSlash,
-    },
-
-    [MOVE_MAWASHI_GERI] = // Project Grounded: Sawk (roundhouse kick, door Protect en Substitute)
-    {
-        .name = COMPOUND_STRING("Mawashi Geri"),
-        .description = COMPOUND_STRING(
-            "A roundhouse kick through\n"
-            "guards. High critical ratio."),
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .criticalHitStage = 1,
-        .makesContact = TRUE,
-        .ignoresProtect = TRUE,
-        .ignoresSubstitute = TRUE,
-        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_RollingKick,
-    },
-
-    [MOVE_IPPON] = // Project Grounded: Throh (altijd een crit, gooit het doelwit eruit)
-    {
-        .name = COMPOUND_STRING("Ippon"),
-        .description = COMPOUND_STRING(
-            "A perfect throw. Always a\n"
-            "crit; forces a switch."),
-        .effect = EFFECT_HIT_SWITCH_TARGET,
-        .power = 70,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -6,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .alwaysCriticalHit = TRUE,
-        .makesContact = TRUE,
-        .copycatBanned = TRUE,
-        .assistBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_LATER,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_CircleThrow,
-    },
-
-    [MOVE_FLYTRAP] = // Project Grounded: Carnivine (vleesetende plant, x2 tegen Bug/Flying)
-    {
-        .name = COMPOUND_STRING("Flytrap"),
-        .description = COMPOUND_STRING(
-            "Bites and drains HP. Twice\n"
-            "as strong vs. Bug/Flying."),
-        .effect = EFFECT_FLYTRAP,
-        .power = 80,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .argument = { .absorbPercentage = 50 },
-        .makesContact = TRUE,
-        .bitingMove = TRUE,
-        .healingMove = B_HEAL_BLOCKING >= GEN_6,
-        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONE,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Crunch,
-    },
-
-    [MOVE_COLOSSAL_CLAW] = // Project Grounded: Kingler (enorme schaar, -2 Atk)
-    {
-        .name = COMPOUND_STRING("Colossal Claw"),
-        .description = COMPOUND_STRING(
-            "A colossal pincer slam.\n"
-            "Harshly lowers the Attack."),
-        .effect = EFFECT_HIT,
-        .power = 150,
-        .type = TYPE_WATER,
-        .accuracy = 85,
-        .pp = 5,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_ATK_MINUS_2,
-            .self = TRUE,
-        }),
-        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Crabhammer,
-    },
-
-    [MOVE_BURROW_MAZE] = // Project Grounded: Furret (elke uitweg ontwijkt één aanval, max. 3)
-    {
-        .name = COMPOUND_STRING("Burrow Maze"),
-        .description = COMPOUND_STRING(
-            "Digs an escape tunnel (x3).\n"
-            "Each one dodges an attack."),
-        .effect = EFFECT_BURROW_MAZE,
-        .power = 0,
-        .type = TYPE_GROUND,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_EVSN_UP_1 },
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .metronomeBanned = TRUE,
-        .copycatBanned = TRUE,
-        .assistBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Detect,
-    },
-
-    [MOVE_PITCHER_TRAP] = // Project Grounded: Victreebel (Spiky Shield-variant, vangt en verteert)
-    {
-        .name = COMPOUND_STRING("Pitcher Trap"),
-        .description = COMPOUND_STRING(
-            "Protects. Contact traps the\n"
-            "foe and digests it each turn."),
-        .effect = EFFECT_PROTECT,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER,
-        .priority = 4,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .argument = { .protectMethod = PROTECT_PITCHER_TRAP },
-        .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .metronomeBanned = TRUE,
-        .copycatBanned = TRUE,
-        .assistBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_SpikyShield,
-    },
-
-    [MOVE_PRAISE_HELIX] = // Project Grounded: Omastar (Twitch Plays Pokémon)
-    {
-        .name = COMPOUND_STRING("Praise Helix"),
-        .description = COMPOUND_STRING(
-            "Consults the HELIX FOSSIL.\n"
-            "Its will is unknowable."),
-        .effect = EFFECT_PRAISE_HELIX,
-        .power = 0,
-        .type = TYPE_ROCK,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .metronomeBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_CalmMind,
-    },
-
-    [MOVE_EYE_SPOTS] = // Project Grounded: Masquerain (oogvlekken op de vleugels)
-    {
-        .name = COMPOUND_STRING("Eye Spots"),
-        .description = COMPOUND_STRING(
-            "Glaring wing eyes cut Atk\n"
-            "and Spe. Confuses in pollen."),
-        .effect = EFFECT_EYE_SPOTS,
-        .power = 0,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
-        .magicCoatAffected = TRUE,
-        .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_ScaryFace,
-    },
-
-    [MOVE_OMEN_STRIKE] = // Project Grounded: Absol (voelt het onheil aankomen)
-    {
-        .name = COMPOUND_STRING("Omen Strike"),
-        .description = COMPOUND_STRING(
-            "Double power if the foe\n"
-            "switches or uses a status."),
-        .effect = EFFECT_OMEN_STRIKE,
-        .power = 75,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .criticalHitStage = 1,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_NightSlash,
-    },
-
-    [MOVE_MIMIC_SHADE] = // Project Grounded: Kecleon (neemt de kleur aan van wat hem raakte)
-    {
-        .name = COMPOUND_STRING("Mimic Shade"),
-        .description = COMPOUND_STRING(
-            "Takes the type of the last\n"
-            "move that hit the user."),
-        .effect = EFFECT_MIMIC_SHADE,
-        .power = 70,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_FeintAttack,
-    },
-
-    [MOVE_BUNNY_HOP] = // Project Grounded: Lopunny (Dragon Dance-kloon)
-    {
-        .name = COMPOUND_STRING("Bunny Hop"),
-        .description = COMPOUND_STRING(
-            "A bouncy hop that raises\n"
-            "Attack and Speed."),
-        .effect = EFFECT_DRAGON_DANCE,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 0,
-        .pp = 20,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .danceMove = TRUE,
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_VictoryDance,
-    },
-
-    [MOVE_SKUNK_SPRAY] = // Project Grounded: Skuntank (stinkwolk die alle boosts wegspoelt)
-    {
-        .name = COMPOUND_STRING("Skunk Spray"),
-        .description = COMPOUND_STRING(
-            "A stench that erases stat\n"
-            "changes. May cause flinch."),
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_POISON,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_CLEAR_SMOG,
-        },{
-            .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 20,
-        }),
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_ClearSmog,
-    },
-
-    [MOVE_BRAIN_FREEZE] = // Project Grounded: Vanilluxe (ijshoofdpijn; in Snow/Hail altijd een crit)
-    {
-        .name = COMPOUND_STRING("Brain Freeze"),
-        .description = COMPOUND_STRING(
-            "May confuse. Always crits\n"
-            "in snow or hail."),
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_CONFUSION,
-            .chance = 20,
-        }),
-        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_FreezeDry,
-    },
-
-    [MOVE_JOUST] = // Project Grounded: Escavalier (lans tegen een aanstormende ridder)
-    {
-        .name = COMPOUND_STRING("Joust"),
-        .description = COMPOUND_STRING(
-            "Strikes first and harder\n"
-            "if the foe is faster."),
-        .effect = EFFECT_JOUST,
-        .power = 60,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_SmartStrike,
-    },
-
-    [MOVE_SOLSTICE_GATE] = // Project Grounded: Stonjourner (zonnewende-poort; zon of sneeuw x1,5)
-    {
-        .name = COMPOUND_STRING("Solstice Gate"),
-        .description = COMPOUND_STRING(
-            "Hits both foes. Stronger\n"
-            "in sun, snow or hail."),
-        .effect = EFFECT_SOLSTICE_GATE,
-        .power = 100,
-        .type = TYPE_ROCK,
-        .accuracy = 90,
-        .pp = 10,
-        .target = MOVE_TARGET_BOTH,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_DiamondStorm,
-    },
-
-    [MOVE_REV_UP] = // Project Grounded: Revavroom (gas geven: snel en daarna sterker)
-    {
-        .name = COMPOUND_STRING("Rev Up"),
-        .description = COMPOUND_STRING(
-            "A fast ram that raises the\n"
-            "user's Attack and Speed."),
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_STEEL,
-        .accuracy = 100,
-        .pp = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 1,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
-            .self = TRUE,
-            .chance = 100,
-        },{
-            .moveEffect = MOVE_EFFECT_ATK_PLUS_1,
-            .self = TRUE,
-            .chance = 100,
-        }),
-        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_SpinOut,
-    },
-
-    [MOVE_TOTEM_GAZE] = // Project Grounded: Xatu (ziet de toekomst, ontwijkt de volgende aanval)
-    {
-        .name = COMPOUND_STRING("Totem Gaze"),
-        .description = COMPOUND_STRING(
-            "Foresees the future. The\n"
-            "next attack on it misses."),
-        .effect = EFFECT_TOTEM_GAZE,
-        .power = 80,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_CALM_MIND},
-        .battleAnimScript = gBattleAnimMove_TotemGaze,
-    },
-
-    [MOVE_TUSK_TUMBLE] = // Project Grounded: Donphan (Rollout dat hazards opruimt en Spikes legt)
-    {
-        .name = COMPOUND_STRING("Tusk Tumble"),
-        .description = COMPOUND_STRING(
-            "Rolls for 5 turns, clearing\n"
-            "hazards and laying Spikes."),
-        .effect = EFFECT_ROLLOUT,
-        .power = 30,
-        .type = TYPE_GROUND,
-        .accuracy = 90,
-        .pp = 20,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .instructBanned = TRUE,
-        .parentalBondBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_DEFENSE_CURL, COMBO_STARTER_HARDEN},
-        .battleAnimScript = gBattleAnimMove_Rollout,
-    },
-
-    [MOVE_AFRO_CHARGE] = // Project Grounded: Bouffalant (door Protect heen, neemt het terreintype aan)
-    {
-        .name = COMPOUND_STRING("Afro Charge"),
-        .description = COMPOUND_STRING(
-            "An afro charge through any\n"
-            "guard. Takes terrain's type."),
-        .effect = EFFECT_RECOIL,
-        .power = 120,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .argument = { .recoilPercentage = 25 },
-        .makesContact = TRUE,
-        .ignoresProtect = TRUE,
-        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_HeadCharge,
-    },
-
-    [MOVE_BUBBLE_DOME] = // Project Grounded: Araquanid (Reflect + Light Screen, alleen Araquanid)
-    {
-        .name = COMPOUND_STRING("Bubble Dome"),
-        .description = COMPOUND_STRING(
-            "Araquanid only. Sets both\n"
-            "screens; slashes pop it."),
-        .effect = EFFECT_BUBBLE_DOME,
-        .power = 0,
-        .type = TYPE_WATER,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPDEF_UP_1 },
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .snatchAffected = TRUE,
-        .metronomeBanned = TRUE,
-        .copycatBanned = TRUE,
-        .assistBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_RAIN_DANCE},
-        .battleAnimScript = gBattleAnimMove_AquaRing,
-    },
-
-    [MOVE_THE_OLD_DAYS] = // Project Grounded: Drampa (praat over vroeger: doelwit slaperig, +1 Sp. Atk)
-    {
-        .name = COMPOUND_STRING("The Old Days"),
-        .description = COMPOUND_STRING(
-            "Rambles on: makes the foe\n"
-            "drowsy, ups the Sp. Atk."),
-        .effect = EFFECT_THE_OLD_DAYS,
-        .power = 0,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
-        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_TheOldDays,
-    },
-
-    [MOVE_BEAR_HUG] = // Project Grounded: Bewear (knuffel waar je niet meer uitkomt)
-    {
-        .name = COMPOUND_STRING("Bear Hug"),
-        .description = COMPOUND_STRING(
-            "A crushing hug that traps\n"
-            "the foe for 4-5 turns."),
-        .effect = EFFECT_HIT,
-        .power = 80,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_WRAP,
-            .multistring.wrapped = B_MSG_WRAPPED_BEAR_HUG,
-        }),
-        .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Bind,
-    },
-
-    [MOVE_FACE_OFF] = // Project Grounded: Eiscue (kopstoot met het ijsblok, x2 met Ice Face)
-    {
-        .name = COMPOUND_STRING("Face Off"),
-        .description = COMPOUND_STRING(
-            "An ice-block headbutt. x2\n"
-            "if Eiscue's face is intact."),
-        .effect = EFFECT_HIT,
-        .power = 85,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_IceHammer,
-    },
-
-    [MOVE_OLIVE_OIL] = // Project Grounded: Arboliva (heelt en zet Grassy Terrain)
-    {
-        .name = COMPOUND_STRING("Olive Oil"),
-        .description = COMPOUND_STRING(
-            "Heals half its HP and sets\n"
-            "Grassy Terrain. Pollen: 2/3."),
-        .effect = EFFECT_OLIVE_OIL,
-        .power = 0,
-        .type = TYPE_GRASS,
-        .accuracy = 0,
-        .pp = 10,
-        .target = MOVE_TARGET_USER,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .zMove = { .effect = Z_EFFECT_RESET_STATS },
-        .healingMove = TRUE,
-        .snatchAffected = TRUE,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_QUALITY_DEPENDS_ON_TIMING,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_GrassyTerrain,
-    },
-
-    [MOVE_TWIN_TAILS] = // Project Grounded: Ambipom (twee staarthanden, één graait een boost weg)
-    {
-        .name = COMPOUND_STRING("Twin Tails"),
-        .description = COMPOUND_STRING(
-            "Hits twice. Steals one of\n"
-            "the foe's stat boosts."),
-        .effect = EFFECT_HIT,
-        .power = 40,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .strikeCount = 2,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_TWIN_TAILS,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_DoubleHit,
-    },
-
-    [MOVE_LIFE_BUOY] = // Project Grounded: Floatzel (zwemvest; snel in regen, redt zichzelf bij het wisselen)
-    {
-        .name = COMPOUND_STRING("Life Buoy"),
-        .description = COMPOUND_STRING(
-            "Goes first in rain. Heals\n"
-            "the user when it switches."),
-        .effect = EFFECT_LIFE_BUOY,
-        .power = 80,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_AquaJet,
-    },
-
-    [MOVE_KEYSTONE_CURSE] = // Project Grounded: Spiritomb (108 zielen in de sleutelsteen)
-    {
-        .name = COMPOUND_STRING("Keystone Curse"),
-        .description = COMPOUND_STRING(
-            "Stronger for each fainted\n"
-            "Pokémon in the user's team."),
-        .effect = EFFECT_KEYSTONE_CURSE,
-        .power = 60,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_LastRespects,
-    },
-
-    [MOVE_FROSTY_TAP_DANCE] = // Project Grounded: Mr. Rime (tapdansen op het ijs; in sneeuw ook +1 Sp. Atk)
-    {
-        .name = COMPOUND_STRING("Frosty Tap Dance"),
-        .description = COMPOUND_STRING(
-            "A dance that ups Speed.\n"
-            "Also Sp. Atk in snow/hail."),
-        .effect = EFFECT_HIT,
-        .power = 70,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .danceMove = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_SPD_PLUS_1,
-            .self = TRUE,
-            .chance = 100,
-        },{
-            .moveEffect = MOVE_EFFECT_SP_ATK_PLUS_1, // alleen in Snow/Hail (CanApplyAdditionalEffect)
-            .self = TRUE,
-            .chance = 100,
-        }),
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_TripleAxel,
-    },
-
-    [MOVE_ROLLING_THUNDER] = // Project Grounded: Hitmonlee (MMA-draaitrap, wordt later een TM)
-    {
-        .name = COMPOUND_STRING("Rolling Thunder"),
-        .description = COMPOUND_STRING(
-            "A spinning kick that breaks\n"
-            "through Protect and hits."),
-        .effect = EFFECT_ROLLING_THUNDER,
-        .power = 100,
-        .type = TYPE_FIGHTING,
-        .accuracy = 90,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .ignoresProtect = TRUE,
-        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_RollingKick,
-    },
-
-    [MOVE_KUSARIGAMA] = // Project Grounded: Accelgor (ninja met een ketting-sikkel)
-    {
-        .name = COMPOUND_STRING("Kusarigama"),
-        .description = COMPOUND_STRING(
-            "A chained sickle. Double\n"
-            "power if the foe switches."),
-        .effect = EFFECT_KUSARIGAMA,
-        .power = 80,
-        .type = TYPE_BUG,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Kusarigama,
-    },
-
-    [MOVE_INNARD_PUNCH] = // Project Grounded: Pyukumuku (de witte vuist uit zijn lijf)
-    {
-        .name = COMPOUND_STRING("Innard Punch"),
-        .description = COMPOUND_STRING(
-            "Moves last. If hit first,\n"
-            "deals 2x the damage taken."),
-        .effect = EFFECT_INNARD_PUNCH,
-        .power = 50,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -4,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .punchingMove = TRUE,
-        .meFirstBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_InnardPunch,
-    },
-
-    [MOVE_COMBINATION] = // Project Grounded: Hitmonchan (jab, jab, cross)
-    {
-        .name = COMPOUND_STRING("Combination"),
-        .description = COMPOUND_STRING(
-            "Jab, jab, cross. The cross\n"
-            "crits if all three land."),
-        .effect = EFFECT_TRIPLE_KICK, // kracht per klap: zie CalcMoveBasePower (20, 20, 60)
-        .power = 20,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .punchingMove = TRUE,
-        .strikeCount = 3,
-        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Combination,
-    },
-
-    [MOVE_SPINNING_BACKFIST] = // Project Grounded: Hitmonchan (draaiende achterwaartse vuist)
-    {
-        .name = COMPOUND_STRING("Spinning Backfist"),
-        .description = COMPOUND_STRING(
-            "Ignores stat boosts and\n"
-            "hits through substitutes."),
-        .effect = EFFECT_HIT,
-        .power = 90,
-        .type = TYPE_FIGHTING,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .punchingMove = TRUE,
-        .ignoresTargetDefenseEvasionStages = TRUE,
-        .ignoresSubstitute = TRUE,
-        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_MONS_WITH_GOOD_APPEALS,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_SpinningBackfist,
-    },
-
-    [MOVE_ABDUCTION] = // Project Grounded: Beheeyem en Orbeetle (UFO-tractorstraal)
-    {
-        .name = COMPOUND_STRING("Abduction"),
-        .description = COMPOUND_STRING(
-            "Moves last; first in Trick\n"
-            "Room. Beams the foe away."),
-        .effect = EFFECT_HIT_SWITCH_TARGET,
-        .power = 80,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = -6, // in Trick Room 0: zie GetBattleMovePriority
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .copycatBanned = TRUE,
-        .assistBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_LATER,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Abduction,
-    },
-
-    [MOVE_COLD_SHOULDER] = // Project Grounded: TM (de koude schouder, Ice)
-    {
-        .name = COMPOUND_STRING("Cold Shoulder"),
-        .description = COMPOUND_STRING(
-            "An icy snub. The foe can't\n"
-            "repeat its last move."),
-        .effect = EFFECT_COLD_SHOULDER,
-        .power = 75,
-        .type = TYPE_ICE,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_HAIL},
-        .battleAnimScript = gBattleAnimMove_IcePunch,
-    },
-
-    [MOVE_JUMP_SCARE] = // Project Grounded: TM (boe!)
-    {
-        .name = COMPOUND_STRING("Jump Scare"),
-        .description = COMPOUND_STRING(
-            "Boo! May flinch. Doubled\n"
-            "on the user's first turn."),
-        .effect = EFFECT_JUMP_SCARE,
-        .power = 80,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_FLINCH,
-            .chance = 30,
-        }),
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Astonish,
-    },
-
-    [MOVE_DIM_MAK] = // Project Grounded: TM (kungfu-drukpunt met een vinger)
-    {
-        .name = COMPOUND_STRING("Dim Mak"),
-        .description = COMPOUND_STRING(
-            "A one-finger strike. Skips\n"
-            "boosts; may paralyze."),
-        .effect = EFFECT_DIM_MAK,
-        .power = 75,
-        .type = TYPE_PSYCHIC,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .ignoresTargetDefenseEvasionStages = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_PARALYSIS,
-            .chance = 30,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_CALM_MIND},
-        .battleAnimScript = gBattleAnimMove_ForcePalm,
-    },
-
-    [MOVE_UPDRAFT] = // Project Grounded: TM (opwaartse wind)
-    {
-        .name = COMPOUND_STRING("Updraft"),
-        .description = COMPOUND_STRING(
-            "Rising winds strike. 1.5x\n"
-            "power with a Tailwind."),
-        .effect = EFFECT_UPDRAFT,
-        .power = 80,
-        .type = TYPE_FLYING,
-        .accuracy = 100,
-        .pp = 15,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .windMove = TRUE,
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
-        .contestCategory = CONTEST_CATEGORY_COOL,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Twister,
-    },
-
-    [MOVE_COUNTERFEIT_BALL] = // Project Grounded: TM (namaak-Poke Balls)
-    {
-        .name = COMPOUND_STRING("Counterfeit Ball"),
-        .description = COMPOUND_STRING(
-            "Throws 2-5 fake Poké Balls.\n"
-            "Rarely, a fake MASTER BALL."),
-        .effect = EFFECT_MULTI_HIT,
-        .power = 25,
-        .type = TYPE_NORMAL,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .ballisticMove = TRUE,
-        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_CounterfeitBall,
-    },
-
-    [MOVE_HOT_TAKE] = // Project Grounded: Magby, Magmar en Magmortar (een omstreden mening)
-    {
-        .name = COMPOUND_STRING("Hot Take"),
-        .description = COMPOUND_STRING(
-            "Spits a fiery opinion. May\n"
-            "leave the foe confused."),
-        .effect = EFFECT_HIT,
-        .power = 85,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_SPECIAL,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_CONFUSION,
-            .chance = 20,
-        }),
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_SUNNY_DAY},
-        .battleAnimScript = gBattleAnimMove_HotTake,
-    },
-
-    [MOVE_BRAMBLE_LASH] = // Project Grounded: Bramblin en Brambleghast (doornranken)
-    {
-        .name = COMPOUND_STRING("Bramble Lash"),
-        .description = COMPOUND_STRING(
-            "Whips with thorns, leaving\n"
-            "brambles on the foe's side."),
-        .effect = EFFECT_BRAMBLE_LASH,
-        .power = 80,
-        .type = TYPE_GRASS,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {COMBO_STARTER_GROWTH},
-        .battleAnimScript = gBattleAnimMove_PowerWhip,
-    },
-
-    [MOVE_SUPER_SPLASH] = // Project Grounded: TM100, Splash maar dan echt (vertraagde tsunami, zoals Future Sight)
-    {
-        .name = COMPOUND_STRING("Super Splash"),
-        .description = COMPOUND_STRING(
-            "Splash, EVOLVED.\n"
-            "A tsunami hits next turn."),
-        .effect = EFFECT_FUTURE_SIGHT, // 1 beurt vertraging i.p.v. 2: zie Cmd_setfutureattack
-        .power = 120,
-        .type = TYPE_WATER,
-        .accuracy = 100,
-        .pp = 5,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .ignoresProtect = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
-        .contestCategory = CONTEST_CATEGORY_CUTE,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_SuperSplash,
-    },
-
-    [MOVE_DISCO_INFERNO] = // Project Grounded: TM99, dansende vuurtrappen onder de discobal
-    {
-        .name = COMPOUND_STRING("Disco Inferno"),
-        .description = COMPOUND_STRING(
-            "Fiery dance kicks. May\n"
-            "confuse or burn the foe."),
-        .effect = EFFECT_HIT,
-        .power = 85,
-        .type = TYPE_FIRE,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .danceMove = TRUE,
-        .additionalEffects = ADDITIONAL_EFFECTS({
-            .moveEffect = MOVE_EFFECT_CONFUSION, // discokoorts
-            .chance = 20,
-        },
-        {
-            .moveEffect = MOVE_EFFECT_BURN,
-            .chance = 10,
-        }),
-        .contestEffect = CONTEST_EFFECT_EXCITE_AUDIENCE_IN_ANY_CONTEST,
-        .contestCategory = CONTEST_CATEGORY_BEAUTY,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_DiscoInferno,
-    },
-
-    [MOVE_OVERKILL] = // Project Grounded: wat er na een KO overblijft, krijgt de volgende
-    {
-        .name = COMPOUND_STRING("Overkill"),
-        .description = COMPOUND_STRING(
-            "Excess KO damage hits\n"
-            "the next foe sent in."),
-        .effect = EFFECT_OVERKILL,
-        .power = 90,
-        .type = TYPE_DARK,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_PHYSICAL,
-        .makesContact = TRUE,
-        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
-        .contestCategory = CONTEST_CATEGORY_TOUGH,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Overkill,
-    },
-
-    [MOVE_MARIONETTE] = // Project Grounded: Banette (de pop trekt nu zelf aan de touwtjes)
-    {
-        .name = COMPOUND_STRING("Marionette"),
-        .description = COMPOUND_STRING(
-            "Foe uses its chosen attack\n"
-            "on itself. Fails vs. status."),
-        .effect = EFFECT_MARIONETTE,
-        .power = 0,
-        .type = TYPE_GHOST,
-        .accuracy = 100,
-        .pp = 10,
-        .target = MOVE_TARGET_SELECTED,
-        .priority = 0,
-        .category = DAMAGE_CATEGORY_STATUS,
-        .ignoresSubstitute = TRUE,
-        .mirrorMoveBanned = TRUE,
-        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
-        .contestCategory = CONTEST_CATEGORY_SMART,
-        .contestComboStarterId = 0,
-        .contestComboMoves = {0},
-        .battleAnimScript = gBattleAnimMove_Marionette,
-    },
-
     // Z-Moves
     [MOVE_BREAKNECK_BLITZ] =
     {
@@ -25190,18 +22978,11 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
     {
         .name = COMPOUND_STRING("Max Hailstorm"),
         .description = COMPOUND_STRING(
-            "Ice Dynamax attack.\n"
-<<<<<<< HEAD
-            "Summons a snow storm."),
-||||||| abeb86837a
-            "Summons hail for 5 turns."),
-=======
-        #if B_PREFERRED_ICE_WEATHER == B_ICE_WEATHER_SNOW
-            "Summons a snowstorm."),
+"Ice Dynamax attack.\n"
+"Summons a snow storm."),
         #else
             "Summons a hailstorm."),
         #endif
->>>>>>> expansion/1.17.1
         .effect = EFFECT_MAX_MOVE,
         .power = 1,
         .type = TYPE_ICE,
@@ -26121,5 +23902,2011 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .category = DAMAGE_CATEGORY_PHYSICAL,
         .ignoresProtect = TRUE,
         .battleAnimScript = gBattleAnimMove_GMaxRapidFlow,
+    },
+    [MOVE_SELTZER_SURGE] =
+    {
+        .name = COMPOUND_STRING("Seltzer Surge"),
+        .description = COMPOUND_STRING(
+            "A fizzing wave that may\n"
+            "lower Speed or confuse."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .speed = 1,
+            .chance = 20,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 10,
+        }),
+        .damagesUnderwater = TRUE,
+        .skyBattleBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_DIVE, COMBO_STARTER_RAIN_DANCE},
+        .battleAnimScript = gBattleAnimMove_SeltzerSurge,
+    },
+    [MOVE_LAGER_LAGOON] =
+    {
+        .name = COMPOUND_STRING("Lager Lagoon"),
+        .description = COMPOUND_STRING(
+            "A foaming wave of beer.\n"
+            "Often confuses everyone."),
+        .effect = EFFECT_HIT,
+        .power = 65,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 50,
+        }),
+        .damagesUnderwater = TRUE,
+        .skyBattleBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_DIVE, COMBO_STARTER_RAIN_DANCE},
+        .battleAnimScript = gBattleAnimMove_LagerLagoon,
+    },
+    [MOVE_VINTAGE_SPILL] =
+    {
+        .name = COMPOUND_STRING("Vintage Spill"),
+        .description = COMPOUND_STRING(
+            "Splashes fine wine. Each\n"
+            "hit is likelier to confuse."),
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 50,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_VintageSpill,
+    },
+    [MOVE_OTHISMOS] =
+    {
+        .name = COMPOUND_STRING("Othismos"),
+        .description = COMPOUND_STRING(
+            "A hoplite shoving push.\n"
+            "Hits more at higher HP."),
+        .effect = EFFECT_HIT,
+        .multiHit = TRUE,
+        .power = 20,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_FOCUS_ENERGY},
+        .battleAnimScript = gBattleAnimMove_ArmThrust,
+    },
+    [MOVE_FUNGAL_CONTROL] =
+    {
+        .name = COMPOUND_STRING("Fungal Control"),
+        .description = COMPOUND_STRING(
+            "Spores hijack the foe. You\n"
+            "pick its move for 3 turns."),
+        .effect = EFFECT_FUNGAL_CONTROL,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 60,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .powderMove = FALSE, // Project Grounded (Jordi): schimmels groeien juist op planten; Overcoat/Safety Goggles blokkeren via het script
+        .makesContact = TRUE,
+        .magicCoatAffected = TRUE,
+        .encoreBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FungalControl,
+    },
+    [MOVE_TRANSMUTATION] =
+    {
+        .name = COMPOUND_STRING("Transmutation"),
+        .description = COMPOUND_STRING(
+            "Turns the foe into a copy\n"
+            "of the user. 5 PP per move."),
+        .effect = EFFECT_TRANSMUTATION,
+        .power = 0,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .magicCoatAffected = TRUE,
+        .mimicBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .instructBanned = TRUE,
+        .encoreBanned = TRUE,
+        .assistBanned = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONES,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Transform,
+    },
+    [MOVE_IMPLOSION] =
+    {
+        .name = COMPOUND_STRING("Implosion"),
+        .description = COMPOUND_STRING(
+            "The user collapses into a\n"
+            "black hole. User faints."),
+        .effect = EFFECT_HIT,
+        .explosion = TRUE,
+        .parentalBondBanned = TRUE,
+        .dampBanned = TRUE,
+        .power = 200,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .parentalBondBanned = TRUE,
+        .dampBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_GREAT_APPEAL_BUT_NO_MORE_MOVES,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Implosion,
+    },
+    [MOVE_LASER_BEAM] =
+    {
+        .name = COMPOUND_STRING("Laser Beam"),
+        .description = COMPOUND_STRING(
+            "A laser that burns through\n"
+            "Protect, screens and boosts."),
+        .effect = EFFECT_HIT,
+        .power = 75,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .ignoresProtect = TRUE,
+        .ignoresTargetDefenseEvasionStages = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LaserBeam,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_BREAK_SCREEN,
+            .preAttackEffect = TRUE,
+        }),
+    },
+    [MOVE_MACHINE_LEARNING] =
+    {
+        .name = COMPOUND_STRING("Machine Learning"),
+        .description = COMPOUND_STRING(
+            "Trains each turn: more stats\n"
+            "rise. May hallucinate."),
+        .effect = EFFECT_MACHINE_LEARNING,
+        .power = 0,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .snatchAffected = FALSE,
+        .ignoresProtect = TRUE,
+        .mimicBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .sleepTalkBanned = TRUE,
+        .instructBanned = TRUE,
+        .encoreBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Charge,
+    },
+    [MOVE_SHADOW_SIPHON] =
+    {
+        .name = COMPOUND_STRING("Shadow Siphon"),
+        .description = COMPOUND_STRING(
+            "Siphons the foe's life away.\n"
+            "Restores a lot of HP."),
+        .effect = EFFECT_HIT,
+        .power = 50,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .makesContact = TRUE,
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONES,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ShadowSiphon,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ABSORB,
+            .argument.absorbPercentage = 75,
+        }),
+    },
+    [MOVE_ACID_RAIN] =
+    {
+        .name = COMPOUND_STRING("Acid Rain"),
+        .description = COMPOUND_STRING(
+            "Summons acid rain for 5\n"
+            "turns. Poison thrives."),
+        .effect = EFFECT_ACID_RAIN,
+        .power = 0,
+        .type = TYPE_POISON,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_AcidRain,
+    },
+    [MOVE_POLLEN_HAZE] =
+    {
+        .name = COMPOUND_STRING("Pollen Haze"),
+        .description = COMPOUND_STRING(
+            "Fills the air with pollen for\n"
+            "5 turns. Bug and Grass thrive."),
+        .effect = EFFECT_POLLEN_HAZE,
+        .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_ALL_BATTLERS,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_PollenHaze,
+    },
+    [MOVE_MUMMYS_CURSE] =
+    {
+        .name = COMPOUND_STRING("Mummy's Curse"),
+        .description = COMPOUND_STRING(
+            "Binds the foe in cursed wraps.\n"
+            "Its ability becomes Mummy."),
+        .effect = EFFECT_HIT,
+        .power = 60,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WRAP,
+            .multistring.wrapped = B_MSG_WRAPPED_MUMMY,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_MUMMIFY,
+        }),
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_MummysCurse,
+    },
+    [MOVE_ZAP_TRAP] =
+    {
+        .name = COMPOUND_STRING("Zap Trap"),
+        .description = COMPOUND_STRING(
+            "Snaps shut on the foe like a\n"
+            "trap. No escape. May paralyze."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_ELECTRIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .bitingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_PREVENT_ESCAPE,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_PARALYSIS,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ZapTrap,
+    },
+    [MOVE_STEEL_TRAP] =
+    {
+        .name = COMPOUND_STRING("Steel Trap"),
+        .description = COMPOUND_STRING(
+            "Clamps the foe in a bear trap\n"
+            "for 4-5 turns. Lowers Speed."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .bitingMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WRAP,
+            .multistring.wrapped = B_MSG_WRAPPED_STEEL_TRAP,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .speed = 1,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SteelTrap,
+    },
+    [MOVE_PACK_HOWL] =
+    {
+        .name = COMPOUND_STRING("Pack Howl"),
+        .description = COMPOUND_STRING(
+            "Calls the pack. Raises Attack\n"
+            "of allies, or Atk/Spd if alone."),
+        .effect = EFFECT_PACK_HOWL,
+        .power = 0,
+        .type = TYPE_DARK,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER, // Targeting is handled through the script
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_ATK_UP_1 },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .soundMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_PackHowl,
+    },
+    [MOVE_WHALE_SONG] =
+    {
+        .name = COMPOUND_STRING("Whale Song"),
+        .description = COMPOUND_STRING(
+            "A deep song that hits all\n"
+            "others. May cause sleep."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_FOES_AND_ALLY,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .soundMove = TRUE,
+        .ignoresSubstitute = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_SLEEP,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_WhaleSong,
+    },
+    [MOVE_HEARTBREAK] =
+    {
+        .name = COMPOUND_STRING("Heartbreak"),
+        .description = COMPOUND_STRING(
+            "It's over. Double power vs.\n"
+            "the other gender. Cuts Sp.Atk."),
+        .effect = EFFECT_HEARTBREAK,
+        .power = 60,
+        .type = TYPE_FAIRY,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .spAtk = 1,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Heartbreak,
+    },
+    [MOVE_ECLIPSE] =
+    {
+        .name = COMPOUND_STRING("Eclipse"),
+        .description = COMPOUND_STRING(
+            "Rock if Atk is higher, else\n"
+            "Psychic. Sun/moon time: x1.5."),
+        .effect = EFFECT_ECLIPSE,
+        .power = 80,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Eclipse,
+    },
+    [MOVE_TIPSY_WALTZ] =
+    {
+        .name = COMPOUND_STRING("Tipsy Waltz"),
+        .description = COMPOUND_STRING(
+            "A wobbly dance. May confuse.\n"
+            "Stronger if the user is dizzy."),
+        .effect = EFFECT_TIPSY_WALTZ,
+        .power = 80,
+        .type = TYPE_NORMAL,
+        .accuracy = 90,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .danceMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 50,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_TipsyWaltz,
+    },
+    [MOVE_WEATHER_REPORT] =
+    {
+        .name = COMPOUND_STRING("Weather Report"),
+        .description = COMPOUND_STRING(
+            "Sets the weather the foe is\n"
+            "weakest to, then strikes."),
+        .effect = EFFECT_WEATHER_REPORT,
+        .power = 50,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .ballisticMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_WeatherReport,
+    },
+    [MOVE_VENOM_DUST] =
+    {
+        .name = COMPOUND_STRING("Venom Dust"),
+        .description = COMPOUND_STRING(
+            "Scatters toxic scales. Poisons\n"
+            "both foes and lowers Speed."),
+        .effect = EFFECT_TOXIC_THREAD,
+        .power = 0,
+        .type = TYPE_POISON,
+        .accuracy = 90,
+        .pp = 15,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .powderMove = TRUE,
+        .magicCoatAffected = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_VenomDust,
+    },
+    [MOVE_STRAIGHT_LINE] =
+    {
+        .name = COMPOUND_STRING("Straight Line"),
+        .description = COMPOUND_STRING(
+            "Dashes first. Again in a row:\n"
+            "100 power, but no priority."),
+        .effect = EFFECT_STRAIGHT_LINE,
+        .power = 60,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_StraightLine,
+    },
+    [MOVE_WIND_CHIME] =
+    {
+        .name = COMPOUND_STRING("Wind Chime"),
+        .description = COMPOUND_STRING(
+            "Hits foes, heals the team.\n"
+            "Tailwind/status boost it."),
+        .effect = EFFECT_WIND_CHIME,
+        .power = 60,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .soundMove = TRUE,
+        .ignoresSubstitute = TRUE,
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_WindChime,
+    },
+    [MOVE_PRIMEVAL_WARD] =
+    {
+        .name = COMPOUND_STRING("Primeval Ward"),
+        .description = COMPOUND_STRING(
+            "Ups Def and Sp. Def. Foes\n"
+            "can't lower its stats."),
+        .effect = EFFECT_PRIMEVAL_WARD,
+        .power = 0,
+        .type = TYPE_ROCK,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_PrimevalWard,
+    },
+    [MOVE_GULP_DOWN] =
+    {
+        .name = COMPOUND_STRING("Gulp Down"),
+        .description = COMPOUND_STRING(
+            "Swallows the foe's item and\n"
+            "heals. Swalot keeps its use."),
+        .effect = EFFECT_GULP_DOWN,
+        .power = 70,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_GulpDown,
+    },
+    [MOVE_NINE_LIVES] =
+    {
+        .name = COMPOUND_STRING("Nine Lives"),
+        .description = COMPOUND_STRING(
+            "Once per battle: survives the\n"
+            "next KO with 1 HP, cures."),
+        .effect = EFFECT_NINE_LIVES,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 5,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_NineLives,
+    },
+    [MOVE_HYPHAL_SNARE] = // Project Grounded: Parasect
+    {
+        .name = COMPOUND_STRING("Hyphal Snare"),
+        .description = COMPOUND_STRING(
+            "Fungal threads snare the foe\n"
+            "for 4-5 turns. Not on Grass."),
+        .effect = EFFECT_HIT,
+        .power = 75,
+        .type = TYPE_GRASS,
+        .accuracy = 95,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WRAP,
+            .multistring.wrapped = B_MSG_WRAPPED_HYPHAL_SNARE,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HyphalSnare,
+    },
+    [MOVE_CAVITATION] = // Project Grounded: Golduck
+    {
+        .name = COMPOUND_STRING("Cavitation"),
+        .description = COMPOUND_STRING(
+            "Imploding bubbles from its\n"
+            "speed. Faster = stronger."),
+        .effect = EFFECT_ELECTRO_BALL,
+        .power = 1,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Cavitation,
+    },
+    [MOVE_LURE_LIGHT] = // Project Grounded: Lumineon (Follow Me + Flash)
+    {
+        .name = COMPOUND_STRING("Lure Light"),
+        .description = COMPOUND_STRING(
+            "A glowing lure draws all\n"
+            "attacks, then dazzles foes."),
+        .effect = EFFECT_FOLLOW_ME,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 2,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LureLight,
+    },
+    [MOVE_BEAVER_DAM] = // Project Grounded: Bibarel (Stockpile-lagen + vloed bij flauwvallen)
+    {
+        .name = COMPOUND_STRING("Beaver Dam"),
+        .description = COMPOUND_STRING(
+            "Adds a layer to its dam (x3).\n"
+            "Ups Def/Sp. Def. Bursts on KO."),
+        .effect = EFFECT_STOCKPILE,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RECOVER_HP },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_BeaverDam,
+    },
+    [MOVE_KELP_SHROUD] = // Project Grounded: Dhelmise (bezeten zeewier zuigt de levenskracht leeg)
+    {
+        .name = COMPOUND_STRING("Kelp Shroud"),
+        .description = COMPOUND_STRING(
+            "Possessed kelp drains the foe\n"
+            "each turn. Stacks up to 3x."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_LEECH_SEED,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_KelpShroud,
+    },
+    [MOVE_MOAI_WATCH] = // Project Grounded: Probopass (hazard, beste van Rock/Electric)
+    {
+        .name = COMPOUND_STRING("Moai Watch"),
+        .description = COMPOUND_STRING(
+            "Statues guard the foe's side.\n"
+            "They strike all who enter."),
+        .effect = EFFECT_STEALTH_ROCK,
+        .power = 0,
+        .type = TYPE_ROCK,
+        .accuracy = 0,
+        .pp = 20,
+        .target = MOVE_TARGET_OPPONENTS_FIELD,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
+        .magicCoatAffected = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_MoaiWatch,
+    },
+    [MOVE_TWIN_LANCE] = // Project Grounded: Beedrill (twee lansen, gif dat zich opstapelt)
+    {
+        .name = COMPOUND_STRING("Twin Lance"),
+        .description = COMPOUND_STRING(
+            "Stabs twice. May poison;\n"
+            "worsens existing poison."),
+        .effect = EFFECT_TWIN_LANCE,
+        .power = 60,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .strikeCount = 2,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_POISON,
+            .chance = 25,
+        }),
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Twineedle,
+    },
+    [MOVE_TYRANT_HORN] = // Project Grounded: Nidoking (Poison én Ground tegelijk, zoals Flying Press)
+    {
+        .name = COMPOUND_STRING("Tyrant Horn"),
+        .description = COMPOUND_STRING(
+            "A Poison- and Ground-type\n"
+            "horn strike. May poison."),
+        .effect = EFFECT_TWO_TYPED_MOVE,
+        .power = 85,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .type = TYPE_GROUND },
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_POISON,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Megahorn,
+    },
+    [MOVE_QUEENS_WEIGHT] = // Project Grounded: Nidoqueen (Body Press, maar Ground)
+    {
+        .name = COMPOUND_STRING("Queen's Weight"),
+        .description = COMPOUND_STRING(
+            "Crushes the foe. Uses the\n"
+            "user's Def. as its Attack."),
+        .effect = EFFECT_BODY_PRESS,
+        .power = 80,
+        .type = TYPE_GROUND,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_BodyPress,
+    },
+    [MOVE_SKY_SPEAR] = // Project Grounded: Fearow (snavel als speer)
+    {
+        .name = COMPOUND_STRING("Sky Spear"),
+        .description = COMPOUND_STRING(
+            "Dives beak-first like a\n"
+            "spear. High critical ratio."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_FLYING,
+        .accuracy = 95,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = 1,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DrillPeck,
+    },
+    [MOVE_ANCIENT_SCYTHE] = // Project Grounded: Kabutops (snijdt, Sharpness)
+    {
+        .name = COMPOUND_STRING("Ancient Scythe"),
+        .description = COMPOUND_STRING(
+            "Slashes with fossil blades.\n"
+            "High critical-hit ratio."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_ROCK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = 1,
+        .makesContact = TRUE,
+        .slicingMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_NightSlash,
+    },
+    [MOVE_MAWASHI_GERI] = // Project Grounded: Sawk (roundhouse kick, door Protect en Substitute)
+    {
+        .name = COMPOUND_STRING("Mawashi Geri"),
+        .description = COMPOUND_STRING(
+            "A roundhouse kick through\n"
+            "guards. High critical ratio."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = 1,
+        .makesContact = TRUE,
+        .ignoresProtect = TRUE,
+        .ignoresSubstitute = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_RollingKick,
+    },
+    [MOVE_IPPON] = // Project Grounded: Throh (altijd een crit, gooit het doelwit eruit)
+    {
+        .name = COMPOUND_STRING("Ippon"),
+        .description = COMPOUND_STRING(
+            "A perfect throw. Always a\n"
+            "crit; forces a switch."),
+        .effect = EFFECT_HIT_SWITCH_TARGET,
+        .power = 70,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -6,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .alwaysCriticalHit = TRUE,
+        .makesContact = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_LATER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_CircleThrow,
+    },
+    [MOVE_FLYTRAP] = // Project Grounded: Carnivine (vleesetende plant, x2 tegen Bug/Flying)
+    {
+        .name = COMPOUND_STRING("Flytrap"),
+        .description = COMPOUND_STRING(
+            "Bites and drains HP. Twice\n"
+            "as strong vs. Bug/Flying."),
+        .effect = EFFECT_FLYTRAP,
+        .power = 80,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .bitingMove = TRUE,
+        .healingMove = B_HEAL_BLOCKING >= GEN_6,
+        .contestEffect = CONTEST_EFFECT_APPEAL_AS_GOOD_AS_PREV_ONE,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Crunch,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_ABSORB,
+            .argument.absorbPercentage = 50,
+        }),
+    },
+    [MOVE_COLOSSAL_CLAW] = // Project Grounded: Kingler (enorme schaar, -2 Atk)
+    {
+        .name = COMPOUND_STRING("Colossal Claw"),
+        .description = COMPOUND_STRING(
+            "A colossal pincer slam.\n"
+            "Harshly lowers the Attack."),
+        .effect = EFFECT_HIT,
+        .power = 150,
+        .type = TYPE_WATER,
+        .accuracy = 85,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_STAT_MINUS,
+            .attack = 2,
+            .self = TRUE,
+        }),
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Crabhammer,
+    },
+    [MOVE_BURROW_MAZE] = // Project Grounded: Furret (elke uitweg ontwijkt één aanval, max. 3)
+    {
+        .name = COMPOUND_STRING("Burrow Maze"),
+        .description = COMPOUND_STRING(
+            "Digs an escape tunnel (x3).\n"
+            "Each one dodges an attack."),
+        .effect = EFFECT_BURROW_MAZE,
+        .power = 0,
+        .type = TYPE_GROUND,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_EVSN_UP_1 },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Detect,
+    },
+    [MOVE_PITCHER_TRAP] = // Project Grounded: Victreebel (Spiky Shield-variant, vangt en verteert)
+    {
+        .name = COMPOUND_STRING("Pitcher Trap"),
+        .description = COMPOUND_STRING(
+            "Protects. Contact traps the\n"
+            "foe and digests it each turn."),
+        .effect = EFFECT_PROTECT,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 4,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .argument = { .protectMethod = PROTECT_PITCHER_TRAP },
+        .zMove = { .effect = Z_EFFECT_DEF_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SpikyShield,
+    },
+    [MOVE_PRAISE_HELIX] = // Project Grounded: Omastar (Twitch Plays Pokémon)
+    {
+        .name = COMPOUND_STRING("Praise Helix"),
+        .description = COMPOUND_STRING(
+            "Consults the HELIX FOSSIL.\n"
+            "Its will is unknowable."),
+        .effect = EFFECT_PRAISE_HELIX,
+        .power = 0,
+        .type = TYPE_ROCK,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .metronomeBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_CalmMind,
+    },
+    [MOVE_EYE_SPOTS] = // Project Grounded: Masquerain (oogvlekken op de vleugels)
+    {
+        .name = COMPOUND_STRING("Eye Spots"),
+        .description = COMPOUND_STRING(
+            "Glaring wing eyes cut Atk\n"
+            "and Spe. Confuses in pollen."),
+        .effect = EFFECT_EYE_SPOTS,
+        .power = 0,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .magicCoatAffected = TRUE,
+        .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ScaryFace,
+    },
+    [MOVE_OMEN_STRIKE] = // Project Grounded: Absol (voelt het onheil aankomen)
+    {
+        .name = COMPOUND_STRING("Omen Strike"),
+        .description = COMPOUND_STRING(
+            "Double power if the foe\n"
+            "switches or uses a status."),
+        .effect = EFFECT_OMEN_STRIKE,
+        .power = 75,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .criticalHitStage = 1,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_NightSlash,
+    },
+    [MOVE_MIMIC_SHADE] = // Project Grounded: Kecleon (neemt de kleur aan van wat hem raakte)
+    {
+        .name = COMPOUND_STRING("Mimic Shade"),
+        .description = COMPOUND_STRING(
+            "Takes the type of the last\n"
+            "move that hit the user."),
+        .effect = EFFECT_MIMIC_SHADE,
+        .power = 70,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FeintAttack,
+    },
+    [MOVE_BUNNY_HOP] = // Project Grounded: Lopunny (Dragon Dance-kloon)
+    {
+        .name = COMPOUND_STRING("Bunny Hop"),
+        .description = COMPOUND_STRING(
+            "A bouncy hop that raises\n"
+            "Attack and Speed."),
+        .effect = EFFECT_STAT_CHANGE,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 0,
+        .pp = 20,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .danceMove = TRUE,
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_IMPROVE_CONDITION_PREVENT_NERVOUSNESS,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_VictoryDance,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = STAT_CHANGE_EFFECT_PLUS,
+            .attack = 1,
+            .speed = 1,
+        }),
+    },
+    [MOVE_SKUNK_SPRAY] = // Project Grounded: Skuntank (stinkwolk die alle boosts wegspoelt)
+    {
+        .name = COMPOUND_STRING("Skunk Spray"),
+        .description = COMPOUND_STRING(
+            "A stench that erases stat\n"
+            "changes. May cause flinch."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_POISON,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CLEAR_SMOG,
+        },{
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 20,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_ClearSmog,
+    },
+    [MOVE_BRAIN_FREEZE] = // Project Grounded: Vanilluxe (ijshoofdpijn; in Snow/Hail altijd een crit)
+    {
+        .name = COMPOUND_STRING("Brain Freeze"),
+        .description = COMPOUND_STRING(
+            "May confuse. Always crits\n"
+            "in snow or hail."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 20,
+        }),
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_FreezeDry,
+    },
+    [MOVE_JOUST] = // Project Grounded: Escavalier (lans tegen een aanstormende ridder)
+    {
+        .name = COMPOUND_STRING("Joust"),
+        .description = COMPOUND_STRING(
+            "Strikes first and harder\n"
+            "if the foe is faster."),
+        .effect = EFFECT_JOUST,
+        .power = 60,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SmartStrike,
+    },
+    [MOVE_SOLSTICE_GATE] = // Project Grounded: Stonjourner (zonnewende-poort; zon of sneeuw x1,5)
+    {
+        .name = COMPOUND_STRING("Solstice Gate"),
+        .description = COMPOUND_STRING(
+            "Hits both foes. Stronger\n"
+            "in sun, snow or hail."),
+        .effect = EFFECT_SOLSTICE_GATE,
+        .power = 100,
+        .type = TYPE_ROCK,
+        .accuracy = 90,
+        .pp = 10,
+        .target = MOVE_TARGET_BOTH,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DiamondStorm,
+    },
+    [MOVE_REV_UP] = // Project Grounded: Revavroom (gas geven: snel en daarna sterker)
+    {
+        .name = COMPOUND_STRING("Rev Up"),
+        .description = COMPOUND_STRING(
+            "A fast ram that raises the\n"
+            "user's Attack and Speed."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_STEEL,
+        .accuracy = 100,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 1,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_STAT_PLUS,
+            .speed = 1,
+            .self = TRUE,
+            .chance = 100,
+        },{
+            .moveEffect = MOVE_EFFECT_STAT_PLUS,
+            .attack = 1,
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SpinOut,
+    },
+    [MOVE_TOTEM_GAZE] = // Project Grounded: Xatu (ziet de toekomst, ontwijkt de volgende aanval)
+    {
+        .name = COMPOUND_STRING("Totem Gaze"),
+        .description = COMPOUND_STRING(
+            "Foresees the future. The\n"
+            "next attack on it misses."),
+        .effect = EFFECT_TOTEM_GAZE,
+        .power = 80,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE_ONCE,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_CALM_MIND},
+        .battleAnimScript = gBattleAnimMove_TotemGaze,
+    },
+    [MOVE_TUSK_TUMBLE] = // Project Grounded: Donphan (Rollout dat hazards opruimt en Spikes legt)
+    {
+        .name = COMPOUND_STRING("Tusk Tumble"),
+        .description = COMPOUND_STRING(
+            "Rolls for 5 turns, clearing\n"
+            "hazards and laying Spikes."),
+        .effect = EFFECT_ROLLOUT,
+        .power = 30,
+        .type = TYPE_GROUND,
+        .accuracy = 90,
+        .pp = 20,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .instructBanned = TRUE,
+        .parentalBondBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_DEFENSE_CURL, COMBO_STARTER_HARDEN},
+        .battleAnimScript = gBattleAnimMove_Rollout,
+    },
+    [MOVE_AFRO_CHARGE] = // Project Grounded: Bouffalant (door Protect heen, neemt het terreintype aan)
+    {
+        .name = COMPOUND_STRING("Afro Charge"),
+        .description = COMPOUND_STRING(
+            "An afro charge through any\n"
+            "guard. Takes terrain's type."),
+        .effect = EFFECT_RECOIL,
+        .power = 120,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .argument = { .recoilPercentage = 25 },
+        .makesContact = TRUE,
+        .ignoresProtect = TRUE,
+        .contestEffect = CONTEST_EFFECT_USER_MORE_EASILY_STARTLED,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_HeadCharge,
+    },
+    [MOVE_BUBBLE_DOME] = // Project Grounded: Araquanid (Reflect + Light Screen, alleen Araquanid)
+    {
+        .name = COMPOUND_STRING("Bubble Dome"),
+        .description = COMPOUND_STRING(
+            "Araquanid only. Sets both\n"
+            "screens; slashes pop it."),
+        .effect = EFFECT_BUBBLE_DOME,
+        .power = 0,
+        .type = TYPE_WATER,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPDEF_UP_1 },
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .snatchAffected = TRUE,
+        .metronomeBanned = TRUE,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_AVOID_STARTLE,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_RAIN_DANCE},
+        .battleAnimScript = gBattleAnimMove_AquaRing,
+    },
+    [MOVE_THE_OLD_DAYS] = // Project Grounded: Drampa (praat over vroeger: doelwit slaperig, +1 Sp. Atk)
+    {
+        .name = COMPOUND_STRING("The Old Days"),
+        .description = COMPOUND_STRING(
+            "Rambles on: makes the foe\n"
+            "drowsy, ups the Sp. Atk."),
+        .effect = EFFECT_THE_OLD_DAYS,
+        .power = 0,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_TheOldDays,
+    },
+    [MOVE_BEAR_HUG] = // Project Grounded: Bewear (knuffel waar je niet meer uitkomt)
+    {
+        .name = COMPOUND_STRING("Bear Hug"),
+        .description = COMPOUND_STRING(
+            "A crushing hug that traps\n"
+            "the foe for 4-5 turns."),
+        .effect = EFFECT_HIT,
+        .power = 80,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_WRAP,
+            .multistring.wrapped = B_MSG_WRAPPED_BEAR_HUG,
+        }),
+        .contestEffect = CONTEST_EFFECT_DONT_EXCITE_AUDIENCE,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Bind,
+    },
+    [MOVE_FACE_OFF] = // Project Grounded: Eiscue (kopstoot met het ijsblok, x2 met Ice Face)
+    {
+        .name = COMPOUND_STRING("Face Off"),
+        .description = COMPOUND_STRING(
+            "An ice-block headbutt. x2\n"
+            "if Eiscue's face is intact."),
+        .effect = EFFECT_HIT,
+        .power = 85,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_IceHammer,
+    },
+    [MOVE_OLIVE_OIL] = // Project Grounded: Arboliva (heelt en zet Grassy Terrain)
+    {
+        .name = COMPOUND_STRING("Olive Oil"),
+        .description = COMPOUND_STRING(
+            "Heals half its HP and sets\n"
+            "Grassy Terrain. Pollen: 2/3."),
+        .effect = EFFECT_OLIVE_OIL,
+        .power = 0,
+        .type = TYPE_GRASS,
+        .accuracy = 0,
+        .pp = 10,
+        .target = MOVE_TARGET_USER,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .zMove = { .effect = Z_EFFECT_RESET_STATS },
+        .healingMove = TRUE,
+        .snatchAffected = TRUE,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_QUALITY_DEPENDS_ON_TIMING,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_GrassyTerrain,
+    },
+    [MOVE_TWIN_TAILS] = // Project Grounded: Ambipom (twee staarthanden, één graait een boost weg)
+    {
+        .name = COMPOUND_STRING("Twin Tails"),
+        .description = COMPOUND_STRING(
+            "Hits twice. Steals one of\n"
+            "the foe's stat boosts."),
+        .effect = EFFECT_HIT,
+        .power = 40,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .strikeCount = 2,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_TWIN_TAILS,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DoubleHit,
+    },
+    [MOVE_LIFE_BUOY] = // Project Grounded: Floatzel (zwemvest; snel in regen, redt zichzelf bij het wisselen)
+    {
+        .name = COMPOUND_STRING("Life Buoy"),
+        .description = COMPOUND_STRING(
+            "Goes first in rain. Heals\n"
+            "the user when it switches."),
+        .effect = EFFECT_LIFE_BUOY,
+        .power = 80,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_EARLIER,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_AquaJet,
+    },
+    [MOVE_KEYSTONE_CURSE] = // Project Grounded: Spiritomb (108 zielen in de sleutelsteen)
+    {
+        .name = COMPOUND_STRING("Keystone Curse"),
+        .description = COMPOUND_STRING(
+            "Stronger for each fainted\n"
+            "Pokémon in the user's team."),
+        .effect = EFFECT_KEYSTONE_CURSE,
+        .power = 60,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .contestEffect = CONTEST_EFFECT_STARTLE_MONS_SAME_TYPE_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_LastRespects,
+    },
+    [MOVE_FROSTY_TAP_DANCE] = // Project Grounded: Mr. Rime (tapdansen op het ijs; in sneeuw ook +1 Sp. Atk)
+    {
+        .name = COMPOUND_STRING("Frosty Tap Dance"),
+        .description = COMPOUND_STRING(
+            "A dance that ups Speed.\n"
+            "Also Sp. Atk in snow/hail."),
+        .effect = EFFECT_HIT,
+        .power = 70,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .danceMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_STAT_PLUS,
+            .speed = 1,
+            .self = TRUE,
+            .chance = 100,
+        },{
+            .moveEffect = MOVE_EFFECT_STAT_PLUS,
+            .spAtk = 1, // alleen in Snow/Hail (CanApplyAdditionalEffect)
+            .self = TRUE,
+            .chance = 100,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_TripleAxel,
+    },
+    [MOVE_ROLLING_THUNDER] = // Project Grounded: Hitmonlee (MMA-draaitrap, wordt later een TM)
+    {
+        .name = COMPOUND_STRING("Rolling Thunder"),
+        .description = COMPOUND_STRING(
+            "A spinning kick that breaks\n"
+            "through Protect and hits."),
+        .effect = EFFECT_ROLLING_THUNDER,
+        .power = 100,
+        .type = TYPE_FIGHTING,
+        .accuracy = 90,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .ignoresProtect = TRUE,
+        .contestEffect = CONTEST_EFFECT_HIGHLY_APPEALING,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_RollingKick,
+    },
+    [MOVE_KUSARIGAMA] = // Project Grounded: Accelgor (ninja met een ketting-sikkel)
+    {
+        .name = COMPOUND_STRING("Kusarigama"),
+        .description = COMPOUND_STRING(
+            "A chained sickle. Double\n"
+            "power if the foe switches."),
+        .effect = EFFECT_KUSARIGAMA,
+        .power = 80,
+        .type = TYPE_BUG,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .contestEffect = CONTEST_EFFECT_AFFECTED_BY_PREV_APPEAL,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Kusarigama,
+    },
+    [MOVE_INNARD_PUNCH] = // Project Grounded: Pyukumuku (de witte vuist uit zijn lijf)
+    {
+        .name = COMPOUND_STRING("Innard Punch"),
+        .description = COMPOUND_STRING(
+            "Moves last. If hit first,\n"
+            "deals 2x the damage taken."),
+        .effect = EFFECT_INNARD_PUNCH,
+        .power = 50,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -4,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .punchingMove = TRUE,
+        .meFirstBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_InnardPunch,
+    },
+    [MOVE_COMBINATION] = // Project Grounded: Hitmonchan (jab, jab, cross)
+    {
+        .name = COMPOUND_STRING("Combination"),
+        .description = COMPOUND_STRING(
+            "Jab, jab, cross. The cross\n"
+            "crits if all three land."),
+        .effect = EFFECT_TRIPLE_KICK, // kracht per klap: zie CalcMoveBasePower (20, 20, 60)
+        .power = 20,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .punchingMove = TRUE,
+        .strikeCount = 3,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Combination,
+    },
+    [MOVE_SPINNING_BACKFIST] = // Project Grounded: Hitmonchan (draaiende achterwaartse vuist)
+    {
+        .name = COMPOUND_STRING("Spinning Backfist"),
+        .description = COMPOUND_STRING(
+            "Ignores stat boosts and\n"
+            "hits through substitutes."),
+        .effect = EFFECT_HIT,
+        .power = 90,
+        .type = TYPE_FIGHTING,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .punchingMove = TRUE,
+        .ignoresTargetDefenseEvasionStages = TRUE,
+        .ignoresSubstitute = TRUE,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_MONS_WITH_GOOD_APPEALS,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SpinningBackfist,
+    },
+    [MOVE_ABDUCTION] = // Project Grounded: Beheeyem en Orbeetle (UFO-tractorstraal)
+    {
+        .name = COMPOUND_STRING("Abduction"),
+        .description = COMPOUND_STRING(
+            "Moves last; first in Trick\n"
+            "Room. Beams the foe away."),
+        .effect = EFFECT_HIT_SWITCH_TARGET,
+        .power = 80,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = -6, // in Trick Room 0: zie GetBattleMovePriority
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .copycatBanned = TRUE,
+        .assistBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_NEXT_APPEAL_LATER,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Abduction,
+    },
+    [MOVE_COLD_SHOULDER] = // Project Grounded: TM (de koude schouder, Ice)
+    {
+        .name = COMPOUND_STRING("Cold Shoulder"),
+        .description = COMPOUND_STRING(
+            "An icy snub. The foe can't\n"
+            "repeat its last move."),
+        .effect = EFFECT_COLD_SHOULDER,
+        .power = 75,
+        .type = TYPE_ICE,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_MAKE_FOLLOWING_MONS_NERVOUS,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_HAIL},
+        .battleAnimScript = gBattleAnimMove_IcePunch,
+    },
+    [MOVE_JUMP_SCARE] = // Project Grounded: TM (boe!)
+    {
+        .name = COMPOUND_STRING("Jump Scare"),
+        .description = COMPOUND_STRING(
+            "Boo! May flinch. Doubled\n"
+            "on the user's first turn."),
+        .effect = EFFECT_JUMP_SCARE,
+        .power = 80,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_FLINCH,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_FIRST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Astonish,
+    },
+    [MOVE_DIM_MAK] = // Project Grounded: TM (kungfu-drukpunt met een vinger)
+    {
+        .name = COMPOUND_STRING("Dim Mak"),
+        .description = COMPOUND_STRING(
+            "A one-finger strike. Skips\n"
+            "boosts; may paralyze."),
+        .effect = EFFECT_DIM_MAK,
+        .power = 75,
+        .type = TYPE_PSYCHIC,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .ignoresTargetDefenseEvasionStages = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_PARALYSIS,
+            .chance = 30,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_MON_WITH_JUDGES_ATTENTION,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_CALM_MIND},
+        .battleAnimScript = gBattleAnimMove_ForcePalm,
+    },
+    [MOVE_UPDRAFT] = // Project Grounded: TM (opwaartse wind)
+    {
+        .name = COMPOUND_STRING("Updraft"),
+        .description = COMPOUND_STRING(
+            "Rising winds strike. 1.5x\n"
+            "power with a Tailwind."),
+        .effect = EFFECT_UPDRAFT,
+        .power = 80,
+        .type = TYPE_FLYING,
+        .accuracy = 100,
+        .pp = 15,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .windMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_SAME_TYPE,
+        .contestCategory = CONTEST_CATEGORY_COOL,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Twister,
+    },
+    [MOVE_COUNTERFEIT_BALL] = // Project Grounded: TM (namaak-Poke Balls)
+    {
+        .name = COMPOUND_STRING("Counterfeit Ball"),
+        .description = COMPOUND_STRING(
+            "Throws 2-5 fake Poké Balls.\n"
+            "Rarely, a fake MASTER BALL."),
+        .effect = EFFECT_HIT,
+        .multiHit = TRUE,
+        .power = 25,
+        .type = TYPE_NORMAL,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ballisticMove = TRUE,
+        .contestEffect = CONTEST_EFFECT_REPETITION_NOT_BORING,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_CounterfeitBall,
+    },
+    [MOVE_HOT_TAKE] = // Project Grounded: Magby, Magmar en Magmortar (een omstreden mening)
+    {
+        .name = COMPOUND_STRING("Hot Take"),
+        .description = COMPOUND_STRING(
+            "Spits a fiery opinion. May\n"
+            "leave the foe confused."),
+        .effect = EFFECT_HIT,
+        .power = 85,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_SPECIAL,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION,
+            .chance = 20,
+        }),
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_SUNNY_DAY},
+        .battleAnimScript = gBattleAnimMove_HotTake,
+    },
+    [MOVE_BRAMBLE_LASH] = // Project Grounded: Bramblin en Brambleghast (doornranken)
+    {
+        .name = COMPOUND_STRING("Bramble Lash"),
+        .description = COMPOUND_STRING(
+            "Whips with thorns, leaving\n"
+            "brambles on the foe's side."),
+        .effect = EFFECT_BRAMBLE_LASH,
+        .power = 80,
+        .type = TYPE_GRASS,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_WORSEN_CONDITION_OF_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {COMBO_STARTER_GROWTH},
+        .battleAnimScript = gBattleAnimMove_PowerWhip,
+    },
+    [MOVE_SUPER_SPLASH] = // Project Grounded: TM100, Splash maar dan echt (vertraagde tsunami, zoals Future Sight)
+    {
+        .name = COMPOUND_STRING("Super Splash"),
+        .description = COMPOUND_STRING(
+            "Splash, EVOLVED.\n"
+            "A tsunami hits next turn."),
+        .effect = EFFECT_FUTURE_SIGHT, // 1 beurt vertraging i.p.v. 2: zie Cmd_setfutureattack
+        .power = 120,
+        .type = TYPE_WATER,
+        .accuracy = 100,
+        .pp = 5,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .ignoresProtect = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_BETTER_IF_LAST,
+        .contestCategory = CONTEST_CATEGORY_CUTE,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_SuperSplash,
+    },
+    [MOVE_DISCO_INFERNO] = // Project Grounded: TM99, dansende vuurtrappen onder de discobal
+    {
+        .name = COMPOUND_STRING("Disco Inferno"),
+        .description = COMPOUND_STRING(
+            "Fiery dance kicks. May\n"
+            "confuse or burn the foe."),
+        .effect = EFFECT_HIT,
+        .power = 85,
+        .type = TYPE_FIRE,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .danceMove = TRUE,
+        .additionalEffects = ADDITIONAL_EFFECTS({
+            .moveEffect = MOVE_EFFECT_CONFUSION, // discokoorts
+            .chance = 20,
+        },
+        {
+            .moveEffect = MOVE_EFFECT_BURN,
+            .chance = 10,
+        }),
+        .contestEffect = CONTEST_EFFECT_EXCITE_AUDIENCE_IN_ANY_CONTEST,
+        .contestCategory = CONTEST_CATEGORY_BEAUTY,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_DiscoInferno,
+    },
+    [MOVE_OVERKILL] = // Project Grounded: wat er na een KO overblijft, krijgt de volgende
+    {
+        .name = COMPOUND_STRING("Overkill"),
+        .description = COMPOUND_STRING(
+            "Excess KO damage hits\n"
+            "the next foe sent in."),
+        .effect = EFFECT_OVERKILL,
+        .power = 90,
+        .type = TYPE_DARK,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_PHYSICAL,
+        .makesContact = TRUE,
+        .contestEffect = CONTEST_EFFECT_BADLY_STARTLE_FRONT_MON,
+        .contestCategory = CONTEST_CATEGORY_TOUGH,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Overkill,
+    },
+    [MOVE_MARIONETTE] = // Project Grounded: Banette (de pop trekt nu zelf aan de touwtjes)
+    {
+        .name = COMPOUND_STRING("Marionette"),
+        .description = COMPOUND_STRING(
+            "Foe uses its chosen attack\n"
+            "on itself. Fails vs. status."),
+        .effect = EFFECT_MARIONETTE,
+        .power = 0,
+        .type = TYPE_GHOST,
+        .accuracy = 100,
+        .pp = 10,
+        .target = MOVE_TARGET_SELECTED,
+        .priority = 0,
+        .category = DAMAGE_CATEGORY_STATUS,
+        .ignoresSubstitute = TRUE,
+        .mirrorMoveBanned = TRUE,
+        .contestEffect = CONTEST_EFFECT_STARTLE_PREV_MONS,
+        .contestCategory = CONTEST_CATEGORY_SMART,
+        .contestComboStarterId = 0,
+        .contestComboMoves = {0},
+        .battleAnimScript = gBattleAnimMove_Marionette,
     },
 };

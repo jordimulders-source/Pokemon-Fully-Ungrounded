@@ -28,7 +28,7 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Later:** een wilde lijn vicuña → guanaco.
 
 ### Dark: coati-lijn
-- **Besloten:** olinguito → coati → krabbenetende wasbeer. Van **kleine criminaliteit naar een nobel thema** (Robin Hood). **Lange klauwen in elke vorm.** Het bandietenmasker van de wasbeer wordt het Robin Hood-masker.
+- **Besloten:** olinguito → coati → krabbenetende wasbeer. Van **kleine criminaliteit naar een nobel thema** (Robin Hood). **Lange klauwen in elke vorm.** **USP van de lijn (Jordi, 23 okt):** enorme klauwen zoals Sandslash (2 per poot); echte coati's hebben die niet, deze soort wel. Het bandietenmasker van de wasbeer wordt het Robin Hood-masker.
 - **Inspiratie:** olinguito (pas in 2013 als nieuwe soort beschreven, nevelwouden Colombia/Ecuador, teddybeergezicht); coati (steelt eten van toeristen bij Iguazú; groepen heten *bandas*; lange klauwen om te graven en te klimmen); krabbenetende wasbeer (*mapache cangrejero*, rivieren en mangroves, natuurlijk zwart masker). Alle drie wasbeerachtigen.
 - **Ideeën:** type eindvorm Dark/Fairy of Dark/Fighting; signature move "graaien en wegwezen" (schade + item stelen + wisselen); ability die een gestolen item aan de partner geeft.
 

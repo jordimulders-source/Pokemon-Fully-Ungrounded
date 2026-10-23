@@ -24,3 +24,6 @@ Jordi, letterlijk: "Nu voeg je weer een luie poot toe met een rechte lijn." en "
 ## Lessen
 - Een verre poot "vastmaken" = de omlijning tussen poot en lijf weghalen en de poot achter het nabije deel laten doorlopen; een zwarte lijn bovenaan maakt er een losse streep van.
 - Meet rechte lijnen per rand (run-lengte en gelijke stappen) in het script, niet op het oog.
+
+## Vervolgvraag: "dunne donkere poot rechts naast de nabije achterpoot"
+Niet uitgevoerd, omdat het doel geen poot is. Volgens het staartmasker van ronde 20 (`bouw_ronde21.tail_px`) is het verticale stokje x51–55, y38–49 plus de krul x44–50, y46–50 de **goedgekeurde J-staart** (ronde 17, bevroren). Bewijs: `achterpoot_analyse.png` (rechts: de staart in magenta). De echte verre achterpoot zit erachter en is maar 3–4 px zichtbaar (x43–46, y50–51), zoals Linoone's stompje. Die dikker maken kan alleen over de staartkrul heen, dus eerst Jordi vragen (bijv. als variant).

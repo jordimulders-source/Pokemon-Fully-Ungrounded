@@ -186,7 +186,10 @@ def build_pc_mart():
         ids = {map_id(m) for m in MAPS}
         d['warp_events'] = [w for w in d['warp_events'] if w['dest_map'] in ids]
         write('data/maps/%s/map.json' % dst, dump(d))
-        write('data/maps/%s/scripts.inc' % dst, renamed(git('data/maps/%s/scripts.inc' % src)))
+        scripts = renamed(git('data/maps/%s/scripts.inc' % src))
+        # stap 7: de Briney-administratie (Hoenn) is weg
+        scripts = scripts.replace('\tcall Common_EventScript_UpdateBrineyLocation\n', '')
+        write('data/maps/%s/scripts.inc' % dst, scripts)
 
 
 # ---------------------------------------------------------------- stock-huizen
@@ -219,7 +222,16 @@ def build_stock():
             warps = [warp(x, y, dest, wid) for x, y in EXITS[layout]]
             if name == 'Stock_TwoStory_1F':
                 warps.append(warp(8, 2, 'MAP_STOCK_TWO_STORY_2F', 0))
-        d = map_json(name, layout, 'MUS_LITTLEROOT', 'MAP_TYPE_INDOOR', [], warps, [])
+        objs, bgs = [], []
+        if name == 'Stock_TwoStory_1F':
+            # stap 7: Mom (players_house.inc: standaardtekst, PokéNav-registratie, healen)
+            objs = [obj('OBJ_EVENT_GFX_MOM', 2, 6, 'PlayersHouse_1F_EventScript_Mom', move='MOVEMENT_TYPE_FACE_RIGHT',
+                        local_id='LOCALID_STOCK_TWO_STORY_1F_MOM')]
+        if name == 'Stock_TwoStory_2F':
+            # stap 7: PC op de slaapkamer en de wandklok (players_house.inc)
+            bgs = [sign(0, 1, 'PlayersHouse_2F_EventScript_PC', 'BG_EVENT_PLAYER_FACING_NORTH'),
+                   sign(5, 1, 'PlayersHouse_2F_EventScript_WallClock')]
+        d = map_json(name, layout, 'MUS_LITTLEROOT', 'MAP_TYPE_INDOOR', objs, warps, bgs)
         write('data/maps/%s/map.json' % name, dump(d))
         write('data/maps/%s/scripts.inc' % name, '%s_MapScripts::\n\t.byte 0\n' % name)
 

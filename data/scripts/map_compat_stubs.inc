@@ -1,5 +1,5 @@
 @ Gegenereerd door tools/grounded/maptools/map_compat.py, niet met de hand bewerken.
-@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (603).
+@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (595).
 @ Opruimen per systeem (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen.
 
 BattleFacility_TrainerBattle_PlaceholderText::
@@ -1766,31 +1766,7 @@ DewfordTown_Hall_EventScript_Painting::
 DewfordTown_Text_FishJudgeRules::
 	.string "$"
 
-EventScript_RegisterProfBirch::
-	end
-
-Kecleon_Text_SomethingUnseeable::
-	.string "$"
-
-Kecleon_Text_UseDevonScopeMonAttacked::
-	.string "$"
-
-Kecleon_Text_WantToUseDevonScope::
-	.string "$"
-
 LilycoveCity_ContestLobby_EventScript_ContestReceptionist::
-	end
-
-LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC::
-	end
-
-LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC::
-	end
-
-MauvilleCity_GameCorner_EventScript_NoCoinCase::
-	end
-
-MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle::
 	end
 
 SootopolisCity_Gym_1F_Text_JuanDefeat::

@@ -5,7 +5,7 @@
 // Fully Ungrounded: verdwenen Hoenn-kaarten die de code nog noemt. Elke kaart heeft een eigen waarde in een
 // groep die niet bestaat (0x40 + oude groep), dus een test erop is nooit waar. Opruimen per systeem
 // (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen tot hij leeg is en weg kan.
-// 65 kaarten, 16 layouts, 1 heal locations, 36 local ids.
+// 64 kaarten, 16 layouts, 0 heal locations, 35 local ids.
 
 // kaarten
 enum {
@@ -42,7 +42,6 @@ enum {
     MAP_BATTLE_FRONTIER_OUTSIDE_WEST = (4 | (0x5A << 8)),
     MAP_BATTLE_PYRAMID_SQUARE01 = (44 | (0x59 << 8)),
     MAP_RECORD_CORNER = (26 | (0x59 << 8)),
-    MAP_ROUTE121_SAFARI_ZONE_ENTRANCE = (0 | (0x57 << 8)),
     MAP_SECRET_BASE_BLUE_CAVE1 = (2 | (0x59 << 8)),
     MAP_SECRET_BASE_BLUE_CAVE2 = (8 | (0x59 << 8)),
     MAP_SECRET_BASE_BLUE_CAVE3 = (14 | (0x59 << 8)),
@@ -96,11 +95,6 @@ enum {
     LAYOUT_TRAINER_HILL_ROOF = 0x41C9,
 };
 
-// heal locations
-enum {
-    HEAL_LOCATION_LAVARIDGE_TOWN = 0x90,
-};
-
 // local ids
 enum {
     LOCALID_APPRENTICE = 0xF0,
@@ -125,7 +119,6 @@ enum {
     LOCALID_CONTEST_LOBBY_BLENDER_3_PARTICIPANT_2 = 0xF0,
     LOCALID_CONTEST_MC = 0xF0,
     LOCALID_CONTEST_POKEBALL = 0xF0,
-    LOCALID_DAYCARE_LADY = 0xF0,
     LOCALID_LILYCOVE_LADY = 0xF0,
     LOCALID_LILYCOVE_LADYS_MON = 0xF0,
     LOCALID_PIKE_ROOM_NPC_1 = 0xF0,

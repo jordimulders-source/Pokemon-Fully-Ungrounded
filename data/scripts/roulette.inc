@@ -65,3 +65,13 @@ Roulette_Text_YouDontHaveACoinCase::
 Roulette_Text_CoinCaseIsFull::
 	.string "Your COIN CASE is full!\n"
 	.string "Coins can be exchanged for prizes.$"
+
+@ Fully Ungrounded: stond in de Game Corner van Mauville
+MauvilleCity_GameCorner_EventScript_NoCoinCase::
+	msgbox MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase, MSGBOX_DEFAULT
+	releaseall
+	end
+
+MauvilleCity_GameCorner_Text_CantPlayWithNoCoinCase:
+	.string "You can't play without a COIN CASE.\p"
+	.string "For your own good, honestly.$"

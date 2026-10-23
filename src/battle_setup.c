@@ -588,10 +588,6 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
 
     tileBehavior = MapGridGetMetatileBehaviorAt(x, y);
 
-    // Project Grounded: de meteoriet in de ruimte (Deoxys-event)
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_METEOR_SPACE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_METEOR_SPACE))
-        return BATTLE_ENVIRONMENT_SPACE;
-
     if (MetatileBehavior_IsTallGrass(tileBehavior))
         return BATTLE_ENVIRONMENT_GRASS;
     if (MetatileBehavior_IsLongGrass(tileBehavior))
@@ -636,8 +632,6 @@ enum BattleEnvironments BattleSetup_GetEnvironmentId(void)
         if (MetatileBehavior_IsBridgeOverWater(tileBehavior) == TRUE)
             return BATTLE_ENVIRONMENT_WATER;
     }
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_ROUTE113) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_ROUTE113))
-        return BATTLE_ENVIRONMENT_SAND;
     if (GetSavedWeather() == WEATHER_SANDSTORM)
         return BATTLE_ENVIRONMENT_SAND;
 

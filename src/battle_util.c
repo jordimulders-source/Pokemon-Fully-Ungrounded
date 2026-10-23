@@ -59,12 +59,9 @@
 #include "constants/maps.h"
 
 // Project Grounded: de stoom in de Lavaridge-gym is overworld-mist, maar hoort geen Misty Terrain te geven.
+// Fully Ungrounded: de Lavaridge-gym is weg; kaarten waar mist geen Misty Terrain geeft hier toevoegen.
 bool32 OverworldFogMakesMistyTerrain(void)
 {
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LAVARIDGE_TOWN_GYM_1F)
-     && (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LAVARIDGE_TOWN_GYM_1F)
-      || gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LAVARIDGE_TOWN_GYM_B1F)))
-        return FALSE;
     return TRUE;
 }
 

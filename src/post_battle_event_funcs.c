@@ -37,10 +37,8 @@ int GameClear(void)
 
     SetContinueGameWarpStatus();
 
-    if (gSaveBlock2Ptr->playerGender == MALE)
-        SetContinueGameWarpToHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F);
-    else
-        SetContinueGameWarpToHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F);
+    // Fully Ungrounded: na de Hall of Fame verder in het Pokémon Center van de startstad (was het spelershuis)
+    SetContinueGameWarpToHealLocation(HEAL_LOCATION_START_TOWN);
 
     ribbonGet = FALSE;
 

@@ -122,7 +122,6 @@ static void UNUSED PlayerWalkSlow(u8 direction);
 static void PlayerRunSlow(u8 direction);
 static void PlayerRun(u8);
 static void PlayerNotOnBikeCollide(u8);
-static void PlayerNotOnBikeCollideWithFarawayIslandMew(u8);
 
 static void PlayCollisionSoundIfNotFacingWarp(u8);
 
@@ -793,11 +792,6 @@ static void PlayerNotOnBikeMoving(u8 direction, u16 heldKeys)
             PlayerJumpLedge(direction);
             return;
         }
-        else if (collision == COLLISION_OBJECT_EVENT && IsPlayerCollidingWithFarawayIslandMew(direction))
-        {
-            PlayerNotOnBikeCollideWithFarawayIslandMew(direction);
-            return;
-        }
         else if (collision == COLLISION_STAIR_WARP)
         {
             PlayerFaceDirection(direction);
@@ -1004,40 +998,6 @@ static void CheckAcroBikeCollision(s16 x, s16 y, u8 metatileBehavior, u8 *collis
             return;
         }
     }
-}
-
-bool8 IsPlayerCollidingWithFarawayIslandMew(u8 direction)
-{
-    u8 mewObjectId;
-    struct ObjectEvent *object;
-    s16 playerX;
-    s16 playerY;
-    s16 mewPrevX;
-
-    object = &gObjectEvents[gPlayerAvatar.objectEventId];
-    playerX = object->currentCoords.x;
-    playerY = object->currentCoords.y;
-
-    MoveCoords(direction, &playerX, &playerY);
-    mewObjectId = GetObjectEventIdByLocalIdAndMap(LOCALID_FARAWAY_ISLAND_MEW, MAP_NUM(MAP_FARAWAY_ISLAND_INTERIOR), MAP_GROUP(MAP_FARAWAY_ISLAND_INTERIOR));
-    if (mewObjectId == OBJECT_EVENTS_COUNT)
-        return FALSE;
-
-    object = &gObjectEvents[mewObjectId];
-    mewPrevX = object->previousCoords.x;
-
-    if (mewPrevX == playerX)
-    {
-        if (object->previousCoords.y != playerY
-            || object->currentCoords.x != mewPrevX
-            || object->currentCoords.y != object->previousCoords.y)
-        {
-            if (object->previousCoords.x == playerX &&
-                object->previousCoords.y == playerY)
-                return TRUE;
-        }
-    }
-    return FALSE;
 }
 
 void SetPlayerAvatarTransitionFlags(u16 transitionFlags)
@@ -1258,19 +1218,9 @@ void PlayerOnBikeCollide(u8 direction)
     }
 }
 
-void PlayerOnBikeCollideWithFarawayIslandMew(u8 direction)
-{
-    PlayerSetAnimId(GetWalkInPlaceNormalMovementAction(direction), COPY_MOVE_FACE);
-}
-
 static void PlayerNotOnBikeCollide(u8 direction)
 {
     PlayCollisionSoundIfNotFacingWarp(direction);
-    PlayerSetAnimId(GetWalkInPlaceSlowMovementAction(direction), COPY_MOVE_FACE);
-}
-
-static void PlayerNotOnBikeCollideWithFarawayIslandMew(u8 direction)
-{
     PlayerSetAnimId(GetWalkInPlaceSlowMovementAction(direction), COPY_MOVE_FACE);
 }
 
@@ -1711,8 +1661,6 @@ static void HideShowWarpArrow(struct ObjectEvent *objectEvent)
 
 /* Strength */
 
-extern const u8 ScorchedSlab_SunHall_EventScript_StoneInLight[];
-
 #define tState        data[0]
 #define tBoulderObjId data[1]
 #define tDirection    data[2]
@@ -1780,11 +1728,6 @@ static bool8 PushBoulder_End(struct Task *task, struct ObjectEvent *player, stru
         // Project Grounded: het blok onthoudt zijn plek tot je de kaart verlaat. Zonder dit springt een blok dat
         // buiten beeld raakt (en opnieuw wordt geladen) terug naar zijn beginplek (grote kaarten zoals de zonnezaal).
         OverrideTemplateCoordsForObjectEvent(boulder);
-        // Project Grounded: Scorched Slab-zonnezaal; een zonnesteen die in een lichtschacht belandt, start een script.
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SCORCHED_SLAB_SUN_HALL)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SCORCHED_SLAB_SUN_HALL)
-         && MapGridGetMetatileIdAt(boulder->currentCoords.x, boulder->currentCoords.y) == METATILE_ScorchedSlab_SunLight)
-            ScriptContext_SetupScript(ScorchedSlab_SunHall_EventScript_StoneInLight);
         DestroyTask(FindTaskIdByFunc(Task_PushBoulder));
     }
     return FALSE;

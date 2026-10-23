@@ -1,5 +1,5 @@
 @ Gegenereerd door tools/grounded/maptools/map_compat.py, niet met de hand bewerken.
-@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (638).
+@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (636).
 @ Opruimen per systeem (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen.
 
 BattleFacility_TrainerBattle_PlaceholderText::
@@ -1370,9 +1370,6 @@ BattleFrontier_Lounge7_Text_ThunderPunchDesc::
 BattleFrontier_Lounge7_Text_ThunderWaveDesc::
 	.string "$"
 
-BattleFrontier_OutsideEast_EventScript_WaterSudowoodo::
-	end
-
 BattlePyramid_FindItemBall::
 	end
 
@@ -1869,9 +1866,6 @@ PlayersHouse_1F_Text_StillUnknownPokemon::
 	.string "$"
 
 PlayersHouse_1F_Text_TakeCareHoney::
-	.string "$"
-
-PlayersHouse_1F_Text_TheresAMovieOnTV::
 	.string "$"
 
 PlayersHouse_1F_Text_TicketFromBrineyCameForYou::

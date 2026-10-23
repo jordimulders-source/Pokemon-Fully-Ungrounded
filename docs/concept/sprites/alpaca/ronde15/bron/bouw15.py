@@ -62,6 +62,7 @@ KEURING = [
 # gaat weg; de rug loopt via K (40-42,29) door in een kort wollig plukje dat net onder de rugkromming
 # aanzet (y30) en tegen de kont omlaag hangt, iets naar achteren, punt op (44,35). Bovenrand V (lichtkant),
 # onder/rechts K, aan de kont vast via de omlijning op x43. Na KEURING toepassen (overschrijft (43-45,30)).
+# STAART: lager staartje, op verzoek van Jordi weer uitgezet ("staart van vóór vind ik leuker, dan maar minder immersie")
 STAART = [
     (25, 44, '__'),
     (26, 43, '____'),
@@ -151,7 +152,7 @@ def bouw(hints, uit):
     return im, a, b
 
 
-im, a, b = bouw(VLECHT + AGUAYO + STREEP + POOT + KEURING + STAART, 'ronde15')
+im, a, b = bouw(VLECHT + AGUAYO + STREEP + POOT + KEURING, 'ronde15')
 im.save(os.path.join(D, 'anim_front.png'), transparency=0)
 with open(os.path.join(D, 'normal.pal'), 'w', newline='\r\n') as fh:
     fh.write('JASC-PAL\n0100\n16\n')

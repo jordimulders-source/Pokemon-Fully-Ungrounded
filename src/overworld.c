@@ -22,7 +22,6 @@
 #include "field_message_box.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
-#include "field_special_scene.h"
 #include "field_specials.h"
 #include "field_tasks.h"
 #include "field_weather.h"

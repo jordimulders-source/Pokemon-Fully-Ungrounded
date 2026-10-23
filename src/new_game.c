@@ -53,7 +53,7 @@
 extern const u8 EventScript_ResetAllMapFlags[];
 
 static void ClearFrontierRecord(void);
-static void WarpToTruck(void);
+static void WarpToStartTown(void);
 static void ResetMiniGamesRecords(void);
 static void ResetItemFlags(void);
 static void ResetDexNav(void);
@@ -125,7 +125,7 @@ static void ClearFrontierRecord(void)
     gSaveBlock2Ptr->frontier.opponentNames[1][0] = EOS;
 }
 
-static void WarpToTruck(void)
+static void WarpToStartTown(void)
 {
     // Fully Ungrounded: start midden in StartTown (plaatshouder voor de echte startstad)
     SetWarpDestination(MAP_GROUP(MAP_START_TOWN), MAP_NUM(MAP_START_TOWN), WARP_ID_NONE, 9, 12);
@@ -204,7 +204,7 @@ void NewGameInitData(void)
     EnableNationalPokedex(); // Project Grounded: National Dex vanaf het begin
     FlagSet(FLAG_REGI_DOORS_OPENED); // Project Grounded: Regi-grotten open; de puzzel zit nu in de stippen (geen braille/Wailord+Relicanth)
 
-    WarpToTruck();
+    WarpToStartTown();
 
     ResetMiniGamesRecords();
     InitUnionRoomChatRegisteredTexts();

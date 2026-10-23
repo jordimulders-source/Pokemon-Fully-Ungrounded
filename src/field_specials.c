@@ -62,6 +62,7 @@
 #include "constants/field_specials.h"
 #include "constants/items.h"
 #include "constants/heal_locations.h"
+#include "constants/layouts.h"
 #include "constants/mystery_gift.h"
 #include "constants/slot_machine.h"
 #include "constants/songs.h"
@@ -91,8 +92,6 @@ static EWRAM_DATA u32 sBikeCyclingTimer = 0;
 static EWRAM_DATA u8 sSlidingDoorNextFrameCounter = 0;
 static EWRAM_DATA u8 sSlidingDoorFrame = 0;
 static EWRAM_DATA u8 sTutorMoveAndElevatorWindowId = 0;
-static EWRAM_DATA u16 sLilycoveDeptStore_NeverRead = 0;
-static EWRAM_DATA u16 sLilycoveDeptStore_DefaultFloorChoice = 0;
 static EWRAM_DATA struct ListMenuItem *sScrollableMultichoice_ListMenuItem = NULL;
 
 static EWRAM_DATA u16 sFrontierExchangeCorner_NeverRead = 0;
@@ -139,7 +138,6 @@ static void Task_ScrollableMultichoice_WaitReturnToList(u8);
 static void Task_ScrollableMultichoice_ReturnToList(u8);
 static void ShowFrontierExchangeCornerItemIcon(u16);
 static void Task_LinkRetireStatusWithBattleTowerPartner(u8);
-static void Task_LoopWingFlapSE(u8);
 static void Task_CloseBattlePikeCurtain(u8);
 static u8 DidPlayerGetFirstFans(void);
 static void SetInitialFansOfPlayer(void);
@@ -282,221 +280,6 @@ u16 GetRecordedCyclingRoadResults(void)
     return TRUE;
 }
 
-void UpdateCyclingRoadState(void)
-{
-    if (gLastUsedWarp.mapNum == MAP_NUM(MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE) && gLastUsedWarp.mapGroup == MAP_GROUP(MAP_ROUTE110_SEASIDE_CYCLING_ROAD_NORTH_ENTRANCE))
-        return;
-
-    if (VarGet(VAR_CYCLING_CHALLENGE_STATE) == 2 || VarGet(VAR_CYCLING_CHALLENGE_STATE) == 3)
-    {
-        VarSet(VAR_CYCLING_CHALLENGE_STATE, 0);
-        Overworld_SetSavedMusic(MUS_DUMMY);
-    }
-}
-
-void SetSSTidalFlag(void)
-{
-    FlagSet(FLAG_SYS_CRUISE_MODE);
-    *GetVarPointer(VAR_CRUISE_STEP_COUNT) = 0;
-}
-
-void ResetSSTidalFlag(void)
-{
-    FlagClear(FLAG_SYS_CRUISE_MODE);
-}
-
-// Returns TRUE if the Cruise is over
-bool32 CountSSTidalStep(u16 delta)
-{
-    if (!FlagGet(FLAG_SYS_CRUISE_MODE) || (*GetVarPointer(VAR_CRUISE_STEP_COUNT) += delta) < SS_TIDAL_MAX_STEPS)
-        return FALSE;
-
-    return TRUE;
-}
-
-enum SSTidalLocation GetSSTidalLocation(s8 *mapGroup, s8 *mapNum, s16 *x, s16 *y)
-{
-    u16 *varCruiseStepCount = GetVarPointer(VAR_CRUISE_STEP_COUNT);
-
-    switch ((enum SSTidalState)(*GetVarPointer(VAR_SS_TIDAL_STATE)))
-    {
-    case SS_TIDAL_BOARD_SLATEPORT:
-    case SS_TIDAL_LAND_SLATEPORT:
-        return SS_TIDAL_LOCATION_SLATEPORT;
-    case SS_TIDAL_HALFWAY_LILYCOVE:
-    case SS_TIDAL_EXIT_CURRENTS_RIGHT:
-        return SS_TIDAL_LOCATION_ROUTE131;
-    case SS_TIDAL_LAND_LILYCOVE:
-    case SS_TIDAL_BOARD_LILYCOVE:
-        return SS_TIDAL_LOCATION_LILYCOVE;
-    case SS_TIDAL_DEPART_LILYCOVE:
-    case SS_TIDAL_EXIT_CURRENTS_LEFT:
-        return SS_TIDAL_LOCATION_ROUTE124;
-    case SS_TIDAL_DEPART_SLATEPORT:
-        if (*varCruiseStepCount < 60)
-        {
-            *mapNum = MAP_NUM(MAP_ROUTE134);
-            *x = *varCruiseStepCount + 19;
-        }
-        else if (*varCruiseStepCount < 140)
-        {
-            *mapNum = MAP_NUM(MAP_ROUTE133);
-            *x = *varCruiseStepCount - 60;
-        }
-        else
-        {
-            *mapNum = MAP_NUM(MAP_ROUTE132);
-            *x = *varCruiseStepCount - 140;
-        }
-        break;
-    case SS_TIDAL_HALFWAY_SLATEPORT:
-        if (*varCruiseStepCount < 66)
-        {
-            *mapNum = MAP_NUM(MAP_ROUTE132);
-            *x = 65 - *varCruiseStepCount;
-        }
-        else if (*varCruiseStepCount < 146)
-        {
-            *mapNum = MAP_NUM(MAP_ROUTE133);
-            *x = 145 - *varCruiseStepCount;
-        }
-        else
-        {
-            *mapNum = MAP_NUM(MAP_ROUTE134);
-            *x = 224 - *varCruiseStepCount;
-        }
-        break;
-    }
-    *mapGroup = MAP_GROUP(MAP_ROUTE132);
-    *y = 20;
-    return SS_TIDAL_LOCATION_CURRENTS;
-}
-
-bool32 ShouldDoWallyCall(void)
-{
-    if (FlagGet(FLAG_ENABLE_FIRST_WALLY_POKENAV_CALL))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_WALLY_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
-bool32 ShouldDoScottFortreeCall(void)
-{
-    if (FlagGet(FLAG_SCOTT_CALL_FORTREE_GYM))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_SCOTT_FORTREE_CALL_STEP_COUNTER)) < 10)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
-bool32 ShouldDoScottBattleFrontierCall(void)
-{
-    if (FlagGet(FLAG_SCOTT_CALL_BATTLE_FRONTIER))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_SCOTT_BF_CALL_STEP_COUNTER)) < 10)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
-bool32 ShouldDoRoxanneCall(void)
-{
-    if (FlagGet(FLAG_ENABLE_ROXANNE_FIRST_CALL))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_ROXANNE_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
-bool32 ShouldDoRivalRayquazaCall(void)
-{
-    if (FlagGet(FLAG_DEFEATED_MAGMA_SPACE_CENTER))
-    {
-        switch (gMapHeader.mapType)
-        {
-        case MAP_TYPE_TOWN:
-        case MAP_TYPE_CITY:
-        case MAP_TYPE_ROUTE:
-        case MAP_TYPE_OCEAN_ROUTE:
-            if (++(*GetVarPointer(VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER)) < 250)
-                return FALSE;
-            break;
-        default:
-            return FALSE;
-        }
-    }
-    else
-    {
-        return FALSE;
-    }
-
-    return TRUE;
-}
-
 u8 GetLinkPartnerNames(void)
 {
     u8 i;
@@ -630,179 +413,6 @@ static void LoadLinkPartnerObjectEventSpritePalette(u16 graphicsId, u8 localEven
     }
 }
 
-static const struct UCoords8 sMauvilleGymSwitchCoords[] =
-{
-    { 0 + MAP_OFFSET, 15 + MAP_OFFSET},
-    { 4 + MAP_OFFSET, 12 + MAP_OFFSET},
-    { 3 + MAP_OFFSET,  9 + MAP_OFFSET},
-    { 8 + MAP_OFFSET,  9 + MAP_OFFSET}
-};
-
-// Presses the stepped-on switch and raises the rest
-void MauvilleGymPressSwitch(void)
-{
-    u8 i;
-    for (i = 0; i < ARRAY_COUNT(sMauvilleGymSwitchCoords); i++)
-    {
-        if (i == gSpecialVar_0x8004)
-            MapGridSetMetatileIdAt(sMauvilleGymSwitchCoords[i].x, sMauvilleGymSwitchCoords[i].y, METATILE_MauvilleGym_PressedSwitch);
-        else
-            MapGridSetMetatileIdAt(sMauvilleGymSwitchCoords[i].x, sMauvilleGymSwitchCoords[i].y, METATILE_MauvilleGym_RaisedSwitch);
-    }
-}
-
-// Sets the gym barriers back to the default state; their alt state is handled by MauvilleCity_Gym_EventScript_SetAltBarriers
-void MauvilleGymSetDefaultBarriers(void)
-{
-    int x, y;
-    // All switches/barriers are within these coord ranges
-    for (y = 5 + MAP_OFFSET; y < 17 + MAP_OFFSET; y++)
-    {
-        for (x = 0 + MAP_OFFSET; x < 9 + MAP_OFFSET; x++)
-        {
-            switch (MapGridGetMetatileIdAt(x, y))
-            {
-            case METATILE_MauvilleGym_GreenBeamH1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH1_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH2_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH3_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH4_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH1_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH1_On);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH2_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH2_On);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH3_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH4_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_RedBeamH1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH1_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH2_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH3_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH4_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH1_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH1_On);
-                break;
-            case METATILE_MauvilleGym_RedBeamH2_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH2_On);
-                break;
-            case METATILE_MauvilleGym_RedBeamH3_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_RedBeamH4_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_GreenBeamV1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_GreenBeamV2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
-                break;
-            case METATILE_MauvilleGym_RedBeamV1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_Off | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_RedBeamV2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
-                break;
-            case METATILE_MauvilleGym_PoleBottom_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamV1_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_FloorTile:
-                if (MapGridGetMetatileIdAt(x, y - 1) == METATILE_MauvilleGym_GreenBeamV1_On)
-                    MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamV2_On | MAPGRID_IMPASSABLE);
-                else
-                    MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamV2_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_PoleBottom_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamV1_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_PoleTop_Off:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_PoleTop_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_Off);
-                break;
-            }
-        }
-    }
-}
-
-// Presses all switches and deactivates all beams.
-void MauvilleGymDeactivatePuzzle(void)
-{
-    int i, x, y;
-    const struct UCoords8 *switchCoords = sMauvilleGymSwitchCoords;
-    for (i = ARRAY_COUNT(sMauvilleGymSwitchCoords) - 1; i >= 0; i--)
-    {
-        MapGridSetMetatileIdAt(switchCoords->x, switchCoords->y, METATILE_MauvilleGym_PressedSwitch);
-        switchCoords++;
-    }
-    for (y = 5 + MAP_OFFSET; y < 17 + MAP_OFFSET; y++)
-    {
-        for (x = 0 + MAP_OFFSET; x < 9 + MAP_OFFSET; x++)
-        {
-            switch (MapGridGetMetatileIdAt(x, y))
-            {
-            case METATILE_MauvilleGym_GreenBeamH1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH1_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH2_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH3_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH3_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamH4_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_GreenBeamH4_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH1_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH2_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH3_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH3_Off);
-                break;
-            case METATILE_MauvilleGym_RedBeamH4_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_RedBeamH4_Off);
-                break;
-            case METATILE_MauvilleGym_GreenBeamV1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_On | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_RedBeamV1_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleBottom_Off | MAPGRID_IMPASSABLE);
-                break;
-            case METATILE_MauvilleGym_GreenBeamV2_On:
-            case METATILE_MauvilleGym_RedBeamV2_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_FloorTile);
-                break;
-            case METATILE_MauvilleGym_PoleTop_On:
-                MapGridSetMetatileIdAt(x, y, METATILE_MauvilleGym_PoleTop_Off);
-                break;
-            }
-        }
-    }
-}
-
 static const bool8 sSlidingDoorNextFrameDelay[] = {0, 1, 1, 1, 1};
 
 static const u16 sPetalburgGymSlidingDoorMetatiles[] = {
@@ -812,14 +422,6 @@ static const u16 sPetalburgGymSlidingDoorMetatiles[] = {
     METATILE_PetalburgGym_SlidingDoor_Frame3,
     METATILE_PetalburgGym_SlidingDoor_Frame4,
 };
-
-void PetalburgGymSlideOpenRoomDoors(void)
-{
-    sSlidingDoorNextFrameCounter = 0;
-    sSlidingDoorFrame = 0;
-    PlaySE(SE_UNLOCK);
-    CreateTask(Task_PetalburgGymSlideOpenRoomDoors, 8);
-}
 
 static void Task_PetalburgGymSlideOpenRoomDoors(u8 taskId)
 {
@@ -904,11 +506,6 @@ static void PetalburgGymSetDoorMetatiles(u8 roomNumber, u16 metatileId)
     DrawWholeMapView();
 }
 
-void PetalburgGymUnlockRoomDoors(void)
-{
-    PetalburgGymSetDoorMetatiles(gSpecialVar_0x8004, sPetalburgGymSlidingDoorMetatiles[4]);
-}
-
 void ShowFieldMessageStringVar4(void)
 {
     ShowFieldMessage(gStringVar4);
@@ -944,14 +541,6 @@ void GetRivalSonDaughterString(void)
 u8 GetBattleOutcome(void)
 {
     return gBattleOutcome;
-}
-
-void CableCarWarp(void)
-{
-    if (gSpecialVar_0x8004 != 0)
-        SetWarpDestination(MAP_GROUP(MAP_ROUTE112_CABLE_CAR_STATION), MAP_NUM(MAP_ROUTE112_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
-    else
-        SetWarpDestination(MAP_GROUP(MAP_MT_CHIMNEY_CABLE_CAR_STATION), MAP_NUM(MAP_MT_CHIMNEY_CABLE_CAR_STATION), WARP_ID_NONE, 6, 4);
 }
 
 void SetHiddenItemFlag(void)
@@ -1146,19 +735,6 @@ static void PCTurnOffEffect(void)
     DrawWholeMapView();
 }
 
-void DoLotteryCornerComputerEffect(void)
-{
-    if (FuncIsActiveTask(Task_LotteryCornerComputerEffect) != TRUE)
-    {
-        u8 taskId = CreateTask(Task_LotteryCornerComputerEffect, 8);
-        gTasks[taskId].tPaused = FALSE;
-        gTasks[taskId].tTaskId = taskId;
-        gTasks[taskId].tFlickerCount = 0;
-        gTasks[taskId].tTimer = 0;
-        gTasks[taskId].tIsScreenOn = FALSE;
-    }
-}
-
 static void Task_LotteryCornerComputerEffect(u8 taskId)
 {
     struct Task *task = &gTasks[taskId];
@@ -1194,34 +770,11 @@ static void LotteryCornerComputerEffect(struct Task *task)
     task->tTimer++;
 }
 
-void EndLotteryCornerComputerEffect(void)
-{
-    MapGridSetMetatileIdAt(11 + MAP_OFFSET, 1 + MAP_OFFSET, METATILE_Shop_Laptop1_Normal | MAPGRID_IMPASSABLE);
-    MapGridSetMetatileIdAt(11 + MAP_OFFSET, 2 + MAP_OFFSET, METATILE_Shop_Laptop2_Normal | MAPGRID_IMPASSABLE);
-    DrawWholeMapView();
-}
-
 #undef tPaused
 #undef tTaskId
 #undef tFlickerCount
 #undef tTimer
 #undef tIsScreenOn
-
-void SetTrickHouseNuggetFlag(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
-    *specVar = flag;
-    FlagSet(flag);
-}
-
-void ResetTrickHouseNuggetFlag(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_TRICK_HOUSE_NUGGET;
-    *specVar = flag;
-    FlagClear(flag);
-}
 
 bool8 CheckLeadMonCool(void)
 {
@@ -1361,50 +914,6 @@ u16 GetSlotMachineId(void)
     return sSlotMachineIds[rnd % SLOT_MACHINE_COUNT];
 }
 
-bool8 FoundAbandonedShipRoom1Key(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_1_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
-    return TRUE;
-}
-
-bool8 FoundAbandonedShipRoom2Key(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_2_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
-    return TRUE;
-}
-
-bool8 FoundAbandonedShipRoom4Key(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_4_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
-    return TRUE;
-}
-
-bool8 FoundAbandonedShipRoom6Key(void)
-{
-    u16 *specVar = &gSpecialVar_0x8004;
-    u16 flag = FLAG_HIDDEN_ITEM_ABANDONED_SHIP_RM_6_KEY;
-    *specVar = flag;
-    if (!FlagGet(flag))
-        return FALSE;
-
-    return TRUE;
-}
-
 bool8 LeadMonHasEffortRibbon(void)
 {
     return GetMonData(&gPlayerParty[GetLeadMonIndex()], MON_DATA_EFFORT_RIBBON, NULL);
@@ -1431,43 +940,9 @@ bool8 Special_AreLeadMonEVsMaxedOut(void)
     return FALSE;
 }
 
-u8 TryUpdateRusturfTunnelState(void)
-{
-    if (!FlagGet(FLAG_RUSTURF_TUNNEL_OPENED)
-        && gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_RUSTURF_TUNNEL)
-        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_RUSTURF_TUNNEL))
-    {
-        if (FlagGet(FLAG_HIDE_RUSTURF_TUNNEL_ROCK_1))
-        {
-            VarSet(VAR_RUSTURF_TUNNEL_STATE, 4);
-            return TRUE;
-        }
-        else if (FlagGet(FLAG_HIDE_RUSTURF_TUNNEL_ROCK_2))
-        {
-            VarSet(VAR_RUSTURF_TUNNEL_STATE, 5);
-            return TRUE;
-        }
-    }
-    return FALSE;
-}
-
 void SetShoalItemFlag(u16 unused)
 {
     FlagSet(FLAG_SYS_SHOAL_ITEM);
-}
-
-void LoadWallyZigzagoon(void)
-{
-    u16 monData;
-    CreateMon(&gPlayerParty[0], SPECIES_ZIGZAGOON, 7, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
-    monData = 0; // Project Grounded: slot 0 (Pickup); slot 1 is in deze hack Hustle en sloeg Ralts K.O.
-    SetMonData(&gPlayerParty[0], MON_DATA_ABILITY_NUM, &monData);
-    monData = MOVE_TACKLE;
-    SetMonData(&gPlayerParty[0], MON_DATA_MOVE1, &monData);
-    monData = MOVE_NONE;
-    SetMonData(&gPlayerParty[0], MON_DATA_MOVE2, &monData);
-    SetMonData(&gPlayerParty[0], MON_DATA_MOVE3, &monData);
-    SetMonData(&gPlayerParty[0], MON_DATA_MOVE4, &monData);
 }
 
 bool8 IsStarterInParty(void)
@@ -1547,23 +1022,6 @@ static void StopCameraShake(u8 taskId)
 #undef tDelay
 #undef tVerticalPan
 
-bool8 FoundBlackGlasses(void)
-{
-    return FlagGet(FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES);
-}
-
-void SetRoute119Weather(void)
-{
-    if (IsMapTypeOutdoors(GetLastUsedWarpMapType()) != TRUE)
-        SetSavedWeather(WEATHER_ROUTE119_CYCLE);
-}
-
-void SetRoute123Weather(void)
-{
-    if (IsMapTypeOutdoors(GetLastUsedWarpMapType()) != TRUE)
-        SetSavedWeather(WEATHER_ROUTE123_CYCLE);
-}
-
 u8 GetLeadMonIndex(void)
 {
     u8 i;
@@ -1586,23 +1044,6 @@ u16 ScriptGetPartyMonSpecies(void)
 void TryInitBattleTowerAwardManObjectEvent(void)
 {
     //TryInitLocalObjectEvent(6);
-}
-
-u16 GetDaysUntilPacifidlogTMAvailable(void)
-{
-    u16 tmReceivedDay = VarGet(VAR_PACIFIDLOG_TM_RECEIVED_DAY);
-    if (gLocalTime.days - tmReceivedDay >= 7)
-        return 0;
-    else if (gLocalTime.days < 0)
-        return 8;
-
-    return 7 - (gLocalTime.days - tmReceivedDay);
-}
-
-u16 SetPacifidlogTMReceivedDay(void)
-{
-    VarSet(VAR_PACIFIDLOG_TM_RECEIVED_DAY, gLocalTime.days);
-    return gLocalTime.days;
 }
 
 bool8 MonOTNameNotPlayer(void)
@@ -1711,37 +1152,6 @@ void OffsetCameraForBattle(void)
     SetCameraPanning(8, 0);
 }
 
-static const struct WindowTemplate sWindowTemplate_ElevatorFloor =
-{
-    .bg = 0,
-    .tilemapLeft = 21,
-    .tilemapTop = 1,
-    .width = 8,
-    .height = 4,
-    .paletteNum = 15,
-    .baseBlock = 8,
-};
-
-static const u8 *const sDeptStoreFloorNames[] =
-{
-    [DEPT_STORE_FLOORNUM_B4F] = gText_B4F,
-    [DEPT_STORE_FLOORNUM_B3F] = gText_B3F,
-    [DEPT_STORE_FLOORNUM_B2F] = gText_B2F,
-    [DEPT_STORE_FLOORNUM_B1F] = gText_B1F,
-    [DEPT_STORE_FLOORNUM_1F] = gText_1F,
-    [DEPT_STORE_FLOORNUM_2F] = gText_2F,
-    [DEPT_STORE_FLOORNUM_3F] = gText_3F,
-    [DEPT_STORE_FLOORNUM_4F] = gText_4F,
-    [DEPT_STORE_FLOORNUM_5F] = gText_5F,
-    [DEPT_STORE_FLOORNUM_6F] = gText_6F,
-    [DEPT_STORE_FLOORNUM_7F] = gText_7F,
-    [DEPT_STORE_FLOORNUM_8F] = gText_8F,
-    [DEPT_STORE_FLOORNUM_9F] = gText_9F,
-    [DEPT_STORE_FLOORNUM_10F] = gText_10F,
-    [DEPT_STORE_FLOORNUM_11F] = gText_11F,
-    [DEPT_STORE_FLOORNUM_ROOFTOP] = gText_Rooftop
-};
-
 static const u16 sElevatorWindowTiles_Ascending[ELEVATOR_WINDOW_HEIGHT][ELEVATOR_LIGHT_STAGES] =
 {
     {
@@ -1779,71 +1189,6 @@ static const u16 sElevatorWindowTiles_Descending[ELEVATOR_WINDOW_HEIGHT][ELEVATO
         METATILE_BattleFrontier_Elevator_Bottom1
     },
 };
-
-void SetDeptStoreFloor(void)
-{
-    enum DeptStoreFloorNumber deptStoreFloor;
-    switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
-    {
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_2F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_2F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_3F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_3F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_4F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_4F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_5F;
-        break;
-    case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP):
-        deptStoreFloor = DEPT_STORE_FLOORNUM_ROOFTOP;
-        break;
-    default:
-        deptStoreFloor = DEPT_STORE_FLOORNUM_1F;
-        break;
-    }
-    VarSet(VAR_DEPT_STORE_FLOOR, deptStoreFloor);
-}
-
-u16 GetDeptStoreDefaultFloorChoice(void)
-{
-    sLilycoveDeptStore_NeverRead = 0;
-    sLilycoveDeptStore_DefaultFloorChoice = 0;
-
-    if (gSaveBlock1Ptr->dynamicWarp.mapGroup == MAP_GROUP(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F))
-    {
-        switch (gSaveBlock1Ptr->dynamicWarp.mapNum)
-        {
-        case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_5F):
-            sLilycoveDeptStore_NeverRead = 0;
-            sLilycoveDeptStore_DefaultFloorChoice = 0;
-            break;
-        case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_4F):
-            sLilycoveDeptStore_NeverRead = 0;
-            sLilycoveDeptStore_DefaultFloorChoice = 1;
-            break;
-        case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_3F):
-            sLilycoveDeptStore_NeverRead = 0;
-            sLilycoveDeptStore_DefaultFloorChoice = 2;
-            break;
-        case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_2F):
-            sLilycoveDeptStore_NeverRead = 0;
-            sLilycoveDeptStore_DefaultFloorChoice = 3;
-            break;
-        case MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_1F):
-            sLilycoveDeptStore_NeverRead = 0;
-            sLilycoveDeptStore_DefaultFloorChoice = 4;
-            break;
-        }
-    }
-
-    return sLilycoveDeptStore_DefaultFloorChoice;
-}
 
 // Task data for Task_MoveElevator
 #define tTimer       data[1]
@@ -1918,29 +1263,6 @@ static void Task_MoveElevator(u8 taskId)
 #undef tVerticalPan
 #undef tTotalMoves
 #undef tDescending
-
-void ShowDeptStoreElevatorFloorSelect(void)
-{
-    int xPos;
-
-    sTutorMoveAndElevatorWindowId = AddWindow(&sWindowTemplate_ElevatorFloor);
-    SetStandardWindowBorderStyle(sTutorMoveAndElevatorWindowId, FALSE);
-
-    xPos = GetStringCenterAlignXOffset(FONT_NORMAL, gText_ElevatorNowOn, 64);
-    AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, gText_ElevatorNowOn, xPos, 1, TEXT_SKIP_DRAW, NULL);
-
-    xPos = GetStringCenterAlignXOffset(FONT_NORMAL, sDeptStoreFloorNames[gSpecialVar_0x8005], 64);
-    AddTextPrinterParameterized(sTutorMoveAndElevatorWindowId, FONT_NORMAL, sDeptStoreFloorNames[gSpecialVar_0x8005], xPos, 17, TEXT_SKIP_DRAW, NULL);
-
-    PutWindowTilemap(sTutorMoveAndElevatorWindowId);
-    CopyWindowToVram(sTutorMoveAndElevatorWindowId, COPYWIN_FULL);
-}
-
-void CloseDeptStoreElevatorWindow(void)
-{
-    ClearStdWindowAndFrameToTransparent(sTutorMoveAndElevatorWindowId, TRUE);
-    RemoveWindow(sTutorMoveAndElevatorWindowId);
-}
 
 // Task data for Task_MoveElevatorWindowLights
 #define tMoveCounter data[0]
@@ -2041,41 +1363,18 @@ void BufferVarsForIVRater(void)
     }
 }
 
+// Fully Ungrounded: elk Pokémon Center herkennen aan zijn layout (geen lijst van kaarten meer).
+static bool32 IsPokemonCenterMap(u8 mapGroup, u8 mapNum)
+{
+    const struct MapHeader *header = Overworld_GetMapHeaderByGroupAndId(mapGroup, mapNum);
+    return header->mapLayoutId == LAYOUT_POKEMON_CENTER_1F;
+}
+
 bool8 UsedPokemonCenterWarp(void)
 {
-    static const u16 sPokemonCenters[] =
-    {
-        MAP_OLDALE_TOWN_POKEMON_CENTER_1F,
-        MAP_DEWFORD_TOWN_POKEMON_CENTER_1F,
-        MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F,
-        MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
-        MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F,
-        MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F,
-        MAP_PETALBURG_CITY_POKEMON_CENTER_1F,
-        MAP_SLATEPORT_CITY_POKEMON_CENTER_1F,
-        MAP_MAUVILLE_CITY_POKEMON_CENTER_1F,
-        MAP_RUSTBORO_CITY_POKEMON_CENTER_1F,
-        MAP_FORTREE_CITY_POKEMON_CENTER_1F,
-        MAP_LILYCOVE_CITY_POKEMON_CENTER_1F,
-        MAP_MOSSDEEP_CITY_POKEMON_CENTER_1F,
-        MAP_SOOTOPOLIS_CITY_POKEMON_CENTER_1F,
-        MAP_EVER_GRANDE_CITY_POKEMON_CENTER_1F,
-        MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F,
-        MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F,
-        MAP_UNION_ROOM,
-        MAP_UNDEFINED
-    };
-
-    int i;
-    u16 map = (gLastUsedWarp.mapGroup << 8) + gLastUsedWarp.mapNum;
-
-    for (i = 0; sPokemonCenters[i] != MAP_UNDEFINED; i++)
-    {
-        if (sPokemonCenters[i] == map)
-            return TRUE;
-    }
-
-    return FALSE;
+    if (gLastUsedWarp.mapGroup >= MAP_GROUPS_COUNT)
+        return FALSE;
+    return IsPokemonCenterMap(gLastUsedWarp.mapGroup, gLastUsedWarp.mapNum);
 }
 
 bool32 PlayerNotAtTrainerHillEntrance(void)
@@ -2802,12 +2101,6 @@ static void ScrollableMultichoice_RemoveScrollArrows(u8 taskId)
         RemoveScrollIndicatorArrowPair(task->tScrollArrowId);
 }
 
-// Removed for Emerald (replaced by ShowScrollableMultichoice)
-void ShowGlassWorkshopMenu(void)
-{
-
-}
-
 void SetBattleTowerLinkPlayerGfx(void)
 {
     u8 i;
@@ -3211,15 +2504,6 @@ void ScrollableMultichoice_ClosePersistentMenu(void)
 #undef tListTaskId
 #undef tTaskId
 
-// Project Grounded: lancering vanuit het Space Center naar de meteoriet (Deoxys-event).
-// Valwarp zoals een gat in de vloer: de speler valt van boven het scherm op (VAR_0x8004, VAR_0x8005) en het beeld schudt.
-void DoMeteorSpaceFallWarp(void)
-{
-    SetWarpDestination(MAP_GROUP(MAP_METEOR_SPACE), MAP_NUM(MAP_METEOR_SPACE), WARP_ID_NONE, gSpecialVar_0x8004, gSpecialVar_0x8005);
-    DoFallWarp();
-    ResetInitialPlayerAvatarState();
-}
-
 void SetPCBoxToSendMon(u8 boxId)
 {
     sPCBoxToSendMon = boxId;
@@ -3268,179 +2552,10 @@ bool8 IsDestinationBoxFull(void)
     return FALSE;
 }
 
-void CreateAbnormalWeatherEvent(void)
-{
-    u16 randomValue = Random();
-    VarSet(VAR_ABNORMAL_WEATHER_STEP_COUNTER, 0);
-
-    if (FlagGet(FLAG_DEFEATED_KYOGRE) == TRUE)
-    {
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % TERRA_CAVE_LOCATIONS) + TERRA_CAVE_LOCATIONS_START);
-    }
-    else if (FlagGet(FLAG_DEFEATED_GROUDON) == TRUE)
-    {
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % MARINE_CAVE_LOCATIONS) + MARINE_CAVE_LOCATIONS_START);
-    }
-    else if ((randomValue & 1) == 0)
-    {
-        randomValue = Random();
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % TERRA_CAVE_LOCATIONS) + TERRA_CAVE_LOCATIONS_START);
-    }
-    else
-    {
-        randomValue = Random();
-        VarSet(VAR_ABNORMAL_WEATHER_LOCATION, (randomValue % MARINE_CAVE_LOCATIONS) + MARINE_CAVE_LOCATIONS_START);
-    }
-}
-
-// Saves the map name for the current abnormal weather location in gStringVar1, then
-// returns TRUE if the weather is for Kyogre, and FALSE if it's for Groudon.
-bool32 GetAbnormalWeatherMapNameAndType(void)
-{
-    static const u8 sAbnormalWeatherMapNumbers[] = {
-        MAP_NUM(MAP_ROUTE114),
-        MAP_NUM(MAP_ROUTE114),
-        MAP_NUM(MAP_ROUTE115),
-        MAP_NUM(MAP_ROUTE115),
-        MAP_NUM(MAP_ROUTE116),
-        MAP_NUM(MAP_ROUTE116),
-        MAP_NUM(MAP_ROUTE118),
-        MAP_NUM(MAP_ROUTE118),
-        MAP_NUM(MAP_ROUTE105),
-        MAP_NUM(MAP_ROUTE105),
-        MAP_NUM(MAP_ROUTE125),
-        MAP_NUM(MAP_ROUTE125),
-        MAP_NUM(MAP_ROUTE127),
-        MAP_NUM(MAP_ROUTE127),
-        MAP_NUM(MAP_ROUTE129),
-        MAP_NUM(MAP_ROUTE129)
-    };
-
-    u16 abnormalWeather = VarGet(VAR_ABNORMAL_WEATHER_LOCATION);
-
-    GetMapName(gStringVar1, sAbnormalWeatherMapNumbers[abnormalWeather - 1], 0);
-
-    if (abnormalWeather < MARINE_CAVE_LOCATIONS_START)
-        return FALSE;
-    else
-        return TRUE;
-}
-
-bool8 AbnormalWeatherHasExpired(void)
-{
-    // Duplicate array.
-    static const u8 sAbnormalWeatherMapNumbers[] =
-    {
-        MAP_NUM(MAP_ROUTE114),
-        MAP_NUM(MAP_ROUTE114),
-        MAP_NUM(MAP_ROUTE115),
-        MAP_NUM(MAP_ROUTE115),
-        MAP_NUM(MAP_ROUTE116),
-        MAP_NUM(MAP_ROUTE116),
-        MAP_NUM(MAP_ROUTE118),
-        MAP_NUM(MAP_ROUTE118),
-        MAP_NUM(MAP_ROUTE105),
-        MAP_NUM(MAP_ROUTE105),
-        MAP_NUM(MAP_ROUTE125),
-        MAP_NUM(MAP_ROUTE125),
-        MAP_NUM(MAP_ROUTE127),
-        MAP_NUM(MAP_ROUTE127),
-        MAP_NUM(MAP_ROUTE129),
-        MAP_NUM(MAP_ROUTE129)
-    };
-
-    u16 steps = VarGet(VAR_ABNORMAL_WEATHER_STEP_COUNTER);
-    u16 abnormalWeather = VarGet(VAR_ABNORMAL_WEATHER_LOCATION);
-
-    if (abnormalWeather == ABNORMAL_WEATHER_NONE)
-        return FALSE;
-
-    if (++steps > 999)
-    {
-        VarSet(VAR_ABNORMAL_WEATHER_STEP_COUNTER, 0);
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_UNDERWATER_MARINE_CAVE))
-        {
-            switch (gSaveBlock1Ptr->location.mapNum)
-            {
-            case MAP_NUM(MAP_UNDERWATER_MARINE_CAVE):
-            case MAP_NUM(MAP_MARINE_CAVE_ENTRANCE):
-            case MAP_NUM(MAP_MARINE_CAVE_END):
-            case MAP_NUM(MAP_TERRA_CAVE_ENTRANCE):
-            case MAP_NUM(MAP_TERRA_CAVE_END):
-                VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 1);
-                return FALSE;
-            default:
-                break;
-            }
-        }
-
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_UNDERWATER_ROUTE127))
-        {
-            switch (gSaveBlock1Ptr->location.mapNum)
-            {
-            case MAP_NUM(MAP_UNDERWATER_ROUTE127):
-            case MAP_NUM(MAP_UNDERWATER_ROUTE129):
-            case MAP_NUM(MAP_UNDERWATER_ROUTE105):
-            case MAP_NUM(MAP_UNDERWATER_ROUTE125):
-                VarSet(VAR_SHOULD_END_ABNORMAL_WEATHER, 1);
-                return FALSE;
-            default:
-                break;
-            }
-        }
-
-        if (gSaveBlock1Ptr->location.mapNum == sAbnormalWeatherMapNumbers[abnormalWeather - 1] &&
-            gSaveBlock1Ptr->location.mapGroup == 0)
-        {
-            return TRUE;
-        }
-        else
-        {
-            VarSet(VAR_ABNORMAL_WEATHER_LOCATION, ABNORMAL_WEATHER_NONE);
-            return FALSE;
-        }
-    }
-    else
-    {
-        VarSet(VAR_ABNORMAL_WEATHER_STEP_COUNTER, steps);
-        return FALSE;
-    }
-}
-
-void Unused_SetWeatherSunny(void)
-{
-    SetCurrentAndNextWeather(WEATHER_SUNNY);
-}
-
-// All mart employees have a local id of 1, so function always returns 1
 u32 GetMartEmployeeObjectEventId(void)
 {
-    static const u8 sPokeMarts[][3] =
-    {
-        { MAP_GROUP(MAP_OLDALE_TOWN_MART),     MAP_NUM(MAP_OLDALE_TOWN_MART),     LOCALID_OLDALE_MART_CLERK },
-        { MAP_GROUP(MAP_LAVARIDGE_TOWN_MART),  MAP_NUM(MAP_LAVARIDGE_TOWN_MART),  LOCALID_LAVARIDGE_MART_CLERK },
-        { MAP_GROUP(MAP_FALLARBOR_TOWN_MART),  MAP_NUM(MAP_FALLARBOR_TOWN_MART),  LOCALID_FALLARBOR_MART_CLERK },
-        { MAP_GROUP(MAP_VERDANTURF_TOWN_MART), MAP_NUM(MAP_VERDANTURF_TOWN_MART), LOCALID_VERDANTURF_MART_CLERK },
-        { MAP_GROUP(MAP_PETALBURG_CITY_MART),  MAP_NUM(MAP_PETALBURG_CITY_MART),  LOCALID_PETALBURG_MART_CLERK },
-        { MAP_GROUP(MAP_SLATEPORT_CITY_MART),  MAP_NUM(MAP_SLATEPORT_CITY_MART),  LOCALID_SLATEPORT_MART_CLERK },
-        { MAP_GROUP(MAP_MAUVILLE_CITY_MART),   MAP_NUM(MAP_MAUVILLE_CITY_MART),   LOCALID_MAUVILLE_MART_CLERK },
-        { MAP_GROUP(MAP_RUSTBORO_CITY_MART),   MAP_NUM(MAP_RUSTBORO_CITY_MART),   LOCALID_RUSTBORO_MART_CLERK },
-        { MAP_GROUP(MAP_FORTREE_CITY_MART),    MAP_NUM(MAP_FORTREE_CITY_MART),    LOCALID_FORTREE_MART_CLERK },
-        { MAP_GROUP(MAP_MOSSDEEP_CITY_MART),   MAP_NUM(MAP_MOSSDEEP_CITY_MART),   LOCALID_MOSSDEEP_MART_CLERK },
-        { MAP_GROUP(MAP_SOOTOPOLIS_CITY_MART), MAP_NUM(MAP_SOOTOPOLIS_CITY_MART), LOCALID_SOOTOPOLIS_MART_CLERK },
-        { MAP_GROUP(MAP_BATTLE_FRONTIER_MART), MAP_NUM(MAP_BATTLE_FRONTIER_MART), LOCALID_FRONTIER_MART_CLERK },
-    };
-
-    u8 i;
-    for (i = 0; i < ARRAY_COUNT(sPokeMarts); i++)
-    {
-        if (gSaveBlock1Ptr->location.mapGroup == sPokeMarts[i][0])
-        {
-            if (gSaveBlock1Ptr->location.mapNum == sPokeMarts[i][1])
-                return sPokeMarts[i][2];
-        }
-    }
-    return 1;
+    // Vanilla: alle winkelbedienden hebben local id 1.
+    return LOCALID_START_TOWN_MART_CLERK;
 }
 
 bool32 IsTrainerRegistered(void)
@@ -3627,28 +2742,6 @@ void Script_DoRayquazaScene(void)
 #define playCount data[0]
 #define delay     data[1]
 
-void LoopWingFlapSE(void)
-{
-    CreateTask(Task_LoopWingFlapSE, 8);
-    PlaySE(SE_M_WING_ATTACK);
-}
-
-static void Task_LoopWingFlapSE(u8 taskId)
-{
-    s16 *data = gTasks[taskId].data;
-
-    delay++;
-    if (delay == gSpecialVar_0x8005)
-    {
-        playCount++;
-        delay = 0;
-        PlaySE(SE_M_WING_ATTACK);
-    }
-
-    if (playCount == gSpecialVar_0x8004 - 1)
-        DestroyTask(taskId);
-}
-
 #undef playCount
 #undef delay
 
@@ -3705,50 +2798,9 @@ void GetBattlePyramidHint(void)
     gSpecialVar_Result -= (gSpecialVar_Result / TOTAL_PYRAMID_ROUNDS) * TOTAL_PYRAMID_ROUNDS;
 }
 
-// Used to avoid a potential softlock if the player respawns on Dewford with no way off
-void ResetHealLocationFromDewford(void)
-{
-    if (gSaveBlock1Ptr->lastHealLocation.mapGroup == MAP_GROUP(MAP_DEWFORD_TOWN) && gSaveBlock1Ptr->lastHealLocation.mapNum == MAP_NUM(MAP_DEWFORD_TOWN))
-        SetLastHealLocationWarp(HEAL_LOCATION_PETALBURG_CITY);
-}
-
 bool8 InPokemonCenter(void)
 {
-    static const u16 sPokemonCenters[] =
-    {
-        MAP_OLDALE_TOWN_POKEMON_CENTER_1F,
-        MAP_DEWFORD_TOWN_POKEMON_CENTER_1F,
-        MAP_LAVARIDGE_TOWN_POKEMON_CENTER_1F,
-        MAP_FALLARBOR_TOWN_POKEMON_CENTER_1F,
-        MAP_VERDANTURF_TOWN_POKEMON_CENTER_1F,
-        MAP_PACIFIDLOG_TOWN_POKEMON_CENTER_1F,
-        MAP_PETALBURG_CITY_POKEMON_CENTER_1F,
-        MAP_SLATEPORT_CITY_POKEMON_CENTER_1F,
-        MAP_MAUVILLE_CITY_POKEMON_CENTER_1F,
-        MAP_RUSTBORO_CITY_POKEMON_CENTER_1F,
-        MAP_FORTREE_CITY_POKEMON_CENTER_1F,
-        MAP_LILYCOVE_CITY_POKEMON_CENTER_1F,
-        MAP_MOSSDEEP_CITY_POKEMON_CENTER_1F,
-        MAP_SOOTOPOLIS_CITY_POKEMON_CENTER_1F,
-        MAP_EVER_GRANDE_CITY_POKEMON_CENTER_1F,
-        MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F,
-        MAP_BATTLE_FRONTIER_POKEMON_CENTER_1F,
-        MAP_BATTLE_COLOSSEUM_2P,
-        MAP_TRADE_CENTER,
-        MAP_RECORD_CORNER,
-        MAP_BATTLE_COLOSSEUM_4P,
-        MAP_UNDEFINED
-    };
-
-    int i;
-    u16 map = (gSaveBlock1Ptr->location.mapGroup << 8) + gSaveBlock1Ptr->location.mapNum;
-
-    for (i = 0; sPokemonCenters[i] != MAP_UNDEFINED; i++)
-    {
-        if (sPokemonCenters[i] == map)
-            return TRUE;
-    }
-    return FALSE;
+    return gMapHeader.mapLayoutId == LAYOUT_POKEMON_CENTER_1F;
 }
 
 /*  Summary of the Lilycove Trainer Fan Club, because it's a little messy

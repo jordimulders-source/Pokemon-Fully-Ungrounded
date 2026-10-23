@@ -10,7 +10,6 @@
 #include "event_scripts.h"
 #include "field_player_avatar.h"
 #include "field_screen_effect.h"
-#include "field_special_scene.h"
 #include "field_weather.h"
 #include "follower_npc.h"
 #include "gpu_regs.h"
@@ -599,14 +598,6 @@ void DoMossdeepGymWarp(void)
     PlaySE(SE_WARP_IN);
     CreateTask(Task_WarpAndLoadMap, 10);
     gFieldCallback = FieldCB_MossdeepGymWarpExit;
-}
-
-void DoPortholeWarp(void)
-{
-    LockPlayerFieldControls();
-    WarpFadeOutScreen();
-    CreateTask(Task_WarpAndLoadMap, 10);
-    gFieldCallback = FieldCB_ShowPortholeView;
 }
 
 static void Task_DoCableClubWarp(u8 taskId)

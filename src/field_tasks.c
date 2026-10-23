@@ -5,7 +5,6 @@
 #include "field_camera.h"
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
-#include "field_special_scene.h"
 #include "field_tasks.h"
 #include "fieldmap.h"
 #include "item.h"
@@ -63,7 +62,7 @@ static const TaskFunc sPerStepCallbacks[] =
     [STEP_CB_FORTREE_BRIDGE]    = FortreeBridgePerStepCallback,
     [STEP_CB_PACIFIDLOG_BRIDGE] = PacifidlogBridgePerStepCallback,
     [STEP_CB_SOOTOPOLIS_ICE]    = SootopolisGymIcePerStepCallback,
-    [STEP_CB_TRUCK]             = EndTruckSequence,
+    [STEP_CB_TRUCK]             = DummyPerStepCallback, // Fully Ungrounded: geen truck-intro meer
     [STEP_CB_SECRET_BASE]       = SecretBasePerStepCallback,
     [STEP_CB_CRACKED_FLOOR]     = CrackedFloorPerStepCallback,
 };

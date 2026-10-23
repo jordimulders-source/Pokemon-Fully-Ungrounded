@@ -1,5 +1,5 @@
 @ Gegenereerd door tools/grounded/maptools/map_compat.py, niet met de hand bewerken.
-@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (651).
+@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (638).
 @ Opruimen per systeem (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen.
 
 BattleFacility_TrainerBattle_PlaceholderText::
@@ -1772,9 +1772,6 @@ DewfordTown_Hall_EventScript_Painting::
 DewfordTown_Text_FishJudgeRules::
 	.string "$"
 
-EventScript_ClosedSootopolisDoor::
-	end
-
 EventScript_RegisterProfBirch::
 	end
 
@@ -1785,9 +1782,6 @@ Ferry_EventScript_DepartIslandSouth::
 	end
 
 Ferry_EventScript_DepartIslandWest::
-	end
-
-IslandCave_EventScript_OpenRegiEntrance::
 	end
 
 Kecleon_Text_SomethingUnseeable::
@@ -1802,34 +1796,16 @@ Kecleon_Text_WantToUseDevonScope::
 LilycoveCity_ContestLobby_EventScript_ContestReceptionist::
 	end
 
-LittlerootTown_BrendansHouse_2F_EventScript_PC::
-	end
-
 LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC::
-	end
-
-LittlerootTown_MaysHouse_2F_EventScript_PC::
 	end
 
 LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC::
 	end
 
-LittlerootTown_ProfessorBirchsLab_EventScript_ScottAboardSSTidalCall::
-	end
-
-MauvilleCity_EventScript_RegisterWallyCall::
-	end
-
 MauvilleCity_GameCorner_EventScript_NoCoinCase::
 	end
 
-MauvilleCity_Gym_EventScript_SetAltBarriers::
-	end
-
 MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle::
-	end
-
-MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::
 	end
 
 ParadisoResort_Text_Turd::
@@ -1919,22 +1895,7 @@ PlayersHouse_2F_Text_ClockIsStopped::
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom::
 	.string "$"
 
-Route110_TrickHousePuzzle_EventScript_Door::
-	end
-
-Route119_EventScript_ScottWonAtFortreeGymCall::
-	end
-
-RustboroCity_Gym_EventScript_RegisterRoxanne::
-	end
-
-SSTidalCorridor_EventScript_ReachedStepCount::
-	end
-
 ScorchedSlab_SunHall_EventScript_StoneInLight::
-	end
-
-SkyPillar_Outside_EventScript_ClosedDoor::
 	end
 
 SootopolisCity_Gym_1F_Text_JuanDefeat::

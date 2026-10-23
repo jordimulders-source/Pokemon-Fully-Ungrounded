@@ -102,3 +102,8 @@ Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.p
 - **Een kenmerkvlak (Cuyby's zwart) moet een vlak blijven:** een smalle diagonale band van oor naar oog las als piratenooglap; compact rond het oog met het oor er direct naast werkt.
 - **Belichte punten bovenaan** (sprieten, oren) krijgen de omlijningsbasis in plaats van zwart; dat haalde het zwart-aandeel van 0,63 naar 0,51 zonder de vorm te veranderen.
 - **Controleer onder- en bovenranden van het lijf apart:** een verborgen bovenrand of een rechte onderrand van 20+ px valt op 1× direct op; dump het raster met kolomnummers (`frame().text()`) om ze te vinden.
+
+## 14. Lessen uit alpaca ronde 10 (silhouet)
+- **Eerst het silhouet tegen een foto van het echte dier** (2–3 ruwe schetsen op 64×64): na negen rondes op details bleek de alpaca een schaap omdat de kop direct op het lijf zat.
+- **Een lange nek moet zichtbaar zijn:** een grote babykop dekt de nek af; zet de kop hoger en het lijf lager (7–9 px nek onder de kin), en laat de nekrug als één holle curve van achterhoofd naar rug lopen.
+- **Run-length-rijen met absolute x** (`y x0 3V 2W 1. 5w`, `ronde10/bron/bouw10.py`) zijn het snelst om met de hand bij te werken: een deel verschuiven of 3 px korter maken is één getal per rij.

@@ -1,0 +1,16 @@
+. 152 208 160              # 0 transparant
+K 40 32 40 zwart           # 1 omlijning donker
+W 255 255 248              # 2 wol hooglicht / glans
+w 240 230 206              # 3 wol
+v 208 190 158 omlijning    # 4 wolschaduw (ook lichte omlijning op belichte wolbulten)
+V 150 126 100 omlijning    # 5 wolomlijning
+F 246 206 152              # 6 vacht hooglicht
+f 222 164 106              # 7 vacht
+e 180 116 74               # 8 vachtschaduw
+E 120 72 50 omlijning      # 9 vachtomlijning
+R 250 150 116              # 10 handschoen hooglicht
+r 222 92 70                # 11 handschoen
+s 170 54 56                # 12 handschoen schaduw
+S 110 32 42 omlijning      # 13 handschoen omlijning
+P 240 150 160              # 14 roze
+B 110 120 190              # 15 oogreflectie

@@ -593,11 +593,11 @@ static u8 TI_Anim(u16 tag, const struct OamData *oam, s16 x, s16 y, u16 tileOfs)
     u8 id;
     if (GetSpriteTileStartByTag(tag) == 0xFFFF)
     {
-        LoadCompressedSpriteSheet(&gBattleAnimPicTable[i]);
+        LoadCompressedSpriteSheet(&gBattleAnimTable[i].pic);
         TI_AddTag(tag);
     }
     if (IndexOfSpritePaletteTag(tag) == 0xFF)
-        LoadSpritePalette(&gBattleAnimPaletteTable[i]);
+        LoadSpritePalette(&gBattleAnimTable[i].palette);
     id = CreateSprite(&tmpl, x, y, 1);
     if (id >= MAX_SPRITES)
         return MAX_SPRITES;

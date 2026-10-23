@@ -49,9 +49,9 @@
 #include "pokedex.h"
 #include "test/battle.h"
 
-static void ShowWildMonInfo(u32 battler); // Project Grounded
-static void Controller_WaitForDebug(u32 battler);
-static void WildInfo_OpenSummary(u32 battler);
+static void ShowWildMonInfo(enum BattlerId battler); // Project Grounded
+static void Controller_WaitForDebug(enum BattlerId battler);
+static void WildInfo_OpenSummary(enum BattlerId battler);
 static void PlayerHandleLoadMonSprite(enum BattlerId battler);
 static void PlayerHandleDrawTrainerPic(enum BattlerId battler);
 static void PlayerHandleTrainerSlide(enum BattlerId battler);
@@ -426,7 +426,7 @@ static bool8 sShowWildInfo;
 static u8 sWildInfoTarget;
 static EWRAM_DATA struct Pokemon sWildInfoMon = {0};
 
-static void HandleInputWildMonNoData(u32 battler)
+static void HandleInputWildMonNoData(enum BattlerId battler)
 {
     if (JOY_NEW(A_BUTTON | B_BUTTON | L_BUTTON | R_BUTTON | START_BUTTON | SELECT_BUTTON | DPAD_ANY))
     {
@@ -437,7 +437,7 @@ static void HandleInputWildMonNoData(u32 battler)
     }
 }
 
-static void ShowWildMonInfo(u32 battler)
+static void ShowWildMonInfo(enum BattlerId battler)
 {
     u32 target = GetBattlerAtPosition(B_POSITION_OPPONENT_LEFT);
     u32 species;
@@ -461,7 +461,7 @@ static void ShowWildMonInfo(u32 battler)
     BtlController_Complete(battler);
 }
 
-static void WildInfo_OpenSummary(u32 battler)
+static void WildInfo_OpenSummary(enum BattlerId battler)
 {
     if (!gPaletteFade.active)
     {

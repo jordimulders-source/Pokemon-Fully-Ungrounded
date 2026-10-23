@@ -10078,10 +10078,10 @@ void AnimTask_CounterfeitBall(u8 taskId)
             ball = sCounterfeitBalls[(gAnimMoveTurn * CB_SALVO + k + gBattleTurnCounter * 5) % ARRAY_COUNT(sCounterfeitBalls)];
         task->data[4 + k] = ball;
         task->data[7 + k] = 0;
-        if (GetSpriteTileStartByTag(gBallSpriteTemplates[ball].tileTag) == TAG_NONE)
+        if (GetSpriteTileStartByTag(gPokeBalls[ball].spriteTemplate.tileTag) == TAG_NONE)
             task->tCBLoaded |= 1 << k;
         LoadBallGfx(ball);
-        spriteId = CreateSprite(&gBallSpriteTemplates[ball], startX, startY, GetBattlerSpriteSubpriority(gBattleAnimTarget) - 1 - k);
+        spriteId = CreateSprite(&gPokeBalls[ball].spriteTemplate, startX, startY, GetBattlerSpriteSubpriority(gBattleAnimTarget) - 1 - k);
         task->data[1 + k] = spriteId;
         if (spriteId == MAX_SPRITES)
             continue;

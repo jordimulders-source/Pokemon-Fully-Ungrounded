@@ -2697,7 +2697,7 @@ static void BattleTest_CreateTestMon(struct Pokemon *mon)
     static const u16 moves[MAX_MON_MOVES] = { MOVE_DARK_PULSE, MOVE_PSYCHIC, MOVE_THUNDERBOLT, MOVE_ICE_BEAM };
     u32 i;
 
-    CreateMon(mon, SPECIES_ARCEUS, 100, MAX_PER_STAT_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+    CreateMonWithIVs(mon, SPECIES_MEWTWO, 100, 0, OTID_STRUCT_PLAYER_ID, MAX_PER_STAT_IVS); // Fully Ungrounded: Arceus zit niet meer in de ROM
     for (i = 0; i < MAX_MON_MOVES; i++)
         SetMonMoveSlot(mon, moves[i], i);
 }
@@ -3382,7 +3382,7 @@ static void DebugAction_Give_Pokemon_ComplexCreateMon(u8 taskId) //https://githu
     //Nature
     if (nature == NUM_NATURES || nature == 0xFF)
         nature = Random() % NUM_NATURES;
-    CreateMonWithNature(&mon, species, level, USE_RANDOM_IVS, nature);
+    CreateMon(&mon, species, level, GetMonPersonality(species, MON_GENDER_RANDOM, nature, RANDOM_UNOWN_LETTER), OTID_STRUCT_PLAYER_ID);
 
     //Shininess
     SetMonData(&mon, MON_DATA_IS_SHINY, &isShiny);
@@ -3644,7 +3644,7 @@ static void DebugAction_PCBag_Fill_PCBoxes_Fast(u8 taskId) //Credit: Sierraffini
 
     personality = Random32();
 
-    CreateBoxMon(&boxMon, species, 100, USE_RANDOM_IVS, FALSE, personality, OT_ID_PLAYER_ID, 0);
+    CreateBoxMon(&boxMon, species, 100, personality, OTID_STRUCT_PLAYER_ID);
 
     for (boxId = 0; boxId < TOTAL_BOXES_COUNT; boxId++)
     {
@@ -3682,7 +3682,7 @@ static void DebugAction_PCBag_Fill_PCBoxes_Slow(u8 taskId)
             {
                 if (!spaceAvailable)
                     PlayBGM(MUS_RG_MYSTERY_GIFT);
-                CreateBoxMon(&boxMon, species, 100, USE_RANDOM_IVS, FALSE, 0, OT_ID_PLAYER_ID, 0);
+                CreateBoxMon(&boxMon, species, 100, Random32(), OTID_STRUCT_PLAYER_ID);
                 gPokemonStoragePtr->boxes[boxId][boxPosition] = boxMon;
                 species = (species < NUM_SPECIES - 1) ? species + 1 : 1;
                 spaceAvailable = TRUE;
@@ -3724,8 +3724,8 @@ static void DebugAction_PCBag_Fill_PocketPokeBalls(u8 taskId)
 {
     for (enum PokeBall ballId = BALL_STRANGE; ballId < POKEBALL_COUNT; ballId++)
     {
-        if (CheckBagHasSpace(ballId, MAX_BAG_ITEM_CAPACITY))
-            AddBagItem(gBallItemIds[ballId], MAX_BAG_ITEM_CAPACITY);
+        if (CheckBagHasSpace(gPokeBalls[ballId].itemId, MAX_BAG_ITEM_CAPACITY))
+            AddBagItem(gPokeBalls[ballId].itemId, MAX_BAG_ITEM_CAPACITY);
     }
 }
 
@@ -3779,6 +3779,7 @@ static void DebugAction_PCBag_ClearBoxes(u8 taskId)
 // *******************************
 // Actions Sound
 static const u8 *const sBGMNames[END_MUS - START_MUS + 1];
+#define END_SE SE_SUDOWOODO_SHAKE // Fully Ungrounded: upstream 1.17 heeft END_SE niet meer
 static const u8 *const sSENames[END_SE + 1];
 
 #define tCurrentSong  data[5]
@@ -4678,7 +4679,7 @@ const struct Trainer* GetDebugAiTrainer(void)
 static void DebugAction_Party_SetParty(u8 taskId)
 {
     ZeroPlayerPartyMons();
-    CreateNPCTrainerPartyFromTrainer(gPlayerParty, &sDebugTrainers[DIFFICULTY_NORMAL][DEBUG_TRAINER_PLAYER], TRUE, BATTLE_TYPE_TRAINER);
+    CreateNPCTrainerPartyFromTrainer(gPlayerParty, &sDebugTrainers[DIFFICULTY_NORMAL][DEBUG_TRAINER_PLAYER]);
     ScriptContext_Enable();
     Debug_DestroyMenu_Full(taskId);
 }
@@ -4687,8 +4688,8 @@ static void DebugAction_Party_BattleSingle(u8 taskId)
 {
     ZeroPlayerPartyMons();
     ZeroEnemyPartyMons();
-    CreateNPCTrainerPartyFromTrainer(gPlayerParty, &sDebugTrainers[DIFFICULTY_NORMAL][DEBUG_TRAINER_PLAYER], TRUE, BATTLE_TYPE_TRAINER);
-    CreateNPCTrainerPartyFromTrainer(gEnemyParty, GetDebugAiTrainer(), FALSE, BATTLE_TYPE_TRAINER);
+    CreateNPCTrainerPartyFromTrainer(gPlayerParty, &sDebugTrainers[DIFFICULTY_NORMAL][DEBUG_TRAINER_PLAYER]);
+    CreateNPCTrainerPartyFromTrainer(gEnemyParty, GetDebugAiTrainer());
 
     gBattleTypeFlags = BATTLE_TYPE_TRAINER;
     gDebugAIFlags = sDebugTrainers[DIFFICULTY_NORMAL][DEBUG_TRAINER_AI].aiFlags;

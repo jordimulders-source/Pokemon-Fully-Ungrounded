@@ -26,8 +26,8 @@ Pose naar karakter (R): Fighting → P7 vechthouding (brede A-stand, nabije vuis
 | A1 | **H** Silhouet leest als de soort | Eén kleur op 1× naast de referentiefoto en 2 echte sprites: een buitenstaander noemt het dier | Pikachu, Eevee, Poochyena |
 | A2 | **H** Eén dominant kenmerk breekt de omtrek | Het kenmerk steekt uit het silhouet (niet binnen de romp) en is op 1× als vorm te zien; een accessoire is hooguit het tweede kenmerk | Cyndaquil-vlam, Vulpix-staarten, Chikorita-blad |
 | A3 | **H** Diagonale compositie | Kop linksboven; massa loopt naar rechtsonder; staart/kenmerk geeft tegenwicht rechts(boven). Kijkrichting links(-voor) | Growlithe, Skitty, Meowth, Luxray |
-| A4 | **H** Negatieve ruimte | Soliditeit 0,65–0,80 (bol tot 0,85); lucht tussen poten, tussen staart en lijf, tussen arm en romp | Mightyena 4 poten los, Meowth staartboog |
-| A5 | **H** Niet symmetrisch | Symmetrie-score < 0,80 (bol < 0,85); geen gespiegelde ledematen, oren of ogen | Teddiursa, Jigglypuff (gezicht links) |
+| A4 | **H** Negatieve ruimte | Soliditeit 0,65–0,80 (bol/vachtberg: richtlijn, echte haalt tot ±0,93, Piloswine); lucht tussen poten, tussen staart en lijf, tussen arm en romp | Mightyena 4 poten los, Meowth staartboog |
+| A5 | **H** Niet symmetrisch | Symmetrie-score < 0,80 (bol/vachtberg: richtlijn, echte tot ±0,90: Jigglypuff 0,87, Wooloo 0,89); geen gespiegelde ledematen, oren of ogen | Teddiursa, Jigglypuff (gezicht links) |
 | A6 | **R** Geen bouwblokken | Geen zuil (evenwijdige randen > 6 px), doos (rechte rug/buik > 4 px) of stok (rechte poot zonder knik) | Ponyta-nek taps, Mightyena-buik in boog |
 
 ## B. 3/4-constructie en gezicht
@@ -82,3 +82,6 @@ Pose naar karakter (R): Fighting → P7 vechthouding (brede A-stand, nabije vuis
 - **Slang/vis** — skelet: Ekans, Dratini, Seviper, Milotic; vissen Goldeen, Magikarp, Barboach. Kop hoog links, lichaam in S of lussen rechts-onder met overlap; vissen schuin gekanteld.
 - **Bol/blob** — skelet: Jigglypuff, Clefairy, Whismur, Wooloo, Mareep. Gezicht links van het midden (symmetrie < 0,85), één kenmerk dat de bol breekt (kuif, oren, staart), pootjes op verschillende hoogte.
 - **Insect** — skelet: Ledyba, Venonat, Kricketot, Nymble, Joltik. Mag het meest frontaal; gelijke dunne pootjes mogen (Dragonfly Cave-gids), maar vleugels en voelsprieten verschillen per kant.
+
+
+> Uitzondering uit de keuring (23 okt): **langnekken** (alpaca, Mudbray 42×51, Girafarig) halen de kopverhouding en de box van ±42 px niet; voor hen is dat een richtlijn.

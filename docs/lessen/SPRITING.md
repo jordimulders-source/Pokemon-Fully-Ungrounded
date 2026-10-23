@@ -210,3 +210,11 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Een donker masker op een donkere kop wordt leesbaar door wat eromheen ligt:** basis/hooglicht rond de vleugel (schaduw naar de uiterste 2 px van de achterkant), crème wang die onder het oog omhoogkomt en wenkbrauwboogjes. Het lijf hoeft niet lichter.
 - **Een haak leest op 1× pas met lucht in de bocht** (≥ 2 px) en een punt die terug omlaag wijst; een haakje van 3 px zonder gat leest niet.
 - **Oorvoet aan de schaduwkant:** de onderste rij van een oor dat over de schedelomtrek steekt, eindigt ook met de omlijningskleur, anders ontstaat een open rand waar oor en schedel samenkomen.
+
+## 28. Lessen uit olinguito ronde 17 (staart, neus tussen de ogen)
+- **Een neus in de donkere maskerband verdwijnt:** zwart (16,12,18) naast masker (44,28,28) heeft te weinig contrast. Een inham van 1 rij crème boven de neus scheidt ze, en de maskerrand houdt zijn golf.
+- **3/4-kop: controleer de neus tegen de oogmiddens**, niet alleen tegen het kopsilhouet. Als de neuspunt buiten de twee oogmiddens valt, leest de kop als profiel, hoe goed de ogen ook in 3/4 staan. Meet het met lijnen op 6× (compare.png, onderste rij).
+- **Geen ogen in 3/4 op een profielsnuit:** oog-as en snuit-as moeten dezelfde richting hebben. Bij een korte snuit (kinkajoe, olinguito) ligt de neus 1–3 rijen onder de ogen, tussen de ogen.
+- **Een hangende staart naast een lijf: houd de punt ook in het tweede frame los** van de dij. Een staart die in frame 2 omhoogveert (−1), zou hier de dij raken (punt y45 x52 naast de dij op x51). Een staart die omlaagzakt (+1) blijft vrij en geeft een natuurlijke tegenbeweging.
+- **Zak en haakgat samen geven de lucht:** de ruimte tussen romp en staart die doorloopt in het gat van de haak, leest op 1× als één bocht. Elke binnenrand van dat gat moet omlijningskleur hebben (bouw9 vangt het).
+- **Staart als rijen van 16 tekens (x48–63) met de hand uitgeschreven**, gecontroleerd met `assert len == 16`: sneller en foutlozer dan segmenten tellen.

@@ -46,6 +46,18 @@ POOT = [
     (42, 18, 'VWvK___'),
     (43, 17, 'VWwvK___'),
 ]
+# Reparatie na keuring (KEURING.md, nodig 1 en 2). 1: open randen dicht met K, silhouet gelijk: buik tussen
+# de voorpoten, kaak (frame 2 zakt mee), kont-hoek (nieuwe pixel) en de onderkant van de staart, die zo
+# vastzit aan de kont. 2: de verre achtervoet krijgt een eigen afgerond hoefje (x38-41) met een kolom
+# lucht op x37 vanaf y44, los van de nabije achterpoot.
+KEURING = [
+    (22, 19, 'K'),
+    (30, 43, 'KKK'),
+    (37, 42, 'K'),
+    (39, 25, 'KK'),
+    (46, 37, '_K'),
+    (47, 37, '__KK'),
+]
 AGUAYO = [
     (26, 23, 'MYTYTs'),
     (27, 23, 'vMMMs'),
@@ -85,14 +97,26 @@ def beeld(g):
     return im
 
 
+SCHADUW = {'v', 'u'}  # vachtschaduw: als rand alleen aan de lichtkant (boven/links), niet aan de schaduwkant
+
+
 def open_randen(g):
+    def leeg(u, v):
+        return not (0 <= u < 64 and 0 <= v < 64) or g[v][u] == '.'
     lek = []
     for y in range(64):
         for x in range(64):
-            if g[y][x] != '.' and g[y][x] not in RAND and any(
-                    not (0 <= u < 64 and 0 <= v < 64) or g[v][u] == '.'
-                    for u, v in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1))):
-                lek.append((x, y, g[y][x]))
+            c = g[y][x]
+            if c == '.':
+                continue
+            if c in SCHADUW:
+                buren = ((x + 1, y), (x, y + 1))  # schaduwkant: rechts en onder hoort K
+            elif c not in RAND:
+                buren = ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1))
+            else:
+                continue
+            if any(leeg(u, v) for u, v in buren):
+                lek.append((x, y, c))
     return lek
 
 
@@ -109,7 +133,7 @@ def bouw(hints, uit):
     return im, a, b
 
 
-im, a, b = bouw(VLECHT + AGUAYO + STREEP + POOT, 'ronde15')
+im, a, b = bouw(VLECHT + AGUAYO + STREEP + POOT + KEURING, 'ronde15')
 im.save(os.path.join(D, 'anim_front.png'), transparency=0)
 with open(os.path.join(D, 'normal.pal'), 'w', newline='\r\n') as fh:
     fh.write('JASC-PAL\n0100\n16\n')

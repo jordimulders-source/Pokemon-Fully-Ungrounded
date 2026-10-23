@@ -42,3 +42,10 @@ Neusstreep weg ("had het meer horizontaal in gedachten, maar kan prima zonder");
 
 ## Reparatie linkervoorpoot
 Jordi (23 okt): "De linkerarm is nog een beetje slordig: die zit vast aan een ander en is breder." De nabije voorpoot (x17-24, y41-43, beide frames) is nu 4 px breed (`V W v K`) zoals de verre voorpoot, schuin 1 px per rij naar de manchet, met op y43 1 px uitloop (`VWwvK`) zoals de verre poot in zijn manchet uitloopt. Tussen de poten nu 3 kolommen lucht; beide poten zitten apart aan de borst (y39). Vuist, manchet en al het andere pixel voor pixel gelijk. Vastgelegd als overlay `POOT` in `bron/bouw15.py` (`_` = transparant maken); geen open randen. Voor/na: `compare_poot.png` (1× en 4× uitsnede x12-35, y36-55).
+
+## Reparatie na keuring
+Alleen de twee "nodig"-punten uit `KEURING.md`, beide frames, als overlay `KEURING` in `bron/bouw15.py` (11 px per frame; al het andere pixel voor pixel gelijk, polijstpunten niet gedaan):
+- **Open randen dicht met K**, silhouet gelijk: buik (25,39)-(26,39), kaak (19,22) (frame 2: (19,23)), kont-hoek (42,37) (nieuwe pixel), staartonderkant (43-45,30). Daarmee is ook het gaatje dicht en zit de staart vast aan de kont.
+- **Verre achtervoet los:** eigen afgerond hoefje op x38-41 ((38,46) K, (39-40,47) K, (38,47) leeg) en een kolom lucht op x37 vanaf y44. De aanraking bij de hak (y43) blijft.
+- **Randcontrole verscherpt:** v en u gelden nu alleen aan de lichtkant als rand; grenzen ze rechts of onder aan transparant, dan meldt `bouw15.py` een open rand. Op de oude sprite vond hij precies de 7 plekken uit de keuring; nu: geen meldingen.
+- Voor/na: `compare_keuring.png` (1× en 4×, plekken omkaderd).

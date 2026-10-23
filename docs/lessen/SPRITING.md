@@ -228,3 +228,11 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Frame 2 per pixel afleiden uit de beweging van de vorige ronde** (welke pixels schoven, welke bleven staan) en de verre achterpoot expliciet stil houden; anders ontstaan halve poten op de knipnaad.
 - **Studie meten met kopkaders op 3×** (studie.png) geeft in één blik of een kop te groot is: 43 % → 36 %.
 - **PNG altijd met transparency=0 opslaan:** ronde 19 werd zonder transparantie opgeslagen, waardoor de groene index-0-achtergrond zichtbaar was.
+
+## 31. Lessen uit olinguito stap 1b + ronde 20
+- **Bevroren delen als masker-functie in het bouwscript** (kop per rij tot de achterste omlijning, staart als rechthoeken). Plak ze als laatste laag letterlijk terug en controleer met dezelfde maskers in `check.py`. Zo is pixeldiff 0 per constructie te bewijzen.
+- **Een frame-2-animatie per onderdeel:** zoek eerst per onderdeel de verschuiving tussen de frames (hier kop/voorpoten −1, staart +1, lijf 0). Neem bij het letterlijk overnemen het onderdeel uit **hetzelfde frame** van de bron, want de staart van stap 1b is in frame 2 niet exact verschoven (3 px verschil).
+- **Bij een verschoven kop in frame 2 gaat de borst eronder mee**, anders ontstaan gaten en open randen onder de kin.
+- **Sandslash-klauwen letterlijk overnemen:** knip de hand uit (x4–14, y34–45), laat de gele arm weg en vertaal de 5 klauwtinten. Gebruik een middentint (a) voor crème, anders verdwijnt de scheidingslijn en lezen 2 klauwen als één witte vlek. Van de verre klauwen alleen de punten tonen, met een omlijningsrij erboven.
+- **Een uiteinde dat niet kan meeschuiven** (de lobpunt zou op de bevroren kaak vallen): eindig de vorm op de nieuwe plek en maak de oude plek vacht. Een los lijntje dat dan overblijft, wordt ook vacht, anders blijft er een donker stipje over.
+- De Read-weergave van grote PNG's is grof. Controleer pixelposities met een tekstraster, niet op het oog.

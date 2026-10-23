@@ -997,7 +997,7 @@
 #define TRAINER_ARCHAEOLOGIST_HOLLIS        1073 // Project Grounded (landvulling): Desert Underpass, opgraving (fossielen)
 // }
 
-#define TRAINER_SAILOR_DUNCAN               1100 // Project Grounded (zeevulling 1): Route 107, sushi-eilandje (id's 1100+ om botsing met andere zee-agents te vermijden)
+#define TRAINER_SAILOR_DUNCAN_R107          1100 // Project Grounded (zeevulling 1): Route 107, sushi-eilandje (id's 1100+ om botsing met andere zee-agents te vermijden)
 #define TRAINER_RUIN_MANIAC_SIMON           1101 // Project Grounded (zeevulling 1): Route 107, rots-"ruine"
 #define TRAINER_OLD_COUPLE_HAL_AND_MAE      1102 // Project Grounded (zeevulling 1): Route 126, picknickbank (dubbel)
 #define TRAINER_BIRD_KEEPER_OSWALD          1103 // Project Grounded (zeevulling 1): Route 126, vogeleilandje

@@ -676,9 +676,15 @@ string generate_map_constants_text(string groups_filepath, Json groups_data, vec
         old_map_group = current_map_group;
     }
 
-    for ( const auto &[map_value, map_id]: filtered_map_defines) {
-        text << "#define " << map_id << string(max_length - map_id.length(), ' ')
-             << "  " << map_value << "\n";
+    // Fully Ungrounded: als enum i.p.v. #define, zodat ook de assembler (preproc-enums) ze als symbool kent;
+    // anders faalt de `.ifdef` in de map-macro op scripts die verdwenen kaarten noemen.
+    if (!filtered_map_defines.empty()) {
+        text << "enum\n{\n";
+        for ( const auto &[map_value, map_id]: filtered_map_defines) {
+            text << "    " << map_id << string(max_length - map_id.length(), ' ')
+                 << " = " << map_value << ",\n";
+        }
+        text << "};\n";
     }
 
     text << "\n#define MAP_GROUPS_COUNT " << group_num << "\n\n";

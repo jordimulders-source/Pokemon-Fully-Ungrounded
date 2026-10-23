@@ -42,7 +42,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Alpaca:** fase 1 = Wolvuist (wol groeit als bokshandschoenen om de voorpoten, kuif als hoofdbeschermer); vanaf fase 2 worden de handschoenen **wolkragen om de poten**; fase 3 meer bekleed (bombín uit de kuif, vlechten, pollera/manta), nog uit te werken.
 - **Olinguito:** Haakstaart (zit braaf met gevouwen klauwen, de coati-staart eindigt achter zijn rug in een grijphaak: de dief zit in de staart).
 - **Nachtaap:** concept B (dieper violet met indigo rand rond een bleke lila gezichtsschijf, cyaan gloeiende ogen, tarsierhouding, geen borststeen).
-- **Cuyby:** Langhaarbol (Peruaanse langhaarcavia als één bol vacht met vallende lokken, driekleur als strakke vlakken; evolueert tot een wandelende hooiberg). Moet echt Pokémon-stijl worden.
+- **Cuyby:** Langhaarbol (Peruaanse langhaarcavia als één bol vacht met vallende lokken, driekleur als strakke vlakken; evolueert tot een wandelende hooiberg). Moet echt Pokémon-stijl worden. **Sprite ronde 2 goedgekeurd** (Jordi 23 okt: 'beetje een Hamtaro-look, maar dat zou een Pokémon kunnen zijn'): `docs/concept/sprites/cuyby/ronde2/`.
 
 ## Legendaries
 - **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor**; Kay Pacha (deze wereld) = **poema**; Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.

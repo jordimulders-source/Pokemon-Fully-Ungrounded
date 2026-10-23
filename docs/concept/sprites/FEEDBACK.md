@@ -36,3 +36,11 @@
 - **Nachtaap:** B en C allebei goed; gekozen: **B** (dieper violet, de goedgekeurde paarse richting).
 - **Cuyby:** concept **C, Langhaarbol**, "maar zorg wel dat het echt Pokémon-stijl wordt".
 - Volgende stap: pixelronde volgens de nieuwe werkwijze (echte Gen 3-sprite als skelet + palet, geen automatische schaduw, blinde test vóór Jordi).
+
+## Ronde 6 / Cuyby ronde 2 (23 okt)
+- **Cuyby (ronde 2): tevreden.** "Beetje een Hamtaro-look, maar dat zou een Pokémon kunnen zijn."
+- **Olinguito:** de lange klauwen zijn weggehaald (jammer, terugzetten); de kop staat wat schuin en de streep over de kop ook; misschien door de pose, maar het ziet er een beetje gek uit.
+- **Alpaca:** de handschoenen en de ogen zien er niet Gen 3-achtig uit. Voor de handschoenen kijken naar **Makuhita en Hitmonchan**.
+- **Algemeen:** de ogen zijn vaak niet echt Pokémon-achtig.
+- **Nachtaap:** eigenlijk minder goed dan voorheen: heel cartoony, de staart is niet aan het lijf verbonden, de ogen zijn minder mysterieus, en het lijkt nog steeds niet op een Pokémon ("lastig uit te leggen waar dat in zit").
+- Pas verder na de expansion-update (Jordi).

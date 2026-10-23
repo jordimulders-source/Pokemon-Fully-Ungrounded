@@ -1,0 +1,180 @@
+# Cuyby-evolutie ronde 3 - met de hand, per deel, achter naar voor. Zie rle3.py voor het formaat.
+# Diagonaal (3/4 naar links-voor). Licht linksboven. Tekens: K zwart, h/s/d/q stro (hooglicht/basis/schaduw/roest),
+# r stro-omlijning, a/b/c wit, e wit-omlijning, g/G zwart vlak, p/P roze, n weerkaatsing in het oog.
+# Pose naar foto 2 (gespiegeld): gezicht linksboven-midden in de vacht, aan de verre kant een gordijn van haar
+# tot op de grond, scheiding schuin over de rug van kruin (x27,y21) naar romp (x52,y33): de nabije flank eronder,
+# de verre flank als smalle schaduwband erboven.
+
+## lijf
+# basistinten; 'd' midden in een rij = de schuine scheiding over de rug
+18: 31: 3r 3d 2r K
+19: 28: r 3h 5s 3d r K
+20: 25: r 4h 6s 6d r K
+21: 22: r 4h d 2h 5s 7d 2q r K
+22: 19: r 5h 4s d 2h 4s 8d 3q K
+23: 17: r 6h 7s d 2h 4s 5d 4q K
+24: 15: r 6h 11s d h 4s 5d 4q K
+25: 14: r 6h 14s d h 4s 4d 4q K
+26: 13: r 6h 18s d h 3s 4d 3q K
+27: 12: r 6h 18s 3d d h 3s 3d 3q K
+28: 11: r 6h 19s 5d d h 2s 3d 2q K
+29: 11: r 6h 20s 6d d h 2s 2d 2q K
+30: 10: r 6h 21s 8d d h 2s d q K
+31: 10: r 5h 22s 9d q d h s d q K
+32: 10: r 5h 23s 9d 2q d s q K
+33: 10: r 5h 23s 10d 4q K
+34: 10: r 4h 24s 10d 4q K
+35: 10: r 4h 24s 10d 4q K
+36: 10: r 3h 25s 10d 4q K
+37: 10: r 3h 25s 10d 4q K
+38: 10: r 2h 26s 10d 4q K
+39: 10: r 2h 26s 10d 4q K
+40: 10: r h 27s 10d 4q K
+41: 9: r h 27s 11d 4q K
+42: 9: K h 27s 11d 4q K
+43: 9: K 28s 11d 3q K
+44: 9: K 27s 12d 3q K
+# zoom: lokken eindigen in punten van ongelijke lengte; de zoom stijgt naar achteren (verder weg = hoger),
+# inhammen waar de scheidingen eindigen; pootjes in de inhammen (nabij roze en laag, ver in de schaduw en hoger)
+45: 8: rhsd sssssss drh ssss drh s sd sss dKsdrdqKsddqqKsdqK
+46: 8: rhsdr sssssss drh ssss drh sd sss dKsdrdqKsddqK   49: KsdqK
+47: 7: rhhhsr sssssss dKh ssss dKh ss sss dKs sddqK sdqqK   51: KqK
+# pootjes: ver voor (x10-12) links van en hoger dan nabij voor (x18-22); ver achter (x36-38) links van en
+# hoger dan nabij achter (x42-45); verre pootjes in P (schaduw), nabije in p/P
+48: 7: rhhhsK sssssss dKs ssss dKs sssss dKs sdqK   43: KK   53: K
+49: 8: KhsdK hsssssdd K hssssd K hsssssd K sdqK   42: KpPK
+50: 8: KsdK   13: KhsssdK   20: qq   22: KhssdK   29: KhsssdK   37: KK   42: KKKK
+51: 8: KK   10: KPK   14: KhsdK   19: qqq   22: KhsdK   30: KhssdK   38: KPK
+52: 11: K   15: KdK   18: KppPK   23: KsdK   31: KsdK   38: KK
+53: 16: K   19: KKK   23: KdK   32: KK
+54: 24: K
+
+## lokken
+# scheidingen van de rugscheiding steil omlaag, licht golvend, ongelijk verdeeld, soms onderbroken;
+# drietallen 'donkerder | lijn | lichter'; lijn bovenaan d, midden r, bij de zoom K (les ronde 2)
+26: 36: sd
+27: 33: sdh   37: sdh
+28: 33: sdh   37: sdh   42: dd
+29: 33: sdh   37: sdh   42: sdh
+30: 33: sdh   38: sdh   43: sdh
+31: 34: drh   38: sdh   43: sdh   48: dd
+32: 34: drh   38: drh   43: drh   48: qd
+33: 34: drh   38: drh   41: sd   44: drh   49: qrd
+34: 34: drh   39: drh   41: sd   44: drh   49: qrd
+35: 34: drh   39: drh   41: sd   44: drh   49: qrd
+36: 34: drh   39: drh   42: sd   44: drh   50: qrd
+37: 34: drh   39: drh   42: sd   45: drh   50: qrd
+38: 33: drh   39: drh   45: drh   50: qrd
+39: 33: drh   40: s   45: qrs   50: qrd
+40: 33: drh   41: h   45: qrs   51: qr
+41: 33: drh   37: sd   40: qrs   46: qrs   51: qr
+42: 34: dKh   37: sd   40: qrs   46: qrs
+43: 14: 8d   26: sdh   34: dKh   37: sd   40: qrs   46: qrs
+44: 15: 4d   19: sdh   26: sdh   34: dKh   38: sd   41: qKs   47: qKs
+
+## streepjes
+# losse haarstreepjes in de haarrichting: h in het licht, d in de schaduw (niet overdrijven)
+29: 46: h
+30: 47: h
+32: 36: h
+33: 36: h
+34: 37: h
+37: 37: d
+38: 37: d
+39: 32: d
+40: 32: d
+41: 33: d
+40: 47: s
+41: 47: s
+42: 48: s
+44: 31: d
+45: 16: h   31: d
+46: 16: h   24: d
+47: 17: h   24: d
+
+## gordijn
+# de buitenste ponylok loopt aan de verre kant door tot de grond: rafelige linkerrand met een punt bij (7,43)
+36: 8: rhhsd
+37: 8: rhhsd
+38: 8: rhsd
+39: 7: rhhsd
+40: 7: rhsdK
+41: 7: rhsd
+42: 8: Kd
+43: 8: K
+45: 8: rh
+46: 8: rhs
+
+## achterlokken
+# romp: lokken die naar achteren-rechts uitwaaieren met een punt en een inham eronder; verre flank: korte
+# sprieten die rechtsboven van de rugscheiding wegvallen (fijne punten in de omtrek)
+18: 40: rr
+20: 45: rK
+24: 49: dK
+28: 52: dK
+32: 54: K
+37: 53: qK
+38: 53: qqK
+39: 53: qdK
+40: 53: qddK
+41: 53: qqddK
+
+## gezicht
+# 3/4: bles schuin van voorhoofd (x20) naar snuit (x14-22), nabij oog rechts van de bles in Cuyby's zwarte vlek,
+# zwart oortje rechtsboven aan de vlek, verre wang (x14) net voorbij het verre oog, roze neus linksonder.
+25: 30: KKK
+26: 29: KggGK
+27: 17: rhhbbhsss   29: KgPGGK
+28: 16: rhhhhhhsGGGGGGGK
+29: 15: rhhhhhhssGGGGGGs
+30: 15: rhhhhhhsGGGGGGGG
+31: 14: rhhhhhhhsbGggggGG
+32: 14: rhhhhhsabGggKKgGG
+33: 14: rhhhhsabbGgKaKKgGG
+34: 14: rhhsaabbcGgKKnKgGG
+35: 14: rsabbbbbcGGgKKgGGG
+36: 13: eabbbbbbccGGgggGGG
+37: 13: ebbbbbbbcccGGGGGGs
+38: 12: PpbbbbbbbccsGGGGs
+39: 12: PPbbbbbbbccssGGs
+40: 13: ecebbbbbcss
+41: 14: ebbbbbbcd
+42: 15: eccccce
+
+## kruin_punten 0 1
+# frame 2: de sprieten wuiven 1 px naar achteren (de voet blijft staan)
+# wilde ichu-pluk: sprieten alle kanten op (links-omhoog, recht omhoog, rechts-omhoog, naar achteren), zacht gebogen
+# vijf sprieten van 1-4 px breed uit een volle voet, plus twee dunne halmpjes; punten buigen naar buiten
+9: 18: r
+10: 18: rr   31: r
+11: 19: rhr   30: rr
+12: 19: rhr   25: r   29: rhr
+13: 11: rr   19: rhhr   24: r   28: rhr
+14: 12: rhr   20: rhsr   24: r   27: rhsK
+15: 13: rhhr   20: rhssr   26: rhsK   36: rr
+16: 14: rhhsr   21: rhss   25: rhsdK   33: rhhsK
+17: 15: rhhsd rhssd rhsdK   31: rhhssK
+
+## kruin_voet
+18: 14: rhhsdrhssdrhssddrhhsdd
+19: 13: rhhhsdhhssdhhssdhhhssd
+20: 13: rhhhsdhhhsdhhssddhhsssd
+21: 12: rhhhhsdhhhssdhhsssddhssssdd
+
+## pony
+# valt van de kruin schuin naar links-omlaag over het verre oog; drie lokken, rafelige punten op
+# verschillende hoogte (x17,y32 / x13,y35); de buitenste lok loopt door als gordijn tot de grond (zie lokken)
+22: 12: rhhhhhhssr
+23: 11: rhhhsdhhdhsr
+24: 10: rhhhsdhhsdhsr
+25: 10: rhhhsdhsdhhsr
+26: 10: rhhsrhhsrhsr
+27: 10: rhsrhhsrhssK
+28: 9: rhhsrhssrhsdK
+29: 9: rhsrhhsrhsdK
+30: 8: rrhsrhssKsdK
+31: 7: rrhsKhsdKsK
+32: 9: rhsKssdKK
+33: 10: rsKsdK
+34: 9: rhsKdK
+35: 9: rssKK

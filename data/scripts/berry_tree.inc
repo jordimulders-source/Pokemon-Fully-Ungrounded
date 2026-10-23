@@ -246,7 +246,6 @@ BerryTree_EventScript_WaterAfterPlanting::
 	closemessage
 	special ObjectEventInteractionWaterBerryTree
 	special DoWateringBerryTreeAnim
-	waitstate
 BerryTree_EventScript_WaterAfterPlantingEnd::
 	return
 

@@ -153,7 +153,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
     DoBounceEffect(battler, BOUNCE_MON, 7, 1);
     if (JOY_NEW(A_BUTTON))
     {
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
 
         switch (gActionSelectionCursor[battler])
         {
@@ -176,7 +176,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
     {
         if (gActionSelectionCursor[battler] & 1) // if is B_ACTION_USE_ITEM or B_ACTION_RUN
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 1;
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
@@ -186,7 +186,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
     {
         if (!(gActionSelectionCursor[battler] & 1)) // if is B_ACTION_USE_MOVE or B_ACTION_SWITCH
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 1;
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
@@ -196,7 +196,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
     {
         if (gActionSelectionCursor[battler] & 2) // if is B_ACTION_SWITCH or B_ACTION_RUN
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 2;
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
@@ -206,7 +206,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
     {
         if (!(gActionSelectionCursor[battler] & 2)) // if is B_ACTION_USE_MOVE or B_ACTION_USE_ITEM
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ActionSelectionDestroyCursorAt(gActionSelectionCursor[battler]);
             gActionSelectionCursor[battler] ^= 2;
             ActionSelectionCreateCursorAt(gActionSelectionCursor[battler], 0);
@@ -227,7 +227,7 @@ static void HandleInputChooseAction(enum BattlerId battler)
                 else
                     return;
             }
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             BtlController_EmitTwoReturnValues(battler, 1, B_ACTION_CANCEL_PARTNER, 0);
             OakOldManBufferExecCompleted(battler);
         }
@@ -251,7 +251,7 @@ static void SimulateInputChooseAction(enum BattlerId battler)
         if (--gBattleStruct->simulatedInputState2 == 0)
         {
             // Move cursor to BAG
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             ActionSelectionDestroyCursorAt(0);
             ActionSelectionCreateCursorAt(1, 0);
             gBattleStruct->simulatedInputState2 = 64;
@@ -262,7 +262,7 @@ static void SimulateInputChooseAction(enum BattlerId battler)
         if (--gBattleStruct->simulatedInputState2 == 0)
         {
             // Open bag
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             BtlController_EmitTwoReturnValues(battler, 1, B_ACTION_USE_ITEM, 0);
             OakOldManBufferExecCompleted(battler);
         }
@@ -818,7 +818,7 @@ static void OakOldManHandleChooseMove(enum BattlerId battler)
         case 1:
             if (--gBattleStruct->simulatedInputState3 == 0)
             {
-                PlaySE(SE_SELECT);
+                PlaySE(SE_RG_BALL_CLICK);
                 BtlController_EmitTwoReturnValues(battler, 1, 10, 0x100);
                 OakOldManBufferExecCompleted(battler);
             }

@@ -2713,7 +2713,7 @@ static void Task_OnSelectedMon(u8 taskId)
             StartItemFromMonMode();
             SetPokeStorageTask(Task_TakeItemForMoving);
         case MENU_SELECT:
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             struct BoxPokemon *boxmon = GetCursorBoxMon();
             if (sInPartyMenu)
             {

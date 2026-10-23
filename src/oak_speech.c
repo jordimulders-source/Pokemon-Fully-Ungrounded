@@ -862,7 +862,7 @@ static void Task_ControlsGuide_HandleInput(u8 taskId)
                 BeginNormalPaletteFade(PALETTES_OBJECTS | 0xDFFF, -1, 0, 16, GetTextWindowPalette(2)[15]);
             }
 
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             gTasks[taskId].func = Task_ControlsGuide_ChangePage;
         }
     }
@@ -1008,7 +1008,7 @@ static void Task_PikachuIntro_HandleInput(u8 taskId)
                 else
                     break;
             }
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             if (sOakSpeechResources->currentPage == NUM_PIKACHU_INTRO_PAGES)
             {
                 gMain.state = PIKACHU_INTRO_EXIT;
@@ -1422,7 +1422,7 @@ static void Task_OakSpeech_HandleRivalNameInput(u8 taskId)
     switch (input)
     {
     case 0: // NEW NAME
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         BeginNormalPaletteFade(PALETTES_ALL, 0, 0, 16, RGB_BLACK);
         gTasks[taskId].func = Task_OakSpeech_DoNamingScreen;
         break;
@@ -1430,7 +1430,7 @@ static void Task_OakSpeech_HandleRivalNameInput(u8 taskId)
     case 2: //
     case 3: //
     case 4: //
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         ClearStdWindowAndFrameToTransparent(tMenuWindowId, TRUE);
         RemoveWindow(tMenuWindowId);
         GetDefaultName(sOakSpeechResources->hasPlayerBeenNamed, input - 1);
@@ -1498,7 +1498,7 @@ static void Task_OakSpeech_HandleConfirmNameInput(u8 taskId)
     switch (input)
     {
     case 0: // YES
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         gTasks[taskId].tTimer = 40;
         if (sOakSpeechResources->hasPlayerBeenNamed == FALSE)
         {
@@ -1515,7 +1515,7 @@ static void Task_OakSpeech_HandleConfirmNameInput(u8 taskId)
         break;
     case 1: // NO
     case MENU_B_PRESSED:
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         if (sOakSpeechResources->hasPlayerBeenNamed == FALSE)
             gTasks[taskId].func = Task_OakSpeech_FadeOutForPlayerNamingScreen;
         else

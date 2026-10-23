@@ -7112,6 +7112,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .battleAnimScript = gBattleAnimMove_HeatWave,
         .validApprenticeMove = TRUE,
     },
+    // Project Grounded: Hail heet Snow Storm: schade per beurt én Ice-types +50% Def (zoals Snowscape)
 
     [MOVE_HAIL] =
     {
@@ -23832,6 +23833,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .ignoresProtect = TRUE,
         .battleAnimScript = gBattleAnimMove_GMaxRapidFlow,
     },
+    // Project Grounded: Team Aqua's bruiswater-golf (Surf met bubbels): 80 power, 20% Speed -1, 10% confusion, alleen beide tegenstanders.
     [MOVE_SELTZER_SURGE] =
     {
         .name = COMPOUND_STRING("Seltzer Surge"),
@@ -23863,6 +23865,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_DIVE, COMBO_STARTER_RAIN_DANCE},
         .battleAnimScript = gBattleAnimMove_SeltzerSurge,
     },
+    // Project Grounded: bier-Surf met gele golven en schuim: 65 power, 50% confusion, raakt ook de partner.
     [MOVE_LAGER_LAGOON] =
     {
         .name = COMPOUND_STRING("Lager Lagoon"),
@@ -23889,6 +23892,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {COMBO_STARTER_DIVE, COMBO_STARTER_RAIN_DANCE},
         .battleAnimScript = gBattleAnimMove_LagerLagoon,
     },
+    // Project Grounded: wijn morsen (Water Sport in bordeaux): 60 power; confusion 50 -> 100% per treffer
+    // op hetzelfde doelwit (teller in gDisableStructs, verdwijnt bij wisselen). Zie Cmd_setadditionaleffects.
     [MOVE_VINTAGE_SPILL] =
     {
         .name = COMPOUND_STRING("Vintage Spill"),
@@ -23913,6 +23918,8 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .contestComboMoves = {0},
         .battleAnimScript = gBattleAnimMove_VintageSpill,
     },
+    // Project Grounded: Falinks-signature, Grieks voor "duwen" in een hoplieten-falanx.
+    // 20 power per treffer; 5 treffers bij volle HP, minder naarmate de HP daalt (zie CancelerMultihitMoves).
     [MOVE_OTHISMOS] =
     {
         .name = COMPOUND_STRING("Othismos"),

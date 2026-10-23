@@ -769,7 +769,7 @@
 //             }
 //             else if (sFameCheckerData->personHasUnlockedPanels)
 //             {
-//                 PlaySE(SE_SELECT);
+//                 PlaySE(SE_RG_BALL_CLICK);
 //                 task->data[0] = CreateFlavorTextIconSelectorCursorSprite(task->data[1]);
 //                 for (i = 0; i < 6; i++)
 //                 {
@@ -869,7 +869,7 @@
 //     if (JOY_NEW(B_BUTTON))
 //     {
 //         u8 i;
-//         PlaySE(SE_SELECT);
+//         PlaySE(SE_RG_BALL_CLICK);
 //         for (i = 0; i < 6; i++)
 //             SetMessageSelectorIconObjMode(sFameCheckerData->spriteIds[i], ST_OAM_OBJ_NORMAL);
 //         WipeMsgBoxAndTransfer();
@@ -1451,7 +1451,7 @@ void UpdatePickStateFromSpecialVar8005(void)
 //     if (taskId != 0xFF)
 //     {
 //         struct Task *task = &gTasks[taskId];
-//         PlaySE(SE_SELECT);
+//         PlaySE(SE_RG_BALL_CLICK);
 //         task->data[1] = 0;
 //         ListMenuGetScrollAndRow(sFameCheckerData->listMenuTaskId, &listMenuTopIdx, NULL);
 //         sFameCheckerData->listMenuTopIdx = listMenuTopIdx;

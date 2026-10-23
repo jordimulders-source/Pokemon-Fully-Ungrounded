@@ -1742,7 +1742,7 @@ static void HandleMoveRelearnerInput(u8 taskId)
             gSpecialVar_0x8004 = sMonSummaryScreen->curMonIndex;
         }
         StopPokemonAnimations();
-        PlaySE(SE_SELECT);
+        PlaySE(SE_RG_BALL_CLICK);
         BeginCloseSummaryScreen(taskId);
     }
 }

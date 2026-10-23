@@ -662,7 +662,7 @@ static void Task_MoveRelearner_HandleInput(u8 taskId)
             if (!(JOY_NEW(DPAD_LEFT | DPAD_RIGHT)) && !GetLRKeysPressed())
                 break;
 
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
 
             if (gTasks[taskId].tCategory == BATTLE_INFO)
             {

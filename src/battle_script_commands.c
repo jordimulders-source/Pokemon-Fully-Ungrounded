@@ -12463,14 +12463,14 @@ void BS_CatchOrNot(void)
     case 1:
         if (JOY_NEW(DPAD_UP) && gBattleCommunication[CURSOR_POSITION] != 0)
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             BattleDestroyCatchOrNotCursorAt(gBattleCommunication[CURSOR_POSITION]);
             gBattleCommunication[CURSOR_POSITION] = 0;
             BattleCreateCatchOrNotCursorAt(0);
         }
         if (JOY_NEW(DPAD_DOWN) && gBattleCommunication[CURSOR_POSITION] == 0)
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             BattleDestroyCatchOrNotCursorAt(gBattleCommunication[CURSOR_POSITION]);
             gBattleCommunication[CURSOR_POSITION] = 1;
             BattleCreateCatchOrNotCursorAt(1);
@@ -12478,13 +12478,13 @@ void BS_CatchOrNot(void)
         if (JOY_NEW(B_BUTTON))
         {
             gBattleCommunication[CURSOR_POSITION] = 1;
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             HandleBattleWindow(CATCH_OR_NOT_X_Y, WINDOW_CLEAR);
             gBattlescriptCurrInstr = cmd->nextInstr;
         }
         else if (JOY_NEW(A_BUTTON))
         {
-            PlaySE(SE_SELECT);
+            PlaySE(SE_RG_BALL_CLICK);
             HandleBattleWindow(CATCH_OR_NOT_X_Y, WINDOW_CLEAR);
             gBattlescriptCurrInstr = cmd->nextInstr;
         }

@@ -39,3 +39,6 @@ Acht proeven (S1–S8, niet bewaard). Zolang de streep op de oude oogplek bleef 
 
 ## Oordeel Jordi (23 okt)
 Neusstreep weg ("had het meer horizontaal in gedachten, maar kan prima zonder"); verre oogplek is nu gewoon wol. Sprite verder **goedgekeurd** ("prima").
+
+## Reparatie linkervoorpoot
+Jordi (23 okt): "De linkerarm is nog een beetje slordig: die zit vast aan een ander en is breder." De nabije voorpoot (x17-24, y41-43, beide frames) is nu 4 px breed (`V W v K`) zoals de verre voorpoot, schuin 1 px per rij naar de manchet, met op y43 1 px uitloop (`VWwvK`) zoals de verre poot in zijn manchet uitloopt. Tussen de poten nu 3 kolommen lucht; beide poten zitten apart aan de borst (y39). Vuist, manchet en al het andere pixel voor pixel gelijk. Vastgelegd als overlay `POOT` in `bron/bouw15.py` (`_` = transparant maken); geen open randen. Voor/na: `compare_poot.png` (1× en 4× uitsnede x12-35, y36-55).

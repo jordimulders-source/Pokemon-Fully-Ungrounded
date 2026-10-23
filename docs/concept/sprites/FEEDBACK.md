@@ -44,3 +44,10 @@
 - **Algemeen:** de ogen zijn vaak niet echt Pokémon-achtig.
 - **Nachtaap:** eigenlijk minder goed dan voorheen: heel cartoony, de staart is niet aan het lijf verbonden, de ogen zijn minder mysterieus, en het lijkt nog steeds niet op een Pokémon ("lastig uit te leggen waar dat in zit").
 - Pas verder na de expansion-update (Jordi).
+
+## Ronde 7 (23 okt)
+- **Cuyby (ronde 3): tevreden.**
+- **Alpaca:** lijkt wel gesmolten; de ogen kloppen qua vorm en plek niet.
+- **Olinguito:** staart en klauw zijn heel raar; het lichaam is wel beter; de ogen zijn wederom zwak.
+- **Nachtaap:** staat nu wel beter, maar is gewoon geen nachtaap meer.
+- **Jordi neigt naar de starters from scratch** ("terug naar de tekentafel, naar het concept"): de agents limiteren zichzelf en proberen iets te fixen wat kapot is. Volgende keer agents níet de oude rondes als vertrekpunt geven.

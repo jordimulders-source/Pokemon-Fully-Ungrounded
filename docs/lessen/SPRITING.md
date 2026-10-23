@@ -98,6 +98,11 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Oogmaat meten, niet schatten:** Jigglypuff-oog ±25% van de kopbreedte; ronde 8 zat op 38%. Oogomlijning in de gezichtstinten (donkere iriskleur, crèmeschaduw eronder) in plaats van een zwarte ring haalt het "opgeplakte".
 - **3/4 zit in de linkerkant van de kop:** laat de verre wang 1–2 px voorbij het verre oog uitsteken, zodat de neusbrug schuin uit het gezicht komt; een snoet die vanaf de schedelrand recht opzij steekt leest als profiel.
 - **Verre arm op een donker lijf** verdwijnt; een zwarte rand aan de lichte kant plus één rij basistint maakt hem zichtbaar.
+- **Rasters met absolute x** (olinguito ronde 11): `y x pixels` per regel (`bron/delen_abs.txt` → `abs2delen.py` → `bouw9.py`); meerdere regels per y in één deel mogen, zo teken je overlappende klauwen zonder te tellen.
+- **Zijwaartse blik = pupil tegen de voorrand van het oog.** Naar de kijker: pupil in het midden-onder met iris aan beide kanten (oog ≥ 4 px breed), en omlijning naast de pupil in de maskerkleur in plaats van zwart, anders smelt de pupil met de rand.
+- **Klauw als deel van de hand:** eindig de poot in een vingerrij met een zwarte splitsing en laat elke klauw direct onder een vinger beginnen met dezelfde breedte; een klauw die versmalt moet rechtsonder zwart sluiten (anders open rand).
+- **Twee klauwhanden naast elkaar lezen als een hark**; zet de verre poot op een andere hoogte (opgetrokken sluippoot) zodat de klauwgroepen apart lezen.
+- **Een rechte arm van schouder tot poot is een plank**: geef hem een elleboog naar achteren en een onderarm naar voren, en houd hem kort (Pokémon-armen zijn stomp).
 
 ## 12. Lessen uit Jordi's feedback op ronde 8
 - **Geen 'geamputeerde' verre ledematen:** in een 3/4-pose zijn de verre arm en het verre been bij Gen 3 altijd (deels) zichtbaar achter of naast het lijf. Laat ze nooit weg; teken ze kleiner en in de schaduwkleur. Check: tel per sprite de armen, benen en oren.

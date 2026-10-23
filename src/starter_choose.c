@@ -112,9 +112,10 @@ static const u8 sStarterLabelCoords[STARTER_MON_COUNT][2] =
 
 static const u16 sStarterMon[STARTER_MON_COUNT] =
 {
-    SPECIES_TREECKO,
-    SPECIES_TORCHIC,
-    SPECIES_MUDKIP,
+    // Fully Ungrounded: plaatshouders tot de eigen starters er zijn (Treecko-, Torchic- en Mudkip-lijn zijn uit de ROM)
+    SPECIES_BRAMBLIN,
+    SPECIES_CHARCADET,
+    SPECIES_QUAXLY,
 };
 
 static const struct BgTemplate sBgTemplates[3] =

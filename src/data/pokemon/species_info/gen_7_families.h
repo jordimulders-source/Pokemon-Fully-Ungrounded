@@ -1264,6 +1264,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .formSpeciesIdTable = sVikavoltFormSpeciesIdTable,
     },
 
+#if FU_TOTEM_FORMS
     [SPECIES_VIKAVOLT_TOTEM] =
     {
         .baseHP        = 77,
@@ -1334,6 +1335,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .teachableLearnset = sVikavoltTeachableLearnset,
         .formSpeciesIdTable = sVikavoltFormSpeciesIdTable,
     },
+#endif //FU_TOTEM_FORMS
 #endif //P_FAMILY_GRUBBIN
 
 #if P_FAMILY_CRABRAWLER
@@ -2822,6 +2824,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .formSpeciesIdTable = sAraquanidFormSpeciesIdTable,
     },
 
+#if FU_TOTEM_FORMS
     [SPECIES_ARAQUANID_TOTEM] =
     {
         .baseHP        = 68,
@@ -2884,6 +2887,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .teachableLearnset = sAraquanidTeachableLearnset,
         .formSpeciesIdTable = sAraquanidFormSpeciesIdTable,
     },
+#endif //FU_TOTEM_FORMS
 #endif //P_FAMILY_DEWPIDER
 
 #if P_FAMILY_FOMANTIS
@@ -3350,6 +3354,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .formSpeciesIdTable = sSalazzleFormSpeciesIdTable,
     },
 
+#if FU_TOTEM_FORMS
     [SPECIES_SALAZZLE_TOTEM] =
     {
         .baseHP        = 68,
@@ -3412,6 +3417,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .teachableLearnset = sSalazzleTeachableLearnset,
         .formSpeciesIdTable = sSalazzleFormSpeciesIdTable,
     },
+#endif //FU_TOTEM_FORMS
 #endif //P_FAMILY_SALANDIT
 
 #if P_FAMILY_STUFFUL
@@ -4949,6 +4955,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .formChangeTable = sMimikyuFormChangeTable,
     },
 
+#if FU_TOTEM_FORMS
     [SPECIES_MIMIKYU_TOTEM_DISGUISED] =
     {
         .baseHP        = 55,
@@ -5013,7 +5020,9 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .formSpeciesIdTable = sMimikyuFormSpeciesIdTable,
         .formChangeTable = sMimikyuTotemFormChangeTable,
     },
+#endif //FU_TOTEM_FORMS
 
+#if FU_TOTEM_FORMS
     [SPECIES_MIMIKYU_BUSTED_TOTEM] =
     {
         .baseHP        = 55,
@@ -5069,6 +5078,7 @@ const struct SpeciesInfo gSpeciesInfoGen7[] =
         .formSpeciesIdTable = sMimikyuFormSpeciesIdTable,
         .formChangeTable = sMimikyuTotemFormChangeTable,
     },
+#endif //FU_TOTEM_FORMS
 #endif //P_FAMILY_MIMIKYU
 
 #if P_FAMILY_BRUXISH

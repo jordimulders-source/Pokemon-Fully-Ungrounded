@@ -2793,6 +2793,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 15, SPECIES_PIKACHU}),
     },
 
+#if FU_PICHU_SPIKY_EARED
     [SPECIES_PICHU_SPIKY_EARED] =
     {
         .baseHP        = 20,
@@ -2862,6 +2863,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggMoveLearnset = sPichuEggMoveLearnset,
         .formSpeciesIdTable = sPichuFormSpeciesIdTable,
     },
+#endif //FU_PICHU_SPIKY_EARED
 #endif //P_GEN_2_CROSS_EVOS
 
 #define PIKACHU_DEFENSE (P_UPDATED_STATS >= GEN_6 ? 40 : 30)
@@ -3793,6 +3795,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 #endif //P_GIGANTAMAX_FORMS
 
+#if FU_PARTNER_FORMS
     [SPECIES_PIKACHU_STARTER] =
     {
         .baseHP        = 45,
@@ -3871,6 +3874,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sPikachuTeachableLearnset,
         .formSpeciesIdTable = sPikachuFormSpeciesIdTable,
     },
+#endif //FU_PARTNER_FORMS
 
 #if P_UPDATED_EXP_YIELDS >= GEN_8
     #define RAICHU_EXP_YIELD 243
@@ -3964,6 +3968,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_ALOLAN_FORMS
+#if FU_RAICHU_ALOLA
     [SPECIES_RAICHU_ALOLA] =
     {
         .baseHP        = 90,
@@ -4029,6 +4034,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sRaichuAlolaTeachableLearnset,
         .formSpeciesIdTable = sRaichuFormSpeciesIdTable,
     },
+#endif //FU_RAICHU_ALOLA
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_PIKACHU
 
@@ -6876,6 +6882,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     #define MEOWTH_ABILITIES { ABILITY_PICKUP, ABILITY_NONE, ABILITY_UNNERVE }
 #endif
 
+#if FU_MEOWTH_KANTO
     [SPECIES_MEOWTH] =
     {
         .baseHP        = 40,
@@ -6951,7 +6958,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formChangeTable = sMeowthFormChangeTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_PERSIAN}),
     },
+#endif //FU_MEOWTH_KANTO
 
+#if FU_MEOWTH_KANTO
     [SPECIES_PERSIAN] =
     {
         .baseHP        = 75, // Project Grounded
@@ -7024,8 +7033,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sPersianTeachableLearnset,
         .formSpeciesIdTable = sPersianFormSpeciesIdTable,
     },
+#endif //FU_MEOWTH_KANTO
 
 #if P_ALOLAN_FORMS
+#if FU_MEOWTH_ALOLA
     [SPECIES_MEOWTH_ALOLA] =
     {
         .baseHP        = 40,
@@ -7093,7 +7104,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sMeowthFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 27, SPECIES_PERSIAN_ALOLA}),
     },
+#endif //FU_MEOWTH_ALOLA
 
+#if FU_MEOWTH_ALOLA
     [SPECIES_PERSIAN_ALOLA] =
     {
         .baseHP        = 65,
@@ -7159,6 +7172,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sPersianAlolaTeachableLearnset,
         .formSpeciesIdTable = sPersianFormSpeciesIdTable,
     },
+#endif //FU_MEOWTH_ALOLA
 #endif //P_ALOLAN_FORMS
 
 #if P_GALARIAN_FORMS
@@ -7864,6 +7878,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_HISUIAN_FORMS
+#if FU_GROWLITHE_HISUI
     [SPECIES_GROWLITHE_HISUI] =
     {
         .baseHP        = 60,
@@ -7929,7 +7944,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sGrowlitheFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_FIRE_STONE, SPECIES_ARCANINE_HISUI}),
     },
+#endif //FU_GROWLITHE_HISUI
 
+#if FU_GROWLITHE_HISUI
     [SPECIES_ARCANINE_HISUI] =
     {
         .baseHP        = 95,
@@ -7994,6 +8011,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sArcanineHisuiTeachableLearnset,
         .formSpeciesIdTable = sArcanineFormSpeciesIdTable,
     },
+#endif //FU_GROWLITHE_HISUI
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_GROWLITHE
 
@@ -9630,6 +9648,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_ALOLAN_FORMS
+#if FU_GEODUDE_ALOLA
     [SPECIES_GEODUDE_ALOLA] =
     {
         .baseHP        = 40,
@@ -9698,7 +9717,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sGeodudeFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 25, SPECIES_GRAVELER_ALOLA}),
     },
+#endif //FU_GEODUDE_ALOLA
 
+#if FU_GEODUDE_ALOLA
     [SPECIES_GRAVELER_ALOLA] =
     {
         .baseHP        = 55,
@@ -9765,7 +9786,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sGravelerFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_GOLEM_ALOLA}),
     },
+#endif //FU_GEODUDE_ALOLA
 
+#if FU_GEODUDE_ALOLA
     [SPECIES_GOLEM_ALOLA] =
     {
         .baseHP        = 80,
@@ -9831,6 +9854,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sGolemAlolaTeachableLearnset,
         .formSpeciesIdTable = sGolemFormSpeciesIdTable,
     },
+#endif //FU_GEODUDE_ALOLA
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_GEODUDE
 
@@ -9974,6 +9998,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_GALARIAN_FORMS
+#if FU_PONYTA_GALAR
     [SPECIES_PONYTA_GALAR] =
     {
         .baseHP        = 50,
@@ -10040,7 +10065,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sPonytaFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 40, SPECIES_RAPIDASH_GALAR}),
     },
+#endif //FU_PONYTA_GALAR
 
+#if FU_PONYTA_GALAR
     [SPECIES_RAPIDASH_GALAR] =
     {
         .baseHP        = 65,
@@ -10105,6 +10132,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sRapidashGalarTeachableLearnset,
         .formSpeciesIdTable = sRapidashFormSpeciesIdTable,
     },
+#endif //FU_PONYTA_GALAR
 #endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_PONYTA
 
@@ -11389,6 +11417,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
 #endif //P_FAMILY_SEEL
 
 #if P_FAMILY_GRIMER
+#if FU_GRIMER_KANTO
     [SPECIES_GRIMER] =
     {
         .baseHP        = 80,
@@ -11461,7 +11490,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sGrimerFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_MUK}),
     },
+#endif //FU_GRIMER_KANTO
 
+#if FU_GRIMER_KANTO
     [SPECIES_MUK] =
     {
         .baseHP        = 105,
@@ -11534,8 +11565,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sMukTeachableLearnset,
         .formSpeciesIdTable = sMukFormSpeciesIdTable,
     },
+#endif //FU_GRIMER_KANTO
 
 #if P_ALOLAN_FORMS
+#if FU_GRIMER_ALOLA
     [SPECIES_GRIMER_ALOLA] =
     {
         .baseHP        = 80,
@@ -11603,7 +11636,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sGrimerFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 38, SPECIES_MUK_ALOLA}),
     },
+#endif //FU_GRIMER_ALOLA
 
+#if FU_GRIMER_ALOLA
     [SPECIES_MUK_ALOLA] =
     {
         .baseHP        = 105,
@@ -11671,6 +11706,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sMukAlolaTeachableLearnset,
         .formSpeciesIdTable = sMukFormSpeciesIdTable,
     },
+#endif //FU_GRIMER_ALOLA
 #endif //P_ALOLAN_FORMS
     // Project Grounded: Hoenn-vorm (natuurlijke mest uit Verdanturf)
     [SPECIES_GRIMER_HOENN] =
@@ -13088,6 +13124,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_HISUIAN_FORMS
+#if FU_VOLTORB_HISUI
     [SPECIES_VOLTORB_HISUI] =
     {
         .baseHP        = 40,
@@ -13153,7 +13190,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .formSpeciesIdTable = sVoltorbFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_ELECTRODE_HISUI}),
     },
+#endif //FU_VOLTORB_HISUI
 
+#if FU_VOLTORB_HISUI
     [SPECIES_ELECTRODE_HISUI] =
     {
         .baseHP        = 60,
@@ -13218,6 +13257,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sElectrodeHisuiTeachableLearnset,
         .formSpeciesIdTable = sElectrodeFormSpeciesIdTable,
     },
+#endif //FU_VOLTORB_HISUI
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_VOLTORB
 
@@ -13600,6 +13640,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_ALOLAN_FORMS
+#if FU_MAROWAK_ALOLA
     [SPECIES_MAROWAK_ALOLA] =
     {
         .baseHP        = 75, // Project Grounded
@@ -13662,7 +13703,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sMarowakAlolaTeachableLearnset,
         .formSpeciesIdTable = sMarowakFormSpeciesIdTable,
     },
+#endif //FU_MAROWAK_ALOLA
 
+#if FU_TOTEM_FORMS
     [SPECIES_MAROWAK_ALOLA_TOTEM] =
     {
         .baseHP        = 60,
@@ -13726,11 +13769,13 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sMarowakAlolaTeachableLearnset,
         .formSpeciesIdTable = sMarowakFormSpeciesIdTable,
     },
+#endif //FU_TOTEM_FORMS
 #endif //P_ALOLAN_FORMS
 #endif //P_FAMILY_CUBONE
 
 #if P_FAMILY_HITMONS
 #if P_GEN_2_CROSS_EVOS
+#if FU_TYROGUE_HITMONLEE_HITMONCHAN
     [SPECIES_TYROGUE] =
     {
         .baseHP        = 35,
@@ -13804,8 +13849,10 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
                                 {EVO_LEVEL, 20, SPECIES_HITMONLEE, CONDITIONS({IF_ATK_GT_DEF})},
                                 {EVO_LEVEL, 20, SPECIES_HITMONTOP, CONDITIONS({IF_ATK_EQ_DEF})}),
     },
+#endif //FU_TYROGUE_HITMONLEE_HITMONCHAN
 #endif //P_GEN_2_CROSS_EVOS
 
+#if FU_TYROGUE_HITMONLEE_HITMONCHAN
     [SPECIES_HITMONLEE] =
     {
         .baseHP        = 50,
@@ -13876,7 +13923,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sHitmonleeLevelUpLearnset,
         .teachableLearnset = sHitmonleeTeachableLearnset,
     },
+#endif //FU_TYROGUE_HITMONLEE_HITMONCHAN
 
+#if FU_TYROGUE_HITMONLEE_HITMONCHAN
     [SPECIES_HITMONCHAN] =
     {
         .baseHP        = 50,
@@ -13955,6 +14004,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sHitmonchanLevelUpLearnset,
         .teachableLearnset = sHitmonchanTeachableLearnset,
     },
+#endif //FU_TYROGUE_HITMONLEE_HITMONCHAN
 
 #if P_GEN_2_CROSS_EVOS
     [SPECIES_HITMONTOP] =
@@ -14338,6 +14388,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_GALARIAN_FORMS
+#if FU_WEEZING_GALAR
     [SPECIES_WEEZING_GALAR] =
     {
         .baseHP        = 65,
@@ -14405,6 +14456,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sWeezingGalarTeachableLearnset,
         .formSpeciesIdTable = sWeezingFormSpeciesIdTable,
     },
+#endif //FU_WEEZING_GALAR
 #endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_KOFFING
 
@@ -17261,6 +17313,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 
 #if P_PALDEAN_FORMS
+#if FU_TAUROS_PALDEA
     [SPECIES_TAUROS_PALDEA_COMBAT] =
     {
         .baseHP        = 75,
@@ -17326,7 +17379,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggMoveLearnset = sTaurosPaldeaCombatEggMoveLearnset,
         .formSpeciesIdTable = sTaurosFormSpeciesIdTable,
     },
+#endif //FU_TAUROS_PALDEA
 
+#if FU_TAUROS_PALDEA
     [SPECIES_TAUROS_PALDEA_BLAZE] =
     {
         .baseHP        = 75,
@@ -17392,7 +17447,9 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggMoveLearnset = sTaurosPaldeaBlazeEggMoveLearnset,
         .formSpeciesIdTable = sTaurosFormSpeciesIdTable,
     },
+#endif //FU_TAUROS_PALDEA
 
+#if FU_TAUROS_PALDEA
     [SPECIES_TAUROS_PALDEA_AQUA] =
     {
         .baseHP        = 75,
@@ -17458,6 +17515,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggMoveLearnset = sTaurosPaldeaAquaEggMoveLearnset,
         .formSpeciesIdTable = sTaurosFormSpeciesIdTable,
     },
+#endif //FU_TAUROS_PALDEA
 #endif //P_PALDEAN_FORMS
 #endif //P_FAMILY_TAUROS
 
@@ -18076,6 +18134,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
     },
 #endif //P_GIGANTAMAX_FORMS
 
+#if FU_PARTNER_FORMS
     [SPECIES_EEVEE_STARTER] =
     {
         .baseHP        = 65,
@@ -18151,6 +18210,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .eggMoveLearnset = sEeveeEggMoveLearnset,
         .formSpeciesIdTable = sEeveeFormSpeciesIdTable,
     },
+#endif //FU_PARTNER_FORMS
 
     [SPECIES_VAPOREON] =
     {

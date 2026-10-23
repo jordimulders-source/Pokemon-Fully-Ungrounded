@@ -681,9 +681,11 @@ Cry_Dugtrio::
 Cry_Meowth::
 	.incbin "sound/direct_sound_samples/cries/meowth.bin"
 
+.if FU_MEOWTH_KANTO == TRUE
 	.align 2
 Cry_Persian::
 	.incbin "sound/direct_sound_samples/cries/persian.bin"
+.endif @ FU_MEOWTH_KANTO
 
 .if P_GALARIAN_FORMS == TRUE
 	.align 2
@@ -1008,18 +1010,24 @@ Cry_Marowak::
 
 .if P_FAMILY_HITMONS == TRUE
 .if P_GEN_2_CROSS_EVOS == TRUE
+.if FU_TYROGUE_HITMONLEE_HITMONCHAN == TRUE
 	.align 2
 Cry_Tyrogue::
 	.incbin "sound/direct_sound_samples/cries/tyrogue.bin"
+.endif @ FU_TYROGUE_HITMONLEE_HITMONCHAN
 .endif @ P_GEN_2_CROSS_EVOS
 
+.if FU_TYROGUE_HITMONLEE_HITMONCHAN == TRUE
 	.align 2
 Cry_Hitmonlee::
 	.incbin "sound/direct_sound_samples/cries/hitmonlee.bin"
+.endif @ FU_TYROGUE_HITMONLEE_HITMONCHAN
 
+.if FU_TYROGUE_HITMONLEE_HITMONCHAN == TRUE
 	.align 2
 Cry_Hitmonchan::
 	.incbin "sound/direct_sound_samples/cries/hitmonchan.bin"
+.endif @ FU_TYROGUE_HITMONLEE_HITMONCHAN
 
 .if P_GEN_2_CROSS_EVOS == TRUE
 	.align 2
@@ -1636,9 +1644,11 @@ Cry_Quagsire::
 	.incbin "sound/direct_sound_samples/cries/quagsire.bin"
 
 .if P_PALDEAN_FORMS == TRUE
+.if FU_WOOPER_PALDEA == TRUE
 	.align 2
 Cry_Clodsire::
 	.incbin "sound/direct_sound_samples/cries/clodsire.bin"
+.endif @ FU_WOOPER_PALDEA
 
 .endif @ P_PALDEAN_FORMS
 .endif @ P_FAMILY_WOOPER
@@ -1743,9 +1753,11 @@ Cry_Qwilfish::
 	.incbin "sound/direct_sound_samples/cries/qwilfish.bin"
 
 .if P_HISUIAN_FORMS == TRUE
+.if FU_QWILFISH_HISUI == TRUE
 	.align 2
 Cry_Overqwil::
 	.incbin "sound/direct_sound_samples/cries/overqwil.bin"
+.endif @ FU_QWILFISH_HISUI
 
 .endif @ P_HISUIAN_FORMS
 .endif @ P_FAMILY_QWILFISH
@@ -1776,9 +1788,11 @@ Cry_Weavile::
 	.incbin "sound/direct_sound_samples/cries/weavile.bin"
 .endif @ P_GEN_4_CROSS_EVOS
 .if P_HISUIAN_FORMS == TRUE
+.if FU_SNEASEL_HISUI == TRUE
 	.align 2
 Cry_Sneasler::
 	.incbin "sound/direct_sound_samples/cries/sneasler.bin"
+.endif @ FU_SNEASEL_HISUI
 
 .endif @ P_HISUIAN_FORMS
 .endif @ P_FAMILY_SNEASEL
@@ -3550,9 +3564,11 @@ Cry_Cofagrigus::
 	.incbin "sound/direct_sound_samples/cries/cofagrigus.bin"
 
 .if P_GALARIAN_FORMS == TRUE
+.if FU_YAMASK_GALAR == TRUE
 	.align 2
 Cry_Runerigus::
 	.incbin "sound/direct_sound_samples/cries/runerigus.bin"
+.endif @ FU_YAMASK_GALAR
 
 .endif @ P_GALARIAN_FORMS
 .endif @ P_FAMILY_YAMASK
@@ -4127,9 +4143,11 @@ Cry_Flabebe::
 Cry_Floette::
 	.incbin "sound/direct_sound_samples/cries/floette.bin"
 
+.if FU_FLOETTE_ETERNAL == TRUE
 	.align 2
 Cry_FloetteEternal::
 	.incbin "sound/direct_sound_samples/cries/floette_eternal.bin"
+.endif @ FU_FLOETTE_ETERNAL
 
 	.align 2
 Cry_Florges::

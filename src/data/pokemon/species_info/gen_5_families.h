@@ -6059,6 +6059,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     },
 
 #if P_GALARIAN_FORMS
+#if FU_YAMASK_GALAR
     [SPECIES_YAMASK_GALAR] =
     {
         .baseHP        = 38,
@@ -6127,7 +6128,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .formSpeciesIdTable = sYamaskFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_SCRIPT_TRIGGER, 0, SPECIES_RUNERIGUS, CONDITIONS({IF_CURRENT_DAMAGE_GE, 49})}),
     },
+#endif //FU_YAMASK_GALAR
 
+#if FU_YAMASK_GALAR
     [SPECIES_RUNERIGUS] =
     {
         .baseHP        = 58,
@@ -6191,6 +6194,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .levelUpLearnset = sRunerigusLevelUpLearnset,
         .teachableLearnset = sRunerigusTeachableLearnset,
     },
+#endif //FU_YAMASK_GALAR
 #endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_YAMASK
 
@@ -6834,6 +6838,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     },
 
 #if P_HISUIAN_FORMS
+#if FU_ZORUA_HISUI
     [SPECIES_ZORUA_HISUI] =
     {
         .baseHP        = 35,
@@ -6899,7 +6904,9 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .formSpeciesIdTable = sZoruaFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 30, SPECIES_ZOROARK_HISUI}),
     },
+#endif //FU_ZORUA_HISUI
 
+#if FU_ZORUA_HISUI
     [SPECIES_ZOROARK_HISUI] =
     {
         .baseHP        = 55,
@@ -6965,6 +6972,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sZoroarkHisuiTeachableLearnset,
         .formSpeciesIdTable = sZoroarkFormSpeciesIdTable,
     },
+#endif //FU_ZORUA_HISUI
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_ZORUA
 
@@ -10888,6 +10896,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     },
 
 #if P_GALARIAN_FORMS
+#if FU_STUNFISK_GALAR
     [SPECIES_STUNFISK_GALAR] =
     {
         .baseHP        = 109,
@@ -10954,6 +10963,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .eggMoveLearnset = sStunfiskGalarEggMoveLearnset,
         .formSpeciesIdTable = sStunfiskFormSpeciesIdTable,
     },
+#endif //FU_STUNFISK_GALAR
 #endif //P_GALARIAN_FORMS
 #endif //P_FAMILY_STUNFISK
 
@@ -11736,6 +11746,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
     },
 
 #if P_HISUIAN_FORMS
+#if FU_BRAVIARY_HISUI
     [SPECIES_BRAVIARY_HISUI] =
     {
         .baseHP        = 110,
@@ -11800,6 +11811,7 @@ const struct SpeciesInfo gSpeciesInfoGen5[] =
         .teachableLearnset = sBraviaryHisuiTeachableLearnset,
         .formSpeciesIdTable = sBraviaryFormSpeciesIdTable,
     },
+#endif //FU_BRAVIARY_HISUI
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_RUFFLET
 

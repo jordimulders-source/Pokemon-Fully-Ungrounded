@@ -3575,6 +3575,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     },
 
 #if P_PALDEAN_FORMS
+#if FU_WOOPER_PALDEA
     [SPECIES_WOOPER_PALDEA] =
     {
         .baseHP        = 55,
@@ -3641,7 +3642,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .formSpeciesIdTable = sWooperFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 20, SPECIES_CLODSIRE}),
     },
+#endif //FU_WOOPER_PALDEA
 
+#if FU_WOOPER_PALDEA
     [SPECIES_CLODSIRE] =
     {
         .baseHP        = 130,
@@ -3704,6 +3707,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sClodsireLevelUpLearnset,
         .teachableLearnset = sClodsireTeachableLearnset,
     },
+#endif //FU_WOOPER_PALDEA
 #endif //P_PALDEAN_FORMS
 #endif //P_FAMILY_WOOPER
 
@@ -5181,6 +5185,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
     },
 
 #if P_HISUIAN_FORMS
+#if FU_QWILFISH_HISUI
     [SPECIES_QWILFISH_HISUI] =
     {
         .baseHP        = 65,
@@ -5249,7 +5254,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .formSpeciesIdTable = sQwilfishFormSpeciesIdTable,
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_OVERQWIL, CONDITIONS({IF_KNOWS_MOVE, MOVE_BARB_BARRAGE})}),
     },
+#endif //FU_QWILFISH_HISUI
 
+#if FU_QWILFISH_HISUI
     [SPECIES_OVERQWIL] =
     {
         .baseHP        = 85,
@@ -5313,6 +5320,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sOverqwilLevelUpLearnset,
         .teachableLearnset = sOverqwilTeachableLearnset,
     },
+#endif //FU_QWILFISH_HISUI
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_QWILFISH
 
@@ -5727,6 +5735,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
 #endif //P_GEN_4_CROSS_EVOS
 
 #if P_HISUIAN_FORMS
+#if FU_SNEASEL_HISUI
     [SPECIES_SNEASEL_HISUI] =
     {
         .baseHP        = 55,
@@ -5808,7 +5817,9 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_SNEASLER, CONDITIONS({IF_NOT_TIME, TIME_NIGHT}, {IF_HOLD_ITEM, ITEM_RAZOR_CLAW})},
                                 {EVO_ITEM, ITEM_RAZOR_CLAW, SPECIES_SNEASLER, CONDITIONS({IF_NOT_TIME, TIME_NIGHT})}),
     },
+#endif //FU_SNEASEL_HISUI
 
+#if FU_SNEASEL_HISUI
     [SPECIES_SNEASLER] =
     {
         .baseHP        = 80,
@@ -5872,6 +5883,7 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sSneaslerLevelUpLearnset,
         .teachableLearnset = sSneaslerTeachableLearnset,
     },
+#endif //FU_SNEASEL_HISUI
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_SNEASEL
 

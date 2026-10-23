@@ -80,8 +80,42 @@ def collect_palettes():
                 continue
             conds.append('!(%s)' % cond if in_else else '(%s)' % cond)
         if not skip:
+            fu = fu_palette_conds().get(sym)
+            if fu:
+                conds.append('(%s)' % fu)
             out.append((sym, path, conds))
     return out
+
+
+_FU_CACHE = None
+
+
+def fu_palette_conds():
+    """Fully Ungrounded: paletten die alleen door een soort onder een FU_*-schakelaar
+    (include/config/species_enabled.h) gebruikt worden, krijgen die schakelaar als extra conditie."""
+    global _FU_CACHE
+    if _FU_CACHE is not None:
+        return _FU_CACHE
+    import glob
+    guarded, free = {}, set()
+    for f in glob.glob(os.path.join(ROOT, 'src/data/pokemon/species_info/gen_*_families.h')):
+        fu = None
+        for line in open(f):
+            m = re.match(r'#if (FU_\w+)', line)
+            if m:
+                fu = m.group(1)
+                continue
+            if line.startswith('#endif //FU_'):
+                fu = None
+                continue
+            m = re.search(r'\.palette = (gMonPalette_\w+)', line)
+            if m:
+                if fu:
+                    guarded[m.group(1)] = fu
+                else:
+                    free.add(m.group(1))
+    _FU_CACHE = {k: v for k, v in guarded.items() if k not in free}
+    return _FU_CACHE
 
 
 def recipe_variants(folder, colors):

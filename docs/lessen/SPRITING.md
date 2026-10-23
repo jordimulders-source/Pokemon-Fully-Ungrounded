@@ -197,3 +197,9 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Neem van de onderlaag de anatomie, niet de vacht:** staartpluim en nekkraag weglaten in het masker, anders tekent de overtrek vachtpieken als rugvorm.
 - **Run-lengtes vooraf uitschrijven per curve** (bijv. rug 4,3,2,2,1; buik 4,4,3,2; kont 2,4,3) en daarna de rijen tekenen: zo zie je knikken vóór het bouwen en blijft bouw9 schoon.
 - **Een romp die onder een bewegende arm doorloopt, krijgt op de verborgen randpixel al de omlijning** (hier (26,47) = 0), anders verschijnt in frame 2 een open rand.
+
+## 26. Lessen uit de keuring van olinguito ronde 15
+- **Toon/helderheid vergelijken met soorten van hetzelfde type** (Jordi): een donker Dark-type mag donkerder zijn dan Normal-referenties (Sentret, Ursaring). Blijf de lumameting wel doen, maar beoordeel tegen Dark-types (Umbreon, Houndour, Sneasel, Poochyena, Murkrow, Absol).
+- **Doos-kop, band-masker en brilogen lezen als fakemon:** kop met vlakke top/rechte achterkant/rechte kin, een rechte maskerrand en rechthoekige ogen in een zwarte lijst. Gen 3: ronde kop, maskerrand met een curve, bovenlid donkerst.
+- **Een kenmerk moet op 1× leesbaar blijven:** een staart als buis met een haakje van 3 px verliest het kenmerk; laat hem taps toelopen met een duidelijke haak.
+- **Bewaak het gekozen concept tijdens reparatierondes:** de olinguito dreef in 15 rondes weg van concept B naar het silhouet van de eigen fase-2-schets.

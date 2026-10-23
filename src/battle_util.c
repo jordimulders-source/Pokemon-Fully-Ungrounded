@@ -13,15 +13,9 @@
 #include "battle_z_move.h"
 #include "battle_gimmick.h"
 #include "battle_hold_effects.h"
-<<<<<<< HEAD
 #include "rtc.h"
-#include "generational_changes.h"
-||||||| abeb86837a
-#include "generational_changes.h"
-=======
 #include "battle_stat_change.h"
 #include "config_changes.h"
->>>>>>> expansion/1.17.1
 #include "party_menu.h"
 #include "pokemon.h"
 #include "international_string_util.h"
@@ -64,7 +58,6 @@
 #include "debug.h"
 #include "constants/weather.h"
 #include "constants/pokemon.h"
-<<<<<<< HEAD
 #include "constants/maps.h"
 
 // Project Grounded: de stoom in de Lavaridge-gym is overworld-mist, maar hoort geen Misty Terrain te geven.
@@ -73,10 +66,7 @@ bool32 OverworldFogMakesMistyTerrain(void)
 {
     return TRUE;
 }
-||||||| abeb86837a
-=======
 #include "test/battle.h"
->>>>>>> expansion/1.17.1
 
 static bool32 TryRemoveScreens(enum BattlerId battler);
 static bool32 IsUnnerveAbilityOnOpposingSide(enum BattlerId battler);
@@ -1450,17 +1440,6 @@ static bool32 SetCantSelectScript(enum BattlerId battler, enum Move move, const 
 {
     gCurrentMove = move;
 
-<<<<<<< HEAD
-// Project Grounded: Cold Shoulder geldt alleen in de beurt na de klap (zie HandleMoveEndMoveBlock)
-bool32 IsColdShoulderActive(u32 battler)
-{
-    return gDisableStructs[battler].coldShoulderTurn != 0 && gDisableStructs[battler].coldShoulderTurn == gBattleTurnCounter;
-}
-
-u32 TrySetCantSelectMoveBattleScript(u32 battler)
-||||||| abeb86837a
-u32 TrySetCantSelectMoveBattleScript(u32 battler)
-=======
     if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
     {
         gPalaceSelectionBattleScripts[battler] = palaceScript;
@@ -1480,8 +1459,14 @@ static bool32 IsGimmickChosenForAction(enum BattlerId battler, enum Gimmick gimm
          && gBattleStruct->gimmick.usableGimmick[battler] == gimmick;
 }
 
+
+// Project Grounded: Cold Shoulder geldt alleen in de beurt na de klap (zie HandleMoveEndMoveBlock)
+bool32 IsColdShoulderActive(enum BattlerId battler)
+{
+    return gBattleMons[battler].volatiles.coldShoulderTurn != 0 && gBattleMons[battler].volatiles.coldShoulderTurn == gBattleTurnCounter;
+}
+
 u32 TrySetCantSelectMoveBattleScript(enum BattlerId battler)
->>>>>>> expansion/1.17.1
 {
     u32 limitations = 0;
     u8 moveId = gBattleResources->bufferB[battler][2] & ~RET_GIMMICK;
@@ -1525,32 +1510,17 @@ u32 TrySetCantSelectMoveBattleScript(enum BattlerId battler)
         }
     }
 
-<<<<<<< HEAD
     // Project Grounded: Cold Shoulder, de laatst gebruikte move kan deze beurt niet
-    if (DYNAMAX_BYPASS_CHECK && GetActiveGimmick(battler) != GIMMICK_Z_MOVE && move == gLastMoves[battler] && move != MOVE_STRUGGLE && IsColdShoulderActive(battler))
+    if (dynamaxBypassCheck && zMoveBypassCheck && move == gLastMoves[battler] && move != MOVE_STRUGGLE && IsColdShoulderActive(battler))
     {
-        gCurrentMove = move;
-        if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
-        {
-            gPalaceSelectionBattleScripts[battler] = BattleScript_SelectingTormentedMoveInPalace;
-            gProtectStructs[battler].palaceUnableToUseMove = TRUE;
-        }
-        else
-        {
-            gSelectionBattleScripts[battler] = BattleScript_SelectingColdShoulderMove;
+        if (SetCantSelectScript(battler, move, BattleScript_SelectingTormentedMoveInPalace, BattleScript_SelectingColdShoulderMove))
             limitations++;
-        }
     }
 
-    if (GetActiveGimmick(battler) != GIMMICK_Z_MOVE && gDisableStructs[battler].tauntTimer != 0 && IsBattleMoveStatus(move))
-||||||| abeb86837a
-    if (GetActiveGimmick(battler) != GIMMICK_Z_MOVE && gDisableStructs[battler].tauntTimer != 0 && IsBattleMoveStatus(move))
-=======
     if (zMoveBypassCheck
      && gBattleMons[battler].volatiles.tauntTimer != 0
      && IsBattleMoveStatus(move)
      && (GetConfig(B_TAUNT_ME_FIRST) < GEN_5 || moveEffect != EFFECT_ME_FIRST))
->>>>>>> expansion/1.17.1
     {
         if ((GetActiveGimmick(battler) == GIMMICK_DYNAMAX))
             gCurrentMove = MOVE_MAX_GUARD;
@@ -4409,15 +4379,9 @@ enum WeatherFailure TryChangeBattleWeather(enum BattlerId battler, u32 battleWea
         if (gBattleWeather & B_WEATHER_PRIMAL_ANY)
             gBattleStruct->weatherDuration = 0;
         else if (rock != 0 && GetBattlerHoldEffect(battler) == rock)
-<<<<<<< HEAD
-            gWishFutureKnock.weatherDuration = 8;
-        else if (battleWeatherId == BATTLE_WEATHER_POLLEN_HAZE && gBattleMons[battler].item == ITEM_SILVER_POWDER) // Project Grounded
-            gWishFutureKnock.weatherDuration = 8;
-||||||| abeb86837a
-            gWishFutureKnock.weatherDuration = 8;
-=======
             gBattleStruct->weatherDuration = 8;
->>>>>>> expansion/1.17.1
+        else if (battleWeatherId == BATTLE_WEATHER_POLLEN_HAZE && gBattleMons[battler].item == ITEM_SILVER_POWDER) // Project Grounded
+            gBattleStruct->weatherDuration = 8;
         else
             gBattleStruct->weatherDuration = 5;
     }
@@ -4605,131 +4569,6 @@ bool32 CanMoveBeBlockedByTarget(struct DamageContext *ctx, s32 movePriority)
         || IsPowderMoveBlocked(ctx);
 }
 
-<<<<<<< HEAD
-    switch (abilityDef)
-    {
-    case ABILITY_SOUNDPROOF:
-        if (IsSoundMove(move) && !(GetBattlerMoveTargetType(battlerAtk, move) & MOVE_TARGET_USER))
-            battleScriptBlocksMove = BattleScript_SoundproofProtected;
-        break;
-    case ABILITY_BULLETPROOF:
-        if (IsBallisticMove(move))
-            battleScriptBlocksMove = BattleScript_SoundproofProtected;
-        break;
-    case ABILITY_UNAWARE: // Project Grounded: Dim Mak, wie niets merkt heeft geen drukpunten
-        if (GetMoveEffect(move) == EFFECT_DIM_MAK)
-            battleScriptBlocksMove = BattleScript_DimMakUnaware;
-        break;
-    case ABILITY_GOOD_AS_GOLD:
-        if (IsBattleMoveStatus(move))
-        {
-            if (!(GetBattlerMoveTargetType(battlerAtk, move) & (MOVE_TARGET_OPPONENTS_FIELD | MOVE_TARGET_ALL_BATTLERS)))
-                battleScriptBlocksMove = BattleScript_GoodAsGoldActivates;
-        }
-        break;
-    default:
-        break;
-    }
-
-    if (battleScriptBlocksMove == NULL)
-    {
-        s32 atkPriority = 0;
-        if (option == AI_CHECK)
-            atkPriority = GetBattleMovePriority(battlerAtk, abilityAtk, move);
-        else
-            atkPriority = GetChosenMovePriority(battlerAtk, abilityAtk);
-
-        if (atkPriority <= 0)
-        {
-            // Not a priority move
-        }
-        else if (IsBattleMoveStatus(move)
-              && BlocksPrankster(move, battlerAtk, battlerDef, TRUE)
-              && !(IsBattleMoveStatus(move) && (abilityDef == ABILITY_MAGIC_BOUNCE || gProtectStructs[battlerDef].bounceMove)))
-        {
-            if (option == RUN_SCRIPT && !IsSpreadMove(GetBattlerMoveTargetType(battlerAtk, move)))
-                CancelMultiTurnMoves(battlerAtk, SKY_DROP_ATTACKCANCELER_CHECK); // Don't cancel moves that can hit two targets bc one target might not be protected
-            battleScriptBlocksMove = BattleScript_DoesntAffectTargetAtkString;
-        }
-        else if (IsBattlerTerrainAffected(battlerDef, abilityDef, GetBattlerHoldEffect(battlerDef), STATUS_FIELD_PSYCHIC_TERRAIN) // Not an ability but similar conditions
-              && !IsBattlerAlly(battlerAtk, battlerDef)
-              && GetMoveTarget(move) != MOVE_TARGET_ALL_BATTLERS
-              && GetMoveTarget(move) != MOVE_TARGET_OPPONENTS_FIELD)
-        {
-            battleScriptBlocksMove = BattleScript_MoveUsedPsychicTerrainPrevents;
-            if (option == RUN_SCRIPT)
-            {
-                gMultiHitCounter = 0; // Prevent multi-hit moves from hitting more than once after move has been absorbed.
-                if (!IsSpreadMove(GetBattlerMoveTargetType(battlerAtk, move)))
-                    CancelMultiTurnMoves(battlerAtk, SKY_DROP_ATTACKCANCELER_CHECK); // Don't cancel moves that can hit two targets bc one target might not be protected
-                gBattlescriptCurrInstr = BattleScript_MoveUsedPsychicTerrainPrevents;
-                return TRUE; // Early return since we don't want to set remaining values
-            }
-        }
-    }
-
-    if (battleScriptBlocksMove == NULL)
-||||||| abeb86837a
-    switch (abilityDef)
-    {
-    case ABILITY_SOUNDPROOF:
-        if (IsSoundMove(move) && !(GetBattlerMoveTargetType(battlerAtk, move) & MOVE_TARGET_USER))
-            battleScriptBlocksMove = BattleScript_SoundproofProtected;
-        break;
-    case ABILITY_BULLETPROOF:
-        if (IsBallisticMove(move))
-            battleScriptBlocksMove = BattleScript_SoundproofProtected;
-        break;
-    case ABILITY_GOOD_AS_GOLD:
-        if (IsBattleMoveStatus(move))
-        {
-            if (!(GetBattlerMoveTargetType(battlerAtk, move) & (MOVE_TARGET_OPPONENTS_FIELD | MOVE_TARGET_ALL_BATTLERS)))
-                battleScriptBlocksMove = BattleScript_GoodAsGoldActivates;
-        }
-        break;
-    default:
-        break;
-    }
-
-    if (battleScriptBlocksMove == NULL)
-    {
-        s32 atkPriority = 0;
-        if (option == AI_CHECK)
-            atkPriority = GetBattleMovePriority(battlerAtk, abilityAtk, move);
-        else
-            atkPriority = GetChosenMovePriority(battlerAtk, abilityAtk);
-
-        if (atkPriority <= 0)
-        {
-            // Not a priority move
-        }
-        else if (IsBattleMoveStatus(move)
-              && BlocksPrankster(move, battlerAtk, battlerDef, TRUE)
-              && !(IsBattleMoveStatus(move) && (abilityDef == ABILITY_MAGIC_BOUNCE || gProtectStructs[battlerDef].bounceMove)))
-        {
-            if (option == RUN_SCRIPT && !IsSpreadMove(GetBattlerMoveTargetType(battlerAtk, move)))
-                CancelMultiTurnMoves(battlerAtk, SKY_DROP_ATTACKCANCELER_CHECK); // Don't cancel moves that can hit two targets bc one target might not be protected
-            battleScriptBlocksMove = BattleScript_DoesntAffectTargetAtkString;
-        }
-        else if (IsBattlerTerrainAffected(battlerDef, abilityDef, GetBattlerHoldEffect(battlerDef), STATUS_FIELD_PSYCHIC_TERRAIN) // Not an ability but similar conditions
-              && !IsBattlerAlly(battlerAtk, battlerDef)
-              && GetMoveTarget(move) != MOVE_TARGET_ALL_BATTLERS
-              && GetMoveTarget(move) != MOVE_TARGET_OPPONENTS_FIELD)
-        {
-            battleScriptBlocksMove = BattleScript_MoveUsedPsychicTerrainPrevents;
-            if (option == RUN_SCRIPT)
-            {
-                gMultiHitCounter = 0; // Prevent multi-hit moves from hitting more than once after move has been absorbed.
-                if (!IsSpreadMove(GetBattlerMoveTargetType(battlerAtk, move)))
-                    CancelMultiTurnMoves(battlerAtk, SKY_DROP_ATTACKCANCELER_CHECK); // Don't cancel moves that can hit two targets bc one target might not be protected
-                gBattlescriptCurrInstr = BattleScript_MoveUsedPsychicTerrainPrevents;
-                return TRUE; // Early return since we don't want to set remaining values
-            }
-        }
-    }
-
-    if (battleScriptBlocksMove == NULL)
-=======
 bool32 CanPsychicTerrainProtectTarget(struct DamageContext *ctx, s32 movePriority)
 {
     if (movePriority <= 0
@@ -4737,7 +4576,6 @@ bool32 CanPsychicTerrainProtectTarget(struct DamageContext *ctx, s32 movePriorit
      || IsBattlerAlly(ctx->battlerAtk, ctx->battlerDef)
      || GetMoveTarget(ctx->move) == TARGET_ALL_BATTLERS
      || GetMoveTarget(ctx->move) == TARGET_OPPONENTS_FIELD)
->>>>>>> expansion/1.17.1
         return FALSE;
 
     if (ctx->runScript)
@@ -4839,6 +4677,10 @@ bool32 CanAbilityAbsorbMove(struct DamageContext *ctx)
             if (target != TARGET_OPPONENTS_FIELD && target != TARGET_ALL_BATTLERS)
                 battleScript = BattleScript_AbilityProtectedTarget;
         }
+        break;
+    case ABILITY_UNAWARE: // Project Grounded: Dim Mak, wie niets merkt heeft geen drukpunten
+        if (GetMoveEffect(ctx->move) == EFFECT_DIM_MAK)
+            battleScript = BattleScript_DimMakUnaware;
         break;
     default:
         break;
@@ -5357,14 +5199,8 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
         }
         else if (B_OVERWORLD_FOG >= GEN_8
               && (GetCurrentWeather() == WEATHER_FOG_HORIZONTAL || GetCurrentWeather() == WEATHER_FOG_DIAGONAL)
-<<<<<<< HEAD
-              && OverworldFogMakesMistyTerrain()
-              && !(gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN))
-||||||| abeb86837a
-              && !(gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN))
-=======
+              && OverworldFogMakesMistyTerrain() // Project Grounded
               && gFieldTimers.terrain != B_TERRAIN_MISTY)
->>>>>>> expansion/1.17.1
         {
             gFieldTimers.terrain = B_TERRAIN_MISTY;
             gFieldTimers.terrainTimer = 0;
@@ -5404,16 +5240,8 @@ bool32 TryFieldEffects(enum FieldEffectCases caseId)
                     effect = TRUE;
                 }
                 break;
-<<<<<<< HEAD
-            case WEATHER_SNOW: // Project Grounded: lichte sneeuw = Snowscape
-                if (!(gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
-||||||| abeb86837a
-            case WEATHER_SNOW:
-                if (!(gBattleWeather & (B_WEATHER_HAIL | B_WEATHER_SNOW)))
-=======
             case WEATHER_SNOW:
                 if (!(gBattleWeather & B_WEATHER_ICY_ANY))
->>>>>>> expansion/1.17.1
                 {
                     gBattleWeather = B_WEATHER_SNOW;
                     gBattleScripting.animArg1 = B_ANIM_SNOW_CONTINUES;
@@ -8063,15 +7891,14 @@ static bool32 CanSleepDueToSleepClause(enum BattlerId battlerAtk, enum BattlerId
     return FALSE;
 }
 
-<<<<<<< HEAD
 // Project Grounded: Omen Strike en Kusarigama. Wisselt dit doelwit deze beurt (ook: het is net ingewisseld)?
-bool32 IsBattlerSwitchingThisTurn(u32 battler)
+bool32 IsBattlerSwitchingThisTurn(enum BattlerId battler)
 {
     return gChosenActionByBattler[battler] == B_ACTION_SWITCH;
 }
 
 // Project Grounded: Joust (Escavalier). Is het doelwit sneller dan de gebruiker?
-bool32 IsJoustTargetFaster(u32 battlerAtk, u32 battlerDef)
+bool32 IsJoustTargetFaster(enum BattlerId battlerAtk, enum BattlerId battlerDef)
 {
     if (battlerDef >= gBattlersCount || battlerDef == battlerAtk || IsBattlerAlly(battlerAtk, battlerDef))
         battlerDef = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battlerAtk)));
@@ -8081,12 +7908,7 @@ bool32 IsJoustTargetFaster(u32 battlerAtk, u32 battlerDef)
          > GetBattlerTotalSpeedStat(battlerAtk, GetBattlerAbility(battlerAtk), GetBattlerHoldEffect(battlerAtk));
 }
 
-bool32 CanBeConfused(u32 battler)
-||||||| abeb86837a
-bool32 CanBeConfused(u32 battler)
-=======
 bool32 CanBeConfused(enum BattlerId battlerAtk, enum BattlerId effectBattler)
->>>>>>> expansion/1.17.1
 {
     enum Ability effectAbility = GetBattlerAbility(effectBattler);
 
@@ -8204,7 +8026,6 @@ u32 GetBattleMoveTarget(enum Move move, enum MoveTarget moveTarget)
     return targetBattler;
 }
 
-<<<<<<< HEAD
 // Project Grounded: tot welk level gehoorzamen Pokémon op basis van de badges (MAX_LEVEL = altijd)
 u32 GetPlayerObedienceLevel(void)
 {
@@ -8234,12 +8055,7 @@ bool32 MonMayDisobeyAtLevel(struct Pokemon *mon, u32 level)
     return GetMonObedienceReferenceLevel(mon, level) > GetPlayerObedienceLevel();
 }
 
-u8 GetAttackerObedienceForAction()
-||||||| abeb86837a
-u8 GetAttackerObedienceForAction()
-=======
 enum Obedience GetAttackerObedienceForAction(void)
->>>>>>> expansion/1.17.1
 {
     s32 rnd;
     s32 calc;
@@ -8451,9 +8267,8 @@ static bool32 IsCraftyShieldProtected(u32 battlerAtk, u32 battlerDef, u32 move)
     return FALSE;
 }
 
-<<<<<<< HEAD
 // Project Grounded: Keystone Curse, aantal flauwgevallen Pokémon in het team van de gebruiker
-u32 CountFaintedPartyMons(u32 battler)
+u32 CountFaintedPartyMons(enum BattlerId battler)
 {
     u32 i, count = 0;
     struct Pokemon *party = GetBattlerParty(battler);
@@ -8467,12 +8282,7 @@ u32 CountFaintedPartyMons(u32 battler)
     return count;
 }
 
-bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
-||||||| abeb86837a
-bool32 IsBattlerProtected(u32 battlerAtk, u32 battlerDef, u32 move)
-=======
 bool32 IsBattlerProtected(struct BattleCalcValues *cv)
->>>>>>> expansion/1.17.1
 {
     if (gProtectStructs[cv->battlerDef].protected == PROTECT_NONE
      && gProtectStructs[GetPartnerBattler(cv->battlerDef)].protected == PROTECT_NONE)
@@ -8511,15 +8321,9 @@ bool32 IsBattlerProtected(struct BattleCalcValues *cv)
         isProtected = TRUE;
     else if (gProtectStructs[cv->battlerDef].protected == PROTECT_SPIKY_SHIELD)
         isProtected = TRUE;
-<<<<<<< HEAD
-    else if (gProtectStructs[battlerDef].protected == PROTECT_PITCHER_TRAP) // Project Grounded
+    else if (gProtectStructs[cv->battlerDef].protected == PROTECT_PITCHER_TRAP) // Project Grounded
         isProtected = TRUE;
-    else if (gProtectStructs[battlerDef].protected == PROTECT_MAX_GUARD)
-||||||| abeb86837a
-    else if (gProtectStructs[battlerDef].protected == PROTECT_MAX_GUARD)
-=======
     else if (gProtectStructs[cv->battlerDef].protected == PROTECT_MAX_GUARD)
->>>>>>> expansion/1.17.1
         isProtected = TRUE;
     else if (gProtectStructs[cv->battlerDef].protected == PROTECT_BANEFUL_BUNKER)
         isProtected = TRUE;
@@ -8602,25 +8406,7 @@ static bool32 IsBattlerGroundedInverseCheck(enum BattlerId battler, enum Ability
         return TRUE;
     if (gBattleMons[battler].volatiles.smackDown)
         return TRUE;
-<<<<<<< HEAD
-    if (gBattleMons[battler].volatiles.telekinesis)
-        return FALSE;
-    if (gBattleMons[battler].volatiles.magnetRise)
-        return FALSE;
-    if (holdEffect == HOLD_EFFECT_AIR_BALLOON)
-        return FALSE;
-    if (ability == ABILITY_LEVITATE || ability == ABILITY_EELEVATE) // Project Grounded: Eelevate
-||||||| abeb86837a
-    if (gBattleMons[battler].volatiles.telekinesis)
-        return FALSE;
-    if (gBattleMons[battler].volatiles.magnetRise)
-        return FALSE;
-    if (holdEffect == HOLD_EFFECT_AIR_BALLOON)
-        return FALSE;
-    if (ability == ABILITY_LEVITATE)
-=======
     if (IsBattlerUngroundedByAbilityItemOrEffect(battler, ability, holdEffect))
->>>>>>> expansion/1.17.1
         return FALSE;
     if (IS_BATTLER_OF_TYPE(battler, TYPE_FLYING) && (checkInverse != INVERSE_BATTLE || !FlagGet(B_FLAG_INVERSE_BATTLE)))
         return FALSE;
@@ -8923,14 +8709,8 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             basePower *= 2;
         break;
     case EFFECT_WEATHER_BALL:
-<<<<<<< HEAD
     case EFFECT_WEATHER_REPORT: // Project Grounded
-        if (ctx->weather & B_WEATHER_ANY)
-||||||| abeb86837a
-        if (ctx->weather & B_WEATHER_ANY)
-=======
         if (GetAttackerWeather(ctx->holdEffects[ctx->battlerAtk], ctx->abilities[ctx->battlerAtk], ctx->weather) & (B_WEATHER_ANY & ~B_WEATHER_STRONG_WINDS))
->>>>>>> expansion/1.17.1
             basePower *= 2;
         break;
     case EFFECT_ECLIPSE: // Project Grounded: Solrock overdag, Lunatone 's nachts
@@ -9239,26 +9019,16 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         if (retaliateTimer  == 1 || (gAiLogicData->switchInCalc && retaliateTimer == 2))
             modifier = uq4_12_multiply(modifier, UQ_4_12(2.0));
         break;
-<<<<<<< HEAD
+    }
     case EFFECT_HIT_ENEMY_HEAL_ALLY: // Project Grounded: Pollen Puff gebruikt het stuifmeel in de lucht
         if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
-||||||| abeb86837a
-=======
-    }
->>>>>>> expansion/1.17.1
     case EFFECT_SOLAR_BEAM:
-<<<<<<< HEAD
-        if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG | B_WEATHER_ACID_RAIN | B_WEATHER_POLLEN_HAZE)))
-||||||| abeb86837a
-        if (IsBattlerWeatherAffected(battlerAtk, (B_WEATHER_HAIL | B_WEATHER_SANDSTORM | B_WEATHER_RAIN | B_WEATHER_SNOW | B_WEATHER_FOG)))
-=======
     {
         u32 weather = GetAttackerWeather(ctx->holdEffects[ctx->battlerAtk], ctx->abilities[ctx->battlerAtk], ctx->weather);
         if ((GetConfig(B_SANDSTORM_SOLAR_BEAM) >= GEN_3 && weather & B_WEATHER_LOW_LIGHT)
-            || weather & (B_WEATHER_RAIN | B_WEATHER_ICY_ANY | B_WEATHER_FOG)) // Excludes Sandstorm
->>>>>>> expansion/1.17.1
+            || weather & (B_WEATHER_RAIN | B_WEATHER_ICY_ANY | B_WEATHER_FOG | B_WEATHER_ACID_RAIN | B_WEATHER_POLLEN_HAZE)) // Project Grounded // Excludes Sandstorm
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.5));
         break;
     }
@@ -9343,13 +9113,6 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
             modifier = uq4_12_multiply(modifier, UQ_4_12(0.75));
         break;
     case ABILITY_ANALYTIC:
-<<<<<<< HEAD
-        if (IsLastMonToMove(battlerAtk) && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE && move != MOVE_SUPER_SPLASH)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
-||||||| abeb86837a
-        if (IsLastMonToMove(battlerAtk) && move != MOVE_FUTURE_SIGHT && move != MOVE_DOOM_DESIRE)
-           modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
-=======
         if (moveEffect == EFFECT_FUTURE_SIGHT)
             break;
 
@@ -9362,7 +9125,6 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         {
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.3));
         }
->>>>>>> expansion/1.17.1
         break;
     case ABILITY_TOUGH_CLAWS:
         if (IsMoveMakingContact(battlerAtk, battlerDef, ctx->abilities[battlerAtk], ctx->holdEffects[battlerAtk], ctx->move))

@@ -13,3 +13,6 @@ Regels die hieruit volgen:
 - Masker, oren, oog en grijns van ronde 16 nooit opnieuw tekenen of schalen; alleen knippen/plakken (pixeldiff = 0 in die zones).
 - Geen nieuwe crème/beige vlakken in het gezicht.
 - Een wijziging aan de snuit neemt de hele snuitvorm mee, maar laat masker en oren ongemoeid.
+
+## Leidraad (Jordi, 23 okt): Galar-Linoone
+`referenties/galar_linoone_front.png` is "een hele mooie leidraad": één oog in beeld, snuit met de neus aan het uiteinde, patroon rond het oog duidelijk te zien, poten in een goede pose. Geen uitgestoken tong. Onze achterpoot helemaal rechts bevalt steeds minder; klauwen lijken nog niet op een coati: meer Sandslash-stijl. Werkwijze: stap voor stap (eerst kop, dan achterpoot, dan klauwen), Jordi keurt elke stap.

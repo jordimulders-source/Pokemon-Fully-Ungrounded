@@ -218,3 +218,6 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Een hangende staart naast een lijf: houd de punt ook in het tweede frame los** van de dij. Een staart die in frame 2 omhoogveert (−1), zou hier de dij raken (punt y45 x52 naast de dij op x51). Een staart die omlaagzakt (+1) blijft vrij en geeft een natuurlijke tegenbeweging.
 - **Zak en haakgat samen geven de lucht:** de ruimte tussen romp en staart die doorloopt in het gat van de haak, leest op 1× als één bocht. Elke binnenrand van dat gat moet omlijningskleur hebben (bouw9 vangt het).
 - **Staart als rijen van 16 tekens (x48–63) met de hand uitgeschreven**, gecontroleerd met `assert len == 16`: sneller en foutlozer dan segmenten tellen.
+
+## 29. Les: "een klein beetje" is letterlijk (olinguito ronde 17 → 18)
+- **Een kleine correctie van Jordi = een paar pixels, nooit een herbouw.** "Neus een heel klein beetje naar rechts" werd 11 px verschuiven plus wang dichtmaken: "Chernobyl". Geef de agent een pixelbudget (bijv. < 10 px gewijzigd), laat hem tellen, en lever 1 px/2 px als varianten.

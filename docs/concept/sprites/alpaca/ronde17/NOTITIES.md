@@ -18,3 +18,6 @@ Ronde 17 met een grotere kop. **Geen herschaling.** Er worden 2 rijen en 2 kolom
 - De onderrand van de kop (y22) en de hals blijven staan; de kop groeit naar boven en opzij. Frame 2 volgt dezelfde regel als ronde 15–17.
 - Kop y2–22 = 21/53 = **40%** (doel 40–55%; was 37%). Oppervlak **1019** (D1 fase 1: 700–950; ronde 17 heeft 943). De grotere kop brengt het formaat dus boven de grens. Open randen: 0 nieuw. Alle 225 gewijzigde px liggen in de koprijen (y ≤ 22/23).
 - Op 3× oogt hij jonger en kopziger, met dezelfde gezichtsuitdrukking. Het voorhoofdstreepje heeft één tussenruimte van 4 px (was 3).
+
+## Jordi (23 okt)
+**variant_kop goedgekeurd** ("alpaca variant ook goed").

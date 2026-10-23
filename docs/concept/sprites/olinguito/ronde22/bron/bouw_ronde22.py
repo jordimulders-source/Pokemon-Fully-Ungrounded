@@ -22,33 +22,34 @@ B.NABIJ_VOOR = {
     42: (23, '2245544331'),
     43: (24, '245554431'),
     44: (25, '245554431'),
-    45: (25, '24554431'),
-    46: (26, '24554431'),
-    47: (26, '24544431'),
-    48: (26, '24444331'),
-    49: (26, '24444331'),
-    50: (25, '244443331'),
-    51: (25, '2313133311'),
-    52: (26, '11111111'),
+    45: (26, '24554431'),
+    46: (27, '24544431'),
+    47: (27, '24444331'),
+    48: (26, '244443331'),
+    49: (26, '2313133311'),
+    50: (27, '11111111'),
 }
-B.KLAUW_NABIJ = ((21, 48), P.B.KLAUW_NABIJ[1])
-# verre voorpoot: vooraan onder de kin (Linoone), schuin naar voren, schaduwtint, korter dan de nabije
+B.KLAUW_NABIJ = ((22, 46), P.B.KLAUW_NABIJ[1])
+# verre voorpoot: vooraan onder de kin (Linoone), schuin naar voren, schaduwtint, even dik als in 21b;
+# de voet staat vooraan het laagst, zoals bij Linoone
 B.VERRE_VOOR = {
     40: (19, '23333'),
     41: (19, '23331'),
-    42: (18, '23331'),
+    42: (19, '23331'),
     43: (18, '23331'),
-    44: (17, '23331'),
-    45: (17, '23331'),
-    46: (16, '23331'),
-    47: (16, '23331'),
-    48: (15, '233331'),
-    49: (15, '233331'),
-    50: (15, '111111'),
+    44: (18, '23331'),
+    45: (18, '23331'),
+    46: (17, '23331'),
+    47: (17, '23331'),
+    48: (17, '23331'),
+    49: (16, '23331'),
+    50: (15, '233331'),
+    51: (15, '233331'),
+    52: (15, '11111'),
 }
-B.KLAUW_VER = ((12, 47), P.B.KLAUW_VER[1])
-# nabije achterpoot: 21b, onderbeen per rij iets naar achteren (dx), voet blijft vóór de heup
-DX = {46: 0, 47: 1, 48: 1, 49: 2, 50: 2, 51: 3, 52: 3, 53: 3, 54: 3}
+B.KLAUW_VER = ((12, 49), P.B.KLAUW_VER[1])
+# nabije achterpoot: 21b, onderbeen per rij iets naar achteren (dx), voet blijft vóór de heup; hak ongewijzigd
+DX = {46: 0, 47: 1, 48: 2, 49: 3, 50: 3, 51: 4, 52: 4, 53: 4, 54: 4}
 B.B20.NABIJE_ACHTERPOOT = {y: (x0 + DX.get(y, 0), s) for y, (x0, s) in P.NABIJ_ACHTER.items()}
 
 if __name__ == '__main__':

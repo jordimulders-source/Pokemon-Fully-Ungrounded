@@ -9,3 +9,6 @@ Basis: `../ronde5/variant_pluk/anim_front.png` (goedgekeurd). Openstaand uit `ch
 **Pixeldiff buiten de zone: 0** (beide frames). Open randen: 0 nieuw.
 Nu is het nabije voorpootje (19–21,52) het meest linkse en laagste kussen. De verre voorpoot zit onder het haar, zoals bij Piloswine. Er zijn nog 3 kussens te zien: (19–21,52), (38,51) en (42–43,49).
 **Zelfcheck** (1× en 3× naast ronde 5): op 3× is het een gewone lokpunt, net als de andere lokken. Op 1× is er geen verschil, behalve dat het verdwaalde roze stipje links weg is. De pluk, de kruin en het gezicht zijn ongewijzigd.
+
+## Jordi (23 okt)
+**Goedgekeurd** ("Cuychu is beter").

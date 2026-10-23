@@ -17,3 +17,6 @@ Ronde 12 met een kleinere staart. Kop, lijf en armen zijn pixel voor pixel gelij
 - **Stam 3 px dik** (`2-4-1` in plaats van `2-4-3-1`), passend bij de kleinere spiraal. De aanzet bij de heup blijft gelijk.
 - Oppervlak **950** (frame 1; frame 2: 934); de box wordt 44×36 (was 49×36), dus ook D4 (≤ 48) klopt nu. Open randen: 0 nieuw.
 - Op 3× leest de spiraal nog als krul, met de binnenpunt zichtbaar. Op 1× is het een kleine krul. **Nadeel:** het tegenwicht staat niet meer rechtsboven maar rechts op ooghoogte (A3 zwakker), en de staart is als kenmerk (A2) minder dominant. Daarom alleen als variant.
+
+## Jordi (23 okt)
+**variant_spiraal goedgekeurd** ("met kleinere staart is veel beter, leuke vondst").

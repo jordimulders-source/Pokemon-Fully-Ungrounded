@@ -87,3 +87,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/lessen/FAKEMON_CHECKLIST.md`: 30 toetsbare punten (harde eisen/richtlijnen) + sjabloon "Pose kiezen" en mini-sjablonen per bouwtype; verplicht in `SPRITE_OPDRACHT.md`.
 - `SPRITE_OPDRACHT.md` (vaste opdracht voor elke sprite-agent) en per Pokémon een `AFGEKEURD.md` (olinguito) tegen het herhalen van afgekeurde wijzigingen.
 - Olinguito: rondes 17 en 19 afgekeurd; Galar-Linoone als leidraad; stap-voor-stap (kop → achterpoot → klauwen).
+
+### [v0.0.16] - Checklist toegepast op de goedgekeurde sprites, kolibrie gestart
+- Alle keuringspunten toegepast; Jordi koos: Cuyby ronde 4 (ronde 5 afgekeurd: voet in het lijf), Cuychu ronde 6 (pluk + diepere inkepingen + kussen weg), nachtaap ronde 12 met kleinere spiraal (950 px), alpaca ronde 17 met schuine hals en grotere kop.
+- Olinguito: stap 1b (gezicht naar Galar-Linoone), ronde 20–21b (masker, hak, Sandslash-klauwen, dikke poten); ronde 22 loopt (poten zoals Linoone, diagonaal lopen).
+- Kolibrie (testcase werkwijze met referenties): Ghost + Fairy/Flying, zielenbode (Guaraní mainumby, torpor van de Andes-hillstar); referentiefoto's, mythen met bronnen en drie concepten in `docs/concept/sprites/kolibrie/`.
+- Nieuwe vaste regels: referentiemateriaal per fakemon, Jordi letterlijk citeren, diagonaal lopen (geen telgang).

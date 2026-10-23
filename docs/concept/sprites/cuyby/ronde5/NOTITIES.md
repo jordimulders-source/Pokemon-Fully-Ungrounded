@@ -19,3 +19,6 @@ Ronde 5 plus A5. De rechter (schaduw)flank hangt 1 px verder uit op y33–39: de
 - Een kussen of detail 1 px verschuiven naar de rand: laat de buurvorm (lob, vacht) 1 px meelopen in plaats van de lege plek met omlijning te vullen. Anders ontstaat een zwarte balk.
 - Pixeldiff met zones plus een check op open randen (randkleur moet een omlijningskleur zijn) in één script (`bron/fu.py`, `report()`): dat geeft het bewijs in één regel.
 - Verplaatst blok raakt een buurdeel (alpaca-handschoen en achtervoet): sluit de pixels van dat buurdeel expliciet uit van het verplaatste masker.
+
+## Jordi (23 okt)
+Afgekeurd: "voet zit nu in zijn lichaam i.p.v. eronder". **Cuyby blijft ronde 4.**

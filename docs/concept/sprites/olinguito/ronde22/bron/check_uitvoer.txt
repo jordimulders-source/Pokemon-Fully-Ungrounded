@@ -1,0 +1,11 @@
+== tegen ronde21b
+frame 1: buiten pootzone (excl. kaak) 0 | kop 0 | oren 0 | staart 0 | kaaklijn 0 | pootzone gewijzigd 262 px
+frame 2: buiten pootzone (excl. kaak) 0 | kop 0 | oren 0 | staart 0 | kaaklijn 0 | pootzone gewijzigd 262 px
+palet gelijk: True
+== tegen ronde20
+frame 1: buiten pootzone (excl. kaak) 0 | kop 0 | oren 0 | staart 0 | kaaklijn 3 | pootzone gewijzigd 315 px
+frame 2: buiten pootzone (excl. kaak) 0 | kop 0 | oren 0 | staart 0 | kaaklijn 3 | pootzone gewijzigd 318 px
+palet gelijk: True
+frame 1: open randen 0 [] | 1024 px, box 48x36 (x9-56, y19-54)
+frame 2: open randen 0 [] | 1028 px, box 48x37 (x9-56, y18-54)
+transparency 0 | mode P (64, 128)

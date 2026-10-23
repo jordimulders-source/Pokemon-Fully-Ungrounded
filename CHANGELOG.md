@@ -51,3 +51,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Evoluties op een plek (Magnezone, Vikavolt, Leafeon, Glaceon, Crabominable) tijdelijk alleen met hun steen; Alolan Exeggutor tijdelijk op level-up met een Dragon-type in het team (open in POKEMON.md).
 - Mom staat in het stock-huis (TwoStory) met haar standaardtekst, healen en PokéNav-registratie.
 - Overgangslaag: 233 → 64 kaarten, 651 → 592 stubs; de rest hoort bij stap 8 (Frontier, Union Room, Contests, Secret Bases, Trainer Hill; inventaris met ROM-kosten in het plan). ROM: 18,38 MB vrij.
+
+### [v0.0.10] - pokeemerald-expansion 1.14.4 → 1.17.1
+- **Upstream-merge naar expansion 1.17.1** (TODO-stap 4). Nieuwe gevechtsmotor (cancelers, opgesplitste moveend, `battle_move_resolution.c`, volatiles in `gBattleMons[].volatiles`, statwijzigingen via een wachtrij; macro `queuestatchange` toegevoegd). Alle eigen moves/abilities/scripts omgezet of opnieuw geschreven (o.a. Kelp, Innard Punch, Overkill, Lure Light, Flash, Eye Spots, Super Splash, Totem Gaze/Burrow Maze, Weather Report, Pack Howl; Acid Rain en Pollen Haze als `EFFECT_WEATHER`). Spicy Spray en Eelevate gebruiken nu de upstream-versie (zelfde effect); Aura Guard blijft de onze.
+- Zes regressies gerepareerd (Life Buoy, Wind Chime, Primeval Ward, Tusk Tumble, Venom Dust/Beaver Dam, Acid Rain/Pollen Haze-type). Eigen tests: 223 PASS, 0 FAIL (was 217/2 + 4 timeouts).
+- Niet meegekomen: het nieuwe debug-geef-Pokémon-menu van upstream; kleurvarianten voor Frontier-tegenstanders.
+- FRLG-code zit nu in upstream en kost ±0,4 MB (Kanto-regiokaart, Trainer Tower, Seagallop e.d.): kan weg bij stap 8/9. ROM: 17,86 MB vrij.
+- Details en lessen: `docs/concept/STAND_TECHNIEK.md` (stap 4), `docs/lessen/AGENTS.md`.

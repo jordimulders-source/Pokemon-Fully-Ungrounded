@@ -18,3 +18,11 @@ Lees vóór het starten of samenvoegen van agents en bij git-werk. Opgesplitst u
 - **Parallelle sessies:** check bij een nieuwe opdracht eerst of een andere `claude/*`-branch dezelfde punten al deed (`TESTRUN.md`, `git log HEAD..origin/<branch>`); anders dubbel werk en conflicten (Leftovers, Johnson, Colress-levels op 15 okt).
 - **Nooit `cd <map>; rm *`** in één Bash-regel: de veiligheidscheck blokkeert het hele commando (ook de commits ervoor). Gebruik volledige paden.
 - **Controleer de basis vóór je begint:** `master` liep ver achter op de echte werkbranch (1.0 op `funny-edison`); vergelijk de laatste changelogversie van de remote branches (`git branch -r` + `git show <b>:CHANGELOG.md`) met wat Jordi speelt, anders reproduceer je bugs op oude code.
+
+## Upstream-merge (expansion 1.14.4 → 1.17.1, 23 okt)
+- Zet eerst hernoemde API's mechanisch om; los pas daarna conflicten op. Bij sterk herschreven bestanden upstream als basis nemen en onze blokken erin porten ('ours' geeft oude API in nieuwe code).
+- Na de merge per bestand een accoladecheck (git liet gedeelde staarten `}`/`};` vallen) en controleren dat eigen blokken niet in een `#if IS_FRLG`-blok belandden.
+- Naast de regelvergelijking een identifier-check: regels verhuizen naar andere bestanden.
+- Battlescripts draaien in 1.17 per geraakt doelwit, na de schade: 'één keer per zet'-effecten hebben een eigen markering nodig.
+- Een volledige `make check` hangt hier ('Illegal opcode'); draai eigen tests per bestand met een filter (`gTestRunnerArgv` = bestandsnaam), met `tools/` als symlink in de map waar je de test draait.
+- Een agent die uren draait: laat hem tussenstanden committen en push een back-upbranch (`backup/...` in Pokemon-Fully-Ungrounded) als de limiet nadert.

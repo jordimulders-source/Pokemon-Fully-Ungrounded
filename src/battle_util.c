@@ -8171,6 +8171,10 @@ s32 DoFixedDamageMoveCalc(struct DamageContext *ctx)
     case EFFECT_BIDE:
         dmg = gBideDmg[ctx->battlerAtk] * 2;
         break;
+    case EFFECT_INNARD_PUNCH: // Project Grounded: geraakt deze beurt? Dan 2x die schade terug, anders een gewone klap
+        if (!ctx->aiCalc && gProtectStructs[ctx->battlerAtk].innardPunchDmg > 0)
+            dmg = gProtectStructs[ctx->battlerAtk].innardPunchDmg * 2;
+        break;
     default:
         break;
     }

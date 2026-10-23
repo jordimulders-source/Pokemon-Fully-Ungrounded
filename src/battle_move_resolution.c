@@ -851,6 +851,13 @@ static bool32 HandleMoveTargetRedirection(struct BattleCalcValues *cv, enum Move
     u32 redirectorOrderNum = MAX_BATTLERS_COUNT;
     enum BattleSide side = (GetBattlerSide(cv->battlerAtk) ^ BIT_SIDE);
 
+    // Project Grounded: Innard Punch slaat terug op wie Pyukumuku deze beurt het laatst raakte
+    if (cv->moveEffect == EFFECT_INNARD_PUNCH
+     && gProtectStructs[cv->battlerAtk].innardPunchDmg > 0
+     && IsBattlerAlive(gProtectStructs[cv->battlerAtk].innardPunchBattlerId)
+     && !IsBattlerAlly(cv->battlerAtk, gProtectStructs[cv->battlerAtk].innardPunchBattlerId))
+        cv->battlerDef = gBattleStruct->moveTarget[cv->battlerAtk] = gProtectStructs[cv->battlerAtk].innardPunchBattlerId;
+
     if (cv->moveEffect == EFFECT_REFLECT_DAMAGE)
     {
         enum DamageCategory reflectCategory = GetReflectDamageMoveDamageCategory(cv->battlerAtk, cv->move);

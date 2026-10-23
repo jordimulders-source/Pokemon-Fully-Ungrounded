@@ -185,3 +185,8 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Kop van ronde X op lijf van ronde Y:** neem de neklengte mee met de kop en laat het lijf beginnen waar de rug start.
 - **Glans hoort binnen het zwart:** een glanspixel op de rand van een klein oog laat het oog grijs lezen; een 2 px breed verre oog helemaal zwart.
 - **Twee vuisten naast elkaar:** één kolom lucht ertussen, anders één klomp op 1×.
+
+## 24. Lessen uit de Cuyby-evolutie ronde 4
+- **Lees de randmelding van `bouw9` echt na vóór je "geen open randen" noteert:** ronde 3 meldde 19 open pixels (lichte spriettoppen, d/q op de schaduwkant) terwijl de notities "ok" zeiden. Lichte toppen krijgen r erboven, schaduwkant K eronder; controleer frame 2 apart, want een deel dat opzij wuift legt de voet eronder bloot (r op de rij erboven in het stilstaande deel).
+- **Na een knip de bron terugschrijven naar eindcoördinaten** (`cuyby_evo/ronde4/bron/omzet.py`: het geknipte `delen.txt` terug naar run-length-rijen, gecontroleerd met `cmp` op het raster): dan zijn keuring, raster en bron gelijk en is elke reparatie één getal in plaats van omrekenen.
+- **Een gezicht "meer in de vacht" = de lokken van de pony onderaan laten ombuigen naar omlaag over de bovenkant van de snuit, en een wangetje haar tussen snuit en vlek;** de snuit hoeft dan maar 1–2 px smaller voor de helft minder wit. Proef zulke blokken eerst als overlay op het raster (`cuyby_evo/ronde4/bron/proef.py`: legt `proef_blok.txt` over `raster_f1.txt` en rendert 12×/3×/1×), daarna pas in de delen.

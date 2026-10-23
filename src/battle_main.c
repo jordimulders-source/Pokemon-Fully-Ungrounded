@@ -5633,7 +5633,8 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
 
     // Project Grounded: Afro Charge (Bouffalant) neemt het type van het terrein aan, zoals Terrain Pulse
     if (move == MOVE_AFRO_CHARGE && state == MON_IN_BATTLE
-     && IsBattlerTerrainAffected(battler, ability, holdEffect, STATUS_FIELD_TERRAIN_ANY))
+     && gFieldTimers.terrain != B_TERRAIN_NONE
+     && IsBattlerTerrainAffected(battler, ability, holdEffect, gFieldTimers.terrain, gFieldTimers.terrain))
     {
         if (gFieldTimers.terrain == B_TERRAIN_ELECTRIC)
             return TYPE_ELECTRIC;

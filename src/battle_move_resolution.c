@@ -4599,7 +4599,7 @@ static enum MoveEndResult MoveEndMoveBlock(struct BattleCalcValues *cv)
              && IsBattlerAlive(cv->battlerAtk)
              && !(side == B_SIDE_PLAYER && !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
              && IsBattlerTurnDamaged(battlerDef, EXCLUDING_SUBSTITUTES)
-             && CanBattlerGetOrLoseItem(battlerDef, gBattleMons[battlerDef].item)
+             && CanBattlerGetOrLoseItem(battlerDef, cv->battlerAtk, gBattleMons[battlerDef].item)
              && !NoAliveMonsForEitherParty())
             {
                 enum Item item = gBattleMons[battlerDef].item;

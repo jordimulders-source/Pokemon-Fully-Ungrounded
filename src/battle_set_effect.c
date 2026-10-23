@@ -2,6 +2,7 @@
 #include "battle.h"
 #include "battle_set_effect.h"
 #include "battle_util.h"
+#include "battle_anim.h"
 #include "battle_script_commands.h"
 #include "battle_hold_effects.h"
 #include "battle_message.h"
@@ -815,7 +816,7 @@ static void HandleSetEffectTwinTails(struct BattleCalcValues *cv, struct SetEffe
         if (gBattleMons[cv->battlerAtk].statStages[bestStat] < MAX_STAT_STAGE)
             gBattleMons[cv->battlerAtk].statStages[bestStat]++;
         PREPARE_STAT_BUFFER(gBattleTextBuff1, bestStat);
-        gBattleScripting.animArg1 = GET_STAT_BUFF_ID(bestStat) + STAT_ANIM_PLUS1;
+        gBattleScripting.animArg1 = STAT_ANIM_PLUS1 + bestStat;
         gBattleScripting.animArg2 = 0;
         BattleScriptPush(se->script);
         gBattlescriptCurrInstr = BattleScript_MoveEffectTwinTails;

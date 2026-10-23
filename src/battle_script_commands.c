@@ -1802,7 +1802,7 @@ static bool32 CanApplyAdditionalEffect(const struct AdditionalEffect *additional
 
     // Project Grounded: Frosty Tap Dance geeft alleen in Snow/Hail ook +1 Sp. Atk
     if (gCurrentMove == MOVE_FROSTY_TAP_DANCE
-     && additionalEffect->moveEffect == MOVE_EFFECT_SP_ATK_PLUS_1
+     && additionalEffect->moveEffect == MOVE_EFFECT_STAT_PLUS && additionalEffect->spAtk != 0
      && !IsBattlerWeatherAffected(GetBattlerHoldEffect(gBattlerAttacker), GetWeather(), B_WEATHER_SNOW | B_WEATHER_HAIL))
         return FALSE;
 
@@ -12611,10 +12611,10 @@ static u32 FungalControl_AutoPick(u32 battler)
         u32 move = gBattleMons[battler].moves[i];
         if (!FungalControl_IsUsable(battler, i))
             continue;
-        switch (GetMoveEffect(move))
+        if (IsExplosionMove(move))
+            score = 1000;
+        else switch (GetMoveEffect(move))
         {
-        case EFFECT_EXPLOSION:
-        case EFFECT_MISTY_EXPLOSION:
         case EFFECT_MEMENTO:
         case EFFECT_FINAL_GAMBIT:
         case EFFECT_HEALING_WISH:
@@ -12688,8 +12688,8 @@ void BS_FungalControlChooseMove(void)
             for (i = 0; i < MAX_MON_MOVES; i++)
             {
                 moveInfo.moves[i] = gBattleMons[gBattlerTarget].moves[i];
-                moveInfo.currentPp[i] = gBattleMons[gBattlerTarget].pp[i];
-                moveInfo.maxPp[i] = CalculatePPWithBonus(gBattleMons[gBattlerTarget].moves[i], gBattleMons[gBattlerTarget].ppBonuses, i);
+                moveInfo.currentPP[i] = gBattleMons[gBattlerTarget].pp[i];
+                moveInfo.maxPP[i] = CalculatePPWithBonus(gBattleMons[gBattlerTarget].moves[i], gBattleMons[gBattlerTarget].ppBonuses, i);
             }
             gFungalControlChoosing = TRUE;
             BtlController_EmitChooseMove(gBattlerAttacker, B_COMM_TO_CONTROLLER, FALSE, FALSE, &moveInfo);
@@ -12715,7 +12715,7 @@ void BS_FungalControlChooseMove(void)
     gBattleMons[gBattlerTarget].volatiles.uproarTurns = 0;
     gBattleMons[gBattlerTarget].volatiles.bideTurns = 0;
     gBattleMons[gBattlerTarget].volatiles.multipleTurns = 0;
-    gBattleMons[gBattlerTarget].volatiles.lockConfusionTurns = 0;
+    gBattleMons[gBattlerTarget].volatiles.rampageTurns = 0;
     gBattleMons[gBattlerTarget].volatiles.rolloutTimer = 0;
     if (gBattleMons[gBattlerTarget].volatiles.encoredMove != GetBattlerChosenMove(gBattlerTarget))
         gBattleStruct->moveTarget[gBattlerTarget] = SetRandomTarget(gBattlerTarget);
@@ -12756,8 +12756,9 @@ void BS_TryTransmutation(void)
         gBattleMons[target].volatiles.disableTimer = 0;
         gBattleMons[target].volatiles.encoredMove = MOVE_NONE;
         gBattleMons[target].volatiles.encoreTimer = 0;
-        gBattleMons[target].volatiles.transformedMonPersonality = gBattleMons[user].personality;
-        gBattleMons[target].volatiles.transformedMonShininess = gBattleMons[user].isShiny;
+        gBattleMons[target].volatiles.transformedMonSpecies = gBattleMons[target].species;
+        gBattleMons[target].volatiles.transformedMonPID = gBattleMons[user].personality;
+        gBattleMons[target].volatiles.isTransformedMonShiny = gBattleMons[user].isShiny;
         gBattleMons[target].volatiles.mimickedMoves = 0;
         gBattleMons[target].volatiles.usedMoves = 0;
 
@@ -12808,10 +12809,12 @@ void BS_FormBlackHole(void)
         gSideStatuses[side] = 0;
         memset(&gSideTimers[side], 0, sizeof(gSideTimers[side]));
     }
-    gFieldStatuses &= STATUS_FIELD_TERRAIN_ANY;
+    gFieldStatuses = 0;
     blackHoleTimer = gFieldTimers.terrainTimer;
+    enum BattleTerrain blackHoleTerrain = gFieldTimers.terrain;
     memset(&gFieldTimers, 0, sizeof(gFieldTimers));
     gFieldTimers.terrainTimer = blackHoleTimer;
+    gFieldTimers.terrain = blackHoleTerrain;
     for (battler = 0; battler < gBattlersCount; battler++)
         for (stat = 0; stat < NUM_BATTLE_STATS; stat++)
             gBattleMons[battler].statStages[stat] = DEFAULT_STAT_STAGE;
@@ -12949,11 +12952,11 @@ void BS_TryWindChimeHeal(void)
     }
 
     if (!firstTarget
-     || (gHitMarker & HITMARKER_UNABLE_TO_USE_MOVE)
+     || gBattleStruct->unableToUseMove
      || battler >= gBattlersCount
      || !IsBattlerAlive(battler)
      || IsBattlerAtMaxHp(battler)
-     || gBattleMons[battler].volatiles.healBlock)
+     || gBattleMons[battler].volatiles.healBlockTimer)
     {
         gBattlescriptCurrInstr = cmd->failInstr;
         return;
@@ -13030,7 +13033,7 @@ void BS_TrySetWeatherReport(void)
 void BS_RecalcMoveType(void)
 {
     NATIVE_ARGS();
-    SetTypeBeforeUsingMove(gCurrentMove, gBattlerAttacker);
+    SetTypeBeforeUsingMove(gCurrentMove, gBattlerAttacker, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker));
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
@@ -13054,7 +13057,7 @@ void BS_GroundedObedienceWarnLevelUp(void)
      && !MonMayDisobeyAtLevel(mon, gBattleResources->beforeLvlUp->level)
      && MonMayDisobeyAtLevel(mon, GetMonData(mon, MON_DATA_LEVEL)))
     {
-        PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, gBattleStruct->expGetterBattlerId, monId);
+        PREPARE_MON_NICK_WITH_PREFIX_BUFFER(gBattleTextBuff1, 0, monId);
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff2, 3, GetPlayerObedienceLevel());
         BattleScriptPush(cmd->nextInstr);
         gBattlescriptCurrInstr = BattleScript_GroundedObedienceWarnLevelUp;
@@ -13165,7 +13168,8 @@ void BS_JumpIfCantBeDrowsy(void)
      || gBattleMons[gBattlerTarget].status1 & STATUS1_ANY
      || !IsBattlerAlive(gBattlerTarget)
      || DoesSubstituteBlockMove(gBattlerAttacker, gBattlerTarget, gCurrentMove)
-     || IsBattlerTerrainAffected(gBattlerTarget, abilityDef, holdEffectDef, STATUS_FIELD_ELECTRIC_TERRAIN | STATUS_FIELD_MISTY_TERRAIN)
+     || IsBattlerTerrainAffected(gBattlerTarget, abilityDef, holdEffectDef, B_TERRAIN_ELECTRIC, gFieldTimers.terrain)
+     || IsBattlerTerrainAffected(gBattlerTarget, abilityDef, holdEffectDef, B_TERRAIN_MISTY, gFieldTimers.terrain)
      || !CanBeSlept(gBattlerAttacker, gBattlerTarget, abilityDef, BLOCKED_BY_SLEEP_CLAUSE))
         gBattlescriptCurrInstr = cmd->jumpInstr;
     else
@@ -13211,7 +13215,7 @@ void BS_TryMarionette(void)
         }
         gProtectStructs[target].noValidMoves = FALSE;
         if (gBattleMons[target].volatiles.multipleTurns)
-            CancelMultiTurnMoves(target, SKY_DROP_IGNORE);
+            CancelMultiTurnMoves(target);
 
         // De move telt als gebruikt.
         if (movePos < MAX_MON_MOVES && gBattleMons[target].pp[movePos] != 0)

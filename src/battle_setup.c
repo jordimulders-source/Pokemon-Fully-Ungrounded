@@ -33,7 +33,6 @@
 #include "load_save.h"
 #include "malloc.h"
 #include "metatile_behavior.h"
-#include "mirage_tower.h"
 #include "palette.h"
 #include "random.h"
 #include "safari_zone.h"

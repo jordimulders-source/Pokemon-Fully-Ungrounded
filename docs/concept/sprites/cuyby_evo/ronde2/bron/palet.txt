@@ -1,0 +1,19 @@
+# Cuyby-evolutie ronde 2. Stro-ramp afgeleid van Ninetales (Gen 3: 255,238,164 / 255,213,106 / 213,156,74 /
+# 156,98,16), iets minder verzadigd richting stro; q = roestige diepe schaduw (Cuyby's oranje aan de schaduwkant).
+# Wit, zwart vlak, roze en de omlijning K komen uit Cuyby ronde 3.
+. 152 208 160
+K 41 24 24 zwart
+h 255 238 168
+s 238 204 108
+d 208 154 72
+q 182 108 40
+r 140 84 26 omlijning
+a 255 255 246
+b 246 238 214
+c 214 198 166
+e 139 106 65 omlijning
+g 106 98 115 omlijning
+G 49 41 57 omlijning
+p 255 172 180
+P 222 106 123 omlijning
+n 156 98 74

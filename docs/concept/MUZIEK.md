@@ -62,3 +62,12 @@
 - **Uitdunnen tot de kern:** surdo (één sample, twee toonhoogtes voor de wisselende slagen), caixa (snare in 16e), tamborim (hoog patroon), agogô (twee bellen), cuíca (één kort sample met pitch bend), cavaquinho (korte akkoordslagen) en één melodie.
 - **Kanalen sparen:** agogô en tamborim op de PSG-kanalen (square/noise), zodat de DirectSound-kanalen vrij blijven voor surdo, caixa, cavaquinho en melodie.
 - **Eerst een korte proef** (±20 s) en die laten horen, vóór er een volledig nummer komt.
+
+## Feedback Jordi op de eerste schetsen (23 okt)
+Algemeen: "prima testronde, de muziek gaat wel goedkomen". **Muziek staat even op pauze** (Jordi).
+- **Altiplano (612):** de eerste seconden klinken wat vals, maar zodra het deuntje start "echt vet", al 80–90% goed; mag nog net wat meer Pokémon klinken.
+- **Wild gevecht (613):** klinkt Pokémon-stijl; het refrein is nog wat kaal. Volgende keer: een agent laten keuren en vergelijken met de Emerald-gevechtsmuziek.
+- **La Paz (614):** niet genoeg La Paz-stijl; de fluitjes klinken vrij vals.
+- **Bende (615):** wel ok, maar het typische reggaeton-dembow ontbreekt, en een fluitje hoort daar niet de hoofdtoon te hebben.
+- **Samba (616):** klinkt tof, maar is geen samba. De cuíca is geinig opgelost.
+- **Algemeen:** niet elk nummer moet een fluitje de melodie laten spelen. Let op valse fluiten (quena/zampoña-samples of stemming nakijken).

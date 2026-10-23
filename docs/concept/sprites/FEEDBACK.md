@@ -22,3 +22,9 @@
 ## Ronde 4 (22 okt)
 - **Nachtaap:** de ogen zijn "helemaal verknald" in ronde 4; het lichaam is wel beter. Volgende stap: lichaam van ronde 4 met de ogen van ronde 2/3 (die vond Jordi "geinig"), mysterieus maar niet verveeld of slaperig.
 - **Alpaca en olinguito:** iets beter, maar nog niet perfect. Volgende stap (voorstel tekenaars): lijf en poten met de hand per pixel afwerken op basis van ronde 4.
+
+## Ronde 5 + Cuyby/DJ Rotom ronde 1 (23 okt)
+- **Starters:** nog steeds niet Pokémon genoeg. **Alpaca en olinguito vindt Jordi minder dan ronde 4.** De nachtaap zit weer het dichtst in de buurt, "maar er is toch iets wat het niet perfect maakt".
+- **Cuyby:** "zo overduidelijk een fakemon in plaats van een Pokémon".
+- **DJ Rotom:** "een hele andere vorm, kom op, je kan beter" (leest niet als een echte Rotom-vorm).
+- Opdracht: laat een agent ze onafhankelijk keuren tegen echte Pokémon-sprites (wat maakt ze 'fakemon' in plaats van Pokémon?).

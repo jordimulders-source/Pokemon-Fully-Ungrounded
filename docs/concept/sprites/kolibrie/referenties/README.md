@@ -3,8 +3,11 @@
 Brainstormmateriaal; nog geen concept gekozen (Jordi brainstormt eerst). Geen pixelsprite.
 
 ## (a) Foto's van echte Zuid-Amerikaanse kolibries
-Downloaden lukte niet: de proxy van deze sessie blokkeert Wikipedia/Wikimedia, Macaulay Library, iNaturalist en Flickr. Daarom alleen links (open ze in de browser; de foto bovenaan de pagina is de bruikbare).
+**Hoofdreferentie: Jordi's foto's (23 okt; alleen als beschrijving doorgegeven, niet als bestand):**
+1. **Andes-hillstar (*Oreotrochilus estella*)**, de basissoort (ook de soort met de torpor). Zittend op een takje, 3/4 (spiegelen naar links-voor). Grijsbruine kop en rug; korte rechte tot licht gebogen zwarte snavel; **schitterende smaragdgroene keel (gorget) met een donker blauwzwart randje eronder, als een halskraag**; **witte borst/buik met een roestbruine middenstreep**; lange donkere vleugels en staart langs het lijf naar beneden; klein zwart oog met lichte vlek erachter; zwarte pootjes. → **Paletbasis:** grijsbruin + wit + groene keelkraag (+ roest als accent); de geest-versie mag bleker/ijler.
+2. **Zwevende kolibrie** (vermoedelijk een *Coeligena*/starfrontlet-vrouwtje, niet zeker). 3/4 naar rechts (spiegelen); **vleugels hoog opgeheven als een V** (brede bruine slagpennen, waaiervormig); **lange rechte dunne zwarte snavel** schuin omhoog; kop en nek schubbig smaragdgroen; keel en borst kaneel/oker met donkere schubstipjes; **iriserende magenta/paarse flankvlek**; **iriserend blauw-turquoise staartdekveren**, lange donkere staart recht naar beneden; pootjes ingetrokken. → **Gebruik:** de zweefpose met V-vleugels, de lange rechte snavel, en het regenboogpalet (groen → magenta → blauw) als "oplichten" van de geest.
 
+Downloaden van eigen zoekresultaten lukte niet: de proxy van deze sessie blokkeert Wikipedia/Wikimedia, Macaulay Library, iNaturalist en Flickr. Daarom alleen links (open ze in de browser; de foto bovenaan de pagina is de bruikbare). Jordi: zet je foto's gerust als bestand in deze map.
 | Soort | Kenmerk voor het silhouet | Link |
 |---|---|---|
 | Zwaardsnavelkolibrie (*Ensifera ensifera*), Andes 1700–3500 m | Snavel ±10 cm, langer dan het lijf zonder staart; houdt de snavel in rust schuin omhoog | https://en.wikipedia.org/wiki/Sword-billed_hummingbird |
@@ -13,7 +16,6 @@ Downloaden lukte niet: de proxy van deze sessie blokkeert Wikipedia/Wikimedia, M
 | Andes-hillstar (*Oreotrochilus estella*), puna 3000–4500+ m | Groen-paarse glanskeel (gorget) op witte borst; overnacht in grotten in torpor | https://en.wikipedia.org/wiki/Andean_hillstar |
 | Bonus: sparkling violetear (*Colibri coruscans*), Andes | Klassieke "kolibrievorm", blauwpaarse oorvlek, zeer algemeen in steden (La Paz, Quito) | https://en.wikipedia.org/wiki/Sparkling_violetear |
 
-Vraag aan Jordi: heb je eigen foto's (bijv. van de reis), zet ze dan hier in `referenties/`.
 
 ## (b)+(c) Skelet- en kenmerk-sprites
 `contactvel.png` (2×, uit `graphics/pokemon/`, eerste frame):
@@ -25,6 +27,8 @@ Vraag aan Jordi: heb je eigen foto's (bijv. van de reis), zet ze dan hier in `re
 - **Kenmerk glans/patroon:** Beautifly, Vivillon, Mothim, Sigilyph, Xatu, Swellow, Celebi, Squawkabilly (iriserend = 2 tinten in harde vlakken, geen verloop).
 
 ## Mythen, legendes en geschiedenis (om te controleren)
+0. **Aymara: ajayu en *susto*** [matig/goed] (voor concept C). Bij hevige schrik kan je *ajayu* (de ziel met bewustzijn) je lichaam verlaten; een yatiri roept hem terug met kleren, lievelingseten of een wollen draad. Ajayu verliezen is ernstiger dan de *animu* en kan dodelijk zijn. https://bolivianexpress.org/magazine-sub-item/1003 , https://en.wikipedia.org/wiki/Susto (academisch: Burman 2010 over El Alto)
+
 Betrouwbaarheid: **[goed]** wetenschappelijk/museum, **[matig]** populair/secundair, **[zwak]** commercieel of niet bevestigd.
 
 1. **Guaraní: Mainumby / Maino'i, voeder van de schepper** [matig]. In de Mbyá-Guaraní-scheppingstekst (*Ayvu Rapyta*) fladdert een kolibrie om het hoofd van Ñamandu als die uit de duisternis ontstaat, en voedt hem met nectar; hij heet ook de bode van de dag. Spelling varieert (Mainumby, Maino, Mainõ'ĩ). https://garlandmag.com/article/ayvu-rapyta-selection/ , https://en.wikipedia.org/wiki/Guarani_mythology , https://museudoamanha.org.br/en/events/1149/maino-e-as-cores-do-dia

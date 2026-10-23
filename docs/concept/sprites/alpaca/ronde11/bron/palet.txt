@@ -1,0 +1,16 @@
+. 152 208 160              # 0 transparant
+K 52 38 44 zwart           # 1 omlijning donker, ogen, neusgaten
+W 255 253 246              # 2 wol hooglicht / glans
+w 243 233 212              # 3 wol (één vachtkleur: warm crème)
+v 214 190 156 omlijning    # 4 wolschaduw (ook licht randje op belichte bulten)
+u 172 142 112 omlijning    # 5 diepe wolschaduw
+V 132 104 86 omlijning     # 6 wolomlijning
+R 252 140 118              # 7 handschoen hooglicht
+r 222 62 62                # 8 handschoen
+s 156 36 52                # 9 handschoen schaduw
+S 96 26 42 omlijning       # 10 handschoen/manchet omlijning
+M 222 48 132               # 11 weefband magenta
+Y 248 188 40               # 12 weefband geel
+T 32 170 170               # 13 weefband turquoise
+P 244 160 172              # 14 roze (oor binnenkant, weefband hooglicht)
+B 96 104 168               # 15 oogreflectie

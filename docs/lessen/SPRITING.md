@@ -107,3 +107,10 @@ Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.p
 - **Eerst het silhouet tegen een foto van het echte dier** (2–3 ruwe schetsen op 64×64): na negen rondes op details bleek de alpaca een schaap omdat de kop direct op het lijf zat.
 - **Een lange nek moet zichtbaar zijn:** een grote babykop dekt de nek af; zet de kop hoger en het lijf lager (7–9 px nek onder de kin), en laat de nekrug als één holle curve van achterhoofd naar rug lopen.
 - **Run-length-rijen met absolute x** (`y x0 3V 2W 1. 5w`, `ronde10/bron/bouw10.py`) zijn het snelst om met de hand bij te werken: een deel verschuiven of 3 px korter maken is één getal per rij.
+
+## 15. Lessen uit alpaca ronde 11 (herstart from scratch)
+- **Verzonnen kleurvlakken mogen, maar alleen als ze werken:** een gezicht, poten of buik in een andere kleur dan het echte dier kan, zolang de soort herkenbaar blijft en het één geheel oogt. Bij de alpaca maakten het crème gezicht en de bruine poten (ronde 9–10) juist de herkenning kapot (Eevee-kop op een schaap); één vachtkleur overal, alleen schaduwtinten, liet hem meteen alpaca lezen. Check altijd tegen een foto of het echte dier dat vlak heeft.
+- **Kop als één blok met een vaste x0** (`y 12 ....VwwKK...`, alle rijen even lang) is makkelijker te tekenen en te controleren dan losse run-length-rijen: kolommen staan recht onder elkaar en een oog verschuiven is één teken per rij (`ronde11/bron/bouw11.py` leest beide vormen).
+- **Oppervlak sparen zonder de soort te verliezen:** een lange nek kost weinig als hij smal is (9–10 px); de meeste winst zat in een lijf dat 1 kolom korter is, kortere achterpoten (die staan verder weg en dus hoger) en een kop zonder lege wangen (1030 → 869 px).
+- **Diepte via voethoogte:** dichtbije voorvoet het laagst, verre voorvoet 3 px hoger, achtervoeten nog 2–4 px hoger; zo staat een viervoeter 3/4 in plaats van in profiel, ook als het lijf zelf nog vrij zijwaarts is.
+- **Een fringe-schaduwlijn vlak boven de ogen leest op 1× als boze wenkbrauw:** houd de pixels direct boven een oog licht en zet de franjepunten tussen de ogen.

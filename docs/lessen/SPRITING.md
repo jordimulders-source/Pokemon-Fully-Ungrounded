@@ -190,3 +190,10 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Lees de randmelding van `bouw9` echt na vóór je "geen open randen" noteert:** ronde 3 meldde 19 open pixels (lichte spriettoppen, d/q op de schaduwkant) terwijl de notities "ok" zeiden. Lichte toppen krijgen r erboven, schaduwkant K eronder; controleer frame 2 apart, want een deel dat opzij wuift legt de voet eronder bloot (r op de rij erboven in het stilstaande deel).
 - **Na een knip de bron terugschrijven naar eindcoördinaten** (`cuyby_evo/ronde4/bron/omzet.py`: het geknipte `delen.txt` terug naar run-length-rijen, gecontroleerd met `cmp` op het raster): dan zijn keuring, raster en bron gelijk en is elke reparatie één getal in plaats van omrekenen.
 - **Een gezicht "meer in de vacht" = de lokken van de pony onderaan laten ombuigen naar omlaag over de bovenkant van de snuit, en een wangetje haar tussen snuit en vlek;** de snuit hoeft dan maar 1–2 px smaller voor de helft minder wit. Proef zulke blokken eerst als overlay op het raster (`cuyby_evo/ronde4/bron/proef.py`: legt `proef_blok.txt` over `raster_f1.txt` en rendert 12×/3×/1×), daarna pas in de delen.
+
+## 25. Lessen uit olinguito ronde 15 (lijf op een echt skelet)
+- **Een eigen constructie (ovalen, boon) blijft geometrisch lezen, hoe glad de pixels ook zijn;** het lijf van een echte sprite als onderlaag (`onderlaag.py`, niet geschaald) geeft in één ronde een natuurlijke romp en een consequente, staande pootstand.
+- **Kies het skelet op houding én verhouding, niet op soort:** Poochyena (stil, laag, kleine romp, korte poten) past beter bij een kleine marter dan Mightyena (te hoog) of Persian (loopt).
+- **Neem van de onderlaag de anatomie, niet de vacht:** staartpluim en nekkraag weglaten in het masker, anders tekent de overtrek vachtpieken als rugvorm.
+- **Run-lengtes vooraf uitschrijven per curve** (bijv. rug 4,3,2,2,1; buik 4,4,3,2; kont 2,4,3) en daarna de rijen tekenen: zo zie je knikken vóór het bouwen en blijft bouw9 schoon.
+- **Een romp die onder een bewegende arm doorloopt, krijgt op de verborgen randpixel al de omlijning** (hier (26,47) = 0), anders verschijnt in frame 2 een open rand.

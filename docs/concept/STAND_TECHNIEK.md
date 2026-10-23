@@ -127,7 +127,15 @@ Keccles (klasse-intro + thema), PC, summary (IV/EV-pagina), tas, debugmenu en so
 - Upstream-FRLG-code zit nu in de ROM (kaartvoorbeelden, Kanto-regiokaart, Trainer Tower, Seagallop, FRLG-intro/Hall of
   Fame, extra RG-muziek), samen ±0,4 MB; kan bij stap 8/9 weg.
 
-**ROM-ruimte:** vóór 18,42 MB vrij (`__rom_end` 0x08D95200), na 17,91 MB vrij (0x08E182A8), dus ±0,51 MB minder.
+**ROM-ruimte:** vóór 18,42 MB vrij (`__rom_end` 0x08D95200), na 17,91 MB vrij (0x08E183EC), dus ±0,51 MB minder.
+
+**Tests:** onze eigen tests (`test/battle/grounded/`, 233 stuks) per bestand gedraaid vóór en na: vóór 217 PASS / 2 FAIL /
+4 TIMEOUT, na 223 PASS en geen FAIL/TIMEOUT (9 ASSUMPTION_FAIL door soorten die buiten de dex vallen, al vóór de merge).
+Daarvoor zijn zes echte regressies gerepareerd (Life Buoy bij wisselen, Wind Chime-heal, Primeval Ward-blokkade,
+Tusk Tumble-spikes, Venom Dust/Beaver Dam-statdata, starttekst + `.type` van Acid Rain/Pollen Haze) en zijn testteksten
+aangepast aan nieuwe upstream-meldingen. De volledige `make check` haalt het niet binnen twee uur (vóór én na blijven
+workers hangen op tests met "Illegal opcode"); op het deel dat beide runs haalden (400 tests) zijn de uitkomsten gelijk,
+behalve 4 Daycare-tests die nu INVALID zijn (soorten buiten de dex).
 
 **Valkuilen voor de volgende upstream-merge**
 - Maak eerst een lijst van hernoemde/verwijderde API's (`docs/changelogs/`) en zet onze code mechanisch om

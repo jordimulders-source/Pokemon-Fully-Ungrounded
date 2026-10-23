@@ -1,0 +1,51 @@
+Blinde test alpaca ronde 6: letterlijke antwoorden van een verse Claude-sessie
+(claude -p, zonder projectcontext, werkmap in de scratchpad; vraag: zie bron/blindprompt.txt)
+
+=== Ronde 1 (blindtest_ronde1.png) ===
+Oplossing: 1=mudkip, 2=zigzagoon, 3=treecko, 4=skitty, 5=ponyta, 6=growlithe, 7=torchic, 8=mareep, 9=teddiursa, 10=eevee, 11=KANDIDAAT (v6), 12=poochyena, 13=electrike
+
+1. **Fake sprite: #11.** It's the alpaca/llama-like creature with a cream fleece and red feet.
+
+2. **Confidence: about 95%.** It stood out right away. It's the only one that doesn't match any Pokémon I know. I can place the other twelve as Mudkip, Zigzagoon, Treecko, Skitty, Rapidash, Growlithe, Torchic, Mareep, Teddiursa, Eevee, Poochyena and Emolga. Emolga is Gen 5, but its sprite is drawn here in a Gen 3 style.
+
+3. **Why #11 gives itself away:**
+   - **Design:** It's a generic alpaca. The head is a brown muzzle with a tan tuft, the body is a cream wool blob, and the red feet look like boots. Official designs usually have a distinctive silhouette and a clear animal-plus-motif idea. This one reads as a simple mash-up of parts.
+   - **Outline:** The outline is a uniform dark brown, and in places it's thick and blocky. Official GBA sprites use selective, colored outlines that get darker and lighter with the lighting. Here the outline is heavy and even.
+   - **Shading:** The cream body is shaded in flat, clumpy bands. Official wool such as Mareep's has a clear light source and consistent highlights. The red feet use only a flat red with little shading.
+   - **Palette:** The brown, cream and saturated red don't blend into each other. The red boots clash and look like pasted-on parts. Official sprites tie their palettes together with shared hues.
+   - **Proportions and posture:** The head is large and boxy, and the body and legs are awkwardly stacked. The pose is a stiff side-profile hybrid that doesn't have the weight and perspective of the official sprites. Those sprites usually have slightly 3/4 anatomy and clear volume.
+
+4. **Second most suspicious: #13 (Emolga).** It's a Gen 5 Pokémon rendered in Gen 3 style, so it's the sprite that looks most out of place. The proportions are flat and its wing membrane is simplified. That could be an official sprite or a faithful remake, but it's more likely to be a ripped or remade one than #11 is. I'd still rate it far less suspicious than #11.
+
+=== Ronde 2 (blindtest_ronde2.png) ===
+Oplossing: 1=electrike, 2=ponyta, 3=zigzagoon, 4=eevee, 5=mudkip, 6=poochyena, 7=mareep, 8=skitty, 9=teddiursa, 10=treecko, 11=torchic, 12=growlithe, 13=KANDIDAAT (v8)
+
+1. **Fake sprite: #13**, the cream alpaca-like creature with red boots.
+
+2. **Confidence: about 92%.** It stood out almost immediately, within a second of scanning the 2x rows. The other 12 are all familiar Gen 3 Pokémon: Emolga-like #1 aside, they are Ponyta, Zigzagoon, Eevee, Mudkip, Poochyena, Mareep, Skitty, Teddiursa, Treecko, Torchic and Growlithe. Only #13 has no official counterpart.
+
+3. **Visual reasons:**
+   - **Design:** The body is a fluffy cream blob with a fleece tuft and a brown face. The feet are saturated red boots that look like Alpaca-style pasted-on parts. Official Gen 3 designs rarely have a body part in a flat primary colour that is unrelated to the rest of the palette.
+   - **Pixel technique:** The fleece edge is lumpy and scalloped in a way that reads as hand-drawn rather than Game Freak's deliberate, clean outline rhythm. The shading is soft and has fewer distinct tone steps than the official sprites. Official sprites use a clear light-source ramp, with highlights top-left and a darker underside.
+   - **Outline:** The outline is a dark brown that looks uniform and heavy in places, but it breaks in the fleece area. Official sprites use selective, coloured outlines that vary by region.
+   - **Proportions and pose:** The pose is a stiff three-quarter side view with a large head and an oddly small, simple face. The face has only a tiny eye and a snout block, so it lacks the expressive detail of GBA sprites.
+   - **Palette:** The cream, tan and brown palette is flat, and the red boots clash with it.
+
+4. **Second-most-suspicious: #1** (the green, lizard-like creature). Its shape is odd and the mouth and fin area are rendered loosely, so it looks the least like a standard Gen 3 sprite after #13. It also has a distinct, slightly flat teal-and-green palette. I think it is probably an official sprite, though, and I put roughly 5% on it being the fake.
+
+=== Ronde 3 (blindtest.png) ===
+Oplossing: 1=growlithe, 2=KANDIDAAT (v9), 3=skitty, 4=electrike, 5=mareep, 6=mudkip, 7=zigzagoon, 8=treecko, 9=poochyena, 10=teddiursa, 11=torchic, 12=ponyta, 13=eevee
+
+1. **Fake sprite: #2**, the fluffy cream alpaca-like creature with red boots.
+
+2. **Confidence: about 90%.** It stood out almost immediately. It is the only one that isn't a known Pokémon, and I can't match it to any Gen 1–3 design (Growlithe, Skitty, Emolga-like #4, Mareep, Mudkip, Zigzagoon, Treecko, Poochyena, Teddiursa, Torchic, Ponyta and Eevee are all recognizable). The 1x row doesn't change my answer.
+
+3. **Visual reasons:**
+   - **Design:** It looks like an alpaca or llama with a cream fleece, a tan or brown face and a mane tuft on top. The legs end in big, saturated red "boots", which is a plain colored blob rather than a Game Freak-style limb. Official designs usually have clearer anatomy and purposeful accent colors, like Ponyta's flames or Mareep's wool and tail orb.
+   - **Palette:** It uses a limited set of flat tan, cream and pure red tones. The red feet are saturated and don't fit the rest of the palette. Official sprites use a more deliberate hue-shifted ramp of 3–4 shades per color.
+   - **Shading:** The fleece is shaded in clumpy, uneven patches that don't follow a consistent light source. GBA sprites usually use a clear top-left light with darker shading toward the bottom.
+   - **Outline:** The outline is a single dark brown line with little selective outlining (colored outlines or lighter edges where light hits). It looks less refined than the others.
+   - **Proportions:** The body is a rounded blob with short, stubby legs, and the neck and head are rather large for the body. It reads as a generic cute animal rather than a design with a clear silhouette.
+
+4. **Second most suspicious: #4**, the green lizard-like creature with leaf-like wings. It is slightly flat and low-detail compared with the rest, and its design is a bit ambiguous. It looks like an official Gen 3 sprite, though, so my suspicion is low. I'd put it at about 5–10%.
+

@@ -1,0 +1,18 @@
+# verre arm loskomen van het donkere lijf: zwarte rand links, basisbruin als licht
+arm_achter 37 39 0320
+arm_achter 38 39 03220
+arm_achter 39 40 0320
+arm_achter 40 40 0320
+arm_achter 41 40 0320
+arm_achter 42 40 03220
+arm_achter 43 40 0320
+arm_achter 44 39 0320
+arm_achter 45 38 0320
+arm_achter 46 37 03220
+# mondje duidelijker
+kop 29 16 0
+kop 30 17 11
+# randen dicht
+voeten 53 36 0
+klauw_voor 48 24 8
+klauw_voor 50 22 8

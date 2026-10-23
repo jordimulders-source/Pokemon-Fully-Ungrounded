@@ -1,0 +1,27 @@
+# ogen rond i.p.v. platte bovenrand
+kop 28 12 OvvCCDDDCCvvVVvCDDDDCvvVVK
+kop 29 15 DmmmmmD
+kop 29 27 DmmmmD
+kop 30 15 mwwaKam
+kop 30 27 mwaKam
+kop 31 15 mwwKKam
+kop 31 27 mwKKam
+kop 32 15 maKKKam
+kop 32 27 maKKam
+kop 33 15 maKKKAm
+kop 33 27 maKKAm
+kop 34 15 maaKAAm
+kop 34 27 maaAAm
+kop 35 15 DmAAAmD
+kop 35 27 DmAAmD
+kop 36 15 vDDDDDC
+kop 36 27 CDDDDv
+# romp: smallere buik, violette flanken
+lijf 44 21 vvcCCCCCDV
+lijf 45 21 vvCCCCCCDV
+lijf 46 21 vvCCCCCCDV
+lijf 47 20 vvvCCCCCCDV
+lijf 48 20 vvvCCCCCCDV
+# onderrand niet recht: knie en buik apart afgerond
+lijf 54 19 _VVVVVVVKKKKKK
+lijf 55 19 _KKKKKKK______

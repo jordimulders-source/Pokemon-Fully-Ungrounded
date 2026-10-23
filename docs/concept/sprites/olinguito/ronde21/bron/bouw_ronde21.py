@@ -26,27 +26,25 @@ def tail_px(x, y, f):
 
 # ---------- verre voorpoot (schaduwtint 3), eigen kolom x29-32, voet 2 rijen hoger dan de nabije ----------
 VERRE_VOOR = {
-    44: (29, '2331'),
-    45: (29, '2331'),
-    46: (29, '2331'),
+    44: (30, '2331'),
+    45: (30, '2331'),
+    46: (30, '2331'),
     47: (29, '2331'),
     48: (29, '2331'),
     49: (28, '23331'),
-    50: (27, '293331'),
-    51: (26, '9a9a1111'),
-    52: (26, '91a1'),
-    53: (26, '1.1'),
+    50: (28, '23331'),
+    51: (29, '1111'),
 }
 # ---------- buik + verre achterpoot (x34-37, lucht op x33) ----------
 BUIK = {
-    43: (31, '333333'),
-    44: (33, '12331'),
+    43: (31, '33333333'),
+    44: (34, '11111'),
 }
 VERRE_ACHTER = {
-    45: (34, '2331'),
-    46: (34, '2331'),
-    47: (34, '2331'),
-    48: (34, '2331'),
+    45: (36, '233'),
+    46: (36, '2331'),
+    47: (35, '2331'),
+    48: (35, '2331'),
     49: (34, '2331'),
     50: (33, '23331'),
     51: (33, '11111'),
@@ -57,19 +55,35 @@ NABIJ_VOOR = {
     41: (23, '224554331'),
     42: (23, '2455443311'),
     43: (23, '24554431'),
-    44: (23, '2454431'),
-    45: (22, '2444431'),
-    46: (22, '244431'),
-    47: (21, '2444331'),
-    48: (21, '2444331'),
-    49: (20, '22444331'),
-    50: (19, '9c2444331'),
-    51: (18, '9ca924431'),
-    52: (18, '9a9ca2331'),
-    53: (18, '19ca11111'),
-    54: (19, '1a1'),
-    55: (19, '11'),
+    44: (22, '2455431'),
+    45: (21, '2445431'),
+    46: (21, '244431'),
+    47: (20, '244431'),
+    48: (20, '244331'),
+    49: (19, '2444331'),
+    50: (19, '2444331'),
+    51: (20, '244331'),
+    52: (21, '11111'),
 }
+# Klauwen in Sandslash-vorm (2 per poot), verkleind tot de pootdikte. Blok: (x0, y0) linksboven, rijen.
+KLAUW_NABIJ = ((14, 48), [
+    '...991..',
+    '..9cca1.',
+    '.9ca9cc1',
+    '.9a9cca1',
+    '9a9caa1.',
+    '9a9ca1..',
+    '19a91...',
+    '.111....',
+])
+KLAUW_VER = ((24, 49), [
+    '..991.',
+    '.9aa91',
+    '9a99a1',
+    '9a9a1.',
+    '191...',
+    '.1....',
+])
 # ---------- kaaklijn (A6): onderkant van de kaak licht gebogen, frame-1-coordinaten ----------
 KAAK = {
     39: (23, '33'),     # x23-24: was zwarte rechte rand; wordt kaakschaduw
@@ -81,6 +95,10 @@ def paint(g, rows, dy=0, dx=0):
         for i, c in enumerate(s):
             if c != '.':
                 g[(x0 + i + dx, y + dy)] = int(c, 16)
+
+def paint_block(g, blok, dy=0):
+    (x0, y0), rows = blok
+    paint(g, {y0 + i: (x0, r) for i, r in enumerate(rows)}, dy)
 
 def bouw_frame(r20, f):
     up = -1 if f else 0
@@ -97,8 +115,10 @@ def bouw_frame(r20, f):
     paint(g, BUIK)
     paint(g, VERRE_ACHTER)
     paint(g, VERRE_VOOR, up)
+    paint_block(g, KLAUW_VER, up)
     paint(g, B20.NABIJE_ACHTERPOOT, 0, HIND_DX)
     paint(g, NABIJ_VOOR, up)
+    paint_block(g, KLAUW_NABIJ, up)
     # 4. staart en kop letterlijk terug (bovenop)
     for y in range(64):
         for x in range(64):

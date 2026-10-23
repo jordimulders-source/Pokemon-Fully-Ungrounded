@@ -9,6 +9,7 @@ Waarom: alpaca en olinguito kostten 15 rondes, Cuyby 3 en Cuychu 4. De rondes gi
 3. **Volledige sprite:** kleur, shading, ogen; §0-checklist (`SPRITING.md`) punt voor punt afgevinkt in NOTITIES.md.
 4. **Onafhankelijke keuring vóór Jordi kijkt:** een agent vergelijkt met ≥ 10 echte sprites (KEURING.md, nodig/polijsten); de nodige punten meteen repareren. Jordi ziet alleen de gerepareerde versie.
 5. **Reparatierondes:** alleen de punten die Jordi noemt. Goedgekeurde delen letterlijk bevriezen; grote of ongevraagde wijzigingen alleen als variant naast het origineel.
+- **Claude kijkt zelf eerst** naar elk resultaat (1× en 3×) vóór het naar Jordi gaat, en stuurt het terug als het duidelijk niet klopt (ronde 17/18 olinguito gingen ongezien door: "Chernobyl", "prutswerk"). Een onderdeel verplaatsen = de hele vorm eromheen laten kloppen (neus verschuiven zonder de snuit mee te nemen is zinloos).
 - Max. 2 sprite-agents tegelijk; agents schrijven alleen in de map van hun sprite (lessen onder "Lessen" in NOTITIES.md, Claude zet ze over naar SPRITING.md).
 
 ## Kernprincipes

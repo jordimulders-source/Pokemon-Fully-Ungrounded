@@ -2162,10 +2162,6 @@
 	.4byte \failInstr
 	.endm
 
-	.macro trysetweatherreport noChangeInstr:req
-	callnative BS_TrySetWeatherReport
-	.4byte \noChangeInstr
-	.endm
 
 	.macro recalcmovetype
 	callnative BS_RecalcMoveType

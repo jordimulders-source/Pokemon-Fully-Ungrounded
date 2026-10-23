@@ -377,6 +377,7 @@ extern const u8 BattleScript_AftermathDmg[];
 extern const u8 BattleScript_BeaverDamBreak[];
 extern const u8 BattleScript_LureLightDazzleAttacker[];
 extern const u8 BattleScript_TotemGazeDodge[]; // Project Grounded
+extern const u8 BattleScript_WeatherReportForecast[]; // Project Grounded
 extern const u8 BattleScript_BurrowMazeDodge[]; // Project Grounded
 extern const u8 BattleScript_SuperSplashTsunami[]; // Project Grounded
 extern const u8 BattleScript_HoleUpActivates[];

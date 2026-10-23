@@ -1967,6 +1967,13 @@ static enum CancelerResult CancelerMoveSpecificMessage(struct BattleCalcValues *
         CalculateMagnitudeDamage();
         BattleScriptCall(BattleScript_MagnitudeMessage);
         return CANCELER_RESULT_RUN_SCRIPT_AND_INCREMENT;
+    case EFFECT_WEATHER_REPORT: // Project Grounded: Castform zet eerst het weer, daarna de klap (met het nieuwe type)
+        if (TrySetWeatherReportWeather())
+        {
+            BattleScriptCall(BattleScript_WeatherReportForecast);
+            return CANCELER_RESULT_RUN_SCRIPT_AND_INCREMENT;
+        }
+        break;
     case EFFECT_FICKLE_BEAM:
         gBattleStruct->fickleBeamBoosted = RandomPercentage(RNG_FICKLE_BEAM, 30);
         if (gBattleStruct->fickleBeamBoosted)

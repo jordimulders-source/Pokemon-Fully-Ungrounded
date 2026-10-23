@@ -460,7 +460,6 @@ gSpecials::
 	def_special ChooseMonForMoveTutor, waitstate=1
 	def_special ScrollableMultichoice_ClosePersistentMenu
 	def_special CreateEnemyEventMon
-	def_special ChangeBoxPokemonNickname
 	def_special GetPCBoxToSendMon
 	def_special ShouldShowBoxWasFullMessage
 	def_special SetMatchCallRegisteredFlag

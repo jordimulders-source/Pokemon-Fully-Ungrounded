@@ -38,6 +38,7 @@
 #include "string_util.h"
 #include "text.h"
 #include "trainer_pokemon_sprites.h"
+#include "trainer.h"
 #include "window.h"
 #include "fieldmap.h"
 #include "constants/battle_anim.h"

@@ -1623,7 +1623,7 @@ BattleScript_FaintAttackerForImplosion::
 	printfromtable gWeatherEndsStringIds
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_ImplosionTerrain:
-	jumpifhalfword CMP_NO_COMMON_BITS, gFieldStatuses, STATUS_FIELD_TERRAIN_ANY, BattleScript_ImplosionAbilities
+	jumpifterrain CMP_EQUAL, B_TERRAIN_NONE, BattleScript_ImplosionAbilities
 	removeterrain
 	playanimation BS_ATTACKER, B_ANIM_RESTORE_BG
 	printfromtable gTerrainStringIds
@@ -4680,8 +4680,20 @@ BattleScript_MoveEffectTwinTails::
 
 @ Project Grounded: Pack Howl. Met een partner: +1 Atk voor beiden (zoals Howl); alleen: +1 Atk en +1 Spe.
 BattleScript_EffectPackHowl::
-	jumpifnoally BS_ATTACKER, BattleScript_EffectDragonDance
-	goto BattleScript_EffectAttackUpUserAlly
+	attackcanceler
+	attackanimation
+	waitanimation
+	jumpifnoally BS_ATTACKER, BattleScript_PackHowlAlone
+	queuestatchange BS_ATTACKER, STAT_ATK, 1
+	trybattlerstatchange BS_ATTACKER, STAT_CHANGE_NO_FLAGS
+	queuestatchange BS_ATTACKER_PARTNER, STAT_ATK, 1
+	trybattlerstatchange BS_ATTACKER_PARTNER, STAT_CHANGE_NO_FLAGS
+	goto BattleScript_MoveEnd
+BattleScript_PackHowlAlone:
+	queuestatchange BS_ATTACKER, STAT_ATK, 1
+	queuestatchange BS_ATTACKER, STAT_SPEED, 1
+	trybattlerstatchange BS_ATTACKER, STAT_CHANGE_NO_FLAGS
+	goto BattleScript_MoveEnd
 
 BattleScript_MoveEffectConfusion::
 	volatileanimation BS_EFFECT_BATTLER, VOLATILE_CONFUSION
@@ -6674,20 +6686,26 @@ BattleScript_DimensionalWarpActivates::
 
 @ Project Grounded: Weather Report (Castform). Zet het weer waar het doelwit het zwakst tegen is en slaat dan toe.
 BattleScript_EffectWeatherReport::
-	attackcanceler
-	trysetweatherreport BattleScript_WeatherReportHit
+	goto BattleScript_EffectHit
+
+@ 1.17: het weer wordt al in de canceler gezet (CancelerMoveSpecificMessage), vóór de schade
+BattleScript_WeatherReportForecast::
 	printstring STRINGID_WEATHERREPORTFORECAST
 	waitmessage B_WAIT_TIME_SHORT
 	printfromtable gMoveWeatherChangeStringIds
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_ActivateWeatherAbilities
-BattleScript_WeatherReportHit:
 	recalcmovetype
-	goto BattleScript_HitFromAccCheck
+	return
 
 @ Project Grounded: Wind Chime (Chimecho). Na de klap healt het de gebruiker en zijn partner (1/8, met Tailwind 1/4).
 BattleScript_EffectWindChime::
-	call BattleScript_EffectHit_Ret
+	attackcanceler
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	setadditionaleffects
 	tryfaintmon BS_TARGET
 	trywindchimeheal BS_ATTACKER, BattleScript_WindChimeTryPartner
 	call BattleScript_WindChimeHealRet
@@ -6790,7 +6808,7 @@ BattleScript_PraiseHelixAnarchy:
 BattleScript_PraiseHelixBirdJesus:
 	printstring STRINGID_HELIXBIRDJESUS
 	waitmessage B_WAIT_TIME_LONG
-	jumpifvolatile BS_ATTACKER, VOLATILE_HEAL_BLOCK, BattleScript_PraiseHelixEnd
+	jumpifvolatile BS_ATTACKER, VOLATILE_HEAL_BLOCK_TIMER, BattleScript_PraiseHelixEnd
 	tryhealhalfhealth BS_ATTACKER, BattleScript_AlreadyAtFullHp
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER, ASSURANCE_DOUBLE
@@ -6826,7 +6844,7 @@ BattleScript_PitcherTrapDrain::
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER
 	tryactivateitem BS_ATTACKER, ACTIVATION_ON_HP_THRESHOLD
-	jumpifvolatile BS_TARGET, VOLATILE_HEAL_BLOCK, BattleScript_PitcherTrapDrainEnd
+	jumpifvolatile BS_TARGET, VOLATILE_HEAL_BLOCK_TIMER, BattleScript_PitcherTrapDrainEnd
 	jumpiffullhp BS_TARGET, BattleScript_PitcherTrapDrainEnd
 	healthbarupdate BS_TARGET
 	datahpupdate BS_TARGET, ASSURANCE_DOUBLE
@@ -6853,7 +6871,7 @@ BattleScript_HiveQueenClearsHazards::
 BattleScript_GulpDownCommon:
 	printstring STRINGID_GULPEDDOWN
 	waitmessage B_WAIT_TIME_LONG
-	jumpifvolatile BS_ATTACKER, VOLATILE_HEAL_BLOCK, BattleScript_GulpDownCommonEnd
+	jumpifvolatile BS_ATTACKER, VOLATILE_HEAL_BLOCK_TIMER, BattleScript_GulpDownCommonEnd
 	jumpiffullhp BS_ATTACKER, BattleScript_GulpDownCommonEnd
 	healthbarupdate BS_ATTACKER
 	datahpupdate BS_ATTACKER, ASSURANCE_DOUBLE
@@ -6960,7 +6978,12 @@ BattleScript_TryMoaiCrumbleRet:
 @ Project Grounded: Totem Gaze (Xatu). Na de klap ziet Xatu de toekomst: de eerstvolgende schadelijke
 @ move tegen Xatu mist (één keer, vervalt bij wisselen; zie AccuracyCheck).
 BattleScript_EffectTotemGaze::
-	call BattleScript_EffectHit_Ret
+	attackcanceler
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	setadditionaleffects
 	tryfaintmon BS_TARGET
 	jumpifhasnohp BS_ATTACKER, BattleScript_MoveEnd
 	jumpifvolatile BS_ATTACKER, VOLATILE_TOTEM_GAZE, BattleScript_MoveEnd

@@ -36300,7 +36300,10 @@ gBattleAnimMove_TotemGaze::
 	createvisualtask AnimTask_BlendBattleAnimPal, 10, F_PAL_ATTACKER, 2, 12, 0, RGB(31, 26, 8)
 	waitforvisualfinish
 	delay 1
-	call UnsetPsychicBg
+	restorebg
+	waitbgfadeout
+	setarg 7, 0xFFFF
+	waitbgfadein
 	end
 
 @ Project Grounded: The Old Days (Drampa). Alles vergeelt (flashback), Drampa praat en praat (bubbel

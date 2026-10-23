@@ -1,3 +1,7 @@
+MoveTutor_Text_ThisMoveCanOnlyBeLearnedOnce:
+	.string "This move can be learned only\n"
+	.string "once. Is that okay?$"
+
 MoveTutor_Text_TeachAgain:
 	.string "Back for more {STR_VAR_1}?\p"
 	.string "I teach it as often as you like.\n"

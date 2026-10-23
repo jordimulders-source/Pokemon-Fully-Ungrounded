@@ -71,4 +71,6 @@ extern const struct StatFractions gAccuracyStageRatios[];
 
 void BeaverDam_PrepareFlood(u32 owner, u32 layers); // Project Grounded
 
+bool32 TrySetWeatherReportWeather(void); // Project Grounded: Weather Report
+
 #endif // GUARD_BATTLE_SCRIPT_COMMANDS_H

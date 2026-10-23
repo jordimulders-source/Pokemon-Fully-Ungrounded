@@ -4797,268 +4797,7 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedNormal = {
     .affineAnims = gDummySpriteAffineAnimTable,
 };
 
-// Project Grounded: Rocket-sidequest
 
-// Project Grounded: Rocket-sidequest
-
-// Project Grounded: Rocket-sidequest
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_PETREL,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 256,
-    .width = 16,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = FALSE,
-    .compressed = FALSE,
-    .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_16x32,
-    .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_Standard,
-    .images = sPicTable_Petrel,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantWailord = { // Project Grounded
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_GIANT_WAILORD,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 9216,
-    .width = 192,
-    .height = 96,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_8x8,
-    .subspriteTables = sOamTables_192x96,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_GiantWailord,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: strandresort
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_CYNTHIA,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 256,
-    .width = 16,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = FALSE,
-    .compressed = FALSE,
-    .tracks = TRACKS_FOOT,
-    .oam = &gObjectEventBaseOam_16x32,
-    .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_Standard,
-    .images = sPicTable_Cynthia,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: strandresort (de drol waar Birch naar kijkt)
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Turd = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_TURD,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 128,
-    .width = 16,
-    .height = 16,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_S,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_16x16,
-    .subspriteTables = sOamTables_16x16,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_Turd,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuKoko = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 1152,
-    .width = 48,
-    .height = 48,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = sOamTables_48x48,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_StatueTapuKoko,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuLele = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 1152,
-    .width = 48,
-    .height = 48,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = sOamTables_48x48,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_StatueTapuLele,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuBulu = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 1152,
-    .width = 48,
-    .height = 48,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = sOamTables_48x48,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_StatueTapuBulu,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuFini = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 1152,
-    .width = 48,
-    .height = 48,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = sOamTables_48x48,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_StatueTapuFini,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoopaRing = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_HOOPA_RING,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 512,
-    .width = 32,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_32x32,
-    .subspriteTables = sOamTables_32x32,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_HoopaRing,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinSeal = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_RUIN_SEAL,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 256,
-    .width = 16,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_S,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_16x32,
-    .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_RuinSeal,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedSwordOW = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_MEGA_FOREST,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 256,
-    .width = 16,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_S,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_16x32,
-    .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_RustedSwordOW,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedShieldOW = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_MEGA_FOREST,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 256,
-    .width = 16,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_S,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_16x32,
-    .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_RustedShieldOW,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
-
-// Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
-const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantLog = {
-    .tileTag = TAG_NONE,
-    .paletteTag = OBJ_EVENT_PAL_TAG_MEGA_FOREST,
-    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
-    .size = 256,
-    .width = 16,
-    .height = 32,
-    .paletteSlot = PALSLOT_NPC_SPECIAL,
-    .shadowSize = SHADOW_SIZE_M,
-    .inanimate = TRUE,
-    .compressed = FALSE,
-    .tracks = TRACKS_NONE,
-    .oam = &gObjectEventBaseOam_16x32,
-    .subspriteTables = sOamTables_16x32,
-    .anims = sAnimTable_Inanimate,
-    .images = sPicTable_GiantLog,
-    .affineAnims = gDummySpriteAffineAnimTable,
-};
 
 const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RedBike = {
     .tileTag = TAG_NONE,
@@ -7797,6 +7536,266 @@ const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_SSAnne = {
 };
 
 #endif // IS_FRLG
+
+// Project Grounded: eigen overworld-sprites (bij de 1.17-merge uit het IS_FRLG-blok gehaald)
+// Project Grounded: strandresort
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cynthia = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_CYNTHIA,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Cynthia,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantLog = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MEGA_FOREST,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_GiantLog,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_GiantWailord = { // Project Grounded
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_GIANT_WAILORD,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 9216,
+    .width = 192,
+    .height = 96,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_8x8,
+    .subspriteTables = sOamTables_192x96,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_GiantWailord,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_HoopaRing = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_HOOPA_RING,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 512,
+    .width = 32,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_32x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_HoopaRing,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Rocket-sidequest
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Petrel = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_PETREL,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = FALSE,
+    .compressed = FALSE,
+    .tracks = TRACKS_FOOT,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Standard,
+    .images = sPicTable_Petrel,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RuinSeal = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_RUIN_SEAL,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_RuinSeal,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedShieldOW = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MEGA_FOREST,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_RustedShieldOW,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_RustedSwordOW = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_MEGA_FOREST,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 256,
+    .width = 16,
+    .height = 32,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x32,
+    .subspriteTables = sOamTables_16x32,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_RustedSwordOW,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuBulu = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_StatueTapuBulu,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuFini = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_StatueTapuFini,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuKoko = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_StatueTapuKoko,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_StatueTapuLele = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_STONE_STATUE,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 1152,
+    .width = 48,
+    .height = 48,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_M,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_32x32,
+    .subspriteTables = sOamTables_48x48,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_StatueTapuLele,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
+
+// Project Grounded: strandresort (de drol waar Birch naar kijkt)
+const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Turd = {
+    .tileTag = TAG_NONE,
+    .paletteTag = OBJ_EVENT_PAL_TAG_TURD,
+    .reflectionPaletteTag = OBJ_EVENT_PAL_TAG_NONE,
+    .size = 128,
+    .width = 16,
+    .height = 16,
+    .paletteSlot = PALSLOT_NPC_SPECIAL,
+    .shadowSize = SHADOW_SIZE_S,
+    .inanimate = TRUE,
+    .compressed = FALSE,
+    .tracks = TRACKS_NONE,
+    .oam = &gObjectEventBaseOam_16x16,
+    .subspriteTables = sOamTables_16x16,
+    .anims = sAnimTable_Inanimate,
+    .images = sPicTable_Turd,
+    .affineAnims = gDummySpriteAffineAnimTable,
+};
 
 // Project Grounded: eigen Kanto-overworlds (9 frames) voor de Emerald-build; upstream heeft ze sinds 1.15 alleen in de FRLG-build.
 #if !IS_FRLG

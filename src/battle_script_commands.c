@@ -13002,21 +13002,15 @@ static u32 GetWeatherReportWeather(u32 battlerDef)
     return sWeatherReportWeathers[best];
 }
 
-void BS_TrySetWeatherReport(void)
+// 1.17: aangeroepen vanuit CancelerMoveSpecificMessage, vóór de schadeberekening
+bool32 TrySetWeatherReportWeather(void)
 {
-    NATIVE_ARGS(const u8 *noChangeInstr);
     u32 weather = GetWeatherReportWeather(gBattlerTarget);
 
     if ((gBattleWeather & (1u << weather)) && HasWeatherEffect())
-    {
-        gBattlescriptCurrInstr = cmd->noChangeInstr;
-        return;
-    }
-    if (!TryChangeBattleWeather(gBattlerAttacker, weather, ABILITY_NONE))
-    {
-        gBattlescriptCurrInstr = cmd->noChangeInstr;
-        return;
-    }
+        return FALSE;
+    if (TryChangeBattleWeather(gBattlerAttacker, weather, ABILITY_NONE) != WEATHER_FAILURE_SUCCESS)
+        return FALSE;
     switch (weather)
     {
     case BATTLE_WEATHER_SUN:       gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_SUNLIGHT; break;
@@ -13026,7 +13020,7 @@ void BS_TrySetWeatherReport(void)
     case BATTLE_WEATHER_ACID_RAIN: gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_ACID_RAIN; break;
     default:                       gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_STARTED_POLLEN_HAZE; break;
     }
-    gBattlescriptCurrInstr = cmd->nextInstr;
+    return TRUE;
 }
 
 // Project Grounded (1.17-port): statwijziging in de wachtrij zetten vanuit een battlescript (vervangt setstatchanger).

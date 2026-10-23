@@ -26,5 +26,5 @@
 ## Ronde 5 + Cuyby/DJ Rotom ronde 1 (23 okt)
 - **Starters:** nog steeds niet Pokémon genoeg. **Alpaca en olinguito vindt Jordi minder dan ronde 4.** De nachtaap zit weer het dichtst in de buurt, "maar er is toch iets wat het niet perfect maakt".
 - **Cuyby:** "zo overduidelijk een fakemon in plaats van een Pokémon".
-- **DJ Rotom:** "een hele andere vorm, kom op, je kan beter" (leest niet als een echte Rotom-vorm).
+- **DJ Rotom:** "een hele andere vorm, kom op, je kan beter". Correctie (Jordi): "duidelijk een Rotom-vorm, maar niet DJ Rotom; je hebt het niet goed nagebouwd". Het ontwerp moet **trouw zijn aan DJ Rotom uit Pokopia** (zie `dj_rotom/inspiratie/`); alleen de pixels zijn eigen werk in Gen 3-stijl.
 - Opdracht: laat een agent ze onafhankelijk keuren tegen echte Pokémon-sprites (wat maakt ze 'fakemon' in plaats van Pokémon?).

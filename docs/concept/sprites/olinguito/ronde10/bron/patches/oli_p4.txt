@@ -1,0 +1,5 @@
+# schedel boven en rechts licht gewelfd (geen rechte stukken)
+kop 18 28 111
+kop 19 28 444
+kop 26 42 20
+kop 27 42 20

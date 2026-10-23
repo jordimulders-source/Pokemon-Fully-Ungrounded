@@ -1,0 +1,46 @@
+# staart: bovenste helft buigt naar rechts (haak), geen rechte rand meer
+staart 21 40 __________110__
+staart 22 40 _________14430_
+staart 23 40 ________14320__
+staart 24 40 _______143320__
+staart 25 40 _______011110__
+staart 26 40 ______011110___
+staart 27 40 _____143320____
+staart 28 40 _____133220____
+staart 29 40 _____132220____
+staart 30 40 _____011110____
+# verre arm met kleine klauw (schaduwtinten), maakt ook de rechterkant af
+arm_achter 38 40 ______
+arm_achter 39 40 ______
+arm_achter 40 40 ______
+arm_achter 41 40 ______
+arm_achter 42 40 ______
+arm_achter 43 40 ______
+arm_achter 44 40 ______
+arm_achter 45 40 ______
+arm_achter 46 40 ______
+arm_achter 37 39 1220
+arm_achter 38 39 12220
+arm_achter 39 40 1220
+arm_achter 40 40 1220
+arm_achter 41 40 1220
+arm_achter 42 40 12220
+arm_achter 43 40 1220
+arm_achter 44 39 1220
+arm_achter 45 38 1220
+arm_achter 46 37 12220
+arm_achter 47 37 980980
+arm_achter 48 37 980980
+arm_achter 49 36 980980
+arm_achter 50 36 80_80
+# verre voet vast aan het lijf (verre been)
+voeten 51 34 22222000
+voeten 52 36 222222
+voeten 52 42 0
+# snoet korter en schuin (3/4), neus rond, mondje
+kop 26 11 ____01443100
+kop 27 11 ___0a043310d
+kop 28 11 ___000766610
+kop 29 11 ___051666611
+kop 30 11 ____05156666
+kop 31 16 0

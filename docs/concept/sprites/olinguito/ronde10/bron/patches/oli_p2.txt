@@ -1,0 +1,7 @@
+# verre wang/voorhoofd 1-2 px naar links: de snoet komt nu uit het gezicht (3/4) i.p.v. uit de rand
+kop 20 20 1
+kop 21 19 13
+kop 22 18 143
+kop 23 17 11
+kop 24 17 11
+kop 25 16 1

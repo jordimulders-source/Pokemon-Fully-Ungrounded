@@ -1425,7 +1425,7 @@ static bool32 IsWeatherStillUp(u32 weather)
         return FALSE;
     if (gBattleWeather & B_WEATHER_PRIMAL_ANY)
         return TRUE;
-    return gWishFutureKnock.weatherDuration > 1;
+    return gBattleStruct->weatherDuration > 1;
 }
 
 static bool32 ShouldSwitchToRestoreWeather(struct SwitchAiContext *switchContext)

@@ -4551,7 +4551,7 @@ s32 GetBattleMovePriority(enum BattlerId battler, enum Ability ability, enum Mov
 
     // Project Grounded: Life Buoy gaat voor in de regen
     if (GetMoveEffect(move) == EFFECT_LIFE_BUOY && GetActiveGimmick(battler) != GIMMICK_DYNAMAX
-     && IsBattlerWeatherAffected(battler, B_WEATHER_RAIN))
+     && IsBattlerWeatherAffected(GetBattlerHoldEffect(battler), GetWeather(), B_WEATHER_RAIN))
         priority++;
 
     // Project Grounded: Joust gaat voor als het doelwit sneller is
@@ -5635,13 +5635,13 @@ enum Type GetDynamicMoveType(struct Pokemon *mon, enum Move move, enum BattlerId
     if (move == MOVE_AFRO_CHARGE && state == MON_IN_BATTLE
      && IsBattlerTerrainAffected(battler, ability, holdEffect, STATUS_FIELD_TERRAIN_ANY))
     {
-        if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+        if (gFieldTimers.terrain == B_TERRAIN_ELECTRIC)
             return TYPE_ELECTRIC;
-        else if (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN)
+        else if (gFieldTimers.terrain == B_TERRAIN_GRASSY)
             return TYPE_GRASS;
-        else if (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN)
+        else if (gFieldTimers.terrain == B_TERRAIN_MISTY)
             return TYPE_FAIRY;
-        else if (gFieldStatuses & STATUS_FIELD_PSYCHIC_TERRAIN)
+        else if (gFieldTimers.terrain == B_TERRAIN_PSYCHIC)
             return TYPE_PSYCHIC;
     }
 

@@ -246,10 +246,10 @@ bool32 CanSetNonVolatileStatus(enum BattlerId battlerAtk, enum BattlerId battler
 bool32 CanBeConfused(enum BattlerId battlerAtk, enum BattlerId effectBattler);
 bool32 IsSafeguardProtected(enum BattlerId battlerAtk, enum BattlerId battlerDef, enum Ability abilityAtk);
 u32 GetBattlerAffectionHearts(enum BattlerId battler);
-bool32 IsJoustTargetFaster(u32 battlerAtk, u32 battlerDef); // Project Grounded
-u32 CountFaintedPartyMons(u32 battler); // Project Grounded
-bool32 IsBattlerSwitchingThisTurn(u32 battler); // Project Grounded
-bool32 IsColdShoulderActive(u32 battler); // Project Grounded
+bool32 IsJoustTargetFaster(enum BattlerId battlerAtk, enum BattlerId battlerDef); // Project Grounded
+u32 CountFaintedPartyMons(enum BattlerId battler); // Project Grounded
+bool32 IsBattlerSwitchingThisTurn(enum BattlerId battler); // Project Grounded
+bool32 IsColdShoulderActive(enum BattlerId battler); // Project Grounded
 void TryToRevertMimicryAndFlags(void);
 u32 CountBattlerStatIncreases(enum BattlerId battler, bool32 countEvasionAcc);
 bool32 BattlerHasCopyableChanges(enum BattlerId battler);

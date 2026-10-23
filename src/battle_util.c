@@ -2613,6 +2613,9 @@ static bool32 SetStartingHazardStatus(enum Hazards hazard, u32 targetSide, u8 la
             effect = TRUE;
         }
         break;
+    case HAZARDS_MOAI_WATCH: // Project Grounded: geen begin-hazards
+    case HAZARDS_BRAMBLES:
+    case HAZARDS_OVERKILL:
     case HAZARDS_NONE:
     case HAZARDS_MAX_COUNT:
         break;
@@ -3541,7 +3544,7 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             break;
         case ABILITY_HELIOTROPISM: // Project Grounded: Sunflora draait naar de zon en bloeit op
             if (!gSpecialStatuses[battler].switchInAbilityDone
-             && IsBattlerWeatherAffected(battler, B_WEATHER_SUN))
+             && IsBattlerWeatherAffected(GetBattlerHoldEffect(battler), GetWeather(), B_WEATHER_SUN))
             {
                 gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 gBattleScripting.battler = battler;
@@ -6501,7 +6504,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         break;
     case EFFECT_DOUBLE_POWER_ON_ARG_STATUS:
         // Project Grounded: in Acid Rain telt elk doelwit als vergiftigd (Venoshock)
-        if ((GetMoveEffectArg_Status(move) & STATUS1_PSN_ANY) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_ACID_RAIN))
+        if ((GetMoveEffectArg_Status(move) & STATUS1_PSN_ANY) && IsBattlerWeatherAffected(GetBattlerHoldEffect(battlerDef), GetWeather(), B_WEATHER_ACID_RAIN))
         {
             basePower *= 2;
             break;
@@ -6540,7 +6543,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             basePower *= 2;
         break;
     case EFFECT_JUMP_SCARE: // Project Grounded: Boo! In de eerste beurt na het binnenkomen (zoals Fake Out) dubbel
-        if (gDisableStructs[battlerAtk].isFirstTurn)
+        if (gBattleMons[battlerAtk].volatiles.isFirstTurn)
             basePower *= 2;
         break;
     case EFFECT_UPDRAFT: // Project Grounded: opwaartse wind met Tailwind in de rug
@@ -6555,7 +6558,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         basePower = min(160, basePower + 20 * CountFaintedPartyMons(battlerAtk));
         break;
     case EFFECT_SOLSTICE_GATE: // Project Grounded: Stonjourner, zonnewende (zon) of winterwende (sneeuw)
-        if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_SUN | B_WEATHER_SNOW | B_WEATHER_HAIL))
+        if (IsBattlerWeatherAffected(GetBattlerHoldEffect(battlerAtk), GetWeather(), B_WEATHER_SUN | B_WEATHER_SNOW | B_WEATHER_HAIL))
             basePower = basePower * 3 / 2;
         break;
     case EFFECT_FLYTRAP: // Project Grounded: Carnivine eet insecten en vogels
@@ -6782,7 +6785,7 @@ static inline u32 CalcMoveBasePowerAfterModifiers(struct DamageContext *ctx)
         break;
     }
     case EFFECT_HIT_ENEMY_HEAL_ALLY: // Project Grounded: Pollen Puff gebruikt het stuifmeel in de lucht
-        if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE))
+        if (IsBattlerWeatherAffected(GetBattlerHoldEffect(battlerAtk), GetWeather(), B_WEATHER_POLLEN_HAZE))
             modifier = uq4_12_multiply(modifier, UQ_4_12(1.5));
         break;
     case EFFECT_SOLAR_BEAM:
@@ -7499,7 +7502,7 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
         defStage = DEFAULT_STAT_STAGE;
     // Pokémon with unaware ignore defense stat changes while dealing damage
     if (ctx->abilities[ctx->battlerAtk] == ABILITY_UNAWARE
-     || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_BUG) && IsBattlerWeatherAffected(ctx->battlerAtk, B_WEATHER_POLLEN_HAZE))) // Project Grounded
+     || (IS_BATTLER_OF_TYPE(ctx->battlerAtk, TYPE_BUG) && IsBattlerWeatherAffected(GetBattlerHoldEffect(ctx->battlerAtk), GetWeather(), B_WEATHER_POLLEN_HAZE))) // Project Grounded
         defStage = DEFAULT_STAT_STAGE;
     // certain moves also ignore stat changes
     if (MoveIgnoresDefenseEvasionStages(move))
@@ -7639,7 +7642,7 @@ static inline u32 CalcDefenseStat(struct DamageContext *ctx)
 	 && usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
     // Project Grounded: acid rain def boost for poison types
-    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_POISON) && IsBattlerWeatherAffected(battlerDef, B_WEATHER_ACID_RAIN) && usesDefStat)
+    if (IS_BATTLER_OF_TYPE(battlerDef, TYPE_POISON) && IsBattlerWeatherAffected(GetBattlerHoldEffect(battlerDef), GetWeather(), B_WEATHER_ACID_RAIN) && usesDefStat)
         modifier = uq4_12_multiply_half_down(modifier, UQ_4_12(1.5));
 
     modifier = ApplyDefensiveBadgeBoost(modifier, battlerDef, move);
@@ -8313,7 +8316,7 @@ s32 CalcCritChanceStage(struct DamageContext *ctx)
     }
     else if (gBattleMons[ctx->battlerAtk].volatiles.laserFocusTimer > 0
           || MoveAlwaysCrits(ctx->move)
-          || (ctx->move == MOVE_BRAIN_FREEZE && IsBattlerWeatherAffected(ctx->battlerAtk, B_WEATHER_SNOW | B_WEATHER_HAIL)) // Project Grounded
+          || (ctx->move == MOVE_BRAIN_FREEZE && IsBattlerWeatherAffected(GetBattlerHoldEffect(ctx->battlerAtk), GetWeather(), B_WEATHER_SNOW | B_WEATHER_HAIL)) // Project Grounded
           || (ctx->move == MOVE_COMBINATION && gMultiHitCounter == 1) // Project Grounded: de cross na twee rake jabs
           || (ctx->move == MOVE_COUNTERFEIT_BALL && gMultiHitCounter == 1 && gBattleStruct->counterfeitMasterBall) // Project Grounded: nep-Master Ball
           || (ctx->abilities[ctx->battlerAtk] == ABILITY_MERCILESS && gBattleMons[ctx->battlerDef].status1 & STATUS1_PSN_ANY))
@@ -8395,7 +8398,7 @@ s32 CalcCritChanceStageGen1(struct DamageContext *ctx)
     }
     else if (gBattleMons[ctx->battlerAtk].volatiles.laserFocusTimer > 0
           || MoveAlwaysCrits(ctx->move)
-          || (ctx->move == MOVE_BRAIN_FREEZE && IsBattlerWeatherAffected(ctx->battlerAtk, B_WEATHER_SNOW | B_WEATHER_HAIL)) // Project Grounded
+          || (ctx->move == MOVE_BRAIN_FREEZE && IsBattlerWeatherAffected(GetBattlerHoldEffect(ctx->battlerAtk), GetWeather(), B_WEATHER_SNOW | B_WEATHER_HAIL)) // Project Grounded
           || (ctx->move == MOVE_COMBINATION && gMultiHitCounter == 1) // Project Grounded: de cross na twee rake jabs
           || (ctx->move == MOVE_COUNTERFEIT_BALL && gMultiHitCounter == 1 && gBattleStruct->counterfeitMasterBall) // Project Grounded: nep-Master Ball
           || (ctx->abilities[ctx->battlerAtk] == ABILITY_MERCILESS && gBattleMons[ctx->battlerDef].status1 & STATUS1_PSN_ANY))
@@ -8592,15 +8595,15 @@ u32 GetMarionetteChosenMove(u32 battler, u32 *movePos)
     u32 pos = gBattleStruct->chosenMovePositions[battler];
 
     *movePos = MAX_MON_MOVES;
-    if (gChosenActionByBattler[battler] != B_ACTION_USE_MOVE || gDisableStructs[battler].rechargeTimer > 0)
+    if (gChosenActionByBattler[battler] != B_ACTION_USE_MOVE || gBattleMons[battler].volatiles.rechargeTimer > 0)
         return MOVE_NONE;
     if (gProtectStructs[battler].noValidMoves)
         return MOVE_STRUGGLE;
     if (gBattleMons[battler].volatiles.multipleTurns)
         return gLockedMoves[battler];
-    if (gDisableStructs[battler].encoredMove != MOVE_NONE
-     && gDisableStructs[battler].encoredMove == gBattleMons[battler].moves[gDisableStructs[battler].encoredMovePos])
-        pos = gDisableStructs[battler].encoredMovePos;
+    if (gBattleMons[battler].volatiles.encoredMove != MOVE_NONE
+     && gBattleMons[battler].volatiles.encoredMove == gBattleMons[battler].moves[gBattleMons[battler].volatiles.encoredMovePos])
+        pos = gBattleMons[battler].volatiles.encoredMovePos;
     if (pos >= MAX_MON_MOVES)
         return MOVE_NONE;
     *movePos = pos;
@@ -10963,7 +10966,7 @@ u32 GetTotalAccuracy(struct BattleCalcValues *cv, u32 weather)
      || cv->abilities[battlerAtk] == ABILITY_KEEN_EYE
      || cv->abilities[battlerAtk] == ABILITY_MINDS_EYE
      || (GetConfig(B_ILLUMINATE_EFFECT) >= GEN_9 && cv->abilities[battlerAtk] == ABILITY_ILLUMINATE)
-     || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_BUG) && IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE))) // Project Grounded: Bug negeert boosts in Pollen Haze
+     || (IS_BATTLER_OF_TYPE(battlerAtk, TYPE_BUG) && IsBattlerWeatherAffected(GetBattlerHoldEffect(battlerAtk), GetWeather(), B_WEATHER_POLLEN_HAZE))) // Project Grounded: Bug negeert boosts in Pollen Haze
         evasionStage = DEFAULT_STAT_STAGE;
     if (MoveIgnoresDefenseEvasionStages(cv->move))
         evasionStage = DEFAULT_STAT_STAGE;

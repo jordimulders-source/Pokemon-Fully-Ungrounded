@@ -1291,7 +1291,7 @@ static s32 AI_MarionetteExpectedDamage(u32 battlerDef, u32 predictedMove)
     u32 i;
 
     if (predictedMove != MOVE_NONE && predictedMove != MOVE_UNAVAILABLE
-     && gAiLogicData->predictingMove && CanAiPredictMove())
+     && gAiLogicData->predictingMove)
         return GetMarionetteDamage(battlerDef, predictedMove, FALSE, NULL);
     for (i = 0; i < MAX_MON_MOVES; i++)
     {
@@ -1636,243 +1636,21 @@ static s32 AI_CheckBadMove(enum BattlerId battlerAtk, enum BattlerId battlerDef,
             ADJUST_SCORE(-10);
         break;
     case EFFECT_OLIVE_OIL: // Project Grounded
-        if (AI_BattlerAtMaxHp(battlerAtk) && (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN))
+        if (AI_BattlerAtMaxHp(battlerAtk) && (gFieldTimers.terrain == B_TERRAIN_GRASSY))
             ADJUST_SCORE(-10);
-        else if (aiData->hpPercents[battlerAtk] >= 90 && (gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN))
+        else if (aiData->hpPercents[battlerAtk] >= 90 && (gFieldTimers.terrain == B_TERRAIN_GRASSY))
             ADJUST_SCORE(-9);
         break;
     case EFFECT_EYE_SPOTS: // Project Grounded
         if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK)
          && !CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPEED)
-         && !(IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE) && CanBeConfused(battlerDef)))
+         && !(IsBattlerWeatherAffected(GetBattlerHoldEffect(battlerAtk), GetWeather(), B_WEATHER_POLLEN_HAZE) && CanBeConfused(battlerAtk, battlerDef)))
             ADJUST_SCORE(-10);
         break;
     case EFFECT_FLASH:
         if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ACC)
          && !CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK)
          && !CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK))
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_VENOM_DRENCH:
-        if (!(gBattleMons[battlerDef].status1 & STATUS1_PSN_ANY))
-        {
-            ADJUST_SCORE(-10);
-        }
-        else
-        {
-            if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPEED))
-                ADJUST_SCORE(-10);
-            else if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK))
-                ADJUST_SCORE(-8);
-            else if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK))
-                ADJUST_SCORE(-6);
-        }
-        break;
-    case EFFECT_NOBLE_ROAR:
-        if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPATK))
-            ADJUST_SCORE(-10);
-        else if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_ATK))
-            ADJUST_SCORE(-8);
-        break;
-    case EFFECT_CAPTIVATE:
-        if (!AreBattlersOfOppositeGender(battlerAtk, battlerDef))
-            ADJUST_SCORE(-10);
-        break;
-// other
-    case EFFECT_HAZE:
-        if (HasPartner(battlerAtk) && AreMovesEquivalent(battlerAtk, BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
-        {
-            ADJUST_SCORE(-10);    // partner already using haze
-        }
-        else
-        {
-            for (i = STAT_ATK; i < NUM_BATTLE_STATS; i++)
-            {
-                if (gBattleMons[battlerAtk].statStages[i] > DEFAULT_STAT_STAGE || gBattleMons[BATTLE_PARTNER(battlerAtk)].statStages[i] > DEFAULT_STAT_STAGE)
-                    ADJUST_SCORE(-10);  // Don't want to reset our boosted stats
-            }
-            for (i = STAT_ATK; i < NUM_BATTLE_STATS; i++)
-            {
-                if (gBattleMons[battlerDef].statStages[i] < DEFAULT_STAT_STAGE || gBattleMons[BATTLE_PARTNER(battlerDef)].statStages[i] < DEFAULT_STAT_STAGE)
-                    ADJUST_SCORE(-10); //Don't want to reset enemy lowered stats
-            }
-        }
-        break;
-    case EFFECT_PRESENT:
-    case EFFECT_FIXED_HP_DAMAGE:
-    case EFFECT_FOCUS_PUNCH:
-        // AI_CBM_HighRiskForDamage
-        if (aiData->abilities[battlerDef] == ABILITY_WONDER_GUARD && effectiveness < UQ_4_12(2.0))
-            ADJUST_SCORE(-10);
-        if (HasDamagingMove(battlerDef) && !(gBattleMons[battlerAtk].volatiles.substitute
-         || IsBattlerIncapacitated(battlerDef, abilityDef)
-         || gBattleMons[battlerDef].volatiles.infatuation
-         || gBattleMons[battlerDef].volatiles.confusionTurns))
-            ADJUST_SCORE(-10);
-        if (HasMoveWithEffect(battlerAtk, EFFECT_SUBSTITUTE) && !gBattleMons[battlerAtk].volatiles.substitute)
-            ADJUST_SCORE(-10);
-        if (HasNonVolatileMoveEffect(battlerAtk, MOVE_EFFECT_SLEEP) && ! (gBattleMons[battlerDef].status1 & STATUS1_SLEEP))
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_COUNTER:
-    case EFFECT_MIRROR_COAT:
-        if (IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef])
-        || gBattleMons[battlerDef].volatiles.infatuation
-        || gBattleMons[battlerDef].volatiles.confusionTurns > 0)
-            ADJUST_SCORE(-1);
-        if ((predictedMove == MOVE_NONE || GetBattleMoveCategory(predictedMove) == DAMAGE_CATEGORY_STATUS
-          || DoesSubstituteBlockMove(battlerAtk, BATTLE_PARTNER(battlerDef), predictedMove))
-          && !(predictedMove == MOVE_NONE && (gAiThinkingStruct->aiFlags[battlerAtk] & AI_FLAG_RISKY))) // Let Risky AI predict blindly based on stats
-            ADJUST_SCORE(-10);
-        break;
-
-    case EFFECT_ROAR:
-        if (CountUsablePartyMons(battlerDef) == 0)
-            ADJUST_SCORE(-10);
-        else if (aiData->abilities[battlerDef] == ABILITY_SUCTION_CUPS)
-            ADJUST_SCORE(-10);
-        else if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_TOXIC_THREAD:
-        if (!CanLowerStat(battlerAtk, battlerDef, aiData, STAT_SPEED))
-            ADJUST_SCORE(-1);    // may still want to just poison
-        if (!AI_CanPoison(battlerAtk, battlerDef, aiData->abilities[battlerDef], move, aiData->partnerMove))
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_LIGHT_SCREEN:
-        if (gSideStatuses[GetBattlerSide(battlerAtk)] & (SIDE_STATUS_LIGHTSCREEN | SIDE_STATUS_AURORA_VEIL)
-         || (HasPartner(battlerAtk) && AreMovesEquivalent(battlerAtk, BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove)))
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_REFLECT:
-        if (gSideStatuses[GetBattlerSide(battlerAtk)] & (SIDE_STATUS_REFLECT | SIDE_STATUS_AURORA_VEIL)
-         || (HasPartner(battlerAtk) && AreMovesEquivalent(battlerAtk, BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove)))
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_AURORA_VEIL:
-        if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_AURORA_VEIL
-         || (HasPartner(battlerAtk) && AreMovesEquivalent(battlerAtk, BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
-         || !(weather & (B_WEATHER_ICY_ANY)))
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_SHEER_COLD:
-        if (GetConfig(B_SHEER_COLD_IMMUNITY) >= GEN_7 && IS_BATTLER_OF_TYPE(battlerDef, TYPE_ICE))
-            RETURN_SCORE_MINUS(20);
-        // fallthrough
-    case EFFECT_OHKO:
-        if (!ShouldTryOHKO(battlerAtk, battlerDef, aiData->abilities[battlerAtk], aiData->abilities[battlerDef], move))
-            ADJUST_SCORE(-10);
-        else if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_MIST:
-        if (gSideStatuses[GetBattlerSide(battlerAtk)] & SIDE_STATUS_MIST
-          || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_FOCUS_ENERGY:
-        if (gBattleMons[battlerAtk].volatiles.dragonCheer || gBattleMons[battlerAtk].volatiles.focusEnergy)
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_NON_VOLATILE_STATUS:
-        if (DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_CONFUSE:
-    case EFFECT_SWAGGER:
-    case EFFECT_FLATTER:
-        if (DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove)
-        || !AI_CanConfuse(battlerAtk, battlerDef, aiData->abilities[battlerDef], BATTLE_PARTNER(battlerAtk), move, aiData->partnerMove))
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_SUBSTITUTE:
-        if (gBattleMons[battlerAtk].volatiles.substitute || aiData->abilities[battlerDef] == ABILITY_INFILTRATOR)
-            ADJUST_SCORE(-8);
-        else if (aiData->hpPercents[battlerAtk] <= 25)
-            ADJUST_SCORE(-10);
-        else if (HasMoveWithFlag(battlerDef, MoveIgnoresSubstitute))
-            ADJUST_SCORE(-8);
-        break;
-    case EFFECT_SHED_TAIL:
-        if (CountUsablePartyMons(battlerAtk) == 0)
-            ADJUST_SCORE(-10);
-        if (gBattleMons[battlerAtk].volatiles.substitute || aiData->abilities[battlerDef] == ABILITY_INFILTRATOR)
-            ADJUST_SCORE(-8);
-        else if (aiData->hpPercents[battlerAtk] <= 50)
-            ADJUST_SCORE(-10);
-        else if (HasMoveWithFlag(battlerDef, MoveIgnoresSubstitute))
-            ADJUST_SCORE(-8);
-        break;
-    case EFFECT_LEECH_SEED:
-        if (gBattleMons[battlerDef].volatiles.leechSeed
-         || IS_BATTLER_OF_TYPE(battlerDef, TYPE_GRASS)
-         || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
-            ADJUST_SCORE(-10);
-        else if (aiData->abilities[battlerDef] == ABILITY_LIQUID_OOZE)
-            ADJUST_SCORE(-3);
-        break;
-    case EFFECT_DISABLE:
-        if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
-            ADJUST_SCORE(-10);
-        else if (gDisableStructs[battlerDef].disableTimer == 0
-            && (B_MENTAL_HERB < GEN_5 || aiData->holdEffects[battlerDef] != HOLD_EFFECT_MENTAL_HERB)
-            && !DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
-        {
-            if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY)) // Attacker should go first
-            {
-                if (aiData->lastUsedMove[battlerDef] == MOVE_NONE)
-                    ADJUST_SCORE(-10);    // no anticipated move to disable
-            }
-            else if (predictedMove == MOVE_NONE)
-            {
-                ADJUST_SCORE(-10);
-            }
-        }
-        else
-        {
-            ADJUST_SCORE(-10);
-        }
-        break;
-    case EFFECT_ENCORE:
-        if (GetActiveGimmick(battlerDef) == GIMMICK_DYNAMAX)
-            ADJUST_SCORE(-10);
-        else if (gDisableStructs[battlerDef].encoreTimer == 0
-            && (B_MENTAL_HERB < GEN_5 || aiData->holdEffects[battlerDef] != HOLD_EFFECT_MENTAL_HERB)
-            && !DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
-        {
-            if (AI_IsFaster(battlerAtk, battlerDef, move, predictedMoveSpeedCheck, CONSIDER_PRIORITY)) // Attacker should go first
-            {
-                if (aiData->lastUsedMove[battlerDef] == MOVE_NONE)
-                    ADJUST_SCORE(-10);    // no anticipated move to encore
-            }
-            else if (predictedMove == MOVE_NONE)
-            {
-                ADJUST_SCORE(-10);
-            }
-        }
-        else
-        {
-            ADJUST_SCORE(-10);
-        }
-        break;
-    case EFFECT_SNORE:
-    case EFFECT_SLEEP_TALK:
-        if (IsWakeupTurn(battlerAtk) || !AI_IsBattlerAsleepOrComatose(battlerAtk))
-            ADJUST_SCORE(-10);    // if mon will wake up, is not asleep, or is not comatose
-        break;
-    case EFFECT_MEAN_LOOK:
-        if (AI_CanBattlerEscape(battlerDef)
-            || IsBattlerTrapped(battlerAtk, battlerDef)
-            || DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
-            ADJUST_SCORE(-10);
-        break;
-    case EFFECT_NIGHTMARE:
-        if (gBattleMons[battlerDef].volatiles.nightmare)
-            ADJUST_SCORE(-10);
-        else if (!AI_IsBattlerAsleepOrComatose(battlerDef))
-            ADJUST_SCORE(-8);
-        else if (DoesPartnerHaveSameMoveEffect(BATTLE_PARTNER(battlerAtk), battlerDef, move, aiData->partnerMove))
             ADJUST_SCORE(-10);
         break;
     case EFFECT_HIT: // only applies to Vital Throw - This probably should not be here
@@ -5543,7 +5321,7 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
     case EFFECT_EYE_SPOTS: // Project Grounded
         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_ATK));
         ADJUST_SCORE(IncreaseStatDownScore(battlerAtk, battlerDef, STAT_SPEED));
-        if (IsBattlerWeatherAffected(battlerAtk, B_WEATHER_POLLEN_HAZE))
+        if (IsBattlerWeatherAffected(GetBattlerHoldEffect(battlerAtk), GetWeather(), B_WEATHER_POLLEN_HAZE))
             IncreaseConfusionScore(battlerAtk, battlerDef, move, &score);
         break;
     case EFFECT_FLASH:
@@ -5574,12 +5352,12 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
     case EFFECT_THE_OLD_DAYS: // Project Grounded: Yawn + Sp. Atk
         if (!gBattleMons[battlerDef].volatiles.yawn)
             IncreaseSleepScore(battlerAtk, battlerDef, move, &score);
-        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPATK));
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPATK, 1));
         break;
     case EFFECT_OLIVE_OIL: // Project Grounded
         if (ShouldRecover(battlerAtk, battlerDef, move, (AI_GetWeather() & B_WEATHER_POLLEN_HAZE) ? 67 : 50))
             ADJUST_SCORE(GOOD_EFFECT);
-        if (!(gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN))
+        if (!(gFieldTimers.terrain == B_TERRAIN_GRASSY))
             ADJUST_SCORE(WEAK_EFFECT);
         break;
     case EFFECT_TOTEM_GAZE: // Project Grounded: een gratis ontwijking is altijd welkom
@@ -5587,12 +5365,12 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
             ADJUST_SCORE(WEAK_EFFECT);
         break;
     case EFFECT_PRIMEVAL_WARD: // Project Grounded
-        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_DEF));
-        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPDEF));
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_DEF, 1));
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPDEF, 1));
         break;
     case EFFECT_PACK_HOWL: // Project Grounded
-        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_SPEED));
-        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_CHANGE_ATK));
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_SPEED, 1));
+        ADJUST_SCORE(IncreaseStatUpScore(battlerAtk, battlerDef, STAT_ATK, 1));
         break;
     case EFFECT_GUARD_SWAP:
         if (gBattleMons[battlerDef].statStages[STAT_DEF] > gBattleMons[battlerAtk].statStages[STAT_DEF]
@@ -5941,7 +5719,7 @@ static s32 AI_CalcMoveEffectScore(enum BattlerId battlerAtk, enum BattlerId batt
         break;
     case EFFECT_INNARD_PUNCH: // Project Grounded: Pyukumuku slaat terug als hij de klap overleeft
         if ((!IsBattlerIncapacitated(battlerDef, aiData->abilities[battlerDef]) && predictedMove != MOVE_NONE)
-         && (GetNoOfHitsToKOBattler(battlerDef, battlerAtk, predictedMoveSlot, AI_DEFENDING) >= 2)
+         && (GetNoOfHitsToKOBattler(battlerDef, battlerAtk, predictedMoveSlot, AI_DEFENDING, CONSIDER_ENDURE) >= 2)
          && !IsBattleMoveStatus(predictedMove))
             ADJUST_SCORE(GOOD_EFFECT);
         break;

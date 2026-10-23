@@ -1803,7 +1803,7 @@ static bool32 CanApplyAdditionalEffect(const struct AdditionalEffect *additional
     // Project Grounded: Frosty Tap Dance geeft alleen in Snow/Hail ook +1 Sp. Atk
     if (gCurrentMove == MOVE_FROSTY_TAP_DANCE
      && additionalEffect->moveEffect == MOVE_EFFECT_SP_ATK_PLUS_1
-     && !IsBattlerWeatherAffected(gBattlerAttacker, B_WEATHER_SNOW | B_WEATHER_HAIL))
+     && !IsBattlerWeatherAffected(GetBattlerHoldEffect(gBattlerAttacker), GetWeather(), B_WEATHER_SNOW | B_WEATHER_HAIL))
         return FALSE;
 
     return TRUE;
@@ -5301,7 +5301,7 @@ static void Cmd_tryhealhalfhealth(void)
         gBattlerTarget = gBattlerAttacker;
 
     // Project Grounded: in Acid Rain wordt Milk Drink zuur en herstelt hij maar een kwart (1/8 van de max HP)
-    if (gCurrentMove == MOVE_MILK_DRINK && IsBattlerWeatherAffected(gBattlerTarget, B_WEATHER_ACID_RAIN))
+    if (gCurrentMove == MOVE_MILK_DRINK && IsBattlerWeatherAffected(GetBattlerHoldEffect(gBattlerTarget), GetWeather(), B_WEATHER_ACID_RAIN))
         SetHealAmount(gBattlerTarget, GetNonDynamaxMaxHP(gBattlerTarget) / 8);
     else
         SetHealAmount(gBattlerTarget, GetNonDynamaxMaxHP(gBattlerTarget) / 2);
@@ -13252,7 +13252,7 @@ void BS_JumpIfOliveOilFails(void)
     NATIVE_ARGS(const u8 *jumpInstr);
 
     if (gBattleMons[gBattlerAttacker].hp == gBattleMons[gBattlerAttacker].maxHP
-     && ((gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN) || gBattleStruct->isSkyBattle))
+     && ((gFieldTimers.terrain == B_TERRAIN_GRASSY) || gBattleStruct->isSkyBattle))
         gBattlescriptCurrInstr = cmd->jumpInstr;
     else
         gBattlescriptCurrInstr = cmd->nextInstr;

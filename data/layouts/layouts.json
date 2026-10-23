@@ -9,7 +9,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/map.bin"
+      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_1F/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F",
@@ -19,7 +20,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_BrendansMaysHouse",
       "border_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/map.bin"
+      "blockdata_filepath": "data/layouts/LittlerootTown_BrendansHouse_2F/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_LITTLEROOT_TOWN_PROFESSOR_BIRCHS_LAB",
@@ -29,7 +31,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Lab",
       "border_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/border.bin",
-      "blockdata_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/map.bin"
+      "blockdata_filepath": "data/layouts/LittlerootTown_ProfessorBirchsLab/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_HOUSE1",
@@ -39,7 +42,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/House1/border.bin",
-      "blockdata_filepath": "data/layouts/House1/map.bin"
+      "blockdata_filepath": "data/layouts/House1/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_HOUSE2",
@@ -49,7 +53,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/House2/border.bin",
-      "blockdata_filepath": "data/layouts/House2/map.bin"
+      "blockdata_filepath": "data/layouts/House2/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_POKEMON_CENTER_1F",
@@ -59,7 +64,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/PokemonCenter_1F/border.bin",
-      "blockdata_filepath": "data/layouts/PokemonCenter_1F/map.bin"
+      "blockdata_filepath": "data/layouts/PokemonCenter_1F/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_POKEMON_CENTER_2F",
@@ -69,7 +75,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_PokemonCenter",
       "border_filepath": "data/layouts/PokemonCenter_2F/border.bin",
-      "blockdata_filepath": "data/layouts/PokemonCenter_2F/map.bin"
+      "blockdata_filepath": "data/layouts/PokemonCenter_2F/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_MART",
@@ -79,7 +86,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_Shop",
       "border_filepath": "data/layouts/Mart/border.bin",
-      "blockdata_filepath": "data/layouts/Mart/map.bin"
+      "blockdata_filepath": "data/layouts/Mart/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_HOUSE_WITH_BED",
@@ -89,7 +97,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/HouseWithBed/border.bin",
-      "blockdata_filepath": "data/layouts/HouseWithBed/map.bin"
+      "blockdata_filepath": "data/layouts/HouseWithBed/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_FORTREE_CITY_HOUSE1",
@@ -99,7 +108,8 @@
       "primary_tileset": "gTileset_Building",
       "secondary_tileset": "gTileset_GenericBuilding",
       "border_filepath": "data/layouts/FortreeCity_House1/border.bin",
-      "blockdata_filepath": "data/layouts/FortreeCity_House1/map.bin"
+      "blockdata_filepath": "data/layouts/FortreeCity_House1/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_START_TOWN",
@@ -109,7 +119,8 @@
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/StartTown/border.bin",
-      "blockdata_filepath": "data/layouts/StartTown/map.bin"
+      "blockdata_filepath": "data/layouts/StartTown/map.bin",
+      "layout_version": "emerald"
     },
     {
       "id": "LAYOUT_TEST_MAP",
@@ -119,7 +130,8 @@
       "primary_tileset": "gTileset_General",
       "secondary_tileset": "gTileset_Petalburg",
       "border_filepath": "data/layouts/TestMap/border.bin",
-      "blockdata_filepath": "data/layouts/TestMap/map.bin"
+      "blockdata_filepath": "data/layouts/TestMap/map.bin",
+      "layout_version": "emerald"
     }
   ]
 }

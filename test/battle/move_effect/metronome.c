@@ -47,7 +47,7 @@ SINGLE_BATTLE_TEST("Metronome's called powder move fails against Grass Types")
 SINGLE_BATTLE_TEST("Metronome's called multi-hit move hits multiple times")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_ROCK_BLAST) == EFFECT_MULTI_HIT);
+        ASSUME(IsMultiHitMove(MOVE_ROCK_BLAST));
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -58,6 +58,31 @@ SINGLE_BATTLE_TEST("Metronome's called multi-hit move hits multiple times")
         MESSAGE("Waggling a finger let it use Rock Blast!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_ROCK_BLAST, player);
         HP_BAR(opponent);
-        MESSAGE("The Pokémon was hit 5 time(s)!");
+        MESSAGE("The Pokémon was hit 5 times!");
+    }
+}
+
+DOUBLE_BATTLE_TEST("Metronome's called spread move does not hit the user's partner")
+{
+    GIVEN {
+        ASSUME(GetMoveTarget(MOVE_SWIFT) == TARGET_BOTH);
+        PLAYER(SPECIES_WOBBUFFET);
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_WOBBUFFET);
+        OPPONENT(SPECIES_WYNAUT);
+    } WHEN {
+        TURN { MOVE(playerLeft, MOVE_METRONOME, WITH_RNG(RNG_METRONOME, MOVE_SWIFT)); }
+    } SCENE {
+        MESSAGE("Wobbuffet used Metronome!");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_METRONOME, playerLeft);
+        MESSAGE("Waggling a finger let it use Swift!");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SWIFT, playerLeft);
+        HP_BAR(opponentLeft);
+        NOT HP_BAR(playerRight);
+        HP_BAR(opponentRight);
+    } THEN {
+        EXPECT_EQ(playerRight->hp, playerRight->maxHP);
+        EXPECT_LT(opponentLeft->hp, opponentLeft->maxHP);
+        EXPECT_LT(opponentRight->hp, opponentRight->maxHP);
     }
 }

@@ -1695,69 +1695,69 @@ MatchCall_Text_Mom3::
 	.string "Wear those RUNNING SHOES until\n"
 	.string "they fall apart, honey!$"
 
-MatchCall_Text_Roxanne1::
+MatchCall_Text_Roxanne_Preparing::
 	.string "ROXANNE: Hello, {PLAYER}! I'm working on\n"
 	.string "my comeback album. I mean, my GYM.\p"
 	.string "When it's ready, come back for a\n"
 	.string "rematch. Encore!$"
 
-MatchCall_Text_Roxanne2::
+MatchCall_Text_Roxanne_PreparingPostGame::
 	.string "ROXANNE: CHAMPION! Oh, make me over!\n"
 	.string "Celebrity skin! I'm so jealous.\p"
 	.string "My GYM needs a little more time. Then,\n"
 	.string "rematch!$"
 
-MatchCall_Text_Roxanne3::
+MatchCall_Text_Roxanne_RematchReady::
 	.string "ROXANNE: {PLAYER}! My GYM is\n"
 	.string "ready! Here I come, BARRACUDA!\p"
 	.string "Come to RUSTBORO!$"
 
-MatchCall_Text_Roxanne4::
+MatchCall_Text_Roxanne_PostRematch::
 	.string "ROXANNE: Battling you was a hit single.\n"
 	.string "Top of the charts.$"
 
-MatchCall_Text_Brawly1::
+MatchCall_Text_Brawly_Preparing::
 	.string "BRAWLY: {PLAYER}{KUN}! I'm in training camp.\n"
 	.string "When I'm back in fighting shape, the GYM\l"
 	.string "reopens.\p"
 	.string "Then we run it back!$"
 
-MatchCall_Text_Brawly2::
+MatchCall_Text_Brawly_PreparingPostGame::
 	.string "BRAWLY: CHAMPION! The best fought the\n"
 	.string "best!\p"
 	.string "Still in camp. When the GYM reopens, we\n"
 	.string "run it back!$"
 
-MatchCall_Text_Brawly3::
+MatchCall_Text_Brawly_RematchReady::
 	.string "BRAWLY: Fight week!\n"
 	.string "My GYM's ready!\p"
 	.string "Come to DEWFORD!$"
 
-MatchCall_Text_Brawly4::
+MatchCall_Text_Brawly_PostRematch::
 	.string "BRAWLY: A trilogy fight? I'd watch that.$"
 
-MatchCall_Text_Wattson1::
+MatchCall_Text_Wattson_Preparing::
 	.string "WATTSON: Oh, it's you! I'm retraining.\n"
 	.string "And mining. Mostly mining.\p"
 	.string "The GYM reopens when WATTCOIN hits the\n"
 	.string "moon. Wahahahaha!$"
 
-MatchCall_Text_Wattson2::
+MatchCall_Text_Wattson_PreparingPostGame::
 	.string "WATTSON: Wahahahaha! CHAMPION! Want\n"
 	.string "to invest your prize money? No?\p"
 	.string "The GYM needs a little more time.\n"
 	.string "Wahahahaha!$"
 
-MatchCall_Text_Wattson3::
+MatchCall_Text_Wattson_RematchReady::
 	.string "WATTSON: My GYM's ready!\n"
 	.string "Visit MAUVILLE!\p"
 	.string "Bring coins! Wahahahaha!$"
 
-MatchCall_Text_Wattson4::
+MatchCall_Text_Wattson_PostRematch::
 	.string "WATTSON: Wahahaha! Battling you uses\n"
 	.string "more power than my data center!$"
 
-MatchCall_Text_Flannery1::
+MatchCall_Text_Flannery_Preparing::
 	.string "FLANNERY: {PLAYER}… I learned I was\n"
 	.string "trying way too hard.\p"
 	.string "I'm retraining. My natural way. With\n"
@@ -1765,45 +1765,45 @@ MatchCall_Text_Flannery1::
 	.string "When the GYM reopens, challenge us\n"
 	.string "again.$"
 
-MatchCall_Text_Flannery2::
+MatchCall_Text_Flannery_PreparingPostGame::
 	.string "FLANNERY: CHAMPION? Wow!\p"
 	.string "When the GYM's ready, a mark appears by\n"
 	.string "my name in MATCH CALL.\p"
 	.string "Grandpa says that's how it works.\n"
 	.string "Grandpa doesn't know what a phone is.$"
 
-MatchCall_Text_Flannery3::
+MatchCall_Text_Flannery_RematchReady::
 	.string "FLANNERY: Our GYM's ready!\n"
 	.string "Come to LAVARIDGE for a soak\l"
 	.string "and a challenge!\p"
 	.string "Bring aspirin.$"
 
-MatchCall_Text_Flannery4::
+MatchCall_Text_Flannery_PostRematch::
 	.string "FLANNERY: You get better every time. So\n"
 	.string "do my headaches.$"
 
-MatchCall_Text_Winona1::
+MatchCall_Text_Winona_Preparing::
 	.string "WINONA: Hello, {PLAYER}. I found my weak\n"
 	.string "points. Mostly my fans.\p"
 	.string "When the GYM reopens, I won't lose\n"
 	.string "again. Probably.$"
 
-MatchCall_Text_Winona2::
+MatchCall_Text_Winona_PreparingPostGame::
 	.string "WINONA: A new CHAMPION? Great. Now the\n"
 	.string "fans can call you instead of me.\p"
 	.string "Next time we battle, it won't end the\n"
 	.string "same.$"
 
-MatchCall_Text_Winona3::
+MatchCall_Text_Winona_RematchReady::
 	.string "WINONA: Our GYM is open again.\n"
 	.string "Come to FORTREE.\p"
 	.string "Quickly, I want to go home.$"
 
-MatchCall_Text_Winona4::
+MatchCall_Text_Winona_PostRematch::
 	.string "WINONA: I lost, but my wings won't break.\n"
 	.string "My phone battery will, though.$"
 
-MatchCall_Text_TateLiza1::
+MatchCall_Text_TateLiza_Preparing::
 	.string "TATE: Oh! You're… LIZA: {PLAYER}!\p"
 	.string "TATE: We're realigning… LIZA: …our\n"
 	.string "chakras!\p"
@@ -1812,41 +1812,41 @@ MatchCall_Text_TateLiza1::
 	.string "TATE: The stars told us. LIZA: And the\n"
 	.string "MATCH CALL manual.$"
 
-MatchCall_Text_TateLiza2::
+MatchCall_Text_TateLiza_PreparingPostGame::
 	.string "TATE: CHAMPION! LIZA: CHAMPION!\p"
 	.string "TATE: We saw it… LIZA: …in the tarot!\p"
 	.string "TATE: The GYM needs more time… LIZA:\n"
 	.string "…until Mercury leaves retrograde.$"
 
-MatchCall_Text_TateLiza3::
+MatchCall_Text_TateLiza_RematchReady::
 	.string "TATE: The GYM is ready!\n"
 	.string "LIZA: The moon is full!\p"
 	.string "TATE: Come to MOSSDEEP…\n"
 	.string "LIZA: …and bring crystals!$"
 
-MatchCall_Text_TateLiza4::
+MatchCall_Text_TateLiza_PostRematch::
 	.string "TATE: Our battle… LIZA: …was written in\n"
 	.string "the stars.\p"
 	.string "TATE: Again? LIZA: The horoscope says\n"
 	.string "yes.$"
 
-MatchCall_Text_Wallace1::
+MatchCall_Text_Wallace_Preparing::
 	.string "WALLACE: {PLAYER}{KUN}… Our battle had a\n"
 	.string "lovely bouquet.\p"
 	.string "Perhaps you're a talent that ages like\n"
 	.string "fine wine.$"
 
-MatchCall_Text_Wallace2::
+MatchCall_Text_Wallace_PreparingPostGame::
 	.string "WALLACE: You've reached the peak. I\n"
 	.string "opened a bottle in your honor.\p"
 	.string "Two, actually. I hope we meet again.$"
 
-MatchCall_Text_Wallace3::
+MatchCall_Text_Wallace_RematchReady::
 	.string "WALLACE: Our SOOTOPOLIS GYM has\n"
 	.string "reopened. The bar too.\p"
 	.string "Visit anytime. Santé!$"
 
-MatchCall_Text_Wallace4::
+MatchCall_Text_Wallace_PostRematch::
 	.string "WALLACE: Battling you is like the finest\n"
 	.string "vintage.\p"
 	.string "When I close my eyes, I see you… Or it's\n"
@@ -2294,24 +2294,24 @@ MatchCall_Text_Norman5::
 	.string "Sounds like a bad spin-off.\p"
 	.string "Probably something with a volcano.$"
 
-MatchCall_Text_Norman6::
+MatchCall_Text_Norman_Preparing::
 	.string "DAD: Hiyah! Haah! …Oh, {PLAYER}! You\n"
 	.string "caught me in the middle of a… training\l"
 	.string "session. The TV is not on. Shh.$"
 
-MatchCall_Text_Norman7::
+MatchCall_Text_Norman_PreparingPostGame::
 	.string "DAD: POKéMON LEAGUE CHAMPION? Plot\n"
 	.string "twist of the year!\p"
 	.string "Okay! I won't be left behind! After this\n"
 	.string "episode.$"
 
-MatchCall_Text_Norman8::
+MatchCall_Text_Norman_RematchReady::
 	.string "DAD: Good timing! I finished\n"
 	.string "my show. Now I challenge you\l"
 	.string "to battle.\p"
 	.string "PETALBURG GYM. Anytime!$"
 
-MatchCall_Text_Norman9::
+MatchCall_Text_Norman_PostRematch::
 	.string "DAD: …You amaze me, {PLAYER}. Better\n"
 	.string "than any finale.$"
 

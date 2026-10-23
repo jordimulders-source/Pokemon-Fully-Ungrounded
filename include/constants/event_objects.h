@@ -4,306 +4,455 @@
 #include "constants/global.h"
 #include "constants/map_event_ids.h"
 
-#define OBJ_EVENT_GFX_BRENDAN_NORMAL               0
-#define OBJ_EVENT_GFX_BRENDAN_MACH_BIKE            1
-#define OBJ_EVENT_GFX_BRENDAN_SURFING              2
-#define OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE           3
-#define OBJ_EVENT_GFX_QUINTY_PLUMP                 4
-#define OBJ_EVENT_GFX_NINJA_BOY                    5
-#define OBJ_EVENT_GFX_TWIN                         6
-#define OBJ_EVENT_GFX_BOY_1                        7
-#define OBJ_EVENT_GFX_GIRL_1                       8
-#define OBJ_EVENT_GFX_BOY_2                        9
-#define OBJ_EVENT_GFX_GIRL_2                      10
-#define OBJ_EVENT_GFX_LITTLE_BOY                  11
-#define OBJ_EVENT_GFX_LITTLE_GIRL                 12
-#define OBJ_EVENT_GFX_BOY_3                       13
-#define OBJ_EVENT_GFX_GIRL_3                      14
-#define OBJ_EVENT_GFX_RICH_BOY                    15
-#define OBJ_EVENT_GFX_WOMAN_1                     16
-#define OBJ_EVENT_GFX_FAT_MAN                     17
-#define OBJ_EVENT_GFX_POKEFAN_F                   18
-#define OBJ_EVENT_GFX_MAN_1                       19
-#define OBJ_EVENT_GFX_WOMAN_2                     20
-#define OBJ_EVENT_GFX_EXPERT_M                    21
-#define OBJ_EVENT_GFX_EXPERT_F                    22
-#define OBJ_EVENT_GFX_MAN_2                       23
-#define OBJ_EVENT_GFX_WOMAN_3                     24
-#define OBJ_EVENT_GFX_POKEFAN_M                   25
-#define OBJ_EVENT_GFX_WOMAN_4                     26
-#define OBJ_EVENT_GFX_COOK                        27
-#define OBJ_EVENT_GFX_LINK_RECEPTIONIST           28
-#define OBJ_EVENT_GFX_OLD_MAN                     29
-#define OBJ_EVENT_GFX_OLD_WOMAN                   30
-#define OBJ_EVENT_GFX_CAMPER                      31
-#define OBJ_EVENT_GFX_PICNICKER                   32
-#define OBJ_EVENT_GFX_MAN_3                       33
-#define OBJ_EVENT_GFX_WOMAN_5                     34
-#define OBJ_EVENT_GFX_YOUNGSTER                   35
-#define OBJ_EVENT_GFX_BUG_CATCHER                 36
-#define OBJ_EVENT_GFX_PSYCHIC_M                   37
-#define OBJ_EVENT_GFX_SCHOOL_KID_M                38
-#define OBJ_EVENT_GFX_MANIAC                      39
-#define OBJ_EVENT_GFX_HEX_MANIAC                  40
-#define OBJ_EVENT_GFX_RAYQUAZA_STILL              41
-#define OBJ_EVENT_GFX_SWIMMER_M                   42
-#define OBJ_EVENT_GFX_SWIMMER_F                   43
-#define OBJ_EVENT_GFX_BLACK_BELT                  44
-#define OBJ_EVENT_GFX_BEAUTY                      45
-#define OBJ_EVENT_GFX_SCIENTIST_1                 46
-#define OBJ_EVENT_GFX_LASS                        47
-#define OBJ_EVENT_GFX_GENTLEMAN                   48
-#define OBJ_EVENT_GFX_SAILOR                      49
-#define OBJ_EVENT_GFX_FISHERMAN                   50
-#define OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M        51
-#define OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F        52
-#define OBJ_EVENT_GFX_TUBER_F                     53
-#define OBJ_EVENT_GFX_TUBER_M                     54
-#define OBJ_EVENT_GFX_HIKER                       55
-#define OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M        56
-#define OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F        57
-#define OBJ_EVENT_GFX_NURSE                       58
-#define OBJ_EVENT_GFX_ITEM_BALL                   59
-#define OBJ_EVENT_GFX_BERRY_TREE                  60
-#define OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES     61
-#define OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES      62
-#define OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE           63
-#define OBJ_EVENT_GFX_PROF_BIRCH                  64
-#define OBJ_EVENT_GFX_MAN_4                       65
-#define OBJ_EVENT_GFX_MAN_5                       66
-#define OBJ_EVENT_GFX_REPORTER_M                  67
-#define OBJ_EVENT_GFX_REPORTER_F                  68
-#define OBJ_EVENT_GFX_BARD                        69
-#define OBJ_EVENT_GFX_ANABEL                      70
-#define OBJ_EVENT_GFX_TUCKER                      71
-#define OBJ_EVENT_GFX_GRETA                       72
-#define OBJ_EVENT_GFX_SPENSER                     73
-#define OBJ_EVENT_GFX_NOLAND                      74
-#define OBJ_EVENT_GFX_LUCY                        75
-#define OBJ_EVENT_GFX_UNUSED_NATU_DOLL            76
-#define OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL       77
-#define OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL        78
-#define OBJ_EVENT_GFX_UNUSED_WOOPER_DOLL          79
-#define OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL         80
-#define OBJ_EVENT_GFX_UNUSED_PORYGON2_DOLL        81
-#define OBJ_EVENT_GFX_CUTTABLE_TREE               82
-#define OBJ_EVENT_GFX_MART_EMPLOYEE               83
-#define OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN          84
-#define OBJ_EVENT_GFX_TEALA                       85
-#define OBJ_EVENT_GFX_BREAKABLE_ROCK              86
-#define OBJ_EVENT_GFX_PUSHABLE_BOULDER            87
-#define OBJ_EVENT_GFX_MR_BRINEYS_BOAT             88
-#define OBJ_EVENT_GFX_MAY_NORMAL                  89
-#define OBJ_EVENT_GFX_MAY_MACH_BIKE               90
-#define OBJ_EVENT_GFX_MAY_ACRO_BIKE               91
-#define OBJ_EVENT_GFX_MAY_SURFING                 92
-#define OBJ_EVENT_GFX_MAY_FIELD_MOVE              93
-#define OBJ_EVENT_GFX_TRUCK                       94
-#define OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX       95
-#define OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY        96
-#define OBJ_EVENT_GFX_BIRCHS_BAG                  97
-#define OBJ_EVENT_GFX_ZIGZAGOON_1                 98
-#define OBJ_EVENT_GFX_ARTIST                      99
-#define OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL       100
-#define OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE    101
-#define OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE    102
-#define OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING      103
-#define OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE   104
-#define OBJ_EVENT_GFX_RIVAL_MAY_NORMAL           105
-#define OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE        106
-#define OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE        107
-#define OBJ_EVENT_GFX_RIVAL_MAY_SURFING          108
-#define OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE       109
-#define OBJ_EVENT_GFX_CAMERAMAN                  110
-#define OBJ_EVENT_GFX_BRENDAN_UNDERWATER         111
-#define OBJ_EVENT_GFX_MAY_UNDERWATER             112
-#define OBJ_EVENT_GFX_MOVING_BOX                 113
-#define OBJ_EVENT_GFX_CABLE_CAR                  114
-#define OBJ_EVENT_GFX_SCIENTIST_2                115
-#define OBJ_EVENT_GFX_DEVON_EMPLOYEE             116
-#define OBJ_EVENT_GFX_AQUA_MEMBER_M              117
-#define OBJ_EVENT_GFX_AQUA_MEMBER_F              118
-#define OBJ_EVENT_GFX_MAGMA_MEMBER_M             119
-#define OBJ_EVENT_GFX_MAGMA_MEMBER_F             120
-#define OBJ_EVENT_GFX_SIDNEY                     121
-#define OBJ_EVENT_GFX_PHOEBE                     122
-#define OBJ_EVENT_GFX_GLACIA                     123
-#define OBJ_EVENT_GFX_DRAKE                      124
-#define OBJ_EVENT_GFX_ROXANNE                    125
-#define OBJ_EVENT_GFX_BRAWLY                     126
-#define OBJ_EVENT_GFX_WATTSON                    127
-#define OBJ_EVENT_GFX_FLANNERY                   128
-#define OBJ_EVENT_GFX_NORMAN                     129
-#define OBJ_EVENT_GFX_WINONA                     130
-#define OBJ_EVENT_GFX_LIZA                       131
-#define OBJ_EVENT_GFX_TATE                       132
-#define OBJ_EVENT_GFX_WALLACE                    133
-#define OBJ_EVENT_GFX_STEVEN                     134
-#define OBJ_EVENT_GFX_WALLY                      135
-#define OBJ_EVENT_GFX_LITTLE_BOY_3               136
-#define OBJ_EVENT_GFX_BRENDAN_FISHING            137
-#define OBJ_EVENT_GFX_MAY_FISHING                138
-#define OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN      139
-#define OBJ_EVENT_GFX_SS_TIDAL                   140
-#define OBJ_EVENT_GFX_SUBMARINE_SHADOW           141
-#define OBJ_EVENT_GFX_PICHU_DOLL                 142
-#define OBJ_EVENT_GFX_PIKACHU_DOLL               143
-#define OBJ_EVENT_GFX_MARILL_DOLL                144
-#define OBJ_EVENT_GFX_TOGEPI_DOLL                145
-#define OBJ_EVENT_GFX_CYNDAQUIL_DOLL             146
-#define OBJ_EVENT_GFX_CHIKORITA_DOLL             147
-#define OBJ_EVENT_GFX_TOTODILE_DOLL              148
-#define OBJ_EVENT_GFX_JIGGLYPUFF_DOLL            149
-#define OBJ_EVENT_GFX_MEOWTH_DOLL                150
-#define OBJ_EVENT_GFX_CLEFAIRY_DOLL              151
-#define OBJ_EVENT_GFX_DITTO_DOLL                 152
-#define OBJ_EVENT_GFX_SMOOCHUM_DOLL              153
-#define OBJ_EVENT_GFX_TREECKO_DOLL               154
-#define OBJ_EVENT_GFX_TORCHIC_DOLL               155
-#define OBJ_EVENT_GFX_MUDKIP_DOLL                156
-#define OBJ_EVENT_GFX_DUSKULL_DOLL               157
-#define OBJ_EVENT_GFX_WYNAUT_DOLL                158
-#define OBJ_EVENT_GFX_BALTOY_DOLL                159
-#define OBJ_EVENT_GFX_KECLEON_DOLL               160
-#define OBJ_EVENT_GFX_AZURILL_DOLL               161
-#define OBJ_EVENT_GFX_SKITTY_DOLL                162
-#define OBJ_EVENT_GFX_SWABLU_DOLL                163
-#define OBJ_EVENT_GFX_GULPIN_DOLL                164
-#define OBJ_EVENT_GFX_LOTAD_DOLL                 165
-#define OBJ_EVENT_GFX_SEEDOT_DOLL                166
-#define OBJ_EVENT_GFX_PIKA_CUSHION               167
-#define OBJ_EVENT_GFX_ROUND_CUSHION              168
-#define OBJ_EVENT_GFX_KISS_CUSHION               169
-#define OBJ_EVENT_GFX_ZIGZAG_CUSHION             170
-#define OBJ_EVENT_GFX_SPIN_CUSHION               171
-#define OBJ_EVENT_GFX_DIAMOND_CUSHION            172
-#define OBJ_EVENT_GFX_BALL_CUSHION               173
-#define OBJ_EVENT_GFX_GRASS_CUSHION              174
-#define OBJ_EVENT_GFX_FIRE_CUSHION               175
-#define OBJ_EVENT_GFX_WATER_CUSHION              176
-#define OBJ_EVENT_GFX_BIG_SNORLAX_DOLL           177
-#define OBJ_EVENT_GFX_BIG_RHYDON_DOLL            178
-#define OBJ_EVENT_GFX_BIG_LAPRAS_DOLL            179
-#define OBJ_EVENT_GFX_BIG_VENUSAUR_DOLL          180
-#define OBJ_EVENT_GFX_BIG_CHARIZARD_DOLL         181
-#define OBJ_EVENT_GFX_BIG_BLASTOISE_DOLL         182
-#define OBJ_EVENT_GFX_BIG_WAILMER_DOLL           183
-#define OBJ_EVENT_GFX_BIG_REGIROCK_DOLL          184
-#define OBJ_EVENT_GFX_BIG_REGICE_DOLL            185
-#define OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL         186
-#define OBJ_EVENT_GFX_LATIAS                     187
-#define OBJ_EVENT_GFX_LATIOS                     188
-#define OBJ_EVENT_GFX_GAMEBOY_KID                189
-#define OBJ_EVENT_GFX_CONTEST_JUDGE              190
-#define OBJ_EVENT_GFX_BRENDAN_WATERING           191
-#define OBJ_EVENT_GFX_MAY_WATERING               192
-#define OBJ_EVENT_GFX_BRENDAN_DECORATING         193
-#define OBJ_EVENT_GFX_MAY_DECORATING             194
-#define OBJ_EVENT_GFX_ARCHIE                     195
-#define OBJ_EVENT_GFX_MAXIE                      196
-#define OBJ_EVENT_GFX_KYOGRE_FRONT               197
-#define OBJ_EVENT_GFX_GROUDON_FRONT              198
-#define OBJ_EVENT_GFX_FOSSIL                     199
-#define OBJ_EVENT_GFX_REGIROCK                   200
-#define OBJ_EVENT_GFX_REGICE                     201
-#define OBJ_EVENT_GFX_REGISTEEL                  202
-#define OBJ_EVENT_GFX_SKITTY                     203
-#define OBJ_EVENT_GFX_KECLEON                    204
-#define OBJ_EVENT_GFX_KYOGRE_ASLEEP              205
-#define OBJ_EVENT_GFX_GROUDON_ASLEEP             206
-#define OBJ_EVENT_GFX_RAYQUAZA                   207
-#define OBJ_EVENT_GFX_ZIGZAGOON_2                208
-#define OBJ_EVENT_GFX_PIKACHU                    209
-#define OBJ_EVENT_GFX_AZUMARILL                  210
-#define OBJ_EVENT_GFX_WINGULL                    211
-#define OBJ_EVENT_GFX_KECLEON_BRIDGE_SHADOW      212
-#define OBJ_EVENT_GFX_TUBER_M_SWIMMING           213
-#define OBJ_EVENT_GFX_AZURILL                    214
-#define OBJ_EVENT_GFX_MOM                        215
-#define OBJ_EVENT_GFX_LINK_BRENDAN               216
-#define OBJ_EVENT_GFX_LINK_MAY                   217
-#define OBJ_EVENT_GFX_JUAN                       218
-#define OBJ_EVENT_GFX_SCOTT                      219
-#define OBJ_EVENT_GFX_POOCHYENA                  220
-#define OBJ_EVENT_GFX_KYOGRE_SIDE                221
-#define OBJ_EVENT_GFX_GROUDON_SIDE               222
-#define OBJ_EVENT_GFX_MYSTERY_GIFT_MAN           223
-#define OBJ_EVENT_GFX_TRICK_HOUSE_STATUE         224
-#define OBJ_EVENT_GFX_KIRLIA                     225
-#define OBJ_EVENT_GFX_DUSCLOPS                   226
-#define OBJ_EVENT_GFX_UNION_ROOM_NURSE           227
-#define OBJ_EVENT_GFX_SUDOWOODO                  228
-#define OBJ_EVENT_GFX_MEW                        229
-#define OBJ_EVENT_GFX_RED                        230
-#define OBJ_EVENT_GFX_LEAF                       231
-#define OBJ_EVENT_GFX_DEOXYS                     232
-#define OBJ_EVENT_GFX_DEOXYS_TRIANGLE            233
-#define OBJ_EVENT_GFX_BRANDON                    234
-#define OBJ_EVENT_GFX_LINK_RS_BRENDAN            235
-#define OBJ_EVENT_GFX_LINK_RS_MAY                236
-#define OBJ_EVENT_GFX_LUGIA                      237
-#define OBJ_EVENT_GFX_HOOH                       238
-#define OBJ_EVENT_GFX_POKE_BALL                  239
-#define OBJ_EVENT_GFX_OW_MON                     240
-#define OBJ_EVENT_GFX_LIGHT_SPRITE               241
-#define OBJ_EVENT_GFX_APRICORN_TREE              242
-#define OBJ_EVENT_GFX_PROF_OAK                   243 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_BROCK                      244 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_COLRESS                    245 // Project Grounded (sprite van PizzaSun)
-#define OBJ_EVENT_GFX_ZINNIA                     246 // Project Grounded
-#define OBJ_EVENT_GFX_DEOXYS_TRIANGLE_RED        247 // Project Grounded: rode driehoek op de meteoriet (Deoxys-event)
-#define OBJ_EVENT_GFX_MISTY                           248 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_LT_SURGE                        249 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_ERIKA                           250 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_KOGA                            251 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_SABRINA                         252 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_BLAINE                          253 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_GIOVANNI                        254 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_BLUE                            255 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_LORELEI                         256 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_BRUNO                           257 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_AGATHA                          258 // Project Grounded (sprite uit FRLG)
-#define OBJ_EVENT_GFX_LANCE                           259 // Project Grounded (sprite uit FRLG)
+#define PLAYER_AVATAR_GFX_MALE_NORMAL     (IS_FRLG ? OBJ_EVENT_GFX_RED_NORMAL     : OBJ_EVENT_GFX_BRENDAN_NORMAL)
+#define PLAYER_AVATAR_GFX_MALE_MACH_BIKE  (IS_FRLG ? OBJ_EVENT_GFX_RED_BIKE       : OBJ_EVENT_GFX_BRENDAN_MACH_BIKE)
+#define PLAYER_AVATAR_GFX_MALE_ACRO_BIKE  (IS_FRLG ? OBJ_EVENT_GFX_RED_BIKE       : OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE)
+#define PLAYER_AVATAR_GFX_MALE_SURFING    (IS_FRLG ? OBJ_EVENT_GFX_RED_SURF       : OBJ_EVENT_GFX_BRENDAN_SURFING)
+#define PLAYER_AVATAR_GFX_MALE_UNDERWATER (IS_FRLG ? OBJ_EVENT_GFX_RED_SURF       : OBJ_EVENT_GFX_BRENDAN_UNDERWATER)
+#define PLAYER_AVATAR_GFX_MALE_FIELD_MOVE (IS_FRLG ? OBJ_EVENT_GFX_RED_FIELD_MOVE : OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE)
+#define PLAYER_AVATAR_GFX_MALE_FISHING    (IS_FRLG ? OBJ_EVENT_GFX_RED_FISH       : OBJ_EVENT_GFX_BRENDAN_FISHING)
+#define PLAYER_AVATAR_GFX_MALE_WATERING   (IS_FRLG ? OBJ_EVENT_GFX_RED_FIELD_MOVE : OBJ_EVENT_GFX_BRENDAN_WATERING)
+#define PLAYER_AVATAR_GFX_MALE_VSSEEKER   (IS_FRLG ? OBJ_EVENT_GFX_RED_VS_SEEKER  : OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE)
+#define PLAYER_AVATAR_GFX_FEMALE_NORMAL     (IS_FRLG ? OBJ_EVENT_GFX_GREEN_NORMAL     : OBJ_EVENT_GFX_MAY_NORMAL)
+#define PLAYER_AVATAR_GFX_FEMALE_MACH_BIKE  (IS_FRLG ? OBJ_EVENT_GFX_GREEN_BIKE       : OBJ_EVENT_GFX_MAY_MACH_BIKE)
+#define PLAYER_AVATAR_GFX_FEMALE_ACRO_BIKE  (IS_FRLG ? OBJ_EVENT_GFX_GREEN_BIKE       : OBJ_EVENT_GFX_MAY_ACRO_BIKE)
+#define PLAYER_AVATAR_GFX_FEMALE_SURFING    (IS_FRLG ? OBJ_EVENT_GFX_GREEN_SURF       : OBJ_EVENT_GFX_MAY_SURFING)
+#define PLAYER_AVATAR_GFX_FEMALE_UNDERWATER (IS_FRLG ? OBJ_EVENT_GFX_GREEN_SURF       : OBJ_EVENT_GFX_MAY_UNDERWATER)
+#define PLAYER_AVATAR_GFX_FEMALE_FIELD_MOVE (IS_FRLG ? OBJ_EVENT_GFX_GREEN_FIELD_MOVE : OBJ_EVENT_GFX_MAY_FIELD_MOVE)
+#define PLAYER_AVATAR_GFX_FEMALE_FISHING    (IS_FRLG ? OBJ_EVENT_GFX_GREEN_FISH       : OBJ_EVENT_GFX_MAY_FISHING)
+#define PLAYER_AVATAR_GFX_FEMALE_WATERING   (IS_FRLG ? OBJ_EVENT_GFX_GREEN_FIELD_MOVE : OBJ_EVENT_GFX_MAY_WATERING)
+#define PLAYER_AVATAR_GFX_FEMALE_VSSEEKER   (IS_FRLG ? OBJ_EVENT_GFX_GREEN_VS_SEEKER  : OBJ_EVENT_GFX_MAY_FIELD_MOVE)
+
+enum
+{
+    OBJ_EVENT_GFX_BRENDAN_NORMAL,
+    OBJ_EVENT_GFX_BRENDAN_MACH_BIKE,
+    OBJ_EVENT_GFX_BRENDAN_SURFING,
+    OBJ_EVENT_GFX_BRENDAN_FIELD_MOVE,
+    OBJ_EVENT_GFX_QUINTY_PLUMP,
+    OBJ_EVENT_GFX_NINJA_BOY,
+    OBJ_EVENT_GFX_TWIN,
+    OBJ_EVENT_GFX_BOY_1,
+    OBJ_EVENT_GFX_GIRL_1,
+    OBJ_EVENT_GFX_BOY_2,
+    OBJ_EVENT_GFX_GIRL_2,
+    OBJ_EVENT_GFX_LITTLE_BOY,
+    OBJ_EVENT_GFX_LITTLE_GIRL,
+    OBJ_EVENT_GFX_BOY_3,
+    OBJ_EVENT_GFX_GIRL_3,
+    OBJ_EVENT_GFX_RICH_BOY,
+    OBJ_EVENT_GFX_WOMAN_1,
+    OBJ_EVENT_GFX_FAT_MAN,
+    OBJ_EVENT_GFX_POKEFAN_F,
+    OBJ_EVENT_GFX_MAN_1,
+    OBJ_EVENT_GFX_WOMAN_2,
+    OBJ_EVENT_GFX_EXPERT_M,
+    OBJ_EVENT_GFX_EXPERT_F,
+    OBJ_EVENT_GFX_MAN_2,
+    OBJ_EVENT_GFX_WOMAN_3,
+    OBJ_EVENT_GFX_POKEFAN_M,
+    OBJ_EVENT_GFX_WOMAN_4,
+    OBJ_EVENT_GFX_COOK,
+    OBJ_EVENT_GFX_LINK_RECEPTIONIST,
+    OBJ_EVENT_GFX_OLD_MAN,
+    OBJ_EVENT_GFX_OLD_WOMAN,
+    OBJ_EVENT_GFX_CAMPER,
+    OBJ_EVENT_GFX_PICNICKER,
+    OBJ_EVENT_GFX_MAN_3,
+    OBJ_EVENT_GFX_WOMAN_5,
+    OBJ_EVENT_GFX_YOUNGSTER,
+    OBJ_EVENT_GFX_BUG_CATCHER,
+    OBJ_EVENT_GFX_PSYCHIC_M,
+    OBJ_EVENT_GFX_SCHOOL_KID_M,
+    OBJ_EVENT_GFX_MANIAC,
+    OBJ_EVENT_GFX_HEX_MANIAC,
+    OBJ_EVENT_GFX_RAYQUAZA_STILL,
+    OBJ_EVENT_GFX_SWIMMER_M,
+    OBJ_EVENT_GFX_SWIMMER_F,
+    OBJ_EVENT_GFX_BLACK_BELT,
+    OBJ_EVENT_GFX_BEAUTY,
+    OBJ_EVENT_GFX_SCIENTIST_1,
+    OBJ_EVENT_GFX_LASS,
+    OBJ_EVENT_GFX_GENTLEMAN,
+    OBJ_EVENT_GFX_SAILOR,
+    OBJ_EVENT_GFX_FISHERMAN,
+    OBJ_EVENT_GFX_RUNNING_TRIATHLETE_M,
+    OBJ_EVENT_GFX_RUNNING_TRIATHLETE_F,
+    OBJ_EVENT_GFX_TUBER_F,
+    OBJ_EVENT_GFX_TUBER_M,
+    OBJ_EVENT_GFX_HIKER,
+    OBJ_EVENT_GFX_CYCLING_TRIATHLETE_M,
+    OBJ_EVENT_GFX_CYCLING_TRIATHLETE_F,
+    OBJ_EVENT_GFX_NURSE,
+    OBJ_EVENT_GFX_ITEM_BALL,
+    OBJ_EVENT_GFX_BERRY_TREE,
+    OBJ_EVENT_GFX_BERRY_TREE_EARLY_STAGES,
+    OBJ_EVENT_GFX_BERRY_TREE_LATE_STAGES,
+    OBJ_EVENT_GFX_BRENDAN_ACRO_BIKE,
+    OBJ_EVENT_GFX_PROF_BIRCH,
+    OBJ_EVENT_GFX_MAN_4,
+    OBJ_EVENT_GFX_MAN_5,
+    OBJ_EVENT_GFX_REPORTER_M,
+    OBJ_EVENT_GFX_REPORTER_F,
+    OBJ_EVENT_GFX_BARD,
+    OBJ_EVENT_GFX_ANABEL,
+    OBJ_EVENT_GFX_TUCKER,
+    OBJ_EVENT_GFX_GRETA,
+    OBJ_EVENT_GFX_SPENSER,
+    OBJ_EVENT_GFX_NOLAND,
+    OBJ_EVENT_GFX_LUCY,
+    OBJ_EVENT_GFX_UNUSED_NATU_DOLL,
+    OBJ_EVENT_GFX_UNUSED_MAGNEMITE_DOLL,
+    OBJ_EVENT_GFX_UNUSED_SQUIRTLE_DOLL,
+    OBJ_EVENT_GFX_UNUSED_WOOPER_DOLL,
+    OBJ_EVENT_GFX_UNUSED_PIKACHU_DOLL,
+    OBJ_EVENT_GFX_UNUSED_PORYGON2_DOLL,
+    OBJ_EVENT_GFX_CUTTABLE_TREE,
+    OBJ_EVENT_GFX_MART_EMPLOYEE,
+    OBJ_EVENT_GFX_ROOFTOP_SALE_WOMAN,
+    OBJ_EVENT_GFX_TEALA,
+    OBJ_EVENT_GFX_BREAKABLE_ROCK,
+    OBJ_EVENT_GFX_PUSHABLE_BOULDER,
+    OBJ_EVENT_GFX_MR_BRINEYS_BOAT,
+    OBJ_EVENT_GFX_MAY_NORMAL,
+    OBJ_EVENT_GFX_MAY_MACH_BIKE,
+    OBJ_EVENT_GFX_MAY_ACRO_BIKE,
+    OBJ_EVENT_GFX_MAY_SURFING,
+    OBJ_EVENT_GFX_MAY_FIELD_MOVE,
+    OBJ_EVENT_GFX_TRUCK,
+    OBJ_EVENT_GFX_VIGOROTH_CARRYING_BOX,
+    OBJ_EVENT_GFX_VIGOROTH_FACING_AWAY,
+    OBJ_EVENT_GFX_BIRCHS_BAG,
+    OBJ_EVENT_GFX_ZIGZAGOON_1,
+    OBJ_EVENT_GFX_ARTIST,
+    OBJ_EVENT_GFX_RIVAL_BRENDAN_NORMAL,
+    OBJ_EVENT_GFX_RIVAL_BRENDAN_MACH_BIKE,
+    OBJ_EVENT_GFX_RIVAL_BRENDAN_ACRO_BIKE,
+    OBJ_EVENT_GFX_RIVAL_BRENDAN_SURFING,
+    OBJ_EVENT_GFX_RIVAL_BRENDAN_FIELD_MOVE,
+    OBJ_EVENT_GFX_RIVAL_MAY_NORMAL,
+    OBJ_EVENT_GFX_RIVAL_MAY_MACH_BIKE,
+    OBJ_EVENT_GFX_RIVAL_MAY_ACRO_BIKE,
+    OBJ_EVENT_GFX_RIVAL_MAY_SURFING,
+    OBJ_EVENT_GFX_RIVAL_MAY_FIELD_MOVE,
+    OBJ_EVENT_GFX_CAMERAMAN,
+    OBJ_EVENT_GFX_BRENDAN_UNDERWATER,
+    OBJ_EVENT_GFX_MAY_UNDERWATER,
+    OBJ_EVENT_GFX_MOVING_BOX,
+    OBJ_EVENT_GFX_CABLE_CAR,
+    OBJ_EVENT_GFX_SCIENTIST_2,
+    OBJ_EVENT_GFX_DEVON_EMPLOYEE,
+    OBJ_EVENT_GFX_AQUA_MEMBER_M,
+    OBJ_EVENT_GFX_AQUA_MEMBER_F,
+    OBJ_EVENT_GFX_MAGMA_MEMBER_M,
+    OBJ_EVENT_GFX_MAGMA_MEMBER_F,
+    OBJ_EVENT_GFX_SIDNEY,
+    OBJ_EVENT_GFX_PHOEBE,
+    OBJ_EVENT_GFX_GLACIA,
+    OBJ_EVENT_GFX_DRAKE,
+    OBJ_EVENT_GFX_ROXANNE,
+    OBJ_EVENT_GFX_BRAWLY,
+    OBJ_EVENT_GFX_WATTSON,
+    OBJ_EVENT_GFX_FLANNERY,
+    OBJ_EVENT_GFX_NORMAN,
+    OBJ_EVENT_GFX_WINONA,
+    OBJ_EVENT_GFX_LIZA,
+    OBJ_EVENT_GFX_TATE,
+    OBJ_EVENT_GFX_WALLACE,
+    OBJ_EVENT_GFX_STEVEN,
+    OBJ_EVENT_GFX_WALLY,
+    OBJ_EVENT_GFX_LITTLE_BOY_3,
+    OBJ_EVENT_GFX_BRENDAN_FISHING,
+    OBJ_EVENT_GFX_MAY_FISHING,
+    OBJ_EVENT_GFX_HOT_SPRINGS_OLD_WOMAN,
+    OBJ_EVENT_GFX_SS_TIDAL,
+    OBJ_EVENT_GFX_SUBMARINE_SHADOW,
+    OBJ_EVENT_GFX_PICHU_DOLL,
+    OBJ_EVENT_GFX_PIKACHU_DOLL,
+    OBJ_EVENT_GFX_MARILL_DOLL,
+    OBJ_EVENT_GFX_TOGEPI_DOLL,
+    OBJ_EVENT_GFX_CYNDAQUIL_DOLL,
+    OBJ_EVENT_GFX_CHIKORITA_DOLL,
+    OBJ_EVENT_GFX_TOTODILE_DOLL,
+    OBJ_EVENT_GFX_JIGGLYPUFF_DOLL,
+    OBJ_EVENT_GFX_MEOWTH_DOLL,
+    OBJ_EVENT_GFX_CLEFAIRY_DOLL,
+    OBJ_EVENT_GFX_DITTO_DOLL,
+    OBJ_EVENT_GFX_SMOOCHUM_DOLL,
+    OBJ_EVENT_GFX_TREECKO_DOLL,
+    OBJ_EVENT_GFX_TORCHIC_DOLL,
+    OBJ_EVENT_GFX_MUDKIP_DOLL,
+    OBJ_EVENT_GFX_DUSKULL_DOLL,
+    OBJ_EVENT_GFX_WYNAUT_DOLL,
+    OBJ_EVENT_GFX_BALTOY_DOLL,
+    OBJ_EVENT_GFX_KECLEON_DOLL,
+    OBJ_EVENT_GFX_AZURILL_DOLL,
+    OBJ_EVENT_GFX_SKITTY_DOLL,
+    OBJ_EVENT_GFX_SWABLU_DOLL,
+    OBJ_EVENT_GFX_GULPIN_DOLL,
+    OBJ_EVENT_GFX_LOTAD_DOLL,
+    OBJ_EVENT_GFX_SEEDOT_DOLL,
+    OBJ_EVENT_GFX_PIKA_CUSHION,
+    OBJ_EVENT_GFX_ROUND_CUSHION,
+    OBJ_EVENT_GFX_KISS_CUSHION,
+    OBJ_EVENT_GFX_ZIGZAG_CUSHION,
+    OBJ_EVENT_GFX_SPIN_CUSHION,
+    OBJ_EVENT_GFX_DIAMOND_CUSHION,
+    OBJ_EVENT_GFX_BALL_CUSHION,
+    OBJ_EVENT_GFX_GRASS_CUSHION,
+    OBJ_EVENT_GFX_FIRE_CUSHION,
+    OBJ_EVENT_GFX_WATER_CUSHION,
+    OBJ_EVENT_GFX_BIG_SNORLAX_DOLL,
+    OBJ_EVENT_GFX_BIG_RHYDON_DOLL,
+    OBJ_EVENT_GFX_BIG_LAPRAS_DOLL,
+    OBJ_EVENT_GFX_BIG_VENUSAUR_DOLL,
+    OBJ_EVENT_GFX_BIG_CHARIZARD_DOLL,
+    OBJ_EVENT_GFX_BIG_BLASTOISE_DOLL,
+    OBJ_EVENT_GFX_BIG_WAILMER_DOLL,
+    OBJ_EVENT_GFX_BIG_REGIROCK_DOLL,
+    OBJ_EVENT_GFX_BIG_REGICE_DOLL,
+    OBJ_EVENT_GFX_BIG_REGISTEEL_DOLL,
+    OBJ_EVENT_GFX_LATIAS,
+    OBJ_EVENT_GFX_LATIOS,
+    OBJ_EVENT_GFX_GAMEBOY_KID,
+    OBJ_EVENT_GFX_CONTEST_JUDGE,
+    OBJ_EVENT_GFX_BRENDAN_WATERING,
+    OBJ_EVENT_GFX_MAY_WATERING,
+    OBJ_EVENT_GFX_BRENDAN_DECORATING,
+    OBJ_EVENT_GFX_MAY_DECORATING,
+    OBJ_EVENT_GFX_ARCHIE,
+    OBJ_EVENT_GFX_MAXIE,
+    OBJ_EVENT_GFX_KYOGRE_FRONT,
+    OBJ_EVENT_GFX_GROUDON_FRONT,
+    OBJ_EVENT_GFX_FOSSIL,
+    OBJ_EVENT_GFX_REGIROCK,
+    OBJ_EVENT_GFX_REGICE,
+    OBJ_EVENT_GFX_REGISTEEL,
+    OBJ_EVENT_GFX_SKITTY,
+    OBJ_EVENT_GFX_KECLEON,
+    OBJ_EVENT_GFX_KYOGRE_ASLEEP,
+    OBJ_EVENT_GFX_GROUDON_ASLEEP,
+    OBJ_EVENT_GFX_RAYQUAZA,
+    OBJ_EVENT_GFX_ZIGZAGOON_2,
+    OBJ_EVENT_GFX_PIKACHU,
+    OBJ_EVENT_GFX_AZUMARILL,
+    OBJ_EVENT_GFX_WINGULL,
+    OBJ_EVENT_GFX_KECLEON_BRIDGE_SHADOW,
+    OBJ_EVENT_GFX_TUBER_M_SWIMMING,
+    OBJ_EVENT_GFX_AZURILL,
+    OBJ_EVENT_GFX_MOM,
+    OBJ_EVENT_GFX_LINK_BRENDAN,
+    OBJ_EVENT_GFX_LINK_MAY,
+    OBJ_EVENT_GFX_JUAN,
+    OBJ_EVENT_GFX_SCOTT,
+    OBJ_EVENT_GFX_POOCHYENA,
+    OBJ_EVENT_GFX_KYOGRE_SIDE,
+    OBJ_EVENT_GFX_GROUDON_SIDE,
+    OBJ_EVENT_GFX_MYSTERY_GIFT_MAN,
+    OBJ_EVENT_GFX_TRICK_HOUSE_STATUE,
+    OBJ_EVENT_GFX_KIRLIA,
+    OBJ_EVENT_GFX_DUSCLOPS,
+    OBJ_EVENT_GFX_UNION_ROOM_NURSE,
+    OBJ_EVENT_GFX_SUDOWOODO,
+    OBJ_EVENT_GFX_MEW,
+    OBJ_EVENT_GFX_RED,
+    OBJ_EVENT_GFX_LEAF,
+    OBJ_EVENT_GFX_DEOXYS,
+    OBJ_EVENT_GFX_DEOXYS_TRIANGLE,
+    OBJ_EVENT_GFX_BRANDON,
+    OBJ_EVENT_GFX_LINK_RS_BRENDAN,
+    OBJ_EVENT_GFX_LINK_RS_MAY,
+    OBJ_EVENT_GFX_LUGIA,
+    OBJ_EVENT_GFX_HOOH,
+    OBJ_EVENT_GFX_POKE_BALL,
+    OBJ_EVENT_GFX_OW_MON,
+    OBJ_EVENT_GFX_LIGHT_SPRITE,
+    OBJ_EVENT_GFX_APRICORN_TREE,
+    OBJ_EVENT_GFX_RED_NORMAL, // FRLG objects
+    OBJ_EVENT_GFX_RED_BIKE,
+    OBJ_EVENT_GFX_RED_SURF,
+    OBJ_EVENT_GFX_RED_FIELD_MOVE,
+    OBJ_EVENT_GFX_RED_FISH,
+    OBJ_EVENT_GFX_RED_VS_SEEKER,
+    OBJ_EVENT_GFX_RED_VS_SEEKER_BIKE,
+    OBJ_EVENT_GFX_UNUSED_250,
+    OBJ_EVENT_GFX_GREEN_NORMAL,
+    OBJ_EVENT_GFX_GREEN_BIKE,
+    OBJ_EVENT_GFX_GREEN_SURF,
+    OBJ_EVENT_GFX_GREEN_FIELD_MOVE,
+    OBJ_EVENT_GFX_GREEN_FISH,
+    OBJ_EVENT_GFX_GREEN_VS_SEEKER,
+    OBJ_EVENT_GFX_GREEN_VS_SEEKER_BIKE,
+    OBJ_EVENT_GFX_BOY,
+    OBJ_EVENT_GFX_CRUSH_GIRL,
+    OBJ_EVENT_GFX_MAN,
+    OBJ_EVENT_GFX_ROCKER,
+    OBJ_EVENT_GFX_BALDING_MAN,
+    OBJ_EVENT_GFX_OLD_MAN_1,
+    OBJ_EVENT_GFX_OLD_MAN_2,
+    OBJ_EVENT_GFX_OLD_MAN_LYING_DOWN,
+    OBJ_EVENT_GFX_TUBER_M_WATER,
+    OBJ_EVENT_GFX_TUBER_M_LAND,
+    OBJ_EVENT_GFX_COOLTRAINER_M,
+    OBJ_EVENT_GFX_COOLTRAINER_F,
+    OBJ_EVENT_GFX_SWIMMER_M_WATER,
+    OBJ_EVENT_GFX_SWIMMER_F_WATER,
+    OBJ_EVENT_GFX_SWIMMER_M_LAND,
+    OBJ_EVENT_GFX_SWIMMER_F_LAND,
+    OBJ_EVENT_GFX_WORKER_M,
+    OBJ_EVENT_GFX_WORKER_F,
+    OBJ_EVENT_GFX_ROCKET_M,
+    OBJ_EVENT_GFX_ROCKET_F,
+    OBJ_EVENT_GFX_GBA_KID,
+    OBJ_EVENT_GFX_POKE_MANIAC_FRLG,
+    OBJ_EVENT_GFX_BIKER,
+    OBJ_EVENT_GFX_BLACK_BELT_FRLG,
+    OBJ_EVENT_GFX_SCIENTIST,
+    OBJ_EVENT_GFX_FISHER,
+    OBJ_EVENT_GFX_CHANNELER,
+    OBJ_EVENT_GFX_CHEF,
+    OBJ_EVENT_GFX_POLICEMAN,
+    OBJ_EVENT_GFX_CAPTAIN,
+    OBJ_EVENT_GFX_CABLE_CLUB_RECEPTIONIST,
+    OBJ_EVENT_GFX_UNION_ROOM_RECEPTIONIST,
+    OBJ_EVENT_GFX_CLERK,
+    OBJ_EVENT_GFX_MG_DELIVERYMAN,
+    OBJ_EVENT_GFX_TRAINER_TOWER_DUDE,
+    OBJ_EVENT_GFX_PROF_OAK,
+    OBJ_EVENT_GFX_BLUE,
+    OBJ_EVENT_GFX_BILL,
+    OBJ_EVENT_GFX_LANCE,
+    OBJ_EVENT_GFX_AGATHA,
+    OBJ_EVENT_GFX_DAISY,
+    OBJ_EVENT_GFX_LORELEI,
+    OBJ_EVENT_GFX_MR_FUJI,
+    OBJ_EVENT_GFX_BRUNO,
+    OBJ_EVENT_GFX_BROCK,
+    OBJ_EVENT_GFX_MISTY,
+    OBJ_EVENT_GFX_LT_SURGE,
+    OBJ_EVENT_GFX_ERIKA,
+    OBJ_EVENT_GFX_KOGA,
+    OBJ_EVENT_GFX_SABRINA,
+    OBJ_EVENT_GFX_BLAINE,
+    OBJ_EVENT_GFX_GIOVANNI,
+    OBJ_EVENT_GFX_CELIO,
+    OBJ_EVENT_GFX_TEACHY_TV_HOST,
+    OBJ_EVENT_GFX_GYM_GUY,
+    OBJ_EVENT_GFX_TOWN_MAP,
+    OBJ_EVENT_GFX_POKEDEX,
+    OBJ_EVENT_GFX_LITTLE_BOY_FRLG,
+    OBJ_EVENT_GFX_LITTLE_GIRL_FRLG,
+    OBJ_EVENT_GFX_YOUNGSTER_FRLG,
+    OBJ_EVENT_GFX_BUG_CATCHER_FRLG,
+    OBJ_EVENT_GFX_LASS_FRLG,
+    OBJ_EVENT_GFX_WOMAN_1_FRLG,
+    OBJ_EVENT_GFX_FAT_MAN_FRLG,
+    OBJ_EVENT_GFX_WOMAN_2_FRLG,
+    OBJ_EVENT_GFX_BEAUTY_FRLG,
+    OBJ_EVENT_GFX_WOMAN_3_FRLG,
+    OBJ_EVENT_GFX_OLD_WOMAN_FRLG,
+    OBJ_EVENT_GFX_CAMPER_FRLG,
+    OBJ_EVENT_GFX_PICNICKER_FRLG,
+    OBJ_EVENT_GFX_MOM_FRLG,
+    OBJ_EVENT_GFX_TUBER_F_FRLG,
+    OBJ_EVENT_GFX_HIKER_FRLG,
+    OBJ_EVENT_GFX_GENTLEMAN_FRLG,
+    OBJ_EVENT_GFX_SAILOR_FRLG,
+    OBJ_EVENT_GFX_NURSE_FRLG,
+    OBJ_EVENT_GFX_FOSSIL_FRLG,
+    OBJ_EVENT_GFX_RUBY,
+    OBJ_EVENT_GFX_SAPPHIRE,
+    OBJ_EVENT_GFX_OLD_AMBER,
+    OBJ_EVENT_GFX_GYM_SIGN,
+    OBJ_EVENT_GFX_SIGN,
+    OBJ_EVENT_GFX_TRAINER_TIPS,
+    OBJ_EVENT_GFX_CLIPBOARD,
+    OBJ_EVENT_GFX_METEORITE,
+    OBJ_EVENT_GFX_LAPRAS_DOLL,
+    OBJ_EVENT_GFX_SEAGALLOP,
+    OBJ_EVENT_GFX_SNORLAX,
+    OBJ_EVENT_GFX_SPEAROW,
+    OBJ_EVENT_GFX_CUBONE,
+    OBJ_EVENT_GFX_POLIWRATH,
+    OBJ_EVENT_GFX_CLEFAIRY,
+    OBJ_EVENT_GFX_PIDGEOT,
+    OBJ_EVENT_GFX_JIGGLYPUFF,
+    OBJ_EVENT_GFX_PIDGEY,
+    OBJ_EVENT_GFX_CHANSEY,
+    OBJ_EVENT_GFX_OMANYTE,
+    OBJ_EVENT_GFX_KANGASKHAN,
+    OBJ_EVENT_GFX_PIKACHU_FRLG,
+    OBJ_EVENT_GFX_PSYDUCK,
+    OBJ_EVENT_GFX_NIDORAN_F,
+    OBJ_EVENT_GFX_NIDORAN_M,
+    OBJ_EVENT_GFX_NIDORINO,
+    OBJ_EVENT_GFX_MEOWTH,
+    OBJ_EVENT_GFX_SEEL,
+    OBJ_EVENT_GFX_VOLTORB,
+    OBJ_EVENT_GFX_SLOWPOKE,
+    OBJ_EVENT_GFX_SLOWBRO,
+    OBJ_EVENT_GFX_MACHOP,
+    OBJ_EVENT_GFX_WIGGLYTUFF,
+    OBJ_EVENT_GFX_DODUO,
+    OBJ_EVENT_GFX_FEAROW,
+    OBJ_EVENT_GFX_MACHOKE,
+    OBJ_EVENT_GFX_LAPRAS,
+    OBJ_EVENT_GFX_ZAPDOS,
+    OBJ_EVENT_GFX_MOLTRES,
+    OBJ_EVENT_GFX_ARTICUNO,
+    OBJ_EVENT_GFX_MEWTWO,
+    OBJ_EVENT_GFX_ENTEI,
+    OBJ_EVENT_GFX_SUICUNE,
+    OBJ_EVENT_GFX_RAIKOU,
+    OBJ_EVENT_GFX_CELEBI,
+    OBJ_EVENT_GFX_KABUTO,
+    OBJ_EVENT_GFX_DEOXYS_D,
+    OBJ_EVENT_GFX_DEOXYS_A,
+    OBJ_EVENT_GFX_DEOXYS_N,
+    OBJ_EVENT_GFX_SS_ANNE,
+    OBJ_EVENT_GFX_PUSHABLE_BOULDER_FRLG,
+    OBJ_EVENT_GFX_CUTTABLE_TREE_FRLG,
+    OBJ_EVENT_GFX_BREAKABLE_ROCK_FRLG,
+    // Project Grounded: eigen overworld-sprites
+    OBJ_EVENT_GFX_COLRESS, // Project Grounded (sprite van PizzaSun)
+    OBJ_EVENT_GFX_ZINNIA, // Project Grounded
+    OBJ_EVENT_GFX_DEOXYS_TRIANGLE_RED, // Project Grounded: rode driehoek op de meteoriet (Deoxys-event)
+    OBJ_EVENT_GFX_MUSTARD, // Project Grounded (Jordi's sheet)
+    OBJ_EVENT_GFX_RAYQUAZA_SHINY_STILL, // Project Grounded: shiny Rayquaza (zelfde sprite, zwart palet)
+    OBJ_EVENT_GFX_N, // Project Grounded (sheet van Delgatron, 32x32)
+    OBJ_EVENT_GFX_GHETSIS, // Project Grounded (sheet van PurpleZaffre, 32x32)
+    OBJ_EVENT_GFX_BURGLAR, // Project Grounded (inbreker-event; FRLG Rocket omgekleurd)
+    OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_M, // Project Grounded (Neo Plasma-grunt (man), sheet ±2x verkleind)
+    OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_F, // Project Grounded (Neo Plasma-grunt (vrouw), sheet van PurpleZaffre, 32x32)
+    OBJ_EVENT_GFX_ZINZOLIN, // Project Grounded (Expert omgekleurd)
+    OBJ_EVENT_GFX_ROOD, // Project Grounded (Expert omgekleurd)
+    OBJ_EVENT_GFX_SHADOW_TRIAD, // Project Grounded (Black Belt omgekleurd)
+    OBJ_EVENT_GFX_ROCKET_GRUNT_M, // Project Grounded: Rocket-sidequest (FRLG)
+    OBJ_EVENT_GFX_ROCKET_GRUNT_F, // Project Grounded: Rocket-sidequest (FRLG)
+    OBJ_EVENT_GFX_PETREL, // Project Grounded: Rocket-sidequest (FRLG-grunt, paarse kuif)
+    OBJ_EVENT_GFX_GIANT_WAILORD, // Project Grounded: reuzen-Wailord op zee (192x96, tools/grounded/giant_wailord_draw.py)
+    OBJ_EVENT_GFX_PLASMA_FRIGATE, // Project Grounded: Plasma Frigate (S.S. Tidal-sprite, eigen palet; Nothing Island)
+    OBJ_EVENT_GFX_CYNTHIA, // Project Grounded: strandresort (sheet cynthia.png, 2x -> 1x)
+    OBJ_EVENT_GFX_TURD, // Project Grounded: drol op het strand van het resort (Birch)
+    OBJ_EVENT_GFX_STATUE_TAPU_KOKO, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+    OBJ_EVENT_GFX_STATUE_TAPU_LELE, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+    OBJ_EVENT_GFX_STATUE_TAPU_BULU, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+    OBJ_EVENT_GFX_STATUE_TAPU_FINI, // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
+    OBJ_EVENT_GFX_HOOPA_RING, // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
+    OBJ_EVENT_GFX_RUIN_SEAL, // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+    OBJ_EVENT_GFX_RUSTED_SWORD_OW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+    OBJ_EVENT_GFX_RUSTED_SHIELD_OW, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+    OBJ_EVENT_GFX_GIANT_LOG, // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+    NUM_OBJ_EVENT_GFX,
+};
+
+// FRLG equivalents
+// #define OBJ_EVENT_GFX_MEW OBJ_EVENT_GFX_NINJA_BOY
+// #define OBJ_EVENT_GFX_LUGIA OBJ_EVENT_GFX_NINJA_BOY
 
 // NOTE: The maximum amount of object events has been expanded from 255 to 65535.
 // Since dynamic graphics ids still require at least 16 free values, the actual limit
 // is 65519, but even considering follower Pokémon, this should be more than enough :)
-#define OBJ_EVENT_GFX_MUSTARD                         260 // Project Grounded (Jordi's sheet)
-#define OBJ_EVENT_GFX_RAYQUAZA_SHINY_STILL            261 // Project Grounded: shiny Rayquaza (zelfde sprite, zwart palet)
-#define OBJ_EVENT_GFX_N                               262 // Project Grounded (sheet van Delgatron, 32x32)
-#define OBJ_EVENT_GFX_GHETSIS                         263 // Project Grounded (sheet van PurpleZaffre, 32x32)
-#define OBJ_EVENT_GFX_BURGLAR                         264 // Project Grounded (inbreker-event; FRLG Rocket omgekleurd)
-#define OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_M            265 // Project Grounded (Neo Plasma-grunt (man), sheet ±2x verkleind)
-#define OBJ_EVENT_GFX_NEO_PLASMA_GRUNT_F            266 // Project Grounded (Neo Plasma-grunt (vrouw), sheet van PurpleZaffre, 32x32)
-#define OBJ_EVENT_GFX_ZINZOLIN                      267 // Project Grounded (Expert omgekleurd)
-#define OBJ_EVENT_GFX_ROOD                          268 // Project Grounded (Expert omgekleurd)
-#define OBJ_EVENT_GFX_SHADOW_TRIAD                  269 // Project Grounded (Black Belt omgekleurd)
-#define OBJ_EVENT_GFX_ROCKET_GRUNT_M                  270 // Project Grounded: Rocket-sidequest (FRLG)
-#define OBJ_EVENT_GFX_ROCKET_GRUNT_F                  271 // Project Grounded: Rocket-sidequest (FRLG)
-#define OBJ_EVENT_GFX_PETREL                          272 // Project Grounded: Rocket-sidequest (FRLG-grunt, paarse kuif)
-#define OBJ_EVENT_GFX_GIANT_WAILORD                   273 // Project Grounded: reuzen-Wailord op zee (192x96, tools/grounded/giant_wailord_draw.py)
-
-#define OBJ_EVENT_GFX_PLASMA_FRIGATE                  274 // Project Grounded: Plasma Frigate (S.S. Tidal-sprite, eigen palet; Nothing Island)
-
-#define OBJ_EVENT_GFX_CYNTHIA                         275 // Project Grounded: strandresort (sheet cynthia.png, 2x -> 1x)
-#define OBJ_EVENT_GFX_TURD                            276 // Project Grounded: drol op het strand van het resort (Birch)
-
-#define OBJ_EVENT_GFX_STATUE_TAPU_KOKO               277 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
-#define OBJ_EVENT_GFX_STATUE_TAPU_LELE               278 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
-#define OBJ_EVENT_GFX_STATUE_TAPU_BULU               279 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
-#define OBJ_EVENT_GFX_STATUE_TAPU_FINI               280 // Project Grounded: stenen Tapu-beelden (tools/grounded/statue_sprites.py)
-
-// 281-284: vrij (waren de Shy Guys van Yoshi's Island)
-
-#define OBJ_EVENT_GFX_HOOPA_RING                      285 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
-
-#define OBJ_EVENT_GFX_RUIN_SEAL                       286 // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
-
-#define OBJ_EVENT_GFX_RUSTED_SWORD_OW                   287 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
-#define OBJ_EVENT_GFX_RUSTED_SHIELD_OW                  288 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
-#define OBJ_EVENT_GFX_GIANT_LOG                         289 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
-
-#define NUM_OBJ_EVENT_GFX                        290
 
 
 // These are dynamic object gfx ids.
@@ -343,7 +492,7 @@
 #define OW_SHINY(x) ((x)->graphicsId & OBJ_EVENT_MON_SHINY)
 #define OW_FEMALE(x) ((x)->graphicsId & OBJ_EVENT_MON_FEMALE)
 
-// Whether Object Event is an OW pokemon
+// Whether Object Event is an OW Pokémon
 #define IS_OW_MON_OBJ(obj) ((obj)->graphicsId & OBJ_EVENT_MON)
 
 #define SHADOW_SIZE_S       0
@@ -373,30 +522,31 @@
 #define OBJ_KIND_NORMAL 0
 #define OBJ_KIND_CLONE  255 // Exclusive to FRLG
 
-// Special object event local ids
-// Used for link player OWs in CreateLinkPlayerSprite
-#define OBJ_EVENT_ID_DYNAMIC_BASE 0xF0
 
 // Each object event template gets an ID that can be used to refer to it in scripts and elsewhere.
 // This is referred to as the "local id" (and it's really just 1 + its index in the templates array).
 // There are a few special IDs reserved for objects that don't have templates in the map data -- one for the player
 // in regular offline play, five for linked players while playing Berry Blender, and one for an invisible object that
 // can be spawned for the camera to track instead of the player. Additionally, the value 0 is reserved as an "empty" indicator.
-#define LOCALID_NONE                         0
-#define LOCALID_CAMERA                     127
-#define LOCALID_BERRY_BLENDER_PLAYER_END   240 // This will use 5 (MAX_RFU_PLAYERS) IDs ending at 240, i.e. 236-240
-#define LOCALID_FOLLOWING_POKEMON          254
-#define LOCALID_PLAYER                     255
+#define LOCALID_NONE                              0
+#define LOCALID_CAMERA                          127
+#define LOCALID_BERRY_BLENDER_PLAYER_END        240 // This will use 5 (MAX_RFU_PLAYERS) IDs ending at 240, i.e. 236-240
+#define LOCALID_OW_ENCOUNTER_END                252 // This will use 4 (OWE_SPAWNS_MAX) IDs ending at 252, i.e. 249-252
+#define LOCALID_FOLLOWING_POKEMON               254
+#define LOCALID_PLAYER                          255
 #define LOCALID_BURGLAR_THIEF              200 // Project Grounded: gespawnd door src/burglar.c (geen kaartobject)
 #define LOCALID_BURGLAR_RESIDENT           201 // Project Grounded: bewoner van het beroofde huis
-#define OBJ_EVENT_ID_FOLLOWER              0xFE
-#define OBJ_EVENT_ID_NPC_FOLLOWER          0xFD
+#define OBJ_EVENT_ID_FOLLOWER                   0xFE
+#define OBJ_EVENT_ID_NPC_FOLLOWER               0xFD
+
+#define IS_LOCALID_GENERATED_OWE(localId)       (localId <= LOCALID_OW_ENCOUNTER_END \
+                                                 && localId > (LOCALID_OW_ENCOUNTER_END - OWE_SPAWNS_MAX))
 
 // Aliases for old names. "object event id" normally refers to an index into gObjectEvents, which these are not.
 // Used for link player OWs in CreateLinkPlayerSprite
-#define OBJ_EVENT_ID_DYNAMIC_BASE 0xF0
 #define OBJ_EVENT_ID_CAMERA LOCALID_CAMERA
 #define OBJ_EVENT_ID_PLAYER LOCALID_PLAYER
+#define OBJ_EVENT_ID_DYNAMIC_BASE 0xF0
 
 // Moved from src/event_object_movement.c so that they're accesible from other files.
 #define OBJ_EVENT_PAL_TAG_BRENDAN                 0x1100
@@ -436,33 +586,48 @@
 #define OBJ_EVENT_PAL_TAG_RS_BRENDAN              0x1122
 #define OBJ_EVENT_PAL_TAG_RS_MAY                  0x1123
 #define OBJ_EVENT_PAL_TAG_DYNAMIC                 0x1124
-#define OBJ_EVENT_PAL_TAG_BROCK                   0x1125 // Project Grounded
-#define OBJ_EVENT_PAL_TAG_COLRESS                 0x1126 // Project Grounded
-#define OBJ_EVENT_PAL_TAG_ZINNIA                  0x1127 // Project Grounded
-#define OBJ_EVENT_PAL_TAG_DEOXYS_TRIANGLE_RED     0x1128 // Project Grounded
-#define OBJ_EVENT_PAL_TAG_KANTO_NPC_B              0x1129 // Project Grounded (FRLG)
-#define OBJ_EVENT_PAL_TAG_KANTO_NPC_C              0x112A // Project Grounded (FRLG)
-#define OBJ_EVENT_PAL_TAG_KANTO_NPC_D              0x112B // Project Grounded (FRLG)
-#define OBJ_EVENT_PAL_TAG_MUSTARD                  0x112C // Project Grounded
-#define OBJ_EVENT_PAL_TAG_RAYQUAZA_SHINY           0x1130 // Project Grounded
-#define OBJ_EVENT_PAL_TAG_N                        0x112D // Project Grounded
-#define OBJ_EVENT_PAL_TAG_GHETSIS                  0x112E // Project Grounded
-#define OBJ_EVENT_PAL_TAG_BURGLAR                  0x1131 // Project Grounded
-#define OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_M       0x1132 // Project Grounded (Neo Plasma)
-#define OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_F       0x1133 // Project Grounded (Neo Plasma)
-#define OBJ_EVENT_PAL_TAG_ZINZOLIN                 0x1134 // Project Grounded (Neo Plasma)
-#define OBJ_EVENT_PAL_TAG_ROOD                     0x1135 // Project Grounded (Neo Plasma)
-#define OBJ_EVENT_PAL_TAG_SHADOW_TRIAD             0x1136 // Project Grounded (Neo Plasma)
-#define OBJ_EVENT_PAL_TAG_ROCKET                   0x1137 // Project Grounded: Rocket-sidequest
-#define OBJ_EVENT_PAL_TAG_PETREL                   0x1138 // Project Grounded: Rocket-sidequest
-#define OBJ_EVENT_PAL_TAG_GIANT_WAILORD            0x1139 // Project Grounded: reuzen-Wailord
-#define OBJ_EVENT_PAL_TAG_PLASMA_FRIGATE           0x113A // Project Grounded: Plasma Frigate
-#define OBJ_EVENT_PAL_TAG_CYNTHIA                  0x113B // Project Grounded: strandresort
-#define OBJ_EVENT_PAL_TAG_TURD                     0x113C // Project Grounded: strandresort (drol)
-#define OBJ_EVENT_PAL_TAG_STONE_STATUE             0x113D // Project Grounded: stenen beelden (Tapu-heiligdom)
-#define OBJ_EVENT_PAL_TAG_RUIN_SEAL               0x1143 // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
-#define OBJ_EVENT_PAL_TAG_MEGA_FOREST             0x1144 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
-#define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x1142 // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
+#define OBJ_EVENT_PAL_TAG_PLAYER_RED              0x1125
+#define OBJ_EVENT_PAL_TAG_PLAYER_RED_REFLECTION   0x1126
+#define OBJ_EVENT_PAL_TAG_PLAYER_GREEN            0x1127
+#define OBJ_EVENT_PAL_TAG_PLAYER_GREEN_REFLECTION 0x1128
+#define OBJ_EVENT_PAL_TAG_NPC_BLUE                0x1129
+#define OBJ_EVENT_PAL_TAG_NPC_PINK                0x112A
+#define OBJ_EVENT_PAL_TAG_NPC_GREEN               0x112B
+#define OBJ_EVENT_PAL_TAG_NPC_WHITE               0x112C
+#define OBJ_EVENT_PAL_TAG_NPC_BLUE_REFLECTION     0x112D
+#define OBJ_EVENT_PAL_TAG_NPC_PINK_REFLECTION     0x112E
+#define OBJ_EVENT_PAL_TAG_NPC_GREEN_REFLECTION    0x112F
+#define OBJ_EVENT_PAL_TAG_NPC_WHITE_REFLECTION    0x1130
+#define OBJ_EVENT_PAL_TAG_METEORITE               0x1131
+#define OBJ_EVENT_PAL_TAG_SEAGALLOP               0x1132
+#define OBJ_EVENT_PAL_TAG_SS_ANNE                 0x1133
+#define OBJ_EVENT_PAL_TAG_BROCK                   0x1180 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_COLRESS                 0x1181 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_ZINNIA                  0x1182 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_DEOXYS_TRIANGLE_RED     0x1183 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_KANTO_NPC_B              0x1184 // Project Grounded (FRLG)
+#define OBJ_EVENT_PAL_TAG_KANTO_NPC_C              0x1185 // Project Grounded (FRLG)
+#define OBJ_EVENT_PAL_TAG_KANTO_NPC_D              0x1186 // Project Grounded (FRLG)
+#define OBJ_EVENT_PAL_TAG_MUSTARD                  0x1187 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_RAYQUAZA_SHINY           0x1188 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_N                        0x1189 // Project Grounded
+#define OBJ_EVENT_PAL_TAG_GHETSIS                  0x118A // Project Grounded
+#define OBJ_EVENT_PAL_TAG_BURGLAR                  0x118B // Project Grounded
+#define OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_M       0x118C // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_NEO_PLASMA_GRUNT_F       0x118D // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_ZINZOLIN                 0x118E // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_ROOD                     0x118F // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_SHADOW_TRIAD             0x1190 // Project Grounded (Neo Plasma)
+#define OBJ_EVENT_PAL_TAG_ROCKET                   0x1191 // Project Grounded: Rocket-sidequest
+#define OBJ_EVENT_PAL_TAG_PETREL                   0x1192 // Project Grounded: Rocket-sidequest
+#define OBJ_EVENT_PAL_TAG_GIANT_WAILORD            0x1193 // Project Grounded: reuzen-Wailord
+#define OBJ_EVENT_PAL_TAG_PLASMA_FRIGATE           0x1194 // Project Grounded: Plasma Frigate
+#define OBJ_EVENT_PAL_TAG_CYNTHIA                  0x1195 // Project Grounded: strandresort
+#define OBJ_EVENT_PAL_TAG_TURD                     0x1196 // Project Grounded: strandresort (drol)
+#define OBJ_EVENT_PAL_TAG_STONE_STATUE             0x1197 // Project Grounded: stenen beelden (Tapu-heiligdom)
+#define OBJ_EVENT_PAL_TAG_RUIN_SEAL               0x1198 // Project Grounded: zegel voor de Beasts of Ruin-schrijnen (tools/grounded/ruin_seal_sprite.py)
+#define OBJ_EVENT_PAL_TAG_MEGA_FOREST             0x1199 // Project Grounded: Mega Forest (tools/grounded/mega_forest_sprites.py)
+#define OBJ_EVENT_PAL_TAG_HOOPA_RING              0x119A // Project Grounded: Hoopa-ring (Hoopa-quest, tools/grounded/hoopa_ring_sprite.py)
 
 #if OW_FOLLOWERS_POKEBALLS
 // Vanilla

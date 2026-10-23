@@ -21,17 +21,17 @@ bool8 MonHasMail(struct Pokemon *mon)
     return FALSE; // Een Pokemon kan nooit mail hebben als de teller op 0 staat
 }
 
-u8 GiveMailToMonByItemId(struct Pokemon *mon, u16 itemId)
+u8 GiveMailToMonByItemId(struct Pokemon *mon, enum Item itemId)
 {
     return MAIL_NONE;
 }
 
-u16 SpeciesToMailSpecies(u16 species, u32 personality)
+u16 SpeciesToMailSpecies(enum Species species, u32 personality)
 {
     return species;
 }
 
-u16 MailSpeciesToSpecies(u16 mailSpecies, u16 *buffer)
+enum Species MailSpeciesToSpecies(u16 mailSpecies, u16 *buffer)
 {
     return mailSpecies;
 }
@@ -52,7 +52,7 @@ void TakeMailFromMon(struct Pokemon *mon)
         SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
 }
 
-void ClearMailItemId(u8 mailId)
+u8 SaveMailToPC(struct Mail *mail)
 {
     // Doet niets
 }
@@ -62,7 +62,25 @@ u8 TakeMailFromMonAndSave(struct Pokemon *mon)
     return MAIL_NONE;
 }
 
-bool8 ItemIsMail(u16 itemId)
+u8 TakeMailFromMonAndSave(struct Pokemon *mon)
+{
+    enum Item heldItem;
+    u32 mailId, newMailId;
+
+    mailId = GetMonData(mon, MON_DATA_MAIL);
+    newMailId = SaveMailToPC(&gSaveBlock1Ptr->mail[mailId]);
+    if (newMailId != MAIL_NONE)
+    {
+        gSaveBlock1Ptr->mail[mailId].itemId = ITEM_NONE;
+        mailId = MAIL_NONE;
+        SetMonData(mon, MON_DATA_MAIL, &mailId);
+        heldItem = ITEM_NONE;
+        SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
+    }
+    return newMailId;
+}
+
+bool8 ItemIsMail(enum Item itemId)
 {
     // We houden dit op FALSE zodat de game mail-items als gewone items behandelt (of negeert)
     return FALSE; 

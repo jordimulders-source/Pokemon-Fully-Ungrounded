@@ -2,6 +2,7 @@
 #define GUARD_CONSTANTS_OPPONENTS_H
 
 #include "constants/battle_partner.h"
+#include "constants/opponents_frlg.h"
 
 #define TRAINER_NONE                          0
 #define TRAINER_SAWYER_1                      1
@@ -1143,8 +1144,16 @@
 #define TRAINER_SICKBLIK_MOTEL              1184 // Project Grounded: SickBlik chillt in het Cove Lily Motel (Lilycove), ja/nee-gevecht
 #define TRAINER_SICKBLIK_DEV                1185 // Project Grounded: SickBlik als developer op bugjacht (dagrotatie Mauville/Fortree/Lilycove/Pacifidlog)
 
-#define TRAINERS_COUNT                      1200
-#define MAX_TRAINERS_COUNT                  1200
+#define TRAINERS_COUNT_EMERALD                      1200
+#define MAX_TRAINERS_COUNT_EMERALD                  1200
+
+#if IS_FRLG
+#define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG
+#define MAX_TRAINERS_COUNT                  MAX_TRAINERS_COUNT_FRLG
+#else
+#define TRAINERS_COUNT                      TRAINERS_COUNT_EMERALD
+#define MAX_TRAINERS_COUNT                  MAX_TRAINERS_COUNT_EMERALD
+#endif
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

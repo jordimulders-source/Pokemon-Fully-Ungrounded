@@ -3,7 +3,7 @@
 
 SINGLE_BATTLE_TEST("Comatose prevents status-inducing moves")
 {
-    u32 move;
+    enum Move move;
 
     PARAMETRIZE { move = MOVE_TOXIC; }
     PARAMETRIZE { move = MOVE_POISONPOWDER; }
@@ -26,7 +26,7 @@ SINGLE_BATTLE_TEST("Comatose prevents status-inducing moves")
 
 SINGLE_BATTLE_TEST("Comatose may be suppressed if Pokémon transformed into a Pokémon with Comatose ability and was under the effects of Gastro Acid")
 {
-    u32 move;
+    enum Move move;
 
     PARAMETRIZE { move = MOVE_TOXIC; }
     PARAMETRIZE { move = MOVE_POISONPOWDER; }
@@ -110,7 +110,7 @@ SINGLE_BATTLE_TEST("Comatose makes Rest fail")
 SINGLE_BATTLE_TEST("Comatose isn't affected by Mold Breaker, Turboblaze or Teravolt")
 {
     enum Ability ability;
-    u16 species;
+    enum Species species;
 
     PARAMETRIZE { ability = ABILITY_MOLD_BREAKER; species = SPECIES_PINSIR; }
     PARAMETRIZE { ability = ABILITY_TURBOBLAZE; species = SPECIES_RESHIRAM; }
@@ -153,7 +153,7 @@ SINGLE_BATTLE_TEST("Comatose isn't affected by Poison Touch + Sunsteel Strike")
 WILD_BATTLE_TEST("Comatose boosts Dream Ball's multiplier")
 {
     enum Ability ability;
-    u16 species;
+    enum Species species;
     bool32 shouldCatch;
     const u16 rng = 50000;
 
@@ -163,6 +163,7 @@ WILD_BATTLE_TEST("Comatose boosts Dream Ball's multiplier")
     GIVEN {
         ASSUME(B_DREAM_BALL_MODIFIER >= GEN_8);
         ASSUME(gSpeciesInfo[species].catchRate == 45);
+        WITH_CONFIG(B_MISSING_BADGE_CATCH_MALUS, GEN_7);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(species) { Ability(ability); MaxHP(100); HP(1); }
     } WHEN {

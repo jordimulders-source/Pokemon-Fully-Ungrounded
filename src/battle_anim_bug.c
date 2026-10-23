@@ -44,8 +44,6 @@ const struct SpriteTemplate gMegahornHornSpriteTemplate =
     .tileTag = ANIM_TAG_HORN_HIT_2,
     .paletteTag = ANIM_TAG_HORN_HIT_2,
     .oam = &gOamData_AffineDouble_ObjNormal_32x16,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
     .affineAnims = sAffineAnims_MegahornHorn,
     .callback = AnimMegahornHorn,
 };
@@ -80,8 +78,6 @@ const struct SpriteTemplate gLeechLifeNeedleSpriteTemplate =
     .tileTag = ANIM_TAG_NEEDLE,
     .paletteTag = ANIM_TAG_NEEDLE,
     .oam = &gOamData_AffineNormal_ObjNormal_16x16,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
     .affineAnims = sAffineAnims_LeechLifeNeedle,
     .callback = AnimLeechLifeNeedle,
 };
@@ -91,9 +87,6 @@ const struct SpriteTemplate gWebThreadSpriteTemplate =
     .tileTag = ANIM_TAG_WEB_THREAD,
     .paletteTag = ANIM_TAG_WEB_THREAD,
     .oam = &gOamData_AffineOff_ObjNormal_8x8,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimTranslateWebThread,
 };
 
@@ -102,9 +95,6 @@ const struct SpriteTemplate gStringWrapSpriteTemplate =
     .tileTag = ANIM_TAG_STRING,
     .paletteTag = ANIM_TAG_STRING,
     .oam = &gOamData_AffineOff_ObjNormal_64x32,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimStringWrap,
 };
 
@@ -125,8 +115,6 @@ const struct SpriteTemplate gSpiderWebSpriteTemplate =
     .tileTag = ANIM_TAG_SPIDER_WEB,
     .paletteTag = ANIM_TAG_SPIDER_WEB,
     .oam = &gOamData_AffineDouble_ObjBlend_64x64,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
     .affineAnims = sAffineAnims_SpiderWeb,
     .callback = AnimSpiderWeb,
 };
@@ -136,9 +124,6 @@ const struct SpriteTemplate gLinearStingerSpriteTemplate =
     .tileTag = ANIM_TAG_NEEDLE,
     .paletteTag = ANIM_TAG_NEEDLE,
     .oam = &gOamData_AffineNormal_ObjNormal_16x16,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimTranslateStinger,
 };
 
@@ -147,9 +132,6 @@ const struct SpriteTemplate gPinMissileSpriteTemplate =
     .tileTag = ANIM_TAG_NEEDLE,
     .paletteTag = ANIM_TAG_NEEDLE,
     .oam = &gOamData_AffineNormal_ObjNormal_16x16,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimMissileArc,
 };
 
@@ -158,9 +140,6 @@ const struct SpriteTemplate gIcicleSpearSpriteTemplate =
     .tileTag = ANIM_TAG_ICICLE_SPEAR,
     .paletteTag = ANIM_TAG_ICICLE_SPEAR,
     .oam = &gOamData_AffineNormal_ObjNormal_32x32,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
-    .affineAnims = gDummySpriteAffineAnimTable,
     .callback = AnimMissileArc,
 };
 
@@ -185,8 +164,6 @@ const struct SpriteTemplate gTailGlowOrbSpriteTemplate =
     .tileTag = ANIM_TAG_CIRCLE_OF_LIGHT,
     .paletteTag = ANIM_TAG_CIRCLE_OF_LIGHT,
     .oam = &gOamData_AffineNormal_ObjBlend_64x64,
-    .anims = gDummySpriteAnimTable,
-    .images = NULL,
     .affineAnims = sAffineAnims_TailGlowOrb,
     .callback = AnimTailGlowOrb,
 };
@@ -406,7 +383,7 @@ void AnimTranslateStinger(struct Sprite *sprite)
     lVarX = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_X_2) + cmd->targetX;
     lVarY = GetBattlerSpriteCoord(gBattleAnimTarget, BATTLER_COORD_Y_PIC_OFFSET) + cmd->targetY;
     rot = ArcTan2Neg(lVarX - sprite->x, lVarY - sprite->y);
-    rot += 0xC000;
+    rot -= 0x4000;
     TrySetSpriteRotScale(sprite, FALSE, 0x100, 0x100, rot);
 
     sprite->data[0] = cmd->duration;
@@ -448,28 +425,23 @@ void AnimMissileArc_Step(struct Sprite *sprite)
     else
     {
         s16 tempData[8];
-        s16 *data = sprite->data;
-        u16 x1 = sprite->x;
-        s16 x2 = sprite->x2;
-        u16 y1 = sprite->y;
-        s16 y2 = sprite->y2;
+        s16 x2, y2;
         int i;
 
         for (i = 0; i < 8; i++)
-            tempData[i] = data[i];
+            tempData[i] = sprite->data[i];
 
-        x2 += x1;
-        y2 += y1;
+        x2 = sprite->x + sprite->x2;
+        y2 = sprite->y + sprite->y2;
 
         if (!TranslateAnimHorizontalArc(sprite))
         {
-            u16 rotation = ArcTan2Neg(sprite->x + sprite->x2 - x2,
-                                  sprite->y + sprite->y2 - y2);
-            rotation += 0xC000;
+            u16 rotation = ArcTan2Neg(sprite->x + sprite->x2 - x2, sprite->y + sprite->y2 - y2);
+            rotation -= 0x4000;
             TrySetSpriteRotScale(sprite, FALSE, 0x100, 0x100, rotation);
 
             for (i = 0; i < 8; i++)
-                data[i] = tempData[i];
+                sprite->data[i] = tempData[i];
         }
     }
 }

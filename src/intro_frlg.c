@@ -246,7 +246,6 @@ static void SpriteCB_NidorinoRecoil(struct Sprite *sprite);
 static void SpriteCB_NidorinoHop(struct Sprite *sprite);
 static void SpriteCB_NidorinoAttack(struct Sprite *sprite);
 
-extern const u32 gMultiBootProgram_PokemonColosseum_Start[];
 extern const u32 gMultiBootProgram_PokemonColosseum_End[];
 
 static const u16 sCopyright_Pal[] = INCGFX_U16("graphics/intro_frlg/copyright.pal", ".gbapal");
@@ -974,11 +973,7 @@ bool8 SetUpCopyrightScreenFrlg(void)
             {
                 if (sGcmb.gcmb_field_2 == 2)
                 {
-                    if (*(u32 *)(EWRAM_START + 0xAC) == COLOSSEUM_GAME_CODE)
-                    {
-                        CpuCopy16(gMultiBootProgram_PokemonColosseum_Start, (void *)EWRAM_START, 0x28000);
-                        *(u32 *)(EWRAM_START + 0xAC) = COLOSSEUM_GAME_CODE;
-                    }
+                    // Project Grounded: geen Colosseum-multiboot-image meer in de ROM (zie intro.c)
                     GameCubeMultiBoot_ExecuteProgram(&sGcmb);
                 }
             }

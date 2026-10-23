@@ -96,7 +96,7 @@ SINGLE_BATTLE_TEST("Weather Report sets the weather the target is weakest to and
 DOUBLE_BATTLE_TEST("Venom Dust poisons both opponents and lowers their Speed")
 {
     GIVEN {
-        ASSUME(GetMoveTarget(MOVE_VENOM_DUST) == MOVE_TARGET_BOTH);
+        ASSUME(GetMoveTarget(MOVE_VENOM_DUST) == TARGET_BOTH);
         PLAYER(SPECIES_DUSTOX);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);

@@ -26,7 +26,12 @@ TEST("Project Grounded signature moves round 3 have the agreed data")
     EXPECT_EQ(GetMovePriority(MOVE_IPPON), -6);
     EXPECT(MoveAlwaysCrits(MOVE_IPPON));
     EXPECT(IsBitingMove(MOVE_FLYTRAP));
-    EXPECT_EQ(GetMoveAbsorbPercentage(MOVE_FLYTRAP), 50);
+    EXPECT(MoveHasAdditionalEffect(MOVE_FLYTRAP, MOVE_EFFECT_ABSORB));
+    for (u32 i = 0; i < GetMoveAdditionalEffectCount(MOVE_FLYTRAP); i++)
+    {
+        if (GetMoveAdditionalEffectById(MOVE_FLYTRAP, i)->moveEffect == MOVE_EFFECT_ABSORB)
+            EXPECT_EQ(GetMoveAdditionalEffectById(MOVE_FLYTRAP, i)->argument.absorbPercentage, 50);
+    }
     EXPECT_EQ(GetMovePower(MOVE_COLOSSAL_CLAW), 150);
     EXPECT_EQ(GetMoveAccuracy(MOVE_COLOSSAL_CLAW), 85);
     EXPECT(!MoveIsAffectedBySheerForce(MOVE_COLOSSAL_CLAW));

@@ -32,7 +32,7 @@ TEST("Project Grounded moves round 9 have the agreed data")
     EXPECT_EQ(GetMoveCategory(MOVE_UPDRAFT), DAMAGE_CATEGORY_SPECIAL);
     EXPECT(IsWindMove(MOVE_UPDRAFT));
 
-    EXPECT_EQ(GetMoveEffect(MOVE_COUNTERFEIT_BALL), EFFECT_MULTI_HIT);
+    EXPECT(IsMultiHitMove(MOVE_COUNTERFEIT_BALL));
     EXPECT_EQ(GetMovePower(MOVE_COUNTERFEIT_BALL), 25);
     EXPECT(IsBallisticMove(MOVE_COUNTERFEIT_BALL));
 

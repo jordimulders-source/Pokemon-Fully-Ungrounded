@@ -5,7 +5,7 @@
 // en elke Pokémon die het veld op komt (beide kanten) krijgt -1 Atk en -1 SpAtk.
 ASSUMPTIONS
 {
-    ASSUME(GetMoveEffect(MOVE_IMPLOSION) == EFFECT_EXPLOSION);
+    ASSUME(IsExplosionMove(MOVE_IMPLOSION));
     ASSUME(GetMoveType(MOVE_IMPLOSION) == TYPE_DARK);
     ASSUME(GetMoveCategory(MOVE_IMPLOSION) == DAMAGE_CATEGORY_SPECIAL);
 }

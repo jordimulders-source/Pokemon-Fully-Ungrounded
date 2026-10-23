@@ -98,7 +98,7 @@ SINGLE_BATTLE_TEST("Steel Trap binds the target and lowers its Speed")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_STEEL_TRAP, MOVE_EFFECT_WRAP));
-        ASSUME(MoveHasAdditionalEffect(MOVE_STEEL_TRAP, MOVE_EFFECT_SPD_MINUS_1));
+        ASSUME(MoveHasAdditionalEffect(MOVE_STEEL_TRAP, MOVE_EFFECT_STAT_MINUS));
         PLAYER(SPECIES_STUNFISK_GALAR);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -157,7 +157,7 @@ DOUBLE_BATTLE_TEST("Pack Howl raises the Attack of the user and its partner in a
 DOUBLE_BATTLE_TEST("Whale Song hits both opponents and the user's partner")
 {
     GIVEN {
-        ASSUME(GetMoveTarget(MOVE_WHALE_SONG) == MOVE_TARGET_FOES_AND_ALLY);
+        ASSUME(GetMoveTarget(MOVE_WHALE_SONG) == TARGET_FOES_AND_ALLY);
         ASSUME(IsSoundMove(MOVE_WHALE_SONG));
         PLAYER(SPECIES_WAILORD);
         PLAYER(SPECIES_WOBBUFFET);

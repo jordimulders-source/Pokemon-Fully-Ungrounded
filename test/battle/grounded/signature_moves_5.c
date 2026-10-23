@@ -305,7 +305,7 @@ SINGLE_BATTLE_TEST("Olive Oil heals half and sets Grassy Terrain")
         HP_BAR(player, damage: -100);
         MESSAGE("Grass grew to cover the battlefield!");
     } THEN {
-        EXPECT(gFieldStatuses & STATUS_FIELD_GRASSY_TERRAIN);
+        EXPECT(gFieldTimers.terrain == B_TERRAIN_GRASSY);
     }
 }
 

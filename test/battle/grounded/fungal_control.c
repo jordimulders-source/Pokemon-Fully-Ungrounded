@@ -32,7 +32,7 @@ SINGLE_BATTLE_TEST("Fungal Control forces the target's chosen move for 3 turns")
 SINGLE_BATTLE_TEST("Fungal Control prefers a self-destructive move")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);
+        ASSUME(IsExplosionMove(MOVE_EXPLOSION));
         PLAYER(SPECIES_WOBBUFFET) { Speed(20); Moves(MOVE_FUNGAL_CONTROL, MOVE_CELEBRATE); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(10); Moves(MOVE_TACKLE, MOVE_CELEBRATE, MOVE_EXPLOSION); }
     } WHEN {
@@ -61,7 +61,7 @@ SINGLE_BATTLE_TEST("Fungal Control fails on a target that is already controlled"
 SINGLE_BATTLE_TEST("Fungal Control overrides an ongoing Uproar")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_UPROAR) == EFFECT_UPROAR);
+        ASSUME(MoveHasAdditionalEffect(MOVE_UPROAR, MOVE_EFFECT_UPROAR));
         PLAYER(SPECIES_WOBBUFFET) { Speed(10); Moves(MOVE_FUNGAL_CONTROL, MOVE_CELEBRATE); }
         OPPONENT(SPECIES_WOBBUFFET) { Speed(20); Moves(MOVE_UPROAR, MOVE_CELEBRATE); }
     } WHEN {

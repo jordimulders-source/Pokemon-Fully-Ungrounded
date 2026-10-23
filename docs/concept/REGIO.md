@@ -53,6 +53,6 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 ## Regiokaart
 - **Variant 2** (Jordi koos richting 1, 2, 3 en 5): `regiokaart2_namen.png` (`tools/concept/regiokaart2.py`). Continent gedraaid en liggend zoals Hoenn/Kyushu (Andes boven, Atlantische kust onder, Patagonië links, Caribisch gebied rechts), Amazonebekken als binnenzee met verdronken woud (het oude Pebas-meer), grilliger Atlantische kust met baaien en eilanden.
 - **Landmarks:** reuzentepui, vulkaaneiland in de Titicaca, Nazca-kolibrie op de kaart.
-- **Variant 3 (voorstel, 23 okt):** `regiokaart3_namen.png` (`tools/concept/regiokaart3.py`): variant 2 met de besluiten van 22 okt erop (gyms, hoofdpad, trein Uyuni–Oruro–La Paz, Inca Trail, groter Zuid-Bolivia, vaste plekken, legenda). Wat er nieuw is en de twijfels: `regiokaart3.md`. Variant 2 blijft de basis tot Jordi kiest.
+- **Variant 3 (gekozen, Jordi 23 okt: "daar ben ik wel tevreden over"):** `regiokaart3_namen.png` (`tools/concept/regiokaart3.py`): variant 2 met de besluiten van 22 okt erop (gyms, hoofdpad, trein Uyuni–Oruro–La Paz, Inca Trail, groter Zuid-Bolivia, vaste plekken, legenda). Wat er nieuw is en de twijfels: `regiokaart3.md`.
 - **Variant 1** (staand, schets 3): `regiokaart_namen.png` (`tools/concept/regiokaart.py`).
 - Stijl: Hoenn-kleuren en -iconen (uit `graphics/pokenav/region_map`), vergelijking in `regiokaart_vs_hoenn.png`.

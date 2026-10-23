@@ -33,33 +33,17 @@ EWRAM_DATA u8 gEncounteredRoamerIndex = 0;
 //         map in the location table there is not a location set that starts with
 //         that map then the roamer will be significantly less likely to move away
 //         from that map when it lands there.
+// Fully Ungrounded: nog geen routes in de nieuwe regio, dus de tabel is leeg (alleen de afsluitende rij) en een
+// roamer verplaatst zich niet. Vul hier de routes van de nieuwe regio in (zelfde kaartgroep, zie ROAMER_MAP_GROUP).
 static const u8 sRoamerLocations[][6] =
 {
-    { MAP_NUM(MAP_ROUTE110), MAP_NUM(MAP_ROUTE111), MAP_NUM(MAP_ROUTE117), MAP_NUM(MAP_ROUTE118), MAP_NUM(MAP_ROUTE134), ___ },
-    { MAP_NUM(MAP_ROUTE111), MAP_NUM(MAP_ROUTE110), MAP_NUM(MAP_ROUTE117), MAP_NUM(MAP_ROUTE118), ___, ___ },
-    { MAP_NUM(MAP_ROUTE117), MAP_NUM(MAP_ROUTE111), MAP_NUM(MAP_ROUTE110), MAP_NUM(MAP_ROUTE118), ___, ___ },
-    { MAP_NUM(MAP_ROUTE118), MAP_NUM(MAP_ROUTE117), MAP_NUM(MAP_ROUTE110), MAP_NUM(MAP_ROUTE111), MAP_NUM(MAP_ROUTE119), MAP_NUM(MAP_ROUTE123) },
-    { MAP_NUM(MAP_ROUTE119), MAP_NUM(MAP_ROUTE118), MAP_NUM(MAP_ROUTE120), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE120), MAP_NUM(MAP_ROUTE119), MAP_NUM(MAP_ROUTE121), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE121), MAP_NUM(MAP_ROUTE120), MAP_NUM(MAP_ROUTE122), MAP_NUM(MAP_ROUTE123), ___, ___ },
-    { MAP_NUM(MAP_ROUTE122), MAP_NUM(MAP_ROUTE121), MAP_NUM(MAP_ROUTE123), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE123), MAP_NUM(MAP_ROUTE122), MAP_NUM(MAP_ROUTE118), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE124), MAP_NUM(MAP_ROUTE121), MAP_NUM(MAP_ROUTE125), MAP_NUM(MAP_ROUTE126), ___, ___ },
-    { MAP_NUM(MAP_ROUTE125), MAP_NUM(MAP_ROUTE124), MAP_NUM(MAP_ROUTE127), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE126), MAP_NUM(MAP_ROUTE124), MAP_NUM(MAP_ROUTE127), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE127), MAP_NUM(MAP_ROUTE125), MAP_NUM(MAP_ROUTE126), MAP_NUM(MAP_ROUTE128), ___, ___ },
-    { MAP_NUM(MAP_ROUTE128), MAP_NUM(MAP_ROUTE127), MAP_NUM(MAP_ROUTE129), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE129), MAP_NUM(MAP_ROUTE128), MAP_NUM(MAP_ROUTE130), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE130), MAP_NUM(MAP_ROUTE129), MAP_NUM(MAP_ROUTE131), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE131), MAP_NUM(MAP_ROUTE130), MAP_NUM(MAP_ROUTE132), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE132), MAP_NUM(MAP_ROUTE131), MAP_NUM(MAP_ROUTE133), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE133), MAP_NUM(MAP_ROUTE132), MAP_NUM(MAP_ROUTE134), ___, ___, ___ },
-    { MAP_NUM(MAP_ROUTE134), MAP_NUM(MAP_ROUTE133), MAP_NUM(MAP_ROUTE110), ___, ___, ___ },
     { ___, ___, ___, ___, ___, ___ },
 };
 
 #undef ___
+// Fully Ungrounded: met een lege tabel is NUM_LOCATION_SETS 0; de modulo gebruikt dan 1 (geen deling door nul).
 #define NUM_LOCATION_SETS (ARRAY_COUNT(sRoamerLocations) - 1)
+#define NUM_LOCATION_SETS_NONZERO (NUM_LOCATION_SETS ? NUM_LOCATION_SETS : 1)
 #define NUM_LOCATIONS_PER_SET (ARRAY_COUNT(sRoamerLocations[0]))
 
 void DeactivateAllRoamers(void)
@@ -116,7 +100,7 @@ static void CreateInitialRoamerMon(u8 index, u16 species, u8 level)
     ROAMER(index)->shiny = GetMonData(&gEnemyParty[0], MON_DATA_IS_SHINY);
     ROAMER(index)->active = TRUE;
     sRoamerLocation[index][MAP_GRP] = ROAMER_MAP_GROUP;
-    sRoamerLocation[index][MAP_NUM] = sRoamerLocations[Random() % NUM_LOCATION_SETS][0];
+    sRoamerLocation[index][MAP_NUM] = sRoamerLocations[Random() % NUM_LOCATION_SETS_NONZERO][0];
 }
 
 static u8 GetFirstInactiveRoamerIndex(void)
@@ -176,7 +160,7 @@ void RoamerMoveToOtherLocationSet(u32 roamerIndex)
 {
     u8 mapNum = 0;
 
-    if (!ROAMER(roamerIndex)->active)
+    if (!ROAMER(roamerIndex)->active || NUM_LOCATION_SETS == 0)
         return;
 
     sRoamerLocation[roamerIndex][MAP_GRP] = ROAMER_MAP_GROUP;
@@ -185,7 +169,7 @@ void RoamerMoveToOtherLocationSet(u32 roamerIndex)
     // different from the roamer's current map
     do
     {
-        mapNum = sRoamerLocations[Random() % NUM_LOCATION_SETS][0];
+        mapNum = sRoamerLocations[Random() % NUM_LOCATION_SETS_NONZERO][0];
         if (sRoamerLocation[roamerIndex][MAP_NUM] != mapNum)
         {
             sRoamerLocation[roamerIndex][MAP_NUM] = mapNum;

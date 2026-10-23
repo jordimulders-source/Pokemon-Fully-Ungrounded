@@ -3,6 +3,92 @@
 Opgesteld 22 okt, na het opruimen van de intro's. Doel: alleen het skelet blijft over, en na elke stap bouwt het
 (`make -j4 2>&1 | grep -i error` leeg) en start een nieuw spel.
 
+## Stand (23 okt): stap 7 gedaan, stap 8 wacht op Jordi
+Uitgevoerd door de stap 7-agent, één commit per systeem (`git log --grep "Stap 7"`). De overgangslaag kromp van
+233 kaarten / 21 layouts / 23 heal locations / 76 local ids / 651 stubs naar **64 / 16 / 0 / 35 / 592**, en alles wat
+er nog in staat hoort bij stap 8 (zie de inventaris hieronder). ROM: vóór 18,55 MB vrij (`__rom_end` 0x08D71FE4), na
+18,62 MB vrij (0x08D61CCC), dus ±65 KB erbij.
+
+Per systeem (generiek mechaniek = blijft zonder Hoenn-kaart; Hoenn-plek = weg):
+- **Pokémon Center herkennen** (`field_specials.c` `InPokemonCenter`/`UsedPokemonCenterWarp`, `save_location.c`): op
+  de layout (`LAYOUT_POKEMON_CENTER_1F`/`2F`) i.p.v. een kaartlijst; nieuwe steden doen vanzelf mee. Saven in het
+  Pokémon Center en opnieuw laden brengt je terug in het Pokémon Center (getest).
+- **`field_specials.c` + `data/specials.inc`:** weg (functie + special + scriptaanroep): abnormaal weer (Kyogre/
+  Groudon-routes, `abnormal_weather.inc`), SS Tidal (stappen, positie, patrijspoort), kabelbaan, Rusturf-tunnel (ook uit
+  Rock Smash), warenhuis (verdiepingen, liftmenu), Meteor Space, Dewford-respawn, Mauville-/Petalburg-gympuzzels,
+  loterijcomputer, Trick House-nugget, Abandoned Ship-sleutels, Black Glasses, weer Route 119/123, Pacifidlog-TM,
+  Glass Workshop, Wally-Zigzagoon, vleugelgeluid; de oproepen van Wally/Scott/Roxanne/rivaal-Rayquaza in
+  `field_control_avatar.c`; de truck-intro en patrijspoort (`field_special_scene.c` helemaal). Winkelbediende =
+  `LOCALID_START_TOWN_MART_CLERK` (vanilla: altijd local id 1).
+- **`region_map.c`:** Fly-bestemmingen alleen StartTown (`sMapHealLocations`); de Hoenn-steden blijven als grijze
+  plaatshouder op de kaart (geen bestemming). Fly vanuit de regiokaart (R, na de 6e badge) getest.
+- **`roamer.c`:** lege routetabel; een roamer verplaatst zich niet en staat nergens (geen deling door nul). Het
+  gebiedsscherm slaat zo'n roamer over.
+- **`item_use.c`:** Vs. Seeker-binnenlijst leeg (buiten werkt hij altijd), Sudowoodo water geven weg.
+- **`overworld.c`:** muziekuitzonderingen (abnormaal weer, Sootopolis, Weather Institute, Space Center, Route 111/118),
+  Route 130-kreten, omgekeerde Sky Pillar weg. (Let op: de oude check `warp->mapGroup == 0` gold nu voor de
+  skeletgroep.)
+- **`wild_encounter.c`:** Feebas-tegels Route 119, Altering Cave, Route 104-noord, Sootopolis-legendaries,
+  Ditto-plek Route 115 weg; een wilde Floette krijgt nu overal een willekeurige bloemkleur (was alleen de Fairy Forest).
+- **`pokedex_area_screen.c`:** glow of marker op kaarttype (buiten = glow, binnen/grot = marker) i.p.v. kaartgroep;
+  Feebas-uitzondering weg. Getest (Lotad op de TestMap licht op bij StartTown).
+- **`tv.c` / `tv.inc`:** spelershuis via de layout, geen Lati-nieuws/film meer, uitbraaktabel leeg (geen uitbraken),
+  PokéNieuws Slateport/Lilycove uit, Gabby & Ty met vaste local ids (`LOCALID_GABBY_AND_TY_*` in `constants/tv.h`).
+- **`follower_helper.c`:** kaartgebonden volgerberichten op `MAP_UNDEFINED` (plek in de nieuwe regio invullen).
+- **Faraway Island-Mew** (`faraway_island.c`), **braillepuzzels** (`braille_puzzles.c`), **Mirage Tower**
+  (`mirage_tower.c`), **Regi-stippen** (`regi_dots.c` + `.inc`), **Scorched Slab-zonnezaal**, **post-game-rivaal**
+  (`rival_postgame.c` + `.party`): weg. Het veldeffect `FLDEFF_USE_TOMB_PUZZLE_EFFECT` blijft als lege plek.
+- **Slapend zonder Hoenn-kaart** (mechaniek blijft, plekken invullen in de nieuwe regio): Forces of Nature
+  (`forces.c`), Enamorus (`enamorus.c`), de Burglar (`burglar.c`, teksten per stad blijven), draaihekken
+  (`rotating_gate.c`), donkere mist (`field_weather_effect.c`), Safari Zone (uitgang = StartTown als plaatshouder),
+  visserstoernooi (`fishing_tournament.c`).
+- **Losse verwijzingen:** Ever Grande-vrijlaatregel (pc), Lavaridge-stoom (Misty Terrain), Meteor Space/Route 113
+  (gevechtsachtergrond), Altering Cave-items, Lavaridge-respawn na vergif, Hall of Fame-vervolg (nu het Pokémon Center
+  van StartTown), opvangvrouw (`VAR_LAST_TALKED`), Mom na uitwitten (respawn_npc).
+- **Evoluties:** de plaatsgebonden evoluties zijn weg; Magnezone/Vikavolt (Thunder Stone), Leafeon (Leaf Stone),
+  Glaceon/Crabominable (Ice Stone) werkten al met een steen; Alolan Exeggutor nu tijdelijk level-up met een Dragon-type
+  in het team. Genoteerd in `POKEMON.md` ("Evolutieplek in de nieuwe regio").
+- **Scripts:** `players_house.inc` is nu alleen Mom (standaardtekst "The A-Team will be on soon!", PokéNav-registratie,
+  healen), de slaapkamer-PC, de wandklok en de Running Shoes-handleiding; Mom staat in `Stock_TwoStory_1F`, PC en klok
+  in `Stock_TwoStory_2F` (ook in `skelet_maps.py`). Mr. Briney (ook de aanroep in PC 1F), veerboot en Rusturf weg uit
+  `event_scripts.s`. Teksten die nog nodig waren, kwamen terug in hun eigen bestand (Kecleon/Devon Scope, munten,
+  Birch-registratie, regiokaart). Weg (ongebruikt, Hoenn): `cave_of_origin.inc`, `elite_four.inc`,
+  `set_gym_trainers.inc`, `rival_graphics.inc`, `giant_wailord.inc`, `sickblik_dev.inc`, `legends2.inc`, en de
+  teksten braille, Shoal Cave, eventtickets, bessen, loterij. Steven Multi uit het debugmenu.
+- **Niet aangeraakt:** `battle_partners.party` (Steven = vanilla en gebruikt door `battle_tower.c`/debug, Wally slapend,
+  Joey hoort bij Gabby & Ty, Keccles blijft; een partner zonder team breekt trainerproc), de Match Call-koppen
+  (inert zolang hun registratieflags niet gezet worden; Mom en Birch zijn weer te registreren).
+
+Getest (emulator, nieuw spel, Mewtwo lv 100 + alle badges): start in StartTown (9, 12), healen bij de verpleegster,
+Mart (koopmenu), wild gevecht op de TestMap, Keccles (gewonnen), saven in het Pokémon Center + reset + Continue (terug
+in het Pokémon Center), Fly vanuit de regiokaart naar StartTown, Pokédex-gebiedsscherm (Lotad), Mom (healt), slaapkamer-
+PC (menu, uitzetten). `audit.py`: 0 fouten in warps/kaarten/scripts/flags/wild/items; 59 bij trainers (zie hieronder).
+
+**Nog open (geen stap 8):**
+- Het debugmenu **Battle test** verwijst in 55 van de 57 ingangen naar trainers zonder team (sinds stap 6), ook de
+  klasse-intro-tests; `audit.py` meldt ze als `noparty`. Nieuwe testtrainers per klasse nodig (bijv. in
+  `debug_trainers.party`).
+- Ongebruikte Hoenn-specials buiten de compat-laag (geen kaartverwijzing, wel ROM): o.a. `StartWallyTutorialBattle`,
+  `StartGroudonKyogreBattle`, `Script_DoRayquazaScene`, `DoOrbEffect`, `IsMirageIslandPresent`, `UpdateShoalTideFlag`,
+  `InitBirchState`, Lilycove-SS Tidal-menu (`script_menu.c`). Lijst: `specials.py`-aanpak (specials zonder scriptaanroep).
+- `TRAINER_SICKBLIK_DEV` en Gabby & Ty 2–6 staan nog in `trainers.party` voor scripts die slapen of weg zijn.
+
+## Stap 8: inventaris (wacht op Jordi)
+Code die alleen nog via de compat-header bouwt. Grootte = ROM van de objectbestanden (`.text`/`.rodata`/`.data`) uit
+`pokeemerald.map`; scripts, teksten en graphics in `event_scripts.o`/`graphics.o` komen er nog bij.
+
+| Systeem | ROM | Bestanden (KB) | Wat er nog in de compat-laag zit |
+| --- | --- | --- | --- |
+| Battle Frontier (Tower, Dome, Palace, Arena, Factory, Pike, Pyramid, Tents, pas, lounge, ruilhoek, Apprentice, opgenomen gevechten) | ±273 KB | battle_tower 113, battle_dome 30, battle_factory_screen 26, apprentice 20, frontier_util 16, battle_pyramid 13, frontier_pass 12, overige < 10 | Frontier-kaarten/layouts (pas, Pyramid, Pike, Tower-lift/-gang, Tent), lounge-NPC's in `field_specials.c` (71 stubs), Nature Girl in `pokemon.c`, ruilhoek, ±340 partner-/Apprentice-teksten via `##`, Pyramid in `overworld.c`/`wild_encounter.c`/`start_menu.c`/`party_menu.c`/`map_name_popup.c`/`field_poison.inc`, Tower-lobby in `save_location.c`/`link.c`/`tv.c`/`field_door.c` |
+| Trainer Hill | ±20 KB | trainer_hill 20 | kaarten, `field_specials.c`, `trainer_hill.inc`, `field_poison.inc` |
+| Secret Bases (incl. decoraties) | ±38 KB | decoration 26, secret_base 11 | 27 kaartnamen in `secret_base.c` (let op: `SaveBlock1.secretBases` blijft) |
+| Contests (wedstrijd, schilderijen, Pokéblocks, Berry Blender, Lilycove Lady) | ±140 KB | contest 42, berry_blender 19, contest_painting 16, contest_util 14, contest_ai 11, overige < 10 | `contest_hall.inc` (55), `contest_util.c`, `berry_blender.inc`, `lilycove_lady.inc` |
+| Union Room / Cable Club / draadloos (incl. Berry Crush, Dodrio, Pokémon Jump, Mystery Gift, e-Reader) | ±213 KB | union_room 33, dodrio_berry_picking 33, pokemon_jump 21, berry_crush 16, link_rfu_2 14, union_room_chat 12, librfu_rfu 11, link 10 | `union_room.c`, `union_room_player_avatar.c`, `cable_club.inc`, Trade Center in `menu_helpers.c` |
+
+Gedeeld met de rest (niet zonder meer weg): `trade.o` (71 KB, ook ruilen in de game), `easy_chat.o` (47 KB, mail,
+vragenlijst, trendy phrases), `record_mixing.o` (6 KB, ook TV/Lilycove Lady). Save-data (`SaveBlock2.frontier`,
+`SaveBlock1.secretBases`, contest- en Lilycove Lady-velden) blijft staan, ook als de code weggaat.
+
 ## Stand (22 okt, avond): stap 1–6 gedaan
 Uitgevoerd door de Hoenn-agent, één commit per stap. Wat er nu is:
 - **Skeletkaarten** (`gMapGroup_FullyUngrounded`, enige kaartgroep, groep 0): `StartTown` (kopie van Oldale, noord-
@@ -40,7 +126,7 @@ Uitgevoerd door de Hoenn-agent, één commit per stap. Wat er nu is:
 - **ROM:** vóór 9,36 MB vrij (`__rom_end` 0x096A41C8), na 11,47 MB vrij (0x09488034): 2,11 MB erbij.
 - Oude saves en savestates zijn ongeldig (andere kaartgroepnummers): nieuw spel.
 
-## Wat er over is voor stap 7–9 (gevonden tijdens stap 1–6)
+## Wat er over was voor stap 7–9 (gevonden tijdens stap 1–6; stap 7 is gedaan, zie boven)
 - **Compat-gebruikers** (aantal namen uit `map_compat.h` per bestand): `field_specials.c` 154, `region_map.c` 129,
   `roamer.c` 70, `contest_hall.inc` 55, `tv.c` 45, `item_use.c` 40, `save_location.c` 39, `overworld.c` 36,
   `frontier_pass.c` 31, `secret_base.c` 27, `trainer_hill.c` 20, `wild_encounter.c` 19, `battle_pike.inc` 19,

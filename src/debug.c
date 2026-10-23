@@ -374,7 +374,6 @@ extern const u8 Debug_ShowExpansionVersion[];
 extern const u8 Debug_EventScript_EWRAMCounters[];
 extern const u8 Debug_Follower_NPC_Event_Script[];
 extern const u8 Debug_Follower_NPC_Not_Enabled[];
-extern const u8 Debug_EventScript_Steven_Multi[];
 extern const u8 Debug_EventScript_Legend_G_ArceusNormal[];
 extern const u8 Debug_EventScript_Legend_G_Dialga[];
 extern const u8 Debug_EventScript_Legend_G_Palkia[];
@@ -779,7 +778,6 @@ static const struct DebugMenuOption sDebugMenu_Actions_BattleTest[] =
     { COMPOUND_STRING("Rival 4 Route 119"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_MAY_ROUTE_119_MUDKIP, TRAINER_NONE) },
     { COMPOUND_STRING("Rival 5 Lilycove"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_MAY_LILYCOVE_MUDKIP, TRAINER_NONE) },
     { COMPOUND_STRING("Rival 6 Route 136"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_MAY_ROUTE_136_MUDKIP, TRAINER_NONE) },
-    { COMPOUND_STRING("Rival post-game"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_RIVAL_POSTGAME_TREECKO, TRAINER_NONE) },
     { COMPOUND_STRING("Class: Sea (Swimmer)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_DECLAN, TRAINER_NONE) },
     { COMPOUND_STRING("Class: Mountain (Hiker)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_SAWYER_1, TRAINER_NONE) },
     { COMPOUND_STRING("Class: Nature (Bug Catcher)"), DebugAction_Util_BattleTest, BT_TRAINER(TRAINER_DAVIS, TRAINER_NONE) },
@@ -908,7 +906,6 @@ static const struct DebugMenuOption sDebugMenu_Actions_Utilities[] =
     { COMPOUND_STRING("Berry Functions…"),  DebugAction_OpenSubMenu, sDebugMenu_Actions_BerryFunctions },
     { COMPOUND_STRING("EWRAM Counters…"),   DebugAction_ExecuteScript, Debug_EventScript_EWRAMCounters },
     { COMPOUND_STRING("Follower NPC…"),     DebugAction_OpenSubMenu, sDebugMenu_Actions_FollowerNPCMenu },
-    { COMPOUND_STRING("Steven Multi"),      DebugAction_ExecuteScript, Debug_EventScript_Steven_Multi },
     { COMPOUND_STRING("Legendary battle…"), DebugAction_OpenSubMenu, sDebugMenu_Actions_Legendary },
     { COMPOUND_STRING("Battle test…"),      DebugAction_OpenSubMenu, sDebugMenu_Actions_BattleTest },
     { COMPOUND_STRING("Wild battle (map)"), DebugAction_ExecuteScript, Debug_EventScript_WildFromMap },

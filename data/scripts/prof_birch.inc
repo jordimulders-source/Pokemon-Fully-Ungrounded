@@ -76,3 +76,18 @@ ProfBirch_EventScript_RatePokedex::
 	buffernumberstring STR_VAR_2, VAR_0x8009  @ Num National caught
 	msgbox gBirchDexRatingText_OnANationwideBasis, MSGBOX_DEFAULT
 	return
+
+@ Fully Ungrounded: stond in het lab van Prof. Birch (Littleroot)
+EventScript_RegisterProfBirch::
+	msgbox MatchCall_Text_BirchRegisterCall, MSGBOX_DEFAULT
+	closemessage
+	delay 30
+	playfanfare MUS_REGISTER_MATCH_CALL
+	msgbox MatchCall_Text_RegisteredBirch, MSGBOX_DEFAULT
+	waitfanfare
+	closemessage
+	delay 30
+	setflag FLAG_ENABLE_PROF_BIRCH_MATCH_CALL
+	setvar VAR_REGISTER_BIRCH_STATE, 2
+	release
+	end

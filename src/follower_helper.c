@@ -107,7 +107,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .emotion = FOLLOWER_EMOTION_HAPPY,
         .conditions =
         {
-            MATCH_MAP(MAP_EVER_GRANDE_CITY),
+            MATCH_MAP(MAP_UNDEFINED), // Fully Ungrounded: was EVER_GRANDE_CITY (Hoenn); een kaart uit de nieuwe regio invullen
         },
     },
     [COND_MSG_ROUTE_112] =
@@ -116,7 +116,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .emotion = FOLLOWER_EMOTION_HAPPY,
         .conditions =
         {
-            MATCH_MAP(MAP_ROUTE112),
+            MATCH_MAP(MAP_UNDEFINED), // Fully Ungrounded: was ROUTE112 (Hoenn); een kaart uit de nieuwe regio invullen
         },
     },
     [COND_MSG_DAY_CARE] =
@@ -126,7 +126,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .emotion = FOLLOWER_EMOTION_NEUTRAL,
         .conditions =
         {
-            MATCH_MAP(MAP_ROUTE117_POKEMON_DAY_CARE)
+            MATCH_MAP(MAP_UNDEFINED) // Fully Ungrounded: was ROUTE117_POKEMON_DAY_CARE (Hoenn); een kaart uit de nieuwe regio invullen
         },
     },
     [COND_MSG_MART] =
@@ -155,7 +155,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .emotion = FOLLOWER_EMOTION_PENSIVE,
         .conditions =
         {
-            MATCH_MAP(MAP_MAUVILLE_CITY_BIKE_SHOP)
+            MATCH_MAP(MAP_UNDEFINED) // Fully Ungrounded: was MAUVILLE_CITY_BIKE_SHOP (Hoenn); een kaart uit de nieuwe regio invullen
         },
     },
     [COND_MSG_MACHINES] =
@@ -166,9 +166,9 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .orFlag = 1, // match any of these maps
         .conditions =
         {
-            MATCH_MAP(MAP_NEW_MAUVILLE_INSIDE),
-            MATCH_MAP(MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F),
-            MATCH_MAP(MAP_SLATEPORT_CITY_STERNS_SHIPYARD_2F),
+            MATCH_MAP(MAP_UNDEFINED), // Fully Ungrounded: was NEW_MAUVILLE_INSIDE (Hoenn); een kaart uit de nieuwe regio invullen
+            MATCH_MAP(MAP_UNDEFINED), // Fully Ungrounded: was SLATEPORT_CITY_STERNS_SHIPYARD_1F (Hoenn); een kaart uit de nieuwe regio invullen
+            MATCH_MAP(MAP_UNDEFINED), // Fully Ungrounded: was SLATEPORT_CITY_STERNS_SHIPYARD_2F (Hoenn); een kaart uit de nieuwe regio invullen
         },
     },
     [COND_MSG_SAILING] =
@@ -226,7 +226,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .emotion = FOLLOWER_EMOTION_SURPRISE,
         .conditions =
         {
-            MATCH_MAP(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR),
+            MATCH_MAP(MAP_UNDEFINED), // Fully Ungrounded: was LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR (Hoenn); een kaart uit de nieuwe regio invullen
         },
     },
     [COND_MSG_ICE_ROOM] =
@@ -236,7 +236,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .emotion = FOLLOWER_EMOTION_SURPRISE,
         .conditions =
         {
-            MATCH_MAP(MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM),
+            MATCH_MAP(MAP_UNDEFINED), // Fully Ungrounded: was SHOAL_CAVE_LOW_TIDE_ICE_ROOM (Hoenn); een kaart uit de nieuwe regio invullen
         },
     },
     [COND_MSG_ROUTE_117] =
@@ -245,7 +245,7 @@ const struct FollowerMsgInfoExtended gFollowerConditionalMessages[COND_MSG_COUNT
         .emotion = FOLLOWER_EMOTION_SURPRISE,
         .conditions =
         {
-            MATCH_MAP(MAP_ROUTE117),
+            MATCH_MAP(MAP_UNDEFINED), // Fully Ungrounded: was ROUTE117 (Hoenn); een kaart uit de nieuwe regio invullen
         },
     },
     [COND_MSG_DRAGON_GROWL] =

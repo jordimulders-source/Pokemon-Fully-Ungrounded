@@ -91,3 +91,12 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 
 ## Nog open (zie `IDEEEN.md`)
 Viscacha (vroege knager op de hoogvlakte), capibara (laagland), mug (iets later, Kricketot-rol), vlieg, Venezolaanse poedelmot, voetbal-Pokémon, vicuña → guanaco, fruit (chirimoya, guaraná, pitahaya, cacao, aardappel, maïs, empanadas, ceviche, mate), iconische planten (coca, Puya raimondii, yareta, cardón, araucaria, …), mythologische wezens.
+
+**Evolutieplek in de nieuwe regio** (techniek, 23 okt): de plaatsgebonden evoluties wezen naar Hoenn-kaarten en zijn
+tijdelijk vervangen. Elk heeft in de nieuwe regio een eigen plek nodig (`IF_IN_MAP`/`IF_IN_MAPSEC` in
+`src/data/pokemon/species_info/`):
+- Magnezone (Magneton) en Vikavolt (Charjabug): magnetisch veld (was New Mauville/Chargestone Cave); nu alleen Thunder Stone.
+- Leafeon (Eevee): mosrots in een bos (was Petalburg Woods); nu alleen Leaf Stone.
+- Glaceon (Eevee) en Crabominable (Crabrawler, nog niet in de dex): ijsrots (was Shoal Cave); nu alleen Ice Stone.
+- Alolan Exeggutor (Exeggcute): was Route 119; nu tijdelijk level-up met een Dragon-type in het team. Plek: de
+  waspalmenvallei (zie "Bestaande soorten in de regio").

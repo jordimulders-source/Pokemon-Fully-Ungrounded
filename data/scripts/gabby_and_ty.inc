@@ -142,15 +142,15 @@ GabbyAndTy_EventScript_TyBattle1::
 	msgbox GabbyAndTy_Text_TyPreFirstBattle, MSGBOX_DEFAULT
 	closemessage
 	playbgm MUS_ENCOUNTER_MALE, FALSE
-	addobject LOCALID_ROUTE111_JOEY
-	applymovement LOCALID_ROUTE111_JOEY, GabbyAndTy_Movement_JoeyRunIn
+	addobject LOCALID_GABBY_AND_TY_JOEY
+	applymovement LOCALID_GABBY_AND_TY_JOEY, GabbyAndTy_Movement_JoeyRunIn
 	waitmovement 0
 	playse SE_PIN
-	applymovement LOCALID_ROUTE111_GABBY_1, Common_Movement_ExclamationMark
-	applymovement LOCALID_ROUTE111_TY_1, Common_Movement_ExclamationMark
+	applymovement LOCALID_GABBY_AND_TY_GABBY, Common_Movement_ExclamationMark
+	applymovement LOCALID_GABBY_AND_TY_TY, Common_Movement_ExclamationMark
 	waitmovement 0
-	applymovement LOCALID_ROUTE111_GABBY_1, Common_Movement_FaceLeft
-	applymovement LOCALID_ROUTE111_TY_1, Common_Movement_FaceLeft
+	applymovement LOCALID_GABBY_AND_TY_GABBY, Common_Movement_FaceLeft
+	applymovement LOCALID_GABBY_AND_TY_TY, Common_Movement_FaceLeft
 	waitmovement 0
 	goto_if_defeated TRAINER_JOEY, GabbyAndTy_EventScript_JoeyKnowsYou
 	msgbox GabbyAndTy_Text_JoeyIntroStranger, MSGBOX_DEFAULT
@@ -184,11 +184,11 @@ GabbyAndTy_EventScript_WonWithJoey::
 	settrainerflag TRAINER_GABBY_AND_TY_1
 	msgbox GabbyAndTy_Text_JoeyPostBattle, MSGBOX_DEFAULT
 	closemessage
-	applymovement LOCALID_ROUTE111_JOEY, GabbyAndTy_Movement_JoeyLeave
+	applymovement LOCALID_GABBY_AND_TY_JOEY, GabbyAndTy_Movement_JoeyLeave
 	waitmovement 0
-	removeobject LOCALID_ROUTE111_JOEY
-	applymovement LOCALID_ROUTE111_GABBY_1, Common_Movement_FacePlayer
-	applymovement LOCALID_ROUTE111_TY_1, Common_Movement_FacePlayer
+	removeobject LOCALID_GABBY_AND_TY_JOEY
+	applymovement LOCALID_GABBY_AND_TY_GABBY, Common_Movement_FacePlayer
+	applymovement LOCALID_GABBY_AND_TY_TY, Common_Movement_FacePlayer
 	waitmovement 0
 	msgbox GabbyAndTy_Text_GabbyDefeatFirstTime, MSGBOX_DEFAULT
 	goto GabbyAndTy_EventScript_FirstInterview

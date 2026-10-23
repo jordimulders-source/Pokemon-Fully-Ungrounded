@@ -109,3 +109,16 @@ Movement_KecleonAppears:
 	delay_16
 	set_visible
 	step_end
+
+@ Fully Ungrounded: de teksten stonden op Route 120 (Hoenn)
+Kecleon_Text_SomethingUnseeable:
+	.string "Something unseeable is in the way.$"
+
+Kecleon_Text_WantToUseDevonScope:
+	.string "Something invisible is in the way.\p"
+	.string "Use the DEVON SCOPE?$"
+
+Kecleon_Text_UseDevonScopeMonAttacked:
+	.string "{PLAYER} used the DEVON SCOPE.\p"
+	.string "An invisible POKéMON became visible!\p"
+	.string "It did not like that! It attacked!$"

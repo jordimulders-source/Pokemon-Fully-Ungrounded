@@ -45,7 +45,7 @@ static const u16 sConsolationPrizes[] =
     ITEM_RARE_CANDY, ITEM_PP_UP, ITEM_EXP_CANDY_M, ITEM_BIG_PEARL, ITEM_DIVE_BALL, ITEM_HEART_SCALE,
 };
 
-// wat de jury als vis erkent (zie ook het reglement in DewfordTown_Text_FishJudgeRules)
+// wat de jury als vis erkent (zie ook het reglement van de jury in Dewford, Hoenn-tekst)
 static const u16 sFish[] =
 {
     SPECIES_MAGIKARP, SPECIES_GYARADOS, SPECIES_GOLDEEN, SPECIES_SEAKING, SPECIES_HORSEA, SPECIES_SEADRA,

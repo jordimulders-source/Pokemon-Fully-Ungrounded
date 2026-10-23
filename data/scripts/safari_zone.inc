@@ -1,13 +1,13 @@
 SafariZone_EventScript_OutOfBallsMidBattle::
 	setvar VAR_SAFARI_ZONE_STATE, 1
 	special ExitSafariMode
-	setwarp MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 2, 5
+	setwarp MAP_START_TOWN, 9, 12 @ Fully Ungrounded: plaatshouder; hier de ingang van een nieuwe Safari Zone
 	end
 
 SafariZone_EventScript_Exit::
 	setvar VAR_SAFARI_ZONE_STATE, 1
 	special ExitSafariMode
-	warp MAP_ROUTE121_SAFARI_ZONE_ENTRANCE, 2, 5
+	warp MAP_START_TOWN, 9, 12 @ Fully Ungrounded: plaatshouder; hier de ingang van een nieuwe Safari Zone
 	waitstate
 	end
 

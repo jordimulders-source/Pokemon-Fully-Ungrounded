@@ -316,7 +316,7 @@ void IsTrendyPhraseBoring(void)
 // A painting hangs on the wall of the Dewford Hall
 // When interacted with it says "{trendy phrase}'S {name} is the title"
 // {name} is one of 8 pre-set words, depending on the current phrase
-// See DewfordTown_Hall_EventScript_Painting
+// See the Dewford Hall painting script (vanilla)
 void GetDewfordHallPaintingNameIndex(void)
 {
     gSpecialVar_Result = (gSaveBlock1Ptr->dewfordTrends[0].words[0] + gSaveBlock1Ptr->dewfordTrends[0].words[1]) & 7;

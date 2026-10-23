@@ -1404,11 +1404,11 @@ u8 UpdateShadowColor(u16 color)
     return paletteNum;
 }
 
-// Project Grounded: donkere mist in Toadstool Hollow (de mist mag het donkere bos niet wit wassen)
+// Project Grounded: donkere mist (de mist mag een donker bos niet wit wassen). Was Toadstool Hollow (Hoenn);
+// Fully Ungrounded: kaarten met donkere mist hier toevoegen.
 static bool32 IsDarkFogMap(void)
 {
-    return gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TOADSTOOL_HOLLOW)
-        && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TOADSTOOL_HOLLOW);
+    return FALSE;
 }
 
 void FogHorizontal_InitVars(void)

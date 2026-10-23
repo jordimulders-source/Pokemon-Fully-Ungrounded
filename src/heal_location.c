@@ -4,6 +4,8 @@
 #include "constants/event_objects.h"
 #include "constants/heal_locations.h"
 #include "constants/maps.h"
+#include "constants/layouts.h"
+#include "overworld.h"
 
 #include "data/heal_locations.h"
 
@@ -53,27 +55,17 @@ const struct HealLocation *GetHealLocation(u32 index)
         return &sHealLocations[index - 1];
 }
 
-static bool32 IsLastHealLocation(u32 healLocation)
-{
-    const struct HealLocation *loc = GetHealLocation(healLocation);
-    const struct WarpData *warpData = &gSaveBlock1Ptr->lastHealLocation;
-
-    return warpData->mapGroup == loc->mapGroup
-        && warpData->mapNum == loc->mapNum
-        && warpData->warpId == WARP_ID_NONE
-        && warpData->x == loc->x
-        && warpData->y == loc->y;
-}
-
+// Fully Ungrounded: het spelershuis herkennen aan de layout (Stock_TwoStory_1F/2F) i.p.v. de heal locations van
+// Brendans/Mays huis. Bepaalt of je na uitwitten bij Mom wakker wordt.
 bool32 IsLastHealLocationPlayerHouse()
 {
-    if (IsLastHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE)
-        || IsLastHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F)
-        || IsLastHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE)
-        || IsLastHealLocation(HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F))
-        return TRUE;
+    const struct WarpData *warpData = &gSaveBlock1Ptr->lastHealLocation;
+    u16 layout;
 
-    return FALSE;
+    if (warpData->mapGroup >= MAP_GROUPS_COUNT)
+        return FALSE;
+    layout = Overworld_GetMapHeaderByGroupAndId(warpData->mapGroup, warpData->mapNum)->mapLayoutId;
+    return layout == LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F || layout == LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F;
 }
 
 u32 GetHealNpcLocalId(u32 healLocationId)

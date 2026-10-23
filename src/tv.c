@@ -194,36 +194,8 @@ static const struct {
     u8 level;
     u8 location;
 } sPokeOutbreakSpeciesList[] = {
-    {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_BIDE, MOVE_HARDEN, MOVE_LEECH_SEED},
-        .level = 3,
-        .location = MAP_NUM(MAP_ROUTE102)
-    },
-    {
-        .species = SPECIES_NUZLEAF,
-        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
-        .level = 15,
-        .location = MAP_NUM(MAP_ROUTE114),
-    },
-    {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_HARDEN, MOVE_GROWTH, MOVE_NATURE_POWER, MOVE_LEECH_SEED},
-        .level = 13,
-        .location = MAP_NUM(MAP_ROUTE117),
-    },
-    {
-        .species = SPECIES_SEEDOT,
-        .moves = {MOVE_GIGA_DRAIN, MOVE_FRUSTRATION, MOVE_SOLAR_BEAM, MOVE_LEECH_SEED},
-        .level = 25,
-        .location = MAP_NUM(MAP_ROUTE120),
-    },
-    {
-        .species = SPECIES_SKITTY,
-        .moves = {MOVE_GROWL, MOVE_TACKLE, MOVE_TAIL_WHIP, MOVE_ATTRACT},
-        .level = 8,
-        .location = MAP_NUM(MAP_ROUTE116),
-    }
+    // Fully Ungrounded: de uitbraken waren op Hoenn-routes (102, 114, 116, 117, 120). Nieuwe ingangen:
+    // { .species = ..., .moves = {...}, .level = ..., .location = MAP_NUM(MAP_...) } (kaartgroep 0).
 };
 
 static const u16 sGoldSymbolFlags[NUM_FRONTIER_FACILITIES] = {
@@ -825,28 +797,10 @@ u8 FindAnyTVShowOnTheAir(void)
 void UpdateTVScreensOnMap(int width, int height)
 {
     FlagSet(FLAG_SYS_TV_WATCH);
-    switch (CheckForPlayersHouseNews())
+    if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir()))
     {
-    case PLAYERS_HOUSE_TV_LATI:
+        FlagClear(FLAG_SYS_TV_WATCH);
         SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
-        break;
-    case PLAYERS_HOUSE_TV_MOVIE:
-        // Don't flash TV for movie text in player's house
-        break;
-//  case PLAYERS_HOUSE_TV_NONE:
-    default:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LILYCOVE_CITY_COVE_LILY_MOTEL_1F))
-        {
-            // NPC in Lilycove Hotel is always watching TV
-            SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
-        }
-        else if (FlagGet(FLAG_SYS_TV_START) && (FindAnyTVShowOnTheAir() != 0xFF || FindAnyPokeNewsOnTheAir() != 0xFF || IsGabbyAndTyShowOnTheAir()))
-        {
-            FlagClear(FLAG_SYS_TV_WATCH);
-            SetTVMetatilesOnMap(width, height, METATILE_Building_TV_On);
-        }
-        break;
     }
 }
 
@@ -1026,43 +980,12 @@ u8 GabbyAndTyGetLastBattleTrivia(void)
 }
 
 // See gabby_and_ty.inc for details
+// Fully Ungrounded: Gabby en Ty stonden op Route 111/118/120, elk gevecht met een eigen object. In de nieuwe regio
+// krijgen ze vaste local ids op de kaart waar ze staan (LOCALID_GABBY_AND_TY_* in constants/tv.h).
 void GetGabbyAndTyLocalIds(void)
 {
-    switch (GabbyAndTyGetBattleNum())
-    {
-    case 1:
-        gSpecialVar_0x8004 = LOCALID_ROUTE111_GABBY_1;
-        gSpecialVar_0x8005 = LOCALID_ROUTE111_TY_1;
-        break;
-    case 2:
-        gSpecialVar_0x8004 = LOCALID_ROUTE118_GABBY_1;
-        gSpecialVar_0x8005 = LOCALID_ROUTE118_TY_1;
-        break;
-    case 3:
-        gSpecialVar_0x8004 = LOCALID_ROUTE120_GABBY_1;
-        gSpecialVar_0x8005 = LOCALID_ROUTE120_TY_1;
-        break;
-    case 4:
-        gSpecialVar_0x8004 = LOCALID_ROUTE111_GABBY_2;
-        gSpecialVar_0x8005 = LOCALID_ROUTE111_TY_2;
-        break;
-    case 5:
-        gSpecialVar_0x8004 = LOCALID_ROUTE118_GABBY_2;
-        gSpecialVar_0x8005 = LOCALID_ROUTE118_TY_2;
-        break;
-    case 6:
-        gSpecialVar_0x8004 = LOCALID_ROUTE120_GABBY_2;
-        gSpecialVar_0x8005 = LOCALID_ROUTE120_TY_2;
-        break;
-    case 7:
-        gSpecialVar_0x8004 = LOCALID_ROUTE111_GABBY_3;
-        gSpecialVar_0x8005 = LOCALID_ROUTE111_TY_3;
-        break;
-    case 8:
-        gSpecialVar_0x8004 = LOCALID_ROUTE118_GABBY_3;
-        gSpecialVar_0x8005 = LOCALID_ROUTE118_TY_3;
-        break;
-    }
+    gSpecialVar_0x8004 = LOCALID_GABBY_AND_TY_GABBY;
+    gSpecialVar_0x8005 = LOCALID_GABBY_AND_TY_TY;
 }
 
 void InterviewAfter(void)
@@ -1492,9 +1415,7 @@ void TryPutSmartShopperOnAir(void)
     TVShow *show;
     u8 i;
 
-    if (!(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_TRAINER_HILL_ENTRANCE) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_TRAINER_HILL_ENTRANCE))
-     && !(gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_BATTLE_FRONTIER_MART) && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_BATTLE_FRONTIER_MART))
-     && !rbernoulli(1, 3))
+    if (!rbernoulli(1, 3))
     {
         sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
         if (sCurTVShowSlot != -1 && IsRecordMixShowAlreadySpawned(TVSHOW_SMART_SHOPPER, FALSE) != TRUE)
@@ -1638,12 +1559,12 @@ static void TryStartRandomMassOutbreak(void)
             if (gSaveBlock1Ptr->tvShows[i].common.kind == TVSHOW_MASS_OUTBREAK)
                 return;
         }
-        if (!rbernoulli(1, 200))
+        if (ARRAY_COUNT(sPokeOutbreakSpeciesList) != 0 && !rbernoulli(1, 200))
         {
             sCurTVShowSlot = FindFirstEmptyNormalTVShowSlot(gSaveBlock1Ptr->tvShows);
             if (sCurTVShowSlot != -1)
             {
-                outbreakIdx = Random() % ARRAY_COUNT(sPokeOutbreakSpeciesList);
+                outbreakIdx = Random() % (ARRAY_COUNT(sPokeOutbreakSpeciesList) ? ARRAY_COUNT(sPokeOutbreakSpeciesList) : 1);
                 show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
                 show->massOutbreak.kind = TVSHOW_MASS_OUTBREAK;
                 show->massOutbreak.active = TRUE;
@@ -2651,16 +2572,8 @@ static bool8 ShouldApplyPokeNewsEffect(u8 newsKind)
 {
     switch (newsKind)
     {
-    case POKENEWS_SLATEPORT:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_SLATEPORT_CITY)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_SLATEPORT_CITY)
-         && gSpecialVar_LastTalked == LOCALID_SLATEPORT_ENERGY_GURU)
-            return TRUE;
-        return FALSE;
+    case POKENEWS_SLATEPORT: // Fully Ungrounded: de Energy Guru (Slateport) en het dak van het warenhuis bestaan niet meer
     case POKENEWS_LILYCOVE:
-        if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP)
-         && gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ROOFTOP))
-            return TRUE;
         return FALSE;
     }
     return TRUE;
@@ -3326,54 +3239,19 @@ u32 GetPlayerIDAsU32(void)
     return (gSaveBlock2Ptr->playerTrainerId[3] << 24) | (gSaveBlock2Ptr->playerTrainerId[2] << 16) | (gSaveBlock2Ptr->playerTrainerId[1] << 8) | gSaveBlock2Ptr->playerTrainerId[0];
 }
 
-u8 CheckForPlayersHouseNews(void)
+// Fully Ungrounded: het spelershuis herkennen aan de layout (Stock_TwoStory_1F, was Brendans/Mays huis)
+static bool32 InPlayersHouse(void)
 {
-    // Check if not in Littleroot house map group
-    if (gSaveBlock1Ptr->location.mapGroup != MAP_GROUP(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
-        return PLAYERS_HOUSE_TV_NONE;
-
-    // Check if not in player's house (dependent on gender)
-    if (gSaveBlock2Ptr->playerGender == MALE)
-    {
-        if (gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
-            return PLAYERS_HOUSE_TV_NONE;
-    }
-    else
-    {
-        if (gSaveBlock1Ptr->location.mapNum != MAP_NUM(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F))
-            return PLAYERS_HOUSE_TV_NONE;
-    }
-
-    if (FlagGet(FLAG_SYS_TV_LATIAS_LATIOS) == TRUE)
-        return PLAYERS_HOUSE_TV_LATI;
-
-    if (FlagGet(FLAG_SYS_TV_HOME) == TRUE)
-        return PLAYERS_HOUSE_TV_MOVIE;
-
-    return PLAYERS_HOUSE_TV_LATI;
+    return gMapHeader.mapLayoutId == LAYOUT_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F;
 }
 
 void GetMomOrDadStringForTVMessage(void)
 {
     // If the player is checking the TV in their house it will only refer to their Mom.
-    if (gSaveBlock1Ptr->location.mapGroup == MAP_GROUP(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
+    if (InPlayersHouse())
     {
-        if (gSaveBlock2Ptr->playerGender == MALE)
-        {
-            if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LITTLEROOT_TOWN_BRENDANS_HOUSE_1F))
-            {
-                StringCopy(gStringVar1, gText_Mom);
-                VarSet(VAR_TEMP_3, 1);
-            }
-        }
-        else
-        {
-            if (gSaveBlock1Ptr->location.mapNum == MAP_NUM(MAP_LITTLEROOT_TOWN_MAYS_HOUSE_1F))
-            {
-                StringCopy(gStringVar1, gText_Mom);
-                VarSet(VAR_TEMP_3, 1);
-            }
-        }
+        StringCopy(gStringVar1, gText_Mom);
+        VarSet(VAR_TEMP_3, 1);
     }
     if (VarGet(VAR_TEMP_3) == 1)
     {
@@ -5530,11 +5408,6 @@ static void DoTVShowTodaysRivalTrainer(void)
         case MAPSEC_DYNAMIC:
             switch (show->rivalTrainer.mapLayoutId)
             {
-            case LAYOUT_SS_TIDAL_CORRIDOR:
-            case LAYOUT_SS_TIDAL_LOWER_DECK:
-            case LAYOUT_SS_TIDAL_ROOMS:
-                sTVShowState = 10;
-                break;
             default:
                 sTVShowState = 9;
                 break;
@@ -5691,11 +5564,6 @@ static void DoTVShowHoennTreasureInvestigators(void)
         {
             switch (show->treasureInvestigators.mapLayoutId)
             {
-            case LAYOUT_SS_TIDAL_CORRIDOR:
-            case LAYOUT_SS_TIDAL_LOWER_DECK:
-            case LAYOUT_SS_TIDAL_ROOMS:
-                sTVShowState = 2;
-                break;
             default:
                 sTVShowState = 1;
                 break;

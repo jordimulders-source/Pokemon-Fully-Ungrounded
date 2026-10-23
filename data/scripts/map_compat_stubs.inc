@@ -1,5 +1,5 @@
 @ Gegenereerd door tools/grounded/maptools/map_compat.py, niet met de hand bewerken.
-@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (651).
+@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (592).
 @ Opruimen per systeem (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen.
 
 BattleFacility_TrainerBattle_PlaceholderText::
@@ -1370,9 +1370,6 @@ BattleFrontier_Lounge7_Text_ThunderPunchDesc::
 BattleFrontier_Lounge7_Text_ThunderWaveDesc::
 	.string "$"
 
-BattleFrontier_OutsideEast_EventScript_WaterSudowoodo::
-	end
-
 BattlePyramid_FindItemBall::
 	end
 
@@ -1763,182 +1760,8 @@ BattlePyramid_TrainerBattle::
 BattlePyramid_WarpToNextFloor::
 	end
 
-Common_Text_LookCloserAtMap::
-	.string "$"
-
-DewfordTown_Hall_EventScript_Painting::
-	end
-
-DewfordTown_Text_FishJudgeRules::
-	.string "$"
-
-EventScript_ClosedSootopolisDoor::
-	end
-
-EventScript_RegisterProfBirch::
-	end
-
-FarawayIsland_Interior_EventScript_HideMewWhenGrassCut::
-	end
-
-Ferry_EventScript_DepartIslandSouth::
-	end
-
-Ferry_EventScript_DepartIslandWest::
-	end
-
-IslandCave_EventScript_OpenRegiEntrance::
-	end
-
-Kecleon_Text_SomethingUnseeable::
-	.string "$"
-
-Kecleon_Text_UseDevonScopeMonAttacked::
-	.string "$"
-
-Kecleon_Text_WantToUseDevonScope::
-	.string "$"
-
 LilycoveCity_ContestLobby_EventScript_ContestReceptionist::
 	end
-
-LittlerootTown_BrendansHouse_2F_EventScript_PC::
-	end
-
-LittlerootTown_BrendansHouse_2F_EventScript_TurnOffPlayerPC::
-	end
-
-LittlerootTown_MaysHouse_2F_EventScript_PC::
-	end
-
-LittlerootTown_MaysHouse_2F_EventScript_TurnOffPlayerPC::
-	end
-
-LittlerootTown_ProfessorBirchsLab_EventScript_ScottAboardSSTidalCall::
-	end
-
-MauvilleCity_EventScript_RegisterWallyCall::
-	end
-
-MauvilleCity_GameCorner_EventScript_NoCoinCase::
-	end
-
-MauvilleCity_Gym_EventScript_SetAltBarriers::
-	end
-
-MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle::
-	end
-
-MossdeepCity_SpaceCenter_2F_EventScript_RivalRayquazaCall::
-	end
-
-ParadisoResort_Text_Turd::
-	.string "$"
-
-PlayersHouse_1F_Text_ArentYouInterestedInRoom::
-	.string "$"
-
-PlayersHouse_1F_Text_BetterGetBackToGym::
-	.string "$"
-
-PlayersHouse_1F_Text_DadShouldStayLonger::
-	.string "$"
-
-PlayersHouse_1F_Text_DidYouMeetProfBirch::
-	.string "$"
-
-PlayersHouse_1F_Text_DontPushYourselfTooHard::
-	.string "$"
-
-PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom::
-	.string "$"
-
-PlayersHouse_1F_Text_IsThatABreakingStory::
-	.string "$"
-
-PlayersHouse_1F_Text_IsThatAPokenav::
-	.string "$"
-
-PlayersHouse_1F_Text_IsntItNiceInHere::
-	.string "$"
-
-PlayersHouse_1F_Text_LatiEmergencyNewsFlash::
-	.string "$"
-
-PlayersHouse_1F_Text_MoveWasAwful::
-	.string "$"
-
-PlayersHouse_1F_Text_MoversPokemonGoSetClock::
-	.string "$"
-
-PlayersHouse_1F_Text_OhComeQuickly::
-	.string "$"
-
-PlayersHouse_1F_Text_PortsInSlateportLilycove::
-	.string "$"
-
-PlayersHouse_1F_Text_RegisteredMom::
-	.string "$"
-
-PlayersHouse_1F_Text_ReportFromPetalburgGym::
-	.string "$"
-
-PlayersHouse_1F_Text_RunningShoesManual::
-	.string "$"
-
-PlayersHouse_1F_Text_SeeYouHoney::
-	.string "$"
-
-PlayersHouse_1F_Text_StillUnknownPokemon::
-	.string "$"
-
-PlayersHouse_1F_Text_TakeCareHoney::
-	.string "$"
-
-PlayersHouse_1F_Text_TheresAMovieOnTV::
-	.string "$"
-
-PlayersHouse_1F_Text_TicketFromBrineyCameForYou::
-	.string "$"
-
-PlayersHouse_1F_Text_Vigoroth1::
-	.string "$"
-
-PlayersHouse_1F_Text_Vigoroth2::
-	.string "$"
-
-PlayersHouse_1F_Text_WhatColorDidTheySay::
-	.string "$"
-
-PlayersHouse_1F_Text_YouShouldRestABit::
-	.string "$"
-
-PlayersHouse_2F_Text_ClockIsStopped::
-	.string "$"
-
-PlayersHouse_2F_Text_HowDoYouLikeYourRoom::
-	.string "$"
-
-Route110_TrickHousePuzzle_EventScript_Door::
-	end
-
-Route119_EventScript_ScottWonAtFortreeGymCall::
-	end
-
-RustboroCity_Gym_EventScript_RegisterRoxanne::
-	end
-
-SSTidalCorridor_EventScript_ReachedStepCount::
-	end
-
-ScorchedSlab_SunHall_EventScript_StoneInLight::
-	end
-
-SkyPillar_Outside_EventScript_ClosedDoor::
-	end
-
-SootopolisCity_Gym_1F_Text_JuanDefeat::
-	.string "$"
 
 TrainerHill_Entrance_Text_ChallengeTime::
 	.string "$"

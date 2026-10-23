@@ -71,7 +71,7 @@ Enamorus_EventScript_LavaridgeCouple::
 	release
 	end
 
-@ Prof. Birch en de drol van het strandresort (ParadisoResort_Text_Turd): hij volgt de liefde, stadje na stadje.
+@ Prof. Birch en de drol van het strandresort (tekst "Turd" van ParadisoResort): hij volgt de liefde, stadje na stadje.
 Enamorus_EventScript_Birch::
 	lock
 	call Enamorus_EventScript_Heart

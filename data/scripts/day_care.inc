@@ -187,7 +187,7 @@ Route117_PokemonDayCare_EventScript_CheckEnoughMoney::
 	end
 
 Route117_PokemonDayCare_EventScript_RetrieveMon::
-	applymovement LOCALID_DAYCARE_LADY, Route117_PokemonDayCare_Movement_RetrieveDaycareMon
+	applymovement VAR_LAST_TALKED, Route117_PokemonDayCare_Movement_RetrieveDaycareMon @ Fully Ungrounded: de opvangvrouw zelf (was haar vaste local id)
 	waitmovement 0
 	specialvar VAR_RESULT, TakePokemonFromDaycare
 	special SubtractMoneyFromVar0x8005

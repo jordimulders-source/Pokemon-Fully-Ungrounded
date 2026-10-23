@@ -10780,9 +10780,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sMagnetonLevelUpLearnset,
         .teachableLearnset = sMagnetonTeachableLearnset,
     #if P_GEN_4_CROSS_EVOS
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MAGNEZONE, CONDITIONS({IF_IN_MAPSEC, MAPSEC_NEW_MAUVILLE})},
-                                {EVO_LEVEL, 0, SPECIES_MAGNEZONE, CONDITIONS({IF_IN_MAPSEC, MAPSEC_CHARGESTONE_CAVE})}, // Project Grounded: magnetisch veld (chargestone.py)
-                                {EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_MAGNEZONE}),
+        .evolutions = EVOLUTION({EVO_ITEM, ITEM_THUNDER_STONE, SPECIES_MAGNEZONE}), // Fully Ungrounded: evolutieplek (Hoenn) weg, zie POKEMON.md "Nog open"
     #endif
     },
 
@@ -13337,7 +13335,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .teachableLearnset = sExeggcuteTeachableLearnset,
         .eggMoveLearnset = sExeggcuteEggMoveLearnset,
         .evolutions = EVOLUTION({EVO_ITEM, ITEM_LEAF_STONE, SPECIES_EXEGGUTOR},
-                                {EVO_LEVEL, 0, SPECIES_EXEGGUTOR_ALOLA, CONDITIONS({IF_IN_MAPSEC, MAPSEC_ROUTE_119})}),
+                                // Fully Ungrounded: was op Route 119; tijdelijk: level-up met een Dragon-type in het team
+                                {EVO_LEVEL, 0, SPECIES_EXEGGUTOR_ALOLA, CONDITIONS({IF_TYPE_IN_PARTY, TYPE_DRAGON})}),
     },
 
     [SPECIES_EXEGGUTOR] =
@@ -13562,8 +13561,7 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
         .levelUpLearnset = sCuboneLevelUpLearnset,
         .teachableLearnset = sCuboneTeachableLearnset,
         .eggMoveLearnset = sCuboneEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_MAROWAK_ALOLA, CONDITIONS({IF_IN_MAPSEC, MAPSEC_MT_PYRE})},
-                                {EVO_LEVEL, 28, SPECIES_MAROWAK}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 28, SPECIES_MAROWAK}), // Fully Ungrounded: Alolan Marowak (Mt. Pyre) zit niet in de dex
     },
 
     [SPECIES_MAROWAK] =
@@ -18066,9 +18064,8 @@ const struct SpeciesInfo gSpeciesInfoGen1[] =
                                 {EVO_LEVEL, 0, SPECIES_UMBREON, CONDITIONS({IF_KNOWS_MOVE_TYPE, TYPE_DARK})}
                             #endif
                             #if P_GEN_4_CROSS_EVOS
-                                ,{EVO_LEVEL, 0, SPECIES_LEAFEON, CONDITIONS({IF_IN_MAP, MAP_PETALBURG_WOODS})},
-                                {EVO_ITEM, ITEM_LEAF_STONE, SPECIES_LEAFEON},
-                                {EVO_LEVEL, 0, SPECIES_GLACEON, CONDITIONS({IF_IN_MAP, MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM})},
+                                // Fully Ungrounded: Leafeon/Glaceon alleen nog met de steen (evolutieplek weg, zie POKEMON.md)
+                                ,{EVO_ITEM, ITEM_LEAF_STONE, SPECIES_LEAFEON},
                                 {EVO_ITEM, ITEM_ICE_STONE, SPECIES_GLACEON}
                             #endif
                             ),

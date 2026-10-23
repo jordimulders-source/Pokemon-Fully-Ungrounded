@@ -6091,8 +6091,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .levelUpLearnset = sBergmiteLevelUpLearnset,
         .teachableLearnset = sBergmiteTeachableLearnset,
         .eggMoveLearnset = sBergmiteEggMoveLearnset,
-        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_AVALUGG_HISUI, CONDITIONS({IF_IN_MAPSEC, MAPSEC_SHOAL_CAVE})},
-                                {EVO_LEVEL, 37, SPECIES_AVALUGG}),
+        .evolutions = EVOLUTION({EVO_LEVEL, 37, SPECIES_AVALUGG}), // Fully Ungrounded: Hisuian Avalugg zit niet in de dex
     },
 
     [SPECIES_AVALUGG] =

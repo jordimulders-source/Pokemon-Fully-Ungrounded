@@ -1,6 +1,6 @@
 # Spriting: regels uit de Dragonfly Cave-gidsen
 
-Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.pdf` (*Spriting Guide*, The Cave of Dragonflies) en `make_fakemon_guide.pdf` (*Making Fake Pokémon*). Lees dit samen met `FAKEMON_DESIGN.md` **vóór elke spriteronde**. Hieronder de regels, en per regel wat wij fout deden.
+Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.pdf` (*Spriting Guide*, The Cave of Dragonflies) en `make_fakemon_guide.pdf` (*Making Fake Pokémon*). Lees dit samen met `FAKEMON_DESIGN.md` **vóór elke spriteronde**, en lees voor details de gids zelf: de volledige tekst (OCR) staat in `docs/lessen/bronnen/*.txt`, de plaatjes in de PDF's (Jordi: de gidsen zeggen meer dan deze samenvatting). Hieronder de regels, en per regel wat wij fout deden.
 
 ## 1. Gereedschap: alles met de hand, nooit met vormfuncties
 - **Gouden regel van omlijnen: gebruik geen vormgereedschap** (cirkel/ellips-tool). De computer tekent de wiskundig dichtste benadering van een cirkel, maar die is niet de mooiste: een met de hand getekende 'cirkel' is gladder voor het oog.

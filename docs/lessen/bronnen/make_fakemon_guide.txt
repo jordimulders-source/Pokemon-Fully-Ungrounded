@@ -1,0 +1,1395 @@
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+MENU
+
+The Cave f
+
+Dragonilies
+
+Where the smallest bugs live alongside the strongest dragons
+
+GS The Day of Purugly in the Reign of Mew, Season of the Air
+
+Style Switcher: [?]
+
+Pick style... v
+
+MAKING FAKE PoKEMON
+
+So you want to create a fake Pokémon?
+
+A Quick Overview
+
+The basic process of creating a fake Pokémon, as laid out in this guide, goes
+approximately like this. The amount of detail put into it varies depending on where and
+how it is to be used, so the last one, two or even three steps can often be omitted in part
+or in full.
+
+1. Concept: a basic idea for a fake Pokémon. This can come in pretty much any form,
+but | don't recommend trying to create a fake Pokémon until one of these comes to
+you naturally; forcing yourself to create just for the sake of creating something
+usually leads to bland, uninspired work.
+
+2. Design: the process of turning your concept into a full-fledged creature that could
+believably be a Pokémon. Remember that Pokémon are not simply animals with
+
+https://www.dragonflycave.com/making-fake-pokemon/ 1132
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+stats and attacks slapped on: their designs usually take inspiration from multiple
+sources but are carefully abstracted and simplified into a creature that feels like
+one concrete whole.
+
+3. Realization: at this point you'll want to finish pinpointing exactly what sort of
+Pokémon this is and get a real feel for it as a creature. Part of this process will
+probably be part of the initial concept, but the rest will have to be filled in now.
+What is it called? How big is it? What are its types? What, roughly, is its style of
+battling - is it offensive? Defensive? Speedy? Physical? Special? What sorts of moves
+does it primarily use? How does this Pokémon live in the wild? Where? Does it have
+different forms? How does it change between the forms, or if it can't change, what
+determines the form? Does it have gender differences? Once this stage is done, the
+real creative work of your Pokémon is done; the rest is all just details to qualify it.
+
+4. Basic data: here you'll want to pin down the fundamental game data for the
+Pokémon, necessary to give an accurate idea of how your Pokémon compares to
+other Pokémon and allow the viewer to truly imagine controlling it in one of their
+games. Though the Pokémon can be considered complete after the realization
+stage, it is strongly recommended you create at least these basic statistics since
+they are so relatively integral to how we think of the canonical Pokémon. Includes
+base stats, level-up moves, abilities, and how it evolves (if applicable).
+
+5. Minor data: less important but still somewhat noteworthy data: TM/HM/tutor/egg
+moves, egg groups, gender ratios, exact height/weight, shiny colors, species
+designations and Pokédex entries.
+
+6. Trivial data: the rest of the game data, stuff that doesn't really tell people anything
+of much interest but would have to be present if you were to include it ina
+fangame of some sort. Includes sprites, footprints, body types, catch rates, base
+happiness, base experience, growth rate, effort yields, hatch counters, wild held
+items, colors.
+
+There are basically three types of fake Pokémon. There are original fakes, which have
+no relation to any existing Pokémon; there are counterpart fakes, which are
+counterparts to one or more other Pokémon but not directly related to them; and there
+are evolutions and pre-evolutions, which are directly related to an existing Pokémon.
+All follow the same basic process, though different strategies are appropriate for
+creating the various information for each type; this will be elaborated upon in the guide
+below.
+
+The Process
+
+https://www.dragonflycave.com/making-fake-pokemon/ 2/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+Now, that wasn't very useful, was it? Let's go into the nitty-gritty details of how to go
+about making up all this stuff.
+
+Concept
+
+As mentioned above, the concept is something you have to think of for yourself. A
+concept can be pretty much anything: a creature you think should be adapted into a
+Pokémon, a creature plus a type combination you think would be interesting for it,
+something that seems like it would make for an ideal counterpart to an existing
+Pokémon, an idea of what you think some Pokémon should evolve from or into, just a
+type combination that hasn't existed before, a gimmicky ability you thought up, a very
+particular, unique move you made that it doesn't seem any existing Pokémon should be
+able to use - more or less any creative spark can become a Pokémon. The idea for
+Letaligon came from a random scribble | made in music class that vaguely looked like an
+animal's head with some kind of a mask, for instance.
+
+If you're at a loss for ideas, reaching will usually not have the most interesting results,
+but you can look for inspiration to hit you in places like...
+
+¢ books or websites about little-known animals
+
+¢ books or websites about mythological creatures
+
+e the ever-shrinking list of nonexistent type combinations
+
+¢ any final evolutions you dislike
+
+e any Pokémon you feel are screaming to get an evolution or pre-evolution
+
+© more or less anywhere
+
+Sometimes your concept immediately entails what type of fake Pokémon this will be
+(original, counterpart or evolution/pre-evolution), but other times you'll want to give that
+some consideration. Is your concept somewhat similar to an existing Pokémon? Think
+about it and consider whether perhaps it ought to be part of that evolution line. (If it
+clearly wouldn't fit there but is still very similar to an existing Pokémon, it might not be a
+very good idea - try to distance your idea as much as possible from any canonical
+Pokémon it resembles if you're not going to make it related to them.)
+
+Many of the more gimmicky concepts revolve around certain abilities, designs or other
+things that technically come later in the process laid out by this guide. That's okay; the
+process is for filling in the blanks that don't come straight with your initial idea, not some
+kind of a rigid skeleton of fake-creation.
+
+Design
+
+https://www.dragonflycave.com/making-fake-pokemon/ 3/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+When you have a solid concept in mind, you'll want to finalize your plans for what the
+Pokémon will look like. If your idea already involves an animal or creature or other thing
+you can base it on, or even is a rough design in itself, that's part of your work already
+done. Likewise, if your Pokémon is an evolution or pre-evolution, you can start off with
+the existing Pokémon it's related to, or whatever that Pokémon is based on in real life, as
+your base. Otherwise, you'll probably want to come up with an appropriate base for your
+design.
+
+To find a good base if you need one, consider your idea and see if there's an animal,
+plant, object, mythological creature, etc. that seems to fit with the concept. If you can't
+think of anything, you can use the Random Page link on Wikispecies until you come
+across something interesting, or browse randomly through the nearest available book
+about animals or mythology, or even just pick some animal or creature you happen to
+like. Heck, you can even just start drawing freeform until you come up with something
+you like. This part really shouldn't be hard.
+
+Now, don't think you can just take your base, slap a type on it, draw it in a cutesy style
+and magically have a Pokémon. To make your fake feel at home with the canonical
+Pokémon, its design has to be carefully 'Pokémonized'.
+
+Pokémon Are Not Simply Animals
+
+Consider Eevee. This little brown critter has been a
+fan favorite since its introduction in the first
+generation, and it's easy to see why: it's small and
+fuzzy and adorable and undeniably appealing to
+anyone who likes cute furry animals.
+
+Now, who can tell me what cute furry animal it's
+based on?
+
+For some reason the most common answer to this
+question tends to be foxes. But what? Those aren't
+fox ears. Fox ears look nothing like that. And foxes, like other canines, have elongated
+muzzles, completely unlike Eevee's rounded, compact face. Foxes don't have collars
+around their necks. Foxes have slender legs, nothing like Eevee's.
+
+So what then? A cat? Don't be ridiculous; though that helps the head shape problem
+(though Eevee's head shape is still not really like a cat's), all the other fox complaints still
+apply, except perhaps for some cats that have thicker fur around their necks, and it adds
+that Eevee's tail doesn't look a thing like a cat's tail.
+
+https://www.dragonflycave.com/making-fake-pokemon/ 4132
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+A rabbit? Well, that takes care of the ears - cartoon rabbits tend to have ears much like
+Eevee's. But rabbits have tiny tails, again completely unlike Eevee's big, bushy one, the
+head is still markedly the wrong shape, and now the whole body structure is problematic
+- rabbits hop around, with powerful hind legs and much smaller front legs, while Eevee is
+anormal quadruped and doesn't hop. What's going on?
+
+Well, obviously, Eevee isn't just some one animal that's been drawn in a cute style. It
+draws features from many different animals and liberally makes up the rest. Some
+Pokémon outright mix and match many species, and others merely modify a single one
+for a simpler, more unique and visually appealing design. No Pokémon, however, is just
+a straightforward rendition of a single base. If they were, they wouldn't be Pokémon.
+
+Thus, the first thing to do with your base is to basically go wild modifying it, keeping a
+few core principles in mind:
+
+Pokémon Are Simple
+
+In addition to not just being unmodified animals, Pokémon are also simple. They vary in
+exactly how simple, but even the most complex Pokémon that you wouldn't know how
+to draw off the top of your head turn out to be pretty straightforward if you actually
+analyze the components of the design. In particular, Pokémon designs never feature
+detail that doesn't fit comfortably onto a small sprite. Textures are always simple:
+Pokémon that would be expected to have scales, for instance, either have scales large
+enough to be clearly and individually drawn onto a sprite, or they have no scales at all.
+Some Pokémon have rough and bumpy hides, but then, again, the bumps are large and
+sparse enough to appear clearly on a sprite. Likewise, furred Pokémon either have fur
+thick enough to be visibly furry on a sprite or their design appears smooth rather than
+visibly furred even in larger art.
+
+When refining your design, resist the urge to add too many details. If some feature is too
+small to show up properly on a sprite, either enlarge or remove that feature. Never have
+a very large number of anything: if your Pokémon has markings of some sort, give it just
+a few large ones, not oodles of smaller ones. Don't give it extra markings or features just
+for the sake of giving it markings or features.
+
+Pokémon Have Types
+
+One of the first concerns to consider is often that a Pokémon's typing should usually feel
+like it makes some amount of sense. (Not always, though: who would have guessed
+Latios and Latias are Dragon/Psychic types?) For some concepts, like Pokémon based on
+venomous animals being Poison-types, simple, animalistic Pokémon being Normal-
+types, Pokémon based on aquatic animals being Water-types, Pokémon based on plants
+
+https://www.dragonflycave.com/making-fake-pokemon/ 5/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+being Grass-types, or Pokémon with wings being Flying-types, you shouldn't need to
+make any special modifications to the design to make it feel like its type. Other times,
+the type should generally be made a factor in how you proceed with the design.
+
+There are really straightforward ways to make a Pokémon look like its type - turn some
+body part of a Fire-type into a flame, make a Water-type blue, make a Dark-type black,
+make a Rock-type's skin look like rock. However, be careful not to overdo this: if all your
+Water-types are blue and all your Fire-types have a flame on their bodies, you start to
+have the boring kind of artificial color-coding that the canonical Pokémon so brilliantly
+avoid. Consider Heatmor: there is no intrinsic connection between anteaters and fire, so
+they modified its design to indicate its Fire-type, but rather than simply lighting its tail on
+fire and calling it a day, they instead went with the mechanical, drawing elements from
+flamethrowers, ironworks, firearms and combustion engines. Go for that kind of
+creativity when you can; it makes things more interesting.
+
+If the typing isn't part of your initial idea and there isn't some type that just obviously fits
+with it, or if many types would work, you can save the typing for a bit and concentrate on
+pinning down the basic design at this stage; if you later decide on a type, you can always
+modify the initial design to match it better if you think you need to.
+
+Pokémon Are Not Hybrids
+
+While Eevee may be based on a mix of many different animals, it does not look simply
+like a hybrid of those animals. When you look at Eevee you don't think, "Oh, a rabbit-cat-
+fox"; it feels like a natural whole, not like stitched-together parts. The same should apply
+to any fake Pokémon designed through mixing and matching: no part of a well-designed
+Pokémon should look pastede on yay.
+
+This is primarily achieved by abstracting the parts you nab from other animals to the
+point that they seem somewhat generic rather than just screaming out that particular
+animal, and then carefully blending them in with the rest of the Pokémon's design. They
+don't have to be unrecognizable, just generalized enough to make the viewer's mind not
+jump straight to a second animal. For instance, Growlithe and Arcanine's orange color
+scheme and stripes are clearly taken from tigers; however, when you see one of them
+you think ‘dog’, and 'tiger' doesn't jump to mind until you start actually thinking about
+the design. Even Pokémon whose base animals are disputed don't make you think, at a
+glance, that it's animal X with parts from animal Y: it feels like a Pokémon first and
+foremost until you begin to analyze it.
+
+Consider Vaporeon. It's part mammal and part fish. A naive fakémon creator wanting to
+make a mammal-fish might simply make it something like a mermaid - front half
+mammal, back half fish. But that's not how Pokémon work: you never have a clear-cut
+
+https://www.dragonflycave.com/making-fake-pokemon/ 6/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+"this part's this animal, that part's that animal"
+division. While Vaporeon's body is quite catlike, the
+fish parts have been carefully abstracted and
+modified so that the end result feels like a cohesive
+whole instead of a pasted-together mix of the two.
+The tail actually looks more like a whale's or a
+dolphin's, with the fins horizontal instead of vertical;
+the texture of the skin is uniform aside from the
+abstract blue pattern on the head; the back fin is a
+general fish feature but modified to run along the
+whole back and tail; the collar and head fins, meanwhile, are arranged unlike any fish
+but blend nicely in with Vaporeon's overall look (note how the cheek fins look kind of like
+whiskers). All this comes together to make Vaporeon's design feel natural and beautiful.
+
+This may be why we don't have Pokémon based on well-known mythological creatures
+like griffins yet: unlike the Pokémon designers, the 'designers' of griffins really did just
+haphazardly throw together parts of two different animals; a traditional griffin wouldn't
+quite feel at home with the existing Pokémon.
+
+Pokémon Are Not Humans
+
+Even "humanoid" Pokémon don't actually look human; they're bipedal and have flat
+faces, but they don't look like a guy in a costume. This means even if you're basing your
+Pokémon on, say, a mythological creature that looks mostly human, the Pokémon
+version must be modified to look sufficiently alien to not make the viewer think of a guy
+in a costume. This is absolutely vital; a "Pokémon" that gives off the guy-in-a-costume
+vibe will not feel like a Pokémon, no matter how much it looks like its type or is
+simplified. In particular, note how no Pokémon with a humanoid body shape has a
+human-like nose, making their faces all look kind of alien. This is not a coincidence: it's a
+principle of keeping the monsters looking like monsters and not costumed superheroes.
+
+As you design your Pokémon, it is usually natural to draw or otherwise visually depict it
+in some manner or another. Even if you're not a very good artist, draw it anyway just to
+get the design down properly, and then you can later give it as a reference picture to an
+artist who is taking requests. If, however, for some reason you really don't want to
+attempt to draw it and don't think there is any need for there to be a visual reference for
+this Pokémon, you can also just keep a vivid idea of the design in your head and describe
+it in words instead.
+
+When you're mostly satisfied with your design, you can move on to the next stage.
+
+https://www.dragonflycave.com/making-fake-pokemon/ 7/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+Realization
+
+Now it's time to properly breathe some life into your creation. This process is probably
+partly done, either as part of your initial concept or as something that floated through
+your head during the design process; that's okay, since yet again, this isn't a
+straightforward linear progression. Just fill in the blanks, and by the time you're done
+you should have finished all the details of your Pokémon that you need in order to, say,
+include the Pokémon in a piece of fanfiction. This stage is quite freeform: there aren't
+rules to it so much as helpful guidelines that can help you decide on the bits you don't
+have any prior ideas for, and a lot of it is just a matter of thinking about your Pokémon
+and determining what feels right.
+
+First of all, in the unlikely case you haven't already decided on the Pokémon's types, do
+it now. If you're choosing between a few best candidates, it's usually more interesting to
+go with novel type combinations than ones that have been used before, and similarly
+better to go with types that haven't been used on Pokémon that resemble yours in some
+manner or another, to make it more interesting. (Meaning, for instance, that if you're
+deciding whether to make your cat Pokémon a Normal- or Fighting-type, go with the
+Fighting-type, because we already have three Normal-type cat evolution lines.) If that
+doesn't settle it, pick one at random; you can always make another Pokémon with the
+other type combination if you're very attached to it. Meanwhile, if you have absolutely
+no idea what type your Pokémon should be, it should probably be a Normal-type.
+
+The Pokémon's evolution line is also important to pin down (provided it isn't an
+evolution or pre-evolution of an existing Pokémon, in which case it's trivial). If it seems
+like it would be a legendary, that's that problem solved, but otherwise you might want to
+think a little about what sort of role your Pokémon would have in a game - is it a starter?
+Pseudo-legendary? Early-game common thing? Does the early-game common thing end
+up big and powerful, in which case you'll probably want to give it three stages, or will it
+remain relatively small? (This is a good time to decide on your Pokémon's approximate
+size.) The general rule is that the Pokémon you encounter in a game increase gradually
+in size, with some exceptions (like pseudo-legendaries); anything found at the beginning
+will be quite small in its first form, and if its final form is reasonably large, you'll want an
+intermediate stage in between. Meanwhile, Pokémon you don't find until the midgame
+can start out larger and thus grow to a respectable size with just one evolution or even
+be small stand-alones, and ones you only start encountering relatively late in the game
+can be pretty big standalones. Again, there are several exceptions to this rule, so if your
+Pokémon seems like it really ought to break it, by all means do; this is only a helpful aid if
+you're genuinely not sure how many evolutionary stages you want to give your
+Pokémon.
+
+https://www.dragonflycave.com/making-fake-pokemon/ 8/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+Naturally, if you decide on adding evolutionary stages you haven't designed yet, do so. If
+the base for your Pokémon has an earlier or later "stage" in any sense - a mythological
+creature with some special origin story, a piece of technology that replaces an earlier
+piece of technology, an animal with a multi-stage life cycle - it is natural to base its
+evolutions or pre-evolutions on those stages. If not, design the other stages from
+roughly the same base in a younger or older form, following the guiding principle that
+pre-evolutions are almost always smaller, cuter and more simplified than their
+evolutions.
+
+Next you can look at your Pokémon and decide on a vague idea of its stat distribution -
+you don't have to create detailed base stats just yet, but you'll want to get a rough idea
+of what it excels at and what it's not as good at. First, because this is usually the easiest
+part, does it seem like something that would be speedy? If you don't have any ideas
+about that already, looking at your design can usually tell you whether you'd expect it to
+be very fast; large, bulky Pokémon tend to be comparatively slow whereas lean, small
+ones are fast. Then, speedy Pokémon are usually more offensive and slow Pokémon
+more defensive, though not always; unless you especially want to subvert that
+correlation or special circumstances apply (e.g. it's a very small, lean Pokémon that
+would be fast, but it's a Steel-type and has strong armor), that's probably the way to go.
+If you've created an evolution or pre-evolution of an existing Pokémon, it should
+probably have a similar stat distribution unless differences in the design or concept
+should sensibly lead to differences in stats.
+
+Now, as you're considering its battle style, also consider what sorts of moves it might
+use. There is no need to go constructing a whole movepool just yet; all you have to do is
+lay the groundwork by considering what its 'signature moves' would be. What moves
+would a wild specimen be likely to turn to to defend itself? Knowing this, in turn, allows
+you to pin down (if you haven't already) whether the Pokémon's higher attacking stat
+should be physical or special, or if they should be about even - note that even if you'd
+imagine it would be able to use a lot of special attacks, say, it should still have a pretty
+low Special Attack stat if you don't think it would actually resort to special attacks as a
+matter of course. Again, if you're designing an evolution or pre-evolution of an existing
+Pokémon, they should usually learn similar moves.
+
+If your Pokémon has forms, it's probably time to think about those - how do they differ?
+(There are Pokémon with purely aesthetic forms, like Unown and Shellos, but also
+Pokémon like Deoxys that learn different moves or have wildly different stats depending
+on the form.) Can its form change? If so, how does the change come about? Don't give
+your Pokémon forms now just for the hell of it, though; forms are best kept to a few
+special Pokémon, and if your initial concept doesn't call for forms, you probably
+
+https://www.dragonflycave.com/making-fake-pokemon/ 9/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+shouldn't make any (unless you just now had some amazing idea that you just have to
+implement).
+
+Relatedly, if your Pokémon has different genders, you might want to consider whether it
+should have gender differences. Do note here that most Pokémon don't have them - as
+of the seventh generation, only 99 of the 807 existing Pokémon species have a gender
+difference. If you're making an evolution or pre-evolution of a Pokémon with a gender
+difference, you should probably give yours a similar gender difference. Otherwise, you
+don't need to make a gender difference for your Pokémon; most likely the genders will
+just look the same, and that's fine.
+
+So when should you make a gender difference? A lot of Pokémon gender differences are
+derived directly from sexual dimorphism in the Pokémon's real-life counterpart, though
+often body parts that are completely missing in one sex for the real-life animal will
+merely be smaller for that sex in the Pokémon version. In particular, a lot of bug
+Pokémon's males have smaller abdomens than the females. Other gender differences
+are more random aesthetic changes. Please note that Pokémon gender differences are
+generally not based on human stereotypes: female Pokémon are not systematically
+daintier, less muscular or colored in softer or more 'girly' colors than the males, nor do
+they have breasts, longer eyelashes, wear dresses/bows/ribbons/lipstick, etc. There are a
+couple of exceptions to this (Wobbuffet and Frillish/Jellicent, the former being a one-off
+gag and the latter being based around the concept of jellyfish that are reminiscent of
+stereotypical human royalty), but overall Game Freak have done a pretty good job of
+remembering that Pokémon are animals and there isn't any damn reason male
+Gardevoir shouldn't have something that vaguely reminds us of a dress. You should do
+the same.
+
+Also keep in mind that while human women tend to be more ‘decorated’ than men (i.e.
+they wear more makeup, jewelry, extravagant clothes, etc.), it is more common in the
+animal kingdom as a whole for males to be the fancy-looking ones - it's peacocks that
+have those massive fanlike tails whereas peahens look rather plain, for instance. (This
+makes sense: thanks to selective pressures arising from the disparity between large,
+precious, stationary egg cells and tiny, mass-produced, mobile sperm cells, it tends to be
+the males that compete over the chance to mate with the females rather than the other
+way around. This means it's the males that have somebody to impress, not the females,
+and therefore the males for whom it matters to look extravagant, while the females are
+free to have their bodies shaped and colored for practicality rather than sex appeal.
+Modern human society has it the other way around, for silly reasons that should be
+explained by sociology geeks rather than evolutionary biology geeks.) If you're tempted
+to give one of your Pokémon's genders some additional markings, fancier colors or other
+aesthetic flourishes, think twice before slapping it on the female just because that fits
+
+https://www.dragonflycave.com/making-fake-pokemon/ 10/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+better with your human idea of normality; it usually makes more sense on the male, no
+matter how counterintuitive it seems to you. If your Pokémon has a real-life counterpart,
+look into its sexual dimorphism - of course, if the female of that particular species is
+fancier, it will make sense to make the female Pokémon fancier, too, but if it's the male,
+you definitely shouldn't just switch it for no reason.
+
+Then, though this varies in importance depending on what your plans for the Pokémon
+are - you can probably skip this part if all you want to use the Pokémon for is
+implementing it into a competitive battling simulator or the like - you will probably want
+to give some consideration to how your Pokémon lives in the wild. Unlike many other
+monster-based franchises, Pokémon do not exist solely for fighting; they're simply
+creatures that inhabit the world, and that means you should know at least a little about
+how these Pokémon exist outside of battling to have a 'real' Pokémon. Usually you don't
+need much - just a vague idea of what sorts of places they'd live in in the wild, how
+aggressive they are, what they eat and how they usually behave is plenty. However, if
+you want to have a really well-realized Pokémon for a fanfic or something, you should
+also give some thought to its social structure, how they think and more detailed ideas of
+their behaviour and where they fit into the ecosystem.
+
+Finally, if you haven't yet thought of a name, you should probably try to do that now.
+You know all the information you need to know to create a name now, so delaying it
+won't accomplish anything. Most Pokémon names are simple portmanteaus, two words
+relevant to the Pokémon spliced together in a way that sounds reasonably nonawkward,
+but others involve more clever wordplay, perhaps splicing two words in a portmanteau
+together in such a way that the outcome sounds like a third, also relevant word, or
+altering the spelling of a relevant word, or deriving from a foreign language (especially
+Japanese, since many Pokémon keep their Japanese names in English and the Japanese
+names are often Japanese portmanteaus or puns). The most typical sort of Pokémon
+name is a portmanteau of a word relating to the Pokémon's type and a word for an
+animal/object/creature/etc. that it's based on or is similar to (e.g. char + salamander =
+Charmander, tepid + pig = Tepig), but avoid just directly using the name of the type or
+base unless they fit very well into a portmanteau with another word; this is one of the
+few times looking things up in a thesaurus can actually help, as many Pokémon names
+are based on relatively obscure words and you don't necessarily want the reader to
+immediately know exactly where you derived your Pokémon's name from anyway. Being
+too obscure or complex, however, especially if you make many Pokémon and ail their
+names are obscure or complex, will make your names fail to feel like Pokémon names,
+so don't go overboard.
+
+Once you have all this stuff down, you have well and truly created a Pokémon that you
+could plug into a fanfic or the like. However, I'd recommend also creating at least the
+
+https://www.dragonflycave.com/making-fake-pokemon/ 11/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+very basic game data, if only to make your Pokémon feel more concrete.
+
+Basic Data
+
+Certain data and statistics are quite fundamental to how most Pokémon fans think of
+Pokémon, not merely being some nebulous idea of something coded into a program but
+stuff we actually see and think about as we play the main series Pokémon games.
+
+Base Stats
+
+Though many novice Pokémon players don't even know what base stats are exactly, we
+all know what stats are: our Pokémon's HP, Attack, Defense, Special Attack, Special
+Defense and Speed are shown on their stat screens, and even before we learn about the
+mechanics of stats, we've usually noticed from experience playing the games that
+different Pokémon species have different stats, even if individuals might also vary a little.
+
+So base stats tend to be pretty important for fake Pokémon. Not ail fakes need them,
+but they help both you and the viewer properly visualize exactly how powerful your
+Pokémon is and what its relative strengths and weaknesses are, and even if you're just
+writing a fanfic, that will help you decide how it compares to other Pokémon that battle
+it.
+
+The first thing to do when creating base stats is to find a similar Pokémon to base your
+Pokémon's stats on. This sounds lazy, but it's not as lazy as it sounds - base stats are just
+numbers, and that makes it really impossible to tell whether a set of base stats was
+created by modifying another set or completely from scratch. If your Pokémon is a
+counterpart to an existing one, you should always base your Pokémon's stats on its
+counterpart; otherwise, find some Pokémon that seems like it should be around as
+powerful overall as yours and with a similar variance in its stats (if your Pokémon is
+supposed to be a heavy specializer, try to find a Pokémon around its power level that's
+also a heavy specializer, even if it doesn't specialize in the same stats; if it's more
+balanced, find a balanced Pokémon to base it on), and write its base stats down.
+
+Now the basic idea is to start off by simply switching around the numbers to fit with your
+particular Pokémon's stat distribution. You did part of this work in the realization stage,
+where you considered the stat distribution of the Pokémon; however, | was a bit vague
+there, especially on the defensive front, so it's time to give that some more detailed
+treatment. The key observation to make is what the three defensive stats - Defense,
+Special Defense, and HP - actually represent. Pokémon with a high base HP are generally
+fat or bulky. Pokémon with a high base Defense are usually armored in one way or
+another, either by having hides or shells made of rock or metal or being based on solid,
+
+https://www.dragonflycave.com/making-fake-pokemon/ 12/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+sturdy objects. Special Defense is a bit subtler, but correlates with thick fur or fat,
+basically insulation. Since by now you should also know whether the Pokémon is more
+physical- or special-focused offensively, whether it's offensive or defensive on the whole,
+and how speedy it is, this should all together give you a pretty good rough idea of where
+the stats stand in relation to one another, allowing you to simply put the highest of the
+stolen stat numbers as the value of the stat your Pokémon should have as its highest,
+the second-highest as its second-highest and so on.
+
+Once you're done with this initial lazy stat distribution, you should probably modify it a
+bit for a better fit unless it's a counterpart to an existing Pokémon, in which case a good
+bit of the time you should stick with the same-numbers-in-a-different-arrangement thing
+- counterparts, especially legendary counterparts or split evolutions, frequently do that.
+If you think one stat should be a bit higher and another a bit lower, just move a few stat
+points from the latter to the former, and if you want the Pokémon a little more or less
+powerful overall, just apply those modifications (never make a counterpart Pokémon
+more or less powerful overall than its counterpart, though!). Don't go overboard;
+especially be careful not to unnecessarily raise your Pokémon's base stat total unless it's
+really called for, or you'll end up with something overpowered.
+
+Also on the overpowered front, if your Pokémon has a powerful gimmick - like
+Smeargle's ability to learn any move - you need to be sure to make its base stats suitably
+low unless it is a legendary Pokémon. If it is a legendary Pokémon, don't give it a
+gimmick that's too powerful, or at least if it is very powerful, try to add some limitations
+or restrictions on it to make it less so. Seeming broken is the bane of too many fake
+Pokémon.
+
+Otherwise, just mess around as you like; stats are just numbers and as long as you keep
+the Pokémon balanced in terms of overall power, you'll be fine. A lot of base stats are
+multiples of five and a good bit of the time you'll probably want to stick with that, but if
+you want to be a bit different you can also use less 'clean' numbers. Remember that 255
+is the highest possible value for a base stat in the games, so that's your absolute upper
+bound per stat.
+
+Evolution Method
+
+If your Pokémon evolves, you have to consider how the evolution happens. Most
+Pokémon evolutions are triggered by leveling up to a specific level, generally later the
+more powerful the Pokémon is; to think of a good level, it's good to look over my
+evolution list and see around where your Pokémon seems to fit in.
+
+There are three other basic types of evolution: leveling up while some condition is met
+(such as being sufficiently happy, holding an item, knowing a certain move, or being in a
+
+https://www.dragonflycave.com/making-fake-pokemon/ 13/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+particular location), using an evolution stone on the Pokémon, and trading. All of them
+may need some extra condition to hold in order to happen. Evolution methods are very
+much something that's just up to you and how you feel the Pokémon should work, but
+there are still a couple of rules to be observed:
+
+e No evolution chain is more than three Pokémon long. There can be more Pokémon
+in an evolutionary family, but then there must be a split evolution: any individual
+Pokémon can only evolve twice in its lifetime.
+
+e If you've created a new evolution of a preexisting Pokémon, it should generally not
+evolve by a method that can be replicated in the existing games. So no Leaf Stone
+alternate evolution of Grovyle - if you tried to use a Leaf Stone on a Grovyle in any
+of the existing games, you'd be told that it has no effect, so how do you explain it
+suddenly working now? This role has been broken a few times throughout the
+years, though (in particular, when Sword and Shield made Leafeon and Glaceon
+evolve from Eevee by Leaf/Ice Stone), so if it really calls for it, you can.
+
+e Pokémon never evolve by leveling up to a specific level after evolving through any
+other means, except for Marill into Azumarill after Azurill's happiness evolution,
+which follows the pattern of many baby Pokémon evolving into their basic stages
+by happiness. You don't have a Pokémon evolving by stone or trading and then
+evolving by level after that, and happiness evolution not from a baby would also
+seem rather strange preceding a level-up evolution.
+
+e Remember that Pokémon that evolve by evolution stones usually almost
+completely stop learning moves naturally once they've evolved, with room for
+maybe a few signature moves but no more. If you don't think your Pokémon's final
+stage should be mostly deprived of level-up moves, you generally shouldn't make it
+evolve by stone, unless some part of the theme or gimmick of your Pokémon
+seems to call for it (Eevee's stone-based evolutions are an exception to the rule, for
+instance).
+
+If you've made a baby Pokémon, you might also want to decide if getting that baby
+requires a parent to be holding a special item or something of the like (should always be
+necessary if adding a baby onto an existing evolution line).
+
+Level-Up Moves
+
+To decide what your Pokémon should learn by level-up, it is best to just start
+constructing the move list, and to do that, it's helpful to take a look at the rules
+governing what move lists look like for the canonical Pokémon.
+
+First, at the beginning of every move list come the Pokémon's basic starting moves, the
+ones it will hatch with from an egg unless overridden. Generally this is one or two
+
+https://www.dragonflycave.com/making-fake-pokemon/ 14/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+moves, at least one of which should usually be damaging, unless it's a gimmick Pokémon
+with some other means of damaging its opponent or it's one of those Pokémon
+designed to be a pain to raise (like Magikarp). The damaging move should always be
+something pretty weak, again unless you're making a very special, rare, gimmicky kind of
+Pokémon (Beldum's only attack is Take Down, for instance); for non-legendaries, stay
+away from moves with a base power of more than 50 or so, and even for legendaries,
+you usually shouldn't go over maybe 60. Most non-legendary Pokémon of elemental
+types start with a Normal-type damaging attack rather than a STAB move; most of the
+time you'll want to go with Tackle, Pound, Scratch, Quick Attack, Constrict, Wrap, Bind or
+their ilk, but weak (under 40 base power) elemental moves (such as Astonish, Poison
+Sting, Peck, Bubble, Mud-Slap, etc.) can also work reasonably well as starting moves.
+
+Since the fourth-generation games, many evolved Pokémon also have a couple of extra
+moves listed as starting moves in online Pokédexes, which would normally be
+unavailable since you can't hatch evolved Pokémon from eggs. Why are they there?
+Because of the move reminder, who will consult your Pokémon's level-up move list to
+find out which moves he should offer to teach your Pokémon. Nominally he claims he's
+there to reteach your Pokémon moves it has forgotten, but the developers snuck in
+some extra moves that Pokémon can exclusively learn from the move reminder. Usually
+these moves aren't ultra-powerful so much as just various moves of different types that
+they could conceivably use without any actual association with that type, e.g. Shadow
+Claw for various non-Ghost Pokémon that have sharp claws.
+
+As for the subsequent move list, the levels at which Pokémon learn moves almost always
+follow a regular pattern for the most part. Bulbasaur, for instance, learns its moves in
+the fourth and fifth generations at level intervals that alternate between 2 and 4: taking
+its starting moves to be learned at level 1, it next learns a move at level 3, then 7, then 9,
+then 13, then 15, 19, 21, 25, 27, 31, 33, and finally 37. In the second and third
+generations, it learned moves at level 4, 7, 10, 15, 20, 25, 32, 39 and 46 - the intervals
+went 3, 3, 3, 5, 5, 5, 7, 7, 7. In the first generation it learned moves at level 7, 13, 20, 27,
+34, 41 and 48, with six levels between the first two moves and then always seven.
+Sometimes Pokémon learn multiple moves at the same level (usually ‘linked' moves, like
+Butterfree's Poison Powder, Stun Spore and Sleep Powder, or Stockpile, Spit Up and
+Swallow), but the actual levels are the same as they would be otherwise.
+
+That being said, the patterns vary, and the developers of the games aren't above
+breaking them every now and then if it suits them, so don't take this too religiously -
+realizing there's a pattern to the levels is mostly something that makes level-up moves
+easier to do if, like me, you started off always sort of working off some instinctual feeling
+of when it seems right for the Pokémon to learn the next move.
+
+https://www.dragonflycave.com/making-fake-pokemon/ 15/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+As with many things, the best way to construct a move list is often to just modify some
+other Pokémon's move list, though for the level numbers it's not hard to make up a
+suitable pattern yourself either as long as you keep it in line with the canonical
+Pokémon. If you're making a counterpart to another Pokémon, always base the move list
+very closely on that Pokémon: it should learn similarly-flavored moves at the same
+levels. Otherwise it's largely common sense. In general, a move list should start with
+weaker, more commonplace moves and move up to stronger, more unusual ones, and
+there should generally never be more than three non-damaging moves in a row on the
+move list unless you're dealing with a gimmick Pokémon - four non-damaging moves in a
+row, after all, means there is some range of levels at which wild specimens would have
+no damaging attack and thus no means of defending themselves.
+
+Now, as you probably know, move lists change slightly when Pokémon evolve. First,
+Pokémon that evolve by /evel-up will learn their moves later after they evolve. Specifically,
+starting at the level the evolution happens, the level pattern for the evolved form
+becomes more spaced out. For instance, Bulbasaur's moves stay at the 2-4 interval
+pattern throughout; lvysaur's move list, on the other hand, starts out identical to
+Bulbasaur's up until level 16 (when Bulbasaur evolves into lvysaur), and then changes
+the pattern to intervals alternating between 3 and 5 levels. Venusaur learns its moves at
+the same levels as lvysaur up until level 32 and after that changes the pattern to
+alternating between 6 and 8 levels between moves. However, evolutions can also make
+other changes to learned moves. Evolutions that change substantially in capabilities,
+such as by adding or changing types, growing additional body parts, switching from
+physical to special, offensive to defensive or vice versa, etc. especially often substitute
+some moves on the move list for others with a similar flavor that make use of the
+Pokémon's new features, in addition to sometimes adding a move or moves at the level
+at which the Pokémon evolves, ignoring the level pattern entirely. Venusaur, for
+instance, learns Petal Dance at level 32 in the fourth and fifth generations, even though
+it just learned Double-Edge at level 31 and the subsequent pattern acts like that was the
+last move it learned. Finally, evolved Pokémon sometimes simply learn more moves than
+their pre-evolutions; in that case, just continue with the same pattern after the last move
+learned by the pre-evolution.
+
+Now, that's all Pokémon that evolve by level-up, as in by reaching some specific level.
+Pokémon that evolve through the use of evolution stones, on the other hand, generally
+learn no attacks naturally after they evolve, unless they have some signature moves, in
+which case they'll learn those at some arbitrary levels but nothing else. (I'm using that
+term in the loose sense that means simply a move iconic to that Pokémon, rather than a
+move that no other Pokémon can learn necessary - Arcanine's Extreme Speed is a
+signature move, even though it's not exclusive to Arcanine anymore.) Meanwhile,
+Pokémon that evolve through happiness, by leveling up at particular locations, with
+
+https://www.dragonflycave.com/making-fake-pokemon/ 16/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+particular items, etc., or through trading, as well as those stone-evolving Pokémon that
+don't mostly stop learning moves, will continue to learn moves at the same levels as their
+pre-evolved forms; they might replace the actual moves with different ones of a similar
+flavor, as with normal level-up evolutions, but the levels always stay the same. These
+Pokémon do not suffer the penalty of learning moves later if they're made to evolve
+early.
+
+Don't be tempted to give your Pokémon nothing but damaging attacks, or try to stuff
+every damaging attack of its type(s) onto its move list. It should only learn a few well-
+chosen candidates that seem like something this Pokémon would naturally use. Your
+Electric Pokémon don't all have to learn Thunderbolt and Thunder; maybe it suits them
+better to get Zap Cannon, or Discharge, or Wild Charge, or Volt Tackle. And all Pokémon
+get some ‘useless' moves: don't be afraid to give them moves that would be awful
+competitively and that nobody should ever use. The key principle is always what you can
+picture the Pokémon using, not what you'd want to use if you had this Pokémon ona
+game.
+
+Abilities
+
+First, I'm going to note that if you've made a starter Pokémon, all starters have the ability
+Overgrow, Blaze or Torrent (as appropriate for their type, of course). Breaking this rule
+for your starters is not a good idea; it's been pretty firmly established by now and seems
+extremely unlikely to change.
+
+Otherwise, abilities are often a large part of a Pokémon's gimmick, so it's fairly likely
+you've already decided on an ability your Pokémon should have. If so, you can pretty
+much skip this step. If you have an idea for a made-up ability but have yet to formalize it
+in a game-sensible form, you should do that formalization now. (It's not hard - abilities
+can do pretty much anything, really. Special flags have been added to moves just so
+some one ability can know whether to affect or not affect them. Something similar could
+in theory be done for your ability - though that does complicate things if you're planning
+to implement your Pokémon into a ROM hack or the like.)
+
+Otherwise, if the ability isn't important, it's fairly easy to decide on something that suits
+it. If you want to see a quick overview of all the existing abilities, look here; then just
+scroll through the list and find something that seems appropriate. If the full list is
+daunting and you have absolutely no ideas, check what abilities some vaguely similar
+Pokémon have (same type, similar base animal, etc.) and see if some of them have
+generic abilities that could fit.
+
+Minor Data
+
+https://www.dragonflycave.com/making-fake-pokemon/ 17/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+By this point, you've created a perfectly respectable Pokémon, complete for most
+purposes. However, if you like details and making your Pokémon really feel like it could
+be in a game, you'll want to add several other pieces of information.
+
+Gender Ratios
+
+A Pokémon's gender ratio is fairly simple to determine. If it's an evolution or pre-
+evolution, it's even simpler: just give it the same gender ratio as the rest of the family
+(unless, of course, you're going for some kind of a funky gimmick). Counterparts tend to
+have opposite gender ratios. Otherwise, you can decide it using roughly this algorithm:
+
+e First of all, mechanical or amorphous Pokémon, as well as legendaries, are usually
+genderless, so in that case your work is already done.
+
+¢ Otherwise, if the Pokémon's design, realization, stats and so on are heavily based
+on one particular animal's gender, or it's based on a particular mythological
+creature with a specific gender, or it is otherwise important to the concept of your
+Pokémon that it be exclusively either male or female, make it so.
+
+¢ Otherwise, if the Pokémon is a rare Pokémon that, in a game, would be given to the
+player rather than being caught in the wild (such as a starter), it should be 87.5%
+male (this rule was most likely introduced by the game developers just to make it
+more difficult to breed more of them, so you can ignore it if you have no interest in
+faithfully emulating the games).
+
+e Otherwise, if you picture the Pokémon as being more often one gender than the
+other, make it 75% that gender.
+
+e Otherwise, make the Pokémon's gender ratio 50-50.
+
+That's all there really is to it. Gender ratios aren't very complex.
+
+Egg Groups
+
+All Pokémon belong to one or two egg groups, which determine what Pokémon they can
+breed with: any Pokémon can breed with any Pokémon of the opposite gender that
+shares at least one egg group with it, except that Pokémon in the "Undiscovered" group
+can never breed at all, genderless Pokémon in any egg group can only breed with the
+"Ditto" group, and Pokémon in the "Ditto" group can breed with any Pokémon not in the
+"Undiscovered" group. The canonical egg groups are the following:
+
+e Bug, for bugs and bug lookalikes.
+¢ Ditto, for Ditto.
+
+e Dragon, for dragons, lizards and snakes.
+
+https://www.dragonflycave.com/making-fake-pokemon/ 18/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+e Fairy, for cute, fairly abstract creatures with small limbs that don't look especially
+like any particular real-world animal.
+
+e Flying, for birds, bats and pterodactyls.
+
+e Field, for Pokémon closely based on real-life mammals.
+
+e Human-Like, for humanoid Pokémon.
+
+e¢ Amorphous, for ghosts, gases and blobs.
+
+¢ Mineral, for Pokémon made of rock, metal or other dead materials.
+
+¢ Monster, for Pokémon based on reptiles and some 'creepified' mammals.
+e Undiscovered, for Pokémon that can't breed.
+
+¢ Grass, for Grass Pokémon.
+
+e Water 1, for aquatic mammals or other Water-types that don't fit into Water 2 and
+Water 3.
+
+e Water 2, for fish.
+
+¢ Water 3, for Pokémon based on marine invertebrates.
+
+If your Pokémon is a Ditto-clone that should be breedable with everything (only do this if
+you really mean it; presumably Ditto can breed with everything because of its
+transformation abilities, so only a Pokémon that can transform should be able to join it
+in this group, and at that point you're in considerable danger of your Pokémon just
+being redundant), put it in the Ditto group. If it's a legendary Pokémon (unless you have
+a special reason to want it breedable, as with Manaphy) or a baby Pokémon (i.e. a design
+that is clearly juvenile), or for any other reason should be completely unbreedable, put it
+in the Undiscovered group. Otherwise, if it's an evolution or pre-evolution of an existing
+Pokémon you should put it in the same egg group as it, and if not you should just pick
+one or two of the other groups that seem to fit it and put it in those. There's not much
+else to this.
+
+Extra Moves
+
+A Pokémon's movepool is never just its level-up moves: it will also have TM and HM
+moves, move tutor moves, and some egg moves if it has a gender and is breedable.
+(Genderless Pokémon don't have egg moves, even though they're breedable with Ditto
+and can pass on TM/HM moves.)
+
+The annoying thing about TM/HM and move tutor moves is that the available TMs, HMs
+and move tutors change with every generation, and new generations are precisely when
+new Pokémon are added - a hypothetical game containing your new Pokémon probably
+wouldn't have the same TM/HM/move tutor moves as the current generation, anyway,
+so it may even seem a little backwards to create a TM/HM or move tutor move list in
+
+https://www.dragonflycave.com/making-fake-pokemon/ 19/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+accordance with the latest games to begin with. You could just use the current
+generation's lists and update your Pokémon's information as new generations come out
+- you're probably going to do that anyway to add in newly-introduced level-up moves
+and so on. However, another possible solution, especially if you're creating a whole
+region's worth of Pokémon, is to simply make up your own TM, HM and move tutor lists
+for your own hypothetical (or possibly not so hypothetical) game, and give your
+Pokémon a subset of those. If making your own TM list, try to keep in those TMs that
+have been available consistently for multiple generations since the introduction of the
+move in question - if Game Freak seems to want those moves to stick around as TMs,
+you should probably let them stick around, too.
+
+Whatever you go with, the first step is to get a full list of the available TMs, HMs and
+move tutor moves you want to list your Pokémon's compatibility for - you can find a TM
+list for the seventh generation here, but again, you might also just want to put together
+your own list. Once you've done that, copy that list into a file somewhere, go through the
+whole list and, for each move, try to picture your Pokémon using the move in question,
+erasing all moves that don't seem to make sense for it.
+
+There are some general rules to observe when deciding this. First, some Pokémon can't
+learn any TM, HM or tutor moves whatsoever, because their gimmick is having an
+extremely limited number of moves (this includes the basic bugs found at the beginning
+of each game and a few other gimmick Pokémon like Magikarp, Ditto, Wobbuffet, etc.). If
+this is the case with your Pokémon, this bit is easy. Second, as a general rule, Hyper
+Beam and Giga Impact are learned only by fully evolved Pokémon (barring those who
+were once fully evolved and a couple of other rare exceptions), but they're also learned
+by all fully-evolved Pokémon except some small, weak single-stage ones (such as
+Kecleon and Farfetch'd). Third, there are several TM moves that can be learned by any
+(or just about any) Pokémon whatsoever except the ones that don't get any TMs at all;
+they are the following:
+
+© Toxic
+
+¢ Hidden Power
+e Protect
+
+e Return
+
+¢ Frustration
+
+e Double Team
+e Facade
+
+e Secret Power
+e Rest
+
+e Endure
+
+https://www.dragonflycave.com/making-fake-pokemon/ 20/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+e Sleep Talk
+e Natural Gift
+e Swagger
+
+e Substitute
+e Round
+
+© Tera Blast
+
+Additionally, every non-genderless Pokémon can learn Attract and Captivate, plus Mew
+and Cryogonal (Mew because its gimmick is learning every possible TM, Cryogonal likely
+because of a programming oversight; their Attract/Captivate will always fail) and minus
+Nincada (to prevent the player from having a Shedinja, which is genderless, with
+Attract/Captivate) and Larvesta/Volcarona (for unknown reasons; perhaps they were
+originally intended to be genderless). All of this means that unless your Pokémon
+doesn't get any TMs at all, it should learn all of the above list (they are all the kind of
+recurring TM | recommend keeping in most custom TM lists), and if it's not genderless it
+should probably get Attract and Captivate.
+
+When it comes to move tutors, it's become a pretty solid tradition that there's a move
+tutor somewhere in each game that will teach Frenzy Plant, Blast Burn or Hydro Cannon
+to your final-form starter if it's happy enough, and that another move tutor will teach
+Draco Meteor to any Dragon-type Pokémon that can learn extra moves. Other tutors
+vary, and you can decide your Pokémon's compatibility with the moves they teach the
+same way you decide on TM compatibility.
+
+Higher evolutions should nearly always learn a superset of their pre-evolutions'
+TM/HM/tutor moves. Losing the ability to learn a TM upon evolution is extremely rare -
+there have only been a couple of cases, which largely appear to be oversights changed in
+subsequent generations. Only do it if there's a very, very good reason.
+
+Egg moves are generally any additional moves you can picture the Pokémon being able
+to use from a hatchable evolutionary stage (this bit's important - you can't give an evolved
+form egg moves because egg moves are moves the Pokémon hatches with, and it'll
+never hatch in that form; if there are moves like this you want to give the evolved forms
+of your Pokémon, go with the extra starting moves that the move reminder can teach, as
+described in the level-up move section), but not coming naturally to it as a level-up
+move. These are fairly simple to decide upon.
+
+Pokédex Data
+
+While not especially necessary, fake Pokémon often don't feel quite real to avid game-
+players without the data that's been displayed in the Pokédex since the first generation:
+
+https://www.dragonflycave.com/making-fake-pokemon/ 21132
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+exact height and weight, species, and a Pokédex entry.
+
+The height and weight aren't terribly interesting; just picture about how tall (or long, in
+the case of snakelike Pokémon) your Pokémon would ordinarily be and write that down,
+and then figure out what it would weigh. If you're not good at judging the weight of
+imaginary objects, don't worry, because neither are the game developers. You can try
+finding some existing Pokémon of a similar size and build and work from its weight, or
+looking up the animal you based it on and what it weighs on average. If your Pokémon
+has an evolution or pre-evolution, keep in mind that Pokémon almost always grow
+bigger and heavier when they evolve.
+
+The species is the classification shown in the Pokédex that says Venusaur is a "Seed
+Pokémon", Blastoise is a "Shellfish Pokémon", Charizard is a "Flame Pokémon", etc. If
+your Pokémon is closely based on a real-life animal, you can use the name of that
+animal; otherwise you can just use something that seems vaguely descriptive of the
+Pokémon (very vaguely; just look at the Kanto starters’ species classifications). It's not
+always a noun; sometimes it's an adjective, as with Gyarados being an "Atrocious
+Pokémon". This has to be short; the longest ones as of the fifth generation are thirteen
+characters (minus the "Pokémon" part, obviously).
+
+Pokédex entries are basically a blurb providing a short bit of trivia about the Pokémon's
+physiology, habitat, behaviour, etc. You can make multiple entries; since the pair of
+games heading off each generation always have different entries for the Pokémon, the
+canonical Pokémon always start out with two Pokédex entries and you could do that as
+well if you want. In the fifth generation, the longest is 122 characters; Ruby and
+Sapphire, however, had considerably longer Pokédex entries than any of the other
+games, and the longest of those was 235 characters, so you'll probably get away with
+that length, too.
+
+Shiny Colors
+
+You presumably already know how your Pokémon is normally colored, but what about
+the shiny, or alternate-colored, version?
+
+What shinies basically are is the original sprite displayed with a different palette - the
+game doesn't store the shiny sprite separately, only the palette, so a shiny Pokémon can
+only differ from the normal one in color. Sometimes the color difference is subtle, as
+with Zapdos; other times it's completely different, as with Charizard:
+
+https://www.dragonflycave.com/making-fake-pokemon/ 22132
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+We
+ @
+
+For evolutions or pre-evolutions of existing Pokémon, the shiny colors are usually (but
+not always) the same throughout the evolution line if their normal forms are the same
+color, so you can use that as a guideline. Otherwise, you can basically do anything here -
+if you think some particular color would look good or interesting on your Pokémon, you
+can use that, but if you're feeling uninspired you can also just make a slightly lighter- or
+darker-colored version. You don't need to have made sprites specifically to make a shiny
+coloring - just decide what the shiny coloring is like, really, and maybe draw it with those
+colors if you're artistically inclined. (Alternatively, if you already have a picture with the
+normal colors, you can use the hue sliders in Photoshop or another paint program to
+change it to the shiny colors.)
+
+Trivial Data
+
+By now you have everything people really care about, but if you want to implement your
+Pokémon into some kind of a fangame or are just very obsessed with details, there is still
+stuff to do.
+
+Sprites
+
+You may have created front sprites of your Pokémon already, if you're more comfortable
+with pixel art than freehand drawing and didn't want to just keep the design in your
+head. However, you likely haven't created back sprites, party sprites or (if applicable)
+overworld sprites, which will be needed if you're going to put your Pokémon into a game
+of some kind.
+
+Assuming you want your Pokémon ready to be put into some sort of a fangame based
+on a GBA/DS game, the basic sprites you need are:
+
+Front sprite
+The standard front-right-view battle sprite. In the third-generation games, this is
+64x64 pixels; in the fourth generation, it's 80x80 pixels; in the fifth, it's 96x96.
+
+https://www.dragonflycave.com/making-fake-pokemon/ 23/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+Emerald and the fourth-generation games animate these with two frames, so you
+might want to make both. In the fifth-generation games, meanwhile, there are full-
+body animations based on stretching, skewing and rotating individual body parts in
+addition to having extra frames for some of those body parts. | don't know if
+anybody would ever be bothered to actually do that for their fake Pokémon, but if
+you want to, you can. You can check out my spriting guide if you'd like advice on
+how to make good sprites, or you can just see if you can get somebody else to do it
+for you if you're no good.
+
+Back sprite
+A back-right view of the Pokémon, the same size as the front sprite. In the third-
+and fourth-generation games, it would show the Pokémon enlarged, cutting off at
+the bottom and left sides of the frame; in the fifth generation, the back sprite
+shows the Pokémon at the same size as the front sprite, just facing the other
+direction, and the graphic engine zooms in on the sprite to get the perspective
+right. Platinum and HG/SS had two frames for these, while B/W have animations as
+described for the front sprites.
+
+Party sprites
+Two frames of a 32x32-pixel top-front-right-view icon used for the party screen.
+Look at some of the existing ones for reference; they have a very unusual spriting
+style. In particular, the outlines on the bottom part of the sprite are gray, whereas
+the outlines near the top are near-black; it's a way of 'graying out' the parts of the
+Pokémon that are further away to make the shape less flat. Also (believe it or not)
+there are only three possible palettes these can have (shown here; note that the
+green at the far left side of each one is the transparent background color, so don't
+use it in the actual Pokémon), meaning you must pick the palette that seems
+closest to having the right colors and work with that.
+
+Overworld sprites
+Not always necessary, but when they are, most of them have a 32x32 frame
+(reasonably small Pokémon generally stick to sixteen pixels wide, however), except
+for particularly big Pokémon, in which case the frame is 64x64 pixels. Again, look at
+some actual overworld sprites for stylistic reference. The number of directions
+and frames you need depends on your purposes.
+
+Footprint sprites
+A 16x16 footprint for the Pokémon, in silhouette. Use other footprint sprites for
+reference. If the Pokémon doesn't have visible feet, however, it will not have a
+footprint.
+
+Pokédex Stuff Nobody Cares About
+
+Pokémon can have one of several body types, meaning the basic shape of their body - a
+similar concept to how the party sprites worked in the first two generations. This is a
+
+https://www.dragonflycave.com/making-fake-pokemon/
+
+24/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+simple matter of picking the one that's closest to what your design actually looks like.
+The body types don't have any formal names since they appear in the Pokédex only as
+sprites:
+
+J+ wmvrayPrsawryreree?e
+
+Additionally, the Pokédex defines each Pokémon as having a color. This is usually simply
+the dominant color of the Pokémon; since there is only one color designation, however,
+this can feel pretty wildly inaccurate when the design very prominently features two or
+more radically different colors. Just pick one. The available colors are black, white, gray,
+red, green, blue, yellow, brown, pink and purple.
+
+Numbers Nobody Cares About
+
+First, your Pokémon needs a catch rate. This is a number representing how difficult this
+Pokémon is to catch. Early-game weak Pokémon such as Caterpie and Pidgey have a
+catch rate of 255, which makes them extremely easy to catch, while most legendary
+Pokémon (unless the story expects you to catch them relatively early and thus takes pity
+
+https://www.dragonflycave.com/making-fake-pokemon/ 25/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+on you, as with Dialga/Palkia/Reshiram/Zekrom) have a catch rate of 3. As so often, your
+best bet is to find an existing Pokémon that seems like it should be about as difficult to
+catch as your fake and copy its catch rate.
+
+Next, it needs a base happiness, which is basically the happiness value this Pokémon
+will have when you first catch it and what it will be reset to if you trade it. Almost every
+Pokémon has a base happiness of 70, with a few exceptions:
+
+¢ Generally happy, cheerful Pokémon such as Chansey, plus Uxie/Mesprit/Azelf who
+are apparently just exploding with joy, have a base happiness of 140.
+
+¢ The cute event legendaries - Mew, Celebi, Jirachi, Shaymin, Victini and Meloetta - as
+well as Heatran and Cresselia, plus a couple of other generally playful Pokémon,
+have a base happiness of 100.
+
+e Latias, Latios, Tornadus, Thundurus and Landorus have a base happiness of 90,
+because apparently they're just cool like that.
+
+e Other legendary trios, pseudo-legendaries, Keldeo, most Dark-types, many Ghost-
+types and a few other Pokémon that are generally distrustful of humans to start
+with (e.g. Ralts) have a base happiness of 35.
+
+e Other legendaries and Buneary (because bunnies aren't just cute like everybody
+supposes) have a base happiness of 0, basically starting off despising you with
+every fiber of their being.
+
+Figure out where your Pokémon fits in and give it that base happiness. | don't
+recommend making up a base happiness value that isn't 140/100/90/70/35/0 for your
+Pokémon, unless you have some really genius gimmick in mind with it.
+
+Effort yields are extremely simple. Each Pokémon will give a total of one (first-stage or
+weak single-stage Pokémon), two (second-stage or relatively strong single-stage
+Pokémon) or three (third-stage or legendary Pokémon) effort points when defeated, in
+some distribution across its highest stats. There are only so many possibilities; you can
+figure it out.
+
+Base experience, meanwhile, is subtler than you think. More specifically, in the first to
+fourth generations, I'd tell you to just find a Pokémon of a similar general power level
+and rarity and copy its base experience - but in the fifth generation, all base experiences
+were recalculated, and this time they (mostly) follow a pattern:
+
+e \f the Pokémon is the first stage in an evolution line, its base experience is the sum
+of its base stats multiplied by four, then divided by twenty and rounded to the
+nearest whole number.
+
+https://www.dragonflycave.com/making-fake-pokemon/ 26/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+e \f the Pokémon is the second stage in an evolution line or a non-legendary
+standalone, its base experience is the sum of its base stats multiplied by seven,
+then divided by twenty and rounded to the nearest whole number.
+
+e Ifthe Pokémon is the third stage in an evolution line or a legendary, its base
+experience is the sum of its base stats multiplied by nine, then divided by twenty
+and rounded to the nearest whole number.
+
+There are a few exceptions to this rule, usually to compensate for abilities that make the
+Pokémon overall weaker than its base stat total would indicate. Additionally, the Unova
+starters also have the lowest experience yield of any Pokémon, presumably so you won't
+have your starter gaining multiple levels before you get out of your house, Volcarona is
+counted as if it were a legendary rather than a second stage (but Larvesta is counted as
+a first stage as expected), and Audino and the Chansey family have much higher base
+experience values than they ought to because giving inordinate amounts of experience
+is kind of their thing (they have about 2.5 times the base experience they should).
+However, unless your Pokémon has a crippling ability, you can just use the formula as
+given above and you'll have your base experience. And if it does have a crippling ability,
+just find a Pokémon that you'd estimate to be roughly as powerful as yours is after
+adjusting for the ability and use its base stat total or something close to it in the formula
+instead.
+
+Your Pokémon's growth rate determines how fast it levels up. Note that the growth rate
+goes for the whole evolution line; it doesn't change with evolution, so if your Pokémon is
+related to an existing Pokémon, your job is done. The growth rates are:
+
+e "Erratic", growing slowly at the beginning but faster than any other growth rate at
+higher levels. They reach level 100 when they have 600,000 total experience points.
+These are mostly Bug- and Water-type Pokémon, plus Hoenn and Sinnoh's fossils,
+Swablu, Altaria and Zangoose.
+
+e "Fast", growing rather quickly from start to finish until they reach level 100 at
+800,000 experience points. This group consists mostly of "cute" Pokémon,
+especially Normal-types.
+
+e "Medium Fast", the largest group, reaching level 100 at 1,000,000 experience
+points.
+
+e "Medium Slow", the second-largest group, which reaches level 100 at 1,059,860
+experience points. Includes all starter Pokémon, some of the cute event
+legendaries, and a whole bunch of other random Pokémon.
+
+e "Slow", including most legendaries and pseudo-legendaries, as well as other
+relatively rare, powerful, late-game Pokémon. They reach level 100 at 1,250,000
+experience points.
+
+https://www.dragonflycave.com/making-fake-pokemon/ 27132
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+e "Fluctuating", the opposite of the erratic group, which starts out growing very fast
+but ends up growing slower than any other group and needing 1,640,000
+experience points in all to get to level 100. Used for a few scattered Pokémon with
+little in common with one another; interestingly, Game Freak were clearly playing a
+bit with opposites when they introduced this and the erratic group in the third
+generation, since Zangoose's growth rate is erratic while Seviper's is fluctuating,
+and Volbeat's growth rate is erratic while Illumise's is fluctuating.
+
+Pick the one that seems most appropriate to how fast you'd imagine your Pokémon
+would grow. If you have no idea, just put it in the same group as some similar Pokémon,
+as usual.
+
+The hatch counter is basically the number of cycles of 255 steps it will normally take to
+hatch an egg containing this Pokémon. Even Pokémon you cannot possibly hatch from
+eggs, like legendaries or evolved Pokémon, have this value defined in their data. Often
+this is presented as the actual number of steps needed for the egg to hatch, which
+amounts to the hatch counter value multiplied by 255 (or 256, which was the number of
+steps needed to decrease the counter prior to the fourth generation). As so often, your
+best bet is to find some vaguely analogous Pokémon and copy its hatch counter/steps to
+hatch figure.
+
+Finally, if the Pokémon should have a wild held item, it can do so either very rarely (1%,
+B/W only), rarely (5%), frequently (50%) or always (100%). The former three can stack, i.e.
+the Pokémon can carry one item 50% of the time, another 5% of the time and another
+1% of the time. The items involved are usually items vaguely associated with the
+Pokémon, e.g. Paras and Parasect holding Tinymushrooms, Big Mushrooms and Balm
+Mushrooms. Several Fire-types hold Rawst Berries and Ice-types hold Aspear Berries;
+some early-game Normal-types hold Oran Berries or Sitrus Berries.
+
+Technically you should be making a cry to make this all the way complete, but | doubt
+even fangame creators would bother with this rather than just reusing some random
+existing Pokémon's cry.
+
+And... that's it. Congratulations.
+
+So Now What...?
+
+Well, now you've created your Pokémon. Presumably you've written down all the stuff
+you've made up about it. If you have a website you can put it there; if you have an art
+
+https://www.dragonflycave.com/making-fake-pokemon/ 28/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+gallery somewhere and have created artwork of your Pokémon, you can put it up there
+and include some of the basic data with it; if you make fangames, you can add it to that;
+if you write fanfics, you can write it in. It doesn't matter what you do with your Pokémon;
+
+it's yours. Do whatever you want.
+
+Keep on improving and refining your design; fake Pokémon are fun to tinker with. Or you
+can just move on to creating more fake Pokémon. Perhaps you can make a whole fake
+generation. Or maybe you just want to stick to a few. That's fine too.
+
+Above all, just have fun and be creative. That's what this is all about, after all.
+
+Page last modified December 9 2025 at 13:10 UTC
+
+You May Also Enjoy
+
+Spriting Guide Fake
+
+Learn the basics Pokémon
+
+of several ways of Fake Pokémon
+editing sprites, as created by me, in
+well as a couple of excruciating detail
+in-depth tutorials such as steps to
+on shading and hatch their eggs,
+outlining. the Effort Points
+
+they give, etc.
+
+Fan Fiction
+Pokémon
+fanfiction by yours
+truly, written at
+various points
+over a two-decade
+timespan.
+
+Post comment
+
+Making Fan
+
+Theories
+
+An essay on the
+do's and don'ts of
+how to make a
+compelling
+Pokémon fan
+theory.
+
+Inflammatory or off-topic comments will be deleted; please go to the guestbook for
+discussion unrelated to this page. You can use BBCode (forum code) to format your
+
+messages.
+
+Giving an e-mail address is optional; if it is given, you will be notified by e-mail if |
+respond to your post. If you fill in a website (this should be your own website, blog or
+
+social media profile), it will be linked publicly on your post; however, messages obviously
+
+posted solely as a pretext for advertising, or advertising shady or inappropriate
+
+websites, will be deleted.
+
+https://www.dragonflycave.com/making-fake-pokemon/
+
+29/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+Name*
+
+Name or username
+
+E-mail
+
+user@domain.com
+
+Website address
+https://your.own.website
+
+Website name
+
+Your own website/blog
+
+Comments*
+
+Please type the name of the above Pokémon into this box (don't know it?)*:
+
+The above sprite has a 1/8192 chance of being shiny. (Modern browsers will give it a yellow glow if so.)
+
+Submit message Reset
+
+Comments
+
+My own messages will be signed as Butterfree, with the Apmin label below my name. If
+someone signs as Butterfree without that label, it's probably not me.
+
+Pages: 1
+
+Maobunz dy
+
+https://www.dragonflycave.com/making-fake-pokemon/ 30/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+You have no idea how long I've been searching for one of these templates that isn't
+either Al or stupidly bad, this is so good, | love it, | wish you eternal cold pillows and
+eternal delicious food, thank you, and i will proceed to use thise 4 times and then
+completely forget about it
+
+» Reply to this
+[21/05/2026 22:37:06]
+
+soya &
+
+this is genuinely one of the best websites ive found in a while thank you so much
+for this. not just for this page for the whole website
+
+» Reply to this
+
+[04/02/2026 02:02:42]
+Olivia 8
+Helpful thanks
+
+» Reply to this
+[25/04/2025 20:45:54]
+
+Pages: 1
+
+Support/FoLLow
+
+Dy
+
+SIBLING SITES
+
+AFFILIATES
+
+https://www.dragonflycave.com/making-fake-pokemon/ 31/32
+23-10-2026, 11:45 Making Fake Pokémon | The Cave of Dragonflies
+
+Fanric
+
+| care about the truth, and | strive to keep the information on this website accurate and up-to-date. For instance,
+where possible, | have taken pains to personally test claims about the video games before making them. However,
+doing so is not always feasible, occasionally | manage to be wrong even when | think I've confirmed something, and
+with a website of this size, it's difficult to keep track of every single piece of information anywhere on it that might
+need to be changed or updated. Thus, if you spot any errors, mistakes or out-of-date tidbits - or even just typos -
+I'd be thrilled if you would report them via this form.
+
+Pokémon, Pikachu and all other Pokémon characters © 1995-2026 Nintendo, GAME FREAK and Creatures, Inc. This
+is a fan-made website. No infringement is intended.
+
+All layouts, non-official graphics and content © 2002-2026 Butterfree/Dragonfree/antialiasis unless otherwise
+stated.
+
+RSS feed
+
+https:/Awww.dragonflycave.com/making-fake-pokemon/
+
+32/32

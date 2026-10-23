@@ -226,8 +226,8 @@ TEST("Twin Tails message fits on the battle message window")
     u32 j, strWidth;
     u8 nickname[POKEMON_NAME_LENGTH + 1] = _("MMMMMMMMMMMM");
     u8 *battleString = Alloc(TT_STRING_BUFFER_SIZE);
-    CreateMon(&gPlayerParty[0], SPECIES_WOBBUFFET, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
-    CreateMon(&gEnemyParty[0], SPECIES_WOBBUFFET, 100, 0, FALSE, 0, OT_ID_PRESET, 0);
+    CreateMon(&gPlayerParty[0], SPECIES_WOBBUFFET, 100, 0, OTID_STRUCT_PRESET(0));
+    CreateMon(&gEnemyParty[0], SPECIES_WOBBUFFET, 100, 0, OTID_STRUCT_PRESET(0));
     SetMonData(&gPlayerParty[0], MON_DATA_NICKNAME, nickname);
     SetMonData(&gEnemyParty[0], MON_DATA_NICKNAME, nickname);
     gBattlerPositions[0] = B_POSITION_PLAYER_LEFT;

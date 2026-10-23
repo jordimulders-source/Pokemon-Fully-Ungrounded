@@ -6,7 +6,7 @@ SINGLE_BATTLE_TEST("Seltzer Surge lowers the target's Speed 20% of the time")
 {
     PASSES_RANDOMLY(20, 100, RNG_SECONDARY_EFFECT);
     GIVEN {
-        ASSUME(MoveHasAdditionalEffect(MOVE_SELTZER_SURGE, MOVE_EFFECT_SPD_MINUS_1) == TRUE);
+        ASSUME(MoveHasAdditionalEffect(MOVE_SELTZER_SURGE, MOVE_EFFECT_STAT_MINUS) == TRUE);
         ASSUME(GetMovePower(MOVE_SELTZER_SURGE) == 80);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);
@@ -40,7 +40,7 @@ SINGLE_BATTLE_TEST("Seltzer Surge confuses the target 10% of the time")
 DOUBLE_BATTLE_TEST("Seltzer Surge hits both opponents but not the user's partner")
 {
     GIVEN {
-        ASSUME(GetMoveTarget(MOVE_SELTZER_SURGE) == MOVE_TARGET_BOTH);
+        ASSUME(GetMoveTarget(MOVE_SELTZER_SURGE) == TARGET_BOTH);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);

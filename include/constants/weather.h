@@ -1,30 +1,34 @@
 #ifndef GUARD_CONSTANTS_WEATHER_H
 #define GUARD_CONSTANTS_WEATHER_H
 
-#define WEATHER_NONE                    0
-#define WEATHER_SUNNY_CLOUDS            1
-#define WEATHER_SUNNY                   2
-#define WEATHER_RAIN                    3
-#define WEATHER_SNOW                    4   // Unused
-#define WEATHER_RAIN_THUNDERSTORM       5
-#define WEATHER_FOG_HORIZONTAL          6
-#define WEATHER_VOLCANIC_ASH            7
-#define WEATHER_SANDSTORM               8
-#define WEATHER_FOG_DIAGONAL            9   // Unused
-#define WEATHER_UNDERWATER              10  // Unused
-#define WEATHER_SHADE                   11  // Original name was closer to WEATHER_CLOUDY/OVERCAST
-#define WEATHER_DROUGHT                 12
-#define WEATHER_DOWNPOUR                13
-#define WEATHER_UNDERWATER_BUBBLES      14
-#define WEATHER_ABNORMAL                15  // The alternating weather during Groudon/Kyogre conflict
-#define WEATHER_ROUTE119_CYCLE          20
-#define WEATHER_ROUTE123_CYCLE          21
-#define WEATHER_FOG                     22  // Aggregate of WEATHER_FOG_HORIZONTAL and WEATHER_FOG_DIAGONAL
-#define WEATHER_ASHFROST_CYCLE          23  // Project Grounded: Route 136, per dag afwisselend sneeuw en as
-#define WEATHER_SNOW_STORM              24  // Project Grounded: zware sneeuwbui; in gevechten Snow Storm (was Hail)
-#define WEATHER_ASHFROST_STORM_CYCLE    25  // Project Grounded: Route 135, per dag afwisselend sneeuwstorm en as
-#define WEATHER_JUNGLE_CYCLE            26  // Project Grounded: Fortree Jungle, per dag regen, onweer, regen, stortbui
-#define WEATHER_COUNT                   27
+enum OverworldWeather
+{
+    WEATHER_NONE,
+    WEATHER_SUNNY_CLOUDS,
+    WEATHER_SUNNY,
+    WEATHER_RAIN,
+    WEATHER_SNOW, // Unused
+    WEATHER_RAIN_THUNDERSTORM,
+    WEATHER_FOG_HORIZONTAL,
+    WEATHER_VOLCANIC_ASH,
+    WEATHER_SANDSTORM,
+    WEATHER_FOG_DIAGONAL, // Unused
+    WEATHER_UNDERWATER, // Unused
+    WEATHER_SHADE, // Original name was closer to WEATHER_CLOUDY/OVERCAST
+    WEATHER_DROUGHT,
+    WEATHER_DOWNPOUR,
+    WEATHER_UNDERWATER_BUBBLES,
+    WEATHER_ABNORMAL, // The alternating weather during Groudon/Kyogre conflict
+    WEATHER_ROUTE119_CYCLE,
+    WEATHER_ROUTE123_CYCLE,
+    WEATHER_FOG, // Aggregate of WEATHER_FOG_HORIZONTAL and WEATHER_FOG_DIAGONAL
+    WEATHER_DYNAMIC,
+    WEATHER_ASHFROST_CYCLE,     // Project Grounded: Route 136, per dag afwisselend sneeuw en as
+    WEATHER_SNOW_STORM,         // Project Grounded: zware sneeuwbui; in gevechten Snow Storm (was Hail)
+    WEATHER_ASHFROST_STORM_CYCLE, // Project Grounded: Route 135, per dag afwisselend sneeuwstorm en as
+    WEATHER_JUNGLE_CYCLE,       // Project Grounded: Fortree Jungle, per dag regen, onweer, regen, stortbui
+    WEATHER_COUNT,
+};
 
 // These are used in maps' coord_weather_event entries.
 // They are not a one-to-one mapping with the engine's

@@ -2,6 +2,7 @@
 #define GUARD_CONSTANTS_OPPONENTS_H
 
 #include "constants/battle_partner.h"
+#include "constants/opponents_frlg.h"
 
 #define TRAINER_NONE                          0
 #define TRAINER_SAWYER_1                      1
@@ -996,7 +997,7 @@
 #define TRAINER_ARCHAEOLOGIST_HOLLIS        1073 // Project Grounded (landvulling): Desert Underpass, opgraving (fossielen)
 // }
 
-#define TRAINER_SAILOR_DUNCAN               1100 // Project Grounded (zeevulling 1): Route 107, sushi-eilandje (id's 1100+ om botsing met andere zee-agents te vermijden)
+#define TRAINER_SAILOR_DUNCAN_R107          1100 // Project Grounded (zeevulling 1): Route 107, sushi-eilandje (id's 1100+ om botsing met andere zee-agents te vermijden)
 #define TRAINER_RUIN_MANIAC_SIMON           1101 // Project Grounded (zeevulling 1): Route 107, rots-"ruine"
 #define TRAINER_OLD_COUPLE_HAL_AND_MAE      1102 // Project Grounded (zeevulling 1): Route 126, picknickbank (dubbel)
 #define TRAINER_BIRD_KEEPER_OSWALD          1103 // Project Grounded (zeevulling 1): Route 126, vogeleilandje
@@ -1143,8 +1144,16 @@
 #define TRAINER_SICKBLIK_MOTEL              1184 // Project Grounded: SickBlik chillt in het Cove Lily Motel (Lilycove), ja/nee-gevecht
 #define TRAINER_SICKBLIK_DEV                1185 // Project Grounded: SickBlik als developer op bugjacht (dagrotatie Mauville/Fortree/Lilycove/Pacifidlog)
 
-#define TRAINERS_COUNT                      1200
-#define MAX_TRAINERS_COUNT                  1200
+#define TRAINERS_COUNT_EMERALD                      1200
+#define MAX_TRAINERS_COUNT_EMERALD                  1200
+
+#if IS_FRLG
+#define TRAINERS_COUNT                      TRAINERS_COUNT_FRLG
+#define MAX_TRAINERS_COUNT                  MAX_TRAINERS_COUNT_FRLG
+#else
+#define TRAINERS_COUNT                      TRAINERS_COUNT_EMERALD
+#define MAX_TRAINERS_COUNT                  MAX_TRAINERS_COUNT_EMERALD
+#endif
 #define TRAINER_PARTNER(partner)           (MAX_TRAINERS_COUNT + partner)
 
 #endif  // GUARD_CONSTANTS_OPPONENTS_H

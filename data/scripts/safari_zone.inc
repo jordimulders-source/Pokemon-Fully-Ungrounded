@@ -1,11 +1,19 @@
 SafariZone_EventScript_OutOfBallsMidBattle::
+#if IS_FRLG
+	setvar VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 3
+#else
 	setvar VAR_SAFARI_ZONE_STATE, 1
+#endif
 	special ExitSafariMode
 	setwarp MAP_START_TOWN, 9, 12 @ Fully Ungrounded: plaatshouder; hier de ingang van een nieuwe Safari Zone
 	end
 
 SafariZone_EventScript_Exit::
+#if IS_FRLG
+	setvar VAR_MAP_SCENE_FUCHSIA_CITY_SAFARI_ZONE_ENTRANCE, 1
+#else
 	setvar VAR_SAFARI_ZONE_STATE, 1
+#endif
 	special ExitSafariMode
 	warp MAP_START_TOWN, 9, 12 @ Fully Ungrounded: plaatshouder; hier de ingang van een nieuwe Safari Zone
 	waitstate
@@ -51,7 +59,6 @@ EventScript_PokeBlockFeeder::
 SafariZone_EventScript_ChoosePokeblock::
 	fadescreen FADE_TO_BLACK
 	special OpenPokeblockCaseOnFeeder
-	waitstate
 	goto_if_ne VAR_RESULT, 0xFFFF, SafariZone_EventScript_PokeblockPlaced
 #ifdef BUGFIX
 	releaseall  @ Only gets called from EventScript_PokeBlockFeeder which uses lockall.

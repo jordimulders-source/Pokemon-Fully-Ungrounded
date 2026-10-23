@@ -98,7 +98,7 @@ SINGLE_BATTLE_TEST("Steel Trap binds the target and lowers its Speed")
 {
     GIVEN {
         ASSUME(MoveHasAdditionalEffect(MOVE_STEEL_TRAP, MOVE_EFFECT_WRAP));
-        ASSUME(MoveHasAdditionalEffect(MOVE_STEEL_TRAP, MOVE_EFFECT_SPD_MINUS_1));
+        ASSUME(MoveHasAdditionalEffect(MOVE_STEEL_TRAP, MOVE_EFFECT_STAT_MINUS));
         PLAYER(SPECIES_STUNFISK_GALAR);
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -157,7 +157,7 @@ DOUBLE_BATTLE_TEST("Pack Howl raises the Attack of the user and its partner in a
 DOUBLE_BATTLE_TEST("Whale Song hits both opponents and the user's partner")
 {
     GIVEN {
-        ASSUME(GetMoveTarget(MOVE_WHALE_SONG) == MOVE_TARGET_FOES_AND_ALLY);
+        ASSUME(GetMoveTarget(MOVE_WHALE_SONG) == TARGET_FOES_AND_ALLY);
         ASSUME(IsSoundMove(MOVE_WHALE_SONG));
         PLAYER(SPECIES_WAILORD);
         PLAYER(SPECIES_WOBBUFFET);
@@ -354,8 +354,8 @@ SINGLE_BATTLE_TEST("Moai Watch damages a switched-in foe with the better of Rock
         TURN { SWITCH(opponent, 1); }
     } SCENE {
         MESSAGE("Stone statues now stand watch around the opposing team!");
-        MESSAGE("The stone statues turned on the opposing Wingull!");
         HP_BAR(opponent, captureDamage: &damage);
+        MESSAGE("The stone statues turned on the opposing Wingull!");
     } THEN {
         EXPECT_EQ(damage, GetMonData(&OPPONENT_PARTY[1], MON_DATA_MAX_HP) / 2);
     }
@@ -406,8 +406,8 @@ SINGLE_BATTLE_TEST("Parental Bond only hits twice above half HP")
         TURN { MOVE(player, MOVE_TACKLE); }
     } SCENE {
         if (hp > 100)
-            MESSAGE("The Pokémon was hit 2 time(s)!");
+            MESSAGE("The Pokémon was hit 2 times!");
         else
-            NOT MESSAGE("The Pokémon was hit 2 time(s)!");
+            NOT MESSAGE("The Pokémon was hit 2 times!");
     }
 }

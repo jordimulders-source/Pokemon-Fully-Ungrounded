@@ -15,7 +15,7 @@ TEST("Project Grounded signature moves round 4 have the agreed data")
     EXPECT(MoveMakesContact(MOVE_OMEN_STRIKE));
     EXPECT_EQ(GetMoveType(MOVE_MIMIC_SHADE), TYPE_NORMAL);
     EXPECT_EQ(GetMovePower(MOVE_MIMIC_SHADE), 70);
-    EXPECT_EQ(GetMoveEffect(MOVE_BUNNY_HOP), EFFECT_DRAGON_DANCE);
+    EXPECT_EQ(GetMoveEffect(MOVE_BUNNY_HOP), EFFECT_STAT_CHANGE);
     EXPECT(IsDanceMove(MOVE_BUNNY_HOP));
     EXPECT_EQ(GetMovePP(MOVE_BUNNY_HOP), 20);
     EXPECT(!MoveMakesContact(MOVE_SKUNK_SPRAY));
@@ -24,7 +24,7 @@ TEST("Project Grounded signature moves round 4 have the agreed data")
     EXPECT_EQ(GetMoveAdditionalEffectById(MOVE_BRAIN_FREEZE, 0)->chance, 20);
     EXPECT_EQ(GetMovePower(MOVE_JOUST), 60);
     EXPECT_EQ(GetMovePriority(MOVE_JOUST), 0);
-    EXPECT_EQ(GetMoveTarget(MOVE_SOLSTICE_GATE), MOVE_TARGET_BOTH);
+    EXPECT_EQ(GetMoveTarget(MOVE_SOLSTICE_GATE), TARGET_BOTH);
     EXPECT_EQ(GetMoveAccuracy(MOVE_SOLSTICE_GATE), 90);
     EXPECT_EQ(GetMovePriority(MOVE_REV_UP), 1);
     EXPECT_EQ(GetMovePower(MOVE_REV_UP), 40);

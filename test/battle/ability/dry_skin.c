@@ -11,13 +11,12 @@ SINGLE_BATTLE_TEST("Dry Skin causes 1/8th Max HP damage in Sun")
     } SCENE {
         ABILITY_POPUP(player, ABILITY_DRY_SKIN);
         HP_BAR(player, damage: 200 / 8);
-        MESSAGE("Parasect's Dry Skin takes its toll!");
     }
 }
 
 SINGLE_BATTLE_TEST("Dry Skin doesn't get damaged in Sun if Cloud Nine/Air Lock is on the field")
 {
-    u16 species;
+    enum Species species;
     enum Ability ability;
 
     PARAMETRIZE { species = SPECIES_GOLDUCK; ability = ABILITY_CLOUD_NINE; }
@@ -33,7 +32,6 @@ SINGLE_BATTLE_TEST("Dry Skin doesn't get damaged in Sun if Cloud Nine/Air Lock i
         NONE_OF {
             ABILITY_POPUP(player, ABILITY_DRY_SKIN);
             HP_BAR(player);
-            MESSAGE("Parasect's Dry Skin takes its toll!");
         }
     }
 }
@@ -47,14 +45,14 @@ SINGLE_BATTLE_TEST("Dry Skin heals 1/8th Max HP in Rain")
         TURN { MOVE(player, MOVE_RAIN_DANCE); }
     } SCENE {
         ABILITY_POPUP(player, ABILITY_DRY_SKIN);
-        MESSAGE("Parasect's Dry Skin restored its HP a little!");
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_SIMPLE_HEAL, player);
         HP_BAR(player, damage: -(200 / 8));
     }
 }
 
 SINGLE_BATTLE_TEST("Dry Skin doesn't heal in Rain if Cloud Nine/Air Lock is on the field")
 {
-    u16 species;
+    enum Species species;
     enum Ability ability;
 
     PARAMETRIZE { species = SPECIES_GOLDUCK; ability = ABILITY_CLOUD_NINE; }
@@ -70,7 +68,7 @@ SINGLE_BATTLE_TEST("Dry Skin doesn't heal in Rain if Cloud Nine/Air Lock is on t
         NONE_OF {
             ABILITY_POPUP(player, ABILITY_DRY_SKIN);
             HP_BAR(player);
-            MESSAGE("Parasect's Dry Skin restored its HP a little!");
+            MESSAGE("Parasect had its HP restored.");
         }
     }
 }
@@ -114,7 +112,7 @@ SINGLE_BATTLE_TEST("Dry Skin heals 25% when hit by water type moves")
     } SCENE {
         ABILITY_POPUP(player, ABILITY_DRY_SKIN);
         HP_BAR(player, damage: -50);
-        MESSAGE("Parasect restored HP using its Dry Skin!");
+        MESSAGE("Parasect had its HP restored.");
     }
 }
 
@@ -135,7 +133,7 @@ SINGLE_BATTLE_TEST("Dry Skin is only triggered once on multi strike moves")
 {
     GIVEN {
         ASSUME(GetMoveType(MOVE_WATER_SHURIKEN) == TYPE_WATER);
-        ASSUME(GetMoveEffect(MOVE_WATER_SHURIKEN) == EFFECT_MULTI_HIT);
+        ASSUME(IsMultiHitMove(MOVE_WATER_SHURIKEN));
         PLAYER(SPECIES_PARASECT) { Ability(ABILITY_DRY_SKIN); HP(100); MaxHP(200); }
         OPPONENT(SPECIES_WOBBUFFET);
     } WHEN {
@@ -143,13 +141,13 @@ SINGLE_BATTLE_TEST("Dry Skin is only triggered once on multi strike moves")
     } SCENE {
         ABILITY_POPUP(player, ABILITY_DRY_SKIN);
         HP_BAR(player, damage: -50);
-        MESSAGE("Parasect restored HP using its Dry Skin!");
+        MESSAGE("Parasect had its HP restored.");
     }
 }
 
 SINGLE_BATTLE_TEST("Dry Skin prevents Absorb Bulb and Luminous Moss from activating")
 {
-    u32 item;
+    enum Item item;
     PARAMETRIZE { item = ITEM_ABSORB_BULB; }
     PARAMETRIZE { item = ITEM_LUMINOUS_MOSS; }
     GIVEN {
@@ -161,7 +159,7 @@ SINGLE_BATTLE_TEST("Dry Skin prevents Absorb Bulb and Luminous Moss from activat
     } SCENE {
         ABILITY_POPUP(player, ABILITY_DRY_SKIN);
         HP_BAR(player, damage: -50);
-        MESSAGE("Parasect restored HP using its Dry Skin!");
+        MESSAGE("Parasect had its HP restored.");
         NONE_OF {
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, player);
             ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_STATS_CHANGE, player);

@@ -332,18 +332,24 @@ enum __attribute__((packed)) Ability
     ABILITY_TERA_SHELL = 308,
     ABILITY_TERAFORM_ZERO = 309,
     ABILITY_POISON_PUPPETEER = 310,
-    ABILITY_DIMENSIONAL_WARP = 311,
-    ABILITY_AIR_POLLUTION = 312, // Project Grounded: zet Acid Rain bij binnenkomst
-    ABILITY_POLLEN_SEASON = 313, // Project Grounded: zet Pollen Haze bij binnenkomst
-    ABILITY_HELIOTROPISM = 314, // Project Grounded: Sunflora, alle stats +2 bij binnenkomst in de zon
-    ABILITY_HOLE_UP = 315, // Project Grounded: Dugtrio/Wugtrio, duikt na een KO weg (gratis wissel)
-    ABILITY_FAKE_FOLIAGE = 316, // Project Grounded: Sudowoodo, doet alsof hij Grass is
-    ABILITY_LANDFILL = 317, // Project Grounded: Garbodor, +1 Def/SpDef per beurt in Acid Rain
-    ABILITY_HIVE_QUEEN = 318, // Project Grounded: Vespiquen, ruimt eigen hazards op en negeert ze
-    ABILITY_TRADE_WIND = 319, // Project Grounded: Pidove-lijn/Ducklett-lijn, Tailwind bij binnenkomst
-    ABILITY_EELEVATE = 320, // Project Grounded: Eelektross, zweeft (Levitate) + KO verhoogt hoogste stat
-    ABILITY_AURA_GUARD = 321, // Project Grounded: Lucario, halveert contactschade
-    ABILITY_SPICY_SPRAY = 322, // Project Grounded: Scovillain, verbrandt wie hem met schade raakt
+    ABILITY_PIERCING_DRILL = 311,
+    ABILITY_DRAGONIZE = 312,
+    ABILITY_EELEVATE = 313, // Project Grounded (eigen effect, naam valt samen met de Z-A-ability van upstream): Eelektross, zweeft (Levitate) + KO verhoogt hoogste stat
+    ABILITY_314 = 314,
+    ABILITY_MEGA_SOL = 315,
+    ABILITY_FIRE_MANE = 316,
+    ABILITY_317 = 317,
+    ABILITY_SPICY_SPRAY = 318, // Project Grounded (eigen effect, naam valt samen met de Z-A-ability van upstream): Scovillain, verbrandt wie hem met schade raakt
+    ABILITY_AURA_GUARD = 319, // Project Grounded (eigen effect, naam valt samen met de Z-A-ability van upstream): Lucario, halveert contactschade
+    ABILITY_DIMENSIONAL_WARP = 320, // Project Grounded
+    ABILITY_AIR_POLLUTION = 321, // Project Grounded: zet Acid Rain bij binnenkomst
+    ABILITY_POLLEN_SEASON = 322, // Project Grounded: zet Pollen Haze bij binnenkomst
+    ABILITY_HELIOTROPISM = 323, // Project Grounded: Sunflora, alle stats +2 bij binnenkomst in de zon
+    ABILITY_HOLE_UP = 324, // Project Grounded: Dugtrio/Wugtrio, duikt na een KO weg (gratis wissel)
+    ABILITY_FAKE_FOLIAGE = 325, // Project Grounded: Sudowoodo, doet alsof hij Grass is
+    ABILITY_LANDFILL = 326, // Project Grounded: Garbodor, +1 Def/SpDef per beurt in Acid Rain
+    ABILITY_HIVE_QUEEN = 327, // Project Grounded: Vespiquen, ruimt eigen hazards op en negeert ze
+    ABILITY_TRADE_WIND = 328, // Project Grounded: Pidove-lijn/Ducklett-lijn, Tailwind bij binnenkomst
     ABILITIES_COUNT_GEN9,
     ABILITIES_COUNT = ABILITIES_COUNT_GEN9,
 };

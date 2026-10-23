@@ -78,5 +78,72 @@ Stap 3, deel 1: Spacetime, Yoshi's Island en Ultra Space zijn eruit. Het bouwt (
   - ROM-ruimte: vóór 11,47 MB vrij (`__rom_end` 0x09488034), na 18,55 MB vrij (0x08D71FE4), dus 7,09 MB erbij
     (kreten −4,68 MB, `pokemon.o` −2,41 MB).
 
-## Stap 4 (expansion 1.14.4 → 1.17.1)
-Niet begonnen. Remote `upstream` bestaat al in de repo.
+## Stap 4 (expansion 1.14.4 → 1.17.1): gemerged (merge-agent, 23 okt)
+Merge van tag `expansion/1.17.1` (bb1093a7c7) in onze lijn (b05a9f20c7); merge-commit bbd3bb217a met tussenstanden erna.
+Bouwt zonder fouten. In de emulator getest: nieuw spel, healen, Mart, wild gevecht (actiemenu, Move Info, L-info),
+Keccles (klasse-intro + thema), PC, summary (IV/EV-pagina), tas, debugmenu en song 616.
+
+**Wat er in 1.17 anders werkt (gevechtsmotor) en hoe het geport is**
+- De zetafhandeling loopt via cancelers (`src/battle_move_resolution.c`: accuracy, damage, multihit, call-submove, ...)
+  en een opgesplitste moveend (`MoveEnd*`-functies). Schade en accuracy worden vóór het battlescript berekend; de
+  scriptcommando's `accuracycheck`, `critcalc`, `damagecalc`, `adjustdamage`, `typecalc`, `jumpifsubstituteblocks`,
+  `end2`, `setstatchanger`/`statbuffchange` en `loadspritegfx` bestaan niet meer.
+- Onze accuracy-abilities (Totem Gaze, Burrow Maze, Lure Light) zitten in `CancelerAccuracyCheck`; Innard Punch in
+  `HandleMoveTargetRedirection` + `DoFixedDamageMoveCalc`; Weather Report zet het weer in `CancelerMoveSpecificMessage`
+  (vóór de schade); de Super Splash-tsunami loopt via de future-attack-route (`choosetwoturnanim`, geen eigen algemene
+  animatie meer).
+- Set-effecten staan in `src/battle_set_effect.c` (tabel `sSetEffectHandlers`), hazards bij binnenkomst in
+  `src/battle_switch_in.c`. `gDisableStructs` is weg: alles staat in `gBattleMons[b].volatiles.*` (F-lijst
+  `VOLATILE_DEFINITIONS` in `include/constants/battle.h`; onze velden staan daar onderaan).
+- Statwijzigingen gaan via een wachtrij: in C `SetStatChange(battler, stat, stage)` + `BattleScript_AbilityStatChange`
+  of `trybattlerstatchange`; in scripts de nieuwe macro `queuestatchange BS_X, STAT_Y, n` (native `BS_QueueStatChange`)
+  gevolgd door `trybattlerstatchange BS_X, STAT_CHANGE_NO_FLAGS`. Meerdere stats tegelijk = één animatie
+  (Heliotropism, Landfill, Praise Helix, Primeval Ward, Eye Spots, Pack Howl, Black Hole, Machine Learning).
+- Switch-in-abilities: `shouldAbilityTrigger` + `BattleScriptCall`, scripts eindigen op `return` (niet `end3`/`end2`).
+- Movedata: `EFFECT_STAT_CHANGE` met `.attack/.spAtk/...`, `MOVE_EFFECT_STAT_PLUS/MINUS`, `.multiHit`, `.explosion`,
+  `MOVE_EFFECT_ABSORB` + `absorbPercentage`, `EFFECT_WEATHER` + `.argument.weatherType` (Acid Rain en Pollen Haze nu ook),
+  `TARGET_*` i.p.v. `MOVE_TARGET_*`. `moves_info.h` is per move 3-weg gemerged en daarna omgezet.
+- Terrein staat in `gFieldTimers.terrain` (`B_TERRAIN_*`), niet meer in `gFieldStatuses`.
+
+**Buiten het gevecht**
+- 1.17 bevat FRLG (Kanto/Sevii) in dezelfde codebasis (`IS_FRLG`). Kaarten kwamen niet mee; FRLG-heal locations en
+  -kaartverwijzingen zijn uit `region_map.c`, `map_name_popup.c`, `post_battle_event_funcs.c` en `event_scripts.s` gehaald.
+  Onze eigen overworld-sprites waren in het `#if IS_FRLG`-blok van `object_event_graphics_info.h` beland en zijn eruit gehaald.
+- `tools/mapjson` maakt nu zelf constanten voor verdwenen kaarten (`required_map_defines.json`); wij laten die als `enum`
+  schrijven (patch in `mapjson.cpp`), anders weigert de `map`-macro in scripts ze. `map_compat.h` houdt alleen nog local ids.
+- `make_teaching_types.py` (nieuw) nam `FU_*`-vormschakelaars mee; nu krijgt een learnset die ook buiten zo'n schakelaar
+  gebruikt wordt (Grimer → Hoenn-Grimer) die plek.
+- `debug.c` is onze versie gebleven (upstream bouwde het geef-Pokémon-menu om naar `DebugSelection`); alleen de API is
+  bijgewerkt. Het upstream-debugscript dat daarvan afhing (Pokérus geven) is weg.
+- Migraties: `delete_implicit_waitstates` (o.a. `grounded_debug.inc`), `remove_loadspritegfx`, SE_SELECT →
+  SE_RG_BALL_CLICK op de nieuwe plekken. Bal-/moneybox-/incgfx-migraties waren niet nodig.
+- Spicy Spray, Eelevate en Aura Guard bestaan nu ook upstream (Z-A) onder dezelfde naam en nummer: Spicy Spray en
+  Eelevate doen upstream hetzelfde als bij ons en gebruiken die code; Aura Guard is de onze (upstream: niet geïmplementeerd).
+
+**Niet meegekomen / bewust anders**
+- Het nieuwe debug-geef-Pokémon-menu van upstream (zie boven).
+- Kleurvarianten voor Battle Frontier-tegenstanders (upstream bouwde de facility-mons om; Frontier gaat bij stap 8
+  waarschijnlijk toch weg).
+- Upstream-FRLG-code zit nu in de ROM (kaartvoorbeelden, Kanto-regiokaart, Trainer Tower, Seagallop, FRLG-intro/Hall of
+  Fame, extra RG-muziek), samen ±0,4 MB; kan bij stap 8/9 weg.
+
+**ROM-ruimte:** vóór 18,42 MB vrij (`__rom_end` 0x08D95200), na 17,91 MB vrij (0x08E183EC), dus ±0,51 MB minder.
+
+**Tests:** onze eigen tests (`test/battle/grounded/`, 233 stuks) per bestand gedraaid vóór en na: vóór 217 PASS / 2 FAIL /
+4 TIMEOUT, na 223 PASS en geen FAIL/TIMEOUT (9 ASSUMPTION_FAIL door soorten die buiten de dex vallen, al vóór de merge).
+Daarvoor zijn zes echte regressies gerepareerd (Life Buoy bij wisselen, Wind Chime-heal, Primeval Ward-blokkade,
+Tusk Tumble-spikes, Venom Dust/Beaver Dam-statdata, starttekst + `.type` van Acid Rain/Pollen Haze) en zijn testteksten
+aangepast aan nieuwe upstream-meldingen. De volledige `make check` haalt het niet binnen twee uur (vóór én na blijven
+workers hangen op tests met "Illegal opcode"); op het deel dat beide runs haalden (400 tests) zijn de uitkomsten gelijk,
+behalve 4 Daycare-tests die nu INVALID zijn (soorten buiten de dex).
+
+**Valkuilen voor de volgende upstream-merge**
+- Maak eerst een lijst van hernoemde/verwijderde API's (`docs/changelogs/`) en zet onze code mechanisch om
+  (`fixapi.py`-aanpak); pas daarna de conflicten.
+- Neem bij sterk herschreven bestanden (`battle_script_commands.c`, `battle_util.c`, `debug.c`, `trade.c`) upstream als
+  basis en zet onze blokken er opnieuw in; "ours" kiezen levert oude API in nieuwe code op.
+- Git laat bij aangrenzende toevoegingen de gedeelde staart (`}`, `};`, `#endif`) vallen: na de merge een
+  accoladecheck per bestand (`tileset_anims.c`, `trade.h`, `battle_util.c` hadden het) en controleren dat onze blokken
+  niet in een `#if IS_FRLG`-blok van upstream terechtkwamen.
+- Na de merge een identifier-check (identifiers die in onze lijn bijkwamen en nu nergens meer staan) naast de
+  regelvergelijking; regels verhuizen door API-wijzigingen naar andere bestanden.

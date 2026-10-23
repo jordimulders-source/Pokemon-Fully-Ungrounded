@@ -3,6 +3,7 @@
   "name": "Stock_HouseWithBed",
   "layout": "LAYOUT_HOUSE_WITH_BED",
   "music": "MUS_LITTLEROOT",
+  "region": "REGION_HOENN",
   "region_map_section": "MAPSEC_START_TOWN",
   "requires_flash": false,
   "weather": "WEATHER_NONE",

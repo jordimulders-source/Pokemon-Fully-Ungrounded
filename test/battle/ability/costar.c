@@ -51,7 +51,7 @@ DOUBLE_BATTLE_TEST("Costar copies an ally's Dragon Cheer critical hit boost")
 DOUBLE_BATTLE_TEST("Costar copies an ally's lowered stat stages")
 {
     GIVEN {
-        ASSUME(gMovesInfo[MOVE_GROWL].effect == EFFECT_ATTACK_DOWN);
+        ASSUME_STAT_CHANGE(MOVE_GROWL, attack: -1);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WYNAUT);
         PLAYER(SPECIES_FLAMIGO) { Ability(ABILITY_COSTAR); }
@@ -118,11 +118,40 @@ DOUBLE_BATTLE_TEST("Costar copies an ally's Dragon Cheer critical hit boost")
     }
 }
 
+DOUBLE_BATTLE_TEST("Costar copies an ally's stat stages after their ability activates upon entering battle")
+{
+    u32 speedLeft, speedRight = 0;
+
+    PARAMETRIZE { speedLeft = 200; speedRight = 150; }
+    PARAMETRIZE { speedLeft = 150; speedRight = 200; }
+
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Speed(100); }
+        PLAYER(SPECIES_WOBBUFFET) { Speed(110); }
+        OPPONENT(SPECIES_WOBBUFFET) { Speed(10); HP(1); };
+        OPPONENT(SPECIES_WYNAUT) { Speed(10); HP(1); };
+        OPPONENT(SPECIES_FLAMIGO) { Speed(speedLeft); Ability(ABILITY_COSTAR); }
+        OPPONENT(SPECIES_ZACIAN) { Speed(speedRight); Ability(ABILITY_INTREPID_SWORD); }
+    } WHEN {
+        TURN {
+            MOVE(playerLeft, MOVE_HYPER_VOICE);
+            SEND_OUT(opponentLeft, 2);
+            SEND_OUT(opponentRight, 3);
+        }
+    } SCENE {
+        ABILITY_POPUP(opponentRight, ABILITY_INTREPID_SWORD);
+        ABILITY_POPUP(opponentLeft, ABILITY_COSTAR);
+    } THEN {
+        EXPECT_EQ(opponentRight->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 1);
+        EXPECT_EQ(opponentLeft->statStages[STAT_ATK], DEFAULT_STAT_STAGE + 1);
+    }
+}
+
 // Copy from Ruin ability tests
 DOUBLE_BATTLE_TEST("Costar's message displays correctly after all battlers fainted - Player")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);
+        ASSUME(IsExplosionMove(MOVE_EXPLOSION));
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
         PLAYER(SPECIES_ZACIAN) { Ability(ABILITY_INTREPID_SWORD); }
@@ -142,7 +171,7 @@ DOUBLE_BATTLE_TEST("Costar's message displays correctly after all battlers faint
     } SCENE {
         MESSAGE("The opposing Wobbuffet used Explosion!");
         ABILITY_POPUP(playerLeft, ABILITY_INTREPID_SWORD);
-        MESSAGE("Zacian's Intrepid Sword raised its Attack!");
+        MESSAGE("Zacian's Attack rose!");
         ABILITY_POPUP(playerRight, ABILITY_COSTAR);
         MESSAGE("Flamigo copied Zacian's stat changes!");
     }
@@ -151,7 +180,7 @@ DOUBLE_BATTLE_TEST("Costar's message displays correctly after all battlers faint
 DOUBLE_BATTLE_TEST("Costar's message displays correctly after all battlers fainted - Opponent")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_EXPLOSION) == EFFECT_EXPLOSION);
+        ASSUME(IsExplosionMove(MOVE_EXPLOSION));
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
         PLAYER(SPECIES_WOBBUFFET) { HP(1); }
         PLAYER(SPECIES_WOBBUFFET);
@@ -171,7 +200,7 @@ DOUBLE_BATTLE_TEST("Costar's message displays correctly after all battlers faint
     } SCENE {
         MESSAGE("Wobbuffet used Explosion!");
         ABILITY_POPUP(opponentLeft, ABILITY_INTREPID_SWORD);
-        MESSAGE("The opposing Zacian's Intrepid Sword raised its Attack!");
+        MESSAGE("The opposing Zacian's Attack rose!");
         ABILITY_POPUP(opponentRight, ABILITY_COSTAR);
         MESSAGE("The opposing Flamigo copied the opposing Zacian's stat changes!");
     }

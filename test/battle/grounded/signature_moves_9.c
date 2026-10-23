@@ -32,7 +32,7 @@ TEST("Project Grounded moves round 9 have the agreed data")
     EXPECT_EQ(GetMoveCategory(MOVE_UPDRAFT), DAMAGE_CATEGORY_SPECIAL);
     EXPECT(IsWindMove(MOVE_UPDRAFT));
 
-    EXPECT_EQ(GetMoveEffect(MOVE_COUNTERFEIT_BALL), EFFECT_MULTI_HIT);
+    EXPECT(IsMultiHitMove(MOVE_COUNTERFEIT_BALL));
     EXPECT_EQ(GetMovePower(MOVE_COUNTERFEIT_BALL), 25);
     EXPECT(IsBallisticMove(MOVE_COUNTERFEIT_BALL));
 
@@ -176,7 +176,7 @@ SINGLE_BATTLE_TEST("Counterfeit Ball's fake Master Ball always crits on the last
         ANIMATION(ANIM_TYPE_MOVE, MOVE_COUNTERFEIT_BALL, player);
         MESSAGE("A critical hit!");
         MESSAGE("It was a fake MASTER BALL! It still hurt.");
-        MESSAGE("The Pokémon was hit 5 time(s)!");
+        MESSAGE("The Pokémon was hit 5 times!");
     }
 }
 
@@ -190,7 +190,7 @@ SINGLE_BATTLE_TEST("Counterfeit Ball without the fake Master Ball has no message
     } SCENE {
         ANIMATION(ANIM_TYPE_MOVE, MOVE_COUNTERFEIT_BALL, player);
         NONE_OF { MESSAGE("It was a fake MASTER BALL! It still hurt."); }
-        MESSAGE("The Pokémon was hit 5 time(s)!");
+        MESSAGE("The Pokémon was hit 5 times!");
     }
 }
 
@@ -276,7 +276,7 @@ SINGLE_BATTLE_TEST("Rapid Spin clears Bramble Lash's brambles")
     } SCENE {
         MESSAGE("Thorny brambles sprang up around the opposing team!");
         ANIMATION(ANIM_TYPE_MOVE, MOVE_RAPID_SPIN, opponent);
-        MESSAGE("The opposing Wobbuffet cleared away the brambles!");
+        MESSAGE("The brambles around the opposing team withered away!");
         MESSAGE("2 sent out Wobbuffet!");
         NOT MESSAGE("The opposing Wobbuffet got snagged on the brambles!");
     }
@@ -295,14 +295,14 @@ SINGLE_BATTLE_TEST("Trade Wind sets up a 3-turn Tailwind on entry")
         TURN {}
     } SCENE {
         ABILITY_POPUP(player, ABILITY_TRADE_WIND);
-        MESSAGE("The Tailwind blew from behind your team!");
+        MESSAGE("A tailwind started blowing on your side!");
         MESSAGE("Pidove used Celebrate!");
         MESSAGE("The opposing Wobbuffet used Celebrate!");
         MESSAGE("Pidove used Celebrate!");
         MESSAGE("The opposing Wobbuffet used Celebrate!");
         MESSAGE("Pidove used Celebrate!");
         MESSAGE("The opposing Wobbuffet used Celebrate!");
-        MESSAGE("Your team's Tailwind petered out!");
+        MESSAGE("Your side's tailwind petered out!");
         MESSAGE("The opposing Wobbuffet used Celebrate!");
         MESSAGE("Pidove used Celebrate!");
     }

@@ -167,7 +167,6 @@ GabbyAndTy_EventScript_ChooseMonsWithJoey::
 	special SavePlayerParty
 	fadescreen FADE_TO_BLACK
 	special ChooseHalfPartyForBattle
-	waitstate
 	goto_if_ne VAR_RESULT, 0, GabbyAndTy_EventScript_BattleWithJoey
 	special LoadPlayerParty
 	goto GabbyAndTy_EventScript_ChooseMonsWithJoey
@@ -178,7 +177,6 @@ GabbyAndTy_EventScript_BattleWithJoey::
 	case 1, GabbyAndTy_EventScript_WonWithJoey
 	fadescreen FADE_TO_BLACK
 	special SetCB2WhiteOut
-	waitstate
 
 GabbyAndTy_EventScript_WonWithJoey::
 	settrainerflag TRAINER_GABBY_AND_TY_1

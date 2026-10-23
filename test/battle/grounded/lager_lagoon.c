@@ -24,7 +24,7 @@ SINGLE_BATTLE_TEST("Lager Lagoon confuses the target 50% of the time")
 DOUBLE_BATTLE_TEST("Lager Lagoon hits both opponents and the user's partner")
 {
     GIVEN {
-        ASSUME(GetMoveTarget(MOVE_LAGER_LAGOON) == MOVE_TARGET_FOES_AND_ALLY);
+        ASSUME(GetMoveTarget(MOVE_LAGER_LAGOON) == TARGET_FOES_AND_ALLY);
         PLAYER(SPECIES_WOBBUFFET);
         PLAYER(SPECIES_WOBBUFFET);
         OPPONENT(SPECIES_WOBBUFFET);

@@ -674,7 +674,7 @@ static void CINinja2_Init(void)
     for (i = 1; i < NB_CLONES; i++)
     {
         struct SpriteTemplate tmpl = {
-            .tileTag = gTrainerSprites[pic].frontPic.tag, .paletteTag = gTrainerSprites[pic].palette.tag,
+            .tileTag = GetTrainerPicTag(pic, TRUE), .paletteTag = GetTrainerPicTag(pic, TRUE),
             .oam = &gOamData_AffineOff_ObjNormal_64x64, .anims = gDummySpriteAnimTable, .images = NULL,
             .affineAnims = gDummySpriteAffineAnimTable, .callback = SpriteCallbackDummy,
         };

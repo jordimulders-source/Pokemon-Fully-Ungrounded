@@ -3,7 +3,7 @@
 
 ASSUMPTIONS
 {
-    ASSUME(!IsBattleMoveStatus(MOVE_WATER_GUN));
+    ASSUME(GetMoveCategory(MOVE_WATER_GUN) != DAMAGE_CATEGORY_STATUS);
 }
 
 // Battle Bond transforms the Pokémon when fainting any battler(opposing or partner), unless it's the last Pokémon and the battle ends.
@@ -49,6 +49,9 @@ SINGLE_BATTLE_TEST("Battle Bond transforms player's Greninja - Singles")
     } FINALLY {
         if (monsCountOpponent != 1) {
             EXPECT(player->species == SPECIES_GRENINJA_ASH);
+            EXPECT_EQ(player->attack, 295);
+            EXPECT_EQ(player->spAttack, 311);
+            EXPECT_EQ(player->speed, 269);
         } else {
             EXPECT(player->species == SPECIES_GRENINJA_BATTLE_BOND);
         }

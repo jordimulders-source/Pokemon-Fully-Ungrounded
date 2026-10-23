@@ -7,7 +7,7 @@ SINGLE_BATTLE_TEST("Shadow Siphon restores 75% of the damage dealt")
     s16 damage, healed;
     GIVEN {
         ASSUME(GetMoveType(MOVE_SHADOW_SIPHON) == TYPE_DARK);
-        ASSUME(GetMoveEffect(MOVE_SHADOW_SIPHON) == EFFECT_ABSORB);
+        ASSUME(MoveHasAdditionalEffect(MOVE_SHADOW_SIPHON, MOVE_EFFECT_ABSORB));
         PLAYER(SPECIES_WOBBUFFET) { HP(1); Moves(MOVE_SHADOW_SIPHON); }
         OPPONENT(SPECIES_WOBBUFFET) { Moves(MOVE_CELEBRATE); }
     } WHEN {

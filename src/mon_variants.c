@@ -1,6 +1,8 @@
 #include "global.h"
 #include "battle_main.h"
 #include "mon_variants.h"
+#include "random.h"
+#include "trainer_util.h"
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "constants/characters.h"

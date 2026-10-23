@@ -12,7 +12,7 @@ DOUBLE_BATTLE_TEST("Pickpocket checks contact/effect per target for spread moves
     GIVEN {
         ASSUME(GetSpeciesType(SPECIES_CLEFAIRY, 0) == TYPE_FAIRY);
         ASSUME(GetMoveType(MOVE_BREAKING_SWIPE) == TYPE_DRAGON);
-        ASSUME(GetMoveTarget(MOVE_BREAKING_SWIPE) == MOVE_TARGET_BOTH);
+        ASSUME(GetMoveTarget(MOVE_BREAKING_SWIPE) == TARGET_BOTH);
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_MAGOST_BERRY); }
         PLAYER(SPECIES_WYNAUT);
         OPPONENT(SPECIES_SNEASEL) { Ability(ABILITY_PICKPOCKET); }
@@ -31,7 +31,7 @@ DOUBLE_BATTLE_TEST("Pickpocket checks contact/effect per target for spread moves
 DOUBLE_BATTLE_TEST("Pickpocket activates for the fastest itemless target when both are hit by a contact spread move")
 {
     GIVEN {
-        ASSUME(GetMoveTarget(MOVE_BREAKING_SWIPE) == MOVE_TARGET_BOTH);
+        ASSUME(GetMoveTarget(MOVE_BREAKING_SWIPE) == TARGET_BOTH);
         PLAYER(SPECIES_WOBBUFFET) { Speed(20); Item(ITEM_MAGOST_BERRY); }
         PLAYER(SPECIES_WYNAUT) { Speed(10); }
         OPPONENT(SPECIES_SNEASEL) { Speed(40); Ability(ABILITY_PICKPOCKET); }
@@ -137,7 +137,7 @@ SINGLE_BATTLE_TEST("Pickpocket cannot steal restricted held items")
 SINGLE_BATTLE_TEST("Pickpocket activates after the final hit of a multi-strike move")
 {
     GIVEN {
-        ASSUME(GetMoveEffect(MOVE_FURY_SWIPES) == EFFECT_MULTI_HIT);
+        ASSUME(IsMultiHitMove(MOVE_FURY_SWIPES));
         ASSUME(MoveMakesContact(MOVE_FURY_SWIPES));
         PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_MAGOST_BERRY); }
         OPPONENT(SPECIES_SNEASEL) { Ability(ABILITY_PICKPOCKET); }
@@ -147,7 +147,7 @@ SINGLE_BATTLE_TEST("Pickpocket activates after the final hit of a multi-strike m
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FURY_SWIPES, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FURY_SWIPES, player);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_FURY_SWIPES, player);
-        MESSAGE("The Pokémon was hit 3 time(s)!");
+        MESSAGE("The Pokémon was hit 3 times!");
         ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
         MESSAGE("The opposing Sneasel stole Wobbuffet's Magost Berry!");
     } THEN {
@@ -194,7 +194,7 @@ SINGLE_BATTLE_TEST("Pickpocket activates after Sticky Barb transfers")
 
 SINGLE_BATTLE_TEST("Pickpocket activates after Thief or Covet steals an item")
 {
-    u16 move;
+    enum Move move;
     PARAMETRIZE { move = MOVE_THIEF; }
     PARAMETRIZE { move = MOVE_COVET; }
     GIVEN {
@@ -236,7 +236,7 @@ SINGLE_BATTLE_TEST("Pickpocket activates after Focus Sash is consumed")
 
 SINGLE_BATTLE_TEST("Pickpocket activates after Knock Off, Bug Bite, or Pluck")
 {
-    u16 move;
+    enum Move move;
     PARAMETRIZE { move = MOVE_KNOCK_OFF; }
     PARAMETRIZE { move = MOVE_BUG_BITE; }
     PARAMETRIZE { move = MOVE_PLUCK; }
@@ -264,7 +264,7 @@ SINGLE_BATTLE_TEST("Pickpocket steals Life Orb after it activates")
     } WHEN {
         TURN { MOVE(player, MOVE_SCRATCH); }
     } SCENE {
-        MESSAGE("Wobbuffet was hurt by the Life Orb!");
+        MESSAGE("Wobbuffet lost some of its HP!");
         ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
         MESSAGE("The opposing Sneasel stole Wobbuffet's Life Orb!");
     } THEN {
@@ -307,6 +307,185 @@ SINGLE_BATTLE_TEST("Pickpocket does not prevent King's Rock or Razor Fang flinch
         MESSAGE("The opposing Sneasel flinched and couldn't move!");
     } THEN {
         EXPECT(opponent->item == ITEM_KINGS_ROCK);
+        EXPECT(player->item == ITEM_NONE);
+    }
+}
+
+SINGLE_BATTLE_TEST("Pickpocket activates when user has Protective Pads, but not with Punching Glove or Long Reach")
+{
+    enum Item item;
+    enum Ability ability;
+
+    PARAMETRIZE { item = ITEM_PROTECTIVE_PADS; ability = ABILITY_OVERGROW;   }
+    PARAMETRIZE { item = ITEM_PUNCHING_GLOVE;  ability = ABILITY_OVERGROW;   }
+    PARAMETRIZE { item = ITEM_NONE;            ability = ABILITY_LONG_REACH; }
+
+    GIVEN {
+        ASSUME(MoveMakesContact(MOVE_MACH_PUNCH));
+        ASSUME(IsPunchingMove(MOVE_MACH_PUNCH));
+        ASSUME(GetItemHoldEffect(ITEM_PROTECTIVE_PADS) == HOLD_EFFECT_PROTECTIVE_PADS);
+        ASSUME(GetItemHoldEffect(ITEM_PUNCHING_GLOVE) == HOLD_EFFECT_PUNCHING_GLOVE);
+        ASSUME(GetItemHoldEffect(ITEM_FOCUS_SASH) == HOLD_EFFECT_FOCUS_SASH);
+        PLAYER(SPECIES_DECIDUEYE) { Ability(ability); Item(item); }
+        OPPONENT(SPECIES_SNEASEL) { Ability(ABILITY_PICKPOCKET); Item(ITEM_FOCUS_SASH); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_MACH_PUNCH); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_MACH_PUNCH, player);
+
+        if (item == ITEM_PROTECTIVE_PADS) {
+            ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
+        } else {
+            NOT ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
+        }
+    }
+}
+
+SINGLE_BATTLE_TEST("Pickpocket activates after an Item was knocked off")
+{
+    GIVEN {
+        ASSUME(GetMoveEffect(MOVE_KNOCK_OFF) == EFFECT_KNOCK_OFF);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_POTION); }
+        OPPONENT(SPECIES_SNEASEL) { Item(ITEM_POTION); Ability(ABILITY_PICKPOCKET); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_KNOCK_OFF); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_KNOCK_OFF, player);
+        ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
+    } THEN {
+        EXPECT(opponent->item == ITEM_POTION);
+        EXPECT(player->item == ITEM_NONE);
+    }
+}
+
+SINGLE_BATTLE_TEST("Pickpocket can steal the attacker's Air Balloon")
+{
+    GIVEN {
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_AIR_BALLOON); }
+        OPPONENT(SPECIES_SNEASEL) { Ability(ABILITY_PICKPOCKET); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_SCRATCH); }
+    } SCENE {
+        MESSAGE("Wobbuffet floats in the air with its Air Balloon!");
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
+        ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
+        MESSAGE("The opposing Sneasel stole Wobbuffet's Air Balloon!");
+    } THEN {
+        EXPECT_EQ(player->item, ITEM_NONE);
+        EXPECT_EQ(opponent->item, ITEM_AIR_BALLOON);
+    }
+}
+
+SINGLE_BATTLE_TEST("Pickpocket steals from the original U-turn user before it switches out")
+{
+    GIVEN {
+        ASSUME(MoveMakesContact(MOVE_U_TURN));
+        ASSUME(GetMoveEffect(MOVE_U_TURN) == EFFECT_HIT_ESCAPE);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_POTION); }
+        PLAYER(SPECIES_WYNAUT) { Item(ITEM_POKE_BALL); }
+        OPPONENT(SPECIES_SNEASEL) { Ability(ABILITY_PICKPOCKET); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_U_TURN); SEND_OUT(player, 1); }
+        TURN { SWITCH(player, 0); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_U_TURN, player);
+        HP_BAR(opponent);
+        ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
+        MESSAGE("The opposing Sneasel stole Wobbuffet's Potion!");
+    } THEN {
+        EXPECT(opponent->item == ITEM_POTION);
+        EXPECT(player->item == ITEM_NONE);
+    }
+}
+
+SINGLE_BATTLE_TEST("Pickpocket steals the attacker's item even after Red Card forces a switch")
+{
+    GIVEN {
+        ASSUME(gItemsInfo[ITEM_RED_CARD].holdEffect == HOLD_EFFECT_RED_CARD);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_POKE_BALL); }
+        PLAYER(SPECIES_WYNAUT);
+        OPPONENT(SPECIES_SNEASEL) { Ability(ABILITY_PICKPOCKET); Item(ITEM_RED_CARD); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_SCRATCH); }
+        TURN { SWITCH(player, 0); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+        MESSAGE("The opposing Sneasel held up its Red Card against Wobbuffet!");
+        MESSAGE("Wynaut was dragged out!");
+        ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
+        MESSAGE("The opposing Sneasel stole Wobbuffet's Poké Ball!");
+    } THEN {
+        EXPECT(opponent->item == ITEM_POKE_BALL);
+        EXPECT(player->item == ITEM_NONE);
+    }
+}
+
+SINGLE_BATTLE_TEST("Pickpocket does not activate if its user switches out with Eject Button")
+{
+    GIVEN {
+        ASSUME(gItemsInfo[ITEM_EJECT_BUTTON].holdEffect == HOLD_EFFECT_EJECT_BUTTON);
+        PLAYER(SPECIES_WOBBUFFET) { Item(ITEM_POTION); }
+        OPPONENT(SPECIES_SNEASEL) { Ability(ABILITY_PICKPOCKET); Item(ITEM_EJECT_BUTTON); }
+        OPPONENT(SPECIES_WOBBUFFET);
+    } WHEN {
+        TURN { MOVE(player, MOVE_SCRATCH); SEND_OUT(opponent, 1); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SCRATCH, player);
+        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_HELD_ITEM_EFFECT, opponent);
+        MESSAGE("The opposing Sneasel is switched out with the Eject Button!");
+        NONE_OF {
+            ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
+            MESSAGE("The opposing Sneasel stole Wobbuffet's Potion!");
+        }
+    } THEN {
+        EXPECT(opponent->item == ITEM_NONE);
+        EXPECT(player->item == ITEM_POTION);
+    }
+}
+
+SINGLE_BATTLE_TEST("Pickpocket cannot steal an item if hit by a contact move that's boosted by Sheer Force (Gen9-)")
+{
+    GIVEN {
+        // GIVEN(B_SHEER_FORCE_AGAINST_ABILITIES, GEN_9);
+        ASSUME(gMovesInfo[MOVE_CRUNCH].additionalEffects->moveEffect == MOVE_EFFECT_STAT_MINUS);
+        ASSUME(gItemsInfo[ITEM_LIFE_ORB].holdEffect == HOLD_EFFECT_LIFE_ORB);
+        PLAYER(SPECIES_LANDORUS) { Item(ITEM_LIFE_ORB); Ability(ABILITY_SHEER_FORCE); }
+        OPPONENT(SPECIES_SNEASEL) { Ability(ABILITY_PICKPOCKET); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_CRUNCH); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_CRUNCH, player);
+        HP_BAR(opponent);
+        NONE_OF {
+            ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
+            MESSAGE("The opposing Sneasel stole Landorus's Life Orb!");
+        }
+    } THEN {
+        EXPECT(opponent->item == ITEM_NONE);
+        EXPECT(player->item == ITEM_LIFE_ORB);
+    }
+}
+
+SINGLE_BATTLE_TEST("Pickpocket can steal an item even if hit by a contact move that's boosted by Sheer Force (Champions)")
+{
+    KNOWN_FAILING;
+    GIVEN {
+        // GIVEN(B_SHEER_FORCE_AGAINST_ABILITIES, GEN_CHAMPIONS);
+        ASSUME(gMovesInfo[MOVE_CRUNCH].additionalEffects->moveEffect == MOVE_EFFECT_STAT_MINUS);
+        ASSUME(gItemsInfo[ITEM_LIFE_ORB].holdEffect == HOLD_EFFECT_LIFE_ORB);
+        PLAYER(SPECIES_LANDORUS) { Item(ITEM_LIFE_ORB); Ability(ABILITY_SHEER_FORCE); }
+        OPPONENT(SPECIES_SNEASEL) { Ability(ABILITY_PICKPOCKET); }
+    } WHEN {
+        TURN { MOVE(player, MOVE_CRUNCH); }
+    } SCENE {
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_CRUNCH, player);
+        HP_BAR(opponent);
+        ABILITY_POPUP(opponent, ABILITY_PICKPOCKET);
+        MESSAGE("The opposing Sneasel stole Landorus's Life Orb!");
+    } THEN {
+        EXPECT(opponent->item == ITEM_LIFE_ORB);
         EXPECT(player->item == ITEM_NONE);
     }
 }

@@ -110,7 +110,6 @@ SINGLE_BATTLE_TEST("Spicy Spray burns the attacker after any damaging hit")
     } SCENE {
         ABILITY_POPUP(opponent, ABILITY_SPICY_SPRAY);
         ANIMATION(ANIM_TYPE_STATUS, B_ANIM_STATUS_BRN, player);
-        MESSAGE("The opposing Scovillain's Spicy Spray burned Wobbuffet!");
         STATUS_ICON(player, burn: TRUE);
     }
 }

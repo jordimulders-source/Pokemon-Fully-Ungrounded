@@ -63,6 +63,8 @@ u32 GetRandomPatternForm(u32 species)
         return sSpewpaForms[Random() % ARRAY_COUNT(sSpewpaForms)];
     case SPECIES_VIVILLON:
         return sVivillonForms[Random() % ARRAY_COUNT(sVivillonForms)];
+    default:
+        break;
     }
     return species;
 }
@@ -75,6 +77,8 @@ u32 GetSeasonalForm(u32 species)
         return sDeerlingForms[GetSeason()];
     case SPECIES_SAWSBUCK:
         return sSawsbuckForms[GetSeason()];
+    default:
+        break;
     }
     return species;
 }

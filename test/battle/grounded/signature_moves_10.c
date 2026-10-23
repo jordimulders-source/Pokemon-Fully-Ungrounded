@@ -47,7 +47,7 @@ SINGLE_BATTLE_TEST("Super Splash does nothing on the first turn and hits at the 
         NOT HP_BAR(opponent);
         ANIMATION(ANIM_TYPE_MOVE, MOVE_CELEBRATE, player);
         MESSAGE("A tsunami crashed into the opposing Wobbuffet!");
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_SUPER_SPLASH_HIT, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SUPER_SPLASH, player);
         HP_BAR(opponent);
     }
 }
@@ -66,7 +66,7 @@ SINGLE_BATTLE_TEST("Super Splash uses the user's Attack", s16 damage)
         TURN { MOVE(player, MOVE_SUPER_SPLASH); }
         TURN { MOVE(player, MOVE_CELEBRATE); }
     } SCENE {
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_SUPER_SPLASH_HIT, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SUPER_SPLASH, player);
         HP_BAR(opponent, captureDamage: &results[i].damage);
     } FINALLY {
         EXPECT_GT(results[1].damage, results[0].damage);
@@ -88,7 +88,7 @@ SINGLE_BATTLE_TEST("Super Splash fails while a tsunami is already on its way")
         MESSAGE("But nothing happened… yet!");
         MESSAGE("Gyarados used Super Splash!");
         MESSAGE("But it failed!");
-        ANIMATION(ANIM_TYPE_GENERAL, B_ANIM_SUPER_SPLASH_HIT, player);
+        ANIMATION(ANIM_TYPE_MOVE, MOVE_SUPER_SPLASH, player);
     }
 }
 

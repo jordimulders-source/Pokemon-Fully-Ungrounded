@@ -92,3 +92,4 @@ Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.p
 - **Geen lange rechte lijnen in organische vormen** (staarten, ledematen): elke lijn buigt (vgl. Aipom- en Mew-staart).
 - **Gezicht compleet:** ogen, mond (ook als hij klein is) en oren horen erbij; ontbreekt er één, dan oogt het onaf.
 - **Ogen niet 'opgeplakt':** de oogkassen en de omlijning van de ogen in de kleur van het gezicht laten overlopen (gekleurde omlijning en schaduw rond het oog), en de oogkleur laten passen bij het type (Psychic: roze/paars/rood/cyaan zoals Espeon, Abra, Ralts, Natu).
+- **Kijkrichting:** Gen 3-sprites kijken bijna altijd **diagonaal** (3/4 naar links-voor, beide ogen zichtbaar), niet in zuiver profiel (Jordi, olinguito ronde 8).

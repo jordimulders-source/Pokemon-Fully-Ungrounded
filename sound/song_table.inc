@@ -617,6 +617,12 @@ gSongTable::
 	song dummy_song_header, MUSIC_PLAYER_SE2, 2
 	song dummy_song_header, MUSIC_PLAYER_SE2, 2
 	song mus_grounded_vs_keccles, MUSIC_PLAYER_BGM, 0 @ 610; Fully Ungrounded: de overige eigen Ungrounded-muziek is weg
+	song mus_fu_demo, MUSIC_PLAYER_BGM, 0 @ 611
+	song mus_fu_altiplano, MUSIC_PLAYER_BGM, 0 @ 612
+	song mus_fu_vs_wild, MUSIC_PLAYER_BGM, 0 @ 613
+	song mus_fu_la_paz, MUSIC_PLAYER_BGM, 0 @ 614
+	song mus_fu_bende, MUSIC_PLAYER_BGM, 0 @ 615
+	song mus_fu_samba, MUSIC_PLAYER_BGM, 0 @ 616
 
 	.align 2
 dummy_song_header:

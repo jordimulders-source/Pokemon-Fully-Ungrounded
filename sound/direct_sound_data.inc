@@ -6536,124 +6536,154 @@ DirectSoundWaveData_kc_guitar_69::
 
 @ rip wl4 (mp2k_rip.py)
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+	.align 2
+DirectSoundWaveData_fu_charango_64::
+	.incbin "sound/direct_sound_samples/fu/fu_charango_64.bin"
+
+	.align 2
+DirectSoundWaveData_fu_charango_76::
+	.incbin "sound/direct_sound_samples/fu/fu_charango_76.bin"
+
+	.align 2
+DirectSoundWaveData_fu_charango_strum::
+	.incbin "sound/direct_sound_samples/fu/fu_charango_strum.bin"
+
+	.align 2
+DirectSoundWaveData_fu_quena_69::
+	.incbin "sound/direct_sound_samples/fu/fu_quena_69.bin"
+
+	.align 2
+DirectSoundWaveData_fu_quena_81::
+	.incbin "sound/direct_sound_samples/fu/fu_quena_81.bin"
+
+	.align 2
+DirectSoundWaveData_fu_zampona_67::
+	.incbin "sound/direct_sound_samples/fu/fu_zampona_67.bin"
+
+	.align 2
+DirectSoundWaveData_fu_zampona_79::
+	.incbin "sound/direct_sound_samples/fu/fu_zampona_79.bin"
+
+	.align 2
+DirectSoundWaveData_fu_accordion_60::
+	.incbin "sound/direct_sound_samples/fu/fu_accordion_60.bin"
+
+	.align 2
+DirectSoundWaveData_fu_accordion_72::
+	.incbin "sound/direct_sound_samples/fu/fu_accordion_72.bin"
+
+	.align 2
+DirectSoundWaveData_fu_trombone_55::
+	.incbin "sound/direct_sound_samples/fu/fu_trombone_55.bin"
+
+	.align 2
+DirectSoundWaveData_fu_trombone_67::
+	.incbin "sound/direct_sound_samples/fu/fu_trombone_67.bin"
+
+	.align 2
+DirectSoundWaveData_fu_nylon_52::
+	.incbin "sound/direct_sound_samples/fu/fu_nylon_52.bin"
+
+	.align 2
+DirectSoundWaveData_fu_nylon_64::
+	.incbin "sound/direct_sound_samples/fu/fu_nylon_64.bin"
+
+	.align 2
+DirectSoundWaveData_fu_cuica::
+	.incbin "sound/direct_sound_samples/fu/fu_cuica.bin"
+
+	.align 2
+DirectSoundWaveData_fu_kick::
+	.incbin "sound/direct_sound_samples/fu/fu_kick.bin"
+
+	.align 2
+DirectSoundWaveData_fu_snare_rg::
+	.incbin "sound/direct_sound_samples/fu/fu_snare_rg.bin"
+
+	.align 2
+DirectSoundWaveData_fu_bombo::
+	.incbin "sound/direct_sound_samples/fu/fu_bombo.bin"
+
+	.align 2
+DirectSoundWaveData_fu_bombo_aro::
+	.incbin "sound/direct_sound_samples/fu/fu_bombo_aro.bin"
+
+	.align 2
+DirectSoundWaveData_fu_cajon_bass::
+	.incbin "sound/direct_sound_samples/fu/fu_cajon_bass.bin"
+
+	.align 2
+DirectSoundWaveData_fu_cajon_slap::
+	.incbin "sound/direct_sound_samples/fu/fu_cajon_slap.bin"
+
+	.align 2
+DirectSoundWaveData_fu_bongo_hi::
+	.incbin "sound/direct_sound_samples/fu/fu_bongo_hi.bin"
+
+	.align 2
+DirectSoundWaveData_fu_bongo_lo::
+	.incbin "sound/direct_sound_samples/fu/fu_bongo_lo.bin"
+
+	.align 2
+DirectSoundWaveData_fu_conga_slap::
+	.incbin "sound/direct_sound_samples/fu/fu_conga_slap.bin"
+
+	.align 2
+DirectSoundWaveData_fu_conga_open::
+	.incbin "sound/direct_sound_samples/fu/fu_conga_open.bin"
+
+	.align 2
+DirectSoundWaveData_fu_tumba::
+	.incbin "sound/direct_sound_samples/fu/fu_tumba.bin"
+
+	.align 2
+DirectSoundWaveData_fu_guiro_long::
+	.incbin "sound/direct_sound_samples/fu/fu_guiro_long.bin"
+
+	.align 2
+DirectSoundWaveData_fu_guiro_short::
+	.incbin "sound/direct_sound_samples/fu/fu_guiro_short.bin"
+
+	.align 2
+DirectSoundWaveData_fu_shaker::
+	.incbin "sound/direct_sound_samples/fu/fu_shaker.bin"
+
+	.align 2
+DirectSoundWaveData_fu_claves::
+	.incbin "sound/direct_sound_samples/fu/fu_claves.bin"
+
+	.align 2
+DirectSoundWaveData_fu_cowbell::
+	.incbin "sound/direct_sound_samples/fu/fu_cowbell.bin"
+
+	.align 2
+DirectSoundWaveData_fu_caixa::
+	.incbin "sound/direct_sound_samples/fu/fu_caixa.bin"
+
+	.align 2
+DirectSoundWaveData_fu_surdo::
+	.incbin "sound/direct_sound_samples/fu/fu_surdo.bin"
+
+	.align 2
+DirectSoundWaveData_fu_tamborim::
+	.incbin "sound/direct_sound_samples/fu/fu_tamborim.bin"
+
+	.align 2
+DirectSoundWaveData_fu_agogo_hi::
+	.incbin "sound/direct_sound_samples/fu/fu_agogo_hi.bin"
+
+	.align 2
+DirectSoundWaveData_fu_agogo_lo::
+	.incbin "sound/direct_sound_samples/fu/fu_agogo_lo.bin"
+
+	.align 2
+DirectSoundWaveData_fu_apito::
+	.incbin "sound/direct_sound_samples/fu/fu_apito.bin"
+
+	.align 2
+DirectSoundWaveData_fu_808::
+	.incbin "sound/direct_sound_samples/fu/fu_808.bin"
+
+	.align 2
+DirectSoundWaveData_fu_supersaw::
+	.incbin "sound/direct_sound_samples/fu/fu_supersaw.bin"

@@ -6,6 +6,7 @@
 .include "sound/voicegroups/drumsets/emerald_1.inc"
 .include "sound/voicegroups/drumsets/emerald_2.inc"
 .include "sound/voicegroups/drumsets/keccles.inc"
+.include "sound/voicegroups/drumsets/fu.inc"
 
 @ key splits
 .include "sound/voicegroups/keysplits/piano.inc"
@@ -17,6 +18,7 @@
 .include "sound/voicegroups/keysplits/keccles_piano.inc"
 .include "sound/voicegroups/keysplits/keccles_trombone.inc"
 .include "sound/voicegroups/keysplits/keccles_guitar.inc"
+.include "sound/voicegroups/keysplits/fu.inc"
 
 .include "sound/voicegroups/route110.inc"
 .include "sound/voicegroups/route101.inc"
@@ -205,3 +207,4 @@
 .include "sound/voicegroups/rg_sevii_67.inc"
 .include "sound/voicegroups/drumsets/rg_credits.inc"
 .include "sound/voicegroups/grounded_keccles.inc"
+.include "sound/voicegroups/fu.inc"

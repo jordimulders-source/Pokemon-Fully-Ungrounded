@@ -53,3 +53,6 @@ Tijdens het tekenen afgekeurd en vervangen: een eerste C met een paarse 'kap' ov
 - Optioneel: de rechtopstaande coati-staart uit B kan in fase 2 terugkomen als houding (coati's lopen echt zo), zonder dat het een tweede ontwerpkenmerk wordt.
 
 Na Jordi's keuze: het gekozen concept is de modeltekening. De pixelronde gebruikt Teddiursa (kop) + Zigzagoon (lijf, masker) als skelet en neemt de rampopbouw over uit hun `normal_gba.pal` (KEURING_RONDE5 §3).
+
+## Hele lijn
+`lijn.png` (script `scripts/lijn.py`): ruwe modeltekening van fase 1–3 voor concept B (coati met herdersstaf-staart, Robin Hood-wasbeer met de staart als boog over de schouder). Nog niet goedgekeurd. De eerste pixelronde van fase 1 staat in `docs/concept/sprites/olinguito/ronde6/`.

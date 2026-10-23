@@ -1,5 +1,5 @@
 @ Gegenereerd door tools/grounded/maptools/map_compat.py, niet met de hand bewerken.
-@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (633).
+@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (606).
 @ Opruimen per systeem (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen.
 
 BattleFacility_TrainerBattle_PlaceholderText::
@@ -1801,87 +1801,6 @@ MauvilleCity_GameCorner_EventScript_NoCoinCase::
 
 MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle::
 	end
-
-PlayersHouse_1F_Text_ArentYouInterestedInRoom::
-	.string "$"
-
-PlayersHouse_1F_Text_BetterGetBackToGym::
-	.string "$"
-
-PlayersHouse_1F_Text_DadShouldStayLonger::
-	.string "$"
-
-PlayersHouse_1F_Text_DidYouMeetProfBirch::
-	.string "$"
-
-PlayersHouse_1F_Text_DontPushYourselfTooHard::
-	.string "$"
-
-PlayersHouse_1F_Text_GotDadsBadgeHeresSomethingFromMom::
-	.string "$"
-
-PlayersHouse_1F_Text_IsThatABreakingStory::
-	.string "$"
-
-PlayersHouse_1F_Text_IsThatAPokenav::
-	.string "$"
-
-PlayersHouse_1F_Text_IsntItNiceInHere::
-	.string "$"
-
-PlayersHouse_1F_Text_LatiEmergencyNewsFlash::
-	.string "$"
-
-PlayersHouse_1F_Text_MoveWasAwful::
-	.string "$"
-
-PlayersHouse_1F_Text_MoversPokemonGoSetClock::
-	.string "$"
-
-PlayersHouse_1F_Text_OhComeQuickly::
-	.string "$"
-
-PlayersHouse_1F_Text_PortsInSlateportLilycove::
-	.string "$"
-
-PlayersHouse_1F_Text_RegisteredMom::
-	.string "$"
-
-PlayersHouse_1F_Text_ReportFromPetalburgGym::
-	.string "$"
-
-PlayersHouse_1F_Text_RunningShoesManual::
-	.string "$"
-
-PlayersHouse_1F_Text_SeeYouHoney::
-	.string "$"
-
-PlayersHouse_1F_Text_StillUnknownPokemon::
-	.string "$"
-
-PlayersHouse_1F_Text_TakeCareHoney::
-	.string "$"
-
-PlayersHouse_1F_Text_TicketFromBrineyCameForYou::
-	.string "$"
-
-PlayersHouse_1F_Text_Vigoroth1::
-	.string "$"
-
-PlayersHouse_1F_Text_Vigoroth2::
-	.string "$"
-
-PlayersHouse_1F_Text_WhatColorDidTheySay::
-	.string "$"
-
-PlayersHouse_1F_Text_YouShouldRestABit::
-	.string "$"
-
-PlayersHouse_2F_Text_ClockIsStopped::
-	.string "$"
-
-PlayersHouse_2F_Text_HowDoYouLikeYourRoom::
-	.string "$"
 
 SootopolisCity_Gym_1F_Text_JuanDefeat::
 	.string "$"

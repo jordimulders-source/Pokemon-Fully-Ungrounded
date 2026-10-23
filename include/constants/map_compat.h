@@ -5,11 +5,10 @@
 // Fully Ungrounded: verdwenen Hoenn-kaarten die de code nog noemt. Elke kaart heeft een eigen waarde in een
 // groep die niet bestaat (0x40 + oude groep), dus een test erop is nooit waar. Opruimen per systeem
 // (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen tot hij leeg is en weg kan.
-// 79 kaarten, 17 layouts, 3 heal locations, 42 local ids.
+// 65 kaarten, 16 layouts, 1 heal locations, 39 local ids.
 
 // kaarten
 enum {
-    MAP_ANCIENT_TOMB = (68 | (0x58 << 8)),
     MAP_BATTLE_COLOSSEUM_2P = (24 | (0x59 << 8)),
     MAP_BATTLE_COLOSSEUM_4P = (27 | (0x59 << 8)),
     MAP_BATTLE_FRONTIER_BATTLE_ARENA_BATTLE_ROOM = (30 | (0x5A << 8)),
@@ -42,20 +41,8 @@ enum {
     MAP_BATTLE_FRONTIER_OUTSIDE_EAST = (14 | (0x5A << 8)),
     MAP_BATTLE_FRONTIER_OUTSIDE_WEST = (4 | (0x5A << 8)),
     MAP_BATTLE_PYRAMID_SQUARE01 = (44 | (0x59 << 8)),
-    MAP_DESERT_RUINS = (6 | (0x58 << 8)),
-    MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F = (10 | (0x50 << 8)),
-    MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_2F = (14 | (0x50 << 8)),
-    MAP_FORTREE_CITY_GYM = (1 | (0x4C << 8)),
-    MAP_ISLAND_CAVE = (67 | (0x58 << 8)),
-    MAP_LAVARIDGE_TOWN_GYM_1F = (1 | (0x44 << 8)),
-    MAP_LAVARIDGE_TOWN_GYM_B1F = (2 | (0x44 << 8)),
-    MAP_METEOR_SPACE = (120 | (0x58 << 8)),
     MAP_RECORD_CORNER = (26 | (0x59 << 8)),
-    MAP_ROUTE110_TRICK_HOUSE_PUZZLE6 = (8 | (0x5D << 8)),
-    MAP_ROUTE111 = (26 | (0x40 << 8)),
-    MAP_ROUTE113 = (28 | (0x40 << 8)),
     MAP_ROUTE121_SAFARI_ZONE_ENTRANCE = (0 | (0x57 << 8)),
-    MAP_SEALED_CHAMBER_OUTER_ROOM = (71 | (0x58 << 8)),
     MAP_SECRET_BASE_BLUE_CAVE1 = (2 | (0x59 << 8)),
     MAP_SECRET_BASE_BLUE_CAVE2 = (8 | (0x59 << 8)),
     MAP_SECRET_BASE_BLUE_CAVE3 = (14 | (0x59 << 8)),
@@ -80,7 +67,6 @@ enum {
     MAP_SECRET_BASE_YELLOW_CAVE2 = (9 | (0x59 << 8)),
     MAP_SECRET_BASE_YELLOW_CAVE3 = (15 | (0x59 << 8)),
     MAP_SECRET_BASE_YELLOW_CAVE4 = (21 | (0x59 << 8)),
-    MAP_TOADSTOOL_HOLLOW = (4 | (0x62 << 8)),
     MAP_TRADE_CENTER = (25 | (0x59 << 8)),
     MAP_TRAINER_HILL_2F = (62 | (0x5A << 8)),
     MAP_TRAINER_HILL_3F = (63 | (0x5A << 8)),
@@ -92,7 +78,6 @@ enum {
 
 // layouts
 enum {
-    LAYOUT_ALTERING_CAVE = 0x41CA,
     LAYOUT_BATTLE_FRONTIER_BATTLE_FACTORY_BATTLE_ROOM = 0x417E,
     LAYOUT_BATTLE_FRONTIER_BATTLE_FACTORY_PRE_BATTLE_ROOM = 0x417D,
     LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_NORMAL = 0x4182,
@@ -114,8 +99,6 @@ enum {
 // heal locations
 enum {
     HEAL_LOCATION_LAVARIDGE_TOWN = 0x90,
-    HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F = 0x81,
-    HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F = 0x82,
 };
 
 // local ids
@@ -147,10 +130,7 @@ enum {
     LOCALID_LILYCOVE_LADYS_MON = 0xF0,
     LOCALID_PIKE_ROOM_NPC_1 = 0xF0,
     LOCALID_PIKE_ROOM_NPC_2 = 0xF0,
-    LOCALID_PLAYERS_HOUSE_1F_DAD = 0xF0,
     LOCALID_PLAYERS_HOUSE_1F_MOM = 0xF0,
-    LOCALID_PLAYERS_HOUSE_2F_MOM = 0xF0,
-    LOCALID_ROUTE111_PLAYER_FALLING = 0xF0,
     LOCALID_RUSTURF_TUNNEL_WANDA = 0xF0,
     LOCALID_RUSTURF_TUNNEL_WANDAS_BF = 0xF0,
     LOCALID_TOWER_LOBBY_REPORTER = 0xF0,

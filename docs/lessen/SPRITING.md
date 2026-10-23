@@ -166,3 +166,12 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 ## 20. Lessen uit olinguito ronde 13 (3/4-constructie van een viervoeter)
 - **Verre poten staan links van én hoger dan de dichtbije** bij een 3/4 naar links-voor (de verre kant draait naar achteren; zie Mightyena, Poochyena). Een verre poot rechts van de dichtbije, of een dichtbije poot midden onder de buik ver van de heup, geeft een Escher-pose: dan klopt de overlap niet met de diepte. Check: hangt elke poot onder zijn eigen schouder of heup?
 - **Eerst een constructieschets over de vorige ronde** (twee ovalen voor borst en heup, middellijn de diepte in, schouder-/heupas dwars erop, poten als lijnen; `docs/concept/sprites/olinguito/ronde13/bron/constructie.py`), dan pas pixels. Vaak hoeft er weinig opnieuw: hier ging de bestaande dichtbije achterpoot ongewijzigd 9 px naar rechts en alleen de onderkant van de romp en de verre poot werden nieuw getekend.
+
+## 21. Lessen uit alpaca ronde 12
+- **Witte/crème vacht: hue-shift, niet "donkerder beige".** Gemeten Gen 3: Altaria/Swablu wit→lavendel (200,200,224)→152,152,192→paarsblauwe rand; Zangoose wit→lichtblauw→grijze rand; Mareep/Ponyta crème→oker→bruin (warm, verzadigder). Kies koel óf warm en houd ±40–50 luma per stap; de referentietabel staat in `docs/concept/sprites/alpaca/ronde12/NOTITIES.md`.
+- **Palet wisselen kost niets als de letters vast liggen** (W w v u V): eerst vormen tekenen, daarna de kleuren in `palet.txt` stellen tot de stappen op 1× uit elkaar liggen.
+- **Een pompon/kuif in dezelfde vachtkleur leest pas als bol** met een eigen omlijning en een donkere onderrand (u) op de kruin; zonder die rand smelt hij met de kop.
+- **Een vuist op een horizontale onderarm leest als een stok met een bal** (rammelaar); zet de vuist dicht op de borst met een wolpluim als overgang, dan groeit hij uit het lijf.
+- **Wol is mat:** een witte glanspixel maakt een wolbal plastic; gebruik alleen de hooglichtkleur van de groep en één vouwlijn voor textuur.
+- **Een snuit van 1 px naar voren** (3 rijen op x−1, nabije rijen erboven/onder op de oude rand) maakt van een vlakke koprand een muil zonder het oppervlak op te blazen.
+- **Heredoc-Python in een worktree-agent kan geweigerd worden;** zet bewerkscripts als bestand in de scratchpad en draai ze met het pad als argument.

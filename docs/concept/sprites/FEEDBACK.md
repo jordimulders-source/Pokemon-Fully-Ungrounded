@@ -81,3 +81,4 @@
 - **Olinguito:** de linkerklauw (dichtbij) is nu veel groter dan de rechter: iets verkleinen; het gaat vooral om de **lengte** van de klauw, niet om de grootte.
 - **Nachtaap:** "we zijn echt heel dichtbij nu"; een onafhankelijke agent doet een laatste check (met de PDF's bij de hand en vergeleken met andere Pokémon-sprites).
 - **Alpaca:** Jordi is nog niet helemaal tevreden; denkt na waar het in zit.
+- **Alpaca (Jordi, ronde 9): "de alpaca is geen alpaca, het is meer een schaap."** Wat het moet worden (referentie `docs/concept/ontwerp/alpaca/referentie_alpaca.webp`): een **lange nek** (lijf kleiner naar verhouding, meer nek), **vrijwel zwarte ogen** zoals echte alpaca's, de **vacht ook op het hoofd** (wollige kruin, gezicht kort behaard), een **duidelijke neus/snuit** (de typische alpacasnuit met splitlip), rechte puntige oren. Handschoenen blijven.

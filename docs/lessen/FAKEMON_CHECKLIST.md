@@ -1,5 +1,7 @@
 # Fakemon-checklist: vorm, pose en kenmerk
 
+> De Gen 4–9-sprites in de expansion zijn **niet van Game Freak** maar door fans in Gen 3-stijl gemaakt (bijv. Galar-Linoone, Obstagoon). Ze lezen toch als echte Pokémon: het bewijs dat deze checklist met eigen pixelwerk haalbaar is (Jordi, 23 okt).
+
 Verplicht voor **elke** fakemon-sprite (silhouetronde én volledige sprite), naast `SPRITING.md` §0 en `SPRITE_OPDRACHT.md`. Onderbouwing, cijfers en vellen: `docs/lessen/vormstudie/STUDIE.md` (1024 echte sprites, Gen 1–9). Het doel is niet "precies Gen 3", maar **duidelijk een Pokémon** (Jordi): de punten hieronder gelden in alle generaties.
 
 **Gebruik:** de sprite-agent vinkt elk punt af in NOTITIES.md (`A1 ok` / `A1 fout: …, gerepareerd door …`); de keurder keurt met dezelfde nummers. **H** = harde eis (vrijwel alle Pokémon; een fout is een afkeur). **R** = richtlijn (afwijken mag met een reden in NOTITIES.md). Meten kan met `vormstudie/tools/` (`metrics()`/`shape()` in `lib.py`/`shape.py`; `zoom.py` zet je sprite naast echte).

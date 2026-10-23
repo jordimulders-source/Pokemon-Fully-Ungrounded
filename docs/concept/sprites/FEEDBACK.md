@@ -53,3 +53,8 @@
 - **Jordi neigt naar de starters from scratch** ("terug naar de tekentafel, naar het concept"): de agents limiteren zichzelf en proberen iets te fixen wat kapot is. Volgende keer agents níet de oude rondes als vertrekpunt geven.
 - **Aanvulling (Jordi):** de **kleuren zijn nu beter** en het **spritewerk zelf is goed** (de techniek uit de gids werkt); het probleem is dat ze **niet mooi** zijn (ontwerp). Alpaca: **schattiger en meer fluffy**. Olinguito: **niet donker genoeg**; voor de klauwen kijken naar **Drilbur en Sandslash**.
 - **Nachtaap (Jordi):** de **ogen zijn het belangrijkst**; kijk naar **Jigglypuff, Scream Tail en Espurr**.
+
+## Conceptronde in woorden (23 okt)
+- Alpaca: **bokshandschoenen terug in fase 1**, vanaf fase 2 worden het **kraagjes rond de poten** (zoals eerder besloten).
+- De nieuwe concepten (`docs/concept/ontwerp/STARTERS_CONCEPTEN.md`) zijn **te complex** om fatsoenlijk te spriten. **De eerdere concepten waren in theorie prima; het probleem zat in het spritewerk.**
+- Psychic-concept C: **niet ondersteboven hangen**.

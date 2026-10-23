@@ -39,6 +39,25 @@
 | Latin rock (Soda Stereo-achtig) | elektrische gitaar met chorus/delay, bas, synths, drums | **redelijk** | GBA-rock werkt (vgl. bestaande gevechtsmuziek); de chorusgitaar vraagt een eigen sample |
 | Nueva canción / folk | akoestische gitaar, stem, charango | **redelijk** | zonder stem moet een melodie-instrument de zang overnemen (quena, fluit) |
 
+## Gedeelde instrumentenset (23 okt, eerste versie)
+- **Generator:** `tools/grounded/fu_samples.py` → `sound/direct_sound_samples/fu/` (39 samples), voicegroup `fu`
+  (`sound/voicegroups/fu.inc`, `keysplits/fu.inc`, `drumsets/fu.inc`). Elk nieuw nummer gebruikt `-G_fu`; nieuwe
+  instrumenten komen in deze ene set, niet per nummer.
+- **Programma's:** 21 accordeon (musette), 24 nylongitaar, 25 charango (tokkel, dubbele snaren), 26 charango-rasgueo
+  (kwintakkoord, ook cavaquinho), 33 bas, 38 808, 56 trompet / 58 tuba (vanilla), 57 trombone, 73 quena, 75 zampoña,
+  78 cuíca, 81 supersaw, 80/82/83 PSG-blokgolven, 121–123 PSG-ruis (güiro/hihat, shaker, wind/riser).
+  Drumkit 36–62: dembow-kick/-snare/clap, bombo + aro, cajón, bongó, conga's, güiro, shaker, claves, cowbell, crash,
+  caixa, hihats, surdo laag/hoog, tamborim, agogô, apito.
+- **Techniek:** melodisch 11 kHz + DPCM, slagwerk 16 kHz onverpakt; grondtonen gemeten (±4 cent); 808 en supersaw
+  gesynthetiseerd met exacte loops (geheel aantal perioden). Kosten: ±186 KB samples + ±17 KB voor zes nummers.
+- **Schetsen (611–616, previews in `docs/concept/muziek/previews/`):** instrumentendemo, altiplano-route (huayno),
+  wild gevecht (Andes + fanfare), La Paz (caporales/saya), reggaeton-bende, samba. Wachten op Jordi's oordeel.
+- **Wat (technisch) werkte:** één kwintakkoord-sample voor de rasgueo (1 kanaal per slag, mineur én majeur); hoquetus
+  met twee zampoña-sporen links/rechts; PSG voor shaker/ganzá/hihat/wind spaart kanalen.
+- **Lastig:** samba is vol (surdo's, caixa, tamborim, agogô, cuíca, cavaquinho, melodie): agogô/cuíca vallen in de
+  volste maten soms weg; drumnoten kort houden (¾ 16e), anders bezet elke slag twee kanalen. Een 808 domineert snel
+  (85% energie < 150 Hz): bas zachter, master -V084.
+
 ## Samba op de GBA (aanpak, nog te testen)
 - **Uitdunnen tot de kern:** surdo (één sample, twee toonhoogtes voor de wisselende slagen), caixa (snare in 16e), tamborim (hoog patroon), agogô (twee bellen), cuíca (één kort sample met pitch bend), cavaquinho (korte akkoordslagen) en één melodie.
 - **Kanalen sparen:** agogô en tamborim op de PSG-kanalen (square/noise), zodat de DirectSound-kanalen vrij blijven voor surdo, caixa, cavaquinho en melodie.

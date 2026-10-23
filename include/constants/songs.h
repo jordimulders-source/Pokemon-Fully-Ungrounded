@@ -546,6 +546,12 @@
 #define PH_NURSE_HELD               608
 #define PH_NURSE_SOLO               609
 #define MUS_GROUNDED_VS_KECCLES     610 // Project Grounded: Battle! Keccles, eigen compositie in salsa dura-stijl (tools/grounded/keccles_theme.py). Fully Ungrounded: alle andere eigen Ungrounded-muziek (610-725) is weg; Keccles schoof op naar 610
+#define MUS_FU_DEMO                   611 // Fully Ungrounded: instrumentendemo van de gedeelde instrumentenset (fu_samples.py) (tools/grounded/fu_themes.py)
+#define MUS_FU_ALTIPLANO              612 // Fully Ungrounded: schets: route op de altiplano (huayno) (tools/grounded/fu_themes.py)
+#define MUS_FU_VS_WILD                613 // Fully Ungrounded: schets: wild gevecht in de Andes (tools/grounded/fu_themes.py)
+#define MUS_FU_LA_PAZ                 614 // Fully Ungrounded: schets: La Paz (caporales/saya-fanfare) (tools/grounded/fu_themes.py)
+#define MUS_FU_BENDE                  615 // Fully Ungrounded: schets: reggaeton-bende (tools/grounded/fu_themes.py)
+#define MUS_FU_SAMBA                  616 // Fully Ungrounded: schets: samba/batucada (tools/grounded/fu_themes.py)
 
 #define MUS_ROUTE118                0x7FFF  // Map is split into 2 music sections. controlled by GetCurrLocationDefaultMusic().
 

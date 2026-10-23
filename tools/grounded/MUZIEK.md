@@ -955,3 +955,12 @@ Nieuwe lessen kort hieronder, met de naam van het nummer vooraan. De hoofdsessie
   en -4 dB in 1-4 kHz (8 kHz-knippen + weergaveketen) = 'muffled'. **DPCM in-game nultest**: het verschil ligt 7-16 dB
   onder het signaal boven 3 kHz (20-35 dB eronder < 1 kHz): hoorbaar als korrel in het hoog. Alles ongecomprimeerd
   kost +1,18 MB (past niet); `-l 8` (lookahead) wint 0,4 dB en duurt 7 min per sample.
+
+### Fully Ungrounded: gedeelde instrumentenset (fu_samples.py / fu_themes.py, 23 okt)
+- **Eén set voor alle nieuwe nummers** (voicegroup `fu`, samples in `sound/direct_sound_samples/fu/`): niet per thema
+  een eigen generator meer; nieuwe instrumenten toevoegen aan `fu_samples.py` (DPCM-lijst en voicegroup schrijft hij zelf).
+  `resample_wav.py --all` raakt alleen `grounded/`; `fu_samples.py` schrijft meteen 11 kHz (melodisch) / 16 kHz (slagwerk).
+- Drumnoten in de stemverdeler: elke slag bezet zijn kanaal tot de note-off + release; een caixa in 16en met lengte
+  1×16e bezet er twee. Lengte ¾ 16e (release 40–60) houdt het op één (samba: agogô-verlies 63% → 4%).
+- Grondtoon meten met autocorrelatie: 4× opwaarderen + parabolisch interpoleren en pas na de eerste nuldoorgang zoeken
+  (anders: ±25 cent kwantisatiefout op 11 kHz en een 'grondtoon' van 2 kHz bij een 808).

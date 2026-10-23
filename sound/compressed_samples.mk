@@ -8,3 +8,11 @@ COMPRESSED_SAMPLES := \
 COMPRESSED_SAMPLE_BINS := $(patsubst %,sound/direct_sound_samples/grounded/%.bin,$(COMPRESSED_SAMPLES))
 $(COMPRESSED_SAMPLE_BINS): sound/%.bin: sound/%.wav sound/compressed_samples.mk
 	$(WAV2AGB) -b -c $< $@
+
+# Fully Ungrounded: gedeelde instrumentenset (fu_samples.py), melodische samples als DPCM
+FU_COMPRESSED_SAMPLES := \
+	fu_accordion_60 fu_accordion_72 fu_charango_64 fu_charango_76 fu_charango_strum fu_cuica fu_nylon_52 fu_nylon_64 fu_quena_69 fu_quena_81 fu_supersaw fu_trombone_55 fu_trombone_67 fu_zampona_67 fu_zampona_79
+
+FU_COMPRESSED_SAMPLE_BINS := $(patsubst %,sound/direct_sound_samples/fu/%.bin,$(FU_COMPRESSED_SAMPLES))
+$(FU_COMPRESSED_SAMPLE_BINS): sound/%.bin: sound/%.wav sound/compressed_samples.mk
+	$(WAV2AGB) -b -c $< $@

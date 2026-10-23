@@ -33,3 +33,27 @@ keysplit tuba, 24
 keysplit french_horn, 36
 	split 0, 66
 	split 1, 108
+
+keysplit fu_s66, 0
+	split 0, 66
+	split 1, 127
+
+keysplit fu_s58, 0
+	split 0, 58
+	split 1, 127
+
+keysplit fu_s70, 0
+	split 0, 70
+	split 1, 127
+
+keysplit fu_s61, 0
+	split 0, 61
+	split 1, 127
+
+keysplit fu_s75, 0
+	split 0, 75
+	split 1, 127
+
+keysplit fu_s73, 0
+	split 0, 73
+	split 1, 127

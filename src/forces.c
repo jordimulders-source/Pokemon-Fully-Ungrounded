@@ -35,14 +35,14 @@ struct Force
     u16 maps[4];      // MAP_* (groep << 8 | nummer); 0 = leeg
 };
 
+// Fully Ungrounded: de kandidaatroutes waren Hoenn-routes (Tornadus 113/118/121, Thundurus 119/120/123, Landorus
+// 112/114/117) en de drie zitten niet in de dex. Het mechaniek blijft slapend staan: routes uit de nieuwe regio
+// invullen (MAP_*) als ze terugkomen.
 static const struct Force sForces[FORCE_COUNT] =
 {
-    [FORCE_TORNADUS]  = { FLAG_FORCES_TORNADUS_DONE,  FLAG_FORCES_HIDE_TORNADUS,  WEATHER_FOG_HORIZONTAL,
-                          { MAP_ROUTE113, MAP_ROUTE118, MAP_ROUTE121 } },
-    [FORCE_THUNDURUS] = { FLAG_FORCES_THUNDURUS_DONE, FLAG_FORCES_HIDE_THUNDURUS, WEATHER_RAIN_THUNDERSTORM,
-                          { MAP_ROUTE119, MAP_ROUTE120, MAP_ROUTE123 } },
-    [FORCE_LANDORUS]  = { FLAG_FORCES_LANDORUS_DONE,  FLAG_FORCES_HIDE_LANDORUS,  WEATHER_SANDSTORM,
-                          { MAP_ROUTE112, MAP_ROUTE114, MAP_ROUTE117 } },
+    [FORCE_TORNADUS]  = { FLAG_FORCES_TORNADUS_DONE,  FLAG_FORCES_HIDE_TORNADUS,  WEATHER_FOG_HORIZONTAL,    { 0 } },
+    [FORCE_THUNDURUS] = { FLAG_FORCES_THUNDURUS_DONE, FLAG_FORCES_HIDE_THUNDURUS, WEATHER_RAIN_THUNDERSTORM, { 0 } },
+    [FORCE_LANDORUS]  = { FLAG_FORCES_LANDORUS_DONE,  FLAG_FORCES_HIDE_LANDORUS,  WEATHER_SANDSTORM,         { 0 } },
 };
 
 static EWRAM_DATA u16 sStateMap = 0;      // kaart waarvoor de laatste loting geldt

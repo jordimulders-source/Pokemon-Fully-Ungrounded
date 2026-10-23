@@ -23,12 +23,14 @@
 #define LOVE_DAY_ROLL     6   // per dag: 0..3 = dat stadje, 4..5 = geen liefdesdag (2 op 3 dagen wel)
 #define HEART_INTERVAL    40  // frames tussen twee hartjes
 
+// Fully Ungrounded: dit waren Oldale, Dewford, Fallarbor en Lavaridge; Enamorus zit (nog) niet in de dex. Het
+// mechaniek blijft slapend staan: MAP_UNDEFINED komt nooit voor; stadjes uit de nieuwe regio invullen.
 static const u16 sLoveTowns[] =
 {
-    MAP_OLDALE_TOWN,
-    MAP_DEWFORD_TOWN,
-    MAP_FALLARBOR_TOWN,
-    MAP_LAVARIDGE_TOWN,
+    MAP_UNDEFINED,
+    MAP_UNDEFINED,
+    MAP_UNDEFINED,
+    MAP_UNDEFINED,
 };
 
 static EWRAM_DATA u16 sLoveMap = 0;          // stadje waar het nu liefdesdag is en waar de speler staat (0 = geen)

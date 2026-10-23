@@ -125,7 +125,6 @@ gStdScripts_End::
 	.include "data/scripts/config.inc"
 	.include "data/scripts/debug.inc"
 	.include "data/scripts/grounded_debug.inc"
-	.include "data/scripts/regi_dots.inc"
 	.include "data/scripts/burglar.inc"
 	.include "data/scripts/grounded_gifts.inc"
 	.include "data/scripts/legends2.inc"

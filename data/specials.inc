@@ -309,11 +309,6 @@ gSpecials::
 	def_special Debug_StartMapWildBattle
 	def_special Debug_BattleTest_Start
 	def_special Debug_ClearForcedEncounter
-	def_special RegiDots_OnLoad
-	def_special RegiDots_Step
-	def_special RegiDots_ShowStep
-	def_special RegiDots_Reset
-	def_special RegiDots_OpenEntrance
 	def_special SetTrainerFacingDirection
 	def_special DoSealedChamberShakingEffect_Short
 	def_special StartDroughtWeatherBlend

@@ -30,16 +30,17 @@ struct BurglarHouse
     u16 residentGfx;  // bewoner (zelfde als binnen in het huis)
 };
 
-// Volgorde = VAR_0x8004 in burglar.inc (teksten per stad).
+// Volgorde = VAR_0x8004 in burglar.inc (teksten per stad). Fully Ungrounded: de steden waren Hoenn-steden
+// (zie het commentaar per regel); tot er steden in de nieuwe regio zijn staat er MAP_UNDEFINED en komt hij nergens.
 static const struct BurglarHouse sHouses[] =
 {
-    { MAP_MAUVILLE_CITY,   19, 14, OBJ_EVENT_GFX_WOMAN_3 },    // 0 Mauville, House2: de tv
-    { MAP_SLATEPORT_CITY,  21, 44, OBJ_EVENT_GFX_POKEFAN_M },  // 1 Slateport, House: een anker
-    { MAP_LILYCOVE_CITY,   42,  6, OBJ_EVENT_GFX_KECLEON },    // 2 Lilycove, House1: een schilderij (de Kecleon komt naar buiten, Jordi)
-    { MAP_RUSTBORO_CITY,   26, 46, OBJ_EVENT_GFX_OLD_MAN },    // 3 Rustboro, House3: een sok vol pensioen
-    { MAP_VERDANTURF_TOWN, 17, 15, OBJ_EVENT_GFX_WOMAN_5 },    // 4 Verdanturf, House: opa's urn
-    { MAP_FALLARBOR_TOWN,   6, 17, OBJ_EVENT_GFX_SCIENTIST_1 },// 5 Fallarbor, Cozmo's huis: een meteorietje (Cozmo zelf, Jordi)
-    { MAP_PETALBURG_CITY,  20, 24, OBJ_EVENT_GFX_POKEFAN_F },  // 6 Petalburg, House2: Normans servet
+    { MAP_UNDEFINED,   19, 14, OBJ_EVENT_GFX_WOMAN_3 },    // 0 Mauville, House2: de tv
+    { MAP_UNDEFINED,  21, 44, OBJ_EVENT_GFX_POKEFAN_M },  // 1 Slateport, House: een anker
+    { MAP_UNDEFINED,   42,  6, OBJ_EVENT_GFX_KECLEON },    // 2 Lilycove, House1: een schilderij (de Kecleon komt naar buiten, Jordi)
+    { MAP_UNDEFINED,   26, 46, OBJ_EVENT_GFX_OLD_MAN },    // 3 Rustboro, House3: een sok vol pensioen
+    { MAP_UNDEFINED, 17, 15, OBJ_EVENT_GFX_WOMAN_5 },    // 4 Verdanturf, House: opa's urn
+    { MAP_UNDEFINED,   6, 17, OBJ_EVENT_GFX_SCIENTIST_1 },// 5 Fallarbor, Cozmo's huis: een meteorietje (Cozmo zelf, Jordi)
+    { MAP_UNDEFINED,  20, 24, OBJ_EVENT_GFX_POKEFAN_F },  // 6 Petalburg, House2: Normans servet
 };
 
 #define BURGLAR_TOWN_MAUVILLE 0

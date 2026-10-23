@@ -202,7 +202,6 @@ void NewGameInitData(void)
     FlagSet(FLAG_SYS_B_DASH);
     FlagSet(FLAG_RECEIVED_RUNNING_SHOES);
     EnableNationalPokedex(); // Project Grounded: National Dex vanaf het begin
-    FlagSet(FLAG_REGI_DOORS_OPENED); // Project Grounded: Regi-grotten open; de puzzel zit nu in de stippen (geen braille/Wailord+Relicanth)
 
     WarpToStartTown();
 

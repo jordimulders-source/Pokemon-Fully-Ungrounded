@@ -258,6 +258,20 @@ static bool32 FirstEventBlockEvents(struct BattleCalcValues *calcValues)
             BattleScriptCall(BattleScript_EmergencyExitSendReplacement);
             effect = TRUE;
         }
+        else if (calcValues->abilities[battler] == ABILITY_HIVE_QUEEN) // Project Grounded
+        {
+            // De zwerm ruimt alle hazards aan de eigen kant op; Vespiquen zelf raakt er niets van.
+            enum BattleSide side = GetBattlerSide(battler);
+            gBattleStruct->hazardsCounter = 0;
+            gBattleStruct->eventState.battlerSwitchIn++;
+            if (AreAnyHazardsOnSide(side))
+            {
+                RemoveAllHazardsFromField(side);
+                gBattleScripting.battler = battler;
+                BattleScriptCall(BattleScript_HiveQueenClearsHazards);
+                effect = TRUE;
+            }
+        }
         else
         {
             enum Hazards hazard = gBattleStruct->hazardsQueue[GetBattlerSide(battler)][gBattleStruct->hazardsCounter];
@@ -265,6 +279,13 @@ static bool32 FirstEventBlockEvents(struct BattleCalcValues *calcValues)
             {
                 gBattleStruct->hazardsCounter = 0;
                 gBattleStruct->eventState.battlerSwitchIn++;
+                if (gFieldTimers.blackHoleTimer != 0 && !gBattleMons[battler].volatiles.blackHoleDone) // Project Grounded: Implosion
+                {
+                    gBattleMons[battler].volatiles.blackHoleDone = TRUE;
+                    gBattleScripting.battler = battler;
+                    BattleScriptCall(BattleScript_BlackHoleSwitchIn);
+                    effect = TRUE;
+                }
             }
             else
             {
@@ -353,7 +374,8 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
         {
             gBattleScripting.battler = battler;
             BattleScriptPushCursor();
-            if (gSideTimers[GetBattlerSide(battler)].toxicSpikesAmount >= 2)
+            if (gSideTimers[GetBattlerSide(battler)].toxicSpikesAmount >= 2
+             || (gBattleWeather & B_WEATHER_ACID_RAIN && HasWeatherEffect())) // Project Grounded: Acid Rain maakt het Toxic
             {
                 gBattlescriptCurrInstr = BattleScript_ToxicSpikesBadlyPoisoned;
                 gBattleMons[battler].status1 |= STATUS1_TOXIC_POISON;
@@ -387,6 +409,40 @@ static bool32 TryHazardsOnSwitchIn(enum BattlerId battler, enum Ability ability,
             if (gBattleStruct->passiveHpUpdate[battler] != 0)
             {
                 SetDmgHazardsBattlescript(battler, B_MSG_SHARPSTEELDMG);
+                effect = TRUE;
+            }
+        }
+        break;
+    case HAZARDS_BRAMBLES: // Project Grounded: doornen op de grond, ook voor vliegers (alleen Boots/Magic Guard)
+        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD)
+        {
+            SetPassiveDamageAmount(battler, GetNonDynamaxMaxHP(battler) / 16);
+            SetDmgHazardsBattlescript(battler, B_MSG_BRAMBLESDMG);
+            effect = TRUE;
+        }
+        break;
+    case HAZARDS_MOAI_WATCH: // Project Grounded
+        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD)
+        {
+            enum Type types[3];
+            GetBattlerTypes(battler, FALSE, types);
+            gBattleStruct->passiveHpUpdate[battler] = GetMoaiWatchDamageByTypesAndHP(types[0], types[1], gBattleMons[battler].maxHP, gSideTimers[side].moaiWatchAmount);
+            if (gBattleStruct->passiveHpUpdate[battler] != 0)
+            {
+                SetDmgHazardsBattlescript(battler, B_MSG_MOAIWATCHDMG);
+                effect = TRUE;
+            }
+        }
+        break;
+    case HAZARDS_OVERKILL: // Project Grounded: eenmalig; Boots en Magic Guard laten hem liggen
+        if (IsBattlerAffectedByHazards(battler, holdEffect, FALSE) && ability != ABILITY_MAGIC_GUARD)
+        {
+            gBattleStruct->passiveHpUpdate[battler] = GetOverkillHazardDamage(side, gBattleMons[battler].maxHP);
+            RemoveHazardFromField(side, HAZARDS_OVERKILL);
+            clearedToxicSpikes = TRUE; // de wachtrij schuift op: de volgende hazard staat nu op deze plek
+            if (gBattleStruct->passiveHpUpdate[battler] != 0)
+            {
+                SetDmgHazardsBattlescript(battler, B_MSG_OVERKILLDMG);
                 effect = TRUE;
             }
         }

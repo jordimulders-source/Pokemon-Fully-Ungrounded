@@ -1659,7 +1659,12 @@ static enum CancelerResult CancelerInterruptibleMoves(struct BattleCalcValues *c
         gBattleStruct->futureSight[cv->battlerDef].partyIndex = gBattlerPartyIndexes[cv->battlerAtk];
         gBattleStruct->futureSight[cv->battlerDef].counter = 3;
 
-        if (gCurrentMove == MOVE_DOOM_DESIRE)
+        if (cv->move == MOVE_SUPER_SPLASH) // Project Grounded: de tsunami komt al aan het eind van de volgende beurt
+        {
+            gBattleStruct->futureSight[cv->battlerDef].counter = 2;
+            gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_SUPER_SPLASH;
+        }
+        else if (gCurrentMove == MOVE_DOOM_DESIRE)
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_DOOM_DESIRE;
         else
             gBattleCommunication[MULTISTRING_CHOOSER] = B_MSG_FUTURE_SIGHT;
@@ -5816,6 +5821,8 @@ static enum MoveResult StatChangeBeforeChange(struct BattleCalcValues *cv)
         return MOVE_RESULT_RUN_SCRIPT_INCREMENT;
     case EFFECT_STOCKPILE:
         gBattleMons[cv->battlerAtk].volatiles.stockpileCounter++;
+        if (cv->move == MOVE_BEAVER_DAM) // Project Grounded
+            gBattleMons[cv->battlerAtk].volatiles.beaverDam = TRUE;
         PREPARE_BYTE_NUMBER_BUFFER(gBattleTextBuff1, 1, gBattleMons[cv->battlerAtk].volatiles.stockpileCounter);
         BattleScriptCall(BattleScript_Stockpile);
         return MOVE_RESULT_RUN_SCRIPT_INCREMENT;

@@ -71,3 +71,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Cuychu** (evolutie van Cuyby, naam: cuy + ichu): sprite ronde 4 goedgekeurd. Keuring tegen 14 Gen 3-sprites (`cuyby_evo/ronde3/KEURING.md`); snuit kleiner, pony over de bles.
 - Alpaca ronde 12 (kop omgebouwd, "Chernobyl") afgekeurd; ronde 13 = kop ronde 11 + kleuring/lijf ronde 12, vuisten weer op de grond. Bijna klaar; hint naar de evoluties nog te kiezen.
 - Olinguito ronde 12–14 (mond, klauwen, 3/4-constructie, romp naar Mightyena); lijf bleef onnatuurlijk, ronde 15 tekent het over op het lijf van een echte Gen 3-viervoeter.
+
+### [v0.0.13] - Alpaca goedgekeurd
+- **Alpaca ronde 15 goedgekeurd:** kop ronde 11, kleuring/lijf ronde 12, vuisten op de grond, zwart oog met glans, vlechtkwastjes met rood knoopje en een aguayo-band in de halswol als hint naar fase 2 (kragen) en fase 3 (vlechten, manta). Neusstreep op verzoek weggehaald.
+- Olinguito ronde 15 (lijf over Poochyena als skelet) voorlopig goed; onafhankelijke keuring volgt.
+- Showcase-vel Cuyby + Cuychu (`docs/concept/sprites/showcase/`).

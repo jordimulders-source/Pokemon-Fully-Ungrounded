@@ -18,7 +18,7 @@ B = os.path.join(D, 'bron')
 # naar de omtrek toe en doorlopend tot boven op de snuit) leest als neusbrug.
 STREEP = [
     (14, 19, 'ww'), (15, 19, 'ww'), (16, 19, 'ww'), (17, 20, 'w'),
-    (13, 19, 'K'), (14, 19, 'K'), (15, 18, 'K'), (16, 16, 'KK'),
+    # neusstreep weggehaald op verzoek van Jordi (ronde 15b): alleen wol op de oude oogplek
 ]
 VLECHT = [
     # verre oor: kwastje x15-16, y9-13, knoopje rode wol op y12, onderkant op y14

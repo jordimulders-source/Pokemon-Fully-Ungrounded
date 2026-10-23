@@ -36,3 +36,6 @@ Acht proeven (S1–S8, niet bewaard). Zolang de streep op de oude oogplek bleef 
 - **Een knoopje in een andere wolkleur (rood, zoals de vuisten) maakt een plukje een vlecht** met 1 px; langer maken alleen leest als langere wang.
 - **Een gekleurd streepje leest als gebreide band zodra het het patroon van een bestaande band herhaalt** (hier: rijtje geel/turquoise boven een rijtje magenta, zoals de manchet).
 - **Een combinatie van twee varianten (B+C) in de vergelijking zelf samenstellen** uit de verschillen met de basis (`vergelijk15.py`), zodat er geen extra variantmap nodig is.
+
+## Oordeel Jordi (23 okt)
+Neusstreep weg ("had het meer horizontaal in gedachten, maar kan prima zonder"); verre oogplek is nu gewoon wol. Sprite verder **goedgekeurd** ("prima").

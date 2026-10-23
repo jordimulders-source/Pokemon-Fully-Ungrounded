@@ -13029,6 +13029,14 @@ void BS_TrySetWeatherReport(void)
     gBattlescriptCurrInstr = cmd->nextInstr;
 }
 
+// Project Grounded (1.17-port): statwijziging in de wachtrij zetten vanuit een battlescript (vervangt setstatchanger).
+void BS_QueueStatChange(void)
+{
+    NATIVE_ARGS(u8 battler, u8 stat, s8 stage);
+    SetStatChange(GetBattlerForBattleScript(cmd->battler), cmd->stat, cmd->stage);
+    gBattlescriptCurrInstr = cmd->nextInstr;
+}
+
 // Project Grounded: na het zetten van het weer het type van de aanval opnieuw bepalen (zoals Weather Ball).
 void BS_RecalcMoveType(void)
 {

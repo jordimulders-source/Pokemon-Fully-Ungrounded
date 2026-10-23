@@ -1651,17 +1651,9 @@ BattleScript_BlackHoleSwitchIn::
 	copybyte gBattlerAttacker, sBATTLER
 	printstring STRINGID_BLACKHOLESWITCHIN
 	waitmessage B_WAIT_TIME_LONG
-	setstatchanger STAT_ATK, 1, TRUE
-	statbuffchange BS_TARGET, STAT_CHANGE_CHECK_PREVENTION | STAT_CHANGE_ALLOW_PTR, BattleScript_BlackHoleSwitchInSpAtk
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_CHANGE_EMPTY, BattleScript_BlackHoleSwitchInSpAtk
-	printfromtable gStatDownStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_BlackHoleSwitchInSpAtk:
-	setstatchanger STAT_SPATK, 1, TRUE
-	statbuffchange BS_TARGET, STAT_CHANGE_CHECK_PREVENTION | STAT_CHANGE_ALLOW_PTR, BattleScript_BlackHoleSwitchInEnd
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_CHANGE_EMPTY, BattleScript_BlackHoleSwitchInEnd
-	printfromtable gStatDownStringIds
-	waitmessage B_WAIT_TIME_LONG
+	queuestatchange BS_TARGET, STAT_ATK, -1
+	queuestatchange BS_TARGET, STAT_SPATK, -1
+	trybattlerstatchange BS_TARGET, STAT_CHANGE_NO_FLAGS
 BattleScript_BlackHoleSwitchInEnd:
 	restoretarget
 	restoreattacker
@@ -1670,7 +1662,7 @@ BattleScript_BlackHoleSwitchInEnd:
 BattleScript_BlackHoleEnds::
 	printstring STRINGID_BLACKHOLEENDS
 	waitmessage B_WAIT_TIME_LONG
-	end2
+	return
 
 BattleScript_FaintAttackerForExplosion::
 	tryfaintmon BS_ATTACKER
@@ -2047,7 +2039,6 @@ BattleScript_EffectEncore::
 @ Project Grounded: Fungal Control (Parasect). De gebruiker kiest welke move het doelwit 3 beurten lang moet gebruiken.
 BattleScript_EffectFungalControl::
 	attackcanceler
-	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	jumpifability BS_TARGET_SIDE, ABILITY_AROMA_VEIL, BattleScript_AromaVeilProtects
 	@ Jordi: geen poedermove meer (Grass is niet immuun), maar Overcoat en Safety Goggles houden de sporen tegen
 	jumpifability BS_TARGET, ABILITY_OVERCOAT, BattleScript_PowderMoveNoEffect
@@ -2066,7 +2057,6 @@ BattleScript_EffectFungalControl::
 @ Project Grounded: Transmutation, een omgekeerde Transform. Het doelwit wordt een kopie van de gebruiker (moves met 5 PP).
 BattleScript_EffectTransmutation::
 	attackcanceler
-	accuracycheck BattleScript_ButItFailed, ACC_CURR_MOVE
 	callnative BS_TryTransmutation
 	.4byte BattleScript_ButItFailed
 	callnative BS_SwapAttackerAndTarget
@@ -2089,11 +2079,8 @@ BattleScript_EffectMachineLearning::
 BattleScript_MachineLearningLoop:
 	callnative BS_MachineLearningNextStat
 	.4byte BattleScript_MoveEnd
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_MachineLearningLoop
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_MachineLearningLoop
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-	goto BattleScript_MachineLearningLoop
+	trybattlerstatchange BS_ATTACKER, STAT_CHANGE_NO_FLAGS
+	goto BattleScript_MoveEnd
 
 BattleScript_MachineLearningHallucination::
 	printattackstring
@@ -2103,12 +2090,6 @@ BattleScript_MachineLearningHallucination::
 	setcalledmove
 	return
 
-@ Project Grounded: Acid Rain (paarse Rain Dance)
-BattleScript_EffectAcidRain::
-	attackcanceler
-	call BattleScript_CheckPrimalWeather
-	setfieldweather BATTLE_WEATHER_ACID_RAIN
-	goto BattleScript_MoveWeatherChange
 
 BattleScript_AirPollutionActivates::
 	pause B_WAIT_TIME_SHORT
@@ -2118,15 +2099,15 @@ BattleScript_AirPollutionActivates::
 	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_ACID_RAIN_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
-	end3
+	return
 
 BattleScript_AcidRainHeal::
 	playanimation BS_ATTACKER, B_ANIM_SIMPLE_HEAL
-	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER, ASSURANCE_DOUBLE
 	printstring STRINGID_PKMNSOAKEDUPACIDRAIN
 	waitmessage B_WAIT_TIME_LONG
-	end2
+	return
 
 BattleScript_AcidRainEnded_Ret::
 	printstring STRINGID_ACIDRAINBLOWNAWAY
@@ -2147,12 +2128,6 @@ BattleScript_AcidRainBlocksCure::
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
 
-@ Project Grounded: Pollen Haze (Bug-weer)
-BattleScript_EffectPollenHaze::
-	attackcanceler
-	call BattleScript_CheckPrimalWeather
-	setfieldweather BATTLE_WEATHER_POLLEN_HAZE
-	goto BattleScript_MoveWeatherChange
 
 BattleScript_PollenSeasonActivates::
 	pause B_WAIT_TIME_SHORT
@@ -2162,15 +2137,15 @@ BattleScript_PollenSeasonActivates::
 	destroyabilitypopup @ Project Grounded: popup weg vóór de weeranimatie
 	playanimation BS_BATTLER_0, B_ANIM_POLLEN_HAZE_CONTINUES
 	call BattleScript_ActivateWeatherAbilities
-	end3
+	return
 
 BattleScript_PollenHazeHeal::
 	playanimation BS_ATTACKER, B_ANIM_SIMPLE_HEAL
-	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER, ASSURANCE_DOUBLE
 	printstring STRINGID_PKMNSOAKEDUPPOLLEN
 	waitmessage B_WAIT_TIME_LONG
-	end2
+	return
 
 BattleScript_PollenHazeBlownAway::
 	printstring STRINGID_POLLENHAZEBLOWNAWAY
@@ -3675,7 +3650,7 @@ BattleScript_EncoredNoMore::
 BattleScript_FungalControlEnded::
 	printstring STRINGID_FUNGALCONTROLENDED
 	waitmessage B_WAIT_TIME_LONG
-	end2
+	return
 
 BattleScript_DestinyBondTakesLife::
 	printstring STRINGID_PKMNTOOKFOE
@@ -6695,7 +6670,7 @@ BattleScript_DimensionalWarpActivates::
     printstring  STRINGID_PKMNTWISTEDDIMENSIONS
     waitmessage B_WAIT_TIME_LONG
     playanimation BS_BATTLER_0, B_ANIM_TRICK_ROOM
-    end3
+	return
 
 @ Project Grounded: Weather Report (Castform). Zet het weer waar het doelwit het zwakst tegen is en slaat dan toe.
 BattleScript_EffectWeatherReport::
@@ -6721,8 +6696,8 @@ BattleScript_WindChimeTryPartner:
 	call BattleScript_WindChimeHealRet
 	goto BattleScript_MoveEnd
 BattleScript_WindChimeHealRet:
-	healthbarupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
-	datahpupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING, ASSURANCE_DOUBLE
 	printstring STRINGID_WINDCHIMEHEAL
 	waitmessage B_WAIT_TIME_LONG
 	return
@@ -6734,7 +6709,7 @@ BattleScript_EffectPrimevalWard::
 	goto BattleScript_PrimevalWardDoAnim
 BattleScript_PrimevalWardCheckStats:
 	jumpifstat BS_ATTACKER, CMP_LESS_THAN, STAT_DEF, MAX_STAT_STAGE, BattleScript_PrimevalWardDoAnim
-	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_CantRaiseMultipleStats
+	jumpifstat BS_ATTACKER, CMP_EQUAL, STAT_SPDEF, MAX_STAT_STAGE, BattleScript_ButItFailed
 BattleScript_PrimevalWardDoAnim:
 	attackanimation
 	waitanimation
@@ -6743,17 +6718,9 @@ BattleScript_PrimevalWardDoAnim:
 	printstring STRINGID_PRIMEVALWARD
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_PrimevalWardStats:
-	setstatchanger STAT_DEF, 1, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PrimevalWardTrySpDef, BIT_SPDEF
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PrimevalWardTrySpDef
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_PrimevalWardTrySpDef:
-	setstatchanger STAT_SPDEF, 1, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PrimevalWardEnd
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PrimevalWardEnd
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
+	queuestatchange BS_ATTACKER, STAT_DEF, 1
+	queuestatchange BS_ATTACKER, STAT_SPDEF, 1
+	trybattlerstatchange BS_ATTACKER, STAT_CHANGE_NO_FLAGS
 BattleScript_PrimevalWardEnd:
 	goto BattleScript_MoveEnd
 
@@ -6804,51 +6771,20 @@ BattleScript_EffectPraiseHelix::
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 3, BattleScript_PraiseHelixSilent
 	printstring STRINGID_HELIXDEMOCRACY
 	waitmessage B_WAIT_TIME_LONG
-	setstatchanger STAT_SPATK, 1, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixDemocracySpeed, BIT_SPEED
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixDemocracySpeed
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_PraiseHelixDemocracySpeed:
-	setstatchanger STAT_SPEED, 1, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixEnd
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixEnd
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
+	queuestatchange BS_ATTACKER, STAT_SPATK, 1
+	queuestatchange BS_ATTACKER, STAT_SPEED, 1
+	trybattlerstatchange BS_ATTACKER, STAT_CHANGE_NO_FLAGS
 	goto BattleScript_PraiseHelixEnd
 
 BattleScript_PraiseHelixAnarchy:
 	printstring STRINGID_HELIXANARCHY
 	waitmessage B_WAIT_TIME_LONG
-	setstatchanger STAT_DEF, 1, TRUE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR | STAT_CHANGE_CERTAIN, BattleScript_PraiseHelixAnarchySpDef, BIT_SPDEF
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixAnarchySpDef
-	printfromtable gStatDownStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_PraiseHelixAnarchySpDef:
-	setstatchanger STAT_SPDEF, 1, TRUE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR | STAT_CHANGE_CERTAIN, BattleScript_PraiseHelixAnarchyAtk
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixAnarchyAtk
-	printfromtable gStatDownStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_PraiseHelixAnarchyAtk:
-	setstatchanger STAT_ATK, 2, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixAnarchySpAtk, BIT_SPATK | BIT_SPEED
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixAnarchySpAtk
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_PraiseHelixAnarchySpAtk:
-	setstatchanger STAT_SPATK, 2, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixAnarchySpeed, BIT_SPEED
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixAnarchySpeed
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_PraiseHelixAnarchySpeed:
-	setstatchanger STAT_SPEED, 2, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixEnd
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixEnd
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
+	queuestatchange BS_ATTACKER, STAT_DEF, -1
+	queuestatchange BS_ATTACKER, STAT_SPDEF, -1
+	queuestatchange BS_ATTACKER, STAT_ATK, 2
+	queuestatchange BS_ATTACKER, STAT_SPATK, 2
+	queuestatchange BS_ATTACKER, STAT_SPEED, 2
+	trybattlerstatchange BS_ATTACKER, STAT_CHANGE_CERTAIN
 	goto BattleScript_PraiseHelixEnd
 
 BattleScript_PraiseHelixBirdJesus:
@@ -6856,8 +6792,8 @@ BattleScript_PraiseHelixBirdJesus:
 	waitmessage B_WAIT_TIME_LONG
 	jumpifvolatile BS_ATTACKER, VOLATILE_HEAL_BLOCK, BattleScript_PraiseHelixEnd
 	tryhealhalfhealth BS_ATTACKER, BattleScript_AlreadyAtFullHp
-	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER, ASSURANCE_DOUBLE
 	printstring STRINGID_PKMNREGAINEDHEALTH
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_PraiseHelixEnd
@@ -6865,11 +6801,8 @@ BattleScript_PraiseHelixBirdJesus:
 BattleScript_PraiseHelixSilent:
 	printstring STRINGID_HELIXSILENT
 	waitmessage B_WAIT_TIME_LONG
-	setstatchanger STAT_DEF, 2, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_PraiseHelixEnd
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_PraiseHelixEnd
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
+	queuestatchange BS_ATTACKER, STAT_DEF, 2
+	trybattlerstatchange BS_ATTACKER, STAT_CHANGE_NO_FLAGS
 BattleScript_PraiseHelixEnd:
 	goto BattleScript_MoveEnd
 
@@ -6887,18 +6820,18 @@ BattleScript_PitcherTrapEffectRet:
 @ Eind van de beurt: gBattlerAttacker = de gevangene, gBattlerTarget = Victreebel.
 BattleScript_PitcherTrapDrain::
 	playanimation BS_ATTACKER, B_ANIM_LEECH_SEED_DRAIN, sB_ANIM_ARG1
-	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER, ASSURANCE_DOUBLE
 	printstring STRINGID_PITCHERDIGESTING
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_ATTACKER
 	tryactivateitem BS_ATTACKER, ACTIVATION_ON_HP_THRESHOLD
 	jumpifvolatile BS_TARGET, VOLATILE_HEAL_BLOCK, BattleScript_PitcherTrapDrainEnd
 	jumpiffullhp BS_TARGET, BattleScript_PitcherTrapDrainEnd
-	healthbarupdate BS_TARGET, PASSIVE_HP_UPDATE
-	datahpupdate BS_TARGET, PASSIVE_HP_UPDATE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET, ASSURANCE_DOUBLE
 BattleScript_PitcherTrapDrainEnd:
-	end2
+	return
 
 @ Project Grounded: Silk Trap. Zoals King's Shield (-2 Speed), en daarna zit de aanvaller vast.
 BattleScript_SilkTrapEffect::
@@ -6907,24 +6840,6 @@ BattleScript_SilkTrapEffect::
 	waitmessage B_WAIT_TIME_LONG
 	return
 
-@ Project Grounded: Landfill (Garbodor). +1 Def en +1 SpDef aan het eind van elke beurt in Acid Rain.
-BattleScript_LandfillActivates::
-	call BattleScript_AbilityPopUp
-	setstatchanger STAT_DEF, 1, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_LandfillSpDef
-	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_LandfillSpDef
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_LandfillSpDef:
-	setstatchanger STAT_SPDEF, 1, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_LandfillEnd
-	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_LandfillEnd
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_LandfillEnd:
-	destroyabilitypopup
-	restoreattacker
-	end2
 
 @ Project Grounded: Hive Queen (Vespiquen). De zwerm ruimt bij binnenkomst de hazards aan de eigen kant op.
 BattleScript_HiveQueenClearsHazards::
@@ -6940,8 +6855,8 @@ BattleScript_GulpDownCommon:
 	waitmessage B_WAIT_TIME_LONG
 	jumpifvolatile BS_ATTACKER, VOLATILE_HEAL_BLOCK, BattleScript_GulpDownCommonEnd
 	jumpiffullhp BS_ATTACKER, BattleScript_GulpDownCommonEnd
-	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER, ASSURANCE_DOUBLE
 	printstring STRINGID_GULPDOWNHEALED
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_GulpDownCommonEnd:
@@ -6980,55 +6895,14 @@ BattleScript_BeaverDamBreak::
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_BeaverDamFloodLoop:
 	beaverdamfloodnext BattleScript_BeaverDamFloodEnd
-	healthbarupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
-	datahpupdate BS_SCRIPTING, PASSIVE_HP_UPDATE
+	healthbarupdate BS_SCRIPTING
+	datahpupdate BS_SCRIPTING, ASSURANCE_DOUBLE
 	printstring STRINGID_BEAVERDAMFLOOD
 	waitmessage B_WAIT_TIME_LONG
 	tryfaintmon BS_SCRIPTING
 	goto BattleScript_BeaverDamFloodLoop
 BattleScript_BeaverDamFloodEnd:
 	return
-
-@ Project Grounded: Heliotropism (Sunflora). Komt hij in de zon binnen, dan draait hij naar de zon en
-@ bloeit op: alle stats +2. gBattleScripting.battler = Sunflora.
-BattleScript_HeliotropismActivates::
-	call BattleScript_AbilityPopUpScripting
-	saveattacker
-	copybyte gBattlerAttacker, sBATTLER
-BattleScript_HeliotropismAtk:
-	setstatchanger STAT_ATK, 2, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismDef
-	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismDef
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_HeliotropismDef:
-	setstatchanger STAT_DEF, 2, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismSpeed
-	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismSpeed
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_HeliotropismSpeed:
-	setstatchanger STAT_SPEED, 2, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismSpAtk
-	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismSpAtk
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_HeliotropismSpAtk:
-	setstatchanger STAT_SPATK, 2, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismSpDef
-	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismSpDef
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_HeliotropismSpDef:
-	setstatchanger STAT_SPDEF, 2, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_NOT_PROTECT_AFFECTED | STAT_CHANGE_ALLOW_PTR, BattleScript_HeliotropismEnd
-	jumpifbyte CMP_GREATER_THAN, cMULTISTRING_CHOOSER, B_MSG_DEFENDER_STAT_CHANGED, BattleScript_HeliotropismEnd
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
-BattleScript_HeliotropismEnd:
-	restoreattacker
-	destroyabilitypopup
-	end3
 
 @ Project Grounded: Cold Shoulder (TM)
 BattleScript_ColdShoulder::
@@ -7073,7 +6947,7 @@ BattleScript_TradeWindActivates::
 	waitmessage B_WAIT_TIME_LONG
 	call BattleScript_TryTailwindAbilitiesLoop
 	restoreattacker
-	end3
+	return
 
 @ Project Grounded: de stenen beelden van Moai Watch storten in als ze opgeruimd worden.
 BattleScript_TryMoaiCrumble::
@@ -7129,7 +7003,6 @@ BattleScript_BubbleDomePopped::
 @ Project Grounded: The Old Days (Drampa). Het doelwit wordt slaperig (Yawn), Drampa krijgt +1 Sp. Atk.
 BattleScript_EffectTheOldDays::
 	attackcanceler
-	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	jumpifcantbedrowsy BattleScript_TheOldDaysNoYawn
 	attackanimation
 	waitanimation
@@ -7142,11 +7015,8 @@ BattleScript_TheOldDaysNoYawn:
 	attackanimation
 	waitanimation
 BattleScript_TheOldDaysSpAtk:
-	setstatchanger STAT_SPATK, 1, FALSE
-	statbuffchange BS_ATTACKER, STAT_CHANGE_ALLOW_PTR, BattleScript_MoveEnd
-	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, B_MSG_STAT_WONT_CHANGE, BattleScript_MoveEnd
-	printfromtable gStatUpStringIds
-	waitmessage B_WAIT_TIME_LONG
+	queuestatchange BS_ATTACKER, STAT_SPATK, 1
+	trybattlerstatchange BS_ATTACKER, STAT_CHANGE_NO_FLAGS
 	goto BattleScript_MoveEnd
 
 @ Project Grounded: Olive Oil (Arboliva). Heelt 1/2 (in Pollen Haze 2/3) en zet Grassy Terrain.
@@ -7156,8 +7026,8 @@ BattleScript_EffectOliveOil::
 	attackanimation
 	waitanimation
 	recoverbasedonsunlight BattleScript_OliveOilTerrain
-	healthbarupdate BS_ATTACKER, PASSIVE_HP_UPDATE
-	datahpupdate BS_ATTACKER, PASSIVE_HP_UPDATE
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER, ASSURANCE_DOUBLE
 	printstring STRINGID_PKMNREGAINEDHEALTH
 	waitmessage B_WAIT_TIME_LONG
 BattleScript_OliveOilTerrain:
@@ -7177,7 +7047,6 @@ BattleScript_OliveOilRestoreBg:
 @ Faalt bij een statusmove, wissel, item of een move zonder vaste kracht.
 BattleScript_EffectMarionette::
 	attackcanceler
-	accuracycheck BattleScript_MoveMissedPause, ACC_CURR_MOVE
 	trymarionette BattleScript_ButItFailed
 	attackanimation
 	waitanimation
@@ -7185,8 +7054,8 @@ BattleScript_EffectMarionette::
 	waitmessage B_WAIT_TIME_MED
 	printstring STRINGID_MARIONETTEHIT
 	waitmessage B_WAIT_TIME_MED
-	healthbarupdate BS_TARGET, PASSIVE_HP_UPDATE
-	datahpupdate BS_TARGET, PASSIVE_HP_UPDATE
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET, ASSURANCE_DOUBLE
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 1, BattleScript_MarionetteSuper
 	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 2, BattleScript_MarionetteWeak
 	goto BattleScript_MarionetteFaint
@@ -7241,3 +7110,93 @@ BattleScript_BelchFails::
 	printstring STRINGID_BELCHCANTSELECT
 	waitmessage B_WAIT_TIME_LONG
 	goto BattleScript_MoveEnd
+
+@ ---------------------------------------------------------------------------------------------
+@ Project Grounded: scripts die bij de 1.17-merge opnieuw geschreven zijn (nieuwe canceler/moveend)
+@ ---------------------------------------------------------------------------------------------
+
+@ Kelp Shroud (wordt aangeroepen vanuit de set-effect-handler van Leech Seed)
+BattleScript_MoveEffectKelpShroud::
+	savetarget
+	copybyte gBattlerTarget, gEffectBattler
+	printstring STRINGID_KELPSHROUD
+	waitmessage B_WAIT_TIME_LONG
+	restoretarget
+	return
+
+BattleScript_MoveEffectKelpTighten::
+	savetarget
+	copybyte gBattlerTarget, gEffectBattler
+	printstring STRINGID_KELPTIGHTEN
+	waitmessage B_WAIT_TIME_LONG
+	restoretarget
+	return
+
+@ Innard Punch (Pyukumuku): de schade (2x wat hij deze beurt kreeg) zit in DoFixedDamageMoveCalc,
+@ het doelwit in HandleMoveTargetRedirection; verder een gewone klap.
+BattleScript_EffectInnardPunch::
+	goto BattleScript_EffectHit
+
+@ Overkill: gewone klap; valt het doelwit flauw, dan blijft de overtollige schade liggen
+@ (opgeslagen bij het verwerken van de schade) en wordt dat gemeld.
+BattleScript_EffectOverkill::
+	attackcanceler
+	critmessage
+	waitmessage B_WAIT_TIME_LONG
+	resultmessage
+	waitmessage B_WAIT_TIME_LONG
+	setadditionaleffects
+	callnative BS_JumpIfOverkillNotStored
+	.4byte BattleScript_MoveEnd
+	printstring STRINGID_OVERKILLSTORED
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MoveEnd
+
+@ Lure Light (Lumineon): de aanvaller kijkt in het licht, Accuracy -1 (staat al in de wachtrij).
+BattleScript_LureLightDazzleAttacker::
+	printstring STRINGID_LURELIGHTDAZZLED
+	waitmessage B_WAIT_TIME_SHORT
+	trybattlerstatchange BS_ATTACKER, STAT_CHANGE_NO_FLAGS
+	return
+
+@ Totem Gaze (Xatu) en Burrow Maze (Dugtrio): het doelwit ontwijkt (aangeroepen vanuit de accuracy-canceler)
+BattleScript_TotemGazeDodge::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_TOTEMGAZEDODGE
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+BattleScript_BurrowMazeDodge::
+	pause B_WAIT_TIME_SHORT
+	printstring STRINGID_BURROWMAZEDODGE
+	waitmessage B_WAIT_TIME_LONG
+	return
+
+@ Flash is sinds 1.17 een gewone EFFECT_STAT_CHANGE-move (Accuracy, Attack en Sp. Atk -1)
+BattleScript_EffectFlash::
+	goto BattleScript_EffectStatChange
+
+@ Eye Spots (Masquerain): -2 Attack en -1 Speed; in Pollen Haze ook verward
+BattleScript_EffectEyeSpots::
+	attackcanceler
+	jumpifweatheraffected B_WEATHER_POLLEN_HAZE, BattleScript_EyeSpotsDoMoveAnim
+	jumpifstat BS_TARGET, CMP_GREATER_THAN, STAT_ATK, MIN_STAT_STAGE, BattleScript_EyeSpotsDoMoveAnim
+	jumpifstat BS_TARGET, CMP_EQUAL, STAT_SPEED, MIN_STAT_STAGE, BattleScript_ButItFailed
+BattleScript_EyeSpotsDoMoveAnim:
+	attackanimation
+	waitanimation
+	queuestatchange BS_TARGET, STAT_ATK, -2
+	queuestatchange BS_TARGET, STAT_SPEED, -1
+	trybattlerstatchange BS_TARGET, STAT_CHANGE_NO_FLAGS
+	jumpifweatheraffected B_WEATHER_POLLEN_HAZE, BattleScript_EyeSpotsConfuse
+	goto BattleScript_MoveEnd
+BattleScript_EyeSpotsConfuse:
+	jumpifsafeguard BattleScript_MoveEnd
+	seteffectprimary BS_ATTACKER, BS_TARGET, MOVE_EFFECT_CONFUSION
+	goto BattleScript_MoveEnd
+
+@ Super Splash: de tsunami van de vorige beurt slaat in (via de future-attack-route)
+BattleScript_SuperSplashTsunami::
+	printstring STRINGID_SUPERSPLASHTSUNAMI
+	waitmessage B_WAIT_TIME_LONG
+	goto BattleScript_MonTookFutureAttackAfterMsg

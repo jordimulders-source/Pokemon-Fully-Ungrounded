@@ -956,13 +956,13 @@ const struct BattleMoveEffect gBattleMoveEffects[NUM_BATTLE_MOVE_EFFECTS] =
 
     [EFFECT_ACID_RAIN] =
     {
-        .battleScript = BattleScript_EffectAcidRain,
+        .battleScript = BattleScript_EffectWeather, // 1.17: zetmoves via EFFECT_WEATHER
         .battleTvScore = 4,
     },
 
     [EFFECT_POLLEN_HAZE] =
     {
-        .battleScript = BattleScript_EffectPollenHaze,
+        .battleScript = BattleScript_EffectWeather, // 1.17: zetmoves via EFFECT_WEATHER
         .battleTvScore = 4,
     },
 

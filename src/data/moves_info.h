@@ -24098,7 +24098,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Summons acid rain for 5\n"
             "turns. Poison thrives."),
-        .effect = EFFECT_ACID_RAIN,
+        .effect = EFFECT_WEATHER, // Project Grounded (1.17): was EFFECT_ACID_RAIN
         .power = 0,
         .type = TYPE_POISON,
         .accuracy = 0,
@@ -24107,6 +24107,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .argument = { .weatherType = BATTLE_WEATHER_ACID_RAIN },
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,
@@ -24121,7 +24122,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .description = COMPOUND_STRING(
             "Fills the air with pollen for\n"
             "5 turns. Bug and Grass thrive."),
-        .effect = EFFECT_POLLEN_HAZE,
+        .effect = EFFECT_WEATHER, // Project Grounded (1.17): was EFFECT_POLLEN_HAZE
         .power = 0,
         .type = TYPE_BUG,
         .accuracy = 0,
@@ -24130,6 +24131,7 @@ const struct MoveInfo gMovesInfo[MOVES_COUNT_ALL] =
         .priority = 0,
         .category = DAMAGE_CATEGORY_STATUS,
         .zMove = { .effect = Z_EFFECT_SPD_UP_1 },
+        .argument = { .weatherType = BATTLE_WEATHER_POLLEN_HAZE },
         .ignoresProtect = TRUE,
         .mirrorMoveBanned = TRUE,
         .contestEffect = CONTEST_EFFECT_SCRAMBLE_NEXT_TURN_ORDER,

@@ -3545,13 +3545,13 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             if (shouldAbilityTrigger
              && IsBattlerWeatherAffected(GetBattlerHoldEffect(battler), GetWeather(), B_WEATHER_SUN))
             {
-                gBattleScripting.battler = battler;
+                gEffectBattler = gBattlerAbility = battler;
                 SetStatChange(battler, STAT_ATK, 2);
                 SetStatChange(battler, STAT_DEF, 2);
                 SetStatChange(battler, STAT_SPEED, 2);
                 SetStatChange(battler, STAT_SPATK, 2);
                 SetStatChange(battler, STAT_SPDEF, 2);
-                BattleScriptCall(BattleScript_HeliotropismActivates);
+                BattleScriptCall(BattleScript_AbilityStatChange);
                 effect++;
             }
             break;
@@ -3645,11 +3645,11 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             }
             break;
         case ABILITY_DIMENSIONAL_WARP:
-            if (!(gFieldStatuses & STATUS_FIELD_TRICK_ROOM))
+            if (shouldAbilityTrigger && !(gFieldStatuses & STATUS_FIELD_TRICK_ROOM))
             {
                 gFieldStatuses |= STATUS_FIELD_TRICK_ROOM;
                 gFieldTimers.trickRoomTimer = 5;
-                BattleScriptPushCursorAndCallback(BattleScript_DimensionalWarpActivates);
+                BattleScriptCall(BattleScript_DimensionalWarpActivates);
                 effect++;
             }
             break;
@@ -3809,9 +3809,10 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
                  && (CompareStat(battler, STAT_DEF, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility)
                   || CompareStat(battler, STAT_SPDEF, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility)))
                 {
-                    SaveBattlerAttacker(gBattlerAttacker);
-                    gBattlerAbility = gBattleScripting.battler = battler;
-                    BattleScriptExecute(BattleScript_LandfillActivates);
+                    gEffectBattler = gBattlerAbility = battler;
+                    SetStatChange(battler, STAT_DEF, 1);
+                    SetStatChange(battler, STAT_SPDEF, 1);
+                    BattleScriptCall(BattleScript_AbilityStatChange);
                     effect++;
                 }
                 break;

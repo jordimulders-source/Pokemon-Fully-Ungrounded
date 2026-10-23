@@ -1155,12 +1155,6 @@
 	callnative BS_JumpIfIntimidateAbilityPrevented
 	.endm
 
-	@ Project Grounded: Innard Punch. Niet geraakt deze beurt: spring naar normalInstr (gewone klap).
-	.macro innardpunchdamagecalculator normalInstr:req
-	callnative BS_CalcInnardPunchDmg
-	.4byte \normalInstr
-	.endm
-
 	.macro allyswitchswapbattlers
 	callnative BS_AllySwitchSwapBattler
 	.endm
@@ -2175,6 +2169,14 @@
 
 	.macro recalcmovetype
 	callnative BS_RecalcMoveType
+	.endm
+
+	@ Project Grounded (1.17-port): zet een statwijziging in de wachtrij; daarna trybattlerstatchange/trystatchanges
+	.macro queuestatchange battler:req, stat:req, stage:req
+	callnative BS_QueueStatChange
+	.byte \battler
+	.byte \stat
+	.byte \stage
 	.endm
 
 	@ Project Grounded: signature moves ronde 3b

@@ -182,7 +182,6 @@ extern const u8 BattleScript_PitcherTrapEffect[];
 extern const u8 BattleScript_PitcherTrapDrain[];
 extern const u8 BattleScript_SilkTrapEffect[];
 extern const u8 BattleScript_HiveQueenClearsHazards[];
-extern const u8 BattleScript_LandfillActivates[];
 extern const u8 BattleScript_EffectTotemGaze[]; // Project Grounded
 extern const u8 BattleScript_EffectBubbleDome[]; // Project Grounded
 extern const u8 BattleScript_BubbleDomePopped[]; // Project Grounded
@@ -377,7 +376,9 @@ extern const u8 BattleScript_DancerActivates[];
 extern const u8 BattleScript_AftermathDmg[];
 extern const u8 BattleScript_BeaverDamBreak[];
 extern const u8 BattleScript_LureLightDazzleAttacker[];
-extern const u8 BattleScript_HeliotropismActivates[];
+extern const u8 BattleScript_TotemGazeDodge[]; // Project Grounded
+extern const u8 BattleScript_BurrowMazeDodge[]; // Project Grounded
+extern const u8 BattleScript_SuperSplashTsunami[]; // Project Grounded
 extern const u8 BattleScript_HoleUpActivates[];
 extern const u8 BattleScript_BattlerFormChange[];
 extern const u8 BattleScript_BattlerFormChangeNoPopup[];
@@ -692,8 +693,6 @@ extern const u8 BattleScript_EffectEyeSpots[]; // Project Grounded
 extern const u8 BattleScript_EffectFungalControl[];
 extern const u8 BattleScript_EffectTransmutation[];
 extern const u8 BattleScript_EffectMachineLearning[];
-extern const u8 BattleScript_EffectAcidRain[];
-extern const u8 BattleScript_EffectPollenHaze[];
 extern const u8 BattleScript_PollenSeasonActivates[];
 extern const u8 BattleScript_PollenHazeHeal[];
 extern const u8 BattleScript_PollenHazeBlownAway[];

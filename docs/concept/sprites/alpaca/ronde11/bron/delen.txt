@@ -1,0 +1,120 @@
+# Alpaca ronde 11: met de hand geschreven rijen 'y x0 pixels' ('.' = overslaan), van achter naar voor.
+# K donker | W wol-hl w wol v wolschaduw u diepe schaduw V wolomlijning | R r s S handschoen
+# M Y T weefband (magenta, geel, turquoise) | P roze | B oogreflectie
+## achterpoot_ver
+36 40 VvuK
+37 40 VvuK
+38 41 VvuK
+39 41 VvuK
+40 42 VvuK
+41 42 VvuK
+42 41 VvuK
+43 41 VvuK
+44 41 VvuK
+45 40 VvvuK
+46 40 KKKKK
+## staart
+28 41 VvK
+29 42 vvK
+30 43 vuK
+31 44 uuK
+32 44 uK
+## voorpoot_ver
+36 28 VvuK
+37 28 VvuK
+38 28 VvuK
+39 27 VvuK
+40 27 VvuK
+41 27 VvuK
+## vuist_ver
+42 26 SMMMMS
+43 26 SYTYTS
+44 27 SRrrrSS
+45 27 SrrrrssK
+46 27 SrrrsrsK
+47 27 SrrsrssK
+48 27 KssssssK
+49 28 KKKKKK
+## lijf
+27 33 VVV
+27 37 VVVK
+28 31 VVWWWVWWwvK
+29 30 VWWWWwWwwwvvK
+30 29 VWWwwwwwwwwvvK
+31 29 VWwwwwwwwwwwvvK
+32 29 VwwwwwwwwwwwvvK
+33 29 VwwwwwwwwwwvvuK
+34 29 VwwwwwwwwwvvvuK
+35 29 VvwwwwwwvvvvuK
+36 29 VvvwwwvvvvuuK
+37 30 KuvvvvvuuK
+38 31 KKKKKKKK
+## achterpoot_voor
+36 35 VwwvK
+37 35 VwwvK
+38 35 VwwvK
+39 36 VwvvK
+40 37 VwvK
+41 37 VwvK
+42 37 VwvK
+43 36 VwvK
+44 36 VwvK
+45 36 VwvK
+46 36 VwvK
+47 35 VwwvK
+48 35 KKKKK
+## nek
+21 22 VWwwwwvvK
+22 22 VWwwwwvvK
+23 21 VWWwwwwvvK
+24 21 VWwwwwwvvK
+25 21 VWwwwwvvvK
+26 21 VWwwwwwvvK
+27 21 VWWwwwwwvvK
+28 21 VWwwwwwwvvvK
+29 21 VWwwwwwwwvvv
+30 20 VWWwwwwwwwwv
+31 20 VWwwwwwwwwv
+32 21 Vwwwwwwwwv
+33 21 Vwwwwwwvv
+34 22 Vvwwwvvu
+35 22 KvvvvuuK
+## voorpoot_voor
+36 22 VWvK
+37 22 VwvK
+38 21 VwvK
+39 21 VwvK
+40 20 VwvK
+## vuist_voor
+41 19 SPMMMS
+42 19 SYTYTS
+43 19 SPMMMS
+44 18 SRRrrrsS
+45 17 SRWRrrrsK
+46 17 SRRrrrssK
+47 17 SRrrrsrsK
+48 17 SRrrsrssK
+49 17 SrrrsrssK
+50 17 KrrrssssK
+51 18 KsssssK
+52 19 KKKKK
+## kop 1
+3 12 ......................V.
+4 12 ....V................VK.
+5 12 ....VK.....VVVV.....VwK.
+6 12 ....VvK...VWWWwVVV.VwPK.
+7 12 .....VvKVVVWWwvWWwVwPvK.
+8 12 .....VvvVWWwvWwwwvvVPvK.
+9 12 .....VWWWwwwWwwwwwvvK...
+10 12 .....VWWwwwwwwwwwwvvvK..
+11 12 .....VwWwwWwwwwwvvvvvvK.
+12 12 .....VvwwuvwuvwwvvuvvvK.
+13 12 ....VwwKKwWwwwvKKwvvvvK.
+14 12 ...VwwwWKwWwwwWKKwvvvvK.
+15 12 ..VWWwwKKvwwwwKKKwvvvK..
+16 12 .VWWwwwwKvwwwwKKBwvvvK..
+17 12 .VKwwuwwwvwwwwwwwvvvK...
+18 12 .VwuwwwwvvwwwwwwvvvvK...
+19 12 .VKKuvvvvwwwwwwvvvvK....
+20 12 ..VuuuvvwwwwwwwvvvK.....
+21 12 ...KKKKuVV..............

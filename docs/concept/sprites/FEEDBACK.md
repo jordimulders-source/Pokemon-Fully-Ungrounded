@@ -66,3 +66,4 @@
 - **Alpaca:** gekke ogen die niet kloppen; oren onafgemaakt; nog niet volledig fluffy. Handschoenen wel prima.
 - **Olinguito:** van een afstandje prima. Van dichtbij: een voet niet verbonden; rechtsonder is het lijf niet afgemaakt; het lijkt alsof hij maar 1 klauw heeft en de andere arm geamputeerd is; **geen mond**. Ogen wel prima.
 - **Nachtaap:** opeens **geen oren** meer; de staart is lelijk (een overdreven rechte lijn, geen enkele Pokémon heeft dat); rechterbeen en -arm lijken geamputeerd; ogen wel prima, maar **niet genoeg een Psychic-kleur** en ze lijken **opgeplakt**.
+- **Aanvulling:** alpaca's achterpoten zijn iets te recht. Olinguito: de staart begint in de buurt te komen, de kleuren ook.

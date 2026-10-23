@@ -53,6 +53,7 @@ Algemene lessen staan hieronder; de rest is per onderwerp opgesplitst. **Lees he
 | Sprites, trainerfoto's, vormen, kleurvarianten | `docs/lessen/GRAPHICS.md` |
 | Nieuwe Pokémon ontwerpen (fakemon, regional forms) | `docs/lessen/FAKEMON_DESIGN.md` (vóór elke ontwerp-/spriteronde) |
 | Pokémon-sprites pixelen (omlijning, schaduw, ogen, curven) | `docs/lessen/SPRITING.md` (vóór elke spriteronde) |
+| **Elke sprite-agent-opdracht** (ook kleine reparaties) | `docs/lessen/SPRITE_OPDRACHT.md`: verwijzing altijd in de opdracht; Jordi's vaste feedback; Claude bekijkt elk resultaat zelf vóór Jordi |
 | C-code: gevechten, UI, eigen schermen, scripts | `docs/lessen/CODE.md` |
 | Transities, klasse-intro's, films | `docs/lessen/INTROS.md` |
 | Muziek en samples | `docs/lessen/MUZIEK.md` (+ `tools/grounded/MUZIEK.md`) |

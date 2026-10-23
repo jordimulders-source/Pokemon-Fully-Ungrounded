@@ -1,0 +1,44 @@
+# Vaste opdracht voor elke sprite-agent (ook bij kleine reparaties)
+
+Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe klein ook. Jordi (23 okt): "ik moet elke keer dingen opnieuw vertellen waarvan ik dacht dat ik je erop getraind had." Dit bestand is daar het antwoord op.
+
+## 1. Eerst lezen (altijd)
+- Dit bestand helemaal.
+- `docs/lessen/SPRITING.md` §0 (checklist) en §1–§8 (de regels uit de Dragonfly Cave-gids), plus de sectie(s) over deze Pokémon.
+- `docs/lessen/FAKEMON_DESIGN.md` (vaste werkwijze bovenaan).
+- Gericht in `docs/lessen/bronnen/dragonflycave_spriting_guide.txt` het onderdeel waar je aan werkt (omlijning, ogen, shading, perspectief).
+- De NOTITIES.md van de vorige ronde van deze Pokémon en `docs/concept/sprites/FEEDBACK.md`.
+
+## 2. Jordi's vaste feedback (nooit opnieuw laten zeggen)
+**Vorm en pose**
+- Lijf én blik diagonaal 3/4 naar links-voor; nooit zuiver profiel of recht vooruit. Bijna frontaal mag alleen met perspectief (verre arm kleiner, niet recht op de billen).
+- Snuitdieren: vaak maar **één oog** in beeld; het verre oog verdwijnt achter de neusbrug (Poochyena, Cyndaquil, Rhyhorn). De **snuit is één vorm** die in de 3/4-richting wijst, met de neus aan het eind.
+- Alle ledematen, oren en ogen tellen; alles verbonden; geen geamputeerde verre kant; geen poten die aan elkaar vastzitten (minstens 1 kolom lucht of een omlijning).
+- Pose niet stijf: poten niet kaarsrecht naast elkaar en niet identiek; één consistente houding (staan óf lopen); geen Escher-constructies.
+- Lijf natuurlijk: teken het over een **echte Gen 3-sprite als skelet**, nooit uit ovalen/bonen; overgangen geleidelijk (Mightyena), geen rechthoekige romp of doos-kop.
+- Formaat vergelijken met echte sprites van dezelfde fase (fase 1 ±800–950 px). Kop niet te groot.
+- Kenmerken moeten op 1× lezen (een haakje van 3 px leest niet).
+
+**Lijnen, ogen, kleur**
+- Geen rechte lijnen waar het dier rond is; curven zonder hoeken; geen overdreven rechte staart.
+- Ogen geïntegreerd (bovenlid donkerst, iris donker boven/licht onder, glans), niet opgeplakt, geen brilogen; geen volledig zwarte ogen zonder glans.
+- Omlijning per kleurgroep, zwart alleen aan de schaduwkant; licht van linksboven; geen open randen (ook schaduwkleur naast transparant).
+- Kleuren vergelijken met Pokémon van **hetzelfde type** (Dark mag donker).
+- Verzonnen kleurvlakken mogen alleen als ze werken; bij twijfel één vachtkleur.
+- Referentiefoto = inspiratie, geen blauwdruk (Pokémon-filosofie), maar de soort moet herkenbaar blijven.
+
+**Werkwijze**
+- **Wat Jordi goedkeurde blijft letterlijk staan** (pixel voor pixel). "Meer Pokémon" of "beter" nooit uitvoeren door goedgekeurde verhoudingen te veranderen.
+- **Een kleine correctie is klein:** werk binnen het pixelbudget dat Claude opgeeft; tel en meld het aantal gewijzigde pixels. Verplaats je een onderdeel, laat dan de vorm eromheen meekloppen (neus verschuiven = snuit mee).
+- Grote of ongevraagde wijzigingen alleen als variant naast het origineel.
+- Met de hand tekenen (pixel-over/tekst-raster), geen automatische vormen of shading in het eindresultaat.
+
+## 3. Vóór opleveren
+- Loop §0 en de lijst hierboven punt voor punt na in NOTITIES.md (ok / wat je deed).
+- **Bekijk je resultaat zelf op 1× en 3× naast 2–3 echte sprites** en schrijf eerlijk op wat nog niet klopt.
+- Lessen onder "Lessen" in je NOTITIES.md (Claude zet ze over); niet in SPRITING.md schrijven, niet committen tenzij gevraagd.
+
+## 4. Claude (coördinator)
+- Plak de verwijzing naar dit bestand in elke sprite-opdracht en geef bij reparaties een pixelbudget en de lijst bevroren delen mee.
+- **Bekijk elk resultaat zelf** (1× en 3×) vóór het naar Jordi gaat; stuur terug wat duidelijk niet klopt.
+- Nieuwe terugkerende feedback van Jordi meteen in §2 hierboven zetten.

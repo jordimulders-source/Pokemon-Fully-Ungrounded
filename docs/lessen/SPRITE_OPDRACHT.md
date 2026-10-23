@@ -4,6 +4,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 
 ## 1. Eerst lezen (altijd)
 - Dit bestand helemaal.
+- **`docs/lessen/FAKEMON_CHECKLIST.md`** (vormen, poses, verhoudingen; uit de studie van alle 1024 sprites): elk punt afvinken. Achtergrond in `docs/lessen/vormstudie/STUDIE.md`.
 - `docs/lessen/SPRITING.md` §0 (checklist) en §1–§8 (de regels uit de Dragonfly Cave-gids), plus de sectie(s) over deze Pokémon.
 - `docs/lessen/FAKEMON_DESIGN.md` (vaste werkwijze bovenaan).
 - Gericht in `docs/lessen/bronnen/dragonflycave_spriting_guide.txt` het onderdeel waar je aan werkt (omlijning, ogen, shading, perspectief).

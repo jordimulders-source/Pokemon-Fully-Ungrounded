@@ -81,3 +81,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Alpaca (fase 1) klaar** na onafhankelijke keuring: open randen dicht, achterpoten los, linkervoorpoot smaller; staartje omhoog gehouden (Jordi: leuker dan het lage, "dan maar minder immersie").
 - **Olinguito ronde 16:** ronde kop, grotere ronde oren, masker met twee lobben en golvende rand, amandelogen met donker bovenlid, taps toelopende haakstaart. Palet blijft donker (Dark-type). Masker en oren: "uitstekende verbeteringen" (Jordi).
 - **Vaste werkwijze per fakemon** (bovenaan `docs/lessen/FAKEMON_DESIGN.md`): ontwerp → silhouet op echt skelet → sprite + checklist → onafhankelijke keuring vóór Jordi → alleen benoemde reparaties; doel ≤ ±5 rondes.
+
+### [v0.0.15] - Vormstudie en fakemon-checklist
+- Studie van alle 1024 front-sprites (386 Gen 3 + 638 Gen 4–9) op vorm, pose en verhoudingen: `docs/lessen/vormstudie/` (STUDIE.md met 25 verbanden en 15 posetypes, contactvellen, metingen).
+- `docs/lessen/FAKEMON_CHECKLIST.md`: 30 toetsbare punten (harde eisen/richtlijnen) + sjabloon "Pose kiezen" en mini-sjablonen per bouwtype; verplicht in `SPRITE_OPDRACHT.md`.
+- `SPRITE_OPDRACHT.md` (vaste opdracht voor elke sprite-agent) en per Pokémon een `AFGEKEURD.md` (olinguito) tegen het herhalen van afgekeurde wijzigingen.
+- Olinguito: rondes 17 en 19 afgekeurd; Galar-Linoone als leidraad; stap-voor-stap (kop → achterpoot → klauwen).

@@ -292,4 +292,10 @@
 #define BRAVOTOWER_STATE_RESPONSE_UNSATISFIED 13
 #define BRAVOTOWER_STATE_OUTRO                14
 
+// Fully Ungrounded: local ids van Gabby, Ty en (bij het eerste gevecht) Joey op de kaart waar ze staan. Op Hoenn
+// had elke route eigen objecten per gevecht; geef ze in een nieuwe kaart deze ids (object_events-volgorde).
+#define LOCALID_GABBY_AND_TY_GABBY 1
+#define LOCALID_GABBY_AND_TY_TY    2
+#define LOCALID_GABBY_AND_TY_JOEY  3
+
 #endif //GUARD_CONSTANTS_TV_H

@@ -1,0 +1,21 @@
+frame 1: gewijzigd 37 px | buiten pootzone 0 [] | kop-masker 0 []
+frame 2: gewijzigd 37 px | buiten pootzone 0 [] | kop-masker 0 []
+palet gelijk: True
+frame 1: open randen 0 [] | 1045 px, box 48x36
+frame 2: open randen 0 [] | 1049 px, box 48x37
+transparency 0 | mode P (64, 128)
+rij: links-rechts (dikte incl. omlijning)
+  y39: x19-23 (5)
+  y40: x18-23 (6)
+  y41: x17-23 (7)
+  y42: x17-23 (7)
+  y43: x16-23 (8)
+  y44: x16-23 (8)
+  y45: x15-22 (8)
+  y46: x15-22 (8)
+  y47: x15-21 (7)
+  y48: x16-21 (6)
+  y49: x16-21 (6)
+voorrand: [18, 17, 17, 16, 16, 15, 15, 15, 16, 16] | langste verticale run 3 | langste regelmatige diagonaal 2
+achterrand (vrij deel): [23, 22, 22, 21, 21, 21] | langste verticale run 3 | langste regelmatige diagonaal 2
+minste dikte y40-49: 6

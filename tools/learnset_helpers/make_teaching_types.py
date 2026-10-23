@@ -38,12 +38,45 @@ def is_valid_preprocessor(line: str) -> bool:
         return True
     return False
 
+def choose_learnset_occurrences(file_list) -> dict:
+    """
+    Fully Ungrounded: een learnset die zowel binnen een FU_*-vormschakelaar als daarbuiten gebruikt wordt
+    (Grimer-learnset ook voor Hoenn-Grimer), komt op de eerste plek zonder FU_*-schakelaar,
+    anders valt hij weg zodra de schakelaar uit staat.
+    """
+    chosen = {}
+    occurrence = {}
+    for families_fname in file_list:
+        with open(families_fname, "r") as family_fp:
+            species_lines = family_fp.readlines()
+        stack = []
+        for line in species_lines:
+            if re.match(PREPROC_START_PAT, line):
+                stack.append(line.startswith("#if FU_"))
+                continue
+            if re.match(PREPROC_END_PAT, line):
+                if stack:
+                    stack.pop()
+                continue
+            match = re.match(LEARNSET_PAT, line)
+            if match and match.group("name") != "None":
+                name = match.group("name")
+                idx = occurrence.get(name, 0)
+                occurrence[name] = idx + 1
+                if name not in chosen:
+                    chosen[name] = (idx, any(stack))
+                elif chosen[name][1] and not any(stack):
+                    chosen[name] = (idx, False)
+    return {name: idx for name, (idx, _) in chosen.items()}
+
 def extract_repo_species_data() -> list:
     species_data = []
     pokemon_list = []
     teaching_type = "DEFAULT_LEARNING"
     file_list = sorted(glob.glob("src/data/pokemon/species_info/*_families.h"))
     file_list.append("./src/data/pokemon/species_info.h")
+    chosen = choose_learnset_occurrences(file_list)
+    occurrence = {}
     for families_fname in file_list:
         with open(families_fname, "r") as family_fp:
             species_lines = family_fp.readlines()
@@ -60,6 +93,11 @@ def extract_repo_species_data() -> list:
             match = re.match(LEARNSET_PAT, line)
             if match:
                 if match.group("name") == "None":
+                    continue
+                idx = occurrence.get(match.group("name"), 0)
+                occurrence[match.group("name")] = idx + 1
+                if idx != chosen.get(match.group("name"), 0):
+                    teaching_type = "DEFAULT_LEARNING"
                     continue
                 if match.group("name") not in pokemon_list:
                     if not is_last_line_preprocessor:

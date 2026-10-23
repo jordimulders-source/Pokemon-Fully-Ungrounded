@@ -4,7 +4,7 @@ Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.p
 
 ## 0. Verplichte checklist vóór oplevering (elke sprite, elke ronde)
 Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTITIES.md per punt "ok" of wat je deed:
-1. **Lichaam én blik diagonaal (3/4 naar links-voor):** niet alleen de ogen, ook het lijf staat schuin (verre kant korter en in schaduw), zoals vrijwel elke Gen 3-front-sprite. Zuiver profiel of zuiver frontaal = fout (Jordi, olinguito ronde 8, Cuyby-evolutie ronde 2). Een zittend lijf dat bijna frontaal staat mag, als blik en verre kant 3/4 zijn en het dynamisch leest (Jordi, nachtaap ronde 10: "we zitten er niet frontaal op").
+1. **Lichaam én blik diagonaal (3/4 naar links-voor):** niet alleen de ogen, ook het lijf staat schuin (verre kant korter en in schaduw), zoals vrijwel elke Gen 3-front-sprite. Zuiver profiel of zuiver frontaal = fout (Jordi, olinguito ronde 8, Cuyby-evolutie ronde 2). Bijna frontaal mag, zolang er perspectief in zit: blik en verre kant 3/4, verre arm kleiner dan de nabije, en het dier zit niet recht op zijn billen vooruit te kijken (Jordi, nachtaap ronde 10: "we zitten er niet frontaal op").
 2. **Alle ledematen, oren en ogen geteld en verbonden** (geen geamputeerde verre kant, geen losse voet of staart).
 3. **Geen rechte lijnen** in de omtrek waar het dier rond is; curven zonder hoeken.
 4. **Ogen geïntegreerd** (bovenlid, gekleurde iris, glans + reflectie), niet opgeplakt; verre oog geen kopie.

@@ -83,6 +83,7 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Quaxly-lijn erin** (Jordi, 22 okt): Quaquaval is een samba-/carnavalsdanser (Rio).
 - **Kecleon zit sowieso in de dex** (Jordi, 22 okt), ook los van Keccles.
 - **Carbink toch erin** (Jordi, 22 okt; in ronde 1 geschrapt): hij is gebaseerd op de **carbunclo** (carbuncle), een wezentje met een gloeiende edelsteen uit de mijnwerkerslegendes van de Andes en Chiloé. Wie hem vangt, wordt rijk. Past bij de mijnen (bijv. Potosí, met de legende van El Tío).
+- **Alomomola toch erin** (Jordi, 23 okt): de maanvis komt gewoon voor rond Zuid-Amerika.
 - **Dit deel is voorlopig af** (Jordi, 22 okt). Stand: zie DEX_NOMINATIES.md.
 
 ## Bestaande soorten in de regio

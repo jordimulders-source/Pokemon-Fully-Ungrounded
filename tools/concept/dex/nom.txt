@@ -281,7 +281,7 @@ EMOLGA|C||Vliegende eekhoorn (Azië)|
 KARRABLAST|C||Geen band|
 FOONGUS|A|AMA|Schimmels van het regenwoud; Grass/Poison|
 FRILLISH|B|ZEE|Ghost/Water in zee|
-ALOMOMOLA|C||Maanvis; zwak|
+ALOMOMOLA|B|ZEE,GAL|Jordi 23 okt: erin; de maanvis (Mola) komt gewoon voor rond Zuid-Amerika (o.a. Galápagos, Chileense kust)|
 JOLTIK|B|AMA|Bug/Electric; kleine spinnen|
 FERROSEED|B|NEV|Grass/Steel|
 KLINK|C||Tandwielen|

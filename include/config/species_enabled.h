@@ -315,7 +315,7 @@
 #define P_FAMILY_KARRABLAST              FALSE // FU: niet in de dex (was P_GEN_5_POKEMON)
 #define P_FAMILY_FOONGUS                 P_GEN_5_POKEMON
 #define P_FAMILY_FRILLISH                P_GEN_5_POKEMON
-#define P_FAMILY_ALOMOMOLA               FALSE // FU: niet in de dex (was P_GEN_5_POKEMON)
+#define P_FAMILY_ALOMOMOLA               P_GEN_5_POKEMON // FU: terug in de dex (Jordi 23 okt)
 #define P_FAMILY_JOLTIK                  P_GEN_5_POKEMON
 #define P_FAMILY_FERROSEED               P_GEN_5_POKEMON
 #define P_FAMILY_KLINK                   FALSE // FU: niet in de dex (was P_GEN_5_POKEMON)

@@ -10,7 +10,6 @@ bool8 IsDestinationBoxFull(void);
 u16 GetPCBoxToSendMon(void);
 bool8 InMultiPartnerRoom(void);
 void UpdateTrainerFansAfterLinkBattle(void);
-bool8 ShouldDoBrailleRegicePuzzle(void);
 void ShowScrollableMultichoice(void);
 void FrontierGamblerSetWonOrLost(bool8 won);
 u8 TryGainNewFanFromCounter(u8 incrementId);

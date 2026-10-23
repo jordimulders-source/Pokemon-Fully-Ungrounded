@@ -43,7 +43,6 @@
 #include "match_call.h"
 #include "menu.h"
 #include "metatile_behavior.h"
-#include "mirage_tower.h"
 #include "money.h"
 #include "new_game.h"
 #include "oras_dowse.h"
@@ -129,7 +128,7 @@ static void InitObjectEventsLocal(void);
 static void InitOverworldGraphicsRegisters(void);
 static u8 GetSpriteForLinkedPlayer(u8);
 static u16 KeyInterCB_SendNothing(u32);
-static void ResetMirageTowerAndSaveBlockPtrs(void);
+static void ResetSaveBlockPtrs(void);
 static void ResetScreenForMapLoad(void);
 static void OffsetCameraFocusByLinkPlayerId(void);
 static void SpawnLinkPlayers(void);
@@ -1406,7 +1405,6 @@ static void InitOverworldBgs(void)
 
 void CleanupOverworldWindowsAndTilemaps(void)
 {
-    ClearMirageTowerPulseBlendEffect();
     FreeAllOverworldWindowBuffers();
     TRY_FREE_AND_SET_NULL(gOverworldTilemapBuffer_Bg3);
     TRY_FREE_AND_SET_NULL(gOverworldTilemapBuffer_Bg2);
@@ -1983,7 +1981,7 @@ static bool32 LoadMapInStepsLink(u8 *state)
         InitOverworldBgs();
         ScriptContext_Init();
         UnlockPlayerFieldControls();
-        ResetMirageTowerAndSaveBlockPtrs();
+        ResetSaveBlockPtrs();
         ResetScreenForMapLoad();
         (*state)++;
         break;
@@ -2065,7 +2063,7 @@ static bool32 LoadMapInStepsLocal(u8 *state, bool32 a2)
         (*state)++;
         break;
     case 1:
-        ResetMirageTowerAndSaveBlockPtrs();
+        ResetSaveBlockPtrs();
         ResetScreenForMapLoad();
         (*state)++;
         break;
@@ -2132,7 +2130,7 @@ static bool32 ReturnToFieldLocal(u8 *state)
     switch (*state)
     {
     case 0:
-        ResetMirageTowerAndSaveBlockPtrs();
+        ResetSaveBlockPtrs();
         ResetScreenForMapLoad();
         ResumeMap(FALSE);
         InitObjectEventsReturnToField();
@@ -2167,7 +2165,7 @@ static bool32 ReturnToFieldLink(u8 *state)
     {
     case 0:
         FieldClearVBlankHBlankCallbacks();
-        ResetMirageTowerAndSaveBlockPtrs();
+        ResetSaveBlockPtrs();
         ResetScreenForMapLoad();
         (*state)++;
         break;
@@ -2243,9 +2241,8 @@ static void DoMapLoadLoop(u8 *state)
     while (!LoadMapInStepsLocal(state, FALSE));
 }
 
-static void ResetMirageTowerAndSaveBlockPtrs(void)
+static void ResetSaveBlockPtrs(void)
 {
-    ClearMirageTowerPulseBlend();
     MoveSaveBlocks_ResetHeap();
 }
 
@@ -2321,7 +2318,6 @@ static void ResumeMap(bool32 a1)
         SetUpFieldTasks();
     RunOnResumeMapScript();
     Enamorus_StartHearts(); // Project Grounded: hartjes op een liefdesdag
-    TryStartMirageTowerPulseBlendEffect();
 }
 
 static void InitObjectEventsLink(void)

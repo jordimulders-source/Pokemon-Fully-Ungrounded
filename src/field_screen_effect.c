@@ -20,7 +20,6 @@
 #include "load_save.h"
 #include "main.h"
 #include "menu.h"
-#include "mirage_tower.h"
 #include "metatile_behavior.h"
 #include "palette.h"
 #include "oras_dowse.h"
@@ -684,7 +683,6 @@ void Task_WarpAndLoadMap(u8 taskId)
         {
             if (task->data[1] == 0)
             {
-                ClearMirageTowerPulseBlendEffect();
                 task->data[1] = 1;
             }
             if (BGMusicStopped())

@@ -5,7 +5,7 @@
 // Fully Ungrounded: verdwenen Hoenn-kaarten die de code nog noemt. Elke kaart heeft een eigen waarde in een
 // groep die niet bestaat (0x40 + oude groep), dus een test erop is nooit waar. Opruimen per systeem
 // (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen tot hij leeg is en weg kan.
-// 110 kaarten, 17 layouts, 5 heal locations, 43 local ids.
+// 79 kaarten, 17 layouts, 3 heal locations, 42 local ids.
 
 // kaarten
 enum {
@@ -43,44 +43,18 @@ enum {
     MAP_BATTLE_FRONTIER_OUTSIDE_WEST = (4 | (0x5A << 8)),
     MAP_BATTLE_PYRAMID_SQUARE01 = (44 | (0x59 << 8)),
     MAP_DESERT_RUINS = (6 | (0x58 << 8)),
-    MAP_DEWFORD_TOWN = (11 | (0x40 << 8)),
-    MAP_EVER_GRANDE_CITY = (8 | (0x40 << 8)),
     MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_1F = (10 | (0x50 << 8)),
     MAP_EVER_GRANDE_CITY_POKEMON_LEAGUE_2F = (14 | (0x50 << 8)),
-    MAP_FALLARBOR_TOWN = (13 | (0x40 << 8)),
-    MAP_FARAWAY_ISLAND_INTERIOR = (57 | (0x5A << 8)),
     MAP_FORTREE_CITY_GYM = (1 | (0x4C << 8)),
     MAP_ISLAND_CAVE = (67 | (0x58 << 8)),
-    MAP_LAVARIDGE_TOWN = (12 | (0x40 << 8)),
     MAP_LAVARIDGE_TOWN_GYM_1F = (1 | (0x44 << 8)),
     MAP_LAVARIDGE_TOWN_GYM_B1F = (2 | (0x44 << 8)),
-    MAP_LILYCOVE_CITY = (5 | (0x40 << 8)),
-    MAP_LILYCOVE_CITY_DEPARTMENT_STORE_ELEVATOR = (22 | (0x4D << 8)),
-    MAP_MAUVILLE_CITY = (2 | (0x40 << 8)),
-    MAP_MAUVILLE_CITY_BIKE_SHOP = (1 | (0x4A << 8)),
     MAP_METEOR_SPACE = (120 | (0x58 << 8)),
-    MAP_NEW_MAUVILLE_INSIDE = (53 | (0x58 << 8)),
-    MAP_OLDALE_TOWN = (10 | (0x40 << 8)),
-    MAP_PETALBURG_CITY = (0 | (0x40 << 8)),
-    MAP_PETALBURG_WOODS = (11 | (0x58 << 8)),
     MAP_RECORD_CORNER = (26 | (0x59 << 8)),
-    MAP_REGIDRAGO_CAVE = (117 | (0x58 << 8)),
-    MAP_REGIELEKI_CAVE = (116 | (0x58 << 8)),
     MAP_ROUTE110_TRICK_HOUSE_PUZZLE6 = (8 | (0x5D << 8)),
     MAP_ROUTE111 = (26 | (0x40 << 8)),
-    MAP_ROUTE112 = (27 | (0x40 << 8)),
     MAP_ROUTE113 = (28 | (0x40 << 8)),
-    MAP_ROUTE114 = (29 | (0x40 << 8)),
-    MAP_ROUTE117 = (32 | (0x40 << 8)),
-    MAP_ROUTE117_POKEMON_DAY_CARE = (0 | (0x56 << 8)),
-    MAP_ROUTE118 = (33 | (0x40 << 8)),
-    MAP_ROUTE119 = (34 | (0x40 << 8)),
-    MAP_ROUTE120 = (35 | (0x40 << 8)),
-    MAP_ROUTE121 = (36 | (0x40 << 8)),
     MAP_ROUTE121_SAFARI_ZONE_ENTRANCE = (0 | (0x57 << 8)),
-    MAP_ROUTE123 = (38 | (0x40 << 8)),
-    MAP_RUSTBORO_CITY = (3 | (0x40 << 8)),
-    MAP_SCORCHED_SLAB_SUN_HALL = (23 | (0x62 << 8)),
     MAP_SEALED_CHAMBER_OUTER_ROOM = (71 | (0x58 << 8)),
     MAP_SECRET_BASE_BLUE_CAVE1 = (2 | (0x59 << 8)),
     MAP_SECRET_BASE_BLUE_CAVE2 = (8 | (0x59 << 8)),
@@ -106,10 +80,6 @@ enum {
     MAP_SECRET_BASE_YELLOW_CAVE2 = (9 | (0x59 << 8)),
     MAP_SECRET_BASE_YELLOW_CAVE3 = (15 | (0x59 << 8)),
     MAP_SECRET_BASE_YELLOW_CAVE4 = (21 | (0x59 << 8)),
-    MAP_SHOAL_CAVE_LOW_TIDE_ICE_ROOM = (83 | (0x58 << 8)),
-    MAP_SLATEPORT_CITY = (1 | (0x40 << 8)),
-    MAP_SLATEPORT_CITY_STERNS_SHIPYARD_1F = (0 | (0x49 << 8)),
-    MAP_SLATEPORT_CITY_STERNS_SHIPYARD_2F = (1 | (0x49 << 8)),
     MAP_TOADSTOOL_HOLLOW = (4 | (0x62 << 8)),
     MAP_TRADE_CENTER = (25 | (0x59 << 8)),
     MAP_TRAINER_HILL_2F = (62 | (0x5A << 8)),
@@ -118,7 +88,6 @@ enum {
     MAP_TRAINER_HILL_ENTRANCE = (60 | (0x5A << 8)),
     MAP_TRAINER_HILL_ROOF = (65 | (0x5A << 8)),
     MAP_UNION_ROOM = (60 | (0x59 << 8)),
-    MAP_VERDANTURF_TOWN = (14 | (0x40 << 8)),
 };
 
 // layouts
@@ -145,9 +114,7 @@ enum {
 // heal locations
 enum {
     HEAL_LOCATION_LAVARIDGE_TOWN = 0x90,
-    HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE = 0x8C,
     HEAL_LOCATION_LITTLEROOT_TOWN_BRENDANS_HOUSE_2F = 0x81,
-    HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE = 0x8D,
     HEAL_LOCATION_LITTLEROOT_TOWN_MAYS_HOUSE_2F = 0x82,
 };
 
@@ -176,7 +143,6 @@ enum {
     LOCALID_CONTEST_MC = 0xF0,
     LOCALID_CONTEST_POKEBALL = 0xF0,
     LOCALID_DAYCARE_LADY = 0xF0,
-    LOCALID_FARAWAY_ISLAND_MEW = 0xF0,
     LOCALID_LILYCOVE_LADY = 0xF0,
     LOCALID_LILYCOVE_LADYS_MON = 0xF0,
     LOCALID_PIKE_ROOM_NPC_1 = 0xF0,

@@ -1,5 +1,5 @@
 @ Gegenereerd door tools/grounded/maptools/map_compat.py, niet met de hand bewerken.
-@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (636).
+@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (633).
 @ Opruimen per systeem (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen.
 
 BattleFacility_TrainerBattle_PlaceholderText::
@@ -1772,9 +1772,6 @@ DewfordTown_Text_FishJudgeRules::
 EventScript_RegisterProfBirch::
 	end
 
-FarawayIsland_Interior_EventScript_HideMewWhenGrassCut::
-	end
-
 Ferry_EventScript_DepartIslandSouth::
 	end
 
@@ -1804,9 +1801,6 @@ MauvilleCity_GameCorner_EventScript_NoCoinCase::
 
 MossdeepCity_SpaceCenter_2F_EventScript_ChoosePartyForMultiBattle::
 	end
-
-ParadisoResort_Text_Turd::
-	.string "$"
 
 PlayersHouse_1F_Text_ArentYouInterestedInRoom::
 	.string "$"
@@ -1888,9 +1882,6 @@ PlayersHouse_2F_Text_ClockIsStopped::
 
 PlayersHouse_2F_Text_HowDoYouLikeYourRoom::
 	.string "$"
-
-ScorchedSlab_SunHall_EventScript_StoneInLight::
-	end
 
 SootopolisCity_Gym_1F_Text_JuanDefeat::
 	.string "$"

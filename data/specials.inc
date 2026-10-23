@@ -279,8 +279,6 @@ gSpecials::
 	def_special RemoveCameraObject
 	def_special GetPokeblockNameByMonNature
 	def_special GetSecretBaseNearbyMapName
-	def_special CheckRelicanthWailord
-	def_special ShouldDoBrailleRegirockEffectOld
 	def_special DoOrbEffect
 	def_special FadeOutOrbEffect
 	def_special WaitWeather
@@ -298,7 +296,6 @@ gSpecials::
 	def_special IsStarterInParty
 	def_special CopyCurSecretBaseOwnerName_StrVar1
 	def_special ScriptCheckFreePokemonStorageSpace
-	def_special DoSealedChamberShakingEffect_Long
 	def_special InteractWithShieldOrTVDecoration
 	def_special IsPokerusInParty
 	def_special SetSootopolisGymCrackedIceMetatiles
@@ -310,7 +307,6 @@ gSpecials::
 	def_special Debug_BattleTest_Start
 	def_special Debug_ClearForcedEncounter
 	def_special SetTrainerFacingDirection
-	def_special DoSealedChamberShakingEffect_Short
 	def_special StartDroughtWeatherBlend
 	def_special DoDiveWarp
 	def_special DoFallWarp
@@ -398,9 +394,6 @@ gSpecials::
 	def_special ShouldTryGetTrainerScript
 	def_special ShowMapNamePopup
 	def_special ShowMapNamePopup
-	def_special DoMirageTowerCeilingCrumble
-	def_special SetMirageTowerVisibility
-	def_special StartPlayerDescendMirageTower
 	def_special BufferTMHMMoveName
 	def_special IsWirelessAdapterConnected
 	def_special TryBecomeLinkLeader
@@ -466,9 +459,6 @@ gSpecials::
 	def_special ChooseMonForMoveTutor
 	def_special ScrollableMultichoice_ClosePersistentMenu
 	def_special CreateEnemyEventMon
-	def_special StartMirageTowerDisintegration
-	def_special StartMirageTowerShake
-	def_special StartMirageTowerFossilFallAndSink
 	def_special ChangeBoxPokemonNickname
 	def_special GetPCBoxToSendMon
 	def_special ShouldShowBoxWasFullMessage
@@ -478,7 +468,6 @@ gSpecials::
 	def_special SaveForBattleTowerLink
 	def_special SetUnlockedPokedexFlags
 	def_special IsTrainerRegistered
-	def_special ShouldDoBrailleRegicePuzzle
 	def_special EnableNationalPokedex
 	def_special ScriptMenu_CreateLilycoveSSTidalMultichoice
 	def_special GetLilycoveSSTidalSelection

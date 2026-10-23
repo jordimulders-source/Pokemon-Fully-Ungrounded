@@ -327,8 +327,7 @@ gFieldEffectScript_FieldMoveShowMonInit::
 	field_eff_callnative FldEff_FieldMoveShowMonInit
 	field_eff_end
 
-gFieldEffectScript_UsePuzzleEffect::
-	field_eff_callnative FldEff_UsePuzzleEffect
+gFieldEffectScript_UsePuzzleEffect:: @ Fully Ungrounded: braillepuzzels (Regi-graven) weg, effect doet niets
 	field_eff_end
 
 gFieldEffectScript_SecretBaseBootPC::

@@ -37,7 +37,6 @@
 #include "fldeff.h"
 #include "fldeff_misc.h"
 #include "field_control_avatar.h"
-#include "mirage_tower.h"
 #include "field_screen_effect.h"
 #include "data.h"
 #include "vs_seeker.h"
@@ -170,7 +169,6 @@ static void Task_BattleStart(u8 taskId)
         if (!FldEffPoison_IsActive()) // is poison not active?
         {
             BattleTransition_StartOnField(tTransition);
-            ClearMirageTowerPulseBlendEffect();
             tState++; // go to case 1.
         }
         break;
@@ -206,7 +204,6 @@ static void Task_BattleStart_Debug(u8 taskId)
         if (!FldEffPoison_IsActive()) // is poison not active?
         {
             BattleTransition_StartOnField(tTransition);
-            ClearMirageTowerPulseBlendEffect();
             tState++; // go to case 1.
         }
         break;

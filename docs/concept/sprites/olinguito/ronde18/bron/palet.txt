@@ -1,0 +1,16 @@
+. 152 208 160          # transparant
+0 16 12 18 zwart       # zwart (omlijning schaduwkant, neus)
+1 44 28 28 omlijning   # omlijning bruin, masker
+2 68 44 38             # vacht schaduw
+3 98 64 50             # vacht basis
+4 136 94 70            # vacht hooglicht
+5 172 140 104          # room schaduw
+6 220 192 146          # room basis
+7 246 232 198          # room hooglicht
+8 118 110 114 omlijning # klauw schaduw (ook lichte omlijning van de klauw)
+9 190 182 178          # klauw basis
+a 238 234 226          # klauw hooglicht
+b 252 252 252          # wit / glans
+c 236 180 56           # goud (iris)
+d 170 98 34            # donkergoud
+e 150 46 52            # rood (mond)

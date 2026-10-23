@@ -58,6 +58,24 @@ KEURING = [
     (46, 37, '_K'),
     (47, 37, '__KK'),
 ]
+# Staart lager (Jordi, 23 okt: "zoals bij een echte alpaca"): het omhoogstaande vlaggetje (x41-46 y25-30)
+# gaat weg; de rug loopt via K (40-42,29) door in een kort wollig plukje dat net onder de rugkromming
+# aanzet (y30) en tegen de kont omlaag hangt, iets naar achteren, punt op (44,35). Bovenrand V (lichtkant),
+# onder/rechts K, aan de kont vast via de omlijning op x43. Na KEURING toepassen (overschrijft (43-45,30)).
+STAART = [
+    (25, 44, '__'),
+    (26, 43, '____'),
+    (27, 42, '_____'),
+    (28, 41, '______'),
+    (29, 41, 'KK____'),
+    (30, 42, 'uVV__'),
+    (31, 43, 'WwV'),
+    (32, 43, 'wwvK'),
+    (33, 43, 'vwvK'),
+    (34, 43, 'vvuK'),
+    (35, 43, 'KuK'),
+    (36, 44, 'K'),
+]
 AGUAYO = [
     (26, 23, 'MYTYTs'),
     (27, 23, 'vMMMs'),
@@ -133,7 +151,7 @@ def bouw(hints, uit):
     return im, a, b
 
 
-im, a, b = bouw(VLECHT + AGUAYO + STREEP + POOT + KEURING, 'ronde15')
+im, a, b = bouw(VLECHT + AGUAYO + STREEP + POOT + KEURING + STAART, 'ronde15')
 im.save(os.path.join(D, 'anim_front.png'), transparency=0)
 with open(os.path.join(D, 'normal.pal'), 'w', newline='\r\n') as fh:
     fh.write('JASC-PAL\n0100\n16\n')

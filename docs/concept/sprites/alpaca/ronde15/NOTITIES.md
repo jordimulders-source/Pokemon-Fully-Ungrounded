@@ -49,3 +49,6 @@ Alleen de twee "nodig"-punten uit `KEURING.md`, beide frames, als overlay `KEURI
 - **Verre achtervoet los:** eigen afgerond hoefje op x38-41 ((38,46) K, (39-40,47) K, (38,47) leeg) en een kolom lucht op x37 vanaf y44. De aanraking bij de hak (y43) blijft.
 - **Randcontrole verscherpt:** v en u gelden nu alleen aan de lichtkant als rand; grenzen ze rechts of onder aan transparant, dan meldt `bouw15.py` een open rand. Op de oude sprite vond hij precies de 7 plekken uit de keuring; nu: geen meldingen.
 - Voor/na: `compare_keuring.png` (1× en 4×, plekken omkaderd).
+
+## Staart lager
+Jordi (23 okt): staartje "lager, zoals bij een echte alpaca". Het vlaggetje (x41-46 y25-30) is weg; de rug loopt via K (40-42,29) door in een kort wollig plukje (W/w/v/u, bovenrand V, onder/rechts K) dat net onder de rugkromming aanzet (y30), tegen de kont omlaag en iets naar achteren hangt, punt op (44,35); vast aan de kont via de omlijning op x43, 12 px vulling (was ±12), beide frames. Overlay `STAART` in `bron/bouw15.py`, rest pixel voor pixel gelijk, geen open randen. Voor/na: `compare_staart.png` (1× en 4× uitsnede x34-49, y22-39).

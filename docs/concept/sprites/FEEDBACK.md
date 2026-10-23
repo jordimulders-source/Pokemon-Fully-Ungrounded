@@ -67,3 +67,5 @@
 - **Olinguito:** van een afstandje prima. Van dichtbij: een voet niet verbonden; rechtsonder is het lijf niet afgemaakt; het lijkt alsof hij maar 1 klauw heeft en de andere arm geamputeerd is; **geen mond**. Ogen wel prima.
 - **Nachtaap:** opeens **geen oren** meer; de staart is lelijk (een overdreven rechte lijn, geen enkele Pokémon heeft dat); rechterbeen en -arm lijken geamputeerd; ogen wel prima, maar **niet genoeg een Psychic-kleur** en ze lijken **opgeplakt**.
 - **Aanvulling:** alpaca's achterpoten zijn iets te recht. Olinguito: de staart begint in de buurt te komen, de kleuren ook.
+- **Nachtaap (Jordi):** tevreden over het **lichaam en het hoofd, op de ogen na**.
+- **Werkwijze (Jordi):** de lessen uit de PDF's beter nalopen en **vergelijken met echte Pokémon**: welke verbanden zitten er in hun sprites en waar wijken de onze nog af.

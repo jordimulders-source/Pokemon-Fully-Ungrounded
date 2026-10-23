@@ -40,3 +40,6 @@ Andere aanpak: geen eigen constructie (boon/ovalen) meer, maar het lijf van een 
 ## Bestanden
 - `anim_front.png`, `normal.pal` (= ronde 14), `skelet.png` (referentie, onderlaag, overtekening + omtrek onderlaag, resultaat; 4× en 1×), `compare.png` (ronde 14 en 15, beide frames, naast Poochyena; 3× en 1×).
 - `bron/delen_abs.txt` is de bron. Bouwen: `sh bron/bouw.sh <ronde15-map> [preview.png]`. `python3 bron/onderlaag.py <repo-root> 0 5` print de onderlaag als rijen; `python3 bron/skelet.py <repo-root> <ronde15-map> <uit.png> 0 5` maakt skelet.png; `python3 bron/vergelijk15.py <repo-root>` maakt compare.png.
+
+## Oordeel Jordi (23 okt)
+"Prima voor nu, denk nog niet perfect, maar ik zou mijn vinger er niet op kunnen leggen wat ik nog beter zou willen." Voorlopig goedgekeurd; later eventueel een onafhankelijke keuring tegen echte sprites.

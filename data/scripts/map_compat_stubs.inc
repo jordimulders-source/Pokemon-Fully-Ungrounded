@@ -1,5 +1,5 @@
 @ Gegenereerd door tools/grounded/maptools/map_compat.py, niet met de hand bewerken.
-@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (595).
+@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (592).
 @ Opruimen per systeem (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen.
 
 BattleFacility_TrainerBattle_PlaceholderText::
@@ -1760,17 +1760,8 @@ BattlePyramid_TrainerBattle::
 BattlePyramid_WarpToNextFloor::
 	end
 
-DewfordTown_Hall_EventScript_Painting::
-	end
-
-DewfordTown_Text_FishJudgeRules::
-	.string "$"
-
 LilycoveCity_ContestLobby_EventScript_ContestReceptionist::
 	end
-
-SootopolisCity_Gym_1F_Text_JuanDefeat::
-	.string "$"
 
 TrainerHill_Entrance_Text_ChallengeTime::
 	.string "$"

@@ -127,7 +127,6 @@ gStdScripts_End::
 	.include "data/scripts/grounded_debug.inc"
 	.include "data/scripts/burglar.inc"
 	.include "data/scripts/grounded_gifts.inc"
-	.include "data/scripts/legends2.inc"
 	.include "data/scripts/forces.inc"
 	.include "data/scripts/enamorus.inc"
 
@@ -207,8 +206,6 @@ Common_EventScript_BufferTrendyPhrase::
 	return
 
 	.include "data/scripts/surf.inc"
-	.include "data/scripts/rival_graphics.inc"
-	.include "data/scripts/set_gym_trainers.inc"
 
 EventScript_CancelMessageBox::
 	special UseBlankMessageToCancelPokemonPic
@@ -263,7 +260,6 @@ EventScript_RegionMap::
 
 	.include "data/scripts/prof_birch.inc"
 
-	.include "data/scripts/cave_of_origin.inc"
 	.include "data/scripts/kecleon.inc"
 
 Common_EventScript_NameReceivedPartyMon::
@@ -281,7 +277,6 @@ Common_EventScript_PlayerHandedOverTheItem::
 	removeitem VAR_0x8004
 	return
 
-	.include "data/scripts/elite_four.inc"
 	.include "data/scripts/movement.inc"
 	.include "data/scripts/check_furniture.inc"
 	.include "data/text/record_mix.inc"
@@ -540,11 +535,6 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/safari_zone.inc"
 	.include "data/scripts/roulette.inc"
 	.include "data/text/pokedex_rating.inc"
-	.include "data/text/lottery_corner.inc"
-	.include "data/text/event_ticket_1.inc"
-	.include "data/text/braille.inc"
-	.include "data/text/berries.inc"
-	.include "data/text/shoal_cave.inc"
 	.include "data/text/check_furniture.inc"
 	.include "data/scripts/cave_hole.inc"
 	.include "data/scripts/lilycove_lady.inc"
@@ -555,7 +545,6 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/battle_pike.inc"
 	.include "data/text/blend_master.inc"
 	.include "data/text/battle_tent.inc"
-	.include "data/text/event_ticket_2.inc"
 	.include "data/text/move_tutors.inc"
 	.include "data/scripts/move_tutors.inc"
 	.include "data/scripts/trainer_hill.inc"
@@ -568,8 +557,6 @@ EventScript_VsSeekerChargingDone::
 	.include "data/scripts/dexnav.inc"
 	.include "data/scripts/battle_frontier.inc"
 	.include "data/scripts/apricorn_tree.inc"
-	.include "data/scripts/giant_wailord.inc"
-	.include "data/scripts/sickblik_dev.inc"
 	.include "data/scripts/map_compat_stubs.inc" @ Fully Ungrounded: stubs voor labels uit verdwenen kaarten (map_compat.py)
 	.include "data/maps/StartTown/scripts.inc"
 	.include "data/maps/StartTown_PokemonCenter_1F/scripts.inc"

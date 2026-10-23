@@ -8,13 +8,13 @@ import numpy as np
 from fu import *
 old,pal=load('nachtaap/ronde12'); a=old.copy()
 OUT={1,2}
-SPIRAAL=['..2222....',
+SPIRAAL=['..22222...',
          '.2555431..',
          '254111431.',
          '251...241.',
          '241.2.241.',
          '241.2.241.',
-         '.14421241.',
+         '.14121241.',
          '..133241..',
          '...1241...']
 X0,Y0,KEEP=43,32,41          # frame 1; frame 2 = staart 1 rij hoger (zoals ronde 10-12)

@@ -5,7 +5,11 @@ Brainstormmateriaal; nog geen concept gekozen (Jordi brainstormt eerst). Geen pi
 ## (a) Foto's van echte Zuid-Amerikaanse kolibries
 **Hoofdreferentie: Jordi's foto's (23 okt; alleen als beschrijving doorgegeven, niet als bestand):**
 1. **Andes-hillstar (*Oreotrochilus estella*)**, de basissoort (ook de soort met de torpor). Zittend op een takje, 3/4 (spiegelen naar links-voor). Grijsbruine kop en rug; korte rechte tot licht gebogen zwarte snavel; **schitterende smaragdgroene keel (gorget) met een donker blauwzwart randje eronder, als een halskraag**; **witte borst/buik met een roestbruine middenstreep**; lange donkere vleugels en staart langs het lijf naar beneden; klein zwart oog met lichte vlek erachter; zwarte pootjes. → **Paletbasis:** grijsbruin + wit + groene keelkraag (+ roest als accent); de geest-versie mag bleker/ijler.
-2. **Zwevende kolibrie** (vermoedelijk een *Coeligena*/starfrontlet-vrouwtje, niet zeker). 3/4 naar rechts (spiegelen); **vleugels hoog opgeheven als een V** (brede bruine slagpennen, waaiervormig); **lange rechte dunne zwarte snavel** schuin omhoog; kop en nek schubbig smaragdgroen; keel en borst kaneel/oker met donkere schubstipjes; **iriserende magenta/paarse flankvlek**; **iriserend blauw-turquoise staartdekveren**, lange donkere staart recht naar beneden; pootjes ingetrokken. → **Gebruik:** de zweefpose met V-vleugels, de lange rechte snavel, en het regenboogpalet (groen → magenta → blauw) als "oplichten" van de geest.
+2. **Zwevende kolibrie** (vermoedelijk een *Coeligena*/starfrontlet-vrouwtje, niet zeker). 3/4 naar rechts (spiegelen); **vleugels hoog opgeheven als een V** (brede bruine slagpennen, waaiervormig); **lange rechte dunne zwarte snavel** schuin omhoog; kop en nek schubbig smaragdgroen; keel en borst kaneel/oker met donkere schubstipjes; **iriserende magenta/paarse flankvlek**; **iriserend blauw-turquoise staartdekveren**, lange donkere staart recht naar beneden; pootjes ingetrokken.
+3. **Langstaartsylfe** (vermoedelijk *Aglaiocercus kingii*, Andes-nevelwoud): `jordi_langstaartsylfe.png` (foto © Anthony Lupas, watermerk; alleen als referentie). Helemaal groen, glinsterende kruin, kort snaveltje, twee extreem lange smalle gevorkte staartveren (±2× het lijf) recht naar beneden. → **Dominant kenmerk** van de lijn.
+4. **Fluweelkolibrie** (vermoedelijk *Boissonneaua jardini*): fluweelzwarte kop en keel, schubbig iriserend violet lijf, paarse kruinglans, blauwgroene schouders, oranje vlekje aan de vleugelrand. → Palet-optie (concept B).
+
+→ **Gebruik foto 2:** de zweefpose met V-vleugels, de lange rechte snavel, en het regenboogpalet (groen → magenta → blauw) als "oplichten" van de geest.
 
 Downloaden van eigen zoekresultaten lukte niet: de proxy van deze sessie blokkeert Wikipedia/Wikimedia, Macaulay Library, iNaturalist en Flickr. Daarom alleen links (open ze in de browser; de foto bovenaan de pagina is de bruikbare). Jordi: zet je foto's gerust als bestand in deze map.
 | Soort | Kenmerk voor het silhouet | Link |
@@ -19,6 +23,7 @@ Downloaden van eigen zoekresultaten lukte niet: de proxy van deze sessie blokkee
 
 ## (b)+(c) Skelet- en kenmerk-sprites
 `contactvel.png` (2×, uit `graphics/pokemon/`, eerste frame):
+- **Pose Jordi (hangend, vleugels wijd naar de kijker):** Butterfree, Zubat, Zapdos, Moltres, plus Flutter Mane, Misdreavus, Mimikyu (zwevende Ghosts).
 - **Skelet staand/zittend (P11):** Taillow, Starly, Fletchling, Pikipek, Rookidee, Murkrow, Natu, Chatot, Spearow.
 - **Skelet zwevend/vliegend klein:** Swablu, Oricorio, Pidgey, Wattrel, Squawkabilly, Combee, Cutiefly, Ribombee, Ninjask, Celebi. (Er bestaat geen officiële kolibrie-Pokémon; Ribombee/Cutiefly en Ninjask zijn de beste "zwever met wazige vleugels".)
 - **Kenmerk snavel:** Spearow, Fearow, Doduo, Farfetch'd, Flamigo, Pikipek, Toucannon, Trumbeak (Fearow/Doduo/Trumbeak: lange dunne snavel als één lijn).

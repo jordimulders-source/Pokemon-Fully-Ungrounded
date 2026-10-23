@@ -1,41 +1,41 @@
 # Kolibrie: ontwerp stap 1 (23 okt)
 
-**Richting (Jordi):** Ghost + Fairy *of* Flying, de **zielenbode**. Basis: Guaraní *mainumby* (voedt Ñamandu, bode van de dag; zou zielen uit bloemen naar Tupã brengen) en de torpor van de Andes-hillstar (lijkt 's nachts dood, herleeft bij zonsopgang). Bronnen en betrouwbaarheid: `referenties/README.md`. Let op: "zielen keren terug *als* kolibrie" is Azteeks/Costa Ricaans, niet Zuid-Amerikaans; in Zuid-Amerika is de kolibrie de **bode** van de zielen (Guaraní, Quechua q'enti).
-**Vel:** `concepten.png` (per concept: eindvorm-schets in een 64-box, daaruit fase 1, en 3 skelet-sprites). Ruwe vlakken, geen pixelsprite.
-**Type in de repo:** Ghost/Fairy hebben alleen Mimikyu en Flutter Mane; Ghost/Flying Drifloon/Drifblim en Oricorio-Sensu. Beide zijn dus zeldzaam.
-**Geen Nazca-dubbeling:** de Xatu-regional form houdt de Nazca-kolibrie; deze lijn gebruikt geen lijnpatronen of zonneschijf.
+**Richting (Jordi):** de **zielenbode**, Ghost + Fairy *of* Flying (nog open). Basis: Guaraní *mainumby* (voedt de schepper Ñamandu, bode van de dag; zou zielen uit bloemen naar Tupã brengen) en de torpor van de Andes-hillstar (lijkt 's nachts dood, herleeft bij zonsopgang). Bronnen en betrouwbaarheid: `referenties/README.md`. Let op: "zielen keren terug *als* kolibrie" is Azteeks/Costa Ricaans; in Zuid-Amerika is de kolibrie de **bode** van de zielen (Guaraní, Quechua q'enti).
 
-## A. Tweezielen (spatuletail + mainumby) — 3 fasen
-- **Idee:** de kolibrie draagt aan zijn twee racketveren twee zielen-lichtjes mee, die hij tussen de wereld van de levenden en die van de doden heen en weer brengt. In de balts van de echte spatuletail draaien de rackets los van elkaar; hier "wiegt" hij de zielen. Fase 1 heeft één lichtje (draagt nog maar één ziel), de eindvorm twee die elkaar kruisen.
-- **Dominant kenmerk:** de twee lange racketveren met ronde zielenschijfjes, als tegenwicht rechtsboven en rechtsonder.
-- **Pose:** zwevend zonder grondlijn (Ghost), lijf 3/4, kop linksboven, snavel in profiel = één oog.
-- **Kleuren:** diep violet lijf, munt-turquoise glanskeel en zielenlicht, bleek lavendelwit voor de schijfjes en het wazige onderlijf.
-- **Ghost in het lijf:** het onderlijf loopt uit in een geestensliert (geen pootjes); de schijfjes zijn zielen, geen voorwerp. **Fairy:** zachte gloed en de balts-"dans" als charme (Fairy-moves als Charm/Draining Kiss = nectar drinken). **Flying-variant:** dezelfde vorm, nadruk op de snelle vleugels; de rackets blijven het kenmerk.
-- **Skelet:** Cutiefly (fase 1: rond lijf, zwevend, kleine vleugels), Ribombee (eindvorm: 3/4-zwever met vleugel achter), Flutter Mane (Ghost/Fairy zonder poten, slierten als staart).
+**Vaste kenmerkencombinatie (Jordi):** "lange dunne snavel, de typische kolibrievleugels en een lange staart met een mystiek kleurpatroon."
+- **Lijf en basispalet: Andes-hillstar** (foto 1): grijsbruin, witte borst met roestbruine middenstreep, smaragdgroene keelkraag met donker randje. Geest-versie mag bleker/ijler.
+- **Snavel + vleugels: foto 2** (zwevend, vleugels opgeheven als V, lange rechte dunne snavel schuin omhoog; regenboog-irisatie groen → magenta → blauw).
+- **Staart: langstaartsylfe** (foto 3, `referenties/jordi_langstaartsylfe.png`): twee extreem lange, smalle, gevorkte staartveren. **Dit is het dominante silhouetkenmerk** (A2): ze breken de omtrek naar rechtsonder en geven tegenwicht aan de snavel linksboven (A3).
+- **Palet-optie: fluweelkolibrie** (foto 4, *Boissonneaua jardini*): fluweelzwarte kop, iriserend violet lijf, blauwgroene schouders, oranje vlekje aan de vleugelrand.
 
-## B. Lijkwade (hillstar-torpor + dageraad) — 2 fasen
-- **Idee:** 's nachts slaat hij zijn vleugels als een lijkwade om zich heen en hangt hij als dood in een grotspleet (echte torpor tot ±7 °C). Bij zonsopgang slaat hij de wade open: aan de binnenkant zitten de kleuren van de dageraad. Fase 1 is helemaal ingepakt (alleen kop en een dichte oogspleet), de eindvorm heeft de wade half open.
-- **Dominant kenmerk:** de druppelvormige wade met gerafelde zoom en, in de eindvorm, één opengeslagen vleugel-cape rechtsboven.
-- **Pose:** zwevend/hangend druppel (zoals P14 "bol met gezicht" maar langgerekt), kop linksboven, één oog (gesloten in fase 1).
-- **Kleuren:** lavendelgrijze wade, dageraadroze binnenkant, goud (keel, rand van de cape).
-- **Ghost in het lijf:** de vleugels zijn zelf de wade, de zoom rafelt uit (geen pootjes), het slapende oog. **Fairy:** de dageraad aan de binnenkant, zacht en hoopvol (herleven). **Flying-variant:** de cape-vleugel die openslaat wordt het vleugelmoment; in de eindvorm een tweede halfopen vleugel.
-- **Skelet:** Mimikyu (lichaam onder een doek, kop eruit), Natu (kleine ronde vogel met korte snavel, fase 1), Fletchling (kop- en snavelplaatsing).
-- **Risico:** dicht bij Mimikyu; houd de kop met snavel duidelijk vogel en de wade gevederd (geen stof).
+**Vel:** `concepten.png` (eindvorm-schets in een 64-box, daaruit fase 1, en 3 skelet-sprites; script `concepten_schets.py`). Ruwe vlakken, geen pixelsprite.
+**Types in de repo:** Ghost/Fairy alleen Mimikyu en Flutter Mane; Ghost/Flying Drifloon/Drifblim en Oricorio-Sensu. Beide zeldzaam.
+**Geen dubbeling:** geen Nazca-lijnen of zonneschijf (Xatu-regional form); geen sterrenbeelden (nachtaap).
+**Pose (alle drie, Jordi):** hangend/zwevend met de **vleugels wijd naar de kijker**, zoals Butterfree, Zubat, Zapdos en Moltres (bovenste rij van `referenties/contactvel.png`). Lijf licht 3/4, kop iets links van het midden, lange snavel schuin naar links-voor (één oog, B2), nabije vleugel groter en lager dan de verre (A5, C6), de lange staart hangt eronder en maakt de box hoog. Geen grondlijn (Ghost).
 
-## C. Ajayu-schim (zwaardsnavel + ajayu) — 2 fasen, **expliciet Ghost/Flying**
-- **Idee:** volgens het Aymara-geloof kan je *ajayu* (ziel) bij schrik uit je lijf vallen; een yatiri roept hem terug. Deze kolibrie flappert zo snel dat zijn ajayu een tel achter zijn lijf aan blijft hangen: een bleke dubbelganger en vleugels die als geestenvegen achterblijven. Hij brengt verloren ajayu's terug naar hun eigenaar. Eindvorm met lange, schuin opgeheven zwaardsnavel (*Ensifera*).
-- **Dominant kenmerk:** de waaier van nabeeld-vleugels (3 doorschijnende vegen) boven het lijf; de lange snavel als tweede lijn linksboven.
-- **Pose:** zwevend, schuin vooroverhellend, staartvork naar rechtsonder; in de animatie (frame 2) verschuift de dubbelganger.
-- **Kleuren:** donker teal-groen lijf, koperen keel, bleek cyaanwit voor de dubbelganger en de vegen.
-- **Ghost in het lijf:** de dubbelganger is zijn eigen ziel, de vegen zijn nabeelden. **Flying:** het snelle flapperen is het hele ontwerp. **Fairy-variant:** zou weinig toevoegen; dit concept is het Flying-concept.
-- **Skelet:** Ninjask (vegen-vleugels, zweefhouding), Taillow (vogelkop en gevorkte staart, eindvorm), Fletchling (fase 1: kleine ronde vogel).
-- **Risico:** doorschijnendheid kost op Gen 3 kleuren (1 palet van 16); de vegen dus als 1–2 bleke tinten met omlijning, zoals Ninjask- en Yanma-vleugels.
+## De drie variaties (verschil: staartpatroon, palet, hoe Ghost erin zit)
 
-## Lijnlengte
-- A: 3 fasen (één, dan twee zielen; middenfase met één lange racketveer).
-- B en C: 2 fasen (kolibries zijn klein; een korte lijn houdt de eindvorm bij een tweede fase rond 1100–1550 px, checklist D1).
+### A. Regenboogrook — 3 fasen
+- **Idee:** de staartveren beginnen iriserend (groen → blauw → magenta) en vervagen naar de punten tot bleke rook: de zielen die hij meedraagt lossen op in de wind. Overdag de kleuren, 's nachts (torpor) alleen nog rook.
+- **Ghost in het lijf:** de staart en het onderlijf lopen uit in rook (geen pootjes). **Fairy:** de regenboogglans als charme; nectar drinken = Draining Kiss. **Flying:** zelfde vorm, nadruk op de V-vleugels.
+- **Kleuren:** hillstar-grijsbruin + wit + smaragd; staart groen → blauw → magenta → bleek.
+- **Fasen:** 1 = rond kuiken met één korte staartsliert; 2 = één lange sliert; 3 = twee gekruiste slierten.
+- **Skelet:** Butterfree (gespreide vleugels, hangend lijf), Moltres (vogelkop met snavel schuin links-voor, gespreide vleugels), Flutter Mane (Ghost/Fairy zonder poten, slierten).
+
+### B. Zielenringen (fluweelpalet) — 2 fasen
+- **Idee:** een nachtvogel in fluweelzwart en violet; op de staartveren zitten witte ringen, één per ziel die hij naar de andere wereld brengt (meer ringen = ouder). De blauwgroene glans aan de punten is de dageraad waarin hij uit zijn torpor ontwaakt.
+- **Ghost in het lijf:** de fluweelzwarte kop met bleek oog en de zielenringen. **Fairy:** de violette glans en de dageraadpunten. **Flying:** idem met nadruk op de vleugels; het oranje vlekje (foto 4) blijft het warme accent.
+- **Kleuren:** fluweelzwart, violet, blauwgroen (+ oranje vlekje).
+- **Skelet:** Zubat (lijf + gespreide vleugels, slank), Zapdos (frontale vleugels, snavel links), Misdreavus (zwevende Ghost met slierten).
+
+### C. Nabeeld (ajayu) — 2 fasen, **expliciet Ghost/Flying**
+- **Idee:** volgens het Aymara-geloof kan je *ajayu* (ziel) bij schrik uit je lijf vallen; een yatiri roept hem terug. Deze kolibrie flappert zo snel dat zijn ajayu achter hem aan blijft hangen: vleugels en staart laten bleke, iriserende kopieën achter. Hij brengt verloren ajayu's terug.
+- **Ghost in het lijf:** de nabeelden zijn zijn eigen ziel. **Flying:** het flapperen is het hele ontwerp; in de animatie verschuift het nabeeld (frame 2).
+- **Kleuren:** hillstar-palet; nabeelden bleek magenta/blauw.
+- **Skelet:** Ninjask (vegen-vleugels), Zapdos (gespreide vleugels), Cutiefly (fase 1: ronde zwever).
+- **Risico:** doorschijnendheid kost kleuren (één palet van 16); nabeelden als 1–2 bleke tinten met omlijning, zoals de Ninjask/Yanma-vleugels. Met de lange staart erbij wordt het druk: misschien alleen de vleugels als nabeeld.
 
 ## Open voor Jordi
-1. Welk concept (of welke mix: bijv. C's nabeeld-vleugels met A's zielenrackets)?
-2. Ghost/Fairy of Ghost/Flying (A en B werken met allebei; C is Flying).
-3. Lijnlengte.
+1. Welke variatie (mix mag: bijv. A's regenboogstaart op B's fluweellijf)?
+2. Palet: hillstar-grijsbruin, regenboog, of fluweel?
+3. Ghost/Fairy of Ghost/Flying; lijnlengte 2 of 3 fasen.

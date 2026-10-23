@@ -125,7 +125,9 @@ gCryTable::
 .endif @ P_FAMILY_DIGLETT
 .if P_FAMILY_MEOWTH == TRUE
 	cry Cry_Meowth
+.if FU_MEOWTH_KANTO == TRUE
 	cry Cry_Persian
+.endif @ FU_MEOWTH_KANTO
 .if P_GALARIAN_FORMS == TRUE
 	cry Cry_Perrserker
 .endif @ P_GALARIAN_FORMS
@@ -265,10 +267,16 @@ gCryTable::
 .endif @ P_FAMILY_CUBONE
 .if P_FAMILY_HITMONS == TRUE
 .if P_GEN_2_CROSS_EVOS == TRUE
+.if FU_TYROGUE_HITMONLEE_HITMONCHAN == TRUE
 	cry Cry_Tyrogue
+.endif @ FU_TYROGUE_HITMONLEE_HITMONCHAN
 .endif @ P_GEN_2_CROSS_EVOS
+.if FU_TYROGUE_HITMONLEE_HITMONCHAN == TRUE
 	cry Cry_Hitmonlee
+.endif @ FU_TYROGUE_HITMONLEE_HITMONCHAN
+.if FU_TYROGUE_HITMONLEE_HITMONCHAN == TRUE
 	cry Cry_Hitmonchan
+.endif @ FU_TYROGUE_HITMONLEE_HITMONCHAN
 .if P_GEN_2_CROSS_EVOS == TRUE
 	cry Cry_Hitmontop
 .endif @ P_GEN_2_CROSS_EVOS
@@ -551,7 +559,9 @@ gCryTable::
 	cry Cry_Wooper
 	cry Cry_Quagsire
 .if P_PALDEAN_FORMS == TRUE
+.if FU_WOOPER_PALDEA == TRUE
 	cry Cry_Clodsire
+.endif @ FU_WOOPER_PALDEA
 .endif @ P_PALDEAN_FORMS
 .endif @ P_FAMILY_WOOPER
 .if P_FAMILY_MURKROW == TRUE
@@ -600,7 +610,9 @@ gCryTable::
 .if P_FAMILY_QWILFISH == TRUE
 	cry Cry_Qwilfish
 .if P_HISUIAN_FORMS == TRUE
+.if FU_QWILFISH_HISUI == TRUE
 	cry Cry_Overqwil
+.endif @ FU_QWILFISH_HISUI
 .endif @ P_HISUIAN_FORMS
 .endif @ P_FAMILY_QWILFISH
 .if P_FAMILY_SHUCKLE == TRUE
@@ -618,7 +630,9 @@ gCryTable::
 	cry Cry_Weavile
 .endif @ P_GEN_4_CROSS_EVOS
 .if P_HISUIAN_FORMS == TRUE
+.if FU_SNEASEL_HISUI == TRUE
 	cry Cry_Sneasler
+.endif @ FU_SNEASEL_HISUI
 .endif @ P_HISUIAN_FORMS
 .endif @ P_FAMILY_SNEASEL
 .if P_FAMILY_TEDDIURSA == TRUE
@@ -1401,7 +1415,9 @@ gCryTable::
 	cry Cry_Yamask
 	cry Cry_Cofagrigus
 .if P_GALARIAN_FORMS == TRUE
+.if FU_YAMASK_GALAR == TRUE
 	cry Cry_Runerigus
+.endif @ FU_YAMASK_GALAR
 .endif @ P_GALARIAN_FORMS
 .endif @ P_FAMILY_YAMASK
 .if P_FAMILY_TIRTOUGA == TRUE
@@ -1634,7 +1650,9 @@ gCryTable::
 .if P_FAMILY_FLABEBE == TRUE
 	cry Cry_Flabebe
 	cry Cry_Floette
+.if FU_FLOETTE_ETERNAL == TRUE
 	cry Cry_FloetteEternal
+.endif @ FU_FLOETTE_ETERNAL
 	cry Cry_Florges
 .endif @ P_FAMILY_FLABEBE
 .if P_FAMILY_SKIDDO == TRUE
@@ -2553,7 +2571,9 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_DIGLETT
 .if P_FAMILY_MEOWTH == TRUE
 	cry_reverse Cry_Meowth
+.if FU_MEOWTH_KANTO == TRUE
 	cry_reverse Cry_Persian
+.endif @ FU_MEOWTH_KANTO
 .if P_GALARIAN_FORMS == TRUE
 	cry_reverse Cry_Perrserker
 .endif @ P_GALARIAN_FORMS
@@ -2693,10 +2713,16 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_CUBONE
 .if P_FAMILY_HITMONS == TRUE
 .if P_GEN_2_CROSS_EVOS == TRUE
+.if FU_TYROGUE_HITMONLEE_HITMONCHAN == TRUE
 	cry_reverse Cry_Tyrogue
+.endif @ FU_TYROGUE_HITMONLEE_HITMONCHAN
 .endif @ P_GEN_2_CROSS_EVOS
+.if FU_TYROGUE_HITMONLEE_HITMONCHAN == TRUE
 	cry_reverse Cry_Hitmonlee
+.endif @ FU_TYROGUE_HITMONLEE_HITMONCHAN
+.if FU_TYROGUE_HITMONLEE_HITMONCHAN == TRUE
 	cry_reverse Cry_Hitmonchan
+.endif @ FU_TYROGUE_HITMONLEE_HITMONCHAN
 .if P_GEN_2_CROSS_EVOS == TRUE
 	cry_reverse Cry_Hitmontop
 .endif @ P_GEN_2_CROSS_EVOS
@@ -2979,7 +3005,9 @@ gCryTable_Reverse::
 	cry_reverse Cry_Wooper
 	cry_reverse Cry_Quagsire
 .if P_PALDEAN_FORMS == TRUE
+.if FU_WOOPER_PALDEA == TRUE
 	cry_reverse Cry_Clodsire
+.endif @ FU_WOOPER_PALDEA
 .endif @ P_PALDEAN_FORMS
 .endif @ P_FAMILY_WOOPER
 .if P_FAMILY_MURKROW == TRUE
@@ -3028,7 +3056,9 @@ gCryTable_Reverse::
 .if P_FAMILY_QWILFISH == TRUE
 	cry_reverse Cry_Qwilfish
 .if P_HISUIAN_FORMS == TRUE
+.if FU_QWILFISH_HISUI == TRUE
 	cry_reverse Cry_Overqwil
+.endif @ FU_QWILFISH_HISUI
 .endif @ P_HISUIAN_FORMS
 .endif @ P_FAMILY_QWILFISH
 .if P_FAMILY_SHUCKLE == TRUE
@@ -3046,7 +3076,9 @@ gCryTable_Reverse::
 	cry_reverse Cry_Weavile
 .endif @ P_GEN_4_CROSS_EVOS
 .if P_HISUIAN_FORMS == TRUE
+.if FU_SNEASEL_HISUI == TRUE
 	cry_reverse Cry_Sneasler
+.endif @ FU_SNEASEL_HISUI
 .endif @ P_HISUIAN_FORMS
 .endif @ P_FAMILY_SNEASEL
 .if P_FAMILY_TEDDIURSA == TRUE
@@ -3829,7 +3861,9 @@ gCryTable_Reverse::
 	cry_reverse Cry_Yamask
 	cry_reverse Cry_Cofagrigus
 .if P_GALARIAN_FORMS == TRUE
+.if FU_YAMASK_GALAR == TRUE
 	cry_reverse Cry_Runerigus
+.endif @ FU_YAMASK_GALAR
 .endif @ P_GALARIAN_FORMS
 .endif @ P_FAMILY_YAMASK
 .if P_FAMILY_TIRTOUGA == TRUE
@@ -4062,7 +4096,9 @@ gCryTable_Reverse::
 .if P_FAMILY_FLABEBE == TRUE
 	cry_reverse Cry_Flabebe
 	cry_reverse Cry_Floette
+.if FU_FLOETTE_ETERNAL == TRUE
 	cry_reverse Cry_FloetteEternal
+.endif @ FU_FLOETTE_ETERNAL
 	cry_reverse Cry_Florges
 .endif @ P_FAMILY_FLABEBE
 .if P_FAMILY_SKIDDO == TRUE

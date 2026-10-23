@@ -55,5 +55,16 @@ Stap 3, deel 1: Spacetime, Yoshi's Island en Ultra Space zijn eruit. Het bouwt (
   - ROM-ruimte: vóór 9,36 MB vrij (`__rom_end` 0x096A41C8), na 11,47 MB vrij (0x09488034), dus 2,11 MB erbij.
   - Oude saves/savestates zijn ongeldig: nieuw spel.
 
+- **Pokémon buiten de dex eruit: afgerond (dex-agent, 23 okt).** Lijst, schakelaars en twijfelgevallen: `docs/concept/DEX_IN_ROM.md`.
+  - In de ROM: de 213 lijnen van categorie A/B + Hitmontop, Mew, Mewtwo, Zarude (440 dexnummers, 582 soortconstanten
+    incl. vormen). Eruit: 326 families (212 uit categorie C, 114 legendary/mythical/UB/paradox), Mega/Gmax/Ultra/Tera/Primal,
+    en 51 losse vormen binnen behouden families (regionaal, totem, partner, Tyrogue/Hitmonlee/Hitmonchan, gewone Meowth/Grimer).
+  - Schakelaars in `include/config/species_enabled.h`: families op `FALSE`, legendaries in één blok onderaan, `FU_*` voor
+    losse vormen. `pokemon.o` wordt met `-fdata-sections` gebouwd, zodat ongebruikte sprites wegvallen.
+  - Starters (`starter_choose.c`), Keccles/trainers en het TestMap-wild gebruiken nu alleen behouden soorten.
+    Debugtests: Mewtwo lv 100 i.p.v. Arceus.
+  - ROM-ruimte: vóór 11,47 MB vrij (`__rom_end` 0x09488034), na 18,55 MB vrij (0x08D71FE4), dus 7,09 MB erbij
+    (kreten −4,68 MB, `pokemon.o` −2,41 MB).
+
 ## Stap 4 (expansion 1.14.4 → 1.17.1)
 Niet begonnen. Remote `upstream` bestaat al in de repo.

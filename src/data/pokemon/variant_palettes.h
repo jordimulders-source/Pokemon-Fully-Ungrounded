@@ -4230,7 +4230,9 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Raichu, sVariants_Raichu, sVariantNames_pichu},
 #endif
 #if (P_FAMILY_PIKACHU) && (P_ALOLAN_FORMS)
+#if FU_RAICHU_ALOLA
     {gMonPalette_RaichuAlola, sVariants_RaichuAlola, sVariantNames_pichu},
+#endif //FU_RAICHU_ALOLA
 #endif
 #if (P_FAMILY_SANDSHREW)
     {gMonPalette_Sandshrew, sVariants_Sandshrew, sVariantNames_sandshrew},
@@ -4338,16 +4340,24 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_DugtrioAlola, sVariants_DugtrioAlola, sVariantNames_diglett},
 #endif
 #if (P_FAMILY_MEOWTH)
+#if FU_MEOWTH_KANTO
     {gMonPalette_Meowth, sVariants_Meowth, sVariantNames_meowth},
+#endif //FU_MEOWTH_KANTO
 #endif
 #if (P_FAMILY_MEOWTH)
+#if FU_MEOWTH_KANTO
     {gMonPalette_Persian, sVariants_Persian, sVariantNames_meowth},
+#endif //FU_MEOWTH_KANTO
 #endif
 #if (P_FAMILY_MEOWTH) && (P_ALOLAN_FORMS)
+#if FU_MEOWTH_ALOLA
     {gMonPalette_MeowthAlola, sVariants_MeowthAlola, sVariantNames_meowth_alola},
+#endif //FU_MEOWTH_ALOLA
 #endif
 #if (P_FAMILY_MEOWTH) && (P_ALOLAN_FORMS)
+#if FU_MEOWTH_ALOLA
     {gMonPalette_PersianAlola, sVariants_PersianAlola, sVariantNames_meowth_alola},
+#endif //FU_MEOWTH_ALOLA
 #endif
 #if (P_FAMILY_MEOWTH) && (P_GALARIAN_FORMS)
     {gMonPalette_MeowthGalar, sVariants_MeowthGalar, sVariantNames_meowth_galar},
@@ -4377,10 +4387,14 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Arcanine, sVariants_Arcanine, sVariantNames_growlithe},
 #endif
 #if (P_FAMILY_GROWLITHE) && (P_HISUIAN_FORMS)
+#if FU_GROWLITHE_HISUI
     {gMonPalette_GrowlitheHisui, sVariants_GrowlitheHisui, sVariantNames_growlithe_hisui},
+#endif //FU_GROWLITHE_HISUI
 #endif
 #if (P_FAMILY_GROWLITHE) && (P_HISUIAN_FORMS)
+#if FU_GROWLITHE_HISUI
     {gMonPalette_ArcanineHisui, sVariants_ArcanineHisui, sVariantNames_growlithe_hisui},
+#endif //FU_GROWLITHE_HISUI
 #endif
 #if (P_FAMILY_POLIWAG)
     {gMonPalette_Poliwag, sVariants_Poliwag, sVariantNames_poliwag},
@@ -4437,13 +4451,19 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Golem, sVariants_Golem, sVariantNames_geodude},
 #endif
 #if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
+#if FU_GEODUDE_ALOLA
     {gMonPalette_GeodudeAlola, sVariants_GeodudeAlola, sVariantNames_geodude_alola},
+#endif //FU_GEODUDE_ALOLA
 #endif
 #if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
+#if FU_GEODUDE_ALOLA
     {gMonPalette_GravelerAlola, sVariants_GravelerAlola, sVariantNames_geodude_alola},
+#endif //FU_GEODUDE_ALOLA
 #endif
 #if (P_FAMILY_GEODUDE) && (P_ALOLAN_FORMS)
+#if FU_GEODUDE_ALOLA
     {gMonPalette_GolemAlola, sVariants_GolemAlola, sVariantNames_geodude_alola},
+#endif //FU_GEODUDE_ALOLA
 #endif
 #if (P_FAMILY_PONYTA)
     {gMonPalette_Ponyta, sVariants_Ponyta, sVariantNames_ponyta},
@@ -4452,10 +4472,14 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Rapidash, sVariants_Rapidash, sVariantNames_ponyta},
 #endif
 #if (P_FAMILY_PONYTA) && (P_GALARIAN_FORMS)
+#if FU_PONYTA_GALAR
     {gMonPalette_PonytaGalar, sVariants_PonytaGalar, sVariantNames_ponyta_galar},
+#endif //FU_PONYTA_GALAR
 #endif
 #if (P_FAMILY_PONYTA) && (P_GALARIAN_FORMS)
+#if FU_PONYTA_GALAR
     {gMonPalette_RapidashGalar, sVariants_RapidashGalar, sVariantNames_ponyta_galar},
+#endif //FU_PONYTA_GALAR
 #endif
 #if (P_FAMILY_SLOWPOKE)
     {gMonPalette_Slowpoke, sVariants_Slowpoke, sVariantNames_slowpoke},
@@ -4506,16 +4530,24 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Dewgong, sVariants_Dewgong, sVariantNames_seel},
 #endif
 #if (P_FAMILY_GRIMER)
+#if FU_GRIMER_KANTO
     {gMonPalette_Grimer, sVariants_Grimer, sVariantNames_grimer},
+#endif //FU_GRIMER_KANTO
 #endif
 #if (P_FAMILY_GRIMER)
+#if FU_GRIMER_KANTO
     {gMonPalette_Muk, sVariants_Muk, sVariantNames_grimer},
+#endif //FU_GRIMER_KANTO
 #endif
 #if (P_FAMILY_GRIMER) && (P_ALOLAN_FORMS)
+#if FU_GRIMER_ALOLA
     {gMonPalette_GrimerAlola, sVariants_GrimerAlola, sVariantNames_grimer_alola},
+#endif //FU_GRIMER_ALOLA
 #endif
 #if (P_FAMILY_GRIMER) && (P_ALOLAN_FORMS)
+#if FU_GRIMER_ALOLA
     {gMonPalette_MukAlola, sVariants_MukAlola, sVariantNames_grimer_alola},
+#endif //FU_GRIMER_ALOLA
 #endif
 #if (P_FAMILY_GRIMER)
     {gMonPalette_GrimerHoenn, sVariants_GrimerHoenn, sVariantNames_grimer},
@@ -4563,10 +4595,14 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Electrode, sVariants_Electrode, sVariantNames_voltorb},
 #endif
 #if (P_FAMILY_VOLTORB) && (P_HISUIAN_FORMS)
+#if FU_VOLTORB_HISUI
     {gMonPalette_VoltorbHisui, sVariants_VoltorbHisui, sVariantNames_voltorb},
+#endif //FU_VOLTORB_HISUI
 #endif
 #if (P_FAMILY_VOLTORB) && (P_HISUIAN_FORMS)
+#if FU_VOLTORB_HISUI
     {gMonPalette_ElectrodeHisui, sVariants_ElectrodeHisui, sVariantNames_voltorb},
+#endif //FU_VOLTORB_HISUI
 #endif
 #if (P_FAMILY_EXEGGCUTE)
     {gMonPalette_Exeggcute, sVariants_Exeggcute, sVariantNames_exeggcute},
@@ -4584,16 +4620,24 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Marowak, sVariants_Marowak, sVariantNames_cubone},
 #endif
 #if (P_FAMILY_CUBONE) && (P_ALOLAN_FORMS)
+#if FU_TOTEM_FORMS
     {gMonPalette_MarowakAlola, sVariants_MarowakAlola, sVariantNames_marowak_alola},
+#endif //FU_TOTEM_FORMS
 #endif
 #if (P_FAMILY_HITMONS) && (P_GEN_2_CROSS_EVOS)
+#if FU_TYROGUE_HITMONLEE_HITMONCHAN
     {gMonPalette_Tyrogue, sVariants_Tyrogue, sVariantNames_tyrogue},
+#endif //FU_TYROGUE_HITMONLEE_HITMONCHAN
 #endif
 #if (P_FAMILY_HITMONS)
+#if FU_TYROGUE_HITMONLEE_HITMONCHAN
     {gMonPalette_Hitmonlee, sVariants_Hitmonlee, sVariantNames_tyrogue},
+#endif //FU_TYROGUE_HITMONLEE_HITMONCHAN
 #endif
 #if (P_FAMILY_HITMONS)
+#if FU_TYROGUE_HITMONLEE_HITMONCHAN
     {gMonPalette_Hitmonchan, sVariants_Hitmonchan, sVariantNames_tyrogue},
+#endif //FU_TYROGUE_HITMONLEE_HITMONCHAN
 #endif
 #if (P_FAMILY_HITMONS) && (P_GEN_2_CROSS_EVOS)
     {gMonPalette_Hitmontop, sVariants_Hitmontop, sVariantNames_tyrogue},
@@ -4611,7 +4655,9 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Weezing, sVariants_Weezing, sVariantNames_koffing},
 #endif
 #if (P_FAMILY_KOFFING) && (P_GALARIAN_FORMS)
+#if FU_WEEZING_GALAR
     {gMonPalette_WeezingGalar, sVariants_WeezingGalar, sVariantNames_weezing_galar},
+#endif //FU_WEEZING_GALAR
 #endif
 #if (P_FAMILY_RHYHORN)
     {gMonPalette_Rhyhorn, sVariants_Rhyhorn, sVariantNames_rhyhorn},
@@ -4713,13 +4759,19 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Tauros, sVariants_Tauros, sVariantNames_tauros},
 #endif
 #if (P_FAMILY_TAUROS) && (P_PALDEAN_FORMS)
+#if FU_TAUROS_PALDEA
     {gMonPalette_TaurosPaldeaCombat, sVariants_TaurosPaldeaCombat, sVariantNames_tauros_paldea},
+#endif //FU_TAUROS_PALDEA
 #endif
 #if (P_FAMILY_TAUROS) && (P_PALDEAN_FORMS)
+#if FU_TAUROS_PALDEA
     {gMonPalette_TaurosPaldeaBlaze, sVariants_TaurosPaldeaBlaze, sVariantNames_tauros_paldea},
+#endif //FU_TAUROS_PALDEA
 #endif
 #if (P_FAMILY_TAUROS) && (P_PALDEAN_FORMS)
+#if FU_TAUROS_PALDEA
     {gMonPalette_TaurosPaldeaAqua, sVariants_TaurosPaldeaAqua, sVariantNames_tauros_paldea},
+#endif //FU_TAUROS_PALDEA
 #endif
 #if (P_FAMILY_MAGIKARP)
     {gMonPalette_Magikarp, sVariants_Magikarp, sVariantNames_magikarp},
@@ -4956,10 +5008,14 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Quagsire, sVariants_Quagsire, sVariantNames_wooper},
 #endif
 #if (P_FAMILY_WOOPER) && (P_PALDEAN_FORMS)
+#if FU_WOOPER_PALDEA
     {gMonPalette_WooperPaldea, sVariants_WooperPaldea, sVariantNames_wooper_paldea},
+#endif //FU_WOOPER_PALDEA
 #endif
 #if (P_FAMILY_WOOPER) && (P_PALDEAN_FORMS)
+#if FU_WOOPER_PALDEA
     {gMonPalette_Clodsire, sVariants_Clodsire, sVariantNames_wooper_paldea},
+#endif //FU_WOOPER_PALDEA
 #endif
 #if (P_FAMILY_MURKROW)
     {gMonPalette_Murkrow, sVariants_Murkrow, sVariantNames_murkrow},
@@ -5016,10 +5072,14 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Qwilfish, sVariants_Qwilfish, sVariantNames_qwilfish},
 #endif
 #if (P_FAMILY_QWILFISH) && (P_HISUIAN_FORMS)
+#if FU_QWILFISH_HISUI
     {gMonPalette_QwilfishHisui, sVariants_QwilfishHisui, sVariantNames_qwilfish_hisui},
+#endif //FU_QWILFISH_HISUI
 #endif
 #if (P_FAMILY_QWILFISH) && (P_HISUIAN_FORMS)
+#if FU_QWILFISH_HISUI
     {gMonPalette_Overqwil, sVariants_Overqwil, sVariantNames_qwilfish_hisui},
+#endif //FU_QWILFISH_HISUI
 #endif
 #if (P_FAMILY_SHUCKLE)
     {gMonPalette_Shuckle, sVariants_Shuckle, sVariantNames_shuckle},
@@ -5034,10 +5094,14 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Weavile, sVariants_Weavile, sVariantNames_sneasel},
 #endif
 #if (P_FAMILY_SNEASEL) && (P_HISUIAN_FORMS)
+#if FU_SNEASEL_HISUI
     {gMonPalette_SneaselHisui, sVariants_SneaselHisui, sVariantNames_sneasel_hisui},
+#endif //FU_SNEASEL_HISUI
 #endif
 #if (P_FAMILY_SNEASEL) && (P_HISUIAN_FORMS)
+#if FU_SNEASEL_HISUI
     {gMonPalette_Sneasler, sVariants_Sneasler, sVariantNames_sneasel_hisui},
+#endif //FU_SNEASEL_HISUI
 #endif
 #if (P_FAMILY_TEDDIURSA)
     {gMonPalette_Teddiursa, sVariants_Teddiursa, sVariantNames_teddiursa},
@@ -6159,10 +6223,14 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Cofagrigus, sVariants_Cofagrigus, sVariantNames_yamask},
 #endif
 #if (P_FAMILY_YAMASK) && (P_GALARIAN_FORMS)
+#if FU_YAMASK_GALAR
     {gMonPalette_YamaskGalar, sVariants_YamaskGalar, sVariantNames_yamask_galar},
+#endif //FU_YAMASK_GALAR
 #endif
 #if (P_FAMILY_YAMASK) && (P_GALARIAN_FORMS)
+#if FU_YAMASK_GALAR
     {gMonPalette_Runerigus, sVariants_Runerigus, sVariantNames_yamask_galar},
+#endif //FU_YAMASK_GALAR
 #endif
 #if (P_FAMILY_TIRTOUGA)
     {gMonPalette_Tirtouga, sVariants_Tirtouga, sVariantNames_tirtouga},
@@ -6189,10 +6257,14 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Zoroark, sVariants_Zoroark, sVariantNames_zorua},
 #endif
 #if (P_FAMILY_ZORUA) && (P_HISUIAN_FORMS)
+#if FU_ZORUA_HISUI
     {gMonPalette_ZoruaHisui, sVariants_ZoruaHisui, sVariantNames_zorua_hisui},
+#endif //FU_ZORUA_HISUI
 #endif
 #if (P_FAMILY_ZORUA) && (P_HISUIAN_FORMS)
+#if FU_ZORUA_HISUI
     {gMonPalette_ZoroarkHisui, sVariants_ZoroarkHisui, sVariantNames_zorua_hisui},
+#endif //FU_ZORUA_HISUI
 #endif
 #if (P_FAMILY_MINCCINO)
     {gMonPalette_Minccino, sVariants_Minccino, sVariantNames_minccino},
@@ -6342,7 +6414,9 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Stunfisk, sVariants_Stunfisk, sVariantNames_stunfisk},
 #endif
 #if (P_FAMILY_STUNFISK) && (P_GALARIAN_FORMS)
+#if FU_STUNFISK_GALAR
     {gMonPalette_StunfiskGalar, sVariants_StunfiskGalar, sVariantNames_stunfisk_galar},
+#endif //FU_STUNFISK_GALAR
 #endif
 #if (P_FAMILY_MIENFOO)
     {gMonPalette_Mienfoo, sVariants_Mienfoo, sVariantNames_mienfoo},
@@ -6378,7 +6452,9 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Braviary, sVariants_Braviary, sVariantNames_rufflet},
 #endif
 #if (P_FAMILY_RUFFLET) && (P_HISUIAN_FORMS)
+#if FU_BRAVIARY_HISUI
     {gMonPalette_BraviaryHisui, sVariants_BraviaryHisui, sVariantNames_braviary_hisui},
+#endif //FU_BRAVIARY_HISUI
 #endif
 #if (P_FAMILY_VULLABY)
     {gMonPalette_Vullaby, sVariants_Vullaby, sVariantNames_vullaby},
@@ -6642,13 +6718,17 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Sliggoo, sVariants_Sliggoo, sVariantNames_goomy},
 #endif
 #if (P_FAMILY_GOOMY) && (P_HISUIAN_FORMS)
+#if FU_GOOMY_HISUI
     {gMonPalette_SliggooHisui, sVariants_SliggooHisui, sVariantNames_goomy},
+#endif //FU_GOOMY_HISUI
 #endif
 #if (P_FAMILY_GOOMY)
     {gMonPalette_Goodra, sVariants_Goodra, sVariantNames_goomy},
 #endif
 #if (P_FAMILY_GOOMY) && (P_HISUIAN_FORMS)
+#if FU_GOOMY_HISUI
     {gMonPalette_GoodraHisui, sVariants_GoodraHisui, sVariantNames_goomy},
+#endif //FU_GOOMY_HISUI
 #endif
 #if (P_FAMILY_KLEFKI)
     {gMonPalette_Klefki, sVariants_Klefki, sVariantNames_klefki},
@@ -6672,7 +6752,9 @@ const struct VariantPalettes gVariantPalettes[] =
     {gMonPalette_Avalugg, sVariants_Avalugg, sVariantNames_bergmite},
 #endif
 #if (P_FAMILY_BERGMITE) && (P_HISUIAN_FORMS)
+#if FU_AVALUGG_HISUI
     {gMonPalette_AvaluggHisui, sVariants_AvaluggHisui, sVariantNames_bergmite},
+#endif //FU_AVALUGG_HISUI
 #endif
 #if (P_FAMILY_NOIBAT)
     {gMonPalette_Noibat, sVariants_Noibat, sVariantNames_noibat},

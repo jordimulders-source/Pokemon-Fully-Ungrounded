@@ -2144,6 +2144,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
             "particularly good care of white flowers."),
     },
 
+#if FU_FLOETTE_ETERNAL
     [SPECIES_FLOETTE_ETERNAL] =
     {
         FLOETTE_MISC_INFO(Eternal, ETERNAL, 0),
@@ -2172,6 +2173,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sFloetteEternalTeachableLearnset,
         .formChangeTable = sFloetteEternalFormChangeTable,
     },
+#endif //FU_FLOETTE_ETERNAL
 
 #define FLORGES_MISC_INFO(Form, iconPal)                                        \
         .baseHP        = 78,                                                    \
@@ -5130,6 +5132,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
 
 #if P_HISUIAN_FORMS
+#if FU_GOOMY_HISUI
     [SPECIES_SLIGGOO_HISUI] =
     {
         .baseHP        = 58,
@@ -5199,7 +5202,9 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
                                 {EVO_LEVEL, 50, SPECIES_GOODRA_HISUI, CONDITIONS({IF_WEATHER, WEATHER_FOG})}),
 
     },
+#endif //FU_GOOMY_HISUI
 
+#if FU_GOOMY_HISUI
     [SPECIES_GOODRA_HISUI] =
     {
         .baseHP        = 80,
@@ -5264,6 +5269,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sGoodraHisuiTeachableLearnset,
         .formSpeciesIdTable = sGoodraFormSpeciesIdTable,
     },
+#endif //FU_GOOMY_HISUI
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_GOOMY
 
@@ -6159,6 +6165,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
     },
 
 #if P_HISUIAN_FORMS
+#if FU_AVALUGG_HISUI
     [SPECIES_AVALUGG_HISUI] =
     {
         .baseHP        = 95,
@@ -6222,6 +6229,7 @@ const struct SpeciesInfo gSpeciesInfoGen6[] =
         .teachableLearnset = sAvaluggHisuiTeachableLearnset,
         .formSpeciesIdTable = sAvaluggFormSpeciesIdTable,
     },
+#endif //FU_AVALUGG_HISUI
 #endif //P_HISUIAN_FORMS
 #endif //P_FAMILY_BERGMITE
 

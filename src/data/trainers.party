@@ -27,7 +27,7 @@ Chatot
 Level: 37
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
-Ampharos
+Eelektross
 Level: 37
 IVs: 16 HP / 16 Atk / 16 Def / 16 SpA / 16 SpD / 16 Spe
 
@@ -56,11 +56,11 @@ Rotom
 Level: 50
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
-Farigiraf
+Slowking
 Level: 50
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
-Ampharos
+Eelektross
 Level: 50
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 
@@ -89,11 +89,11 @@ Rotom
 Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Farigiraf
+Slowking
 Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
-Ampharos
+Eelektross
 Level: 53
 IVs: 24 HP / 24 Atk / 24 Def / 24 SpA / 24 SpD / 24 Spe
 
@@ -122,11 +122,11 @@ Rotom
 Level: 56
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 
-Farigiraf
+Slowking
 Level: 56
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 
-Ampharos
+Eelektross
 Level: 56
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 
@@ -155,11 +155,11 @@ Rotom
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Farigiraf
+Slowking
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
-Ampharos
+Eelektross
 Level: 60
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 
@@ -194,9 +194,8 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / Ace Pokemon
 Mugshot: Green
 
-Heliolisk @ Choice Specs
+Eelektross @ Choice Specs
 Level: 85
-Ability: Dry Skin
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
@@ -216,9 +215,8 @@ Nature: Bold
 - Substitute
 - Synthesis
 
-Clodsire @ Black Sludge
+Quagsire @ Black Sludge
 Level: 85
-Ability: Unaware
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 4 Def / 252 SpD
 Nature: Careful
@@ -227,9 +225,8 @@ Nature: Careful
 - Toxic Spikes
 - Recover
 
-Charizard @ Charcoal
+Armarouge @ Charcoal
 Level: 85
-Ability: Blaze
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
@@ -238,9 +235,8 @@ Nature: Timid
 - Focus Blast
 - Roost
 
-Serperior @ Leftovers
+Roserade @ Leftovers
 Level: 85
-Ability: Contrary
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
@@ -270,7 +266,7 @@ Double Battle: No
 AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_ACE_POKEMON
 Mugshot: Green
 
-Charmander
+Charcadet
 Level: 15
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Dragon Breath
@@ -278,7 +274,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Smokescreen
 - Scratch
 
-Snivy
+Budew
 Level: 15
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Vine Whip
@@ -286,7 +282,7 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Growth
 - Leer
 
-Helioptile
+Tynamo
 Level: 15
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thunder Shock
@@ -312,7 +308,7 @@ Double Battle: No
 AI: AI_FLAG_CHECK_BAD_MOVE / AI_FLAG_CHECK_VIABILITY / AI_FLAG_TRY_TO_FAINT / AI_FLAG_ACE_POKEMON
 Mugshot: Green
 
-Heliolisk
+Eelektross
 Level: 47
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Volt Switch
@@ -320,7 +316,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Thunder Wave
 - Bulldoze
 
-Charizard
+Armarouge
 Level: 47
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Air Slash
@@ -328,7 +324,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Dragon Claw
 - Scary Face
 
-Serperior
+Roserade
 Level: 47
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Leaf Blade
@@ -336,7 +332,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Leech Seed
 - Slam
 
-Clodsire
+Quagsire
 Level: 47
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Toxic Spikes
@@ -344,7 +340,7 @@ IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Poison Jab
 - Mud Shot
 
-Bellibolt
+Lanturn
 Level: 47
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 - Discharge
@@ -371,9 +367,8 @@ Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices / Ace Pokemon
 Mugshot: Green
 
-Heliolisk @ Choice Specs
+Eelektross @ Choice Specs
 Level: 52
-Ability: Dry Skin
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
@@ -382,9 +377,8 @@ Nature: Timid
 - Grass Knot
 - Volt Switch
 
-Charizard @ Charcoal
+Armarouge @ Charcoal
 Level: 52
-Ability: Blaze
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
@@ -393,9 +387,8 @@ Nature: Timid
 - Focus Blast
 - Roost
 
-Serperior @ Leftovers
+Roserade @ Leftovers
 Level: 52
-Ability: Contrary
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
@@ -404,9 +397,8 @@ Nature: Timid
 - Glare
 - Protect
 
-Clodsire @ Black Sludge
+Quagsire @ Black Sludge
 Level: 52
-Ability: Unaware
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 4 Def / 252 SpD
 Nature: Careful
@@ -415,9 +407,8 @@ Nature: Careful
 - Yawn
 - Recover
 
-Steelix @ Sitrus Berry
+Bronzong @ Sitrus Berry
 Level: 52
-Ability: Sturdy
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 252 HP / 252 Def / 4 SpD
 Nature: Impish
@@ -491,9 +482,8 @@ IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Sucker Punch
 - Sand Attack
 
-Zorua_Hisui
+Zorua
 Level: 26
-Ability: Illusion
 IVs: 15 HP / 15 Atk / 15 Def / 15 SpA / 15 SpD / 15 Spe
 - Thief
 - Bitter Malice
@@ -537,9 +527,8 @@ Nature: Jolly
 - Sucker Punch
 - Encore
 
-Zoroark_Hisui
+Zoroark
 Level: 36
-Ability: Illusion
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Nature: Timid
 - Thief
@@ -557,9 +546,8 @@ Nature: Impish
 - Will-O-Wisp
 - Confuse Ray
 
-Murkrow
+Sneasel
 Level: 36
-Ability: Super Luck
 IVs: 18 HP / 18 Atk / 18 Def / 18 SpA / 18 SpD / 18 Spe
 Nature: Adamant
 - Thief
@@ -587,9 +575,8 @@ Items: Super Potion
 Double Battle: No
 AI: Check Bad Move / Try To Faint / Check Viability / Smart Switching / Smart Mon Choices
 
-Zoroark_Hisui
+Zoroark
 Level: 41
-Ability: Illusion
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Nature: Timid
 - Thief
@@ -607,9 +594,8 @@ Nature: Impish
 - Will-O-Wisp
 - Recover
 
-Honchkrow @ Black Glasses
+Weavile @ Black Glasses
 Level: 41
-Ability: Super Luck
 IVs: 20 HP / 20 Atk / 20 Def / 20 SpA / 20 SpD / 20 Spe
 Nature: Adamant
 - Thief
@@ -679,9 +665,8 @@ Nature: Impish
 - Will-O-Wisp
 - Recover
 
-Zoroark_Hisui
+Zoroark
 Level: 46
-Ability: Illusion
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 84 SpA / 84 Spe
 Nature: Timid
@@ -690,9 +675,8 @@ Nature: Timid
 - Flamethrower
 - Nasty Plot
 
-Honchkrow @ Black Glasses
+Weavile @ Black Glasses
 Level: 46
-Ability: Super Luck
 IVs: 22 HP / 22 Atk / 22 Def / 22 SpA / 22 SpD / 22 Spe
 EVs: 84 Atk / 84 Spe
 Nature: Adamant
@@ -755,9 +739,8 @@ Nature: Calm
 - Will-O-Wisp
 - Pain Split
 
-Zoroark_Hisui
+Zoroark
 Level: 54
-Ability: Illusion
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 128 SpA / 128 Spe
 Nature: Timid
@@ -766,9 +749,8 @@ Nature: Timid
 - Flamethrower
 - Nasty Plot
 
-Honchkrow @ Black Glasses
+Weavile @ Black Glasses
 Level: 54
-Ability: Moxie
 IVs: 25 HP / 25 Atk / 25 Def / 25 SpA / 25 SpD / 25 Spe
 EVs: 128 Atk / 128 Spe
 Nature: Adamant
@@ -831,9 +813,8 @@ Nature: Calm
 - Will-O-Wisp
 - Pain Split
 
-Zoroark_Hisui
+Zoroark
 Level: 63
-Ability: Illusion
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
@@ -842,9 +823,8 @@ Nature: Timid
 - Flamethrower
 - Nasty Plot
 
-Honchkrow @ Scope Lens
+Weavile @ Scope Lens
 Level: 63
-Ability: Super Luck
 IVs: 28 HP / 28 Atk / 28 Def / 28 SpA / 28 SpD / 28 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Adamant
@@ -907,9 +887,8 @@ Nature: Calm
 - Will-O-Wisp
 - Pain Split
 
-Zoroark_Hisui @ Life Orb
+Zoroark @ Life Orb
 Level: 70
-Ability: Illusion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid
@@ -918,9 +897,8 @@ Nature: Timid
 - Flamethrower
 - Nasty Plot
 
-Honchkrow @ Scope Lens
+Weavile @ Scope Lens
 Level: 70
-Ability: Super Luck
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Adamant
@@ -994,9 +972,8 @@ Nature: Careful
 - Reflect
 - Light Screen
 
-Honchkrow @ Scope Lens
+Weavile @ Scope Lens
 Level: 90
-Ability: Super Luck
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 Atk / 252 Spe
 Nature: Adamant
@@ -1005,9 +982,8 @@ Nature: Adamant
 - Brave Bird
 - Sucker Punch
 
-Zoroark_Hisui @ Life Orb
+Zoroark @ Life Orb
 Level: 91
-Ability: Illusion
 IVs: 31 HP / 31 Atk / 31 Def / 31 SpA / 31 SpD / 31 Spe
 EVs: 4 HP / 252 SpA / 252 Spe
 Nature: Timid

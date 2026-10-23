@@ -76,3 +76,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Alpaca ronde 15 goedgekeurd:** kop ronde 11, kleuring/lijf ronde 12, vuisten op de grond, zwart oog met glans, vlechtkwastjes met rood knoopje en een aguayo-band in de halswol als hint naar fase 2 (kragen) en fase 3 (vlechten, manta). Neusstreep op verzoek weggehaald.
 - Olinguito ronde 15 (lijf over Poochyena als skelet) voorlopig goed; onafhankelijke keuring volgt.
 - Showcase-vel Cuyby + Cuychu (`docs/concept/sprites/showcase/`).
+
+### [v0.0.14] - Alpaca klaar, olinguito ronde 16, vaste fakemon-werkwijze
+- **Alpaca (fase 1) klaar** na onafhankelijke keuring: open randen dicht, achterpoten los, linkervoorpoot smaller; staartje omhoog gehouden (Jordi: leuker dan het lage, "dan maar minder immersie").
+- **Olinguito ronde 16:** ronde kop, grotere ronde oren, masker met twee lobben en golvende rand, amandelogen met donker bovenlid, taps toelopende haakstaart. Palet blijft donker (Dark-type). Masker en oren: "uitstekende verbeteringen" (Jordi).
+- **Vaste werkwijze per fakemon** (bovenaan `docs/lessen/FAKEMON_DESIGN.md`): ontwerp → silhouet op echt skelet → sprite + checklist → onafhankelijke keuring vóór Jordi → alleen benoemde reparaties; doel ≤ ±5 rondes.

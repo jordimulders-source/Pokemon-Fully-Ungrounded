@@ -42,4 +42,6 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 ## 4. Claude (coördinator)
 - Plak de verwijzing naar dit bestand in elke sprite-opdracht en geef bij reparaties een pixelbudget en de lijst bevroren delen mee.
 - **Bekijk elk resultaat zelf** (1× en 3×, naast de laatst goedgekeurde versie) vóór het naar Jordi gaat. Een gezicht of geheel dat slechter oogt dan de vorige goedgekeurde versie gaat **nooit** naar Jordi: terugsturen of de vorige versie houden.
+- **Bevroren delen hard controleren met een pixeldiff** (niet op het oog): geef de agent de bevroren zones als rechthoeken/maskers en laat hem bewijzen dat die 0 pixels verschillen met de goedgekeurde versie. Een herschaling van de kop is géén reparatie: dan blijven oren, masker, oog en snuit niet behouden (olinguito ronde 19: oren veranderd, snuit misvormd, door Claude ten onrechte doorgelaten).
+- Twijfel Claude bij de eigen check, dan de vorige goedgekeurde versie houden en eerst de oorzaak vinden; geen nieuwe ronde op gevoel.
 - Nieuwe terugkerende feedback van Jordi meteen in §2 hierboven zetten.

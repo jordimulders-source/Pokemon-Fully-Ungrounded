@@ -7,7 +7,7 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 1. **Lichaam én blik diagonaal (3/4 naar links-voor):** niet alleen de ogen, ook het lijf staat schuin (verre kant korter en in schaduw), zoals vrijwel elke Gen 3-front-sprite. Zuiver profiel of zuiver frontaal = fout (Jordi, olinguito ronde 8, Cuyby-evolutie ronde 2). Bijna frontaal mag, zolang er perspectief in zit: blik en verre kant 3/4, verre arm kleiner dan de nabije, en het dier zit niet recht op zijn billen vooruit te kijken (Jordi, nachtaap ronde 10: "we zitten er niet frontaal op").
 2. **Alle ledematen, oren en ogen geteld en verbonden** (geen geamputeerde verre kant, geen losse voet of staart).
 3. **Geen rechte lijnen** in de omtrek waar het dier rond is; curven zonder hoeken.
-4. **Ogen geïntegreerd** (bovenlid, gekleurde iris, glans + reflectie), niet opgeplakt; verre oog geen kopie.
+4. **Ogen geïntegreerd** (bovenlid, gekleurde iris, glans + reflectie), niet opgeplakt; verre oog geen kopie. **Bij een dier met een snuit is vaak maar één oog in beeld** (Poochyena, Cyndaquil, Typhlosion, Rhyhorn, Dragonair, Kabutops): het verre oog verdwijnt achter de neusbrug; twee ogen naast een snuit geeft al snel een profiel-met-bril of een te grote kop (Jordi, olinguito ronde 18).
 5. **Silhouet op 1× leest als de soort** (knijp-je-ogen-test naast de referentiefoto en echte sprites).
 6. **Formaat** vergeleken met echte sprites van dezelfde evolutiefase.
 7. **Pose niet stijf:** gewichtsverschuiving, poten niet kaarsrecht naast elkaar.

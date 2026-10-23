@@ -44,3 +44,4 @@ Aangeleverd door Jordi (23 okt), samengevat uit fakemon-gidsen (o.a. YouTube-vid
 
 ## Referentiefoto's (Jordi, 23 okt)
 - **Onthoud de Pokémon-filosofie:** een foto van het echte dier is inspiratie, geen blauwdruk. Neem alleen de herkenbare kenmerken over (silhouet, ogen, één typisch detail) en houd het gestileerd, simpel en schattig; nooit een realistische weergave van het dier.
+- **Verzonnen kleurvlakken mogen, als ze werken** (Jordi, 23 okt): een kleur of tekening die het echte dier niet heeft (ander gezicht, andere poten) is toegestaan zolang de soort herkenbaar blijft en het één geheel oogt. Bij de alpaca werkte het niet: een crème gezicht en andersgekleurde poten maakten hem tot schaap. Twijfel → één vachtkleur.

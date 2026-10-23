@@ -102,3 +102,12 @@ Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.p
 - **Een kenmerkvlak (Cuyby's zwart) moet een vlak blijven:** een smalle diagonale band van oor naar oog las als piratenooglap; compact rond het oog met het oor er direct naast werkt.
 - **Belichte punten bovenaan** (sprieten, oren) krijgen de omlijningsbasis in plaats van zwart; dat haalde het zwart-aandeel van 0,63 naar 0,51 zonder de vorm te veranderen.
 - **Controleer onder- en bovenranden van het lijf apart:** een verborgen bovenrand of een rechte onderrand van 20+ px valt op 1× direct op; dump het raster met kolomnummers (`frame().text()`) om ze te vinden.
+
+## 14. Lessen uit de Cuyby-evolutie ronde 2 (lange vacht)
+- **Lange vacht valt steil omlaag, niet horizontaal:** scheidingen van kop naar staart lazen als een gefrituurde garnaal of een pissebed. Scheidingen die van de rug steil naar achteren-omlaag lopen tot aan lokpunten in de zoom, lezen als hangende vacht of een rieten dak.
+- **Een gladde koepel is een brood:** vacht moet de omtrek breken. Laat lokken overlappen aan de achterkant (een lichtere punt met een inham eronder, zoals de staarten van Ninetales) en geef de zoom hangende lokpunten.
+- **Een lok in een boog met een gat eronder leest als een hengsel.** Vul de ruimte onder een overhangende lok met de vacht erachter, in de schaduwtint, en laat alleen onder de punt een inham open.
+- **Scheidingen in drie tinten langs de lengte:** bovenaan zacht (schaduwtint), in het midden de omlijningsbasis, alleen bij de zoom zwart. Doorlopend zwarte, even ver uit elkaar liggende lijnen lezen als segmenten. Onderbreek ze hier en daar en vul aan met korte streepjes (schaduw, en hooglicht in het licht) in de haarrichting.
+- **Run-length-rijen op absolute x met overschrijven** (`y: x: 3h 12s  x: d r h`) maken handwerk per deel snel en controleerbaar. Teken eerst de basistinten per rij, en zet daarna de lijnen als drietallen 'donkerder | scheiding | lichter' erover (`docs/concept/sprites/cuyby_evo/ronde2/bron/`).
+- **Te groot? Knip een strook weg** in plaats van opnieuw te tekenen: een kolom of rij zonder kenmerken (geen oog, inham of neus) eruit halen kost op het oog niets. Dat ging hier van 1487 naar 1385 px.
+- **Een roze vlekje in een zwart oor leest op 1× als een tweede oog.** Gebruik in een donker oor hooguit één roze pixel.

@@ -45,3 +45,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Regiokaart variant 3** (`tools/concept/regiokaart3.py`, `docs/concept/regiokaart3_namen.png`): alle gyms, hoofdpad volgens het routeplan, spoor Uyuni–Oruro–La Paz, legenda met plekken zonder icoon. Variant 2 blijft de basis tot Jordi kiest.
 - **Sprites:** alpaca ronde 5; Cuyby ronde 1 (A: kuif/rozet, B: Andesmuts); DJ Rotom ronde 1. Overzichten in `docs/concept/sprites/starters_fase1_ronde5.png` en `cuyby_djrotom_ronde1.png`.
 - ROM: 18,32 MB vrij.
+
+### [v0.0.9] - Hoenn-code opgeruimd (stap 7)
+- 24 systemen opgeruimd (zie `docs/concept/PLAN_HOENN_ERUIT.md`, "Stand (23 okt)"): Pokémon Center wordt aan de layout herkend (healen, saven, uitwitten werken in elke nieuwe stad), Hoenn-specials en hun scripts weg (o.a. truck-intro, SS Tidal, kabelbaan, gympuzzels, braille, Mirage Tower, Regi-stippen, Faraway Island, post-game-rivaal), roamers zonder routes, Fly alleen naar StartTown, Pokédex-gebiedsscherm op kaarttype. Mechanieken zonder plek slapen tot de nieuwe regio (Forces, Enamorus, Burglar, draaihekken, Safari Zone, volgerberichten).
+- Evoluties op een plek (Magnezone, Vikavolt, Leafeon, Glaceon, Crabominable) tijdelijk alleen met hun steen; Alolan Exeggutor tijdelijk op level-up met een Dragon-type in het team (open in POKEMON.md).
+- Mom staat in het stock-huis (TwoStory) met haar standaardtekst, healen en PokéNav-registratie.
+- Overgangslaag: 233 → 64 kaarten, 651 → 592 stubs; de rest hoort bij stap 8 (Frontier, Union Room, Contests, Secret Bases, Trainer Hill; inventaris met ROM-kosten in het plan). ROM: 18,38 MB vrij.

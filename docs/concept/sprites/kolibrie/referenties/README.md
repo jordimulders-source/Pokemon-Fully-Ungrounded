@@ -50,3 +50,6 @@ Betrouwbaarheid: **[goed]** wetenschappelijk/museum, **[matig]** populair/secund
 12. **Reuzenkolibrie** [matig]. 18–24 g, ±2× de volgende zwaarste kolibrie; ±15 vleugelslagen/s (niet onafhankelijk bevestigd); zweeft af en toe. https://www.guinnessworldrecords.com/world-records/494275-largest-hummingbird , https://escholarship.org/uc/item/3c62v99s
 
 **Niet gevonden / niet gebruiken zonder betere bron:** een Zuid-Amerikaanse mythe waarin de kolibrie het vuur steelt (die versies zijn Noord-Amerikaans; voor de Chaco wijst de carancho het vuur aan, Métraux); "kolibrie als ziel van een overledene" (Azteeks/Costa Rica, niet Zuid-Amerika); een kolibrie bij Pachacuti; Huitzilopochtli is Azteeks (Mexico), niet bruikbaar voor deze regio.
+
+## Pose (Jordi, 23 okt)
+`pose_butterfree.png`, `pose_zubat.png`, `pose_moltres.png`, `pose_zapdos.png` (Jordi's eigen voorbeelden): alle vier **hangen schuin naar beneden** (diagonaal, kop/snavel naar linksonder, vleugels gespreid en schuin), de beste showcase voor de vleugels. Niet de frontale versies uit het eerdere contactvel. Er komt voorlopig **één vorm: de eindvorm**.

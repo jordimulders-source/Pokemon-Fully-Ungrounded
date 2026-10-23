@@ -154,3 +154,11 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Delen die in frame 2 bewegen:** laat het stilstaande deel eronder (hier het lijf onder de kop) 4–6 px doorlopen, anders komt in frame 2 een rand zonder omlijning bloot.
 - **Een mond die direct boven de kaaklijn ligt, smelt ermee samen:** laat één pixel room tussen lip en kaakrand, en een wit tandje onder de lip maakt hem leesbaar op 1×.
 - **Sandbox-valkuil:** in een worktree weigert de omgeving samengestelde shell-regels (heredoc + `&&`, `cd ..`); zet bewerkingen in een los script in de scratchpad en roep dat met één `python3`-regel aan.
+
+## 19. Lessen uit de Cuyby-evolutie ronde 3
+- **Een laag, lang dier in 3/4:** laat de rug naar achteren dalen en de zoom naar achteren stijgen. Lopen die twee lijnen naar elkaar toe, dan leest de romp kleiner en verder weg. Een schuine rugscheiding met de verre flank als smalle schaduwband erboven maakt het af (Mareep, Linoone).
+- **Verre pootjes staan links van en hoger dan de nabije** bij een dier dat naar links-voor kijkt: bij die draaiing schuift de verre kant naar links en naar achteren. Ze staan dus niet rechts ervan en ook niet erachter verstopt.
+- **Gezicht in een vachtmassa:** zet het gezicht binnen de vacht, met haar aan de verre kant (gordijn of pony). Tegen de linkerrand leest het als profiel. Houd het wit bij een snuit en een kleine bles; een lange witte diagonale streep leest als snavel.
+- **Losse zwarte 1-px-sprietjes in de omtrek lezen als vliegjes.** Maak sprieten aan de rand 2 px breed aan de voet of geef ze de omlijningsbasis (r), en laat ze diagonaal aansluiten.
+- **Na het knippen opnieuw controleren:** een geknipte kolom kan net de laatste randpixel van een rij zijn (de rij verliest haar omlijning) of de enige kleurpixel van een voetje. Leg kenmerken van 1 px niet op een knipkolom en lees de randmelding van `bouw9` opnieuw.
+- **Letterlijke pixels naast run-length** (`rle3.py`: `rhhsd` naast `3h`, `.` = laat staan) is voor kleine vormen zoals sprieten, ogen en punten sneller dan tellen.

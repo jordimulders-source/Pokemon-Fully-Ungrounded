@@ -1,0 +1,23 @@
+# Rotom-ogen (wit omrand, blauwe iris die onderaan donkerder wordt, zwart bovenooglid)
+# dichtbij-oog x26..30, ver (smaller) oog x19..22
+! 1 26 26 fffff
+! 1 27 26 cdddc
+! 1 28 26 cdcec
+! 1 29 26 cdeec
+! 1 30 26 ceeec
+! 1 31 26 _ccc_
+! 1 26 19 ffff
+! 1 27 19 cddc
+! 1 28 19 cdec
+! 1 29 19 ceec
+! 1 30 19 ceec
+! 1 31 19 _cc_
+# frame 2: knipoog met het dichtbij-oog
+! 2 26 19 ffff
+! 2 27 19 cddc
+! 2 28 19 cdec
+! 2 29 19 ceec
+! 2 30 19 ceec
+! 2 31 19 _cc_
+! 2 28 26 _fff_
+! 2 29 26 f___f

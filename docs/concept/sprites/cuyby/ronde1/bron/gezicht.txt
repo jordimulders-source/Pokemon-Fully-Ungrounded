@@ -1,0 +1,26 @@
+# gezicht (frame 1): dichtbij-oog x23..27, ver oog x11..13, neus/mond x14..18
+! 1 36 23 _fff_
+! 1 37 23 fccff
+! 1 38 23 fccff
+! 1 39 23 fffff
+! 1 40 23 fbbbf
+! 1 41 23 _fff_
+! 1 37 11 fff
+! 1 38 11 fcf
+! 1 39 11 fff
+! 1 40 11 fbf
+! 1 41 11 _f_
+! 1 43 26 999
+! 1 44 15 aaa
+! 1 45 16 f
+! 1 46 15 f_f
+# frame 2: sprongetje (3 px hoger), ogen dicht van plezier, mond open ('wheek!')
+! 2 33 23 _fff_
+! 2 34 23 f___f
+! 2 34 11 _f_
+! 2 35 11 f_f
+! 2 40 26 999
+! 2 41 15 aaa
+! 2 42 15 faf
+! 2 43 15 faf
+! 2 44 16 f

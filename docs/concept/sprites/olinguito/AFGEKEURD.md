@@ -20,3 +20,5 @@ Regels die hieruit volgen:
 
 | 21/21b | Verre voorpoot naar achteren (Claude's instructie, tegen Linoone in); telgang: beide poten aan één kant tegelijk naar voren | "weer niet naar mijn feedback geluisterd"; "kamelen manier van lopen" |
 - Poten: neem Galar-Linoone's pootconfiguratie over (verre voorpoot vooraan onder de kin) en loop **diagonaal** (nooit telgang).
+| 22 | Verre voorpoot 5 px smal als rechte streep, om onder een pixelgrens te blijven | "weer een luie poot met een rechte lijn" |
+- **Vorm gaat vóór pixelgrenzen:** liever iets boven het formaatdoel dan een dunne of rechte poot.

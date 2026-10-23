@@ -55,6 +55,18 @@ Stap 3, deel 1: Spacetime, Yoshi's Island en Ultra Space zijn eruit. Het bouwt (
   - ROM-ruimte: vóór 9,36 MB vrij (`__rom_end` 0x096A41C8), na 11,47 MB vrij (0x09488034), dus 2,11 MB erbij.
   - Oude saves/savestates zijn ongeldig: nieuw spel.
 
+- **Hoenn eruit, stap 7 (C-code per systeem): afgerond (stap 7-agent, 23 okt).** Details, wat er nog in de
+  compat-laag zit en de stap 8-inventaris (grootte per systeem): `docs/concept/PLAN_HOENN_ERUIT.md` (sectie "Stand (23 okt)").
+  - Pokémon Centers worden aan hun layout herkend (healen, saven in het PC, uitwitten); Fly vanuit de regiokaart gaat
+    alleen naar StartTown; roamers, uitbraken en kaartgebonden volgerberichten hebben lege tabellen.
+  - Weg: Hoenn-specials (abnormaal weer, SS Tidal, kabelbaan, warenhuis, gympuzzels, ...), truck/patrijspoort, Faraway
+    Island-Mew, braillepuzzels, Mirage Tower, Regi-stippen, post-game-rivaal, Mr. Briney, ongebruikte Hoenn-scripts.
+  - Slapend (plek invullen in de nieuwe regio): Forces, Enamorus, Burglar, Gabby & Ty, draaihekken, Safari Zone.
+  - Spelershuis (`Stock_TwoStory_1F/2F`): Mom (healen, PokéNav), slaapkamer-PC, wandklok.
+  - Compat-laag: 64 kaarten, 16 layouts, 35 local ids, 592 stubs, allemaal voor stap 8 (Frontier, Trainer Hill,
+    Secret Bases, Contests, Union Room/Cable Club; samen ±680 KB code).
+  - ROM-ruimte: vóór 18,55 MB vrij (`__rom_end` 0x08D71FE4), na 18,62 MB vrij (0x08D61CCC).
+
 - **Pokémon buiten de dex eruit: afgerond (dex-agent, 23 okt).** Lijst, schakelaars en twijfelgevallen: `docs/concept/DEX_IN_ROM.md`.
   - In de ROM: de 213 lijnen van categorie A/B + Hitmontop, Mew, Mewtwo, Zarude (440 dexnummers, 582 soortconstanten
     incl. vormen). Eruit: 326 families (212 uit categorie C, 114 legendary/mythical/UB/paradox), Mega/Gmax/Ultra/Tera/Primal,

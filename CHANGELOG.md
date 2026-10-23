@@ -58,3 +58,11 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Niet meegekomen: het nieuwe debug-geef-Pokémon-menu van upstream; kleurvarianten voor Frontier-tegenstanders.
 - FRLG-code zit nu in upstream en kost ±0,4 MB (Kanto-regiokaart, Trainer Tower, Seagallop e.d.): kan weg bij stap 8/9. ROM: 17,86 MB vrij.
 - Details en lessen: `docs/concept/STAND_TECHNIEK.md` (stap 4), `docs/lessen/AGENTS.md`.
+
+### [v0.0.11] - Spriterondes starters en Cuyby-evolutie (Dragonfly Cave-lessen)
+- Spritinglessen uit de Dragonfly Cave-gidsen toegepast; `docs/lessen/SPRITING.md` kreeg een verplichte checklist (§0: diagonale pose, ledematen tellen, geen rechte lijnen, ogen, silhouet, formaat, dynamische pose).
+- **Nachtaap ronde 10: goedgekeurd (voor nu).** Feller violet, lichter gezicht, neutrale "uncanny schattige" blik, Nazca-spiraal los van het oor, pruim-pupillen.
+- Olinguito ronde 10–11 (klauwen, ogen diagonaal, buikcirkel weg); ronde 12 loopt (mond, klauwen, kleinere poten, dynamischer pose).
+- Alpaca ronde 10 afgekeurd (geen alpaca, te groot); ronde 11 from scratch loopt (één vachtkleur, handschoenen met Andes-breikleuren).
+- Cuyby-evolutie ronde 2 (vacht i.p.v. gras, mooi shading/kleur); ronde 3 loopt (diagonaal, pluiziger, onverzorgd, referentiefoto's langhaarcavia).
+- Les: verzonnen kleurvlakken mogen, als ze werken (`FAKEMON_DESIGN.md`).

@@ -175,3 +175,6 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Wol is mat:** een witte glanspixel maakt een wolbal plastic; gebruik alleen de hooglichtkleur van de groep en één vouwlijn voor textuur.
 - **Een snuit van 1 px naar voren** (3 rijen op x−1, nabije rijen erboven/onder op de oude rand) maakt van een vlakke koprand een muil zonder het oppervlak op te blazen.
 - **Heredoc-Python in een worktree-agent kan geweigerd worden;** zet bewerkscripts als bestand in de scratchpad en draai ze met het pad als argument.
+
+## 22. Lessen uit olinguito ronde 14
+- **Een romp leest rechthoekig als de buiklijn vlak loopt en de achterkant verticaal valt.** Laat de onderrand vanaf de diepe borst met toenemende stappen per rij (4,3,2,1) naar een hoog ingetrokken lies stijgen en rond de heup af met stappen 2,2,1,1,0,1; zet de achterpoot zó dat de dij de achterkant van die boog vormt (Mightyena).

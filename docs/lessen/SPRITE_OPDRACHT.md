@@ -9,6 +9,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - `docs/lessen/FAKEMON_DESIGN.md` (vaste werkwijze bovenaan).
 - Gericht in `docs/lessen/bronnen/dragonflycave_spriting_guide.txt` het onderdeel waar je aan werkt (omlijning, ogen, shading, perspectief).
 - De NOTITIES.md van de vorige ronde van deze Pokémon en `docs/concept/sprites/FEEDBACK.md`.
+- **`SPEC.md` in de map van deze Pokémon** (specificatie per onderdeel: referentie, bevroren/open, Jordi's woorden) en **`docs/lessen/RETRO_OLINGUITO.md`** (waarom 23 rondes; wat nu anders gaat).
 - **De map `referenties/` van deze Pokémon** (foto's van het echte dier, skelet-sprites, kenmerk-sprites): gebruik ze als onderlaag en maatstaf; een referentie die Jordi aanwijst is de specificatie.
 - **`AFGEKEURD.md` in de map van deze Pokémon** (als die bestaat): wijzigingen die Jordi al heeft afgekeurd. Nooit herhalen. Claude houdt dit bestand per Pokémon bij na elke afkeuring.
 

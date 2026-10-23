@@ -37,6 +37,13 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Inspiratie:** nachtaap/owl monkey (*Aotus*, de enige nachtactieve aap ter wereld); tarsier (Zuidoost-Azië, alleen voor de proporties: ogen groter dan zijn hersenen); muriqui (grootste aap van Zuid-Amerika, Atlantisch Woud, de "hippie-aap": geen rangorde, begroet met omhelzingen, grijpstaart); de aap van Nazca (geoglief met spiraalstaart); kallawaya (rondtrekkende Boliviaanse genezers met geweven kruidentas, UNESCO-erfgoed) en yatiri (Aymara-genezer die cocabladeren leest); Mama Killa (Inca-maangodin).
 - **Ideeën:** Psychic/Fairy, helende moves; signature move die het team geneest en 's nachts sterker is. Spiraalstaart groeit per fase (krulletje → spiraal → volle Nazca-spiraal).
 
+### Ontwerpkeuze starters en Cuyby (Jordi, 23 okt)
+Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
+- **Alpaca:** fase 1 = Wolvuist (wol groeit als bokshandschoenen om de voorpoten, kuif als hoofdbeschermer); vanaf fase 2 worden de handschoenen **wolkragen om de poten**; fase 3 meer bekleed (bombín uit de kuif, vlechten, pollera/manta), nog uit te werken.
+- **Olinguito:** Haakstaart (zit braaf met gevouwen klauwen, de coati-staart eindigt achter zijn rug in een grijphaak: de dief zit in de staart).
+- **Nachtaap:** concept B (dieper violet met indigo rand rond een bleke lila gezichtsschijf, cyaan gloeiende ogen, tarsierhouding, geen borststeen).
+- **Cuyby:** Langhaarbol (Peruaanse langhaarcavia als één bol vacht met vallende lokken, driekleur als strakke vlakken; evolueert tot een wandelende hooiberg). Moet echt Pokémon-stijl worden.
+
 ## Legendaries
 - **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor**; Kay Pacha (deze wereld) = **poema**; Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.
 - **Opper-legendary: Pachamama** (Moeder Aarde; "pacha" = wereld én tijd); de drie werelden zijn delen van haar. Type, naam en rol: open.

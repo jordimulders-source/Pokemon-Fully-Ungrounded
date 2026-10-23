@@ -75,3 +75,4 @@
 
 ## Cuyby-evolutie ronde 1 (23 okt)
 - **Niet goed gelukt:** lijkt meer een **grasbol met een hoofd erin**. Het moet veel meer op **vacht** lijken dan op gras, en het **hoofd moet een direct onderdeel van het lijf** zijn, zoals bij een echte langhaarcavia (referentie: `docs/concept/ontwerp/cuyby_evo/referentie_langhaarcavia.webp`): lange golvende vacht die vanaf de kop over het hele lijf naar achteren en omlaag valt, het gezichtje kijkt laag vooraan uit de vacht. Maar dan de vacht **in de kleur van de ichu-fontein** (goudgeel/strokleur).
+- **Aanvulling (Jordi):** leuk als **minstens één oog door de vacht bedekt** wordt.

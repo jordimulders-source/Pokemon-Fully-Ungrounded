@@ -3409,29 +3409,28 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             }
             break;
         case ABILITY_POLLEN_SEASON: // Project Grounded
-            if (TryChangeBattleWeather(battler, BATTLE_WEATHER_POLLEN_HAZE, gLastUsedAbility))
+            if (shouldAbilityTrigger && TryChangeBattleWeather(battler, BATTLE_WEATHER_POLLEN_HAZE, gLastUsedAbility) == WEATHER_FAILURE_SUCCESS)
             {
-                BattleScriptPushCursorAndCallback(BattleScript_PollenSeasonActivates);
+                BattleScriptCall(BattleScript_PollenSeasonActivates);
                 effect++;
             }
             break;
         case ABILITY_TRADE_WIND: // Project Grounded: Pidove-lijn en Ducklett-lijn, 3 beurten Tailwind
-            if (!gSpecialStatuses[battler].switchInAbilityDone
+            if (shouldAbilityTrigger
              && !(gSideStatuses[GetBattlerSide(battler)] & SIDE_STATUS_TAILWIND))
             {
-                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 gSideStatuses[GetBattlerSide(battler)] |= SIDE_STATUS_TAILWIND;
                 gSideTimers[GetBattlerSide(battler)].tailwindTimer = 3;
                 SaveBattlerAttacker(gBattlerAttacker);
                 gBattlerAttacker = battler;
-                BattleScriptPushCursorAndCallback(BattleScript_TradeWindActivates);
+                BattleScriptCall(BattleScript_TradeWindActivates);
                 effect++;
             }
             break;
         case ABILITY_AIR_POLLUTION: // Project Grounded
-            if (TryChangeBattleWeather(battler, BATTLE_WEATHER_ACID_RAIN, gLastUsedAbility))
+            if (shouldAbilityTrigger && TryChangeBattleWeather(battler, BATTLE_WEATHER_ACID_RAIN, gLastUsedAbility) == WEATHER_FAILURE_SUCCESS)
             {
-                BattleScriptPushCursorAndCallback(BattleScript_AirPollutionActivates);
+                BattleScriptCall(BattleScript_AirPollutionActivates);
                 effect++;
             }
             break;
@@ -3543,12 +3542,16 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             }
             break;
         case ABILITY_HELIOTROPISM: // Project Grounded: Sunflora draait naar de zon en bloeit op
-            if (!gSpecialStatuses[battler].switchInAbilityDone
+            if (shouldAbilityTrigger
              && IsBattlerWeatherAffected(GetBattlerHoldEffect(battler), GetWeather(), B_WEATHER_SUN))
             {
-                gSpecialStatuses[battler].switchInAbilityDone = TRUE;
                 gBattleScripting.battler = battler;
-                BattleScriptPushCursorAndCallback(BattleScript_HeliotropismActivates);
+                SetStatChange(battler, STAT_ATK, 2);
+                SetStatChange(battler, STAT_DEF, 2);
+                SetStatChange(battler, STAT_SPEED, 2);
+                SetStatChange(battler, STAT_SPATK, 2);
+                SetStatChange(battler, STAT_SPDEF, 2);
+                BattleScriptCall(BattleScript_HeliotropismActivates);
                 effect++;
             }
             break;
@@ -4010,14 +4013,15 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
             }
             break;
         case ABILITY_FAKE_FOLIAGE: // Project Grounded: Sudowoodo schrikt van water
-            if (IsBattlerTurnDamaged(battler)
+            if (IsBattlerTurnDamaged(battler, EXCLUDING_SUBSTITUTES)
              && IsBattlerAlive(battler)
              && moveType == TYPE_WATER
+             && GetBattlerAbility(battler) == ABILITY_FAKE_FOLIAGE
              && CompareStat(battler, STAT_SPEED, MAX_STAT_STAGE, CMP_LESS_THAN, gLastUsedAbility))
             {
                 gEffectBattler = gBattlerAbility = battler;
-                SET_STATCHANGER(STAT_SPEED, 1, FALSE);
-                BattleScriptCall(BattleScript_TargetAbilityStatRaiseRet);
+                SetStatChange(battler, STAT_SPEED, 1);
+                BattleScriptCall(BattleScript_AbilityStatChange);
                 effect++;
             }
             break;
@@ -4343,22 +4347,6 @@ u32 AbilityBattleEffects(enum AbilityEffect caseID, enum BattlerId battler, enum
              && !CanBattlerAvoidContactEffects(gBattlerAttacker, gBattlerTarget, GetBattlerAbility(gBattlerAttacker), GetBattlerHoldEffect(gBattlerAttacker), move)
              && CanBeBurned(gBattlerTarget, gBattlerAttacker, GetBattlerAbility(gBattlerAttacker))
              && (GetConfig(B_ABILITY_TRIGGER_CHANCE) >= GEN_4 ? RandomPercentage(RNG_FLAME_BODY, 30) : RandomChance(RNG_FLAME_BODY, 1, 3)))
-            {
-                gEffectBattler = gBattlerAttacker;
-                gBattleScripting.battler = gBattlerTarget;
-                gBattleScripting.moveEffect = MOVE_EFFECT_BURN;
-                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
-                BattleScriptCall(BattleScript_AbilityStatusEffect);
-                effect++;
-            }
-            break;
-        case ABILITY_SPICY_SPRAY: // Project Grounded: Scovillain, verbrandt elke aanvaller die schade doet
-            if (IsBattlerAlive(gBattlerAttacker)
-             && gBattlerAttacker != gBattlerTarget
-             && !IsBattlerAlly(gBattlerAttacker, gBattlerTarget)
-             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-             && IsBattlerTurnDamaged(gBattlerTarget)
-             && CanBeBurned(gBattlerTarget, gBattlerAttacker, GetBattlerAbility(gBattlerAttacker)))
             {
                 gEffectBattler = gBattlerAttacker;
                 gBattleScripting.battler = gBattlerTarget;
@@ -5665,7 +5653,7 @@ bool32 IsBattlerSwitchingThisTurn(enum BattlerId battler)
 bool32 IsJoustTargetFaster(enum BattlerId battlerAtk, enum BattlerId battlerDef)
 {
     if (battlerDef >= gBattlersCount || battlerDef == battlerAtk || IsBattlerAlly(battlerAtk, battlerDef))
-        battlerDef = GetBattlerAtPosition(BATTLE_OPPOSITE(GetBattlerPosition(battlerAtk)));
+        battlerDef = GetOppositeBattler(battlerAtk);
     if (!IsBattlerAlive(battlerDef))
         return FALSE;
     return GetBattlerTotalSpeedStat(battlerDef, GetBattlerAbility(battlerDef), GetBattlerHoldEffect(battlerDef))
@@ -6482,11 +6470,11 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             basePower = basePower * 3 / 2;
         break;
     case EFFECT_TIPSY_WALTZ: // Project Grounded: Spinda danst beter met een stuk in zijn kraag
-        if (gBattleMons[battlerAtk].volatiles.confusionTurns)
+        if (gBattleMons[battlerAtk].volatiles.confusionTimer)
             basePower *= 2;
         break;
     case EFFECT_STRAIGHT_LINE: // Project Grounded (Jordi 16 okt): 60, opnieuw achter elkaar 100 (maar zonder prioriteit, zie GetBattleMovePriority)
-        if (gBattleStruct->metronomeItemCounter[battlerAtk] > 0)
+        if (gBattleMons[battlerAtk].volatiles.metronomeItemCounter > 0)
             basePower = basePower * 5 / 3;
         break;
     case EFFECT_WIND_CHIME: // Project Grounded: met Tailwind dubbel, tegen een doelwit met status x1,5
@@ -6535,7 +6523,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
         if (IsBattlerSwitchingThisTurn(battlerDef)
          || (!HasBattlerActedThisTurn(battlerDef)
           && gChosenActionByBattler[battlerDef] == B_ACTION_USE_MOVE
-          && IsBattleMoveStatus(GetChosenMoveFromPosition(battlerDef))))
+          && IsBattleMoveStatus(GetBattlerChosenMove(battlerDef))))
             basePower *= 2;
         break;
     case EFFECT_KUSARIGAMA: // Project Grounded: Accelgor, de ketting-sikkel vangt wie wegvlucht
@@ -6543,7 +6531,7 @@ static inline u32 CalcMoveBasePower(struct DamageContext *ctx)
             basePower *= 2;
         break;
     case EFFECT_JUMP_SCARE: // Project Grounded: Boo! In de eerste beurt na het binnenkomen (zoals Fake Out) dubbel
-        if (gBattleMons[battlerAtk].volatiles.isFirstTurn)
+        if (IsBattlersFirstTurn(battlerAtk))
             basePower *= 2;
         break;
     case EFFECT_UPDRAFT: // Project Grounded: opwaartse wind met Tailwind in de rug
@@ -7904,7 +7892,7 @@ static inline uq4_12_t GetDefenderAbilitiesModifier(struct DamageContext *ctx)
         }
         break;
     case ABILITY_AURA_GUARD: // Project Grounded: Lucario, Fluffy zonder vuurzwakte; Long Reach maakt geen contact
-        if (IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ctx->abilityAtk, ctx->holdEffectAtk, ctx->move))
+        if (IsMoveMakingContact(ctx->battlerAtk, ctx->battlerDef, ctx->abilities[ctx->battlerAtk], ctx->holdEffects[ctx->battlerAtk], ctx->move))
         {
             modifier = UQ_4_12(0.5);
             recordAbility = TRUE;
@@ -10990,7 +10978,7 @@ u32 GetTotalAccuracy(struct BattleCalcValues *cv, u32 weather)
     if ((attackerWeather & B_WEATHER_SUN) && MoveHas50AccuracyInSun(cv->move))
         moveAcc = 50;
     // Project Grounded: spore- en poedermoves +20 accuracy in Pollen Haze
-    if (IsPowderMove(move) && moveAcc != 0 && gBattleWeather & B_WEATHER_POLLEN_HAZE && HasWeatherEffect())
+    if (IsPowderMove(cv->move) && moveAcc != 0 && gBattleWeather & B_WEATHER_POLLEN_HAZE && HasWeatherEffect())
         moveAcc = min(moveAcc + 20, 100);
     // Check Wonder Skin.
     if (cv->abilities[battlerDef] == ABILITY_WONDER_SKIN && IsBattleMoveStatus(cv->move) && moveAcc > 50)
@@ -11467,6 +11455,8 @@ bool32 ParentalBondActive(u32 battler)
     if (gBattleMons[battler].species == SPECIES_KANGASKHAN_MEGA)
         return TRUE;
     return gBattleMons[battler].hp * 2 > gBattleMons[battler].maxHP;
+}
+
 #define UNPACK_STARTING_STATUS_TO_EWRAM(_enum, _fieldName, ...) case _enum: gStartingStatuses._fieldName = TRUE; break;
 
 void SetStartingStatus(enum StartingStatus status)

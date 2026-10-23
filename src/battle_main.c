@@ -4512,7 +4512,7 @@ s32 GetBattleMovePriority(enum BattlerId battler, enum Ability ability, enum Mov
 
     // Project Grounded: Straight Line rent alleen de eerste keer vooruit; opnieuw achter elkaar = x1,5 zonder prioriteit.
     if (GetMoveEffect(move) == EFFECT_STRAIGHT_LINE && gLastResultingMoves[battler] == move
-     && gBattleStruct->metronomeItemCounter[battler] > 0)
+     && gBattleMons[battler].volatiles.metronomeItemCounter > 0)
         priority = 0;
 
     // Project Grounded: Abduction (UFO) landt in Trick Room als eerste: prioriteit 0 i.p.v. -6.

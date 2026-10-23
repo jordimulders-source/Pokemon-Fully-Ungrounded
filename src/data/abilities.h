@@ -2573,12 +2573,6 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
         .description = COMPOUND_STRING("Normal moves turn Dragon."),
     },
 
-    [ABILITY_EELEVATE] =
-    {
-        .name = _("Eelevate"),
-        .description = COMPOUND_STRING("Levitate and Beast Boost."),
-    },
-
     [ABILITY_314] =
     {
         .name = _("-------"),
@@ -2601,17 +2595,5 @@ const struct AbilityInfo gAbilitiesInfo[ABILITIES_COUNT] =
     {
         .name = _("-------"),
         .description = COMPOUND_STRING("No special ability."),
-    },
-
-    [ABILITY_SPICY_SPRAY] =
-    {
-        .name = _("Spicy Spray"),
-        .description = COMPOUND_STRING("Burns the foe when damaged."),
-    },
-
-    [ABILITY_AURA_GUARD] =
-    {
-        .name = _("Aura Guard"),
-        .description = COMPOUND_STRING("Unimplemented."),
     },
 };

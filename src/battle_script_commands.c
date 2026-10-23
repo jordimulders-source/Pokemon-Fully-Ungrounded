@@ -12717,7 +12717,7 @@ void BS_FungalControlChooseMove(void)
     gBattleMons[gBattlerTarget].volatiles.multipleTurns = 0;
     gBattleMons[gBattlerTarget].volatiles.lockConfusionTurns = 0;
     gBattleMons[gBattlerTarget].volatiles.rolloutTimer = 0;
-    if (gBattleMons[gBattlerTarget].volatiles.encoredMove != GetChosenMoveFromPosition(gBattlerTarget))
+    if (gBattleMons[gBattlerTarget].volatiles.encoredMove != GetBattlerChosenMove(gBattlerTarget))
         gBattleStruct->moveTarget[gBattlerTarget] = SetRandomTarget(gBattlerTarget);
     if (HasBattlerActedThisTurn(gBattlerTarget))
         gBattleMons[gBattlerTarget].volatiles.encoreTimer = 4;

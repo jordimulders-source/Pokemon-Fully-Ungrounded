@@ -59,10 +59,10 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Vaste lijst:** lama, alpaca, vicuña, guanaco, coati, capibara, condor, pinguïns (naast Eiscue; meerdere pinguïns is geen probleem, Jordi). Eiscue is de koudeminnende pinguïn (Patagonië/ijs); de fakemon kan juist een pinguïn van een **milder klimaat** zijn, zoals de Humboldtpinguïn (Peru/Chili) of de Galápagospinguïn (Ecuador), Jordi.
 
 - **Ongebruikte Game Freak-ontwerpen** (Jordi, 22 okt): Jordi overweegt een paar ongebruikte ontwerpen uit de Gold/Silver-beta (Spaceworld 1997) uit te werken; hij kiest zelf welke. Bron: `docs/concept/sprites/spaceworld/spaceworld97_152-251.webp` (sprites en prototypenamen via @obskyr/@TeamSpaceworld). Opties die Jordi noemt (23 okt):
-  - **Norowara** (#229) en **Kyonpan** (#230);
+  - **Norowara** (#229) en **Kyonpan** (#230): **vrijwel zeker** (Jordi, 23 okt), ook al zijn ze niet Zuid-Amerikaans;
   - de **tank-versie van Octillery** (#210-beta);
   - de **andere Delibird** (#225 Gifuto, de cadeau-vogel);
-  - **Kotora** en **Raitora** (#226/#227, het tijgerwelpje en de bliksemtijger);
+  - **Kotora** en **Raitora** (#226/#227): **Raitora wordt een jaguar** (Jordi, 23 okt), een gevlekt bliksemwelpje dat een Electric-jaguar wordt; vult het jaguar-idee uit `IDEEEN.md` in;
   - **Purakkusu** (#234).
   - Voor ons gebruik: ze opnieuw als Gen 3-sprite tekenen in onze stijl (niet de beta-sprites zelf gebruiken), met een plek in de regio (Raitora als Electric-tijger is een mooie Zuid-Amerikaanse Electric-kat naast de jaguar-idee; Octillery-tank kan in een havenstad of militaire basis).
 

@@ -28,3 +28,4 @@
 - **Cuyby:** "zo overduidelijk een fakemon in plaats van een Pokémon".
 - **DJ Rotom:** "een hele andere vorm, kom op, je kan beter". Correctie (Jordi): "duidelijk een Rotom-vorm, maar niet DJ Rotom; je hebt het niet goed nagebouwd". Het ontwerp moet **trouw zijn aan DJ Rotom uit Pokopia** (zie `dj_rotom/inspiratie/`); alleen de pixels zijn eigen werk in Gen 3-stijl.
 - Opdracht: laat een agent ze onafhankelijk keuren tegen echte Pokémon-sprites (wat maakt ze 'fakemon' in plaats van Pokémon?).
+- **Na de keuring (Jordi, 23 okt):** eens dat de fout in het ontwerp zit. Conceptueel ziet hij de starters wel zitten; ontwerp ze meer in Pokémon-stijl. **Cuyby helemaal opnieuw** (er is nog geen concept goedgekeurd). Volgende ronde = ontwerpronde zonder pixels (3 concepten per soort, Jordi kiest).

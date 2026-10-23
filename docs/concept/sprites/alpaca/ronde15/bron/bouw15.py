@@ -1,5 +1,6 @@
 """Ronde 15: ronde 13 pixel voor pixel + B (vlechtpuntjes, iets groter, met knoopje) + C (aguayo-band,
-iets breder, twee rijtjes) + het verre oog als smalle zwarte streep op de neusbrug.
+iets breder, twee rijtjes) + het verre oog als smalle zwarte streep op de neusbrug
++ reparatie linkervoorpoot (smaller, los van de verre voorpoot).
 Gebruik (vanuit de repo-root): python3 docs/concept/sprites/alpaca/ronde15/bron/bouw15.py
 Leest bron/palet.txt, bron/r13_f1.txt, bron/r13_f2.txt (kopie van ronde 13) en de overlay hieronder;
 schrijft anim_front.png + normal.pal + bron/r15_f1.txt/r15_f2.txt en controleert open randen.
@@ -36,6 +37,15 @@ VLECHT = [
     (14, 35, 'vK'),
     (15, 35, 'K'),
 ]
+# Reparatie linkervoorpoot (Jordi, 23 okt: "zit vast aan een ander en is breder"): de nabije voorpoot
+# x17-24 y41-43 wordt 4 px breed (V W v K) zoals de verre voorpoot, schuin 1 px per rij naar de manchet,
+# rij 43 1 px breder (VWwvK) zoals de verre poot uitloopt in zijn manchet. '_' = transparant maken;
+# daardoor ligt 3 kolommen lucht tussen de poten. Vuist en manchet (y44-54) onveranderd.
+POOT = [
+    (41, 19, 'VWvK_'),
+    (42, 18, 'VWvK___'),
+    (43, 17, 'VWwvK___'),
+]
 AGUAYO = [
     (26, 23, 'MYTYTs'),
     (27, 23, 'vMMMs'),
@@ -63,7 +73,7 @@ def toepas(g, hints, f2):
             y += 1
         for i, c in enumerate(px):
             if c != '.':
-                g[y][x + i] = c
+                g[y][x + i] = '.' if c == '_' else c
     return g
 
 
@@ -99,7 +109,7 @@ def bouw(hints, uit):
     return im, a, b
 
 
-im, a, b = bouw(VLECHT + AGUAYO + STREEP, 'ronde15')
+im, a, b = bouw(VLECHT + AGUAYO + STREEP + POOT, 'ronde15')
 im.save(os.path.join(D, 'anim_front.png'), transparency=0)
 with open(os.path.join(D, 'normal.pal'), 'w', newline='\r\n') as fh:
     fh.write('JASC-PAL\n0100\n16\n')

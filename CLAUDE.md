@@ -50,6 +50,7 @@ Algemene lessen staan hieronder; de rest is per onderwerp opgesplitst. **Lees he
 |---|---|
 | Kaarten, tilesets, events, routes/grotten/steden bouwen | `docs/lessen/KAARTEN.md` |
 | Sprites, trainerfoto's, vormen, kleurvarianten | `docs/lessen/GRAPHICS.md` |
+| Nieuwe Pokémon ontwerpen (fakemon, regional forms) | `docs/lessen/FAKEMON_DESIGN.md` (vóór elke ontwerp-/spriteronde) |
 | C-code: gevechten, UI, eigen schermen, scripts | `docs/lessen/CODE.md` |
 | Transities, klasse-intro's, films | `docs/lessen/INTROS.md` |
 | Muziek en samples | `docs/lessen/MUZIEK.md` (+ `tools/grounded/MUZIEK.md`) |

@@ -58,7 +58,13 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Pauw met carnavalsinspiratie** (Jordi, 22 okt: misschien, fakemon of regional form). Inspiratie: de verenpakken van de sambascholen in Rio (*destaques* met enorme verenwaaiers op de rug). Pauwen komen niet uit Zuid-Amerika (immersie). Voorstel van Claude: baseer hem op de **zonneral** (*Eurypyga helias*, Amazone). In Brazilië heet die *pavãozinho-do-pará*, 'pauwtje van Pará': een onopvallende vogel die bij dreiging zijn vleugels openslaat en twee grote zon-'ogen' toont. Een carnavalsdanser die zich pas op het podium onthult; Dancer- of Intimidate-achtige vibe. Type nog open.
 - **Vaste lijst:** lama, alpaca, vicuña, guanaco, coati, capibara, condor, pinguïns (naast Eiscue; meerdere pinguïns is geen probleem, Jordi). Eiscue is de koudeminnende pinguïn (Patagonië/ijs); de fakemon kan juist een pinguïn van een **milder klimaat** zijn, zoals de Humboldtpinguïn (Peru/Chili) of de Galápagospinguïn (Ecuador), Jordi.
 
-- **Ongebruikte Game Freak-ontwerpen** (Jordi, 22 okt): Jordi overweegt een paar ongebruikte/geschrapte ontwerpen van Game Freak uit te werken; hij kiest zelf welke.
+- **Ongebruikte Game Freak-ontwerpen** (Jordi, 22 okt): Jordi overweegt een paar ongebruikte ontwerpen uit de Gold/Silver-beta (Spaceworld 1997) uit te werken; hij kiest zelf welke. Bron: `docs/concept/sprites/spaceworld/spaceworld97_152-251.webp` (sprites en prototypenamen via @obskyr/@TeamSpaceworld). Opties die Jordi noemt (23 okt):
+  - **Norowara** (#229) en **Kyonpan** (#230);
+  - de **tank-versie van Octillery** (#210-beta);
+  - de **andere Delibird** (#225 Gifuto, de cadeau-vogel);
+  - **Kotora** en **Raitora** (#226/#227, het tijgerwelpje en de bliksemtijger);
+  - **Purakkusu** (#234).
+  - Voor ons gebruik: ze opnieuw als Gen 3-sprite tekenen in onze stijl (niet de beta-sprites zelf gebruiken), met een plek in de regio (Raitora als Electric-tijger is een mooie Zuid-Amerikaanse Electric-kat naast de jaguar-idee; Octillery-tank kan in een havenstad of militaire basis).
 
 ## Regional forms (besloten)
 - **Hitmontop-regional form: capoeira** (Jordi, als extra Fighting). Hitmontop draait al op zijn kop; capoeira heeft precies die bewegingen (de *pião de cabeça*-kopspin, de *ginga*, de *meia lua*-trappen). Inspiratie: Afro-Braziliaanse vechtkunst vermomd als dans, met berimbau-muziek. Daarom gaat capoeira níet naar de alpaca-lijn (fase 2 wordt een andere vechtsport). **Zonder de rest van de Tyrogue-lijn** (Tyrogue, Hitmonlee, Hitmonchan niet in de dex). Open (Jordi): misschien krijgt de capoeira-Hitmontop een **eigen evolutie**.

@@ -1,0 +1,18 @@
+# Alpaca ronde 12. Vacht: crème, schaduwen schuiven naar oudroze en mauve, omlijning pruim
+# (hue-shift zoals Altaria/Swablu/Zangoose en de witte vacht van de Cuyby-evolutie ronde 2).
+. 152 208 160              # 0 transparant
+K 40 22 40 zwart           # 1 omlijning schaduwkant, ogen
+W 255 250 236              # 2 vacht hooglicht
+w 242 224 192              # 3 vacht basis (crème)
+v 210 166 166 omlijning    # 4 vachtschaduw 1 (oudroze), ook omlijnings-hooglicht
+u 152 108 136 omlijning    # 5 vachtschaduw 2 (mauve)
+V 100 66 98 omlijning     # 6 vachtomlijning (pruim)
+R 255 140 120              # 7 vuist hooglicht
+r 226 58 64                # 8 vuist (rode wol)
+s 162 30 62 omlijning      # 9 vuist schaduw (naar magenta)
+S 96 22 50 omlijning       # 10 vuist omlijning
+M 222 48 132               # 11 weefband magenta
+Y 248 192 48               # 12 weefband geel
+T 32 172 168               # 13 weefband turquoise
+P 246 158 176              # 14 roze (oor binnenkant)
+B 104 92 150               # 15 oogreflectie

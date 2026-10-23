@@ -72,3 +72,9 @@ Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.p
 - Level-up-moves: 1–2 startmoves (zwak, meestal Normal, ≤ 40–50 kracht), een vast ritme van levels (bijv. om en om 2 en 4), na evolutie ruimer; nooit meer dan 3 statusmoves op rij.
 - Sekseverschillen alleen als de soort daar reden voor geeft; bij dieren is het mannetje meestal het opvallendste, geen menselijke stereotypen.
 - Naam: meestal een samentrekking van een woord voor het type en een woord voor het basisdier/-voorwerp; niet te obscuur.
+
+## 11. Werkwijze-lessen uit de praktijk
+- **Rasters met de hand, maar controleerbaar** (nachtaap ronde 8): schrijf rijen als run-length (`3.2V4h`) of als `x:pixels` met absolute x en laat het script de breedte controleren; tellen in lange tekstrijen gaat anders steeds mis. Lagen (staart, lijf, kop) los, achter naar voor.
+- **Itereer op het geheel**: render na elke grote stap op 8× en op 1×; de eerste versie van de nachtaap was 1305 px en leek een kist (rechte rug, horizontale armbalk). Kleiner tekenen en de armen in een V zetten loste dat op.
+- **Gelijke kleur naast gelijke kleur verdwijnt**: violette armen op een violet lijf lazen niet; een crème borst erachter wel.
+- **Een gekleurde ronde punt leest als een oog**: geef staartpunten niet de oogkleur.

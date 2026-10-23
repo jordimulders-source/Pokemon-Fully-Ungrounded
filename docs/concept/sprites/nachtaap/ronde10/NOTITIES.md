@@ -29,3 +29,6 @@ Geen herontwerp: lijf en kop zijn gebleven (Jordi tevreden). Uitgevoerd: punt 1 
 ## Bestanden
 - `anim_front.png` (64×128, 2 frames), `normal.pal`, `compare.png`.
 - `bron/delen.txt`, `bron/palet.txt`, `bron/raster_f1.txt`/`raster_f2.txt`, `bron/bouw9.py`, `bron/zet.py`, `bron/patches/p1`–`p6`, `bron/vergelijk10.py` (python3 bron/vergelijk10.py <nachtaapmap>).
+
+## Oordeel Jordi (23 okt)
+Pose goedgekeurd: "hij lijkt dynamisch genoeg zo, we zitten er niet frontaal op." Geen vormronde nodig.

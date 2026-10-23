@@ -10,3 +10,6 @@ Waarom het werkt (analyse Claude):
 - **Kleine mond (`:3`)** en geen neus: het gezicht blijft niet-menselijk.
 - **Verhoudingen:** de kop is veel groter dan het lijf (schattig), het silhouet is herkenbaar aan kuif + wangpunten + rok.
 - **Les voor de nachtaap:** ongewone ogen mogen, als ze simpel, groot en in de palet-accentkleur zijn en het hele gezicht dragen (vgl. Jigglypuff, Scream Tail, Espurr).
+
+## Cuyby (onze eigen, goedgekeurd: `docs/concept/sprites/cuyby/ronde3/`)
+Jordi (23 okt): "Cuyby is bijv. een succesvolle fakemon." Waarom (Claude): van nul ontworpen (geen oud spritewerk gerepareerd), één overdreven kenmerk (de langhaarbol met lokken), drie strakke kleurvlakken, grote kop, simpele ogen, gepolijst met de regels uit de spriting-gids. Gebruik hem als maatstaf voor nieuwe fakemon.

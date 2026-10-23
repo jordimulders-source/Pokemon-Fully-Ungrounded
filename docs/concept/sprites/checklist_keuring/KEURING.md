@@ -1,9 +1,11 @@
-# Keuring tegen FAKEMON_CHECKLIST.md: Cuyby, Cuychu, nachtaap, alpaca (23 okt)
+# Keuring tegen FAKEMON_CHECKLIST.md: Cuyby, Cuychu, nachtaap, alpaca, olinguito (23 okt)
+
+**Alles in één vel: `OVERZICHT.png`.** Per rij één sprite op 1× en 3×, daarnaast 3 referenties op 2×, het oordeel en de top-voorstellen.
 
 Alle vier zijn door Jordi goedgekeurd. Deze keuring verandert niets aan de sprites: ze meet ze tegen de nieuwe checklist (A–E + bouwtype) en zet voorstellen klaar waaruit Jordi kan kiezen. Wat in NOTITIES.md staat als bewuste keuze van Jordi, telt niet als fout. Het wordt wel genoemd als een punt daardoor niet volledig voldoet.
 
 - **Meting:** `vormstudie/tools` (`metrics()` en `shape()`), frame 1. Coördinaten zijn (x, y) in het 64×64-frame.
-- **Vellen:** `cuyby.png`, `cuychu.png`, `nachtaap.png`, `alpaca.png`. Elk vel toont rij 1 op 1×, rij 2 op 3× en rij 3 als silhouet op 2×. De eigen sprite staat links, daarnaast 3 echte sprites van hetzelfde bouwtype.
+- **Vellen:** `cuyby.png`, `cuychu.png`, `nachtaap.png`, `alpaca.png`, `olinguito.png` (naast Galar-Linoone, Poochyena en Sandslash). Elk vel toont rij 1 op 1×, rij 2 op 3× en rij 3 als silhouet op 2×. De eigen sprite staat links, daarnaast 3 echte sprites van hetzelfde bouwtype.
 - **Pixelaantallen** in de voorstellen zijn schattingen. **Klein** betekent < 30 px en raakt geen goedgekeurde vorm. **Groot** betekent dat vorm, pose of verhouding verandert.
 
 ## Overzicht metingen
@@ -236,6 +238,57 @@ Sjabloon:
 3. **C4 – knik in de nabije voorpoot (klein, ±6–8 px).** De poot schuift op y42 1 px naar rechts en eronder weer terug, zodat er een knie ontstaat. *Raakt:* de poot die net op Jordi's verzoek gerepareerd is. Alleen als Jordi dat wil.
 4. **B6/A6 – hals schuin naar voren en taps (groot, 60–100 px).** Bovenste deel van de hals (y20–26) 1–2 px naar links. Onderaan bij de borst 1–2 px breder, bovenaan 1 px smaller. De kop schuift 1–2 px mee naar links en zit schuin op de hals. *Raakt:* de goedgekeurde hals- en kopstand en de aguayo-band (die schuift mee). Grootste winst richting "echte Pokémon" (Ponyta en Mudbray op het vel), maar alleen als variant naast ronde 15.
 5. **D2 – grotere kop (groot).** **Niet aanbevolen:** dat verandert de goedgekeurde verhouding en botst met de langnek-regel.
+
+---
+
+## 5. Olinguito (stap 1, kop in Galar-Linoone-constructie): **nog niet; het lijf is te groot en te volwassen voor fase 1**
+
+`olinguito/stap1_kop/anim_front.png`. De kop wordt in stap 1b nog aangepast; die is hier alleen kort beoordeeld. Leidraad: Galar-Linoone (AFGEKEURD.md). Jordi wil de achterpoot rechts anders en de klauwen meer in Sandslash-stijl.
+
+Sjabloon:
+- Bouwtype: kleine viervoeter/marter.
+- Fase: 1.
+- Type: Dark; dief.
+- Pose: P3 (laag) of P1-laag.
+- Skelet: Galar-Linoone, Poochyena, Nickit; voor de klauwen Sandslash.
+- Snuit: lang, één oog.
+- Kenmerk: J-staart met haak; masker.
+- Tegenwicht: staart rechts.
+
+| Punt | H/R | Voldoet | Meting | Toelichting |
+|---|---|---|---|---|
+| A1 | H | ja | | Snuitdier/marter met masker; op 1× een wasbeerachtig dier. |
+| A2 | H | ja | J-staart x50–62, y33–51 | Breekt de omtrek rechts; de haak is op 1× te zien. |
+| A3 | H | deels | head-index −0,18 | Kop linksboven, massa rechts. De staart hangt omlaag, dus het tegenwicht staat rechts(onder), niet rechtsboven. |
+| A4 | H | ja | sol 0,727 | Galar-Linoone 0,76, Poochyena 0,75. |
+| A5 | H | ja | sym 0,475 | |
+| A6 | R | deels | onderkant kop/kaak recht op y38, x19–33 (±14 px); rechter achterpoot een rechte kolom x44–49, y46–53 | |
+| B1–B7 (kort) | H | ja | | Eén oog, de neus is het meest linkse punt (x9) en de snuit wijst naar links-onder. De kop overlapt het lijf. Stap 1b loopt nog. |
+| C1 | H | ja | 4 poten, 2 oren, 1 oog, staart | |
+| C2 | H | deels | voeten: nabije voorklauw y55 (laagst, meest links), verre voorklauw y46, verre achtervoet x35–42 y51, nabije achtervoet x42–49 y54 | Er zijn 4 hoogtes. De verre voorpoot staat 9 px hoger (doel 1–3) en raakt de grond niet. |
+| C3 | H | deels | voorpoten x16–30, onder de kop | De voorpoten zitten onder de kin in plaats van onder de schouder (±x32). Bij Galar-Linoone en Poochyena staan ze onder de borst. |
+| C4 | H | **nee** | rechter achterpoot x42–49, y45–54: rechte stok zonder hak | Jordi: "bevalt steeds minder". Galar-Linoone en Poochyena hebben een hak naar achteren. |
+| C5 | H | deels | | De voorpoten groeien onder de kaak uit. Er is geen schouderbolling te zien. |
+| C6 | H | deels | | De verre achterpoot staat in schaduwtint (goed). De verre voorpoot heeft dezelfde tint als de nabije. |
+| C7 | H | **nee** | verre voorklauw (x12–22, y40–46) hangt 9 px boven de grond | Hij grijpt in de lucht terwijl de rest staat (STUDIE punt 14). |
+| C8 | R | ja | | De staart zet bovenaan de heup aan en loopt in een boog naar de haak (J-staart, goedgekeurd). |
+| C9 | R | deels | kop top y19, rug y32 | De kop staat hoog boven de rug. Dat leest als nieuwsgierig of alert, niet als sluipende dief (P3: kop op schouderhoogte). |
+| D1 | H | **nee** | 1118 px (fase 1: 700–950); box 54×37 (±40) | |
+| D2 | H | ja (grens) | kop y19–38 = 54% | |
+| D3 | H | **nee** | romp x30–56, lang en horizontaal | Volwassen marter; geen compacte boonromp. |
+| D4 | R | **nee** | breedte 54 (max 48) | |
+| E1 | R | deels | | Zie C6. |
+| E2 | R | ja | | |
+| E3 | R | ja (Dark) | 0,547 | Ver boven de band, maar dat mag bij een donkere vacht. Galar-Linoone heeft 0,538. |
+
+Klauwen vergeleken met Sandslash: Sandslash heeft per hand 2–3 **brede, gebogen** klauwen (basis 2–3 px, taps, licht met een donkere omlijning) die als driehoekjes lezen. Onze klauwen zijn dunne grijze streepjes van 1 px (x10–22, y43–55) en lezen als hark of naalden.
+
+**Voorstellen:**
+1. **C4 – rechter achterpoot met hak (klein tot middel, 20–30 px).** Hak op y48–49 1–2 px naar rechts (achter), de voet eronder 1–2 px terug naar links en de zool 3–4 px plat naar voren, zoals bij Poochyena en Galar-Linoone. *Raakt:* de achterpoot uit ronde 15–16; Jordi wil die anders (stap 2).
+2. **Klauwen in Sandslash-stijl (klein tot middel, 25–35 px).** Nabije poot: 3 klauwen, elk 2 px breed aan de basis en 3–4 px lang, met een buiging naar onder-links, in crème/wit (11/12) met omlijning 9. Verre poot: 2 kleinere, grijze klauwen (9/10). *Raakt:* de klauwen uit ronde 15–16 (stap 3).
+3. **C7 – verre voorpoot naar de grond (klein, ±25 px).** De verre poot zakt naar y50–52, achter en rechts van de nabije, 1–3 px hoger en in schaduwtint. Alle vier de poten dragen dan, of de pose wordt bewust "zittend met gevouwen klauwen" (ontwerp Haakstaart). *Raakt:* de pose van de voorpoten.
+4. **D1/D3/D4 – romp 6–8 px korter (groot).** De achterpoten en de J-staart pixel voor pixel knippen en 6–8 px naar links plakken, daarna rug en buik opnieuw sluiten. Dan wordt hij ±47 breed en ±1000 px. Onder 950 komt hij met kleinere klauwen. *Raakt:* de lijflengte (ronde 15–16). De staart blijft letterlijk gelijk.
+5. **C9 – kop 2–3 px lager, op schouderhoogte (groot).** *Raakt:* de kop. Niet doen tijdens stap 1b; pas daarna overwegen.
 
 ---
 

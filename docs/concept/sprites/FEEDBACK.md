@@ -51,3 +51,4 @@
 - **Olinguito:** staart en klauw zijn heel raar; het lichaam is wel beter; de ogen zijn wederom zwak.
 - **Nachtaap:** staat nu wel beter, maar is gewoon geen nachtaap meer.
 - **Jordi neigt naar de starters from scratch** ("terug naar de tekentafel, naar het concept"): de agents limiteren zichzelf en proberen iets te fixen wat kapot is. Volgende keer agents níet de oude rondes als vertrekpunt geven.
+- **Aanvulling (Jordi):** de **kleuren zijn nu beter** en het **spritewerk zelf is goed** (de techniek uit de gids werkt); het probleem is dat ze **niet mooi** zijn (ontwerp). Alpaca: **schattiger en meer fluffy**. Olinguito: **niet donker genoeg**; voor de klauwen kijken naar **Drilbur en Sandslash**.

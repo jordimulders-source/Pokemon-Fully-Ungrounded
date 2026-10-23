@@ -39,3 +39,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Starterkeuze is tijdelijk Bramblin/Charcadet/Quaxly; testmon in CLAUDE.md is nu Mewtwo.
 - **Sprites:** starters ronde 5 (nachtaap: lijf ronde 4 + nieuwe ogen; olinguito: met de hand per pixel, Hoenn-starterformaat).
 - **Concept:** `FAKEMON_PITCH.md` (100 pitches), Spaceworld-ontwerpen (Norowara, Kyonpan vrijwel zeker; Raitora als jaguar), gymlevels, routeplan.
+
+### [v0.0.8] - Eerste Fully Ungrounded-muziek, regiokaart 3, sprites Cuyby en DJ Rotom
+- **Muziek:** gedeelde Zuid-Amerikaanse instrumentenset (`tools/grounded/fu_samples.py`, 39 samples in `sound/direct_sound_samples/fu/`, voicegroup `fu`): charango, quena, zampoña, accordeon, trombone, nylongitaar, cuíca, 808-bas, supersaw, en slagwerk (dembow, bombo, cajón, bongó, conga's, güiro, shaker, claves, caixa, surdo, tamborim, agogô, apito). Zes originele schetsen als songs 611–616 (`tools/grounded/fu_themes.py`): instrumentendemo, altiplano-route, wild gevecht (Andes), La Paz, reggaeton-bende, samba; nog niet aan kaarten gekoppeld. Previews in `docs/concept/muziek/previews/`. Kosten ±205 KB.
+- **Regiokaart variant 3** (`tools/concept/regiokaart3.py`, `docs/concept/regiokaart3_namen.png`): alle gyms, hoofdpad volgens het routeplan, spoor Uyuni–Oruro–La Paz, legenda met plekken zonder icoon. Variant 2 blijft de basis tot Jordi kiest.
+- **Sprites:** alpaca ronde 5; Cuyby ronde 1 (A: kuif/rozet, B: Andesmuts); DJ Rotom ronde 1. Overzichten in `docs/concept/sprites/starters_fase1_ronde5.png` en `cuyby_djrotom_ronde1.png`.
+- ROM: 18,32 MB vrij.

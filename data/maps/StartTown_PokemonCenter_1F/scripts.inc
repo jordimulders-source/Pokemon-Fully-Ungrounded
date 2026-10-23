@@ -5,7 +5,6 @@ StartTown_PokemonCenter_1F_MapScripts::
 
 StartTown_PokemonCenter_1F_OnTransition:
 	setrespawn HEAL_LOCATION_START_TOWN
-	call Common_EventScript_UpdateBrineyLocation
 	end
 
 StartTown_PokemonCenter_1F_EventScript_Nurse::

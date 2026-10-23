@@ -1,5 +1,5 @@
 @ Gegenereerd door tools/grounded/maptools/map_compat.py, niet met de hand bewerken.
-@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (606).
+@ Fully Ungrounded: stubs voor labels uit verdwenen kaartscripts die elders nog gebruikt worden (603).
 @ Opruimen per systeem (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen.
 
 BattleFacility_TrainerBattle_PlaceholderText::
@@ -1760,9 +1760,6 @@ BattlePyramid_TrainerBattle::
 BattlePyramid_WarpToNextFloor::
 	end
 
-Common_Text_LookCloserAtMap::
-	.string "$"
-
 DewfordTown_Hall_EventScript_Painting::
 	end
 
@@ -1770,12 +1767,6 @@ DewfordTown_Text_FishJudgeRules::
 	.string "$"
 
 EventScript_RegisterProfBirch::
-	end
-
-Ferry_EventScript_DepartIslandSouth::
-	end
-
-Ferry_EventScript_DepartIslandWest::
 	end
 
 Kecleon_Text_SomethingUnseeable::

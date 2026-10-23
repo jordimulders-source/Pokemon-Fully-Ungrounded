@@ -5,7 +5,7 @@
 // Fully Ungrounded: verdwenen Hoenn-kaarten die de code nog noemt. Elke kaart heeft een eigen waarde in een
 // groep die niet bestaat (0x40 + oude groep), dus een test erop is nooit waar. Opruimen per systeem
 // (PLAN_HOENN_ERUIT.md, stap 7) laat deze lijst krimpen tot hij leeg is en weg kan.
-// 65 kaarten, 16 layouts, 1 heal locations, 39 local ids.
+// 65 kaarten, 16 layouts, 1 heal locations, 36 local ids.
 
 // kaarten
 enum {
@@ -130,9 +130,6 @@ enum {
     LOCALID_LILYCOVE_LADYS_MON = 0xF0,
     LOCALID_PIKE_ROOM_NPC_1 = 0xF0,
     LOCALID_PIKE_ROOM_NPC_2 = 0xF0,
-    LOCALID_PLAYERS_HOUSE_1F_MOM = 0xF0,
-    LOCALID_RUSTURF_TUNNEL_WANDA = 0xF0,
-    LOCALID_RUSTURF_TUNNEL_WANDAS_BF = 0xF0,
     LOCALID_TOWER_LOBBY_REPORTER = 0xF0,
     LOCALID_UNION_ROOM_PLAYER_1 = 0xF0,
     LOCALID_UNION_ROOM_PLAYER_2 = 0xF0,

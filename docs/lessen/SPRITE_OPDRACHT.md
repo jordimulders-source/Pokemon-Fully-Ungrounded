@@ -34,11 +34,12 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Met de hand tekenen (pixel-over/tekst-raster), geen automatische vormen of shading in het eindresultaat.
 
 ## 3. Vóór opleveren
+- **Harde regel – geen nepfixes (Jordi):** een reparatie die het gezicht of het geheel in een gedrocht verandert, is geen klein foutje maar onacceptabel. Zet het resultaat op 1× en 3× **naast de laatst goedgekeurde versie**: oogt het gezicht vreemder, minder schattig of minder als dezelfde Pokémon, dan lever je het **niet** op. Ga terug naar de goedgekeurde versie en los het kleiner op, of meld eerlijk dat het niet lukt.
 - Loop §0 en de lijst hierboven punt voor punt na in NOTITIES.md (ok / wat je deed).
 - **Bekijk je resultaat zelf op 1× en 3× naast 2–3 echte sprites** en schrijf eerlijk op wat nog niet klopt.
 - Lessen onder "Lessen" in je NOTITIES.md (Claude zet ze over); niet in SPRITING.md schrijven, niet committen tenzij gevraagd.
 
 ## 4. Claude (coördinator)
 - Plak de verwijzing naar dit bestand in elke sprite-opdracht en geef bij reparaties een pixelbudget en de lijst bevroren delen mee.
-- **Bekijk elk resultaat zelf** (1× en 3×) vóór het naar Jordi gaat; stuur terug wat duidelijk niet klopt.
+- **Bekijk elk resultaat zelf** (1× en 3×, naast de laatst goedgekeurde versie) vóór het naar Jordi gaat. Een gezicht of geheel dat slechter oogt dan de vorige goedgekeurde versie gaat **nooit** naar Jordi: terugsturen of de vorige versie houden.
 - Nieuwe terugkerende feedback van Jordi meteen in §2 hierboven zetten.

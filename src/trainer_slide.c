@@ -115,24 +115,21 @@ static u32 GetPartyMonCount(u32 lastId, struct Pokemon *party, bool32 onlyAlive)
 
 static const u8 *GetTrainerSlideText(enum DifficultyLevel difficulty, u32 trainerId, u32 slideId)
 {
-    u32 i;
-
-    if (TESTING)
-    {
-        const u8 *text = sTestTrainerSlides[difficulty][trainerId][slideId];
-        return text != NULL ? text : sTestTrainerSlides[DIFFICULTY_NORMAL][trainerId][slideId];
-    }
 #if TESTING
-    return (FlagGet(TESTING_FLAG_TRAINER_SLIDES) ? sTestTrainerSlides[difficulty][trainerId] : NULL);
+    if (!FlagGet(TESTING_FLAG_TRAINER_SLIDES) || VarGet(TESTING_VAR_TRAINER_SLIDES) != slideId)
+        return NULL;
+    const u8 *text = sTestTrainerSlides[difficulty][trainerId][slideId];
+    return text != NULL ? text : sTestTrainerSlides[DIFFICULTY_NORMAL][trainerId][slideId];
 #else
     if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)
         return NULL;
-    for (i = 0; i < ARRAY_COUNT(sTrainerSlideEntries); i++)
+    for (u32 i = 0; i < ARRAY_COUNT(sTrainerSlideEntries); i++)
     {
         if (sTrainerSlideEntries[i].trainerId == trainerId && sTrainerSlideEntries[i].slideId == slideId)
             return sTrainerSlideEntries[i].text;
     }
     return NULL;
+#endif // TESTING
 }
 
 static bool32 DoesTrainerHaveSlideMessage(enum DifficultyLevel difficulty, u32 trainerId, u32 slideId)

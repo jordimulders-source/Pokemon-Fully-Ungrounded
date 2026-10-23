@@ -1048,7 +1048,8 @@ static const struct InGameTrade sIngameTrades[] =
         .otGender = FEMALE,
         .sheen = 10,
         .requestedSpecies = SPECIES_MACHOKE
-    [INGAME_TRADE_MR_MIME] = 
+    },
+    [INGAME_TRADE_MR_MIME] =
     {
         .nickname = _("MIMIEN"),
         .species = SPECIES_MR_MIME,

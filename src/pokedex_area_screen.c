@@ -296,6 +296,7 @@ static void FindMapsWithMon(enum Species species)
             return;
     }
 
+    currentRegionMapType = GetRegionMapType(gMapHeader.regionMapSectionId);
     // Add regular species to the area map
     for (i = 0; gWildMonHeaders[i].mapGroup != MAP_GROUP(MAP_UNDEFINED); i++)
     {
@@ -313,7 +314,6 @@ static void FindMapsWithMon(enum Species species)
             case MAP_TYPE_ROUTE:
             case MAP_TYPE_UNDERWATER:
             case MAP_TYPE_OCEAN_ROUTE:
-            case MAP_GROUP_TOWNS_AND_ROUTES_FRLG:
                 SetAreaHasMon(gWildMonHeaders[i].mapGroup, gWildMonHeaders[i].mapNum);
                 break;
             default:

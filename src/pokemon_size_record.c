@@ -100,7 +100,7 @@ static u32 GetMonSize(enum Species species, u16 b)
 // hash en tabel als de Lotad/Seedot-meter. Gebruikt door het visserstoernooi (fishing_tournament.c).
 u32 GetMonSizePermille(struct Pokemon *mon)
 {
-    u32 b = (u16)GetMonSizeHash(mon);
+    u32 b = (u16)GetBoxMonSizeHash(&mon->box);
     u32 idx = TranslateBigMonSizeTableIndex(b);
     u32 base = sBigMonSizeTable[idx].unk4;
 

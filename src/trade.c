@@ -3089,15 +3089,9 @@ static void TradeMons(u8 playerPartyIdx, u8 partnerPartyIdx)
     else
         playerMon = &gParties[B_TRAINER_PLAYER][playerPartyIdx];
 
-    // u16 playerMail = GetMonData(playerMon, MON_DATA_MAIL); // Verwijderen/commenten
     partnerMon = &gParties[B_TRAINER_OPPONENT_A][partnerPartyIdx];
-    // u16 partnerMail = GetMonData(partnerMon, MON_DATA_MAIL); // Verwijderen/commenten
 
-    // De mail die bij de verstuurde Pokémon hoort bestaat niet meer in je file.
-    // Omdat MAIL_COUNT 0 is, mag deze array niet aangeraakt worden.
-    /* if (playerMail != MAIL_NONE)
-        ClearMail(&gSaveBlock1Ptr->mail[playerMail]);
-    */
+    // Project Grounded: mail staat uit (MAIL_COUNT 0), dus de mail-array niet aanraken.
 
     SWAP(*playerMon, *partnerMon, sTradeAnim->tempMon);
 
@@ -3107,21 +3101,6 @@ static void TradeMons(u8 playerPartyIdx, u8 partnerPartyIdx)
     if (!GetMonData(playerMon, MON_DATA_IS_EGG))
         SetMonData(playerMon, MON_DATA_FRIENDSHIP, &friendship);
 
-    /*
-    if (partnerMail != MAIL_NONE)
-    {
-        if (playerPartyIdx == PC_MON_CHOSEN)
-        {
-            //TODO: add message explaining mail has been send to PC OR couldn't be saved
-            SaveMailToPC(&gTradeMail[partnerMail]);
-            TakeMailFromMon(playerMon);
-        }
-        else
-        {
-            GiveMailToMon(playerMon, &gTradeMail[partnerMail]);
-    */
-        }
-    }
     UpdatePokedexForReceivedMon(playerPartyIdx);
     if (playerPartyIdx == PC_MON_CHOSEN)
         CopyMonToPC(playerMon);

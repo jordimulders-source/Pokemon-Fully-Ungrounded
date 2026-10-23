@@ -7071,7 +7071,10 @@ void ItemUseCB_RotomAppliance(u8 taskId, TaskFunc task)
             form = 0; // nog eens gebruiken: terug naar gewone Rotom
         gSpecialVar_Result = form;
         gSpecialVar_0x8000 = sRotomApplianceMoves[form];
-        targetSpecies = GetFormChangeTargetSpecies(mon, FORM_CHANGE_ITEM_USE_MULTICHOICE, ITEM_ROTOM_CATALOG);
+        u16 savedItemId = gSpecialVar_ItemId;
+        gSpecialVar_ItemId = ITEM_ROTOM_CATALOG;
+        targetSpecies = GetFormChangeTargetSpecies(mon, FORM_CHANGE_ITEM_USE_MULTICHOICE);
+        gSpecialVar_ItemId = savedItemId;
     }
 
     if (targetSpecies != currentSpecies)

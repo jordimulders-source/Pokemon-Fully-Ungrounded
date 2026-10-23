@@ -53,7 +53,7 @@ static u16 DexInfoSpecies(void);
 static void SetDexInfoSpecies(u16 species);
 static bool32 DexFormSeen(u16 species);
 static u16 CreateDexInfoMonSprite(s16 x, s16 y, u16 paletteSlot);
-static u32 GetPokedexMonPersonality(u16 species);
+static u32 GetPokedexMonPersonality(enum Species species);
 
 COMMON_DATA void (*gPokedexVBlankCB)(void) = NULL;
 

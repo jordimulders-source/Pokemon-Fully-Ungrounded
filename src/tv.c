@@ -1345,7 +1345,7 @@ void TryPutSmartShopperOnAir(void)
     TVShow *show;
     u8 i;
 
-    if (!rbernoulli(1, 3))
+    if (RandomChance(RNG_NONE, 1, 3))
     {
         sCurTVShowSlot = FindFirstEmptyRecordMixTVShowSlot(gSaveBlock1Ptr->tvShows);
         if (sCurTVShowSlot != -1 && !IsRecordMixShowAlreadySpawned(TVSHOW_SMART_SHOPPER, FALSE))

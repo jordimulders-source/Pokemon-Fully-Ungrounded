@@ -1203,6 +1203,8 @@ void InitTilesetAnim_UnchartedIsle(void)
     sSecondaryTilesetAnimCounter = 0;
     sSecondaryTilesetAnimCounterMax = sPrimaryTilesetAnimCounterMax;
     sSecondaryTilesetAnimCallback = TilesetAnim_UnchartedIsle;
+}
+
 // FRLG anims
 
 // palette: general 00

@@ -55,29 +55,12 @@ void TakeMailFromMon(struct Pokemon *mon)
 u8 SaveMailToPC(struct Mail *mail)
 {
     // Doet niets
-}
-
-u8 TakeMailFromMonAndSave(struct Pokemon *mon)
-{
     return MAIL_NONE;
 }
 
 u8 TakeMailFromMonAndSave(struct Pokemon *mon)
 {
-    enum Item heldItem;
-    u32 mailId, newMailId;
-
-    mailId = GetMonData(mon, MON_DATA_MAIL);
-    newMailId = SaveMailToPC(&gSaveBlock1Ptr->mail[mailId]);
-    if (newMailId != MAIL_NONE)
-    {
-        gSaveBlock1Ptr->mail[mailId].itemId = ITEM_NONE;
-        mailId = MAIL_NONE;
-        SetMonData(mon, MON_DATA_MAIL, &mailId);
-        heldItem = ITEM_NONE;
-        SetMonData(mon, MON_DATA_HELD_ITEM, &heldItem);
-    }
-    return newMailId;
+    return MAIL_NONE;
 }
 
 bool8 ItemIsMail(enum Item itemId)

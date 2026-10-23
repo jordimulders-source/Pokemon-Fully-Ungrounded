@@ -63,6 +63,7 @@ Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.p
 - Shiny = alleen een ander palet; binnen een lijn meestal dezelfde shinykleuren.
 
 ## 10. Uit de fakemon-guide (aanvullend op FAKEMON_DESIGN.md)
+- **Taakverdeling (Jordi, 23 okt):** types, evoluties, stats, moves en naamgeving bepaalt Jordi; hij geeft de richting en Claude werkt het daarna in detail uit met de regels hieronder. Niet zelf voorstellen tenzij hij erom vraagt.
 - Drie soorten fakemon: origineel, tegenhanger van een bestaande, en (pre-)evolutie. Lijkt een idee te veel op een bestaande Pokémon, overweeg het dan in die lijn op te nemen of maak het juist duidelijk anders.
 - Grootte en stadia volgen de game: vroeg = klein eerste stadium (3 stadia als de eindvorm groot is), midden = groter begin, laat = grote losse soort. **Pre-evoluties zijn bijna altijd kleiner, schattiger en eenvoudiger.**
 - Type: liever een nieuwe combinatie, of een type dat soortgelijke Pokémon nog niet hebben. Geen idee? Normal.

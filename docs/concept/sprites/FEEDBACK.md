@@ -58,3 +58,6 @@
 - Alpaca: **bokshandschoenen terug in fase 1**, vanaf fase 2 worden het **kraagjes rond de poten** (zoals eerder besloten).
 - De nieuwe concepten (`docs/concept/ontwerp/STARTERS_CONCEPTEN.md`) zijn **te complex** om fatsoenlijk te spriten. **De eerdere concepten waren in theorie prima; het probleem zat in het spritewerk.**
 - Psychic-concept C: **niet ondersteboven hangen**.
+- **Olinguito (Jordi):** de **klauwen en de snoet** zijn het belangrijkst; die worden **groter bij elke evolutie** (het coati-idee is de hoofdinspiratie).
+- **Nachtaap (Jordi):** in eerste instantie **simpel houden**: een aap met grote ogen, een genezer-concept en de Nazca-staart.
+- Volgende ronde: van nul af aan (geen oude sprites als vertrekpunt), de techniek van ronde 7 behouden.

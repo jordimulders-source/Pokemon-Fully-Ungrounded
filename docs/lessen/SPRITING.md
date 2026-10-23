@@ -203,3 +203,10 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Doos-kop, band-masker en brilogen lezen als fakemon:** kop met vlakke top/rechte achterkant/rechte kin, een rechte maskerrand en rechthoekige ogen in een zwarte lijst. Gen 3: ronde kop, maskerrand met een curve, bovenlid donkerst.
 - **Een kenmerk moet op 1× leesbaar blijven:** een staart als buis met een haakje van 3 px verliest het kenmerk; laat hem taps toelopen met een duidelijke haak.
 - **Bewaak het gekozen concept tijdens reparatierondes:** de olinguito dreef in 15 rondes weg van concept B naar het silhouet van de eigen fase-2-schets.
+
+## 27. Lessen uit olinguito ronde 16 (kop, masker, staart)
+- **Schedel als lijst van (y, links, rechts) met regels voor de vulling, details als overlay-segmenten** (`bron/kop16.py`): de omtrek valt in één oogopslag te controleren op runs, en masker/ogen/snuit liggen er los bovenop. Sneller en foutlozer dan hele rijen tellen.
+- **Een staart met de hand per rij (links, rechts) uitschrijven**, niet met een formule: afronden gaf telkens rechte stukken van 5–6 px.
+- **Een donker masker op een donkere kop wordt leesbaar door wat eromheen ligt:** basis/hooglicht rond de vleugel (schaduw naar de uiterste 2 px van de achterkant), crème wang die onder het oog omhoogkomt en wenkbrauwboogjes. Het lijf hoeft niet lichter.
+- **Een haak leest op 1× pas met lucht in de bocht** (≥ 2 px) en een punt die terug omlaag wijst; een haakje van 3 px zonder gat leest niet.
+- **Oorvoet aan de schaduwkant:** de onderste rij van een oor dat over de schedelomtrek steekt, eindigt ook met de omlijningskleur, anders ontstaat een open rand waar oor en schedel samenkomen.

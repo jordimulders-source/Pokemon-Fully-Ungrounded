@@ -72,3 +72,9 @@ Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.p
 - Level-up-moves: 1–2 startmoves (zwak, meestal Normal, ≤ 40–50 kracht), een vast ritme van levels (bijv. om en om 2 en 4), na evolutie ruimer; nooit meer dan 3 statusmoves op rij.
 - Sekseverschillen alleen als de soort daar reden voor geeft; bij dieren is het mannetje meestal het opvallendste, geen menselijke stereotypen.
 - Naam: meestal een samentrekking van een woord voor het type en een woord voor het basisdier/-voorwerp; niet te obscuur.
+
+## 11. Werkwijze-lessen (olinguito ronde 8)
+- Handwerk als tekstraster per lichaamsdeel (`y: x"pixels"`, achterste deel eerst) met een klein opbouwscript (`docs/concept/sprites/olinguito/ronde8/bron/build.py`); een dump met kolomnummers maakt fouten in rijlengtes direct zichtbaar.
+- Meet het oppervlak al bij de eerste opzet tegen echte Gen 3-sprites (Teddiursa 652, Torchic 782, Mudkip 852, Treecko 967): de eerste olinguito was 1660 px en moest helemaal opnieuw op ¾ schaal.
+- Zwarte kraalogen verdwijnen in een donker masker; een gekleurde iris (goud) met witte glans leest wel op 1×.
+- Drie dunne klauwen lezen als een vork of bezem; twee brede haken die overlappen lezen als één gereedschap (Drilbur).

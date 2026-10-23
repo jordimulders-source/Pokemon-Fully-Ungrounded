@@ -1,0 +1,43 @@
+# Kolibrie: referenties (stap 1, 23 okt)
+
+Brainstormmateriaal; nog geen concept gekozen (Jordi brainstormt eerst). Geen pixelsprite.
+
+## (a) Foto's van echte Zuid-Amerikaanse kolibries
+Downloaden lukte niet: de proxy van deze sessie blokkeert Wikipedia/Wikimedia, Macaulay Library, iNaturalist en Flickr. Daarom alleen links (open ze in de browser; de foto bovenaan de pagina is de bruikbare).
+
+| Soort | Kenmerk voor het silhouet | Link |
+|---|---|---|
+| Zwaardsnavelkolibrie (*Ensifera ensifera*), Andes 1700–3500 m | Snavel ±10 cm, langer dan het lijf zonder staart; houdt de snavel in rust schuin omhoog | https://en.wikipedia.org/wiki/Sword-billed_hummingbird |
+| Reuzenkolibrie (*Patagona gigas*), Andes Ecuador–Chili/Argentinië | Grootste kolibrie (18–24 g, ±21–24 cm); lange smalle vleugels, trage vleugelslag, zweeft soms (zeldzaam bij kolibries); dof bruin | https://en.wikipedia.org/wiki/Giant_hummingbird , https://birdscolombia.com/2019/02/10/colibri-gigante-giant-hummingbird-patagona-gigas/ |
+| Marvelous spatuletail (*Loddigesia mirabilis*), alleen Utcubamba-vallei, N-Peru | Mannetje: twee buitenste staartveren met violetblauwe schijfjes ("rackets"), los van elkaar beweegbaar, 3–4× de lijflengte; bedreigd | https://abcbirds.org/bird/marvelous-spatuletail/ , https://en.wikipedia.org/wiki/Marvelous_spatuletail |
+| Andes-hillstar (*Oreotrochilus estella*), puna 3000–4500+ m | Groen-paarse glanskeel (gorget) op witte borst; overnacht in grotten in torpor | https://en.wikipedia.org/wiki/Andean_hillstar |
+| Bonus: sparkling violetear (*Colibri coruscans*), Andes | Klassieke "kolibrievorm", blauwpaarse oorvlek, zeer algemeen in steden (La Paz, Quito) | https://en.wikipedia.org/wiki/Sparkling_violetear |
+
+Vraag aan Jordi: heb je eigen foto's (bijv. van de reis), zet ze dan hier in `referenties/`.
+
+## (b)+(c) Skelet- en kenmerk-sprites
+`contactvel.png` (2×, uit `graphics/pokemon/`, eerste frame):
+- **Skelet staand/zittend (P11):** Taillow, Starly, Fletchling, Pikipek, Rookidee, Murkrow, Natu, Chatot, Spearow.
+- **Skelet zwevend/vliegend klein:** Swablu, Oricorio, Pidgey, Wattrel, Squawkabilly, Combee, Cutiefly, Ribombee, Ninjask, Celebi. (Er bestaat geen officiële kolibrie-Pokémon; Ribombee/Cutiefly en Ninjask zijn de beste "zwever met wazige vleugels".)
+- **Kenmerk snavel:** Spearow, Fearow, Doduo, Farfetch'd, Flamigo, Pikipek, Toucannon, Trumbeak (Fearow/Doduo/Trumbeak: lange dunne snavel als één lijn).
+- **Kenmerk zweefvleugels:** Ninjask, Yanma, Vibrava, Cutiefly, Ribombee, Beautifly, Mothim (transparant/wazig getekend met lichte vulling en omlijning).
+- **Kenmerk staart:** Taillow, Swellow (gevorkt), Pidgeot, Xatu, Altaria, Chatot, Kilowattrel, Oricorio.
+- **Kenmerk glans/patroon:** Beautifly, Vivillon, Mothim, Sigilyph, Xatu, Swellow, Celebi, Squawkabilly (iriserend = 2 tinten in harde vlakken, geen verloop).
+
+## Mythen, legendes en geschiedenis (om te controleren)
+Betrouwbaarheid: **[goed]** wetenschappelijk/museum, **[matig]** populair/secundair, **[zwak]** commercieel of niet bevestigd.
+
+1. **Guaraní: Mainumby / Maino'i, voeder van de schepper** [matig]. In de Mbyá-Guaraní-scheppingstekst (*Ayvu Rapyta*) fladdert een kolibrie om het hoofd van Ñamandu als die uit de duisternis ontstaat, en voedt hem met nectar; hij heet ook de bode van de dag. Spelling varieert (Mainumby, Maino, Mainõ'ĩ). https://garlandmag.com/article/ayvu-rapyta-selection/ , https://en.wikipedia.org/wiki/Guarani_mythology , https://museudoamanha.org.br/en/events/1149/maino-e-as-cores-do-dia
+2. **Guaraní: kolibrie brengt zielen naar Tupã** [zwak]. In bredere Guaraní-overlevering zou de kolibrie goede zielen die in bloemen wonen naar Tupã brengen. Alleen in overzichtsteksten gevonden. https://en.wikipedia.org/wiki/Guarani_mythology
+3. **Moche (Noord-Peru, ±100–800 n.Chr.): kolibrie-krijgers** [goed/matig]. Op Moche-aardewerk verschijnen kolibries in gevechtsscènes, soms vermenselijkt met knotsen; een portretvaas heeft kolibries met strijdknotsen op de wangen (krijger-priester). De Met-fles toont vogelkrijgers in het algemeen (niet specifiek kolibries). Let op: verwar ze niet met de "vogellopers". https://www.metmuseum.org/art/collection/search/309437 , https://nawi.espol.edu.ec/index.php/nawi/article/view/1262 (Gómez Sánchez, kolibries in Moche-iconografie)
+4. **Nazca-geoglief** [goed/matig]. De kolibrie in de Nazca-woestijn is ±97 m lang en ±66 m breed; volgens Eda e.a. (2019) stelt hij een **heremietkolibrie** voor (tropische soort uit N/O-Peru, met lange gebogen snavel en lange middenstaartveren). Betekenis onbekend (ritueel/water zijn hypotheses). Let op: Xatu-regional form gebruikt mogelijk al de Nazca-kolibrie. https://archaeology.org/news/2019/06/20/190620-peru-nazca-glyphs
+5. **Quechua: q'enti / quindi, bode tussen de werelden** [goed/matig]. Het woord *quenti/quindi* staat al in een Quechua-woordenboek van 1608 (Gonçález Holguín); in de Andes geldt de kolibrie als goede boodschapper "van deze en andere dimensies" en brengt geluk aan wie hem ziet of zijn veren draagt. Een (bronloos) verhaal: *siwar q'enti* is het enige dier dat Hanaq, Kay en Ukhu Pacha kan bereizen, omdat hij zich onder de vleugel van de condor verstopte [zwak]. https://sora.unm.edu/sites/default/files/journals/on/v015s/p0409-p0418.pdf , https://revistas.unasam.edu.pe/index.php/llalliq/article/download/1201/1319/7551
+6. **Peruaanse vertelling: picaflor bij de condor** [matig]. In een Andes-vertelling (Carranza Romero, RUNA Yachachiy) kiezen de vogels kant; de roofvogels gaan bij de condor staan, "en tot ieders verbazing ging ook de picaflor bij de machtigen staan". Klein dier dat zich met de groten meet; de afloop staat in het artikel. https://revistas.unasam.edu.pe/index.php/llalliq/article/download/1201/1319/7551 , https://alberdi.de/PICAFLORANDICARRY24pdf.pdf
+7. **Mapuche en Chiloé (Chili)** [matig]. Mapuche schreven de picaflor een zuiverende kracht toe (mensen renden hem na om gereinigd te worden); op Chiloé zou een gevangen picaflor vrouwen helpen die geen kinderen konden krijgen. https://uchile.cl/cultura/oplath/antologia/pajaros6.html
+8. **'Picaflor' in de volksmond** [matig]. In Argentinië, Chili, Bolivia en Peru heet de kolibrie meestal *picaflor* ("bloemenpikker"); *colibrí* is de algemenere Spaanse term. In de spreektaal is een *picaflor* ook een versierder die van bloem tot bloem gaat (vgl. Peruaanse huayno "El picaflor"; niet nader gecontroleerd). https://www.airedesantafe.com.ar/ocio/que-diferencia-hay-un-colibri-y-un-picaflor-n498435
+9. **Torpor van de Andes-hillstar** [goed]. Eerste kolibrie waarvan torpor werd aangetoond (Pearson 1953); overnacht in grotten en mijngangen en laat zijn lichaamstemperatuur zakken tot ±0,5 °C boven de omgeving (tot ±7 °C, Carpenter 1974). Een Andes-verwant (*Metallura phoebe*) haalde 3,26 °C, het laagste ooit gemeten bij een vogel (Wolf e.a. 2020). Overdag een hart van ±1000+ slagen/min, 's nachts "dood". https://sora.unm.edu/sites/default/files/journals/condor/v055n01/p0017-p0020.pdf , https://birdsoftheworld.org/bow/historic/nb/andhil1/1.0/behavior , https://source.washu.edu/2023/03/hummingbirds-use-torpor-in-varying-ways-to-survive-cold-temps/
+10. **Zwaardsnavel en de passiebloem** [matig]. *Passiflora mixta* heeft een bloembuis van 7–15 cm die vrijwel alleen de zwaardsnavel kan bereiken; bloem en vogel zijn van elkaar afhankelijk (co-evolutie is de gangbare uitleg, niet hard bewezen). https://researchmatters.in/sciqs/bonded-ever-coevolution , https://birdnet.cornell.edu/taxonomy/species/Ensifera%20ensifera
+11. **Spatuletail: balts en bedreiging** [goed/matig]. Mannetjes baltsen in een lek: heen en weer schieten langs een tak, dan zweven voor het vrouwtje met wapperende racketveren en klikgeluiden. Bedreigd door ontbossing en branden; een Franse bron noemt jacht op de hartjes (als afrodisiacum), maar dat is maar één bron [zwak]. https://abcbirds.org/bird/marvelous-spatuletail/ , https://www.kernaudubonsociety.org/bird-of-the-week-marvelous-spatuletail/
+12. **Reuzenkolibrie** [matig]. 18–24 g, ±2× de volgende zwaarste kolibrie; ±15 vleugelslagen/s (niet onafhankelijk bevestigd); zweeft af en toe. https://www.guinnessworldrecords.com/world-records/494275-largest-hummingbird , https://escholarship.org/uc/item/3c62v99s
+
+**Niet gevonden / niet gebruiken zonder betere bron:** een Zuid-Amerikaanse mythe waarin de kolibrie het vuur steelt (die versies zijn Noord-Amerikaans; voor de Chaco wijst de carancho het vuur aan, Métraux); "kolibrie als ziel van een overledene" (Azteeks/Costa Rica, niet Zuid-Amerika); een kolibrie bij Pachacuti; Huitzilopochtli is Azteeks (Mexico), niet bruikbaar voor deze regio.

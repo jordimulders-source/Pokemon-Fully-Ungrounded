@@ -26,12 +26,12 @@ for f in (0, 1):
     kaak = {(x0 + i, y + up) for y, (x0, s) in B.KAAK.items() for i in range(len(s))}
     diff = [(x, y) for y in range(64) for x in range(64)
             if a.getpixel((x, y + 64 * f)) != b.getpixel((x, y + 64 * f))]
-    buiten = [p for p in diff if not B.in_zone(*p) and p not in kaak]
+    buiten = [p for p in diff if not B.in_zone(p[0], p[1], f) and p not in kaak]
     kop = [p for p in diff if p[1] + f < 64 and B.B20.head_mask(p[0], p[1] + f) and p not in kaak]
-    staart = [p for p in diff if B.tail_px(p[0], p[1], f)]
+    staart = [p for p in diff if B.tail_px(p[0], p[1], f) and a.getpixel((p[0], p[1] + 64 * f))]   # echte staartpixels
     ears = [p for p in diff if 19 + up <= p[1] <= 25 + up and (15 <= p[0] <= 21 or 29 <= p[0] <= 38)]
     kd = [p for p in diff if p in kaak]
-    zone = [p for p in diff if B.in_zone(*p) and p not in kaak]
+    zone = [p for p in diff if B.in_zone(p[0], p[1], f) and p not in kaak]
     ob = open_edges(b, f)
     px = [(x, y) for y in range(64) for x in range(64) if b.getpixel((x, y + 64 * f))]
     xs = [p[0] for p in px]; ys = [p[1] for p in px]

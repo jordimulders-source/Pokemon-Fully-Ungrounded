@@ -16,9 +16,9 @@ import bouw_ronde20 as B20
 
 HIND_DX = 2   # punt 3: nabije achterpoot als geheel 2 px naar achteren (richting stap 1b / Galar-Linoone)
 
-def in_zone(x, y):
-    """Pootzone (frame-1-coordinaten van de romp): alles onder de borst links van de staart."""
-    return y >= 40 and 12 <= x <= 48
+def in_zone(x, y, f=0):
+    """Pootzone: alles onder de borst links van de staart (frame 2: 1 rij hoger, de voorpoten gaan mee)."""
+    return y >= 40 - f and 12 <= x <= 48
 
 def tail_px(x, y, f):
     """Staartpixel in ronde 20 (frame f): stap-1b-staartmasker met dx -6 en de frame-2-rij."""
@@ -54,7 +54,7 @@ NABIJ_VOOR = {
     40: (24, '22455433'),
     41: (23, '224554331'),
     42: (23, '2455443311'),
-    43: (23, '24554431'),
+    43: (23, '24554311'),
     44: (22, '2455431'),
     45: (21, '2445431'),
     46: (21, '244431'),
@@ -81,7 +81,7 @@ KLAUW_VER = ((24, 49), [
     '.9aa91',
     '9a99a1',
     '9a9a1.',
-    '191...',
+    '1911..',
     '.1....',
 ])
 # ---------- kaaklijn (A6): onderkant van de kaak licht gebogen, frame-1-coordinaten ----------
@@ -89,6 +89,8 @@ KAAK = {
     39: (23, '33'),     # x23-24: was zwarte rechte rand; wordt kaakschaduw
     40: (23, '1'),      # x23: de rand zakt hier 1 rij (boog naar de keel)
 }
+
+FRAME2 = {43: (29, '1')}
 
 def paint(g, rows, dy=0, dx=0):
     for y, (x0, s) in rows.items():
@@ -107,10 +109,13 @@ def bouw_frame(r20, f):
     for y in range(64):
         for x in range(64):
             v = r20.getpixel((x, y + 64 * f))
-            if v and (not in_zone(x, y) or tail_px(x, y, f)):
+            if v and (not in_zone(x, y, f) or tail_px(x, y, f)):
                 g[(x, y)] = v
     # 2. romp-onderkant binnen de zone: rijen y40-43 letterlijk uit ronde 20 waar geen poot komt
-    paint(g, {y: r for y, r in B20.LIJF.items() if y >= 40})
+    paint(g, B20.LIJF)
+    if f:   # frame 2: borst onder de kop 1 rij hoger, net als in ronde 20
+        paint(g, {y: (x0, ''.join(c if x0 + i <= 39 else '.' for i, c in enumerate(r)))
+                  for y, (x0, r) in B20.LIJF.items()}, -1)
     # 3. poten
     paint(g, BUIK)
     paint(g, VERRE_ACHTER)
@@ -131,6 +136,8 @@ def bouw_frame(r20, f):
                 else:
                     g.pop((x, y), None)
     paint(g, KAAK, up)
+    if f:   # frame 2: de nabije voorpoot staat 1 rij hoger; buikrand onder x29 sluiten
+        paint(g, FRAME2)
     return g
 
 def bouw(paths=(R20,)):

@@ -1,0 +1,20 @@
+# Ronde 10, ogen v2: wijd open en starend (p1 las slaperig/verdrietig door de opgewipte flicks
+# en het verlaagde verre oog). Bovenlid K vlak, zwaarst naar de buitenhoek; kleinere pruimpupil
+# (2x3) met iris rondom; iris donker boven, licht onder.
+kop 28 15 CDDDDDC
+kop 29 15 KKKKKmD
+kop 30 15 mwwmmmm
+kop 31 15 mwaPPam
+kop 32 15 maaPPam
+kop 33 15 maaPPAm
+kop 34 15 DmAAAmD
+kop 35 15 DDmmmDD
+# verre oog: zelfde hoogte, bovenaan smaller, glans 1 px, lid zwaarst rechts (buitenhoek)
+kop 29 27 DmKKKK
+kop 29 33 v
+kop 30 27 mwmmmm
+kop 31 27 maPPam
+kop 32 27 maPPam
+kop 33 27 maPPAm
+kop 34 27 maAAAm
+kop 35 27 DmmmmD

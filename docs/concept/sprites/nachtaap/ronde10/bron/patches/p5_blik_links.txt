@@ -1,0 +1,7 @@
+# Ronde 10, checklist §0.1: blik 3/4 naar links-voor: beide pupillen 1 px naar links.
+kop 31 15 mwPPaam
+kop 32 15 maPPaam
+kop 33 15 maPPaAm
+kop 31 27 mPPaam
+kop 32 27 mPPaam
+kop 33 27 mPPaAm

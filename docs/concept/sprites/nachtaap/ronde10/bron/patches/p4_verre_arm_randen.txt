@@ -1,0 +1,20 @@
+# Ronde 10 punt 3: rechterflank x30-31 in schaduwtint V, K-scheiding op x32, verre arm 3 px (V V K),
+# hand vooral in creme-schaduw. Punt 4: open randen dicht (schouder krijgt bovenrand; staarteind
+# loopt achter de arm door tot x36 en sluit met K).
+lijf 40 33 KK
+lijf 41 30 DVKvVK_
+lijf 42 29 DVVKVVK_
+lijf 43 29 DVVKVVK_
+lijf 44 29 DVVKVVK_
+lijf 45 29 DVVKVVK_
+lijf 46 29 DVVKVVK_
+lijf 47 29 DVVKVVK__
+lijf 48 29 DVVKVVK__
+lijf 49 30 DVKVVK_
+lijf 50 30 DVKVVK_
+lijf 51 31 VKECDK
+lijf 52 33 DDD
+lijf 54 20 K
+staart 46 36 O
+staart 47 36 Vv
+staart 48 36 KK

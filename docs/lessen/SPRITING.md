@@ -130,3 +130,11 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Run-length-rijen op absolute x met overschrijven** (`y: x: 3h 12s  x: d r h`) maken handwerk per deel snel en controleerbaar. Teken eerst de basistinten per rij, en zet daarna de lijnen als drietallen 'donkerder | scheiding | lichter' erover (`docs/concept/sprites/cuyby_evo/ronde2/bron/`).
 - **Te groot? Knip een strook weg** in plaats van opnieuw te tekenen: een kolom of rij zonder kenmerken (geen oog, inham of neus) eruit halen kost op het oog niets. Dat ging hier van 1487 naar 1385 px.
 - **Een roze vlekje in een zwart oor leest op 1× als een tweede oog.** Gebruik in een donker oor hooguit één roze pixel.
+
+## 16. Lessen uit nachtaap ronde 10 (reparatie, uitdrukking)
+- **Een spiraal van 1¼ slag past in 13×15 px** met een buitenring van 3 px, een binnenkrul van 3 px (O-v-K) die vanaf de onderkant opstijgt en een vrij kopje met ≥ 1 px lucht rondom; zie `docs/concept/sprites/nachtaap/ronde10/bron/delen.txt` (deel `staart`).
+- **Lucht tussen delen die in frame 2 tegengesteld bewegen** (oor omlaag, staart omhoog) altijd horizontaal maken: een lege kolom blijft in beide frames leeg.
+- **Slagschaduw die met een bewegend deel meeschuift** als eigen mini-deel met dezelfde dy2 als dat deel (`## kinschaduw x y 1`); in frame 1 valt het samen met de bestaande schaduw.
+- **Uitdrukking zit in één of twee rijen:** een opgewipte flick aan de buitenhoek leest als verdrietig, een vol zwart lid plus een volle donkere irisrij als halfdicht en slaperig; neutraal en starend = lid K, zwaarst aan de buitenhoek, tweede rij al middentint, kleine pupil met iris rondom.
+- **Verzadiging verhogen bij gelijke tint verlaagt de helderheid** (HSV-waarde gelijk houden is niet genoeg): reken de luma na (0,3R+0,59G+0,11B) en til de waarde op tot het niveau van de referentie (Aipom ±137).
+- **Een tekenrij met absolute x meteen renderen** (een klein overlay-script dat het blok over het raster legt) is sneller dan via `delen.txt` itereren als een heel deel opnieuw getekend wordt.

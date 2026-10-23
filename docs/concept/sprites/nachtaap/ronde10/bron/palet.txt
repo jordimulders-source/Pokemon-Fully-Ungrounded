@@ -1,0 +1,15 @@
+. 152 208 160              # transparant
+K 40 24 56 zwart           # bijna-zwart (omlijning schaduwkant, bovenlid)
+O 80 44 128 omlijning      # omlijningsbasis violet (r10: verzadiging 0,66)
+V 118 76 172 omlijning     # schaduw violet (ook lichte omlijning; r10: 0,56)
+v 156 112 216              # basis violet (r10: verzadiging 0,48, tint 265 graden gelijk)
+h 194 160 242              # hooglicht violet (r10: 0,34)
+D 224 194 160              # schaduw creme (r10 lichter)
+C 252 236 206              # basis creme (r10 lichter)
+c 255 252 238              # hooglicht creme
+m 128 32 104              # donker magenta (iris boven, gekleurde oogomlijning)
+a 214 72 156               # magenta (iris)
+A 255 166 214              # licht roze (gekleurde reflectie)
+w 255 255 255              # glans
+E 156 116 92 omlijning     # omlijning creme (handen, mond)
+P 76 16 72                 # diep pruim (pupil, r10; i.p.v. bijna-zwart)

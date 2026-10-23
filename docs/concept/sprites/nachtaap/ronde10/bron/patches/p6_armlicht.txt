@@ -1,0 +1,3 @@
+# Ronde 10 polijstpunt 6 (deel): hooglicht nabije arm alleen op de schouder (y40-43).
+lijf 44 17 v
+lijf 45 17 v

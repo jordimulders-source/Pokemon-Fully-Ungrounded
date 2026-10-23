@@ -1,0 +1,23 @@
+# Ronde 10 punt 2: ogen a la Jigglypuff (pruim pupil, iris donker boven/licht onder,
+# bovenlid K met flick naar de buitenhoek, rijen 5-7-7-7-7-5-3; verre oog 1 px lager, glans 1 px)
+# nabij oog x15-21
+kop 28 15 K
+kop 29 15 DKKKKmD
+kop 30 15 mwwmPmm
+kop 31 15 mwwPPam
+kop 32 15 maPPPam
+kop 33 15 maPPPAm
+kop 34 15 DmAPAmD
+kop 35 15 DDmAmDD
+# verre oog x27-32 (1 px lager, smaller bovenaan)
+kop 29 27 DDDDDD
+kop 29 33 K
+kop 30 27 DmKKKK
+kop 31 27 mwmPmm
+kop 32 27 maPPam
+kop 33 27 maPPAm
+kop 34 27 maPPAm
+kop 35 27 DmAAmD
+# punt 3 (uitdrukking): glimlach weg, klein neutraal mondje
+kop 37 22 CCCCD
+kop 38 23 CEED

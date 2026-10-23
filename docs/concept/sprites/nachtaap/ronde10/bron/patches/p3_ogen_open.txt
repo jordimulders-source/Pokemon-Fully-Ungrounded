@@ -1,0 +1,7 @@
+# Ronde 10, ogen v3: v2 las als halfdicht (lid K + volle rij m = twee donkere rijen).
+# Lid: K in het midden, zwaarst naar de buitenhoek, uiteinden m; tweede rij iris a; glans 2x2 (nabij).
+kop 29 15 DKKKKmD
+kop 30 15 mwwaaam
+kop 31 15 mwwPPam
+kop 29 27 DmKKKK
+kop 30 27 mwaaam

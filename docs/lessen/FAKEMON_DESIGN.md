@@ -41,3 +41,6 @@ Aangeleverd door Jordi (23 okt), samengevat uit fakemon-gidsen (o.a. YouTube-vid
 - **Eindvorm eerst:** voor alpaca, olinguito en nachtaap eerst de eindvorm vastleggen (bombín-lama, Robin Hood-wasbeer, maangenezer) en fase 1 daaruit terugrekenen.
 - **Twee of drie concepten mengen:** alpaca = alpaca + bokser + cholita; olinguito = olinguito/coati + dief/Robin Hood + (welk voorwerp of welke mythe?); nachtaap = nachtaap + maan/Mama Killa + Nazca-spiraal + genezer. Elk deel abstraheren tot één geheel.
 - **Niet humanoïde in kostuum:** vooral bij de eindvormen (cholita, Robin Hood, genezer) oppassen voor 'man in pak'.
+
+## Referentiefoto's (Jordi, 23 okt)
+- **Onthoud de Pokémon-filosofie:** een foto van het echte dier is inspiratie, geen blauwdruk. Neem alleen de herkenbare kenmerken over (silhouet, ogen, één typisch detail) en houd het gestileerd, simpel en schattig; nooit een realistische weergave van het dier.

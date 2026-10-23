@@ -2,6 +2,15 @@
 
 Aangeleverd door Jordi (23 okt), samengevat uit fakemon-gidsen (o.a. YouTube-video's over Sugimori's werkwijze, r/fakemon, en een klassieke fakemon-gids). Lees dit **vóór elke ontwerp- of spriteronde** van een nieuwe Pokémon. Zie ook `docs/concept/sprites/KEURING_RONDE5.md`.
 
+## Vaste werkwijze per fakemon (Jordi akkoord, 23 okt; doel ≤ ±5 rondes)
+Waarom: alpaca en olinguito kostten 15 rondes, Cuyby 3 en Cuychu 4. De rondes gingen op aan details vóór het silhouet klopte, zelf geconstrueerde lijven, goedgekeurde delen die opnieuw werden aangeraakt, lessen die niet werden afgevinkt, en Jordi die als eerste keurder fouten vond.
+1. **Ontwerp:** concept + referentiefoto + modeltekening; Jordi kiest. Geen pixels.
+2. **Silhouet op een echt skelet:** romp/poten van een passende Gen 3-sprite als onderlaag, overtekend in de verhoudingen van het dier. Eerst alleen het silhouet in één kleur; Jordi keurt op 1× "leest dit als X?".
+3. **Volledige sprite:** kleur, shading, ogen; §0-checklist (`SPRITING.md`) punt voor punt afgevinkt in NOTITIES.md.
+4. **Onafhankelijke keuring vóór Jordi kijkt:** een agent vergelijkt met ≥ 10 echte sprites (KEURING.md, nodig/polijsten); de nodige punten meteen repareren. Jordi ziet alleen de gerepareerde versie.
+5. **Reparatierondes:** alleen de punten die Jordi noemt. Goedgekeurde delen letterlijk bevriezen; grote of ongevraagde wijzigingen alleen als variant naast het origineel.
+- Max. 2 sprite-agents tegelijk; agents schrijven alleen in de map van hun sprite (lessen onder "Lessen" in NOTITIES.md, Claude zet ze over naar SPRITING.md).
+
 ## Kernprincipes
 1. **Begin bij de eindvorm.** Sugimori en Game Freak ontwerpen vaak eerst de eindvorm en vereenvoudigen, verkleinen of halen weg voor de basis- en middenvorm. Klein beginnen en details toevoegen geeft rommelige ontwerpen. *(Wij deden het omgekeerd: fase 1 eerst. Volgende ronde: eindvorm vastleggen, dan terugrekenen.)*
 2. **Een sterk silhouet.** Knijp je ogen toe: herken je het wezen aan de omtrek alleen (Pikachu, Lucario, Gengar)?

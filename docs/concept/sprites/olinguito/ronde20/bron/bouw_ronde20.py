@@ -19,9 +19,9 @@ MASKER = {  # y: (x0, rij)
     28: (15, '5543'),          # x15-18: vacht in plaats van masker/glans
     29: (14, '4332'),          # x14-17: vacht, glans zakt mee naar de nieuwe bovenrand
     # punt 1b: onderste uiteinde van het masker (onderlob) 5 px mee naar voren, zoals oog en bovenlob
-    33: (28, '24444'),         # x28-32: lob eindigt nu bij x28 (was x32); erachter wang
+    33: (28, '244444'),        # x28-33: lob eindigt nu bij x28 (was x33); erachter wang
     34: (30, '4444'),          # x30-33: oude lobpunt wordt wang
-    35: (31, '33'),            # x31-32: los kaaklijntje -> schaduw (geen zwevende donkere streep)
+    35: (31, '44'),            # x31-32: los kaaklijntje van de oude lobpunt -> wang
 }
 
 # ---------- lijf ----------
@@ -38,27 +38,18 @@ LIJF = {
     41: (29, '4444444444245554431'),
     42: (29, '444444444332455443'),
     43: (29, '44444433332244544'),
-    44: (30, '3333333311'),
 }
-VERRE_ACHTERPOOT = {
-    44: (33, '2333'),
-    45: (32, '23333'),
-    46: (32, '23331'),
-    47: (32, '23331'),
-    48: (31, '23331'),
-    49: (30, '233331'),
-    50: (30, '123121'),
-    51: (31, '11.11'),
-}
-VERRE_VOORPOOT = {
-    41: (32, '2333'),
-    42: (31, '23331'),
-    43: (30, '23331'),
-    44: (30, '23331'),
-    45: (29, '23331'),
-    46: (29, '23331'),
-    47: (29, '23331'),
-    48: (29, '21111'),
+# verre poten (schaduwtint 3): verre voorpoot x28-31, verre achterpoot x33-36, lucht op x32
+VERRE_POTEN = {
+    43: (31, '3333333'),        # buikschaduw
+    44: (29, '2331123331'),     # x32-33: buikomlijning tussen de verre poten
+    45: (28, '2331.2331'),
+    46: (28, '2331.2331'),
+    47: (28, '2331.2331'),
+    48: (28, '1111.2331'),      # verre voorpoot: pols; de klauwpunten steken eronder uit
+    49: (33, '2331'),
+    50: (32, '23331'),
+    51: (32, '11111'),
 }
 NABIJE_ACHTERPOOT = {
     42: (44, '431'),
@@ -79,7 +70,7 @@ NABIJE_VOORPOOT = {
     40: (25, '22455433'),
     41: (25, '2455433'),
     42: (24, '245543331'),
-    43: (23, '24544331'),
+    43: (23, '24544311'),
     44: (22, '2444331'),
     45: (21, '2444331'),
     46: (21, '244331'),
@@ -137,13 +128,15 @@ def bouw_frame(src, f):
     if f:   # frame 2: borst onder de kop gaat mee omhoog (voorkomt een gat onder de kin)
         paint(g, {y: (x0, ''.join(c if x0 + i <= 39 else '.' for i, c in enumerate(r)))
                   for y, (x0, r) in LIJF.items()}, -1)
-    paint(g, VERRE_ACHTERPOOT)
     claws = sand_claws()
     dx, dy = KLAUW_VER
     for x, y, v in claws:
         if y >= 38:              # van de verre poot steken alleen de punten uit
-            g[(x + dx, y + dy + up)] = SAND_VER[v]
-    paint(g, VERRE_VOORPOOT, up)
+            g[(x + dx, y + dy + up)] = 1 if y == 38 else SAND_VER[v]   # bovenste rij = omlijning
+    paint(g, {y: r for y, r in VERRE_POTEN.items() if y <= 43})
+    paint(g, {y: (x0, r[:4]) for y, (x0, r) in VERRE_POTEN.items() if 44 <= y <= 48}, up)   # verre voorpoot
+    paint(g, {y: (x0 + 4, r[4:]) for y, (x0, r) in VERRE_POTEN.items() if 44 <= y <= 48})   # buik + verre achterpoot
+    paint(g, {y: r for y, r in VERRE_POTEN.items() if y >= 49})
     paint(g, NABIJE_ACHTERPOOT)
     paint(g, NABIJE_VOORPOOT, up)
     dx, dy = KLAUW_NABIJ

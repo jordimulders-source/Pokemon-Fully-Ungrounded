@@ -11,3 +11,6 @@ Totaal 12 px per frame (24 samen). **Pixeldiff buiten deze zones: 0** (`bron/` b
 
 **Niet toegepast:** C6 (linker voetkussen 1 px hoger, ±6 px). Geprobeerd; op 3× werd het voetje een platte zwarte balk met een roze vlek erop, slechter dan ronde 3. Ronde 3 houden.
 **Zelfcheck** (1× en 3× naast ronde 3, `checklist_keuring/TOEGEPAST.png`): gezicht even schattig; de ogen zijn geen kopieën meer en het gezicht draait leesbaar naar links. Het oor valt op 1× nauwelijks op, op 3× net.
+
+## Jordi (23 okt)
+Oogwijziging teruggedraaid ("oog is nu onafgemaakt"); alleen het zwarte oor 1 px hoger blijft. anim_front.png is met de hand teruggezet; `bron/` bouwt nog de versie mét oogwijziging.

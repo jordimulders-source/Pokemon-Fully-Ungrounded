@@ -13,3 +13,6 @@ Totaal 21 px per frame. **Pixeldiff buiten deze zones: 0.** Geen open randen (ee
 **Niet gemaakt: variant_staart.** KEURING noemt de staart als oorzaak van de overmaat (D1, 211 px), maar raadt een kleinere spiraal af: die leest pas sinds ronde 9–10 goed en de romp heeft al fase 1-formaat. Een kleinere spiraal is een herontwerp, geen variant van een paar pixels.
 **Niet gedaan:** B1 (kop draaien), D1: afgewezen/afgeraden in KEURING.
 **Zelfcheck** (1× en 3× naast ronde 10): uitdrukking gelijk ("stil, starend"); de blik naar links leest beter door mond en kleiner verre oog. Het linkeroog heeft nu 1 kolom masker naar de middenstreep. De elleboog leest op 3× als knik, op 1× subtiel.
+
+## Jordi (23 okt)
+Mond en verre oog goed; elleboog teruggedraaid ("ziet er raar uit"). anim_front.png is met de hand teruggezet; `bron/` bouwt nog de versie mét elleboog.

@@ -19,3 +19,6 @@ Ronde 16 plus B6/A6: de hals schuin naar voren en taps.
 - Frame 2 volgt dezelfde regel als ronde 15 (kop y≤22 1 rij lager, hals blijft); die regel reproduceert ronde 15 exact.
 - 287 px verschil in frame 1, allemaal binnen de kop-rijen en de halszone. Geen open randen.
 Op 3× leest de hals schuiner en minder als zuil (richting Ponyta/Mudbray); de nek wordt bovenin smal (nek-trap rechts zichtbaar). Ter keuze naast ronde 16.
+
+## Jordi (23 okt)
+**variant_hals gekozen** ("de variant het beste").

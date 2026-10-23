@@ -13,3 +13,6 @@ Totaal 9 px per frame. **Pixeldiff buiten deze zones: 0.** Geen open randen (all
 
 ## variant_pluk/ (groot, ter keuze)
 Ronde 5 plus een opstaande pluk ichu-gras op de rug als tegenwicht rechtsboven (A3): twee sprieten, tip (47,15) en (51,18), basis in de rug op y22–24. Opbouw als de kruinsprieten: omlijning `6` aan de lichte kant, K `1` aan de schaduwkant, binnen `2/3/4`. 45 px extra (x43–51, y15–24), in beide frames gelijk (de rug beweegt niet). Buiten die zone en de inkepingen: 0 px verschil. Raakt het goedgekeurde silhouet en de kruin als enig kenmerk, dus alleen als variant.
+
+## Jordi (23 okt)
+**variant_pluk gekozen** ("die pluk is erg leuk"); inkepingen geven op het oog geen verschil maar blijven.

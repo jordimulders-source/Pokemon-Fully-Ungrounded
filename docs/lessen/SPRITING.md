@@ -85,3 +85,10 @@ Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.p
 - **Itereer op het geheel**: render na elke grote stap op 8× en op 1×; de eerste versie van de nachtaap was 1305 px en leek een kist (rechte rug, horizontale armbalk). Kleiner tekenen en de armen in een V zetten loste dat op.
 - **Gelijke kleur naast gelijke kleur verdwijnt**: violette armen op een violet lijf lazen niet; een crème borst erachter wel.
 - **Een gekleurde ronde punt leest als een oog**: geef staartpunten niet de oogkleur.
+
+## 12. Lessen uit Jordi's feedback op ronde 8
+- **Geen 'geamputeerde' verre ledematen:** in een 3/4-pose zijn de verre arm en het verre been bij Gen 3 altijd (deels) zichtbaar achter of naast het lijf. Laat ze nooit weg; teken ze kleiner en in de schaduwkleur. Check: tel per sprite de armen, benen en oren.
+- **Alles afmaken en verbinden:** elke voet, oor en elk lijfdeel sluit met een doorlopende omlijning aan op het lijf; geen open of half afgemaakte randen. Controleer ingezoomd elke rand van de omtrek.
+- **Geen lange rechte lijnen in organische vormen** (staarten, ledematen): elke lijn buigt (vgl. Aipom- en Mew-staart).
+- **Gezicht compleet:** ogen, mond (ook als hij klein is) en oren horen erbij; ontbreekt er één, dan oogt het onaf.
+- **Ogen niet 'opgeplakt':** de oogkassen en de omlijning van de ogen in de kleur van het gezicht laten overlopen (gekleurde omlijning en schaduw rond het oog), en de oogkleur laten passen bij het type (Psychic: roze/paars/rood/cyaan zoals Espeon, Abra, Ralts, Natu).

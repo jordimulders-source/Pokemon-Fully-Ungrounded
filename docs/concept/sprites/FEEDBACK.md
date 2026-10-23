@@ -61,3 +61,8 @@
 - **Olinguito (Jordi):** de **klauwen en de snoet** zijn het belangrijkst; die worden **groter bij elke evolutie** (het coati-idee is de hoofdinspiratie).
 - **Nachtaap (Jordi):** in eerste instantie **simpel houden**: een aap met grote ogen, een genezer-concept en de Nazca-staart.
 - Volgende ronde: van nul af aan (geen oude sprites als vertrekpunt), de techniek van ronde 7 behouden.
+
+## Ronde 8 (23 okt): "beter dan de vorige, we komen dichter in de buurt", maar nog geen echte Pokémon
+- **Alpaca:** gekke ogen die niet kloppen; oren onafgemaakt; nog niet volledig fluffy. Handschoenen wel prima.
+- **Olinguito:** van een afstandje prima. Van dichtbij: een voet niet verbonden; rechtsonder is het lijf niet afgemaakt; het lijkt alsof hij maar 1 klauw heeft en de andere arm geamputeerd is; **geen mond**. Ogen wel prima.
+- **Nachtaap:** opeens **geen oren** meer; de staart is lelijk (een overdreven rechte lijn, geen enkele Pokémon heeft dat); rechterbeen en -arm lijken geamputeerd; ogen wel prima, maar **niet genoeg een Psychic-kleur** en ze lijken **opgeplakt**.

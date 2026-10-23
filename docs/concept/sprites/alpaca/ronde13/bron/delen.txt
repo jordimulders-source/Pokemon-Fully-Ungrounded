@@ -1,0 +1,118 @@
+# Alpaca ronde 13: combinatie. Rijen 'y x0 pixels' ('.' = overslaan), absolute coördinaten, van achter naar voor.
+# K donker | W vacht-hl w vacht v schaduw1 u schaduw2 V omlijning | R r s S vuist | M Y T weefband | P roze | B oogreflectie
+# Herkomst per deel staat in de kop van elk deel. Ronde-12-delen: +3,+3 verschoven naar absolute x/y (was '@ 3 3').
+# Ronde-11-kop en -nek: 1 rij omlaag (y+1), x ongewijzigd.
+## staart
+# ronde 12
+25 44 VK
+26 43 VWvK
+27 42 VWwvK
+28 41 VWwvuK
+29 42 VvuuK
+30 44 uuK
+## achterpoot_ver
+# ronde 12
+38 38 vuuK
+39 38 VvuK
+40 39 VvuK
+41 39 VvuK
+42 39 VvuK
+43 38 VvuK
+44 38 VvuK
+45 38 VvuK
+46 37 VvvuK
+47 37 KKKKK
+## voorpoot_ver
+# ronde 12 (wolverdikking, band, matte wolvuist op de grond)
+39 27 VvuK
+40 27 VvuK
+41 26 VvuK
+42 25 VvvuuK
+43 25 SMMMMS
+44 25 SYTYTS
+45 24 SRRrrrsK
+46 24 SRrrrssK
+47 24 SrrrsrsK
+48 24 SrrsrssK
+49 24 KsssssK
+50 25 KKKKK
+## lijf
+# ronde 12, zonder de bovenste nekrij (y27): daar komt de nek van ronde 11
+28 19 .VWwwwwwwwwvvVVVVVVK
+29 19 .VWwwwwwwwwwvWWWWWWwvK
+30 19 .VWwwwwwwwwwwvWWWwwwwvvK
+31 19 VWWwwwwwwwwwwwvWwwwwwwvuK
+32 19 VWwwwwwwwwwwwwvwwwwwwvvuK
+33 19 VWwwwwwwwwwwwvvwwwwwvvvuK
+34 19 VwwwwwwwwwwwvvvwwwvvvvuuK
+35 19 VvwwwwwwwwwvvvuvvvvvvuuuK
+36 19 .VvwwwwwwwvvvuuuvvvvuuuuK
+37 19 .VvvvwwwvvvuuuuuvuuuuuK
+38 19 ..VuvvvvvuuuuuuuuuuuuK
+39 19 ...KuuvvvuuKKKKKKKKKK
+## achterpoot_voor
+# ronde 12
+39 32 VwwvK
+40 32 VWwvK
+41 33 VwvK
+42 34 VwvK
+43 34 VwvK
+44 33 VwvK
+45 33 VwvK
+46 33 VwvK
+47 33 VwvK
+48 32 VwvvK
+49 32 VwwvK
+50 31 VwwvvK
+51 31 KKKKKK
+## nek
+# ronde 11, rij 21-26 (+1): de lange nek, sluit op y28 aan op de nekrij van het ronde-12-lijf
+22 22 VWwwwwvvK
+23 22 VWwwwwvvK
+24 21 VWWwwwwvvK
+25 21 VWwwwwwvvK
+26 21 VWwwwwvvvK
+27 21 VWwwwwwvvK
+## kop 1
+# ronde 11 (+1 rij). Gewijzigd: nabij oog 3 breed met witte glans binnenin (x27,y15) en reflectie B,
+# verre oog helemaal zwart (glans van ronde 11 stond op de rand en smolt met de vacht),
+# oudroze randje (v) onder beide ogen.
+4 12 ......................V.
+5 12 ....V................VK.
+6 12 ....VK.....VVVV.....VwK.
+7 12 ....VvK...VWWWwVVV.VwPK.
+8 12 .....VvKVVVWWwvWWwVwPvK.
+9 12 .....VvvVWWwvWwwwvvVPvK.
+10 12 .....VWWWwwwWwwwwwvvK...
+11 12 .....VWWwwwwwwwwwwvvvK..
+12 12 .....VwWwwWwwwwwvvvvvvK.
+13 12 .....VvwwuvwuvwwvvuvvvK.
+14 12 ....VwwKKwWwwwvKKwvvvvK.
+15 12 ...VwwwKKwWwwwKWKwvvvvK.
+16 12 ..VWWwwKKvwwwwKKKwvvvK..
+17 12 .VWWwwwwKvwwwwKKBwvvvK..
+18 12 .VKwwuwwvvwwwwvvwvvvK...
+19 12 .VwuwwwwvvwwwwwwvvvvK...
+20 12 .VKKuvvvvwwwwwwvvvvK....
+21 12 ..VuuuvvwwwwwwwvvvK.....
+22 12 ...KKKKuVV..............
+## voorpoot_voor
+# nieuw, naar de stand van ronde 11: schuin naar voren uit de borst, met een wolpluim (overgang van
+# ronde 12) boven de gebreide band van ronde 11 (twee magenta strepen, geel/turquoise ruitjes) en de
+# matte wolvuist van ronde 12 op de grond (laagste punt van de figuur, 3/4-diepte).
+39 21 VWvK
+40 20 VWvK
+41 19 VWWvK
+42 18 VWWwvuK
+43 17 VwWwwvuK
+44 16 SPMMMS
+45 16 SYTYTS
+46 16 SPMMMS
+47 15 SRRrrrsS
+48 14 SRRRrrrsK
+49 14 SRRrrrssK
+50 14 SRrrrsrsK
+51 14 SRrrsrssK
+52 14 SrrrsrssK
+53 15 KssssssK
+54 16 KKKKKK

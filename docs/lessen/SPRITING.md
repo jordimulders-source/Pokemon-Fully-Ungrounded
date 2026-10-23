@@ -130,3 +130,12 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Run-length-rijen op absolute x met overschrijven** (`y: x: 3h 12s  x: d r h`) maken handwerk per deel snel en controleerbaar. Teken eerst de basistinten per rij, en zet daarna de lijnen als drietallen 'donkerder | scheiding | lichter' erover (`docs/concept/sprites/cuyby_evo/ronde2/bron/`).
 - **Te groot? Knip een strook weg** in plaats van opnieuw te tekenen: een kolom of rij zonder kenmerken (geen oog, inham of neus) eruit halen kost op het oog niets. Dat ging hier van 1487 naar 1385 px.
 - **Een roze vlekje in een zwart oor leest op 1× als een tweede oog.** Gebruik in een donker oor hooguit één roze pixel.
+
+## 16. Lessen uit olinguito ronde 12 (houding en klauwen)
+- **Klauwrichting controleren aan de verschuiving per rij:** een klauw die verticaal begint en aan de punt opzij uitwaaiert (verschuiving 0,0,−1,−1) heeft de holle kant aan de verkeerde kant en oogt gespiegeld. Een haak zoals Sandslash/Zangoose: eerst schuin naar voren, dan recht omlaag (−2,−1,−1,0,0,0); bolle kant voor/boven, holle kant naar achteren/de grond.
+- **Bij een verschuiving van 2 px komt de bovenkant bloot:** die pixels krijgen de omlijningstint (8), en wat de volgende rij niet bedekt de zwarte rand (0); anders meldt bouw9 open randen.
+- **"Meer voorovergebogen" betekent de kop echt verplaatsen** (5 px omlaag en naar voren) en de heup het hoogste punt van de rug maken; een paar pixels kantelen in het lijf zie je niet.
+- **Twee poten verschillend maken = alles tegelijk anders:** hoek (gebogen vs gestrekt), lengte, dikte, tint (dichtbij lichter, ver in 2/1), voetmaat en voethoogte (ver 1 rij hoger).
+- **Delen die in frame 2 bewegen:** laat het stilstaande deel eronder (hier het lijf onder de kop) 4–6 px doorlopen, anders komt in frame 2 een rand zonder omlijning bloot.
+- **Een mond die direct boven de kaaklijn ligt, smelt ermee samen:** laat één pixel room tussen lip en kaakrand, en een wit tandje onder de lip maakt hem leesbaar op 1×.
+- **Sandbox-valkuil:** in een worktree weigert de omgeving samengestelde shell-regels (heredoc + `&&`, `cd ..`); zet bewerkingen in een los script in de scratchpad en roep dat met één `python3`-regel aan.

@@ -221,3 +221,10 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 
 ## 29. Les: "een klein beetje" is letterlijk (olinguito ronde 17 → 18)
 - **Een kleine correctie van Jordi = een paar pixels, nooit een herbouw.** "Neus een heel klein beetje naar rechts" werd 11 px verschuiven plus wang dichtmaken: "Chernobyl". Geef de agent een pixelbudget (bijv. < 10 px gewijzigd), laat hem tellen, en lever 1 px/2 px als varianten.
+
+## 30. Lessen uit olinguito ronde 19 (één oog, kleinere kop)
+- **Eén oog bij een snuitdier = de snuit herbouwen, niet het oog weghalen:** de snuitbrug moet schuin naar de neuspunt lopen (1 px per rij) en het verre oog zit achter die brug. Crème brug tussen neus en masker houdt de neus leesbaar.
+- **Verkleinen zonder schalen:** een kop opnieuw typen in de gemeten verhouding (kop ±35–40 %) en het lijf inkorten door 1–2 kolommen te knippen waar romp en dij recht doorlopen; daarna alleen de knipnaad repareren (omlijning dij/achterpoot).
+- **Frame 2 per pixel afleiden uit de beweging van de vorige ronde** (welke pixels schoven, welke bleven staan) en de verre achterpoot expliciet stil houden; anders ontstaan halve poten op de knipnaad.
+- **Studie meten met kopkaders op 3×** (studie.png) geeft in één blik of een kop te groot is: 43 % → 36 %.
+- **PNG altijd met transparency=0 opslaan:** ronde 19 werd zonder transparantie opgeslagen, waardoor de groene index-0-achtergrond zichtbaar was.

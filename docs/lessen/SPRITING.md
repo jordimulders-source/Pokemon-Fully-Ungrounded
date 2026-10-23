@@ -78,13 +78,16 @@ Bronnen (van Jordi, 23 okt): `docs/lessen/bronnen/dragonflycave_spriting_guide.p
 - Meet het oppervlak al bij de eerste opzet tegen echte Gen 3-sprites (Teddiursa 652, Torchic 782, Mudkip 852, Treecko 967): de eerste olinguito was 1660 px en moest helemaal opnieuw op ¾ schaal.
 - Zwarte kraalogen verdwijnen in een donker masker; een gekleurde iris (goud) met witte glans leest wel op 1×.
 - Drie dunne klauwen lezen als een vork of bezem; twee brede haken die overlappen lezen als één gereedschap (Drilbur).
-||||||| 38532b4db2
 
 ## 11b. Werkwijze-lessen uit de praktijk
 - **Rasters met de hand, maar controleerbaar** (nachtaap ronde 8): schrijf rijen als run-length (`3.2V4h`) of als `x:pixels` met absolute x en laat het script de breedte controleren; tellen in lange tekstrijen gaat anders steeds mis. Lagen (staart, lijf, kop) los, achter naar voor.
 - **Itereer op het geheel**: render na elke grote stap op 8× en op 1×; de eerste versie van de nachtaap was 1305 px en leek een kist (rechte rug, horizontale armbalk). Kleiner tekenen en de armen in een V zetten loste dat op.
 - **Gelijke kleur naast gelijke kleur verdwijnt**: violette armen op een violet lijf lazen niet; een crème borst erachter wel.
 - **Een gekleurde ronde punt leest als een oog**: geef staartpunten niet de oogkleur.
+- **Ronde 9 (reparatieronde):** één delenformaat voor alle soorten (`## naam x y dy2` + tekenrijen) met `bouw9.py`, dat meteen open randen (randpixel zonder omlijningskleur), rechte randstukken > 4 px en het zwart-aandeel meldt; met de hand geschreven pixelrijen gaan erin via `zet.py` (voorbeeld: `docs/concept/sprites/*/ronde9/bron/`).
+- **Oogmaat meten, niet schatten:** Jigglypuff-oog ±25% van de kopbreedte; ronde 8 zat op 38%. Oogomlijning in de gezichtstinten (donkere iriskleur, crèmeschaduw eronder) in plaats van een zwarte ring haalt het "opgeplakte".
+- **3/4 zit in de linkerkant van de kop:** laat de verre wang 1–2 px voorbij het verre oog uitsteken, zodat de neusbrug schuin uit het gezicht komt; een snoet die vanaf de schedelrand recht opzij steekt leest als profiel.
+- **Verre arm op een donker lijf** verdwijnt; een zwarte rand aan de lichte kant plus één rij basistint maakt hem zichtbaar.
 
 ## 12. Lessen uit Jordi's feedback op ronde 8
 - **Geen 'geamputeerde' verre ledematen:** in een 3/4-pose zijn de verre arm en het verre been bij Gen 3 altijd (deels) zichtbaar achter of naast het lijf. Laat ze nooit weg; teken ze kleiner en in de schaduwkleur. Check: tel per sprite de armen, benen en oren.

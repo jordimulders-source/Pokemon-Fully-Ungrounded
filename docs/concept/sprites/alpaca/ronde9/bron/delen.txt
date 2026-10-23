@@ -1,0 +1,141 @@
+# Alpaca ronde 9: met de hand getekende delen, van achter naar voor (basis: ronde 8).
+# "## naam x y [dy2]" = linkerbovenhoek op het 64x64-doek; dy2 = verschuiving in frame 2. '.' = niets.
+# K zwart | W wol-hl w wol v wolschaduw V wolomlijning | F vacht-hl f vacht e vachtschaduw E vachtomlijning
+# R hs-hl r handschoen s hs-schaduw S hs-omlijning | P roze | B oogreflectie
+# Ronde 9: achterpoten met hakgewricht (schuin naar achter, hak, recht omlaag, hoef naar voren).
+## achterpoot_ver 44 50
+EeeK..
+.EeeK.
+.EeeeK
+.EeeK.
+EEEEK.
+.KKKK.
+## achterpoot_voor 38 51
+EfeK..
+.EfeK.
+.EffeK
+.EfeK.
+EEEEK.
+.KKKK.
+## lijf 29 32
+......VVVV..............
+....VVWWwwVV............
+...VWWWwwwwwV..VVV......
+..VWWwwwwwwwwVVWWwvVV...
+.VWwwwwwwwwwwwvWWwwwwV..
+VWwwwwwwwwwwwwwvwwwwwwV.
+wwwwwwvvwwwwwwwwwwwWWwvK
+wwwwwwwwvwwwwwwwwvwwwwvK
+wwwwwwwwwwwwwwwwwwvwwvK.
+wwwwwwwwwwwwwwwwwwvVvK..
+wwwwwwwwwwwwwwwwwvvwwvK.
+wwwwwwwwwwwwwwwwwwvwwvvK
+wwwwwwwwwwwwwwwwvwvvvvvK
+wwwwwwwwwwwwwwwwwvvvvvK.
+wwwwwwwwwwwwwwvwvvvVvK..
+wwwwwwwwwwwwwvwvvvvwvvK.
+wwwwwwwwwwwvwvvvvvvvvvK.
+wwwwwwwwwvwvvvvvvKKKKK..
+wwwwwwvwvvKKKKvvK.......
+vvvwvvvvvK....KK........
+vvvvvvvvK...............
+KKKKKKKK................
+## borst 17 37
+....vvvvvvvvvvv
+...Vvvvvvvvvvvv
+..VWvvvvvvvvvvv
+.VWWwvvvvvvvvww
+VWWwwwwvvvwwwww
+VWwwwwwwwwwwwww
+.VvwwwwwwwwwwWw
+VWwwwwwwwwwwwww
+Kvvwwvwwwwwwwww
+.KKvvvvvwvwwwww
+...KKvvvvvvvvvv
+## vuist_ver 25 47
+...VVVVV...
+..VwwvvvK..
+..SVVrVVK..
+..SRrrssK..
+.SRrrrsssK.
+.SrrrssssK.
+.KrrsssssK.
+..KsssssK..
+...KKKKK...
+## oor_rechts 29 8 1
+....E...
+...EFK..
+...EFeK.
+..EFPeK.
+..EFPPeK
+.EfPPeeK
+.EfPPeK.
+.EfPPeK.
+EffPeeK.
+EfPeeK..
+EfeeeK..
+EfeeK...
+EeeeK...
+KEEK....
+## oor_links 13 9 1
+..E...
+.EFK..
+.EFeK.
+EFPeK.
+EFPeK.
+EfPPeK
+EfPPeK
+.EfPeK
+.EfPeK
+.EffeK
+.EfeeK
+..EeeK
+..KEEK
+## gezicht 12 20 1
+.........EEEEKKK........
+.......EEFFFffffKK......
+.....EEFFFFffffeeeKK....
+....EFFFFfffffffeeeeK...
+...EFFFFffffffffeeeeeK..
+...EFFFFfffffffffeeeeK..
+...EFFFFfffffffffeeeeK..
+..EFFFFffffffffffeeeeeK.
+..EFFFFffffffffffeeeeeK.
+..EFFFfffffffffffeeeeeK.
+.EFFFFffffffffffffeeeeK.
+.EFFFEKfffffffKKEffeeeeK
+.EFFFFWKfffffKWKfffeeeeK
+EFFFFFKKfffffKKKfffeeeK.
+EFFFFFKBfffffKKBfffeeeK.
+EFFFFFKffffffKKfffeeeK..
+.EFFFffffEfEfffPPeeeeK..
+..EFFfffffEffeeeeeeeK...
+...KffeeeeeeeeeeeeKK....
+....KKKKKKKKKKKKKK......
+## kuif 17 15 1
+......vvVV......
+....vvWWwwVV....
+...vWWWwwwwwVVV.
+.vvVWWwwwwwwvwwV
+vWWvwwwwwwwwwvvV
+VWwwwwwwwwwvvvvK
+VwwwwwwwwwvvvvvK
+VwwwwwwwwvvvvvvK
+.VwwvwwwvwvvvvK.
+.VwvVwwvVvvKvvK.
+..VVVwvvKvvKKK..
+.....VKK.KK.....
+## vuist_voor 12 44
+....VVVVV....
+...VWWwwvK...
+..VWwwwwvvK..
+..VvvVvvVvK..
+..SSVRRVrSS..
+.SRRWRrrrrsS.
+.SRRRrrrrssK.
+.SRrrrrsrssK.
+.SRrrrsrsssK.
+.SrrrrsrsssK.
+.KrrrrrssssK.
+..KrssssssK..
+...KKKKKKK...

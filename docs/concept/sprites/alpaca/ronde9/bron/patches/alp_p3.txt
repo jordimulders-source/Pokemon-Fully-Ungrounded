@@ -1,0 +1,10 @@
+# achterkant: drie duidelijke wolbulten met inkepingen van 2 px
+lijf 40 29 wwwwwwwwwwwwwwwwwwvwwvK_
+lijf 41 29 wwwwwwwwwwwwwwwwwwvVvK__
+lijf 42 29 wwwwwwwwwwwwwwwwwvvwwvK_
+lijf 43 29 wwwwwwwwwwwwwwwwwwvwwvvK
+lijf 44 29 wwwwwwwwwwwwwwwwvwvvvvvK
+lijf 45 29 wwwwwwwwwwwwwwwwwvvvvvK_
+lijf 46 29 wwwwwwwwwwwwwwvwvvvVvK__
+lijf 47 29 wwwwwwwwwwwwwvwvvvvwvvK_
+lijf 48 29 wwwwwwwwwwwvwvvvvvvvvvK_

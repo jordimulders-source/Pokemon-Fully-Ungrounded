@@ -1,0 +1,14 @@
+. 152 208 160              # transparant
+K 40 24 56 zwart           # bijna-zwart (omlijning schaduwkant, pupil)
+O 88 56 120 omlijning      # omlijningsbasis violet
+V 124 92 164 omlijning     # schaduw violet (ook lichte omlijning)
+v 160 128 200              # basis violet
+h 198 174 232              # hooglicht violet
+D 206 172 140              # schaduw creme
+C 240 220 182              # basis creme
+c 255 248 226              # hooglicht creme
+m 128 32 104              # donker magenta (iris boven, gekleurde oogomlijning)
+a 214 72 156               # magenta (iris)
+A 255 166 214              # licht roze (gekleurde reflectie, gloed)
+w 255 255 255              # glans
+E 156 116 92 omlijning     # omlijning creme (handen)

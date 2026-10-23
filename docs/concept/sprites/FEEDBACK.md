@@ -70,3 +70,4 @@
 - **Nachtaap (Jordi):** tevreden over het **lichaam en het hoofd, op de ogen na**.
 - **Werkwijze (Jordi):** de lessen uit de PDF's beter nalopen en **vergelijken met echte Pokémon**: welke verbanden zitten er in hun sprites en waar wijken de onze nog af.
 - **Olinguito (Jordi):** kijkt zijwaarts (profiel); bij de meeste Pokémon-sprites kijken ze **diagonaal** (3/4 naar de kijker).
+- **Nachtaap (Jordi):** de ogen zijn waarschijnlijk te groot; vergelijk met **Jigglypuff en Wigglytuff**.

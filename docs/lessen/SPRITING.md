@@ -166,3 +166,6 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 ## 20. Lessen uit olinguito ronde 13 (3/4-constructie van een viervoeter)
 - **Verre poten staan links van én hoger dan de dichtbije** bij een 3/4 naar links-voor (de verre kant draait naar achteren; zie Mightyena, Poochyena). Een verre poot rechts van de dichtbije, of een dichtbije poot midden onder de buik ver van de heup, geeft een Escher-pose: dan klopt de overlap niet met de diepte. Check: hangt elke poot onder zijn eigen schouder of heup?
 - **Eerst een constructieschets over de vorige ronde** (twee ovalen voor borst en heup, middellijn de diepte in, schouder-/heupas dwars erop, poten als lijnen; `docs/concept/sprites/olinguito/ronde13/bron/constructie.py`), dan pas pixels. Vaak hoeft er weinig opnieuw: hier ging de bestaande dichtbije achterpoot ongewijzigd 9 px naar rechts en alleen de onderkant van de romp en de verre poot werden nieuw getekend.
+
+## 21. Lessen uit olinguito ronde 14
+- **Een romp leest rechthoekig als de buiklijn vlak loopt en de achterkant verticaal valt.** Laat de onderrand vanaf de diepe borst met toenemende stappen per rij (4,3,2,1) naar een hoog ingetrokken lies stijgen en rond de heup af met stappen 2,2,1,1,0,1; zet de achterpoot zó dat de dij de achterkant van die boog vormt (Mightyena).

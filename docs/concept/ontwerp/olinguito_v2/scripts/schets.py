@@ -11,6 +11,7 @@ oor bovenop); kleiner lijf, poten verder naar voren onder het lijf (boomfoto's).
 Ronde 7 (Jordi): pose diagonaler (3/4 zoals Linoone, niet van opzij), poten niet op één lijn maar dynamisch
 (zoals de olinguito beweegt), zwart masker oog-tot-oog over de snuitrug zoals Patrat, alleen net rond het oog.
 Ronde 8 (Jordi): achterpoten gehurkt (boomfoto's): grote dij, knie scherp gebogen, hak laag, voet plat naar voren.
+Ronde 9 (Jordi): echte driekwartpose: voorpoten naast elkaar van voren, lijf verkort naar achteren.
 Draaien vanuit de repo-root: python3 docs/concept/ontwerp/olinguito_v2/scripts/schets.py"""
 import os
 import sys
@@ -35,7 +36,7 @@ OUT = os.path.join(HERE, '..')
 
 
 def tail(c):
-    pts = (qbez((186, 104), (236, 82), (224, 36), 12)[:-1] + qbez((224, 36), (212, 8), (178, 16), 10)[:-1]
+    pts = (qbez((196, 98), (240, 78), (226, 34), 12)[:-1] + qbez((224, 36), (212, 8), (178, 16), 10)[:-1]
            + qbez((178, 16), (150, 24), (148, 48), 8))
     n = len(pts) - 1
     w = [17 + 3 * math.sin(math.pi * i / n) - 9 * (i / n) ** 2 for i in range(n + 1)]
@@ -66,7 +67,7 @@ def crouch_leg(c, hip, knee, hock, toe, col, foot_col, w=22):
         c.part(claw((toe[0] - 2 + i * 4, toe[1] + 1), (toe[0] - 9 + i * 4, toe[1] + 7), 2, 3.5), CL, line=1)
 
 
-def head_pts(pts, sc=0.45, rot=12, anchor=(93, 222), at=(38, 188), pivot=(215, 40)):
+def head_pts(pts, sc=0.45, rot=12, anchor=(93, 222), at=(44, 192), pivot=(215, 40)):
     """Punten uit referentie_kop.png (217x242) naar het canvas: schalen, iets draaien zodat
     de neus schuin naar links-omlaag wijst (diagonaal naar de kijker), neus op `at`."""
     r = math.radians(rot)
@@ -81,26 +82,26 @@ def draw():
     c = Canvas()
     H = head_pts
     He = lambda x, y, rx, ry, rot=0: H(ell(x, y, rx, ry, rot))
-    # Diepte (3/4 zoals Linoone): de voorkant is dichtbij (groot, laag), de romp ver weg (kleiner, hoger).
-    # Verre poten staan rechts van en hoger dan de nabije; elke poot in een andere fase van de stap.
-    # verre achterpoot: gestrekt naar achteren, zet zich af (ver weg: hoog en klein)
-    crouch_leg(c, (186, 124), (176, 148), (198, 162), (180, 170), FAR, '#9C6E66', w=24)
-    # verre voorpoot: opgetild en gebogen, klauwen hangen (stapt)
-    c.part(tube([(124, 146), (140, 170), (128, 188)], [20, 16, 13]), FAR)
-    c.part(ell(124, 190, 9, 7, -10), '#9C6E66')
-    paw_claws(c, 118, 193, 118, 26, '#D8CDB4')
+    # Driekwart van voren-links: borst en beide voorpoten naar de kijker (naast elkaar zichtbaar),
+    # het lijf verkort schuin naar achteren-rechts, de romp en achterpoten kleiner en hoger.
+    # verre achterpoot: gehurkt, ver weg (hoog, klein)
+    crouch_leg(c, (196, 112), (186, 134), (206, 148), (190, 156), FAR, '#9C6E66', w=20)
     tail(c)
-    # lijf loopt taps toe van de brede borst (dichtbij) naar de kleinere romp (ver weg)
-    lijf = c.mask(blob([(82, 166), (88, 134), (112, 112), (142, 98), (166, 90), (184, 96), (190, 112),
-                        (180, 130), (158, 146), (132, 166), (110, 192), (90, 190)]))
-    c.part(lijf | c.mask(ell(170, 122, 28, 26, -20)), BR)
-    c.stroke(qbez((146, 102), (134, 132), (156, 148), 10), 2.0)
-    # nabije achterpoot: gehurkt, knie scherp naar voren, hak laag achter, voet plat naar voren onder de buik
-    crouch_leg(c, (164, 130), (144, 158), (172, 180), (148, 190), BR, PAW, w=30)
-    # nabije voorpoot: dikke schouder voor de borst, ver gestrekt naar voren-omlaag naar de kijker
-    c.part(c.mask(ell(106, 160, 19, 22, -20)) | c.mask(tube([(104, 166), (86, 196), (68, 222)], [30, 22, 18])), BR)
-    c.part(ell(64, 224, 12, 9, -30), PAW)
-    paw_claws(c, 56, 228, 152)
+    # lijf: borst dichtbij, verkort naar de romp
+    lijf = c.mask(blob([(90, 150), (104, 124), (130, 106), (158, 94), (182, 90), (200, 100), (202, 118),
+                        (190, 134), (168, 146), (146, 162), (132, 190), (100, 196), (86, 176)]))
+    c.part(lijf | c.mask(ell(180, 118, 22, 21, -20)), BR)
+    c.stroke(qbez((162, 104), (152, 126), (168, 138), 10), 2.0)
+    # nabije achterpoot: gehurkt, net achter de verre voorpoot, voet hoger dan de voorpoten (verder weg)
+    crouch_leg(c, (176, 124), (158, 148), (182, 166), (162, 176), BR, PAW, w=25)
+    # verre voorpoot (rechts naast de nabije): opgetild en gebogen, klauwen hangen
+    c.part(c.mask(ell(128, 170, 15, 17, -10)) | c.mask(tube([(130, 176), (146, 196), (138, 212)], [22, 18, 15])), FAR)
+    c.part(ell(134, 214, 10, 7, -10), '#9C6E66')
+    paw_claws(c, 128, 217, 112, 28, '#D8CDB4')
+    # nabije voorpoot (links, dichtbij): dikke schouder, gestrekt naar voren-omlaag naar de kijker
+    c.part(c.mask(ell(102, 168, 19, 22, -15)) | c.mask(tube([(100, 174), (90, 202), (78, 228)], [30, 23, 18])), BR)
+    c.part(ell(74, 230, 12, 9, -30), PAW)
+    paw_claws(c, 66, 234, 150)
     # kop, overgetrokken van referentie_kop.png: neus omlaag, oog laag bij de snuit, hoog rond voorhoofd
     c.part(H([(200, 22), (230, 60), (226, 110)]) and He(66, 34, 13, 12), EAR)   # verre oor: randje
     h = c.part(blob(H([(93, 230), (80, 220), (64, 198), (44, 166), (30, 125), (32, 88), (44, 54), (66, 26), (96, 10),
@@ -135,11 +136,11 @@ FS = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 11)
 
 def sheet():
     a, sa = draw()
-    a.save(os.path.join(OUT, 'schets_v2_ronde8.png'))
+    a.save(os.path.join(OUT, 'schets_v2_ronde9.png'))
     W, H = 256 * 3 + 40, 256 + 110
     im = Image.new('RGB', (W, H), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 8), 'Olinguito v2, ronde 8: schets (geen pixels)', font=FB, fill=(30, 30, 30))
+    d.text((10, 8), 'Olinguito v2, ronde 9: schets (geen pixels)', font=FB, fill=(30, 30, 30))
     im.paste(a, (10, 34))
     silim = Image.new('RGB', (256, 256), 'white')
     silim.paste(Image.new('RGB', (256, 256), (70, 66, 84)), (0, 0), sa)
@@ -149,10 +150,10 @@ def sheet():
     for x, t in ((10, 'schets'), (276, 'silhouet'), (542, 'op spritegrootte (64×64)')):
         d.text((x, 292), t, font=FS, fill=(90, 90, 90))
     lines = ['Kop overgetrokken van de foto, één oog, één dominant oor, lange dunne staart omhoog.',
-             'Ronde 8: achterpoten gehurkt (grote dij, lage hak, platte voet); ronde 7: diagonaler, masker oog-tot-oog.']
+             'Driekwart: voorpoten naast elkaar naar de kijker, lijf verkort naar achteren, achterpoten gehurkt.']
     for i, ln in enumerate(lines):
         d.text((10, 312 + i * 18), ln, font=F, fill=(30, 30, 30))
-    im.save(os.path.join(OUT, 'schetsen_v2_ronde8.png'))
+    im.save(os.path.join(OUT, 'schetsen_v2_ronde9.png'))
 
 
 sheet()

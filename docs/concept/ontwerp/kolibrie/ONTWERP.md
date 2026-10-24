@@ -22,3 +22,6 @@ Naar Jordi's posetekening + foto's (velvet-purple kroonkolibrie, langstaartsylfe
 ## Schets v4 (24 okt): vleugels naar Jordi's vleugelfoto's
 - Referenties: `docs/concept/sprites/kolibrie/referenties/jordi_vleugel_*.webp` + `jordi_pose_schets.png`.
 - Vleugel = korte arm + waaier van 7–8 lange, smalle slagpennen met ronde punt, trapsgewijs over elkaar (voorste het langst), geschubde dekveren in lijfkleur aan de basis (zoals de illustratie). Transparantie ongewijzigd (vanaf het midden, tot ±90%).
+
+## Schets v5 (24 okt): gewone vleugel
+- Jordi: geen waaier, een normale vleugel; v4 was te klein en de vorm klopte niet. Nu één groot lemmet (±1:2,7): smalle wortel aan de schouder, breedst rond het midden, licht bolle voorrand, punt iets naar voren; lichtere schouder (dekveren) en drie pennenlijnen in de lengte. Groter (nabije vleugel ±55% van de boxhoogte). Transparantie ongewijzigd.

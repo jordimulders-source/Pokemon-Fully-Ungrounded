@@ -29,3 +29,8 @@ Naar Jordi's posetekening + foto's (velvet-purple kroonkolibrie, langstaartsylfe
 ## Schets v6 (24 okt): vleugelvorm naar Jordi's close-up
 - Referentie: `docs/concept/sprites/kolibrie/referenties/jordi_vleugel_closeup.png`. Lange driehoek/sikkel: breedst aan de schouder, rechte voorrand naar een scherpe punt, rechte achterrand met kleine zaagtandjes (de punten van de slagpennen, strak parallel, geen waaier), pennenlijnen parallel aan de voorrand, smalle dekverenrand in lijfkleur.
 - Hele figuur 84% en lager in de box gezet zodat de grotere vleugels passen (`KCanvas` in het script). Oranje vlekje vervallen.
+
+## Schets v7 (24 okt): opnieuw opgebouwd
+- Jordi over v6: vleugels zitten niet goed op het lijf, oog zweeft, staarten niet af en los van het lijf, doorzichtigheid niet zichtbaar ("prutswerk").
+- Nu: lijf als één druppelvorm (borst linksonder, achterlijf rechtsboven); kop rond en direct op de borst, oog midden in de kop; beide vleugels groeien uit de rug (nabije vleugel achter een geschubde rand dekveren die met het lijf versmelt); staart = franje + drie slierten die uit het achterlijf komen en eindigen in een druppelvormig zielvlammetje.
+- Glasvleugel: alleen de vulling wordt doorzichtig (vanaf het midden tot ±90%), omlijning en pennen blijven staan; bokeh-achtergrond zodat je erdoorheen kijkt.

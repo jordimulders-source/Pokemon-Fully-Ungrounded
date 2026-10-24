@@ -1,125 +1,126 @@
-"""Kolibrie (Ghost/Flying), eindvorm: eerste schets naar Jordi's pose (24 okt).
-Duikt schuin naar linksonder (drinkt), vleugels als V omhoog, franjestaart naar rechtsonder."""
+"""Kolibrie (Ghost/Flying), eindvorm: schets naar Jordi's pose (24 okt).
+Duikt schuin naar linksonder (drinkt), vleugels als V omhoog uit de rug, staart waaiert naar rechtsonder.
+v7: opnieuw opgebouwd. Volgorde achter -> voor: verre vleugel, staart, lijf, nabije vleugel, dekveren
+(versmolten met het lijf), lijfdetails, kuif, snavel, kop, oog."""
 import sys, os, math
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from mdl import *
 
 C = dict(line='#1a1226', head='#2a2238', crown='#c46bff', body='#6a3fc8', body2='#8f63e6',
-         wing='#4e4670', wing2='#5f5684', teal='#2fc7b8', orange='#f08a3c', beak='#1e1a26',
-         soul='#efe6ff', soul2='#b9a6f2', eye='#ffffff', iris='#1a1226')
-
-
-K, OX, OY = 0.84, 14, 40  # hele figuur verkleinen en zakken, zodat de grote vleugels in de box passen
-
-
-class KCanvas(Canvas):
-    def m_ellipse(self, cx, cy, rx, ry, rot=0):
-        return super().m_ellipse(OX + K * cx, OY + K * cy, K * rx, K * ry, rot)
-
-    def m_poly(self, pts):
-        return super().m_poly([(OX + K * x, OY + K * y) for x, y in pts])
-
-    def m_tube(self, center, w0, w1=None):
-        return super().m_tube([(OX + K * x, OY + K * y) for x, y in center], K * w0, None if w1 is None else K * w1)
-
-
+         wing='#4e4670', wing2='#6a5f92', teal='#2fc7b8', beak='#1e1a26',
+         soul='#f4eeff', soul2='#b9a6f2', iris='#120c1c')
 BG = '#c9d6c0'  # zacht bosgroen, alleen om de doorzichtige vleugels te tonen
+
+BODY = [(188, 108), (164, 112), (134, 124), (108, 138), (90, 152), (84, 170), (96, 188),
+        (124, 186), (152, 166), (174, 134)]
+
+
+def wing(cv, base, ang, L, W, n=9):
+    """Kolibrievleugel naar Jordi's close-up: lange driehoek, breedst aan de schouder, rechte voorrand
+    naar een scherpe punt, rechte achterrand met kleine zaagtandjes (penpunten, strak parallel).
+    Vanaf het midden naar buiten geleidelijk doorzichtiger. Geeft het vleugelmasker terug."""
+    a = math.radians(ang)
+    ux, uy = math.cos(a), math.sin(a)
+    nx, ny = -uy, ux  # positieve v = achterrand
+
+    def P(u, v):
+        return (base[0] + ux * u * L + nx * v * W, base[1] + uy * u * L + ny * v * W)
+    tip, root = (0.97, 0.14), (0.12, 0.85)
+    pts = [P(-0.1, -0.1), P(0.5, -0.10), P(0.82, -0.06), P(0.95, -0.01), P(1.0, 0.05), P(*tip)]
+    dv = (root[0] - tip[0], root[1] - tip[1])
+    dl = math.hypot(dv[0] * L, dv[1] * W)
+    on, ov = (dv[1] * W / dl) / W, (-dv[0] * L / dl) / L
+    pens = []
+    for k in range(1, n + 1):
+        f0, f1 = (k - 0.55) / n, k / n
+        q0 = (tip[0] + dv[0] * f0, tip[1] + dv[1] * f0)
+        q1 = (tip[0] + dv[0] * f1, tip[1] + dv[1] * f1)
+        pts.append(P(q0[0] - on * 4, q0[1] - ov * 4))
+        pts.append(P(*q1))
+        pens.append(q0)
+    pts += [P(-0.1, 0.8)]
+    m = cv.m_poly(pts)
+    under = cv.img.copy()
+    # glasvleugel: alleen de vulling wordt doorzichtig (vanaf het midden tot ±90% aan de punt);
+    # omlijning en pennen blijven goed zichtbaar, zodat je er echt doorheen kijkt
+    cv.fill(m, C['wing'])
+    lines = cv.m_stroke([P(0.05, 0.02), P(0.9, -0.03)], 1.2, smooth=False)
+    for (pu, pv) in pens:
+        lines |= cv.m_stroke([P(pu, pv), P(pu - 0.42, pv - 0.22)], 1.1, smooth=False)
+    lines &= m
+    yy, xx = np.nonzero(m & ~lines)
+    u = ((xx / SS - base[0]) * ux + (yy / SS - base[1]) * uy) / L
+    t = np.clip((u - 0.45) / 0.5, 0, 1) * 0.9
+    cv.img[yy, xx] = (cv.img[yy, xx] * (1 - t[:, None]) + under[yy, xx] * t[:, None]).astype(np.uint8)
+    cv.img[lines] = hexc(C['wing2'])
+    return P
 
 
 def draw():
-    cv = KCanvas(line=C['line'], lw=2.4)
+    cv = Canvas(line=C['line'], lw=2.4)
     cv.img[:] = hexc(BG)
-    def wing(base, ang, L, W, col, col2, cov, n=9):
-        # kolibrievleugel naar Jordi's close-up (24 okt): lange driehoek/sikkel, breedst aan de
-        # schouder; rechte voorrand naar een scherpe punt; rechte achterrand met zaagtandjes
-        # (de punten van de slagpennen), pennen liggen strak parallel (geen waaier).
-        # Vanaf het midden naar buiten geleidelijk doorzichtiger.
-        a = math.radians(ang)
-        ux, uy = math.cos(a), math.sin(a)
-        nx, ny = -uy, ux  # positieve v = achterrand
-        def P(u, v):
-            return (base[0] + ux * u * L + nx * v * W, base[1] + uy * u * L + ny * v * W)
-        tip, root = (0.97, 0.14), (0.12, 0.85)
-        pts = [P(-0.05, -0.08), P(0.5, -0.10), P(0.82, -0.06), P(0.95, -0.01), P(1.0, 0.05), P(*tip)]
-        dv = (root[0] - tip[0], root[1] - tip[1])
-        dl = math.hypot(dv[0] * L, dv[1] * W)
-        on, ov = (dv[1] * W / dl) / W, (-dv[0] * L / dl) / L      # naar buiten (weg van de voorrand)
-        pens = []
-        for k in range(1, n + 1):
-            f0, f1 = (k - 0.55) / n, k / n
-            q0 = (tip[0] + dv[0] * f0, tip[1] + dv[1] * f0)
-            q1 = (tip[0] + dv[0] * f1, tip[1] + dv[1] * f1)
-            pts.append(P(q0[0] - on * 4, q0[1] - ov * 4))      # inkeping
-            pts.append(P(q1[0], q1[1]))                         # penpunt
-            pens.append(q0)
-        pts += [P(0.02, 0.7), P(-0.05, 0.3)]
-        m = cv.m_poly(pts)
-        under = cv.img.copy()
-        cv.fill(m, col)
-        # pennen: lijnen vanaf elke inkeping terug, parallel aan de voorrand
-        lines = cv.m_stroke([P(0.05, 0.02), P(0.9, -0.03)], 1.2, smooth=False)
-        for (pu, pv) in pens:
-            lines |= cv.m_stroke([P(pu, pv), P(pu - 0.42, pv - 0.22)], 1.1, smooth=False)
-        cv.fill(lines, col2, line=False, clip=m)
-        # dekveren in lijfkleur aan de schouder, geschubde rand
-        cm = np.zeros_like(cv.alpha)
-        for k in range(4):
-            cm |= cv.m_ellipse(*P(0.10 - 0.02 * k, 0.0 + 0.2 * k), 7, 6)
-        cm |= cv.m_poly([P(-0.06, -0.08), P(0.08, -0.08), P(0.06, 0.65), P(-0.06, 0.4)])
-        cv.fill(cm, cov, line='inner', lw=1.6, clip=m)
-        # transparantie: dekkend tot het midden, dan lineair tot ±90% aan de punt
-        ring = cv.dilate(m, (cv.lw * SS) / 2 + 0.5)
-        yy, xx = np.nonzero(ring)
-        u = (((xx / SS - OX) / K - base[0]) * ux + ((yy / SS - OY) / K - base[1]) * uy) / L
-        t = np.clip((u - 0.5) / 0.5, 0, 1) * 0.9
-        cv.img[yy, xx] = (cv.img[yy, xx] * (1 - t[:, None]) + under[yy, xx] * t[:, None]).astype(np.uint8)
-    # ---- verre vleugel (achter, kleiner, hoger) ----
-    wing((150, 122), -76, 128, 52, C['wing'], C['wing2'], C['body'])
-    # ---- staart: korte waaier (franje) + twee lange slierten met zielvlammen ----
-    tails = [([(178, 114), (214, 112), (240, 146), (248, 186), (246, 214)], 5.5, 2.2),
-             ([(177, 117), (206, 122), (220, 160), (218, 204), (214, 234)], 5.5, 2.2),
-             ([(176, 120), (196, 134), (198, 170), (184, 206)], 5.5, 2.2)]
-    for pts, w0, w1 in tails:
-        cv.fill(cv.m_tube(catmull(pts, closed=False), w0, w1), C['head'], lw=2.0)
-    for i, a in enumerate((-6, 10, 26, 42, 58)):
-        r = math.radians(a)
-        L = 42 - abs(a - 26) * 0.35
-        tip = (176 + math.cos(r) * L, 118 + math.sin(r) * L)
-        cv.fill(cv.m_tube([(172, 118), tip], 12, 5), C['body'] if i % 2 else C['body2'], lw=2.0)
-        cv.fill(cv.m_ellipse(tip[0], tip[1], 4, 4), C['soul2'], line=False)
-    for pts, _, _ in tails:
-        x, y = pts[-1]
-        px, py = pts[-2]
+    bg = Image.fromarray(cv.img)
+    dr = ImageDraw.Draw(bg)
+    for (x, y, r, c) in ((70, 40, 46, '#e8dca0'), (170, 30, 38, '#9fbf8a'), (130, 80, 30, '#f0e4b8'),
+                         (210, 70, 34, '#a9c79a'), (40, 110, 28, '#b5cfa4')):
+        dr.ellipse([(x - r) * SS, (y - r) * SS, (x + r) * SS, (y + r) * SS], fill=c)
+    cv.img[:] = np.array(bg)
+    body = cv.m_blob(BODY)
+
+    # ---- verre vleugel (wortel verdwijnt achter het lijf) ----
+    wing(cv, (150, 120), -76, 104, 44)
+
+    # ---- staart: wig uit het achterlijf, franje, drie slierten met zielvlammetjes ----
+    shafts = [[(186, 112), (214, 104), (234, 124), (240, 160), (234, 194)],
+              [(186, 114), (208, 118), (220, 148), (216, 186), (206, 210)],
+              [(184, 116), (198, 130), (200, 162), (190, 192)]]
+    for pts in shafts:
+        cv.fill(cv.m_tube(catmull(pts, closed=False), 5, 3.4), C['head'], lw=2.0)
+    for pts in shafts:
+        (px, py), (x, y) = pts[-2], pts[-1]
         a = math.atan2(y - py, x - px)
-        cx, cy = x + math.cos(a) * 9, y + math.sin(a) * 9
-        nx, ny = -math.sin(a), math.cos(a)
-        flame = cv.m_blob([(x, y), (cx + nx * 9, cy + ny * 9), (x + math.cos(a) * 26, y + math.sin(a) * 26),
-                           (cx - nx * 9, cy - ny * 9)])
-        cv.fill(flame, C['soul2'], lw=2.0)
-        cv.fill(cv.m_ellipse(cx + math.cos(a) * 2, cy + math.sin(a) * 2, 4, 4), C['soul'], line=False)
-    # ---- lijf: volle borst, violet fluweel met schubbenglans ----
-    body = cv.m_ellipse(136, 140, 48, 31, rot=-28)
+        end = (x + math.cos(a) * 18, y + math.sin(a) * 18)
+        cv.fill(cv.m_tube([(x - math.cos(a) * 2, y - math.sin(a) * 2), end], 3.4, 14), C['soul2'], lw=2.0)
+        cv.dot(end[0] - math.cos(a) * 2, end[1] - math.sin(a) * 2, 3.6, C['soul'])
+    for i, ang in enumerate((-18, 2, 22, 42)):
+        r = math.radians(ang)
+        tip = (180 + math.cos(r) * 26, 116 + math.sin(r) * 26)
+        cv.fill(cv.m_tube([(176, 118), tip], 10, 4.5), C['body2'] if i % 2 else C['body'], lw=2.0)
+        cv.dot(tip[0], tip[1], 2.2, C['soul2'])
+
+    # ---- lijf ----
     cv.fill(body, C['body'])
-    for (x, y) in ((116, 158), (128, 154), (122, 168), (140, 150), (134, 164), (148, 160), (110, 170)):
+
+    # ---- nabije vleugel uit de rug ----
+    P = wing(cv, (124, 130), -110, 122, 50)
+    # dekveren: geschubde rand die met het lijf versmelt (één omlijning om lijf + schubben)
+    cov = cv.m_poly([P(-0.1, -0.1), P(0.08, -0.12), P(0.07, 0.72), P(-0.1, 0.8)])
+    for k in range(4):
+        cov |= cv.m_ellipse(*P(0.085, 0.0 + 0.2 * k), 6, 5.5)
+    cv.fill(cov | body, C['body'])
+
+    # ---- lijfdetails ----
+    cv.fill(cv.m_ellipse(114, 146, 14, 8, rot=-30), C['teal'], line=False, clip=body & ~cov)
+    for (x, y) in ((104, 170), (116, 176), (112, 162), (128, 170), (124, 158), (140, 162)):
         cv.fill(cv.m_ellipse(x, y, 5, 3.5), C['body2'], line=False, clip=body)
-    cv.fill(cv.m_ellipse(126, 122, 18, 9, rot=-28), C['teal'], line=False, clip=body)
-    # ---- nabije vleugel (voor, groter, naar links gekanteld) ----
-    wing((140, 124), -108, 148, 58, C['wing'], C['wing2'], C['body'])
-    # ---- nek + kop ----
-    cv.fill(cv.m_tube([(106, 160), (88, 170)], 22, 20), C['head'])
-    # snavel: lang, dun, iets gebogen naar linksonder
-    cv.fill(cv.m_tube(catmull([(66, 186), (48, 206), (34, 230), (28, 246)], closed=False), 5, 1.2), C['beak'], lw=2.0)
-    head = cv.m_ellipse(76, 176, 23, 20, rot=-20)
-    # kuif: drie korte veren met bleke punt (jeguaka, de Guaraní-verentooi)
-    for p in ([(80, 162), (82, 144), (90, 134)], [(84, 164), (94, 148), (104, 144)], [(76, 162), (70, 146), (74, 134)]):
-        cv.fill(cv.m_tube(catmull(p, closed=False), 6, 2.5), C['crown'], lw=1.8)
+
+    # ---- kuif: jeguaka (drie veertjes met bleke punt), wortels achter de kop ----
+    for p in ([(76, 162), (80, 144), (90, 132)], [(80, 164), (94, 150), (106, 147)], [(72, 162), (68, 146), (72, 133)]):
+        cv.fill(cv.m_tube(catmull(p, closed=False), 6, 2.6), C['crown'], lw=1.8)
         cv.dot(p[-1][0], p[-1][1], 2.2, C['soul'])
+
+    # ---- snavel: lang, dun, licht gebogen, wortel onder de kop ----
+    cv.fill(cv.m_tube(catmull([(62, 182), (44, 202), (30, 222), (22, 242)], closed=False), 5.5, 1.4), C['beak'], lw=2.0)
+
+    # ---- kop: rond, zit direct op de borst (kolibries hebben nauwelijks nek) ----
+    head = cv.m_ellipse(74, 174, 21, 19, rot=-20) | cv.m_ellipse(88, 166, 10, 10)
     cv.fill(head, C['head'])
-    cv.fill(cv.m_ellipse(78, 162, 12, 5, rot=-15), C['crown'], line=False, clip=head)
-    # oog: groot, rond, vriendelijk; bleke ring = gloed
-    cv.dot(72, 174, 4.6, C['soul'])
-    cv.dot(72, 174, 3.4, C['iris'])
-    cv.dot(73.2, 172.8, 1.1, C['eye'])
+    cv.fill(cv.m_ellipse(78, 160, 12, 5, rot=-15), C['crown'], line=False, clip=head)
+
+    # ---- oog: klein, midden in de kop, bleke gloeiring ----
+    cv.dot(70, 172, 4.4, C['soul'])
+    cv.dot(70, 172, 3.2, C['iris'])
+    cv.dot(71.2, 170.8, 1.0, '#ffffff')
     return cv
 
 
@@ -140,4 +141,4 @@ if __name__ == '__main__':
     d.text((266, 216), 'sprite-formaat 3x', fill='black', font=f)
     d.text((470, 86), '1x', fill='black', font=f)
     d.text((470, 166), 'silhouet 1x', fill='black', font=f)
-    W.save(os.path.join(out, 'schets_v6.png'))
+    W.save(os.path.join(out, 'schets_v7.png'))

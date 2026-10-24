@@ -1,35 +1,24 @@
-[romp]
-# rug: schouder, kleine zadel, staartwortel stijgt (stukken van 4 px); nek begint direct achter de kop/nek-lijn
-31 49:2
-32 34:... 37:2222 41:.... 45:2222 49:5
-33 35:22 37:5555 41:2222 45:5555 49:4
-34 36:5 37:4444 41:5555 45:44444
-35 36:3 37:4444444444444
-36 35:3 36:4444444444444 49:1
-37 35:44444444444 46:33 48:1
-38 34:44444444444 45:333 48:1
-39 38:44 40:2 41:5555 45:44 47:3 48:1
-40 38:4 39:2 40:5555 44:44 46:3 47:1
-41 38:4 39:2 40:4 41:555 44:44 46:3 47:1
-42 38:3 39:2 40:4 41:55 43:44 45:3 46:1
-43 38:2 39:44 41:5 42:44 44:3 45:1
-44 38:2 39:4444 43:3 44:1
+# Achterlijf = ronde 23 (romp, dij, nabije achterpoot, J-staart op dezelfde plek en lengte), met deze handwerk-wijzigingen
+# (ronde-23-coördinaten):
+[rug]
+# rug zonder rechte stukken van 5: schouder x40-43, zadel x44-46, staartwortel x47-50
+32 44:.
+33 46:2
+34 46:5
+[nabij]
+# nabije achterpoot: voorrand met knie-knik (37,37,38,38,38,37,37,36) i.p.v. een rechte rand van 6
+47 37:.2444331
+48 37:.244331
+49 37:.244331
 [ver]
-48 47:43
-49 46:433 49:1
-50 45:433 48:1
-51 44:4331
-52 44:4333 48:1
-53 44:11111
-[staart]
-[onder]
-45 37:2 38:444444 44:1
-46 37:2 38:44444 43:33 45:1
-47 38:2 39:4444 43:33 45:3 46:1
-48 39:2 40:444 43:333 46:1
-49 39:2 40:444 43:33 45:1
-50 38:2 39:444 42:33 44:1
-51 37:2 38:444 41:33 43:1
-52 36:2 37:4444 41:33 43:1
-53 36:1 37:2 38:3 39:1 40:333 43:1
-54 37:11 40:1111
+# verre achterpoot (nieuw): komt onder de buik tussen de poten uit, stapt naar voren onder de opgetilde nabije
+# voorpoot (diagonaal: nabije voor + verre achter tegelijk vooruit), voet 1 rij hoger dan de nabije achterpoot
+45 34:2433
+46 35:43
+47 35:443
+48 35:443
+49 34:24433
+50 32:24331
+51 31:24331
+52 30:243131
+53 30:111.11

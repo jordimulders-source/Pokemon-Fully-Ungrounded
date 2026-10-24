@@ -67,10 +67,9 @@ def components(g):
 FACE = None
 KOPDY = 1
 def face_zone(x, y):
-    # bevroren gezicht van ronde 23: neus/snuit/masker/oog/grijns/beide oren (x8-35, y18-38 in frame 1),
-    # behalve de achterhoofdcontour x>=34 op y25-33 (die mag naar binnen)
-    # gezicht: neus, snuit, masker, oog, grijns, verre oor (x8-28, y18-38); het nabije oor wordt apart vergeleken (2 px verschoven)
-    return 8 <= x <= 28 and 18 <= y <= 38 and not (x >= 27 and y <= 24)
+    # bevroren: hele kop van ronde 23 (neus, snuit, masker, oog, grijns, beide oren, schedelbovenkant),
+    # behalve de achterkant van de schedel (x>=34, y25-33) die naar binnen mag
+    return 8 <= x <= 35 and 18 <= y <= 38 and not (x >= 34 and 25 <= y <= 33)
 def run(p):
     im = Image.open(p)
     print('mode', im.mode, im.size, 'transparency', im.info.get('transparency'))
@@ -81,15 +80,10 @@ def run(p):
         print('frame %d: %d px, box %dx%d %s, soliditeit %.3f, symmetrie %.3f, donker %.3f' % (f + 1, A, w, h, box, sol, sym, dark))
         ob = open_edges(g); print('  open randen:', len(ob), ob[:20])
         comps = components(g); print('  delen (8-verbonden):', len(comps), [len(c) for c in comps])
-        # ronde-23-rij -> eindrij: rijen <=24 +3, rij 25 weggeknipt (schedelrij zonder kenmerken), rijen 26-38 +2; frame 2: 1 omhoog
-        def ny(y): return y + 3 - f if y <= 24 else (None if y == 25 else y + 2 - f)
-        fd = [(x, y) for y in range(64) for x in range(64) if face_zone(x, y) and ny(y) is not None and r23[0][y][x] != g[ny(y)][x]]
+        def ny(y): return y - f  # frame 2: kop 1 px omhoog
+        fd = [(x, y) for y in range(64) for x in range(64) if face_zone(x, y) and 0 <= ny(y) < 64 and r23[0][y][x] != g[ny(y)][x]]
         print('  gezicht (bevroren zone) diff met ronde 23:', len(fd), fd[:12])
         st = straight(g); print('  rechte omtrekstukken >=5:', st)
-        if f == 0:
-            r = r23[0]; oor = [(x, y) for y in range(19, 24) for x in range(29, 36) if r[y][x] and (y >= 23 and x < 30) is False]
-            od = [(x, y) for (x, y) in oor if g[y + 3][x - 2] != r[y][x]]
-            print('  nabije oor (ronde 23, 2 px naar links) diff:', len(od), od[:8])
 if __name__ == '__main__':
     run(sys.argv[1] if len(sys.argv) > 1 else os.path.join(T.H, '..', 'anim_front.png'))
 

@@ -18,7 +18,7 @@ LINE = np.array((43, 27, 23), np.uint8)
 COL = {
     'fur': '#6A4630', 'head': '#6B5442', 'crown': '#6A4630', 'far': '#4C3121', 'paw': '#C08A80',
     'farpaw': '#9C6E66', 'claw': '#EDE3CC', 'mask': '#241712', 'eye': '#B9481C', 'pupil': '#1A0F0B',
-    'glint': '#FFFFFF', 'nose': '#8E4F58', 'muzzle': '#2E211A', 'ear': '#4A3324', 'earin': '#8A6C55',
+    'glint': '#FFFFFF', 'nose': '#8E4F58', 'muzzle': '#54443C', 'ear': '#4A3324', 'earin': '#8A6C55',
 }
 NOSHADE = {'muzzle', 'mask', 'eye', 'pupil', 'glint', 'nose', 'claw'}
 LINED = {'eye', 'nose', 'claw'}   # ook een lijn op de kleurgrens
@@ -76,8 +76,8 @@ def olinguito():
     m.ell((2, 6, 0), (34, 24, 23), 'fur', rot_z(math.radians(8)))
     m.ell((34, 12, 0), 25, 'fur')
     # staart: lang, omhoog en in een boog terug over de rug
-    tail = qb((52, 18, 0), (106, 26, 0), (100, 72, 0), 10)[:-1] + qb((100, 72, 0), (94, 110, 0), (64, 104, 0), 8)[:-1] \
-        + qb((64, 104, 0), (40, 98, 0), (44, 80, 0), 6)
+    tail = qb((52, 18, 0), (88, 22, 0), (84, 74, 0), 10)[:-1] + qb((84, 74, 0), (80, 116, 0), (48, 110, 0), 8)[:-1] \
+        + qb((48, 110, 0), (22, 104, 0), (26, 84, 0), 6)
     n = len(tail)
     m.chain([(x, y, z, 10.5 - 5 * i / (n - 1)) for i, (x, y, z) in enumerate(tail)], 'fur')
     # kop: nek, ronde schedel, snuit naar voren-omlaag (vorm van referentie_kop.png), groter dan echt (Pokémon)

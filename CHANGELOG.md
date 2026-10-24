@@ -116,3 +116,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.23] - Olinguito v2: ronde 6
 - Kop overgetrokken van Jordi's foto (neus omlaag, oog laag, hoog voorhoofd, oor bovenop), kleiner lijf, poten verder naar voren onder het lijf, roze voeten. `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde6.png`.
+
+### [v0.0.24] - Olinguito v2: ronde 7
+- Pose diagonaler (diepte: borst dichtbij, romp ver weg), poten elk in een andere fase van de stap, zwart masker oog-tot-oog zoals Patrat (alleen rond het oog). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde7.png`.

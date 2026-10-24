@@ -41,9 +41,15 @@ Ronde 1 (`schetsen_v1.png`; script in de git-geschiedenis):
 - Oor: donkere rand, lichtere binnenkant, hoog achter op de kop.
 Jordi: "kijk goed naar de foto, dit is niet dezelfde vorm". Les: een kop niet 'in de geest van' een foto tekenen, maar de omtrek overtrekken (raster over de foto, punten aflezen).
 
-## Ronde 6 (`schetsen_v2_ronde6.png`, los `schets_v2_ronde6.png`; script `scripts/schets.py`)
+## Ronde 6 (`schetsen_v2_ronde6.png`)
 **Jordi (24 okt, letterlijk):** "kijk goed naar de foto, dit is niet dezelfde vorm" + (foto's van de poten, olinguito's in bomen) "en hier ter referentie de poten" "zitten wat verder naar voren voor mn gevoel met een iets kleiner lichaam".
 - Kop overgetrokken van `referentie_kop.png` (`head_pts()` zet fotocoördinaten om naar het canvas, 12° gedraaid zodat de neus iets naar links wijst): neus recht omlaag, het oog laag bij de snuit, een hoog rond voorhoofd en het oor bovenop de kop, naar voren gericht. De warme kruin loopt door in de nek.
 - Kleiner, gebold lijf; ronde dij als deel van de romp.
 - Poten verder naar voren: achtervoeten onder de buik vlak achter de voorpoten (zoals op de boomfoto's), dikke schouder, roze voeten.
 - De foto's van de poten en de olinguito's in de bomen kwamen alleen in de chat binnen, niet als bestand (niet in deze map).
+
+## Ronde 7 (`schetsen_v2_ronde7.png`, los `schets_v2_ronde7.png`; script `scripts/schets.py`)
+**Jordi (24 okt, letterlijk):** "de pose is nu helemaal van de zijkant, deze mag diagonaler, plus de benen zijn weer allemaal in dezelfde lijn, waar ze vandaan komen is goed, alleen de pose mag dynamischer, kijk naar de getoonde fotos hoe een olinguito beweegt [...] Verder wil ik de zwarte streep dat van het oog naar het andere oog leidt, klein beetje zoals bij patrat hier, alleen stopt die bij de olinguito net om het oog heen, dus trekt niet helemaal rondom het hoofd" (referentie: `referentie_patrat_masker.png`).
+- Diepte (3/4 zoals Linoone): brede borst en schouder dichtbij, lijf loopt taps toe naar een kleinere romp; verre poten rechts van en hoger dan de nabije.
+- Poten elk in een andere fase (zoals op de boomfoto's): nabije voorpoot ver gestrekt naar de kijker, verre voorpoot opgetild met hangende klauwen, nabije achterpoot stapt naar voren (knie voor, hak terug), verre achterpoot gestrekt naar achteren. Aanhechting zoals ronde 6.
+- Zwart masker zoals Patrat: rond het oog, smalle brug over de snuitrug naar het verre oog (achter de omtrek), niet rond de kop; de schuine bovenrand vervangt de wenkbrauw.

@@ -1,3 +1,40 @@
+# Olinguito finale (ronde 3, na de coördinatorkeuring "spin op stelten"): eindkeuring (24 okt)
+
+> Deze ronde vervangt de lange-pootversie hieronder. Eisen van de coördinator: korte, dikke poten zoals Poochyena; kopverhouding via een diepere, vollere romp; kop, oren en gezicht pixel-identiek aan ronde 23; klauwen, J-staart en masker zoals in de vorige ronde, passend op de korte poten. Toetsvraag op 1× naast Poochyena: "compacte, stevige starter op vier korte poten?" → **ja** (`compare.png`, `bron/keuring/vel_15_echte_1x.png`).
+
+| Meting (frame 1 / frame 2) | Nu | Norm |
+|---|---|---|
+| Oppervlak | 1105 / 1136 | tot ±1050 (5 % erboven, zie Vragen aan Jordi) |
+| Box | **48×39** | ≤ 48 breed |
+| Kophoogte | **51 % / 50 %** | ±45–50 % (Poochyena 55 %) |
+| Kopoppervlak | 41,4 % | ≤ ±41 % |
+| Donker | 0,426 / 0,423 | ≤ ±0,45 |
+| Soliditeit / symmetrie | 0,76 / 0,55 | 0,65–0,80 / < 0,80 |
+| Open randen / gaten / losse delen | 0 / 0 / 1 deel (beide frames) | 0 / 0 / 1 |
+| Rechte omtrekstukken ≥ 4 in eigen tekenwerk | 0 (beide frames) | 0 |
+| Kop t.o.v. ronde 23 (incl. oren, schedel, achterhoofd) | **diff 0** (3 rijen hoger geplaatst) | bevroren |
+
+Rechte stukken van 4 die overblijven, zitten alleen in ongewijzigde pixels van ronde 23 (onderkaak y33, buitenrand nabije oor, buitenrand staartstrook x55).
+
+**Romp:** borst onder de kin, buik 2–3 rijen lager dan ronde 23, buikschaduw (3) en een boog tussen voor- en achterpoten. Rug van ronde 23 in stukken van ≤ 3 met een kleine zadel vóór de staartwortel.
+
+**Poten (Poochyena-bouw, kort en dik):**
+| Poot | Plek | Dikte | Gewricht | Onderkant |
+|---|---|---|---|---|
+| Verre voor | x13–20, 6 rijen | 6–7 | pols naar voren | klauwen tot y51 |
+| Nabije voor | x19–28, 7 rijen | 7–9 | elleboog achter | klauwen tot y54 (laagst) |
+| Nabije achter | x31–40 onder de voorkant van de dij | 7–8 | hak naar achteren | y52 |
+| Verre achter | x40–45 onder de achterkant van de dij | 5–6 | – | y51 (1 hoger, donkerder) |
+
+- Lucht tussen alle voetkolommen; diagonaal (verre voor + nabije achter staan voor). Geen poot dunner dan 5 px.
+- **Klauwen:** 2 gebogen haken per voorpoot, 3 px aan de wortel, onder een knokkelrij.
+- **J-staart:** wortel en strook zijn pixels van ronde 23 op dezelfde x; de haak hangt open (x47–53, 0 gaten), 1 kolom vrij van de verre poot. Onderkant y49 bij grond y54.
+- **Frame 2:** kop en romp 1 px omhoog, de staart beweegt als geheel mee, voeten blijven staan (naad op rij 42).
+
+**Vragen aan Jordi:** oppervlak 1105 (de diepere romp is nodig voor kop ≤ 51 % en kopoppervlak ±41 %); verre oor E1 (bevroren).
+
+---
+
 # Olinguito finale (reparatieronde na de afkeuring): eindkeuring (24 okt)
 
 Gekeurd volgens `SPRITE_NORM.md`, `KEURING_ONAFHANKELIJK.md` (alle punten en de lijst "Moet nog"), Jordi ("ik zie nu al dat er een been mist") en de coördinator: vierde poot leest op 1× als aparte poot, J-staart hangt zoals in ronde 23, schedel en oren zijn ongewijzigd ten opzichte van ronde 23.

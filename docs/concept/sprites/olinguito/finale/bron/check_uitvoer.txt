@@ -1,16 +1,16 @@
 mode P (64, 128) transparency 0
-frame 1: 1087 px, box 50x38 (9, 17, 58, 54), soliditeit 0.733, symmetrie 0.497, donker 0.445
+frame 1: 1105 px, box 48x39 (9, 16, 56, 54), soliditeit 0.764, symmetrie 0.548, donker 0.426
   open randen: 0 []
-  delen (8-verbonden): 1 [1087]
-  ingesloten gaten: 0 []
-  kophoogte: oortop y17, kin y36 -> 53% van de hoogte 38
-  gezicht (bevroren zone) diff met ronde 23: 0 []
-  rechte omtrekstukken >=5: []
-frame 2: 1111 px, box 50x39 (9, 16, 58, 54), soliditeit 0.730, symmetrie 0.495, donker 0.443
-  open randen: 0 []
-  delen (8-verbonden): 1 [1111]
+  delen (8-verbonden): 1 [1105]
   ingesloten gaten: 0 []
   kophoogte: oortop y16, kin y35 -> 51% van de hoogte 39
+  gezicht (bevroren zone) diff met ronde 23: 0 []
+  rechte omtrekstukken >=5: []
+frame 2: 1136 px, box 48x40 (9, 15, 56, 54), soliditeit 0.765, symmetrie 0.550, donker 0.423
+  open randen: 0 []
+  delen (8-verbonden): 1 [1136]
+  ingesloten gaten: 0 []
+  kophoogte: oortop y15, kin y34 -> 50% van de hoogte 40
   gezicht (bevroren zone) diff met ronde 23: 0 []
   rechte omtrekstukken >=5: []
 frame 1 regelmatige trappen (>=5): []

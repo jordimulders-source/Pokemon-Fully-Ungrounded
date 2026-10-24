@@ -3,7 +3,7 @@
 blijven staan. De staart (x >= STAARTX) beweegt als geheel 1 px mee omhoog (vorm blijft gelijk).
 Daarna de handcorrecties uit frame2.txt."""
 import tools as T, subprocess, sys, os
-NAAD = 45
+NAAD = 42
 STAARTX = 47
 g = T.read_txt(T.H + '/werk_f1.txt')
 out = [r[:] for r in g]

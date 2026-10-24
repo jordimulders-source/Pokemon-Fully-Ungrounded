@@ -90,7 +90,7 @@ def run(p):
         print('  ingesloten gaten:', len(holes), holes[:12])
         ys = [y for y in range(64) if any(g[y])]
         print('  kophoogte: oortop y%d, kin y%d -> %.0f%% van de hoogte %d' % (min(ys), min(ys) + 20 - 1, 100 * 20 / (max(ys) - min(ys) + 1), max(ys) - min(ys) + 1))
-        def ny(y): return y - 2 - f  # alles 2 rijen omhoog (poten langer); frame 2: nog 1 px
+        def ny(y): return y - 3 - f  # alles 3 rijen omhoog (diepere romp); frame 2: nog 1 px
         fd = [(x, y) for y in range(64) for x in range(64) if face_zone(x, y) and 0 <= ny(y) < 64 and r23[0][y][x] != g[ny(y)][x]]
         print('  gezicht (bevroren zone) diff met ronde 23:', len(fd), fd[:12])
         st = straight(g); print('  rechte omtrekstukken >=5:', st)

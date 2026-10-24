@@ -49,3 +49,18 @@ De eerste finale (hierboven) is vervangen. Nieuwe bouwstraat: `bron/maak.py` (ro
 - Open-randtoets: telt 9 (grijs) niet als omlijning, dan vind je de randen die een keurder ziet.
 - Ruimte verdelen in kolommen vóór het tekenen (poot – lucht – poot – lucht – staarthaak): anders sluit de haak op de poot.
 - Een donkerte-doel haal je met lichtere vulling op lijf en poten, niet met lichtere omlijning.
+
+---
+# Ronde 3 (coördinator: "spin/insect op stelten", kopverhouding niet via langere poten)
+| # | Wat faalde | Wat ik deed |
+|---|---|---|
+| S1 | Lange, dunne, schuine poten | Letterschetsen (romp/poten/staart) naast Poochyena op 1×; gekozen: diepe romp + korte dikke poten |
+| S2 | Schets 1179 px, te groot | Romp korter (achterpoten en staart op de plek van ronde 23), één romprij minder, borst 1 kolom smaller → 1105 |
+| S3 | Pocket tussen dij en staart dicht (gat) | Verre achterpoot ≤ x45, kolom x46 vrij tot de grond |
+| S4 | Rechte stukken van 4 (rug, borst, buik, poten, haak) | Elke rand met de hand gevarieerd; rug van ronde 23 met zadel vóór de staartwortel |
+| S5 | Frame 2: rechte voorrand nabije achterpoot | Naad op rij 42 i.p.v. 45 |
+
+## Lessen
+- "Kop te groot" los je op met een diepere, vollere romp (Poochyena), niet met langere poten: lange poten lezen op 1× als een spin.
+- Een letterschets per onderdeel naast een echte sprite op 1× beslist de bouw in één minuut; pas daarna pixels.
+- Kopoppervlak, kophoogte en totaalformaat trekken aan elkaar: bij een bevroren kop van ±460 px ligt het minimum rond 1100 px voor ≤ 41 %.

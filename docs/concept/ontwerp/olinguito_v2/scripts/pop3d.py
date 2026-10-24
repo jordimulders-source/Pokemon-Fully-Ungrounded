@@ -18,9 +18,9 @@ LINE = np.array((43, 27, 23), np.uint8)
 COL = {
     'fur': '#6A4630', 'head': '#6B5442', 'crown': '#6A4630', 'far': '#4C3121', 'paw': '#C08A80',
     'farpaw': '#9C6E66', 'claw': '#EDE3CC', 'mask': '#241712', 'eye': '#B9481C', 'pupil': '#1A0F0B',
-    'glint': '#FFFFFF', 'nose': '#C98088', 'muzzle': '#8D7E76', 'ear': '#4A3324', 'earin': '#8A6C55',
+    'glint': '#FFFFFF', 'nose': '#C98088', 'muzzle': '#2E211A', 'ear': '#4A3324', 'earin': '#8A6C55',
 }
-NOSHADE = {'mask', 'eye', 'pupil', 'glint', 'nose', 'claw'}
+NOSHADE = {'muzzle', 'mask', 'eye', 'pupil', 'glint', 'nose', 'claw'}
 LINED = {'eye', 'nose', 'claw'}   # ook een lijn op de kleurgrens
 
 
@@ -73,11 +73,11 @@ def olinguito():
     m = Model()
     # lijf: borst, buik (achter hoger), romp
     m.ell((-30, 0, 0), 26, 'fur')
-    m.ell((2, 8, 0), (34, 24, 23), 'fur', rot_z(math.radians(18)))
-    m.ell((34, 20, 0), 25, 'fur')
+    m.ell((2, 6, 0), (34, 24, 23), 'fur', rot_z(math.radians(8)))
+    m.ell((34, 12, 0), 25, 'fur')
     # staart: lang, omhoog en in een boog terug over de rug
-    tail = qb((52, 26, 0), (104, 40, 0), (98, 92, 0), 10)[:-1] + qb((98, 92, 0), (92, 132, 0), (60, 126, 0), 8)[:-1] \
-        + qb((60, 126, 0), (36, 120, 0), (40, 100, 0), 6)
+    tail = qb((52, 18, 0), (106, 26, 0), (100, 72, 0), 10)[:-1] + qb((100, 72, 0), (94, 110, 0), (64, 104, 0), 8)[:-1] \
+        + qb((64, 104, 0), (40, 98, 0), (44, 80, 0), 6)
     n = len(tail)
     m.chain([(x, y, z, 10.5 - 5 * i / (n - 1)) for i, (x, y, z) in enumerate(tail)], 'fur')
     # kop: nek, ronde schedel, snuit naar voren-omlaag (vorm van referentie_kop.png), groter dan echt (Pokémon)
@@ -98,7 +98,7 @@ def olinguito():
         m.ell(e + d * 2.0 * hs + np.array((-0.5, -0.3, 0)) * hs, 2.7 * hs, 'pupil')
         m.ell(e + d * 3.0 * hs + np.array((-0.8, 1.5, 0.0)) * hs, 1.0 * hs, 'glint')
     arc = []
-    for t in np.linspace(-1, 1, 41):
+    for t in np.linspace(-1.3, 1.3, 53):
         d = np.array((-0.72, -0.10, 0.69 * t)); d /= np.linalg.norm(d)
         arc.append(cr + d * 26.5 * hs)
     m.tex = dict(cr=cr, eyes=eyes, arc=np.array(arc), nose=nose, hs=hs)
@@ -176,8 +176,9 @@ def render(m, yaw, pitch, scale, center):
     u = (q - t['cr']) / (25 * hs)
     g = np.full(len(q), groups.index('head'))
     g[u @ np.array((0.55, 0.83, 0)) > 0.45] = groups.index('crown')
-    g[dn < 10 * hs] = groups.index('muzzle')
-    g[(de < 8.0 * hs) | (da < 6.5 * hs)] = groups.index('mask')
+    g[dn < 9 * hs] = groups.index("muzzle")
+    band = (np.abs(u[:, 1] + 0.06) < 0.20) & (u[:, 0] < -0.50)      # brede band over beide ogen (Zigzagoon)
+    g[(de < 9.5 * hs) | band] = groups.index('mask')
     gid[head] = g
     return zbuf, gid, nrm, groups
 
@@ -226,13 +227,13 @@ def bbox(m, yaw, pitch):
     return (pts[:, 0] - rs).min(), (pts[:, 0] + rs).max(), (pts[:, 1] - rs).min(), (pts[:, 1] + rs).max()
 
 
-def view(m, yaw, pitch=20, size=232):
+def view(m, yaw, pitch=8, size=232):
     x0, x1, y0, y1 = bbox(m, yaw, pitch)
     scale = R * (size / 256) / max(x1 - x0, y1 - y0)
     return shade(*render(m, yaw, pitch, scale, ((x0 + x1) / 2, (y0 + y1) / 2)))
 
 
-def sheet(yaws=(25, 35, 45)):
+def sheet(yaws=(45, 52, 60)):
     m = olinguito()
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)
@@ -240,7 +241,7 @@ def sheet(yaws=(25, 35, 45)):
     W = 10 + 266 * len(yaws)
     im = Image.new('RGB', (W, 34 + 256 + 26 + 200), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 8), 'Olinguito v2: 3D-poppetje, kop recht vooruit, rondere kop (25°, 35°, 45°)', font=FB, fill=(30, 30, 30))
+    d.text((10, 8), 'Olinguito v2: 3D-poppetje, rechter erop, zwarte snoet, Zigzagoon-masker (45°, 52°, 60°)', font=FB, fill=(30, 30, 30))
     for i, yaw in enumerate(yaws):
         v = view(m, yaw)
         v.save(os.path.join(OUT, f'pop3d_{yaw}.png'))

@@ -28,7 +28,7 @@ PAL = {  # letter -> kleur (15 + transparant)
     'n': '#8E4F58',  # neus, voet schaduw
     'p': '#D09A8E',  # voet
     'c': '#F2EAD6',  # klauw licht
-    'd': '#B8AA8C',  # klauw schaduw
+    'r': '#B8572C',  # oog onder (lichter roodbruin)
     'e': '#A8401A',  # oog (roodbruin)
     'w': '#FFFFFF',  # glans
 }
@@ -144,7 +144,7 @@ def checks(G):
     openr = []
     for i in range(64):
         for j in range(64):
-            if fig[i, j] and G[i, j] not in 'KBnd':
+            if fig[i, j] and G[i, j] not in 'KBncl':
                 for di, dj in ((0, 1), (1, 0), (0, -1), (-1, 0)):
                     y, x = i + di, j + dj
                     if not (0 <= y < 64 and 0 <= x < 64) or not fig[y, x]:

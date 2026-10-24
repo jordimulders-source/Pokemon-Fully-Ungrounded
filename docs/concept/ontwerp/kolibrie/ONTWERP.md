@@ -13,3 +13,4 @@ Naar Jordi's posetekening + foto's (velvet-purple kroonkolibrie, langstaartsylfe
 - Vleugels nu echte kolibrievleugels: lang, sikkelvormig, rechte voorrand, puntig; vanaf het midden naar buiten geleidelijk doorzichtiger (tot ±85%).
 - Oog veel kleiner (klein zwart oog met een dun bleek randje).
 - Derde staartsliert erbij (drie racketslierten met zielvlammetjes + franjewaaier).
+- **Kuif als jeguaka: goedgekeurd** (Jordi, 24 okt).

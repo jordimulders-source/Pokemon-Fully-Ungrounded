@@ -34,3 +34,7 @@ Naar Jordi's posetekening + foto's (velvet-purple kroonkolibrie, langstaartsylfe
 - Jordi over v6: vleugels zitten niet goed op het lijf, oog zweeft, staarten niet af en los van het lijf, doorzichtigheid niet zichtbaar ("prutswerk").
 - Nu: lijf als één druppelvorm (borst linksonder, achterlijf rechtsboven); kop rond en direct op de borst, oog midden in de kop; beide vleugels groeien uit de rug (nabije vleugel achter een geschubde rand dekveren die met het lijf versmelt); staart = franje + drie slierten die uit het achterlijf komen en eindigen in een druppelvormig zielvlammetje.
 - Glasvleugel: alleen de vulling wordt doorzichtig (vanaf het midden tot ±90%), omlijning en pennen blijven staan; bokeh-achtergrond zodat je erdoorheen kijkt.
+
+## Schets v8 (24 okt): 3/4-pose
+- Jordi over v7: "veel beter"; verre vleugel en achterkant lijf klopten nog niet; pose meer 3/4 zoals Zapdos/Moltres (`referenties/jordi_pose_zapdos.png`, `jordi_pose_moltres.png`).
+- Nu: compact eivormig lijf met de borst naar de kijker (lichtere borst met schubben, blauwgroene schouder), kop groter linksonder op de voorgrond, nabije vleugel uit de linkerschouder naar linksboven, verre vleugel achter het lijf vandaan naar rechtsboven, staart (franje + drie slierten) steekt achter het lijf uit naar rechtsonder.

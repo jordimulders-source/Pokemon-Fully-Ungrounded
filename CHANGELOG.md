@@ -101,3 +101,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.18] - Olinguito v2: eerste schets
 - Nieuwe start op Jordi's aanpak: meer echte olinguito, sinister, iets langere snuit, donker masker, 2 lange klauwen (Linoone), pose naar de boomfoto. Twee schetsen (staart omhoog/omlaag) met silhouet in `docs/concept/ontwerp/olinguito_v2/`, plus Jordi's referenties. Nog geen pixels.
+
+### [v0.0.19] - Olinguito v2: ronde 2
+- Staart omhoog gekozen. Profiel met één oog en één dominant oor, dunnere staart, kortere snuit (langer pas bij de coati), zacht masker i.p.v. wasbeerband, Linoone-klauwen, achterpoten onder het lijf naar voren, geen buikvlak. `docs/concept/ontwerp/olinguito_v2/schetsen_v2.png`.

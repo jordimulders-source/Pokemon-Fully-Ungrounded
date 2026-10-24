@@ -12,6 +12,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, '..')
 R = 768          # renderresolutie (3x van 256)
 HEAD_SCALE = 1.35
+LEG_K = 1.0      # dikte van de poten (sprite: dikker, geen stokpoten)
 HEAD_SHIFT = np.array((-6, 30, 0.0))
 LINE = np.array((43, 27, 23), np.uint8)
 
@@ -71,6 +72,7 @@ def qb(a, c, b, n):
 
 def olinguito():
     m = Model()
+    L = lambda pts: [(x, y, z, r * LEG_K) for x, y, z, r in pts]
     # lijf: borst, buik (achter hoger), romp
     m.ell((-30, 0, 0), 26, 'fur')
     m.ell((2, 6, 0), (34, 24, 23), 'fur', rot_z(math.radians(8)))
@@ -110,19 +112,19 @@ def olinguito():
         m.ell(c, np.array((4, 12, 11)) * hs * k, 'ear', Re)
         m.ell(c + Re @ np.array((-1.8, 0.5, 0)) * hs * k, np.array((2.6, 8, 7.5)) * hs * k, 'earin', Re)
     # poten (x, y, z, straal); nabij = +z
-    m.chain([(-34, -2, 13, 16), (-48, -28, 15, 11.5), (-62, -52, 17, 9)], 'fur')   # nabije voorpoot: gestrekt
+    m.chain(L([(-34, -2, 13, 16), (-48, -28, 15, 11.5), (-62, -52, 17, 9)]), 'fur')   # nabije voorpoot: gestrekt
     m.ell((-66, -55, 18), (10, 6, 8), 'paw')
     for dz in (-3.5, 3.5):   # 2 lange Linoone-klauwen
         m.chain([(-72, -57, 18 + dz, 3.6), (-80, -66, 18 + dz, 2.6), (-82, -78, 18 + dz, 0.8)], 'claw', 0.8)
-    m.chain([(-28, -2, -13, 14), (-20, -28, -15, 11), (-34, -42, -17, 8.5)], 'far')  # verre voorpoot: opgetild
+    m.chain(L([(-28, -2, -13, 14), (-20, -28, -15, 11), (-34, -42, -17, 8.5)]), 'far')  # verre voorpoot: opgetild
     m.ell((-38, -45, -17), (9, 6, 7.5), 'farpaw')
     for dz in (-3.5, 3.5):
         m.chain([(-44, -48, -17 + dz, 3.2), (-50, -57, -17 + dz, 2.2), (-51, -66, -17 + dz, 0.7)], 'claw', 0.8)
     # achterpoten gehurkt: grote dij, knie naar voren, hak laag, voet plat naar voren
-    m.chain([(30, 10, 18, 20), (6, -20, 21, 13), (30, -42, 21, 9)], 'fur')
-    m.chain([(30, -42, 21, 7.5), (10, -48, 22, 6.5)], 'paw')
-    m.chain([(36, 12, -17, 18), (18, -16, -19, 11.5), (40, -36, -19, 8.5)], 'far')
-    m.chain([(40, -36, -19, 7), (24, -42, -20, 6)], 'farpaw')
+    m.chain(L([(30, 10, 18, 20), (6, -20, 21, 13), (30, -42, 21, 9)]), 'fur')
+    m.chain(L([(30, -42, 21, 7.5), (10, -48, 22, 6.5)]), 'paw')
+    m.chain(L([(36, 12, -17, 18), (18, -16, -19, 11.5), (40, -36, -19, 8.5)]), 'far')
+    m.chain(L([(40, -36, -19, 7), (24, -42, -20, 6)]), 'farpaw')
     return m
 
 

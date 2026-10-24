@@ -11,30 +11,37 @@ C = dict(line='#1a1226', head='#2a2238', crown='#c46bff', body='#6a3fc8', body2=
 
 def draw():
     cv = Canvas(line=C['line'], lw=2.6)
-    def wing(base, ang0, ang1, lens, wid, col, col2):
-        # bladvormige vleugel (Jordi's schets) met een paar slagpennen aan de achterrand
-        n = len(lens)
-        m = None
-        for i in range(n):
-            a = math.radians(ang0 + (ang1 - ang0) * i / (n - 1))
-            L = lens[i]
-            tip = (base[0] + math.cos(a) * L, base[1] + math.sin(a) * L)
-            mid = (base[0] + math.cos(a) * L * 0.5, base[1] + math.sin(a) * L * 0.5)
-            f = cv.m_tube(catmull([base, mid, tip], closed=False), wid, wid * 0.45)
-            m = f if m is None else m | f
+    def wing(base, ang, L, W, col, col2, bend=0.12):
+        # kolibrievleugel: lang, smal, sikkelvormig; rechte voorrand, bolle achterrand, scherpe punt.
+        # Vanaf het midden naar buiten steeds doorzichtiger (geblend met wat erachter zit).
+        a = math.radians(ang)
+        ux, uy = math.cos(a), math.sin(a)
+        nx, ny = -uy, ux  # positieve v = achterrand (naar rechts/achteren)
+        prof = [(0, -0.30), (0.25, -0.38), (0.55, -0.34), (0.85, -0.18), (1.0, 0.0),
+                (0.88, 0.22), (0.65, 0.62), (0.40, 0.85), (0.15, 0.70), (0.0, 0.40)]
+        def P(u, v):
+            v = v * W + bend * L * u * u
+            return (base[0] + ux * u * L + nx * v, base[1] + uy * u * L + ny * v)
+        m = cv.m_blob([P(u, v) for u, v in prof])
+        under = cv.img.copy()
         cv.fill(m, col)
-        for i in range(1, n):
-            a = math.radians(ang0 + (ang1 - ang0) * (i - 0.5) / (n - 1))
-            L = (lens[i] + lens[i - 1]) / 2
-            cv.stroke([(base[0] + math.cos(a) * L * 0.55, base[1] + math.sin(a) * L * 0.55),
-                       (base[0] + math.cos(a) * L * 0.97, base[1] + math.sin(a) * L * 0.97)], 2.0)
-        a = math.radians(ang1)
-        cv.fill(cv.m_ellipse(base[0] + math.cos(a) * 30, base[1] + math.sin(a) * 30, 30, 14, rot=ang1), col2, line=False, clip=m)
+        # slagpennen: dunne lijnen langs de achterrand
+        for k in range(4):
+            u0 = 0.40 + k * 0.13
+            cv.stroke([P(u0 - 0.05, 0.05), P(u0 + 0.12, 0.62 - k * 0.14)], 1.2, col2)
+        cv.stroke([P(0.08, 0.0), P(0.9, -0.05)], 1.4, col2)
+        # transparantie: t = 0 tot het midden, daarna oplopend tot 0.85 aan de punt
+        ring = cv.dilate(m, (cv.lw * SS) / 2 + 0.5)
+        yy, xx = np.nonzero(ring)
+        u = ((xx / SS - base[0]) * ux + (yy / SS - base[1]) * uy) / L
+        t = np.clip((u - 0.45) / 0.55, 0, 1) * 0.85
+        cv.img[yy, xx] = (cv.img[yy, xx] * (1 - t[:, None]) + under[yy, xx] * t[:, None]).astype(np.uint8)
     # ---- verre vleugel (achter, kleiner, hoger) ----
-    wing((152, 112), -62, -84, [70, 86, 98, 100], 22, C['wing'], C['wing2'])
+    wing((152, 114), -76, 104, 32, C['wing'], C['wing2'], bend=0.10)
     # ---- staart: korte waaier (franje) + twee lange slierten met zielvlammen ----
-    tails = [([(178, 114), (214, 112), (236, 150), (238, 200), (226, 232)], 5.5, 2.2),
-             ([(176, 120), (200, 130), (206, 170), (196, 214)], 5.5, 2.2)]
+    tails = [([(178, 114), (214, 112), (240, 146), (248, 186), (246, 214)], 5.5, 2.2),
+             ([(177, 117), (206, 122), (220, 160), (218, 204), (214, 234)], 5.5, 2.2),
+             ([(176, 120), (196, 134), (198, 170), (184, 206)], 5.5, 2.2)]
     for pts, w0, w1 in tails:
         cv.fill(cv.m_tube(catmull(pts, closed=False), w0, w1), C['head'], lw=2.0)
     for i, a in enumerate((-6, 10, 26, 42, 58)):
@@ -60,8 +67,8 @@ def draw():
         cv.fill(cv.m_ellipse(x, y, 5, 3.5), C['body2'], line=False, clip=body)
     cv.fill(cv.m_ellipse(126, 122, 18, 9, rot=-28), C['teal'], line=False, clip=body)
     # ---- nabije vleugel (voor, groter, naar links gekanteld) ----
-    wing((134, 122), -108, -136, [84, 102, 114, 116], 26, C['wing'], C['wing2'])
-    cv.fill(cv.m_ellipse(124, 102, 5, 4, rot=-60), C['orange'], line=False)
+    wing((132, 124), -116, 120, 38, C['wing'], C['wing2'], bend=0.12)
+    cv.fill(cv.m_ellipse(124, 108, 5, 4, rot=-60), C['orange'], line=False)
     # ---- nek + kop ----
     cv.fill(cv.m_tube([(106, 160), (88, 170)], 22, 20), C['head'])
     # snavel: lang, dun, iets gebogen naar linksonder
@@ -74,9 +81,9 @@ def draw():
     cv.fill(head, C['head'])
     cv.fill(cv.m_ellipse(78, 162, 12, 5, rot=-15), C['crown'], line=False, clip=head)
     # oog: groot, rond, vriendelijk; bleke ring = gloed
-    cv.fill(cv.m_ellipse(72, 174, 7.5, 8), C['soul'], lw=1.6)
-    cv.dot(71, 175, 5.2, C['iris'])
-    cv.dot(73, 172, 1.8, C['eye'])
+    cv.dot(72, 174, 4.6, C['soul'])
+    cv.dot(72, 174, 3.4, C['iris'])
+    cv.dot(73.2, 172.8, 1.1, C['eye'])
     return cv
 
 
@@ -97,4 +104,4 @@ if __name__ == '__main__':
     d.text((266, 216), 'sprite-formaat 3x', fill='black', font=f)
     d.text((470, 86), '1x', fill='black', font=f)
     d.text((470, 166), 'silhouet 1x', fill='black', font=f)
-    W.save(os.path.join(out, 'schets_v1.png'))
+    W.save(os.path.join(out, 'schets_v2.png'))

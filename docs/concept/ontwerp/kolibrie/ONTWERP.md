@@ -8,3 +8,8 @@ Naar Jordi's posetekening + foto's (velvet-purple kroonkolibrie, langstaartsylfe
 - **Kuif:** drie korte veertjes met bleke punt, naar de ***jeguaka*** (de verentooi van de Mbyá-Guaraní-rituelen). Mythe: Guaraní ***mainumby*** voedt de schepper Ñamandu en begeleidt zielen; positief, geen eng spook.
 - **Oog:** groot en rond met een bleke gloeiring (mystiek, vriendelijk).
 - Open: vleugels lichter/doorschijnender? Kuif als jeguaka of anders? Hoeveel slierten?
+
+## Schets v2 (24 okt, Jordi's feedback op v1)
+- Vleugels nu echte kolibrievleugels: lang, sikkelvormig, rechte voorrand, puntig; vanaf het midden naar buiten geleidelijk doorzichtiger (tot ±85%).
+- Oog veel kleiner (klein zwart oog met een dun bleek randje).
+- Derde staartsliert erbij (drie racketslierten met zielvlammetjes + franjewaaier).

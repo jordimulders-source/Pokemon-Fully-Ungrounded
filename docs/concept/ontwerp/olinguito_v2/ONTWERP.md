@@ -34,8 +34,16 @@ Ronde 1 (`schetsen_v1.png`; script in de git-geschiedenis):
 - Kop in 3/4 naar de kijker: de snuit komt uit het midden van het gezicht (verre wang zichtbaar links ervan), kop en snuit als één vorm met een korte lijn voor de snuitrug.
 - Nabij oor ±25% groter; het verre oor blijft een randje.
 
-## Ronde 5 (`schetsen_v2_ronde5.png`, los `schets_v2_ronde5.png`; script `scripts/schets.py`)
+## Ronde 5 (`schetsen_v2_ronde5.png`, afgekeurd)
 **Jordi (24 okt, letterlijk):** "pak nog wat meer de vorm van dit hoofd" (foto: `referentie_kop.png`).
 - Kop als druppel: brede ronde schedel achter-boven, loopt glad af naar een spitse snuit met lichtgrijze punt en roze neus.
 - Kleur zoals de foto: warmbruine kruin, grijs gezicht, donkere streep van het voorhoofd langs het oog naar de snuitrug.
 - Oor: donkere rand, lichtere binnenkant, hoog achter op de kop.
+Jordi: "kijk goed naar de foto, dit is niet dezelfde vorm". Les: een kop niet 'in de geest van' een foto tekenen, maar de omtrek overtrekken (raster over de foto, punten aflezen).
+
+## Ronde 6 (`schetsen_v2_ronde6.png`, los `schets_v2_ronde6.png`; script `scripts/schets.py`)
+**Jordi (24 okt, letterlijk):** "kijk goed naar de foto, dit is niet dezelfde vorm" + (foto's van de poten, olinguito's in bomen) "en hier ter referentie de poten" "zitten wat verder naar voren voor mn gevoel met een iets kleiner lichaam".
+- Kop overgetrokken van `referentie_kop.png` (`head_pts()` zet fotocoördinaten om naar het canvas, 12° gedraaid zodat de neus iets naar links wijst): neus recht omlaag, het oog laag bij de snuit, een hoog rond voorhoofd en het oor bovenop de kop, naar voren gericht. De warme kruin loopt door in de nek.
+- Kleiner, gebold lijf; ronde dij als deel van de romp.
+- Poten verder naar voren: achtervoeten onder de buik vlak achter de voorpoten (zoals op de boomfoto's), dikke schouder, roze voeten.
+- De foto's van de poten en de olinguito's in de bomen kwamen alleen in de chat binnen, niet als bestand (niet in deze map).

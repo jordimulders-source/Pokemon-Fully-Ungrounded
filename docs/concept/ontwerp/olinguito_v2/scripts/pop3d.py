@@ -12,7 +12,7 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 OUT = os.path.join(HERE, '..')
 R = 768          # renderresolutie (3x van 256)
 HEAD_SCALE = 1.35
-HEAD_SHIFT = np.array((-4, 30, 0.0))
+HEAD_SHIFT = np.array((-6, 30, 0.0))
 LINE = np.array((43, 27, 23), np.uint8)
 
 COL = {
@@ -86,12 +86,12 @@ def olinguito():
     m.chain([(-36, 0, 0, 22), tuple(piv + HEAD_SHIFT) + (20,)], 'fur')
     cr = H((-66, -10, 0))
     m.ell(cr, 25 * hs, 'head')
-    m.chain([tuple(H(q[:3])) + (q[3] * hs,) for q in [(-76, -22, 0, 18), (-85, -32, 0, 13), (-91, -39, 0, 8.5)]], 'head')
-    nose = H((-94, -42, 0))
-    m.ell(nose, 6.2 * hs, 'nose')
+    m.chain([tuple(H(q[:3])) + (q[3] * hs,) for q in [(-78, -14, 0, 20), (-87, -18, 0, 16), (-94, -21, 0, 12)]], 'head')
+    nose = H((-104, -22, 0))
+    m.ell(nose, 6.0 * hs, 'nose')
     eyes = []
     for sz in (1, -1):
-        d = np.array((-0.62, -0.30, 0.72 * sz)); d /= np.linalg.norm(d)
+        d = np.array((-0.72, -0.10, 0.69 * sz)); d /= np.linalg.norm(d)
         e = cr + d * 23.5 * hs
         eyes.append(e)
         m.ell(e, 4.4 * hs, 'eye')
@@ -99,14 +99,14 @@ def olinguito():
         m.ell(e + d * 3.0 * hs + np.array((-0.8, 1.5, 0.0)) * hs, 1.0 * hs, 'glint')
     arc = []
     for t in np.linspace(-1, 1, 41):
-        d = np.array((-0.62, -0.30, 0.72 * t)); d /= np.linalg.norm(d)
-        arc.append(cr + d * 25 * hs)
+        d = np.array((-0.72, -0.10, 0.69 * t)); d /= np.linalg.norm(d)
+        arc.append(cr + d * 26.5 * hs)
     m.tex = dict(cr=cr, eyes=eyes, arc=np.array(arc), nose=nose, hs=hs)
     # oren bovenop, naar voren gericht
     for sz in (1, -1):
-        Re = rot_y(math.radians(25 * sz))
+        Re = rot_y(math.radians(25 if sz > 0 else 0))
         c = H((-58, 16, 13 * sz))
-        k = 1.0 if sz > 0 else 0.7    # verre oor kleiner: nauwelijks zichtbaar
+        k = 1.0 if sz > 0 else 0.6    # verre oor kleiner: nauwelijks zichtbaar
         m.ell(c, np.array((4, 12, 11)) * hs * k, 'ear', Re)
         m.ell(c + Re @ np.array((-1.8, 0.5, 0)) * hs * k, np.array((2.6, 8, 7.5)) * hs * k, 'earin', Re)
     # poten (x, y, z, straal); nabij = +z
@@ -176,8 +176,8 @@ def render(m, yaw, pitch, scale, center):
     u = (q - t['cr']) / (25 * hs)
     g = np.full(len(q), groups.index('head'))
     g[u @ np.array((0.55, 0.83, 0)) > 0.45] = groups.index('crown')
-    g[dn < 13 * hs] = groups.index('muzzle')
-    g[(de < 9.5 * hs) | (da < 4.6 * hs)] = groups.index('mask')
+    g[dn < 10 * hs] = groups.index('muzzle')
+    g[(de < 8.0 * hs) | (da < 6.5 * hs)] = groups.index('mask')
     gid[head] = g
     return zbuf, gid, nrm, groups
 
@@ -232,7 +232,7 @@ def view(m, yaw, pitch=20, size=232):
     return shade(*render(m, yaw, pitch, scale, ((x0 + x1) / 2, (y0 + y1) / 2)))
 
 
-def sheet(yaws=(0, 20, 35, 50)):
+def sheet(yaws=(25, 35, 45)):
     m = olinguito()
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)
@@ -240,7 +240,7 @@ def sheet(yaws=(0, 20, 35, 50)):
     W = 10 + 266 * len(yaws)
     im = Image.new('RGB', (W, 34 + 256 + 26 + 200), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 8), 'Olinguito v2: 3D-poppetje, dezelfde pose uit 4 kijkhoeken (kies er één)', font=FB, fill=(30, 30, 30))
+    d.text((10, 8), 'Olinguito v2: 3D-poppetje, kop recht vooruit, rondere kop (25°, 35°, 45°)', font=FB, fill=(30, 30, 30))
     for i, yaw in enumerate(yaws):
         v = view(m, yaw)
         v.save(os.path.join(OUT, f'pop3d_{yaw}.png'))

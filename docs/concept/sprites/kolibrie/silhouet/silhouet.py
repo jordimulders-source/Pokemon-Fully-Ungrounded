@@ -62,25 +62,32 @@ def build():
     tail = Image.new('L', (64, 64), 0)
     ImageDraw.Draw(tail).polygon([(40, 28), (50, 25), (60, 25), (61, 31), (56, 37), (52, 43), (44, 47), (40, 45)], fill=255)
     m &= ~(np.array(tail) > 0)
-    # haviksnavel weg
-    m[(xx < 9) & (yy >= 33) & (yy <= 42)] = False
-
+    # v3: Talonflame-kop helemaal weg (kuif/kop leest te veel als Talonflame)
+    head = Image.new('L', (64, 64), 0)
+    # en de nabije vleugel onder de lijn (4,16)-(23,31) weg: wortel smal aan de schouder, met lucht
+    # tussen vleugel en kop zodat kop, nek en kuif los lezen
+    ImageDraw.Draw(head).polygon([(0, 13), (4, 16), (23, 31), (21, 46), (0, 46)], fill=255)
+    m &= ~(np.array(head) > 0)
+    # v3: verre vleugel aan de schouder vastzetten (zoals op Jordi's foto): het vleugeldeel boven de
+    # rug 4 px naar links/2 px omlaag, zodat de wortel bij de schouder zit en niet op het achterlijf
+    far = m & (xx >= 31) & (yy <= 29)
+    m &= ~far
+    m[np.roll(np.roll(far, -4, axis=1), 2, axis=0)] = True
     add, d = hi()
     # v2: lijf slanker (diepte/lengte 0,8 -> ±0,5 zoals op de foto's): buik afsnijden langs een
     # schuine lijn van de keel naar de staartwortel, dan een ronde onderkant terug
     cut = Image.new('L', (64, 64), 0)
     ImageDraw.Draw(cut).polygon([(14, 41), (26, 43), (40, 42), (44, 46), (44, 64), (10, 64)], fill=255)
     m &= ~(np.array(cut) > 0)
-    d.ellipse([17 * SS, 33 * SS, 42 * SS, 45 * SS], fill=255)
-    # kop iets ronder naar voren
-    d.ellipse([7 * SS, 31 * SS, 19 * SS, 43 * SS], fill=255)
+    d.ellipse([17 * SS, 30 * SS, 42 * SS, 45 * SS], fill=255)
+    # nek + ronde kolibriekop, los van de nabije vleugel (zoals op de foto's)
+    tube(d, [(22, 37), (17, 37), (13.5, 37.5)], 7.5, 6.5)
+    d.ellipse([7 * SS, 31.5 * SS, 18 * SS, 42 * SS], fill=255)
     # kolibriesnavel: lang en dun, schuin naar linksonder
-    tube(d, [(9.5, 39), (6, 46), (3, 53), (1.5, 59)], 2.4, 1.2)
-    # jeguaka: drie veertjes op de kruin, naar achteren/boven
-    # (valt in het silhouet binnen de nabije vleugel; leest pas in kleur)
-    tube(d, [(13, 32), (14, 28), (16.5, 25.5)], 2.0, 1.3)
-    tube(d, [(15, 32.5), (18, 29.5), (21, 28.5)], 2.0, 1.3)
-    tube(d, [(11, 32), (10.5, 28), (11.5, 25)], 2.0, 1.3)
+    tube(d, [(9, 39.5), (6, 46), (3, 53), (1.5, 59)], 2.3, 1.2)
+    # jeguaka: drie korte veertjes als een kleine waaier op de kruin, licht naar achteren
+    for tip in ((10, 26), (14, 25), (18, 27)):
+        tube(d, [(13, 32.5), ((13 + tip[0]) / 2, (32.5 + tip[1]) / 2 - 0.4), tip], 2.8, 1.6)
     # staart: franje (korte waaier) uit het achterlijf
     for a in (-10, 15, 40):
         r = math.radians(a)
@@ -119,5 +126,5 @@ if __name__ == '__main__':
     dr = ImageDraw.Draw(W)
     for x, t in ((0, 'skelet: Talonflame'), (266, 'silhouet over skelet'), (532, 'silhouet 4x'), (800, '1x')):
         dr.text((x + 2, 260), t, fill='black')
-    W.save(os.path.join(HERE, 'silhouet_v2.png'))
-    S.save(os.path.join(HERE, 'silhouet_v2_1x.png'))
+    W.save(os.path.join(HERE, 'silhouet_v3.png'))
+    S.save(os.path.join(HERE, 'silhouet_v3_1x.png'))

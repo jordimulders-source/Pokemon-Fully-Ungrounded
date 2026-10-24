@@ -52,3 +52,4 @@ Naar Jordi's posetekening + foto's (velvet-purple kroonkolibrie, langstaartsylfe
 | lijfdiepte | 0,40–0,50 B | 0,80 B → v2 ±0,6 B |
 | staart (zonder slierten) | 0,5–1,0 B | franje 0,3 B + slierten ±1,2 B |
 - v2: buik slanker gemaakt (Talonflame-borst was te diep); rest ongewijzigd.
+- v3 (Jordi: kop/kuif te veel Talonflame; vleugel zit niet aan het lijf vast, zie `referenties/jordi_vleugelaanzet.png`): Talonflame-kop weg → ronde kolibriekop op een korte nek + jeguaka als kleine waaier van drie veertjes; nabije vleugel onderaan weggesneden zodat de wortel smal aan de schouder zit en er lucht tussen vleugel en kop is; verre vleugel 4 px naar de schouder geschoven, rug dichtgemaakt.

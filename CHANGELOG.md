@@ -98,3 +98,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Na ±30 rondes (incl. finale met onafhankelijke keuring) schrapt Jordi het olinguito-ontwerp en begint opnieuw met een eigen, andere aanpak. Rondes en keuringen blijven als naslag in `docs/concept/sprites/olinguito/`.
 - Cuyby ronde 6: oranje/zwart gewisseld en zwart rond het rechteroog (consistent met Cuychu); wacht op akkoord.
 - `docs/lessen/SPRITE_NORM.md` (één pagina norm voor sprite-agents), regel "zelfgenoemd zwak punt = fail", les "bouwtype bepaalt de moeite".
+
+### [v0.0.18] - Olinguito v2: eerste schets
+- Nieuwe start op Jordi's aanpak: meer echte olinguito, sinister, iets langere snuit, donker masker, 2 lange klauwen (Linoone), pose naar de boomfoto. Twee schetsen (staart omhoog/omlaag) met silhouet in `docs/concept/ontwerp/olinguito_v2/`, plus Jordi's referenties. Nog geen pixels.

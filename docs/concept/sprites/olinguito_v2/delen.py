@@ -7,11 +7,11 @@ part('staart', [
     (15, 38, 'BhbK'), (15, 45, 'BhbK'),
     (16, 38, 'BhK'), (16, 46, 'BhbK'),
     (17, 38, 'BhK'), (17, 46, 'BhbK'),
-    (18, 38, 'BbK'), (18, 46, 'BhsK'),
-    (19, 38, 'KbK'), (19, 46, 'BhsK'),
-    (20, 39, 'K'), (20, 47, 'BbsK'),
+    (18, 39, 'BK'), (18, 46, 'BhsK'),
+    (19, 39, 'K'), (19, 46, 'BhsK'),
+    (20, 47, 'BbsK'),
     (21, 47, 'BbsK'), (22, 47, 'BbsK'), (23, 47, 'BbsK'),
-    (24, 46, 'BhbsK'), (25, 46, 'BhbsK'),
+    (24, 45, 'BBbsK'), (25, 45, 'BhbsK'),
     (26, 45, 'BhbsK'), (27, 45, 'BhbsK'),
     (28, 44, 'BhbsK'), (29, 44, 'BhbsK'),
 ])
@@ -39,20 +39,20 @@ part('lijf', [
 part('dij', [(38, 42, 's'), (39, 41, 's'), (40, 40, 's'), (41, 40, 's'), (42, 40, 's'), (43, 41, 's'), (44, 42, 's')])
 part('borst', [(45, 25, 'sss'), (46, 22, 'sssssss'), (47, 25, 'KKKK')])
 # verre achterpoot: korte scheen + kleine voet, links van en 1 rij hoger dan de nabije
-part('verre_achter', [(46, 36, 'sss'), (47, 35, 'Bsss'), (48, 35, 'KnpnnK'), (49, 35, 'KKKKK')])
+part('verre_achter', [(46, 36, 'sss'), (47, 35, 'Bsss'), (48, 35, 'KnpnnK'), (49, 35, 'KnpnK'), (50, 36, 'KKK')])
 # nabije achterpoot: alleen de voet (bewust bijna verborgen)
 part('nabije_achter', [(49, 40, 'BppppnK'), (50, 39, 'KpppKpK'), (51, 39, 'KKKKKKK')])
 # verre voorpoot: steiler dan de nabije, klauwen kort en recht omlaag (alleen schaduwtint)
 part('verre_voor', [
     (47, 22, 'BsssK'), (48, 22, 'BsssK'), (49, 21, 'BsssK'), (50, 21, 'BnnnK'),
-    (51, 21, 'lKlK'), (52, 21, 'lKlK'), (53, 21, 'K.K'),
+    (51, 21, 'lKlK'), (52, 21, 'lKlK'), (53, 21, 'lKl'), (54, 21, 'K'),
 ])
 part('oor_ver', [(25, 20, 'BB'), (26, 19, 'BlK'), (27, 19, 'BsK')])
 
 # kop: omtrek (y: links, rechts), vulling met licht van linksboven; omlijning B aan de lichte, K aan de schaduwkant
 KOP = {26: (23, 27), 27: (21, 29), 28: (20, 30), 29: (18, 31), 30: (17, 32), 31: (16, 33), 32: (16, 33), 33: (15, 34), 34: (15, 34),
        35: (15, 34), 36: (16, 33), 37: (16, 33), 38: (16, 32), 39: (15, 32), 40: (14, 31), 41: (14, 31), 42: (13, 30),
-       43: (12, 29), 44: (11, 28), 45: (11, 25), 46: (12, 21), 47: (14, 17)}
+       43: (12, 29), 44: (11, 27), 45: (11, 25), 46: (12, 22), 47: (14, 18)}
 rows = []
 for y, (L, R) in KOP.items():
     px = ''
@@ -79,13 +79,15 @@ part('voorpoot', [
     (45, 28, 'Bhhbbs'), (46, 29, 'Bhhbbs'), (47, 29, 'BhhbbsK'), (48, 30, 'BhhbsK'),
     (49, 29, 'BhhbsK'), (50, 28, 'BhhbsK'), (51, 27, 'BhhbKK'), (52, 25, 'BBhbbK'),
     (53, 24, 'BppppK'), (54, 23, 'BpppnK'),
-    (55, 22, 'clK'), (55, 25, 'clK'),
-    (56, 21, 'clK'), (56, 24, 'clK'),
-    (57, 21, 'clK'), (57, 24, 'clK'),
-    (58, 21, 'clK'), (58, 24, 'clK'),
-    (59, 21, 'lK'), (59, 24, 'lK'),
-    (60, 21, 'K'), (60, 24, 'K'),
+    # voorste klauw lang, in een haak; achterste korter en steiler: twee verschillende klauwen
+    (55, 22, 'clKclK'),
+    (56, 21, 'clK'), (56, 25, 'clK'),
+    (57, 20, 'clK'), (57, 26, 'lK'),
+    (58, 20, 'clK'), (58, 26, 'K'),
+    (59, 21, 'lK'),
+    (60, 21, 'K'),
 ])
-part('oor', [(23, 27, 'BBB'), (24, 26, 'BllBK'), (25, 25, 'BlllBK'), (26, 25, 'BlllBK'), (27, 25, 'BBBBBK')])
+part('oor', [(23, 27, 'BBB'), (24, 26, 'BlBK'), (25, 25, 'BlllBK'), (26, 25, 'BlllBK'), (27, 25, 'BBBBK')])
+part('fix', [(35, 15, 'B')])
 ORDER = ['staart', 'lijf', 'dij', 'borst', 'verre_achter', 'nabije_achter', 'verre_voor', 'oor_ver', 'kop', 'snoet',
-         'masker', 'oog', 'voorpoot', 'oor']
+         'masker', 'oog', 'voorpoot', 'oor', 'fix']

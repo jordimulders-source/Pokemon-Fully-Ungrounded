@@ -18,7 +18,7 @@ LINE = np.array((43, 27, 23), np.uint8)
 COL = {
     'fur': '#6A4630', 'head': '#6B5442', 'crown': '#6A4630', 'far': '#4C3121', 'paw': '#C08A80',
     'farpaw': '#9C6E66', 'claw': '#EDE3CC', 'mask': '#241712', 'eye': '#B9481C', 'pupil': '#1A0F0B',
-    'glint': '#FFFFFF', 'nose': '#C98088', 'muzzle': '#2E211A', 'ear': '#4A3324', 'earin': '#8A6C55',
+    'glint': '#FFFFFF', 'nose': '#8E4F58', 'muzzle': '#2E211A', 'ear': '#4A3324', 'earin': '#8A6C55',
 }
 NOSHADE = {'muzzle', 'mask', 'eye', 'pupil', 'glint', 'nose', 'claw'}
 LINED = {'eye', 'nose', 'claw'}   # ook een lijn op de kleurgrens
@@ -233,7 +233,7 @@ def view(m, yaw, pitch=8, size=232):
     return shade(*render(m, yaw, pitch, scale, ((x0 + x1) / 2, (y0 + y1) / 2)))
 
 
-def sheet(yaws=(45, 52, 60)):
+def sheet(yaws=(52,)):
     m = olinguito()
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)
@@ -241,7 +241,7 @@ def sheet(yaws=(45, 52, 60)):
     W = 10 + 266 * len(yaws)
     im = Image.new('RGB', (W, 34 + 256 + 26 + 200), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 8), 'Olinguito v2: 3D-poppetje, rechter erop, zwarte snoet, Zigzagoon-masker (45°, 52°, 60°)', font=FB, fill=(30, 30, 30))
+    d.text((10, 8), 'Olinguito v2: 3D-poppetje, 52°', font=FB, fill=(30, 30, 30))
     for i, yaw in enumerate(yaws):
         v = view(m, yaw)
         v.save(os.path.join(OUT, f'pop3d_{yaw}.png'))

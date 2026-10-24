@@ -3,6 +3,7 @@ Ronde 1: schetsen_v1.png (staart omhoog/omlaag; Jordi koos omhoog).
 Ronde 2 (Jordi): dunnere olinguito-staart, één oog en één dominant oor (profiel zoals Linoone),
 meer olinguito/minder wasbeer, kortere neus (langer pas bij de coati), klauwen meer Linoone,
 dynamischere poten met de achterpoten onder het lijf naar voren (boomfoto), geen buikvlak.
+Ronde 3 (Jordi): rondere kop, langere staart (foto's), asymmetrische dynamische poten (boomfoto).
 Draaien vanuit de repo-root: python3 docs/concept/ontwerp/olinguito_v2/scripts/schets.py"""
 import os
 import sys
@@ -23,7 +24,8 @@ OUT = os.path.join(HERE, '..')
 
 
 def tail(c):
-    pts = qbez((204, 102), (246, 74), (226, 30), 12)[:-1] + qbez((226, 30), (214, 10), (194, 22), 7)
+    pts = (qbez((204, 104), (250, 80), (236, 34), 12)[:-1] + qbez((236, 34), (222, 4), (186, 12), 10)[:-1]
+           + qbez((186, 12), (158, 20), (156, 46), 8))
     n = len(pts) - 1
     w = [17 + 3 * math.sin(math.pi * i / n) - 9 * (i / n) ** 2 for i in range(n + 1)]
     c.part(blob(tube(pts, w)[::2], 6), BR)
@@ -46,34 +48,35 @@ def hind_foot(c, x, y, col):
 
 def draw():
     c = Canvas()
-    # verre poten: achterpoot ver naar voren onder het lijf, voorpoot ver vooruit
-    c.part(tube([(176, 128), (160, 156), (140, 176)], [26, 19, 15]), FAR)
-    hind_foot(c, 136, 178, FAR)
-    c.part(tube([(96, 164), (72, 192), (50, 206)], [24, 19, 16]), FAR)
-    c.part(ell(48, 207, 11, 8, -30), FAR)
-    paw_claws(c, 42, 208, 155, 30, '#D8CDB4')
+    # verre achterpoot: gestrekt naar achteren, zet zich af
+    c.part(tube([(192, 124), (214, 150), (232, 168)], [26, 19, 15]), FAR)
+    c.part(ell(236, 170, 11, 7, 30), FAR)
+    # verre voorpoot: ver gestrekt naar voren-omlaag, grijpt
+    c.part(tube([(96, 164), (68, 200), (46, 222)], [24, 19, 16]), FAR)
+    c.part(ell(43, 223, 11, 8, -35), FAR)
+    paw_claws(c, 36, 225, 160, 30, '#D8CDB4')
     tail(c)
     # romp: boog van borst (linksonder) naar romp (rechtsboven)
     c.part(blob([(76, 148), (96, 122), (128, 102), (162, 86), (194, 82), (214, 96), (216, 120),
-                        (200, 140), (166, 152), (132, 170), (104, 188), (80, 180)]), BR)
-    # nabije achterpoot: dij op de romp, knie naar voren, voet onder de buik
-    c.part(blob([(176, 100), (204, 104), (214, 126), (204, 146), (182, 142)]), BR)
-    c.part(tube([(200, 134), (182, 160), (162, 180)], [26, 20, 16]), BR)
-    hind_foot(c, 158, 183, BR)
-    # nabije voorpoot: licht gebogen, grijpt omlaag
-    c.part(tube([(110, 158), (102, 186), (84, 210)], [28, 22, 18]), BR)
-    c.part(ell(80, 212, 12, 9, -30), BR)
-    paw_claws(c, 72, 215, 148)
+                 (200, 140), (166, 152), (132, 170), (104, 188), (80, 180)]), BR)
+    # nabije achterpoot: opgetrokken, knie hoog naar voren, hak terug, voet naar voren onder de buik
+    c.part(blob([(178, 98), (206, 102), (214, 124), (200, 146), (174, 148), (166, 128)]), BR)
+    c.part(tube([(172, 144), (182, 168), (164, 182)], [20, 16, 14]), BR)
+    hind_foot(c, 158, 184, BR)
+    # nabije voorpoot: opgetild en gebogen (stapt), elleboog naar achteren, klauwen hangen omlaag
+    c.part(tube([(114, 150), (134, 182), (112, 196)], [28, 22, 18]), BR)
+    c.part(ell(106, 198, 12, 9, -10), BR)
+    paw_claws(c, 98, 202, 128)
     # kop in profiel (vergroot rond de nek)
     k, px, py = 1.25, 80, 168
     T = lambda pts: [(px + (x - px) * k, py + (y - py) * k) for x, y in pts]
     E = lambda x, y, rx, ry, r=0: T(ell(x, y, rx, ry, r))
     # verre oor: alleen een randje boven de schedel
-    c.part(E(64, 128, 8, 7, -15), BR)
-    h = c.part(blob(T([(40, 152), (48, 134), (68, 126), (90, 132), (100, 152), (94, 170), (74, 182), (52, 176)])), HD)
+    c.part(E(62, 127, 8, 7, -15), BR)
+    h = c.part(E(70, 154, 29, 28), HD)
     # nabije oor: dominant, achter op de kop
-    e1 = c.part(E(86, 128, 12, 11, 20), HD)
-    c.mark(E(86, 130, 6, 6), TAN, e1)
+    e1 = c.part(E(88, 130, 12, 11, 20), HD)
+    c.mark(E(88, 132, 6, 6), TAN, e1)
     # korte snuit (langer pas bij de coati)
     sn = c.part(blob(T([(50, 154), (40, 164), (32, 176), (30, 184), (36, 190), (52, 190), (70, 182), (64, 164)])), HD, line=0)
     hs = h | sn
@@ -97,11 +100,11 @@ FS = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 11)
 
 def sheet():
     a, sa = draw()
-    a.save(os.path.join(OUT, 'schets_v2.png'))
+    a.save(os.path.join(OUT, 'schets_v2_ronde3.png'))
     W, H = 256 * 3 + 40, 256 + 110
     im = Image.new('RGB', (W, H), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 8), 'Olinguito v2, ronde 2: schets (geen pixels)', font=FB, fill=(30, 30, 30))
+    d.text((10, 8), 'Olinguito v2, ronde 3: schets (geen pixels)', font=FB, fill=(30, 30, 30))
     im.paste(a, (10, 34))
     silim = Image.new('RGB', (256, 256), 'white')
     silim.paste(Image.new('RGB', (256, 256), (70, 66, 84)), (0, 0), sa)
@@ -111,10 +114,10 @@ def sheet():
     for x, t in ((10, 'schets'), (276, 'silhouet'), (542, 'op spritegrootte (64×64)')):
         d.text((x, 292), t, font=FS, fill=(90, 90, 90))
     lines = ['Profiel zoals Linoone: één oog, één dominant oor. Dunnere staart omhoog, kortere snuit, zacht masker.',
-             'Achterpoten onder het lijf naar voren (boomfoto); 2 Linoone-klauwen per voorpoot.']
+             'Ronde 3: rondere kop, langere staart, poten asymmetrisch (voorpoot gestrekt/opgetild, achterpoot opgetrokken/gestrekt).']
     for i, ln in enumerate(lines):
         d.text((10, 312 + i * 18), ln, font=F, fill=(30, 30, 30))
-    im.save(os.path.join(OUT, 'schetsen_v2.png'))
+    im.save(os.path.join(OUT, 'schetsen_v2_ronde3.png'))
 
 
 sheet()

@@ -13,7 +13,7 @@ Ronde 1 (`schetsen_v1.png`; script in de git-geschiedenis):
 - Sinister: roodbruine ogen in het masker onder een zware wenkbrauw.
 - Jordi koos staart omhoog (A).
 
-## Ronde 2 (`schetsen_v2.png`, los `schets_v2.png`; script `scripts/schets.py`)
+## Ronde 2 (`schetsen_v2_ronde2.png`)
 **Jordi (24 okt, letterlijk):** "ja de staart moet wel dunner, zoals bij de olinguito. ER komt maar 1 oog in beeld in deze pose, net als bij linoone, en net als op de fotos moet 1 oor dominant zijn en de tweede nauwelijks zichtbaar. Het mag nog iets meer op een olinguito lijken zoals op de fotos en wat minder op een wasbeer. Misschien een optie om de neus toch in te korten en pas bij de coati evolutie te vergroten. De klauwen mogen ook iets minder, iets meer linoone. en de poten mogen iets dynamischer zoals op de foto van de olinguito die hangtn in de boom, met zijn achterpoten wat meer naar voren, indien dat fysiologisch een beetje klopt" + "het vlak op de buik hoeft ook niet, dat is een fout in mijn schets".
 - Profiel: één oog, één dominant oor (het verre oor is een randje boven de schedel).
 - Dunnere staart omhoog; kortere snuit (langere snuit pas bij de coati).
@@ -21,3 +21,9 @@ Ronde 1 (`schetsen_v1.png`; script in de git-geschiedenis):
 - Kortere, Linoone-achtige klauwen (2 per voorpoot).
 - Achterpoten onder het lijf naar voren (knie naar voren, voet onder de buik: zoals een klimmer die zich verzamelt).
 - Geen buikvlak meer; alleen de kin/keel goudbruin.
+
+## Ronde 3 (`schetsen_v2_ronde3.png`, los `schets_v2_ronde3.png`; script `scripts/schets.py`)
+**Jordi (24 okt, letterlijk):** "maak het hoofd nog wat ronder, de staart moet langer, zoals op de fotos en de poten moeten dynamischer, zoals op de foto, ze zijn te symmetrisch"
+- Kop: schedel als bijna-cirkel.
+- Staart: ±1,6× zo lang, omhoog en in een boog terug over de rug.
+- Poten asymmetrisch (boomfoto): verre voorpoot ver gestrekt en grijpend, nabije voorpoot opgetild en gebogen; nabije achterpoot opgetrokken (knie hoog, voet onder de buik), verre achterpoot gestrekt naar achteren (zet zich af).

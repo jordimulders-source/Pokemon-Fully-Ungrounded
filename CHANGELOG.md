@@ -104,3 +104,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.19] - Olinguito v2: ronde 2
 - Staart omhoog gekozen. Profiel met één oog en één dominant oor, dunnere staart, kortere snuit (langer pas bij de coati), zacht masker i.p.v. wasbeerband, Linoone-klauwen, achterpoten onder het lijf naar voren, geen buikvlak. `docs/concept/ontwerp/olinguito_v2/schetsen_v2.png`.
+
+### [v0.0.20] - Olinguito v2: ronde 3
+- Rondere kop, langere staart (boog terug over de rug), asymmetrische poten zoals op de boomfoto (één voorpoot gestrekt, één opgetild; één achterpoot opgetrokken, één gestrekt). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde3.png`.

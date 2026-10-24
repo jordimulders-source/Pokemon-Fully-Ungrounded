@@ -1,0 +1,6 @@
+mode P (64, 128) | transparency 0
+normal.pal gelijk aan ronde 23: True
+frame 1: 1057 px, box 52x31 (x6-57, y20-50) | open randen 0 []
+  rechte omtrekruns >= 4: []
+frame 2: 1051 px, box 52x30 (x6-57, y21-50) | open randen 0 []
+  rechte omtrekruns >= 4: []

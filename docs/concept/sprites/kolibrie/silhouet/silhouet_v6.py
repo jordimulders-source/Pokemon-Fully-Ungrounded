@@ -42,8 +42,10 @@ def build(own_tail=True):
     if own_tail:
         cx, cy = T(CROWN)
         # jeguaka: drie korte veertjes langs de kruin naar achteren (niet omhoog: dat leest als oren)
-        for dx, dy in ((2.6, -2.6), (3.4, -1.4), (3.4, -0.2)):
-            tube(d, [(cx, cy + 0.8), (cx + dx, cy + 0.8 + dy)], 1.7, 1.0)
+        # v6b (Jordi): langer; licht gebogen veren, de bovenste het langst
+        # schuin omhoog naar achteren, in de ruimte tussen kop en verre vleugel (anders verdwijnt hij in de rug)
+        for dx, dy in ((0.0, -7.5), (3.4, -7.2), (6.4, -5.0)):
+            tube(d, [(cx, cy + 0.8), (cx + dx * 0.35, cy + 0.8 + dy * 0.55), (cx + dx, cy + 0.8 + dy)], 1.6, 1.0)
         tx, ty = T(TAILBASE)
         for a in (-20, 5, 30):
             r = math.radians(a)

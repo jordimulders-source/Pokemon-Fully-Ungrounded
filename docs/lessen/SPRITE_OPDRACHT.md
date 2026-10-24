@@ -18,7 +18,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Lijf én blik diagonaal 3/4 naar links-voor; nooit zuiver profiel of recht vooruit. Bijna frontaal mag alleen met perspectief (verre arm kleiner, niet recht op de billen).
 - Snuitdieren: vaak maar **één oog** in beeld; het verre oog verdwijnt achter de neusbrug (Poochyena, Cyndaquil, Rhyhorn). De **snuit is één vorm** die in de 3/4-richting wijst, met de neus aan het eind.
 - Alle ledematen, oren en ogen tellen; alles verbonden; geen geamputeerde verre kant; geen poten die aan elkaar vastzitten (minstens 1 kolom lucht of een omlijning).
-- **Viervoeters lopen diagonaal, nooit in telgang** (kameel): de poten die tegelijk vóór staan zijn diagonale paren (nabije voor + verre achter). Check dit tegen de referentie (Jordi, olinguito 21b).
+- **Viervoeters lopen diagonaal, nooit in telgang** (kameel): de poten die tegelijk vóór staan zijn diagonale paren (nabije voor + verre achter). Check dit tegen de referentie (Jordi, olinguito 21b). **Uitzondering:** kameelachtigen (alpaca, lama, kameel) lopen echt in telgang; bij de alpaca bewust zo gehouden (Jordi, 24 okt).
 - Pose niet stijf: poten niet kaarsrecht naast elkaar en niet identiek; één consistente houding (staan óf lopen); geen Escher-constructies.
 - Lijf natuurlijk: teken het over een **echte Gen 3-sprite als skelet**, nooit uit ovalen/bonen; overgangen geleidelijk (Mightyena), geen rechthoekige romp of doos-kop.
 - Formaat vergelijken met echte sprites van dezelfde fase (fase 1 ±800–950 px). Kop niet te groot.

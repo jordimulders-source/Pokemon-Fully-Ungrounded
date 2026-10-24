@@ -21,3 +21,5 @@ Ronde 17 met een grotere kop. **Geen herschaling.** Er worden 2 rijen en 2 kolom
 
 ## Jordi (23 okt)
 **variant_kop goedgekeurd** ("alpaca variant ook goed").
+
+- **Telgang bewust (Jordi, 24 okt):** alpaca's (kameelachtigen) lopen in telgang; de pootstand (beide nabije poten vóór) blijft zo.

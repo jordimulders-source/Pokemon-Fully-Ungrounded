@@ -11,9 +11,10 @@ def load(n):
         for x in range(64):
             if a[x,y]==0: q[x,y]=(0,0,0,0)
     return r.crop((0,0,64,64))
-sprites=[('ronde 2',Image.open(os.path.join(HERE,'../ronde2/kolibrie.png')).convert('RGBA')),
+sprites=[('variant sleep',Image.open(os.path.join(HERE,'kolibrie_variant_sleep.png')).convert('RGBA')),
          ('ronde 3',Image.open(os.path.join(HERE,'kolibrie.png')).convert('RGBA')),
          ('variant lint',Image.open(os.path.join(HERE,'kolibrie_variant_lint.png')).convert('RGBA'))]
+sprites=[sprites[1],sprites[2],sprites[0]]
 sprites+=[(n,load(n)) for n in ['venomoth','yanma','swellow','articuno','fearow','honchkrow']]
 LIGHT,DARK=(232,232,224,255),(40,40,60,255)
 n=len(sprites); W=Image.new('RGBA',(10+n*200,10+2*(192+20)+2*(64+20)+10),LIGHT)
@@ -36,5 +37,5 @@ W2=Image.new('RGBA',(W.width,W.height+2*76),LIGHT); W2.alpha_composite(W,(0,0))
 for k,bg in enumerate((LIGHT,DARK)):
     band=Image.new('RGBA',(n*70+20,74),bg); W2.alpha_composite(band,(0,W.height+k*76))
     for i,(t,im) in enumerate(sprites): W2.alpha_composite(im,(10+i*70,W.height+k*76+5))
-ImageDraw.Draw(W2).text((n*70+30,W.height+30),'1x compact: ronde 2 | ronde 3 | variant lint | venomoth | yanma | swellow | articuno | fearow | honchkrow',fill='black')
+ImageDraw.Draw(W2).text((n*70+30,W.height+30),'1x compact: ronde 3 | variant lint | variant sleep | venomoth | yanma | swellow | articuno | fearow | honchkrow',fill='black')
 W2.save(os.path.join(HERE,'vel.png'))

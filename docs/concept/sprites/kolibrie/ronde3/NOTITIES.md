@@ -3,8 +3,9 @@
 Bestanden:
 - `kolibrie.png`: hoofdversie op `silhouet_v6_groot_1x.png`, ±1 px. 64×64, 16 kleuren, index 0 transparant, 1016 px.
 - `kolibrie_variant_lint.png`: variant met slierten buiten het silhouet; kop, lijf, vleugels en franje gelijk aan de hoofdversie. 1007 px.
+- `kolibrie_variant_sleep.png`: tweede variant met de slierten naar achteren (zie Aanvulling).
 - `vel.png`:
-  - ronde 2, ronde 3 en de variant op 3× naast Venomoth, Yanma, Swellow, Articuno, Fearow en Honchkrow;
+  - ronde 3, variant lint en variant sleep op 3× naast Venomoth, Yanma, Swellow, Articuno, Fearow en Honchkrow;
   - die rij op licht en op donker;
   - daaronder alles op 1× op licht en donker, ook compact naast elkaar.
 - `teken.py`: met de hand getypt tekst-raster; de variant is een overlay (`LINT`).
@@ -20,6 +21,31 @@ Bestanden:
   - een brede krul met een vlammetje omhoog;
   - twee linten die naar rechtsonder wapperen, met vlammetjes die naar achteren wijzen.
   - Geen poten meer. Dit is mijn advies aan Jordi; het is wel een silhouetwijziging, dus zijn keuze.
+
+## Aanvulling: variant sleep (`kolibrie_variant_sleep.png`)
+Claude keurde de variant lint af: die hing nog te recht onder het lijf, waardoor er verticale strepen bleven die als poten lazen. Daarom deze tweede variant.
+- **Gelijk aan de hoofdversie:** kop, kuif, lijf, vleugels en franje. Pixeldiff buiten de staartzone (x < 42, en vanaf rij 41 x < 36) is **0**, gecontroleerd met een script. Alleen de franje is onderaan gesloten (rij 40, x 42–49 `K`), omdat de oude slierten daar uitkwamen.
+- **Staart:** de drie slierten slepen naar rechts, in het verlengde van de rug- en buiklijn, zoals de staartveren van de langstaartsylfe en de linten van Articuno. Ze waaieren uit, en pas aan het eind krullen ze of wijken ze uit:
+  - S1 (boven, het verst weg, als eerste getekend): lint over de staartbasis naar rechts, dat aan het eind omhoog krult. Het vlammetje staat met de punt omhoog boven de krul (rij 26–31).
+  - S2 (midden): golft naar rechts met één dip (rij 39–42). Het vlammetje ligt met de punt naar achteren tegen de rand (rij 38–42).
+  - S3 (onder, het dichtstbij, als laatste getekend): loopt schuin naar rechtsonder (helling 2 px per rij). Het vlammetje wijst met de punt naar achteren (rij 49–53).
+  - De ruimte direct onder de buik (x < 44, onder rij 40) is leeg.
+- **Kleur:** zoals in de hoofdversie. Lichtkant `v`, kern `V`/`L`, schaduwkant `w`; naar het eind vervagend via `g`/`m` naar `p`, met vlammetjes met een `m`-rand en een `W`-kern. Geen open randen, op de kuif na (pseudo-omlijning, toegestaan).
+- 997 px; 133 erbij en 122 eraf t.o.v. het silhouet, alles in de staart. Dit is een silhouetwijziging voor Jordi.
+
+## Eerlijk 1×-oordeel per versie (vel: licht en donker, naast de referenties)
+- **Ronde 3 (hoofdversie, bevroren silhouet):**
+  - Kop, snavel, kuif en vleugels lezen als kolibrie; de segmentatie (mug) is weg.
+  - De slierten hangen bijna verticaal onder het lijf. Op licht vervagen ze tot geestlinten; op donker lezen ze nog als drie poten met lichtpuntjes.
+  - **Niet goed genoeg**, en binnen ±1 px niet op te lossen.
+- **Variant lint:**
+  - Breder en met een krul, maar de twee onderste linten lopen nog steil omlaag onder de staartbasis. Op 1× zie je nog verticale strepen onder het lijf, die als poten lezen.
+  - **Niet goed genoeg** (eens met Claudes keuring).
+- **Variant sleep:**
+  - Op 1× leest hij op licht en donker als kolibrie met een lange staart die naar achteren sleept, zoals bij Swellow en de langstaartsylfe. Er staat niets verticaal onder het lijf, dus geen poten; de mug-lezing is weg.
+  - Op donker vormen de drie vlammetjes aan de rechterkant een lichte waaier van punten. Dat leest als staartpunten en niet als vork, omdat S1 omhoog krult en S3 lager en meer naar links eindigt.
+  - **Mijn advies.**
+  - Kanttekening voor Jordi: de staart loopt tot de rand van de box (x 63), en de slierten zijn korter dan bij een echte langstaartsylfe (±2× het lijf); langer past niet in 64 px.
 
 ## Per keuringspunt
 1. **Slierten als glanzende linten:**
@@ -114,3 +140,5 @@ Bestanden:
 - Doorschijnende vleugel = bleke vulling + doorlopende pennen tot de rand + gesloten rand. Een verloop van donker naar licht leest als kleurverloop.
 - Een kleurvlak met een eigen donkere rand tussen kop en lijf leest als los segment (insect). Een glans hoort zonder rand op de vorm te liggen.
 - Koel randlicht (`H`) op een fluweelzwarte kop houdt hem leesbaar op donker, zoals bij Murkrow/Honchkrow.
+- Staartslierten van een zwevende vogel horen in het verlengde van de lijflijn naar achteren te slepen. Alles wat onder het lijf naar beneden wijst, leest als poot. Toets: is de ruimte direct onder de buik leeg?
+- Een variant die "breder" is maar dezelfde richting houdt, lost een leesfout niet op; de richting is het probleem.

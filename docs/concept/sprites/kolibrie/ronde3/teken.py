@@ -156,3 +156,68 @@ def build_lint():
 if __name__ == '__main__':
     build().save(os.path.join(HERE, 'kolibrie.png'), transparency=0)
     build_lint().save(os.path.join(HERE, 'kolibrie_variant_lint.png'), transparency=0)
+
+
+# Variant "sleep" (buiten het silhouet, voor Jordi): kop, lijf, vleugels, kuif en franje gelijk aan de hoofdversie;
+# de drie slierten slepen naar achteren (rechts) in het verlengde van de lijflijn, waaieren uit en krullen pas aan het eind.
+# Verste sliert (S1, boven) eerst, dichtstbijzijnde (S3, onder) als laatste getekend.
+CLEAR_SLEEP = {33: 47, 34: 47, 35: 47, 36: 50, 37: 50, 38: 50, 39: 51, 40: 42}
+SLEEP = {
+    # franje sluiten
+    40: [(42, 'KKKKKKKK')],
+    # S1 (boven, verst weg): lint naar rechts, krult aan het eind omhoog, vlammetje met de punt omhoog
+    26: [(61, 'm')],
+    27: [(60, 'mPm')],
+    28: [(59, 'mpPm')],
+    29: [(59, 'mPWPm')],
+    30: [(60, 'mpm')],
+    31: [(60, 'mpm')],
+    32: [(60, 'gpm')],
+    33: [(51, 'vvvvv'), (59, 'gpg')],
+    34: [(46, 'vvvvvLLLLLvv'), (58, 'gmg')],
+    35: [(47, 'VVVVVVVVVVwmg')],
+    36: [(49, 'wwwwwwwwg')],
+    # S2 (midden): golft naar rechts, vlammetje met de punt naar achteren
+    38: [(59, 'mm')],
+    39: [(50, 'vvvvv'), (58, 'mPPm')],
+    41: [(51, 'wwwwmpg'), (58, 'mppm')],
+    42: [(55, 'ggg'), (59, 'mm')],
+    # S3 (onder, dichtstbij): schuin naar rechtsonder, vlammetje met de punt naar achteren
+    43: [(46, 'wwVLvv')],
+    44: [(48, 'wwVLvv')],
+    45: [(50, 'wwVLvv')],
+    46: [(52, 'wwmpgg')],
+    47: [(54, 'ggmpg')],
+    48: [(55, 'gmp')],
+    49: [(56, 'mp'), (58, 'mm')],
+    50: [(57, 'mPPm')],
+    51: [(57, 'mPWPpm')],
+    52: [(57, 'mppm')],
+    53: [(58, 'mm')],
+}
+SLEEP_EXTRA = {  # tweede segment op rijen die hierboven al een lijst hebben
+    40: [(50, 'wLLVVvvg'), (58, 'mPWPpm')],
+    41: [(45, 'vvw')],
+    42: [(45, 'wLLvv')],
+}
+
+
+def build_sleep():
+    im = build()
+    px = im.load()
+    for y in range(26, 64):
+        x0 = CLEAR_SLEEP.get(y, 36 if y >= 41 else 64)
+        for x in range(x0, 64):
+            px[x, y] = 0
+    for tab in (SLEEP, SLEEP_EXTRA):
+        for y, segs in tab.items():
+            for x0, t in segs:
+                assert x0 + len(t) <= 64, (y, x0, t)
+                for i, ch in enumerate(t):
+                    if ch != '.':
+                        px[x0 + i, y] = PAL[ch][0]
+    return im
+
+
+if __name__ == '__main__':
+    build_sleep().save(os.path.join(HERE, 'kolibrie_variant_sleep.png'), transparency=0)

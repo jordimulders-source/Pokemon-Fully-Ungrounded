@@ -236,3 +236,8 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Sandslash-klauwen letterlijk overnemen:** knip de hand uit (x4–14, y34–45), laat de gele arm weg en vertaal de 5 klauwtinten. Gebruik een middentint (a) voor crème, anders verdwijnt de scheidingslijn en lezen 2 klauwen als één witte vlek. Van de verre klauwen alleen de punten tonen, met een omlijningsrij erboven.
 - **Een uiteinde dat niet kan meeschuiven** (de lobpunt zou op de bevroren kaak vallen): eindig de vorm op de nieuwe plek en maak de oude plek vacht. Een los lijntje dat dan overblijft, wordt ook vacht, anders blijft er een donker stipje over.
 - De Read-weergave van grote PNG's is grof. Controleer pixelposities met een tekstraster, niet op het oog.
+
+## 32. Lessen uit olinguito v2 (3D-poppetje → sprite)
+- **Pixel-over van het 3D-poppetje** (`docs/concept/ontwerp/olinguito_v2/scripts/sprite.py`) geeft maat en silhouet (±850 px), maar de automatische omzetting zelf is rommelig (binnenlijnen, vlakke kop). Teken daarna met de hand per deel (`teken.py` + `docs/concept/sprites/olinguito_v2/delen.py`: `(y, x, pixels)`, kop als omtrek-dict met vulregels).
+- **Keuringslus met één agent** (via SendMessage dezelfde agent, zodat hij zijn eerdere oordeel kent): 3 rondes van afgekeurd naar goedgekeurd. Typische fails: maskerbalk als rechthoek (moet een gebogen band zijn), vlak oog zonder pupil/irisverloop, kop als kegel zonder stop en snoet, klauwen als identieke rechte strepen (vork), verre achtervoet van 1 rij (telt niet op 1×), ingesloten gaatje van 1 px.
+- **Bouwscript controleert nu ook ingesloten gaten** (transparant, niet verbonden met de rand); lucht tussen twee poten is wél gewenst, losse 1-px-gaatjes niet.

@@ -88,6 +88,6 @@ part('voorpoot', [
     (60, 21, 'K'),
 ])
 part('oor', [(23, 27, 'BBB'), (24, 26, 'BlBK'), (25, 25, 'BlllBK'), (26, 25, 'BlllBK'), (27, 25, 'BBBBK')])
-part('fix', [(35, 15, 'B')])
+part('fix', [(35, 15, 'B'), (44, 28, 'K'), (54, 22, 'K')])
 ORDER = ['staart', 'lijf', 'dij', 'borst', 'verre_achter', 'nabije_achter', 'verre_voor', 'oor_ver', 'kop', 'snoet',
          'masker', 'oog', 'voorpoot', 'oor', 'fix']

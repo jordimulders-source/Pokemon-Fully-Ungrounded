@@ -150,6 +150,14 @@ def checks(G):
                     if not (0 <= y < 64 and 0 <= x < 64) or not fig[y, x]:
                         openr.append((j, i)); break
     rep.append(f'open randen: {openr[:20]}{"..." if len(openr) > 20 else ""}')
+    # ingesloten gaten: transparant, niet verbonden met de rand
+    seen = np.zeros((64, 64), bool); stack = [(0, 0)]
+    while stack:
+        i, j = stack.pop()
+        if 0 <= i < 64 and 0 <= j < 64 and not seen[i, j] and not fig[i, j]:
+            seen[i, j] = True; stack += [(i + 1, j), (i - 1, j), (i, j + 1), (i, j - 1)]
+    holes = [(j, i) for i in range(64) for j in range(64) if not fig[i, j] and not seen[i, j]]
+    rep.append(f'ingesloten gaten: {holes}')
     # zwart-aandeel van de omtrek
     edge = [(i, j) for i in range(64) for j in range(64) if fig[i, j] and any(
         not (0 <= i + a < 64 and 0 <= j + b < 64) or not fig[i + a, j + b] for a, b in ((0, 1), (1, 0), (0, -1), (-1, 0)))]

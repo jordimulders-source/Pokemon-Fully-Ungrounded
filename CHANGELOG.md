@@ -103,3 +103,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kolibrie (Ghost/Flying, eindvorm): modeltekeningen v1–v8 (`docs/concept/ontwerp/kolibrie/`) liepen vast; daarna silhouet op een skelet: Talonflame (v1–v4), daarna Jordi's foto's (v5–v6). **Silhouet v6 goedgekeurd** (pose van een drinkende kolibrie, jeguaka-kuif, drie slierten met zielvlammetjes).
 - Kleursprite in 4 rondes met een sprite-agent en een onafhankelijke keurder (`docs/concept/sprites/kolibrie/ronde1–4`, `KEURING.md`). Fluweelpalet, vleugels doorschijnend zoals Venomoth. De slierten op het goedgekeurde silhouet lazen als poten (mug); de variant met een naar achteren slepende staart komt door de keuring. Eindversie: `docs/concept/sprites/kolibrie/eind/kolibrie.png` (wacht op Jordi: staart wijkt af van silhouet v6).
 - Referenties van Jordi in `docs/concept/sprites/kolibrie/referenties/`; SPEC.md per onderdeel; lessen in FAKEMON_DESIGN.md.
+
+### [v0.0.19] - Kolibrie: volume en oog
+- Jordi over de eindversie: "erg mooi", maar "nog net iets te 2d qua shading" en "het oog is nog niet helemaal pokemon" (klein houden, "zoek naar pokemon met minimale ogen"). Staart naar achteren daarmee goedgekeurd.
+- Ronde 5 (`docs/concept/sprites/kolibrie/ronde5/`): 102 px omgekleurd binnen hetzelfde silhouet: bolle kop (kapje + schaduw op wang/keel), schuin hooglicht op de borst, schaduwband onder de buik, gewelfde vleugelwortel, slierten met licht- en schaduwkant. Oog 2×3 als kraaloog naar Corviknight/Kilowattrel (zwart lid, glans, blauwgroene iris). Onafhankelijke keuring GOED.

@@ -28,3 +28,6 @@ Regels die hieruit volgen:
 | finale (24 okt) | Verre achterpoot alleen als donkere diepte onder de staartkrul: leest als ontbrekend been | "ik zie nu al dat er een been mist" |
 - **Alle vier de poten moeten op 1× als vier aparte poten lezen** (Jordi, olinguito finale).
 | finale r2 (24 okt) | Kop opgelost via lange dunne poten: spin/insect op stelten | Claude-keuring |
+
+## Geschrapt (Jordi, 24 okt)
+Het hele olinguito-ontwerp wordt geschrapt; Jordi begint opnieuw met een andere aanpak. Alle rondes blijven als naslag.

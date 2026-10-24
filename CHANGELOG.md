@@ -93,3 +93,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Olinguito: stap 1b (gezicht naar Galar-Linoone), ronde 20–21b (masker, hak, Sandslash-klauwen, dikke poten); ronde 22 loopt (poten zoals Linoone, diagonaal lopen).
 - Kolibrie (testcase werkwijze met referenties): Ghost + Fairy/Flying, zielenbode (Guaraní mainumby, torpor van de Andes-hillstar); referentiefoto's, mythen met bronnen en drie concepten in `docs/concept/sprites/kolibrie/`.
 - Nieuwe vaste regels: referentiemateriaal per fakemon, Jordi letterlijk citeren, diagonaal lopen (geen telgang).
+
+### [v0.0.17] - Olinguito-ontwerp geschrapt
+- Na ±30 rondes (incl. finale met onafhankelijke keuring) schrapt Jordi het olinguito-ontwerp en begint opnieuw met een eigen, andere aanpak. Rondes en keuringen blijven als naslag in `docs/concept/sprites/olinguito/`.
+- Cuyby ronde 6: oranje/zwart gewisseld en zwart rond het rechteroog (consistent met Cuychu); wacht op akkoord.
+- `docs/lessen/SPRITE_NORM.md` (één pagina norm voor sprite-agents), regel "zelfgenoemd zwak punt = fail", les "bouwtype bepaalt de moeite".

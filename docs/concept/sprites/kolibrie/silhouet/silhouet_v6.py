@@ -20,13 +20,14 @@ NEAR = [(1265, 455), (1330, 415), (1450, 365), (1600, 310), (1720, 268), (1805, 
         (1720, 310), (1640, 350), (1560, 410), (1480, 480), (1420, 550), (1385, 610), (1340, 560)]
 CROWN = (1095, 420)
 TAILBASE = (1575, 692)
-BOX, WIDTH = 64, 50
+BOX, WIDTH, TOP = 64, 50, 4
 
 
 def build(own_tail=True):
+    f = WIDTH / 50
     xs = [p[0] for p in BODY + BEAK + FAR + NEAR]; ys = [p[1] for p in BODY + BEAK + FAR + NEAR]
     k = WIDTH / (max(xs) - min(xs))
-    ox, oy = 2 - min(xs) * k, 4 - min(ys) * k
+    ox, oy = 2 - min(xs) * k, TOP - min(ys) * k
     T = lambda p: (p[0] * k + ox, p[1] * k + oy)
     im = Image.new('L', (BOX * SS, BOX * SS), 0)
     d = ImageDraw.Draw(im)
@@ -38,27 +39,29 @@ def build(own_tail=True):
         body = [p for p in BODY if p[0] < 1600]
     c = catmull([T(p) for p in body] + [T(body[0])], 10)
     d.polygon([(x * SS, y * SS) for x, y in c], fill=255)
-    tube(d, [T(p) for p in BEAK], 2.0, 1.3)  # min. 2 px, anders breekt hij op 64
+    tube(d, [T(p) for p in BEAK], 2.0 * f, 1.3 * f)  # min. 2 px, anders breekt hij op 64
+    f = WIDTH / 50  # kuif en staart schalen mee met het geheel (lijndiktes niet)
     if own_tail:
         cx, cy = T(CROWN)
         # jeguaka: drie korte veertjes langs de kruin naar achteren (niet omhoog: dat leest als oren)
         # v6b (Jordi): langer; licht gebogen veren, de bovenste het langst
         # schuin omhoog naar achteren, in de ruimte tussen kop en verre vleugel (anders verdwijnt hij in de rug)
         for dx, dy in ((0.0, -7.5), (3.4, -7.2), (6.4, -5.0)):
-            tube(d, [(cx, cy + 0.8), (cx + dx * 0.35, cy + 0.8 + dy * 0.55), (cx + dx, cy + 0.8 + dy)], 1.6, 1.0)
+            tube(d, [(cx, cy + 0.8), (cx + f * dx * 0.35, cy + 0.8 + f * dy * 0.55), (cx + f * dx, cy + 0.8 + f * dy)], 1.6 * f, 1.0 * f)
         tx, ty = T(TAILBASE)
         for a in (-20, 5, 30):
             r = math.radians(a)
-            tube(d, [(tx - 1, ty), (tx - 1 + math.cos(r) * 6, ty + math.sin(r) * 6)], 2.6, 1.5)
+            tube(d, [(tx - 1, ty), (tx - 1 + math.cos(r) * 6 * f, ty + math.sin(r) * 6 * f)], 2.6 * f, 1.5 * f)
         # drie slierten: eerst naar rechts, dan met één Articuno-krul omlaag
         ribbons = [[(tx, ty), (tx + 8, ty - 2), (tx + 15, ty + 1), (tx + 17, ty + 7), (tx + 13, ty + 10)],
                    [(tx, ty + 0.5), (tx + 7, ty + 3), (tx + 11, ty + 9), (tx + 9, ty + 14), (tx + 4, ty + 15)],
                    [(tx - 1, ty + 1), (tx + 3, ty + 7), (tx + 3, ty + 13), (tx - 1, ty + 17)]]
+        ribbons = [[(tx + (x - tx) * f, ty + (y - ty) * f) for x, y in rb] for rb in ribbons]
         for rb in ribbons:
-            tube(d, rb, 1.6, 1.2)
+            tube(d, rb, 1.6 * f, 1.2 * f)
             (px, py), (x, y) = rb[-2], rb[-1]
             a = math.atan2(y - py, x - px)
-            tube(d, [(x, y), (x + math.cos(a) * 3, y + math.sin(a) * 3)], 1.4, 3.8)
+            tube(d, [(x, y), (x + math.cos(a) * 3 * f, y + math.sin(a) * 3 * f)], 1.4 * f, 3.8 * f)
     return np.array(im.resize((BOX, BOX), Image.BOX)) > 110
 
 

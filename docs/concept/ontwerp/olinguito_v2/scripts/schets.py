@@ -11,9 +11,9 @@ oor bovenop); kleiner lijf, poten verder naar voren onder het lijf (boomfoto's).
 Ronde 7 (Jordi): pose diagonaler (3/4 zoals Linoone, niet van opzij), poten niet op één lijn maar dynamisch
 (zoals de olinguito beweegt), zwart masker oog-tot-oog over de snuitrug zoals Patrat, alleen net rond het oog.
 Ronde 8 (Jordi): achterpoten gehurkt (boomfoto's): grote dij, knie scherp gebogen, hak laag, voet plat naar voren.
-Ronde 9 (Jordi): echte driekwartpose: voorpoten naast elkaar van voren, lijf verkort naar achteren.
-Ronde 10 (Jordi): lijf + kop verder gedraaid zoals Rattata/Growlithe/Galar-Zigzagoon (referentie_driekwart_*):
-kop vooraan, gezicht naar de kijker, snuit schuin links-omlaag, lijf erachter naar rechtsboven; 3 poten zichtbaar.
+Ronde 9-10: driekwartpogingen (afgekeurd: andere kopvorm, losse staart, 3 poten, verstrengelde poten).
+Ronde 11: terug naar ronde 8 (kop overgetrokken van de foto, 4 poten); driekwart via een verkort lijf,
+poten in twee duidelijke paren zonder overlap, staart als één vorm met het lijf.
 Draaien vanuit de repo-root: python3 docs/concept/ontwerp/olinguito_v2/scripts/schets.py"""
 import os
 import sys
@@ -37,12 +37,13 @@ PAW = '#C08A80'  # roze voeten (foto's)
 OUT = os.path.join(HERE, '..')
 
 
-def tail(c):
-    pts = (qbez((192, 108), (240, 84), (226, 38), 12)[:-1] + qbez((224, 36), (212, 8), (178, 16), 10)[:-1]
-           + qbez((178, 16), (150, 24), (148, 48), 8))
+def tail_mask(c):
+    """Staart als masker: wordt samen met het lijf als één vorm getekend (geen losse naad)."""
+    pts = (qbez((170, 112), (232, 84), (220, 36), 12)[:-1] + qbez((220, 36), (208, 8), (174, 16), 10)[:-1]
+           + qbez((174, 16), (148, 24), (146, 48), 8))
     n = len(pts) - 1
-    w = [17 + 3 * math.sin(math.pi * i / n) - 9 * (i / n) ** 2 for i in range(n + 1)]
-    c.part(blob(tube(pts, w)[::2], 6), BR)
+    w = [22 - 2 * (i / n) + 3 * math.sin(math.pi * i / n) - 9 * (i / n) ** 2 for i in range(n + 1)]
+    return c.mask(blob(tube(pts, w)[::2], 6))
 
 
 def paw_claws(c, x, y, ang, L=34, col=CL):
@@ -69,7 +70,7 @@ def crouch_leg(c, hip, knee, hock, toe, col, foot_col, w=22):
         c.part(claw((toe[0] - 2 + i * 4, toe[1] + 1), (toe[0] - 9 + i * 4, toe[1] + 7), 2, 3.5), CL, line=1)
 
 
-def head_pts(pts, sc=0.5, rot=26, anchor=(93, 222), at=(46, 190), pivot=(215, 40)):
+def head_pts(pts, sc=0.48, rot=18, anchor=(93, 222), at=(40, 188), pivot=(215, 40)):
     """Punten uit referentie_kop.png (217x242) naar het canvas: schalen, iets draaien zodat
     de neus schuin naar links-omlaag wijst (diagonaal naar de kijker), neus op `at`."""
     r = math.radians(rot)
@@ -84,49 +85,49 @@ def draw():
     c = Canvas()
     H = head_pts
     He = lambda x, y, rx, ry, rot=0: H(ell(x, y, rx, ry, rot))
-    # Driekwart zoals Rattata/Growlithe: de kop vooraan links met het gezicht naar de kijker,
-    # de borst eronder, het lijf erachter schuin naar rechtsboven (grotendeels achter de kop).
-    # verre achterpoot valt achter de nabije weg: 3 poten zichtbaar (Jordi)
-    tail(c)
-    lijf = c.mask(blob([(96, 128), (120, 104), (150, 94), (176, 96), (194, 110), (196, 134), (184, 156),
-                        (160, 174), (132, 194), (104, 198), (88, 176)]))
-    c.part(lijf | c.mask(ell(174, 140, 24, 24, -20)), BR)
-    c.stroke(qbez((154, 122), (146, 148), (164, 162), 10), 2.0)
-    # nabije achterpoot: gehurkt, rechtsonder
-    crouch_leg(c, (172, 148), (152, 174), (176, 194), (156, 204), BR, PAW, w=26)
-    # verre voorpoot: rechts naast de nabije, licht gebogen, staat
-    c.part(c.mask(ell(122, 176, 15, 17)) | c.mask(tube([(124, 182), (132, 204), (124, 220)], [22, 18, 15])), FAR)
-    c.part(ell(120, 222, 10, 7, -10), '#9C6E66')
-    paw_claws(c, 113, 225, 160, 30, '#D8CDB4')
-    # nabije voorpoot: onder de kin, stapt naar voren-links
-    c.part(c.mask(ell(94, 174, 18, 20)) | c.mask(tube([(92, 180), (80, 206), (66, 228)], [28, 22, 18])), BR)
-    c.part(ell(62, 230, 12, 9, -30), PAW)
-    paw_claws(c, 54, 234, 155)
-    # kop in driekwart: ronde schedel (vorm van referentie_kop.png), gezicht naar de kijker,
-    # verkorte snuit schuin links-omlaag; de verre wang blijft links van de snuit zichtbaar
-    k, px, py = 1.2, 100, 176
-    T = lambda pts: [(px + (x - px) * k, py + (y - py) * k) for x, y in pts]
-    E = lambda x, y, rx, ry, r=0: T(ell(x, y, rx, ry, r))
-    c.part(E(82, 112, 7, 6), EAR)                      # verre oor: randje achter de schedel
-    h = c.part(c.mask(E(98, 140, 36, 33, -10)) |
-               c.mask(blob(T([(82, 136), (66, 150), (56, 166), (51, 178), (57, 187), (72, 187), (90, 176), (98, 158)]))), HD)
-    # warme kruin achter-rechts, lichtere snuitpunt
-    c.mark(blob(T([(96, 98), (146, 104), (146, 176), (128, 152), (118, 126), (104, 112)])), BR, h)
-    c.mark(blob(T([(48, 170), (62, 167), (78, 178), (72, 194), (48, 194)])), MZ, h)
-    # zwart masker zoals Patrat: rond het oog en over de snuitrug naar het verre oog (achter de snuitrug),
-    # niet rond de kop; bovenrand zakt naar de snuitrug (loerend)
-    c.mark(blob(T([(110, 140), (108, 153), (100, 156), (91, 152), (78, 151), (67, 150), (66, 145), (78, 143), (91, 139), (102, 135)])), MK, h)
-    # nabije oor: dominant, achter-boven op de kop
-    e1 = c.part(E(124, 110, 15, 14, 20), EAR)
-    c.mark(E(125, 112, 10, 9, 20), EARIN, e1)
-    ex, ey = T([(100, 146)])[0]
+    # Driekwart: het lijf is verkort (romp dicht achter de schouders, hoger), de kop groot vooraan.
+    # Poten in twee duidelijke paren: voorpoten links, achterpoten rechts, zonder dat ze elkaar kruisen.
+    # verre achterpoot: gehurkt, piept rechts achter de nabije uit
+    crouch_leg(c, (184, 122), (178, 146), (198, 160), (184, 168), FAR, '#9C6E66', w=22)
+    # verre voorpoot: rechts naast de nabije, staat (iets gebogen)
+    c.part(tube([(124, 164), (132, 194), (126, 216)], [22, 18, 15]), FAR)
+    c.part(ell(122, 218, 10, 7, -10), '#9C6E66')
+    paw_claws(c, 115, 221, 160, 30, '#D8CDB4')
+    # lijf + dij + staart als één vorm
+    lijf = c.mask(blob([(84, 164), (90, 134), (112, 114), (138, 102), (160, 96), (178, 100), (186, 116),
+                        (178, 134), (158, 148), (138, 168), (116, 192), (92, 190)]))
+    c.part(lijf | c.mask(ell(162, 126, 26, 25, -20)) | tail_mask(c), BR)
+    c.stroke(qbez((140, 106), (128, 134), (150, 150), 10), 2.0)
+    # nabije achterpoot: gehurkt, knie naar voren, hak laag, voet plat naar voren
+    crouch_leg(c, (164, 136), (150, 160), (174, 180), (154, 190), BR, PAW, w=28)
+    # nabije voorpoot: dikke schouder voor de borst, gestrekt naar voren-omlaag naar de kijker
+    c.part(c.mask(ell(104, 160, 19, 22, -20)) | c.mask(tube([(102, 166), (86, 196), (70, 222)], [30, 22, 18])), BR)
+    c.part(ell(66, 224, 12, 9, -30), PAW)
+    paw_claws(c, 58, 228, 152)
+    # kop, overgetrokken van referentie_kop.png: neus omlaag, oog laag bij de snuit, hoog rond voorhoofd
+    c.part(H([(200, 22), (230, 60), (226, 110)]) and He(66, 34, 13, 12), EAR)   # verre oor: randje
+    h = c.part(blob(H([(93, 230), (80, 220), (64, 198), (44, 166), (30, 125), (32, 88), (44, 54), (66, 26), (96, 10),
+                       (128, 6), (162, 14), (190, 38), (208, 66), (212, 100), (204, 132), (184, 158), (152, 184),
+                       (124, 206), (106, 224)])), HD)
+    # warme kruin alleen achter-rechts, grijs gezicht, lichtere snuitpunt
+    c.mark(blob(H([(150, 0), (240, 0), (240, 150), (206, 132), (198, 92), (182, 56), (162, 34)])), BR, h)
+    c.mark(blob(H([(70, 196), (100, 186), (130, 198), (114, 238), (78, 238)])), MZ, h)
+    # zwart masker zoals Patrat: van het oog over de snuitrug naar het verre oog (achter de omtrek),
+    # alleen net rond het oog, niet rond de kop; schuine bovenrand = loerende blik
+    c.mark(blob(H([(130, 122), (126, 156), (108, 162), (88, 154), (58, 148), (28, 146), (27, 134),
+                   (56, 132), (84, 120), (108, 110)])), MK, h)
+    # oor bovenop de kop, naar voren gericht: donkere rand, lichtere binnenkant
+    e1 = c.part(He(124, 26, 32, 28, -5), EAR)
+    c.mark(He(126, 33, 22, 19, -5), EARIN, e1)
+    # oog laag in het gezicht, dicht bij de snuit
+    ex, ey = H([(106, 137)])[0]
     m = c.part(ell(ex, ey, 5.6, 5.8), EY, line=1.0)
     c.part(ell(ex - 0.6, ey + 0.6, 2.8, 3.2), '#1A0F0B', line=0, clip=m)
     c.part(ell(ex - 1.8, ey - 1.8, 1.4, 1.4), '#FFFFFF', line=0, clip=m)
-    c.part(E(53, 180, 6, 5, -20), NO, line=1.4)
-    c.dot(*T([(51, 181)])[0], 1.0, '#5A2A2A')
-    c.dot(*T([(56, 182)])[0], 1.0, '#5A2A2A')
-    c.stroke(T(qbez((60, 188), (69, 191), (78, 186), 8)), 1.3)
+    c.part(He(93, 212, 14, 11), NO, line=1.4)
+    for nx in (86, 99):
+        c.dot(*H([(nx, 214)])[0], 0.9, '#5A2A2A')
+    c.stroke(H(qbez((100, 226), (112, 224), (122, 214), 8)), 1.3)
     return c.finish(outer=3.0)
 
 
@@ -137,11 +138,11 @@ FS = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 11)
 
 def sheet():
     a, sa = draw()
-    a.save(os.path.join(OUT, 'schets_v2_ronde10.png'))
+    a.save(os.path.join(OUT, 'schets_v2_ronde11.png'))
     W, H = 256 * 3 + 40, 256 + 110
     im = Image.new('RGB', (W, H), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 8), 'Olinguito v2, ronde 10: schets (geen pixels)', font=FB, fill=(30, 30, 30))
+    d.text((10, 8), 'Olinguito v2, ronde 11: schets (geen pixels)', font=FB, fill=(30, 30, 30))
     im.paste(a, (10, 34))
     silim = Image.new('RGB', (256, 256), 'white')
     silim.paste(Image.new('RGB', (256, 256), (70, 66, 84)), (0, 0), sa)
@@ -151,10 +152,10 @@ def sheet():
     for x, t in ((10, 'schets'), (276, 'silhouet'), (542, 'op spritegrootte (64×64)')):
         d.text((x, 292), t, font=FS, fill=(90, 90, 90))
     lines = ['Kop overgetrokken van de foto, één oog, één dominant oor, lange dunne staart omhoog.',
-             'Driekwart zoals Rattata/Growlithe: kop vooraan met het gezicht naar de kijker, lijf erachter naar rechtsboven.']
+             'Ronde 11: kop en poten van ronde 8; driekwart via een verkort lijf, poten in twee paren, staart vast aan het lijf.']
     for i, ln in enumerate(lines):
         d.text((10, 312 + i * 18), ln, font=F, fill=(30, 30, 30))
-    im.save(os.path.join(OUT, 'schetsen_v2_ronde10.png'))
+    im.save(os.path.join(OUT, 'schetsen_v2_ronde11.png'))
 
 
 sheet()

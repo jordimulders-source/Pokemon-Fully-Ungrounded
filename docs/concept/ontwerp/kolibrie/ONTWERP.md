@@ -38,3 +38,7 @@ Naar Jordi's posetekening + foto's (velvet-purple kroonkolibrie, langstaartsylfe
 ## Schets v8 (24 okt): 3/4-pose
 - Jordi over v7: "veel beter"; verre vleugel en achterkant lijf klopten nog niet; pose meer 3/4 zoals Zapdos/Moltres (`referenties/jordi_pose_zapdos.png`, `jordi_pose_moltres.png`).
 - Nu: compact eivormig lijf met de borst naar de kijker (lichtere borst met schubben, blauwgroene schouder), kop groter linksonder op de voorgrond, nabije vleugel uit de linkerschouder naar linksboven, verre vleugel achter het lijf vandaan naar rechtsboven, staart (franje + drie slierten) steekt achter het lijf uit naar rechtsonder.
+
+## Stap 2: silhouet op een echt skelet (24 okt)
+- Jordi: modeltekeningen liepen vast (horizontaal, vleugels fout; "Pokémon designen is geen cirkels-en-driehoekenwerk"). Gekozen onderdelen uit `referenties/skelet_kandidaten.png`: **vleugels Talonflame**, vleugeleffect (doorzichtig) **Venomoth**, staartdynamiek **Articuno**, kop **Ho-Oh of Fearow**.
+- `docs/concept/sprites/kolibrie/silhouet/silhouet.py` → `silhouet_v1.png`: Talonflame als skelet (pose + vleugels), haviksnavel → lange dunne snavel, poten weg (ronde buik), Talonflame-staart → franje + drie slierten met Articuno-krul en racketpunt. De jeguaka valt in het silhouet binnen de nabije vleugel.

@@ -25,3 +25,7 @@ Naar Jordi's posetekening + foto's (velvet-purple kroonkolibrie, langstaartsylfe
 
 ## Schets v5 (24 okt): gewone vleugel
 - Jordi: geen waaier, een normale vleugel; v4 was te klein en de vorm klopte niet. Nu één groot lemmet (±1:2,7): smalle wortel aan de schouder, breedst rond het midden, licht bolle voorrand, punt iets naar voren; lichtere schouder (dekveren) en drie pennenlijnen in de lengte. Groter (nabije vleugel ±55% van de boxhoogte). Transparantie ongewijzigd.
+
+## Schets v6 (24 okt): vleugelvorm naar Jordi's close-up
+- Referentie: `docs/concept/sprites/kolibrie/referenties/jordi_vleugel_closeup.png`. Lange driehoek/sikkel: breedst aan de schouder, rechte voorrand naar een scherpe punt, rechte achterrand met kleine zaagtandjes (de punten van de slagpennen, strak parallel, geen waaier), pennenlijnen parallel aan de voorrand, smalle dekverenrand in lijfkleur.
+- Hele figuur 84% en lager in de box gezet zodat de grotere vleugels passen (`KCanvas` in het script). Oranje vlekje vervallen.

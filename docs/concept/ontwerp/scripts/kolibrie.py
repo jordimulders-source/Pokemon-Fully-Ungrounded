@@ -9,42 +9,72 @@ C = dict(line='#1a1226', head='#2a2238', crown='#c46bff', body='#6a3fc8', body2=
          soul='#efe6ff', soul2='#b9a6f2', eye='#ffffff', iris='#1a1226')
 
 
+K, OX, OY = 0.84, 14, 40  # hele figuur verkleinen en zakken, zodat de grote vleugels in de box passen
+
+
+class KCanvas(Canvas):
+    def m_ellipse(self, cx, cy, rx, ry, rot=0):
+        return super().m_ellipse(OX + K * cx, OY + K * cy, K * rx, K * ry, rot)
+
+    def m_poly(self, pts):
+        return super().m_poly([(OX + K * x, OY + K * y) for x, y in pts])
+
+    def m_tube(self, center, w0, w1=None):
+        return super().m_tube([(OX + K * x, OY + K * y) for x, y in center], K * w0, None if w1 is None else K * w1)
+
+
 BG = '#c9d6c0'  # zacht bosgroen, alleen om de doorzichtige vleugels te tonen
 
 
 def draw():
-    cv = Canvas(line=C['line'], lw=2.6)
+    cv = KCanvas(line=C['line'], lw=2.4)
     cv.img[:] = hexc(BG)
-    def wing(base, ang, L, W, col, col2, bend=0.08):
-        # gewone kolibrievleugel (Jordi, 24 okt: geen waaier): één lang lemmet, breed aan de basis,
-        # licht bolle voorrand, punt iets naar voren, rustig bolle achterrand (naar foto's 4 en 6).
+    def wing(base, ang, L, W, col, col2, cov, n=9):
+        # kolibrievleugel naar Jordi's close-up (24 okt): lange driehoek/sikkel, breedst aan de
+        # schouder; rechte voorrand naar een scherpe punt; rechte achterrand met zaagtandjes
+        # (de punten van de slagpennen), pennen liggen strak parallel (geen waaier).
         # Vanaf het midden naar buiten geleidelijk doorzichtiger.
         a = math.radians(ang)
         ux, uy = math.cos(a), math.sin(a)
         nx, ny = -uy, ux  # positieve v = achterrand
-        prof = [(0, -0.18), (0.15, -0.38), (0.4, -0.50), (0.65, -0.48), (0.85, -0.35), (0.97, -0.15), (1.0, 0.0),
-                (0.95, 0.15), (0.8, 0.32), (0.6, 0.45), (0.38, 0.48), (0.18, 0.38), (0, 0.22)]
         def P(u, v):
-            v = v * W + bend * L * u * u
-            return (base[0] + ux * u * L + nx * v, base[1] + uy * u * L + ny * v)
-        m = cv.m_blob([P(u, v) for u, v in prof])
+            return (base[0] + ux * u * L + nx * v * W, base[1] + uy * u * L + ny * v * W)
+        tip, root = (0.97, 0.14), (0.12, 0.85)
+        pts = [P(-0.05, -0.08), P(0.5, -0.10), P(0.82, -0.06), P(0.95, -0.01), P(1.0, 0.05), P(*tip)]
+        dv = (root[0] - tip[0], root[1] - tip[1])
+        dl = math.hypot(dv[0] * L, dv[1] * W)
+        on, ov = (dv[1] * W / dl) / W, (-dv[0] * L / dl) / L      # naar buiten (weg van de voorrand)
+        pens = []
+        for k in range(1, n + 1):
+            f0, f1 = (k - 0.55) / n, k / n
+            q0 = (tip[0] + dv[0] * f0, tip[1] + dv[1] * f0)
+            q1 = (tip[0] + dv[0] * f1, tip[1] + dv[1] * f1)
+            pts.append(P(q0[0] - on * 4, q0[1] - ov * 4))      # inkeping
+            pts.append(P(q1[0], q1[1]))                         # penpunt
+            pens.append(q0)
+        pts += [P(0.02, 0.7), P(-0.05, 0.3)]
+        m = cv.m_poly(pts)
         under = cv.img.copy()
         cv.fill(m, col)
-        # dekveren: lichtere schouder met een zachte boog als grens
-        cv.fill(cv.m_blob([P(u, v) for u, v in [(-0.05, -0.2), (0.12, -0.45), (0.3, -0.25), (0.3, 0.15), (0.16, 0.42), (-0.05, 0.25)]]),
-                col2, line=False, clip=m)
-        cv.stroke([P(0.12, -0.42), P(0.29, -0.1), P(0.17, 0.38)], 1.2)
-        # een paar pennenlijnen in de lengte, alleen als lijn
-        for v0 in (-0.12, 0.12, 0.34):
-            cv.stroke([P(0.32, v0), P(0.62, v0 * 0.8), P(0.9, v0 * 0.3 - 0.05)], 1.1, col2)
+        # pennen: lijnen vanaf elke inkeping terug, parallel aan de voorrand
+        lines = cv.m_stroke([P(0.05, 0.02), P(0.9, -0.03)], 1.2, smooth=False)
+        for (pu, pv) in pens:
+            lines |= cv.m_stroke([P(pu, pv), P(pu - 0.42, pv - 0.22)], 1.1, smooth=False)
+        cv.fill(lines, col2, line=False, clip=m)
+        # dekveren in lijfkleur aan de schouder, geschubde rand
+        cm = np.zeros_like(cv.alpha)
+        for k in range(4):
+            cm |= cv.m_ellipse(*P(0.10 - 0.02 * k, 0.0 + 0.2 * k), 7, 6)
+        cm |= cv.m_poly([P(-0.06, -0.08), P(0.08, -0.08), P(0.06, 0.65), P(-0.06, 0.4)])
+        cv.fill(cm, cov, line='inner', lw=1.6, clip=m)
         # transparantie: dekkend tot het midden, dan lineair tot ±90% aan de punt
         ring = cv.dilate(m, (cv.lw * SS) / 2 + 0.5)
         yy, xx = np.nonzero(ring)
-        u = ((xx / SS - base[0]) * ux + (yy / SS - base[1]) * uy) / L
+        u = (((xx / SS - OX) / K - base[0]) * ux + ((yy / SS - OY) / K - base[1]) * uy) / L
         t = np.clip((u - 0.5) / 0.5, 0, 1) * 0.9
         cv.img[yy, xx] = (cv.img[yy, xx] * (1 - t[:, None]) + under[yy, xx] * t[:, None]).astype(np.uint8)
     # ---- verre vleugel (achter, kleiner, hoger) ----
-    wing((154, 120), -80, 118, 44, C['wing'], C['wing2'])
+    wing((150, 122), -76, 128, 52, C['wing'], C['wing2'], C['body'])
     # ---- staart: korte waaier (franje) + twee lange slierten met zielvlammen ----
     tails = [([(178, 114), (214, 112), (240, 146), (248, 186), (246, 214)], 5.5, 2.2),
              ([(177, 117), (206, 122), (220, 160), (218, 204), (214, 234)], 5.5, 2.2),
@@ -74,8 +104,7 @@ def draw():
         cv.fill(cv.m_ellipse(x, y, 5, 3.5), C['body2'], line=False, clip=body)
     cv.fill(cv.m_ellipse(126, 122, 18, 9, rot=-28), C['teal'], line=False, clip=body)
     # ---- nabije vleugel (voor, groter, naar links gekanteld) ----
-    wing((134, 128), -116, 140, 52, C['wing'], C['wing2'])
-    cv.fill(cv.m_ellipse(127, 112, 4.5, 3.5, rot=-60), C['orange'], line=False)
+    wing((140, 124), -108, 148, 58, C['wing'], C['wing2'], C['body'])
     # ---- nek + kop ----
     cv.fill(cv.m_tube([(106, 160), (88, 170)], 22, 20), C['head'])
     # snavel: lang, dun, iets gebogen naar linksonder
@@ -111,4 +140,4 @@ if __name__ == '__main__':
     d.text((266, 216), 'sprite-formaat 3x', fill='black', font=f)
     d.text((470, 86), '1x', fill='black', font=f)
     d.text((470, 166), 'silhouet 1x', fill='black', font=f)
-    W.save(os.path.join(out, 'schets_v5.png'))
+    W.save(os.path.join(out, 'schets_v6.png'))

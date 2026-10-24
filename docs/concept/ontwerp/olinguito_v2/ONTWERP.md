@@ -22,8 +22,14 @@ Ronde 1 (`schetsen_v1.png`; script in de git-geschiedenis):
 - Achterpoten onder het lijf naar voren (knie naar voren, voet onder de buik: zoals een klimmer die zich verzamelt).
 - Geen buikvlak meer; alleen de kin/keel goudbruin.
 
-## Ronde 3 (`schetsen_v2_ronde3.png`, los `schets_v2_ronde3.png`; script `scripts/schets.py`)
+## Ronde 3 (`schetsen_v2_ronde3.png`)
 **Jordi (24 okt, letterlijk):** "maak het hoofd nog wat ronder, de staart moet langer, zoals op de fotos en de poten moeten dynamischer, zoals op de foto, ze zijn te symmetrisch"
 - Kop: schedel als bijna-cirkel.
 - Staart: ±1,6× zo lang, omhoog en in een boog terug over de rug.
 - Poten asymmetrisch (boomfoto): verre voorpoot ver gestrekt en grijpend, nabije voorpoot opgetild en gebogen; nabije achterpoot opgetrokken (knie hoog, voet onder de buik), verre achterpoot gestrekt naar achteren (zet zich af).
+
+## Ronde 4 (`schetsen_v2_ronde4.png`, los `schets_v2_ronde4.png`; script `scripts/schets.py`)
+**Jordi (24 okt, letterlijk):** "het oog moet ook veel kleiner, zie de fotos, plus in pokemon sprites kijken ze altijd diagonaal, dus dat moeten we ook nog iets meer creeren" + "het oor mag iets groter".
+- Oog ±half zo groot (klein roodbruin kraaloog met glans en zware wenkbrauw, zacht donker vlak eromheen).
+- Kop in 3/4 naar de kijker: de snuit komt uit het midden van het gezicht (verre wang zichtbaar links ervan), kop en snuit als één vorm met een korte lijn voor de snuitrug.
+- Nabij oor ±25% groter; het verre oor blijft een randje.

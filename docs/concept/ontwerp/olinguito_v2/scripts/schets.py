@@ -4,6 +4,7 @@ Ronde 2 (Jordi): dunnere olinguito-staart, één oog en één dominant oor (prof
 meer olinguito/minder wasbeer, kortere neus (langer pas bij de coati), klauwen meer Linoone,
 dynamischere poten met de achterpoten onder het lijf naar voren (boomfoto), geen buikvlak.
 Ronde 3 (Jordi): rondere kop, langere staart (foto's), asymmetrische dynamische poten (boomfoto).
+Ronde 4 (Jordi): veel kleiner oog (foto's), kop meer diagonaal naar de kijker (zoals Pokémon-sprites), oor iets groter.
 Draaien vanuit de repo-root: python3 docs/concept/ontwerp/olinguito_v2/scripts/schets.py"""
 import os
 import sys
@@ -67,29 +68,32 @@ def draw():
     c.part(tube([(114, 150), (134, 182), (112, 196)], [28, 22, 18]), BR)
     c.part(ell(106, 198, 12, 9, -10), BR)
     paw_claws(c, 98, 202, 128)
-    # kop in profiel (vergroot rond de nek)
+    # kop in 3/4 naar de kijker (vergroot rond de nek)
     k, px, py = 1.25, 80, 168
     T = lambda pts: [(px + (x - px) * k, py + (y - py) * k) for x, y in pts]
     E = lambda x, y, rx, ry, r=0: T(ell(x, y, rx, ry, r))
     # verre oor: alleen een randje boven de schedel
     c.part(E(62, 127, 8, 7, -15), BR)
-    h = c.part(E(70, 154, 29, 28), HD)
+    # kop en snuit als één vorm (geen naad), snuit uit het midden van het gezicht naar de kijker
+    snout = T([(54, 166), (46, 178), (43, 188), (48, 197), (60, 199), (74, 190), (80, 176), (68, 166)])
+    h = c.part(c.mask(E(70, 154, 29, 28)) | c.mask(blob(snout)), HD)
     # nabije oor: dominant, achter op de kop
-    e1 = c.part(E(88, 130, 12, 11, 20), HD)
-    c.mark(E(88, 132, 6, 6), TAN, e1)
-    # korte snuit (langer pas bij de coati)
-    sn = c.part(blob(T([(50, 154), (40, 164), (32, 176), (30, 184), (36, 190), (52, 190), (70, 182), (64, 164)])), HD, line=0)
-    hs = h | sn
-    c.mark(blob(T([(38, 188), (54, 188), (74, 182), (92, 172), (98, 186), (60, 204), (36, 204)])), TAN, hs)
+    e1 = c.part(E(89, 129, 15, 14, 20), HD)
+    c.mark(E(89, 131, 8, 8), TAN, e1)
+    # korte snuit, naar de kijker gedraaid: wijst meer omlaag, breder aan de basis
+    hs = h
+    # snuitrug: korte lijn die de snuit uit het gezicht laat komen
+    c.stroke(T(qbez((47, 177), (52, 168), (60, 164), 8)), 1.6)
+    c.mark(blob(T([(52, 200), (64, 198), (78, 188), (92, 174), (98, 186), (64, 210), (48, 208)])), TAN, hs)
     # zacht donker rond het oog
-    c.mark(blob(T([(42, 160), (48, 148), (60, 144), (72, 150), (72, 164), (62, 172), (48, 172)])), MK, hs)
-    x, y, rx, ry = 58, 158, 8.5, 9.5
-    m = c.part(E(x, y, rx, ry, -10), EY, line=1.2)
-    c.part(E(x - rx * 0.2, y + ry * 0.12, rx * 0.5, ry * 0.58), '#1A0F0B', line=0, clip=m)
-    c.part(E(x - rx * 0.35, y - ry * 0.35, rx * 0.28, rx * 0.28), '#FFFFFF', line=0, clip=m)
-    c.stroke(T([(x - rx * 1.2, y - ry * 0.5), (x + rx * 1.1, y - ry * 0.95)]), 2.4)
-    c.part(E(31, 183, 5, 4.5, -20), NO, line=1.4)
-    c.stroke(T(qbez((36, 190), (42, 193), (49, 190), 8)), 1.4)
+    c.mark(blob(T([(54, 152), (60, 144), (70, 143), (76, 149), (74, 158), (66, 162), (57, 160)])), MK, hs)
+    x, y, rx, ry = 65, 152, 4.6, 5.0
+    m = c.part(E(x, y, rx, ry, -10), EY, line=1.0)
+    c.part(E(x - rx * 0.15, y + ry * 0.1, rx * 0.55, ry * 0.62), '#1A0F0B', line=0, clip=m)
+    c.part(E(x - rx * 0.35, y - ry * 0.35, rx * 0.3, rx * 0.3), '#FFFFFF', line=0, clip=m)
+    c.stroke(T([(x - rx * 1.4, y - ry * 0.7), (x + rx * 1.3, y - ry * 1.25)]), 2.2)
+    c.part(E(46, 192, 5, 4.5, -10), NO, line=1.4)
+    c.stroke(T(qbez((52, 198), (58, 201), (65, 197), 8)), 1.4)
     return c.finish(outer=3.0)
 
 
@@ -100,11 +104,11 @@ FS = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 11)
 
 def sheet():
     a, sa = draw()
-    a.save(os.path.join(OUT, 'schets_v2_ronde3.png'))
+    a.save(os.path.join(OUT, 'schets_v2_ronde4.png'))
     W, H = 256 * 3 + 40, 256 + 110
     im = Image.new('RGB', (W, H), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 8), 'Olinguito v2, ronde 3: schets (geen pixels)', font=FB, fill=(30, 30, 30))
+    d.text((10, 8), 'Olinguito v2, ronde 4: schets (geen pixels)', font=FB, fill=(30, 30, 30))
     im.paste(a, (10, 34))
     silim = Image.new('RGB', (256, 256), 'white')
     silim.paste(Image.new('RGB', (256, 256), (70, 66, 84)), (0, 0), sa)
@@ -113,11 +117,11 @@ def sheet():
     im.paste(small, (542, 34))
     for x, t in ((10, 'schets'), (276, 'silhouet'), (542, 'op spritegrootte (64×64)')):
         d.text((x, 292), t, font=FS, fill=(90, 90, 90))
-    lines = ['Profiel zoals Linoone: één oog, één dominant oor. Dunnere staart omhoog, kortere snuit, zacht masker.',
-             'Ronde 3: rondere kop, langere staart, poten asymmetrisch (voorpoot gestrekt/opgetild, achterpoot opgetrokken/gestrekt).']
+    lines = ['Kop in 3/4 zoals Linoone: één oog, één dominant oor. Dunnere staart omhoog, kortere snuit, zacht masker.',
+             'Ronde 4: klein oog, kop meer diagonaal naar de kijker, groter oor (ronde 3: kop, staart, poten).']
     for i, ln in enumerate(lines):
         d.text((10, 312 + i * 18), ln, font=F, fill=(30, 30, 30))
-    im.save(os.path.join(OUT, 'schetsen_v2_ronde3.png'))
+    im.save(os.path.join(OUT, 'schetsen_v2_ronde4.png'))
 
 
 sheet()

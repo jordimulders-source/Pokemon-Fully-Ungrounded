@@ -42,3 +42,13 @@ Naar Jordi's posetekening + foto's (velvet-purple kroonkolibrie, langstaartsylfe
 ## Stap 2: silhouet op een echt skelet (24 okt)
 - Jordi: modeltekeningen liepen vast (horizontaal, vleugels fout; "Pokémon designen is geen cirkels-en-driehoekenwerk"). Gekozen onderdelen uit `referenties/skelet_kandidaten.png`: **vleugels Talonflame**, vleugeleffect (doorzichtig) **Venomoth**, staartdynamiek **Articuno**, kop **Ho-Oh of Fearow**.
 - `docs/concept/sprites/kolibrie/silhouet/silhouet.py` → `silhouet_v1.png`: Talonflame als skelet (pose + vleugels), haviksnavel → lange dunne snavel, poten weg (ronde buik), Talonflame-staart → franje + drie slierten met Articuno-krul en racketpunt. De jeguaka valt in het silhouet binnen de nabije vleugel.
+
+### Verhoudingen silhouet vs. foto's (24 okt; maat = lijflengte B, keel tot staartwortel; foto's geschat uit pixelcoördinaten)
+| | foto's (illustratie, blauwe sabelvleugel, Costa, fluweel) | silhouet v1 (B = 25 px) |
+|---|---|---|
+| kop | 0,30–0,40 B | 0,46 B (Pokémon-kop mag groter) |
+| snavel | 0,35 (fluweel) – 0,75 B | 0,79 B |
+| vleugel | 1,3–1,9 B | nabij 1,2 B (verkort), ver 1,6 B |
+| lijfdiepte | 0,40–0,50 B | 0,80 B → v2 ±0,6 B |
+| staart (zonder slierten) | 0,5–1,0 B | franje 0,3 B + slierten ±1,2 B |
+- v2: buik slanker gemaakt (Talonflame-borst was te diep); rest ongewijzigd.

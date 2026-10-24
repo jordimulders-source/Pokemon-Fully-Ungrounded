@@ -66,8 +66,12 @@ def build():
     m[(xx < 9) & (yy >= 33) & (yy <= 42)] = False
 
     add, d = hi()
-    # onderkant lijf dichtmaken (waar de poten zaten): ronde buik
-    d.ellipse([20 * SS, 36 * SS, 42 * SS, 49 * SS], fill=255)
+    # v2: lijf slanker (diepte/lengte 0,8 -> ±0,5 zoals op de foto's): buik afsnijden langs een
+    # schuine lijn van de keel naar de staartwortel, dan een ronde onderkant terug
+    cut = Image.new('L', (64, 64), 0)
+    ImageDraw.Draw(cut).polygon([(14, 41), (26, 43), (40, 42), (44, 46), (44, 64), (10, 64)], fill=255)
+    m &= ~(np.array(cut) > 0)
+    d.ellipse([17 * SS, 33 * SS, 42 * SS, 45 * SS], fill=255)
     # kop iets ronder naar voren
     d.ellipse([7 * SS, 31 * SS, 19 * SS, 43 * SS], fill=255)
     # kolibriesnavel: lang en dun, schuin naar linksonder
@@ -115,5 +119,5 @@ if __name__ == '__main__':
     dr = ImageDraw.Draw(W)
     for x, t in ((0, 'skelet: Talonflame'), (266, 'silhouet over skelet'), (532, 'silhouet 4x'), (800, '1x')):
         dr.text((x + 2, 260), t, fill='black')
-    W.save(os.path.join(HERE, 'silhouet_v1.png'))
-    S.save(os.path.join(HERE, 'silhouet_v1_1x.png'))
+    W.save(os.path.join(HERE, 'silhouet_v2.png'))
+    S.save(os.path.join(HERE, 'silhouet_v2_1x.png'))

@@ -57,3 +57,15 @@ Jordi: "kijk goed naar de foto, dit is niet dezelfde vorm". Les: een kop niet 'i
 ## Ronde 8 (`schetsen_v2_ronde8.png`, los `schets_v2_ronde8.png`; script `scripts/schets.py`)
 **Jordi (24 okt, letterlijk):** "de achterpoten hebben vaak nog iets meer een hurk gevoel he, kijk op de fotos"
 - Beide achterpoten gehurkt (`crouch_leg()`): grote dij tegen het lijf, knie scherp naar voren, hak laag achter, voet plat naar voren. Nabij lager en dichterbij, verre hoger en verder naar achteren (diepte). Voorpoten, kop en staart ongewijzigd.
+
+## Gekozen ontwerp (24 okt): `ONTWERP_GEKOZEN.png`
+Jordi: "ja dit vind ik uitstekend". Gemaakt met het 3D-poppetje `scripts/pop3d.py` (rondes 9–11 met platte vormen kregen de driekwartpose niet goed; zie de les in FAKEMON_DESIGN.md).
+- **Hoek:** 52° gedraaid, camera 8° van boven (rechter erop: achterlijf en staart lager, past in het spritevak).
+- **Kop:** vorm van `referentie_kop.png`: hoog rond voorhoofd, oog laag bij de snuit, snuit stomp-taps naar voren en iets omlaag, kijkt recht vooruit. Grijze kop, warmbruine kruin alleen achter op de kop.
+- **Masker:** zwarte band over beide ogen zoals Zigzagoon, stopt net achter het oog. **Oog:** donker roodbruin in het masker ("het duistere oog heeft wel wat", Jordi); niet feller maken.
+- **Snoet:** donker grijsbruin, los van het masker; neus oudroze (donkerder dan felroze).
+- **Oren:** één dominant oor (donkere rand, lichte binnenkant), het verre oor klein.
+- **Lijf/poten:** donkerbruin, geen buikvlak; voorpoten omlaag met 2 lange lichte Linoone-klauwen; gehurkte achterpoten met roze voeten; de bijna verborgen nabije achterpoot is goed zo ("juist perfect").
+- **Staart:** lang en dun, omhoog in een boog dicht op het lijf.
+- **Toon:** combinatie van schattig en sinister zonder comicky te worden.
+- **Volgende stap:** silhouet op een echte Gen 3-sprite als skelet (dit poppetje op 52°, verkleind naar 64×64 als onderlaag).

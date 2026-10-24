@@ -122,3 +122,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.25] - Olinguito v2: ronde 8
 - Achterpoten gehurkt zoals op de foto's (dikke gevouwen dij, lage hak, platte voet naar voren). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde8.png`.
+
+### [v0.0.26] - Olinguito v2: ontwerp gekozen
+- Na schetsrondes 5–11 en een 3D-poppetje (`docs/concept/ontwerp/olinguito_v2/scripts/pop3d.py`: bollen/ellipsoïden met kijkhoek, textuur voor masker/snoet) koos Jordi het ontwerp: driekwart op 52°, kop naar de foto, Zigzagoon-masker met duister oog, grijsbruine snoet, Linoone-klauwen, gehurkte achterpoten, lange staart dicht op het lijf. Vastgelegd in `ONTWERP.md` + `ONTWERP_GEKOZEN.png`.

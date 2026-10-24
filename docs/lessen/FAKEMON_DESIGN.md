@@ -12,6 +12,7 @@ Waarom: alpaca en olinguito kostten 15 rondes, Cuyby 3 en Cuychu 4. De rondes gi
 4. **Onafhankelijke keuring vóór Jordi kijkt:** een agent vergelijkt met ≥ 10 echte sprites (KEURING.md, nodig/polijsten); de nodige punten meteen repareren. Jordi ziet alleen de gerepareerde versie.
 5. **Reparatierondes:** alleen de punten die Jordi noemt. Goedgekeurde delen letterlijk bevriezen; grote of ongevraagde wijzigingen alleen als variant naast het origineel.
 - **Claude kijkt zelf eerst** naar elk resultaat (1× en 3×) vóór het naar Jordi gaat, en stuurt het terug als het duidelijk niet klopt (ronde 17/18 olinguito gingen ongezien door: "Chernobyl", "prutswerk"). Een onderdeel verplaatsen = de hele vorm eromheen laten kloppen (neus verschuiven zonder de snuit mee te nemen is zinloos).
+- **Driekwartpose: bouw een 3D-poppetje** (olinguito v2, 24 okt): met platte vormen ging het drie rondes mis (kop veranderde, poten verstrengeld, staart los). Met `docs/concept/ontwerp/olinguito_v2/scripts/pop3d.py` (bollen/ellipsoïden, yaw/pitch, tekeningen als textuur in diercoördinaten) is 'meer draaien' één getal en kiest Jordi uit een vel met hoeken; daarna één onderdeel per ronde. Hergebruiken voor elke viervoeter.
 - **Schetsrondes (Jordi, 24 okt):** geen changelogsectie en geen uitgebreide notitie per schets; alleen script + vel committen. Pas bij een gekozen ontwerp de changelog en `ONTWERP.md` bijwerken.
 - Max. 2 sprite-agents tegelijk; agents schrijven alleen in de map van hun sprite (lessen onder "Lessen" in NOTITIES.md, Claude zet ze over naar SPRITING.md).
 

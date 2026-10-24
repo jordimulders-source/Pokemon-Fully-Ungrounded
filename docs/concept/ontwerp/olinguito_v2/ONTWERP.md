@@ -48,8 +48,12 @@ Jordi: "kijk goed naar de foto, dit is niet dezelfde vorm". Les: een kop niet 'i
 - Poten verder naar voren: achtervoeten onder de buik vlak achter de voorpoten (zoals op de boomfoto's), dikke schouder, roze voeten.
 - De foto's van de poten en de olinguito's in de bomen kwamen alleen in de chat binnen, niet als bestand (niet in deze map).
 
-## Ronde 7 (`schetsen_v2_ronde7.png`, los `schets_v2_ronde7.png`; script `scripts/schets.py`)
+## Ronde 7 (`schetsen_v2_ronde7.png`)
 **Jordi (24 okt, letterlijk):** "de pose is nu helemaal van de zijkant, deze mag diagonaler, plus de benen zijn weer allemaal in dezelfde lijn, waar ze vandaan komen is goed, alleen de pose mag dynamischer, kijk naar de getoonde fotos hoe een olinguito beweegt [...] Verder wil ik de zwarte streep dat van het oog naar het andere oog leidt, klein beetje zoals bij patrat hier, alleen stopt die bij de olinguito net om het oog heen, dus trekt niet helemaal rondom het hoofd" (referentie: `referentie_patrat_masker.png`).
 - Diepte (3/4 zoals Linoone): brede borst en schouder dichtbij, lijf loopt taps toe naar een kleinere romp; verre poten rechts van en hoger dan de nabije.
 - Poten elk in een andere fase (zoals op de boomfoto's): nabije voorpoot ver gestrekt naar de kijker, verre voorpoot opgetild met hangende klauwen, nabije achterpoot stapt naar voren (knie voor, hak terug), verre achterpoot gestrekt naar achteren. Aanhechting zoals ronde 6.
 - Zwart masker zoals Patrat: rond het oog, smalle brug over de snuitrug naar het verre oog (achter de omtrek), niet rond de kop; de schuine bovenrand vervangt de wenkbrauw.
+
+## Ronde 8 (`schetsen_v2_ronde8.png`, los `schets_v2_ronde8.png`; script `scripts/schets.py`)
+**Jordi (24 okt, letterlijk):** "de achterpoten hebben vaak nog iets meer een hurk gevoel he, kijk op de fotos"
+- Beide achterpoten gehurkt (`crouch_leg()`): grote dij tegen het lijf, knie scherp naar voren, hak laag achter, voet plat naar voren. Nabij lager en dichterbij, verre hoger en verder naar achteren (diepte). Voorpoten, kop en staart ongewijzigd.

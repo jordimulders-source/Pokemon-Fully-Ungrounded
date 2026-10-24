@@ -10,6 +10,7 @@ Ronde 6 (Jordi): kop overgetrokken van referentie_kop.png (neus omlaag, oog laag
 oor bovenop); kleiner lijf, poten verder naar voren onder het lijf (boomfoto's).
 Ronde 7 (Jordi): pose diagonaler (3/4 zoals Linoone, niet van opzij), poten niet op één lijn maar dynamisch
 (zoals de olinguito beweegt), zwart masker oog-tot-oog over de snuitrug zoals Patrat, alleen net rond het oog.
+Ronde 8 (Jordi): achterpoten gehurkt (boomfoto's): grote dij, knie scherp gebogen, hak laag, voet plat naar voren.
 Draaien vanuit de repo-root: python3 docs/concept/ontwerp/olinguito_v2/scripts/schets.py"""
 import os
 import sys
@@ -56,6 +57,15 @@ def hind_foot(c, x, y, col):
         c.part(claw((x - 9 + i * 5, y + 2), (x - 16 + i * 5, y + 9), 2, 3.5), CL, line=1)
 
 
+def crouch_leg(c, hip, knee, hock, toe, col, foot_col, w=22):
+    """Gehurkte achterpoot: dij naar voren-omlaag, scheen scherp terug naar een lage hak,
+    voet plat naar voren (zoals op de boomfoto's)."""
+    c.part(blob(tube([hip, knee, hock], [w, w * 0.75, w * 0.55])), col)
+    c.part(tube([hock, toe], [w * 0.55, w * 0.45]), foot_col)
+    for i in range(3):
+        c.part(claw((toe[0] - 2 + i * 4, toe[1] + 1), (toe[0] - 9 + i * 4, toe[1] + 7), 2, 3.5), CL, line=1)
+
+
 def head_pts(pts, sc=0.45, rot=12, anchor=(93, 222), at=(38, 188), pivot=(215, 40)):
     """Punten uit referentie_kop.png (217x242) naar het canvas: schalen, iets draaien zodat
     de neus schuin naar links-omlaag wijst (diagonaal naar de kijker), neus op `at`."""
@@ -74,8 +84,7 @@ def draw():
     # Diepte (3/4 zoals Linoone): de voorkant is dichtbij (groot, laag), de romp ver weg (kleiner, hoger).
     # Verre poten staan rechts van en hoger dan de nabije; elke poot in een andere fase van de stap.
     # verre achterpoot: gestrekt naar achteren, zet zich af (ver weg: hoog en klein)
-    c.part(tube([(182, 120), (200, 140), (214, 156)], [20, 15, 12]), FAR)
-    c.part(ell(218, 158, 9, 6, 35), '#9C6E66')
+    crouch_leg(c, (186, 124), (176, 148), (198, 162), (180, 170), FAR, '#9C6E66', w=24)
     # verre voorpoot: opgetild en gebogen, klauwen hangen (stapt)
     c.part(tube([(124, 146), (140, 170), (128, 188)], [20, 16, 13]), FAR)
     c.part(ell(124, 190, 9, 7, -10), '#9C6E66')
@@ -84,11 +93,10 @@ def draw():
     # lijf loopt taps toe van de brede borst (dichtbij) naar de kleinere romp (ver weg)
     lijf = c.mask(blob([(82, 166), (88, 134), (112, 112), (142, 98), (166, 90), (184, 96), (190, 112),
                         (180, 130), (158, 146), (132, 166), (110, 192), (90, 190)]))
-    c.part(lijf | c.mask(ell(172, 116, 18, 18, -20)), BR)
-    c.stroke(qbez((158, 104), (150, 126), (166, 138), 10), 2.0)
-    # nabije achterpoot: stapt naar voren onder de buik, voet laag (dichtbij)
-    c.part(tube(qbez((166, 130), (140, 160), (162, 180), 10) + [(160, 192), (156, 202)], [24, 23, 22, 21, 20, 19, 18, 17, 16, 15, 15, 14, 13]), BR)
-    hind_foot(c, 152, 205, PAW)
+    c.part(lijf | c.mask(ell(170, 122, 28, 26, -20)), BR)
+    c.stroke(qbez((146, 102), (134, 132), (156, 148), 10), 2.0)
+    # nabije achterpoot: gehurkt, knie scherp naar voren, hak laag achter, voet plat naar voren onder de buik
+    crouch_leg(c, (164, 130), (144, 158), (172, 180), (148, 190), BR, PAW, w=30)
     # nabije voorpoot: dikke schouder voor de borst, ver gestrekt naar voren-omlaag naar de kijker
     c.part(c.mask(ell(106, 160, 19, 22, -20)) | c.mask(tube([(104, 166), (86, 196), (68, 222)], [30, 22, 18])), BR)
     c.part(ell(64, 224, 12, 9, -30), PAW)
@@ -127,11 +135,11 @@ FS = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 11)
 
 def sheet():
     a, sa = draw()
-    a.save(os.path.join(OUT, 'schets_v2_ronde7.png'))
+    a.save(os.path.join(OUT, 'schets_v2_ronde8.png'))
     W, H = 256 * 3 + 40, 256 + 110
     im = Image.new('RGB', (W, H), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 8), 'Olinguito v2, ronde 7: schets (geen pixels)', font=FB, fill=(30, 30, 30))
+    d.text((10, 8), 'Olinguito v2, ronde 8: schets (geen pixels)', font=FB, fill=(30, 30, 30))
     im.paste(a, (10, 34))
     silim = Image.new('RGB', (256, 256), 'white')
     silim.paste(Image.new('RGB', (256, 256), (70, 66, 84)), (0, 0), sa)
@@ -141,10 +149,10 @@ def sheet():
     for x, t in ((10, 'schets'), (276, 'silhouet'), (542, 'op spritegrootte (64×64)')):
         d.text((x, 292), t, font=FS, fill=(90, 90, 90))
     lines = ['Kop overgetrokken van de foto, één oog, één dominant oor, lange dunne staart omhoog.',
-             'Ronde 7: diagonaler (dichtbij groot/laag, romp ver weg), poten in verschillende fasen, masker oog-tot-oog.']
+             'Ronde 8: achterpoten gehurkt (grote dij, lage hak, platte voet); ronde 7: diagonaler, masker oog-tot-oog.']
     for i, ln in enumerate(lines):
         d.text((10, 312 + i * 18), ln, font=F, fill=(30, 30, 30))
-    im.save(os.path.join(OUT, 'schetsen_v2_ronde7.png'))
+    im.save(os.path.join(OUT, 'schetsen_v2_ronde8.png'))
 
 
 sheet()

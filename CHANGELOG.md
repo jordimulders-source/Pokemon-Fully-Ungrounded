@@ -119,3 +119,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.24] - Olinguito v2: ronde 7
 - Pose diagonaler (diepte: borst dichtbij, romp ver weg), poten elk in een andere fase van de stap, zwart masker oog-tot-oog zoals Patrat (alleen rond het oog). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde7.png`.
+
+### [v0.0.25] - Olinguito v2: ronde 8
+- Achterpoten gehurkt zoals op de foto's (dikke gevouwen dij, lage hak, platte voet naar voren). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde8.png`.

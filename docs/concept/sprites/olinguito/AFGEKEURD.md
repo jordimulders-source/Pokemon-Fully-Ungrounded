@@ -22,3 +22,6 @@ Regels die hieruit volgen:
 - Poten: neem Galar-Linoone's pootconfiguratie over (verre voorpoot vooraan onder de kin) en loop **diagonaal** (nooit telgang).
 | 22 | Verre voorpoot 5 px smal als rechte streep, om onder een pixelgrens te blijven | "weer een luie poot met een rechte lijn" |
 - **Vorm gaat vóór pixelgrenzen:** liever iets boven het formaatdoel dan een dunne of rechte poot.
+| herbouw (24 okt) | Drie herbouwversies op Linoone/Poochyena/Zigzagoon: klauwen weer verknald (dunne streepjes/vlekjes i.p.v. Sandslash-klauwen) | "nu verknal je de nagels weer, stop maar" |
+
+**Olinguito gepauzeerd (Jordi, 24 okt).** Niet verder aan werken tot Jordi het zelf weer oppakt. Bestanden blijven staan (ronde 23 + `herbouw_*`).

@@ -1,10 +1,7 @@
-# Achterhoofd met de hand (ronde-23-coördinaten). Alleen de achterkant van de schedel 1-3 px naar binnen;
-# oren, schedelbovenkant, masker, oog, snuit en grijns blijven op hun plek en pixel-identiek.
-26 34:331.
+# Achterhoofd met de hand (ronde-23-coördinaten). Alleen de achterkant van de schedel 1-3 px naar binnen, als boog
+# (36-37-37-38-38-38-37-36 op y25-32); oren, schedelbovenkant, masker, oog, snuit en grijns pixel-identiek aan ronde 23.
 27 35:331.
-28 35:331.
-29 35:331..
-30 35:331..
-31 34:331...
+29 36:331.
+30 36:331.
+31 35:331..
 32 34:331...
-33 36:3122

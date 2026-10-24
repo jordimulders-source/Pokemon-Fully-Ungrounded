@@ -27,3 +27,25 @@ Basis: `ronde23/anim_front.png`. Jordi: "ronde 23 zit goed", maar de kop is te g
 - Stroken knippen door het hele lijf raakt ook de staart en de oren: controleer per knip welke bevroren pixels in die rij zitten (eerste schedelknip pakte de basis van het verre oor).
 - Klauwhaken diagonaal: waar de haak smaller wordt én opschuift, eindigt de rij op `11`, anders ontstaan open randen aan de onderkant.
 - Frame 2 als "dezelfde tekening met één strook minder weggeknipt" is veel veiliger dan een naad per kolom.
+
+---
+# Reparatieronde na afkeuring (Jordi: "ik zie nu al dat er een been mist"; onafhankelijke keuring: 33 fails)
+De eerste finale (hierboven) is vervangen. Nieuwe bouwstraat: `bron/maak.py` (ronde 23 + `kop.txt` → 2 rijen omhoog → `staart.txt` → `onder.txt`), frame 2 met `frame2.py`/`frame2.txt`.
+
+| # | Wat faalde | Wat ik deed |
+|---|---|---|
+| R1 | Kop geknipt (platte schedel, oren dichter bij elkaar) | Kop van ronde 23 terug (diff 0); alleen de achterkant van de schedel als boog 1–3 px naar binnen |
+| R2 | Kop 61 % van de hoogte | Alles boven de poten 2 rijen omhoog: poten 2 rijen langer, kop 53 % |
+| R3 | Schets van de poten (letters per onderdeel) | Eerste opzet: alle poten schuin vooruit (hark) en de staart tegen de verre poot. Tweede opzet: nabije voor draagt, verre voor stapt, nabije achter reikt, verre achter draagt; vier voetkolommen met lucht |
+| R4 | Eerste uitwerking: staart sloot op de verre dij (72 px gat), claws als tandjes | Verre dij onder de heup met 1 px lucht naar de staart; haak naar linksboven met 1 kolom lucht; open-rand-regel per rij (overhang = 1) |
+| R5 | Donker 0,535 | Poten 5/4 (nabij) en 4/3 (ver), staartwortel en strook 4/5 aan de lichtkant, romp zonder 3-vlakken → 0,445 |
+| R6 | Rechte stukken van 4 (norm) in rug, klauwen, haak, verre voorpoot; regelmatige trappen | Elke rand met de hand gevarieerd; toets op 4 px en op regelmatige trappen is leeg voor eigen werk |
+| R7 | Frame 2: verdubbelde rij gaf rechte stukken in staart en verre voorpoot | Staart beweegt als geheel 1 px mee; knik in de verdubbelde rij van de verre voorpoot |
+| R8 | Kopoppervlak 41,3 % | Voorpoten 1 px voller → 41,0 % |
+
+## Lessen
+- Een kop die "te groot" is, los je bij een bevroren kop op met langere poten/groter lijf, niet door de kop te knippen: knippen verandert schedel en oren.
+- Eerst een letterschets per onderdeel (F/N/H/G/T) op 1× bekijken; pas daarna pixels en tinten. De eerste schets liet direct zien dat alle poten dezelfde kant op wezen.
+- Open-randtoets: telt 9 (grijs) niet als omlijning, dan vind je de randen die een keurder ziet.
+- Ruimte verdelen in kolommen vóór het tekenen (poot – lucht – poot – lucht – staarthaak): anders sluit de haak op de poot.
+- Een donkerte-doel haal je met lichtere vulling op lijf en poten, niet met lichtere omlijning.

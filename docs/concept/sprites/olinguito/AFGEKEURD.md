@@ -27,3 +27,4 @@ Regels die hieruit volgen:
 **Olinguito gepauzeerd (Jordi, 24 okt).** Niet verder aan werken tot Jordi het zelf weer oppakt. Bestanden blijven staan (ronde 23 + `herbouw_*`).
 | finale (24 okt) | Verre achterpoot alleen als donkere diepte onder de staartkrul: leest als ontbrekend been | "ik zie nu al dat er een been mist" |
 - **Alle vier de poten moeten op 1× als vier aparte poten lezen** (Jordi, olinguito finale).
+| finale r2 (24 okt) | Kop opgelost via lange dunne poten: spin/insect op stelten | Claude-keuring |

@@ -84,14 +84,14 @@ def olinguito():
     hs, piv = HEAD_SCALE, np.array((-46, -2, 0.0))
     H = lambda p: piv + (np.array(p, float) - piv) * hs + HEAD_SHIFT
     m.chain([(-36, 0, 0, 22), tuple(piv + HEAD_SHIFT) + (20,)], 'fur')
-    cr = H((-66, -10, 0))
-    m.ell(cr, 25 * hs, 'head')
-    m.chain([tuple(H(q[:3])) + (q[3] * hs,) for q in [(-78, -14, 0, 20), (-87, -18, 0, 16), (-94, -21, 0, 12)]], 'head')
-    nose = H((-104, -22, 0))
+    cr = H((-64, -6, 0))
+    m.ell(cr, np.array((25, 28, 25)) * hs, 'head')   # hoog rond voorhoofd (foto)
+    m.chain([tuple(H(q[:3])) + (q[3] * hs,) for q in [(-76, -16, 0, 20), (-88, -22, 0, 14.5), (-98, -28, 0, 9.5)]], 'head')
+    nose = H((-105, -31, 0))
     m.ell(nose, 6.0 * hs, 'nose')
     eyes = []
     for sz in (1, -1):
-        d = np.array((-0.72, -0.10, 0.69 * sz)); d /= np.linalg.norm(d)
+        d = np.array((-0.70, -0.28, 0.66 * sz)); d /= np.linalg.norm(d)   # oog laag, dicht bij de snuit
         e = cr + d * 23.5 * hs
         eyes.append(e)
         m.ell(e, 4.4 * hs, 'eye')
@@ -175,9 +175,9 @@ def render(m, yaw, pitch, scale, center):
     dn = np.linalg.norm(q - t['nose'], axis=1)
     u = (q - t['cr']) / (25 * hs)
     g = np.full(len(q), groups.index('head'))
-    g[u @ np.array((0.55, 0.83, 0)) > 0.45] = groups.index('crown')
+    g[u @ np.array((0.75, 0.66, 0)) > 0.72] = groups.index('crown')
     g[dn < 9 * hs] = groups.index("muzzle")
-    band = (np.abs(u[:, 1] + 0.06) < 0.20) & (u[:, 0] < -0.50)      # brede band over beide ogen (Zigzagoon)
+    band = (np.abs(u[:, 1] + 0.24) < 0.19) & (u[:, 0] < -0.50)      # brede band over beide ogen (Zigzagoon)
     g[(de < 9.5 * hs) | band] = groups.index('mask')
     gid[head] = g
     return zbuf, gid, nrm, groups

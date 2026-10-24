@@ -3,6 +3,7 @@
 Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe klein ook. Jordi (23 okt): "ik moet elke keer dingen opnieuw vertellen waarvan ik dacht dat ik je erop getraind had." Dit bestand is daar het antwoord op.
 
 ## 1. Eerst lezen (altijd)
+- **Kort: `docs/lessen/SPRITE_NORM.md` (één pagina) is de norm die elke agent leest**; de lijst hieronder is achtergrond voor wie twijfelt (tokens sparen, Jordi 24 okt).
 - Dit bestand helemaal.
 - **`docs/lessen/FAKEMON_CHECKLIST.md`** (vormen, poses, verhoudingen; uit de studie van alle 1024 sprites): elk punt afvinken. Achtergrond in `docs/lessen/vormstudie/STUDIE.md`.
 - `docs/lessen/SPRITING.md` §0 (checklist) en §1–§8 (de regels uit de Dragonfly Cave-gids), plus de sectie(s) over deze Pokémon.
@@ -45,6 +46,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Lessen onder "Lessen" in je NOTITIES.md (Claude zet ze over); niet in SPRITING.md schrijven, niet committen tenzij gevraagd.
 
 ## 4. Claude (coördinator)
+- **Tokens sparen:** agents krijgen SPRITE_NORM.md + SPEC/AFGEKEURD (niet alle lessenbestanden); één maker per sprite die met SendMessage doorwerkt; geen parallelle experimenten tenzij Jordi vraagt; kleine vellen.
 - Plak de verwijzing naar dit bestand in elke sprite-opdracht en geef bij reparaties een pixelbudget en de lijst bevroren delen mee.
 - **Bekijk elk resultaat zelf** (1× en 3×, naast de laatst goedgekeurde versie) vóór het naar Jordi gaat. Een gezicht of geheel dat slechter oogt dan de vorige goedgekeurde versie gaat **nooit** naar Jordi: terugsturen of de vorige versie houden.
 - **Bevroren delen hard controleren met een pixeldiff** (niet op het oog): geef de agent de bevroren zones als rechthoeken/maskers en laat hem bewijzen dat die 0 pixels verschillen met de goedgekeurde versie. Een herschaling van de kop is géén reparatie: dan blijven oren, masker, oog en snuit niet behouden (olinguito ronde 19: oren veranderd, snuit misvormd, door Claude ten onrechte doorgelaten).

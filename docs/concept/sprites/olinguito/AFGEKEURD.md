@@ -25,3 +25,5 @@ Regels die hieruit volgen:
 | herbouw (24 okt) | Drie herbouwversies op Linoone/Poochyena/Zigzagoon: klauwen weer verknald (dunne streepjes/vlekjes i.p.v. Sandslash-klauwen) | "nu verknal je de nagels weer, stop maar" |
 
 **Olinguito gepauzeerd (Jordi, 24 okt).** Niet verder aan werken tot Jordi het zelf weer oppakt. Bestanden blijven staan (ronde 23 + `herbouw_*`).
+| finale (24 okt) | Verre achterpoot alleen als donkere diepte onder de staartkrul: leest als ontbrekend been | "ik zie nu al dat er een been mist" |
+- **Alle vier de poten moeten op 1× als vier aparte poten lezen** (Jordi, olinguito finale).

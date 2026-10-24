@@ -28,8 +28,14 @@ Ronde 1 (`schetsen_v1.png`; script in de git-geschiedenis):
 - Staart: ±1,6× zo lang, omhoog en in een boog terug over de rug.
 - Poten asymmetrisch (boomfoto): verre voorpoot ver gestrekt en grijpend, nabije voorpoot opgetild en gebogen; nabije achterpoot opgetrokken (knie hoog, voet onder de buik), verre achterpoot gestrekt naar achteren (zet zich af).
 
-## Ronde 4 (`schetsen_v2_ronde4.png`, los `schets_v2_ronde4.png`; script `scripts/schets.py`)
+## Ronde 4 (`schetsen_v2_ronde4.png`)
 **Jordi (24 okt, letterlijk):** "het oog moet ook veel kleiner, zie de fotos, plus in pokemon sprites kijken ze altijd diagonaal, dus dat moeten we ook nog iets meer creeren" + "het oor mag iets groter".
 - Oog ±half zo groot (klein roodbruin kraaloog met glans en zware wenkbrauw, zacht donker vlak eromheen).
 - Kop in 3/4 naar de kijker: de snuit komt uit het midden van het gezicht (verre wang zichtbaar links ervan), kop en snuit als één vorm met een korte lijn voor de snuitrug.
 - Nabij oor ±25% groter; het verre oor blijft een randje.
+
+## Ronde 5 (`schetsen_v2_ronde5.png`, los `schets_v2_ronde5.png`; script `scripts/schets.py`)
+**Jordi (24 okt, letterlijk):** "pak nog wat meer de vorm van dit hoofd" (foto: `referentie_kop.png`).
+- Kop als druppel: brede ronde schedel achter-boven, loopt glad af naar een spitse snuit met lichtgrijze punt en roze neus.
+- Kleur zoals de foto: warmbruine kruin, grijs gezicht, donkere streep van het voorhoofd langs het oog naar de snuitrug.
+- Oor: donkere rand, lichtere binnenkant, hoog achter op de kop.

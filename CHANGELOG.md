@@ -110,3 +110,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.21] - Olinguito v2: ronde 4
 - Veel kleiner oog, kop in 3/4 naar de kijker (snuit uit het midden van het gezicht), groter oor. `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde4.png`.
+
+### [v0.0.22] - Olinguito v2: ronde 5
+- Kopvorm naar Jordi's foto: druppel met ronde schedel en spitse snuit, warmbruine kruin, grijs gezicht, donkere streep langs het oog, oor met donkere rand. `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde5.png`.

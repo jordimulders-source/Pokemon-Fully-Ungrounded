@@ -98,3 +98,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Na ±30 rondes (incl. finale met onafhankelijke keuring) schrapt Jordi het olinguito-ontwerp en begint opnieuw met een eigen, andere aanpak. Rondes en keuringen blijven als naslag in `docs/concept/sprites/olinguito/`.
 - Cuyby ronde 6: oranje/zwart gewisseld en zwart rond het rechteroog (consistent met Cuychu); wacht op akkoord.
 - `docs/lessen/SPRITE_NORM.md` (één pagina norm voor sprite-agents), regel "zelfgenoemd zwak punt = fail", les "bouwtype bepaalt de moeite".
+
+### [v0.0.18] - Kolibrie: ontwerp, silhouet en kleursprite
+- Kolibrie (Ghost/Flying, eindvorm): modeltekeningen v1–v8 (`docs/concept/ontwerp/kolibrie/`) liepen vast; daarna silhouet op een skelet: Talonflame (v1–v4), daarna Jordi's foto's (v5–v6). **Silhouet v6 goedgekeurd** (pose van een drinkende kolibrie, jeguaka-kuif, drie slierten met zielvlammetjes).
+- Kleursprite in 4 rondes met een sprite-agent en een onafhankelijke keurder (`docs/concept/sprites/kolibrie/ronde1–4`, `KEURING.md`). Fluweelpalet, vleugels doorschijnend zoals Venomoth. De slierten op het goedgekeurde silhouet lazen als poten (mug); de variant met een naar achteren slepende staart komt door de keuring. Eindversie: `docs/concept/sprites/kolibrie/eind/kolibrie.png` (wacht op Jordi: staart wijkt af van silhouet v6).
+- Referenties van Jordi in `docs/concept/sprites/kolibrie/referenties/`; SPEC.md per onderdeel; lessen in FAKEMON_DESIGN.md.

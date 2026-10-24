@@ -19,3 +19,6 @@
 - Ronde kop; Talonflame-kop/kuif; groot oog.
 - Kuifveertjes recht omhoog (lezen als oren).
 - Getekende modeltekeningen uit cirkels/driehoeken ("Pokémon designen is geen cirkels en driehoeken werk").
+
+## Stand (24 okt)
+- Kleursprite ronde 4 + 1 px = `eind/kolibrie.png`: onafhankelijke keuring GOED (`ronde4/KEURING.md`). Staart = variant sleep (naar achteren), wijkt af van silhouet v6; de versie op het bevroren silhouet (`ronde3/kolibrie.png`) las als poten. Open voor Jordi: staart, kuif (één steel), formaat (dichtheid gelijk aan Crobat), staartlengte.

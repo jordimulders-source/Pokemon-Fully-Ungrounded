@@ -5,39 +5,47 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from mdl import *
 
 C = dict(line='#1a1226', head='#2a2238', crown='#c46bff', body='#6a3fc8', body2='#8f63e6',
-         wing='#2e2840', wing2='#4a3f6e', teal='#2fc7b8', orange='#f08a3c', beak='#1e1a26',
+         wing='#3e3656', wing2='#5e5486', teal='#2fc7b8', orange='#f08a3c', beak='#1e1a26',
          soul='#efe6ff', soul2='#b9a6f2', eye='#ffffff', iris='#1a1226')
+
+
+BG = '#c9d6c0'  # zacht bosgroen, alleen om de doorzichtige vleugels te tonen
 
 
 def draw():
     cv = Canvas(line=C['line'], lw=2.6)
+    cv.img[:] = hexc(BG)
     def wing(base, ang, L, W, col, col2, bend=0.12):
         # kolibrievleugel: lang, smal, sikkelvormig; rechte voorrand, bolle achterrand, scherpe punt.
         # Vanaf het midden naar buiten steeds doorzichtiger (geblend met wat erachter zit).
         a = math.radians(ang)
         ux, uy = math.cos(a), math.sin(a)
         nx, ny = -uy, ux  # positieve v = achterrand (naar rechts/achteren)
-        prof = [(0, -0.30), (0.25, -0.38), (0.55, -0.34), (0.85, -0.18), (1.0, 0.0),
-                (0.88, 0.22), (0.65, 0.62), (0.40, 0.85), (0.15, 0.70), (0.0, 0.40)]
+        # profiel naar de foto's: breed bij de schouder, lange smalle punt; rechte voorrand,
+        # holle achterrand, licht gebogen naar achteren; pennen lopen in de lengte
+        prof = [(0, -0.45), (0.35, -0.45), (0.7, -0.32), (0.9, -0.16), (1.0, 0.0),
+                (0.85, 0.10), (0.62, 0.28), (0.38, 0.52), (0.16, 0.70), (0, 0.58)]
         def P(u, v):
             v = v * W + bend * L * u * u
             return (base[0] + ux * u * L + nx * v, base[1] + uy * u * L + ny * v)
         m = cv.m_blob([P(u, v) for u, v in prof])
         under = cv.img.copy()
         cv.fill(m, col)
-        # slagpennen: dunne lijnen langs de achterrand
-        for k in range(4):
-            u0 = 0.40 + k * 0.13
-            cv.stroke([P(u0 - 0.05, 0.05), P(u0 + 0.12, 0.62 - k * 0.14)], 1.2, col2)
-        cv.stroke([P(0.08, 0.0), P(0.9, -0.05)], 1.4, col2)
-        # transparantie: t = 0 tot het midden, daarna oplopend tot 0.85 aan de punt
+        # dekveren aan de basis (iets lichter), dan slagpennen in de lengte
+        cv.fill(cv.m_blob([P(u, v) for u, v in [(0, -0.45), (0.22, -0.45), (0.27, 0.0), (0.2, 0.55), (0, 0.58)]]),
+                col2, line=False, clip=m)
+        for v0 in (-0.15, 0.12, 0.38):
+            cv.stroke([P(0.27, v0), P(0.6, v0 * 0.5), P(0.92, 0.0)], 1.2, col2)
+        # transparantie: dekkend tot het midden, daarna geleidelijk doorzichtiger tot ±90% aan de punt
         ring = cv.dilate(m, (cv.lw * SS) / 2 + 0.5)
         yy, xx = np.nonzero(ring)
         u = ((xx / SS - base[0]) * ux + (yy / SS - base[1]) * uy) / L
-        t = np.clip((u - 0.45) / 0.55, 0, 1) * 0.85
+        t = np.clip((u - 0.5) / 0.5, 0, 1) * 0.9
         cv.img[yy, xx] = (cv.img[yy, xx] * (1 - t[:, None]) + under[yy, xx] * t[:, None]).astype(np.uint8)
+
+
     # ---- verre vleugel (achter, kleiner, hoger) ----
-    wing((152, 114), -76, 104, 32, C['wing'], C['wing2'], bend=0.10)
+    wing((152, 114), -78, 112, 34, C['wing'], C['wing2'], bend=0.10)
     # ---- staart: korte waaier (franje) + twee lange slierten met zielvlammen ----
     tails = [([(178, 114), (214, 112), (240, 146), (248, 186), (246, 214)], 5.5, 2.2),
              ([(177, 117), (206, 122), (220, 160), (218, 204), (214, 234)], 5.5, 2.2),
@@ -67,7 +75,7 @@ def draw():
         cv.fill(cv.m_ellipse(x, y, 5, 3.5), C['body2'], line=False, clip=body)
     cv.fill(cv.m_ellipse(126, 122, 18, 9, rot=-28), C['teal'], line=False, clip=body)
     # ---- nabije vleugel (voor, groter, naar links gekanteld) ----
-    wing((132, 124), -116, 120, 38, C['wing'], C['wing2'], bend=0.12)
+    wing((132, 124), -114, 130, 40, C['wing'], C['wing2'], bend=0.12)
     cv.fill(cv.m_ellipse(124, 108, 5, 4, rot=-60), C['orange'], line=False)
     # ---- nek + kop ----
     cv.fill(cv.m_tube([(106, 160), (88, 170)], 22, 20), C['head'])
@@ -93,7 +101,7 @@ if __name__ == '__main__':
     big = cv.image()
     s = sprite_scale(cv, 64, 0.9)
     sil = silhouette(s)
-    W = Image.new('RGB', (256 + 64 * 3 + 64 + 40, 280), 'white')
+    W = Image.new('RGB', (256 + 64 * 3 + 64 + 40, 280), BG)
     W.paste(big, (0, 0))
     W.paste(s.resize((192, 192), Image.NEAREST), (266, 20), s.resize((192, 192), Image.NEAREST))
     W.paste(s, (470, 20), s)
@@ -104,4 +112,4 @@ if __name__ == '__main__':
     d.text((266, 216), 'sprite-formaat 3x', fill='black', font=f)
     d.text((470, 86), '1x', fill='black', font=f)
     d.text((470, 166), 'silhouet 1x', fill='black', font=f)
-    W.save(os.path.join(out, 'schets_v2.png'))
+    W.save(os.path.join(out, 'schets_v3.png'))

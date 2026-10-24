@@ -14,3 +14,7 @@ Naar Jordi's posetekening + foto's (velvet-purple kroonkolibrie, langstaartsylfe
 - Oog veel kleiner (klein zwart oog met een dun bleek randje).
 - Derde staartsliert erbij (drie racketslierten met zielvlammetjes + franjewaaier).
 - **Kuif als jeguaka: goedgekeurd** (Jordi, 24 okt).
+
+## Schets v3 (24 okt): vleugelvorm
+- Jordi: vleugels lezen nog niet als kolibrie. Nu: breed bij de schouder, lange smalle punt, rechte voorrand, holle achterrand, pennen in de lengte (naar foto 3).
+- Transparantie: dekkend tot het midden, dan lineair tot ±90% doorzichtig aan de punt. Vel op een groene achtergrond zodat dat zichtbaar is.

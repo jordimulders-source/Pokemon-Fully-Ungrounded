@@ -58,6 +58,7 @@ Algemene lessen staan hieronder; de rest is per onderwerp opgesplitst. **Lees he
 | Waarom het spriteproces misging en wat anders moet | `docs/lessen/RETRO_OLINGUITO.md` (één sprite tegelijk, SPEC.md per sprite, controle per onderdeel); wat wél werkte: `docs/lessen/RETRO_KOLIBRIE.md` (foto als skelet, silhouet eerst, keurder vóór Jordi, aanbevelingen sprite-editor) |
 | **De werkwijze voor elke nieuwe sprite (stap voor stap)** | `docs/lessen/SPRITE_WERKWIJZE.md` |
 | **Norm voor elke sprite-agent (één pagina)** | `docs/lessen/SPRITE_NORM.md` |
+| Review spriteproces (wat werkte, wat niet, aanbevelingen) | `docs/lessen/SPRITE_REVIEW.md` |
 | **Elke sprite-agent-opdracht** (ook kleine reparaties) | `docs/lessen/SPRITE_OPDRACHT.md`: verwijzing altijd in de opdracht; Jordi's vaste feedback; Claude bekijkt elk resultaat zelf vóór Jordi |
 | C-code: gevechten, UI, eigen schermen, scripts | `docs/lessen/CODE.md` |
 | Transities, klasse-intro's, films | `docs/lessen/INTROS.md` |

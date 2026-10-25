@@ -20,7 +20,7 @@ def put(im, x, y, bg=None, l=None):
     o.paste(im, (x, y), im)
     if l: d.text((x, y + im.size[1] + 3), l, fill=(30, 30, 30, 255))
 X4 = lambda im: im.resize((256, 256), Image.NEAREST)
-put(X4(co), 0, 0, LIGHT, 'Coathief kleur ronde 5b, 4x (licht)')
+put(X4(co), 0, 0, LIGHT, 'Coathief kleur ronde 6, 4x (licht)')
 put(X4(co), 266, 0, DARK, '4x (donker)')
 put(ond, 532, 0, (255, 255, 255, 255), 'onderlaag (B1, kop C)')
 put(X4(ol), 798, 0, LIGHT, 'olinguito (fase 1, goedgekeurd), 4x')
@@ -42,15 +42,16 @@ u = Image.new('RGBA', (32 * 8 + 10 + 16 * 8, 34 * 8), LIGHT)
 k = co.crop((2, 30, 34, 64)).resize((256, 272), Image.NEAREST); u.alpha_composite(k, (0, 0))
 s = co.crop((44, 0, 60, 34)).resize((128, 272), Image.NEAREST); u.alpha_composite(s, (266, 0))
 u.save(os.path.join(H, '../uitsnede.png'))
-# uitsnede beide voorpoten op 8x: ronde 4, 5 en 5b, licht en donker
-RR = [('ronde 4', Image.open(os.path.join(H, '../../ronde4/coathief.png')).convert('RGBA')),
-      ('ronde 5', Image.open(os.path.join(H, '../../ronde5/coathief.png')).convert('RGBA')), ('ronde 5b', co)]
-W, Hh = 26 * 8, 17 * 8
+# uitsnede voorpoten op 8x: onderlaag, ronde 5b en ronde 6, licht en donker (+1x)
+r5b = Image.open(os.path.join(H, '../../ronde5b/coathief.png')).convert('RGBA')
+W, Hh = 27 * 8, 16 * 8
 v = Image.new('RGBA', (3 * (W + 10), 2 * Hh + 30 + 80), LIGHT); dv = ImageDraw.Draw(v)
-for i, (n, im) in enumerate(RR):
+oc = ond.crop((32, 192, 140, 256)).resize((W, Hh)); wb = Image.new('RGBA', (W, Hh), (255, 255, 255, 255)); wb.alpha_composite(oc)
+v.paste(wb, (0, 0)); dv.text((0, Hh + 4), 'onderlaag', fill=(30, 30, 30, 255))
+for i, (n, im) in enumerate((('ronde 5b', r5b), ('ronde 6', co))):
     for j, bg in enumerate((LIGHT, DARK)):
         b = Image.new('RGBA', (64, 64), bg); b.alpha_composite(im)
-        v.paste(b.crop((8, 47, 34, 64)).resize((W, Hh), Image.NEAREST), (i * (W + 10), j * (Hh + 10)))
-        v.paste(b, (i * (W + 10) + j * 70, 2 * Hh + 30))
-    dv.text((i * (W + 10), 2 * Hh + 14), n, fill=(30, 30, 30, 255))
-v.save(os.path.join(H, '../r4_r5_r5b_voorpoten.png'))
+        v.paste(b.crop((8, 48, 35, 64)).resize((W, Hh), Image.NEAREST), ((i + 1) * (W + 10), j * (Hh + 10)))
+        v.paste(b, ((i + 1) * (W + 10) + j * 70, 2 * Hh + 30))
+    dv.text(((i + 1) * (W + 10), 2 * Hh + 14), n, fill=(30, 30, 30, 255))
+v.save(os.path.join(H, '../onderlaag_r5b_r6_voorpoten.png'))

@@ -13,17 +13,26 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - (23 okt, POKEMON.md) Olinguito-concept Haakstaart: "de coati-staart eindigt achter zijn rug in een grijphaak: de dief zit in de staart".
 - (IDEEEN.md) "kit dat bessen pikt → tiener-bandiet met gestolen toeristentas aan de staart".
 
-## Mee uit fase 1 (herkenbaar als dezelfde lijn; voorstel, Jordi bevestigt)
-- Zwart Zigzagoon-masker over de ogen, donker roodbruin oog ("het duistere oog heeft wel wat").
-- 2 lange lichte Linoone-klauwen (groter dan bij de olinguito), roze voeten, grijsbruine kop, oudroze neus.
-- Toon: schattig én sinister, niet comicky; fase 2 brutaler (tiener-bandiet).
+## Jordi's woorden (25 okt, stap 1, letterlijk)
+- "belangrijk is de lange snuit en de staart incl patroon. Klauwen aan de poten moeten blijven. Coati's in het echt lopen rond in gangs en zijn echt irritant. Als je begint te eten rennen ze op je af en kunnen ze je naar open krabben. Tof van de olinguito moet het lichaam langer worden, de staart mag krullen, zolang het maar dit patroon heeft. We doen geeen gestolen tas oid in beeld."
+- "ik neig ernaar om de kleuren van het gezicht in een soort bivakmuts patroon te maken, dus dat het hoofd aantoonbaar zwarter is (op een kring rondom de ogen na), heb 1 in een andere kleur toegevogd maar die toont wel aan hoe hij loopt."
+- "Ik wil dat die in een driekwart positie naar je toeloopt alsof die een confrontatie met je aangaat, met 1 poot dus een beetje opgetild in een looppose"
+- "nasua nasua doen we" · "de neus moet zwart zijn, bivakmuts idee"
 
-## Open (stap 1, met Jordi)
-- Referentiefoto's van een echte coati in de gewenste pose (+ kop close-up).
-- Welke coati: rode neusbeer (*Nasua nasua*, roodbruin, geringde staart) of berg-coati (*Nasuella olivacea*, Andes-nevelwoud zoals de olinguito, olijfbruin, kleiner).
-- Pose (staart rechtop als vlag, op de achterpoten snuffelen, sluipen, iets wegdragen?).
-- Kenmerk/accessoire (gestolen tas, haakstaart, niets) en staartringen ja/nee.
-- Bron voor het silhouet: foto of 3D-poppetje (viervoeter → waarschijnlijk poppetje, op een hoek die Jordi kiest).
+## Referenties (`referenties/`)
+- `foto1_rots_snuffelend.webp`: kleur, kopvorm, staartringen. `foto2_zijaanzicht_render.webp`: verhoudingen (lang lijf, lange poten, staart).
+- `foto3_boom_frontaal.webp`: gezicht frontaal. `foto4_gang_lopend.png`: staart rechtop bij het lopen, gangs.
+- `foto5_witneus_naar_je_toe.webp`: andere soort/kleur, maar de loop naar je toe (pose) en het donkere gezicht met lichte oogkringen.
+
+## Besloten
+- Soort: rode neusbeer (*Nasua nasua*): warm roodbruin lijf, donkere onderpoten, geringde staart (licht/donker).
+- Kop als **bivakmuts**: zwart, op een lichte kring rond het oog na; **neus zwart**. Oog donker roodbruin (van de olinguito).
+- Lange snuit (één oog in beeld), lichaam langer dan de olinguito, staart met ringpatroon (mag krullen), 2 lange lichte klauwen per poot.
+- Geen tas of ander voorwerp.
+- Pose: driekwart naar de kijker toe lopen, confrontatie, één voorpoot opgetild (diagonale gang).
+
+## Ontwerp (stap 1)
+- 3D-poppetje `ontwerp/pop3d_coati.py` (op basis van het olinguito-poppetje); hoekenraster `ontwerp/hoeken.png` (lijf 30/42/54°, kop +10/+22°), wacht op Jordi's keuze.
 
 ## Bevroren
 - (nog niets)

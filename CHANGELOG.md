@@ -121,4 +121,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Nieuwe vaste werkwijze voor alle sprites: `docs/lessen/SPRITE_WERKWIJZE.md` (Jordi: "de beste methode", "zodat alle nieuwe gesprekken vanaf nu het zo oppakken"); verwijzingen in CLAUDE.md en FAKEMON_DESIGN.md.
 
 ### [v0.0.23] - Coathief: start (stap 0)
-- Evolutie van de olinguito (fase 2, coati) heet **Coathief** (Jordi). Map `docs/concept/sprites/coathief/` met `SPEC.md` en `referenties/` volgens `SPRITE_WERKWIJZE.md`; stap 1 (pose en referentiefoto's) wacht op Jordi.
+- Evolutie van de olinguito (fase 2, coati) heet **Coathief** (Jordi). Map `docs/concept/sprites/coathief/` met `SPEC.md` en `referenties/` volgens `SPRITE_WERKWIJZE.md`; stap 1: referentiefoto's van Jordi in `referenties/`, besloten: *Nasua nasua*, bivakmuts-kop met zwarte neus, langer lijf, geringde staart, confrontatie-looppose; 3D-poppetje met hoekenraster (`ontwerp/hoeken.png`) wacht op Jordi.

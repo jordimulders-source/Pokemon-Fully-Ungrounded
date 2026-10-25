@@ -13,3 +13,4 @@
 ## Fase 1: concept
 - `docs/concept/CONCEPT.md`: regiokaart, steden, gyms, E4, verhaal, starters (Fighting → Dark → Psychic), dex-lijst, fakemon-lijst.
 - Proefronde fakemon-sprites (±5 soorten) om het spritewerk te oefenen.
+- **Afronding goedgekeurde frontsprites** (kolibrie, olinguito v2, Coathief): frame 2, rugsprite, icoon, shiny-palet (skins-regel), naam/data. Coathief daarnaast: A/B-test kleine kleurreparaties (zie `docs/concept/sprites/coathief/SPEC.md`). Frame 2/icoon/shiny bouwen op het goedgekeurde frame 1; de rugsprite is een nieuwe pose (overtrekvel gebruiken).

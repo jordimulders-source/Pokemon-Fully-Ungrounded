@@ -85,3 +85,4 @@ Pose naar karakter (R): Fighting → P7 vechthouding (brede A-stand, nabije vuis
 
 
 > Uitzondering uit de keuring (23 okt): **langnekken** (alpaca, Mudbray 42×51, Girafarig) halen de kopverhouding en de box van ±42 px niet; voor hen is dat een richtlijn.
+- **Zijaanzicht mag (Jordi, 25 okt):** naast 3/4 bestaan veel echte sprites in (bijna) zijaanzicht, vooral vliegers en vissen (Yanma, Ninjask, Swellow, Taillow, Wingull, Skarmory, Latias, Magikarp, Wailord); kies wat bij het dier past.

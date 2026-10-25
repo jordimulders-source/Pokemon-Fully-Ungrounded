@@ -111,3 +111,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.20] - Kolibrie: eindkeuring
 - Nieuwe, onafhankelijke eindkeuring op alle richtlijnen (`docs/concept/sprites/kolibrie/ronde5/EINDKEURING.md`): alles PASS behalve open randen aan de bijna-witte kuiftoppen; 4 px omgekleurd naar de bleke omlijningstint (silhouet gelijk). Resultaat: `docs/concept/sprites/kolibrie/af/kolibrie.png`.
 - Retrospectief kolibrie vs olinguito + aanbevelingen voor een sprite-editor: `docs/lessen/RETRO_KOLIBRIE.md`.
+
+### [v0.0.21] - Kolibrie goedgekeurd
+- Jordi keurt de kolibrie-frontsprite officieel goed (`docs/concept/sprites/kolibrie/af/kolibrie.png`). Twijfel over het zijaanzicht weggenomen: veel echte sprites zijn zijaanzicht (Yanma, Ninjask, Swellow, Taillow, Wingull, Skarmory, Latias en veel vissen); vergelijkingsvel `af/zijaanzicht_vergelijking.png`.
+- Nog te doen: frame 2, rugsprite, icoon, shiny-palet, naam en data.

@@ -23,6 +23,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - "ik vind c wel tof! ik dacht eraan om het hele oog te omcirkelen, maar wat jij zegt klopt, dit is een echte coati vlek"
 - "akkoord, laten we hiermee werken" (silhouet ronde 1)
 - "ja en 1 extra keuring, we moeten kijken of de sprite sterker lijkt dan de olinguito, of het logisch is dat die in coathief evolved"
+- (over kleur ronde 3b + evolutiekeuring) "vrijwel perfect, alleen de oren lijken aan de bovenkant afgeknipt he, tegenover een donkere achtergrond net wat minder, maar misschien nog een klein beetej aanpassen de oren. Lijfkleur mag warm en klauwen alleen aan de voorpoten. De olinguito heeft een groot hoofd en grote staart, maar als je het vergelijkt met zigzagoon naar linoone lijkt die niet heel gek heel toch? [...] een lachmondje wat er een beetje gek uit ziet. De klauwen idd mag nog aan gewerkt worden, en de staande voorpot ziet er een beetje gek uit. [...] Ik denk niet dat we vlekkeloos de olinguito kunnen verknleine. Kleine kleurreparaties kan je onthouden en evt later met een a/b doen"
 
 ## Referenties (`referenties/`)
 - `foto1_rots_snuffelend.webp`: kleur, kopvorm, staartringen. `foto2_zijaanzicht_render.webp`: verhoudingen (lang lijf, lange poten, staart).
@@ -49,5 +50,11 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - Ronde 1: `silhouet/ronde1.txt` / `ronde1_1x.png` / `vel_ronde1.png` (1297 px). Basis = direct verkleind (`direct.txt`, 1303 px, `silhouet_direct.py`); handreparaties alleen in zone 1 (voorpoten x 15–33, y 50–63: 2 hangende klauwen, 2 kolommen lucht tot de verre poot) en zone 2 (nabije achtervoet); 46 px gewijzigd, 0 buiten de zones (`repareer.py`).
 - **Silhouet ronde 1 goedgekeurd en bevroren** (Jordi, 25 okt: "akkoord, laten we hiermee werken"): `silhouet/ronde1.txt` = `silhouet/ronde1_1x.png` (1297 px). Alle kleurrondes: alpha-diff 0 hiermee.
 
+## Besluiten na ronde 3b (Jordi, 25 okt)
+- Lijfkleur blijft warm (*Nasua nasua*). Klauwen alleen aan de voorpoten.
+- Formaat blijft (precedent Zigzagoon → Linoone ×0,97); olinguito niet verkleinen.
+- Te doen: oren rond (niet afgeknipt), geen lachmondje, klauwen beter/langer, staande verre voorpoot natuurlijker → silhouet ronde 2 (`silhouet/ronde2.py`, 46 px in 3 zones, 1319 px) + kleur ronde 4.
+- **Bewaard voor later (A/B-test):** bovenste vlek een tint terug zodat het oog het helderste punt is; frons/wenkbrauwlijn boven het oog; klauwen bijna-wit zoals de olinguito; sterkere lichtvlekken schouder/heup; familiebrug in oudroze (mondhoek of oorbinnenkant). Bron: `kleur/ronde3/EVOLUTIEKEURING.md`.
+
 ## Afgekeurd (niet herhalen)
-- (nog niets)
+- Lachmondje (mondhoek omhoog, ronde 3): "ziet er een beetje gek uit".

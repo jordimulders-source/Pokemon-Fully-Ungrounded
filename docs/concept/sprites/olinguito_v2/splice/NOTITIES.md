@@ -26,3 +26,10 @@ handwerk op silhouet ronde 5 in `claude/dreamy-clarke-uuvynm`.
    - per rol omkleuren (index → rol): dat geeft goede omlijning en schaduwvlakken zonder rekenregels;
    - kleuren uit echte sprites (Sentret-bruin, Zigzagoon-grijs, Poochyena-rood);
    - klein werk zoals klauwen of een masker in de opbouw van een echte sprite.
+
+## Oordeel Jordi (25 okt)
+"ja dit is niet goed nee, geen lelijke sprite maar een heel ander dier, plus hoofd niet zo mooi"
+- Afgekeurd: de Linoone-basis maakt er een ander dier van (lang, laag, wezelachtig). Niet herhalen.
+- De handgetekende kop (helm met masker) is niet mooi genoeg.
+- Wat wel werkte: de pixels zelf ("geen lelijke sprite"). Per rol omkleuren levert spritekwaliteit, maar het lijf
+  van een ander dier als basis nemen niet.

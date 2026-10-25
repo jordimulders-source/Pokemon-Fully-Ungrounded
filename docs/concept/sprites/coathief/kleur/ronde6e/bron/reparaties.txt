@@ -240,3 +240,17 @@
 56 27 myzmk
 58 27 mzymk
 59 30 mk
+# ===== ronde 6e: curve volgens de omlijning van de onderlaag (Jordi's krabbel = richting); silhouet ronde6.txt =====
+# zone x 17-34, y 46-59. Curve: x 33 (y 45-47, d in het lijf), x 31 (y 48-49), x 32 (y 50-52), (31,53),
+# (29-30,54), (27-28,55), (24-26,56). Links/boven: bruine bovenarm (rustig, l alleen langs de naad, d langs de curve)
+# en de ronde manchet; naad 26|27 (y 50), 27|28 (y 51-53). Rechts/onder: verre poot, slagschaduw m en dan schaduwtinten.
+46 32 b
+48 22 dbbbbbbbdk
+49 22 dbbbbbbbdk
+50 22 myYymlbbbdk
+51 21 myYyzzmbbbdk
+52 20 myyzzzzmbbddk
+53 20 myzzzzzmbddkk
+54 21 yzzzzzzmkkmk
+55 24 zzmkkmzk
+56 24 kkkmyzmk

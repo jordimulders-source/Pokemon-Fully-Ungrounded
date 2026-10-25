@@ -6,7 +6,7 @@ im = Image.open(os.path.join(H, '../coathief.png'))
 assert im.mode == 'P' and im.size == (64, 64)
 from bouw import ORDER
 px = im.load(); g = [[ORDER[px[x, y]] for x in range(64)] for y in range(64)]
-sil = [l.rstrip('\n') for l in open(os.path.join(H, '../../../silhouet/ronde5.txt')) if l.strip()]
+sil = [l.rstrip('\n') for l in open(os.path.join(H, '../../../silhouet/ronde6.txt')) if l.strip()]
 diff = [(x, y) for y in range(64) for x in range(64) if (g[y][x] != '.') != (sil[y][x] == '#')]
 print('pixels', sum(c != '.' for r in g for c in r), '| silhouet', sum(r.count('#') for r in sil), '| alpha-diff', len(diff))
 print('kleuren gebruikt:', len({c for r in g for c in r} - {'.'}), '| transparency =', im.info.get('transparency'))

@@ -1,11 +1,10 @@
-"""Pixeldiff ronde 6d tegen ronde 6c, per zone; buiten de zones moet 0 zijn."""
+"""Pixeldiff ronde 6e tegen ronde 6d, per zone; buiten de zones moet 0 zijn."""
 import os
 from PIL import Image
 H = os.path.dirname(os.path.abspath(__file__))
-a = Image.open(os.path.join(H, '../../ronde6c/coathief.png')).convert('RGBA').load()
+a = Image.open(os.path.join(H, '../../ronde6d/coathief.png')).convert('RGBA').load()
 b = Image.open(os.path.join(H, '../coathief.png')).convert('RGBA').load()
-ZONES = {'overlap voorpoten (x 17-33, y 48-58)': (17, 48, 33, 58),
-         'verdikking buiten die zone (x 15-34, y 48-61)': (15, 48, 34, 61)}
+ZONES = {'overlap voorpoten (x 17-34, y 46-59)': (17, 46, 34, 59)}
 tel = {k: 0 for k in ZONES}; buiten = []
 for y in range(64):
     for x in range(64):

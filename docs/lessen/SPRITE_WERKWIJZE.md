@@ -72,3 +72,5 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 ## Kosten en tempo (ter oriëntatie)
 - Een maker- of keurderronde kost ±150–400k agenttokens; zuinig: één maker, één keurder, kleine vellen, geen parallelle experimenten.
 - Commit en push na elke ronde (ook interne), zodat niets verloren gaat.
+- **Gemeten (Coathief, 25 okt, uit de sessielogs `~/.claude/projects/.../*.jsonl`):** hoofdsessie ±0,4M output + 0,75M nieuwe input; één maker-agent over 13 rondes ±0,57M output + 3,6M nieuwe input (76M cache-reads, doordat zijn context bleef groeien); 4 keurders samen ±0,3M output + 0,8M nieuwe input. De 6 voorpootrondes zonder raster waren het duurste deel. Zuiniger: overtrekvel vanaf de eerste vormreparatie, kleine pixelreparaties (< 15 px) door Claude zelf, en een maker die erg lang doorloopt na ±8 rondes vers starten met SPEC + NOTITIES.
+- Oudere sprites (olinguito, kolibrie) hebben geen logs meer in de container; alleen schattingen in `RETRO_KOLIBRIE.md` en `SPRITE_REVIEW.md`. Noteer daarom voortaan de gemeten kosten per sprite in zijn SPEC.md.

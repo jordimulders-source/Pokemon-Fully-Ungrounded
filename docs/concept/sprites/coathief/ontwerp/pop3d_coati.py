@@ -22,7 +22,7 @@ NOSHADE = {'eye', 'pupil', 'nose', 'claw'}
 LINED = {'eye', 'nose', 'claw', 'ring'}
 
 
-def coati(head_extra=15, tilt=0, leg_k=1.3, claw_k=1.8):
+def coati(head_extra=15, tilt=0, leg_k=1.3, claw_k=1.8, head_up=14):
     m = P.Model()
     L = lambda pts: [(x, y, z, r * leg_k) for x, y, z, r in pts]
     # lang lijf: borst, buik, hoge heup (foto 2: rug stijgt naar achteren)
@@ -70,6 +70,12 @@ def coati(head_extra=15, tilt=0, leg_k=1.3, claw_k=1.8):
         m.ell(c, np.array((4, 9.5, 9.5)) * hs * k, 'ear', Re)
         m.ell(c + Re @ np.array((-1.6, 0, 0)) * hs * k, np.array((2.4, 7, 7)) * hs * k, 'earin', Re)
     tex = dict(eyes=eyes, cr=cr, nose=nose, hs=hs)
+    if head_up:   # kop omhoog: kijkt de speler aan, de opgetilde poot blijft onder de kop zichtbaar
+        Ru = P.rot_z(math.radians(-head_up))
+        rot = lambda p: piv + Ru @ (np.array(p) - piv)
+        m.parts[h0:] = [(rot(c), r, Ru @ R0, g) for c, r, R0, g in m.parts[h0:]]
+        tex = dict(eyes=[rot(e) for e in eyes], cr=rot(cr), nose=rot(nose), hs=hs)
+        eyes, cr, nose = tex['eyes'], tex['cr'], tex['nose']
     if head_extra:
         Rh = P.rot_y(math.radians(head_extra))
         rot = lambda p: piv + Rh @ (np.array(p) - piv)
@@ -79,25 +85,25 @@ def coati(head_extra=15, tilt=0, leg_k=1.3, claw_k=1.8):
     # poten (langer dan de olinguito, foto 2); diagonale gang: nabije voor + verre achter zwaaien,
     # verre voor + nabije achter dragen. Grond op y = -64.
     # nabije voorpoot opgetild, gebogen naar de kijker, klauwen hangen dreigend omlaag
-    m.chain(L([(-40, -2, 14, 14), (-50, -28, 18, 10)]), 'fur')
-    m.chain(L([(-50, -28, 18, 8.5), (-66, -34, 22, 7.5)]), 'leg')
-    m.ell((-71, -36, 23), np.array((7, 5.5, 7)) * leg_k ** 0.5, 'leg')
-    for dz in (-4.5, 4.5):
-        m.chain([(-77, -38, 23 + dz, 3.2 * claw_k), (-86, -42, 23 + dz, 2.3 * claw_k), (-91, -50, 23 + dz, 0.9 * claw_k)], 'claw', 0.8)
-    # verre voorpoot: staat, iets naar voren
-    m.chain(L([(-32, -2, -13, 13), (-40, -30, -15, 9.5)]), 'far')
-    m.chain(L([(-40, -30, -15, 8), (-46, -60, -16, 7)]), 'farleg')
-    m.ell((-50, -63, -16), np.array((8, 5, 7)) * leg_k ** 0.5, 'farleg')
+    m.chain(L([(-40, -2, 14, 14), (-50, -26, 20, 10)]), 'fur')
+    m.chain(L([(-50, -26, 20, 8.5), (-68, -32, 26, 7.5)]), 'leg')
+    m.ell((-73, -34, 27), np.array((7, 5.5, 7)) * leg_k ** 0.5, 'leg')
+    for dz in (-4.5, 4.5):   # opgetild: de klauwen hangen vrij boven de grond
+        m.chain([(-79, -36, 27 + dz, 3.2 * claw_k), (-87, -40, 28 + dz, 2.3 * claw_k), (-90, -48, 29 + dz, 0.9 * claw_k)], 'claw', 0.8)
+    # verre voorpoot: staat, draagt (iets achter de nabije, zodat hij als eigen kolom leest)
+    m.chain(L([(-26, -2, -13, 13), (-14, -30, -15, 9.5)]), 'far')
+    m.chain(L([(-14, -30, -15, 8), (-6, -60, -16, 7)]), 'farleg')
+    m.ell((-9, -63, -16), np.array((8, 5, 7)) * leg_k ** 0.5, 'farleg')
     for dz in (-4, 4):
-        m.chain([(-56, -64, -16 + dz, 2.9 * claw_k), (-65, -66, -16 + dz, 2.0 * claw_k), (-72, -69, -16 + dz, 0.8 * claw_k)], 'claw', 0.8)
+        m.chain([(-15, -64, -16 + dz, 2.9 * claw_k), (-24, -66, -16 + dz, 2.0 * claw_k), (-31, -69, -16 + dz, 0.8 * claw_k)], 'claw', 0.8)
     # nabije achterpoot: draagt, naar achteren afgezet
     m.chain(L([(42, 6, 18, 19), (34, -24, 20, 11.5)]), 'fur')
     m.chain(L([(34, -24, 20, 9), (54, -46, 21, 7.5), (50, -61, 21, 6.5)]), 'leg')
     m.ell((44, -63, 21), np.array((8, 4.5, 7)), 'leg')
     # verre achterpoot: zwaait naar voren
     m.chain(L([(46, 8, -16, 17), (30, -22, -18, 10.5)]), 'far')
-    m.chain(L([(30, -22, -18, 8), (40, -42, -19, 7), (30, -54, -19, 6)]), 'farleg')
-    m.ell((25, -56, -19), np.array((7, 4, 6)), 'farleg')
+    m.chain(L([(30, -22, -18, 8), (44, -42, -19, 7), (36, -54, -19, 6)]), 'farleg')
+    m.ell((31, -56, -19), np.array((7, 4, 6)), 'farleg')
     if tilt:
         Rt = P.rot_z(math.radians(-tilt))
         m.parts = [(Rt @ c, r, Rt @ R0, g) for c, r, R0, g in m.parts]

@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - "nasua nasua doen we" · "de neus moet zwart zijn, bivakmuts idee"
 - "het oog moet minder groot. zie referenties" (foto 6–8)
 - "maak een A/B/C test van B1. huidige ontwerp, tegenover hoofd met natuurlijke kleuren ipv de bivak en 1 met de vlekken die je voorstelt. Het oog moet in de praktijk niet puur een rode stip zijn, want dat is niet des pokemons, maar kunnen we mogelijk zodra we gaan spriten aanpassen"
+- "ik vind c wel tof! ik dacht eraan om het hele oog te omcirkelen, maar wat jij zegt klopt, dit is een echte coati vlek"
 
 ## Referenties (`referenties/`)
 - `foto1_rots_snuffelend.webp`: kleur, kopvorm, staartringen. `foto2_zijaanzicht_render.webp`: verhoudingen (lang lijf, lange poten, staart).
@@ -39,7 +40,11 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - Oog bij het spriten: geen platte rode stip, maar een Pokémon-oog (bovenlid, iris donker boven/licht onder, glans).
 
 ## Bevroren
-- (nog niets)
+- **Hoek B1** (lijf 42°, kop 52°) en **kop C**: zwarte bivakmuts met lichte coati-vlekken boven en onder het oog, zwarte neus (Jordi, 25 okt).
+
+## Silhouet (stap 2)
+- Bij het verkleinen las de opgetilde poot als staand en verdween de verre voorpoot achter de nabije; daarom in het poppetje: kop 14° omhoog (kijkt de speler aan, poot blijft onder de kop zichtbaar), nabije voorpoot hoger (klauwen vrij van de grond), verre voorpoot en verre achterpoot naar achteren (eigen kolom). Onderlaag: `silhouet/onderlaag_b1c_256.png`.
+- Ronde 1: `silhouet/ronde1.txt` / `ronde1_1x.png` / `vel_ronde1.png` (1297 px). Basis = direct verkleind (`direct.txt`, 1303 px, `silhouet_direct.py`); handreparaties alleen in zone 1 (voorpoten x 15–33, y 50–63: 2 hangende klauwen, 2 kolommen lucht tot de verre poot) en zone 2 (nabije achtervoet); 46 px gewijzigd, 0 buiten de zones (`repareer.py`). Wacht op Jordi.
 
 ## Afgekeurd (niet herhalen)
 - (nog niets)

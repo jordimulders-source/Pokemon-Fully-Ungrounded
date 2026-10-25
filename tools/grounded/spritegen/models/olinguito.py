@@ -6,8 +6,8 @@ from model3d import Model, rot_y, rot_z, qb
 
 HEAD_SCALE = 1.35
 HEAD_SHIFT = np.array((-6, 30, 0.0))
-LEG_K = 1.15      # sprite: dikkere poten (geen stokpoten)
-BODY_LEN = 1.25
+LEG_K = 1.0       # sprite: dikkere poten (geen stokpoten)
+BODY_LEN = 1.0
 HEAD_TURN = 0    # graden extra draai van de kop t.o.v. het lijf
 
 
@@ -43,9 +43,13 @@ def build():
     m.chain(L([(-34, -2, 13, 16), (-48, -28, 15, 11.5), (-62, -52, 17, 9)]), 'fur', 'voorpoot_n')
     m.ell((-66, -55, 18), (10, 6, 8), 'paw', 'voorpoot_n')
     m.points['klauw_n'] = (-70, -60, 18)
+    for dz in (-3.5, 3.5):
+        m.chain([(-72, -57, 18 + dz, 3.6), (-80, -66, 18 + dz, 2.6), (-82, -78, 18 + dz, 0.8)], 'claw', 'voorpoot_n', 0.8)
     m.chain(L([(-28, -2, -13, 14), (-20, -28, -15, 11), (-34, -42, -17, 8.5)]), 'fur', 'voorpoot_v')
     m.ell((-38, -45, -17), (9, 6, 7.5), 'paw', 'voorpoot_v')
     m.points['klauw_v'] = (-42, -50, -17)
+    for dz in (-3.5, 3.5):
+        m.chain([(-44, -48, -17 + dz, 3.2), (-50, -57, -17 + dz, 2.2), (-51, -66, -17 + dz, 0.7)], 'claw', 'voorpoot_v', 0.8)
     m.chain(L([(30, 10, 18, 20), (6, -20, 21, 13), (30, -42, 21, 9)]), 'fur', 'achterpoot_n')
     m.chain(L([(30, -42, 21, 7.5), (10, -48, 22, 6.5)]), 'paw', 'achterpoot_n')
     m.chain(L([(36, 12, -17, 18), (18, -16, -19, 11.5), (40, -36, -19, 8.5)]), 'fur', 'achterpoot_v')

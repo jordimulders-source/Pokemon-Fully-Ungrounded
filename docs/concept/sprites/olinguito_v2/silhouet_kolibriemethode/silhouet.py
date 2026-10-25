@@ -8,7 +8,8 @@ from PIL import Image, ImageDraw, ImageFont
 import pop3d as P
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-YAW, PITCH, BOX = 52, 8, 64
+YAW, PITCH, BOX = 40, 8, 64
+HEAD_EXTRA, TILT = 9, 8   # B2 (Jordi, 25 okt)
 
 
 def olinguito_sprite(leg_k=1.45, claw_k=1.9, far_dx=6, legs=True, head_extra=0, tilt=0):
@@ -110,10 +111,10 @@ def to64(gid, groups, thin=('claw',), min_px=1.6):
 
 # Skelet uit het ontwerp (zelfde punten als pop3d.olinguito, ongewijzigd), per poot: (schouder/heup, knie, voet, klauwpunt)
 LEGS = {
-    'far_hind':  ([(36, 12, -17), (18, -16, -19), (40, -36, -19), (24, -42, -20)], (5.5, 4.0, 3.5)),
-    'far_front': ([(-28, -2, -13), (-20, -28, -15), (-34, -42, -17), (-38, -45, -17)], (5.0, 3.6, 3.4)),
-    'near_hind': ([(30, 10, 18), (6, -20, 21), (30, -42, 21), (10, -48, 22)], (7.5, 4.6, 4.0)),
-    'near_front': ([(-34, -2, 13), (-48, -28, 15), (-62, -52, 17), (-66, -55, 18)], (6.5, 4.6, 4.2)),
+    'far_hind':  ([(36, 12, -17), (18, -16, -19), (40, -36, -19), (24, -42, -20)], (6.0, 4.6, 4.0)),
+    'far_front': ([(-28, -2, -13), (-20, -28, -15), (-34, -42, -17), (-38, -45, -17)], (5.5, 4.4, 4.0)),
+    'near_hind': ([(30, 10, 18), (6, -20, 21), (30, -42, 21), (10, -48, 22)], (8.0, 5.6, 4.8)),
+    'near_front': ([(-34, -2, 13), (-48, -28, 15), (-62, -52, 17), (-66, -55, 18)], (7.0, 5.6, 5.0)),
 }
 CLAWS = {'far_front': [(-44, -48, -17), (-51, -66, -17)], 'near_front': [(-72, -57, 18), (-82, -78, 18)]}
 
@@ -123,8 +124,9 @@ def projector(m, fill=0.86):
     scale = P.R * fill / max(x1 - x0, y1 - y0)
     cx, cy = (x0 + x1) / 2, (y0 + y1) / 2
     Rc = P.rot_x(math.radians(PITCH)) @ P.rot_y(math.radians(YAW))
+    Rt = P.rot_z(math.radians(-TILT))
     def proj(p):
-        q = Rc @ np.array(p, float)
+        q = Rc @ (Rt @ np.array(p, float))
         return ((q[0] - cx) * scale + P.R / 2) * BOX / P.R, (-(q[1] - cy) * scale + P.R / 2) * BOX / P.R
     return proj, scale, (cx, cy)
 
@@ -133,9 +135,9 @@ def build_v2():
     """Romp/kop/staart als render (die lezen al goed), poten en klauwen met de hand getekend op
     het geprojecteerde skelet, met minimale spritedikten en lucht tussen de poten."""
     from silhouet_tekenen import tube_mask
-    full = olinguito_sprite(1.0, 1.0, 0)
+    full = olinguito_sprite(1.0, 1.0, 0, head_extra=HEAD_EXTRA, tilt=TILT)
     proj, scale, c = projector(full)
-    torso = olinguito_sprite(1.0, 1.0, 0, legs=False)
+    torso = olinguito_sprite(1.0, 1.0, 0, legs=False, head_extra=HEAD_EXTRA, tilt=TILT)
     zbuf, gid, nrm, groups = P.render(torso, YAW, PITCH, scale, c)
     body = np.array(Image.fromarray(((gid >= 0) * 255).astype(np.uint8)).resize((BOX, BOX), Image.BOX)) > 110
     layers = {}
@@ -145,9 +147,17 @@ def build_v2():
         if name in CLAWS:
             a, b = [proj(p) for p in CLAWS[name]]
             dx, dy = b[0] - a[0], b[1] - a[1]; L = math.hypot(dx, dy); nx, ny = -dy / L, dx / L
-            for off in (-1.1, 1.1):
-                mm |= tube_mask([(a[0] + nx * off, a[1] + ny * off), (b[0] + nx * off * 1.3, b[1] + ny * off * 1.3)], 1.9, 0.9)
+            for off in (-1.3, 1.3):
+                # klauw: dicht driehoekje (basis 2 px, punt), uit elkaar zodat er 2 lezen
+                mm |= tube_mask([(a[0] + nx * off, a[1] + ny * off), (b[0] + nx * off * 1.6, b[1] + ny * off * 1.6)], 2.2, 0.6)
         layers[name] = mm
+    # oor: dominant oor als duidelijke ronde bult op de kruin (in de render valt hij op 64 weg)
+    hs, piv = P.HEAD_SCALE, np.array((-46, -2, 0.0))
+    pv = piv + P.HEAD_SHIFT
+    ear = piv + (np.array((-58, 16, 13.0)) - piv) * hs + P.HEAD_SHIFT
+    ear = pv + P.rot_y(math.radians(HEAD_EXTRA)) @ (ear - pv)
+    ex, ey = proj(ear)
+    body |= tube_mask([(ex, ey + 1.5), (ex, ey - 1.2)], 5.2, 4.6)
     return body, layers
 
 
@@ -162,7 +172,7 @@ if __name__ == '__main__':
     S, T = Image.fromarray(sil), Image.fromarray(two)
     S.save(os.path.join(HERE, 'silhouet_1x.png')); T.save(os.path.join(HERE, 'silhouet_tweekleur_1x.png'))
     oud = Image.open(os.path.join(HERE, 'oud_silhouet_950.png')).convert('RGB')
-    ont = Image.open(os.path.join(HERE, 'ontwerp_gekozen.png')).convert('RGB').resize((256, 256))
+    ont = P.view(olinguito_sprite(1.0, 1.0, 0, head_extra=HEAD_EXTRA, tilt=TILT), YAW, PITCH)
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 12)
     W = Image.new('RGB', (4 * 266 + 10, 256 + 120), (236, 236, 230)); d = ImageDraw.Draw(W)
     W.paste(ont, (5, 5))
@@ -170,8 +180,10 @@ if __name__ == '__main__':
         big = im.convert('RGBA').resize((256, 256), Image.NEAREST); W.paste(big, (5 + 266 * (i + 1), 5), big)
     for i, im in enumerate((oud, S)):
         s = im.convert('RGBA'); W.paste(s, (5 + 266 * (i + 1), 290), s)
-    for x, t in ((5, 'gekozen ontwerp (3D-poppetje)'), (271, 'oud silhouet (verkleinde render)'), (537, 'nieuw: sprite-proof, 1 kleur'), (803, 'nieuw: verre poten lichter')):
+    for x, t in ((5, 'B2: poppetje lijf 40°, kop 49°, kantel 8°'), (271, 'oud silhouet (verkleinde render)'), (537, 'nieuw: sprite-proof, 1 kleur'), (803, 'nieuw: verre poten lichter')):
         d.text((x, 265), t, fill='black', font=F)
     d.text((271 + 70, 300), '1x oud', fill='black', font=F); d.text((537 + 70, 300), '1x nieuw  (%d px)' % m.sum(), fill='black', font=F)
-    W.save(os.path.join(HERE, 'vel_v2.png'))
+    W.save(os.path.join(HERE, 'vel_b2.png'))
+    ov = P.view(olinguito_sprite(1.0, 1.0, 0, head_extra=HEAD_EXTRA, tilt=TILT), YAW, PITCH, size=256 * 0.86).convert('RGBA')
+    ov.putalpha(90); o = Image.new('RGBA', (256, 256), (255, 255, 255, 255)); o.alpha_composite(S.convert('RGBA').resize((256, 256), Image.NEAREST)); o.alpha_composite(ov); o.save(os.path.join(HERE, 'overlay_b2.png'))
     print('px', m.sum())

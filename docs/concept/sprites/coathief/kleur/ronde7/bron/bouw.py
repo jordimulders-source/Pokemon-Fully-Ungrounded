@@ -3,7 +3,7 @@ Geen shading of filters: alleen letter -> paletindex."""
 import os, sys
 from PIL import Image
 H = os.path.dirname(os.path.abspath(__file__))
-SIL = os.path.join(H, '../../../silhouet/ronde6.txt')
+SIL = os.path.join(H, '../../../silhouet/ronde8.txt')
 PAL = [('.', '98d0a0'),  # 0 transparant
        ('k', '140c0a'),  # omlijning (zwartbruin), schaduwkant
        ('m', '2a201c'),  # bivakmuts schaduw / selout donkere delen

@@ -30,3 +30,56 @@
 # open randen
 33 20 mnnnk
 51 44 d
+# ===== ronde 2 (opdracht Claude): alleen zones 1-4 =====
+# zone 1: grotere ronde coati-vlekken (boven/achter en onder/achter het oog), oog ongewijzigd
+36 20 wc
+37 19 ccc
+38 18 zcn
+43 20 zwc
+44 20 cccz
+45 21 cn
+# zone 2: verre voorpoot als cilinder (lichtkant links, elleboog, pols-knik), overloop vanuit de schouder
+48 27 bbddk
+49 27 bbddk
+50 27 dydmk
+51 27 myzmk
+52 27 myymk
+53 27 myzmk
+54 27 myzmk
+55 27 myzmk
+56 27 mzymk
+57 27 myymk
+58 27 myzmk
+59 27 myzmk
+60 26 myyzmk
+# zone 4: klauwtjes verre voorpoot. Haakjes (crème) lazen ook met teen/k-scheiding nog als kruimels
+# (varianten A/B in uitsnede_klauwen.png); daarom terugval: deel van de voet (donker), Jordi beslist.
+61 23 mzmk
+62 21 km
+62 24 mk
+# zone 3: opgetilde voorpoot (boven de klauwen)
+50 22 mYyzk
+51 21 myYyzk
+52 20 myyzzmk
+53 19 myzzmk
+54 18 mYyzzmk
+55 18 myzzmmk
+# zone 3: verre achterpoot (hak bij y 53)
+49 35 mdzzmmk
+50 36 myzzmmk
+51 37 myzmmk
+52 37 myzzmk
+53 37 mzyzmk
+54 36 myzzmk
+55 36 myzmmk
+56 35 myzzmk
+# zone 3: nabije achterpoot (hak bij y 55-56)
+51 43 ddbbddmzmk
+52 45 mYyyzzmmk
+53 46 myyzzzmk
+54 47 myyzzmk
+55 48 mzyzmk
+56 48 myYzmk
+57 48 myzmk
+58 47 mYyzmk
+59 46 myyzzmk

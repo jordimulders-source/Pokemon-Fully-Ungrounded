@@ -21,3 +21,6 @@ Ontwerp en Jordi's woorden per ronde: `referenties/ONTWERP.md` (uit de tak `clau
 - Handgetekend silhouet zonder de massa van het ontwerp ("veel te dun", "lijkt totaal niet op het origineel").
 - Oor als hoge bult (ronde 4).
 - Oude olinguito: zie `../olinguito/AFGEKEURD.md`.
+
+## Jordi over kleur ronde 3 (25 okt)
+- "dit begint echt al goed in de buurt te komen, de klauwen zijn nog niet helemaal mooi gelijnd, net als het oor, maar dit is het beste olinguito ontwerp wat ik tot nu toe heb gezien"

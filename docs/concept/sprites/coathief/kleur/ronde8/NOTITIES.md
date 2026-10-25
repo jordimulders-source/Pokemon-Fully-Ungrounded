@@ -14,7 +14,7 @@ Jordi letterlijk:
 - `overtrekvel_r8.png`: de onderlaag naast ronde 8 op hetzelfde 64-raster. Elke cel die afwijkt van de onderlaag is rood omkaderd, met de reden eronder.
 - `onderlaaglijn_over_r8.png`: de zwarte omlijning van de onderlaag (blauw, verkleind 4:1) over ronde 8 op 20×.
 - `onderlaag_7b_8_voorpoten.png`: de voorpoten op 8×, met de onderlaag, 7b en 8 naast elkaar, op licht en op donker, plus 1×.
-- **Silhouet:** `../../silhouet/ronde9.txt` (1315 px: 10 erbij en 18 eraf ten opzichte van ronde8, alleen in x 10–34, y 50–63).
+- **Silhouet:** `../../silhouet/ronde9.txt` (1318 px: 13 erbij en 18 eraf ten opzichte van ronde8, alleen in x 10–34, y 50–63).
 - `bron/`:
   - `raster.txt` is 7b als volle rijen;
   - `reparaties.txt` bevat ronde 8: de rijen 50–63 over x 10–34 met de hand overgetrokken, plus de oren;
@@ -22,11 +22,11 @@ Jordi letterlijk:
 
 ## Bewijs
 ```
-controle.py: pixels 1315 | silhouet 1315 (ronde9.txt) | alpha-diff 0 | open randen 0 | losse pixels 0
+controle.py: pixels 1318 | silhouet 1318 (ronde9.txt) | alpha-diff 0 | open randen 0 | losse pixels 0
 diff_r7b.py:
-zone voorpoten (x 10-34, y 46-63)   82 px
+zone voorpoten (x 10-34, y 46-63)   90 px
 zone oren (x 14-26, y 30-34)        16 px
-totaal 98 | buiten de zones: 0
+totaal 106 | buiten de zones: 0
 ```
 - Geen d (index 6) naast transparant aan de schaduwkant; de rechterrand is overal k.
 - Het palet en de helderheid zijn ongewijzigd: niet lichter gemaakt (Dark-type).
@@ -56,6 +56,13 @@ Per cel bepaalt de onderlaag wat er komt: buiten, omlijning, manchet, staande po
 - (18,60), (20,60) en (24,63): puntjes van 1 px weggelaten, want ze lezen als kruimels.
 - (25,60–61): een donkere scheiding tussen de twee klauwen van de staande voet, waar de onderlaag een teenkeep heeft.
 - (25,62): lucht onder die scheiding.
+
+## 1b. Jordi's cellen (`referenties/krabbel_jordi_overtrek1.png`, vaste eis)
+Op het overtrekvel zijn ze groen omkaderd.
+- **(28,52) en (28,53)** zijn donker (m): het uiteinde van de bruine bovenarm loopt rond in de manchet. De naad ligt nu op 27 z / 28 m, en het bruin op y 52 is x 29–30.
+- **(32,54), (32,55) en (32,56)** horen bij de staande poot, die bovenaan breder wordt. De k-rand ligt nu op x 32, de schaduw m op x 31 en de lichtkant z/y ernaast. Vanaf y 57 loopt de poot taps toe naar de pols (rand x 31).
+- **(27,57) en (27,58)** zaten al in ronde 8, met de linkerrand op x 26 volgens de onderlaag.
+- **(32,53) niet toegevoegd** (Jordi: "misschien [...] nog een pixel daarbovenop"). De rechterrand van de staande poot ligt in de onderlaag op y 53 bij x 31,5–31,75, dus binnen cel 31. Pas vanaf y 55,9 komt hij tot x 32. Dit staat ook op het overtrekvel.
 
 ## 2. Oren zwart (bivakmuts)
 - **Nabij oor:** m-rand bovenop, Y/y-licht linksboven, z, en een donkere binnenkant m met een k-rand rechts.

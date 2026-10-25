@@ -19,3 +19,11 @@
 32 20 mYyzk
 33 15 myzk
 33 20 myzmzk
+# ===== ronde 8, aanvulling Jordi (krabbel_jordi_overtrek1.png): vaste cellen =====
+# opgetilde poot: (28,52) en (28,53) donker -> uiteinde bruine bovenarm ronder in de manchet
+52 27 zmbdk
+# staande poot rechts breder: (32,54-56); (27,57-58) zaten al in ronde 8 (linkerrand x 26 volgens de onderlaag)
+# (32,53) NIET: rechterrand onderlaag op y 53 = x 31,5-31,75, valt niet in cel 32
+54 30 mzk
+55 29 mzmk
+56 27 myzzmk

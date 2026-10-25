@@ -30,11 +30,21 @@ AFW = {(20, 58): 'lucht tussen de hangende klauwen (onderlaag: zwarte rand)',
        (25, 62): 'lucht onder de scheiding',
        (24, 63): 'puntje van 1 px weggelaten'}
 out = Image.open('kleur/ronde8/overtrekvel_r8.png'); W0, H0 = out.size
-big = Image.new('RGB', (W0, H0 + 20 + 14 * len(AFW)), (255, 255, 255)); big.paste(out, (0, 0)); d = ImageDraw.Draw(big)
+JORDI = [(28, 52), (28, 53), (32, 54), (32, 55), (32, 56), (27, 57), (27, 58)]
+KEUZE = ['groen = Jordi\'s cellen (vaste eis): (28,52) (28,53) donker; (32,54-56) poot; (27,57-58) zaten al in ronde 8.',
+         '(32,53) NIET toegevoegd: de rechterrand van de staande poot ligt in de onderlaag op y 53 bij x 31,5-31,75,',
+         '   dus binnen cel 31, niet in cel 32 (vanaf y 55,9 komt de onderlaag tot x 32).']
+big = Image.new('RGB', (W0, H0 + 20 + 14 * (len(AFW) + len(KEUZE) + 1)), (255, 255, 255)); big.paste(out, (0, 0)); d = ImageDraw.Draw(big)
 for (x, y), t in AFW.items():
     for i in range(2):
         ox = 30 + i * (W + 10)
         d.rectangle([ox + (x - X0) * Z + 1, 20 + (y - Y0) * Z + 1, ox + (x - X0 + 1) * Z - 1, 20 + (y - Y0 + 1) * Z - 1], outline=(230, 0, 0), width=2)
+for (x, y) in JORDI:
+    for i in range(2):
+        ox = 30 + i * (W + 10)
+        d.rectangle([ox + (x - X0) * Z + 4, 20 + (y - Y0) * Z + 4, ox + (x - X0 + 1) * Z - 4, 20 + (y - Y0 + 1) * Z - 4], outline=(0, 170, 0), width=2)
+for k, t in enumerate(KEUZE):
+    d.text((30, H0 + 6 + 14 * (len(AFW) + 1 + k)), t, fill=(0, 120, 0), font=F)
 for k, ((x, y), t) in enumerate(AFW.items()):
     d.text((30, H0 + 6 + 14 * k), '(%d,%d): %s' % (x, y, t), fill=(200, 0, 0), font=F)
 big.save('kleur/ronde8/overtrekvel_r8.png')

@@ -1,0 +1,32 @@
+# Reparaties na de eerste blik (met de hand, 'y x0 pixels', overschrijven raster.txt)
+# naad bivakmuts/hals rond (bolt uit bij y 37-40), geen rechte donkere balk achter de kop
+35 14 mmyYyyyzzzzm
+35 26 dd
+36 13 myYyyyyyzzzzm
+36 26 d
+37 12 myYyyyywczzzzzm
+37 27 d
+38 11 myYyyyzccnzzzzzm
+38 27 d
+39 11 myyzzzzkkkmzzzzm
+39 27 d
+40 10 myYyzzzzwrrzzzzzm
+40 27 d
+41 10 myyzzzzzriizzzzm
+42 9 myyzzzzzzzzzzzzzm
+42 26 d
+43 22 zzm
+44 22 nzm
+45 21 nzm
+46 8 zzzzzzzzzzzzzzmm
+# buikschaduw: bovenrand als boog
+42 37 dd
+43 35 bddddd
+# verre voorpoot: donker vanaf y 50, geen bruin blok
+49 27 dddd
+50 27 dddmk
+51 27 mzmmk
+52 27 mzmmk
+# open randen
+33 20 mnnnk
+51 44 d

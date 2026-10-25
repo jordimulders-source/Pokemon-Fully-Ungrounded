@@ -59,10 +59,10 @@ def coati(head_extra=15, tilt=0, leg_k=1.3, claw_k=1.8):
     eyes = []
     for sz in (1,):   # lange snuit: één oog in beeld
         d = np.array((-0.62, -0.05, 0.78 * sz)); d /= np.linalg.norm(d)
-        e = cr + d * 19.5 * hs
+        e = cr + d * 18.7 * hs
         eyes.append(e)
-        m.ell(e, 3.6 * hs, 'eye')
-        m.ell(e + d * 1.6 * hs, 2.2 * hs, 'pupil')
+        m.ell(e, 2.7 * hs, 'eye')
+        m.ell(e + d * 1.4 * hs, 1.3 * hs, 'pupil')
     for sz in (1, -1):
         c = cr + np.array((4, 20, 11 * sz))
         k = 1.0 if sz > 0 else 0.7
@@ -151,7 +151,7 @@ def render(m, yaw, pitch, scale, center):
         q = wpt[sel] @ Rc
         de = np.min([np.linalg.norm(q - e, axis=1) for e in t['eyes']], axis=0)
         g = gid[sel].copy()
-        g[de < 7.2 * t['hs']] = groups.index('ring')
+        g[de < 5.2 * t['hs']] = groups.index('ring')
         gid[sel] = g
     return zbuf, gid, nrm, groups
 

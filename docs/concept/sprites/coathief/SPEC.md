@@ -18,15 +18,17 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - "ik neig ernaar om de kleuren van het gezicht in een soort bivakmuts patroon te maken, dus dat het hoofd aantoonbaar zwarter is (op een kring rondom de ogen na), heb 1 in een andere kleur toegevogd maar die toont wel aan hoe hij loopt."
 - "Ik wil dat die in een driekwart positie naar je toeloopt alsof die een confrontatie met je aangaat, met 1 poot dus een beetje opgetild in een looppose"
 - "nasua nasua doen we" · "de neus moet zwart zijn, bivakmuts idee"
+- "het oog moet minder groot. zie referenties" (foto 6–8)
 
 ## Referenties (`referenties/`)
 - `foto1_rots_snuffelend.webp`: kleur, kopvorm, staartringen. `foto2_zijaanzicht_render.webp`: verhoudingen (lang lijf, lange poten, staart).
 - `foto3_boom_frontaal.webp`: gezicht frontaal. `foto4_gang_lopend.png`: staart rechtop bij het lopen, gangs.
+- `foto6_zittend_kop.png`, `foto7_kop_closeup.webp`, `foto8_zittend_kop_groot.webp`: kop en oog (klein, donker; lichte vlekken boven en onder het oog), staartringen.
 - `foto5_witneus_naar_je_toe.webp`: andere soort/kleur, maar de loop naar je toe (pose) en het donkere gezicht met lichte oogkringen.
 
 ## Besloten
 - Soort: rode neusbeer (*Nasua nasua*): warm roodbruin lijf, donkere onderpoten, geringde staart (licht/donker).
-- Kop als **bivakmuts**: zwart, op een lichte kring rond het oog na; **neus zwart**. Oog donker roodbruin (van de olinguito).
+- Kop als **bivakmuts**: zwart, op een lichte kring rond het oog na; **neus zwart**. Oog **klein** (foto 6–8), donker roodbruin (van de olinguito).
 - Lange snuit (één oog in beeld), lichaam langer dan de olinguito, staart met ringpatroon (mag krullen), 2 lange lichte klauwen per poot.
 - Geen tas of ander voorwerp.
 - Pose: driekwart naar de kijker toe lopen, confrontatie, één voorpoot opgetild (diagonale gang).

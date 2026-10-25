@@ -3,7 +3,7 @@ Geen shading of filters: alleen letter -> paletindex."""
 import os, sys
 from PIL import Image
 H = os.path.dirname(os.path.abspath(__file__))
-SIL = os.path.join(H, '../../../silhouet/ronde1.txt')
+SIL = os.path.join(H, '../../../silhouet/ronde2.txt')
 PAL = [('.', '98d0a0'),  # 0 transparant
        ('k', '140c0a'),  # omlijning (zwartbruin), schaduwkant
        ('m', '2a201c'),  # bivakmuts schaduw / selout donkere delen
@@ -42,7 +42,7 @@ if __name__ == '__main__':
             if not ln: continue
             y, x0, px = ln.split(); y = int(y); x0 = int(x0)
             for i, ch in enumerate(px):
-                if ch not in ORDER or g[y][x0 + i] == '.': fout.append('reparatie buiten silhouet/onbekend op (%d,%d)' % (x0 + i, y))
+                if ch not in ORDER: fout.append('onbekende letter op (%d,%d)' % (x0 + i, y))
                 g[y][x0 + i] = ch
     sil = [l.rstrip('\n') for l in open(SIL) if l.strip()]
     diff = [(x, y) for y in range(64) for x in range(64) if (g[y][x] != '.') != (sil[y][x] == '#')]

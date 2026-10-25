@@ -20,7 +20,7 @@ def put(im, x, y, bg=None, l=None):
     o.paste(im, (x, y), im)
     if l: d.text((x, y + im.size[1] + 3), l, fill=(30, 30, 30, 255))
 X4 = lambda im: im.resize((256, 256), Image.NEAREST)
-put(X4(co), 0, 0, LIGHT, 'Coathief kleur ronde 3b, 4x (licht)')
+put(X4(co), 0, 0, LIGHT, 'Coathief kleur ronde 4, 4x (licht)')
 put(X4(co), 266, 0, DARK, '4x (donker)')
 put(ond, 532, 0, (255, 255, 255, 255), 'onderlaag (B1, kop C)')
 put(X4(ol), 798, 0, LIGHT, 'olinguito (fase 1, goedgekeurd), 4x')
@@ -42,16 +42,13 @@ u = Image.new('RGBA', (32 * 8 + 10 + 16 * 8, 34 * 8), LIGHT)
 k = co.crop((2, 30, 34, 64)).resize((256, 272), Image.NEAREST); u.alpha_composite(k, (0, 0))
 s = co.crop((44, 0, 60, 34)).resize((128, 272), Image.NEAREST); u.alpha_composite(s, (266, 0))
 u.save(os.path.join(H, '../uitsnede.png'))
-# klauwen: ronde 2, 3, 3b en olinguito op 8x en 1x, licht en donker
-v = Image.new('RGBA', (4 * 110, 2 * 110 + 2 * 90), LIGHT); dv = ImageDraw.Draw(v)
-K = [('ronde 2', Image.open(os.path.join(H, '../../ronde2/coathief.png')).convert('RGBA'), (14, 52, 26, 63)),
-     ('ronde 3', Image.open(os.path.join(H, '../../ronde3/coathief.png')).convert('RGBA'), (14, 52, 26, 63)),
-     ('ronde 3b', co, (14, 52, 26, 63)),
-     ('olinguito', ol, (12, 50, 24, 61))]
-for i, (n, im, box) in enumerate(K):
+# uitsnede kop, oren, mond, klauwen en voorpoten op 8x: ronde 3b naast ronde 4, licht en donker
+r3b = Image.open(os.path.join(H, '../../ronde3b/coathief.png')).convert('RGBA')
+W, Hh = 36 * 8, 34 * 8
+v = Image.new('RGBA', (2 * W + 10, 2 * Hh + 30), LIGHT); dv = ImageDraw.Draw(v)
+for i, (n, im) in enumerate((('ronde 3b', r3b), ('ronde 4', co))):
     for j, bg in enumerate((LIGHT, DARK)):
         b = Image.new('RGBA', (64, 64), bg); b.alpha_composite(im)
-        v.paste(b.crop(box).resize((96, 88), Image.NEAREST), (i * 110, j * 110))
-        v.paste(b, (i * 110 + 16, 220 + j * 90))
-    dv.text((i * 110, 96), n, fill=(30, 30, 30, 255))
-v.save(os.path.join(H, '../klauwen_r2_r3_r3b.png'))
+        v.paste(b.crop((2, 29, 38, 63)).resize((W, Hh), Image.NEAREST), (i * (W + 10), j * (Hh + 10)))
+    dv.text((i * (W + 10), 2 * Hh + 14), n, fill=(30, 30, 30, 255))
+v.save(os.path.join(H, '../r3b_vs_r4_kop_poten.png'))

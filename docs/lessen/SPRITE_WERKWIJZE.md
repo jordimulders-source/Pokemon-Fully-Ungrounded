@@ -29,6 +29,7 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - **Bron = de foto of render, verkleind; de massa daarvan is heilig.** Twee mislukte routes, niet herhalen:
   - Een agent die het silhouet "vrij" tekent op de pose verliest de massa: te dun, "lijkt totaal niet op het origineel" (olinguito hand-rondes 1–3).
   - Een script dat poten/klauwen dikker maakt en alles automatisch verkleint klontert samen.
+  - Een automatische spritegenerator (3D-poppetje of 2D-tekening → sprite via de Dragonfly Cave-methode, tak `claude/awesome-dirac-c7l6xv`, 25 okt) kwam niet tot een goed resultaat; Jordi stopte die aanpak.
 - **Wat werkt:** de bron direct verkleinen (olinguito: B2-render, 1131 px; kolibrie: foto-omtrek punt voor punt), en dan **met de hand alleen de dunne delen** repareren in benoemde zones: klauwen (2 haakjes aan elkaar vast), oor, voorkant van de kop, spleet tussen poten, staartboog. Buiten die zones ±1 px, bewezen met een diff.
 - **Minimale dikten:** snavel/dunne delen ≥ 2 px, poten ≥ 5–6 px, geen spleten van 1 px tussen poten die naast elkaar staan.
 - **Leesbaarheid:** toets of de ruimte direct onder de buik leeg is (hangende slierten lazen als poten/mug); vier poten in vier kolommen; de kop een eigen onderdeel.

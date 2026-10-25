@@ -19,6 +19,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - "Ik wil dat die in een driekwart positie naar je toeloopt alsof die een confrontatie met je aangaat, met 1 poot dus een beetje opgetild in een looppose"
 - "nasua nasua doen we" · "de neus moet zwart zijn, bivakmuts idee"
 - "het oog moet minder groot. zie referenties" (foto 6–8)
+- "maak een A/B/C test van B1. huidige ontwerp, tegenover hoofd met natuurlijke kleuren ipv de bivak en 1 met de vlekken die je voorstelt. Het oog moet in de praktijk niet puur een rode stip zijn, want dat is niet des pokemons, maar kunnen we mogelijk zodra we gaan spriten aanpassen"
 
 ## Referenties (`referenties/`)
 - `foto1_rots_snuffelend.webp`: kleur, kopvorm, staartringen. `foto2_zijaanzicht_render.webp`: verhoudingen (lang lijf, lange poten, staart).
@@ -34,7 +35,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - Pose: driekwart naar de kijker toe lopen, confrontatie, één voorpoot opgetild (diagonale gang).
 
 ## Ontwerp (stap 1)
-- 3D-poppetje `ontwerp/pop3d_coati.py` (op basis van het olinguito-poppetje); hoekenraster `ontwerp/hoeken.png` (lijf 30/42/54°, kop +10/+22°), wacht op Jordi's keuze.
+- 3D-poppetje `ontwerp/pop3d_coati.py` (op basis van het olinguito-poppetje); hoekenraster `ontwerp/hoeken.png` (lijf 30/42/54°, kop +10/+22°), Jordi koos **B1** (lijf 42°, kop 52°) als basis voor een kop-test: `ontwerp/kop_abc.png` (A bivakmuts + kring, B natuurlijke kop + vlekken, C bivakmuts + vlekken), wacht op Jordi.
+- Oog bij het spriten: geen platte rode stip, maar een Pokémon-oog (bovenlid, iris donker boven/licht onder, glans).
 
 ## Bevroren
 - (nog niets)

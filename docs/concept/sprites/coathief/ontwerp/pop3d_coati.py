@@ -16,7 +16,7 @@ COL = {
     'fur': '#93602F', 'far': '#69431F', 'leg': '#3A2A22', 'farleg': '#2A1E19', 'paw': '#C08A80', 'farpaw': '#9C6E66',
     'claw': '#EDE3CC', 'head': '#2B2422', 'ring': '#C9B08C', 'muzzle': '#2B2422', 'nose': '#141010',
     'eye': '#B9481C', 'pupil': '#1A0F0B', 'ear': '#2B2422', 'earin': '#C9B08C', 'tl': '#C9A57A', 'td': '#3E2A1E',
-    'chin': '#C9B08C',
+    'chin': '#C9B08C', 'spot': '#D8C3A0',
 }
 NOSHADE = {'eye', 'pupil', 'nose', 'claw'}
 LINED = {'eye', 'nose', 'claw', 'ring'}
@@ -146,12 +146,22 @@ def render(m, yaw, pitch, scale, center):
         wpt[y0:y1, x0:x1][win] = q[win]
     # bivakmuts: zwarte kop met een lichte kring rond elk oog; lichte kin
     t = m.tex
+    var, hs, e = getattr(m, 'var', 'A'), t['hs'], t['eyes'][0]
     for grp in ('head', 'muzzle'):
         sel = gid == groups.index(grp)
         q = wpt[sel] @ Rc
-        de = np.min([np.linalg.norm(q - e, axis=1) for e in t['eyes']], axis=0)
+        de = np.linalg.norm(q - e, axis=1)
         g = gid[sel].copy()
-        g[de < 5.2 * t['hs']] = groups.index('ring')
+        if var == 'A':      # bivakmuts met kring
+            g[de < 5.2 * hs] = groups.index('ring')
+        else:               # vlekken boven en onder het oog (foto 6-8)
+            up = np.linalg.norm(q - (e + np.array((1.5, 5.2, 0)) * hs), axis=1) < 4.0 * hs
+            dn = np.linalg.norm(q - (e + np.array((3.5, -5.0, 0)) * hs), axis=1) < 4.4 * hs
+            if var == 'B':  # natuurlijk: bruine kop, donkere band door het oog naar de snuit
+                g[de < 4.4 * hs] = groups.index('muzzle')
+                band = (np.abs(q[:, 1] - e[1]) < 3.4 * hs) & (q[:, 0] < e[0] + 3 * hs)
+                g[band & (g == groups.index('head'))] = groups.index('muzzle')
+            g[(up | dn) & (de > 3.2 * hs)] = groups.index('spot')
         gid[sel] = g
     return zbuf, gid, nrm, groups
 
@@ -214,5 +224,28 @@ def raster():
     im.save(os.path.join(HERE, 'hoeken.png'))
 
 
+def abc():
+    """A/B/C-test op B1 (Jordi, 25 okt): A bivakmuts met kring, B natuurlijke kop, C bivakmuts met vlekken."""
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 18)
+    labs = {'A': 'A: bivakmuts, kring', 'B': 'B: natuurlijke kop, vlekken', 'C': 'C: bivakmuts, vlekken'}
+    base = dict(COL)
+    im = Image.new('RGB', (12 + 262 * 3, 40 + 262 + 26 + 230), 'white')
+    d = ImageDraw.Draw(im)
+    d.text((12, 10), 'Coathief: kop A/B/C (hoek B1: lijf 42°, kop 52°)', font=FB, fill=(30, 30, 30))
+    for i, v in enumerate('ABC'):
+        COL.clear(); COL.update(base)
+        if v == 'B':
+            COL.update(head='#93602F', ear='#93602F')
+        m = coati(head_extra=10); m.var = v
+        img = view(m, 42)
+        im.paste(img, (12 + 262 * i, 40))
+        d.text((16 + 262 * i, 40 + 258), labs[v], font=F, fill=(60, 60, 60))
+        im.paste(img.crop((20, 105, 130, 215)).resize((220, 220), Image.LANCZOS), (12 + 262 * i + 20, 40 + 262 + 26))
+    COL.clear(); COL.update(base)
+    im.save(os.path.join(HERE, 'kop_abc.png'))
+
+
 if __name__ == '__main__':
     raster()
+    abc()

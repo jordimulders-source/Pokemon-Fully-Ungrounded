@@ -1,0 +1,455 @@
+<title>Spritewerkplaats</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Silkscreen&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap">
+<style>
+/* Werkplaats: links het werkstuk (groot canvas, de stappen uit de gids, vergelijking op 1x), rechts de knoppen per stap. */
+:root {
+  --bg: #eef0f4; --panel: #ffffff; --ink: #1d2230; --muted: #5d6578; --line: #d5d9e3;
+  --accent: #4357c9; --accent-ink: #ffffff; --soft: #e3e7f6; --warn: #b4531a; --ok: #2f7d4f; --bad: #c2324a;
+  --check: #d6dae4; --check2: #c9ceda;
+  --f-display: "Silkscreen", "Courier New", monospace; --f-body: "IBM Plex Sans", system-ui, sans-serif; --f-mono: "IBM Plex Mono", ui-monospace, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --bg: #141722; --panel: #1d2130; --ink: #e8ebf3; --muted: #9aa2b6; --line: #2e3446; --accent: #8a9bff; --accent-ink: #10142a; --soft: #262c44;
+  --warn: #f0a36a; --ok: #6fd39a; --bad: #ff7b8f; --check: #262b3a; --check2: #2d3344; color-scheme: dark } }
+:root[data-theme="dark"] { --bg: #141722; --panel: #1d2130; --ink: #e8ebf3; --muted: #9aa2b6; --line: #2e3446; --accent: #8a9bff; --accent-ink: #10142a; --soft: #262c44;
+  --warn: #f0a36a; --ok: #6fd39a; --bad: #ff7b8f; --check: #262b3a; --check2: #2d3344; color-scheme: dark }
+html, body { height: 100%; }
+body { background: var(--bg); color: var(--ink); font: 14px/1.45 var(--f-body); }
+.wrap { padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); padding-block: 14px 28px; max-width: 1280px; margin: 0 auto; }
+header { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 14px; margin-bottom: 12px; }
+h1 { font: 22px/1 var(--f-display); letter-spacing: .02em; margin: 0; }
+header p { margin: 0; color: var(--muted); max-width: 70ch; }
+.grid { display: grid; grid-template-columns: minmax(0, 1fr) 380px; gap: 16px; align-items: start; }
+@media (max-width: 900px) { .grid { grid-template-columns: minmax(0, 1fr); } }
+.card { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.stage { padding: 12px; display: grid; gap: 10px; min-width: 0; }
+.canvasbox { position: relative; width: 100%; max-width: 640px; aspect-ratio: 1; margin: 0 auto; border-radius: 6px; overflow: hidden;
+  background: conic-gradient(var(--check) 25%, var(--check2) 0 50%, var(--check) 0 75%, var(--check2) 0) 0 0 / 20px 20px; touch-action: none; }
+.canvasbox canvas { position: absolute; inset: 0; width: 100%; height: 100%; image-rendering: pixelated; }
+.canvasbox.paint { cursor: crosshair; outline: 2px solid var(--accent); }
+.steps { display: flex; flex-wrap: wrap; gap: 6px; justify-content: center; }
+.steps button, .seg button { font: 500 12.5px var(--f-body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 999px; padding: 6px 11px; cursor: pointer; }
+.steps button[aria-pressed="true"], .seg button[aria-pressed="true"] { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.steps .num { font-family: var(--f-mono); opacity: .7; margin-right: 4px; }
+.stepnote { text-align: center; color: var(--muted); font-size: 13px; min-height: 2.6em; max-width: 64ch; margin: 0 auto; }
+.compare { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; justify-content: center; padding-top: 6px; border-top: 1px solid var(--line); }
+.compare figure { margin: 0; display: grid; gap: 4px; justify-items: center; }
+.compare canvas, .compare img { image-rendering: pixelated; background: transparent; }
+.compare figcaption { font: 11px var(--f-mono); color: var(--muted); }
+.side { display: grid; gap: 10px; }
+details.card { padding: 0; }
+details.card > summary { list-style: none; cursor: pointer; padding: 11px 14px; display: flex; align-items: center; gap: 10px; font-weight: 600; }
+details.card > summary::-webkit-details-marker { display: none; }
+details.card > summary .tag { font: 11px var(--f-mono); color: var(--muted); margin-left: auto; font-weight: 400; }
+details.card > summary::before { content: "▸"; color: var(--muted); transition: transform .15s; }
+details[open].card > summary::before { transform: rotate(90deg); }
+.body { padding: 2px 14px 14px; display: grid; gap: 12px; }
+.ctl { display: grid; gap: 4px; }
+.ctl label { display: flex; justify-content: space-between; gap: 8px; font-size: 13px; }
+.ctl label output { font: 12px var(--f-mono); color: var(--muted); }
+.ctl small { color: var(--muted); font-size: 12px; line-height: 1.35; }
+input[type=range] { width: 100%; accent-color: var(--accent); }
+.row { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.btn { font: 500 13px var(--f-body); border: 1px solid var(--line); background: var(--panel); color: var(--ink); border-radius: 8px; padding: 7px 12px; cursor: pointer; }
+.btn.primary { background: var(--accent); color: var(--accent-ink); border-color: var(--accent); }
+.btn:disabled { opacity: .45; cursor: default; }
+.btn:focus-visible, .steps button:focus-visible, .swatch:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; }
+.mats { display: grid; gap: 8px; }
+.mat { display: grid; grid-template-columns: 22px 1fr auto; gap: 8px; align-items: center; padding: 6px; border: 1px solid var(--line); border-radius: 8px; cursor: pointer; }
+.mat[aria-selected="true"] { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent) inset; }
+.mat .src { width: 22px; height: 22px; border-radius: 5px; border: 1px solid var(--line); }
+.ramp { display: flex; gap: 2px; }
+.ramp span { width: 18px; height: 18px; border-radius: 3px; border: 1px solid rgba(0,0,0,.15); }
+.presets { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 6px; max-height: 220px; overflow: auto; }
+.preset { display: flex; gap: 6px; align-items: center; font-size: 12px; padding: 4px 6px; border: 1px solid var(--line); border-radius: 6px; background: var(--panel); color: var(--ink); cursor: pointer; text-align: left; }
+.palette { display: flex; flex-wrap: wrap; gap: 5px; }
+.swatch { width: 30px; height: 30px; border-radius: 6px; border: 1px solid var(--line); cursor: pointer; padding: 0; position: relative; }
+.swatch[aria-pressed="true"] { outline: 3px solid var(--accent); outline-offset: 1px; }
+.swatch.clear { background: conic-gradient(var(--check) 25%, var(--check2) 0 50%, var(--check) 0 75%, var(--check2) 0) 0 0 / 10px 10px; }
+.checks { display: grid; gap: 6px; font-size: 13px; }
+.chk { display: grid; grid-template-columns: 18px 1fr; gap: 8px; align-items: start; }
+.chk .dot { width: 12px; height: 12px; border-radius: 50%; margin-top: 4px; }
+.dot.ok { background: var(--ok); } .dot.warn { background: var(--warn); } .dot.bad { background: var(--bad); }
+.status { font: 12px var(--f-mono); color: var(--muted); }
+select { font: 13px var(--f-body); padding: 6px 8px; border-radius: 8px; border: 1px solid var(--line); background: var(--panel); color: var(--ink); max-width: 100%; }
+.toggle { display: flex; gap: 8px; align-items: center; font-size: 13px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+</style>
+
+<div class="wrap">
+  <header>
+    <h1>Spritewerkplaats</h1>
+    <p>Van 2D-tekening naar Gen 3-sprite, stap voor stap zoals de Dragonfly Cave-gids het voordoet. Stel bij met de schuifknoppen; pixels aanpassen kan met de knopjes onder "Pixels".</p>
+  </header>
+
+  <div class="grid">
+    <section class="card stage" aria-label="Werkstuk">
+      <div class="row" style="justify-content:space-between">
+        <div class="row">
+          <label for="sample" class="status">Tekening</label>
+          <select id="sample"></select>
+          <label class="btn" for="upload">Eigen tekening…</label>
+          <input id="upload" type="file" accept="image/png,image/jpeg,image/webp" hidden>
+        </div>
+        <div class="row">
+          <label class="toggle"><input type="checkbox" id="showChecks" checked> Fouten aanwijzen</label>
+          <label class="toggle"><input type="checkbox" id="showGrid"> Raster</label>
+        </div>
+      </div>
+      <div class="canvasbox" id="box"><canvas id="cv" width="64" height="64"></canvas><canvas id="ov" width="640" height="640"></canvas></div>
+      <div class="steps" role="group" aria-label="Stap uit de gids" id="steps"></div>
+      <p class="stepnote" id="stepnote"></p>
+      <div class="compare" id="compare"></div>
+    </section>
+
+    <aside class="side">
+      <details class="card" open>
+        <summary>Maat <span class="tag">gids C1</span></summary>
+        <div class="body">
+          <div class="ctl"><label for="maxW">Maximale breedte <output id="o_maxW"></output></label><input type="range" id="maxW" min="24" max="64" step="1">
+            <small>Gen 3-sprites zijn hooguit 64×64. Zo klein als het kan, zo groot als de details nodig hebben.</small></div>
+          <div class="ctl"><label for="maxH">Maximale hoogte <output id="o_maxH"></output></label><input type="range" id="maxH" min="24" max="62" step="1"></div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary>Omlijning overtrekken <span class="tag">gids C2–C3, D</span></summary>
+        <div class="body">
+          <div class="ctl"><label for="lineT">Lijnen uit de tekening <output id="o_lineT"></output></label><input type="range" id="lineT" min="6" max="60" step="1">
+            <small>Hoeveel donkerder dan de omgeving een streek moet zijn om een lijn te worden. Lager = meer binnenlijnen (staartplooien, vingers).</small></div>
+          <div class="ctl"><label for="lineCnt">Lijngevoeligheid <output id="o_lineCnt"></output></label><input type="range" id="lineCnt" min="1" max="5" step="1">
+            <small>Hoe lang een tekenlijn door een spritepixel moet lopen. Lager = dunne lijnen worden eerder een spritelijn.</small></div>
+          <div class="ctl"><label for="dark">Zwarte vlakken en pupillen <output id="o_dark"></output></label><input type="range" id="dark" min="20" max="120" step="1">
+            <small>Wat in de tekening zó donker is, wordt zwart (riemen, pupillen); kleine donkere details krijgen minstens één pixel.</small></div>
+          <div class="ctl"><label for="prune">Korte lijnstukjes weghalen <output id="o_prune"></output></label><input type="range" id="prune" min="0" max="6" step="1"></div>
+          <label class="toggle"><input type="checkbox" id="pseudo"> Pseudo-omlijning voor delen van 1–2 px</label>
+          <div class="ctl"><label for="bgTol">Achtergrond herkennen <output id="o_bgTol"></output></label><input type="range" id="bgTol" min="5" max="90" step="1"></div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary>Kleuren <span class="tag">gids B</span></summary>
+        <div class="body">
+          <div class="ctl"><label for="k">Aantal kleurgroepen <output id="o_k"></output></label><input type="range" id="k" min="1" max="8" step="1">
+            <small>Elke groep krijgt hooglicht, basis, schaduw en omlijningsbasis. Max. 15 kleuren in totaal.</small></div>
+          <div class="mats" id="mats"></div>
+          <div class="ctl"><label for="contrast">Contrast van de automatische helling <output id="o_contrast"></output></label><input type="range" id="contrast" min="0.5" max="1.6" step="0.05"></div>
+          <div class="ctl"><small>Kies een groep hierboven en neem dan een helling over van een echte sprite (gids B5):</small></div>
+          <div class="presets" id="presets"></div>
+          <button class="btn" id="autoColor">Groep terug naar automatisch</button>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary>Schaduw <span class="tag">gids C5–C7, E</span></summary>
+        <div class="body">
+          <small>Elk vlak tussen twee lijnen wordt als een bolle vorm belicht: hooglicht klein waar het licht loodrecht valt, schaduw vanaf de evenaar (gids E3).</small>
+          <div class="ctl"><label for="lightX">Licht van links ↔ boven <output id="o_lightX"></output></label><input type="range" id="lightX" min="-1" max="0" step="0.05"></div>
+          <div class="ctl"><label for="hiT">Hooglicht <output id="o_hiT"></output></label><input type="range" id="hiT" min="0.5" max="2" step="0.02">
+            <small>Lager = meer hooglicht. R/S-sprites gebruiken veel hooglicht; te weinig maakt een sprite donker.</small></div>
+          <div class="ctl"><label for="shT">Schaduw (de evenaar) <output id="o_shT"></output></label><input type="range" id="shT" min="-0.8" max="1" step="0.02">
+            <small>Hoger = meer schaduw.</small></div>
+          <div class="ctl"><label for="glob">Het hele lijf als één vorm <output id="o_glob"></output></label><input type="range" id="glob" min="0" max="1" step="0.05">
+            <small>Hoger = de schaduw volgt meer het hele lichaam dan elk los vlak (achterpoten, staart achter het lijf).</small></div>
+          <div class="ctl"><label for="artLum">Tekening telt mee <output id="o_artLum"></output></label><input type="range" id="artLum" min="0" max="2" step="0.05">
+            <small>Hoe sterk de lichte en donkere delen van de tekening zelf de toon bepalen.</small></div>
+          <div class="ctl"><label for="artShade">Schaduwvlakken uit de tekening <output id="o_artShade"></output></label><input type="range" id="artShade" min="0" max="2" step="0.05"></div>
+          <div class="ctl"><label for="round">Rafels opruimen <output id="o_round"></output></label><input type="range" id="round" min="0" max="4" step="1"></div>
+          <div class="ctl"><label for="fur">Vacht: gekartelde schaduwgrens <output id="o_fur"></output></label><input type="range" id="fur" min="0" max="0.8" step="0.05"></div>
+          <div class="ctl"><label for="shine">Glansvlekjes <output id="o_shine"></output></label><input type="range" id="shine" min="0" max="4" step="1"></div>
+        </div>
+      </details>
+
+      <details class="card">
+        <summary>Omlijning inkleuren <span class="tag">gids F</span></summary>
+        <div class="body">
+          <small>Buitenrand: zwart aan de kant van het licht af, omlijningsbasis naar het licht toe, met daartussen ‘zwart met 1 px omlijningsbasis binnen’. Binnenlijnen worden zwart waar ze aan schaduw grenzen.</small>
+          <div class="ctl"><label for="olK">Zwart tot <output id="o_olK"></output></label><input type="range" id="olK" min="-1" max="1" step="0.05"></div>
+          <div class="ctl"><label for="olK2">Zwart met basis binnen tot <output id="o_olK2"></output></label><input type="range" id="olK2" min="-1" max="1" step="0.05"></div>
+          <div class="ctl"><label for="olIn">Binnenlijnen zwart vanaf schaduw <output id="o_olIn"></output></label><input type="range" id="olIn" min="1" max="2.01" step="0.05">
+            <small>2 = alleen lijnen die helemaal in de schaduw liggen.</small></div>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary>Pixels <span class="tag">handwerk</span></summary>
+        <div class="body">
+          <div class="row"><button class="btn" id="paintMode" aria-pressed="false">Pixels aanpassen: uit</button></div>
+          <div class="seg row" role="group" aria-label="Gereedschap" id="tools">
+            <button data-tool="pen" aria-pressed="true">Potlood</button>
+            <button data-tool="erase" aria-pressed="false">Gum</button>
+            <button data-tool="pick" aria-pressed="false">Pipet</button>
+            <button data-tool="reset" aria-pressed="false">Terug naar automatisch</button>
+          </div>
+          <div class="palette" id="palette" aria-label="Kleuren"></div>
+          <div class="row">
+            <button class="btn" id="undo">Ongedaan maken</button>
+            <button class="btn" id="redo">Opnieuw</button>
+            <button class="btn" id="clearHand">Al het handwerk wissen</button>
+          </div>
+          <small id="handInfo"></small>
+        </div>
+      </details>
+
+      <details class="card" open>
+        <summary>Controles <span class="tag">gids D, F</span></summary>
+        <div class="body"><div class="checks" id="checks"></div></div>
+      </details>
+
+      <section class="card"><div class="body" style="padding-top:12px">
+        <div class="row">
+          <button class="btn primary" id="save">Opslaan</button>
+          <button class="btn" id="export">PNG bewaren</button>
+          <button class="btn" id="resetAll">Alle knoppen terug</button>
+        </div>
+        <span class="status" id="saveStatus">Nog niet opgeslagen.</span>
+      </div></section>
+    </aside>
+  </div>
+</div>
+
+<script>/*__ENGINE__*/</script>
+<script>
+const ASSETS = /*__ASSETS__*/;
+const STEPS = [
+  [1, 'Tekening', 'C1: de tekening verkleind tot spritemaat ("jagged"), als onderlaag om over te trekken.'],
+  [2, 'Omlijning', 'C2–C4: omtrek en lijnen van de tekening overgetrokken, 1 px, met gladde trapjes. Daarna zwart gemaakt.'],
+  [3, 'Schaduwkleur', 'C5: alles gevuld met de schaduwkleur van elke groep.'],
+  [4, 'Basis', 'C6: de basiskleur op alles wat naar het licht kijkt; de grens ligt op de evenaar.'],
+  [5, 'Hooglicht', 'C7: hooglicht in kleinere ronde vlakken waar het licht loodrecht valt, plus glans.'],
+  [6, 'Omlijning ingekleurd', 'C8 / F: zwart aan de schaduwkant, omlijningsbasis rond de basis, schaduwtint rond het hooglicht.'],
+  [7, 'Eind + handwerk', 'Het eindresultaat met jouw pixelaanpassingen erover.']
+];
+const $ = id => document.getElementById(id);
+const SLIDERS = ['maxW','maxH','lineT','lineCnt','dark','prune','bgTol','k','contrast','lightX','hiT','shT','glob','artLum','artShade','round','fur','shine','olK','olK2','olIn'];
+const ANALYSE_KEYS = ['k','bgTol','lineT','dark','lineR','shadeGap'];
+const fmt = { fur: v => Math.round(v*100)+'%', lightX: v => v <= -0.75 ? 'links' : v >= -0.25 ? 'boven' : 'linksboven' };
+
+let state = { sample: 'olinguito', settings: {}, rampOverride: {}, overrides: {}, assetId: null };
+let sampleRamps = null, srcImg = null, srcData = null, analysis = null, analysisKey = '', po = null, pal = {}, step = 7, selMat = 0;
+let paint = false, tool = 'pen', color = null, undo = [], redo = [];
+let db = null, assets = null, downloads = null, saveTimer = null;
+
+function settings() { return Object.assign({}, PO.DEFAULTS, ASSETS.samples[state.sample] ? { k: ASSETS.samples[state.sample].k } : {}, state.settings); }
+
+// ---------- tekening laden ----------
+function loadImage(src) {
+  return new Promise((res, rej) => { const im = new Image(); im.onload = () => res(im); im.onerror = rej; im.src = src; });
+}
+async function setDrawing(src) {
+  srcImg = await loadImage(src);
+  const s = Math.min(1, 480 / Math.max(srcImg.width, srcImg.height));
+  const c = document.createElement('canvas'); c.width = Math.round(srcImg.width * s); c.height = Math.round(srcImg.height * s);
+  const g = c.getContext('2d'); g.imageSmoothingQuality = 'high'; g.drawImage(srcImg, 0, 0, c.width, c.height);
+  const d = g.getImageData(0, 0, c.width, c.height);
+  srcData = { w: c.width, h: c.height, data: d.data };
+  analysisKey = ''; run();
+}
+
+// ---------- rekenen ----------
+function run() {
+  if (!srcData) return;
+  const st = settings();
+  const ak = ANALYSE_KEYS.map(k => st[k]).join('|') + state.sample;
+  if (ak !== analysisKey) {
+    analysis = PO.analyse(srcData, st); analysisKey = ak; selMat = Math.min(selMat, analysis.k - 1);
+    // voorbeeld met een bekend R/S-palet: elke groep krijgt de best passende helling daaruit (gids B5)
+    const smp = ASSETS.samples[state.sample]; sampleRamps = null;
+    if (smp && smp.ramps) { const m = PO.matchRamps(analysis.matColors, smp.ramps); sampleRamps = m.map(n => Object.assign({ name: n }, smp.ramps[n])); }
+  }
+  pal = { K: [16,16,16], W: [255,255,255], shine: [250,250,250] };
+  const lumOf = c => 0.3 * c[0] + 0.59 * c[1] + 0.11 * c[2];
+  st.rampLum = [];
+  for (let i = 0; i < analysis.k; i++) {
+    const r = state.rampOverride[i] || (sampleRamps && sampleRamps[i]) || PO.autoRamp(analysis.matColors[i], st.contrast);
+    for (const t of 'hbsl') pal['m'+i+t] = r[t];
+    st.rampLum.push([lumOf(r.h), lumOf(r.b), lumOf(r.s)]);
+  }
+  st.lightY = -Math.sqrt(Math.max(0.04, 1 - st.lightX * st.lightX));
+  po = PO.pixelover(analysis, st);
+  draw(); renderMats(); renderPalette(); renderChecks(); renderCompare();
+}
+
+function composeStep(s) { return PO.compose(po, pal, Math.max(2, s), s >= 7 ? state.overrides : null); }
+
+function draw() {
+  const cv = $('cv'), g = cv.getContext('2d'); const img = g.createImageData(64, 64);
+  if (step === 1) {          // tekening op spritemaat, 'jagged'
+    const t = document.createElement('canvas'); t.width = po.w; t.height = po.h; const tg = t.getContext('2d'); tg.imageSmoothingEnabled = false;
+    tg.drawImage(srcImg, po.art.x0 * srcImg.width / srcData.w, po.art.y0 * srcImg.height / srcData.h, po.w * po.f * srcImg.width / srcData.w, po.h * po.f * srcImg.height / srcData.h, 0, 0, po.w, po.h);
+    g.clearRect(0, 0, 64, 64); g.drawImage(t, Math.floor((64 - po.w) / 2), Math.max(0, 64 - po.h - 2));
+  } else {
+    const { key } = composeStep(step);
+    for (let i = 0; i < 4096; i++) { const k = key[i]; if (!k) continue; const c = pal[k] || [255,0,255]; img.data[i*4] = c[0]; img.data[i*4+1] = c[1]; img.data[i*4+2] = c[2]; img.data[i*4+3] = 255; }
+    g.putImageData(img, 0, 0);
+  }
+  drawOverlay();
+}
+
+function drawOverlay() {
+  const ov = $('ov'), g = ov.getContext('2d'); const S = ov.width / 64; g.clearRect(0, 0, ov.width, ov.height);
+  if ($('showGrid').checked) { g.strokeStyle = 'rgba(120,130,160,.25)'; g.lineWidth = 1; for (let i = 0; i <= 64; i++) { g.beginPath(); g.moveTo(i*S+.5, 0); g.lineTo(i*S+.5, ov.height); g.stroke(); g.beginPath(); g.moveTo(0, i*S+.5); g.lineTo(ov.width, i*S+.5); g.stroke(); } }
+  if ($('showChecks').checked && step >= 6 && lastChecks) {
+    g.lineWidth = 2;
+    const mark = (pts, col) => { g.strokeStyle = col; for (const [x, y] of pts) g.strokeRect(x*S+1, y*S+1, S-2, S-2); };
+    mark(lastChecks.open, '#e8455f'); mark(lastChecks.holes, '#e8455f'); mark(lastChecks.lcorner, '#f08a24'); mark(lastChecks.clumps.map(([x,y]) => [x,y]), '#f08a24');
+  }
+}
+
+let lastChecks = null;
+function renderChecks() {
+  const { key } = composeStep(7); const c = PO.checks(key, pal); lastChecks = c;
+  const items = [
+    [c.colors <= 15 ? 'ok' : 'bad', `${c.colors} kleuren (max. 15 in Gen 3)` + (c.colors > 15 ? ' — minder kleurgroepen of een gedeelde helling kiezen.' : '.')],
+    [c.open.length ? 'bad' : 'ok', c.open.length ? `${c.open.length} open randpixels (rood omlijnd): een rand zonder omlijningskleur.` : 'Geen open randen.'],
+    [c.holes.length ? 'warn' : 'ok', c.holes.length ? `${c.holes.length} ingesloten transparante pixels: lucht tussen poten is goed, losse gaatjes niet.` : 'Geen ingesloten gaatjes.'],
+    [c.lcorner.length ? 'warn' : 'ok', c.lcorner.length ? `${c.lcorner.length} plekken waar een horizontaal en verticaal stuk zonder tussenstapje samenkomen (oranje; gids D4).` : 'Curven: overal een tussenstapje (gids D4).'],
+    [c.clumps.length ? 'warn' : 'ok', c.clumps.length ? `${c.clumps.length} klonten zwart (oranje): omlijning hoort 1 px te zijn.` : 'Omlijning overal 1 px.'],
+    [c.black > 0.65 || c.black < 0.25 ? 'warn' : 'ok', `Zwart in de omtrek: ${Math.round(c.black*100)}% (echte Gen 3-sprites ±35–60%).`],
+    ['ok', `${c.pixels} pixels gevuld.`]
+  ];
+  $('checks').innerHTML = items.map(([s, t]) => `<div class="chk"><span class="dot ${s}"></span><span>${t}</span></div>`).join('');
+  drawOverlay();
+}
+
+function renderCompare() {
+  const box = $('compare'); box.innerHTML = '';
+  const fig = (el, cap) => { const f = document.createElement('figure'); f.append(el); const c = document.createElement('figcaption'); c.textContent = cap; f.append(c); box.append(f); };
+  const mine = document.createElement('canvas'); mine.width = 64; mine.height = 64; mine.getContext('2d').drawImage($('cv'), 0, 0);
+  const s2 = document.createElement('canvas'); s2.width = 128; s2.height = 128; const g2 = s2.getContext('2d'); g2.imageSmoothingEnabled = false; g2.drawImage($('cv'), 0, 0, 128, 128);
+  fig(mine, 'jouw sprite 1×'); fig(s2, '2×');
+  const smp = ASSETS.samples[state.sample];
+  for (const n of (smp ? smp.compare : ['zigzagoon','linoone','sentret'])) { const im = new Image(); im.src = ASSETS.refs[n]; im.width = 64; im.height = 64; fig(im, n + ' 1×'); }
+  if (smp && smp.extra) { const im = new Image(); im.src = smp.extra; im.style.height = '64px'; fig(im, 'pixel-over uit de gids'); }
+}
+
+// ---------- kleuren ----------
+function renderMats() {
+  const box = $('mats'); box.innerHTML = '';
+  for (let i = 0; i < analysis.k; i++) {
+    const d = document.createElement('div'); d.className = 'mat'; d.setAttribute('role', 'button'); d.tabIndex = 0; d.setAttribute('aria-selected', i === selMat);
+    const c = analysis.matColors[i];
+    d.innerHTML = `<span class="src" style="background:rgb(${c})" title="kleur in de tekening"></span><span>Groep ${i+1}${state.rampOverride[i] ? ' · ' + (state.rampOverride[i].name || 'eigen') : sampleRamps ? ' · R/S: ' + sampleRamps[i].name : ' · automatisch'}</span><span class="ramp">${'hbsl'.split('').map(t => `<span style="background:rgb(${pal['m'+i+t]})"></span>`).join('')}</span>`;
+    d.onclick = () => { selMat = i; renderMats(); };
+    d.onkeydown = e => { if (e.key === 'Enter' || e.key === ' ') { e.preventDefault(); d.click(); } };
+    box.append(d);
+  }
+}
+function renderPresets() {
+  $('presets').innerHTML = '';
+  for (const p of ASSETS.presets) {
+    const b = document.createElement('button'); b.className = 'preset';
+    b.innerHTML = `<span class="ramp">${['h','b','s','l'].map(t => `<span style="background:rgb(${p[t]})"></span>`).join('')}</span>${p.name}`;
+    b.onclick = () => { state.rampOverride[selMat] = { h: p.h, b: p.b, s: p.s, l: p.l, name: p.name }; changed(); run(); };
+    $('presets').append(b);
+  }
+}
+$('autoColor').onclick = () => { delete state.rampOverride[selMat]; changed(); run(); };
+
+// ---------- pixels met knopjes ----------
+function renderPalette() {
+  const box = $('palette'); box.innerHTML = '';
+  const keys = Object.keys(pal).filter(k => k !== 'W');
+  const add = (k, cls) => { const b = document.createElement('button'); b.className = 'swatch' + (cls || ''); b.title = k === '_' ? 'transparant' : k; b.setAttribute('aria-pressed', color === k);
+    if (k !== '_') b.style.background = `rgb(${pal[k]})`; b.onclick = () => { color = k; tool = k === '_' ? 'erase' : 'pen'; syncTools(); renderPalette(); }; box.append(b); };
+  for (const k of keys) add(k);
+  add('_', ' clear');
+  $('handInfo').textContent = Object.keys(state.overrides).length ? `${Object.keys(state.overrides).length} pixels met de hand aangepast. Ze blijven staan als je knoppen verschuift.` : 'Nog geen handwerk. Zet "Pixels aanpassen" aan en tik op het grote canvas.';
+}
+function syncTools() { document.querySelectorAll('#tools button').forEach(b => b.setAttribute('aria-pressed', b.dataset.tool === tool)); }
+document.querySelectorAll('#tools button').forEach(b => b.onclick = () => { tool = b.dataset.tool; syncTools(); });
+$('paintMode').onclick = () => { paint = !paint; $('paintMode').setAttribute('aria-pressed', paint); $('paintMode').textContent = 'Pixels aanpassen: ' + (paint ? 'aan' : 'uit'); $('box').classList.toggle('paint', paint); if (paint) { step = 7; renderSteps(); draw(); } };
+function cellFromEvent(e) { const r = $('box').getBoundingClientRect(); return [Math.floor((e.clientX - r.left) / r.width * 64), Math.floor((e.clientY - r.top) / r.height * 64)]; }
+let painting = false;
+function applyAt(e) {
+  const [x, y] = cellFromEvent(e); if (x < 0 || y < 0 || x > 63 || y > 63) return;
+  const pos = x + ',' + y, before = state.overrides[pos];
+  if (tool === 'pick') { const { key } = composeStep(7); const k = key[y * 64 + x]; color = k || '_'; tool = k ? 'pen' : 'erase'; syncTools(); renderPalette(); return; }
+  let after;
+  if (tool === 'reset') after = undefined; else if (tool === 'erase') after = '_'; else { if (!color) return; after = color; }
+  if (before === after) return;
+  undo.push([pos, before]); redo = [];
+  if (after === undefined) delete state.overrides[pos]; else state.overrides[pos] = after;
+  draw(); renderChecks(); renderPalette(); changed();
+}
+$('box').addEventListener('pointerdown', e => { if (!paint) return; painting = true; $('box').setPointerCapture(e.pointerId); applyAt(e); });
+$('box').addEventListener('pointermove', e => { if (paint && painting && tool !== 'pick') applyAt(e); });
+$('box').addEventListener('pointerup', () => { painting = false; });
+$('undo').onclick = () => { const u = undo.pop(); if (!u) return; redo.push([u[0], state.overrides[u[0]]]); if (u[1] === undefined) delete state.overrides[u[0]]; else state.overrides[u[0]] = u[1]; draw(); renderChecks(); renderPalette(); changed(); };
+$('redo').onclick = () => { const r = redo.pop(); if (!r) return; undo.push([r[0], state.overrides[r[0]]]); if (r[1] === undefined) delete state.overrides[r[0]]; else state.overrides[r[0]] = r[1]; draw(); renderChecks(); renderPalette(); changed(); };
+$('clearHand').onclick = () => { if (!Object.keys(state.overrides).length) return; undo.push(['*', state.overrides]); state.overrides = {}; draw(); renderChecks(); renderPalette(); changed(); };
+
+// ---------- stappen ----------
+function renderSteps() {
+  $('steps').innerHTML = STEPS.map(([n, t]) => `<button aria-pressed="${n === step}" data-s="${n}"><span class="num">${n}</span>${t}</button>`).join('');
+  $('steps').querySelectorAll('button').forEach(b => b.onclick = () => { step = +b.dataset.s; renderSteps(); draw(); });
+  $('stepnote').textContent = STEPS[step - 1][2];
+}
+
+// ---------- schuifknoppen ----------
+function syncSliders() {
+  const st = settings();
+  for (const k of SLIDERS) { const el = $(k); el.value = st[k]; $('o_' + k).textContent = (fmt[k] || (v => (+v).toString()))(+st[k]); }
+  $('pseudo').checked = !!st.pseudo;
+}
+let runTimer = null;
+for (const k of SLIDERS) $(k).addEventListener('input', () => { state.settings[k] = +$(k).value; $('o_' + k).textContent = (fmt[k] || (v => (+v).toString()))(+$(k).value); clearTimeout(runTimer); runTimer = setTimeout(run, 60); changed(); });
+$('pseudo').onchange = () => { state.settings.pseudo = $('pseudo').checked; run(); changed(); };
+$('showChecks').onchange = drawOverlay; $('showGrid').onchange = drawOverlay;
+$('resetAll').onclick = () => { state.settings = {}; state.rampOverride = {}; syncSliders(); run(); changed(); };
+
+// ---------- tekening kiezen ----------
+for (const [id, s] of Object.entries(ASSETS.samples)) { const o = document.createElement('option'); o.value = id; o.textContent = s.name; $('sample').append(o); }
+$('sample').onchange = async () => { await loadWork($('sample').value); };
+$('upload').onchange = async e => {
+  const file = e.target.files[0]; if (!file) return;
+  const url = URL.createObjectURL(file);
+  state = { sample: 'upload', settings: {}, rampOverride: {}, overrides: {}, assetId: null };
+  syncSliders(); await setDrawing(url);
+  if (assets) { try { const a = await assets.upload(file); state.assetId = a.id; changed(); $('saveStatus').textContent = 'Tekening bewaard; opslaan bewaart ook je instellingen.'; } catch (err) { $('saveStatus').textContent = 'Tekening kon niet bewaard worden (' + (err.code || err.message) + '); je kunt wel verder werken.'; } }
+};
+
+// ---------- opslaan (gedeelde opslag, zodat Claude je werk kan lezen) ----------
+function changed() { if (!db) return; $('saveStatus').textContent = 'Wijzigingen nog niet opgeslagen.'; clearTimeout(saveTimer); saveTimer = setTimeout(save, 2500); }
+async function save() {
+  if (!db) { $('saveStatus').textContent = 'Opslaan is hier niet beschikbaar; je werk blijft tot je de pagina sluit.'; return; }
+  try {
+    await db.doc('werk/' + state.sample).set({ sample: state.sample, settings: state.settings, rampOverride: state.rampOverride, overrides: state.overrides, assetId: state.assetId || null, saved: Date.now() });
+    $('saveStatus').textContent = 'Opgeslagen ' + new Date().toLocaleTimeString('nl-NL', { hour: '2-digit', minute: '2-digit' }) + '.';
+  } catch (err) { $('saveStatus').textContent = 'Opslaan lukte niet (' + (err.code || err.message) + ').'; }
+}
+$('save').onclick = () => { clearTimeout(saveTimer); save(); };
+async function loadWork(id) {
+  state = { sample: id, settings: {}, rampOverride: {}, overrides: {}, assetId: null };
+  if (db) { try { const d = await db.doc('werk/' + id).get(); const v = d && (d.data ? d.data : d); if (v && v.sample) Object.assign(state, { settings: v.settings || {}, rampOverride: v.rampOverride || {}, overrides: v.overrides || {}, assetId: v.assetId || null }); } catch (e) {} }
+  undo = []; redo = []; $('sample').value = id in ASSETS.samples ? id : $('sample').value;
+  syncSliders();
+  let src = ASSETS.samples[id] ? ASSETS.samples[id].src : null;
+  if (id === 'upload' && state.assetId) src = '/_blob/' + state.assetId;
+  if (src) await setDrawing(src);
+}
+
+// ---------- PNG bewaren ----------
+$('export').onclick = async () => {
+  const { key } = composeStep(7);
+  const c = document.createElement('canvas'); c.width = 64; c.height = 64; const g = c.getContext('2d'); const img = g.createImageData(64, 64);
+  for (let i = 0; i < 4096; i++) { const k = key[i]; if (!k) continue; const col = pal[k]; img.data.set([col[0], col[1], col[2], 255], i * 4); }
+  g.putImageData(img, 0, 0);
+  const blob = await new Promise(r => c.toBlob(r, 'image/png'));
+  if (!downloads) { $('saveStatus').textContent = 'Bewaren als bestand is hier niet beschikbaar.'; return; }
+  try { await downloads.save({ filename: 'sprite_' + state.sample + '.png', data: blob }); } catch (err) { $('saveStatus').textContent = 'Bewaren afgebroken.'; }
+};
+
+// ---------- start ----------
+renderSteps(); renderPresets(); syncSliders();
+loadWork(state.sample);
+(async () => {
+  if (!window.claude || !window.claude.use) return;
+  const [d, a, dl] = await Promise.all([claude.use('db'), claude.use('assets'), claude.use('downloads')]);
+  db = d; assets = a; downloads = dl;
+  if (db) { $('saveStatus').textContent = 'Opslaan staat aan.'; await loadWork($('sample').value || state.sample); }
+  if (!downloads) $('export').disabled = true;
+})();
+</script>

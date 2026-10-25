@@ -69,3 +69,4 @@ src/data/pokemon/ow_species_keep.h
 .claude/worktrees/
 .map_version
 docs/concept/ontwerp/olinguito_v2/pop3d_[0-9]*.png
+!tools/grounded/spritegen/web/*.js

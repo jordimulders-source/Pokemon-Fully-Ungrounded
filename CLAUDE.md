@@ -54,7 +54,7 @@ Algemene lessen staan hieronder; de rest is per onderwerp opgesplitst. **Lees he
 | Nieuwe Pokémon ontwerpen (fakemon, regional forms) | `docs/lessen/FAKEMON_DESIGN.md` (vóór elke ontwerp-/spriteronde) |
 | Pokémon-sprites pixelen (omlijning, schaduw, ogen, curven) | `docs/lessen/SPRITING.md` (vóór elke spriteronde) |
 | Vormen, poses, verhoudingen van Pokémon-sprites | `docs/lessen/FAKEMON_CHECKLIST.md` (+ `vormstudie/STUDIE.md`) |
-| Waarom het spriteproces misging en wat anders moet | `docs/lessen/RETRO_OLINGUITO.md` (één sprite tegelijk, SPEC.md per sprite, controle per onderdeel) |
+| Waarom het spriteproces misging en wat anders moet | `docs/lessen/RETRO_OLINGUITO.md` (één sprite tegelijk, SPEC.md per sprite, controle per onderdeel); wat wél werkte: `docs/lessen/RETRO_KOLIBRIE.md` (foto als skelet, silhouet eerst, keurder vóór Jordi, aanbevelingen sprite-editor) |
 | **Norm voor elke sprite-agent (één pagina)** | `docs/lessen/SPRITE_NORM.md` |
 | **Elke sprite-agent-opdracht** (ook kleine reparaties) | `docs/lessen/SPRITE_OPDRACHT.md`: verwijzing altijd in de opdracht; Jordi's vaste feedback; Claude bekijkt elk resultaat zelf vóór Jordi |
 | C-code: gevechten, UI, eigen schermen, scripts | `docs/lessen/CODE.md` |

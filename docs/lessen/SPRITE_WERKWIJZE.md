@@ -62,6 +62,8 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - Alleen wat Jordi of de keurder noemt; benoemde zones, pixelbudget, diff-bewijs buiten de zones.
 - **Kleine reparaties zijn klein**: Jordi vond olinguito ronde 3 al "het beste"; ronde 4 was 53 px.
 - Wat Jordi goedkeurt wordt bevroren in SPEC.md; afkeuringen gaan onder "Afgekeurd".
+- **Overtrekvel met pixelraster** (Coathief, 25 okt; Jordi: "zo met een pixelraster werkt goed voor dit soort aanpassingen"): bij vormreparaties de onderlaag en de sprite naast elkaar op hetzelfde 64-raster met spritecoördinaten (`docs/concept/sprites/coathief/kleur/ronde8/overtrekvel.py`). De maker trekt cel voor cel over en markeert elke afwijking met reden; Jordi tekent cellen af op het vel. Stuur het vel bij elke vormronde mee. Losse krabbellijnen op een 8×-uitsnede gaven 6 rondes drift (de sprite week telkens "net teveel" af van de onderlaag); het raster loste het in 1–2 rondes op.
+- **Krabbels van Jordi terugrekenen:** schaal meten aan een bekend kenmerk (het oog), dan per cel aflezen; zijn lijn is een indicatie, de onderlaag is de maatstaf.
 
 ## Stap 6. Afronden
 - Eindversie in `docs/concept/sprites/<naam>/af/` + vel; SPEC.md, `CHANGELOG.md`, Stand van zaken in `CLAUDE.md` bijwerken; lessen naar het passende `docs/lessen/`-bestand.

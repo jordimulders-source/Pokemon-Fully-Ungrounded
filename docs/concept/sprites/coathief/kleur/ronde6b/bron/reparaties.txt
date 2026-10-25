@@ -209,3 +209,18 @@
 60 8 ........x...x.xcxmyzzzmk..
 61 8 ................mkkkkkkk..
 62 8 .............xccn.........
+# ===== ronde 6b: kleurindeling volgens silhouet/labels_voorpoten.txt (zone x 8-33, y 48-62) =====
+# N = opgetilde poot (nabije tinten), F = staande poot (schaduwtint), c = klauw, v = vacht (bovenarm/borst)
+50 8 ..............dyYymdbbbdk.
+51 8 .............myYyzzmdbdmk.
+52 8 ............myyzzzzmdbdmk.
+53 8 ............myzzzzmkddymk.
+54 8 ...........cnyzzmk.mddyk..
+55 8 ..........cwxccxmk.kyzmk..
+56 8 ..........ccxcwxk..myzmk..
+57 8 .........ccx.ccx...mzymk..
+58 8 ........ccx.ccx....mzyk...
+59 8 ........cx..cx..cwccnzk...
+60 8 ........x...x.xccxxxxnmk..
+61 8 ................ccwcnnkk..
+62 8 .............xccn.........

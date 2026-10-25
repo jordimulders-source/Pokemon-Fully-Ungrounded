@@ -14,7 +14,7 @@ GROEP = {'d': 'b', 'b': 'b', 'l': 'b', 'h': 'b', 'k': 'k', 'm': 'z', 'z': 'z', '
          'n': 'c', 'x': 'c', 'c': 'c', 'w': 'c', 'r': 'o', 'i': 'o'}
 OK = {'b': 'dk', 'z': 'mk', 'c': 'xk', 'k': 'k', 'o': ''}
 # klauwen (1-2 px breed): aan de lichtkant mag n of de creme kern c op de rand staan (ronde 3b, Linoone/Sneasel)
-KLAUW = lambda x, y: y >= 57 and x <= 25  # ronde 4: klauwen van 2 px hebben geen binnenpixel; glans aan de lichtkant
+KLAUW = lambda x, y: y >= 54 and x <= 29  # ronde 4: klauwen van 2 px hebben geen binnenpixel; glans aan de lichtkant
 N4 = ((1, 0), (-1, 0), (0, 1), (0, -1))
 def t(x, y): return not (0 <= x < 64 and 0 <= y < 64) or g[y][x] == '.'
 open_ = [(x, y, g[y][x]) for y in range(64) for x in range(64) if g[y][x] != '.'

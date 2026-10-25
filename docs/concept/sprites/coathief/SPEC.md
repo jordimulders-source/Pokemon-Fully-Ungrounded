@@ -51,7 +51,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - **Silhouet ronde 1 goedgekeurd en bevroren** (Jordi, 25 okt: "akkoord, laten we hiermee werken"): `silhouet/ronde1.txt` = `silhouet/ronde1_1x.png` (1297 px). Alle kleurrondes: alpha-diff 0 hiermee.
 
 ## Besluiten na ronde 3b (Jordi, 25 okt)
-- Lijfkleur blijft warm (*Nasua nasua*). Klauwen alleen aan de voorpoten.
+- Lijfkleur blijft warm (*Nasua nasua*). Klauwen alleen aan de voorpoten, aan **beide** voorpoten (Jordi over ronde 4: "hij heeft nu 1 poot met klauwen en 1 zonder"); silhouet ronde 3 (`silhouet/ronde3.py`, +14 px: 2 klauwtjes aan de staande voet, 1333 px).
 - Formaat blijft (precedent Zigzagoon → Linoone ×0,97); olinguito niet verkleinen.
 - Te doen: oren rond (niet afgeknipt), geen lachmondje, klauwen beter/langer, staande verre voorpoot natuurlijker → silhouet ronde 2 (`silhouet/ronde2.py`, 46 px in 3 zones, 1319 px) + kleur ronde 4.
 - **Bewaard voor later (A/B-test):** bovenste vlek een tint terug zodat het oog het helderste punt is; frons/wenkbrauwlijn boven het oog; klauwen bijna-wit zoals de olinguito; sterkere lichtvlekken schouder/heup; familiebrug in oudroze (mondhoek of oorbinnenkant). Bron: `kleur/ronde3/EVOLUTIEKEURING.md`.

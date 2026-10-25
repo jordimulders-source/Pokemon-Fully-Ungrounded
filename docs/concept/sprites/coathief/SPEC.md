@@ -21,6 +21,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - "het oog moet minder groot. zie referenties" (foto 6–8)
 - "maak een A/B/C test van B1. huidige ontwerp, tegenover hoofd met natuurlijke kleuren ipv de bivak en 1 met de vlekken die je voorstelt. Het oog moet in de praktijk niet puur een rode stip zijn, want dat is niet des pokemons, maar kunnen we mogelijk zodra we gaan spriten aanpassen"
 - "ik vind c wel tof! ik dacht eraan om het hele oog te omcirkelen, maar wat jij zegt klopt, dit is een echte coati vlek"
+- "akkoord, laten we hiermee werken" (silhouet ronde 1)
+- "ja en 1 extra keuring, we moeten kijken of de sprite sterker lijkt dan de olinguito, of het logisch is dat die in coathief evolved"
 
 ## Referenties (`referenties/`)
 - `foto1_rots_snuffelend.webp`: kleur, kopvorm, staartringen. `foto2_zijaanzicht_render.webp`: verhoudingen (lang lijf, lange poten, staart).

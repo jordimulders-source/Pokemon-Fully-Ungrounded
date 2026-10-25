@@ -24,3 +24,7 @@ Ontwerp en Jordi's woorden per ronde: `referenties/ONTWERP.md` (uit de tak `clau
 
 ## Jordi over kleur ronde 3 (25 okt)
 - "dit begint echt al goed in de buurt te komen, de klauwen zijn nog niet helemaal mooi gelijnd, net als het oor, maar dit is het beste olinguito ontwerp wat ik tot nu toe heb gezien"
+
+## Goedgekeurd (Jordi, 25 okt)
+- Kleur ronde 4 = `af/olinguito.png`: "ik denk dat ik m zo wel prima vind, bijv purrloin is ook een dark type maar zelf niet donker gekleurd. [...] Het rode oog plus de zwarte streep en de klauw duiden al op wat geniepige evilness. Ja ik denk dat ik wel akkoord ben". Masker, helderheid en snoet blijven zo.
+- Nog te doen: frame 2, rug, icoon, shiny, naam/data.

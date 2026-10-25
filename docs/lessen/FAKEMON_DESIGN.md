@@ -3,6 +3,7 @@
 Aangeleverd door Jordi (23 okt), samengevat uit fakemon-gidsen (o.a. YouTube-video's over Sugimori's werkwijze, r/fakemon, en een klassieke fakemon-gids). Lees dit **vóór elke ontwerp- of spriteronde** van een nieuwe Pokémon. Zie ook `docs/concept/sprites/KEURING_RONDE5.md`.
 
 ## Vaste werkwijze per fakemon (Jordi akkoord, 23 okt; doel ≤ ±5 rondes)
+**Vervangen door `SPRITE_WERKWIJZE.md` (Jordi, 25 okt) waar die verschilt** (o.a. silhouet uit een foto of het 3D-poppetje i.p.v. een andere Pokémon als skelet).
 Waarom: alpaca en olinguito kostten 15 rondes, Cuyby 3 en Cuychu 4. De rondes gingen op aan details vóór het silhouet klopte, zelf geconstrueerde lijven, goedgekeurde delen die opnieuw werden aangeraakt, lessen die niet werden afgevinkt, en Jordi die als eerste keurder fouten vond.
 1. **Ontwerp:** concept + referentiefoto + modeltekening; Jordi kiest. Geen pixels.
    - **Bouwtype bepaalt de moeite** (24 okt): bol-/vachtvormen zonder losse ledematen (Cuyby 3 rondes, Cuychu 4) gaan snel: het werk zit in kleur, schaduw en gezicht. Viervoeters en wezens met armen/klauwen (olinguito 30+, alpaca 17) mislukken op constructie (poten in 3/4, klauwen, kop). Daar: **volledig een echte Pokémon als basis** (pose + poten), alleen het uiterlijk veranderen.

@@ -107,3 +107,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.19] - Kolibrie: volume en oog
 - Jordi over de eindversie: "erg mooi", maar "nog net iets te 2d qua shading" en "het oog is nog niet helemaal pokemon" (klein houden, "zoek naar pokemon met minimale ogen"). Staart naar achteren daarmee goedgekeurd.
 - Ronde 5 (`docs/concept/sprites/kolibrie/ronde5/`): 102 px omgekleurd binnen hetzelfde silhouet: bolle kop (kapje + schaduw op wang/keel), schuin hooglicht op de borst, schaduwband onder de buik, gewelfde vleugelwortel, slierten met licht- en schaduwkant. Oog 2×3 als kraaloog naar Corviknight/Kilowattrel (zwart lid, glans, blauwgroene iris). Onafhankelijke keuring GOED.
+
+### [v0.0.20] - Kolibrie: eindkeuring
+- Nieuwe, onafhankelijke eindkeuring op alle richtlijnen (`docs/concept/sprites/kolibrie/ronde5/EINDKEURING.md`): alles PASS behalve open randen aan de bijna-witte kuiftoppen; 4 px omgekleurd naar de bleke omlijningstint (silhouet gelijk). Resultaat: `docs/concept/sprites/kolibrie/af/kolibrie.png`.
+- Retrospectief kolibrie vs olinguito + aanbevelingen voor een sprite-editor: `docs/lessen/RETRO_KOLIBRIE.md`.

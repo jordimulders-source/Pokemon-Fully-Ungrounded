@@ -29,3 +29,4 @@ Ontwerp en Jordi's woorden per ronde: `referenties/ONTWERP.md` (uit de tak `clau
 - Kleur ronde 4 = `af/olinguito.png`: "ik denk dat ik m zo wel prima vind, bijv purrloin is ook een dark type maar zelf niet donker gekleurd. [...] Het rode oog plus de zwarte streep en de klauw duiden al op wat geniepige evilness. Ja ik denk dat ik wel akkoord ben". Masker, helderheid en snoet blijven zo.
 - Nog te doen: frame 2, rug, icoon, shiny, naam/data.
 - **Eindkeuring (25 okt, `af/EINDKEURING.md`):** hoofdvraag PASS; reparatie 1 uitgevoerd (verre voorpoot 2 px roze voetje). Open, raakt het silhouet (vraag aan Jordi): losse spriet (19,59) en drie haakjes van 1 px (kop achter, voorhoofd, staart links).
+- **Af (25 okt):** Jordi akkoord met de 4 silhouetpixels; spriet weg, drie haakjes glad (7 px). 0 open randen. Eindversie `af/olinguito.png`.

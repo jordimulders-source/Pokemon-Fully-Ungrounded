@@ -119,3 +119,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.22] - Olinguito v2 goedgekeurd + vaste sprite-werkwijze
 - Olinguito v2 (Dark-starter): hoek gekozen met het 3D-poppetje (B2: lijf 40°, kop 49°, kantel 8°, Linoone-perspectief); silhouet = de B2-render verkleind (massa), met de hand opgeschoond (klauwen aan elkaar, oor, kop, achterpoten, staart; ronde 5); kleur in 4 rondes met een maker-agent, eigen controle en een onafhankelijke keuring. Jordi: "het beste olinguito ontwerp wat ik tot nu toe heb gezien"; goedgekeurd: `docs/concept/sprites/olinguito_v2/af/olinguito.png`.
 - Nieuwe vaste werkwijze voor alle sprites: `docs/lessen/SPRITE_WERKWIJZE.md` (Jordi: "de beste methode", "zodat alle nieuwe gesprekken vanaf nu het zo oppakken"); verwijzingen in CLAUDE.md en FAKEMON_DESIGN.md.
+
+### [v0.0.23] - Olinguito v2 af na eindkeuring
+- Verse eindkeuring (`docs/concept/sprites/olinguito_v2/af/EINDKEURING.md`): hoofdvraag PASS; reparaties: verre voorpoot roze voetje (2 px), losse spriet onder de klauw weg en drie haakjes van 1 px in curven glad (Jordi akkoord). 0 open randen. `docs/concept/sprites/olinguito_v2/af/olinguito.png` is af.

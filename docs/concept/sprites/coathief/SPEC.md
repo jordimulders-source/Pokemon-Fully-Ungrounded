@@ -59,4 +59,5 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 ## Afgekeurd (niet herhalen)
 - Lachmondje (mondhoek omhoog, ronde 3): "ziet er een beetje gek uit".
 - Opgetilde voorpoot ver naar links gestrekt met de klauwen vooruit (silhouet ronde 2–3): moet zoals de onderlaag, compact onder de kin met hangende klauwen (Jordi: "nee de voorpoten zijn omgewisseld, kijk maar goed" en bij de krabbel `referenties/krabbel_jordi_voorpoten.png`: "nee dat wordt te scherp dan. [...] Misschien kan je even de twee poten opnieuw met een silhouet maken terwijl de rest hetzelfde blijft, want de rest is helemaal goed").
+- **Silhouet ronde 4 goedgekeurd en bevroren** (Jordi: "ja nu klopt ie"): `silhouet/ronde4.txt` (1321 px), voorpoten zoals de onderlaag.
 - Mijn interpretaties die niet klopten: verre achterpoot schuin (`silhouet/variant_loop.*`), staande poot vóór de opgetilde (`silhouet/variant_wissel.*`).

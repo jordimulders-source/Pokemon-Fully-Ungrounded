@@ -224,3 +224,19 @@
 60 8 ........x...x.xccxxxxnmk..
 61 8 ................ccwcnnkk..
 62 8 .............xccn.........
+# ===== ronde 6c: Jordi's lijn (lijn.py van Claude, 7 px) - hier overschreven door 6d =====
+# ===== ronde 6d: afwerking overlap voorpoten + 1 px dikker (silhouet ronde5.txt; zone x 15-34, y 48-61) =====
+# bruine bovenarm als ronde V (vacht, licht linksboven, schaduw langs de curve), gebogen naad naar de manchet,
+# een doorlopende k-curve (32,50)(32,51)(31,52)(30,53)(29..27,54) en daarna de ronde onderkant van de manchet,
+# verre poot onder de curve: slagschaduw m, dan de schaduwtinten.
+50 22 dyYmdllbbdk
+51 21 myYyzmdlbbdk
+52 20 myyzzzzmlbdkk
+53 20 myzzzzzmbdkmk
+54 19 cnyzzzmmkkkmzk
+55 24 mk
+55 27 mmzmk
+56 24 kk
+56 27 myzmk
+58 27 mzymk
+59 30 mk

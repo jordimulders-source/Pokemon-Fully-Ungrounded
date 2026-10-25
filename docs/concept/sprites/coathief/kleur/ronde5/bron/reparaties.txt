@@ -188,3 +188,9 @@
 61 24 mkkkkkkk
 62 21 ..
 62 24 ..
+# ===== ronde 5: klauwen aan de staande verre voorpoot (silhouet ronde3.txt; zone x 18-26, y 57-62) =====
+# donkere tenen (26,59), (25,60), (24,61) blijven de aanzet; klauw 1 boven, klauw 2 onder, gescheiden door x
+59 23 cwn
+60 21 ccxm
+61 19 xn.mm
+62 21 xcc

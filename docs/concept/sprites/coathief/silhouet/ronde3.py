@@ -3,7 +3,7 @@ zone x 18-25, y 58-62: 2 kleine klauwen voor de voet van de staande verre voorpo
 import numpy as np
 rows = [l.rstrip('\n') for l in open('ronde2.txt')]
 g = [list(r) for r in rows]
-add = {59: [(23, 25)], 60: [(21, 24)], 61: [(19, 20), (22, 24)], 62: [(21, 23)]}
+add = {59: [(23, 25)], 60: [(21, 24)], 61: [(19, 20)], 62: [(21, 24)]}  # voorstel maker r5: lucht tussen de klauwen
 for y, sp in add.items():
     for a, b in sp:
         for x in range(a, b + 1): g[y][x] = '#'

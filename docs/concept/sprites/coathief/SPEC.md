@@ -71,3 +71,9 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 - Op overtrekvel r8 (`referenties/krabbel_jordi_overtrek2.png`): "je hebt het een beetje aangepast waardoor dit weg kan, rood omcirkelde 3 pixels. Enige wat je dan mag doen is een laatste check met een agent tegenover al onze genoemde richtlijnen om het rond te maken, klauwcheck hoort daarbij" → ronde 8b: (32,54–56) weg, silhouet ronde 10; daarna eindkeuring.
 - **Helderheid (Jordi):** "hij moet donkerder tonen dan linoone en furret, want het is een dark type" → niet lichter maken; keurdersadvies "meer licht op schouder/flank" vervalt.
 - Mijn interpretaties die niet klopten: verre achterpoot schuin (`silhouet/variant_loop.*`), staande poot vóór de opgetilde (`silhouet/variant_wissel.*`).
+
+## Af (25 okt)
+- **`af/coathief.png`** (+ `af/vel.png`) = ronde 9: ronde 8b + 5 klauwpixels uit de laatste keuring (`kleur/ronde8b/LAATSTE_KEURING.md`, BIJNA → AF). Silhouet `silhouet/ronde10.txt` (1315 px), 16 kleuren, luma 80 (tussen Mightyena en Houndour; donkerder dan Linoone/Furret). Jordi: "Enige wat je dan mag doen is een laatste check met een agent tegenover al onze genoemde richtlijnen om het rond te maken".
+- Ter info uit de laatste keuring (geen opdracht): staande klauwen lezen als liggende nagels (volgt de onderlaag); hangende klauwen 4–5 rijen (olinguito ±6); staart 11–14 rijen recht omhoog; verre poten nauwelijks donkerder dan nabije.
+- Open: A/B-test kleine kleurreparaties (zie boven), frame 2, rug, icoon, shiny, data.
+- **Kosten (gemeten uit de sessielogs):** hoofdsessie ±0,40M output + 0,75M nieuwe input; maker (13 rondes) ±0,57M + 3,6M; 5 keurders ±0,4M + 1,0M. Duurste deel: 6 voorpootrondes zonder pixelraster.

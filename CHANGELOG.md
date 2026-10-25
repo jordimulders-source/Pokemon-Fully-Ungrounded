@@ -126,3 +126,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.24] - Coathief: ontwerp gekozen, silhouet ronde 1
 - Kop-test A/B/C op hoek B1: Jordi koos **C** (zwarte bivakmuts met echte coati-vlekken boven en onder het oog, zwarte neus); kleiner oog.
 - Poppetje bijgesteld zodat de pose op 64 leest (kop omhoog, opgetilde voorpoot hoger, verre poten in een eigen kolom); silhouet = de render direct verkleind + handreparaties aan voorpoten/klauwen en een achtervoet (46 px, 0 buiten de zones): `docs/concept/sprites/coathief/silhouet/vel_ronde1.png` (1297 px).
+
+### [v0.0.25] - Coathief af (frontsprite)
+- Evolutie van de olinguito, **Coathief** (*Nasua nasua*, fase 2): frontsprite goedgekeurd, `docs/concept/sprites/coathief/af/coathief.png`. Zwarte bivakmuts-kop met coati-vlekken, zwarte neus en oren, klein roodbruin oog, warm roodbruin lijf (donkerder dan Linoone/Furret), geringde staart, klauwen aan beide voorpoten; driekwart naar de speler toe lopend met één poot opgetild.
+- Werkwijze: 3D-poppetje (hoek B1, kop C), silhouet direct verkleind, kleur met één maker-agent, een onafhankelijke keuring, een evolutiekeuring en twee verse eindkeuringen. De voorpoten pas goed na een **overtrekvel met pixelraster** waarop Jordi cellen aftekende; vastgelegd in `docs/lessen/SPRITE_WERKWIJZE.md`, met gemeten tokenkosten.
+- Nog te doen: frame 2, rug, icoon, shiny, data; A/B-test kleine kleurreparaties (SPEC).

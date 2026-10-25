@@ -44,7 +44,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde ol
 
 ## Silhouet (stap 2)
 - Bij het verkleinen las de opgetilde poot als staand en verdween de verre voorpoot achter de nabije; daarom in het poppetje: kop 14° omhoog (kijkt de speler aan, poot blijft onder de kop zichtbaar), nabije voorpoot hoger (klauwen vrij van de grond), verre voorpoot en verre achterpoot naar achteren (eigen kolom). Onderlaag: `silhouet/onderlaag_b1c_256.png`.
-- Ronde 1: `silhouet/ronde1.txt` / `ronde1_1x.png` / `vel_ronde1.png` (1297 px). Basis = direct verkleind (`direct.txt`, 1303 px, `silhouet_direct.py`); handreparaties alleen in zone 1 (voorpoten x 15–33, y 50–63: 2 hangende klauwen, 2 kolommen lucht tot de verre poot) en zone 2 (nabije achtervoet); 46 px gewijzigd, 0 buiten de zones (`repareer.py`). Wacht op Jordi.
+- Ronde 1: `silhouet/ronde1.txt` / `ronde1_1x.png` / `vel_ronde1.png` (1297 px). Basis = direct verkleind (`direct.txt`, 1303 px, `silhouet_direct.py`); handreparaties alleen in zone 1 (voorpoten x 15–33, y 50–63: 2 hangende klauwen, 2 kolommen lucht tot de verre poot) en zone 2 (nabije achtervoet); 46 px gewijzigd, 0 buiten de zones (`repareer.py`).
+- **Silhouet ronde 1 goedgekeurd en bevroren** (Jordi, 25 okt: "akkoord, laten we hiermee werken"): `silhouet/ronde1.txt` = `silhouet/ronde1_1x.png` (1297 px). Alle kleurrondes: alpha-diff 0 hiermee.
 
 ## Afgekeurd (niet herhalen)
 - (nog niets)

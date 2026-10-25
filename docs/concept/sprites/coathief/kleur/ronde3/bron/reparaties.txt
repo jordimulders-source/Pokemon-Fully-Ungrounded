@@ -83,3 +83,59 @@
 57 48 myzmk
 58 47 mYyzmk
 59 46 myyzzmk
+# ===== ronde 3 (keuring ronde 2): alleen zones 1-4 =====
+# zone 1: glans in de vlekken terug naar creme (oog is het helderste punt); r lichter in het palet
+36 20 c
+43 21 c
+# zone 2: mond, korte k-lijn achter de neus met mondhoek 1 px (m)
+46 8 kkkk
+45 12 m
+# zone 3: naad kop-hals als vachtkartel, schedel 1 px verder uitgebold (geen m-kolom)
+35 25 z
+36 25 zzd
+37 26 zzd
+38 26 zzd
+39 26 z
+40 26 zzd
+41 25 zzd
+42 25 zzd
+43 24 zzd
+44 24 zd
+45 24 zd
+46 22 zzd
+# zone 4: open randen. Staart en oren: creme selout x op de rand
+1 49 xx
+2 48 x
+3 47 x
+4 46 x
+5 46 x
+6 46 x
+6 53 x
+7 53 x
+11 54 x
+12 54 x
+13 54 x
+14 54 x
+19 53 x
+20 53 x
+21 53 x
+22 53 x
+26 51 x
+27 50 x
+28 49 x
+33 17 x
+33 21 xxx
+# klauwen: donkere creme rand x aan de buitenkant (links, onder, punt), n aan de schaduwkant,
+# c binnenin waar de klauw aan de poot vastzit, een w-glans per klauw
+56 17 xc
+57 16 xwn
+58 16 xn
+59 16 xn
+60 17 x
+56 20 ccn
+57 20 xwn
+58 19 xcn
+59 20 xn
+60 21 x
+# voet verre voorpoot
+61 24 m

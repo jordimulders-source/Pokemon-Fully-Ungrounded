@@ -17,9 +17,9 @@ PAL = [('.', '98d0a0'),  # 0 transparant
        ('n', 'a48660'),  # creme schaduw / selout lichte ringen
        ('c', 'dcc49a'),  # creme basis (ringen, vlekken, klauwen)
        ('w', 'f6eedc'),  # creme licht, glans
-       ('r', '6a1c14'),  # oog donker roodbruin
+       ('r', '8c2418'),  # oog donker roodbruin (ronde 3: lichter, los van de kop)
        ('i', 'b04a2c'),  # iris licht (onderkant)
-       ('x', '3a1e10')]  # reserve
+       ('x', '7c6448')]  # creme selout naast transparant (ronde 3, luma 104)
 ORDER = ''.join(c for c, _ in PAL)
 def lees(fp=os.path.join(H, 'raster.txt')):
     g = [['.'] * 64 for _ in range(64)]; fout = []

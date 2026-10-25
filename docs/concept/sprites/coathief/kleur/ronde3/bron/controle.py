@@ -11,14 +11,14 @@ diff = [(x, y) for y in range(64) for x in range(64) if (g[y][x] != '.') != (sil
 print('pixels', sum(c != '.' for r in g for c in r), '| silhouet', sum(r.count('#') for r in sil), '| alpha-diff', len(diff))
 print('kleuren gebruikt:', len({c for r in g for c in r} - {'.'}), '| transparency =', im.info.get('transparency'))
 GROEP = {'d': 'b', 'b': 'b', 'l': 'b', 'h': 'b', 'k': 'k', 'm': 'z', 'z': 'z', 'y': 'z', 'Y': 'z',
-         'n': 'c', 'c': 'c', 'w': 'c', 'r': 'o', 'i': 'o'}
-OK = {'b': 'dk', 'z': 'mk', 'c': 'nk', 'k': 'k', 'o': ''}
-# klauwen: dunne delen (1-2 px) zonder omlijning mogen (pseudo-omlijning, SPRITING par. 8)
-KLAUW = lambda x, y: (y >= 56 and x <= 23) or y >= 61
+         'n': 'c', 'x': 'c', 'c': 'c', 'w': 'c', 'r': 'o', 'i': 'o'}
+OK = {'b': 'dk', 'z': 'mk', 'c': 'xk', 'k': 'k', 'o': ''}
+# klauwen (1-2 px breed): schaduwtint n aan de buitenrand mag (geen c/w) - keuring ronde 2
+KLAUW = lambda x, y: y >= 56 and x <= 23
 N4 = ((1, 0), (-1, 0), (0, 1), (0, -1))
 def t(x, y): return not (0 <= x < 64 and 0 <= y < 64) or g[y][x] == '.'
 open_ = [(x, y, g[y][x]) for y in range(64) for x in range(64) if g[y][x] != '.'
-         and any(t(x + a, y + b) for a, b in N4) and g[y][x] not in OK[GROEP[g[y][x]]] and not KLAUW(x, y)]
+         and any(t(x + a, y + b) for a, b in N4) and g[y][x] not in OK[GROEP[g[y][x]]] and not (KLAUW(x, y) and g[y][x] == 'n')]
 print('open randen:', len(open_), open_)
 los = [(x, y) for y in range(64) for x in range(64) if g[y][x] != '.' and all(t(x + a, y + b) for a, b in N4)]
 print('losse pixels (zonder buren):', len(los), los)

@@ -1,0 +1,154 @@
+# Reparaties na de eerste blik (met de hand, 'y x0 pixels', overschrijven raster.txt)
+# naad bivakmuts/hals rond (bolt uit bij y 37-40), geen rechte donkere balk achter de kop
+35 14 mmyYyyyzzzzm
+35 26 dd
+36 13 myYyyyyyzzzzm
+36 26 d
+37 12 myYyyyywczzzzzm
+37 27 d
+38 11 myYyyyzccnzzzzzm
+38 27 d
+39 11 myyzzzzkkkmzzzzm
+39 27 d
+40 10 myYyzzzzwrrzzzzzm
+40 27 d
+41 10 myyzzzzzriizzzzm
+42 9 myyzzzzzzzzzzzzzm
+42 26 d
+43 22 zzm
+44 22 nzm
+45 21 nzm
+46 8 zzzzzzzzzzzzzzmm
+# buikschaduw: bovenrand als boog
+42 37 dd
+43 35 bddddd
+# verre voorpoot: donker vanaf y 50, geen bruin blok
+49 27 dddd
+50 27 dddmk
+51 27 mzmmk
+52 27 mzmmk
+# open randen
+33 20 mnnnk
+51 44 d
+# ===== ronde 2 (opdracht Claude): alleen zones 1-4 =====
+# zone 1: grotere ronde coati-vlekken (boven/achter en onder/achter het oog), oog ongewijzigd
+36 20 wc
+37 19 ccc
+38 18 zcn
+43 20 zwc
+44 20 cccz
+45 21 cn
+# zone 2: verre voorpoot als cilinder (lichtkant links, elleboog, pols-knik), overloop vanuit de schouder
+48 27 bbddk
+49 27 bbddk
+50 27 dydmk
+51 27 myzmk
+52 27 myymk
+53 27 myzmk
+54 27 myzmk
+55 27 myzmk
+56 27 mzymk
+57 27 myymk
+58 27 myzmk
+59 27 myzmk
+60 26 myyzmk
+# zone 4: klauwtjes verre voorpoot. Haakjes (crème) lazen ook met teen/k-scheiding nog als kruimels
+# (varianten A/B in uitsnede_klauwen.png); daarom terugval: deel van de voet (donker), Jordi beslist.
+61 23 mzmk
+62 21 km
+62 24 mk
+# zone 3: opgetilde voorpoot (boven de klauwen)
+50 22 mYyzk
+51 21 myYyzk
+52 20 myyzzmk
+53 19 myzzmk
+54 18 mYyzzmk
+55 18 myzzmmk
+# zone 3: verre achterpoot (hak bij y 53)
+49 35 mdzzmmk
+50 36 myzzmmk
+51 37 myzmmk
+52 37 myzzmk
+53 37 mzyzmk
+54 36 myzzmk
+55 36 myzmmk
+56 35 myzzmk
+# zone 3: nabije achterpoot (hak bij y 55-56)
+51 43 ddbbddmzmk
+52 45 mYyyzzmmk
+53 46 myyzzzmk
+54 47 myyzzmk
+55 48 mzyzmk
+56 48 myYzmk
+57 48 myzmk
+58 47 mYyzmk
+59 46 myyzzmk
+# ===== ronde 3 (keuring ronde 2): alleen zones 1-4 =====
+# zone 1: glans in de vlekken terug naar creme (oog is het helderste punt); r lichter in het palet
+36 20 c
+43 21 c
+# zone 2: mond, korte k-lijn achter de neus met mondhoek 1 px (m)
+46 8 kkkk
+45 12 m
+# zone 3: naad kop-hals als vachtkartel, schedel 1 px verder uitgebold (geen m-kolom)
+35 25 z
+36 25 zzd
+37 26 zzd
+38 26 zzd
+39 26 z
+40 26 zzd
+41 25 zzd
+42 25 zzd
+43 24 zzd
+44 24 zd
+45 24 zd
+46 22 zzd
+# zone 4: open randen. Staart en oren: creme selout x op de rand
+1 49 xx
+2 48 x
+3 47 x
+4 46 x
+5 46 x
+6 46 x
+6 53 x
+7 53 x
+11 54 x
+12 54 x
+13 54 x
+14 54 x
+19 53 x
+20 53 x
+21 53 x
+22 53 x
+26 51 x
+27 50 x
+28 49 x
+33 17 x
+33 21 xxx
+# klauwen: donkere creme rand x aan de buitenkant (links, onder, punt), n aan de schaduwkant,
+# c binnenin waar de klauw aan de poot vastzit, een w-glans per klauw
+56 17 xc
+57 16 xwn
+58 16 xn
+59 16 xn
+60 17 x
+56 20 ccn
+57 20 xwn
+58 19 xcn
+59 20 xn
+60 21 x
+# voet verre voorpoot
+61 24 m
+# ===== ronde 3b: klauwen opgetilde poot weer licht (zone x 15-22, y 55-61) =====
+# creme kern (c) over de volle lengte aan de lichtkant, x alleen aan de schaduwkant (rechts) en de punt,
+# 1 w-glans per klauw (zoals de olinguito: licht + donkere schaduwrand)
+56 17 cc
+57 16 cwx
+58 16 cx
+59 16 cx
+60 17 x
+56 20 ccn
+57 20 cwx
+58 19 ccx
+59 20 cx
+60 21 x

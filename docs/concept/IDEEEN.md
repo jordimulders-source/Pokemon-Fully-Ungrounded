@@ -129,3 +129,55 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
   - **Wereldwijd in zee, past aan de kust/diepzee:** spinkrab (of de Patagonische koningskrab, *centolla*), garnaal met de harde klap (pistoolgarnaal of bidsprinkhaankreeft; staat ook in FAKEMON_PITCH #95), blauwe zeeslak (*Glaucus*), siphonophore (kolonie van diertjes die samen één wezen vormen), blobfish.
   - **Niet uit Zuid-Amerika** (immersie: alleen met een verhaal, bijv. ingevoerd, ontsnapt, of als grap): komodovaraan, schoenbekooievaar, pangolin, colugo, dropbear (Australische grap; kan als droge NPC-humor).
 - Overlap met `FAKEMON_PITCH.md`: hoatzin (#3), manenwolf (#9), harpij (#12), blauwvoetgent (#17), zeeleguaan (#18), bidsprinkhaankreeft (#95).
+
+## Ideeën Jordi (29 okt): nieuwe lijst, uitgewerkt door Claude
+Types en dex-status gecontroleerd in de repo (`species_info/`, `DEX_IN_ROM.md`). "Uit de dex" = de familie staat uit (categorie C) en moet weer aan (één regel in `species_enabled.h`) als de vorm er komt. **Nog niets besloten, behalve waar dat staat.**
+
+**Vechtsporten**
+- **Bartitsu-Mr. Rime (2e Rime-vorm):** past perfect. Mr. Rime is al een heer met een wandelstok, en bartitsu (Londen, rond 1900; Sherlock Holmes' "baritsu") is juist het gevecht met de wandelstok. Repo: Mr. Rime = Ice/Psychic, Mr. Mime = Psychic/Fairy, **Mime-lijn uit de dex**. Opzet: een evolutie van de gewone Mr. Mime (die nu geen evolutie heeft), zoals Galar-Mr. Mime → Mr. Rime.
+  - **Type:** Fighting/Psychic is vrij in de dex (Medicham en Gallade zitten er niet in). Fighting/Fairy bestaat alleen bij Iron Valiant (ook niet in de dex), dus het is zeldzaam. Een heer met een stok past bij Fairy (Mr. Mime is al Fairy), maar Psychic is veiliger als je Mr. Mime naast hem ziet.
+  - **Haakje regio:** de Britse invloed in Argentinië: spoorwegen, polo, Hurlingham Club, Welshe kolonisten in Patagonië. Een Engelse heer op het perron van een oud Brits station: daardoor klopt hij in de wereld.
+- **Capoeira-Hitmontop + nieuwe evolutie (Braziliaans):** de Hitmontop-vorm stond al vast; **de evolutie wil Jordi nu wel**. Repo: Hitmontop = Fighting (Intimidate/Technician/Steadfast). Haakjes: de evolutie als *mestre* met een berimbau (het muziekboogje dat de *roda* leidt). Type Fighting/Dark past bij *malandragem*: capoeira was verboden en werd vermomd als dans; list en schijnbewegingen. De kopspin (*pião de cabeça*) blijft de kern.
+- **Jiu-jitsu (BJJ):** Braziliaans (Gracie). Pose: Werdum die op zijn rug ligt en Overeem uitnodigt in zijn guard. Grap: "get into my guard" als Pokédex-tekst of als move/ability (bijv. een tegenaanval die sterker is als de vijand een contact-move gebruikt). **Let op:** de alpaca-lijn krijgt in fase 2 "een andere vechtsport" (POKEMON.md); dat kan BJJ zijn, of BJJ wordt een losse fakemon. Liggend vechten is een mooi contrast met de staande Hitmontop en de Bartitsu-Rime.
+
+**Slangen en reptielen**
+- **Arbok:** klopt, in Zuid-Amerika leven geen cobra's. **Ekans-lijn staat al uit de dex.** Twee haakjes: (1) de **Boitatá** (Fire/Ghost, vuurslang die het bos beschermt; stond al op de regional-form-lijst), het kapmotief wordt een vlammenpatroon; (2) de **koraalslang** (*Micrurus*): familie van de cobra's (gifslangen met rood-zwart-gele ringen), dus wél Zuid-Amerikaans. Anders laten we Arbok weg.
+- **Zout-Sandaconda:** Jordi kiest voor zout (23 okt stonden zout en modder nog open). Repo: Silicobra/Sandaconda = Ground, Sand Spit. Haakje: de zoutkorst van Uyuni met zijn **zeshoekige patronen** op de huid; zoutkristallen in plaats van zand in de kraag; Sand Spit wordt iets met zout (bijv. Salt Cure). Type Ground/Rock (of Rock); past bij gym 1 in Uyuni. Silicobra-lijn zit in de dex.
+- **Kaaiman via Krookodile:** Repo: Sandile-lijn = Ground/Dark, in de dex. Regional-form-lijst had al de **yacaré** van de Pantanal (Water/Dark, brede snuit, liggen in groepen op de oever). Wel uniek genoeg: Krookodile is een woestijnkrokodil, de yacaré is een moerasdier. Vraag: de hele lijn als vorm, of alleen naast de gewone (gym 1 gebruikt de gewone Sandile)?
+
+**Vogels**
+- **Harpij-arend: komt er sowieso** (Jordi). Keuze: regional of nieuw.
+  - Regional **Braviary** (Rufflet-lijn zit in de dex, Normal/Flying): Flying/Fighting (stond al op de lijst); Hisui-Braviary is een voorbeeld dat Braviary een vorm kan krijgen. Goedkoop, Braviary is al een adelaar.
+  - Nieuwe lijn (FAKEMON_PITCH #12, Flying/Fighting): meer eigen, maar er komen al twee condors (vogellijn + legendary).
+  - Advies Claude: Braviary-vorm (minder werk, geen derde grote roofvogellijn).
+- **Hoatzin als Archen/Archeops (Poison/Flying):** stond al op de lijst. Repo: Archeops = Rock/Flying (Defeatist); **Archen-lijn uit de dex**. Lore-haakje: het **levende fossiel van de tepuis**. *The Lost World* van Conan Doyle speelt op de Roraima-tepui; daar heeft Archen het overleefd in plaats van uit te sterven. Hoatzinkuikens hebben echte klauwtjes aan hun vleugels, en de vogel stinkt door bladeren die in zijn krop gisten: Poison (ability Stench in plaats van Defeatist?). Het fossiel elders in de regio is dan zijn voorouder.
+- **Oricorio, drie nieuwe dansen:** repo-vormen: Baile Fire, Pom-Pom Electric, Pa'u Psychic, Sensu Ghost. Grass, Dark en Water zijn dus allemaal nieuw.
+  - **Samba (Grass):** Rio, de stad van het Grass-gym (Tijuca); groene en gele carnavalsveren.
+  - **Tango (Dark):** geen "evil". Dark is in Pokémon nacht en list, niet slecht. Tango ontstond 's nachts in de *arrabales* van Buenos Aires, melancholiek, met de *compadrito* met mes en hoed. Sensu is ook al Ghost.
+  - **Cumbia (Water):** komt van de Caribische kust van Colombia en de rivier de Magdalena (Cartagena staat op de stedenlijst).
+  - Kosten: per stijl een vorm, een nectar-item en een vormwissel. Kleiner dan een nieuwe lijn.
+
+**Insecten**
+- **Venezolaanse poedelmot:** één wazige foto uit 2009 (Gran Sabana, bij de tepuis), daarom twijfelen mensen of hij bestaat. Repo-overlap: er komt al een **Venomoth-regional form** (ontwerp van Jordi) en Cutiefly/Ribombee (Bug/Fairy) zit niet in de dex.
+  - Als **Bug-eeveelution** (Eevee zit in de dex): de eerste nieuwe eeveelution sinds Sylveon, dus groots. Wol van Eevee → pluizige mot, logisch. Evolutie bijv. 's nachts in de Gran Sabana.
+  - Als **nieuwe lijn**: rups → cocon → mot (Bombyx mori voor extra foto's).
+  - Lore voor allebei: een **cryptid**. NPC's twijfelen of hij bestaat; hij is alleen 's nachts zichtbaar, op één plek. Type Bug/Fairy, of Bug/Normal (de pluizige "poedel") als iets anders.
+  - Tepuis komen nu twee keer terug (Archen, poedelmot): goed gebied voor "verloren wereld"-soorten.
+
+**Ruïnes**
+- **Tiwanaku-Golett/Golurk:** stond al op de lijst (Rock/Ghost of Ground/Psychic; repo: Ground/Ghost, in de dex). **Voorstel:** samenvoegen met de "mysterieuze ruïne-Pokémon" (Rock/Ghost of Rock/Psychic, Puma Punku). Dan is dit die Pokémon en hoeven we geen aparte fakemon te maken.
+
+**Fruit en planten**
+- **Açaí (late game):** palm uit de Amazone met trossen paarse bessen; de *ribeirinhos* klimmen erin met een voetlus (*peconha*). Paars-zwart: Grass/Dark of Grass/Poison. Late game: een sterke eindvorm of iets dat pas diep in de Amazone groeit.
+- **Dragonfruit (Dragon):** = FAKEMON_PITCH #36 (pitahaya, Grass/Dragon). Let op: Tropius is in de repo al Grass/Dragon; Applin-lijn zit niet in de dex.
+- **Plátano-Tropius:** Tropius (Grass/Dragon, in de dex) heeft al bananen; DEX_NOMINATIES noemt hem al voor "bananen en tropisch fruit (Ecuador)". Een plátano-vorm (kookbanaan, patacones) is dus een kleine stap. Misschien met een ander type (Grass/Ground?), zodat er geen drie Grass/Dragon met fruit naast elkaar staan (Tropius, plátano, pitahaya).
+- **Carambola:** stervrucht, komt van oorsprong uit Zuidoost-Azië maar wordt veel in Brazilië geteeld (immersie: kan, als ingevoerd gewas). Haakje: de doorsnede is een ster; een Grass/Fairy met sterrenvormen. Of een **Staryu/Starmie-vorm** (Staryu zit in de dex) als grap.
+- **Creepy guaraná:** = FAKEMON_PITCH #35 (Grass/Electric). Jordi wil hem creepy: de Sateré-Mawé-legende (de vrucht kwam uit de ogen van een gedood kind) maakt Grass/Ghost logisch; open vruchten als oogballen die je aankijken; cafeïne: nooit slapen (Insomnia).
+
+**Pampa en Galápagos**
+- **Gaucho-Pokémon:** bestaande haakjes: FAKEMON_PITCH #70 (boleadoras, Ground/Fighting); Ponyta-lijn als criollo-paard. Nieuwe opties: de **ñandú** (nandoe) waar gaucho's met boleadoras op jaagden; een **mate-kalebas** met bombilla (stond al op de lijst, zie Eten en cultuur); of de gaucho zelf als Pokémon met poncho en *facón*. Vraag: dier, voorwerp of "mens"?
+- **Galápagos: Darwin-vormen van bekende Pokémon:** sterk concept: elk eiland een eigen vorm, zoals de vinken van Darwin met elk een andere snavel. Kandidaten in de dex: **Torkoal** (reuzenschildpad: koepelschild vs. zadelrug-schild met lange nek), **Pikipek** (snavelvormen), **Krabby**, **Cramorant**. Opties: één soort met meerdere eilandvormen (zoals Oricorio of Squawkabilly), of per eiland een andere soort die afwijkt. Ook de zeeleguaan (#18) en blauwvoetgent (#17) uit de pitch horen hier.
+
+**Al eerder besloten**
+- **Fruitvampier op zijn kop:** stond al vast als eindvorm van de vleermuislijn (POKEMON.md); Jordi bevestigt het.
+- **Electrische viscacha:** de viscacha stond open als vroege knager van de hoogvlakte; nu Electric. Haakje: de droge, ijle lucht van de altiplano (statische elektriciteit), wollige vacht die oplaadt; de vroege Pikachu-rol met eigen kleur. Neef van Minccino (beide Chinchillidae).

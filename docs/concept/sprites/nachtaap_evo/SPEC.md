@@ -48,6 +48,8 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 - Vacht: "De kleur mag imo iets donkerder dan van de eerste evo" (poppetje: #5E4488, verre kant #45306A).
 - Kop: "het enige witte op het hoofd moet de halve maan zijn" (zie bevroren poppetje). Lijf: kené in lichtlila, rustiger dan de maan. Geen borstvlak.
 
+- Jordi 2 nov (na ronde 1): "het hoofd lijkt sowieso iets teveel op de 1e stage" + "incl ogen" → kop en ogen duidelijk anders dan fase 1: grote witte maan als kenmerk, ogen met kleinere iris, grote ronde pupil, donkere ring en starende blik (foto's), volwassener snoet.
+
 ## Silhouet
 - Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
 - **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.

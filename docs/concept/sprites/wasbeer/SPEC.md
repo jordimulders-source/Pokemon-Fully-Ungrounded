@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov, over hoeken_r3.png) "het wordt er niet beter op, met die veel te dikke reet en niet echt de pose zoals op de fotos die ik stuurde"
 - (2 nov, over hoeken_r2.png) "De klauwen zijn nu wel goed. Op zich kan zo'n aanvals pose wel, want vigoroth heeft dat ook. Maar deze lijkt nog wat onnatuurlijk, met de benen nog staand en de armen vrij ver naar boven, misschien moet dit iets geleidelijker"
 - (2 nov, met foto 10) "hier is een goede staande pose"
 - (2 nov, met foto 11) "hier ook een beetje" · (met foto 12) "en nog een"
@@ -85,6 +86,7 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Ronde 3 (`ontwerp/hoeken_r3.png`, pose 'F' naar foto 10): op de achterpoten met gebogen knieën, romp 48/58° voorover, verre poot reikt naar voren (koevoet vooruit, haak omlaag), nabije poot hangt gebogen voor de buik (koevoet omlaag, haak naar voren), staart laag achter met de haak omhoog, kop iets omhoog. Een tussenversie met de reikende koevoet voor de snuit verworpen vóór Jordi.
 
 ## Afgekeurd (niet herhalen)
+- **3D-poppetje voor deze pose (rondes 1–3):** "veel te dikke reet", "niet echt de pose zoals op de fotos". Volgende stap: silhouet direct van foto 10 overtrekken (kolibriemethode), dan alleen klauwen (koevoet) en staart (haak) aanpassen.
 - **Waterspuwer (hoeken.png ronde 1):** "super super statisch", "net een opgezet dier"; voorpoten hangend lijken om op te lopen, wat met koevoetklauwen niet kan; koevoetvorm niet te zien; grijze rand weg; staart haakt te weinig; poten te kort, onderrug te dik.
 - **Trapjesmasker** komt waarschijnlijk niet over in pixels (Jordi); wel goed: masker over de neusrug.
 - **Traan onder het oog** (M2): "dan lijkt dat net te staan voor een moord zoals bij gang members" (Jordi 2 nov).

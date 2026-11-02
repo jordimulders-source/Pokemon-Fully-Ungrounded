@@ -4,6 +4,11 @@
 
 Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedgekeurde sprite in ±1 dag) en de **olinguito v2** (Dark-starter, fase 1: na 30+ mislukte rondes in de oude aanpak, nu in 5 silhouet- en 4 kleurrondes "het beste olinguito-ontwerp wat ik tot nu toe heb gezien"). Achtergrond: `RETRO_KOLIBRIE.md`, `RETRO_OLINGUITO.md`. Deze werkwijze vervangt stap 1–5 bovenaan `FAKEMON_DESIGN.md` waar ze verschillen.
 
+## Verplicht (Jordi, 2 nov, na de wasbeer)
+- **Coathief is het voorbeeld.** Claude tekent zelf geen silhouetten of kleuren: geen buizen/ellipsen, geen geknipte stukken van bestaande sprites, geen scriptkleuring. Claude maakt de bron klaar (foto's, poppetje, SPEC), de **maker-agent** tekent met de hand, Claude controleert tegen de bronfoto's, een keurder keurt, dan pas Jordi.
+- Elke opmerking van Jordi gaat met zijn letterlijke woorden naar de maker; nooit één punt los repareren zonder het geheel naast de bron te leggen.
+- Twee rondes zonder voortgang = stoppen en de stap terug benoemen.
+
 ## Kern in vijf zinnen
 1. **De vorm wordt vastgelegd vóór er één kleurpixel bestaat**, en Jordi keurt die vorm als silhouet op ware grootte.
 2. **De vorm komt van iets echts:** een foto van het dier in de juiste pose, of het 3D-poppetje dat Jordi koos; nooit van zelfgebouwde cirkels en driehoeken ("Pokémon designen is geen cirkels en driehoeken werk").

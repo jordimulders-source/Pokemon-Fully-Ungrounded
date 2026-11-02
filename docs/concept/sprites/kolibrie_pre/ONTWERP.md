@@ -44,3 +44,6 @@ Precedenten uit de repo: `referenties/omhulsel_pokemon.png`. **Cherrim** (overca
 - Pre-evo = **puur Flying**; de eindvorm wordt Ghost/Flying. Precedent in de repo: Rookidee/Corvisquire (puur Flying) → Corviknight (Flying/Steel); puur Flying zijn hier verder alleen Taillow, Swellow en Tornadus, dus de rol is vrij.
 - Gevolg voor het ontwerp: **nog geen Ghost-kenmerken** (geen zielvlammetje, geen torpor-"dood"-look, geen spinrag-lijkwade). Een gewone, levende jonge kolibrie; het fluweelviolet mag als voorbode, het spookachtige (bleke vlammetjes, doorzichtige vleugels) komt pas bij de evolutie. Verhaalhaak: hij wordt pas zielenbode na zijn eerste torpor (evolutie).
 - Richting A (jong vogeltje) past hier het best; C kan als kantuta een gewone bloem is waar hij nectar uit drinkt (geen ziel in de bloem).
+
+## Besluit (Jordi, 2 nov): richting A
+"cherrim is een bloem en flabebe is een bloem ook onderdeel van de pokemon, dat is hier niet zo" → een losse bloem als rekwisiet past niet in een sprite; C (en B) vervallen. **Richting A: een jonge kolibrie, puur Flying**, kort snaveltje, stompe staart, fluweelviolet als voorbode, geen Ghost-kenmerken. Volgende stap: foto in de gewenste pose → silhouet op 64.

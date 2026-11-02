@@ -20,6 +20,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov) "ik weet al wat ik er gek uit vond zien, de koevoet armen. Het moet puur de klauw zijn in koevoet vorm, verder mag het vrij vergelijkbaar met een klauwen van sneasel, weavile/sandslash etc. Lichaamspose kan wel redelijk in de buurt komen van Gumshoos, al heeft onze pokemon net wat langere benen, wat meer de weavile lengte, al wik wel dat we echt die typische crab eating raccoon hoofd aanhouden. Kan je hier al wat meer mee?"
+- (2 nov) "en de rugzak wordt een soort omgekeerde kangaroo pouch, wat echt onderdeel van zn lichaam is maar toch goed bij een dief past"
 - (2 nov) "pak eens de sprites voor sneasel, weavile en sneasler erbij" → `silhouet/sneasel_lijn.png` (Sneasel 976 px, Weavile 1267, Sneasel-Hisui 944, Sneasler 1359; met silhouetten)
 - (2 nov) "de verhoudingen lijken allemaal niet te kloppen en de pose is geen echte sprite pose"
 - (2 nov, over ronde 8) "We gaan zo niet de goede kant op. De tas moet helemaal aansluiten op de rug als een soort rugzak. Qua silhouet vind ik het eigenlijk helemaal nog niet goed, misschien goed om een stap terug te gaan"
@@ -89,7 +91,8 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Krabbenetende wasbeer:** dichtst verwant, natuurlijk masker; nobel lastig, Obstagoon-associatie.
 
 ## Bevroren
-- **Bruine buitzak op de rug, helemaal aansluitend als een rugzak** (Jordi 2 nov; niet als losse bult zoals ronde 8). Kop van foto 10 (ronde 2), niet die van foto 11.
+- **Op de rug een omgekeerde kangoeroebuidel**: deel van het lijf (geen voorwerp), aansluitend op de rug, past bij een dief (Jordi 2 nov; vervangt de losse buitzak van ronde 8).
+- **Klauwen = gewone handklauwen in koevoetvorm** (Sneasel/Weavile/Sandslash-maat), niet de hele onderarm als koevoet. **Lijf zoals Gumshoos, poten op Weavile-lengte, typische kop van de krabbenetende wasbeer** (Jordi 2 nov). Kop van foto 10 (ronde 2), niet die van foto 11.
 - **Koevoetklauwen zoals in `hoeken_r2.png`** (Jordi: "De klauwen zijn nu wel goed"). Aanvalspose mag (precedent Vigoroth), maar geleidelijk/natuurlijk.
 - **Masker M1: trapjes** (Andes-trapmotief als rand van het masker; Jordi 2 nov). **Klauwen: koevoet** (Jordi's idee): lange rechte klauw met een J-bocht aan het eind; proef `ontwerp/koevoet_proef.png`: de J leest op 1x, de spleet in de punt alleen op 8x; klauw ±11 px (Coathief ±5).
 - **Haakstaart** (Jordi 2 nov). **Lange poten** zoals foto 7. **Pose: op 2 poten staand, voorover hangend** (niet rechtop). Masker met een Zuid-Amerikaanse vorm, klauwen als dievengereedschap: richting open (voorstellen hieronder).
@@ -113,6 +116,7 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Ronde 7 (`silhouet_r7.py`): ronde 2 (foto 10) met de driekwart kop van foto 11 (×0,38, neus op de neusplek van foto 10); schaal begrensd op 62 px breed (de reikende koevoet); 1121 px, `vel_ronde7.png`. Jordi: kop "echt minder goed" → kop van foto 10 terug.
 - Ronde 8 (`silhouet_r8.py`): ronde 2 + **bruine buitzak op de rug** (Jordi's idee; bij Coathief bewust géén tas, in de eindvorm wel): bolle zak die half boven de ruglijn uitsteekt, smalle hals, knoop met twee kleine flapjes; 1351 px, `vel_ronde8.png`. Jordi: zak moet aansluiten als rugzak; silhouet "helemaal nog niet goed", stap terug. Tekenvel voor een krabbel: `silhouet/tekenvel.png`.
 - **Stap terug (Jordi: verhoudingen kloppen niet, geen echte sprite-pose).** Oorzaak: foto-verhoudingen (lange poten, kleine kop) zijn geen spriteverhoudingen. Studie `silhouet/sprite_poses.png` (Zangoose, Sneasel, Weavile, Sandslash, Gumshoos, Scrafty, Lucario, Raticate, Furret, Passimian): kop ±30–40% van de hoogte, compact lijf, kortere dikke ledematen die los van het lijf staan, driekwart met beide ogen, 1000–1600 px. Voorstel: Jordi kiest één echte sprite als pose- én verhoudingssjabloon; de massa daarvan blijft (overlay als bewijs), alleen kop, staart, klauwen en rugzak worden wasbeer (details van de foto's).
+- Ronde 9 (`silhouet_r9.py`): romp + armen = de echte massa van Gumshoos (y 27–47, 3 px omhoog), poten op Weavile-lengte, kop = illustratie (×0,058) met kin dicht, verre oor 70%, nabij oor rond achter-boven (foto 11), koevoetklauwen 2 per hand (Sneasel-maat, rechte steel + J-punt), geringde staart laag naar achteren met haak, buidel als bolling op de rug; 1492 px, `vel_ronde9.png` (met overlay over Gumshoos).
 - **Voor de kleur (Jordi):** het silhouet leest als één bolle buik door de pose; de kleur moet het lijf opdelen: lichte borst/buik (geelbruin), grijze rug en flank, de dij als eigen vorm (zoals op foto 10), donkere onderarmen die vóór de buik lopen, donkere onderbenen.
 
 ## Afgekeurd (niet herhalen)

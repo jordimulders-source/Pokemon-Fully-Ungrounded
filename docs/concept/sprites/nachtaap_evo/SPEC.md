@@ -27,6 +27,8 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 - Gekozen richting: **nachtwaker** (echte *Aotus*-bouw, gehurkt/hangend, starende blik) **met maangezicht** (bleke schijf als maan, witte vlekken boven de ogen als sikkels). Lijf naar verhouding groter t.o.v. de kop dan in fase 1.
 - Foto's: `referenties/foto1_tak_hangend.jpg` (hoofdkandidaat voor de pose: gehurkt over een schuine tak, lijf schuin achter de kop, ogen recht in de camera), `foto2_apenheul_jong_op_rug.jpg`, `foto3_etend.jpg`, `foto4_zittend_frontaal.jpg`. Overzicht: `referenties/vel_pose.png`.
 - Sprites met een 3/4-lijf en een blik recht in de camera: `referenties/frontale_blik.png` (Zorua, Sableye, Slakoth, Mew, Espeon, Persian, Eevee, Pachirisu, Absol, Slowpoke, Delcatty, Quilava).
+- 2 nov: "zoek wel een pose van een pokemon waar het rug een beetje boven het hoofd uitsteekt. Tak hoeft idd niet in beeld"
+  → **geen tak**; rug steekt boven de kop uit. Kandidaten: `referenties/rug_boven_kop.png` (Sandslash, Dusknoir, Mamoswine, Piloswine, Camerupt, Lairon, Skuntank, Excadrill).
 - Over de lijn eerder: "in eerste instantie simpel houden: een aap met grote ogen, een genezer-concept en de Nazca-staart"; "de ogen zijn het belangrijkst; kijk naar Jigglypuff, Scream Tail en Espurr"; Psychic-concept: "niet ondersteboven hangen".
 
 ## Bevroren

@@ -129,3 +129,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.25] - Nachtaap fase 2: richting gekozen
 - Jordi kiest **nachtwaker met maangezicht**: gehurkte/hangende pose met de ogen recht in de camera, lijf groter t.o.v. de kop. Vier foto's in `docs/concept/sprites/nachtaap_evo/referenties/` + vel met sprites die ook zo kijken (Zorua, Sableye, Slakoth, Mew, Espeon, Persian, Eevee…). POKEMON.md en SPEC bijgewerkt.
+- Pose-referenties met de rug boven de kop (Jordi: "een pose van een pokemon waar het rug een beetje boven het hoofd uitsteekt"; tak niet in beeld): `referenties/rug_boven_kop.png`.

@@ -167,4 +167,5 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Ronde 9 (`ronde9.py`, `vel_ronde9_klauw.png`, 1479 px): ronde 7 (Sneasel 1:1 min de boog) met onder de haakopening 2 klauwen van 2 px tegen elkaar, even lang, inkeping 1x1 in de punt. Wacht op Jordi.
 - Jordi over ronde 9: "nee je gaat het nooit begrijpen denk ik" · "Pak de klauw van sneasel, trek de twee klauwen los van elkaar" · "en daartussen zet je die koevoet ruimte" · "dan zet je ze weer vast" · "heb je nog de vorm" · "het is letterlijk een inkeping tussen 2 klauwen".
 - Ronde 10 (`ronde10.py`, `vel_ronde10_klauw.png`, 1484 px): Sneasel-klauw 1:1, onderste klauw 1 px omlaag (los), aan de handkant weer vast; alleen tussen de punten een inkeping (x 8–9, y 39). Wacht op Jordi.
+- Jordi over ronde 10: "je verandert telkens de hele vorm" · "nu ga je weer de vorm veranderne". Ronde 11 (`ronde11.py`, `vel_ronde11_klauw.png`, 1479 px): Sneasel-klauw exact 1:1, niets verschoven, alleen (8,39) en (9,39) weg = inkeping tussen de 2 klauwen. Wacht op Jordi.
 

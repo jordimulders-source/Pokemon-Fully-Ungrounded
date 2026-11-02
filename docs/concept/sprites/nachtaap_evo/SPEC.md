@@ -43,6 +43,11 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 ## Bevroren
 - **3D-poppetje** (Jordi, 2 nov: "ja, maak er maar een silhouet van"): `pop3d/nachtaap3d.py` met `nachtaap(40, 'omhoog', 'kene', cam=(40, 8))`: lijf 40°, kop 80°, pitch 8, staart omhoog met spiraal, kené op de rug, één witte halve maan op de kop (bolkappen, punten omlaag, middenstuk tussen de ogen bolt in), geen borstvlak. Vel: `pop3d/kop_halvemaan.png`.
 
+## Kleur (open, ronde 1)
+- Jordi 2 nov over de ogen: "de ogen mogen meer rood dan fase 1, verder nog wat meer starend, maar buiten dat vergelijkbaar". Eerder: "we moeten uiteraard de ogen nog anders vormgeven, plus een neutrale mond".
+- Vacht: "De kleur mag imo iets donkerder dan van de eerste evo" (poppetje: #5E4488, verre kant #45306A).
+- Kop: "het enige witte op het hoofd moet de halve maan zijn" (zie bevroren poppetje). Lijf: kené in lichtlila, rustiger dan de maan. Geen borstvlak.
+
 ## Silhouet
 - Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
 - **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.

@@ -16,7 +16,7 @@ Per Pokémon of lijn: **Besloten** (wat vastligt), **Inspiratie** (het echte die
 | | Fase 1 | Fase 2 | Fase 3 |
 |---|---|---|---|
 | **Fighting** | alpaca | lama | lama met bombín (cholita-luchadora) |
-| **Dark** | olinguito | coati | open (Robin Hood) |
+| **Dark** | olinguito | coati | krabbenetende wasbeer (vigilante) |
 | **Psychic** | tarsier-achtige nachtaap | nachtaap | muriqui met grote ogen (healer) |
 
 Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is een dief die nobel wordt; de nachtaap ziet er eng uit maar geneest.
@@ -28,7 +28,7 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Later:** een wilde lijn vicuña → guanaco.
 
 ### Dark: coati-lijn
-- **Besloten:** olinguito → coati → **eindvorm: dier open** (krabbenetende wasbeer was een voorstel van Claude, niet bevestigd; kandidaten in `sprites/wasbeer/SPEC.md`). Van **kleine criminaliteit naar een nobel thema** (Robin Hood: stelen van de rijken, geven aan de armen; veel nobeler dan Coathief, maar een grijze moraal; Jordi 2 nov). Eindvorm **puur Dark** en **niet rechtop** (Jordi: geen starters die steeds mensachtiger worden). **Lange klauwen in elke vorm.** **USP van de lijn (Jordi, 23 okt):** enorme klauwen zoals Sandslash (2 per poot); een echte coati heeft ook zulke klauwen, maar veel kleiner, zwart en vijf per poot; deze lijn vergroot ze tot het kenmerk. Het bandietenmasker van de wasbeer wordt het Robin Hood-masker. **Fase 2: Coathief** (Jordi, 25 okt; *Nasua nasua*): zwarte bivakmuts-kop met coati-vlekken, geringde staart, loopt dreigend op je af (coati's in gangs die op je eten afrennen); frontsprite `docs/concept/sprites/coathief/af/coathief.png`. Masker-lijn: band (olinguito) → bivakmuts (Coathief) → Robin Hood-masker.
+- **Besloten:** olinguito → coati → **krabbenetende wasbeer** (*Procyon cancrivorus*, Jordi 2 nov; de grotere verwant, zoals Piplup → Empoleon). Van **kleine criminaliteit naar een vigilante** (Jordi 2 nov: Robin Hood vervalt; "meer de vigilante kant op, plus een soort ode aan Sly Cooper"); nobeler dan Coathief, grijze moraal. **Lore:** de wasbeer is solitair, de coati leeft in bendes: de bendedief wordt eenling. Sprite: `sprites/wasbeer/SPEC.md`. Eindvorm **puur Dark** en **niet rechtop** (Jordi: geen starters die steeds mensachtiger worden). **Lange klauwen in elke vorm.** **USP van de lijn (Jordi, 23 okt):** enorme klauwen zoals Sandslash (2 per poot); een echte coati heeft ook zulke klauwen, maar veel kleiner, zwart en vijf per poot; deze lijn vergroot ze tot het kenmerk. Het masker van de wasbeer wordt het vigilantemasker. **Fase 2: Coathief** (Jordi, 25 okt; *Nasua nasua*): zwarte bivakmuts-kop met coati-vlekken, geringde staart, loopt dreigend op je af (coati's in gangs die op je eten afrennen); frontsprite `docs/concept/sprites/coathief/af/coathief.png`. Masker-lijn: band (olinguito) → bivakmuts (Coathief) → vigilantemasker (wasbeer).
 - **Inspiratie:** olinguito (pas in 2013 als nieuwe soort beschreven, nevelwouden Colombia/Ecuador, teddybeergezicht); coati (steelt eten van toeristen bij Iguazú; groepen heten *bandas*; lange klauwen om te graven en te klimmen); krabbenetende wasbeer (*mapache cangrejero*, rivieren en mangroves, natuurlijk zwart masker). Alle drie wasbeerachtigen.
 - **Ideeën:** signature move "graaien en wegwezen" (schade + item stelen + wisselen); ability die een gestolen item aan de partner geeft.
 

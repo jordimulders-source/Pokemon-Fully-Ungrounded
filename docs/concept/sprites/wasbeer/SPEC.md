@@ -1,4 +1,4 @@
-# Dark-starter fase 3 (eindvorm): SPEC
+# Dark-starter fase 3 (eindvorm, krabbenetende wasbeer): SPEC
 
 Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fase 1 en 2 (`referenties/fase1_olinguito.png`, `referenties/fase2_coathief.png`; SPEC's in `../olinguito_v2/` en `../coathief/`). Mapnaam voorlopig `wasbeer/`; het dier en de naam volgen (Jordi).
 
@@ -9,7 +9,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 - **Type: puur Dark** (Jordi, 2 nov). De soort staat nog niet in de repo; data volgt in een aparte taak.
 - **Formaat fase 3:** groter dan Coathief (1315 px); eindvormen ±1500–2000 px, afhankelijk van de vorm (FAKEMON_CHECKLIST D1).
 
-## Kandidaat krabbenetende wasbeer (voorstel Claude, niet bevestigd)
+## Het echte dier
 - Slanker en hoger op de poten dan de Noord-Amerikaanse wasbeer, korte vacht zonder dikke ondervacht (lijkt daardoor magerder), grijsbruin tot geelbruin.
 - Zwart masker over de ogen dat **achter het oog ophoudt** (anders dan de noordelijke wasbeer), witte wenkbrauwvlek en witte snuitrand; geringde staart; donkere, kale handen (vangt krabben en weekdieren op de tast).
 - Staat vaak rechtop op de achterpoten om rond te kijken; nachtactief.
@@ -20,11 +20,26 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov) "B is prima. Ander soort wasbeer dan Zigzagoon ook, dus prima. De staart en de vorm lijken als een logische evolutie van een coati. Grote verschil is dat deze raccoon solitary is tov coati's die in gangs opereren. Dus dat is goede lore ook. Robin Hood laten we achterwege, we gaan meer de vigilante kant op, plus een soort ode aan Sly Cooper"
 - (2 nov) "Maar zijn dat logische evoluties van een coati?"
 - (2 nov) "kijk vooral naar hoe andere starterlijnen dat doen in pokemon"
 - (2 nov) "Laten we verder gaan met de starters, 1 pokemon per gesprek, dus nu de evolutie van Coathief, de 3e stage van de dark starter"
 
+## Referenties (`referenties/`, Jordi 2 nov)
+- `foto1_kop_closeup_eet.webp`: kop close-up met handen (lijkt een noordelijke wasbeer, *P. lotor*: dichte grijze vacht; alleen voor masker, wenkbrauwvlek, handen).
+- `foto2_zittend_frontaal.webp`: zittend, kop naar de kijker; geelbruine borst, masker rond de ogen, donkere poten, geringde staart.
+- `foto3_zijaanzicht_lopend.webp`: zijaanzicht lopend: lange poten, slank lijf, staart met ringen (verhoudingen, coati-gelijkenis).
+- `foto4_boom_klauwen.png`: in een boom, lange gebogen klauwen (lichte vacht; soort niet zeker).
+- `foto5_collage_rots_uitkijk.webp`: o.a. op een rots, vier poten, kop naar de kijker (rechtsonder), en laag sluipend met de hand vooruit (linksboven).
+
 ## Open vragen (stap 1, voor Jordi)
+Pose (voorstel Claude, 2 nov):
+- **A. Op de uitkijk** (foto 5 rechtsonder): op vier poten op een rots, voorpoten samen op de rand, klauwen over de rand, kop gedraaid naar de speler, staart in een haak omlaag (de haakstaart van de olinguito-concepten en een knik naar Sly's wandelstok). De vigilante die over zijn wijk waakt. Leest anders dan Coathief (die loopt op je af).
+- **B. Sluipen** (foto 5 linksboven): laag op tenen, één klauwhand vooruit, kop laag, blik naar de speler. Meer Sly, maar dicht bij de looppose van Coathief.
+- Kleur: grijsbruin lijf met geelbruine borst, donkere poten, zwart masker met witte wenkbrauwvlek en witte snuitrand, crème klauwen (lijnkenmerk). Donker houden (Dark).
+- Naam: open.
+
+Kandidaat-dieren (eerdere ronde, vervallen):
 **Evolutielogica (2 nov, na Jordi's vraag):** miereneter, gordeldier en manenwolf zijn geen logische opvolgers van een coati (andere orde of familie); de brillenbeer is hooguit een verre verwant. Wasbeerachtigen in Zuid-Amerika: olinguito, olingo, kinkajoe, coati, bergcoati, krabbenetende wasbeer; alleen de wasbeer is groter dan de coati. Starters blijven meestal hetzelfde dier, groter en extremer (Chimchar → Infernape, Zigzagoon → Linoone). Nieuwe richting: **(a) volwassen, solitaire coati** (mannetjes verlaten rond 2 jaar de bende en leven alleen; 'coatimundi' zou op die mannetjes slaan, nog te controleren), **(b) krabbenetende wasbeer**, **(c) coati met één geleend kenmerk** (bv. miereneterklauwen), maar het blijft een coati.
 
 **Hoe starterlijnen het doen (studie 2 nov):** fase 3 is nooit een dier uit een andere orde. Twee patronen: (1) **hetzelfde dier, volgroeid en extremer** (Bulbasaur, Squirtle, Chimchar → Infernape, Cyndaquil → Typhlosion, Totodile, Turtwig, Tepig); (2) **de grotere verwant uit dezelfde familie** (Piplup → Empoleon: pinguïn → keizerspinguïn; Grookey → Rillaboom: aap → gorilla; Litten → Incineroar: kat → tijger; Charmander → Charizard). Het thema komt erbovenop via een lichaamsdeel, niet via kleding: Decidueye (de boogschutter met kap = bladeren), Incineroar (vuurriem), Empoleon (snavel als drietand), Meowscarada (dief/goochelaar: bloem als 'cape'). Vier poten in fase 3 kan (Venusaur, Torterra, Meganium, Typhlosion half). Voor ons: (1) = volwassen coati, (2) = krabbenetende wasbeer (enige grotere wasbeerachtige).
@@ -38,7 +53,8 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Krabbenetende wasbeer:** dichtst verwant, natuurlijk masker; nobel lastig, Obstagoon-associatie.
 
 ## Bevroren
-- Robin Hood: stelen van de rijken, geven aan de armen; veel nobeler dan Coathief, grijze moraal. **Niet (helemaal) rechtop**, niet mensachtiger dan fase 2. **Puur Dark.**
+- **Dier: krabbenetende wasbeer** (Jordi 2 nov). Lore: solitair, tegenover de coati-bendes; de bendedief wordt eenling.
+- **Thema: vigilante + ode aan Sly Cooper** (Jordi 2 nov); Robin Hood vervalt. Ode = houding/gevoel (meesterdief die van boeven steelt, sluipen, haak), geen kopie van Sly's pet, kleur of wandelstok. Nobeler dan Coathief, grijze moraal. **Niet (helemaal) rechtop**, niet mensachtiger dan fase 2. **Puur Dark.**
 
 ## Afgekeurd (niet herhalen)
 - (nog niets)

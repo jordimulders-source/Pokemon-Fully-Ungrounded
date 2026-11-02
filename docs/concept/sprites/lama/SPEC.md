@@ -89,3 +89,4 @@ Echte lamatooi uit de Andes: bij de *señalakuy*/*t'ikachay* (merkfeest) krijgen
 - Ronde 1 (maker): `fase2/silhouet/ronde1.txt` (1177 px), zones voorpoten/achterpoten/oren/snuit/wol; voorpoten, oren en snuit door Claude akkoord en bevroren.
 - Ronde 1b (maker, Claude stuurde terug: achterpoten "paaltjes", omtrek rechthoekig): `ronde1b.txt` / `vel_ronde1b.png`, 1188 px, box 44×60, kop 35%; achterpoten met dij uit de wol, hak en schuin onderbeen; staart als pluim; 3–5 wolplukken; massa lijf +2,9%. 0 px buiten de zones.
 - Open punt van de maker (buiten zijn zones, komt uit de bron): de hals is een rechte dikke kolom. Vraag aan Jordi.
+- **Silhouet ronde 1b goedgekeurd en bevroren** (Jordi, 2 nov: "goedgekeurd en laat het bij de rustige lama stand passen, want dat is vrij iconisch"): `fase2/silhouet/ronde1b.txt` = `ronde1b_1x.png` (1188 px). Hals blijft recht (rustige lamastand). Alle kleurrondes: alpha-diff 0 hiermee.

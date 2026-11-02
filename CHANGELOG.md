@@ -163,3 +163,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.34] - Lama fase 2: silhouet ronde 1b
 - Maker-agent: silhouet uit het goedgekeurde poppetje, handreparaties aan poten, oren, snuit en wolomtrek (`docs/concept/sprites/lama/fase2/silhouet/vel_ronde1b.png`, 1188 px). Wacht op Jordi.
+
+### [v0.0.35] - Lama fase 2: silhouet goedgekeurd
+- Jordi keurde silhouet ronde 1b goed; de rechte hals blijft ("de rustige lama stand [...] vrij iconisch"). Kleurronde 1 gestart (maker-agent).

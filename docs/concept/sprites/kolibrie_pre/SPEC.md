@@ -29,3 +29,7 @@
 - Fout in ronde 1: twee werkwijzen door elkaar. Eerst een handsilhouet uit de foto (kolibriemethode), daarna een los poppetje uit vrije vormen (59% overlap met het silhouet). Silhouet A was bovendien zelf al vervormd (lijf geplet, kop ×1,45), waardoor het poppetje ernaar passen een pinguïn gaf.
 - Nu de Coathief-volgorde: **foto → poppetje → silhouet**. `pop3d/pas_foto.py` past de grote vormen van het poppetje op de omtrek van foto 1 (88% overlap, `pop3d/overlay_foto.png`, parameters `pas_foto_params.json`); daarna pas cute in 3D (`vel_ronde2.py`: stand 1 foto-getrouw 40% kop, stand 2 50%, stand 3 58%). Vel: `pop3d/vel_ronde2.png`. Advies Claude: stand 2 (fase 1-maat D2 40–55%).
 - Silhouet v3A vervalt als bron; het silhouet komt straks uit het gekozen poppetje (direct verkleind, maker-agent repareert met de hand).
+
+## Ronde 3: gestopt met het poppetje (Jordi, 2 nov: "gaat weer fout he, lijkt totaal niet op de silhouet" · "dat zie je zelf ook wel toch")
+- Ook het poppetje dat het best op silhouet A past (`pop3d/vel_ronde3_A.png`, 79% overlap, parameters gezocht) lijkt er niet op: gladde ellipsoïden worden een ei/pinguïn; de schuine houding, de rugbult, de kop die laag in het lijf zit en het staartstompje van A komen er niet uit.
+- Werkregel "twee rondes zonder voortgang = stoppen": het 3D-poppetje werkt niet voor deze vogel (net als bij de wasbeer). Stap terug: **silhouet A (Jordi: "a veel beter") is de vorm**; de maker-agent tekent de sprite met de hand op A, met foto 1/3/5 als bron. Wacht op Jordi.

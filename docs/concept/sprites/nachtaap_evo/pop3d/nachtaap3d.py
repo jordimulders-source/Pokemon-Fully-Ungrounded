@@ -26,7 +26,7 @@ HEAD_R = 24.0
 SPIR_R = 15.0
 
 
-def nachtaap(head_extra=30, tail='omlaag', motief=None):
+def nachtaap(head_extra=30, tail='omlaag', motief=None, cam=(40, 8)):
     m = P.Model()
     # lijf: borst/schouders, hoge gebogen rug (hoger dan de kop), achterwerk
     m.ell((-16, 8, 0), 24, 'fur')
@@ -89,10 +89,18 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None):
         # Jordi 2 nov (krabbel referenties/jordi_krabbel_halvemaan.png): het enige witte op de kop is één grote
         # halve maan die de helft van de kop bedekt en over de ogen heen valt, punten omlaag.
         # Ontworpen in het gezichtsvlak (z, y) van de voorkant: buitencirkel min een lagere binnencirkel.
-        fz, fy = u[:, 2], u[:, 1]
+        # Symmetrisch in beeld (Jordi: "niet mooi synchroon"): in het vlak loodrecht op de kijkrichting,
+        # gecentreerd op het midden tussen de ogen.
+        Rc = P.rot_x(math.radians(cam[1])) @ P.rot_y(math.radians(cam[0]))
+        vdir = (Rc @ Rh).T @ np.array((0, 0, 1.0))
+        right = np.cross(np.array((0, 1.0, 0)), vdir); right /= np.linalg.norm(right)
+        upv = np.cross(vdir, right)
+        mid_e = ((eyes[0] + eyes[1]) / 2 - HEAD_C) / HEAD_R
+        rel = u - mid_e
+        fz, fy = rel @ right, rel @ upv + 0.06
         o = np.hypot(fz, fy - 0.15) < 0.86
         i = np.hypot(fz, fy + 0.32) < 0.64
-        g[(u[:, 0] < 0.30) & o & ~i] = groups.index('moon')
+        g[(u @ vdir > 0.0) & o & ~i] = groups.index('moon')
         for e in eyes:
             ue = (e - HEAD_C) / HEAD_R
             g[np.linalg.norm(u - ue, axis=1) < 0.33] = groups.index('ring')

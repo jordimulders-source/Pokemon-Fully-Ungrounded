@@ -14,7 +14,7 @@ import pop3d as P
 R = 768
 LINE = np.array((34, 26, 26), np.uint8)
 COL = {
-    'body': '#7D756B', 'thigh': '#7D756B', 'farthigh': '#5E574F', 'belly': '#C8A56E', 'far': '#5E574F', 'farbelly': '#9C8156',
+    'body': '#7D756B', 'thigh': '#7D756B', 'farthigh': '#5E574F', 'belly': '#C4B79F', 'far': '#5E574F', 'farbelly': '#8E8270',
     'limb': '#2E2826', 'farlimb': '#1F1A19', 'claw': '#E9DFC6', 'farclaw': '#BFB49C',
     'head': '#8A8379', 'mask': '#1E1A1A', 'white': '#ECE6DA', 'nose': '#141010',
     'eye': '#6B2A1C', 'glint': '#FFFFFF', 'ear': '#7D756B', 'earin': '#ECE6DA',
@@ -45,23 +45,23 @@ class Model(P.Model):
         self.ell(b[:3], b[3], gfun(L) if gfun else g)
 
 
-def koevoet(m, hand, d, bend, g, s=1.0):
+def koevoet(m, hand, d, bend, g, s=1.0, steel=11):
     """Koevoetklauw (SPEC): 2 klauwen tegen elkaar = rechte steel, bocht ±110°, recht eindstuk, punt gespleten in 2 tanden.
     d = richting van de steel, bend = richting waarin het eindstuk afbuigt (loodrecht-ish op d)."""
     d, bend = unit(d), unit(bend)
     side = unit(np.cross(d, bend))
     hand = np.array(hand, float)
-    knee = hand + d * 11 * s
+    knee = hand + d * steel * s
     a = math.radians(70)                       # eindstuk maakt 110° met de steel
     e = unit(d * math.cos(a) + bend * math.sin(a))
     tip = knee + e * 4.5 * s
-    m.tube([(*hand, 2.1 * s), (*knee, 1.9 * s)], g, 0.5)
-    m.tube([(*knee, 1.7 * s), (*(knee + e * 2.6 * s), 1.4 * s)], g, 0.5)
+    m.tube([(*hand, 2.4 * s), (*knee, 2.2 * s)], g, 0.5)
+    m.tube([(*knee, 2.2 * s), (*(knee + e * 2.8 * s), 1.8 * s)], g, 0.5)
     for sd in (-1, 1):                         # gespleten punt: twee platte tanden met een V-inkeping
-        m.tube([(*(knee + e * 2.6 * s), 1.1 * s), (*(tip + side * sd * 0.9 * s), 0.6 * s)], g, 0.4)
+        m.tube([(*(knee + e * 2.8 * s), 1.3 * s), (*(tip + side * sd * 1.1 * s), 0.7 * s)], g, 0.4)
 
 
-def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0):
+def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11):
     """lean = romp voorover vanaf verticaal (Gumshoos ±15-20, foto 10 ±55). near_arm: 'hoog' (actief, klauw vooruit)."""
     m = Model()
     la = math.radians(lean)
@@ -72,13 +72,15 @@ def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0):
     chest = hip + ax * 25
     m.axis = (hip, ax, fr)
     # lijf: één getaperde buis, smal bekken, iets voller onder de borst (foto 12: peer, maar slank: krabbeneter)
-    m.tube([(*(hip - ax * 2), (7.4, 7.4, 7.0)), (*(hip + ax * 6), (8.8, 8.8, 8.2)), (*(hip + ax * 15), (9.8, 9.8, 8.8)),
-            (*chest, (10.0, 10.0, 9.2)), (*(chest + ax * 6), (8.0, 8.0, 7.8))], 'body')
+    bk_ = body_k
+    m.tube([(*(hip - ax * 2), np.array((7.4, 7.4, 7.0)) * bk_), (*(hip + ax * 6), np.array((8.8, 8.8, 8.2)) * bk_ * 1.03),
+            (*(hip + ax * 15), np.array((9.8, 9.8, 8.8)) * bk_), (*chest, np.array((10.0, 10.0, 9.2)) * bk_),
+            (*(chest + ax * 6), np.array((8.0, 8.0, 7.8)) * (1 + (bk_ - 1) * 0.5))], 'body')
     # buidel op de rug: omgekeerde kangoeroebuidel, opening naar de schouders, groeit geleidelijk uit de rug
     Rp = P.rot_z(la)                       # lange as langs de lijfas
-    m.ell(hip + ax * 8 + bk * 7.0, (6.6, 8.5, 8.6), 'pouch', Rp)        # zakbodem: het zwaarst, onderaan de rug
-    m.ell(hip + ax * 15 + bk * 6.4, (5.6, 7.5, 7.6), 'pouch', Rp)       # loopt geleidelijk smaller naar boven
-    m.ell(hip + ax * 20.5 + bk * 9.6, (1.6, 1.4, 6.2), 'lip', Rp)       # opening (plooi) aan de schouderkant
+    m.ell(hip + ax * 8 + bk * 7.0 * bk_, (6.6, 8.5, 8.6), 'pouch', Rp)        # zakbodem: het zwaarst, onderaan de rug
+    m.ell(hip + ax * 15 + bk * 6.4 * bk_, (5.6, 7.5, 7.6), 'pouch', Rp)       # loopt geleidelijk smaller naar boven
+    m.ell(hip + ax * 20.5 + bk * 9.6 * bk_, (1.6, 1.4, 6.2), 'lip', Rp)       # opening (plooi) aan de schouderkant
     # nek en kop: kop naar voren, kijkt naar de speler
     neck = chest + ax * 6 + fr * 1.5
     hc = neck + np.array((-6.0, 7.5, 0)) * hs
@@ -106,30 +108,30 @@ def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0):
     # benen: Weavile-lengte, knie naar voren, hiel naar achteren, voet plat (plantigraad)
     for sz, gl in ((1, ''), (-1, 'far')):
         dx = 0 if sz > 0 else 7
-        h = hip + np.array((0, -1, 5.5 * sz))
+        h = hip + np.array((0, -1, 5.5 * sz * bk_))
         kn = np.array((-9 + dx, 19 * leg + 3, 7.0 * sz))
         an = np.array((6 + dx, 4.5, 6.0 * sz))
-        m.tube([(*(h + np.array((1, 1, 0))), 7.4), (*(h * 0.45 + kn * 0.55), 6.2), (*kn, 4.6)], 'farthigh' if gl else 'thigh')
-        m.tube([(*kn, 4.4), (*an, 3.4)], FAR['limb'] if gl else 'limb')
-        m.ell(an + np.array((-4.5, -1.6, 0)), (6.8, 2.4, 3.6), FAR['limb'] if gl else 'limb')
+        m.tube([(*(h + np.array((1, 1, 0))), 7.4 * leg_k), (*(h * 0.45 + kn * 0.55), 6.2 * leg_k), (*kn, 4.6 * leg_k)], 'farthigh' if gl else 'thigh')
+        m.tube([(*kn, 4.4 * leg_k), (*an, 3.4 * leg_k)], FAR['limb'] if gl else 'limb')
+        m.ell(an + np.array((-4.5 * leg_k, -1.6, 0)), np.array((6.8, 2.4, 3.6)) * (0.5 + leg_k / 2), FAR['limb'] if gl else 'limb')
     # armen: komen uit de schouders (schouderbol op de flank), bovenarm in vachtkleur, onderarm + hand donker
-    sh_n = chest + np.array((0, 1.0, 7.6)); sh_f = chest + np.array((2.5, 0.0, -7.6))
+    sh_n = chest + np.array((0, 1.0, 7.6 * bk_)); sh_f = chest + np.array((2.5, 0.0, -7.6 * bk_))
     m.ell(sh_n, (5.4, 6.2, 4.4), 'body')
     if near_arm == 'hoog':      # actief: elleboog naar achter-onder, onderarm schuin omhoog naar voren, koevoet vooruit
         el = sh_n + np.array((-2.0, -10.0, 4.0)); wr = el + np.array((-11.0, 5.5, 1.5))
-        cd, cb = (-1, 0.25, 0.05), (0, -1, 0)
+        cd, cb = (-0.8, 0.15, -0.55), (0, -1, 0)      # dwars in beeld bij draai 35-50°: koevoet in profiel
     else:                       # hangend voor de borst (foto 10)
         el = sh_n + np.array((-4.0, -10.0, 4.0)); wr = el + np.array((-7.0, -4.0, 0.5))
         cd, cb = (-0.6, -1, 0.1), (-1, 0.3, 0)
     m.tube([(*sh_n, 4.8), (*el, 4.0)], 'body')
     m.tube([(*el, 3.8), (*wr, 3.1)], 'limb')
     m.ell(wr + unit(wr - el) * 1.5, (3.2, 2.8, 3.2), 'limb')
-    koevoet(m, wr + unit(wr - el) * 2.5, cd, cb, 'claw')
+    koevoet(m, wr + unit(wr - el) * 2.5, cd, cb, 'claw', steel=steel)
     elf = sh_f + np.array((-3.0, -10.5, -2.0)); wrf = elf + np.array((-8.0, -3.5, 1.0))   # verre arm: lager, klauw omlaag-voor
     m.tube([(*sh_f, 4.4), (*elf, 3.8)], 'far')
     m.tube([(*elf, 3.6), (*wrf, 3.0)], 'farlimb')
     m.ell(wrf + unit(wrf - elf) * 1.5, (3.0, 2.6, 3.0), 'farlimb')
-    koevoet(m, wrf + unit(wrf - elf) * 2.4, (-0.55, -1, -0.05), (-1, 0.4, 0), 'farclaw', 0.95)
+    koevoet(m, wrf + unit(wrf - elf) * 2.4, (-0.6, -0.7, -0.5), (-0.6, 0.6, 0.5), 'farclaw', 0.95, steel=steel)
     # staart: geringd, laag naar achteren, eind in een haak omhoog (Sly-knipoog)
     base = hip + bk * 4 + np.array((3, -3, -1))
     pts = [(*base, 5.4), (base[0] + 10, base[1] - 7, -3, 5.8), (base[0] + 21, base[1] - 9, -5, 5.6),
@@ -176,7 +178,8 @@ def render(m, yaw, pitch, scale, center):
         rel = q - hip
         off = rel - np.outer(rel @ ax, ax)
         t = rel @ ax
-        bel = (off @ fr > 3.0) & (t > 4) & (t < 32) & (np.linalg.norm(off, axis=1) < 11.5) & (np.abs(q[:, 2]) < 6.5)
+        on = np.linalg.norm(off, axis=1) + 1e-6
+        bel = ((off @ fr) / on > 0.62 + 1.3 * ((t - 20) / 13) ** 2) & (on < 12.5)   # ovale lichte buik, geen rechthoek
         g = gid[sel]; g[bel] = gi(gl); gid[sel] = g
     # kop: masker over de ogen en de neusrug (houdt achter het oog op), witte wenkbrauwband, witte snuitrand en kaak
     h = m.head
@@ -281,5 +284,43 @@ def vel(naam='vel_v2_ronde1.png'):
     im.save(os.path.join(HERE, naam))
 
 
+NIEUW = dict(near_arm='hoog', leg=0.8, leg_k=0.8, steel=5.5)   # Jordi over P13: klauwen kort, pootjes stomper en dunner
+
+
+def vel2(naam='vel_v2_ronde2.png', yaw=50):
+    """Ronde 2 rond P13 (Jordi): rij 1 romp (menselijker = rechter), rij 2 lijfdikte (zoals de foto)."""
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 18)
+    ref = os.path.join(HERE, '../referenties')
+    cell = 262
+    rijen = [[('P13 (ronde 1)', dict(POSES['P1'])), ('A: romp 30°, lijf 1,12', dict(NIEUW, lean=30, body_k=1.12)),
+              ('B: romp 22°, lijf 1,12', dict(NIEUW, lean=22, body_k=1.12))],
+             [('C: romp 26°, lijf 1,06', dict(NIEUW, lean=26, body_k=1.06)), ('D: romp 26°, lijf 1,14', dict(NIEUW, lean=26, body_k=1.14)),
+              ('E: romp 26°, lijf 1,22', dict(NIEUW, lean=26, body_k=1.22))]]
+    im = Image.new('RGB', (12 + cell * 4, 44 + (cell + 24) * 2), 'white'); d = ImageDraw.Draw(im)
+    d.text((12, 12), f'Wasbeer 3D-ontwerp v2 ronde 2 (rond P13, draai {yaw}°): korte klauwen, stompere pootjes', font=FB, fill=(30, 30, 30))
+    for r, rij in enumerate(rijen):
+        for c, (lab, v) in enumerate(rij):
+            m = wasbeer(**v); img, al = view(m, yaw)
+            x, y = 12 + cell * c, 44 + (cell + 24) * r
+            im.paste(img, (x, y))
+            bb = Image.fromarray((al * 255).astype(np.uint8)).resize(img.size).getbbox()
+            s1 = img.crop(bb); f1 = 60 / max(s1.size)
+            s1 = s1.resize((max(1, round(s1.width * f1)), max(1, round(s1.height * f1))), Image.LANCZOS)
+            im.paste(s1, (x + 256 - s1.width, y + 256 - s1.height))
+            d.text((x + 4, y + 258), f'{lab}, kop {kopaandeel(m, yaw):.0%}', font=F, fill=(60, 60, 60))
+    x = 12 + cell * 3
+    for r, (f, lab) in enumerate((('foto10_staand_reikend.jpg', 'foto 10 (gespiegeld)'), ('foto12_rechtop_driekwart_lijf.png', 'foto 12 (lijfdikte)'))):
+        foto = Image.open(os.path.join(ref, f)).convert('RGB')
+        if r == 0:
+            foto = foto.transpose(Image.FLIP_LEFT_RIGHT)
+        foto.thumbnail((256, 236)); y = 44 + (cell + 24) * r
+        im.paste(foto, (x, y)); d.text((x + 4, y + 258), lab, font=F, fill=(60, 60, 60))
+    im.save(os.path.join(HERE, naam))
+
+
 if __name__ == '__main__':
-    vel(*sys.argv[1:])
+    if sys.argv[1:2] == ['ronde1']:
+        vel()
+    else:
+        vel2()

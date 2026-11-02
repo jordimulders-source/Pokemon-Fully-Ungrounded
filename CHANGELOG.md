@@ -146,3 +146,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.28] - Dark-starter fase 3: nieuw 3D-ontwerp (wasbeer)
 - Nieuw poppetje in de stijl van het lama-ontwerp: `docs/concept/sprites/wasbeer/ontwerp/pop3d_v2.py`, vel `ontwerp/vel_v2_ronde1.png` (3 poses x 3 hoeken, met 1x-voorbeeld, naast foto 10, Gumshoos en Weavile). Op 2 poten voorover, slank lijf zonder dikke achterkant, kop ±33%, koevoetklauwen, geringde haakstaart, buidel als zak op de rug. Wacht op Jordi's keuze van hoek en pose.
+
+### [v0.0.29] - Wasbeer: 3D-ontwerp ronde 2 (rond P13)
+- Jordi koos P13 als basis: klauwen kort met alleen een koevoet-uiteinde, stompere dunnere pootjes, iets dikker en menselijker lijf. Varianten in romphoek en lijfdikte: `docs/concept/sprites/wasbeer/ontwerp/vel_v2_ronde2.png`. Lichte buik als ovaal (geen rechthoekig vlak).

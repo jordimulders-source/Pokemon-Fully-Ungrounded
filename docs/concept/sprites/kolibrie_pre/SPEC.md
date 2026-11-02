@@ -42,3 +42,4 @@
 
 ## Kleur (Jordi, 2 nov): "fluweel als kleur"
 - Besloten: **fluweelpalet zoals de eindvorm** (fluweelzwarte kop, violet lijf, blauwgroene schouderglans; buik licht lavendel als jong dons; gele mondhoeken). Voor de kleurronde na het silhouet.
+- **Aanvulling (Jordi, 2 nov): "deze pre evo mag wel een veel mildere kleur hebben, veel minder mysterieus".** Dus: fluweelfamilie, maar zacht en licht: lichte grijsviolette/lila tinten in plaats van fluweelzwart, geen diepe donkere kop; blauwgroen alleen als klein accent; lichte donzige buik; gele mondhoeken. Het mysterieuze/donkere komt pas bij de evolutie (Ghost).

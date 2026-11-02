@@ -157,3 +157,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.32] - Lama: ontwerp goedgekeurd, halsband als leitmotif
 - Jordi "zeer tevreden"; fase 2 en 3 krijgen elk een aguayo-halsband (leitmotif van de alpaca), fase 3 = variant Y (windsels). Bron voor het silhouet van fase 2 klaar (`docs/concept/sprites/lama/fase2/silhouet/`); maker-agent start.
+
+### [v0.0.33] - Werkwijze: ontwerpfase met poppetje vastgelegd
+- Jordi: "ik vind dit echt geweldig werk [...] noteer dat deze manier van werken tot nu toe uitstekend werkt". De ontwerpfase van de lama (poppetje met kleding als praatplaat, keuzevel, hele lijn op schaal, onderscheid via bouw + pose) staat als vaste aanpak in `docs/lessen/SPRITE_WERKWIJZE.md` (stap 1); dubbele regel daar opgeruimd.

@@ -1,0 +1,283 @@
+# Nachtaap fase 2, kleur ronde 7 (kene dik zoals het poppetje; rest = ronde 6). Met de hand: 'y x pixels', latere regels overschrijven eerdere.
+# Letters: k omlijning, d vacht-selout, s vacht schaduw, b vacht basis, l vacht licht,
+#  m lila midden (kene schaduw, snoet licht), n lila licht (kene, maan schaduw), w wit (maan, glans),
+#  r iris donker, i iris, j iris licht, c creme, e creme schaduw, t creme omlijning
+# ---- lijf (basislaag) ----
+25 23 dddddddddd
+26 21 ddlllllbbbbbdd
+27 19 ddllllllllbbbbbbdd
+28 18 dllllllllllbbbbbbbbd
+29 17 dlllllllllllbbbbbbbbbd
+30 16 dlllllllllllbbbbbbbbbbsd
+31 15 dlllllllllllbbbbbbbbbbbssd
+32 15 dllllllllllbbbbbbbbbbbbsssdk
+33 14 dlllllllllbbbbbbbbbbbbsssssssdlbbsssk
+34 14 dlllllllbbbbbbbbbbbbbsssssssssbbsssk
+35 14 dlllllbbbbbbbbbbbbbbbbbbbbbbbbssssk
+36 12 dlllllllllbbbbbbbbbbbbbbbbbbbbsssssk
+37 9 dllllllllllllbbbbbbbbbbbbbbbbbbbbssssk
+38 8 dlllllllllllllbbbbbbbbbbbbbbbbbbbbsssssk
+39 4 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbssssk
+40 3 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbssssk
+41 3 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbssssk
+42 4 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbssssk
+43 4 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbssssk
+44 4 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbssssk
+45 4 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbssssk
+46 4 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbsssssk
+47 4 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbsssssk
+48 4 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbsssssk
+49 4 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbsssssssk
+50 5 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbssssssssk
+51 5 dbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbsssssssssk
+52 6 dbbbbbbbbbbbbbbbbbbbbbbbbbbbssssssssskk
+53 7 dbbbbbbbbbbbbbbbbbbbbbbbsssssssssssk
+54 8 kssssssssssssssssssssskkkkssssssssk
+55 23 ssssssk
+57 23 tee
+58 23 tttk
+# ---- kene: zie onderaan (ronde 6, meander) ----
+# ---- staart ----
+8 54 dddd
+9 52 ddlllldk
+10 50 ddllkkkkbsk
+11 50 dlbk
+11 58 dsk
+12 49 dlbk
+12 54 ddk
+12 59 dsk
+13 49 dlk
+13 53 dlkk
+13 60 dk
+14 48 dlbk
+14 53 dk
+14 60 dk
+15 48 dlbk
+15 53 dk
+15 60 dk
+16 48 dlbk
+16 53 dk
+16 59 dsk
+17 48 dlbk
+17 53 dsk
+17 57 ddsk
+18 48 dlbk
+18 54 ksdsskk
+19 48 dlbk
+19 55 kkkk
+20 49 dlk
+21 49 dlbk
+22 49 dlbsk
+23 49 dlbsk
+24 48 dlbbsk
+25 48 dlbbsk
+26 48 dlbssk
+27 48 dbssk
+28 47 dlbssk
+29 47 dlbssk
+30 46 dlbssk
+31 45 dlbbssk
+32 44 dlbbssk
+# ---- nabije arm: schouder naast de kop, elleboog onder de kin, onderarm naar de hand ----
+43 26 sllll
+44 26 slllbd
+44 32 ss
+45 26 sllbbbd
+45 33 ss
+46 26 slbbbbd
+46 33 ss
+47 26 sbbbbsd
+47 33 ss
+48 26 sbbbbsd
+48 33 sss
+49 26 sbbbsd
+49 32 ssss
+50 25 ssbbbsk
+50 32 sss
+51 25 sbbbsk
+51 31 ssss
+52 24 sbbbssk
+52 31 sss
+53 23 sbbbbsk
+53 30 ssss
+54 22 sbbbbssk
+55 17 dsssbbbbbbssk
+56 17 dlbbssdddddk
+57 26 dk
+# ---- dij en achtervoet ----
+46 38 dlbb
+47 37 dlbbbs
+48 36 dlbbbbss
+49 36 dlbbbbss
+50 35 dlbbbbbss
+51 35 dbbbbbsss
+52 34 dbbbbbsss
+53 34 dbbbbsss
+54 34 dbbbssss
+55 34 dbbbbsssk
+56 32 ddbbbbbbssk
+57 31 tcccccceessk
+58 31 tcccccceesk
+59 31 tccctceeek
+60 32 kkkkkkkk
+# ---- verre arm en verre hand (schaduwtint, omlijningsbasis) ----
+55 7 dssssssdkk
+56 5 tttfffffft
+57 3 ttffffffffft
+58 3 tfftftfffft
+59 4 tftftt
+60 3 tttttt
+# ---- nabije onderarm en hand ----
+57 14 tttcccee
+57 22 k
+58 13 tcccccccek
+59 10 tttccccccceek
+60 11 tcccccccceek
+61 10 tcctcctekkkk
+62 11 kkkkkkk
+# ---- kop ----
+36 12 dddddddd
+37 9 dddlwwwwwwldd
+38 8 dlwwwwwwwwwnlbd
+39 7 dlwwwwwwwwwwwnlb
+40 6 dlwwwwwwwwwwwwwnb
+41 5 dlwwwwwwwwwwwwwwwn
+42 4 dwwwwwwwnbnwwwwwwwwnk
+43 4 dwwkkkkwbbbwkkkkwwwnsk
+44 4 dwkwrrrkbbbkwrrrkwwnsk
+45 4 dwkikkikbbbkikkikwnssk
+46 4 dwkikkikbbbkikkiknbssk
+47 4 dndrjjrdblbdrjjrdnbssk
+48 4 dlbddddblmlbddddbbsssk
+49 4 dlbbbbblmmllbbbbbssssk
+50 5 dlbbbblddllbbbsssssk
+51 5 dbbbbbmlllbbbssssssk
+52 6 dbbbbldddbbssssssk
+53 7 kbbbbllbbssssssk
+54 8 kkkkkkkkkkkkkk
+# ---- oren ----
+37 5 d
+38 4 ded
+39 4 dce
+40 3 dce
+41 3 ks
+37 23 ddd
+38 23 ccek
+39 23 dcek
+40 23 kcek
+41 23 keek
+42 24 kk
+# ---- ronde 4: maan = variant D2 exact (zone x 4-24, y 36-48) ----
+36 4 ........ddddddddllbbb
+37 4 .d...dddwwwwnbblddbdd
+38 4 ded.dwwwwwwwwwnblbdcc
+39 4 dcedwwwwwwwwwwwnblbdc
+40 4 cedwwwwwwwwwwwwwnbbkc
+41 4 sdwwwwwwwwnnwwwwnbbke
+42 4 dwwwwwwbbbbbnnnnwnbbk
+43 4 dwwkkkkbbbbbkkkknnbbs
+44 4 dwkwrrrkbbbkbrrrknbbs
+45 4 dwkikkikbbbkikkiknbss
+46 4 dwkikkikbbbkikkiknbss
+47 4 dwdrjjrdblbdrjjrdnbss
+48 4 dwbddddblmlbddddbnsss
+# ---- ronde 4: opschoning (vacht-volume rond de maan, punt rechts, glans terug) ----
+37 17 lll
+38 19 llb
+39 20 lbb
+42 11 l
+43 11 l
+43 20 w
+44 16 w
+# ---- ronde 5 ----
+# F1 rechterpunt maan wit (bovenste 4 px)
+43 21 w
+44 21 w
+45 21 w
+46 21 w
+# F2 kop ronder: kruin middelste 4 px 1 rij hoger, kin-uiteinden omhoog, rechterzijde onderaan naar binnen
+35 14 dddd
+36 14 llll
+53 8 k
+53 21 k
+54 21 s
+48 24 ks
+49 24 ks
+# F3 verre oog (links): buitenkant van de iris donkerder
+45 7 r
+46 7 r
+# F4 verre hand: 3 vingers met scheidingslijnen in een richting (schuin)
+57 3 ttfeffffffft
+58 3 tfeffeffft
+59 4 tffeft
+# F4 nabije hand: duim links, 4 vingers met lijnen van knokkel tot top, schaduwkant rechts
+58 20 e
+59 16 e
+59 19 e
+60 13 e
+60 16 e
+60 19 e
+# F4 achtervoet: enkel zakt in het midden (breekt de rechte bovenkant), tenen
+57 34 ebbe
+58 33 e
+59 33 t
+# ---- ronde 6: handrug violet, alleen vingertoppen creme (zoals Aipom/Monferno) ----
+# verre hand: rug in de schaduwtint s met selout d, toppen creme f met e-lijnen
+56 5 ddds
+56 8 ssssssd
+57 3 ttfefsssssd
+58 3 tfeffefssd
+59 4 tffeft
+# nabije hand: rug violet (licht linksboven, schaduw rechts), toppen creme met vingerlijnen
+57 14 dddlbbssk
+58 13 dllbbbbssk
+59 10 dddbbbsbbsss
+# achtervoet: violette voetrug, creme tenen en zool
+57 31 tccbbbbssss
+58 31 tceccebsssk
+59 31 tctctcessk
+# ---- ronde 6: oren violet met kleine lila binnenkant ----
+38 5 b
+39 5 ms
+40 4 ms
+38 23 lbb
+39 24 ms
+40 24 ms
+41 24 ss
+# ---- ronde 7: kene dik (rugband + 3 getrapte dwarsbanden, uit het poppetje; m licht/basis, l schaduwkant, n rand linksboven) ----
+27 21 nnnnlbbb
+28 19 bnmmmmmnnnnl
+28 33 mmml
+29 18 bbnlllllmmmml
+29 33 llmml
+30 17 nnnlbbbbbllmml
+30 35 mmml
+31 17 nmmlbbbbbb
+31 28 nmmml
+31 35 mmml
+32 17 llllbbbbb
+32 28 nmmml
+32 35 llml
+33 17 bbbbbbb
+33 28 llmml
+33 37 lll
+34 30 nml
+34 37 lll
+34 42 lll
+35 30 nml
+35 37 mml
+35 42 mml
+36 30 nml
+36 37 mml
+36 42 lll
+37 30 nml
+37 37 mml
+37 44 ll
+38 30 nml
+38 37 mml
+38 44 lll
+39 30 nml
+39 37 lll
+39 44 lll
+40 30 lll
+# kene-pixels: 139

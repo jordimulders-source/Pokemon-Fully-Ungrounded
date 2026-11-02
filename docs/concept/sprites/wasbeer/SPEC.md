@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov, over silhouet ronde 1) "uiteraard omdraaien, de armen+klauwen mogen wel iets korter. Verder is het belangrijk om te begrijpen dat het silhouet niet goed kan tonen dat het lichaam niet alleen een bol soort buik is, maar dat heeft puur met de pose te maken, maar mogelijk dat je het goed kan inkleuren"
 - (2 nov, foto 10 als bestand) "deze?"
 - (2 nov, over hoeken_r3.png) "het wordt er niet beter op, met die veel te dikke reet en niet echt de pose zoals op de fotos die ik stuurde"
 - (2 nov, over hoeken_r2.png) "De klauwen zijn nu wel goed. Op zich kan zo'n aanvals pose wel, want vigoroth heeft dat ook. Maar deze lijkt nog wat onnatuurlijk, met de benen nog staand en de armen vrij ver naar boven, misschien moet dit iets geleidelijker"
@@ -87,7 +88,9 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Ronde 3 (`ontwerp/hoeken_r3.png`, pose 'F' naar foto 10): op de achterpoten met gebogen knieën, romp 48/58° voorover, verre poot reikt naar voren (koevoet vooruit, haak omlaag), nabije poot hangt gebogen voor de buik (koevoet omlaag, haak naar voren), staart laag achter met de haak omhoog, kop iets omhoog. Een tussenversie met de reikende koevoet voor de snuit verworpen vóór Jordi.
 
 ## Silhouet (stap 2)
-- Ronde 1 (`silhouet/`): omtrek van foto 10 punt voor punt in fotocoördinaten (`omtrek.py`, controle `controle_omtrek.png`), direct verkleind tot 60 px hoog (`silhouet.py`). Handwerk alleen in benoemde zones: onderarmen dikker (≥ 3–4 px op 64), koevoeten (nabij: schuin vooruit-omlaag met de haak omhoog, zodat hij niet als poot leest; ver: vooruit met de haak omlaag), staartpunt vervangen door een haak omhoog. `ronde1.txt`, `ronde1_1x.png` (1155 px), vel `vel_ronde1.png`. Wacht op Jordi.
+- Ronde 1 (`silhouet/`): omtrek van foto 10 punt voor punt in fotocoördinaten (`omtrek.py`, controle `controle_omtrek.png`), direct verkleind tot 60 px hoog (`silhouet.py`). Handwerk alleen in benoemde zones: onderarmen dikker (≥ 3–4 px op 64), koevoeten (nabij: schuin vooruit-omlaag met de haak omhoog, zodat hij niet als poot leest; ver: vooruit met de haak omlaag), staartpunt vervangen door een haak omhoog. `ronde1.txt`, `ronde1_1x.png` (1155 px), vel `vel_ronde1.png`.
+- Ronde 2: gespiegeld (kijkt naar links), onderarmen en koevoeten korter: `ronde2.txt`, `ronde2_1x.png` (1144 px), `vel_ronde2.png`. Wacht op Jordi.
+- **Voor de kleur (Jordi):** het silhouet leest als één bolle buik door de pose; de kleur moet het lijf opdelen: lichte borst/buik (geelbruin), grijze rug en flank, de dij als eigen vorm (zoals op foto 10), donkere onderarmen die vóór de buik lopen, donkere onderbenen.
 
 ## Afgekeurd (niet herhalen)
 - **3D-poppetje voor deze pose (rondes 1–3):** "veel te dikke reet", "niet echt de pose zoals op de fotos". Volgende stap: silhouet direct van foto 10 overtrekken (kolibriemethode), dan alleen klauwen (koevoet) en staart (haak) aanpassen.

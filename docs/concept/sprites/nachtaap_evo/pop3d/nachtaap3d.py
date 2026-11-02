@@ -100,7 +100,7 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None, cam=(40, 8)):
         un = u / (np.linalg.norm(u, axis=1, keepdims=True) + 1e-9)
         cap = lambda lat_c, r: np.degrees(np.arccos(np.clip(un @ np.array(
             (-math.cos(math.radians(lat_c)), math.sin(math.radians(lat_c)), 0)), -1, 1))) < r
-        g[cap(22.0, 46.0) & ~cap(-32.9, 50.9) & (np.abs(lon) < 95)] = groups.index('moon')
+        g[cap(22.0, 46.0) & ~cap(-32.9, 50.9) & ~cap(6.0, 19.0) & (np.abs(lon) < 95)] = groups.index('moon')
         for e in eyes:
             ue = (e - HEAD_C) / HEAD_R
             g[np.linalg.norm(u - ue, axis=1) < 0.33] = groups.index('ring')

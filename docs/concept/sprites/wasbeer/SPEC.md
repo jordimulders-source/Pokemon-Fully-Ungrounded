@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov, over hoeken.png/maskers.png, bij foto 8–9) "De pose is super super statisch, dat is niet goed. Lijkt net een opgezet dier zo. Meer dynamiek moet erin. Hierop is niet goed de koevoet vorm van de klauwen te zien ook, plus het lijkt zo echt niet pragmatisch, omdat die met deze pose lijkt alsof die op zn voorpoten moet lopen, maar dat niet kan met die klauwen. Dat grijze vlak moet ook weg, plus de staart haakt niet genoeg. Het masker met de andes vorm lijkt niet heel goed over te gaan komen in pixels, maar iig wel goed dat je het tot over de neus getrokken hebt. De poten lijken ook wat langer te zijn in fotos en de onderrug wat minder dik. Zie bijgesloten fotos"
 - (2 nov) "kan je de twee klauwen niet zodanig samen een vorm geven dat ze een koevoet vormen? De pose moet ik eerst zien voordat ik dat ewet"
 - (2 nov) "de trapjes goed idee, de traan niet, dan lijkt dat net te staan voor een moord zoals bij gang members. Wat dacht je van crowbar vormen klauwen? IS dat uit te beelden denk je?"
 - (2 nov, bij foto 6–7) "haakstaart lijkt me een goed plan, mogelijk kunnen we het masker een klein beetje een zuid amerikaans masker vorm geven zodat het niet puur een wasbeer is. Lange poten zoals op de foto mag ook. Ik denk wel op 2 poten staan en dan voorover hangend. Misschien dat we de klauwen dan als een soort thief tool kunnen vormen. Wat voor suggesties heb jij"
@@ -35,6 +36,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 - `foto4_boom_klauwen.png`: in een boom, lange gebogen klauwen (lichte vacht; soort niet zeker).
 - `foto6_kaaiman_buit.webp`: sleept een jonge kaaiman weg (lef, lange snuit, kop met masker driekwart).
 - `foto7_frontaal_lange_poten.png`: frontaal, lange donkere poten, masker rond de ogen, witte snuitrand, lange klauwen.
+- `foto8_gebogen_naar_je_toe.png`: rug hoog gebogen, kop laag naar je toe, lange donkere poten (dreiging).
+- `foto9_zijaanzicht_sluipend.webp`: sluipend zijaanzicht: lange poten, slanke onderrug, staart omhoog.
 - `foto5_collage_rots_uitkijk.webp`: o.a. op een rots, vier poten, kop naar de kijker (rechtsonder), en laag sluipend met de hand vooruit (linksboven).
 
 ## Open vragen (stap 1, voor Jordi)
@@ -70,7 +73,10 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 
 ## Ontwerp (stap 1)
 - 3D-poppetje `ontwerp/pop3d_wasbeer.py`: waterspuwerpose (achterpoten op een rand, romp voorover, voorpoten hangen vrij), koevoetklauwen = 2 klauwen tegen elkaar als één staaf met een J-bocht, alleen de punt gespleten (`koevoet()`), haakstaart, trapjesmasker als band over beide ogen en de neusrug.
-- Hoekenraster `ontwerp/hoeken.png` (draai 25/40/55°, romp 45/60°) en maskertest `ontwerp/maskers.png` (T trapjes, K trapjes + inkeping, W gewoon), wachten op Jordi.
+- Ronde 1: hoekenraster `ontwerp/hoeken.png` (waterspuwer) en maskertest `ontwerp/maskers.png`: afgekeurd (zie onder).
+- Ronde 2 (`ontwerp/hoeken_r2.png`): **uithalen**: op de achterpoten in een stap (nabije poot voor, verre zet af op de tenen), romp 20/32° voorover, verre koevoet hoog boven de rug (haakt naar voren), nabije koevoet naar de speler gestoken (haakt omlaag), staart als herdersstaf boven de rug, geen rand, langere poten, slankere onderrug, gewoon masker over de neusrug. Voorpoten raken de grond niet (pragmatisch). 1x-voorbeeld in elke cel. Tussenstappen met klauw onder de kin ('slagtanden') en de nabije poot op de grond verworpen vóór Jordi.
 
 ## Afgekeurd (niet herhalen)
+- **Waterspuwer (hoeken.png ronde 1):** "super super statisch", "net een opgezet dier"; voorpoten hangend lijken om op te lopen, wat met koevoetklauwen niet kan; koevoetvorm niet te zien; grijze rand weg; staart haakt te weinig; poten te kort, onderrug te dik.
+- **Trapjesmasker** komt waarschijnlijk niet over in pixels (Jordi); wel goed: masker over de neusrug.
 - **Traan onder het oog** (M2): "dan lijkt dat net te staan voor een moord zoals bij gang members" (Jordi 2 nov).

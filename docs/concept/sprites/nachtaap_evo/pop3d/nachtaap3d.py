@@ -24,6 +24,7 @@ P.LINED = {'eye', 'nose'}
 HEAD_C = np.array((-46.0, 6.0, 0.0))
 HEAD_R = 24.0
 SPIR_R = 15.0
+KENE_HW, KENE_XA, KENE_LEN = 4.4, (-8, 17, 41), 40
 
 
 def nachtaap(head_extra=30, tail='omlaag', motief=None, cam=(40, 8)):
@@ -126,6 +127,16 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None, cam=(40, 8)):
                 k |= (np.abs(x - xa) < 2.8) & (np.abs(sa) < 17)
                 k |= (np.abs(np.abs(sa) - 17) < 2.8) & (x > xa - 0.5) & (x < xa + 8.5)
                 k |= (np.abs(x - xa - 8) < 2.8) & (np.abs(sa) > 15) & (np.abs(sa) < 36)
+            g[top & k] = groups.index('maan')
+        if motief == 'kene_dik':
+            # Jordi: "een patroon zou altijd dikker moeten" + "is het niet teveel naar ons perspectief gevormd?":
+            # zelfde kené-logica in 3D (gecentreerd op de ruggengraat), banden ±3 px na projectie naar 64.
+            hw = KENE_HW
+            k = (np.abs(sa) < hw) & (x > -18) & (x < 54)
+            for xa in KENE_XA:
+                k |= (np.abs(x - xa) < hw) & (np.abs(sa) < 18)
+                k |= (np.abs(np.abs(sa) - 18) < hw) & (x > xa - hw) & (x < xa + 7 + hw)
+                k |= (np.abs(x - xa - 7) < hw) & (np.abs(sa) > 18 - hw) & (np.abs(sa) < KENE_LEN)
             g[top & k] = groups.index('maan')
         if motief == 'chakana':
             # Andeskruis (chakana) midden op de rug, getrapt, met een rond gat; armen lopen over de flanken

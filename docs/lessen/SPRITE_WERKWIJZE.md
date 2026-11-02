@@ -64,6 +64,7 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 1. **Claude kijkt zelf** (8× + 1×, naast het ontwerp). Een zelfgenoemd zwak punt van de maker = automatisch terug. Stuur terug met concrete zones en Jordi's woorden; bevries wat goed is.
 2. **Onafhankelijke keurder** (een andere agent, ≥ 10 echte sprites, licht en donker, alle richtlijnen PASS/FAIL, twijfel = FAIL, smaakkeuzes apart "voor Jordi"). Dezelfde keurder mag rondes volgen; vóór "af" altijd **één verse keurder** die eerst zelf oordeelt en pas daarna de oude keuringen leest (vond bij de kolibrie nog open randen).
 3. **Keurdersadvies dat een goedgekeurd ontwerp raakt** (bv. "masker dunner") is een vraag aan Jordi, geen opdracht aan de maker.
+   - **Ook advies dat een harde eis van Jordi raakt** (wasbeer, 2 nov: de keurder liet de gespleten koevoetpunt dichtmaken tot een 3x3-blok, Jordi: "linkerklauw mist de hele koevoetvorm nu opeens"; "er gaat wel veel mis telkens"). Leg elk reparatieadvies vóór het naar de maker gaat naast Jordi's woorden in SPEC.md; strijdig = niet uitvoeren, en een kenmerk dat Jordi eist mag in geen enkele ronde verdwijnen (Claude toetst dat zelf op 8x en 1x vóór Jordi).
 4. Pas als het door 1 en 2 komt: naar Jordi, met een vel en een korte lijst keuzes.
 
 ## Stap 5. Reparatierondes

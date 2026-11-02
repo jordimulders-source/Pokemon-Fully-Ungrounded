@@ -173,6 +173,9 @@ def render(m, yaw, pitch, scale, center):
     q = wpt[head] @ Rc          # = Rc^T p
     if hasattr(m, 'texfn'):
         gid[head] = m.texfn(q, groups)
+        if getattr(m, 'bodyfn', None):
+            body = gid == groups.index('fur')
+            gid[body] = m.bodyfn(wpt[body] @ Rc, groups)
         return zbuf, gid, nrm, groups
     t = m.tex
     hs = t['hs']

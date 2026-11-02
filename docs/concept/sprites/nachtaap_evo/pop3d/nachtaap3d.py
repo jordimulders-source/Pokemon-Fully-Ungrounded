@@ -14,9 +14,9 @@ sys.path.insert(0, HERE)
 import pop3d as P  # noqa: E402
 
 P.COL = {
-    'fur': '#5E4488', 'far': '#45306A', 'head': '#5E4488', 'disc': '#B8A9CC', 'ring': '#2E2048', 'moon': '#FFFFFF',
+    'fur': '#5E4488', 'arm': '#5E4488', 'far': '#45306A', 'head': '#5E4488', 'disc': '#B8A9CC', 'ring': '#2E2048', 'moon': '#FFFFFF',
     'stripe': '#3A2858', 'eye': '#E0508A', 'pupil': '#1A1020', 'glint': '#FFFFFF', 'nose': '#8A6070',
-    'hand': '#EAD8BE', 'farhand': '#B8A48C', 'ear': '#523A7A', 'earin': '#E2C4BC',
+    'hand': '#EAD8BE', 'buik': '#E9A866', 'maan': '#D8D0EC', 'farhand': '#B8A48C', 'ear': '#523A7A', 'earin': '#E2C4BC',
 }
 P.NOSHADE = {'ring', 'disc', 'moon', 'stripe', 'eye', 'pupil', 'glint', 'nose'}
 P.LINED = {'eye', 'nose'}
@@ -26,7 +26,7 @@ HEAD_R = 24.0
 SPIR_R = 15.0
 
 
-def nachtaap(head_extra=30, tail='omlaag'):
+def nachtaap(head_extra=30, tail='omlaag', motief=None):
     m = P.Model()
     # lijf: borst/schouders, hoge gebogen rug (hoger dan de kop), achterwerk
     m.ell((-16, 8, 0), 24, 'fur')
@@ -50,7 +50,7 @@ def nachtaap(head_extra=30, tail='omlaag'):
     n = len(pts)
     m.chain([(x, y, z, 6.5 - 3.3 * i / (n - 1)) for i, (x, y, z) in enumerate(pts)], 'fur')
     # armen (nabij +z): lang en dun, handen plat voor het lijf met lange vingers
-    for sz, g, gh in ((1, 'fur', 'hand'), (-1, 'far', 'farhand')):
+    for sz, g, gh in ((1, 'arm', 'hand'), (-1, 'far', 'farhand')):
         dx = 0 if sz > 0 else 8
         m.chain([(-20 + dx, 4, 15 * sz, 9.5), (-26 + dx, -10, 18 * sz, 8), (-32 + dx, -21, 19 * sz, 6.5)], g)
         m.ell((-37 + dx, -25, 19 * sz), (9, 4, 7.5), gh)
@@ -105,6 +105,28 @@ def nachtaap(head_extra=30, tail='omlaag'):
         return g
 
     m.texfn = texfn
+
+    def bodyfn(q, groups):
+        g = np.full(len(q), groups.index('fur'))
+        x, y, z = q[:, 0], q[:, 1], q[:, 2]
+        if motief:
+            # oranje borst/buik zoals de echte nachtaap (foto 4), voorkant onder de kop
+            g[(x < 4) & (y < 12) & (z > -14) & (x + 0.6 * y < 2)] = groups.index('buik')
+        if motief == 'sikkel':   # één grote halvemaan op de flank (nabije kant)
+            d1 = np.hypot(x - 14, y - 24); d2 = np.hypot(x - 21, y - 30)
+            g[(z > 6) & (d1 < 19) & (d2 > 16)] = groups.index('maan')
+        if motief == 'sterren':  # een paar lichte sterren op de rug (Inca-sterrenbeelden)
+            for c in ((-2, 34, 22), (14, 44, 20), (30, 40, 22), (40, 26, 24), (16, 24, 30)):
+                g[np.linalg.norm(q - np.array(c), axis=1) < 5.5] = groups.index('maan')
+        if motief == 'fasen':    # maanfasen over de rug: van sikkel naar vol, richting de staart
+            for i, (cx, cy) in enumerate(((-4, 32), (11, 40), (26, 38), (40, 28))):
+                c = np.array((cx, cy, 24.0))
+                d = np.linalg.norm(q - c, axis=1)
+                off = np.linalg.norm(q - c - np.array((0, 6.0 - 2.0 * i, 0)), axis=1)
+                g[(d < 7) & ((off > 6.2) | (i == 3))] = groups.index('maan')
+        return g
+
+    m.bodyfn = bodyfn
     return m
 
 

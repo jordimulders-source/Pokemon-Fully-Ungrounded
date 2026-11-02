@@ -120,10 +120,9 @@ def grid(yaws=(30, 40, 50), extras=(25, 40), pitch=8, tail='omlaag', name='hoeke
             v = P.view(nachtaap(ex, tail), yaw, pitch)
             x, y = 10 + 266 * i, 40 + (256 + 26) * j
             im.paste(v, (x, y))
-            d.text((x, y + 258), f'{chr(65 + j)}{i + 1}: lijf {yaw}°, kop {yaw + ex}°', font=F, fill=(60, 60, 60))
+            d.text((x, y + 258), f'lijf {yaw}°, kop {yaw + ex}°', font=F, fill=(60, 60, 60))
     im.save(os.path.join(HERE, name))
 
 
 if __name__ == '__main__':
     grid()
-    grid(yaws=(40,), extras=(25,), tail='omhoog', name='a2_staart_omhoog.png')

@@ -70,3 +70,4 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 ## Kosten en tempo (ter oriëntatie)
 - Een maker- of keurderronde kost ±150–400k agenttokens; zuinig: één maker, één keurder, kleine vellen, geen parallelle experimenten.
 - Commit en push na elke ronde (ook interne), zodat niets verloren gaat.
+- **Rastervellen: elk label uniek** (hoek in de naam, niet alleen A1/B2): twee vellen met dezelfde letters gaven bij de nachtaap een verkeerde keuze (kop 65° i.p.v. 80°).

@@ -54,11 +54,13 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 
 - Jordi 2 nov, over de keurdersvragen (kené als meander, violette handrug, crème oortjes): "doe maar wat de keurder goed lijkt".
 
+- Jordi 2 nov (na ronde 6): "de nieuwe lijn is niet mooier, is ook geen goed patroon, de lijnen zijn sowieso te dun, een patroon zou altijd dikker moeten. dus dit is niet beter dan voorheen. De poten zijn wel wat beter" → handen/voeten/oortjes ronde 6 **bevroren**; kené opnieuw als **dikke** banden (≥ 3 px), naar het poppetje.
+
 ## Silhouet
 - Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
 - **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.
 
 ## Afgekeurd (niet herhalen)
-- Fase 2 (2 nov): oranje borstvlak; bleke gezichtsschijf; twee kleine sikkels boven de ogen; halve maan op de flank; sterren; maanfasen.
+- Fase 2 (2 nov): kené als dunne 1-px-lijntjes (ronde 1–5, 'krassen') en als dunne meander (ronde 6); oranje borstvlak; bleke gezichtsschijf; twee kleine sikkels boven de ogen; halve maan op de flank; sterren; maanfasen.
 - Uit fase 1 (`../FEEDBACK.md`): staart als overdreven rechte lijn; geen oren; geamputeerde verre arm/been; opgeplakte ogen of ogen die niet Psychic-gekleurd zijn; slaperige/verveelde blik; te cartoony; ondersteboven hangen.
 - Modeltekeningen uit cirkels en driehoeken als bron van de vorm.

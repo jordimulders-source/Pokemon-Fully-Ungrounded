@@ -44,7 +44,8 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 - **3D-poppetje** (Jordi, 2 nov: "ja, maak er maar een silhouet van"): `pop3d/nachtaap3d.py` met `nachtaap(40, 'omhoog', 'kene', cam=(40, 8))`: lijf 40°, kop 80°, pitch 8, staart omhoog met spiraal, kené op de rug, één witte halve maan op de kop (bolkappen, punten omlaag, middenstuk tussen de ogen bolt in), geen borstvlak. Vel: `pop3d/kop_halvemaan.png`.
 
 ## Silhouet
-- Ronde 1 (2 nov): `silhouet/vel_silhouet.png` (1456 px); wacht op Jordi.
+- Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
+- **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.
 
 ## Afgekeurd (niet herhalen)
 - Fase 2 (2 nov): oranje borstvlak; bleke gezichtsschijf; twee kleine sikkels boven de ogen; halve maan op de flank; sterren; maanfasen.

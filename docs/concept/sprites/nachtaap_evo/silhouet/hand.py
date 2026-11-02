@@ -38,10 +38,9 @@ Z2 = (slice(56, 63), slice(2, 15))
 sil[59, 3] = False
 sil[60, 9:11] = False
 
-# zone 'nek' (x 11-15, y 34-37): kleine inham tussen kruin en rug, zodat de kop als eigen bol leest
+# zone 'nek' (x 11-15, y 34-37): inham tussen kruin en rug teruggedraaid (Jordi: "er is een klein gat ontstaan
+# tussen hoofd en lichaam in"); de zone blijft gelijk aan de basis.
 Z3 = (slice(34, 38), slice(11, 16))
-sil[36, 12:14] = False
-sil[35, 14] = False
 
 np.save(os.path.join(HERE, 'hand_sil.npy'), sil)
 np.save(os.path.join(HERE, 'hand_far.npy'), far & sil)

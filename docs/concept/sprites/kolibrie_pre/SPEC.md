@@ -8,7 +8,7 @@
 | richting/concept | `ONTWERP.md` (A jong vogeltje, B nestje, C kantuta) | "laten we met de pre-evo van de kolibrie beginnen" | besloten: A (jonge kolibrie) |
 | type | puur Flying; eindvorm Ghost/Flying | "pure flying type die pas per evolutie ghost wordt" | besloten |
 | pose | foto van Jordi (nog nodig) | — | open |
-| kleurfamilie | eindvorm `kolibrie/af/kolibrie.png` | — | volgt de eindvorm |
+| kleurfamilie | eindvorm `kolibrie/af/kolibrie.png` | "fluweel als kleur" | besloten: fluweel |
 | formaat | ±450–650 px (eindvorm ±1000 px) | — | richtlijn |
 
 ## Afgekeurd (niet herhalen)
@@ -39,3 +39,6 @@
 1. **Volgorde omgedraaid.** Coathief/lama: foto → poppetje (Jordi keurt het poppetje) → silhouet uit het poppetje. Eindvorm-kolibrie: foto-omtrek → silhouet → maker-agent. Hier: Claude tekende eerst zelf een silhouet en zocht daarna een model dat erop paste.
 2. **Silhouet A is zelf de zwakke schakel.** Claude vervormde de foto-omtrek (lijf ×0,78, kop ×1,45, bek met de hand); Jordi koos A boven B, niet als af ontwerp. Alles wat erop gebouwd wordt erft die vervorming. Strijdig met de regel "Claude tekent zelf geen silhouetten".
 3. **Een zittend vogeltje is één klomp**; het leest door details (oog, bek, vleugelrand, veren), niet door volume. Een viervoeter (coati, lama) valt vanzelf uiteen in kop/snuit/poten/staart, daar werkt een poppetje van bollen wel.
+
+## Kleur (Jordi, 2 nov): "fluweel als kleur"
+- Besloten: **fluweelpalet zoals de eindvorm** (fluweelzwarte kop, violet lijf, blauwgroene schouderglans; buik licht lavendel als jong dons; gele mondhoeken). Voor de kleurronde na het silhouet.

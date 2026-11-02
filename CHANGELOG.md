@@ -122,3 +122,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.23] - Olinguito v2 af na eindkeuring
 - Verse eindkeuring (`docs/concept/sprites/olinguito_v2/af/EINDKEURING.md`): hoofdvraag PASS; reparaties: verre voorpoot roze voetje (2 px), losse spriet onder de klauw weg en drie haakjes van 1 px in curven glad (Jordi akkoord). 0 open randen. `docs/concept/sprites/olinguito_v2/af/olinguito.png` is af.
+
+### [v0.0.24] - Nachtaap fase 2: voorbereiding
+- Map `docs/concept/sprites/nachtaap_evo/` met `SPEC.md` (lijn, wat uit fase 1 meekomt, afgekeurd) en `referenties/` (fase 1 goedgekeurd, vel met skelet-kandidaten: Aipom, Monferno, Kadabra, Kirlia, Vigoroth, Grovyle, Medicham, Lombre, Grumpig, Primeape).
+- Ontwerp-brainstorm met Jordi loopt (richtingen: nachtwaker, maangezicht, sterrenlezer, leerling-genezer, drager); nog niets besloten.

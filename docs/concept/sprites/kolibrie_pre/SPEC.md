@@ -53,3 +53,4 @@
 ## Kleur r3 (maker; 9 FAILs van de keuring r2 verwerkt)
 - `maker/kleur_r3/`: alpha-diff 0, 0 open randen (strenger script), bolle borst, oog 5×5, keelveertjes, vleugelplaat met voorrand, pootjes met teentjes.
 - Open (Claude + maker, terugkerend sinds r1): **leest als lila mus/zanger, niet als kolibrie.** Oorzaak zit in het ontwerp, niet in de kleur: een jong met korte open bek heeft geen kolibriekenmerk in het silhouet. Vraag aan Jordi (zie chat): langere dunne naaldbek, grotere glanzende keelvlek, of zo laten.
+- **Jordi over r3 (2 nov): "prima, nu moet de belijning nog beter etc, moet nu echt een gen 3 sprite worden".** Ontwerp en kleur r3 goedgekeurd (kolibrie-read: zo gelaten). r4 = afwerking: omlijning/curves/shading op Gen 3-niveau (Taillow, Swablu, Wingull), omtrek hooguit ±1 px.

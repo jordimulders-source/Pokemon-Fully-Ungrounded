@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov, bij foto 6–7) "haakstaart lijkt me een goed plan, mogelijk kunnen we het masker een klein beetje een zuid amerikaans masker vorm geven zodat het niet puur een wasbeer is. Lange poten zoals op de foto mag ook. Ik denk wel op 2 poten staan en dan voorover hangend. Misschien dat we de klauwen dan als een soort thief tool kunnen vormen. Wat voor suggesties heb jij"
 - (2 nov) "B is prima. Ander soort wasbeer dan Zigzagoon ook, dus prima. De staart en de vorm lijken als een logische evolutie van een coati. Grote verschil is dat deze raccoon solitary is tov coati's die in gangs opereren. Dus dat is goede lore ook. Robin Hood laten we achterwege, we gaan meer de vigilante kant op, plus een soort ode aan Sly Cooper"
 - (2 nov) "Maar zijn dat logische evoluties van een coati?"
 - (2 nov) "kijk vooral naar hoe andere starterlijnen dat doen in pokemon"
@@ -30,10 +31,17 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 - `foto2_zittend_frontaal.webp`: zittend, kop naar de kijker; geelbruine borst, masker rond de ogen, donkere poten, geringde staart.
 - `foto3_zijaanzicht_lopend.webp`: zijaanzicht lopend: lange poten, slank lijf, staart met ringen (verhoudingen, coati-gelijkenis).
 - `foto4_boom_klauwen.png`: in een boom, lange gebogen klauwen (lichte vacht; soort niet zeker).
+- `foto6_kaaiman_buit.webp`: sleept een jonge kaaiman weg (lef, lange snuit, kop met masker driekwart).
+- `foto7_frontaal_lange_poten.png`: frontaal, lange donkere poten, masker rond de ogen, witte snuitrand, lange klauwen.
 - `foto5_collage_rots_uitkijk.webp`: o.a. op een rots, vier poten, kop naar de kijker (rechtsonder), en laag sluipend met de hand vooruit (linksboven).
 
 ## Open vragen (stap 1, voor Jordi)
-Pose (voorstel Claude, 2 nov):
+Voorstellen ronde 2 (Claude, 2 nov), wacht op Jordi:
+- **Pose 'waterspuwer':** achterpoten op een rand (rots/dakrand), rug ±45° voorover, één voorpoot hangt los met de klauwen omlaag, de andere grijpt de rand; kop naar de speler. Vigilante die vanaf het dak over de wijk waakt. Rug schuin houdt hem dierlijk (Sandslash, Sneasel), niet rechtop (Zangoose/Weavile).
+- **Masker:** M1 *trapjes* (Andes-trapmotief/chakana als rand van het masker, leest goed op 64 px); M2 *traan* (de huilende god van de Zonnepoort van Tiwanaku: een getrapte traanstreep onder het oog); M3 *diablada* (masker loopt boven het oog uit in een krul, Oruro). Voorkeur M1 + kleine traan uit M2.
+- **Klauwen als dievengereedschap:** K1 *slotenmakersset* (2 klauwen per hand = een echte set: één lange met een haakje aan de punt (pick) en één met een knik (spanhaak)); K2 *enterhaak* (3 gekromde klauwen als werphaak om daken op te klimmen); K3 *krabbenschaar* (2 klauwen sluiten als een tang, knipoog naar de krabbeneter). Voorkeur K1 (houdt de 2 klauwen van de lijn).
+
+Pose (eerste voorstel, vervangen door Jordi's keuze):
 - **A. Op de uitkijk** (foto 5 rechtsonder): op vier poten op een rots, voorpoten samen op de rand, klauwen over de rand, kop gedraaid naar de speler, staart in een haak omlaag (de haakstaart van de olinguito-concepten en een knik naar Sly's wandelstok). De vigilante die over zijn wijk waakt. Leest anders dan Coathief (die loopt op je af).
 - **B. Sluipen** (foto 5 linksboven): laag op tenen, één klauwhand vooruit, kop laag, blik naar de speler. Meer Sly, maar dicht bij de looppose van Coathief.
 - Kleur: grijsbruin lijf met geelbruine borst, donkere poten, zwart masker met witte wenkbrauwvlek en witte snuitrand, crème klauwen (lijnkenmerk). Donker houden (Dark).
@@ -53,6 +61,7 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Krabbenetende wasbeer:** dichtst verwant, natuurlijk masker; nobel lastig, Obstagoon-associatie.
 
 ## Bevroren
+- **Haakstaart** (Jordi 2 nov). **Lange poten** zoals foto 7. **Pose: op 2 poten staand, voorover hangend** (niet rechtop). Masker met een Zuid-Amerikaanse vorm, klauwen als dievengereedschap: richting open (voorstellen hieronder).
 - **Dier: krabbenetende wasbeer** (Jordi 2 nov). Lore: solitair, tegenover de coati-bendes; de bendedief wordt eenling.
 - **Thema: vigilante + ode aan Sly Cooper** (Jordi 2 nov); Robin Hood vervalt. Ode = houding/gevoel (meesterdief die van boeven steelt, sluipen, haak), geen kopie van Sly's pet, kleur of wandelstok. Nobeler dan Coathief, grijze moraal. **Niet (helemaal) rechtop**, niet mensachtiger dan fase 2. **Puur Dark.**
 

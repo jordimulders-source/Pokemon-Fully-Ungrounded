@@ -95,11 +95,12 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None, cam=(40, 8)):
         lat = np.degrees(np.arcsin(np.clip(u[:, 1], -1, 1)))
         # buitenboog: door de kruin (lat 90) en de punten (lon ±56, lat -12); binnenboog: door het voorhoofd
         # (lat 15) en dezelfde punten, en over de bovenkant van de ogen (lon ±25 -> lat ±10). Ogen: lon ±25°, lat 3°.
-        k = 0.8                          # Jordi: "maak het maar 20% kleiner" (rond het voorhoofd, lat 30)
-        lon, lat = lon / k, 30 + (lat - 30) / k
-        a1 = np.hypot(lon, lat - 23.6)
-        a2 = np.hypot(lon, lat + 48.6)
-        g[(a1 < 66.4) & (a2 > 63.6) & (np.abs(lon) < 95)] = groups.index('moon')
+        # Jordi: "maak het maar 20% kleiner", daarna "de bovenkant is te puntig": twee bolkappen (cirkels óp de bol,
+        # geen lon/lat-cirkels die bij de kruin samenknijpen). Kap = alle punten binnen een hoek van een richting.
+        un = u / (np.linalg.norm(u, axis=1, keepdims=True) + 1e-9)
+        cap = lambda lat_c, r: np.degrees(np.arccos(np.clip(un @ np.array(
+            (-math.cos(math.radians(lat_c)), math.sin(math.radians(lat_c)), 0)), -1, 1))) < r
+        g[cap(22.0, 46.0) & ~cap(-32.9, 50.9) & (np.abs(lon) < 95)] = groups.index('moon')
         for e in eyes:
             ue = (e - HEAD_C) / HEAD_R
             g[np.linalg.norm(u - ue, axis=1) < 0.33] = groups.index('ring')

@@ -49,3 +49,7 @@
 - `maker/silhouet_r1/` (silhouet.txt, overtrekvel.png met afwijkingszones A–G, vel.png, NOTITIES.md): 743 px, box 38×37, kop 49% van de hoogte. Claude: volgt foto 1 (houding, nekknik, bolle borst, rug niet boven de kop), leest op 1× als jong vogeltje met open bek. Aandachtspunten voor Jordi: brede bekbasis maakt de voorkant van de kop wigvormig; puntjes van de snavelhelften 2×2 (knopjes). Optie maker: lijf 3 rijen korter (664 px, kop 53%). Wacht op Jordi.
 - **Goedgekeurd (Jordi, 2 nov): "ja, met de twee bekpunten gerepareerd".** Silhouet r1 bevroren buiten de bekzone (x ≤ 22, y 8–23); reparatie in `maker/silhouet_r2/` (bekbasis smaller, punten taps).
 - **Silhouet r2 = bevroren** (`maker/silhouet_r2/silhouet.txt`, 732 px; 15 px in de bekzone, diff 0 erbuiten, door Claude nagemeten). Alle kleurrondes: alpha-diff 0 hiermee.
+
+## Kleur r3 (maker; 9 FAILs van de keuring r2 verwerkt)
+- `maker/kleur_r3/`: alpha-diff 0, 0 open randen (strenger script), bolle borst, oog 5×5, keelveertjes, vleugelplaat met voorrand, pootjes met teentjes.
+- Open (Claude + maker, terugkerend sinds r1): **leest als lila mus/zanger, niet als kolibrie.** Oorzaak zit in het ontwerp, niet in de kleur: een jong met korte open bek heeft geen kolibriekenmerk in het silhouet. Vraag aan Jordi (zie chat): langere dunne naaldbek, grotere glanzende keelvlek, of zo laten.

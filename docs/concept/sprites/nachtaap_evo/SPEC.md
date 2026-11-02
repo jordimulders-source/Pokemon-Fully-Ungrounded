@@ -41,7 +41,10 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 - Over de lijn eerder: "in eerste instantie simpel houden: een aap met grote ogen, een genezer-concept en de Nazca-staart"; "de ogen zijn het belangrijkst; kijk naar Jigglypuff, Scream Tail en Espurr"; Psychic-concept: "niet ondersteboven hangen".
 
 ## Bevroren
-- (nog niets)
+- **3D-poppetje** (Jordi, 2 nov: "ja, maak er maar een silhouet van"): `pop3d/nachtaap3d.py` met `nachtaap(40, 'omhoog', 'kene', cam=(40, 8))`: lijf 40°, kop 80°, pitch 8, staart omhoog met spiraal, kené op de rug, één witte halve maan op de kop (bolkappen, punten omlaag, middenstuk tussen de ogen bolt in), geen borstvlak. Vel: `pop3d/kop_halvemaan.png`.
+
+## Silhouet
+- Ronde 1 (2 nov): `silhouet/vel_silhouet.png` (1456 px); wacht op Jordi.
 
 ## Afgekeurd (niet herhalen)
 - Fase 2 (2 nov): oranje borstvlak; bleke gezichtsschijf; twee kleine sikkels boven de ogen; halve maan op de flank; sterren; maanfasen.

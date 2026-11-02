@@ -24,6 +24,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (verplicht; **Coathief is het voorb
 - "dit is een vrij goede angle, de eerste foto, de kleding lijn is goed, maar moet het vooral ook in design zien. Deze llama is nog niet helemaal volgroeid, maar wel duidelijk al een evolutie, marshtomp, charmeleon, monferno, prinplup idee. Begin nu toch te twijfelen of we evo 3 geen guanaco moeten maken. Kan je al iets met deze fotos? Vacht is goed om iets donkerder te maken dan de alpaca. Handschoen foto zit er ook bij"
 
 ## Besloten (2 nov)
+- Jordi over vel ronde 1 + advies (B, karamel, fase 3 blijft een lama met volwassen bouw en cholita-outfit, guanaco voor de wilde lijn): "prima, laten we gelijk fase 3 maken zodat we alles goed kunnen vergelijken". **Fase 2 = verhouding B, vacht karamel. Fase 3 = lama.**
 - **Pose/hoek: foto 1** (`referenties/foto1_lama_driekwart_POSE.png`): staand, lijf driekwart naar links-voor, kop naar de kijker, staart omhoog, dikke vacht.
 - **Fase 2 = tussenvorm:** nog niet volgroeid, maar duidelijk een evolutie (Marshtomp, Charmeleon, Monferno, Prinplup).
 - **Kledinglijn goed** (voorstel hieronder); moet in het ontwerp zichtbaar worden.
@@ -47,7 +48,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (verplicht; **Coathief is het voorb
 
 ## Open (stap 1, met Jordi)
 - Verhouding A/B/C en vacht op `ontwerp/vel_ronde1.png`.
-- Fase 3: lama of guanaco (Jordi twijfelt, 2 nov).
+- Fase 3: varianten X/Y op `ontwerp/lijn_ronde1.png`.
 - Naam.
 
 ## Ontwerp (stap 1)
@@ -65,3 +66,8 @@ Echte lamatooi uit de Andes: bij de *señalakuy*/*t'ikachay* (merkfeest) krijgen
 
 ## Afgekeurd (niet herhalen)
 - (nog niets voor fase 2; voor de lijn zie FEEDBACK.md: schaap-look, gesmolten vormen, niet-Gen 3-ogen/handschoenen)
+
+## Fase 3 (lama met bombín, cholita-luchadora): eerste poppetje
+- `ontwerp/lijn_ronde1.png`: fase 1–3 op schaal. Fase 3: volwassen en zwaarder (hals 80, lijf ×1,12, dikkere poten, kop 28%), **bonte vacht** (foto 4: bruin lijf, crème hals/kop/poten), bombín (verhard uit de kuif, crème pony eronder), donkere vlechten uit de oorwol met rode tullma's, manta (paars, gouden zoom) over de schouders, pollera in drie ruches (rood/goud/groen) om het achterlijf, vier poten.
+- Variant X: MMA-handschoenen blijven. Variant Y: hoeven vrij, aguayo-windsels om de onderbenen (worstelaar).
+- Eigen sprite-map volgt pas na Jordi's keuze (zelfde werkwijze).

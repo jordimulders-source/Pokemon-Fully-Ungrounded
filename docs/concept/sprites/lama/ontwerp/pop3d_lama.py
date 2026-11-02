@@ -25,9 +25,11 @@ COL = {
     'glove': '#D02A2A', 'strap': '#231C1C', 'nail': '#3A2E2A', 'tassel': '#E0264E', 'tail': '',
     'pp_r': '#D8243C', 'pp_y': '#F2B02A', 'pp_g': '#2E9C5A', 'pp_p': '#E85A9A',
     **{f'ag{i}': c for i, c in enumerate(AGUAYO)},
+    'hat': '#3A2A26', 'hatband': '#8E1F33', 'pony': '#F2E2BE', 'braid': '#2A1E1A', 'manta': '#8A2466',
+    'mantarand': '#E8B83A', 'pol0': '#D8243C', 'pol1': '#F2B02A', 'pol2': '#2E9C5A',
 }
 NOSHADE = {'eye', 'glint', 'nose'}
-LINED = {'eye', 'nose', 'glove', 'strap', 'tassel', 'pp_r', 'pp_y', 'pp_g', 'pp_p', 'nail'} | {f'ag{i}' for i in range(len(AGUAYO))}
+LINED = {'hat', 'hatband', 'manta', 'mantarand', 'pol0', 'pol1', 'pol2', 'eye', 'nose', 'glove', 'strap', 'tassel', 'pp_r', 'pp_y', 'pp_g', 'pp_p', 'nail'} | {f'ag{i}' for i in range(len(AGUAYO))}
 
 
 def set_vacht(naam):
@@ -47,10 +49,11 @@ def fluff(m, c, r, g, n, rs, seed, ymin=-1.0):
         m.ell(np.array(c) + d * np.array(r) * 0.9, rs * rng.uniform(0.8, 1.15), g)
 
 
-def lama(hs=1.35, neck=62, head_extra=24, leg_k=1.2, kleding=True):
+def lama(hs=1.35, neck=62, head_extra=24, leg_k=1.2, kleding=True, fase=2, body_k=1.0, hand='mma'):
     m = P.Model()
     # wollig lijf (foto 1: dikke vacht, rug recht, kont rond)
     for c, r in (((-28, 2, 0), (22, 22, 20)), ((2, 2, 0), (34, 21, 20)), ((32, 4, 0), (21, 22, 20))):
+        r = (r[0], r[1] * body_k, r[2] * body_k)
         m.ell(c, r, 'body')
         fluff(m, c, r, 'body', 40, 6.5, int(abs(c[0])) + 3, ymin=-0.6)
     # korte staart omhoog (foto 1)
@@ -78,8 +81,21 @@ def lama(hs=1.35, neck=62, head_extra=24, leg_k=1.2, kleding=True):
         pts = [(b[0], b[1], b[2], 3.6 * hs), (b[0] + 1 * hs, b[1] + 10 * hs, b[2] + 2.5 * sz * hs, 3.4 * hs),
                (b[0] - 1 * hs, b[1] + 18 * hs, b[2] + 1 * sz * hs, 2.4 * hs), (b[0] - 3 * hs, b[1] + 22 * hs, b[2] - 2 * sz * hs, 1.2 * hs)]
         m.chain(pts, 'ear', 0.8)
-        if kleding:   # oorkwast (foto 3: rode wolkwast bovenin het oor)
+        if kleding and fase == 2:   # oorkwast (foto 3: rode wolkwast bovenin het oor)
             m.ell((b[0] - 1.5 * hs, b[1] + 13 * hs, b[2] + 3.5 * sz * hs), np.array((3.6, 4.6, 3.6)) * hs, 'tassel')
+    if kleding and fase == 3:   # bombín (verhard uit de kuif), pony, vlechten met rode tullma's
+        hc = cr + np.array((2, 12.5, 0)) * hs
+        m.ell(hc, np.array((10.5, 1.4, 10.5)) * hs, 'hat')               # rand
+        m.ell(hc + np.array((0, 1.8, 0)) * hs, np.array((6.6, 1.6, 6.6)) * hs, 'hatband')
+        m.ell(hc + np.array((0, 4.5, 0)) * hs, np.array((6.2, 5.6, 6.2)) * hs, 'hat')  # bol
+        for dx in (-9, -6, -3):
+            m.ell(cr + np.array((dx, 9, 0)) * hs, 2.6 * hs, 'pony')
+        for sz in (1, -1):
+            b = cr + np.array((6, 4, 9 * sz)) * hs
+            pts = [b + np.array((2 * i * hs, -5.5 * i * hs, 0.6 * sz * i * hs)) for i in range(6)]
+            for i, q in enumerate(pts):
+                m.ell(q, np.array((3.4, 3.6, 3.4)) * hs * (1 - 0.04 * i), 'braid')
+            m.ell(pts[-1] + np.array((0.5, -4.5, 0)) * hs, np.array((3, 4.2, 3)) * hs, 'tassel')
     if head_extra:   # kop draait meer naar de kijker dan het lijf (foto 1)
         piv = np.array(nk[1][:3], float)
         Rh = P.rot_y(math.radians(head_extra))
@@ -93,14 +109,33 @@ def lama(hs=1.35, neck=62, head_extra=24, leg_k=1.2, kleding=True):
     for g, pts, front in legs:
         m.chain(L(pts), g)
         x, y, z = pts[-1][:3]
-        if front and kleding:   # MMA-handschoen: kort, open, de twee teennagels steken eruit
+        if front and hand == 'wrap':   # fase 3-variant: hoef vrij, aguayo-windsels om het onderbeen
+            m.ell((x - 2, y - 4, z), np.array((6.5, 3.5, 5.5)) * leg_k, 'hoof')
+            for j in range(4):
+                m.ell((x + 1 + j * 0.6, y + 2 + j * 4.2, z), np.array((6.6, 2.4, 6.6)) * leg_k, f'ag{j}')
+        elif front and hand == 'mma':   # MMA-handschoen: kort, open, de twee teennagels steken eruit
             m.ell((x - 1, y - 2, z), np.array((11, 9, 10.5)) * leg_k, 'glove')
             m.ell((x + 1, y + 7, z), np.array((8.5, 3.2, 8.5)) * leg_k, 'strap')
             for dz in (-2.6, 2.6):
                 m.ell((x - 11, y - 6.5, z + dz * 1.3), np.array((3.4, 2.6, 2.6)), 'nail')
         else:
             m.ell((x - 2, y - 4, z), np.array((6.5, 3.5, 5.5)) * leg_k, 'hoof')
-    if kleding:
+    if kleding and fase == 3:
+        # pollera: drie ruches om het achterlijf, klokvorm (rood, goud, groen)
+        for j, (yy, ext) in enumerate(((2, 0), (-9, 2.5), (-20, 5))):
+            for th in np.arange(0, 360, 10):
+                t = math.radians(th)
+                c = np.array((24, yy, 0)) + np.array((0, 0, 0))
+                rr = 23 * body_k + ext
+                m.ell(c + np.array((0, rr * 0.55 * math.cos(t) * 0, rr * math.sin(t))) + np.array((rr * 0.9 * math.cos(t), 0, 0)),
+                      np.array((5.5, 6, 5.5)), f'pol{j}')
+        # manta over de schouders: omslagdoek, hangt over de borst, gouden zoom
+        for th in np.arange(-96, 97, 8):
+            t = math.radians(th)
+            c = np.array((-26, 8 + 23 * body_k * math.cos(t), 22 * body_k * math.sin(t)))
+            m.ell(c, np.array((13, 3.2, 6)), 'manta', P.rot_x(t))
+            m.ell(c + np.array((-10, -3, 0)), np.array((3.5, 3, 5)), 'mantarand', P.rot_x(t))
+    if kleding and fase == 2:
         # pomponsnoer om de halsbasis
         c0, ring = np.array((-36, 18, 0.0)), ['pp_r', 'pp_y', 'pp_g', 'pp_p']
         for i, a in enumerate(np.linspace(0, 2 * math.pi, 14, endpoint=False)):
@@ -184,7 +219,7 @@ def kopaandeel(m, yaw, pitch=8):
     Rc = P.rot_x(math.radians(pitch)) @ P.rot_y(math.radians(yaw))
     yy = [((Rc @ c)[1] - r.max(), (Rc @ c)[1] + r.max(), g) for c, r, R0, g in m.parts]
     lo, hi = min(y[0] for y in yy), max(y[1] for y in yy)
-    hd = [y for y in yy if y[2] in ('head', 'ear', 'eye', 'muzzle', 'tassel')]
+    hd = [y for y in yy if y[2] in ('head', 'ear', 'eye', 'muzzle')]
     return (max(y[1] for y in hd) - min(y[0] for y in hd)) / (hi - lo)
 
 
@@ -215,5 +250,37 @@ def vel():
     im.save(os.path.join(HERE, 'vel_ronde1.png'))
 
 
+FASE3 = dict(hs=1.2, neck=80, leg_k=1.45, fase=3, body_k=1.12)
+
+
+def lijn():
+    """Fase 1 (sprite) - fase 2 (B, karamel) - fase 3 (varianten) op schaal (hoogte ~ wortel van het doel-oppervlak)."""
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 18)
+    ref = os.path.join(HERE, '../referenties')
+    W, H, base = 12 + 300 * 4, 400, 360
+    im = Image.new('RGB', (W, H), 'white'); d = ImageDraw.Draw(im)
+    d.text((12, 10), 'Lama-lijn op schaal: fase 1 (af) - fase 2 (B, karamel) - fase 3 (bont, twee varianten)', font=FB, fill=(30, 30, 30))
+    def plak(img, a, i, h, lab):
+        bb = Image.fromarray((a * 255).astype(np.uint8)).resize(img.size).getbbox()
+        img = img.crop(bb); k = h / img.height
+        img = img.resize((max(1, int(img.width * k)), int(h)), Image.LANCZOS)
+        x = 12 + 300 * i + (300 - img.width) // 2
+        im.paste(img, (x, base - img.height)); d.text((12 + 300 * i + 6, base + 12), lab, font=F, fill=(60, 60, 60))
+    f1 = Image.open(os.path.join(ref, 'fase1_alpaca.png')).convert('RGBA')
+    f1 = f1.crop(f1.getbbox()); k = 300 * 0.62 / f1.height
+    f1 = f1.resize((int(f1.width * k), int(f1.height * k)), Image.NEAREST)
+    bg = Image.new('RGBA', f1.size, 'white'); bg.alpha_composite(f1)
+    im.paste(bg.convert('RGB'), (12 + (300 - f1.width) // 2, base - f1.height)); d.text((18, base + 12), 'fase 1: alpaca (sprite, af)', font=F, fill=(60, 60, 60))
+    set_vacht('karamel (foto 1)'); img, a = view(lama(**VARIANTEN['B']), 40)
+    plak(img, a, 1, 300 * 0.78, f'fase 2: B, kop {kopaandeel(lama(**VARIANTEN["B"]), 40):.0%}')
+    set_vacht('bont (foto 4)')
+    for i, (hand, lab) in enumerate((('mma', 'MMA-handschoenen'), ('wrap', 'windsels, hoeven vrij'))):
+        m = lama(**FASE3, hand=hand); img, a = view(m, 40)
+        plak(img, a, 2 + i, 300 * 0.98, f'fase 3{"XY"[i]}: {lab}, kop {kopaandeel(m, 40):.0%}')
+    im.save(os.path.join(HERE, 'lijn_ronde1.png'))
+
+
 if __name__ == '__main__':
     vel()
+    lijn()

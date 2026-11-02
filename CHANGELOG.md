@@ -148,3 +148,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.29] - Lama: foto's en poppetje
 - Jordi's foto's in `docs/concept/sprites/lama/referenties/` (pose = foto 1, oorkwasten/aguayo, bonte vacht, MMA-handschoenen). Fase 2 is een tussenvorm (Marshtomp/Charmeleon-idee), vacht iets donkerder dan de alpaca.
 - 3D-poppetje met de kledinglijn (`ontwerp/pop3d_lama.py`), vel `ontwerp/vel_ronde1.png`: drie verhoudingen en drie vachten. Open: keuze, en of fase 3 een guanaco wordt.
+
+### [v0.0.30] - Lama: fase 3 als poppetje, lijn op schaal
+- Jordi: fase 2 = verhouding B, karamel; fase 3 blijft een lama. Fase 3 toegevoegd aan het poppetje (bombín, vlechten met tullma's, manta, pollera, bonte vacht, zwaardere bouw), twee varianten (MMA-handschoenen / windsels met vrije hoeven); vergelijking `docs/concept/sprites/lama/ontwerp/lijn_ronde1.png`.

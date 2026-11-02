@@ -19,3 +19,8 @@
 "ik wil deze eigenlijk zittend met de vleugels ingeklapt, misschien snavel open omdat die gevoed wil worden. Moet echt cute zijn". Foto's: `referenties/jordi_1..5` (1 zittend jong, 2 jong met vleugel, 3 nestjongen met open bek, 4 voeren, 5 uitvlieger in de hand).
 - Silhouet v1 (foto 1 recht verkleind): te lang/stijf, open bek viel weg. v2 (foto 5): bek 1 px.
 - **Silhouet v3 (voor Jordi):** `silhouet/vel_v3.png`. A = foto 1 met korter lijf (×0,78) en kop ×1,45, B = foto 5 als bolletje; beide met een open bedelbekje met de hand (2 px dik, gaap 3 px), kop links. Advies Claude: A (leest als vogeltje, kop als eigen onderdeel); B is ronder maar leest eerder als bal.
+
+## 3D-poppetje (Jordi, 2 nov: "a veel beter uiteraard, maak een 3d model"; "met een script van coathief, of bijv de lama/alpaca")
+- `pop3d/pop3d.py` (op basis van `lama/ontwerp/pop3d_lama.py`, branch `claude/blissful-sagan-4f6hqj`): gekleurd, donsbobbels op buik en kop, open bedelbek met gele mondhoeken, donsplukje als voorbode van de jeguaka, ingeklapte vleugels, staartstompje. Hoek van foto 1 (lijf 22° naar de kijker).
+- Vel `pop3d/vel_ronde1.png`: kop A/B/C (45/49/53% van de hoogte) en kleur (fluweel / dons-doffer / hillstar+violet); `pop3d/lijn_ronde1.png`: op schaal naast de eindvorm. Advies Claude: B + fluweel.
+- Daarna (werkregel Coathief, 2 nov): het goedgekeurde poppetje direct verkleind als onderlaag; de **maker-agent** tekent silhouet en kleur met de hand, niet Claude. Silhouet v3A geldt alleen als posekeuze.

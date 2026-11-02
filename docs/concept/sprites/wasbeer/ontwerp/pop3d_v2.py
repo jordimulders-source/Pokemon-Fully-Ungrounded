@@ -61,7 +61,7 @@ def koevoet(m, hand, d, bend, g, s=1.0, steel=11):
         m.tube([(*(knee + e * 2.8 * s), 1.3 * s), (*(tip + side * sd * 1.1 * s), 0.7 * s)], g, 0.4)
 
 
-def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11):
+def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11, near_back=0, shin_k=1.0, heel=0):
     """lean = romp voorover vanaf verticaal (Gumshoos ±15-20, foto 10 ±55). near_arm: 'hoog' (actief, klauw vooruit)."""
     m = Model()
     la = math.radians(lean)
@@ -107,13 +107,19 @@ def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0
     m.head = dict(c=piv + Rh @ (hc - piv), R=Rh, hs=hs, eyes=[piv + Rh @ (e - piv) for e in eyes])
     # benen: Weavile-lengte, knie naar voren, hiel naar achteren, voet plat (plantigraad)
     for sz, gl in ((1, ''), (-1, 'far')):
-        dx = 0 if sz > 0 else 7
+        dx = near_back if sz > 0 else 7
         h = hip + np.array((0, -1, 5.5 * sz * bk_))
         kn = np.array((-9 + dx, 19 * leg + 3, 7.0 * sz))
-        an = np.array((6 + dx, 4.5, 6.0 * sz))
+        an = np.array((6 + dx, 4.5 + (heel if sz > 0 else 0), 6.0 * sz))   # heel: hiel van de grond (stap, foto 10)
         m.tube([(*(h + np.array((1, 1, 0))), 7.4 * leg_k), (*(h * 0.45 + kn * 0.55), 6.2 * leg_k), (*kn, 4.6 * leg_k)], 'farthigh' if gl else 'thigh')
-        m.tube([(*kn, 4.4 * leg_k), (*an, 3.4 * leg_k)], FAR['limb'] if gl else 'limb')
-        m.ell(an + np.array((-4.5 * leg_k, -1.6, 0)), np.array((6.8, 2.4, 3.6)) * (0.5 + leg_k / 2), FAR['limb'] if gl else 'limb')
+        m.tube([(*kn, 4.4 * leg_k * shin_k), (*an, 3.4 * leg_k * shin_k)], FAR['limb'] if gl else 'limb')
+        fk = (0.5 + leg_k / 2) * (0.5 + shin_k / 2)
+        if sz > 0 and heel:      # op de tenen: voet schuin naar voren-omlaag
+            toe = an + np.array((-5.5, -heel + 1.2, 0))
+            m.tube([(*an, 3.0 * fk), (*toe, 2.2 * fk)], 'limb', 0.5)
+            m.ell(toe + np.array((-1.5, 0, 0)), np.array((3.0, 1.8, 3.2)) * fk, 'limb')
+        else:
+            m.ell(an + np.array((-4.5 * leg_k, -1.6, 0)), np.array((6.8, 2.4, 3.6)) * fk, FAR['limb'] if gl else 'limb')
     # armen: komen uit de schouders (schouderbol op de flank), bovenarm in vachtkleur, onderarm + hand donker
     sh_n = chest + np.array((0, 1.0, 7.6 * bk_)); sh_f = chest + np.array((2.5, 0.0, -7.6 * bk_))
     m.ell(sh_n, (5.4, 6.2, 4.4), 'body')
@@ -319,8 +325,45 @@ def vel2(naam='vel_v2_ronde2.png', yaw=50):
     im.save(os.path.join(HERE, naam))
 
 
+E = dict(NIEUW, lean=26, body_k=1.22)     # Jordi: "E is wel oke"
+
+
+def vel3(naam='vel_v2_ronde3.png', yaw=50):
+    """Ronde 3 op E (Jordi): voorste been verder naar achteren (niet houterig naast elkaar), onderbenen dunner."""
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 18)
+    ref = os.path.join(HERE, '../referenties')
+    cell = 262
+    rij = [('E (ronde 2)', dict(E)),
+           ('E1: been 7 terug, onderbeen dun', dict(E, near_back=7, shin_k=0.7)),
+           ('E2: been 12 terug, op de tenen', dict(E, near_back=12, shin_k=0.7, heel=5)),
+           ('E3: als E2, onderbeen dunner', dict(E, near_back=12, shin_k=0.58, heel=5))]
+    im = Image.new('RGB', (12 + cell * 4, 44 + (cell + 24) * 2), 'white'); d = ImageDraw.Draw(im)
+    d.text((12, 12), f'Wasbeer 3D-ontwerp v2 ronde 3 (E, draai {yaw}°): benen niet naast elkaar, dunne onderbenen', font=FB, fill=(30, 30, 30))
+    for c, (lab, v) in enumerate(rij):
+        m = wasbeer(**v); img, al = view(m, yaw)
+        x, y = 12 + cell * c, 44
+        im.paste(img, (x, y))
+        bb = Image.fromarray((al * 255).astype(np.uint8)).resize(img.size).getbbox()
+        s1 = img.crop(bb); f1 = 60 / max(s1.size)
+        s1 = s1.resize((max(1, round(s1.width * f1)), max(1, round(s1.height * f1))), Image.LANCZOS)
+        im.paste(s1, (x + 256 - s1.width, y + 256 - s1.height))
+        d.text((x + 4, y + 258), lab, font=F, fill=(60, 60, 60))
+    y = 44 + cell + 24
+    for c, (f, lab, flip) in enumerate((('foto10_staand_reikend.jpg', 'foto 10 (gespiegeld)', True), ('foto3_zijaanzicht_lopend.webp', 'foto 3 (onderbenen)', False),
+                                         ('foto9_zijaanzicht_sluipend.webp', 'foto 9 (onderbenen)', False), ('foto7_frontaal_lange_poten.png', 'foto 7', False))):
+        foto = Image.open(os.path.join(ref, f)).convert('RGB')
+        if flip:
+            foto = foto.transpose(Image.FLIP_LEFT_RIGHT)
+        foto.thumbnail((256, 236)); x = 12 + cell * c
+        im.paste(foto, (x, y)); d.text((x + 4, y + 258), lab, font=F, fill=(60, 60, 60))
+    im.save(os.path.join(HERE, naam))
+
+
 if __name__ == '__main__':
     if sys.argv[1:2] == ['ronde1']:
         vel()
-    else:
+    elif sys.argv[1:2] == ['ronde2']:
         vel2()
+    else:
+        vel3()

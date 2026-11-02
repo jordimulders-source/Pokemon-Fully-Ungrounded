@@ -281,6 +281,165 @@ def lijn():
     im.save(os.path.join(HERE, 'lijn_ronde1.png'))
 
 
+# ---------------------------------------------------------------- ronde 2 (Jordi 2 nov: "doe 1 + 2")
+# 1 = bouw: fase 2 slungelige tiener (lange dunne poten, smal lijf, wilde wolplukken),
+#     fase 3 zware kampioen (brede borst, dikke poten, kortere krachtige hals, geschoren lijf; wol alleen als kleding).
+# 2 = pose: fase 2 onrustig in dekking (nabije voorpoot opgetild, kop laag en naar voren),
+#     fase 3 geworteld (breed op vier poten, borst vooruit, kop hoog).
+
+def kop(m, top, hs, fase, head_extra, piv):
+    h0 = len(m.parts)
+    cr = top + np.array((-6, 9, 0)) * hs
+    m.ell(cr, np.array((13, 11.5, 11)) * hs, 'head')
+    if fase == 2:
+        fluff(m, cr + np.array((2, 6, 0)) * hs, np.array((8, 6, 8)) * hs, 'head', 14, 3.6 * hs, 7, ymin=0.1)
+    m.chain([(cr[0] - 9 * hs, cr[1] - 3 * hs, 0, 8.5 * hs), (cr[0] - 18 * hs, cr[1] - 6 * hs, 0, 6.5 * hs)], 'head')
+    m.ell(cr + np.array((-21, -7, 0)) * hs, np.array((4, 5, 6)) * hs, 'muzzle')
+    m.ell(cr + np.array((-23.5, -5.5, 0)) * hs, 1.6 * hs, 'nose')
+    for sz in (1, -1):
+        d = np.array((-0.35, 0.25, 0.9 * sz)); d /= np.linalg.norm(d)
+        e = cr + d * np.array((13, 11.5, 11)) * hs * 0.95
+        m.ell(e, 3.1 * hs, 'eye')
+        m.ell(e + np.array((-0.8, 1.2, 1.6 * sz)) * hs, 0.9 * hs, 'glint')
+    for sz in (1, -1):
+        b = cr + np.array((4, 9, 6 * sz)) * hs
+        if fase == 2:   # oren plat naar achteren (boos, klaar om te spugen/stoten)
+            pts = [(b[0], b[1], b[2], 3.6 * hs), (b[0] + 9 * hs, b[1] + 6 * hs, b[2] + 2.5 * sz * hs, 3.2 * hs),
+                   (b[0] + 16 * hs, b[1] + 9 * hs, b[2] + 1 * sz * hs, 2.2 * hs), (b[0] + 20 * hs, b[1] + 9 * hs, b[2] - 1 * sz * hs, 1.2 * hs)]
+            m.chain(pts, 'ear', 0.8)
+            m.ell((b[0] + 11 * hs, b[1] + 8.5 * hs, b[2] + 3.5 * sz * hs), np.array((4.6, 3.6, 3.6)) * hs, 'tassel')
+        else:           # oren rechtop, de bombín ervoor
+            pts = [(b[0], b[1], b[2], 3.6 * hs), (b[0] + 1 * hs, b[1] + 10 * hs, b[2] + 2.5 * sz * hs, 3.4 * hs),
+                   (b[0] - 1 * hs, b[1] + 18 * hs, b[2] + 1 * sz * hs, 2.4 * hs), (b[0] - 3 * hs, b[1] + 22 * hs, b[2] - 2 * sz * hs, 1.2 * hs)]
+            m.chain(pts, 'ear', 0.8)
+    if fase == 3:
+        hc = cr + np.array((2, 12.5, 0)) * hs
+        m.ell(hc, np.array((10.5, 1.4, 10.5)) * hs, 'hat')
+        m.ell(hc + np.array((0, 1.8, 0)) * hs, np.array((6.6, 1.6, 6.6)) * hs, 'hatband')
+        m.ell(hc + np.array((0, 4.5, 0)) * hs, np.array((6.2, 5.6, 6.2)) * hs, 'hat')
+        for dx in (-9, -6, -3):
+            m.ell(cr + np.array((dx, 9, 0)) * hs, 2.6 * hs, 'pony')
+        for sz in (1, -1):
+            b = cr + np.array((6, 4, 9 * sz)) * hs
+            pts = [b + np.array((2 * i * hs, -5.5 * i * hs, 0.6 * sz * i * hs)) for i in range(6)]
+            for i, q in enumerate(pts):
+                m.ell(q, np.array((3.4, 3.6, 3.4)) * hs * (1 - 0.04 * i), 'braid')
+            m.ell(pts[-1] + np.array((0.5, -4.5, 0)) * hs, np.array((3, 4.2, 3)) * hs, 'tassel')
+    Rh = P.rot_y(math.radians(head_extra))
+    m.parts[h0:] = [(piv + Rh @ (c - piv), r, Rh @ R0, g) for c, r, R0, g in m.parts[h0:]]
+
+
+def poot(m, pts, g, k, voet, x0=0):
+    m.chain([(x, y, z, r * k) for x, y, z, r in pts], g)
+    x, y, z = pts[-1][:3]
+    if voet == 'mma':
+        m.ell((x - 1, y - 2, z), np.array((11, 9, 10.5)) * k ** 0.6, 'glove')
+        m.ell((x + 1, y + 7, z), np.array((8.5, 3.2, 8.5)) * k ** 0.6, 'strap')
+        for dz in (-2.6, 2.6):
+            m.ell((x - 11, y - 6.5, z + dz * 1.3), np.array((3.4, 2.6, 2.6)), 'nail')
+    elif voet == 'wrap':
+        m.ell((x - 2, y - 4, z), np.array((7, 3.8, 6)) * k ** 0.6, 'hoof')
+        for j in range(4):
+            m.ell((x + 0.5 + j * 0.6, y + 2 + j * 4.4, z), np.array((7.4, 2.6, 7.4)) * k, f'ag{j}')
+    else:
+        m.ell((x - 2, y - 4, z), np.array((6.5, 3.5, 5.5)) * k ** 0.6, 'hoof')
+
+
+def tilt(m, i0, i1, piv, deg):
+    Rt = P.rot_z(math.radians(deg))
+    m.parts[i0:i1] = [(piv + Rt @ (c - piv), r, Rt @ R0, g) for c, r, R0, g in m.parts[i0:i1]]
+
+
+def fase2_r2(hs=1.25):
+    """Slungelige tiener in dekking."""
+    m = P.Model()
+    for c, r in (((-26, 4, 0), (19, 18, 16)), ((2, 4, 0), (30, 17, 16)), ((28, 6, 0), (18, 18, 16))):
+        m.ell(c, r, 'body')
+        fluff(m, c, r, 'body', 55, 7.5, int(abs(c[0])) + 11, ymin=-0.7)   # wilde plukken
+    m.chain([(44, 12, 0, 6.5), (51, 22, 0, 7), (49, 31, 0, 5)], 'tail')
+    n0 = len(m.parts)
+    top = np.array((-44, 72, 0.0))
+    nk = [(-30, 14, 0, 14), (-38, 44, 0, 11.5), (top[0], top[1], 0, 10)]
+    m.chain(nk, 'neck')
+    for i, (x, y, z, r) in enumerate(nk[1:]):
+        fluff(m, (x, y, z), (r, r, r), 'neck', 22, 5.5, 60 + i)
+    kop(m, top, hs, 2, 24, np.array(nk[1][:3], float))
+    tilt(m, n0, len(m.parts), np.array((-30, 14, 0.0)), 24)   # kop laag en naar voren
+    # pomponsnoer en aguayo-bundel (lastdier, draagt zijn eigen spullen)
+    c0, ring = np.array((-33, 18, 0.0)), ['pp_r', 'pp_y', 'pp_g', 'pp_p']
+    for i, a in enumerate(np.linspace(0, 2 * math.pi, 14, endpoint=False)):
+        m.ell(c0 + np.array((math.cos(a) * 10, math.sin(a) * 1.5, math.sin(a) * 16)), 3.2, ring[i % 4])
+    for th in np.arange(-70, 71, 7):
+        t = math.radians(th)
+        band = int((th + 70) // 24) % len(AGUAYO)
+        m.ell(np.array((4, 6 + 21 * math.cos(t), 20 * math.sin(t))), np.array((15, 3, 5)), f'ag{band}', P.rot_x(t))
+    k = 1.05   # dunne, lange poten (grond op y = -70)
+    poot(m, [(-30, -8, 11, 8), (-50, -24, 16, 6), (-56, -42, 18, 5.5)], 'leg', k, 'mma')        # nabije voor: in dekking
+    poot(m, [(-18, -8, -11, 8), (-12, -40, -12, 6), (-10, -66, -12, 5.5)], 'far', k, 'mma')     # verre voor: draagt
+    poot(m, [(30, -6, 11, 9.5), (40, -36, 12, 6), (34, -66, 12, 5.5)], 'leg', k, None)
+    poot(m, [(36, -6, -11, 9.5), (46, -36, -12, 6), (42, -66, -12, 5.5)], 'far', k, None)
+    return m
+
+
+def fase3_r2(hs=1.2, voet='wrap'):
+    """Zware kampioen, geworteld."""
+    m = P.Model()
+    for c, r in (((-26, 2, 0), (28, 29, 26)), ((4, 2, 0), (34, 25, 24)), ((34, 4, 0), (22, 25, 24))):
+        m.ell(c, r, 'body')                                                   # geschoren: glad, geen plukken
+    m.chain([(52, 14, 0, 6), (57, 22, 0, 6), (56, 28, 0, 4.5)], 'tail')
+    n0 = len(m.parts)
+    top = np.array((-44, 72, 0.0))
+    nk = [(-34, 16, 0, 21), (-40, 44, 0, 16.5), (top[0], top[1], 0, 13.5)]   # korter en krachtig
+    m.chain(nk, 'neck')
+    kop(m, top, hs, 3, 22, np.array(nk[1][:3], float))
+    tilt(m, n0, len(m.parts), np.array((-34, 16, 0.0)), -8)                  # borst vooruit, kop hoog
+    # manta = de halswol als omslagdoek (wolrand), pollera = de heupwol in drie ruches
+    for th in np.arange(-100, 101, 8):
+        t = math.radians(th)
+        c = np.array((-24, 6 + 30 * math.cos(t), 28 * math.sin(t)))
+        m.ell(c, np.array((15, 3.4, 6.5)), 'manta', P.rot_x(t))
+        m.ell(c + np.array((-13, -2, 0)), np.array((4, 3.4, 5.5)), 'mantarand', P.rot_x(t))
+    for j, (yy, ext) in enumerate(((0, 0), (-12, 3), (-24, 6))):
+        for th in np.arange(0, 360, 7):
+            t = math.radians(th)
+            rr = 29 + ext
+            m.ell(np.array((26 + rr * 0.9 * math.cos(t), yy, rr * math.sin(t))), np.array((7, 7.5, 7)), f'pol{j}')
+    k = 1.6   # dikke poten, brede stand (grond op y = -66)
+    poot(m, [(-30, -12, 16, 10), (-38, -40, 19, 7), (-40, -62, 20, 6.5)], 'leg', k, voet)
+    poot(m, [(-18, -12, -16, 10), (-12, -40, -19, 7), (-8, -62, -20, 6.5)], 'far', k, voet)
+    poot(m, [(34, -10, 16, 11), (42, -38, 19, 7), (38, -62, 20, 6.5)], 'leg', k, None)
+    poot(m, [(40, -10, -16, 11), (48, -38, -19, 7), (46, -62, -20, 6.5)], 'far', k, None)
+    return m
+
+
+def lijn_r2():
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 18)
+    ref = os.path.join(HERE, '../referenties')
+    W, base = 12 + 300 * 4, 380
+    im = Image.new('RGB', (W, 420), 'white'); d = ImageDraw.Draw(im)
+    d.text((12, 10), 'Lama-lijn ronde 2: fase 2 slungelig in dekking, fase 3 zwaar en geworteld (op schaal)', font=FB, fill=(30, 30, 30))
+    def plak(img, a, i, h, lab):
+        bb = Image.fromarray((a * 255).astype(np.uint8)).resize(img.size).getbbox()
+        img = img.crop(bb); k = h / img.height
+        img = img.resize((max(1, int(img.width * k)), int(h)), Image.LANCZOS)
+        im.paste(img, (12 + 300 * i + (300 - img.width) // 2, base - img.height))
+        d.text((12 + 300 * i + 6, base + 12), lab, font=F, fill=(60, 60, 60))
+    f1 = Image.open(os.path.join(ref, 'fase1_alpaca.png')).convert('RGBA')
+    f1 = f1.crop(f1.getbbox()); k = 320 * 0.62 / f1.height
+    f1 = f1.resize((int(f1.width * k), int(f1.height * k)), Image.NEAREST)
+    bg = Image.new('RGBA', f1.size, 'white'); bg.alpha_composite(f1)
+    im.paste(bg.convert('RGB'), (12 + (300 - f1.width) // 2, base - f1.height)); d.text((18, base + 12), 'fase 1: alpaca (af)', font=F, fill=(60, 60, 60))
+    set_vacht('karamel (foto 1)'); m = fase2_r2(); img, a = view(m, 40)
+    plak(img, a, 1, 320 * 0.8, f'fase 2: tiener, kop {kopaandeel(m, 40):.0%}')
+    set_vacht('bont (foto 4)')
+    for i, (voet, lab) in enumerate((('wrap', 'Y windsels'), ('mma', 'X MMA'))):
+        m = fase3_r2(voet=voet); img, a = view(m, 40)
+        plak(img, a, 2 + i, 320 * 1.0, f'fase 3{lab}: kampioen, kop {kopaandeel(m, 40):.0%}')
+    im.save(os.path.join(HERE, 'lijn_ronde2.png'))
+
+
 if __name__ == '__main__':
     vel()
     lijn()
+    lijn_r2()

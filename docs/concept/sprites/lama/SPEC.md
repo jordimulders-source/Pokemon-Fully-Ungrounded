@@ -71,3 +71,10 @@ Echte lamatooi uit de Andes: bij de *señalakuy*/*t'ikachay* (merkfeest) krijgen
 - `ontwerp/lijn_ronde1.png`: fase 1–3 op schaal. Fase 3: volwassen en zwaarder (hals 80, lijf ×1,12, dikkere poten, kop 28%), **bonte vacht** (foto 4: bruin lijf, crème hals/kop/poten), bombín (verhard uit de kuif, crème pony eronder), donkere vlechten uit de oorwol met rode tullma's, manta (paars, gouden zoom) over de schouders, pollera in drie ruches (rood/goud/groen) om het achterlijf, vier poten.
 - Variant X: MMA-handschoenen blijven. Variant Y: hoeven vrij, aguayo-windsels om de onderbenen (worstelaar).
 - Eigen sprite-map volgt pas na Jordi's keuze (zelfde werkwijze).
+
+## Ronde 2: fase 2 en 3 unieker (Jordi, 2 nov)
+- Jordi: "hoe kunnen we 2 en 3 nog wat unieker maken tov elkaar?" → voorstel 1 (bouw) + 2 (pose); Jordi: "ja, doe 1 + 2 en zet ze naast elkaar".
+- `ontwerp/lijn_ronde2.png` (`fase2_r2()`, `fase3_r2()` in `pop3d_lama.py`):
+  - **Fase 2 = slungelige tiener in dekking:** smal lijf met wilde wolplukken, lange dunne poten, nabije voorpoot met MMA-handschoen opgetild, kop laag en naar voren, oren plat naar achteren (met oorkwasten), pomponsnoer + aguayo-bundel (lastdier). Kop 37% (doel 30–35%: bij het silhouet iets kleiner).
+  - **Fase 3 = zware kampioen, geworteld:** geschoren glad lijf, brede diepe borst, kortere dikke hals, dikke poten in een brede stand, borst vooruit en kop hoog; wol alleen als kleding (manta, pollera in drie ruches), bombín, vlechten. Kop 27%. Y: windsels, X: MMA.
+- Nog te doen bij de sprites: punt 3 (gezicht: fase 2 brutaal, fase 3 waardig) en 4 (kleur: fase 2 effen karamel, fase 3 bont en donkerder, donker gezichtsmasker) in de kleurronde.

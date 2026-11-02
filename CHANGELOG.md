@@ -151,3 +151,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.30] - Lama: fase 3 als poppetje, lijn op schaal
 - Jordi: fase 2 = verhouding B, karamel; fase 3 blijft een lama. Fase 3 toegevoegd aan het poppetje (bombín, vlechten met tullma's, manta, pollera, bonte vacht, zwaardere bouw), twee varianten (MMA-handschoenen / windsels met vrije hoeven); vergelijking `docs/concept/sprites/lama/ontwerp/lijn_ronde1.png`.
+
+### [v0.0.31] - Lama: fase 2 en 3 unieker
+- Fase 2 slungelige tiener in dekking (wilde wol, lange dunne poten, voorpoot opgetild, kop laag), fase 3 zware geworteld kampioen (geschoren lijf, brede borst, kop hoog, wol alleen als kleding); vergelijking `docs/concept/sprites/lama/ontwerp/lijn_ronde2.png`.

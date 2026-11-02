@@ -1,4 +1,4 @@
-"""Vel kleur ronde 1: lama 4x en 1x op licht en donker, naast de onderlaag, fase 1 (alpaca) en 5 echte Gen 3-sprites."""
+"""Vel kleur ronde 1b (ronde 1 ernaast): lama 4x en 1x op licht en donker, naast de onderlaag, fase 1 (alpaca) en 5 echte Gen 3-sprites."""
 import os
 from PIL import Image, ImageDraw
 HERE = os.path.dirname(os.path.abspath(__file__)); OUT = os.path.dirname(HERE)
@@ -25,10 +25,11 @@ und = Image.open(os.path.join(ROOT, 'docs/concept/sprites/lama/fase2/silhouet/on
 W = 256 * 4 + 64 * 2 + 16 * 7; H = 24 + 256 + 24 + 64 * 3 + 40 + 64 * 2 + 40
 img = Image.new('RGBA', (W, H), (255, 255, 255, 255)); dr = ImageDraw.Draw(img)
 x = 16
-for lab, im in [('onderlaag', und), ('lama 4x licht', on(lama, LIGHT, 4)), ('lama 4x donker', on(lama, DARK, 4)), ('fase 1 alpaca 4x', on(alp, LIGHT, 4))]:
+r1 = rgba(os.path.join(OUT, '../ronde1/lama.png'))
+for lab, im in [('onderlaag', und), ('ronde 1b 4x licht', on(lama, LIGHT, 4)), ('ronde 1b 4x donker', on(lama, DARK, 4)), ('ronde 1 4x (vorige)', on(r1, LIGHT, 4))]:
     img.paste(im, (x, 24)); dr.text((x, 8), lab, fill=(0, 0, 0)); x += 256 + 16
 img.paste(on(lama, LIGHT, 1), (x, 24)); img.paste(on(lama, DARK, 1), (x + 64 + 8, 24)); dr.text((x, 8), '1x', fill=(0, 0, 0))
-img.paste(on(alp, LIGHT, 1), (x, 100)); dr.text((x, 168), 'alpaca 1x', fill=(0, 0, 0))
+img.paste(on(r1, LIGHT, 1), (x, 100)); dr.text((x, 168), 'ronde 1 1x', fill=(0, 0, 0))
 y = 24 + 256 + 24; x = 16
 dr.text((x, y - 16), 'op 3x: lama, alpaca, girafarig, stantler, ponyta, mareep, mightyena (licht)', fill=(0, 0, 0))
 for n, im in [('lama', lama), ('alpaca', alp)] + refs:

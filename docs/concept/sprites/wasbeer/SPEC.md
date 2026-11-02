@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov, over ronde 7) "ik heb een idee wat het wat leuker maakt. Een soort van bruine burglar zak op zijn rug. De kop is trouwens echt minder goed nu"
 - (2 nov, na Claude's eerlijke vergelijking van ronde 6 met de foto's) "ja doe maar, terug naar ronde 2"
 - (2 nov, over ronde 5, met foto 12) "nu lijkt die veel te dun"
 - (2 nov, over ronde 4, met foto 11) "het hoofd lijkt nergens op, met die enorme neus, op deze foto zie je het iets beter vanaf een bijna driekwart pose" · (met een illustratie) "of deze illustratie"
@@ -85,6 +86,7 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Krabbenetende wasbeer:** dichtst verwant, natuurlijk masker; nobel lastig, Obstagoon-associatie.
 
 ## Bevroren
+- **Bruine buitzak (burglar-zak) op de rug** (Jordi 2 nov). Kop van foto 10 (ronde 2), niet die van foto 11.
 - **Koevoetklauwen zoals in `hoeken_r2.png`** (Jordi: "De klauwen zijn nu wel goed"). Aanvalspose mag (precedent Vigoroth), maar geleidelijk/natuurlijk.
 - **Masker M1: trapjes** (Andes-trapmotief als rand van het masker; Jordi 2 nov). **Klauwen: koevoet** (Jordi's idee): lange rechte klauw met een J-bocht aan het eind; proef `ontwerp/koevoet_proef.png`: de J leest op 1x, de spleet in de punt alleen op 8x; klauw ±11 px (Coathief ±5).
 - **Haakstaart** (Jordi 2 nov). **Lange poten** zoals foto 7. **Pose: op 2 poten staand, voorover hangend** (niet rechtop). Masker met een Zuid-Amerikaanse vorm, klauwen als dievengereedschap: richting open (voorstellen hieronder).
@@ -105,7 +107,8 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Ronde 4 (`silhouet_r4.py`, Sandslash als skelet, Jordi akkoord): houding van Sandslash (gehurkt op de achterpoten, romp bijna rechtop onder de borst, voorover, driekwart naar links), vormen van de wasbeer: driekwart kop van foto 6 met een snuitwig naar links-omlaag en oren op 75%, dun lijf (straal ±5 px; krabbenetende wasbeer is dunner dan de gewone), lange poten, nabije poot vooruit met de koevoet (haak omlaag), verre poot lager vooruit met een kleinere koevoet, geringde haakstaart rechts. `ronde4.txt`, `ronde4_1x.png` (1234 px), `vel_ronde4.png` (met overlay over Sandslash). Jordi: kop "lijkt nergens op" (te grote neus).
 - Ronde 5 (`silhouet_r5.py`): ronde 4 met de kop naar Jordi's illustratie (wig naar een kleine neus, verre oor rechtop, ±18 px breed); 1190 px, `vel_ronde5.png`. Jordi: veel te dun.
 - Ronde 6 (`silhouet_r6.py`): ronde 5 voller: romp straal 6,4–7,6 (peervorm, foto 12), dijen 5,4–6, armen +0,5, nek en staartbasis dikker; 1339 px, `vel_ronde6.png`. Claude's eigen vergelijking met de foto's: leest als fret/mangoeste (rechte buisrug zonder hoge heupboog, smalle wigkop op een lange nek, kleine voeten, dunne staart): opgebouwd uit buizen = verzonnen vormen. Terug naar ronde 2 (Jordi).
-- Ronde 7 (`silhouet_r7.py`): ronde 2 (foto 10) met de driekwart kop van foto 11 (×0,38, neus op de neusplek van foto 10); schaal begrensd op 62 px breed (de reikende koevoet); 1121 px, `vel_ronde7.png`.
+- Ronde 7 (`silhouet_r7.py`): ronde 2 (foto 10) met de driekwart kop van foto 11 (×0,38, neus op de neusplek van foto 10); schaal begrensd op 62 px breed (de reikende koevoet); 1121 px, `vel_ronde7.png`. Jordi: kop "echt minder goed" → kop van foto 10 terug.
+- Ronde 8 (`silhouet_r8.py`): ronde 2 + **bruine buitzak op de rug** (Jordi's idee; bij Coathief bewust géén tas, in de eindvorm wel): bolle zak die half boven de ruglijn uitsteekt, smalle hals, knoop met twee kleine flapjes; 1351 px, `vel_ronde8.png`.
 - **Voor de kleur (Jordi):** het silhouet leest als één bolle buik door de pose; de kleur moet het lijf opdelen: lichte borst/buik (geelbruin), grijze rug en flank, de dij als eigen vorm (zoals op foto 10), donkere onderarmen die vóór de buik lopen, donkere onderbenen.
 
 ## Afgekeurd (niet herhalen)

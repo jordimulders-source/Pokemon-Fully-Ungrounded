@@ -77,14 +77,14 @@ def klauwpaar(m, hand, f, dn, g, s=1.0, gat=0.9):
         m.tube(pts, g, 0.3)
 
 
-def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11, near_back=0, shin_k=1.0, heel=0, pouch_k=0.0, pouch_z=0.0, klauw='koevoet', klauw_s=1.0):
+def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11, near_back=0, shin_k=1.0, heel=0, pouch_k=0.0, pouch_z=0.0, klauw='koevoet', klauw_s=1.0, crouch=0.0, heel_far=0, head_down=0, armen=''):
     """lean = romp voorover vanaf verticaal (Gumshoos ±15-20, foto 10 ±55). near_arm: 'hoog' (actief, klauw vooruit)."""
     m = Model()
     la = math.radians(lean)
     ax = np.array((-math.sin(la), math.cos(la), 0.0))      # lijfas (van heup naar borst)
     fr = np.array((-math.cos(la), -math.sin(la), 0.0))     # voorkant (buik)
     bk = -fr                                                # rug
-    hip = np.array((6.0, 30 * leg + 8, 0))
+    hip = np.array((6.0, 30 * leg + 8 - crouch, 0))           # crouch: dieper door de knieën (sluipen)
     chest = hip + ax * 25
     m.axis = (hip, ax, fr)
     # lijf: één getaperde buis, smal bekken, iets voller onder de borst (foto 12: peer, maar slank: krabbeneter)
@@ -119,28 +119,32 @@ def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0
         m.ell(b, np.array((1.6, 5.0, 4.4)) * hs, 'earin', Re)
         m.ell(b + Re @ np.array((0.9, -0.2, 0)) * hs, np.array((1.4, 4.4, 3.6)) * hs, 'ear', Re)
     piv = neck.copy()
-    Rh = P.rot_y(math.radians(head_extra)) @ P.rot_z(math.radians(-8))
+    Rh = P.rot_y(math.radians(head_extra)) @ P.rot_z(math.radians(-8 + head_down))
     m.parts[h0:] = [(piv + Rh @ (c - piv), r, Rh @ R0, g) for c, r, R0, g in m.parts[h0:]]
     m.head = dict(c=piv + Rh @ (hc - piv), R=Rh, hs=hs, eyes=[piv + Rh @ (e - piv) for e in eyes])
     # benen: Weavile-lengte, knie naar voren, hiel naar achteren, voet plat (plantigraad)
     for sz, gl in ((1, ''), (-1, 'far')):
         dx = near_back if sz > 0 else 7
         h = hip + np.array((0, -1, 5.5 * sz * bk_))
-        kn = np.array((-9 + dx, 19 * leg + 3, 7.0 * sz))
-        an = np.array((6 + dx, 4.5 + (heel if sz > 0 else 0), 6.0 * sz))   # heel: hiel van de grond (stap, foto 10)
+        kn = np.array((-9 + dx - crouch * 0.6, 19 * leg + 3 - crouch * 0.5, 7.0 * sz))
+        hl = heel if sz > 0 else heel_far
+        an = np.array((6 + dx, 4.5 + hl, 6.0 * sz))   # heel: hiel van de grond (stap, foto 10)
         m.tube([(*(h + np.array((1, 1, 0))), 7.4 * leg_k), (*(h * 0.45 + kn * 0.55), 6.2 * leg_k), (*kn, 4.6 * leg_k)], 'farthigh' if gl else 'thigh')
         m.tube([(*kn, 4.4 * leg_k * shin_k), (*an, 3.4 * leg_k * shin_k)], FAR['limb'] if gl else 'limb')
         fk = (0.5 + leg_k / 2) * (0.5 + shin_k / 2)
-        if sz > 0 and heel:      # op de tenen: voet schuin naar voren-omlaag
-            toe = an + np.array((-5.5, -heel + 1.2, 0))
-            m.tube([(*an, 3.0 * fk), (*toe, 2.2 * fk)], 'limb', 0.5)
-            m.ell(toe + np.array((-1.5, 0, 0)), np.array((3.0, 1.8, 3.2)) * fk, 'limb')
+        if hl:                   # op de tenen: voet schuin naar voren-omlaag
+            toe = an + np.array((-5.5, -hl + 1.2, 0))
+            m.tube([(*an, 3.0 * fk), (*toe, 2.2 * fk)], FAR['limb'] if gl else 'limb', 0.5)
+            m.ell(toe + np.array((-1.5, 0, 0)), np.array((3.0, 1.8, 3.2)) * fk, FAR['limb'] if gl else 'limb')
         else:
             m.ell(an + np.array((-4.5 * leg_k, -1.6, 0)), np.array((6.8, 2.4, 3.6)) * fk, FAR['limb'] if gl else 'limb')
     # armen: komen uit de schouders (schouderbol op de flank), bovenarm in vachtkleur, onderarm + hand donker
     sh_n = chest + np.array((0, 1.0, 7.6 * bk_)); sh_f = chest + np.array((2.5, 0.0, -7.6 * bk_))
     m.ell(sh_n, (5.4, 6.2, 4.4), 'body')
-    if near_arm == 'hoog':      # actief: elleboog naar achter-onder, onderarm schuin omhoog naar voren, koevoet vooruit
+    if armen == 'sluip':        # sluiphandjes: hand op borsthoogte, pols geknikt, klauwen hangen (Sly)
+        el = sh_n + np.array((-1.0, -8.0, 4.0)); wr = el + np.array((-7.0, 4.0, 1.0))
+        cd, cb = (-0.8, 0.15, -0.55), (0, -1, 0)
+    elif near_arm == 'hoog':      # actief: elleboog naar achter-onder, onderarm schuin omhoog naar voren, koevoet vooruit
         el = sh_n + np.array((-2.0, -10.0, 4.0)); wr = el + np.array((-11.0, 5.5, 1.5))
         cd, cb = (-0.8, 0.15, -0.55), (0, -1, 0)      # dwars in beeld bij draai 35-50°: koevoet in profiel
     else:                       # hangend voor de borst (foto 10)
@@ -150,15 +154,17 @@ def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0
     m.tube([(*el, 3.8), (*wr, 3.1)], 'limb')
     m.ell(wr + unit(wr - el) * 1.5, (3.2, 2.8, 3.2), 'limb')
     if klauw == 'paar':
-        klauwpaar(m, wr + unit(wr - el) * 1.5, unit(wr - el), (0, -1, 0), 'claw', klauw_s)
+        klauwpaar(m, wr + unit(wr - el) * 1.5, (-0.55, -0.85, 0.1) if armen == 'sluip' else unit(wr - el), (0, -1, 0), 'claw', klauw_s)
     else:
         koevoet(m, wr + unit(wr - el) * 2.5, cd, cb, 'claw', steel=steel)
-    elf = sh_f + np.array((-3.0, -10.5, -2.0)); wrf = elf + np.array((-8.0, -3.5, 1.0))   # verre arm: lager, klauw omlaag-voor
+    elf = sh_f + np.array((-3.0, -10.5, -2.0)); wrf = elf + np.array((-8.0, -3.5, 1.0))
+    if armen == 'sluip':
+        elf = sh_f + np.array((-2.0, -8.5, -2.0)); wrf = elf + np.array((-7.0, 4.0, 1.0))   # verre arm: lager, klauw omlaag-voor
     m.tube([(*sh_f, 4.4), (*elf, 3.8)], 'far')
     m.tube([(*elf, 3.6), (*wrf, 3.0)], 'farlimb')
     m.ell(wrf + unit(wrf - elf) * 1.5, (3.0, 2.6, 3.0), 'farlimb')
     if klauw == 'paar':
-        klauwpaar(m, wrf + unit(wrf - elf) * 1.5, unit(wrf - elf) * np.array((1, 0.3, 1)), (0, -1, 0), 'farclaw', klauw_s)
+        klauwpaar(m, wrf + unit(wrf - elf) * 1.5, (-0.55, -0.85, 0.1) if armen == 'sluip' else unit(wrf - elf) * np.array((1, 0.3, 1)), (0, -1, 0), 'farclaw', klauw_s)
     else:
         koevoet(m, wrf + unit(wrf - elf) * 2.4, (-0.6, -0.7, -0.5), (-0.6, 0.6, 0.5), 'farclaw', 0.95, steel=steel)
     # staart: geringd, laag naar achteren, eind in een haak omhoog (Sly-knipoog)
@@ -383,10 +389,38 @@ def vel3(naam='vel_v2_ronde3.png', yaw=50):
     im.save(os.path.join(HERE, naam))
 
 
+E2R = dict(E, near_back=12, shin_k=0.7, heel=5, pouch_k=3, pouch_z=4, klauw='paar', klauw_s=1.2)   # bevroren: E2 + rugzak + klauw
+SLUIP = [('E2 (nu)', dict(E2R)),
+         ('S1: dieper, op de tenen', dict(E2R, lean=36, crouch=5, heel_far=4)),
+         ('S2: S1 + sluiphandjes', dict(E2R, lean=36, crouch=5, heel_far=4, armen='sluip')),
+         ('S3: laag sluipen, kop omlaag', dict(E2R, lean=46, crouch=8, heel_far=4, armen='sluip', head_down=10))]
+
+
+def vel_sluip(naam='vel_sluip.png', yaw=50):
+    """Jordi: "kan de pose nog iets meer 'in de nacht sluipen' zijn?" """
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 18)
+    cell = 262
+    im = Image.new('RGB', (12 + cell * 4, 44 + cell + 24), 'white'); d = ImageDraw.Draw(im)
+    d.text((12, 12), 'Wasbeer: meer in de nacht sluipen (draai 50°)', font=FB, fill=(30, 30, 30))
+    for c, (lab, v) in enumerate(SLUIP):
+        m = wasbeer(**v); img, al = view(m, yaw)
+        x, y = 12 + cell * c, 44
+        im.paste(img, (x, y))
+        bb = Image.fromarray((al * 255).astype(np.uint8)).resize(img.size).getbbox()
+        s1 = img.crop(bb); f1 = 60 / max(s1.size)
+        s1 = s1.resize((max(1, round(s1.width * f1)), max(1, round(s1.height * f1))), Image.LANCZOS)
+        im.paste(s1, (x + 256 - s1.width, y + 256 - s1.height))
+        d.text((x + 4, y + 258), lab, font=F, fill=(60, 60, 60))
+    im.save(os.path.join(HERE, naam))
+
+
 if __name__ == '__main__':
     if sys.argv[1:2] == ['ronde1']:
         vel()
     elif sys.argv[1:2] == ['ronde2']:
         vel2()
-    else:
+    elif sys.argv[1:2] == ['ronde3']:
         vel3()
+    else:
+        vel_sluip()

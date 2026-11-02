@@ -138,3 +138,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.26] - Ideeënlijst 29 okt verwerkt
 - Jordi's nieuwe lijst (Bartitsu-Mr. Rime, capoeira-Hitmontop met evolutie, BJJ, Arbok, zout-Sandaconda, kaaiman-Krookodile, harpij, Oricorio-samba/tango/cumbia, hoatzin-Archeops, poedelmot, Tiwanaku-Golett, açaí, pitahaya, plátano-Tropius, carambola, gaucho, guaraná, Galápagos-vormen, fruitvampier, Electric viscacha) uitgewerkt in `docs/concept/IDEEEN.md`, met types en dex-status uit de repo en overlap met eerdere plannen.
 - Besloten in `POKEMON.md`: harpij komt er sowieso; capoeira-Hitmontop krijgt een evolutie; viscacha wordt Electric.
+
+### [v0.0.27] - Dark-starter fase 3: ontwerp krabbenetende wasbeer (silhouet nog open)
+- Eindvorm van de olinguito-lijn: **krabbenetende wasbeer** (*Procyon cancrivorus*), solitaire **vigilante** met een knipoog naar Sly Cooper (Robin Hood vervalt), puur Dark, niet rechtop/mensachtig. Vast: koevoetklauwen (2 klauwen = steel, bocht, gespleten punt), geringde haakstaart, masker over de neusrug, buidel op de rug als herkenbare dievenzak (deel van het lijf), houding zoals Gumshoos met Weavile-beenlengte, kop van silhouet ronde 9–11. Alles in `docs/concept/sprites/wasbeer/SPEC.md` en `AFGEKEURD.md`; referentiefoto's in `referenties/`.
+- Werkwijze: 3D-poppetje (3 rondes) en eigen silhouetbouw (rondes 1–11, collage + scriptkleuring) mislukten; Jordi: "erbarmelijk slecht". Daarna een maker-agent volgens de werkwijze (ronde 12–14). Les vastgelegd en de werkwijze verplicht gemaakt in `CLAUDE.md` en `docs/lessen/SPRITE_WERKWIJZE.md` (Coathief als voorbeeld; Claude tekent niet zelf).
+- Samengevoegd: Coathief-tak (frontsprite af, v0.0.23–25) en de ideeënlijst van 29 okt (v0.0.26).

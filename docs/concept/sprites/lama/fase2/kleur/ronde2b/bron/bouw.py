@@ -1,4 +1,4 @@
-"""Kleur ronde 2: bouwt lama.png uit raster.txt (met de hand, op silhouet ronde 2) (met de hand getypt) en controleert tegen het bevroren silhouet.
+"""Kleur ronde 2b: bouwt lama.png uit raster.txt (ronde 2) + hals.txt (wolhals, ronde 2b) (met de hand getypt) en controleert tegen het bevroren silhouet.
 Draaien: python3 docs/concept/sprites/lama/fase2/kleur/ronde1/bron/bouw.py"""
 import os, sys
 from PIL import Image
@@ -36,6 +36,15 @@ def build():
             if c not in IDX: sys.exit(f'regel {ln}: onbekende letter {c!r}')
             if (x, y) in seen: sys.exit(f'regel {ln}: pixel {x},{y} dubbel (ook regel {seen[(x, y)]})')
             seen[(x, y)] = ln; grid[y][x] = c
+    hp = os.path.join(HERE, 'hals.txt')
+    for ln, line in enumerate(open(hp), 1):
+        if line.lstrip().startswith('#') or not line.strip(): continue
+        y, x0, px = line.split(); y, x0 = int(y), int(x0)
+        for i, c in enumerate(px):
+            x = x0 + i
+            if c not in IDX: sys.exit(f'hals {ln}: onbekende letter {c!r}')
+            if grid[y][x] == '.': sys.exit(f'hals {ln}: pixel {x},{y} buiten het silhouet')
+            grid[y][x] = c
     return grid
 
 if __name__ == '__main__':

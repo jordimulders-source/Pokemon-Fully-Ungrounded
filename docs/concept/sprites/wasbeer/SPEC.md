@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov) "kan je de twee klauwen niet zodanig samen een vorm geven dat ze een koevoet vormen? De pose moet ik eerst zien voordat ik dat ewet"
 - (2 nov) "de trapjes goed idee, de traan niet, dan lijkt dat net te staan voor een moord zoals bij gang members. Wat dacht je van crowbar vormen klauwen? IS dat uit te beelden denk je?"
 - (2 nov, bij foto 6–7) "haakstaart lijkt me een goed plan, mogelijk kunnen we het masker een klein beetje een zuid amerikaans masker vorm geven zodat het niet puur een wasbeer is. Lange poten zoals op de foto mag ook. Ik denk wel op 2 poten staan en dan voorover hangend. Misschien dat we de klauwen dan als een soort thief tool kunnen vormen. Wat voor suggesties heb jij"
 - (2 nov) "B is prima. Ander soort wasbeer dan Zigzagoon ook, dus prima. De staart en de vorm lijken als een logische evolutie van een coati. Grote verschil is dat deze raccoon solitary is tov coati's die in gangs opereren. Dus dat is goede lore ook. Robin Hood laten we achterwege, we gaan meer de vigilante kant op, plus een soort ode aan Sly Cooper"
@@ -66,6 +67,10 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Haakstaart** (Jordi 2 nov). **Lange poten** zoals foto 7. **Pose: op 2 poten staand, voorover hangend** (niet rechtop). Masker met een Zuid-Amerikaanse vorm, klauwen als dievengereedschap: richting open (voorstellen hieronder).
 - **Dier: krabbenetende wasbeer** (Jordi 2 nov). Lore: solitair, tegenover de coati-bendes; de bendedief wordt eenling.
 - **Thema: vigilante + ode aan Sly Cooper** (Jordi 2 nov); Robin Hood vervalt. Ode = houding/gevoel (meesterdief die van boeven steelt, sluipen, haak), geen kopie van Sly's pet, kleur of wandelstok. Nobeler dan Coathief, grijze moraal. **Niet (helemaal) rechtop**, niet mensachtiger dan fase 2. **Puur Dark.**
+
+## Ontwerp (stap 1)
+- 3D-poppetje `ontwerp/pop3d_wasbeer.py`: waterspuwerpose (achterpoten op een rand, romp voorover, voorpoten hangen vrij), koevoetklauwen = 2 klauwen tegen elkaar als één staaf met een J-bocht, alleen de punt gespleten (`koevoet()`), haakstaart, trapjesmasker als band over beide ogen en de neusrug.
+- Hoekenraster `ontwerp/hoeken.png` (draai 25/40/55°, romp 45/60°) en maskertest `ontwerp/maskers.png` (T trapjes, K trapjes + inkeping, W gewoon), wachten op Jordi.
 
 ## Afgekeurd (niet herhalen)
 - **Traan onder het oog** (M2): "dan lijkt dat net te staan voor een moord zoals bij gang members" (Jordi 2 nov).

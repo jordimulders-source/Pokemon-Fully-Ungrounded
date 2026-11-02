@@ -14,6 +14,7 @@ def load(png, palf=None):
         im.info['transparency']=0
     return im.convert('RGBA') if 'transparency' in im.info or im.mode=='RGBA' else im.convert('RGBA')
 items=[('nachtaap r3',load(D+'kleur/ronde3/nachtaap.png',D+'kleur/ronde3/normal.pal')),
+       ('nachtaap r4',load(D+'kleur/ronde4/nachtaap.png',D+'kleur/ronde4/normal.pal')),
        ('fase 1',load(D+'referenties/fase1_goedgekeurd.png'))]
 for n in ['lairon','sableye','misdreavus','mismagius','aipom','ambipom','grumpig','zigzagoon','spinda','kecleon','natu','abra','mightyena','slakoth','espeon']:
     g=R+'graphics/pokemon/'+n+'/'

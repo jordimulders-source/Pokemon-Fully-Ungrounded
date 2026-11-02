@@ -3,7 +3,8 @@ import numpy as np
 from PIL import Image
 from collections import Counter
 D='/home/user/Pokemon-Fully-Ungrounded/docs/concept/sprites/nachtaap_evo/'
-a=np.array(Image.open(D+'kleur/ronde3/nachtaap.png'))
+import sys
+a=np.array(Image.open(D+'kleur/'+(sys.argv[1] if len(sys.argv)>1 else 'ronde3')+'/nachtaap.png'))
 H,W=a.shape
 op=a>0
 print('pixels',op.sum(),'kleuren gebruikt',len(set(a[op].tolist())))
@@ -74,7 +75,8 @@ for idx in (1,2):
             else: y+=1
 print('lijnen van idx1/2 >=5 px:',ir)
 # symmetrie / kopie ogen
-L=a[43:48,6:12]; R_=a[43:48,15:21]
+L=a[43:48,6:12]; R_=a[43:48,15:21]  # oogkas incl. ring
+print('oogbinnenkant (x7-10 vs x16-19) identiek:',bool((a[43:48,7:11]==a[43:48,16:20]).all()))
 print('linker- en rechteroog identiek:',bool((L==R_).all()))
 print('wit (idx8):',int((a==8).sum()),'kop-box px',int(op[36:56,3:27].sum()))
 print('creme (C,D,E,F):',int(np.isin(a,[12,13,14,15]).sum()))

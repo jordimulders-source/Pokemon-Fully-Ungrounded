@@ -77,7 +77,7 @@ def klauwpaar(m, hand, f, dn, g, s=1.0, gat=0.9):
         m.tube(pts, g, 0.3)
 
 
-def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11, near_back=0, shin_k=1.0, heel=0, pouch_k=0.0, pouch_z=0.0, klauw='koevoet', klauw_s=1.0, crouch=0.0, heel_far=0, head_down=0, armen=''):
+def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11, near_back=0, shin_k=1.0, heel=0, pouch_k=0.0, pouch_z=0.0, klauw='koevoet', klauw_s=1.0, crouch=0.0, heel_far=0, head_down=0, armen='', far_dx=7):
     """lean = romp voorover vanaf verticaal (Gumshoos ±15-20, foto 10 ±55). near_arm: 'hoog' (actief, klauw vooruit)."""
     m = Model()
     la = math.radians(lean)
@@ -124,7 +124,7 @@ def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0
     m.head = dict(c=piv + Rh @ (hc - piv), R=Rh, hs=hs, eyes=[piv + Rh @ (e - piv) for e in eyes])
     # benen: Weavile-lengte, knie naar voren, hiel naar achteren, voet plat (plantigraad)
     for sz, gl in ((1, ''), (-1, 'far')):
-        dx = near_back if sz > 0 else 7
+        dx = near_back if sz > 0 else far_dx
         h = hip + np.array((0, -1, 5.5 * sz * bk_))
         kn = np.array((-9 + dx - crouch * 0.6, 19 * leg + 3 - crouch * 0.5, 7.0 * sz))
         hl = heel if sz > 0 else heel_far
@@ -390,19 +390,20 @@ def vel3(naam='vel_v2_ronde3.png', yaw=50):
 
 
 E2R = dict(E, near_back=12, shin_k=0.7, heel=5, pouch_k=3, pouch_z=4, klauw='paar', klauw_s=1.2)   # bevroren: E2 + rugzak + klauw
-SLUIP = [('E2 (nu)', dict(E2R)),
-         ('S1: dieper, op de tenen', dict(E2R, lean=36, crouch=5, heel_far=4)),
-         ('S2: S1 + sluiphandjes', dict(E2R, lean=36, crouch=5, heel_far=4, armen='sluip')),
-         ('S3: laag sluipen, kop omlaag', dict(E2R, lean=46, crouch=8, heel_far=4, armen='sluip', head_down=10))]
+S1 = dict(E2R, lean=36, crouch=5, heel_far=4)
+SLUIP = [('S1 (ronde 1)', dict(S1)),
+         ('S1a: nabij been ver achter op de tenen', dict(S1, near_back=19, heel=6, far_dx=-1, heel_far=0)),
+         ('S1b: verre been ver achter op de tenen', dict(S1, near_back=-2, heel=0, far_dx=17, heel_far=6)),
+         ('S1c: als S1a, grotere stap', dict(S1, near_back=23, heel=7, far_dx=-4, heel_far=0))]
 
 
-def vel_sluip(naam='vel_sluip.png', yaw=50):
+def vel_sluip(naam='vel_sluip2.png', yaw=50):
     """Jordi: "kan de pose nog iets meer 'in de nacht sluipen' zijn?" """
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 18)
     cell = 262
     im = Image.new('RGB', (12 + cell * 4, 44 + cell + 24), 'white'); d = ImageDraw.Draw(im)
-    d.text((12, 12), 'Wasbeer: meer in de nacht sluipen (draai 50°)', font=FB, fill=(30, 30, 30))
+    d.text((12, 12), 'Wasbeer: sluipen, S1 met een echte stap (draai 50°)', font=FB, fill=(30, 30, 30))
     for c, (lab, v) in enumerate(SLUIP):
         m = wasbeer(**v); img, al = view(m, yaw)
         x, y = 12 + cell * c, 44

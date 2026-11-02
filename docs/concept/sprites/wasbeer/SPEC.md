@@ -20,6 +20,9 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov, over hoeken_r2.png) "De klauwen zijn nu wel goed. Op zich kan zo'n aanvals pose wel, want vigoroth heeft dat ook. Maar deze lijkt nog wat onnatuurlijk, met de benen nog staand en de armen vrij ver naar boven, misschien moet dit iets geleidelijker"
+- (2 nov, met foto 10) "hier is een goede staande pose"
+- (2 nov, met foto 11) "hier ook een beetje" · (met foto 12) "en nog een"
 - (2 nov, over hoeken.png/maskers.png, bij foto 8–9) "De pose is super super statisch, dat is niet goed. Lijkt net een opgezet dier zo. Meer dynamiek moet erin. Hierop is niet goed de koevoet vorm van de klauwen te zien ook, plus het lijkt zo echt niet pragmatisch, omdat die met deze pose lijkt alsof die op zn voorpoten moet lopen, maar dat niet kan met die klauwen. Dat grijze vlak moet ook weg, plus de staart haakt niet genoeg. Het masker met de andes vorm lijkt niet heel goed over te gaan komen in pixels, maar iig wel goed dat je het tot over de neus getrokken hebt. De poten lijken ook wat langer te zijn in fotos en de onderrug wat minder dik. Zie bijgesloten fotos"
 - (2 nov) "kan je de twee klauwen niet zodanig samen een vorm geven dat ze een koevoet vormen? De pose moet ik eerst zien voordat ik dat ewet"
 - (2 nov) "de trapjes goed idee, de traan niet, dan lijkt dat net te staan voor een moord zoals bij gang members. Wat dacht je van crowbar vormen klauwen? IS dat uit te beelden denk je?"
@@ -38,6 +41,9 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 - `foto7_frontaal_lange_poten.png`: frontaal, lange donkere poten, masker rond de ogen, witte snuitrand, lange klauwen.
 - `foto8_gebogen_naar_je_toe.png`: rug hoog gebogen, kop laag naar je toe, lange donkere poten (dreiging).
 - `foto9_zijaanzicht_sluipend.webp`: sluipend zijaanzicht: lange poten, slanke onderrug, staart omhoog.
+- **Foto 10 (staande pose, Jordi's keuze; kwam niet als bestand binnen, punt voor punt overgenomen):** wasbeer op de achterpoten, kop rechts in beeld; romp ±55–60° schuin voorover met een lichte S in de rug; knieën gebogen, hakken naar achteren, voeten plat; de verre voorpoot steekt naar voren en iets omhoog (hand open, reikend); de nabije voorpoot hangt gebogen voor de buik, hand op buikhoogte; kop naar voren op een gestrekte nek, blik vooruit; staart laag achter op de grond; lichte buik/borst, donkere onderarmen en onderbenen.
+- **Foto 11 (niet als bestand; dezelfde opname als foto 5 rechtsonder):** frontaal op een stam, vier lange poten recht onder het lijf, kop omhoog-opzij, lange gebogen klauwen over de rand; geelbruine borst, grijze rug.
+- **Foto 12 (niet als bestand):** zit rechtop op de achterpoten in waterplanten, frontaal, beide handen hangen voor de borst (polsen geknikt), staart laag opzij; masker over de ogen en neusrug, witte wenkbrauw en snuitrand, lichte oorranden.
 - `foto5_collage_rots_uitkijk.webp`: o.a. op een rots, vier poten, kop naar de kijker (rechtsonder), en laag sluipend met de hand vooruit (linksboven).
 
 ## Open vragen (stap 1, voor Jordi)
@@ -66,6 +72,7 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Krabbenetende wasbeer:** dichtst verwant, natuurlijk masker; nobel lastig, Obstagoon-associatie.
 
 ## Bevroren
+- **Koevoetklauwen zoals in `hoeken_r2.png`** (Jordi: "De klauwen zijn nu wel goed"). Aanvalspose mag (precedent Vigoroth), maar geleidelijk/natuurlijk.
 - **Masker M1: trapjes** (Andes-trapmotief als rand van het masker; Jordi 2 nov). **Klauwen: koevoet** (Jordi's idee): lange rechte klauw met een J-bocht aan het eind; proef `ontwerp/koevoet_proef.png`: de J leest op 1x, de spleet in de punt alleen op 8x; klauw ±11 px (Coathief ±5).
 - **Haakstaart** (Jordi 2 nov). **Lange poten** zoals foto 7. **Pose: op 2 poten staand, voorover hangend** (niet rechtop). Masker met een Zuid-Amerikaanse vorm, klauwen als dievengereedschap: richting open (voorstellen hieronder).
 - **Dier: krabbenetende wasbeer** (Jordi 2 nov). Lore: solitair, tegenover de coati-bendes; de bendedief wordt eenling.
@@ -75,6 +82,7 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - 3D-poppetje `ontwerp/pop3d_wasbeer.py`: waterspuwerpose (achterpoten op een rand, romp voorover, voorpoten hangen vrij), koevoetklauwen = 2 klauwen tegen elkaar als één staaf met een J-bocht, alleen de punt gespleten (`koevoet()`), haakstaart, trapjesmasker als band over beide ogen en de neusrug.
 - Ronde 1: hoekenraster `ontwerp/hoeken.png` (waterspuwer) en maskertest `ontwerp/maskers.png`: afgekeurd (zie onder).
 - Ronde 2 (`ontwerp/hoeken_r2.png`): **uithalen**: op de achterpoten in een stap (nabije poot voor, verre zet af op de tenen), romp 20/32° voorover, verre koevoet hoog boven de rug (haakt naar voren), nabije koevoet naar de speler gestoken (haakt omlaag), staart als herdersstaf boven de rug, geen rand, langere poten, slankere onderrug, gewoon masker over de neusrug. Voorpoten raken de grond niet (pragmatisch). 1x-voorbeeld in elke cel. Tussenstappen met klauw onder de kin ('slagtanden') en de nabije poot op de grond verworpen vóór Jordi.
+- Ronde 3 (`ontwerp/hoeken_r3.png`, pose 'F' naar foto 10): op de achterpoten met gebogen knieën, romp 48/58° voorover, verre poot reikt naar voren (koevoet vooruit, haak omlaag), nabije poot hangt gebogen voor de buik (koevoet omlaag, haak naar voren), staart laag achter met de haak omhoog, kop iets omhoog. Een tussenversie met de reikende koevoet voor de snuit verworpen vóór Jordi.
 
 ## Afgekeurd (niet herhalen)
 - **Waterspuwer (hoeken.png ronde 1):** "super super statisch", "net een opgezet dier"; voorpoten hangend lijken om op te lopen, wat met koevoetklauwen niet kan; koevoetvorm niet te zien; grijze rand weg; staart haakt te weinig; poten te kort, onderrug te dik.

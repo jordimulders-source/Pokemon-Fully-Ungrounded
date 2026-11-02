@@ -57,14 +57,18 @@ def wasbeer(pose='U', lean=28, leg_k=1.25, claw_k=1.6, head_up=-2):
     m = P.Model()
     L = lambda pts: [(x, y, z, r * leg_k) for x, y, z, r in pts]
     a = math.radians(lean)
-    hip = np.array((28.0, 8, 0)); ax = np.array((-math.cos(a), math.sin(a), 0))
+    hip = np.array((28.0, -2, 0)); ax = np.array((-math.cos(a), math.sin(a), 0))
     chest = hip + ax * 62
     for t, r in ((0, 15.5), (0.35, 16.5), (0.7, 19), (1.0, 20)):     # slanke onderrug, borst breder
         m.ell(hip + ax * 62 * t, r, 'fur')
     m.ell(chest + np.array((-10, -6, 0)), (11, 16, 15), 'chest')
     # staart: omhoog achter de rug en dan een grote haak (herdersstaf) terug naar voren
-    tail = P.qb((44, 12, 0), (78, 22, 0), (80, 62, 0), 10)[:-1] + P.qb((80, 62, 0), (82, 92, 0), (58, 92, 0), 8)[:-1] \
-        + P.qb((58, 92, 0), (44, 90, 0), (48, 74, 0), 6)
+    if pose == 'F':
+        tail = P.qb((40, -8, 0), (74, -40, 0), (100, -48, 0), 10)[:-1] + P.qb((100, -48, 0), (126, -50, 0), (124, -26, 0), 8)[:-1] \
+            + P.qb((124, -26, 0), (122, -12, 0), (110, -14, 0), 6)
+    else:
+        tail = P.qb((44, 12, 0), (78, 22, 0), (80, 62, 0), 10)[:-1] + P.qb((80, 62, 0), (82, 92, 0), (58, 92, 0), 8)[:-1] \
+            + P.qb((58, 92, 0), (44, 90, 0), (48, 74, 0), 6)
     acc = [0.0]
     for p1, p2 in zip(tail, tail[1:]):
         acc.append(acc[-1] + np.linalg.norm(np.subtract(p2, p1)))
@@ -89,13 +93,21 @@ def wasbeer(pose='U', lean=28, leg_k=1.25, claw_k=1.6, head_up=-2):
     # voorpoten met koevoeten
     sh = chest + np.array((-2, 2, 0))
     sn, sf = sh + np.array((0, 0, 13)), sh + np.array((0, 0, -13))
-    if pose == 'U':
-        # nabije poot steekt naar voren-omlaag naar de speler, koevoet haakt omlaag
-        eln = sn + np.array((-12, -18, 8)); wrn = eln + np.array((-22, -8, 8))
-        arm(m, sn, eln, wrn, (-1, -0.1, 0.25), (0, -1, 0), 'fur', 'leg', 'claw', leg_k, claw_k)
-        # verre poot hoog geheven boven de rug, koevoet wijst omhoog en haakt naar voren
-        elf = sf + np.array((4, 22, -4)); wrf = elf + np.array((-8, 20, -2))
-        arm(m, sf, elf, wrf, (-0.25, 1, 0), (-1, -0.35, 0), 'far', 'farleg', 'farclaw', leg_k, claw_k)
+    if pose == 'F':
+        # foto 10: nabije poot hangt gebogen voor de buik, koevoet omlaag met de haak naar voren
+        eln = sn + np.array((-6, -20, 6)); wrn = eln + np.array((-10, -18, 2))
+        arm(m, sn, eln, wrn, (-0.25, -1, 0.1), (-1, 0.35, 0), 'fur', 'leg', 'claw', leg_k, claw_k)
+        # verre poot reikt naar voren en iets omhoog, koevoet vooruit met de haak omlaag
+        elf = sf + np.array((-14, -18, -4)); wrf = elf + np.array((-22, -10, 2))
+        arm(m, sf, elf, wrf, (-1, -0.35, 0.1), (0.2, -1, 0), 'far', 'farleg', 'farclaw', leg_k, claw_k)
+    elif pose == 'U':
+        # nabije poot opgetrokken naar achter, boven de schouder (geleidelijk, niet recht omhoog);
+        # koevoet wijst omhoog en haakt naar voren
+        eln = sn + np.array((12, 6, 4)); wrn = eln + np.array((-4, 16, 2))
+        arm(m, sn, eln, wrn, (-0.45, 0.9, 0), (-0.9, -0.45, 0), 'fur', 'leg', 'claw', leg_k, claw_k)
+        # verre poot steekt naar voren-omlaag naar de speler, koevoet haakt omlaag
+        elf = sf + np.array((-10, -16, -4)); wrf = elf + np.array((-18, -4, 4))
+        arm(m, sf, elf, wrf, (-1, -0.1, 0.25), (0, -1, 0), 'far', 'farleg', 'farclaw', leg_k, claw_k)
     else:
         eln = sn + np.array((-6, -18, 4)); wrn = eln + np.array((-14, 10, 2))
         arm(m, sn, eln, wrn, (-0.6, 0.6, 0.1), (-0.3, -1, 0), 'fur', 'leg', 'claw', leg_k, claw_k)
@@ -255,20 +267,20 @@ FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 
 def raster():
     """Rij = pose (U uithalen, S sluipen), kolom = draaiing naar de speler; rechtsonder in elke cel
     het poppetje op spritegrootte (1x, ±64 px) om de leesbaarheid van klauwen en staart te zien."""
-    yaws, poses = (25, 40, 55), ((20, 'romp 20°'), (32, 'romp 32°'))
+    yaws, poses = (25, 40, 55), ((48, 'romp 48°'), (58, 'romp 58°'))
     cell = 262
     im = Image.new('RGB', (12 + cell * len(yaws), 40 + (cell + 22) * len(poses)), 'white')
     d = ImageDraw.Draw(im)
-    d.text((12, 10), 'Wasbeer ronde 2: pose en hoek (draaiing naar de speler)', font=FB, fill=(30, 30, 30))
+    d.text((12, 10), 'Wasbeer ronde 3: staande pose naar foto 10 (draaiing naar de speler)', font=FB, fill=(30, 30, 30))
     for j, (ps, nm) in enumerate(poses):
         for i, yw in enumerate(yaws):
-            v = view(wasbeer(lean=ps), yw, var='W')
+            v = view(wasbeer(pose='F', lean=ps, head_up=4), yw, var='W')
             x, y = 12 + cell * i, 40 + (cell + 22) * j
             im.paste(v, (x, y))
             small = v.resize((64, 64), Image.LANCZOS)
             im.paste(small, (x + cell - 70, y + 190))
-            d.text((x + 4, y + 258), f'{"ABC"[i]}{j + 1}: uithalen, draai {yw}°, {nm}', font=F, fill=(60, 60, 60))
-    im.save(os.path.join(HERE, 'hoeken_r2.png'))
+            d.text((x + 4, y + 258), f'{"ABC"[i]}{j + 1}: draai {yw}°, {nm}', font=F, fill=(60, 60, 60))
+    im.save(os.path.join(HERE, 'hoeken_r3.png'))
 
 
 def maskers(yaw=40, lean=45):

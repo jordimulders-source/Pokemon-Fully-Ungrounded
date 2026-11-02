@@ -144,3 +144,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.28] - Lama: richting stap 1
 - Jordi: geen BJJ (wordt een losse fakemon), de lama draagt traditionele Andes-kleding die per fase ontwikkelt, voorlopig MMA-handschoenen, kleur echt lama, fase 3 duidelijk anders en volwassener. Vastgelegd in `docs/concept/sprites/lama/SPEC.md` met een voorstel voor de kledinglijn.
+
+### [v0.0.29] - Lama: foto's en poppetje
+- Jordi's foto's in `docs/concept/sprites/lama/referenties/` (pose = foto 1, oorkwasten/aguayo, bonte vacht, MMA-handschoenen). Fase 2 is een tussenvorm (Marshtomp/Charmeleon-idee), vacht iets donkerder dan de alpaca.
+- 3D-poppetje met de kledinglijn (`ontwerp/pop3d_lama.py`), vel `ontwerp/vel_ronde1.png`: drie verhoudingen en drie vachten. Open: keuze, en of fase 3 een guanaco wordt.

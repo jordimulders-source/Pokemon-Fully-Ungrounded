@@ -20,7 +20,14 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (verplicht; **Coathief is het voorb
 ## Jordi's woorden (2 nov, stap 1, letterlijk)
 - "Ik maak een andere BJJ pokemon later. Het lijkt me leuk om een ontwikkeling in de traditionele Andes kleding die de llama draagt ook te doen. Qua vechtsport weet ik het nog niet, we kunnen er ook gewoon MMA handschoenen van maken. Qua kleur gaan we echt meer de lama kant op, maar de 3e vorm moet wel echt duidelijk anders en volwassener zijn nog dan de 2e vorm"
 
+## Jordi's woorden (2 nov, bij foto's 1–5, letterlijk)
+- "dit is een vrij goede angle, de eerste foto, de kleding lijn is goed, maar moet het vooral ook in design zien. Deze llama is nog niet helemaal volgroeid, maar wel duidelijk al een evolutie, marshtomp, charmeleon, monferno, prinplup idee. Begin nu toch te twijfelen of we evo 3 geen guanaco moeten maken. Kan je al iets met deze fotos? Vacht is goed om iets donkerder te maken dan de alpaca. Handschoen foto zit er ook bij"
+
 ## Besloten (2 nov)
+- **Pose/hoek: foto 1** (`referenties/foto1_lama_driekwart_POSE.png`): staand, lijf driekwart naar links-voor, kop naar de kijker, staart omhoog, dikke vacht.
+- **Fase 2 = tussenvorm:** nog niet volgroeid, maar duidelijk een evolutie (Marshtomp, Charmeleon, Monferno, Prinplup).
+- **Kledinglijn goed** (voorstel hieronder); moet in het ontwerp zichtbaar worden.
+- **Vacht iets donkerder dan de alpaca.** **Handschoen: MMA** (`referenties/foto5_mma_handschoenen.png`: kort, open vingers, polsband).
 - Geen BJJ (wordt een losse fakemon).
 - **Kledinglijn:** de lama draagt traditionele Andes-kleding, die per fase verder ontwikkelt (fase 1: aguayo-halsband en -manchetten, oorkwastjes → fase 2: meer → fase 3: cholita, bombín).
 - **Handschoenen:** voorlopig **MMA-handschoenen** (vechtsport verder open).
@@ -31,7 +38,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (verplicht; **Coathief is het voorb
 - `fase1_alpaca.png` / `_4x.png`: de goedgekeurde fase 1.
 - `schets_fase2_wolkraag_23okt.png`: oude modeltekening fase 2 (praatplaat, geen bron).
 - `referentie_alpaca.webp`: alpacafoto die Jordi bij ronde 9 gaf.
-- Nog nodig (stap 1): foto van een echte lama in de gekozen pose.
+- `foto1_lama_driekwart_POSE.png`: **de pose** (Jordi). `foto2_jonge_lama_frontaal.webp`: jonge lama (tussenvorm-gevoel). `foto3_kudde_oorkwasten_aguayo.webp`: rode oorkwasten, aguayo op de rug. `foto4_bont_bruin_wit.webp`: bonte vacht. `foto5_mma_handschoenen.png`: MMA-handschoenen.
 
 ## Lama vs. alpaca (voor herkenbaarheid)
 - Lama: groter, langere kop en snuit, **banaanvormige oren** (gebogen naar binnen), minder wol op kop en poten, rug recht, staart hoger; vaak bont (bruin/wit, zwart).
@@ -39,10 +46,13 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (verplicht; **Coathief is het voorb
 - Andeslama's dragen **oorkwastjes** (gekleurde wol in de oren): sluit aan op fase 1.
 
 ## Open (stap 1, met Jordi)
-- Welke kledingstukken in fase 2 (voorstel Claude, zie hieronder).
-- Pose + foto van een echte lama in die pose.
-- Welke lamavacht (effen bruin, bont bruin/wit, ...).
+- Verhouding A/B/C en vacht op `ontwerp/vel_ronde1.png`.
+- Fase 3: lama of guanaco (Jordi twijfelt, 2 nov).
 - Naam.
+
+## Ontwerp (stap 1)
+- 3D-poppetje `ontwerp/pop3d_lama.py` in de hoek van foto 1 (lijf 40°, kop +24°), met kleding: rode oorkwasten, pomponsnoer, aguayo over de rug, rode MMA-handschoenen met zwarte polsband en de twee teennagels eruit. Praatplaat + bron voor het silhouet (maker-agent), geen sprite.
+- `ontwerp/vel_ronde1.png`: rij 1 verhoudingen A (kop 29%, lange hals) / B (34%) / C (39%, kortere hals), rij 2 vacht (licht karamel / karamel / bont) op B.
 
 ## Voorstel kledinglijn (Claude, 2 nov, nog niet goedgekeurd)
 Echte lamatooi uit de Andes: bij de *señalakuy*/*t'ikachay* (merkfeest) krijgen lama's gekleurde wolkwasten in de oren en wollen pompons/linten; als lastdier dragen ze een geweven lap (aguayo/costal) op de rug.

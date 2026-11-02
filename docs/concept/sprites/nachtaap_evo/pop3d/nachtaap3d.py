@@ -92,16 +92,15 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None):
         g[disc] = groups.index('disc')
         rim = (front > 0.28) & (front <= 0.40) & (u[:, 1] > -0.30)
         g[rim] = groups.index('stripe')
-        mid = (np.abs(u[:, 2]) < 0.05 + 0.10 * np.clip(u[:, 1] - 0.3, 0, 1)) & (u[:, 1] > 0.30) & (front > 0.3)
+        mid = (np.abs(u[:, 2]) < 0.06) & (u[:, 1] > 0.12) & (u[:, 1] < 0.75) & (front > 0.3)
         g[mid] = groups.index('stripe')
-        for e in eyes:   # zilveren sikkel boven elk oog (maangezicht)
+        # één halve maan op het voorhoofd, punten omlaag (Jordi 2 nov); middenstreep loopt eronder tussen de ogen
+        c1 = np.array((-0.66, 0.46, 0.0)); c2 = c1 + np.array((0.04, -0.26, 0))
+        d1 = np.linalg.norm(u - c1, axis=1); d2 = np.linalg.norm(u - c2, axis=1)
+        g[(d1 < 0.52) & (d2 > 0.44) & (u[:, 0] < -0.05)] = groups.index('moon')
+        for e in eyes:
             ue = (e - HEAD_C) / HEAD_R
-            de = np.linalg.norm(u - ue, axis=1)
-            # halvemaan (sikkel) boven elk oog: grote cirkel min een lagere cirkel, punten omlaag langs het oog
-            d1 = np.linalg.norm(u - (ue + np.array((0, 0.16, 0))), axis=1)
-            d2 = np.linalg.norm(u - (ue + np.array((0, 0.02, 0))), axis=1)
-            g[(d1 < 0.48) & (d2 > 0.39) & (front > 0.22) & ~mid] = groups.index('moon')
-            g[(de < 0.34)] = groups.index('ring')
+            g[np.linalg.norm(u - ue, axis=1) < 0.34] = groups.index('ring')
         return g
 
     m.texfn = texfn
@@ -112,18 +111,27 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None):
         if motief:
             # oranje borst/buik zoals de echte nachtaap (foto 4), voorkant onder de kop
             g[(x < 4) & (y < 12) & (z > -14) & (x + 0.6 * y < 2)] = groups.index('buik')
-        if motief == 'sikkel':   # één grote halvemaan op de flank (nabije kant)
-            d1 = np.hypot(x - 14, y - 24); d2 = np.hypot(x - 21, y - 30)
-            g[(z > 6) & (d1 < 19) & (d2 > 16)] = groups.index('maan')
-        if motief == 'sterren':  # een paar lichte sterren op de rug (Inca-sterrenbeelden)
-            for c in ((-2, 34, 22), (14, 44, 20), (30, 40, 22), (40, 26, 24), (16, 24, 30)):
-                g[np.linalg.norm(q - np.array(c), axis=1) < 5.5] = groups.index('maan')
-        if motief == 'fasen':    # maanfasen over de rug: van sikkel naar vol, richting de staart
-            for i, (cx, cy) in enumerate(((-4, 32), (11, 40), (26, 38), (40, 28))):
-                c = np.array((cx, cy, 24.0))
-                d = np.linalg.norm(q - c, axis=1)
-                off = np.linalg.norm(q - c - np.array((0, 6.0 - 2.0 * i, 0)), axis=1)
-                g[(d < 7) & ((off > 6.2) | (i == 3))] = groups.index('maan')
+        # patroon in 'uitgerolde' rugcoördinaten: x langs de ruggengraat, sa = booglengte vanaf de rugmiddenlijn
+        # (z = 0 bovenop). Daardoor is het van bovenaf gecentreerd en loopt het langs de flanken omlaag.
+        th = np.arctan2(z, y - 6)
+        sa = th * 30
+        top = np.abs(th) < 1.45
+        if motief == 'kene':
+            # Shipibo-kené: lijn over de ruggengraat + getrapte dwarsbanden die over beide flanken omlaag lopen
+            k = (np.abs(sa) < 2.8) & (x > -16) & (x < 52)
+            for xa in (-6, 16, 38):
+                k |= (np.abs(x - xa) < 2.8) & (np.abs(sa) < 17)
+                k |= (np.abs(np.abs(sa) - 17) < 2.8) & (x > xa - 0.5) & (x < xa + 8.5)
+                k |= (np.abs(x - xa - 8) < 2.8) & (np.abs(sa) > 15) & (np.abs(sa) < 36)
+            g[top & k] = groups.index('maan')
+        if motief == 'chakana':
+            # Andeskruis (chakana) midden op de rug, getrapt, met een rond gat; armen lopen over de flanken
+            dx, dz = np.abs(x - 14), np.abs(sa)
+            inside = lambda w: ((dx < 24 - w) & (dz < 9 - w)) | ((dx < 16.5 - w) & (dz < 22 - w)) | ((dx < 9 - w) & (dz < 34 - w))
+            ring = inside(0) & ~inside(3.6)
+            rr = np.hypot(x - 14, sa)
+            ring |= (rr < 7) & (rr > 3.5)
+            g[top & ring] = groups.index('maan')
         return g
 
     m.bodyfn = bodyfn

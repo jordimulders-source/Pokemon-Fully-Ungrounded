@@ -34,6 +34,8 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 - 2 nov: "de voorpoten mogen nog iets meer teruggetrokken, verder mis ik het halve maan motief wat je voorstelde. De kleur mag imo iets donkerder dan van de eerste evo. Staart omhoog zie ik zitten (suggestie voor pose) Hoofdpose A2 is goed, al moeten we uiteraard de ogen nog anders vormgeven, plus een neutrale mond, maar dat was voor een latere fase toch"
   → **hoek A2 van het staart-omhoog-vel = lijf 40°, kop 80°** (Jordi: "nee dit hoofd is niet a2" toen Claude kop 65° nam; de vellen hadden dubbele labels, nu weggehaald), **staart omhoog**, voorpoten teruggetrokken, vacht donkerder dan fase 1, halve manen boven de ogen; ogen en neutrale mond in de kleurstap.
 - 2 nov: "correct, we kunnen ook iets qua motief met het lichaam doen, want dat is nu wel erg effen" → pose lijf 40°/kop 80°/staart omhoog akkoord; lijfmotieven in `pop3d/motieven.png` (keuze open).
+- 2 nov: "Nee dit is het niet helemaal. Ik wil de halve maan op het hoofd, met de uiteinden naar beneden wijzend. Is er iets van een patroon wat mysterieus is en zuid amerikaans, wat we redelijk netjes zouden kunnen uitwerken op het lijf? Het moet logisch zijn, zodat het gecentreerd is als je er van bovenop zou kijken"
+  → één sikkel op het voorhoofd, punten omlaag; lijfpatroon gecentreerd op de ruggengraat: kené of chakana (`pop3d/motieven2.png`; keuze open). Afgekeurd: halve maan op de flank, sterren, maanfasen.
 - Over de lijn eerder: "in eerste instantie simpel houden: een aap met grote ogen, een genezer-concept en de Nazca-staart"; "de ogen zijn het belangrijkst; kijk naar Jigglypuff, Scream Tail en Espurr"; Psychic-concept: "niet ondersteboven hangen".
 
 ## Bevroren

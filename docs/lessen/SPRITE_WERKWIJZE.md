@@ -70,3 +70,4 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 ## Kosten en tempo (ter oriëntatie)
 - Een maker- of keurderronde kost ±150–400k agenttokens; zuinig: één maker, één keurder, kleine vellen, geen parallelle experimenten.
 - Commit en push na elke ronde (ook interne), zodat niets verloren gaat.
+- **Poppetje eerst passend op de foto, dan pas cute** (kolibrie pre-evo, 2 nov; Jordi: "waarom wijkt dit zo immens veel af van het silhouet?"): nooit een handsilhouet én een los poppetje naast elkaar. Volgorde foto → poppetje → silhouet. Meet de overlap van het poppetje met de foto-omtrek (`kolibrie_pre/pop3d/pas_foto.py`, zoekt de maten van lijf/kop/staart, ≥ 85%) en doe verhoudingswijzigingen (grotere kop, korter lijf) daarna in 3D, als raster van standen voor Jordi.

@@ -3,7 +3,7 @@
 Diercoördinaten: x = naar achteren (staart), y = omhoog, z = naar de kijker bij 0° (zijaanzicht, kop links).
 Pose = silhouet v3A (Jordi 2 nov: "a veel beter"), dus foto 1 (zittend jong, kop links) + foto 3 (open bedelbek):
 zittend, vleugels ingeklapt, bekje open. "Moet echt cute zijn."
-Draaien vanuit deze map: python3 pop3d.py"""
+Draaien vanuit deze map: python3 pop3d_kuiken.py"""
 import math, os, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont

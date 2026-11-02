@@ -163,7 +163,7 @@
 56 5 tttfffffft
 57 3 ttffffffffft
 58 3 tfftftfffft
-59 4 tttftt
+59 4 tftftt
 60 3 tttttt
 # ---- nabije onderarm en hand ----
 57 14 tttcccee
@@ -183,15 +183,15 @@
 42 4 dwwwwwwwlbbwwwwwwwwnk
 43 4 dwwkkkkwlbbwkkkkwwwnsk
 44 4 dwkwrrrklbbkwrrrkwwnsk
-45 4 dwkwkkrklbbkwkkrkwnssk
-46 4 dnkikkiklbbkikkiknbssk
-47 4 dndijjidbbbdijjidnbssk
-48 4 dldriirdbbbdriirdbbssk
-49 4 dlbddddbmmlbddddbbsssk
-50 5 dlbbblmmddllbbbssssk
-51 5 dbbbblmlllllbbsssssk
-52 6 dbbblldddlbbsssssk
-53 7 kbbbblllbbsssssk
+45 4 dwkikkiklbbkikkikwnssk
+46 4 dwkikkiklbbkikkiknbssk
+47 4 dndrjjrdblbdrjjrdnbssk
+48 4 dlbddddblmlbddddbbsssk
+49 4 dlbbbbblmmllbbbbbssssk
+50 5 dlbbbblddllbbbsssssk
+51 5 dbbbbbmlllbbbssssssk
+52 6 dbbbbldddbbssssssk
+53 7 kbbbbllbbssssssk
 54 8 kkkkkkkkkkkkkk
 # ---- oren ----
 37 5 d

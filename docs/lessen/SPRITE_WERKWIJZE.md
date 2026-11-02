@@ -71,4 +71,4 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - Een maker- of keurderronde kost ±150–400k agenttokens; zuinig: één maker, één keurder, kleine vellen, geen parallelle experimenten.
 - Commit en push na elke ronde (ook interne), zodat niets verloren gaat.
 - **Rastervellen: elk label uniek** (hoek in de naam, niet alleen A1/B2): twee vellen met dezelfde letters gaven bij de nachtaap een verkeerde keuze (kop 65° i.p.v. 80°).
-- **Gezichtsmotieven bij een bijna-frontale kop in beeldvlak ontwerpen** (loodrecht op de kijkrichting, gecentreerd tussen de ogen): in 3D symmetrisch is in een kopdraai van 80° scheef in beeld (nachtaap fase 2, halve maan).
+- **Tekeningen op het 3D-poppetje (maskers, manen) in bolcoördinaten rond het gezicht ontwerpen, spiegelsymmetrisch om het middenvlak**, en controleren door de kop recht van voren én van opzij te renderen. Niet in het beeldvlak 'rechttrekken' (Jordi: "kijk even goed vanuit een 3d model"); een vlakke projectie langs de kijkas gaf een kap die tot de kin liep (nachtaap fase 2).

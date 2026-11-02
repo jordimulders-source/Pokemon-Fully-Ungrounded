@@ -89,18 +89,15 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None, cam=(40, 8)):
         # Jordi 2 nov (krabbel referenties/jordi_krabbel_halvemaan.png): het enige witte op de kop is één grote
         # halve maan die de helft van de kop bedekt en over de ogen heen valt, punten omlaag.
         # Ontworpen in het gezichtsvlak (z, y) van de voorkant: buitencirkel min een lagere binnencirkel.
-        # Symmetrisch in beeld (Jordi: "niet mooi synchroon"): in het vlak loodrecht op de kijkrichting,
-        # gecentreerd op het midden tussen de ogen.
-        Rc = P.rot_x(math.radians(cam[1])) @ P.rot_y(math.radians(cam[0]))
-        vdir = (Rc @ Rh).T @ np.array((0, 0, 1.0))
-        right = np.cross(np.array((0, 1.0, 0)), vdir); right /= np.linalg.norm(right)
-        upv = np.cross(vdir, right)
-        mid_e = ((eyes[0] + eyes[1]) / 2 - HEAD_C) / HEAD_R
-        rel = u - mid_e
-        fz, fy = rel @ right, rel @ upv + 0.06
-        o = np.hypot(fz, fy - 0.15) < 0.86
-        i = np.hypot(fz, fy + 0.32) < 0.64
-        g[(u @ vdir > 0.0) & o & ~i] = groups.index('moon')
+        # Halve maan als echte 3D-tekening op de kop, spiegelsymmetrisch om het middenvlak z = 0 van de kop.
+        # Ontworpen in bolcoördinaten rond de kijkas van het gezicht (-x): lon = hoek opzij, lat = hoek omhoog.
+        lon = np.degrees(np.arctan2(u[:, 2], -u[:, 0]))
+        lat = np.degrees(np.arcsin(np.clip(u[:, 1], -1, 1)))
+        # buitenboog: door de kruin (lat 90) en de punten (lon ±56, lat -12); binnenboog: door het voorhoofd
+        # (lat 15) en dezelfde punten, en over de bovenkant van de ogen (lon ±25 -> lat ±10). Ogen: lon ±25°, lat 3°.
+        a1 = np.hypot(lon, lat - 23.6)
+        a2 = np.hypot(lon, lat + 48.6)
+        g[(a1 < 66.4) & (a2 > 63.6) & (np.abs(lon) < 95)] = groups.index('moon')
         for e in eyes:
             ue = (e - HEAD_C) / HEAD_R
             g[np.linalg.norm(u - ue, axis=1) < 0.33] = groups.index('ring')

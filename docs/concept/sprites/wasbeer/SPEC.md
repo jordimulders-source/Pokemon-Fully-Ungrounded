@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov, over kleurschets r3, met foto 15) "ik ga nog niet eens beginnen aan schetsen, dit is echt erbarmelijk slecht. A) dit is helemaal geen pokemon sprite, werkten we zo in het verleden ook? [...] Het hoofd is wel prima, maar wat is dat grijze blok eronder? Waarom steken de klauwen uit zijn buik? Wat is dat bruine vlak in het midden? Wat is de jetpack op de rug? Het moet een soort rugzak zijn. Daarnaast is de pose echt volledig horizontaal weer. [...] Met dievenrugzak bedoel ik zoiets als op de foto, maar daar maken we gewoon een soort van buidel op de rug van, minder groot, meer natuurlijk, maar dat het wel herkenbaar is"
 - (2 nov, over ronde 10) "qua armen zeg je dat wel, maar ik zie nog maar 1 arm? plus de klauwen staan te ver uit elkaar. Dit is alsnog geen koevoet. Daarnaast heb je nu allerlei willekeurige lijnen toegevoegd, plus de buidel is nog steeds geen geleidelijke rugzak, maar dat kan ik beter aantonen als het ingekleurd is. Fix deze laatste dingetjes en kleur het in, geef me daarna ook een raster zodat ik kan schetsen wat anders moet" · "en blijf vergelijken met bron fotos"
 - (2 nov, met een foto van een koevoet) "dit is een koevoet" (foto niet als bestand: rechte steel, bocht van ±110°, recht eindstuk, punt gespleten in 2 platte tanden met een V-inkeping; geen J die terugkrult)
 - (2 nov, over ronde 9) "veel beter, maar ik zie de koevoet vorm in de klauwen niet. 1 van de armen mag iets hoger in een actieve pose. De buidel moet iets minder als een bult, iets geleidelijker zijn. De oren zijn ook niet helemaal naar verhouding. Calculeer het met de fotos die ik heb gestuurd"
@@ -66,6 +67,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 - `foto11_driekwart_kop.webp`: bijna driekwart, kop naar links omhoog: korte snuit, kleine neus, masker over beide ogen, witte wenkbrauwband, groot nabij oor (omtrek `silhouet/kop11.py`).
 - **Illustratie (niet als bestand; omtrek bij benadering in `silhouet/kop_illustratie.py`):** getekende kop driekwart naar links: grijs, zwart masker van de neus tot achter het oog, witte wenkbrauwband en witte kaak, nabij oor rechts op de wang, verre oor rechtop boven de kruin, zwarte omlijning.
 - `foto12_rechtop_driekwart_lijf.png`: rechtop, lijf driekwart naar de kijker: peervormig lijf (buik onderaan het breedst), korte dikke dijen, armen opzij, kop recht naar je toe.
+- `foto15_dief_met_zak.png`: inbreker met bivakmuts, zak over de schouder op de rug, voorover gebogen, driekwart: de 'dievenzak' die als buidel op de rug moet (kleiner, natuurlijker, herkenbaar).
 - `foto5_collage_rots_uitkijk.webp`: o.a. op een rots, vier poten, kop naar de kijker (rechtsonder), en laag sluipend met de hand vooruit (linksboven).
 
 ## Open vragen (stap 1, voor Jordi)
@@ -94,6 +96,7 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Krabbenetende wasbeer:** dichtst verwant, natuurlijk masker; nobel lastig, Obstagoon-associatie.
 
 ## Bevroren
+- **Kop van ronde 9–11 is "prima"** (Jordi 2 nov).
 - **Op de rug een omgekeerde kangoeroebuidel**: deel van het lijf (geen voorwerp), aansluitend op de rug, past bij een dief (Jordi 2 nov; vervangt de losse buitzak van ronde 8).
 - **Klauwen = gewone handklauwen in koevoetvorm** (Sneasel/Weavile/Sandslash-maat), niet de hele onderarm als koevoet. **Lijf zoals Gumshoos, poten op Weavile-lengte, typische kop van de krabbenetende wasbeer** (Jordi 2 nov). Kop van foto 10 (ronde 2), niet die van foto 11.
 - **Koevoetklauwen zoals in `hoeken_r2.png`** (Jordi: "De klauwen zijn nu wel goed"). Aanvalspose mag (precedent Vigoroth), maar geleidelijk/natuurlijk.
@@ -126,6 +129,7 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Voor de kleur (Jordi):** het silhouet leest als één bolle buik door de pose; de kleur moet het lijf opdelen: lichte borst/buik (geelbruin), grijze rug en flank, de dij als eigen vorm (zoals op foto 10), donkere onderarmen die vóór de buik lopen, donkere onderbenen.
 
 ## Afgekeurd (niet herhalen)
+- **Silhouet ronde 9–11 + kleurschets r1–r3:** "erbarmelijk slecht", "helemaal geen pokemon sprite": grijs blok onder de kop (romp = stuk Gumshoos), klauwen uit de buik (verre arm vóór de buik), bruin vlak in het midden (borst als rechthoek), buidel als jetpack, pose weer horizontaal. Oorzaak: collage van losse stukken (Gumshoos-romp + buizen + pixelsjablonen) en automatische kleuring per script, elke opmerking los gerepareerd zonder het geheel; strijdig met SPRITE_WERKWIJZE (bron → silhouet als geheel; kleur met de hand door één maker-agent na een Game Freak-studie).
 - **3D-poppetje voor deze pose (rondes 1–3):** "veel te dikke reet", "niet echt de pose zoals op de fotos". Volgende stap: silhouet direct van foto 10 overtrekken (kolibriemethode), dan alleen klauwen (koevoet) en staart (haak) aanpassen.
 - **Waterspuwer (hoeken.png ronde 1):** "super super statisch", "net een opgezet dier"; voorpoten hangend lijken om op te lopen, wat met koevoetklauwen niet kan; koevoetvorm niet te zien; grijze rand weg; staart haakt te weinig; poten te kort, onderrug te dik.
 - **Trapjesmasker** komt waarschijnlijk niet over in pixels (Jordi); wel goed: masker over de neusrug.

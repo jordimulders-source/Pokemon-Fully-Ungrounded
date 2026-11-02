@@ -29,6 +29,8 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 - Sprites met een 3/4-lijf en een blik recht in de camera: `referenties/frontale_blik.png` (Zorua, Sableye, Slakoth, Mew, Espeon, Persian, Eevee, Pachirisu, Absol, Slowpoke, Delcatty, Quilava).
 - 2 nov: "zoek wel een pose van een pokemon waar het rug een beetje boven het hoofd uitsteekt. Tak hoeft idd niet in beeld"
   → **geen tak**; rug steekt boven de kop uit. Kandidaten: `referenties/rug_boven_kop.png` (Sandslash, Dusknoir, Mamoswine, Piloswine, Camerupt, Lairon, Skuntank, Excadrill).
+- 2 nov: "qua pose puur juist lairon, maar wel ander type pokemon" → **pose = Lairon** (laag gehurkt, kop laag vooraan, rug erachter hoger). "maar de manier waarop we werken is eerst 3d pose toch en daarna pas silhouet?" → ja: 3D-poppetje → hoek kiezen → silhouet. "gebruik de fotos echt als inspiratie ook" → massa en gezicht uit foto 1/4 (kleine ronde kop op een groot bol lijf, witte vlekken boven de ogen, donkere middenstreep en zijstrepen, donkere ring om het oog, lange vingers, hangende staart).
+- 3D-poppetje: `pop3d/nachtaap3d.py` (renderer `pop3d/pop3d.py`, kopie van de olinguito); rasters `pop3d/hoeken.png` (staart omlaag) en `pop3d/hoeken_staart_omhoog.png`. Kleuren in het poppetje zijn alleen ter oriëntatie.
 - Over de lijn eerder: "in eerste instantie simpel houden: een aap met grote ogen, een genezer-concept en de Nazca-staart"; "de ogen zijn het belangrijkst; kijk naar Jigglypuff, Scream Tail en Espurr"; Psychic-concept: "niet ondersteboven hangen".
 
 ## Bevroren

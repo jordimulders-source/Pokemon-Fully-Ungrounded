@@ -95,6 +95,8 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None, cam=(40, 8)):
         lat = np.degrees(np.arcsin(np.clip(u[:, 1], -1, 1)))
         # buitenboog: door de kruin (lat 90) en de punten (lon ±56, lat -12); binnenboog: door het voorhoofd
         # (lat 15) en dezelfde punten, en over de bovenkant van de ogen (lon ±25 -> lat ±10). Ogen: lon ±25°, lat 3°.
+        k = 0.8                          # Jordi: "maak het maar 20% kleiner" (rond het voorhoofd, lat 30)
+        lon, lat = lon / k, 30 + (lat - 30) / k
         a1 = np.hypot(lon, lat - 23.6)
         a2 = np.hypot(lon, lat + 48.6)
         g[(a1 < 66.4) & (a2 > 63.6) & (np.abs(lon) < 95)] = groups.index('moon')

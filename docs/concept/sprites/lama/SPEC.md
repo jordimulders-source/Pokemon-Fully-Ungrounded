@@ -96,3 +96,5 @@ Echte lamatooi uit de Andes: bij de *señalakuy*/*t'ikachay* (merkfeest) krijgen
 - Ronde 1b: `kleur/ronde1b/`; onafhankelijke keuring `ronde1b/KEURING.md`: **BIJNA**, 6 reparaties (halsband, aguayo, teennagels, buiklijn, verre poten, spikkels).
 - Ronde 1c: `kleur/ronde1c/` (92 px, 0 buiten de zones, alpha-diff 0). Naar Jordi.
 - Keurder "voor Jordi" (smaak): oog kleiner/brutaler dan de alpaca; MMA alleen via de nagels leesbaar; formaat 1,17× fase 1 (norm 1,5–1,7×, door de goedgekeurde slanke bouw); geen neusgat.
+- **Jordi over ronde 1c (2 nov, letterlijk):** "de poten zijn nog net wat te hoekig he, plus 1 is een rechte lijn, plus ik vind het kleurgebruik nog niet helemaal pokemon like, vooral de vacht. Plus het is ook net niet genoeg een lama meer sinds de vertaling naar sprite"
+  → ronde 2: eerst een diagnose naast de bron (poppetje, foto 1, alpaca) per onderdeel, dan pas tekenen. Silhouet mag in de poten en de wolomtrek (hals/lijf) en waar de diagnose de lama-herkenning aanwijst; de rest blijft.

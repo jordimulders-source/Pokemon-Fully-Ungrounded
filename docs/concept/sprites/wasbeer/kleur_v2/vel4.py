@@ -20,7 +20,7 @@ def main(nieuw, oud, uit):
     for i, im in enumerate((op(a, LICHT, 4), op(a, DONKER, 4), op(b, LICHT, 4), op(b, DONKER, 4))):
         W.paste(im, (12 + i * 266, 26))
     y = 300
-    d.text((12, y), '2x en 1x (licht/donker): wasbeer r4, r3, olinguito, Coathief, zangoose, sneasel, linoone, ursaring, furret, sentret', font=F, fill=(30, 30, 30))
+    d.text((12, y), f'2x en 1x (licht/donker): {nieuw}, {oud}, olinguito, Coathief, zangoose, sneasel, linoone, ursaring, furret, sentret', font=F, fill=(30, 30, 30))
     rij = [a, b] + [Image.open(os.path.join(HERE, f'../referenties/{f}')).convert('RGBA').crop((0, 0, 64, 64)) for f in ('fase1_olinguito.png', 'fase2_coathief.png')]
     rij += [gen3(n).convert('RGBA') for n in ('zangoose', 'sneasel', 'linoone', 'ursaring', 'furret', 'sentret')]
     for i, im in enumerate(rij):

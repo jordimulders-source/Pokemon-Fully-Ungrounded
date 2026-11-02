@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov, na Claude's eerlijke vergelijking van ronde 6 met de foto's) "ja doe maar, terug naar ronde 2"
 - (2 nov, over ronde 5, met foto 12) "nu lijkt die veel te dun"
 - (2 nov, over ronde 4, met foto 11) "het hoofd lijkt nergens op, met die enorme neus, op deze foto zie je het iets beter vanaf een bijna driekwart pose" · (met een illustratie) "of deze illustratie"
 - (2 nov) "de crab eating raccoon is sws een stuk dunner dan een normale wasbeer. Kijk maar wta je kan doen voor nu met sandslash als skelet, maar echt de vormen en kenmerken van wat we afgesproken hebben"
@@ -103,7 +104,8 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Voorstel: echte Gen 3/4-sprite als skelet voor de driekwart houding (`silhouet/skelet_kandidaten.png`: Vigoroth, Zangoose, Sandslash, Ursaring, Weavile, Sneasel, Lucario); voorkeur **Sandslash** (gehurkt op de achterpoten, voorover, driekwart, klauwen laag vooruit, staart achter; ook de klauwreferentie van de lijn).
 - Ronde 4 (`silhouet_r4.py`, Sandslash als skelet, Jordi akkoord): houding van Sandslash (gehurkt op de achterpoten, romp bijna rechtop onder de borst, voorover, driekwart naar links), vormen van de wasbeer: driekwart kop van foto 6 met een snuitwig naar links-omlaag en oren op 75%, dun lijf (straal ±5 px; krabbenetende wasbeer is dunner dan de gewone), lange poten, nabije poot vooruit met de koevoet (haak omlaag), verre poot lager vooruit met een kleinere koevoet, geringde haakstaart rechts. `ronde4.txt`, `ronde4_1x.png` (1234 px), `vel_ronde4.png` (met overlay over Sandslash). Jordi: kop "lijkt nergens op" (te grote neus).
 - Ronde 5 (`silhouet_r5.py`): ronde 4 met de kop naar Jordi's illustratie (wig naar een kleine neus, verre oor rechtop, ±18 px breed); 1190 px, `vel_ronde5.png`. Jordi: veel te dun.
-- Ronde 6 (`silhouet_r6.py`): ronde 5 voller: romp straal 6,4–7,6 (peervorm, foto 12), dijen 5,4–6, armen +0,5, nek en staartbasis dikker; 1339 px, `vel_ronde6.png`.
+- Ronde 6 (`silhouet_r6.py`): ronde 5 voller: romp straal 6,4–7,6 (peervorm, foto 12), dijen 5,4–6, armen +0,5, nek en staartbasis dikker; 1339 px, `vel_ronde6.png`. Claude's eigen vergelijking met de foto's: leest als fret/mangoeste (rechte buisrug zonder hoge heupboog, smalle wigkop op een lange nek, kleine voeten, dunne staart): opgebouwd uit buizen = verzonnen vormen. Terug naar ronde 2 (Jordi).
+- Ronde 7 (`silhouet_r7.py`): ronde 2 (foto 10) met de driekwart kop van foto 11 (×0,38, neus op de neusplek van foto 10); schaal begrensd op 62 px breed (de reikende koevoet); 1121 px, `vel_ronde7.png`.
 - **Voor de kleur (Jordi):** het silhouet leest als één bolle buik door de pose; de kleur moet het lijf opdelen: lichte borst/buik (geelbruin), grijze rug en flank, de dij als eigen vorm (zoals op foto 10), donkere onderarmen die vóór de buik lopen, donkere onderbenen.
 
 ## Afgekeurd (niet herhalen)

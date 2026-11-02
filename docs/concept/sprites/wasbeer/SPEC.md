@@ -176,3 +176,6 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Silhouet S1a direct van de render (`silhouet_v2/direct_s1a.py`, fill 1,0): `direct_s1a.txt`, 1682 px, box 52x61 (1,28x Coathief), `labels_s1a.txt`, vel `vel_direct_s1a.png`. Klauw: 2 klauwen met inkeping zichtbaar in het silhouet (x 6–12, y 41–45). Nog geen handwerk. Wacht op Jordi.
 - **Silhouet S1a goedgekeurd en bevroren** (Jordi 2 nov: "ja, ga maar door naar de kleur"): `silhouet_v2/direct_s1a.txt` = `direct_s1a_1x.png` (1682 px). Alle kleurrondes: alpha-diff 0 hiermee.
 
+## Kleur v2 (stap 3, op silhouet S1a)
+- Ronde 1 (`kleur_v2/`, maker na Game Freak-studie `STUDIE.md`): keuring `KEURING_ronde1.md` FAIL 9/10 (helmmasker, rode-stipoog, klauw als handschoen, buidel als voorwerp, plat volume, blokringen). Ronde 2: alle reparaties uitgevoerd (alpha-diff 0, geen open randen); `vel_ronde2.png`. Open voor Jordi: grijstemperatuur, crème of donkere handen, verre oog, buidelkleur, lichtere borst.
+

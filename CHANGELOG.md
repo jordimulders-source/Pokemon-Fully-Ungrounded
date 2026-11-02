@@ -156,3 +156,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.31] - Wasbeer: silhouet v2 (direct van de render)
 - Ontwerp E2 bevroren met een grotere rugzak. Silhouet direct van de render (`docs/concept/sprites/wasbeer/silhouet_v2/`), handwerk door een maker-agent alleen in zones (koevoetklauw, spleet zak/staart, randen), keuring door een onafhankelijke keurder; ronde 2 (`vel_ronde2.png`, 1446 px) ligt bij Jordi.
 
+### [v0.0.32] - Wasbeer: klauw, sluippose en kleur
+- Klauw vastgelegd als twee korte klauwen naast elkaar met een inkeping tussen de punten (Sneasel-achtig, driekwart), eerst los in 3D getekend (`docs/concept/sprites/wasbeer/ontwerp/klauw3d.png`).
+- Pose S1a: sluipend, diep door de knieën, één been ver achter op de tenen. Silhouet direct van de render (1682 px) goedgekeurd; kleur ronde 2 na een Game Freak-studie en een keuring: `docs/concept/sprites/wasbeer/kleur_v2/vel_ronde2.png`.
+

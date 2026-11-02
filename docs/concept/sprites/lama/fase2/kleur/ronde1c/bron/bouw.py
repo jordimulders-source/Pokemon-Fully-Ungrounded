@@ -1,4 +1,4 @@
-"""Bouwt lama.png uit raster.txt + reparaties.txt (ronde 1b) (met de hand getypt) en controleert tegen het bevroren silhouet.
+"""Bouwt lama.png uit raster.txt + reparaties.txt (ronde 1b) + reparaties2.txt (ronde 1c) (met de hand getypt) en controleert tegen het bevroren silhouet.
 Draaien: python3 docs/concept/sprites/lama/fase2/kleur/ronde1/bron/bouw.py"""
 import os, sys
 from PIL import Image
@@ -48,6 +48,14 @@ def build():
                 if c not in IDX: sys.exit(f'reparaties {ln}: onbekende letter {c!r}')
                 if grid[y][x] == '.': sys.exit(f'reparaties {ln}: pixel {x},{y} buiten het silhouet')
                 grid[y][x] = c
+    rep2 = os.path.join(HERE, 'reparaties2.txt')
+    if os.path.exists(rep2):
+        for ln, line in enumerate(open(rep2), 1):
+            if line.lstrip().startswith('#') or not line.strip(): continue
+            x, y, c = line.split(); x, y = int(x), int(y)
+            if c not in IDX: sys.exit(f'reparaties2 {ln}: onbekende letter {c!r}')
+            if grid[y][x] == '.': sys.exit(f'reparaties2 {ln}: pixel {x},{y} buiten het silhouet')
+            grid[y][x] = c
     return grid
 
 if __name__ == '__main__':

@@ -90,3 +90,9 @@ Echte lamatooi uit de Andes: bij de *señalakuy*/*t'ikachay* (merkfeest) krijgen
 - Ronde 1b (maker, Claude stuurde terug: achterpoten "paaltjes", omtrek rechthoekig): `ronde1b.txt` / `vel_ronde1b.png`, 1188 px, box 44×60, kop 35%; achterpoten met dij uit de wol, hak en schuin onderbeen; staart als pluim; 3–5 wolplukken; massa lijf +2,9%. 0 px buiten de zones.
 - Open punt van de maker (buiten zijn zones, komt uit de bron): de hals is een rechte dikke kolom. Vraag aan Jordi.
 - **Silhouet ronde 1b goedgekeurd en bevroren** (Jordi, 2 nov: "goedgekeurd en laat het bij de rustige lama stand passen, want dat is vrij iconisch"): `fase2/silhouet/ronde1b.txt` = `ronde1b_1x.png` (1188 px). Hals blijft recht (rustige lamastand). Alle kleurrondes: alpha-diff 0 hiermee.
+
+## Kleur fase 2 (stap 3–4)
+- Ronde 1 (maker, na Game Freak-studie): `fase2/kleur/ronde1/`. Claude stuurde terug: halsband las als sjerp, aguayo als koffer, lijf plat.
+- Ronde 1b: `kleur/ronde1b/`; onafhankelijke keuring `ronde1b/KEURING.md`: **BIJNA**, 6 reparaties (halsband, aguayo, teennagels, buiklijn, verre poten, spikkels).
+- Ronde 1c: `kleur/ronde1c/` (92 px, 0 buiten de zones, alpha-diff 0). Naar Jordi.
+- Keurder "voor Jordi" (smaak): oog kleiner/brutaler dan de alpaca; MMA alleen via de nagels leesbaar; formaat 1,17× fase 1 (norm 1,5–1,7×, door de goedgekeurde slanke bouw); geen neusgat.

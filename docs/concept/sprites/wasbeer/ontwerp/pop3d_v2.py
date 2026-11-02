@@ -61,7 +61,7 @@ def koevoet(m, hand, d, bend, g, s=1.0, steel=11):
         m.tube([(*(knee + e * 2.8 * s), 1.3 * s), (*(tip + side * sd * 1.1 * s), 0.7 * s)], g, 0.4)
 
 
-def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11, near_back=0, shin_k=1.0, heel=0):
+def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11, near_back=0, shin_k=1.0, heel=0, pouch_k=0.0, pouch_z=0.0):
     """lean = romp voorover vanaf verticaal (Gumshoos ±15-20, foto 10 ±55). near_arm: 'hoog' (actief, klauw vooruit)."""
     m = Model()
     la = math.radians(lean)
@@ -78,9 +78,10 @@ def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0
             (*(chest + ax * 6), np.array((8.0, 8.0, 7.8)) * (1 + (bk_ - 1) * 0.5))], 'body')
     # buidel op de rug: omgekeerde kangoeroebuidel, opening naar de schouders, groeit geleidelijk uit de rug
     Rp = P.rot_z(la)                       # lange as langs de lijfas
-    m.ell(hip + ax * 8 + bk * 7.0 * bk_, (6.6, 8.5, 8.6), 'pouch', Rp)        # zakbodem: het zwaarst, onderaan de rug
-    m.ell(hip + ax * 15 + bk * 6.4 * bk_, (5.6, 7.5, 7.6), 'pouch', Rp)       # loopt geleidelijk smaller naar boven
-    m.ell(hip + ax * 20.5 + bk * 9.6 * bk_, (1.6, 1.4, 6.2), 'lip', Rp)       # opening (plooi) aan de schouderkant
+    zp = np.array((0, 0, pouch_z))   # pouch_z > 0: zak schuift iets naar de nabije flank (zichtbaar in driekwart)
+    m.ell(hip + ax * 8 + bk * (7.0 * bk_ + pouch_k) + zp, np.array((6.6 + pouch_k, 8.5 + pouch_k, 8.6 + pouch_k * 0.6)), 'pouch', Rp)
+    m.ell(hip + ax * 15 + bk * (6.4 * bk_ + pouch_k * 0.8) + zp * 0.8, np.array((5.6 + pouch_k * 0.6, 7.5 + pouch_k * 0.6, 7.6 + pouch_k * 0.4)), 'pouch', Rp)
+    m.ell(hip + ax * (20.5 + pouch_k * 0.6) + bk * (9.6 * bk_ + pouch_k * 0.9) + zp * 0.8, (1.6, 1.4, 6.2 + pouch_k * 0.4), 'lip', Rp)   # opening (plooi)
     # nek en kop: kop naar voren, kijkt naar de speler
     neck = chest + ax * 6 + fr * 1.5
     hc = neck + np.array((-6.0, 7.5, 0)) * hs

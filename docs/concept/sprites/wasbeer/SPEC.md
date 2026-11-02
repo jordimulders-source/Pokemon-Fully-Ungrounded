@@ -19,6 +19,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 - Les uit de concepten (STARTERS_CONCEPTEN.md, risico A): kap + boog + pijlen is drie keer Robin Hood = "dier in kostuum"; rechtop staand dreigt "man in pak". Maximaal twee Robin Hood-signalen.
 
 ## Jordi's woorden (letterlijk)
+- (2 nov, over 3D-ontwerp v2 ronde 3) "e2 is prima, maar in de sprite moet er wel dus nog een koevoet vorm in de klauw zitten, als dat lukt ben ik volledig tevreden, en de rugzak nog iets meer zichtbaar maken"
 - (2 nov, over 3D-ontwerp v2 ronde 2) "de poten staan nog steeds te houterig naast elkaar. Voorste been moet wat verder naar achteren. E is wel oke, al moeten de onderkant van de benen nog steeds dunner, zie bronmateriaal"
 - (2 nov, over 3D-ontwerp v2 ronde 1) "ik wil dat de klauwen nog net wat korter zijn, alleen de klauw zelf/het uiteinde moet koevoet vorm zijn, ze hoeven echt niet lang te zijn. P13 komt het dichtste in de buurt maar het lichaam mag net wat menselijker, iets stompigere, dunnere pootjes, lichaam ietsje dikker zoals op de foto, verder komt dit zeer goed in de buurt."
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
@@ -122,6 +123,8 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Bevroren (Jordi):** basis **E** = P13 (draai 50°, nabije arm hoog) met romp 26°, lijfdikte 1,22, korte koevoetklauwen, korte pootjes.
 - **3D-ontwerp v2 ronde 3** (`ontwerp/vel_v2_ronde3.png`, `python3 .../pop3d_v2.py`): het nabije been stapt naar achteren (E1: 7, E2/E3: 12 en op de tenen, zoals foto 10), onderbenen ×0,7 (E3: ×0,58), naast foto 10/3/9/7. **Wacht op Jordi.**
 
+- **Bevroren ontwerp (Jordi 2 nov): E2** (romp 26°, lijf 1,22, draai 50°, nabije arm hoog, korte koevoetklauwen, nabije been 12 terug op de tenen, onderbenen ×0,7) + **rugzak groter** (`pouch_k=3, pouch_z=4`: zak 3 groter en iets naar de nabije flank, zodat hij in driekwart als dievenzak leest). Voorwaarde: de koevoetvorm moet in de sprite zichtbaar zijn.
+
 ## Silhouet (stap 2)
 - Ronde 1 (`silhouet/`): omtrek van foto 10 punt voor punt in fotocoördinaten (`omtrek.py`, controle `controle_omtrek.png`), direct verkleind tot 60 px hoog (`silhouet.py`). Handwerk alleen in benoemde zones: onderarmen dikker (≥ 3–4 px op 64), koevoeten (nabij: schuin vooruit-omlaag met de haak omhoog, zodat hij niet als poot leest; ver: vooruit met de haak omlaag), staartpunt vervangen door een haak omhoog. `ronde1.txt`, `ronde1_1x.png` (1155 px), vel `vel_ronde1.png`.
 - Ronde 2: gespiegeld (kijkt naar links), onderarmen en koevoeten korter: `ronde2.txt`, `ronde2_1x.png` (1144 px), `vel_ronde2.png`. Jordi: moet meer driekwart. Een overgetrokken zijaanzicht kan niet draaien: nodig is een foto in driekwart (voorkeur) of een hybride (kop van foto 6, die al driekwart naar links kijkt; lijf ±20% verkort, verre poten en schouder zichtbaar, staart meer naar achteren).
@@ -146,3 +149,8 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Waterspuwer (hoeken.png ronde 1):** "super super statisch", "net een opgezet dier"; voorpoten hangend lijken om op te lopen, wat met koevoetklauwen niet kan; koevoetvorm niet te zien; grijze rand weg; staart haakt te weinig; poten te kort, onderrug te dik.
 - **Trapjesmasker** komt waarschijnlijk niet over in pixels (Jordi); wel goed: masker over de neusrug.
 - **Traan onder het oog** (M2): "dan lijkt dat net te staan voor een moord zoals bij gang members" (Jordi 2 nov).
+
+## Silhouet v2 (stap 2, na het nieuwe 3D-ontwerp)
+- Direct verkleind (`silhouet_v2/direct.py`, fill 1,03): `direct.txt` / `direct_1x.png`, 1460 px, box 46x62; onderdelen per pixel in `labels.txt`; vel `vel_direct.png` (onderlaag, 4x, overlay, 1x naast Weavile/Sneasel/Zangoose/Gumshoos/Lucario/Raticate).
+- Handzones (maker-agent): verre klauw als koevoet (steel, bocht, gespleten punt), lucht tussen buidel en staart, nabije klauw binnen het silhouet = kleurwerk.
+

@@ -169,3 +169,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.36] - Lama fase 2: kleur ronde 1c
 - Maker-agent kleurde met de hand op het bevroren silhouet (karamel, aguayo-halsband, aguayo-doek, rode MMA-handschoenen, oorkwasten); Claude-controle + onafhankelijke keuring (BIJNA, 6 reparaties verwerkt): `docs/concept/sprites/lama/fase2/kleur/ronde1c/vel.png`. Wacht op Jordi.
+
+### [v0.0.37] - Lama fase 2: ronde 2 (meer lama, fluffy, Pokémon-kleuren)
+- Na Jordi's feedback (hoekige poten, rechte poot, vacht niet Pokémon-achtig, te weinig lama): diagnose naast de bron, nieuw silhouet (banaanoren, stompe snuit, wolhals, wolmouwen/-broek, zachte knieën; Jordi akkoord), warme heldere vachtramp, wol in klonten; Claude-controle, verse keuring (BIJNA), verse maker voor ronde 2c: `docs/concept/sprites/lama/fase2/kleur/ronde2c/vel.png`. Wacht op Jordi.

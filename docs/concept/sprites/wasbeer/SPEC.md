@@ -20,10 +20,13 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov) "Maar zijn dat logische evoluties van een coati?"
 - (2 nov) "Laten we verder gaan met de starters, 1 pokemon per gesprek, dus nu de evolutie van Coathief, de 3e stage van de dark starter"
 
 ## Open vragen (stap 1, voor Jordi)
-Kandidaat-dieren (Claude, 2 nov), wacht op Jordi:
+**Evolutielogica (2 nov, na Jordi's vraag):** miereneter, gordeldier en manenwolf zijn geen logische opvolgers van een coati (andere orde of familie); de brillenbeer is hooguit een verre verwant. Wasbeerachtigen in Zuid-Amerika: olinguito, olingo, kinkajoe, coati, bergcoati, krabbenetende wasbeer; alleen de wasbeer is groter dan de coati. Starters blijven meestal hetzelfde dier, groter en extremer (Chimchar → Infernape, Zigzagoon → Linoone). Nieuwe richting: **(a) volwassen, solitaire coati** (mannetjes verlaten rond 2 jaar de bende en leven alleen; 'coatimundi' zou op die mannetjes slaan, nog te controleren), **(b) krabbenetende wasbeer**, **(c) coati met één geleend kenmerk** (bv. miereneterklauwen), maar het blijft een coati.
+
+Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - **Reuzenmiereneter** (Chaco, Pantanal, savannes): grootste klauwen en langste snuit = het eindpunt van de lijn; vier poten; zwarte schouderband met witte rand als draagband/cape; vlagstaart. Codex van de nobele dief: eet maar ±1 minuut per termietenheuvel en laat de kolonie leven. Botsing: Heatmor (miereneter, Fire, in de dex).
 - **Brillenbeer** (yungas, Andes): het masker (de 'bril', bij elke beer anders) als eindpunt van de maskerlijn; plundert maïsvelden (boeren zien een dief) en zaait het nevelwoud opnieuw in (zaadverspreider) = grijze moraal in het echt. Botsing: Ursaring (in de dex), Paddington (Peru).
 - **Kraagmiereneter (tamandua):** zwart 'vest' van nature (bandietenkleding zonder kostuum), grijpstaart (vervolg op de coatistaart), grote klauwen, lange snuit; maar verdedigt zich half rechtop.

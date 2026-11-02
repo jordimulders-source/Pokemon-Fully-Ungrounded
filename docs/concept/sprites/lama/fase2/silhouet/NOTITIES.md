@@ -64,3 +64,43 @@ Claude: A (voorpoten), C (oren) en D (snuit) akkoord en **bevroren**; oren en ko
 - Wolplukken in een silhouet: 2 rijen breed met een dal ernaast; enkele-rijpieken van 1 px lezen op 4× als zaagtand/ruis.
 - Plukken toevoegen zonder massa te winnen: elk uitsteeksel compenseren met een dal ernaast (lijf bleef binnen +3%).
 - Een achterpoot die geen paaltje is: voorrand schuin terug (dij), achterrand met een holte boven een hak die 1–2 px uitsteekt, onderbeen schuin naar voren; de verre poot dezelfde "<" kleiner en hoger. Zo blijft er ruimte voor 2 px lucht zonder de poten dunner te maken.
+
+# Ronde 2 (2 nov): silhouet herzien na Jordi's oordeel over kleur 1c
+
+Jordi: "de poten zijn nog net wat te hoekig he, plus 1 is een rechte lijn, plus ik vind het kleurgebruik nog niet helemaal pokemon like, vooral de vacht. Plus het is ook net niet genoeg een lama meer sinds de vertaling naar sprite". Diagnose en plan: `../kleur/ronde2/DIAGNOSE.md` (akkoord van Claude). Pose, verhoudingen en kleding blijven.
+
+**Bouwen:** `python3 ronde2.py` (uit de handgetypte runs `ronde2_runs.txt`) en `python3 vel2.py`.
+
+**Resultaat:** `ronde2.txt` / `ronde2_1x.png`: **1278 px** (1b: 1188), box 45×61, y2–62. Kop 36% (oortop r2 t/m kin r23).
+
+## Diff per onderdeel (t.o.v. ronde 1b, uit `ronde2.py`)
+| Onderdeel | + / − | Wat |
+|---|---|---|
+| Oren | +12 / −4 | **Banaanoren:** basis 3 breed, bolling naar buiten (nabij x12 r6, ver x22 r4–6), punten naar elkaar toe gekromd (nabij x15–16 r2, ver x19–20 r2). Eén rij langer (r2) zodat ze als oren lezen en niet als hoorntjes. V ertussen ≥ 2 px tot r8. |
+| Kop | +5 / −2 | **Ronde kruin** (r8–9) en een licht bol voorhoofd (x12 r10–13), een kleine stop bij het oog (x13 r14–15) en de **snuit stomp en rond** naar voren (x11 r17–18, x10 r19–20, x11 r21, x12 r22). De onderkaak loopt in een boog naar de kin (x13–15 r23). Oog blijft op x17–19 r13–16. De splitlip komt in de kleur (naad vooraan onder). |
+| Hals (wol) | +46 / −1 | **Wolhals breder dan de kop.** Nek: plukken r16–18 (x25–26) en r20–23 (x27–28); de kop steekt eruit (inkeping achter het oor, x23 r14). Keel: wol onder de kin vanaf x18 r23 (kin los door een inkeping van 2 px), plukken r25 (x16) en r29–30 (x17), en een wolkraag in de borst (x18–20 r31–33). Breedte hals r24 = 14 (kop 10–12). De halsband past er als ring omheen op r26–30. |
+| Staart | +9 / 0 | Groter en wolliger (21 px): opgeheven, punt naar achteren omhoog (x52–53 r19), breedst op r21–22 (x50–54), smalle aanzet (r24). |
+| Lijf/borst | 0 | Buik ongewijzigd. Wolfranje onder de buik past niet zonder de lucht tussen de poten te sluiten. De wol bij de elleboog (x35 r41–42) en achter de dij (x51 r42–44) neemt die rol over. |
+| Opgetilde voorpoot | +10 / 0 | **Wolmouw** bovenaan (r41–44 breder), de knie als ronde bolling naar voren (linkerrand 25-24-23-21-20-20-19-19-20-21: geen knikjes van 1 px meer), de pols geleidelijk naar de handschoen. Handschoen r50–56 ongewijzigd. |
+| Verre voorpoot | +19 / −12 | **Geen paaltje meer:** wolmouw (x30–36 r43–45), slank onderbeen (x31/32–35), zachte knie als bolling naar achteren (x36 r49–50), schuin naar de handschoen (x29–34 r56). Randruns links 2-3-3-3-2-1, rechts 3-3-2-3-3. Handschoen r57–62 ongewijzigd. |
+| Achterpoten | +11 / −3 | **Wolbroek** achter de dij (x51 r42–44, x52–53 r45–49). De hak is een zachte bolling (x54 r50–51, met 3-rij-stappen erheen en ervan af), het onderbeen slank en schuin naar voren tot de voet x45–50 r60–61. De verre achterpoot heeft dezelfde lijn, kleiner en hoger, met de voet x39–43 r57–58 (1 px korter dan 1b, om een rechte run van 4 weg te halen). |
+
+**Controles (script):**
+- Geen uitsteeksels, geen diagonale aanrakingen. 1-px-spleten alleen op de top van de voorpoot-V (x29 r43, zoals in alle eerdere rondes).
+- **Rechte randruns per poot ≤ 3** (opgetilde poot tot de pols, verre voor-, verre achter- en nabije achterpoot, links en rechts).
+- Lucht ≥ 2 px tussen alle poten. De ruimte onder de buik is leeg (x36–39 r43–46).
+- De rechterrand van de nabije handschoen (x27 r50–56) is 7 rijen recht. Dat is kleding (bevroren vorm en positie) en wordt in de kleur rond geschaduwd.
+
+## Eigen keuring (4× en 1×, naast onderlaag, foto 1, ronde 1b, Girafarig, Stantler en de alpaca)
+- **1×:**
+  - Een rechtopstaand, wollig lastdier met een dikke hals, een kleine kop met gekromde oren en een opgetilde handschoen. Naast 1b is de hertenlezing weg (geen gladde buishals, geen paaltje, geen sprietoren).
+  - De dikke wolhals en de gekromde oren maken het een lama.
+  - Het verschil met de alpaca blijft: lange hals, lange stompe snuit, slanke poten en geen wolkruinbol.
+- **Ingebracht in de bron:** pose en romp liggen op de onderlaag. De hals is breder dan het poppetje, zoals op foto 1 (bovengrens), en de poten zijn alleen in vorm veranderd, niet in plaats.
+- **Kop 36%:** 1 punt boven de richtlijn. Dat komt doordat de oren 1 rij langer zijn; korter lazen ze als hoorntjes.
+- **Verre voorpoot:** op het smalste punt (r48) 4 px. Dat is het slanke onderbeen van de verre poot, gewild ("slank onderbeen"), want de mouw erboven en de knie eronder zijn breder.
+
+## Lessen (ronde 2)
+- Een poot die geen paaltje is: elke rand bestaat uit runs ≤ 3 die afwisselen tussen een mouw of broek (breed), een slanke schacht, een gewricht als bolling en de voet. Meet de randruns per poot met een script; de run moet per poot worden bepaald, niet per kolomvenster (anders telt de buurpoot mee).
+- Gekromde oren worden op 64 px snel "hoorntjes". Ze hebben lengte nodig (6–7 rijen) en een bolling naar buiten vóór de punt naar binnen buigt.
+- "Breder dan de kop" voor een wolhals: begin de nekwol pas ná het achterhoofd (een inkeping van 1–2 px), dan steekt de kop uit de wol in plaats van erin over te lopen.

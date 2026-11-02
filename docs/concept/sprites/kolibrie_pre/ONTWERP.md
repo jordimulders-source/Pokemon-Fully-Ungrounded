@@ -36,3 +36,6 @@ Een klein kolibrietje dat uit een **hangende kantutabloem** kijkt, de bloem als 
 1. Richting A, B of C (of een mix).
 2. **Een foto in de gewenste pose** (dat was bij kolibrie en olinguito de doorbraak): bijv. een jonge kolibrie/uitvlieger zijdelings, of een kolibrie die in een (kantuta)bloem steekt. Foto's als bestand in `referenties/`.
 3. Type van de pre-evo (Ghost/Flying, Ghost/Fairy of puur Ghost).
+
+## Twijfel Jordi (2 nov): "je hebt niet echt Pokémon die in een bloem zitten qua sprite"
+Precedenten uit de repo: `referenties/omhulsel_pokemon.png`. **Cherrim** (overcast) zit helemaal in een gesloten bloemknop (paars, hangend, alleen de knop zichtbaar), **Flabébé** zit op een bloem, **Applin** woont in een appel, **Burmy** in een mantel, **Cubone** onder een schedel, **Morelull** onder een paddenstoelhoed. Een kantutabloem als capuchon (bloem over kop en rug, kopje en snavel steken eruit) ligt het dichtst bij Cherrim + Morelull.

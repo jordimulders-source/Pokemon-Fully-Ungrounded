@@ -26,10 +26,10 @@ def tegel(a, k, kleur=(40, 34, 34)):
     return im
 
 
-def vel(txt, uit):
+def vel(txt, uit, onder='onderlaag_256.png'):
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     a = lees(txt)
-    under = Image.open(os.path.join(HERE, 'onderlaag_256.png')).convert('RGB')
+    under = Image.open(os.path.join(HERE, onder)).convert('RGB')
     im = Image.new('RGB', (12 + 266 * 4 + 12, 330 + 150), 'white'); d = ImageDraw.Draw(im)
     ys, xs = np.nonzero(a)
     d.text((12, 8), f'{os.path.basename(txt)}: {a.sum()} px, box {xs.max() - xs.min() + 1}x{ys.max() - ys.min() + 1}', font=F, fill=(30, 30, 30))
@@ -54,4 +54,4 @@ def vel(txt, uit):
 
 
 if __name__ == '__main__':
-    vel(sys.argv[1], sys.argv[2])
+    vel(*sys.argv[1:4])

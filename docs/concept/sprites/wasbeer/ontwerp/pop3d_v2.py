@@ -61,7 +61,23 @@ def koevoet(m, hand, d, bend, g, s=1.0, steel=11):
         m.tube([(*(knee + e * 2.8 * s), 1.3 * s), (*(tip + side * sd * 1.1 * s), 0.7 * s)], g, 0.4)
 
 
-def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11, near_back=0, shin_k=1.0, heel=0, pouch_k=0.0, pouch_z=0.0):
+def klauwpaar(m, hand, f, dn, g, s=1.0, gat=0.9):
+    """Klauw zoals klauw3d.py (Jordi: "dit is prima, driekwart in de sprite"): 2 korte klauwen naast elkaar, tegen elkaar,
+    buigen van vooruit (f) naar omlaag (dn), alleen bij de punten een kleine inkeping."""
+    f, dn = unit(f), unit(dn)
+    sd = unit(np.cross(f, dn))
+    hand = np.array(hand, float)
+    for sz in (1, -1):
+        pts = []
+        for t in np.linspace(0, 1, 9):
+            ang = math.radians(10 + 95 * t)
+            zc = 1.5 if t < 0.7 else 1.5 + gat * (t - 0.7) / 0.3
+            p = hand + (f * (6 * math.sin(ang) * t + 1.0 * t) + dn * (6 * (1 - math.cos(ang)) * t) + sd * sz * zc) * s
+            pts.append((*p, (2.0 - 0.9 * t) * s))
+        m.tube(pts, g, 0.3)
+
+
+def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0, body_k=1.0, steel=11, near_back=0, shin_k=1.0, heel=0, pouch_k=0.0, pouch_z=0.0, klauw='koevoet', klauw_s=1.0):
     """lean = romp voorover vanaf verticaal (Gumshoos ±15-20, foto 10 ±55). near_arm: 'hoog' (actief, klauw vooruit)."""
     m = Model()
     la = math.radians(lean)
@@ -133,12 +149,18 @@ def wasbeer(lean=38, near_arm='hoog', head_extra=14, hs=1.12, leg=1.0, leg_k=1.0
     m.tube([(*sh_n, 4.8), (*el, 4.0)], 'body')
     m.tube([(*el, 3.8), (*wr, 3.1)], 'limb')
     m.ell(wr + unit(wr - el) * 1.5, (3.2, 2.8, 3.2), 'limb')
-    koevoet(m, wr + unit(wr - el) * 2.5, cd, cb, 'claw', steel=steel)
+    if klauw == 'paar':
+        klauwpaar(m, wr + unit(wr - el) * 1.5, unit(wr - el), (0, -1, 0), 'claw', klauw_s)
+    else:
+        koevoet(m, wr + unit(wr - el) * 2.5, cd, cb, 'claw', steel=steel)
     elf = sh_f + np.array((-3.0, -10.5, -2.0)); wrf = elf + np.array((-8.0, -3.5, 1.0))   # verre arm: lager, klauw omlaag-voor
     m.tube([(*sh_f, 4.4), (*elf, 3.8)], 'far')
     m.tube([(*elf, 3.6), (*wrf, 3.0)], 'farlimb')
     m.ell(wrf + unit(wrf - elf) * 1.5, (3.0, 2.6, 3.0), 'farlimb')
-    koevoet(m, wrf + unit(wrf - elf) * 2.4, (-0.6, -0.7, -0.5), (-0.6, 0.6, 0.5), 'farclaw', 0.95, steel=steel)
+    if klauw == 'paar':
+        klauwpaar(m, wrf + unit(wrf - elf) * 1.5, unit(wrf - elf) * np.array((1, 0.3, 1)), (0, -1, 0), 'farclaw', klauw_s)
+    else:
+        koevoet(m, wrf + unit(wrf - elf) * 2.4, (-0.6, -0.7, -0.5), (-0.6, 0.6, 0.5), 'farclaw', 0.95, steel=steel)
     # staart: geringd, laag naar achteren, eind in een haak omhoog (Sly-knipoog)
     base = hip + bk * 4 + np.array((3, -3, -1))
     pts = [(*base, 5.4), (base[0] + 10, base[1] - 7, -3, 5.8), (base[0] + 21, base[1] - 9, -5, 5.6),

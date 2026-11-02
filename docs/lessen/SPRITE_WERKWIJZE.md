@@ -62,6 +62,9 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - Alleen wat Jordi of de keurder noemt; benoemde zones, pixelbudget, diff-bewijs buiten de zones.
 - **Kleine reparaties zijn klein**: Jordi vond olinguito ronde 3 al "het beste"; ronde 4 was 53 px.
 - Wat Jordi goedkeurt wordt bevroren in SPEC.md; afkeuringen gaan onder "Afgekeurd".
+- **Overtrekvel met pixelraster** (Coathief, 25 okt; Jordi: "zo met een pixelraster werkt goed voor dit soort aanpassingen"): bij vormreparaties de onderlaag en de sprite naast elkaar op hetzelfde 64-raster met spritecoördinaten (`docs/concept/sprites/coathief/kleur/ronde8/overtrekvel.py`). De maker trekt cel voor cel over en markeert elke afwijking met reden; Jordi tekent cellen af op het vel. Stuur het vel bij elke vormronde mee. Losse krabbellijnen op een 8×-uitsnede gaven 6 rondes drift (de sprite week telkens "net teveel" af van de onderlaag); het raster loste het in 1–2 rondes op.
+- **Kleur volgt de onderdelen van de onderlaag:** lees per pixel af welk onderdeel het in de render is (nabije poot, verre poot, vacht, klauw; `coathief/silhouet/labels_voorpoten.py`). Een kloppend silhouet met een verkeerde kleurindeling las als "weer hetzelfde" (Coathief ronde 6).
+- **Krabbels van Jordi terugrekenen:** schaal meten aan een bekend kenmerk (het oog), dan per cel aflezen; zijn lijn is een indicatie, de onderlaag is de maatstaf.
 
 ## Stap 6. Afronden
 - Eindversie in `docs/concept/sprites/<naam>/af/` + vel; SPEC.md, `CHANGELOG.md`, Stand van zaken in `CLAUDE.md` bijwerken; lessen naar het passende `docs/lessen/`-bestand.
@@ -70,3 +73,5 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 ## Kosten en tempo (ter oriëntatie)
 - Een maker- of keurderronde kost ±150–400k agenttokens; zuinig: één maker, één keurder, kleine vellen, geen parallelle experimenten.
 - Commit en push na elke ronde (ook interne), zodat niets verloren gaat.
+- **Gemeten (Coathief, 25 okt, uit de sessielogs `~/.claude/projects/.../*.jsonl`):** hoofdsessie ±0,4M output + 0,75M nieuwe input; één maker-agent over 13 rondes ±0,57M output + 3,6M nieuwe input (76M cache-reads, doordat zijn context bleef groeien); 4 keurders samen ±0,3M output + 0,8M nieuwe input. De 6 voorpootrondes zonder raster waren het duurste deel. Zuiniger: overtrekvel vanaf de eerste vormreparatie, kleine pixelreparaties (< 15 px) door Claude zelf, en een maker die erg lang doorloopt na ±8 rondes vers starten met SPEC + NOTITIES.
+- Oudere sprites (olinguito, kolibrie) hebben geen logs meer in de container; alleen schattingen in `RETRO_KOLIBRIE.md` en `SPRITE_REVIEW.md`. Noteer daarom voortaan de gemeten kosten per sprite in zijn SPEC.md.

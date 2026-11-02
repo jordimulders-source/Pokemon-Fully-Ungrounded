@@ -1,0 +1,16 @@
+48 kkkkkkkkkkkkkkvvvvvvvvvv..
+49 .....kkkkkkkvvvvvvvvvvvv..
+50 ..............vNNNNvvvvvv.
+51 .............NNNNNNNvvvFv.
+52 ............NNNNNNNNvvvFv.
+53 ............NNNNNNNNvvFFF.
+54 ...........ccNNNNN.NvvFF..
+55 ..........ccccccNN.NFFFF..
+56 ..........ccccccN..FFFFF..
+57 .........ccc.ccc...FFFFF..
+58 ........ccc.ccc....FFFF...
+59 ........cc..cc..cccccFF...
+60 ........c...c.ccccccccFF..
+61 ................ccccccFF..
+62 .............cccc.........
+    x = 8..33

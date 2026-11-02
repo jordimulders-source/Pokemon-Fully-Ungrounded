@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov, foto 10 als bestand) "deze?"
 - (2 nov, over hoeken_r3.png) "het wordt er niet beter op, met die veel te dikke reet en niet echt de pose zoals op de fotos die ik stuurde"
 - (2 nov, over hoeken_r2.png) "De klauwen zijn nu wel goed. Op zich kan zo'n aanvals pose wel, want vigoroth heeft dat ook. Maar deze lijkt nog wat onnatuurlijk, met de benen nog staand en de armen vrij ver naar boven, misschien moet dit iets geleidelijker"
 - (2 nov, met foto 10) "hier is een goede staande pose"
@@ -42,7 +43,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 - `foto7_frontaal_lange_poten.png`: frontaal, lange donkere poten, masker rond de ogen, witte snuitrand, lange klauwen.
 - `foto8_gebogen_naar_je_toe.png`: rug hoog gebogen, kop laag naar je toe, lange donkere poten (dreiging).
 - `foto9_zijaanzicht_sluipend.webp`: sluipend zijaanzicht: lange poten, slanke onderrug, staart omhoog.
-- **Foto 10 (staande pose, Jordi's keuze; kwam niet als bestand binnen, punt voor punt overgenomen):** wasbeer op de achterpoten, kop rechts in beeld; romp ±55–60° schuin voorover met een lichte S in de rug; knieën gebogen, hakken naar achteren, voeten plat; de verre voorpoot steekt naar voren en iets omhoog (hand open, reikend); de nabije voorpoot hangt gebogen voor de buik, hand op buikhoogte; kop naar voren op een gestrekte nek, blik vooruit; staart laag achter op de grond; lichte buik/borst, donkere onderarmen en onderbenen.
+- `foto10_staand_reikend.jpg` (later als bestand ontvangen). **Foto 10 (staande pose, Jordi's keuze):** wasbeer op de achterpoten, kop rechts in beeld; romp ±55–60° schuin voorover met een lichte S in de rug; knieën gebogen, hakken naar achteren, voeten plat; de verre voorpoot steekt naar voren en iets omhoog (hand open, reikend); de nabije voorpoot hangt gebogen voor de buik, hand op buikhoogte; kop naar voren op een gestrekte nek, blik vooruit; staart laag achter op de grond; lichte buik/borst, donkere onderarmen en onderbenen.
 - **Foto 11 (niet als bestand; dezelfde opname als foto 5 rechtsonder):** frontaal op een stam, vier lange poten recht onder het lijf, kop omhoog-opzij, lange gebogen klauwen over de rand; geelbruine borst, grijze rug.
 - **Foto 12 (niet als bestand):** zit rechtop op de achterpoten in waterplanten, frontaal, beide handen hangen voor de borst (polsen geknikt), staart laag opzij; masker over de ogen en neusrug, witte wenkbrauw en snuitrand, lichte oorranden.
 - `foto5_collage_rots_uitkijk.webp`: o.a. op een rots, vier poten, kop naar de kijker (rechtsonder), en laag sluipend met de hand vooruit (linksboven).
@@ -84,6 +85,9 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Ronde 1: hoekenraster `ontwerp/hoeken.png` (waterspuwer) en maskertest `ontwerp/maskers.png`: afgekeurd (zie onder).
 - Ronde 2 (`ontwerp/hoeken_r2.png`): **uithalen**: op de achterpoten in een stap (nabije poot voor, verre zet af op de tenen), romp 20/32° voorover, verre koevoet hoog boven de rug (haakt naar voren), nabije koevoet naar de speler gestoken (haakt omlaag), staart als herdersstaf boven de rug, geen rand, langere poten, slankere onderrug, gewoon masker over de neusrug. Voorpoten raken de grond niet (pragmatisch). 1x-voorbeeld in elke cel. Tussenstappen met klauw onder de kin ('slagtanden') en de nabije poot op de grond verworpen vóór Jordi.
 - Ronde 3 (`ontwerp/hoeken_r3.png`, pose 'F' naar foto 10): op de achterpoten met gebogen knieën, romp 48/58° voorover, verre poot reikt naar voren (koevoet vooruit, haak omlaag), nabije poot hangt gebogen voor de buik (koevoet omlaag, haak naar voren), staart laag achter met de haak omhoog, kop iets omhoog. Een tussenversie met de reikende koevoet voor de snuit verworpen vóór Jordi.
+
+## Silhouet (stap 2)
+- Ronde 1 (`silhouet/`): omtrek van foto 10 punt voor punt in fotocoördinaten (`omtrek.py`, controle `controle_omtrek.png`), direct verkleind tot 60 px hoog (`silhouet.py`). Handwerk alleen in benoemde zones: onderarmen dikker (≥ 3–4 px op 64), koevoeten (nabij: schuin vooruit-omlaag met de haak omhoog, zodat hij niet als poot leest; ver: vooruit met de haak omlaag), staartpunt vervangen door een haak omhoog. `ronde1.txt`, `ronde1_1x.png` (1155 px), vel `vel_ronde1.png`. Wacht op Jordi.
 
 ## Afgekeurd (niet herhalen)
 - **3D-poppetje voor deze pose (rondes 1–3):** "veel te dikke reet", "niet echt de pose zoals op de fotos". Volgende stap: silhouet direct van foto 10 overtrekken (kolibriemethode), dan alleen klauwen (koevoet) en staart (haak) aanpassen.

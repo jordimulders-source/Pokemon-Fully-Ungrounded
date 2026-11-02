@@ -50,6 +50,8 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 
 - Jordi 2 nov (na ronde 1): "het hoofd lijkt sowieso iets teveel op de 1e stage" + "incl ogen" → kop en ogen duidelijk anders dan fase 1: grote witte maan als kenmerk, ogen met kleinere iris, grote ronde pupil, donkere ring en starende blik (foto's), volwassener snoet.
 
+- Jordi 2 nov (na ronde 3): "de maan is nog steeds geen echte maan he" + referentie van een pixel-sikkel ("beetje zon soort vorm": dik midden, tapse scherpe punten, ronde holte). Gekozen: **D2** (`kleur/maanvarianten/variant_D2.png`, sikkel iets hoger; vel `maanvarianten.png`).
+
 ## Silhouet
 - Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
 - **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.

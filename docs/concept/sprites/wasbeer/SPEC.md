@@ -153,4 +153,6 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 ## Silhouet v2 (stap 2, na het nieuwe 3D-ontwerp)
 - Direct verkleind (`silhouet_v2/direct.py`, fill 1,03): `direct.txt` / `direct_1x.png`, 1460 px, box 46x62; onderdelen per pixel in `labels.txt`; vel `vel_direct.png` (onderlaag, 4x, overlay, 1x naast Weavile/Sneasel/Zangoose/Gumshoos/Lucario/Raticate).
 - Handzones (maker-agent): verre klauw als koevoet (steel, bocht, gespleten punt), lucht tussen buidel en staart, nabije klauw binnen het silhouet = kleurwerk.
+- Ronde 1 (maker, 23 px in zones): verre klauw als kleine koevoet (punt omlaag), spleet zak/staart 2 px. Keuring (`KEURING_ronde1.md`): FAIL op klauw (tanden 1 px, geen pols), staart (knots), knobbel bij de zak, kopdoos, trapjes.
+- Ronde 2 (maker, 19 px t.o.v. ronde 1, 0 buiten zones; `vel_ronde2.png`, 1446 px, 47x62): klauw-eindstuk 3x3 + pols, staart taps met haaklob over de spleet, knobbel weg, neus +1, trapjes weg. Reparaties die tegen de onderlaag ingaan (bol achterhoofd, bolle borst) niet gedaan. Open vragen voor Jordi: silhouet leest rechter dan de render, kop 29% en hoekig, klauwpunt omlaag, gespleten punt alleen in kleur, groei maar 1,1x t.o.v. Coathief.
 

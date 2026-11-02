@@ -152,3 +152,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.30] - Wasbeer: 3D-ontwerp ronde 3 (benen)
 - Jordi koos E (romp 26°, dikker lijf). Benen niet meer naast elkaar: het nabije been stapt naar achteren (ook op de tenen), onderbenen dunner zoals op de foto's: `docs/concept/sprites/wasbeer/ontwerp/vel_v2_ronde3.png`.
+
+### [v0.0.31] - Wasbeer: silhouet v2 (direct van de render)
+- Ontwerp E2 bevroren met een grotere rugzak. Silhouet direct van de render (`docs/concept/sprites/wasbeer/silhouet_v2/`), handwerk door een maker-agent alleen in zones (koevoetklauw, spleet zak/staart, randen), keuring door een onafhankelijke keurder; ronde 2 (`vel_ronde2.png`, 1446 px) ligt bij Jordi.
+

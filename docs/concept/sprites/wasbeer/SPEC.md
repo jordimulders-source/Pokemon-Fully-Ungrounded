@@ -174,4 +174,5 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Jordi over `vel_sluip.png`: "alleen s1 komt in de buurt, maar nu zijn de poten weer niet meer dynamisch genoeg, dan moet er 1tje iets naar achter, dit is niet hoe dieren/mensen bewegen met poten prcies in dezelfde pose". → `ontwerp/vel_sluip2.png`: S1a nabij been ver achter op de tenen (verre geplant voor), S1b andersom, S1c als S1a met grotere stap. Wacht op Jordi.
 - **Pose bevroren: S1a** (Jordi: "S1a, ga maar door naar het silhouet"): E2 + rugzak + klauwpaar 1,2x, romp 36°, crouch 5, nabij been ver achter op de tenen (near_back 19, heel 6), verre been geplant voor (far_dx −1).
 - Silhouet S1a direct van de render (`silhouet_v2/direct_s1a.py`, fill 1,0): `direct_s1a.txt`, 1682 px, box 52x61 (1,28x Coathief), `labels_s1a.txt`, vel `vel_direct_s1a.png`. Klauw: 2 klauwen met inkeping zichtbaar in het silhouet (x 6–12, y 41–45). Nog geen handwerk. Wacht op Jordi.
+- **Silhouet S1a goedgekeurd en bevroren** (Jordi 2 nov: "ja, ga maar door naar de kleur"): `silhouet_v2/direct_s1a.txt` = `direct_s1a_1x.png` (1682 px). Alle kleurrondes: alpha-diff 0 hiermee.
 

@@ -52,6 +52,8 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 
 - Jordi 2 nov (na ronde 3): "de maan is nog steeds geen echte maan he" + referentie van een pixel-sikkel ("beetje zon soort vorm": dik midden, tapse scherpe punten, ronde holte). Gekozen: **D2** (`kleur/maanvarianten/variant_D2.png`, sikkel iets hoger; vel `maanvarianten.png`).
 
+- Jordi 2 nov, over de keurdersvragen (kené als meander, violette handrug, crème oortjes): "doe maar wat de keurder goed lijkt".
+
 ## Silhouet
 - Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
 - **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.

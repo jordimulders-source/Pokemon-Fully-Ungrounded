@@ -84,3 +84,8 @@ Echte lamatooi uit de Andes: bij de *señalakuy*/*t'ikachay* (merkfeest) krijgen
 - **Leitmotif: aguayo-halsband** (zoals het halsbandje van de alpaca), in elke fase: fase 2 smalle band (3 strepen) met 5 pompons; fase 3 brede band (5 strepen) met 7 pompons, boven de manta. Het losse pomponsnoer van fase 2 is vervallen (zit nu onder de band).
 - **Bevroren ontwerp:** `ontwerp/lijn_ronde2.png` met halsbanden. Fase 2 = `fase2_r2()`, fase 3 = `fase3_r2(voet='wrap')` (**3Y**: windsels, hoeven vrij).
 - Bron silhouet fase 2: `fase2_r2(hs=1.18)` (kop 35% i.p.v. 37%, binnen D2), `fase2/silhouet/bron.py` (fill 0.96: 1092 px, box 42×60; slank, formaat volgt de vorm, groter dan fase 1 = 1019 px).
+
+## Silhouet fase 2 (stap 2)
+- Ronde 1 (maker): `fase2/silhouet/ronde1.txt` (1177 px), zones voorpoten/achterpoten/oren/snuit/wol; voorpoten, oren en snuit door Claude akkoord en bevroren.
+- Ronde 1b (maker, Claude stuurde terug: achterpoten "paaltjes", omtrek rechthoekig): `ronde1b.txt` / `vel_ronde1b.png`, 1188 px, box 44×60, kop 35%; achterpoten met dij uit de wol, hak en schuin onderbeen; staart als pluim; 3–5 wolplukken; massa lijf +2,9%. 0 px buiten de zones.
+- Open punt van de maker (buiten zijn zones, komt uit de bron): de hals is een rechte dikke kolom. Vraag aan Jordi.

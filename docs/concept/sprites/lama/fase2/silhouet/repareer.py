@@ -1,8 +1,8 @@
 """Lama fase 2, silhouet ronde 1: handreparaties op direct.txt in benoemde zones.
 Elke zone is een met de hand getypt tekstraster (# = vorm, . = leeg) dat de rechthoek in direct.txt vervangt.
-Draaien vanuit de repo-root: python3 docs/concept/sprites/lama/fase2/silhouet/repareer.py
+Draaien vanuit de repo-root: python3 docs/concept/sprites/lama/fase2/silhouet/repareer.py [ronde1|ronde1b]
 Schrijft ronde1.txt, ronde1_1x.png en print de diff per zone (buiten de zones moet het 0 zijn)."""
-import os
+import os, sys
 import numpy as np
 from PIL import Image
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -108,23 +108,116 @@ def stats(sil, name):
     ys, xs = np.nonzero(sil)
     print(f'{name}: px {sil.sum()}, box {xs.max()-xs.min()+1}x{ys.max()-ys.min()+1}, x {xs.min()}-{xs.max()}, y {ys.min()}-{ys.max()}')
 
-if __name__ == '__main__':
-    src = load(os.path.join(HERE, 'direct.txt'))
-    out = src.copy()
-    mask = np.zeros_like(src)
-    rects = {}
-    for name, (x0, y0, txt) in ZONES.items():
-        rows = [r for r in txt.strip('\n').split('\n')]
+
+# Ronde 1b (Claude: A, C, D bevroren; B en de omtrek van het lijf terug). Toegepast op ronde1.txt.
+ZONES_1B = {
+ # B. Achterpoten, opnieuw: de dij loopt vanuit de buik/het achterwerk geleidelijk over in het been (r41-44 breed,
+ #    voorrand schuin 38-39-40), dan twee poten. Nabij: voorrand 47-48-49 (dij schuin naar achteren), hak steekt
+ #    naar achteren (x54, r50-51), holte boven de hak (achterrand 49 op r42-43), onderbeen schuin naar voren tot de voet x45-50 r60-61 (= voet van de bron).
+ #    Ver (hoger, korter): dezelfde "<" met hak x46 r50-51, onderbeen naar voren, voet x39-44 r57-58.
+ #    Overal >= 2 px lucht tussen de poten, ruimte onder de buik (x35-39) leeg.
+ 'B achterpoten': (37, 41, """
+.#############....
+..###########.....
+...##########.....
+...###########....
+...#####..#####...
+...#####..#####...
+....#####..#####..
+....#####..#####..
+....#####..######.
+.....#####..######
+.....#####..######
+....#####...#####.
+....#####...#####.
+...#####...#####..
+...#####...#####..
+...#####...#####..
+..######..#####...
+..#####...#####...
+.........#####....
+........######....
+........######....
+..................
+"""),
+ # E2 rug: staart als pluim (bol bovenaan r21-23, punt naar achteren, smalle aanzet x50-51 r24), wolpluk op de schoft (x36-37) en
+ #    de bolling van de aguayo (x44-45); rij 25 (rug) zelf ongewijzigd.
+ 'E2 rug+staart': (32, 20, """
+.......................
+...................##..
+..................####.
+..................####.
+....##......##....##...
+"""),
+ # E2 achterwerk: twee rustige wolplukken van 2 rijen (r27-28 en r32-33, onderkant als richeltje: hangende wol)
+ #    met dalen ertussen (r29-30, r34-37), zodat de massa nauwelijks groeit; daarna de rand van de bron (50).
+ 'E2 achterwerk': (50, 25, """
+###..
+###..
+####.
+####.
+##...
+##...
+###..
+####.
+####.
+##...
+##...
+##...
+##...
+#....
+#....
+#....
+"""),
+ # E2 borst: wolpluk onder de halsband (r35-36 x20) met een dal erboven (r33-34 x22).
+ 'E2 borst': (19, 26, """
+#####
+.####
+.####
+..###
+.####
+.####
+..###
+...##
+...##
+.####
+.####
+..###
+...##
+....#
+.....
+"""),
+}
+
+def apply(src, zones):
+    out = src.copy(); mask = np.zeros_like(src); rects = {}
+    for name, (x0, y0, txt) in zones.items():
+        rows = txt.strip('\n').split('\n')
         w = len(rows[0]); assert all(len(r) == w for r in rows), name
-        blk = np.array([[c == '#' for c in r] for r in rows])
         h = len(rows)
-        out[y0:y0 + h, x0:x0 + w] = blk
+        out[y0:y0 + h, x0:x0 + w] = np.array([[c == '#' for c in r] for r in rows])
         mask[y0:y0 + h, x0:x0 + w] = True
         rects[name] = (x0, y0, w, h)
-    save(out, 'ronde1')
-    stats(src, 'direct'); stats(out, 'ronde1')
-    print('diff per zone (bij / weg):')
+    return out, mask, rects
+
+def report(src, out, mask, rects, label):
+    print(f'diff per zone t.o.v. {label} (bij / weg):')
     for name, (x0, y0, w, h) in rects.items():
         a, b = src[y0:y0+h, x0:x0+w], out[y0:y0+h, x0:x0+w]
-        print(f'  {name:14s} rect x{x0}-{x0+w-1} y{y0}-{y0+h-1}: +{(b & ~a).sum()} / -{(a & ~b).sum()}')
-    print('buiten de zones gewijzigd:', (src != out)[~mask].sum())
+        print(f'  {name:16s} rect x{x0}-{x0+w-1} y{y0}-{y0+h-1}: +{(b & ~a).sum()} / -{(a & ~b).sum()}')
+    print(f'  buiten de zones gewijzigd t.o.v. {label}:', (src != out)[~mask].sum())
+
+if __name__ == '__main__':
+    stem = sys.argv[1] if len(sys.argv) > 1 else 'ronde1'
+    direct = load(os.path.join(HERE, 'direct.txt'))
+    r1, m1, rects1 = apply(direct, ZONES)
+    if stem == 'ronde1':
+        save(r1, 'ronde1'); stats(direct, 'direct'); stats(r1, 'ronde1'); report(direct, r1, m1, rects1, 'direct')
+    else:
+        r1b, m, rects = apply(r1, ZONES_1B)
+        save(r1b, 'ronde1b'); stats(direct, 'direct'); stats(r1, 'ronde1'); stats(r1b, 'ronde1b')
+        report(r1, r1b, m, rects, 'ronde1')
+        for z in ('A voorpoten', 'C oren', 'D snuit'):
+            x0, y0, w, h = rects1[z]
+            print(f'  bevroren {z}: verschil met ronde1 =', (r1[y0:y0+h, x0:x0+w] != r1b[y0:y0+h, x0:x0+w]).sum())
+        print('  ronde1b t.o.v. direct buiten alle zones:', (direct != r1b)[~(m | m1)].sum())

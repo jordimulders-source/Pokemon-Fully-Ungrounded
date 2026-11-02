@@ -160,3 +160,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.33] - Werkwijze: ontwerpfase met poppetje vastgelegd
 - Jordi: "ik vind dit echt geweldig werk [...] noteer dat deze manier van werken tot nu toe uitstekend werkt". De ontwerpfase van de lama (poppetje met kleding als praatplaat, keuzevel, hele lijn op schaal, onderscheid via bouw + pose) staat als vaste aanpak in `docs/lessen/SPRITE_WERKWIJZE.md` (stap 1); dubbele regel daar opgeruimd.
+
+### [v0.0.34] - Lama fase 2: silhouet ronde 1b
+- Maker-agent: silhouet uit het goedgekeurde poppetje, handreparaties aan poten, oren, snuit en wolomtrek (`docs/concept/sprites/lama/fase2/silhouet/vel_ronde1b.png`, 1188 px). Wacht op Jordi.

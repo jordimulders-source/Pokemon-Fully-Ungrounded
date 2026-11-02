@@ -1,13 +1,14 @@
 """Vel silhouet: onderlaag | silhouet 4x | silhouet over de onderlaag | 1x, + echte Gen 3-silhouetten (1x en 4x).
-Draaien vanuit de repo-root: python3 docs/concept/sprites/lama/fase2/silhouet/vel.py [ronde1]"""
+Draaien vanuit de repo-root: python3 docs/concept/sprites/lama/fase2/silhouet/vel.py [ronde1b] [ronde1]"""
 import os, sys
 import numpy as np
 from PIL import Image, ImageDraw
 HERE = os.path.dirname(os.path.abspath(__file__))
 ROOT = os.path.abspath(os.path.join(HERE, '../../../../../..'))
 stem = sys.argv[1] if len(sys.argv) > 1 else 'ronde1'
+prev = sys.argv[2] if len(sys.argv) > 2 else None   # vorige ronde, 4x ernaast
 DARK = (40, 32, 48)
-REFS = ['mightyena', 'girafarig', 'rapidash', 'stantler', 'absol']
+REFS = ['girafarig', 'stantler', 'mightyena', 'rapidash', 'absol']
 
 def load(p):
     return np.array([[c == '#' for c in l.rstrip('\n')] for l in open(p) if l.strip()], dtype=bool)
@@ -32,7 +33,7 @@ edge = sil & ~(np.roll(sil, 1, 0) & np.roll(sil, -1, 0) & np.roll(sil, 1, 1) & n
 for y, x in zip(*np.nonzero(edge)):
     d.rectangle([x * 4, y * 4, x * 4 + 3, y * 4 + 3], outline=(220, 0, 0, 200))
 pad = 12
-W = 4 * 256 + 64 + pad * 6
+W = 5 * 256 + 64 + pad * 7
 H1 = 256 + 40
 H2 = 64 + 4 + 256 + 40
 img = Image.new('RGB', (max(W, len(REFS) * (256 + pad) + 256 + pad * 2), H1 + H2 + pad), (255, 255, 255))
@@ -40,6 +41,8 @@ dr = ImageDraw.Draw(img)
 x = pad
 for lab, im in [('onderlaag', under), (stem + ' 4x', sil_img(sil, 4)), ('over onderlaag', over)]:
     img.paste(im, (x, 24)); dr.text((x, 6), lab, fill=(0, 0, 0)); x += 256 + pad
+if prev:
+    img.paste(sil_img(load(os.path.join(HERE, prev + '.txt')), 4), (x, 24)); dr.text((x, 6), prev + ' 4x (vorige)', fill=(0, 0, 0)); x += 256 + pad
 img.paste(sil_img(sil, 1), (x, 24)); dr.text((x, 6), '1x', fill=(0, 0, 0))
 ys, xs = np.nonzero(sil)
 dr.text((x, 100), f'{sil.sum()} px\nbox {xs.max()-xs.min()+1}x{ys.max()-ys.min()+1}', fill=(0, 0, 0))

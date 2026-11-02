@@ -138,3 +138,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.26] - Ideeënlijst 29 okt verwerkt
 - Jordi's nieuwe lijst (Bartitsu-Mr. Rime, capoeira-Hitmontop met evolutie, BJJ, Arbok, zout-Sandaconda, kaaiman-Krookodile, harpij, Oricorio-samba/tango/cumbia, hoatzin-Archeops, poedelmot, Tiwanaku-Golett, açaí, pitahaya, plátano-Tropius, carambola, gaucho, guaraná, Galápagos-vormen, fruitvampier, Electric viscacha) uitgewerkt in `docs/concept/IDEEEN.md`, met types en dex-status uit de repo en overlap met eerdere plannen.
 - Besloten in `POKEMON.md`: harpij komt er sowieso; capoeira-Hitmontop krijgt een evolutie; viscacha wordt Electric.
+
+### [v0.0.27] - Lama (alpaca-evolutie): start (stap 0)
+- Fase 2 van de Fighting-starter: map `docs/concept/sprites/lama/` met `SPEC.md` en `referenties/` volgens `SPRITE_WERKWIJZE.md` (Coathief als voorbeeld). Vastgelegd: wat uit fase 1 meegaat, Jordi's eerdere woorden over de lijn (wolkragen om de poten, vier poten, andere vechtsport dan capoeira), formaatdoel 1100–1550 px, verschil lama/alpaca. Stap 1 (vechtsport, pose + foto, kleur, naam) wacht op Jordi.

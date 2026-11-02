@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov, over ronde 5, met foto 12) "nu lijkt die veel te dun"
 - (2 nov, over ronde 4, met foto 11) "het hoofd lijkt nergens op, met die enorme neus, op deze foto zie je het iets beter vanaf een bijna driekwart pose" · (met een illustratie) "of deze illustratie"
 - (2 nov) "de crab eating raccoon is sws een stuk dunner dan een normale wasbeer. Kijk maar wta je kan doen voor nu met sandslash als skelet, maar echt de vormen en kenmerken van wat we afgesproken hebben"
 - (2 nov, over ronde 3) "hmm wat kunnen we doen om het beter te maken?"
@@ -54,6 +55,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 - **Foto 12 (niet als bestand):** zit rechtop op de achterpoten in waterplanten, frontaal, beide handen hangen voor de borst (polsen geknikt), staart laag opzij; masker over de ogen en neusrug, witte wenkbrauw en snuitrand, lichte oorranden.
 - `foto11_driekwart_kop.webp`: bijna driekwart, kop naar links omhoog: korte snuit, kleine neus, masker over beide ogen, witte wenkbrauwband, groot nabij oor (omtrek `silhouet/kop11.py`).
 - **Illustratie (niet als bestand; omtrek bij benadering in `silhouet/kop_illustratie.py`):** getekende kop driekwart naar links: grijs, zwart masker van de neus tot achter het oog, witte wenkbrauwband en witte kaak, nabij oor rechts op de wang, verre oor rechtop boven de kruin, zwarte omlijning.
+- `foto12_rechtop_driekwart_lijf.png`: rechtop, lijf driekwart naar de kijker: peervormig lijf (buik onderaan het breedst), korte dikke dijen, armen opzij, kop recht naar je toe.
 - `foto5_collage_rots_uitkijk.webp`: o.a. op een rots, vier poten, kop naar de kijker (rechtsonder), en laag sluipend met de hand vooruit (linksboven).
 
 ## Open vragen (stap 1, voor Jordi)
@@ -100,7 +102,8 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Ronde 3 (hybride, `silhouet_r3.py`, `kop6.py` + `controle_kop6.png`): lijf/poten/armen/koevoeten/staart van ronde 2 verkort (achter ×0,78, voor ×0,88, staart ×0,62, rond de borst), kop vervangen door de driekwart kop van foto 6 (gespiegeld, ×0,31) met een snuitkegel schuin naar voren-omlaag (de foto-hoek verkort de snuit; de lijn draait om snuit en klauwen). `ronde3.txt`, `ronde3_1x.png` (943 px), `vel_ronde3.png`. Driekwart leest in silhouet vooral aan de kop; de rest (borst naar de kijker, masker over beide ogen) moet uit de kleur komen. Jordi niet overtuigd.
 - Voorstel: echte Gen 3/4-sprite als skelet voor de driekwart houding (`silhouet/skelet_kandidaten.png`: Vigoroth, Zangoose, Sandslash, Ursaring, Weavile, Sneasel, Lucario); voorkeur **Sandslash** (gehurkt op de achterpoten, voorover, driekwart, klauwen laag vooruit, staart achter; ook de klauwreferentie van de lijn).
 - Ronde 4 (`silhouet_r4.py`, Sandslash als skelet, Jordi akkoord): houding van Sandslash (gehurkt op de achterpoten, romp bijna rechtop onder de borst, voorover, driekwart naar links), vormen van de wasbeer: driekwart kop van foto 6 met een snuitwig naar links-omlaag en oren op 75%, dun lijf (straal ±5 px; krabbenetende wasbeer is dunner dan de gewone), lange poten, nabije poot vooruit met de koevoet (haak omlaag), verre poot lager vooruit met een kleinere koevoet, geringde haakstaart rechts. `ronde4.txt`, `ronde4_1x.png` (1234 px), `vel_ronde4.png` (met overlay over Sandslash). Jordi: kop "lijkt nergens op" (te grote neus).
-- Ronde 5 (`silhouet_r5.py`): ronde 4 met de kop naar Jordi's illustratie (wig naar een kleine neus, verre oor rechtop, ±18 px breed); 1190 px, `vel_ronde5.png`.
+- Ronde 5 (`silhouet_r5.py`): ronde 4 met de kop naar Jordi's illustratie (wig naar een kleine neus, verre oor rechtop, ±18 px breed); 1190 px, `vel_ronde5.png`. Jordi: veel te dun.
+- Ronde 6 (`silhouet_r6.py`): ronde 5 voller: romp straal 6,4–7,6 (peervorm, foto 12), dijen 5,4–6, armen +0,5, nek en staartbasis dikker; 1339 px, `vel_ronde6.png`.
 - **Voor de kleur (Jordi):** het silhouet leest als één bolle buik door de pose; de kleur moet het lijf opdelen: lichte borst/buik (geelbruin), grijze rug en flank, de dij als eigen vorm (zoals op foto 10), donkere onderarmen die vóór de buik lopen, donkere onderbenen.
 
 ## Afgekeurd (niet herhalen)

@@ -134,3 +134,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Evolutie van de olinguito, **Coathief** (*Nasua nasua*, fase 2): frontsprite goedgekeurd, `docs/concept/sprites/coathief/af/coathief.png`. Zwarte bivakmuts-kop met coati-vlekken, zwarte neus en oren, klein roodbruin oog, warm roodbruin lijf (donkerder dan Linoone/Furret), geringde staart, klauwen aan beide voorpoten; driekwart naar de speler toe lopend met één poot opgetild.
 - Werkwijze: 3D-poppetje (hoek B1, kop C), silhouet direct verkleind, kleur met één maker-agent, een onafhankelijke keuring, een evolutiekeuring en twee verse eindkeuringen. De voorpoten pas goed na een **overtrekvel met pixelraster** waarop Jordi cellen aftekende; vastgelegd in `docs/lessen/SPRITE_WERKWIJZE.md`, met gemeten tokenkosten.
 - Nog te doen: frame 2, rug, icoon, shiny, data; A/B-test kleine kleurreparaties (SPEC).
+
+### [v0.0.26] - Ideeënlijst 29 okt verwerkt
+- Jordi's nieuwe lijst (Bartitsu-Mr. Rime, capoeira-Hitmontop met evolutie, BJJ, Arbok, zout-Sandaconda, kaaiman-Krookodile, harpij, Oricorio-samba/tango/cumbia, hoatzin-Archeops, poedelmot, Tiwanaku-Golett, açaí, pitahaya, plátano-Tropius, carambola, gaucho, guaraná, Galápagos-vormen, fruitvampier, Electric viscacha) uitgewerkt in `docs/concept/IDEEEN.md`, met types en dex-status uit de repo en overlap met eerdere plannen.
+- Besloten in `POKEMON.md`: harpij komt er sowieso; capoeira-Hitmontop krijgt een evolutie; viscacha wordt Electric.

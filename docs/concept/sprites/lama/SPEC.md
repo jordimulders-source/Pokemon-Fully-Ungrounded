@@ -78,3 +78,9 @@ Echte lamatooi uit de Andes: bij de *señalakuy*/*t'ikachay* (merkfeest) krijgen
   - **Fase 2 = slungelige tiener in dekking:** smal lijf met wilde wolplukken, lange dunne poten, nabije voorpoot met MMA-handschoen opgetild, kop laag en naar voren, oren plat naar achteren (met oorkwasten), pomponsnoer + aguayo-bundel (lastdier). Kop 37% (doel 30–35%: bij het silhouet iets kleiner).
   - **Fase 3 = zware kampioen, geworteld:** geschoren glad lijf, brede diepe borst, kortere dikke hals, dikke poten in een brede stand, borst vooruit en kop hoog; wol alleen als kleding (manta, pollera in drie ruches), bombín, vlechten. Kop 27%. Y: windsels, X: MMA.
 - Nog te doen bij de sprites: punt 3 (gezicht: fase 2 brutaal, fase 3 waardig) en 4 (kleur: fase 2 effen karamel, fase 3 bont en donkerder, donker gezichtsmasker) in de kleurronde.
+
+## Ontwerp goedgekeurd (Jordi, 2 nov)
+- Jordi over ronde 2: "fase 2 en 3 moeten allebei nog een soort ketting hebben om het leitmotif van de alpaca vol te houden, verder ben ik zeer tevreden. 3y is mn favoriet".
+- **Leitmotif: aguayo-halsband** (zoals het halsbandje van de alpaca), in elke fase: fase 2 smalle band (3 strepen) met 5 pompons; fase 3 brede band (5 strepen) met 7 pompons, boven de manta. Het losse pomponsnoer van fase 2 is vervallen (zit nu onder de band).
+- **Bevroren ontwerp:** `ontwerp/lijn_ronde2.png` met halsbanden. Fase 2 = `fase2_r2()`, fase 3 = `fase3_r2(voet='wrap')` (**3Y**: windsels, hoeven vrij).
+- Bron silhouet fase 2: `fase2_r2(hs=1.18)` (kop 35% i.p.v. 37%, binnen D2), `fase2/silhouet/bron.py` (fill 0.96: 1092 px, box 42×60; slank, formaat volgt de vorm, groter dan fase 1 = 1019 px).

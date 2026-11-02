@@ -345,6 +345,22 @@ def poot(m, pts, g, k, voet, x0=0):
         m.ell((x - 2, y - 4, z), np.array((6.5, 3.5, 5.5)) * k ** 0.6, 'hoof')
 
 
+def halsband(m, a, b, t, rr, banden, pompons=0):
+    """Leitmotif van de alpaca: aguayo-halsband (gestreepte ring loodrecht op de hals), eventueel met pompons eronder."""
+    a, b = np.array(a, float), np.array(b, float)
+    ax = (b - a) / np.linalg.norm(b - a)
+    u = np.array((ax[1], -ax[0], 0.0)); v = np.array((0, 0, 1.0))
+    for j, g in enumerate(banden):
+        c = a + (b - a) * t + ax * (j - (len(banden) - 1) / 2) * 3.2
+        for th in np.arange(0, 360, 9):
+            q = math.radians(th)
+            m.ell(c + rr * (math.cos(q) * u + math.sin(q) * v), np.array((2.6, 2.6, 2.6)), g)
+    c = a + (b - a) * t - ax * (len(banden) / 2 * 3.2 + 2.5)
+    for i, th in enumerate(np.linspace(-70, 70, pompons) if pompons else []):
+        q = math.radians(th + 180)   # voorkant van de hals (naar -x)
+        m.ell(c + (rr + 1) * (math.cos(q) * u + math.sin(q) * v), 3.3, ['pp_r', 'pp_y', 'pp_g', 'pp_p'][i % 4])
+
+
 def tilt(m, i0, i1, piv, deg):
     Rt = P.rot_z(math.radians(deg))
     m.parts[i0:i1] = [(piv + Rt @ (c - piv), r, Rt @ R0, g) for c, r, R0, g in m.parts[i0:i1]]
@@ -363,12 +379,10 @@ def fase2_r2(hs=1.25):
     m.chain(nk, 'neck')
     for i, (x, y, z, r) in enumerate(nk[1:]):
         fluff(m, (x, y, z), (r, r, r), 'neck', 22, 5.5, 60 + i)
+    halsband(m, nk[0][:3], nk[1][:3], 0.32, 15.5, ['ag0', 'ag1', 'ag2'], pompons=5)
     kop(m, top, hs, 2, 24, np.array(nk[1][:3], float))
     tilt(m, n0, len(m.parts), np.array((-30, 14, 0.0)), 24)   # kop laag en naar voren
     # pomponsnoer en aguayo-bundel (lastdier, draagt zijn eigen spullen)
-    c0, ring = np.array((-33, 18, 0.0)), ['pp_r', 'pp_y', 'pp_g', 'pp_p']
-    for i, a in enumerate(np.linspace(0, 2 * math.pi, 14, endpoint=False)):
-        m.ell(c0 + np.array((math.cos(a) * 10, math.sin(a) * 1.5, math.sin(a) * 16)), 3.2, ring[i % 4])
     for th in np.arange(-70, 71, 7):
         t = math.radians(th)
         band = int((th + 70) // 24) % len(AGUAYO)
@@ -391,6 +405,7 @@ def fase3_r2(hs=1.2, voet='wrap'):
     top = np.array((-44, 72, 0.0))
     nk = [(-34, 16, 0, 21), (-40, 44, 0, 16.5), (top[0], top[1], 0, 13.5)]   # korter en krachtig
     m.chain(nk, 'neck')
+    halsband(m, nk[0][:3], nk[1][:3], 0.62, 19.5, ['ag3', 'ag0', 'ag1', 'ag2', 'ag0'], pompons=7)
     kop(m, top, hs, 3, 22, np.array(nk[1][:3], float))
     tilt(m, n0, len(m.parts), np.array((-34, 16, 0.0)), -8)                  # borst vooruit, kop hoog
     # manta = de halswol als omslagdoek (wolrand), pollera = de heupwol in drie ruches

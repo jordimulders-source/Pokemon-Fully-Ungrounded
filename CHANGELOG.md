@@ -154,3 +154,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.31] - Lama: fase 2 en 3 unieker
 - Fase 2 slungelige tiener in dekking (wilde wol, lange dunne poten, voorpoot opgetild, kop laag), fase 3 zware geworteld kampioen (geschoren lijf, brede borst, kop hoog, wol alleen als kleding); vergelijking `docs/concept/sprites/lama/ontwerp/lijn_ronde2.png`.
+
+### [v0.0.32] - Lama: ontwerp goedgekeurd, halsband als leitmotif
+- Jordi "zeer tevreden"; fase 2 en 3 krijgen elk een aguayo-halsband (leitmotif van de alpaca), fase 3 = variant Y (windsels). Bron voor het silhouet van fase 2 klaar (`docs/concept/sprites/lama/fase2/silhouet/`); maker-agent start.

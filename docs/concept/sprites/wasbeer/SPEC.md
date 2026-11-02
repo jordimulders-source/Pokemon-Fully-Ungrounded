@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Basis en stijl: de goedgekeurde fa
 
 ## Jordi's woorden (letterlijk)
 - (2 nov) "1 stapje terug, krabbenetende wasbeer was een suggestie vanuit Claude, maar niet eentje die ik hardop bevestigd heb, wat voor soort dieren zouden in aanmerking kunnen komen? Het Robin Hood idee wel, stelen van de rijken en geven aan de armen, moet veel nobeler zijn dan Coathief, maar wel een grijs moraaal voor veel mensen. Helemaal rechtop wil ik niet, ik ben geen fan van starters die naarmate ze evolven steeds meer mensachtig worden. Hij blijft puur dark overigens"
+- (2 nov) "pak eens de sprites voor sneasel, weavile en sneasler erbij" → `silhouet/sneasel_lijn.png` (Sneasel 976 px, Weavile 1267, Sneasel-Hisui 944, Sneasler 1359; met silhouetten)
 - (2 nov) "de verhoudingen lijken allemaal niet te kloppen en de pose is geen echte sprite pose"
 - (2 nov, over ronde 8) "We gaan zo niet de goede kant op. De tas moet helemaal aansluiten op de rug als een soort rugzak. Qua silhouet vind ik het eigenlijk helemaal nog niet goed, misschien goed om een stap terug te gaan"
 - (2 nov, over ronde 7) "ik heb een idee wat het wat leuker maakt. Een soort van bruine burglar zak op zijn rug. De kop is trouwens echt minder goed nu"

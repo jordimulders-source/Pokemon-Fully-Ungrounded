@@ -14,15 +14,16 @@ sys.path.insert(0, HERE)
 import pop3d as P  # noqa: E402
 
 P.COL = {
-    'fur': '#7A5AA8', 'far': '#58407E', 'head': '#7A5AA8', 'disc': '#D9CFE2', 'ring': '#2E2048', 'moon': '#FFFFFF',
+    'fur': '#5E4488', 'far': '#45306A', 'head': '#5E4488', 'disc': '#B8A9CC', 'ring': '#2E2048', 'moon': '#FFFFFF',
     'stripe': '#3A2858', 'eye': '#E0508A', 'pupil': '#1A1020', 'glint': '#FFFFFF', 'nose': '#8A6070',
-    'hand': '#EAD8BE', 'farhand': '#B8A48C', 'ear': '#6A4C96', 'earin': '#E2C4BC',
+    'hand': '#EAD8BE', 'farhand': '#B8A48C', 'ear': '#523A7A', 'earin': '#E2C4BC',
 }
 P.NOSHADE = {'ring', 'disc', 'moon', 'stripe', 'eye', 'pupil', 'glint', 'nose'}
 P.LINED = {'eye', 'nose'}
 
 HEAD_C = np.array((-46.0, 6.0, 0.0))
 HEAD_R = 24.0
+SPIR_R = 15.0
 
 
 def nachtaap(head_extra=30, tail='omlaag'):
@@ -37,13 +38,13 @@ def nachtaap(head_extra=30, tail='omlaag'):
         path = P.qb((56, 4, 0), (74, -10, 0), (70, -20, 0), 9)
         c = np.array((80.0, -20.0, 0.0)); a0 = math.pi
     else:  # omhoog achter de rug
-        path = P.qb((54, 18, 0), (84, 30, 0), (76, 66, 0), 9)
-        c = np.array((86.0, 66.0, 0.0)); a0 = math.pi
+        path = P.qb((54, 18, 0), (84, 30, 0), (78, 62, 0), 9)
+        c = np.array((93.0, 62.0, 0.0)); a0 = math.pi
     spir = []
-    for i in range(30):
-        t = i / 29
+    for i in range(44):
+        t = i / 43
         a = a0 - t * 1.6 * 2 * math.pi
-        rr = 10 * (1 - 0.72 * t)
+        rr = SPIR_R * (1 - 0.75 * t)
         spir.append((c[0] + rr * math.cos(a), c[1] + rr * math.sin(a), 0))
     pts = path[:-1] + spir
     n = len(pts)
@@ -51,10 +52,10 @@ def nachtaap(head_extra=30, tail='omlaag'):
     # armen (nabij +z): lang en dun, handen plat voor het lijf met lange vingers
     for sz, g, gh in ((1, 'fur', 'hand'), (-1, 'far', 'farhand')):
         dx = 0 if sz > 0 else 8
-        m.chain([(-24 + dx, 4, 15 * sz, 9.5), (-32 + dx, -10, 18 * sz, 8), (-40 + dx, -21, 19 * sz, 6.5)], g)
-        m.ell((-46 + dx, -25, 19 * sz), (10, 4, 7.5), gh)
+        m.chain([(-20 + dx, 4, 15 * sz, 9.5), (-26 + dx, -10, 18 * sz, 8), (-32 + dx, -21, 19 * sz, 6.5)], g)
+        m.ell((-37 + dx, -25, 19 * sz), (9, 4, 7.5), gh)
         for k in (-5, -1.7, 1.7, 5):
-            m.chain([(-52 + dx, -25, 19 * sz + k, 2.3), (-62 + dx, -27.5, 19 * sz + k * 1.4, 1.9)], gh, 0.8)
+            m.chain([(-42 + dx, -25, 19 * sz + k, 2.3), (-50 + dx, -27.5, 19 * sz + k * 1.3, 1.9)], gh, 0.8)
     # achterpoten gehurkt: dij, knie naar voren, voet plat
     for sz, g, gh in ((1, 'fur', 'hand'), (-1, 'far', 'farhand')):
         m.chain([(32, 2, 19 * sz, 18), (12, -8, 24 * sz, 12), (24, -21, 23 * sz, 8)], g)
@@ -96,8 +97,10 @@ def nachtaap(head_extra=30, tail='omlaag'):
         for e in eyes:   # zilveren sikkel boven elk oog (maangezicht)
             ue = (e - HEAD_C) / HEAD_R
             de = np.linalg.norm(u - ue, axis=1)
-            d1 = np.linalg.norm(u - (ue + np.array((0.02, 0.28, 0))), axis=1)
-            g[(d1 < 0.44) & (de > 0.33) & disc & ~mid] = groups.index('moon')
+            # halvemaan (sikkel) boven elk oog: grote cirkel min een lagere cirkel, punten omlaag langs het oog
+            d1 = np.linalg.norm(u - (ue + np.array((0, 0.16, 0))), axis=1)
+            d2 = np.linalg.norm(u - (ue + np.array((0, 0.02, 0))), axis=1)
+            g[(d1 < 0.48) & (d2 > 0.39) & (front > 0.22) & ~mid] = groups.index('moon')
             g[(de < 0.34)] = groups.index('ring')
         return g
 
@@ -123,3 +126,4 @@ def grid(yaws=(30, 40, 50), extras=(25, 40), pitch=8, tail='omlaag', name='hoeke
 
 if __name__ == '__main__':
     grid()
+    grid(yaws=(40,), extras=(25,), tail='omhoog', name='a2_staart_omhoog.png')

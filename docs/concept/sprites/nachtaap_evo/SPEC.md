@@ -37,7 +37,7 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 - 2 nov: "Nee dit is het niet helemaal. Ik wil de halve maan op het hoofd, met de uiteinden naar beneden wijzend. Is er iets van een patroon wat mysterieus is en zuid amerikaans, wat we redelijk netjes zouden kunnen uitwerken op het lijf? Het moet logisch zijn, zodat het gecentreerd is als je er van bovenop zou kijken"
   → één sikkel op het voorhoofd, punten omlaag; lijfpatroon gecentreerd op de ruggengraat: kené of chakana (`pop3d/motieven2.png`; keuze open). Afgekeurd: halve maan op de flank, sterren, maanfasen.
 - 2 nov (met krabbel `referenties/jordi_krabbel_halvemaan.png`): "nee het enige witte op het hoofd moet de halve maan zijn, en die moet echt half het hoofd bedekken, zoals ik het heel slecht getekend heb hier, moet dus over de ogen heen vallen. Kené bevalt me wel, vertaalt dat goed naar een sprite denk je? Ik weet het nog niet zo met het borstvlak trouwens, vind ik er niet mooi uitzien"
-  → kop: één grote witte halve maan (punten omlaag, over de ogen); verder geen wit/licht vlak op de kop. **Lijf: kené.** Borstvlak afgekeurd.
+  → kop: één grote witte halve maan (punten omlaag, over de ogen; daarna "de halve maan mag nog wat meer van het hoofd bedekken": groter); verder geen wit/licht vlak op de kop. **Lijf: kené.** Borstvlak afgekeurd.
 - Over de lijn eerder: "in eerste instantie simpel houden: een aap met grote ogen, een genezer-concept en de Nazca-staart"; "de ogen zijn het belangrijkst; kijk naar Jigglypuff, Scream Tail en Espurr"; Psychic-concept: "niet ondersteboven hangen".
 
 ## Bevroren

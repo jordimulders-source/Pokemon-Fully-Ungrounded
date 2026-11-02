@@ -90,9 +90,9 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None):
         # halve maan die de helft van de kop bedekt en over de ogen heen valt, punten omlaag.
         # Ontworpen in het gezichtsvlak (z, y) van de voorkant: buitencirkel min een lagere binnencirkel.
         fz, fy = u[:, 2], u[:, 1]
-        o = np.hypot(fz, fy - 0.15) < 0.75
-        i = np.hypot(fz, fy + 0.22) < 0.70
-        g[(u[:, 0] < 0.05) & o & ~i] = groups.index('moon')
+        o = np.hypot(fz, fy - 0.15) < 0.86
+        i = np.hypot(fz, fy + 0.32) < 0.64
+        g[(u[:, 0] < 0.30) & o & ~i] = groups.index('moon')
         for e in eyes:
             ue = (e - HEAD_C) / HEAD_R
             g[np.linalg.norm(u - ue, axis=1) < 0.33] = groups.index('ring')

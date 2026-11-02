@@ -23,7 +23,10 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 `referenties/skelet_kandidaten.png`: fase 1 naast Aipom, Monferno, Kadabra, Kirlia, Vigoroth, Grovyle, Medicham, Lombre, Grumpig, Primeape (3× en 1×, met oppervlak). De vorm zelf komt van een foto van een echte nachtaap in de gekozen pose (stap 1), niet van deze sprites; ze dienen voor formaat en bouwtype.
 
 ## Jordi's woorden (letterlijk)
-- (nog niets voor fase 2)
+- 2 nov: "Ik wil richting 1 en 2: nachtwaker met maangezicht. Hier wat inspiratie fotos, zon typisch hangende pose met ogen relatief recht in de camera kijkend (check welke andere sprites dat ook doen) zie ik zitten. Het lichaam wordt nu naar verhouding wat groter tov het hoofd"
+- Gekozen richting: **nachtwaker** (echte *Aotus*-bouw, gehurkt/hangend, starende blik) **met maangezicht** (bleke schijf als maan, witte vlekken boven de ogen als sikkels). Lijf naar verhouding groter t.o.v. de kop dan in fase 1.
+- Foto's: `referenties/foto1_tak_hangend.jpg` (hoofdkandidaat voor de pose: gehurkt over een schuine tak, lijf schuin achter de kop, ogen recht in de camera), `foto2_apenheul_jong_op_rug.jpg`, `foto3_etend.jpg`, `foto4_zittend_frontaal.jpg`. Overzicht: `referenties/vel_pose.png`.
+- Sprites met een 3/4-lijf en een blik recht in de camera: `referenties/frontale_blik.png` (Zorua, Sableye, Slakoth, Mew, Espeon, Persian, Eevee, Pachirisu, Absol, Slowpoke, Delcatty, Quilava).
 - Over de lijn eerder: "in eerste instantie simpel houden: een aap met grote ogen, een genezer-concept en de Nazca-staart"; "de ogen zijn het belangrijkst; kijk naar Jigglypuff, Scream Tail en Espurr"; Psychic-concept: "niet ondersteboven hangen".
 
 ## Bevroren

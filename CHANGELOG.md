@@ -126,3 +126,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.24] - Nachtaap fase 2: voorbereiding
 - Map `docs/concept/sprites/nachtaap_evo/` met `SPEC.md` (lijn, wat uit fase 1 meekomt, afgekeurd) en `referenties/` (fase 1 goedgekeurd, vel met skelet-kandidaten: Aipom, Monferno, Kadabra, Kirlia, Vigoroth, Grovyle, Medicham, Lombre, Grumpig, Primeape).
 - Ontwerp-brainstorm met Jordi loopt (richtingen: nachtwaker, maangezicht, sterrenlezer, leerling-genezer, drager); nog niets besloten.
+
+### [v0.0.25] - Nachtaap fase 2: richting gekozen
+- Jordi kiest **nachtwaker met maangezicht**: gehurkte/hangende pose met de ogen recht in de camera, lijf groter t.o.v. de kop. Vier foto's in `docs/concept/sprites/nachtaap_evo/referenties/` + vel met sprites die ook zo kijken (Zorua, Sableye, Slakoth, Mew, Espeon, Persian, Eevee…). POKEMON.md en SPEC bijgewerkt.

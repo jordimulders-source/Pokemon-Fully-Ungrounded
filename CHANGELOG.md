@@ -141,3 +141,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.27] - Lama (alpaca-evolutie): start (stap 0)
 - Fase 2 van de Fighting-starter: map `docs/concept/sprites/lama/` met `SPEC.md` en `referenties/` volgens `SPRITE_WERKWIJZE.md` (Coathief als voorbeeld). Vastgelegd: wat uit fase 1 meegaat, Jordi's eerdere woorden over de lijn (wolkragen om de poten, vier poten, andere vechtsport dan capoeira), formaatdoel 1100–1550 px, verschil lama/alpaca. Stap 1 (vechtsport, pose + foto, kleur, naam) wacht op Jordi.
+
+### [v0.0.28] - Lama: richting stap 1
+- Jordi: geen BJJ (wordt een losse fakemon), de lama draagt traditionele Andes-kleding die per fase ontwikkelt, voorlopig MMA-handschoenen, kleur echt lama, fase 3 duidelijk anders en volwassener. Vastgelegd in `docs/concept/sprites/lama/SPEC.md` met een voorstel voor de kledinglijn.

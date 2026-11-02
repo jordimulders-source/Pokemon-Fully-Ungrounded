@@ -14,7 +14,7 @@ sys.path.insert(0, HERE)
 import pop3d as P  # noqa: E402
 
 P.COL = {
-    'fur': '#5E4488', 'arm': '#5E4488', 'far': '#45306A', 'head': '#5E4488', 'disc': '#B8A9CC', 'ring': '#2E2048', 'moon': '#FFFFFF',
+    'fur': '#5E4488', 'arm': '#5E4488', 'far': '#45306A', 'head': '#5E4488', 'disc': '#7C66A6', 'ring': '#2E2048', 'moon': '#FFFFFF',
     'stripe': '#3A2858', 'eye': '#E0508A', 'pupil': '#1A1020', 'glint': '#FFFFFF', 'nose': '#8A6070',
     'hand': '#EAD8BE', 'buik': '#E9A866', 'maan': '#D8D0EC', 'farhand': '#B8A48C', 'ear': '#523A7A', 'earin': '#E2C4BC',
 }
@@ -86,21 +86,16 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None):
         ql = (q - pv) @ Rh + pv     # terug naar ongedraaide kopcoördinaten (Rh^T)
         u = (ql - HEAD_C) / HEAD_R
         g = np.full(len(q), groups.index('head'))
-        front = u @ fwd
-        disc = front > 0.40
-        disc &= ~((u[:, 1] > 0.55) & (np.abs(u[:, 2]) < 0.45))   # vacht loopt als wig het voorhoofd in
-        g[disc] = groups.index('disc')
-        rim = (front > 0.28) & (front <= 0.40) & (u[:, 1] > -0.30)
-        g[rim] = groups.index('stripe')
-        mid = (np.abs(u[:, 2]) < 0.06) & (u[:, 1] > 0.12) & (u[:, 1] < 0.75) & (front > 0.3)
-        g[mid] = groups.index('stripe')
-        # één halve maan op het voorhoofd, punten omlaag (Jordi 2 nov); middenstreep loopt eronder tussen de ogen
-        c1 = np.array((-0.66, 0.46, 0.0)); c2 = c1 + np.array((0.04, -0.26, 0))
-        d1 = np.linalg.norm(u - c1, axis=1); d2 = np.linalg.norm(u - c2, axis=1)
-        g[(d1 < 0.52) & (d2 > 0.44) & (u[:, 0] < -0.05)] = groups.index('moon')
+        # Jordi 2 nov (krabbel referenties/jordi_krabbel_halvemaan.png): het enige witte op de kop is één grote
+        # halve maan die de helft van de kop bedekt en over de ogen heen valt, punten omlaag.
+        # Ontworpen in het gezichtsvlak (z, y) van de voorkant: buitencirkel min een lagere binnencirkel.
+        fz, fy = u[:, 2], u[:, 1]
+        o = np.hypot(fz, fy - 0.15) < 0.75
+        i = np.hypot(fz, fy + 0.22) < 0.70
+        g[(u[:, 0] < 0.05) & o & ~i] = groups.index('moon')
         for e in eyes:
             ue = (e - HEAD_C) / HEAD_R
-            g[np.linalg.norm(u - ue, axis=1) < 0.34] = groups.index('ring')
+            g[np.linalg.norm(u - ue, axis=1) < 0.33] = groups.index('ring')
         return g
 
     m.texfn = texfn
@@ -108,7 +103,7 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None):
     def bodyfn(q, groups):
         g = np.full(len(q), groups.index('fur'))
         x, y, z = q[:, 0], q[:, 1], q[:, 2]
-        if motief:
+        if motief == 'buik':
             # oranje borst/buik zoals de echte nachtaap (foto 4), voorkant onder de kop
             g[(x < 4) & (y < 12) & (z > -14) & (x + 0.6 * y < 2)] = groups.index('buik')
         # patroon in 'uitgerolde' rugcoördinaten: x langs de ruggengraat, sa = booglengte vanaf de rugmiddenlijn

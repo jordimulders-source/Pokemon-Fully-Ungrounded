@@ -39,3 +39,8 @@ Een klein kolibrietje dat uit een **hangende kantutabloem** kijkt, de bloem als 
 
 ## Twijfel Jordi (2 nov): "je hebt niet echt Pokémon die in een bloem zitten qua sprite"
 Precedenten uit de repo: `referenties/omhulsel_pokemon.png`. **Cherrim** (overcast) zit helemaal in een gesloten bloemknop (paars, hangend, alleen de knop zichtbaar), **Flabébé** zit op een bloem, **Applin** woont in een appel, **Burmy** in een mantel, **Cubone** onder een schedel, **Morelull** onder een paddenstoelhoed. Een kantutabloem als capuchon (bloem over kop en rug, kopje en snavel steken eruit) ligt het dichtst bij Cherrim + Morelull.
+
+## Type (Jordi, 2 nov): "pure flying type die pas per evolutie ghost wordt"
+- Pre-evo = **puur Flying**; de eindvorm wordt Ghost/Flying. Precedent in de repo: Rookidee/Corvisquire (puur Flying) → Corviknight (Flying/Steel); puur Flying zijn hier verder alleen Taillow, Swellow en Tornadus, dus de rol is vrij.
+- Gevolg voor het ontwerp: **nog geen Ghost-kenmerken** (geen zielvlammetje, geen torpor-"dood"-look, geen spinrag-lijkwade). Een gewone, levende jonge kolibrie; het fluweelviolet mag als voorbode, het spookachtige (bleke vlammetjes, doorzichtige vleugels) komt pas bij de evolutie. Verhaalhaak: hij wordt pas zielenbode na zijn eerste torpor (evolutie).
+- Richting A (jong vogeltje) past hier het best; C kan als kantuta een gewone bloem is waar hij nectar uit drinkt (geen ziel in de bloem).

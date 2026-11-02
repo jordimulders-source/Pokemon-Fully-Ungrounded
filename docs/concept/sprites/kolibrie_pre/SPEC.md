@@ -5,7 +5,8 @@
 ## Onderdelen
 | onderdeel | bron / referentie | Jordi's woorden | status |
 |---|---|---|---|
-| richting/concept | `ONTWERP.md` (A torporkuiken, B nestje, C kantuta) | "laten we met de pre-evo van de kolibrie beginnen" | open |
+| richting/concept | `ONTWERP.md` (A jong vogeltje, B nestje, C kantuta) | "laten we met de pre-evo van de kolibrie beginnen" | open (A of C) |
+| type | puur Flying; eindvorm Ghost/Flying | "pure flying type die pas per evolutie ghost wordt" | besloten |
 | pose | foto van Jordi (nog nodig) | — | open |
 | kleurfamilie | eindvorm `kolibrie/af/kolibrie.png` | — | volgt de eindvorm |
 | formaat | ±450–650 px (eindvorm ±1000 px) | — | richtlijn |

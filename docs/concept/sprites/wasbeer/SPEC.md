@@ -178,4 +178,5 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 
 ## Kleur v2 (stap 3, op silhouet S1a)
 - Ronde 1 (`kleur_v2/`, maker na Game Freak-studie `STUDIE.md`): keuring `KEURING_ronde1.md` FAIL 9/10 (helmmasker, rode-stipoog, klauw als handschoen, buidel als voorwerp, plat volume, blokringen). Ronde 2: alle reparaties uitgevoerd (alpha-diff 0, geen open randen); `vel_ronde2.png`. Open voor Jordi: grijstemperatuur, crème of donkere handen, verre oog, buidelkleur, lichtere borst.
+- Ronde 3 (`vel_ronde3.png`, `vergelijk_r1_r3.png`): reparaties per onderdeel naast echte sprites; geheel nog dof en egaal grijs. Jordi: "1 ja warmer, rest zoals het nu is, blijf vergelijken met andere sprites, dragonflycave guide etc en laat agents keuren". **Bevroren:** crème handen/klauwen, verre oog houden, buidel eigen bruintint, borst zoals nu. Kleur: 10–15% warmer grijsbruin.
 

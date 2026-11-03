@@ -60,6 +60,8 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 
 - Jordi 3 nov: "tapse wiggen liht zie ik wel zitten" → **lijfpatroon: lichte tapse wiggen** (3 stuks vanaf de ruggengraat, gespiegeld, verschillende lengtes, één kené-trede; techniek Growlithe/Slakoth, kleur maanzilver). 3D: motief 'wiggen_licht', projectie `silhouet/wiggen_64.npy`. Over de ogen van ronde 10: "ogen zijn zeer sterk" → **ogen ronde 10 bevroren**.
 
+- Jordi 3 nov (ronde 11): "beter, maar de achterste lijn bij de staart is nu wel slordig. Desondanks denk ik dat die klaar is voor de strenge sprite keuring".
+
 ## Silhouet
 - Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
 - **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.

@@ -184,3 +184,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.41] - Lama fase 2: silhouet ronde 5d
 - Jordi: "als c nu gewoon een staart zou hebben, zou die het beste zijn" → ronde 5d: 5c met de staartpluim van 5b terug (rest pixel voor pixel 5c, 0 korrels). Wacht op Jordi. Les: één versie naar Jordi, geen meerdere imperfecte opties (`docs/lessen/SPRITE_OPDRACHT.md` §4).
+
+### [v0.0.42] - Lama fase 2: silhouet ronde 5e (kop driekwart)
+- Jordi twijfelde over de kophouding van 5d. Oren nu vanaf het achterhoofd naar achteren in een V zoals het poppetje, schedel iets langer; rest gelijk aan 5d. Wacht op Jordi.

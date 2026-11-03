@@ -159,3 +159,37 @@ De staart staat met de hand als spans in `spans_ronde5d.py`, toegepast op `ronde
 
 ## Les (5d)
 - Bij een oplopende rug moet de staart een eigen vorm boven het kruis zijn (minstens 4–5 rijen hoog). Een koepel van 1 rij gaat op in het kruis en leest niet meer als staart. Na een reparatie aan de bovenlijn altijd nakijken of de kenmerken die daar uitsteken (staart, oren) nog op 1× lezen.
+
+---
+
+# Ronde 5e (zelfde maker, 3 nov): kop driekwart
+
+Jordi (letterlijk): "ik twijfel of de pose van het hoofd nu nog goed genoeg is, verder lijkt het wel oke ondanks dat het anders is dan het model". Claude's diagnose: in 5d staan de oren kaarsrecht en evenwijdig midden op een symmetrische kop, wat leest als frontaal of als een konijn.
+Alleen de kopzone (y0–21) is opnieuw met de hand gezet in `spans_ronde5e.py`, toegepast op `ronde5d.txt`, met als uitvoer `ronde5e.txt` / `ronde5e_1x.png`. Vel: `vel_ronde5e.png` (`vel5e.py`): alleen 5e op 4× en 1×, 5e over het poppetje, de kop 8× naast de poppetjeskop (+ omtrek erover) en de 1×-toets naast Girafarig, Ponyta, Rapidash en Stantler. Controles: `controle_uitvoer_5e.txt`, `korrel_uitvoer_5e.txt`.
+
+**Resultaat:** 1422 px, box 43×62, kop 32 % van de hoogte (16 % van het oppervlak). `korrel.py`: **0 / 0 / 0**. 1 component, 0 losse px, 0 gaten.
+
+## Kopzone en diff
+- **Kopzone y0–21: +46 / −39 px.** Vanaf y22 (hals, halsband, lijf, staart, poten): **0 px diff** met `ronde5d.txt`.
+- Max. afstand tot de bron (`direct.txt`): nabij oor 2,0 px, ver oor 3,2 px, schedel + snuit 3,2 px (de 3,2 zit in het achterhoofd, dat bewust langer is; de snuit is gelijk aan 5d).
+
+## Wat er veranderde
+- **Oren:** banaanoren die vanaf de bovenkant/achterkant van de schedel naar achteren/rechts hellen, in een smalle V met 2–4 kolommen lucht ertussen.
+  - Het nabije oor loopt van de voet x17–19 (y9) naar de top x20–21 (y1).
+  - Het verre oor begint lager (top y2) en schuiner, van de voet x22–25 (y9) naar de top x26–27.
+  - Beide oren zijn breedst halverwege (kwast binnen de oorbreedte) en buigen niet naar elkaar toe, dus geen lier.
+  - Een eerste poging met het verre oor tot x28 (top y3) week 4 px af van het poppetje en gaf een te wijde V. Die heb ik teruggezet naar de helling van het poppetje.
+- **Schedel:** 1–2 px langer naar achteren (x28 op y13–16). Het achterhoofd loopt via een zachte nek (x26, y18–20) door in de achterrand van de hals (x27). De kop is daardoor niet meer symmetrisch rond de oren.
+- **Snuit:** ongewijzigd, stomp naar links-voor (x11, y15–17), ronde kin, geen sik. De onderlip komt in de kleur.
+
+## Toets op 1× (vel)
+- Naast Girafarig, Ponyta, Rapidash en Stantler leest de kop nu driekwart: de oren staan schuin achter op de kop, de snuit wijst naar links en de schedel loopt door in de hals. Je ziet geen konijnenoren meer midden boven op de kop.
+- De 8×-kop naast de poppetjeskop heeft dezelfde opbouw: oren in een V boven/achter, snuit links, achterhoofd naar de hals.
+
+## Eerlijk
+- Het voorhoofd is nog steeds een rechte trap van 45° (y10 x16 → y15 x11), zoals in het poppetje en eerder door de keurder geaccepteerd.
+- De kop is 1–2 px langer naar achteren dan het poppetje, zoals gevraagd.
+- Onderlip, oorkwasten, oog en neusgaten zitten alleen in de kleur.
+
+## Les (5e)
+- Driekwart lees je op 1× vooral aan de oren: als ze evenwijdig en recht boven het midden van de kop staan, oogt de kop frontaal (konijn). Laat ze in een V naar achteren hellen, met het verre oor lager en schuiner, en verleng het achterhoofd tot in de hals. Een te wijde V wijkt van het poppetje af en wordt een gewei.

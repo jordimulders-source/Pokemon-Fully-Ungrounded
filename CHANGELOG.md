@@ -169,3 +169,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.26] - Nachtaap fase 2: frontsprite af
 - Verse eindkeuring met vergelijking tegen echte sprites en de Dragonfly Cave-gids (`docs/concept/sprites/nachtaap_evo/kleur/ronde14/EINDKEURING.md`, 17 gidsregels): twee kleine FAILs in de crème tenen (bruine onderrand aan de schaduwkant → zwart, hark op de achtervoet), 8 px door Claude gerepareerd; alpha-diff 0 tegen het bevroren silhouet.
 - **Af:** `docs/concept/sprites/nachtaap_evo/af/nachtaap_evo.png` (+ `normal.pal`, `vel.png`, `EINDKEURING.md`). Jordi: "Het concept ben ik gewoon tevreden mee". Nog te doen: frame 2, rugsprite, icoon, shiny, naam en data.
+- Prompt voor een nieuw gesprek over nachtaap fase 3 (eindvorm): `docs/concept/sprites/PROMPT_NACHTAAP_FASE3.md`.

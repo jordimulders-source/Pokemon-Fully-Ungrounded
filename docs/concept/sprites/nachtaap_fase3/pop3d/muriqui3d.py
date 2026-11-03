@@ -48,7 +48,7 @@ def hand(m, wrist, fwd, side, g, gt, curl=0.0, spread=1.0, k_=1.0):
         m.chain([(*mid, 2.8 * k_), (*tip, 2.6 * k_)], gt, 0.8)
 
 
-def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0, drie=False, greep=0.0):
+def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0, drie=False, greep=0.0, vijf=False):
     """Healergebaar: platte handpalm naar de kijker, lange vingers gespreid omhoog (Mega Alakazam, Mr. Mime)."""
     up = np.array(up, float); up /= np.linalg.norm(up)
     nrm = np.array(nrm, float); nrm -= up * (nrm @ up); nrm /= np.linalg.norm(nrm)
@@ -60,9 +60,11 @@ def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0,
     # dikke vingers in een waaier, vingers korter dan de palm
     fingers = ((-1.25, 0.9), (0, 1.0), (1.25, 0.9)) if drie else ((-1.6, 0.85), (-0.55, 1.0), (0.55, 1.0), (1.6, 0.85))
     fr = 4.3 if drie else 3.3
+    if vijf:   # Mr. Mime/Machamp/Dusknoir (referenties/handen_vijf_vingers.png): 4 dikke vingers in een waaier + duim
+        fingers = ((-1.6, 0.85), (-0.55, 1.0), (0.55, 1.0), (1.6, 0.85)); fr = 4.0
     for k, ln in fingers:
         fd = up + side * k * 0.32 * spread; fd /= np.linalg.norm(fd)
-        b = pc + side * k * (4.6 if drie else 3.6) * k_ + up * 6 * k_
+        b = pc + side * k * (4.6 if drie else 4.4 if vijf else 3.6) * k_ + up * 6 * k_
         mid = b + fd * 6 * ln * k_ * ln_
         # greep: tweede kootje krult over een onzichtbare tak, naar achteren (weg van de kijker) en omlaag
         fd2 = fd * (1 - greep) + (-nrm * 0.8 - up * 0.6) * greep; fd2 /= np.linalg.norm(fd2)
@@ -177,7 +179,7 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaa
         # Jordi's handkrabbel (referenties/jordi_krabbel_hand.png): pols knikt naar achteren, vingers OMHOOG, duim
         # links, palm naar de tegenstander (= de kijker): het stop-/healgebaar onder de kop
         open_hand(m, np.array((-52.0, -62, 28)), (-0.15, 1, 0.1), view, 'hand', 'tip',
-                  spread=1.0 if gebaar == 'A' else 1.5, k_=1.25, duim=True, ln_=0.8, drie=True)
+                  spread=1.0 if gebaar == 'A' else 1.25, k_=1.3, duim=True, ln_=0.85, vijf=True)
         # verre been omhoog, knie gebogen naar voren, voet gekruld om een onzichtbare tak
         m.chain([(18, 14, -14, LIMB + 4), (12, 40, -18, LIMB), (24, 58, -20, LIMB - 3)], 'far')
         hand(m, np.array((24.0, 58, -20)), (0.3, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0, k_=1.4)

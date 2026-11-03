@@ -30,6 +30,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
 - 3 nov: "de pose is akkoord, maar het ziet er verder nog niet mooi uit. De twee armen moeten dus echt handen hebben met vingers. Moet je dat nu fixen of later?" → **pose akkoord**; nu gefixt (het silhouet komt direct uit de render): geheven hand = grijpende hand met zichtbare vingers en duim, palm naar de kijker.
 - 3 nov: "maar kijk anders even naar andere pokemon hoe je handen moet maken, anders zijn we echt nog uren bezig" → studie `referenties/handen_studie.png` (Ambipom, Hariyama, Mega Alakazam, Simipour, Machamp …): brede palm, 3 korte dikke vingers in een waaier, losse schuine duim, vingers korter dan de palm. Beide handen zo.
 - 3 nov: "ja en die bovenste hand moet dus een onzichtbare tak vasthouden" → bovenste hand: vingers krullen over de tak (greep).
+- 3 nov: "zoek meer handen zoals mr mime en machamp met 5 vingers en open" + "en ga dan vergelijken" → `referenties/handen_vijf_vingers.png` (12 sprites) en `referenties/handen_vergelijking.png` (op eindvormmaat): open hand = 4 dikke vingers (±2 px) in een waaier + duim, palm zichtbaar, hand ±½ kop. Healerhand nu zo (`vijf=True`).
 
 ## 3D-poppetje
 - `pop3d/muriqui3d.py` (renderer `pop3d/pop3d.py`, kopie van fase 2). Kleuren alleen ter oriëntatie (lijnkleuren van fase 2).

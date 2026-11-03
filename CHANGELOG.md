@@ -127,5 +127,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Nieuwe map `docs/concept/sprites/kolibrie_pre/`: pre-evolutie van de kolibrie, puur Flying (wordt Ghost/Flying bij de evolutie), zittend jong met ingeklapte vleugels en open bedelbekje; foto's van Jordi in `referenties/`.
 - Ontwerp: drie richtingen (A jong vogeltje gekozen), mild lila kleur zoals Fletchling vóór Fire, korte snavel bewust.
 - 3D-poppetje uit bollen (79–88% overlap) en opgeblazen silhouet geprobeerd; gaven geen goed beeld. Silhouet met de hand (maker-agent) en kleurrondes r1–r10 met keuringen; goedgekeurd: kop r8 lager, Starly-oog, snavel r7b met lijn bij de mondhoek, palet.
-- r10 afgekeurd (geen driekwart pose, lijnen); volgende stap een slank 3/4-silhouet. Overdracht bovenaan `SPEC.md`.
+- r10 afgekeurd (geen driekwart pose, lijnen); volgende stap een 3D-model op de goedgekeurde vorm, gedraaid naar 3/4, daarna het silhouet daaruit. Overdracht bovenaan `SPEC.md`.
 - Lessen in `docs/lessen/SPRITE_WERKWIJZE.md` (poppetje passend op de foto, keurder nooit inperken).

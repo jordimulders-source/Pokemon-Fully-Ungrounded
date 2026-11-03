@@ -25,3 +25,9 @@ Jordi (3 nov): "wacht voordat we een kleur bepalen, wat voor design gaan we er v
 Jordi: "Ik kan me niet zo goed een beeld voorstellen bij wat je noemt, kan je wat schetsen maken? En idd loom, trager zou prima zijn. Wat meer een wall"
 - Ruwe schetsen op de echte sprite (gescript, geen eindwerk): 1 zoutkorst, 2 + pekelzak, 3 + zoutkegel-staart, 4 alles + korstschild (platen op de rug) en een half dichtgevallen oog (loom).
 - **Karakter (Jordi):** loom en traag, een **wall**. Gedachte: hij beweegt zo weinig dat de zoutkorst op hem aangroeit (vandaar het schild).
+
+## Keuzes na ronde 1 (Jordi, 3 nov)
+Jordi: "de zoutkegel is wel lastig qua perspectief te zien hierop. Ik zie de zoutkorst 100% zitten en ook de pekelzak ziet er mooi uit. Het half dichtgevallen oog is ook goed te doen gezien de originele sprite, alleen ik twijfel over de zoutkegel, alleen als we dat mooi kunnen visualiseren. De zoutkuif is niks mis mee op zichzelf denk ik"
+- **Ja:** zoutkorst (zeshoeken), pekelzak, half dichtgevallen oog, zoutkuif (platen op de rug).
+- **Twijfel:** zoutkegel. Schetsen ronde 2 (`schetsen_ronde2.png`, `scripts/schets2.py`): A zonder, B kegel achter hem, C staart in de kegel, D twee kegels.
+- Oordeel Claude: op 64 px leest een kegel als een steen, ei of vin. Voorstel: de kegel níet in de sprite, maar als **gedrag**: in de overworld van de salar liggen zoutkegels, en sommige zijn een Silicobra (een verrassingsencounter, vgl. de Voltorb-ballen); plus de dex-tekst over de zoutwinners.

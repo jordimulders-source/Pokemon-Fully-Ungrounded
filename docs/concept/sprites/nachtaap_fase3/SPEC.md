@@ -28,6 +28,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
 - 3 nov, handkrabbel `referenties/jordi_krabbel_hand.png` ("zie hier mijn lelijke sketch", "dit is toch niet zo moeilijk"): hand aan het eind van de onderste arm, linksonder de kop; pols knikt naar achteren, **vingers omhoog, duim links, palm naar de tegenstander**. Render: `pop3d/pose_40_80_healerhand.png` (groot + 1×).
 - 3 nov: "ja dit is veel beter al is de hand nu overdreven groot" → hand kleiner (schaal 1,6 → 1,25, ongeveer de maat van de voeten).
 - 3 nov: "de pose is akkoord, maar het ziet er verder nog niet mooi uit. De twee armen moeten dus echt handen hebben met vingers. Moet je dat nu fixen of later?" → **pose akkoord**; nu gefixt (het silhouet komt direct uit de render): geheven hand = grijpende hand met zichtbare vingers en duim, palm naar de kijker.
+- 3 nov: "maar kijk anders even naar andere pokemon hoe je handen moet maken, anders zijn we echt nog uren bezig" → studie `referenties/handen_studie.png` (Ambipom, Hariyama, Mega Alakazam, Simipour, Machamp …): brede palm, 3 korte dikke vingers in een waaier, losse schuine duim, vingers korter dan de palm. Beide handen zo.
+- 3 nov: "ja en die bovenste hand moet dus een onzichtbare tak vasthouden" → bovenste hand: vingers krullen over de tak (greep).
 
 ## 3D-poppetje
 - `pop3d/muriqui3d.py` (renderer `pop3d/pop3d.py`, kopie van fase 2). Kleuren alleen ter oriëntatie (lijnkleuren van fase 2).

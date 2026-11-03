@@ -11,24 +11,26 @@ def sprite(p):
     return Image.fromarray(rgba)
 def bg(im, k):
     v = Image.new('RGB', im.size, BG); v.paste(im, (0, 0), im); return v.resize((im.width * k, im.height * k), Image.NEAREST)
-STANDEN = [('K1', 15, 14), ('K2', 25, 15), ('K3', 35, 17)]
+import sys
+RONDE = len(sys.argv) > 1
+STANDEN = [('R0', 15, 14, 0), ('R1', 15, 14, 1.5), ('R2', 15, 14, 2.5)] if RONDE else [('K1', 15, 14, 0), ('K2', 25, 15, 0), ('K3', 35, 17, 0)]
 cel = 256
 V = Image.new('RGB', (24 + 5 * (cel + 14), 52 + cel + 40 + 110), 'white'); d = ImageDraw.Draw(V)
-d.text((24, 14), 'Kolibrie pre-evo, model ronde 2: lijf B2, kop als ronde bol met het gezicht naar de kijker', font=FB, fill=INK)
+d.text((24, 14), ('Kolibrie pre-evo K1: lijf ronder (R0 = zoals het was, R1/R2 = rondgemaakt, zelfde oppervlak)' if RONDE else 'Kolibrie pre-evo, model ronde 2: lijf B2, kop als ronde bol met het gezicht naar de kijker'), font=FB, fill=INK)
 ref = [('Taillow', sprite('../../../../../graphics/pokemon/taillow/anim_front.png')), ('Starly', sprite('../../../../../graphics/pokemon/starly/anim_front.png'))]
 y = 48; x = 24
 for naam, im in ref:
     V.paste(bg(im, 4), (x, y)); d.text((x, y + cel + 4), naam, font=F, fill=GR)
     V.paste(bg(im, 1), (x, y + cel + 30)); x += cel + 14
-for naam, h, p in STANDEN:
-    img, al = K.render(h, p)
+for naam, h, p, g in STANDEN:
+    img, al = K.render(h, p, rond=g)
     rgba = Image.fromarray(np.dstack([img, al * 255]).astype(np.uint8))
     V.paste(bg(rgba.resize((cel, cel), Image.LANCZOS), 1), (x, y))
     d.text((x + 6, y + 4), naam, font=FB, fill=INK)
-    d.text((x, y + cel + 4), f'kop {32 + h} gr · {M.naar64(al).sum()} px', font=F, fill=GR)
+    d.text((x, y + cel + 4), (f'K1, lijf rond {g} · {M.naar64(al).sum()} px' if RONDE else f'kop {32 + h} gr · {M.naar64(al).sum()} px'), font=F, fill=GR)
     V.paste(bg(rgba.resize((64, 64), Image.LANCZOS), 1), (x, y + cel + 30))
     sil = Image.fromarray(np.where(M.naar64(al), 40, 236).astype(np.uint8)).convert('RGB')
     V.paste(sil, (x + 74, y + cel + 30))
     x += cel + 14
 d.text((24, y + cel + 100), 'Onder elk: 1x (render verkleind) en het silhouet dat eruit komt. Oog = Starly-oog op de plek die de kop geeft (nu op de voorkant, niet de zijkant).', font=F, fill=GR)
-V.save('vel_kop3d.png')
+V.save('vel_rond.png' if RONDE else 'vel_kop3d.png')

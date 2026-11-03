@@ -117,7 +117,7 @@ def bouw(dik=0.80, kopdik=0.92):
 def render(occ, Z, yaw=0.0, kop_extra=0.0, kantel=0.0, licht=True, pivot=(24.0, 22.5), kleur_fn=None, oog3d=None):
     vol = occ > 0
     surf = vol & ~nd.binary_erosion(vol)
-    sm = nd.gaussian_filter(vol.astype(np.float32), 2.6)
+    sm = nd.gaussian_filter(vol.astype(np.float32), 3.4)
     iy, ix, iz = np.nonzero(surf)
     gy, gx, gz = [g[iy, ix, iz] for g in np.gradient(sm)]
     n = -np.stack([gx, gy, gz], 1); n /= np.linalg.norm(n, axis=1, keepdims=True) + 1e-9

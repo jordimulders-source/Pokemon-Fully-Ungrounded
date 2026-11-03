@@ -16,10 +16,19 @@ def frame(h, p):
     s = np.cross(u, f); s *= np.sign(s[2]) if s[2] else 1
     return f, u, s
 
-def bouw(h=25, p=15, c=(23.0, 17.6), r=(8.2, 7.6, 7.9), snavel=7.5, gaap=40):
+def glad(m, sigma):
+    """masker op voxelresolutie rond maken met behoud van oppervlak (sigma in spritepx)"""
+    up = np.kron(m.astype(np.float32), np.ones((U, U), np.float32))
+    if not sigma: return up > 0.5
+    g = nd.gaussian_filter(up, U * sigma)
+    t = np.sort(g.ravel())[::-1][int(up.sum())]
+    return g > t
+
+def bouw(h=25, p=15, c=(23.0, 17.6), r=(8.2, 7.6, 7.9), snavel=7.5, gaap=40, rond=0.0):
     """h = kop extra naar de kijker t.o.v. het lijf, p = bekje omhoog, c = kopmidden (spritepx), r = stralen f/u/s"""
     lijfm = (M.LIJF & ~M.KOP) | (M.LIJF & (M.yy >= 21) & (M.xx >= 19))
-    lijf = M.op(lijfm); vl = M.op(M.VLEUGEL, 0.4); staart = M.op(M.STAART, 0.4); poot = M.op(M.POOT, 0.3)
+    lijf = glad(lijfm, rond) if rond else M.op(lijfm)
+    vl = (glad(M.VLEUGEL, rond) if rond else M.op(M.VLEUGEL, 0.4)) & lijf; staart = M.op(M.STAART, 0.4); poot = M.op(M.POOT, 0.3)
     wl = M.breedte(lijf, 0.80)
     Zmax = int(max(wl.max(), max(r) * U) + 4 * U)
     zs = np.arange(-Zmax, Zmax + 1)[None, None, :]

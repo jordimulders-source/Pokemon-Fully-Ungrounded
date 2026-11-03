@@ -34,6 +34,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Referentiefoto = inspiratie, geen blauwdruk (Pokémon-filosofie), maar de soort moet herkenbaar blijven.
 
 **Werkwijze**
+- **Een goedgekeurd poppetje/ontwerp is de specificatie:** het silhouet trekt het over (max. ±1 px), de maker interpreteert of herontwerpt het niet (Jordi, 3 nov, lamakop: "de kop is dus niet goed want die is anders").
 - **Wat Jordi goedkeurde blijft letterlijk staan** (pixel voor pixel). "Meer Pokémon" of "beter" nooit uitvoeren door goedgekeurde verhoudingen te veranderen.
 - **Een kleine correctie is klein:** werk binnen het pixelbudget dat Claude opgeeft; tel en meld het aantal gewijzigde pixels. Verplaats je een onderdeel, laat dan de vorm eromheen meekloppen (neus verschuiven = snuit mee).
 - Grote of ongevraagde wijzigingen alleen als variant naast het origineel.

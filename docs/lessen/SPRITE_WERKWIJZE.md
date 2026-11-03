@@ -90,3 +90,12 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - Commit en push na elke ronde (ook interne), zodat niets verloren gaat.
 - **Gemeten (Coathief, 25 okt, uit de sessielogs `~/.claude/projects/.../*.jsonl`):** hoofdsessie ±0,4M output + 0,75M nieuwe input; één maker-agent over 13 rondes ±0,57M output + 3,6M nieuwe input (76M cache-reads, doordat zijn context bleef groeien); 4 keurders samen ±0,3M output + 0,8M nieuwe input. De 6 voorpootrondes zonder raster waren het duurste deel. Zuiniger: overtrekvel vanaf de eerste vormreparatie, kleine pixelreparaties (< 15 px) door Claude zelf, en een maker die erg lang doorloopt na ±8 rondes vers starten met SPEC + NOTITIES.
 - Oudere sprites (olinguito, kolibrie) hebben geen logs meer in de container; alleen schattingen in `RETRO_KOLIBRIE.md` en `SPRITE_REVIEW.md`. Noteer daarom voortaan de gemeten kosten per sprite in zijn SPEC.md.
+
+## Lessen lama fase 2 (2–3 nov)
+- **Keur het poppetje kenmerk-voor-kenmerk naast de echte foto** (vooral de kop) vóór Jordi: de paardenkop van het poppetje glipte door en kostte ±10 rondes sprite (Jordi: "toch net wat meer een paard dan een lama").
+- **Pose per dier uit het echte gedrag + Gen 3-posestudie** (`lama/fase2/posestudie/`): een lama staat horizontaal met de kop driekwart naar je toe (Manectric/Rapidash/Umbreon); "poten omhoog" is bij een lama gek, een opgetilde/geknikte poot leest als "gebroken".
+- **Korrel tellen:** wolomtrek met een script nalopen op 1-px-bobbels/inkepingen (`lama/fase2/silhouet_r3/korrel.py`); Game Freak-wol (Mareep/Flaaffy) is bijna glad met 2–3 grote bogen.
+- **Kleur nooit met tintwissel-scripts per zone**: gaf horizontale banden/stempelschulpen (de keurder vond het in 2b).
+- **Oog:** droog = rechte lidlijn, pupil tegen het lid, licht laag vóór; nooit een zwart rondje met een wit puntje (oogstudie `lama/fase2/oogstudie/`).
+- **Verse maker na ±8–9 rondes** (context >400k) met SPEC + NOTITIES + keuring: werkte direct beter en goedkoper.
+- **Echte bronfoto's controleren op de soort** (foto 6 bleek een alpaca).

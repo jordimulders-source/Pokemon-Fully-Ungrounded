@@ -172,3 +172,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.37] - Lama fase 2: ronde 2 (meer lama, fluffy, Pokémon-kleuren)
 - Na Jordi's feedback (hoekige poten, rechte poot, vacht niet Pokémon-achtig, te weinig lama): diagnose naast de bron, nieuw silhouet (banaanoren, stompe snuit, wolhals, wolmouwen/-broek, zachte knieën; Jordi akkoord), warme heldere vachtramp, wol in klonten; Claude-controle, verse keuring (BIJNA), verse maker voor ronde 2c: `docs/concept/sprites/lama/fase2/kleur/ronde2c/vel.png`. Wacht op Jordi.
+
+### [v0.0.38] - Lama fase 2: terug naar de bron, nieuwe kop en pose
+- Jordi: de kop was "meer een paard dan een lama", het oog moest droger, de hals kaarsrecht, de wol minder klonterig/korrelig, de pose niet "gebroken". Poppetje ronde 3 (lamakop met half gesloten bovenlid, kaarsrechte ruige hals) goedgekeurd; oogstudie (Camerupt, Farfetch'd, Numel, Slakoth-lijn); posestudie (24 Gen 3-viervoeters); poppetje ronde 5: lijf horizontaal, kop driekwart, alle poten op de grond, Jordi koos pose F. Bron voor silhouet ronde 5 klaar; overdracht in `docs/concept/sprites/lama/SPEC.md` (VOLGENDE STAP). Lessen in `docs/lessen/SPRITE_WERKWIJZE.md`.

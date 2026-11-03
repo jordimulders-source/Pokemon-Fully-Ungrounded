@@ -27,6 +27,7 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 
 - **Een profiel opblazen en draaien geeft geen 3/4** (kolibrie pre-evo, 3 nov): het lijf draait mee, maar de kop blijft een platte profielkop met het oog op de zijkant. Gen 3-driekwart is gesmokkeld: ronde kop als eigen bol bovenop/voor het lijf, gezicht naar de kijker, oog in het middelste derde van de kop. Bouw de kop in 3D als eigen bol; een overlapeis met een profiel geldt alleen voor het lijf. Toets elk hoekenvel vóór Jordi op 8× naast Taillow/Starly op de kop, niet alleen op de houding; plak het oog niet als plaatje (dat verbergt dat het op de zijkant zit).
 - **Een 3D-render leest door schaduw; het silhouet moet dezelfde vormen tonen zonder schaduw** (kolibrie pre-evo): kop, borst, staart en bek moeten in de omtrek zelf een inham of uitsteeksel hebben. Pas het model aan tot het verkleinde silhouet alleen al leest; repareer het niet achteraf met de hand. Toets: render en silhouet op 1× naast elkaar.
+- **Toon een silhouet uit een model altijd als rode omtrek óver de render** (niet alleen als losse zwarte vlek ernaast): een zwart vlak naast een belichte render lijkt een andere vorm, ook als de omtrek klopt (kolibrie pre-evo: 95% gelijk, toch "compleet verschillend"). En: niet tussen twee keuzes van Jordi het model ongevraagd veranderen; elke wijziging = nieuw voorstel naast het gekozen model.
 - **Twijfelt Jordi aan een silhouet, vraag eerst wat hij ziet** vóór er een kleurronde start.
 
 ## Stap 2. Silhouet op 64×64 (één kleur) → Jordi keurt

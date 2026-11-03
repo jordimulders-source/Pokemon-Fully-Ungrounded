@@ -20,10 +20,10 @@ P.COL = {
     'fur': '#5E4488', 'far': '#45306A', 'head': '#5E4488', 'mask': '#2E2048', 'moon': '#FFFFFF',
     'snuit': '#8C6A9C', 'eye': '#D83C3C', 'pupil': '#1A1020', 'glint': '#FFFFFF',
     'hand': '#5E4488', 'farhand': '#45306A', 'tip': '#EAD8BE', 'fartip': '#B8A48C',
-    'blad': '#5E9A4A', 'nerf': '#3C6E34',
+    'blad': '#5E9A4A', 'nerf': '#3C6E34', 'tak': '#8A6A4A', 'bol': '#B9935E',
 }
 P.NOSHADE = {'mask', 'moon', 'eye', 'pupil', 'glint'}
-P.LINED = {'eye', 'snuit', 'blad'}
+P.LINED = {'eye', 'snuit', 'blad', 'tak', 'bol'}
 
 HEAD_C = np.array((-8.0, 80.0, 0.0))
 HEAD_R = 22.0
@@ -48,30 +48,31 @@ def hand(m, wrist, fwd, side, g, gt, curl=0.0, spread=1.0):
         m.chain([(*mid, 2.8), (*tip, 2.6)], gt, 0.8)
 
 
-def open_hand(m, wrist, up, nrm, g, gt, spread=1.0):
+def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0):
     """Healergebaar: platte handpalm naar de kijker, lange vingers gespreid omhoog (Mega Alakazam, Mr. Mime)."""
     up = np.array(up, float); up /= np.linalg.norm(up)
     nrm = np.array(nrm, float); nrm -= up * (nrm @ up); nrm /= np.linalg.norm(nrm)
     side = np.cross(up, nrm)
     Rp = np.stack([side, up, nrm], 1)          # lokale assen -> wereld
-    pc = wrist + up * 7
-    m.ell(pc, (8, 8.5, 4), g, Rp)
+    pc = wrist + up * 7 * k_
+    m.ell(pc, np.array((8, 8.5, 4)) * k_, g, Rp)
     for k, ln in ((-1.6, 0.85), (-0.55, 1.0), (0.55, 1.0), (1.6, 0.85)):
         fd = up + side * k * 0.32 * spread; fd /= np.linalg.norm(fd)
-        b = pc + side * k * 3.6 + up * 6
-        mid = b + fd * 6 * ln
-        tip = mid + fd * 6 * ln
-        m.chain([(*b, 3.3), (*mid, 3.0)], g, 0.8)
-        m.chain([(*mid, 3.0), (*tip, 2.8)], gt, 0.8)
+        b = pc + side * k * 3.6 * k_ + up * 6 * k_
+        mid = b + fd * 6 * ln * k_
+        tip = mid + fd * 6 * ln * k_
+        m.chain([(*b, 3.3 * k_), (*mid, 3.0 * k_)], g, 0.8)
+        m.chain([(*mid, 3.0 * k_), (*tip, 2.8 * k_)], gt, 0.8)
 
 
 def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40):
     m = P.Model()
     # romp: groot buikje onder (muriqui), brede borst en schouders, korte nek; massa zoals Hariyama/Slaking
-    m.ell((-3, 8, 0), (24, 26, 23), 'fur')
-    m.ell((0, 36, 0), (21, 22, 23), 'fur')
-    m.ell((1, 54, 0), (16, 11, 26), 'fur')        # schouders
-    m.chain([(0, 58, 0, 13), (-5, 66, 0, 13)], 'fur')
+    if pose != 'krabbel':
+        m.ell((-3, 8, 0), (24, 26, 23), 'fur')
+        m.ell((0, 36, 0), (21, 22, 23), 'fur')
+        m.ell((1, 54, 0), (16, 11, 26), 'fur')        # schouders
+        m.chain([(0, 58, 0, 13), (-5, 66, 0, 13)], 'fur')
     view = np.array((-math.sin(math.radians(yaw)), 0, math.cos(math.radians(yaw))))   # richting naar de kijker
     if pose == 'p1':
         # benen: lang en ontspannen (Jordi: "de benen zijn ook te recht", "mogen veel relaxter"): knieën gebogen en
@@ -143,6 +144,31 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40):
         hand(m, np.array((-8.0, -57, 24)), (-0.3, -1, 0), (0, 0, 1), 'hand', 'tip', curl=1.0)
         m.chain([(6, -2, -14, LIMB + 2), (12, -30, -20, LIMB), (2, -58, -22, LIMB - 2)], 'far')
         hand(m, np.array((2.0, -61, -22)), (-0.3, -1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0)
+    elif pose == 'krabbel':
+        # Jordi's krabbel (referenties/jordi_krabbel_pose.png): lijf horizontaal in de lucht, kop vooraan links;
+        # verre arm omhoog-voor en één been recht omhoog uit de rug houden elk een (psychische) tak vast
+        # (Jordi: "misschien dat 1 arm en 1 been takken vasthouden"); nabije arm reikt omlaag-voor met een
+        # kiemend bolletje; ander been sleept naar achteren-omlaag; staart krult rechtsboven tot spiraal.
+        m.ell((-14, 0, 0), (22, 20, 23), 'fur')             # borst/schouders
+        m.ell((16, 4, 0), (26, 23, 23), 'fur')              # buik/rug (bolt boven uit, krabbel)
+        m.ell((38, 0, 0), (17, 17, 19), 'fur')              # heup
+        m.chain([(-26, 0, 0, 14), (-36, 0, 0, 13)], 'fur')  # nek
+        # verre arm omhoog-voor, hand om een tak
+        m.chain([(-20, 10, -20, LIMB), (-36, 32, -24, LIMB - 1.5), (-52, 52, -24, LIMB - 2.5)], 'far')
+        hand(m, np.array((-52.0, 52, -24)), (-0.6, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0)
+        m.chain([(-76, 62, -10, 4.4), (-60, 62, -18, 4.6), (-44, 66, -28, 4.2), (-30, 74, -34, 3.4)], 'tak', 1.0)
+        m.ell((-28, 80, -34), (7, 3, 2.5), 'blad', P.rot_z(math.radians(60)))
+        # nabije arm gestrekt naar voren-omlaag, healergebaar als een magiër in film/anime (Jordi): palm naar
+        # buiten (naar de kijker/voren), vingers gespreid
+        m.chain([(-20, -8, 20, LIMB), (-36, -36, 26, LIMB - 1.5), (-58, -56, 28, LIMB - 2.5)], 'fur')
+        open_hand(m, np.array((-58.0, -56, 28)), (-1, -0.35, 0.05), view, 'hand', 'tip', spread=1.5, k_=1.45)
+        # verre been recht omhoog uit de rug, voet om een tak
+        m.chain([(20, 14, -14, LIMB + 2), (24, 44, -18, LIMB), (20, 74, -20, LIMB - 2)], 'far')
+        hand(m, np.array((20.0, 76, -20)), (0.2, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0)
+        m.chain([(4, 92, -10, 4.4), (18, 92, -18, 4.6), (32, 90, -26, 4.2), (46, 94, -32, 3.4)], 'tak', 1.0)
+        # nabije been sleept naar achteren-omlaag
+        m.chain([(40, -6, 14, LIMB + 2), (60, -20, 18, LIMB), (80, -32, 20, LIMB - 2)], 'fur')
+        hand(m, np.array((82.0, -34, 20)), (1, -0.3, 0), (0, 1, 0), 'hand', 'tip', curl=0.3)
     n_lijf = len(m.parts)
     # staart: vanaf de stuit naar achteren en omhoog, dan een volle spiraal (2 slagen) achter het lijf
     ph = math.radians(SPIR_YAW)
@@ -171,6 +197,10 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40):
             Rb = P.rot_y(-ph) @ P.rot_z(a)
             m.ell(cc + d * 20 * ln + nrm * 3, (17 * ln, 6, 2.5), 'blad', Rb)
     off = np.zeros(3)
+    if pose == 'krabbel':
+        T = np.array((34.0, 4, 0))          # staart vanaf de heup, spiraal rechtsboven
+        m.parts = m.parts[:n_lijf] + [(c + T, r, R0, g) for c, r, R0, g in m.parts[n_lijf:]]
+        off = np.array((-50.0, -78.0, 0.0))  # kop vooraan aan de nek
     if pose == 'omhoog':
         # FLIP: alles tot nu toe (romp, benen, staart) draait om de schouders: heupen en benen omhoog
         piv, Rz = np.array((0.0, 54.0, 0.0)), P.rot_z(math.radians(FLIP))
@@ -247,16 +277,16 @@ def grid(yaws=(30, 40, 50), extras=(20, 35), pitch=6, arm='ver_omhoog', name='ho
     im.save(os.path.join(HERE, name))
 
 
-def raster(name='poses.png'):
+def raster(name='poses_krabbel.png'):
     """Jordi 3 nov: P1 'lijkt gewoon alsof die staat' -> vier zweefposes; elk label noemt pose en hoeken."""
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)
-    cells = [('omhoog', 30, 30), ('omhoog', 40, 30), ('omhoog', 50, 30),
-             ('lotus', 40, 30), ('zweef', 40, 30), ('vlucht', 40, 30)]
-    naam = {'omhoog': 'benen omhoog', 'lotus': 'kleermakerszit', 'zweef': 'zweven', 'vlucht': 'in vlucht'}
+    cells = [('krabbel', 20, 40), ('krabbel', 30, 40), ('krabbel', 40, 40),
+             ('krabbel', 20, 55), ('krabbel', 30, 55), ('krabbel', 40, 55)]
+    naam = {'krabbel': 'krabbel Jordi', 'omhoog': 'benen omhoog', 'lotus': 'kleermakerszit', 'zweef': 'zweven', 'vlucht': 'in vlucht'}
     im = Image.new('RGB', (10 + 266 * 3, 40 + (256 + 26) * 2), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 10), 'Nachtaap fase 3 (muriqui): zweefposes met healergebaar', font=FB, fill=(30, 30, 30))
+    d.text((10, 10), 'Nachtaap fase 3 (muriqui): pose naar de krabbel van Jordi', font=FB, fill=(30, 30, 30))
     for k, (pose, yaw, ex) in enumerate(cells):
         v = P.view(muriqui(ex, pose=pose, yaw=yaw), yaw, 6, size=220)
         a = np.array(v.convert('L')) < 250

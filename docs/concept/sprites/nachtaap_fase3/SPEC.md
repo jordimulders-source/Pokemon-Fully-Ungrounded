@@ -17,10 +17,14 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
 - 3 nov (bij raster P1): "nee dit lijkt echt nog nergens op. De hand aan het einde van de arm moet echt een healer gebaar maken. Verder is dit nog niet psychic/zwevend genoeg" + "Lijkt gewoon alsof die staat" → P1 afgekeurd; studie `referenties/psychic_gebaren.png` (Mega Alakazam, Medicham, Meditite, Mr. Mime, Deoxys, Mewtwo …): open handpalm naar de kijker met gespreide vingers; benen niet onder het lijf.
 - 3 nov: "Ik zou bijna zeggen om het echt uniek te maken zou je bijna de benen nog hoger willen hebben alsof die in een soort van vlucht staat zit" + foto 2 ("wat meer zon soort idee") → **benen omhoog** zoals op foto 2: hangt aan de benen, lijf eronder, kop onderaan rechtop, armen vrij.
 - 3 nov, **lore**: "met als lore dat hij planten en takken met psychische krachten kan channelen, onzichtbare of zichtbare" → hij hangt aan een onzichtbare (of zichtbare, psychische) tak; bladeren in de staart passen hierbij.
+- 3 nov, krabbel `referenties/jordi_krabbel_pose.png`: "ik dacht meer aan zoiets, heel slecht getekend" → **lijf horizontaal in de lucht**, kop vooraan links; één arm omhoog-voor en één been recht omhoog; ander been sleept naar achteren-omlaag; staart rechtsboven als spiraal; onderste arm reikt naar voren-omlaag.
+- 3 nov: "misschien dat 1 arm en 1 been takken vasthouden" + foto 2 ("zoals hier") → geheven arm en geheven been houden elk een (psychische) tak vast.
+- 3 nov: "nee de onderste hand houdt geen plant vast" / "die maakt een healer gebaar" / "zoals in films en anime met magiers" / "open hand" → onderste hand: **open hand, palm naar buiten, vingers gespreid** (spreukgebaar); geen voorwerp.
 
 ## 3D-poppetje
 - `pop3d/muriqui3d.py` (renderer `pop3d/pop3d.py`, kopie van fase 2). Kleuren alleen ter oriëntatie (lijnkleuren van fase 2).
-- Raster `pop3d/hoeken.png` (P1, afgekeurd). Raster `pop3d/poses.png`: 'benen omhoog' (lijf 30/40/50°) naast kleermakerszit, zweven en in vlucht.
+- Raster `pop3d/hoeken.png` (P1, afgekeurd). Raster `pop3d/poses.png`: 'benen omhoog' (lijf 30/40/50°) naast kleermakerszit, zweven en in vlucht (voorbij).
+- Raster `pop3d/poses_krabbel.png`: pose naar de krabbel, lijf 20/30/40°, kop +40/+55°.
 
 ## Referenties
 - Foto's van Jordi (3 nov): `referenties/foto1_gezicht_closeup.jpg` (donker kaal gezicht, lichte vachtrand, kleine diepe ogen, brede snuit), `foto2_hangend_lange_armen.jpg` (hangt aan twee armen, benen los, heel lange ledematen), `foto3_klimmend_tak.jpg` (rechtop aan een tak, lange arm omlaag), `foto4_moeder_met_jong.jpg` (gezicht met roze gespikkelde snuit, omhelzing), `foto5_zittend_hand_op_kop.jpg` (zittend, armen om zich heen, roze snuit).

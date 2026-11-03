@@ -193,3 +193,35 @@ Alleen de kopzone (y0–21) is opnieuw met de hand gezet in `spans_ronde5e.py`, 
 
 ## Les (5e)
 - Driekwart lees je op 1× vooral aan de oren: als ze evenwijdig en recht boven het midden van de kop staan, oogt de kop frontaal (konijn). Laat ze in een V naar achteren hellen, met het verre oor lager en schuiner, en verleng het achterhoofd tot in de hals. Een te wijde V wijkt van het poppetje af en wordt een gewei.
+
+---
+
+# Ronde 5f (zelfde maker, 3 nov): kop overgetrokken van het goedgekeurde poppetje
+
+Jordi (letterlijk, over 5e): "ja en de kop is dus niet goed want die is anders". De opdracht was overtrekken, niet zelf ontwerpen. Daarom heb ik de kop van 5e (mijn eigen V-oren en verlengde schedel) volledig losgelaten.
+- **Werkwijze:** `kop_dekking.py` rendert het poppetje opnieuw met dezelfde pose en camera als `bron.py` (fase2_r4('F_pas', head_yaw=55), yaw 8, pitch 8, fill 0.99; alfa intern op 768 = 12× per 64-pixel). Het drukt per 64-pixel van de kopzone de dekking in tienden af en bewaart de alfa in `kop_alpha.npy`.
+- **Spans:** in `spans_ronde5f.py` heb ik elke rij met de hand gezet op de 0,5-grens van die dekking. Uitvoer: `ronde5f.txt` / `ronde5f_1x.png`.
+- **Vel:** `vel_ronde5f.png` (`vel5f.py`), met alleen 5f op 4× en 1×, 5f over het poppetje, en de kop 8× naast de poppetjeskop met de 5f-omtrek erover.
+
+**Resultaat:** 1363 px (1,34× fase 1), box 42×62, kop 32 % van de hoogte (12 % van het oppervlak: de kleine lamakop van het poppetje). `korrel.py`: **0 / 0 / 0**. 1 component, 0 losse px, 0 gaten.
+
+## Diff
+- Kopzone y0–21: +19 / −78 px t.o.v. 5e. Vanaf y22: **0 px diff** met `ronde5e.txt`.
+
+## Afstand tot de omtrek van het poppetje (op 64, 0,5-grens van de dekking)
+| Onderdeel | Rijen | Afwijkende px | Max. afstand | Reden |
+|---|---|---|---|---|
+| Oor nabij | y1–9 | 3 (y1 x18 weg, y9 x19 erbij, 1 grens-px) | 1,0 | Een top van 1 px op y1 is een korrel, dus de top begint op y2 (2 breed). |
+| Oor ver | y1–9 | 4 (y2 x21 erbij, y6 x22 erbij, y9 x21 weg, 1 grens-px) | 1,0 | Een top van 1 px en een tand in de binnenrand zijn korrels; met y9 x21 weg blijven er 2 kolommen lucht tussen de oorvoeten. |
+| Kruin / voorhoofd | y10–13 | 0 | 0,0 | |
+| Snuit (bult naar voren-onder) | y14–18 | 0 | 0,0 | |
+| Kaak / onderlip + aansluiting hals | y19–21 | 1 (y21 x26 erbij) | 1,0 | Aansluiting op de bevroren hals (y22 x16–27). |
+
+Geen enkele afwijking is groter dan 1 px. Oorhoek, oorlengte en oorbreedte (de kwast valt binnen de oorbreedte) volgen het poppetje, net als de ronde kruin, de snuitbult, de kaak met onderlip (y19 x14–15) en de nek.
+
+## Eerlijk
+- De hals vanaf y22 is bevroren uit ronde 5 en is aan de achterkant 1–2 px breder dan de hals van het poppetje (x27 tegenover x25–26). Onder de kop staat daardoor een trapje van 1 px achter (y20 x24 → y21 x26 → y22 x27). Dat valt buiten de kopzone; om het weg te halen moet de hals vrijgegeven worden.
+- De kop is kleiner dan in 5b–5e (165 px tegenover ±220). Dat is de maat van het poppetje.
+
+## Les (5f)
+- "Overtrekken" betekent: render het poppetje opnieuw en zet de spans op de dekkingsgrens, met alleen afwijkingen van ≤ 1 px voor korrels of lucht. Elk eigen "verbeteren" van de pose (de V-oren in 5e) is een nieuwe interpretatie die Jordi afkeurt.

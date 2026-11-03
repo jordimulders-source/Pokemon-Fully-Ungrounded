@@ -150,3 +150,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.32] - Uyuni-Silicobra: frontsprite ronde 3
 - Pekelzak kleiner en los van de staart, kuif links loopt geleidelijk uit (39 px; de rest pixel voor pixel gelijk aan ronde 2). `docs/concept/sprites/silicobra_uyuni/ronde3/`.
+
+### [v0.0.33] - Uyuni-Silicobra: frontsprite ronde 4 (halsband)
+- Ronde 3 afgekeurd (kuif brokkelt af, zak als aanhangsel); bespreking in `docs/concept/sprites/silicobra_uyuni/bespreking/`. Besloten (Jordi): de pekel wordt een **halsband**. Ronde 4 (vanaf ronde 2): slordige pixel weg, nek terug naar het originele silhouet met een volle turquoise band; kop, voet en krul pixel voor pixel ronde 2.

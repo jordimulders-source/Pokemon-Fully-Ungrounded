@@ -140,5 +140,5 @@ if __name__ == '__main__':
         bpy.ops.render.render(write_still=True)
     for ob in obs.values(): ob.hide_render = False
     for i, ob in enumerate(obs.values()): ob.location.x = i * 16   # naast elkaar in het .blend-bestand
-    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(HIER, 'hand.blend'))
+    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(HIER, 'hand.blend'), compress=True)
     print('KLAAR')

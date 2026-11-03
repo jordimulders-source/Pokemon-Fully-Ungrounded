@@ -126,13 +126,25 @@ def bouw():
     delen, toppen = [], []
     # romp (pose 'krabbel'): borst/schouders, buik/rug, heup
     # (zelfde massa als de drie bollen van het poppetje, maar als één vloeiende romp: borst -> buik -> heup)
-    delen.append(meta([((-12, 2, 0), (22, 22, 24)), ((14, 4, 0), (24, 22, 22)), ((32, 0, 0), (17, 18, 19))], 'romp'))
+    romp = [((-12, 2, 0), (22, 22, 24)), ((14, 4, 0), (24, 22, 22)), ((32, 0, 0), (17, 18, 19))]
+    # Jordi: "1 been en staart zitten niet goed smooth vast aan het lichaam": de wortel van elk lid groeit uit de
+    # romp (metaball-elementen langs het eerste stuk), zodat er geen naad/insnoering is
+    wortels = [((-16, 14, -20), (-24, 34, -26), LIMB), ((-18, -8, 20), (-28, -36, 26), LIMB),
+               ((18, 14, -14), (12, 40, -18), LIMB + 4), ((36, -6, 14), (52, -24, 18), LIMB + 4),
+               ((46, 6, 0), (46, -8, 0) + 34 * np.array((math.cos(math.radians(SPIR_YAW)), 0, math.sin(math.radians(SPIR_YAW)))), 7.5)]
+    for a, b, r in wortels:
+        a, b = np.array(a, float), np.array(b, float)
+        for k, s in ((0.0, 1.25), (0.22, 1.1), (0.42, 1.0)):
+            romp.append((tuple(a + (b - a) * k), (r * s, r * s, r * s)))
+    delen.append(meta(romp, 'romp'))
     # verre arm omhoog-voor, vuist om een onzichtbare tak
     delen.append(keten([(-16, 14, -20, LIMB), (-24, 34, -26, LIMB - 2.5), (-40, 46, -24, LIMB - 4)]))
     h, t, s = hand_op((-40, 46, -24), (-0.55, 1, 0), (0.3, 0, -1), 'vuist', 2.4, naam='hand_ver'); delen.append(h); toppen += [(p, s) for p in t]
     # nabije arm naar linksonder; healerhand: vingers omhoog, palm naar de tegenstander (kijker), duim links
     delen.append(keten([(-18, -8, 20, LIMB), (-28, -36, 26, LIMB - 2.5), (-50, -60, 26, LIMB - 4)]))
-    h, t, s = hand_op((-51, -61, 27), (-0.15, 1, 0.1), view, 'healer_drowzee', 2.7, spiegel=True, naam='hand_healer')   # duim links (krabbel); delen.append(h); toppen += [(p, s) for p in t]
+    h, t, s = hand_op((-51, -61, 27), (-0.15, 1, 0.1), view, 'healer_drowzee', 2.7, spiegel=True, naam='hand_healer')   # duim links (krabbel)
+    delen.append(h); toppen += [(p, s) for p in t]
+    healer_pts = np.array([tuple(v.co) for v in h.data.vertices]) @ C      # handoppervlak (dier), voor de kleurzone
     # verre been omhoog, voet gekruld om een onzichtbare tak
     delen.append(keten([(18, 14, -14, LIMB + 4), (12, 40, -18, LIMB), (24, 58, -20, LIMB - 3)]))
     h, t, s = hand_op((24, 58, -20), (0.3, 1, 0), (1, 0, 0), 'voet_greep', 2.2, naam='voet_ver'); delen.append(h); toppen += [(p, s) for p in t]
@@ -206,9 +218,20 @@ def bouw():
         q = np.asarray(C.T @ np.array(tuple(p)))
         idx[np.linalg.norm(P - q, axis=1) < 1.5 * s] = 4
     # Jordi: "de healerhand mag best lichter zijn" / "leuk idee zelfs": de hele healerhand maanzilver (vanaf de pols)
+    # per vlak: licht waar het dichter bij het handoppervlak ligt dan bij de onderarm (pols = lichaamskleur, Jordi)
+    from mathutils import kdtree
+    kd = kdtree.KDTree(len(healer_pts))
+    for i, v in enumerate(healer_pts): kd.insert(v, i)
+    kd.balance()
     hc, hr = POLSEN[1]
-    hf = np.array((-0.15, 1, 0.1)); hf /= np.linalg.norm(hf)
-    idx[(np.linalg.norm(P - hc, axis=1) < hr * 0.85) & ((P - np.array((-51, -61, 27))) @ hf > -1.0)] = 5
+    kand = np.where(np.linalg.norm(P - hc, axis=1) < hr * 1.2)[0]
+    a0, a1 = np.array((-28.0, -36, 26)), np.array((-51.0, -61, 27))       # onderarm (elleboog -> pols)
+    for i in kand:
+        d_hand = kd.find(P[i])[2]
+        u = np.clip((P[i] - a0) @ (a1 - a0) / ((a1 - a0) @ (a1 - a0)), 0, 1)
+        d_arm = np.linalg.norm(P[i] - (a0 + u * (a1 - a0))) - (LIMB - 4)
+        if d_hand < 1.5 and d_hand < d_arm - 0.5:
+            idx[i] = 5
     me.polygons.foreach_set('material_index', idx)
     me.update()
     # ogen: rode Espurr-ringogen met pupil en glans (fase 2), los object op het masker
@@ -281,5 +304,5 @@ if __name__ == '__main__':
     sc = scene(int(sys.argv[1]) if len(sys.argv) > 1 else 720)
     sc.render.filepath = os.path.join(HIER, 'render_muriqui.png')
     bpy.ops.render.render(write_still=True)
-    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(HIER, 'muriqui.blend'))
+    bpy.ops.wm.save_as_mainfile(filepath=os.path.join(HIER, 'muriqui.blend'), compress=True)
     print('KLAAR')

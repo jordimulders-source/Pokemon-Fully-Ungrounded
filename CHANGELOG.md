@@ -165,3 +165,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi bij ronde 12: concept goedgekeurd ("puur een beetje afwerking"); geen storende rechte lijnen; lori-gelijkenis is prima. Ronde 13: ruimte tussen achterste wig, staart en rechtercontour; kleurafwerking voorpoten.
 - Kleur ronde 13: achterste wig verplaatst/ingekort (2 px vacht naar staartwortel en rechtercontour), voorpoten rustiger afgewerkt (verre hand zonder dambord, zwarte onderrand aan de schaduwkant, vlekjes op de onderarm weg, doorlopende vingerlijnen). Vel `kleur/ronde13/vel_jordi.png`.
 - Kleur ronde 14: achterste wig precies volgens Jordi's krabbel (schuine streep in lila; de 2 linkerpixels van ronde 12 blijven, na "en toch haal je nu aan de linkerkant 2 pixels teveel weg"). Vel `kleur/ronde14/vel_jordi.png`.
+
+### [v0.0.26] - Nachtaap fase 2: frontsprite af
+- Verse eindkeuring met vergelijking tegen echte sprites en de Dragonfly Cave-gids (`docs/concept/sprites/nachtaap_evo/kleur/ronde14/EINDKEURING.md`, 17 gidsregels): twee kleine FAILs in de crème tenen (bruine onderrand aan de schaduwkant → zwart, hark op de achtervoet), 8 px door Claude gerepareerd; alpha-diff 0 tegen het bevroren silhouet.
+- **Af:** `docs/concept/sprites/nachtaap_evo/af/nachtaap_evo.png` (+ `normal.pal`, `vel.png`, `EINDKEURING.md`). Jordi: "Het concept ben ik gewoon tevreden mee". Nog te doen: frame 2, rugsprite, icoon, shiny, naam en data.

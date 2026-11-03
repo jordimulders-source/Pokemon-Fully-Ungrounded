@@ -66,6 +66,13 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 
 - Jordi 3 nov: krabbel op de achterste wig (`referenties/jordi_krabbel_staartwortel.png`) + "dit wil ik" / "is dat duidelijk genoeg gepixeld?" → ronde 14: wig precies op de krabbel (schuine streep van 2 px, lila).
 
+- Jordi 3 nov: "prima, doe nog een eindkeuring" + "door een agent die het gaat vergelijken met andere sprites en volgens dragonflycave" → eindkeuring `kleur/ronde14/EINDKEURING.md` (incl. Dragonfly Cave-tabel): 8 px afwerking (zwarte onderrand crème tenen, hark achtervoet), daarna **af: `af/nachtaap_evo.png`**.
+
+## Af (3 nov)
+- `af/nachtaap_evo.png` + `af/normal.pal` (64×64, 16 kleuren, index 0 transparant), vel `af/vel.png`, keuring `af/EINDKEURING.md`.
+- Nog te doen (aparte taak): frame 2, rugsprite, icoon, shiny-palet (skins-regel), naam en data.
+- Open punten voor later (keurder, geen FAIL): verre oog bijna een kopie van het nabije; maan links grenst aan index 2 (lichter kan); lila (6) is zowel vachthooglicht als patroonschaduw; wiggen lezen eerder ijsblauw dan zilver.
+
 ## Silhouet
 - Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
 - **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.

@@ -1,0 +1,23 @@
+Diffkaart kleur ronde 4 t.o.v. silhouet ronde 6 (en de 50%-dekking van het model, silhouet_r5/kop_alpha.npy).
+Toegestaan: per pixel max. 1 px, alleen om schokken glad te strijken of de staart leesbaar te maken; doel totaal <= 40 px.
+Silhouet t.o.v. ronde 6: +2 / -5 px (totaal 7)
+  + x48 y23  dekking model 0.26  afwijking van de 50%-grens: 1 px   <- staart: pluim 1 rij hoger (staat op, eigen vorm)
+  + x49 y23  dekking model 0.28  afwijking van de 50%-grens: 1 px   <- staart: idem
+  - x43 y25  dekking model 0.60  afwijking van de 50%-grens: 1 px   <- glad: losse bult van 3 px tussen doek en staart weg (rug x39-50 nu één lijn, staart staat vrij)
+  - x44 y25  dekking model 0.75  afwijking van de 50%-grens: 1 px   <- glad: idem
+  - x45 y25  dekking model 0.58  afwijking van de 50%-grens: 1 px   <- glad: idem
+  - x46 y25  dekking model 0.49  afwijking van de 50%-grens: 0 px   <- staart: 1 px lucht links van de pluim (was vast aan de rugbult), zodat de pluim een eigen vorm is
+  - x51 y26  dekking model 0.56  afwijking van de 50%-grens: 1 px   <- glad: scherpe rechterbovenhoek van het achterwerk afgerond (trapje x51 y26 -> x51 y27)
+
+Kaart y20-30, x40-53 (# beide, + alleen ronde 4, - alleen ronde 6):
+y20 ..............
+y21 ..............
+y22 ..............
+y23 ........++....
+y24 .......####...
+y25 ...----####...
+y26 ###########-..
+y27 ############..
+y28 ############..
+y29 ############..
+y30 ###########...

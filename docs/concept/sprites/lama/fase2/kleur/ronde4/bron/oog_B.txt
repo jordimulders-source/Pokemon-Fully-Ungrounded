@@ -1,0 +1,7 @@
+# Oog B: als A, maar het lid zakt achteraan 1 px (x22: y12 s, y13 k) en eronder een zachte wal (s) die naar achteren
+# uitloopt (Slakoth-droogheid vertaald naar 3/4: geen donkere vlek, het hangen komt uit de vorm).
+11 19 lbbbd
+12 19 dkksb
+13 19 bkdkb
+14 19 bdhdb
+15 19 bssss

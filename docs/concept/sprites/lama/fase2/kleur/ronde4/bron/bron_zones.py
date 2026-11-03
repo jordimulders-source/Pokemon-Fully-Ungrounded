@@ -6,8 +6,8 @@ import os, sys, math
 from collections import Counter
 import numpy as np
 HERE = os.path.dirname(os.path.abspath(__file__))
-sys.path.insert(0, os.path.join(HERE, '../../silhouet_r5'))
-sys.path.insert(0, os.path.join(HERE, '../../../ontwerp'))
+sys.path.insert(0, os.path.join(HERE, '../../../silhouet_r5'))
+sys.path.insert(0, os.path.join(HERE, '../../../../ontwerp'))
 import pop3d_lama as L
 import bron
 P = L.P

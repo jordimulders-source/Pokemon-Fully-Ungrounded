@@ -1,0 +1,17 @@
+lama.png: mode P | transparency 0 | palet 16 | kleuren gebruikt (incl. transparant): 16 | pixels 1160
+Diffkaart kleur ronde 4 t.o.v. silhouet ronde 6 (en de 50%-dekking van het model, silhouet_r5/kop_alpha.npy).
+Toegestaan: per pixel max. 1 px, alleen om schokken glad te strijken of de staart leesbaar te maken; doel totaal <= 40 px.
+Silhouet t.o.v. ronde 6: +2 / -5 px (totaal 7)
+  + x48 y23  dekking model 0.26  afwijking van de 50%-grens: 1 px
+  + x49 y23  dekking model 0.28  afwijking van de 50%-grens: 1 px
+  - x43 y25  dekking model 0.60  afwijking van de 50%-grens: 1 px
+  - x44 y25  dekking model 0.75  afwijking van de 50%-grens: 1 px
+  - x45 y25  dekking model 0.58  afwijking van de 50%-grens: 1 px
+  - x46 y25  dekking model 0.49  afwijking van de 50%-grens: 0 px
+  - x51 y26  dekking model 0.56  afwijking van de 50%-grens: 1 px
+open randen (randpixel die geen k/d/m/n is): 0 [] | bewuste pseudo-omlijning (§8): [(17, 3, 'b'), (17, 7, 'b'), (17, 8, 'b'), (22, 60, 'v'), (14, 62, 'v'), (16, 62, 'v')]
+losse pixels (geen buur met dezelfde kleur): 39 [(17, 2, 'd'), (22, 2, 'b'), (17, 3, 'b'), (17, 4, 'o'), (23, 4, 'o'), (17, 5, 'r'), (23, 5, 'r'), (16, 6, 'd'), (18, 11, 'h'), (19, 12, 'd'), (22, 12, 's'), (21, 14, 'h'), (23, 17, 'l'), (18, 19, 'h'), (20, 24, 'h'), (48, 24, 'h'), (49, 25, 'b'), (29, 26, 'y'), (16, 28, 'h'), (30, 30, 'o'), (15, 32, 'b'), (20, 32, 'o'), (17, 33, 's'), (21, 33, 'm'), (23, 33, 'h'), (28, 34, 'b'), (15, 35, 'l'), (31, 35, 'h'), (14, 38, 'h'), (30, 42, 's'), (33, 42, 's'), (18, 56, 'v'), (24, 57, 'o'), (48, 58, 'n'), (22, 60, 'v'), (45, 60, 'v'), (46, 60, 'n'), (14, 62, 'v'), (16, 62, 'v')]
+verdeling: k:10% d:15% s:13% b:17% l:23% h:2% o:0% r:5% m:4% n:1% y:1% g:1% p:0% u:2% v:0%
+oog_A vs oog_A: 0 px verschil, buiten oogzone x19-23 y11-15: 0
+oog_B vs oog_A: 5 px verschil, buiten oogzone x19-23 y11-15: 0
+oog_C vs oog_A: 9 px verschil, buiten oogzone x19-23 y11-15: 0

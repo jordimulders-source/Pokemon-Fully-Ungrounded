@@ -128,3 +128,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.25] - Uyuni-Silicobra: Ground + Ice-immuniteit
 - Besloten (Jordi): de Uyuni-Silicobra blijft Ground en krijgt een nieuwe ability met een immuniteit voor Ice; de sprite wordt een aangepaste bestaande sprite (`POKEMON.md`, `SPRITE_WERKWIJZE.md`). Uitleg waarom Ground/Electric klopt + matchups in `IDEEEN.md`.
+
+### [v0.0.26] - Uyuni-Silicobra: nieuwe evolutie, kleurrichtingen
+- Besloten (Jordi): de Uyuni-Silicobra krijgt een **nieuwe evolutie** (geen Uyuni-Sandaconda). Ability: Jordi denkt nog na.
+- `docs/concept/sprites/silicobra_uyuni/` met SPEC.md en drie kleurrichtingen (paletwissel op de bestaande sprite): A Zoutkorst, B Spiegel, C Lithium.

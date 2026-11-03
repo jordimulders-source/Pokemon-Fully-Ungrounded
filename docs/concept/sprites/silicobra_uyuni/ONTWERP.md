@@ -39,3 +39,10 @@ Jordi: "de zoutkegel is wel lastig qua perspectief te zien hierop. Ik zie de zou
 - **Vocht opslaan:** de woestijnschildpad bewaart water in zijn blaas; de Australische waterhoudende kikker (*Cyclorana*) zwelt op met water en graaft zich in.
 - **Opblaasbare keel:** kwakblazen van kikkers, de rode keelzak van de fregatvogel (Galápagos).
 - **In de pekel zelf:** pekelkreeftjes (*Artemia*) en algen die de lagunes rood kleuren (flamingovoer).
+
+## Evolutie: brainstorm (3 nov)
+Jordi: "laten we gelijk bedenken wat voor evolutie we silicobra geven". Uitgangspunt: een regionale evolutie vergroot het nieuwe kenmerk (Perrserker, Obstagoon); de lijn is loom, een wall, met zoutkorst, kuif, pekel-halsband en half oog.
+- **1. De accu (Ground/Electric):** de halsband vermenigvuldigt zich tot ringen van pekel tussen zoutplaten over het hele lijf, als de cellen van een batterij; staat rechtop opgerold als een zuil. Echt dier: de ringnekslang, gebandeerde zeeslangen. Thema: lithium, mijnbouw.
+- **2. De zoutheuvel:** zo loom dat er een hele zoutkegel op zijn rug groeit (de kegel uit ronde 1 past nu wél: groot genoeg en deel van het lijf, zoals de boom van Torterra); de opgerolde slang ís de heuvel, de kop ligt eronder. Sandaconda is al een opgerolde hoop: goed skelet.
+- **3. De spiegel:** een lage, platte schijf van opgerolde slang, bovenop een glad laagje pekel dat de lucht weerspiegelt (de salar in het regenseizoen); onweer boven de spiegel (Electric).
+- Stats-richting (wall, totaal 510 zoals Sandaconda): bv. HP 100 / Atk 70 / Def 125 / SpA 85 / SpD 110 / Spe 20.

@@ -7,3 +7,4 @@ Details en Jordi's woorden in `SPEC.md`.
 - Oog als zwart rondje met een wit glanspuntje: mist de droge "ik zie de wereld aan me voorbij gaan"-blik van de lama.
 - Hoekige vormen in de poten.
 - Silhouet ronde 3: korrelige omtrek (veel kleine 1-px bobbels en trapjes) in plaats van de grote gladde wolbogen van Flaaffy.
+- Pose met de opgetilde, geknikte voorpoot in dekking ("de poten lijken net gebroken"); te golvende wolomtrek (golviger dan de schapen).

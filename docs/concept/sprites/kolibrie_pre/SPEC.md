@@ -1,6 +1,12 @@
 # Kolibrie pre-evo: SPEC
 
-## OVERDRACHT (3 nov) — begin hier in een nieuw gesprek
+## OVERDRACHT (3 nov, laat) — begin hier
+**Stand:** het numpy-model (`model3d/`) is verlaten (profiel opgeblazen = raar van alle kanten; Jordi: "als je dit model helemaal zou draaien zou het er heel raar uitzien"). Nu een **echt 3D-model in Blender** (`blender/kolibrie_pre.py`, bpy 5.0 via `python3.11 -m pip install bpy scikit-image`, plus `apt-get install libegl1 libgl1-mesa-dri`; Workbench-render). Eén huid uit smooth-union-afstandsvelden (Jordi: "maak het echt een geheel ook en niet een soort verzameling aan bollen"): lijf = één bolletje, kop zonder nek erop, vleugels plat in de ronding met punten achter/onder, kort staartje; buik/keel/kap/vleugel zijn kleurvlakken op die huid; naaldsnavel licht open, ogen aan beide kanten. Vel: `blender/vel_blender.png` (rondom 0–315° + 3/4 A/B/C naast Fletchling/Starly/Taillow), maken met `python3 blender/vel.py`.
+**Jordi (laatste):** "dit begint ergens op te lijken, doe nog iets meer langere snavel toch zoals op mijn fotos" (gedaan) · "het lichaam moet ook meer een bolletje zijn, waarvan de vleugels deel uit maken, kijk naar de fotos" (gedaan, nog niet door Jordi gezien) · "kijk vooral ook naar fletchling, starly etc" · foto's 6 en 7: `referenties/jordi_6_*.md`, `jordi_7_*.md` (beschrijving; foto 7 = hoofdreferentie).
+**Volgende stap:** (1) Jordi kijkt naar het vel; (2) **een agent laat het blind checken of die er een Pokémon in ziet** (Jordi's verzoek, nog niet gedaan); (3) Jordi kiest een 3/4-stand; (4) silhouet = render direct verkleind, getoond als rode omtrek óver de render; (5) kleur door de maker. Open punten Claude: kop nog iets te los (sneeuwpop-neiging), oog/masker van foto 7 nog niet, snavel op 1× ≥ 2 px houden.
+**Zuinig:** Jordi zat bijna aan de sessielimiet; kleine stappen, weinig vellen.
+
+## OVERDRACHT (3 nov) — eerdere stand
 **Stand:** kleurrondes r1–r10 met maker-agent + keurder; r10 door Jordi afgekeurd. Nu terug naar stap 2: **een nieuw silhouet in driekwart (3/4)**.
 
 **Wat goedgekeurd is en meegaat (bevroren als ontwerp):**

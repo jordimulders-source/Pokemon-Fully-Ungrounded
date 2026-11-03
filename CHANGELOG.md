@@ -133,3 +133,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.25] - Kolibrie pre-evo: 3D-model op de goedgekeurde vorm
 - `docs/concept/sprites/kolibrie_pre/model3d/`: 3D-model dat het goedgekeurde profiel zelf opblaast (lijf 97,7% gelijk aan silhouet r2, kop 99,6% aan r8 lager), met r10-kleuren, Starly-oog en r7b-snavel; draaibaar naar driekwart.
 - Vel `model3d/vel_hoeken.png` met 9 hoeken naast Taillow en Starly; wacht op Jordi's keuze.
+
+### [v0.0.26] - Kolibrie pre-evo: echt 3D-model in Blender
+- Numpy-model (opgeblazen profiel, ronde kop, ronder lijf, K1-R2b) geprobeerd en verlaten: van opzij gezien plat en van alle kanten vreemd.
+- `docs/concept/sprites/kolibrie_pre/blender/`: model in Blender (bpy) als één huid (smooth union): bolletje-lijf met ingewerkte vleugels, kop zonder nek, kort staartje, langere naaldsnavel; vel met rondom-renders en 3/4-standen naast Fletchling, Starly en Taillow. Foto's 6 en 7 van Jordi beschreven in `referenties/`.
+- Lessen in `docs/lessen/SPRITE_WERKWIJZE.md` (profielkop is geen 3/4, silhouet als omtrek over de render tonen, model niet ongevraagd wijzigen).

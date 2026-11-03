@@ -56,7 +56,7 @@ Algemene lessen staan hieronder; de rest is per onderwerp opgesplitst. **Lees he
 | Pokémon-sprites pixelen (omlijning, schaduw, ogen, curven) | `docs/lessen/SPRITING.md` (vóór elke spriteronde) |
 | Vormen, poses, verhoudingen van Pokémon-sprites | `docs/lessen/FAKEMON_CHECKLIST.md` (+ `vormstudie/STUDIE.md`) |
 | Waarom het spriteproces misging en wat anders moet | `docs/lessen/RETRO_OLINGUITO.md` (één sprite tegelijk, SPEC.md per sprite, controle per onderdeel); wat wél werkte: `docs/lessen/RETRO_KOLIBRIE.md` (foto als skelet, silhouet eerst, keurder vóór Jordi, aanbevelingen sprite-editor) |
-| **De werkwijze voor elke nieuwe sprite (stap voor stap)** | `docs/lessen/SPRITE_WERKWIJZE.md` |
+| **De werkwijze voor elke nieuwe sprite (stap voor stap)** | `docs/lessen/SPRITE_WERKWIJZE.md` (Checklist bovenaan; keurslot-hook blokkeert sturen zonder keuring) |
 | **Norm voor elke sprite-agent (één pagina)** | `docs/lessen/SPRITE_NORM.md` |
 | Review spriteproces (wat werkte, wat niet, aanbevelingen) | `docs/lessen/SPRITE_REVIEW.md` |
 | **Elke sprite-agent-opdracht** (ook kleine reparaties) | `docs/lessen/SPRITE_OPDRACHT.md`: verwijzing altijd in de opdracht; Jordi's vaste feedback; Claude bekijkt elk resultaat zelf vóór Jordi |

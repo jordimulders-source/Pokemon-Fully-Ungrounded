@@ -4,6 +4,16 @@
 
 Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedgekeurde sprite in ±1 dag) en de **olinguito v2** (Dark-starter, fase 1: na 30+ mislukte rondes in de oude aanpak, nu in 5 silhouet- en 4 kleurrondes "het beste olinguito-ontwerp wat ik tot nu toe heb gezien"). Achtergrond: `RETRO_KOLIBRIE.md`, `RETRO_OLINGUITO.md`. Deze werkwijze vervangt stap 1–5 bovenaan `FAKEMON_DESIGN.md` waar ze verschillen.
 
+## Checklist (lees dit; de rest van dit bestand is naslag)
+Jordi 3 nov: "het is elke keer opnieuw dat we instructies vastleggen die je elke keer opnieuw weer overslaat" → "doe allemaal". Daarom afgedwongen, niet alleen opgeschreven:
+1. **Keurslot:** `.claude/hooks/sprite_keurslot.py` blokkeert elke afbeelding uit `docs/concept/sprites/` naar Jordi zonder `<bestand>.keuring.md` (nieuwer dan de afbeelding, met `Bron:`, 8×, 1×, per onderdeel "lijkt op / wijkt af in", `Oordeel: PASS`). Niet omzeilen (geen kopie buiten die map sturen).
+2. **Keurvel:** `python3 tools/grounded/keurvel.py -o vel.png --werk werk.png --bron <echte sprites/foto's> --zoom x0,y0,x1,y1` → werk naast de bronnen op 8× en 1× (licht/donker) + close-ups, en een keuringssjabloon.
+3. **Referentie eerst, per onderdeel** (hand, voet, kop, staart, patroon): 2–3 echte sprites of Jordi's eigen plaatje (stuurt Jordi een afbeelding, dan is díe de bron, niet de sprite van die soort uit de repo). Kenmerken zelf tellen/controleren op een close-up voor iets op een referentievel komt.
+4. **Eén afwijking of twijfel = niet sturen.** Toets of het **leest** als een echte Pokémon, niet of het doet wat gevraagd werd.
+5. **Onafhankelijke keurder bij elke mijlpaal** (pose akkoord, silhouet, kleur, af), vóór Jordi; zijn oordeel gaat in de keuring.
+6. **Ritme:** een ronde helemaal afmaken, dan pas sturen; berichten van Jordi tijdens het werk verzamelen en samen verwerken, geen patch per bericht.
+7. **Gereedschap per onderdeel:** het 3D-poppetje alleen voor massa/pose; dunne delen (handen, klauwen, vingers, oren) in de pixelstap naar een echte sprite, aangepast aan arm/maat/richting (nooit geplakt).
+
 ## Kern in vijf zinnen
 1. **De vorm wordt vastgelegd vóór er één kleurpixel bestaat**, en Jordi keurt die vorm als silhouet op ware grootte.
 2. **De vorm komt van iets echts:** een foto van het dier in de juiste pose, of het 3D-poppetje dat Jordi koos; nooit van zelfgebouwde cirkels en driehoeken ("Pokémon designen is geen cirkels en driehoeken werk").
@@ -16,15 +26,6 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - Maak de map `docs/concept/sprites/<naam>/` met `referenties/` en `SPEC.md` (onderdelen, bron/referentie, Jordi's woorden letterlijk, status bevroren/open, afgekeurd).
 - **Types, abilities en evoluties uit de repo**, nooit uit het geheugen.
 - Zet elke foto die Jordi stuurt meteen in `referenties/` (foto's in de chat zijn na de sessie weg; als een foto niet als bestand binnenkomt, punt voor punt overnemen en dat melden).
-
-## Vóór elk vel naar Jordi (harde regel, Jordi 3 nov: "hoe kunnen we er nu eens voor zorgen dat je dit soort dingen zelf ziet")
-Geldt voor elk beeld dat Jordi krijgt, ook tussenstappen (poppetje, silhouet, kleur). Geen enkel vel zonder deze stappen:
-1. **Referentie eerst, per onderdeel:** kies vóór het bouwen voor elk onderdeel dat verandert (hand, voet, kop, staart, patroon) 2–3 echte sprites die het goed doen, en noem ze.
-2. **Vast vergelijkingsvel:** referenties naast het eigen werk op eindvormmaat én groot (`pop3d/vergelijk.py` bij de nachtaap). Nooit alleen een kleine render bekijken.
-3. **Close-up per onderdeel** en per onderdeel één regel opschrijven (in het antwoord of NOTITIES): "lijkt op <referentie> / wijkt af in <x>". Toets of het **leest** als een echte Pokémon, niet of het doet wat gevraagd werd.
-4. **Eén afwijking = niet sturen**: eerst repareren en opnieuw 1–3. Twijfel = afwijking.
-5. **Opmerkingen van Jordi tijdens het werk bundelen** in één doordachte ronde; niet per bericht een snelle patch sturen.
-6. Bij elke mijlpaal (pose akkoord, silhouet, kleur) een **onafhankelijke keurder** (agent) vóór Jordi, niet pas aan het eind.
 
 ## Stap 1. Ontwerp: pose en kenmerken (met Jordi, geen pixels)
 - Jordi geeft het idee, de pose (schets of foto) en referenties. **Vraag om een foto van het echte dier in de gewenste pose**; dat was beide keren de doorbraak (kolibrie: de drinkende kolibrie; olinguito: de boomfoto + kopfoto).

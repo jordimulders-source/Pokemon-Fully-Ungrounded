@@ -176,3 +176,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Pose naar Jordi's krabbel goedgekeurd: horizontaal zwevend, arm en been omhoog om een onzichtbare tak, healerhand met de palm naar de tegenstander (lijf 40° / kop 80°). 3D-poppetje `docs/concept/sprites/nachtaap_fase3/pop3d/muriqui3d.py`.
 - Handen in 3D mislukt (alle varianten afgekeurd); volgende sessie: handen als pixelzones naar een echte sprite-hand (Gen 1-Drowzee). Overdracht onderaan `nachtaap_fase3/SPEC.md`.
 - Lessen in `SPRITE_WERKWIJZE.md`: "Vóór elk vel naar Jordi" (harde regel), ellipsoïde-poppetje faalt bij dynamische poses en handen, referentie van Jordi = die afbeelding, kenmerken zelf tellen.
+
+### [v0.0.28] - Sprite-werkwijze afgedwongen (keurslot)
+- Jordi: "het is elke keer opnieuw dat we instructies vastleggen die je elke keer opnieuw weer overslaat" → "doe allemaal".
+- Keurslot: `.claude/settings.json` + `.claude/hooks/sprite_keurslot.py` (PreToolUse op SendUserFile): geen afbeelding uit `docs/concept/sprites/` naar Jordi zonder `<bestand>.keuring.md` met bron, 8×/1× en `Oordeel: PASS`.
+- Keurvel: `tools/grounded/keurvel.py` (werk naast bronnen op 8× en 1×, licht/donker, close-ups, keuringssjabloon).
+- `SPRITE_WERKWIJZE.md`: korte Checklist bovenaan (keurslot, keurvel, referentie per onderdeel, één afwijking = niet sturen, keurder per mijlpaal, ritme, gereedschap per onderdeel); de rest is naslag.

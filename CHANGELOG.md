@@ -129,3 +129,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - 3D-poppetje uit bollen (79–88% overlap) en opgeblazen silhouet geprobeerd; gaven geen goed beeld. Silhouet met de hand (maker-agent) en kleurrondes r1–r10 met keuringen; goedgekeurd: kop r8 lager, Starly-oog, snavel r7b met lijn bij de mondhoek, palet.
 - r10 afgekeurd (geen driekwart pose, lijnen); volgende stap een 3D-model op de goedgekeurde vorm, gedraaid naar 3/4, daarna het silhouet daaruit. Overdracht bovenaan `SPEC.md`.
 - Lessen in `docs/lessen/SPRITE_WERKWIJZE.md` (poppetje passend op de foto, keurder nooit inperken).
+
+### [v0.0.25] - Kolibrie pre-evo: 3D-model op de goedgekeurde vorm
+- `docs/concept/sprites/kolibrie_pre/model3d/`: 3D-model dat het goedgekeurde profiel zelf opblaast (lijf 97,7% gelijk aan silhouet r2, kop 99,6% aan r8 lager), met r10-kleuren, Starly-oog en r7b-snavel; draaibaar naar driekwart.
+- Vel `model3d/vel_hoeken.png` met 9 hoeken naast Taillow en Starly; wacht op Jordi's keuze.

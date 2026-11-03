@@ -67,3 +67,4 @@
 - **Jordi (3 nov): "de snavel is in r8 verknald".** Afgekeurd: de korte brede snavel in het gezicht (B1 uit keuring r7). r9: snavelomtrek = r7b, binnenkant opnieuw naar foto 3; B2/B3, oog en vlekje-weg uit r8 blijven.
 - **Jordi (3 nov): "r8 lager is goed wat betreft het hoofd".** r9 = kop van r8 lager (maker-versie) + snavel van r7b met nieuwe binnenkant.
 - **Correctie (Jordi, 3 nov): "met het snavel bedoel ik puur dat de verbinding aan de mond wat meer een lijn moest hebben, zoals bij andere pokemon, niet dat het hele snavel anders moest".** Snavel = r7b (vorm en kleur); alleen een donkere lijn op de verbinding snavel/gezicht (mondhoek). Les: Claude las "binnenkant niet goed" als herbouw; bij twijfel over de omvang eerst vragen.
+- **Eindkeuring r9 (keurder): TERUG voor 1 px**, daarna GOED zonder nieuwe keuring → r10 = r9 + (15,16) `1`→`C` (`maker/kleur_r10/`). Claude: 8× naast Taillow bekeken. Wacht op Jordi.

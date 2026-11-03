@@ -1,5 +1,24 @@
 # Kolibrie pre-evo: SPEC
 
+## OVERDRACHT (3 nov) — begin hier in een nieuw gesprek
+**Stand:** kleurrondes r1–r10 met maker-agent + keurder; r10 door Jordi afgekeurd. Nu terug naar stap 2: **een nieuw silhouet in driekwart (3/4)**.
+
+**Wat goedgekeurd is en meegaat (bevroren als ontwerp):**
+- Type puur Flying; zittend, vleugels ingeklapt, kort open bedelbekje (foto 3); "echt cute"; korte snavel is bewust.
+- Kleur: mild lila (fluweelfamilie van de eindvorm, "zoals dat fletchling nog niet fire is"); geen blauwgroen/keelvlek ("dat vlekje ziet er niet uit").
+- Kop van **r8 lager** (`maker/kleur_r8/raster_lager.txt`): kap alleen als kleurgrens (geen lijn), "r8 lager is goed wat betreft het hoofd".
+- **Starly-oog** (pixel voor pixel, `maker/kleur_r7..r10`), "het starly oog is prima".
+- Snavel van **r7b** met een donkere lijn bij de mondhoek (`maker/kleur_r10/`); snavel nooit herbouwen ("niet dat het hele snavel anders moest").
+- Palet: `maker/kleur_r10/normal.pal`. Taillow (repo-sprite) is de maatstaf voor afwerking.
+
+**Open (Jordi over r10, letterlijk):** "het zijn willekeurig geplaatste zwarte strepen, kijk eens hoe dit bij andere sprites zit. Daarnaast vind ik de vorm van de buik links niet mooi, vind ik de belijnen van de vleugel te hard en niet mooi afgewerkt en hebben we nog steeds geen driekwart pose" · "maar het lichaam moet niet opeens veel dikker worden he" · "anders moet je maar weer een 3d model pakken".
+1. **3/4-silhouet**, slank (±700–750 px, breedte lijf als het profiel `maker/silhouet_r2/`), ronde kop met inham onder de kin, bek als V-wig, borst één bol onder de kop. Poging `maker3/silhouet_r1/` (foto 5 gespiegeld, 823 px): houding goed, maar te dik, kop/lijf één klomp, bek als vorkje. Claude stuurde hem terug; de agent is gestopt vóór r2.
+2. Als dat niet lukt: **3D-model gebouwd op de goedgekeurde vorm** (profielsilhouet + kop r8 lager), in 3D naar 3/4 gedraaid als onderlaag (niet uit losse bollen: 79–88% overlap gaf een ei/pinguïn, zie hieronder).
+3. Daarna kleur opnieuw: binnenlijnen alleen waar een vorm over een andere valt, in een donkere tint van het vlak, taps; zwart alleen buitenrand schaduwkant (studie Taillow/Starly/Pidgey eerst); vleugellijnen zacht en netjes.
+
+**Werkregels die hier fout gingen:** keurder nooit inperken; reparaties via de maker en opnieuw keuren; Claude legt elk resultaat zelf op 6–8× naast Taillow vóór Jordi; bij twijfel over de omvang van een wijziging eerst vragen; een pose-probleem los je niet in kleurrondes op. Maker na ±8 rondes vers starten.
+
+
 **Status (2 nov): stap 1 (ontwerp).** Nog niets bevroren. Ontwerp en vragen: `ONTWERP.md`. Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`.
 
 ## Onderdelen

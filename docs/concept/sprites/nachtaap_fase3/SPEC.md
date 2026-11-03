@@ -14,9 +14,13 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
 
 - 3 nov: "P1, maak het poppetje maar" → **pose P1 zwevend hangen**: één lange arm omhoog (hangt aan een onzichtbare tak), de andere reikt (helend gebaar), benen los, volle spiraalstaart met bladbundel in de krul, zweefhoogte ±6–7 px.
 - 3 nov (bij het eerste poppetje): "de benen zijn ook te recht" + "mogen veel relaxter" → knieën gebogen naar voren en uit elkaar, onderbenen hangen slap, voeten bungelen (zitten in de lucht).
+- 3 nov (bij raster P1): "nee dit lijkt echt nog nergens op. De hand aan het einde van de arm moet echt een healer gebaar maken. Verder is dit nog niet psychic/zwevend genoeg" + "Lijkt gewoon alsof die staat" → P1 afgekeurd; studie `referenties/psychic_gebaren.png` (Mega Alakazam, Medicham, Meditite, Mr. Mime, Deoxys, Mewtwo …): open handpalm naar de kijker met gespreide vingers; benen niet onder het lijf.
+- 3 nov: "Ik zou bijna zeggen om het echt uniek te maken zou je bijna de benen nog hoger willen hebben alsof die in een soort van vlucht staat zit" + foto 2 ("wat meer zon soort idee") → **benen omhoog** zoals op foto 2: hangt aan de benen, lijf eronder, kop onderaan rechtop, armen vrij.
+- 3 nov, **lore**: "met als lore dat hij planten en takken met psychische krachten kan channelen, onzichtbare of zichtbare" → hij hangt aan een onzichtbare (of zichtbare, psychische) tak; bladeren in de staart passen hierbij.
 
 ## 3D-poppetje
-- `pop3d/muriqui3d.py` (renderer `pop3d/pop3d.py`, kopie van fase 2). Raster `pop3d/hoeken.png`: lijf 30/40/50°, kop +30°, verre of nabije arm omhoog. Kleuren alleen ter oriëntatie (lijnkleuren van fase 2).
+- `pop3d/muriqui3d.py` (renderer `pop3d/pop3d.py`, kopie van fase 2). Kleuren alleen ter oriëntatie (lijnkleuren van fase 2).
+- Raster `pop3d/hoeken.png` (P1, afgekeurd). Raster `pop3d/poses.png`: 'benen omhoog' (lijf 30/40/50°) naast kleermakerszit, zweven en in vlucht.
 
 ## Referenties
 - Foto's van Jordi (3 nov): `referenties/foto1_gezicht_closeup.jpg` (donker kaal gezicht, lichte vachtrand, kleine diepe ogen, brede snuit), `foto2_hangend_lange_armen.jpg` (hangt aan twee armen, benen los, heel lange ledematen), `foto3_klimmend_tak.jpg` (rechtop aan een tak, lange arm omlaag), `foto4_moeder_met_jong.jpg` (gezicht met roze gespikkelde snuit, omhelzing), `foto5_zittend_hand_op_kop.jpg` (zittend, armen om zich heen, roze snuit).
@@ -26,5 +30,6 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
 - Pose (zwevend, rechtop), kop/gezicht (muriqui-masker in lijnkleuren + maan), ogen kleiner maar sinister, bladeren in de staart, outfit uit de anatomie, kené ja/nee, type.
 
 ## Afgekeurd (niet herhalen)
+- Pose P1 met de voeten onder het lijf ('lijkt gewoon alsof die staat'), een arm omhoog aan een tak zonder healergebaar, gestrekte stokbenen.
 - Alles uit `../nachtaap_evo/SPEC.md` (Afgekeurd) en `../FEEDBACK.md`: o.a. kené als dunne lijntjes of ribbels, borstvlak, bleke gezichtsschijf, maanfasen/sterren, ondersteboven hangen.
 - Kleuromkering naar muriqui-kleuren (lichte vacht, donker gezicht): de kleuren van de lijn blijven (Jordi, 3 nov).

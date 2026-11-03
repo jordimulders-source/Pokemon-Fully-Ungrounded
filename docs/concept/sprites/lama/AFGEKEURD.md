@@ -6,3 +6,4 @@ Details en Jordi's woorden in `SPEC.md`.
 - Kop van het poppetje en van A/B: te veel paard (Jordi, 3 nov). Hals schuin naar voren.
 - Oog als zwart rondje met een wit glanspuntje: mist de droge "ik zie de wereld aan me voorbij gaan"-blik van de lama.
 - Hoekige vormen in de poten.
+- Silhouet ronde 3: korrelige omtrek (veel kleine 1-px bobbels en trapjes) in plaats van de grote gladde wolbogen van Flaaffy.

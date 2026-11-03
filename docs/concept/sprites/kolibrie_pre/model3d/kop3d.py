@@ -24,7 +24,7 @@ def glad(m, sigma):
     t = np.sort(g.ravel())[::-1][int(up.sum())]
     return g > t
 
-def bouw(h=25, p=15, c=(23.0, 17.6), r=(8.2, 7.6, 7.9), snavel=7.5, gaap=40, rond=0.0, nek=0, staart_uit=(0, 0)):
+def bouw(h=25, p=15, c=(23.0, 17.6), r=(8.2, 7.6, 7.9), snavel=7.5, gaap=40, rond=0.0, nek=0, staart_uit=(0, 0), staart3d=None):
     """h = kop extra naar de kijker t.o.v. het lijf, p = bekje omhoog, c = kopmidden (spritepx), r = stralen f/u/s"""
     lijfm = (M.LIJF & ~M.KOP) | (M.LIJF & (M.yy >= 21) & (M.xx >= 19))
     if nek:   # bovenkant van het lijf lager, zodat de kop als bol boven de schouders uitkomt
@@ -38,7 +38,18 @@ def bouw(h=25, p=15, c=(23.0, 17.6), r=(8.2, 7.6, 7.9), snavel=7.5, gaap=40, ron
     occ = np.zeros((N, N, 2 * Zmax + 1), np.uint8)
     a = np.abs(zs)
     occ[(a <= wl[..., None]) & (wl[..., None] > 0)] = 1
-    occ[(np.abs(zs) <= 1.2 * U) & staart[..., None]] = 5
+    if staart3d is None:
+        occ[(np.abs(zs) <= 1.2 * U) & staart[..., None]] = 5
+    else:
+        # staart groeit uit het achterlijf: taps toelopende kegel van wortel (in het lijf) naar punt, plat in de hoogte
+        (rx, ry, rr), (tx, ty, tr) = staart3d
+        A = np.array([rx, ry]) * U; B = np.array([tx, ty]) * U; L = np.linalg.norm(B - A); dvec = (B - A) / L
+        Yg, Xg = np.mgrid[0:N, 0:N]
+        t = np.clip(((Xg - A[0]) * dvec[0] + (Yg - A[1]) * dvec[1]) / L, 0, 1)
+        dist = np.hypot(Xg - (A[0] + t * L * dvec[0]), Yg - (A[1] + t * L * dvec[1]))
+        straal = (rr + (tr - rr) * t) * U
+        dikte = np.where(dist <= straal, (0.55 + 0.45 * (1 - t)) * straal * 1.15, -1)   # halve breedte in z
+        occ[(a <= dikte[..., None]) & (occ == 0)] = 5
     wvl = np.maximum(wl, 0.8 * U)
     occ[vl[..., None] & (a >= 0.45 * wvl[..., None]) & (a <= wvl[..., None] + 1.2 * U)] = 3
     xg = np.mgrid[0:N, 0:N][1]

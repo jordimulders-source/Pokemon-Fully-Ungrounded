@@ -178,3 +178,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.39] - Lama fase 2: silhouet ronde 5c
 - Verse maker tekende het silhouet op pose F (lijf horizontaal, kop driekwart, kaarsrechte hals, alle poten op de grond, 0 korrels). Claude stuurde ronde 5 terug (doos-romp, paaltjespoten); 5b met ronde wolmassa en tapse poten; verse keuring BIJNA (6 reparaties: oplopende rug, buikboog, hoeven achter, handschoenen met platte zool) verwerkt in 5c: `docs/concept/sprites/lama/fase2/silhouet_r5/vel_ronde5c.png`. Wacht op Jordi (rug oplopend/vlak, staartpluim, formaat).
+
+### [v0.0.40] - Lama fase 2: silhouet 5b goedgekeurd
+- Jordi koos ronde 5b ("5b ok want c heeft opeens geen staart meer"); 5c afgekeurd (staart verdwenen in de oplopende rug). Silhouet 5b bevroren als basis voor de kleur (oogvarianten, wol als één zachte massa).

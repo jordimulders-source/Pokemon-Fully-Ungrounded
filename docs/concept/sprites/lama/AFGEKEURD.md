@@ -9,3 +9,4 @@ Details en Jordi's woorden in `SPEC.md`.
 - Silhouet ronde 3: korrelige omtrek (veel kleine 1-px bobbels en trapjes) in plaats van de grote gladde wolbogen van Flaaffy.
 - Pose met de opgetilde, geknikte voorpoot in dekking ("de poten lijken net gebroken"); te golvende wolomtrek (golviger dan de schapen).
 - Poten omhoog (steigeren, opgetilde voorpoot): "Een lama die zijn poten omhoog heeft is wel erg gek".
+- Silhouet ronde 5c: oplopende rug die de staart wegwerkt ("c heeft opeens geen staart meer"). De staartpluim moet een eigen vorm blijven; een rugreparatie mag de staart niet opslokken.

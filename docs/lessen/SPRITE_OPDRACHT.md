@@ -34,7 +34,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Referentiefoto = inspiratie, geen blauwdruk (Pokémon-filosofie), maar de soort moet herkenbaar blijven.
 
 **Werkwijze**
-- **Een goedgekeurd poppetje/ontwerp is de specificatie:** het silhouet trekt het over (max. ±1 px), de maker interpreteert of herontwerpt het niet (Jordi, 3 nov, lamakop: "de kop is dus niet goed want die is anders").
+- **Een goedgekeurd poppetje/ontwerp is de specificatie:** het silhouet trekt het over (max. ±1 px), de maker interpreteert of herontwerpt het niet (Jordi, 3 nov, lamakop: "de kop is dus niet goed want die is anders"). Dat geldt voor het **hele** silhouet, ook lijf en poten ("het lijf en de poten wijken echt flink af"): Claude geeft geen eigen vormeisen ("eigen kolom per poot", "≥ 5 px") die het model overrulen, en meet elke ronde de afwijking met een dekkingskaart van het model (`lama/fase2/silhouet_r5/kop_dekking.py`) vóór Jordi.
 - **Wat Jordi goedkeurde blijft letterlijk staan** (pixel voor pixel). "Meer Pokémon" of "beter" nooit uitvoeren door goedgekeurde verhoudingen te veranderen.
 - **Een kleine correctie is klein:** werk binnen het pixelbudget dat Claude opgeeft; tel en meld het aantal gewijzigde pixels. Verplaats je een onderdeel, laat dan de vorm eromheen meekloppen (neus verschuiven = snuit mee).
 - Grote of ongevraagde wijzigingen alleen als variant naast het origineel.

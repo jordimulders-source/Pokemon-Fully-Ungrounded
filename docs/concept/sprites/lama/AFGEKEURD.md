@@ -11,3 +11,4 @@ Details en Jordi's woorden in `SPEC.md`.
 - Poten omhoog (steigeren, opgetilde voorpoot): "Een lama die zijn poten omhoog heeft is wel erg gek".
 - Silhouet ronde 5c: oplopende rug die de staart wegwerkt ("c heeft opeens geen staart meer"). De staartpluim moet een eigen vorm blijven; een rugreparatie mag de staart niet opslokken.
 - Silhouet ronde 5d/5e: kop anders dan het goedgekeurde poppetje (5d frontaal/konijn met rechte oren; 5e eigen interpretatie van de driekwartkop). Jordi: "de kop is dus niet goed want die is anders". De kop wordt overgetrokken van het poppetje, niet hertekend.
+- Silhouet ronde 5–5f: lijf en poten wijken flink af van het model (5f: 302 px te veel, 108 te weinig; poten 2–3 px te breed per kant, uit elkaar geschoven in eigen kolommen, achterpoten 3–4 px naar voren, buik te laag). Jordi: "het lijf en de poten wijken echt flink af". Oorzaak: Claudes eisen (eigen kolommen, ≥5 px) wonnen van het model. Het hele silhouet wordt overgetrokken.

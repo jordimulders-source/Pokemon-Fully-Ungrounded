@@ -50,6 +50,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
 - Pose (zwevend, rechtop), kop/gezicht (muriqui-masker in lijnkleuren + maan), ogen kleiner maar sinister, bladeren in de staart, outfit uit de anatomie, kené ja/nee, type.
 
 ## Afgekeurd (niet herhalen)
+- Machamp-hand ongewijzigd op het silhouet geplakt (`referenties/hand_machamp_transplant.png`): Jordi 3 nov "HAHA JA PRACHTIG. Nu kunnen we hem ook atomic type geven omdat het net lijkt alsof die uit chernobyl komt". Een overgenomen hand moet worden aangepast aan onze arm, maat en richting, niet geplakt.
+- Alle 3D-handen van 3 nov (gespreide klauw, piano-toetsen, want met crème stompjes, 3-vingerwant): 'lachwekkend slecht'.
 - Elke versie zonder healerhand met de palm naar de tegenstander (Jordi: 'mag je het altijd afkeuren'); zeesterpose met gestrekte buizen; hand die het gezicht bedekt of op zijn kant staat; takken in beeld.
 - Pose P1 met de voeten onder het lijf ('lijkt gewoon alsof die staat'), een arm omhoog aan een tak zonder healergebaar, gestrekte stokbenen.
 - Alles uit `../nachtaap_evo/SPEC.md` (Afgekeurd) en `../FEEDBACK.md`: o.a. kené als dunne lijntjes of ribbels, borstvlak, bleke gezichtsschijf, maanfasen/sterren, ondersteboven hangen.

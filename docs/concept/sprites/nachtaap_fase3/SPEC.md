@@ -25,6 +25,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
 - 3 nov: "je hebt nu ook het rechterbeen afgekapt", "hahaha wat doe je nou", "dit lijkt nergens op", "waarom schiet die hele arm naar boven", "volg mijn schets" → terug naar de schets: onderste arm van onder de nek schuin naar linksonder, hand onder de kop.
 - 3 nov: "en kijk ook naar andere pokemon sprites want dit ziet er nog erg onnatuurlijk uit" → studie `referenties/dynamische_poses.png` (Mew, Deoxys Speed, Celebi, Zeraora, Ambipom, Infernape, Primeape, Simipour …): compact, ledematen gebogen en dicht bij het lijf, grote handen/voeten, kop groot op de schouders, taps (dikke dij/bovenarm), geen zeester.
 - 3 nov: "waar is de healing hand?" + **"als er geen healing hand met de palm richting de tegenstander is dan mag je het altijd afkeuren"** → **harde eis:** open hand, vingers gespreid, palm naar de tegenstander (= naar de kijker bij een frontsprite), groot genoeg om op 1× te lezen.
+- 3 nov, handkrabbel `referenties/jordi_krabbel_hand.png` ("zie hier mijn lelijke sketch", "dit is toch niet zo moeilijk"): hand aan het eind van de onderste arm, linksonder de kop; pols knikt naar achteren, **vingers omhoog, duim links, palm naar de tegenstander**. Render: `pop3d/pose_40_80_healerhand.png` (groot + 1×).
 
 ## 3D-poppetje
 - `pop3d/muriqui3d.py` (renderer `pop3d/pop3d.py`, kopie van fase 2). Kleuren alleen ter oriëntatie (lijnkleuren van fase 2).

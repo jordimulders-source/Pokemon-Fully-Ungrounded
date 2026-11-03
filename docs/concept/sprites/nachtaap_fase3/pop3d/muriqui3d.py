@@ -166,10 +166,12 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaa
         hand(m, np.array((-40.0, 46, -24)), (-0.8, 0.7, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0, k_=1.3)
         # nabije arm (schets): van onder de nek schuin naar linksonder, elleboog gebogen; hand plat, vingers
         # gespreid, palm omlaag-voor naar het doel (anime-still, één hand)
-        m.chain([(-18, -8, 20, LIMB + 1.5), (-26, -30, 26, LIMB - 0.5), (-44, -40, 26, LIMB - 3)], 'fur')
+        m.chain([(-18, -8, 20, LIMB + 1.5), (-28, -36, 26, LIMB - 0.5), (-50, -60, 26, LIMB - 3)], 'fur')
         # leesbaarheid (Simipour, Ambipom): hand plat naar de kijker, vingers wijd, groot
-        open_hand(m, np.array((-44.0, -40, 26)), (-0.8, -0.6, 0.1), view, 'hand', 'tip',
-                  spread=1.0 if gebaar == 'A' else 1.6, k_=1.7, duim=True, ln_=1.2)
+        # Jordi's handkrabbel (referenties/jordi_krabbel_hand.png): pols knikt naar achteren, vingers OMHOOG, duim
+        # links, palm naar de tegenstander (= de kijker): het stop-/healgebaar onder de kop
+        open_hand(m, np.array((-52.0, -62, 28)), (-0.15, 1, 0.1), view, 'hand', 'tip',
+                  spread=1.0 if gebaar == 'A' else 1.5, k_=1.6, duim=True, ln_=1.15)
         # verre been omhoog, knie gebogen naar voren, voet gekruld om een onzichtbare tak
         m.chain([(18, 14, -14, LIMB + 4), (12, 40, -18, LIMB), (24, 58, -20, LIMB - 3)], 'far')
         hand(m, np.array((24.0, 58, -20)), (0.3, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0, k_=1.4)

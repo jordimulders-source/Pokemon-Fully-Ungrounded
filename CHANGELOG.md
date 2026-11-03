@@ -163,3 +163,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.36] - Uyuni-Silicobra: frontsprite goedgekeurd
 - Jordi: "ronde 6 uitstekend en akkoord". Frontsprite (frame 1) bevroren in `docs/concept/sprites/silicobra_uyuni/af/silicobra_uyuni.png` (64×64, 15 kleuren, transparency=0). Lessen van de zes rondes in `docs/lessen/SPRITE_WERKWIJZE.md` (Regional forms). Stand van zaken in CLAUDE.md bijgewerkt.
 - Nog te doen: frame 2 (mond open), rugsprite, icoon, shiny, naam en data; de nieuwe evolutie; de ability.
+
+### [v0.0.37] - Naam evolutie: Saltaconda
+- De nieuwe evolutie van de Uyuni-Silicobra heet **Saltaconda** (salt + anaconda, dé slang van Zuid-Amerika). Ontwerprichting en type nog open (`docs/concept/sprites/silicobra_uyuni/ONTWERP.md`).

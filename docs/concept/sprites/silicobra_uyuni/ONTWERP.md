@@ -49,7 +49,7 @@ Jordi: "laten we gelijk bedenken wat voor evolutie we silicobra geven". Uitgangs
 
 ## Naam evolutie: brainstorm (3 nov)
 Jordi: "ik zat te denken aan een soort gelijke woordspeling als sandaconda, maar dan salti-nogwat of salty-nogwat" en "maar wel een slang die in zuid amerika voorkomt". Max. 12 tekens (`POKEMON_NAME_LENGTH`).
-- **Saltaconda** (salt + anaconda; Amazone/Pantanal): het directe spiegelbeeld van Sandaconda.
+- **Saltaconda** (salt + anaconda; Amazone/Pantanal): het directe spiegelbeeld van Sandaconda. **Gekozen** (Jordi, 3 nov: "een anaconda zit gewoon in zuid amerika? wat doen we moeilijk dan haha").
 - **Saltiboa / Saltyboa** (boa constrictor, heel Zuid-Amerika).
 - **Salaraca** (salar + jararaca, lanspuntslang van Brazilië/Argentinië/Paraguay).
 - **Salcabel** (Spaans *sal* + *cascabel*, de Zuid-Amerikaanse ratelslang).

@@ -7,13 +7,22 @@ Eerste regional form van Fully Ungrounded. Achtergrond: `docs/concept/IDEEEN.md`
 - **Nieuwe evolutie** i.p.v. een Uyuni-Sandaconda (3 nov: "laten we een nieuwe evolutie maken").
 - **Werkwijze:** de bestaande sprite als basis (`referenties/silicobra_basis.png` = `graphics/pokemon/silicobra/anim_front.png`), niet de fakemon-werkwijze vanaf foto/silhouet.
 
+## Ontwerp vastgelegd (Jordi, 3 nov: "dan is A prima")
+Basis: `schetsen_ronde2.png`, variant **A** (ruwe gescripte schets = ontwerp, geen blauwdruk voor de pixels).
+Jordi over ronde 1: "Ik zie de zoutkorst 100% zitten en ook de pekelzak ziet er mooi uit. Het half dichtgevallen oog is ook goed te doen gezien de originele sprite [...] De zoutkuif is niks mis mee op zichzelf denk ik". Karakter: "loom, trager zou prima zijn. Wat meer een wall".
+
 ## Onderdelen
 | Onderdeel | Bron | Status |
 |---|---|---|
-| Silhouet | bestaande Silicobra | bevroren (tenzij Jordi iets vraagt) |
-| Kleurrichting | `kleurrichtingen_ronde1.png` (A Zoutkorst, B Spiegel, C Lithium; alleen paletwissel) | vervallen: eerst ontwerp (ONTWERP.md) |
-| Patroon | zeshoekige zoutkorst i.p.v. de donkere vlekken | open: maker-agent na de kleurkeuze |
-| Oog | turquoise (lithium) i.p.v. groen | voorstel |
+| Silhouet, pose, kop, snuit, staartkrul, voet | bestaande Silicobra (`referenties/silicobra_basis.png`) | bevroren, behalve de twee toevoegingen hieronder |
+| Zoutkuif (platen op de rug/achterkant van de kop) | schets A | toevoeging: 1–3 px buiten het silhouet, rustige platen met naden |
+| Pekelzak (nek, doorschijnend turquoise, lithium) | schets A | toevoeging: iets bol buiten het oude silhouet; rechterkant rond (in de schets recht afgesneden bij de staart) |
+| Zoutkorst (zeshoeken i.p.v. de vlekken) | schets A | met de hand, rustig, leesbaar op 1×; geen ruis |
+| Oog | schets A | half dichtgevallen (loom), turquoise iris |
+| Kleur | warm gebroken wit, grijs-oker (zout met stof/klei); turquoise accent | **niet** ijsblauw (Alola-Sandshrew = Ice), **niet** Nacli (kubussen, oranje gloed) |
+| Zoutkegel | – | niet in de sprite; overworld-gedrag + dex-tekst |
+| Frame 2, rug, icoon, shiny | – | later (aparte taak) |
 
 ## Afgekeurd
-(nog niets)
+- Paletwissel alleen (Jordi: "een pallette swap is niet genoeg").
+- Zoutkegel in de sprite (leest op 64 px als steen/ei/vin).

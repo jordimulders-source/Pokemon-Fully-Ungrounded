@@ -141,3 +141,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.29] - Uyuni-Silicobra: keuzes + schetsen ronde 2 (zoutkegel)
 - Besloten (Jordi): zoutkorst, pekelzak, half dichtgevallen oog en zoutkuif. Twijfel over de zoutkegel: vier varianten in `docs/concept/sprites/silicobra_uyuni/schetsen_ronde2.png`; voorstel om de kegel als overworld-gedrag te gebruiken in plaats van in de sprite.
+
+### [v0.0.30] - Uyuni-Silicobra: ontwerp vastgelegd (variant A)
+- Jordi koos variant A (zoutkorst, pekelzak, half dichtgevallen oog, zoutkuif; geen zoutkegel in de sprite). SPEC.md bijgewerkt; maker-agent gestart.

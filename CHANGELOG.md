@@ -170,3 +170,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.38] - Salticonda: richting + eerste schetsen
 - Besloten (Jordi): Salticonda wordt **Ground/Electric**, een bulky wall (HP en Def), in de geest van Runerigus: een eigen vorm met inspiratie van Sandaconda (zoutheuvel met pekelringen, hints naar een accu). `docs/concept/sprites/salticonda/` met SPEC.md en vier ruwe schetsen op de Sandaconda-sprite.
+
+### [v0.0.39] - Salticonda: silhouetronde 1
+- Drie silhouetvarianten op Ekans als skelet, met de anaconda-foto's van Jordi als bron voor de kop (`docs/concept/sprites/salticonda/silhouet1/`): A 4 windingen + kop bovenop, B laag en breed + kop vooraan, C Ekans-houding met staart omhoog.

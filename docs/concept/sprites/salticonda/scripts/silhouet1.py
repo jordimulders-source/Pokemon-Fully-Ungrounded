@@ -40,37 +40,89 @@ def line(p0,p1,w0,w1,n=24):
         t=i/n; pl.append((p0[0]+(p1[0]-p0[0])*t, p0[1]+(p1[1]-p0[1])*t)); wl.append(w0+(w1-w0)*t)
     return pl,wl
 
+# Kop met de hand (anaconda-foto's: lange platte kop, brede ronde stompe snuit,
+# oog en neusgat hoog bovenop; Sandaconda: langere snuit met neusbult aan de punt;
+# Silicobra-Uyuni: zoutkuif achter het oog). Kijkt naar links-voor.
+HEAD = """
+..............######.......
+...........###########.....
+.........##############....
+........################...
+.......##################..
+..###.####################.
+.##########################
+###########################
+###########################
+##########################.
+#########################..
+.########################..
+..######################...
+....####################...
+.......##################..
+"""
 def head(hx,hy):
-    """Eigen kop: schedel + zoutkuif (Silicobra-Uyuni) + langere, platte snuit
-    met neusgatbult (Sandaconda-idee). Kijkt naar links-voor."""
     p=set()
-    p|=coil(hx+17,hy+10,9.5,8,2.2)        # schedel
-    p|=coil(hx+16,hy+3.5,6.5,3.6,2.0)     # zoutkuif (koepel)
-    p|=coil(hx+7.5,hy+11,8,4.6,3.2)       # snuit: plat boven, rond aan de punt
-    p|=coil(hx+3,hy+6.6,2.2,1.3,2)        # neusgatbult bovenop de snuitpunt
+    for y,row in enumerate(HEAD.strip('\n').split('\n')):
+        for x,c in enumerate(row):
+            if c=='#': p.add((x+hx,y+hy))
     return p
+
+def cone(yt, yb, wt, wb, bands, cx_list, notch=3.4, conv=0.75, base_round=4, top_round=0):
+    """Afgeronde zoutkegel: gladde omhullende (bol, zwaar) met per winding een
+    afgeronde rand en een kleine gleuf tussen de windingen."""
+    pts=set(); n=len(bands)
+    for y in range(yt, yb+1):
+        s=(y-yt)/(yb-yt)
+        W=wt+(wb-wt)*(s**conv)
+        # in welke winding zitten we
+        for i,(a,b) in enumerate(bands):
+            if a<=y<=b: break
+        mid=(a+b)/2; hb=(b-a)/2+0.5
+        t=min(1,abs(y+0.5-mid-0.5)/hb)
+        d=notch*(1-math.sqrt(max(0,1-t*t)))
+        if i==n-1 and y>mid:  # onderste winding: rond tegen de grond
+            d=base_round*(1-math.sqrt(max(0,1-t*t)))*1.0+ (W*0.5*(t**3))
+        if i==0 and y<mid and top_round:  # bovenste winding: koepel, geen platte bovenkant
+            d=notch*(1-math.sqrt(max(0,1-t*t)))+W*top_round*(t**2.5)
+        cx=cx_list[i]
+        w=W-d
+        for x in range(int(cx-w-1), int(cx+w+2)):
+            if abs(x+0.5-cx)<=w: pts.add((x,y))
+    return pts
 
 def build(spec):
     pts=set()
-    for c in spec['coils']: pts|=coil(*c)
+    if 'cone' in spec: pts|=cone(**spec['cone'])
+    for c in spec.get('coils',[]): pts|=coil(*c)
     pts|=head(*spec['head'])
     for seg in spec['tail']:
         pl,wl=line(*seg); pts|=spike(pl,wl)
     for (x,y) in spec.get('notch',[]): pts.discard((x,y))
+    if 'rows' in spec:  # handgetekende rechterkant per rij: (y, rand van winding, [staartstukken])
+        for y,edge,segs in spec['rows']:
+            for x in range(edge+1,64): pts.discard((x,y))
+            for a,b in segs:
+                for x in range(a,b+1): pts.add((x,y))
     for (x,y) in spec.get('add',[]): pts.add((x,y))
-    return {(x,y) for (x,y) in pts if 0<=x<64 and 0<=y<64}
+    return {(x,y) for (x,y) in pts if 0<=x<64 and 0<=y<=58}
 
 # coils: (cx, cy, halve breedte, halve hoogte)
 V={
- 'A': dict(  # 4 windingen, kop recht bovenop de kegel, staartspits rechtsonder
-   coils=[(32,52,27,6.5,2.3),(33.5,43,22.5,5.2,2.3),(31.5,35.5,18,4.8,2.3),(33.5,28.5,13.5,4.3,2.3)],
-   head=(14,8), tail=[((50,54),(62,49),3.2,0.6)]),
- 'B': dict(  # 3 windingen, lager en breder, kop hangt naar links-voor over de rand
-   coils=[(34,51.5,27.5,7,2.3),(35,41,23,5.8,2.3),(36,32,17.5,5,2.3)],
-   head=(8,13), tail=[((52,53),(63,49),3.4,0.6)]),
+ 'A': dict(  # 4 windingen, kop recht bovenop de kegel (kuif = top), staartspits rechtsonder
+   cone=dict(yt=26,yb=58,wt=13,wb=29,bands=[(26,33),(34,41),(42,49),(50,58)],cx_list=[32.5,30.5,31.5,29.5],notch=4),
+   head=(9,11), tail=[],
+   # staart komt onder de onderste winding vandaan en loopt als spits naar rechtsboven (Sandaconda-idee)
+   rows=[(49,55,[]),(50,54,[(61,62)]),(51,54,[(58,62)]),(52,54,[(56,61)]),(53,54,[(55,60)]),(54,53,[(54,59)]),
+         (55,53,[(54,57)]),(56,52,[(53,55)]),(57,50,[]),(58,47,[])]),
+ 'B': dict(  # 3 dikke windingen; kop ligt plat vooraan op de middelste winding en hangt links-voor over de rand (opgerolde anaconda-foto); de kegeltop is de bovenste winding
+   cone=dict(yt=21,yb=58,wt=11,wb=30,bands=[(21,32),(33,45),(46,58)],cx_list=[40,36,32],notch=5,conv=0.6,top_round=0.6),
+   head=(1,22), tail=[],
+   rows=[(48,56,[]),(49,56,[]),(50,55,[(61,62)]),(51,55,[(58,62)]),(52,55,[(57,61)]),(53,55,[(56,60)]),(54,54,[(55,59)]),
+         (55,54,[(55,58)]),(56,53,[(54,56)]),(57,51,[]),(58,48,[])]),
  'C': dict(  # 4 windingen, staart als spits langs rechts omhoog (Ekans-houding, Sandaconda-spits)
-   coils=[(31,52.5,26,6.5,2.3),(32.5,43.5,22,5.2,2.3),(31,36,18,4.8,2.3),(32.5,29,13.5,4.3,2.3)],
-   head=(13,8.5), tail=[((49,50),(56,40),3.4,1.8),((56,40),(58,30),1.8,0.4)]),
+   cone=dict(yt=25,yb=58,wt=13,wb=29,bands=[(25,32),(33,40),(41,49),(50,58)],cx_list=[33.5,31.5,33,31.5],notch=4),
+   head=(10,11), tail=[((50,51),(56,41),3.4,1.8),((56,41),(58,31),1.8,0.4)],
+   notch=[(58,42)]),
 }
 
 def save(pts,name):

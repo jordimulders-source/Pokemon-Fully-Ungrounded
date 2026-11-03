@@ -95,3 +95,42 @@ Rijen y0–30 worden letterlijk uit `ronde5.txt` gekopieerd. **Diff y0–30, x �
 - Een poot "uit de wol" laten lopen gaat het best door de buiklijn naast de poot 1–2 rijen hoger te leggen (oksel/lies als leeg 2×2-blok) in plaats van de poot breder te maken.
 - Een hak leest al met 1 px naar achteren over 2 rijen, als het onderbeen eronder 1 px per 2–3 rijen terugloopt. Een in-uit-in van 1 rij geeft meteen een tand.
 - Bevriezen door rijen letterlijk uit de goedgekeurde tekst te kopiëren (`S[:31] = R5[:31]`) maakt de pixeldiff triviaal.
+
+---
+
+# Ronde 5c (zelfde maker, 3 nov): reparaties R1–R6 uit KEURING_5b.md
+
+Precies de zes reparaties uit `KEURING_5b.md` / `keuring_5b_vel.png`. Ze staan met de hand als losse pixelwijzigingen in `spans_ronde5c.py`, toegepast op `ronde5b.txt`, met als uitvoer `ronde5c.txt` / `ronde5c_1x.png`. Vel: `vel_ronde5c.png` (`vel5c.py`: 5b | 5c | Mareep | Girafarig | Ponyta op 4× en 1× + 5c over het poppetje). Controles: `controle_uitvoer_5c.txt`, `korrel_uitvoer_5c.txt`.
+
+**Resultaat:** 1388 px (1,36× fase 1), box 43×62, kop 32 %. `korrel.py`: **0 / 0 / 0**. 1 component, 0 losse px, 0 gaten.
+
+## Kosten per reparatie (budget ±53: +40 / −13)
+| Reparatie | Werkelijk |
+|---|---|
+| R1 rug oplopend schoft → kruis (y24–26) | +25 / −0 |
+| R2 deuk onder de staart weg (y28–29 x52) | +2 / −0 |
+| R3 buik als één boog (y43 x31–32 erbij, y45 x35–37 eraf) | +2 / −3 |
+| R4 nabije onderbenen 5 px (voor y51/53/54, achter y53–56) | +7 / −0 |
+| R5 achtervoeten hoeven (nabij x38–43, ver x47–51) | +0 / −6 |
+| R6 handschoenen op de grond (nabije zool 6, verre 7 breed met platte zool) | +4 / −4 |
+| **Totaal** | **+40 / −13** (precies het budget) |
+
+## Bevriezingsdiff (t.o.v. ronde5b.txt)
+- Kop, oren, hals en halsband (x ≤ 27, y0–30): **0 px**.
+- x ≤ 31, y0–30: **2 px**, namelijk y26 x28–29. Dat is de inkeping bij de schoft die R1 volgens de keuring moet vullen ("y26: x28–29 … erbij"). Hij ligt tussen de halsachterrand (x27) en de rug, niet in de hals zelf. Als Claude x28–31 strikt bevroren wil, blijft er een dip van 2 px bij de schoft.
+- Buiten de zones van R1–R6: **0 px**.
+
+## Toets op 1× (vel)
+- **R1:** de bovenrand loopt in drie lange treden op (y26 x28–33, y25 x34–41, y24 x42–51). Op 1× leest dat als een licht oplopende rug naar een hoog kruis, **zonder bult of kameel**: er is geen top in het midden, het hoogste punt is het kruis. De doos is weg omdat boven- en onderlijn niet meer evenwijdig lopen.
+- **R5/R6:** alleen de voorpoten staan op (rode) handschoenen. De achterpoten eindigen in smalle hoeven, zoals op het poppetje. De handschoenen staan plat op de grond; de verre is kleiner dan de nabije.
+- **R3/R4:** de buik loopt in één boog van voor- naar achterpoot. De nabije poten zijn 5 px en de hak van de nabije achterpoot leest lager (y53–56).
+
+## Eerlijk: wat nog niet leest
+- **Staartpluim:** na R1 is de staart alleen nog een koepel van 1 rij (y23 x48–50) op het kruis. Op 1× zie je een hoog achterwerk, maar geen staart als eigen vorm. Een opstaande pluim kost 2–3 rijen boven y23 en is een nieuw kenmerk. Dat staat bij de keurder als smaakvraag voor Jordi.
+- De rug is oplopend, niet vlak zoals foto 8: dat is de smaakkeuze van de keurder (advies: oplopend), Jordi beslist.
+- Formaat 1,36× fase 1 (D5 1,5–1,7×), door de slanke lama binnen 62 px hoogte.
+- Onderlip, pompons, oorkwasten, aguayo en MMA-vorm zitten alleen in de kleur.
+
+## Lessen (5c)
+- `korrel.py` vangt geen golf van stukken die elk ≥ 2 px breed zijn (plateau + dip + koepel + deuk). Kijk ook naar de bovenrand als reeks treden: een lijn die alleen oploopt of alleen daalt, is glad.
+- Een reparatielijst als (y, x0, x1, ±) in een script maakt de kosten per reparatie en de diff buiten de zones meteen bewijsbaar.

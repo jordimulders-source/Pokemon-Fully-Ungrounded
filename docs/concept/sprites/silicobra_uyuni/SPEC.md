@@ -26,3 +26,7 @@ Jordi over ronde 1: "Ik zie de zoutkorst 100% zitten en ook de pekelzak ziet er 
 ## Afgekeurd
 - Paletwissel alleen (Jordi: "een pallette swap is niet genoeg").
 - Zoutkegel in de sprite (leest op 64 px als steen/ei/vin).
+
+## Rondes
+- Ronde 2 (Jordi, 3 nov): "bij 2 vind ik de zak wat te groot geworden, die lijkt nu 1 met de staart. Plus de kuif links kapt erg scherp af. Verder wel prima" → **bevroren:** oog (half lid, ring), korst/barstnet, kleuren en gekleurde buitenlijn, gezicht, voet, krul. Open: zak kleiner en los van de staart, kuif links laten uitlopen (ronde 3).
+- Ronde 1 (Jordi): "vooral de buitenste lijn is te zwart".

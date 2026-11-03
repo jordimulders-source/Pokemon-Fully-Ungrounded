@@ -181,3 +181,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.40] - Lama fase 2: silhouet 5b goedgekeurd
 - Jordi koos ronde 5b ("5b ok want c heeft opeens geen staart meer"); 5c afgekeurd (staart verdwenen in de oplopende rug). Silhouet 5b bevroren als basis voor de kleur (oogvarianten, wol als één zachte massa).
+
+### [v0.0.41] - Lama fase 2: silhouet ronde 5d
+- Jordi: "als c nu gewoon een staart zou hebben, zou die het beste zijn" → ronde 5d: 5c met de staartpluim van 5b terug (rest pixel voor pixel 5c, 0 korrels). Wacht op Jordi. Les: één versie naar Jordi, geen meerdere imperfecte opties (`docs/lessen/SPRITE_OPDRACHT.md` §4).

@@ -134,3 +134,28 @@ Precies de zes reparaties uit `KEURING_5b.md` / `keuring_5b_vel.png`. Ze staan m
 ## Lessen (5c)
 - `korrel.py` vangt geen golf van stukken die elk ≥ 2 px breed zijn (plateau + dip + koepel + deuk). Kijk ook naar de bovenrand als reeks treden: een lijn die alleen oploopt of alleen daalt, is glad.
 - Een reparatielijst als (y, x0, x1, ±) in een script maakt de kosten per reparatie en de diff buiten de zones meteen bewijsbaar.
+
+---
+
+# Ronde 5d (zelfde maker, 3 nov): 5c met de staartpluim terug
+
+Jordi (letterlijk): "5b ok want c eheft opeens geen staart meer" en "als c nu gewoon een staart zou hebben, zou die het beste zijn".
+De staart staat met de hand als spans in `spans_ronde5d.py`, toegepast op `ronde5c.txt`, met als uitvoer `ronde5d.txt` / `ronde5d_1x.png`. Vel: `vel_ronde5d.png` (`vel5d.py`: 5b | 5c | 5d op 4× en 1× + 5d over het poppetje). Controles: `controle_uitvoer_5d.txt`, `korrel_uitvoer_5d.txt`.
+
+**Resultaat:** 1415 px (1,39× fase 1), box 43×62, kop 32 %. `korrel.py`: **0 / 0 / 0**. 1 component, 0 losse px, 0 gaten.
+
+## Staartzone en diff
+- **Zone y19–24, x47–53: +27 / −0 px.** Per rij: y19 x49–51, y20 x48–52, y21–23 x47–53, y24 x47–52 (staartvoet op het kruis).
+- Diff buiten de staartzone t.o.v. `ronde5c.txt`: **0 px**. Kop/oren/hals/halsband (x ≤ 27, y0–30): **0 px**.
+
+## Vorm
+- Een ronde koepel van 5 rijen die boven het kruis opstaat (top y19, 5 rijen boven de rug op y24) en licht naar achteren helt (breedst x47–53 op y21–23, 1 px voorbij de staartaanzet). Het is net als in 5b een eigen vorm, nu op de hoge achterkant van 5c.
+- **Aansluiting:** de oplopende rug van 5c (y26 → y25 → y24, x28–46) loopt ongewijzigd door tot de staartvoet (x47). De staart rijst daar in één keer op: geen dip in de rug en geen bult ervoor. De holle hoek tussen rug en staart (x46, y23) is 2×2 leeg, dus geen korrel.
+- Op 1× (vel, licht en groen) leest de staart als opstaande pluim, net als in 5b. Tegelijk blijven de oplopende rug, de buikboog, de hoeven en de handschoenen van 5c staan.
+
+## Eerlijk
+- Onder de staart loopt de achterrand op x52 recht van y24 tot y31 (8 rijen), daarna volgt de rompboog (x53). Een inham daar was in 5b de "deuk" die de keurder als golf afkeurde (R2). Deze rechte rand heb ik daarom bewust laten staan.
+- Onderlip, pompons, oorkwasten, aguayo en MMA-vorm zitten alleen in de kleur. Formaat 1,39× fase 1 (D5 vraagt 1,5–1,7×).
+
+## Les (5d)
+- Bij een oplopende rug moet de staart een eigen vorm boven het kruis zijn (minstens 4–5 rijen hoog). Een koepel van 1 rij gaat op in het kruis en leest niet meer als staart. Na een reparatie aan de bovenlijn altijd nakijken of de kenmerken die daar uitsteken (staart, oren) nog op 1× lezen.

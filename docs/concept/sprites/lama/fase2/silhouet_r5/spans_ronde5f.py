@@ -17,10 +17,14 @@ VER_OOR = {1: (21, 22), 2: (21, 23),            # y2 x21 (0,1) erbij -> anders i
 KRUIN = {10: (17, 23), 11: (16, 23), 12: (15, 24), 13: (14, 25)}
 SNUIT = {14: (13, 25), 15: (12, 25), 16: (12, 24), 17: (13, 24), 18: (13, 24)}
 KAAK = {19: (14, 24), 20: (16, 24),
-        21: (16, 26)}                           # achterrand x26 i.p.v. x25: aansluiting op de bevroren hals (y22 x16-27)
+        21: (16, 25)}                           # achterrand x25 = poppetje (hals-achterrand vrijgegeven, zie HALS)
 ZONES = {'oor nabij': NABIJ_OOR, 'oor ver': VER_OOR, 'kruin': KRUIN, 'snuit': SNUIT, 'kaak + aansluiting hals': KAAK}
 for Z in ZONES.values():
     for y, (a, b) in Z.items(): S[y, a:b + 1] = True
+# HALS-ACHTERRAND (vrijgegeven door Claude: y20-30, alleen x>23): volgt het poppetje op de 0,5-grens, kaarsrecht op x25 (y21-25);
+# y26-30 blijven vol (rug/schoft; poppetje y26 x26-27 = 0,1/0,0 maar op <= 1 px van de omtrek en zonder dip, R1)
+HALS = {22: 25, 23: 25, 24: 25, 25: 25}
+for y, xr in HALS.items(): S[y, xr + 1:28] = False
 if __name__ == '__main__':
     open(os.path.join(HERE, 'ronde5f.txt'), 'w').write('\n'.join(''.join('#' if v else '.' for v in r) for r in S) + '\n')
     im = np.zeros((64, 64, 4), np.uint8); im[S] = (0, 0, 0, 255)

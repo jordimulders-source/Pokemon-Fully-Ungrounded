@@ -225,3 +225,9 @@ Geen enkele afwijking is groter dan 1 px. Oorhoek, oorlengte en oorbreedte (de k
 
 ## Les (5f)
 - "Overtrekken" betekent: render het poppetje opnieuw en zet de spans op de dekkingsgrens, met alleen afwijkingen van ≤ 1 px voor korrels of lucht. Elk eigen "verbeteren" van de pose (de V-oren in 5e) is een nieuwe interpretatie die Jordi afkeurt.
+
+### 5f, aanvulling: trapje achter de kop weg (hals-achterrand vrijgegeven, y20–30, x > 23)
+- De achterrand van de hals volgt nu de 0,5-grens van het poppetje: **kaarsrecht op x25 van y20 tot y25**, met dezelfde lijn als de achterkant van de kaak. Het trapje x24 → x26 → x27 is weg. Het staat in `spans_ronde5f.py` (blok HALS + y21).
+- **In de zone: +0 / −9 px** (y21 x26; y22–25 x26–27). Buiten de zone: **0 px diff** met de vorige `ronde5f.txt`. Kop y0–19: 0 px. Voorrand hals, halsband, lijf, staart en poten zijn ongewijzigd.
+- Afstand tot het poppetje op de achterrand (x24–27): 0 px weg. Er zijn 2 px te veel (y26 x26–27, dekking 0,1/0,0), maar op 1 px van de omtrek. Het poppetje heeft daar een spleetje tussen hals en aguayo; dat dicht laten houdt de rug van R1 zonder dip bij de schoft.
+- Totaal nu 1354 px, box 42×62. `korrel.py`: 0 / 0 / 0. 1 component, 0 losse px, 0 gaten. `ronde5f.txt`, `ronde5f_1x.png` en `vel_ronde5f.png` zijn overschreven.

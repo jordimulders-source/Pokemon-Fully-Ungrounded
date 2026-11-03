@@ -187,3 +187,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.42] - Lama fase 2: silhouet ronde 5e (kop driekwart)
 - Jordi twijfelde over de kophouding van 5d. Oren nu vanaf het achterhoofd naar achteren in een V zoals het poppetje, schedel iets langer; rest gelijk aan 5d. Wacht op Jordi.
+
+### [v0.0.43] - Lama fase 2: silhouet ronde 5f (kop van het poppetje)
+- Jordi: de kop van 5e was "anders" dan het goedgekeurde poppetje. De kop is nu overgetrokken van het poppetje (dekkingskaart uit dezelfde camera, max. 1 px afwijking), de achterrand van de hals loopt recht door; rest gelijk aan 5e. Les: een goedgekeurd poppetje is de specificatie en wordt overgetrokken, niet hertekend (`docs/lessen/SPRITE_OPDRACHT.md` §2). Wacht op Jordi.

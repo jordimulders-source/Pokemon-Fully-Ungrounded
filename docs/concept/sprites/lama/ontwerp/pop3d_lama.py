@@ -454,7 +454,104 @@ def lijn_r2():
     im.save(os.path.join(HERE, 'lijn_ronde2.png'))
 
 
+# ---------------------------------------------------------------- ronde 3 (Jordi 3 nov): de kop was "meer een paard dan een lama"
+# Naar foto 1: kleine, smalle kop haaks op een kaarsrechte hals; snuit stomp en rond (geen taps paardenhoofd),
+# geen donker snuitmasker; neus klein bovenaan de snuitpunt, hangende onderlip; oog hoog op de zijkant, groot,
+# zwaar half gesloten bovenlid (droge blik); lange banaanoren; korte kuif. Hals en lijf ruig/fluffy.
+
+COL.setdefault('lid', '#A86A3A'); COL.setdefault('lip', '#8A5530')
+LINED.add('lid')
+
+
+def kop_lama(m, top, hs, yaw_extra, piv, pitch=-8, lid=0.55, kleding=True):
+    h0 = len(m.parts)
+    cr = top + np.array((-4, 5, 0)) * hs                       # schedel: klein, smal (zijdelings platter)
+    m.ell(cr, np.array((10, 9, 7.5)) * hs, 'head')
+    fluff(m, cr + np.array((1, 7, 0)) * hs, np.array((6, 3, 6)) * hs, 'head', 8, 2.6 * hs, 3, ymin=0.3)   # korte kuif
+    # gezicht: recht naar voren, blijft dik tot de punt (stomp), licht bol neusprofiel
+    m.chain([(cr[0] - 6 * hs, cr[1] - 1 * hs, 0, 7.2 * hs), (cr[0] - 13 * hs, cr[1] - 2.5 * hs, 0, 6.4 * hs),
+             (cr[0] - 18 * hs, cr[1] - 3.5 * hs, 0, 6.0 * hs)], 'head')
+    m.ell(cr + np.array((-20.5, -4, 0)) * hs, np.array((4.6, 5.6, 5.4)) * hs, 'head')      # ronde snuitpunt
+    m.ell(cr + np.array((-19, -9.2, 0)) * hs, np.array((4.2, 2.2, 4.0)) * hs, 'lip')        # hangende onderlip
+    for sz in (1, -1):                                                                          # neusgaten: klein, boven-voor
+        m.ell(cr + np.array((-23.6, -2.2, 2.0 * sz)) * hs, np.array((0.9, 1.4, 0.9)) * hs, 'nose')
+    for sz in (1, -1):                                                                          # oog hoog op de zijkant
+        e = cr + np.array((-3.5, 2.2, 6.6 * sz)) * hs
+        m.ell(e, np.array((2.8, 2.6, 1.6)) * hs, 'eye')
+        m.ell(e + np.array((-0.6, 0.4, 0.9 * sz)) * hs, 0.55 * hs, 'glint')
+        # zwaar bovenlid: dekt de bovenste helft (droge blik)
+        m.ell(e + np.array((0, 2.6 - 2.6 * lid, 0.35 * sz)) * hs, np.array((3.2, 1.6, 1.9)) * hs, 'lid')
+    for sz in (1, -1):                                                                          # lange banaanoren
+        b = cr + np.array((3, 7.5, 4.5 * sz)) * hs
+        pts = [(b[0], b[1], b[2], 2.6 * hs), (b[0] + 0.5 * hs, b[1] + 8 * hs, b[2] + 2.6 * sz * hs, 2.7 * hs),
+               (b[0] - 0.8 * hs, b[1] + 15 * hs, b[2] + 1.6 * sz * hs, 2.0 * hs), (b[0] - 2.6 * hs, b[1] + 19 * hs, b[2] - 1.2 * sz * hs, 1.0 * hs)]
+        m.chain(pts, 'ear', 0.7)
+        if kleding:
+            m.ell((b[0] - 0.6 * hs, b[1] + 11 * hs, b[2] + 3.2 * sz * hs), np.array((2.8, 3.6, 2.8)) * hs, 'tassel')
+    Rp = P.rot_z(math.radians(pitch))   # neus iets omlaag (foto 1)
+    Ry = P.rot_y(math.radians(yaw_extra))
+    m.parts[h0:] = [(piv + Ry @ (top + Rp @ (c - top) - piv), r, Ry @ Rp @ R0, g) for c, r, R0, g in m.parts[h0:]]
+
+
+def fase2_r3(hs=1.45, neck=62, lid=0.55):
+    """Fase 2 ronde 3: kaarsrechte ruige hals, lamakop, fluffy lijf; poten, kleding en pose als ronde 2."""
+    m = P.Model()
+    for c, r in (((-26, 4, 0), (20, 19, 17)), ((2, 4, 0), (30, 18, 17)), ((28, 6, 0), (19, 19, 17))):
+        m.ell(c, r, 'body')
+        fluff(m, c, r, 'body', 70, 6.5, int(abs(c[0])) + 11, ymin=-0.85)   # ruig, ook aan de buik
+    m.chain([(44, 12, 0, 6.5), (51, 22, 0, 7.5), (49, 31, 0, 5.5)], 'tail')
+    fluff(m, (50, 24, 0), (6, 8, 6), 'tail', 10, 3.2, 5)
+    top = np.array((-36, 8 + neck, 0.0))
+    nk = [(-32, 14, 0, 14.5), (-34, 8 + neck * 0.5, 0, 12.5), (top[0], top[1], 0, 11)]   # kaarsrecht omhoog
+    m.chain(nk, 'neck')
+    for i, (x, y, z, r) in enumerate(nk):
+        fluff(m, (x, y, z), (r, r, r), 'neck', 26, 5.2, 70 + i)
+    halsband(m, nk[0][:3], nk[1][:3], 0.30, 16.5, ['ag0', 'ag1', 'ag2'], pompons=5)
+    kop_lama(m, top, hs, 12, np.array(top, float), lid=lid)
+    for th in np.arange(-70, 71, 7):   # aguayo-doek op de rug
+        t = math.radians(th)
+        band = int((th + 70) // 24) % len(AGUAYO)
+        m.ell(np.array((4, 6 + 21.5 * math.cos(t), 20.5 * math.sin(t))), np.array((15, 3, 5)), f'ag{band}', P.rot_x(t))
+    k = 1.05
+    poot(m, [(-30, -8, 11, 8.5), (-50, -24, 16, 6), (-56, -42, 18, 5.5)], 'leg', k, 'mma')
+    poot(m, [(-18, -8, -11, 8.5), (-12, -40, -12, 6), (-10, -66, -12, 5.5)], 'far', k, 'mma')
+    poot(m, [(30, -6, 11, 10), (40, -36, 12, 6), (34, -66, 12, 5.5)], 'leg', k, None)
+    poot(m, [(36, -6, -11, 10), (46, -36, -12, 6), (42, -66, -12, 5.5)], 'far', k, None)
+    return m
+
+
+def vel_r3():
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 17)
+    ref = os.path.join(HERE, '../referenties')
+    set_vacht('karamel (foto 1)'); COL['lid'] = COL['head']; COL['lip'] = '#8A5530'
+    cell = 262
+    im = Image.new('RGB', (12 + cell * 4, 44 + (cell + 24) * 2), 'white'); d = ImageDraw.Draw(im)
+    d.text((12, 12), 'Lama fase 2, poppetje ronde 3: lamakop + kaarsrechte ruige hals (naar foto 1)', font=FB, fill=(30, 30, 30))
+    foto = Image.open(os.path.join(ref, 'foto1_lama_driekwart_POSE.png')).convert('RGB')
+    w, h = foto.size
+    kopfoto = foto.crop((int(w * 0.18), int(h * 0.1), int(w * 0.55), int(h * 0.4)))
+    panelen = [('foto 1', foto, None), ('oud (ronde 2): paard', None, fase2_r2(hs=1.18)),
+               ('nieuw: lid half', None, fase2_r3(lid=0.55)), ('nieuw: lid zwaarder', None, fase2_r3(lid=0.7))]
+    for i, (lab, img, m) in enumerate(panelen):
+        x = 12 + cell * i
+        if img is None:
+            img, _ = view(m, 40)
+        else:
+            img = img.copy(); img.thumbnail((256, 256))
+        im.paste(img, (x, 44)); d.text((x + 4, 44 + 258), lab, font=F, fill=(60, 60, 60))
+        # kop-uitsnede
+        if m is None:
+            kz = kopfoto.copy(); kz.thumbnail((256, 256))
+        else:
+            big, _ = view(m, 40, size=236)
+            bb = Image.fromarray((_ * 255).astype(np.uint8)).resize(big.size).getbbox(); kz = big.crop((bb[0] - 4, bb[1] - 4, bb[0] + 116, bb[1] + 116)).resize((256, 256), Image.LANCZOS)
+        im.paste(kz, (x, 44 + cell + 24))
+    im.save(os.path.join(HERE, 'vel_ronde3_kop.png'))
+
+
 if __name__ == '__main__':
     vel()
     lijn()
     lijn_r2()
+    vel_r3()

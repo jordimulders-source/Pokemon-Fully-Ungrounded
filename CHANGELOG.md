@@ -193,3 +193,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.44] - Lama fase 2: silhouet ronde 6 (model overgetrokken)
 - Jordi keurde 5f af (lijf en poten weken flink af van het model). Verse maker trok het hele silhouet over van het poppetje (max. 1 px afwijking, alleen korrels weg). Wacht op Jordi.
+
+### [v0.0.45] - Lama fase 2: silhouet ronde 6 goedgekeurd, kleurronde 4 gestart
+- Jordi keurde ronde 6 goed ("zolang de staart maar definieerbaar blijft"; schokken gladstrijken in het spritewerk). Kleurronde 4 gestart: verse maker na een Game Freak-studie, wol als één zachte massa, staart leesbaar, drie oogvarianten (Numel-basis, Slakoth-droogheid, zwaar lid).

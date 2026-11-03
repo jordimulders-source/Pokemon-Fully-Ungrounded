@@ -166,3 +166,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.37] - Naam evolutie: Saltaconda
 - De nieuwe evolutie van de Uyuni-Silicobra heet **Saltaconda** (salt + anaconda, dé slang van Zuid-Amerika). Ontwerprichting en type nog open (`docs/concept/sprites/silicobra_uyuni/ONTWERP.md`).
+- Gewijzigd (Jordi): de naam wordt **Salticonda** ("vind ik net wat lekkerder bekken").

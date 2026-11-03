@@ -64,6 +64,8 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 
 - Jordi 3 nov (ronde 12): "de laatste lijn bij de staart is al iets beter, maar ik zou graag een klein beetje meer ruimte willen tussen de lijn, de staart en de buitenkant aan de rechterkant, al is het maar een paar pixels in het paars van de rest van het lichaam. de twee voorpoten zijn nog een beetje gek qua afwerking in kleur, kijk hier nog even goed naar. Ik zie verder geen storende rechte lijnen. Om eerlijk te zijn lijkt een lori ook erg veel op een nachtaap, maar dat is helemaal niet erg. Een nachtaap lijkt juist weinig op een aap. Het concept ben ik gewoon tevreden mee, is puur een beetje afwerking" → concept goedgekeurd; ronde 13 alleen afwerking (achterwig ruimte, voorpoten kleur).
 
+- Jordi 3 nov: krabbel op de achterste wig (`referenties/jordi_krabbel_staartwortel.png`) + "dit wil ik" / "is dat duidelijk genoeg gepixeld?" → ronde 14: wig precies op de krabbel (schuine streep van 2 px, lila).
+
 ## Silhouet
 - Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
 - **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.

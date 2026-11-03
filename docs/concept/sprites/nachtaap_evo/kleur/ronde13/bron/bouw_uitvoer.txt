@@ -1,0 +1,4 @@
+alpha-diff: 0
+open randen ronde 12: 0 | ronde 13: 0 []
+gewijzigd zone A (achterwig): 16 | zone B (armen/handen): 12 | buiten de zones: 0
+losse pixels nieuw: [(13, 59, 's')] | verdwenen: []

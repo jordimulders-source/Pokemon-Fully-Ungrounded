@@ -17,6 +17,15 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - **Types, abilities en evoluties uit de repo**, nooit uit het geheugen.
 - Zet elke foto die Jordi stuurt meteen in `referenties/` (foto's in de chat zijn na de sessie weg; als een foto niet als bestand binnenkomt, punt voor punt overnemen en dat melden).
 
+## Vóór elk vel naar Jordi (harde regel, Jordi 3 nov: "hoe kunnen we er nu eens voor zorgen dat je dit soort dingen zelf ziet")
+Geldt voor elk beeld dat Jordi krijgt, ook tussenstappen (poppetje, silhouet, kleur). Geen enkel vel zonder deze stappen:
+1. **Referentie eerst, per onderdeel:** kies vóór het bouwen voor elk onderdeel dat verandert (hand, voet, kop, staart, patroon) 2–3 echte sprites die het goed doen, en noem ze.
+2. **Vast vergelijkingsvel:** referenties naast het eigen werk op eindvormmaat én groot (`pop3d/vergelijk.py` bij de nachtaap). Nooit alleen een kleine render bekijken.
+3. **Close-up per onderdeel** en per onderdeel één regel opschrijven (in het antwoord of NOTITIES): "lijkt op <referentie> / wijkt af in <x>". Toets of het **leest** als een echte Pokémon, niet of het doet wat gevraagd werd.
+4. **Eén afwijking = niet sturen**: eerst repareren en opnieuw 1–3. Twijfel = afwijking.
+5. **Opmerkingen van Jordi tijdens het werk bundelen** in één doordachte ronde; niet per bericht een snelle patch sturen.
+6. Bij elke mijlpaal (pose akkoord, silhouet, kleur) een **onafhankelijke keurder** (agent) vóór Jordi, niet pas aan het eind.
+
 ## Stap 1. Ontwerp: pose en kenmerken (met Jordi, geen pixels)
 - Jordi geeft het idee, de pose (schets of foto) en referenties. **Vraag om een foto van het echte dier in de gewenste pose**; dat was beide keren de doorbraak (kolibrie: de drinkende kolibrie; olinguito: de boomfoto + kopfoto).
 - **Ontwerpschetsen alleen als hulp om te praten**, niet als bron voor de sprite. Lukt een pose na 2 schetsrondes niet: stop met schetsen en ga naar een echte bron (foto of 3D-poppetje).

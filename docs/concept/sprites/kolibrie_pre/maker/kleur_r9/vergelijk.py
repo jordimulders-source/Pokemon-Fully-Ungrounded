@@ -1,4 +1,4 @@
-"""vergelijk_8x.png: koppen r7b | r8 lager | r9 op 8x (licht), plus r9 op donker en foto 3.
+"""vergelijk_8x.png: koppen r7b | r8 lager | r9 (licht en donker) | Taillow | Starly op 8x, en foto 3.
 vel.png: r7b, r8 lager, r9 naast Taillow op 3x en 1x, licht en donker."""
 from PIL import Image, ImageDraw, ImageFont
 G = '../../../../../../graphics/pokemon/'
@@ -11,13 +11,14 @@ def on(p, bg=(236, 236, 230)):
     b = Image.new('RGBA', (64, 64), bg + (255,)); b.alpha_composite(a); return b.convert('RGB')
 box, Z = (7, 8, 37, 27), 8
 W, H = (box[2] - box[0]) * Z, (box[3] - box[1]) * Z
-ks = [('r7b', on('../kleur_r7/kolibrie_pre_r7b.png')), ('r8 lager', on('../kleur_r8/kolibrie_pre_lager.png')), ('r9', on('kolibrie_pre.png')),
-      ('r9 donker', on('kolibrie_pre.png', (44, 44, 52)))]
+ks = [('r7b', on('../kleur_r7/kolibrie_pre_r7b.png'), box), ('r8 lager', on('../kleur_r8/kolibrie_pre_lager.png'), box), ('r9', on('kolibrie_pre.png'), box),
+      ('r9 donker', on('kolibrie_pre.png', (44, 44, 52)), box), ('Taillow', on(G + 'taillow/anim_front.png'), (12, 16, 42, 35)),
+      ('Starly', on(G + 'starly/anim_front.png'), (18, 16, 48, 35))]
 f3 = Image.open('../../referenties/jordi_3_nestjongen.png').convert('RGB').crop((60, 235, 200, 345)).transpose(Image.FLIP_LEFT_RIGHT).resize((int(H * 140 / 110), H))
-out = Image.new('RGB', (4 * (W + 16) + f3.size[0] + 32, H + 36), 'white'); d = ImageDraw.Draw(out)
-for i, (n, im) in enumerate(ks):
-    x = 16 + i * (W + 16); out.paste(im.crop(box).resize((W, H), Image.NEAREST), (x, 28)); d.text((x, 6), n + ' (8x)', fill='black', font=F)
-x = 16 + 4 * (W + 16); out.paste(f3, (x, 28)); d.text((x, 6), 'foto 3 (gespiegeld)', fill='black', font=F)
+out = Image.new('RGB', (6 * (W + 16) + f3.size[0] + 32, H + 36), 'white'); d = ImageDraw.Draw(out)
+for i, (n, im, bx) in enumerate(ks):
+    x = 16 + i * (W + 16); out.paste(im.crop(bx).resize((W, H), Image.NEAREST), (x, 28)); d.text((x, 6), n + ' (8x)', fill='black', font=F)
+x = 16 + 6 * (W + 16); out.paste(f3, (x, 28)); d.text((x, 6), 'foto 3 (gespiegeld)', fill='black', font=F)
 out.save('vergelijk_8x.png')
 refs = [('r7b', '../kleur_r7/kolibrie_pre_r7b.png'), ('r8 lager', '../kleur_r8/kolibrie_pre_lager.png'), ('r9', 'kolibrie_pre.png'), ('taillow', G + 'taillow/anim_front.png')]
 v = Image.new('RGB', (4 * 200 + 20, 2 * 200 + 2 * 74 + 50), 'white'); d = ImageDraw.Draw(v)

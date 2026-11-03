@@ -190,7 +190,8 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaa
         # leesbaarheid (Simipour, Ambipom): hand plat naar de kijker, vingers wijd, groot
         # Jordi's handkrabbel (referenties/jordi_krabbel_hand.png): pols knikt naar achteren, vingers OMHOOG, duim
         # links, palm naar de tegenstander (= de kijker): het stop-/healgebaar onder de kop
-        open_hand(m, np.array((-52.0, -62, 28)), (-0.15, 1, 0.1), view, 'hand', 'tip',
+        if gebaar != 'geen':
+          open_hand(m, np.array((-52.0, -62, 28)), (-0.15, 1, 0.1), view, 'hand', 'tip',
                   spread=0.4, k_=1.3, duim=True, ln_=1.3, vijf=True, krul=0.4, palm=False)   # Gen 1-Drowzee (Jordi): 4 vingers + duim, zacht gekromd
         # verre been omhoog, knie gebogen naar voren, voet gekruld om een onzichtbare tak
         m.chain([(18, 14, -14, LIMB + 4), (12, 40, -18, LIMB), (24, 58, -20, LIMB - 3)], 'far')

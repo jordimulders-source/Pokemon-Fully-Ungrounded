@@ -287,18 +287,17 @@
 42 30 ffff
 43 29 bb
 # kene-pixels: 186, waarvan buiten de projectie (verdikking): 39
-# ---- ronde 10: ogen zoals Espurr (geen zwart kader): vlak bovenlid d, lichte buitenring j, karmijn i, donkere kern k, 1 px lichtpunt w
-# verre (linker) oog x6-11: buitenkant (x6) donkerder r voor het perspectief
+# ---- ronde 10: ogen zoals Espurr (geen zwart kader): vlak bovenlid d dat in de hoeken meeloopt, lichte ring j aan de zijkanten en onder,
+#      karmijn i, donkere kern k (2x2), 1 px lichtpunt w; onderhoeken r. Verre (linker) oog: buitenkant x6 donkerder (r).
 43 7 dddd
-44 6 riiiij
+44 6 diiiid
 45 6 riwkij
 46 6 rikkij
-47 6 riiiij
-48 7 jjjj
-# nabije (rechter) oog x15-20
+47 6 rjiijr
+48 7 rjjr
 43 16 dddd
-44 15 jiiiij
+44 15 diiiid
 45 15 jiwkij
 46 15 jikkij
-47 15 jiiiij
-48 16 jjjj
+47 15 rjiijr
+48 16 rjjr

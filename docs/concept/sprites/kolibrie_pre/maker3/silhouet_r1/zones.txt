@@ -1,0 +1,7 @@
+# x0 y0 x1 y1 label (spritecoördinaten; foto 5 gespiegeld, 7,5 foto-px per spritepixel)
+10 19 15 25 A: bek kort en open (bedelbek, foto 3 + Jordi "kleinere snavel"); foto 5 heeft een lange dichte snavel
+24 6 40 15 B: vleugelpunten die als oren omhoog steken weggelaten (les: lezen als oren)
+33 10 49 29 C: rug lager dan de kruin + nekinkeping (34,21): camera op ooghoogte i.p.v. van boven, kop als eigen onderdeel
+44 30 49 43 D: vleugelpunten liggen achter langs het lijf, punt naar rechtsonder over het staartje (47,42); foto: rechtopstaande veren
+12 31 22 45 E: borst/buik links als één ronde bol (Jordi: "de vorm van de buik links"), iets bol naar voren (Taillow/Starly)
+18 43 36 48 F: buik en pootjes zichtbaar onder het lijf (camera lager; op de foto verdwijnt de onderkant in de hand); nabij pootje links-laag, verre rechts en deels verscholen

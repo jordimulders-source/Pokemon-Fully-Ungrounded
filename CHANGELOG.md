@@ -122,3 +122,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.23] - Olinguito v2 af na eindkeuring
 - Verse eindkeuring (`docs/concept/sprites/olinguito_v2/af/EINDKEURING.md`): hoofdvraag PASS; reparaties: verre voorpoot roze voetje (2 px), losse spriet onder de klauw weg en drie haakjes van 1 px in curven glad (Jordi akkoord). 0 open randen. `docs/concept/sprites/olinguito_v2/af/olinguito.png` is af.
+
+### [v0.0.24] - Brainstorm Uyuni-Silicobra
+- Brainstorm voor de eerste regional form (Silicobra uit de Salar de Uyuni, met een mogelijke nieuwe evolutie) toegevoegd aan `docs/concept/IDEEEN.md`. Nog niets besloten.

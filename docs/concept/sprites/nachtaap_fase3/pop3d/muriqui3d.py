@@ -20,10 +20,11 @@ P.COL = {
     'fur': '#5E4488', 'far': '#45306A', 'head': '#5E4488', 'mask': '#2E2048', 'moon': '#FFFFFF',
     'snuit': '#8C6A9C', 'eye': '#D83C3C', 'pupil': '#1A1020', 'glint': '#FFFFFF',
     'hand': '#5E4488', 'farhand': '#45306A', 'tip': '#EAD8BE', 'fartip': '#B8A48C',
+    'hand2': '#5E4488', 'farhand2': '#45306A', 'tip2': '#EAD8BE', 'fartip2': '#B8A48C',
     'blad': '#5E9A4A', 'nerf': '#3C6E34', 'tak': '#8A6A4A', 'bol': '#B9935E',
 }
 P.NOSHADE = {'mask', 'moon', 'eye', 'pupil', 'glint'}
-P.LINED = {'eye', 'snuit', 'blad', 'tak', 'bol'}
+P.LINED = {'eye', 'snuit', 'blad', 'tak', 'bol', 'hand2', 'farhand2', 'tip2', 'fartip2'}   # *2: om-en-om vingers, lijn ertussen
 
 HEAD_C = np.array((-8.0, 80.0, 0.0))
 HEAD_R = 22.0
@@ -60,23 +61,30 @@ def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0,
     # dikke vingers in een waaier, vingers korter dan de palm
     fingers = ((-1.25, 0.9), (0, 1.0), (1.25, 0.9)) if drie else ((-1.6, 0.85), (-0.55, 1.0), (0.55, 1.0), (1.6, 0.85))
     fr = 4.3 if drie else 3.3
-    if vijf:   # Mr. Mime/Machamp/Dusknoir (referenties/handen_vijf_vingers.png): 4 dikke vingers in een waaier + duim
-        fingers = ((-1.6, 0.85), (-0.55, 1.0), (0.55, 1.0), (1.6, 0.85)); fr = 4.0
-    for k, ln in fingers:
+    if vijf:   # Mr. Mime/Machamp/Dusknoir (referenties/handen_vijf_vingers.png): 4 dikke vingers TEGEN elkaar, kleine
+        # waaier, middelste het langst, + duim dicht bij de palm (Jordi: niet 'gebroken', vingers niet ver uit elkaar)
+        fingers = ((-1.5, 0.8), (-0.5, 0.95), (0.5, 1.0), (1.5, 0.85)); fr = 4.2
+    for fi, (k, ln) in enumerate(fingers):
+        gg, ggt = (g + '2', gt + '2') if (vijf and fi % 2) else (g, gt)
         fd = up + side * k * 0.32 * spread; fd /= np.linalg.norm(fd)
-        b = pc + side * k * (4.6 if drie else 4.4 if vijf else 3.6) * k_ + up * 6 * k_
+        b = pc + side * k * (4.6 if drie else 3.9 if vijf else 3.6) * k_ + up * 6 * k_
+        if vijf:   # gekromde hand: buitenste vingers iets naar achteren -> eigen omlijning, geen gaten
+            b = b - nrm * abs(k) * 2.2 * k_
         mid = b + fd * 6 * ln * k_ * ln_
         # greep: tweede kootje krult over een onzichtbare tak, naar achteren (weg van de kijker) en omlaag
         fd2 = fd * (1 - greep) + (-nrm * 0.8 - up * 0.6) * greep; fd2 /= np.linalg.norm(fd2)
         tip = mid + fd2 * 6 * ln * k_ * max(ln_, 0.8 if greep else 0)
-        m.chain([(*b, fr * k_), (*mid, (fr - 0.3) * k_)], g, 0.8)
-        m.chain([(*mid, (fr - 0.3) * k_), (*tip, (fr - 0.6) * k_)], gt, 0.8)
+        m.chain([(*b, fr * k_), (*mid, (fr - 0.3) * k_)], gg, 0.8)
+        m.chain([(*mid, (fr - 0.3) * k_), (*tip, (fr - 0.6) * k_)], ggt, 0.8)
     if duim:   # duim opzij: maakt van de vlakke hand op 1× een leesbare open hand
-        td = -side * 0.85 + up * 0.5; td /= np.linalg.norm(td)
-        b = pc - side * 6 * k_
-        m.chain([(*b, 3.3 * k_), (*(b + td * 6 * k_), 3.0 * k_), (*(b + td * 11 * k_), 2.7 * k_)], g, 0.8)
+        td = -side * (0.6 if vijf else 0.85) + up * (0.7 if vijf else 0.5); td /= np.linalg.norm(td)
+        b = pc - side * (7 if vijf else 6) * k_ - (nrm * 2 * k_ if vijf else 0)
+        if vijf:   # korte ronde duim dicht bij de palm, geen spies
+            m.chain([(*b, 3.9 * k_), (*(b + td * 4 * k_), 3.7 * k_), (*(b + td * 7 * k_), 3.4 * k_)], g, 0.8)
+        else:
+            m.chain([(*b, 3.3 * k_), (*(b + td * 6 * k_), 3.0 * k_), (*(b + td * 11 * k_), 2.7 * k_)], g, 0.8)
     if duim:   # handpalm (licht) naar de kijker
-        m.ell(pc + nrm * 2.2 * k_, np.array((6.2, 6.6, 2.4)) * k_, gt, Rp)
+        m.ell(pc + nrm * 2.2 * k_ + (up * 2.5 * k_ if vijf else 0), np.array((6.2, 6.6, 2.4)) * k_, gt, Rp)
 
 
 def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaar='A'):
@@ -171,7 +179,7 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaa
         m.ell((32, 0, 0), (17, 18, 19), 'fur')              # heup
         # verre arm omhoog-voor, elleboog gebogen, hand gekruld om een onzichtbare tak
         m.chain([(-16, 14, -20, LIMB + 1.5), (-24, 34, -26, LIMB - 0.5), (-40, 46, -24, LIMB - 3)], 'far')
-        open_hand(m, np.array((-40.0, 46, -24)), (-0.55, 1, 0), view, 'farhand', 'fartip', spread=0.7, k_=1.15, duim=True, ln_=0.75, drie=True, greep=0.85)   # grijpende hand, vingers zichtbaar (Jordi)
+        open_hand(m, np.array((-40.0, 46, -24)), (-0.55, 1, 0), view, 'farhand', 'fartip', spread=0.3, k_=1.4, duim=True, ln_=0.75, vijf=True, greep=0.95)   # vuist om de tak (Machamp)   # grijpende hand, vingers zichtbaar (Jordi)
         # nabije arm (schets): van onder de nek schuin naar linksonder, elleboog gebogen; hand plat, vingers
         # gespreid, palm omlaag-voor naar het doel (anime-still, één hand)
         m.chain([(-18, -8, 20, LIMB + 1.5), (-28, -36, 26, LIMB - 0.5), (-50, -60, 26, LIMB - 3)], 'fur')
@@ -179,7 +187,7 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaa
         # Jordi's handkrabbel (referenties/jordi_krabbel_hand.png): pols knikt naar achteren, vingers OMHOOG, duim
         # links, palm naar de tegenstander (= de kijker): het stop-/healgebaar onder de kop
         open_hand(m, np.array((-52.0, -62, 28)), (-0.15, 1, 0.1), view, 'hand', 'tip',
-                  spread=1.0 if gebaar == 'A' else 1.25, k_=1.3, duim=True, ln_=0.85, vijf=True)
+                  spread=0.45, k_=1.5, duim=True, ln_=1.1, vijf=True)
         # verre been omhoog, knie gebogen naar voren, voet gekruld om een onzichtbare tak
         m.chain([(18, 14, -14, LIMB + 4), (12, 40, -18, LIMB), (24, 58, -20, LIMB - 3)], 'far')
         hand(m, np.array((24.0, 58, -20)), (0.3, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0, k_=1.4)

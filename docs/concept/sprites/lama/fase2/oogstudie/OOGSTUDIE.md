@@ -184,3 +184,9 @@ Op het vel staan beide recepten in rij 3.
   - de iris is (deels) bruin;
   - er zit geen zwarte ring rondom.
 - **Controle:** bekijk het oog op 1× en 3× naast Camerupt en Farfetch'd uit `oogstudie.png`. Het moet op 1× nog als oog lezen; anders kies je A en niet B.
+
+## Aanvulling: Slakoth-lijn (Jordi, 3 nov: "slakoth lijn heeft ook luie ogen")
+Vel: `aanvulling_slakoth.png` (Slakoth en Vigoroth komen van upstream pokeemerald-expansion, ze staan niet meer in onze repo).
+- **Slakoth:** klein donker oog met een wit lichtje onderin, in een grote donkerbruine **oogvlek die naar achteren-onder afhangt**. De luie blik komt niet van het oog zelf, maar van die hangende vlek (wallen) en het lid dat erop drukt.
+- **Slaking:** het oog is bijna een lijn (lid helemaal neer), met een **wal-lijn** eronder in de schaduwtint van de vacht.
+- **Voor de lama (recept C, "lui" = A + Slakoth):** recept A (rechte lidlijn, iris tegen het lid, licht laag vóór), maar de lidlijn **loopt achteraan 1 px omlaag** (hangt af), en onder het oog ligt een **zachte wal** van 1 rij in de schaduwtint van de vacht, die naar achteren uitloopt. Geen zwarte vlek (een lama heeft geen masker); het hangen moet uit de vorm komen, niet uit een donkere kleur.

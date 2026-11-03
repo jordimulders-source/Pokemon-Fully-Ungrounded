@@ -35,3 +35,38 @@ Buiten de zones: 0 px verschil (alle rijen vallen in een zone; de afstandskolom 
 - Game Freak-wol (Mareep, Flaaffy) is in het silhouet **rond met bobbels van 3–5 px lang en 1 px diep**; mijn eerste poging (elke 3 rijen 1–2 px in en uit) las op 4× als zaagtand. Hangende plukken: 3–5 rijen uitgroeien, dan in één keer 2 px terug; maximaal 5 per onderdeel.
 - Kwasten die buiten de oorrand uitsteken + toppen naar binnen = lier/gewei op 1×. Kwast binnen de oorbreedte, oren in de V van de bron.
 - Een randcheck (rechte runs ≥ 4, lucht per rij, losse px) als script na elke handronde scheelt kijkwerk; de overlay op de onderlaag met 64-raster toont waar de massa afwijkt.
+
+---
+
+# Ronde 3b (maker, 3 nov): van korrel naar gladde wolbogen
+
+Jordi: "Het silhouet is veel korreliger dan flaaffy, ik ben bang dat dit niet vertaalt naar een sprite". Plus de reparaties uit `KEURING.md`.
+Bestanden: `spans_ronde3b.py` → `ronde3b.txt` / `ronde3b_1x.png`; vel `vel_ronde3b.png` (`vel3b.py`: ronde 3 | 3b | Flaaffy | Mareep op 4× en 1×, licht en groen, + 3b over het poppetje); korreltelling `korrel.py` → `korrel_uitvoer.txt`; controles `controle_uitvoer_3b.txt`.
+
+**Resultaat:** 1250 px (ronde 3: 1224, +2,1 %), box 37×62, kop 34 % (geaccepteerd), 1 component, 0 losse px, 0 gaten, 0 px buiten de zones.
+
+## Korrels (script `korrel.py`: 1-px uitsteeksels/inkepingen via 2×2-opening/-closing + tanden van 1 rij of kolom)
+| | uitsteeksel-px | inkeping-px | tanden |
+|---|---|---|---|
+| ronde 3 | 7 | 15 | 21 |
+| **ronde 3b** | **0** | **0** | **0** |
+
+Regel die ik aanhield: elke boog is minstens 2 rijen op zijn verste punt, elke inkeping tussen twee bogen minstens 2 rijen hoog, trappen per 1 px oplopend/aflopend (geen in-uit-in).
+
+## Wat er veranderde
+- **Hals** (kaarsrecht): voor 2 ruime golven (y22–25, y28→halsband) met één inkeping (y26–27); achter achterhoofd-boog (y11–13), golf y16–18, golf y22–24, inkepingen y14–15 en y20–21. De 5 plukjes zijn weg.
+- **Lijf:** rug recht en glad (y25, lamarug, geen aguayo-welving meer, de spleet hals/rug is dicht); borst 2 bogen (halsband/pompons y29–33, boog y36–40, inkeping y34–35); achterwerk 2 bogen (y27–32, y35–39, inkeping y33–34, max x49); hoek rug/achterwerk afgerond.
+- **Staart:** één rond bolletje (y20–23, x45–50) op een steeltje (y24 x45–46).
+- **Buik:** de ronde 'dakjes' boven de drie spleten tussen de poten (y44); een echte hangende franjeboog past niet zonder de lucht tussen de poten te sluiten → de franje komt in de kleur (zie hieronder).
+- **Wolmouwen/-broek:** één gladde boog per poot (y45–47), dan het slanke been.
+- **Keurder:** oren als banaanoor (top licht naar binnen, kwast halverwege buiten op y4–5, 5 px lucht tussen de toppen x23–27); sik weg (y21) en kin rond (y20 x17); deuk achterhoofd gevuld; verre achterhoef y58 x35–39 zonder punt; hak zonder trap van 2 (rechterrand 42→41→40); handschoen op de grond y62 x26–30.
+
+## Eerlijk
+- Zonder 1-px jogs zijn er meer **rechte stukken**: de scheenbenen (x27 en x31 y47–51, x32 y52–60, x48 y55–60) en de rug (y25, 14 px, bewust). Leest als Ponyta/Girafarig-benen, niet als trapjes; de handschoen op de grond is aan de rechterkant recht (x32, y52–60) omdat de verre achterhoef op 2 px lucht staat.
+- **Buikfranje** zit nu niet als twee hangende bogen in de omtrek: tussen de poten is maar 2 px ruimte. Opties: in de kleur (donkere franjerand) of de verre achterpoot 1 px naar achteren voor 1 boog van 3 px.
+- **Staartbolletje** ligt 2–3 px hoger dan de staart van het poppetje (steeltje gevraagd); op 1× leest het als pluim, niet als Mareep-antenne, maar het zit er dichtbij.
+- Op 1× leest 3b duidelijk gladder dan ronde 3 en komt dicht bij Flaaffy; het lijf blijft een rechthoek met ronde hoeken (de rustige lamastand van de bron).
+
+## Lessen (3b)
+- "Fluffy" in Gen 3 = weinig grote bogen met gladde trappen; elke 1-px jog, ook een 'hangend plukje', leest als korrel. Toets met een script (2×2-opening/-closing + tanden van 1 rij) en houd korrels op 0.
+- Een inkeping tussen bogen moet ≥ 2 rijen hoog zijn, anders telt hij als korrel.

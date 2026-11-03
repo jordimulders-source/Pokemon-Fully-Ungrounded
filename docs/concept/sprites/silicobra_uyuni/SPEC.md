@@ -11,7 +11,7 @@ Eerste regional form van Fully Ungrounded. Achtergrond: `docs/concept/IDEEEN.md`
 | Onderdeel | Bron | Status |
 |---|---|---|
 | Silhouet | bestaande Silicobra | bevroren (tenzij Jordi iets vraagt) |
-| Kleurrichting | `kleurrichtingen_ronde1.png` (A Zoutkorst, B Spiegel, C Lithium; alleen paletwissel) | open: Jordi kiest |
+| Kleurrichting | `kleurrichtingen_ronde1.png` (A Zoutkorst, B Spiegel, C Lithium; alleen paletwissel) | vervallen: eerst ontwerp (ONTWERP.md) |
 | Patroon | zeshoekige zoutkorst i.p.v. de donkere vlekken | open: maker-agent na de kleurkeuze |
 | Oog | turquoise (lithium) i.p.v. groen | voorstel |
 

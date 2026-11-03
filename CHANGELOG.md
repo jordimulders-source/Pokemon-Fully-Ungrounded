@@ -132,3 +132,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.26] - Uyuni-Silicobra: nieuwe evolutie, kleurrichtingen
 - Besloten (Jordi): de Uyuni-Silicobra krijgt een **nieuwe evolutie** (geen Uyuni-Sandaconda). Ability: Jordi denkt nog na.
 - `docs/concept/sprites/silicobra_uyuni/` met SPEC.md en drie kleurrichtingen (paletwissel op de bestaande sprite): A Zoutkorst, B Spiegel, C Lithium.
+
+### [v0.0.27] - Uyuni-Silicobra: ontwerpstudie regional forms
+- Studie van 12 regional forms (wat ze veranderen) en een ontwerpvoorstel voor de Uyuni-Silicobra in `docs/concept/sprites/silicobra_uyuni/ONTWERP.md` (pekelzak, zeshoekige korst, zoutkegel; niet als Ice of Nacli lezen). De kleurrichtingen van v0.0.26 zijn vervallen tot het ontwerp vastligt.

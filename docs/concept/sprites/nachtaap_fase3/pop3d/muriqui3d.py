@@ -49,14 +49,14 @@ def hand(m, wrist, fwd, side, g, gt, curl=0.0, spread=1.0, k_=1.0):
         m.chain([(*mid, 2.8 * k_), (*tip, 2.6 * k_)], gt, 0.8)
 
 
-def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0, drie=False, greep=0.0, vijf=False):
+def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0, drie=False, greep=0.0, vijf=False, krul=0.0, palm=True):
     """Healergebaar: platte handpalm naar de kijker, lange vingers gespreid omhoog (Mega Alakazam, Mr. Mime)."""
     up = np.array(up, float); up /= np.linalg.norm(up)
     nrm = np.array(nrm, float); nrm -= up * (nrm @ up); nrm /= np.linalg.norm(nrm)
     side = np.cross(up, nrm)
     Rp = np.stack([side, up, nrm], 1)          # lokale assen -> wereld
     pc = wrist + up * 7 * k_
-    m.ell(pc, np.array((9.5 if drie else 8, 8.5, 4)) * k_, g, Rp)
+    m.ell(pc, np.array((7.5 if krul else 9.5 if drie else 8, 7.5 if krul else 8.5, 4)) * k_, g, Rp)
     # drie=True (studie referenties/handen_studie.png: Ambipom, Hariyama, Mega Alakazam): brede palm, 3 korte
     # dikke vingers in een waaier, vingers korter dan de palm
     fingers = ((-1.25, 0.9), (0, 1.0), (1.25, 0.9)) if drie else ((-1.6, 0.85), (-0.55, 1.0), (0.55, 1.0), (1.6, 0.85))
@@ -66,6 +66,8 @@ def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0,
         fingers = ((-1.5, 0.8), (-0.5, 0.95), (0.5, 1.0), (1.5, 0.85)); fr = 4.2
     for fi, (k, ln) in enumerate(fingers):
         gg, ggt = (g + '2', gt + '2') if (vijf and fi % 2) else (g, gt)
+        if krul:   # Drowzee: hand van één kleur; vingers om en om eigen groep voor de lijn ertussen
+            gg = ggt = g + '2' if fi % 2 else g
         fd = up + side * k * 0.32 * spread; fd /= np.linalg.norm(fd)
         b = pc + side * k * (4.6 if drie else 3.9 if vijf else 3.6) * k_ + up * 6 * k_
         if vijf:   # gekromde hand: buitenste vingers iets naar achteren -> eigen omlijning, geen gaten
@@ -73,6 +75,8 @@ def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0,
         mid = b + fd * 6 * ln * k_ * ln_
         # greep: tweede kootje krult over een onzichtbare tak, naar achteren (weg van de kijker) en omlaag
         fd2 = fd * (1 - greep) + (-nrm * 0.8 - up * 0.6) * greep; fd2 /= np.linalg.norm(fd2)
+        if krul:   # Drowzee: vingers krommen zacht naar de tegenstander (palmkant)
+            fd2 = fd * (1 - krul) + (nrm * 0.8 - up * 0.2) * krul; fd2 /= np.linalg.norm(fd2)
         tip = mid + fd2 * 6 * ln * k_ * max(ln_, 0.8 if greep else 0)
         m.chain([(*b, fr * k_), (*mid, (fr - 0.3) * k_)], gg, 0.8)
         m.chain([(*mid, (fr - 0.3) * k_), (*tip, (fr - 0.6) * k_)], ggt, 0.8)
@@ -83,7 +87,7 @@ def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0,
             m.chain([(*b, 3.9 * k_), (*(b + td * 4 * k_), 3.7 * k_), (*(b + td * 7 * k_), 3.4 * k_)], g, 0.8)
         else:
             m.chain([(*b, 3.3 * k_), (*(b + td * 6 * k_), 3.0 * k_), (*(b + td * 11 * k_), 2.7 * k_)], g, 0.8)
-    if duim:   # handpalm (licht) naar de kijker
+    if duim and palm:   # handpalm (licht) naar de kijker
         m.ell(pc + nrm * 2.2 * k_ + (up * 2.5 * k_ if vijf else 0), np.array((6.2, 6.6, 2.4)) * k_, gt, Rp)
 
 
@@ -187,7 +191,7 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaa
         # Jordi's handkrabbel (referenties/jordi_krabbel_hand.png): pols knikt naar achteren, vingers OMHOOG, duim
         # links, palm naar de tegenstander (= de kijker): het stop-/healgebaar onder de kop
         open_hand(m, np.array((-52.0, -62, 28)), (-0.15, 1, 0.1), view, 'hand', 'tip',
-                  spread=0.45, k_=1.5, duim=True, ln_=1.1, vijf=True)
+                  spread=0.4, k_=1.3, duim=True, ln_=1.3, vijf=True, krul=0.4, palm=False)   # Gen 1-Drowzee (Jordi): 4 vingers + duim, zacht gekromd
         # verre been omhoog, knie gebogen naar voren, voet gekruld om een onzichtbare tak
         m.chain([(18, 14, -14, LIMB + 4), (12, 40, -18, LIMB), (24, 58, -20, LIMB - 3)], 'far')
         hand(m, np.array((24.0, 58, -20)), (0.3, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0, k_=1.4)

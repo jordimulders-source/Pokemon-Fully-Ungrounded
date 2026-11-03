@@ -165,3 +165,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Werkwijze: nieuw 3D-ontwerp (pop3d_v2.py), silhouet direct van de render, kleur met de hand door een maker-agent na een Game Freak-studie, vier keuringen en een verse eindkeuring; Jordi's laatste punten (neus, staarthaak, klauwlijn) met kleine silhouetzones. Lessen in `docs/lessen/SPRITE_WERKWIJZE.md`.
 - Nog te doen: frame 2, rug, icoon, shiny, naam en data.
 
+### [v0.0.34] - Review sprite-werkwijze na de wasbeer
+- `docs/lessen/SPRITE_WERKWIJZE.md`: review van de wasbeersessies (wat goed en slecht ging) en vijf regels: elk kenmerk uit een echte bron, klein onderdeel los in 3D of op een tekenvel, wat Jordi goed noemt blijft bevroren, grote keuzes vóór pixelreparaties, verse maker na ±250–300k context. Stap 1 en 2 bijgewerkt (poppetje in lama-stijl voor slanke dieren op 2 poten, poten nooit gelijk, dunne delen herstellen vóór de kleur).
+

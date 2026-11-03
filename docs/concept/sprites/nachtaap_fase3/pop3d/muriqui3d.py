@@ -33,19 +33,19 @@ SPIR_YAW = 40.0
 FLIP = 160.0        # pose 'omhoog': kanteling van romp en benen om de schouders     # spiraalvlak draait naar de kijker (hoek om de y-as)
 
 
-def hand(m, wrist, fwd, side, g, gt, curl=0.0, spread=1.0):
+def hand(m, wrist, fwd, side, g, gt, curl=0.0, spread=1.0, k_=1.0):
     """Lange apenhand: handpalm + 4 vingers (muriqui: bijna geen duim). fwd = richting van de vingers."""
     fwd = np.array(fwd, float); fwd /= np.linalg.norm(fwd)
     side = np.array(side, float); side /= np.linalg.norm(side)
     up = np.cross(fwd, side)
-    pc = wrist + fwd * 6
-    m.ell(pc, 7.5, g)
+    pc = wrist + fwd * 6 * k_
+    m.ell(pc, 7.5 * k_, g)
     for k in (-1.5, -0.5, 0.5, 1.5):
-        b = pc + fwd * 5 + side * k * 3.4 * spread
-        mid = b + fwd * 7 + up * (-curl * 4)
-        tip = mid + fwd * (6 - curl * 3) + up * (-curl * 6)
-        m.chain([(*b, 3.2), (*mid, 2.8)], g, 0.8)
-        m.chain([(*mid, 2.8), (*tip, 2.6)], gt, 0.8)
+        b = pc + (fwd * 5 + side * k * 3.4 * spread) * k_
+        mid = b + (fwd * 7 + up * (-curl * 4)) * k_
+        tip = mid + (fwd * (6 - curl * 3) + up * (-curl * 6)) * k_
+        m.chain([(*b, 3.2 * k_), (*mid, 2.8 * k_)], g, 0.8)
+        m.chain([(*mid, 2.8 * k_), (*tip, 2.6 * k_)], gt, 0.8)
 
 
 def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0):
@@ -155,27 +155,27 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaa
         # verre arm omhoog-voor en één been recht omhoog uit de rug houden elk een (psychische) tak vast
         # (Jordi: "misschien dat 1 arm en 1 been takken vasthouden"); nabije arm reikt omlaag-voor met een
         # kiemend bolletje; ander been sleept naar achteren-omlaag; staart krult rechtsboven tot spiraal.
-        m.ell((-14, 0, 0), (22, 20, 23), 'fur')             # borst/schouders
-        m.ell((16, 4, 0), (26, 23, 23), 'fur')              # buik/rug (bolt boven uit, krabbel)
-        m.ell((38, 0, 0), (17, 17, 19), 'fur')              # heup
-        m.chain([(-26, 0, 0, 14), (-36, 0, 0, 13)], 'fur')  # nek
-        # verre arm omhoog-voor, hand om een tak
-        m.chain([(-20, 10, -20, LIMB), (-36, 32, -24, LIMB - 1.5), (-52, 52, -24, LIMB - 2.5)], 'far')
-        hand(m, np.array((-52.0, 52, -24)), (-0.6, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0)
-        # nabije arm gestrekt naar voren-omlaag, healergebaar als een magiër in film/anime (Jordi): palm naar
-        # buiten (naar de kijker/voren), vingers gespreid
-        # healer-/magiërhand (film, anime): arm gestrekt naar voren, pols naar achteren geknikt, handpalm plat naar
-        # voren (naar het doel en half naar de kijker), vingers omhoog en bijna gesloten (A) of iets gespreid (B)
-        m.chain([(-20, -8, 20, LIMB), (-56, -34, 22, LIMB - 1.5), (-98, -50, 8, LIMB - 2.5)], 'fur')
-        pn = np.array((-1.0, 0, 0)) * 0.15 + view * 0.85; pn /= np.linalg.norm(pn)
-        open_hand(m, np.array((-100.0, -50, 8)), (-0.25, 1, 0.05), pn, 'hand', 'tip',
-                  spread=0.45 if gebaar == 'A' else 1.0, k_=1.5, duim=True, ln_=1.35)
-        # verre been recht omhoog uit de rug, voet om een tak
-        m.chain([(20, 14, -14, LIMB + 2), (24, 44, -18, LIMB), (20, 74, -20, LIMB - 2)], 'far')
-        hand(m, np.array((20.0, 76, -20)), (0.2, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0)
-        # nabije been sleept naar achteren-omlaag
-        m.chain([(40, -6, 14, LIMB + 2), (60, -20, 18, LIMB), (80, -32, 20, LIMB - 2)], 'fur')
-        hand(m, np.array((82.0, -34, 20)), (1, -0.3, 0), (0, 1, 0), 'hand', 'tip', curl=0.3)
+        # Studie referenties/dynamische_poses.png (Zeraora, Infernape, Mew, Celebi, Ambipom, Primeape): compact,
+        # ledematen gebogen en dicht bij het lijf, grote handen/voeten, kop groot op de schouders, taps (dikke dij/
+        # bovenarm, knie/elleboog zichtbaar). Geen zeester.
+        m.ell((-12, 2, 0), (22, 22, 24), 'fur')             # borst/schouders
+        m.ell((14, 4, 0), (24, 22, 22), 'fur')              # buik/rug (bolt boven uit, krabbel)
+        m.ell((32, 0, 0), (17, 18, 19), 'fur')              # heup
+        # verre arm omhoog-voor, elleboog gebogen, hand gekruld om een onzichtbare tak
+        m.chain([(-16, 14, -20, LIMB + 1.5), (-24, 34, -26, LIMB - 0.5), (-40, 46, -24, LIMB - 3)], 'far')
+        hand(m, np.array((-40.0, 46, -24)), (-0.8, 0.7, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0, k_=1.3)
+        # nabije arm (schets): van onder de nek schuin naar linksonder, elleboog gebogen; hand plat, vingers
+        # gespreid, palm omlaag-voor naar het doel (anime-still, één hand)
+        m.chain([(-18, -8, 20, LIMB + 1.5), (-26, -30, 26, LIMB - 0.5), (-44, -40, 26, LIMB - 3)], 'fur')
+        # leesbaarheid (Simipour, Ambipom): hand plat naar de kijker, vingers wijd, groot
+        open_hand(m, np.array((-44.0, -40, 26)), (-0.8, -0.6, 0.1), view, 'hand', 'tip',
+                  spread=1.0 if gebaar == 'A' else 1.6, k_=1.7, duim=True, ln_=1.2)
+        # verre been omhoog, knie gebogen naar voren, voet gekruld om een onzichtbare tak
+        m.chain([(18, 14, -14, LIMB + 4), (12, 40, -18, LIMB), (24, 58, -20, LIMB - 3)], 'far')
+        hand(m, np.array((24.0, 58, -20)), (0.3, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0, k_=1.4)
+        # nabije been sleept naar achteren-omlaag, knie gebogen, voet ontspannen
+        m.chain([(36, -6, 14, LIMB + 4), (52, -24, 18, LIMB), (70, -22, 20, LIMB - 3)], 'fur')
+        hand(m, np.array((70.0, -22, 20)), (1, -0.5, 0), (0, 0, 1), 'hand', 'tip', curl=0.5, k_=1.4)
     n_lijf = len(m.parts)
     # staart: vanaf de stuit naar achteren en omhoog, dan een volle spiraal (2 slagen) achter het lijf
     ph = math.radians(SPIR_YAW)
@@ -205,9 +205,9 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaa
             m.ell(cc + d * 20 * ln + nrm * 3, (17 * ln, 6, 2.5), 'blad', Rb)
     off = np.zeros(3)
     if pose == 'krabbel':
-        T = np.array((34.0, 4, 0))          # staart vanaf de heup, spiraal rechtsboven
+        T = np.array((28.0, 6, 0))          # staart vanaf de heup, spiraal rechtsboven
         m.parts = m.parts[:n_lijf] + [(c + T, r, R0, g) for c, r, R0, g in m.parts[n_lijf:]]
-        off = np.array((-50.0, -78.0, 0.0))  # kop vooraan aan de nek
+        off = np.array((-42.0, -74.0, 0.0))  # kop direct op de schouders
     if pose == 'omhoog':
         # FLIP: alles tot nu toe (romp, benen, staart) draait om de schouders: heupen en benen omhoog
         piv, Rz = np.array((0.0, 54.0, 0.0)), P.rot_z(math.radians(FLIP))
@@ -301,7 +301,7 @@ def raster(name='pose_40_80_hand.png'):
         ImageDraw.Draw(v).ellipse((cx - 40, gy - 4, cx + 40, gy + 4), fill=(205, 205, 212))
         x, y = 10 + 330 * (k % 3), 40 + (256 + 26) * (k // 3)
         im.paste(v, (x, y))
-        d.text((x, y + 258), f'lijf {yaw}°, kop {yaw + ex}°, hand {gb}: ' + ('vingers gesloten' if gb == 'A' else 'vingers iets gespreid'), font=F, fill=(60, 60, 60))
+        d.text((x, y + 258), f'lijf {yaw}°, kop {yaw + ex}°, hand {gb}: ' + ('vingers gespreid' if gb == 'A' else 'vingers wijd gespreid'), font=F, fill=(60, 60, 60))
     im.save(os.path.join(HERE, name))
 
 

@@ -81,3 +81,4 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - Naden en barsten: begin bij Y-punten (drie naden, nooit een kruis), trapsgewijs 1 px naar de rand; rechte blokken lezen als baksteen/Rock. Een glanzende zak met facetten leest als edelsteen.
 - Toevoegingen bovenop het silhouet (kuif) lopen aan de uiteinden taps uit tot de oude omtrek; anders steekt er een hoek uit of brokkelt het af.
 
+- Gescripte schetsen werken alleen als kleine ingrepen op een eenvoudige sprite (Silicobra). Op een drukke sprite met een eigen patroon (Sandaconda) of voor een nieuwe vorm leveren ze lelijke rommel op (Jordi: "gruwelijk lelijke sprites"): dan niet sturen, maar eerst in woorden + referenties de vorm afspreken en daarna de silhouetronde.

@@ -16,3 +16,6 @@ Zoutkorst met barstnet (Y-naden), zoutkuif, half dichtgevallen oog met turquoise
 
 ## Stats (voorstel)
 Wall, totaal 510 (Sandaconda): HP 110 / Atk 75 / Def 135 / SpA 70 / SpD 95 / Spe 25.
+
+## Afgekeurd
+- Schetsen ronde 1 (Jordi, 3 nov): "jezus wat een gruwelijk lelijke sprites, ze werken allemaal niet". Geen gescripte recolors/overlays van Sandaconda meer.

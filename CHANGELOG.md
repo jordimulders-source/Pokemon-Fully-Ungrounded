@@ -125,3 +125,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.24] - Brainstorm Uyuni-Silicobra
 - Brainstorm voor de eerste regional form (Silicobra uit de Salar de Uyuni, met een mogelijke nieuwe evolutie) toegevoegd aan `docs/concept/IDEEEN.md`. Nog niets besloten.
+
+### [v0.0.25] - Uyuni-Silicobra: Ground + Ice-immuniteit
+- Besloten (Jordi): de Uyuni-Silicobra blijft Ground en krijgt een nieuwe ability met een immuniteit voor Ice; de sprite wordt een aangepaste bestaande sprite (`POKEMON.md`, `SPRITE_WERKWIJZE.md`). Uitleg waarom Ground/Electric klopt + matchups in `IDEEEN.md`.

@@ -70,3 +70,6 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 ## Kosten en tempo (ter oriëntatie)
 - Een maker- of keurderronde kost ±150–400k agenttokens; zuinig: één maker, één keurder, kleine vellen, geen parallelle experimenten.
 - Commit en push na elke ronde (ook interne), zodat niets verloren gaat.
+
+## Regional forms (Jordi, 3 nov)
+- Een regional form begint van de bestaande sprite van de soort (aanpassen), niet vanaf een foto en een nieuw silhouet.

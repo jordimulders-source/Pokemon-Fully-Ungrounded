@@ -25,6 +25,9 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - Zijaanzicht mag als het bij het dier past (Swellow, Relicanth, Seviper, Skarmory).
 - **Gokken is verboden:** is een kenmerk twee keer mis (kolibrievleugels), vraag Jordi om een referentie of een krabbel. Zijn krabbels over het silhouet gaven per stuk de meeste vooruitgang.
 
+- **Een profiel opblazen en draaien geeft geen 3/4** (kolibrie pre-evo, 3 nov): het lijf draait mee, maar de kop blijft een platte profielkop met het oog op de zijkant. Gen 3-driekwart is gesmokkeld: ronde kop als eigen bol bovenop/voor het lijf, gezicht naar de kijker, oog in het middelste derde van de kop. Bouw de kop in 3D als eigen bol; een overlapeis met een profiel geldt alleen voor het lijf. Toets elk hoekenvel vóór Jordi op 8× naast Taillow/Starly op de kop, niet alleen op de houding; plak het oog niet als plaatje (dat verbergt dat het op de zijkant zit).
+- **Twijfelt Jordi aan een silhouet, vraag eerst wat hij ziet** vóór er een kleurronde start.
+
 ## Stap 2. Silhouet op 64×64 (één kleur) → Jordi keurt
 - **Bron = de foto of render, verkleind; de massa daarvan is heilig.** Twee mislukte routes, niet herhalen:
   - Een agent die het silhouet "vrij" tekent op de pose verliest de massa: te dun, "lijkt totaal niet op het origineel" (olinguito hand-rondes 1–3).

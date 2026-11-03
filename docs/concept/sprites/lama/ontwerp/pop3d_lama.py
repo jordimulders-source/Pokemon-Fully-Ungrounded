@@ -493,16 +493,18 @@ def kop_lama(m, top, hs, yaw_extra, piv, pitch=-8, lid=0.55, kleding=True):
     m.parts[h0:] = [(piv + Ry @ (top + Rp @ (c - top) - piv), r, Ry @ Rp @ R0, g) for c, r, R0, g in m.parts[h0:]]
 
 
-def fase2_r3(hs=1.45, neck=62, lid=0.55):
-    """Fase 2 ronde 3: kaarsrechte ruige hals, lamakop, fluffy lijf; poten, kleding en pose als ronde 2."""
+def fase2_r3(hs=1.45, neck=62, lid=0.55, bk=1.0, nr=0.0):
+    """Fase 2 ronde 3: kaarsrechte ruige hals, lamakop, fluffy lijf; poten, kleding en pose als ronde 2.
+    bk = lijf voller (wol), nr = hals dikker (wol)."""
     m = P.Model()
     for c, r in (((-26, 4, 0), (20, 19, 17)), ((2, 4, 0), (30, 18, 17)), ((28, 6, 0), (19, 19, 17))):
+        r = (r[0] * bk ** 0.5, r[1] * bk, r[2] * bk)
         m.ell(c, r, 'body')
         fluff(m, c, r, 'body', 70, 6.5, int(abs(c[0])) + 11, ymin=-0.85)   # ruig, ook aan de buik
     m.chain([(44, 12, 0, 6.5), (51, 22, 0, 7.5), (49, 31, 0, 5.5)], 'tail')
     fluff(m, (50, 24, 0), (6, 8, 6), 'tail', 10, 3.2, 5)
     top = np.array((-36, 8 + neck, 0.0))
-    nk = [(-32, 14, 0, 14.5), (-34, 8 + neck * 0.5, 0, 12.5), (top[0], top[1], 0, 11)]   # kaarsrecht omhoog
+    nk = [(-32, 14, 0, 14.5 + nr), (-34, 8 + neck * 0.5, 0, 12.5 + nr), (top[0], top[1], 0, 11 + nr * 0.6)]   # kaarsrecht omhoog
     m.chain(nk, 'neck')
     for i, (x, y, z, r) in enumerate(nk):
         fluff(m, (x, y, z), (r, r, r), 'neck', 26, 5.2, 70 + i)

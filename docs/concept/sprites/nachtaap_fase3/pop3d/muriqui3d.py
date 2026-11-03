@@ -171,7 +171,7 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaa
         # Jordi's handkrabbel (referenties/jordi_krabbel_hand.png): pols knikt naar achteren, vingers OMHOOG, duim
         # links, palm naar de tegenstander (= de kijker): het stop-/healgebaar onder de kop
         open_hand(m, np.array((-52.0, -62, 28)), (-0.15, 1, 0.1), view, 'hand', 'tip',
-                  spread=1.0 if gebaar == 'A' else 1.5, k_=1.6, duim=True, ln_=1.15)
+                  spread=1.0 if gebaar == 'A' else 1.5, k_=1.25, duim=True, ln_=1.15)
         # verre been omhoog, knie gebogen naar voren, voet gekruld om een onzichtbare tak
         m.chain([(18, 14, -14, LIMB + 4), (12, 40, -18, LIMB), (24, 58, -20, LIMB - 3)], 'far')
         hand(m, np.array((24.0, 58, -20)), (0.3, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0, k_=1.4)

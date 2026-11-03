@@ -24,7 +24,7 @@ P.LINED = {'eye', 'nose'}
 HEAD_C = np.array((-46.0, 6.0, 0.0))
 HEAD_R = 24.0
 SPIR_R = 15.0
-WIG_XA, WIG_W, WIG_STEP = ((-6, 34), (16, 38), (38, 30)), 6.5, 4.0
+WIG_XA, WIG_W, WIG_STEP = ((-6, 36), (17, 40), (39, 32)), 8.5, 4.5
 KENE_HW, KENE_XA, KENE_LEN = 4.4, (-8, 17, 41), 40
 
 

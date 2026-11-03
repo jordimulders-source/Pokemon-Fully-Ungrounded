@@ -58,11 +58,14 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 
 - Jordi 3 nov (na ronde 9): "ik vind de strepen er toch niet lekker uitkomen. Wat vind je zelf? Kijk nog een keer goed naar andere pokemon, zoals emboar, dusknoir, de diverse vivillons, zangoose, arbok, relicanth en kijk dan of zoiets mogelijk is. Met deze lijnen of eventueel iets anders." + "daarnaast mogen de ogen nog wat mysterieuzer, wat minder cute, misschien nog wat meer espurr's vorm". Studie: `referenties/patronen_gamefreak.png`, `referenties/ogen_espurr_vs_ronde9.png`; motieven op het poppetje: `pop3d/lijfmotieven3.png`.
 
+- Jordi 3 nov: "tapse wiggen liht zie ik wel zitten" → **lijfpatroon: lichte tapse wiggen** (3 stuks vanaf de ruggengraat, gespiegeld, verschillende lengtes, één kené-trede; techniek Growlithe/Slakoth, kleur maanzilver). 3D: motief 'wiggen_licht', projectie `silhouet/wiggen_64.npy`. Over de ogen van ronde 10: "ogen zijn zeer sterk" → **ogen ronde 10 bevroren**.
+
 ## Silhouet
 - Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
 - **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.
 
 ## Afgekeurd (niet herhalen)
+- Fase 2 (3 nov): kené als banden/ribbels (ronde 7–9: 'strepen komen er niet lekker uit').
 - Fase 2 (2 nov): kené als dunne 1-px-lijntjes (ronde 1–5, 'krassen') en als dunne meander (ronde 6); oranje borstvlak; bleke gezichtsschijf; twee kleine sikkels boven de ogen; halve maan op de flank; sterren; maanfasen.
 - Uit fase 1 (`../FEEDBACK.md`): staart als overdreven rechte lijn; geen oren; geamputeerde verre arm/been; opgeplakte ogen of ogen die niet Psychic-gekleurd zijn; slaperige/verveelde blik; te cartoony; ondersteboven hangen.
 - Modeltekeningen uit cirkels en driehoeken als bron van de vorm.

@@ -48,7 +48,7 @@ def hand(m, wrist, fwd, side, g, gt, curl=0.0, spread=1.0):
         m.chain([(*mid, 2.8), (*tip, 2.6)], gt, 0.8)
 
 
-def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0):
+def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0, duim=False, ln_=1.0):
     """Healergebaar: platte handpalm naar de kijker, lange vingers gespreid omhoog (Mega Alakazam, Mr. Mime)."""
     up = np.array(up, float); up /= np.linalg.norm(up)
     nrm = np.array(nrm, float); nrm -= up * (nrm @ up); nrm /= np.linalg.norm(nrm)
@@ -59,13 +59,19 @@ def open_hand(m, wrist, up, nrm, g, gt, spread=1.0, k_=1.0):
     for k, ln in ((-1.6, 0.85), (-0.55, 1.0), (0.55, 1.0), (1.6, 0.85)):
         fd = up + side * k * 0.32 * spread; fd /= np.linalg.norm(fd)
         b = pc + side * k * 3.6 * k_ + up * 6 * k_
-        mid = b + fd * 6 * ln * k_
-        tip = mid + fd * 6 * ln * k_
+        mid = b + fd * 6 * ln * k_ * ln_
+        tip = mid + fd * 6 * ln * k_ * ln_
         m.chain([(*b, 3.3 * k_), (*mid, 3.0 * k_)], g, 0.8)
         m.chain([(*mid, 3.0 * k_), (*tip, 2.8 * k_)], gt, 0.8)
+    if duim:   # duim opzij: maakt van de vlakke hand op 1× een leesbare open hand
+        td = -side * 0.85 + up * 0.5; td /= np.linalg.norm(td)
+        b = pc - side * 6 * k_
+        m.chain([(*b, 3.3 * k_), (*(b + td * 6 * k_), 3.0 * k_), (*(b + td * 11 * k_), 2.7 * k_)], g, 0.8)
+    if duim:   # handpalm (licht) naar de kijker
+        m.ell(pc + nrm * 2.2 * k_, np.array((6.2, 6.6, 2.4)) * k_, gt, Rp)
 
 
-def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40):
+def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaar='A'):
     m = P.Model()
     # romp: groot buikje onder (muriqui), brede borst en schouders, korte nek; massa zoals Hariyama/Slaking
     if pose != 'krabbel':
@@ -156,16 +162,17 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40):
         # verre arm omhoog-voor, hand om een tak
         m.chain([(-20, 10, -20, LIMB), (-36, 32, -24, LIMB - 1.5), (-52, 52, -24, LIMB - 2.5)], 'far')
         hand(m, np.array((-52.0, 52, -24)), (-0.6, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0)
-        m.chain([(-76, 62, -10, 4.4), (-60, 62, -18, 4.6), (-44, 66, -28, 4.2), (-30, 74, -34, 3.4)], 'tak', 1.0)
-        m.ell((-28, 80, -34), (7, 3, 2.5), 'blad', P.rot_z(math.radians(60)))
         # nabije arm gestrekt naar voren-omlaag, healergebaar als een magiër in film/anime (Jordi): palm naar
         # buiten (naar de kijker/voren), vingers gespreid
-        m.chain([(-20, -8, 20, LIMB), (-36, -36, 26, LIMB - 1.5), (-58, -56, 28, LIMB - 2.5)], 'fur')
-        open_hand(m, np.array((-58.0, -56, 28)), (-1, -0.35, 0.05), view, 'hand', 'tip', spread=1.5, k_=1.45)
+        # healer-/magiërhand (film, anime): arm gestrekt naar voren, pols naar achteren geknikt, handpalm plat naar
+        # voren (naar het doel en half naar de kijker), vingers omhoog en bijna gesloten (A) of iets gespreid (B)
+        m.chain([(-20, -8, 20, LIMB), (-56, -34, 22, LIMB - 1.5), (-98, -50, 8, LIMB - 2.5)], 'fur')
+        pn = np.array((-1.0, 0, 0)) * 0.15 + view * 0.85; pn /= np.linalg.norm(pn)
+        open_hand(m, np.array((-100.0, -50, 8)), (-0.25, 1, 0.05), pn, 'hand', 'tip',
+                  spread=0.45 if gebaar == 'A' else 1.0, k_=1.5, duim=True, ln_=1.35)
         # verre been recht omhoog uit de rug, voet om een tak
         m.chain([(20, 14, -14, LIMB + 2), (24, 44, -18, LIMB), (20, 74, -20, LIMB - 2)], 'far')
         hand(m, np.array((20.0, 76, -20)), (0.2, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0)
-        m.chain([(4, 92, -10, 4.4), (18, 92, -18, 4.6), (32, 90, -26, 4.2), (46, 94, -32, 3.4)], 'tak', 1.0)
         # nabije been sleept naar achteren-omlaag
         m.chain([(40, -6, 14, LIMB + 2), (60, -20, 18, LIMB), (80, -32, 20, LIMB - 2)], 'fur')
         hand(m, np.array((82.0, -34, 20)), (1, -0.3, 0), (0, 1, 0), 'hand', 'tip', curl=0.3)
@@ -277,25 +284,24 @@ def grid(yaws=(30, 40, 50), extras=(20, 35), pitch=6, arm='ver_omhoog', name='ho
     im.save(os.path.join(HERE, name))
 
 
-def raster(name='poses_krabbel.png'):
+def raster(name='pose_40_80_hand.png'):
     """Jordi 3 nov: P1 'lijkt gewoon alsof die staat' -> vier zweefposes; elk label noemt pose en hoeken."""
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)
-    cells = [('krabbel', 20, 40), ('krabbel', 30, 40), ('krabbel', 40, 40),
-             ('krabbel', 20, 55), ('krabbel', 30, 55), ('krabbel', 40, 55)]
+    cells = [('krabbel', 40, 40, 'A'), ('krabbel', 40, 40, 'B')]
     naam = {'krabbel': 'krabbel Jordi', 'omhoog': 'benen omhoog', 'lotus': 'kleermakerszit', 'zweef': 'zweven', 'vlucht': 'in vlucht'}
-    im = Image.new('RGB', (10 + 266 * 3, 40 + (256 + 26) * 2), 'white')
+    im = Image.new('RGB', (10 + 330 * 3, 40 + (256 + 26) * ((len(cells) + 2) // 3)), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 10), 'Nachtaap fase 3 (muriqui): pose naar de krabbel van Jordi', font=FB, fill=(30, 30, 30))
-    for k, (pose, yaw, ex) in enumerate(cells):
-        v = P.view(muriqui(ex, pose=pose, yaw=yaw), yaw, 6, size=220)
+    d.text((10, 10), 'Nachtaap fase 3: pose krabbel, lijf 40° / kop 80°, geen takken', font=FB, fill=(30, 30, 30))
+    for k, (pose, yaw, ex, gb) in enumerate(cells):
+        v = P.view(muriqui(ex, pose=pose, yaw=yaw, gebaar=gb), yaw, 6, size=220)
         a = np.array(v.convert('L')) < 250
         ys = np.where(a.any(1))[0]; xs = np.where(a.any(0))[0]
         gy = min(253, ys.max() + 18); cx = (xs.min() + xs.max()) // 2
         ImageDraw.Draw(v).ellipse((cx - 40, gy - 4, cx + 40, gy + 4), fill=(205, 205, 212))
-        x, y = 10 + 266 * (k % 3), 40 + (256 + 26) * (k // 3)
+        x, y = 10 + 330 * (k % 3), 40 + (256 + 26) * (k // 3)
         im.paste(v, (x, y))
-        d.text((x, y + 258), f'{naam[pose]}: lijf {yaw}°, kop {yaw + ex}°', font=F, fill=(60, 60, 60))
+        d.text((x, y + 258), f'lijf {yaw}°, kop {yaw + ex}°, hand {gb}: ' + ('vingers gesloten' if gb == 'A' else 'vingers iets gespreid'), font=F, fill=(60, 60, 60))
     im.save(os.path.join(HERE, name))
 
 

@@ -20,6 +20,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
 - 3 nov, krabbel `referenties/jordi_krabbel_pose.png`: "ik dacht meer aan zoiets, heel slecht getekend" → **lijf horizontaal in de lucht**, kop vooraan links; één arm omhoog-voor en één been recht omhoog; ander been sleept naar achteren-omlaag; staart rechtsboven als spiraal; onderste arm reikt naar voren-omlaag.
 - 3 nov: "misschien dat 1 arm en 1 been takken vasthouden" + foto 2 ("zoals hier") → geheven arm en geheven been houden elk een (psychische) tak vast.
 - 3 nov: "nee de onderste hand houdt geen plant vast" / "die maakt een healer gebaar" / "zoals in films en anime met magiers" / "open hand" → onderste hand: **open hand, palm naar buiten, vingers gespreid** (spreukgebaar); geen voorwerp.
+- 3 nov: "40-80 akkoord, maar we tonen geen takken en de hand moet nogmaals open zijn zoals bij healers in films en anime, of snap je niet wat ik bedoel?" → **hoek lijf 40° / kop 80° akkoord**; **geen takken** (handen en voet gekruld om een onzichtbare tak); onderste hand = arm lang gestrekt naar voren, voorbij de kop, hand rechtop met de palm naar de kijker en de vingers omhoog, duim opzij (A gesloten, B iets gespreid; `pop3d/pose_40_80_hand.png`).
 
 ## 3D-poppetje
 - `pop3d/muriqui3d.py` (renderer `pop3d/pop3d.py`, kopie van fase 2). Kleuren alleen ter oriëntatie (lijnkleuren van fase 2).

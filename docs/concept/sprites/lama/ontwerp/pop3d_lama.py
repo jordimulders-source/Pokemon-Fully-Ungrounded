@@ -552,6 +552,95 @@ def vel_r3():
     im.save(os.path.join(HERE, 'vel_ronde3_kop.png'))
 
 
+# ---------------------------------------------------------------- ronde 4 (Jordi 3 nov): dynamischere pose, wol gladder
+# "geen fan van de pose. De poten lijken net gebroken. Kan je nadenken over een iets dynamischere pose? Kijk vooral naar
+# andere sprites" + "nog steeds veel golvender dan bij de schapen". Posestudie: posestudie/gen3_viervoeters.png.
+
+def _rot(m, i0, i1, piv, Rm):
+    m.parts[i0:i1] = [(piv + Rm @ (c - piv), r, Rm @ R0, g) for c, r, R0, g in m.parts[i0:i1]]
+
+
+POSES = {
+    # A: Ponyta-steigerstap: nabije voorpoot hoog opgetrokken, knie naar voren, onderbeen hangt recht omlaag
+    'A_stap': dict(rear=0, legs=[
+        ('leg', [(-30, -8, 11, 8.5), (-46, -22, 15, 6), (-46, -42, 16, 5.5)], 'mma'),
+        ('far', [(-18, -8, -11, 8.5), (-17, -38, -12, 6), (-18, -66, -12, 5.5)], 'mma'),
+        ('leg', [(30, -6, 11, 10), (40, -36, 12, 6), (38, -66, 12, 5.5)], None),
+        ('far', [(36, -6, -11, 10), (44, -36, -12, 6), (42, -66, -12, 5.5)], None)]),
+    # B: steigeren (Stantler; lama's vechten echt zo): lijf 28 graden omhoog op de achterpoten, voorpoten in dekking
+    'B_steigeren': dict(rear=36, legs=[
+        ('leg', [(-30, -8, 11, 8.5), (-48, -8, 18, 6), (-62, 6, 20, 5.5)], 'mma'),
+        ('far', [(-18, -8, -11, 8.5), (-38, -24, -15, 6), (-52, -30, -15, 5.5)], 'mma'),
+        ('leg', [(30, -6, 11, 10), (16, -30, 13, 6.5), (24, -62, 13, 5.5)], None),
+        ('far', [(36, -6, -11, 10), (32, -32, -13, 6.5), (42, -62, -13, 5.5)], None)]),
+    # C: telgang (Girafarig; kameelachtigen lopen echt in telgang): nabije kant vooruit, verre kant achteruit
+    'C_telgang': dict(rear=0, legs=[
+        ('leg', [(-30, -8, 11, 8.5), (-40, -36, 12, 6), (-46, -66, 12, 5.5)], 'mma'),
+        ('far', [(-18, -8, -11, 8.5), (-10, -36, -12, 6), (-4, -62, -12, 5.5)], 'mma'),
+        ('leg', [(30, -6, 11, 10), (26, -36, 12, 6), (20, -66, 12, 5.5)], None),
+        ('far', [(36, -6, -11, 10), (50, -34, -12, 6), (56, -60, -12, 5.5)], None)]),
+    # D: achterwaartse trap (lama's trappen echt): nabije achterpoot schopt naar achteren, voorpoten gezet
+    'D_trap': dict(rear=-6, legs=[
+        ('leg', [(-30, -8, 11, 8.5), (-42, -36, 13, 6), (-48, -66, 13, 5.5)], 'mma'),
+        ('far', [(-18, -8, -11, 8.5), (-22, -38, -12, 6), (-26, -66, -12, 5.5)], 'mma'),
+        ('leg', [(30, -6, 11, 10), (52, -16, 12, 6.5), (70, -8, 12, 5.5)], None),
+        ('far', [(36, -6, -11, 10), (40, -36, -12, 6), (36, -66, -12, 5.5)], None)]),
+}
+
+
+def fase2_r4(pose='A_stap', hs=1.45, neck=52, lid=0.55, bk=1.2, nr=2):
+    """Fase 2 ronde 4: kop/hals/kleding als ronde 3, gladdere wol (minder, grotere bobbels), pose uit POSES."""
+    m = P.Model()
+    for c, r in (((-26, 4, 0), (20, 19, 17)), ((2, 4, 0), (30, 18, 17)), ((28, 6, 0), (19, 19, 17))):
+        r = (r[0] * bk ** 0.5, r[1] * bk, r[2] * bk)
+        m.ell(c, r, 'body')
+        fluff(m, c, r, 'body', 16, 9.5, int(abs(c[0])) + 11, ymin=-0.85)   # weinig, groot: glad zoals Mareep
+    m.chain([(44, 12, 0, 6.5), (51, 22, 0, 7.5), (49, 31, 0, 5.5)], 'tail')
+    m.ell((50, 30, 0), 7.5, 'tail')
+    top = np.array((-36, 8 + neck, 0.0))
+    nk = [(-32, 14, 0, 14.5 + nr), (-34, 8 + neck * 0.5, 0, 12.5 + nr), (top[0], top[1], 0, 11 + nr * 0.6)]
+    h0 = len(m.parts)
+    m.chain(nk, 'neck')
+    for i, (x, y, z, r) in enumerate(nk):
+        fluff(m, (x, y, z), (r, r, r), 'neck', 7, 7.5, 70 + i)
+    halsband(m, nk[0][:3], nk[1][:3], 0.30, 16.5 + nr, ['ag0', 'ag1', 'ag2'], pompons=5)
+    kop_lama(m, top, hs, 12, np.array(top, float), lid=lid)
+    h1 = len(m.parts)
+    for th in np.arange(-70, 71, 7):
+        t = math.radians(th)
+        band = int((th + 70) // 24) % len(AGUAYO)
+        m.ell(np.array((4, 6 + 21.5 * bk * math.cos(t), 20.5 * bk * math.sin(t))), np.array((15, 3, 5)), f'ag{band}', P.rot_x(t))
+    pz = POSES[pose]
+    n_lijf = len(m.parts)
+    for g, pts, voet in pz['legs'][:2]:     # voorpoten draaien mee met het lijf
+        poot(m, pts, g, 1.05, voet)
+    if pz['rear']:
+        _rot(m, 0, len(m.parts), np.array((32, -6, 0.0)), P.rot_z(math.radians(-pz['rear'])))
+        # hals blijft kaarsrecht omhoog: kop+hals terugdraaien om de (gedraaide) halsbasis
+        piv = np.array((32, -6, 0.0)) + P.rot_z(math.radians(-pz['rear'])) @ (np.array(nk[0][:3], float) - np.array((32, -6, 0.0)))
+        _rot(m, h0, h1, piv, P.rot_z(math.radians(pz['rear'])))
+    for g, pts, voet in pz['legs'][2:]:
+        poot(m, pts, g, 1.05, voet)
+    return m
+
+
+def vel_r4():
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 17)
+    set_vacht('karamel (foto 1)'); COL['lid'] = COL['head']; COL['lip'] = '#8A5530'
+    labels = {'A_stap': 'A: steigerstap (Ponyta)', 'B_steigeren': 'B: steigeren in dekking (Stantler)',
+              'C_telgang': 'C: telgang (Girafarig)', 'D_trap': 'D: trap naar achteren (lama-gedrag)'}
+    cell = 262
+    im = Image.new('RGB', (12 + cell * 5, 44 + cell + 30), 'white'); d = ImageDraw.Draw(im)
+    d.text((12, 12), 'Lama fase 2, poppetje ronde 4: pose-opties (kop, hals en kleding als ronde 3)', font=FB, fill=(30, 30, 30))
+    oud, _ = view(fase2_r3(neck=52, bk=1.2, nr=2), 40)
+    im.paste(oud, (12, 44)); d.text((16, 44 + 258), 'nu: "gebroken" poot', font=F, fill=(60, 60, 60))
+    for i, k in enumerate(POSES):
+        img, _ = view(fase2_r4(k), 40)
+        im.paste(img, (12 + cell * (i + 1), 44)); d.text((16 + cell * (i + 1), 44 + 258), labels[k], font=F, fill=(60, 60, 60))
+    im.save(os.path.join(HERE, 'vel_ronde4_pose.png'))
+
+
 if __name__ == '__main__':
     vel()
     lijn()

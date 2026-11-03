@@ -73,3 +73,11 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 
 ## Regional forms (Jordi, 3 nov)
 - Een regional form begint van de bestaande sprite van de soort (aanpassen), niet vanaf een foto en een nieuw silhouet.
+- **Bewezen op de Uyuni-Silicobra (3 nov, 6 rondes):** eerst ontwerpschetsen gescript óp de echte sprite (Jordi kon zich tekst niet voorstellen; een paletwissel is "niet genoeg"), studie van bestaande regional forms (kenmerk krijgt ander materiaal/functie, lijf en pose blijven), dan één maker die doorwerkt.
+- Een nieuw kenmerk moet binnen het eigen silhouet passen: een zak die buiten de nek bolt raakte de staart of werd een aanhangsel; een band óm de nek loste het op.
+- Bij onduidelijke feedback ("dat streepje", "een lijn") eerst navragen met een uitsnede waarin kandidaten omkaderd zijn (A/B), niet een variant gokken: de "kuiflijn"-test was een misverstand; Jordi bedoelde de gezichtslijn van het origineel.
+- "Zoals het origineel" = dezelfde loop als de grens in de basis (overlay, per pixel de index); een grens tussen twee lichte vlakken leest pas als één kant zijn eigen kleur terugkrijgt.
+- Gescripte schetsen: let op paletindexen die de basis voor twee onderdelen deelt (oogring = staartpunt; gezicht = buik), en laat gaten (staartkrul) transparant.
+- Naden en barsten: begin bij Y-punten (drie naden, nooit een kruis), trapsgewijs 1 px naar de rand; rechte blokken lezen als baksteen/Rock. Een glanzende zak met facetten leest als edelsteen.
+- Toevoegingen bovenop het silhouet (kuif) lopen aan de uiteinden taps uit tot de oude omtrek; anders steekt er een hoek uit of brokkelt het af.
+

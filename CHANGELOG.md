@@ -159,3 +159,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.35] - Uyuni-Silicobra: frontsprite ronde 6
 - Vanaf 5A: de gezichtslijn van de originele Silicobra terug in een zachte grijs-okertint; halsband aan de bovenkant 1–2 px hoger, onderkant gelijk. `docs/concept/sprites/silicobra_uyuni/ronde6/`.
+
+### [v0.0.36] - Uyuni-Silicobra: frontsprite goedgekeurd
+- Jordi: "ronde 6 uitstekend en akkoord". Frontsprite (frame 1) bevroren in `docs/concept/sprites/silicobra_uyuni/af/silicobra_uyuni.png` (64×64, 15 kleuren, transparency=0). Lessen van de zes rondes in `docs/lessen/SPRITE_WERKWIJZE.md` (Regional forms). Stand van zaken in CLAUDE.md bijgewerkt.
+- Nog te doen: frame 2 (mond open), rugsprite, icoon, shiny, naam en data; de nieuwe evolutie; de ability.

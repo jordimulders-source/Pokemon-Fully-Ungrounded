@@ -27,6 +27,9 @@ Jordi over ronde 1: "Ik zie de zoutkorst 100% zitten en ook de pekelzak ziet er 
 - Paletwissel alleen (Jordi: "een pallette swap is niet genoeg").
 - Zoutkegel in de sprite (leest op 64 px als steen/ei/vin).
 
+## Goedgekeurd
+- **Frontsprite frame 1: ronde 6** (Jordi, 3 nov: "ronde 6 uitstekend en akkoord") → `af/silicobra_uyuni.png`. **Bevroren.** Nog te doen: frame 2 (mond open), rugsprite, icoon, shiny (skins-regel), naam/data; nieuwe evolutie; ability (Ice-immuniteit, naam open).
+
 ## Rondes
 - Ronde 2 (Jordi, 3 nov): "bij 2 vind ik de zak wat te groot geworden, die lijkt nu 1 met de staart. Plus de kuif links kapt erg scherp af. Verder wel prima" → **bevroren:** oog (half lid, ring), korst/barstnet, kleuren en gekleurde buitenlijn, gezicht, voet, krul. Open: zak kleiner en los van de staart, kuif links laten uitlopen (ronde 3).
 - Ronde 1 (Jordi): "vooral de buitenste lijn is te zwart".

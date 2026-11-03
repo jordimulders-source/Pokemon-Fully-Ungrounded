@@ -114,7 +114,7 @@ def bouw(dik=0.80, kopdik=0.92):
         occ[pm[..., None] & (np.abs(zs - z0 * U) <= 1.1 * U)] = 6
     return occ, Z
 
-def render(occ, Z, yaw=0.0, kop_extra=0.0, kantel=0.0, licht=True, pivot=(24.0, 22.5)):
+def render(occ, Z, yaw=0.0, kop_extra=0.0, kantel=0.0, licht=True, pivot=(24.0, 22.5), kleur_fn=None, oog3d=None):
     vol = occ > 0
     surf = vol & ~nd.binary_erosion(vol)
     sm = nd.gaussian_filter(vol.astype(np.float32), 2.6)
@@ -126,6 +126,13 @@ def render(occ, Z, yaw=0.0, kop_extra=0.0, kantel=0.0, licht=True, pivot=(24.0, 
     oogpunt = OOGPX[(iy // U), (ix // U)] & (Zc > 0)
     # kleur: projectie van opzij
     col = TEXU[np.clip(Y.astype(int), 0, N - 1), np.clip(X.astype(int), 0, N - 1)]
+    if kleur_fn is not None:
+        col = kleur_fn(X, Y, Zc, lab, col)
+    if oog3d is not None:
+        oogpunt = np.zeros_like(oogpunt)
+        X = np.append(X, oog3d[0]); Y = np.append(Y, oog3d[1]); Zc = np.append(Zc, oog3d[2])
+        lab = np.append(lab, 0); col = np.vstack([col, [[0, 0, 0]]]); n = np.vstack([n, [[0, 0, 1]]])
+        oogpunt = np.append(oogpunt, True)
     # kop (en bek) extra draaien rond de nek
     def rot_y(x, z, th, cx=0.0):
         c, s = np.cos(th), np.sin(th)

@@ -16,7 +16,7 @@ Jordi over ronde 1: "Ik zie de zoutkorst 100% zitten en ook de pekelzak ziet er 
 |---|---|---|
 | Silhouet, pose, kop, snuit, staartkrul, voet | bestaande Silicobra (`referenties/silicobra_basis.png`) | bevroren, behalve de twee toevoegingen hieronder |
 | Zoutkuif (platen op de rug/achterkant van de kop) | schets A | toevoeging: 1–3 px buiten het silhouet, rustige platen met naden |
-| Pekelzak (nek, doorschijnend turquoise, lithium) | schets A | toevoeging: iets bol buiten het oude silhouet; rechterkant rond (in de schets recht afgesneden bij de staart) |
+| Pekel als halsband (nek, turquoise, lithium; besloten 3 nov, was: zak) | bespreking | toevoeging: iets bol buiten het oude silhouet; rechterkant rond (in de schets recht afgesneden bij de staart) |
 | Zoutkorst (zeshoeken i.p.v. de vlekken) | schets A | met de hand, rustig, leesbaar op 1×; geen ruis |
 | Oog | schets A | half dichtgevallen (loom), turquoise iris |
 | Kleur | warm gebroken wit, grijs-oker (zout met stof/klei); turquoise accent | **niet** ijsblauw (Alola-Sandshrew = Ice), **niet** Nacli (kubussen, oranje gloed) |
@@ -31,3 +31,4 @@ Jordi over ronde 1: "Ik zie de zoutkorst 100% zitten en ook de pekelzak ziet er 
 - Ronde 2 (Jordi, 3 nov): "bij 2 vind ik de zak wat te groot geworden, die lijkt nu 1 met de staart. Plus de kuif links kapt erg scherp af. Verder wel prima" → **bevroren:** oog (half lid, ring), korst/barstnet, kleuren en gekleurde buitenlijn, gezicht, voet, krul. Open: zak kleiner en los van de staart, kuif links laten uitlopen (ronde 3).
 - Ronde 1 (Jordi): "vooral de buitenste lijn is te zwart".
 - Ronde 3 (Jordi, 3 nov): "nee dat streepje moet gewoon weg bij ronde 2, bij ronde 3 lijkt het net alsof zn kop aan het afbrokkelen is. Daarnaast vind ik bij beide de pekelzak niet netjes afgewerkt. Bij de eerste zit die vast aan de staart, bij de ander is het een soort semi half aanhangsel dat ook niet lekker aansluit. Ipv speculeren, laten we bespreken wat we doen en geef wat suggesties" → **ronde 3 afgekeurd** (kuif afbrokkelend; zak als aanhangsel); basis blijft ronde 2. Bespreking: `bespreking/` (streepje A/B, vijf zakopties).
+- Bespreking (Jordi, 3 nov): "zie mijn 2 stipjes, het is 1 slordige pixel. de halsband zie ik zitten. 3 zit het dichtst in de buurt, maar is nog niet een volledige nette halsband, die mag wat voller. Maar ook niet zo onafgemaakt als 5" → **besloten:** de pekel wordt een **halsband** om de nek (geen zak); slordige pixel (19,15) weg. Ronde 4 vanaf ronde 2.

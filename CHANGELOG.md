@@ -170,3 +170,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Verse eindkeuring met vergelijking tegen echte sprites en de Dragonfly Cave-gids (`docs/concept/sprites/nachtaap_evo/kleur/ronde14/EINDKEURING.md`, 17 gidsregels): twee kleine FAILs in de crème tenen (bruine onderrand aan de schaduwkant → zwart, hark op de achtervoet), 8 px door Claude gerepareerd; alpha-diff 0 tegen het bevroren silhouet.
 - **Af:** `docs/concept/sprites/nachtaap_evo/af/nachtaap_evo.png` (+ `normal.pal`, `vel.png`, `EINDKEURING.md`). Jordi: "Het concept ben ik gewoon tevreden mee". Nog te doen: frame 2, rugsprite, icoon, shiny, naam en data.
 - Prompt voor een nieuw gesprek over nachtaap fase 3 (eindvorm): `docs/concept/sprites/PROMPT_NACHTAAP_FASE3.md`.
+
+### [v0.0.27] - Nachtaap fase 3: richting en pose
+- Fase 3 = muriqui (Jordi): gezicht, lange armen en benen; rechtop/zwevend; kleurpatroon van de lijn blijft; sinistere ogen (kleiner); spiraalstaart met bladeren. Lore: kanaliseert planten en takken met psychische kracht.
+- Pose naar Jordi's krabbel goedgekeurd: horizontaal zwevend, arm en been omhoog om een onzichtbare tak, healerhand met de palm naar de tegenstander (lijf 40° / kop 80°). 3D-poppetje `docs/concept/sprites/nachtaap_fase3/pop3d/muriqui3d.py`.
+- Handen in 3D mislukt (alle varianten afgekeurd); volgende sessie: handen als pixelzones naar een echte sprite-hand (Gen 1-Drowzee). Overdracht onderaan `nachtaap_fase3/SPEC.md`.
+- Lessen in `SPRITE_WERKWIJZE.md`: "Vóór elk vel naar Jordi" (harde regel), ellipsoïde-poppetje faalt bij dynamische poses en handen, referentie van Jordi = die afbeelding, kenmerken zelf tellen.

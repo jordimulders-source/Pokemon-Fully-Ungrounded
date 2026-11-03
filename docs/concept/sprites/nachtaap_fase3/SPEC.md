@@ -56,3 +56,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
 - Pose P1 met de voeten onder het lijf ('lijkt gewoon alsof die staat'), een arm omhoog aan een tak zonder healergebaar, gestrekte stokbenen.
 - Alles uit `../nachtaap_evo/SPEC.md` (Afgekeurd) en `../FEEDBACK.md`: o.a. kené als dunne lijntjes of ribbels, borstvlak, bleke gezichtsschijf, maanfasen/sterren, ondersteboven hangen.
 - Kleuromkering naar muriqui-kleuren (lichte vacht, donker gezicht): de kleuren van de lijn blijven (Jordi, 3 nov).
+
+## Overdracht naar de volgende sessie (3 nov)
+Prompt om te plakken:
+> Nachtaap fase 3 (muriqui), alleen de **handen**. Lees eerst `docs/lessen/SPRITE_WERKWIJZE.md` (vooral "Vóór elk vel naar Jordi" en de lessen onderaan), `SPRITE_NORM.md`, `SPRITE_OPDRACHT.md` en `docs/concept/sprites/nachtaap_fase3/SPEC.md` helemaal (Jordi's woorden, Afgekeurd). De pose is goedgekeurd en bevroren: `pop3d/muriqui3d.py`, `muriqui(40, pose='krabbel', yaw=40)`, lijf 40° / kop 80°. Handen niet meer in 3D: het poppetje geeft alleen plek en maat. Maak eerst het silhouet (render direct verkleind, eindvormmaat ±2200 px) met de twee handen als benoemde pixelzones; healerhand = palm naar de tegenstander, vier vingers + duim dicht bij elkaar en zacht gekromd, naar de Gen 1-Drowzee die Jordi als bestand stuurt (`referenties/`); bovenste hand = vuist om een onzichtbare tak. Eén maker-agent die doorwerkt, Claude keurt op 8× en 1× naast de bron, dan een onafhankelijke keurder, pas dan Jordi. Geen geplakte handen (Chernobyl), geen tussenproeven sturen.

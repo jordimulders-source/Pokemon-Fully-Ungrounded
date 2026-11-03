@@ -156,3 +156,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.34] - Uyuni-Silicobra: frontsprite ronde 5
 - A: halsband 1 px hoger onder de kin. B (test): A plus een scheidingslijn tussen kop en zoutkuif. `docs/concept/sprites/silicobra_uyuni/ronde5/`.
+
+### [v0.0.35] - Uyuni-Silicobra: frontsprite ronde 6
+- Vanaf 5A: de gezichtslijn van de originele Silicobra terug in een zachte grijs-okertint; halsband aan de bovenkant 1–2 px hoger, onderkant gelijk. `docs/concept/sprites/silicobra_uyuni/ronde6/`.

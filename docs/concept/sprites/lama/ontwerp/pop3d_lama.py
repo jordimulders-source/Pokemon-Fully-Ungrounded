@@ -585,14 +585,32 @@ POSES = {
         ('far', [(-18, -8, -11, 8.5), (-22, -38, -12, 6), (-26, -66, -12, 5.5)], 'mma'),
         ('leg', [(30, -6, 11, 10), (52, -16, 12, 6.5), (70, -8, 12, 5.5)], None),
         ('far', [(36, -6, -11, 10), (40, -36, -12, 6), (36, -66, -12, 5.5)], None)]),
+    # ronde 5 (Jordi 3 nov, foto 8): lijf horizontaal (bijna zijaanzicht, Manectric/Rapidash/Umbreon), kop driekwart
+    # naar de kijker; alle poten op de grond (Girafarig/Ponyta), geen opgetilde poot.
+    'E_staand': dict(rear=0, legs=[
+        ('leg', [(-30, -8, 11, 8.5), (-34, -36, 12, 6), (-36, -66, 12, 5.5)], 'mma'),
+        ('far', [(-20, -8, -11, 8.5), (-22, -36, -12, 6), (-24, -66, -12, 5.5)], 'mma'),
+        ('leg', [(30, -6, 11, 10), (38, -36, 12, 6), (34, -66, 12, 5.5)], None),
+        ('far', [(38, -6, -11, 10), (46, -36, -12, 6), (44, -66, -12, 5.5)], None)]),
+    'F_pas': dict(rear=0, legs=[    # Girafarig: nabije voor iets vooruit, verre voor recht; achter gespreid
+        ('leg', [(-30, -8, 11, 8.5), (-38, -36, 12, 6), (-44, -66, 12, 5.5)], 'mma'),
+        ('far', [(-20, -8, -11, 8.5), (-18, -36, -12, 6), (-16, -66, -12, 5.5)], 'mma'),
+        ('leg', [(30, -6, 11, 10), (40, -36, 12, 6), (40, -66, 12, 5.5)], None),
+        ('far', [(38, -6, -11, 10), (44, -36, -12, 6), (50, -64, -12, 5.5)], None)]),
+    'G_ponyta': dict(rear=0, legs=[  # Ponyta: voorpoten bijna samen en recht, verre achterpoot op de punt naar achteren
+        ('leg', [(-30, -8, 11, 8.5), (-33, -36, 12, 6), (-35, -66, 12, 5.5)], 'mma'),
+        ('far', [(-22, -8, -11, 8.5), (-26, -36, -12, 6), (-28, -66, -12, 5.5)], 'mma'),
+        ('leg', [(30, -6, 11, 10), (36, -36, 12, 6), (32, -66, 12, 5.5)], None),
+        ('far', [(38, -6, -11, 10), (52, -32, -12, 6), (58, -62, -12, 5.5)], None)]),
 }
 
 
-def fase2_r4(pose='A_stap', hs=1.45, neck=52, lid=0.55, bk=1.2, nr=2):
+def fase2_r4(pose='A_stap', hs=1.45, neck=52, lid=0.55, bk=1.2, nr=2, head_yaw=12):
     """Fase 2 ronde 4: kop/hals/kleding als ronde 3, gladdere wol (minder, grotere bobbels), pose uit POSES."""
     m = P.Model()
+    lx = 1.15 if pose in ('E_staand', 'F_pas', 'G_ponyta') else 1.0   # ronde 5: langer lijf (foto 8)
     for c, r in (((-26, 4, 0), (20, 19, 17)), ((2, 4, 0), (30, 18, 17)), ((28, 6, 0), (19, 19, 17))):
-        r = (r[0] * bk ** 0.5, r[1] * bk, r[2] * bk)
+        c = (c[0] * lx, c[1], c[2]); r = (r[0] * bk ** 0.5 * lx, r[1] * bk, r[2] * bk)
         m.ell(c, r, 'body')
         fluff(m, c, r, 'body', 16, 9.5, int(abs(c[0])) + 11, ymin=-0.85)   # weinig, groot: glad zoals Mareep
     m.chain([(44, 12, 0, 6.5), (51, 22, 0, 7.5), (49, 31, 0, 5.5)], 'tail')
@@ -604,7 +622,7 @@ def fase2_r4(pose='A_stap', hs=1.45, neck=52, lid=0.55, bk=1.2, nr=2):
     for i, (x, y, z, r) in enumerate(nk):
         fluff(m, (x, y, z), (r, r, r), 'neck', 7, 7.5, 70 + i)
     halsband(m, nk[0][:3], nk[1][:3], 0.30, 16.5 + nr, ['ag0', 'ag1', 'ag2'], pompons=5)
-    kop_lama(m, top, hs, 12, np.array(top, float), lid=lid)
+    kop_lama(m, top, hs, head_yaw, np.array(top, float), lid=lid)
     h1 = len(m.parts)
     for th in np.arange(-70, 71, 7):
         t = math.radians(th)
@@ -639,6 +657,24 @@ def vel_r4():
         img, _ = view(fase2_r4(k), 40)
         im.paste(img, (12 + cell * (i + 1), 44)); d.text((16 + cell * (i + 1), 44 + 258), labels[k], font=F, fill=(60, 60, 60))
     im.save(os.path.join(HERE, 'vel_ronde4_pose.png'))
+
+
+def vel_r5():
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 17)
+    set_vacht('karamel (foto 1)'); COL['lid'] = COL['head']; COL['lip'] = '#8A5530'
+    ref = os.path.join(HERE, '../referenties')
+    cell = 262
+    opts = [('E_staand', 8, 55, 'E: staand, lijf 8°, kop +55°'), ('F_pas', 8, 55, 'F: pas (Girafarig), lijf 8°'),
+            ('G_ponyta', 8, 55, 'G: Ponyta-stand, lijf 8°'), ('F_pas', 20, 45, 'F2: pas, lijf 20°, kop +45°')]
+    im = Image.new('RGB', (12 + cell * 5, 44 + cell + 30), 'white'); d = ImageDraw.Draw(im)
+    d.text((12, 12), 'Lama fase 2, poppetje ronde 5: lijf horizontaal, kop driekwart naar je toe (foto 8)', font=FB, fill=(30, 30, 30))
+    foto = Image.open(os.path.join(ref, 'foto8_lama_zij_kop_driekwart_POSE.webp')).convert('RGB'); foto.thumbnail((256, 256))
+    im.paste(foto, (12, 44 + (256 - foto.height) // 2)); d.text((16, 44 + 258), 'foto 8 (Jordi)', font=F, fill=(60, 60, 60))
+    for i, (k, yaw, hy, lab) in enumerate(opts):
+        img, _ = view(fase2_r4(k, head_yaw=hy), yaw)
+        im.paste(img, (12 + cell * (i + 1), 44)); d.text((16 + cell * (i + 1), 44 + 258), lab, font=F, fill=(60, 60, 60))
+    im.save(os.path.join(HERE, 'vel_ronde5_pose.png'))
 
 
 if __name__ == '__main__':

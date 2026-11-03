@@ -16,7 +16,7 @@ import pop3d as P  # noqa: E402
 P.COL = {
     'fur': '#5E4488', 'arm': '#5E4488', 'far': '#45306A', 'head': '#5E4488', 'disc': '#7C66A6', 'ring': '#2E2048', 'moon': '#FFFFFF',
     'stripe': '#3A2858', 'eye': '#E0508A', 'pupil': '#1A1020', 'glint': '#FFFFFF', 'nose': '#8A6070',
-    'hand': '#EAD8BE', 'buik': '#E9A866', 'maan': '#D8D0EC', 'farhand': '#B8A48C', 'ear': '#523A7A', 'earin': '#E2C4BC',
+    'hand': '#EAD8BE', 'buik': '#E9A866', 'maan': '#D8D0EC', 'donker': '#2C1E4E', 'farhand': '#B8A48C', 'ear': '#523A7A', 'earin': '#E2C4BC',
 }
 P.NOSHADE = {'ring', 'disc', 'moon', 'stripe', 'eye', 'pupil', 'glint', 'nose'}
 P.LINED = {'eye', 'nose'}
@@ -24,6 +24,7 @@ P.LINED = {'eye', 'nose'}
 HEAD_C = np.array((-46.0, 6.0, 0.0))
 HEAD_R = 24.0
 SPIR_R = 15.0
+WIG_XA, WIG_W, WIG_STEP = ((-6, 34), (16, 38), (38, 30)), 6.5, 4.0
 KENE_HW, KENE_XA, KENE_LEN = 4.4, (-8, 17, 41), 40
 
 
@@ -156,6 +157,17 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None, cam=(40, 8)):
             ring = (rr >= 24) & (rr <= 30)
             core = (np.floor(dx / 3) * 3 + np.floor(ds / 3) * 3) <= 9
             g[top & (ring | core)] = groups.index('maan')
+        if motief in ('wiggen', 'wiggen_licht'):
+            # Zoals Growlithe/Slakoth/Vigoroth: een paar taps toelopende strepen die bij de ruggengraat beginnen
+            # (dik) en halverwege de flank in een punt eindigen; kené-achtig met één trede. Beide flanken gespiegeld.
+            grp = groups.index('donker' if motief == 'wiggen' else 'maan')
+            k = np.zeros(len(q), bool)
+            for xa, ln in WIG_XA:
+                s_ = np.abs(sa)
+                w = WIG_W * np.clip(1 - s_ / ln, 0, 1)            # breedte loopt af naar de punt
+                xc = xa + np.where(s_ > ln * 0.45, WIG_STEP, 0)    # één trede halverwege
+                k |= (np.abs(x - xc) < w) & (s_ < ln)
+            g[top & k] = grp
         if motief == 'chakana':
             # Andeskruis (chakana) midden op de rug, getrapt, met een rond gat; armen lopen over de flanken
             dx, dz = np.abs(x - 14), np.abs(sa)

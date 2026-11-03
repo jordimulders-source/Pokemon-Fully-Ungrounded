@@ -1,0 +1,25 @@
+ronde5.txt: 1408 px | korrels: 0 uitsteeksel-px, 0 inkeping-px, 0 tanden van 1 rij/kolom
+direct.txt: 1178 px | korrels: 6 uitsteeksel-px, 6 inkeping-px, 11 tanden van 1 rij/kolom
+   uit x13 y61
+   uit x18 y1
+   in x20 y9
+   uit x21 y1
+   in x21 y58
+   in x21 y61
+   in x23 y48
+   uit x29 y55
+   in x29 y56
+   in x40 y43
+   uit x43 y60
+   uitsteeksel-px x18 y1
+   uitsteeksel-px x21 y1
+   uitsteeksel-px x22 y1
+   uitsteeksel-px x29 y55
+   uitsteeksel-px x43 y60
+   uitsteeksel-px x13 y61
+   inkeping-px x20 y9
+   inkeping-px x40 y43
+   inkeping-px x23 y48
+   inkeping-px x29 y56
+   inkeping-px x21 y58
+   inkeping-px x21 y61

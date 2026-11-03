@@ -144,3 +144,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.30] - Uyuni-Silicobra: ontwerp vastgelegd (variant A)
 - Jordi koos variant A (zoutkorst, pekelzak, half dichtgevallen oog, zoutkuif; geen zoutkegel in de sprite). SPEC.md bijgewerkt; maker-agent gestart.
+
+### [v0.0.31] - Uyuni-Silicobra: frontsprite ronde 2
+- Maker-agent ronde 1 en 2 in `docs/concept/sprites/silicobra_uyuni/ronde1/` en `ronde2/`. Ronde 2: barstnet i.p.v. bakstenen, ronde pekelzak i.p.v. edelsteen, oogring terug met half lid, gekleurde buitenlijn (Jordi: "vooral de buitenste lijn is te zwart"). Wacht op Jordi.

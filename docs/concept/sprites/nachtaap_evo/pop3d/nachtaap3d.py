@@ -138,6 +138,24 @@ def nachtaap(head_extra=30, tail='omlaag', motief=None, cam=(40, 8)):
                 k |= (np.abs(np.abs(sa) - 18) < hw) & (x > xa - hw) & (x < xa + 7 + hw)
                 k |= (np.abs(x - xa - 7) < hw) & (np.abs(sa) > 18 - hw) & (np.abs(sa) < KENE_LEN)
             g[top & k] = groups.index('maan')
+        if motief == 'spiraal':
+            # Nazca-spiraal op beide flanken (gespiegeld om de ruggengraat), zoals Emboar's krullen
+            for side in (1, -1):
+                cx, cs = 12.0, side * 24.0
+                dx, ds = x - cx, (sa - cs) * side
+                r = np.hypot(dx, ds); th = np.mod(np.arctan2(ds, dx), 2 * np.pi)
+                sp = 7.5                                   # afstand tussen de windingen
+                k = (r - 2.0) / sp - th / (2 * np.pi)
+                d = np.abs(k - np.round(k)) * sp
+                band = (d < 2.1) & (r < 17) & (r - 2.0 > th / (2 * np.pi) * sp - 1)
+                g[top & band] = groups.index('maan')
+        if motief == 'medaillon':
+            # één kené-ruit midden op de rug (bovenaf gecentreerd), getrapt, met een kleine ruit in het hart
+            dx, ds = np.abs(x - 12), np.abs(sa)
+            rr = np.floor(dx / 3) * 3 + np.floor(ds / 3) * 3        # getrapte ruit
+            ring = (rr >= 24) & (rr <= 30)
+            core = (np.floor(dx / 3) * 3 + np.floor(ds / 3) * 3) <= 9
+            g[top & (ring | core)] = groups.index('maan')
         if motief == 'chakana':
             # Andeskruis (chakana) midden op de rug, getrapt, met een rond gat; armen lopen over de flanken
             dx, dz = np.abs(x - 14), np.abs(sa)

@@ -56,6 +56,8 @@ Fase 1 = `referenties/fase1_goedgekeurd.png` (ronde 12, variant spiraal, 950 px)
 
 - Jordi 2 nov (na ronde 6): "de nieuwe lijn is niet mooier, is ook geen goed patroon, de lijnen zijn sowieso te dun, een patroon zou altijd dikker moeten. dus dit is niet beter dan voorheen. De poten zijn wel wat beter" → handen/voeten/oortjes ronde 6 **bevroren**; kené opnieuw als **dikke** banden (≥ 3 px), naar het poppetje.
 
+- Jordi 3 nov (na ronde 9): "ik vind de strepen er toch niet lekker uitkomen. Wat vind je zelf? Kijk nog een keer goed naar andere pokemon, zoals emboar, dusknoir, de diverse vivillons, zangoose, arbok, relicanth en kijk dan of zoiets mogelijk is. Met deze lijnen of eventueel iets anders." + "daarnaast mogen de ogen nog wat mysterieuzer, wat minder cute, misschien nog wat meer espurr's vorm". Studie: `referenties/patronen_gamefreak.png`, `referenties/ogen_espurr_vs_ronde9.png`; motieven op het poppetje: `pop3d/lijfmotieven3.png`.
+
 ## Silhouet
 - Ronde 1 (2 nov): `silhouet/vel_silhouet.png`. Jordi: "er is een klein gat ontstaan tussen hoofd en lichaam in, verder prima" → nek-inham teruggedraaid.
 - **Bevroren (2 nov):** `silhouet/silhouet_bevroren_1x.png` / `silhouet_bevroren.npy` (1459 px). Alpha-diff 0 in alle kleurrondes.

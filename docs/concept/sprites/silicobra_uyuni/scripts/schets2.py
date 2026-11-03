@@ -29,7 +29,7 @@ def outline(g):
     todo=[]
     for y in range(64):
         for x in range(64):
-            if g[y][x]=='T' and any(0<=x+dx<64 and 0<=y+dy<64 and g[y+dy][x+dx] not in ('T','O') for dx,dy in((1,0),(-1,0),(0,1),(0,-1))):
+            if g[y][x]=='T' and any(0<=x+dx<64 and 0<=y+dy<64 and g[y+dy][x+dx] not in ('T','O') and g0[y+dy][x+dx]==0 for dx,dy in((1,0),(-1,0),(0,1),(0,-1))):
                 todo.append((x,y))
     for x,y in todo: g[y][x]='O'
 def sack(g):
@@ -37,7 +37,7 @@ def sack(g):
     for y in range(64):
         for x in range(64):
             e=((x-cx)/rx)**2+((y-cy)/ry)**2
-            if e<=1 and g0[y][x] in (0,1,4,2,10):
+            if e<=1 and g0[y][x] in (0,1,4,2,10) and not (x>=35 and y>=35 and g0[y][x] in (0,2,10)):
                 if g0[y][x] in (6,12,3,5): continue
                 lx=((x-cx)+(y-cy))/ (rx+ry)
                 g[y][x]='Q1' if (e<0.25 and lx<-0.2) else 'Q2' if lx<0.15 else 'Q3' if e<0.85 else 'Q4'
@@ -84,9 +84,9 @@ def render(g):
     return im
 
 def curlsalt(g):
-    for y in range(34,46):
-        for x in range(36,52):
-            if g0[y][x]==7: g[y][x]='S2'
+    for y in range(34,48):
+        for x in range(30,52):
+            if g0[y][x]==7: g[y][x]='S1'
             elif g0[y][x]==8: g[y][x]='S3'
 def mound(g,ax,ay,by,R,front=False,clear=False,rake=True):
     if clear:
@@ -116,6 +116,7 @@ def mound(g,ax,ay,by,R,front=False,clear=False,rake=True):
 def full(g):
     hexcracks(g,lambda x,y: body(x,y) and not (x>=35 and y>=34)); plates(g); sack(g); sleepy(g)
 V={}
+V['Origineel']=None
 g=base(); full(g); curlsalt(g); outline(g); V['A zonder kegel']=g
 g=base(); mound(g,47,31,42,9); full(g); curlsalt(g); outline(g); V['B kegel achter hem, staart ervoor']=g
 g=base(); mound(g,44,30,42,9,clear=True); full(g); outline(g); V['C staart verstopt in de kegel']=g
@@ -123,7 +124,9 @@ g=base(); mound(g,53,35,44,6); mound(g,43,30,39,7); full(g); curlsalt(g); outlin
 Z=5; W=64*Z
 sh=Image.new('RGB',(W*len(V),W*2+30),(40,40,40)); d=ImageDraw.Draw(sh)
 for k,(n,g) in enumerate(V.items()):
-    im=render(g)
+    im=render(g) if g else src.crop((0,0,64,64)).convert('RGBA')
+    if not g:
+        mk=Image.new('L',(64,64)); mk.putdata([0 if v==0 else 255 for v in src.crop((0,0,64,64)).get_flattened_data()]); im.putalpha(mk)
     for j,bg in enumerate([(232,226,214),(150,190,220)]):
         t=Image.new('RGB',(64,64),bg); t.paste(im,(0,0),im)
         sh.paste(t.resize((W,W),Image.NEAREST),(k*W,30+j*W))

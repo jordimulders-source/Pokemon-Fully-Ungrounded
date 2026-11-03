@@ -31,3 +31,11 @@ Jordi: "de zoutkegel is wel lastig qua perspectief te zien hierop. Ik zie de zou
 - **Ja:** zoutkorst (zeshoeken), pekelzak, half dichtgevallen oog, zoutkuif (platen op de rug).
 - **Twijfel:** zoutkegel. Schetsen ronde 2 (`schetsen_ronde2.png`, `scripts/schets2.py`): A zonder, B kegel achter hem, C staart in de kegel, D twee kegels.
 - Oordeel Claude: op 64 px leest een kegel als een steen, ei of vin. Voorstel: de kegel níet in de sprite, maar als **gedrag**: in de overworld van de salar liggen zoutkegels, en sommige zijn een Silicobra (een verrassingsencounter, vgl. de Voltorb-ballen); plus de dex-tekst over de zoutwinners.
+
+## Echte dieren om mee te vergelijken (Jordi vroeg, 3 nov: "een pekelzak is niet een waarbestaand iets toch?")
+- Een pekelzak bestaat niet (Silicobra's zandzak ook niet). Wel echt:
+- **Halsband (uiterlijk):** de ringnekslang (*Diadophis punctatus*, Noord-Amerika) heeft een felgekleurde ring om de nek; ook halsbandleguanen (*Crotaphytus*).
+- **Zout via de neus (gedrag):** zoutklieren. De zeeleguaan van de Galápagos niest zout uit zijn neus; flamingo's (ook die van de Laguna Colorada) en zeevogels hebben zoutklieren boven de ogen en drinken zo brak/zout water; zeeschildpadden 'huilen' zout. Past bij Silicobra die uit zijn neusgaten spuwt.
+- **Vocht opslaan:** de woestijnschildpad bewaart water in zijn blaas; de Australische waterhoudende kikker (*Cyclorana*) zwelt op met water en graaft zich in.
+- **Opblaasbare keel:** kwakblazen van kikkers, de rode keelzak van de fregatvogel (Galápagos).
+- **In de pekel zelf:** pekelkreeftjes (*Artemia*) en algen die de lagunes rood kleuren (flamingovoer).

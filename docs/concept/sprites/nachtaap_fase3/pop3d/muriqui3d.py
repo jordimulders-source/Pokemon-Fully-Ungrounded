@@ -163,7 +163,7 @@ def muriqui(head_extra=30, arm='ver_omhoog', blad=True, pose='p1', yaw=40, gebaa
         m.ell((32, 0, 0), (17, 18, 19), 'fur')              # heup
         # verre arm omhoog-voor, elleboog gebogen, hand gekruld om een onzichtbare tak
         m.chain([(-16, 14, -20, LIMB + 1.5), (-24, 34, -26, LIMB - 0.5), (-40, 46, -24, LIMB - 3)], 'far')
-        hand(m, np.array((-40.0, 46, -24)), (-0.8, 0.7, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0, k_=1.3)
+        open_hand(m, np.array((-40.0, 46, -24)), (-0.55, 1, 0), view, 'farhand', 'fartip', spread=0.8, k_=1.15, duim=True, ln_=1.1)   # grijpende hand, vingers zichtbaar (Jordi)
         # nabije arm (schets): van onder de nek schuin naar linksonder, elleboog gebogen; hand plat, vingers
         # gespreid, palm omlaag-voor naar het doel (anime-still, één hand)
         m.chain([(-18, -8, 20, LIMB + 1.5), (-28, -36, 26, LIMB - 0.5), (-50, -60, 26, LIMB - 3)], 'fur')

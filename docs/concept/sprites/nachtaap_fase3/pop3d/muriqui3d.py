@@ -1,0 +1,168 @@
+"""Nachtaap fase 3 (muriqui): 3D-poppetje in pose P1 'zwevend hangen' (Jordi, 3 nov).
+Eén lange arm omhoog alsof hij aan een onzichtbare tak hangt (foto 2), de andere reikt naar de kijker
+(helend gebaar), benen hangen los, staart krult achter het lijf tot een volle Nazca-spiraal met een
+bladbundel in de krul. Kop: muriqui-masker (donker) met de witte sikkel als lichte vachtrand erboven.
+Werkwijze: SPRITE_WERKWIJZE stap 1 (poppetje -> raster van hoeken -> Jordi kiest -> silhouet).
+Diercoördinaten: x = naar achteren, y = omhoog, z = naar de kijker bij 0° (profiel naar links).
+Draaien vanuit de repo-root: python3 docs/concept/sprites/nachtaap_fase3/pop3d/muriqui3d.py"""
+import math
+import os
+import sys
+
+import numpy as np
+from PIL import Image, ImageDraw, ImageFont
+
+HERE = os.path.dirname(os.path.abspath(__file__))
+sys.path.insert(0, HERE)
+import pop3d as P  # noqa: E402
+
+P.COL = {
+    'fur': '#5E4488', 'far': '#45306A', 'head': '#5E4488', 'mask': '#2E2048', 'moon': '#FFFFFF',
+    'snuit': '#8C6A9C', 'eye': '#D83C3C', 'pupil': '#1A1020', 'glint': '#FFFFFF',
+    'hand': '#5E4488', 'farhand': '#45306A', 'tip': '#EAD8BE', 'fartip': '#B8A48C',
+    'blad': '#5E9A4A', 'nerf': '#3C6E34',
+}
+P.NOSHADE = {'mask', 'moon', 'eye', 'pupil', 'glint'}
+P.LINED = {'eye', 'snuit', 'blad'}
+
+HEAD_C = np.array((-8.0, 80.0, 0.0))
+HEAD_R = 22.0
+LIMB = 10.5         # straal bovenarm/dij (sprite: geen stokpoten, ≥ 5 px na verkleinen)
+SPIR_R = 24.0
+SPIR_YAW = 40.0     # spiraalvlak draait naar de kijker (hoek om de y-as)
+
+
+def hand(m, wrist, fwd, side, g, gt, curl=0.0, spread=1.0):
+    """Lange apenhand: handpalm + 4 vingers (muriqui: bijna geen duim). fwd = richting van de vingers."""
+    fwd = np.array(fwd, float); fwd /= np.linalg.norm(fwd)
+    side = np.array(side, float); side /= np.linalg.norm(side)
+    up = np.cross(fwd, side)
+    pc = wrist + fwd * 6
+    m.ell(pc, 7.5, g)
+    for k in (-1.5, -0.5, 0.5, 1.5):
+        b = pc + fwd * 5 + side * k * 3.4 * spread
+        mid = b + fwd * 7 + up * (-curl * 4)
+        tip = mid + fwd * (6 - curl * 3) + up * (-curl * 6)
+        m.chain([(*b, 3.2), (*mid, 2.8)], g, 0.8)
+        m.chain([(*mid, 2.8), (*tip, 2.6)], gt, 0.8)
+
+
+def muriqui(head_extra=30, arm='ver_omhoog', blad=True):
+    m = P.Model()
+    # romp: groot buikje onder (muriqui), brede borst en schouders, korte nek; massa zoals Hariyama/Slaking
+    m.ell((-3, 8, 0), (24, 26, 23), 'fur')
+    m.ell((0, 36, 0), (21, 22, 23), 'fur')
+    m.ell((1, 54, 0), (16, 11, 26), 'fur')        # schouders
+    m.chain([(0, 58, 0, 13), (-5, 66, 0, 13)], 'fur')
+    # benen: lang en ontspannen (Jordi: "de benen zijn ook te recht", "mogen veel relaxter"): knieën gebogen en
+    # uit elkaar, nabije knie hoger naar voren, onderbenen hangen slap, voeten bungelen met de tenen omlaag
+    m.chain([(0, -2, 14, LIMB + 2), (-30, -12, 20, LIMB), (-26, -40, 22, LIMB - 2)], 'fur')
+    hand(m, np.array((-26.0, -43, 22)), (-0.35, -1, 0.1), (0, 0, 1), 'hand', 'tip', curl=0.9)
+    m.chain([(6, -2, -14, LIMB + 2), (-18, -18, -20, LIMB), (-8, -44, -22, LIMB - 2)], 'far')
+    hand(m, np.array((-8.0, -47, -22)), (-0.1, -1, -0.1), (0, 0, 1), 'farhand', 'fartip', curl=0.9)
+    # armen: heel lang (muriqui), dik genoeg voor de sprite
+    up_pts = [(2, 56, -22, LIMB), (14, 84, -32, LIMB - 1.5), (0, 106, -24, LIMB - 2.5)]   # omhoog, elleboog opzij, hangt
+    reach = [(-2, 54, 24, LIMB), (-12, 38, 44, LIMB - 1.5), (-26, 26, 60, LIMB - 2.5)]   # reikt naar voren en naar de kijker, open hand
+    if arm == 'ver_omhoog':
+        m.chain(up_pts, 'far')
+        hand(m, np.array(up_pts[-1][:3]), (-0.4, 1, 0), (0, 0, 1), 'farhand', 'fartip', curl=1.0)
+        m.chain(reach, 'fur')
+        hand(m, np.array(reach[-1][:3]), (-0.6, -0.2, 0.75), (0, 1, 0.2), 'hand', 'tip', curl=0.15, spread=1.15)
+    else:   # nabije arm omhoog, verre reikt
+        up = [(x, y, -z, r) for x, y, z, r in up_pts]
+        rc = [(-2, 54, -24, LIMB), (-28, 44, -26, LIMB - 1.5), (-54, 34, -22, LIMB - 2.5)]
+        m.chain(rc, 'far')
+        hand(m, np.array(rc[-1][:3]), (-1, -0.1, 0.1), (0, 1, 0), 'farhand', 'fartip', curl=0.15, spread=1.15)
+        m.chain(up, 'fur')
+        hand(m, np.array(up[-1][:3]), (-0.4, 1, 0), (0, 0, 1), 'hand', 'tip', curl=1.0)
+    # staart: vanaf de stuit naar achteren en omhoog, dan een volle spiraal (2 slagen) achter het lijf
+    ph = math.radians(SPIR_YAW)
+    e1 = np.array((math.cos(ph), 0, math.sin(ph)))         # 'naar achteren' in het spiraalvlak
+    path = [tuple(p) for p in P.qb(np.array((18, 0, 0)), np.array((18, -14, 0)) + 34 * e1, np.array((0, 22, 0)) + 46 * e1, 9)]
+    c = np.array((0, 22.0, 0)) + (46 + SPIR_R) * e1
+    spir = []
+    nrm = np.cross(e1, (0, 1, 0))
+    if nrm[2] < 0:
+        nrm = -nrm
+    for i in range(70):
+        t = i / 69
+        a = math.pi - t * 1.6 * 2 * math.pi
+        rr = SPIR_R * (1 - 0.78 * t)
+        # binnenste slag iets naar de kijker (helix), zodat de windingen een eigen omlijning krijgen
+        spir.append(tuple(c + rr * math.cos(a) * e1 + np.array((0, rr * math.sin(a), 0)) + nrm * 7 * t))
+    pts = path[:-1] + spir
+    n = len(pts)
+    m.chain([(x, y, z, 7.5 - 4.0 * i / (n - 1)) for i, (x, y, z) in enumerate(pts)], 'fur')
+    if blad:   # bundel van 3 grote bladeren in de krul, waaier naar boven-achter
+        # bladeren steken uit de krul naar boven-achter, voorbij de buitenste slag (anders lezen ze niet)
+        cc = np.array(spir[-1])
+        for ang, ln in ((50, 1.0), (82, 1.15), (114, 0.95)):
+            a = math.radians(ang)
+            d = math.cos(a) * e1 + np.array((0, math.sin(a), 0))
+            Rb = P.rot_y(-ph) @ P.rot_z(a)
+            m.ell(cc + d * 20 * ln + nrm * 3, (17 * ln, 6, 2.5), 'blad', Rb)
+    # kop: rond, iets voor de borst, draait extra naar de kijker rond de nek
+    pv = np.array((-4.0, 62.0, 0.0))
+    Rh = P.rot_y(math.radians(head_extra))
+    Hp = lambda p: pv + Rh @ (np.array(p, float) - pv)
+    m.ell(Hp(HEAD_C), (HEAD_R, HEAD_R * 1.02, HEAD_R * 0.98), 'head', Rh)
+    m.ell(Hp(HEAD_C + np.array((-HEAD_R * 0.80, -HEAD_R * 0.42, 0))), (7, 7.5, 10), 'snuit', Rh)   # brede snuit
+    eyes = []
+    for sz in (1, -1):
+        d = np.array((-0.88, 0.14, 0.40 * sz)); d /= np.linalg.norm(d)
+        e = HEAD_C + d * HEAD_R * 0.94
+        eyes.append(e)
+        m.ell(Hp(e), 3.9, 'eye')
+        m.ell(Hp(e + d * 1.6), 2.4, 'pupil')
+        m.ell(Hp(e + d * 2.8 + np.array((0, 1.3, -0.6 * sz))), 0.9, 'glint')
+
+    def texfn(q, groups):
+        ql = (q - pv) @ Rh + pv
+        u = (ql - HEAD_C) / HEAD_R
+        un = u / (np.linalg.norm(u, axis=1, keepdims=True) + 1e-9)
+        cap = lambda lat_c, r: np.degrees(np.arccos(np.clip(un @ np.array(
+            (-math.cos(math.radians(lat_c)), math.sin(math.radians(lat_c)), 0)), -1, 1))) < r
+        lon = np.degrees(np.arctan2(u[:, 2], -u[:, 0]))
+        g = np.full(len(q), groups.index('head'))
+        mask = cap(-14.0, 52.0)                      # kaal donker gezicht (foto 1/4)
+        g[mask] = groups.index('mask')
+        # witte sikkel = lichte vachtrand boven het masker (foto 1), punten omlaag langs de wangen
+        g[cap(16.0, 70.0) & ~mask & ~cap(-30.0, 50.0) & (np.abs(lon) < 100) & (u[:, 1] > -0.55)] = groups.index('moon')
+        return g
+
+    m.texfn = texfn
+    return m
+
+
+def grid(yaws=(30, 40, 50), extras=(20, 35), pitch=6, arm='ver_omhoog', name='hoeken.png', titel='', rows=None):
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)
+    W = 10 + 266 * len(yaws)
+    im = Image.new('RGB', (W, 40 + (256 + 26) * len(extras)), 'white')
+    d = ImageDraw.Draw(im)
+    d.text((10, 10), titel or f'Nachtaap fase 3 (muriqui), pose P1 zwevend hangen, {arm.replace("_", " ")}',
+           font=FB, fill=(30, 30, 30))
+    rows = rows or [(ex, arm) for ex in extras]
+    im = Image.new('RGB', (W, 40 + (256 + 26) * len(rows)), 'white')
+    d = ImageDraw.Draw(im)
+    d.text((10, 10), titel or 'Nachtaap fase 3 (muriqui), pose P1 zwevend hangen', font=FB, fill=(30, 30, 30))
+    for j, (ex, arm) in enumerate(rows):
+        for i, yaw in enumerate(yaws):
+            v = P.view(muriqui(ex, arm), yaw, pitch, size=220)
+            x, y = 10 + 266 * i, 40 + (256 + 26) * j
+            # zweefschaduw: ±7/64 van de spritehoogte onder het laagste punt (Mega Alakazam/Dusknoir)
+            a = np.array(v.convert('L')) < 250
+            ys = np.where(a.any(1))[0]
+            gy = min(255, ys.max() + 22)
+            xs = np.where(a.any(0))[0]
+            cx = (xs.min() + xs.max()) // 2
+            dd = ImageDraw.Draw(v)
+            dd.ellipse((cx - 40, gy - 5, cx + 40, gy + 5), fill=(205, 205, 212))
+            im.paste(v, (x, y))
+            lab = 'verre arm omhoog' if arm == 'ver_omhoog' else 'nabije arm omhoog'
+            d.text((x, y + 258), f'lijf {yaw}°, kop {yaw + ex}°, {lab}', font=F, fill=(60, 60, 60))
+    im.save(os.path.join(HERE, name))
+
+
+if __name__ == '__main__':
+    grid(rows=[(30, 'ver_omhoog'), (30, 'nabij_omhoog')])

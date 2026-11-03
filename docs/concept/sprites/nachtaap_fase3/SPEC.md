@@ -12,6 +12,12 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
   - **Besloten:** muriqui; gezicht, lange armen en lange benen zijn de kern; **rechtop en groot** (lijn zittend → kruipend → rechtop); **kleurpatroon van de lijn blijft** (violet, witte maan, rode ogen, lichte tekening), hooguit donkerder/lichter; **sinistere ogen blijven**, mogen kleiner (muriqui-kop); tint anders dan Oranguru; **spiraalstaart belangrijk**; **bladeren in de staart** als het op de sprite kan; **zweven**, maar laag (voorbeeld Mega Alakazam).
   - Kleuromkering (lichte vacht, donker gezicht) dus níet; de lijnkleuren blijven.
 
+- 3 nov: "P1, maak het poppetje maar" → **pose P1 zwevend hangen**: één lange arm omhoog (hangt aan een onzichtbare tak), de andere reikt (helend gebaar), benen los, volle spiraalstaart met bladbundel in de krul, zweefhoogte ±6–7 px.
+- 3 nov (bij het eerste poppetje): "de benen zijn ook te recht" + "mogen veel relaxter" → knieën gebogen naar voren en uit elkaar, onderbenen hangen slap, voeten bungelen (zitten in de lucht).
+
+## 3D-poppetje
+- `pop3d/muriqui3d.py` (renderer `pop3d/pop3d.py`, kopie van fase 2). Raster `pop3d/hoeken.png`: lijf 30/40/50°, kop +30°, verre of nabije arm omhoog. Kleuren alleen ter oriëntatie (lijnkleuren van fase 2).
+
 ## Referenties
 - Foto's van Jordi (3 nov): `referenties/foto1_gezicht_closeup.jpg` (donker kaal gezicht, lichte vachtrand, kleine diepe ogen, brede snuit), `foto2_hangend_lange_armen.jpg` (hangt aan twee armen, benen los, heel lange ledematen), `foto3_klimmend_tak.jpg` (rechtop aan een tak, lange arm omlaag), `foto4_moeder_met_jong.jpg` (gezicht met roze gespikkelde snuit, omhelzing), `foto5_zittend_hand_op_kop.jpg` (zittend, armen om zich heen, roze snuit).
 - Zweefhoogte: `referenties/zweven_hoogte.png`: sprites op hun `enemyMonElevation` uit de repo (Mega Alakazam 7, Dusknoir 6, Uxie 6, Victini 7, Reuniclus 8, Meloetta 8, Gardevoir 10, Mew 11, Gothitelle 14; Medicham 1 als staand).

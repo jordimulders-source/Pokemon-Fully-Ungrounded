@@ -188,3 +188,7 @@ Eerdere kandidaat-dieren (Claude, 2 nov), vervallen als zelfstandige keuze:
 - Ronde 10/10b: ronde neusknop (silhouet +3 px), staarthaak met lucht in de bocht (staartzone), donkere rand op de bovenkant van de binnenste klauw. Jordi: "10b met pupil, laat de eindkeurder deze keuren, voor de allerlaatste afwerking". **Pupil bevroren (10b).**
 - Eindkeuring 10b (`EINDKEURING_ronde10b.md`): 8/10 PASS; 8 px kleur (verre oorvoet, dubbele zwarte rand poot/staart). Ronde 11 (`vel_ronde11.png`): die 8 px + (23,25) zachter begin klauwlijn; kinschaduw niet (zou een losse pixel maken). Kandidaat-eindversie, wacht op Jordi (open: mondje, rechte silhouetranden borst x 15 / kop x 12).
 
+## Af (3 nov)
+- **Frontsprite goedgekeurd** (Jordi: "nee ik ben tevreden zo"; geen mondje, rechte silhouetranden blijven): `af/wasbeer.png` (= kleur_v2/ronde11.png, palet `af/wasbeer.pal`), vel `af/vel.png`. Sluipend op 2 poten (S1a), warm grijsbruin, zwart masker in 2 lobben met brug, witte wenkbrauwboog en snuit, oog met pupil, ronde neus, klauwpaar met inkeping (verre + nabije klauw), roodbruine buidel met zakmond, geringde haakstaart.
+- Nog te doen (aparte taak): frame 2, rugsprite, icoon, shiny-palet, naam en data (puur Dark).
+

@@ -1,3 +1,5 @@
+**Af (3 nov): frontsprite `af/wasbeer.png` goedgekeurd; zie SPEC.md onderaan.** Hieronder de oude overdracht als naslag.
+
 # Overdracht wasbeer (Dark-starter fase 3) voor een nieuwe sessie
 Start hier. Lees `SPEC.md` (Jordi's woorden letterlijk, bevroren, afgekeurd), `AFGEKEURD.md`, `docs/lessen/SPRITE_WERKWIJZE.md` (blok "Verplicht") en hoe Coathief ging (`../coathief/SPEC.md`).
 - Ontwerp staat vast (zie SPEC "Bevroren"); de houding is het probleem gebleken. Foto 10 (`referenties/foto10_staand_reikend.jpg`) is een zijaanzicht; Jordi wil driekwart, op 2 poten voorover (Gumshoos-houding, Weavile-beenlengte), spriteverhoudingen (kop ±35%).

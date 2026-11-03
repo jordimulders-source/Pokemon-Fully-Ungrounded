@@ -160,3 +160,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Klauw vastgelegd als twee korte klauwen naast elkaar met een inkeping tussen de punten (Sneasel-achtig, driekwart), eerst los in 3D getekend (`docs/concept/sprites/wasbeer/ontwerp/klauw3d.png`).
 - Pose S1a: sluipend, diep door de knieën, één been ver achter op de tenen. Silhouet direct van de render (1682 px) goedgekeurd; kleur ronde 2 na een Game Freak-studie en een keuring: `docs/concept/sprites/wasbeer/kleur_v2/vel_ronde2.png`.
 
+### [v0.0.33] - Wasbeer af (frontsprite)
+- Eindvorm van de Dark-starter (krabbenetende wasbeer, fase 3 na olinguito en Coathief): frontsprite goedgekeurd, `docs/concept/sprites/wasbeer/af/wasbeer.png`. Sluipend op 2 poten, warm grijsbruin, masker in 2 lobben over ogen en neusrug, witte wenkbrauwboog en snuit, oog met pupil, ronde neus, twee klauwen naast elkaar met een inkeping, roodbruine buidel als dievenzak, geringde haakstaart.
+- Werkwijze: nieuw 3D-ontwerp (pop3d_v2.py), silhouet direct van de render, kleur met de hand door een maker-agent na een Game Freak-studie, vier keuringen en een verse eindkeuring; Jordi's laatste punten (neus, staarthaak, klauwlijn) met kleine silhouetzones. Lessen in `docs/lessen/SPRITE_WERKWIJZE.md`.
+- Nog te doen: frame 2, rug, icoon, shiny, naam en data.
+

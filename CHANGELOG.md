@@ -135,3 +135,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.27] - Uyuni-Silicobra: ontwerpstudie regional forms
 - Studie van 12 regional forms (wat ze veranderen) en een ontwerpvoorstel voor de Uyuni-Silicobra in `docs/concept/sprites/silicobra_uyuni/ONTWERP.md` (pekelzak, zeshoekige korst, zoutkegel; niet als Ice of Nacli lezen). De kleurrichtingen van v0.0.26 zijn vervallen tot het ontwerp vastligt.
+
+### [v0.0.28] - Uyuni-Silicobra: schetsen ronde 1
+- Vier ruwe ontwerpschetsen op de echte Silicobra-sprite (`docs/concept/sprites/silicobra_uyuni/schetsen_ronde1.png`): zoutkorst, pekelzak, zoutkegel-staart, korstschild. Besloten (Jordi): loom en traag, een wall.

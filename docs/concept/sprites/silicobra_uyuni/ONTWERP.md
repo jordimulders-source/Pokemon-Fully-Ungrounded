@@ -20,3 +20,8 @@ Jordi (3 nov): "wacht voordat we een kleur bepalen, wat voor design gaan we er v
 - **Lijf en pose blijven** (punt 1).
 - **Niet als Ice lezen**: wit met ijsblauw is precies Alola-Sandshrew, en deze Pokémon is juist de anti-ijs. Dus **warm gebroken wit / grijs-oker** (zout met stof en klei, zoals de echte salar aan de randen) plus turquoise; geen ijsblauw. Ook niet als Nacli: geen kubussen, geen oranje gloed.
 - **Evolutie vergroot het** (punt 6): de pekelzak wordt een kap van zoutplaten met een laagje water erop (de spiegel), met stroom tussen de platen bij onweer.
+
+## Schetsen ronde 1 (3 nov, `schetsen_ronde1.png`, script `scripts/schets1.py`)
+Jordi: "Ik kan me niet zo goed een beeld voorstellen bij wat je noemt, kan je wat schetsen maken? En idd loom, trager zou prima zijn. Wat meer een wall"
+- Ruwe schetsen op de echte sprite (gescript, geen eindwerk): 1 zoutkorst, 2 + pekelzak, 3 + zoutkegel-staart, 4 alles + korstschild (platen op de rug) en een half dichtgevallen oog (loom).
+- **Karakter (Jordi):** loom en traag, een **wall**. Gedachte: hij beweegt zo weinig dat de zoutkorst op hem aangroeit (vandaar het schild).

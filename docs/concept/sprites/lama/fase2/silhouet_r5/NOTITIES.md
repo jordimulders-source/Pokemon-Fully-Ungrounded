@@ -62,3 +62,36 @@ Regel aangehouden: elke boog ≥ 2 rijen op zijn verste punt, elke inham ≥ 2 r
 - Een lange rij "wolbogen" langs één rand (keel, halsband, borst) leest op 4× als golf; houd de hals glad en laat alleen halsband + één borstboog over.
 - Een aguayo van 2 rijen hoog leest als bult (kameel); 1 rij platte doek is genoeg, de rest doet de kleur.
 - Kalibreer "rechte runs" met echte sprites (Ponyta/Girafarig hebben 10–12 runs ≥ 4, maxima 6–7) in plaats van naar 0 te streven.
+
+---
+
+# Ronde 5b (zelfde maker, 3 nov): ronde wolmassa en Girafarig/Ponyta-poten
+
+Claude-check op ronde 5: (1) de romp is een liggende doos, (2) de poten zijn paaltjes (5 px over de hele lengte). Akkoord en bevroren: kop, oren, hals, halsband, aguayo en de telgang-pas.
+Bestanden: `spans_ronde5b.py` → `ronde5b.txt` / `ronde5b_1x.png`; vel `vel_ronde5b.png` (`vel5b.py`: ronde 5 | 5b | Girafarig | Ponyta | Mareep op 4× en 1× + 5b over het poppetje); `controle_uitvoer_5b.txt`, `korrel_uitvoer_5b.txt`.
+
+**Resultaat:** 1361 px (1,34× fase 1; ronde 5: 1408), box 43×62, kop 32 % van de hoogte, 1 component, 0 losse px, 0 gaten.
+
+## Bevriezing (pixeldiff, script in `spans_ronde5b.py`)
+Rijen y0–30 worden letterlijk uit `ronde5.txt` gekopieerd. **Diff y0–30, x ≤ 31: 0 px.** Ook y0–30 over de hele breedte (staart, achterkant van de aguayo): 0 px.
+
+## Zones (t.o.v. ronde 5)
+| Zone | +px / −px | Wat |
+|---|---|---|
+| romp y31–45 | +13 / −20 | Borst als één bolle boog onder de halsband (x15 → x12 op y36–39 → x16), daarna een vloeiende overgang in de nabije voorpoot. Buiklijn licht bol: laagste punt x35–37 (y45). Hij krult op naar de poten, met een oksel achter de voorpoten (x31–32 leeg vanaf y43) en een lies vóór de achterpoot (x38–39 leeg op y45). Achterwerk als ronde boog (x53 op y32–35) die onder de bil naar de dij inspringt (x50 op y41–45). Er is geen rechte onderrand meer (y41–44 was 13–16 px recht). |
+| poten y46–62 | +29 / −71 | Elke poot loopt breed uit de wol (5–6 px) en wordt naar beneden smaller: onderbeen 4 px. Nabije voorpoot: schuin naar voren met een zachte knie (y48, 6 px). Verre voorpoot: licht naar achteren met een knie op y50. Nabije achterpoot: hak naar achteren (x46, y49–50), onderbeen schuin naar voren tot de voet. Verre achterpoot: dij schuin naar achteren, hak x53 (y50–51), onderbeen licht naar voren. Handschoenen en voeten zijn ongewijzigd rond, de vier voethoogtes (y62, 61, 60, 59) blijven en de telgang ook. |
+
+## Korrels en controles
+- `korrel.py ronde5b.txt`: **0 uitsteeksel-px, 0 inkeping-px, 0 tanden.**
+- Lucht tussen de poten: vanaf y46 vier aparte segmenten met 2–11 kolommen lucht (`controle_uitvoer_5b.txt`).
+- Rechte verticale runs ≥ 4: 28 (ronde 5: 31), waarvan maar 3 van 6–7 px: twee oorbinnenranden (bevroren) en de achterrand van de verre voorpoot bij de aanzet (x29, y44–49). De langste stukken in de poten zijn nu 4–5 px; de rechte kolommen van x41 (7) en x49 (8) uit de eerste 5b-poging zijn weg. Horizontaal blijven aguayo (9, bevroren) en rug (6, SPEC) recht.
+
+## Eerlijk: wat nog niet leest
+- **Bovenkant romp:** de rug is recht (SPEC) en de hoek bij de staartaanzet ligt in de bevroren/ongewijzigde rijen y23–30. Daar zit de staartpluim, die de hoek rond maakt. Naast Mareep blijft de lama daardoor een langwerpige massa. Dat hoort bij een lama, maar hij is minder bol dan een schaap.
+- **Onderbeen 4 px** (op verzoek, Girafarig/Ponyta). De SPRITE_NORM noemt ≥ 5–6 px. In de kleurronde moet de omlijning dan binnen die 4 px passen, met 2 px vacht.
+- Onderlip, pompons, oorkwasten en MMA-details zitten nog steeds alleen in de kleur.
+
+## Lessen (5b)
+- Een poot "uit de wol" laten lopen gaat het best door de buiklijn naast de poot 1–2 rijen hoger te leggen (oksel/lies als leeg 2×2-blok) in plaats van de poot breder te maken.
+- Een hak leest al met 1 px naar achteren over 2 rijen, als het onderbeen eronder 1 px per 2–3 rijen terugloopt. Een in-uit-in van 1 rij geeft meteen een tand.
+- Bevriezen door rijen letterlijk uit de goedgekeurde tekst te kopiëren (`S[:31] = R5[:31]`) maakt de pixeldiff triviaal.

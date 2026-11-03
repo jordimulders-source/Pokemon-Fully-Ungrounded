@@ -1,0 +1,60 @@
+px 1361 (bron 1178, fase 1 = 1019), box 43x62, y1-62
+zone            +px  -px  max afstand nieuw px tot bron / weg px tot rand
+1 kop                        36    2   1.4 / 1.0
+2 hals                       16    1   2.0 / 1.0
+5 halsband                    1    1   1.0 / 1.0
+3 lijf+staart+aguayo         61   22   3.0 / 2.0
+4 poten (+buikboog y44)     204  109   6.1 / 3.0
+buiten zones: 0
+componenten 1
+losse px (<=1 buur) 0
+gaten 0
+rechte verticale randen >=4 (x, y0-y1):
+  links x12 y36-39 (4) zone 3 lijf+staart+aguayo
+  links x13 y57-60 (4) zone 4 poten (+buikboog y44)
+  links x15 y23-27 (5) zone 2 hals
+  links x15 y52-55 (4) zone 4 poten (+buikboog y44)
+  links x16 y2-6 (5) zone 1 kop
+  links x16 y48-51 (4) zone 4 poten (+buikboog y44)
+  links x22 y3-9 (7) zone 1 kop
+  links x25 y55-58 (4) zone 4 poten (+buikboog y44)
+  links x41 y47-51 (5) zone 4 poten (+buikboog y44)
+  links x49 y49-53 (5) zone 4 poten (+buikboog y44)
+  rechts x19 y4-9 (6) zone 1 kop
+  rechts x20 y56-60 (5) zone 4 poten (+buikboog y44)
+  rechts x24 y7-10 (4) zone 1 kop
+  rechts x27 y22-26 (5) zone 2 hals
+  rechts x29 y44-49 (6) zone 4 poten (+buikboog y44)
+  rechts x30 y50-53 (4) zone 4 poten (+buikboog y44)
+  rechts x32 y55-58 (4) zone 4 poten (+buikboog y44)
+  rechts x42 y55-58 (4) zone 4 poten (+buikboog y44)
+  rechts x50 y41-45 (5) zone 3 lijf+staart+aguayo
+  rechts x53 y32-35 (4) zone 3 lijf+staart+aguayo
+rechte horizontale randen >=4 (y, x0-x1):
+  boven y26 x30-38 (9) zone 3 lijf+staart+aguayo
+  boven y27 x39-44 (6) zone 3 lijf+staart+aguayo
+  onder y59 x48-51 (4) zone 4 poten (+buikboog y44)
+  onder y60 x27-30 (4) zone 4 poten (+buikboog y44)
+  onder y61 x38-43 (6) zone 4 poten (+buikboog y44)
+  onder y62 x15-18 (4) zone 4 poten (+buikboog y44)
+poten (rij: segmenten breedte / lucht):
+  y44: 16-29(14)  34-50(17)   lucht 4
+  y45: 17-29(13)  35-37(3)  40-50(11)   lucht 5,2
+  y46: 17-22(6)  25-29(5)  40-45(6)  48-51(4)   lucht 2,10,2
+  y47: 17-21(5)  25-29(5)  41-45(5)  48-51(4)   lucht 3,11,2
+  y48: 16-21(6)  25-29(5)  41-45(5)  48-52(5)   lucht 3,11,2
+  y49: 16-20(5)  26-29(4)  41-46(6)  49-52(4)   lucht 5,11,2
+  y50: 16-20(5)  26-30(5)  41-46(6)  49-53(5)   lucht 5,10,2
+  y51: 16-19(4)  26-30(5)  41-45(5)  49-53(5)   lucht 6,10,3
+  y52: 15-19(5)  27-30(4)  40-44(5)  49-52(4)   lucht 7,9,4
+  y53: 15-18(4)  27-30(4)  40-43(4)  49-52(4)   lucht 8,9,5
+  y54: 15-18(4)  26-31(6)  40-43(4)  48-51(4)   lucht 7,8,4
+  y55: 15-19(5)  25-32(8)  39-42(4)  48-51(4)   lucht 5,6,5
+  y56: 14-20(7)  25-32(8)  39-42(4)  48-51(4)   lucht 4,6,5
+  y57: 13-20(8)  25-32(8)  38-42(5)  47-52(6)   lucht 4,5,4
+  y58: 13-20(8)  25-32(8)  38-42(5)  47-52(6)   lucht 4,5,4
+  y59: 13-20(8)  26-31(6)  37-44(8)  48-51(4)   lucht 5,5,3
+  y60: 13-20(8)  27-30(4)  37-44(8)   lucht 6,6
+  y61: 14-19(6)  38-43(6)   lucht 18
+  y62: 15-18(4)   lucht 
+kop incl. oren y1-20: 20/62 = 32% van de hoogte, 202 px = 15% van het oppervlak

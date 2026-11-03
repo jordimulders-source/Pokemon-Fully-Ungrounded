@@ -24,11 +24,14 @@ def glad(m, sigma):
     t = np.sort(g.ravel())[::-1][int(up.sum())]
     return g > t
 
-def bouw(h=25, p=15, c=(23.0, 17.6), r=(8.2, 7.6, 7.9), snavel=7.5, gaap=40, rond=0.0):
+def bouw(h=25, p=15, c=(23.0, 17.6), r=(8.2, 7.6, 7.9), snavel=7.5, gaap=40, rond=0.0, nek=0, staart_uit=(0, 0)):
     """h = kop extra naar de kijker t.o.v. het lijf, p = bekje omhoog, c = kopmidden (spritepx), r = stralen f/u/s"""
     lijfm = (M.LIJF & ~M.KOP) | (M.LIJF & (M.yy >= 21) & (M.xx >= 19))
+    if nek:   # bovenkant van het lijf lager, zodat de kop als bol boven de schouders uitkomt
+        lijfm &= ~((M.yy < 21 + nek) & (M.xx < 34))
+    st = np.roll(np.roll(M.STAART, staart_uit[0], 1), staart_uit[1], 0)
     lijf = glad(lijfm, rond) if rond else M.op(lijfm)
-    vl = (glad(M.VLEUGEL, rond) if rond else M.op(M.VLEUGEL, 0.4)) & lijf; staart = M.op(M.STAART, 0.4); poot = M.op(M.POOT, 0.3)
+    vl = (glad(M.VLEUGEL, rond) if rond else M.op(M.VLEUGEL, 0.4)) & lijf; staart = M.op(st, 0.4); poot = M.op(M.POOT, 0.3)
     wl = M.breedte(lijf, 0.80)
     Zmax = int(max(wl.max(), max(r) * U) + 4 * U)
     zs = np.arange(-Zmax, Zmax + 1)[None, None, :]

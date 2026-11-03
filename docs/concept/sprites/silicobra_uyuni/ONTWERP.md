@@ -46,3 +46,11 @@ Jordi: "laten we gelijk bedenken wat voor evolutie we silicobra geven". Uitgangs
 - **2. De zoutheuvel:** zo loom dat er een hele zoutkegel op zijn rug groeit (de kegel uit ronde 1 past nu wél: groot genoeg en deel van het lijf, zoals de boom van Torterra); de opgerolde slang ís de heuvel, de kop ligt eronder. Sandaconda is al een opgerolde hoop: goed skelet.
 - **3. De spiegel:** een lage, platte schijf van opgerolde slang, bovenop een glad laagje pekel dat de lucht weerspiegelt (de salar in het regenseizoen); onweer boven de spiegel (Electric).
 - Stats-richting (wall, totaal 510 zoals Sandaconda): bv. HP 100 / Atk 70 / Def 125 / SpA 85 / SpD 110 / Spe 20.
+
+## Naam evolutie: brainstorm (3 nov)
+Jordi: "ik zat te denken aan een soort gelijke woordspeling als sandaconda, maar dan salti-nogwat of salty-nogwat" en "maar wel een slang die in zuid amerika voorkomt". Max. 12 tekens (`POKEMON_NAME_LENGTH`).
+- **Saltaconda** (salt + anaconda; Amazone/Pantanal): het directe spiegelbeeld van Sandaconda.
+- **Saltiboa / Saltyboa** (boa constrictor, heel Zuid-Amerika).
+- **Salaraca** (salar + jararaca, lanspuntslang van Brazilië/Argentinië/Paraguay).
+- **Salcabel** (Spaans *sal* + *cascabel*, de Zuid-Amerikaanse ratelslang).
+- Afgevallen: Saltypan (salt pan + taipan; taipan is Australisch).

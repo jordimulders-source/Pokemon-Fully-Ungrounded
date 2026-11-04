@@ -41,8 +41,8 @@ Silhouet t.o.v. ronde 6: +30 / -9 px (totaal 39)
   - x42 y26  dekking model 1.00  afwijking van de 50%-grens: 1 px
   - x46 y26  dekking model 1.00  afwijking van de 50%-grens: 1 px
   - x51 y26  dekking model 0.56  afwijking van de 50%-grens: 1 px
-open randen (randpixel die geen k/d/m/n is): 1 [(26, 27, 's')] | bewuste pseudo-omlijning (§8): [(17, 3, 'b'), (17, 7, 'b'), (17, 8, 'b'), (24, 61, 'v'), (14, 62, 'v'), (16, 62, 'v')]
+open randen (randpixel die geen k/d/m/n is): 0 [] | bewuste pseudo-omlijning (§8): [(17, 3, 'b'), (17, 7, 'b'), (17, 8, 'b'), (24, 61, 'v'), (14, 62, 'v'), (16, 62, 'v')]
 losse pixels (geen buur met dezelfde kleur): 36 [(17, 2, 'd'), (22, 2, 'b'), (17, 3, 'b'), (17, 4, 'o'), (23, 4, 'o'), (17, 5, 'r'), (23, 5, 'r'), (16, 6, 'd'), (22, 10, 'b'), (18, 11, 'h'), (20, 12, 'b'), (19, 14, 'd'), (20, 14, 'h'), (24, 14, 'l'), (20, 15, 'n'), (24, 15, 'b'), (23, 17, 'l'), (22, 24, 'h'), (49, 24, 'h'), (50, 25, 'b'), (15, 32, 'b'), (20, 32, 'o'), (17, 33, 's'), (21, 33, 'm'), (29, 40, 'd'), (22, 41, 'd'), (27, 41, 'd'), (30, 42, 's'), (33, 42, 's'), (18, 56, 'v'), (48, 58, 'v'), (45, 60, 'v'), (46, 60, 'n'), (24, 61, 'v'), (14, 62, 'v'), (16, 62, 'v')]
 verdeling: k:9% d:16% s:11% b:17% l:20% h:6% o:0% r:4% m:4% n:1% y:1% g:1% p:0% u:2% v:0%
-diff t.o.v. ronde 4f: 37 px
-  halszone x14-27 y20-28: 35 | daarbuiten: [(28, 27), (29, 27)]
+diff t.o.v. ronde 4f: 32 px
+  halszone x14-27 y20-28: 32 | daarbuiten: []

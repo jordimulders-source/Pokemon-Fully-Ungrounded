@@ -196,3 +196,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.45] - Lama fase 2: silhouet ronde 6 goedgekeurd, kleurronde 4 gestart
 - Jordi keurde ronde 6 goed ("zolang de staart maar definieerbaar blijft"; schokken gladstrijken in het spritewerk). Kleurronde 4 gestart: verse maker na een Game Freak-studie, wol als één zachte massa, staart leesbaar, drie oogvarianten (Numel-basis, Slakoth-droogheid, zwaar lid).
+
+### [v0.0.46] - Lama fase 2: kleur ronde 4b
+- Verse keuring van ronde 4: NEE (wol vlak, staart bultje, doek als koffer, oog als streepje). Ronde 4b verwerkt de 9 reparaties: zachte wolmassa met licht linksboven en wolbogen, staartpluim, doek met plooi, één droog oog (lid B + iris C), verre poten gescheiden met kleur. Wacht op Jordi.

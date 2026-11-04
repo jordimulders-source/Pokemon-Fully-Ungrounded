@@ -20,12 +20,13 @@ C = np.array([[1, 0, 0], [0, 0, -1], [0, 1, 0]], float)   # dier -> Blender
 YAW, PITCH, HEAD_EXTRA = 40.0, 6.0, 40.0
 HEAD_C, HEAD_R = np.array((-8.0, 80.0, 0.0)), 22.0
 LIMB = 10.5
-SPIR_R, SPIR_YAW = 24.0, 40.0
+SPIR_R, SPIR_YAW = 30.0, 40.0
+KOP = os.environ.get('KOP', 'A')   # kopvariant (A: donkere snuit, B: lichte roze-lila snuit)
 POLSEN = []   # (middelpunt, straal) van handen/voeten: daar niet gladstrijken
 
 KLEUR = {   # lijnkleuren van fase 2 (zoals het poppetje)
-    'fur': '#5E4488', 'mask': '#2E2048', 'moon': '#FFFFFF', 'snuit': '#8C6A9C', 'tip': '#EAD8BE',
-    'healer': '#E4DDF0', 'eye': '#D83C3C', 'pupil': '#1A1020', 'glint': '#FFFFFF', 'blad': '#5E9A4A',
+    'fur': '#5E4488', 'mask': '#2E2048', 'moon': '#FFFFFF', 'snuit': '#8C6A9C', 'snuitB': '#B08AA6', 'neus': '#140C1C', 'tip': '#EAD8BE',
+    'healer': '#DCCFF2', 'eye': '#D83C3C', 'pupil': '#1A1020', 'glint': '#FFFFFF', 'blad': '#5E9A4A',
 }
 
 
@@ -126,30 +127,31 @@ def bouw():
     delen, toppen = [], []
     # romp (pose 'krabbel'): borst/schouders, buik/rug, heup
     # (zelfde massa als de drie bollen van het poppetje, maar als één vloeiende romp: borst -> buik -> heup)
-    romp = [((-12, 2, 0), (22, 22, 24)), ((14, 4, 0), (24, 22, 22)), ((32, 0, 0), (17, 18, 19))]
+    romp = [((-12, 2, 0), (30, 30, 31)), ((14, 4, 0), (33, 30, 29)), ((32, 0, 0), (23, 24, 25))]   # keurder: massa omhoog
     # Jordi: "1 been en staart zitten niet goed smooth vast aan het lichaam": de wortel van elk lid groeit uit de
     # romp (metaball-elementen langs het eerste stuk), zodat er geen naad/insnoering is
-    wortels = [((-16, 14, -20), (-24, 34, -26), LIMB), ((-18, -8, 20), (-28, -36, 26), LIMB),
-               ((18, 14, -14), (12, 40, -18), LIMB + 4), ((36, -6, 14), (52, -24, 18), LIMB + 4),
+    wortels = [((-16, 14, -20), (-14, 38, -26), LIMB + 4), ((-18, -8, 20), (-22, -40, 26), LIMB + 4),
+               ((18, 14, -14), (6, 38, -18), LIMB + 7), ((36, -6, 14), (52, -32, 18), LIMB + 7),
                ((46, 6, 0), (46, -8, 0) + 34 * np.array((math.cos(math.radians(SPIR_YAW)), 0, math.sin(math.radians(SPIR_YAW)))), 7.5)]
     for a, b, r in wortels:
         a, b = np.array(a, float), np.array(b, float)
         for k, s in ((0.0, 1.25), (0.22, 1.1), (0.42, 1.0)):
             romp.append((tuple(a + (b - a) * k), (r * s, r * s, r * s)))
+    romp += [((-30, 4, 1), (18, 18, 18)), ((-38, 4, 2), (16, 16, 16)), ((-44, -4, 2), (14, 14, 14))]   # nek: kop groeit uit de schouders
     delen.append(meta(romp, 'romp'))
     # verre arm omhoog-voor, vuist om een onzichtbare tak
-    delen.append(keten([(-16, 14, -20, LIMB), (-24, 34, -26, LIMB - 2.5), (-40, 46, -24, LIMB - 4)]))
-    h, t, s = hand_op((-40, 46, -24), (-0.55, 1, 0), (0.3, 0, -1), 'vuist', 2.4, naam='hand_ver'); delen.append(h); toppen += [(p, s) for p in t]
+    delen.append(keten([(-16, 14, -20, LIMB + 4), (-14, 38, -26, LIMB + 1.5), (-40, 50, -24, LIMB - 1)]))
+    h, t, s = hand_op((-40, 50, -24), (-0.55, 1, 0), (0.3, 0, -1), 'vuist', 2.4, naam='hand_ver'); delen.append(h); toppen += [(p, s) for p in t]
     # nabije arm naar linksonder; healerhand: vingers omhoog, palm naar de tegenstander (kijker), duim links
-    delen.append(keten([(-18, -8, 20, LIMB), (-28, -36, 26, LIMB - 2.5), (-50, -60, 26, LIMB - 4)]))
-    h, t, s = hand_op((-51, -61, 27), (-0.15, 1, 0.1), view, 'healer_drowzee', 2.7, spiegel=True, naam='hand_healer')   # duim links (krabbel)
+    delen.append(keten([(-18, -8, 20, LIMB + 4), (-22, -40, 26, LIMB + 1.5), (-46, -58, 27, LIMB - 1)]))
+    h, t, s = hand_op((-48, -60, 27), (-0.5, 1, 0.12), view, 'healer_drowzee', 3.3, spiegel=True, naam='hand_healer')   # duim links (krabbel)
     delen.append(h); toppen += [(p, s) for p in t]
     healer_pts = np.array([tuple(v.co) for v in h.data.vertices]) @ C      # handoppervlak (dier), voor de kleurzone
     # verre been omhoog, voet gekruld om een onzichtbare tak
-    delen.append(keten([(18, 14, -14, LIMB + 4), (12, 40, -18, LIMB), (24, 58, -20, LIMB - 3)]))
+    delen.append(keten([(18, 14, -14, LIMB + 7), (6, 38, -18, LIMB + 3), (24, 58, -20, LIMB)]))
     h, t, s = hand_op((24, 58, -20), (0.3, 1, 0), (1, 0, 0), 'voet_greep', 2.2, naam='voet_ver'); delen.append(h); toppen += [(p, s) for p in t]
     # nabije been sleept naar achteren-omlaag, voet ontspannen
-    delen.append(keten([(36, -6, 14, LIMB + 4), (52, -24, 18, LIMB), (70, -22, 20, LIMB - 3)]))
+    delen.append(keten([(36, -6, 14, LIMB + 7), (52, -32, 18, LIMB + 3), (72, -24, 20, LIMB)]))
     h, t, s = hand_op((70, -22, 20), (1, -0.5, 0), (0, -1, 0.3), 'voet_ontspannen', 2.2, naam='voet_nabij'); delen.append(h); toppen += [(p, s) for p in t]
     # staart: vanaf de heup naar achteren en omhoog, dan een volle spiraal (Nazca), binnenste slag iets naar de kijker
     ph = math.radians(SPIR_YAW)
@@ -160,18 +162,23 @@ def bouw():
     c = np.array((0, 22.0, 0)) + (46 + SPIR_R) * e1
     spir = []
     for i in range(70):
-        u = i / 69; a = math.pi - u * 1.6 * 2 * math.pi; rr = SPIR_R * (1 - 0.78 * u)
-        spir.append(c + rr * math.cos(a) * e1 + np.array((0, rr * math.sin(a), 0)) + nrm * 7 * u)
+        u = i / 69; a = math.pi - u * 1.75 * 2 * math.pi; rr = SPIR_R * (1 - 0.80 * u)
+        spir.append(c + rr * math.cos(a) * e1 + np.array((0, rr * math.sin(a), 0)) + nrm * 9 * u)
     pts = path[:-1] + spir
-    delen.append(keten([tuple(p + T) + (7.5 - 4.0 * i / (len(pts) - 1),) for i, p in enumerate(pts)], 'staart'))
+    delen.append(keten([tuple(p + T) + (8.5 - 5.0 * i / (len(pts) - 1),) for i, p in enumerate(pts)], 'staart'))
     # kop: draait extra naar de kijker rond de nek en zit direct op de schouders (off)
     pv, off = np.array((-4.0, 62.0, 0.0)), np.array((-42.0, -74.0, 0.0))
     Rh = rot_y(math.radians(HEAD_EXTRA))
     Hp = lambda p: pv + Rh @ (np.asarray(p, float) - pv) + off
     kop_c = Hp(HEAD_C)
     delen.append(ellipsoid(kop_c, (HEAD_R, HEAD_R * 1.02, HEAD_R * 0.98), Rh, 'kop'))
-    snuit_c = Hp(HEAD_C + np.array((-HEAD_R * 0.80, -HEAD_R * 0.42, 0)))
-    delen.append(ellipsoid(snuit_c, (7, 7.5, 10), Rh, 'snuit'))
+    # muriqui-snuit (foto 1/6): breed, steekt naar voren onder de ogen; B iets groter
+    SN = (9.5, 8.0, 11.5) if KOP == 'A' else (10.5, 8.5, 12.5)
+    snuit_l = HEAD_C + np.array((-0.88, -0.45, 0)) * HEAD_R * 0.86
+    snuit_c = Hp(snuit_l)
+    delen.append(ellipsoid(snuit_c, SN, Rh, 'snuit'))
+    for sz in (1, -1):   # kleine ronde oren opzij (fase 2 heeft oortjes)
+        delen.append(ellipsoid(Hp(HEAD_C + np.array((0.15, 0.25, 0.95 * sz)) * HEAD_R), (4.5, 6, 3), Rh, 'oor'))
     # één geheel: samenvoegen, voxel-remesh, glad
     bpy.ops.object.select_all(action='DESELECT')
     for d in delen: d.select_set(True)
@@ -198,7 +205,7 @@ def bouw():
     bpy.ops.object.shade_smooth()
     # kleurzones per vlak (zelfde regels als texfn van het poppetje)
     mats = {k: materiaal(k) for k in KLEUR}
-    zones = ['fur', 'mask', 'moon', 'snuit', 'tip', 'healer']
+    zones = ['fur', 'mask', 'moon', 'snuit' if KOP == 'A' else 'snuitB', 'tip', 'healer']
     for z in zones: lijf.data.materials.append(mats[z])
     me = lijf.data
     P = np.array([tuple(p.center) for p in me.polygons]) @ C          # Blender -> dier (C orthogonaal)
@@ -209,11 +216,12 @@ def bouw():
     cap = lambda lat, r: np.degrees(np.arccos(np.clip(un @ np.array((-math.cos(math.radians(lat)), math.sin(math.radians(lat)), 0)), -1, 1))) < r
     lon = np.degrees(np.arctan2(u[:, 2], -u[:, 0]))
     opkop = np.linalg.norm(u, axis=1) < 1.18
-    mask = opkop & cap(-14.0, 52.0)
+    mask = opkop & cap(-12.0, 50.0)                    # kaal donker gezicht rond ogen en snuit (foto 1)
     idx[mask] = 1
-    idx[opkop & cap(16.0, 70.0) & ~mask & ~cap(-30.0, 50.0) & (np.abs(lon) < 100) & (u[:, 1] > -0.55)] = 2
-    sl = ((P - snuit_c) @ Rh) / np.array((7, 7.5, 10))
-    idx[np.linalg.norm(sl, axis=1) < 1.15] = 3
+    # witte sikkel van fase 2 op het voorhoofd, punten omlaag langs het masker (geen helm rondom)
+    idx[opkop & cap(32.0, 62.0) & ~cap(4.0, 44.0) & ~mask & (np.abs(lon) < 85)] = 2
+    sl = ((P - snuit_c) @ Rh) / np.array(SN)
+    idx[(np.linalg.norm(sl, axis=1) < 1.12) & (np.linalg.norm(u, axis=1) > 1.02)] = 3   # alleen het deel dat uitsteekt
     for p, s in toppen:   # laatste kootjes crème (vingertoppen, zoals fase 2)
         q = np.asarray(C.T @ np.array(tuple(p)))
         idx[np.linalg.norm(P - q, axis=1) < 1.5 * s] = 4
@@ -225,7 +233,7 @@ def bouw():
     kd.balance()
     hc, hr = POLSEN[1]
     kand = np.where(np.linalg.norm(P - hc, axis=1) < hr * 1.2)[0]
-    a0, a1 = np.array((-28.0, -36, 26)), np.array((-51.0, -61, 27))       # onderarm (elleboog -> pols)
+    a0, a1 = np.array((-22.0, -40, 26)), np.array((-46.0, -58, 27))       # onderarm (elleboog -> pols)
     for i in kand:
         d_hand = kd.find(P[i])[2]
         u = np.clip((P[i] - a0) @ (a1 - a0) / ((a1 - a0) @ (a1 - a0)), 0, 1)
@@ -236,16 +244,28 @@ def bouw():
     me.update()
     # ogen: rode Espurr-ringogen met pupil en glans (fase 2), los object op het masker
     for sz in (1, -1):
-        d = np.array((-0.88, 0.14, 0.40 * sz)); d /= np.linalg.norm(d)
-        e = HEAD_C + d * HEAD_R * 0.94
-        for k, (pos, r) in {'eye': (e, 3.9), 'pupil': (e + d * 1.6, 2.4), 'glint': (e + d * 2.8 + np.array((0, 1.3, -0.6 * sz)), 0.9)}.items():
+        d = np.array((-0.88, 0.16, 0.42 * sz)); d /= np.linalg.norm(d)
+        e = HEAD_C + d * HEAD_R * 0.90
+        for k, (pos, r) in {'eye': (e, 3.6), 'pupil': (e + d * 1.7, 2.0), 'glint': (e + d * 2.8 + np.array((0, 0.6, -0.5 * sz)), 0.7)}.items():
             o = ellipsoid(Hp(pos), (r, r, r), naam=f'{k}_{sz}', seg=24); o.data.materials.append(mats[k]); bpy.ops.object.shade_smooth()
+        # vlak bovenlid (fase 2), binnenhoek lager = sinister; in maskerkleur over de bovenkant van het oog
+        o = ellipsoid(Hp(e + d * 1.0 + np.array((0, 2.6, 0))), (2.8, 2.0, 4.8), Rh @ rot_y(math.radians(-24 * sz)) @ rot_x(math.radians(16 * sz)), f'lid_{sz}', seg=24)
+        o.data.materials.append(mats['mask']); bpy.ops.object.shade_smooth()
+        # neusgat
+        n = snuit_l + np.array((-SN[0] * 0.92, SN[1] * 0.36, 2.6 * sz))   # op het oppervlak van de snuit
+        o = ellipsoid(Hp(n), (1.2, 1.0, 1.4), Rh, f'neusgat_{sz}', seg=16); o.data.materials.append(mats['neus'])
+    # mondlijn onder de neus
+    for zz in np.linspace(-5.5, 5.5, 23):   # mondlijn als boogje over het snuitoppervlak
+        yy = -SN[1] * (0.42 - 0.12 * (zz / 5.5) ** 2)
+        xx = -SN[0] * math.sqrt(max(0.0, 1 - (yy / SN[1]) ** 2 - (zz / SN[2]) ** 2))
+        o = ellipsoid(Hp(snuit_l + np.array((xx, yy, zz))), (0.55, 0.55, 0.55), naam='mond', seg=12)
+        o.data.materials.append(mats['neus'])
     # bladbundel in de krul
     cc = spir[-1] + T
     for ang, ln in ((50, 1.0), (82, 1.15), (114, 0.95)):
         a = math.radians(ang)
         d = math.cos(a) * e1 + np.array((0, math.sin(a), 0))
-        o = ellipsoid(cc + d * 20 * ln + nrm * 3, (17 * ln, 6, 2.5), rot_y(-ph) @ rot_z(a), 'blad')
+        o = ellipsoid(cc + d * 30 * ln + nrm * 3, (14 * ln, 5.5, 2.5), rot_y(-ph) @ rot_z(a), 'blad')
         o.data.materials.append(mats['blad']); bpy.ops.object.shade_smooth()
     return lijf
 

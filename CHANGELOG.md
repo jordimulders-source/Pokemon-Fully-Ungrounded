@@ -173,3 +173,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.39] - Salticonda: silhouetronde 1
 - Drie silhouetvarianten op Ekans als skelet, met de anaconda-foto's van Jordi als bron voor de kop (`docs/concept/sprites/salticonda/silhouet1/`): A 4 windingen + kop bovenop, B laag en breed + kop vooraan, C Ekans-houding met staart omhoog.
+
+### [v0.0.40] - Salticonda: silhouetronde 2
+- Vanaf A: bulkier (±2150 px, voet ±55 px breed), één doorlopende kegelomtrek, kop van A bevroren (5 px omhoog). D = 4 windingen, E = 3 dikke windingen (`docs/concept/sprites/salticonda/silhouet2/`).

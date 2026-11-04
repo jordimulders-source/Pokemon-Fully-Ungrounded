@@ -99,3 +99,4 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - **Oog:** droog = rechte lidlijn, pupil tegen het lid, licht laag vóór; nooit een zwart rondje met een wit puntje (oogstudie `lama/fase2/oogstudie/`).
 - **Verse maker na ±8–9 rondes** (context >400k) met SPEC + NOTITIES + keuring: werkte direct beter en goedkoper.
 - **Echte bronfoto's controleren op de soort** (foto 6 bleek een alpaca).
+- **Lama fase 2 (4 nov):** silhouet pas goed toen het hele 3D-model werd overgetrokken met een dekkingskaart (50 %-grens, max. ±1 px); daarvoor 6 rondes doorpatchen omdat Claude eigen vormeisen (eigen kolom per poot, ≥ 5 px) boven het model zette. Fluffy wol: overlappende ronde wolbollen met eigen schaduwboog (Mareep/Flaaffy), binnenkleuren eerst, omtrek pas daarna; geen gestapelde gelijke bollen (buis) en geen losse plukken (uitstulping). Eindkeuring vond nog 6 px (nagels tegen transparant, zwart aan de lichtkant).

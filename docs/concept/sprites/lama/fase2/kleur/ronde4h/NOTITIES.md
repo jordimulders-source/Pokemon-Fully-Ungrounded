@@ -110,3 +110,10 @@ Jordi over 4g (letterlijk): "ik denk dat het hem vooral zit in de nek aan de bin
   - Geen banden, geen gestapelde segmenten, geen harde klonten.
 - **Bewijs:** 36 px verschil met 4g (budget ±40), allemaal binnen x15–24 y20–28. Alpha-diff 0 en 0 gewijzigde omlijningspixels (`d`/`k`), dus het silhouet is gelijk aan 4g (`diff_silhouet.txt` is een kopie). Geen open randen.
 - **Eigen check op 1× en 8× (`jordi_4h.png`):** de hals leest als wol met krulletjes en sluit aan op de vacht van het lijf. Er zitten nog een paar losse lichte pixels in (bijvoorbeeld (20,20) en (19,24)); die horen bij de wolvlekken en lezen op 1× niet als spikkels.
+
+---
+# Afronding (4 nov): goedgekeurd door Jordi, eindkeuring "af na kleine reparaties"
+Precies 6 px gewijzigd t.o.v. ronde 4h; verder niets. Resultaat staat in `../../af/` (`lama.png`, `normal.pal`, `vel.png`).
+- Nagels: `v` (index 15) → `n` (index 10) op (14,62), (16,62) en (24,61). Ze vormden een open rand aan de onderkant en lazen als stofjes.
+- Nabije handschoen, linkerkant: `k` (index 1) → `m` (index 9) op (15,58), (14,59) en (14,60). De zwarte scheiding tussen de handschoenen en de onderrand blijft.
+- Bewijs: een pixeldiff tussen `af/lama.png` en `ronde4h/lama.png` geeft precies deze 6 px.

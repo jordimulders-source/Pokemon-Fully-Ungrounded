@@ -217,3 +217,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.52] - Lama fase 2: kleur ronde 4h (hals)
 - Jordi: de nek vooral "aan de binnenkant wat meer fluffy kleuren", silhouet niet veranderen. Ronde 4h: wolstructuur van het lijf doorgezet in de hals (lichte wolvlekken, krulhaakjes), silhouet gelijk aan 4g. Wacht op Jordi.
+
+### [v0.0.53] - Lama fase 2: frontsprite af
+- Jordi keurde kleur ronde 4h goed; verse eindkeuring: af na 6 px (nagels, handschoen). Frontsprite fase 2 staat in `docs/concept/sprites/lama/fase2/af/lama.png`. Volgende: fase 3 (lama met bombín). Lessen in `docs/lessen/SPRITE_WERKWIJZE.md`.

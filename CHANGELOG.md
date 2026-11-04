@@ -199,3 +199,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.46] - Lama fase 2: kleur ronde 4b
 - Verse keuring van ronde 4: NEE (wol vlak, staart bultje, doek als koffer, oog als streepje). Ronde 4b verwerkt de 9 reparaties: zachte wolmassa met licht linksboven en wolbogen, staartpluim, doek met plooi, één droog oog (lid B + iris C), verre poten gescheiden met kleur. Wacht op Jordi.
+
+### [v0.0.47] - Lama fase 2: kleur ronde 4c
+- Jordi vond 4b beter maar het lijf nog een "flakke plank" en het oog "un-pokemon like". Ronde 4c: lijf en hals als overlappende wolbollen (zoals Mareep/Flaaffy), oog met zwaar vlak bovenlid, donkere iris met lichtje en lama-wimpers. Wacht op Jordi.

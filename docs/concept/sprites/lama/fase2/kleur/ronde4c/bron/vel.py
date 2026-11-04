@@ -1,4 +1,4 @@
-"""Kijkvel ronde 4 (alleen deze ronde). Rij 1: lama.png op 4x (licht en donker) naast het model. Rij 3: 1x en 3x naast Mareep, Flaaffy, Girafarig, de alpaca (fase 1).
+"""Kijkvel ronde 4 (alleen deze ronde). Rij 1: lama.png op 4x (licht en donker) naast het model. Rij 2: kop op 8x naast Ponyta, Numel, Girafarig. Rij 3: 1x en 3x naast Mareep, Flaaffy, Girafarig, de alpaca (fase 1).
 Draaien: python3 docs/concept/sprites/lama/fase2/kleur/ronde4/bron/vel.py"""
 import os
 from PIL import Image, ImageDraw
@@ -29,20 +29,24 @@ def gp(n): return rgba(f'{REPO}/graphics/pokemon/{n}/anim_front.png', 0, f'{REPO
 lama = rgba(os.path.join(OUT, 'lama.png'))
 model = Image.open(os.path.join(OUT, '../../silhouet_r5/onderlaag_256.png')).convert('RGBA')
 alpaca = rgba(f'{REPO}/docs/concept/sprites/alpaca/ronde17/variant_kop/anim_front.png')
-refs = [('lama r4b', lama), ('Mareep', gp('mareep')), ('Flaaffy', gp('flaaffy')), ('Girafarig', gp('girafarig')),
+refs = [('lama r4c', lama), ('Mareep', gp('mareep')), ('Flaaffy', gp('flaaffy')), ('Girafarig', gp('girafarig')),
         ('alpaca f1', alpaca)]
 W, H = 1180, 1010
 c = Image.new('RGBA', (W, H), (250, 250, 250, 255)); d = ImageDraw.Draw(c)
-d.text((10, 6), 'Lama fase 2, kleur ronde 4b (silhouet ronde 6 +/-1 px, met de hand; oog: lid B + iris C)', fill=(0, 0, 0))
+d.text((10, 6), 'Lama fase 2, kleur ronde 4c (wolbollen lijf/hals, nieuw oog; met de hand)', fill=(0, 0, 0))
 y = 24
 c.paste(op(lama, (255, 255, 255, 255), 4), (10, y)); c.paste(op(lama, (40, 40, 48, 255), 4), (280, y)); c.paste(model, (550, y))
 d.text((10, y + 258), '4x licht', fill=(0, 0, 0)); d.text((280, y + 258), '4x donker', fill=(0, 0, 0)); d.text((550, y + 258), 'model (poppetje, onderlaag_256)', fill=(0, 0, 0))
 y = 300
+koppen = [('lama r4c', lama, (8, 0, 30, 22)), ('Ponyta', gp('ponyta'), (8, 0, 30, 22)), ('Numel', gp('numel'), (10, 12, 32, 34)), ('Girafarig', gp('girafarig'), (8, 0, 30, 22))]
+for i, (n, im, box) in enumerate(koppen):
+    c.paste(op(im, (255, 255, 255, 255), 1).crop(box).resize((176, 176), Image.NEAREST), (10 + i * 196, y)); d.text((10 + i * 196, y + 180), n + ' kop 8x', fill=(0, 0, 0))
+y = 500
 for i, (n, im) in enumerate(refs):
     c.paste(op(im, (255, 255, 255, 255), 3), (10 + i * 196, y)); d.text((10 + i * 196, y + 194), n + ' 3x', fill=(0, 0, 0))
-y = 520
+y = 720
 for i, (n, im) in enumerate(refs):
     c.paste(op(im, (255, 255, 255, 255), 1), (10 + i * 80, y)); c.paste(op(im, (40, 40, 48, 255), 1), (10 + i * 80, y + 70))
-d.text((10, y + 140), '1x op licht en donker: lama r4b, Mareep, Flaaffy, Girafarig, alpaca', fill=(0, 0, 0))
+d.text((10, y + 140), '1x op licht en donker: lama r4c, Mareep, Flaaffy, Girafarig, alpaca', fill=(0, 0, 0))
 c = c.crop((0, 0, W, y + 160))
 c.save(os.path.join(OUT, 'vel.png')); print('vel.png', c.size)

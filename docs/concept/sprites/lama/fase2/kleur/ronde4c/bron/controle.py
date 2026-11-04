@@ -16,8 +16,8 @@ print('lama.png: mode', im.mode, '| transparency', im.info.get('transparency'), 
       '| kleuren gebruikt (incl. transparant):', len({c for r in g for c in r}), '| pixels', sum(c != '.' for r in g for c in r))
 plus = [(x, y) for y in range(64) for x in range(64) if g[y][x] != '.' and R6[y][x] != '#']
 mins = [(x, y) for y in range(64) for x in range(64) if g[y][x] == '.' and R6[y][x] == '#']
-lines = ['Diffkaart kleur ronde 4b t.o.v. silhouet ronde 6 (en de 50%-dekking van het model, silhouet_r5/kop_alpha.npy).',
-         'Toegestaan: per pixel max. 1 px, alleen om schokken glad te strijken of de staart leesbaar te maken; doel totaal <= 40 px.',
+lines = ['Diffkaart kleur ronde 4c t.o.v. silhouet ronde 6 (en de 50%-dekking van het model, silhouet_r5/kop_alpha.npy).',
+         'Toegestaan (Claude, 4c): wolomtrek van lijf, hals en borst max. 2 px van het model; elders max. 1 px (glad/staart).',
          f'Silhouet t.o.v. ronde 6: +{len(plus)} / -{len(mins)} px (totaal {len(plus) + len(mins)})']
 def afstand(x, y, inside):   # afstand (px) tot de 50%-grens van het model
     best = 9
@@ -45,13 +45,15 @@ print('losse pixels (geen buur met dezelfde kleur):', len(alone), alone)
 from collections import Counter
 c = Counter(ch for r in g for ch in r if ch != '.'); tot = sum(c.values())
 print('verdeling:', ' '.join(f'{ch}:{c[ch] * 100 // tot}%' for ch in LET[1:] if c[ch]))
-R4 = [[LET[c] for c in row] for row in [[Image.open(os.path.join(OUT, '../ronde4/lama.png')).getpixel((x, y)) for x in range(64)] for y in range(64)]]
+R4 = [[LET[c] for c in row] for row in [[Image.open(os.path.join(OUT, '../ronde4b/lama.png')).getpixel((x, y)) for x in range(64)] for y in range(64)]]
 d4 = [(x, y) for y in range(64) for x in range(64) if g[y][x] != R4[y][x]]
 def tel(x0, y0, x1, y1): return sum(1 for x, y in d4 if x0 <= x <= x1 and y0 <= y <= y1)
-print('diff t.o.v. ronde 4 (oog B):', len(d4), 'px')
-print('  kop/oren y0-19 x10-25 (buiten oogzone x19-23 y11-15):', sum(1 for x, y in d4 if y <= 19 and not (19 <= x <= 23 and 11 <= y <= 15)),
-      '| oog:', tel(19, 11, 23, 15), '| halsband x14-28 y28-31 + pompons x15-21 y32-33:',
-      sum(1 for x, y in d4 if (14 <= x <= 28 and 28 <= y <= 31 and not (x <= 24 and y == 28)) or (x in (16, 17, 20, 21) and y in (32, 33))))
+print('diff t.o.v. ronde 4b:', len(d4), 'px')
+oog = lambda x, y: 19 <= x <= 24 and 11 <= y <= 15
+wol = lambda x, y: (12 <= x <= 53 and 20 <= y <= 43) and not (28 <= x <= 39 and 25 <= y <= 34 and R4[y][x] in 'mpuyrok') and not (14 <= x <= 28 and 28 <= y <= 31 and R4[y][x] in 'gyrmd') \
+    and not (x in (16, 17, 20, 21) and y in (32, 33)) and not (y >= 42 and not (y == 42 and (15 <= x <= 20 or 29 <= x <= 40)) and not (y == 43 and 30 <= x <= 33))
+print('  oogzone x19-24 y11-15:', sum(1 for p in d4 if oog(*p)), '| wolzone (lijf/hals, zonder doek, halsband, pompons, poten):', sum(1 for p in d4 if wol(*p)),
+      '| daarbuiten:', sum(1 for p in d4 if not oog(*p) and not wol(*p)), [p for p in d4 if not oog(*p) and not wol(*p)])
 WAAROM = {(49, 23): 'staart: pluim', (50, 23): 'staart: pluim schuin naar achteren', (51, 24): 'staart: pluim 5 breed', (51, 25): 'staart: idem',
           (46, 25): 'staart: lucht aan de rugzijde', (46, 26): 'staart: lucht aan de rugzijde / wolboog rug', (42, 26): 'wolboog rug (insnoering)',
           (43, 25): 'glad: losse bult weg (r4)', (44, 25): 'glad: idem', (45, 25): 'glad: idem', (51, 26): 'glad: hoek achterwerk (r4)',
@@ -59,7 +61,8 @@ WAAROM = {(49, 23): 'staart: pluim', (50, 23): 'staart: pluim schuin naar achter
           (50, 36): 'wolboog achterwerk (insnoering)', (49, 40): 'glad: hoek buik/achterwerk afgerond',
           (13, 34): 'wolboog borst', (13, 35): 'wolboog borst', (13, 36): 'wolboog borst', (13, 37): 'wolboog borst', (13, 41): 'wolboog borst onder',
           (29, 25): 'doek: bovenhoek afgerond', (37, 25): 'doek: bovenhoek afgerond', (49, 59): 'verre achterhoef (eigen hoef)'}
-lines = [l + ('   <- ' + WAAROM[(int(l.split()[1][1:]), int(l.split()[2][1:]))] if l.startswith('  ') else '') for l in lines]
+WAAROM.setdefault
+lines = [l + ('   <- ' + WAAROM.get((int(l.split()[1][1:]), int(l.split()[2][1:])), 'wolboog (4c, lijf/hals/borst, max. 2 px)') if l.startswith('  ') else '') for l in lines]
 kaart = ['', 'Kaart y20-42, x38-53 (# beide, + alleen ronde 4, - alleen ronde 6):']
 for y in range(20, 43):
     kaart.append(f'y{y:02d} ' + ''.join('+' if (g[y][x] != '.' and R6[y][x] != '#') else '-' if (g[y][x] == '.' and R6[y][x] == '#') else '#' if g[y][x] != '.' else '.' for x in range(38, 54)))

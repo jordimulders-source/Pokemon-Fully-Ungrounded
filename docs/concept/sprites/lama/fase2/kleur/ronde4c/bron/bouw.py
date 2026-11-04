@@ -54,4 +54,4 @@ if __name__ == '__main__':
     open(os.path.join(OUT, 'raster_grid.txt'), 'w').write('\n'.join(''.join(r) for r in g) + '\n')
     with open(os.path.join(OUT, 'normal.pal'), 'w') as f:
         f.write('JASC-PAL\r\n0100\r\n16\r\n' + ''.join(f'{r} {g} {b}\r\n' for r, g, b in PAL))
-    print('gebouwd: lama.png (één oog: lid B + iris C)')
+    print('gebouwd: lama.png (ronde 4c)')

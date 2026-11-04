@@ -141,18 +141,18 @@ def bouw():
     delen.append(meta(romp, 'romp'))
     # verre arm omhoog-voor, vuist om een onzichtbare tak
     delen.append(keten([(-16, 14, -20, LIMB + 4), (-14, 38, -26, LIMB + 1.5), (-40, 50, -24, LIMB - 1)]))
-    h, t, s = hand_op((-40, 50, -24), (-0.55, 1, 0), (0.3, 0, -1), 'vuist', 2.4, naam='hand_ver'); delen.append(h); toppen += [(p, s) for p in t]
+    h, t, s = hand_op((-40, 50, -24), (-0.55, 1, 0), (0.3, 0, -1), 'vuist', 3.6, naam='hand_ver'); delen.append(h); toppen += [(p, s) for p in t]
     # nabije arm naar linksonder; healerhand: vingers omhoog, palm naar de tegenstander (kijker), duim links
-    delen.append(keten([(-18, -8, 20, LIMB + 4), (-22, -40, 26, LIMB + 1.5), (-46, -58, 27, LIMB - 1)]))
-    h, t, s = hand_op((-48, -60, 27), (-0.5, 1, 0.12), view, 'healer_drowzee', 3.3, spiegel=True, naam='hand_healer')   # duim links (krabbel)
+    delen.append(keten([(-18, -8, 20, LIMB + 4), (-22, -40, 26, LIMB + 1.5), (-43, -55, 27, LIMB - 3.5)]))
+    h, t, s = hand_op((-48, -60, 27), (-0.5, 1, 0.12), view, 'healer_drowzee', 3.9, spiegel=True, naam='hand_healer')   # duim links (krabbel)
     delen.append(h); toppen += [(p, s) for p in t]
     healer_pts = np.array([tuple(v.co) for v in h.data.vertices]) @ C      # handoppervlak (dier), voor de kleurzone
     # verre been omhoog, voet gekruld om een onzichtbare tak
-    delen.append(keten([(18, 14, -14, LIMB + 7), (6, 38, -18, LIMB + 3), (24, 58, -20, LIMB)]))
-    h, t, s = hand_op((24, 58, -20), (0.3, 1, 0), (1, 0, 0), 'voet_greep', 2.2, naam='voet_ver'); delen.append(h); toppen += [(p, s) for p in t]
+    delen.append(keten([(18, 14, -14, LIMB + 7), (6, 38, -18, LIMB + 1), (24, 58, -20, LIMB - 2.5)]))
+    h, t, s = hand_op((24, 58, -20), (0.3, 1, 0), (1, 0, 0), 'voet_greep', 3.7, naam='voet_ver'); delen.append(h); toppen += [(p, s) for p in t]
     # nabije been sleept naar achteren-omlaag, voet ontspannen
-    delen.append(keten([(36, -6, 14, LIMB + 7), (52, -32, 18, LIMB + 3), (72, -24, 20, LIMB)]))
-    h, t, s = hand_op((70, -22, 20), (1, -0.5, 0), (0, -1, 0.3), 'voet_ontspannen', 2.2, naam='voet_nabij'); delen.append(h); toppen += [(p, s) for p in t]
+    delen.append(keten([(36, -6, 14, LIMB + 7), (52, -32, 18, LIMB + 1), (72, -24, 20, LIMB - 2.5)]))
+    h, t, s = hand_op((70, -22, 20), (1, -0.5, 0), (0, -1, 0.3), 'voet_ontspannen', 3.7, naam='voet_nabij'); delen.append(h); toppen += [(p, s) for p in t]
     # staart: vanaf de heup naar achteren en omhoog, dan een volle spiraal (Nazca), binnenste slag iets naar de kijker
     ph = math.radians(SPIR_YAW)
     e1 = np.array((math.cos(ph), 0, math.sin(ph)))
@@ -224,7 +224,7 @@ def bouw():
     idx[(np.linalg.norm(sl, axis=1) < 1.12) & (np.linalg.norm(u, axis=1) > 1.02)] = 3   # alleen het deel dat uitsteekt
     for p, s in toppen:   # laatste kootjes crème (vingertoppen, zoals fase 2)
         q = np.asarray(C.T @ np.array(tuple(p)))
-        idx[np.linalg.norm(P - q, axis=1) < 1.5 * s] = 4
+        pass   # crème toppen weg (keuring r2); zone blijft bestaan voor later
     # Jordi: "de healerhand mag best lichter zijn" / "leuk idee zelfs": de hele healerhand maanzilver (vanaf de pols)
     # per vlak: licht waar het dichter bij het handoppervlak ligt dan bij de onderarm (pols = lichaamskleur, Jordi)
     from mathutils import kdtree
@@ -233,12 +233,12 @@ def bouw():
     kd.balance()
     hc, hr = POLSEN[1]
     kand = np.where(np.linalg.norm(P - hc, axis=1) < hr * 1.2)[0]
-    a0, a1 = np.array((-22.0, -40, 26)), np.array((-46.0, -58, 27))       # onderarm (elleboog -> pols)
+    a0, a1 = np.array((-22.0, -40, 26)), np.array((-43.0, -55, 27))       # onderarm (elleboog -> pols)
     for i in kand:
         d_hand = kd.find(P[i])[2]
         u = np.clip((P[i] - a0) @ (a1 - a0) / ((a1 - a0) @ (a1 - a0)), 0, 1)
         d_arm = np.linalg.norm(P[i] - (a0 + u * (a1 - a0))) - (LIMB - 4)
-        if d_hand < 1.5 and d_hand < d_arm - 0.5:
+        if d_hand < 4.0 and d_hand < d_arm - 0.5:   # ruim: geen ringen door voxel-trapjes
             idx[i] = 5
     me.polygons.foreach_set('material_index', idx)
     me.update()
@@ -261,11 +261,11 @@ def bouw():
         o = ellipsoid(Hp(snuit_l + np.array((xx, yy, zz))), (0.55, 0.55, 0.55), naam='mond', seg=12)
         o.data.materials.append(mats['neus'])
     # bladbundel in de krul
-    cc = spir[-1] + T
-    for ang, ln in ((50, 1.0), (82, 1.15), (114, 0.95)):
+    top = max(spir, key=lambda q: q[1]) + T          # hoogste punt van de spiraal: daar groeit de bundel uit
+    for ang, ln in ((55, 1.0), (88, 1.15), (120, 0.95)):
         a = math.radians(ang)
         d = math.cos(a) * e1 + np.array((0, math.sin(a), 0))
-        o = ellipsoid(cc + d * 30 * ln + nrm * 3, (14 * ln, 5.5, 2.5), rot_y(-ph) @ rot_z(a), 'blad')
+        o = ellipsoid(top + d * (13 * ln + 4), (14 * ln, 5.5, 2.5), rot_y(-ph) @ rot_z(a), 'blad')   # voet zit in de staart
         o.data.materials.append(mats['blad']); bpy.ops.object.shade_smooth()
     return lijf
 

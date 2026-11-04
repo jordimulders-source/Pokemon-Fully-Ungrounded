@@ -18,7 +18,7 @@ VINGERS = [
 
 POSES = {
     # spreid = waaierhoek per vinger (graden, rond de palmnormaal), krom = buiging per kootje (graden, naar de palm)
-    'healer_drowzee': dict(spreid=(-4, -1, 2, 6), krom=[(4, 8, 6)] * 4, lengte=0.75, dikte=1.35, duim_abd=40, duim_krom=(15, 15), pols=0),
+    'healer_drowzee': dict(spreid=(-7, -2, 3, 9), krom=[(5, 10, 8)] * 4, lengte=0.8, dikte=1.25, taps=(1.0, 0.84, 0.64), duim_abd=40, duim_krom=(15, 15), pols=0),
     'healer_anime':   dict(spreid=(-8, -2, 4, 10), krom=[(-3, 6, 6)] * 4, duim_abd=45, duim_krom=(5, 10), pols=0),
     'voet_ontspannen': dict(spreid=(-6, -2, 3, 8), krom=[(25, 30, 20)] * 4, duim_abd=35, duim_krom=(15, 15), pols=0),
     'voet_greep':     dict(spreid=(-2, 0, 2, 4), krom=[(75, 85, 55)] * 4, duim_abd=25, duim_krom=(45, 45), pols=0),
@@ -54,7 +54,7 @@ def skelet(pose, stomp=True):
             hoek += pose['krom'][k][j]
             d = M @ rot_x(hoek) @ Vector((0, 1, 0))
             p = p + d * L * Lm
-            r = dik * Dm * (0.92, 0.85, 0.75)[j]
+            r = dik * Dm * pose.get('taps', (0.92, 0.85, 0.75))[j]
             last = add(p, r, last)
         TOPPEN.append(last)
     # duim: vanaf de palmhiel aan de -X-kant, schuin naar buiten, iets naar de camera

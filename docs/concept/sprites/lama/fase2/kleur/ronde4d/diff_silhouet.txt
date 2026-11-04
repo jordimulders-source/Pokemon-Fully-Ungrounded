@@ -1,0 +1,72 @@
+Diffkaart kleur ronde 4d t.o.v. silhouet ronde 6 (en de 50%-dekking van het model, silhouet_r5/kop_alpha.npy).
+Toegestaan (Claude, 4c): wolomtrek van lijf, hals en borst max. 2 px van het model; elders max. 1 px (glad/staart).
+Silhouet t.o.v. ronde 6: +35 / -9 px (totaal 44)
+  + x15 y21  dekking model 0.01  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x15 y22  dekking model 0.06  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x26 y22  dekking model 0.12  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x26 y23  dekking model 0.07  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x49 y23  dekking model 0.28  afwijking van de 50%-grens: 1 px   <- staart: pluim
+  + x50 y23  dekking model 0.03  afwijking van de 50%-grens: 1 px   <- staart: pluim schuin naar achteren
+  + x15 y24  dekking model 0.00  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x51 y24  dekking model 0.07  afwijking van de 50%-grens: 1 px   <- staart: pluim 5 breed
+  + x15 y25  dekking model 0.00  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x26 y25  dekking model 0.06  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x51 y25  dekking model 0.49  afwijking van de 50%-grens: 1 px   <- staart: idem
+  + x26 y26  dekking model 0.19  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x15 y27  dekking model 0.00  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x51 y30  dekking model 0.34  afwijking van de 50%-grens: 1 px   <- wolboog achterwerk
+  + x51 y31  dekking model 0.00  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x52 y31  dekking model 0.00  afwijking van de 50%-grens: 2 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x51 y32  dekking model 0.01  afwijking van de 50%-grens: 1 px   <- wolboog achterwerk
+  + x52 y32  dekking model 0.00  afwijking van de 50%-grens: 2 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x51 y33  dekking model 0.13  afwijking van de 50%-grens: 1 px   <- wolboog achterwerk
+  + x52 y33  dekking model 0.00  afwijking van de 50%-grens: 2 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x13 y34  dekking model 0.11  afwijking van de 50%-grens: 1 px   <- wolboog borst
+  + x51 y34  dekking model 0.17  afwijking van de 50%-grens: 1 px   <- wolboog achterwerk
+  + x52 y34  dekking model 0.00  afwijking van de 50%-grens: 2 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x12 y35  dekking model 0.00  afwijking van de 50%-grens: 2 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x13 y35  dekking model 0.17  afwijking van de 50%-grens: 1 px   <- wolboog borst
+  + x51 y35  dekking model 0.08  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x12 y36  dekking model 0.00  afwijking van de 50%-grens: 2 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x13 y36  dekking model 0.12  afwijking van de 50%-grens: 1 px   <- wolboog borst
+  + x51 y36  dekking model 0.00  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x12 y37  dekking model 0.00  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x13 y37  dekking model 0.44  afwijking van de 50%-grens: 1 px   <- wolboog borst
+  + x12 y38  dekking model 0.00  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x12 y39  dekking model 0.00  afwijking van de 50%-grens: 1 px   <- wolboog (4c lijf / 4d hals, max. 2 px)
+  + x13 y41  dekking model 0.31  afwijking van de 50%-grens: 1 px   <- wolboog borst onder
+  + x49 y59  dekking model 0.28  afwijking van de 50%-grens: 1 px   <- verre achterhoef (eigen hoef)
+  - x29 y25  dekking model 0.70  afwijking van de 50%-grens: 1 px   <- doek: bovenhoek afgerond
+  - x37 y25  dekking model 0.86  afwijking van de 50%-grens: 1 px   <- doek: bovenhoek afgerond
+  - x43 y25  dekking model 0.60  afwijking van de 50%-grens: 1 px   <- glad: losse bult weg (r4)
+  - x44 y25  dekking model 0.75  afwijking van de 50%-grens: 1 px   <- glad: idem
+  - x45 y25  dekking model 0.58  afwijking van de 50%-grens: 1 px   <- glad: idem
+  - x46 y25  dekking model 0.49  afwijking van de 50%-grens: 0 px   <- staart: lucht aan de rugzijde
+  - x42 y26  dekking model 1.00  afwijking van de 50%-grens: 1 px   <- wolboog rug (insnoering)
+  - x46 y26  dekking model 1.00  afwijking van de 50%-grens: 1 px   <- staart: lucht aan de rugzijde / wolboog rug
+  - x51 y26  dekking model 0.56  afwijking van de 50%-grens: 1 px   <- glad: hoek achterwerk (r4)
+
+Kaart y20-42, x38-53 (# beide, + alleen ronde 4, - alleen ronde 6):
+y20 ................
+y21 ................
+y22 ................
+y23 ...........++...
+y24 .........####+..
+y25 .....----####+..
+y26 ####-###-####-..
+y27 ##############..
+y28 ##############..
+y29 ##############..
+y30 #############+..
+y31 #############++.
+y32 #############++.
+y33 #############++.
+y34 #############++.
+y35 #############+..
+y36 #############+..
+y37 #############...
+y38 #############...
+y39 #############...
+y40 ############....
+y41 ###########.....
+y42 ##########......

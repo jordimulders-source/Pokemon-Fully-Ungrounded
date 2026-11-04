@@ -214,3 +214,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.51] - Lama fase 2: kleur ronde 4g (hals)
 - Jordi: de pluk achter op de hals van 4f was een "gekke uitstulping"; hals bolliger met een bol links onderaan. Ronde 4g: uitstulping weg, drie ronde overlappende wolbollen met een borstbol vóór boven de halsband. Wacht op Jordi.
+
+### [v0.0.52] - Lama fase 2: kleur ronde 4h (hals)
+- Jordi: de nek vooral "aan de binnenkant wat meer fluffy kleuren", silhouet niet veranderen. Ronde 4h: wolstructuur van het lijf doorgezet in de hals (lichte wolvlekken, krulhaakjes), silhouet gelijk aan 4g. Wacht op Jordi.

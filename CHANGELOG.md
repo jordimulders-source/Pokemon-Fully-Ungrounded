@@ -189,3 +189,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.44] - Salticonda: kleur3e en kleur3d
 - Jordi: kleur3 heeft de beste kuif en neus; 3b/3c afgekeurd. kleur3e = kleur3 met alleen de zouttextuur van 3b op de kuif (vorm identiek). kleur3d = kleur3 met dezelfde kuif 1,1× hoger/breder (1,32× oppervlak), sprite 3 px omlaag, neus en lijf ongewijzigd.
+
+### [v0.0.45] - Salticonda: kleur3f (kop past bij het lijf)
+- Jordi koos 3e. 3f: schaduwkant van de kop even diep als op de windingen (zelfde tinten/stappen), slagschaduw op de bovenste winding onder kaak en halsband; 75 px, alleen tinten, silhouet/kuif/neus/oog ongewijzigd.

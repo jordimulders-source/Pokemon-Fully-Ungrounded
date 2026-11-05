@@ -203,21 +203,22 @@ def shade(zbuf, gid, nrm, out=256, res=R, thr=1.1, dil=2, sil=7):
 
 # ---------------------------------------------------------------- het dier
 P0 = dict(
-    open_deg=62,       # hoe ver de onderkaak hangt
-    eye_y=0.3,         # oog hoger op de koepel (Jordi: "de ogen moeten hoger")
-    eye_r=1.25,        # oogstraal (Pokémon: iets groter dan 1)
+    open_deg=66,       # hoe ver de onderkaak hangt
+    eye_r=1.15,        # oogstraal (Pokémon: iets groter dan 1)
+    eye_gap=0.5,       # ruimte tussen oog en bovenrand, in oogstralen (foto's: ±½)
+    eye_x=-0.7,        # oog ongeveer halverwege de koplengte, iets vóór de mondhoek
     lean=12,           # voorover hangen
     body_k=0.85,       # lijf kleiner t.o.v. de kop (Pokémon)
-    head_pitch=9,      # kop iets voorover: bovenrand daalt naar het haakje (close-up)
-    xh=0.9, yh=-2.4,   # scharnier = mondhoek, recht onder het oog (zijfoto)
-    tip=-6.6,          # haakje / kaakpunt vóór (bovenrand ±6 r_e lang, zijfoto)
-    half=52,           # halve tophoek van de snavel van boven gezien
-    jaw_extra=0.0,     # onderkaak langer dan de bovensnavel
-    half_jaw=63,       # spitsere kaakpunt (close-up)
+    head_pitch=6,      # kop iets voorover: bovenrand daalt naar het haakje (close-up)
+    xh=1.2, yh=-2.3,   # scharnier = mondhoek, op de breedste plek van de kop (de muil is zo breed als de kop)
+    tip=-4.1,          # haakje vóór
+    half=62,           # bovenrand van boven gezien: brede boog naar het haakje
+    jaw_tip=-4.8,      # punt van de onderkaak (langer dan de bovensnavel: grote bek)
+    half_jaw=66,       # kaakpunt van boven gezien
 )
 
 
-def lens(tip, corner, alpha, yc, ry, y_ref, k=0.0):
+def lens(tip, corner, alpha, yc, ry, y_ref, k=0.0, sag=None):
     """Twee grote, bijna verticale ellipsoïden waarvan de doorsnede (bovenaanzicht) een spitse boog is:
     punt bij tip (x), door de mondhoeken (corner = (x, z)), halve tophoek alpha. Op hoogte y_ref klopt de boog;
     hoger wordt hij breder (raakt de koepel niet), lager smaller. k = alles k naar binnen (holte)."""
@@ -227,6 +228,8 @@ def lens(tip, corner, alpha, yc, ry, y_ref, k=0.0):
     v = c - tp
     Rr = (v @ v) / (2 * (v @ n))
     ctr = tp + Rr * n
+    if sag is not None:            # yc = y_ref; ry zo dat de boog sag[1] naar binnen loopt op sag[0] onder y_ref (bolle kom)
+        yc, ry = y_ref, sag[0] * math.sqrt(Rr / (2 * sag[1]))
     R0 = Rr / math.sqrt(1 - ((y_ref - yc) / ry) ** 2)
     return [E((ctr[0], yc, ctr[1] * s), (R0 - k, ry - k, R0 - k)) for s in (1, -1)]
 
@@ -251,120 +254,101 @@ def potoo(**kw):
     gy = lambda x: yh + (xh - x) * tg
     above = H((-tg, -1, 0), -yh - tg * xh)
     below = H((tg, 1, 0), yh + tg * xh)
-    # --- kop: brede ronde koepel (kruin breed, iets plat) + 'gezicht' dat breed en plat naar het haakje loopt
-    Ed = E((1.4, -0.4, 0), (4.9, 3.75, 5.15))
-    Ec = E((1.3, 1.3, 0), (3.9, 2.3, 4.8))
-    Ef = E((-0.9, -1.4, 0), (5.6, 3.15, 4.2))
-    L = lambda k=0.0: lens(tip, (xh, 4.25), p['half'], 2.5, 9.0, yh, k)
-    rimw = 0.30
+    # --- kop: één ronde koepel; hoogste punt boven/achter het oog, voorhoofd in één bolle bocht naar het haakje.
+    #     De koepel is het breedst vlak boven de gaplijn: de mondhoeken liggen op de omtrek van de kop.
+    Ed = E((1.2, -1.7, 0), (5.0, 5.0, 4.9))
+    zc = 4.9 * math.sqrt(1 - ((yh + 1.7) / 5.0) ** 2) - 0.08            # breedte van de kop op de gaplijn
+    L = lambda k=0.0: lens(tip, (xh, zc), p['half'], 0.0, 60.0, yh, k)  # (vrijwel) verticaal: geen klep/overhang
+    rimw = 0.22
 
     def paint_upper(T, P):
         g = np.array(['fur'] * len(T), object)
         h = P[:, 1] - gy(P[:, 0])
-        f = np.clip((xh - P[:, 0]) / (xh - tip), 0, 1)
-        g[(h < rimw + 0.75 * f ** 1.6) & (P[:, 0] < xh + 0.2)] = 'rim'     # bovensnavel: hoornrand, breder naar het haakje
+        g[(h < rimw) & (P[:, 0] < xh + 0.3)] = 'rim'                    # één dunne lichte rand
+        pal = T == 1
+        for c in L(0.4):
+            pal &= ((((P - c[1]) @ c[3]) / c[2]) ** 2).sum(1) < 1
+        g[(T == 1) & ~pal] = 'rim'
+        g[pal] = 'palate'
+        kv = np.array(streaks('fur', [((2.8, 1.8), (5.0, -0.6), 0.5, 0), ((1.0, 2.4), (2.6, 2.0), 0.35, 0)])(T, P), object)
+        g[(kv == 'bark') & (g == 'fur')] = 'bark'
         return list(g)
-    Ec = E((1.5, 0.9, 0), (4.6, 2.45, 5.2))                  # brede kruin: kop wordt van voren iets 'vierkanter' (close-up)
-    for Eb in (Ed, Ef, Ec):
-        S.append(Solid([Eb, above] + L(), 'fur', paint=paint_upper))
+    S.append(Solid([Ed, above] + L(), 'fur', paint=paint_upper))
 
     def surf(o, d):
-        """Punt op de kop (koepel ∪ gezicht) vanuit o in richting d, met de normaal."""
-        best = None
-        for Eb in (Ed, Ef, Ec):
-            u0, ub = (o - Eb[1]) / Eb[2], d / Eb[2]
-            A, B, C = ub @ ub, 2 * u0 @ ub, u0 @ u0 - 1
-            if B * B - 4 * A * C < 0:
-                continue
-            t = (-B + math.sqrt(B * B - 4 * A * C)) / (2 * A)
-            if best is None or t > best[0]:
-                q = o + d * t
-                best = (t, q, (q - Eb[1]) / Eb[2] ** 2)
-        return best[1], best[2] / np.linalg.norm(best[2])
-    # --- ogen: enorm, bol, pikzwart, voor-opzij, hoog op de koepel
+        u0, ub = (o - Ed[1]) / Ed[2], d / Ed[2]
+        A, B, C = ub @ ub, 2 * u0 @ ub, u0 @ u0 - 1
+        t = (-B + math.sqrt(max(0.0, B * B - 4 * A * C))) / (2 * A)
+        q = o + d * t
+        n = (q - Ed[1]) / Ed[2] ** 2
+        return q, n / np.linalg.norm(n)
+    # --- ogen: enorm, bol, pikzwart; vlak boven de bovenrand (foto's), ongeveer halverwege de koplengte
     eyes = []
+    er = p['eye_r']
     for sz in (1, -1):
-        d = np.array((-0.76, 0.10, 0.64 * sz)); d /= np.linalg.norm(d)
-        q, _ = surf(np.array((0.9, p['eye_y'], 0)), d)
-        e = q + d * 0.05 * p['eye_r']
+        ye = gy(p['eye_x']) + (1 + p['eye_gap']) * er
+        q, nn = surf(np.array((p['eye_x'], ye, 0)), np.array((0, 0, sz * 1.0)))
+        e = q - nn * 0.42 * er
         eyes.append(e)
-        S.append(Solid([E(e, p['eye_r'])], 'eye'))
+        S.append(Solid([E(e, er)], 'eye'))
 
-    # --- veertjes tussen de ogen (close-up): wenkbrauwkam boven elk oog + rijen kleine spitse veertjes
-    #     die van tussen de ogen naar het haakje wijzen en met de punt iets loskomen
-    o = np.array((1.0, -0.6, 0))
-    rows = [(-1.5, (0.0,), 1.0, 30), (-0.9, (-0.5, 0.5), 0.95, 24), (-0.25, (-0.95, 0.0, 0.95), 0.95, 16), (0.45, (-1.25, 1.25), 0.9, 10)]
-    for el, zs, a, lift in rows:                       # el = hoogte van de rij (graden-achtig), zs = zijwaartse plek
+    # --- veertjes tussen de ogen (close-up): rijen kleine spitse veertjes die van tussen de ogen naar het haakje wijzen
+    o = np.array((1.2, -1.0, 0))
+    rows = [(0.55, (0.0,), 0.95, 26), (0.85, (-0.55, 0.55), 0.95, 20), (1.15, (-1.05, 0.0, 1.05), 0.9, 14), (1.45, (-1.45, 1.45), 0.85, 10)]
+    for el, zs, a, lift in rows:
         for zz in zs:
-            d = np.array((-1.0, 0.36 + 0.33 * el + 0.25, zz * 0.30)); d /= np.linalg.norm(d)
+            d = np.array((-1.0, el * 0.55, zz * 0.32)); d /= np.linalg.norm(d)
             q, nn = surf(o, d)
-            if q[1] - gy(q[0]) < 2.1:
+            if q[1] - gy(q[0]) < 1.1:
                 continue
             down = np.array((-0.55, -1.0, -0.22 * zz)); down -= nn * (down @ nn); down /= np.linalg.norm(down)
-            ax = down * math.cos(math.radians(lift)) + nn * math.sin(math.radians(lift))   # punt komt iets los
-            S.append(Solid(leaf(q + ax * a * 0.5 + nn * 0.04, ax, np.cross(nn, ax), a * 1.15, 0.2, 0.2), 'brow'))
+            ax = down * math.cos(math.radians(lift)) + nn * math.sin(math.radians(lift))
+            S.append(Solid(leaf(q + ax * a * 0.5 + nn * 0.04, ax, np.cross(nn, ax), a * 1.1, 0.2, 0.2), 'brow'))
     # haakje: klein, donker, krult omlaag over de punt
-    hk = [(tip + 0.35, gy(tip) + 0.55, 0.42), (tip - 0.05, gy(tip) + 0.05, 0.38), (tip - 0.1, gy(tip) - 0.45, 0.30), (tip + 0.15, gy(tip) - 0.85, 0.18)]
+    hk = [(tip + 0.45, gy(tip) + 0.55, 0.40), (tip - 0.05, gy(tip) + 0.05, 0.36), (tip - 0.1, gy(tip) - 0.45, 0.28), (tip + 0.15, gy(tip) - 0.85, 0.17)]
     for (x0, y0, r0), (x1, y1, r1) in zip(hk, hk[1:]):
         for t in np.linspace(0, 1, 5):
             S.append(Solid([E((x0 + (x1 - x0) * t, y0 + (y1 - y0) * t, 0), (r0 + (r1 - r0) * t) * np.array((1, 1, 0.85)))], 'hook'))
 
-    # --- onderkaak: holle schaal (gezicht onder de gaplijn, vóór het scharnier), opengeklapt om het scharnier
-    # de onderkaak is iets langer dan de bovensnavel (leidraad: de kaak hangt ver omlaag; Jordi: overdreven grote bek)
-    tj = tip - p['jaw_extra']
-    Ej = E((Ef[1][0] - p['jaw_extra'] / 2 - 0.8, Ef[1][1], 0), Ef[2] + np.array((p['jaw_extra'] / 2 + 0.8, 0, 0)))   # lang: de lens maakt de punt
-    Lj = lambda k=0.0: lens(tj, (xh, 4.25), p['half_jaw'], 2.5, 9.0, yh, k)
-    inner = E(Ej[1] + np.array((-0.6, 0.45, 0)), Ej[2] - np.array((0.0, 0.55, 0.55)))
+    # --- onderkaak: holle schaal, op de gaplijn even breed als de kop, opengeklapt om de mondhoeken
+    tj = p['jaw_tip']
+    Ej = E((0.2, yh, 0), (6.4, 1.7, zc / math.sqrt(1 - ((xh - 0.2) / 6.4) ** 2)))
+    Lj = lambda k=0.0: lens(tj, (xh, zc), p['half_jaw'], 0.0, 60.0, yh, k, sag=(1.7, 1.2))
+    inner = E(Ej[1] + np.array((-0.4, 0.3, 0)), Ej[2] - np.array((0.0, 0.35, 0.35)))
 
     def paint_jaw(T, P):
         g = np.array(['fur'] * len(T), object)
-        h = gy(P[:, 0]) - P[:, 1]
-        f = np.clip((xh - P[:, 0]) / (xh - tj), 0, 1)
-        g[h < rimw + 0.35 * f] = 'rim'
-        g[(P[:, 0] < tj + 1.6) & (T != 1)] = 'tip'
         g[T == 1] = 'rim'
-        g[(P[:, 0] < tj + 0.9) & (T < 100)] = 'tip'                      # donkere kaakpunt (close-up)
+        g[T == 2] = 'mouth'                                   # dunne lichte kaakrand (snijvlak van de schaal)
+        g[(P[:, 0] < tj + 0.8) & (T < 100)] = 'tip'                      # donker alleen bij de punt (close-up)
         g[T >= 100] = 'mouth'
-        tt = (P[:, 0] - (xh - 4.6)) / 2.6                                 # 0 = naar de punt, 1 = naar de keel
-        v = (T >= 100) & (tt > 0) & (tt < 1) & (np.abs(P[:, 2]) < 0.55 * np.clip(tt, 0, 1) ** 1.3)   # donkere V-keel (close-up)
+        tt = (P[:, 0] - (xh - 4.4)) / 3.4                                 # 0 = naar de punt, 1 = naar de keel
+        v = (T >= 100) & (tt > 0.45) & (tt < 1.05) & (np.abs(P[:, 2]) < 0.55 * np.clip((tt - 0.45) / 0.55, 0, 1) ** 1.2)   # donkere V-keel
         g[v] = 'throat'
         return list(g)
-    jaw = Solid([Ej, below, H((1, 0, 0), xh)] + Lj(), 'fur', cavs=[[inner] + Lj(0.5)], paint=paint_jaw)
+    jaw = Solid([Ej, below, H((1, 0, 0), xh)] + Lj(), 'fur', cavs=[[inner] + Lj(0.4)], paint=paint_jaw)
     jaw.moved(rot_z(math.radians(p['open_deg'])), (xh, yh, 0))
     S.append(jaw)
 
-    # --- keel: onder de gaplijn achter het scharnier; voorvlak = achterwand van de muil met donkere keel
-    def paint_throat(T, P):
-        g = np.array(['fur'] * len(T), object)
-        f = T == 2
-        g[f] = 'mouth'
-        g[f] = 'palate'
-        g[f & ((P[:, 2] / 0.75) ** 2 + ((P[:, 1] - (yh - 1.6)) / 1.35) ** 2 < 1)] = 'throat'
-        return list(g)
-    inL = Lj(0.5)
+    # --- keel/wangen: onder de gaplijn achter het scharnier; voorvlak = achterwand van de muil (alleen binnen de rand)
+    gul = E((xh + 0.6, yh - 1.6, 0), (2.4, 2.8, zc - 0.55))             # keelholte achter het scharnier
 
     def paint_cheek(T, P):
         g = np.array(['fur'] * len(T), object)
-        f = T == 2
-        ins = np.ones(len(T), bool)
-        for c in [inner] + inL:
-            ins &= ((((P - c[1]) @ c[3]) / c[2]) ** 2).sum(1) < 1
-        gap = ((P[:, 2] / 3.2) ** 2 + ((P[:, 1] - (yh - 1.2)) / 1.35) ** 2 < 1) & (P[:, 1] < yh - 0.1)
-        g[f & (ins | gap)] = 'mouth'
-        
+        g[T >= 100] = 'mouth'                                            # wand van de keelholte
         return list(g)
-    for Eb in (Ed, Ef, E((2.4, -4.6, 0), (3.4, 3.2, 4.4))):
-        S.append(Solid([Eb, below, H((-1, 0, 0), -xh)], 'fur', paint=paint_cheek))
+    for Eb in (Ed, E((2.6, -4.3, 0), (3.6, 3.0, 4.7))):
+        S.append(Solid([Eb, below, H((-1, 0, 0), -xh)], 'fur', cavs=[[gul, below]], paint=paint_cheek))
 
     for s_ in S:
         s_.moved(rot_z(math.radians(p['head_pitch'])), (xh, yh, 0))
     # --- lijf: rechtop, taps; schouders/vleugels hoog naast de kop, geen hals ----------------------------
     body = []
-    sp_body = streaks('fur', [((2.4, -11.0), (3.4, -15.5), 0.55, 1)])
+    sp_body = streaks('fur', [((3.6, -11.5), (4.4, -15.5), 0.35, 1)])
     sp_wing = streaks('wing', [((4.6, -5.6), (6.2, -11.8), 0.6, 1), ((7.6, -8.8), (8.2, -12.6), 0.42, 1)])
     sp_far = streaks('far', [((5.2, -6.5), (6.4, -11.0), 0.5, -1)])
     sp_pen = streaks('wing', [((6.0, -14.0), (6.9, -18.5), 0.4, 1)])
-    body.append(Solid([E((5.0, -10.0, 0), (4.6, 8.6, 6.0))], 'fur', paint=sp_body))         # peervormig lijf: breed onder de kop
+    body.append(Solid([E((6.2, -10.5, 0), (4.6, 8.4, 6.0))], 'fur', paint=sp_body))         # peervormig lijf: breed onder de kop
     body.append(Solid([E((5.4, -16.0, 0), (3.2, 3.8, 4.2))], 'fur'))         # onderlijf, op de (onzichtbare) tak
     for sz in (1, -1):
         g = 'wing' if sz > 0 else 'far'
@@ -456,12 +440,77 @@ def foto(naam, box=None, maxwh=(300, 300)):
     return im
 
 
-def vel(naam='vel_ronde1.png', titel='ronde 1', **kw):
+# ---------------------------------------------------------------- controle: met de hand overgetrokken foto-omtrek
+# Pixelcoördinaten in de originele foto's (overgetrokken op een raster): oogmidden, oogstraal, omtrek kop+muil, mondrand.
+TRACES = {
+    'leidraad': dict(
+        file='jordi_great_potoo_bek_open_duo.webp', eye=(380, 222), r=29,
+        outline=[(288, 225), (295, 165), (320, 120), (360, 107), (400, 110), (440, 124), (470, 145), (495, 175),
+                 (510, 205), (520, 240), (515, 275), (500, 312), (470, 370), (440, 412), (405, 450), (385, 438),
+                 (360, 400), (335, 355), (318, 310), (300, 265), (288, 225)],
+        rim=[(322, 290), (360, 279), (400, 272), (440, 263), (480, 255), (512, 248), (515, 275), (500, 312),
+             (470, 370), (440, 412), (405, 448), (370, 415), (345, 375), (330, 335), (322, 290)]),
+    'closeup': dict(
+        file='jordi_great_potoo_kop_closeup_bek_open.webp', eye=(500, 660), r=78,
+        outline=[(125, 620), (140, 480), (200, 380), (300, 300), (400, 268), (500, 262), (600, 268), (700, 300),
+                 (780, 350), (835, 430), (850, 530), (850, 650), (840, 760), (800, 820), (785, 880), (760, 950),
+                 (730, 1020), (690, 1080), (640, 1122), (590, 1100), (520, 1050), (450, 980), (390, 900),
+                 (350, 820), (300, 760), (200, 700), (125, 620)],
+        rim=[(335, 750), (400, 770), (500, 790), (600, 800), (700, 800), (790, 800), (780, 870), (760, 950),
+             (730, 1020), (690, 1080), (640, 1120), (590, 1100), (520, 1050), (450, 980), (390, 900), (350, 820),
+             (335, 750)]),
+}
+
+
+def project(m, yaw, pitch, focus, out, pt):
+    Rc = rot_x(math.radians(pitch)) @ rot_y(math.radians(yaw))
+    c = Rc @ pt
+    sc = out / (2 * focus[2])
+    return ((c[0] - focus[0]) * sc + out / 2, -(c[1] - focus[1]) * sc + out / 2), sc
+
+
+def near_eye(m, yaw):
+    es = [s for s in m if s.group == 'eye']
+    Rc = rot_y(math.radians(yaw))
+    pts = [s.Ro @ s.base[0][1] + s.t for s in es]
+    return max(pts, key=lambda p: (Rc @ p)[2])
+
+
+def overlay_view(m, key, yaw, pitch, out=330, half=9.0):
+    """Render op de hoek van de foto met de overgetrokken foto-omtrek eroverheen (uitgelijnd op het oog,
+    geschaald op de oogstraal: foto-oogstraal = 1 r_e van het poppetje)."""
+    fo = head_focus(m, yaw, pitch, half)
+    im = view(m, yaw, pitch, out=out, focus=fo).convert('RGB')
+    tr = TRACES[key]
+    (ex, ey), sc = project(m, yaw, pitch, fo, out, near_eye(m, yaw))
+    k = sc / tr['r']
+    P = lambda pts: [(ex + (x - tr['eye'][0]) * k, ey + (y - tr['eye'][1]) * k) for x, y in pts]
+    d = ImageDraw.Draw(im)
+    d.line(P(tr['outline']), fill=(230, 40, 40), width=2)
+    d.line(P(tr['rim']), fill=(255, 150, 0), width=2)
+    r = sc
+    d.ellipse((ex - r, ey - r, ex + r, ey + r), outline=(230, 40, 40), width=2)
+    return im
+
+
+def traced_photo(key, box, size):
+    tr = TRACES[key]
+    im = Image.open(os.path.join(REF, tr['file'])).convert('RGB').crop(box)
+    k = size[0] / im.width
+    im = im.resize(size)
+    d = ImageDraw.Draw(im)
+    P = lambda pts: [((x - box[0]) * k, (y - box[1]) * k) for x, y in pts]
+    d.line(P(tr['outline']), fill=(230, 40, 40), width=2)
+    d.line(P(tr['rim']), fill=(255, 150, 0), width=2)
+    return im
+
+
+def vel(naam='vel_ronde2.png', titel='ronde 2', **kw):
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 17)
     m = potoo(**kw)
     W = 1340
-    im = Image.new('RGB', (W, 1420), 'white')
+    im = Image.new('RGB', (W, 1450), 'white')
     d = ImageDraw.Draw(im)
     lab = lambda x, y, t: d.text((x, y), t, font=F, fill=(60, 60, 60))
     d.text((12, 8), f'Great potoo (Ghost/Normal): 3D-poppetje {titel}: spritehoek, bek open, licht voorover op een onzichtbare tak', font=FB, fill=(30, 30, 30))
@@ -474,16 +523,15 @@ def vel(naam='vel_ronde1.png', titel='ronde 1', **kw):
     lab(1130, 60, 'Lees de rij hieronder:')
     lab(1130, 80, 'kop op dezelfde hoek en')
     lab(1130, 100, 'grootte als de foto.')
-    # rij 2: kop naast close-up en leidraad op dezelfde hoek en grootte
+    # rij 2: foto met overgetrokken omtrek (rood) en mondrand (oranje), en dezelfde lijnen over het poppetje
     y2 = 460
-    cu = Image.open(os.path.join(REF, 'jordi_great_potoo_kop_closeup_bek_open.webp')).convert('RGB').crop((80, 200, 900, 1200)).resize((300, 366))
-    im.paste(cu, (10, y2)); lab(14, y2 + 370, 'close-up (Jordi)')
-    im.paste(view(m, 140, 4, out=330, focus=head_focus(m, 140, 4, 9)).crop((15, 0, 315, 330)), (320, y2 + 18)); lab(324, y2 + 370, 'poppetje, hoek close-up (140°)')
-    ld2 = Image.open(os.path.join(REF, 'jordi_great_potoo_bek_open_duo.webp')).convert('RGB').crop((150, 90, 560, 500)).resize((330, 330))
-    im.paste(ld2, (660, y2 + 18)); lab(664, y2 + 370, 'leidraad (duo links)')
-    im.paste(view(m, 120, -4, out=330, focus=head_focus(m, 120, -4, 9)), (1000, y2 + 18)); lab(1004, y2 + 370, 'poppetje, hoek leidraad (120°, iets van onder)')
+    im.paste(traced_photo('closeup', (60, 220, 900, 1200), (300, 350)), (10, y2)); lab(14, y2 + 354, 'close-up, overgetrokken')
+    im.paste(overlay_view(m, 'closeup', 140, 4, out=330, half=9.5), (320, y2 + 10)); lab(324, y2 + 354, 'poppetje 140°, lijnen van de close-up')
+    im.paste(traced_photo('leidraad', (260, 80, 580, 480), (280, 350)), (670, y2)); lab(674, y2 + 354, 'leidraad, overgetrokken')
+    im.paste(overlay_view(potoo(**dict(kw, head_pitch=-5)), 'leidraad', 140, -4, out=330, half=9.5), (960, y2 + 10)); lab(964, y2 + 354, 'poppetje 140°, iets van onder, kop 5° omhoog (foto)')
+    lab(14, y2 + 372, 'rood = omtrek kop+muil, oranje = mondrand; uitgelijnd op het oog, geschaald op de oogstraal (foto-oog = 1 r_e; het poppetjesoog is 1,15x)')
     # rij 3 en 4: rondom (niet verplicht, ter controle)
-    y3 = 860
+    y3 = 860 + 20
     hoeken = [(0, 'zij (0°)'), (90, 'voor (90°)'), (-135, 'schuin achter'), (-90, 'achter'), (132, '3/4 rechts')]
     for i, (yaw, t) in enumerate(hoeken):
         x = 10 + 266 * i

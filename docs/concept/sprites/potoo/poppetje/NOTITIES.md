@@ -34,3 +34,18 @@ Oog 1,25× en hoger op de koepel; bek langer en verder open; lijf 0,85×; kop li
 - Van voren leest de kop wat als schedel (wit + zwarte ronde ogen + V-veertjes); in de spritehoek minder.
 - Veertjes tussen de ogen zijn subtiel; op 64 px vallen ze weg.
 - Muil is één vlak paars met keel; diepte komt alleen uit de rand.
+
+# Ronde 2 (vel_ronde2.png)
+Reparaties op de punten van de coördinator:
+1. **Geen helm/klep meer**: de kop is één koepel (`Ed`), het breedst vlak boven de gaplijn; de bovenkop wordt door dezelfde (nu verticale) lens gesneden als de kaak, dus het gezicht boven de rand is nergens breder dan de muil. De onderomtrek van de kop loopt in de mondhoeken over.
+2. **Muil zo breed als de kop**: mondhoeken op de kopomtrek (`zc` = kopbreedte op de gaplijn); kaak op het scharnier even breed.
+3. **Rand dun**: bovenrand één band van 0,22 + lijn; kaakrand = alleen het snijvlak van de schaal (0,35 dik). Donker alleen de kaakpunt. Kaakschaal ondieper (wig van opzij, zijfoto).
+4. **Oog vlak boven de rand**: ruimte ½ oogstraal, x halverwege de koplengte (zijfoto); oog 1,15 r_e.
+5. **Kopvorm**: ronde koepel, hoogste punt boven/achter het oog, voorhoofd in één bolle bocht naar het haakje (geen plat 'gezicht' meer).
+6. **Kop : muil**: open muil ±60% van de hoogte kop+muil op de leidraadhoek.
+Verder: keelholte achter het scharnier (`gul`) zodat er geen wit vlak in de muil zichtbaar is en geen paars buiten de rand; borst naar achteren (stak door de muil heen); schorsveeg op de borst smaller.
+
+**Controle** (rij 2 van het vel): omtrek kop+muil (rood) en mondrand (oranje) met de hand overgetrokken op de foto's (`TRACES` in het script), uitgelijnd op het oog en geschaald op de oogstraal (foto-oog = 1 r_e), over de render op dezelfde hoek.
+- Close-up (140°, 4° van boven): bovenrand, nabije kaakrand en kaakpunt vallen op de oranje lijn (afwijking < ½ oogstraal); de kruin van de foto ligt ±1 oogstraal hoger en verder naar achteren.
+- Leidraad (140°, 4° van onder, kop 5° omhoog zoals op de foto): kruin en voorkant kloppen; de foto-muil hangt ±1 oogstraal verder omlaag en naar links (de foto is van onderaf, de kaak staat verder open). Bij meer openen past de close-up niet meer; nu een middenweg (66°).
+- Hoek gevonden door de overlap van mondvorm en oranje lijn te meten over een reeks hoeken/kaakmaten.

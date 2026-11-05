@@ -333,8 +333,8 @@ def potoo(**kw):
         S.append(Solid([E(e, er)], 'eye'))
 
     # --- veertjes tussen de ogen: donkerdere plukjes boven het haakje die de omtrek breken (close-up)
-    for zz, yo, a, lift in ((0.0, 2.0, 0.95, 12), (0.6, 2.25, 0.9, 10), (-0.6, 2.25, 0.9, 10), (0.0, 2.9, 0.95, 10),
-                            (1.1, 2.8, 0.85, 8), (-1.1, 2.8, 0.85, 8)):   # ronde 5: platter tegen de bolle kop, boven het haakje
+    for zz, yo, a, lift in ((0.95, 2.0, 0.85, 10), (-0.95, 2.0, 0.85, 10), (1.3, 2.7, 0.85, 8), (-1.3, 2.7, 0.85, 8),
+                            (0.75, 3.1, 0.8, 8), (-0.75, 3.1, 0.8, 8)):   # ronde 5b: naast de snavelrug, niet eroverheen
         q, nn = surf2(np.array((2.0, gy(tip) + yo, zz)), np.array((-1.0, 0, 0)))
         fl = np.array((-0.6, -1.0, 0.25 * zz)); fl -= nn * (fl @ nn); fl /= np.linalg.norm(fl)
         ax = fl * math.cos(math.radians(lift)) + nn * math.sin(math.radians(lift))
@@ -350,15 +350,30 @@ def potoo(**kw):
           lift=14, sink=0.32, keep=lambda q: q[0] > -1.2 and q[1] > gy(q[0]) + 1.0)
     # --- haakje: duidelijk, donker, omgekruld (±1,5 r_e), het voorste punt van het profiel, hangt vóór de muil
     g0 = gy(tip)
-    # ronde 4c: de bovensnavel steekt pas vóóraan uit het gezicht, wordt smaller en loopt zelf door in het haakje
-    # (één taps toelopende vorm; kleur verloopt van hoorngrijs naar donker, zonder eigen lijn)
-    hk = [(tip + 2.2, g0 + 0.25, 0.62, 'rim'), (tip + 1.3, g0 + 0.35, 0.6, 'hk1'), (tip + 0.5, g0 + 0.38, 0.52, 'hk1'),
-          (tip - 0.1, g0 + 0.2, 0.44, 'hk2'), (tip - 0.4, g0 - 0.2, 0.36, 'hk2'), (tip - 0.35, g0 - 0.65, 0.27, 'hk3'),
-          (tip - 0.1, g0 - 0.95, 0.18, 'hook'), (tip + 0.12, g0 - 1.05, 0.1, 'hook')]
-    for (x0, y0, r0, c0), (x1, y1, r1, c1) in zip(hk, hk[1:]):
+    # ronde 5b: echte bovensnavel: één hoornvorm. De snavelrug (culmen) komt tussen de veertjes, net onder en tussen
+    # de ogen, uit het gezicht, ligt op het voorhoofd, wordt naar voren smaller en krult in één doorlopende lijn omlaag
+    # tot de punt (het haakje is het uiteinde, geen toevoeging). Onderaan sluit hij aan op de snijrand (rim) van de bovenkaak.
+    ridge = []
+    for t in np.linspace(0, 1, 7):                                       # over het voorhoofd: punten óp het gezicht
+        y = g0 + 2.3 - 1.75 * t
+        q, nn = surf2(np.array((2.0, y, 0.0)), np.array((-1.0, 0, 0)))
+        ridge.append((q - nn * (0.32 - 0.12 * t), 0.62 - 0.12 * t))
+    q_end = ridge[-1][0]
+    cx, cy = q_end[0], q_end[1]
+    for ang, rr in ((-10, 0.48), (-35, 0.44), (-60, 0.38), (-85, 0.32), (-110, 0.25), (-135, 0.17), (-155, 0.1)):
+        a_ = math.radians(ang)                                         # krul: boog met straal 0,8 omlaag
+        ridge.append((np.array((cx - 0.15 + 0.8 * math.sin(-a_) * 0.75 - 0.0, cy - 0.8 * (1 - math.cos(a_)), 0.0)), rr))
+    n = len(ridge)
+    cols = ['hk1'] * 4 + ['hk2'] * 4 + ['hk3'] * 3 + ['hook'] * 3
+    for i in range(n - 1):
+        (p0, r0), (p1, r1) = ridge[i], ridge[i + 1]
         for t in np.linspace(0, 1, 6)[:-1]:
-            zr = 0.9 - 0.25 * (1 - (r0 + (r1 - r0) * t) / 0.62)
-            S.append(Solid([E((x0 + (x1 - x0) * t, y0 + (y1 - y0) * t, 0), (r0 + (r1 - r0) * t) * np.array((1.2, 1, zr)))], c0 if t < 0.5 else c1))
+            r = r0 + (r1 - r0) * t
+            S.append(Solid([E(p0 + (p1 - p0) * t, r * np.array((1.0, 1.0, 1.45)))], cols[min(i, len(cols) - 1)]))
+    # snijrand-aansluiting: de onderrand van de bovenkaak loopt via een korte hoornwig in de snavelvoet over
+    for t in np.linspace(0, 1, 6):
+        x = tip + 1.6 - 1.4 * t
+        S.append(Solid([E((x, gy(x) + 0.28, 0), (0.55, 0.32, 0.9 - 0.3 * t))], 'hk1'))
 
     # --- onderkaak: diepe schep met eigen bevederde buitenkant, opengeklapt om de mondhoeken
     tj = p['jaw_tip']
@@ -574,12 +589,16 @@ def traced_photo(key, box, size):
     return im
 
 
-def vel(naam='vel_ronde5.png', titel='ronde 5', **kw):
+def p_tip(kw):
+    return dict(P0, **kw)['tip'] + 1.0
+
+
+def vel(naam='vel_ronde5b.png', titel='ronde 5b', **kw):
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 17)
     m = potoo(**kw)
     W = 1340
-    im = Image.new('RGB', (W, 1480), 'white')
+    im = Image.new('RGB', (W, 1860), 'white')
     d = ImageDraw.Draw(im)
     lab = lambda x, y, t: d.text((x, y), t, font=F, fill=(60, 60, 60))
     d.text((12, 8), f'Great potoo (Ghost/Normal): 3D-poppetje {titel}: spritehoek, bek open, licht voorover op een onzichtbare tak', font=FB, fill=(30, 30, 30))
@@ -592,7 +611,7 @@ def vel(naam='vel_ronde5.png', titel='ronde 5', **kw):
     sm = view(m, SY, SP, out=400).resize((64, 64), Image.LANCZOS)
     im.paste(sm, (1140, 130)); im.paste(sm.resize((96, 96), Image.NEAREST), (1215, 120)); lab(1130, 222, '1x (64 px) en 2x')
     vgl = []
-    for i, rn in enumerate(('3', '4', '4c')):                            # eerdere rondes ter vergelijking
+    for i, rn in enumerate(('4c', '5')):                            # eerdere rondes ter vergelijking
         try:
             r3 = Image.open(os.path.join(HERE, f'vel_ronde{rn}.png')).crop((10, 34, 410, 434)).resize((110, 110), Image.LANCZOS)
             vgl.append((rn, r3))
@@ -612,8 +631,17 @@ def vel(naam='vel_ronde5.png', titel='ronde 5', **kw):
     im.paste(traced_photo('leidraad', (260, 80, 580, 480), (280, 350)), (670, y2)); lab(674, y2 + 354, 'leidraad, overgetrokken')
     im.paste(overlay_view(potoo(**dict(kw, head_pitch=-5)), 'leidraad', 140, -4, out=330, half=9.5), (960, y2 + 10)); lab(964, y2 + 354, 'poppetje 140°, iets van onder, kop 5° omhoog (foto)')
     lab(14, y2 + 372, 'rood = omtrek kop+muil, oranje = mondrand; uitgelijnd op het oog, geschaald op de oogstraal (foto-oog = 1 r_e; het poppetjesoog is 1,15x)')
+    # rij snavel: ingezoomd in de spritehoek en van opzij, naast de close-upfoto (rechts bovenaan de muil)
+    yb = 860
+    cub = Image.open(os.path.join(REF, 'jordi_great_potoo_kop_closeup_bek_open.webp')).convert('RGB').crop((560, 520, 900, 900)).resize((300, 335))
+    im.paste(cub, (10, yb)); lab(14, yb + 338, 'close-up: snavel (foto)')
+    for i, (yaw, pit, t) in enumerate(((48, 4, 'snavel spritehoek'), (0, 8, 'snavel van opzij'), (140, 4, 'snavel hoek close-up'))):
+        Rc = rot_x(math.radians(pit)) @ rot_y(math.radians(yaw))
+        s0 = m[0]
+        c = Rc @ (s0.Ro @ np.array((p_tip(kw), -1.6, 0)) + s0.t)
+        im.paste(view(m, yaw, pit, out=330, focus=(c[0], c[1], 3.6)), (330 + 335 * i, yb)); lab(334 + 335 * i, yb + 338, t)
     # rij 3 en 4: rondom (niet verplicht, ter controle)
-    y3 = 860 + 20
+    y3 = 860 + 380
     hoeken = [(0, 'zij (0°)'), (90, 'voor (90°)'), (-135, 'schuin achter'), (-90, 'achter'), (132, '3/4 rechts')]
     for i, (yaw, t) in enumerate(hoeken):
         x = 10 + 266 * i

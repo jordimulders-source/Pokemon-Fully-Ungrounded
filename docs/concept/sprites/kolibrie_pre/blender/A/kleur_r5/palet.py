@@ -10,13 +10,13 @@ PAL = [
     (186, 176, 224),  # 5 lila licht / buikschaduw
     (228, 224, 246),  # 6 buik lavendelwit
     (255, 255, 255),  # 7 buik hooglicht en glans in het oog
-    (116, 214, 160),  # 8 iris smaragd licht (Latias D)
+    (90, 78, 164),    # 8 vleugel basis (was iris licht)
     (176, 98, 40),    # 9 poot schaduw / verre poot (donker warm)
-    (52, 150, 108),   # A iris smaragd donker (Latias B); oude snavel-donker A is nu 2
-    (102, 90, 172),   # B kap en vleugel basis
+    (62, 54, 130),    # A vleugel schaduw (was iris donker)
+    (102, 90, 172),   # B kap basis
     (250, 212, 72),   # C gele mondhoek, licht teentje
     (226, 150, 40),   # D mondhoek; poot basis
-    (72, 62, 134),    # E kap- en vleugelschaduw, iris
+    (72, 62, 134),    # E kapschaduw, zachte vleugelrand
     (150, 142, 174),  # F snavel boventint
 ]
 CH = '.123456789ABCDEF'

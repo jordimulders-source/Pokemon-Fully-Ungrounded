@@ -119,3 +119,4 @@
 - **Jordi: "doe maar combusken, maar de snavel op de combusken sprite is niet goed, dus, houd daar rekening mee"** → r5: Combusken-oog (smaragd), snavelzone pixel voor pixel r4, vleugel meer contrast.
 - **Jordi: "alhoewel, die kijkt idd wat boos"** → r5 levert Combusken (a) en een vriendelijke versie (b, bovenlid rond/vlak); b als hoofdversie.
 - **Jordi: "houd het starly oog maar" · "dan maar geen kleur"** → r5: oorspronkelijk Starly-oog (r10, zwart met glans, geen iris); Combusken en smaragd vervallen.
+- **Kleur r5:** `blender/A/kleur_r5/` (Starly-oog terug, vleugel eigen donkerder plaat (palet 8/A), snavel 0 px t.o.v. r4, omtrek = r4). Claude: vleugel leest nu; nog zachter/minder contrast dan Taillow. Naar Jordi.

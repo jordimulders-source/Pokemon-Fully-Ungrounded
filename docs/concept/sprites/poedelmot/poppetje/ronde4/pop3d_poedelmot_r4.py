@@ -7,7 +7,11 @@ Hoek 45° (bevroren, Jordi). Kopverhouding uit de posestudie (posestudie.png): k
 Ronde 2 (Jordi: "poten mogen dunner, de voelsprieten mogen groter, zoals op de andere fotos, vleugels ook" + keurder):
 poten iets dunner maar wollig, voorpaar gespreid met knik, lijf lager, pompons in perspectief, middenpaar opzij; sprieten
 en vleugels groter; verre achtervleugel met gladde rand; snuit breed en plat (neusbrug). Rest = ronde 1 (../pop3d_poedelmot.py).
-Draaien vanuit de repo-root: python3 docs/concept/sprites/poedelmot/poppetje/ronde2/pop3d_poedelmot_r2.py"""
+Ronde 4 (basis = ronde 2; wolmassa van lijf, buik en achterlijf ongewijzigd). Uit ronde 3 alleen: dubbele kam aan de
+sprieten en de zichtbare verre achtervleugel (nu kleiner en hoger, in perspectief). Poten volgens Jordi: "2 voorste poten
+zijn zichtbaarder, de andere vier staan dichter op elkaar per twee": voorpaar groot en vooraan, midden- en achterpoot per
+kant als tweetal dicht naast elkaar, kleiner, half onder de wol; dikte zoals ronde 2.
+Draaien vanuit de repo-root: python3 docs/concept/sprites/poedelmot/poppetje/ronde4/pop3d_poedelmot_r4.py"""
 import math, os, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
@@ -24,10 +28,10 @@ KOP_EXTRA = 14                # kop draait meer naar de kijker dan het lijf
 COL = {
     'wol': '#F3EFE7', 'wolver': '#D6CFC2', 'pompon': '#FBF8F2', 'pomver': '#DCD5C8',
     'vleugel': '#ECE6D9', 'achtervl': '#E0D8C8', 'vlver': '#CFC7B7', 'achtver': '#C4BBAA',
-    'spriet': '#7A5234', 'sprietver': '#5E3F28', 'snuit': '#8C603E', 'oog': '#1E1A24', 'glint': '#FFFFFF',
+    'spriet': '#7A5234', 'sprietver': '#5E3F28', 'palp': '#D9C4A8', 'oog': '#1E1A24', 'glint': '#FFFFFF',
 }
 NOSHADE = {'oog', 'glint'}
-LINED = {'oog', 'snuit', 'spriet', 'sprietver', 'vleugel', 'achtervl', 'vlver', 'achtver'}
+LINED = {'oog', 'spriet', 'sprietver', 'vleugel', 'achtervl', 'vlver', 'achtver'}
 
 
 def poot(m, pts, pr, ver, seed):
@@ -61,8 +65,13 @@ def achtervl(t):   # kleiner, rond
     return 3.0 + 15.0 * math.sin(math.pi * t) ** 0.6
 
 
+KIJK = np.array((-math.sin(math.radians(YAW)), 0.0, math.cos(math.radians(YAW))))   # naar de kijker, diercoördinaten
+
+
 def spriet(m, basis, kant, ver):
-    """Kamspriet als oor: gebogen schacht opzij (z), licht omhoog gekruld, met tanden boven en onder (bipectinaat)."""
+    """Kamspriet als oor: gebogen schacht opzij (z), licht omhoog gekruld. Ronde 3: dubbele kam (bipectinaat): per punt
+    twee tanden, naar beide kanten van de schacht, in het vlak loodrecht op de kijkrichting en iets naar de punt
+    gericht, zoals een veertje (foto_sprieten_plus_vilt.png). Langste tanden in het midden."""
     g = 'sprietver' if ver else 'spriet'
     pts = []
     for i in range(13):
@@ -72,17 +81,42 @@ def spriet(m, basis, kant, ver):
     for i in range(1, 12):
         t = i / 12
         p = pts[i]
-        lang = 11.0 * math.sin(math.pi * min(1.0, 0.25 + 0.85 * t)) ** 0.7 * (1.15 - 0.8 * t) + 0.8
+        lang = 10.0 * math.sin(math.pi * min(1.0, 0.15 + 0.95 * t)) ** 0.8 + 1.0
         rich = pts[min(i + 1, 12)] - pts[i]; rich /= np.linalg.norm(rich)
+        zij = np.cross(rich, KIJK); zij /= np.linalg.norm(zij)
         for s in (1, -1):
-            d = np.array((0.15, s * 1.0, 0.0)) + rich * 0.45
+            d = zij * s + rich * 0.55
             d /= np.linalg.norm(d)
             c = p + d * lang * 0.55
-            u = d; w = np.array((1.0, 0, 0)); w -= (w @ u) * u; w /= np.linalg.norm(w)
-            m.ell(c, (lang * 0.55, 0.9, 0.9), g, np.column_stack([u, np.cross(w, u), w]))
+            u = d; w = KIJK - (KIJK @ u) * u; w /= np.linalg.norm(w)
+            m.ell(c, (lang * 0.55, 0.85, 0.85), g, np.column_stack([u, np.cross(w, u), w]))
 
 
-def poedelmot(kop_r=19.0, kop_extra=KOP_EXTRA):
+def op45(sx, y, d, r):
+    """Punt zoals het op 45° in beeld komt (sx links/rechts, d diepte, + = naar de kijker) -> diercoördinaten."""
+    k = math.sqrt(0.5)
+    return (k * (sx - d), y, k * (sx + d), r)
+
+
+# Verre achtervleugel (uit ronde 3, maar kleiner en hoger): richting, middelpuntafstand, stralen
+ACHTERVL_VER = ((-0.3, 0.3, -0.95), 22.0, (22.0, 14.0, 1.4))
+
+# Poten (Jordi): voorpaar groot en zichtbaar, hangt van de borst naar voren en omlaag, grootste pompons; midden- en
+# achterpoot per kant dicht naast elkaar als tweetal, kleiner, achter/naast het voorpaar, half onder de wol; verre
+# tweetal hoger en kleiner. Dikte zoals ronde 2. Lucht alleen tussen het voorpaar en de tweetallen.
+# (heup, knie, voet) via op45(sx, y, diepte, straal); pompon-straal; ver.
+POTEN = [
+    ([op45(-10, 26, 16, 5.4), op45(-22, 18, 30, 5.0), op45(-16, 2, 36, 4.6)], 10.5, False),   # voor nabij
+    ([op45(-18, 27, 4, 5.0), op45(-32, 19, 10, 4.6), op45(-36, 6, 10, 4.2)], 8.6, True),      # voor ver
+    ([op45(10, 22, 20, 4.8), op45(16, 15, 28, 4.4), op45(16, 4, 30, 4.0)], 7.6, False),       # midden nabij (tweetal)
+    ([op45(16, 21, 14, 4.6), op45(24, 14, 22, 4.2), op45(25, 4, 23, 3.8)], 7.0, False),       # achter nabij (tweetal)
+    ([op45(-14, 25, -12, 4.4), op45(-22, 17, -10, 4.0), op45(-25, 9, -10, 3.6)], 6.2, True),  # midden ver (tweetal)
+    ([op45(-8, 25, -18, 4.2), op45(-16, 17, -16, 3.8), op45(-18, 10, -17, 3.4)], 5.6, True),  # achter ver (tweetal)
+]
+POOTKLEUR = ['#E0302A', '#F08A1C', '#2A7FE0', '#A040E0', '#2EA84A', '#E040A0']
+
+
+def poedelmot(kop_r=19.0, kop_extra=KOP_EXTRA, pootkleur=False):
     m = P.Model()
     # vleugels eerst (achter het lijf): per kant voor- en achtervleugel die overlappen tot één paar, samen in een V.
     # Symmetrisch; de V staat ver genoeg open dat de verre punt in 45° naast de kop eindigt, niet erboven.
@@ -95,7 +129,13 @@ def poedelmot(kop_r=19.0, kop_extra=KOP_EXTRA):
         # achtervleugel: één gladde ronde vorm (geen keten: de rand blijft glad, leest niet als wolklont)
         ua = ua / np.linalg.norm(ua); wa = np.array((1.0, 0.3, 0.0)); wa -= (wa @ ua) * ua; wa /= np.linalg.norm(wa)
         Ra = np.column_stack([ua, np.cross(wa, ua), wa])
-        m.ell(w + np.array((3.0, -6.0, 0.0)) + ua * 28.0, (29.0, 19.0, 1.4), 'achtver' if ver else 'achtervl', Ra)
+        if not ver:
+            m.ell(w + np.array((3.0, -6.0, 0.0)) + ua * 28.0, (29.0, 19.0, 1.4), 'achtervl', Ra)
+        else:   # ronde 4: verre achtervleugel opzij gedraaid (zichtbaar links naast de kop), kleiner en hoger
+            ua = np.array(ACHTERVL_VER[0]); ua /= np.linalg.norm(ua)
+            wa = np.array((1.0, 0.3, 0.0)); wa -= (wa @ ua) * ua; wa /= np.linalg.norm(wa)
+            Ra = np.column_stack([ua, np.cross(wa, ua), wa])
+            m.ell(w + np.array((0.0, 2.0, 0.0)) + ua * ACHTERVL_VER[1], ACHTERVL_VER[2], 'achtver', Ra)
     # lijf: dik en wollig, rechtop zittend (achterlijf laag en breed op de grond, borst erboven)
     for c, r, s in (((10, 14, 0), (22, 15, 21), 1), ((-3, 25, 0), (18, 13, 19), 2), ((-10, 12, 0), (14, 10, 16), 3)):
         m.ell(c, r, 'wol')
@@ -106,16 +146,11 @@ def poedelmot(kop_r=19.0, kop_extra=KOP_EXTRA):
     # zes poten aan de borst; voorpaar grootst, hangt naar voren en omlaag; middenpaar opzij; achterpaar onder het lijf
     # ronde 2: iets dunner (nog wollig), voorpaar gespreid met knie naar voren, lijf laag ertussen; perspectief in de
     # pompons: nabij (+z) lager en groter, ver (-z) hoger, kleiner, half achter het lijf
-    POTEN = [  # (punten x,y,z,r), pompon-straal
-        ([(-15, 24, 9, 5.4), (-32, 20, 16, 5.0), (-29, 7, 21, 4.6)], 10.5),      # voor nabij
-        ([(-15, 24, -9, 5.0), (-29, 19, -13, 4.6), (-27, 10, -16, 4.2)], 8.4),   # voor ver: iets hoger, kleiner
-        ([(-4, 22, 15, 5.0), (-9, 19, 28, 4.6), (-12, 7, 32, 4.2)], 9.2),        # midden nabij: opzij
-        ([(-4, 22, -15, 4.6), (-9, 21, -26, 4.2), (-12, 12, -29, 3.8)], 7.4),    # midden ver
-        ([(10, 18, 14, 4.6), (17, 12, 24, 4.2), (16, 6, 26, 4.0)], 8.0),         # achter nabij
-        ([(10, 18, -14, 4.2), (17, 14, -23, 3.8), (16, 10, -24, 3.6)], 6.4),     # achter ver
-    ]
-    for i, (pts, pr) in enumerate(POTEN):
-        poot(m, pts, pr, pts[0][2] < 0, 20 + 10 * i)
+    for i, (pts, pr, ver) in enumerate(POTEN):
+        n0 = len(m.parts)
+        poot(m, pts, pr, ver, 20 + 10 * i)
+        if pootkleur:   # controlevel: elke poot een eigen kleur
+            m.parts[n0:] = [(c, r, R0, f'p{i}') for c, r, R0, g in m.parts[n0:]]
     # kop: groot, rond, wollig, op de kraag; draait extra naar de kijker
     h0 = len(m.parts)
     cr = np.array((-9.0, 53.0, 0.0))
@@ -128,10 +163,10 @@ def poedelmot(kop_r=19.0, kop_extra=KOP_EXTRA):
         e = cr + d * kop_r * 0.86
         m.ell(e, (7.6, 8.2, 7.6), 'oog')
         m.ell(e + d * 6.0 + np.array((0.5, 3.2, 0.0)), 1.8, 'glint')
-    # bruin snuitvlak tussen en onder de ogen
-    # neusbrug zoals op de foto: smal tussen de ogen, onderaan breed en plat (geen bolletje, geen driehoekje)
-    m.ell(cr + np.array((-kop_r * 0.95, -1.0, 0.0)), (1.6, 6.0, 3.0), 'snuit')
-    m.ell(cr + np.array((-kop_r * 0.90, -6.5, 0.0)), (1.6, 3.0, 6.4), 'snuit')
+    # ronde 4 (Jordi: "de neus is heel raar, wanneer zie je dit soort dieren met een neus?"): geen snuit/neusbrug meer.
+    # Alleen een zachte lichtbruine tint in de wol tussen en onder de ogen (behaarde palpen), zonder lijn en zonder
+    # eigen vorm: een platte ellipsoïde die bijna helemaal in de kopwol zit.
+    m.ell(cr + np.array((-kop_r * 0.80, -4.0, 0.0)), (3.0, 6.5, 6.0), 'palp')
     # kamsprieten opzij als oren
     for sz in (1, -1):
         spriet(m, cr + np.array((-2.0, 9.0, 13.0 * sz)), sz, sz < 0)
@@ -188,7 +223,7 @@ def vel():
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)
     m = poedelmot()
     img, a, gid, groups = view(m, out=320)
-    img.save(os.path.join(HERE, 'poppetje_45.png'))  # ronde 2
+    img.save(os.path.join(HERE, 'poppetje_45.png'))  # ronde 4
     e = een_x(img, a); e.save(os.path.join(HERE, 'poppetje_45_1x.png'))
     kb, kt = kopaandeel(m)
     W, H = 12 + 2 * 332 + 12, 44 + 320 + 30 + 2 * 72 + 40

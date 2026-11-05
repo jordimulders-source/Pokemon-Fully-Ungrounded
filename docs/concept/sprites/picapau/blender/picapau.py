@@ -143,7 +143,10 @@ def delen_picapau():
         d.append(('kuif2', ('blad', a, b, ra, 0.8, 1.6), 1.8))
     # vleugels dicht tegen het lijf (Pikachu-rugstrepen = geschubde dekveren)
     for kant in (-1, 1):
-        d.append(('vleugel', ('blad', (0.0, kant * 7.8, 3.5), (16.5, kant * 5.8, -13.0), 5.4, 1.6, 0.34), 0.8))
+        d.append(('vleugel', ('blad', ((0.0 if kant > 0 else 2.5), kant * 7.8, 3.5), (16.5, kant * 5.8, -13.0), (5.4 if kant > 0 else 5.0), 1.6, 0.34), 0.8)  # verre vleugel (-Y, de camera kijkt na de lijfdraai op +Y) iets naar achter, zodat hij niet onder de kop uitsteekt)
+    # dijen: de poten groeien uit het lijf (Jordi: "zorg wel dat de poten vast aan het lichaam zitten")
+    for kant in (-1, 1):
+        d.append(('lijf', ('ell', (1.0, kant * 3.4, -10.0), (2.6, 2.4, 2.8), (0, 0, 0)), 1.5))
     # stijve steunstaart met een knik (bliksem-hint)
     d.append(('staart', ('blad', (14.0, 0, -11.5), (19.0, 0, -18.5), 2.6, 2.2, 1.7), 1.0))
     d.append(('staart', ('blad', (17.5, 0, -18.5), (21.5, 0, -27.0), 2.3, 0.6, 1.7), 0.6))
@@ -189,7 +192,7 @@ def bouw_picapau(kop_draai=0.0, snavel_hoek=40, snavel_lengte=9.5):
         bol('Glans', p + Vector((dd.x, dd.y, 0)).normalized() * 0.4 + Vector((-0.4, 0, 0.8)), (0.6, 0.3, 0.7), 'glans', wortel)
     # pootjes: kort, donkergrijs, onder de voorkant van het lijf; tenen 2 voor 2 achter
     for kant in (-1, 1):
-        familie('Poot', [((-0.5, kant * 3.0, -13.5), (1.1, 1.1, 2.2)),
+        familie('Poot', [((0.2, kant * 3.0, -12.4), (1.2, 1.2, 3.2)),
                          ((-2.8, kant * 3.0, -15.6), (2.4, 0.9, 0.7)),
                          ((1.4, kant * 3.0, -15.8), (1.6, 0.9, 0.6))], 'poot', wortel, voxel=0.15, glad=2)
     return wortel

@@ -198,3 +198,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.47] - Salticonda: kleur3g (reparaties keuring + Electric-hint)
 - Ringen en halsband zakken in het midden door (runs ≤8 px), donkere onderrand, nieuwe staart (5 px dik, pekelband, eindigt als zoutkegeltje), sprite 2 px omlaag (2 rijen lucht boven), Electric-hint: warm lichtgele glans op de halsband (paletindex 15). 207 px; kop, kuif, neus, oog en korst gelijk aan 3f.
+
+### [v0.0.48] - Salticonda: frontsprite goedgekeurd
+- Jordi: 3g "bijna helemaal goed", met de staart van 3f. kleur3h = 3g + staart van 3f, vastgelegd als `docs/concept/sprites/salticonda/af/salticonda.png` (64×64, 16 kleuren, transparency=0). Stand van zaken in CLAUDE.md bijgewerkt.
+- Nog te doen voor de lijn: frame 2, rugsprites, iconen, shinies, data; de ability (naam en effect).

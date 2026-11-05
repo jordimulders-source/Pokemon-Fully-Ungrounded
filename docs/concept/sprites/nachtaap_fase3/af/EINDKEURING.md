@@ -74,3 +74,6 @@ Het resultaat in de proef: beide ogen fonkelen en het verre oog is nog steeds sm
 
 ## 6. Nog te doen (buiten deze keuring)
 Frame 2, rug, icoon, shiny, naam en data.
+
+## Slot (Claude, 5 nov)
+Jordi koos linkeroog D (= reparatie F1: (5,37)=15, (6,37)=12). Toegepast op `nachtaap_fase3.png`, gelijk aan `eindkeuring/proef_oog.png`. Daarmee is F1 opgelost. **Eindoordeel: GOED.**

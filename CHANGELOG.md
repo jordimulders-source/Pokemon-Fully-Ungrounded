@@ -215,3 +215,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi koos stand D (22°) voor de rugbanden. `docs/concept/sprites/nachtaap_fase3/af/` bevat de frontsprite, het palet, het vergelijkingsvel en EINDKEURING.md.
 - Eindkeuring: GOED. Geen harde fouten; de wijzigingen ten opzichte van het bevroren lijf zitten alleen in de rugzone.
 - Linkeroog: drie opties in `af/oog/` (A, B, C). Het oog mist nu de glans en leest dof.
+
+### [v0.0.72] - Nachtaap fase 3: frontsprite af
+- Linkeroog D: het oog kreeg linksboven een glans en de iris is nu boven donker (2 px). Het is daarmee even opgebouwd als het rechteroog, maar 1 kolom smaller. De eindkeuring staat nu op GOED. `docs/concept/sprites/nachtaap_fase3/af/nachtaap_fase3.png` is de frontsprite.
+- Nog te doen: frame 2, rugsprite, icoon, shiny, naam en data.

@@ -97,7 +97,7 @@ def smin(a, b, k):
 def huid_sdf(delen, stap=0.22):
     """Huid als één oppervlak: smooth union van alle delen (k per deel = hoe ver het in de rest vloeit), marching cubes."""
     from skimage import measure
-    lo = np.array([-30.0, -16.0, -32.0]); hi = np.array([30.0, 16.0, 32.0])
+    lo = np.array([-30.0, -16.0, -32.0]); hi = np.array([30.0, 16.0, 34.0])
     xs, ys, zs = [np.arange(lo[i], hi[i], stap) for i in range(3)]
     P = np.stack(np.meshgrid(xs, ys, zs, indexing='ij'), -1)
     d = None
@@ -129,11 +129,11 @@ def camera_licht(res=512, kantel=8):
 
 
 # ---------------- Picapau ----------------
-KC = Vector((-4.0, 0, 11.0))          # kopmidden
+KC = Vector((-5.0, 0, 11.5))          # kopmidden
 KR = (9.0, 8.4, 8.6)                  # kop: groot en rond (meer Pikachu)
 
 def delen_picapau():
-    d = [('lijf', ('ell', (2.0, 0, -5.0), (9.2, 8.4, 11.6), (0, -18, 0)), 0),
+    d = [('lijf', ('ell', (5.0, 0, -4.0), (8.8, 8.2, 14.0), (0, -40, 0)), 0),
          ('kop', ('ell', tuple(KC), KR, (0, 0, 0)), 3.0)]
     # kuif = twee punten naar achter-boven, iets uit elkaar (Pikachu-oren); toppen zwart
     for kant in (-1, 1):
@@ -143,13 +143,13 @@ def delen_picapau():
         d.append(('kuif2', ('blad', a, b, ra, 0.8, 1.6), 1.8))
     # vleugels dicht tegen het lijf (Pikachu-rugstrepen = geschubde dekveren)
     for kant in (-1, 1):
-        d.append(('vleugel', ('blad', (-1.5, kant * 8.0, 2.5), (10.5, kant * 6.0, -17.0), 5.4, 1.6, 0.34), 0.8))
+        d.append(('vleugel', ('blad', (0.0, kant * 7.8, 3.5), (16.5, kant * 5.8, -13.0), 5.4, 1.6, 0.34), 0.8))
     # stijve steunstaart met een knik (bliksem-hint)
-    d.append(('staart', ('blad', (8.0, 0, -15.0), (12.0, 0, -22.0), 2.6, 2.2, 1.7), 1.0))
-    d.append(('staart', ('blad', (10.5, 0, -22.0), (13.5, 0, -29.0), 2.3, 0.6, 1.7), 0.6))
+    d.append(('staart', ('blad', (14.0, 0, -11.5), (19.0, 0, -18.5), 2.6, 2.2, 1.7), 1.0))
+    d.append(('staart', ('blad', (17.5, 0, -18.5), (21.5, 0, -27.0), 2.3, 0.6, 1.7), 0.6))
     return d
 
-def bouw_picapau(kop_draai=0.0, snavel_hoek=32, snavel_lengte=8.0):
+def bouw_picapau(kop_draai=0.0, snavel_hoek=40, snavel_lengte=9.5):
     leeg()
     wortel = bpy.data.objects.new('wortel', None); bpy.context.collection.objects.link(wortel)
     delen = delen_picapau()
@@ -189,9 +189,9 @@ def bouw_picapau(kop_draai=0.0, snavel_hoek=32, snavel_lengte=8.0):
         bol('Glans', p + Vector((dd.x, dd.y, 0)).normalized() * 0.4 + Vector((-0.4, 0, 0.8)), (0.6, 0.3, 0.7), 'glans', wortel)
     # pootjes: kort, donkergrijs, onder de voorkant van het lijf; tenen 2 voor 2 achter
     for kant in (-1, 1):
-        familie('Poot', [((-2.5, kant * 3.0, -17.5), (1.1, 1.1, 2.2)),
-                         ((-4.6, kant * 3.0, -19.6), (2.4, 0.9, 0.7)),
-                         ((-0.6, kant * 3.0, -19.8), (1.6, 0.9, 0.6))], 'poot', wortel, voxel=0.15, glad=2)
+        familie('Poot', [((-0.5, kant * 3.0, -13.5), (1.1, 1.1, 2.2)),
+                         ((-2.8, kant * 3.0, -15.6), (2.4, 0.9, 0.7)),
+                         ((1.4, kant * 3.0, -15.8), (1.6, 0.9, 0.6))], 'poot', wortel, voxel=0.15, glad=2)
     return wortel
 
 def render(pad, lijf=0, kantel=8, res=512, **kw):

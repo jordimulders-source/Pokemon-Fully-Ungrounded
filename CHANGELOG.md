@@ -232,3 +232,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Foto's 9 en 10 (cholitas luchadoras) in `docs/concept/sprites/lama/referenties/`. Besloten: beide geslachten krijgen hetzelfde ontwerp (zoals Gardevoir, Meowscarada, Primarina), maar geen volledige jurk.
 - `fase3_r4.py`: franje-opties (manta-franje, franje + kant onder de rok, beide) voor X (bont) en Y (blauw worstelpak); vel `vel_fase3_ronde5.png`, naar Jordi.
 
+### [v0.0.57] - Lama fase 3: ontwerp Y bevroren, bron silhouet
+- Jordi koos Y (blauw worstelpak) zonder franje. Bron voor het silhouet in `docs/concept/sprites/lama/fase3/silhouet/` (`bron.py`, model 50 %: 1265 px, box 35×62) met controlevellen; op 64 px lopen de voorpoten in pose C samen, vraag aan Jordi.
+

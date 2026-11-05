@@ -182,3 +182,10 @@ Echte lamatooi uit de Andes: bij de *señalakuy*/*t'ikachay* (merkfeest) krijgen
 - **Besloten (Jordi, 5 nov, letterlijk):** "je hebt een punt met gardevoir, en bijv ook meowscarada of primarina, ga maar door, maar zorg dat het niet volledig een jurk wordt" → **beide geslachten, zelfde ontwerp** (geen geslachtsverschil); franje als accent, rok kort, lijf en poten blijven vrij.
 - **Jordi (5 nov, letterlijk):** "en behoud de blauwe versie ook, want die vind ik al best goed" / "dat we kiezen tussen die twee" → X (bont) en Y (blauw worstelpak) blijven allebei in de race.
 - Vel `ontwerp/vel_fase3_ronde5.png` (`fase3_r4(outfit, franje)` in `fase3_r4.py`): per X/Y vier franje-opties: zonder, F1 franje aan de onderrand van de manta (roze, foto 9), F2 gouden franje + wit kant onder de onderste ruche (foto 10), F3 beide; ruwe 64-px-verkleining van F3. Naar Jordi.
+
+## Fase 3: ontwerp goedgekeurd (5 nov)
+- **Jordi over ronde 5 (5 nov, letterlijk):** "nee dit is niet gelukt. Doe maar Y en zonder franje" → **bevroren ontwerp fase 3 = `fase3_r4('Y')`** (pose C, blauw worstelpak met rode bies, cape met knoop, gouden kampioensriem, korte worstelrok in drie ruches, grote bombín, dikke vlechten naar voren, gelijke windsels met gouden manchetten, brede halsband met 7 pompons). Franje afgekeurd.
+
+## Silhouet fase 3 (stap 2): bron
+- `fase3/silhouet/bron.py`: `fase3_r4('Y')`, yaw 55, pitch 8, fill 0,99 → `onderlaag_256.png`, `alpha.npy`, `model50.txt` (50 %-dekking: **1265 px, box 35×62**), `dekking.txt`; `korrel.py`: 15 korrels (o.a. ver oor bovenin los). Vel `vel_bron.png`.
+- **Eerlijke controle Claude (vóór de maker):** op 64 px leest pose C als een rechtop blok: de twee voorpoten (dik + windsels) overlappen in deze hoek tot één plaat, de achterpoten vallen bijna weg, en fase 3 is maar 7 % groter dan fase 2 (1184 px), want de hoge hals vult de 64 in de hoogte. Minder frontaal (`vel_hoeken.png`: 45°, 38°) en een open stand (`vel_open_stand.png`: voorpoten verder uiteen, slanker) lossen het niet op: bij 55° kruisen nabije en verre voorpoot elkaar in beeld. Vraag aan Jordi (zie hieronder); geen maker gestart.

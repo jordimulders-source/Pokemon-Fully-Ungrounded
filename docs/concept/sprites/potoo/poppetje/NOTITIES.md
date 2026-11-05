@@ -140,3 +140,9 @@ Basis ronde 10; blinde test r10: uil 40%, kaketoe 25%, potoo 20% ("paars vlak al
 - Voorhoofd tot 9 px verder naar voren (rond y 205); mantel begint lager (y 188) met een zachte lila binnenlijn langs het achterhoofd, zodat de koepel heel blijft.
 - Vel: extra paneel (f) kop naast de gespiegelde leidraad, zelfde uitsnede.
 Valkuil: drie diepte-zones als banden langs de bovenrand gaven banding (parallel aan de rand); één vlek met zachte rand leest als holte.
+
+# Ronde 12, diagnosevarianten (vel_ronde12_varianten.png, pop2d_potoo_r12v.py)
+Blinde tests r11: "snavel te klein en los boven het paarse gat, geen boven- en onderdeel", "egale witte zuil", "oog hoog en ver naar achteren". Vier varianten, één ding per stap, zonder tekst in `scratchpad/bt/v1–v4.png`:
+- v1: onderkaak als eigen deel (lichte kaakrand `jawrim` met dunne lila binnenlijn langs de hele onderrand van de muil, niet langs de bovenrand); bovensnavel = hoornstuk vast aan de bovenrand (kort taps stukje langs de rand) dat in de haak eindigt; oog 24 px naar voren, afstand oog–rand 0,55 oogstraal (daardoor ±8 px hoger, niet lager: lager kan niet zonder onder 0,5 r te komen, de rand loopt naar voren omhoog).
+- v2: v1 + roze muil (alleen diagnose). v3: v1 + sterker grijsbruin gemêleerd patroon (3 tonen, dichter, vaker vegen). v4: v2 + v3.
+Valkuil: een brede kaakrand als dikke PIL-lijn langs een catmull-curve geeft kamtanden; als masker (muil min erosie, zonder de bovenrand) is hij strak. Grote MinFilters op 4x: op 1/4 rekenen (`ferode`).

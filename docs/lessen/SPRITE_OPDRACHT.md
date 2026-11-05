@@ -30,6 +30,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Ogen geïntegreerd (bovenlid donkerst, iris donker boven/licht onder, glans), niet opgeplakt, geen brilogen; geen volledig zwarte ogen zonder glans.
 - Omlijning per kleurgroep, zwart alleen aan de schaduwkant; licht van linksboven; geen open randen (ook schaduwkleur naast transparant).
 - Kleuren vergelijken met Pokémon van **hetzelfde type** (Dark mag donker).
+- **Kleur blijft binnen zijn vorm** (potoo, 5 nov: "geen idee wat dit was maar doe dit nooit meer, met al dat paars om die mond heen"): een mond-, oog- of tekeningkleur loopt nooit uit over de vacht eromheen; geen randen, spikkels of halo's.
 - Verzonnen kleurvlakken mogen alleen als ze werken; bij twijfel één vachtkleur.
 - Referentiefoto = inspiratie, geen blauwdruk (Pokémon-filosofie), maar de soort moet herkenbaar blijven.
 

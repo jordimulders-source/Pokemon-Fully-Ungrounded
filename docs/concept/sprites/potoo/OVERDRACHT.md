@@ -13,6 +13,7 @@ We beginnen opnieuw met de **great potoo** (fakemon voor Pokémon Fully Unground
 - Pose: driekwart naar links, licht voorover hangend, **bek open** (de sprite die je het meest ziet). Op een onzichtbare tak (zoals Swellow/Noctowl), klauwen verborgen, geen tak in beeld.
 - Kleur: **heel lichte vacht** als contrast; **pikzwarte ogen zonder glans, zoals Drifloon**; mond geestblauw/paars. Het geestachtige zit **alleen in de kleuren en de muil**. Een paar **schorsachtige vlekken** (sneeuwcamouflage, het Hisui-Zorua-idee).
 - **De muil is echt een snavel zoals op de foto's**: klein donker haakje dat omlaag krult, dunne lichte mondrand, de onderkaak een brede schep met een **spitse punt**, de rand **golft naar de punt toe**, de mondhoeken ver naar achteren aan de zijkant van de kop. Geen lipschijf, geen eendensnavel, geen bollen.
+- **Nooit kleur buiten de mond laten lopen** (Jordi, 5 nov: "geen idee wat dit was maar doe dit nooit meer, met al dat paars om die mond heen"): het geestpaars zit alleen ín de open snavel, strak begrensd door de lichte mondrand; geen paarse rand, spikkels of vlekken op de vacht eromheen.
 - Geen zichtbare roep of geestslierten. De platte-kop-zijfoto (`jordi_great_potoo_vooroverhangend_bek_open.webp`) niet gebruiken voor de kop.
 - **Eerst een 3D-model van de hele Pokémon** (niet alleen de kop), dan pas een silhouet. Jordi: "Voordat je een silhouet bouwt, bouw je eerst een 3d model", "de hele pokemon moet een 3d model worden", "check uit meerdere hoeken of het klopt met het origineel".
 

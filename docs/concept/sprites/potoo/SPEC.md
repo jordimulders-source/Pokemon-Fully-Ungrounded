@@ -42,6 +42,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **opnieuw beginnen** (Jordi
 | werkwijze | "Voordat je een silhouet bouwt, bouw je eerst een 3d model" | 3D-poppetje vóór het silhouet |
 
 ## Afgekeurd (niet herhalen)
+- Paars rond de mond (voxelkop): "geen idee wat dit was maar doe dit nooit meer, met al dat paars om die mond heen". Mondkleur alleen binnen de mondrand.
 - Zichtbare roep / geestslierten uit de muil: "een zichtbare roep doen we niet, dat is niet pokemon".
 - **Silhouet v1–v4 (de foto overgetrokken):** "we gaan niet een potoo namaken", "we maken een pokemon". Eerst een Pokémon-ontwerp (stap 1), dan pas een silhouet. Gewenst: "geestachtiger", "grote ogen, grote mond".
 - Tweede stage die met een tak/stomp versmelt (`concept_schets_2stages_afgekeurd.png`): tak in beeld past niet bij Pokémon-sprites.

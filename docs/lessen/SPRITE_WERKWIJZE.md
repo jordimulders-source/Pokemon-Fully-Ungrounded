@@ -82,3 +82,4 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - Toevoegingen bovenop het silhouet (kuif) lopen aan de uiteinden taps uit tot de oude omtrek; anders steekt er een hoek uit of brokkelt het af.
 
 - Gescripte schetsen werken alleen als kleine ingrepen op een eenvoudige sprite (Silicobra). Op een drukke sprite met een eigen patroon (Sandaconda) of voor een nieuwe vorm leveren ze lelijke rommel op (Jordi: "gruwelijk lelijke sprites"): dan niet sturen, maar eerst in woorden + referenties de vorm afspreken en daarna de silhouetronde.
+- Een evolutie moet ook in de kop evolueren: dezelfde kop op een groter lijf leest niet als evolutie (Jordi, Salticonda). En ook een opgerolde slang staat 3/4 naar de kijker, niet in zijaanzicht.

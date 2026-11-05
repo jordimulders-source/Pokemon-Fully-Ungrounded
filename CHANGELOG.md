@@ -572,3 +572,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.143] - Hitmontop-evolutie: Fighting/Ground
 - Jordi koos Fighting/Ground ("omdat die telkens aan de grond zit"); Dark past niet. Uniek in de dex (Great Tusk staat uit). In SPEC.md en POKEMON.md.
+
+### [v0.0.144] - Hitmontop-evolutie: poppetje ronde 1 (intern)
+- Eigen 3D-poppetje (lama-methode, `pop3d`) in Jordi's pose: `docs/concept/sprites/hitmontop_evo/ontwerp/` (standen A70/B55/C40). Pose klopt, maar leest als een mensje i.p.v. een Hitmon (kop, paardenstaart, slungelig lijf); niet naar Jordi, ronde 2 met Hitmontops kop, dreads en een voller lijf loopt.

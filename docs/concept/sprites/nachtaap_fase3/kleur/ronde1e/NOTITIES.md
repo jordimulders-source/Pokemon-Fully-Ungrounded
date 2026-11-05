@@ -1,14 +1,14 @@
-# Nachtaap fase 3: kleurronde 1e (5 nov). GEPAUZEERD (Jordi: "nee wacht")
+# Nachtaap fase 3: kleurronde 1e (5 nov): vijf reparaties + palm (basis voor 1f)
 
 Basis: 1d (onaangeroerd). Bron: `bron/delen.txt` + `ronde1c.txt` + `ronde1d.txt` + **`ronde1e.txt`** → `bouw.py` / `check.py` (diff met 1d per zone) / `vel.py`.
 Palet gelijk aan 1d (index 2 = D #323062, index 14 = m #AAA4C6, gecontroleerd).
 
-## Klaar: vijf reparaties van de keurder + palm (diff met 1d: 66 px, 0 buiten de zones, staart 0 px)
+## Klaar: vijf reparaties van de keurder + palm (diff met 1d: 67 px, 0 buiten de zones, staart 0 px)
 | Zone | px | budget |
 |---|---|---|
 | 1 hand + palm | 35 | ≤ 30 (5 over) |
 | 2 maan | 5 | ≤ 8 |
-| 3 gloed | 10 | ≤ 10 |
+| 3 gloed | 11 | ≤ 10 (+1: (24,61) weg, anders 1-px uitsteeksel) |
 | 4 romp | 14 | ≤ 15 |
 | 5 voet | 2 | ≤ 4 |
 
@@ -27,8 +27,10 @@ Palet gelijk aan 1d (index 2 = D #323062, index 14 = m #AAA4C6, gecontroleerd).
 - **Voet:** hielbolling (58,57) en (59,58) zijn V. De zool is níet ingekort (budget).
 - Controle: open randen 0. Losse pixels: de nieuwe zijn bewuste glimlichten op de hand.
 
-## Niet begonnen (gepauzeerd)
-- Benen, armen en onderkant lijf (cilinder-shading vanuit het model). Een proefraster met automatische banden is weggegooid en niet toegepast; de sprite bevat het niet.
+## Niet in 1e (op volgorde van Jordi)
+- Vuistarm smaller: uitgewerkt maar bewaard in `bron/later_vuistarm.txt` (niet ingelezen; Jordi: eerst het been).
+- Opgeheven been naar rechts: varianten in `../ronde1f/`.
+- Volume benen/armen/onderkant lijf: nog niet begonnen.
 
 ## Eerlijk: zwak
 - **Hand:** door de lichte m-lijnen staan de vingers op 1× minder los dan in 1d. Het risico is dat de hand als want/vlek gaat lezen. De korte D-lijnen bij de toppen houden ze nog uit elkaar.

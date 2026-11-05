@@ -37,12 +37,4 @@
 49 15 D
 53 19 m
 55 17 m
-## zone 6: vuistarm smaller (Jordi: "deze arm is te dik"): onderkant 2-4 px weg, scheiding met de kruin, cilinder
-22 4 KKKKKD
-23 5 ....KSVVVLLD
-24 6 ....KSVVVLLD
-25 8 ...KSVVVLLD
-26 8 ....KSVVVLLD
-27 14 .KSVLD
-28 15 SVVLLD
-26 14 K
+61 24 .

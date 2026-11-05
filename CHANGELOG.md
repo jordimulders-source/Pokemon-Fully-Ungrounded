@@ -143,3 +143,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Stand A van het Blender-model gekozen (één oog, snavel langer en open, kop iets omhoog); silhouet direct uit de render.
 - Kleur in 10 rondes met maker-agents en drie onafhankelijke keuringen: Starly-oog (iris en Combusken/Latias geprobeerd, terug naar Starly), opgeschoond tot ≤3 tinten per kleurgroep, contrast als Taillow, belijning zonder wisselende zwart/donkerlila, ronde vleugelschaduw, kleine pootjes in perspectief, holle hals naar bolle buik (foto 8 van Jordi).
 - Allerlaatste keuring: kleur en Dragonfly Cave PASS na 8 px. Af: `docs/concept/sprites/kolibrie_pre/af/kolibrie_pre.png`.
+- Afspraak (Jordi): frame 2, rugsprite, icoon, shiny, naam en data komen later voor alle soorten samen; eerst designs met frontsprites (CLAUDE.md, SPRITE_WERKWIJZE.md).

@@ -41,6 +41,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (5 nov) "de vleugel mag ietsje korter, 1 is wel het beste. De poten zijn nu wel wat te lang voor het lichaam denk ik, misschien het lichaam iets verder naar beneden en de poten iets korter" → **buiging 1 gekozen**; vleugel ±20% korter, poten ±10 korter (lijf zakt), staart mee omhoog.
 
+- (5 nov) Staart als scepter: **ja** (Jordi; Claude had het eerst ten onrechte weggelaten). Eerste opzet: lange middelste staartveer onder het lijf door naar voren, rechtop naast de verre vleugel, pluim bovenaan.
+
 ## Afgekeurd
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.
 - Pose-ronde 3: te dik, te recht, vleugelpose gegokt.

@@ -99,16 +99,29 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
     m.ell((6, 4, 0), (42, 23, 22), 'body', A)
     m.ell((-9, 8, 0), (19, 30, 20), 'breast', rot_z(math.radians(-6)))
     # verre vleugel: gesloten, hangt langs de voorkant omlaag (Decidueye-cape)
-    wing(m, (-2, 28, -15), (-8, 6, -24), [(-0.12, -1.0), (-0.02, -1.0), (0.08, -1.0), (0.18, -1.0)],
+    wing(m, (-2, 28, -15), (-14, 4, -28), [(-0.32, -1.0), (-0.2, -1.0), (-0.08, -1.0), (0.04, -1.0)],
          (40, 36, 31, 25), 'farwing', -26, 20, 14)
     # nabije vleugel: gesloten blad met een knik in de pols: de arm gaat naar buiten, de slagpennen buigen omhoog,
     # elke pen iets verder gedraaid zodat de achterrand een bolle curve wordt (geen rechte lijn, geen vingers)
     c = curl
     dirs = [(0.62 - 0.30 * c + 0.10 * k * c, 1.0 - 0.05 * k) for k in range(5)]
     wing(m, (8, 30, 17), (26, 36, 40), dirs, (33, 36, 34, 30, 24), 'wing', 56, 18, 14)  # iets korter (Jordi)
-    for ang in (-24, -12, 0):                                       # staart: drie rossige veren, licht gewaaierd
+    # staart als scepter (Jordi, 5 nov): twee korte veren op de stuit; de lange middelste staartveer buigt onder het
+    # lijf door naar voren en staat rechtop naast de verre vleugel, die hem vasthoudt als de staf van Pachacútec;
+    # bovenaan een pluim (zoals de veren op zijn staf)
+    for ang in (-20, -6):
         Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(ang * 0.6))
-        m.ell(np.array((22, -40, 0)) + Rt @ np.array((0, -6, 0)), (7, 24, 3), 'tail', Rt)
+        m.ell(np.array((20, -36, 0)) + Rt @ np.array((0, -4, 0)), (6, 16, 3), 'tail', Rt)
+    shaft = [(20, -40, 0, 3.6), (18, -52, -8, 3.4), (2, -58, -22, 3.2), (-16, -54, -30, 3.0),
+             (-22, -36, -32, 2.9), (-23, -10, -32, 2.8), (-23, 20, -32, 2.6), (-23, 48, -32, 2.4)]
+    pts = [tuple(p) for p in shaft]
+    m.chain(pts, 'tail', 1.0)
+    top = np.array((-23, 50, -32.0))
+    for k, a in enumerate((-34, -12, 10, 32)):   # pluim
+        r = math.radians(a)
+        d = np.array((math.sin(r) * 0.8, math.cos(r), math.sin(r) * 0.3)); d /= np.linalg.norm(d)
+        plate(m, top, top + d * 17, 4.5, 2.0, 'tail')
+        m.ell(top + d * 18, 2.6, 'fanrim')
     # poten: geen V meer. Standbeen recht onder het zwaartepunt; vrije poot met gebogen knie naar voren,
     # het scheenbeen weer verticaal (contrapposto van het beeld)
     legs3 = (((2, -30, 7), (3, -40, 8), (3, -51, 9)),          # standbeen (korter, Jordi)
@@ -254,7 +267,7 @@ def sheet(curls=(0.5,)):
     cw = 266 + 70
     W = Image.new('RGB', (max(12 + cw * len(curls), 760), 36 + 256 + 26), (236, 232, 222))
     d = ImageDraw.Draw(W)
-    d.text((10, 10), 'Sapa Inca B3, buiging 1: kortere vleugel en poten (silhouet 1x)',
+    d.text((10, 10), 'Sapa Inca B3: staart als scepter (silhouet 1x)',
            font=FB, fill=(30, 30, 30))
     for j, c in enumerate(curls):
         im, sil = view(bird(extra=32, curl=c), 44)

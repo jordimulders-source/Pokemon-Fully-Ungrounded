@@ -137,3 +137,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca pose-ronde 4 naar het Pachacútec-beeld in Cuzco (vleugel half omhoog, andere als Decidueye-cape, contrapposto, slanker).
 - Sapa Inca: hoek B3 gekozen; opgeheven vleugel met knik en bolle achterrand (3 buigingen), benen niet meer in een V.
 - Sapa Inca: buiging 1 gekozen, vleugel iets korter, poten korter.
+- Sapa Inca: staart als scepter (eerste opzet).

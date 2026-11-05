@@ -10,7 +10,7 @@ for b in bestanden:
     for ln in open(os.path.join(H,b)):
         ln=ln.split('#')[0].rstrip()
         if not ln.strip(): continue
-        y,x,s=ln.split(); y,x=int(y),int(x)
+        y,x,s=ln.split(None,2); y,x=int(y),int(x); s=s[1:] if s.startswith('|') else s
         for i,c in enumerate(s):
             if c==' ' : continue
             assert c in TEK,(y,x,c); g[y][x+i]=c

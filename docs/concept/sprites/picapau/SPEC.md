@@ -37,3 +37,7 @@ Bron: *Celeus flavus* (cream-colored woodpecker), Amazone. Concept: `docs/concep
 - Silhouet geknipt en vervormd uit foto 4 (`silhouet/silhouet_v1*`): "slordig knipwerk".
 - Pikipek-kopie: alleen de houding mag vergelijkbaar zijn.
 - Stippen op de vleugel in het model zijn een plaatshouder: in de sprite geschubde veren (foto 1, 5).
+
+## Stand (5 nov)
+- Kleur r1–r5 door één maker-agent; verse keuring na r3 (`kleur_r3/KEURING.md`: B gekozen, reparaties gedaan in r4/r5). Versie B wijkt 23 px af van het bevroren silhouet (dikkere snavelbasis, poten los met tenen, ronde buik; lijst in `kleur_r3/controle_B.txt` + `kleur_r5/controle_uitvoer.txt`). `kleur_r5/picapau.png` + `voor_jordi.png` wacht op Jordi.
+- Open (uit het silhouet, ter info): voorrand vrij recht, kuiftoppen op 1x klein, 831 px is klein voor een middelste vorm.

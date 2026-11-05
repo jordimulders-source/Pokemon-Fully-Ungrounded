@@ -143,3 +143,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.30] - Picapau: 3D-model en stand B1
 - `docs/concept/sprites/picapau/blender/picapau.py`: Blender-model (één huid, zoals de kolibrie-pre-evo): grote ronde kop, ronde rode wang, kuif met twee zwarte punten (Pikachu-oren) en rafelige achterkuif, vleugels dicht, beitelsnavel 40° omhoog, roodbruine steunstaart met knik, poten die uit het lijf groeien. Pose naar Jordi's foto's (schuin lijf). Jordi koos stand B1 (lijf 30°, kantel 8°); het silhouet uit die render wacht op zijn keuring. Een eerste silhouet geknipt uit een foto is afgekeurd ("slordig knipwerk").
+
+### [v0.0.31] - Picapau: kleursprite ronde 5
+- Kleur in 5 rondes (maker-agent) met een onafhankelijke keuring na ronde 3; versie B (23 px silhouetwijziging: snavelbasis, poten, buik) ligt bij Jordi: `docs/concept/sprites/picapau/kleur_r5/picapau.png`.

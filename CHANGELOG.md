@@ -195,3 +195,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.46] - Salticonda: onafhankelijke keuring
 - Keuring van kleur3f (`docs/concept/sprites/salticonda/keuring/KEURING.md`): geslaagde regionale vorm (herkenbaar idee, ander materiaal/functie, verklaard door de regio, evolutie vergroot het kenmerk), maar 4 kleine FAILs: rechte runs in de ringen, onderrand te licht, staart leest niet op 1×, raakt de bovenrand. Zes smaakvragen voor Jordi.
+
+### [v0.0.47] - Salticonda: kleur3g (reparaties keuring + Electric-hint)
+- Ringen en halsband zakken in het midden door (runs ≤8 px), donkere onderrand, nieuwe staart (5 px dik, pekelband, eindigt als zoutkegeltje), sprite 2 px omlaag (2 rijen lucht boven), Electric-hint: warm lichtgele glans op de halsband (paletindex 15). 207 px; kop, kuif, neus, oog en korst gelijk aan 3f.

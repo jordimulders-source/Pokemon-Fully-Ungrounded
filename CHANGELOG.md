@@ -137,3 +137,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.28] - Specht: stroombronnen samen, Raichu-achtige evolutie
 - `docs/concept/IDEEEN.md`: roffelen + droog hout + bliksembomen samen, met een dorp dat op Picapau draait; evolutie die (net als Toedscruel bij Tentacruel) minder op Raichu lijkt, met de spechtentong als bliksemstaart.
+
+### [v0.0.29] - Picapau: start spriteproces
+- `docs/concept/sprites/picapau/`: SPEC (stap 0), Jordi's twee foto's en een vergelijkingsvel (Pikachu + vogel-sprites op 4×).

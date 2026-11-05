@@ -121,3 +121,4 @@
 - **Jordi: "houd het starly oog maar" · "dan maar geen kleur"** → r5: oorspronkelijk Starly-oog (r10, zwart met glans, geen iris); Combusken en smaragd vervallen.
 - **Kleur r5:** `blender/A/kleur_r5/` (Starly-oog terug, vleugel eigen donkerder plaat (palet 8/A), snavel 0 px t.o.v. r4, omtrek = r4). Claude: vleugel leest nu; nog zachter/minder contrast dan Taillow. Naar Jordi.
 - **Jordi over r5: "ja het blijft een beetje een slordige sprite, ik twijfel ook over de grootte van het oog"** → r6: opschonen met clusterscript (≤3 tinten per groep, geen clusters < 3 px), contrast als Taillow gemeten, oog in drie maten S/M/L.
+- **Kleur r6:** `blender/A/kleur_r6/` (clusters 17 → 2, ≤3 tinten per groep, contrast ±35 per stap zoals Taillow, nek rustig; oog S/M/L in `oog_maten.png`). Wacht op Jordi (oogmaat).

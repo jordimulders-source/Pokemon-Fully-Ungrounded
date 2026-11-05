@@ -1,5 +1,7 @@
 # Vaste opdracht voor elke sprite-agent (ook bij kleine reparaties)
 
+> **Kort: lees eerst `docs/lessen/SPRITE_KERN.md`.** Dit bestand is naslag.
+
 Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe klein ook. Jordi (23 okt): "ik moet elke keer dingen opnieuw vertellen waarvan ik dacht dat ik je erop getraind had." Dit bestand is daar het antwoord op.
 
 ## 1. Eerst lezen (altijd)

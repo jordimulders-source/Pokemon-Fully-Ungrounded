@@ -377,3 +377,28 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.66] - Nachtaap fase 3: model af, silhouet ronde 1
 - Model in drie stappen met Jordi: beide poten in één stuk met de schaduw van de render, voeten als want (naar Jordi's foto); staart gekanteld; kop meer driekwart, gezicht 1,2×, grote maan; lichtblauwe gloed om de healerhand (vlakke banden + omlijning, zoals Reuniclus; studie `referenties/psychische_effecten.png`). Maan (nog groter) en rugpatroon (op de rug, mee met de pose) volgen in de sprite.
 - Silhouet ronde 1 (`docs/concept/sprites/nachtaap_fase3/silhouet/`): model overgetrokken op de 50%-dekking, 1796 px, 0 korrels, alles ≤ 1 px van het model; spiraalspleten < 1 px gevuld (windingen als lijnen in de kleur). Onafhankelijke keurder: één reparatie (staartrand).
+### [v0.0.24] - Kolibrie pre-evo: ontwerp en kleurrondes (onaf)
+- Nieuwe map `docs/concept/sprites/kolibrie_pre/`: pre-evolutie van de kolibrie, puur Flying (wordt Ghost/Flying bij de evolutie), zittend jong met ingeklapte vleugels en open bedelbekje; foto's van Jordi in `referenties/`.
+- Ontwerp: drie richtingen (A jong vogeltje gekozen), mild lila kleur zoals Fletchling vóór Fire, korte snavel bewust.
+- 3D-poppetje uit bollen (79–88% overlap) en opgeblazen silhouet geprobeerd; gaven geen goed beeld. Silhouet met de hand (maker-agent) en kleurrondes r1–r10 met keuringen; goedgekeurd: kop r8 lager, Starly-oog, snavel r7b met lijn bij de mondhoek, palet.
+- r10 afgekeurd (geen driekwart pose, lijnen); volgende stap een 3D-model op de goedgekeurde vorm, gedraaid naar 3/4, daarna het silhouet daaruit. Overdracht bovenaan `SPEC.md`.
+- Lessen in `docs/lessen/SPRITE_WERKWIJZE.md` (poppetje passend op de foto, keurder nooit inperken).
+
+### [v0.0.25] - Kolibrie pre-evo: 3D-model op de goedgekeurde vorm
+- `docs/concept/sprites/kolibrie_pre/model3d/`: 3D-model dat het goedgekeurde profiel zelf opblaast (lijf 97,7% gelijk aan silhouet r2, kop 99,6% aan r8 lager), met r10-kleuren, Starly-oog en r7b-snavel; draaibaar naar driekwart.
+- Vel `model3d/vel_hoeken.png` met 9 hoeken naast Taillow en Starly; wacht op Jordi's keuze.
+
+### [v0.0.26] - Kolibrie pre-evo: echt 3D-model in Blender
+- Numpy-model (opgeblazen profiel, ronde kop, ronder lijf, K1-R2b) geprobeerd en verlaten: van opzij gezien plat en van alle kanten vreemd.
+- `docs/concept/sprites/kolibrie_pre/blender/`: model in Blender (bpy) als één huid (smooth union): bolletje-lijf met ingewerkte vleugels, kop zonder nek, kort staartje, langere naaldsnavel; vel met rondom-renders en 3/4-standen naast Fletchling, Starly en Taillow. Foto's 6 en 7 van Jordi beschreven in `referenties/`.
+- Lessen in `docs/lessen/SPRITE_WERKWIJZE.md` (profielkop is geen 3/4, silhouet als omtrek over de render tonen, model niet ongevraagd wijzigen).
+
+### [v0.0.27] - Kolibrie pre-evo: frontsprite af
+- Stand A van het Blender-model gekozen (één oog, snavel langer en open, kop iets omhoog); silhouet direct uit de render.
+- Kleur in 10 rondes met maker-agents en drie onafhankelijke keuringen: Starly-oog (iris en Combusken/Latias geprobeerd, terug naar Starly), opgeschoond tot ≤3 tinten per kleurgroep, contrast als Taillow, belijning zonder wisselende zwart/donkerlila, ronde vleugelschaduw, kleine pootjes in perspectief, holle hals naar bolle buik (foto 8 van Jordi).
+- Allerlaatste keuring: kleur en Dragonfly Cave PASS na 8 px. Af: `docs/concept/sprites/kolibrie_pre/af/kolibrie_pre.png`.
+- Afspraak (Jordi): frame 2, rugsprite, icoon, shiny, naam en data komen later voor alle soorten samen; eerst designs met frontsprites (CLAUDE.md, SPRITE_WERKWIJZE.md).
+- Spritelessen samengevat in één pagina `docs/lessen/SPRITE_KERN.md` (Jordi: "vat de lessen echt enorm samen"); CLAUDE.md en de oude spritebestanden verwijzen ernaar, de rest is naslag.
+- `docs/lessen/SPRITE_WERKWIJZE.md` compact herschreven (stappentabel + commando's); oude versie in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.
+- `docs/lessen/SPRITE_WERKWIJZE.md` compact herschreven (stappentabel + commando's); oude versie in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.
+- Blender-model is geen vereiste (Jordi): foto of model, wat werkt (SPRITE_KERN, SPRITE_WERKWIJZE).

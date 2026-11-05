@@ -29,7 +29,8 @@ Vervolg op **Pokémon Ungrounded** (Project Grounded), gebouwd als fork daarvan 
 - **ROM-ruimte bij de 1.0 (Jordi, 10 okt):** doel ≥ 512 KB vrij, nooit minder dan 256 KB (na de 1.0 komen er alleen nog moves/abilities bij, en eventueel extra shinies). Meld bij elke grote toevoeging de resterende ruimte zodra we onder 1 MB komen. Meten: `grep "__rom_end = " pokeemerald.map`, vrij = 0x0A000000 − dat.
 - **Kleurvarianten zijn skins** (Jordi, 15 okt): herkenbaar anders, passend bij de soort, hoe zeldzamer hoe opvallender. Nooit een variant die nauwelijks van normaal verschilt; geen vloekende kleuren tenzij het een grap is. Recepten en filosofie: `TODO.md` (Kleurvarianten).
 - **Werkwijze is verplicht, Coathief is het voorbeeld (Jordi, 2 nov: "zorg er voor dat alle volgende sessies dit wel doen").** Claude bouwt zelf géén silhouetten uit buizen/collages van bestaande sprites en kleurt nooit per script; silhouet (als één geheel, van een echte bron) en kleur (met de hand, na een Game Freak-studie) maakt **één maker-agent**; Claude coördineert, vergelijkt elke ronde zelf met de bronfoto's en een keurder vóór Jordi. Mis het na 2 rondes: stoppen en terug naar de werkwijze, niet doorpatchen (wasbeer, 2 nov: 3 poppetje- en 11 silhouetrondes zonder resultaat).
-- **Sprites maken: volg `docs/lessen/SPRITE_WERKWIJZE.md`** (Jordi, 25 okt: "de beste methode"; stap voor stap: echte bron (foto/3D-poppetje) → silhouet op 64 met de massa van de bron, Jordi keurt → kleur door één maker-agent na een Game Freak-studie → Claude kijkt + onafhankelijke keurder → Jordi). "Pokémon designen is geen cirkels en driehoeken werk."
+- **SPRITES: lees eerst `docs/lessen/SPRITE_KERN.md` (één pagina, alle lessen samengevat) en geef dat bestand aan elke sprite-agent mee.** De andere spritebestanden zijn naslag. "Pokémon designen is geen cirkels en driehoeken werk."
+- **Volgorde sprites (Jordi, 5 nov):** "frame 2, rugsprite, icoon, shiny, naam en data allemaal later, ook in het vervolg, we bouwen eerst designs met sprites". Per nieuwe Pokémon eerst alleen ontwerp + frontsprite tot af; de rest pas in een latere, aparte fase voor alle soorten samen.
 - **Pokémon ontwerpen (Jordi, 23 okt):** elk ontwerp van een nieuwe Pokémon (fakemon, regional form, sprite) gebeurt met de Dragonfly Cave-gidsen in het achterhoofd: `docs/lessen/FAKEMON_DESIGN.md`, `docs/lessen/SPRITING.md` en de bronnen in `docs/lessen/bronnen/` (*Making Fake Pokémon* en *Spriting Guide*). Geef ze aan elke ontwerp- of sprite-agent mee. Maatstaf: **Cuyby** (ronde 3) is een geslaagde fakemon; referenties in `docs/concept/ontwerp/referenties/`. **Volg de vaste werkwijze bovenaan FAKEMON_DESIGN.md** (ontwerp → silhouet op echt skelet → sprite + checklist → onafhankelijke keuring vóór Jordi → alleen benoemde reparaties; doel ≤ ±5 rondes).
 - Merk je een nieuw designprincipe op, stel het eerst aan Jordi voor en voeg het pas na bevestiging toe aan dit bestand.
 
@@ -53,14 +54,8 @@ Algemene lessen staan hieronder; de rest is per onderwerp opgesplitst. **Lees he
 |---|---|
 | Kaarten, tilesets, events, routes/grotten/steden bouwen | `docs/lessen/KAARTEN.md` |
 | Sprites, trainerfoto's, vormen, kleurvarianten | `docs/lessen/GRAPHICS.md` |
-| Nieuwe Pokémon ontwerpen (fakemon, regional forms) | `docs/lessen/FAKEMON_DESIGN.md` (vóór elke ontwerp-/spriteronde) |
-| Pokémon-sprites pixelen (omlijning, schaduw, ogen, curven) | `docs/lessen/SPRITING.md` (vóór elke spriteronde) |
-| Vormen, poses, verhoudingen van Pokémon-sprites | `docs/lessen/FAKEMON_CHECKLIST.md` (+ `vormstudie/STUDIE.md`) |
-| Waarom het spriteproces misging en wat anders moet | `docs/lessen/RETRO_OLINGUITO.md` (één sprite tegelijk, SPEC.md per sprite, controle per onderdeel); wat wél werkte: `docs/lessen/RETRO_KOLIBRIE.md` (foto als skelet, silhouet eerst, keurder vóór Jordi, aanbevelingen sprite-editor) |
-| **De werkwijze voor elke nieuwe sprite (stap voor stap)** | `docs/lessen/SPRITE_WERKWIJZE.md` (Checklist bovenaan; keurslot-hook blokkeert sturen zonder keuring) |
-| **Norm voor elke sprite-agent (één pagina)** | `docs/lessen/SPRITE_NORM.md` |
-| Review spriteproces (wat werkte, wat niet, aanbevelingen) | `docs/lessen/SPRITE_REVIEW.md` |
-| **Elke sprite-agent-opdracht** (ook kleine reparaties) | `docs/lessen/SPRITE_OPDRACHT.md`: verwijzing altijd in de opdracht; Jordi's vaste feedback; Claude bekijkt elk resultaat zelf vóór Jordi |
+| **Pokémon-sprites en -ontwerp (ALTIJD EERST)** | **`docs/lessen/SPRITE_KERN.md`** (één pagina; meegeven aan elke sprite-agent) |
+| Stappen + commando's / naslag sprites | `SPRITE_WERKWIJZE.md` (compact: Checklist met keurslot-hook, stappentabel en commando's); naslag alleen bij twijfel: `SPRITE_NORM.md`, `SPRITE_OPDRACHT.md`, `SPRITING.md`, `FAKEMON_DESIGN.md`, `FAKEMON_CHECKLIST.md`, `RETRO_*.md`, `SPRITE_REVIEW.md`, `naslag/SPRITE_WERKWIJZE_oud.md` |
 | C-code: gevechten, UI, eigen schermen, scripts | `docs/lessen/CODE.md` |
 | Transities, klasse-intro's, films | `docs/lessen/INTROS.md` |
 | Muziek en samples | `docs/lessen/MUZIEK.md` (+ `tools/grounded/MUZIEK.md`) |

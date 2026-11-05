@@ -1,5 +1,7 @@
 # Sprite-norm (één pagina) – verplicht voor elke sprite-agent
 
+> **Kort: lees eerst `docs/lessen/SPRITE_KERN.md`.** Dit bestand is naslag.
+
 Lees alleen dit + `SPEC.md`/`AFGEKEURD.md` van je Pokémon + de referenties in de map. Lange achtergrond (alleen bij twijfel): `FAKEMON_CHECKLIST.md`, `SPRITING.md`, `SPRITE_OPDRACHT.md`, `vormstudie/STUDIE.md`.
 
 ## Formaat

@@ -29,14 +29,14 @@ Bron: *Celeus flavus* (cream-colored woodpecker), Amazone. Concept: `docs/concep
 | silhouet | `silhouet/silhouet_b1_1x.png` uit de B1-render; toonkaart `blender/B1/toonkaart_1x.png` | "goed silhouet" | **bevroren**; alleen dunne delen (snavelpunt, kuiftoppen, achterkuif, tenen) ±1 px, gemeld |
 | kuif (= Pikachu-oren) | twee punten + rafelige achterkuif | "de top van de kuif zwart ... zoals pikachu's oren" | in model |
 | wangvlek (= wangzak) | foto 1 | – | open |
-| vleugels (= rugstrepen) | foto 1: donkerbruin met roomkleurige schubben | – | open |
+| vleugels (= rugstrepen) | model: donkerbruin met ronde lichte stippen | "ik vond die stippen ipv die pidgey vleugels leuker" | besloten: stippen |
 | staart (= bliksemstaart) | foto 1/2: stijve roodbruine steunstaart | – | open |
 | kop, oog, snavel | Pikachu-kop, beitelsnavel | "net wat meer pikachu" | open |
 
 ## Afgekeurd (niet herhalen)
 - Silhouet geknipt en vervormd uit foto 4 (`silhouet/silhouet_v1*`): "slordig knipwerk".
 - Pikipek-kopie: alleen de houding mag vergelijkbaar zijn.
-- Stippen op de vleugel in het model zijn een plaatshouder: in de sprite geschubde veren (foto 1, 5).
+- Geschubde (Pidgey-)vleugels: Jordi vindt de stippen van het model leuker.
 
 ## Stand (5 nov)
 - Kleur r1–r5 door één maker-agent; verse keuring na r3 (`kleur_r3/KEURING.md`: B gekozen, reparaties gedaan in r4/r5). Versie B wijkt 23 px af van het bevroren silhouet (dikkere snavelbasis, poten los met tenen, ronde buik; lijst in `kleur_r3/controle_B.txt` + `kleur_r5/controle_uitvoer.txt`). `kleur_r5/picapau.png` + `voor_jordi.png`: **Jordi: "ja ik vind dit weer tenenkrommend hoor"** (afgekeurd; eerst vragen wat hij ziet).
@@ -53,3 +53,4 @@ Bron: *Celeus flavus* (cream-colored woodpecker), Amazone. Concept: `docs/concep
 Bron: `sprite_v2/bron/` (`bron.py`: kleur per spritepixel uit `blender/B1/b1.png`, onderdelen uit `blender/B1/labels.png` (`blender/labels.py`), `overtrekvel.png` met raster). Methode van lama fase 3 (kop/onderdelen cel voor cel van het model, niet hertekenen).
 
 - **Jordi over sprite v2 r2 (5 nov), krabbel `referenties/jordi_krabbel_r2_model_genegeerd.png`:** "ik heb hier een aantal lijnen neergezet om aan te geven waarin het model genegeerd wordt". Lezing Claude: (1) twee lijnen in de kuif: de twee kuifpunten zijn in het model eigen kegels die van de kop loskomen (vorm over vorm), in de sprite smelten ze in één gele massa; (2) lange boog van onder de wang langs de borst naar de onderkant van de buik: de bolle borst/buik van het model (ronde voorkant die onderaan naar rechts omkrult), in de sprite een rechte voorkant; (3) korte boog bij de vleugelvoorrand: de ronde schouder/voorrand van de vleugel over het lijf.
+- Jordi (5 nov): "maar dat is niet alles" (krabbel = voorbeelden; Claude maakte zelf de volledige lijst render vs r2: kop, kuif, oog, wang, snavel, borst/buik, vleugel, poten, staart, licht) · **"het lichaam moet echt bol, dat is juist een kenmerk van pikachu"** · **"en ik vond die stippen ipv die pidgey vleugels leuker"** → vleugel met de ronde stippen van het model, geen schubben.

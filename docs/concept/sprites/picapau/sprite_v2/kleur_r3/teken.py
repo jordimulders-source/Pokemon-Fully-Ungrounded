@@ -16,8 +16,8 @@ E = [
  (45, 29, 'GgGkkGk'),
  (46, 26, '_GGggG_kGk'),
  (47, 25, '_kggggGGkGGGk_'),
- (48, 24, '_k_GGgG__kk_k_'),
- (49, 24, '____k_________k'),
+ (48, 24, '_k_GGgG__kkk_k_'),
+ (49, 24, '____k__________'),
  # --- borst-voorrand: 1 px naar buiten waar de render bolt (dekking >= 0.36) ---
  (31, 25, '42'),
  (32, 25, '42'),

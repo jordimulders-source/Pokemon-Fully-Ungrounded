@@ -13,18 +13,24 @@ def rand(idx, pts):
         for dx, dy in ((0, 1), (1, 0), (1, 1)):
             q = (x + dx, y + dy)
             if q not in ps: zet(idx, [q], D)
-def streep(x0, y0, lengte):
+def binnen(idx, x, y): return 0 <= x < 64 and 0 <= y < 64 and idx[y, x] not in (0, 1, 2, 7)
+def streep(idx, x0, y0, lengte):
+    """brede dwarsstreep: 3 px aan de ruggengraat, taps naar 1 px, licht schuin met de ronding mee; stopt aan de lijfrand"""
     pts = []
     for k in range(lengte):
-        w = 2 if k < lengte - 2 else 1
-        x = x0 - k // 4          # licht schuin: volgt de ronding van de flank
-        pts += [(x + i, y0 + k) for i in range(w)]
+        w = 3 if k < lengte * 0.45 else (2 if k < lengte * 0.8 else 1)
+        x = x0 - k // 4
+        row = [(x + i, y0 + k) for i in range(w) if binnen(idx, x + i, y0 + k)]
+        if not row: break
+        pts += row
     return pts
 var = {}
-for naam, xs in (('D4: 4 strepen', (21, 25, 40, 44)), ('D6: 6 strepen', (21, 24, 27, 39, 42, 45))):
+for naam, xs in (('D5: 5 brede strepen', (21, 26, 40, 45, 30)), ('D7: 7 brede strepen', (21, 24, 28, 39, 42, 45, 30))):
     a = idx0.copy(); r = rug(a); allp = []
     for x0 in xs:
-        x0 = min(r, key=lambda x: abs(x - x0)); p = streep(x0, r[x0], 8 if x0 < 31 else 6); allp += p
+        if x0 == 30:  # streep vlak voor het opgeheven been
+            pass
+        x0 = min(r, key=lambda x: abs(x - x0)); allp += streep(a, x0, r[x0], 12)
     rand(a, allp); zet(a, allp, L)
     var[naam] = a
 def rgb(arr):

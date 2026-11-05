@@ -134,3 +134,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.27] - Specht: convergent is een fan-term
 - `docs/concept/IDEEEN.md`: na Bulbapedia-check: "convergent species" is een fan-term, officieel gaat het om toevallige gelijkenis; haakje via de World Pokémon Ecological Society; mimicry staat lager.
+
+### [v0.0.28] - Specht: stroombronnen samen, Raichu-achtige evolutie
+- `docs/concept/IDEEEN.md`: roffelen + droog hout + bliksembomen samen, met een dorp dat op Picapau draait; evolutie die (net als Toedscruel bij Tentacruel) minder op Raichu lijkt, met de spechtentong als bliksemstaart.

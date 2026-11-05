@@ -110,9 +110,12 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
     # een gewone brede staart die omlaag hangt en met de punt iets naar voren buigt, naar de verre vleugel,
     # waarvan de punt hem vastpakt. Geen lange sliert, niet onder de poten door: hij loopt aan de verre kant
     # langs de heup, boven kniehoogte.
-    # krabbel Jordi (referenties/krabbel_jordi_staart_arm.png): klein stukje achter het standbeen door, voorbij de poot
-    # weer naar voren en aan de voorkant omhoog langs de linkerkant van de buik (punten berekend voor lijf 44°)
-    C = [np.array(c, float) for c in ((20, -30, 0), (5, -42, 2), (-22, -40, 9), (-28, -10, -2), (-27, 14, -7))]
+    # krabbel Jordi (referenties/krabbel_jordi_staart_arm.png): de staart gaat ACHTER het been door, komt links naast
+    # het been tevoorschijn en gaat dan naast het lijf omhoog naar de hangende linkervleugel, die hem vastpakt.
+    # Punten in schermruimte (x' rechts, y, diepte z' naar de kijker) voor lijf 44°, omgerekend naar diercoördinaten.
+    cy, sy = math.cos(math.radians(44)), math.sin(math.radians(44))
+    S = [(14, -30, -14), (-2, -45, -9), (-18, -45, -6), (-30, -37, -1), (-35, -16, 2), (-33, 8, 3)]
+    C = [np.array((cy * xp - sy * zp, y, sy * xp + cy * zp)) for xp, y, zp in S]
     curve = []
     for i in range(len(C) - 1):
         p0, p1, p2, p3 = C[max(i - 1, 0)], C[i], C[i + 1], C[min(i + 2, len(C) - 1)]
@@ -122,7 +125,14 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
     curve.append(C[-1])
     n = len(curve)
     for i, (q0, q1) in enumerate(zip(curve, curve[1:])):
-        plate(m, q0, q1, 9 - 3 * i / n, 3.0, 'tail')
+        f = i / n   # echte staart: breed aan de stuit, smaller in het midden, de veerpunt weer breder en rond
+        w = 13 - 7 * f if f < 0.7 else 8 + 12 * (f - 0.7)
+        plate(m, q0, q1, w, 4.0, 'tail')
+    m.ell(C[-1], (6, 6, 4), 'tail')
+    # vleugelpunt van de hangende linkervleugel slaat om de staart heen (de greep)
+    xp, y, zp = -33, -4, 8
+    grip = np.array((cy * xp - sy * zp, y, sy * xp + cy * zp))
+    plate(m, (-14, 4, -28), grip, 9, 3, 'farwing')
     # poten: geen V meer. Standbeen recht onder het zwaartepunt; vrije poot met gebogen knie naar voren,
     # het scheenbeen weer verticaal (contrapposto van het beeld)
     legs3 = (((2, -30, 7), (3, -40, 8), (3, -51, 9)),          # standbeen (korter, Jordi)

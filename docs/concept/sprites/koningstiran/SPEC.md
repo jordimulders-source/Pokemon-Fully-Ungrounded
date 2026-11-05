@@ -46,6 +46,7 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 - (5 nov) Krabbel van Jordi (`referenties/krabbel_jordi_staart_arm.png`): "een beetje zoals de oranje streep, klein stukje achter de poot door en dan voorbij de poot komt die weer naar boven, en rode streep is vanaf rechts een stukje van de bovenarm wat korter mag" → staart en bovenarm zo aangepast. "en spiegelbeeld mag".
 
 ## Afgekeurd
+- Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.
 - Pose-ronde 3: te dik, te recht, vleugelpose gegokt.
 - Pose-ronde 2: gespreide slagpennen ("danser").

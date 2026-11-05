@@ -203,3 +203,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Na de arm: lijf eerst als één geheel (studie rug met front- en back sprites), daarna vormshading (borstkas, buik, heup; been uit de heup), staartwortel loopt door in de heup; dij −2; healerhand bevroren (vier vingers) in zilverblauw, gloed en ogen turkoois, pols uit de gloed. Basis: `docs/concept/sprites/nachtaap_fase3/kleur/ronde7c/`.
 - Rugpatroon: drie rondes (wiggen, strepen, banden/ringen) afgekeurd; loopt nog (Jordi: "afronden betekent niet half werk").
 - Lessen in `docs/lessen/SPRITE_WERKWIJZE.md` (referentie van Jordi per onderdeel, eerst opties via een agent, geen sterkte-varianten, plooien en massa's, staartwortel, retro hand).
+
+### [v0.0.69] - Nachtaap fase 3: rugbanden naar Jordi's krabbel
+- Ronde 5: de krabbel letterlijk overgetrokken (drie ')'-banden). Jordi: het is een krabbel, geen blauwdruk.
+- Ronde 6 (`docs/concept/sprites/nachtaap_fase3/rugpatroon/ronde6/`): drie gelijke, ronde banden op gelijke afstand, 3 px in het midden, taps uitlopend; shading wit/lichtblauw/grijsblauw van licht naar schaduw. Keurder: eerst FAIL (2 px te dun), daarna opnieuw opgebouwd uit één vaste bandvorm.

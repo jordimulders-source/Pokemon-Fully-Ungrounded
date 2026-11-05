@@ -162,8 +162,8 @@ bol(grote1, TEEN, R=4, licht=(-0.45, -0.75, 0.5))
 # onderste been (knie -> voet) in één stuk, schaduw = doorsnede van de render (x=380, licht boven -> donker onder,
 # donkerste tint opgehaald), zacht overgevloeid in de dij; voet hangt slap, tenen licht gekruld, grote teen los
 yb, xb = np.mgrid[0:W, 0:W] / K
-been2 = masker_poly([(350, 398), (356, 389), (366, 384), (380, 382), (398, 381), (418, 385), (438, 392), (455, 402), (465, 412), (474, 423),
-                      (482, 436), (488, 450), (490, 463), (486, 473), (478, 475), (472, 467), (466, 458), (457, 451),
+been2 = masker_poly([(350, 398), (356, 389), (366, 384), (380, 382), (398, 381), (418, 385), (438, 392), (455, 402), (466, 411), (478, 420),
+                      (489, 432), (496, 448), (498, 464), (492, 477), (481, 481), (471, 474), (465, 462), (456, 454),
                       (447, 449), (440, 440), (425, 431), (410, 424), (396, 421), (382, 424), (366, 430), (352, 428)])
 gum((((xb > 372) & (yb > 360)) | ((xb > 357) & (yb > 377) & (yb < 392))) & (yb < 495) & ~been2)
 SRC4b = np.asarray(SRC.resize((W, W), Image.LANCZOS)).astype(np.float32) / 255.0
@@ -188,12 +188,15 @@ img[..., :3] = img[..., :3] * (1 - w) + kleur * w
 img[..., 3:] = np.maximum(img[..., 3:], w)
 dd = nd.distance_transform_edt(~been2) / K
 verf((dd > 0) & (dd <= 4.6) & ((xb > 372) | (img[..., 3] < 0.5)), LIJN)
-tenen2 = masker_poly([(480, 442), (486, 450), (490, 463), (486, 473), (478, 475), (472, 467), (472, 455)])
-bol(tenen2, TEEN, R=6, licht=(-0.45, -0.75, 0.5))
-verf(lijnmasker([(482, 440), (474, 452), (473, 466)], 2.2), LIJN)
-grote2 = masker_poly([(458, 452), (466, 455), (468, 463), (463, 471), (456, 470), (454, 461)])
-omlijn(grote2, dikte=2.2)
-bol(grote2, TEEN, R=4, licht=(-0.45, -0.75, 0.5))
+tenen2 = masker_poly([(477, 421), (489, 432), (496, 448), (498, 464), (492, 477), (481, 481), (471, 474), (468, 460),
+                       (470, 440)])
+bol(tenen2, TEEN, R=7, licht=(-0.45, -0.75, 0.5))
+verf(lijnmasker([(477, 422), (470, 440), (468, 458), (471, 474)], 2.2), LIJN)
+for pts in [[(484, 428), (480, 446), (480, 464), (482, 479)], [(492, 438), (489, 454), (490, 470), (488, 479)]]:
+    verf(lijnmasker(pts, 2.0), LIJN)
+grote2 = masker_poly([(454, 452), (465, 455), (469, 465), (463, 476), (453, 475), (449, 464)])
+omlijn(grote2, dikte=2.6)
+bol(grote2, TEEN, R=5, licht=(-0.45, -0.75, 0.5))
 
 # ------------------------------------------------------------------ kop
 # Muriqui-kop naar foto 4/5: ronde schedel zonder oren, groot donker gezichtsschild met rechte wenkbrauwlijn,

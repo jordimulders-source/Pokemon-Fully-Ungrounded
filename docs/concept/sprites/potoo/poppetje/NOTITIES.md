@@ -146,3 +146,10 @@ Blinde tests r11: "snavel te klein en los boven het paarse gat, geen boven- en o
 - v1: onderkaak als eigen deel (lichte kaakrand `jawrim` met dunne lila binnenlijn langs de hele onderrand van de muil, niet langs de bovenrand); bovensnavel = hoornstuk vast aan de bovenrand (kort taps stukje langs de rand) dat in de haak eindigt; oog 24 px naar voren, afstand oog–rand 0,55 oogstraal (daardoor ±8 px hoger, niet lager: lager kan niet zonder onder 0,5 r te komen, de rand loopt naar voren omhoog).
 - v2: v1 + roze muil (alleen diagnose). v3: v1 + sterker grijsbruin gemêleerd patroon (3 tonen, dichter, vaker vegen). v4: v2 + v3.
 Valkuil: een brede kaakrand als dikke PIL-lijn langs een catmull-curve geeft kamtanden; als masker (muil min erosie, zonder de bovenrand) is hij strak. Grote MinFilters op 4x: op 1/4 rekenen (`ferode`).
+
+# Ronde 13 (vel_ronde13.png, pop2d_potoo_r13.py)
+Basis ronde 12 v3 (paars + sterker patroon; blinde tests potoo als 1e keus: v1 55%, v2 roze 60%, v3 schors 70%, v4 65%).
+- Bek groeit uit de kop: mondhoek met plooi en schaduwwig, de lip loopt erin; bovenrand van de muil als zachte golfjes (gezichtsveren over de lip); kin/keelzak als bevederd volume onder de kaakpunt dat vloeiend (smoothstep vanaf y 380) uit de kaak groeit, met lijn alleen waar hij over het lijf valt.
+- Geen harde lijn kop–schouder: bovenste deel van `L_JAWOUT` en van de dekverenrand zonder lijn, veerpuntjes van de wang over de mantel met alleen fijne puntboogjes; lila achterhoofdlijn weg.
+- Patroon met verloop (`region`): mantel/vleugel/staart dicht (19 px) en donker met vegen, kruin klein en middel, gezicht en borst ijl en licht.
+Valkuil: smalle puntjes langs de bovenrand van de muil met een donker lijntje lezen als tanden; brede ondiepe golfjes niet. Een kinzak met harde start geeft een knik; laat de verschuiving geleidelijk beginnen.

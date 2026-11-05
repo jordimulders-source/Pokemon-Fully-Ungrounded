@@ -47,6 +47,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (5 nov) "de benen staan voor de staart, de staart gaat achter de benen door langs het lichaam de hand in" / "op die manier ja, maar nu ziet het er niet mooi uit" / "het moet staart en scepter zijn en als dat niet lukt dan doen we het niet" → in deze pose leest het niet als scepter (balk op heuphoogte, of een lange sliert): **scepter vervalt**. Gewone roestbruine staart, rechts achter het lijf, achter de poten. Vleugels niet gespiegeld ("mag" = toestemming).
 
+- (5 nov) "de linkerbovenarm is veel groter dan de rechter [...] de poten onnatuurlijk [...] 1 is een stuk langer dan de ander, klopt dat met het bronmateriaal?" → nee: op het beeld zijn de benen even lang (dij onder het lijf, voorste been gebogen en hoger). Benen nu even lang (±21) onder het lijf; linkervleugel smaller (bovenarm even dik als rechts).
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

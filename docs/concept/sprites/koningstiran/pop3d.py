@@ -99,13 +99,13 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
     m.ell((6, 4, 0), (42, 23, 22), 'body', A)
     m.ell((-9, 8, 0), (19, 30, 20), 'breast', rot_z(math.radians(-6)))
     # verre vleugel: gesloten, hangt langs de voorkant omlaag (Decidueye-cape)
-    wing(m, (-2, 28, -15), (-14, 4, -28), [(-0.32, -1.0), (-0.2, -1.0), (-0.08, -1.0), (0.04, -1.0)],
-         (40, 36, 31, 25), 'farwing', -26, 20, 14)
+    wing(m, (-2, 28, -15), (-14, 4, -28), [(-0.22, -1.0), (-0.16, -1.0), (-0.10, -1.0), (-0.04, -1.0)],
+         (40, 37, 33, 28), 'farwing', -26, 15, 10)   # bovenarm even dik als rechts (Jordi)
     # nabije vleugel: gesloten blad met een knik in de pols: de arm gaat naar buiten, de slagpennen buigen omhoog,
     # elke pen iets verder gedraaid zodat de achterrand een bolle curve wordt (geen rechte lijn, geen vingers)
     c = curl
     dirs = [(0.62 - 0.30 * c + 0.10 * k * c, 1.0 - 0.05 * k) for k in range(5)]
-    wing(m, (8, 30, 17), (21, 35, 34), dirs, (33, 36, 34, 30, 24), 'wing', 56, 18, 14)  # iets korter (Jordi)
+    wing(m, (8, 30, 17), (21, 35, 34), dirs, (33, 36, 34, 30, 24), 'wing', 56, 16, 12)  # iets korter (Jordi)
     # staart: geen scepter (Jordi: "het moet staart en scepter zijn en als dat niet lukt dan doen we het niet";
     # in deze pose werd het een balk of een lange sliert). Gewone brede roestbruine staart zoals de echte vogel,
     # licht gewaaierd, zichtbaar rechts achter het lijf.
@@ -114,8 +114,10 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
         m.ell(np.array((34, -22, -2)) + Rt @ np.array((0, -20, 0)), (9, 24, 3), 'tail', Rt)
     # poten: geen V meer. Standbeen recht onder het zwaartepunt; vrije poot met gebogen knie naar voren,
     # het scheenbeen weer verticaal (contrapposto van het beeld)
-    legs3 = (((2, -30, 7), (3, -40, 8), (3, -51, 9)),          # standbeen (korter, Jordi)
-             ((-4, -30, -8), (-16, -37, -11), (-15, -47, -12)))  # vrije poot, knie naar voren
+    # beide benen even lang (dij ±10, scheen ±11) en onder het lijf, zoals het beeld; het vrije been staat
+    # alleen iets naar voren met een lichte knik en de voet iets hoger (op de rots), niet schuin opzij
+    legs3 = (((2, -30, 6), (3, -40, 7), (3, -51, 8)),           # standbeen
+             ((-3, -30, -6), (-9, -39, -7), (-9, -49, -8)))     # vrije poot
     for hip, knee, foot in legs3:
         m.chain([hip + (5.0,), knee + (4.0,)], 'breast')
         m.chain([knee + (3.0,), foot + (2.7,)], 'leg')

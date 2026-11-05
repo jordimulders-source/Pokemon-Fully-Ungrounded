@@ -1,0 +1,10 @@
+gewijzigd t.o.v. ronde 2b: 222 px; buiten de kopzone: 0
+px 1608 | silhouet 1512 | buiten silhouet +101 | silhouet niet gevuld -5
+   + oren: 13  x18y0 x19y0 x25y0 x26y0 x18y1 x19y1 x26y1 x27y1 x17y2 x18y2 x19y2 x27y2 x28y2
+   + bombin/oren: 29  x17y3 x18y3 x19y3 x22y3 x23y3 x24y3 x27y3 x17y4 x18y4 x22y4 x23y4 x24y4 x27y4 x17y5 x18y5 x17y6 x18y6 x17y7 x18y7 x13y8 x14y8 x15y8 x16y8 x17y8 x18y8 x16y9 x17y9 x18y9 x27y9
+   + vlecht: 22  x28y3 x28y4 x28y9 x27y10 x28y10 x29y10 x30y10 x27y11 x28y11 x29y11 x29y12 x29y13 x30y13 x28y14 x29y14 x28y15 x29y15 x29y16 x30y16 x29y17 x29y18 x30y19
+   + kop: 37  x15y10 x16y10 x17y10 x18y10 x14y11 x15y11 x16y11 x17y11 x18y11 x13y12 x14y12 x15y12 x16y12 x13y13 x14y13 x15y13 x16y13 x12y14 x13y14 x14y14 x15y14 x12y15 x13y15 x14y15 x12y16 x13y16 x14y16 x12y17 x13y17 x14y17 x13y18 x14y18 x13y19 x14y19 x15y19 x14y20 x15y20
+   - oren: 4  x21y1 x24y1 x21y2 x24y2
+   - bombin/oren: 1  x27y8
+open randen: 0 
+kleuren gebruikt: 15 BCDGHRSUdgkmpry

@@ -46,6 +46,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Lessen onder "Lessen" in je NOTITIES.md (Claude zet ze over); niet in SPRITING.md schrijven, niet committen tenzij gevraagd.
 
 ## 4. Claude (coördinator)
+- **Sprite uit een model/render:** vóór Jordi altijd `tools/grounded/model_vs_sprite.py` en per onderdeel nalopen of de sprite de render volgt (zie GRAPHICS.md, Picapau 5 nov); de volledige afwijkingslijst gaat naar de maker.
 - **Tokens sparen:** agents krijgen SPRITE_NORM.md + SPEC/AFGEKEURD (niet alle lessenbestanden); één maker per sprite die met SendMessage doorwerkt; geen parallelle experimenten tenzij Jordi vraagt; kleine vellen.
 - Plak de verwijzing naar dit bestand in elke sprite-opdracht en geef bij reparaties een pixelbudget en de lijst bevroren delen mee.
 - **Bekijk elk resultaat zelf** (1× en 3×, naast de laatst goedgekeurde versie) vóór het naar Jordi gaat. Een gezicht of geheel dat slechter oogt dan de vorige goedgekeurde versie gaat **nooit** naar Jordi: terugsturen of de vorige versie houden.

@@ -131,3 +131,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.26] - Specht: convergente soort
 - `docs/concept/IDEEEN.md`: Picapau is een convergente soort van Pikachu (zoals Wiglett/Toedscool), dan via kleur en tekening in plaats van vorm; mimicry als optionele reden.
+
+### [v0.0.27] - Specht: convergent is een fan-term
+- `docs/concept/IDEEEN.md`: na Bulbapedia-check: "convergent species" is een fan-term, officieel gaat het om toevallige gelijkenis; haakje via de World Pokémon Ecological Society; mimicry staat lager.

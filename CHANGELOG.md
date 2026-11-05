@@ -128,3 +128,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Brainstorm erbij: verwante vogels (tirannen met verborgen kroon, rotshaan, parasolvogel, zonneral, bergcaracara, incastern, kuifkardinaal) en vier lijnvoorstellen.
 - Inca-rangen uitgewerkt (hatun runa, chaski, kuraka, orejón, apu, awki, Sapa Inca/Quya e.a.) met vier lijnvarianten.
 - Eerste conceptschetsen van de koningstiran-lijn: `docs/concept/ontwerp/koningstiran/schets_v1.png` (script `ontwerp/scripts/koningstiran.py`).
+- Jordi kiest de lijn hatun runa → awki → Sapa Inca (vastgelegd in `POKEMON.md`); schets v2 met de kop naar voren en een imposante kroon in twee lagen (`ontwerp/koningstiran/schets_v2.png`).

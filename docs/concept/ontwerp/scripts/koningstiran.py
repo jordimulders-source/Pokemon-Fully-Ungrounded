@@ -237,3 +237,95 @@ if __name__ == '__main__':
                      '• gouden oorschijf = adel (orejón)\n• tocapu: geometrische vakjes\n• pututu: schelptoeter',
                      fill='#222', font=font(11), spacing=4)
     W.save(os.path.join(out, 'schets_v1.png'))
+
+
+# ================================================================ v2 (5 nov): kop naar de kijker
+def awki_v2():
+    """Fase 2, kop driekwart naar voren: beide ogen zichtbaar, dichte kuif steekt naar achteren (hamerkop),
+    gele franje over het voorhoofd, gouden oorschijf op de nabije wang."""
+    cv = Canvas(LINE, 2.6)
+    branch(cv)
+    cv.fill(cv.m_blob([(150, 176), (182, 226), (172, 234), (142, 188)]), '#c9733a')
+    legs(cv, (120, 136), 190, 208)
+    body = cv.m_ellipse(130, 152, 32, 44, rot=10)
+    cv.fill(body, '#e9b868')
+    cv.fill(cv.m_ellipse(150, 146, 20, 40, rot=14), '#7a5a3c', line='inner', clip=body)
+    for k in range(4):
+        cv.dot(150 + k * 4, 140 + k * 9, 2, '#e9c890')
+    cv.fill(cv.m_blob([(112, 80), (152, 70), (182, 78), (156, 90), (118, 96)]), '#8a4a2a', lw=2.2)
+    cv.fill(cv.m_blob([(156, 74), (180, 78), (158, 84)]), '#f2c840', line=False)
+    head = cv.m_ellipse(122, 102, 27, 25)
+    cv.fill(head, '#7a5a3c')
+    cv.fill(cv.m_ellipse(118, 120, 18, 8), '#f2e2b8', line=False, clip=head)
+    cv.fill(cv.m_tube(catmull([(98, 88), (120, 82), (142, 88)], closed=False), 6), '#c23a2a', lw=1.4)
+    fringe(cv, 104, 130, 90, 9, '#f2d03a', 6)
+    cv.fill(cv.m_ellipse(144, 108, 8, 9), '#f0c040', lw=1.8)
+    cv.dot(144, 108, 3.6, '#c8901c')
+    cv.fill(cv.m_poly([(104, 108), (88, 116), (110, 118), (124, 112)]), '#3a2a22', lw=1.8)  # brede snavel, schuin
+    eye(cv, 108, 102, 4.2)
+    eye(cv, 132, 101, 4.6)
+    return cv
+
+
+def sapa_v2():
+    """Fase 3, kop recht naar de kijker: de waaier staat dwars op de kop, dus van voren zie je hem als een volle
+    halve cirkel (een hoofdtooi), met de rode franje over het voorhoofd en twee gouden oorschijven."""
+    cv = Canvas(LINE, 2.6)
+    branch(cv)
+    cv.fill(cv.m_blob([(150, 176), (198, 234), (186, 244), (140, 190)]), '#c9733a')
+    cv.fill(cv.m_blob([(178, 222), (198, 234), (186, 244), (172, 230)]), '#3a3a4a', line=False)
+    legs(cv, (118, 138), 194, 208)
+    body = cv.m_ellipse(128, 152, 36, 48, rot=6)
+    cv.fill(body, '#e9b868')
+    cv.fill(cv.m_ellipse(154, 148, 18, 42, rot=10), '#7a5a3c', line='inner', clip=body)
+    cv.fill(cv.m_ellipse(100, 148, 12, 38, rot=-6), '#7a5a3c', line='inner', clip=body)
+    bib = cv.m_poly([(112, 128), (144, 128), (140, 166), (128, 180), (116, 166)]) & body
+    cv.fill(bib, '#c23a2a', line=False)
+    tocapu(cv, bib, 112, 128, 8, 4, 7, ['#c23a2a', '#f0c040', '#1e1a1a', '#f6f2e6'])
+    # imposante kroon (Jordi): twee lagen, buiten lang rood met blauwe punten, binnen goud
+    ray_fan(cv, 128, 96, 172, 368, 17, 86, 15, '#d8321e', '#2e4a8c', 1.8)
+    for k in range(17):
+        a = math.radians(172 + 196 * k / 16)
+        cv.dot(128 + math.cos(a) * 64, 96 + math.sin(a) * 64, 3.4, '#1a1a2a')
+    ray_fan(cv, 128, 96, 186, 354, 11, 50, 12, '#f08a1e', '#f0c040', 1.6)
+    head = cv.m_ellipse(128, 104, 28, 25)
+    cv.fill(head, '#7a5a3c')
+    cv.fill(cv.m_ellipse(128, 122, 18, 8), '#f2e2b8', line=False, clip=head)
+    cv.fill(cv.m_tube(catmull([(104, 88), (128, 83), (152, 88)], closed=False), 6.5), '#f0c040', lw=1.4)
+    fringe(cv, 114, 142, 90, 9, '#c23a2a', 7)
+    for sx in (100, 156):
+        cv.fill(cv.m_ellipse(sx, 108, 9, 10), '#f0c040', lw=1.8)
+        for k in range(8):
+            a = k * math.pi / 4
+            cv.stroke([(sx + math.cos(a) * 3.5, 108 + math.sin(a) * 3.5), (sx + math.cos(a) * 7, 108 + math.sin(a) * 7)], 1.1, '#c8901c')
+    cv.fill(cv.m_poly([(114, 112), (142, 112), (128, 128)]), '#3a2a22', lw=1.8)  # brede tirannensnavel van voren
+    cv.stroke([(116, 113), (140, 113)], 1.0, '#7a6050')
+    eye(cv, 115, 104, 4.4)
+    eye(cv, 141, 104, 4.4)
+    return cv
+
+
+def sheet_v2(out):
+    BG = (238, 232, 218)
+    PW, PH = 256, 256 + 100
+    panels = [(kiskadie, 'Fase 1: "hatun runa"', 'grote kiskadie (profiel)', 'ongewijzigd t.o.v. v1'),
+              (awki_v2, 'Fase 2: "awki"', 'koningstiran, kuif dicht', 'kop driekwart naar voren:\nbeide ogen, franje, oorschijf'),
+              (sapa_v2, 'Fase 3: "Sapa Inca"', 'koningstiran, kuif open', 'kop recht van voren; imposante\nwaaier in twee lagen (hoofdtooi)')]
+    W = Image.new('RGB', (PW * 3 + 40, PH + 62), BG)
+    d = ImageDraw.Draw(W)
+    d.text((12, 10), 'Koningstiran-lijn v2 — kop naar de kijker (conceptschets)', fill='black', font=font(16, True))
+    d.text((12, 32), 'Rechtsonder elk paneel: 1x sprite-formaat.', fill='#333', font=font(11))
+    for i, (fn, title, bird, note) in enumerate(panels):
+        cv = fn()
+        x, y = 10 + i * (PW + 10), 52
+        W.paste(cv.image(), (x, y))
+        s = sprite_scale(cv, 64, 0.92)
+        W.paste(s, (x + PW - 66, y + PW - 66), s)
+        d.text((x + 4, y + 262), title, fill='black', font=font(13, True))
+        d.text((x + 4, y + 281), bird, fill='#7a2a1a', font=font(12, True))
+        d.multiline_text((x + 4, y + 300), note, fill='#333', font=font(11), spacing=3)
+    W.save(os.path.join(out, 'schets_v2.png'))
+
+
+if __name__ == '__main__':
+    sheet_v2(sys.argv[1])

@@ -36,3 +36,8 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 
 ## Afgekeurd (niet herhalen)
 - Alle lessen van Picapau (`../picapau/SPEC.md`): profielkop zonder kopdraai, dunne delen die bij het verkleinen wegvallen, model aanpassen als de sprite fout is.
+
+## Model ronde 1 (5 nov)
+- `blender/standen/` (A/B/C + tong). Claude: leest als dikke Pidgey/Fletchinder met witte ramshoorns, niet imposant; tong = worm op 1× → tong-variant vervalt.
+- Jordi over de kuif in ronde 1: **"vooral de oren zijn too much"** · **"te wit, te groot"** → kuif kleiner, rustiger, subtiele krul, overwegend kastanje (hooguit lichte rand/top). Vervangt "lichte kuif" uit de kleurkeuze.
+- Ronde 2 (maker): kuif zoals hierboven, imposanter (borst, kop, bredere vleugels, minder stekels, grotere stippen), staart als platte veerpluim in S met grotere bliksem, langere beitelsnavel, echte kastanje in de render.

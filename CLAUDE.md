@@ -54,7 +54,7 @@ Algemene lessen staan hieronder; de rest is per onderwerp opgesplitst. **Lees he
 | Kaarten, tilesets, events, routes/grotten/steden bouwen | `docs/lessen/KAARTEN.md` |
 | Sprites, trainerfoto's, vormen, kleurvarianten | `docs/lessen/GRAPHICS.md` |
 | **Pokémon-sprites en -ontwerp (ALTIJD EERST)** | **`docs/lessen/SPRITE_KERN.md`** (één pagina; meegeven aan elke sprite-agent) |
-| Naslag sprites (alleen bij twijfel) | `SPRITE_WERKWIJZE.md`, `SPRITE_NORM.md`, `SPRITE_OPDRACHT.md`, `SPRITING.md`, `FAKEMON_DESIGN.md`, `FAKEMON_CHECKLIST.md`, `RETRO_*.md`, `SPRITE_REVIEW.md`, `naslag/SPRITE_WERKWIJZE_oud.md` |
+| Stappen + commando's / naslag sprites | `SPRITE_WERKWIJZE.md` (compact: stappentabel en commando's); naslag alleen bij twijfel: `SPRITE_NORM.md`, `SPRITE_OPDRACHT.md`, `SPRITING.md`, `FAKEMON_DESIGN.md`, `FAKEMON_CHECKLIST.md`, `RETRO_*.md`, `SPRITE_REVIEW.md`, `naslag/SPRITE_WERKWIJZE_oud.md` |
 | C-code: gevechten, UI, eigen schermen, scripts | `docs/lessen/CODE.md` |
 | Transities, klasse-intro's, films | `docs/lessen/INTROS.md` |
 | Muziek en samples | `docs/lessen/MUZIEK.md` (+ `tools/grounded/MUZIEK.md`) |

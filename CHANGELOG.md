@@ -146,3 +146,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Afspraak (Jordi): frame 2, rugsprite, icoon, shiny, naam en data komen later voor alle soorten samen; eerst designs met frontsprites (CLAUDE.md, SPRITE_WERKWIJZE.md).
 - Spritelessen samengevat in één pagina `docs/lessen/SPRITE_KERN.md` (Jordi: "vat de lessen echt enorm samen"); CLAUDE.md en de oude spritebestanden verwijzen ernaar, de rest is naslag.
 - `docs/lessen/SPRITE_WERKWIJZE.md` compact herschreven (stappentabel + commando's); oude versie in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.
+- `docs/lessen/SPRITE_WERKWIJZE.md` compact herschreven (stappentabel + commando's); oude versie in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.

@@ -129,3 +129,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.25] - DJ Rotom: silhouet 2 (sterker perspectief)
 - Jordi: "misschien iets meer perspectief als in pronounced vormen?" en "ik vind de bron juist driekwart". Het 3/4 van de bron sterker gemaakt door de bron zelf te vervormen (`docs/concept/sprites/dj_rotom/silhouet2/perspectief.py`): de nabije rechterspeaker groter, de verre linkerspeaker kleiner, boven- en onderlijn kantelen mee en de kop blijft breed. Drie sterktes A/B/C in `silhouet2/vel_perspectief.png`; de bliksem wordt na de keuze weer met de hand dikker gemaakt.
+
+### [v0.0.26] - DJ Rotom: silhouet bevroren
+- Jordi: "prima! ga maar in kleuren. Bliksem noot mag idd dikker dan". Variant B (mijn advies) met de bliksem-noot met de hand dikker (15 px) is bevroren: `docs/concept/sprites/dj_rotom/silhouet_af/silhouet.png`. Stijlnorm voor de kleur: de Rotom-vormen die al in de game zitten (Jordi: "gebruik vooral de stijl van de rotom sprites die al in de game zitten he").

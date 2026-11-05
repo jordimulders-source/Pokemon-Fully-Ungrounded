@@ -188,3 +188,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Muriqui-gezicht naar foto 4/5: donker schild met rechte wenkbrauwlijn, kleine lichtblauwe ogen dicht bij elkaar, lichte neusrug naar een brede snuit, rechte mond, donkere kin, korte maansikkel.
 - Voeten: bovenste grijpt als haak om de onzichtbare tak (tenen als want, grote teen tegenover), onderste hangt slap met losse grote teen.
 - Vertaalbaar naar de sprite (les lama): kop 1,3× en alle gezichtsdelen ≥ ±2 px op 64; controle `model_64.png`, vel `vel_model.png` (keurder: maten verwerkt).
+
+### [v0.0.66] - Nachtaap fase 3: model af, silhouet ronde 1
+- Model in drie stappen met Jordi: beide poten in één stuk met de schaduw van de render, voeten als want (naar Jordi's foto); staart gekanteld; kop meer driekwart, gezicht 1,2×, grote maan; lichtblauwe gloed om de healerhand (vlakke banden + omlijning, zoals Reuniclus; studie `referenties/psychische_effecten.png`). Maan (nog groter) en rugpatroon (op de rug, mee met de pose) volgen in de sprite.
+- Silhouet ronde 1 (`docs/concept/sprites/nachtaap_fase3/silhouet/`): model overgetrokken op de 50%-dekking, 1796 px, 0 korrels, alles ≤ 1 px van het model; spiraalspleten < 1 px gevuld (windingen als lijnen in de kleur). Onafhankelijke keurder: één reparatie (staartrand).

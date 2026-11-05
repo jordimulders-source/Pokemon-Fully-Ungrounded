@@ -220,3 +220,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.53] - Lama fase 2: frontsprite af
 - Jordi keurde kleur ronde 4h goed; verse eindkeuring: af na 6 px (nagels, handschoen). Frontsprite fase 2 staat in `docs/concept/sprites/lama/fase2/af/lama.png`. Volgende: fase 3 (lama met bombín). Lessen in `docs/lessen/SPRITE_WERKWIJZE.md`.
+
+### [v0.0.54] - Lama fase 3: poppetje ronde 3 (eigen pose)
+- Fase 3 (3Y, cholita-luchadora) gestart volgens SPRITE_WERKWIJZE: nieuw poppetje `docs/concept/sprites/lama/ontwerp/fase3_r3.py` met de goedgekeurde lamakop en kaarsrechte hals van fase 2, bombín, pony, vlechten met tullma's, brede halsband met 7 pompons, manta, pollera en windsels.
+- Jordi: "ik wil wel een iets andere pose dan fase 2" → vier pose-opties (A geworteld 32°, B uitval, C bijna frontaal, D zij met de kop naar je toe); advies A. Vel `ontwerp/vel_fase3_ronde3.png`, naar Jordi.
+

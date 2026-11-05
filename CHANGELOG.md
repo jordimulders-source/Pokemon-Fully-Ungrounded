@@ -225,3 +225,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Fase 3 (3Y, cholita-luchadora) gestart volgens SPRITE_WERKWIJZE: nieuw poppetje `docs/concept/sprites/lama/ontwerp/fase3_r3.py` met de goedgekeurde lamakop en kaarsrechte hals van fase 2, bombín, pony, vlechten met tullma's, brede halsband met 7 pompons, manta, pollera en windsels.
 - Jordi: "ik wil wel een iets andere pose dan fase 2" → vier pose-opties (A geworteld 32°, B uitval, C bijna frontaal, D zij met de kop naar je toe); advies A. Vel `ontwerp/vel_fase3_ronde3.png`, naar Jordi.
 
+### [v0.0.55] - Lama fase 3: poppetje ronde 4 (pose C, worsteloutfit)
+- Jordi koos pose C. Nieuw `docs/concept/sprites/lama/ontwerp/fase3_r4.py`: grotere bombín, dikke gevlochten vlechten over de schouders naar voren, gelijke windsels om beide voorpoten (gouden manchetten), intocht-cape met knoop, gouden kampioensriem, worstelrok; variant Y met singlet. Vel `vel_fase3_ronde4.png`, naar Jordi (advies X).
+

@@ -16,7 +16,7 @@ HEAD_SHIFT = np.array((-6, 30, 0.0))
 LINE = np.array((43, 27, 23), np.uint8)
 
 COL = {
-    'fur': '#EEECF3', 'wing': '#D3CFDE', 'belly': '#FAF9FC', 'tail': '#C6C1D3', 'jaw': '#6C657C', 'rim': '#F7F5F9',
+    'fur': '#EEECF3', 'wing': '#D3CFDE', 'belly': '#FAF9FC', 'tail': '#C6C1D3', 'jaw': '#6C657C', 'rim': '#E6CFC8',
     'mouth': '#5A4DB8', 'throat': '#1E1842', 'beak': '#7A7388', 'eye': '#050507',
 }
 NOSHADE = {'eye', 'throat'}
@@ -182,8 +182,8 @@ LM = dict(
 KOP = 1.6                      # Pokémon: kop iets groter dan echt (om het achterhoofd geschaald)
 # Kopmaten (kopcoördinaten, vóór KOP). NIET van de zijfoto (Jordi: "die hele platte hoofd foto mag je vergeten"),
 # maar gefit op de verhoudingen van de 3/4-foto met meten.py / fit_kop.py (lijnen en verhoudingen, geen giswerk).
-KP = dict(schedel=(-26, 76, 32, 26, 31), mondhoek=(-37.5, 60), snaveltip=(-76.5, 66), onderkaaktip=(-58, 30),
-          bek_breed=17, kaak_breed=18, oog=(-49.5, 69), oog_r=8.0)
+KP = dict(schedel=(-30, 88, 30, 22, 35), mondhoek=(-40, 63), snaveltip=(-62, 63), onderkaaktip=(-55, 36),
+          bek_breed=17, rand=0.9, oog=(-49.5, 74), oog_r=7.0)
 
 
 def potoo(lean=0, gape=None, kopdraai=10, kopkantel=10, kp=None):
@@ -217,20 +217,6 @@ def potoo(lean=0, gape=None, kopdraai=10, kopkantel=10, kp=None):
     sx, sy, sa, sb, sc = k['schedel']
     E(H((sx, sy, 0)), np.array((sa, sb, sc)) * KOP, 'fur')
     E(H((sx + 22, sy + 2, 0)), np.array((18, 12, sc * 0.78)) * KOP, 'fur')     # achterhoofd (niet over de ogen)
-    def kaak(tip, dik, w, op):
-        """Eén schep per kaak (rond U-blad), met een paarse binnenbekleding aan de mondkant."""
-        c0, c1 = v('mondhoek'), v(tip)
-        d = c1 - c0; L = np.linalg.norm(d); ang = math.atan2(d[1], d[0])
-        Rk = rot_z(ang)
-        mid = (c0 + c1) / 2
-        E(H(mid), np.array((L / 2 + 2, dik, w)) * KOP, 'fur', Rk)
-        off = Rk @ np.array((0, -op * dik * 0.55, 0))
-        E(H(mid + off), np.array((L / 2 - 1, dik * 0.6, w * 0.85)) * KOP, 'mouth', Rk)
-    kaak('snaveltip', 5, k['bek_breed'], -1)        # bovensnavel: van de mondhoek onder het oog tot het haakje
-    kaak('onderkaaktip', 4, k['kaak_breed'], +1)    # onderkaak: brede schep
-    E(H(v('snaveltip') + np.array((1, -2.5, 0))), np.array((2, 3.2, 2)) * KOP, 'beak')    # donker haakje
-    E(H(v('onderkaaktip') + np.array((-1, 0, 0))), np.array((1.8, 2, 2)) * KOP, 'beak')   # donker puntje onderkaak
-    E(H(v('mondhoek') + np.array((-2, -5, 0))), np.array((4, 5, 10)) * KOP, 'throat')
     # ogen: pikzwart (Drifloon), op het schedeloppervlak op de gemeten plek
     for sz in (1, -1):
         dx = (k['oog'][0] - sx) / sa; dy = (k['oog'][1] - sy) / sb
@@ -241,7 +227,78 @@ def potoo(lean=0, gape=None, kopdraai=10, kopkantel=10, kp=None):
     pv = P(piv)
     m.parts[n0:] = [(pv + Rh @ (c - pv), r, Rh @ R0, g) for c, r, R0, g in m.parts[n0:]]
     m.n0 = n0
+    snavel_uit_foto(m, P(piv), lambda q: pv + Rh @ (H(q) - pv), k)
     return m
+
+
+# SNAVEL: omtrek punt voor punt overgetrokken van de close-up van de 3/4-foto (referenties/jordi_great_potoo_bek_open_drieluik.webp,
+# fotopixels; raster 5 px op 7x). Jordi: "de puntige uiteinden", "de golvende vorm naar de punt toe", "meet ook de snavel af".
+BOVENRAND = [(235.7, 130.7), (245, 134.3), (255, 137), (265, 138.6), (275, 139.3), (285, 139.3), (295, 138.9), (305, 138.3),
+             (313.6, 137.9), (322, 141.4), (330.7, 147.9)]                    # nabije mondhoek -> voorkant (bij het haakje)
+VERRE_RAND = [(330.7, 147.9), (331.4, 155.7), (329.3, 167), (325.7, 177), (322, 184.3), (316.4, 194.3), (309.3, 201.4),
+              (296.4, 205.7)]                                                  # verre kant onderkaak: golft naar de punt
+NABIJE_RAND = [(235.7, 131.4), (242, 147), (249, 158.6), (257.9, 170), (267.9, 180), (277.9, 187), (286.4, 194.3),
+               (292, 201.4), (296.4, 205.7)]                                    # nabije kant onderkaak -> punt
+HAAKJE = [(331.4, 141.4), (335.5, 142.5), (337.9, 144.3), (339.0, 150), (339.3, 157)]   # donker, spits, krult omlaag
+KAAKPUNT = [(290.5, 202.5), (296.4, 205.7), (299.5, 208.5)]                        # donker, spits
+FOTO_OOG, FOTO_KRUIN = (271.7, 111.3), (240, 27)
+ONTWERP_YAW, ONTWERP_PITCH = 45, 8
+
+
+def snavel_uit_foto(m, pv, wereld, k):
+    """Zet de overgetrokken 2D-omtrek terug in 3D: voor elk punt is de diepte (kop-z) bekend uit zijn plek op de rand
+    (nabije mondhoek +w, voorkant 0, verre mondhoek -w); x en y volgen uit de projectie op de ontwerphoek (2x2-stelsel)."""
+    Rc = rot_x(math.radians(ONTWERP_PITCH)) @ rot_y(math.radians(ONTWERP_YAW))
+    scr = lambda q: (Rc @ wereld(np.array(q, float)))[:2]
+    # schaal en plaats: oogmidden en kruin van foto en model op elkaar
+    sx, sy, sa, sb, sc = k['schedel']
+    dx = (k['oog'][0] - sx) / sa; dy = (k['oog'][1] - sy) / sb
+    oog_q = (sx + sa * dx, sy + sb * dy, sc * math.sqrt(max(0.0, 1 - dx * dx - dy * dy)))
+    oog_s = scr(oog_q)
+    kruin_s = max((Rc @ c)[1] + np.linalg.norm((Rc @ R0 @ np.diag(r))[1]) for c, r, R0, g in m.parts[m.n0:])
+    kk = (kruin_s - oog_s[1]) / (FOTO_OOG[1] - FOTO_KRUIN[1])
+    naar_s = lambda p: np.array((oog_s[0] - (p[0] - FOTO_OOG[0]) * kk, oog_s[1] - (p[1] - FOTO_OOG[1]) * kk))
+    w = k['bek_breed']
+    q0 = np.array(oog_q, float)
+    J = np.array([(scr(q0 + e) - scr(q0)) for e in np.eye(3)]).T     # 2x3, de projectie is lineair in q
+
+    def terug(p, z):
+        t = naar_s(p) - scr(q0) - J[:, 2] * (z - q0[2])
+        xy = np.linalg.solve(J[:, :2], t)
+        return wereld(np.array((q0[0] + xy[0], q0[1] + xy[1], z)))
+
+    def lijn(pts, z0, z1, n=60):
+        pts = np.array(pts, float); L = np.r_[0, np.cumsum(np.linalg.norm(np.diff(pts, axis=0), axis=1))]
+        out = []
+        for t in np.linspace(0, 1, n):
+            p = np.array([np.interp(t * L[-1], L, pts[:, i]) for i in (0, 1)])
+            out.append(terug(p, z0 + (z1 - z0) * math.sin(t * math.pi / 2) if z0 else z1 * t))
+        return out
+    rr = k['rand'] * KOP
+    boven = lijn(BOVENRAND, w, 0); verre = lijn(VERRE_RAND, -w, 0); nabij = lijn(NABIJE_RAND, w, 0)
+    for p in boven + verre + nabij:
+        m.parts.append((p, np.array((rr, rr, rr)), np.eye(3), 'rim'))
+    # binnenkant: tussen nabije en verre rand, iets dieper de kop in (weg van de kijker)
+    achter = np.linalg.inv(Rc) @ np.array((0, 0, -1.0))
+    for a, b in zip(nabij[::2], verre[::2]):
+        for t in np.linspace(0.05, 0.95, 12):
+            p = a * (1 - t) + b * t + achter * (6 + 6 * math.sin(math.pi * t))
+            m.parts.append((p, np.array((3.2, 3.2, 3.2)) * KOP, np.eye(3), 'mouth'))
+    for a, b in zip(boven[::3], nabij[::3]):
+        for t in np.linspace(0.1, 0.9, 6):
+            p = a * (1 - t) + b * t + achter * 7
+            m.parts.append((p, np.array((3.2, 3.2, 3.2)) * KOP, np.eye(3), 'mouth'))
+    for pts in (HAAKJE, KAAKPUNT):                                    # spitse donkere punten
+        ln = lijn(pts, -2, -2, 12) if pts is HAAKJE else lijn(pts, 0.01, 0, 10)
+        for i, p in enumerate(ln):
+            r = (1.6 - 1.2 * i / (len(ln) - 1)) * KOP
+            m.parts.append((p, np.array((r, r, r)), np.eye(3), 'beak'))
+    # de mond zit IN de kop (foto: onderkant kop = kaakpunt): bevederde buitenkant van de onderkaak en wangen
+    # achter de randen, zodat de opening niet als slab onder de kop hangt
+    for p in nabij[::2] + verre[::2]:
+        m.parts.append((p + achter * 15, np.array((6, 6, 6)) * KOP, np.eye(3), 'fur'))
+    for a, b in zip(boven[::4], nabij[::4]):                         # wang tussen mondhoek en schedel
+        m.parts.append(((a + b) / 2 + achter * 16, np.array((7, 7, 7)) * KOP, np.eye(3), 'fur'))
 
 
 def sheet():

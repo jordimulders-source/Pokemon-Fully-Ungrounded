@@ -145,3 +145,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.29] - DJ Rotom kleur5 (Rotom-consistentie)
 - Jordi: "best goed al, laat een agent het met de andere rotom sprites vergelijken en kijken of er dingen zijn die consistent zijn die in deze sprite missen". Analyse: `docs/concept/sprites/dj_rotom/kleur4/CONSISTENTIE.md`.
 - Kleur5 (`kleur5/dj_rotom.png`): zwarte binnenlijn aan de schaduwkant, vrije spits van 10 px (bliksem 3 px omhoog), twee losse tandjes, hooglicht als vlekjes (4,5%), oranje/wit/grijs op de exacte game-waarden. Open voor Jordi: gloed voller, navy of grijs, extra plasma, verticale plek; daarna shiny, frame 2, rug, icoon.
+
+### [v0.0.30] - DJ Rotom frontsprite af
+- Verse eindkeuring PASS (`docs/concept/sprites/dj_rotom/kleur5/EINDKEURING.md`): op 1× een vorm uit dezelfde game als de zes Rotoms. Aanbevelingen uitgevoerd: naden tussen kop en kasten zwart (zoals Frost/Mow), equalizertoppen eigen groen zodat ze in de shiny niet perzik worden (46 px).
+- Af: `docs/concept/sprites/dj_rotom/af/dj_rotom.png` (frame 1). Volgende: shiny, frame 2, rug, icoon, data.
+- Les in `SPRITE_WERKWIJZE.md`: consistentie-analyse tegen de bestaande vormen bij vormen van een bestaande soort.

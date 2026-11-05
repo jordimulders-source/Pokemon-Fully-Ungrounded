@@ -59,6 +59,8 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 3. **Keurdersadvies dat een goedgekeurd ontwerp raakt** (bv. "masker dunner") is een vraag aan Jordi, geen opdracht aan de maker.
 4. Pas als het door 1 en 2 komt: naar Jordi, met een vel en een korte lijst keuzes.
 
+- **Vormen van een bestaande soort (Rotom-vormen, regional forms):** laat een agent een systematische consistentie-analyse doen tegen alle bestaande vormen (palet-waarden, binnenlijn, spits, tanden, hooglicht-%, maat), met een script gemeten. Dat vond bij DJ Rotom vijf afwijkingen die geen gewone keuring zag (Jordi, 5 nov: "dat die klopt met de andere sprites is het belangrijkste"). Let op kleuren die in de shiny meeveranderen (equalizer deelde de gloedindex).
+
 ## Stap 5. Reparatierondes
 - Alleen wat Jordi of de keurder noemt; benoemde zones, pixelbudget, diff-bewijs buiten de zones.
 - **Kleine reparaties zijn klein**: Jordi vond olinguito ronde 3 al "het beste"; ronde 4 was 53 px.

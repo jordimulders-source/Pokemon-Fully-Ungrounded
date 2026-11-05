@@ -20,3 +20,10 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`.
 
 ## Afgekeurd (niet herhalen)
 - Ronde 1 (23 okt, `ronde1/`): boombox met handvat, cassettedek en speakers ín één kast. "een hele andere vorm, kom op, je kan beter"; "niet DJ Rotom".
+
+## Stand (5 nov)
+- Kleur1–5 met één maker-agent; keuring kleur2 (`kleur2/KEURING.md`), consistentie-analyse tegen de game-Rotoms (`kleur4/CONSISTENTIE.md`).
+- **Jordi (5 nov) over kleur5:** "ik vind hem eigenlijk wel prima zo, doe een laatste verse keuring ... dat die klopt met de andere sprites is het belangrijkste ook". Verse eindkeuring PASS (`kleur5/EINDKEURING.md`); aanbevelingen A (naden zwart, x15/x35) en B (equalizertoppen eigen groen, i.v.m. shiny) door Claude uitgevoerd (46 px).
+- **Af: `af/dj_rotom.png`** (frame 1) + `af/normal.pal`. Bevroren.
+- Volgende (aparte taak): shiny.pal (recept in CONSISTENTIE.md: gloed perzik, oranje roze), frame 2 (bliksem, pompende conussen, andere equalizer), rugsprite, icoon, `enemyMonElevation` (zweven zoals de andere Rotoms; vraag aan Jordi), data.
+- Open smaakvragen (Jordi liet ze zo): bleke gloed, navy speakers, alleen de bliksem als plasma.

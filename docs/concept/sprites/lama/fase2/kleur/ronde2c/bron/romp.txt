@@ -1,0 +1,14 @@
+# R1 romp, met de hand getypt (rij x0 pixels). Eén bol volume: licht linksboven (schouder/rug), kernschaduw die de
+# buik volgt (links y37, midden y38, rechts y37), teruggekaatst licht in de franje onderaan.
+# Klonten (verspringend, ongelijk): A groot (schouder, x21-35 y30-37), B klein en laag (x33-36 y36-38),
+# C middel (flank, x37-43 y34-37), D middel (achterwerk, x45-50 y31-37). Franje: schuine tongen y38-39.
+30 32 l
+31 29 llllll
+32 38 s
+33 20 dlhllllllllllbbsbbbbbbbbbslllbbsdd
+34 21 dlllllllbbbbbbsbllhlbbbssllbbsd
+35 20 dllhllllbbbbbssbbllllbbsbbblbbsk
+36 20 dllbbbsbbbbsslllbbsbbssbbsbbbsdk
+37 21 dbssssssssssbbbsbbsdbbbssssssdk
+38 22 dsssssssbbssssssbbsssbbssssdk
+39 29 sbsdssdssbsdssbd

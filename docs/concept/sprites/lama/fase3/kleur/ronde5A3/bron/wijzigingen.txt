@@ -1,0 +1,35 @@
+# Ronde 5A3: met de hand op ronde5A2.txt. Rijen: 'R y x0 pixels' ('.' = transparant); pixels: 'P x y letter'
+# bombin 1,2x en 1 rij lager: bol y6-10 (x22-24 / x20-26 / x19-26), band y11 x19-26, rand y12 x16-29, rechts zakkend y13 x24-30 tot op de vlecht
+R 5 19 dCk.
+R 6 19 dSkkkk.dCk
+R 7 19 dkSSdkkkSCk
+R 8 19 kSdkkkkkCCk
+R 9 19 kdkkkkkkCk
+R 10 19 kkkkkkkkCk
+R 11 18 .kRRrrrrmkk
+R 12 16 kkddkkkkkkkkkk
+R 13 19 dHHCSkkkkkkk
+# oog: terug naar 5A (exact), dan 3 px: lidvlak boven het lid 1 tint lichter (x22 d->S, x23-24 S->C)
+P 22 14 S
+P 23 14 C
+P 24 14 C
+P 25 14 S
+P 26 14 S
+P 22 15 k
+P 23 15 k
+P 24 15 k
+P 25 15 k
+P 26 15 S
+P 22 16 d
+P 23 16 k
+P 24 16 H
+P 25 16 H
+P 26 16 S
+P 23 17 d
+P 24 17 k
+P 25 17 k
+P 26 17 S
+P 23 18 S
+P 24 18 S
+P 25 18 S
+P 22 17 C

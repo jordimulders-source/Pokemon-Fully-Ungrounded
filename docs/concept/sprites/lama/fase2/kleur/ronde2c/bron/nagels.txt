@@ -1,0 +1,7 @@
+# R5 nagels: binnen het bevroren silhouet kan een nagel maar 1 px hoog (de pixel eronder is rand). Leesbaarder door de
+# pixel tussen de twee nagels donker (m) te maken, zodat elke nagel een eigen lichte stip in een donkere rand is.
+# + spikkels uit de keuring: (43,51) b -> s, (48,56) s -> b.
+55 22 m
+61 29 m
+51 43 s
+56 48 b

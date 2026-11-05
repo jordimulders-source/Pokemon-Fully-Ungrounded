@@ -1,0 +1,10 @@
+px 1517 | silhouet 1512 | alpha-diff: +5 -0
+   + x22 y4 k  (bombin, toegestaan)
+   + x23 y4 k  (bombin, toegestaan)
+   + x24 y4 k  (bombin, toegestaan)
+   + x17 y9 k  (bombin, toegestaan)
+   + x18 y9 k  (bombin, toegestaan)
+gewijzigd t.o.v. ronde 2: 38 {'kop/bombin/vlecht (y0-23)': 38}
+open randen (vulkleur naast transparant): 3 C@x20,y2 C@x20,y3 C@x25,y3
+kleuren gebruikt: 15 BCDGHRSUdgkmpry
+wijzigingen buiten bombin (y4-9) en vlecht (x24-29, y12-22): 0 []

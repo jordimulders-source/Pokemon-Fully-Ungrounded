@@ -1,0 +1,7 @@
+# Oog C: recept A uit de oogstudie. Rechte lidlijn van 4 px (k), wimper achteraan omhoog (x23 y11), iris direct tegen het lid,
+# liggende pupil (kk) in grijsbruine iris (n), crème lichtje (h) laag vóór, onderrand in vachtschaduw.
+11 19 lbbbk
+12 19 kkkkb
+13 19 dnkkb
+14 19 hnndb
+15 19 bbsbb

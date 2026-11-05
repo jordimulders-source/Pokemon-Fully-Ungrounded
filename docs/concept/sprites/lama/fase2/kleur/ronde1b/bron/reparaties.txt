@@ -1,0 +1,24 @@
+# Ronde 1b: zones halsband (ring), aguayo (doek over de rug) en volume romp/dij/hals. Overschrijft raster.txt.
+23 18 dssblbbssk
+24 18 dllbbbbbssddk
+25 19 dhlbbbbbsssdk
+25 36 dlmmmmmmmmmdddssk
+26 19 mllbbbbbssyymddddlmppppppppmmllbsk
+27 20 mtlbbbbttrmssllbbmyyyyyyyyddlbbssk
+28 20 mrtyyrrrrsysbbbbbmuuuuuuuunnlbbsdk
+29 21 dqrrrrspssbbbbbbmuuuuuuuunklbsk
+30 20 dlpsystbsbbbbbbbbsmqqrrrrmksbbsk
+31 20 dlsbsbsbbllbbbbbbbsmmrrrmkssbbsdk
+32 21 dllbbbbllllbbbbbbbssmmmssbbbbbsdk
+33 22 dllbbbbllbbbbbbbbbbsssbbbbbbssdk
+34 22 dlbbbbbbbbbbsbbbbbbbbbbbbsbssk
+35 20 ddllbbbbbbbbbbsbbbbbbbbbbbbssssk
+36 20 dlbbbbbbbbbbbsbbsbbbsbbbssssssdk
+37 21 dbbbsbsssssssssssssssssssssssdk
+38 22 dssssssssssssssssssssssssssdk
+39 23 kssddddsddddddsddddddsdddsdk
+40 24 kssssssddsskkkdsssssssslbsk
+41 38 kssdsssdlhlsk
+42 39 ksdssdllbsk
+43 40 ksssdlbbsk
+44 40 ksssdkdbbsk

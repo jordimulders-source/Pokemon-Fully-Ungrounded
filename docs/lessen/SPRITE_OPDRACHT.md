@@ -34,6 +34,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Referentiefoto = inspiratie, geen blauwdruk (Pokémon-filosofie), maar de soort moet herkenbaar blijven.
 
 **Werkwijze**
+- **Een goedgekeurd poppetje/ontwerp is de specificatie:** het silhouet trekt het over (max. ±1 px), de maker interpreteert of herontwerpt het niet (Jordi, 3 nov, lamakop: "de kop is dus niet goed want die is anders"). Dat geldt voor het **hele** silhouet, ook lijf en poten ("het lijf en de poten wijken echt flink af"): Claude geeft geen eigen vormeisen ("eigen kolom per poot", "≥ 5 px") die het model overrulen, en meet elke ronde de afwijking met een dekkingskaart van het model (`lama/fase2/silhouet_r5/kop_dekking.py`) vóór Jordi.
 - **Wat Jordi goedkeurde blijft letterlijk staan** (pixel voor pixel). "Meer Pokémon" of "beter" nooit uitvoeren door goedgekeurde verhoudingen te veranderen.
 - **Een kleine correctie is klein:** werk binnen het pixelbudget dat Claude opgeeft; tel en meld het aantal gewijzigde pixels. Verplaats je een onderdeel, laat dan de vorm eromheen meekloppen (neus verschuiven = snuit mee).
 - Grote of ongevraagde wijzigingen alleen als variant naast het origineel.
@@ -54,4 +55,5 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - **Een formaat- of pixelgrens mag nooit winnen van de vorm:** meldt een agent "dunner/rechter gemaakt om onder X px te blijven", dan is dat een afkeuring, niet een kanttekening (olinguito 22: Claude liet een 5 px rechte poot door).
 - Twijfel Claude bij de eigen check, dan de vorige goedgekeurde versie houden en eerst de oorzaak vinden; geen nieuwe ronde op gevoel.
 - **Jordi's woorden letterlijk doorgeven** (citaat), niet parafraseren of inkorten tot een eigen lijstje. Een nieuwe instructie of referentie is een **aanvulling** op de vorige, geen vervanging: alle eerdere, nog openstaande punten gaan mee. Geeft Jordi een referentie-sprite die "volledig voldoet", dan is die referentie de specificatie: de agent neemt alles over wat hij laat zien (ook dingen die Claude niet heeft opgesomd, zoals de positie van het oog) en meet het na (olinguito stap 1: de oogpositie viel weg omdat Claude Linoone samenvatte tot drie punten).
+- **Eén versie naar Jordi, nooit meerdere imperfecte opties** (Jordi, 3 nov, lama 5b/5c: "je stuurt telkens meerdere imperfecte opties, die lastig te vergelijken zijn"). Stuur alleen de beste versie, met alles wat Claude, de maker of de keurder zelf al zag opgelost; vorige rondes hooguit klein als naslag, niet als keuze. Een smaakvraag is één vraag over die ene versie. Een reparatie die een kenmerk laat verdwijnen (5c: de staart) is een fail, geen "smaakvraag".
 - Nieuwe terugkerende feedback van Jordi meteen in §2 hierboven zetten.

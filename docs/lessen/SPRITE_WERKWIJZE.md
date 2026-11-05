@@ -4,6 +4,11 @@
 
 Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedgekeurde sprite in ±1 dag) en de **olinguito v2** (Dark-starter, fase 1: na 30+ mislukte rondes in de oude aanpak, nu in 5 silhouet- en 4 kleurrondes "het beste olinguito-ontwerp wat ik tot nu toe heb gezien"). Achtergrond: `RETRO_KOLIBRIE.md`, `RETRO_OLINGUITO.md`. Deze werkwijze vervangt stap 1–5 bovenaan `FAKEMON_DESIGN.md` waar ze verschillen.
 
+## Verplicht (Jordi, 2 nov, na de wasbeer)
+- **Coathief is het voorbeeld.** Claude tekent zelf geen silhouetten of kleuren: geen buizen/ellipsen, geen geknipte stukken van bestaande sprites, geen scriptkleuring. Claude maakt de bron klaar (foto's, poppetje, SPEC), de **maker-agent** tekent met de hand, Claude controleert tegen de bronfoto's, een keurder keurt, dan pas Jordi.
+- Elke opmerking van Jordi gaat met zijn letterlijke woorden naar de maker; nooit één punt los repareren zonder het geheel naast de bron te leggen.
+- Twee rondes zonder voortgang = stoppen en de stap terug benoemen.
+
 ## Kern in vijf zinnen
 1. **De vorm wordt vastgelegd vóór er één kleurpixel bestaat**, en Jordi keurt die vorm als silhouet op ware grootte.
 2. **De vorm komt van iets echts:** een foto van het dier in de juiste pose, of het 3D-poppetje dat Jordi koos; nooit van zelfgebouwde cirkels en driehoeken ("Pokémon designen is geen cirkels en driehoeken werk").
@@ -21,6 +26,16 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - Jordi geeft het idee, de pose (schets of foto) en referenties. **Vraag om een foto van het echte dier in de gewenste pose**; dat was beide keren de doorbraak (kolibrie: de drinkende kolibrie; olinguito: de boomfoto + kopfoto).
 - **Ontwerpschetsen alleen als hulp om te praten**, niet als bron voor de sprite. Lukt een pose na 2 schetsrondes niet: stop met schetsen en ga naar een echte bron (foto of 3D-poppetje).
 - **Viervoeters en lastige 3/4-poses:** het 3D-poppetje (`docs/concept/sprites/olinguito_v2/silhouet_kolibriemethode/pop3d.py` + `silhouet.py`): ellipsoïden in diercoördinaten, met **lijf-hoek, kop-hoek (kop draait meer naar de kijker dan het lijf), camerahoek en kanteling** als knoppen. Laat Jordi kiezen uit een raster van hoeken (olinguito: "B2" = lijf 40°, kop 49°, kantel 8°, Linoone-perspectief). Een te schuine hoek (52°) maakt alles samengeknepen.
+- **Ontwerpfase met het poppetje als praatplaat werkt uitstekend (lama, 2 nov; Jordi: "ik vind dit echt geweldig werk [...] noteer dat deze manier van werken tot nu toe uitstekend werkt").** Van idee tot goedgekeurd ontwerp van fase 2 én 3 in 5 korte rondes, zonder één pixel:
+  1. Jordi's foto's meteen in `referenties/`, zijn woorden letterlijk in SPEC.md.
+  2. Poppetje (`lama/ontwerp/pop3d_lama.py`, op basis van het Coathief-poppetje) in de hoek van Jordi's posefoto, **mét kleding en kenmerken**, gekleurd: Jordi wil het ontwerp "vooral ook in design zien".
+  3. Eén vel met een klein raster van keuzes die er echt toe doen (verhouding A/B/C met het kop-% erbij, vachtkleuren), naast de foto en de vorige fase; één aanbeveling van Claude.
+  4. **Hele lijn op schaal naast elkaar** (fase 1 sprite + fase 2 + fase 3, hoogte naar het D1-formaat), zodat Jordi de evolutie beoordeelt, niet één losse vorm.
+  5. Onderscheid tussen fasen maken via **silhouet: bouw + pose** (slungelige tiener in dekking ↔ zware, gewortelde kampioen); gezicht en kleur volgen in de kleurronde. Leitmotif (halsband) door de hele lijn.
+  6. Elke ronde: SPEC + changelog + commit/push; het vel via SendUserFile. Daarna de bron voor het silhouet (`fase2/silhouet/bron.py`: goedgekeurd poppetje direct verkleind) en pas dan de maker-agent.
+- **Het poppetje faalt bij slanke dieren op de achterpoten** (wasbeer, 2 nov: 3 rondes, "veel te dikke reet", pose niet zoals de foto): overlappende ellipsoïden van heup en dijen maken de achterkant te dik en een staande houding wordt een ton. Heeft Jordi een foto van de pose: **trek die direct over** (kolibriemethode) en stop na 2 mislukte poppetjerondes. Vraag foto's als bestand; foto's die alleen in de chat staan kunnen niet als onderlaag dienen.
+- **Een Gen 3-sprite als skelet + eigen buizen = verzonnen vormen** (wasbeer ronde 4–6, 2 nov): houding goed, maar het dier werd een fret (rechte rug, wigkop, stompjes). Neem de vormen altijd van een foto; een skeletsprite alleen voor de houding, en vergelijk elke ronde zelf eerlijk met alle foto's vóór Jordi.
+- **Geen collage en geen scriptkleuring** (wasbeer, 2 nov: "erbarmelijk slecht", "helemaal geen pokemon sprite"): een romp uit een bestaande sprite knippen en er buizen en pixelsjablonen aan plakken, en dan per script inkleuren, geeft blokken en vlakken zonder samenhang. Elke opmerking van Jordi los repareren maakt het erger. Het silhouet wordt als één geheel getekend (bron overtrekken of een maker-agent met de hand), kleur altijd met de hand na een Game Freak-studie. Na ±5 rondes zonder voortgang: stoppen, de stand eerlijk benoemen en terug naar de werkwijze.
 - **Vogels/vliegers en dieren met een simpele bouw:** een foto in de juiste pose is genoeg (kolibrie).
 - Zijaanzicht mag als het bij het dier past (Swellow, Relicanth, Seviper, Skarmory).
 - **Gokken is verboden:** is een kenmerk twee keer mis (kolibrievleugels), vraag Jordi om een referentie of een krabbel. Zijn krabbels over het silhouet gaven per stuk de meeste vooruitgang.
@@ -62,6 +77,9 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - Alleen wat Jordi of de keurder noemt; benoemde zones, pixelbudget, diff-bewijs buiten de zones.
 - **Kleine reparaties zijn klein**: Jordi vond olinguito ronde 3 al "het beste"; ronde 4 was 53 px.
 - Wat Jordi goedkeurt wordt bevroren in SPEC.md; afkeuringen gaan onder "Afgekeurd".
+- **Overtrekvel met pixelraster** (Coathief, 25 okt; Jordi: "zo met een pixelraster werkt goed voor dit soort aanpassingen"): bij vormreparaties de onderlaag en de sprite naast elkaar op hetzelfde 64-raster met spritecoördinaten (`docs/concept/sprites/coathief/kleur/ronde8/overtrekvel.py`). De maker trekt cel voor cel over en markeert elke afwijking met reden; Jordi tekent cellen af op het vel. Stuur het vel bij elke vormronde mee. Losse krabbellijnen op een 8×-uitsnede gaven 6 rondes drift (de sprite week telkens "net teveel" af van de onderlaag); het raster loste het in 1–2 rondes op.
+- **Kleur volgt de onderdelen van de onderlaag:** lees per pixel af welk onderdeel het in de render is (nabije poot, verre poot, vacht, klauw; `coathief/silhouet/labels_voorpoten.py`). Een kloppend silhouet met een verkeerde kleurindeling las als "weer hetzelfde" (Coathief ronde 6).
+- **Krabbels van Jordi terugrekenen:** schaal meten aan een bekend kenmerk (het oog), dan per cel aflezen; zijn lijn is een indicatie, de onderlaag is de maatstaf.
 
 ## Stap 6. Afronden
 - Eindversie in `docs/concept/sprites/<naam>/af/` + vel; SPEC.md, `CHANGELOG.md`, Stand van zaken in `CLAUDE.md` bijwerken; lessen naar het passende `docs/lessen/`-bestand.
@@ -70,3 +88,22 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 ## Kosten en tempo (ter oriëntatie)
 - Een maker- of keurderronde kost ±150–400k agenttokens; zuinig: één maker, één keurder, kleine vellen, geen parallelle experimenten.
 - Commit en push na elke ronde (ook interne), zodat niets verloren gaat.
+- **Gemeten (Coathief, 25 okt, uit de sessielogs `~/.claude/projects/.../*.jsonl`):** hoofdsessie ±0,4M output + 0,75M nieuwe input; één maker-agent over 13 rondes ±0,57M output + 3,6M nieuwe input (76M cache-reads, doordat zijn context bleef groeien); 4 keurders samen ±0,3M output + 0,8M nieuwe input. De 6 voorpootrondes zonder raster waren het duurste deel. Zuiniger: overtrekvel vanaf de eerste vormreparatie, kleine pixelreparaties (< 15 px) door Claude zelf, en een maker die erg lang doorloopt na ±8 rondes vers starten met SPEC + NOTITIES.
+- Oudere sprites (olinguito, kolibrie) hebben geen logs meer in de container; alleen schattingen in `RETRO_KOLIBRIE.md` en `SPRITE_REVIEW.md`. Noteer daarom voortaan de gemeten kosten per sprite in zijn SPEC.md.
+
+## Lessen lama fase 2 (2–3 nov)
+- **Keur het poppetje kenmerk-voor-kenmerk naast de echte foto** (vooral de kop) vóór Jordi: de paardenkop van het poppetje glipte door en kostte ±10 rondes sprite (Jordi: "toch net wat meer een paard dan een lama").
+- **Pose per dier uit het echte gedrag + Gen 3-posestudie** (`lama/fase2/posestudie/`): een lama staat horizontaal met de kop driekwart naar je toe (Manectric/Rapidash/Umbreon); "poten omhoog" is bij een lama gek, een opgetilde/geknikte poot leest als "gebroken".
+- **Korrel tellen:** wolomtrek met een script nalopen op 1-px-bobbels/inkepingen (`lama/fase2/silhouet_r3/korrel.py`); Game Freak-wol (Mareep/Flaaffy) is bijna glad met 2–3 grote bogen.
+- **Kleur nooit met tintwissel-scripts per zone**: gaf horizontale banden/stempelschulpen (de keurder vond het in 2b).
+- **Oog:** droog = rechte lidlijn, pupil tegen het lid, licht laag vóór; nooit een zwart rondje met een wit puntje (oogstudie `lama/fase2/oogstudie/`).
+- **Verse maker na ±8–9 rondes** (context >400k) met SPEC + NOTITIES + keuring: werkte direct beter en goedkoper.
+- **Echte bronfoto's controleren op de soort** (foto 6 bleek een alpaca).
+- **Lama fase 2 (4 nov):** silhouet pas goed toen het hele 3D-model werd overgetrokken met een dekkingskaart (50 %-grens, max. ±1 px); daarvoor 6 rondes doorpatchen omdat Claude eigen vormeisen (eigen kolom per poot, ≥ 5 px) boven het model zette. Fluffy wol: overlappende ronde wolbollen met eigen schaduwboog (Mareep/Flaaffy), binnenkleuren eerst, omtrek pas daarna; geen gestapelde gelijke bollen (buis) en geen losse plukken (uitstulping). Eindkeuring vond nog 6 px (nagels tegen transparant, zwart aan de lichtkant).
+- **Lama fase 3 (5 nov):** zegt Jordi dat iets "in de sprite niet goed" is terwijl silhouet en model zijn goedgekeurd, dan is het werk in de kleursprite; niet terug naar poppetje of bron ("je luistert niet", "dit is nutteloos werk").
+- **Lama fase 3 (5 nov):** een schuine mondlijn die naar achteren omhoog loopt leest als een (domme) lach; een neutrale lamablik = korte rechte/licht dalende mondlijn, hangende onderlip, zwaar vlak lid. Een kop mag in de sprite groter dan het silhouet als accessoires (hoed, vlechten) anders niet passen (Jordi gaf daar al eerder toestemming voor; niet opnieuw vragen).
+- **Lama fase 3 (5 nov):** ook in de kleurronde de kop overtrekken van het model (bemonsterde kleur + labels + lijnen per spritepixel op een raster, `lama/fase3/kleur/kopbron/bron_kop.py`), niet laten hertekenen: een maker die de kop "naar het model" tekent verzint toch eigen snuit/oog/vlecht ("nu ben je gewoon weer dingen aan het verzinnen"). Opschalen = het model uniform schalen.
+- **Lama fase 3 (5 nov):** kleur van een onderdeel nooit veranderen om een ander onderdeel te scheiden (vlechten werden bruin voor het oog; Jordi: "waarom zijn de vlechten opeens bruin?"); scheiden met 1 px tussenkleur. Een donker lidvlak met een vlakke lijn erboven leest als frons (boos); lui = licht lidvlak, lidlijn dalend naar buiten.
+- **Lama fase 3 (5 nov):** is iets "bijna goed" (oog 5A: "best ok, maar nog wat bozer"), repareer dan met 1–3 px vanaf die versie; een heel nieuw recept (5A2) maakte het "veel slechter".
+- **Lama fase 3 (5 nov, af):** wat werkte: (1) kopbron = model met alleen de kop uniform geschaald, cel voor cel overgetrokken (labels + lijnen + bemonsterde kleur op een raster); (2) daarna per Jordi-opmerking 1–50 px vanaf de vorige versie; (3) verse eindkeurder met een eigen sectie per poot; reparatielijst met huidige → nieuwe index, door Claude gecontroleerd en uitgevoerd. Wat niet werkte: poppetje/bron aanpassen voor een spriteprobleem, en een maker die een onderdeel "naar het model" hertekent.
+

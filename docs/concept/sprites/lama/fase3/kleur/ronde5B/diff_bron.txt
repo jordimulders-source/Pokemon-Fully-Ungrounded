@@ -1,0 +1,26 @@
+gewijzigd t.o.v. 2b: 176 px; buiten de kopzone: 0
+onderdeel wijkt af van de bron: 2
+   x24y15 E in bron, sprite H
+   x25y15 E in bron, sprite H
+lijnafwijkingen (crème onderdelen): 18
+   x26y4 geen lijn in bron, sprite d
+   x26y5 geen lijn in bron, sprite d
+   x26y6 geen lijn in bron, sprite d
+   x27y6 geen lijn in bron, sprite k
+   x22y13 geen lijn in bron, sprite d
+   x24y13 lijn in bron, sprite S
+   x25y13 lijn in bron, sprite S
+   x22y14 geen lijn in bron, sprite k
+   x23y14 geen lijn in bron, sprite k
+   x24y14 geen lijn in bron, sprite k
+   x25y14 geen lijn in bron, sprite k
+   x16y15 geen lijn in bron, sprite d
+   x22y15 geen lijn in bron, sprite d
+   x23y15 geen lijn in bron, sprite k
+   x24y15 lijn in bron, sprite H
+   x25y15 lijn in bron, sprite H
+   x26y15 lijn in bron, sprite S
+   x23y16 geen lijn in bron, sprite d
+px 1519 | buiten silhouet +18 | silhouet leeg -11
+open randen: 0 
+kleuren: 15

@@ -1,0 +1,26 @@
+px 1402 | silhouet_A 1402 | alpha-diff +0 -0
+onderdeel wijkt af van de bron: 0
+lijnafwijkingen (crème onderdelen): 21
+   x21y3 geen lijn, sprite k
+   x20y4 geen lijn, sprite d
+   x21y4 geen lijn, sprite k
+   x28y6 geen lijn, sprite k
+   x28y9 geen lijn, sprite k
+   x20y12 geen lijn, sprite d
+   x22y14 geen lijn, sprite d
+   x25y14 lijn in bron, sprite S
+   x26y14 lijn in bron, sprite S
+   x22y15 geen lijn, sprite k
+   x23y15 geen lijn, sprite k
+   x25y15 geen lijn, sprite k
+   x16y16 geen lijn, sprite d
+   x22y16 geen lijn, sprite d
+   x23y16 geen lijn, sprite k
+   x26y16 lijn in bron, sprite S
+   x23y17 geen lijn, sprite d
+   x24y17 geen lijn, sprite k
+   x26y17 lijn in bron, sprite S
+   x19y22 geen lijn, sprite k
+   x20y22 lijn in bron, sprite S
+open randen: 0 
+kleuren: 15

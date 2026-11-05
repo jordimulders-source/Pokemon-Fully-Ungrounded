@@ -1,0 +1,52 @@
+Diffkaart kleur ronde 4b t.o.v. silhouet ronde 6 (en de 50%-dekking van het model, silhouet_r5/kop_alpha.npy).
+Toegestaan: per pixel max. 1 px, alleen om schokken glad te strijken of de staart leesbaar te maken; doel totaal <= 40 px.
+Silhouet t.o.v. ronde 6: +14 / -10 px (totaal 24)
+  + x49 y23  dekking model 0.28  afwijking van de 50%-grens: 1 px   <- staart: pluim
+  + x50 y23  dekking model 0.03  afwijking van de 50%-grens: 1 px   <- staart: pluim schuin naar achteren
+  + x51 y24  dekking model 0.07  afwijking van de 50%-grens: 1 px   <- staart: pluim 5 breed
+  + x51 y25  dekking model 0.49  afwijking van de 50%-grens: 1 px   <- staart: idem
+  + x51 y30  dekking model 0.34  afwijking van de 50%-grens: 1 px   <- wolboog achterwerk
+  + x51 y32  dekking model 0.01  afwijking van de 50%-grens: 1 px   <- wolboog achterwerk
+  + x51 y33  dekking model 0.13  afwijking van de 50%-grens: 1 px   <- wolboog achterwerk
+  + x13 y34  dekking model 0.11  afwijking van de 50%-grens: 1 px   <- wolboog borst
+  + x51 y34  dekking model 0.17  afwijking van de 50%-grens: 1 px   <- wolboog achterwerk
+  + x13 y35  dekking model 0.17  afwijking van de 50%-grens: 1 px   <- wolboog borst
+  + x13 y36  dekking model 0.12  afwijking van de 50%-grens: 1 px   <- wolboog borst
+  + x13 y37  dekking model 0.44  afwijking van de 50%-grens: 1 px   <- wolboog borst
+  + x13 y41  dekking model 0.31  afwijking van de 50%-grens: 1 px   <- wolboog borst onder
+  + x49 y59  dekking model 0.28  afwijking van de 50%-grens: 1 px   <- verre achterhoef (eigen hoef)
+  - x29 y25  dekking model 0.70  afwijking van de 50%-grens: 1 px   <- doek: bovenhoek afgerond
+  - x37 y25  dekking model 0.86  afwijking van de 50%-grens: 1 px   <- doek: bovenhoek afgerond
+  - x43 y25  dekking model 0.60  afwijking van de 50%-grens: 1 px   <- glad: losse bult weg (r4)
+  - x44 y25  dekking model 0.75  afwijking van de 50%-grens: 1 px   <- glad: idem
+  - x45 y25  dekking model 0.58  afwijking van de 50%-grens: 1 px   <- glad: idem
+  - x46 y25  dekking model 0.49  afwijking van de 50%-grens: 0 px   <- staart: lucht aan de rugzijde
+  - x42 y26  dekking model 1.00  afwijking van de 50%-grens: 1 px   <- wolboog rug (insnoering)
+  - x46 y26  dekking model 1.00  afwijking van de 50%-grens: 1 px   <- staart: lucht aan de rugzijde / wolboog rug
+  - x51 y26  dekking model 0.56  afwijking van de 50%-grens: 1 px   <- glad: hoek achterwerk (r4)
+  - x50 y36  dekking model 0.88  afwijking van de 50%-grens: 1 px   <- wolboog achterwerk (insnoering)
+
+Kaart y20-42, x38-53 (# beide, + alleen ronde 4, - alleen ronde 6):
+y20 ................
+y21 ................
+y22 ................
+y23 ...........++...
+y24 .........####+..
+y25 .....----####+..
+y26 ####-###-####-..
+y27 ##############..
+y28 ##############..
+y29 ##############..
+y30 #############+..
+y31 #############...
+y32 #############+..
+y33 #############+..
+y34 #############+..
+y35 #############...
+y36 ############-...
+y37 #############...
+y38 #############...
+y39 #############...
+y40 ############....
+y41 ###########.....
+y42 ##########......

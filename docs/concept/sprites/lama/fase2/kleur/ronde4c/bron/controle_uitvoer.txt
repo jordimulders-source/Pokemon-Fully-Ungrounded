@@ -1,0 +1,44 @@
+lama.png: mode P | transparency 0 | palet 16 | kleuren gebruikt (incl. transparant): 16 | pixels 1180
+Diffkaart kleur ronde 4c t.o.v. silhouet ronde 6 (en de 50%-dekking van het model, silhouet_r5/kop_alpha.npy).
+Toegestaan (Claude, 4c): wolomtrek van lijf, hals en borst max. 2 px van het model; elders max. 1 px (glad/staart).
+Silhouet t.o.v. ronde 6: +26 / -9 px (totaal 35)
+  + x49 y23  dekking model 0.28  afwijking van de 50%-grens: 1 px
+  + x50 y23  dekking model 0.03  afwijking van de 50%-grens: 1 px
+  + x51 y24  dekking model 0.07  afwijking van de 50%-grens: 1 px
+  + x51 y25  dekking model 0.49  afwijking van de 50%-grens: 1 px
+  + x51 y30  dekking model 0.34  afwijking van de 50%-grens: 1 px
+  + x51 y31  dekking model 0.00  afwijking van de 50%-grens: 1 px
+  + x52 y31  dekking model 0.00  afwijking van de 50%-grens: 2 px
+  + x51 y32  dekking model 0.01  afwijking van de 50%-grens: 1 px
+  + x52 y32  dekking model 0.00  afwijking van de 50%-grens: 2 px
+  + x51 y33  dekking model 0.13  afwijking van de 50%-grens: 1 px
+  + x52 y33  dekking model 0.00  afwijking van de 50%-grens: 2 px
+  + x13 y34  dekking model 0.11  afwijking van de 50%-grens: 1 px
+  + x51 y34  dekking model 0.17  afwijking van de 50%-grens: 1 px
+  + x52 y34  dekking model 0.00  afwijking van de 50%-grens: 2 px
+  + x12 y35  dekking model 0.00  afwijking van de 50%-grens: 2 px
+  + x13 y35  dekking model 0.17  afwijking van de 50%-grens: 1 px
+  + x51 y35  dekking model 0.08  afwijking van de 50%-grens: 1 px
+  + x12 y36  dekking model 0.00  afwijking van de 50%-grens: 2 px
+  + x13 y36  dekking model 0.12  afwijking van de 50%-grens: 1 px
+  + x51 y36  dekking model 0.00  afwijking van de 50%-grens: 1 px
+  + x12 y37  dekking model 0.00  afwijking van de 50%-grens: 1 px
+  + x13 y37  dekking model 0.44  afwijking van de 50%-grens: 1 px
+  + x12 y38  dekking model 0.00  afwijking van de 50%-grens: 1 px
+  + x12 y39  dekking model 0.00  afwijking van de 50%-grens: 1 px
+  + x13 y41  dekking model 0.31  afwijking van de 50%-grens: 1 px
+  + x49 y59  dekking model 0.28  afwijking van de 50%-grens: 1 px
+  - x29 y25  dekking model 0.70  afwijking van de 50%-grens: 1 px
+  - x37 y25  dekking model 0.86  afwijking van de 50%-grens: 1 px
+  - x43 y25  dekking model 0.60  afwijking van de 50%-grens: 1 px
+  - x44 y25  dekking model 0.75  afwijking van de 50%-grens: 1 px
+  - x45 y25  dekking model 0.58  afwijking van de 50%-grens: 1 px
+  - x46 y25  dekking model 0.49  afwijking van de 50%-grens: 0 px
+  - x42 y26  dekking model 1.00  afwijking van de 50%-grens: 1 px
+  - x46 y26  dekking model 1.00  afwijking van de 50%-grens: 1 px
+  - x51 y26  dekking model 0.56  afwijking van de 50%-grens: 1 px
+open randen (randpixel die geen k/d/m/n is): 0 [] | bewuste pseudo-omlijning (§8): [(17, 3, 'b'), (17, 7, 'b'), (17, 8, 'b'), (24, 61, 'v'), (14, 62, 'v'), (16, 62, 'v')]
+losse pixels (geen buur met dezelfde kleur): 35 [(17, 2, 'd'), (22, 2, 'b'), (17, 3, 'b'), (17, 4, 'o'), (23, 4, 'o'), (17, 5, 'r'), (23, 5, 'r'), (16, 6, 'd'), (22, 10, 'b'), (18, 11, 'h'), (20, 12, 'b'), (19, 14, 'd'), (20, 14, 'h'), (24, 14, 'l'), (20, 15, 'n'), (24, 15, 'b'), (23, 17, 'l'), (49, 24, 'h'), (50, 25, 'b'), (15, 32, 'b'), (20, 32, 'o'), (17, 33, 's'), (21, 33, 'm'), (29, 40, 'd'), (22, 41, 'd'), (27, 41, 'd'), (30, 42, 's'), (33, 42, 's'), (18, 56, 'v'), (48, 58, 'v'), (45, 60, 'v'), (46, 60, 'n'), (24, 61, 'v'), (14, 62, 'v'), (16, 62, 'v')]
+verdeling: k:9% d:16% s:11% b:17% l:20% h:6% o:0% r:4% m:4% n:1% y:1% g:1% p:0% u:2% v:0%
+diff t.o.v. ronde 4b: 185 px
+  oogzone x19-24 y11-15: 20 | wolzone (lijf/hals, zonder doek, halsband, pompons, poten): 165 | daarbuiten: 0 []

@@ -1,0 +1,67 @@
+# Ronde 5A: handreparaties van het overgezette lijf op silhouet A (x y letter; '.' = transparant). Reden per groep.
+# omtrek links: 2b-rand viel 1 px buiten A -> weg, nieuwe randpixel in de omlijningskleur
+14 31 .
+15 31 m
+14 39 .
+15 39 D
+15 40 .
+16 40 D
+17 43 .
+50 42 .
+# kraag/staart: A heeft hier 1 px meer
+37 26 D
+15 27 k
+49 36 k
+48 47 k
+# nabije achterpoot rechts: rand 1 px naar binnen
+48 49 .
+48 50 .
+48 51 .
+48 52 .
+47 49 k
+47 50 k
+47 51 k
+47 52 k
+46 49 S
+46 50 S
+46 51 S
+46 52 S
+# nabije voorpoot: A loopt 1 px verder door naar rechts (y50-51, y53)
+30 50 S
+31 50 k
+30 51 S
+31 51 k
+30 53 m
+31 53 k
+# verre achterpoot en hoeven
+33 56 d
+34 56 S
+18 57 d
+19 57 S
+41 57 d
+42 57 H
+34 58 k
+35 58 d
+41 58 d
+42 58 C
+42 59 k
+43 59 d
+43 60 k
+# hoef nabije voorpoot 1 px naar rechts (A)
+23 62 .
+24 62 k
+25 62 d
+26 62 S
+27 62 k
+28 62 d
+29 62 k
+# staartpluim (2b y21-22) valt boven y26: met de hand op A y24-25
+43 24 k
+44 24 k
+45 24 k
+43 25 k
+44 25 S
+45 25 d
+46 25 k
+# open rand onder de nabije voorpoot (hoef 1 px verschoven)
+23 61 d

@@ -16,7 +16,7 @@ Per Pokémon of lijn: **Besloten** (wat vastligt), **Inspiratie** (het echte die
 | | Fase 1 | Fase 2 | Fase 3 |
 |---|---|---|---|
 | **Fighting** | alpaca | lama | lama met bombín (cholita-luchadora) |
-| **Dark** | olinguito | coati | krabbenetende wasbeer (Robin Hood) |
+| **Dark** | olinguito | coati | krabbenetende wasbeer (vigilante) |
 | **Psychic** | tarsier-achtige nachtaap | nachtaap | muriqui met grote ogen (healer) |
 
 Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is een dief die nobel wordt; de nachtaap ziet er eng uit maar geneest.
@@ -28,9 +28,9 @@ Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is 
 - **Later:** een wilde lijn vicuña → guanaco.
 
 ### Dark: coati-lijn
-- **Besloten:** olinguito → coati → krabbenetende wasbeer. Van **kleine criminaliteit naar een nobel thema** (Robin Hood). **Lange klauwen in elke vorm.** **USP van de lijn (Jordi, 23 okt):** enorme klauwen zoals Sandslash (2 per poot); een echte coati heeft ook zulke klauwen, maar veel kleiner, zwart en vijf per poot; deze lijn vergroot ze tot het kenmerk. Het bandietenmasker van de wasbeer wordt het Robin Hood-masker.
+- **Besloten:** olinguito → coati → **krabbenetende wasbeer** (*Procyon cancrivorus*, Jordi 2 nov; de grotere verwant, zoals Piplup → Empoleon). Van **kleine criminaliteit naar een vigilante** (Jordi 2 nov: Robin Hood vervalt; "meer de vigilante kant op, plus een soort ode aan Sly Cooper"); nobeler dan Coathief, grijze moraal. **Lore:** de wasbeer is solitair, de coati leeft in bendes: de bendedief wordt eenling. Kenmerken eindvorm (Jordi 2 nov): staand voorover (foto), koevoetklauwen, haakstaart, masker over de neusrug, bruine buitzak op de rug. Sprite: `sprites/wasbeer/SPEC.md`. Eindvorm **puur Dark** en **niet rechtop** (Jordi: geen starters die steeds mensachtiger worden). **Lange klauwen in elke vorm.** **USP van de lijn (Jordi, 23 okt):** enorme klauwen zoals Sandslash (2 per poot); een echte coati heeft ook zulke klauwen, maar veel kleiner, zwart en vijf per poot; deze lijn vergroot ze tot het kenmerk. Het masker van de wasbeer wordt het vigilantemasker. **Fase 2: Coathief** (Jordi, 25 okt; *Nasua nasua*): zwarte bivakmuts-kop met coati-vlekken, geringde staart, loopt dreigend op je af (coati's in gangs die op je eten afrennen); frontsprite `docs/concept/sprites/coathief/af/coathief.png`. Masker-lijn: band (olinguito) → bivakmuts (Coathief) → vigilantemasker (wasbeer).
 - **Inspiratie:** olinguito (pas in 2013 als nieuwe soort beschreven, nevelwouden Colombia/Ecuador, teddybeergezicht); coati (steelt eten van toeristen bij Iguazú; groepen heten *bandas*; lange klauwen om te graven en te klimmen); krabbenetende wasbeer (*mapache cangrejero*, rivieren en mangroves, natuurlijk zwart masker). Alle drie wasbeerachtigen.
-- **Ideeën:** type eindvorm Dark/Fairy of Dark/Fighting; signature move "graaien en wegwezen" (schade + item stelen + wisselen); ability die een gestolen item aan de partner geeft.
+- **Ideeën:** signature move "graaien en wegwezen" (schade + item stelen + wisselen); ability die een gestolen item aan de partner geeft.
 
 ### Psychic: nachtaap-lijn
 - **Besloten:** tarsier-achtige baby (proporties; het dier blijft de nachtaap) → nachtaap → muriqui met de grote ogen van de eerdere fasen. **Lijkt gevaarlijk, maar is zachtaardig en een healer.** Eindvorm met een **healer-outfit** (Andes-genezer), geen Inca-god; subtiel maanmotief (zilver). **De spiraalstaart van de Nazca-aap komt terug** (belangrijk).
@@ -63,6 +63,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
   - of een pre-evolutie: het **grijze donzige kuiken**. Flamingokuikens worden met honderden samen in een crèche opgevangen en zijn pas na ±3 jaar roze.
   - Inspiratie: de Andes-, James- en Chileense flamingo's van de Laguna Colorada in Lípez. Ze kleuren roze en rood door de algen in de lagune (de 'rode lagune').
 - **Pauw met carnavalsinspiratie** (Jordi, 22 okt: misschien, fakemon of regional form). Inspiratie: de verenpakken van de sambascholen in Rio (*destaques* met enorme verenwaaiers op de rug). Pauwen komen niet uit Zuid-Amerika (immersie). Voorstel van Claude: baseer hem op de **zonneral** (*Eurypyga helias*, Amazone). In Brazilië heet die *pavãozinho-do-pará*, 'pauwtje van Pará': een onopvallende vogel die bij dreiging zijn vleugels openslaat en twee grote zon-'ogen' toont. Een carnavalsdanser die zich pas op het podium onthult; Dancer- of Intimidate-achtige vibe. Type nog open.
+- **Harpij-arend: komt er sowieso** (Jordi, 29 okt); regional (Braviary) of nieuw is nog open, zie `IDEEEN.md`.
 - **Vaste lijst:** lama, alpaca, vicuña, guanaco, coati, capibara, condor, pinguïns (naast Eiscue; meerdere pinguïns is geen probleem, Jordi). Eiscue is de koudeminnende pinguïn (Patagonië/ijs); de fakemon kan juist een pinguïn van een **milder klimaat** zijn, zoals de Humboldtpinguïn (Peru/Chili) of de Galápagospinguïn (Ecuador), Jordi.
 
 - **Ongebruikte Game Freak-ontwerpen** (Jordi, 22 okt): Jordi overweegt een paar ongebruikte ontwerpen uit de Gold/Silver-beta (Spaceworld 1997) uit te werken; hij kiest zelf welke. Bron: `docs/concept/sprites/spaceworld/spaceworld97_152-251.webp` (sprites en prototypenamen via @obskyr/@TeamSpaceworld). Opties die Jordi noemt (23 okt):
@@ -74,7 +75,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
   - Voor ons gebruik: ze opnieuw als Gen 3-sprite tekenen in onze stijl (niet de beta-sprites zelf gebruiken), met een plek in de regio (Raitora als Electric-tijger is een mooie Zuid-Amerikaanse Electric-kat naast de jaguar-idee; Octillery-tank kan in een havenstad of militaire basis).
 
 ## Regional forms (besloten)
-- **Hitmontop-regional form: capoeira** (Jordi, als extra Fighting). Hitmontop draait al op zijn kop; capoeira heeft precies die bewegingen (de *pião de cabeça*-kopspin, de *ginga*, de *meia lua*-trappen). Inspiratie: Afro-Braziliaanse vechtkunst vermomd als dans, met berimbau-muziek. Daarom gaat capoeira níet naar de alpaca-lijn (fase 2 wordt een andere vechtsport). **Zonder de rest van de Tyrogue-lijn** (Tyrogue, Hitmonlee, Hitmonchan niet in de dex). Open (Jordi): misschien krijgt de capoeira-Hitmontop een **eigen evolutie**.
+- **Hitmontop-regional form: capoeira** (Jordi, als extra Fighting). Hitmontop draait al op zijn kop; capoeira heeft precies die bewegingen (de *pião de cabeça*-kopspin, de *ginga*, de *meia lua*-trappen). Inspiratie: Afro-Braziliaanse vechtkunst vermomd als dans, met berimbau-muziek. Daarom gaat capoeira níet naar de alpaca-lijn (fase 2 wordt een andere vechtsport). **Zonder de rest van de Tyrogue-lijn** (Tyrogue, Hitmonlee, Hitmonchan niet in de dex). **Krijgt een eigen, Braziliaans geïnspireerde evolutie** (Jordi, 29 okt; uitwerking open, zie `IDEEEN.md`).
 - **Venomoth-regional form:** bestaat al (eerder ontwerp, Jordi wil hem gebruiken). Bestanden nog toevoegen aan de repo.
 - **Lotad-lijn als regional form (Jordi neigt ernaar, 22 okt):** inspiratie *Victoria amazonica*, de reuzenwaterlelie uit de Amazone en het Pantanal (bladeren tot ±3 m, met opstaande rand, dragen een kind). Lotad, Lombre en Ludicolo krijgen grotere lotushoofden. In de overworld liggen ze als **stapstenen** op het water: je loopt over hun bladeren (een metroidvania-route zonder Surf, of een verbinding die pas open is als ze er liggen). Ludicolo blijft de feestganger (carnaval, Dancer). Types, stats en ontwerp nog open.
 - **Yanma-regional form: Dragon** (Jordi, 22 okt). Past bij het Spaanse *libélula* en het Engelse *dragonfly*. Inspiratie: de reuzenjuffer *Megaloprepus caerulatus* uit de Midden- en Zuid-Amerikaanse regenwouden (grootste vleugelspanwijdte van alle libellen, blauwwitte vleugelpunten) en de oerlibellen (*Meganeura*). Type-combinatie (Bug/Dragon of Dragon/Flying) en of Yanmega meegaat nog open.
@@ -98,7 +99,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - Minccino-lijn (chinchilla) naast de viscacha (neven, beide Chinchillidae).
 
 ## Nog open (zie `IDEEEN.md`)
-Viscacha (vroege knager op de hoogvlakte), capibara (laagland), mug (iets later, Kricketot-rol), vlieg, Venezolaanse poedelmot, voetbal-Pokémon, vicuña → guanaco, fruit (chirimoya, guaraná, pitahaya, cacao, aardappel, maïs, empanadas, ceviche, mate), iconische planten (coca, Puya raimondii, yareta, cardón, araucaria, …), mythologische wezens.
+Viscacha (vroege knager op de hoogvlakte, Electric: Jordi 29 okt), capibara (laagland), mug (iets later, Kricketot-rol), vlieg, Venezolaanse poedelmot, voetbal-Pokémon, vicuña → guanaco, fruit (chirimoya, guaraná, pitahaya, cacao, aardappel, maïs, empanadas, ceviche, mate), iconische planten (coca, Puya raimondii, yareta, cardón, araucaria, …), mythologische wezens. Nieuwe lijst van 29 okt (Bartitsu-Mr. Rime, Oricorio-dansen, hoatzin-Archeops, zout-Sandaconda, Tiwanaku-Golett, Galápagos-vormen, BJJ, …): `IDEEEN.md`.
 
 **Evolutieplek in de nieuwe regio** (techniek, 23 okt): de plaatsgebonden evoluties wezen naar Hoenn-kaarten en zijn
 tijdelijk vervangen. Elk heeft in de nieuwe regio een eigen plek nodig (`IF_IN_MAP`/`IF_IN_MAPSEC` in

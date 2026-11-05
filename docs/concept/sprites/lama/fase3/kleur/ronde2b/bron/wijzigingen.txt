@@ -1,0 +1,20 @@
+# Kleur ronde 2b lama fase 3: alleen bombin en vlecht, met de hand op ronde2.txt (y x0 pixels)
+# bombin: bol x19-25 y4-8 (7x5), glans linksboven, rode band y8, rand y9 x17-26 (10 px); oortoppen blijven (links y1-4, rechts y1-4 + x26-27 tot y8)
+4 19 dCkkkkCk
+5 19 dkSSdkkSk
+6 19 kSdkkkkSk
+7 19 kdkkkkkSk
+8 19 kRRrrrmSk
+9 17 kkddkkkkkk
+# vlecht x26-28 (labels p + rand), knotten per 2 rijen donker/licht, 1 kolom kop-creme (x25) tussen oog en vlecht; tullma y22
+12 26 kdk
+13 25 Skkk
+14 25 Sdd
+15 25 Sdk
+16 25 Skdk
+17 25 Skkk
+18 24 CSdSd
+19 24 CSddd
+20 24 CSkdk
+21 24 CSkkkS
+22 24 CCRrmS

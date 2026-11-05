@@ -1,0 +1,52 @@
+px 1250 (bron 1071, fase 1 = 1019), box 37x62, y1-62
+zone            +px  -px  max afstand nieuw px tot bron / weg px tot rand
+1 kop             63   16   3.6 / 2.0
+1 kop (onderlip)    0    0   0.0 / 0.0
+2 hals             8    2   2.0 / 1.0
+5 halsband         7    0   2.0 / 0.0
+3 lijf+staart     62   16   3.6 / 2.0
+4 poten          168   95   5.0 / 5.0
+buiten zones: 0
+componenten 1
+losse px (<=1 buur) 0
+gaten 0
+rechte verticale randen >=4 (x, y0-y1):
+  links x16 y50-53 (4) zone 4 poten
+  links x18 y45-48 (4) zone 4 poten
+  links x19 y41-44 (4) zone 3 lijf+staart
+  links x24 y57-60 (4) zone 4 poten
+  links x27 y47-51 (5) zone 4 poten
+  links x28 y2-6 (5) zone 1 kop
+  links x45 y21-24 (4) zone 3 lijf+staart
+  rechts x22 y1-4 (4) zone 1 kop
+  rechts x31 y47-51 (5) zone 4 poten
+  rechts x32 y52-60 (9) zone 4 poten
+  rechts x48 y55-60 (6) zone 4 poten
+  rechts x49 y28-32 (5) zone 3 lijf+staart
+rechte horizontale randen >=4 (y, x0-x1):
+  boven y20 x46-49 (4) zone 1 kop
+  boven y25 x31-44 (14) zone 2 hals
+  onder y55 x18-21 (4) zone 4 poten
+  onder y58 x35-39 (5) zone 4 poten
+  onder y61 x43-47 (5) zone 4 poten
+  onder y62 x26-30 (5) zone 4 poten
+poten (rij: segmenten breedte / lucht):
+  y45: 18-23(6)  26-32(7)  35-40(6)  43-49(7)   lucht 2,2,2
+  y46: 18-23(6)  26-32(7)  35-40(6)  43-50(8)   lucht 2,2,2
+  y47: 18-22(5)  27-31(5)  36-40(5)  44-50(7)   lucht 4,4,3
+  y48: 18-22(5)  27-31(5)  36-41(6)  44-49(6)   lucht 4,4,2
+  y49: 17-22(6)  27-31(5)  37-41(5)  44-49(6)   lucht 4,5,2
+  y50: 16-23(8)  27-31(5)  37-41(5)  45-49(5)   lucht 3,5,3
+  y51: 16-23(8)  27-31(5)  38-42(5)  45-50(6)   lucht 3,6,2
+  y52: 16-23(8)  28-32(5)  38-42(5)  46-50(5)   lucht 4,5,3
+  y53: 16-22(7)  28-32(5)  37-41(5)  46-50(5)   lucht 5,4,4
+  y54: 17-22(6)  27-32(6)  36-40(5)  45-49(5)   lucht 4,3,4
+  y55: 18-21(4)  26-32(7)  36-40(5)  44-48(5)   lucht 4,3,3
+  y56: 25-32(8)  35-39(5)  44-48(5)   lucht 2,4
+  y57: 24-32(9)  35-39(5)  43-48(6)   lucht 2,3
+  y58: 24-32(9)  35-39(5)  43-48(6)   lucht 2,3
+  y59: 24-32(9)  42-48(7)   lucht 9
+  y60: 24-32(9)  42-48(7)   lucht 9
+  y61: 25-31(7)  43-47(5)   lucht 11
+  y62: 26-30(5)   lucht 
+kop incl. oren en onderlip y1-21: 21/62 = 34% van de hoogte, 234 px

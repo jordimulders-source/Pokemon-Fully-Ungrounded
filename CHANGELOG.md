@@ -122,3 +122,161 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.23] - Olinguito v2 af na eindkeuring
 - Verse eindkeuring (`docs/concept/sprites/olinguito_v2/af/EINDKEURING.md`): hoofdvraag PASS; reparaties: verre voorpoot roze voetje (2 px), losse spriet onder de klauw weg en drie haakjes van 1 px in curven glad (Jordi akkoord). 0 open randen. `docs/concept/sprites/olinguito_v2/af/olinguito.png` is af.
+
+### [v0.0.23] - Coathief: start (stap 0)
+- Evolutie van de olinguito (fase 2, coati) heet **Coathief** (Jordi). Map `docs/concept/sprites/coathief/` met `SPEC.md` en `referenties/` volgens `SPRITE_WERKWIJZE.md`; stap 1: referentiefoto's van Jordi in `referenties/`, besloten: *Nasua nasua*, bivakmuts-kop met zwarte neus, langer lijf, geringde staart, confrontatie-looppose; 3D-poppetje met hoekenraster (`ontwerp/hoeken.png`) wacht op Jordi.
+
+### [v0.0.24] - Coathief: ontwerp gekozen, silhouet ronde 1
+- Kop-test A/B/C op hoek B1: Jordi koos **C** (zwarte bivakmuts met echte coati-vlekken boven en onder het oog, zwarte neus); kleiner oog.
+- Poppetje bijgesteld zodat de pose op 64 leest (kop omhoog, opgetilde voorpoot hoger, verre poten in een eigen kolom); silhouet = de render direct verkleind + handreparaties aan voorpoten/klauwen en een achtervoet (46 px, 0 buiten de zones): `docs/concept/sprites/coathief/silhouet/vel_ronde1.png` (1297 px).
+
+### [v0.0.25] - Coathief af (frontsprite)
+- Evolutie van de olinguito, **Coathief** (*Nasua nasua*, fase 2): frontsprite goedgekeurd, `docs/concept/sprites/coathief/af/coathief.png`. Zwarte bivakmuts-kop met coati-vlekken, zwarte neus en oren, klein roodbruin oog, warm roodbruin lijf (donkerder dan Linoone/Furret), geringde staart, klauwen aan beide voorpoten; driekwart naar de speler toe lopend met één poot opgetild.
+- Werkwijze: 3D-poppetje (hoek B1, kop C), silhouet direct verkleind, kleur met één maker-agent, een onafhankelijke keuring, een evolutiekeuring en twee verse eindkeuringen. De voorpoten pas goed na een **overtrekvel met pixelraster** waarop Jordi cellen aftekende; vastgelegd in `docs/lessen/SPRITE_WERKWIJZE.md`, met gemeten tokenkosten.
+- Nog te doen: frame 2, rug, icoon, shiny, data; A/B-test kleine kleurreparaties (SPEC).
+
+### [v0.0.26] - Ideeënlijst 29 okt verwerkt
+- Jordi's nieuwe lijst (Bartitsu-Mr. Rime, capoeira-Hitmontop met evolutie, BJJ, Arbok, zout-Sandaconda, kaaiman-Krookodile, harpij, Oricorio-samba/tango/cumbia, hoatzin-Archeops, poedelmot, Tiwanaku-Golett, açaí, pitahaya, plátano-Tropius, carambola, gaucho, guaraná, Galápagos-vormen, fruitvampier, Electric viscacha) uitgewerkt in `docs/concept/IDEEEN.md`, met types en dex-status uit de repo en overlap met eerdere plannen.
+- Besloten in `POKEMON.md`: harpij komt er sowieso; capoeira-Hitmontop krijgt een evolutie; viscacha wordt Electric.
+
+### [v0.0.27] - Lama (alpaca-evolutie): start (stap 0)
+- Fase 2 van de Fighting-starter: map `docs/concept/sprites/lama/` met `SPEC.md` en `referenties/` volgens `SPRITE_WERKWIJZE.md` (Coathief als voorbeeld). Vastgelegd: wat uit fase 1 meegaat, Jordi's eerdere woorden over de lijn (wolkragen om de poten, vier poten, andere vechtsport dan capoeira), formaatdoel 1100–1550 px, verschil lama/alpaca. Stap 1 (vechtsport, pose + foto, kleur, naam) wacht op Jordi.
+
+### [v0.0.28] - Lama: richting stap 1
+- Jordi: geen BJJ (wordt een losse fakemon), de lama draagt traditionele Andes-kleding die per fase ontwikkelt, voorlopig MMA-handschoenen, kleur echt lama, fase 3 duidelijk anders en volwassener. Vastgelegd in `docs/concept/sprites/lama/SPEC.md` met een voorstel voor de kledinglijn.
+
+### [v0.0.29] - Lama: foto's en poppetje
+- Jordi's foto's in `docs/concept/sprites/lama/referenties/` (pose = foto 1, oorkwasten/aguayo, bonte vacht, MMA-handschoenen). Fase 2 is een tussenvorm (Marshtomp/Charmeleon-idee), vacht iets donkerder dan de alpaca.
+- 3D-poppetje met de kledinglijn (`ontwerp/pop3d_lama.py`), vel `ontwerp/vel_ronde1.png`: drie verhoudingen en drie vachten. Open: keuze, en of fase 3 een guanaco wordt.
+
+### [v0.0.30] - Lama: fase 3 als poppetje, lijn op schaal
+- Jordi: fase 2 = verhouding B, karamel; fase 3 blijft een lama. Fase 3 toegevoegd aan het poppetje (bombín, vlechten met tullma's, manta, pollera, bonte vacht, zwaardere bouw), twee varianten (MMA-handschoenen / windsels met vrije hoeven); vergelijking `docs/concept/sprites/lama/ontwerp/lijn_ronde1.png`.
+
+### [v0.0.31] - Lama: fase 2 en 3 unieker
+- Fase 2 slungelige tiener in dekking (wilde wol, lange dunne poten, voorpoot opgetild, kop laag), fase 3 zware geworteld kampioen (geschoren lijf, brede borst, kop hoog, wol alleen als kleding); vergelijking `docs/concept/sprites/lama/ontwerp/lijn_ronde2.png`.
+
+### [v0.0.32] - Lama: ontwerp goedgekeurd, halsband als leitmotif
+- Jordi "zeer tevreden"; fase 2 en 3 krijgen elk een aguayo-halsband (leitmotif van de alpaca), fase 3 = variant Y (windsels). Bron voor het silhouet van fase 2 klaar (`docs/concept/sprites/lama/fase2/silhouet/`); maker-agent start.
+
+### [v0.0.33] - Werkwijze: ontwerpfase met poppetje vastgelegd
+- Jordi: "ik vind dit echt geweldig werk [...] noteer dat deze manier van werken tot nu toe uitstekend werkt". De ontwerpfase van de lama (poppetje met kleding als praatplaat, keuzevel, hele lijn op schaal, onderscheid via bouw + pose) staat als vaste aanpak in `docs/lessen/SPRITE_WERKWIJZE.md` (stap 1); dubbele regel daar opgeruimd.
+
+### [v0.0.34] - Lama fase 2: silhouet ronde 1b
+- Maker-agent: silhouet uit het goedgekeurde poppetje, handreparaties aan poten, oren, snuit en wolomtrek (`docs/concept/sprites/lama/fase2/silhouet/vel_ronde1b.png`, 1188 px). Wacht op Jordi.
+
+### [v0.0.35] - Lama fase 2: silhouet goedgekeurd
+- Jordi keurde silhouet ronde 1b goed; de rechte hals blijft ("de rustige lama stand [...] vrij iconisch"). Kleurronde 1 gestart (maker-agent).
+
+### [v0.0.36] - Lama fase 2: kleur ronde 1c
+- Maker-agent kleurde met de hand op het bevroren silhouet (karamel, aguayo-halsband, aguayo-doek, rode MMA-handschoenen, oorkwasten); Claude-controle + onafhankelijke keuring (BIJNA, 6 reparaties verwerkt): `docs/concept/sprites/lama/fase2/kleur/ronde1c/vel.png`. Wacht op Jordi.
+
+### [v0.0.37] - Lama fase 2: ronde 2 (meer lama, fluffy, Pokémon-kleuren)
+- Na Jordi's feedback (hoekige poten, rechte poot, vacht niet Pokémon-achtig, te weinig lama): diagnose naast de bron, nieuw silhouet (banaanoren, stompe snuit, wolhals, wolmouwen/-broek, zachte knieën; Jordi akkoord), warme heldere vachtramp, wol in klonten; Claude-controle, verse keuring (BIJNA), verse maker voor ronde 2c: `docs/concept/sprites/lama/fase2/kleur/ronde2c/vel.png`. Wacht op Jordi.
+
+### [v0.0.38] - Lama fase 2: terug naar de bron, nieuwe kop en pose
+- Jordi: de kop was "meer een paard dan een lama", het oog moest droger, de hals kaarsrecht, de wol minder klonterig/korrelig, de pose niet "gebroken". Poppetje ronde 3 (lamakop met half gesloten bovenlid, kaarsrechte ruige hals) goedgekeurd; oogstudie (Camerupt, Farfetch'd, Numel, Slakoth-lijn); posestudie (24 Gen 3-viervoeters); poppetje ronde 5: lijf horizontaal, kop driekwart, alle poten op de grond, Jordi koos pose F. Bron voor silhouet ronde 5 klaar; overdracht in `docs/concept/sprites/lama/SPEC.md` (VOLGENDE STAP). Lessen in `docs/lessen/SPRITE_WERKWIJZE.md`.
+
+### [v0.0.39] - Lama fase 2: silhouet ronde 5c
+- Verse maker tekende het silhouet op pose F (lijf horizontaal, kop driekwart, kaarsrechte hals, alle poten op de grond, 0 korrels). Claude stuurde ronde 5 terug (doos-romp, paaltjespoten); 5b met ronde wolmassa en tapse poten; verse keuring BIJNA (6 reparaties: oplopende rug, buikboog, hoeven achter, handschoenen met platte zool) verwerkt in 5c: `docs/concept/sprites/lama/fase2/silhouet_r5/vel_ronde5c.png`. Wacht op Jordi (rug oplopend/vlak, staartpluim, formaat).
+
+### [v0.0.40] - Lama fase 2: silhouet 5b goedgekeurd
+- Jordi koos ronde 5b ("5b ok want c heeft opeens geen staart meer"); 5c afgekeurd (staart verdwenen in de oplopende rug). Silhouet 5b bevroren als basis voor de kleur (oogvarianten, wol als één zachte massa).
+
+### [v0.0.41] - Lama fase 2: silhouet ronde 5d
+- Jordi: "als c nu gewoon een staart zou hebben, zou die het beste zijn" → ronde 5d: 5c met de staartpluim van 5b terug (rest pixel voor pixel 5c, 0 korrels). Wacht op Jordi. Les: één versie naar Jordi, geen meerdere imperfecte opties (`docs/lessen/SPRITE_OPDRACHT.md` §4).
+
+### [v0.0.42] - Lama fase 2: silhouet ronde 5e (kop driekwart)
+- Jordi twijfelde over de kophouding van 5d. Oren nu vanaf het achterhoofd naar achteren in een V zoals het poppetje, schedel iets langer; rest gelijk aan 5d. Wacht op Jordi.
+
+### [v0.0.43] - Lama fase 2: silhouet ronde 5f (kop van het poppetje)
+- Jordi: de kop van 5e was "anders" dan het goedgekeurde poppetje. De kop is nu overgetrokken van het poppetje (dekkingskaart uit dezelfde camera, max. 1 px afwijking), de achterrand van de hals loopt recht door; rest gelijk aan 5e. Les: een goedgekeurd poppetje is de specificatie en wordt overgetrokken, niet hertekend (`docs/lessen/SPRITE_OPDRACHT.md` §2). Wacht op Jordi.
+
+### [v0.0.44] - Lama fase 2: silhouet ronde 6 (model overgetrokken)
+- Jordi keurde 5f af (lijf en poten weken flink af van het model). Verse maker trok het hele silhouet over van het poppetje (max. 1 px afwijking, alleen korrels weg). Wacht op Jordi.
+
+### [v0.0.45] - Lama fase 2: silhouet ronde 6 goedgekeurd, kleurronde 4 gestart
+- Jordi keurde ronde 6 goed ("zolang de staart maar definieerbaar blijft"; schokken gladstrijken in het spritewerk). Kleurronde 4 gestart: verse maker na een Game Freak-studie, wol als één zachte massa, staart leesbaar, drie oogvarianten (Numel-basis, Slakoth-droogheid, zwaar lid).
+
+### [v0.0.46] - Lama fase 2: kleur ronde 4b
+- Verse keuring van ronde 4: NEE (wol vlak, staart bultje, doek als koffer, oog als streepje). Ronde 4b verwerkt de 9 reparaties: zachte wolmassa met licht linksboven en wolbogen, staartpluim, doek met plooi, één droog oog (lid B + iris C), verre poten gescheiden met kleur. Wacht op Jordi.
+
+### [v0.0.47] - Lama fase 2: kleur ronde 4c
+- Jordi vond 4b beter maar het lijf nog een "flakke plank" en het oog "un-pokemon like". Ronde 4c: lijf en hals als overlappende wolbollen (zoals Mareep/Flaaffy), oog met zwaar vlak bovenlid, donkere iris met lichtje en lama-wimpers. Wacht op Jordi.
+
+### [v0.0.48] - Lama fase 2: kleur ronde 4d (hals)
+- Jordi keurde lijf en oog van 4c goed; de hals mocht "nog ietsje meer". Ronde 4d: drie overlappende wolbollen op de hals met zachte bogen in de omtrek, de rest gelijk aan 4c. Wacht op Jordi.
+
+### [v0.0.49] - Lama fase 2: kleur ronde 4e (hals)
+- Jordi vond de hals van 4d "teveel buis achtig". Ronde 4e: vanaf de hals van 4c één zachte wolmassa met een kraagje vóór boven de halsband, geen gestapelde bollen. Wacht op Jordi.
+
+### [v0.0.50] - Lama fase 2: kleur ronde 4f (hals)
+- Jordi: "klein beetje meer nog". Hals iets voller: bredere lichtmassa, diepere schaduwkant, een pluk achter en een vollere kraag vóór. Wacht op Jordi.
+
+### [v0.0.51] - Lama fase 2: kleur ronde 4g (hals)
+- Jordi: de pluk achter op de hals van 4f was een "gekke uitstulping"; hals bolliger met een bol links onderaan. Ronde 4g: uitstulping weg, drie ronde overlappende wolbollen met een borstbol vóór boven de halsband. Wacht op Jordi.
+
+### [v0.0.52] - Lama fase 2: kleur ronde 4h (hals)
+- Jordi: de nek vooral "aan de binnenkant wat meer fluffy kleuren", silhouet niet veranderen. Ronde 4h: wolstructuur van het lijf doorgezet in de hals (lichte wolvlekken, krulhaakjes), silhouet gelijk aan 4g. Wacht op Jordi.
+
+### [v0.0.53] - Lama fase 2: frontsprite af
+- Jordi keurde kleur ronde 4h goed; verse eindkeuring: af na 6 px (nagels, handschoen). Frontsprite fase 2 staat in `docs/concept/sprites/lama/fase2/af/lama.png`. Volgende: fase 3 (lama met bombín). Lessen in `docs/lessen/SPRITE_WERKWIJZE.md`.
+
+### [v0.0.54] - Lama fase 3: poppetje ronde 3 (eigen pose)
+- Fase 3 (3Y, cholita-luchadora) gestart volgens SPRITE_WERKWIJZE: nieuw poppetje `docs/concept/sprites/lama/ontwerp/fase3_r3.py` met de goedgekeurde lamakop en kaarsrechte hals van fase 2, bombín, pony, vlechten met tullma's, brede halsband met 7 pompons, manta, pollera en windsels.
+- Jordi: "ik wil wel een iets andere pose dan fase 2" → vier pose-opties (A geworteld 32°, B uitval, C bijna frontaal, D zij met de kop naar je toe); advies A. Vel `ontwerp/vel_fase3_ronde3.png`, naar Jordi.
+
+### [v0.0.55] - Lama fase 3: poppetje ronde 4 (pose C, worsteloutfit)
+- Jordi koos pose C. Nieuw `docs/concept/sprites/lama/ontwerp/fase3_r4.py`: grotere bombín, dikke gevlochten vlechten over de schouders naar voren, gelijke windsels om beide voorpoten (gouden manchetten), intocht-cape met knoop, gouden kampioensriem, worstelrok; variant Y met singlet. Vel `vel_fase3_ronde4.png`, naar Jordi (advies X).
+
+### [v0.0.56] - Lama fase 3: poppetje ronde 5 (franje, X of Y)
+- Foto's 9 en 10 (cholitas luchadoras) in `docs/concept/sprites/lama/referenties/`. Besloten: beide geslachten krijgen hetzelfde ontwerp (zoals Gardevoir, Meowscarada, Primarina), maar geen volledige jurk.
+- `fase3_r4.py`: franje-opties (manta-franje, franje + kant onder de rok, beide) voor X (bont) en Y (blauw worstelpak); vel `vel_fase3_ronde5.png`, naar Jordi.
+
+### [v0.0.57] - Lama fase 3: ontwerp Y bevroren, bron silhouet
+- Jordi koos Y (blauw worstelpak) zonder franje. Bron voor het silhouet in `docs/concept/sprites/lama/fase3/silhouet/` (`bron.py`, model 50 %: 1265 px, box 35×62) met controlevellen; op 64 px lopen de voorpoten in pose C samen, vraag aan Jordi.
+
+### [v0.0.58] - Lama fase 3: silhouet ronde 1 (pose C2)
+- Pose C2 (lijf 45°) gekozen. Maker trok het model over: `docs/concept/sprites/lama/fase3/silhouet/ronde1.txt` (1286 px, alles ≤ 1 px van het model, 0 korrels). Op 64 px: voorpoten één blok, formaat maar 9 % boven fase 2; vraag aan Jordi.
+
+### [v0.0.59] - Lama fase 3: buffer (buffstudie + hals/kop-varianten)
+- Gen 3-buffstudie (`docs/concept/sprites/lama/fase3/buffstudie/gen3_buff.png`) en varianten met kortere, dikkere hals en relatief kleinere kop (`fase3/silhouet/vel_buff.png`): V2 = 1,42× fase 2. Geforceerd perspectief in het poppetje werkte niet. Naar Jordi (advies V2).
+
+### [v0.0.60] - Lama fase 3: breder zonder de verhoudingen te veranderen
+- V1–V3 afgekeurd ("raar en komisch"). Nieuwe knop `breed` in `fase3_r4.py`: lijf, hals en poten alleen dikker, lengtes gelijk; vel `docs/concept/sprites/lama/fase3/silhouet/vel_breder.png` (W1–W3, tot 1,27× fase 2). Naar Jordi.
+
+### [v0.0.61] - Lama fase 3: silhouet ronde 2 (W3)
+- Jordi koos W3 ("de cholitas zijn best stompig ook qua bouw"). Maker trok het model opnieuw over: `docs/concept/sprites/lama/fase3/silhouet/ronde2.txt` (1512 px, 1,28× fase 2, alles ≤ 1 px van het model, 0 korrels). Naar Jordi.
+
+### [v0.0.62] - Lama fase 3: kleur ronde 1/1b (intern) en kopstudie
+- Kleurrondes 1 en 1b (`docs/concept/sprites/lama/fase3/kleur/`) intern: bombín en vlechten lazen op 1× niet, want ze waren in het model te klein (vlechten lagen in de dikke hals). Kopstudie `fase3/kopstudie/vel_kopstudie.png`: grotere bombín naar links, dikkere zichtbare vlechten, kop 1,0/1,12/1,2. Naar Jordi.
+
+### [v0.0.63] - Lama fase 3: silhouet ronde 3 (sprite-overdrijving kop)
+- Ontwerp blijft; alleen de spritebron krijgt kop 1,2×, grotere bombín naar links en zichtbare vlechten. Verse maker trok over: `docs/concept/sprites/lama/fase3/silhouet/ronde3.txt` (1488 px, alles ≤ 1 px van de bron, 0 korrels). Naar Jordi.
+
+### [v0.0.64] - Lama fase 3: kleur rondes 2–3 (alleen sprite)
+- Terug naar het goedgekeurde silhouet ronde 2 (spritebron/silhouet ronde 3 vervallen). Kleur ronde 2/2b/3 in `docs/concept/sprites/lama/fase3/kleur/`: kop in de sprite ±1,25× groter dan het silhouet, neutrale droge lamablik, grotere bombín, vlecht met krullen, poten afgewerkt. Ronde 3 naar Jordi.
+
+### [v0.0.65] - Lama fase 3: kop overgetrokken van het model (kleur ronde 4/4b)
+- Kop-overtrekbron `docs/concept/sprites/lama/fase3/kleur/kopbron/` (model, kop uniform 1,25× om de oorpunten); de maker trok de kop cel voor cel over (ronde 4) en maakte daarna alleen het oog leesbaar (ronde 4b). Lijf, kleding en poten gelijk aan 2b. Naar Jordi.
+
+### [v0.0.66] - Lama fase 3: kleur ronde 5 (A en B, luie blik)
+- Oogstudie (Slakoth, Slaking, Camerupt) en nieuw oog: zichtbaar zwaar bovenlid, oogwit, kleine pupil, "nonchalant en unimpressed". Twee versies: A (kop 1,25×, hals blijft, lijf ±7 % kleiner) en B (lijf gelijk, kop 1,1×); vel `docs/concept/sprites/lama/fase3/kleur/vel_ronde5.png`. Naar Jordi.
+
+### [v0.0.67] - Lama fase 3: A gekozen, kleur ronde 5A2
+- Jordi koos A. Vlechten terug naar zwart zoals het model; oog lui in plaats van boos (licht lidvlak, lidlijn dalend naar buiten, meer oogwit). `docs/concept/sprites/lama/fase3/kleur/ronde5A2/`. Naar Jordi.
+
+### [v0.0.68] - Lama fase 3: kleur ronde 5A3 (hoed, oog)
+- Bombín 1,2× en lager, aansluitend op de vlechten; oog terug naar 5A met een lichter lidvlak. `docs/concept/sprites/lama/fase3/kleur/ronde5A3/`. Naar Jordi.
+
+### [v0.0.69] - Lama fase 3: oog goedgekeurd, hoed 1 px lager (5A4)
+- Jordi keurde het oog van 5A3 goed. Ronde 5A4: bombín 1 rij lager, vlecht begint onder de rand. `docs/concept/sprites/lama/fase3/kleur/ronde5A4/`. Naar Jordi.
+
+### [v0.0.70] - Lama fase 3: kleur ronde 5A5 (bombín links, verre achterpoot)
+- Bombín links in hoedtinten en 2 px korter; verre achterpoot met volume. `docs/concept/sprites/lama/fase3/kleur/ronde5A5/`. Naar Jordi.
+
+### [v0.0.71] - Lama fase 3: eindkeuring + reparaties (ronde 5A7)
+- 1 px bombín (5A6); verse eindkeuring met extra aandacht voor de poten: af na 7 kleine reparaties (28 px), uitgevoerd in `docs/concept/sprites/lama/fase3/kleur/ronde5A7/`. Naar Jordi.
+
+### [v0.0.72] - Lama fase 3 frontsprite af
+- Jordi keurde ronde 5A7 goed: `docs/concept/sprites/lama/fase3/af/lama3.png` (+ `normal.pal`, `vel.png`). Buffe, stompige cholita-luchadora-lama in pose C2 met bombín, zwarte vlechten, blauw worstelpak, cape, kampioensriem, rok in drie ruches en aguayo-windsels; kop 1,25× van het model, droge nonchalante blik. Nog: frame 2, rug, icoon, shiny, naam/data.
+

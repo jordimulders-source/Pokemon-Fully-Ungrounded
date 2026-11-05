@@ -1,0 +1,45 @@
+# Ronde 5A5: met de hand op ronde5A4.txt (x y letter). Alleen bombin links (x16-23) en de verre achterpoot (x33-40, y47-58).
+# bombin links: glans in hoedtinten (koel D i.p.v. beige/bruin S/d), rand links 2 px korter, geen bruin in de rand
+21 8 D
+22 8 D
+23 8 k
+20 9 D
+21 9 k
+20 10 k
+16 13 .
+17 13 .
+18 13 k
+19 13 k
+# verre achterpoot: cilinder (licht C links, basis S, schaduw d rechts), schaduwsikkel onder de rok, hak, donkere hoef met lichtje
+34 47 d
+35 47 d
+36 47 d
+37 47 d
+33 48 C
+34 48 C
+38 48 d
+33 49 C
+34 49 C
+34 50 C
+40 50 d
+34 51 C
+40 51 d
+34 52 C
+39 52 d
+40 52 d
+34 53 C
+40 53 d
+34 54 C
+40 54 d
+34 55 C
+40 55 d
+34 56 C
+39 56 S
+35 57 d
+36 57 S
+37 57 d
+38 57 d
+35 58 d
+36 58 k
+37 58 k
+38 58 k

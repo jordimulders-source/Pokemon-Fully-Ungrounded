@@ -1,0 +1,19 @@
+gewijzigd t.o.v. 5A4: 39 (bombin links 10, verre achterpoot 29, elders 0)
+alpha t.o.v. 5A4: -x16y13 -x17y13
+open randen: 0 
+kleuren: 15
+46  CCSSkdddddggDkggkggDkD
+47  CSSSkddddddSSSSSSSSkk.
+48  CSSkdCCSSSddHHCCCCSk..
+49  CCSkdCCSSSSSdHHCCCSk..
+50  CSSk.dCSSSSSddHHCCSk..
+51  CSSk.dCSSSSSddHHCCSk..
+52  ddk..dCSSSSdddHCCCSk..
+53  rmmk.dCSSSSSddHHCCCSk.
+54  BDk..dCSSSSSddHHCCCSk.
+55  gDk..dCSSSSSddHHCCCSk.
+56  ddk..dCSSSSSddHCCCCSk.
+57  rmk...ddSddk.dHHCCCSk.
+58  ddk...kdkkkk.dCCCCSSk.
+59  CSk...........kddddk..
+60  Sk.............kkkk...

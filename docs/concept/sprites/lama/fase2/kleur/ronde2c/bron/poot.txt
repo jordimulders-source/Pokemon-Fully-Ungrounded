@@ -1,0 +1,10 @@
+# R2 verre voorpoot, met de hand: cilinder (lichte b-strook links die de S volgt, s-kern, k rechts),
+# knie als bolletje (33-34,48-50), onder de knie een s-pixel (32,51) zodat de knie loskomt.
+45 32 b
+46 32 b
+47 32 b
+48 33 b
+49 33 bb
+50 33 sb
+52 32 b
+53 32 b

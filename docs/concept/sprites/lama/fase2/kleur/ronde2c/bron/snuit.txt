@@ -1,0 +1,5 @@
+# R4 snuit, met de hand: neusgat een pixel naar binnen (12,20), los van de rand; (11,20) en (12,21) s;
+# splitlip = d-naad op x13 (y21-22) met een lichte onderlip (14-15,22) in s.
+20 11 sk
+21 12 sd
+22 14 ss

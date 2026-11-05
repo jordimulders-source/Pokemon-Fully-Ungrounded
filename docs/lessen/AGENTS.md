@@ -27,3 +27,4 @@ Lees vóór het starten of samenvoegen van agents en bij git-werk. Opgesplitst u
 - Een volledige `make check` hangt hier ('Illegal opcode'); draai eigen tests per bestand met een filter (`gTestRunnerArgv` = bestandsnaam), met `tools/` als symlink in de map waar je de test draait.
 - Een agent die uren draait: laat hem tussenstanden committen en push een back-upbranch (`backup/...` in Pokemon-Fully-Ungrounded) als de limiet nadert.
 - **Parallelle sprite-agents en SPRITING.md:** elke agent voegt "§N" onderaan toe, dus elke merge geeft een conflict op hetzelfde nummer. Oplossen: beide secties houden, de binnenkomende hernummeren; of agents laten schrijven in hun eigen NOTITIES.md en de lessen zelf overzetten.
+- **Na elke merge zoeken op conflicttekens** (`grep -rn "^<<<<<<< " CLAUDE.md CHANGELOG.md docs`): `git merge ... | tail -2` toonde maar één conflict, terwijl CLAUDE.md en CHANGELOG.md ook conflicten hadden en zo met markers zijn gecommit (potoo, 5 nov).

@@ -141,3 +141,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kleur2: kop ×1,25 in de sprite (Jordi: "silhouet naar sprite is niet 1 op 1 te vertalen"), varianten A/B voor het display; onafhankelijke keuring (`kleur2/KEURING.md`) koos B, met 5 reparaties.
 - Kleur3: reparaties (kop in 3/4, conussen met stofkap, hoek rechtsonder, snoer, schaduw).
 - Kleur4: hogere bliksem (y10–25, twee knikken, witte achtste noot) en de ogen pixel voor pixel naar het Frost-sjabloon (Jordi: "het zijn nog geen typische rotom ogen"). Les in `SPRITE_OPDRACHT.md`.
+
+### [v0.0.29] - DJ Rotom kleur5 (Rotom-consistentie)
+- Jordi: "best goed al, laat een agent het met de andere rotom sprites vergelijken en kijken of er dingen zijn die consistent zijn die in deze sprite missen". Analyse: `docs/concept/sprites/dj_rotom/kleur4/CONSISTENTIE.md`.
+- Kleur5 (`kleur5/dj_rotom.png`): zwarte binnenlijn aan de schaduwkant, vrije spits van 10 px (bliksem 3 px omhoog), twee losse tandjes, hooglicht als vlekjes (4,5%), oranje/wit/grijs op de exacte game-waarden. Open voor Jordi: gloed voller, navy of grijs, extra plasma, verticale plek; daarna shiny, frame 2, rug, icoon.

@@ -126,3 +126,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.24] - DJ Rotom: bron en silhouet 1
 - DJ Rotom opnieuw begonnen volgens `docs/lessen/SPRITE_WERKWIJZE.md`, met Jordi's bron (Pokopia-render) in `docs/concept/sprites/dj_rotom/referenties/` en een `SPEC.md`.
 - Silhouet 1 (64×64): de bron direct verkleind (60×45, ±1750 px, zo groot als Frost/Wash); alleen de bliksem-noot en de spits met de hand dikker gemaakt (32 px). Vel: `docs/concept/sprites/dj_rotom/silhouet1/vel_silhouet1.png`. Wacht op Jordi.
+
+### [v0.0.25] - DJ Rotom: silhouet 2 (sterker perspectief)
+- Jordi: "misschien iets meer perspectief als in pronounced vormen?" en "ik vind de bron juist driekwart". Het 3/4 van de bron sterker gemaakt door de bron zelf te vervormen (`docs/concept/sprites/dj_rotom/silhouet2/perspectief.py`): de nabije rechterspeaker groter, de verre linkerspeaker kleiner, boven- en onderlijn kantelen mee en de kop blijft breed. Drie sterktes A/B/C in `silhouet2/vel_perspectief.png`; de bliksem wordt na de keuze weer met de hand dikker gemaakt.

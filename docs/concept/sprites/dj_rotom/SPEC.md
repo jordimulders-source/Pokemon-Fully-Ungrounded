@@ -7,7 +7,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Type uit de concepten (Jordi, 22 o
 ## Onderdelen
 | onderdeel | bron / referentie | Jordi's woorden | status |
 |---|---|---|---|
-| pose en massa | `silhouet1/silhouet.png` = de bron verkleind tot 60 px breed (script `silhouet1/maak_silhouet.py`) | "Dit is de bron" | open (wacht op Jordi) |
+| pose en massa | silhouet 2 (`silhouet2/vel_perspectief.png`): het 3/4 van de bron sterker, varianten A/B/C (k 0,10/0,18/0,26; nabij groter, veraf kleiner, boven- en onderlijn kantelen); silhouet 1 = `silhouet1/silhouet.png` = de bron verkleind tot 60 px breed (script `silhouet1/maak_silhouet.py`) | "Dit is de bron"; "misschien iets meer perspectief als in pronounced vormen?"; "ik vind de bron juist driekwart" | open (Jordi kiest A/B/C) |
 | linker speaker | bron: lage kast, twee conussen (boven klein, onder groot), zwart front | — | open |
 | middendeel = Rotom-kop | bron: oranje kubus met spits, Rotom-ogen, grijns met tandjes, zwart display met groene equalizer als mond; zwart snoertje naar beide speakers | — | open |
 | rechter speaker | bron: hogere kast, twee grote conussen | — | open |

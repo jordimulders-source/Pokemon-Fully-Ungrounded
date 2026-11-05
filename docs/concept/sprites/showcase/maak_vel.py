@@ -1,5 +1,6 @@
 from PIL import Image, ImageDraw, ImageFont
 import sys, os
+OUT=os.path.abspath(sys.argv[1])
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 S=4; C=5
 items=[
@@ -41,4 +42,4 @@ for k,(p,n,t) in enumerate(items):
     tw=d.textlength(n,font=fn); d.text((x+(cw-tw)/2,y+64*S+26),n,font=fn,fill=(40,35,30))
     if t: tw=d.textlength(t,font=fy); d.text((x+(cw-tw)/2,y+64*S+52),t,font=fy,fill=(120,110,100))
 d.text((pad,H-34),"Werknamen; namen, types en details kunnen nog veranderen.",font=fy,fill=(140,130,120))
-img.save(sys.argv[1])
+img.save(OUT)

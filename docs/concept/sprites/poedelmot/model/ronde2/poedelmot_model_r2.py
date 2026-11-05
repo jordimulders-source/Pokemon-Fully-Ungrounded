@@ -1,11 +1,13 @@
 """Poedelmot 3D-model, ronde 2 (5 nov): zes benoemde reparaties op ronde 1 (../poedelmot_model.py blijft als naslag):
- 1. oren = sprieten: dunne gebogen schacht met een plat kamblad en een tandjesrand, taps naar een punt, opzij en licht
+ 1. oren = sprieten: gebogen schacht met een kam van tanden (bipectinaat), taps naar een punt, opzij en licht
     omhoog gekruld (foto_sprieten_plus_vilt, vilt);
  2. pose rechtop zoals de tak-foto: lijf verticaal, voorpoten hangen onder/iets voor de borst, achterpoten zitten;
  3. voorvleugel lang, smal en spits (tak-/vingerfoto); achtervleugel kleiner en rond (vilt);
- 4. zes insectenpoten (Jordi): drie paar aan de borst, behaarde dij, dun scheenbeen, tarsus, pompon op het eind;
+ 4. zes insectenpoten (Jordi): drie paar aan de borst, gelede poten (dij, knie, scheen, voet), over de hele lengte
+    dik en wollig, pompon onderaan als verdikking (Jordi: 'niet gezegd dat ze dun moeten', 'dat dikke wollige is juist
+    wat dit dier uniek maakt');
     wol: grote plukken (cellulair reliëf i.p.v. golvende ruis), een duidelijke plukkenkraag met diepe inkeping tussen kop
-    en lijf; pompons groot en rond met een dun enkeltje erboven (poedelknip);
+    en lijf; pompons groot en rond als verdikking aan het poot-eind (poedelknip);
  5. snuit: bruin snuitvlak tussen en onder de ogen (geen hondenneus-bolletje);
  6. kader: per hoek gecentreerd en passend (2 px marge), zonder de rand te raken.
 Huid = smooth union van afstandsvelden, numpy-renderer (geen Blender in de container), orthografisch, licht linksboven.
@@ -86,16 +88,19 @@ def _paar(heup, knie, scheen, tarsus, pc, pr, dij):
                   for v in (heup, knie, scheen, tarsus, pc, pr, dij)) for k in (-1, 1)]
 
 
-POTEN = (_paar((3.5, 18.5, 4.5), (8.2, 11.5, 11.2), (8.6, 8.4, 12.0), (8.8, 6.8, 12.3), (9.0, 4.0, 12.5), 4.2, 2.8)
-         + _paar((7.0, 17.5, 0.5), (14.0, 13.5, 2.4), (15.2, 9.0, 3.4), (15.5, 6.6, 3.9), (15.7, 3.8, 4.2), 3.6, 2.4)
-         + _paar((6.0, 15.0, -5.0), (11.5, 12.5, -8.5), (12.4, 7.6, -7.0), (12.7, 5.6, -6.4), (12.9, 3.4, -6.0), 3.3, 2.0))
+POTEN = (_paar((3.5, 18.5, 4.5), (8.2, 11.5, 11.2), (8.6, 8.4, 12.0), (8.8, 6.8, 12.3), (9.0, 4.0, 12.5), 4.6, 3.4)
+         + _paar((7.0, 17.5, 0.5), (14.0, 13.5, 2.4), (15.2, 9.0, 3.4), (15.5, 6.6, 3.9), (15.7, 3.8, 4.2), 4.0, 3.0)
+         + _paar((6.0, 15.0, -5.0), (11.5, 12.5, -8.5), (12.4, 7.6, -7.0), (12.7, 5.6, -6.4), (12.9, 3.4, -6.0), 3.6, 2.8))
 
 
 def lijf(P):
     d = ell(P, (0, 11.5, -5.0), (10.6, 10.0, 9.4))           # achterlijf (zit laag, achter de poten)
     d = smin(d, ell(P, (0, 19.5, -1.5), (10.0, 7.0, 8.6)), 3.0)   # borst, rechtop erboven
     for heup, knie, scheen, tarsus, pc, pr, dij in POTEN:
-        d = smin(d, capsule(P, heup, knie, dij, dij * 0.8), 1.0)    # behaarde dij (krijgt plukken)
+        # gelede poot, over de hele lengte dik en wollig (tak-foto; Jordi: 'niet gezegd dat ze dun moeten')
+        d = smin(d, capsule(P, heup, knie, dij, dij * 0.92), 1.0)           # dij
+        d = smin(d, capsule(P, knie, scheen, dij * 0.92, dij * 0.85), 0.5)  # knie -> scheen (kleine k: knik blijft)
+        d = smin(d, capsule(P, scheen, tarsus, dij * 0.85, dij * 0.8), 0.4) # voet (tarsus)
     return d
 
 
@@ -106,9 +111,7 @@ def kraag(P):
 def pompons(P):
     d = None
     for heup, knie, scheen, tarsus, pc, pr, dij in POTEN:
-        e = capsule(P, knie, scheen, 0.95, 0.8)                  # dun scheenbeen
-        e = np.minimum(e, capsule(P, scheen, tarsus, 0.75, 0.7))  # voetje (tarsus)
-        e = np.minimum(e, ell(P, pc, (pr, pr * 0.92, pr)))       # pompon van de poedelknip
+        e = ell(P, pc, (pr, pr * 0.92, pr))                      # pompon van de poedelknip: verdikking aan het eind
         d = e if d is None else np.minimum(d, e)
     return d
 
@@ -196,15 +199,15 @@ def blad(P, wortel, richting, voorkant, lengte, breedte_fn, dikte=(1.1, 0.5), bo
 
 def voorvl_breed(t):          # lang, smal, spits: smal bij de wortel, breedst op ±55%, lange spitse punt
     if t < 0.55:
-        return 2.0 + 5.2 * math.sin(math.pi * t / 1.1) ** 1.1
-    return 0.4 + 6.6 * (1 - (t - 0.55) / 0.45) ** 1.25
+        return 2.2 + 6.0 * math.sin(math.pi * t / 1.1) ** 1.1
+    return 0.4 + 7.6 * (1 - (t - 0.55) / 0.45) ** 1.25
 
 
 def vleugels(P):
     vv = va = None
     for kant in (1, -1):
         w = np.array((2.5 * kant, 24.5, -7.0))
-        e = blad(P, w, (0.40 * kant, 0.92, -0.32), (0.05 * kant, 0.25, 1.0), 31.0, voorvl_breed, boog=-2.4 * kant)
+        e = blad(P, w, (0.50 * kant, 0.86, -0.32), (0.05 * kant, 0.25, 1.0), 31.0, voorvl_breed, boog=-2.4 * kant)
         voet = ell(P, w + np.array((0, -0.5, 0.8)), (2.6, 3.0, 2.2))         # vleugelvoet aan de borst
         e = smin(e, voet, 1.2)
         vv = e if vv is None else np.minimum(vv, e)
@@ -223,20 +226,20 @@ def vleugels(P):
 
 def scene(P, kd):
     Pk = kop_ruimte(P, kd)
-    body = lijf(P) + plukken(P, 3.4, 1.1)
-    kr = kraag(P) + plukken(P + 7.3, 2.6, 1.3)                 # kraag: kleinere, diepere plukken
-    kop = ell(Pk, KOP_C, (KOP_R, KOP_R * 0.95, KOP_R * 0.95)) + plukken(Pk + 3.1, 2.8, 0.7)
+    body = lijf(P) + plukken(P, 3.2, 2.2) - 0.6
+    kr = kraag(P) + plukken(P + 7.3, 2.6, 2.4) - 0.6                 # kraag: kleinere, diepere plukken
+    kop = ell(Pk, KOP_C, (KOP_R, KOP_R * 0.95, KOP_R * 0.95)) + plukken(Pk + 3.1, 2.8, 1.2) - 0.3
     wol = smin(smin(body, kr, 0.6), kop, 0.35)                 # kleine k: duidelijke inkeping kop/kraag/lijf
     pom = pompons(P)
-    pomw = pom + plukken(P + 1.7, 1.7, 0.8) - 0.35
-    wol = np.minimum(wol, pomw)
+    pomw = pom + plukken(P + 1.7, 1.8, 1.4) - 0.5
+    wol = smin(wol, pomw, 0.5)
     d = {'wol': wol}
     # bolle facetogen die in de kop liggen (half verzonken), met fijn facetreliëf
     oo = np.minimum(ell(Pk, oog_c(1), (4.6, 5.0, 4.6)), ell(Pk, oog_c(-1), (4.6, 5.0, 4.6)))
     d['oog'] = oo + plukken(Pk * 1.0 + 0.37, 0.85, 0.10)
     # snuitvlak: plat bruin vlak tussen en onder de ogen, iets uitstekend, onderaan smaller
-    sc = KOP_C + np.array((0, -2.6, KOP_R - 1.5))
-    d['snuit'] = smin(ell(Pk, sc + np.array((0, 0, -0.9)), (2.7, 4.0, 1.3)), ell(Pk, sc + np.array((0, -2.8, -0.6)), (1.9, 1.5, 1.1)), 0.6)
+    sc = KOP_C + np.array((0, -2.0, KOP_R - 1.5))
+    d['snuit'] = ell(Pk, sc + np.array((0, -0.6, -1.4)), (3.2, 4.8, 1.5))      # plat snuitvlak, geen neus
     d['oor'] = veer(Pk)
     d['vleugel'], d['achtervl'] = vleugels(P)
     return d

@@ -280,6 +280,12 @@ def gen3(n):
     return Image.fromarray(rgba)
 
 
+def laad_rgba(pad):
+    p = Image.open(pad); idx = np.array(p)[:64, :64]
+    rgba = np.array(p.convert('RGBA'))[:64, :64]; rgba[idx == 0, 3] = 0
+    return Image.fromarray(rgba)
+
+
 def vel():
     """Ronde 5: per onderdeel een vak 'bron <-> poppetje' (SPEC: bron per onderdeel), plus het geheel op werkformaat
     en 1x naast Butterfree en Venomoth."""
@@ -303,7 +309,11 @@ def vel():
         return im.resize((max(1, round(im.size[0] * h / im.size[1])), h), Image.LANCZOS)
 
     H = 170
+    fr = os.path.join(ROOT, 'graphics/pokemon/frosmoth/front.png')
     vakken = [
+        ('0. Leidraad 1 en 7: andere richting dan de fan-art; anders dan Frosmoth -> poppetje', [
+            pas(Image.open(os.path.join(REF, 'fanart_ander_richting.webp')).convert('RGB'), H)]
+            + ([pas(x4(laad_rgba(fr), (0, 0, 64, 64), 3), H)] if os.path.exists(fr) else []) + [pas(groot, H)]),
         ('1. Ogen: tak-foto + Venomoth (Jordi: "grote donkere ogen, beetje venomoth achtig"); foto_sprieten boven = voorstel -> poppetje', [
             pas(ref('foto_tak_katoen.webp', (760, 640, 1140, 1020)), H),
             pas(ref('foto_sprieten_plus_vilt.png', (120, 60, 340, 230)), H),
@@ -323,7 +333,7 @@ def vel():
             pas(groot.crop((110, 120, 400, 420)), H)]),
     ]
     W = 1080
-    hoogte = 44 + 320 + 24 + 150 + sum(30 + H + 10 for _ in vakken) + 10
+    hoogte = 44 + 320 + 24 + 100 + sum(30 + H + 10 for _ in vakken) + 10
     out = Image.new('RGB', (W, hoogte), 'white'); d = ImageDraw.Draw(out)
     d.text((12, 12), 'Poedelmot ronde 5: poppetje op 45°, elk onderdeel naast zijn eigen bron', font=FB, fill=(30, 30, 30))
     foto = Image.open(os.path.join(REF, 'foto_tak_katoen.webp')).convert('RGB').resize((320, 320))
@@ -337,7 +347,7 @@ def vel():
         for j, bg in enumerate(((235, 235, 235), (60, 60, 70))):
             b = Image.new('RGB', (64, 64), bg); b.paste(im1, (0, 0), im1); out.paste(b, (x + j * 72, y + 20))
         x += 150
-    y += 150
+    y += 100
     for titel, ims in vakken:
         d.text((12, y), titel, font=F, fill=(0, 0, 0))
         tot = sum(i.size[0] for i in ims) + 10 * (len(ims) - 1)

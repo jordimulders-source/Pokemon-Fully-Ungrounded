@@ -115,43 +115,85 @@ ALPHA0 = np.asarray(SRC.resize((W, W)))[..., 3] > 0
 gum(masker_poly([(200, 30), (300, 30), (300, 101), (200, 101)], smooth=False))
 # Jordi 5 nov: "Bovenste poot lijkt wel los te zitten" -> onderbeen + voet één vorm (geen knieknik, geen enkelnaad),
 # zacht overgevloeid in de dij.
-onderbeen = masker_poly([(198, 250), (199, 232), (201, 215), (204, 198), (209, 168), (214, 140), (219, 112), (222, 92), (226, 74),
-                          (233, 60), (243, 51), (256, 47), (268, 51), (276, 61), (278, 74), (275, 85), (268, 92),
-                          (262, 89), (263, 78), (261, 69), (256, 64), (253, 71), (252, 86), (253, 104), (255, 135),
-                          (257, 162), (254, 190), (251, 212), (253, 232), (263, 244), (272, 250)], smooth=True)
-oud_been = (np.mgrid[0:W, 0:W][0] / K < 196) & (np.mgrid[0:W, 0:W][1] / K > 195) & (np.mgrid[0:W, 0:W][1] / K < 300)
-gum(oud_been & ~onderbeen)
-yb = np.mgrid[0:W, 0:W][0] / K
-dij = (yb > 228) & ALPHA0
-omlijn(onderbeen, niet=dij)
-w = np.clip((248 - yb) / 20, 0, 1).astype(np.float32)
-bol(onderbeen, VACHT, R=13, gewicht=w)
-tenen1 = masker_poly([(243, 51), (256, 47), (268, 51), (276, 61), (278, 74), (275, 85), (268, 92), (262, 89),
-                       (263, 78), (261, 69), (256, 64), (249, 58)])
+onderbeen = masker_poly([(198, 276), (198, 260), (198, 244), (199, 228), (202, 212), (206, 196), (210, 172),
+                          (214, 140), (218, 112), (217, 92), (217, 76), (219, 62), (223, 54), (229, 50), (236, 51),
+                          (242, 48), (249, 50), (255, 48), (261, 52), (264, 60), (263, 74), (259, 90), (254, 106), (255, 135),
+                          (257, 162), (254, 186), (251, 208), (254, 228), (261, 237), (269, 245), (276, 252), (286, 264), (300, 280)])
+yb, xb = np.mgrid[0:W, 0:W] / K
+onderbeen &= ~((yb > 248) & ~ALPHA0)
+gum((yb < 251) & (xb > 185) & (xb < 300) & ~onderbeen)
+# schaduw = de eigen doorsnede van de render (dij, rij 230) langs het nieuwe been getrokken: naadloos met de dij
+SRC4 = np.asarray(SRC.resize((W, W), Image.LANCZOS)).astype(np.float32) / 255.0
+rij = 230 * K
+r_a = SRC4[rij, :, 3] > 0.5
+r_rgb = SRC4[rij, :, :3]
+binnen = [x for x in range(196 * K, 262 * K) if r_a[x] and r_rgb[x].sum() > 0.9]
+prof = r_rgb[binnen[0] + 3 * K:binnen[-1] + 1 - 3 * K]
+tp = np.linspace(0, 1, len(prof))
+kleur = np.zeros((W, W, 3), np.float32)
+rijen = np.where(onderbeen.any(axis=1))[0]
+for y in rijen:
+    xs = np.where(onderbeen[y])[0]
+    L, R_ = xs[0], xs[-1]
+    t = (np.arange(L, R_ + 1) - L) / max(R_ - L, 1)
+    for ch in range(3): kleur[y, L:R_ + 1, ch] = np.interp(t, tp, prof[:, ch])
+mw = nd.gaussian_filter(onderbeen.astype(np.float32), (2 * K, 0.5 * K))[..., None]
+kleur = nd.gaussian_filter(kleur, (2 * K, 0.5 * K, 0)) / np.maximum(mw, 1e-3)
+w = (onderbeen * np.clip((256 - yb) / 20, 0, 1)).astype(np.float32)[..., None]
+img[..., :3] = img[..., :3] * (1 - w) + kleur * w
+img[..., 3:] = np.maximum(img[..., 3:], w)
+# omlijning: overal boven de dij, en verder alleen waar nu een gat zit (geen lijnen over arm/romp)
+dd = nd.distance_transform_edt(~onderbeen) / K
+ring = (dd > 0) & (dd <= 4.6) & (yb < 254) & ((yb < 236) | (img[..., 3] < 0.5))
+verf(ring, LIJN)
+# tenen als gesloten want om de tak, grote teen ervoor (binnen de omtrek)
+# vuist om de tak (zoals de bovenhand): drie tenen krullen over de tak naar de kijker, knokkels boven,
+# teentoppen onder; grote teen los aan de linkerkant, van achter de tak omhoog
+tenen1 = masker_poly([(218, 60), (223, 54), (229, 50), (236, 51), (242, 48), (249, 50), (255, 48), (261, 52), (264, 60),
+                       (263, 71), (256, 75), (249, 72), (242, 75), (235, 72), (227, 75), (218, 71)])
 bol(tenen1, TEEN, R=6, licht=(-0.45, -0.75, 0.5))
-verf(lijnmasker([(243, 52), (250, 58), (256, 64)], 2.4), LIJN)
-grote1 = masker_poly([(251, 104), (250, 97), (253, 92), (259, 90), (263, 94), (260, 100), (255, 104)])
+for x0, x1 in ((236, 235), (249, 249)):
+    verf(lijnmasker([(x0, 52), (x1, 62), (x1, 72)], 2.0), LIJN)
+verf(lijnmasker([(218, 71), (227, 75), (235, 72), (242, 75), (249, 72), (256, 75), (263, 71)], 2.2), LIJN)
+grote1 = masker_poly([(214, 92), (210, 82), (210, 71), (213, 63), (219, 61), (222, 68), (221, 80), (218, 90)])
 omlijn(grote1, dikte=2.6)
 bol(grote1, TEEN, R=4, licht=(-0.45, -0.75, 0.5))
 
-# onderste voet: hangt slap in het verlengde van het scheenbeen, knikt iets omlaag, tenen licht gekruld
-yy0, xx0 = np.mgrid[0:W, 0:W] / K
-dvec = np.array([0.864, 0.504])
-gum(((xx0 - 452) * dvec[0] + (yy0 - 422) * dvec[1] > 0) & (yy0 > 380) & (xx0 > 430))
-enkel2 = ((xx0 - 452) * dvec[0] + (yy0 - 422) * dvec[1] <= 0.5) & ALPHA0
-voet2 = masker_poly([(440, 410), (455, 404), (465, 412), (474, 423), (482, 436), (488, 450), (490, 463), (486, 473),
-                      (478, 475), (472, 467), (466, 458), (457, 451), (447, 449), (440, 443), (434, 428)])
-omlijn(voet2, niet=enkel2)
-bol(voet2, VACHT, R=12)
+# onderste been (knie -> voet) in één stuk, schaduw = doorsnede van de render (x=380, licht boven -> donker onder,
+# donkerste tint opgehaald), zacht overgevloeid in de dij; voet hangt slap, tenen licht gekruld, grote teen los
+yb, xb = np.mgrid[0:W, 0:W] / K
+been2 = masker_poly([(350, 398), (356, 389), (366, 384), (380, 382), (398, 381), (418, 385), (438, 392), (455, 402), (465, 412), (474, 423),
+                      (482, 436), (488, 450), (490, 463), (486, 473), (478, 475), (472, 467), (466, 458), (457, 451),
+                      (447, 449), (440, 440), (425, 431), (410, 424), (396, 421), (382, 424), (366, 430), (352, 428)])
+gum((((xb > 372) & (yb > 360)) | ((xb > 357) & (yb > 377) & (yb < 392))) & (yb < 495) & ~been2)
+SRC4b = np.asarray(SRC.resize((W, W), Image.LANCZOS)).astype(np.float32) / 255.0
+prof = SRC4b[385 * K:420 * K, 380 * K, :3]
+prof = np.maximum(prof, c(VACHT[1]) * 0.95)
+tp = np.linspace(0, 1, len(prof))
+d2 = np.array([0.864, 0.504]); n2 = np.array([-d2[1], d2[0]]); P0 = np.array([380.0, 405.0])
+u = (xb - P0[0]) * d2[0] + (yb - P0[1]) * d2[1]
+sv = (xb - P0[0]) * n2[0] + (yb - P0[1]) * n2[1]
+ub = np.round(u).astype(int)
+kleur = np.zeros((W, W, 3), np.float32)
+idx = np.where(been2)
+for b_ in np.unique(ub[idx]):
+    sel = been2 & (ub == b_)
+    ss = sv[sel]; lo, hi = ss.min(), ss.max()
+    t = (ss - lo) / max(hi - lo, 1e-3)
+    for ch in range(3): kleur[..., ch][sel] = np.interp(t, tp, prof[:, ch])
+mw = nd.gaussian_filter(been2.astype(np.float32), 1.5 * K)[..., None]
+kleur = nd.gaussian_filter(kleur, (1.5 * K, 1.5 * K, 0)) / np.maximum(mw, 1e-3)
+w = (been2 * np.clip((xb - 356) / 40, 0, 1)).astype(np.float32)[..., None]
+img[..., :3] = img[..., :3] * (1 - w) + kleur * w
+img[..., 3:] = np.maximum(img[..., 3:], w)
+dd = nd.distance_transform_edt(~been2) / K
+verf((dd > 0) & (dd <= 4.6) & ((xb > 372) | (img[..., 3] < 0.5)), LIJN)
 tenen2 = masker_poly([(480, 442), (486, 450), (490, 463), (486, 473), (478, 475), (472, 467), (472, 455)])
 bol(tenen2, TEEN, R=6, licht=(-0.45, -0.75, 0.5))
-verf(lijnmasker([(482, 440), (472, 452), (472, 466)], 2.3), LIJN)
+verf(lijnmasker([(482, 440), (474, 452), (473, 466)], 2.2), LIJN)
 grote2 = masker_poly([(458, 452), (466, 455), (468, 463), (463, 471), (456, 470), (454, 461)])
-omlijn(grote2, dikte=2.4)
+omlijn(grote2, dikte=2.2)
 bol(grote2, TEEN, R=4, licht=(-0.45, -0.75, 0.5))
-verf(lijnmasker([(458, 409), (448, 423), (444, 440)], 2.0), LIJN)
-knie = (xx0 > 395) & (xx0 < 452) & (yy0 > 395) & (yy0 < 450) & (img[..., :3].sum(axis=2) < 0.42) & (img[..., 3] > 0.5) & ~voet2
-img[knie, :3] = img[knie, :3] * 0.4 + c(VACHT[1]) * 0.6
 
 # ------------------------------------------------------------------ kop
 # Muriqui-kop naar foto 4/5: ronde schedel zonder oren, groot donker gezichtsschild met rechte wenkbrauwlijn,
@@ -201,6 +243,13 @@ verf(m1 & ~m2 & (yy < T(0, 304)[1]), (236, 236, 246))
 a_ = hand.astype(np.float32)[..., None]
 img[:] = img * (1 - a_) + SRC4 * a_
 
+# heup rechts: uitsteeksels in de omtrek wegslijpen (opening in een klein vak)
+yv, xv = np.mgrid[0:W, 0:W] / K
+vak = ((yv > 240) & (yv < 270) & (xv > 255) & (xv < 305))
+A = img[..., 3] > 0.5
+weg = vak & A & ~nd.binary_opening(A, structure=np.ones((13, 13)))
+img[weg] = 0
+img[(yv > 368) & (yv < 378.6) & (xv > 362) & (xv < 376)] = 0  # restje oude knie-omlijning
 # naadjes (1 px gaten tussen oude en nieuwe omlijning) dichten met lijnkleur
 A = img[..., 3] > 0.5
 dicht = nd.binary_closing(A, structure=np.ones((7, 7))) & ~A

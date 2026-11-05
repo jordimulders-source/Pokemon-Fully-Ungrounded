@@ -16,6 +16,7 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 ## Onderdelen (status)
 | Onderdeel | Bron/referentie | Status |
 |---|---|---|
+| Silhouet | `silhouet_v1_vel.png`, `silhouet_v1_1x.png` (1560 px; Gen 3-ref. 1033–1825), direct uit het poppetje B3 | v1: wacht op Jordi |
 | Pose | groep A uit `referenties/pose_onderzoek.png` (Noctowl, Empoleon, Squawkabilly, Rufflet) | **gekozen: A** |
 | Bouw | **hybride met de bergcaracara** (*coraquenque*, de kroonveervogel): groot, rechtop, lange poten, haaksnavel; `referenties/bergcaracara_foto.webp` | gekozen; details open |
 | Kroon (waaier) | echte koningstiran: rood, staalblauwe punten, zwarte band; imposant | open |
@@ -48,6 +49,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 - (5 nov) "de benen staan voor de staart, de staart gaat achter de benen door langs het lichaam de hand in" / "op die manier ja, maar nu ziet het er niet mooi uit" / "het moet staart en scepter zijn en als dat niet lukt dan doen we het niet" → in deze pose leest het niet als scepter (balk op heuphoogte, of een lange sliert): **scepter vervalt**. Gewone roestbruine staart, rechts achter het lijf, achter de poten. Vleugels niet gespiegeld ("mag" = toestemming).
 
 - (5 nov) "de linkerbovenarm is veel groter dan de rechter [...] de poten onnatuurlijk [...] 1 is een stuk langer dan de ander, klopt dat met het bronmateriaal?" → nee: op het beeld zijn de benen even lang (dij onder het lijf, voorste been gebogen en hoger). Benen nu even lang (±21) onder het lijf; linkervleugel smaller (bovenarm even dik als rechts).
+
+- (5 nov) "maak maar een silhouet" → v1 direct uit het poppetje verkleind (massa heilig), geen reparaties. Eigen keuring: twee plekken waar delen tegen elkaar plakken op 1x (opgeheven vleugel tegen de kroonrand; standbeen tegen de staart); rechter kwastje valt achter de vleugel. Varianten (vleugel verder naar buiten) losten het plakken niet op en verborgen de staart: niet doorgestuurd.
 
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.

@@ -85,7 +85,7 @@ def wing(m, sh, wr, dirs, lens, g, z, cw=13, pw=5.5):
         plate(m, wr, tip, pw, 2.2, g)
 
 
-def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
+def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out=0.0):
     """Hybride: bouw van de bergcaracara (groot, rechtop, lange poten, haaksnavel, kaal rood gezicht),
     kroon en staart van de koningstiran. De zijveren van de waaier hangen omlaag (foto 2) en vormen zo
     zelf de franje van de mascaypacha; geen losse band (geen 'dier met een hoed')."""
@@ -104,12 +104,12 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
     # nabije vleugel: gesloten blad met een knik in de pols: de arm gaat naar buiten, de slagpennen buigen omhoog,
     # elke pen iets verder gedraaid zodat de achterrand een bolle curve wordt (geen rechte lijn, geen vingers)
     c = curl
-    dirs = [(0.62 - 0.30 * c + 0.10 * k * c, 1.0 - 0.05 * k) for k in range(5)]
+    dirs = [(0.62 - 0.30 * c + 0.10 * k * c + wing_out, 1.0 - 0.05 * k) for k in range(5)]
     wing(m, (8, 30, 17), (21, 35, 34), dirs, (33, 36, 34, 30, 24), 'wing', 56, 16, 12)  # iets korter (Jordi)
     # staart: geen scepter (Jordi: "het moet staart en scepter zijn en als dat niet lukt dan doen we het niet";
     # in deze pose werd het een balk of een lange sliert). Gewone brede roestbruine staart zoals de echte vogel,
     # licht gewaaierd, zichtbaar rechts achter het lijf.
-    for ang in (-62, -48, -34):
+    for ang in (-62 - tail_out, -48 - tail_out, -34 - tail_out):
         Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(-6))
         m.ell(np.array((34, -22, -2)) + Rt @ np.array((0, -20, 0)), (9, 24, 3), 'tail', Rt)
     # poten: geen V meer. Standbeen recht onder het zwaartepunt; vrije poot met gebogen knie naar voren,

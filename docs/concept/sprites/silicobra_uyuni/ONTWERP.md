@@ -55,3 +55,11 @@ Jordi: "ik zat te denken aan een soort gelijke woordspeling als sandaconda, maar
 - **Salcabel** (Spaans *sal* + *cascabel*, de Zuid-Amerikaanse ratelslang).
 - Afgevallen: Saltypan (salt pan + taipan; taipan is Australisch).
 - **Definitief: Salticonda** (Jordi, 3 nov: "Salticonda vind ik net wat lekkerder bekken"). 10 tekens.
+
+## Ability-vraag (Jordi, 5 nov): Ice én Water reflecteren?
+Jordi: "zou het logisch lijken om deze pokemon ijs en water aanvallen te laten reflecteren? Dus 2 immunities die zelfs reflecteren met water damage, gezien hoe de salt flats in het echt reflecteren als er water ligt, kan dat fysiologisch kloppen of ben ik dan aan het reachen?"
+Antwoord Claude:
+- Ice-immuniteit klopt fysiek (zout verlaagt het vriespunt: strooizout).
+- Water terugkaatsen is een reach: de spiegel van de salar kaatst licht terug, geen water. Water op zout maakt pekel (lost het zout op).
+- Groundeder: water maakt pekel, en pekel geleidt stroom. Dus: Water-aanvallen laden hem op (vgl. Charge/Volt Absorb), bijvoorbeeld als tweede of verborgen ability; de spiegel past beter bij **Mirror Coat** in de movepool.
+- Balans: Ground/Electric is zwak voor Ground, Water en Grass (Ice valt al weg). Ook Water wegnemen laat een bulky wall met alleen Ground/Grass als zwakte; dat is erg sterk en maakt gym 2 en Water-types als antwoord zinloos.

@@ -256,7 +256,7 @@ def M(x, y, r=1.0):
     lat = np.arcsin(np.clip(dy / (RB * r), -0.99, 0.99)); cl = np.cos(lat)
     lon = np.arcsin(np.clip(dx / (RB * r * cl), -0.99, 0.99))
     return T(107 + RB * r * cl * np.sin(lon - YAW), 320 + dy)
-def F(x, y, r=1.0): return M(107 + (x - 101) * FS, 343 + (y - 343) * FS, r)
+def F(x, y, r=1.0): return M(107 + (x - 101) * FS, 370 + (y - 370) * FS, r)  # groeit vanaf de kin omhoog
 def FP(pts, r=1.0): return [F(x, y, r) for x, y in pts]
 def FE(cx, cy, rx, ry, r=1.0, n=40):
     return masker_poly([F(cx + rx*np.cos(t), cy + ry*np.sin(t), r) for t in np.linspace(0, 2*np.pi, n, endpoint=False)], smooth=False)
@@ -264,10 +264,16 @@ def ME(cx, cy, rx, ry, n=48):
     return masker_poly([M(cx + rx*np.cos(t), cy + ry*np.sin(t)) for t in np.linspace(0, 2*np.pi, n, endpoint=False)], smooth=False)
 
 kop = E(107, 320, 52, 56) | masker_poly(FP([(84, 352), (118, 352), (117, 372), (108, 380), (94, 380), (85, 372)]))
+schild = masker_poly(FP([(72, 315), (80, 309), (101, 308), (122, 309), (130, 315), (133, 328), (131, 344), (126, 360),
+                         (118, 372), (108, 379), (101, 380), (94, 379), (84, 372), (76, 360), (71, 344), (69, 328)]))
+snuit = masker_poly(FP([(FX - 3, 332), (FX + 3, 332), (FX + 6, 341), (FX + 12, 349), (FX + 16, 357), (FX + 16, 364),
+                        (FX + 11, 370), (FX, 372), (FX - 11, 370), (FX - 16, 364), (FX - 16, 357), (FX - 12, 349), (FX - 6, 341)], 1.12))
+# in driekwart steekt de snuit (en de kin eronder) over de kopomtrek: één omtrek om kop + gezicht + snuit
+kin = masker_poly(FP([(FX - 15, 360), (FX + 15, 360), (FX + 12, 374), (FX, 380), (FX - 12, 374)], 1.06))
+kop = nd.binary_closing(kop | schild | snuit | kin, structure=np.ones((9, 9)))
 omlijn(kop)
 bol(kop, VACHT, R=36)
-schild = masker_poly(FP([(72, 315), (80, 309), (101, 308), (122, 309), (130, 315), (133, 328), (131, 344), (126, 360),
-                         (118, 372), (108, 379), (101, 380), (94, 379), (84, 372), (76, 360), (71, 344), (69, 328)])) & kop
+schild = (schild | kin) & kop
 bol(schild, GEZICHT, R=13)
 verf(masker_poly(FP([(78, 314.5), (124, 314.5), (124, 318), (78, 318)])) & schild, GEZICHT[0], 0.75)
 for ox in (FX - 9.5, FX + 9.5):
@@ -276,14 +282,12 @@ for ox in (FX - 9.5, FX + 9.5):
     verf(FE(ox + 0.6, 326.0, 2.0, 2.3), (20, 28, 58))
     verf(FE(ox - 1.8, 324.0, 1.2, 1.2), (255, 255, 255))
 verf(masker_poly(FP([(80, 317.5), (122, 317.5), (122, 321.2), (80, 321.2)]), smooth=False) & schild, GEZICHT[0])
-snuit = masker_poly(FP([(FX - 3, 332), (FX + 3, 332), (FX + 6, 341), (FX + 12, 349), (FX + 16, 357), (FX + 16, 364),
-                        (FX + 11, 370), (FX, 372), (FX - 11, 370), (FX - 16, 364), (FX - 16, 357), (FX - 12, 349), (FX - 6, 341)], 1.12))
 bol(snuit, SNUIT, R=8)
 for nx, k in ((FX - 4, -1), (FX + 4, 1)):
     verf(masker_poly(FP([(nx - 2.6*k, 349.5), (nx + 0.8*k, 346.5), (nx + 2.4*k, 348.5), (nx + 0.4*k, 351.5)], 1.14)), (52, 34, 64))
 verf(lijnmasker(FP([(FX - 12, 362.5), (FX - 4, 363.2), (FX + 4, 363.2), (FX + 12, 362.5)], 1.1), 3.4), (34, 24, 46))
 # maan boven het gezicht, 2,5x: brede sikkel (hoorns omlaag), ±2 px dik op 64
-maan = ME(107, 292, 30, 16) & ~ME(107, 300, 32, 15)
+maan = ME(107, 284, 29, 15) & ~ME(107, 292, 31, 14)
 verf(maan & kop, (236, 236, 246))
 # healerhand ligt vóór de kop
 a_ = hand.astype(np.float32)[..., None]

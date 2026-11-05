@@ -28,7 +28,11 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 - Voorstel: **A+B**: rechtop zittend als Noctowl/Empoleon, borst vooruit, vleugels gevouwen als een mantel, staart schuin naar rechtsonder; kop ±30° van frontaal, iets omhoog; waaier ±40–45% van de spritehoogte.
 - Frame 2 (later): kop een fractie zwaaien en snavel open (oranje keel), zoals de echte balts.
 
+- (5 nov) "dit is gewoon weer een t-pose" / "hij mag wat swagger tonen, het is een koning" / "we hadden afgesproken dat de pose zou lijken op bijv empoleon" / "het model is verder prima, dus niet opnieuw bouwen, gewoon aanpassen" / "de vleugels gaan we ook niet statisch t-pose doen"
+- Pose-ronde 2 (pop3d.py): Empoleon-houding: borst vooruit, iets achterover, verre vleugel geheven met gespreide slagpennen (gebaar), nabije vleugel als mantel naar achteren-omlaag, brede stand.
+
 ## Afgekeurd
+- Pose-ronde 1: stijf rechtop, vleugels langs het lijf, symmetrisch ("t-pose").
 - Helemaal frontaal (schets v2 fase 3): "geen enkele sprite" staat zo.
 
 ## Foto's van Jordi (5 nov, alleen in de chat binnengekomen; punten overgenomen)

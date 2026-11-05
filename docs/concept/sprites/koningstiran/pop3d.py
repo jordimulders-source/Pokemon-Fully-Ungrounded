@@ -66,24 +66,53 @@ class Model:
             self.parts[k] = (piv + Rm @ (c - piv), r, Rm @ R0, g)
 
 
-def bird(extra=25, fan_L=58, fan_n=17, tilt=6):
+def plate(m, p0, p1, w, t, g):
+    """Platte vleugel tussen twee punten (breedte w, dikte t)."""
+    p0, p1 = np.array(p0, float), np.array(p1, float)
+    d = p1 - p0; L = np.linalg.norm(d); d /= L
+    up = np.array((0, 0, 1.0)) if abs(d[2]) < 0.8 else np.array((0, 1.0, 0))
+    n = np.cross(d, up); n /= np.linalg.norm(n); u = np.cross(n, d)
+    m.ell((p0 + p1) / 2, (L / 2 + w * 0.3, w, t), g, np.stack([d, u, n], 1))
+
+
+def wing(m, sh, wr, dirs, lens, g, z, cw=13, pw=5.5):
+    """Vleugel: dekveren (schouder -> pols) en een waaier van slagpennen vanaf de pols (richtingen in x-y)."""
+    plate(m, sh, wr, cw, 5, g)
+    wr = np.array(wr, float)
+    for (dx, dy), L in zip(dirs, lens):
+        d = np.array((dx, dy, 0.0)); d /= np.linalg.norm(d)
+        tip = wr + d * L; tip[2] = z
+        plate(m, wr, tip, pw, 2.2, g)
+
+
+def bird(extra=25, fan_L=58, fan_n=17, tilt=14):
     """Hybride: bouw van de bergcaracara (groot, rechtop, lange poten, haaksnavel, kaal rood gezicht),
     kroon en staart van de koningstiran. De zijveren van de waaier hangen omlaag (foto 2) en vormen zo
     zelf de franje van de mascaypacha; geen losse band (geen 'dier met een hoed')."""
     m = Model()
-    A = rot_z(math.radians(104))  # bijna rechtop, zoals de caracara op de foto
+    # pose naar Empoleon (Jordi, 5 nov): borst vooruit, iets achterover, verre vleugel naar voren uitgestoken,
+    # nabije vleugel als mantel naar achteren-omlaag, poten breed; swagger, geen T-pose
+    A = rot_z(math.radians(96))
     m.ell((6, 4, 0), (44, 28, 27), 'body', A)
-    m.ell((-8, 6, 0), (22, 32, 25), 'breast', rot_z(math.radians(-8)))
-    for sz, g in ((1, 'wing'), (-1, 'farwing')):
-        m.ell((12, 6, 19 * sz), (40, 14, 7), g, A)
-    m.ell((22, -50, 0), (7, 26, 11), 'tail', rot_z(math.radians(-14)))
-    for sz in (1, -1):
-        m.chain([(0, -32, 9 * sz, 5.5), (-2, -44, 9 * sz, 4.2)], 'breast')   # broek
-        m.chain([(-2, -44, 9 * sz, 3.2), (-3, -60, 9 * sz, 2.8)], 'leg')     # lange caracarapoten
+    m.ell((-10, 8, 0), (24, 33, 26), 'breast', rot_z(math.radians(-4)))
+    # vleugels groot (Empoleon: flippers bijna zo lang als het lijf)
+    # verre vleugel: geheven naar voren-boven, slagpennen gespreid als een gebaar
+    wing(m, (-2, 28, -17), (-34, 40, -32), [(-0.2, -1.0), (-0.5, -0.9), (-0.8, -0.6), (-1.0, -0.25), (-1.0, 0.1), (-0.9, 0.4)],
+         (40, 46, 50, 48, 42, 34), 'farwing', -38, 22, 12)
+    # nabije vleugel: half open naar achteren-omlaag, als een koningsmantel tot bij de voeten
+    wing(m, (8, 28, 18), (26, 6, 32), [(-0.15, -1.0), (0.15, -1.0), (0.45, -0.9), (0.7, -0.7), (0.9, -0.45), (1.0, -0.15)],
+         (44, 50, 52, 48, 42, 34), 'wing', 36, 22, 12)
+    for ang in (-24, -12, 0):                                       # staart: drie rossige veren, licht gewaaierd
+        Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(ang * 0.6))
+        m.ell(np.array((22, -46, 0)) + Rt @ np.array((0, -6, 0)), (7, 26, 3), 'tail', Rt)
+    for sz, fx in ((1, 6), (-1, -10)):                              # brede stand, verre poot naar voren
+        z = 15 * sz
+        m.chain([(0, -32, 9 * sz, 5.5), (fx * 0.5, -44, z * 0.8, 4.2)], 'breast')
+        m.chain([(fx * 0.5, -44, z * 0.8, 3.2), (fx, -60, z, 2.8)], 'leg')
         for dz, dx in ((-3, -8), (0, -9), (3, -7)):
-            m.chain([(-3, -60, 9 * sz, 2.4), (dx, -63, 9 * sz + dz, 2.0)], 'leg')
-            m.ell((dx - 1.5, -64, 9 * sz + dz), 1.4, 'claw')
-        m.chain([(-3, -60, 9 * sz, 2.2), (2, -63, 9 * sz, 1.8)], 'leg')
+            m.chain([(fx, -60, z, 2.4), (fx + dx, -63, z + dz, 2.0)], 'leg')
+            m.ell((fx + dx - 1.5, -64, z + dz), 1.4, 'claw')
+        m.chain([(fx, -60, z, 2.2), (fx + 5, -63, z, 1.8)], 'leg')
     # ---- kop: kleiner t.o.v. het lijf dan bij de tiran (caracara), wel groter dan echt ----
     i0 = len(m.parts)
     hc = np.array((-12, 50, 0.0))
@@ -211,7 +240,7 @@ def view(m, yaw, pitch=8, size=236):
     return im, sil
 
 
-def sheet(yaws=(20, 32, 44), extras=(15, 28, 40)):
+def sheet(yaws=(34, 44), extras=(16, 24, 32)):
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 12)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 15)
     cw, ch = 266 + 70, 256 + 26

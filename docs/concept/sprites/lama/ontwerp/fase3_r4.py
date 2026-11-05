@@ -15,7 +15,7 @@ import pop3d_lama as L
 import fase3_r3 as F3
 P = L.P
 
-L.COL.update(gold='#F0C23A', goldd='#B8862A', plate='#FFE27A', gem='#D8243C', knot='#6E1A52', suit='#2F4FA8', suitrand='#D8243C')
+L.COL.update(franje='#C9509E', franje2='#F2C84A', kant='#F6F0E6', gold='#F0C23A', goldd='#B8862A', plate='#FFE27A', gem='#D8243C', knot='#6E1A52', suit='#2F4FA8', suitrand='#D8243C')
 L.LINED |= {'gold', 'goldd', 'plate', 'gem', 'knot', 'suit', 'suitrand', 'braid'}
 YAW, HEAD_YAW, BORST = 55, 10, 6
 
@@ -68,7 +68,7 @@ def windsel(m, pts, k):
         m.ell(c, np.array((rl + 2.4 * dik, 1.9, rl + 2.4 * dik)), g, Rax)
 
 
-def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55):
+def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55, franje=None, flen=18):
     m = P.Model()
     lx = 1.12
     for c, r in (((-26, 2, 0), (27, 27, 25)), ((4, 2, 0), (33, 24, 23)), ((33, 4, 0), (22, 24, 23))):
@@ -109,6 +109,23 @@ def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55):
             t = math.radians(th)
             rr = 26 + ext
             m.ell(np.array((32 * lx * 0.95 + rr * 0.85 * math.cos(t), yy, rr * math.sin(t))), np.array((6.5, 6.5, 6.5)), f'pol{j}')
+    if franje in ('manta', 'beide'):   # foto 9: franje aan de onderrand van de manta (accent, eindigt boven de buik)
+        for th in (-112, 112):
+            t = math.radians(th); sz = 1 if th > 0 else -1
+            for x in np.arange(-44, -15, 1.7):
+                y0 = 4 + 28.5 * math.cos(t) - 1
+                m.ell((x, y0 - flen / 2, 27 * sz), np.array((1.3, flen / 2, 1.3)), 'franje')
+        for x in np.arange(-50, -43, 2):   # borst, onder de knoop
+            for sz in (1, -1):
+                m.ell((x, 8 - 2 - flen / 2, 9 * sz), np.array((1.3, flen / 2, 1.3)), 'franje')
+    if franje in ('pollera', 'beide'):  # foto 10: korte franje + kanten onderrand onder de onderste ruche
+        rr = 32
+        for th in np.arange(0, 360, 3.5):
+            t = math.radians(th)
+            c = np.array((32 * lx * 0.95 + rr * 0.85 * math.cos(t), -24, rr * math.sin(t)))
+            m.ell(c, np.array((3.2, 2.4, 3.2)), 'kant')
+            m.ell(c + np.array((0, -2 - flen * 0.35, 0)) * np.array((0, 1, 0)) + np.array((0.6 * math.cos(t), 0, 0.6 * math.sin(t))),
+                  np.array((1.3, flen * 0.35, 1.3)), 'franje2')
     piv = np.array((30, -8, 0.0))
     L._rot(m, 0, len(m.parts), piv, P.rot_z(math.radians(-BORST)))
     pv = piv + P.rot_z(math.radians(-BORST)) @ (np.array(nk[0][:3], float) - piv)
@@ -151,5 +168,33 @@ def vel():
     im.save(os.path.join(HERE, 'vel_fase3_ronde4.png'))
 
 
+def vel5():
+    """Ronde 5 (5 nov): franje (foto 9/10). Jordi: "zorg dat het niet volledig een jurk wordt" -> franje als accent."""
+    F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
+    FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 17)
+    L.set_vacht('bont (foto 4)'); L.COL['lid'] = L.COL['head']; L.COL['lip'] = '#C9A982'
+    ref = os.path.join(HERE, '../referenties')
+    cell = 262
+    im = Image.new('RGB', (12 + cell * 5, 44 + (cell + 30) * 3), 'white'); d = ImageDraw.Draw(im)
+    d.text((12, 12), 'Lama fase 3, poppetje ronde 5: franje als accent (foto 9 en 10), geen jurk; X (bont) of Y (blauw pak)', font=FB, fill=(30, 30, 30))
+    def tegel(img, i, rij, lab):
+        x, y = 12 + cell * i, 44 + rij * (cell + 30)
+        im.paste(img, (x + (256 - img.width) // 2, y + (256 - img.height) // 2)); d.text((x + 4, y + 260), lab, font=F, fill=(60, 60, 60))
+    opts = [(None, 'zonder franje'), ('manta', 'F1: franje manta'), ('pollera', 'F2: franje + kant rok'), ('beide', 'F3: beide')]
+    for r, uit in enumerate('XY'):
+        for i, (fr, lab) in enumerate(opts):
+            m = fase3_r4(uit, franje=fr); img, _ = L.view(m, YAW); tegel(img, i, r, f'{uit} ({"bont" if uit == "X" else "blauw pak"}), {lab}')
+    for j, (naam, lab) in enumerate((('foto9_cholitas_luchadoras_manta_franje.webp', 'foto 9: manta-franje'),
+                                     ('foto10_cholita_sprong_pollera_kant.webp', 'foto 10: kant onder de pollera'))):
+        f = Image.open(os.path.join(ref, naam)).convert('RGB'); f.thumbnail((256, 256)); tegel(f, 4, j, lab)
+    for i, uit in enumerate('XY'):
+        img, _ = L.view(fase3_r4(uit, franje='beide'), YAW, size=250)
+        tegel(img.resize((64, 64), Image.LANCZOS).resize((256, 256), Image.NEAREST), i, 2, f'{uit} F3 op 64 px (ruw)')
+    s = Image.open(os.path.join(HERE, '../fase2/af/lama.png')).convert('RGBA').resize((256, 256), Image.NEAREST)
+    bg = Image.new('RGBA', s.size, 'white'); bg.alpha_composite(s); tegel(bg.convert('RGB'), 2, 2, 'fase 2 (af)')
+    im.save(os.path.join(HERE, 'vel_fase3_ronde5.png'))
+
+
 if __name__ == '__main__':
     vel()
+    vel5()

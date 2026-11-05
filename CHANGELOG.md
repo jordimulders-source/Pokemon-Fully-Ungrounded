@@ -228,3 +228,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.55] - Lama fase 3: poppetje ronde 4 (pose C, worsteloutfit)
 - Jordi koos pose C. Nieuw `docs/concept/sprites/lama/ontwerp/fase3_r4.py`: grotere bombín, dikke gevlochten vlechten over de schouders naar voren, gelijke windsels om beide voorpoten (gouden manchetten), intocht-cape met knoop, gouden kampioensriem, worstelrok; variant Y met singlet. Vel `vel_fase3_ronde4.png`, naar Jordi (advies X).
 
+### [v0.0.56] - Lama fase 3: poppetje ronde 5 (franje, X of Y)
+- Foto's 9 en 10 (cholitas luchadoras) in `docs/concept/sprites/lama/referenties/`. Besloten: beide geslachten krijgen hetzelfde ontwerp (zoals Gardevoir, Meowscarada, Primarina), maar geen volledige jurk.
+- `fase3_r4.py`: franje-opties (manta-franje, franje + kant onder de rok, beide) voor X (bont) en Y (blauw worstelpak); vel `vel_fase3_ronde5.png`, naar Jordi.
+

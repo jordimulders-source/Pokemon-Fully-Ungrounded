@@ -265,3 +265,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.67] - Lama fase 3: A gekozen, kleur ronde 5A2
 - Jordi koos A. Vlechten terug naar zwart zoals het model; oog lui in plaats van boos (licht lidvlak, lidlijn dalend naar buiten, meer oogwit). `docs/concept/sprites/lama/fase3/kleur/ronde5A2/`. Naar Jordi.
 
+### [v0.0.68] - Lama fase 3: kleur ronde 5A3 (hoed, oog)
+- Bombín 1,2× en lager, aansluitend op de vlechten; oog terug naar 5A met een lichter lidvlak. `docs/concept/sprites/lama/fase3/kleur/ronde5A3/`. Naar Jordi.
+

@@ -1,5 +1,5 @@
 """Lama fase 3, stap 2: bron voor het silhouet. Goedgekeurd ontwerp (Jordi 5 nov: "Doe maar Y en zonder franje"):
-fase3_r4('Y') in ontwerp/fase3_r4.py, pose C (camera yaw 55, pitch 8). Schrijft:
+fase3_r4('Y') in ontwerp/fase3_r4.py, pose C2 (Jordi 5 nov: "ik zie C2 wel zitten"): camera yaw 45, kop +18, pitch 8. Schrijft:
 - onderlaag_256.png (render met lijnen), alpha.npy (alfa op 768, voor dekkingsmetingen)
 - model50.txt (64x64 op de 50%-dekkingsgrens = het over te trekken silhouet), model50_1x.png
 - dekking.txt (dekking per 64-pixel in tienden: '.'=0, '#'=vol, 1-9 = deels)
@@ -12,11 +12,12 @@ sys.path.insert(0, os.path.join(HERE, '../../ontwerp'))
 import pop3d_lama as L
 import fase3_r4 as F4
 P = L.P
-YAW, PITCH = F4.YAW, 8
+YAW, PITCH, HEAD_YAW = 45, 8, 18
 
 if __name__ == '__main__':
     fill = float(sys.argv[1]) if len(sys.argv) > 1 else 0.99
     L.set_vacht('bont (foto 4)'); L.COL['lid'] = L.COL['head']; L.COL['lip'] = '#C9A982'
+    F4.HEAD_YAW = HEAD_YAW
     m = F4.fase3_r4('Y')
     Rc = P.rot_x(math.radians(PITCH)) @ P.rot_y(math.radians(YAW))
     pts = np.array([Rc @ c for c, r, R0, g in m.parts]); rs = np.array([r.max() for c, r, R0, g in m.parts])

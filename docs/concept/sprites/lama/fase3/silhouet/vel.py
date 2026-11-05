@@ -14,7 +14,7 @@ def sil(m, col=(40, 30, 30)):
 und = Image.open(os.path.join(HERE, 'onderlaag_256.png')).convert('RGB')
 ov = und.copy(); o = np.array(ov); mm = np.array(sil(M).resize((256, 256), Image.NEAREST))[..., 0] < 128
 o[mm] = (o[mm] * 0.45 + np.array((40, 60, 200)) * 0.55).astype(np.uint8); ov = Image.fromarray(o)
-tiles = [(und, 'onderlaag (poppetje Y, pose C)'), (sil(M).resize((256, 256), Image.NEAREST), f'fase 3 model 50%: {int(M.sum())} px'),
+tiles = [(und, 'onderlaag (Y, pose C2)'), (sil(M).resize((256, 256), Image.NEAREST), f'fase 3 model 50%: {int(M.sum())} px'),
          (ov, 'silhouet over de onderlaag'), (sil(A2).resize((256, 256), Image.NEAREST), f'fase 2 (af): {int(A2.sum())} px')]
 im = Image.new('RGB', (12 + 266 * 4, 44 + 290 + 120), 'white'); d = ImageDraw.Draw(im)
 d.text((12, 12), 'Lama fase 3: bron voor het silhouet (ruwe 50%-dekking van het poppetje, nog niet overgetrokken)', font=FB, fill=(30, 30, 30))

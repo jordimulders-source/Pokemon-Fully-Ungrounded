@@ -8,7 +8,7 @@ def get(n,kind):
         p=G+n+'/'+f
         if os.path.exists(p): return Image.open(p).convert('RGBA').crop((0,0,64,64))
     return None
-Z=4
+Z=3
 cols=6
 cell=64*Z+8
 rows=[(k,n) for k in ('front','back') for n in (front if k=='front' else back)]
@@ -23,3 +23,10 @@ for i,(k,n) in enumerate(rows):
     if im is None: missing.append(n); continue
     out.alpha_composite(im.resize((64*Z,64*Z),Image.NEAREST),(x+4,y+14))
 out.save('studie_rug.png'); print('ontbreekt',missing, out.size)
+# 8x-strook: rugaanzicht met aangezette ledematen
+key=[('aipom','back'),('linoone','front'),('salamence','front'),('machamp','back')]
+s=Image.new('RGBA',(4*520,530),(200,220,200,255)); dd=ImageDraw.Draw(s)
+for i,(n,k) in enumerate(key):
+    s.alpha_composite(get(n,k).resize((512,512),Image.NEAREST),(i*520,16)); dd.text((i*520+4,2),'8x '+k+' '+n,fill=(0,0,0,255))
+f=Image.new('RGBA',(max(out.width,s.width),out.height+s.height),(255,255,255,255))
+f.paste(out,(0,0)); f.paste(s,(0,out.height)); f.save('studie_rug.png')

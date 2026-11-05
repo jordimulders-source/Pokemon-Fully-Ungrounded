@@ -76,3 +76,9 @@ Alleen punt 5 (pacman); ronde 4 bewaard als `pop3d_potoo_ronde4.py` (+ `vel_rond
 - Bovensnavel = eigen hoornvlak (`beak` #B8AFB8, snijrand `beak2` #9A919E) op de onderrand van het gezicht: ±1 r_e hoog bij de mondhoek, hoger naar het haakje; geen omlijning, dus geen naad met het voorhoofd. In de spritehoek ligt hij als grijze band tussen oog en muil.
 - Onderkaak: buitenkant iets donkerder (`jawfur` #D9D3E3) met omtrek en dunne lichte rand.
 - Binnenkant met diepte: licht roze-paars bij de rand en naar de punt (`mouth`), middentoon (`mouth1`), donkerder achterin naar de keel (`mouth2`).
+
+# Ronde 4c (vel_ronde4c.png)
+Basis = ronde 4 (niet 4b; 4b bewaard als `pop3d_potoo_ronde4b.py` + `vel_ronde4b.png`). Jordi: "de punt is echt onderdeel van de snavel he, niet een decoratie".
+- Bovensnavel: blijft de dunne onderrand van het gezicht; pas vóóraan steekt hij uit als één taps toelopende vorm die doorloopt in het omlaag gekrulde haakje. Kleur verloopt rand → hoorngrijs → donker (`rim`, `hk1`–`hk3`, `hook`), zonder eigen lijn.
+- Onderkaak: loopt zelf spits toe; rand en buitenkant worden geleidelijk donkerder naar de punt (`jt1`, `jt2`, `tip`), geen apart kapje en geen lijn op de kleurgrens.
+- Haakje, kaakpunt en hoornrand staan niet meer in LINED: alleen dieptesprongen krijgen een lijn.

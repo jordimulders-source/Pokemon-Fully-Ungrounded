@@ -19,7 +19,7 @@ R = 768
 LINE = np.array((40, 34, 54), np.uint8)
 COL = {
     'fur': '#F1EFF6', 'jawfur': '#F1EFF6', 'wing': '#E1DDEB', 'far': '#CFCADC', 'tail': '#D9D4E4', 'bark': '#A99FB8',
-    'eye': '#09080D', 'lid': '#D3CCE2', 'rim': '#E4DFEE', 'horn': '#8F84A3', 'hook': '#3A3346', 'tip': '#4A4259', 'hk1': '#A79FB0', 'hk2': '#7A7085', 'hk3': '#544A60', 'jt1': '#BDB4C8', 'jt2': '#8A8098',
+    'eye': '#09080D', 'lid': '#D3CCE2', 'rim': '#E4DFEE', 'horn': '#8F84A3', 'hook': '#3A3346', 'tip': '#4A4259', 'hk1': '#A79FB0', 'hk2': '#7A7085', 'hk3': '#544A60', 'jt1': '#CCC4D6', 'jt2': '#9F96AB',
     'mouth': '#8E7EE8', 'mouth2': '#6F60CF', 'palate': '#6A5BCB', 'throat': '#231B52', 'brow': '#A79CBE',
 }
 NOSHADE = {'eye', 'throat'}
@@ -372,9 +372,9 @@ def potoo(**kw):
         # ronde 4c: de kaak loopt zelf spits toe; rand en buitenkant worden geleidelijk donkerder naar de punt
         d = P[:, 0] - tj
         out = T < 100
-        g[out & (d < 2.4)] = 'jt1'
-        g[out & (d < 1.4)] = 'jt2'
-        g[out & (d < 0.6)] = 'tip'
+        g[out & (d < 1.7 + 0.25 * np.abs(P[:, 2]))] = 'jt1'
+        g[out & (d < 0.95 + 0.2 * np.abs(P[:, 2]))] = 'jt2'
+        g[out & (d < 0.4)] = 'tip'
         cav = T >= 100
         deep = gy(P[:, 0]) - P[:, 1]
         g[cav] = 'mouth'                                                 # licht bij de rand

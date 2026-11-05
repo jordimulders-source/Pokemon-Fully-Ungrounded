@@ -129,6 +129,11 @@ class Potoo:
                    ell(q, (fx0 - 1.2 * K, 0, 2.6 * K), (2.4 * K, 2.4 * K, 2.4 * K)), 1.5)
         veer = smin(veer, rug, 1.0)
         d['veer'] = veer
+        d.update(s.velden_lijf(p))
+        return d
+
+    def velden_lijf(s, p):
+        P = s.P; d = {}
         # ---- lijf (voorover gekanteld) ----
         b = rot_y(p, (0, 0, -10), -P['voorover'])      # + = bovenlijf naar voren
         L = P['lijf_len']

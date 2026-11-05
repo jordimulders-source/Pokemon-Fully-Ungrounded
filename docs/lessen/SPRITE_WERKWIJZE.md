@@ -39,6 +39,7 @@ Voorbeeldmodel: `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` (hui
 - 3D = meten, niet verzinnen: oriëntatiepunten uit de foto's, render op de foto-hoeken mét de foto-omtrek erover + 4 andere hoeken.
 - Snavel/bek nooit uit bollen ("je maakt er een lipschijf van"): omtrek punt voor punt overtrekken, zelf letten op punten en golving.
 - Nooit een rommelig tussenresultaat sturen (voxelruis, losse pixels, mondkleur buiten de mond).
+- Tweede potoo-gesprek (5 nov): ook een SDF-model met omtrek-fit op de foto faalde ("pacman zeehond", "stop met blender"). Een open snavel uit formules (opengeknipte kop of losse onderdelen) leest niet als snavel; na 2 mislukte rondes niet doorpatchen maar Jordi om een andere aanpak/krabbel vragen. Alleen de foto's die Jordi in dat gesprek stuurt zijn de bron.
 
 **Opdracht aan een agent bevat altijd:** `SPRITE_KERN.md`, SPEC-pad, bevroren delen + toegestane zones, Jordi's woorden letterlijk, gewenste uitvoer (raster, png, pal, vel, NOTITIES met zwakke punten), "niet committen".
 

@@ -82,3 +82,10 @@ Basis = ronde 4 (niet 4b; 4b bewaard als `pop3d_potoo_ronde4b.py` + `vel_ronde4b
 - Bovensnavel: blijft de dunne onderrand van het gezicht; pas vóóraan steekt hij uit als één taps toelopende vorm die doorloopt in het omlaag gekrulde haakje. Kleur verloopt rand → hoorngrijs → donker (`rim`, `hk1`–`hk3`, `hook`), zonder eigen lijn.
 - Onderkaak: loopt zelf spits toe; rand en buitenkant worden geleidelijk donkerder naar de punt (`jt1`, `jt2`, `tip`), geen apart kapje en geen lijn op de kleurgrens.
 - Haakje, kaakpunt en hoornrand staan niet meer in LINED: alleen dieptesprongen krijgen een lijn.
+
+# Ronde 5 (vel_ronde5.png)
+Basis = 4c (bewaard als `pop3d_potoo_ronde4c.py` + `vel_ronde4c.png`). Jordi (gecorrigeerd): de kop moet juist **bol** zijn.
+- Koepel `Ed` (2,4; −0,7) met radii (5,5; 4,7; 5,5): vol en rond, kruin hoger en verder naar achteren, vult de rode omtrek van de close-up en de leidraad. Gezicht `Ef` (−0,4; −1,3) met radii (4,6; 3,3; 4,8): het voorhoofd bolt in één ronde lijn naar de snavel. De afplatting van ronde 4 is teruggedraaid.
+- Mondbreedte `zc` volgt de nieuwe koepel; snavelpunten, kaak naar voren, ogen hoger en haakje zijn ongewijzigd uit 4c.
+- Veertjes tussen de ogen liggen platter tegen de bollere kop en iets hoger, zodat het haakje in de spritehoek zichtbaar blijft.
+- Gecontroleerd: het oog staat ruim boven de mondrand (niet in de mond); de snavel sluit aan, zonder naad.

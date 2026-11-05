@@ -290,9 +290,9 @@ def potoo(**kw):
     below = H((tg, 1, 0), yh + tg * xh)
     # --- kop: brede, lage koepel; het breedst vlak boven de gaplijn (mondhoeken op de omtrek), voorhoofd in één
     #     bolle bocht naar het haakje; de kruin ligt naar achteren (close-up)
-    Ed = E((1.8, -1.5, 0), (5.6, 3.25, 5.5))                 # ronde 4: breder en vlakker, geen bol
-    Ef = E((-0.6, -1.7, 0), (4.6, 2.7, 4.8))                 # ronde 4: gezicht loopt zonder naad door in de bovensnavel
-    zc = 5.5 * math.sqrt(1 - ((yh + 1.5) / 3.25) ** 2) - 0.08
+    Ed = E((2.4, -0.7, 0), (5.5, 4.7, 5.5))                  # ronde 5: volle, bolle koepel; kruin hoger en verder naar achteren
+    Ef = E((-0.4, -1.3, 0), (4.6, 3.3, 4.8))                 # voorhoofd bolt in één ronde lijn naar de snavel
+    zc = 5.5 * math.sqrt(1 - ((yh + 0.7) / 4.7) ** 2) - 0.08
     L = lambda k=0.0: lens(tip, (xh, zc), p['half'], 0.0, 60.0, yh, k)
 
     def paint_upper(T, P):
@@ -333,12 +333,12 @@ def potoo(**kw):
         S.append(Solid([E(e, er)], 'eye'))
 
     # --- veertjes tussen de ogen: donkerdere plukjes boven het haakje die de omtrek breken (close-up)
-    for zz, yo, a, lift in ((0.0, 1.5, 1.2, 22), (0.65, 1.75, 1.1, 18), (-0.65, 1.75, 1.1, 18), (0.0, 2.4, 1.15, 16),
-                            (1.15, 2.3, 1.0, 14), (-1.15, 2.3, 1.0, 14)):
+    for zz, yo, a, lift in ((0.0, 2.0, 0.95, 12), (0.6, 2.25, 0.9, 10), (-0.6, 2.25, 0.9, 10), (0.0, 2.9, 0.95, 10),
+                            (1.1, 2.8, 0.85, 8), (-1.1, 2.8, 0.85, 8)):   # ronde 5: platter tegen de bolle kop, boven het haakje
         q, nn = surf2(np.array((2.0, gy(tip) + yo, zz)), np.array((-1.0, 0, 0)))
         fl = np.array((-0.6, -1.0, 0.25 * zz)); fl -= nn * (fl @ nn); fl /= np.linalg.norm(fl)
         ax = fl * math.cos(math.radians(lift)) + nn * math.sin(math.radians(lift))
-        S.append(Solid(leaf(q + ax * a * 0.55 - nn * 0.1, ax, np.cross(nn, ax), a * 1.2, 0.5, 0.36), 'brow'))
+        S.append(Solid(leaf(q + ax * a * 0.55 - nn * 0.1, ax, np.cross(nn, ax), a * 1.2, 0.42, 0.3), 'brow'))
     # --- ruige kruin en wangen: plukjes langs de omtrek (getekend, niet perfect rond)
     rng = np.random.default_rng(7)
     dirs = []
@@ -574,7 +574,7 @@ def traced_photo(key, box, size):
     return im
 
 
-def vel(naam='vel_ronde4c.png', titel='ronde 4c', **kw):
+def vel(naam='vel_ronde5.png', titel='ronde 5', **kw):
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 17)
     m = potoo(**kw)
@@ -592,7 +592,7 @@ def vel(naam='vel_ronde4c.png', titel='ronde 4c', **kw):
     sm = view(m, SY, SP, out=400).resize((64, 64), Image.LANCZOS)
     im.paste(sm, (1140, 130)); im.paste(sm.resize((96, 96), Image.NEAREST), (1215, 120)); lab(1130, 222, '1x (64 px) en 2x')
     vgl = []
-    for i, rn in enumerate(('3', '4', '4b')):                            # eerdere rondes ter vergelijking
+    for i, rn in enumerate(('3', '4', '4c')):                            # eerdere rondes ter vergelijking
         try:
             r3 = Image.open(os.path.join(HERE, f'vel_ronde{rn}.png')).crop((10, 34, 410, 434)).resize((110, 110), Image.LANCZOS)
             vgl.append((rn, r3))

@@ -179,7 +179,7 @@ LM = dict(
     onderlijf=(-18, -39),       # (310, 430)
     staartonder=(9, -73.5),     # (220, 545), staart ±185 px breed onderaan, hangt recht omlaag
 )
-KOP = 1.8                      # Pokémon: kop iets groter dan echt (om het achterhoofd geschaald)
+KOP = 1.4                      # Pokémon: kop iets groter dan echt (om het achterhoofd geschaald)
 
 
 def potoo(lean=0, gape=None, kopdraai=30, kopkantel=18):
@@ -189,14 +189,14 @@ def potoo(lean=0, gape=None, kopdraai=30, kopkantel=18):
     P = lambda p: Rl @ np.array(p, float)
     E = lambda c, r, g, R0=None: m.ell(P(c), r, g, Rl if R0 is None else Rl @ R0)
     # lijf: hoge zuil, rug hoog en gebogen (zijfoto), borst vooraan
-    E((6, 0, 0), (37, 58, 30), "fur")
-    E((26, 40, 0), (20, 20, 24), 'fur')                 # gebogen rug/schouders
-    E((-20, 10, 6), (20, 38, 22), 'belly')
-    E((-8, 52, 0), (22, 18, 22), 'fur')                 # overgang naar de kop, geen nek
+    E((6, 0, 0), (37, 58, 46), "fur")   # breedte: lijf ±1,35-1,45 x de kopbreedte (voorfoto nacht, takfoto)
+    E((26, 40, 0), (20, 20, 36), 'fur')                 # gebogen rug/schouders
+    E((-20, 10, 0), (20, 40, 36), 'belly')
+    E((-8, 50, 0), (22, 18, 32), 'fur')                 # overgang naar de kop, geen nek
     for sz in (1, -1):                                   # vleugels: lang paneel langs de zij
-        E((26, -12, 26 * sz), (15, 58, 8), 'wing', rot_z(math.radians(-6)))
+        E((24, -12, 40 * sz), (16, 58, 9), 'wing', rot_z(math.radians(-6)))
     for t in np.linspace(0, 1, 12):                      # staart: breed, hangt recht omlaag
-        E((16 + 24 * t, -40 - 52 * t, 0), (10, 8, 18 + 16 * t), 'tail')   # schuin naar achteren (Noctowl/Swellow), anders leest hij als paal
+        E((16 + 24 * t, -40 - 52 * t, 0), (10, 8, 26 + 16 * t), 'tail')   # schuin naar achteren (Noctowl/Swellow), anders leest hij als paal
     # kop
     n0 = len(m.parts)
     piv = np.array(LM['achterhoofd'] + (0,), float)

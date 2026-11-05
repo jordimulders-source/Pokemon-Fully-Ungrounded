@@ -1,6 +1,6 @@
 # Great potoo (Ghost/Normal, losse soort): SPEC
 
-Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1 (ontwerp)**: richting C gekozen, model `ontwerp/model_c2.png` wacht op Jordi.
+Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1b (3D-poppetje)**: `model3d/hoeken.png` (script `model3d/potoo3d.py`), Jordi kiest een hoek; daarna pas het silhouet.
 
 ## Besloten (Jordi, 5 nov)
 - Basissoort: **great potoo** (*Nyctibius grandis*): "ik wil sowieso een great potoo".
@@ -35,10 +35,11 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1 (ontwerp)**: richt
 | onderdeel | Jordi's woorden | status |
 |---|---|---|
 | vacht | "misschien dat we de vacht heel licht maken als mooi contrast"; "C zie ik zitten qua vachtkleur" | besloten: heel licht (C) |
-| ogen | "grote ogen"; "de ogen worden echt pikzwart, kijk naar andere pokemon die dat ook hebben" | besloten; referentie `referenties/pikzwarte_ogen.png` |
-| mond | "grote mond"; "De mond maken we dan geestblauw/paars achtig" | besloten |
-| geest | "dus hij mag nog wat geestachtiger" | open (vervagend onderlijf?) |
-| patroon | "moeten nog nadenken over kleur, patroon etc" | open |
+| ogen | "grote ogen"; "de ogen worden echt pikzwart, kijk naar andere pokemon die dat ook hebben"; "drifloon heeft ook puur zwarte ogen, dat gaan wij ook doen" | besloten: **puur zwart zonder glans (Drifloon)**, bewuste uitzondering op de regel "geen volledig zwarte ogen zonder glans" |
+| mond | "grote mond"; "De mond maken we dan geestblauw/paars achtig"; "de muil moet wel echt een snavel zijn he" | besloten: echte snavel (boven + onder, haakpunt), binnenkant geestblauw/paars |
+| geest | "dus hij mag nog wat geestachtiger"; "Het geestachtige zit alleen in de kleuren en de muil" | besloten: geen vervagend onderlijf |
+| patroon | "We kunnen wel het hisui zorua idee doen dat ze goed passen in sneeuwgebied, dus dat er wat schorsachtige vlekken in komen" | besloten: lichte vacht (sneeuwcamouflage) + enkele schorsachtige vlekken |
+| werkwijze | "Voordat je een silhouet bouwt, bouw je eerst een 3d model" | 3D-poppetje vóór het silhouet |
 
 ## Afgekeurd (niet herhalen)
 - Zichtbare roep / geestslierten uit de muil: "een zichtbare roep doen we niet, dat is niet pokemon".

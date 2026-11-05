@@ -13,12 +13,13 @@ import pop3d_lama as L
 import fase3_r4 as F4
 P = L.P
 YAW, PITCH, HEAD_YAW = 45, 8, 18
+W3 = dict(breed=1.26, nr=7, legk=1.85)   # Jordi 5 nov: "eigenlijk vind ik W3 wel goed" (ronde 1 = zonder W3)
 
 if __name__ == '__main__':
     fill = float(sys.argv[1]) if len(sys.argv) > 1 else 0.99
     L.set_vacht('bont (foto 4)'); L.COL['lid'] = L.COL['head']; L.COL['lip'] = '#C9A982'
     F4.HEAD_YAW = HEAD_YAW
-    m = F4.fase3_r4('Y')
+    m = F4.fase3_r4('Y', **W3)
     Rc = P.rot_x(math.radians(PITCH)) @ P.rot_y(math.radians(YAW))
     pts = np.array([Rc @ c for c, r, R0, g in m.parts]); rs = np.array([r.max() for c, r, R0, g in m.parts])
     x0, x1, y0, y1 = (pts[:, 0] - rs).min(), (pts[:, 0] + rs).max(), (pts[:, 1] - rs).min(), (pts[:, 1] + rs).max()

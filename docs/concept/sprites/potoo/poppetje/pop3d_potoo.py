@@ -19,11 +19,11 @@ R = 768
 LINE = np.array((40, 34, 54), np.uint8)
 COL = {
     'fur': '#F1EFF6', 'jawfur': '#F1EFF6', 'wing': '#E1DDEB', 'far': '#CFCADC', 'tail': '#D9D4E4', 'bark': '#A99FB8',
-    'eye': '#09080D', 'lid': '#D3CCE2', 'rim': '#E4DFEE', 'horn': '#8F84A3', 'hook': '#3A3346', 'tip': '#4A4259',
+    'eye': '#09080D', 'lid': '#D3CCE2', 'rim': '#E4DFEE', 'horn': '#8F84A3', 'hook': '#3A3346', 'tip': '#4A4259', 'hk1': '#A79FB0', 'hk2': '#7A7085', 'hk3': '#544A60', 'jt1': '#BDB4C8', 'jt2': '#8A8098',
     'mouth': '#8E7EE8', 'mouth2': '#6F60CF', 'palate': '#6A5BCB', 'throat': '#231B52', 'brow': '#A79CBE',
 }
 NOSHADE = {'eye', 'throat'}
-LINED = {'eye', 'lid', 'hook', 'tip', 'throat'}
+LINED = {'eye', 'lid', 'throat'}   # ronde 4c: punten zonder eigen lijn (onderdeel van de snavel, geen kapje)
 GROUPS = list(COL)
 
 
@@ -173,7 +173,7 @@ def render(solids, yaw, pitch, scale, center, res=R):
         gid[y0:y1, x0:x1][win] = [GROUPS.index(x) for x in g]
     # wat binnen de mondrand ligt maar geen mondwand is (een stukje wang/borst diep in de keel), is keelholte:
     # zo staat er nooit vacht ín de muil en nooit mondkleur buiten de rand
-    bar = np.isin(gid, [GROUPS.index(x) for x in ('mouth', 'mouth2', 'palate', 'throat', 'rim', 'horn', 'hook', 'tip', 'brow', 'eye', 'lid')])
+    bar = np.isin(gid, [GROUPS.index(x) for x in ('mouth', 'mouth2', 'palate', 'throat', 'rim', 'horn', 'hook', 'tip', 'hk1', 'hk2', 'hk3', 'jt1', 'jt2', 'brow', 'eye', 'lid')])
     img = Image.fromarray(np.where(bar, 0, 255).astype(np.uint8)).copy()
     ImageDraw.floodfill(img, (0, 0), 128)
     hole = np.array(img) == 255
@@ -350,11 +350,15 @@ def potoo(**kw):
           lift=14, sink=0.32, keep=lambda q: q[0] > -1.2 and q[1] > gy(q[0]) + 1.0)
     # --- haakje: duidelijk, donker, omgekruld (±1,5 r_e), het voorste punt van het profiel, hangt vóór de muil
     g0 = gy(tip)
-    hk = [(tip + 0.8, g0 + 0.6, 0.42), (tip + 0.15, g0 + 0.45, 0.4), (tip - 0.25, g0 + 0.05, 0.34),   # ronde 4: klein, stomp, omlaag gekruld
-          (tip - 0.2, g0 - 0.45, 0.26), (tip + 0.1, g0 - 0.75, 0.16)]
-    for (x0, y0, r0), (x1, y1, r1) in zip(hk, hk[1:]):
-        for t in np.linspace(0, 1, 5):
-            S.append(Solid([E((x0 + (x1 - x0) * t, y0 + (y1 - y0) * t, 0), (r0 + (r1 - r0) * t) * np.array((1, 1, 0.8)))], 'hook'))
+    # ronde 4c: de bovensnavel steekt pas vóóraan uit het gezicht, wordt smaller en loopt zelf door in het haakje
+    # (één taps toelopende vorm; kleur verloopt van hoorngrijs naar donker, zonder eigen lijn)
+    hk = [(tip + 2.2, g0 + 0.25, 0.62, 'rim'), (tip + 1.3, g0 + 0.35, 0.6, 'hk1'), (tip + 0.5, g0 + 0.38, 0.52, 'hk1'),
+          (tip - 0.1, g0 + 0.2, 0.44, 'hk2'), (tip - 0.4, g0 - 0.2, 0.36, 'hk2'), (tip - 0.35, g0 - 0.65, 0.27, 'hk3'),
+          (tip - 0.1, g0 - 0.95, 0.18, 'hook'), (tip + 0.12, g0 - 1.05, 0.1, 'hook')]
+    for (x0, y0, r0, c0), (x1, y1, r1, c1) in zip(hk, hk[1:]):
+        for t in np.linspace(0, 1, 6)[:-1]:
+            zr = 0.9 - 0.25 * (1 - (r0 + (r1 - r0) * t) / 0.62)
+            S.append(Solid([E((x0 + (x1 - x0) * t, y0 + (y1 - y0) * t, 0), (r0 + (r1 - r0) * t) * np.array((1.2, 1, zr)))], c0 if t < 0.5 else c1))
 
     # --- onderkaak: diepe schep met eigen bevederde buitenkant, opengeklapt om de mondhoeken
     tj = p['jaw_tip']
@@ -365,7 +369,12 @@ def potoo(**kw):
     def paint_jaw(T, P):
         g = np.array(['jawfur'] * len(T), object)                       # eigen bevederde buitenkant (met omtrek)
         g[T == 1] = 'rim'                                                # dunne lichte kaakrand
-        g[(P[:, 0] < tj + 0.8) & (T < 100)] = 'tip'                      # spitse donkere kaakpunt
+        # ronde 4c: de kaak loopt zelf spits toe; rand en buitenkant worden geleidelijk donkerder naar de punt
+        d = P[:, 0] - tj
+        out = T < 100
+        g[out & (d < 2.4)] = 'jt1'
+        g[out & (d < 1.4)] = 'jt2'
+        g[out & (d < 0.6)] = 'tip'
         cav = T >= 100
         deep = gy(P[:, 0]) - P[:, 1]
         g[cav] = 'mouth'                                                 # licht bij de rand
@@ -565,12 +574,12 @@ def traced_photo(key, box, size):
     return im
 
 
-def vel(naam='vel_ronde4.png', titel='ronde 4', **kw):
+def vel(naam='vel_ronde4c.png', titel='ronde 4c', **kw):
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 17)
     m = potoo(**kw)
     W = 1340
-    im = Image.new('RGB', (W, 1450), 'white')
+    im = Image.new('RGB', (W, 1480), 'white')
     d = ImageDraw.Draw(im)
     lab = lambda x, y, t: d.text((x, y), t, font=F, fill=(60, 60, 60))
     d.text((12, 8), f'Great potoo (Ghost/Normal): 3D-poppetje {titel}: spritehoek, bek open, licht voorover op een onzichtbare tak', font=FB, fill=(30, 30, 30))
@@ -582,11 +591,17 @@ def vel(naam='vel_ronde4.png', titel='ronde 4', **kw):
     im.paste(ld.transpose(Image.FLIP_LEFT_RIGHT), (780, 50)); lab(784, 384, 'leidraad (duo links), gespiegeld')
     sm = view(m, SY, SP, out=400).resize((64, 64), Image.LANCZOS)
     im.paste(sm, (1140, 130)); im.paste(sm.resize((96, 96), Image.NEAREST), (1215, 120)); lab(1130, 222, '1x (64 px) en 2x')
-    try:
-        r3 = Image.open(os.path.join(HERE, 'vel_ronde3.png')).crop((10, 34, 410, 434)).resize((150, 150), Image.LANCZOS)
-        im.paste(r3, (1150, 300)); lab(1150, 284, 'ronde 3 (ter vergelijking)')
-    except FileNotFoundError:
-        pass
+    vgl = []
+    for i, rn in enumerate(('3', '4', '4b')):                            # eerdere rondes ter vergelijking
+        try:
+            r3 = Image.open(os.path.join(HERE, f'vel_ronde{rn}.png')).crop((10, 34, 410, 434)).resize((110, 110), Image.LANCZOS)
+            vgl.append((rn, r3))
+        except FileNotFoundError:
+            pass
+    for i, (rn, r3) in enumerate(vgl):
+        x, y = 1120 + (i % 2) * 110, 250 + (i // 2) * 0 if i < 2 else 250
+        x, y = (1120, 240) if i == 0 else ((1230, 240) if i == 1 else (1175, 345))
+        im.paste(r3, (x, y)); lab(x + 30, y + 98, 'r' + rn)
     lab(1130, 60, 'Lees de rij hieronder:')
     lab(1130, 80, 'kop op dezelfde hoek en')
     lab(1130, 100, 'grootte als de foto.')

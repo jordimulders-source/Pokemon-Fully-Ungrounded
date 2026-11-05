@@ -20,7 +20,7 @@ We beginnen opnieuw met de **great potoo** (fakemon voor Pokémon Fully Unground
 1. Gokken in plaats van meten: lijf te dun, vleugels los van het lijf, kop generiek, oogpositie fout. Jordi: "kijk eens naar het bronmateriaal, je bent aan het speculeren", "stop met het giswerk".
 2. De snavel steeds opnieuw uit bollen/formules opgebouwd: "de snavel is nog helemaal niet goed", "je maakt er een lipschijf van". Jordi moest elk detail voorkauwen ("waarom moet ik dat allemaal voorkauwen?"): kijk zelf naar vorm, punten en golving.
 3. Een lijn op een 2D-plaatje tekenen is geen model: "dan is het de vraag of de verhouding nog klopt".
-4. Rommelige tussenresultaten gestuurd: losse pixels, strepen en spikkels rond de snavel ("kijk wat er allemaal voor rotzooi rondom die snavel zit"). **Stuur alleen een schoon resultaat** dat je zelf groot hebt bekeken en naast de foto's hebt gelegd.
+4. Over de voxelkop (`model3d/kop3d_controle.png`): "dit is echt het slechtste wat ik tot nu toe gezien heb in alle gesprekken". Rommelige tussenresultaten gestuurd: losse pixels, strepen en spikkels rond de snavel ("kijk wat er allemaal voor rotzooi rondom die snavel zit"). **Stuur alleen een schoon resultaat** dat je zelf groot hebt bekeken en naast de foto's hebt gelegd.
 5. Te veel kleine rondes en tussenberichten. Werk door tot iets klopt.
 
 **Aanpak die Jordi wil:**

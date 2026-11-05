@@ -16,7 +16,7 @@ HEAD_SHIFT = np.array((-6, 30, 0.0))
 LINE = np.array((43, 27, 23), np.uint8)
 
 COL = {
-    'fur': '#EEECF3', 'wing': '#D3CFDE', 'belly': '#FAF9FC', 'tail': '#C6C1D3', 'jaw': '#6C657C',
+    'fur': '#EEECF3', 'wing': '#D3CFDE', 'belly': '#FAF9FC', 'tail': '#C6C1D3', 'jaw': '#6C657C', 'rim': '#F7F5F9',
     'mouth': '#5A4DB8', 'throat': '#1E1842', 'beak': '#7A7388', 'eye': '#050507',
 }
 NOSHADE = {'eye', 'throat'}
@@ -164,57 +164,74 @@ def view(m, yaw, pitch=8, size=232):
 HEAD = 1.25   # kop groter dan echt (Pokémon), grote ogen, grote mond
 
 
-def potoo(lean=15, gape=46):
+# Oriëntatiepunten gemeten op referenties/jordi_great_potoo_vooroverhangend_bek_open.webp (578x565, kijkt naar rechts).
+# Omrekening: x = -(px - 250) * 0.3 (kop links), y = -(py - 300) * 0.3. Waarden in fotopixels erbij.
+LM = dict(
+    snaveltip=(-76.5, 66),      # (505, 80) haakje
+    mondhoek=(-37.5, 60),       # (375, 100) onder/achter het oog
+    onderkaaktip=(-62, 38),     # (465, 150) op de zijfoto; iets verder open zoals de 3/4-foto (opening ±1/2 kophoogte)
+    oog=(-49.5, 69),            # (415, 70), ±35x20 px
+    kruin=(-24, 82.5),          # (330, 25)
+    achterhoofd=(6, 72),        # (230, 60)
+    schouder=(36, 54),          # (130, 120) rug hoog, gebogen
+    rug=(46.5, 15),             # (95, 250)
+    borst=(-37.5, 30),          # (375, 200)
+    onderlijf=(-18, -39),       # (310, 430)
+    staartonder=(9, -73.5),     # (220, 545), staart ±185 px breed onderaan, hangt recht omlaag
+)
+KOP = 1.8                      # Pokémon: kop iets groter dan echt (om het achterhoofd geschaald)
+
+
+def potoo(lean=0, gape=None, kopdraai=30, kopkantel=18):
+    """kopdraai: kop extra naar de kijker (SPRITE_NORM: kop draait meer dan het lijf); kopkantel: kop omhoog (3/4-foto)."""
     m = Model()
-    Rl = rot_z(math.radians(lean))           # hele vogel licht voorover (kop naar links)
+    Rl = rot_z(math.radians(lean))
     P = lambda p: Rl @ np.array(p, float)
     E = lambda c, r, g, R0=None: m.ell(P(c), r, g, Rl if R0 is None else Rl @ R0)
-    # lijf: rechtop peervormig, breed van onder; schouders lopen zonder nek in de kop over
-    E((2, -6, 0), (23, 33, 24), 'fur')
-    E((-5, -10, 5), (16, 25, 18), 'belly')
-    E((0, 20, 0), (22, 18, 23), 'fur')
-    # vleugels langs de zij, punten over de staartwortel
+    # lijf: hoge zuil, rug hoog en gebogen (zijfoto), borst vooraan
+    E((6, 0, 0), (37, 58, 30), "fur")
+    E((26, 40, 0), (20, 20, 24), 'fur')                 # gebogen rug/schouders
+    E((-20, 10, 6), (20, 38, 22), 'belly')
+    E((-8, 52, 0), (22, 18, 22), 'fur')                 # overgang naar de kop, geen nek
+    for sz in (1, -1):                                   # vleugels: lang paneel langs de zij
+        E((26, -12, 26 * sz), (15, 58, 8), 'wing', rot_z(math.radians(-6)))
+    for t in np.linspace(0, 1, 12):                      # staart: breed, hangt recht omlaag
+        E((16 + 24 * t, -40 - 52 * t, 0), (10, 8, 18 + 16 * t), 'tail')   # schuin naar achteren (Noctowl/Swellow), anders leest hij als paal
+    # kop
+    n0 = len(m.parts)
+    piv = np.array(LM['achterhoofd'] + (0,), float)
+    H = lambda p: piv + (np.array(p, float) - piv) * KOP
+    v = lambda k, z=0: np.array(LM[k] + (z,), float)
+    E(H((-24, 72, 0)), np.array((30, 18, 24)) * KOP, 'fur')          # schedel; 3/4-foto: kop incl. kaak ±0,85 x zo hoog als breed
+    # kaken als massieve wiggen met een paarse binnenbekleding (zo zit de kleur ín de snavel, niet als bol ervoor)
+    def kaak(tip, r0, w0, op):
+        for t in np.linspace(0, 1, 16):
+            c = v('mondhoek') * (1 - t) + v(tip) * t + np.array((0, op * 3 * (1 - t), 0))
+            r = r0 * (1 - t) + 2.2 * t
+            w = w0 * (1 - t) + 4 * t
+            E(H(c), np.array((r * 0.8, r * 0.6, w)) * KOP, 'fur')
+            E(H(c + np.array((0, -op * r * 0.35, 0))), np.array((r * 0.72, r * 0.42, w * 0.86)) * KOP, 'mouth')
+    kaak('snaveltip', 11, 21, +1)      # bovenkaak: bekleding aan de onderkant
+    kaak('onderkaaktip', 8, 19, -1)    # onderkaak: bekleding aan de bovenkant
+    E(H(v('snaveltip') + np.array((1, -2.5, 0))), np.array((2, 3.2, 2)) * KOP, 'beak')
+    E(H(v('onderkaaktip') + np.array((-1, 0, 0))), np.array((1.8, 2, 2)) * KOP, 'beak')
+    E(H(v('mondhoek') + np.array((-3, -4, 0))), np.array((6, 9, 13)) * KOP, 'throat')
+    # ogen: hoog op de zijkant boven de mondhoek, groot (Pokémon) en pikzwart (Drifloon)
     for sz in (1, -1):
-        E((9, -10, 19 * sz), (10, 33, 7), 'wing', rot_z(math.radians(-12)))
-    # staart: lang, breed en plat (veren), hangt schuin naar achteren-omlaag
-    for t in np.linspace(0, 1, 14):
-        E((12 + 12 * t, -28 - 48 * t, 0), (6, 10, 12 + 5 * t), 'tail')
-    # kop: groot, breed, plat van boven
-    h = HEAD
-    sk = np.array((-6, 44, 0.0))
-    E(sk, np.array((26, 19, 26)) * h, 'fur')
-    # snavel (Jordi: "de muil moet wel echt een snavel zijn"): brede platte bovensnavel met haakpunt,
-    # ondersnavel hangt open (gape graden) vanaf de mondhoek; geestpaarse binnenkant en donkere keel ertussen
-    hinge = sk + np.array((-2, -8, 0)) * h
-    def snavel(rot, g, haak):
-        for t in np.linspace(0, 1, 12):
-            r = 19 * (1 - t) + 2.6 * t
-            c = hinge + rot @ (np.array((-36 * t, 0, 0)) * h)
-            rz = r if haak else 19 * (1 - t) + 7 * t      # ondersnavel: brede lepel, ronde punt
-            E(c, np.array((r * 0.7, r * 0.42, rz)) * h, g, rot)
-        if haak:
-            E(hinge + rot @ (np.array((-36.5, -3, 0)) * h), np.array((2, 2.6, 1.8)) * h, g, rot)
-    Ru = rot_z(math.radians(-8)); Rd = rot_z(math.radians(gape))
-    snavel(Ru, 'beak', True)
-    snavel(Rd, 'jaw', False)
-    Rm = rot_z(math.radians(gape * 0.5))
-    E(hinge + Rm @ (np.array((-15, 0, 0)) * h), np.array((17, 9, 16)) * h, 'mouth', Rm)
-    E(hinge + np.array((3, -2, 0)) * h, np.array((6, 6, 8)) * h, 'throat')
-    # ogen: groot, pikzwart (Drifloon), naar voren zodat in 3/4 beide te zien zijn
-    for sz in (1, -1):
-        d = np.array((-0.72, 0.32, 0.62 * sz)); d /= np.linalg.norm(d)
-        c = sk + np.array((26 * d[0], 19 * d[1], 26 * d[2])) * h * 0.88
-        E(c, np.array((9, 10, 5)) * h, 'eye', rot_y(math.atan2(d[0], d[2])))
+        E(H(v('oog', 17.5 * sz)), np.array((8, 6.5, 4)) * KOP, 'eye', rot_y(math.radians(-30 * sz)))
+    Rh = rot_y(math.radians(kopdraai)) @ rot_z(math.radians(-kopkantel))
+    pv = P(piv)
+    m.parts[n0:] = [(pv + Rh @ (c - pv), r, Rh @ R0, g) for c, r, R0, g in m.parts[n0:]]
     return m
 
 
 def sheet():
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)
-    yaws, leans = (35, 50, 65), (10, 20)
+    yaws, leans = (30, 45, 60), (0, 10)
     im = Image.new('RGB', (10 + 266 * len(yaws), 40 + 290 * len(leans)), 'white')
     d = ImageDraw.Draw(im)
-    d.text((10, 10), 'Great potoo: 3D-poppetje (lijfhoek x voorover)', font=FB, fill=(30, 30, 30))
+    d.text((10, 10), 'Great potoo: 3D-poppetje (gemeten aan de zijfoto)', font=FB, fill=(30, 30, 30))
     for r, lean in enumerate(leans):
         m = potoo(lean)
         for c, yaw in enumerate(yaws):

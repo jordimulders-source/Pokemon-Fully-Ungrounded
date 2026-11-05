@@ -1,6 +1,6 @@
 # Great potoo (Ghost/Normal, losse soort): SPEC
 
-Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1b (3D-poppetje)**: `model3d/hoeken.png` (script `model3d/potoo3d.py`), Jordi kiest een hoek; daarna pas het silhouet.
+Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1b (3D-poppetje)**: `model3d/hoeken.png`, gemeten aan de zijfoto (oriëntatiepunten `LM` in `model3d/potoo3d.py`, controle `model3d/vergelijking_bron.png`); Jordi kiest een hoek, daarna pas het silhouet.
 
 ## Besloten (Jordi, 5 nov)
 - Basissoort: **great potoo** (*Nyctibius grandis*): "ik wil sowieso een great potoo".
@@ -36,7 +36,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1b (3D-poppetje)**: 
 |---|---|---|
 | vacht | "misschien dat we de vacht heel licht maken als mooi contrast"; "C zie ik zitten qua vachtkleur" | besloten: heel licht (C) |
 | ogen | "grote ogen"; "de ogen worden echt pikzwart, kijk naar andere pokemon die dat ook hebben"; "drifloon heeft ook puur zwarte ogen, dat gaan wij ook doen" | besloten: **puur zwart zonder glans (Drifloon)**, bewuste uitzondering op de regel "geen volledig zwarte ogen zonder glans" |
-| mond | "grote mond"; "De mond maken we dan geestblauw/paars achtig"; "de muil moet wel echt een snavel zijn he" | besloten: echte snavel (boven + onder, haakpunt), binnenkant geestblauw/paars |
+| mond | "grote mond"; "De mond maken we dan geestblauw/paars achtig"; "de muil moet wel echt een snavel zijn he" | besloten: echte snavel zoals de bron: bovensnavel = voorkant van het gezicht met klein haakje, onderkaak = brede schep, wijd open; binnenkant geestblauw/paars. Afgekeurd: losse grijze eendensnavel ("de snavel is nog helemaal niet goed", "kijk eens naar het bronmateriaal, je bent aan het speculeren") |
 | geest | "dus hij mag nog wat geestachtiger"; "Het geestachtige zit alleen in de kleuren en de muil" | besloten: geen vervagend onderlijf |
 | patroon | "We kunnen wel het hisui zorua idee doen dat ze goed passen in sneeuwgebied, dus dat er wat schorsachtige vlekken in komen" | besloten: lichte vacht (sneeuwcamouflage) + enkele schorsachtige vlekken |
 | werkwijze | "Voordat je een silhouet bouwt, bouw je eerst een 3d model" | 3D-poppetje vóór het silhouet |

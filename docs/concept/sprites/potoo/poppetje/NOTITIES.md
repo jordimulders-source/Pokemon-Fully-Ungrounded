@@ -123,3 +123,11 @@ Basis ronde 8; blinde test r8: "parkiet 45%, potoo 25%". Kopvorm, oog, muilomtre
 - Lijf voller (rug ±12 px breder, borst ±12 px), staart breed (±100 px) en stomp, pennen korter mee.
 - Schorspatroon: verspreide korte gerichte streepjes en vegen (bark/bark2, 16–28 px, minimale afstand 36 px) over kop, borst, vleugel en staart; nooit op lijnen, oog, snavel of in de muil (masker van donkere pixels + muil + snavel).
 Valkuil: veerpuntjes om de 17 px met spitse driehoeken gaven een zaagblad/egelkop; afgerond en om de 25 px leest als "licht ruig". Maskerfilters op 4x-resolutie zijn traag: op 1/4 rekenen.
+
+# Ronde 10 (vel_ronde10.png, pop2d_potoo_r10.py)
+Basis ronde 9; blinde test r9: reuzenpotoo 55% (kaketoe 25%, witte uil 10%).
+- Muil als brede U: beide kaakhelften (`L_NEAR`, `L_FAR`, `L_JAWOUT`) bollen naar buiten (max ±16–18 px halverwege), de punt is stomper; de voorhoek onder de haak blijft op de leidraad (vloeiende overgang, anders een knik). Nooit smaller dan de leidraad.
+- Haak kort: 1,15x → ±1,06x de foto, en óver de mondlijn getekend (anders verdwijnt hij onder de lijn).
+- Mantel/schouderveren lopen hoog achter en naast de kop door (rug begint bij y 150, gebocheld zoals de leidraad); kop + mantel hebben één doorlopende ruige omtrek; de losse naadveertjes van ronde 9 zijn weg (gaven witte vlekken).
+- Veerpuntjes (`ruffle`) langs rug (om de 34 px) en borst/flank (om de 38 px); dons onder de kin (boogjes); achterste pennen breder zodat de vleugel een eigen getrapte rand heeft buiten de rug.
+Valkuil: veerpuntjes om de 26 px over de hele omtrek maken er een pluche knuffel van; spaarzaam houden.

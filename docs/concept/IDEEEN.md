@@ -172,3 +172,4 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
   3. *Awki → Sapa Inca* (2 fasen): gele franje → rode franje. Simpel, de kleurwissel is het verhaal.
   4. Splitsing in fase 3 (zoals Kirlia → Gardevoir/Gallade): Sapa Inca (Fire/Flying, zonnekoning) of willaq umu (Psychic/Flying, zonnepriester).
   - Vrouwtje als *Quya* met gele kroon, of het mannetje/vrouwtje-verschil laten vallen als de kleurwissel al per fase gebeurt.
+- **Schetsen v1** (5 nov): `docs/concept/ontwerp/koningstiran/schets_v1.png`. Rij 1: kiskadie (hatun runa) → koningstiran met dichte kuif, gele franje, gouden oorschijf (awki) → open waaier, rode franje, tocapu-borst (Sapa Inca). Rij 2: vorkstaarttiran als chaski, zonneral als willaq umu.

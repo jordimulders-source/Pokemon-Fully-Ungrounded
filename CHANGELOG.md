@@ -127,3 +127,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Nieuw idee van Jordi in `docs/concept/IDEEEN.md`: een Pokémon naar de tropical royal flycatcher (koningstiran) met een Inca-hoofdtooi (mascaypacha). Uitgewerkt door Claude: het echte dier, de Inca-koppeling, kuif dicht/open als sprite-animatie, geslachtsverschil, lijn- en type-opties. Nog niets besloten.
 - Brainstorm erbij: verwante vogels (tirannen met verborgen kroon, rotshaan, parasolvogel, zonneral, bergcaracara, incastern, kuifkardinaal) en vier lijnvoorstellen.
 - Inca-rangen uitgewerkt (hatun runa, chaski, kuraka, orejón, apu, awki, Sapa Inca/Quya e.a.) met vier lijnvarianten.
+- Eerste conceptschetsen van de koningstiran-lijn: `docs/concept/ontwerp/koningstiran/schets_v1.png` (script `ontwerp/scripts/koningstiran.py`).

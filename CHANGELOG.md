@@ -125,3 +125,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.24] - Idee: roomkleurige specht (Electric/Flying)
 - Jordi's idee (cream-colored woodpecker, "net Pikachu") met Claude's haakjes in `docs/concept/IDEEEN.md`: convergente evolutie in plaats van pikaclone, drie bronnen voor de elektriciteit (telegraaflijn van Rondon, piëzo-elektrisch hout, bliksembomen), evolutie naar een kastanjebruine vorm (*Celeus elegans*), naam via *pica-pau*.
+
+### [v0.0.25] - Specht: mimicry en naam Picapau
+- `docs/concept/IDEEEN.md`: Mülleriaanse mimicry als reden voor de Pikachu-gelijkenis; Picapau genoteerd als favoriete naam (Jordi).

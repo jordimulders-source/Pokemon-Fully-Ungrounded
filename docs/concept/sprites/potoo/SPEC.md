@@ -45,6 +45,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **opnieuw beginnen** (Jordi
 | kop-leidraad | "dit mag als leidraad voor het hoofd, dit linkse stuk" (linkerhelft van `jordi_great_potoo_bek_open_duo.webp`) | besloten: kopvorm, oog, snavel en muil op die foto meten |
 | bek groot | "met die lekker overdreven grote bek", "dat is grappig" (5 nov, tweede gesprek) | besloten: de muil mag overdreven groot (Pokémon-stap B) |
 | ogen hoger | "en de ogen moeten hoger" (5 nov, tweede gesprek, bij de 3D-overlay) | besloten: oogmidden hoger op de koepel |
+| snavel = kern | "de snavel is de main selling point, die moet gewoon goed zijn", "maak nu een poppetje zoals bij de lama, doe het desnoods alleen vanuit sprite vorm. Er zijn pokemon die ook hun snavel open hebben die je als inspiratie kan gebruiken", "ik accepteer het niet als de bron niet goed nagemaakt is want dat kan gewoon niet moeilijk zijn" (5 nov) | besloten: poppetje in lama-stijl (mag alleen in de spritehoek); bron (close-up/leidraad) getrouw nagemaakt; open snavels in echte sprites: `referenties/open_snavels_sprites.png` |
 | kern | "De snavel en ogen zijn het kernpunt van het design, zoals je kan zien zitten er kleine veren allemaal ook tussen de ogen duidelijk, dat mag je ook uitbeelden" (5 nov, tweede gesprek) | besloten: snavel + ogen krijgen de meeste aandacht; korte veertjes tussen en rond de ogen (borstelveertjes/wenkbrauwkuif) uitbeelden |
 | werkwijze | "Voordat je een silhouet bouwt, bouw je eerst een 3d model" | 3D-poppetje vóór het silhouet |
 

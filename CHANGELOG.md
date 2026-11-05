@@ -186,3 +186,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.43] - Salticonda: nieuwe kop in 3/4 (kleur3 → 3c)
 - Kleur2 afgekeurd (misvormde koppen, zijaanzicht). Lijf van kleur1-E bevroren; alleen de kop opnieuw, op de Silicobra-Uyuni-kop als skelet in dezelfde 3/4-hoek, iets groter, met Sandaconda-neusbult. Jordi over kleur3: "veel beter de goede kant op". 3b: zouttextuur op de kuif (goed), maar kuif kleiner (afgekeurd). 3c: kuif +19% t.o.v. kleur3 (kraag van zoutplaten naar achteren), neusgaten terug. `docs/concept/sprites/salticonda/kleur3*/`.
 - Ability-richting (Jordi): één ability met immuniteit voor Ice én Water die hem oplaadt (zout smelt ijs, water + zout = pekel); details en naam later (`docs/concept/sprites/silicobra_uyuni/ONTWERP.md`).
+
+### [v0.0.44] - Salticonda: kleur3e en kleur3d
+- Jordi: kleur3 heeft de beste kuif en neus; 3b/3c afgekeurd. kleur3e = kleur3 met alleen de zouttextuur van 3b op de kuif (vorm identiek). kleur3d = kleur3 met dezelfde kuif 1,1× hoger/breder (1,32× oppervlak), sprite 3 px omlaag, neus en lijf ongewijzigd.

@@ -33,3 +33,4 @@ Werkwijze: `docs/lessen/SPRITE_KERN.md` (verplicht meegeven) + `SPRITE_WERKWIJZE
 ## Nog open
 - Naam, ability.
 - Jordi 5 nov: "maak maar eerst een model en dan draaien we die driekwart" → **eerst een 3D-model** (rondom-vel in `model/`); de 3/4-hoek kiezen we op het model, pas daarna het silhouet.
+- Jordi 5 nov (op het rondom-vel van het model, letterlijk): "ja 45 graden is oke, maar voor de rest moet die veel beter afgewerkt worden, het zijn nu gewoon nog vlakken allemaal. De poten staan ook niet goed als poten. Hoort een mot zes poten te hebben?" → **hoek 45° bevroren**; het model moet echt afgewerkt worden (geen vlakken); **zes insectenpoten** (dij, scheen, voetje, met pompon), voorste paar groot, achterste paar grotendeels verborgen.

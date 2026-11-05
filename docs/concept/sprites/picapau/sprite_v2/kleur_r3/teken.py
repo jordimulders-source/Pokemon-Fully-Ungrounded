@@ -1,31 +1,61 @@
-"""Ronde 3: met de hand bijgewerkt vanaf kleur_r2/raster.txt, alleen drie zones:
-snavel (N-cellen uit bron_labels), poten (P-cellen + klauwhaakjes), borst-voorrand (+1 px waar de render bolt).
-Elke wijziging als (rij, x, tekens); '_' = transparant. Uitvoer: raster.txt."""
-G = [list(l.rstrip('\n')) for l in open('../kleur_r2/raster.txt')][:64]
-E = [
- # --- snavel: kegel, licht boven, basis midden, donker onder, donkere punt, donkere lijn in het gezicht ---
- (16, 13, '__'),
- (17, 14, 'GG__'),
- (18, 15, 'Ggggg'),
- (19, 16, 'G111'),
- (20, 17, 'ghhG'),
- (21, 17, 'GghG'),
- (22, 18, 'GgG3'),
- (23, 19, 'GG3'),
- # --- poten: nabije poot 2 tenen voor + 1 achter, klauwhaakjes; verre poot donker erachter ---
- (45, 29, 'GgGkkGk'),
- (46, 26, '_GGggG_kGk'),
- (47, 25, '_kggggGGkGGGk_'),
- (48, 24, '_k_GGgG__kkk_k_'),
- (49, 24, '____k__________'),
- # --- borst-voorrand: 1 px naar buiten waar de render bolt (dekking >= 0.36) ---
- (31, 25, '42'),
- (32, 25, '42'),
- (33, 25, '42'),
- (36, 26, '42'),
- (38, 27, '42'),
-]
-for y, x, s in E:
-    for i, ch in enumerate(s):
-        G[y][x + i] = '.' if ch == '_' else ch
+"""Ronde 3: met de hand opnieuw overgetrokken van de B1-render, rij voor rij (x, tekens).
+Overgenomen: kuiftoppen r3-8 (r5), snavel (r3-tussenstand, N-cellen), staart (r2, x>=44 r45-57).
+Rest volgt de render: kopbal, twee kuifkegels + drie platte punten, oog op rendermaat, ronde wang,
+bolle borst/buik/dij, vleugel met ronde schouder en de stippen van het model, loopbenen + tenen."""
+R5 = [l.rstrip('\n') for l in open('../../kleur_r5/raster.txt')][:64]
+R2 = [l.rstrip('\n') for l in open('../kleur_r2/raster.txt')][:64]
+G = [['.'] * 64 for _ in range(64)]
+for y in range(3, 9):
+    G[y] = list(R5[y])
+for y in range(46, 58):                      # staart uit r2
+    for x in range(44, 64):
+        G[y][x] = R2[y][x]
+S = {
+ 9: [(30, '41122'), (35, '33k')],
+ 9:  [(30, '41124'), (35, '33k')],
+ 10: [(29, '41122'), (34, '4'), (35, '3k')],
+ 11: [(29, '41'), (31, '44'), (33, '22'), (35, '4'), (36, '3'), (37, '44'), (39, 'k')],
+ 12: [(26, '444'), (29, '22'), (31, '2222'), (35, '4'), (36, '3333'), (40, 'k')],
+ 13: [(23, '444'), (26, '111'), (29, '22222'), (34, '24'), (36, '33'), (38, 'kk')],
+ 14: [(22, '4'), (23, '22'), (25, '1111'), (29, '22222'), (34, '33'), (36, '3k')],
+ 15: [(21, '4'), (22, '22'), (24, '11111'), (29, '2222'), (33, '3333'), (37, 'k')],
+ 16: [(19, 'k'), (20, '4'), (21, '2222'), (25, '111'), (28, '2222'), (32, '33333'), (37, '344k')],
+ 17: [(14, 'GG'), (18, 'kG'), (20, '22222222222'), (31, '333333'), (37, '3333k')],
+ 18: [(15, 'Ggggg'), (20, '2222'), (24, '3kk3'), (28, '2222'), (32, '33333333'), (40, 'k')],
+ 19: [(16, 'G111'), (20, '4'), (21, '222'), (24, 'Gwkk'), (28, '2222'), (32, '333333'), (38, 'kk')],
+ 20: [(17, 'ghhG'), (21, '3'), (22, '22'), (24, 'kkGk'), (28, '222'), (31, '333333'), (37, 'k')],
+ 21: [(17, 'GghG'), (21, '3'), (22, '22'), (24, '3kk3'), (28, '22'), (30, '3333333'), (37, '34k')],
+ 22: [(18, 'GgG'), (21, '33'), (23, '222222'), (29, '3333333'), (36, '4333k')],
+ 23: [(19, 'GG'), (21, '33'), (23, '22'), (25, 'ccc'), (28, '2'), (29, '333333'), (35, '43333k')],
+ 24: [(19, 'k'), (20, '333'), (23, '2'), (24, 'ccccc'), (29, '33333'), (34, '433333k')],
+ 25: [(20, '4'), (21, '332'), (24, 'ccccC'), (29, '3333333'), (36, 'ddddk')],
+ 26: [(21, '4'), (22, '33'), (24, 'ccCCC'), (29, '333333'), (35, 'dllbhhk')],
+ 27: [(22, '4'), (23, '33'), (25, 'CCC'), (28, '3333'), (32, '44'), (34, 'dhhlbbhk')],
+ 28: [(23, '44'), (25, '3332'), (29, '3443'), (33, '3'), (34, 'dhhbbbbdk')],
+ 29: [(25, '4'), (26, '2211223'), (33, 'dbbbbbbddk')],
+ 30: [(25, '4'), (26, '2111123'), (33, 'dbbbbbbdddk')],
+ 31: [(25, '4'), (26, '1111123'), (33, 'dbbhhbbdggk')],
+ 32: [(25, '4'), (26, '2111123'), (33, '3dbhhbbdgddk')],
+ 33: [(25, '4'), (26, '2211222'), (33, '33'), (35, 'dbbbbddddk')],
+ 34: [(26, '4'), (27, '22222'), (32, '2333'), (36, 'dddddbbddk')],
+ 35: [(26, '4'), (27, '222222'), (33, '33333333'), (41, 'dhhdk')],
+ 36: [(27, '4'), (28, '222222'), (34, '333333333'), (43, 'dbdk')],
+ 37: [(27, '4'), (28, '2222222'), (35, '333333333'), (44, 'dbk')],
+ 38: [(28, '4'), (29, '222222'), (35, '333333333'), (44, 'dbdk')],
+ 39: [(28, '4'), (29, '2112222'), (36, '33333333'), (44, 'dbbk')],
+ 40: [(28, '4'), (29, '111122'), (35, '3333333333'), (45, 'dbdk')],
+ 41: [(28, '4'), (29, '11122'), (34, '33333333333'), (45, 'dbbk')],
+ 42: [(29, '4'), (30, '1222'), (34, '33333333333'), (45, 'dbbdk')],
+ 43: [(29, 'k'), (30, '223'), (33, '3333333333333'), (46, 'dbbdk')],
+ 44: [(29, 'GgGkkk'), (35, '333333333333'), (47, 'dbdk')],
+ 45: [(29, 'GgG'), (33, 'Gkk'), (36, '33333333'), (44, 'kbbbdk')],
+ 46: [(29, 'GgG'), (33, 'Gk'), (36, 'kkk'), (39, '333'), (42, 'kk')],
+ 47: [(25, 'kggggggG'), (33, 'GGGk'), (39, 'kkk')],
+ 48: [(26, 'GGGGggGk'), (34, 'kk'), (37, 'k')],
+ 49: [(30, 'GG'), (33, 'k')],
+}
+for y, segs in S.items():
+    for x, s in segs:
+        for i, ch in enumerate(s):
+            G[y][x + i] = ch
 open('raster.txt', 'w').write('\n'.join(''.join(r) for r in G) + '\n')

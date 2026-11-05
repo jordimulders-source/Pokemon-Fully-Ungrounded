@@ -64,7 +64,7 @@ def _bouw(raster, extra, groot):
             if (y, x) in vast: a[y, x] = vast[(y, x)]; continue
             if b1[y, x]:
                 rb = hand[y, x - 1] or hand[y - 1, x] or hand[y - 1, x - 1] or pols[y - 1, x] or pols[y, x - 1]
-                lt = hand[y, x + 1] or (y < 63 and (hand[y + 1, x] or hand[y + 1, x + 1]))
+                lt = hand[y, x + 1] or hand[y, x + 2] or (y < 63 and (hand[y + 1, x] or hand[y + 1, x + 1])) or (y < 62 and hand[y + 2, x])
                 a[y, x] = 11 if (rb and not lt) or y >= 59 else 10
             elif b2[y, x]: a[y, x] = 12
             else: a[y, x] = 0

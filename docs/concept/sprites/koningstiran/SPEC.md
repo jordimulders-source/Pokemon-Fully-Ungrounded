@@ -37,7 +37,10 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (5 nov) Jordi stuurt het Pachacútec-beeld (Cuzco, `referenties/pachacutec_beeld_cuzco.webp`): "doe deze pose qua vleugels, dus eentje wijst half de lucht in, de ander gewoon zoals decidueye bijv" → pose-ronde 4: nabije vleugel gesloten en half omhoog naar buiten (rechts in beeld, voor de kroon langs), verre vleugel gesloten hangend (Decidueye), contrapposto (standbeen + verre poot naar voren en hoger), slanker lijf.
 
+- (5 nov) "dat die zijn eigen staart vasthoudt als scepter is wel komisch, b3 lijkt wel ok. Wederom is wel de vleugel weer een rechte lijn, daar mag iets meer dynamiek in zitten, evenals dat de benen in een v-pose staan" → **hoek B3 gekozen** (lijf 44°, kop 76°); pose-ronde 5: knik in de pols van de opgeheven vleugel (arm naar buiten, pennen omhoog, bolle achterrand), 3 buigingen; standbeen recht, vrije poot met gebogen knie. Staart-als-scepter: nog open.
+
 ## Afgekeurd
+- Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.
 - Pose-ronde 3: te dik, te recht, vleugelpose gegokt.
 - Pose-ronde 2: gespreide slagpennen ("danser").
 - Pose-ronde 1: stijf rechtop, vleugels langs het lijf, symmetrisch ("t-pose").

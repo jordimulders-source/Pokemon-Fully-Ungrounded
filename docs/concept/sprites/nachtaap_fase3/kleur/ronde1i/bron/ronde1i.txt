@@ -1,1 +1,9 @@
 # Ronde 1i bovenop ronde1h
+## 1: buik: licht/schaduwgrens als boog (eerste S per rij: 45,44,43,41,38,34 = stappen 1-1-2-3-4)
+41 41 VV
+42 38 VVV
+43 36 VV
+44 32 VV
+## 2: staartwortel waaiert uit in de heup (aan de heupkant), wortel zelf 0 px
+38 43 S
+39 44 S

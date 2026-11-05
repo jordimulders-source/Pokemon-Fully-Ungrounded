@@ -24,3 +24,5 @@ Gen 3: 64×64, anim_front 64×128 (2 frames), 16 kleuren, index 0 transparant, P
 - **Zelfgenoemd zwak punt = fail**: "zwak", "twijfel", "leest eerder als…", "Jordi kan zeggen…" → repareren, niet opleveren.
 - Met de hand tekenen (pixel-over/tekst-raster). Eén vergelijkingsvel (1× en 3× naast 3–6 referenties) + uitsneden van wat je keurde; niet meer.
 - Lessen onder "Lessen" in je NOTITIES.md; niet committen tenzij gevraagd.
+- **Patronen op een sprite zijn dik** (Jordi: "een patroon zou altijd dikker moeten"): banden ≥ 3 px, nooit lijntjes van 1 px; dunne lijnen lezen als krassen (nachtaap fase 2, kené).
+- **Patronen zoals Game Freak** (patroonstudie nachtaap fase 2, 20 sprites): eigen kleurgroep (toon of grote waardesprong, nooit de hooglichttint van de vacht); band vlak en als geheel geschaduwd, geen bevel (licht randje + kern + donker randje = ribbel); grote banden 3–6 px; buigen om de bol en lopen door tot schaduw/contour; eigen omlijning alleen bij grote grafische vormen; het motief moet op 1× zijn eigen logica tonen.

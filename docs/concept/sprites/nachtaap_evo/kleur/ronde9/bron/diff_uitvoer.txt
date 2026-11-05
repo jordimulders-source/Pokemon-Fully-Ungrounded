@@ -1,0 +1,4 @@
+palet = variant B: True
+diff buiten de zone (x17-49,y24-50) t.o.v. variant B: 0 | in de zone: 211
+patroonpixels 186 | buiten de projectie (verdikking): 39 | projectiepixels niet gebruikt: 27 (waarvan op de omlijning: 26 )
+pixels 186 | onder 3 px: 4 [(33, 27, 2, 3), (34, 27, 2, 3), (46, 35, 9, 2), (46, 36, 4, 2)]

@@ -1,0 +1,21 @@
+Bron: SPEC.md (Jordi's woorden, Afgekeurd, besluiten kop 80° en pose bevroren), SPRITE_NORM.md, FAKEMON_CHECKLIST.md; jordi_krabbel_pose/hand, drowzee_gen1_sugimori, healerhand_anime, fase 2, goedgekeurd poppetje; echte frontsprites ambipom, deoxys, mew, infernape (/tmp/claude-0/keur/r2.png, 4× en 1×) plus het vel van ronde 1 (/tmp/claude-0/keur/vergelijk.png: monferno, primeape, simipour, passimian, zarude, celebi, medicham, alakazam, mr_mime, jynx).
+8×: render_muriqui.png (1440 px), model_r2_vel.png en render_muriqui_1x.png 4× NEAREST bekeken.
+1×: render_muriqui_1x.png 64×64, 1392 px gevuld (alpha>127), box 62×50; naast Ambipom 1636, Deoxys 1314, Mew 696, Infernape 1452.
+
+1. Eén geheel: lijkt op één lijf (nek/kin lopen nu in de borst, de zwarte kraag is weg, romp, heup en staartwortel glad) / wijkt af in de bladeren: drie losse ovalen die naast de krul zweven zonder aanhechting (norm 10 "geen losse/zwevende delen"), en in de healerarm: de onderarm loopt nog ±1/3 handlengte onder/achter de hand door tot een paarse stomp, met donkere vachtpieken op de pols.
+2. Pose: lijkt op de krabbel en het poppetje (besluit gerespecteerd) en de knikken in knie/elleboog maken hem minder zeester / wijkt af in de verhouding: geheven been en sleepbeen zijn nu dikke worsten van romp-dikte die eindigen in piepkleine voetjes en een kleine vuist (omgekeerd taps; de posestudie vraagt dikke dij/bovenarm én grote handen/voeten zoals Ambipom/Infernape).
+3. Healerhand: lijkt op de anime-referentie (vijf vingers, palm naar de kijker, vingers omhoog, duim links, licht maanzilver-lila) / wijkt af van de Gen 1-Drowzee in dat de vingers nu even dikke, rechte worstjes met ronde toppen zijn (cartoonhandschoen), en op 1× is het een lichtgrijze klodder van ±8×8 px zonder telbare vingers of tussenlijnen (Ambipom-hand ±12×10 met drie leesbare vingers). Jordi's harde eis "groot genoeg om op 1× te lezen" is daarmee niet gehaald.
+4. Kop/gezicht (variant A): lijkt op fase 2 (rode ogen met vlak bovenlid, brede witte sikkel nu goed) en op de muriqui (brede snuit) / wijkt af in de dunne lichte buitenrand om de gezichtsschijf (helmrand) en de snuit die op 1× als lichte vlek onder de ogen leest; ogen op 1× twee rode stippen (aanvaardbaar voor de silhouetstap).
+5. Leesbaarheid 1×: lijkt op Deoxys/Ambipom (open grillige omtrek, massa nu vergelijkbaar: 1392 vs 1314/1636; met deze uitgestrekte pose leest de massa niet slechter, geen FAIL-reden) / wijkt af in de uiteinden: geen enkel ledemaat eindigt in een leesbare hand of voet; de bovenste vuist en voet zijn 3–4 px stompjes, waardoor de twee geheven ledematen als "twee armen zonder handen" lezen.
+6. Lijn: lijkt op fase 2 via kop, sikkel, violet en de spiraalstaart (1¾ slag, nu herkenbaar) / wijkt af in de beige handen/voeten van fase 2 (hier paars; tekening volgt later in de patroonstap, dat is geaccepteerd).
+7. Afgekeurd dat terugkomt: zwevende losse delen (bladeren); de hand die niet aan het eind van de arm zit (half opgelost); crème teennagels uit het niets. Geen zeester meer, geen takken.
+
+Reparaties (meest ernstig eerst):
+1. Healerhand op 1× leesbaar maken: hand +40% (doel ±11×12 px op 1×, ±0,9 kopbreedte), donkere spleten tussen de vingers in het model (of de vingers 0,5–1 px uit elkaar) zodat 4 vingers + duim tellen op 1×; vingertoppen 10–15° naar de kijker krommen en per vinger taps (basis 20% breder dan top) i.p.v. gelijke worstjes.
+2. Arm eindigt in de pols: de stomp onder/achter de hand helemaal weg (0 px arm voorbij de handwortel), vachtpieken op de pols weg; pols = maanzilver-randje naar lichaamskleur zoals Jordi vroeg.
+3. Bladeren vastzetten aan de staart: elk blad met de voet in de bovenkant van de krul (overlap ≥ 15% bladlengte) of uit de staartpunt groeiend, als één bundel; geen lucht tussen blad en staart.
+4. Uiteinden vergroten: bovenste vuist +50%, beide voeten +60–80% (op 1× ≥ 6×6 px), zodat de geheven ledematen op 1× als arm-met-vuist en been-met-voet lezen (Ambipom/Infernape-verhouding).
+5. Ledematen taps: geheven been en sleepbeen onder de knie 20–25% dunner dan de dij (nu even dik), zodat het geen worsten zijn.
+6. Lichte buitenrand om de gezichtsschijf weg (gezicht gaat direct over in de kopvacht), crème teennagels weg.
+
+Oordeel: FAIL

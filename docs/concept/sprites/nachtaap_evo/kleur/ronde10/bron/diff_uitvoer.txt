@@ -1,0 +1,3 @@
+palet = ronde 9: True
+diff buiten de oogzone (x5-22,y42-49): 0 | gewijzigd in de zone: 52
+gewijzigd binnen x 6 - 20 y 43 - 48

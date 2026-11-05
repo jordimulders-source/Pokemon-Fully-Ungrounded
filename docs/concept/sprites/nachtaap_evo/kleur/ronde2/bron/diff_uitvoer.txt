@@ -1,0 +1,6 @@
+palet index 0-14 gelijk: True
+pixeldiff buiten zones: 0 | binnen zones gewijzigd: 121
+maan onderlaag (4:1, wit): 67
+ronde1 wit w: 58 w+zilverlila n: 77
+ronde2 wit w: 83 w+zilverlila n: 94
+overlap maan ronde2/onderlaag: 52

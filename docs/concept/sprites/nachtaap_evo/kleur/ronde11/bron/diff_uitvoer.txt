@@ -1,0 +1,7 @@
+palet = ronde 10: True
+diff buiten de rug (x15-49,y24-50): 0 | in de rug: 106
+oude kene (idx 15/6 in de rug buiten de wiggen): 0
+wigpixels 112 | buiten de projectie: 29
+wig voor    y26-38 (13 rijen) | breedte per rij [6, 8, 8, 7, 6, 6, 3, 3, 3, 3, 3, 2, 1] | bovenaan 6 | tot 2/3 (9 rijen) min 3 | punt 1 px
+wig midden  y27-40 (14 rijen) | breedte per rij [4, 4, 4, 4, 3, 3, 3, 3, 3, 3, 2, 2, 1, 1] | bovenaan 4 | tot 2/3 (9 rijen) min 3 | punt 1 px
+wig achter  y34-38 (5 rijen) | breedte per rij [4, 3, 3, 2, 1] | bovenaan 4 | tot 2/3 (3 rijen) min 3 | punt 1 px

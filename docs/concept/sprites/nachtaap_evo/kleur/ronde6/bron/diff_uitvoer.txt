@@ -1,0 +1,7 @@
+F5 kene (x16-47,y26-38) 89
+handen (x3-27,y55-62) 48
+achtervoet (x31-42,y56-60) 10
+oor links (x3-6,y37-41) 5
+oor rechts (x23-26,y37-42) 6
+totaal 158 | buiten de zones 0
+palet gelijk True

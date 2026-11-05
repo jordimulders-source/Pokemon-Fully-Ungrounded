@@ -1,0 +1,5 @@
+palet gelijk: True
+diff buiten zone: 0 | gewijzigd in zone: 7
+ronde2 maan w+n: 94 overlap onderlaag: 52 | maandikte midden x12-14: [4, 4, 5]
+ronde3 maan w+n: 97 overlap onderlaag: 55 | maandikte midden x12-14: [5, 5, 6]
+onderlaag wit: 67 | dikte midden x12-14: [5, 5, 6]

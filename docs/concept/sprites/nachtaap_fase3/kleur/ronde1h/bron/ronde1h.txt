@@ -1,0 +1,23 @@
+# Ronde 1h bovenop ronde1g
+## 1: rug-dij-hoek rond (Claude stond (29,29) en (30,30) van het been toe): rij 30 x26-28, rij 29 x29-30, dan de voorrand van het been
+29 29 D
+30 29 LL
+## 2+4: romp bol: terminator 1-2 px verder naar linksboven, buikonderkant breder S; bovenkant heup licht tot aan de rand (breekt de donkere band onder de staartwortel)
+38 42 VV
+39 41 VVVV
+40 41 VVV
+41 40 V
+42 38 S
+43 36 S
+44 32 SS
+## 3: knie: bovenbeen lichtkant bovenop (V), S-kern rechts; onderbeenwortel V -> zachte boog S|V tussen boven- en onderbeen
+46 36 VVVV
+46 45 V
+47 37 VVVV
+47 45 V
+48 37 VVVV
+48 45 V
+49 37 VVVV
+49 45 VVV
+50 38 VV
+50 46 VVV

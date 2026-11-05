@@ -21,6 +21,7 @@ def ratios(p):
         'mond breedte': (p['mond_r'] - p['mond_l']) / Wh,
         'mond diepte': (p['kaaktip'][1] - p['mond_top']) / Hh,
         'mond links vanaf achterkant': (p['mond_l'] - p['achter'][0]) / Wh,
+        'oog vorm (h/b, onbedekt)': p['oog_h'] / p['oog_b'],
     }
 
 

@@ -9,6 +9,7 @@ from meten import FOTO, ratios, meet_model
 
 YAWS = (40, 45, 50)
 DOEL = ratios(FOTO); DOEL['oog breedte'] = 0.23
+W = {'oog vanaf achterkant': 3, 'oog vorm (h/b, onbedekt)': 3, 'oog hoogte vanaf kruin': 2}   # oog half onder een 'klep' telde eerst niet mee
 
 
 def kost(kp):
@@ -18,7 +19,7 @@ def kost(kp):
             r = ratios(meet_model(potoo(0, kp=kp), y))
         except Exception:
             return 1e9
-        t += sum((r[k] - DOEL[k]) ** 2 for k in DOEL)
+        t += sum(W.get(k, 1) * (r[k] - DOEL[k]) ** 2 for k in DOEL)
     return t / len(YAWS)
 
 
@@ -33,7 +34,7 @@ def zet(kp, k, i, d):
     return kp
 
 
-kp = {a: (list(b) if isinstance(b, (tuple, list)) else b) for a, b in potoo3d.KP.items()}
+kp = json.load(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), 'kp_fit.json'))) if len(sys.argv) > 1 else {a: (list(b) if isinstance(b, (tuple, list)) else b) for a, b in potoo3d.KP.items()}
 best = kost(kp); print('start', round(best, 4))
 for stap in (4, 2, 1):
     beter = True

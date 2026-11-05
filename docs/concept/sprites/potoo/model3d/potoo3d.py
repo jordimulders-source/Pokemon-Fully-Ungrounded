@@ -216,7 +216,7 @@ def potoo(lean=0, gape=None, kopdraai=10, kopkantel=10, kp=None):
     v = lambda key, z=0: np.array(tuple(k[key]) + (z,), float)
     sx, sy, sa, sb, sc = k['schedel']
     E(H((sx, sy, 0)), np.array((sa, sb, sc)) * KOP, 'fur')
-    E(H((sx + 20, sy + 9, 0)), np.array((18, 12, sc * 0.78)) * KOP, 'fur')     # kruin loopt naar achteren
+    E(H((sx + 22, sy + 2, 0)), np.array((18, 12, sc * 0.78)) * KOP, 'fur')     # achterhoofd (niet over de ogen)
     def kaak(tip, dik, w, op):
         """Eén schep per kaak (rond U-blad), met een paarse binnenbekleding aan de mondkant."""
         c0, c1 = v('mondhoek'), v(tip)

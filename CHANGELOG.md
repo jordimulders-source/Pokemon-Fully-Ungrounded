@@ -138,3 +138,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Numpy-model (opgeblazen profiel, ronde kop, ronder lijf, K1-R2b) geprobeerd en verlaten: van opzij gezien plat en van alle kanten vreemd.
 - `docs/concept/sprites/kolibrie_pre/blender/`: model in Blender (bpy) als één huid (smooth union): bolletje-lijf met ingewerkte vleugels, kop zonder nek, kort staartje, langere naaldsnavel; vel met rondom-renders en 3/4-standen naast Fletchling, Starly en Taillow. Foto's 6 en 7 van Jordi beschreven in `referenties/`.
 - Lessen in `docs/lessen/SPRITE_WERKWIJZE.md` (profielkop is geen 3/4, silhouet als omtrek over de render tonen, model niet ongevraagd wijzigen).
+
+### [v0.0.27] - Kolibrie pre-evo: frontsprite af
+- Stand A van het Blender-model gekozen (één oog, snavel langer en open, kop iets omhoog); silhouet direct uit de render.
+- Kleur in 10 rondes met maker-agents en drie onafhankelijke keuringen: Starly-oog (iris en Combusken/Latias geprobeerd, terug naar Starly), opgeschoond tot ≤3 tinten per kleurgroep, contrast als Taillow, belijning zonder wisselende zwart/donkerlila, ronde vleugelschaduw, kleine pootjes in perspectief, holle hals naar bolle buik (foto 8 van Jordi).
+- Allerlaatste keuring: kleur en Dragonfly Cave PASS na 8 px. Af: `docs/concept/sprites/kolibrie_pre/af/kolibrie_pre.png`.

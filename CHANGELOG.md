@@ -207,3 +207,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.69] - Nachtaap fase 3: rugbanden naar Jordi's krabbel
 - Ronde 5: de krabbel letterlijk overgetrokken (drie ')'-banden). Jordi: het is een krabbel, geen blauwdruk.
 - Ronde 6 (`docs/concept/sprites/nachtaap_fase3/rugpatroon/ronde6/`): drie gelijke, ronde banden op gelijke afstand, 3 px in het midden, taps uitlopend; shading wit/lichtblauw/grijsblauw van licht naar schaduw. Keurder: eerst FAIL (2 px te dun), daarna opnieuw opgebouwd uit één vaste bandvorm.
+
+### [v0.0.70] - Nachtaap fase 3: draaistanden rugbanden
+- Ronde 7 (`docs/concept/sprites/nachtaap_fase3/rugpatroon/ronde7/`): de banden van ronde 6 tegen de klok in gedraaid in vier standen, 0°, 8°, 15° en 22°, zodat Jordi kan kiezen. Bij 30° kwamen er trappetjes in de banden; die stand is geschrapt.

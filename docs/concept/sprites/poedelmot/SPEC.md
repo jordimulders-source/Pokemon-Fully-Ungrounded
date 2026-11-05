@@ -23,5 +23,11 @@ Werkwijze: `docs/lessen/SPRITE_KERN.md` (verplicht meegeven) + `SPRITE_WERKWIJZE
 - **Lijf echt los van de vleugels** (zoals de vilt-mot op de hand): een eigen wollig lijfje met pluizige pootjes; de vleugels zitten erachter.
 - **Gevoel:** "insect, maar toch ook weer niet": bizar en schattig tegelijk, "wow wat een vaag dier". Dat is het verschil met Frosmoth (ijzig, elegant, doorzichtige vleugels).
 
+## Jordi 5 nov (tweede bericht, letterlijk)
+"p1 en a, de poten die fluffy zijn gaan naar de poedel verwijzen. op de tak is die niet helemaal driekwart, maar die pose zie ik wel zitten"
+- **Pose P1 = de pose van de tak-foto** (`foto_tak_katoen.webp`): zittend, lijf op de pluizige pootjes, vleugels omhoog en naar achteren in een V. Niet helemaal 3/4 (vrijwel frontaal, kop iets naar links); **die pose is akkoord, niet bijdraaien naar strikt 3/4.**
+- **Vleugelpatroon a:** fijne bruine adertjes zoals bij het vilt.
+- **Fluffy poten verwijzen naar de poedel:** de wolplukken aan de poten zijn de pompons van de poedelknip (verbinding met de larve).
+
 ## Nog open
-- Pose (zie het voorstel in de chat van 5 nov), het precieze vleugelpatroon, naam, ability.
+- Naam, ability.

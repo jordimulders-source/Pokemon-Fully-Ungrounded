@@ -515,3 +515,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.31] - DJ Rotom hoger in het vak, zweeft
 - Jordi: "kan die nog hoger dan?" De frontsprite is 4 px omhoog geschoven (pixels ongewijzigd) en staat nu net zo in het vak als Frost (boven y3, onder y58).
 - Jordi: "hij hoort te zweven". In deze build krijgt elke tegenstander een schaduw (Gen 4-stijl); met `enemyMonElevation` > 0 zweeft de sprite erboven. Bij het invoeren: elevation ±6 zoals Frost, schaduw breed genoeg voor de speakers (genoteerd in `dj_rotom/SPEC.md`).
+### [v0.0.24] - Idee: koningstiran met Inca-kroon
+- Nieuw idee van Jordi in `docs/concept/IDEEEN.md`: een Pokémon naar de tropical royal flycatcher (koningstiran) met een Inca-hoofdtooi (mascaypacha). Uitgewerkt door Claude: het echte dier, de Inca-koppeling, kuif dicht/open als sprite-animatie, geslachtsverschil, lijn- en type-opties. Nog niets besloten.
+- Brainstorm erbij: verwante vogels (tirannen met verborgen kroon, rotshaan, parasolvogel, zonneral, bergcaracara, incastern, kuifkardinaal) en vier lijnvoorstellen.

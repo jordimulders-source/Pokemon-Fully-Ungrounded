@@ -51,3 +51,5 @@ Bron: *Celeus flavus* (cream-colored woodpecker), Amazone. Concept: `docs/concep
 
 ## Sprite v2 (5 nov): overtrekken van de B1-render
 Bron: `sprite_v2/bron/` (`bron.py`: kleur per spritepixel uit `blender/B1/b1.png`, onderdelen uit `blender/B1/labels.png` (`blender/labels.py`), `overtrekvel.png` met raster). Methode van lama fase 3 (kop/onderdelen cel voor cel van het model, niet hertekenen).
+
+- **Jordi over sprite v2 r2 (5 nov), krabbel `referenties/jordi_krabbel_r2_model_genegeerd.png`:** "ik heb hier een aantal lijnen neergezet om aan te geven waarin het model genegeerd wordt". Lezing Claude: (1) twee lijnen in de kuif: de twee kuifpunten zijn in het model eigen kegels die van de kop loskomen (vorm over vorm), in de sprite smelten ze in één gele massa; (2) lange boog van onder de wang langs de borst naar de onderkant van de buik: de bolle borst/buik van het model (ronde voorkant die onderaan naar rechts omkrult), in de sprite een rechte voorkant; (3) korte boog bij de vleugelvoorrand: de ronde schouder/voorrand van de vleugel over het lijf.

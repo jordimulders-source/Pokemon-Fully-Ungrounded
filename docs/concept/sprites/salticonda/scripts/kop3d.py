@@ -1,45 +1,68 @@
-"""Onderlaag voor de 3/4-kop: afgeplatte ei-vorm (brede, platte anacondakop) die naar links-voor kijkt,
-met dezelfde projectie als onderlaag2. Geeft toon per pixel + schermposities van oog, neusgat, mondlijn.
-Alleen onderlaag; het eindraster wordt met de hand getekend."""
-import math
-import onderlaag2 as O
-def head(cx=24.0, cy=4.0, cz=44.0, yaw=38, pitch=-12, Lh=15.5, W=10.5, Hh=7.0):
-    a=math.radians(yaw); p=math.radians(pitch)
-    f=(-math.cos(a)*math.cos(p), math.sin(a)*math.cos(p), math.sin(p))     # snuitrichting
-    s=(math.sin(a), math.cos(a), 0.0)                                       # naar de kijker-kant
-    up=(f[1]*s[2]-f[2]*s[1], f[2]*s[0]-f[0]*s[2], f[0]*s[1]-f[1]*s[0])
-    if up[2]<0: up=tuple(-v for v in up)
-    def P(u,v,w):
-        return (cx+u*f[0]+v*s[0]+w*up[0], cy+u*f[1]+v*s[1]+w*up[1], cz+u*f[2]+v*s[2]+w*up[2])
-    zb={}
-    N=260
-    for i in range(N+1):
-        th=math.pi*i/N            # langs de snuit
-        for j in range(N):
-            ph=2*math.pi*j/N
-            uu=math.cos(th)       # +1 = snuitpunt
-            r=math.sin(th)
-            wf=1-0.18*max(0,uu)   # snuit iets smaller
-            hf=1-0.30*max(0,uu)   # en lager
-            v=W*r*math.cos(ph)*wf; w=Hh*r*math.sin(ph)*hf
-            if w<-Hh*0.55: w=-Hh*0.55 - (w+Hh*0.55)*0.25   # kaak plat van onder
-            u=Lh*uu
-            X,Y,Z=P(u,v,w)
-            # normaal ~ gradient van ellipsoide
-            g=(uu/Lh, r*math.cos(ph)/(W*wf), r*math.sin(ph)/(Hh*hf))
-            n=[g[0]*f[k]+g[1]*s[k]+g[2]*up[k] for k in range(3)]
-            nn=math.sqrt(sum(q*q for q in n)); n=[q/nn for q in n]
-            sx,sy,dep=O.proj(X,Y,Z)
-            k=(int(sx*O.SS),int(sy*O.SS))
-            if k not in zb or zb[k][0]<dep: zb[k]=(dep,sum(n[q]*O.L[q] for q in range(3)),u/Lh,v/W,w/Hh)
-    px={}
+"""Salticonda kleurronde 3d: vanaf kleur3.
+- Hele sprite 3 px omlaag (DY=3); lijf, halsband, gezicht, neus/snuitfront, oog, wenkbrauw en wang alleen verschoven.
+- De kuif van kleur3 ~1,2x in alle richtingen (vooral hoger), zelfde vorm: silhouet = kleur3-kuif geschaald om het
+  anker (16,10) (voorkant kuif, ooghoogte), zie kuifsilhouet(); daarna per rij met de hand ingekleurd met de
+  zouttextuur van 3b (okernaden g, lichte opstaande randen, korrels).
+Tekens: . transparant | O K h omlijning | e d c b a zout | f g gezicht/naad | q r s t pekel."""
+from PIL import Image
+D='/home/user/Pokemon-Fully-Ungrounded/docs/concept/sprites/salticonda/'
+CH='.OKhedcbafgqrst'; I=CH.index
+DY=3; S=1.2; AX,AY=16,10
+def kuifmasker(x,y):               # zelfde masker als kuifmaat.py (kleur3-coordinaten)
+    return y<20 and ((y<=5 and x>=13) or (6<=y<=9 and x>=21) or (y>=10 and x>=34))
+def vast(x,y):                     # bevroren binnen het masker: wenkbrauw, oog, wang (kleur3-coordinaten)
+    return (21<=x<=33 and 7<=y<=9) or (23<=x<=30 and y==6) or (25<=x<=27 and y==5) or (20<=x<=33 and 10<=y<=15) or (33<=x<=36 and 9<=y<=19)
+# de kuif, met de hand op het geschaalde silhouet (nieuwe coordinaten): rij -> [(x0, tekens)]
+KUIF={
+ 1:[(20,"hhhhhhh..hhhhhK")],
+ 2:[(17,"hhhagaabbbhhaababbKKKK")],
+ 3:[(15,"hhaaacgabbbccgabbbabbccgKK")],
+ 4:[(15,"haabbbcgabbccgabbbbbcccgaK")],
+ 5:[(13,"hhaabbbbbcgabcccgabbbbccgabcK")],
+ 6:[(12,"haabbbbbbbbcgacccgabbbcccgabccKK")],
+ 7:[(12,"hbbbbbbbbbbcgaccccgabbbcgaggdddeK")],
+ 8:[(12,"hheeeeeedbbbb"),(28,"bcgabbccgbaaggdeK")],
+ 9:[(21,"ee"),(31,"abccgabbccdggeK")],
+ 10:[(34,"cgabbcccabdeK")],
+ 11:[(34,"cgbccccdcddeK")],
+ 12:[(37,"bcccddddeeO")],
+ 13:[(37,"gbcccdddeeO")],
+ 14:[(37,"gbccccdddeeO")],
+ 15:[(37,"cgbcccdddeeO")],
+ 16:[(37,"cgbccdddeeO")],
+ 17:[(37,"cgggdddeeeO")],
+ 18:[(37,"cgbbggddeeO")],
+ 19:[(37,"gcccbbggdbO")],
+ 20:[(37,"gddddccceO")],
+ 21:[(37,"gddddddeeO")],
+ 22:[(37,"gddeeeeOO")],
+}
+def build():
+    K3=Image.open(D+'kleur3/salticonda.png'); P=K3.load()
+    out=Image.new('P',(64,64),0); out.putpalette(K3.getpalette()); Q=out.load()
     for x in range(64):
-        for y in range(64):
-            k=(x*O.SS+O.SS//2,y*O.SS+O.SS//2)
-            if k in zb: px[(x,y)]=zb[k]
-    pts={}
-    def sp(u,v,w): X,Y,Z=P(u*Lh,v*W,w*Hh); sx,sy,_=O.proj(X,Y,Z); return (round(sx,1),round(sy,1))
-    pts['oog']=sp(0.30,0.62,0.55); pts['oog_ver']=sp(0.30,-0.62,0.55)
-    pts['neus']=sp(0.92,0.25,0.20); pts['neus_ver']=sp(0.92,-0.25,0.20)
-    pts['mond']=[sp(u,0.85*math.sqrt(max(0,1-u*u)),-0.25) for u in (0.98,0.8,0.5,0.2,-0.1,-0.35)]
-    return px,pts
+        for y in range(61):
+            if P[x,y]!=0 and not (kuifmasker(x,y) and not vast(x,y)): Q[x,y+DY]=P[x,y]
+    for y,segs in KUIF.items():
+        for x0,t in segs:
+            for i,ch in enumerate(t):
+                x=x0+i
+                if ch=='.': continue
+                if Q[x,y]!=0: raise SystemExit('kuif over bevroren pixel %s'%((x,y),))
+                Q[x,y]=I(ch)
+    return out
+def kuifsilhouet():
+    """Het geschaalde kleur3-kuifsilhouet waarop KUIF getekend is (ter controle)."""
+    P=Image.open(D+'kleur3/salticonda.png').load()
+    k={(x,y) for x in range(64) for y in range(20) if P[x,y]!=0 and kuifmasker(x,y)}
+    out=set()
+    for X in range(64):
+        for Y in range(24):
+            y0=Y-DY; s=S if y0<=AY else S-0.12*(y0-AY)/9
+            src=(int(round(AX+(X-AX)/s)),int(round(AY+(y0-AY)/S if y0<AY else y0)))
+            if src in k: out.add((X,Y))
+    return out
+if __name__=='__main__':
+    im=build(); im.save(D+'kleur3d/salticonda.png',transparency=0)
+    Q=im.load()
+    open(D+'kleur3d/salticonda_raster.txt','w').write('\n'.join(''.join(CH[Q[x,y]] for x in range(64)) for y in range(64))+'\n')

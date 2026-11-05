@@ -147,3 +147,4 @@ Jordi 5 nov: "de bladeren moeten helemaal weg uit het ontwerp" · "zijn dit ding
 - Jordi: "de strepen mogen een klein beetje counterclockwise draaien, probeer verschillende standen en laat mij keuren" → `rugpatroon/ronde7/` A 0° (ronde 6), B 8°, C 15°, D 22° (30° gaf trappetjes).
 - Jordi: "D" → `af/nachtaap_fase3.png` = `rugpatroon/ronde7/stand_D.png`. Eindkeuring (`af/EINDKEURING.md`): GOED, geen harde fouten.
 - Jordi: "kijk vooral ook naar het linkeroog nog" → linkeroog (x5–6, y37–38) mist de glans van het rechteroog en heeft het donkerste teal linksboven, leest dof. Opties `af/oog/` A (glans linksboven, advies), B (glans + 1 px breder), C (glans naar de neus).
+- Eindkeurder na Jordi's aanvulling: TERUG op 2 px linkeroog (geen glans, iris donker links i.p.v. boven) → optie D in `af/oog/` (F C / B A).

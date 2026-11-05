@@ -1,14 +1,14 @@
 """Linkeroog (Jordi 5 nov: "kijk vooral ook naar het linkeroog nog"). Rechteroog (x9-11, y37-38) = glans 15 + c b / b a a;
 linkeroog (x5-6) = c b / b a: geen glans, donkerste teal linksboven -> leest dof/dicht. Opties (alleen y37-38, x4-6):
-A glans linksboven zoals rechts; B glans + 1 px breder naar buiten (3 px zoals rechts); C glans rechtsboven (naar de neus)."""
+A glans linksboven zoals rechts; B glans + 1 px breder naar buiten (3 px zoals rechts); C glans rechtsboven (naar de neus); D = voorstel keurder: glans + iris donker boven (F C / B A, rechteroog min één kolom)."""
 import os
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
 H = os.path.dirname(os.path.abspath(__file__))
 src = Image.open(os.path.join(H, '../nachtaap_fase3.png')); A0 = np.array(src); pal = src.getpalette()
-OPT = {'nu': {}, 'A': {(37, 5): 15}, 'B': {(37, 4): 12, (37, 5): 15, (38, 4): 11}, 'C': {(37, 5): 11, (37, 6): 15}}
+OPT = {'nu': {}, 'A': {(37, 5): 15}, 'B': {(37, 4): 12, (37, 5): 15, (38, 4): 11}, 'C': {(37, 5): 11, (37, 6): 15}, 'D': {(37, 5): 15, (37, 6): 12}}
 F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 13)
-v = Image.new('RGB', (4 * 230 + 10, 330), 'white'); d = ImageDraw.Draw(v)
+v = Image.new('RGB', (5 * 230 + 10, 330), 'white'); d = ImageDraw.Draw(v)
 for k, (n, ch) in enumerate(OPT.items()):
     a = A0.copy()
     for (y, x), c in ch.items(): a[y, x] = c

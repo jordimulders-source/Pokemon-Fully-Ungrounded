@@ -1,8 +1,27 @@
 # Eindkeuring nachtaap fase 3 (muriqui), beta-versie (onafhankelijke keurder, 5 nov)
 
-**Oordeel: GOED.** Ik vond geen harde fout. De sprite is basis `kleur/ronde7c` plus rugpatroon stand D (`rugpatroon/ronde7/stand_D.png`, pixeldiff 0). Buiten de drie banden is niets gewijzigd: 81 px diff tegen ronde 7c, alpha-diff 0, alleen in de zone x21–39, y30–42. De punten onder "Voor Jordi" zijn smaak of ontwerp. Die zijn al door Jordi gekozen of bevroren, dus het zijn geen reparaties.
+**Oordeel: TERUG op 2 px (linkeroog, F1), daarna GOED.** Jordi vroeg om ook het linkeroog te keuren ("kijk vooral ook naar het linkeroog nog"). Dat oog heeft geen glans, en zijn iris is donker links in plaats van donker boven. Daarmee faalt het op eis 7. De reparatie staat in §0. Buiten het oog vond ik geen harde fout. De sprite is basis `kleur/ronde7c` plus rugpatroon stand D (`rugpatroon/ronde7/stand_D.png`, pixeldiff 0). Buiten de drie banden is niets gewijzigd: 81 px diff tegen ronde 7c, alpha-diff 0, alleen in de zone x21–39, y30–42. De punten onder "Voor Jordi" zijn smaak of ontwerp. Die zijn al door Jordi gekozen of bevroren, dus het zijn geen reparaties.
 
 Gekeurd: `nachtaap_fase3.png` + `normal.pal`. Vel: `vel.png`. Daarop staan fase 3 en fase 2 naast Primeape, Slaking, Vigoroth, Grumpig, Aipom, Ambipom, Monferno, Infernape, Furret, Dusclops, Alakazam en Medicham, op 3× en 1×, licht en donker. Uitsneden in `eindkeuring/`: `rug8_licht`/`_donker`, `rug8_basis_ronde7c` (voor), `zoom8_licht`/`_donker` en `rug_vs_furret_dusclops4`. Script: `eindkeuring/vel.py`. De sprite zelf is niet gewijzigd.
+
+## 0. Linkeroog (op verzoek van Jordi), op 16×
+Uitsnede: `eindkeuring/oog16.png`, met links de huidige stand en rechts de proef, elk op 16×, 4× en 1×. Script: `eindkeuring/oog.py`. De proef staat als kopie in `eindkeuring/proef_oog.png`.
+
+| Onderdeel | Linkeroog (verre oog, x5–6) | Rechteroog (nabije oog, x9–11) | Oordeel |
+|---|---|---|---|
+| Vorm | 2×2, smaller dan het nabije oog (3×2) | 3×2 | PASS. Het verre oog is korter door het perspectief, en dat klopt. |
+| Bovenlid | (5–6,36) = 1, recht op de oogrand | (9–12,36) = 1 | PASS |
+| Iris | y37: C B, y38: B A, dus donker **links**, licht rechtsonder | y37: F C B, y38: B A A, dus donker boven, licht onder | **FAIL**. De verloop loopt horizontaal en niet van boven naar onder. |
+| Glans | **geen** | F op (9,37), links boven | **FAIL**. Op 1× kijkt het linkeroog dof en lijkt het weg te draaien, terwijl het rechteroog fonkelt. |
+| Omlijning en inbedding | Gezichtsschild 7/6 eromheen, (4,37–38) = 7 tussen oog en vachtrand | Idem | PASS |
+
+**F1, reparatie (2 px, alpha-diff 0):**
+| Pixel (x,y) | Nu | Wordt | Waarom |
+|---|---|---|---|
+| (5,37) | 12 (C) | 15 (F) | Glans links boven, net als bij het rechteroog. |
+| (6,37) | 11 (B) | 12 (C) | Iris donker boven. Het oog wordt dan F C / B A, hetzelfde patroon als het nabije oog met één kolom minder. |
+
+Het resultaat in de proef: beide ogen fonkelen en het verre oog is nog steeds smaller. Op 1× is de blik strak en sinister, zonder brilogen. Wil Jordi het verre oog minder fel, dan kan (5,37) A (10) worden in plaats van F. Smaak.
 
 ## 1. SPRITE_NORM, harde eisen
 | # | Eis | Oordeel | Bewijs |
@@ -13,7 +32,7 @@ Gekeurd: `nachtaap_fase3.png` + `normal.pal`. Vel: `vel.png`. Daarop staan fase 
 | 4 | Geen Escher | PASS | De banden liggen óp de romp en lopen niet over arm, been of staart heen. |
 | 5 | Curven, geen doos | PASS (bevroren) | — |
 | 6 | Kop | PASS (bevroren) | — |
-| 7 | Ogen geïntegreerd | PASS (bevroren) | — |
+| 7 | Ogen geïntegreerd | **FAIL (F1)** | Het rechteroog is in orde. Het linkeroog heeft geen glans en een horizontale iris, zie §0. |
 | 8 | Kenmerken op 1× leesbaar, geen harken | PASS | De drie banden lezen op 1× als drie aparte ')'-bogen, ook op de donkere achtergrond. Het ruisscript vond in de banden geen hark of dambord: elke rij is een aaneengesloten run van 1–3 px. |
 | 9 | Omlijning, geen open randen | PASS | De banden grenzen nergens aan transparant. Hun buren zijn alleen 3, 4 en 5. De rand van het lijf is ongewijzigd (bevroren). |
 | 10 | Geen Chernobyl | PASS | Er zijn geen losse of zwevende pixels in het patroon. Elke band is één component van 27 px. |
@@ -25,7 +44,7 @@ Gekeurd: `nachtaap_fase3.png` + `normal.pal`. Vel: `vel.png`. Daarop staan fase 
 | 1 | Lijf én blik diagonaal | PASS (bevroren) |
 | 2 | Ledematen, oren en ogen geteld en verbonden | PASS |
 | 3 | Geen rechte lijnen | PASS. De banden zijn rond. De bovenste helft loopt 1:1 diagonaal, de onderste helft verticaal, en de overgang is geleidelijk. |
-| 4 | Ogen geïntegreerd | PASS (bevroren) |
+| 4 | Ogen geïntegreerd | **FAIL (F1)**. Het linkeroog heeft geen glans, zie §0. Het is geen kopie. |
 | 5 | Silhouet leest als de soort | PASS (bevroren, Jordi akkoord) |
 | 6 | Formaat | PASS (bevroren): 1843 px, dat is 1,26× fase 2 (1459). Hij is groot genoeg naast Infernape en Medicham. |
 | 7 | Pose niet stijf | PASS |

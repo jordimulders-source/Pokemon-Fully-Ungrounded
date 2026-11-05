@@ -21,3 +21,9 @@
 ## Voor de keuze
 - Combineren kan, bijvoorbeeld de ogen van B met de sluier van A.
 - Daarna: een model in de gekozen richting (vorm en verhoudingen), dan pas een silhouet.
+
+## Keuze (Jordi, 5 nov)
+- "C zie ik zitten qua vachtkleur, de ogen worden echt pikzwart, kijk naar andere pokemon die dat ook hebben. De mond maken we dan geestblauw/paars achtig"
+- "en een zichtbare roep doen we niet, dat is niet pokemon" → geen geestslierten uit de muil.
+- Model: `model_c2.png` (script `model_c2.py`): bijna witte vacht met een lila zweem, pikzwarte ogen met glans, muil geestblauw/paars met een donkere keel. Het vervagende onderlijf van C staat er nog in: open.
+- Pikzwarte ogen in echte sprites: `../referenties/pikzwarte_ogen.png` (Marill, Spheal, Togepi, Dedenne, Pachirisu, Emolga, Pichu: zwart vlak, 1–2 witte glanspixels, geen iris).

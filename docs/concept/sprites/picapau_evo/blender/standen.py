@@ -14,7 +14,7 @@ STANDEN = {
     'B': dict(lijf=20, kop_draai=25, voorover=22, kantel=12),   # kop totaal 45, dieper voorover (uitval)
     'C': dict(lijf=40, kop_draai=20, voorover=10, kantel=8),    # kop totaal 60, meer naar de kijker
 }
-BESTE = 'A'
+BESTE = 'C'
 
 def verklein(pad8, pad1):
     im = Image.open(pad8).convert('RGBA'); sm = im.resize((64, 64), Image.BOX)
@@ -24,12 +24,14 @@ def verklein(pad8, pad1):
 def passend(stand, **extra):
     """proefrender 512 px -> schaal en schuif zodat de omtrek binnen ±60 px valt, gecentreerd"""
     proef = os.path.join(HIER, 'standen', '_proef.png')
-    m.render(proef, **stand, **extra)
+    s0 = 0.75                                                 # klein genoeg dat niets buiten het frame valt
+    m.render(proef, schaal=s0, **stand, **extra)
     x0, y0, x1, y1 = Image.open(proef).resize((64, 64), Image.BOX).split()[3].point(lambda a: 255 if a >= 128 else 0).getbbox()
     os.remove(proef)
-    w, h = x1 - x0, y1 - y0
-    s = min(60.0 / w, 60.0 / h)
-    cx, cy = (x0 + x1) / 2 - 32, (y0 + y1) / 2 - 32          # midden van de omtrek t.o.v. het frame (px)
+    assert x0 > 0 and y0 > 0 and x1 < 64 and y1 < 64, 'proef valt buiten het frame'
+    w, h = (x1 - x0) / s0, (y1 - y0) / s0
+    s = min(61.0 / w, 61.0 / h)
+    cx, cy = ((x0 + x1) / 2 - 32) / s0, ((y0 + y1) / 2 - 32) / s0   # midden van de omtrek bij schaal 1 (px)
     return s, (-cx * s, cy * s)                              # Blender X = x - 32, Z = 32 - y
 
 def maak(naam, stand, **extra):

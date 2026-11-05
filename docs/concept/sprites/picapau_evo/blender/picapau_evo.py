@@ -11,12 +11,12 @@ import bpy, math, sys, os
 import numpy as np
 from mathutils import Vector, Euler, Matrix
 
-KLEUR = dict(lijf=(0.86, 0.38, 0.08),      # oranje-kastanje (Celeus elegans)
-             vleugel=(0.40, 0.15, 0.05),   # donkerder kastanje
+KLEUR = dict(lijf=(0.96, 0.46, 0.10),      # oranje-kastanje (Celeus elegans)
+             vleugel=(0.50, 0.19, 0.05),   # donkerder kastanje
              stip=(0.96, 0.84, 0.58),      # ronde lichte stippen (familie Picapau)
-             staart=(0.52, 0.20, 0.06),    # pluim: donker roodbruin
+             staart=(0.62, 0.24, 0.06),    # pluim: donker roodbruin
              bliksem=(1.0, 0.82, 0.10),    # bliksempunt: geel (Electric)
-             creme=(0.98, 0.90, 0.66),     # kuif en buik
+             creme=(1.0, 0.94, 0.70),     # kuif en buik
              wang=(0.88, 0.10, 0.10), snavel=(0.94, 0.86, 0.50), oog=(0.02, 0.01, 0.01), glans=(1, 1, 1),
              poot=(0.25, 0.25, 0.27), tong=(0.95, 0.45, 0.55))
 
@@ -117,7 +117,7 @@ def vleugel(s):
     arm = np.array(pols) - np.array(schouder)
     n = np.cross(arm, np.array([1.0, 0, -0.35])); n = tuple(n / np.linalg.norm(n))
     d = [('vleugel', ('buis', [(schouder, 4.4), (pols, 3.4)], n, 0.45), 1.2),
-         ('vleugel', ('buis', [((7.0, s * 12.0, 9.0), 5.5), ((15.0, s * 16.0, -3.0), 3.6), ((18.5, s * 17.0, -6.5), 1.4)], n, 0.4), 1.0)]
+         ('vleugel', ('buis', [((7.0, s * 12.0, 9.0), 5.5), ((15.0, s * 16.0, -3.0), 3.6), ((17.5, s * 17.0, -6.0), 2.6)], n, 0.4), 1.0)]
     # zes handpennen in een waaier; dik en overlappend aan de basis, alleen de punten los
     # vijf brede handpennen met ronde punten (naalden werden op 1x een egel)
     for tip in [(19.5, 24.5, 26.5), (24.5, 24.5, 18.0), (26.5, 23.5, 9.0), (25.0, 21.0, 0.5), (21.0, 18.5, -6.5)]:
@@ -235,8 +235,8 @@ def bouw(kop_draai=25.0, kop_kantel=0.0, voorover=0.0, tong=False, snavel_hoek=6
         wig('Snavel', basis + Vector((0, 0, 0.5)), d + Vector((0, 0, 0.06)), snavel_lengte, 2.9, 1.7, 'snavel', kopas)
         wig('Onder', basis + Vector((0.3, 0, -0.9)), d + Vector((0, 0, -0.18)), snavel_lengte * 0.86, 2.5, 1.2, 'snavel', kopas)
         # spechtentong: lang, half uit de snavel, hangt in een boog naar beneden met een bliksempuntje
-        familie('Tong', [(basis + Vector((-snavel_lengte * 0.55 - i * 1.0, 0, -0.6 - 0.10 * i * i)), (1.0, 1.0, 1.0))
-                         for i in range(9)], 'tong', None, voxel=0.12, glad=3)
+        familie('Tong', [(basis + Vector((-snavel_lengte * 0.5 - t, 0, -0.8 - 0.11 * t * t)), (1.15 - 0.03 * t,) * 3)
+                         for t in [i * 0.4 for i in range(24)]], 'tong', None, voxel=0.12, glad=6)
         koppel(bpy.data.objects['Tong'], kopas)
     else:
         wig('Snavel', basis, d, snavel_lengte, 3.2, 3.0, 'snavel', kopas)

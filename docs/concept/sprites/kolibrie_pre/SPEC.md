@@ -107,3 +107,4 @@
 - **Jordi (3 nov): "maar het lichaam moet niet opeens veel dikker worden he".** 3/4-silhouet zo slank als het goedgekeurde profiel (±700–750 px); r1 (823 px) te dik.
 
 - **Jordi (5 nov): "kan de snavel iets meer open? Alsof die gevoerd moet worden, zie bronmateriaal, misschien hoofd ook iets meer omhoog dan"** → `A/maak.py '{"snavel_open": 28, "snavel_hoek": 14, "kop_omhoog": 12}' open`: `A/vel_open.png`, silhouet `A/silhouet_open.txt` (590 px). Bron: foto 3. **Jordi: "prima" → silhouet `A/silhouet_open.txt` BEVROREN** (alpha-diff 0 in alle kleurrondes). Kleur: maker in `blender/A/kleur_r1/`.
+- **Kleur r1 (maker, 5 nov):** `blender/A/kleur_r1/` (alpha-diff 0, 0 open randen). Maker noemt 6 zwakke punten; twee zitten in het silhouet (snavelhelften 1 px, linker buikrand 10 rijen recht) en zijn een vraag aan Jordi. Naar Jordi als tussenstand (Jordi: "laat maar zien als het klaar is"), nog zonder onafhankelijke keurder.

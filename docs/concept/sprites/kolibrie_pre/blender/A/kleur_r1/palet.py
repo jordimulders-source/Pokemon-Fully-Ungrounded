@@ -5,15 +5,15 @@ PAL = [
     (152, 208, 160),  # 0 transparant
     (20, 14, 30),     # 1 buitenlijn (bijna-zwart violet), oog, snavelrand
     (70, 52, 104),    # 2 binnenlijnen (kopvorm, kapnaad, buikgrens, veerlijnen) en selout bovenop
-    (116, 98, 160),   # 3 lila schaduw
-    (162, 148, 206),  # 4 lila basis
+    (106, 88, 152),   # 3 lila schaduw
+    (152, 136, 200),  # 4 lila basis
     (186, 176, 224),  # 5 lila licht / buikschaduw
     (228, 224, 246),  # 6 buik lavendelwit
     (255, 255, 255),  # 7 buik hooglicht en glans in het oog
     (236, 120, 146),  # 8 mondbinnenkant roze
     (150, 40, 84),    # 9 keelopening donker
     (64, 56, 82),     # A pootjes
-    (108, 98, 176),   # B kap en vleugel basis
+    (102, 90, 172),   # B kap en vleugel basis
     (250, 212, 72),   # C gele mondhoek
     (226, 150, 40),   # D mondhoek omlijning/schaduw
     (72, 62, 134),    # E kap- en vleugelschaduw, iris

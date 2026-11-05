@@ -132,3 +132,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.26] - DJ Rotom: silhouet bevroren
 - Jordi: "prima! ga maar in kleuren. Bliksem noot mag idd dikker dan". Variant B (mijn advies) met de bliksem-noot met de hand dikker (15 px) is bevroren: `docs/concept/sprites/dj_rotom/silhouet_af/silhouet.png`. Stijlnorm voor de kleur: de Rotom-vormen die al in de game zitten (Jordi: "gebruik vooral de stijl van de rotom sprites die al in de game zitten he").
+
+### [v0.0.27] - DJ Rotom: kleur1 + grotere kop (silhouet 3)
+- Kleur1 (maker-agent): gloed, game-Rotom-oranje (de bronkleur lag er vrijwel op), speakers, ogen en bliksem goed; het gezicht was te smal (kopvoorkant ±13 px), met een te klein display. Teruggestuurd.
+- Jordi: "ja dan moet het middenstuk misschien wat groter om de ogen enzo goed te kunnen uitbeelden". Silhouet 3: kop-kubus + spits in de bron vergroot (×1,15 / ×1,25 / ×1,35), bliksem houdt zijn maat, rechterspeaker blijft ervóór; daarna dezelfde perspectiefvervorming (B). Vel: `docs/concept/sprites/dj_rotom/silhouet3/vel_kop.png`.

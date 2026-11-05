@@ -17,6 +17,10 @@ E={
  (26,43):'1',(27,43):'1',(28,43):'C',(29,43):'D',(30,43):'1',(31,43):'D',(32,43):'9',(33,43):'1',(34,43):'1',(35,43):'1',
  (27,44):'D',(28,44):'1',(29,44):'D',(30,44):'9',(31,44):'1',(32,44):'9',
  (30,45):'1',
+ # iris (Jordi: "dan geven wij ook een iris", "beetje smaragdkleur"): pupil, smaragd-iris, glans bovenaan
+ (23,19):'1',(22,19):'8',(24,19):'8',(22,20):'8',(23,20):'8',(24,20):'8',
+ # roze mondbinnenkant (enige 8) -> 9, zodat index 8 vrijkomt voor smaragd
+ (16,18):'9',
 }
 for (x,y),c in E.items():
     assert r[y][x]!='.', (x,y)

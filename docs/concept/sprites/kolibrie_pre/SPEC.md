@@ -113,3 +113,4 @@
 - **Keuring r2:** TERUG, 9 kleine FAILs (`kleur_r2/KEURING.md`); blinde indruk: "leest als een nette Gen 3-sprite" (4×), op 1× zwak zonder accent. Voor Jordi (niet uitgevoerd, want goedgekeurd): oog zonder iris, snavel 1 px. → maker r3.
 - **Jordi (5 nov): "dan geven wij ook een iris"** → r3: Starly-oog krijgt een iris zoals de echte Starly (warme accenttint, pupil, glans), vorm en plek blijven.
 - **Jordi: "beetje smaragdkleur"** → iris smaragdgroen (enige groen in de sprite; de regel "geen blauwgroen" gold voor de keelvlek).
+- **Kleur r3 (maker):** `blender/A/kleur_r3/`: 9 FAILs verwerkt (40 px), iris smaragd (index 8, roze mond samengevoegd met 9), pootjes warm oranje; alpha-diff 0. Open (silhouet, vraag aan Jordi): spijker (45,42), rij onder de pootjes. Daarna verse eindkeurder.

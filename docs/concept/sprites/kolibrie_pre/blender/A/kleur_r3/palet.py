@@ -10,7 +10,7 @@ PAL = [
     (186, 176, 224),  # 5 lila licht / buikschaduw
     (228, 224, 246),  # 6 buik lavendelwit
     (255, 255, 255),  # 7 buik hooglicht en glans in het oog
-    (236, 120, 146),  # 8 mondbinnenkant roze
+    (92, 186, 142),   # 8 iris smaragd (was mondbinnenkant roze; die is nu 9)
     (176, 98, 40),    # 9 verre poot (donker warm); keelopening nu 1
     (64, 56, 82),     # A pootjes
     (102, 90, 172),   # B kap en vleugel basis

@@ -259,3 +259,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.65] - Lama fase 3: kop overgetrokken van het model (kleur ronde 4/4b)
 - Kop-overtrekbron `docs/concept/sprites/lama/fase3/kleur/kopbron/` (model, kop uniform 1,25× om de oorpunten); de maker trok de kop cel voor cel over (ronde 4) en maakte daarna alleen het oog leesbaar (ronde 4b). Lijf, kleding en poten gelijk aan 2b. Naar Jordi.
 
+### [v0.0.66] - Lama fase 3: kleur ronde 5 (A en B, luie blik)
+- Oogstudie (Slakoth, Slaking, Camerupt) en nieuw oog: zichtbaar zwaar bovenlid, oogwit, kleine pupil, "nonchalant en unimpressed". Twee versies: A (kop 1,25×, hals blijft, lijf ±7 % kleiner) en B (lijf gelijk, kop 1,1×); vel `docs/concept/sprites/lama/fase3/kleur/vel_ronde5.png`. Naar Jordi.
+

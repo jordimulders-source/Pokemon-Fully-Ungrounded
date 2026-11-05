@@ -256,3 +256,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.64] - Lama fase 3: kleur rondes 2–3 (alleen sprite)
 - Terug naar het goedgekeurde silhouet ronde 2 (spritebron/silhouet ronde 3 vervallen). Kleur ronde 2/2b/3 in `docs/concept/sprites/lama/fase3/kleur/`: kop in de sprite ±1,25× groter dan het silhouet, neutrale droge lamablik, grotere bombín, vlecht met krullen, poten afgewerkt. Ronde 3 naar Jordi.
 
+### [v0.0.65] - Lama fase 3: kop overgetrokken van het model (kleur ronde 4/4b)
+- Kop-overtrekbron `docs/concept/sprites/lama/fase3/kleur/kopbron/` (model, kop uniform 1,25× om de oorpunten); de maker trok de kop cel voor cel over (ronde 4) en maakte daarna alleen het oog leesbaar (ronde 4b). Lijf, kleding en poten gelijk aan 2b. Naar Jordi.
+

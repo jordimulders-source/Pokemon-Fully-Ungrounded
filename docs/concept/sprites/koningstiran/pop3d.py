@@ -106,22 +106,21 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
     c = curl
     dirs = [(0.62 - 0.30 * c + 0.10 * k * c, 1.0 - 0.05 * k) for k in range(5)]
     wing(m, (8, 30, 17), (26, 36, 40), dirs, (33, 36, 34, 30, 24), 'wing', 56, 18, 14)  # iets korter (Jordi)
-    # staart als scepter (Jordi, 5 nov): twee korte veren op de stuit; de lange middelste staartveer buigt onder het
-    # lijf door naar voren en staat rechtop naast de verre vleugel, die hem vasthoudt als de staf van Pachacútec;
-    # bovenaan een pluim (zoals de veren op zijn staf)
-    for ang in (-20, -6):
-        Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(ang * 0.6))
-        m.ell(np.array((20, -36, 0)) + Rt @ np.array((0, -4, 0)), (6, 16, 3), 'tail', Rt)
-    shaft = [(20, -40, 0, 3.6), (18, -52, -8, 3.4), (2, -58, -22, 3.2), (-16, -54, -30, 3.0),
-             (-22, -36, -32, 2.9), (-23, -10, -32, 2.8), (-23, 20, -32, 2.6), (-23, 48, -32, 2.4)]
-    pts = [tuple(p) for p in shaft]
-    m.chain(pts, 'tail', 1.0)
-    top = np.array((-23, 50, -32.0))
-    for k, a in enumerate((-34, -12, 10, 32)):   # pluim
-        r = math.radians(a)
-        d = np.array((math.sin(r) * 0.8, math.cos(r), math.sin(r) * 0.3)); d /= np.linalg.norm(d)
-        plate(m, top, top + d * 17, 4.5, 2.0, 'tail')
-        m.ell(top + d * 18, 2.6, 'fanrim')
+    # staart als scepter (Jordi, 5 nov: "gewoon een staart die dan een beetje afbuigt en hij vast pakt"):
+    # een gewone brede staart die omlaag hangt en met de punt iets naar voren buigt, naar de verre vleugel,
+    # waarvan de punt hem vastpakt. Geen lange sliert, niet onder de poten door: hij loopt aan de verre kant
+    # langs de heup, boven kniehoogte.
+    C = [np.array(c, float) for c in ((20, -28, -2), (22, -34, -18), (2, -34, -32), (-28, -28, -27))]  # langs de heup, buiten de poten
+    curve = []
+    for i in range(len(C) - 1):
+        p0, p1, p2, p3 = C[max(i - 1, 0)], C[i], C[i + 1], C[min(i + 2, len(C) - 1)]
+        for t in np.linspace(0, 1, 8, endpoint=False):
+            t2, t3 = t * t, t * t * t
+            curve.append(0.5 * (2 * p1 + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t2 + (-p0 + 3 * p1 - 3 * p2 + p3) * t3))
+    curve.append(C[-1])
+    n = len(curve)
+    for i, (q0, q1) in enumerate(zip(curve, curve[1:])):
+        plate(m, q0, q1, 11 - 3 * i / n, 3.0, 'tail')
     # poten: geen V meer. Standbeen recht onder het zwaartepunt; vrije poot met gebogen knie naar voren,
     # het scheenbeen weer verticaal (contrapposto van het beeld)
     legs3 = (((2, -30, 7), (3, -40, 8), (3, -51, 9)),          # standbeen (korter, Jordi)

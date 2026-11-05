@@ -138,3 +138,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca: hoek B3 gekozen; opgeheven vleugel met knik en bolle achterrand (3 buigingen), benen niet meer in een V.
 - Sapa Inca: buiging 1 gekozen, vleugel iets korter, poten korter.
 - Sapa Inca: staart als scepter (eerste opzet).
+- Sapa Inca: staart als scepter vereenvoudigd (gewone staart die afbuigt, niet onder de poten door); in deze hoek valt hij grotendeels achter het lijf, keuze voorgelegd.

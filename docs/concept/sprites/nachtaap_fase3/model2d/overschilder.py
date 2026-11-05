@@ -58,7 +58,7 @@ def verf(mask, kleur, alpha=1.0):
     img[..., :3] = img[..., :3] * (1 - a) + c(kleur) * a
     img[..., 3:] = np.maximum(img[..., 3:], a)
 
-def bol(mask, ramp, R=12.0, licht=(-0.55, -0.65, 0.55), extra=None):
+def bol(mask, ramp, R=12.0, licht=(-0.55, -0.65, 0.55), extra=None, gewicht=None):
     """Volume-shading uit de afstand tot de rand (zoals een opgeblazen vorm), licht linksboven."""
     d = nd.distance_transform_edt(mask) / K
     h = np.sqrt(np.clip(R*R - (R - np.minimum(d, R))**2, 0, None))
@@ -75,6 +75,7 @@ def bol(mask, ramp, R=12.0, licht=(-0.55, -0.65, 0.55), extra=None):
     out = np.zeros((W, W, 3), np.float32)
     for ch in range(3): out[..., ch] = np.interp(I, stops, cols[:, ch])
     a = mask.astype(np.float32)[..., None]
+    if gewicht is not None: a = a * gewicht[..., None]
     img[..., :3] = img[..., :3] * (1 - a) + out * a
     img[..., 3:] = np.maximum(img[..., 3:], a)
 
@@ -87,6 +88,24 @@ def omlijn(mask, dikte=4.6, niet=None):
 def gum(mask):
     img[mask] = 0
 
+# ------------------------------------------------------------------ staart
+# Jordi 5 nov: "de staart iets minder recht, iets meer vanuit een hoek" -> spiraal gekanteld (verkort 0,72 langs de
+# as van de staartwortel naar het spiraalmidden); de wortel blijft vast aan het lijf.
+yyS, xxS = np.mgrid[0:W, 0:W] / K
+ANK = np.array([378.0, 300.0]); AS = np.array([455.0, 262.0]) - ANK; AS /= np.linalg.norm(AS)
+VERK = 0.72
+STAP2 = False  # stap 2 (staart) nog niet aan
+zone = (xxS >= 372) & (yyS < 362) & STAP2
+rel = np.dstack([xxS - ANK[0], yyS - ANK[1]])
+para = rel @ AS
+src = rel + (para / VERK - para)[..., None] * AS  # inverse afbeelding
+sx = (src[..., 0] + ANK[0]) * K; sy = (src[..., 1] + ANK[1]) * K
+nieuw = np.zeros_like(img)
+for ch in range(4):
+    nieuw[..., ch] = nd.map_coordinates(img[..., ch], [sy, sx], order=1, mode='constant')
+geldig = ((sx / K) >= 372) & ((sy / K) < 362)
+img[zone] = np.where(geldig[zone][..., None], nieuw[zone], 0)
+
 # ------------------------------------------------------------------ voeten
 # Muriqui-voet (Jordi/SPEC 5 nov): lange behaarde zool, vier tenen samen als gekrulde want, grote teen los.
 # Bovenste voet: grijpt een onzichtbare tak boven de enkel (vuist, geen gat); onderste voet: slap, tenen licht gekruld.
@@ -94,13 +113,19 @@ def gum(mask):
 # bovenste voet: slanke lange voet omhoog, vier tenen als want over de (onzichtbare) tak, grote teen ervoor
 ALPHA0 = np.asarray(SRC.resize((W, W)))[..., 3] > 0
 gum(masker_poly([(200, 30), (300, 30), (300, 101), (200, 101)], smooth=False))
-enkel1 = masker_ellips(237, 113, 24, 9)
-# haak: lange zool omhoog, tenen als één gekrulde want over de tak, open greep (tak) tussen tenen en grote teen
-voet1 = masker_poly([(223, 112), (222, 92), (226, 74), (233, 60), (243, 51), (256, 47), (268, 51), (276, 61),
-                      (278, 74), (275, 85), (268, 92), (262, 89), (263, 78), (261, 69), (256, 64), (253, 71),
-                      (252, 86), (253, 98), (251, 112)])
-omlijn(voet1, niet=enkel1 & ALPHA0)
-bol(voet1, VACHT, R=12)
+# Jordi 5 nov: "Bovenste poot lijkt wel los te zitten" -> onderbeen + voet één vorm (geen knieknik, geen enkelnaad),
+# zacht overgevloeid in de dij.
+onderbeen = masker_poly([(198, 250), (199, 232), (201, 215), (204, 198), (209, 168), (214, 140), (219, 112), (222, 92), (226, 74),
+                          (233, 60), (243, 51), (256, 47), (268, 51), (276, 61), (278, 74), (275, 85), (268, 92),
+                          (262, 89), (263, 78), (261, 69), (256, 64), (253, 71), (252, 86), (253, 104), (255, 135),
+                          (257, 162), (254, 190), (251, 212), (253, 232), (263, 244), (272, 250)], smooth=True)
+oud_been = (np.mgrid[0:W, 0:W][0] / K < 196) & (np.mgrid[0:W, 0:W][1] / K > 195) & (np.mgrid[0:W, 0:W][1] / K < 300)
+gum(oud_been & ~onderbeen)
+yb = np.mgrid[0:W, 0:W][0] / K
+dij = (yb > 228) & ALPHA0
+omlijn(onderbeen, niet=dij)
+w = np.clip((248 - yb) / 20, 0, 1).astype(np.float32)
+bol(onderbeen, VACHT, R=13, gewicht=w)
 tenen1 = masker_poly([(243, 51), (256, 47), (268, 51), (276, 61), (278, 74), (275, 85), (268, 92), (262, 89),
                        (263, 78), (261, 69), (256, 64), (249, 58)])
 bol(tenen1, TEEN, R=6, licht=(-0.45, -0.75, 0.5))

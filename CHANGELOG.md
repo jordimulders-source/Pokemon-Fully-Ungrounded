@@ -279,4 +279,32 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.72] - Lama fase 3 frontsprite af
 - Jordi keurde ronde 5A7 goed: `docs/concept/sprites/lama/fase3/af/lama3.png` (+ `normal.pal`, `vel.png`). Buffe, stompige cholita-luchadora-lama in pose C2 met bombín, zwarte vlechten, blauw worstelpak, cape, kampioensriem, rok in drie ruches en aguayo-windsels; kop 1,25× van het model, droge nonchalante blik. Nog: frame 2, rug, icoon, shiny, naam/data.
+### [v0.0.27] - Dark-starter fase 3: ontwerp krabbenetende wasbeer (silhouet nog open)
+- Eindvorm van de olinguito-lijn: **krabbenetende wasbeer** (*Procyon cancrivorus*), solitaire **vigilante** met een knipoog naar Sly Cooper (Robin Hood vervalt), puur Dark, niet rechtop/mensachtig. Vast: koevoetklauwen (2 klauwen = steel, bocht, gespleten punt), geringde haakstaart, masker over de neusrug, buidel op de rug als herkenbare dievenzak (deel van het lijf), houding zoals Gumshoos met Weavile-beenlengte, kop van silhouet ronde 9–11. Alles in `docs/concept/sprites/wasbeer/SPEC.md` en `AFGEKEURD.md`; referentiefoto's in `referenties/`.
+- Werkwijze: 3D-poppetje (3 rondes) en eigen silhouetbouw (rondes 1–11, collage + scriptkleuring) mislukten; Jordi: "erbarmelijk slecht". Daarna een maker-agent volgens de werkwijze (ronde 12–14). Les vastgelegd en de werkwijze verplicht gemaakt in `CLAUDE.md` en `docs/lessen/SPRITE_WERKWIJZE.md` (Coathief als voorbeeld; Claude tekent niet zelf).
+- Samengevoegd: Coathief-tak (frontsprite af, v0.0.23–25) en de ideeënlijst van 29 okt (v0.0.26).
+
+### [v0.0.28] - Dark-starter fase 3: nieuw 3D-ontwerp (wasbeer)
+- Nieuw poppetje in de stijl van het lama-ontwerp: `docs/concept/sprites/wasbeer/ontwerp/pop3d_v2.py`, vel `ontwerp/vel_v2_ronde1.png` (3 poses x 3 hoeken, met 1x-voorbeeld, naast foto 10, Gumshoos en Weavile). Op 2 poten voorover, slank lijf zonder dikke achterkant, kop ±33%, koevoetklauwen, geringde haakstaart, buidel als zak op de rug. Wacht op Jordi's keuze van hoek en pose.
+
+### [v0.0.29] - Wasbeer: 3D-ontwerp ronde 2 (rond P13)
+- Jordi koos P13 als basis: klauwen kort met alleen een koevoet-uiteinde, stompere dunnere pootjes, iets dikker en menselijker lijf. Varianten in romphoek en lijfdikte: `docs/concept/sprites/wasbeer/ontwerp/vel_v2_ronde2.png`. Lichte buik als ovaal (geen rechthoekig vlak).
+
+### [v0.0.30] - Wasbeer: 3D-ontwerp ronde 3 (benen)
+- Jordi koos E (romp 26°, dikker lijf). Benen niet meer naast elkaar: het nabije been stapt naar achteren (ook op de tenen), onderbenen dunner zoals op de foto's: `docs/concept/sprites/wasbeer/ontwerp/vel_v2_ronde3.png`.
+
+### [v0.0.31] - Wasbeer: silhouet v2 (direct van de render)
+- Ontwerp E2 bevroren met een grotere rugzak. Silhouet direct van de render (`docs/concept/sprites/wasbeer/silhouet_v2/`), handwerk door een maker-agent alleen in zones (koevoetklauw, spleet zak/staart, randen), keuring door een onafhankelijke keurder; ronde 2 (`vel_ronde2.png`, 1446 px) ligt bij Jordi.
+
+### [v0.0.32] - Wasbeer: klauw, sluippose en kleur
+- Klauw vastgelegd als twee korte klauwen naast elkaar met een inkeping tussen de punten (Sneasel-achtig, driekwart), eerst los in 3D getekend (`docs/concept/sprites/wasbeer/ontwerp/klauw3d.png`).
+- Pose S1a: sluipend, diep door de knieën, één been ver achter op de tenen. Silhouet direct van de render (1682 px) goedgekeurd; kleur ronde 2 na een Game Freak-studie en een keuring: `docs/concept/sprites/wasbeer/kleur_v2/vel_ronde2.png`.
+
+### [v0.0.33] - Wasbeer af (frontsprite)
+- Eindvorm van de Dark-starter (krabbenetende wasbeer, fase 3 na olinguito en Coathief): frontsprite goedgekeurd, `docs/concept/sprites/wasbeer/af/wasbeer.png`. Sluipend op 2 poten, warm grijsbruin, masker in 2 lobben over ogen en neusrug, witte wenkbrauwboog en snuit, oog met pupil, ronde neus, twee klauwen naast elkaar met een inkeping, roodbruine buidel als dievenzak, geringde haakstaart.
+- Werkwijze: nieuw 3D-ontwerp (pop3d_v2.py), silhouet direct van de render, kleur met de hand door een maker-agent na een Game Freak-studie, vier keuringen en een verse eindkeuring; Jordi's laatste punten (neus, staarthaak, klauwlijn) met kleine silhouetzones. Lessen in `docs/lessen/SPRITE_WERKWIJZE.md`.
+- Nog te doen: frame 2, rug, icoon, shiny, naam en data.
+
+### [v0.0.34] - Review sprite-werkwijze na de wasbeer
+- `docs/lessen/SPRITE_WERKWIJZE.md`: review van de wasbeersessies (wat goed en slecht ging) en vijf regels: elk kenmerk uit een echte bron, klein onderdeel los in 3D of op een tekenvel, wat Jordi goed noemt blijft bevroren, grote keuzes vóór pixelreparaties, verse maker na ±250–300k context. Stap 1 en 2 bijgewerkt (poppetje in lama-stijl voor slanke dieren op 2 poten, poten nooit gelijk, dunne delen herstellen vóór de kleur).
 

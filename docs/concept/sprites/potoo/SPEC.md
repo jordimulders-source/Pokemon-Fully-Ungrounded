@@ -50,6 +50,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **opnieuw beginnen** (Jordi
 | werkwijze | "Voordat je een silhouet bouwt, bouw je eerst een 3d model" | 3D-poppetje vóór het silhouet |
 
 ## Afgekeurd (niet herhalen)
+- **Poppetje (bollen-renderer, `poppetje/`) ronde 1–3, maker-agent:** twee keurders FAIL. Ronde 2: "witte gladde helm met paars grijnsvlak"; ronde 3: "paars schild/slabbetje met grijs kader", bovensnavel als vizier, kruin als pet, staart als stokje. Keurder: de bollen-renderer maakt van snavel en kaak losse geometrische stukken; niet verder repareren.
 - **3D v3 (snavel uit onderdelen, `model3d_v3/`) en Blender/3D als geheel:** "haha je gaat nu precies hetzelfde weer fout doen", "deze aanpak werkt niet", "stop met blender"; eerder: "hij hoeft echt niet geometrisch perfect te zijn he maar er gaan zulke simpele dingen bij het model eerder fout, oog in de mond enzo".
 - **3D v2 (gespleten koepel + schep, `model3d_v2/`):** "ik vind het eerlijk gezegd nog totaal niet lijken, de bek is geen snavel, lijkt net een soort pacman zeehond, de bolling bovenop is niet goed", "de onderkaak moet meer pronounced", "en de snavel is geen pacman mond". Bek niet als opengeknipte kop bouwen.
 - Paars rond de mond (voxelkop): "geen idee wat dit was maar doe dit nooit meer, met al dat paars om die mond heen". Mondkleur alleen binnen de mondrand.

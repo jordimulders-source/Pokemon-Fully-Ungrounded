@@ -26,9 +26,18 @@ kop = m.parts[a0:a1]
 # pivot: de oorpunten (hoogste punt van de kop in beeld): de bovenkant blijft op zijn plek (rij 1, zoals silhouet ronde 2),
 # de kop groeit naar voren en omlaag over de bovenkant van de hals. Uniform geschaald: vormen van het model blijven gelijk.
 KOPK = float(sys.argv[1]) if len(sys.argv) > 1 else KOPK
-hi = max(range(len(kop)), key=lambda i: (Rc @ kop[i][0])[1] + kop[i][1].max())
-piv = kop[hi][0] + np.linalg.inv(Rc) @ np.array((0, kop[hi][1].max(), 0))
+MODE = sys.argv[3] if len(sys.argv) > 3 else 'oor'
+if MODE == 'oor':   # manier 2: lijf exact silhouet ronde 2, kop groeit om de oorpunten (omlaag)
+    hi = max(range(len(kop)), key=lambda i: (Rc @ kop[i][0])[1] + kop[i][1].max())
+    piv = kop[hi][0] + np.linalg.inv(Rc) @ np.array((0, kop[hi][1].max(), 0))
+else:               # manier 1 ('hals'): kop groeit om de aansluiting op de hals, hals blijft; geheel opnieuw in 64 gepast (lijf iets kleiner)
+    piv = np.array((-38, 10 + 46, 0.0))
 m.parts[a0:a1] = [(piv + KOPK * (cc - piv), r * KOPK, R0, g) for cc, r, R0, g in kop]
+if MODE != 'oor':
+    pts = np.array([Rc @ cc for cc, r, R0, g in m.parts]); rs = np.array([r.max() for cc, r, R0, g in m.parts])
+    x0, x1, y0, y1 = (pts[:, 0] - rs).min(), (pts[:, 0] + rs).max(), (pts[:, 1] - rs).min(), (pts[:, 1] + rs).max()
+    scale = L.R * fill / max(x1 - x0, y1 - y0)
+    c = ((x0 + x1) / 2, (y0 + y1) / 2 + (1 - fill) * L.R / scale * 0.5)
 zbuf, gid, nrm, groups = L.render(m, YAW, PITCH, scale, c)
 und, a = L.shade(zbuf, gid, nrm, groups, out=L.R)
 rgb = np.array(und); k = L.R // 64
@@ -47,6 +56,8 @@ for y in range(64):
         if lin[y, x]: col[y, x] = L.LINE
 SUF = '' if len(sys.argv) < 3 else sys.argv[2]
 Image.fromarray(col).save(os.path.join(HERE, f'kop_kleur_64{SUF}.png'))
+cov64 = (gid >= 0).reshape(64, k, 64, k).mean((1, 3)) >= 0.5
+open(os.path.join(HERE, f'silhouet{SUF}.txt'), 'w').write('\n'.join(''.join('#' if v else '.' for v in r) for r in cov64) + '\n')
 afk = {'head': 'K', 'ear': 'O', 'eye': 'E', 'glint': 'g', 'lid': 'D', 'lip': 'l', 'nose': 'n', 'hat': 'H', 'hatband': 'B',
        'pony': 'p', 'braid': 'V', 'tassel': 'T', 'gold': 'G', 'neck': 'N', '.': '.'}
 with open(os.path.join(HERE, f'kop_labels{SUF}.txt'), 'w') as f:

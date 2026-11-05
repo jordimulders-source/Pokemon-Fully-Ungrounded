@@ -238,3 +238,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.58] - Lama fase 3: silhouet ronde 1 (pose C2)
 - Pose C2 (lijf 45°) gekozen. Maker trok het model over: `docs/concept/sprites/lama/fase3/silhouet/ronde1.txt` (1286 px, alles ≤ 1 px van het model, 0 korrels). Op 64 px: voorpoten één blok, formaat maar 9 % boven fase 2; vraag aan Jordi.
 
+### [v0.0.59] - Lama fase 3: buffer (buffstudie + hals/kop-varianten)
+- Gen 3-buffstudie (`docs/concept/sprites/lama/fase3/buffstudie/gen3_buff.png`) en varianten met kortere, dikkere hals en relatief kleinere kop (`fase3/silhouet/vel_buff.png`): V2 = 1,42× fase 2. Geforceerd perspectief in het poppetje werkte niet. Naar Jordi (advies V2).
+

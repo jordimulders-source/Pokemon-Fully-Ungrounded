@@ -68,7 +68,8 @@ def windsel(m, pts, k):
         m.ell(c, np.array((rl + 2.4 * dik, 1.9, rl + 2.4 * dik)), g, Rax)
 
 
-def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55, franje=None, flen=18):
+def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55, franje=None, flen=18, kopk=1.0, legk=1.5, nr=0.0, persp=0.0, schouder=0.0, hb_hoog=False):
+    """kopk: kop (+bombín, vlechten) relatief kleiner/groter; legk: dikte poten; nr: hals dikker (ronde 6: buffer)."""
     m = P.Model()
     lx = 1.12
     for c, r in (((-26, 2, 0), (27, 27, 25)), ((4, 2, 0), (33, 24, 23)), ((33, 4, 0), (22, 24, 23))):
@@ -79,13 +80,17 @@ def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55, franje=None, flen=18):
     m.chain([(54, 14, 0, 5.5), (59, 22, 0, 6), (58, 28, 0, 4.5)], 'tail')
     m.ell((58, 28, 0), 5.5, 'tail')
     top = np.array((-38, 10 + neck, 0.0))
-    nk = [(-34, 14, 0, 19.5), (-36, 10 + neck * 0.5, 0, 16), (top[0], top[1], 0, 13)]
+    nk = [(-34, 14, 0, 19.5 + nr), (-36, 10 + neck * 0.5, 0, 16 + nr), (top[0], top[1], 0, 13 + nr * 0.6)]
     h0 = len(m.parts)
     m.chain(nk, 'neck')
-    L.halsband(m, nk[0][:3], nk[1][:3], 0.95, 16.5, ['ag3', 'ag0', 'ag1', 'ag2', 'ag0'], pompons=7)
+    hb = (nk[1][:3], nk[2][:3], 0.12) if hb_hoog else (nk[0][:3], nk[1][:3], 0.95)   # korte hals: band hoger, anders zakt hij in de cape
+    L.halsband(m, *hb, 16.5 + nr * 0.8, ['ag3', 'ag0', 'ag1', 'ag2', 'ag0'], pompons=7)
+    hk0 = len(m.parts)
     kop4(m, top, hs, HEAD_YAW, lid)
     vlechten(m, top, hs, HEAD_YAW)
     h1 = len(m.parts)
+    if kopk != 1.0:   # kop relatief kleiner = lijf massiever; schaal om de halstop
+        m.parts[hk0:h1] = [(top + kopk * (c - top), r * kopk, R0, g) for c, r, R0, g in m.parts[hk0:h1]]
     # manta als intocht-cape: over schouders en rug, open aan de borst, knoop vooraan
     for th in np.arange(-110, 111, 7):
         t = math.radians(th)
@@ -131,9 +136,20 @@ def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55, franje=None, flen=18):
     pv = piv + P.rot_z(math.radians(-BORST)) @ (np.array(nk[0][:3], float) - piv)
     L._rot(m, h0, h1, pv, P.rot_z(math.radians(BORST)))
     for g, pts, voet in F3.POSES3['W_breed']:
-        L.poot(m, pts, g, 1.5, None)        # hoeven vrij
+        L.poot(m, pts, g, legk, None)        # hoeven vrij
         if voet == 'wrap':
-            windsel(m, pts, 1.5)
+            windsel(m, pts, legk)
+            if schouder:   # schouderspier/biceps bovenaan de voorpoot (Entei/Arcanine)
+                x, y, z = pts[0][:3]
+                m.ell((x - 2, y - 6, z + 3 * np.sign(z)), np.array((13, 17, 9)) * schouder, g)
+    if persp:   # geforceerd perspectief (Entei/Arcanine): voorkant groter, achterlijf kleiner; kop blijft gelijk
+        out = []
+        for i, (c, r, R0, g) in enumerate(m.parts):
+            if hk0 <= i < h1:
+                out.append((c, r, R0, g)); continue
+            sx = 1 + persp * float(np.clip(-c[0] / 50, -1.2, 1.2))
+            out.append((np.array((c[0], c[1] * sx, c[2] * sx)), r * sx, R0, g))
+        m.parts[:] = out
     return m
 
 

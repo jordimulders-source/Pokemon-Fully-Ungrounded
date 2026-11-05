@@ -13,9 +13,10 @@
 
 ## Per onderdeel (lijkt op / wijkt af in)
 - **Wolmassa:** lijkt op ronde 2 (gelijk) / geen afwijking.
-- **Gezicht zonder neus:** lijkt op Venomoth en de tak-foto (twee grote ogen in de wol, geen snuit of neusbrug). Er is een zachte lichtbruine tint zonder lijn tussen en onder de ogen / wijkt af:
-  - Op 1× staat de tint als een smal lichtbruin streepje onder de ogen; het kan nog een fractie als "mondje" lezen.
-  - Het gezicht oogt zonder de bruine vlek wat leeg.
+- **Gezicht (Jordi: "met grote donkere ogen, beetje venomoth achtig"; kopstudie onderaan vel.png):**
+  - Lijkt op Venomoth en de tak-foto: twee grote, ronde, donkere ogen opzij van de kop in de wol. Het nabije oog is groot en rond, het verre smaller en half achter de kopwelving. Er is één simpele glans en geen witte ring, neus, snuit of bruine vorm; de wol eronder is alleen iets warmer van tint.
+  - Wijkt af: op de tak-foto zitten de ogen iets lager en meer naar voren in het gezicht.
+  - Op 1× is het verre oog een smalle donkere sikkel aan de kopkant. Die kan als schaduw of oorgat lezen.
 - **Sprieten:** dubbele kam uit ronde 3, lijkt op foto_sprieten_plus_vilt / op 1× bruine vegen (verwacht).
 - **Verre achtervleugel:** zichtbaar links naast het verre oog, kleiner en hoger dan in ronde 3, met een gladde rand / wijkt af: op 1× smelt hij een beetje met de verre voorvleugel tot één grijze vlek.
 - **Poten (alleen plek en maat; de vorm volgt in de pixelstap naar ../ronde3/overlay_poten.png):** voorpaar groot, tweetallen erachter, dikte zoals ronde 2 / wijkt af:

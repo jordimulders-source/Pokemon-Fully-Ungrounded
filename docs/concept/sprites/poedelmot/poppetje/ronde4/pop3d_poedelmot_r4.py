@@ -28,7 +28,7 @@ KOP_EXTRA = 14                # kop draait meer naar de kijker dan het lijf
 COL = {
     'wol': '#F3EFE7', 'wolver': '#D6CFC2', 'pompon': '#FBF8F2', 'pomver': '#DCD5C8',
     'vleugel': '#ECE6D9', 'achtervl': '#E0D8C8', 'vlver': '#CFC7B7', 'achtver': '#C4BBAA',
-    'spriet': '#7A5234', 'sprietver': '#5E3F28', 'palp': '#E2D2BC', 'oog': '#1E1A24', 'glint': '#FFFFFF',
+    'spriet': '#7A5234', 'sprietver': '#5E3F28', 'palp': '#EBE1D2', 'oog': '#1E1A24', 'glint': '#FFFFFF',
 }
 NOSHADE = {'oog', 'glint'}
 LINED = {'oog', 'spriet', 'sprietver', 'vleugel', 'achtervl', 'vlver', 'achtver'}
@@ -98,6 +98,9 @@ def op45(sx, y, d, r):
     return (k * (sx - d), y, k * (sx + d), r)
 
 
+# Oog: richting vanuit het kopmidden (x, y, z) en stralen. Ronde 2: (-0.80, 0.02, 0.60), (7.6, 8.2, 7.6)
+OOG = (-0.62, -0.10, 0.78, (10.0, 10.6, 10.0))
+
 # Verre achtervleugel (uit ronde 3, maar kleiner en hoger): richting, middelpuntafstand, stralen
 ACHTERVL_VER = ((-0.3, 0.3, -0.95), 22.0, (22.0, 14.0, 1.4))
 
@@ -157,14 +160,16 @@ def poedelmot(kop_r=19.0, kop_extra=KOP_EXTRA, pootkleur=False):
     kr = np.array((kop_r, kop_r * 0.95, kop_r))
     m.ell(cr, kr, 'wol')
     L.fluff(m, cr, kr, 'wol', 34, 5.0, 77, ymin=-0.3)
-    # grote bolle ogen, niet tegen elkaar (snuitvlak ertussen)
+    # ronde 4 (Jordi: "met grote donkere ogen, beetje venomoth achtig"): twee grote ronde donkere facetogen OPZIJ van
+    # de kop (zoals Venomoth en de tak-foto), geen zonnebril vooraan. Op 45° is het nabije oog groot en rond, het verre
+    # smaller en half achter de kopwelving. Donker met één simpele glans, geen witte ring.
     for sz in (1, -1):
-        d = np.array((-0.80, 0.02, 0.60 * sz)); d /= np.linalg.norm(d)
-        e = cr + d * kop_r * 0.86
-        m.ell(e, (7.6, 8.2, 7.6), 'oog')
-        m.ell(e + d * 6.0 + np.array((0.5, 3.2, 0.0)), 1.8, 'glint')
+        d = np.array((OOG[0], OOG[1], OOG[2] * sz)); d /= np.linalg.norm(d)
+        e = cr + d * kop_r * 0.80
+        m.ell(e, OOG[3], 'oog')
+        m.ell(e + d * OOG[3][0] * 0.82 + np.array((-0.5, 3.4, 0.0)), 1.9, 'glint')
     # ronde 4 (Jordi: "de neus is heel raar, wanneer zie je dit soort dieren met een neus?"): geen snuit/neusbrug meer.
-    # Alleen een zachte lichtbruine tint in de wol tussen en onder de ogen (behaarde palpen), zonder lijn en zonder
+    # Alleen een iets warmere tint in de wol tussen en onder de ogen (behaarde palpen), zonder lijn en zonder
     # eigen vorm: een platte ellipsoïde die bijna helemaal in de kopwol zit.
     m.ell(cr + np.array((-kop_r * 0.78, -6.0, 0.0)), (3.0, 5.0, 8.5), 'palp')
     # kamsprieten opzij als oren
@@ -226,7 +231,7 @@ def vel():
     img.save(os.path.join(HERE, 'poppetje_45.png'))  # ronde 4
     e = een_x(img, a); e.save(os.path.join(HERE, 'poppetje_45_1x.png'))
     kb, kt = kopaandeel(m)
-    W, H = 12 + 2 * 332 + 12, 44 + 320 + 30 + 2 * 72 + 40
+    W, H = 12 + 2 * 332 + 12, 44 + 320 + 30 + 2 * 72 + 40 + 230
     out = Image.new('RGB', (W, H), 'white'); d = ImageDraw.Draw(out)
     d.text((12, 12), 'Poedelmot: poppetje op 45° (praatplaat), naast de tak-foto', font=FB, fill=(30, 30, 30))
     foto = Image.open(os.path.join(HERE, '../../referenties/foto_tak_katoen.webp')).convert('RGB').resize((320, 320))
@@ -240,6 +245,16 @@ def vel():
         for j, bg in enumerate(((235, 235, 235), (60, 60, 70))):
             b = Image.new('RGB', (64, 64), bg); b.paste(im1, (0, 0), im1); out.paste(b, (x, y + 20 + j * 72))
         x += 72
+    # kopstudie (ronde 4): Venomoth, tak-foto en de kop van het poppetje naast elkaar
+    y = 44 + 320 + 30 + 2 * 72 + 30
+    d.text((12, y), 'kopstudie: venomoth (4x), tak-foto, poppetje-kop (werkformaat) en op 1x (4x)', font=F, fill=(0, 0, 0))
+    v = gen3('venomoth').crop((2, 18, 38, 54)).resize((180, 180), Image.NEAREST)
+    b = Image.new('RGB', v.size, (235, 235, 235)); b.paste(v, (0, 0), v); out.paste(b, (12, y + 20))
+    fk = Image.open(os.path.join(HERE, '../../referenties/foto_tak_katoen.webp')).convert('RGB').crop((720, 620, 1180, 1080)).resize((180, 180))
+    out.paste(fk, (12 + 190, y + 20))
+    kk = img.crop((30, 40, 210, 220)).resize((180, 180)); out.paste(kk, (12 + 380, y + 20))
+    k1 = e.crop((4, 6, 40, 42)).resize((112, 112), Image.NEAREST)
+    b = Image.new('RGB', k1.size, (235, 235, 235)); b.paste(k1, (0, 0), k1); out.paste(b, (12 + 570, y + 20))
     out.save(os.path.join(HERE, 'vel.png'))
     print('kop/hoogte zonder vleugels %.2f, met vleugels %.2f' % (kb, kt))
 

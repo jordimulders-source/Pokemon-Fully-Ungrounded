@@ -169,7 +169,7 @@ HEAD = 1.25   # kop groter dan echt (Pokémon), grote ogen, grote mond
 LM = dict(
     snaveltip=(-76.5, 66),      # (505, 80) haakje
     mondhoek=(-37.5, 60),       # (375, 100) onder/achter het oog
-    onderkaaktip=(-62, 38),     # (465, 150) op de zijfoto; iets verder open zoals de 3/4-foto (opening ±1/2 kophoogte)
+    onderkaaktip=(-58, 30),     # (465, 150) op de zijfoto; iets verder open zoals de 3/4-foto (opening ±1/2 kophoogte)
     oog=(-49.5, 69),            # (415, 70), ±35x20 px
     kruin=(-24, 82.5),          # (330, 25)
     achterhoofd=(6, 72),        # (230, 60)
@@ -179,49 +179,68 @@ LM = dict(
     onderlijf=(-18, -39),       # (310, 430)
     staartonder=(9, -73.5),     # (220, 545), staart ±185 px breed onderaan, hangt recht omlaag
 )
-KOP = 1.4                      # Pokémon: kop iets groter dan echt (om het achterhoofd geschaald)
+KOP = 1.6                      # Pokémon: kop iets groter dan echt (om het achterhoofd geschaald)
+# Kopmaten (kopcoördinaten, vóór KOP). NIET van de zijfoto (Jordi: "die hele platte hoofd foto mag je vergeten"),
+# maar gefit op de verhoudingen van de 3/4-foto met meten.py / fit_kop.py (lijnen en verhoudingen, geen giswerk).
+KP = dict(schedel=(-26, 76, 32, 26, 31), mondhoek=(-37.5, 60), snaveltip=(-76.5, 66), onderkaaktip=(-58, 30),
+          bek_breed=17, kaak_breed=18, oog=(-49.5, 69), oog_r=8.0)
 
 
-def potoo(lean=0, gape=None, kopdraai=30, kopkantel=18):
+def potoo(lean=0, gape=None, kopdraai=10, kopkantel=10, kp=None):
     """kopdraai: kop extra naar de kijker (SPRITE_NORM: kop draait meer dan het lijf); kopkantel: kop omhoog (3/4-foto)."""
     m = Model()
     Rl = rot_z(math.radians(lean))
     P = lambda p: Rl @ np.array(p, float)
     E = lambda c, r, g, R0=None: m.ell(P(c), r, g, Rl if R0 is None else Rl @ R0)
     # lijf: hoge zuil, rug hoog en gebogen (zijfoto), borst vooraan
-    E((6, 0, 0), (37, 58, 46), "fur")   # breedte: lijf ±1,35-1,45 x de kopbreedte (voorfoto nacht, takfoto)
+    E((6, -10, 0), (37, 68, 46), "fur")   # breedte: lijf ±1,35-1,45 x de kopbreedte (voorfoto nacht, takfoto)
     E((26, 40, 0), (20, 20, 36), 'fur')                 # gebogen rug/schouders
-    E((-20, 10, 0), (20, 40, 36), 'belly')
+    E((-20, 0, 0), (20, 52, 36), 'belly')
     E((-8, 50, 0), (22, 18, 32), 'fur')                 # overgang naar de kop, geen nek
-    for sz in (1, -1):                                   # vleugels: lang paneel langs de zij
-        E((24, -12, 40 * sz), (16, 58, 9), 'wing', rot_z(math.radians(-6)))
+    # vleugels: gevouwen tegen het lijf; volgen de zijkant van net onder de kop (schouder) tot over de staart
+    # (voorfoto nacht, takfoto, zijfoto: de vleugelrand ís de buitenomtrek van het lijf, geen los paneel)
+    for sz in (1, -1):
+        for t in np.linspace(0, 1, 26):
+            y = 44 - 128 * t
+            zb = 46 * math.sqrt(max(0.0, 1 - ((y + 10) / 68) ** 2))
+            zt = 26 + 16 * min(1, max(0, (-60 - y) / 30))       # staartbreedte eronder
+            z = max(zb, zt * 0.85) * 0.93 + 2
+            E((16 + 8 * t, y, z * sz), (24 - 10 * t, 7, 6), 'wing')
     for t in np.linspace(0, 1, 12):                      # staart: breed, hangt recht omlaag
-        E((16 + 24 * t, -40 - 52 * t, 0), (10, 8, 26 + 16 * t), 'tail')   # schuin naar achteren (Noctowl/Swellow), anders leest hij als paal
+        E((16 + 22 * t, -58 - 40 * t, 0), (10, 8, 26 + 16 * t), 'tail')   # schuin naar achteren (Noctowl/Swellow), anders leest hij als paal
     # kop
     n0 = len(m.parts)
     piv = np.array(LM['achterhoofd'] + (0,), float)
-    H = lambda p: piv + (np.array(p, float) - piv) * KOP
-    v = lambda k, z=0: np.array(LM[k] + (z,), float)
-    E(H((-24, 72, 0)), np.array((30, 18, 24)) * KOP, 'fur')          # schedel; 3/4-foto: kop incl. kaak ±0,85 x zo hoog als breed
-    # kaken als massieve wiggen met een paarse binnenbekleding (zo zit de kleur ín de snavel, niet als bol ervoor)
-    def kaak(tip, r0, w0, op):
-        for t in np.linspace(0, 1, 16):
-            c = v('mondhoek') * (1 - t) + v(tip) * t + np.array((0, op * 3 * (1 - t), 0))
-            r = r0 * (1 - t) + 2.2 * t
-            w = w0 * (1 - t) + 4 * t
-            E(H(c), np.array((r * 0.8, r * 0.6, w)) * KOP, 'fur')
-            E(H(c + np.array((0, -op * r * 0.35, 0))), np.array((r * 0.72, r * 0.42, w * 0.86)) * KOP, 'mouth')
-    kaak('snaveltip', 11, 21, +1)      # bovenkaak: bekleding aan de onderkant
-    kaak('onderkaaktip', 8, 19, -1)    # onderkaak: bekleding aan de bovenkant
-    E(H(v('snaveltip') + np.array((1, -2.5, 0))), np.array((2, 3.2, 2)) * KOP, 'beak')
-    E(H(v('onderkaaktip') + np.array((-1, 0, 0))), np.array((1.8, 2, 2)) * KOP, 'beak')
-    E(H(v('mondhoek') + np.array((-3, -4, 0))), np.array((6, 9, 13)) * KOP, 'throat')
-    # ogen: hoog op de zijkant boven de mondhoek, groot (Pokémon) en pikzwart (Drifloon)
+    H = lambda p: piv + (np.array(p, float) - piv) * KOP + np.array((0, -11, 0))   # kop laag op de schouders, geen nek
+    k = dict(KP if kp is None else kp)
+    v = lambda key, z=0: np.array(tuple(k[key]) + (z,), float)
+    sx, sy, sa, sb, sc = k['schedel']
+    E(H((sx, sy, 0)), np.array((sa, sb, sc)) * KOP, 'fur')
+    E(H((sx + 20, sy + 9, 0)), np.array((18, 12, sc * 0.78)) * KOP, 'fur')     # kruin loopt naar achteren
+    def kaak(tip, dik, w, op):
+        """Eén schep per kaak (rond U-blad), met een paarse binnenbekleding aan de mondkant."""
+        c0, c1 = v('mondhoek'), v(tip)
+        d = c1 - c0; L = np.linalg.norm(d); ang = math.atan2(d[1], d[0])
+        Rk = rot_z(ang)
+        mid = (c0 + c1) / 2
+        E(H(mid), np.array((L / 2 + 2, dik, w)) * KOP, 'fur', Rk)
+        off = Rk @ np.array((0, -op * dik * 0.55, 0))
+        E(H(mid + off), np.array((L / 2 - 1, dik * 0.6, w * 0.85)) * KOP, 'mouth', Rk)
+    kaak('snaveltip', 5, k['bek_breed'], -1)        # bovensnavel: van de mondhoek onder het oog tot het haakje
+    kaak('onderkaaktip', 4, k['kaak_breed'], +1)    # onderkaak: brede schep
+    E(H(v('snaveltip') + np.array((1, -2.5, 0))), np.array((2, 3.2, 2)) * KOP, 'beak')    # donker haakje
+    E(H(v('onderkaaktip') + np.array((-1, 0, 0))), np.array((1.8, 2, 2)) * KOP, 'beak')   # donker puntje onderkaak
+    E(H(v('mondhoek') + np.array((-2, -5, 0))), np.array((4, 5, 10)) * KOP, 'throat')
+    # ogen: pikzwart (Drifloon), op het schedeloppervlak op de gemeten plek
     for sz in (1, -1):
-        E(H(v('oog', 17.5 * sz)), np.array((8, 6.5, 4)) * KOP, 'eye', rot_y(math.radians(-30 * sz)))
+        dx = (k['oog'][0] - sx) / sa; dy = (k['oog'][1] - sy) / sb
+        n = np.array((dx, dy, math.sqrt(max(0.0, 1 - dx * dx - dy * dy)) * sz))
+        c = np.array((sx + sa * n[0], sy + sb * n[1], sc * n[2]))
+        E(H(c), np.array((1, 1.06, 0.62)) * k['oog_r'] * KOP, 'eye', rot_y(math.atan2(n[0], n[2])))
     Rh = rot_y(math.radians(kopdraai)) @ rot_z(math.radians(-kopkantel))
     pv = P(piv)
     m.parts[n0:] = [(pv + Rh @ (c - pv), r, Rh @ R0, g) for c, r, R0, g in m.parts[n0:]]
+    m.n0 = n0
     return m
 
 

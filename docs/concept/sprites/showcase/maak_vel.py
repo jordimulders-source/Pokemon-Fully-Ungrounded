@@ -2,7 +2,7 @@ from PIL import Image, ImageDraw, ImageFont
 import sys, os
 OUT=os.path.abspath(sys.argv[1])
 os.chdir(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
-S=4; C=5
+S=4; C=4
 items=[
 ("alpaca/ronde17/variant_kop/anim_front.png","Alpaca","Fighting"),
 ("lama/fase2/af/lama.png","Lama","Fighting"),
@@ -12,6 +12,7 @@ items=[
 ("wasbeer/af/wasbeer.png","Wasbeer","Dark"),
 ("nachtaap/ronde12/variant_spiraal/anim_front.png","Nachtaap","Psychic"),
 ("nachtaap_evo/af/nachtaap_evo.png","Nachtaap fase 2","Psychic"),
+("nachtaap_fase3/af/nachtaap_fase3.png","Muriqui","Psychic"),
 ("cuyby/ronde4/anim_front.png","Cuyby","Normal"),
 ("cuyby_evo/ronde6/anim_front.png","Cuychu","Normal"),
 ("kolibrie_pre/af/kolibrie_pre.png","Kolibrie fase 1","Ghost/Flying"),

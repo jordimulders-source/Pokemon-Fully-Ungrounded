@@ -544,4 +544,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/lessen/SPRITE_WERKWIJZE.md` is de compacte versie (met de keurslot-checklist bovenaan); de lessen die andere takken in de lange versie zetten, staan in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.
 
 ### [v0.0.134] - Showcase-vel van alle afgeronde frontsprites
-- `docs/concept/sprites/showcase/frontsprites_af.png`: de 15 afgeronde frontsprites (4x vergroot, werknaam + type) op één vel om te tonen. Cuyby is ronde 4 (de goedgekeurde; ronde 6 wacht nog). Opnieuw maken na nieuwe sprites: `python3 docs/concept/sprites/showcase/maak_vel.py <uit.png>` (lijst bovenin het script aanvullen).
+- `docs/concept/sprites/showcase/frontsprites_af.png`: de 16 afgeronde frontsprites, incl. nachtaap fase 3 (muriqui, `af/` overgenomen van branch `claude/zen-mendel-9u6x44`) (4x vergroot, werknaam + type) op één vel om te tonen. Cuyby is ronde 4 (de goedgekeurde; ronde 6 wacht nog). Opnieuw maken na nieuwe sprites: `python3 docs/concept/sprites/showcase/maak_vel.py <uit.png>` (lijst bovenin het script aanvullen).

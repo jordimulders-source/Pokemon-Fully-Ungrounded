@@ -25,7 +25,8 @@ Werkwijze: `docs/lessen/SPRITE_KERN.md` (verplicht meegeven) + `SPRITE_WERKWIJZE
 
 ## Jordi 5 nov (tweede bericht, letterlijk)
 "p1 en a, de poten die fluffy zijn gaan naar de poedel verwijzen. op de tak is die niet helemaal driekwart, maar die pose zie ik wel zitten"
-- **Pose P1 = de pose van de tak-foto** (`foto_tak_katoen.webp`): zittend, lijf op de pluizige pootjes, vleugels omhoog en naar achteren in een V. Niet helemaal 3/4 (vrijwel frontaal, kop iets naar links); **die pose is akkoord, niet bijdraaien naar strikt 3/4.**
+- **Pose P1 = de zittende pose van de tak-foto** (`foto_tak_katoen.webp`): lijf op de pluizige pootjes, vleugels omhoog en naar achteren in een V.
+- Jordi 5 nov (na silhouet ronde 1, letterlijk): "nee wel driekwart" / "hoe kom je daarbij" → **wél echt 3/4 naar links-voor** (Claude had "niet helemaal driekwart" verkeerd gelezen als 'zo laten'). De foto is alleen de bron voor de zithouding, de wol en de pompons; de draai wordt 3/4 zoals een normale Gen 3-sprite.
 - **Vleugelpatroon a:** fijne bruine adertjes zoals bij het vilt.
 - **Fluffy poten verwijzen naar de poedel:** de wolplukken aan de poten zijn de pompons van de poedelknip (verbinding met de larve).
 

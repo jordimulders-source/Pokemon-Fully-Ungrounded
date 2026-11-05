@@ -1,6 +1,6 @@
 # Great potoo (Ghost/Normal, losse soort): SPEC
 
-Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 2 (silhouet)**: `silhouet/silhouet_v3_1x.png` + `silhouet_v3_vel.png` wacht op Jordi.
+Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **terug naar stap 1 (ontwerp)**: drie richtingen in `ontwerp/concepten.png` + `ontwerp/ONTWERP.md`.
 
 ## Besloten (Jordi, 5 nov)
 - Basissoort: **great potoo** (*Nyctibius grandis*): "ik wil sowieso een great potoo".
@@ -32,6 +32,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 2 (silhouet)**: `sil
 - v3: onderkaak hangt verder open (drieluik), kop 15% groter (Pokémon-verhouding). 1023 px (Xatu 1033). Model = de foto zelf langs dezelfde omtrek (`silhouet/model_v3.png`).
 
 ## Afgekeurd (niet herhalen)
+- **Silhouet v1–v4 (de foto overgetrokken):** "we gaan niet een potoo namaken", "we maken een pokemon". Eerst een Pokémon-ontwerp (stap 1), dan pas een silhouet. Gewenst: "geestachtiger", "grote ogen, grote mond".
 - Tweede stage die met een tak/stomp versmelt (`concept_schets_2stages_afgekeurd.png`): tak in beeld past niet bij Pokémon-sprites.
 
 ## Referenties

@@ -19,6 +19,7 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 
 ## Stap 1. Ontwerp: pose en kenmerken (met Jordi, geen pixels)
 - Jordi geeft het idee, de pose (schets of foto) en referenties. **Vraag om een foto van het echte dier in de gewenste pose**; dat was beide keren de doorbraak (kolibrie: de drinkende kolibrie; olinguito: de boomfoto + kopfoto).
+- **Eerst een Pokémon-ontwerp, dan pas een silhouet** (potoo, 5 nov: Claude trok de foto over en sprong naar stap 2; Jordi: "we gaan niet een potoo namaken", "we maken een pokemon"). Een foto geeft pose en anatomie, maar het ontwerp (geest-/typekenmerken, overdreven kenmerken, kleur) kiest Jordi eerst uit 2–3 richtingen. Lees stap 0 echt vóór je begint, en stuur nooit iets waarvan je zelf al een zwak punt noemt.
 - **Ontwerpschetsen alleen als hulp om te praten**, niet als bron voor de sprite. Lukt een pose na 2 schetsrondes niet: stop met schetsen en ga naar een echte bron (foto of 3D-poppetje).
 - **Viervoeters en lastige 3/4-poses:** het 3D-poppetje (`docs/concept/sprites/olinguito_v2/silhouet_kolibriemethode/pop3d.py` + `silhouet.py`): ellipsoïden in diercoördinaten, met **lijf-hoek, kop-hoek (kop draait meer naar de kijker dan het lijf), camerahoek en kanteling** als knoppen. Laat Jordi kiezen uit een raster van hoeken (olinguito: "B2" = lijf 40°, kop 49°, kantel 8°, Linoone-perspectief). Een te schuine hoek (52°) maakt alles samengeknepen.
 - **Vogels/vliegers en dieren met een simpele bouw:** een foto in de juiste pose is genoeg (kolibrie).

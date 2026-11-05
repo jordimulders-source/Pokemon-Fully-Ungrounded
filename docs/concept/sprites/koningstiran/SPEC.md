@@ -33,7 +33,10 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (5 nov) "horen de handen zo gevederd te zijn? dat lijkt meer op een danser dan echt een koning toch" → pose-ronde 3: vleugels gesloten en massief (Empoleon-flippers), verre vleugel gebiedend schuin naar voren-omlaag, nabije als gesloten mantel.
 
+- (5 nov) "hoort die zo dik te zijn? En nu zijn we gewoon poses van vleugels aan het gokken ook. Het is ook weer te recht. Zou die niet meer een nonchalante koningspose kunnen aanhouden?" → gokken gestopt (werkwijze: na 2 mislukte poserondes een echte bron); kandidaten in `referenties/nonchalant.png`, Jordi kiest het skelet.
+
 ## Afgekeurd
+- Pose-ronde 3: te dik, te recht, vleugelpose gegokt.
 - Pose-ronde 2: gespreide slagpennen ("danser").
 - Pose-ronde 1: stijf rechtop, vleugels langs het lijf, symmetrisch ("t-pose").
 - Helemaal frontaal (schets v2 fase 3): "geen enkele sprite" staat zo.

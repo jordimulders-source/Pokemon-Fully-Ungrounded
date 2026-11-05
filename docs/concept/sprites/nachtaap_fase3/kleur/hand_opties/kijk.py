@@ -4,7 +4,7 @@ from maak import *
 from PIL import Image
 S = '/tmp/claude-0/-home-user-Pokemon-Fully-Ungrounded/730fa6d2-b179-5919-a5dc-5a7ead9d8899/scratchpad/hand'
 def kijk(a, naam):
-    im = Image.fromarray(a, 'P'); im.putpalette(PAL); im = im.convert('RGBA')
+    im = Image.fromarray(a, 'P'); im.putpalette(PAL); im.info['transparency'] = 0; im = im.convert('RGBA')
     bg = Image.new('RGBA', im.size, (255, 255, 255, 255)); bg.alpha_composite(im)
     c8 = bg.crop((2, 42, 28, 64)).resize((26 * 10, 22 * 10), Image.NEAREST)
     f3 = bg.resize((192, 192), Image.NEAREST)

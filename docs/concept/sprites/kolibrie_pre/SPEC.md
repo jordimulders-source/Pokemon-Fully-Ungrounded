@@ -133,3 +133,4 @@
 - **Keuring r8:** TERUG, 2 FAILs (hoek linker buik (19,28); pootjes te groot/zonder perspectief), vleugelschaduw PASS; reparatie 42 px → maker r9.
 - **Kleur r9:** `blender/A/kleur_r9/` = r8 + exact de 44 px uit keuring r8 (buik één boog, kleine pootjes in perspectief). Eindvel `kleur_r9/eind_vel.png`. Wacht op Jordi.
 - **Jordi over r9 (5 nov): "maak de vorm van hals naar buik zoals in deze foto, dus eerst licht inkepend en dan bolle buik. De buik zelf is goed, pootjes zijn ook goed"** (foto `referenties/jordi_8_moeder_hals_buik.png`) → r10: alleen de voorkant hals→borst: lichte inkeping onder de kin, dan de bolle buik; buik en pootjes bevroren.
+- **Kleur r10:** `blender/A/kleur_r10/` (hals licht hol, 17 px in de zone, rest = r9). Wacht op Jordi.

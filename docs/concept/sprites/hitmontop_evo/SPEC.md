@@ -13,6 +13,25 @@
 - Het **cordão** (koord) hangt van de heup omlaag door de zwaartekracht.
 - Silhouet: een omgekeerde driehoek of Y. Wijd bovenin, smal punt onderin (de hand). Herkenbaar op 1×.
 
+## Ontwerp (Jordi, 5 nov, letterlijk)
+Bij `referenties/fanart_mestrimba.png` (fanart van iemand anders, "Mestrimba"; alleen ter inspiratie, niet overnemen): "er dacht iemand hetzelfde over."
+- "De hoorn blijft maar wordt een veel kleiner onderdeel, niet meer functioneel, want de evolutie is zo goed geworden met handen en voeten dat het niet meer nodig is."
+- "Het blijft duidelijk een hitmon familie lid, dus met bruine huid en duidelijke kenmerken, maar de broek die blauw blijft wordt nu langer en aansluitend."
+- "Zijn haren blijven bruin maar worden een veel meer afro braziliaanse haarstijl, beetje eddy gordo achtig"
+- "de benen worden langer en de voeten passen goed erbij, maar blijven blauw met klauwen en minder groot in verhouding tov de benen als voorheen."
+- "het tenue wordt nu meer een broek en het lichaam van hitmontop wat langer."
+- "Die touwtjes die aan de broek hangen doen we ook, maar die hangen ook aan zijn armen, beetje zoals bij muay thai vechters." (zoals de *prajiad*-armbanden)
+- "De handen blijven rondjes"
+
+## Kenmerken op een rij (afgeleid van Hitmontop, `graphics/pokemon/hitmontop/anim_front.png`)
+- Bruine huid (kop, armen, benen), ronde lichte handen.
+- Blauw onderlijf wordt een lange, aansluitende blauwe broek; het lijf langer dan bij Hitmontop.
+- Kleine, niet-functionele hoorn op de kop, tussen of in het haar.
+- Bruin haar in een afro-Braziliaanse stijl (richting Eddy Gordo: dreads/opgebonden).
+- Blauwe voeten met klauwen, kleiner ten opzichte van de (langere) benen.
+- Koordjes: aan de broek (cordão) en om de bovenarmen.
+- Pose: zie hierboven (eenarmige handstand, V-split).
+- Anders dan de fanart: geen witte broek of berimbau-benen; blauw blijft.
+
 ## Nog open
-- Richting: A mestre/berimbau, B Besouro-kever, C malandro (zie `docs/concept/IDEEEN.md`, 5 nov), of een mix.
-- Kleuren, kop (Hitmontops hoorn?), kleding (abadá, cordão).
+- Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

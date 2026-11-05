@@ -566,3 +566,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.141] - Hitmontop-evolutie: pose gekozen
 - Jordi koos de pose: eenarmige handstand met benen in een V-split (foto in `docs/concept/sprites/hitmontop_evo/referenties/`), beschreven in `SPEC.md` daar.
+
+### [v0.0.142] - Hitmontop-evolutie: ontwerp vastgelegd
+- Jordi's ontwerp letterlijk in `docs/concept/sprites/hitmontop_evo/SPEC.md`: kleine niet-functionele hoorn, bruine huid, lange aansluitende blauwe broek, langer lijf, afro-Braziliaans haar (Eddy Gordo), langere benen met kleinere blauwe klauwvoeten, koordjes aan broek en armen (muay thai), ronde handen. Fanart "Mestrimba" als inspiratie in `referenties/`.

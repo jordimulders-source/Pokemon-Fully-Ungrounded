@@ -85,7 +85,7 @@ def wing(m, sh, wr, dirs, lens, g, z, cw=13, pw=5.5):
         plate(m, wr, tip, pw, 2.2, g)
 
 
-def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=1.0):
+def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
     """Hybride: bouw van de bergcaracara (groot, rechtop, lange poten, haaksnavel, kaal rood gezicht),
     kroon en staart van de koningstiran. De zijveren van de waaier hangen omlaag (foto 2) en vormen zo
     zelf de franje van de mascaypacha; geen losse band (geen 'dier met een hoed')."""
@@ -105,14 +105,14 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=1.0):
     # elke pen iets verder gedraaid zodat de achterrand een bolle curve wordt (geen rechte lijn, geen vingers)
     c = curl
     dirs = [(0.62 - 0.30 * c + 0.10 * k * c, 1.0 - 0.05 * k) for k in range(5)]
-    wing(m, (8, 30, 17), (30, 38, 44), dirs, (40, 44, 42, 37, 30), 'wing', 62, 18, 14)
+    wing(m, (8, 30, 17), (26, 36, 40), dirs, (33, 36, 34, 30, 24), 'wing', 56, 18, 14)  # iets korter (Jordi)
     for ang in (-24, -12, 0):                                       # staart: drie rossige veren, licht gewaaierd
         Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(ang * 0.6))
-        m.ell(np.array((22, -46, 0)) + Rt @ np.array((0, -6, 0)), (7, 26, 3), 'tail', Rt)
+        m.ell(np.array((22, -40, 0)) + Rt @ np.array((0, -6, 0)), (7, 24, 3), 'tail', Rt)
     # poten: geen V meer. Standbeen recht onder het zwaartepunt; vrije poot met gebogen knie naar voren,
     # het scheenbeen weer verticaal (contrapposto van het beeld)
-    legs3 = (((2, -30, 7), (3, -44, 8), (3, -60, 9)),          # standbeen
-             ((-4, -30, -8), (-18, -40, -11), (-17, -55, -12)))  # vrije poot, knie naar voren
+    legs3 = (((2, -30, 7), (3, -40, 8), (3, -51, 9)),          # standbeen (korter, Jordi)
+             ((-4, -30, -8), (-16, -37, -11), (-15, -47, -12)))  # vrije poot, knie naar voren
     for hip, knee, foot in legs3:
         m.chain([hip + (5.0,), knee + (4.0,)], 'breast')
         m.chain([knee + (3.0,), foot + (2.7,)], 'leg')
@@ -248,13 +248,13 @@ def view(m, yaw, pitch=8, size=236):
     return im, sil
 
 
-def sheet(curls=(0.5, 1.0, 1.5)):
+def sheet(curls=(0.5,)):
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 12)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 15)
     cw = 266 + 70
-    W = Image.new('RGB', (12 + cw * len(curls), 36 + 256 + 26), (236, 232, 222))
+    W = Image.new('RGB', (max(12 + cw * len(curls), 760), 36 + 256 + 26), (236, 232, 222))
     d = ImageDraw.Draw(W)
-    d.text((10, 10), 'Sapa Inca, hoek B3 (lijf 44°, kop 76°): opgeheven vleugel met knik, 3 buigingen. Rechts: silhouet 1x.',
+    d.text((10, 10), 'Sapa Inca B3, buiging 1: kortere vleugel en poten (silhouet 1x)',
            font=FB, fill=(30, 30, 30))
     for j, c in enumerate(curls):
         im, sil = view(bird(extra=32, curl=c), 44)

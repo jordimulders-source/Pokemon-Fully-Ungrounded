@@ -39,6 +39,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (5 nov) "dat die zijn eigen staart vasthoudt als scepter is wel komisch, b3 lijkt wel ok. Wederom is wel de vleugel weer een rechte lijn, daar mag iets meer dynamiek in zitten, evenals dat de benen in een v-pose staan" → **hoek B3 gekozen** (lijf 44°, kop 76°); pose-ronde 5: knik in de pols van de opgeheven vleugel (arm naar buiten, pennen omhoog, bolle achterrand), 3 buigingen; standbeen recht, vrije poot met gebogen knie. Staart-als-scepter: nog open.
 
+- (5 nov) "de vleugel mag ietsje korter, 1 is wel het beste. De poten zijn nu wel wat te lang voor het lichaam denk ik, misschien het lichaam iets verder naar beneden en de poten iets korter" → **buiging 1 gekozen**; vleugel ±20% korter, poten ±10 korter (lijf zakt), staart mee omhoog.
+
 ## Afgekeurd
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.
 - Pose-ronde 3: te dik, te recht, vleugelpose gegokt.

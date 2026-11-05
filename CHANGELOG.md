@@ -536,6 +536,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.131] - Specht: convergent is een fan-term
 - `docs/concept/IDEEEN.md`: na Bulbapedia-check: "convergent species" is een fan-term, officieel gaat het om toevallige gelijkenis; haakje via de World Pokémon Ecological Society; mimicry staat lager.
 
-### [v0.0.132] - Parallelle takken samengevoegd, changelog hernummerd
-- De acht takken die naast elkaar liepen (lama, wasbeer, nachtaap, kolibrie pre-evo, Uyuni-Silicobra/Salticonda, DJ Rotom, koningstiran, specht) zitten nu in `main`. Elke tak telde vanaf v0.0.23 zelf door, waardoor dezelfde nummers vaak voorkwamen; alle secties staan nu op volgorde van hun commitdatum met unieke nummers (v0.0.24–v0.0.131). Inhoud ongewijzigd.
+### [v0.0.132] - Specht: stroombronnen samen, Raichu-achtige evolutie
+- `docs/concept/IDEEEN.md`: roffelen + droog hout + bliksembomen samen, met een dorp dat op Picapau draait; evolutie die (net als Toedscruel bij Tentacruel) minder op Raichu lijkt, met de spechtentong als bliksemstaart.
+
+### [v0.0.133] - Parallelle takken samengevoegd, changelog hernummerd
+- De acht takken die naast elkaar liepen (lama, wasbeer, nachtaap, kolibrie pre-evo, Uyuni-Silicobra/Salticonda, DJ Rotom, koningstiran, specht) zitten nu in `main`. Elke tak telde vanaf v0.0.23 zelf door, waardoor dezelfde nummers vaak voorkwamen; alle secties staan nu op volgorde van hun commitdatum met unieke nummers (v0.0.24–v0.0.132). Inhoud ongewijzigd.
 - `docs/lessen/SPRITE_WERKWIJZE.md` is de compacte versie (met de keurslot-checklist bovenaan); de lessen die andere takken in de lange versie zetten, staan in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.

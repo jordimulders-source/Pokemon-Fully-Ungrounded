@@ -1,6 +1,6 @@
 # Great potoo (Ghost/Normal, losse soort): SPEC
 
-Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1 (ontwerp: pose en kenmerken)**, nog geen pixels.
+Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 2 (silhouet)**: `silhouet/silhouet_v3_1x.png` + `silhouet_v3_vel.png` wacht op Jordi.
 
 ## Besloten (Jordi, 5 nov)
 - Basissoort: **great potoo** (*Nyctibius grandis*): "ik wil sowieso een great potoo".
@@ -23,8 +23,13 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1 (ontwerp: pose en 
 |---|---|---|---|
 | pose | driekwart, licht vooruit hangend, **bek open**; kop/muil uit het drieluik (boven + linksonder); skelet: `jordi_great_potoo_tak_bek_open_volledig.png` (hele vogel, bek open, 3/4), voorover hangen uit `jordi_great_potoo_vooroverhangend_bek_open.webp` | "Ik wil de bek juist open, want dat is de sprite die men het meest gaat zien. het wordt uiteraard een driekwart pose met de vogel die licht vooruit hangt" | besloten |
 | klauwen | nauwelijks zichtbaar op de foto's | "De klauwen zijn nauwelijks zichtbaar lijkt wel, wel lachen. Dat betekent dat we die prima in een sprite ook kunnen verbergen" | besloten: verborgen |
-| ondergrond / neerzetten | open: vogel staat vrijwel altijd op een tak, tak mag niet in beeld | "Moeten we alleen ff kijken hoe we hem neerzetten, gezien die vrijwel altijd op een tak staat" | open |
+| neerzetten | optie 1: op een onzichtbare tak, zoals Swellow/Noctowl/Taillow (`vogels_neerzetten.png`) | "ja, optie 1, ga maar naar het silhouet" | besloten |
 | frames | frame 1 = bek open (hoofdsprite); frame 2 nog open | idem | deels |
+
+## Silhouet
+- v1: omtrek van de takfoto, 10° voorover, gespiegeld: las als augurk (muil onzichtbaar).
+- v2: muil-inkeping: te klein op 64.
+- v3: onderkaak hangt verder open (drieluik), kop 15% groter (Pokémon-verhouding). 1023 px (Xatu 1033). Model = de foto zelf langs dezelfde omtrek (`silhouet/model_v3.png`).
 
 ## Afgekeurd (niet herhalen)
 - Tweede stage die met een tak/stomp versmelt (`concept_schets_2stages_afgekeurd.png`): tak in beeld past niet bij Pokémon-sprites.

@@ -179,3 +179,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.41] - Salticonda: kleurronde 1 (A en E)
 - A en E ingekleurd met het palet van de Uyuni-Silicobra (silhouetten bevroren, alpha-diff 0): buisvormige windingen met licht van linksboven, turquoise pekelringen in de gleuven, zoutkorst met Y-naden, kop met half oog, anacondastreep en lichte snuit, gebandeerde staart met turquoise punt. `docs/concept/sprites/salticonda/kleur1/`.
+
+### [v0.0.42] - Salticonda: ronde 2 (3/4, nieuwe kop, staart als zoutkegel)
+- Nieuw 3/4-lijf met drie dikke windingen als ellipsen, doorbuigende pekelringen, een grotere anaconda-kop met Sandaconda-neusbult en ouder half oog; kopvariant A (koepel) en B (kroon van zoutplaten); staart als klein zoutkegeltje met pekelringen. `docs/concept/sprites/salticonda/kleur2/`.

@@ -557,3 +557,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.138] - Picapau frontsprite af
 - Jordi over r6/r7: staartpunt, buikvlek, donkerder geel, vleugelstip, kuif (suggestie keurder), snavel bleef ("snavel is prima"); "prima om een iets andere kleur te doen idd". Verse eindkeuring r7: GOED zonder reparaties. Eindversie: `docs/concept/sprites/picapau/af/picapau.png` (+ `normal.pal`). Smaakvragen (tenen, kuifstelen): Jordi "nee prima zo".
+
+### [v0.0.139] - Les: changelog na main nummeren
+- `docs/lessen/AGENTS.md`: vóór het pushen naar `main` eerst `main` mergen en de eigen changelogsecties achteraan nummeren (Jordi).

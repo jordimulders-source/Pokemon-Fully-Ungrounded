@@ -129,3 +129,15 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
   - **Wereldwijd in zee, past aan de kust/diepzee:** spinkrab (of de Patagonische koningskrab, *centolla*), garnaal met de harde klap (pistoolgarnaal of bidsprinkhaankreeft; staat ook in FAKEMON_PITCH #95), blauwe zeeslak (*Glaucus*), siphonophore (kolonie van diertjes die samen één wezen vormen), blobfish.
   - **Niet uit Zuid-Amerika** (immersie: alleen met een verhaal, bijv. ingevoerd, ontsnapt, of als grap): komodovaraan, schoenbekooievaar, pangolin, colugo, dropbear (Australische grap; kan als droge NPC-humor).
 - Overlap met `FAKEMON_PITCH.md`: hoatzin (#3), manenwolf (#9), harpij (#12), blauwvoetgent (#17), zeeleguaan (#18), bidsprinkhaankreeft (#95).
+
+## Koningstiran / royal flycatcher (idee, Jordi 5 nov)
+- Jordi zag de **tropical royal flycatcher** (*Onychorhynchus coronatus*, koningstiran) in een video: "daar moeten we zeker een Pokémon van maken", die erop lijkt, **met zo'n Inca-hoofdtooi**.
+- **Het echte dier (Claude):** klein bruin vogeltje van de Amazone-laaglanden, meestal onopvallend. De kuif ligt plat naar achteren (een hamerkop-silhouet), maar klapt bij balts of gevaar open tot een **halve waaier dwars op de kop**: rood bij het mannetje, geel bij het vrouwtje, met staalblauwe puntjes. Hij zwaait daarbij langzaam zijn kop heen en weer en sperst zijn snavel open (oranje keel). Vangt insecten in de vlucht langs beekjes; het nest hangt als een lange zak (tot 2 m) boven het water.
+- **De Inca-koppeling (Claude):** de Sapa Inca droeg de *mascaypacha*: een rode franje over het voorhoofd, met daarboven veren van de *coraquenque* (heilige vogel; alleen de koning mocht die dragen). De rode waaier van de koningstiran ligt dus heel dicht bij een koningskroon. Naam-haakjes: *Sapa* (enige), *Qhapaq* (machtig), *mascaypacha*, *coronatus*.
+- **Idee: twee standen** (Claude). Kuif dicht = onopvallend vogeltje; kuif open = koning. In Gen 3 bijna gratis: frame 1 van de frontsprite met dichte kuif, frame 2 (de animatie) klapt de waaier open. Eventueel een ability die de kuif in het gevecht opent (Intimidate-achtig, of een vormwissel à la Cramorant/Eiscue), maar dat kost code; eerst alleen als animatie.
+- **Geslachtsverschil** (zoals Pyroar/Unfezant): rode kroon bij het mannetje, gele bij het vrouwtje. Past bij het echte dier; kost een tweede sprite (optioneel, uitstellen).
+- **Lijn-opties (open):**
+  - 2 fasen: kaal bruin jong met een stompje kuif → koningstiran met de mascaypacha (franje + waaier, eventueel gouden oorschijven, zoals de Inca-adel).
+  - 3 fasen: jong → onopvallende tiran (kuif dicht) → *Sapa*-vorm, de koning die de waaier altijd draagt.
+- **Type-opties (open):** Normal/Flying (de klassieke vroege vogel, maar de dex heeft er al veel); **Fire/Flying** of **Psychic/Flying** (Inti, de zon: de Sapa Inca was "zoon van de zon"); **Bug/Flying** valt af (hij eet insecten, is er geen). Kolibrie is al Ghost/Flying, de condor hoort bij het trio. Bij de keuze: typeverdeling in `DEX_NOMINATIES.md` (Flying zit al goed).
+- **Leefgebied:** Amazone-laagland, langs beken; past ook bij de Bug-gym diep in de jungle.

@@ -20,8 +20,10 @@ POSES = {
     # spreid = waaierhoek per vinger (graden, rond de palmnormaal), krom = buiging per kootje (graden, naar de palm)
     'healer_drowzee': dict(spreid=(-7, -2, 3, 9), krom=[(5, 10, 8)] * 4, lengte=0.8, dikte=1.25, taps=(1.0, 0.84, 0.64), duim_abd=40, duim_krom=(15, 15), pols=0),
     'healer_anime':   dict(spreid=(-8, -2, 4, 10), krom=[(-3, 6, 6)] * 4, duim_abd=45, duim_krom=(5, 10), pols=0),
-    'voet_ontspannen': dict(spreid=(-6, -2, 3, 8), krom=[(25, 30, 20)] * 4, duim_abd=35, duim_krom=(15, 15), pols=0),
-    'voet_greep':     dict(spreid=(-2, 0, 2, 4), krom=[(75, 85, 55)] * 4, duim_abd=25, duim_krom=(45, 45), pols=0),
+    'voet_ontspannen': dict(spreid=(0, 0, 0, 0), krom=[(18, 22, 15)] * 4, duim_abd=20, duim_krom=(10, 10), pols=0,
+                            xs=0.62, ys=1.35, dikte=1.3, lengte=0.75, palm=(2.6, 5.6, 1.35)),   # hangt lang en slap (foto 2 onder)
+    'voet_greep':     dict(spreid=(0, 0, 0, 0), krom=[(70, 80, 50)] * 4, duim_abd=25, duim_krom=(40, 40), pols=0,
+                            xs=0.62, ys=1.35, dikte=1.3, lengte=0.8, palm=(2.6, 5.6, 1.35)),     # haakt om de tak (foto 2 links, foto 5)
     'vuist':          dict(spreid=(-2, 0, 2, 5), krom=[(80, 95, 60)] * 4, duim_abd=20, duim_krom=(40, 50), pols=0),
 }
 
@@ -44,8 +46,9 @@ def skelet(pose, stomp=True):
     pols = add((0, 0, 0), 1.5)
     hiel = add((0, 2.0, 0.15), 1.0, pols)
     for k, (naam, (kx, ky), lens, dik) in enumerate(VINGERS):
-        mc = add((kx * 0.55, 3.0, 0.15), 0.9, hiel)          # middenhandsbeentje
-        knok = add((kx, ky, 0.15), dik, mc)
+        kx, ky = kx * pose.get('xs', 1.0), ky * pose.get('ys', 1.0)   # voet: tenen dichter op elkaar, langere zool
+        mc = add((kx * 0.55, 3.0 * pose.get('ys', 1.0), 0.15), 0.9, hiel)          # middenhandsbeentje
+        knok = add((kx, ky, 0.15), dik * pose.get('dikte', 1.0), mc)
         M = rot_z(-pose['spreid'][k])
         p = Vector((kx, ky, 0.15)); last = knok
         Lm, Dm = pose.get('lengte', 1.0), pose.get('dikte', 1.0)
@@ -58,7 +61,7 @@ def skelet(pose, stomp=True):
             last = add(p, r, last)
         TOPPEN.append(last)
     # duim: vanaf de palmhiel aan de -X-kant, schuin naar buiten, iets naar de camera
-    basis = Vector((-2.1, 3.0, -0.3))
+    basis = Vector((-2.1 * pose.get('xs', 1.0), 3.0, -0.3))
     b = add(basis, 1.35, hiel)
     a = pose['duim_abd']
     M = rot_z(a) @ Matrix.Rotation(math.radians(-25), 3, 'Y')  # duim draait iets naar de palmkant
@@ -86,8 +89,9 @@ def bouw(naam, pose, remesh=True, stomp=True):
     bpy.context.view_layer.objects.active = ob; ob.select_set(True)
     for m in ('skin', 'sub'):
         bpy.ops.object.modifier_apply(modifier=m)
-    bpy.ops.mesh.primitive_uv_sphere_add(segments=32, ring_count=16, location=(0, 4.7, 0.2))
-    palm = bpy.context.object; palm.scale = (3.6, 4.1, 1.2)
+    ys = pose.get('ys', 1.0)
+    bpy.ops.mesh.primitive_uv_sphere_add(segments=32, ring_count=16, location=(0, 4.7 * ys, 0.2))
+    palm = bpy.context.object; palm.scale = pose.get('palm', (3.6, 4.1 * ys, 1.2))
     palm.select_set(True); ob.select_set(True); bpy.context.view_layer.objects.active = ob
     bpy.ops.object.join()
     if not remesh:

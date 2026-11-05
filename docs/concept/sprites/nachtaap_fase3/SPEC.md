@@ -75,3 +75,10 @@ Prompt om te plakken:
 
 ## Overdracht (3 nov, avond)
 Model: `blender/muriqui.py` → `muriqui.blend` + `render_muriqui.png` (pose bevroren, één huid, healerhand maanzilver). Jordi bekijkt de `.blend` in Blender en geeft opmerkingen per ronde in één keer. Daarna: de onafhankelijke keurder één keer (gevraagd door Jordi: "laten een agent dit ook objectief checken"), dan het silhouet = de render verkleind. Open: kop/gezicht (muriqui-snuit, kleinere sinistere ogen, vlak bovenlid), bladeren als echte bladvorm, outfit, kené, type. Zuinig met tokens (Jordi: "we jagen echt door de tokens heen").
+
+## Overdracht (5 nov): verder buiten Blender
+Jordi 5 nov: "de bladeren moeten helemaal weg uit het ontwerp" · "zijn dit dingen die per se in blender moeten? ... de pose staat, wat als we dit gesprek beeindigen en ik een nieuwe start die buiten blender nog wat kleur aanpassingen doet". → **Blender is klaar voor pose en massa; de rest (gezicht, kleur, ogen, sikkel) gebeurt in de pixels.**
+- **Bron silhouet:** `blender/render_snel.png` (heel model, nieuwe kop, zonder bladeren, tint T2 #7276BE) direct verkleind; `blender/render_kop.png` = kop close-up. (`muriqui.blend` kan door een afgebroken run half bijgewerkt zijn; de renders zijn leidend.)
+- **Besloten:** geen bladeren; ogen lichtblauw ("echt een helende kleur"), geen slaperig bovenlid, geen rood; vacht lichter/blauwer violet dan fase 2 (minder Oranguru); mond recht en neutraal; voeten als muriqui (lange behaarde zool, tenen samen als gekrulde want, grote teen los); bovenste been vanaf de heup; healerhand maanzilver, palm naar de tegenstander.
+- **Muriqui-gezicht (foto 4/5), in pixels uitwerken:** groot kaal donker gezicht (±60% kopbreedte, rechte wenkbrauwlijn tot de kin) ingelijst door vacht; kleine ogen dicht bij elkaar onder de wenkbrauwrichel; lichte neusrug van tussen de ogen, breder naar een lange, brede snuit met de neusgaten bovenaan; brede rechte mond; donkere kin; kleine maansikkel van de lijn op het voorhoofd (niet groot: leest als helm). Geen koptelefoon-wangen.
+- Daarna: silhouet → Jordi keurt → kleur (SPRITE_WERKWIJZE stap 2–6).

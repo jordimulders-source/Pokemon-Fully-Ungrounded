@@ -114,3 +114,12 @@ Kop + snavel + muil = ronde 7 (dezelfde puntlijsten en lijnen, uit `pop2d_potoo_
 - Muil: één vloeiend verloop (keel achterin donker → rand licht), geen ringen; tongrichel zachter. Borstelveertjes = kleine schubveertjes dakpansgewijs tussen oog en snavel (lazen als snorharen).
 Valkuil: pennen elk met een volle omtrek lezen als vingers/planken; alleen de lijn waar een pen over de vorige valt, anders wordt de vleugel weer één groot vlak.
 Open: verenpatroon blijft bewust licht (C2); bij 64 px is de lijn nog grijs door het verkleinen (pas in de spritefase).
+
+# Ronde 9 (vel_ronde9.png, pop2d_potoo_r9.py)
+Basis ronde 8; blinde test r8: "parkiet 45%, potoo 25%". Kopvorm, oog, muilomtrek en haak blijven die van ronde 7.
+- Snavel: snijrand (tomium) als hard grijs deel van de mondhoek langs de hele bovenrand van de muil naar voren, één vorm en één kleurverloop met de bovensnavel; de haak is de voorhoek van de open bek, het paars eronder is de bek.
+- Kop: licht ruige omtrek (afgeronde veerpuntjes om de 25 px langs achterhoofd en kruin, punt naar achteren); rug begint hoger achter het achterhoofd, drie veertjes over de naad, geen binnenlijn meer tussen kop en schouder.
+- Muil: spleten zijn zachte langgerekte taps toelopende lenzen (`slit2`, donkerder dan de keel, niet zwart, vervaagd).
+- Lijf voller (rug ±12 px breder, borst ±12 px), staart breed (±100 px) en stomp, pennen korter mee.
+- Schorspatroon: verspreide korte gerichte streepjes en vegen (bark/bark2, 16–28 px, minimale afstand 36 px) over kop, borst, vleugel en staart; nooit op lijnen, oog, snavel of in de muil (masker van donkere pixels + muil + snavel).
+Valkuil: veerpuntjes om de 17 px met spitse driehoeken gaven een zaagblad/egelkop; afgerond en om de 25 px leest als "licht ruig". Maskerfilters op 4x-resolutie zijn traag: op 1/4 rekenen.

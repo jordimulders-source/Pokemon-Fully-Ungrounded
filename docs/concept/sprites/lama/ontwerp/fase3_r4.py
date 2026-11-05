@@ -68,7 +68,7 @@ def windsel(m, pts, k):
         m.ell(c, np.array((rl + 2.4 * dik, 1.9, rl + 2.4 * dik)), g, Rax)
 
 
-def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55, franje=None, flen=18, kopk=1.0, legk=1.5, nr=0.0, persp=0.0, schouder=0.0, hb_hoog=False):
+def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55, franje=None, flen=18, kopk=1.0, legk=1.5, nr=0.0, persp=0.0, schouder=0.0, hb_hoog=False, breed=1.0):
     """kopk: kop (+bombín, vlechten) relatief kleiner/groter; legk: dikte poten; nr: hals dikker (ronde 6: buffer)."""
     m = P.Model()
     lx = 1.12
@@ -131,6 +131,11 @@ def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55, franje=None, flen=18, kopk=
             m.ell(c, np.array((3.2, 2.4, 3.2)), 'kant')
             m.ell(c + np.array((0, -2 - flen * 0.35, 0)) * np.array((0, 1, 0)) + np.array((0.6 * math.cos(t), 0, 0.6 * math.sin(t))),
                   np.array((1.3, flen * 0.35, 1.3)), 'franje2')
+    if breed != 1.0:   # ronde 7: lijf + kleding dikker (y/z), lengtes gelijk; hals, kop en poten niet geschaald
+        def sc(c, r):
+            return np.array((c[0], -10 + (c[1] + 10) * breed, c[2] * breed)), r * breed
+        m.parts[:h0] = [(*sc(c, r), R0, g) for c, r, R0, g in m.parts[:h0]]
+        m.parts[h1:] = [(*sc(c, r), R0, g) for c, r, R0, g in m.parts[h1:]]
     piv = np.array((30, -8, 0.0))
     L._rot(m, 0, len(m.parts), piv, P.rot_z(math.radians(-BORST)))
     pv = piv + P.rot_z(math.radians(-BORST)) @ (np.array(nk[0][:3], float) - piv)

@@ -241,3 +241,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.59] - Lama fase 3: buffer (buffstudie + hals/kop-varianten)
 - Gen 3-buffstudie (`docs/concept/sprites/lama/fase3/buffstudie/gen3_buff.png`) en varianten met kortere, dikkere hals en relatief kleinere kop (`fase3/silhouet/vel_buff.png`): V2 = 1,42× fase 2. Geforceerd perspectief in het poppetje werkte niet. Naar Jordi (advies V2).
 
+### [v0.0.60] - Lama fase 3: breder zonder de verhoudingen te veranderen
+- V1–V3 afgekeurd ("raar en komisch"). Nieuwe knop `breed` in `fase3_r4.py`: lijf, hals en poten alleen dikker, lengtes gelijk; vel `docs/concept/sprites/lama/fase3/silhouet/vel_breder.png` (W1–W3, tot 1,27× fase 2). Naar Jordi.
+

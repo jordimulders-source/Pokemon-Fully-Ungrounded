@@ -15,3 +15,4 @@ Details en Jordi's woorden in `SPEC.md`.
 - Kleur 4d: hals als drie gelijke, gestapelde wolbollen met symmetrische uitbollingen ("teveel buis achtig"). Wol onregelmatig houden.
 - Kleur 4f: losse pluk achter op de hals (y22–23) = "gekke uitstulping". Wol op de hals als ronde bollen, niet als losse plukken.
 - Fase 3 ronde 5: franje aan de manta en onder de rok ("nee dit is niet gelukt"); fase 3 zonder franje.
+- Fase 3 buff via kortere hals/kleinere kop (V1–V3) en geforceerd perspectief (B): "raar en komisch", "omdat je overdrijf"; de hals mag niet weg en de poten niet langer.

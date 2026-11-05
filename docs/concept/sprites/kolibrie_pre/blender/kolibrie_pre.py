@@ -93,7 +93,7 @@ def bouw(kop_draai=0.0, snavel_open=40, snavel_lengte=5.0):
     wig('Ondersnavel', basis + Vector((0, 0, -0.4)), -snavel_open / 2 + 6, snavel_lengte * 0.85, 2.6, 1.2, 'onder', nek)
     bol('Mond', basis + Vector((0.6, 0, 0)), (1.0, 1.6, 0.9), 'mond', nek)
     for kant in (-1, 1):
-        bol('Gaap', basis + Vector((0.7, kant * 2.0, 0.0)), (0.8, 0.6, 0.8), 'gaap', nek)
+        bol('Gaap', basis + Vector((0.5, kant * 1.6, 0.0)), (1.2, 0.8, 1.2), 'gaap', nek)
     for kant in (-1, 1):
         az = math.radians(52); el = math.radians(12)
         d = Vector((-math.cos(az) * math.cos(el), kant * math.sin(az) * math.cos(el), math.sin(el)))
@@ -146,7 +146,7 @@ def huid_sdf(delen, stap=0.22):
     bpy.context.view_layer.objects.active = ob; ob.select_set(True)
     return ob
 
-def bouw_geheel(kop_draai=0.0, snavel_open=8, snavel_lengte=11.0, snavel_hoek=12, kh=11.8, vleugel_k=1.2, een_oog=False):
+def bouw_geheel(kop_draai=0.0, snavel_open=8, snavel_lengte=11.0, snavel_hoek=12, kh=11.8, vleugel_k=1.2, een_oog=False, kop_omhoog=0.0):
     """Eén doorlopende huid (Jordi: "maak het echt een geheel en niet een soort verzameling aan bollen"):
     lijf, borst, nek, kop, staart en vleugelbolling als vormen samengevoegd (voxel-remesh) en daarna glad gestreken,
     zodat de overgangen vloeien. Buik, kap, keel en vleugel zijn kleurvlakken op die huid, geen losse delen.
@@ -182,6 +182,7 @@ def bouw_geheel(kop_draai=0.0, snavel_open=8, snavel_lengte=11.0, snavel_hoek=12
         if w == 'kop':
             k = piv + Rinv @ (p - piv)
             d = Vector(((k - kc0).x / 8.2, (k - kc0).y / 7.9, (k - kc0).z / 7.6)).normalized()
+            t = math.radians(kop_omhoog); d = Vector((d.x * math.cos(t) - d.z * math.sin(t), d.y, d.x * math.sin(t) + d.z * math.cos(t)))
             if d.z * 0.8 + d.x * 0.6 - 0.35 * d.x * d.x > 0.22: idx = 2       # kap boven/achter, gebogen grens
             elif d.z < -0.3 and d.x < -0.15: idx = 1                           # witte keel onder de snavel (foto 7)
         elif w in ('vleugel', 'staart'):
@@ -201,7 +202,7 @@ def bouw_geheel(kop_draai=0.0, snavel_open=8, snavel_lengte=11.0, snavel_hoek=12
     wig('Ondersnavel', basis + Vector((0.4, 0, -0.25)), snavel_hoek - snavel_open / 2, snavel_lengte * 0.9, 1.5, 0.8, 'boven', nek)
     bol('Mond', basis + Vector((0.6, 0, 0)), (1.0, 1.6, 0.9), 'mond', nek)
     for kant in (-1, 1):
-        bol('Gaap', basis + Vector((0.7, kant * 2.0, 0.0)), (0.8, 0.6, 0.8), 'gaap', nek)
+        bol('Gaap', basis + Vector((0.5, kant * 1.6, 0.0)), (1.2, 0.8, 1.2), 'gaap', nek)
         if een_oog and kant > 0: continue                                # verre oog weg (Jordi: "met maar 1 oog zichtbaar")
         az = math.radians(52); el = math.radians(12)
         d = Vector((-math.cos(az) * math.cos(el), kant * math.sin(az) * math.cos(el), math.sin(el)))
@@ -209,6 +210,15 @@ def bouw_geheel(kop_draai=0.0, snavel_open=8, snavel_lengte=11.0, snavel_hoek=12
         o = bol('Oog', p, (1.7, 0.5, 2.5), 'oog', nek)
         o.rotation_euler = Vector((0, 1, 0)).rotation_difference(Vector((d.x, d.y, 0)).normalized()).to_euler()
         bol('Glans', p + Vector((d.x, d.y, 0)).normalized() * 0.3 + Vector((-0.3, 0, 0.6)), (0.5, 0.3, 0.6), 'glans', nek)
+    # kop omhoog kantelen (bedelen, foto 3): snavel, ogen en mondhoeken draaien rond het kopmidden; de kopbol is rond
+    if kop_omhoog:
+        bpy.context.view_layer.update()
+        kk = bpy.data.objects.new('kop_kantel', None); bpy.context.collection.objects.link(kk)
+        kk.parent = nek; kk.location = kc0 - piv
+        bpy.context.view_layer.update()
+        for ob in [o for o in bpy.data.objects if o.parent == nek and o is not kk]:
+            w = ob.matrix_world.copy(); ob.parent = kk; ob.matrix_world = w
+        kk.rotation_euler = (0, math.radians(kop_omhoog), 0)
     nek.rotation_euler = (0, 0, math.radians(kop_draai))
     return wortel, nek
 

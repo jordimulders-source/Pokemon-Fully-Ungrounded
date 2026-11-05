@@ -105,3 +105,5 @@
 - Lijnen: binnenlijnen alleen waar een vorm over een andere valt (vleugel over lijf, kop over borst), in een donkere tint van het vlak zelf, taps en onderbroken; zwart alleen aan de buitenrand schaduwkant. Eerst een studie hoe Taillow/Starly/Pidgey dat doen.
 - Nieuwe maker-agent (de vorige liep ±10 rondes; vers starten met SPEC + NOTITIES).
 - **Jordi (3 nov): "maar het lichaam moet niet opeens veel dikker worden he".** 3/4-silhouet zo slank als het goedgekeurde profiel (±700–750 px); r1 (823 px) te dik.
+
+- **Jordi (5 nov): "kan de snavel iets meer open? Alsof die gevoerd moet worden, zie bronmateriaal, misschien hoofd ook iets meer omhoog dan"** → `A/maak.py '{"snavel_open": 28, "snavel_hoek": 14, "kop_omhoog": 12}' open`: `A/vel_open.png`, silhouet `A/silhouet_open.txt` (590 px). Bron: foto 3. Wacht op Jordi.

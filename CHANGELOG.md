@@ -578,3 +578,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.145] - Hitmontop-evolutie: poppetje ronde 2 (intern)
 - `ontwerp/ronde2.py`: Hitmontop-kop (koepel met puntige bruine rand, schuine ogen, mond, stompe hoorn), voller lijf, blauwe klauwvoeten, dikkere cordão. Gezicht leest als Hitmontop, maar hangende dreads aan de omgekeerde kop lezen in alle drie varianten als octopuspoten. Na 2 rondes gestopt: haarvraag ligt bij Jordi.
+
+### [v0.0.146] - Hitmontop-evolutie: poppetje afgekeurd, nu sprite art
+- Jordi keurde de kop van poppetje ronde 2 af ("wat een mormel"). Nieuwe aanpak (Jordi): direct pixelen vanaf de Hitmontop-sprite, met zijn kop rechtop als skelet; maker-agent bezig in `docs/concept/sprites/hitmontop_evo/sprite_r1/`. Les in `docs/lessen/GRAPHICS.md`.

@@ -186,6 +186,44 @@ zool2 = masker_poly([(446, 440), (456, 441), (466, 448), (474, 458), (483, 465),
 bol(zool2, GEZICHT, R=4, licht=(-0.3, -0.9, 0.4))
 verf(lijnmasker([(488, 440), (493, 455), (490, 468)], 2.2), LIJN)
 
+# ------------------------------------------------------------------ rugpatroon
+# Jordi 5 nov: "verder gaan met het patroon op de rug, wat misschien nu wel een typisch zuid amerikaans patroon kan zijn".
+# Fase 2 had drie lichte tapse wiggen vanaf de ruggengraat; fase 3: dezelfde wiggen, nu getrapt (Andes-trapmotief,
+# chakana/tocapu). Grote vlakken (op 64: basis ±3 px, treden ±1 px), geen dunne lijnen (afgekeurd).
+LILA = np.array([200, 194, 236], np.float32) / 255
+yR, xR = np.mgrid[0:W, 0:W] / K
+binnen = nd.distance_transform_edt(img[..., 3] > 0.5) / K > 5.0
+# Jordi: "die moeten mee bewegen met het perspectief, houd er rekening mee dat het een pose is" -> wiggen op een
+# cilinder om de romp (as langs de rug, kop-kant naar de kijker gekanteld), terug geprojecteerd naar beeld.
+d_ = np.array([0.85, 0.53]); n_ = np.array([0.53, -0.85]); P0 = np.array([240.0, 238.0])
+A = (xR - P0[0]) * d_[0] + (yR - P0[1]) * d_[1]; C = (xR - P0[0]) * n_[0] + (yR - P0[1]) * n_[1]
+romp = (img[..., 3] > 0.5) & (A > -10) & (A < 125) & (C > -95) & (C < 40)
+bins = np.arange(-10, 126)
+cmax = np.full(len(bins), np.nan)
+Ai = np.round(A).astype(int)
+for i, b_ in enumerate(bins):
+    sel = romp & (Ai == b_)
+    if sel.any(): cmax[i] = C[sel].max()
+cmax = nd.median_filter(np.nan_to_num(cmax, nan=np.nanmedian(cmax)), 15)
+RR = 44.0; TILT = np.radians(28)
+rug = np.interp(A, bins, cmax)                      # rugrand per positie langs de as
+phi = np.arcsin(np.clip((C - (rug - RR)) / RR, -1, 1))  # 90 graden = rug, 0 = naar de kijker
+a_opp = (A - RR * np.cos(phi) * np.sin(TILT)) / np.cos(TILT)   # positie op het oppervlak langs de as
+wig = np.zeros((W, W), bool)
+graden = np.degrees(phi)
+treden = [(52, 12.0), (20, 8.0), (-10, 4.5), (-32, 1.6)]  # tot welke hoek (vanaf de rug) welke halve breedte
+for a0, sch in ((40, 1.0), (68, 1.0), (96, 0.9)):
+    hb = np.zeros_like(graden)
+    vorige = 95
+    for g, h in treden:
+        hb = np.where((graden <= vorige) & (graden > g), h * sch, hb)
+        vorige = g
+    wig |= (np.abs(a_opp - a0) <= hb) & romp
+wig &= binnen
+lum = img[..., :3].mean(axis=2); ref = np.median(lum[binnen])
+fac = np.clip(lum / ref, 0.55, 1.25) ** 0.7
+img[wig, :3] = np.clip(LILA * fac[wig][:, None], 0, 1)
+
 # ------------------------------------------------------------------ kop
 # Muriqui-kop naar foto 4/5: ronde schedel zonder oren, groot donker gezichtsschild met rechte wenkbrauwlijn,
 # kleine ogen dicht bij elkaar, lichte neusrug die breder wordt naar een lange snuit, neusgaten bovenaan,
@@ -202,38 +240,69 @@ SRC4 = np.asarray(SRC.resize((W, W), Image.LANCZOS)).astype(np.float32) / 255.0
 licht = SRC4[..., :3].sum(axis=2) > 2.2
 yy, xx = np.mgrid[0:W, 0:W] / K
 handzone = (yy > 388) & (xx < 175) & (xx > 70)
-hand = handzone & (nd.distance_transform_edt(~(licht & handzone)) / K <= 5.0) & (SRC4[..., 3] > 0.5)
+zilver = handzone & (SRC4[..., 2] - SRC4[..., 0] < 0.12) & (SRC4[..., :3].mean(axis=2) > 0.42) & (SRC4[..., 3] > 0.5)
+zilver = nd.binary_opening(zilver, structure=np.ones((5, 5)))
+lab, nlab = nd.label(zilver); grootste = np.argmax(np.bincount(lab.ravel())[1:]) + 1
+zilver = nd.binary_fill_holes(lab == grootste)
+hand = (nd.distance_transform_edt(~zilver) / K <= 5.0) & (SRC4[..., 3] > 0.5) & ~((xx < 103) & (yy < 397) & (yy > 376))
 
-kop = E(107, 320, 52, 56) | masker_poly(TP([(80, 350), (122, 350), (121, 375), (110, 385), (92, 385), (81, 375)]))
+# Stap 3 (Jordi 5 nov): "Het hoofd mag iets meer in driekwart, het gezicht mag een 20% meer van het totale hoofd in
+# gebruik nemen en de maan mag daar nog boven, die mag echt wel 2 tot 3 keer zo groot."
+# Gezicht frontaal ontworpen (midden x=107) en over de bol van de kop gedraaid (yaw 22 graden naar links);
+# snuit steekt uit (grotere straal), dus verschuift verder. Gezicht 1,2x (lineair), maan 2,5x.
+YAW = np.radians(18); RB = 54.0; FS = 1.2
+def M(x, y, r=1.0):
+    dx, dy = x - 107, y - 320
+    lat = np.arcsin(np.clip(dy / (RB * r), -0.99, 0.99)); cl = np.cos(lat)
+    lon = np.arcsin(np.clip(dx / (RB * r * cl), -0.99, 0.99))
+    return T(107 + RB * r * cl * np.sin(lon - YAW), 320 + dy)
+def F(x, y, r=1.0): return M(107 + (x - 101) * FS, 343 + (y - 343) * FS, r)
+def FP(pts, r=1.0): return [F(x, y, r) for x, y in pts]
+def FE(cx, cy, rx, ry, r=1.0, n=40):
+    return masker_poly([F(cx + rx*np.cos(t), cy + ry*np.sin(t), r) for t in np.linspace(0, 2*np.pi, n, endpoint=False)], smooth=False)
+def ME(cx, cy, rx, ry, n=48):
+    return masker_poly([M(cx + rx*np.cos(t), cy + ry*np.sin(t)) for t in np.linspace(0, 2*np.pi, n, endpoint=False)], smooth=False)
+
+kop = E(107, 320, 52, 56) | masker_poly(FP([(84, 352), (118, 352), (117, 372), (108, 380), (94, 380), (85, 372)]))
 omlijn(kop)
 bol(kop, VACHT, R=36)
-# 1 spritepixel = ±6,4 eenheden hier (render 8,3 px / S); alle gezichtsdelen >= 1,5-2 px
-schild = masker_poly(TP([(72, 315), (80, 309), (101, 308), (122, 309), (130, 315), (133, 328), (131, 344), (126, 360),
-                         (118, 372), (108, 379), (101, 380), (94, 379), (84, 372), (76, 360), (71, 344), (69, 328)]))
+schild = masker_poly(FP([(72, 315), (80, 309), (101, 308), (122, 309), (130, 315), (133, 328), (131, 344), (126, 360),
+                         (118, 372), (108, 379), (101, 380), (94, 379), (84, 372), (76, 360), (71, 344), (69, 328)])) & kop
 bol(schild, GEZICHT, R=13)
-richel = masker_poly(TP([(78, 314.5), (124, 314.5), (124, 318), (78, 318)]), smooth=True) & schild
-verf(richel, GEZICHT[0], 0.75)
-# ogen: donkere oogkas, lichtblauwe iris (±2 px), één glansje; rechte wenkbrauw snijdt de bovenkant iets af (streng)
+verf(masker_poly(FP([(78, 314.5), (124, 314.5), (124, 318), (78, 318)])) & schild, GEZICHT[0], 0.75)
 for ox in (FX - 9.5, FX + 9.5):
-    verf(E(ox, 325, 6.4, 5.8), GEZICHT[0])
-    bol(E(ox, 325.4, 5.0, 4.8), [(84, 140, 200), (140, 190, 234), (190, 222, 246)], R=4)
-    verf(E(ox + 0.6, 326.0, 2.0, 2.3), (20, 28, 58))
-    verf(E(ox - 1.8, 324.0, 1.2, 1.2), (255, 255, 255))
-verf(masker_poly(TP([(80, 317.5), (122, 317.5), (122, 321.2), (80, 321.2)]), smooth=False) & schild, GEZICHT[0])
-# lichte neusrug -> brede snuit met lippen (foto 4); neusgaten klein en schuin bovenaan de snuit; mond erin; donkere kin
-snuit = masker_poly(TP([(FX - 3, 332), (FX + 3, 332), (FX + 6, 341), (FX + 12, 349), (FX + 16, 357), (FX + 16, 364),
-                        (FX + 11, 370), (FX, 372), (FX - 11, 370), (FX - 16, 364), (FX - 16, 357), (FX - 12, 349), (FX - 6, 341)]))
+    verf(FE(ox, 325, 6.4, 5.8), GEZICHT[0])
+    bol(FE(ox, 325.4, 5.0, 4.8), [(84, 140, 200), (140, 190, 234), (190, 222, 246)], R=4)
+    verf(FE(ox + 0.6, 326.0, 2.0, 2.3), (20, 28, 58))
+    verf(FE(ox - 1.8, 324.0, 1.2, 1.2), (255, 255, 255))
+verf(masker_poly(FP([(80, 317.5), (122, 317.5), (122, 321.2), (80, 321.2)]), smooth=False) & schild, GEZICHT[0])
+snuit = masker_poly(FP([(FX - 3, 332), (FX + 3, 332), (FX + 6, 341), (FX + 12, 349), (FX + 16, 357), (FX + 16, 364),
+                        (FX + 11, 370), (FX, 372), (FX - 11, 370), (FX - 16, 364), (FX - 16, 357), (FX - 12, 349), (FX - 6, 341)], 1.12))
 bol(snuit, SNUIT, R=8)
 for nx, k in ((FX - 4, -1), (FX + 4, 1)):
-    verf(masker_poly(TP([(nx - 2.6*k, 349.5), (nx + 0.8*k, 346.5), (nx + 2.4*k, 348.5), (nx + 0.4*k, 351.5)])), (52, 34, 64))
-verf(lijnmasker(TP([(FX - 12, 362.5), (FX - 4, 363.2), (FX + 4, 363.2), (FX + 12, 362.5)]), 3.4), (34, 24, 46))
-# maansikkel: kort, ±2 px dik
-m1 = E(FX + 1, 299, 12, 9); X, Y = T(FX + 1, 307); m2 = masker_ellips(X, Y, 13 * S, 9 * S)
-verf(m1 & ~m2 & (yy < T(0, 304)[1]), (236, 236, 246))
+    verf(masker_poly(FP([(nx - 2.6*k, 349.5), (nx + 0.8*k, 346.5), (nx + 2.4*k, 348.5), (nx + 0.4*k, 351.5)], 1.14)), (52, 34, 64))
+verf(lijnmasker(FP([(FX - 12, 362.5), (FX - 4, 363.2), (FX + 4, 363.2), (FX + 12, 362.5)], 1.1), 3.4), (34, 24, 46))
+# maan boven het gezicht, 2,5x: brede sikkel (hoorns omlaag), ±2 px dik op 64
+maan = ME(107, 292, 30, 16) & ~ME(107, 300, 32, 15)
+verf(maan & kop, (236, 236, 246))
 # healerhand ligt vóór de kop
 a_ = hand.astype(np.float32)[..., None]
 img[:] = img * (1 - a_) + SRC4 * a_
 
+# restje oude kin tussen nieuwe kin en hand weg
+yk, xk = np.mgrid[0:W, 0:W] / K
+img[(xk > 84) & (xk < 112) & (yk > 378) & (yk < 398) & ~kop & ~hand] = 0
+# gloed om de healerhand (Jordi 5 nov: "een lichtblauwe gloed graag om de hand heen"); als vlakke banden met eigen
+# omlijning (Reuniclus/Duosion), zodat hij in de sprite werkt; niet over het gezicht
+yh, xh = np.mgrid[0:W, 0:W] / K
+handvol = nd.binary_fill_holes(hand)
+hl = handvol & (nd.distance_transform_edt(handvol) / K > 4.5)
+dg = nd.distance_transform_edt(~handvol) / K
+vrij = ~kop
+g1 = (dg > 0) & (dg <= 4.5) & vrij; g2 = (dg > 4.5) & (dg <= 9.5) & vrij; gl = (dg > 9.5) & (dg <= 11.8) & vrij
+verf(gl, (78, 126, 192)); verf(g2, (186, 222, 250)); verf(g1, (140, 196, 242))
+# zweem blauw in de palm
+verf(hl, (170, 214, 248), 0.22)
 # heup rechts: uitsteeksels in de omtrek wegslijpen (opening in een klein vak)
 yv, xv = np.mgrid[0:W, 0:W] / K
 vak = ((yv > 240) & (yv < 270) & (xv > 255) & (xv < 305))

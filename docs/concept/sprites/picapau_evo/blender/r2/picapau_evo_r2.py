@@ -10,7 +10,7 @@ Jordi (SPEC): "imposant, groot, opgeblazen" · vleugels half open (dreigend) · 
 "echt zon krullende staart met een bliksemschicht" · kastanje lijf, kuif en buik licht crème.
 Nieuw t.o.v. Picapau: de kop (met kuif, snavel, ogen, wang) heeft een EIGEN draai om de nek (kop_draai), zodat
 de kop meer naar de kijker staat dan het lijf (les Picapau: profielkop zonder kopdraai gaf geen 3/4).
-Huid = één oppervlak (smooth union van afstandsvelden); kleurvlakken per vlak; snavel, ogen, tong en pootjes los.
+Huid = één oppervlak (smooth union van afstandsvelden); kleurvlakken per vlak; snavel in de huid; ogen en pootjes los.
 Draaien: python3.11 picapau_evo.py [uitmap] [hoeken...]   (rondom-vel)"""
 import bpy, math, sys, os
 import numpy as np
@@ -113,9 +113,11 @@ def smin(a, b, k):
 
 # ---------------- de evolutie ----------------
 NEK = Vector((-3.0, 0, 5.0))           # draaipunt van de kop
-HEUP = Vector((-1.5, 0, -17.5))       # draaipunt van de romp (voorover)
-KC = Vector((-9.5, 0, 13.5))           # kopmidden (kop-lokaal)
-KR = (11.0, 10.6, 10.7)                # grotere ronde kop (Pokémon-verhouding)
+HEUP = Vector((-1.5, 0, -16.5))       # draaipunt van de romp (voorover)
+KC = Vector((-8.8, 0, 12.8))           # kopmidden (kop-lokaal); r1 (-8.5, 0, 12.5)
+KR = (10.1, 9.7, 9.8)                  # kop licht groter dan r1 (9.6, 9.2, 9.3)
+
+SNAVEL_HOEK = 8; SNAVEL_L = 19.0       # beitelsnavel (lengte vanaf de basis in de kop)
 
 def kop_matrix(kop_draai, kop_kantel=0.0):
     """kop-lokaal -> lijf: draai om Z (naar de kijker) en een kleine kanteling, rond NEK"""
@@ -123,18 +125,18 @@ def kop_matrix(kop_draai, kop_kantel=0.0):
     return R
 
 def vleugel(s):
-    """groot en breed gespreid, hoog opgetrokken (Ho-Oh/Braviary/Talonflame): arm omhoog naar buiten,
-    brede handplaat met vier brede handpennen met ronde punten, brede armpennen naar achter-onder"""
-    schouder = (5.0, s * 9.5, 4.0); pols = (8.0, s * 19.5, 21.0)
+    """vogelvleugel, half open en opgetrokken (Jordi r1: "iets te draconian"): dikke ronde voorrand (arm),
+    één gesloten vlak (hand- en armplaat), vier zachte ronde handpennen die grotendeels samensmelten"""
+    schouder = (5.0, s * 9.5, 4.0); pols = (8.0, s * 18.5, 20.0)
     arm = np.array(pols) - np.array(schouder)
     n = np.cross(arm, np.array([1.0, 0, -0.2])); n = tuple(n / np.linalg.norm(n))
-    d = [('vleugel', ('buis', [(schouder, 5.0), (pols, 4.2)], n, 0.42), 1.2),
-         ('vleugel', ('buis', [((7.0, s * 13.0, 11.0), 6.5), ((16.0, s * 18.0, 2.0), 5.5), ((21.0, s * 19.0, -3.0), 3.4)], n, 0.36), 1.2),
-         ('vleugel', ('buis', [(pols, 5.4), ((19.0, s * 23.0, 17.0), 6.0)], n, 0.36), 1.2)]
-    for tip in [(15.0, 24.0, 34.0), (23.0, 26.0, 29.0), (28.5, 26.0, 20.0), (29.0, 23.5, 9.0)]:
+    d = [('vleugel', ('buis', [(schouder, 5.2), (pols, 4.8)], n, 0.45), 1.4),                              # ronde voorrand
+         ('vleugel', ('buis', [((7.0, s * 13.0, 11.0), 6.8), ((16.0, s * 17.5, 3.0), 6.0), ((21.0, s * 19.0, -2.5), 4.0)], n, 0.36), 1.6),
+         ('vleugel', ('buis', [(pols, 6.0), ((20.5, s * 23.0, 19.0), 7.6)], n, 0.36), 1.8)]               # handplaat (gesloten vlak)
+    for tip in [(16.0, 23.0, 30.0), (22.5, 24.5, 26.0), (26.5, 24.0, 18.5), (27.0, 22.0, 9.5)]:
         tip = (tip[0], s * tip[1], tip[2])
-        mid = tuple(np.array(pols) + 0.6 * (np.array(tip) - np.array(pols)))
-        d.append(('vleugel', ('buis', [(pols, 4.6), (mid, 4.0), (tip, 2.3)], n, 0.36), 1.6))
+        mid = tuple(np.array(pols) + 0.75 * (np.array(tip) - np.array(pols)))
+        d.append(('vleugel', ('buis', [(pols, 5.0), (mid, 4.8), (tip, 3.4)], n, 0.36), 2.8))           # ronde, overlappende pennen
     return d
 
 def staart_keten():
@@ -148,12 +150,12 @@ BLIKSEM = [((-10.0, 4.0, -22.0), 3.4), ((-20.5, 4.0, -18.5), 3.6), ((-14.5, 4.0,
 
 def delen(kop_draai=25.0, kop_kantel=0.0):
     """lijst (naam, deel, k, groep); groep 'kop' wordt met de kopdraai rond NEK geëvalueerd"""
-    d = [('lijf', ('ell', (3.0, 0, -6.5), (14.5, 14.0, 13.0), -15), 0, 'lijf'),
-         ('lijf', ('ell', (-6.0, 0, 1.0), (11.0, 12.0, 12.0), -10), 3.5, 'lijf'),     # opgezette borst: hoog en vol naar voren
-         ('lijf', ('ell', (-4.0, 0, 7.0), (8.0, 9.0, 7.5), 0), 3.0, 'lijf')]          # dikke nek
+    d = [('lijf', ('ell', (3.0, 0, -5.0), (14.0, 13.5, 13.5), -15), 0, 'lijf'),        # = ronde 1
+         ('lijf', ('ell', (-5.2, 0, -1.8), (10.2, 11.0, 11.5), -10), 3.0, 'lijf'),     # borst licht hoger en voller dan r1
+         ('lijf', ('ell', (-3.0, 0, 5.5), (6.5, 7.5, 6.5), 0), 3.0, 'lijf')]          # dikke nek (= r1)
     # dijen in de huid: de poten groeien uit het lijf
     for s in (-1, 1):
-        d.append(('lijf', ('ell', (-1.5, s * 4.8, -17.5), (3.6, 3.3, 3.0), 0), 1.5, 'lijf'))
+        d.append(('lijf', ('ell', (-1.5, s * 4.5, -16.5), (3.2, 3.0, 3.2), 0), 1.5, 'lijf'))
     for naam, deel, k in vleugel(-1) + vleugel(1):
         d.append((naam, deel, k, 'lijf'))
     d.append(('staart', ('buis', staart_keten(), (0, 1, 0), 0.34), 1.2, 'lijf'))
@@ -165,9 +167,15 @@ def delen(kop_draai=25.0, kop_kantel=0.0):
         # brede platte lob (Raichu-oor): brede basis, recht omhoog-achter; alleen het bovenste derde krult naar buiten
         # Jordi over ronde 1: "vooral de oren zijn too much", "te wit, te groot" -> klein, rustig, kastanje;
         # alleen het bovenste derde buigt subtiel naar buiten (doet aan Raichu's oren denken)
-        keten = [((-8.5, s * 4.6, 20.5), 4.4), ((-7.0, s * 5.6, 24.5), 4.0), ((-5.5, s * 6.8, 28.0), 3.0),
+        keten = [((-8.5, s * 5.0, 20.5), 4.0), ((-7.0, s * 6.0, 24.5), 3.7), ((-5.5, s * 6.8, 28.0), 3.0),
                  ((-4.5, s * 8.6, 30.2), 2.1), ((-4.0, s * 10.0, 29.8), 1.5)]
         d.append(('kuif', ('buis', keten, (1, 0, 0.25), 0.25), 1.8, 'kop'))
+    # beitelsnavel IN de huid (smooth union met de kop): een losse kegel stak schuin uit de gedraaide kop en gaf een
+    # donker schaduwvlak dat als open snavel las. Iets plat van opzij (beitel).
+    a = math.radians(SNAVEL_HOEK); dsn = np.array([-math.cos(a), 0, math.sin(a)])
+    basis = np.array(KC) + np.array([-7.5, 0, -1.7])
+    d.append(('snavel', ('buis', [(tuple(basis), 3.3), (tuple(basis + dsn * SNAVEL_L * 0.55), 1.9), (tuple(basis + dsn * SNAVEL_L), 0.35)],
+                         (0, 1, 0), 0.85), 0.9, 'kop'))
     # korte rafelige achterkuif (familie Picapau)
     for a, b, ra in [((-2.0, 0, 18.0), (5.5, 0, 21.5), 3.0), ((-0.5, 0, 14.0), (6.5, 0, 15.0), 2.8)]:
         d.append(('kuif2', ('buis', [(a, ra), (b, 0.9)], (0, 1, 0), 1.6), 1.8, 'kop'))
@@ -196,7 +204,7 @@ def huid_sdf(dl, kop_draai, kop_kantel, stap=0.3):
     return ob
 
 def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
-    namen = ['lijf', 'vleugel', 'stip', 'staart', 'bliksem', 'creme', 'wang', 'kuifmid']
+    namen = ['lijf', 'vleugel', 'stip', 'staart', 'bliksem', 'creme', 'wang', 'kuifmid', 'snavel']
     for n in namen: huid.data.materials.append(mat(n))
     C = np.array([tuple(p.center) for p in huid.data.polygons], np.float32)
     Rinv = np.array(kop_matrix(kop_draai, kop_kantel).transposed(), np.float32)
@@ -209,7 +217,7 @@ def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
         p = C[j]; q = Ck[j]
         if w == 'lijf':
             # crème buik: groot ovaal aan de voorkant (Raichu-buik, borst opgezet)
-            b = ((p[0] + 11.0) / 9.5) ** 2 + (p[1] / 10.5) ** 2 + ((p[2] + 3.0) / 14.0) ** 2
+            b = ((p[0] + 9.5) / 9.2) ** 2 + (p[1] / 9.8) ** 2 + ((p[2] + 4.5) / 13.0) ** 2
             idx[j] = 5 if b < 1 else 0
         elif w == 'vleugel':
             idx[j] = 1
@@ -221,16 +229,17 @@ def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
                 if np.hypot(*(g - np.round(g))) < 0.30: idx[j] = 2
         elif w == 'staart': idx[j] = 3
         elif w == 'bliksem': idx[j] = 4
-        elif w == 'kuif': idx[j] = 0 if q[2] < 28.6 else 7   # overwegend kastanje, alleen een licht topje (geen witte kuif)
+        elif w == 'kuif': idx[j] = 0 if q[2] < 27.8 else (7 if q[2] < 29.3 else 5)  # overwegend kastanje, alleen een licht topje (geen witte kuif)
         elif w == 'kuif2': idx[j] = 0
+        elif w == 'snavel': idx[j] = 8
         elif w == 'kop':
             for s in (-1, 1):
-                c = np.array([KC.x - 5.5, s * 7.0, KC.z - 4.2])
+                c = np.array([KC.x - 5.2, s * 6.5, KC.z - 3.8])
                 r = q - c
-                if (r[0] / 3.6) ** 2 + (r[1] / 3.6) ** 2 + (r[2] / 3.1) ** 2 < 1: idx[j] = 6
+                if (r[0] / 3.3) ** 2 + (r[1] / 3.3) ** 2 + (r[2] / 2.9) ** 2 < 1: idx[j] = 6
     for poly, i in zip(huid.data.polygons, idx): poly.material_index = int(i)
 
-def bouw(kop_draai=25.0, kop_kantel=0.0, voorover=0.0, tong=False, snavel_hoek=8, snavel_lengte=21.0, oog_az=75):
+def bouw(kop_draai=25.0, kop_kantel=0.0, voorover=0.0, oog_az=75):
     leeg()
     wortel = bpy.data.objects.new('wortel', None); bpy.context.collection.objects.link(wortel)
     dl = delen(kop_draai, kop_kantel)
@@ -244,19 +253,7 @@ def bouw(kop_draai=25.0, kop_kantel=0.0, voorover=0.0, tong=False, snavel_hoek=8
     # kop-onderdelen: aan een leeg object op de nek, dat de kopdraai krijgt
     kopas = bpy.data.objects.new('kopas', None); bpy.context.collection.objects.link(kopas)
     kopas.location = NEK; koppel(kopas, romp)
-    a = math.radians(snavel_hoek)
-    d = Vector((-math.cos(a), 0, math.sin(a)))
-    basis = KC + Vector((-5.0, 0, -1.8))      # basis diep in de kop: de grondplaat van de kegel stak uit (grijze 'open snavel')
-    # beitelsnavel: boven- en ondersnavel (bij de tong-variant iets open)
-    if tong:
-        wig('Snavel', basis + Vector((0, 0, 0.5)), d + Vector((0, 0, 0.06)), snavel_lengte, 2.9, 1.7, 'snavel', kopas)
-        wig('Onder', basis + Vector((0.3, 0, -0.9)), d + Vector((0, 0, -0.18)), snavel_lengte * 0.86, 2.5, 1.2, 'snavel', kopas)
-        # spechtentong: lang, half uit de snavel, hangt in een boog naar beneden met een bliksempuntje
-        familie('Tong', [(basis + Vector((-snavel_lengte * 0.5 - t, 0, -0.8 - 0.11 * t * t)), (1.15 - 0.03 * t,) * 3)
-                         for t in [i * 0.4 for i in range(24)]], 'tong', None, voxel=0.12, glad=6)
-        koppel(bpy.data.objects['Tong'], kopas)
-    else:
-        wig('Snavel', basis, d, snavel_lengte, 3.6, 3.3, 'snavel', kopas)
+    # snavel zit in de huid (delen()); de tong-variant is in ronde 2 vervallen (op 1x een worm)
     az = math.radians(oog_az); el = math.radians(16)
     for s in (-1,):      # alleen het nabije oog: het verre oog stak als bultje uit de omtrek (Gen 3: één oog bij een snavel)
         dd = Vector((-math.cos(az) * math.cos(el), s * math.sin(az) * math.cos(el), math.sin(el)))
@@ -269,9 +266,9 @@ def bouw(kop_draai=25.0, kop_kantel=0.0, voorover=0.0, tong=False, snavel_hoek=8
     romp.rotation_euler = (0, math.radians(-voorover), 0)     # + = voorover (kop omlaag/naar voren)
     # pootjes: kort en stevig, tenen 2 voor 2 achter (specht)
     for s in (-1, 1):
-        familie('Poot', [((-2.0, s * 4.8, -20.5), (1.7, 1.7, 2.2)),
-                         ((-5.8, s * 4.8, -22.6), (3.0, 1.2, 1.0)),
-                         ((0.8, s * 4.8, -22.8), (2.2, 1.2, 0.9))], 'poot', wortel)
+        familie('Poot', [((-2.0, s * 4.6, -19.5), (1.5, 1.5, 3.0)),
+                         ((-5.6, s * 4.6, -22.8), (2.8, 1.1, 0.9)),
+                         ((0.8, s * 4.6, -23.0), (2.0, 1.1, 0.8))], 'poot', wortel)
     return wortel
 
 def camera_licht(res=512, kantel=8):

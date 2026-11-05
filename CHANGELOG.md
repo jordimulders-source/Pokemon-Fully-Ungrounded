@@ -575,3 +575,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.144] - Hitmontop-evolutie: poppetje ronde 1 (intern)
 - Eigen 3D-poppetje (lama-methode, `pop3d`) in Jordi's pose: `docs/concept/sprites/hitmontop_evo/ontwerp/` (standen A70/B55/C40). Pose klopt, maar leest als een mensje i.p.v. een Hitmon (kop, paardenstaart, slungelig lijf); niet naar Jordi, ronde 2 met Hitmontops kop, dreads en een voller lijf loopt.
+
+### [v0.0.145] - Hitmontop-evolutie: poppetje ronde 2 (intern)
+- `ontwerp/ronde2.py`: Hitmontop-kop (koepel met puntige bruine rand, schuine ogen, mond, stompe hoorn), voller lijf, blauwe klauwvoeten, dikkere cordão. Gezicht leest als Hitmontop, maar hangende dreads aan de omgekeerde kop lezen in alle drie varianten als octopuspoten. Na 2 rondes gestopt: haarvraag ligt bij Jordi.

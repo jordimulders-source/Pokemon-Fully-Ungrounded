@@ -146,7 +146,7 @@ def huid_sdf(delen, stap=0.22):
     bpy.context.view_layer.objects.active = ob; ob.select_set(True)
     return ob
 
-def bouw_geheel(kop_draai=0.0, snavel_open=8, snavel_lengte=9.0, snavel_hoek=12, kh=11.8, vleugel_k=1.2):
+def bouw_geheel(kop_draai=0.0, snavel_open=8, snavel_lengte=9.0, snavel_hoek=12, kh=11.8, vleugel_k=1.2, een_oog=False):
     """Eén doorlopende huid (Jordi: "maak het echt een geheel en niet een soort verzameling aan bollen"):
     lijf, borst, nek, kop, staart en vleugelbolling als vormen samengevoegd (voxel-remesh) en daarna glad gestreken,
     zodat de overgangen vloeien. Buik, kap, keel en vleugel zijn kleurvlakken op die huid, geen losse delen.
@@ -202,6 +202,7 @@ def bouw_geheel(kop_draai=0.0, snavel_open=8, snavel_lengte=9.0, snavel_hoek=12,
     bol('Mond', basis + Vector((0.6, 0, 0)), (1.0, 1.6, 0.9), 'mond', nek)
     for kant in (-1, 1):
         bol('Gaap', basis + Vector((0.7, kant * 2.0, 0.0)), (0.8, 0.6, 0.8), 'gaap', nek)
+        if een_oog and kant > 0: continue                                # verre oog weg (Jordi: "met maar 1 oog zichtbaar")
         az = math.radians(52); el = math.radians(12)
         d = Vector((-math.cos(az) * math.cos(el), kant * math.sin(az) * math.cos(el), math.sin(el)))
         p = kc0 + Vector((d.x * 8.2, d.y * 7.9, d.z * 7.6)) * 0.97

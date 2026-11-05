@@ -49,3 +49,16 @@ Verder: keelholte achter het scharnier (`gul`) zodat er geen wit vlak in de muil
 - Close-up (140°, 4° van boven): bovenrand, nabije kaakrand en kaakpunt vallen op de oranje lijn (afwijking < ½ oogstraal); de kruin van de foto ligt ±1 oogstraal hoger en verder naar achteren.
 - Leidraad (140°, 4° van onder, kop 5° omhoog zoals op de foto): kruin en voorkant kloppen; de foto-muil hangt ±1 oogstraal verder omlaag en naar links (de foto is van onderaf, de kaak staat verder open). Bij meer openen past de close-up niet meer; nu een middenweg (66°).
 - Hoek gevonden door de overlap van mondvorm en oranje lijn te meten over een reeks hoeken/kaakmaten.
+
+# Ronde 3 (vel_ronde3.png)
+Op de 10 punten van de keurder:
+1. Bovensnavel = onderrand van het gezicht: dunne lichte rand, vóór rond het haakje hoornkleur (donkerder). Haakje: gebogen buis van ±1,5 r_e, donkerste accent, voorste punt van het profiel, hangt vóór de muil.
+2. Onderkaak: diepe schep (dieper en langer, 66° open: punt ±6,5 r_e onder de gaplijn), eigen bevederde buitenkant met omtrek (`jawfur`, lijn op de grens), donkere punt; van opzij een wig vóór de borst.
+3. Muil als holte: licht bij de rand (`mouth`), donkerder naar bodem/keel (`mouth2`), achterin een donkere keelholte (`throat`). Wat binnen de mondrand ligt en geen mondwand is, wordt in beeldruimte keelholte (floodfill): nooit vacht ín en nooit mondkleur buiten de muil.
+4. Koepel lager (boven de gaplijn ±4,9 r_e), ruige kruin met veerplukjes (`tufts`); in de spritehoek is de muil minstens zo hoog als de koepel.
+5. Ogen met smal licht ooglidrandje, geen glans, binnen de kopomtrek van voren, ¾ oogstraal boven de rand. **Afwijking:** 2,2 oogdiameters uit elkaar in plaats van ±1: met de ogen dichter bij elkaar (gemeten: z = 2,6/3,4/4,0) passen de overgetrokken close-up en leidraad duidelijk slechter (mondvorm-overlap 0,57→0,65); 3,7 is de middenweg.
+6. Veertjes tussen de ogen: 6 donkerdere plukjes boven het haakje die de omtrek breken.
+7. Schouders/vleugels lager: bovenkant ±op de gaplijn.
+8. Vier getrapte slagpennen langs de staart; staart lang, smal, versmallend in het verlengde van het lijf.
+9. Schors als korte gerichte vegen op vleugel, flank en kruin; haakje en kaakpunt de donkerste accenten.
+10. Omtrek licht onregelmatig door veerplukjes langs kruin, wangen en borst (zoals de lama-wol).

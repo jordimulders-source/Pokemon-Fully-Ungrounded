@@ -182,3 +182,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Keurslot: `.claude/settings.json` + `.claude/hooks/sprite_keurslot.py` (PreToolUse op SendUserFile): geen afbeelding uit `docs/concept/sprites/` naar Jordi zonder `<bestand>.keuring.md` met bron, 8×/1× en `Oordeel: PASS`.
 - Keurvel: `tools/grounded/keurvel.py` (werk naast bronnen op 8× en 1×, licht/donker, close-ups, keuringssjabloon).
 - `SPRITE_WERKWIJZE.md`: korte Checklist bovenaan (keurslot, keurvel, referentie per onderdeel, één afwijking = niet sturen, keurder per mijlpaal, ritme, gereedschap per onderdeel); de rest is naslag.
+
+### [v0.0.65] - Nachtaap fase 3: 2D-model (muriqui-kop en achtervoeten)
+- Buiten Blender (Jordi): kop en achtervoeten overgeschilderd op de Blender-render (`docs/concept/sprites/nachtaap_fase3/model2d/overschilder.py`); pose, lijf, armen, healerhand en staart ongewijzigd.
+- Muriqui-gezicht naar foto 4/5: donker schild met rechte wenkbrauwlijn, kleine lichtblauwe ogen dicht bij elkaar, lichte neusrug naar een brede snuit, rechte mond, donkere kin, korte maansikkel.
+- Voeten: bovenste grijpt als haak om de onzichtbare tak (tenen als want, grote teen tegenover), onderste hangt slap met losse grote teen.
+- Vertaalbaar naar de sprite (les lama): kop 1,3× en alle gezichtsdelen ≥ ±2 px op 64; controle `model_64.png`, vel `vel_model.png` (keurder: maten verwerkt).

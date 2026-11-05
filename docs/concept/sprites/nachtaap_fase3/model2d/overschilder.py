@@ -94,21 +94,20 @@ def gum(mask):
 # bovenste voet: slanke lange voet omhoog, vier tenen als want over de (onzichtbare) tak, grote teen ervoor
 ALPHA0 = np.asarray(SRC.resize((W, W)))[..., 3] > 0
 gum(masker_poly([(200, 30), (300, 30), (300, 101), (200, 101)], smooth=False))
-enkel1 = masker_ellips(236, 106, 19, 9)
-voet1 = masker_poly([(222, 112), (223, 97), (226, 82), (232, 67), (241, 56), (252, 50), (263, 52), (270, 60),
-                      (272, 71), (268, 81), (261, 86), (255, 89), (251, 99), (251, 112)])
+enkel1 = masker_ellips(237, 113, 24, 9)
+# haak: lange zool omhoog, tenen als één gekrulde want over de tak, open greep (tak) tussen tenen en grote teen
+voet1 = masker_poly([(223, 112), (222, 92), (226, 74), (233, 60), (243, 51), (256, 47), (268, 51), (276, 61),
+                      (278, 74), (275, 85), (268, 92), (262, 89), (263, 78), (261, 69), (256, 64), (253, 71),
+                      (252, 86), (253, 98), (251, 112)])
 omlijn(voet1, niet=enkel1 & ALPHA0)
 bol(voet1, VACHT, R=12)
-tenen1 = masker_poly([(245, 54), (252, 50), (263, 52), (270, 60), (272, 71), (268, 81), (261, 86), (256, 87),
-                       (255, 76), (251, 64)])
+tenen1 = masker_poly([(243, 51), (256, 47), (268, 51), (276, 61), (278, 74), (275, 85), (268, 92), (262, 89),
+                       (263, 78), (261, 69), (256, 64), (249, 58)])
 bol(tenen1, TEEN, R=6, licht=(-0.45, -0.75, 0.5))
-verf(lijnmasker([(244, 55), (251, 64), (255, 76), (256, 88)], 2.4), LIJN)
-for pts in [[(259, 51), (258, 59)], [(267, 57), (261, 64)], [(271, 67), (263, 71)], [(269, 78), (261, 79)]]:
-    verf(lijnmasker(pts, 2.0), LIJN)
-grote1 = masker_poly([(249, 99), (247, 92), (250, 86), (257, 83), (262, 85), (261, 91), (255, 97)])
-omlijn(grote1, dikte=2.4)
+verf(lijnmasker([(243, 52), (250, 58), (256, 64)], 2.4), LIJN)
+grote1 = masker_poly([(251, 104), (250, 97), (253, 92), (259, 90), (263, 94), (260, 100), (255, 104)])
+omlijn(grote1, dikte=2.6)
 bol(grote1, TEEN, R=4, licht=(-0.45, -0.75, 0.5))
-verf(lijnmasker([(224, 104), (236, 108), (250, 104)], 2.0), LIJN)
 
 # onderste voet: hangt slap in het verlengde van het scheenbeen, knikt iets omlaag, tenen licht gekruld
 yy0, xx0 = np.mgrid[0:W, 0:W] / K
@@ -122,12 +121,12 @@ bol(voet2, VACHT, R=12)
 tenen2 = masker_poly([(480, 442), (486, 450), (490, 463), (486, 473), (478, 475), (472, 467), (472, 455)])
 bol(tenen2, TEEN, R=6, licht=(-0.45, -0.75, 0.5))
 verf(lijnmasker([(482, 440), (472, 452), (472, 466)], 2.3), LIJN)
-for pts in [[(485, 451), (480, 461), (481, 472)], [(489, 458), (486, 466), (486, 473)]]:
-    verf(lijnmasker(pts, 1.9), LIJN)
 grote2 = masker_poly([(458, 452), (466, 455), (468, 463), (463, 471), (456, 470), (454, 461)])
 omlijn(grote2, dikte=2.4)
 bol(grote2, TEEN, R=4, licht=(-0.45, -0.75, 0.5))
 verf(lijnmasker([(458, 409), (448, 423), (444, 440)], 2.0), LIJN)
+knie = (xx0 > 395) & (xx0 < 452) & (yy0 > 395) & (yy0 < 450) & (img[..., :3].sum(axis=2) < 0.42) & (img[..., 3] > 0.5) & ~voet2
+img[knie, :3] = img[knie, :3] * 0.4 + c(VACHT[1]) * 0.6
 
 # ------------------------------------------------------------------ kop
 # Muriqui-kop naar foto 4/5: ronde schedel zonder oren, groot donker gezichtsschild met rechte wenkbrauwlijn,
@@ -147,31 +146,32 @@ yy, xx = np.mgrid[0:W, 0:W] / K
 handzone = (yy > 388) & (xx < 175) & (xx > 70)
 hand = handzone & (nd.distance_transform_edt(~(licht & handzone)) / K <= 5.0) & (SRC4[..., 3] > 0.5)
 
-kop = E(107, 318, 51, 53) | E(104, 343, 50, 33) | masker_poly(TP([(80, 350), (122, 350), (121, 375), (110, 385), (92, 385), (81, 375)]))
+kop = E(107, 320, 52, 56) | masker_poly(TP([(80, 350), (122, 350), (121, 375), (110, 385), (92, 385), (81, 375)]))
 omlijn(kop)
 bol(kop, VACHT, R=36)
-schild = masker_poly(TP([(75, 314), (82, 309), (101, 308), (120, 309), (127, 314), (130, 324), (128, 340),
-                         (123, 356), (116, 369), (108, 377), (101, 379), (94, 377), (86, 369), (79, 356), (74, 340), (72, 324)]))
+# 1 spritepixel = ±6,4 eenheden hier (render 8,3 px / S); alle gezichtsdelen >= 1,5-2 px
+schild = masker_poly(TP([(72, 315), (80, 309), (101, 308), (122, 309), (130, 315), (133, 328), (131, 344), (126, 360),
+                         (118, 372), (108, 379), (101, 380), (94, 379), (84, 372), (76, 360), (71, 344), (69, 328)]))
 bol(schild, GEZICHT, R=13)
-richel = masker_poly(TP([(82, 315.5), (120, 315.5), (120, 319), (82, 319)]), smooth=True) & schild
+richel = masker_poly(TP([(78, 314.5), (124, 314.5), (124, 318), (78, 318)]), smooth=True) & schild
 verf(richel, GEZICHT[0], 0.75)
-# ogen: dicht bij elkaar, lichtblauw, donkere oogkas; op spritemaat 2x2 px
-for ox in (FX - 8.2, FX + 8.2):
-    verf(E(ox, 323.5, 5.8, 5.0), (14, 10, 24))
-    bol(E(ox, 323.8, 4.4, 4.0), [(90, 146, 204), (146, 194, 236), (196, 226, 248)], R=3)
-    verf(E(ox + 0.4, 324.2, 1.7, 2.0), (14, 20, 44))
-    verf(E(ox - 1.5, 322.4, 1.0, 1.0), (255, 255, 255))
-    verf(masker_poly(TP([(ox - 6, 318.3), (ox + 6, 318.3), (ox + 6, 320.2), (ox - 6, 320.2)]), smooth=False), (14, 10, 24))
-snuit = masker_poly(TP([(FX - 2.5, 330), (FX + 2.5, 330), (FX + 5.5, 340), (FX + 11.5, 349), (FX + 15.5, 358), (FX + 14.5, 366),
-                        (FX + 8, 371.5), (FX, 372.5), (FX - 8, 371.5), (FX - 14.5, 366), (FX - 15.5, 358), (FX - 11.5, 349), (FX - 5.5, 340)]))
+# ogen: donkere oogkas, lichtblauwe iris (±2 px), één glansje; rechte wenkbrauw snijdt de bovenkant iets af (streng)
+for ox in (FX - 9.5, FX + 9.5):
+    verf(E(ox, 325, 6.4, 5.8), GEZICHT[0])
+    bol(E(ox, 325.4, 5.0, 4.8), [(84, 140, 200), (140, 190, 234), (190, 222, 246)], R=4)
+    verf(E(ox + 0.6, 326.0, 2.0, 2.3), (20, 28, 58))
+    verf(E(ox - 1.8, 324.0, 1.2, 1.2), (255, 255, 255))
+verf(masker_poly(TP([(80, 317.5), (122, 317.5), (122, 321.2), (80, 321.2)]), smooth=False) & schild, GEZICHT[0])
+# lichte neusrug -> brede snuit met lippen (foto 4); neusgaten klein en schuin bovenaan de snuit; mond erin; donkere kin
+snuit = masker_poly(TP([(FX - 3, 332), (FX + 3, 332), (FX + 6, 341), (FX + 12, 349), (FX + 16, 357), (FX + 16, 364),
+                        (FX + 11, 370), (FX, 372), (FX - 11, 370), (FX - 16, 364), (FX - 16, 357), (FX - 12, 349), (FX - 6, 341)]))
 bol(snuit, SNUIT, R=8)
-for nx, kant in ((FX - 4.2, -1), (FX + 4.2, 1)):
-    verf(masker_poly(TP([(nx - 2.2*kant, 348), (nx + 1.5*kant, 346.6), (nx + 2.4*kant, 349.4), (nx, 351)])), (52, 34, 64))
-for sx, sy in [(FX - 9, 356), (FX + 8, 357), (FX - 6, 360), (FX + 10, 361), (FX - 11, 361), (FX + 3, 359)]:
-    verf(E(sx, sy, 0.7, 0.7), SNUIT[0])
-verf(lijnmasker(TP([(FX - 12, 364.5), (FX + 12, 364.5)]), 2.0), (34, 24, 46))
-m1 = E(FX + 1, 298, 13, 8); X, Y = T(FX + 1, 303.5); m2 = masker_ellips(X, Y, 12 * S, 7 * S)
-verf(m1 & ~m2 & (yy < T(0, 302)[1]), (236, 236, 246))
+for nx, k in ((FX - 4, -1), (FX + 4, 1)):
+    verf(masker_poly(TP([(nx - 2.6*k, 349.5), (nx + 0.8*k, 346.5), (nx + 2.4*k, 348.5), (nx + 0.4*k, 351.5)])), (52, 34, 64))
+verf(lijnmasker(TP([(FX - 12, 362.5), (FX - 4, 363.2), (FX + 4, 363.2), (FX + 12, 362.5)]), 3.4), (34, 24, 46))
+# maansikkel: kort, ±2 px dik
+m1 = E(FX + 1, 299, 12, 9); X, Y = T(FX + 1, 307); m2 = masker_ellips(X, Y, 13 * S, 9 * S)
+verf(m1 & ~m2 & (yy < T(0, 304)[1]), (236, 236, 246))
 # healerhand ligt vóór de kop
 a_ = hand.astype(np.float32)[..., None]
 img[:] = img * (1 - a_) + SRC4 * a_

@@ -45,3 +45,4 @@ Voorbeeldmodel: `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` (hui
 
 **Regional forms:** begin van de bestaande sprite van de soort; lessen (Uyuni-Silicobra, Salticonda) in `naslag/SPRITE_WERKWIJZE_oud.md`, "Regional forms".
 **Silhouet naar sprite is niet 1 op 1** (Jordi, 5 nov, DJ Rotom): heeft een onderdeel in kleur meer ruimte nodig (gezicht, ogen), dan mag de sprite daar afwijken; in de sprite oplossen en de afwijking melden. **Vormen van een bestaande soort** (Rotom-vormen, regional forms): consistentie-analyse tegen alle bestaande vormen, zie naslag.
+- **Nederlandse dubbelzinnigheid in feedback (potoo, 5 nov):** "het is geen bol hoofd" = de kop is niet bol genoeg (klacht), niet "maak hem niet bol". Bij twijfel Jordi's zin terugvertalen naar een concrete actie en die eerst kort checken; ronde 4 maakte de kop daardoor juist platter.

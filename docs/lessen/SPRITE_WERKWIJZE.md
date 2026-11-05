@@ -34,6 +34,12 @@ Voorbeeldmodel: `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` (hui
 
 **Controlescript (elke ronde):** alpha-diff met het bevroren silhouet (0 of alleen in benoemde zones), open randen, losse pixels, clusters < 3 px, lijst gewijzigde pixels oud→nieuw. Voorbeeld: `kolibrie_pre/blender/A/kleur_r9/controle.py`.
 
+**Potoo-lessen (5 nov, eerste poging afgebroken; overdracht `docs/concept/sprites/potoo/OVERDRACHT.md`):**
+- Eerst een Pokémon-ontwerp, dan pas een silhouet ("we gaan niet een potoo namaken"). Wijkt het ontwerp af van het dier, dan eerst een 3D-model van de héle Pokémon.
+- 3D = meten, niet verzinnen: oriëntatiepunten uit de foto's, render op de foto-hoeken mét de foto-omtrek erover + 4 andere hoeken.
+- Snavel/bek nooit uit bollen ("je maakt er een lipschijf van"): omtrek punt voor punt overtrekken, zelf letten op punten en golving.
+- Nooit een rommelig tussenresultaat sturen (voxelruis, losse pixels, mondkleur buiten de mond).
+
 **Opdracht aan een agent bevat altijd:** `SPRITE_KERN.md`, SPEC-pad, bevroren delen + toegestane zones, Jordi's woorden letterlijk, gewenste uitvoer (raster, png, pal, vel, NOTITIES met zwakke punten), "niet committen".
 
 **Regional forms:** begin van de bestaande sprite van de soort; lessen (Uyuni-Silicobra, Salticonda) in `naslag/SPRITE_WERKWIJZE_oud.md`, "Regional forms".

@@ -16,4 +16,4 @@ B = {
  60: [(14, 'kkkk')],
 }
 if __name__ == '__main__':
-    a = bouw(ras(B)); controle(a, 'B'); kijk(a, 'B')
+    a = bouw(ras(B)); controle(a, 'B'); kijk(a, 'B'); save(a, 'optie_B.png')

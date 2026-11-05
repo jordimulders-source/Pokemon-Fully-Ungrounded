@@ -79,6 +79,10 @@ def _bouw(raster, extra, groot):
         for x in range(1, 26):
             if E[y, x] and a[y, x] in (10, 11) and (y, x) not in vast:
                 if y == 63 or 0 in (a[y, x - 1], a[y, x + 1], a[y - 1, x], a[y + 1, x]): a[y, x] = 12
+    for y in range(48, 64):                # rand ook waar de gloed tegen het lijf ligt (zoals ronde 3)
+        for x in range(20, 24):
+            if E[y, x] and (y, x) not in vast and a[y, x] in (10, 11) and not E[y, x + 1] and A0[y, x + 1] not in (0,):
+                a[y, x] = 12
     if extra: extra(a)
     return a
 

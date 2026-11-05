@@ -192,3 +192,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.66] - Nachtaap fase 3: model af, silhouet ronde 1
 - Model in drie stappen met Jordi: beide poten in één stuk met de schaduw van de render, voeten als want (naar Jordi's foto); staart gekanteld; kop meer driekwart, gezicht 1,2×, grote maan; lichtblauwe gloed om de healerhand (vlakke banden + omlijning, zoals Reuniclus; studie `referenties/psychische_effecten.png`). Maan (nog groter) en rugpatroon (op de rug, mee met de pose) volgen in de sprite.
 - Silhouet ronde 1 (`docs/concept/sprites/nachtaap_fase3/silhouet/`): model overgetrokken op de 50%-dekking, 1796 px, 0 korrels, alles ≤ 1 px van het model; spiraalspleten < 1 px gevuld (windingen als lijnen in de kleur). Onafhankelijke keurder: één reparatie (staartrand).
+
+### [v0.0.67] - Nachtaap fase 3: kleur tot en met arm en lijf
+- Kleurrondes 1–1s (`docs/concept/sprites/nachtaap_fase3/kleur/`): volume naar het model, onderste been één vorm met het lijf, spiraal als losse Nazca-spiraal, healerhand met vingers en palm (Drowzee/Deoxys), lichtblauwe gloed, maan als sikkel.
+- Opgeheven been 7 px naar rechts (Jordi koos uit +3…+11) zodat het uit de heup komt; rug, heup en bil daarop afgewerkt.
+- Vuistarm naar Jordi's krabbels: volle mouw van vuist tot schouder met vloeiende randen, onderrand halverwege tussen ronde 1p en zijn boog (Jordi: "50%"). Basis: `kleur/ronde1s/`.
+- Rugpatroon verkend en geparkeerd tot het lijf af was; richting: brede banden die als boog om het lijf lopen (fase 2, Furret, Dusclops).

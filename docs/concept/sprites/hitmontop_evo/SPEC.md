@@ -36,5 +36,9 @@ Bij `referenties/fanart_mestrimba.png` (fanart van iemand anders, "Mestrimba"; a
 ## Type (Jordi, 5 nov)
 - **Fighting/Ground** (twijfel was Fire/Water/Ground; "dark vind ik niet passen. Ik denk ground het beste omdat die telkens aan de grond zit"). Niet eerder in de dex (Great Tusk staat uit). Verdedigend: zwak voor Flying, Water, Grass, Psychic, Ice, Fairy; Rock ×¼, Poison/Bug/Dark ×½, immuun voor Electric.
 
+## Werkwijze (Jordi, 5 nov)
+- "nee doe maar niet met blender, dat gaat vaker fout dan goed"; "nee je maakt een model zelf, daarna pas evt silhouet"; "en gebruik de hitmontop sprite, want het wordt een evolutie"; "nee de lama, niet de nachtaap".
+- Dus: eigen 3D-poppetje zoals lama fase 3 (`lama/ontwerp/pop3d_lama.py` op `olinguito_v2/silhouet_kolibriemethode/pop3d.py`), met de Hitmontop-sprite als basis; pas daarna het silhouet.
+
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

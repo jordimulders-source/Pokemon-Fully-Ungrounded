@@ -140,3 +140,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca: staart als scepter (eerste opzet).
 - Sapa Inca: staart als scepter vereenvoudigd (gewone staart die afbuigt, niet onder de poten door); in deze hoek valt hij grotendeels achter het lijf, keuze voorgelegd.
 - Sapa Inca: staart en bovenarm naar Jordi's krabbel (staart achter het standbeen door en aan de voorkant omhoog; bovenarm korter).
+- Sapa Inca: staart-scepter vervalt (leest in deze pose niet als scepter); gewone roestbruine staart achter de poten.

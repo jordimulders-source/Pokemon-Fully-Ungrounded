@@ -3,9 +3,9 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 
 ## Volgorde (nooit overslaan)
 1. **Ontwerp met Jordi**: pose + kenmerken, letterlijk in `SPEC.md` van de Pokémon. Foto's van Jordi direct in `referenties/` (komt een foto niet als bestand binnen: punt voor punt beschrijven).
-2. **Echt 3D-model in Blender** (`docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` als voorbeeld): één huid (smooth union), geen losse bollen; eerst een **rondom-vel** (0–315°) zodat het van alle kanten klopt; Jordi kiest een 3/4-stand.
-3. **Silhouet = de render direct verkleind**, geen handwerk. Toon het als **rode omtrek óver de render**, nooit als los zwart vlak. Moet iets anders: pas het **model** aan, niet het silhouet.
-4. **Kleur** door één maker-agent: eerst kort bestuderen (Taillow/Starly/Fletchling of hetzelfde bouwtype op 8×, Dragonfly Cave-gids), dan met de hand als tekstraster. Toonkaart (model wit gerenderd, 4 tonen) als gids voor de schaduw.
+2. **Bron voor de vorm** (Jordi, 5 nov: "blender model is geen vereiste, genoeg sprites zijn zonder blender ook gelukt"): kies wat werkt. **Foto in de juiste pose** (kolibrie-eindvorm, olinguito) of een **3D-poppetje/Blender-model** bij lastige 3/4-poses (kolibrie pre-evo, `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py`: één huid, geen losse bollen, eerst een rondom-vel). Nooit zelfgebouwde cirkels en driehoeken.
+3. **Silhouet uit de bron** (foto-omtrek of render direct verkleind), de massa is heilig; met de hand alleen de dunne delen. Bij een model: toon het als **rode omtrek óver de render** en pas bij wijzigingen het **model** aan.
+4. **Kleur** door één maker-agent: eerst kort bestuderen (Taillow/Starly/Fletchling of hetzelfde bouwtype op 8×, Dragonfly Cave-gids), dan met de hand als tekstraster. Met een model: toonkaart (model wit gerenderd, 4 tonen) als gids voor de schaduw.
 5. **Claude kijkt zelf** op 8× naast Taillow, dan een **verse onafhankelijke keurder** (oordeelt eerst blind). Pas dan naar Jordi, met alleen de sprite.
 6. Eerst alleen ontwerp + frontsprite. Frame 2, rug, icoon, shiny, naam en data komen **later voor alle soorten samen**.
 

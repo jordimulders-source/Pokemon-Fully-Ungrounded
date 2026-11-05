@@ -7,15 +7,15 @@ Regels en eisen: `SPRITE_KERN.md`. Hier alleen de stappen en de commando's. Oude
 |---|---|---|---|
 | 0 | Types/evoluties uit de repo; SPEC en referenties klaarzetten | Claude | SPEC bestaat |
 | 1 | Ontwerp: pose + kenmerken, foto van het echte dier | Jordi + Claude | Jordi kiest |
-| 2 | 3D-model in Blender, rondom-vel (0–315°) + 3 driekwart-standen naast Taillow/Starly | Claude | Jordi kiest stand |
-| 3 | Silhouet = render direct verkleind; vel = render met rode omtrek erover | Claude | Jordi keurt; bevroren |
+| 2 | Bron voor de vorm: foto in de juiste pose, óf (bij lastige 3/4) 3D-model in Blender met rondom-vel + 3 driekwart-standen | Claude | Jordi kiest |
+| 3 | Silhouet uit de bron (foto-omtrek of render verkleind), dunne delen met de hand; bij een model: rode omtrek over de render | Claude/maker | Jordi keurt; bevroren |
 | 4 | Kleur: studie (4–5 echte sprites op 8×) → tekstraster met de hand; toonkaart als schaduwgids | maker-agent | controlescript schoon |
 | 5 | Claude 8× naast Taillow → verse keurder (blind eerst, PASS/FAIL met pixels) → reparaties via maker | Claude, keurder, maker | keurder GOED |
 | 6 | Jordi ziet alleen de sprite; zijn punten → kleine benoemde rondes | Jordi | "prima" |
 | 7 | `af/<naam>.png` + `normal.pal`; SPEC, CHANGELOG, Stand van zaken, lessen | Claude | gepusht |
 Frame 2, rug, icoon, shiny, naam, data: later, voor alle soorten samen.
 
-**Blender in de cloud (eenmalig per container):**
+**Blender (optioneel, Jordi: "geen vereiste") in de cloud, eenmalig per container:**
 ```
 python3.11 -m pip install bpy scikit-image
 apt-get install -y libegl1 libgl1-mesa-dri

@@ -122,3 +122,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.23] - Olinguito v2 af na eindkeuring
 - Verse eindkeuring (`docs/concept/sprites/olinguito_v2/af/EINDKEURING.md`): hoofdvraag PASS; reparaties: verre voorpoot roze voetje (2 px), losse spriet onder de klauw weg en drie haakjes van 1 px in curven glad (Jordi akkoord). 0 open randen. `docs/concept/sprites/olinguito_v2/af/olinguito.png` is af.
+
+### [v0.0.24] - DJ Rotom: bron en silhouet 1
+- DJ Rotom opnieuw begonnen volgens `docs/lessen/SPRITE_WERKWIJZE.md`, met Jordi's bron (Pokopia-render) in `docs/concept/sprites/dj_rotom/referenties/` en een `SPEC.md`.
+- Silhouet 1 (64×64): de bron direct verkleind (60×45, ±1750 px, zo groot als Frost/Wash); alleen de bliksem-noot en de spits met de hand dikker gemaakt (32 px). Vel: `docs/concept/sprites/dj_rotom/silhouet1/vel_silhouet1.png`. Wacht op Jordi.

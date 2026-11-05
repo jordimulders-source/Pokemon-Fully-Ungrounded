@@ -44,10 +44,12 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **opnieuw beginnen** (Jordi
 | bronnen | "de bronnen die ik net gestuurd heb", "die 5 fotos die ik aan het begin stuur"; over de platte-kopfoto: "die moet juist niet"; over oortjes/kop: "nu ben je weer net een soort vleermuis aan het bouwen" (5 nov, tweede gesprek) | besloten: **alleen** `jordi_great_potoo_bek_open_drieluik.webp`, `jordi_great_potoo_bek_open_duo.webp`, `jordi_great_potoo_kop_closeup_bek_open.webp`, `jordi_great_potoo_illustratie_rug_staart.png`, `jordi_great_potoo_nacht_stam_volledig.webp`. Geen andere foto's, geen oortjes, geen platte kop/snavel |
 | kop-leidraad | "dit mag als leidraad voor het hoofd, dit linkse stuk" (linkerhelft van `jordi_great_potoo_bek_open_duo.webp`) | besloten: kopvorm, oog, snavel en muil op die foto meten |
 | bek groot | "met die lekker overdreven grote bek", "dat is grappig" (5 nov, tweede gesprek) | besloten: de muil mag overdreven groot (Pokémon-stap B) |
+| ogen hoger | "en de ogen moeten hoger" (5 nov, tweede gesprek, bij de 3D-overlay) | besloten: oogmidden hoger op de koepel |
 | kern | "De snavel en ogen zijn het kernpunt van het design, zoals je kan zien zitten er kleine veren allemaal ook tussen de ogen duidelijk, dat mag je ook uitbeelden" (5 nov, tweede gesprek) | besloten: snavel + ogen krijgen de meeste aandacht; korte veertjes tussen en rond de ogen (borstelveertjes/wenkbrauwkuif) uitbeelden |
 | werkwijze | "Voordat je een silhouet bouwt, bouw je eerst een 3d model" | 3D-poppetje vóór het silhouet |
 
 ## Afgekeurd (niet herhalen)
+- **3D v2 (gespleten koepel + schep, `model3d_v2/`):** "ik vind het eerlijk gezegd nog totaal niet lijken, de bek is geen snavel, lijkt net een soort pacman zeehond, de bolling bovenop is niet goed", "de onderkaak moet meer pronounced", "en de snavel is geen pacman mond". Bek niet als opengeknipte kop bouwen.
 - Paars rond de mond (voxelkop): "geen idee wat dit was maar doe dit nooit meer, met al dat paars om die mond heen". Mondkleur alleen binnen de mondrand.
 - Zichtbare roep / geestslierten uit de muil: "een zichtbare roep doen we niet, dat is niet pokemon".
 - **Silhouet v1–v4 (de foto overgetrokken):** "we gaan niet een potoo namaken", "we maken een pokemon". Eerst een Pokémon-ontwerp (stap 1), dan pas een silhouet. Gewenst: "geestachtiger", "grote ogen, grote mond".

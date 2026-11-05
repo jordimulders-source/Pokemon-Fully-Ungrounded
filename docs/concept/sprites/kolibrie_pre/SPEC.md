@@ -130,3 +130,4 @@
 - **Kleur r8:** `blender/A/kleur_r8/` (pootjes met tenen, buik links één boog, vleugelschaduw als sikkel, trapjes glad; 26 px alpha in de zones). Controle door de keurder.
 - **Jordi: "het moeten wel echt kleine pootjes zijn he"** → keurder toetst ook het formaat van de pootjes.
 - **Jordi: "waar je nu mee bezig bent is prima alleen er moet iets meer een hoek in, ze kunnen niet zomaar naast elkaar"** → pootjes in perspectief: verre poot hoger en iets naar achter, deels achter de nabije.
+- **Keuring r8:** TERUG, 2 FAILs (hoek linker buik (19,28); pootjes te groot/zonder perspectief), vleugelschaduw PASS; reparatie 42 px → maker r9.

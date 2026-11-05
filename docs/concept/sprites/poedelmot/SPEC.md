@@ -32,3 +32,4 @@ Werkwijze: `docs/lessen/SPRITE_KERN.md` (verplicht meegeven) + `SPRITE_WERKWIJZE
 
 ## Nog open
 - Naam, ability.
+- Jordi 5 nov: "maak maar eerst een model en dan draaien we die driekwart" → **eerst een 3D-model** (rondom-vel in `model/`); de 3/4-hoek kiezen we op het model, pas daarna het silhouet.

@@ -95,13 +95,14 @@ def bird(extra=25, fan_L=58, fan_n=17, tilt=14):
     A = rot_z(math.radians(96))
     m.ell((6, 4, 0), (44, 28, 27), 'body', A)
     m.ell((-10, 8, 0), (24, 33, 26), 'breast', rot_z(math.radians(-4)))
-    # vleugels groot (Empoleon: flippers bijna zo lang als het lijf)
-    # verre vleugel: geheven naar voren-boven, slagpennen gespreid als een gebaar
-    wing(m, (-2, 28, -17), (-34, 40, -32), [(-0.2, -1.0), (-0.5, -0.9), (-0.8, -0.6), (-1.0, -0.25), (-1.0, 0.1), (-0.9, 0.4)],
-         (40, 46, 50, 48, 42, 34), 'farwing', -38, 22, 12)
-    # nabije vleugel: half open naar achteren-omlaag, als een koningsmantel tot bij de voeten
-    wing(m, (8, 28, 18), (26, 6, 32), [(-0.15, -1.0), (0.15, -1.0), (0.45, -0.9), (0.7, -0.7), (0.9, -0.45), (1.0, -0.15)],
-         (44, 50, 52, 48, 42, 34), 'wing', 36, 22, 12)
+    # vleugels groot en GESLOTEN (Jordi: gespreide pennen = danser, geen koning): elke vleugel is één massief blad
+    # zoals de flippers van Empoleon; slagpennen bijna evenwijdig en overlappend, alleen de punt licht gekarteld.
+    # verre vleugel: schuin naar voren-omlaag uitgestoken, gebiedend (Empoleon links)
+    wing(m, (-2, 28, -17), (-30, 26, -30), [(-1.0, -0.20), (-1.0, -0.32), (-1.0, -0.45), (-1.0, -0.58)],
+         (40, 36, 31, 25), 'farwing', -34, 22, 15)
+    # nabije vleugel: gesloten mantel langs de zij naar achteren-omlaag
+    wing(m, (8, 28, 18), (20, 8, 28), [(0.22, -1.0), (0.34, -1.0), (0.46, -1.0), (0.58, -1.0)],
+         (42, 38, 33, 27), 'wing', 32, 24, 15)
     for ang in (-24, -12, 0):                                       # staart: drie rossige veren, licht gewaaierd
         Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(ang * 0.6))
         m.ell(np.array((22, -46, 0)) + Rt @ np.array((0, -6, 0)), (7, 26, 3), 'tail', Rt)

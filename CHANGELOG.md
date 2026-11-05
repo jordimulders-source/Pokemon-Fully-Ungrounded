@@ -132,3 +132,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Koningstiran-sprite gestart (eindvorm eerst): `docs/concept/sprites/koningstiran/SPEC.md` en pose-onderzoek met echte sprites (`referenties/pose_onderzoek.png`, `vogels_en_kronen.png`).
 - Sapa Inca wordt een hybride koningstiran × bergcaracara (Jordi: "meer creatieve vrijheid"); 3D-poppetje `docs/concept/sprites/koningstiran/pop3d.py` met een raster van 9 hoeken (`pop3d_hoeken.png`): waaier als dichte paraplu met hangende kwastjes, caracaralijf, rood gezicht, gouden borst en oorschijf.
 - Sapa Inca: pose aangepast naar Empoleon (borst vooruit, verre vleugel als gebaar, nabije vleugel als mantel, brede stand); les over T-poses in `FAKEMON_CHECKLIST.md`.
+- Sapa Inca pose-ronde 3: vleugels gesloten en massief, gebiedend gebaar in plaats van gespreide "danser"-pennen.

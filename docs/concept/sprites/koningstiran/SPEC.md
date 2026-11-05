@@ -31,7 +31,10 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 - (5 nov) "dit is gewoon weer een t-pose" / "hij mag wat swagger tonen, het is een koning" / "we hadden afgesproken dat de pose zou lijken op bijv empoleon" / "het model is verder prima, dus niet opnieuw bouwen, gewoon aanpassen" / "de vleugels gaan we ook niet statisch t-pose doen"
 - Pose-ronde 2 (pop3d.py): Empoleon-houding: borst vooruit, iets achterover, verre vleugel geheven met gespreide slagpennen (gebaar), nabije vleugel als mantel naar achteren-omlaag, brede stand.
 
+- (5 nov) "horen de handen zo gevederd te zijn? dat lijkt meer op een danser dan echt een koning toch" → pose-ronde 3: vleugels gesloten en massief (Empoleon-flippers), verre vleugel gebiedend schuin naar voren-omlaag, nabije als gesloten mantel.
+
 ## Afgekeurd
+- Pose-ronde 2: gespreide slagpennen ("danser").
 - Pose-ronde 1: stijf rechtop, vleugels langs het lijf, symmetrisch ("t-pose").
 - Helemaal frontaal (schets v2 fase 3): "geen enkele sprite" staat zo.
 

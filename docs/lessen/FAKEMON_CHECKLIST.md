@@ -87,3 +87,4 @@ Pose naar karakter (R): Fighting → P7 vechthouding (brede A-stand, nabije vuis
 > Uitzondering uit de keuring (23 okt): **langnekken** (alpaca, Mudbray 42×51, Girafarig) halen de kopverhouding en de box van ±42 px niet; voor hen is dat een richtlijn.
 - **Zijaanzicht mag (Jordi, 25 okt):** naast 3/4 bestaan veel echte sprites in (bijna) zijaanzicht, vooral vliegers en vissen (Yanma, Ninjask, Swellow, Taillow, Wingull, Skarmory, Latias, Magikarp, Wailord); kies wat bij het dier past.
 - **Pose (Jordi, 5 nov, Sapa Inca):** de gekozen referentie-pose letterlijk volgen (hier Empoleon) en nooit een stijve, symmetrische "T-pose" bouwen; ook de vleugels/armen bewegen (gebaar, mantel). Een koning mag swagger tonen. Een model dat Jordi goed vindt niet opnieuw bouwen: aanpassen.
+- **Koning ≠ danser (Jordi, 5 nov):** gespreide slagpennen als vingers lezen als een danser; een koning krijgt gesloten, massieve vleugels (Empoleon-flippers) en rustige, gebiedende gebaren.

@@ -25,8 +25,9 @@ KOP = os.environ.get('KOP', 'A')   # kopvariant (A: donkere snuit, B: lichte roz
 POLSEN = []   # (middelpunt, straal) van handen/voeten: daar niet gladstrijken
 
 KLEUR = {   # lijnkleuren van fase 2 (zoals het poppetje)
-    'fur': '#5E4488', 'mask': '#2E2048', 'moon': '#FFFFFF', 'snuit': '#8C6A9C', 'snuitB': '#B08AA6', 'neus': '#140C1C', 'tip': '#EAD8BE',
-    'healer': '#DCCFF2', 'eye': '#D83C3C', 'pupil': '#1A1020', 'glint': '#FFFFFF', 'blad': '#5E9A4A',
+    # fur: Jordi 5 nov lichter dan fase 2 (#5E4488), minder Oranguru; ogen lichtblauw ("echt een helende kleur")
+    'fur': os.environ.get('FUR', '#7C64AE'), 'mask': '#2E2048', 'moon': '#FFFFFF', 'snuit': '#9C7896', 'snuitB': '#B08AA6', 'neus': '#140C1C', 'tip': '#EAD8BE',
+    'healer': '#DCCFF2', 'eye': '#4FC0EE', 'pupil': '#122040', 'glint': '#FFFFFF', 'blad': '#5E9A4A',
 }
 
 
@@ -131,7 +132,7 @@ def bouw():
     # Jordi: "1 been en staart zitten niet goed smooth vast aan het lichaam": de wortel van elk lid groeit uit de
     # romp (metaball-elementen langs het eerste stuk), zodat er geen naad/insnoering is
     wortels = [((-16, 14, -20), (-14, 38, -26), LIMB + 4), ((-18, -8, 20), (-22, -40, 26), LIMB + 4),
-               ((18, 14, -14), (6, 38, -18), LIMB + 7), ((36, -6, 14), (52, -32, 18), LIMB + 7),
+               ((30, 12, -14), (24, 40, -18), LIMB + 7), ((36, -6, 14), (52, -32, 18), LIMB + 7),
                ((46, 6, 0), (46, -8, 0) + 34 * np.array((math.cos(math.radians(SPIR_YAW)), 0, math.sin(math.radians(SPIR_YAW)))), 7.5)]
     for a, b, r in wortels:
         a, b = np.array(a, float), np.array(b, float)
@@ -148,7 +149,7 @@ def bouw():
     delen.append(h); toppen += [(p, s) for p in t]
     healer_pts = np.array([tuple(v.co) for v in h.data.vertices]) @ C      # handoppervlak (dier), voor de kleurzone
     # verre been omhoog, voet gekruld om een onzichtbare tak
-    delen.append(keten([(18, 14, -14, LIMB + 7), (6, 38, -18, LIMB + 1), (24, 58, -20, LIMB - 2.5)]))
+    delen.append(keten([(30, 12, -14, LIMB + 7), (24, 40, -18, LIMB + 1), (38, 60, -20, LIMB - 2.5)]))   # vanaf de heup (Jordi: niet uit de buik)
     h, t, s = hand_op((24, 58, -20), (0.3, 1, 0), (1, 0, 0), 'voet_greep', 3.7, naam='voet_ver'); delen.append(h); toppen += [(p, s) for p in t]
     # nabije been sleept naar achteren-omlaag, voet ontspannen
     delen.append(keten([(36, -6, 14, LIMB + 7), (52, -32, 18, LIMB + 1), (72, -24, 20, LIMB - 2.5)]))
@@ -173,12 +174,10 @@ def bouw():
     kop_c = Hp(HEAD_C)
     delen.append(ellipsoid(kop_c, (HEAD_R, HEAD_R * 1.02, HEAD_R * 0.98), Rh, 'kop'))
     # muriqui-snuit (foto 1/6): breed, steekt naar voren onder de ogen; B iets groter
-    SN = (9.5, 8.0, 11.5) if KOP == 'A' else (10.5, 8.5, 12.5)
-    snuit_l = HEAD_C + np.array((-0.88, -0.45, 0)) * HEAD_R * 0.86
+    SN = (8.0, 10.5, 6.5)                                # foto 4/5: smalle snuit (±0,37 kopbreedte), steekt ±6 uit
+    snuit_l = HEAD_C + np.array((-0.82 * 0.95, -0.58, 0)) * HEAD_R
     snuit_c = Hp(snuit_l)
     delen.append(ellipsoid(snuit_c, SN, Rh, 'snuit'))
-    for sz in (1, -1):   # kleine ronde oren opzij (fase 2 heeft oortjes)
-        delen.append(ellipsoid(Hp(HEAD_C + np.array((0.15, 0.25, 0.95 * sz)) * HEAD_R), (4.5, 6, 3), Rh, 'oor'))
     # één geheel: samenvoegen, voxel-remesh, glad
     bpy.ops.object.select_all(action='DESELECT')
     for d in delen: d.select_set(True)
@@ -205,7 +204,7 @@ def bouw():
     bpy.ops.object.shade_smooth()
     # kleurzones per vlak (zelfde regels als texfn van het poppetje)
     mats = {k: materiaal(k) for k in KLEUR}
-    zones = ['fur', 'mask', 'moon', 'snuit' if KOP == 'A' else 'snuitB', 'tip', 'healer']
+    zones = ['fur', 'mask', 'moon', 'snuit', 'tip', 'healer']
     for z in zones: lijf.data.materials.append(mats[z])
     me = lijf.data
     P = np.array([tuple(p.center) for p in me.polygons]) @ C          # Blender -> dier (C orthogonaal)
@@ -216,12 +215,16 @@ def bouw():
     cap = lambda lat, r: np.degrees(np.arccos(np.clip(un @ np.array((-math.cos(math.radians(lat)), math.sin(math.radians(lat)), 0)), -1, 1))) < r
     lon = np.degrees(np.arctan2(u[:, 2], -u[:, 0]))
     opkop = np.linalg.norm(u, axis=1) < 1.18
-    mask = opkop & cap(-12.0, 50.0)                    # kaal donker gezicht rond ogen en snuit (foto 1)
+    s_, v_, voor = u[:, 2], u[:, 1], u[:, 0] < 0.15
+    # gezichtsschild (foto 4/5): rechte wenkbrauwlijn op v=+0,29, breed bij de ogen (±0,64), taps naar de snuit (±0,37)
+    half = np.where(v_ > -0.10, 0.64, np.where(v_ > -0.40, 0.64 - (-0.10 - v_) / 0.30 * 0.27, 0.37 - np.clip(-0.80 - v_, 0, 1) * 0.6))
+    half = np.where(v_ > 0.12, half * np.sqrt(np.clip(1 - ((v_ - 0.12) / 0.22) ** 2, 0, 1)) ** 0.35, half)   # ronde bovenhoeken
+    mask = opkop & voor & (v_ < 0.29) & (v_ > -0.98) & (np.abs(s_) < half)
     idx[mask] = 1
     # witte sikkel van fase 2 op het voorhoofd, punten omlaag langs het masker (geen helm rondom)
-    idx[opkop & cap(32.0, 62.0) & ~cap(4.0, 44.0) & ~mask & (np.abs(lon) < 85)] = 2
+    idx[opkop & voor & ~mask & (s_ ** 2 + (v_ - 0.20) ** 2 < 0.62 ** 2) & (s_ ** 2 + (v_ - 0.05) ** 2 > 0.58 ** 2) & (v_ > 0.36)] = 2   # kleine ∩-sikkel op het voorhoofd (fase 2), niet tot de rand
     sl = ((P - snuit_c) @ Rh) / np.array(SN)
-    idx[(np.linalg.norm(sl, axis=1) < 1.12) & (np.linalg.norm(u, axis=1) > 1.02)] = 3   # alleen het deel dat uitsteekt
+    idx[(np.linalg.norm(sl, axis=1) < 1.12) & (np.linalg.norm(u, axis=1) > 1.02) & (sl[:, 1] > 0.05)] = 3   # neusrug tot bovenlip; mond/kin donker (foto 5)
     for p, s in toppen:   # laatste kootjes crème (vingertoppen, zoals fase 2)
         q = np.asarray(C.T @ np.array(tuple(p)))
         pass   # crème toppen weg (keuring r2); zone blijft bestaan voor later
@@ -244,19 +247,17 @@ def bouw():
     me.update()
     # ogen: rode Espurr-ringogen met pupil en glans (fase 2), los object op het masker
     for sz in (1, -1):
-        d = np.array((-0.88, 0.16, 0.42 * sz)); d /= np.linalg.norm(d)
-        e = HEAD_C + d * HEAD_R * 0.90
-        for k, (pos, r) in {'eye': (e, 3.6), 'pupil': (e + d * 1.7, 2.0), 'glint': (e + d * 2.8 + np.array((0, 0.6, -0.5 * sz)), 0.7)}.items():
+        d = np.array((-math.sqrt(1 - 0.32 ** 2 - 0.08 ** 2), 0.08, 0.32 * sz))
+        e = HEAD_C + d * HEAD_R * 0.93
+        for k, (pos, r) in {'eye': (e, 3.4), 'pupil': (e + d * 1.3, 2.3), 'glint': (e + d * 2.8 + np.array((0, 0.6, -0.5 * sz)), 0.7)}.items():
             o = ellipsoid(Hp(pos), (r, r, r), naam=f'{k}_{sz}', seg=24); o.data.materials.append(mats[k]); bpy.ops.object.shade_smooth()
-        # vlak bovenlid (fase 2), binnenhoek lager = sinister; in maskerkleur over de bovenkant van het oog
-        o = ellipsoid(Hp(e + d * 1.0 + np.array((0, 2.6, 0))), (2.8, 2.0, 4.8), Rh @ rot_y(math.radians(-24 * sz)) @ rot_x(math.radians(16 * sz)), f'lid_{sz}', seg=24)
-        o.data.materials.append(mats['mask']); bpy.ops.object.shade_smooth()
+        # geen bovenlid: Jordi 5 nov: slaperige ogen lezen als Oranguru; ronde, wakkere muriqui-ogen
         # neusgat
-        n = snuit_l + np.array((-SN[0] * 0.92, SN[1] * 0.36, 2.6 * sz))   # op het oppervlak van de snuit
-        o = ellipsoid(Hp(n), (1.2, 1.0, 1.4), Rh, f'neusgat_{sz}', seg=16); o.data.materials.append(mats['neus'])
+        n = snuit_l + np.array((-SN[0] * 0.80, SN[1] * 0.50, 1.7 * sz))   # neusgaten bovenaan de snuit   # op het oppervlak van de snuit
+        o = ellipsoid(Hp(n), (1.0, 1.2, 0.9), Rh, f'neusgat_{sz}', seg=16); o.data.materials.append(mats['neus'])
     # mondlijn onder de neus
-    for zz in np.linspace(-5.5, 5.5, 23):   # mondlijn als boogje over het snuitoppervlak
-        yy = -SN[1] * (0.42 - 0.12 * (zz / 5.5) ** 2)
+    for zz in np.linspace(-3.6, 3.6, 15):   # mondlijn als boogje over het snuitoppervlak
+        yy = -SN[1] * 0.44   # rechte, neutrale mond (Jordi: "neutraal, geen glimlachje")
         xx = -SN[0] * math.sqrt(max(0.0, 1 - (yy / SN[1]) ** 2 - (zz / SN[2]) ** 2))
         o = ellipsoid(Hp(snuit_l + np.array((xx, yy, zz))), (0.55, 0.55, 0.55), naam='mond', seg=12)
         o.data.materials.append(mats['neus'])
@@ -322,7 +323,12 @@ def scene(res=720):
 if __name__ == '__main__':
     bouw()
     sc = scene(int(sys.argv[1]) if len(sys.argv) > 1 else 720)
-    sc.render.filepath = os.path.join(HIER, 'render_muriqui.png')
+    sc.render.filepath = os.path.join(HIER, os.environ.get('UIT', 'render_muriqui') + '.png')
     bpy.ops.render.render(write_still=True)
+    for o in bpy.data.objects:
+        if o.name.startswith('blad'): o.hide_render = True
+    sc.render.filepath = os.path.join(HIER, 'render_muriqui_zonder_blad.png')
+    bpy.ops.render.render(write_still=True)
+    for o in bpy.data.objects: o.hide_render = False
     bpy.ops.wm.save_as_mainfile(filepath=os.path.join(HIER, 'muriqui.blend'), compress=True)
     print('KLAAR')

@@ -44,6 +44,11 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Opdrachten aan agents altijd met `
 - 3 nov: "de healerhand mag best lichter zijn" / "leuk idee zelfs" / "randje van de pols mag de lichaamskleur" → **healerhand maanzilver** (`#E4DDF0`), pols en arm lichaamskleur.
 - 3 nov: "1 been en staart zitten niet goed smooth vast aan het lichaam" → wortels als metaball-elementen in de romp (opgelost in de render van 3 nov).
 
+- 5 nov: "ik vind het hoofd nog totaal niet lijken op het bronmateriaal" / "de bovenste achterpoot ... komt min of meer uit zijn buik" / "ik twijfel of we in een sprite én de krul in de staart én een takje met bladeren eraan goed zichtbaar kunnen maken" → kop opnieuw naar foto 4/5 (gezichtsschild met rechte wenkbrauwlijn, ogen dicht bij elkaar, smalle snuit met neusgaten bovenaan, donkere kin, geen oren), been vanaf de heup. Bladeren: open (A alleen spiraal, B staartpunt wordt een blad (varenkrul, voorkeur Claude), C één blad in de krul).
+- 5 nov: "de mond moet ook neutraal zijn, geen glimlachje" → rechte mond. "ik vind het nu veel meer op oranguru lijken" / "ligt wss aan de slaperige ogen, dat hoeft niet" → geen bovenlid. "we maken de ogen lichtblauw, echt een helende kleur" → ogen lichtblauw (rood vervalt). "de paarstint is teveel oranguru ... iets lichter" → tinten T1 #7C64AE / T2 #7276BE ter keuze.
+- 5 nov: "de voeten nog steeds lelijk" → eigen voetvorm nodig (brede zool, korte tenen, Infernape/Ambipom), niet de handgenerator.
+- 5 nov, methodiek: "je bent al een half uur bezig met deze hele minimale wijzigingen? Dat is geen efficiente manier van werken" → vorm en kleur scheiden (vorm één keer bouwen, kleur = materiaalwissel + snelle render), ontwerpvragen eerst bespreken, per ronde één vel.
+
 ## 3D-poppetje
 - `pop3d/muriqui3d.py` (renderer `pop3d/pop3d.py`, kopie van fase 2). Kleuren alleen ter oriëntatie (lijnkleuren van fase 2).
 - Raster `pop3d/hoeken.png` (P1, afgekeurd). Raster `pop3d/poses.png`: 'benen omhoog' (lijf 30/40/50°) naast kleermakerszit, zweven en in vlucht (voorbij).

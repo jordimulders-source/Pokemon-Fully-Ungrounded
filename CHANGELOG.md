@@ -560,3 +560,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.139] - Les: changelog na main nummeren
 - `docs/lessen/AGENTS.md`: vóór het pushen naar `main` eerst `main` mergen en de eigen changelogsecties achteraan nummeren (Jordi).
+
+### [v0.0.140] - Hitmontop: evolutie in plaats van regional form
+- Jordi: Hitmontops Japanse naam is al capoeira, dus geen regional form maar alleen een nieuwe capoeira-evolutie. Eerst puur ontwerp. Drie richtingen (mestre/bananeira, Besouro-kever/armada, malandro/negativa) in `docs/concept/IDEEEN.md`; POKEMON.md en DEX_NOMINATIES bijgewerkt (dubbele Hitmontop-regel in POKEMON.md weg).

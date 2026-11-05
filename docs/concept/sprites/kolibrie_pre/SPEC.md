@@ -131,3 +131,4 @@
 - **Jordi: "het moeten wel echt kleine pootjes zijn he"** → keurder toetst ook het formaat van de pootjes.
 - **Jordi: "waar je nu mee bezig bent is prima alleen er moet iets meer een hoek in, ze kunnen niet zomaar naast elkaar"** → pootjes in perspectief: verre poot hoger en iets naar achter, deels achter de nabije.
 - **Keuring r8:** TERUG, 2 FAILs (hoek linker buik (19,28); pootjes te groot/zonder perspectief), vleugelschaduw PASS; reparatie 42 px → maker r9.
+- **Kleur r9:** `blender/A/kleur_r9/` = r8 + exact de 44 px uit keuring r8 (buik één boog, kleine pootjes in perspectief). Eindvel `kleur_r9/eind_vel.png`. Wacht op Jordi.

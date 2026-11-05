@@ -98,3 +98,10 @@ Nieuwe aanpak (Jordi: "waarom ben je al uren bezig met een fucking snavel nabouw
 - Oog: puur zwart, alleen de donkere lijn, geen lichte rand (Jordi).
 - Kleur C2, één schaduwtoon (sikkel rechtsonder), korte schorsstreepjes, borstelveertjes voor het oog.
 Open: de kop staat in de 3/4-zijhoek van de illustratie, niet in de 3/4-voorhoek van de leidraad; daardoor is de muil smaller dan op de leidraad (daar even breed als de kop). Een 2D-kop over de leidraadfoto (paneel b) is daarom niet gemaakt; paneel b toont alleen de nieuwe overtrek.
+
+# Ronde 7 (vel_ronde7.png, pop2d_potoo_r7.py)
+- Kop + muil + snavel = overtrek van de leidraad (`L_HEAD`, `L_GAPE`, `L_NEAR`, `L_FAR`, `L_JAWOUT`, oog), gespiegeld; paneel (b) legt de 2D-kop met dezelfde lijnen over de foto.
+- Bovensnavel `L_BILL`: één vorm (basis tussen de veren boven de gaplijn, rug, haak als einde), 1,15× (Pokémon-stap), kleurverloop lichtgrijs → donker.
+- Kop op het lijf: kopschaal 0,60, achterhoofd/kruin op die van de illustratie, geen nek; kop+kaak ±37% van de hoogte. Lijf 1,25× breder dan de illustratie, staart lang.
+- Oog puur zwart (1,08× van de foto), alleen de donkere lijn.
+Open: het lijf leest nog als een lange taps toelopende zak (de illustratie is slank, de vleugel ligt als één groot vlak), de muilkleur is in ringen getrapt, de borstelveertjes lezen als snorharen, en op 64 px valt de haak weg.

@@ -62,3 +62,11 @@ Op de 10 punten van de keurder:
 8. Vier getrapte slagpennen langs de staart; staart lang, smal, versmallend in het verlengde van het lijf.
 9. Schors als korte gerichte vegen op vleugel, flank en kruin; haakje en kaakpunt de donkerste accenten.
 10. Omtrek licht onregelmatig door veerplukjes langs kruin, wangen en borst (zoals de lama-wol).
+
+# Ronde 4 (vel_ronde4.png)
+Basis = ronde 3 (bewaard: `pop3d_potoo_ronde3.py`, `vel_ronde3.png` ongewijzigd). Alleen Jordi's vijf punten:
+1. Geen bol hoofd: koepel breder en vlakker (5,6 × 3,25 × 5,5) + een tweede, lager 'gezicht' (`Ef`) dat zonder knik doorloopt naar de snavel.
+2. Kaak verder naar voren: minder ver open (66° → 50°) en langer (punt −5,8 → −6,6), zodat de punt vóór het gezicht steekt in plaats van recht omlaag.
+3. Ogen hoger: ruimte tot de mondrand 0,7 → 1,0 r_e; ogen iets meer uitbollend; ooglid volgt.
+4. Bovensnavel: de lijn tussen gezicht en rand is weg (rand/hoorn niet meer omlijnd, dus geen naad); snavelvoorkant stomper (boog 62° → 70°, iets verder naar voren); haakje kleiner en stomp omlaag gekruld; veertjes erboven liggen platter.
+5. Minder pacman: de donkere keelspleet in de kaakbodem (las als hoektand) is weg; keelholte lichter (geen donker gat), alleen een klein V-spleetje achterin; kaakpunt kleiner donker.

@@ -20,10 +20,10 @@ LINE = np.array((40, 34, 54), np.uint8)
 COL = {
     'fur': '#F1EFF6', 'jawfur': '#F1EFF6', 'wing': '#E1DDEB', 'far': '#CFCADC', 'tail': '#D9D4E4', 'bark': '#A99FB8',
     'eye': '#09080D', 'lid': '#D3CCE2', 'rim': '#E4DFEE', 'horn': '#8F84A3', 'hook': '#3A3346', 'tip': '#4A4259',
-    'mouth': '#8E7EE8', 'mouth2': '#5D4EC0', 'palate': '#6A5BCB', 'throat': '#231B52', 'brow': '#A79CBE',
+    'mouth': '#8E7EE8', 'mouth2': '#6F60CF', 'palate': '#6A5BCB', 'throat': '#231B52', 'brow': '#A79CBE',
 }
 NOSHADE = {'eye', 'throat'}
-LINED = {'eye', 'lid', 'hook', 'rim', 'horn', 'tip', 'throat'}
+LINED = {'eye', 'lid', 'hook', 'tip', 'throat'}
 GROUPS = list(COL)
 
 
@@ -177,7 +177,7 @@ def render(solids, yaw, pitch, scale, center, res=R):
     img = Image.fromarray(np.where(bar, 0, 255).astype(np.uint8)).copy()
     ImageDraw.floodfill(img, (0, 0), 128)
     hole = np.array(img) == 255
-    gid[hole] = GROUPS.index('throat')
+    gid[hole] = GROUPS.index('mouth2')
     return zbuf, gid, nrm
 
 
@@ -212,17 +212,17 @@ def shade(zbuf, gid, nrm, out=256, res=R, thr=1.1, dil=2, sil=7):
 
 # ---------------------------------------------------------------- het dier
 P0 = dict(
-    open_deg=66,       # hoe ver de onderkaak hangt
+    open_deg=50,       # hoe ver de onderkaak hangt
     eye_r=1.15,        # oogstraal (Pokémon: iets groter dan 1)
-    eye_gap=0.7,       # ruimte tussen oog en bovenrand, in oogstralen (foto's: ±½)
+    eye_gap=1.0,       # ruimte tussen oog en bovenrand, in oogstralen (foto's: ±½)
     eye_z=3.7,         # ogen naar voren, ±1 oogdiameter uit elkaar (nachtfoto)
     lean=12,           # voorover hangen
     body_k=0.85,       # lijf kleiner t.o.v. de kop (Pokémon)
     head_pitch=6,      # kop iets voorover: bovenrand daalt naar het haakje (close-up)
     xh=1.6, yh=-2.3,   # scharnier = mondhoek, op de breedste plek van de kop (muil zo breed als de kop)
-    tip=-4.2,          # voorkant bovensnavel (basis van het haakje)
-    half=62,           # bovenrand van boven gezien: brede boog naar het haakje
-    jaw_tip=-5.8,      # punt van de onderkaak: diepe schep (±6-7 r_e onder de gaplijn als hij hangt)
+    tip=-4.8,          # voorkant bovensnavel (basis van het haakje)
+    half=70,           # bovenrand van boven gezien: brede boog naar het haakje
+    jaw_tip=-6.6,      # punt van de onderkaak: diepe schep (±6-7 r_e onder de gaplijn als hij hangt)
     half_jaw=64,       # kaakpunt van boven gezien
 )
 
@@ -290,8 +290,9 @@ def potoo(**kw):
     below = H((tg, 1, 0), yh + tg * xh)
     # --- kop: brede, lage koepel; het breedst vlak boven de gaplijn (mondhoeken op de omtrek), voorhoofd in één
     #     bolle bocht naar het haakje; de kruin ligt naar achteren (close-up)
-    Ed = E((1.6, -1.5, 0), (5.4, 3.6, 5.2))
-    zc = 5.2 * math.sqrt(1 - ((yh + 1.5) / 3.6) ** 2) - 0.08
+    Ed = E((1.8, -1.5, 0), (5.6, 3.25, 5.5))                 # ronde 4: breder en vlakker, geen bol
+    Ef = E((-0.6, -1.7, 0), (4.6, 2.7, 4.8))                 # ronde 4: gezicht loopt zonder naad door in de bovensnavel
+    zc = 5.5 * math.sqrt(1 - ((yh + 1.5) / 3.25) ** 2) - 0.08
     L = lambda k=0.0: lens(tip, (xh, zc), p['half'], 0.0, 60.0, yh, k)
 
     def paint_upper(T, P):
@@ -310,6 +311,11 @@ def potoo(**kw):
         g[(kv == 'bark') & (g == 'fur')] = 'bark'
         return list(g)
     S.append(Solid([Ed, above] + L(), 'fur', paint=paint_upper))
+    S.append(Solid([Ef, above] + L(), 'fur', paint=paint_upper))
+
+    def surf2(o, d):
+        qs = [on_surf(Eb, o, d) for Eb in (Ed, Ef)]
+        return max(qs, key=lambda qn: (qn[0] - o) @ d)
 
     # --- ogen: naar voren, binnen de kopomtrek, ±1 oogdiameter uit elkaar, ½ oogstraal boven de rand;
     #     smal licht ooglidrandje, geen glans
@@ -319,17 +325,17 @@ def potoo(**kw):
         x = -2.5
         for _ in range(4):
             ye = gy(x) + (1 + p['eye_gap']) * er
-            q, nn = on_surf(Ed, np.array((2.0, ye, p['eye_z'] * sz)), np.array((-1.0, 0, 0)))
+            q, nn = surf2(np.array((2.0, ye, p['eye_z'] * sz)), np.array((-1.0, 0, 0)))
             x = q[0]
-        e = q - nn * 0.38 * er
+        e = q - nn * 0.22 * er
         eyes.append(e)
-        S.append(Solid([E(q - nn * 0.95 * er, er * 1.22)], 'lid'))
+        S.append(Solid([E(q - nn * 0.8 * er, er * 1.22)], 'lid'))
         S.append(Solid([E(e, er)], 'eye'))
 
     # --- veertjes tussen de ogen: donkerdere plukjes boven het haakje die de omtrek breken (close-up)
-    for zz, yo, a, lift in ((0.0, 1.0, 1.35, 38), (0.65, 1.25, 1.2, 32), (-0.65, 1.25, 1.2, 32), (0.0, 2.0, 1.25, 30),
-                            (1.15, 1.9, 1.05, 26), (-1.15, 1.9, 1.05, 26)):
-        q, nn = on_surf(Ed, np.array((2.0, gy(tip) + yo, zz)), np.array((-1.0, 0, 0)))
+    for zz, yo, a, lift in ((0.0, 1.5, 1.2, 22), (0.65, 1.75, 1.1, 18), (-0.65, 1.75, 1.1, 18), (0.0, 2.4, 1.15, 16),
+                            (1.15, 2.3, 1.0, 14), (-1.15, 2.3, 1.0, 14)):
+        q, nn = surf2(np.array((2.0, gy(tip) + yo, zz)), np.array((-1.0, 0, 0)))
         fl = np.array((-0.6, -1.0, 0.25 * zz)); fl -= nn * (fl @ nn); fl /= np.linalg.norm(fl)
         ax = fl * math.cos(math.radians(lift)) + nn * math.sin(math.radians(lift))
         S.append(Solid(leaf(q + ax * a * 0.55 - nn * 0.1, ax, np.cross(nn, ax), a * 1.2, 0.5, 0.36), 'brow'))
@@ -344,28 +350,28 @@ def potoo(**kw):
           lift=14, sink=0.32, keep=lambda q: q[0] > -1.2 and q[1] > gy(q[0]) + 1.0)
     # --- haakje: duidelijk, donker, omgekruld (±1,5 r_e), het voorste punt van het profiel, hangt vóór de muil
     g0 = gy(tip)
-    hk = [(tip + 0.9, g0 + 0.85, 0.5), (tip + 0.1, g0 + 0.7, 0.5), (tip - 0.55, g0 + 0.25, 0.45), (tip - 0.8, g0 - 0.35, 0.38),
-          (tip - 0.7, g0 - 0.95, 0.3), (tip - 0.35, g0 - 1.4, 0.2), (tip + 0.0, g0 - 1.55, 0.12)]
+    hk = [(tip + 0.8, g0 + 0.6, 0.42), (tip + 0.15, g0 + 0.45, 0.4), (tip - 0.25, g0 + 0.05, 0.34),   # ronde 4: klein, stomp, omlaag gekruld
+          (tip - 0.2, g0 - 0.45, 0.26), (tip + 0.1, g0 - 0.75, 0.16)]
     for (x0, y0, r0), (x1, y1, r1) in zip(hk, hk[1:]):
         for t in np.linspace(0, 1, 5):
             S.append(Solid([E((x0 + (x1 - x0) * t, y0 + (y1 - y0) * t, 0), (r0 + (r1 - r0) * t) * np.array((1, 1, 0.8)))], 'hook'))
 
     # --- onderkaak: diepe schep met eigen bevederde buitenkant, opengeklapt om de mondhoeken
     tj = p['jaw_tip']
-    Ej = E((0.6, yh, 0), (7.4, 3.0, zc / math.sqrt(1 - ((xh - 0.6) / 7.4) ** 2)))
+    Ej = E((0.2, yh, 0), (7.8, 3.0, zc / math.sqrt(1 - ((xh - 0.2) / 7.8) ** 2)))
     Lj = lambda k=0.0: lens(tj, (xh, zc), p['half_jaw'], 0.0, 60.0, yh, k, sag=(3.0, 2.0))
     inner = E(Ej[1] + np.array((-0.4, 0.35, 0)), Ej[2] - np.array((0.0, 0.5, 0.45)))
 
     def paint_jaw(T, P):
         g = np.array(['jawfur'] * len(T), object)                       # eigen bevederde buitenkant (met omtrek)
         g[T == 1] = 'rim'                                                # dunne lichte kaakrand
-        g[(P[:, 0] < tj + 1.1) & (T < 100)] = 'tip'                      # spitse donkere kaakpunt
+        g[(P[:, 0] < tj + 0.8) & (T < 100)] = 'tip'                      # spitse donkere kaakpunt
         cav = T >= 100
         deep = gy(P[:, 0]) - P[:, 1]
         g[cav] = 'mouth'                                                 # licht bij de rand
         g[cav & ((deep > 1.4) | (P[:, 0] > xh - 1.2))] = 'mouth2'      # donkerder naar de bodem en de keel
         tt = (P[:, 0] - (xh - 4.6)) / 3.0
-        g[cav & (deep > 0.3) & (tt > -0.25) & (tt < 0.75) & (np.abs(P[:, 2]) < 0.45 * np.clip((tt + 0.25) / 0.9, 0, 1))] = 'throat'  # keelspleet
+        # ronde 4: geen keelspleet meer in de kaakbodem (las als hoektand); alleen een klein V-spleetje achterin
         g[T == 2] = 'mouth2'
         return list(g)
     jaw = Solid([Ej, below, H((1, 0, 0), xh)] + Lj(), 'fur', cavs=[[inner] + Lj(0.45)], paint=paint_jaw)
@@ -378,8 +384,8 @@ def potoo(**kw):
     def paint_cheek(T, P):
         g = np.array(['fur'] * len(T), object)
         g[T >= 100] = 'mouth2'
-        yy = (P[:, 1] - (yh - 3.6)) / 3.0                                 # smalle V-spleet achter in de keel (close-up)
-        g[(T >= 100) & (P[:, 0] > xh + 1.0) & (yy > 0) & (yy < 1) & (np.abs(P[:, 2]) < 0.5 * yy)] = 'throat'
+        yy = (P[:, 1] - (yh - 2.2)) / 1.4                                 # smalle V-spleet achter in de keel (close-up)
+        g[(T >= 100) & (P[:, 0] > xh + 1.0) & (yy > 0) & (yy < 1) & (np.abs(P[:, 2]) < 0.3 * yy)] = 'throat'
         return list(g)
     for Eb in (Ed, E((3.0, -4.3, 0), (3.6, 3.0, 4.9))):
         S.append(Solid([Eb, below, H((-1, 0, 0), -xh)], 'fur', cavs=[[gul, below]], paint=paint_cheek))
@@ -559,7 +565,7 @@ def traced_photo(key, box, size):
     return im
 
 
-def vel(naam='vel_ronde3.png', titel='ronde 3', **kw):
+def vel(naam='vel_ronde4.png', titel='ronde 4', **kw):
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 17)
     m = potoo(**kw)
@@ -575,7 +581,12 @@ def vel(naam='vel_ronde3.png', titel='ronde 3', **kw):
     ld = Image.open(os.path.join(REF, 'jordi_great_potoo_bek_open_duo.webp')).convert('RGB').crop((80, 80, 580, 580)).resize((330, 330))
     im.paste(ld.transpose(Image.FLIP_LEFT_RIGHT), (780, 50)); lab(784, 384, 'leidraad (duo links), gespiegeld')
     sm = view(m, SY, SP, out=400).resize((64, 64), Image.LANCZOS)
-    im.paste(sm, (1140, 150)); im.paste(sm.resize((128, 128), Image.NEAREST), (1210, 150)); lab(1130, 284, '1x (64 px) en 2x')
+    im.paste(sm, (1140, 130)); im.paste(sm.resize((96, 96), Image.NEAREST), (1215, 120)); lab(1130, 222, '1x (64 px) en 2x')
+    try:
+        r3 = Image.open(os.path.join(HERE, 'vel_ronde3.png')).crop((10, 34, 410, 434)).resize((150, 150), Image.LANCZOS)
+        im.paste(r3, (1150, 300)); lab(1150, 284, 'ronde 3 (ter vergelijking)')
+    except FileNotFoundError:
+        pass
     lab(1130, 60, 'Lees de rij hieronder:')
     lab(1130, 80, 'kop op dezelfde hoek en')
     lab(1130, 100, 'grootte als de foto.')

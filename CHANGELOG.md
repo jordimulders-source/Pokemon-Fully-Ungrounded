@@ -210,3 +210,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.70] - Nachtaap fase 3: draaistanden rugbanden
 - Ronde 7 (`docs/concept/sprites/nachtaap_fase3/rugpatroon/ronde7/`): de banden van ronde 6 tegen de klok in gedraaid in vier standen, 0°, 8°, 15° en 22°, zodat Jordi kan kiezen. Bij 30° kwamen er trappetjes in de banden; die stand is geschrapt.
+
+### [v0.0.71] - Nachtaap fase 3: frontsprite in af/, linkeroog ter keuze
+- Jordi koos stand D (22°) voor de rugbanden. `docs/concept/sprites/nachtaap_fase3/af/` bevat de frontsprite, het palet, het vergelijkingsvel en EINDKEURING.md.
+- Eindkeuring: GOED. Geen harde fouten; de wijzigingen ten opzichte van het bevroren lijf zitten alleen in de rugzone.
+- Linkeroog: drie opties in `af/oog/` (A, B, C). Het oog mist nu de glans en leest dof.

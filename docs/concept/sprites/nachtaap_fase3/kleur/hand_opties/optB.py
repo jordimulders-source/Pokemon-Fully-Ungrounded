@@ -1,19 +1,18 @@
 from kijk import *
-B = {
- 47: [(13, 'oo')],
- 48: [(12, 'oWWo'), (18, 'oo')],
- 49: [(8, 'oo'), (12, 'oWlo'), (17, 'oWWo')],
- 50: [(7, 'oWWo'), (12, 'ollo'), (17, 'oWloo')],
- 51: [(7, 'oWlo'), (12, 'ollmolloWlk')],
- 52: [(8, 'ollomllolloWlk')],
- 53: [(6, 'oo'), (9, 'ollollollollk')],
- 54: [(5, 'oWlolllmllllllmlmk')],
- 55: [(5, 'ollmllWWllllllmmk')],
- 56: [(6, 'oWWmllllllllmmk')],
- 57: [(6, 'olWlmllllllmmmk')],
- 58: [(7, 'ollmlllmmmmmoo')],
- 59: [(8, 'kkkkkkmmmoo')],
- 60: [(14, 'kkkk')],
-}
+from optA import G
+import copy
+# als C (+2), maar zachte scheiding (middentoon) waar de vingers elkaar raken, Drowzee-palm (licht boven, schaduw onder)
+D = copy.deepcopy(G)
+D[49] = [(7, 'oo'), (12, 'oWlo'), (17, 'oWWo')]
+D[50] = [(6, 'oWWo'), (12, 'oWlo'), (17, 'oWlo')]
+D[52] = [(7, 'oWlo'), (12, 'ollmmllooo')]
+D[53] = [(8, 'ollmmllmllmoWlk')]
+D[54] = [(9, 'ollmllmllmllk')]
+D[55] = [(4, 'ooo'), (8, 'oWlllWllllllmk')]
+D[56] = [(3, 'oWWlomWWWllllllllmk')]
+D[57] = [(3, 'olllWWmllllllmmmmk')]
+D[58] = [(4, 'oolWWlmllmmmmmmmk')]
+D[59] = [(6, 'olllmmmmmmmmmmk')]
+D[60] = [(7, 'ommmmmmmmmmmoo')]
 if __name__ == '__main__':
-    a = bouw(ras(B)); controle(a, 'B'); kijk(a, 'B'); save(a, 'optie_B.png')
+    a = bouw(ras(D), groot=True); controle(a, 'B', groot=True); kijk(a, 'B'); save(a, 'optie_B.png')

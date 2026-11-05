@@ -70,3 +70,9 @@ Basis = ronde 3 (bewaard: `pop3d_potoo_ronde3.py`, `vel_ronde3.png` ongewijzigd)
 3. Ogen hoger: ruimte tot de mondrand 0,7 → 1,0 r_e; ogen iets meer uitbollend; ooglid volgt.
 4. Bovensnavel: de lijn tussen gezicht en rand is weg (rand/hoorn niet meer omlijnd, dus geen naad); snavelvoorkant stomper (boog 62° → 70°, iets verder naar voren); haakje kleiner en stomp omlaag gekruld; veertjes erboven liggen platter.
 5. Minder pacman: de donkere keelspleet in de kaakbodem (las als hoektand) is weg; keelholte lichter (geen donker gat), alleen een klein V-spleetje achterin; kaakpunt kleiner donker.
+
+# Ronde 4b (vel_ronde4b.png)
+Alleen punt 5 (pacman); ronde 4 bewaard als `pop3d_potoo_ronde4.py` (+ `vel_ronde4.png`).
+- Bovensnavel = eigen hoornvlak (`beak` #B8AFB8, snijrand `beak2` #9A919E) op de onderrand van het gezicht: ±1 r_e hoog bij de mondhoek, hoger naar het haakje; geen omlijning, dus geen naad met het voorhoofd. In de spritehoek ligt hij als grijze band tussen oog en muil.
+- Onderkaak: buitenkant iets donkerder (`jawfur` #D9D3E3) met omtrek en dunne lichte rand.
+- Binnenkant met diepte: licht roze-paars bij de rand en naar de punt (`mouth`), middentoon (`mouth1`), donkerder achterin naar de keel (`mouth2`).

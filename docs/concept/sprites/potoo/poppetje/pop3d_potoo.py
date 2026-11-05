@@ -18,9 +18,9 @@ REF = os.path.join(HERE, '../referenties')
 R = 768
 LINE = np.array((40, 34, 54), np.uint8)
 COL = {
-    'fur': '#F1EFF6', 'jawfur': '#F1EFF6', 'wing': '#E1DDEB', 'far': '#CFCADC', 'tail': '#D9D4E4', 'bark': '#A99FB8',
+    'fur': '#F1EFF6', 'jawfur': '#D9D3E3', 'beak': '#B8AFB8', 'beak2': '#9A919E', 'wing': '#E1DDEB', 'far': '#CFCADC', 'tail': '#D9D4E4', 'bark': '#A99FB8',
     'eye': '#09080D', 'lid': '#D3CCE2', 'rim': '#E4DFEE', 'horn': '#8F84A3', 'hook': '#3A3346', 'tip': '#4A4259',
-    'mouth': '#8E7EE8', 'mouth2': '#6F60CF', 'palate': '#6A5BCB', 'throat': '#231B52', 'brow': '#A79CBE',
+    'mouth': '#C6B4F0', 'mouth1': '#9C88E6', 'mouth2': '#6E5CCB', 'palate': '#A895E8', 'throat': '#231B52', 'brow': '#A79CBE',
 }
 NOSHADE = {'eye', 'throat'}
 LINED = {'eye', 'lid', 'hook', 'tip', 'throat'}
@@ -173,7 +173,7 @@ def render(solids, yaw, pitch, scale, center, res=R):
         gid[y0:y1, x0:x1][win] = [GROUPS.index(x) for x in g]
     # wat binnen de mondrand ligt maar geen mondwand is (een stukje wang/borst diep in de keel), is keelholte:
     # zo staat er nooit vacht ín de muil en nooit mondkleur buiten de rand
-    bar = np.isin(gid, [GROUPS.index(x) for x in ('mouth', 'mouth2', 'palate', 'throat', 'rim', 'horn', 'hook', 'tip', 'brow', 'eye', 'lid')])
+    bar = np.isin(gid, [GROUPS.index(x) for x in ('mouth', 'mouth1', 'mouth2', 'beak', 'beak2', 'palate', 'throat', 'rim', 'horn', 'hook', 'tip', 'brow', 'eye', 'lid')])
     img = Image.fromarray(np.where(bar, 0, 255).astype(np.uint8)).copy()
     ImageDraw.floodfill(img, (0, 0), 128)
     hole = np.array(img) == 255
@@ -300,12 +300,16 @@ def potoo(**kw):
         h = P[:, 1] - gy(P[:, 0])
         f = np.clip((xh - P[:, 0]) / (xh - tip), 0, 1)
         band = (h < 0.2 + 0.4 * f ** 2) & (P[:, 0] < xh + 0.3)
-        g[band] = 'rim'                                                  # de onderrand van het gezicht zelf
-        g[band & (f > 0.72) & (np.abs(P[:, 2]) < 0.4 + 2.2 * (1 - f))] = 'horn'   # bovensnavelpunt: hoorn, rond het haakje                                    # naar voren dikker en donkerder (hoorn)
+        # ronde 4b: bovensnavel als eigen hoornvlak: smalle wig aan de voorkant van het gezicht, van de mondhoek
+        # (dun) naar voren (hoger), stomp; loopt zonder lijn over in het voorhoofd
+        bk = (h < 0.95 + 0.5 * f + 0.9 * f ** 3 * np.clip(1 - np.abs(P[:, 2]) / 3.0, 0, 1)) & (P[:, 0] < xh + 0.3) & (T != 1)
+        g[bk] = 'beak'
+        g[bk & (h < 0.2 + 0.15 * f)] = 'beak2'                          # snijrand iets donkerder: harde rand
+
         pal = T == 1
         for c in L(0.4):
             pal &= ((((P - c[1]) @ c[3]) / c[2]) ** 2).sum(1) < 1
-        g[(T == 1) & ~pal] = 'rim'
+        g[(T == 1) & ~pal] = 'beak2'
         g[pal] = 'palate'
         kv = np.array(streaks('fur', [((3.6, 1.4), (5.2, -0.4), 0.22, 0), ((2.2, 2.2), (3.4, 1.4), 0.18, 0)])(T, P), object)
         g[(kv == 'bark') & (g == 'fur')] = 'bark'
@@ -368,8 +372,11 @@ def potoo(**kw):
         g[(P[:, 0] < tj + 0.8) & (T < 100)] = 'tip'                      # spitse donkere kaakpunt
         cav = T >= 100
         deep = gy(P[:, 0]) - P[:, 1]
-        g[cav] = 'mouth'                                                 # licht bij de rand
-        g[cav & ((deep > 1.4) | (P[:, 0] > xh - 1.2))] = 'mouth2'      # donkerder naar de bodem en de keel
+        # ronde 4b: kom met diepte: licht bij de rand en naar de punt, donkerder naar de keel achterin
+        back = (P[:, 0] - tj) / (xh - tj)                                # 0 = punt, 1 = keel
+        g[cav] = 'mouth'
+        g[cav & ((deep > 0.9) | (back > 0.45))] = 'mouth1'
+        g[cav & (deep > 1.6) & (back > 0.6)] = 'mouth2'
         tt = (P[:, 0] - (xh - 4.6)) / 3.0
         # ronde 4: geen keelspleet meer in de kaakbodem (las als hoektand); alleen een klein V-spleetje achterin
         g[T == 2] = 'mouth2'
@@ -565,7 +572,7 @@ def traced_photo(key, box, size):
     return im
 
 
-def vel(naam='vel_ronde4.png', titel='ronde 4', **kw):
+def vel(naam='vel_ronde4b.png', titel='ronde 4b', **kw):
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 17)
     m = potoo(**kw)
@@ -583,8 +590,8 @@ def vel(naam='vel_ronde4.png', titel='ronde 4', **kw):
     sm = view(m, SY, SP, out=400).resize((64, 64), Image.LANCZOS)
     im.paste(sm, (1140, 130)); im.paste(sm.resize((96, 96), Image.NEAREST), (1215, 120)); lab(1130, 222, '1x (64 px) en 2x')
     try:
-        r3 = Image.open(os.path.join(HERE, 'vel_ronde3.png')).crop((10, 34, 410, 434)).resize((150, 150), Image.LANCZOS)
-        im.paste(r3, (1150, 300)); lab(1150, 284, 'ronde 3 (ter vergelijking)')
+        r3 = Image.open(os.path.join(HERE, 'vel_ronde4.png')).crop((10, 34, 410, 434)).resize((150, 150), Image.LANCZOS)
+        im.paste(r3, (1150, 300)); lab(1150, 284, 'ronde 4 (ter vergelijking)')
     except FileNotFoundError:
         pass
     lab(1130, 60, 'Lees de rij hieronder:')

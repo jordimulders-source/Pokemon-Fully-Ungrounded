@@ -32,9 +32,9 @@ KOP_EXTRA = 14                # kop draait meer naar de kijker dan het lijf
 COL = {
     'wol': '#F3EFE7', 'wolver': '#D6CFC2', 'pompon': '#FBF8F2', 'pomver': '#DCD5C8',
     'vleugel': '#ECE6D9', 'achtervl': '#E0D8C8', 'vlver': '#CFC7B7', 'achtver': '#C4BBAA',
-    'spriet': '#7A5234', 'sprietver': '#5E3F28', 'sprietlicht': '#A47A55', 'ader': '#B49B82', 'aderver': '#A08A72', 'oog': '#1E1A24', 'glint': '#FFFFFF',
+    'spriet': '#7A5234', 'sprietver': '#5E3F28', 'sprietlicht': '#A47A55', 'ader': '#B49B82', 'aderver': '#A08A72', 'ader2': '#B49B82', 'aderver2': '#A08A72', 'oog': '#1E1A24', 'glint': '#FFFFFF',
 }
-NOSHADE = {'oog', 'glint', 'ader', 'aderver'}
+NOSHADE = {'oog', 'glint', 'ader', 'aderver', 'ader2', 'aderver2'}
 LINED = {'oog', 'sprietlicht', 'spriet', 'sprietver', 'vleugel', 'achtervl', 'vlver', 'achtver'}
 
 
@@ -75,7 +75,7 @@ ADERS_VOOR = (-0.55, -0.15, 0.25, 0.6)   # dwarspositie van de aders over de voo
 
 def aders_rond(m, scharnier, c, r, R0, g):
     """Aders op een ronde achtervleugel (één ellipsoïde c, r in frame R0): waaier van het scharnier naar de rand."""
-    ag = 'aderver' if g == 'achtver' else 'ader'
+    ag = 'aderver2' if g == 'achtver' else 'ader2'
     u, v, w = R0[:, 0], R0[:, 1], R0[:, 2]
     for a in np.linspace(-0.9, 0.9, 5):
         eind = c + u * r[0] * 0.82 * math.cos(a) + v * r[1] * 0.82 * math.sin(a)
@@ -225,7 +225,7 @@ def gebruik_kleuren():
     L.LINED.clear(); L.LINED.update(LINED)
 
 
-ADERGROEP = {'ader': 'vleugel', 'aderver': 'vlver'}
+ADERGROEP = {'ader': 'vleugel', 'aderver': 'vlver', 'ader2': 'achtervl', 'aderver2': 'achtver'}
 
 
 def shade_aders(zb, gid, nrm, groups, out):
@@ -281,38 +281,72 @@ def gen3(n):
 
 
 def vel():
+    """Ronde 5: per onderdeel een vak 'bron <-> poppetje' (SPEC: bron per onderdeel), plus het geheel op werkformaat
+    en 1x naast Butterfree en Venomoth."""
     gebruik_kleuren()
     F = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf', 13)
     FB = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)
+    REF = os.path.join(HERE, '../../referenties')
+    ref = lambda n, box: Image.open(os.path.join(REF, n)).convert('RGB').crop(box)
     m = poedelmot()
     img, a, gid, groups = view(m, out=320)
-    img.save(os.path.join(HERE, 'poppetje_45.png'))  # ronde 4
+    img.save(os.path.join(HERE, 'poppetje_45.png'))
     e = een_x(img, a); e.save(os.path.join(HERE, 'poppetje_45_1x.png'))
+    groot = view(m, out=640)[0]          # voor de uitsneden
     kb, kt = kopaandeel(m)
-    W, H = 12 + 2 * 332 + 12, 44 + 320 + 30 + 2 * 72 + 40 + 230
-    out = Image.new('RGB', (W, H), 'white'); d = ImageDraw.Draw(out)
-    d.text((12, 12), 'Poedelmot: poppetje op 45° (praatplaat), naast de tak-foto', font=FB, fill=(30, 30, 30))
-    foto = Image.open(os.path.join(HERE, '../../referenties/foto_tak_katoen.webp')).convert('RGB').resize((320, 320))
-    out.paste(foto, (12, 44)); d.text((12, 44 + 322), 'tak-foto (enige bron)', font=F, fill=(60, 60, 60))
-    out.paste(img, (12 + 332, 44))
-    d.text((12 + 332, 44 + 322), f'poppetje 45°: kop {kb:.0%} van de hoogte zonder vleugels ({kt:.0%} met)', font=F, fill=(60, 60, 60))
-    y = 44 + 320 + 30
-    d.text((12, y), '1x, zelfde schaal: poppetje, butterfree, venomoth, volbeat, teddiursa (licht / donker)', font=F, fill=(0, 0, 0))
+
+    def x4(im, box, k=4):
+        c = im.crop(box); c = c.resize((c.size[0] * k, c.size[1] * k), Image.NEAREST)
+        bg = Image.new('RGB', c.size, (235, 235, 235)); bg.paste(c, (0, 0), c if c.mode == 'RGBA' else None); return bg
+
+    def pas(im, h):
+        return im.resize((max(1, round(im.size[0] * h / im.size[1])), h), Image.LANCZOS)
+
+    H = 170
+    vakken = [
+        ('1. Ogen/gezicht: bron tak-foto, foto_sprieten (boven), Venomoth -> poppetje (werk, 1x)', [
+            pas(ref('foto_tak_katoen.webp', (760, 640, 1140, 1020)), H),
+            pas(ref('foto_sprieten_plus_vilt.png', (120, 60, 340, 230)), H),
+            pas(x4(gen3('venomoth'), (2, 18, 38, 54)), H),
+            pas(groot.crop((130, 150, 370, 390)), H),
+            pas(x4(e, (12, 12, 36, 36)), H)]),
+        ('2. Sprieten: bron close-up foto_sprieten, vilt -> poppetje (werk)', [
+            pas(ref('foto_sprieten_plus_vilt.png', (0, 0, 447, 150)), H),
+            pas(ref('vilt_hand_vleugels_gespreid.png', (200, 120, 580, 230)), H),
+            pas(groot.crop((20, 60, 480, 250)), H)]),
+        ('3. Vleugels: bron vilt (adertjes), tak-foto (V) -> poppetje (werk)', [
+            pas(ref('vilt_hand_vleugels_gespreid.png', (40, 130, 720, 420)), H),
+            pas(ref('foto_tak_katoen.webp', (80, 60, 1080, 900)), H),
+            pas(groot, H)]),
+        ('4. Kop als wolbol met kraag: bron foto_vinger_zijaanzicht -> poppetje (werk)', [
+            pas(ref('foto_vinger_zijaanzicht.webp', (700, 300, 1350, 950)), H),
+            pas(groot.crop((110, 120, 400, 420)), H)]),
+    ]
+    W = 900
+    hoogte = 44 + 320 + 24 + 150 + sum(30 + H + 10 for _ in vakken) + 10
+    out = Image.new('RGB', (W, hoogte), 'white'); d = ImageDraw.Draw(out)
+    d.text((12, 12), 'Poedelmot ronde 5: poppetje op 45°, elk onderdeel naast zijn eigen bron', font=FB, fill=(30, 30, 30))
+    foto = Image.open(os.path.join(REF, 'foto_tak_katoen.webp')).convert('RGB').resize((320, 320))
+    out.paste(foto, (12, 44)); out.paste(img, (12 + 332, 44))
+    d.text((12, 44 + 322), 'tak-foto (pose, wol, lijf, poten)', font=F, fill=(60, 60, 60))
+    d.text((12 + 332, 44 + 322), f'poppetje 45° (kop {kb:.0%} zonder vleugels)', font=F, fill=(60, 60, 60))
+    y = 44 + 320 + 24
+    d.text((12, y), '1x: poppetje, butterfree, venomoth (licht / donker)', font=F, fill=(0, 0, 0))
     x = 12
-    for im1 in [e] + [gen3(n) for n in ('butterfree', 'venomoth', 'volbeat', 'teddiursa')]:
+    for im1 in [e] + [gen3(n) for n in ('butterfree', 'venomoth')]:
         for j, bg in enumerate(((235, 235, 235), (60, 60, 70))):
-            b = Image.new('RGB', (64, 64), bg); b.paste(im1, (0, 0), im1); out.paste(b, (x, y + 20 + j * 72))
-        x += 72
-    # kopstudie (ronde 4): Venomoth, tak-foto en de kop van het poppetje naast elkaar
-    y = 44 + 320 + 30 + 2 * 72 + 30
-    d.text((12, y), 'kopstudie: venomoth (4x), tak-foto, poppetje-kop (werkformaat) en op 1x (4x)', font=F, fill=(0, 0, 0))
-    v = gen3('venomoth').crop((2, 18, 38, 54)).resize((180, 180), Image.NEAREST)
-    b = Image.new('RGB', v.size, (235, 235, 235)); b.paste(v, (0, 0), v); out.paste(b, (12, y + 20))
-    fk = Image.open(os.path.join(HERE, '../../referenties/foto_tak_katoen.webp')).convert('RGB').crop((720, 620, 1180, 1080)).resize((180, 180))
-    out.paste(fk, (12 + 190, y + 20))
-    kk = img.crop((30, 40, 210, 220)).resize((180, 180)); out.paste(kk, (12 + 380, y + 20))
-    k1 = e.crop((4, 6, 40, 42)).resize((112, 112), Image.NEAREST)
-    b = Image.new('RGB', k1.size, (235, 235, 235)); b.paste(k1, (0, 0), k1); out.paste(b, (12 + 570, y + 20))
+            b = Image.new('RGB', (64, 64), bg); b.paste(im1, (0, 0), im1); out.paste(b, (x + j * 72, y + 20))
+        x += 150
+    y += 150
+    for titel, ims in vakken:
+        d.text((12, y), titel, font=F, fill=(0, 0, 0))
+        x = 12
+        for im1 in ims:
+            if x + im1.size[0] > W - 12:
+                im1 = im1.crop((0, 0, W - 12 - x, im1.size[1]))
+            out.paste(im1, (x, y + 22)); x += im1.size[0] + 10
+        y += 30 + H + 10
+    assert max(d.textlength(t, font=F) for t, _ in vakken) < W - 24
     out.save(os.path.join(HERE, 'vel.png'))
     print('kop/hoogte zonder vleugels %.2f, met vleugels %.2f' % (kb, kt))
 

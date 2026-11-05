@@ -1,5 +1,7 @@
 # Sprite-werkwijze: zo maken we elke nieuwe Pokémon-sprite
 
+> **Kort: lees eerst `docs/lessen/SPRITE_KERN.md`.** Dit bestand is naslag.
+
 **Vastgesteld door Jordi (25 okt):** "ik denk dat we de beste methode hebben gevonden om sprites te maken. Jouw way of working mag je vast leggen als de manier, uitgebreid en stap voor stap, zodat alle nieuwe gesprekken vanaf nu het zo oppakken."
 
 Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedgekeurde sprite in ±1 dag) en de **olinguito v2** (Dark-starter, fase 1: na 30+ mislukte rondes in de oude aanpak, nu in 5 silhouet- en 4 kleurrondes "het beste olinguito-ontwerp wat ik tot nu toe heb gezien"). Achtergrond: `RETRO_KOLIBRIE.md`, `RETRO_OLINGUITO.md`. Deze werkwijze vervangt stap 1–5 bovenaan `FAKEMON_DESIGN.md` waar ze verschillen.

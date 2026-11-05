@@ -134,3 +134,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca: pose aangepast naar Empoleon (borst vooruit, verre vleugel als gebaar, nabije vleugel als mantel, brede stand); les over T-poses in `FAKEMON_CHECKLIST.md`.
 - Sapa Inca pose-ronde 3: vleugels gesloten en massief, gebiedend gebaar in plaats van gespreide "danser"-pennen.
 - Sapa Inca: posegokken gestopt; kandidaat-skeletten voor een nonchalante koningspose in `docs/concept/sprites/koningstiran/referenties/nonchalant.png`.
+- Sapa Inca pose-ronde 4 naar het Pachacútec-beeld in Cuzco (vleugel half omhoog, andere als Decidueye-cape, contrapposto, slanker).

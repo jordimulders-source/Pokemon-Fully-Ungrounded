@@ -35,6 +35,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (5 nov) "hoort die zo dik te zijn? En nu zijn we gewoon poses van vleugels aan het gokken ook. Het is ook weer te recht. Zou die niet meer een nonchalante koningspose kunnen aanhouden?" → gokken gestopt (werkwijze: na 2 mislukte poserondes een echte bron); kandidaten in `referenties/nonchalant.png`, Jordi kiest het skelet.
 
+- (5 nov) Jordi stuurt het Pachacútec-beeld (Cuzco, `referenties/pachacutec_beeld_cuzco.webp`): "doe deze pose qua vleugels, dus eentje wijst half de lucht in, de ander gewoon zoals decidueye bijv" → pose-ronde 4: nabije vleugel gesloten en half omhoog naar buiten (rechts in beeld, voor de kroon langs), verre vleugel gesloten hangend (Decidueye), contrapposto (standbeen + verre poot naar voren en hoger), slanker lijf.
+
 ## Afgekeurd
 - Pose-ronde 3: te dik, te recht, vleugelpose gegokt.
 - Pose-ronde 2: gespreide slagpennen ("danser").

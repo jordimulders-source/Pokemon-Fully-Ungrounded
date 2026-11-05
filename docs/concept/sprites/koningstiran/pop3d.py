@@ -92,28 +92,29 @@ def bird(extra=25, fan_L=58, fan_n=17, tilt=14):
     m = Model()
     # pose naar Empoleon (Jordi, 5 nov): borst vooruit, iets achterover, verre vleugel naar voren uitgestoken,
     # nabije vleugel als mantel naar achteren-omlaag, poten breed; swagger, geen T-pose
-    A = rot_z(math.radians(96))
-    m.ell((6, 4, 0), (44, 28, 27), 'body', A)
-    m.ell((-10, 8, 0), (24, 33, 26), 'breast', rot_z(math.radians(-4)))
-    # vleugels groot en GESLOTEN (Jordi: gespreide pennen = danser, geen koning): elke vleugel is één massief blad
-    # zoals de flippers van Empoleon; slagpennen bijna evenwijdig en overlappend, alleen de punt licht gekarteld.
-    # verre vleugel: schuin naar voren-omlaag uitgestoken, gebiedend (Empoleon links)
-    wing(m, (-2, 28, -17), (-30, 26, -30), [(-1.0, -0.20), (-1.0, -0.32), (-1.0, -0.45), (-1.0, -0.58)],
-         (40, 36, 31, 25), 'farwing', -34, 22, 15)
-    # nabije vleugel: gesloten mantel langs de zij naar achteren-omlaag
-    wing(m, (8, 28, 18), (20, 8, 28), [(0.22, -1.0), (0.34, -1.0), (0.46, -1.0), (0.58, -1.0)],
-         (42, 38, 33, 27), 'wing', 32, 24, 15)
+    # pose naar het Pachacútec-beeld in Cuzco (Jordi, 5 nov; referenties/pachacutec_beeld_cuzco.webp):
+    # nabije vleugel half de lucht in (opgeheven arm, rechts in beeld), verre vleugel gesloten en hangend
+    # (Decidueye), contrapposto: gewicht op de nabije poot, verre poot naar voren op een verhoging. Slanker lijf.
+    A = rot_x(math.radians(-5)) @ rot_z(math.radians(99))
+    m.ell((6, 4, 0), (42, 23, 22), 'body', A)
+    m.ell((-9, 8, 0), (19, 30, 20), 'breast', rot_z(math.radians(-6)))
+    # verre vleugel: gesloten, hangt langs de voorkant omlaag (Decidueye-cape)
+    wing(m, (-2, 28, -15), (-8, 6, -24), [(-0.12, -1.0), (-0.02, -1.0), (0.08, -1.0), (0.18, -1.0)],
+         (40, 36, 31, 25), 'farwing', -26, 20, 14)
+    # nabije vleugel: half de lucht in, gesloten blad (geen gespreide pennen), schuin omhoog naar buiten
+    wing(m, (8, 30, 17), (24, 42, 40), [(0.62, 1.0), (0.72, 0.95), (0.8, 0.85), (0.88, 0.75)],
+         (46, 42, 36, 29), 'wing', 62, 18, 14)   # naar buiten en voor de kroon langs, zodat hij vrij staat
     for ang in (-24, -12, 0):                                       # staart: drie rossige veren, licht gewaaierd
         Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(ang * 0.6))
         m.ell(np.array((22, -46, 0)) + Rt @ np.array((0, -6, 0)), (7, 26, 3), 'tail', Rt)
-    for sz, fx in ((1, 6), (-1, -10)):                              # brede stand, verre poot naar voren
-        z = 15 * sz
-        m.chain([(0, -32, 9 * sz, 5.5), (fx * 0.5, -44, z * 0.8, 4.2)], 'breast')
-        m.chain([(fx * 0.5, -44, z * 0.8, 3.2), (fx, -60, z, 2.8)], 'leg')
+    for sz, fx, fy in ((1, 4, -60), (-1, -16, -54)):                # standbeen recht, verre poot naar voren en hoger
+        z = 11 * sz
+        m.chain([(0, -30, 8 * sz, 5.0), (fx * 0.5, -42, z * 0.8, 4.0)], 'breast')
+        m.chain([(fx * 0.5, -42, z * 0.8, 3.0), (fx, fy, z, 2.7)], 'leg')
         for dz, dx in ((-3, -8), (0, -9), (3, -7)):
-            m.chain([(fx, -60, z, 2.4), (fx + dx, -63, z + dz, 2.0)], 'leg')
-            m.ell((fx + dx - 1.5, -64, z + dz), 1.4, 'claw')
-        m.chain([(fx, -60, z, 2.2), (fx + 5, -63, z, 1.8)], 'leg')
+            m.chain([(fx, fy, z, 2.3), (fx + dx, fy - 3, z + dz, 1.9)], 'leg')
+            m.ell((fx + dx - 1.5, fy - 4, z + dz), 1.4, 'claw')
+        m.chain([(fx, fy, z, 2.1), (fx + 5, fy - 3, z, 1.7)], 'leg')
     # ---- kop: kleiner t.o.v. het lijf dan bij de tiran (caracara), wel groter dan echt ----
     i0 = len(m.parts)
     hc = np.array((-12, 50, 0.0))
@@ -247,7 +248,7 @@ def sheet(yaws=(34, 44), extras=(16, 24, 32)):
     cw, ch = 266 + 70, 256 + 26
     W = Image.new('RGB', (12 + cw * len(extras), 40 + ch * len(yaws)), (236, 232, 222))
     d = ImageDraw.Draw(W)
-    d.text((10, 10), 'Sapa Inca (koningstiran x bergcaracara), pose A. Rij = lijf, kolom = kop extra gedraaid. Rechts: silhouet 1x.',
+    d.text((10, 10), 'Sapa Inca (koningstiran x bergcaracara), pose Pachacútec. Rij = lijf, kolom = kop extra gedraaid. Rechts: silhouet 1x.',
            font=FB, fill=(30, 30, 30))
     for i, yaw in enumerate(yaws):
         for j, ex in enumerate(extras):

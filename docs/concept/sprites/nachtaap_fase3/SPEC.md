@@ -92,3 +92,9 @@ Jordi 5 nov: "de bladeren moeten helemaal weg uit het ontwerp" · "zijn dit ding
 - Keurder ronde 1: FAIL op maten (zie `vel_model.png.keuring.md`), verwerkt. Eerst te grote knikkerogen + varkensneus gekregen door alleen op maat te sturen: tussenweg gekozen.
 - Open voor Jordi: kop recht naar de kijker (norm: 3/4)? Snuit lila of roze?
 - Volgende stap (na Jordi): silhouet = `model2d/model.png` overgetrokken op de 50 %-dekking, ±1 px (zoals lama fase 3).
+
+### Model stap 1: poten (5 nov)
+- Jordi: "waarom is de maan nu ingekort? daar heb ik toch niet om gevraagd? Bovenste poot lijkt wel los te zitten overigens, verder moet de staart iets minder recht denk ik, iets meer vanuit een hoek. En het gezicht is nu een te klein deel van het hoofd, kijk nog eens goed naar het bronmateriaal" + "En de kop moet een soort van driekwart idd" + "stap voor stap misschien het beste?" → volgorde: 1 poten, 2 staart, 3 kop (driekwart, groter gezicht, maan op de oude maat; inkorten kwam uit een notitie van Claude, niet van Jordi).
+- "dat is toch niet net afgewerkt" (krabbel: bultjes oude omlijning + band in de schaduw bij de heup) → schaduw = doorsnede van de render langs het nieuwe been, oude omlijning precies weggegumd.
+- "nu is de bovenste voet gewoon een bol" / "omgekeerd perspectief ... meer een hand dan een poot" → foto (niet als bestand binnengekomen): **muriqui hangend aan een touw**, één arm omhoog, benen opgetrokken; voeten zijn **wanten**: behaarde bovenkant, tenen samen naar onder gekruld, ronde hiel, donkere kale zool waar de voet kantelt; geen losse vingers of aparte grote teen. Jordi: "nu merk ik wel dat het toch meer een bol is" / "de bovenste zien we alleen de buitenkant van de want en de poot rechtsonder zien we deels de onderkant".
+- Afgekeurd: bokshandschoen, haak met donkere spleet, vuist met knokkels (hand in omgekeerd perspectief).

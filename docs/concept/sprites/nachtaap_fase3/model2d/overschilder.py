@@ -116,8 +116,8 @@ gum(masker_poly([(200, 30), (300, 30), (300, 101), (200, 101)], smooth=False))
 # Jordi 5 nov: "Bovenste poot lijkt wel los te zitten" -> onderbeen + voet één vorm (geen knieknik, geen enkelnaad),
 # zacht overgevloeid in de dij.
 onderbeen = masker_poly([(198, 276), (198, 260), (198, 244), (199, 228), (202, 212), (206, 196), (210, 172),
-                          (214, 140), (218, 112), (217, 92), (217, 76), (219, 62), (223, 54), (229, 50), (236, 51),
-                          (242, 48), (249, 50), (255, 48), (261, 52), (264, 60), (263, 74), (259, 90), (254, 106), (255, 135),
+                          (214, 140), (218, 112), (216, 98), (214, 84), (217, 70), (226, 59), (240, 53), (256, 54),
+                          (269, 61), (277, 73), (276, 87), (268, 97), (257, 102), (253, 112), (255, 135),
                           (257, 162), (254, 186), (251, 208), (254, 228), (261, 237), (269, 245), (276, 252), (286, 264), (300, 280)])
 yb, xb = np.mgrid[0:W, 0:W] / K
 onderbeen &= ~((yb > 248) & ~ALPHA0)
@@ -147,23 +147,16 @@ dd = nd.distance_transform_edt(~onderbeen) / K
 ring = (dd > 0) & (dd <= 4.6) & (yb < 254) & ((yb < 236) | (img[..., 3] < 0.5))
 verf(ring, LIJN)
 # tenen als gesloten want om de tak, grote teen ervoor (binnen de omtrek)
-# vuist om de tak (zoals de bovenhand): drie tenen krullen over de tak naar de kijker, knokkels boven,
-# teentoppen onder; grote teen los aan de linkerkant, van achter de tak omhoog
-tenen1 = masker_poly([(218, 60), (223, 54), (229, 50), (236, 51), (242, 48), (249, 50), (255, 48), (261, 52), (264, 60),
-                       (263, 71), (256, 75), (249, 72), (242, 75), (235, 72), (227, 75), (218, 71)])
-bol(tenen1, TEEN, R=6, licht=(-0.45, -0.75, 0.5))
-for x0, x1 in ((236, 235), (249, 249)):
-    verf(lijnmasker([(x0, 52), (x1, 62), (x1, 72)], 2.0), LIJN)
-verf(lijnmasker([(218, 71), (227, 75), (235, 72), (242, 75), (249, 72), (256, 75), (263, 71)], 2.2), LIJN)
-grote1 = masker_poly([(214, 92), (210, 82), (210, 71), (213, 63), (219, 61), (222, 68), (221, 80), (218, 90)])
-omlijn(grote1, dikte=2.6)
-bol(grote1, TEEN, R=4, licht=(-0.45, -0.75, 0.5))
+# voet als want (foto Jordi 5 nov, muriqui aan een touw): bovenkant behaard, tenen samen naar onder gekruld,
+# ronde hiel, donkere kale zool zichtbaar waar de voet kantelt; geen losse vingers/grote teen
+# bovenste: alleen de behaarde buitenkant van de want; één vouwlijn waar de tenen omkrullen
+verf(lijnmasker([(256, 66), (265, 78), (264, 92)], 2.2), LIJN)
 
 # onderste been (knie -> voet) in één stuk, schaduw = doorsnede van de render (x=380, licht boven -> donker onder,
 # donkerste tint opgehaald), zacht overgevloeid in de dij; voet hangt slap, tenen licht gekruld, grote teen los
 yb, xb = np.mgrid[0:W, 0:W] / K
 been2 = masker_poly([(350, 398), (356, 389), (366, 384), (380, 382), (398, 381), (418, 385), (438, 392), (455, 402), (466, 411), (478, 420),
-                      (489, 432), (496, 448), (498, 464), (492, 477), (481, 481), (471, 474), (465, 462), (456, 454),
+                      (489, 433), (496, 447), (499, 462), (494, 476), (483, 481), (472, 476), (465, 463), (456, 454),
                       (447, 449), (440, 440), (425, 431), (410, 424), (396, 421), (382, 424), (366, 430), (352, 428)])
 gum((((xb > 372) & (yb > 360)) | ((xb > 357) & (yb > 377) & (yb < 392))) & (yb < 495) & ~been2)
 SRC4b = np.asarray(SRC.resize((W, W), Image.LANCZOS)).astype(np.float32) / 255.0
@@ -188,15 +181,10 @@ img[..., :3] = img[..., :3] * (1 - w) + kleur * w
 img[..., 3:] = np.maximum(img[..., 3:], w)
 dd = nd.distance_transform_edt(~been2) / K
 verf((dd > 0) & (dd <= 4.6) & ((xb > 372) | (img[..., 3] < 0.5)), LIJN)
-tenen2 = masker_poly([(477, 421), (489, 432), (496, 448), (498, 464), (492, 477), (481, 481), (471, 474), (468, 460),
-                       (470, 440)])
-bol(tenen2, TEEN, R=7, licht=(-0.45, -0.75, 0.5))
-verf(lijnmasker([(477, 422), (470, 440), (468, 458), (471, 474)], 2.2), LIJN)
-for pts in [[(484, 428), (480, 446), (480, 464), (482, 479)], [(492, 438), (489, 454), (490, 470), (488, 479)]]:
-    verf(lijnmasker(pts, 2.0), LIJN)
-grote2 = masker_poly([(454, 452), (465, 455), (469, 465), (463, 476), (453, 475), (449, 464)])
-omlijn(grote2, dikte=2.6)
-bol(grote2, TEEN, R=5, licht=(-0.45, -0.75, 0.5))
+zool2 = masker_poly([(446, 440), (456, 441), (466, 448), (474, 458), (483, 465), (493, 462), (499, 470),
+                      (490, 482), (479, 483), (469, 476), (463, 464), (454, 456), (444, 451)]) & been2
+bol(zool2, GEZICHT, R=4, licht=(-0.3, -0.9, 0.4))
+verf(lijnmasker([(488, 440), (493, 455), (490, 468)], 2.2), LIJN)
 
 # ------------------------------------------------------------------ kop
 # Muriqui-kop naar foto 4/5: ronde schedel zonder oren, groot donker gezichtsschild met rechte wenkbrauwlijn,

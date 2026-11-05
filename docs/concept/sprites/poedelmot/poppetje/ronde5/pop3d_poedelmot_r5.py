@@ -322,7 +322,7 @@ def vel():
             pas(ref('foto_vinger_zijaanzicht.webp', (700, 300, 1350, 950)), H),
             pas(groot.crop((110, 120, 400, 420)), H)]),
     ]
-    W = 900
+    W = 1080
     hoogte = 44 + 320 + 24 + 150 + sum(30 + H + 10 for _ in vakken) + 10
     out = Image.new('RGB', (W, hoogte), 'white'); d = ImageDraw.Draw(out)
     d.text((12, 12), 'Poedelmot ronde 5: poppetje op 45°, elk onderdeel naast zijn eigen bron', font=FB, fill=(30, 30, 30))
@@ -342,8 +342,7 @@ def vel():
         d.text((12, y), titel, font=F, fill=(0, 0, 0))
         x = 12
         for im1 in ims:
-            if x + im1.size[0] > W - 12:
-                im1 = im1.crop((0, 0, W - 12 - x, im1.size[1]))
+            assert x + im1.size[0] <= W - 12, titel   # niets mag van het vel vallen
             out.paste(im1, (x, y + 22)); x += im1.size[0] + 10
         y += 30 + H + 10
     assert max(d.textlength(t, font=F) for t, _ in vakken) < W - 24

@@ -5,6 +5,19 @@ Werkwijze: `docs/lessen/SPRITE_KERN.md` (verplicht meegeven) + `SPRITE_WERKWIJZE
 ## Lijn (uit `docs/concept/POKEMON.md`)
 - Eigen lijn: larve met kenmerken van een poedelhond (humor) → mot, **Bug/Fairy**. Cryptid uit de Gran Sabana (tepuis).
 
+## LEIDRAAD (Jordi, 5 nov: "pak dat lange bericht erbij en dat is jouw leidraad" / "waar ik uitgebreid alles beschrijf")
+Het bericht hieronder ("Jordi's woorden", eerste bericht) is de leidraad. Elke ronde wordt er zin voor zin tegen afgevinkt, letterlijk, zonder invulling:
+1. "iemand die al een pokemon versie hiervan heeft gemaakt, conceptueel sterk, maar ik wil een iets andere richting" (`fanart_ander_richting.webp`)
+2. "die mandibles of voelsprieten ... wil ik naar de zijkant als oren"
+3. "Ik wil een dubbele witte vleugel"
+4. "eigenlijk geen roze of blauwtinten erin"
+5. "Die foto op die tak toont dat katoenachtige en dat zie ik wel zitten" (`foto_tak_katoen.webp`)
+6. "met grote donkere ogen, beetje venomoth achtig"
+7. "Hij onderscheidt zich van frosmoth door dat echte cryptid bizarre cute, katoenachtige look" / "iedereen denkt van wow wat een vaag dier"
+8. "Het is een insect, maar toch ook weer niet, het lichaam moet dus ook echt los van de vleugels zoals bij die foto op de hand" (`vilt_hand_vleugels_gespreid.png`)
+9. "Kleuren wit, bruin voor de oren ..., plus het patroon in de vleugels"
+Plus de latere besluiten onderaan (pose tak-foto, 3/4 op 45°, adertjes, poedelpoten, zes poten, dik en wollig, geen neus, pootopstelling).
+
 ## Jordi's woorden (letterlijk, 5 nov)
 "we maken eerst de eind versie, ik heb hier wat afbeeldingen bij gedaan, allereerst iemand die al een pokemon versie hiervan heeft gemaakt, conceptueel sterk, maar ik wil een iets andere richting, ik wil die mandibles of voelsprieten of wat het zijn wil ik naar de zijkant als oren. Ik wil een dubbele witte vleugel en eigenlijk geen roze of blauwtinten erin. Die foto op die tak toont dat katoenachtige en dat zie ik wel zitten, met grote donkere ogen, beetje venomoth achtig. Hij onderscheidt zich van frosmoth door dat echte cryptid bizarre cute, katoenachtige look, maar ik bedoel iedereen denkt van wow wat een vaag dier. Het is een insect, maar toch ook weer niet, het lichaam moet dus ook echt los van de vleugels zoals bij die foto op de hand. HEb je een beetje een idee welke kant ik op wil? Kleuren wit, bruin voor de oren of hoe die dingen heten, plus het patroon in de vleugels."
 

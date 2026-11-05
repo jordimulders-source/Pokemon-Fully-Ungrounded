@@ -21,14 +21,15 @@ def lin(r, g, b):
     f = lambda c: (c / 255) / 12.92 if c / 255 <= 0.04045 else (((c / 255) + 0.055) / 1.055) ** 2.4
     return (f(r), f(g), f(b))
 
-KLEUR = dict(lijf=lin(206, 104, 38),      # warm oranje-kastanje (Celeus elegans)
-             kuifmid=lin(232, 170, 96),   # overgang kastanje -> crème in de kuif
-             vleugel=lin(140, 58, 24),    # donkerder kastanje
-             stip=lin(246, 226, 172),     # ronde lichte stippen (familie Picapau)
-             staart=lin(164, 68, 28),     # pluim: roodbruin
-             bliksem=lin(252, 212, 48),   # bliksem: geel (Electric)
-             creme=lin(250, 236, 196),    # kuiftop en buik
-             wang=lin(222, 40, 36), snavel=lin(240, 226, 170), oog=lin(8, 6, 6), glans=(1, 1, 1),
+# Workbench (studio, zonder glans) rendert een belicht vlak ±0,73x zo licht: invoer = doelkleur / 0,73 (gemeten)
+KLEUR = dict(lijf=lin(255, 142, 52),      # doel ±(206, 104, 38): warm oranje-kastanje (Celeus elegans)
+             kuifmid=lin(255, 190, 110),  # randje tussen kastanje en de lichte kuiftop
+             vleugel=lin(190, 80, 32),    # doel ±(140, 58, 24): donkerder kastanje
+             stip=lin(255, 245, 205),     # ronde lichte stippen (familie Picapau)
+             staart=lin(220, 92, 38),     # doel ±(164, 68, 28): roodbruin
+             bliksem=lin(255, 236, 70),   # bliksem: geel (Electric)
+             creme=lin(255, 250, 222),    # buik en (klein) kuiftopje
+             wang=lin(255, 54, 48), snavel=lin(255, 245, 196), oog=lin(8, 6, 6), glans=(1, 1, 1),
              poot=lin(96, 92, 96), tong=lin(240, 140, 150))
 
 def mat(naam):
@@ -162,10 +163,11 @@ def delen(kop_draai=25.0, kop_kantel=0.0):
     # grote kuif: twee lange punten omhoog-achter, top krult naar buiten (Raichu-oren), plat van voor gezien
     for s in (-1, 1):
         # brede platte lob (Raichu-oor): brede basis, recht omhoog-achter; alleen het bovenste derde krult naar buiten
-        keten = [((-8.0, s * 4.0, 20.5), 6.0), ((-6.5, s * 5.0, 26.0), 6.0), ((-5.0, s * 6.0, 31.0), 5.0),
-                 ((-3.5, s * 7.5, 35.0), 3.6), ((-2.5, s * 10.5, 37.5), 2.8), ((-2.0, s * 13.5, 37.0), 2.2),
-                 ((-2.0, s * 15.0, 34.5), 1.6)]
-        d.append(('kuif', ('buis', keten, (1, 0, 0.25), 0.2), 1.8, 'kop'))
+        # Jordi over ronde 1: "vooral de oren zijn too much", "te wit, te groot" -> klein, rustig, kastanje;
+        # alleen het bovenste derde buigt subtiel naar buiten (doet aan Raichu's oren denken)
+        keten = [((-8.5, s * 4.6, 20.5), 4.4), ((-7.0, s * 5.6, 24.5), 4.0), ((-5.5, s * 6.8, 28.0), 3.0),
+                 ((-4.5, s * 8.6, 30.2), 2.1), ((-4.0, s * 10.0, 29.8), 1.5)]
+        d.append(('kuif', ('buis', keten, (1, 0, 0.25), 0.25), 1.8, 'kop'))
     # korte rafelige achterkuif (familie Picapau)
     for a, b, ra in [((-2.0, 0, 18.0), (5.5, 0, 21.5), 3.0), ((-0.5, 0, 14.0), (6.5, 0, 15.0), 2.8)]:
         d.append(('kuif2', ('buis', [(a, ra), (b, 0.9)], (0, 1, 0), 1.6), 1.8, 'kop'))
@@ -219,7 +221,7 @@ def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
                 if np.hypot(*(g - np.round(g))) < 0.30: idx[j] = 2
         elif w == 'staart': idx[j] = 3
         elif w == 'bliksem': idx[j] = 4
-        elif w == 'kuif': idx[j] = 0 if q[2] < 25.5 else (7 if q[2] < 29.5 else 5)   # kastanje basis -> crème top
+        elif w == 'kuif': idx[j] = 0 if q[2] < 28.6 else 7   # overwegend kastanje, alleen een licht topje (geen witte kuif)
         elif w == 'kuif2': idx[j] = 0
         elif w == 'kop':
             for s in (-1, 1):
@@ -228,7 +230,7 @@ def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
                 if (r[0] / 3.6) ** 2 + (r[1] / 3.6) ** 2 + (r[2] / 3.1) ** 2 < 1: idx[j] = 6
     for poly, i in zip(huid.data.polygons, idx): poly.material_index = int(i)
 
-def bouw(kop_draai=25.0, kop_kantel=0.0, voorover=0.0, tong=False, snavel_hoek=8, snavel_lengte=19.0, oog_az=75):
+def bouw(kop_draai=25.0, kop_kantel=0.0, voorover=0.0, tong=False, snavel_hoek=8, snavel_lengte=21.0, oog_az=75):
     leeg()
     wortel = bpy.data.objects.new('wortel', None); bpy.context.collection.objects.link(wortel)
     dl = delen(kop_draai, kop_kantel)
@@ -244,7 +246,7 @@ def bouw(kop_draai=25.0, kop_kantel=0.0, voorover=0.0, tong=False, snavel_hoek=8
     kopas.location = NEK; koppel(kopas, romp)
     a = math.radians(snavel_hoek)
     d = Vector((-math.cos(a), 0, math.sin(a)))
-    basis = KC + Vector((-7.5, 0, -1.8))
+    basis = KC + Vector((-5.0, 0, -1.8))      # basis diep in de kop: de grondplaat van de kegel stak uit (grijze 'open snavel')
     # beitelsnavel: boven- en ondersnavel (bij de tong-variant iets open)
     if tong:
         wig('Snavel', basis + Vector((0, 0, 0.5)), d + Vector((0, 0, 0.06)), snavel_lengte, 2.9, 1.7, 'snavel', kopas)
@@ -282,6 +284,7 @@ def camera_licht(res=512, kantel=8):
     sc.display.shading.light = 'STUDIO'; sc.display.shading.color_type = 'MATERIAL'
     sc.display.shading.show_object_outline = True; sc.display.shading.object_outline_color = (0.05, 0.03, 0.08)
     sc.display.shading.show_cavity = True; sc.display.shading.cavity_type = 'WORLD'
+    sc.display.shading.show_specular_highlight = False      # glans maakte alle kleuren grijs
     sc.render.film_transparent = True
     sc.view_settings.view_transform = 'Standard'
     sc.render.resolution_x = sc.render.resolution_y = res

@@ -105,12 +105,14 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
     # elke pen iets verder gedraaid zodat de achterrand een bolle curve wordt (geen rechte lijn, geen vingers)
     c = curl
     dirs = [(0.62 - 0.30 * c + 0.10 * k * c, 1.0 - 0.05 * k) for k in range(5)]
-    wing(m, (8, 30, 17), (26, 36, 40), dirs, (33, 36, 34, 30, 24), 'wing', 56, 18, 14)  # iets korter (Jordi)
+    wing(m, (8, 30, 17), (21, 35, 34), dirs, (33, 36, 34, 30, 24), 'wing', 56, 18, 14)  # iets korter (Jordi)
     # staart als scepter (Jordi, 5 nov: "gewoon een staart die dan een beetje afbuigt en hij vast pakt"):
     # een gewone brede staart die omlaag hangt en met de punt iets naar voren buigt, naar de verre vleugel,
     # waarvan de punt hem vastpakt. Geen lange sliert, niet onder de poten door: hij loopt aan de verre kant
     # langs de heup, boven kniehoogte.
-    C = [np.array(c, float) for c in ((20, -28, -2), (22, -34, -18), (2, -34, -32), (-28, -28, -27))]  # langs de heup, buiten de poten
+    # krabbel Jordi (referenties/krabbel_jordi_staart_arm.png): klein stukje achter het standbeen door, voorbij de poot
+    # weer naar voren en aan de voorkant omhoog langs de linkerkant van de buik (punten berekend voor lijf 44°)
+    C = [np.array(c, float) for c in ((20, -30, 0), (5, -42, 2), (-22, -40, 9), (-28, -10, -2), (-27, 14, -7))]
     curve = []
     for i in range(len(C) - 1):
         p0, p1, p2, p3 = C[max(i - 1, 0)], C[i], C[i + 1], C[min(i + 2, len(C) - 1)]
@@ -120,7 +122,7 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5):
     curve.append(C[-1])
     n = len(curve)
     for i, (q0, q1) in enumerate(zip(curve, curve[1:])):
-        plate(m, q0, q1, 11 - 3 * i / n, 3.0, 'tail')
+        plate(m, q0, q1, 9 - 3 * i / n, 3.0, 'tail')
     # poten: geen V meer. Standbeen recht onder het zwaartepunt; vrije poot met gebogen knie naar voren,
     # het scheenbeen weer verticaal (contrapposto van het beeld)
     legs3 = (((2, -30, 7), (3, -40, 8), (3, -51, 9)),          # standbeen (korter, Jordi)

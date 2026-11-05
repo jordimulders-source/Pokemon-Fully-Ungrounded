@@ -150,6 +150,7 @@ def fase3_r4(outfit='X', hs=1.55, neck=46, lid=0.55, franje=None, flen=18, kopk=
             if schouder:   # schouderspier/biceps bovenaan de voorpoot (Entei/Arcanine)
                 x, y, z = pts[0][:3]
                 m.ell((x - 2, y - 6, z + 3 * np.sign(z)), np.array((13, 17, 9)) * schouder, g)
+    m.kop_range = (hk0, h1)   # kop + bombín + vlechten (voor de kop-overtrekbron)
     if persp:   # geforceerd perspectief (Entei/Arcanine): voorkant groter, achterlijf kleiner; kop blijft gelijk
         out = []
         for i, (c, r, R0, g) in enumerate(m.parts):

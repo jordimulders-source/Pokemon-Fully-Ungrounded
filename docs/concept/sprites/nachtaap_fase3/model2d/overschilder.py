@@ -94,17 +94,17 @@ def gum(mask):
 yyS, xxS = np.mgrid[0:W, 0:W] / K
 ANK = np.array([378.0, 300.0]); AS = np.array([455.0, 262.0]) - ANK; AS /= np.linalg.norm(AS)
 VERK = 0.72
-STAP2 = False  # stap 2 (staart) nog niet aan
-zone = (xxS >= 372) & (yyS < 362) & STAP2
+STAP2 = True
+zone = (xxS > 335) & (yyS < 368)
 rel = np.dstack([xxS - ANK[0], yyS - ANK[1]])
 para = rel @ AS
-src = rel + (para / VERK - para)[..., None] * AS  # inverse afbeelding
+alfa = np.clip(para / 40.0, 0, 1) * zone   # geleidelijk vanaf de wortel: geen naad
+src = rel + (alfa * (para / VERK - para))[..., None] * AS
 sx = (src[..., 0] + ANK[0]) * K; sy = (src[..., 1] + ANK[1]) * K
 nieuw = np.zeros_like(img)
 for ch in range(4):
     nieuw[..., ch] = nd.map_coordinates(img[..., ch], [sy, sx], order=1, mode='constant')
-geldig = ((sx / K) >= 372) & ((sy / K) < 362)
-img[zone] = np.where(geldig[zone][..., None], nieuw[zone], 0)
+img[zone] = nieuw[zone]
 
 # ------------------------------------------------------------------ voeten
 # Muriqui-voet (Jordi/SPEC 5 nov): lange behaarde zool, vier tenen samen als gekrulde want, grote teen los.

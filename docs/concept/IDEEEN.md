@@ -141,3 +141,17 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
   - 3 fasen: jong → onopvallende tiran (kuif dicht) → *Sapa*-vorm, de koning die de waaier altijd draagt.
 - **Type-opties (open):** Normal/Flying (de klassieke vroege vogel, maar de dex heeft er al veel); **Fire/Flying** of **Psychic/Flying** (Inti, de zon: de Sapa Inca was "zoon van de zon"); **Bug/Flying** valt af (hij eet insecten, is er geen). Kolibrie is al Ghost/Flying, de condor hoort bij het trio. Bij de keuze: typeverdeling in `DEX_NOMINATIES.md` (Flying zit al goed).
 - **Leefgebied:** Amazone-laagland, langs beken; past ook bij de Bug-gym diep in de jungle.
+- **Brainstorm verwante vogels (Claude, 5 nov; Jordi: lijnen mogen dieren mengen zolang het thema blijft, zoals Spheal → Sealeo → Walrein):**
+  - **Familie van de koningstiran (tirannen, Tyrannidae, de grootste vogelfamilie, vooral Zuid-Amerikaans).** Veel tirannen hebben een **verborgen kroon**: een gekleurd vlekje op de kruin dat je pas ziet als ze hun veren opzetten. *Grote kiskadie* (bem-te-vi): de gewoonste vogel van Zuid-Amerikaanse steden, roept zijn eigen naam, gele verborgen kroon. *Vorkstaarttiran* (pampa): enorme gevorkte staart, gele verborgen kroon. *Tropische koningstiran* (*Tyrannus*, "tiran"): oranje verborgen kroon, valt grotere vogels aan.
+  - **Andes-rotshaan** (*cock-of-the-rock*): nationale vogel van Peru, fel oranjerood, een kam als een helm die zelfs de snavel bedekt; dansen in groepen in de nevelwouden bij Cuzco/Manu. Sterk genoeg voor een eigen lijn.
+  - **Amazone-parasolvogel** (*umbrellabird*): zwart, een kuif als een paraplu over de kop en een lange verenlel aan de borst; lijkt al op een ceremonieel ornament.
+  - **Zonneral** (*sunbittern*): spreidt zijn vleugels tot een zon met twee ogen; leeft langs dezelfde beken als de koningstiran.
+  - **Bergcaracara**: waarschijnlijk de *coraquenque*, de vogel waarvan de veren in de kroon van de Sapa Inca zaten.
+  - **Incastern** (Humboldtkust): grijze stern met een witte krulsnor; heet echt naar de Inca's.
+  - **Kuifkardinaal** (*Paroaria coronata*, pampa): rode kuif, ook "coronata" in de naam.
+  - Al vergeven: harpij (Braviary-vorm), hoatzin (pitch #3), pauw (carnaval: veren op de rug, niet op de kop; geen overlap met de kroon).
+- **Lijnvoorstellen (Claude):**
+  - **A. "De verborgen kroon" (één familie, klopt biologisch):** kiskadie (gewone stadsvogel, kroon onzichtbaar) → koningstiran (kroon klapt open) → *Sapa*-vorm (draagt hem altijd). Van gewone burger naar koning: past bij de serieuzere toon (wie mag een kroon dragen?).
+  - **B. Inca-rangen:** fase 1 gewoon; fase 2 een *orejón* (Inca-adel, genoemd naar hun grote gouden oorschijven: de vogel krijgt gouden "oorschijven"); fase 3 de Sapa Inca met de mascaypacha. Te combineren met A.
+  - **C. Spheal-stijl, ander dier als eindvorm:** koningstiran → bergcaracara met de kroon, de vogel die de veren levert wordt zelf koning. Of → rotshaan (kam als gouden helm).
+  - **D. Zon-lijn:** koningstiran → zonneral (Fire/Flying), de waaier op de kop wordt een zon op de vleugels.

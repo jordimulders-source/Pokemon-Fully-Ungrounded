@@ -17,6 +17,9 @@ for f in files:
     p = f if os.path.isabs(f) else os.path.join(root, f)
     p = os.path.normpath(p)
     rel = os.path.relpath(p, root)
+    # showcase/: vellen van al goedgekeurde sprites om te tonen; geen keuring nodig (Jordi 5 nov)
+    if rel.startswith('docs/concept/sprites/showcase/'):
+        continue
     if not rel.startswith('docs/concept/sprites/') or not re.search(r'\.(png|jpe?g|gif|webp)$', rel, re.I):
         continue
     k = p + '.keuring.md'

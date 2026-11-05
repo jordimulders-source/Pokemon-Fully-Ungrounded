@@ -545,3 +545,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.134] - Showcase-vel van alle afgeronde frontsprites
 - `docs/concept/sprites/showcase/frontsprites_af.png`: de 16 afgeronde frontsprites, incl. nachtaap fase 3 (muriqui, `af/` overgenomen van branch `claude/zen-mendel-9u6x44`) (4x vergroot, werknaam + type) op één vel om te tonen. Cuyby is ronde 4 (de goedgekeurde; ronde 6 wacht nog). Opnieuw maken na nieuwe sprites: `python3 docs/concept/sprites/showcase/maak_vel.py <uit.png>` (lijst bovenin het script aanvullen).
+- Keurslot laat `docs/concept/sprites/showcase/` door (verzamelvellen van al goedgekeurde sprites; Jordi: het slot is voor keuren, niet voor tonen).

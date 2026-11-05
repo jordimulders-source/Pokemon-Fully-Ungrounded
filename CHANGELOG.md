@@ -274,3 +274,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.70] - Lama fase 3: kleur ronde 5A5 (bombín links, verre achterpoot)
 - Bombín links in hoedtinten en 2 px korter; verre achterpoot met volume. `docs/concept/sprites/lama/fase3/kleur/ronde5A5/`. Naar Jordi.
 
+### [v0.0.71] - Lama fase 3: eindkeuring + reparaties (ronde 5A7)
+- 1 px bombín (5A6); verse eindkeuring met extra aandacht voor de poten: af na 7 kleine reparaties (28 px), uitgevoerd in `docs/concept/sprites/lama/fase3/kleur/ronde5A7/`. Naar Jordi.
+

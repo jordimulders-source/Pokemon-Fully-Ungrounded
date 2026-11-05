@@ -63,3 +63,16 @@ Getest in het vel (`voorstel R1–R8` = 31 px, `+ R9` = 36 px).
 
 ## Eindoordeel: **TERUG**
 9 FAILs, waarvan 6 belijning (L1–L6). Alle reparaties zijn klein (36 px, alleen indexen, geen alpha) en staan hierboven met coördinaten. Na R1–R9 verwacht ik een nette, Gen 3-achtige afwerking; de leesbaarheid van de snavel blijft een ontwerpvraag.
+
+## Controle r7 (`../kleur_r7/kolibrie_pre.png`)
+**1. Uitvoering:** pixeldiff r6 S → r7 tegen de lijst R1–R9: alle 36 pixels hebben precies de voorgeschreven index; **0 andere pixels** veranderd; alpha gelijk; palet identiek (indexen 0–15).
+
+**2. Opnieuw nagelopen op de nieuwe stand:**
+- Buitenlijn: aan de schaduwkant (rug, staart, onderkant) nu één zwarte lijn van 1 px; lichtkant 2; geen kleur op de rand (0 niet-donkere randpixels, F komt niet meer voor); geen open randen. PASS.
+- Staart: één vlak 3 met zwarte rand, geen klont meer. PASS. Onderkant: de vleugellijn eindigt taps in (36–37,40),(36,41) en loopt dood in de buitenlijn (36–37,42). PASS.
+- Vleugelvoorrand: 2 (32,29) → 3 (32,30),(31,31–33),(32,34) → 2 (32,35…). De "losse" 3'en (32,30) en (32,34) zijn als tintvlak 1 px, maar vormen diagonaal één doorlopende lijn met (31,31–33), aan beide uiteinden aangesloten op de 2-lijn. Op 5× en 1× leest het als één zachtere rand, niet als losse pixels. Geen FAIL; wie ze toch weg wil: (32,30)→2 en (32,34)→2 (lijn blijft taps in het midden).
+- Kap: E begint als wig op rij 19, geen band meer. PASS. Dekveren: grens 8/A rustig. PASS. Pootje: C boven, D onder. PASS.
+- Overige tintclusters < 3 px: alleen oog (7, 5) en snavel/mondhoek (9, C, D): bewust en bevroren.
+- Blijvend (alleen met alpha, silhouet bevroren): jaggie rug (37,25), trap kop linksboven, haakse vleugelpunt. Zie "Voor Jordi".
+
+**3. Eindoordeel r7: GOED** (belijning en afwerking). Open blijven alleen de punten onder "Voor Jordi" (snavel leest op 1× als lijntjes, mild lila flets, stippootjes, silhouettrapjes).

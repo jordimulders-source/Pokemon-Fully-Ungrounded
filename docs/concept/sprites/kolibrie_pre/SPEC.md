@@ -125,3 +125,4 @@
 - **Jordi: "de eerste is het beste, geen idee wat voor monster je van de 3e gemaakt hebt. Ga maar naar de eindkeuring met de eerste. Kijk ook vooral naar de belijning"** → oog S gekozen (`kleur_r6/kolibrie_pre_S.png`); L afgekeurd. Eindkeuring door een verse keurder, nadruk op de belijning.
 - **Eindkeuring r6-S:** TERUG, 9 FAILs (6 belijning), 36 px kleurreparaties (`kleur_r6/EINDKEURING.md`). → maker r7 voert ze uit; daarna dezelfde keurder controleert.
 - **Kleur r7:** `blender/A/kleur_r7/`: alle 36 px uit de eindkeuring (alpha-diff 0 met r6 S). Controle door dezelfde keurder.
+- **Controle r7: GOED** (zelfde keurder; `kleur_r6/EINDKEURING.md` onderaan). Vel `kleur_r7/eind_vel.png` naast Taillow/Starly. Wacht op Jordi (open: snavel op 1×, lila flets, pootjes, trapjes in het silhouet).

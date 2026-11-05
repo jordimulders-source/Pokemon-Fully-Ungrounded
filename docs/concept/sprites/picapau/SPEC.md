@@ -1,5 +1,7 @@
 # Picapau (Electric/Flying, middelste/hoofdvorm): SPEC
 
+**AF (5 nov): frontsprite `af/picapau.png` (+ `normal.pal`, `vel.png`)** = sprite v2 r7; eindkeuring GOED (`sprite_v2/kleur_r7/EINDKEURING.md`), geen reparaties. Smaakvragen voor Jordi (open): tenen steviger omlijnen (`g`→`G` op 7 px), kuifstelen 1 px breder (silhouet). Nog te doen (later voor alle soorten): frame 2, rug, icoon, shiny, naam/data.
+
 Bron: *Celeus flavus* (cream-colored woodpecker), Amazone. Concept: `docs/concept/IDEEEN.md` (Roomkleurige specht). Convergente soort van Pikachu via kleur en tekening (niet via vorm).
 
 ## Jordi letterlijk

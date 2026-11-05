@@ -149,3 +149,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.32] - Picapau: sprite v2 (overgetrokken van het model)
 - r5 afgekeurd ("volledig 2d ..."); model B1 bleef bevroren ("subliem"). Sprite v2 cel voor cel van de B1-render (`sprite_v2/bron/`: kleur + onderdelen per spritepixel), 6 rondes met Jordi's krabbel, verse keurder (r5 NIET GOED → 83 px reparaties → r6 GOED). Nieuw gereedschap: `tools/grounded/model_vs_sprite.py` (vergelijking model ↔ sprite per onderdeel vóór Jordi). Lessen in `docs/lessen/GRAPHICS.md`.
+
+### [v0.0.33] - Picapau frontsprite af
+- Jordi over r6/r7: staartpunt, buikvlek, donkerder geel, vleugelstip, kuif (suggestie keurder), snavel bleef ("snavel is prima"); "prima om een iets andere kleur te doen idd". Verse eindkeuring r7: GOED zonder reparaties. Eindversie: `docs/concept/sprites/picapau/af/picapau.png` (+ `normal.pal`). Open smaakvragen: tenen steviger omlijnen, kuifstelen 1 px breder.

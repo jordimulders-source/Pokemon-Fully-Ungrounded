@@ -12,6 +12,7 @@ Bron: *Celeus flavus* (cream-colored woodpecker), Amazone. Concept: `docs/concep
 - Model v2: "geweldig idee qua design! nu nog iets meer een pose zoals op een van de fotos"
 - Model v4: "nu nog de goede angle pakken, kan je er een paar klaarzetten op ong driekwart"
 - Hoeken: "b1 is het beste, zorg wel dat de poten vast aan het lichaam zitten"
+- Silhouet B1: "goed silhouet" (5 nov) → **bevroren**.
 
 ## Referenties
 - `referenties/jordi_foto1_zijaanzicht_tak.png`: zijaanzicht op een tak; bron voor de massa (lijf, kuif, staart als steun, houding).
@@ -24,8 +25,8 @@ Bron: *Celeus flavus* (cream-colored woodpecker), Amazone. Concept: `docs/concep
 |---|---|---|---|
 | model | `blender/picapau.py` (één huid, SDF), stand B1 = lijf 30°, kantel 8° (`blender/b1.py`) | "geweldig idee qua design"; "b1 is het beste" | gekozen |
 | pose | schuin lijf (linksboven → rechtsonder), kop en snavel omhoog (40°), vleugels dicht | "vleugels dicht, snavel wat meer omhoog" | gekozen |
-| poten | dijen in de huid, poten groeien uit het lijf | "zorg wel dat de poten vast aan het lichaam zitten" | gedaan, wacht op Jordi |
-| silhouet | `silhouet/silhouet_b1_1x.png` uit de B1-render | – | wacht op Jordi |
+| poten | dijen in de huid, poten groeien uit het lijf | "zorg wel dat de poten vast aan het lichaam zitten" | gedaan (in het bevroren silhouet) |
+| silhouet | `silhouet/silhouet_b1_1x.png` uit de B1-render; toonkaart `blender/B1/toonkaart_1x.png` | "goed silhouet" | **bevroren**; alleen dunne delen (snavelpunt, kuiftoppen, achterkuif, tenen) ±1 px, gemeld |
 | kuif (= Pikachu-oren) | twee punten + rafelige achterkuif | "de top van de kuif zwart ... zoals pikachu's oren" | in model |
 | wangvlek (= wangzak) | foto 1 | – | open |
 | vleugels (= rugstrepen) | foto 1: donkerbruin met roomkleurige schubben | – | open |

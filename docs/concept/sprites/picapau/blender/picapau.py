@@ -143,7 +143,7 @@ def delen_picapau():
         d.append(('kuif2', ('blad', a, b, ra, 0.8, 1.6), 1.8))
     # vleugels dicht tegen het lijf (Pikachu-rugstrepen = geschubde dekveren)
     for kant in (-1, 1):
-        d.append(('vleugel', ('blad', ((0.0 if kant > 0 else 2.5), kant * 7.8, 3.5), (16.5, kant * 5.8, -13.0), (5.4 if kant > 0 else 5.0), 1.6, 0.34), 0.8)  # verre vleugel (-Y, de camera kijkt na de lijfdraai op +Y) iets naar achter, zodat hij niet onder de kop uitsteekt)
+        d.append(('vleugel', ('blad', (2.5, kant * 7.6, 3.0), (16.5, kant * 5.8, -13.0), 5.0, 1.6, 0.34), 0.8))  # vleugelbegin iets naar achter: de verre vleugel stak onder de kop uit
     # dijen: de poten groeien uit het lijf (Jordi: "zorg wel dat de poten vast aan het lichaam zitten")
     for kant in (-1, 1):
         d.append(('lijf', ('ell', (1.0, kant * 3.4, -10.0), (2.6, 2.4, 2.8), (0, 0, 0)), 1.5))

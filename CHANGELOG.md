@@ -199,8 +199,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vuistarm naar Jordi's krabbels: volle mouw van vuist tot schouder met vloeiende randen, onderrand halverwege tussen ronde 1p en zijn boog (Jordi: "50%"). Basis: `kleur/ronde1s/`.
 - Rugpatroon verkend en geparkeerd tot het lijf af was; richting: brede banden die als boog om het lijf lopen (fase 2, Furret, Dusclops).
 
-### [v0.0.68] - Nachtaap fase 3: beta af
-- **Beta:** `docs/concept/sprites/nachtaap_fase3/af/nachtaap_fase3.png` (+ `normal.pal`, `vel.png`), zonder rugpatroon. Jordi: "ben nog niet 100% tevreden, maar ik wil het een keer afronden ... is in eerste instantie toch allemaal beta versies".
-- Na de arm: lijf eerst als één geheel (studie rug met front- en back sprites), daarna vormshading (borstkas, buik, heup; been uit de heup), staartwortel loopt door in de heup; dij −2; healerhand bevroren (vier vingers) in zilverblauw, gloed en ogen turkoois, pols uit de gloed.
-- Rugpatroon: drie rondes (wiggen, strepen, banden/ringen) afgekeurd; open voor later.
+### [v0.0.68] - Nachtaap fase 3: lijf af, rugpatroon loopt
+- Na de arm: lijf eerst als één geheel (studie rug met front- en back sprites), daarna vormshading (borstkas, buik, heup; been uit de heup), staartwortel loopt door in de heup; dij −2; healerhand bevroren (vier vingers) in zilverblauw, gloed en ogen turkoois, pols uit de gloed. Basis: `docs/concept/sprites/nachtaap_fase3/kleur/ronde7c/`.
+- Rugpatroon: drie rondes (wiggen, strepen, banden/ringen) afgekeurd; loopt nog (Jordi: "afronden betekent niet half werk").
 - Lessen in `docs/lessen/SPRITE_WERKWIJZE.md` (referentie van Jordi per onderdeel, eerst opties via een agent, geen sterkte-varianten, plooien en massa's, staartwortel, retro hand).

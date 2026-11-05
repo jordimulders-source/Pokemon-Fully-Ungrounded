@@ -563,3 +563,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.140] - Hitmontop: evolutie in plaats van regional form
 - Jordi: Hitmontops Japanse naam is al capoeira, dus geen regional form maar alleen een nieuwe capoeira-evolutie. Eerst puur ontwerp. Drie richtingen (mestre/bananeira, Besouro-kever/armada, malandro/negativa) in `docs/concept/IDEEEN.md`; POKEMON.md en DEX_NOMINATIES bijgewerkt (dubbele Hitmontop-regel in POKEMON.md weg).
+
+### [v0.0.141] - Hitmontop-evolutie: pose gekozen
+- Jordi koos de pose: eenarmige handstand met benen in een V-split (foto in `docs/concept/sprites/hitmontop_evo/referenties/`), beschreven in `SPEC.md` daar.

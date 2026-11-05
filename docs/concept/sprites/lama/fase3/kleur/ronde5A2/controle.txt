@@ -1,0 +1,4 @@
+gewijzigd t.o.v. 5A: 32 (oog 10, vlecht 22, elders 0 [])
+alpha-diff met silhouet_A: +0 -0
+open randen: 0 
+kleuren: 15

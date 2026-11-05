@@ -262,3 +262,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.66] - Lama fase 3: kleur ronde 5 (A en B, luie blik)
 - Oogstudie (Slakoth, Slaking, Camerupt) en nieuw oog: zichtbaar zwaar bovenlid, oogwit, kleine pupil, "nonchalant en unimpressed". Twee versies: A (kop 1,25×, hals blijft, lijf ±7 % kleiner) en B (lijf gelijk, kop 1,1×); vel `docs/concept/sprites/lama/fase3/kleur/vel_ronde5.png`. Naar Jordi.
 
+### [v0.0.67] - Lama fase 3: A gekozen, kleur ronde 5A2
+- Jordi koos A. Vlechten terug naar zwart zoals het model; oog lui in plaats van boos (licht lidvlak, lidlijn dalend naar buiten, meer oogwit). `docs/concept/sprites/lama/fase3/kleur/ronde5A2/`. Naar Jordi.
+

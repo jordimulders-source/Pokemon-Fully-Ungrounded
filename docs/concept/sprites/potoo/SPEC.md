@@ -53,6 +53,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **opnieuw beginnen** (Jordi
 | oog zonder rand | "en waarom heeft het oog opeens een half wit stuk eronder" (5 nov, bij ronde 3–5) | besloten: geen licht ooglid/sikkel; puur zwarte kraal (keurderadvies ronde 2 verworpen) |
 | lichaamsvorm | "kijk dit is de vorm van het lichaam" (5 nov) bij `referenties/jordi_great_potoo_illustratie_LICHAAMSVORM.png` | besloten: lijf volgt deze illustratie: rechtop, lang; brede schouders direct onder de kop waar de vleugels beginnen, smal taps lijf, zeer lange staart (±de helft van de vogel) met de lange vleugelpunten ertegenaan |
 | kop blijft staan | "als de mond open gaat schuift het hoofd niet opeens een stuk naar voren" (5 nov) | besloten: kop op dezelfde plek als met dichte bek (illustratie lichaamsvorm); alleen de onderkaak klapt open voor de borst |
+| proces | "ik wil niks meer zien totdat het echt lijkt op de bronfotos" (5 nov) | besloten: geen tussenresultaten naar Jordi; pas na eigen vergelijking met de foto's + keurder PASS |
 | kern | "De snavel en ogen zijn het kernpunt van het design, zoals je kan zien zitten er kleine veren allemaal ook tussen de ogen duidelijk, dat mag je ook uitbeelden" (5 nov, tweede gesprek) | besloten: snavel + ogen krijgen de meeste aandacht; korte veertjes tussen en rond de ogen (borstelveertjes/wenkbrauwkuif) uitbeelden |
 | werkwijze | "Voordat je een silhouet bouwt, bouw je eerst een 3d model" | 3D-poppetje vóór het silhouet |
 

@@ -28,7 +28,7 @@ KOP_EXTRA = 14                # kop draait meer naar de kijker dan het lijf
 COL = {
     'wol': '#F3EFE7', 'wolver': '#D6CFC2', 'pompon': '#FBF8F2', 'pomver': '#DCD5C8',
     'vleugel': '#ECE6D9', 'achtervl': '#E0D8C8', 'vlver': '#CFC7B7', 'achtver': '#C4BBAA',
-    'spriet': '#7A5234', 'sprietver': '#5E3F28', 'palp': '#D9C4A8', 'oog': '#1E1A24', 'glint': '#FFFFFF',
+    'spriet': '#7A5234', 'sprietver': '#5E3F28', 'palp': '#E2D2BC', 'oog': '#1E1A24', 'glint': '#FFFFFF',
 }
 NOSHADE = {'oog', 'glint'}
 LINED = {'oog', 'spriet', 'sprietver', 'vleugel', 'achtervl', 'vlver', 'achtver'}
@@ -106,12 +106,12 @@ ACHTERVL_VER = ((-0.3, 0.3, -0.95), 22.0, (22.0, 14.0, 1.4))
 # tweetal hoger en kleiner. Dikte zoals ronde 2. Lucht alleen tussen het voorpaar en de tweetallen.
 # (heup, knie, voet) via op45(sx, y, diepte, straal); pompon-straal; ver.
 POTEN = [
-    ([op45(-10, 26, 16, 5.4), op45(-22, 18, 30, 5.0), op45(-16, 2, 36, 4.6)], 10.5, False),   # voor nabij
-    ([op45(-18, 27, 4, 5.0), op45(-32, 19, 10, 4.6), op45(-36, 6, 10, 4.2)], 8.6, True),      # voor ver
+    ([op45(-8, 26, 16, 5.4), op45(-18, 18, 30, 5.0), op45(-12, 2, 36, 4.6)], 10.5, False),   # voor nabij
+    ([op45(-18, 27, 4, 5.0), op45(-34, 19, 10, 4.6), op45(-39, 5, 10, 4.2)], 8.6, True),      # voor ver
     ([op45(10, 22, 20, 4.8), op45(16, 15, 28, 4.4), op45(16, 4, 30, 4.0)], 7.6, False),       # midden nabij (tweetal)
     ([op45(16, 21, 14, 4.6), op45(24, 14, 22, 4.2), op45(25, 4, 23, 3.8)], 7.0, False),       # achter nabij (tweetal)
-    ([op45(-14, 25, -12, 4.4), op45(-22, 17, -10, 4.0), op45(-25, 9, -10, 3.6)], 6.2, True),  # midden ver (tweetal)
-    ([op45(-8, 25, -18, 4.2), op45(-16, 17, -16, 3.8), op45(-18, 10, -17, 3.4)], 5.6, True),  # achter ver (tweetal)
+    ([op45(-16, 25, -6, 4.4), op45(-24, 16, -2, 4.0), op45(-27, 7, -2, 3.6)], 6.2, True),  # midden ver (tweetal)
+    ([op45(-12, 25, -10, 4.2), op45(-19, 16, -6, 3.8), op45(-21, 8, -6, 3.4)], 5.6, True),  # achter ver (tweetal)
 ]
 POOTKLEUR = ['#E0302A', '#F08A1C', '#2A7FE0', '#A040E0', '#2EA84A', '#E040A0']
 
@@ -166,7 +166,7 @@ def poedelmot(kop_r=19.0, kop_extra=KOP_EXTRA, pootkleur=False):
     # ronde 4 (Jordi: "de neus is heel raar, wanneer zie je dit soort dieren met een neus?"): geen snuit/neusbrug meer.
     # Alleen een zachte lichtbruine tint in de wol tussen en onder de ogen (behaarde palpen), zonder lijn en zonder
     # eigen vorm: een platte ellipsoïde die bijna helemaal in de kopwol zit.
-    m.ell(cr + np.array((-kop_r * 0.80, -4.0, 0.0)), (3.0, 6.5, 6.0), 'palp')
+    m.ell(cr + np.array((-kop_r * 0.78, -6.0, 0.0)), (3.0, 5.0, 8.5), 'palp')
     # kamsprieten opzij als oren
     for sz in (1, -1):
         spriet(m, cr + np.array((-2.0, 9.0, 13.0 * sz)), sz, sz < 0)

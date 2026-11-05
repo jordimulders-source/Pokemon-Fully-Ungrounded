@@ -12,6 +12,7 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 ## Harde regels (elke ronde controleren)
 - **Goedgekeurd = bevroren**: pixeldiff 0 buiten de opdrachtzone, met script bewezen. Wat Jordi goedkeurde nooit herbouwen.
 - **Jordi's woorden letterlijk** in SPEC en opdracht; nieuwe opmerking vult aan. Twijfelt Jordi: **eerst vragen wat hij ziet**, niet gokken. Bij twijfel over de omvang van een wijziging: vragen.
+- **Geen eigen kenmerken in de opdracht** (poedelmot 5 nov: "dun", "snuitvlak", "niet 3/4" waren van Claude, niet van Jordi): zet in een makeropdracht alleen wat Jordi zei of wat de bron toont; een eigen idee heet expliciet "voorstel Claude". Lees Jordi's zin twee keer vóór je hem samenvat.
 - **Model of keuze niet ongevraagd veranderen**; een idee = variant náást de gekozen versie.
 - **Zelfgenoemd zwak punt = terug**, niet opleveren. Reparaties via de maker; daarna opnieuw keuren.
 - **Toets de hoofdvraag eerst** (pose, kop, leest het als Pokémon op 1×?), pas daarna getallen (overlap, px). Groene getallen ≠ goed beeld.

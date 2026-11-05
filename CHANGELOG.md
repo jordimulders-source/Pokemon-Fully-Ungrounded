@@ -484,3 +484,34 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.49] - Werkwijze: eerst de dex met alleen frontsprites
 - Jordi: "Ik wil eerst gewoon een pokedex maken met alleen een 1e frontsprite". Vastgelegd in `docs/concept/SPRITE_PLAN.md` en de Stand van zaken: elke nieuwe soort eerst alleen frame 1; frame 2, rug, icoon en shiny later voor de hele dex in één ronde.
+### [v0.0.24] - DJ Rotom: bron en silhouet 1
+- DJ Rotom opnieuw begonnen volgens `docs/lessen/SPRITE_WERKWIJZE.md`, met Jordi's bron (Pokopia-render) in `docs/concept/sprites/dj_rotom/referenties/` en een `SPEC.md`.
+- Silhouet 1 (64×64): de bron direct verkleind (60×45, ±1750 px, zo groot als Frost/Wash); alleen de bliksem-noot en de spits met de hand dikker gemaakt (32 px). Vel: `docs/concept/sprites/dj_rotom/silhouet1/vel_silhouet1.png`. Wacht op Jordi.
+
+### [v0.0.25] - DJ Rotom: silhouet 2 (sterker perspectief)
+- Jordi: "misschien iets meer perspectief als in pronounced vormen?" en "ik vind de bron juist driekwart". Het 3/4 van de bron sterker gemaakt door de bron zelf te vervormen (`docs/concept/sprites/dj_rotom/silhouet2/perspectief.py`): de nabije rechterspeaker groter, de verre linkerspeaker kleiner, boven- en onderlijn kantelen mee en de kop blijft breed. Drie sterktes A/B/C in `silhouet2/vel_perspectief.png`; de bliksem wordt na de keuze weer met de hand dikker gemaakt.
+
+### [v0.0.26] - DJ Rotom: silhouet bevroren
+- Jordi: "prima! ga maar in kleuren. Bliksem noot mag idd dikker dan". Variant B (mijn advies) met de bliksem-noot met de hand dikker (15 px) is bevroren: `docs/concept/sprites/dj_rotom/silhouet_af/silhouet.png`. Stijlnorm voor de kleur: de Rotom-vormen die al in de game zitten (Jordi: "gebruik vooral de stijl van de rotom sprites die al in de game zitten he").
+
+### [v0.0.27] - DJ Rotom: kleur1 + grotere kop (silhouet 3)
+- Kleur1 (maker-agent): gloed, game-Rotom-oranje (de bronkleur lag er vrijwel op), speakers, ogen en bliksem goed; het gezicht was te smal (kopvoorkant ±13 px), met een te klein display. Teruggestuurd.
+- Jordi: "ja dan moet het middenstuk misschien wat groter om de ogen enzo goed te kunnen uitbeelden". Silhouet 3: kop-kubus + spits in de bron vergroot (×1,15 / ×1,25 / ×1,35), bliksem houdt zijn maat, rechterspeaker blijft ervóór; daarna dezelfde perspectiefvervorming (B). Vel: `docs/concept/sprites/dj_rotom/silhouet3/vel_kop.png`.
+
+### [v0.0.28] - DJ Rotom kleur2–4
+- Kleur2: kop ×1,25 in de sprite (Jordi: "silhouet naar sprite is niet 1 op 1 te vertalen"), varianten A/B voor het display; onafhankelijke keuring (`kleur2/KEURING.md`) koos B, met 5 reparaties.
+- Kleur3: reparaties (kop in 3/4, conussen met stofkap, hoek rechtsonder, snoer, schaduw).
+- Kleur4: hogere bliksem (y10–25, twee knikken, witte achtste noot) en de ogen pixel voor pixel naar het Frost-sjabloon (Jordi: "het zijn nog geen typische rotom ogen"). Les in `SPRITE_OPDRACHT.md`.
+
+### [v0.0.29] - DJ Rotom kleur5 (Rotom-consistentie)
+- Jordi: "best goed al, laat een agent het met de andere rotom sprites vergelijken en kijken of er dingen zijn die consistent zijn die in deze sprite missen". Analyse: `docs/concept/sprites/dj_rotom/kleur4/CONSISTENTIE.md`.
+- Kleur5 (`kleur5/dj_rotom.png`): zwarte binnenlijn aan de schaduwkant, vrije spits van 10 px (bliksem 3 px omhoog), twee losse tandjes, hooglicht als vlekjes (4,5%), oranje/wit/grijs op de exacte game-waarden. Open voor Jordi: gloed voller, navy of grijs, extra plasma, verticale plek; daarna shiny, frame 2, rug, icoon.
+
+### [v0.0.30] - DJ Rotom frontsprite af
+- Verse eindkeuring PASS (`docs/concept/sprites/dj_rotom/kleur5/EINDKEURING.md`): op 1× een vorm uit dezelfde game als de zes Rotoms. Aanbevelingen uitgevoerd: naden tussen kop en kasten zwart (zoals Frost/Mow), equalizertoppen eigen groen zodat ze in de shiny niet perzik worden (46 px).
+- Af: `docs/concept/sprites/dj_rotom/af/dj_rotom.png` (frame 1). Volgende: shiny, frame 2, rug, icoon, data.
+- Les in `SPRITE_WERKWIJZE.md`: consistentie-analyse tegen de bestaande vormen bij vormen van een bestaande soort.
+
+### [v0.0.31] - DJ Rotom hoger in het vak, zweeft
+- Jordi: "kan die nog hoger dan?" De frontsprite is 4 px omhoog geschoven (pixels ongewijzigd) en staat nu net zo in het vak als Frost (boven y3, onder y58).
+- Jordi: "hij hoort te zweven". In deze build krijgt elke tegenstander een schaduw (Gen 4-stijl); met `enemyMonElevation` > 0 zweeft de sprite erboven. Bij het invoeren: elevation ±6 zoals Frost, schaduw breed genoeg voor de speakers (genoteerd in `dj_rotom/SPEC.md`).

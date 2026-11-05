@@ -29,6 +29,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 
 **Lijnen, ogen, kleur**
 - Geen rechte lijnen waar het dier rond is; curven zonder hoeken; geen overdreven rechte staart.
+- **Rotom-vormen:** de ogen zijn de game-Rotom-ogen (schuine amandel, donkere rand, grote gekleurde iris met glans, wit alleen als randje); neem de opbouw van Rotom/Frost pixel voor pixel als sjabloon (Jordi, 5 nov: "het zijn nog geen typische rotom ogen").
 - Ogen geïntegreerd (bovenlid donkerst, iris donker boven/licht onder, glans), niet opgeplakt, geen brilogen; geen volledig zwarte ogen zonder glans.
 - Omlijning per kleurgroep, zwart alleen aan de schaduwkant; licht van linksboven; geen open randen (ook schaduwkleur naast transparant).
 - Kleuren vergelijken met Pokémon van **hetzelfde type** (Dark mag donker).

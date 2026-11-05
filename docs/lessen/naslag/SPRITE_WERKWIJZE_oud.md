@@ -63,6 +63,7 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 - **Formaat volgt de vorm:** het formaatdoel mag nooit winnen (olinguito werd dun door het doel van 950 px; 1100–1200 px is prima, zoals Linoone/Zigzagoon). Een eindvorm kan klein zijn als hij slank is (kolibrie ±1000 px, gelijk aan Crobat).
 - **Vel voor Jordi:** onderlaag/foto | silhouet 4× | silhouet over de onderlaag | silhouet 1×, naast 3–5 echte Gen 3-silhouetten van hetzelfde bouwtype. Claude keurt eerst zelf op **pose én massa** (overlay), dan pas Jordi.
 - **Goedgekeurd silhouet = bevroren** (alpha-diff 0 in alle volgende rondes). Vastleggen in SPEC.md.
+- **Maar: silhouet naar sprite is niet 1 op 1** (Jordi, 5 nov, DJ Rotom): heeft een onderdeel in kleur meer ruimte nodig (gezicht, ogen), dan mag de sprite daar van het silhouet afwijken; geen nieuwe silhouetronde voor Jordi, gewoon in de sprite oplossen en de afwijking melden.
 
 ## Stap 3. Kleur (maker-agent, op het bevroren silhouet)
 - **Eén maker-agent**, die doorwerkt met SendMessage. In de opdracht altijd: SPRITE_NORM, SPRITE_OPDRACHT, SPRITING §0–§8 + lessen, de Dragonfly Cave-gids gericht, SPEC.md, referenties, Jordi's woorden letterlijk.
@@ -85,6 +86,8 @@ Bewezen op de **kolibrie** (Ghost/Flying, eindvorm: van eerste schets tot goedge
 3. **Keurdersadvies dat een goedgekeurd ontwerp raakt** (bv. "masker dunner") is een vraag aan Jordi, geen opdracht aan de maker.
    - **Ook advies dat een harde eis van Jordi raakt** (wasbeer, 2 nov: de keurder liet de gespleten koevoetpunt dichtmaken tot een 3x3-blok, Jordi: "linkerklauw mist de hele koevoetvorm nu opeens"; "er gaat wel veel mis telkens"). Leg elk reparatieadvies vóór het naar de maker gaat naast Jordi's woorden in SPEC.md; strijdig = niet uitvoeren, en een kenmerk dat Jordi eist mag in geen enkele ronde verdwijnen (Claude toetst dat zelf op 8x en 1x vóór Jordi).
 4. Pas als het door 1 en 2 komt: naar Jordi, met een vel en een korte lijst keuzes.
+
+- **Vormen van een bestaande soort (Rotom-vormen, regional forms):** laat een agent een systematische consistentie-analyse doen tegen alle bestaande vormen (palet-waarden, binnenlijn, spits, tanden, hooglicht-%, maat), met een script gemeten. Dat vond bij DJ Rotom vijf afwijkingen die geen gewone keuring zag (Jordi, 5 nov: "dat die klopt met de andere sprites is het belangrijkste"). Let op kleuren die in de shiny meeveranderen (equalizer deelde de gloedindex).
 
 ## Stap 5. Reparatierondes
 - Alleen wat Jordi of de keurder noemt; benoemde zones, pixelbudget, diff-bewijs buiten de zones.

@@ -58,3 +58,4 @@ Bron: `sprite_v2/bron/` (`bron.py`: kleur per spritepixel uit `blender/B1/b1.png
 - Jordi (5 nov): **"daar zijn opeens ook allemaal rare onnodige aanpassingen gemaakt"** (kop rechts in r4) · **"die nergens op lijken, niet kloppen met het model, niet kloppen met mijn instructies, gewoon dom hallucineerwerk"** → kop rechts terug naar r2 (waarop hij tekende) + alleen zijn twee lijnen en de ronde achterkant.
 - Jordi (5 nov): **"hij moet niet alleen mijn lijnen toevoegen, hij moet oa aanpassingen doen nav die lijnen"** → op de aangewezen plekken de sprite naar het model aanpassen.
 - Jordi (5 nov): **"en als er aanpassingen gebeuren moet dat allemaal uit te leggen zijn waarom het nu dichter in de buurt komt van het model"** · **"als dat niet lukt, dan gebeurt het niet"**.
+- **r6 (5 nov):** keurder GOED (`sprite_v2/kleur_r6/KEURING.md`); naar Jordi. Open: reparatie 6 (licht op de kuifkegels, Jordi's zone), snavelvoet fors (zo in de render).

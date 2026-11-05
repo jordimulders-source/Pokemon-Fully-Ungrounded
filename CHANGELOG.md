@@ -146,3 +146,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.31] - Picapau: kleursprite ronde 5
 - Kleur in 5 rondes (maker-agent) met een onafhankelijke keuring na ronde 3; versie B (23 px silhouetwijziging: snavelbasis, poten, buik) ligt bij Jordi: `docs/concept/sprites/picapau/kleur_r5/picapau.png`.
+
+### [v0.0.32] - Picapau: sprite v2 (overgetrokken van het model)
+- r5 afgekeurd ("volledig 2d ..."); model B1 bleef bevroren ("subliem"). Sprite v2 cel voor cel van de B1-render (`sprite_v2/bron/`: kleur + onderdelen per spritepixel), 6 rondes met Jordi's krabbel, verse keurder (r5 NIET GOED → 83 px reparaties → r6 GOED). Nieuw gereedschap: `tools/grounded/model_vs_sprite.py` (vergelijking model ↔ sprite per onderdeel vóór Jordi). Lessen in `docs/lessen/GRAPHICS.md`.

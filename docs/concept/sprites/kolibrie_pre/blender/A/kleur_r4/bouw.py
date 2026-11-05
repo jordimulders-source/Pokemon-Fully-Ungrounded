@@ -11,3 +11,5 @@ SNAVEL={15:(12,12),16:(13,14),17:(14,17),18:(15,18),19:(16,18),20:(13,18),21:(15
 for y,(a,b) in SNAVEL.items():
     for x in range(a,b+1): g[y][x]={'A':'2'}.get(r3[y][x],r3[y][x])
 open(H+'kleur_r4/raster.txt','w').write('\n'.join(''.join(r) for r in g)+'\n')
+import sys; sys.path.insert(0,H+'kleur_r4')
+import palet; palet.build(H+'kleur_r4/raster.txt',H+'kleur_r4/kolibrie_pre.png')

@@ -131,3 +131,12 @@ Basis ronde 9; blinde test r9: reuzenpotoo 55% (kaketoe 25%, witte uil 10%).
 - Mantel/schouderveren lopen hoog achter en naast de kop door (rug begint bij y 150, gebocheld zoals de leidraad); kop + mantel hebben één doorlopende ruige omtrek; de losse naadveertjes van ronde 9 zijn weg (gaven witte vlekken).
 - Veerpuntjes (`ruffle`) langs rug (om de 34 px) en borst/flank (om de 38 px); dons onder de kin (boogjes); achterste pennen breder zodat de vleugel een eigen getrapte rand heeft buiten de rug.
 Valkuil: veerpuntjes om de 26 px over de hele omtrek maken er een pluche knuffel van; spaarzaam houden.
+
+# Ronde 11 (vel_ronde11.png, pop2d_potoo_r11.py)
+Basis ronde 10; blinde test r10: uil 40%, kaketoe 25%, potoo 20% ("paars vlak als vizier/masker/glas", "grijze rand als kromme snavelpunt").
+- Grijze snijrand langs de muil weg: de gezichtsveren lopen door tot de dunne lila-roze lip. Snavel = alleen het korte hoornstukje vóóraan (`L_BILL`, één vorm met de haak, over de mondlijn).
+- Muil mat: middentoon paars, één zachte indigo holte bovenmidden rond keel en spleten, lichtere kom naar de kaakpunt; geen verloop, geen tongvlek. Spleten donker, zacht, langgerekt.
+- Bevederde wang van de nabije kant valt over de mondrand (muil = holte in de kop).
+- Voorhoofd tot 9 px verder naar voren (rond y 205); mantel begint lager (y 188) met een zachte lila binnenlijn langs het achterhoofd, zodat de koepel heel blijft.
+- Vel: extra paneel (f) kop naast de gespiegelde leidraad, zelfde uitsnede.
+Valkuil: drie diepte-zones als banden langs de bovenrand gaven banding (parallel aan de rand); één vlek met zachte rand leest als holte.

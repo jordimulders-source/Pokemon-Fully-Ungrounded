@@ -17,6 +17,9 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 - Wat Jordi eruit wil (5 nov): **"echt zon krullende staart met een bliksemschicht"** · **"krullende oren"** (= de kuif) · **"imposant, groot, opgeblazen"**.
   → De **staart** zelf (niet de tong) wordt een lange krullende staart (S-boog zoals Raichu Gen 1) met een bliksemschicht als punt; bij een specht: de stijve steunstaart verlengd tot een krullende veerstaart/-pluim met bliksempunt. De kuifpunten krullen zoals Raichu's oren. Het lijf opgeblazen (veren opgezet, zoals een vogel die zich groot maakt), groot en imposant.
 
+- Jordi (5 nov): **"we kunnen wel proberen zo'n tong te spriten die dan half eruit hangt, maar ik denk dat het niet lukt"** → tong half uit de snavel als **variant náást** de hoofdversie (zonder tong), niet als hoofdkeuze.
+- Jordi (5 nov): **"Voor inspiratie sprites kan je kijken naar legendary vogels enzo, die hebben ook altijd wat complexere poses met dingen die om ze heen krullen. Ik wil gewoon voorkomen dat al onze vogels hetzelfde erbij staan"** → `referenties/vergelijking_vogelposes.png` (Gen 3-frontsprites op 4×: Lugia, Ho-Oh, Articuno (staart krult om het lijf), Zapdos, Moltres, Galar-vogels, Rayquaza, Yveltal, Noivern, Braviary, Staraptor, Talonflame, Corviknight, Kilowattrel). Pose moet duidelijk anders zijn dan onze eigen vogels (kolibrie, kolibrie pre-evo, Picapau: alle drie vleugels dicht/rechtop).
+
 ## Familie met Picapau (vast)
 - Specht: beitelsnavel blijft, oog en kop in de lijn van Picapau, vleugels met de ronde lichte stippen (Jordi: stippen, geen Pidgey-schubben), stijve steunstaart.
 - Zwaarder lijf, bolle buik (Jordi bij Picapau: "het lichaam moet echt bol, dat is juist een kenmerk van pikachu").
@@ -28,7 +31,7 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 | pose | Raichu Gen 1 als inspiratie | vleugels half open; "imposant, groot, opgeblazen" | gekozen, bron (model/foto) open |
 | staart | Raichu Gen 1 | "echt zon krullende staart met een bliksemschicht" | gekozen |
 | kuif | Raichu-oren | grote gekrulde kuif; "krullende oren" | gekozen |
-| tong | spechtentong = Raichu-staart | alleen dex/move | gekozen |
+| tong | spechtentong | alleen dex/move; variant met tong half uit de snavel proberen | variant |
 | snavel, oog, poten | Picapau | – | open |
 
 ## Afgekeurd (niet herhalen)

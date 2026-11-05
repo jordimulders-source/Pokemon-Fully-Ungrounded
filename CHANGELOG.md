@@ -235,3 +235,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.57] - Lama fase 3: ontwerp Y bevroren, bron silhouet
 - Jordi koos Y (blauw worstelpak) zonder franje. Bron voor het silhouet in `docs/concept/sprites/lama/fase3/silhouet/` (`bron.py`, model 50 %: 1265 px, box 35×62) met controlevellen; op 64 px lopen de voorpoten in pose C samen, vraag aan Jordi.
 
+### [v0.0.58] - Lama fase 3: silhouet ronde 1 (pose C2)
+- Pose C2 (lijf 45°) gekozen. Maker trok het model over: `docs/concept/sprites/lama/fase3/silhouet/ronde1.txt` (1286 px, alles ≤ 1 px van het model, 0 korrels). Op 64 px: voorpoten één blok, formaat maar 9 % boven fase 2; vraag aan Jordi.
+

@@ -13,13 +13,17 @@ import pop3d_lama as L
 import fase3_r4 as F4
 P = L.P
 YAW, PITCH, HEAD_YAW = 45, 8, 18
-W3 = dict(breed=1.26, nr=7, legk=1.85)   # Jordi 5 nov: "eigenlijk vind ik W3 wel goed" (ronde 1 = zonder W3)
+W3 = dict(breed=1.26, nr=7, legk=1.85)
+SPRITE = dict(kopk=1.2, hat=(1.3, -2.5, 1.3, 9.0))   # ronde 3 (K3)   # Jordi 5 nov: "eigenlijk vind ik W3 wel goed" (ronde 1 = zonder W3)
 
 if __name__ == '__main__':
     fill = float(sys.argv[1]) if len(sys.argv) > 1 else 0.99
     L.set_vacht('bont (foto 4)'); L.COL['lid'] = L.COL['head']; L.COL['lip'] = '#C9A982'
     F4.HEAD_YAW = HEAD_YAW
-    m = F4.fase3_r4('Y', **W3)
+    # Sprite-overdrijving (Jordi 5 nov: "het gaat niet om de tekening, het gaat puur om de sprite"): het ontwerp (poppetje W3)
+    # blijft; alleen voor de sprite kop 1,2x, bombín 1,3x en 2,5 naar links, vlechten 1,3x en 9 naar buiten (kopstudie K3).
+    F4.HATK, F4.HAT_DX, F4.BRAIDK, F4.BRAID_Z = SPRITE['hat']
+    m = F4.fase3_r4('Y', kopk=SPRITE['kopk'], **W3)
     Rc = P.rot_x(math.radians(PITCH)) @ P.rot_y(math.radians(YAW))
     pts = np.array([Rc @ c for c, r, R0, g in m.parts]); rs = np.array([r.max() for c, r, R0, g in m.parts])
     x0, x1, y0, y1 = (pts[:, 0] - rs).min(), (pts[:, 0] + rs).max(), (pts[:, 1] - rs).min(), (pts[:, 1] + rs).max()

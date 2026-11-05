@@ -21,8 +21,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1 (ontwerp: pose en 
 ## Onderdelen
 | onderdeel | bron / referentie | Jordi's woorden | status |
 |---|---|---|---|
-| pose | open (keuze uit de foto's in `referenties/`) | — | open |
-| frames | idee: frame 1 rustig, frame 2 bek open | — | open |
+| pose | driekwart, licht vooruit hangend, **bek open**; kop/muil uit het drieluik (boven + linksonder); lijf tot staartpunt: bron nog nodig | "Ik wil de bek juist open, want dat is de sprite die men het meest gaat zien. het wordt uiteraard een driekwart pose met de vogel die licht vooruit hangt" | besloten (bron lijf open) |
+| frames | frame 1 = bek open (hoofdsprite); frame 2 nog open | idem | deels |
 
 ## Afgekeurd (niet herhalen)
 - Tweede stage die met een tak/stomp versmelt (`concept_schets_2stages_afgekeurd.png`): tak in beeld past niet bij Pokémon-sprites.

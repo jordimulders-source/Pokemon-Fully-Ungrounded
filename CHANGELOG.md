@@ -402,3 +402,85 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/lessen/SPRITE_WERKWIJZE.md` compact herschreven (stappentabel + commando's); oude versie in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.
 - `docs/lessen/SPRITE_WERKWIJZE.md` compact herschreven (stappentabel + commando's); oude versie in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.
 - Blender-model is geen vereiste (Jordi): foto of model, wat werkt (SPRITE_KERN, SPRITE_WERKWIJZE).
+### [v0.0.24] - Brainstorm Uyuni-Silicobra
+- Brainstorm voor de eerste regional form (Silicobra uit de Salar de Uyuni, met een mogelijke nieuwe evolutie) toegevoegd aan `docs/concept/IDEEEN.md`. Nog niets besloten.
+
+### [v0.0.25] - Uyuni-Silicobra: Ground + Ice-immuniteit
+- Besloten (Jordi): de Uyuni-Silicobra blijft Ground en krijgt een nieuwe ability met een immuniteit voor Ice; de sprite wordt een aangepaste bestaande sprite (`POKEMON.md`, `SPRITE_WERKWIJZE.md`). Uitleg waarom Ground/Electric klopt + matchups in `IDEEEN.md`.
+
+### [v0.0.26] - Uyuni-Silicobra: nieuwe evolutie, kleurrichtingen
+- Besloten (Jordi): de Uyuni-Silicobra krijgt een **nieuwe evolutie** (geen Uyuni-Sandaconda). Ability: Jordi denkt nog na.
+- `docs/concept/sprites/silicobra_uyuni/` met SPEC.md en drie kleurrichtingen (paletwissel op de bestaande sprite): A Zoutkorst, B Spiegel, C Lithium.
+
+### [v0.0.27] - Uyuni-Silicobra: ontwerpstudie regional forms
+- Studie van 12 regional forms (wat ze veranderen) en een ontwerpvoorstel voor de Uyuni-Silicobra in `docs/concept/sprites/silicobra_uyuni/ONTWERP.md` (pekelzak, zeshoekige korst, zoutkegel; niet als Ice of Nacli lezen). De kleurrichtingen van v0.0.26 zijn vervallen tot het ontwerp vastligt.
+
+### [v0.0.28] - Uyuni-Silicobra: schetsen ronde 1
+- Vier ruwe ontwerpschetsen op de echte Silicobra-sprite (`docs/concept/sprites/silicobra_uyuni/schetsen_ronde1.png`): zoutkorst, pekelzak, zoutkegel-staart, korstschild. Besloten (Jordi): loom en traag, een wall.
+
+### [v0.0.29] - Uyuni-Silicobra: keuzes + schetsen ronde 2 (zoutkegel)
+- Besloten (Jordi): zoutkorst, pekelzak, half dichtgevallen oog en zoutkuif. Twijfel over de zoutkegel: vier varianten in `docs/concept/sprites/silicobra_uyuni/schetsen_ronde2.png`; voorstel om de kegel als overworld-gedrag te gebruiken in plaats van in de sprite.
+
+### [v0.0.30] - Uyuni-Silicobra: ontwerp vastgelegd (variant A)
+- Jordi koos variant A (zoutkorst, pekelzak, half dichtgevallen oog, zoutkuif; geen zoutkegel in de sprite). SPEC.md bijgewerkt; maker-agent gestart.
+
+### [v0.0.31] - Uyuni-Silicobra: frontsprite ronde 2
+- Maker-agent ronde 1 en 2 in `docs/concept/sprites/silicobra_uyuni/ronde1/` en `ronde2/`. Ronde 2: barstnet i.p.v. bakstenen, ronde pekelzak i.p.v. edelsteen, oogring terug met half lid, gekleurde buitenlijn (Jordi: "vooral de buitenste lijn is te zwart"). Wacht op Jordi.
+
+### [v0.0.32] - Uyuni-Silicobra: frontsprite ronde 3
+- Pekelzak kleiner en los van de staart, kuif links loopt geleidelijk uit (39 px; de rest pixel voor pixel gelijk aan ronde 2). `docs/concept/sprites/silicobra_uyuni/ronde3/`.
+
+### [v0.0.33] - Uyuni-Silicobra: frontsprite ronde 4 (halsband)
+- Ronde 3 afgekeurd (kuif brokkelt af, zak als aanhangsel); bespreking in `docs/concept/sprites/silicobra_uyuni/bespreking/`. Besloten (Jordi): de pekel wordt een **halsband**. Ronde 4 (vanaf ronde 2): slordige pixel weg, nek terug naar het originele silhouet met een volle turquoise band; kop, voet en krul pixel voor pixel ronde 2.
+
+### [v0.0.34] - Uyuni-Silicobra: frontsprite ronde 5
+- A: halsband 1 px hoger onder de kin. B (test): A plus een scheidingslijn tussen kop en zoutkuif. `docs/concept/sprites/silicobra_uyuni/ronde5/`.
+
+### [v0.0.35] - Uyuni-Silicobra: frontsprite ronde 6
+- Vanaf 5A: de gezichtslijn van de originele Silicobra terug in een zachte grijs-okertint; halsband aan de bovenkant 1–2 px hoger, onderkant gelijk. `docs/concept/sprites/silicobra_uyuni/ronde6/`.
+
+### [v0.0.36] - Uyuni-Silicobra: frontsprite goedgekeurd
+- Jordi: "ronde 6 uitstekend en akkoord". Frontsprite (frame 1) bevroren in `docs/concept/sprites/silicobra_uyuni/af/silicobra_uyuni.png` (64×64, 15 kleuren, transparency=0). Lessen van de zes rondes in `docs/lessen/SPRITE_WERKWIJZE.md` (Regional forms). Stand van zaken in CLAUDE.md bijgewerkt.
+- Nog te doen: frame 2 (mond open), rugsprite, icoon, shiny, naam en data; de nieuwe evolutie; de ability.
+
+### [v0.0.37] - Naam evolutie: Saltaconda
+- De nieuwe evolutie van de Uyuni-Silicobra heet **Saltaconda** (salt + anaconda, dé slang van Zuid-Amerika). Ontwerprichting en type nog open (`docs/concept/sprites/silicobra_uyuni/ONTWERP.md`).
+- Gewijzigd (Jordi): de naam wordt **Salticonda** ("vind ik net wat lekkerder bekken").
+
+### [v0.0.38] - Salticonda: richting + eerste schetsen
+- Besloten (Jordi): Salticonda wordt **Ground/Electric**, een bulky wall (HP en Def), in de geest van Runerigus: een eigen vorm met inspiratie van Sandaconda (zoutheuvel met pekelringen, hints naar een accu). `docs/concept/sprites/salticonda/` met SPEC.md en vier ruwe schetsen op de Sandaconda-sprite.
+
+### [v0.0.39] - Salticonda: silhouetronde 1
+- Drie silhouetvarianten op Ekans als skelet, met de anaconda-foto's van Jordi als bron voor de kop (`docs/concept/sprites/salticonda/silhouet1/`): A 4 windingen + kop bovenop, B laag en breed + kop vooraan, C Ekans-houding met staart omhoog.
+
+### [v0.0.40] - Salticonda: silhouetronde 2
+- Vanaf A: bulkier (±2150 px, voet ±55 px breed), één doorlopende kegelomtrek, kop van A bevroren (5 px omhoog). D = 4 windingen, E = 3 dikke windingen (`docs/concept/sprites/salticonda/silhouet2/`).
+
+### [v0.0.41] - Salticonda: kleurronde 1 (A en E)
+- A en E ingekleurd met het palet van de Uyuni-Silicobra (silhouetten bevroren, alpha-diff 0): buisvormige windingen met licht van linksboven, turquoise pekelringen in de gleuven, zoutkorst met Y-naden, kop met half oog, anacondastreep en lichte snuit, gebandeerde staart met turquoise punt. `docs/concept/sprites/salticonda/kleur1/`.
+
+### [v0.0.42] - Salticonda: ronde 2 (3/4, nieuwe kop, staart als zoutkegel)
+- Nieuw 3/4-lijf met drie dikke windingen als ellipsen, doorbuigende pekelringen, een grotere anaconda-kop met Sandaconda-neusbult en ouder half oog; kopvariant A (koepel) en B (kroon van zoutplaten); staart als klein zoutkegeltje met pekelringen. `docs/concept/sprites/salticonda/kleur2/`.
+
+### [v0.0.43] - Salticonda: nieuwe kop in 3/4 (kleur3 → 3c)
+- Kleur2 afgekeurd (misvormde koppen, zijaanzicht). Lijf van kleur1-E bevroren; alleen de kop opnieuw, op de Silicobra-Uyuni-kop als skelet in dezelfde 3/4-hoek, iets groter, met Sandaconda-neusbult. Jordi over kleur3: "veel beter de goede kant op". 3b: zouttextuur op de kuif (goed), maar kuif kleiner (afgekeurd). 3c: kuif +19% t.o.v. kleur3 (kraag van zoutplaten naar achteren), neusgaten terug. `docs/concept/sprites/salticonda/kleur3*/`.
+- Ability-richting (Jordi): één ability met immuniteit voor Ice én Water die hem oplaadt (zout smelt ijs, water + zout = pekel); details en naam later (`docs/concept/sprites/silicobra_uyuni/ONTWERP.md`).
+
+### [v0.0.44] - Salticonda: kleur3e en kleur3d
+- Jordi: kleur3 heeft de beste kuif en neus; 3b/3c afgekeurd. kleur3e = kleur3 met alleen de zouttextuur van 3b op de kuif (vorm identiek). kleur3d = kleur3 met dezelfde kuif 1,1× hoger/breder (1,32× oppervlak), sprite 3 px omlaag, neus en lijf ongewijzigd.
+
+### [v0.0.45] - Salticonda: kleur3f (kop past bij het lijf)
+- Jordi koos 3e. 3f: schaduwkant van de kop even diep als op de windingen (zelfde tinten/stappen), slagschaduw op de bovenste winding onder kaak en halsband; 75 px, alleen tinten, silhouet/kuif/neus/oog ongewijzigd.
+
+### [v0.0.46] - Salticonda: onafhankelijke keuring
+- Keuring van kleur3f (`docs/concept/sprites/salticonda/keuring/KEURING.md`): geslaagde regionale vorm (herkenbaar idee, ander materiaal/functie, verklaard door de regio, evolutie vergroot het kenmerk), maar 4 kleine FAILs: rechte runs in de ringen, onderrand te licht, staart leest niet op 1×, raakt de bovenrand. Zes smaakvragen voor Jordi.
+
+### [v0.0.47] - Salticonda: kleur3g (reparaties keuring + Electric-hint)
+- Ringen en halsband zakken in het midden door (runs ≤8 px), donkere onderrand, nieuwe staart (5 px dik, pekelband, eindigt als zoutkegeltje), sprite 2 px omlaag (2 rijen lucht boven), Electric-hint: warm lichtgele glans op de halsband (paletindex 15). 207 px; kop, kuif, neus, oog en korst gelijk aan 3f.
+
+### [v0.0.48] - Salticonda: frontsprite goedgekeurd
+- Jordi: 3g "bijna helemaal goed", met de staart van 3f. kleur3h = 3g + staart van 3f, vastgelegd als `docs/concept/sprites/salticonda/af/salticonda.png` (64×64, 16 kleuren, transparency=0). Stand van zaken in CLAUDE.md bijgewerkt.
+- Nog te doen voor de lijn: frame 2, rugsprites, iconen, shinies, data; de ability (naam en effect).
+
+### [v0.0.49] - Werkwijze: eerst de dex met alleen frontsprites
+- Jordi: "Ik wil eerst gewoon een pokedex maken met alleen een 1e frontsprite". Vastgelegd in `docs/concept/SPRITE_PLAN.md` en de Stand van zaken: elke nieuwe soort eerst alleen frame 1; frame 2, rug, icoon en shiny later voor de hele dex in één ronde.

@@ -33,5 +33,8 @@ Bij `referenties/fanart_mestrimba.png` (fanart van iemand anders, "Mestrimba"; a
 - Pose: zie hierboven (eenarmige handstand, V-split).
 - Anders dan de fanart: geen witte broek of berimbau-benen; blauw blijft.
 
+## Type (Jordi, 5 nov)
+- **Fighting/Ground** (twijfel was Fire/Water/Ground; "dark vind ik niet passen. Ik denk ground het beste omdat die telkens aan de grond zit"). Niet eerder in de dex (Great Tusk staat uit). Verdedigend: zwak voor Flying, Water, Grass, Psychic, Ice, Fairy; Rock ×¼, Poison/Bug/Dark ×½, immuun voor Electric.
+
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

@@ -569,3 +569,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.142] - Hitmontop-evolutie: ontwerp vastgelegd
 - Jordi's ontwerp letterlijk in `docs/concept/sprites/hitmontop_evo/SPEC.md`: kleine niet-functionele hoorn, bruine huid, lange aansluitende blauwe broek, langer lijf, afro-Braziliaans haar (Eddy Gordo), langere benen met kleinere blauwe klauwvoeten, koordjes aan broek en armen (muay thai), ronde handen. Fanart "Mestrimba" als inspiratie in `referenties/`.
+
+### [v0.0.143] - Hitmontop-evolutie: Fighting/Ground
+- Jordi koos Fighting/Ground ("omdat die telkens aan de grond zit"); Dark past niet. Uniek in de dex (Great Tusk staat uit). In SPEC.md en POKEMON.md.

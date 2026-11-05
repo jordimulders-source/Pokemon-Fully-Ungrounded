@@ -518,3 +518,14 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.24] - Idee: koningstiran met Inca-kroon
 - Nieuw idee van Jordi in `docs/concept/IDEEEN.md`: een Pokémon naar de tropical royal flycatcher (koningstiran) met een Inca-hoofdtooi (mascaypacha). Uitgewerkt door Claude: het echte dier, de Inca-koppeling, kuif dicht/open als sprite-animatie, geslachtsverschil, lijn- en type-opties. Nog niets besloten.
 - Brainstorm erbij: verwante vogels (tirannen met verborgen kroon, rotshaan, parasolvogel, zonneral, bergcaracara, incastern, kuifkardinaal) en vier lijnvoorstellen.
+### [v0.0.24] - Idee: roomkleurige specht (Electric/Flying)
+- Jordi's idee (cream-colored woodpecker, "net Pikachu") met Claude's haakjes in `docs/concept/IDEEEN.md`: convergente evolutie in plaats van pikaclone, drie bronnen voor de elektriciteit (telegraaflijn van Rondon, piëzo-elektrisch hout, bliksembomen), evolutie naar een kastanjebruine vorm (*Celeus elegans*), naam via *pica-pau*.
+
+### [v0.0.25] - Specht: mimicry en naam Picapau
+- `docs/concept/IDEEEN.md`: Mülleriaanse mimicry als reden voor de Pikachu-gelijkenis; Picapau genoteerd als favoriete naam (Jordi).
+
+### [v0.0.26] - Specht: convergente soort
+- `docs/concept/IDEEEN.md`: Picapau is een convergente soort van Pikachu (zoals Wiglett/Toedscool), dan via kleur en tekening in plaats van vorm; mimicry als optionele reden.
+
+### [v0.0.27] - Specht: convergent is een fan-term
+- `docs/concept/IDEEEN.md`: na Bulbapedia-check: "convergent species" is een fan-term, officieel gaat het om toevallige gelijkenis; haakje via de World Pokémon Ecological Society; mimicry staat lager.

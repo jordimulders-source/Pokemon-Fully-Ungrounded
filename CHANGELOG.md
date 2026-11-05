@@ -587,3 +587,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.148] - Hitmontop-evolutie: sprite ronde 2 (intern)
 - `docs/concept/sprites/hitmontop_evo/sprite_r2/`: pose opnieuw als Y (V-split, nek, vrije arm, kleinere voeten, marge); gezicht, steunarm en cordão bevroren (diff 0, 1 px omhoog). Zwak: kop te groot t.o.v. een kort lijf en korte benen, haar leest als pet i.p.v. dreads. Verse keurder bezig.
+
+### [v0.0.149] - Hitmontop-evolutie: sprite ronde 3 (intern), gestopt
+- `sprite_r3/`: dreads in eigen tint, hoorn 4 px, vrije arm met onderarm, voeten met enkel en klauwen, minder banding, ogen exact Hitmontop. Claude: nog niet goed (kop ±27 px tegen lijf ±15 px, haar leest als een platte bruine kap). Na 3 sprite-rondes gestopt volgens de werkwijze; aanpak ligt bij Jordi.

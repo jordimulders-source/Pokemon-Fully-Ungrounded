@@ -105,3 +105,12 @@ Open: de kop staat in de 3/4-zijhoek van de illustratie, niet in de 3/4-voorhoek
 - Kop op het lijf: kopschaal 0,60, achterhoofd/kruin op die van de illustratie, geen nek; kop+kaak ±37% van de hoogte. Lijf 1,25× breder dan de illustratie, staart lang.
 - Oog puur zwart (1,08× van de foto), alleen de donkere lijn.
 Open: het lijf leest nog als een lange taps toelopende zak (de illustratie is slank, de vleugel ligt als één groot vlak), de muilkleur is in ringen getrapt, de borstelveertjes lezen als snorharen, en op 64 px valt de haak weg.
+
+# Ronde 8 (vel_ronde8.png, pop2d_potoo_r8.py)
+Kop + snavel + muil = ronde 7 (dezelfde puntlijsten en lijnen, uit `pop2d_potoo_r7.py` geïmporteerd). Alles nu in leidraadpixels, gespiegeld.
+- Nieuw lijf: rug komt achter het achterhoofd vandaan (geen nek, binnenlijn van het achterhoofd over de schouder), brede schouder, daarna bijna recht en taps naar een lange brede staart (illustratie). Breedte en de 3/4-draai naar het lijf op de leidraad zelf (rug valt op de rugrand van de foto, borst onder de kaak); kop+kaak ±40% van de hoogte (was ±37% in een stokfiguur).
+- Onderkaak hangt vóór de borst (blinde test r7: "bek midden op de borst"): borst is een smalle reep onder de kaak; verre vleugel als smalle reep langs de verre borstrand (verre schouder net zichtbaar).
+- Vleugel: dekveren met de boeg vóór onder de kaak en drie rijen schubveertjes; vijf pennen, langste (handpennen) voor, getrapte punten ver langs de staart; binnenlijnen in donker lila (`jt`), alleen de voorrand over de borst in de lijnkleur. Schorsstreepjes op borst, dekveren en pennen (blinde test: "glad spookje").
+- Muil: één vloeiend verloop (keel achterin donker → rand licht), geen ringen; tongrichel zachter. Borstelveertjes = kleine schubveertjes dakpansgewijs tussen oog en snavel (lazen als snorharen).
+Valkuil: pennen elk met een volle omtrek lezen als vingers/planken; alleen de lijn waar een pen over de vorige valt, anders wordt de vleugel weer één groot vlak.
+Open: verenpatroon blijft bewust licht (C2); bij 64 px is de lijn nog grijs door het verkleinen (pas in de spritefase).

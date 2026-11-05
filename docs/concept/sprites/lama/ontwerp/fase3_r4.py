@@ -18,16 +18,18 @@ P = L.P
 L.COL.update(franje='#C9509E', franje2='#F2C84A', kant='#F6F0E6', gold='#F0C23A', goldd='#B8862A', plate='#FFE27A', gem='#D8243C', knot='#6E1A52', suit='#2F4FA8', suitrand='#D8243C')
 L.LINED |= {'gold', 'goldd', 'plate', 'gem', 'knot', 'suit', 'suitrand', 'braid'}
 YAW, HEAD_YAW, BORST = 55, 10, 6
+HATK, HAT_DX, BRAIDK, BRAID_Z = 1.0, 0.0, 1.0, 0.0   # ronde 8 (Jordi 5 nov): bombín groter/naar links, vlechten dikker/naar buiten
 
 
 def kop4(m, top, hs, yaw_extra, lid):
     h0 = len(m.parts)
     L.kop_lama(m, top, hs, 0, top, pitch=0, lid=lid, kleding=False)
     cr = top + np.array((-4, 5, 0)) * hs
-    hc = cr + np.array((-0.5, 9.4, 0)) * hs                    # bombín: groter, hoog, licht schuin
-    m.ell(hc, np.array((9.6, 1.3, 8.4)) * hs, 'hat')
-    m.ell(hc + np.array((0, 1.7, 0)) * hs, np.array((6.3, 1.6, 5.7)) * hs, 'hatband')
-    m.ell(hc + np.array((0, 4.6, 0)) * hs, np.array((5.9, 5.4, 5.3)) * hs, 'hat')
+    hc = cr + np.array((-0.5 + HAT_DX, 9.4, 0)) * hs                    # bombín: groter, hoog, licht schuin
+    hk = hs * HATK
+    m.ell(hc, np.array((9.6, 1.3, 8.4)) * hk, 'hat')
+    m.ell(hc + np.array((0, 1.7, 0)) * hk, np.array((6.3, 1.6, 5.7)) * hk, 'hatband')
+    m.ell(hc + np.array((0, 4.6, 0)) * hk, np.array((5.9, 5.4, 5.3)) * hk, 'hat')
     for dx in (-6.5, -3.5):
         m.ell(cr + np.array((dx, 7.2, 0)) * hs, np.array((2.6, 2.2, 3.4)) * hs, 'pony')
     Rp = P.rot_z(math.radians(-8)); Ry = P.rot_y(math.radians(yaw_extra))
@@ -43,11 +45,12 @@ def vlechten(m, top, hs, yaw_extra):
         n = 9
         for i in range(n):
             t = i / (n - 1)
-            q = a + (b - a) * t + np.array((0, 0, 4 * sz)) * math.sin(math.pi * t)   # ligt over de hals heen
+            q = a + (b - a) * t + np.array((0, 0, 4 * sz)) * math.sin(math.pi * t) + np.array((0, 0, BRAID_Z * sz)) * t   # ligt over de hals heen
             q = q + np.array((0.9 * (-1) ** i, 0, 0)) * hs                          # vlechtknot
-            m.ell(q, np.array((3.4, 3.0, 3.4)) * hs * (1 - 0.025 * i), 'braid')
-        m.ell(b + np.array((-1, -5.5, 0)), np.array((3.6, 5.5, 3.6)), 'tassel')
-        m.ell(b + np.array((-1, -1.5, 0)), np.array((3.4, 1.4, 3.4)), 'gold')
+            m.ell(q, np.array((3.4, 3.0, 3.4)) * hs * BRAIDK * (1 - 0.025 * i), 'braid')
+        b = b + np.array((0, 0, BRAID_Z * sz))
+        m.ell(b + np.array((-1, -5.5, 0)), np.array((3.6, 5.5, 3.6)) * BRAIDK, 'tassel')
+        m.ell(b + np.array((-1, -1.5, 0)), np.array((3.4, 1.4, 3.4)) * BRAIDK, 'gold')
 
 
 def windsel(m, pts, k):

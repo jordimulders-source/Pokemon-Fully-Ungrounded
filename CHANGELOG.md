@@ -192,3 +192,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.45] - Salticonda: kleur3f (kop past bij het lijf)
 - Jordi koos 3e. 3f: schaduwkant van de kop even diep als op de windingen (zelfde tinten/stappen), slagschaduw op de bovenste winding onder kaak en halsband; 75 px, alleen tinten, silhouet/kuif/neus/oog ongewijzigd.
+
+### [v0.0.46] - Salticonda: onafhankelijke keuring
+- Keuring van kleur3f (`docs/concept/sprites/salticonda/keuring/KEURING.md`): geslaagde regionale vorm (herkenbaar idee, ander materiaal/functie, verklaard door de regio, evolutie vergroot het kenmerk), maar 4 kleine FAILs: rechte runs in de ringen, onderrand te licht, staart leest niet op 1×, raakt de bovenrand. Zes smaakvragen voor Jordi.

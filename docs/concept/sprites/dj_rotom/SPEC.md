@@ -4,7 +4,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`.
 
 **Bevroren (Jordi, 5 nov "prima! ga maar in kleuren. Bliksem noot mag idd dikker dan"):** `silhouet_af/silhouet.png` = silhouet 2 variant B (k 0,18) + bliksem-noot met de hand dikker (15 px, zone x 19–30, y 19–32; script `silhouet_af/hand_bliksem.py`). Onderlaag voor kleur: `silhouet_af/onderlaag.png` (64×64) en `silhouet_af/bron_vervormd.png` (groot). Alpha-diff 0 in alle volgende rondes.
 
-**Stijl (Jordi, 5 nov):** "gebruik vooral de stijl van de rotom sprites die al in de game zitten he" → `graphics/pokemon/rotom/{heat,wash,frost,fan,mow}/anim_front.png` en `graphics/pokemon/rotom/anim_front.png` zijn de stijlnorm (gloedrand, oranje tinten, ogen, shading). Type uit de concepten (Jordi, 22 okt): Electric/Steel.
+**Stijl (Jordi, 5 nov):** "gebruik vooral de stijl van de rotom sprites die al in de game zitten he" → `graphics/pokemon/rotom/{heat,wash,frost,fan,mow}/anim_front.png` en `graphics/pokemon/rotom/anim_front.png` zijn de stijlnorm (gloedrand, ogen, shading, pixelopbouw). **Kleuren (Jordi, 5 nov):** "met de kleuren van de bronafbeelding" → het palet komt uit `referenties/pokopia_dj_rotom_bron.webp` (oranje kast, zwarte speakerfronten, mintgroene gloed en bliksem, witte noot, blauwgroene ogen, groene equalizer). Type uit de concepten (Jordi, 22 okt): Electric/Steel.
 
 **Bron (Jordi, 5 nov):** "Begin met de DJ Rotom sprite. Dit is de bron" → `referenties/pokopia_dj_rotom_bron.webp` (render van DJ Rotom uit *Pokémon Pokopia*, 1920×1920). Eerder (23 okt): "duidelijk een Rotom-vorm, maar niet DJ Rotom; je hebt het niet goed nagebouwd"; het ontwerp moet **trouw zijn aan DJ Rotom uit Pokopia**, alleen de pixels zijn eigen werk in Gen 3-stijl.
 

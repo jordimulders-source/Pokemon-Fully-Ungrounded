@@ -128,3 +128,4 @@
 - **Controle r7: GOED** (zelfde keurder; `kleur_r6/EINDKEURING.md` onderaan). Vel `kleur_r7/eind_vel.png` naast Taillow/Starly. Wacht op Jordi (open: snavel op 1×, lila flets, pootjes, trapjes in het silhouet).
 - **Jordi over r7 (5 nov): "de snavel hoeft niet afgekeurd te worden. De pootjes zijn niet ideaal en er blijft een gekke hoek links in die buik zitten. De schaduw in de vleugel vind ik ook niet lekker rond, is meer een lijn. En ja je mag wat pixels in het silhouet veranderen, maar ik hoef het silhouet niet te zien, alleen de sprite"** → r8: pootjes, hoek links in de buik, vleugelschaduw rond; silhouet mag een paar pixels (trapjes) veranderen, alleen de sprite tonen.
 - **Kleur r8:** `blender/A/kleur_r8/` (pootjes met tenen, buik links één boog, vleugelschaduw als sikkel, trapjes glad; 26 px alpha in de zones). Controle door de keurder.
+- **Jordi: "het moeten wel echt kleine pootjes zijn he"** → keurder toetst ook het formaat van de pootjes.

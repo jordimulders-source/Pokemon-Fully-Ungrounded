@@ -1,1 +1,39 @@
 # Ronde 1e: bovenop 1d
+## zone 1: hand (palm-shading naar model/Drowzee/Deoxys; vingerlijnen m binnen de hand, buitenomtrek blijft)
+49 13 MMmMM
+50 10 WMmWMmWM
+51 10 MMmMMmMMmWM
+52 10 MMmMMmMMmMm
+53 10 MmmMmmMmmMm
+54 10 MMMMMMMmmmm
+55 10 MMWWMMMMmmm
+56 8 WMDMMMmMMMmmm
+57 8 MMMDWMmMmmmmD
+58 10 mMMMmmmmmDD
+## zone 2: maan (midden dunner, binnenboog dieper)
+32 8 MSS
+33 9 VV
+## zone 3: gloed (rechteronderhoek rond, rand volgt de hand)
+58 22 GS
+59 22 GS
+60 22 GK
+61 22 G.
+62 23 .
+## zone 4: romp (rustige vlakken, licht linksboven)
+39 33 VV
+40 33 VVV
+41 34 VV
+42 34 V
+37 24 V
+39 37 V
+35 24 LLL
+36 25 L
+## zone 5: onderste voet (hielbolling)
+57 58 V
+58 59 V
+61 21 G
+## hand: vingerlijn bij de toppen blijft D (Deoxys: binnenlijn alleen bij de toppen), lager m
+50 12 D
+49 15 D
+53 19 m
+55 17 m

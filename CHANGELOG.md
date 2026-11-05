@@ -244,3 +244,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.60] - Lama fase 3: breder zonder de verhoudingen te veranderen
 - V1–V3 afgekeurd ("raar en komisch"). Nieuwe knop `breed` in `fase3_r4.py`: lijf, hals en poten alleen dikker, lengtes gelijk; vel `docs/concept/sprites/lama/fase3/silhouet/vel_breder.png` (W1–W3, tot 1,27× fase 2). Naar Jordi.
 
+### [v0.0.61] - Lama fase 3: silhouet ronde 2 (W3)
+- Jordi koos W3 ("de cholitas zijn best stompig ook qua bouw"). Maker trok het model opnieuw over: `docs/concept/sprites/lama/fase3/silhouet/ronde2.txt` (1512 px, 1,28× fase 2, alles ≤ 1 px van het model, 0 korrels). Naar Jordi.
+

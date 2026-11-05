@@ -1,6 +1,6 @@
-"""Diffkaart ronde 1 tegen het model (50%-dekking): X = beide, + = alleen ronde 1, - = alleen model. Plus afstandscheck,
-componenten en gaten. Draaien: python3 diff_model.py > diff_model.txt"""
-import os
+"""Diffkaart deze ronde tegen het model (50%-dekking): X = beide, + = alleen deze ronde, - = alleen model. Plus afstandscheck,
+componenten en gaten. Draaien: python3 diff_model.py ronde2.txt > diff_model.txt"""
+import os, sys
 import numpy as np
 def dil(m):
     P = np.pad(m, 1); o = np.zeros_like(m)
@@ -22,9 +22,9 @@ def label(m):  # 8-buur componenten
 HERE = os.path.dirname(os.path.abspath(__file__))
 a = np.load(os.path.join(HERE, 'alpha.npy')); k = a.shape[0] // 64
 cov = a.reshape(64, k, 64, k).mean((1, 3)); M = cov >= 0.5
-S = np.array([[c == '#' for c in l.rstrip('\n')] for l in open(os.path.join(HERE, 'ronde1.txt')) if l.strip()])
+S = np.array([[c == '#' for c in l.rstrip('\n')] for l in open(os.path.join(HERE, sys.argv[1] if len(sys.argv) > 1 else 'ronde2.txt')) if l.strip()])
 plus, minus = S & ~M, M & ~S
-print(f'model (50%): {int(M.sum())} px | ronde 1: {int(S.sum())} px | alleen ronde 1 (+): {int(plus.sum())} | alleen model (-): {int(minus.sum())}')
+print(f'model (50%): {int(M.sum())} px | deze ronde: {int(S.sum())} px | alleen deze ronde (+): {int(plus.sum())} | alleen model (-): {int(minus.sum())}')
 # afstand: + moet grenzen (8-buur) aan model-pixel, - aan niet-model-pixel
 dM = dil(M); dN = dil(~M)
 far = (plus & ~dM) | (minus & ~dN)

@@ -89,3 +89,12 @@ Basis = 4c (bewaard als `pop3d_potoo_ronde4c.py` + `vel_ronde4c.png`). Jordi (ge
 - Mondbreedte `zc` volgt de nieuwe koepel; snavelpunten, kaak naar voren, ogen hoger en haakje zijn ongewijzigd uit 4c.
 - Veertjes tussen de ogen liggen platter tegen de bollere kop en iets hoger, zodat het haakje in de spritehoek zichtbaar blijft.
 - Gecontroleerd: het oog staat ruim boven de mondrand (niet in de mond); de snavel sluit aan, zonder naad.
+
+# Ronde 6 (vel_ronde6.png, pop2d_potoo.py)
+Nieuwe aanpak (Jordi: "waarom ben je al uren bezig met een fucking snavel nabouwen"): het hele poppetje als 2D-vectortekening, met de hand overgetrokken, gladde Catmull-Rom-curven, getekend op 4× en met antialiasing verkleind. Geen fotopixels, geen segmentatie. De 3D-rondes blijven bewaard (`pop3d_potoo_ronde*.py`).
+- Lijf, vleugel, staart, kop en bovensnavel: overgetrokken van `jordi_great_potoo_illustratie_LICHAAMSVORM.png` (punten in illustratiepixels, op 2–4× met raster gemeten), gespiegeld naar links. Kop op dezelfde plek op de schouders, geen nek, niet naar voren geschoven.
+- Bovensnavel: één vorm (basis tussen de veren, rug naar voren, krult omlaag in de haak, snijrand terug), één kleurverloop van lichtgrijs naar donker; geen lijn aan de basis.
+- Onderkaak: klapt om de mondhoek (onder/achter het oog) open en hangt vóór de borst; de vorm (U naar een spitse punt, kom met twee spleetjes, donker achterin onder de bovensnavel) is naar de leidraad, waarvan de muil opnieuw op 3× is overgetrokken (`L_GAPE`, `L_NEAR`, `L_FAR`). Diepte van de muil ≈ 0,94 × de kophoogte boven de gaplijn, zoals op de leidraad.
+- Oog: puur zwart, alleen de donkere lijn, geen lichte rand (Jordi).
+- Kleur C2, één schaduwtoon (sikkel rechtsonder), korte schorsstreepjes, borstelveertjes voor het oog.
+Open: de kop staat in de 3/4-zijhoek van de illustratie, niet in de 3/4-voorhoek van de leidraad; daardoor is de muil smaller dan op de leidraad (daar even breed als de kop). Een 2D-kop over de leidraadfoto (paneel b) is daarom niet gemaakt; paneel b toont alleen de nieuwe overtrek.

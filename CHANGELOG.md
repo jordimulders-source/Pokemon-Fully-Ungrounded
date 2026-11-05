@@ -126,3 +126,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.24] - Great potoo: ontwerp gestart
 - Nieuwe fakemon besloten: **great potoo** (urutau), losse soort met één stage, type **Ghost/Normal** (Jordi: "ik wil sowieso een great potoo", "laten we 1 stage doen"). Tweede stage die met een tak versmelt afgewezen: geen Pokémon-sprite heeft een ondergrond in beeld; de camouflage gaat via de twee frames (stil ↔ bek open), het verenpatroon en de data.
 - Map `docs/concept/sprites/potoo/`: SPEC.md, Jordi's foto's in `referenties/`, posevel `pose_keuze.png` (A van voren, B zijaanzicht, C bek open; Gen 3-skelet Hoothoot/Noctowl/Natu/Xatu). POKEMON.md en FAKEMON_PITCH bijgewerkt.
+
+### [v0.0.25] - Great potoo: ontwerp vastgelegd, 3D-poging afgebroken
+- Ontwerpkeuzes vastgelegd in `docs/concept/sprites/potoo/SPEC.md`: lichte vacht met schorsvlekken, pikzwarte ogen (Drifloon), geestpaarse mond in een echte snavel, pose 3/4 met open bek op een onzichtbare tak.
+- 3D-model (`model3d/`) afgekeurd ("begin maar helemaal opnieuw"); overdrachtsprompt voor een nieuw gesprek in `docs/concept/sprites/potoo/OVERDRACHT.md`; lessen in SPRITE_WERKWIJZE.md.

@@ -1,6 +1,6 @@
 # Great potoo (Ghost/Normal, losse soort): SPEC
 
-Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1b (3D-kop)**: `model3d/kop3d.py` (kop gesneden uit de omtrek van de voorfoto + de 3/4-foto, diepte afgeleid, mondranden via kijkstralen op het oppervlak), controle uit 8 hoeken `model3d/kop3d_controle.png`; Jordi: "maak er maar een 3d model van", "check uit meerdere hoeken of het klopt met het origineel". Daarvoor: kop uit de overgetrokken lijnen van de 3/4-foto (`model3d/samenstel.py`, controle `model3d/kop_uit_lijnen.png`) op het 3D-lijf; zijfoto alleen nog voor het lijf (Jordi: "die hele platte hoofd foto mag je vergeten"). Eerder: `model3d/hoeken.png`, gemeten aan de zijfoto (oriëntatiepunten `LM` in `model3d/potoo3d.py`, controle `model3d/vergelijking_bron.png`); Jordi kiest een hoek, daarna pas het silhouet.
+Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **opnieuw beginnen** (Jordi, 5 nov: "begin maar helemaal opnieuw"). Het 3D-werk in `model3d/` is afgekeurd; start met `OVERDRACHT.md`.
 
 ## Besloten (Jordi, 5 nov)
 - Basissoort: **great potoo** (*Nyctibius grandis*): "ik wil sowieso een great potoo".

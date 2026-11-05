@@ -128,3 +128,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.25] - Specht: mimicry en naam Picapau
 - `docs/concept/IDEEEN.md`: Mülleriaanse mimicry als reden voor de Pikachu-gelijkenis; Picapau genoteerd als favoriete naam (Jordi).
+
+### [v0.0.26] - Specht: convergente soort
+- `docs/concept/IDEEEN.md`: Picapau is een convergente soort van Pikachu (zoals Wiglett/Toedscool), dan via kleur en tekening in plaats van vorm; mimicry als optionele reden.

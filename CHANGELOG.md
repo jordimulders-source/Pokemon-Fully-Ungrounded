@@ -277,3 +277,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.71] - Lama fase 3: eindkeuring + reparaties (ronde 5A7)
 - 1 px bombín (5A6); verse eindkeuring met extra aandacht voor de poten: af na 7 kleine reparaties (28 px), uitgevoerd in `docs/concept/sprites/lama/fase3/kleur/ronde5A7/`. Naar Jordi.
 
+### [v0.0.72] - Lama fase 3 frontsprite af
+- Jordi keurde ronde 5A7 goed: `docs/concept/sprites/lama/fase3/af/lama3.png` (+ `normal.pal`, `vel.png`). Buffe, stompige cholita-luchadora-lama in pose C2 met bombín, zwarte vlechten, blauw worstelpak, cape, kampioensriem, rok in drie ruches en aguayo-windsels; kop 1,25× van het model, droge nonchalante blik. Nog: frame 2, rug, icoon, shiny, naam/data.
+

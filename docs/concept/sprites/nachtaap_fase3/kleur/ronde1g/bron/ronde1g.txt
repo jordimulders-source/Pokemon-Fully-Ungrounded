@@ -1,0 +1,9 @@
+# Ronde 1g bovenop ronde1f/v7. y x tekens (spatie = niet aanraken)
+## zone 3: vuistarm smaller (Jordi: "deze arm is te dik"); naar later_vuistarm.txt, rij 26-28 hersteld
+22 4 KKKKKD
+23 5 ....KSVVVLLD
+24 6 ....KSVVVLLD
+25 8 ...KSVVVLLD
+26 8 ....KSVVVLLD
+27 13 KSVVLLD
+28 14 KSVVLSD

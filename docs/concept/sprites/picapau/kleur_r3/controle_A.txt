@@ -1,0 +1,12 @@
+versie A
+1. silhouet-diff
+   buiten de zones: 0 []
+   in de zones (gemeld): 7 [(33, 4, 'kuiftoppen', '+'), (32, 5, 'kuiftoppen', '+'), (39, 5, 'kuiftoppen', '+'), (31, 6, 'kuiftoppen', '+'), (36, 6, 'kuiftoppen', '+'), (39, 6, 'kuiftoppen', '+'), (16, 17, 'snavelpunt', '+')]
+2. open randen (niet-omlijningskleur naast transparant)
+   0 []
+3. losse pixels
+   0 []
+4. clusters < 3 px per tint (8-samenhangend; glans w en het overgenomen Pikachu-oog uitgezonderd)
+   aantal: 0
+5. pixels 825 | kleuren 15 1234CGbcdghklrw | bbox 15 3 50 57 (36x55)
+UITSLAG: OK

@@ -51,6 +51,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 
 ## 4. Claude (coördinator)
 - **Checklist bovenaan `SPRITE_WERKWIJZE.md` + keurslot** (`.claude/hooks/sprite_keurslot.py`): geen sprite-afbeelding naar Jordi zonder keurvel en `Oordeel: PASS`.
+- **Sprite uit een model/render:** vóór Jordi altijd `tools/grounded/model_vs_sprite.py` en per onderdeel nalopen of de sprite de render volgt (zie GRAPHICS.md, Picapau 5 nov); de volledige afwijkingslijst gaat naar de maker.
 - **Tokens sparen:** agents krijgen SPRITE_NORM.md + SPEC/AFGEKEURD (niet alle lessenbestanden); één maker per sprite die met SendMessage doorwerkt; geen parallelle experimenten tenzij Jordi vraagt; kleine vellen.
 - Plak de verwijzing naar dit bestand in elke sprite-opdracht en geef bij reparaties een pixelbudget en de lijst bevroren delen mee.
 - **Bekijk elk resultaat zelf** (1× en 3×, naast de laatst goedgekeurde versie) vóór het naar Jordi gaat. Een gezicht of geheel dat slechter oogt dan de vorige goedgekeurde versie gaat **nooit** naar Jordi: terugsturen of de vorige versie houden.

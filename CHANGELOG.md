@@ -542,3 +542,18 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.133] - Parallelle takken samengevoegd, changelog hernummerd
 - De acht takken die naast elkaar liepen (lama, wasbeer, nachtaap, kolibrie pre-evo, Uyuni-Silicobra/Salticonda, DJ Rotom, koningstiran, specht) zitten nu in `main`. Elke tak telde vanaf v0.0.23 zelf door, waardoor dezelfde nummers vaak voorkwamen; alle secties staan nu op volgorde van hun commitdatum met unieke nummers (v0.0.24–v0.0.132). Inhoud ongewijzigd.
 - `docs/lessen/SPRITE_WERKWIJZE.md` is de compacte versie (met de keurslot-checklist bovenaan); de lessen die andere takken in de lange versie zetten, staan in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.
+
+### [v0.0.134] - Picapau: start spriteproces
+- `docs/concept/sprites/picapau/`: SPEC (stap 0), Jordi's twee foto's en een vergelijkingsvel (Pikachu + vogel-sprites op 4×).
+
+### [v0.0.135] - Picapau: 3D-model en stand B1
+- `docs/concept/sprites/picapau/blender/picapau.py`: Blender-model (één huid, zoals de kolibrie-pre-evo): grote ronde kop, ronde rode wang, kuif met twee zwarte punten (Pikachu-oren) en rafelige achterkuif, vleugels dicht, beitelsnavel 40° omhoog, roodbruine steunstaart met knik, poten die uit het lijf groeien. Pose naar Jordi's foto's (schuin lijf). Jordi koos stand B1 (lijf 30°, kantel 8°); het silhouet uit die render wacht op zijn keuring. Een eerste silhouet geknipt uit een foto is afgekeurd ("slordig knipwerk").
+
+### [v0.0.136] - Picapau: kleursprite ronde 5
+- Kleur in 5 rondes (maker-agent) met een onafhankelijke keuring na ronde 3; versie B (23 px silhouetwijziging: snavelbasis, poten, buik) ligt bij Jordi: `docs/concept/sprites/picapau/kleur_r5/picapau.png`.
+
+### [v0.0.137] - Picapau: sprite v2 (overgetrokken van het model)
+- r5 afgekeurd ("volledig 2d ..."); model B1 bleef bevroren ("subliem"). Sprite v2 cel voor cel van de B1-render (`sprite_v2/bron/`: kleur + onderdelen per spritepixel), 6 rondes met Jordi's krabbel, verse keurder (r5 NIET GOED → 83 px reparaties → r6 GOED). Nieuw gereedschap: `tools/grounded/model_vs_sprite.py` (vergelijking model ↔ sprite per onderdeel vóór Jordi). Lessen in `docs/lessen/GRAPHICS.md`.
+
+### [v0.0.138] - Picapau frontsprite af
+- Jordi over r6/r7: staartpunt, buikvlek, donkerder geel, vleugelstip, kuif (suggestie keurder), snavel bleef ("snavel is prima"); "prima om een iets andere kleur te doen idd". Verse eindkeuring r7: GOED zonder reparaties. Eindversie: `docs/concept/sprites/picapau/af/picapau.png` (+ `normal.pal`). Smaakvragen (tenen, kuifstelen): Jordi "nee prima zo".

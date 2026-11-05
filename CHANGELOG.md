@@ -202,3 +202,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.48] - Salticonda: frontsprite goedgekeurd
 - Jordi: 3g "bijna helemaal goed", met de staart van 3f. kleur3h = 3g + staart van 3f, vastgelegd als `docs/concept/sprites/salticonda/af/salticonda.png` (64×64, 16 kleuren, transparency=0). Stand van zaken in CLAUDE.md bijgewerkt.
 - Nog te doen voor de lijn: frame 2, rugsprites, iconen, shinies, data; de ability (naam en effect).
+
+### [v0.0.49] - Werkwijze: eerst de dex met alleen frontsprites
+- Jordi: "Ik wil eerst gewoon een pokedex maken met alleen een 1e frontsprite". Vastgelegd in `docs/concept/SPRITE_PLAN.md` en de Stand van zaken: elke nieuwe soort eerst alleen frame 1; frame 2, rug, icoon en shiny later voor de hele dex in één ronde.

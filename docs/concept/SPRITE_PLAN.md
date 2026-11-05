@@ -1,3 +1,5 @@
+> **Werkwijze vanaf 5 nov (Jordi):** "Ik wil eerst gewoon een pokedex maken met alleen een 1e frontsprite". Eerst krijgt elke nieuwe Pokémon en regional form alleen een goedgekeurde frontsprite (frame 1); frame 2, rug, icoon en shiny volgen later in één ronde voor de hele dex.
+
 # Spriteplan: fakemon en regional forms in Hoenn-stijl
 
 Studie van de Hoenn-sprites (22 okt) en het plan voor hoe wij nieuwe Pokémon-sprites maken.

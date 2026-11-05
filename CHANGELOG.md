@@ -130,3 +130,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Eerste conceptschetsen van de koningstiran-lijn: `docs/concept/ontwerp/koningstiran/schets_v1.png` (script `ontwerp/scripts/koningstiran.py`).
 - Jordi kiest de lijn hatun runa → awki → Sapa Inca (vastgelegd in `POKEMON.md`); schets v2 met de kop naar voren en een imposante kroon in twee lagen (`ontwerp/koningstiran/schets_v2.png`).
 - Koningstiran-sprite gestart (eindvorm eerst): `docs/concept/sprites/koningstiran/SPEC.md` en pose-onderzoek met echte sprites (`referenties/pose_onderzoek.png`, `vogels_en_kronen.png`).
+- Sapa Inca wordt een hybride koningstiran × bergcaracara (Jordi: "meer creatieve vrijheid"); 3D-poppetje `docs/concept/sprites/koningstiran/pop3d.py` met een raster van 9 hoeken (`pop3d_hoeken.png`): waaier als dichte paraplu met hangende kwastjes, caracaralijf, rood gezicht, gouden borst en oorschijf.

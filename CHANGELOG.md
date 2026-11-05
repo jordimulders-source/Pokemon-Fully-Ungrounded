@@ -150,3 +150,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Verse eindkeuring PASS (`docs/concept/sprites/dj_rotom/kleur5/EINDKEURING.md`): op 1× een vorm uit dezelfde game als de zes Rotoms. Aanbevelingen uitgevoerd: naden tussen kop en kasten zwart (zoals Frost/Mow), equalizertoppen eigen groen zodat ze in de shiny niet perzik worden (46 px).
 - Af: `docs/concept/sprites/dj_rotom/af/dj_rotom.png` (frame 1). Volgende: shiny, frame 2, rug, icoon, data.
 - Les in `SPRITE_WERKWIJZE.md`: consistentie-analyse tegen de bestaande vormen bij vormen van een bestaande soort.
+
+### [v0.0.31] - DJ Rotom hoger in het vak, zweeft
+- Jordi: "kan die nog hoger dan?" De frontsprite is 4 px omhoog geschoven (pixels ongewijzigd) en staat nu net zo in het vak als Frost (boven y3, onder y58).
+- Jordi: "hij hoort te zweven". In deze build krijgt elke tegenstander een schaduw (Gen 4-stijl); met `enemyMonElevation` > 0 zweeft de sprite erboven. Bij het invoeren: elevation ±6 zoals Frost, schaduw breed genoeg voor de speakers (genoteerd in `dj_rotom/SPEC.md`).

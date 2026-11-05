@@ -118,3 +118,4 @@
 - **Kleur r4 (verse maker):** `blender/A/kleur_r4/` (605 px; schaduw opnieuw met de toonkaart, oog van Latias met smaragd iris (varianten `ogen_8x.png`: Latias/Combusken/Skarmory), pootjes met onderrand, vleugel opnieuw). Claude: rustiger en schoner dan r3; oog leest zijwaarts; vleugel weinig contrast. Naar Jordi vóór de keurder (oogkeuze).
 - **Jordi: "doe maar combusken, maar de snavel op de combusken sprite is niet goed, dus, houd daar rekening mee"** → r5: Combusken-oog (smaragd), snavelzone pixel voor pixel r4, vleugel meer contrast.
 - **Jordi: "alhoewel, die kijkt idd wat boos"** → r5 levert Combusken (a) en een vriendelijke versie (b, bovenlid rond/vlak); b als hoofdversie.
+- **Jordi: "houd het starly oog maar" · "dan maar geen kleur"** → r5: oorspronkelijk Starly-oog (r10, zwart met glans, geen iris); Combusken en smaragd vervallen.

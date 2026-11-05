@@ -21,7 +21,9 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1 (ontwerp: pose en 
 ## Onderdelen
 | onderdeel | bron / referentie | Jordi's woorden | status |
 |---|---|---|---|
-| pose | driekwart, licht vooruit hangend, **bek open**; kop/muil uit het drieluik (boven + linksonder); lijf tot staartpunt: bron nog nodig | "Ik wil de bek juist open, want dat is de sprite die men het meest gaat zien. het wordt uiteraard een driekwart pose met de vogel die licht vooruit hangt" | besloten (bron lijf open) |
+| pose | driekwart, licht vooruit hangend, **bek open**; kop/muil uit het drieluik (boven + linksonder); skelet: `jordi_great_potoo_tak_bek_open_volledig.png` (hele vogel, bek open, 3/4), voorover hangen uit `jordi_great_potoo_vooroverhangend_bek_open.webp` | "Ik wil de bek juist open, want dat is de sprite die men het meest gaat zien. het wordt uiteraard een driekwart pose met de vogel die licht vooruit hangt" | besloten |
+| klauwen | nauwelijks zichtbaar op de foto's | "De klauwen zijn nauwelijks zichtbaar lijkt wel, wel lachen. Dat betekent dat we die prima in een sprite ook kunnen verbergen" | besloten: verborgen |
+| ondergrond / neerzetten | open: vogel staat vrijwel altijd op een tak, tak mag niet in beeld | "Moeten we alleen ff kijken hoe we hem neerzetten, gezien die vrijwel altijd op een tak staat" | open |
 | frames | frame 1 = bek open (hoofdsprite); frame 2 nog open | idem | deels |
 
 ## Afgekeurd (niet herhalen)
@@ -32,3 +34,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **stap 1 (ontwerp: pose en 
 - `referenties/jordi_great_potoo_stomp_voor.png`: rechtop op stomp, bijna van voren.
 - `referenties/jordi_great_potoo_wit_zijaanzicht.png`: lichte vogel, zijaanzicht, kop van dichtbij.
 - `referenties/jordi_grijze_potoo_takhouding_nacht.webp`: andere soort (gele iris), takhouding.
+- `referenties/jordi_great_potoo_tak_bek_open_volledig.png`: hele vogel op tak, bek open, 3/4 (skelet).
+- `referenties/jordi_great_potoo_vooroverhangend_bek_open.webp`: voorover hangend, zijaanzicht, bek open, staart zichtbaar.
+- `referenties/jordi_great_potoo_nacht_voor_volledig.webp`: hele vogel van voren, 's nachts (verenpatroon, kop).
+- `referenties/jordi_great_potoo_illustratie_rug_staart.png`: illustratie rug/vleugel/lange staart.

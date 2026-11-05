@@ -123,7 +123,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.23] - Olinguito v2 af na eindkeuring
 - Verse eindkeuring (`docs/concept/sprites/olinguito_v2/af/EINDKEURING.md`): hoofdvraag PASS; reparaties: verre voorpoot roze voetje (2 px), losse spriet onder de klauw weg en drie haakjes van 1 px in curven glad (Jordi akkoord). 0 open randen. `docs/concept/sprites/olinguito_v2/af/olinguito.png` is af.
 
-<<<<<<< HEAD
 ### [v0.0.24] - Coathief: start (stap 0)
 - Evolutie van de olinguito (fase 2, coati) heet **Coathief** (Jordi). Map `docs/concept/sprites/coathief/` met `SPEC.md` en `referenties/` volgens `SPRITE_WERKWIJZE.md`; stap 1: referentiefoto's van Jordi in `referenties/`, besloten: *Nasua nasua*, bivakmuts-kop met zwarte neus, langer lijf, geringde staart, confrontatie-looppose; 3D-poppetje met hoekenraster (`ontwerp/hoeken.png`) wacht op Jordi.
 
@@ -543,12 +542,17 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.133] - Parallelle takken samengevoegd, changelog hernummerd
 - De acht takken die naast elkaar liepen (lama, wasbeer, nachtaap, kolibrie pre-evo, Uyuni-Silicobra/Salticonda, DJ Rotom, koningstiran, specht) zitten nu in `main`. Elke tak telde vanaf v0.0.23 zelf door, waardoor dezelfde nummers vaak voorkwamen; alle secties staan nu op volgorde van hun commitdatum met unieke nummers (v0.0.24–v0.0.132). Inhoud ongewijzigd.
 - `docs/lessen/SPRITE_WERKWIJZE.md` is de compacte versie (met de keurslot-checklist bovenaan); de lessen die andere takken in de lange versie zetten, staan in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.
-=======
-### [v0.0.24] - Great potoo: ontwerp gestart
+
+### [v0.0.134] - Great potoo: ontwerp gestart
 - Nieuwe fakemon besloten: **great potoo** (urutau), losse soort met één stage, type **Ghost/Normal** (Jordi: "ik wil sowieso een great potoo", "laten we 1 stage doen"). Tweede stage die met een tak versmelt afgewezen: geen Pokémon-sprite heeft een ondergrond in beeld; de camouflage gaat via de twee frames (stil ↔ bek open), het verenpatroon en de data.
 - Map `docs/concept/sprites/potoo/`: SPEC.md, Jordi's foto's in `referenties/`, posevel `pose_keuze.png` (A van voren, B zijaanzicht, C bek open; Gen 3-skelet Hoothoot/Noctowl/Natu/Xatu). POKEMON.md en FAKEMON_PITCH bijgewerkt.
 
-### [v0.0.25] - Great potoo: ontwerp vastgelegd, 3D-poging afgebroken
+### [v0.0.135] - Great potoo: ontwerp vastgelegd, 3D-poging afgebroken
 - Ontwerpkeuzes vastgelegd in `docs/concept/sprites/potoo/SPEC.md`: lichte vacht met schorsvlekken, pikzwarte ogen (Drifloon), geestpaarse mond in een echte snavel, pose 3/4 met open bek op een onzichtbare tak.
 - 3D-model (`model3d/`) afgekeurd ("begin maar helemaal opnieuw"); overdrachtsprompt voor een nieuw gesprek in `docs/concept/sprites/potoo/OVERDRACHT.md`; lessen in SPRITE_WERKWIJZE.md.
->>>>>>> dc129833d60c24191edc8738a5dd6f33ea663af9
+
+### [v0.0.136] - Great potoo: 3D afgekeurd, poppetje in lama-stijl
+- Merge-tekens uit CHANGELOG.md en CLAUDE.md opgeruimd (potoo-secties hernummerd naar v0.0.134–135).
+- SPEC met Jordi's punten van 5 nov: alleen zijn 5 foto's als bron (linkerhelft duo-foto = leidraad kop), snavel en ogen = kern, veertjes tussen de ogen, schattig + uncanny, lekker overdreven grote bek, ogen hoger, bron getrouw nagemaakt.
+- 3D v2 (gespleten koepel, `model3d_v2/`) en v3 (snavel uit onderdelen, `model3d_v3/`) afgekeurd ("pacman zeehond", "stop met blender").
+- Poppetje in lama-stijl door één maker-agent (`docs/concept/sprites/potoo/poppetje/`), rondes 1–4b met overgetrokken foto-omtrekken als controle en twee keurders; ronde 3 de beste tot nu toe (Jordi), ronde 4 (kop vlakker, kaak naar voren, ogen hoger) bouwt daarop. Vel open snavels uit echte sprites: `potoo/referenties/open_snavels_sprites.png`.

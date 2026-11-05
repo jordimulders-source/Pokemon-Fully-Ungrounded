@@ -38,3 +38,4 @@ Wall, totaal 510 (Sandaconda): HP 110 / Atk 75 / Def 135 / SpA 70 / SpD 95 / Spe
 - Kleur3 (Jordi, 5 nov): "kijk dat is echt al veel beter de goede kant op dan je luie poging eerder!" → **richting kleur3 goed** (kop in 3/4 op de Silicobra-kop als skelet, lijf E). Kleur3b: kroon lager met leesbare platen, Sandaconda-neusbult en volgroeide snuit, 1 px lucht boven.
 - Jordi (5 nov): "Die kuif mag nog iets groter" → kuif groter (breder/naar achteren, leesbare platen, 1 px lucht boven); vervangt "kroon lager".
 - Jordi (5 nov): "en mag je idd echt met zouttexturen spelen" → kuif met echte zouttextuur (korstplaten met opstaande randen, korrelige lichte bovenranden, oker in de naden; geen Nacli-kubussen, geen ruis).
+- Kleur3b (Jordi, 5 nov): "is rechts de nieuwe versie? ik dacht dat ik meer kuif zei ipv minder" → **3b afgekeurd** (kuif oogt kleiner); 3c: kuif ±15–25% groter dan kleur3 (gemeten), textuur van 3b, neusgaten zichtbaar zoals kleur3.

@@ -250,3 +250,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.62] - Lama fase 3: kleur ronde 1/1b (intern) en kopstudie
 - Kleurrondes 1 en 1b (`docs/concept/sprites/lama/fase3/kleur/`) intern: bombín en vlechten lazen op 1× niet, want ze waren in het model te klein (vlechten lagen in de dikke hals). Kopstudie `fase3/kopstudie/vel_kopstudie.png`: grotere bombín naar links, dikkere zichtbare vlechten, kop 1,0/1,12/1,2. Naar Jordi.
 
+### [v0.0.63] - Lama fase 3: silhouet ronde 3 (sprite-overdrijving kop)
+- Ontwerp blijft; alleen de spritebron krijgt kop 1,2×, grotere bombín naar links en zichtbare vlechten. Verse maker trok over: `docs/concept/sprites/lama/fase3/silhouet/ronde3.txt` (1488 px, alles ≤ 1 px van de bron, 0 korrels). Naar Jordi.
+

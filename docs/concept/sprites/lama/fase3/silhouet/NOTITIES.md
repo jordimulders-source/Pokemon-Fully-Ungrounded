@@ -101,3 +101,60 @@ staat in `ronde1_bron/`. **Jordi over ronde 1:** de voorpoten als blok is akkoor
 ## Lessen ronde 2
 - `opt.py` kiest puur op dekking; bij een bijna gelijke keuze (verschil < 0,05) de flip nemen die een opening uit het model
   behoudt in plaats van dichtmaakt, en dat melden.
+
+---
+
+# Ronde 3 (spritebron K3: kop 1,2×, bombín 1,3× en naar links, vlechten 1,3× en naar buiten)
+Verse maker. Bron (`bron.py`, `SPRITE`): `model50.txt` 1487 px, box 39×63, 20 korrels (2 uitsteeksel-px, 10 inkeping-px, 8 tanden).
+De bron van ronde 2 staat in `ronde2_bron/`. Opdracht als ronde 1–2: hele model overtrekken op de 50 %-grens, max. ±1 px, alleen korrels weg,
+geen eigen vormeisen, openingen niet dichtmaken; let op bombín (bol + rand links) en vrije oren.
+
+## Meting
+- **Ronde 3 (`ronde3.txt`): 1488 px**, box 39×63 (x13–51, y1–63). Alleen ronde 3: 7 px, alleen model: 6 px; **13 afwijkingen, 0 > 1 px**
+  van de 50 %-grens (`diff_model_ronde3.txt`). Eén component, 0 losse px, 0 gaten.
+- `korrel.py ronde3.txt`: **0 / 0 / 0** (`korrel_uitvoer_ronde3.txt`).
+- Werkwijze: eerst `opt.py` (gaf 12 flips, 0 korrels), daarna met de hand drie keuzes vervangen (bombín links, vlecht, opening/kerf; zie onder),
+  steeds met de exacte dekking per pixel (niet `dekking.txt` op het oog: die is lastig te lezen, ik las hem eerst 1 kolom verschoven).
+- Kop (y0–13) 122 px tegen 102 in ronde 2 (+20 %); hals/borst (y14–27) 292 tegen 300. Totaal 24 px minder dan ronde 2 (model 1487 tegen 1509).
+
+## Afwijkingen per onderdeel (alle 13, elk max. 1 px)
+- **Oren (dunne delen):** +x25 y2 (40 %): top van het verre oor was een 1-px trap (x25–26 y1 boven x26–27 y2); nu doorlopend. **Gemeld als
+  aanvulling van een dun deel.** −x24 y4 (88 %): de 1-px inkeping x25 y4 tussen bombínbol en ver oor is niet dichtgemaakt (vullen kostte even
+  veel, 20 %) maar 1 px breder: de V tussen de oren loopt nu y1–4 door, zodat het verre oor vrij blijft van de bol.
+- **Bombín links (rand):** in het model steekt de rand op y10–11 maar 1 px uit (x17), met daaronder een 1-px inkeping (x18 y12) tegen de kop.
+  `opt.py` vulde alleen x18 y12 (22 %): dan wordt de rand een lipje van 1 px dat in de kop overloopt. Gekozen: **+x16 y10 (42 %), +x16 y11 (25 %)
+  en +x18 y12 (22 %)**: de rand zelf loopt in de bron tot halverwege x16 (42 %), dus 1 px verder naar links trekken is nog op de grens; samen
+  steekt de rand nu 2 px uit (x16–17, 2 rijen) boven de kop (y12–13 begint op x18). Kosten 0,61 tegen 0,28, maar de rand leest als rand.
+  Alternatief overwogen: −x18 y13 (99 %, inkeping 2 rijen hoog): ook ≤ 1 px, maar haalt een vol kop-pixel weg; niet gekozen.
+- **Bombín rechts:** −x28 y11 (83 %): inkeping x28 y12 tussen rand en kop aan de achterkant 1 rij dieper gemaakt i.p.v. dicht (vullen: 10 %).
+- **Bombínbol:** 0 afwijkingen. De bol zelf (x19–27 y4–9) is in de omtrek géén eigen koepel: het nabije oor staat er recht bovenop (x20–22 y1–3)
+  en het verre oor sluit rechts aan; zijn linkerkant is een rechte rand x19. Alleen de rand leest in het silhouet als hoed.
+- **Vlechten:** +x14 y20 (35 %): 1-px inkeping in de linkerrand van de hals. `opt.py` haalde x14 y18–19 weg (53 % / 50 %, goedkoper: 0,03 tegen
+  0,15); gekozen voor vullen, zodat de vlecht die in de bron naar buiten is gezet zijn breedte houdt (linkerrand x14 doorlopend y18–25).
+- **Hals/halsband, lijf, staart, voorpoten:** 0 afwijkingen.
+- **Rok:** +x50 y38 (47 %): 1-px inkeping achteraan de rok.
+- **Opening voor-/achterpoten:** in het model x32 y50–53 maar 1 px breed. +x32 y50 (32 %): de opening begint nu op y51 (1 rij korter, zoals ronde 2);
+  −x33 y51–53 (76 / 65 / 53 %): opening y51–56 gelijk 2 px breed (x32–33). `opt.py` hield y50 open met −x33 y50 (87 %), duurder (0,81 tegen 0,62).
+- **Kerf tussen de achterpoten:** model x41 y57 1 px (43 %) boven x40–41 y58. `opt.py` vulde x41 y57 (kosten 0,07, kerf → 1 rij); gekozen
+  **−x40 y57 (92 %, kosten 0,42)**, zoals ronde 2: de kerf blijft 2 rijen hoog (y57–58) en 2 px breed. Het verschil is hier groot (0,35);
+  het enige argument is de opdracht "openingen niet dichtmaken".
+
+## Wat op 1× niet leest (eerlijk; niet opgelost)
+- **Bombín:** op 1× is de rand een knobbeltje van 2×2 px links aan de kop; de bol is niet als koepel te zien (oren erop). "Hoed" leest pas met kleur
+  (donker vlak + rand). Wel beter dan ronde 2, waar de rand helemaal in de kop zat.
+- **Oren:** vrij, twee punten met een V van 4 rijen (y1–4); het verre oor loopt rechts als bult door tot y8. Leest op 1× als twee oortjes.
+- **Kop:** groter (+20 px), maar in het silhouet is de snuit niet te zien (kop driekwart naar voren, snuit binnen de omtrek); de kop leest als een
+  rechtop blok met hoed en oren.
+- **Vlechten:** maken de hals links breder (x14) maar zijn in de omtrek geen eigen vorm; alleen via kleur.
+- **Voorpoten één blok** (akkoord Jordi), **achterpoten bijna één blok** (kerf 2 rijen), staart een bultje van ±4×3 px: als ronde 2.
+- Formaat 1488 px (fase 2: 1184, 1,26×); iets kleiner dan ronde 2 (1512), omdat het model kleiner is (de grotere kop vult de 64 in de hoogte).
+
+## Bestanden ronde 3
+`ronde3.txt`, `ronde3_1x.png`, `diff_model_ronde3.txt`, `korrel_uitvoer_ronde3.txt`, `vel_ronde3.py` → `vel_ronde3.png` (onderlaag K3 | ronde 3 4× |
+omtrek over de onderlaag | 1×; onder: Camerupt, Tauros, Donphan, Rhyhorn, fase 2, ronde 2 (goedgekeurd) en ronde 3 op 1× en 2×).
+`vel_ronde2.py/png` en `diff_model.txt` (ronde 2) ongemoeid.
+
+## Lessen ronde 3
+- Lees de dekking als getallen (numpy, `c[y, x]`), niet uit `dekking.txt`: die rijen zijn makkelijk 1 kolom verkeerd af te tellen.
+- `opt.py` kiest goedkoop maar kan een dun kenmerk (hoedrand) tot een 1-px lipje vlakmaken; bij kenmerken die de opdracht noemt de buurpixels
+  met 25–45 % dekking aan de buitenkant meewegen (de echte rand loopt daar nog door).

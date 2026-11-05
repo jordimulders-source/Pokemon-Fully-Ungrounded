@@ -542,3 +542,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.133] - Parallelle takken samengevoegd, changelog hernummerd
 - De acht takken die naast elkaar liepen (lama, wasbeer, nachtaap, kolibrie pre-evo, Uyuni-Silicobra/Salticonda, DJ Rotom, koningstiran, specht) zitten nu in `main`. Elke tak telde vanaf v0.0.23 zelf door, waardoor dezelfde nummers vaak voorkwamen; alle secties staan nu op volgorde van hun commitdatum met unieke nummers (v0.0.24–v0.0.132). Inhoud ongewijzigd.
 - `docs/lessen/SPRITE_WERKWIJZE.md` is de compacte versie (met de keurslot-checklist bovenaan); de lessen die andere takken in de lange versie zetten, staan in `docs/lessen/naslag/SPRITE_WERKWIJZE_oud.md`.
+
+### [v0.0.134] - Poedelmot: eigen lijn, poedel-larve, mot Bug/Fairy
+- `docs/concept/POKEMON.md` en `IDEEEN.md`: de Venezolaanse poedelmot wordt een eigen lijn (Jordi). De larve heeft kenmerken van een poedelhond, de mot is Bug/Fairy. Nog open: het type van de larve, het aantal fasen, de ability en de lore.

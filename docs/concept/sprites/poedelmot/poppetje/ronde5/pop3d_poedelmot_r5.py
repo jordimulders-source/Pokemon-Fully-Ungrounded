@@ -11,7 +11,11 @@ Ronde 4 (basis = ronde 2; wolmassa van lijf, buik en achterlijf ongewijzigd). Ui
 sprieten en de zichtbare verre achtervleugel (nu kleiner en hoger, in perspectief). Poten volgens Jordi: "2 voorste poten
 zijn zichtbaarder, de andere vier staan dichter op elkaar per twee": voorpaar groot en vooraan, midden- en achterpoot per
 kant als tweetal dicht naast elkaar, kleiner, half onder de wol; dikte zoals ronde 2.
-Draaien vanuit de repo-root: python3 docs/concept/sprites/poedelmot/poppetje/ronde4/pop3d_poedelmot_r4.py"""
+Ronde 5 (Jordi: "je vergeet meerdere bronfotos te gebruiken he?"): elk onderdeel naar zijn eigen bron (SPEC, bron per
+onderdeel). Ogen: tak-foto + bovenste helft foto_sprieten_plus_vilt + Venomoth (beide ogen volledig zichtbaar, lager en
+meer naar voren, witte wol ertussen, geen masker). Sprieten: close-up foto_sprieten_plus_vilt + vilt (dubbele kam als
+boog, gestreept bruin). Vleugels: vilt (fijne bruine adertjes) + tak-foto (V). Wol, lijf en poten = ronde 4.
+Draaien vanuit de repo-root: python3 docs/concept/sprites/poedelmot/poppetje/ronde5/pop3d_poedelmot_r5.py"""
 import math, os, sys
 import numpy as np
 from PIL import Image, ImageDraw, ImageFont
@@ -28,10 +32,10 @@ KOP_EXTRA = 14                # kop draait meer naar de kijker dan het lijf
 COL = {
     'wol': '#F3EFE7', 'wolver': '#D6CFC2', 'pompon': '#FBF8F2', 'pomver': '#DCD5C8',
     'vleugel': '#ECE6D9', 'achtervl': '#E0D8C8', 'vlver': '#CFC7B7', 'achtver': '#C4BBAA',
-    'spriet': '#7A5234', 'sprietver': '#5E3F28', 'palp': '#EBE1D2', 'oog': '#1E1A24', 'glint': '#FFFFFF',
+    'spriet': '#7A5234', 'sprietver': '#5E3F28', 'sprietlicht': '#A47A55', 'ader': '#B49B82', 'aderver': '#A08A72', 'oog': '#1E1A24', 'glint': '#FFFFFF',
 }
-NOSHADE = {'oog', 'glint'}
-LINED = {'oog', 'spriet', 'sprietver', 'vleugel', 'achtervl', 'vlver', 'achtver'}
+NOSHADE = {'oog', 'glint', 'ader', 'aderver'}
+LINED = {'oog', 'sprietlicht', 'spriet', 'sprietver', 'vleugel', 'achtervl', 'vlver', 'achtver'}
 
 
 def poot(m, pts, pr, ver, seed):
@@ -55,6 +59,36 @@ def blad(m, wortel, u, n_hint, lengte, breedte, dikte, g, n=9):
     for i in range(n):
         t = (i + 0.5) / n
         m.ell(np.array(wortel) + u * lengte * t, (lengte / n * 1.8, max(breedte(t), 0.8), dikte), g, R0)
+    # ronde 5: fijne bruine adertjes zoals bij het vilt (vilt_hand_vleugels_gespreid.png): waaier vanuit de wortel
+    ag = 'aderver' if g in ('vlver', 'achtver') else 'ader'
+    for s_ in ADERS_VOOR:
+        for t in np.linspace(0.06, 0.93, 34):
+            b = breedte(t)
+            th = dikte * math.sqrt(max(0.0, 1 - (s_ * 0.8) ** 2))
+            p = np.array(wortel) + u * lengte * t + v * s_ * b * 0.8
+            for sw in (1, -1):
+                m.ell(p + w * sw * (th + 0.3), (1.3, 0.45, 0.2), ag, R0)
+
+
+ADERS_VOOR = (-0.55, -0.15, 0.25, 0.6)   # dwarspositie van de aders over de voorvleugel (−1..1)
+
+
+def aders_rond(m, scharnier, c, r, R0, g):
+    """Aders op een ronde achtervleugel (één ellipsoïde c, r in frame R0): waaier van het scharnier naar de rand."""
+    ag = 'aderver' if g == 'achtver' else 'ader'
+    u, v, w = R0[:, 0], R0[:, 1], R0[:, 2]
+    for a in np.linspace(-0.9, 0.9, 5):
+        eind = c + u * r[0] * 0.82 * math.cos(a) + v * r[1] * 0.82 * math.sin(a)
+        for t in np.linspace(0.15, 1.0, 28):
+            p = np.array(scharnier) + (eind - scharnier) * t
+            du, dv = (p - c) @ u / r[0], (p - c) @ v / r[1]
+            q = 1 - du * du - dv * dv
+            if q <= 0.02:
+                continue
+            p = c + u * ((p - c) @ u) + v * ((p - c) @ v)
+            th = r[2] * math.sqrt(q)
+            for sw in (1, -1):
+                m.ell(p + w * sw * (th + 0.3), (1.3, 0.45, 0.2), ag, R0)
 
 
 def voorvl(t):     # lang, smal, spits (tak-foto)
@@ -68,28 +102,32 @@ def achtervl(t):   # kleiner, rond
 KIJK = np.array((-math.sin(math.radians(YAW)), 0.0, math.cos(math.radians(YAW))))   # naar de kijker, diercoördinaten
 
 
+SPRIET = dict(lengte=48.0, boog=11.0, n=20, tand=10.0)
+
+
 def spriet(m, basis, kant, ver):
-    """Kamspriet als oor: gebogen schacht opzij (z), licht omhoog gekruld. Ronde 3: dubbele kam (bipectinaat): per punt
-    twee tanden, naar beide kanten van de schacht, in het vlak loodrecht op de kijkrichting en iets naar de punt
-    gericht, zoals een veertje (foto_sprieten_plus_vilt.png). Langste tanden in het midden."""
-    g = 'sprietver' if ver else 'spriet'
+    """Kamspriet als oor. Ronde 5 naar de close-up (bovenste helft foto_sprieten_plus_vilt.png) en het vilt: de schacht
+    is een boog opzij (eerst omhoog, de punt zakt weer iets), dubbele kam met dichte tanden aan beide kanten (veervorm,
+    langste in het midden), gestreept bruin: tanden om en om in twee bruintinten zoals bij het vilt."""
+    g, g2 = ('sprietver', 'spriet') if ver else ('spriet', 'sprietlicht')
+    N = SPRIET['n']
     pts = []
-    for i in range(13):
-        t = i / 12
-        pts.append(np.array(basis) + np.array((3.0 * t, 5.0 * t + 15.0 * t ** 2.2, kant * 44.0 * t)))   # lange boog opzij, omhoog
-    m.chain([tuple(p) + (2.4 - 1.4 * i / 12,) for i, p in enumerate(pts)], g, 1.0)
-    for i in range(1, 12):
-        t = i / 12
+    for i in range(N + 1):
+        t = i / N
+        pts.append(np.array(basis) + np.array((3.0 * t, SPRIET['boog'] * math.sin(math.pi * 0.8 * t), kant * SPRIET['lengte'] * t)))
+    m.chain([tuple(p) + (2.2 - 1.3 * i / N,) for i, p in enumerate(pts)], g, 1.0)
+    for i in range(1, N):
+        t = i / N
         p = pts[i]
-        lang = 10.0 * math.sin(math.pi * min(1.0, 0.15 + 0.95 * t)) ** 0.8 + 1.0
-        rich = pts[min(i + 1, 12)] - pts[i]; rich /= np.linalg.norm(rich)
+        lang = SPRIET['tand'] * math.sin(math.pi * min(1.0, 0.12 + 0.95 * t)) ** 0.7 + 1.0
+        rich = pts[i + 1] - pts[i]; rich /= np.linalg.norm(rich)
         zij = np.cross(rich, KIJK); zij /= np.linalg.norm(zij)
         for s in (1, -1):
-            d = zij * s + rich * 0.55
+            d = zij * s + rich * 0.5
             d /= np.linalg.norm(d)
             c = p + d * lang * 0.55
             u = d; w = KIJK - (KIJK @ u) * u; w /= np.linalg.norm(w)
-            m.ell(c, (lang * 0.55, 0.85, 0.85), g, np.column_stack([u, np.cross(w, u), w]))
+            m.ell(c, (lang * 0.55, 0.75, 0.75), g if i % 2 else g2, np.column_stack([u, np.cross(w, u), w]))
 
 
 def op45(sx, y, d, r):
@@ -99,10 +137,10 @@ def op45(sx, y, d, r):
 
 
 # Oog: richting vanuit het kopmidden (x, y, z) en stralen. Ronde 2: (-0.80, 0.02, 0.60), (7.6, 8.2, 7.6)
-OOG = (-0.62, -0.10, 0.78, (10.0, 10.6, 10.0))
+OOG = (-0.84, -0.22, 0.52, (8.0, 8.6, 8.0))   # ronde 5: lager en meer naar voren (tak-foto), beide ogen heel
 
 # Verre achtervleugel (uit ronde 3, maar kleiner en hoger): richting, middelpuntafstand, stralen
-ACHTERVL_VER = ((-0.3, 0.3, -0.95), 22.0, (22.0, 14.0, 1.4))
+ACHTERVL_VER = ((-0.3, 0.05, -0.95), 27.0, (25.0, 16.0, 1.4))   # ronde 5: verder opzij en groter, eigen vleugel
 
 # Poten (Jordi): voorpaar groot en zichtbaar, hangt van de borst naar voren en omlaag, grootste pompons; midden- en
 # achterpoot per kant dicht naast elkaar als tweetal, kleiner, achter/naast het voorpaar, half onder de wol; verre
@@ -133,12 +171,16 @@ def poedelmot(kop_r=19.0, kop_extra=KOP_EXTRA, pootkleur=False):
         ua = ua / np.linalg.norm(ua); wa = np.array((1.0, 0.3, 0.0)); wa -= (wa @ ua) * ua; wa /= np.linalg.norm(wa)
         Ra = np.column_stack([ua, np.cross(wa, ua), wa])
         if not ver:
-            m.ell(w + np.array((3.0, -6.0, 0.0)) + ua * 28.0, (29.0, 19.0, 1.4), 'achtervl', Ra)
+            c = w + np.array((3.0, -6.0, 0.0)) + ua * 28.0
+            m.ell(c, (29.0, 19.0, 1.4), 'achtervl', Ra)
+            aders_rond(m, w + np.array((3.0, -6.0, 0.0)), c, np.array((29.0, 19.0, 1.4)), Ra, 'achtervl')
         else:   # ronde 4: verre achtervleugel opzij gedraaid (zichtbaar links naast de kop), kleiner en hoger
             ua = np.array(ACHTERVL_VER[0]); ua /= np.linalg.norm(ua)
             wa = np.array((1.0, 0.3, 0.0)); wa -= (wa @ ua) * ua; wa /= np.linalg.norm(wa)
             Ra = np.column_stack([ua, np.cross(wa, ua), wa])
-            m.ell(w + np.array((0.0, 2.0, 0.0)) + ua * ACHTERVL_VER[1], ACHTERVL_VER[2], 'achtver', Ra)
+            c = w + np.array((0.0, 2.0, 0.0)) + ua * ACHTERVL_VER[1]
+            m.ell(c, ACHTERVL_VER[2], 'achtver', Ra)
+            aders_rond(m, w + np.array((0.0, 2.0, 0.0)), c, np.array(ACHTERVL_VER[2]), Ra, 'achtver')
     # lijf: dik en wollig, rechtop zittend (achterlijf laag en breed op de grond, borst erboven)
     for c, r, s in (((10, 14, 0), (22, 15, 21), 1), ((-3, 25, 0), (18, 13, 19), 2), ((-10, 12, 0), (14, 10, 16), 3)):
         m.ell(c, r, 'wol')
@@ -168,10 +210,7 @@ def poedelmot(kop_r=19.0, kop_extra=KOP_EXTRA, pootkleur=False):
         e = cr + d * kop_r * 0.80
         m.ell(e, OOG[3], 'oog')
         m.ell(e + d * OOG[3][0] * 0.82 + np.array((-0.5, 3.4, 0.0)), 1.9, 'glint')
-    # ronde 4 (Jordi: "de neus is heel raar, wanneer zie je dit soort dieren met een neus?"): geen snuit/neusbrug meer.
-    # Alleen een iets warmere tint in de wol tussen en onder de ogen (behaarde palpen), zonder lijn en zonder
-    # eigen vorm: een platte ellipsoïde die bijna helemaal in de kopwol zit.
-    m.ell(cr + np.array((-kop_r * 0.78, -6.0, 0.0)), (3.0, 5.0, 8.5), 'palp')
+    # geen neus, snuit of tint: tussen de ogen alleen witte wol (ronde 5, bovenste helft foto_sprieten_plus_vilt)
     # kamsprieten opzij als oren
     for sz in (1, -1):
         spriet(m, cr + np.array((-2.0, 9.0, 13.0 * sz)), sz, sz < 0)
@@ -186,13 +225,32 @@ def gebruik_kleuren():
     L.LINED.clear(); L.LINED.update(LINED)
 
 
+ADERGROEP = {'ader': 'vleugel', 'aderver': 'vlver'}
+
+
+def shade_aders(zb, gid, nrm, groups, out):
+    """L.shade, maar de adertjes tellen voor de lijnen als hun vleugel (anders krijgt elk adertje een zwarte rand);
+    daarna worden de aderpixels die geen lijn zijn in de aderkleur gezet."""
+    g2 = gid.copy()
+    ader = np.zeros(gid.shape, bool); kleur = np.zeros(gid.shape + (3,), np.float32)
+    for ag, vg in ADERGROEP.items():
+        i = groups.index(ag); mm = gid == i
+        ader |= mm; kleur[mm] = P.hexc(COL[ag]); g2[mm] = groups.index(vg)
+    img, a = L.shade(zb, g2, nrm, groups, L.R)
+    arr = np.array(img).astype(np.float32)
+    lijn = np.all(np.abs(arr - L.LINE) < 2, axis=-1)
+    zet = ader & ~lijn
+    arr[zet] = kleur[zet]
+    return Image.fromarray(arr.clip(0, 255).astype(np.uint8)).resize((out, out), Image.LANCZOS), a
+
+
 def view(m, yaw=YAW, pitch=8, out=256, size=236):
     Rc = P.rot_x(math.radians(pitch)) @ P.rot_y(math.radians(yaw))
     pts = np.array([Rc @ c for c, r, R0, g in m.parts]); rs = np.array([r.max() for c, r, R0, g in m.parts])
     x0, x1, y0, y1 = (pts[:, 0] - rs).min(), (pts[:, 0] + rs).max(), (pts[:, 1] - rs).min(), (pts[:, 1] + rs).max()
     scale = L.R * (size / 256) / max(x1 - x0, y1 - y0)
     zb, gid, nrm, groups = L.render(m, yaw, pitch, scale, ((x0 + x1) / 2, (y0 + y1) / 2))
-    img, a = L.shade(zb, gid, nrm, groups, out)
+    img, a = shade_aders(zb, gid, nrm, groups, out)
     return img, a, gid, groups
 
 

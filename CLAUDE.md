@@ -17,6 +17,7 @@ Vervolg op **Pokémon Ungrounded** (Project Grounded), gebouwd als fork daarvan 
 - **Stand van zaken** hieronder kort houden: alleen wat een volgende sessie moet weten. Details horen in `CHANGELOG.md`.
 
 ## Vaste regels
+- **Niet interpreteren (Jordi, 5 nov: "vanaf nu ga je niet meer dingen interpreteren die ik niet zeg"):** geef Jordi's woorden letterlijk door; vul niets in wat hij niet zei (geen eigen kenmerken, geen versmalde of verbrede lezing). Is iets onduidelijk: vragen, niet invullen.
 - **Changelog:** zet elke wijziging onderaan in `CHANGELOG.md`, als een nieuwe `### [v.x.y.z] - ...`-sectie. Versies: 0.8.x tot de laatste fase vóór de beta; 0.9 = die laatste fase; 1.0 = de beta. Dit is Jordi's eigen logboek; het mag "vervuild" zijn (codeblokken, learnsets). Niet opschonen of herstructureren.
 - **Debugmenu blijft aan** (`DEBUG_OVERWORLD_MENU` en `DEBUG_BATTLE_MENU` in `include/config/debug.h`).
 - **Mail en Magikarp-levels** niet aanpassen.

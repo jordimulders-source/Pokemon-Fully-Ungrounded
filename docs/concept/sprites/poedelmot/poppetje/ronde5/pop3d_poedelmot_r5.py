@@ -304,21 +304,21 @@ def vel():
 
     H = 170
     vakken = [
-        ('1. Ogen/gezicht: bron tak-foto, foto_sprieten (boven), Venomoth -> poppetje (werk, 1x)', [
+        ('1. Ogen: tak-foto + Venomoth (Jordi: "grote donkere ogen, beetje venomoth achtig"); foto_sprieten boven = voorstel -> poppetje', [
             pas(ref('foto_tak_katoen.webp', (760, 640, 1140, 1020)), H),
             pas(ref('foto_sprieten_plus_vilt.png', (120, 60, 340, 230)), H),
             pas(x4(gen3('venomoth'), (2, 18, 38, 54)), H),
             pas(groot.crop((130, 150, 370, 390)), H),
             pas(x4(e, (12, 12, 36, 36)), H)]),
-        ('2. Sprieten: bron close-up foto_sprieten, vilt -> poppetje (werk)', [
+        ('2. Sprieten (Jordi: "naar de zijkant als oren", bruin): close-up en vilt = voorstel -> poppetje', [
             pas(ref('foto_sprieten_plus_vilt.png', (0, 0, 447, 150)), H),
             pas(ref('vilt_hand_vleugels_gespreid.png', (200, 120, 580, 230)), H),
             pas(groot.crop((20, 60, 480, 250)), H)]),
-        ('3. Vleugels: bron vilt (adertjes), tak-foto (V) -> poppetje (werk)', [
+        ('3. Vleugels (Jordi: dubbel, wit, adertjes zoals het vilt; lijf los zoals op de hand): vilt, tak-foto (pose P1) -> poppetje', [
             pas(ref('vilt_hand_vleugels_gespreid.png', (40, 130, 720, 420)), H),
             pas(ref('foto_tak_katoen.webp', (80, 60, 1080, 900)), H),
             pas(groot, H)]),
-        ('4. Kop als wolbol met kraag: bron foto_vinger_zijaanzicht -> poppetje (werk)', [
+        ('4. Kop als wolbol met kraag: foto_vinger_zijaanzicht = voorstel (geen eis) -> poppetje', [
             pas(ref('foto_vinger_zijaanzicht.webp', (700, 300, 1350, 950)), H),
             pas(groot.crop((110, 120, 400, 420)), H)]),
     ]
@@ -340,6 +340,10 @@ def vel():
     y += 150
     for titel, ims in vakken:
         d.text((12, y), titel, font=F, fill=(0, 0, 0))
+        tot = sum(i.size[0] for i in ims) + 10 * (len(ims) - 1)
+        if tot > W - 24:   # vak past niet: alles in dit vak naar verhouding kleiner
+            k = (W - 24 - 10 * (len(ims) - 1)) / (tot - 10 * (len(ims) - 1))
+            ims = [i.resize((int(i.size[0] * k), int(i.size[1] * k)), Image.LANCZOS) for i in ims]
         x = 12
         for im1 in ims:
             assert x + im1.size[0] <= W - 12, titel   # niets mag van het vel vallen

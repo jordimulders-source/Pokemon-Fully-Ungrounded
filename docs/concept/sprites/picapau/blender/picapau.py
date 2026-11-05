@@ -132,15 +132,23 @@ def camera_licht(res=512, kantel=8):
 KC = Vector((-5.0, 0, 11.5))          # kopmidden
 KR = (9.0, 8.4, 8.6)                  # kop: groot en rond (meer Pikachu)
 
-def delen_picapau():
+NEK = Vector((-1.0, 0, 5.0))
+def kopR(kop_draai):
+    return Euler((0, 0, math.radians(kop_draai))).to_matrix()
+def kp(v, kop_draai):
+    """kopcoördinaat -> lijf: de kop draait rond de nek meer naar de kijker dan het lijf (SPRITE_KERN)"""
+    return tuple(NEK + kopR(kop_draai) @ (Vector(v) - NEK))
+
+def delen_picapau(kop_draai=0.0):
+    k = lambda v: kp(v, kop_draai)
     d = [('lijf', ('ell', (5.0, 0, -4.0), (8.8, 8.2, 14.0), (0, -40, 0)), 0),
-         ('kop', ('ell', tuple(KC), KR, (0, 0, 0)), 3.0)]
+         ('kop', ('ell', k(KC), KR, (0, 0, kop_draai)), 3.0)]
     # kuif = twee punten naar achter-boven, iets uit elkaar (Pikachu-oren); toppen zwart
     for kant in (-1, 1):
-        d.append(('kuif', ('blad', (-1.0, kant * 2.4, 17.0), (5.5, kant * 4.2, 27.5), 3.2, 0.5, 0.55), 1.4))
+        d.append(('kuif', ('blad', k((-1.0, kant * 2.4, 17.0)), k((5.5, kant * 4.2, 27.5)), 3.4, 0.7, 0.6), 1.4))
     # rafelige achterkuif: kort, naar achteren
     for (a, b, ra) in [((1.0, 0, 16.0), (8.5, 0, 19.0), 3.0), ((2.5, 0, 13.0), (10.0, 0, 13.5), 3.0), ((2.5, 0, 9.5), (9.0, 0, 7.0), 2.6)]:
-        d.append(('kuif2', ('blad', a, b, ra, 0.8, 1.6), 1.8))
+        d.append(('kuif2', ('blad', k(a), k(b), ra, 0.8, 1.6), 1.8))
     # vleugels dicht tegen het lijf (Pikachu-rugstrepen = geschubde dekveren)
     for kant in (-1, 1):
         d.append(('vleugel', ('blad', (2.5, kant * 7.6, 3.0), (16.5, kant * 5.8, -13.0), 5.0, 1.6, 0.34), 0.8))  # vleugelbegin iets naar achter: de verre vleugel stak onder de kop uit
@@ -154,8 +162,9 @@ def delen_picapau():
 
 def bouw_picapau(kop_draai=0.0, snavel_hoek=40, snavel_lengte=9.5):
     leeg()
+    R = kopR(kop_draai); Ri = R.transposed()
     wortel = bpy.data.objects.new('wortel', None); bpy.context.collection.objects.link(wortel)
-    delen = delen_picapau()
+    delen = delen_picapau(kop_draai)
     huid = huid_sdf(delen)
     bpy.ops.object.shade_smooth()
     namen = ['geel', 'vleugel', 'staart', 'wang', 'kuiftop', 'schub']
@@ -173,7 +182,7 @@ def bouw_picapau(kop_draai=0.0, snavel_hoek=40, snavel_lengte=9.5):
         elif w == 'staart': idx = 2
         elif w == 'kuif' and p.z > 24.0: idx = 4
         elif w == 'kop':
-            q = p - KC
+            q = (NEK + Ri @ (p - NEK)) - KC
             # wangvlek: rond, onder en achter het oog, naar de snavelhoek
             for kant in (-1, 1):
                 c = Vector((-5.2, kant * 6.2, -3.4))
@@ -181,26 +190,43 @@ def bouw_picapau(kop_draai=0.0, snavel_hoek=40, snavel_lengte=9.5):
         poly.material_index = idx
     huid.parent = wortel
     # snavel: beitel, schuin omhoog
-    basis = KC + Vector((-7.6, 0, -1.2))
-    wig('Snavel', basis, snavel_hoek, snavel_lengte, 2.6, 2.2, 'snavel', wortel)
+    basis = KC + Vector((-7.4, 0, -1.2))
+    # Gen 3 smokkelt: het gezicht draait naar de kijker, de snavel blijft grotendeels zijwaarts wijzen (anders een hoorn)
+    sn = wig('Snavel', basis, snavel_hoek, snavel_lengte, 2.9, 2.5, 'snavel', wortel)   # dik genoeg voor >= 2-3 px op 64
+    kopdelen = []
     # ogen: groot en donker met glans (Pikachu), aan beide kanten
     for kant in (-1, 1):
         dd = Vector((-math.cos(az) * math.cos(el), kant * math.sin(az) * math.cos(el), math.sin(el)))
         p = KC + Vector((dd.x * KR[0], dd.y * KR[1], dd.z * KR[2])) * 0.97
         o = bol('Oog', p, (2.0, 0.6, 2.4), 'oog', wortel)
         o.rotation_euler = Vector((0, 1, 0)).rotation_difference(Vector((dd.x, dd.y, 0)).normalized()).to_euler()
-        bol('Glans', p + Vector((dd.x, dd.y, 0)).normalized() * 0.4 + Vector((-0.4, 0, 0.8)), (0.6, 0.3, 0.7), 'glans', wortel)
+        g = bol('Glans', p + Vector((dd.x, dd.y, 0)).normalized() * 0.4 + Vector((-0.4, 0, 0.8)), (0.6, 0.3, 0.7), 'glans', wortel)
+        kopdelen += [o, g]
+    # kopdelen meedraaien rond de nek
+    nek = bpy.data.objects.new('nek', None); bpy.context.collection.objects.link(nek); nek.parent = wortel; nek.location = NEK
+    bpy.context.view_layer.update()
+    for ob in kopdelen:
+        w = ob.matrix_world.copy(); ob.parent = nek; ob.matrix_world = w
+    nek.rotation_euler = (0, 0, math.radians(kop_draai))
+    # snavel: wortel draait mee met de kop, richting maar voor 30%
+    bpy.context.view_layer.update()
+    w = sn.matrix_world.copy(); sn.parent = nek; sn.matrix_world = w
+    bpy.context.view_layer.update()
+    sn.rotation_euler.rotate(Euler((0, 0, -math.radians(kop_draai) * 0.7)))
     # pootjes: kort, donkergrijs, onder de voorkant van het lijf; tenen 2 voor 2 achter
     for kant in (-1, 1):
-        familie('Poot', [((0.2, kant * 3.0, -12.4), (1.2, 1.2, 3.2)),
-                         ((-2.8, kant * 3.0, -15.6), (2.4, 0.9, 0.7)),
-                         ((1.4, kant * 3.0, -15.8), (1.6, 0.9, 0.6))], 'poot', wortel, voxel=0.15, glad=2)
+        familie('Poot', [((0.2, kant * 3.0, -12.4), (1.3, 1.3, 3.2)),
+                         ((-2.6, kant * 3.6, -15.6), (2.8, 0.9, 0.8), 0, (0, 20, 20)),     # voortenen (2), licht gekromd
+                         ((-2.6, kant * 2.4, -15.6), (2.8, 0.9, 0.8), 0, (0, 20, -20)),
+                         ((-5.0, kant * 3.0, -16.6), (0.8, 0.7, 1.2)),                    # klauwhaak voor
+                         ((2.2, kant * 3.0, -15.8), (2.0, 0.9, 0.8), 0, (0, -20, 0))], 'poot', wortel, voxel=0.15, glad=2)
     return wortel
 
-def render(pad, lijf=0, kantel=8, res=512, **kw):
+def render(pad, lijf=0, kantel=8, res=512, schaal=64, **kw):
     wortel = bouw_picapau(**kw)
     wortel.rotation_euler = (0, 0, math.radians(lijf))
     camera_licht(res, kantel)
+    bpy.context.scene.camera.data.ortho_scale = schaal
     bpy.context.scene.render.filepath = pad
     bpy.ops.render.render(write_still=True)
 

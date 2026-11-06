@@ -125,6 +125,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) "ik twijfel om de gloed van de staf, vergelijk die eens met ander sprite werk. 1. ja, zolang de verhoudingen goed blijven. 2. nee hoeft niet 3. van een afstandje merk je dat bijna niet 4. merk je ook amper 5. is prima. Ik zou eerder nog net wat meer naar het kleurgebruik, de schaduw etc tov andere pokemon kijken. Vooral de latere generaties, omdat dit een wat complexer design is, wat je in latere gens wat meer ziet dan in gen 3" → studie (`studie/STUDIE.md`), ronde 11: staf als goud zonder gloed, kop/ogen iets groter, kleur/schaduw naar latere gens (tintverschuiving naar paarsbruin, lichte selout, warm goud). Geen klauwen; vleugelpunt, kroononderrand en kleurbalans blijven.
 
+- (7 nov) Ronde 11: staf als goud (geen gloed), kop ±13×10 met ogen/snavel 2 rijen, lijfschaduw paarsbruin, groter waardebereik, lichte selout aan de lichtkant, warm goud. Open: lijf binnenin nog vlak (3 tinten), veren nog niet als heldere vlakken. Voorgelegd.
+
 ## Afgekeurd
 - Stafkop ronde 8 (gouden bol): "ja dat is nu een bol, ik dacht dat je meer voor een puntig uiteinde ging, ga dat maar doen, een puntig einde" → puntige stafkop (ronde 9).
 - Kroonvarianten A–F (alleen omkleuren van bestaande stippen): "geen enkele mooi"; B het dichtst bij maar te zwak, willekeurig, half doorgevoerd.

@@ -82,3 +82,4 @@ Plus de latere besluiten onderaan (pose tak-foto, 3/4 op 45°, adertjes, poedelp
 - Jordi 6 nov (letterlijk): "die twee voorpoten moeten echt netjes uit het lijf komen en niet als rechte lijnen" → harde eis voorpoten.
 - Jordi 6 nov (met twee foto's van zijdemotten, `referenties/zijdemot_vinger.png` en `zijdemot_blad_frontaal.webp`, letterlijk): "silk moths kunnen ook als inspiratie bron dienen" → zijdemotten zijn ook inspiratiebron.
 - Jordi 6 nov: nog een zijdemot-foto gestuurd, zonder tekst (`referenties/zijdemot_closeup_kop.png`, close-up van kop, sprieten en voorpoten) → hoort bij "silk moths kunnen ook als inspiratie bron dienen".
+- Jordi 6 nov (bij die foto, letterlijk): "alleen worden onze poten minder insect like" / "maar het geeft een goed beeld waar ze uit komen" → zijdemot-close-up = bron voor de **aanzet** van de poten, niet voor de pootvorm.

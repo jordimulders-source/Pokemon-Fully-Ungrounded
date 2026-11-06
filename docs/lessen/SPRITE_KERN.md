@@ -9,6 +9,8 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 5. **Claude kijkt zelf** op 8× naast Taillow, dan een **verse onafhankelijke keurder** (oordeelt eerst blind). Pas dan naar Jordi, met alleen de sprite.
 6. Eerst alleen ontwerp + frontsprite. Frame 2, rug, icoon, shiny, naam en data komen **later voor alle soorten samen**.
 
+7. **Vastgelopen? Draft + kleine stapjes** (poedelmot 6 nov, Jordi: "als we zo telkens met kleine stapjes werken komen we er wel"): na 2 mislukte model-/silhouetrondes meteen een gekleurde draft-sprite maken en die per onderdeel met Jordi verbeteren (één onderdeel per ronde, diff 0 erbuiten, onderdeel eerst op de bronfoto beschrijven, dan tekenen).
+
 ## Harde regels (elke ronde controleren)
 - **Goedgekeurd = bevroren**: pixeldiff 0 buiten de opdrachtzone, met script bewezen. Wat Jordi goedkeurde nooit herbouwen.
 - **Jordi's woorden letterlijk** in SPEC en opdracht; nieuwe opmerking vult aan. Twijfelt Jordi: **eerst vragen wat hij ziet**, niet gokken. Bij twijfel over de omvang van een wijziging: vragen.

@@ -585,3 +585,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Keurslot: tekenbases mogen door met `<bestand>.tekenbasis.md` (Jordi).
 - Overdrachtsprompt: `docs/concept/sprites/potoo/OVERDRACHT.md` (oude: `naslag_OVERDRACHT_5nov.md`).
 
+
+### [v0.0.145] - Great potoo: Jordi's eigen omtrek, verhouding gekozen
+- Jordi's overtrek van kop/snavel/bek letterlijk uitgelezen naar spritepixels (`potoo/jordi_overtrek/`: verschil met de leidraad, halslijn en kaakpunt met de hand afgelezen; oog op de fotopositie). "De kop gaat niet meer afwijken van deze omtrek."
+- Lijf in rondes 8–13 (`potoo/sprite/ronde8_voorbeeld` t/m `ronde13_standen`): eerst te klein/verzonnen, daarna gemeten in oogmaten op al zijn foto's (oog→staartpunt 17–20 oog, breedte 7,7 oog), ineengedoken op de tak met de kop voorover, lijnen 1 px. Jordi koos het lijf 15% kleiner (`ronde13_standen/potoo_85.png`); de afgekapte vorm linksonder ("Zuid-Amerika") mag blijven.

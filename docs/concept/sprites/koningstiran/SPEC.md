@@ -83,6 +83,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) "gaat vooral om de ogen die moeten pokemon stijl zijn, mogen klein hoor, maar wel duidelijk pokemon stijl" → maker: oogstudie Gen 3-vogels (Honchkrow, Murkrow, Corviknight, Staraptor, Swellow, Talonflame), ogen volgens die opbouw.
 
+- (7 nov) "hij heeft daar wel iets te lieve ogen" → trots/zelfverzekerd, niet boos en niet lief (maatstaf Staraptor, Honchkrow, Braviary).
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

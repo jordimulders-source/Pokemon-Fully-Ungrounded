@@ -75,6 +75,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) "moeten wel bijv nog het patroon/kleurgebruik in die kroon aanpassen maar dat komt nog" → kroonpatroon/kleur later, aparte ronde.
 
+- (7 nov) Ronde 3 (maker, op ronde 2): kroon/gezicht/buik/poten/rechtervleugel 0 px gewijzigd; linkervleugelpunt verschoven om een staf (hybride: gouden schacht, roestbruine vaan, zonneschijf 5×5), lijf linksonder opgevuld (+22 px), bruine staart weg, gouden puntje tussen de poten (1 px lucht). Open: zon/staf klein, puntje hangt los, hand leest als vuist. Voorgelegd aan Jordi.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

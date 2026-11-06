@@ -1,4 +1,4 @@
-# Sapa Inca ronde 2 - met de hand getekend tekstraster (y x0 tekens), achter naar voor per onderdeel.
+# Sapa Inca ronde 3 - met de hand getekend tekstraster (y x0 tekens), achter naar voor per onderdeel.
 # palet: index 1..15 in deze volgorde; index 0 = transparant
 P K 24 16 20
 P d 52 38 36
@@ -149,23 +149,89 @@ P t 162 82 42
 47 22 agggaaalmdddddddK
 48 23 aggaalmddddddddK
 49 24 aaaalmddddddddK
-50 26 agalmddddddtK
-51 26 agalmdddddKtK
-52 25 aggalddddddKtK
+50 26 agalmdddddddK
+51 26 agalmddddddK
+52 25 aggalddddKKK
 # ronde 2: staart met eigen contrast
 53 25 agga
-53 29 KaggaKtttd
+53 29 KaggaK
 54 25 aga
-54 29 aggaaKttd
+54 29 aggaaK
 55 24 agga
-55 29 aggaaKttd
+55 29 aggaaK
 56 24 aaK
-56 29 aggaaKtrd
+56 29 aggaaK
 57 24 ga
-57 29 KagaKttd
+57 29 KagaK
 58 24 ga
-58 30 agaKtrd
+58 30 agaK
 59 24 ga
-59 30 agaKtd
+59 30 agaK
 60 22 aagaa
-60 30 agaKtd
+60 30 agaK
+
+# ==== ronde 3: de hangende vleugel van ronde 2 omhoog, punt om de staf; hybride staf/staartveer; staartpuntje ====
+# onderste deel van de oude cape wissen (rij 42-55)
+42 16 ____
+43 16 ____
+44 16 _____
+45 16 _____
+46 15 ______
+47 15 _______
+48 15 ______
+49 15 ______
+50 15 ______
+51 15 _____
+52 15 _____
+53 15 ____
+54 16 ___
+55 17 _
+# zonneschijf (Inti), stralen als veerpuntjes met lavendel punt
+25 14 paaap
+26 14 ayyga
+27 13 paygga.p
+28 14 aggaa
+29 14 pagap
+# staf/staartveer: lichte schacht (y) met roestbruine vaan (t)
+30 14 ayt
+31 14 ayt
+32 14 ayt
+33 14 ayt
+34 14 ayt
+35 14 ayt
+36 14 ayt
+37 14 ayt
+38 14 ayt
+39 14 ayt
+# vleugelpunt uit ronde 2 (rij 46-55), 6 rijen omhoog en 2 naar links: vouwt voor de staf
+40 13 mdddKd
+41 13 mddKddK
+42 13 mdKddK
+43 13 mdKdKK
+44 13 mKdKdK
+45 13 mKdKK
+46 13 mKdKK
+47 13 KdKK
+48 14 KdK
+49 15 K
+# onderkant staf wordt veer en verdwijnt achter het donkere lijf
+49 16 att
+50 17 Ktt
+# opvulling lijf linksonder (donker, alleen wat nodig is)
+42 19 d
+43 19 d
+44 19 dd
+45 18 ddd
+46 18 ddd
+47 18 Kddd
+48 18 Kdddd
+49 19 Kdddd
+50 20 Kddddd
+51 22 Kddd
+52 23 Kd
+53 24 K
+# staartpuntje tussen de poten
+57 27 a
+58 27 ga
+59 27 ga
+60 28 a

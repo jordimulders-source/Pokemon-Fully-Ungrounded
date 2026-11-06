@@ -61,6 +61,7 @@ Daarna (Jordi): "andere kleur is niet erg, daar hadden we het niet over gehad, m
 Op ronde 4 (Jordi): "je luistert niet, het haar is niet anders dan het hoofd, het is hetzelfde materiaal en dezelfde kleur, er zit dus geen streep tussen"; "kijk aub een keer goed naar hitmontop en stop met dingen verzinnen". (Claude had zelf "haar onderscheiden met lijnen" verzonnen.) Hitmontops kop = één glad geheel: punt bovenop loopt uit de kop door, flappen opzij, alleen dunne plooitjes in de flappen en twee plooilijnen boven de ogen; ogen zwarte rondjes met wit puntje; mond een streepje.
 Daarna (Jordi): "rare kippenpoot heeft die ook in zijn haar"; "de enige streep is wat nu boven zijn ogen zit, maar gezien die haren nu dus naar achter gaan, komt die streep veel hoger te staan, een beetje als een fade, maar dat kan je wel berekenen hoop ik" (dus één streep: de haarlijn, hoog op het hoofd, zacht; geen plooitjes).
 Jordi: "en design eerst maar puur het hoofd zonder de rest", "dan keuren we dat" (hoofd los ontwerpen, pas na goedkeuring op de vorm).
+Op ronde 5b (Jordi): "ja dit is echt nog niet goed. Je bent from scratch aan het tekenen, ik heb liever dat je hitmontops hoofd pakt en daarmee gaat spelen." "want dit is echt nog heel ver ervan af, geen enkele van mn punten zie ik er in". Ronde 6: Hitmontops kop-pixels als basis en bewerken, niet tekenen.
 
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

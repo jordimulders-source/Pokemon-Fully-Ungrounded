@@ -67,6 +67,7 @@ Op ronde 6 (Jordi): "ik vind het compleet prutswerk, de laatste is niet eens een
 ## Hoofd: Jordi's recept (6 nov, letterlijk; leidend)
 Bij `referenties/hitmontop_3d.webp`: "kijk naar deze afbeelding. De V-vorm tussen zijn ogen, die lijn gaan we naar achter trekken, die haren komen samen in een soort knot, dat mag gewoon een rondje zijn met een witte band, bijna zoals zijn handen. en de stekel bovenop mag kleiner, makkelijker kan ik het echt neit maken".
 Dus: (1) de V tussen de ogen (de voorrand van de flappen) naar achteren trekken; (2) de flappen komen achter samen in een knot = een rondje met een witte band, zoals zijn handen met polsband; (3) de stekel kleiner. Verder niets.
+Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste wat ik kan vragen"; "namelijk de v vorm in het hitmontop hoofd, want die sluit neit aan in een punt". Daarna: "stop maar", "ik ben er ff klaar mee". **Gepauzeerd.** Volgende keer eerst: de V van Hitmontop (twee lijnen die tussen de ogen in één scherpe punt samenkomen) naar achteren getrokken, nog steeds als V met punt.
 
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

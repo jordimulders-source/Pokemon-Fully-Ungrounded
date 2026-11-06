@@ -623,3 +623,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.160] - Hitmontop-evolutie: hoofd ronde 8 (Jordi's recept)
 - Recept van Jordi bij de 3D-referentie: V tussen de ogen naar achteren, flappen samen in een knot (Hitmontops eigen hand + witte polsband), kleinere maar echte stekel, gladde bovenkant. Bron: zijn overworld-kop (rechtop, van voren), met de hand vergroot; ogen van de frontsprite. `docs/concept/sprites/hitmontop_evo/stap4_hoofd/ronde8/`; keurder PASS voor variant 2 rechtop.
+
+### [v0.0.161] - Keurslot-hook verwijderd
+- Jordi: "die keurcontrole is echt bizar, haal die eraf" (hij blokkeerde ook het terugsturen van zijn eigen referentieplaatje). `.claude/hooks/sprite_keurslot.py` en de hook in `.claude/settings.json` weg; CLAUDE.md, SPRITE_WERKWIJZE.md en SPRITE_OPDRACHT.md bijgewerkt.

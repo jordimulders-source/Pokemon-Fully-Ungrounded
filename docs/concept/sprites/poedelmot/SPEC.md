@@ -89,3 +89,4 @@ Plus de latere besluiten onderaan (pose tak-foto, 3/4 op 45°, adertjes, poedelp
 - Jordi 6 nov (op draft ronde 6, letterlijk): "voor nu prima, ik weet nog niet of ik definitief hiermee tevreden ben, maar het is veel beter, de armen mogen nog wat meer fluffy. wil je dat nu doen of pas later? Anders gaan we de achterpoten fixen" → voorpoten ronde 6 voorlopig akkoord (niet definitief). **Open: armen meer fluffy** (later, in één wolronde voor de hele sprite, keuze Claude). **Ronde 7: achterpoten** ("losse aanhangels zonder verbinding").
 - Jordi 6 nov (letterlijk): "ja en houd rekening met het driekwart perspectief, dus links zitten ze meer aan de onderkant dan rechts" → achterpoten: links meer aan de onderkant dan rechts.
   - Jordi: "kijk bijv naar giratina" (voor dat perspectief).
+- Jordi 6 nov (letterlijk): "maak ze vast aan het lichaam ook en zorg dat ze niet overdreven groot in beeld zijn" → achterpoten vast aan het lijf, niet overdreven groot.

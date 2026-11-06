@@ -14,7 +14,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` + `docs/lessen/SPRITE_KERN.md`. Ach
 - (6 nov, letterlijk) "ga je werk heel kritisch keuren voordat je het als af bestempelt, moet echt heel erg lijken op het model, anders is die niet goed"
 - (6 nov, letterlijk) "ja let meer op vormen en belijning dan kleur"
 - (6 nov, letterlijk) "de keurder hoeft niet te kijken wat voor dier het is, de keurder moet alleen kijken naar de accuraatheid tov het oorspronkelijke model, verder verander je NIKS, dat model is perfefct en moet zo accuraat mogelijk vertaald worden, de keurder heeft verder niks te zeggen"
-  → **Enige maatstaf: accuraatheid t.o.v. het model.** Geen stijlkeuring die het model verandert.
+- (6 nov, letterlijk) "nou de enige maatstaven zijn: lijkt die heel accuraat op het origineel; is het een gen 3 sprite volgens al onze eisen"
+  → **Twee maatstaven:** (1) heel accuraat t.o.v. het model (niets toevoegen/weglaten/herinterpreteren); (2) een nette Gen 3-sprite volgens onze eisen (`SPRITE_KERN.md`). "Welk dier leest het" telt niet.
 
 ## Besloten
 - Ontwerp en pose = Jordi's afbeelding (bevroren); niets toevoegen of weglaten. Pootjes zoals in afbeelding 2 (niet meer).

@@ -54,7 +54,7 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (6 nov) Kleur ronde 1 (maker) → eigen keuring: gezicht klein/boos, vleugel knots, borst plat ei, staart weg → ronde 2 (alleen kleur, silhouet bevroren, kroon bevroren). Ronde 2: gezicht rustiger, vleugel met penscheidingen, borst met volume, staart gescheiden. Resterend (zit in het silhouet): kop 11×9 px (ogen 2–3 px), vleugel leest als opgeheven arm, staart 2–3 px breed. Voorgelegd aan Jordi.
 
-- (6 nov) Jordi over ronde 2: "Ik vind dit al heel netjes. Laten we hier morgen verder aan werken". Open voor morgen: de drie silhouetvoorstellen (kop groter, vleugelpunt, staart).
+- (6 nov) Jordi over ronde 2: "Ik vind dit al heel netjes. Laten we hier morgen verder aan werken". Aanvulling: "Nog niet perfect hoor, maar heel ver al". Open voor morgen: de drie silhouetvoorstellen (kop groter, vleugelpunt, staart).
 
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.

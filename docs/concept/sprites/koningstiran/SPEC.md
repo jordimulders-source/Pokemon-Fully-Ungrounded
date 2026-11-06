@@ -103,6 +103,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Ronde 6b: geen losse sliert meer; staf 2 rijen zichtbaar onder de vleugelpunt, verdwijnt achter de ronde lijfrand linksonder (die ligt daarvoor 2–4 px buiten de rode boog). 33 px binnen de zone, 0 erbuiten. Voorgelegd aan Jordi.
 
+- (7 nov) "nu is het lichaam links weer net wat teveel weggesneden. en dat maakt gelijk de staf wat gekker, nu kan ik wel zien dat die op de juiste plek naar het lichaam gaat, dus zo slecht is dat niet. Het gele vlak in het midden heeft wel nog steeds een rare vorm, die mag nog wta ronder, aan de rechterkant is het beter, maar mag die nog een klein beetje dunner, we komen dichtbij nu. Poten ook netter afgewerkt" → poten bevroren (goed); ronde 7: lijf links voller, buik ronder en rechts iets dunner.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

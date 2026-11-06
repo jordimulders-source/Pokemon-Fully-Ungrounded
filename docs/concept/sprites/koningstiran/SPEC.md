@@ -127,6 +127,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Ronde 11: staf als goud (geen gloed), kop ±13×10 met ogen/snavel 2 rijen, lijfschaduw paarsbruin, groter waardebereik, lichte selout aan de lichtkant, warm goud. Open: lijf binnenin nog vlak (3 tinten), veren nog niet als heldere vlakken. Voorgelegd.
 
+- (7 nov) Eindkeuring (`EINDKEURING.md`): 20 PASS, 11 FAIL, nog niet af. Ronde 13 (op 12, palet gelijk): top 5 uitgevoerd (ogen/snavel 6 px, banding flank 22, hooglicht romp 10, stafpunt 12, opschonen 12); 62 px, 0 erbuiten. Open voor Jordi: kop groter (silhouet), kroontrapjes rechtsboven, stafpunt over één kroonvlek.
+
 ## Afgekeurd
 - Ronde 11 (7 nov): "veel slechter. de rechtervleugel is opeens veel te klein en klopt helemaal niet meer met het lichaam qua kleur en belijning. linkerkant van het hoofd is helemaal vervaagd met een rare bruine lijn eronder". Oorzaak: nieuw palet veranderde 1443 px tegelijk (vleugel, kroon, lijf) + kopvergroting. Terug naar ronde 10; ronde 12 = ronde 10 + alleen de goudstaf (18 px).
 - Stafkop ronde 8 (gouden bol): "ja dat is nu een bol, ik dacht dat je meer voor een puntig uiteinde ging, ga dat maar doen, een puntig einde" → puntige stafkop (ronde 9).

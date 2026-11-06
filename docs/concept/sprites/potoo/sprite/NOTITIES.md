@@ -20,3 +20,13 @@ Zwakke punten (eerlijk, voor keurder/blinde test):
 - Schorsvlekjes zijn blokjes; fijner (2-px-streepjes) mag niet door de clusterregel. Op 1× lezen ze als grijs gemêleerd.
 - Contrast lijf is laag (bewust C2, bijna wit); naast Taillow oogt het bleek.
 - Vleugel heeft weinig vorm (één veerlijn, één dekverengrens).
+
+## Ronde 2 (`ronde2/`)
+Blinde tests r1: beluga/kabeljauw/zeehond/grondel; "worstvormige blob", "staart een steel", "spikkels zonder richting", "palet vlak", "bek als losse trechter", "bek lijkt de kop". Opnieuw met de hand (`maak.py`, eigen `palet.py`; F is nu de vleugelschaduw, de hoornrug gebruikt 4).
+- Koepel groter (y1–15, 19 px breed), muil iets kleiner (punt op y28); haak 2 px langer (tot y19, punt terug).
+- Kin: de vacht loopt direct over de nabije kaakrand door naar de keel; geen losse kaaklijn meer, alleen een schaduwsikkel onder de kaakpunt.
+- Gevouwen vleugel (Noctowl-studie): eigen tonen 4/3/F, omlijnd, licht aan de voorrand, boeg bij de schouder, schouderveren onder de mantel, twee schuine dekverenrijen + dekverengrens, drie pennen met getrapte punten, vleugelpunt steekt achter de staart uit.
+- Buik buigt eerder terug, zodat er meer staart zichtbaar is; de staart eindigt in drie veerpunten.
+- Veerpuntjes van 1 px op rug en borst; patroon in rijen (mantel 7, pennen F, staart 7), gezicht/borst rustig.
+- Valkuil: U-vormige dekveertjes van 5 px naast elkaar lezen als bakstenen of tanden; schuine lijnen lezen rustiger.
+Zwakke punten: borst is een groot leeg vlak; zichtbare staart is nog kort; kruin is glad; dekverenrijen zijn rechte lijnen.

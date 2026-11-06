@@ -65,6 +65,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Krabbel `referenties/krabbel_jordi_staf_krul.png`: rood kruis over het staartstukje rechts (weg); geel: staf krult onderaan af bij de buikrand, en een piepklein krulletje onder het lijf tussen de poten. "verder is de vleugel een beetje in tweeën gesplitst links. Het hoeft maar een hele subtiele link te zijn, het feit dat de staf afkrult is al een hint" → zo gedaan; linkervleugel één doorlopende vorm.
 
+- (7 nov) "nee je volgt mijn instructies niet op. De staf verdwijnt nu nergens heen, die moet afbuigen naar het lichaam toe. De staart is nu ook onderin verbonden met de poot?" → staf buigt onder de hand naar het lijf en verdwijnt achter de DONKERE flank (gemeten: rechts/onder van het zichtbare eind ligt lijf, niet de gele buik); krulletje tussen de poten met 1 px lucht naar beide poten op 1x (rij 57).
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

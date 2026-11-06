@@ -129,7 +129,7 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out
         # staf: goud, rechtop, van de grond tot kophoogte, bovenaan drie veren zoals op het beeld
         # Jordi 7 nov (krabbel_jordi_staart_is_staf.png): de staart IS de staf. Onder de hand buigt de staf licht
         # naar het lijf en verdwijnt erachter; hij gaat nergens over bestaande lichaamsdelen heen (diepte achter).
-        SP = [(-27, -10, -6), (-30, -13, 2), (-34, -8, 6), (-37, 3, 8), (-37, 20, 8), (-37, 44, 8)]  # krult onderaan af naar de buik (krabbel)
+        SP = [(-12, -30, -26), (-21, -26, -18), (-29, -21, -4), (-35, -9, 4), (-37, 3, 8), (-37, 20, 8), (-37, 44, 8)]  # buigt onder de hand naar het lijf en verdwijnt ACHTER de flank
         tube(m, [W2(*q) for q in SP], 3.2, 3.0, 'gold')
         top = W2(-37, 44, 8)
         if staff_top == 'veren':     # drie veren zoals op het beeld
@@ -159,7 +159,7 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out
     # staart = staf (Jordi 7 nov): de echte staart is weg; alleen rechtsonder een klein stukje waar hij uit het lijf
     # komt en heel licht afbuigt, in het goud van de staf, achter het standbeen (nergens eroverheen).
     if staff:
-        tube(m, [W2(*q) for q in ((-4, -33, -6), (-1, -40, -1), (3, -42, 1), (6, -40, 1))], 2.8, 2.4, 'gold')  # krulletje tussen de poten (krabbel)
+        tube(m, [W2(*q) for q in ((-3, -34, -9), (-4, -40, -5), (-3, -44, -4), (-1, -42, -4))], 2.2, 1.9, 'gold')  # los krulletje tussen de poten, raakt geen poot of dij
     else:
         for ang in (-62 - tail_out, -48 - tail_out, -34 - tail_out):
             Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(-6))

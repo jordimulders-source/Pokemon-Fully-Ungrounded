@@ -149,3 +149,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca: de staart is de staf (Jordi): gouden staartstukje rechtsonder, staf buigt onder de hand achter het lijf; silhouet v2.
 - Sapa Inca: arm houdt de staf weer zichtbaar vast, staf wordt hoger staart, staartstukje buigt naar links.
 - Sapa Inca: staartstukje rechts weg; staf krult af bij de buik, piepklein krulletje tussen de poten; linkervleugel één vorm.
+- Sapa Inca: staf verdwijnt achter de donkere flank, krulletje los tussen de poten (gemeten).

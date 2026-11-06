@@ -85,7 +85,20 @@ def wing(m, sh, wr, dirs, lens, g, z, cw=13, pw=5.5):
         plate(m, wr, tip, pw, 2.2, g)
 
 
-def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out=0.0, staff=True, staff_top='veren'):
+def tube(m, pts, r0, r1, g, n=8):
+    """Gladde buis door punten (Catmull-Rom), straal r0 -> r1."""
+    C = [np.array(p, float) for p in pts]
+    out = []
+    for i in range(len(C) - 1):
+        p0, p1, p2, p3 = C[max(i - 1, 0)], C[i], C[i + 1], C[min(i + 2, len(C) - 1)]
+        for t in np.linspace(0, 1, n, endpoint=False):
+            t2, t3 = t * t, t * t * t
+            out.append(0.5 * (2 * p1 + (-p0 + p2) * t + (2 * p0 - 5 * p1 + 4 * p2 - p3) * t2 + (-p0 + 3 * p1 - 3 * p2 + p3) * t3))
+    out.append(C[-1])
+    m.chain([tuple(q) + (r0 + (r1 - r0) * k / (len(out) - 1),) for k, q in enumerate(out)], g, 1.0)
+
+
+def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out=0.0, staff=True, staff_top='zon'):
     """Hybride: bouw van de bergcaracara (groot, rechtop, lange poten, haaksnavel, kaal rood gezicht),
     kroon en staart van de koningstiran. De zijveren van de waaier hangen omlaag (foto 2) en vormen zo
     zelf de franje van de mascaypacha; geen losse band (geen 'dier met een hoed')."""
@@ -105,10 +118,13 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out
         # Onderarm naar voren tot de staf, de slagpennen gesloten omlaag langs de staf.
         wr = W2(-31, 2, 14)
         plate(m, (-2, 28, -15), wr, 15, 5, 'farwing')
-        for k, (xp, y) in enumerate(((-30, -26), (-27, -24), (-24, -21), (-21, -18))):
+        for k, (xp, y) in enumerate(((-27, -10), (-24, -10), (-21, -9), (-18, -8))):   # kort: de staf eronder blijft zichtbaar
             plate(m, wr, W2(xp, y, 13 - k), 10, 2.2, 'farwing')
         # staf: goud, rechtop, van de grond tot kophoogte, bovenaan drie veren zoals op het beeld
-        m.chain([tuple(W2(-37, -52, 8)) + (3.4,), tuple(W2(-37, 44, 8)) + (3.0,)], 'gold', 1.0)
+        # Jordi 7 nov (krabbel_jordi_staart_is_staf.png): de staart IS de staf. Onder de hand buigt de staf licht
+        # naar het lijf en verdwijnt erachter; hij gaat nergens over bestaande lichaamsdelen heen (diepte achter).
+        SP = [(-20, -36, -30), (-27, -26, -10), (-33, -14, 4), (-37, 0, 8), (-37, 20, 8), (-37, 44, 8)]
+        tube(m, [W2(*q) for q in SP], 3.2, 3.0, 'gold')
         top = W2(-37, 44, 8)
         if staff_top == 'veren':     # drie veren zoals op het beeld
             for a in (-24, 0, 24):
@@ -134,12 +150,14 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out
     c = curl
     dirs = [(0.62 - 0.30 * c + 0.10 * k * c + wing_out, 1.0 - 0.05 * k) for k in range(5)]
     wing(m, (8, 30, 17), (21, 35, 34), dirs, (33, 36, 34, 30, 24), 'wing', 56, 16, 12)  # iets korter (Jordi)
-    # staart: geen scepter (Jordi: "het moet staart en scepter zijn en als dat niet lukt dan doen we het niet";
-    # in deze pose werd het een balk of een lange sliert). Gewone brede roestbruine staart zoals de echte vogel,
-    # licht gewaaierd, zichtbaar rechts achter het lijf.
-    for ang in (-62 - tail_out, -48 - tail_out, -34 - tail_out):
-        Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(-6))
-        m.ell(np.array((34, -22, -2)) + Rt @ np.array((0, -20, 0)), (9, 24, 3), 'tail', Rt)
+    # staart = staf (Jordi 7 nov): de echte staart is weg; alleen rechtsonder een klein stukje waar hij uit het lijf
+    # komt en heel licht afbuigt, in het goud van de staf, achter het standbeen (nergens eroverheen).
+    if staff:
+        tube(m, [W2(*q) for q in ((4, -30, -24), (10, -38, -14), (17, -42, -8), (22, -41, -6))], 3.4, 3.0, 'gold')
+    else:
+        for ang in (-62 - tail_out, -48 - tail_out, -34 - tail_out):
+            Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(-6))
+            m.ell(np.array((34, -22, -2)) + Rt @ np.array((0, -20, 0)), (9, 24, 3), 'tail', Rt)
     # poten: geen V meer. Standbeen recht onder het zwaartepunt; vrije poot met gebogen knie naar voren,
     # het scheenbeen weer verticaal (contrapposto van het beeld)
     # beide benen even lang (dij ±10, scheen ±11) en onder het lijf, zoals het beeld; het vrije been staat

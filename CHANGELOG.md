@@ -608,3 +608,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.155] - Hitmontop-evolutie: hoofd (stap 4) keurklaar
 - Op de vorm (stap 3b C): Hitmontops gezicht (ogen, fronslijnen, mond met iets meer vreugde) op een ronde kop van ±23 px, stekel kleiner als geheel, haar glad naar achteren met kamstrepen naar een knot. 4 rondes (`docs/concept/sprites/hitmontop_evo/stap4_hoofd/`), eindversie `ronde3b/`; verse keurder PASS. Rest pixel voor pixel ongewijzigd.
+
+### [v0.0.156] - Hitmontop-evolutie: hoofd terug naar het Hitmontop-ontwerp
+- Jordi over ronde 3b: mond zat bovenaan ("kaal met een baard?"), haar en hoorn moeten één materiaal/kleur met de kop zijn, hoorn kleiner maar zichtbaar door het opgeknotte haar, ogen zwarte rondjes met wit puntje, mond een streepje, hele hoofd tegen de klok in draaien, simpel. Anime-plaatje en zijn krabbel in `referenties/`; SPEC en les bijgewerkt.

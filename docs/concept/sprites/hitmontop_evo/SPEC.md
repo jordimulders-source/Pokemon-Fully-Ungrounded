@@ -53,5 +53,10 @@ Bij `referenties/fanart_mestrimba.png` (fanart van iemand anders, "Mestrimba"; a
 - Jordi: "maar het hoofd mag wel iets groter, hitmontop heeft een erg groot hoofd voor zijn lichaam, bij deze evolutie wordt het naar verhouding minder, maar het wordt geen mens".
 - Jordi: "en de mond mag wat meer vreugde uitstralen dan bij hitmontop".
 
+## Hoofd: Jordi over ronde 3b (6 nov, letterlijk; leidend)
+Referenties: `referenties/hitmontop_anime.webp` (Hitmontop in de anime) en `referenties/krabbel_hoofd_jordi.png` (zijn lijnen over ronde 3b).
+"dus de mond zit aan de bovenkant, onder de haar kant? Dus hij is kaal en heeft een baard? Dit is door een agent goedgekeurd? Desalniettemin niet zo'n ramp. De kleinere hoorn moet nog steeds door de haren heen zichtbaar blijven. Het enige wat deze nieuwe vorm heeft is de haren die hij al had wat langer laten groeien en opgeknot, om een kleinere punt heen. Plus de hoofdvorm is anders. Daarnaast mag het hele hoofd sowieso counterclockwise draaien, zodat het perspectief klopt. Hitmontops haren en hoorn zijn altijd hetzelfde materiaal/kleur. Dat veranderen we nu niet, plus het is dezelfde kleur als zijn hoofd. De ogen blijven rond, wenkbrauwen heeft die niet, dat is de lijn van zijn haren, maar dat gaan we slim doen. De ogen blijven zwarte rondjes met een wit puntje erin, dat verandert in welke emotie dan ook niet. De mond is gewoon een streepje, dus het is veel makkelijker dan je nu doet. Ik heb met wat lijnen getekend wat er moet gebeuren. Het design mag dus ook echt simpel zijn, want dat past in de lijn. Alle hitmons zijn relatief simpel getekend"
+Samengevat: haar, hoorn en huid één materiaal en één kleur (Hitmontops bruin); haar = zijn eigen haar, langer gegroeid en opgeknot rond een kleinere punt die zichtbaar blijft; de 'fronslijn' is de haarlijn (geen wenkbrauwen); ogen = zwarte rondjes met een wit puntje (nooit anders); mond = één streepje, lager; hele hoofd tegen de klok in draaien; simpel tekenen zoals alle Hitmons.
+
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

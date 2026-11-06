@@ -22,7 +22,7 @@ Opdracht van de coördinator: rechts in beeld is de nabije kant (de kop kijkt na
 
 ## Wat er gedaan is
 - **Voeten:** de bollen zijn vervangen door wolpluk-punten. Bij de enkel loopt de pluk iets breder uit en daarna over 4 à 5 rijen spits toe.
-- **Klauwtjes:** onder elke punt staan twee klauwtjes van 1 px in tint 1 (donker), als een V schuin naast de punt, zoals op de vilt-hand.
+- **Klauwtjes (ronde 4b):** onder elke punt zitten twee klauwtjes van 1 px in tint 1 (donker). Ze zitten vast aan de omlijning van de voetpunt, als een uitstulping van 1 px naar beneden (onderste rij: klauw, punt, klauw). In de eerste versie van ronde 4 zweefden ze diagonaal los. Er staat geen enkele losse pixel meer in de omtrek; elke pixel heeft een buur boven, onder, links of rechts (gecontroleerd met een script).
 - **Rechts groter (nabije kant):**
   - De rechtervoorpoot is breder (bovenbeen x30-38, voet 10 px breed) en lager: punt op y58, klauwtjes op y59.
   - De linkervoorpoot is kleiner: voet 8 px breed, punt op y57, klauwtjes op y58.
@@ -43,7 +43,7 @@ Opdracht van de coördinator: rechts in beeld is de nabije kant (de kop kijkt na
 - `keurvel.png`: keurvel.py-vel met ronde 3 B, Giratina, LEIDRAAD, zijdemot blad en vilt-hand. Beide panelen zijn eronder geplakt. De keuring staat in `keurvel.png.keuring.md`.
 
 ## Zwakke punten (eerlijk)
-1. De klauwtjes staan diagonaal los van de punt. Op 8× lezen ze als losse zwarte puntjes, op 1× als een donker spatje. Of dat "hele kleine klauwtjes" zijn, moet Jordi zeggen.
+1. De klauwtjes zitten nu vast (4b), maar op 1× lezen ze als een donker randje onder de punt. Of dat "hele kleine klauwtjes" zijn, moet Jordi zeggen.
 2. Q en R1 zijn bijna onzichtbaar. Van de vier achterpoten lezen er eigenlijk twee (P en S).
 3. Het verschil tussen links en rechts is klein, ongeveer 1-2 px. "Net wat groter" heb ik letterlijk genomen.
 4. Rechts loopt de voorpoot nog over in het lijf, waardoor die kant grijs en druk leest.

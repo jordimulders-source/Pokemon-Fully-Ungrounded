@@ -8,6 +8,6 @@
 - "rechts net wat groter dan links ... volgens het perspectief": alle poten rechts zijn net wat groter en lager dan links (voorpoot 10 tegen 8 px, punt y58 tegen y57; achterpoot S groter dan P). OK, het verschil is wel klein.
 - "De poten mogen nog wat meer weggestopt": de buik loopt door tot y52 en de achterpoten zijn alleen nog puntjes onder de buikrand. OK.
 - "de uiteinden van de poten geen bollen, maar meer puntig": de wolpluk loopt spits toe, zoals op de zijdemot- en vilt-foto's. OK.
-- "met hele kleine klauwtjes": 2× 1 px donker per voet, als een V onder de punt. **Twijfel:** op 8× lezen ze als losse puntjes.
+- "met hele kleine klauwtjes": 2× 1 px donker per voet, als een V onder de punt. Sinds 4b zitten ze vast aan de omlijning van de punt; er zijn geen losse pixels.
 
 - Oordeel: PASS (draft): alle punten van Jordi zijn verwerkt; de klauwtjes en de bijna verborgen Q/R1 zijn open vragen (NOTITIE, zwakke punten 1-2)

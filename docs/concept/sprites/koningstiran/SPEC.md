@@ -111,6 +111,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) "nu maak je weer e zelfde fout als eerder, nu is het lichaam aan de linkerkant weer gek uitgebold" → ronde 7b (Claude, 9 px): linkeromtrek linksonder precies tussen 6b en 7 (begin rij 48–53: x16,17,18,20,22,24); rest = ronde 7.
 
+- (7 nov) "stafkop zon uit veer is prima, maar mag wat groter" → stafkop = variant B, zon ±7×7 (ronde 8, op 7b).
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

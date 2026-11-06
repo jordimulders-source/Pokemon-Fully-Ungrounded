@@ -61,7 +61,7 @@ def stap2(g=None):
     # romp, staart, benen, voeten en linkerarm van Hitmontop eraf; de nek en steunarm blijven
     for y in range(0,41):
         for x in range(64):
-            if not (38<=x<=43 and y>=37) and y<37 or (y>=35 and 23<=x<=35): g[y][x]=0
+            if (y<37 and not (38<=x<=43 and y>=34)) or (y in (37,38) and 21<=x<=37): g[y][x]=0
     # 2a. lange aansluitende broek: heup (Hitmontops romp, langer) + twee lange benen in V
     txt(g,8,7,[
     ".....99....................................99....",    #7
@@ -135,25 +135,65 @@ def stap2(g=None):
 
 def stap3(g=None):
     g=g or stap2()
-    O=-2   # kop staat 2 px verder links dan in de analyse (DX -9 i.p.v. -7)
-    def X(x): return x+O
-    # 3a. het bovenste deel van Hitmontops rand (naast kaak/kin) is wang: haar daar weg, rand wordt huidlijn
-    bx={41:17,42:16,43:16,44:15,45:15}
-    for y in (38,39,40):
-        for x in range(X(4),X(17)): g[y][x]=0
-    for y,b in bx.items():
-        for x in range(X(4),X(b)): g[y][x]=0
-        g[y][X(b)]=5
-    # 3b. het onderste deel van de rand blijft (Game Freaks pixels), alleen links ingekort: daaruit groeien de lokken
-    rootL={46:12,47:11,48:10,49:10,50:11,51:12,52:14,53:16}
-    for y,r in rootL.items():
-        for x in range(X(4),X(r)): g[y][x]=0
-        if g[y][X(r)] not in (15,): g[y][X(r)]=5
-    txt(g,X(12),45,["555"])
-    # 3c. dikke gedraaide lokken die met de zwaartekracht naar de grond hangen (afro/Eddy Gordo), zelfde bruintinten
-    lock(g,X(8),48,58,phase=0)
-    lock(g,X(11),51,60,phase=2,left=15)
-    lock(g,X(14),53,59,phase=1,left=15)
+    # 3a. bovenste deel van Hitmontops rand (naast kaak/wang, boven ooghoogte) weg: daar is het wang, de rand wordt huidlijn
+    for y in (36,37,38):
+        for x in range(0,15): g[y][x]=0
+    for y,b in {39:15,40:14,41:14,42:13,43:13}.items():
+        for x in range(0,b): g[y][x]=0
+        g[y][b]=5
+    for y in range(44,62):
+        for x in range(0,13): g[y][x]=0
+    # 3b. de onderkant van de rand wordt drie dikke gedraaide lokken die naar de grond hangen (links),
+    #     de kegel onder het gezicht wordt kruinhaar met korte lokken, de rechterrand wordt één lok.
+    #     Zelfde bruintinten als Hitmontops rand: 3 licht, 4 midden, 5 donker/streep, F lijn.
+    H=[ # (rij, x, pixels)   L1 x5-9 | L2 x9-13 | L3 x13-18
+     (44, 7,"555555F"),
+     (45, 6,"534F344F"),
+     (46, 5,"5344F354F"),
+     (47, 5,"5345F544F"),
+     (48, 5,"5354F344F3"),
+     (49, 5,"5544F345F34"),
+     (50, 5,"5344F354F34F"),
+     (51, 5,"5345F544F344F"),
+     (52, 5,"5354F344F3544F"),
+     (53, 5,"5544F345F34544"),
+     (54, 5,"5344F354F3445F"),
+     (55, 5,"5345F544F3454F"),
+     (56, 5,"5354F344F3544F"),
+     (57, 5,"F445F345FF44F"),
+     (58, 6,"FF_5354F_FF"),
+     (59, 9,"544F"),
+     (60,10,"FF"),
+     # kruin: Game Freaks kegel (44455/4544) blijft de basis, loopt nu uit in korte lokken; hoorn klein en licht
+     (55,19,"F4544F"),
+     (56,19,"F5453F"),
+     (57,20,"F44F"),
+     (58,21,"FF"),
+     (55,25,"F23F"),
+     (56,25,"F3F"),
+     (57,26,"F"),
+     (55,28,"F4454F"),
+     (56,28,"F4544F"),
+     (57,29,"F45F"),
+     (58,30,"FF"),
+     # rechterkant: Hitmontops rechterrand wordt één lok tussen kop en steunarm (schaduwkant: donkerder)
+     (44,33,"F55F"),
+     (45,32,"F445F"),
+     (46,32,"F454F"),
+     (47,32,"F544F"),
+     (48,32,"F444F"),
+     (49,32,"F445F"),
+     (50,32,"F454F"),
+     (51,32,"F544F"),
+     (52,32,"F444F"),
+     (53,31,"FF445F"),
+     (54,31,"FF454F"),
+     (55,32,"F544F"),
+     (56,32,"F445F"),
+     (57,32,"F45F"),
+     (58,33,"FF"),
+    ]
+    for y,x,p in H: txt(g,x,y,[p])
     return g
 
 if __name__=='__main__':

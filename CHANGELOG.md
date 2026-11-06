@@ -593,3 +593,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.150] - Hitmontop-evolutie: v2 afgekeurd, v3 vanaf de Hitmontop-pixels
 - v2 ronde 1 (schone start, met de hand) door de keurder afgekeurd: leest als een chibi-mensje met zijstaart. Oorzaak na vier pogingen: telkens vanaf nul een menselijke houding. Nieuwe aanpak v3: Hitmontops eigen sprite (al ondersteboven met de benen in een V) stap voor stap bewerken zoals een regional form; steunhand i.p.v. kop op de grond, zijn eigen haar gerestyled. `docs/concept/sprites/hitmontop_evo/sprite_v3_r1/`.
+
+### [v0.0.151] - Hitmontop-evolutie: nieuwe werkwijze, stap 1 skelet
+- Jordi's werkwijze: eerst een stick man van de pose, dan stap voor stap onderdelen erop plakken (handen en voeten eerst), pas daarna één geheel maken; elke stap met opties. v3-maker gestopt. `docs/concept/sprites/hitmontop_evo/skelet/`: gewrichten op de gespiegelde foto, opties A (foto), B (Pokémon-maat: kop 1,3×, lijf 1,2×, benen 1,1×), C (B met bredere V).

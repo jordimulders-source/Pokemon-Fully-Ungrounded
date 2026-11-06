@@ -43,5 +43,8 @@ Bij `referenties/fanart_mestrimba.png` (fanart van iemand anders, "Mestrimba"; a
 - Jordi: "ga maar sprite assets gebruiken die je al hebt en daarmee bouwen": onderdelen van bestaande sprites (Hitmontop-kop/handen/voeten, Hitmonlee-benen, enz.) als bouwstenen, naden met de hand weg, één palet. Geldt hier boven de algemene collageregel.
 - Sprite r1–r3 afgekeurd (Jordi, 6 nov): "de hele sprite is echt verschrikkelijk, de hitmontop haren moet je anders doen, niet nieuwe haren bedenken". Dus: het bestaande Hitmontop-haar (de bruine puntige 'top' met strepen) als vertrekpunt en dat restylen richting afro-Braziliaans/Eddy Gordo; geen nieuw kapsel verzinnen. "Ga met agents hier aan werken en kom pas terug als een andere agent het echt goed vindt."
 
+## Werkwijze vanaf 6 nov (Jordi)
+- "Als je nu gewoon een stick man variant of een basis silhouet van die pose maakt. Dan gaan we daar steeds meer assets op plakken. [...] handen en voeten, dat is simpel. [...] Zodat het skelet uitgebouwd wordt." Stap voor stap, telkens meerdere opties. Stappen: 1 skelet → 2 handen/voeten/kop → 3 ledematen → 4 romp/koordjes → 5 één geheel.
+
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

@@ -17,6 +17,9 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` + `docs/lessen/SPRITE_KERN.md`. Ach
 - (6 nov, letterlijk) "nou de enige maatstaven zijn: lijkt die heel accuraat op het origineel; is het een gen 3 sprite volgens al onze eisen"
   → **Twee maatstaven:** (1) heel accuraat t.o.v. het model (niets toevoegen/weglaten/herinterpreteren); (2) een nette Gen 3-sprite volgens onze eisen (`SPRITE_KERN.md`). "Welk dier leest het" telt niet.
 
+- (6 nov, letterlijk) "als ik iets niet benoem betekent het niet dat het perfect is"
+  → Niet genoemd = niet goedgekeurd; elk onderdeel blijft getoetst tegen het model.
+
 ## Besloten
 - Ontwerp en pose = Jordi's afbeelding (bevroren); niets toevoegen of weglaten. Pootjes zoals in afbeelding 2 (niet meer).
 - Silhouet: `silhouet/silhouet.png` (bron direct verkleind, `silhouet/sil.py`; 62×45, 1782 px). Rode omtrek over de bron: `silhouet/silhouet_over_bron.png`. Kleurgids (gemiddelde kleur per pixel, géén sprite): `silhouet/gids_gemiddeld.png`.

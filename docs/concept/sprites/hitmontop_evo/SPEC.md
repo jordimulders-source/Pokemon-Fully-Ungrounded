@@ -41,6 +41,7 @@ Bij `referenties/fanart_mestrimba.png` (fanart van iemand anders, "Mestrimba"; a
 - Dus: eigen 3D-poppetje zoals lama fase 3 (`lama/ontwerp/pop3d_lama.py` op `olinguito_v2/silhouet_kolibriemethode/pop3d.py`), met de Hitmontop-sprite als basis; pas daarna het silhouet.
 - Poppetje ronde 2 afgekeurd (Jordi: "what the fuck heb je met dat hoofd gedaan", "wat een mormel"): kop als bol met rokje, ondersteboven, dreads als octopuspoten. **Nieuw (Jordi): "we doen het anders / ga met sprite art werken / je hebt hitmontops sprite al"**: direct in pixels vanaf de Hitmontop-sprite, kop = Hitmontops kop rechtop als skelet.
 - Jordi: "ga maar sprite assets gebruiken die je al hebt en daarmee bouwen": onderdelen van bestaande sprites (Hitmontop-kop/handen/voeten, Hitmonlee-benen, enz.) als bouwstenen, naden met de hand weg, één palet. Geldt hier boven de algemene collageregel.
+- Sprite r1–r3 afgekeurd (Jordi, 6 nov): "de hele sprite is echt verschrikkelijk, de hitmontop haren moet je anders doen, niet nieuwe haren bedenken". Dus: het bestaande Hitmontop-haar (de bruine puntige 'top' met strepen) als vertrekpunt en dat restylen richting afro-Braziliaans/Eddy Gordo; geen nieuw kapsel verzinnen. "Ga met agents hier aan werken en kom pas terug als een andere agent het echt goed vindt."
 
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

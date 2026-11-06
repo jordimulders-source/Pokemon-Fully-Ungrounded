@@ -605,3 +605,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.154] - Hitmontop-evolutie: stap 3b is de vorm
 - Stap 3 opnieuw (`docs/concept/sprites/hitmontop_evo/stap3b/`): onderdelen per kleur netjes geknipt met omlijning op de knip, kop draait mee langs de nek, Hitmonchans bovenbeen als arm (zijn eigen arm is te verkort), kleine kop uit Hitmontops overworld-sprite als optie. Jordi: "ok dit is de vorm", "vanaf hier gaan we alles stap voor stap aanpassen". Keuring (FAIL op zichtbaarheid van de romp) als lijst voor de volgende stappen.
+
+### [v0.0.155] - Hitmontop-evolutie: hoofd (stap 4) keurklaar
+- Op de vorm (stap 3b C): Hitmontops gezicht (ogen, fronslijnen, mond met iets meer vreugde) op een ronde kop van ±23 px, stekel kleiner als geheel, haar glad naar achteren met kamstrepen naar een knot. 4 rondes (`docs/concept/sprites/hitmontop_evo/stap4_hoofd/`), eindversie `ronde3b/`; verse keurder PASS. Rest pixel voor pixel ongewijzigd.

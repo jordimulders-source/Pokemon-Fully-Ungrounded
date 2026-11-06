@@ -158,3 +158,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca ronde 6 en 6b: lijf ovaal volgens Jordi's rode lijnen, buik rond, staf vóór de vleugel tot de greep, poten afgewerkt, staf verdwijnt kort onder de hand achter het lijf.
 - Sapa Inca ronde 7: lijf links voller, buik egaal ovaal, stafkop als staartveerpunt (variant met zonneschijf).
 - Sapa Inca ronde 7b/8: linkeromtrek tussen 6b en 7, grotere zon-stafkop (7×7).
+- Sapa Inca ronde 9: nieuw kroonpatroon per veer (3 varianten) en puntige stafkop.

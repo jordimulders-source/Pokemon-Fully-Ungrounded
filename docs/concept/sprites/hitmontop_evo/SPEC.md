@@ -72,5 +72,8 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 ## Hoofd: concept goedgekeurd (6 nov)
 - Jordi's Gemini-bewerking van het 3D-plaatje: `referenties/hoofd_gemini_concept.webp`. Jordi: "je hebt nog gelijk ook. Dit is het idee wat ik voor het hoofd had min of meer". Dit is de bron voor de pixels (ronde 9: `stap4_hoofd/ronde9/`, silhouet uit de bron, details met de hand).
 
+## Model (Jordi, 6 nov)
+- `referenties/model_gemini_pose.png`: volledig model in de pose (Gemini, Jordi). Jordi: "ik heb nu een model. Als we hiervan een sprite maken en het iets beter inkleuren dan zijn we er". Dit is de bron voor de sprite (zoals de render bij Picapau), bevroren.
+
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

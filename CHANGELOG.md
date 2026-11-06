@@ -590,3 +590,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.149] - Hitmontop-evolutie: sprite ronde 3 (intern), gestopt
 - `sprite_r3/`: dreads in eigen tint, hoorn 4 px, vrije arm met onderarm, voeten met enkel en klauwen, minder banding, ogen exact Hitmontop. Claude: nog niet goed (kop ±27 px tegen lijf ±15 px, haar leest als een platte bruine kap). Na 3 sprite-rondes gestopt volgens de werkwijze; aanpak ligt bij Jordi.
+
+### [v0.0.150] - Hitmontop-evolutie: v2 afgekeurd, v3 vanaf de Hitmontop-pixels
+- v2 ronde 1 (schone start, met de hand) door de keurder afgekeurd: leest als een chibi-mensje met zijstaart. Oorzaak na vier pogingen: telkens vanaf nul een menselijke houding. Nieuwe aanpak v3: Hitmontops eigen sprite (al ondersteboven met de benen in een V) stap voor stap bewerken zoals een regional form; steunhand i.p.v. kop op de grond, zijn eigen haar gerestyled. `docs/concept/sprites/hitmontop_evo/sprite_v3_r1/`.

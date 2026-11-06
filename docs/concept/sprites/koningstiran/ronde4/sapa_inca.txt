@@ -78,3 +78,42 @@ P t 162 82 42
 61 0 .....................KKaK....aggggK.............................
 62 0 .............................KKaKK..............................
 63 0 ................................................................
+# ==== ronde 4 ====
+# 4. ogen in Pokemon-stijl, trots: donker bovenlid (koptint) dat naar de snavel lichter wordt, gouden iris hoog onder het lid, pupil, glans 1 px; gezichtsmaat van ronde 3
+23 22 rdrRwbRrddr
+24 22 rKybwbRyKwK
+# 2. staf meer staartveer: breder naar boven, roestbruine vaan aan beide kanten van de gouden schacht
+30 13 atyta
+31 13 atyta
+32 13 atyta
+33 14 tyta
+34 14 tyta
+35 14 tyta
+36 14 ayt
+37 14 ayt
+38 14 ayt
+39 14 ayt
+# 1. vleugel om de staf: bovenarm schuin naar de pols (knik links), bolle achterrand, pennen schuin naar de punt
+36 17 mddd
+37 16 mddd
+38 14 mddddd
+39 13 mdddddd
+40 12 _mmddddd
+41 12 mmdKdddd
+42 12 mdddKddd
+43 12 KdKddKdd
+44 12 _KdKddKdd
+45 12 _KddKddKd
+46 12 __KddKddd
+47 12 ___KdKdKdd
+48 12 ____KKdKddd
+49 15 _attKdddd
+50 17 KttKddddd
+# 3. linkerpoot: dij uit het lijf zoals rechts (vouw onder de buik, dij 4 breed, scheen 3 breed onder het midden)
+53 24 Kaaaa
+54 24 agga
+55 24 agga
+56 24 agaK
+57 24 aga
+58 24 aga
+59 24 aga

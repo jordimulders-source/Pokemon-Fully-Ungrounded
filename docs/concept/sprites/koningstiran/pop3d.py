@@ -116,14 +116,17 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out
     if staff:
         # Jordi 7 nov: linkervleugel iets hoger, met een staf erin (Pachacútec houdt zijn staf op heuphoogte vast).
         # Onderarm naar voren tot de staf, de slagpennen gesloten omlaag langs de staf.
-        wr = W2(-31, 2, 14)
-        plate(m, (-2, 28, -15), wr, 15, 5, 'farwing')
-        for k, (xp, y) in enumerate(((-27, -10), (-24, -10), (-21, -9), (-18, -8))):   # kort: de staf eronder blijft zichtbaar
-            plate(m, wr, W2(xp, y, 13 - k), 10, 2.2, 'farwing')
+        # arm zichtbaar (Jordi: "de arm is weg"): schouder -> elleboog links naast het lijf -> hand om de staf
+        elb, wr = W2(-36, 16, -2), W2(-35, 3, 13)
+        plate(m, (-2, 28, -15), elb, 15, 5, 'farwing')
+        plate(m, elb, wr, 13, 5, 'farwing')
+        plate(m, W2(-41, 4, 15), W2(-31, 1, 16), 8, 3, 'farwing')          # vleugelpunt vouwt vóór de staf
+        for k, (xp, y) in enumerate(((-30, -6), (-27, -5), (-24, -4))):      # korte gesloten pennen naar het lijf
+            plate(m, wr, W2(xp, y, 10 - k), 9, 2.2, 'farwing')
         # staf: goud, rechtop, van de grond tot kophoogte, bovenaan drie veren zoals op het beeld
         # Jordi 7 nov (krabbel_jordi_staart_is_staf.png): de staart IS de staf. Onder de hand buigt de staf licht
         # naar het lijf en verdwijnt erachter; hij gaat nergens over bestaande lichaamsdelen heen (diepte achter).
-        SP = [(-20, -36, -30), (-27, -26, -10), (-33, -14, 4), (-37, 0, 8), (-37, 20, 8), (-37, 44, 8)]
+        SP = [(-22, -20, -30), (-29, -12, -12), (-34, -5, 2), (-37, 3, 8), (-37, 20, 8), (-37, 44, 8)]  # staf wordt hoger staart
         tube(m, [W2(*q) for q in SP], 3.2, 3.0, 'gold')
         top = W2(-37, 44, 8)
         if staff_top == 'veren':     # drie veren zoals op het beeld
@@ -153,7 +156,7 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out
     # staart = staf (Jordi 7 nov): de echte staart is weg; alleen rechtsonder een klein stukje waar hij uit het lijf
     # komt en heel licht afbuigt, in het goud van de staf, achter het standbeen (nergens eroverheen).
     if staff:
-        tube(m, [W2(*q) for q in ((4, -30, -24), (10, -38, -14), (17, -42, -8), (22, -41, -6))], 3.4, 3.0, 'gold')
+        tube(m, [W2(*q) for q in ((14, -24, -16), (20, -32, -10), (18, -41, -10), (10, -45, -14), (2, -44, -20))], 3.4, 3.0, 'gold')  # uit de stuit, omlaag, dan naar links achter het standbeen
     else:
         for ang in (-62 - tail_out, -48 - tail_out, -34 - tail_out):
             Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(-6))

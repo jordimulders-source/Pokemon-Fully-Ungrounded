@@ -61,6 +61,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Staf B (gouden zonneschijf) + krabbel `referenties/krabbel_jordi_staart_is_staf.png`: "We halen de echte staart weg en geven daar een kleine indicatie waar de staart het lichaam uitkomt en heel licht afbuigt. De staf buigt vervolgens af en heel licht zie je dat die naar het lichaam gaat. En tahdah de staart is de staf geworden." / "hij gaat nergens over de lichaamsdelen heen die we al hebben" → poppetje: gouden staartstukje rechtsonder achter het standbeen; staf buigt onder de hand naar het lijf en verdwijnt erachter; hangende slagpennen korter zodat dat stuk zichtbaar is. Silhouet v2 (`silhouet_v2_vel.png`).
 
+- (7 nov) "bijna, dit sluit niet mooi aan. Allereerst houdt hij de staf niet meer vast, de arm is weg om een of andere reden. De staf mag nog wat hoger achter het lichaam komen. De staart staat juist de verkeerde kant op" / "als in waar de staf staart wordt mag ietsje hoger" → arm zichtbaar (elleboog links naast het lijf, vleugelpunt om de staf), staf verdwijnt hoger achter het lijf, staartstukje uit de stuit omlaag en dan naar links achter het standbeen.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

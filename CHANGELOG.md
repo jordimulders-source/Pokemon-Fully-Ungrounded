@@ -147,3 +147,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: ronde 2 "al heel netjes"; verder morgen. Lessen van de maker in `SPRITING.md`, Stand van zaken bijgewerkt.
 - Sapa Inca: types Normal/Flying → Fire/Flying → Fire/Psychic (Jordi). Poppetje: linkervleugel hoger met staf (varianten veren/zonneschijf, `staf_varianten.png`), flank linksonder loopt door naar de dij; silhouet v2 (`silhouet_v2_vel.png`).
 - Sapa Inca: de staart is de staf (Jordi): gouden staartstukje rechtsonder, staf buigt onder de hand achter het lijf; silhouet v2.
+- Sapa Inca: arm houdt de staf weer zichtbaar vast, staf wordt hoger staart, staartstukje buigt naar links.

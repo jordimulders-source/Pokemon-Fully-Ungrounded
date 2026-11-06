@@ -1,0 +1,1 @@
+optie_1M-r3b: stand 1, mond 1M, knot achter/boven, reparaties 3b | buiten zone anders: 0 | zone (x0,y0,x1,y1) (1, 20, 29, 47) (oud hoofd 169 px, nieuw hoofd 489 px)

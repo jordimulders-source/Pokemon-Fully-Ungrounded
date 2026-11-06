@@ -115,7 +115,10 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Ronde 8 (op 7b): zon 7×7 uit de veerpunt, 50 px in de stafkopzone, 21 kroonpixels bedekt (kwastje links smal). Leest als gouden bol. Voorgelegd.
 
+- (7 nov) "kroonvariant vind ik geen enkele mooi, b komt in de buurt, maar is net te zwakjes, te willekeurig en die oranje stippen aan de buitenkant zijn ook maar half doorgevoerd" → ronde 9: patroon ontwerpen per veer (1–2 concentrische bogen gouden vlekken, randvlek op elke veerpunt rondom), 3 varianten.
+
 ## Afgekeurd
+- Kroonvarianten A–F (alleen omkleuren van bestaande stippen): "geen enkele mooi"; B het dichtst bij maar te zwak, willekeurig, half doorgevoerd.
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.
 - Pose-ronde 3: te dik, te recht, vleugelpose gegokt.

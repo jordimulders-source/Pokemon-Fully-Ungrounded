@@ -245,3 +245,4 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - Haaksnavel: een bleke rug die schuin naar de punt loopt (1 px per rij) + donkere punt; een even brede bleke kolom leest als balk.
 - Klein oog in een gekleurd masker: donkere iris + 1 px glans + warme tint tegenover de glans, zonder zwart lid.
 - Lichte borst die zacht in een donker lijf overloopt: per rij licht → basis → middentint → donker, met een kernschaduwband die naar onderen breder wordt.
+- **Patronen ontwerpen, niet omkleuren (Sapa Inca, 7 nov):** stippen van een bestaande sprite omkleuren gaf "te willekeurig, half doorgevoerd". Een patroon op veren/schubben volgt de structuur: hetzelfde motief op dezelfde plek per veer, in nette bogen, rondom doorgevoerd.

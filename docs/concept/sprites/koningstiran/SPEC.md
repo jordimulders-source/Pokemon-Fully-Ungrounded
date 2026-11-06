@@ -109,6 +109,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Ronde 7: lijf links voller (één bolle boog naar de dij), buik egaal ovaal (breedte per rij 3→12→2) en rechts 1 px dunner, stafkop A = staartveerpunt (5 px smal, naast het kroonkwastje), variant B = zonneschijf uit veerpunt. Poten 0 px. Voorgelegd.
 
+- (7 nov) "nu maak je weer e zelfde fout als eerder, nu is het lichaam aan de linkerkant weer gek uitgebold" → ronde 7b (Claude, 9 px): linkeromtrek linksonder precies tussen 6b en 7 (begin rij 48–53: x16,17,18,20,22,24); rest = ronde 7.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

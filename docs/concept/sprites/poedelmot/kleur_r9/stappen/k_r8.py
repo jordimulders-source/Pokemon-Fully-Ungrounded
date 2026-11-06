@@ -18,11 +18,11 @@ BOG=[(55,22),(58,27),(56,32),(49,24),(52,29),(50,33),(46,30),(53,39),(55,43),(48
 lijn=set()
 for px,py in BOG:
     bx,by=(41,39) if py>=37 else (40,35)
-    t0=math.atan2(py-by,px-bx); R=4.5
+    t0=-math.pi/2; R=3.5                                  # schubboog ⌒: breed en ondiep, liggend
     cx=px-R*math.cos(t0); cy=py-R*math.sin(t0)
     prev=None
     for i in range(41):
-        t=t0+math.radians(-45+90*i/40)
+        t=t0+math.radians(-60+120*i/40)
         x=round(cx+R*math.cos(t)); y=round(cy+R*math.sin(t))
         if (x,y)==prev: continue
         prev=(x,y)

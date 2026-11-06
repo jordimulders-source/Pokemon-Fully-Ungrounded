@@ -33,3 +33,6 @@ for t, a, b_, c, e in CU:
     L = deel(s2, a, b_, c, e, cs); R = bron(a, b_, c, e, cs)
     V.paste(L, (0, y)); V.paste(R, (L.width + 12, y)); y += L.height + 12
 V.save(os.path.join(H, 'vel.png'))
+# extra paneel: lijnen van het model (links) naast de lijnen van r9 (rechts)
+import subprocess
+subprocess.run(['python3', os.path.join(H, 'stappen', 'lijnen.py'), os.path.join(H, 'raster.txt'), os.path.join(H, 'lijnen_model_vs_r9.png')], cwd=H)

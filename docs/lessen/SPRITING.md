@@ -237,3 +237,11 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Een uiteinde dat niet kan meeschuiven** (de lobpunt zou op de bevroren kaak vallen): eindig de vorm op de nieuwe plek en maak de oude plek vacht. Een los lijntje dat dan overblijft, wordt ook vacht, anders blijft er een donker stipje over.
 - De Read-weergave van grote PNG's is grof. Controleer pixelposities met een tekstraster, niet op het oog.
 - **Mini-oog op een donkere kop (kolibrie, 24 okt):** Game Freak maakt een klein oog nooit een donkere of witte stip, maar zwart bovenlid + glans + een lichte/felle iris tegenover de glans (Corviknight, Kilowattrel); een losse witte stip leest als een gaatje.
+
+## Lessen Sapa Inca (6 nov, maker-agent)
+- Een waaier/kroon met vlakke tintblokken (licht/basis/schaduw als sectoren) leest als paddenstoel; dezelfde kleuren in **radiale veren** (scheidingen uit de kopbasis, één vlek + één stip per veer) lezen als veren.
+- Twee korte markeringen plus een streepje op een lichte ovaal = een gezichtje (pareidolie): geen textuur in zo'n driehoek op een borst.
+- Een zwarte kroononderrand direct boven zwarte oogleden wordt één balk en een boze blik: laat een rij gezichtskleur ertussen.
+- Haaksnavel: een bleke rug die schuin naar de punt loopt (1 px per rij) + donkere punt; een even brede bleke kolom leest als balk.
+- Klein oog in een gekleurd masker: donkere iris + 1 px glans + warme tint tegenover de glans, zonder zwart lid.
+- Lichte borst die zacht in een donker lijf overloopt: per rij licht → basis → middentint → donker, met een kernschaduwband die naar onderen breder wordt.

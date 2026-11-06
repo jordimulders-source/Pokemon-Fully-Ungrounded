@@ -64,5 +64,9 @@ Jordi: "en design eerst maar puur het hoofd zonder de rest", "dan keuren we dat"
 Op ronde 5b (Jordi): "ja dit is echt nog niet goed. Je bent from scratch aan het tekenen, ik heb liever dat je hitmontops hoofd pakt en daarmee gaat spelen." "want dit is echt nog heel ver ervan af, geen enkele van mn punten zie ik er in". Ronde 6: Hitmontops kop-pixels als basis en bewerken, niet tekenen.
 Op ronde 6 (Jordi): "ik vind het compleet prutswerk, de laatste is niet eens een hoofd meer, lijkt eerder op vanillite. In nergens is er haar af te lezen, in nergens zit de bovenkant goed. Kan je dit uberhaupt wel?"; voorstel om voorbeeldfoto's te zoeken: "nee want dan ga je weer ander haar bouwen"; daarna: "nee laat maar". **Hoofd gepauzeerd** (6 nov). Bruikbaar: pose/skelet (stap 2), vorm (stap 3b). Het hoofd ontbreekt nog.
 
+## Hoofd: Jordi's recept (6 nov, letterlijk; leidend)
+Bij `referenties/hitmontop_3d.webp`: "kijk naar deze afbeelding. De V-vorm tussen zijn ogen, die lijn gaan we naar achter trekken, die haren komen samen in een soort knot, dat mag gewoon een rondje zijn met een witte band, bijna zoals zijn handen. en de stekel bovenop mag kleiner, makkelijker kan ik het echt neit maken".
+Dus: (1) de V tussen de ogen (de voorrand van de flappen) naar achteren trekken; (2) de flappen komen achter samen in een knot = een rondje met een witte band, zoals zijn handen met polsband; (3) de stekel kleiner. Verder niets.
+
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

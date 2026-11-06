@@ -51,6 +51,7 @@ Bij `referenties/fanart_mestrimba.png` (fanart van iemand anders, "Mestrimba"; a
 - Hoofd ronde 1 (Jordi): "ja de mond is weg, de stekel is alleen dunner, maar die moet gewoon kleiner in zijn geheel, plus het mag iets duidelijker zijn dat het haar naar achter is gekamd, een knot moet wel duidelijk zijn".
 - Jordi: "de puntige haarrand kammen we naar achteren, dus die is weg" (glad naar achteren gekamd haar met knot, geen punten).
 - Jordi: "maar het hoofd mag wel iets groter, hitmontop heeft een erg groot hoofd voor zijn lichaam, bij deze evolutie wordt het naar verhouding minder, maar het wordt geen mens".
+- Jordi: "en de mond mag wat meer vreugde uitstralen dan bij hitmontop".
 
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

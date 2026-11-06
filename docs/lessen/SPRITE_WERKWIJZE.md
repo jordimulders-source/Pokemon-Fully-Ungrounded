@@ -3,7 +3,7 @@ Regels en eisen: `SPRITE_KERN.md`. Hier alleen de stappen en de commando's. Oude
 
 ## Checklist (afgedwongen door het keurslot)
 Jordi 3 nov: "het is elke keer opnieuw dat we instructies vastleggen die je elke keer opnieuw weer overslaat" → "doe allemaal". Daarom afgedwongen, niet alleen opgeschreven:
-1. **Keurslot:** `.claude/hooks/sprite_keurslot.py` blokkeert elke afbeelding uit `docs/concept/sprites/` naar Jordi zonder `<bestand>.keuring.md` (nieuwer dan de afbeelding, met `Bron:`, 8×, 1×, per onderdeel "lijkt op / wijkt af in", `Oordeel: PASS`). Niet omzeilen (geen kopie buiten die map sturen).
+1. **Keurslot:** (uitzondering, Jordi 7 nov: tekenbases/vergelijkingsvellen waar Jordi zelf overheen tekent mogen door met `<bestand>.tekenbasis.md` met "Tekenbasis: <waarom>"; nooit voor iets ter beoordeling) `.claude/hooks/sprite_keurslot.py` blokkeert elke afbeelding uit `docs/concept/sprites/` naar Jordi zonder `<bestand>.keuring.md` (nieuwer dan de afbeelding, met `Bron:`, 8×, 1×, per onderdeel "lijkt op / wijkt af in", `Oordeel: PASS`). Niet omzeilen (geen kopie buiten die map sturen).
 2. **Keurvel:** `python3 tools/grounded/keurvel.py -o vel.png --werk werk.png --bron <echte sprites/foto's> --zoom x0,y0,x1,y1` → werk naast de bronnen op 8× en 1× (licht/donker) + close-ups, en een keuringssjabloon.
 3. **Referentie eerst, per onderdeel** (hand, voet, kop, staart, patroon): 2–3 echte sprites of Jordi's eigen plaatje (stuurt Jordi een afbeelding, dan is díe de bron, niet de sprite van die soort uit de repo). Kenmerken zelf tellen/controleren op een close-up voor iets op een referentievel komt.
 4. **Eén afwijking of twijfel = niet sturen.** Toets of het **leest** als een echte Pokémon, niet of het doet wat gevraagd werd.
@@ -34,7 +34,16 @@ Voorbeeldmodel: `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` (hui
 
 **Controlescript (elke ronde):** alpha-diff met het bevroren silhouet (0 of alleen in benoemde zones), open randen, losse pixels, clusters < 3 px, lijst gewijzigde pixels oud→nieuw. Voorbeeld: `kolibrie_pre/blender/A/kleur_r9/controle.py`.
 
+**Potoo-lessen (5 nov, eerste poging afgebroken; overdracht `docs/concept/sprites/potoo/OVERDRACHT.md`):**
+- Eerst een Pokémon-ontwerp, dan pas een silhouet ("we gaan niet een potoo namaken"). Wijkt het ontwerp af van het dier, dan eerst een 3D-model van de héle Pokémon.
+- 3D = meten, niet verzinnen: oriëntatiepunten uit de foto's, render op de foto-hoeken mét de foto-omtrek erover + 4 andere hoeken.
+- Snavel/bek nooit uit bollen ("je maakt er een lipschijf van"): omtrek punt voor punt overtrekken, zelf letten op punten en golving.
+- Nooit een rommelig tussenresultaat sturen (voxelruis, losse pixels, mondkleur buiten de mond).
+- Tweede potoo-gesprek (5 nov): ook een SDF-model met omtrek-fit op de foto faalde ("pacman zeehond", "stop met blender"). Een open snavel uit formules (opengeknipte kop of losse onderdelen) leest niet als snavel; na 2 mislukte rondes niet doorpatchen maar Jordi om een andere aanpak/krabbel vragen. Alleen de foto's die Jordi in dat gesprek stuurt zijn de bron.
+
 **Opdracht aan een agent bevat altijd:** `SPRITE_KERN.md`, SPEC-pad, bevroren delen + toegestane zones, Jordi's woorden letterlijk, gewenste uitvoer (raster, png, pal, vel, NOTITIES met zwakke punten), "niet committen".
 
 **Regional forms:** begin van de bestaande sprite van de soort; lessen (Uyuni-Silicobra, Salticonda) in `naslag/SPRITE_WERKWIJZE_oud.md`, "Regional forms".
 **Silhouet naar sprite is niet 1 op 1** (Jordi, 5 nov, DJ Rotom): heeft een onderdeel in kleur meer ruimte nodig (gezicht, ogen), dan mag de sprite daar afwijken; in de sprite oplossen en de afwijking melden. **Vormen van een bestaande soort** (Rotom-vormen, regional forms): consistentie-analyse tegen alle bestaande vormen, zie naslag.
+- **Nederlandse dubbelzinnigheid in feedback (potoo, 5 nov):** "het is geen bol hoofd" = de kop is niet bol genoeg (klacht), niet "maak hem niet bol". Bij twijfel Jordi's zin terugvertalen naar een concrete actie en die eerst kort checken; ronde 4 maakte de kop daardoor juist platter.
+- **Blinde test zonder verklappende bestandsnaam:** kopieer het plaatje eerst naar de scratchpad met een neutrale naam (bijv. `test_a.png`); een pad met "potoo" erin verklapt het antwoord (potoo, 5 nov).

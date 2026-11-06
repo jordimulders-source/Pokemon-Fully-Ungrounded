@@ -16,7 +16,7 @@ Op verzoek van Jordi (22 okt): 100 nieuwe Pokémon-lijnen, kort gepitcht. Deel A
 11. **Chinchilla** (Normal/Ice): de dichtste vacht ter wereld, neemt stofbaden; balletje pluis dat bij evolutie een sneeuwstorm van stof opwerpt.
 12. **Harpij-arend** (Flying/Fighting): klauwen zo groot als die van een grizzly, met een dubbele kuif; de koning van het bladerdak.
 13. **Ara met kleilik** (Flying/Ground): eet klei (de *collpa*) om gif uit fruit te neutraliseren; een zwerm in alle kleuren.
-14. **Potoo** (Ghost/Flying): een uil-achtige vogel die zich als afgebroken tak vermomt, met een spookachtige roep in de nacht.
+14. **Potoo** (~~Ghost/Flying~~ → **Ghost/Normal**, great potoo, één stage; besloten 5 nov, zie POKEMON.md): een uil-achtige vogel die zich als afgebroken tak vermomt, met een spookachtige roep in de nacht.
 15. **Seriema** (Fighting/Flying): een loopvogel die prooien op stenen kapotslaat; een kickboksende kraanvogel.
 16. **Fregatvogel** (Flying/Dark): een piraat die eten van andere vogels steelt; blaast een knalrode keelzak op.
 17. **Blauwvoetgent** (Water/Flying): een Galápagos-danser die met zijn blauwe voeten pronkt; komische balts.

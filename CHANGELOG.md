@@ -560,3 +560,28 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.139] - Les: changelog na main nummeren
 - `docs/lessen/AGENTS.md`: vóór het pushen naar `main` eerst `main` mergen en de eigen changelogsecties achteraan nummeren (Jordi).
+### [v0.0.140] - Great potoo: ontwerp gestart
+- Nieuwe fakemon besloten: **great potoo** (urutau), losse soort met één stage, type **Ghost/Normal** (Jordi: "ik wil sowieso een great potoo", "laten we 1 stage doen"). Tweede stage die met een tak versmelt afgewezen: geen Pokémon-sprite heeft een ondergrond in beeld; de camouflage gaat via de twee frames (stil ↔ bek open), het verenpatroon en de data.
+- Map `docs/concept/sprites/potoo/`: SPEC.md, Jordi's foto's in `referenties/`, posevel `pose_keuze.png` (A van voren, B zijaanzicht, C bek open; Gen 3-skelet Hoothoot/Noctowl/Natu/Xatu). POKEMON.md en FAKEMON_PITCH bijgewerkt.
+
+### [v0.0.141] - Great potoo: ontwerp vastgelegd, 3D-poging afgebroken
+- Ontwerpkeuzes vastgelegd in `docs/concept/sprites/potoo/SPEC.md`: lichte vacht met schorsvlekken, pikzwarte ogen (Drifloon), geestpaarse mond in een echte snavel, pose 3/4 met open bek op een onzichtbare tak.
+- 3D-model (`model3d/`) afgekeurd ("begin maar helemaal opnieuw"); overdrachtsprompt voor een nieuw gesprek in `docs/concept/sprites/potoo/OVERDRACHT.md`; lessen in SPRITE_WERKWIJZE.md.
+
+### [v0.0.142] - Great potoo: 3D afgekeurd, poppetje in lama-stijl
+- Merge-tekens uit CHANGELOG.md en CLAUDE.md opgeruimd (potoo-secties hernummerd).
+- SPEC met Jordi's punten van 5 nov: alleen zijn 5 foto's als bron (linkerhelft duo-foto = leidraad kop), snavel en ogen = kern, veertjes tussen de ogen, schattig + uncanny, lekker overdreven grote bek, ogen hoger, bron getrouw nagemaakt.
+- 3D v2 (gespleten koepel, `model3d_v2/`) en v3 (snavel uit onderdelen, `model3d_v3/`) afgekeurd ("pacman zeehond", "stop met blender").
+- Poppetje in lama-stijl door één maker-agent (`docs/concept/sprites/potoo/poppetje/`), rondes 1–4b met overgetrokken foto-omtrekken als controle en twee keurders; ronde 3 de beste tot nu toe (Jordi), ronde 4 (kop vlakker, kaak naar voren, ogen hoger) bouwt daarop. Vel open snavels uit echte sprites: `potoo/referenties/open_snavels_sprites.png`.
+
+### [v0.0.143] - Great potoo: poppetje rondes 6–14 en eerste frontsprites
+- Poppetje als 2D-vectortekening (met de hand overgetrokken, geen fotopixels): kop/muil/snavel uit de leidraad (ronde 7), lijf naar Jordi's lichaamsvorm-illustratie (ronde 8), daarna rondes 9–14 op blinde tests (agent zonder context ziet alleen het plaatje). Diagnose ronde 12: schorspatroon verhoogt de herkenning (55 → 70% potoo), roze vs. paarse muil maakt weinig uit. Beste: `docs/concept/sprites/potoo/poppetje/ronde14_spritehoek.png` (50–65% potoo).
+- Frontsprite 64×64 (frame 1, bek open): `docs/concept/sprites/potoo/sprite/ronde1–3/`. Blinde tests: r1 vis/beluga, r2 uil/potoo 15–45%, r3 duif 40% / potoo 45%.
+- Werkwijze: blinde test per ronde met neutrale bestandsnaam (lessen in `docs/lessen/SPRITE_WERKWIJZE.md`).
+
+### [v0.0.144] - Great potoo: vorm met Jordi's schetsen, overtrek, overdracht
+- Studie grote open snavels (`potoo/referenties/GROTE_SNAVELS_STUDIE.md`); driekwart-tekenbasis en vormschetsen 5–7 naar Jordi's schetsen (kop voorover, nekboog, oog op fotopositie); kopvorm (schets 6) goedgekeurd.
+- Overtrek van de bekrand (goedgekeurd) en de hele vorm op de leidraad (`potoo/sprite/bekrand_overtrek/`, `vorm_overtrek/`); Jordi trekt kop/snavel zelf over op `potoo/tekenbasis/` (leidraad met pixelraster).
+- Keurslot: tekenbases mogen door met `<bestand>.tekenbasis.md` (Jordi).
+- Overdrachtsprompt: `docs/concept/sprites/potoo/OVERDRACHT.md` (oude: `naslag_OVERDRACHT_5nov.md`).
+

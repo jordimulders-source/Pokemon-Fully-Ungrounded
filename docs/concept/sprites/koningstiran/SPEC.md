@@ -73,6 +73,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) "het zijn echt kleine aanpassingen van de sprite die we eerder hadden, die moet echt als leidraad" → ronde 2 is de basis; alleen verplaatsen/toevoegen wat nodig is.
 
+- (7 nov) "moeten wel bijv nog het patroon/kleurgebruik in die kroon aanpassen maar dat komt nog" → kroonpatroon/kleur later, aparte ronde.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

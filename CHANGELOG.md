@@ -164,3 +164,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca ronde 11: staf als goud zonder gloed, kop en ogen groter, kleur en schaduw naar latere generaties (paarsbruine schaduw, lichte selout, warm goud).
 - Sapa Inca: ronde 11 afgekeurd; ronde 12 = ronde 10 met alleen de staf als goud zonder gloed.
 - Sapa Inca: eindkeuring (20 PASS / 11 FAIL) en ronde 13 met de top-5-reparaties (ogen/snavel, banding, hooglicht romp, stafpunt, opschonen).
+- Sapa Inca ronde 14: overgang staf/lijf, spitse stafpunt, poten, verre oog en paarse pixels opgeruimd.

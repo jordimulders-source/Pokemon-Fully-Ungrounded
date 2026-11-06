@@ -1,0 +1,9 @@
+palet identiek aan ronde 13: True
+1 overgang staf/lijf (x14-21 y46-50): 6 px
+2 stafpunt (x12-17 y15-22): 19 px
+3 poten + ruimte ertussen (x20-35 y53-62): 13 px
+4 verre oog (x22-25 y22-26): 1 px
+5 paarse pixels (x40-50 y18-34): 4 px
+6 los rood naast nabije oog (31,25): 1 px
+buiten de zones: 0 px
+silhouet: erbij 1 eraf 2 totaal 1624

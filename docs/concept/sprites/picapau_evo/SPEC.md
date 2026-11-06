@@ -65,3 +65,4 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 
 ## Model r5 (6 nov)
 - `blender/r5/` (vel_r5, closeup_r5): voorover, vleugels 1,32×, snavel open, oren dun met spiraal (±410°), bolle buik naar voren, grote voeten met klauwen. Zwak: diagonaal minder zichtbaar door de buik, verre vleugel verstopt, bliksem klein (voorstel 0,85×), staartlus breed.
+- Jordi over r5: **"de buik is teveel een bulge"** → r6: buik als deel van één doorlopende lijfvorm (volle borst/buik, geen losse bol of knik); bliksem 0,85×.

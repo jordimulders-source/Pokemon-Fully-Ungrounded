@@ -246,13 +246,13 @@ def vleugel(s, schuif=(0.0, 0.0, 0.0)):
 
 VLEUGEL_S = 1.32                   # r5: grotere vleugels (r4 1,2)
 VERRE_POOT = (3.5, 0.0, 4.0)        # r5: verre poot hoger en verder naar achteren (niet naast de nabije)
-VERRE_VLEUGEL = (9.0, 0.0, -3.0)   # r5: verre vleugel verder naar achteren, zodat de zwarte oorkrullen niet tegen de donkere vleugel vallen
+VERRE_VLEUGEL = (14.0, 0.0, -5.0)   # r5: verre vleugel verder naar achteren, zodat de zwarte oorkrullen niet tegen de donkere vleugel vallen
 
 def staart_keten():
     """r4: dunne zwarte veerschacht (r 1,3 i.p.v. 2,4; Jordi: "De staart mag wat dunner en wat meer vogelachtig, desnoods
     zwart") in dezelfde S als r3: uit de steunstaart naar rechts, rechts omlaag, onder het lijf door naar de bliksem"""
     return [((28.0, 1.5, -21.5), 1.2), ((32.5, 1.0, -23.0), 1.25), ((34.0, 0.5, -28.5), 1.3), ((30.0, 1.0, -34.0), 1.3),
-            ((20.0, 2.5, -36.0), 1.3), ((8.0, 3.5, -36.0), 1.3), ((-2.0, 3.5, -34.0), 1.35), ((-6.5, 2.5, -31.5), 1.5)]
+            ((20.0, 2.5, -36.0), 1.3), ((8.0, 3.5, -36.0), 1.3), ((-4.0, 2.0, -34.5), 1.35), ((-12.0, -1.5, -31.5), 1.4), ((-15.5, -3.0, -30.0), 1.5)]
 
 def steunstaart():
     """stijve spechtenstaart (familie Picapau): drie spitse veren uit de stuit, plat naar de kijker (vlak van de bliksem)"""
@@ -261,7 +261,7 @@ def steunstaart():
     return ('plaat', o, bl_e1(), BL_E2, vv, 0.8, 0.3)
 
 # bliksem: grote platte prisma met scherpe hoeken, in het beeldvlak van stand C (lijf 40) zodat hij vlak naar de kijker staat
-BL_O = (-7.0, 2.0, -30.5)
+BL_O = (-16.0, -3.0, -29.5)   # r5: verder naar links, zodat de grote buik de bliksem niet bedekt
 BL_S = 0.75                                                  # r5: bliksem kleiner, zodat de vogel groter in het frame staat                                   # aanzet aan het eind van de koord
 LIJF = 40.0   # r4: wordt door render() gezet, zodat bliksem en steunstaart vlak naar de kijker blijven staan
 BL_E1 = (math.cos(math.radians(40)), -math.sin(math.radians(40)), 0.0)   # beeld-horizontaal bij lijf 40 (zie bl_e1())
@@ -317,6 +317,9 @@ def delen(kop_draai=25.0, kop_kantel=0.0):
     d = [('lijf', ('ell', (-7.0, 0, -2.0), (12.5, 10.0, 10.0), 22), 0, 'lijf'),          # vooruitstekende borst
          ('lijf', ('ell', (5.5, 0, -7.0), (15.0, 9.0, 8.0), 18), 4.0, 'lijf'),           # romp, schuin naar achteren
          ('lijf', ('ell', (17.5, 0, -11.5), (6.5, 6.0, 4.8), 18), 3.0, 'lijf'),          # stuit
+         # r5 Jordi: "de buik echt naar voren ... een beetje op die gen 1 raichu pose": grote bolle buik vooraan-onder,
+         # puilt naar voren (-X) en iets naar de kijker (-Y) uit; het lijf buigt er gedrongen omheen
+         ('lijf', ('ell', (-13.0, -2.5, -7.5), (12.0, 12.0, 12.5), 0), 4.0, 'lijf'),
          ('lijf', ('buis', [((-10.0, 0, 2.5), 6.8), ((-13.0, 0, 8.5), 5.4), ((-14.0, 0, 13.5), 5.0)], (0, 1, 0), 1.0), 3.0, 'lijf')]  # nek
     # bevederde dijen onder het zwaartepunt (onder de borst/romp-overgang)
     for s in (-1, 1):
@@ -389,7 +392,7 @@ def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
         p = C[j]; q = Ck[j]
         if w == 'lijf':
             # crème buik: groot ovaal aan de voorkant (Raichu-buik, borst opgezet)
-            b = ((p[0] + 14.5) / 9.5) ** 2 + (p[1] / 9.0) ** 2 + ((p[2] + 2.0) / 12.5) ** 2   # r5: crème borst/buik (meegekanteld)
+            b = ((p[0] + 19.0) / 12.0) ** 2 + ((p[1] + 3.5) / 11.5) ** 2 + ((p[2] + 6.0) / 14.5) ** 2   # r5: grote crème buikovaal (Raichu Gen 1)   # r5: crème borst/buik (meegekanteld)
             idx[j] = 5 if b < 1 else 0
         elif w == 'vleugel': idx[j] = 1                      # voorrand (arm)
         elif w == 'dekveer':

@@ -62,6 +62,7 @@ Op ronde 4 (Jordi): "je luistert niet, het haar is niet anders dan het hoofd, he
 Daarna (Jordi): "rare kippenpoot heeft die ook in zijn haar"; "de enige streep is wat nu boven zijn ogen zit, maar gezien die haren nu dus naar achter gaan, komt die streep veel hoger te staan, een beetje als een fade, maar dat kan je wel berekenen hoop ik" (dus één streep: de haarlijn, hoog op het hoofd, zacht; geen plooitjes).
 Jordi: "en design eerst maar puur het hoofd zonder de rest", "dan keuren we dat" (hoofd los ontwerpen, pas na goedkeuring op de vorm).
 Op ronde 5b (Jordi): "ja dit is echt nog niet goed. Je bent from scratch aan het tekenen, ik heb liever dat je hitmontops hoofd pakt en daarmee gaat spelen." "want dit is echt nog heel ver ervan af, geen enkele van mn punten zie ik er in". Ronde 6: Hitmontops kop-pixels als basis en bewerken, niet tekenen.
+Op ronde 6 (Jordi): "ik vind het compleet prutswerk, de laatste is niet eens een hoofd meer, lijkt eerder op vanillite. In nergens is er haar af te lezen, in nergens zit de bovenkant goed. Kan je dit uberhaupt wel?"; voorstel om voorbeeldfoto's te zoeken: "nee want dan ga je weer ander haar bouwen"; daarna: "nee laat maar". **Hoofd gepauzeerd** (6 nov). Bruikbaar: pose/skelet (stap 2), vorm (stap 3b). Het hoofd ontbreekt nog.
 
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

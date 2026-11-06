@@ -617,3 +617,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.158] - Hitmontop-evolutie: hoofd ronde 6 vanaf Hitmontops eigen pixels
 - Jordi: "ik heb liever dat je hitmontops hoofd pakt en daarmee gaat spelen". Stap voor stap op zijn kop-pixels (uitsnede, 180° + licht, flappen weg/knot, hoorn kleiner, fade + mond, draaien), varianten A (knot achterop) en B (knot rond de punt). `docs/concept/sprites/hitmontop_evo/stap4_hoofd/ronde6/`. Keurder: stap 3B/4B lezen het sterkst als Hitmontop; tussenstappen getoond aan Jordi.
+
+### [v0.0.159] - Hitmontop-evolutie: gepauzeerd
+- Jordi over hoofd ronde 6: "compleet prutswerk"; daarna "nee laat maar". Het hoofd is gepauzeerd; pose, skelet en vorm liggen vast. Stand van zaken in CLAUDE.md bijgewerkt.

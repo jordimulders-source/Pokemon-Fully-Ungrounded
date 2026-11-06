@@ -63,6 +63,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) "bijna, dit sluit niet mooi aan. Allereerst houdt hij de staf niet meer vast, de arm is weg om een of andere reden. De staf mag nog wat hoger achter het lichaam komen. De staart staat juist de verkeerde kant op" / "als in waar de staf staart wordt mag ietsje hoger" → arm zichtbaar (elleboog links naast het lijf, vleugelpunt om de staf), staf verdwijnt hoger achter het lijf, staartstukje uit de stuit omlaag en dan naar links achter het standbeen.
 
+- (7 nov) Krabbel `referenties/krabbel_jordi_staf_krul.png`: rood kruis over het staartstukje rechts (weg); geel: staf krult onderaan af bij de buikrand, en een piepklein krulletje onder het lijf tussen de poten. "verder is de vleugel een beetje in tweeën gesplitst links. Het hoeft maar een hele subtiele link te zijn, het feit dat de staf afkrult is al een hint" → zo gedaan; linkervleugel één doorlopende vorm.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

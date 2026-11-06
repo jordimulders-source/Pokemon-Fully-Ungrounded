@@ -560,3 +560,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.139] - Les: changelog na main nummeren
 - `docs/lessen/AGENTS.md`: vóór het pushen naar `main` eerst `main` mergen en de eigen changelogsecties achteraan nummeren (Jordi).
+
+### [v0.0.140] - Les: Gemini herbouwt bij meerdere wijzigingen
+- `docs/lessen/SPRITE_KERN.md`: Gemini tekent bij een prompt met meerdere wijzigingen een heel nieuw beeld; één wijziging per prompt, of de beste versie zelf bewerken (potoo).

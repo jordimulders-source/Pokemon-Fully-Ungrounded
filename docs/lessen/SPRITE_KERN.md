@@ -28,3 +28,4 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 
 ## Zuinig
 Eén maker per sprite (SendMessage), één keurder, kleine vellen, commit en push na elke ronde. Max 3–4 agents.
+- **Gemini als bron (potoo, 6 nov):** vraag je meerdere wijzigingen tegelijk, dan tekent Gemini een heel nieuw beeld (stijl, oog en snavel kwijt). Eén wijziging per prompt, of de beste versie als bestand nemen en zelf bewerken (oprekken, tak weg, spiegelen).

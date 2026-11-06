@@ -18,7 +18,7 @@ for x in range(17,31):
             r[y][x]='7'
 P('3',[(19,41),(20,41),(21,41),(22,42),(23,42),(24,42),(25,42),(26,41),(27,41)])   # kinboog zoals het model: dunne donkere boog met dip
 # kruin: witte plukjes (kuif) tussen de sprietvoeten
-P('A',[(23,27),(25,27)]); P('3',[(22,27),(24,27)])
+P('4',[(22,27),(23,27),(24,27),(25,27)])   # buitenrand in selout (Gen 3); witte kuif eronder
 # 3. linkervleugel: tapse binnenlijn tussen de lob achter de kop en het gezicht
 P('7',[(12,28),(14,37)]); P('3',[(12,29),(13,30),(13,31),(13,32),(14,33),(14,34),(14,35),(14,36)])
 # 4. pluimen: ronde bovenkant (boog), klauwtjes als schuine stompjes aan de pluim

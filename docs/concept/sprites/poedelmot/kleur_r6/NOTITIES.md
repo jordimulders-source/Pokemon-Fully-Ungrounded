@@ -15,18 +15,18 @@ Bestanden: `raster.txt`, `poedelmot.png`, `normal.pal`, `palet.py`, `vel.py`/`ve
    - De zoom tussen voor- en achtervleugel en de onderrand van de achtervleugel zijn diepere geschulpte bogen met ongelijke lobjes (amplitude 2–2,4 px). Rij 36 en rij 45/46 zijn dus geen rechte lijnen meer.
    - De voetlijn bij de kop is één zachte lijntint (`4`, taps in `6`) in plaats van een donkere kolom.
    - (De aders uit de eerste opzet zijn weer weg: niet in het model.)
-2. **Mond/kin**: dunne donkere boog zoals het model (zie boven). Kruin: witte plukjes op (23,27) en (25,27) tussen `3`. Die twee pixels zijn bewust wit op de buitenrand en staan in de uitzonderingenlijst.
+2. **Mond/kin**: dunne donkere boog zoals het model (zie boven). Kruin: de buitenrand (22–25,27) blijft selout `4` (Gen 3: geen lichte kleur op de buitenrand); de witte plukjes van het model staan direct eronder.
 3. **Linkervleugel**: een tapse binnenlijn (`7`→`3`→`7`) van (12,28) tot (14,37) scheidt de lob achter de kop van het gezicht.
 4. **Pluimen**: ronde bovenbogen op pluim A en B. De klauwtjes zijn de gerichte stompjes uit r5. (21,55) ligt buiten het silhouet en blijft zo.
 5. **Sprietbaarden**: doorlopende ribben in één tint (`4`), om de 3 px, schuin zoals het model. De om-en-om-1/3-kammetjes zijn weg.
 
 ## Controle
-- **Alpha-diff 0**. Open randen 0 (uitzonderingen: klauwtjes, sprietpunt, twee kuifpixels).
+- **Alpha-diff 0**. Open randen 0 (uitzonderingen: klauwtjes, sprietpunt).
 - Selout zonder afwisseling. Losse pixels 0, clusters < 3 px 0.
 - Donker-aandeel 0,229.
 
-## Hoofdvraag op 1×
-(Volgens Jordi niet de maatstaf; alleen gelijkenis met het model telt.) De vleugel heeft diepere geschulpte zomen zoals het model. Maar de vleugels lezen nog niet overtuigend als twee losse vleugels. De kop met de twee grote sprieten blijft het sterkst en kan nog steeds als "oren" lezen. Dat komt door de vorm van het bevroren silhouet.
+## Maatstaven (Jordi): gelijkenis met het model en Gen 3-eisen
+Gelijkenis: niets toegevoegd of weggelaten t.o.v. het model (aders teruggedraaid). Gen 3: controle schoon (zie boven). Open punten staan hieronder.
 
 ## Eerlijke zwakke punten
 - De tan schubkrullen op de vleugels zijn nog grover en kleiner dan in het model.

@@ -1,6 +1,8 @@
 # SPRITE-KERN: de enige pagina die je vóór spritewerk MOET lezen
 Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen ... hij vergeet heel vaak lessen mee te nemen"). Geef dit bestand mee aan **elke** sprite-agent, ook bij kleine reparaties. Al het andere in `docs/lessen/` is naslag.
 
+**BELANGRIJKSTE REGEL: een model van Jordi namaken (Jordi, 6 nov: "dit is de belangrijkste regel vanaf nu").** Levert Jordi een model (eigen ontwerp/afbeelding) om na te maken, dan zijn er precies twee eisen, en verder niets: (1) **lijkt hij heel accuraat op het origineel** (niets toevoegen, weglaten of herinterpreteren; het model is perfect); (2) **is het een Gen 3-sprite volgens al onze eisen** (deze pagina). Keurders toetsen alleen deze twee; "welk dier leest het", eigen ontwerpideeën of stijlwensen die het model veranderen tellen niet. Voorbeeld: poedelmot (`docs/concept/sprites/poedelmot/SPEC.md`).
+
 ## Volgorde (nooit overslaan)
 1. **Ontwerp met Jordi**: pose + kenmerken, letterlijk in `SPEC.md` van de Pokémon. Foto's van Jordi direct in `referenties/` (komt een foto niet als bestand binnen: punt voor punt beschrijven).
 2. **Bron voor de vorm** (Jordi, 5 nov: "blender model is geen vereiste, genoeg sprites zijn zonder blender ook gelukt"): kies wat werkt. **Foto in de juiste pose** (kolibrie-eindvorm, olinguito) of een **3D-poppetje/Blender-model** bij lastige 3/4-poses (kolibrie pre-evo, `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py`: één huid, geen losse bollen, eerst een rondom-vel). Nooit zelfgebouwde cirkels en driehoeken.

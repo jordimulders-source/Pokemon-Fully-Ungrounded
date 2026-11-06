@@ -60,6 +60,7 @@ Samengevat: haar, hoorn en huid één materiaal en één kleur (Hitmontops bruin
 Daarna (Jordi): "andere kleur is niet erg, daar hadden we het niet over gehad, maar het hoofd onderste boven is wel erg gek. Volg mijn instructies en we komen er wel" (hoofdpunt: het hoofd moet rechtop lezen; haarkleur is bijzaak).
 Op ronde 4 (Jordi): "je luistert niet, het haar is niet anders dan het hoofd, het is hetzelfde materiaal en dezelfde kleur, er zit dus geen streep tussen"; "kijk aub een keer goed naar hitmontop en stop met dingen verzinnen". (Claude had zelf "haar onderscheiden met lijnen" verzonnen.) Hitmontops kop = één glad geheel: punt bovenop loopt uit de kop door, flappen opzij, alleen dunne plooitjes in de flappen en twee plooilijnen boven de ogen; ogen zwarte rondjes met wit puntje; mond een streepje.
 Daarna (Jordi): "rare kippenpoot heeft die ook in zijn haar"; "de enige streep is wat nu boven zijn ogen zit, maar gezien die haren nu dus naar achter gaan, komt die streep veel hoger te staan, een beetje als een fade, maar dat kan je wel berekenen hoop ik" (dus één streep: de haarlijn, hoog op het hoofd, zacht; geen plooitjes).
+Jordi: "en design eerst maar puur het hoofd zonder de rest", "dan keuren we dat" (hoofd los ontwerpen, pas na goedkeuring op de vorm).
 
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

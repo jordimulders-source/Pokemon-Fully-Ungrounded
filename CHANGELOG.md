@@ -599,3 +599,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.152] - Hitmontop-evolutie: stap 2 skelet in Hitmonlee-maat + handen en voeten
 - Jordi: "geen menselijke verhoudingen", benen niet langer dan Hitmonlee, Hitmontop is "wimpy" t.o.v. hem. `docs/concept/sprites/hitmontop_evo/stap2/`: hoeken van de foto, lengtes in spritepixels (benen 22–26, romp 20–22, kop 18–20), Hitmontops ronde handen en zijvoeten 1:1 geplakt (alleen gespiegeld). Opties D/E/F; keuring van stap 1 (PASS) erbij.
+
+### [v0.0.153] - Hitmontop-evolutie: stap 3 knip- en plakwerk
+- Op skelet D14: Hitmontops kop 1:1 (hoorn omlaag of 180°, hele kop of alleen het gezicht), Hitmonchans armen, Hitmonlee's benen, romp van Hitmonchan of Tyrogue (opties A–D). `docs/concept/sprites/hitmontop_evo/stap3/`. Keurder: PASS als concept; de 1:1-kop (37 px breed) is te groot voor het skelet, keuze ligt bij Jordi.

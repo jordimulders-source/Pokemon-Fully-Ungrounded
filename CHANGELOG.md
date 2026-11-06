@@ -545,3 +545,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.134] - Poedelmot: eigen lijn, poedel-larve, mot Bug/Fairy
 - `docs/concept/POKEMON.md` en `IDEEEN.md`: de Venezolaanse poedelmot wordt een eigen lijn (Jordi). De larve heeft kenmerken van een poedelhond, de mot is Bug/Fairy. Nog open: het type van de larve, het aantal fasen, de ability en de lore.
+
+### [v0.0.135] - Poedelmot eindvorm: van brainstorm naar draft-sprite
+- `docs/concept/sprites/poedelmot/`: SPEC met Jordi's leidraad (zijn eerste lange bericht, zin voor zin) en alle besluiten; referenties (tak-foto, vilt, sprieten, zijaanzicht, fan-art); 3D-model (afgekeurd), poppetje op 45° (lama-methode, rondes 1–5b), silhouet rondes 1–3, en **draft-sprite ronde 1** (`sprite/ronde1/`, 64×64, poten naar Giratina). Vanaf nu stap voor stap verbeteren met Jordi.
+- `CLAUDE.md`: vaste regel "niet interpreteren wat Jordi niet zegt"; `docs/lessen/SPRITE_KERN.md`: geen eigen kenmerken in een makeropdracht.

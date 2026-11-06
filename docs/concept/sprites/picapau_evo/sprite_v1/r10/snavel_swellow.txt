@@ -1,0 +1,13 @@
+# Swellows snavel, letterlijk omgekleurd (swellow_snavel.py). Kleurtabel:
+#   (230, 180, 98) m, lichtste hoorn -> a crème licht
+#   (222, 164, 49) j, lichte hoorn -> b crème basis (lichte hoorn)
+#   (148, 90, 16) n, midden -> g grijs
+#   (82, 65, 32) g, donker/omlijning/mondlijn -> G donkergrijs (onze donkerste snaveltint)
+#   (16, 16, 16) f, zwart (schaduwkant ondersnavel) -> k zwart
+8 17 G
+9 15 GGb
+10 14 Gbaabg
+11 13 GGGGgbbgg
+12 14 kkggGGGGG
+13 16 kgggGG
+14 17 kGG

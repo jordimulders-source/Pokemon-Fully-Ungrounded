@@ -30,3 +30,12 @@ Blinde tests r1: beluga/kabeljauw/zeehond/grondel; "worstvormige blob", "staart 
 - Veerpuntjes van 1 px op rug en borst; patroon in rijen (mantel 7, pennen F, staart 7), gezicht/borst rustig.
 - Valkuil: U-vormige dekveertjes van 5 px naast elkaar lezen als bakstenen of tanden; schuine lijnen lezen rustiger.
 Zwakke punten: borst is een groot leeg vlak; zichtbare staart is nog kort; kruin is glad; dekverenrijen zijn rechte lijnen.
+
+## Ronde 3 (`ronde3/`)
+Blinde tests r2: "bek leest niet als snavel (paarse vlek/zakje)", "borst vlak", "dunne staaf onderaan", "oog los". `maak.py` laadt het raster van ronde 2 en tekent kop/muil (y11–31, x8–32) en buik/staart (y44–62) opnieuw; rest van ronde 2 ongewijzigd. Palet: 7 iets warmer grijsbruin (160,140,132) = hoorn én schorsstreepjes.
+- **Bovensnavel**: eigen hoornvorm met zwarte outline: gewelfde snavelrug (lichte rand 4, hoorn 7, schaduw E) vanaf het voorhoofd (x17,y11) naar voren tot x9, in één vorm doorlopend in de haak (x9–12, y15–21) met de punt terug. Daarachter loopt de hoorn als taps toelopende snijrand (E, y16) tot halverwege de mond, daaronder de zwarte mondlijn tot de mondhoek onder/achter het oog (x29–30, y17). Mondrand 1 rij lager dan in r2: meer gezicht tussen oog en muil.
+- **Onderkaak**: verre kaakrand D begint direct achter de haak (licht vlak achter de donkere haak, zodat de haak loskomt) en loopt naar de kaakpunt (E, y28); nabije kaak = D-rand + donkerlila lijn (2) vanaf de mondhoek naar de punt, schaduwsikkel 4 eronder.
+- **Muil**: geen V-spleet meer (las als "T"); gehemelteschaduw 9 onder de snijrand, A, B onderin, tong C.
+- **Gezicht/borst**: borstelveertjes (3, twee korte trapjes) tussen oog en snavelbasis over de snavelwortel; borst 1 px voller links (y36–43), schaduw 4 langs de vleugelrand, vier korte verticale streepjes 4 op borst/keel.
+- **Onderkant**: buik buigt trager in; staart breed en plat (x30–40, y51–62) met middenveerlijn, drie dwarsbanden (3) en twee veerpunten; vleugelpunt ligt schuin tegen de staart tot y57.
+Zwakke punten (eerlijk): de bovensnavel is nog vrij rond van voren (kan als eend/duif lezen; haak 1 px langer/scherper zou helpen); borstelveertjes zijn op 1× nauwelijks zichtbaar, het oog staat nog redelijk los; onderste vleugelhelft heeft minder pennenstructuur dan de bovenkant; borststreepjes zijn heel subtiel. Controlescript: geen open randen/gaatjes; resterende 1-px-"clusters" zijn de diagonale lijnen (kaakranden, gehemelte) en de snavelrug-glans, zoals in ronde 2. Nog niet blind getest en niet gekeurd.

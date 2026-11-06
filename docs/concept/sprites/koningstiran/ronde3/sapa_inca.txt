@@ -230,8 +230,6 @@ P t 162 82 42
 51 22 Kddd
 52 23 Kd
 53 24 K
-# staartpuntje tussen de poten
-57 27 a
-58 27 ga
-59 27 ga
-60 28 a
+# staartaanzet (Jordi 7 nov): alleen een hele lichte hint bovenaan tussen de poten, mag tegen de poten aan
+54 28 t
+55 28 r

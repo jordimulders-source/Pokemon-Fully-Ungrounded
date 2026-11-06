@@ -1,4 +1,4 @@
-alpha: +80 px (buiten zone 0), -0 px
+alpha: +260 px (buiten zone 0), -42 px
 clusters < 3 px buiten de ogen (tint, [(x,y)]): 0
 buitenrand niet in omlijningskleur (1, 2, b): 0 []
 kleuren: 13 + transparant

@@ -7,7 +7,7 @@ R = np.array([list(l.rstrip('\n')) for l in open(os.path.join(HERE, 'raster.txt'
 S = np.array([[c == '#' for c in l.rstrip('\n')] for l in open(os.path.join(HERE, '../../silhouet/ronde3/ronde3.txt'))][:64])
 A = R != '.'
 # verre voorvleugel: x <= 14, y 16..27, links van/onder het verre oor
-zone = np.zeros((64, 64), bool); zone[16:28, 0:15] = True
+zone = np.zeros((64, 64), bool); zone[16:28, 0:15] = True; zone[43:64, :] = True   # draft: poten opnieuw (Giratina)
 bij, weg = A & ~S, S & ~A
 print('alpha: +%d px (buiten zone %d), -%d px' % (bij.sum(), (bij & ~zone).sum(), weg.sum()))
 oog = np.zeros((64, 64), bool); oog[25:30, 18:27] = True

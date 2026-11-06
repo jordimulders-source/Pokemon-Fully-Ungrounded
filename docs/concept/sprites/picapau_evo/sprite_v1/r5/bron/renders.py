@@ -1,4 +1,4 @@
-"""Bron voor sprite r5 uit pose R3 van r7pose (../../../blender/r7pose/picapau_evo_r7pose.py), zelfde stand en kader als R3_8x
+"""Bron voor sprite r5 uit pose R2 van r7pose (../../../blender/r7pose/picapau_evo_r7pose.py), zelfde stand en kader als R2_8x
 (maak_pose.py, STAP=0.5):
 (1) labels.png: elk onderdeel een vlakke eigen kleur (FLAT, geen omlijning), (2) wit.png: model wit (toonkaart),
 (3) kleur.png: de gewone render (= R5_8x). Draaien: python3.11 renders.py"""
@@ -8,9 +8,9 @@ HIER = os.path.dirname(os.path.abspath(__file__))
 R7 = os.path.join(HIER, '../../../blender/r7pose'); sys.path.insert(0, os.path.join(HIER, '../../../blender/r3'))
 import maak_r3
 m = maak_r3.laad(os.path.join(R7, 'picapau_evo_r7pose.py'), 'r7pose')
-m.TWEE_OGEN = True; m.SNAVEL_HOEK = -6; m.VERRE_VLEUGEL = (-6.0, 7.0, 13.0); m.VERRE_OPEN = 38.0   # = maak_pose.VAR['R3']
+m.TWEE_OGEN = True; m.SNAVEL_HOEK = -2; m.VERRE_VLEUGEL = (-5.0, 6.0, 12.0); m.VERRE_OPEN = 32.0   # = maak_pose.VAR['R2']
 import bpy
-STAND = dict(lijf=62, kop_draai=12, voorover=-30, kop_kantel=-24, oog_az=42, kantel=8)     # = maak_pose.VAR['R3']
+STAND = dict(lijf=58, kop_draai=9, voorover=-30, kop_kantel=-24, oog_az=40, kantel=8)     # = maak_pose.VAR['R2'] (Jordi: "r2 trouwens, onderste")
 LABEL = dict(lijf=(1, 0.5, 0), buik=(1, 1, 0.5), kop=(1, 0, 0.5), wang=(1, 0, 0), kuif=(0.5, 0, 0), kuifbinnen=(1, 0.5, 0.5),
              snavel=(0, 1, 1), mond=(0.5, 0.5, 0.5), vleugel_n=(0, 0.5, 0), vleugel_v=(0, 0, 0.5), pen_n=(0.5, 0.5, 0),
              pen_v=(0, 0.5, 0.5), stip=(0.5, 1, 0.5), koord=(0.5, 0, 1), staartveer=(1, 0, 1), bliksem=(1, 1, 0),
@@ -52,7 +52,7 @@ def labels_vlakken(huid, dl, kop_draai, kop_kantel):
         p.material_index = namen.index(n)
 
 if __name__ == '__main__':
-    s, sch = kader(); print('kader R3:', s, sch)
+    s, sch = kader(); print('kader R2:', s, sch)
     C = STAND
     m.kleur_vlakken = labels_vlakken; m.bouw.__globals__['kleur_vlakken'] = labels_vlakken
     kl = dict(m.KLEUR)

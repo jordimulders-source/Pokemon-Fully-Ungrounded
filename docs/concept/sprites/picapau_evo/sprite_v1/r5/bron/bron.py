@@ -1,9 +1,9 @@
-"""Overtrekbron uit de R3-render (r7pose) (methode Picapau sprite v2): per spritepixel (1) de kleur uit R5_8x (gemiddelde van het
+"""Overtrekbron uit de R2-render (r7pose) (methode Picapau sprite v2): per spritepixel (1) de kleur uit R5_8x (gemiddelde van het
 8x8-blok, alpha-drempel als C3_1x), (2) het onderdeel (meerderheid uit labels.png), (3) de toon (0-3) uit wit.png.
 Uitvoer: bron_kleur_1x/8x.png, bron_labels.txt, bron_toon.txt, toonkaart_1x/8x.png, overtrekvel.png. Draaien: python3.11 bron.py"""
 import numpy as np
 from PIL import Image, ImageDraw
-kl = np.asarray(Image.open('../../../blender/r7pose/R3_8x.png').convert('RGBA')).astype(float)
+kl = np.asarray(Image.open('../../../blender/r7pose/R2_8x.png').convert('RGBA')).astype(float)
 lb = np.asarray(Image.open('labels.png').convert('RGBA')).astype(float)
 wt = np.asarray(Image.open('wit.png').convert('RGBA')).astype(float)
 # labelkleuren: 0 -> 0, 0.5 (lineair) -> 188 (sRGB), 1 -> 255
@@ -42,7 +42,7 @@ for y in range(64):
 Image.fromarray(tk).save('toonkaart_1x.png'); Image.fromarray(tk).resize((512, 512), Image.NEAREST).save('toonkaart_8x.png')
 Z = 8; W = 64 * Z
 v = Image.new('RGBA', (W * 2 + 60, W + 40), (230, 230, 230, 255)); d = ImageDraw.Draw(v)
-v.alpha_composite(Image.open('../../../blender/r7pose/R3_8x.png').convert('RGBA'), (30, 30))
+v.alpha_composite(Image.open('../../../blender/r7pose/R2_8x.png').convert('RGBA'), (30, 30))
 v.alpha_composite(Image.fromarray(kleur).resize((W, W), Image.NEAREST), (W + 50, 30))
 for i in range(0, 65, 4):
     for ox in (30, W + 50):

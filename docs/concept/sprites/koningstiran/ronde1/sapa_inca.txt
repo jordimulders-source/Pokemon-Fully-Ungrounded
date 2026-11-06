@@ -1,9 +1,9 @@
 # Sapa Inca ronde 1 - met de hand getekend tekstraster (y x0 tekens), achter naar voor per onderdeel.
 # palet: index 1..15 in deze volgorde; index 0 = transparant
 P K 24 16 20
-P d 50 40 44
-P m 82 68 66
-P l 126 108 102
+P d 52 38 36
+P m 88 66 58
+P l 136 104 86
 P r 186 54 34
 P R 238 98 48
 P o 250 162 92
@@ -20,27 +20,27 @@ P t 162 82 42
 1 25 pppppppppK
 2 22 pppvpvvvpvvvpKKK
 3 20 pppvvvpvvvpvvvKpppK
-4 18 ppvpvvvooKKRRRRvvKpppKK
-5 17 pvpvvooKKoooRRKKRRRppKppK
-6 16 pvvvKKooooooRRRRRRRKKRppppK
-7 15 ppvoKooooooooRRRRRRRRRRRKpKpKK
-8 14 pvvoKoooooooooKRRRRRRRRRRRKpppK
-9 13 pvvoooooooKoooRRRRRRKRRRRRRRrpppK
-10 12 ppvKKoooooooooooRRRRRRRRRRRrrKKpppK
-11 12 pvvoooooooooooooRRRRRRRRRRRrrrrrppK
-12 11 pvvKoooooooooooKoRRKRRRRRRRrrrrrKpppK
-13 11 pvKoooooKooooooooRRRRRRRRRKrrrrrrKppK
-14 10 ppvooooooooooKooooRRRRRKRRRRRrrrrrrpKpK
-15 10 pvvKoooooooooooooRRRRRRRRRRRRrrrrrrKppK
-16 10 pvvKooooooooooooRRRRRRRRRRRRRrrrrrrKppK
-17 9 ppvooooKoooKooRRRRrrrrRRRRRKRRRKrrrrrppK
-18 9 pvvKoooooooooRRRRrrrrrrRRRRRRrrrrrrrKppK
-19 9 pvvKooooooooRRRrrKKKrrrrrRRRRrrrrrrrKppp
-20 9 pvvooooooooRRRrKllmmmKrrrrRRRRrrrrrrrpp
-21 9 pvvooooorRRRRRKllmmmmdKrrrrRRRrrrrrrpp
+4 18 ppvpvvoRooooorRRvKpppKK
+5 17 pvpvvoooRooKoorRRRRppKppK
+6 16 pvvvRoKooRooKoorRRKRRrppppK
+7 15 ppvooRooKoRRooorrRKRRrRRRpKpKK
+8 14 pvvoooRRooooRooorRRRRrrRRRRpppK
+9 13 pvvooKooRoooorooorRRRRrRRKRRrpppK
+10 12 ppvRooooooRoKorRKRrRKRrrRRRRrrrpppK
+11 12 pvvoRRooooRRRRrRRRrRRRrRRRrKrrrpppK
+12 11 pvvoooRRooKoRRRrRRRrRRrRKRrKrRRrrpppK
+13 11 pvoKKooRRoooRRRRrRrRRRrRRrKrRrKKrrppK
+14 10 ppvooooooRRoooRRRrRrRRrRRrKrRRRRrrrpKpK
+15 10 pvRoooooKoRRooRRRrRrRrrRRKrRKRRrrrKrppK
+16 10 pvoRRRoooooRRoRrRRrrrrRrKrRRrrrKrrrrppK
+17 9 ppvooooRRRooooRRrrrrrrrrrRRrrKrrrrrrrppK
+18 9 pvvKKoooooRRRooRRrrrrrrrrrKrrrrRRrKKrppK
+19 9 pvvoooooKoooRRoRrKKKrrrrrKrrRRKRRrrrrppp
+20 9 pvvooooooRRRRRrKllmmdKrrrrrRRRrrrrrrrpp
+21 9 pvvooooorRRRRRKlmmmmddKrrrrRRRrrrrrrpp
 22 9 pvvRRrKK
 22 18 KKKK
-22 22 KKKRwbRKKKK
+22 22 KrRRbbRRRrK
 22 33 KKKKKKKrrrrKr
 # kwastje links (hangende zijveer, lavendel-zwarte punt)
 23 10 rRRrK
@@ -60,36 +60,36 @@ P t 162 82 42
 
 # ---- opgeheven nabije vleugel (rechts): gesloten blad, knik in de pols ----
 18 51 KKKK
-19 49 KllKmK
-20 48 KlmmdmK
-21 47 KlmmdmdK
-22 46 KlmmdmmdK
-23 45 KlmmdmmdK
-24 45 KlmdmmddK
-25 44 KlmdmmdddK
-26 43 KlmdmmdddK
-27 43 KlmmmdddK
-28 39 llllmmmmdddK
-29 36 lllmmmlmmmdddK
-30 35 lmmmlmmmddddK
-31 34 KmlmmmddddKK
-32 34 KdmmdddKK
+19 49 KlKmdK
+20 48 KlmdmdK
+21 47 KlmdmmdK
+22 46 KlmdmmddK
+23 45 KlmdmmddK
+24 45 KldmmdmdK
+25 44 KldmmdmddK
+26 43 KlmmdmdddK
+27 43 KlmdmdddK
+28 39 mllmmlmmdddK
+29 36 mllmdlmdmmdddK
+30 35 mlmdlmdmddddK
+31 34 KmmdmddddKKK
+32 34 KddmdddKK
 33 35 KKKKKK
 
 # ---- kop: donker, kaal rood gezicht, haaksnavel, gouden oorschijf ----
-23 22 KwdbwbRwddK
-24 22 rdabwwbddaK
-25 22 rRbwwbKRRrya
-26 22 mrKbwbKrrmga
+23 22 rKKRwbRKKKr
+24 22 rwKbwbRwKaK
+25 22 rRrbwbKRrrya
+26 22 mrrbwKrrmmga
 27 22 lmmKbKddddaK
 
 # ---- hals en zwarte borstband ----
 28 21 llmmdmmmddddK
-29 21 llmmmmmmmddddK
-30 21 lmmmmmmmmdddK
+29 21 lllmmmmmmddddK
+30 21 llmmdmmmmdddK
 30 34 K
-31 21 lmmmmmmmmdddd
-32 20 mlmmmmmmmmdddd
+31 21 lmmmmmdmmdddd
+32 20 mlmmdmmmmmdddd
 33 19 mdlmmmmmmmdddddd
 34 18 mddlmmmyygggmddddddK
 
@@ -117,19 +117,19 @@ P t 162 82 42
 55 17 K
 
 # ---- borst (okergoud) en flank ----
-35 21 mmyyyygggg
+35 21 mmyyyggggg
 35 31 amddddK
-36 21 ayyyygggggaa
+36 21 ayyyyyggggaa
 36 33 mddddK
-37 20 ayyyyggggggaa
+37 20 agyyyygggggaa
 37 33 mmdddK
-38 20 ayyyyggggggaa
+38 20 agyyyggggggaa
 38 33 mmdddK
-39 20 ayyyggggggga
+39 20 agyyggggggga
 39 32 ammdddK
-40 20 ayygggggggga
+40 20 agygggggggga
 40 32 ammdddK
-41 20 ayggggggggga
+41 20 agggggggggga
 41 32 ammdddK
 42 20 agggggggggaa
 42 32 amdddddK

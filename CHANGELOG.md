@@ -611,3 +611,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.156] - Hitmontop-evolutie: hoofd terug naar het Hitmontop-ontwerp
 - Jordi over ronde 3b: mond zat bovenaan ("kaal met een baard?"), haar en hoorn moeten één materiaal/kleur met de kop zijn, hoorn kleiner maar zichtbaar door het opgeknotte haar, ogen zwarte rondjes met wit puntje, mond een streepje, hele hoofd tegen de klok in draaien, simpel. Anime-plaatje en zijn krabbel in `referenties/`; SPEC en les bijgewerkt.
+
+### [v0.0.157] - Hitmontop-evolutie: los hoofd ronde 5b
+- Hoofd los ontworpen (Jordi: "eerst maar puur het hoofd"): één glad bruin geheel zonder streep tussen haar en kop, haar naar achteren opgeknot rond een kleinere punt, enige streep = haarlijn hoog als fade, ogen zwarte rondjes met wit puntje, mond een streepje, 27° tegen de klok in. `docs/concept/sprites/hitmontop_evo/stap4_hoofd/ronde5b/`; keurder PASS.

@@ -602,3 +602,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.153] - Hitmontop-evolutie: stap 3 knip- en plakwerk
 - Op skelet D14: Hitmontops kop 1:1 (hoorn omlaag of 180°, hele kop of alleen het gezicht), Hitmonchans armen, Hitmonlee's benen, romp van Hitmonchan of Tyrogue (opties A–D). `docs/concept/sprites/hitmontop_evo/stap3/`. Keurder: PASS als concept; de 1:1-kop (37 px breed) is te groot voor het skelet, keuze ligt bij Jordi.
+
+### [v0.0.154] - Hitmontop-evolutie: stap 3b is de vorm
+- Stap 3 opnieuw (`docs/concept/sprites/hitmontop_evo/stap3b/`): onderdelen per kleur netjes geknipt met omlijning op de knip, kop draait mee langs de nek, Hitmonchans bovenbeen als arm (zijn eigen arm is te verkort), kleine kop uit Hitmontops overworld-sprite als optie. Jordi: "ok dit is de vorm", "vanaf hier gaan we alles stap voor stap aanpassen". Keuring (FAIL op zichtbaarheid van de romp) als lijst voor de volgende stappen.

@@ -46,6 +46,7 @@ Bij `referenties/fanart_mestrimba.png` (fanart van iemand anders, "Mestrimba"; a
 ## Werkwijze vanaf 6 nov (Jordi)
 - "Als je nu gewoon een stick man variant of een basis silhouet van die pose maakt. Dan gaan we daar steeds meer assets op plakken. [...] handen en voeten, dat is simpel. [...] Zodat het skelet uitgebouwd wordt." Stap voor stap, telkens meerdere opties. Stappen: 1 skelet → 2 handen/voeten/kop → 3 ledematen → 4 romp/koordjes → 5 één geheel.
 - Stap 2 (Jordi): "juist, dit is wat ik bedoel". Stap 3 (Jordi): "Voor het hoofd kan je nu hitmontop zijn hoofd ophangen. Voor de armen kan je hitmonchans armen gebruiken en voor de benen kan je hitmonlees benen gebruiken. Als lichaam etc kan je ook assets van hitmonchan en misschien tyrogue gebruiken, als we dan de pose hebben kunnen we alles aanpassen"; "dan is het eerst een knip en plak werk maar dan snap je waar ik heen wil". Skelet: optie D14.
+- Stap 3b (Jordi, 6 nov): "ok dit is de vorm", "vanaf hier gaan we alles stap voor stap aanpassen". Bevroren als basis: `stap3b/` (welke optie A–D: navragen).
 
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

@@ -635,3 +635,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.164] - Hitmontop-evolutie: model in de pose (Gemini)
 - Jordi maakte met Gemini een volledig model van de evolutie in de pose (handstand, V-split, kop met knot en kleine stekel); v2 kreeg een ronde steunhand, v3 een gladde buisarm. `referenties/model_gemini_pose_v3.png` is de bevroren bron voor de sprite; Stand van zaken bijgewerkt.
+
+### [v0.0.165] - Hitmontop-evolutie: silhouet stap 1 uit model v3
+- `docs/concept/sprites/hitmontop_evo/silhouet_v3/`: masker direct uit het bevroren model `model_gemini_pose_v3.png` (lokale achtergrondschatting, grondschaduw weg, witte enkel rechts dichtgemaakt), naar 64×64 verkleind (63 px hoog, hand op de grond). Geen agents (Jordi).
+- **A** = puur het model; **B** = "minder mens" volgens SPEC: lijf gedrongener (romp ±3 px korter langs zijn as; kop en steunarm staan exact stil). Vel: `vel_stap1.png` (model, rode omtrek over het model, A en B op 8×).

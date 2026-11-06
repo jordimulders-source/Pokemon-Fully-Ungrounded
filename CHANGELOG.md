@@ -143,3 +143,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca: staart-scepter vervalt (leest in deze pose niet als scepter); gewone roestbruine staart achter de poten.
 - Sapa Inca: benen even lang onder het lijf, linkervleugel smaller.
 - Sapa Inca: silhouet v1 op 64x64 (1560 px) uit het poppetje B3 (`docs/concept/sprites/koningstiran/silhouet_v1_vel.png`).
+- Sapa Inca kleursprite ronde 1 en 2 (`docs/concept/sprites/koningstiran/ronde2/`): kroon bevroren; gezicht, vleugel, borst en staart met kleur gerepareerd; silhouetkeuzes voorgelegd.

@@ -52,6 +52,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (5 nov) "maak maar een silhouet" → v1 direct uit het poppetje verkleind (massa heilig), geen reparaties. Eigen keuring: twee plekken waar delen tegen elkaar plakken op 1x (opgeheven vleugel tegen de kroonrand; standbeen tegen de staart); rechter kwastje valt achter de vleugel. Varianten (vleugel verder naar buiten) losten het plakken niet op en verborgen de staart: niet doorgestuurd.
 
+- (6 nov) Kleur ronde 1 (maker) → eigen keuring: gezicht klein/boos, vleugel knots, borst plat ei, staart weg → ronde 2 (alleen kleur, silhouet bevroren, kroon bevroren). Ronde 2: gezicht rustiger, vleugel met penscheidingen, borst met volume, staart gescheiden. Resterend (zit in het silhouet): kop 11×9 px (ogen 2–3 px), vleugel leest als opgeheven arm, staart 2–3 px breed. Voorgelegd aan Jordi.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

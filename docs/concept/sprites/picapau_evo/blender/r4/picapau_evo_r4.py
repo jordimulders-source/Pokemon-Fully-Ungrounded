@@ -10,6 +10,11 @@ Nieuw in r4 (de rest = r3: lijf, buik, kop, snavel, kleuren, bliksem):
 - vleugel: echte vogelvleugel uit platte lagen: ronde voorrand (arm), rij kleine dekveren, rij grote dekveren (met de ronde
   lichte stippen), armpennen en zes handpennen in een waaier; elke laag ligt iets dichter naar de kijker dan de laag eronder.
 - draaien: lijf/kop_draai via de stand (maak_r4.py); oog_az iets kleiner zodat het oog meer naar de snavel zit.
+AANVULLING Jordi (6 nov), letterlijk: "ja het lijkt nu iets meer een alien dan een vogel, en ik heb liever eigenlijk een
+grote vogel met raichu motief" -> het ronde ei-lijf van r3 vervalt. Nieuw lijf = grote vogel (Talonflame, Staraptor,
+Braviary, Pidgeot; echte grote specht Dryocopus/Campephilus): borst die naar voren steekt, duidelijke nek, lijf dat schuin
+naar achteren-onder loopt naar stuit en steunstaart, dijen en poten onder het zwaartepunt, kop klein in verhouding.
+Raichu = alleen motief: zwarte oren met krul, dunne zwarte staart die krult met de grote bliksem, kleur, wangvlek.
 Hieronder de kop van ronde 3:
 MODELRONDE 3 (6 nov): alleen kuif en staart, naar Raichu Gen 1 (hoofdbron, Jordi: "nee de gen 1 raichu sprite moet je
 ook naar kijken") en Gen 3 (aanvulling). Jordi over C2: "de oren en staart zijn geen raichu staart". De rest = ronde 2 (bevroren).
@@ -164,12 +169,14 @@ def smin(a, b, k):
 
 
 # ---------------- de evolutie ----------------
-NEK = Vector((-3.0, 0, 5.0))           # draaipunt van de kop
-HEUP = Vector((-1.5, 0, -16.5))       # draaipunt van de romp (voorover)
-KC = Vector((-8.8, 0, 12.8))           # kopmidden (kop-lokaal); r1 (-8.5, 0, 12.5)
-KR = (10.1, 9.7, 9.8)                  # kop licht groter dan r1 (9.6, 9.2, 9.3)
+# r4 grote vogel: kop kleiner en hoger, op een duidelijke nek boven de vooruitstekende borst
+NEK = Vector((-7.0, 0, 12.0))          # draaipunt van de kop (onder in de nek)
+HEUP = Vector((-2.0, 0, -16.0))        # draaipunt van de romp (voorover)
+KC = Vector((-11.0, 0, 22.5))          # kopmidden (kop-lokaal); r3 (-8.8, 0, 12.8)
+KR = (8.2, 7.6, 7.8)                   # r3 (10.1, 9.7, 9.8): kop in verhouding tot een vogel
+OOR_F = 1.0                            # oormaat (Jordi eerder: "too much", "te wit, te groot": op 1x niet groter dan r2)
 
-SNAVEL_HOEK = 8; SNAVEL_L = 19.0       # beitelsnavel (lengte vanaf de basis in de kop)
+SNAVEL_HOEK = 6; SNAVEL_L = 15.5       # beitelsnavel (lengte vanaf de basis in de kop)
 
 def kop_matrix(kop_draai, kop_kantel=0.0):
     """kop-lokaal -> lijf: draai om Z (naar de kijker) en een kleine kanteling, rond NEK"""
@@ -194,16 +201,18 @@ def vleugel(s, schuif=(0.0, 0.0, 0.0)):
     voorrand (dikke ronde arm) > kleine dekveren > grote dekveren (stippen) > armpennen > handpennen (waaier).
     Elke hogere laag ligt 0,8 BU dichter naar de kijker (-Y), zodat de randen als lagen over elkaar lezen."""
     o = np.array(schuif, float)
-    S = np.array([5.0, s * 9.5, 4.0]) + o; P = np.array([8.0, s * 18.5, 20.0]) + o; Q = np.array([27.0, s * 22.0, 9.5]) + o
+    S = np.array([2.0, s * 7.5, 4.0]) + o; P = np.array([6.0, s * 15.5, 19.0]) + o; Q = np.array([26.0, s * 19.0, 8.0]) + o
     e1 = (P - S) / np.linalg.norm(P - S); nn = np.cross(P - S, Q - S); nn /= np.linalg.norm(nn)
     if nn[1] > 0: nn = -nn                        # nn wijst naar de kijker (-Y)
     e2 = np.cross(nn, e1)
     if (Q - S) @ e2 < 0: e2 = -e2
+    WS = VLEUGEL_S
     def plaat(polys, laag, t=0.7):
+        polys = [[(x * WS, y * WS) for x, y in pl] for pl in polys]
         org = S + nn * (0.8 * laag)
         return ('plaat', tuple(org), tuple(e1), tuple(e2), polys, t, 0.3)
-    def w3(a, b, laag): return tuple(S + e1 * a + e2 * b + nn * (0.8 * laag + 0.7))
-    d = [('vleugel', ('buis', [(tuple(S), 4.8), (tuple(P), 4.0), (tuple(P + e1 * 3.0 + e2 * 2.0), 3.0)], tuple(nn), 0.5), 1.4)]
+    def w3(a, b, laag): return tuple(S + e1 * a * WS + e2 * b * WS + nn * (0.8 * laag + 0.7))
+    d = [('vleugel', ('buis', [(tuple(S), 4.2), (tuple(P), 3.4), (tuple(P + e1 * 3.0 * WS + e2 * 2.0 * WS), 2.6)], tuple(nn), 0.5), 1.4)]
     # handpennen: zes lange veren in een waaier vanuit de hand, buitenste het langst; elk 0,15 laag hoger (dakpansgewijs)
     hand = [((17.0, 3.0), (32.5, 4.5), 5.0), ((16.0, 5.0), (31.5, 10.0), 5.2), ((15.0, 6.5), (28.5, 15.0), 5.2),
             ((13.5, 8.0), (24.5, 19.0), 5.2), ((12.0, 9.0), (19.5, 21.5), 5.0), ((10.0, 9.5), (14.0, 22.5), 5.0)]
@@ -218,31 +227,31 @@ def vleugel(s, schuif=(0.0, 0.0, 0.0)):
     for B, T in grote:
         d.append(('dekveer', plaat([veer(B, T, 4.8, 0.0)], 0.6, 0.6), 0.35))
         B_ = np.array(B); T_ = np.array(T); m = B_ + (T_ - B_) * 0.68
-        STIPPEN.append((w3(m[0], m[1], 0.6), 1.45))
+        STIPPEN.append((w3(m[0], m[1], 0.6), 1.45 * WS))
     # kleine dekveren: smalle rij langs de voorrand, ook met kleine stippen (zoals Picapau)
     for a in (16.0, 12.0, 8.0, 4.0, 0.0):
         d.append(('dekveer', plaat([veer((a + 0.5, -1.0), (a - 0.5, 5.5), 4.2, 0.0)], 1.4, 0.6), 0.35))
     for a in (12.0, 4.0):
-        STIPPEN.append((w3(a - 0.3, 3.4, 1.4), 1.1))
+        STIPPEN.append((w3(a - 0.3, 3.4, 1.4), 1.1 * WS))
     return d
 
-VERRE_VLEUGEL = (5.0, 0.0, -11.0)   # r3: alleen de verre vleugel iets naar achteren en lager, zodat de kuif vrij staat
+VLEUGEL_S = 1.2                    # r4: grote vogel, grote vleugels (Talonflame)
+VERRE_VLEUGEL = (4.0, 0.0, -3.0)   # r3: alleen de verre vleugel iets naar achteren en lager, zodat de kuif vrij staat
 
 def staart_keten():
     """r4: dunne zwarte veerschacht (r 1,3 i.p.v. 2,4; Jordi: "De staart mag wat dunner en wat meer vogelachtig, desnoods
     zwart") in dezelfde S als r3: uit de steunstaart naar rechts, rechts omlaag, onder het lijf door naar de bliksem"""
-    return [((14.5, 1.0, -9.5), 1.25), ((19.0, 1.0, -8.5), 1.3), ((26.5, 0.0, -11.5), 1.3), ((30.5, -0.5, -17.5), 1.3),
-            ((28.5, 0.5, -24.5), 1.3), ((20.0, 2.5, -29.0), 1.3), ((8.0, 4.0, -30.0), 1.3), ((-3.0, 4.0, -28.5), 1.35),
-            ((-9.0, 2.5, -25.5), 1.5)]
+    return [((20.0, 1.5, -23.5), 1.2), ((26.0, 1.0, -22.5), 1.25), ((30.5, 0.5, -26.0), 1.3), ((29.0, 1.0, -31.5), 1.3),
+            ((20.0, 2.5, -34.5), 1.3), ((7.0, 3.5, -35.0), 1.3), ((-5.0, 3.5, -33.5), 1.35), ((-11.0, 2.5, -30.5), 1.5)]
 
 def steunstaart():
     """stijve spechtenstaart (familie Picapau): drie spitse veren uit de stuit, plat naar de kijker (vlak van de bliksem)"""
-    o = (9.0, 2.0, -9.0)
-    vv = [veer((0.0, 0.0), (11.0, -3.5), 4.0, 1.2), veer((0.0, -1.0), (10.0, -7.5), 4.0, 1.2), veer((-0.5, -2.0), (7.5, -10.0), 3.8, 1.2)]
+    o = (13.0, 2.0, -16.0)   # r4: stuit van het schuine vogellijf
+    vv = [veer((0.0, 0.0), (10.0, -6.5), 4.2, 1.2), veer((-0.5, -1.0), (8.0, -9.5), 4.2, 1.2), veer((-1.0, -2.0), (5.0, -11.0), 4.0, 1.2)]
     return ('plaat', o, bl_e1(), BL_E2, vv, 0.8, 0.3)
 
 # bliksem: grote platte prisma met scherpe hoeken, in het beeldvlak van stand C (lijf 40) zodat hij vlak naar de kijker staat
-BL_O = (-9.5, 2.0, -24.5)                                   # aanzet aan het eind van de koord
+BL_O = (-11.5, 2.0, -29.5)                                   # aanzet aan het eind van de koord
 LIJF = 40.0   # r4: wordt door render() gezet, zodat bliksem en steunstaart vlak naar de kijker blijven staan
 BL_E1 = (math.cos(math.radians(40)), -math.sin(math.radians(40)), 0.0)   # beeld-horizontaal bij lijf 40 (zie bl_e1())
 def bl_e1(): return (math.cos(math.radians(LIJF)), -math.sin(math.radians(LIJF)), 0.0)
@@ -255,9 +264,10 @@ def bliksem_vlakken():
 OOR_SCHUIF = 0.0   # varianten: oor iets naar voren/achteren (BU langs X, kop-lokaal)
 
 def oor_punten(s):
-    A = np.array([-6.0, s * 2.5, 21.5]); B = np.array([-1.5, s * 5.0, 18.0]); T = np.array([1.5, s * 7.5, 27.0])
-    sh = np.array([OOR_SCHUIF, 0, 0])
-    return A + sh, B + sh, T + sh
+    # r4: zelfde oor als hierboven ontworpen op de r3-kop (midden (-8,8; 12,8)), nu meegeschaald naar de kleinere kop
+    k = np.array(KC); f = OOR_F; sh = np.array([OOR_SCHUIF, 0, 0])
+    # A = voorste voet, B = achterste voet (achter op de schedel), T = punt, schuin naar achteren-boven (Raichu)
+    return [k + f * np.array(v) + sh for v in ((0.5, s * 2.0, 7.7), (7.0, s * 4.0, 3.8), (12.0, s * 7.5, 13.0))]
 
 def oor_vlak(s):
     A, B, T = oor_punten(s)
@@ -269,29 +279,33 @@ def oor(s):
     zelf overgaat in een krul naar achteren en omlaag (spiraal in het oorvlak, straal krimpt)"""
     A, B, T, e1, e2, nn = oor_vlak(s)
     v2 = [((p - A) @ e1, (p - A) @ e2) for p in (A, B, T)]
-    d = [('kuif', ('plaat', tuple(A), tuple(e1), tuple(e2), [v2], 0.7, 0.3), 1.2)]
+    a_, b_, t_ = (np.array(p) for p in v2); uu = (t_ - (a_ + b_) / 2)
+    blad = [tuple(a_), tuple(b_), tuple(b_ + uu * 0.5 + (a_ - b_) * 0.02), tuple(t_), tuple(a_ + uu * 0.55 - (a_ - b_) * 0.15)]
+    d = [('kuif', ('plaat', tuple(A), tuple(e1), tuple(e2), [blad], 0.7, 0.3), 1.2)]
     t2 = np.array(v2[2]); m2 = (np.array(v2[0]) + np.array(v2[1])) / 2
     u = (t2 - m2) / np.linalg.norm(t2 - m2); v = np.array([u[1], -u[0]])       # v: naar de achterrand (B-kant)
     if v @ (np.array(v2[1]) - np.array(v2[0])) < 0: v = -v
-    r0 = 2.3; c = t2 + v * r0; a0 = math.atan2(*(t2 - c)[::-1])
+    r0 = 2.0 * OOR_F; c = t2 + v * r0; a0 = math.atan2(*(t2 - c)[::-1])
     rot = 1 if (u[0] * v[1] - u[1] * v[0]) < 0 else -1                        # eerst langs u, dan naar v toe
     keten = []
-    for i in range(15):
-        h = a0 + rot * math.radians(-24 * i); rr = r0 * (1 - 0.5 * i / 14)
+    for i in range(12):                     # ±260 graden: een krul die de punt zelf is, geen gesloten ring
+        h = a0 + rot * math.radians(-24 * i); rr = r0 * (1 - 0.45 * i / 11)
         p2 = c + rr * np.array([math.cos(h), math.sin(h)])
-        keten.append((tuple(A + e1 * p2[0] + e2 * p2[1]), 0.95 - 0.4 * i / 14))
+        keten.append((tuple(A + e1 * p2[0] + e2 * p2[1]), (1.15 - 0.6 * i / 11) * OOR_F))
     d.append(('kuifkrul', ('buis', keten, tuple(nn), 0.6), 0.5))
     return d
 
 def delen(kop_draai=25.0, kop_kantel=0.0):
     """lijst (naam, deel, k, groep); groep 'kop' wordt met de kopdraai rond NEK geëvalueerd"""
     STIPPEN.clear()
-    d = [('lijf', ('ell', (3.0, 0, -5.0), (14.0, 13.5, 13.5), -15), 0, 'lijf'),        # = ronde 1
-         ('lijf', ('ell', (-5.2, 0, -1.8), (10.2, 11.0, 11.5), -10), 3.0, 'lijf'),     # borst licht hoger en voller dan r1
-         ('lijf', ('ell', (-3.0, 0, 5.5), (6.5, 7.5, 6.5), 0), 3.0, 'lijf')]          # dikke nek (= r1)
-    # dijen in de huid: de poten groeien uit het lijf
+    # r4 grote vogel: borst steekt naar voren, romp loopt schuin naar achteren-onder naar de stuit, duidelijke nek
+    d = [('lijf', ('ell', (-5.0, 0, -1.0), (10.5, 10.0, 12.5), 10), 0, 'lijf'),          # vooruitstekende borst
+         ('lijf', ('ell', (4.0, 0, -8.0), (13.0, 9.0, 8.5), 35), 4.0, 'lijf'),           # romp, schuin naar achteren-onder
+         ('lijf', ('ell', (12.5, 0, -14.5), (6.0, 6.0, 5.0), 35), 3.0, 'lijf'),          # stuit
+         ('lijf', ('buis', [((-5.0, 0, 7.0), 6.6), ((-8.0, 0, 13.0), 5.2), ((-10.0, 0, 17.5), 5.0)], (0, 1, 0), 1.0), 3.0, 'lijf')]  # nek
+    # bevederde dijen onder het zwaartepunt (onder de borst/romp-overgang)
     for s in (-1, 1):
-        d.append(('lijf', ('ell', (-1.5, s * 4.5, -16.5), (3.2, 3.0, 3.2), 0), 1.5, 'lijf'))
+        d.append(('lijf', ('ell', (-1.5, s * 4.5, -13.0), (4.2, 3.4, 4.6), 0), 2.0, 'lijf'))
     for naam, deel, k in vleugel(-1) + vleugel(1, VERRE_VLEUGEL):
         d.append((naam, deel, k, 'lijf'))
     d.append(('staartveer', steunstaart(), 1.0, 'lijf'))
@@ -305,15 +319,17 @@ def delen(kop_draai=25.0, kop_kantel=0.0):
     # beitelsnavel IN de huid (smooth union met de kop): een losse kegel stak schuin uit de gedraaide kop en gaf een
     # donker schaduwvlak dat als open snavel las. Iets plat van opzij (beitel).
     a = math.radians(SNAVEL_HOEK); dsn = np.array([-math.cos(a), 0, math.sin(a)])
-    basis = np.array(KC) + np.array([-7.5, 0, -1.7])
-    d.append(('snavel', ('buis', [(tuple(basis), 3.3), (tuple(basis + dsn * SNAVEL_L * 0.55), 1.9), (tuple(basis + dsn * SNAVEL_L), 0.35)],
+    basis = np.array(KC) + np.array([-6.0, 0, -1.3])
+    d.append(('snavel', ('buis', [(tuple(basis), 2.9), (tuple(basis + dsn * SNAVEL_L * 0.55), 1.7), (tuple(basis + dsn * SNAVEL_L), 0.35)],
                          (0, 1, 0), 0.85), 0.9, 'kop'))
     # r4: de rafelige achterkuif (kuif2) vervalt; daar staan nu de oren
     return d
 
-def huid_sdf(dl, kop_draai, kop_kantel, stap=0.3):
+STAP = float(os.environ.get("STAP", 0.3))   # grover (bijv. 0.5) voor snelle proeven
+def huid_sdf(dl, kop_draai, kop_kantel, stap=None):
+    stap = stap or STAP
     from skimage import measure
-    lo = np.array([-38.0, -32.0, -36.0], np.float32); hi = np.array([38.0, 32.0, 44.0], np.float32)
+    lo = np.array([-40.0, -32.0, -40.0], np.float32); hi = np.array([40.0, 32.0, 44.0], np.float32)
     xs, ys, zs = [np.arange(lo[i], hi[i], stap, dtype=np.float32) for i in range(3)]
     Rinv = np.array(kop_matrix(kop_draai, kop_kantel).transposed(), np.float32)
     nek = np.array(NEK, np.float32)
@@ -350,7 +366,7 @@ def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
         p = C[j]; q = Ck[j]
         if w == 'lijf':
             # crème buik: groot ovaal aan de voorkant (Raichu-buik, borst opgezet)
-            b = ((p[0] + 9.5) / 9.2) ** 2 + (p[1] / 9.8) ** 2 + ((p[2] + 4.5) / 13.0) ** 2
+            b = ((p[0] + 10.0) / 9.0) ** 2 + (p[1] / 9.0) ** 2 + ((p[2] + 2.0) / 15.0) ** 2   # r4: crème borst/buik
             idx[j] = 5 if b < 1 else 0
         elif w == 'vleugel': idx[j] = 1                      # voorrand (arm)
         elif w == 'dekveer':
@@ -366,7 +382,7 @@ def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
             A, B, T, e1, e2, nn = oor_vlak(s_)
             vn = nn if nn[0] < 0 else -nn
             v2 = np.array([((pp - A) @ e1, (pp - A) @ e2) for pp in (A, B, T)]); zw = v2.mean(0) * 0.8 + v2[:2].mean(0) * 0.2
-            klein = [tuple(zw + (pp - zw) * 0.55) for pp in v2]
+            klein = [tuple(zw + (pp - zw) * 0.45) for pp in v2]
             a_, b_ = np.array([(q - A) @ e1]), np.array([(q - A) @ e2])
             binnen = Nk[j] @ vn > 0.4 and sd_veelhoek(a_, b_, klein)[0] < 0
             idx[j] = 0 if binnen else 10
@@ -374,9 +390,9 @@ def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
         elif w == 'snavel': idx[j] = 8
         elif w == 'kop':
             for s in (-1, 1):
-                c = np.array([KC.x - 5.2, s * 6.5, KC.z - 3.8])
+                c = np.array([KC.x - 4.2, s * 5.0, KC.z - 3.0])
                 r = q - c
-                if (r[0] / 3.3) ** 2 + (r[1] / 3.3) ** 2 + (r[2] / 2.9) ** 2 < 1: idx[j] = 6
+                if (r[0] / 2.8) ** 2 + (r[1] / 2.8) ** 2 + (r[2] / 2.4) ** 2 < 1: idx[j] = 6
     for poly, i in zip(huid.data.polygons, idx): poly.material_index = int(i)
 
 def bouw(kop_draai=25.0, kop_kantel=0.0, voorover=0.0, oog_az=75):
@@ -398,17 +414,17 @@ def bouw(kop_draai=25.0, kop_kantel=0.0, voorover=0.0, oog_az=75):
     for s in (-1,):      # alleen het nabije oog: het verre oog stak als bultje uit de omtrek (Gen 3: één oog bij een snavel)
         dd = Vector((-math.cos(az) * math.cos(el), s * math.sin(az) * math.cos(el), math.sin(el)))
         p = KC + Vector((dd.x * KR[0], dd.y * KR[1], dd.z * KR[2])) * 0.97
-        o = bol('Oog', p, (2.1, 0.6, 2.5), 'oog', kopas)
+        o = bol('Oog', p, (1.8, 0.6, 2.1), 'oog', kopas)
         o.rotation_euler = Vector((0, 1, 0)).rotation_difference(Vector((dd.x, dd.y, 0)).normalized()).to_euler()
-        bol('Glans', p + Vector((dd.x, dd.y, 0)).normalized() * 0.4 + Vector((-0.5, 0, 0.9)), (0.65, 0.3, 0.75), 'glans', kopas)
+        bol('Glans', p + Vector((dd.x, dd.y, 0)).normalized() * 0.4 + Vector((-0.5, 0, 0.9)), (0.55, 0.3, 0.65), 'glans', kopas)
     bpy.context.view_layer.update()
     kopas.rotation_euler = kop_matrix(kop_draai, kop_kantel).to_euler()
     romp.rotation_euler = (0, math.radians(-voorover), 0)     # + = voorover (kop omlaag/naar voren)
     # pootjes: kort en stevig, tenen 2 voor 2 achter (specht)
     for s in (-1, 1):
-        familie('Poot', [((-2.0, s * 4.6, -19.5), (1.5, 1.5, 3.0)),
-                         ((-5.6, s * 4.6, -22.8), (2.8, 1.1, 0.9)),
-                         ((0.8, s * 4.6, -23.0), (2.0, 1.1, 0.8))], 'poot', wortel)
+        familie('Poot', [((-2.0, s * 4.6, -19.0), (1.4, 1.4, 4.2)),
+                         ((-5.8, s * 4.6, -23.4), (3.0, 1.1, 0.9)),
+                         ((1.2, s * 4.6, -23.6), (2.2, 1.1, 0.8))], 'poot', wortel)
     return wortel
 
 def camera_licht(res=512, kantel=8):

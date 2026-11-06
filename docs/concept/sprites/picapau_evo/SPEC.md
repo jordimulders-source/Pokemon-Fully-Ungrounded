@@ -57,3 +57,6 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 - Jordi: **"het ding is, het is nog niet echt een vogel he. De staart mag wat dunner en wat meer vogelachtig, desnoods zwart. De oren mogen ook naar achter bewegen, zwart en meer op de raichu lijken, verder mag die wat graden naar links draaien, want nu zien we een flink stuk hoofd met het oog helemaal aan de zijkant. De vleugel mag iets vogel achtiger"**
 - → pose-wijziging (draaien) in het model, dan opnieuw overtrekken; kleur daarna met de hand.
 - Jordi: **"ja het lijkt nu iets meer een alien dan een vogel, en ik heb liever eigenlijk een grote vogel met raichu motief"** → koerswijziging: basis = echte grote vogel (nek, borst, schuin lijf, poten onder het zwaartepunt; Staraptor/Braviary/Talonflame/Pidgeot, grote specht *Campephilus*/*Dryocopus*); Raichu alleen als motief (zwarte gekrulde kuif, dunne staart met bliksem, kastanje + crème, wangvlek). Ei-lijf van C3 vervalt. Model r4 eerst tonen, dan pas sprite.
+
+## Model r4 (6 nov)
+- `blender/r4/` (V2 gekozen: lijf 35°, kop +5°): leest als vogel (lijster/roodborst), niet imposant; oren op 1× een zwarte vlek; poten dun en naast elkaar; staartlus + bliksem nemen veel frame. Voorstel: lijf voorover (Talonflame-diagonaal), vleugels hoger en breder, bliksem iets kleiner, grote voeten met klauwen.

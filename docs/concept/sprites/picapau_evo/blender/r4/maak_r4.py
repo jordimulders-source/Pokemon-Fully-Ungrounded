@@ -1,16 +1,17 @@
-"""Ronde 4: draai-varianten van het r4-model (oren, staart, vleugel nieuw). Zelfde schaal als C2/C3 (kader_c2), per
-variant opnieuw gecentreerd (de draai verschuift de omtrek). Uitvoer per variant: <naam>_8x.png, <naam>_1x.png;
+"""Ronde 4: draai-varianten van het r4-model (oren, staart, vleugel nieuw). Schaal zo dat de variant in 61 px past
+(of vast via SCHAAL=...), per variant opnieuw gecentreerd (de draai verschuift de omtrek). Uitvoer per variant: <naam>_8x.png, <naam>_1x.png;
 plus varianten_r4.png (1x en 4x naast C3). Draaien: python3.11 maak_r4.py [V0 V1 V2 V3] [vel]"""
 import os, sys, importlib.util
 HIER = os.path.dirname(os.path.abspath(__file__))
 from PIL import Image, ImageDraw
 sys.path.insert(0, os.path.join(HIER, '../r3'))
 import maak_r3
-BASIS = dict(voorover=10, kantel=8)
-VAR = {'V0': dict(lijf=40, kop_draai=20, oog_az=75),    # stand van r3 (60 graden totaal), alleen nieuwe onderdelen
+BASIS = dict(voorover=0, kantel=8)                     # r4: het vogellijf is zelf al schuin; geen extra voorover
+VAR = {'V0': dict(lijf=40, kop_draai=20, oog_az=75),    # draai van r3 (kop 60 graden naar de kijker), ter vergelijking
        'V1': dict(lijf=40, kop_draai=10, oog_az=70),    # kop 10 graden minder naar de kijker
        'V2': dict(lijf=35, kop_draai=5, oog_az=65),     # kop 20 graden minder, lijf 5 mee
        'V3': dict(lijf=30, kop_draai=0, oog_az=60)}     # kop 30 graden minder, lijf 10 mee
+SCHAAL = None   # één schaal voor alle varianten: zo dat V2 in 61 px past (zie maak())
 m4 = maak_r3.laad(os.path.join(HIER, 'picapau_evo_r4.py'), 'r4')
 
 def bbox1x(pad): return maak_r3.bbox1x(pad)
@@ -20,10 +21,11 @@ def maak(naam, s):
     proef = os.path.join(HIER, '_proef.png'); s0 = 0.7
     m4.render(proef, schaal=s0, **kw); x0, y0, x1, y1 = bbox1x(proef); os.remove(proef)
     cx, cy = ((x0 + x1) / 2 - 32) / s0, ((y0 + y1) / 2 - 32) / s0
+    if s is None: s = 61.0 / (max(x1 - x0, y1 - y0) / s0)
     p8 = os.path.join(HIER, f'{naam}_8x.png'); m4.render(p8, schaal=s, schuif=(-cx * s, cy * s), **kw)
     sm = Image.open(p8).convert('RGBA').resize((64, 64), Image.BOX)
     sm.putalpha(sm.split()[3].point(lambda a: 255 if a >= 128 else 0)); sm.save(os.path.join(HIER, f'{naam}_1x.png'))
-    print(naam, kw, 'schuif', (round(-cx * s, 2), round(cy * s, 2)), 'omtrek', sm.getbbox(),
+    print(naam, kw, 'schaal', round(s, 3), 'schuif', (round(-cx * s, 2), round(cy * s, 2)), 'omtrek', sm.getbbox(),
           sum(1 for a in sm.split()[3].get_flattened_data() if a), 'px')
 
 def vel():
@@ -40,7 +42,7 @@ def vel():
 
 if __name__ == '__main__':
     wat = sys.argv[1:] or list(VAR) + ['vel']
-    s, _ = maak_r3.kader_c2() if any(w in VAR for w in wat) else (0.89, None)
+    s = float(os.environ.get('SCHAAL', 0)) or None
     for w in wat:
         if w in VAR: maak(w, s)
     if 'vel' in wat: vel()

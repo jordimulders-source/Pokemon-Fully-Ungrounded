@@ -620,3 +620,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.159] - Hitmontop-evolutie: gepauzeerd
 - Jordi over hoofd ronde 6: "compleet prutswerk"; daarna "nee laat maar". Het hoofd is gepauzeerd; pose, skelet en vorm liggen vast. Stand van zaken in CLAUDE.md bijgewerkt.
+
+### [v0.0.160] - Hitmontop-evolutie: hoofd ronde 8 (Jordi's recept)
+- Recept van Jordi bij de 3D-referentie: V tussen de ogen naar achteren, flappen samen in een knot (Hitmontops eigen hand + witte polsband), kleinere maar echte stekel, gladde bovenkant. Bron: zijn overworld-kop (rechtop, van voren), met de hand vergroot; ogen van de frontsprite. `docs/concept/sprites/hitmontop_evo/stap4_hoofd/ronde8/`; keurder PASS voor variant 2 rechtop.

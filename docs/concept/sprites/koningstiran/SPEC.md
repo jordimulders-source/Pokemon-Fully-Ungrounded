@@ -105,6 +105,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) "nu is het lichaam links weer net wat teveel weggesneden. en dat maakt gelijk de staf wat gekker, nu kan ik wel zien dat die op de juiste plek naar het lichaam gaat, dus zo slecht is dat niet. Het gele vlak in het midden heeft wel nog steeds een rare vorm, die mag nog wta ronder, aan de rechterkant is het beter, maar mag die nog een klein beetje dunner, we komen dichtbij nu. Poten ook netter afgewerkt" → poten bevroren (goed); ronde 7: lijf links voller, buik ronder en rechts iets dunner.
 
+- (7 nov) "En de bovenkant van de staf moet nog mooier, dat is nu best lelijk afgewerkt, misschien dat we daar een soort van uiteinde van de staart idee van kunnen maken, dat het echt hybride staart en staf is" → ronde 7: stafkop als staartveer-uiteinde/scepterkop.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

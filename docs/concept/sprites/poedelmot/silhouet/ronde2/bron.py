@@ -4,6 +4,8 @@ pitch 8, zelfde kader als poppetje_45_1x.png). Rendert op 768 (12x12 subpixels p
 - dekking_zonder_poten.npy + model50.txt: massa zonder poten (lijf, kop, wol, vleugels, sprieten) op de 50%-grens
 - delen.npy: per spritepixel het onderdeel met de meeste dekking (0 leeg, 1 lijf/wol, 2 kop, 3 oog, 4 spriet,
   5 voorvleugel, 6 achtervleugel, 10+i poot i van POTEN)
+- dekking_kaal.npy: zonder poten en zonder sprieten (basis waarop de sprieten met tanden met de hand komen)
+- spriet_as.npy: as en tandpunten van beide sprieten in spritepixels (nabij, ver)
 - poten_ref.npy: dekking per poot (6 x 64 x 64), alleen als plek- en maatgids voor de handgetekende poten
 - onderlaag_512.png: render (8x) als onderlaag voor de vellen
 Draaien vanuit de repo-root: python3 docs/concept/sprites/poedelmot/silhouet/ronde2/bron.py"""
@@ -40,6 +42,8 @@ if __name__ == '__main__':
     cov = blok(gid2 >= 0); np.save(os.path.join(HERE, 'dekking_zonder_poten.npy'), cov)
     M = cov >= 0.5
     open(os.path.join(HERE, 'model50.txt'), 'w').write('\n'.join(''.join('#' if v else '.' for v in r) for r in M) + '\n')
+    m3 = P.Model(); m3.parts = [p for p in m2.parts if not p[3].startswith('spriet')]
+    np.save(os.path.join(HERE, 'dekking_kaal.npy'), blok(L.render(m3, Q.YAW, 8, scale, ctr)[1] >= 0))
     lab = np.zeros(gid2.shape, np.int16)
     for g, v in GROEP.items():
         if g in gr2: lab[gid2 == gr2.index(g)] = v

@@ -16,48 +16,48 @@ from PIL import Image, ImageDraw
 
 OX, OY = 22, 10          # plek van het hoofd (x0,y0 van het raster hieronder) in het 64-vak
 OOG = [".ff.", "f1ff", "ffff", ".ff."]       # Hitmontops frontsprite-oog (anim_front), pixel voor pixel
-# omtrek per rij (links, rechts) van de koepel na het gladmaken (stap 3); y0 = bovenkant koepel (onder de stekel)
-OMTREK = {0: (5, 16), 1: (3, 18), 2: (2, 19), 3: (1, 20), 4: (1, 20), 5: (0, 21), 6: (0, 21), 7: (0, 21), 8: (0, 21),
-          9: (0, 21), 10: (0, 21), 11: (0, 21), 12: (0, 21), 13: (1, 20), 14: (1, 20), 15: (2, 19), 16: (3, 18), 17: (5, 16)}
-STEKEL_GROOT = [(10, ['ff']), (9, ['f34f']), (9, ['f34f']), (8, ['f3234f']), (8, ['f3334f']), (7, ['f333344f'])]
-STEKEL_KLEIN = [(10, ['ff']), (9, ['f34f']), (8, ['f3234f'])]
+# omtrek per rij (links, rechts) na het gladmaken (stap 3), naar de verdubbelde OW-kop: ronde koepel, stekel als
+# smallere punt erbovenop (holle overgang, zoals in hitmontop_3d.webp), wangen recht omlaag naar een ronde kin.
+KOEPEL = {1: (5, 16), 2: (3, 18), 3: (2, 19), 4: (1, 20), 5: (0, 21), 6: (0, 21), 7: (0, 21), 8: (0, 21), 9: (0, 21),
+          10: (0, 21), 11: (0, 21), 12: (0, 21), 13: (0, 21), 14: (0, 21), 15: (1, 20), 16: (1, 20), 17: (2, 19),
+          18: (3, 18), 19: (5, 16)}
+STEKEL_GROOT = {0: (7, 14), -1: (8, 13), -2: (9, 12), -3: (9, 12), -4: (9, 12), -5: (10, 11)}   # OW: 1, 3, 3, 3, breder
+STEKEL_KLEIN = {0: (8, 13), -1: (9, 12), -2: (10, 11)}                                           # middelste rijen eruit
 
 
 def koepel(stekel):
+    rij = dict(KOEPEL); rij.update(stekel)
     d = {}
-    for y, (a, b) in OMTREK.items():
+    for y, (a, b) in rij.items():
         for x in range(a, b + 1): d[(x, y)] = 3
-    for y, (a, b) in OMTREK.items():          # omtrek: zwart, ook boven/onder
-        for x in range(a, b + 1):
-            if (x, y - 1) not in d or (x, y + 1) not in d or x in (a, b): d[(x, y)] = 15
-    # licht linksboven (sikkel), schaduw rechtsonder
-    for p in [(6, 1), (7, 1), (8, 1), (9, 1), (4, 2), (5, 2), (6, 2), (7, 2), (3, 3), (4, 3), (5, 3), (2, 4), (3, 4), (2, 5)]: d[p] = 2
-    for y in range(4, 15): d[(20 if y < 13 else 19, y)] = 4 if d[(20 if y < 13 else 19, y)] != 15 else 15
     for (x, y) in list(d):
-        if d[(x, y)] == 3 and ((x >= 19 and 6 <= y <= 14) or (y == 16 and x >= 5) or (y == 15 and x >= 14) or (x == 18 and 12 <= y <= 15)):
-            d[(x, y)] = 4
-    for p in [(13, 16), (14, 16), (15, 16), (16, 16), (17, 15), (18, 15)]: d[p] = 5
-    # stekel op de koepel (rij -n boven y0); voet loopt zonder lijn in de koepel over
-    n = len(stekel)
-    for j, (x0, r) in enumerate(stekel):
-        y = j - n + 1 if False else j - n
-        for i, c in enumerate(r[0]): d[(x0 + i, y + 1)] = CH.index(c)
-    for x in range(8, 14): d[(x, 0)] = 3 if x < 13 else 4
+        if any(q not in d for q in ((x + 1, y), (x - 1, y), (x, y + 1), (x, y - 1))): d[(x, y)] = 15
+    # licht linksboven als sikkel langs de omtrek; schaduw (4) als sikkel rechtsonder, 5 diep rechtsonder
+    for (x, y) in list(d):
+        if d[(x, y)] != 3: continue
+        rand = [q for q in ((x - 1, y), (x, y - 1), (x - 1, y - 1)) if d.get(q) == 15]
+        if rand and x <= 9 and y <= 8: d[(x, y)] = 2
+        onder = [q for q in ((x + 1, y), (x, y + 1), (x + 1, y + 1)) if d.get(q) == 15]
+        if onder and (x >= 13 or y >= 16): d[(x, y)] = 4
+    for (x, y) in list(d):
+        if d[(x, y)] == 3 and any(d.get(q) == 4 for q in ((x + 1, y), (x, y + 1))) and x + y >= 31: d[(x, y)] = 4
+    for (x, y) in list(d):
+        if d[(x, y)] == 4 and x + y >= 34 and any(d.get(q) == 15 for q in ((x + 1, y), (x, y + 1))): d[(x, y)] = 5
     return d
 
 
 def gezicht(d, v_y=None):
-    for (ex, ey) in ((5, 8), (13, 8)):
+    for (ex, ey) in ((5, 10), (13, 10)):
         for j, r in enumerate(OOG):
             for i, c in enumerate(r):
                 if c != '.': d[(ex + i, ey + j)] = CH.index(c)
-    for x in range(8, 14): d[(x, 14)] = 5                      # mondstreepje
+    for x in range(8, 14): d[(x, 16)] = 5                      # mondstreepje
     return d
 
 
 # V (voorrand van de flappen): in Hitmontop vlak boven de ogen met de punt ertussen; hier per rij (x, kleur)
-V_OUD = {(10, 7): 15, (11, 7): 15, (9, 6): 5, (12, 6): 5, (8, 6): 5, (13, 6): 5, (7, 7): 5, (14, 7): 5,
-         (6, 7): 5, (15, 7): 5, (5, 7): 4, (16, 7): 4}                             # flapranden boven de ogen
+V_OUD = {(10, 9): 15, (11, 9): 15, (9, 8): 5, (12, 8): 5, (8, 8): 5, (13, 8): 5, (7, 9): 5, (14, 9): 5,
+         (6, 9): 5, (15, 9): 5, (5, 9): 4, (16, 9): 4}                             # flapranden boven de ogen
 V_NIEUW = {(10, 5): 15, (11, 5): 15, (9, 4): 5, (12, 4): 5, (8, 3): 5, (13, 3): 5, (7, 3): 5, (14, 3): 5,
            (6, 2): 4, (15, 2): 4}                                                  # naar achteren getrokken
 
@@ -67,9 +67,9 @@ def hoofd(stap, var=1):
     gezicht(d)
     if stap < 4:
         # Hitmontop: flappen hangen opzij (breed), V boven de ogen
-        for y in range(5, 13):
+        for y in range(6, 15):
             for x in (-1, -2, 22, 23):
-                d[(x, y)] = 15 if (x in (-2, 23) or y in (5, 12)) else 4
+                d[(x, y)] = 15 if (x in (-2, 23) or y in (6, 14)) else 4
         d.update(V_OUD)
         return d
     d.update(V_NIEUW)
@@ -85,8 +85,8 @@ BAND = ['c11c', 'dccd']                              # zijn polsband (wit midden
 
 def knot(d, var):
     """knot achter de koepel: hand eerst (achter), koepel eroverheen; band tussen knot en kop, zichtbaar."""
-    if var == 1: hx, hy, band = -6, -4, [(x, y) for x in (-1, 0) for y in range(-2, 2)]
-    else:        hx, hy, band = -8, 4, [(x, y) for x in (-2, -1) for y in range(5, 9)]
+    if var == 1: hx, hy, band = -4, -4, [(x, y) for x in (2, 3) for y in range(-1, 3)]
+    else:        hx, hy, band = -6, 11, [(x, y) for x in (-1, 0) for y in range(13, 17)]
     for (x, y), i in HAND.items():
         q = (hx + x, hy + y)
         if q not in d: d[q] = i

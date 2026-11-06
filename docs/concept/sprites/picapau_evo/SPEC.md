@@ -60,3 +60,4 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 
 ## Model r4 (6 nov)
 - `blender/r4/` (V2 gekozen: lijf 35°, kop +5°): leest als vogel (lijster/roodborst), niet imposant; oren op 1× een zwarte vlek; poten dun en naast elkaar; staartlus + bliksem nemen veel frame. Voorstel: lijf voorover (Talonflame-diagonaal), vleugels hoger en breder, bliksem iets kleiner, grote voeten met klauwen.
+- Jordi over r4: **"ja nu komen we ergens! de snavel mag open, dat geeft wat karakter. Vergeet mijn eerdere instructies over de oren, die mogen dunner en wat verder doorkrullen, iets meer zoals de onderkant van de oren van raichu"** + "ja" op de imposant-ronde → r5: voorover, vleugels hoger/breder, bliksem iets kleiner, grote klauwen; snavel open; oren dunner met doorlopende spiraal (oude maatgrens vervalt).

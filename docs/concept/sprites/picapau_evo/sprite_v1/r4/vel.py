@@ -1,4 +1,4 @@
-"""Vel: 1x-rij en 8x-rij met sprite r3 naast r2, Picapau (af), Taillow, Staraptor, Raichu Gen 1 en de r5-render.
+"""Vel: 1x-rij en 8x-rij met sprite r4 naast r3, r2, Picapau (af), Taillow, Staraptor, Raichu Gen 1 en de r5-render.
 Draaien: python3.11 vel.py [uit.png]"""
 import sys
 from PIL import Image, ImageDraw
@@ -12,7 +12,7 @@ def png(p, crop=None):
                 if px[x, y] == bg: px[x, y] = (0, 0, 0, 0)
     im = im.convert('RGBA')
     return im.crop(crop) if crop else im
-items = [('sprite r3', png('picapau_evo.png')), ('sprite r2', png('../r2/picapau_evo.png')),
+items = [('sprite r4', png('picapau_evo.png')), ('sprite r3', png('../r3/picapau_evo.png')), ('sprite r2', png('../r2/picapau_evo.png')),
          ('Picapau (af)', png('../../../picapau/af/picapau.png')), ('Taillow', png(G + 'taillow/anim_front.png', (0, 0, 64, 64))),
          ('Staraptor', png(G + 'staraptor/anim_front.png', (0, 0, 64, 64))),
          ('Raichu Gen 1', png('../../referenties/jordi_inspiratie_raichu_gen1.png').resize((64, 64), Image.NEAREST)),

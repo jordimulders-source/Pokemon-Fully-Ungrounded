@@ -10,5 +10,5 @@ for n, l in enumerate(open('tekening.txt'), 1):
         if x + i > 63: print(f'regel {n}: buiten beeld x={x+i}'); continue
         if R[y][x + i] != '.' and R[y][x + i] != c: print(f'regel {n}: ({x+i},{y}) {R[y][x+i]} (regel {bron[(x+i,y)]}) -> {c}')
         R[y][x + i] = c; bron[(x + i, y)] = n
-open('raster.txt', 'w').write('# sprite r3, 64x64, één teken per paletkleur (palet.py)\n' + '\n'.join(''.join(r) for r in R) + '\n')
+open('raster.txt', 'w').write('# sprite r4, 64x64, één teken per paletkleur (palet.py)\n' + '\n'.join(''.join(r) for r in R) + '\n')
 print('raster.txt', sum(c != '.' for r in R for c in r), 'px')

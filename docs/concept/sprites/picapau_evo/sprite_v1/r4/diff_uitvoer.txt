@@ -1,0 +1,4 @@
+zones: {'POTEN': (14, 46, 38, 55), 'VERRE_PUNTEN': (35, 2, 45, 14)}
+alpha-diff (omtrek) per gebied: {'VERRE_PUNTEN': 8, 'POTEN': 46}
+alpha-diff BUITEN de zones: 0
+kleurwijzigingen (zelfde omtrek) per gebied: {'VERRE_PUNTEN': 25, 'buiten': 90, 'POTEN': 35}

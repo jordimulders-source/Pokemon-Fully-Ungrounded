@@ -170,3 +170,11 @@ P t 162 82 42
 58 30 agaK
 59 30 agaK
 60 30 agaK
+# ==== ronde 6b: geen losse sliert; staf komt 1-2 rijen onder de vleugelpunt uit en verdwijnt in een korte boog achter het lijf ====
+46 14 KKKKKdd
+47 14 tttttddd
+48 14 __Ktttdd
+49 14 ___Kddddd
+50 15 ____Kdddd
+51 16 _____Kddd
+52 19 ____K

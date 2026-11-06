@@ -40,14 +40,14 @@ def stap1():
       "FFFF"])
     txt(g,26,34,["FFFF"])
     # 1c. kop verplaatsen: 7 naar links, 6 omlaag (laag naast de steunarm)
-    DX,DY=-7,6
+    DX,DY=-9,4
     for y in range(64):
         for x in range(64):
             if head[y][x] and 0<=x+DX<64 and 0<=y+DY<64: g[y+DY][x+DX]=head[y][x]
     # kin dicht (waar de oude romp op de kop zat) en een nek naar de romp
-    txt(g,17,40,["FFFFFF"])
-    for i,y in enumerate(range(35,41)):
-        txt(g,29-i,y,["F2334F"])
+    txt(g,15,38,["FFFFFF"])
+    for y,x in zip(range(35,39),(28,27,26,24)):
+        txt(g,x,y,["F2334F"])
     # 1d. steunarm recht omlaag vanaf de rechterschouder, met Hitmontops eigen hand en polsband
     for y in range(34,56):
         txt(g,38,y,["F5334F"])
@@ -104,9 +104,8 @@ def stap2(g=None):
       "F522233343333344F.",
       ".F5334F2334FFFF4F.",
     ])
-    for i,y in enumerate(range(37,41)):
-        txt(g,28-i,y,["F2334F"])
-    txt(g,24,41,["334"])
+    txt(g,22,37,["__F233334F"])
+    txt(g,20,38,["__F2333334F"])
     # 2d. Hitmontops eigen voeten, met de hand verkleind (±0,68), met zijn grijze enkelband
     txt(g,0,0,[
       ".........DE..",
@@ -134,7 +133,31 @@ def stap2(g=None):
     ])
     return g
 
+def stap3(g=None):
+    g=g or stap2()
+    O=-2   # kop staat 2 px verder links dan in de analyse (DX -9 i.p.v. -7)
+    def X(x): return x+O
+    # 3a. het bovenste deel van Hitmontops rand (naast kaak/kin) is wang: haar daar weg, rand wordt huidlijn
+    bx={41:17,42:16,43:16,44:15,45:15}
+    for y in (38,39,40):
+        for x in range(X(4),X(17)): g[y][x]=0
+    for y,b in bx.items():
+        for x in range(X(4),X(b)): g[y][x]=0
+        g[y][X(b)]=5
+    # 3b. het onderste deel van de rand blijft (Game Freaks pixels), alleen links ingekort: daaruit groeien de lokken
+    rootL={46:12,47:11,48:10,49:10,50:11,51:12,52:14,53:16}
+    for y,r in rootL.items():
+        for x in range(X(4),X(r)): g[y][x]=0
+        if g[y][X(r)] not in (15,): g[y][X(r)]=5
+    txt(g,X(12),45,["555"])
+    # 3c. dikke gedraaide lokken die met de zwaartekracht naar de grond hangen (afro/Eddy Gordo), zelfde bruintinten
+    lock(g,X(8),48,58,phase=0)
+    lock(g,X(11),51,60,phase=2,left=15)
+    lock(g,X(14),53,59,phase=1,left=15)
+    return g
+
 if __name__=='__main__':
     g=stap1(); save(g,os.path.join(HERE,'stap1.png'))
     g=stap2(); save(g,os.path.join(HERE,'stap2.png'))
+    g=stap3(); save(g,os.path.join(HERE,'stap3.png'))
     print(dump(g))

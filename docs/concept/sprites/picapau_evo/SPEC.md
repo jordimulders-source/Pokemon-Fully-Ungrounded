@@ -76,3 +76,4 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 - Jordi: **"ja pidgeot toont hoe het moet"** → Pidgeot (Gen 3-front) is het voorbeeld voor draai, beide vleugels en ogen.
 - Jordi bij r7pose: **"ga gewoon een sprite maken aub"** · **"zitten we weer uren aan het model te werken"** → geen modelwerk meer; sprite r5 van R3.
 - Jordi: **"r2 trouwens, onderste, alleen snavel moet nog licht open"** → bron = r7pose R2 (render), snavel licht open (smalle mondspleet).
+- Jordi over sprite r5: **"de snavel zijn rechte lijnen, dat lijkt me niet de bedoeling. De krullen bovenop het hoofd zijn links ook weggevallen. Verder mag die nog iets meer achterover leunen, buiten dat vind ik het al goed in de buurt komen"** → r6 (alleen in de sprite): kromme, tapse snavel; krul ook aan het linkeroor; bovenlijf ±6–10° achterover.

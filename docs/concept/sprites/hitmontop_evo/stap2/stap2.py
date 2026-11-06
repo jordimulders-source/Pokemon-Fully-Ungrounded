@@ -26,6 +26,8 @@ def laad(n):
 TOP, LEE = laad('hitmontop'), laad('hitmonlee')
 HAND = TOP.crop((9, 27, 17, 36))
 VOET = TOP.crop((40, 13, 56, 24))     # Hitmontops voet in zijaanzicht, klauwen naar rechts
+VOET_L = TOP.crop((3, 6, 22, 27))      # Hitmontops linker bovenvoet; enkelstompje rechtsonder
+VOET_L_ENKEL = (18, 13)                # plek van dat stompje in de uitsnede
 
 
 def maak(L, hoofd_r):
@@ -42,10 +44,11 @@ def maak(L, hoofd_r):
 BASIS = dict(pols=2, elleboog=7, schouder=7, nek=3, kop=7, heup=15, v_schouder=7, v_elleboog=6, v_pols=6, v_hand=3,
              knie1=11, enkel1=10, voet1=3, knie2=11, enkel2=10, voet2=3, koord=7)
 BASIS = dict(BASIS, elleboog=8, schouder=8, nek=3, kop=9, heup=20, v_schouder=9, v_elleboog=7, v_pols=7)
+BASIS = dict(BASIS, v_pols=9)   # vrije hand bij de riem (keuring stap 2)
 OPTIES = {
-    'D: benen 24, romp 20, kop 18, arm 18': maak(BASIS, 9),
-    'E: steviger: benen 22, romp 22, kop 20': maak(dict(BASIS, heup=22, knie1=11, enkel1=9, knie2=11, enkel2=9, kop=10), 10),
-    'F: benen 26 (= Hitmonlee), romp 20, arm 20': maak(dict(BASIS, elleboog=9, schouder=9, knie1=12, enkel1=12, knie2=12, enkel2=12), 9),
+    'D14: benen 24, romp 20, kop 14': maak(dict(BASIS, kop=6), 7),
+    'D16: benen 24, romp 20, kop 16': maak(dict(BASIS, kop=7), 8),
+    'E16: steviger: benen 22, romp 22, kop 16': maak(dict(BASIS, heup=22, knie1=11, enkel1=9, knie2=11, enkel2=9, kop=7), 8),
 }
 KLEUR = sk['KLEUR']; SEG = sk['SEG']
 
@@ -53,8 +56,8 @@ KLEUR = sk['KLEUR']; SEG = sk['SEG']
 def plaats(Q, r):
     """schuif zo dat de hand op de grond staat (y=59) en het geheel horizontaal gecentreerd is."""
     xs = [p[0] for p in Q.values()] + [Q['kop'][0] - r]
-    ox = 32 - (min(xs) + max(xs)) / 2
-    oy = 59 - Q['hand'][1]
+    ox = 34 - (min(xs) + max(xs)) / 2
+    oy = 58 - Q['hand'][1]
     return {k: (x + ox, y + oy) for k, (x, y) in Q.items()}
 
 
@@ -73,7 +76,8 @@ def bouw(Q, r):
     plak(im, HAND, *Q['hand'])
     plak(im, HAND, *Q['v_hand'])
     # voet 1 (been naar linksboven): gespiegeld, klauwen naar links; voet 2 (rechtsboven): zoals bij Hitmontop, enkel onder
-    plak(im, VOET.transpose(Image.FLIP_LEFT_RIGHT), *Q['voet1'])
+    ex, ey = Q['enkel1']
+    im.alpha_composite(VOET_L, (int(round(ex - VOET_L_ENKEL[0])), int(round(ey - VOET_L_ENKEL[1]))))
     plak(im, VOET, *Q['voet2'])
     return im
 
@@ -84,7 +88,9 @@ def main():
     for naam, (Q, r) in OPTIES.items():
         q = plaats(Q, r)
         im = bouw(q, r)
-        im.save(os.path.join(HERE, 'optie_%s.png' % naam[0]))
+
+        im.save(os.path.join(HERE, 'optie_%s.png' % naam.split(':')[0]))
+        a = im.getchannel('A').getbbox(); print(naam, 'bbox', a)
         tiles.append((naam, im))
     vel = Image.new('RGB', (20 + (W + 20) * 3, W + 220), (235, 235, 240))
     d = ImageDraw.Draw(vel)

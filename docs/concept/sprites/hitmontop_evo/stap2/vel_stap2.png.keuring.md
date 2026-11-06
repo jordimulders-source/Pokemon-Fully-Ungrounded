@@ -45,3 +45,20 @@ Bekeken: 8× (vel), 1× en 2× (onderaan het vel, naast Hitmontop en Hitmonlee).
 **Optie D** (benen 24, op Hitmonlee-lengte), met de kleinere kop. E is een goede tweede als Jordi het nog compacter wil (benen duidelijk korter dan Hitmonlee, maar de grotere kop Ø20 maakt hem juist kopzwaarder; dan ook de kop verkleinen). F valt af: langer dan Hitmonlee en tegen de bovenrand.
 
 Oordeel: FAIL
+
+## Herkeuring (D14, D16, E16)
+Bron: `stap2/vel_stap2.png` (nieuw), `optie_D14.png`, `optie_D16.png`, `optie_E16.png`, `stap2.py`; D14 apart op 8× bekeken, 1× en 2× op het vel. Bbox gemeten: D14 x 2–60, y 1–62; D16 x 3–61, y 1–62; E16 x 4–61, y 0–62.
+
+| NODIG | Lijkt op / wijkt af in | Status |
+|---|---|---|
+| 1. Voet 1 aan de enkel | Lijkt op: Hitmontops linker bovenvoet, enkelstompje rechtsonder op enkel1, het scheenbeen loopt er in rechte lijn in; de bol ligt in het verlengde van het been. Wijkt af in: deze voet toont de zool (bruine pad) en is ±19×20 tegen ±16×11 voor voet 2. Leest als "voet naar de kijker", net als bij Hitmontop zelf; geen probleem. | opgelost |
+| 2. Kop kleiner | D14: Ø14, duidelijk kleiner dan de romp (20); met afro blijft er ruimte. D16/E16: Ø16, op de grens als het haar er nog omheen komt. | opgelost |
+| Vrije hand (polijsten) | 3 px richting riem; zit nu tussen borst en heup, los van het koord. | goed genoeg |
+
+Toets opnieuw: (1) alle drie lezen op 1× als eenarmige handstand met V; (2) benen D 24 ≈ Hitmonlee, E 22 korter, kop niet meer dominant; (3) handen en beide voeten op de eindpunten, enkels naar het been; (4) past, maar **boven 0–1 px en links 2–4 px marge** door de grote zoolvoet en de klauwpunt bovenop; (5) geen nieuwe rare dingen.
+
+POLIJSTEN (bij de stap waarin de voeten verkleind worden, zoals de SPEC vraagt): marge boven en opzij weer ≥ 4 px; de klauwpunt bovenop voet 1 raakt nu de rand (E16 op y 0). Bij verkleinen beide voeten in dezelfde maat houden, de zoolvoet hooguit 1–2 px groter.
+
+Advies: **D14** (Hitmonlee-benen, kop Ø14 laat ruimte voor het afrohaar en houdt de romp het grootste volume). D16 als het haar in de cirkel zit.
+
+Oordeel: PASS

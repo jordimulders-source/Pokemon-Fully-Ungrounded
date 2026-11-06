@@ -200,7 +200,8 @@ KR = (8.2, 7.6, 7.8)                   # r3 (10.1, 9.7, 9.8): kop in verhouding 
 OOR_F = 1.0                            # oormaat (Jordi eerder: "too much", "te wit, te groot": op 1x niet groter dan r2)
 
 SNAVEL_HOEK = 6; SNAVEL_L = 15.5
-TWEE_OGEN = False       # beitelsnavel (lengte vanaf de basis in de kop)
+TWEE_OGEN = False
+VERRE_OPEN = 0.0     # graden; r7pose: verre vleugel naar buiten klappen       # beitelsnavel (lengte vanaf de basis in de kop)
 
 def kop_matrix(kop_draai, kop_kantel=0.0):
     """kop-lokaal -> lijf: draai om Z (naar de kijker) en een kleine kanteling, rond NEK"""
@@ -226,6 +227,11 @@ def vleugel(s, schuif=(0.0, 0.0, 0.0)):
     Elke hogere laag ligt 0,8 BU dichter naar de kijker (-Y), zodat de randen als lagen over elkaar lezen."""
     o = np.array(schuif, float)
     S = np.array([1.0, s * 7.5, 3.0]) + o; P = np.array([5.0, s * 17.0, 21.0]) + o; Q = np.array([29.0, s * 22.5, 13.0]) + o   # r5: hoger, breder open
+    if s > 0 and VERRE_OPEN:     # r7pose: verre vleugel om de schouder (as X) naar buiten geklapt, zoals Pidgeot links achter de kop
+        h = math.radians(VERRE_OPEN); c_, s_ = math.cos(h), math.sin(h)
+        def klap(p):
+            d = p - S; return S + np.array([d[0], d[1] * c_ + d[2] * s_, -d[1] * s_ + d[2] * c_])
+        P = klap(P); Q = klap(Q)
     e1 = (P - S) / np.linalg.norm(P - S); nn = np.cross(P - S, Q - S); nn /= np.linalg.norm(nn)
     if nn[1] > 0: nn = -nn                        # nn wijst naar de kijker (-Y)
     e2 = np.cross(nn, e1)

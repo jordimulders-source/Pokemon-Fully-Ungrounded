@@ -97,6 +97,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Ronde 5b: zwarte klont weg (45 px binnen de zone, 0 erbuiten); vleugelpunt in vleugeltinten, flank in schaduwtint, zwart alleen als onderrand. Open: vleugelpunt iets lichter dan de bovenarm.
 
+- (7 nov) Krabbel `referenties/krabbel_jordi_lijf_staf.png` (rode lijnen = gewenste omtrek, rood puntje = onnodige bruine pixels): "ja nu heb je er een paar bruine pixels neergezet. De staf is een rechte streep die nog steeds achter zijn vleugel lijkt te zitten, omdat die dus niet over de vleugel heen overlapt, dat moet een klein beetje, totdat die hem vast pakt. Daarnaast is het ook weer een rechte lijn als die achter zijn lichaam verdwijnt, ook niet mooi. Het lichaam zelf is ook niet zo goed, is wat teveel uitgedijt en dus niet mooi een ovalerige afwerking. Plus de gele buik is nu een soort van ballonvorm met tuitje geworden. De poten zijn nog niet netjes afgewerkt qua kleur en schaduw. Ik heb een rood puntje gezet op de onnodige bruine pixels" → ronde 6 (maker).
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

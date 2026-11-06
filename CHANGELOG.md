@@ -632,3 +632,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.163] - Hitmontop-evolutie: hoofd ronde 9b (Jordi's doorgekruiste punten)
 - Ogen: zwarte cirkel met witte cirkel erin (zoals het concept); mond: dunne lijn in de donkere huidtint zonder stippen; knot: volle bal achter de kop, de zwarte knip eronder weg. Verder niets veranderd.
+
+### [v0.0.164] - Hitmontop-evolutie: model in de pose (Gemini)
+- Jordi maakte met Gemini een volledig model van de evolutie in de pose (handstand, V-split, kop met knot en kleine stekel); v2 kreeg een ronde steunhand, v3 een gladde buisarm. `referenties/model_gemini_pose_v3.png` is de bevroren bron voor de sprite; Stand van zaken bijgewerkt.

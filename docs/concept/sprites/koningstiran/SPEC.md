@@ -129,7 +129,7 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Eindkeuring (`EINDKEURING.md`): 20 PASS, 11 FAIL, nog niet af. Ronde 13 (op 12, palet gelijk): top 5 uitgevoerd (ogen/snavel 6 px, banding flank 22, hooglicht romp 10, stafpunt 12, opschonen 12); 62 px, 0 erbuiten. Open voor Jordi: kop groter (silhouet), kroontrapjes rechtsboven, stafpunt over één kroonvlek.
 
-- (7 nov) Over ronde 13, krabbel `referenties/krabbel_jordi_staf_overgang.png` (rode lijn linksonder): "minder mooi, het stuk met de rode lijn komt niet goed over, doordat het lichaam in die staf over gaat en de staf/staart daar maar 1 kleur is, evenals het uiteinde van de staf, die is nu gewoon weggeknipt" → ronde 14.
+- (7 nov) Over ronde 13, krabbel `referenties/krabbel_jordi_staf_overgang.png` (rode lijn linksonder): "minder mooi, het stuk met de rode lijn komt niet goed over, doordat het lichaam in die staf over gaat en de staf/staart daar maar 1 kleur is, evenals het uiteinde van de staf, die is nu gewoon weggeknipt" → ronde 14. Aanvulling: "en de poten plus ertussenin is slordig" / "evenals het linkeroog".
 
 ## Afgekeurd
 - Ronde 11 (7 nov): "veel slechter. de rechtervleugel is opeens veel te klein en klopt helemaal niet meer met het lichaam qua kleur en belijning. linkerkant van het hoofd is helemaal vervaagd met een rare bruine lijn eronder". Oorzaak: nieuw palet veranderde 1443 px tegelijk (vleugel, kroon, lijf) + kopvergroting. Terug naar ronde 10; ronde 12 = ronde 10 + alleen de goudstaf (18 px).

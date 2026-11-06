@@ -1,0 +1,2 @@
+variant 1 rechtop: 418 px, 247 eigen Hitmontop-pixels (59%), breed 23
+variant 2 rechtop: 421 px, 253 eigen Hitmontop-pixels (60%), breed 32

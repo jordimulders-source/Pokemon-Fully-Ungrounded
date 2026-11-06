@@ -639,3 +639,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.165] - Hitmontop-evolutie: silhouet stap 1 uit model v3
 - `docs/concept/sprites/hitmontop_evo/silhouet_v3/`: masker direct uit het bevroren model `model_gemini_pose_v3.png` (lokale achtergrondschatting, grondschaduw weg, witte enkel rechts dichtgemaakt), naar 64×64 verkleind (63 px hoog, hand op de grond). Geen agents (Jordi).
 - **A** = puur het model; **B** = "minder mens" volgens SPEC: lijf gedrongener (romp ±3 px korter langs zijn as; kop en steunarm staan exact stil). Vel: `vel_stap1.png` (model, rode omtrek over het model, A en B op 8×).
+
+### [v0.0.166] - Hitmontop-evolutie: silhouet stap 2 (meer Hitmon, minder mens)
+- Jordi: "het hoofd moet iets groter, de benen net wat korter en de voeten net wat groter, hij moet minder op een mens en meer op een hitmon lijken, handen dus ook iets groter".
+- `silhouet_v3/stap2.py`: per lichaamsdeel op het grote masker van model v3: kop ×1,15 (vanuit de nek), handen ×1,3 (steunhand blijft op de grond), voeten ×1,22, benen ±9% korter (alleen het onderbeen; de voet schuift mee). Daarna weer passend op 64×64.
+- **C** = A + aanpassingen, **D** = B (gedrongen romp) + aanpassingen. Vel: `silhouet_v3/vel_stap2.png`.

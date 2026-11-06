@@ -46,3 +46,4 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 ## Model ronde 2 (6 nov)
 - `blender/r2/` (C2). Jordi: **"de oren en staart zijn geen raichu staart"**.
 - Bron nu de echte Raichu: `referenties/raichu_gen3_8x.png` + Gen 1. Staart = dunne donkere koord (1–2 px) in een krul/lus met een grote platte bliksem als eind (niet de dikke pluim met kleine bliksem van C2). Kuif = Raichu-oorvorm: brede driehoek, donkere buitenkant, lichtere binnenkant, dunne krul aan de punt; maat zoals C2 ("too much", "te wit, te groot" blijven gelden). Ronde 3: alleen kuif en staart, rest van C2 bevroren.
+- Jordi: **"nee de gen 1 raichu sprite moet je ook naar kijken"** → Gen 1 (`jordi_inspiratie_raichu_gen1.png`) is de hoofdbron, Gen 3 aanvulling. Gen 1-staart: brede donkere S (±3–4 px op 64) die om het lijf loopt, grote schuine bliksem linksonder; Gen 1-oren: lichte binnenkant, punt eindigt in een spiraal/krul.

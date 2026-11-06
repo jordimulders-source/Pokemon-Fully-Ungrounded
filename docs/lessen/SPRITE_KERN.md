@@ -22,6 +22,7 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 - **Netheid**: per kleurgroep ≤ 3 tinten + omlijning; geen tintvlakjes < 3 px (clusterscript) behalve glans; grenzen als vloeiende curven, geen trapjes, geen banding (tinten parallel aan de rand), geen pillow shading; licht linksboven, schaduw als sikkel die de vorm volgt.
 - **Contrast**: helderheidsstappen meten tegen Taillow (±30–40 per tint).
 - **Belijning**: buitenlijn 1 px; zwart alleen aan de schaduwkant, gekleurde selout aan de lichtkant; **nooit zwart en donkerlila om en om op één rand**; binnenlijnen alleen waar vorm over vorm valt, in een donkere tint van het vlak, taps; geen open randen, geen lichte kleur op de buitenrand.
+- **Stuurt Jordi een referentie, dan is díe de hoofdbron** (picapau-evo, 6 nov: Gen 3 Raichu gepakt i.p.v. zijn Gen 1 → "nee de gen 1 raichu sprite moet je ook naar kijken"); andere sprites alleen als aanvulling.
 - **Ogen**: neem een oog pixel voor pixel over van een echte sprite (zelf tekenen of opblazen geeft "geen Pokémon-oog"/"monster").
 - **Pootjes/ledematen**: in perspectief (verre hoger en achter, nooit op één lijn naast elkaar), omlijnd, verre in schaduwtint; kleine vogelpootjes echt klein.
 - **Vorm**: geen rechte stukken waar het dier rond is (buikrand!), geen knikken; snavel/dunne delen ≥ 2 px als het moet lezen.

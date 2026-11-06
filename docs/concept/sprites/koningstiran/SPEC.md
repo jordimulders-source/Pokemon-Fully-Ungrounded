@@ -133,6 +133,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Ronde 14 (op 13, palet gelijk): overgang staf/lijf met zwarte scheiding + 3 tinten, stafpunt weer spits (naald over de kroon), poten opgeschoond, verre oog als nabije oog, paarse pixels weg; losse-pixelscan schoon. Naar verse eindkeurder (netheid per onderdeel).
 
+- (7 nov) Tweede eindkeuring (`EINDKEURING2.md`): 7 PASS / 8 FAIL, allemaal netheid (1–5 px); top 5 = 14 px. Ronde 15 (Claude, op 14): die 14 px toegepast (paars in de omlijning, irisveeg, oog/oorschijf-streep, klont onder de hand, spikkels/dubbele rand vleugel, losse pixels kroon en staf); 0 open randen. Open (smaak/bevroren): kroonlap links, buik/linkerdij-scheiding, kopmaat, kroon rechtsboven, staartaanzet 1 px, vleugel zonder slagpenpunten.
+
 ## Afgekeurd
 - Ronde 11 (7 nov): "veel slechter. de rechtervleugel is opeens veel te klein en klopt helemaal niet meer met het lichaam qua kleur en belijning. linkerkant van het hoofd is helemaal vervaagd met een rare bruine lijn eronder". Oorzaak: nieuw palet veranderde 1443 px tegelijk (vleugel, kroon, lijf) + kopvergroting. Terug naar ronde 10; ronde 12 = ronde 10 + alleen de goudstaf (18 px).
 - Stafkop ronde 8 (gouden bol): "ja dat is nu een bol, ik dacht dat je meer voor een puntig uiteinde ging, ga dat maar doen, een puntig einde" → puntige stafkop (ronde 9).

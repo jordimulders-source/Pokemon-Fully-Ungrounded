@@ -49,6 +49,7 @@ Bij `referenties/fanart_mestrimba.png` (fanart van iemand anders, "Mestrimba"; a
 - Stap 3b (Jordi, 6 nov): "ok dit is de vorm", "vanaf hier gaan we alles stap voor stap aanpassen". Bevroren als basis: `stap3b/` (welke optie A–D: navragen).
 - Basis = stap 3b optie C (Jordi: "maakt niet uit welke van de 4"). Stap 4 (Jordi, 6 nov, letterlijk): "we gaan er eerst een goed hoofd op zetten. Gebaseerd op Hitmontop, die maken we zodat die goed past in de hoek en de pose die we van plan zijn. De stekel bovenop het hoofd van Hitmontop wordt iets minder aanwezig en de 'haren' kammen we naar achteren in een klein staartje of knotje, maar het lijkt me niet dat die te zien is in de pose, of juist net wel, voor de rest gaan we nog nergens aan zitten". Aanvulling: "ogen, wenkbrauwen, mond blijven hetzelfde, maar we kunnen een beetje met de uitdrukking spelen". En: "pixel voor pixel is misschien niet mogelijk, vanwege pose en hoek" (zelfde vorm en karakter, met de hand aan de hoek aangepast). Geen ongevraagde stappen (Jordi: "ik heb je helemaal geen instructies gegeven").
 - Hoofd ronde 1 (Jordi): "ja de mond is weg, de stekel is alleen dunner, maar die moet gewoon kleiner in zijn geheel, plus het mag iets duidelijker zijn dat het haar naar achter is gekamd, een knot moet wel duidelijk zijn".
+- Jordi: "de puntige haarrand kammen we naar achteren, dus die is weg" (glad naar achteren gekamd haar met knot, geen punten).
 
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

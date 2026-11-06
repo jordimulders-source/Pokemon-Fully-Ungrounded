@@ -11,6 +11,11 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` + `docs/lessen/SPRITE_KERN.md`. Ach
 - `jordi_1_voelsprieten.png`: alleen de **voelsprieten** (donkere, geveerde sprieten: zwartbruin met lichte middennerf en lichte dwarsstrepen), die vervangen de bruine sprieten van afbeelding 2.
 - `samengesteld.png`: afbeelding 2 met de sprieten van afbeelding 1 erover (zelfde koppositie, ogen op dezelfde pixels).
 
+- (6 nov, letterlijk) "ga je werk heel kritisch keuren voordat je het als af bestempelt, moet echt heel erg lijken op het model, anders is die niet goed"
+- (6 nov, letterlijk) "ja let meer op vormen en belijning dan kleur"
+- (6 nov, letterlijk) "de keurder hoeft niet te kijken wat voor dier het is, de keurder moet alleen kijken naar de accuraatheid tov het oorspronkelijke model, verder verander je NIKS, dat model is perfefct en moet zo accuraat mogelijk vertaald worden, de keurder heeft verder niks te zeggen"
+  → **Enige maatstaf: accuraatheid t.o.v. het model.** Geen stijlkeuring die het model verandert.
+
 ## Besloten
 - Ontwerp en pose = Jordi's afbeelding (bevroren); niets toevoegen of weglaten. Pootjes zoals in afbeelding 2 (niet meer).
 - Silhouet: `silhouet/silhouet.png` (bron direct verkleind, `silhouet/sil.py`; 62×45, 1782 px). Rode omtrek over de bron: `silhouet/silhouet_over_bron.png`. Kleurgids (gemiddelde kleur per pixel, géén sprite): `silhouet/gids_gemiddeld.png`.

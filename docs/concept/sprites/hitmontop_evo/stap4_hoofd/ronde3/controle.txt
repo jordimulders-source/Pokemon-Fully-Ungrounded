@@ -1,0 +1,2 @@
+optie_1M-r3: stand 1, mond 1M, reparaties ronde 3 | buiten zone anders: 0 | zone (x0,y0,x1,y1) (3, 21, 29, 47) (oud hoofd 169 px, nieuw hoofd 482 px)
+optie_1M-r3-knot: idem, knot meer naar achter/boven | buiten zone anders: 0 | zone (x0,y0,x1,y1) (0, 20, 29, 47) (oud hoofd 169 px, nieuw hoofd 494 px)

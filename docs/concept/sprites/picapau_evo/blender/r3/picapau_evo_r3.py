@@ -1,4 +1,9 @@
-"""MODELRONDE 2 (5 nov) van de Picapau-evolutie; ronde 1 = ../picapau_evo.py (blijft zoals het was).
+"""MODELRONDE 3 (6 nov): alleen kuif en staart, naar Raichu Gen 1 (hoofdbron, Jordi: "nee de gen 1 raichu sprite moet je
+ook naar kijken") en Gen 3 (aanvulling). Jordi over C2: "de oren en staart zijn geen raichu staart". De rest = ronde 2 (bevroren).
+- kuif: platte driehoekige oren (prisma, scherpe vorm), kastanje buitenkant, gedempt lichte binnenkant, spiraal aan de punt
+- staart: dikke donkerbruine koord in een S om het lijf, eindigend in een grote platte bliksem linksonder (prisma, scherpe hoeken)
+Hieronder de kop van ronde 2:
+MODELRONDE 2 (5 nov) van de Picapau-evolutie; ronde 1 = ../picapau_evo.py (blijft zoals het was).
 Reparaties (coördinator, op basis van stand C): 1 kuif = brede platte veerkuiven (kastanje basis, crème top, alleen
 het bovenste derde krult); 2 imposanter: borst hoger/voller, kop groter, lijf minder ei-op-pootjes, vleugels groter en
 breder gespreid met 4 brede handpennen en minder, grotere stippen; 3 staart = platte veerpluim die breder wordt, echte S,
@@ -23,7 +28,8 @@ def lin(r, g, b):
 
 # Workbench (studio, zonder glans) rendert een belicht vlak ±0,73x zo licht: invoer = doelkleur / 0,73 (gemeten)
 KLEUR = dict(lijf=lin(255, 142, 52),      # doel ±(206, 104, 38): warm oranje-kastanje (Celeus elegans)
-             kuifmid=lin(255, 190, 110),  # randje tussen kastanje en de lichte kuiftop
+             kuifmid=lin(255, 214, 150),  # r3: gedempt lichte binnenkant van de kuif-oren (doel ±(215, 160, 110), niet wit)
+             koord=lin(100, 50, 28),      # r3: staartkoord donkerbruin (doel ±(72, 36, 20))
              vleugel=lin(190, 80, 32),    # doel ±(140, 58, 24): donkerder kastanje
              stip=lin(255, 245, 205),     # ronde lichte stippen (familie Picapau)
              staart=lin(220, 92, 38),     # doel ±(164, 68, 28): roodbruin
@@ -91,6 +97,17 @@ def sdf_deel(P, deel):
         px, py, pz = p[..., 0] * c + p[..., 2] * s, p[..., 1], -p[..., 0] * s + p[..., 2] * c
         q = np.sqrt((px / r[0]) ** 2 + (py / r[1]) ** 2 + (pz / r[2]) ** 2)
         return (q - 1) * min(r)
+    if deel[0] == 'plaat':
+        # platte prisma: 2D-veelhoeken (unie) in het vlak (oorsprong, e1, e2), halve dikte t, randafronding r
+        _, o, e1, e2, polys, t, r = deel
+        o, e1, e2 = (np.array(v, np.float32) for v in (o, e1, e2)); n = np.cross(e1, e2)
+        q = P - o; a = q @ e1; b = q @ e2; c = q @ n
+        d2 = None
+        for poly in polys:
+            di = sd_veelhoek(a, b, poly)
+            d2 = di if d2 is None else np.minimum(d2, di)
+        w1 = d2 + r; w2 = np.abs(c) - t + r
+        return np.minimum(np.maximum(w1, w2), 0) + np.sqrt(np.maximum(w1, 0) ** 2 + np.maximum(w2, 0) ** 2) - r
     _, keten, n, plat = deel
     n = np.array(n, np.float32); n /= np.linalg.norm(n)
     best = None
@@ -104,6 +121,26 @@ def sdf_deel(P, deel):
         d = np.linalg.norm(q, axis=-1) - (ra + (rb - ra) * t)
         best = d if best is None else smin(best, d, 0.8)      # glad in elkaar: geen ribbels op de knikken
     return best
+
+def sd_veelhoek(a, b, v):
+    """getekende afstand tot een 2D-veelhoek (Inigo Quilez, sdPolygon), gevectoriseerd"""
+    v = np.array(v, np.float32); N = len(v)
+    d = (a - v[0, 0]) ** 2 + (b - v[0, 1]) ** 2; sgn = np.ones_like(a)
+    j = N - 1
+    for i in range(N):
+        ex, ey = v[j, 0] - v[i, 0], v[j, 1] - v[i, 1]; wx, wy = a - v[i, 0], b - v[i, 1]
+        h = np.clip((wx * ex + wy * ey) / (ex * ex + ey * ey), 0, 1)
+        bx, by = wx - ex * h, wy - ey * h
+        d = np.minimum(d, bx * bx + by * by)
+        c1 = b >= v[i, 1]; c2 = b < v[j, 1]; c3 = ex * wy > ey * wx
+        flip = (c1 & c2 & c3) | (~c1 & ~c2 & ~c3)
+        sgn = np.where(flip, -sgn, sgn)
+        j = i
+    return sgn * np.sqrt(d)
+
+def band(A, B, wa, wb):
+    A = np.array(A, float); B = np.array(B, float); u = (B - A) / np.linalg.norm(B - A); n = np.array([-u[1], u[0]])
+    return [tuple(A + n * wa), tuple(B + n * wb), tuple(B - n * wb), tuple(A - n * wa)]
 
 def smin(a, b, k):
     if k <= 0: return np.minimum(a, b)
@@ -124,7 +161,7 @@ def kop_matrix(kop_draai, kop_kantel=0.0):
     R = Matrix.Rotation(math.radians(kop_draai), 3, 'Z') @ Matrix.Rotation(math.radians(kop_kantel), 3, 'Y')
     return R
 
-def vleugel(s):
+def vleugel(s, schuif=(0.0, 0.0, 0.0)):
     """vogelvleugel, half open en opgetrokken (Jordi r1: "iets te draconian"): dikke ronde voorrand (arm),
     één gesloten vlak (hand- en armplaat), vier zachte ronde handpennen die grotendeels samensmelten"""
     schouder = (5.0, s * 9.5, 4.0); pols = (8.0, s * 18.5, 20.0)
@@ -137,16 +174,28 @@ def vleugel(s):
         tip = (tip[0], s * tip[1], tip[2])
         mid = tuple(np.array(pols) + 0.75 * (np.array(tip) - np.array(pols)))
         d.append(('vleugel', ('buis', [(pols, 5.0), (mid, 4.8), (tip, 3.4)], n, 0.36), 2.8))           # ronde, overlappende pennen
+    if any(schuif):
+        o = np.array(schuif)
+        d = [(nm, ('buis', [(tuple(np.array(p) + o), r) for p, r in dl[1]], dl[2], dl[3]), k) for nm, dl, k in d]
     return d
 
-def staart_keten():
-    """platte veerpluim, breder naar de punt: uit de stuit omhoog naar rechts, over een boog omlaag langs de
-    rechterkant, onder het lijf door naar voren (S), dan de bliksem linksonder"""
-    return [((12.0, 1.0, -10.0), 3.0), ((19.0, 2.0, -5.0), 3.4), ((25.5, 2.5, -4.0), 3.8), ((29.5, 3.0, -10.0), 4.2),
-            ((28.0, 3.5, -19.5), 4.5), ((19.0, 4.0, -26.5), 4.7), ((7.0, 4.5, -28.5), 4.6), ((-3.5, 4.5, -26.5), 4.2),
-            ((-10.0, 4.0, -22.0), 3.6)]
+VERRE_VLEUGEL = (5.0, 0.0, -11.0)   # r3: alleen de verre vleugel iets naar achteren en lager, zodat de kuif vrij staat
 
-BLIKSEM = [((-10.0, 4.0, -22.0), 3.4), ((-20.5, 4.0, -18.5), 3.6), ((-14.5, 4.0, -12.5), 3.4), ((-26.0, 4.0, -2.5), 1.6)]
+def staart_keten():
+    """r3 (Raichu Gen 1): dikke donkerbruine koord (±4 px op 1x) in een S om het lijf: rechts achter het lijf vandaan,
+    rechts omlaag, onder het lijf door naar links, naar de bliksem linksonder"""
+    return [((11.0, 1.0, -8.0), 2.4), ((19.0, 1.0, -8.5), 2.4), ((26.5, 0.0, -11.5), 2.4), ((30.5, -0.5, -17.5), 2.4),
+            ((28.5, 0.5, -24.5), 2.4), ((20.0, 2.5, -29.0), 2.4), ((8.0, 4.0, -30.0), 2.3), ((-3.0, 4.0, -28.5), 2.2),
+            ((-9.0, 2.5, -25.5), 2.1)]
+
+# bliksem: grote platte prisma met scherpe hoeken, in het beeldvlak van stand C (lijf 40) zodat hij vlak naar de kijker staat
+BL_O = (-9.5, 2.0, -24.5)                                   # aanzet aan het eind van de koord
+BL_E1 = (math.cos(math.radians(40)), -math.sin(math.radians(40)), 0.0)   # beeld-horizontaal bij lijf 40
+BL_E2 = (0.0, 0.0, 1.0)
+def bliksem_vlakken():
+    u = np.array([-1.0, 1.15]); u /= np.linalg.norm(u); n = np.array([-u[1], u[0]]); P0 = np.zeros(2)
+    return [band(P0, P0 + u * 17, 3.0, 3.4),                               # onderste band
+            band(P0 + u * 13.5 - n * 3.2, P0 + u * 13.5 - n * 3.2 + u * 21, 3.6, 0.3)]   # verspringing + lange punt naar linksboven
 
 def delen(kop_draai=25.0, kop_kantel=0.0):
     """lijst (naam, deel, k, groep); groep 'kop' wordt met de kopdraai rond NEK geëvalueerd"""
@@ -156,20 +205,26 @@ def delen(kop_draai=25.0, kop_kantel=0.0):
     # dijen in de huid: de poten groeien uit het lijf
     for s in (-1, 1):
         d.append(('lijf', ('ell', (-1.5, s * 4.5, -16.5), (3.2, 3.0, 3.2), 0), 1.5, 'lijf'))
-    for naam, deel, k in vleugel(-1) + vleugel(1):
+    for naam, deel, k in vleugel(-1) + vleugel(1, VERRE_VLEUGEL):
         d.append((naam, deel, k, 'lijf'))
-    d.append(('staart', ('buis', staart_keten(), (0, 1, 0), 0.34), 1.2, 'lijf'))
-    d.append(('bliksem', ('buis', BLIKSEM, (0, 1, 0), 0.32), 0.5, 'lijf'))
+    d.append(('staart', ('buis', staart_keten(), (0, 1, 0), 1.0), 1.0, 'lijf'))
+    d.append(('bliksem', ('plaat', BL_O, BL_E1, BL_E2, bliksem_vlakken(), 0.9, 0.35), 0.6, 'lijf'))
     # kop-groep (kop-lokale coördinaten)
     d.append(('kop', ('ell', tuple(KC), KR, 0), 3.5, 'kop'))
-    # grote kuif: twee lange punten omhoog-achter, top krult naar buiten (Raichu-oren), plat van voor gezien
+    # r3 kuif = Raichu-oren (Gen 1): brede platte driehoek (prisma) met aan de punt een spiraal naar buiten.
+    # Maat als C2 (Jordi: "too much", "te wit, te groot"): top ±29,5, spiraal tot ±12,5 opzij.
     for s in (-1, 1):
-        # brede platte lob (Raichu-oor): brede basis, recht omhoog-achter; alleen het bovenste derde krult naar buiten
-        # Jordi over ronde 1: "vooral de oren zijn too much", "te wit, te groot" -> klein, rustig, kastanje;
-        # alleen het bovenste derde buigt subtiel naar buiten (doet aan Raichu's oren denken)
-        keten = [((-8.5, s * 5.0, 20.5), 4.0), ((-7.0, s * 6.0, 24.5), 3.7), ((-5.5, s * 6.8, 28.0), 3.0),
-                 ((-4.5, s * 8.6, 30.2), 2.1), ((-4.0, s * 10.0, 29.8), 1.5)]
-        d.append(('kuif', ('buis', keten, (1, 0, 0.25), 0.25), 1.8, 'kop'))
+        A = np.array([-9.5, s * 1.5, 20.5]); B = np.array([-7.5, s * 8.5, 18.5]); T = np.array([-5.6, s * 7.6, 28.4])
+        e1 = (B - A) / np.linalg.norm(B - A); nn = np.cross(B - A, T - A); nn /= np.linalg.norm(nn)
+        e2 = np.cross(nn, e1)
+        v2 = [((p - A) @ e1, (p - A) @ e2) for p in (A, B, T)]
+        d.append(('kuif', ('plaat', tuple(A), tuple(e1), tuple(e2), [v2], 0.75, 0.3), 1.2, 'kop'))
+        # spiraal aan de punt: over de top naar buiten, omlaag en terug naar binnen, straal krimpt
+        c = np.array([-5.4, s * 10.6, 29.4]); keten = []
+        for i, hoek in enumerate(range(200, -210, -25)):
+            rr = 3.0 - 1.3 * i / 16
+            keten.append((tuple(c + np.array([0, s * math.cos(math.radians(hoek)) * rr, math.sin(math.radians(hoek)) * rr])), 0.75))
+        d.append(('kuifkrul', ('buis', keten, (1, 0, 0), 1.0), 0.6, 'kop'))
     # beitelsnavel IN de huid (smooth union met de kop): een losse kegel stak schuin uit de gedraaide kop en gaf een
     # donker schaduwvlak dat als open snavel las. Iets plat van opzij (beitel).
     a = math.radians(SNAVEL_HOEK); dsn = np.array([-math.cos(a), 0, math.sin(a)])
@@ -204,7 +259,7 @@ def huid_sdf(dl, kop_draai, kop_kantel, stap=0.3):
     return ob
 
 def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
-    namen = ['lijf', 'vleugel', 'stip', 'staart', 'bliksem', 'creme', 'wang', 'kuifmid', 'snavel']
+    namen = ['lijf', 'vleugel', 'stip', 'staart', 'bliksem', 'creme', 'wang', 'kuifmid', 'snavel', 'koord']
     for n in namen: huid.data.materials.append(mat(n))
     C = np.array([tuple(p.center) for p in huid.data.polygons], np.float32)
     Rinv = np.array(kop_matrix(kop_draai, kop_kantel).transposed(), np.float32)
@@ -213,6 +268,9 @@ def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
     afst = np.stack([sdf_deel(Ck if g == 'kop' else C, deel) for _, deel, _, g in dl], 1)
     welk = [dl[i][0] for i in afst.argmin(1)]
     idx = np.zeros(len(C), int)
+    Nk = np.array([tuple(p.normal) for p in huid.data.polygons], np.float32) @ Rinv.T   # normalen in kop-lokaal
+    kopvlak = np.array([w == 'kop' for w in welk])
+    if (np.einsum('ij,ij->i', Nk[kopvlak], Ck[kopvlak] - np.array(KC, np.float32))).mean() < 0: Nk = -Nk   # naar buiten
     for j, w in enumerate(welk):
         p = C[j]; q = Ck[j]
         if w == 'lijf':
@@ -227,9 +285,18 @@ def kleur_vlakken(huid, dl, kop_draai, kop_kantel):
             if p[2] > 4 and p[0] < 20:
                 g = np.array([p[0] / 8.5, p[2] / 8.5 + 0.5 * (round(p[0] / 8.5) % 2)])
                 if np.hypot(*(g - np.round(g))) < 0.30: idx[j] = 2
-        elif w == 'staart': idx[j] = 3
+        elif w == 'staart': idx[j] = 9
         elif w == 'bliksem': idx[j] = 4
-        elif w == 'kuif': idx[j] = 0 if q[2] < 27.8 else (7 if q[2] < 29.3 else 5)  # overwegend kastanje, alleen een licht topje (geen witte kuif)
+        elif w == 'kuif':
+            # binnenkant (voorvlak, normaal naar voren) gedempt licht, met een kastanje rand; buitenkant kastanje
+            s_ = 1 if q[1] > 0 else -1
+            A = np.array([-9.5, s_ * 1.5, 20.5]); B = np.array([-7.5, s_ * 8.5, 18.5]); T = np.array([-5.6, s_ * 7.6, 28.4])
+            nn = np.cross(B - A, T - A); nn /= np.linalg.norm(nn)
+            if nn[0] > 0: nn = -nn
+            midden = (A + B + T) / 3
+            binnen = Nk[j] @ nn > 0.5 and np.linalg.norm((q - midden) - ((q - midden) @ nn) * nn) < 3.2 and q[2] > 21.0
+            idx[j] = 7 if binnen else 0
+        elif w == 'kuifkrul': idx[j] = 0
         elif w == 'kuif2': idx[j] = 0
         elif w == 'snavel': idx[j] = 8
         elif w == 'kop':

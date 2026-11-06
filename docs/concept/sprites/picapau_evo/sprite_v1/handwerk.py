@@ -113,7 +113,7 @@ for y in range(19, 36):
 # 5c. kop: licht alleen als ovaal linksboven (de toonkaart gaf een groot vlak licht = plat); rest basis 2
 for y in range(19, 34):
     for x in range(10, 30):
-        if P[y][x] == 'K' and R[y][x] == '1' and ((x - 16.5) / 7.5) ** 2 + ((y - 23.5) / 6.5) ** 2 > 1: R[y][x] = '2'
+        if P[y][x] == 'K' and R[y][x] == '1' and ((x - 16.0) / 5.5) ** 2 + ((y - 23.0) / 4.8) ** 2 > 1: R[y][x] = '2'
 # 5d. vleugelstippen rond maken (de render gaf blokjes en scherven): elke stip vervangen door een rond sjabloon van
 # vergelijkbare grootte op hetzelfde midden (Picapau: ronde stippen); vrijgekomen pixels worden vleugel v
 SJ = {2: ['aa', 'ab'], 3: ['.aa.', 'aaab', '.ab.'], 4: ['.aa.', 'aaaa', 'aabb', '.bb.']}
@@ -139,6 +139,18 @@ for comp in stippen:
             x, y = cx + i, cy + j
             if c != '.' and R[y][x] in 'v3' and P[y][x] in 'SVF':
                 R[y][x] = 'b' if ver else c
+# afgeknipte stippen (< 4 px, bv. tegen de vleugelrand) weer vleugel
+gezien = set()
+for y in range(36):
+    for x in range(29, 64):
+        if R[y][x] in 'ab' and (x, y) not in gezien:
+            st = [(x, y)]; comp = []; gezien.add((x, y))
+            while st:
+                p = st.pop(); comp.append(p)
+                for q in ((p[0]+1, p[1]), (p[0]-1, p[1]), (p[0], p[1]+1), (p[0], p[1]-1)):
+                    if 29 <= q[0] < 64 and 0 <= q[1] < 36 and q not in gezien and R[q[1]][q[0]] in 'ab': gezien.add(q); st.append(q)
+            if len(comp) < 4:
+                for x2, y2 in comp: R[y2][x2] = 'v'
 # 6. opruimen (controlescript): losse tintpixels in een vlak naar de omringende tint, randen zonder om-en-om
 def kleur(lijst, c):
     for x, y in lijst: R[y][x] = c
@@ -163,4 +175,6 @@ kleur([(39, 15)], '3')                                   # lichtlijn op de vleug
 kleur([(23, 51)], '3')
 kleur([(21, 60), (22, 59)], '4')
 kleur([(40, 34)], 'k')                                   # gaatje van 1 px tussen vleugelonderrand en lijf dicht
+kleur([(43, 12), (44, 11), (35, 20), (35, 21), (34, 22), (34, 23), (35, 23)], 'v')   # stipscherven achter de kop
+kleur([(31, 27), (31, 28)], '4')
 open('raster.txt', 'w').write('\n'.join(''.join(r) for r in R) + '\n')

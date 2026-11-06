@@ -51,6 +51,32 @@ if __name__ == '__main__':
     pr = np.stack([blok(gid == groups.index(f'p{i}')) for i in range(6)])
     for i in range(6): dl[(pr[i] >= 0.5) & ~M] = 10 + i
     np.save(os.path.join(HERE, 'delen.npy'), dl); np.save(os.path.join(HERE, 'poten_ref.npy'), pr)
+    # sprietassen + tandpunten in spritepixels (zelfde berekening als Q.spriet + kopdraai + camera)
+    kop_r = 19.0; cr = np.array((-9.0, 53.0, 0.0)); Rh = P.rot_y(math.radians(Q.KOP_EXTRA)); piv = np.array((-5.0, 36.0, 0.0))
+    def scr(p):
+        w = Rc @ (piv + Rh @ (np.array(p) - piv))
+        return ((w[0] - ctr[0]) * scale + L.R / 2) / k, ((-w[1] + ctr[1]) * scale + L.R / 2) / k
+    S = Q.SPRIET; N = S['n']; uit = {}
+    for sz in (1, -1):
+        basis = cr + np.array((-2.0, 9.0, 13.0 * sz))
+        pts = [np.array(basis) + np.array((3.0 * t, S['boog'] * math.sin(math.pi * 0.8 * t), sz * S['lengte'] * t)) for t in np.arange(N + 1) / N]
+        rij = []
+        for i in range(N + 1):
+            row = [*scr(pts[i]), 0, 0, 0, 0]
+            if 0 < i < N:
+                t = i / N; lang = S['tand'] * math.sin(math.pi * min(1.0, 0.12 + 0.95 * t)) ** 0.7 + 1.0
+                rich = pts[i + 1] - pts[i]; rich /= np.linalg.norm(rich); zij = np.cross(rich, Q.KIJK); zij /= np.linalg.norm(zij)
+                tips = []
+                for s_ in (1, -1):
+                    d = zij * s_ + rich * 0.5; d /= np.linalg.norm(d); tips += list(scr(pts[i] + d * lang * 1.1))
+                row[2:] = tips
+            rij.append(row)
+        uit['nabij' if sz > 0 else 'ver'] = np.array(rij)
+    np.save(os.path.join(HERE, 'spriet_as.npy'), np.stack([uit['nabij'], uit['ver']]))
+    # oogcentra (alleen de plek markeren)
+    for sz in (1, -1):
+        d = np.array((Q.OOG[0], Q.OOG[1], Q.OOG[2] * sz)); d /= np.linalg.norm(d)
+        print('oog', 'nabij' if sz > 0 else 'ver', ['%.1f' % v for v in scr(cr + d * kop_r * 0.80)])
     Q.gebruik_kleuren()
     img, _a, _, _ = Q.view(Q.poedelmot(), out=512); img.save(os.path.join(HERE, 'onderlaag_512.png'))
     ys, xs = np.nonzero(M)

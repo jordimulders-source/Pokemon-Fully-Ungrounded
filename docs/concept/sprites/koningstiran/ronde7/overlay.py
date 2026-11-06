@@ -12,7 +12,7 @@ crop = (8, 26, 44, 63)
 W = Image.new('RGB', (2 * ((crop[2] - crop[0]) * Z + 20), (crop[3] - crop[1]) * Z + 30), (236, 232, 222))
 d = ImageDraw.Draw(W)
 ry, rx = np.nonzero(red)
-for i, r in enumerate(('ronde6', 'ronde6b')):
+for i, r in enumerate(('ronde6b', 'ronde7')):
     im = Image.open(os.path.join(K, r, 'sapa_inca.png')).convert('RGBA').resize((64 * Z, 64 * Z), Image.NEAREST)
     bg = Image.new('RGBA', im.size, (248, 248, 240, 255)); bg.alpha_composite(im)
     lay = Image.new('RGBA', im.size, (0, 0, 0, 0)); px = lay.load()

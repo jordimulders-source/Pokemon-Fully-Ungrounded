@@ -178,3 +178,31 @@ P t 162 82 42
 50 15 ____Kdddd
 51 16 _____Kddd
 52 19 ____K
+# ==== ronde 7: buik als egaal ovaal (breedte per rij geleidelijk), rechts 1 px dunner; lijf linksonder voller en bol tot de dij ====
+34 18 mddllmlyyalmdddddddK
+35 21 lmayyygaalmdddddK
+36 21 mayyyggaalmddddddK
+37 20 mayyyygggaalmdddddK
+38 20 mayyyggggaalmmddddK
+39 20 mayyggggggaalmddddK
+40 20 agygggggggaalmddddK
+41 20 agggggggggaalmddddK
+42 20 agggggggggaalmdddddK
+43 20 agggggggaaalmddddddK
+44 21 aggggggaaalmddddddK
+45 21 agggggaaaalmddddddK
+46 21 agggggaaaalmdddddK
+47 21 aggggaaaalmddddddK
+48 21 agggaaaaalmddddddK
+49 16 KdddddagggaaaalmdddddK
+50 17 KddddaggaaaaalmdddddK
+51 19 KddddagaaalmdddddK
+52 21 KddddaalmddddKK
+53 23 d
+# stafkop A: uiteinde van een staartveer als scepterkop (vaan roestbruin met gouden rand, schacht goud), symmetrisch rond x15
+24 13 __a_____
+25 13 _aya____
+26 13 atyta___
+27 13 ttytt___
+28 13 tayat___
+29 13 atyta___

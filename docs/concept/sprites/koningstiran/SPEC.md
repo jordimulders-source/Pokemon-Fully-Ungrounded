@@ -107,6 +107,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) "En de bovenkant van de staf moet nog mooier, dat is nu best lelijk afgewerkt, misschien dat we daar een soort van uiteinde van de staart idee van kunnen maken, dat het echt hybride staart en staf is" → ronde 7: stafkop als staartveer-uiteinde/scepterkop.
 
+- (7 nov) Ronde 7: lijf links voller (één bolle boog naar de dij), buik egaal ovaal (breedte per rij 3→12→2) en rechts 1 px dunner, stafkop A = staartveerpunt (5 px smal, naast het kroonkwastje), variant B = zonneschijf uit veerpunt. Poten 0 px. Voorgelegd.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

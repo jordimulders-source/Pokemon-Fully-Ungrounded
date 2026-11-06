@@ -156,3 +156,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca ronde 5: staf zichtbaar onder de vleugel. Stand van zaken bijgewerkt.
 - Sapa Inca ronde 5b: zwart vlak tussen staf, vleugel en lijf opgelost.
 - Sapa Inca ronde 6 en 6b: lijf ovaal volgens Jordi's rode lijnen, buik rond, staf vóór de vleugel tot de greep, poten afgewerkt, staf verdwijnt kort onder de hand achter het lijf.
+- Sapa Inca ronde 7: lijf links voller, buik egaal ovaal, stafkop als staartveerpunt (variant met zonneschijf).

@@ -13,7 +13,7 @@
 - "niet echt stelten": het lijf zit niet meer op losse paaltjes, want de poten gaan over in de borstwol. **Twijfel:** de voorpoten zijn ±17 px lang (y43-60), dus samen lezen ze nog als een lange zuil.
 - "De vier achterpoten functioneren als achterpoten alleen zijn het er 4 ipv 2": ze staan per kant als een tweetal onder een heup, achter de voorpoten. **Twijfel:** ze spreiden schuin naar buiten. Op 8× lezen ze eerder als peddels of octopusarmen dan als dragende achterpoten.
 - "die komen wat meer uit de zijkant": ze komen uit de flank (de heup links en rechts), niet meer van onder het lijf. OK.
-- Schets (overlay): lijnen 6 en 3 vallen nu op de twee voorpoten. Lijnen 1 en 4 lopen langs de linker heup en de twee linkerpoten, lijnen 7, 5 en 2 over de rechter heup en de twee rechterpoten. OK.
+- Schets (overlay): lijnen 3 en 4 (nummering NOTITIE) vallen nu op de twee voorpoten. Lijnen 1 en 2 lopen langs de linker heup en de twee linkerpoten, lijnen 5, 6 en 7 over de rechter heup en de twee rechterpoten. OK.
 - Dik en wollig met pompons (SPEC): de voorpoten zijn 6 px dik met pompons van 9-10 px, de achterpoten 5-8 px met pompons. OK.
 
 ## Wat nog beter moet (eerlijk)

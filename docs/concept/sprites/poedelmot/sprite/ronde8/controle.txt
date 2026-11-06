@@ -1,0 +1,33 @@
+pixeldiff tegen ronde 6: 158 px; buiten de achterpootzone: 0; in de voorpoten van ronde 6: 0
+boven rij 51 gewijzigd: 27 px, waarvan bestaande (niet-transparante) pixels van ronde 6: 0
+gewijzigd in de voorpootzone van ronde 6 (rijen 52-59, x15-36): 0
+clusters < 3 px buiten de ogen (tint, [(x,y)]): 26
+   ('1', [(28, 51), (29, 51)])
+   ('1', [(29, 55), (28, 56)])
+   ('1', [(26, 56)])
+   ('1', [(19, 57)])
+   ('1', [(37, 57)])
+   ('1', [(31, 58)])
+   ('2', [(42, 52)])
+   ('2', [(42, 54), (43, 55)])
+   ('2', [(36, 56)])
+   ('2', [(20, 57)])
+   ('2', [(38, 57)])
+   ('4', [(29, 40), (28, 41)])
+   ('6', [(15, 45), (15, 46)])
+   ('6', [(17, 51), (18, 52)])
+   ('6', [(31, 52)])
+   ('6', [(31, 54)])
+   ('b', [(42, 56)])
+   ('b', [(44, 56)])
+   ('b', [(26, 57)])
+   ('b', [(28, 57)])
+   ('b', [(19, 58)])
+   ('b', [(21, 58)])
+   ('b', [(37, 58)])
+   ('b', [(39, 58)])
+   ('b', [(31, 59)])
+   ('b', [(33, 59)])
+buitenrand niet in omlijningskleur (1, 2, b): 0 []
+kleuren: 13 + transparant
+diff.png: grijs = ronde 6, blauw = voorpoten ronde 6 (ongewijzigd), rood = gewijzigd

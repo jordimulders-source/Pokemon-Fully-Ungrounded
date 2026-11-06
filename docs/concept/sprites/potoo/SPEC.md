@@ -65,6 +65,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **opnieuw beginnen** (Jordi
 | verhouding | "het lichaam mag iets kleiner, zodat de bek echt groot wordt op de sprite"; "laten we voor 15% gaan" (6 nov) | zit op de tak als `referenties/jordi_great_potoo_tak_bek_open_volledig.png`, ineengedoken met de kop voorover; lijf 15% kleiner dan ronde 12: `sprite/ronde13_standen/potoo_85.png` (vorm goedgekeurd) |
 | lijnen | "gebruik pixels zoals de sprite in game ze zou gebruiken" (6 nov) | buitenlijn 1 px, geen dubbele trapjes |
 | vorm linksonder | "lijkt die nog steeds een beetje afgekapt waardoor het nu vooral op zuid amerika lijkt, qua vorm is dat niet erg, juist wel grappig" (6 nov) | vorm blijft; met kleur moet het een stilzittende vogel worden |
+| ronde 14 | "ik vind dit al best een goede eerste draft. Het oog is alleen niet rond genoeg, oog icm muil maakt hem zo gek. Daarnaast heb je idd teveel focus gelegd op snavel, dat gaat ten koste van de muil ... het onderlichaam is nog net wat teveel origami" (6 nov) | oog rond; muil gaat vóór snavelplaat; onderlichaam zachter |
+| muilgrootte | "naar 175 pixels gaan is een goed idee" (6 nov) | muil/omtrek gemeten: foto 20,0%, ronde 14 15,7% (137 px) → muil ±175 px; mondlijn telt als muilrand, binnengrens 1 px naar buiten, buitenomtrek gelijk |
 | kern | "De snavel en ogen zijn het kernpunt van het design, zoals je kan zien zitten er kleine veren allemaal ook tussen de ogen duidelijk, dat mag je ook uitbeelden" (5 nov, tweede gesprek) | besloten: snavel + ogen krijgen de meeste aandacht; korte veertjes tussen en rond de ogen (borstelveertjes/wenkbrauwkuif) uitbeelden |
 | werkwijze | "Voordat je een silhouet bouwt, bouw je eerst een 3d model" | 3D-poppetje vóór het silhouet |
 

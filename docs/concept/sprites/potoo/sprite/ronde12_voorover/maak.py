@@ -44,6 +44,12 @@ def rast(img,dil=2):
 KOP,HL,LF,VL=rast(kop),rast(hals),rast(lijf),rast(vl)
 ox,oy=(261.67*2-181)*1.25,(223.33*2-185)*1.25; rx,ry=29*2.5/K,27*2.5/K; ex,ey=ox/K+X0,(oy-Y0)/K+1
 OOG={(x,y) for x in range(64) for y in range(64) if ((x+.5-ex)/rx)**2+((y+.5-ey)/ry)**2<=1}
+def dun(S):
+    a=np.zeros((64,64),bool)
+    for x,y in S:
+        if 0<=x<64 and 0<=y<64: a[y,x]=True
+    a=skeletonize(a); return {(x,y) for y,x in zip(*np.nonzero(a))}
+KOP,HL,LF,VL=dun(KOP),dun(HL),dun(LF),dun(VL)
 L=KOP|HL|LF
 G=[['.']*64 for _ in range(64)]
 out=set(); q=deque([(0,0)])

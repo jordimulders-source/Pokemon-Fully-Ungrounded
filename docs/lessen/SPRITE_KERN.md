@@ -11,6 +11,8 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 
 7. **Vastgelopen? Draft + kleine stapjes** (poedelmot 6 nov, Jordi: "als we zo telkens met kleine stapjes werken komen we er wel"): na 2 mislukte model-/silhouetrondes meteen een gekleurde draft-sprite maken en die per onderdeel met Jordi verbeteren (één onderdeel per ronde, diff 0 erbuiten, onderdeel eerst op de bronfoto beschrijven, dan tekenen).
 
+8. **Schets van Jordi = grens, en Claude meet zelf** (poedelmot 6 nov: "ik heb cirkels getekend met de vraag of je daar binnen wil blijven"): omcirkelde vormen zijn de ruimte waarbinnen het onderdeel moet blijven; leg de schets over het resultaat en tel zelf de pixels erbuiten vóór je iets stuurt. Geloof een makerrapport ("bult is weg") nooit zonder eigen meting.
+
 ## Harde regels (elke ronde controleren)
 - **Goedgekeurd = bevroren**: pixeldiff 0 buiten de opdrachtzone, met script bewezen. Wat Jordi goedkeurde nooit herbouwen.
 - **Jordi's woorden letterlijk** in SPEC en opdracht; nieuwe opmerking vult aan. Twijfelt Jordi: **eerst vragen wat hij ziet**, niet gokken. Bij twijfel over de omvang van een wijziging: vragen.

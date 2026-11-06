@@ -99,3 +99,6 @@ r6 (`../r6/`) blijft staan. Geen modelwerk.
 6. **Niet gekeurd.** Er is nog geen onafhankelijke keuring gedaan.
 
 Er is niets gecommit en niets verwijderd.
+
+## Jordi over de snavel van r7 (letterlijk)
+**"niet mooi, past niet bij het hoofd en is niet zo mooi als bij normale pokemon sprites"** → r8 (`../r8/`): alleen de snavelzone opnieuw, twee varianten A en B.

@@ -1,0 +1,16 @@
+# --- snavel r8 variant A (familie): de snavel van Picapau (af) cel voor cel overgenomen, ±1,25x breder, licht open
+# Picapau (rij 17-24, punt linksboven): r0 G g g k G / r1 G a a g / r2 G a a a g / r3 G g g g G / r4 k g g g G / r5-r6 k G G G / r7 k G G.
+# Zelfde opbouw: punt linksboven, bovenkant g, licht a als wig in het midden-boven, schuine onderrand G, schaduw G onder, zwart alleen
+# aan de schaduwkant onderaan. Net als bij Picapau loopt de grens snavel/kop schuin: het gezicht (1/2) komt in rij 8-10 naar voren,
+# de snavel groeit eruit (geen voeg). Open: mondspleet k in rij 12, rood in de mondhoek, ondersnavel korter.
+8 15 ggg
+8 18 4122
+9 12 GGaaagg
+9 19 122
+10 13 Gaaaagg
+10 20 12
+11 14 GGggggg
+11 21 g
+12 16 kkkkCC
+13 16 kgggGC
+14 17 kGG

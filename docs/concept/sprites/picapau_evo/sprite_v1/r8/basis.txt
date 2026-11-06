@@ -1,0 +1,235 @@
+# Sprite r8 basis = r7 zonder snavelblok (maak.py plakt de snavel van variant A of B eronder). Per regel "rij kolom pixels".
+# --- verre vleugel: smalle waaier links achter kop en borst (Pidgeot), drie pennen, schaduwkant   [schuift mee]
+2 11 4k
+3 10 433k
+4 9 433v4k
+5 9 43vv43k
+6 8 43vv43v4k
+7 9 43vv43v4k
+8 9 43vv4vv
+9 10 43vv
+10 10 43vv4
+11 11 43v4
+12 11 43vv4
+13 12 k3vv4
+14 12 k3vv4vv
+15 13 kvv4vv
+16 14 kvv4
+17 15 kv
+# --- kop: licht als smalle rand linksboven, sikkel 3 rechts/onder; nabij oog van Picapau, verre oog half achter de kopwelving   [schuift als geheel 4]
+2 22 4444
+3 20 4411122k
+4 19 411222223k
+5 18 4k12222kk23k
+6 18 kk1222Gwkk23k
+7 18 4k1222kkGk23k
+8 22 222kk223k
+9 22 22222223k
+10 22 222ccc23k
+11 22 22cccCC3k
+12 22 222cCC3k
+13 21 22223333k
+14 20 42222333k
+# --- snavel licht open: grijs zoals Picapau, smalle donkere spleet, klein rood alleen in de mondhoek   [schuift als geheel 4]
+# r6 (Jordi: "de snavel zijn rechte lijnen"): beitelsnavel met gebogen bovenrand die taps naar de punt loopt, taps toelopende
+# ondersnavel met bolle onderkant, mondspleet licht open die de kromming volgt; rood alleen in de mondhoek
+# r7: de snavel staat nu onderaan het bestand (na de naden), zodat hij boven de verre vleugel ligt
+# verre-vleugelstukjes uit r6 (lagen onder de oude snavel; nu deels weer zichtbaar)
+8 16 vv
+9 14 vv
+10 13 v
+# --- oren: zwart, naar achteren en omlaag; nabij oor met 1px-spiraal (Gen 1), verre oor als klein haakje   [schuift als geheel 4]
+# r6 (Jordi: "De krullen bovenop het hoofd zijn links ook weggevallen"): verre oor met een eigen 1px-spiraal met gat
+# r7 (Jordi: "ik wil beide krullen bovenop naar achteren"): verre oor vanaf de kop linksboven over de kruin naar achteren (rechts),
+# met dezelfde 1px-spiraal met gat als het nabije oor, één stap hoger en verder naar achteren; wortel 2 px dik zoals bij het nabije oor
+1 21 kGGGk
+0 24 kkkkkkkkkkkkkkk
+1 39 kkkkk
+2 44 k
+3 45 k
+4 45 k
+5 45 k
+6 45 k
+7 41 kkkk
+4 40 k
+5 40 k
+6 40 k
+3 41 kk
+4 43 k
+5 43 k
+2 26 kGGGk
+3 28 kkkkk
+3 33 kkkk
+4 37 k
+5 34 kk
+5 38 k
+6 33 k
+6 36 k
+6 38 k
+7 33 k
+7 36 k
+7 38 k
+8 33 k
+8 38 k
+9 34 kkkk
+# --- buik: één ronde vorm van keel tot dijen (crème a/b/e), flank 2/3   [schuift mee]
+# r7 (Jordi: "Alleen de buik is niet meer mooi ovaal"): rijen 18-30 en 35 opnieuw: links een gladde boog (15-13-12-11-11-10x7-11-11-12),
+# rechts 27x7-26x3-25-25-24-24-23-22-21-19, onderkant rond (rij 35 crème 16-19); licht (a) als ovaal linksboven, sikkel e rechtsonder 2-4 px breed
+15 19 eaaabb223k
+16 18 eaaaabbb23k
+17 17 eaaaaabbb23k
+18 15 eaaaaaaabbbe3k
+19 13 eeaaaaaaaabbbeek
+20 12 eaaaaaaaaabbbbee3k
+21 11 eaaaaaaaaaabbbbee33
+22 11 eaaaaaaaaabbbbbee33
+23 10 eaaaaaaaaaabbbbeee33
+24 10 eaaaaaaaaabbbbbeee33
+25 10 eaaaaaaaaabbbbeee333
+26 10 eaaaaaaaabbbbbeee3333
+27 10 ebaaaaaabbbbbeeee3333
+28 10 ebaaaaabbbbbeeee2333
+29 10 ebbaaabbbbbbeeee2333
+30 11 ebbabbbbbbeeee223333
+31 11 ebbbbbbbbbeeee223333
+32 12 ebbbbbbbeeee22233333
+33 13 kbbbbbeeee222233333
+34 14 kbbbeeee2222233333
+35 14 k3eeee222222333333
+# --- onderbuik en dijen: verre dij (3) achter, nabije dij (2/3) met binnenlijn 4 waar hij over de verre valt   [blijft staan]
+36 13 k33333422222233333k
+37 14 k333k422222333334k
+38 15 kGGk422223333344k
+39 22 k22333334k
+40 22 k33333344k
+41 25 k33344k
+42 25 k33444k
+43 28 44k
+44 27 k44
+# --- poten: verre poot hoger en links (alleen G), nabije poot loopbeen 3 px, grote voet, zwarte klauwen   [blijft staan]
+39 13 kGGGGGGGk
+40 12 kkkkkkkkkk
+41 12 k
+41 20 kggGk
+42 20 kggGk
+43 15 kgggggggGGGGk
+44 15 kGGGkGGGGGGk
+45 14 k
+45 16 kkk
+45 20 kkkkkk
+# --- nabije vleugel: handpennen (waaier) en armpennen   [schuift mee]
+3 58 44k
+4 56 433vvk
+5 55 433vv4k
+6 53 433vv4k
+7 52 433vv433k
+8 51 433vv433vvvk
+9 50 433vv433vv43k
+10 49 433vv433vv433k
+11 50 vvv433v433vk
+12 52 433433vvk
+13 53 v433vvvvvk
+14 52 vvvvv4333k
+15 52 4333vvvvvk
+16 52 44444vvvvk
+17 50 vv33333444k
+18 50 v4vvvvvvvvk
+19 51 vv4vvvvvvk
+20 51 vvvv4vvvvvk
+21 50 vvvvvv4vvk
+22 49 vvv4vvvv4vk
+23 47 vvvvvv4vvvk
+24 47 vvvv4vv4vvk
+25 47 vvvv4vvv44k
+26 46 vvvvvv4vvv4k
+27 44 vvvvvvvv4vvvk
+28 42 vvvvvv4vvv4k
+29 42 vvvvvv4vvv4k
+30 39 vvvvvvvvv4vvvvk
+31 38 vvvvvvvvvv4vvvk
+32 37 vvvvvvvvvvvv4vk
+33 34 vvvvvvv4vvv4vvk
+34 34 vvvvvvv4vvv4k
+35 34 vvvvvv444k
+36 34 k4vvv444k
+37 35 kkkk
+# --- nabije vleugel: voorrand (4 + lichte rand 2), kleine dekveren (3), grote dekveren (v) met grote ronde stippen (a)   [schuift mee]
+11 43 4444444
+12 42 4223333vvv
+13 41 4223334vvvav
+14 39 4223334vvvaaa
+15 38 4233334vvvvvav
+16 37 4233334vvvvvvvv
+17 36 4233334vvvvvvv
+18 35 4233334aavvvvv4
+19 33 42333334vaavvvvavv
+20 32 42333334vvvvvvvaaav
+21 30 42333334vvvvvvvvvav4
+22 30 4233334vvvvvvvavvvv
+23 30 4233334vvvvvvaaav
+24 30 42333aa4vvvvvvav4
+25 30 42333aa4vvvvvvvvv
+26 31 423334vvvaavvv4
+27 31 423334vvvaavv
+28 30 423334vavvvv
+29 30 423334aaavvv
+30 31 kaa4vvav
+31 31 kaavvvv
+32 32 kvvvv
+33 32 kk
+# --- steunstaart (drie spitse spechtenveren) en dunne zwarte staartschacht (2 px) als U onder het lijf   [blijft staan]
+44 30 vk
+45 26 k3v4vvk
+46 25 k33v4vvvk
+47 25 kvv4vvv4vk
+48 26 kv4vvv4v4k
+49 26 kv4vv4vkkk
+50 27 kv4vvkk
+51 27 kv4vk
+52 28 kvk
+53 28 k
+53 29 kk
+54 29 kk
+55 29 kk
+56 29 kk
+57 28 kk
+58 27 kkk
+47 11 kk
+48 11 Gk
+49 11 Gk
+50 11 Gk
+51 12 kk
+52 12 kk
+53 13 kk
+54 13 kkk
+55 14 kkk
+56 15 kkkk
+57 17 kkkk
+58 19 kkkk
+59 20 kkkkkkkkk
+60 22 kkkkkk
+# --- bliksem: breed en plat naar de kijker, lager en meer naar links (y licht, 1 schaduw, 2 selout lichtkant, zwart schaduwkant)   [blijft staan]
+28 1 2k
+29 1 2yk
+30 1 2yyk
+31 2 2y1k
+32 2 2yy1k
+33 3 2yy1k
+34 3 2yyy1k
+35 4 2yyy1k
+36 5 2yykk
+37 1 2222yy1k
+38 2 kyyyyy1k
+39 3 2yyyy1k
+40 4 2yyyy1k
+41 5 2yyy11k
+42 6 2yyy11k
+43 7 2yy111k
+44 8 2y111k
+45 9 2111k
+46 10 kkkk
+# --- naden na het schuiven (voorrand van de nabije vleugel sprong 2 px tussen rij 20 en 21), met de hand dichtgezet
+19 35 2
+20 31 4
+21 32 2
+# (r6-naad "14 13 v" vervalt: daar ligt nu de ondersnavel)

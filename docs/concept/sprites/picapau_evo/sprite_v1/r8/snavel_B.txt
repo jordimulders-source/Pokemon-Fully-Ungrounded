@@ -1,0 +1,11 @@
+# --- snavel r8 variant B (Gen 3-stijl, Staraptor/Pidgeot): stevig, kort en spits, brede voet (rij 8-14) die in het gezicht overloopt
+# gebogen bovenrand (G: 2-1-1-1 px per rij, haakje aan de punt), licht a als vlek op de bovensnavel bij de voet, g midden, licht open:
+# mondspleet k, ondersnavel korter (x14), g boven en G schaduw onder met een zwarte onderrand aan de schaduwkant; mondhoek rood
+8 17 GGaag
+9 15 GGaaaag
+10 14 Ggaaaggg
+11 13 Ggggggggg
+12 12 GgkkkkkkCC
+13 12 Gk
+13 14 kggggGC
+14 13 kkGGGGG

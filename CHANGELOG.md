@@ -562,3 +562,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Frontsprite 64×64 (frame 1, bek open): `docs/concept/sprites/potoo/sprite/ronde1–3/`. Blinde tests: r1 vis/beluga, r2 uil/potoo 15–45%, r3 duif 40% / potoo 45%.
 - Werkwijze: blinde test per ronde met neutrale bestandsnaam (lessen in `docs/lessen/SPRITE_WERKWIJZE.md`).
 
+### [v0.0.138] - Great potoo: vorm met Jordi's schetsen, overtrek, overdracht
+- Studie grote open snavels (`potoo/referenties/GROTE_SNAVELS_STUDIE.md`); driekwart-tekenbasis en vormschetsen 5–7 naar Jordi's schetsen (kop voorover, nekboog, oog op fotopositie); kopvorm (schets 6) goedgekeurd.
+- Overtrek van de bekrand (goedgekeurd) en de hele vorm op de leidraad (`potoo/sprite/bekrand_overtrek/`, `vorm_overtrek/`); Jordi trekt kop/snavel zelf over op `potoo/tekenbasis/` (leidraad met pixelraster).
+- Keurslot: tekenbases mogen door met `<bestand>.tekenbasis.md` (Jordi).
+- Overdrachtsprompt: `docs/concept/sprites/potoo/OVERDRACHT.md` (oude: `naslag_OVERDRACHT_5nov.md`).
+

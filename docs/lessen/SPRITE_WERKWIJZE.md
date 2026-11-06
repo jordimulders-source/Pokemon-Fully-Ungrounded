@@ -39,11 +39,27 @@ Voorbeeldmodel: `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` (hui
 **Regional forms:** begin van de bestaande sprite van de soort; lessen (Uyuni-Silicobra, Salticonda) in `naslag/SPRITE_WERKWIJZE_oud.md`, "Regional forms".
 **Silhouet naar sprite is niet 1 op 1** (Jordi, 5 nov, DJ Rotom): heeft een onderdeel in kleur meer ruimte nodig (gezicht, ogen), dan mag de sprite daar afwijken; in de sprite oplossen en de afwijking melden. **Vormen van een bestaande soort** (Rotom-vormen, regional forms): consistentie-analyse tegen alle bestaande vormen, zie naslag.
 
-## Model van Jordi namaken (poedelmot, 6 nov; Jordi: "dit is wel een hele goede way of working zo")
-1. Jordi's afbeelding(en) in `referenties/`; zo nodig samenstellen (poedelmot: lijf uit afb. 2, sprieten uit afb. 1, zelfde koppositie → direct overleggen).
-2. Silhouet = het model direct verkleind (alpha ≥ 0,45 per blok, gaten dicht; `poedelmot/silhouet/sil.py`), plus rode omtrek over het model en een kleurgids (gemiddelde per pixel, géén sprite). Silhouet bevroren.
-3. Eén maker tekent per ronde met de hand op het raster, met close-ups naast het model op 12×; Claude kijkt elk eindvel op 8× naast het model; zelfgenoemd zwak punt = terug.
-4. Keurder toetst alleen de twee eisen (accuraat t.o.v. model; Gen 3 volgens SPRITE_KERN), oordeelt eerst zelf, leest oude keuringen pas daarna. Bevroren is alleen wat accuraat verklaard is.
-5. Gebundelde reparaties per ronde (alleen benoemde zones), commit + push na elke ronde.
-6. **Kwaliteit eerst, dan zuinig** (Jordi: "het werk wat geleverd wordt is gewoon goed, ik weet niet of dat komt door de tussentijdse keuringen of gewoon door blijven gaan, maar dat is het belangrijkste"). Niet bekend wat het meeste oplevert, dus keuringen blijven, maar niet elke ronde: keurder pas als de maker zelf geen zwakke punten meer ziet; maker vervangen door een verse (start vanaf de laatste ronde) zodra een ronde > ±400k tokens kost (de eerste maker liep na 10 rondes vast, de verse loste het raster in de vleugels in één ronde op); Claude bekijkt alleen het eindvel.
-- Valkuilen: een stijlkeurder die het model herinterpreteert (koele schaduw, aders, mond weg) duwt de sprite weg van het model; herhaalde kleine patronen (schubben, baarden) worden op 64 px een raster: minder, grotere vormen op de modelplekken.
+## Gemini-model namaken (Jordi, 6 nov: vaste methode)
+**Trigger:** Jordi zegt dat hij een model (van Gemini) heeft dat precies nagemaakt moet worden. Gemini maakt het ontwerp (goed in ontwerp, luistert slecht naar instructies); Claude bouwt het 1-op-1 om naar een Emerald-sprite. Voorbeeld en naslag: poedelmot (`docs/concept/sprites/poedelmot/`, 21 rondes; doel: dit eindresultaat in ±5–8 rondes).
+
+**Eisen (BELANGRIJKSTE REGEL, SPRITE_KERN):** alleen (1) heel accuraat op het model, (2) Gen 3 volgens onze eisen. Het model is perfect: niets toevoegen, weglaten of herinterpreteren. Niet genoemd = niet goedgekeurd. Nadruk van Jordi: belijning van kop, kraag/vacht en vleugels, en alle poten precies goed.
+
+**Stappen (efficiënt):**
+1. **Klaarzetten (Claude, ±10 min):** map `docs/concept/sprites/<naam>/` met `SPEC.md` (Jordi letterlijk), `referenties/`. Meerdere Gemini-plaatjes: kies per onderdeel de bron en leg ze over elkaar (zelfde koppositie meten op de ogen; `poedelmot/silhouet/seg.py` knipt onderdelen uit). Vraag alleen: eigen soort of vorm, welke fase (bepaalt de grootte).
+2. **Silhouet = model verkleind** (`poedelmot/silhouet/sil.py`: uitsnede → 62 px breed, alpha ≥ 0,45, gaten dicht) + rode omtrek over het model + kleurgids. Silhouet meteen bevroren; niet aan Jordi voorleggen als het model al zijn pose is.
+3. **Meetgereedschap vóór de eerste ronde** (dit kostte de poedelmot ±15 rondes): kopieer `poedelmot/kleur_r19/stappen/px.py` (modelhelderheid per spritepixel: gem/p15/max), `kleur_r20/stappen/box1x.py` (model op 1×) en de lijnkaart/overlay (spritelijnen over het model). De maker zet elke lijn, glans en tintgrens op een **gemeten** modelpixel.
+4. **Eén maker** tekent met de hand op het raster (scripts alleen voor raster→png, controle en metingen), per onderdeel op 12× naast het model, en levert `vel.png` (rN | rN-1 | model op 8×, close-ups, 1× licht/donker). Zelfgenoemd zwak punt = eerst zelf repareren. **Verse maker** zodra een ronde > ±400k tokens kost (start vanaf de laatste ronde).
+5. **Claude** bekijkt alleen het eindvel per ronde op 8× naast het model en stuurt alleen benoemde reparaties; commit + push na elke ronde.
+6. **Keurder** pas als de maker geen zwakke punten meer ziet: vers, oordeelt eerst zelf, **meet** bij twijfel, toetst alleen de twee eisen, en op 1× naast het verkleinde model; afwijkingen kleiner dan 64 px kan tonen tellen niet. Spreken keurders elkaar tegen: de maker meet en volgt de meting.
+7. **Eindkeuring Dragonfly Cave** (gidsen + FAKEMON_CHECKLIST, naast 4–5 Gen 3-sprites): alleen uitvoering, geen herontwerp; ontwerpvragen "ter info voor Jordi".
+8. **Naar Jordi:** de sprite op 64×64 **én 8× vergroot** (`<naam>_8x.png` met keuring); daarna `af/`, CHANGELOG, Stand van zaken.
+
+**Lessen poedelmot (goed):** het verkleinde model als silhouet was meteen goed (alpha-diff 0 alle rondes); meten per pixel (px.py, lijnkaart) loste in 4 rondes op wat 15 rondes op het oog niet lukte; een verse maker brak twee keer een vastgelopen reeks; Jordi's woorden letterlijk in SPEC en elke opdracht; commit na elke ronde.
+**Lessen poedelmot (minder goed):**
+- Een stijlkeurder (Gen 3-smaak zonder model) duwde de sprite weg: koele lila schaduw, extra aders, mond weg, "leest als vos". Nooit een keurder die het model mag herinterpreteren.
+- Twee keurders tegelijk (gelijkenis + stijl) gaven tegenstrijdige opdrachten; één keurder met de twee eisen is beter.
+- Herhaalde kleine patronen (schubben, sprietbaarden) worden op 64 px een raster/dambord/zebra: minder, grotere vormen op de modelplekken; textuur meten (gem/std) i.p.v. tekenen op het oog.
+- Te licht of te wit zetten waar het model een middentint heeft (sprietnerf wit, middenstuk lila/grijs): tinten meten op het model.
+- Claude zei "wat Jordi niet noemt niet veranderen": fout, niet genoemd = niet goedgekeurd.
+- Rondes 1–10 ontwierpen opnieuw volgens Gen 3-regels i.p.v. het model te volgen; pas toen "alleen accuraat + Gen 3" de regel werd, ging het snel.
+- De sprite op 64×64 naar Jordi sturen is te klein: altijd ook 8×.

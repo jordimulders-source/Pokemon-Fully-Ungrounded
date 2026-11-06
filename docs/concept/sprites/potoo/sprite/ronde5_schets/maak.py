@@ -32,7 +32,7 @@ m=Image.new('L',(64*8,64*8),0); ImageDraw.Draw(m).polygon([(x*8+4,y*8+4) for x,y
 m=m.resize((64,64),Image.BOX)
 M={(x,y) for y in range(64) for x in range(64) if m.getpixel((x,y))>=128}
 for x,y in M:
-    paint(x,y,'9' if y<=16 else 'C' if y>=25 else 'B' if y>=21 else 'A')
+    paint(x,y,'9' if y<=18 else 'A' if y<=27 else 'B' if y<=31 else 'C')
 for x,y in M:
     if any((x+dx,y+dy) not in M for dx,dy in ((1,0),(-1,0),(0,1),(0,-1))): G[y][x]='D'
 # snijrand + bovensnavel met haak (linksboven)
@@ -45,8 +45,8 @@ for x,y in [(14,17),(15,17)]: paint(x,y,'E')
 for x,y in [(24,35),(25,35),(24,34),(25,34),(23,34)]:
     if (x,y) in M: G[y][x]='E'
 # oog: naar voren, liggend ovaal, puur zwart
-for y in range(5,12):
-    for x in range(20,33):
+for y in range(4,16):
+    for x in range(18,34):
         if ell(25,10.5,4.2,3.2,x,y): paint(x,y,'8')
 # buitenlijn om alles wat nieuw is
 def at(x,y): return G[y][x] if 0<=x<64 and 0<=y<64 else '.'

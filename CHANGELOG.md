@@ -644,3 +644,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "het hoofd moet iets groter, de benen net wat korter en de voeten net wat groter, hij moet minder op een mens en meer op een hitmon lijken, handen dus ook iets groter".
 - `silhouet_v3/stap2.py`: per lichaamsdeel op het grote masker van model v3: kop ×1,15 (vanuit de nek), handen ×1,3 (steunhand blijft op de grond), voeten ×1,22, benen ±9% korter (alleen het onderbeen; de voet schuift mee). Daarna weer passend op 64×64.
 - **C** = A + aanpassingen, **D** = B (gedrongen romp) + aanpassingen. Vel: `silhouet_v3/vel_stap2.png`.
+
+### [v0.0.167] - Hitmontop-evolutie: sprite ronde 1 (op silhouet D)
+- Jordi: "is niet erg, het is een silhouet, ga maar een sprite bouwen dan kijken we verder". Gebouwd op **D** (gedrongen romp + grotere kop/handen/voeten, kortere benen).
+- `sprite_model/render.py`: de render van model v3 met precies dezelfde vervormingen als D, verkleind naar 64×64 (pixeldiff met silhouet D: 0). `kleur.py`: materiaal uit de tint (bruin/blauw/wit, elk 3 tonen + selout), toon uit de schaduw van de render, 1 px omlijning (selout linksboven, donkerbruin rechtsonder), binnenlijnen waar materialen elkaar overlappen. `handwerk.py`: ogen pixel voor pixel van Hitmontop (`anim_front_gba.png`), binnenlijn kop vóór de schouder, mond als één streepje, witte band om de knot, witte klauwen, één witte streep op het shirt.
+- Broek wit zoals in het model (SPEC: nog open, wit of blauw). Vel: `sprite_model/vel_r1.png`.

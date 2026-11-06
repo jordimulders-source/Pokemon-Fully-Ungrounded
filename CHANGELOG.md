@@ -649,3 +649,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "is niet erg, het is een silhouet, ga maar een sprite bouwen dan kijken we verder". Gebouwd op **D** (gedrongen romp + grotere kop/handen/voeten, kortere benen).
 - `sprite_model/render.py`: de render van model v3 met precies dezelfde vervormingen als D, verkleind naar 64×64 (pixeldiff met silhouet D: 0). `kleur.py`: materiaal uit de tint (bruin/blauw/wit, elk 3 tonen + selout), toon uit de schaduw van de render, 1 px omlijning (selout linksboven, donkerbruin rechtsonder), binnenlijnen waar materialen elkaar overlappen. `handwerk.py`: ogen pixel voor pixel van Hitmontop (`anim_front_gba.png`), binnenlijn kop vóór de schouder, mond als één streepje, witte band om de knot, witte klauwen, één witte streep op het shirt.
 - Broek wit zoals in het model (SPEC: nog open, wit of blauw). Vel: `sprite_model/vel_r1.png`.
+
+### [v0.0.168] - Hitmontop-evolutie: sprite ronde 1 afgekeurd
+- Jordi: "lachwekkend slecht". Vastgelegd in SPEC; les in `SPRITE_KERN.md` (render per script kwantiseren is geen sprite). Silhouet D blijft staan.

@@ -556,3 +556,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - SPEC met Jordi's punten van 5 nov: alleen zijn 5 foto's als bron (linkerhelft duo-foto = leidraad kop), snavel en ogen = kern, veertjes tussen de ogen, schattig + uncanny, lekker overdreven grote bek, ogen hoger, bron getrouw nagemaakt.
 - 3D v2 (gespleten koepel, `model3d_v2/`) en v3 (snavel uit onderdelen, `model3d_v3/`) afgekeurd ("pacman zeehond", "stop met blender").
 - Poppetje in lama-stijl door één maker-agent (`docs/concept/sprites/potoo/poppetje/`), rondes 1–4b met overgetrokken foto-omtrekken als controle en twee keurders; ronde 3 de beste tot nu toe (Jordi), ronde 4 (kop vlakker, kaak naar voren, ogen hoger) bouwt daarop. Vel open snavels uit echte sprites: `potoo/referenties/open_snavels_sprites.png`.
+
+### [v0.0.137] - Great potoo: poppetje rondes 6–14 en eerste frontsprites
+- Poppetje als 2D-vectortekening (met de hand overgetrokken, geen fotopixels): kop/muil/snavel uit de leidraad (ronde 7), lijf naar Jordi's lichaamsvorm-illustratie (ronde 8), daarna rondes 9–14 op blinde tests (agent zonder context ziet alleen het plaatje). Diagnose ronde 12: schorspatroon verhoogt de herkenning (55 → 70% potoo), roze vs. paarse muil maakt weinig uit. Beste: `docs/concept/sprites/potoo/poppetje/ronde14_spritehoek.png` (50–65% potoo).
+- Frontsprite 64×64 (frame 1, bek open): `docs/concept/sprites/potoo/sprite/ronde1–3/`. Blinde tests: r1 vis/beluga, r2 uil/potoo 15–45%, r3 duif 40% / potoo 45%.
+- Werkwijze: blinde test per ronde met neutrale bestandsnaam (lessen in `docs/lessen/SPRITE_WERKWIJZE.md`).
+

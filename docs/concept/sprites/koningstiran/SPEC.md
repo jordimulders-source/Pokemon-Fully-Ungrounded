@@ -56,6 +56,9 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (6 nov) Jordi over ronde 2: "Ik vind dit al heel netjes. Laten we hier morgen verder aan werken". Aanvulling: "Nog niet perfect hoor, maar heel ver al". Open voor morgen: de drie silhouetvoorstellen (kop groter, vleugelpunt, staart).
 
+- (7 nov) "ik vind de kroon en het gezicht erg mooi, veel mooier als in het model, evenals buik en poten. [...] Het lichaam leest nog niet helemaal goed door positie van de poten. Hij staat in een juiste pose, maar linkeronderkant lichaam plus de linkerpoot zien er een beetje gekkig uit. Hoe het lichaam daar opeens ophoudt. De armen zijn nu een stuk beter en de hoofdtooi is subliem, nu lijkt het patroon misschien wel iets teveel op een watermeloen, is dat true to form? Gezicht mogelijk iets te klein, maar het gezichtsidee is wel goed. Daarnaast wil ik toch nog kijken of we in de linkerarm die nu naar beneden hangt, of die iets hoger kan hangen en daar een staf in kan"
+  → Bevroren (kleur): kroon, gezicht(sidee), buik, poten. Open: linkeronderkant lijf + linkerpoot, kroonpatroon minder watermeloen, gezicht iets groter?, linkervleugel hoger met staf.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

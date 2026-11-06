@@ -85,7 +85,7 @@ def wing(m, sh, wr, dirs, lens, g, z, cw=13, pw=5.5):
         plate(m, wr, tip, pw, 2.2, g)
 
 
-def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out=0.0):
+def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out=0.0, staff=True, staff_top='veren'):
     """Hybride: bouw van de bergcaracara (groot, rechtop, lange poten, haaksnavel, kaal rood gezicht),
     kroon en staart van de koningstiran. De zijveren van de waaier hangen omlaag (foto 2) en vormen zo
     zelf de franje van de mascaypacha; geen losse band (geen 'dier met een hoed')."""
@@ -98,9 +98,37 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out
     A = rot_x(math.radians(-5)) @ rot_z(math.radians(99))
     m.ell((6, 4, 0), (42, 23, 22), 'body', A)
     m.ell((-9, 8, 0), (19, 30, 20), 'breast', rot_z(math.radians(-6)))
-    # verre vleugel: gesloten, hangt langs de voorkant omlaag (Decidueye-cape)
-    wing(m, (-2, 28, -15), (-14, 4, -28), [(-0.22, -1.0), (-0.16, -1.0), (-0.10, -1.0), (-0.04, -1.0)],
-         (40, 37, 33, 28), 'farwing', -26, 15, 10)   # bovenarm even dik als rechts (Jordi)
+    cy, sy = math.cos(math.radians(44)), math.sin(math.radians(44))
+    W2 = lambda xp, y, zp: np.array((cy * xp - sy * zp, y, sy * xp + cy * zp))   # schermruimte -> dier (lijf 44°)
+    if staff:
+        # Jordi 7 nov: linkervleugel iets hoger, met een staf erin (Pachacútec houdt zijn staf op heuphoogte vast).
+        # Onderarm naar voren tot de staf, de slagpennen gesloten omlaag langs de staf.
+        wr = W2(-31, 2, 14)
+        plate(m, (-2, 28, -15), wr, 15, 5, 'farwing')
+        for k, (xp, y) in enumerate(((-30, -26), (-27, -24), (-24, -21), (-21, -18))):
+            plate(m, wr, W2(xp, y, 13 - k), 10, 2.2, 'farwing')
+        # staf: goud, rechtop, van de grond tot kophoogte, bovenaan drie veren zoals op het beeld
+        m.chain([tuple(W2(-37, -52, 8)) + (3.4,), tuple(W2(-37, 44, 8)) + (3.0,)], 'gold', 1.0)
+        top = W2(-37, 44, 8)
+        if staff_top == 'veren':     # drie veren zoals op het beeld
+            for a in (-24, 0, 24):
+                r = math.radians(a)
+                d = W2(math.sin(r), math.cos(r), 0) ; d = d / np.linalg.norm(d)
+                plate(m, top, top + d * 16, 4.5, 1.8, 'fan')
+                m.ell(top + d * 16.5, (2.6, 3.2, 2.0), 'fanrim')
+        else:                        # gouden zonneschijf (Inti), leest anders dan de kwastjes van de kroon
+            ctr = top + np.array((0, 9, 0.0))
+            Rs = rot_y(math.radians(-44 - 30))
+            m.ell(ctr, (9, 9, 2.2), 'gold', Rs)
+            for k in range(8):
+                a = k * math.pi / 4
+                m.ell(ctr + Rs @ np.array((math.cos(a) * 11, math.sin(a) * 11, 0)), (2.4, 2.4, 1.6), 'gold')
+        # lijf linksonder: flank loopt rond door naar de dij (lijf hield daar 'opeens op', Jordi)
+        m.ell(W2(-12, -28, 0), (13, 11, 13), 'body')
+    else:
+        # verre vleugel: gesloten, hangt langs de voorkant omlaag (Decidueye-cape)
+        wing(m, (-2, 28, -15), (-14, 4, -28), [(-0.22, -1.0), (-0.16, -1.0), (-0.10, -1.0), (-0.04, -1.0)],
+             (40, 37, 33, 28), 'farwing', -26, 15, 10)   # bovenarm even dik als rechts (Jordi)
     # nabije vleugel: gesloten blad met een knik in de pols: de arm gaat naar buiten, de slagpennen buigen omhoog,
     # elke pen iets verder gedraaid zodat de achterrand een bolle curve wordt (geen rechte lijn, geen vingers)
     c = curl

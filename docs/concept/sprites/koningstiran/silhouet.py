@@ -97,6 +97,6 @@ if __name__ == '__main__':
     red = Image.new('RGBA', ov.size, (220, 30, 30, 0))
     red.putalpha(Image.fromarray((sil * 120).astype(np.uint8)).resize(ov.size, Image.NEAREST))
     W.paste(Image.alpha_composite(ov, red).convert('RGB'), (542, 36))
-    Image.fromarray(np.where(sil, 255, 0).astype(np.uint8)).save(os.path.join(HERE, 'silhouet_v1_1x.png'))
-    W.save(os.path.join(HERE, 'silhouet_v1_vel.png'))
+    Image.fromarray(np.where(sil, 255, 0).astype(np.uint8)).save(os.path.join(HERE, 'silhouet_v2_1x.png'))
+    W.save(os.path.join(HERE, 'silhouet_v2_vel.png'))
     print('px', int(sil.sum()))

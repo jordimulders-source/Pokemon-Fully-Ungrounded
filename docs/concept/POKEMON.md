@@ -77,7 +77,9 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Besloten:** lijn "Inca-rangen, afkomst": **hatun runa** (gewone burger) → **awki** (kroonprins) → **Sapa Inca** (koning). Brainstorm en alternatieven in `IDEEEN.md`; schetsen in `docs/concept/ontwerp/koningstiran/` (v2 = richting).
 - **Inspiratie:** grote kiskadie (*Great kiskadee*, gewone stadsvogel met verborgen gele kroon; de witte wenkbrauwstreep = gevlochten hoofdband *llawt'u*) → koningstiran (*Tropical royal flycatcher*) met dichte kuif, gele franje (kroonprins) en gouden oorschijf (Inca-adel, *orejones*) → koningstiran met open waaier, rode franje (*mascaypacha*), tocapu-borst.
 - **Eisen (Jordi):** de kroon van fase 3 moet **imposant groot** zijn; sprites van fase 3 (en mogelijk fase 2) met de kop **(grotendeels) van voren**, zodat de waaier als een volle hoofdtooi leest.
-- **Open:** typen, namen, of het mannetje/vrouwtje-verschil (rood/geel) vervalt omdat de kleur per fase al wisselt.
+- **Typen (Jordi, 7 nov):** Normal/Flying → Fire/Flying → **Fire/Psychic**. De regionale vogel, en voor het eerst verliest die in de eindvorm zijn Flying-type.
+- **Eindvorm:** hybride met de bergcaracara (zie `docs/concept/sprites/koningstiran/SPEC.md`).
+- **Open:** namen, of het mannetje/vrouwtje-verschil (rood/geel) vervalt omdat de kleur per fase al wisselt.
 
 ## Regional forms (besloten)
 - **Hitmontop-regional form: capoeira** (Jordi, als extra Fighting). Hitmontop draait al op zijn kop; capoeira heeft precies die bewegingen (de *pião de cabeça*-kopspin, de *ginga*, de *meia lua*-trappen). Inspiratie: Afro-Braziliaanse vechtkunst vermomd als dans, met berimbau-muziek. Daarom gaat capoeira níet naar de alpaca-lijn (fase 2 wordt een andere vechtsport). **Zonder de rest van de Tyrogue-lijn** (Tyrogue, Hitmonlee, Hitmonchan niet in de dex). Open (Jordi): misschien krijgt de capoeira-Hitmontop een **eigen evolutie**.

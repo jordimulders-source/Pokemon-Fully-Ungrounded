@@ -162,3 +162,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca: Jordi kiest kroon v3 en de puntige stafkop; kandidaat-frontsprite in `docs/concept/sprites/koningstiran/kandidaat/`.
 - Sapa Inca: onafhankelijke keuring (13 PASS / 9 FAIL) en ronde 10 met de technische reparaties (open randen, ruis, omlijning, shading).
 - Sapa Inca ronde 11: staf als goud zonder gloed, kop en ogen groter, kleur en schaduw naar latere generaties (paarsbruine schaduw, lichte selout, warm goud).
+- Sapa Inca: ronde 11 afgekeurd; ronde 12 = ronde 10 met alleen de staf als goud zonder gloed.

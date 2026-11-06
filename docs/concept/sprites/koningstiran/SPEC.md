@@ -128,6 +128,7 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 - (7 nov) Ronde 11: staf als goud (geen gloed), kop ±13×10 met ogen/snavel 2 rijen, lijfschaduw paarsbruin, groter waardebereik, lichte selout aan de lichtkant, warm goud. Open: lijf binnenin nog vlak (3 tinten), veren nog niet als heldere vlakken. Voorgelegd.
 
 ## Afgekeurd
+- Ronde 11 (7 nov): "veel slechter. de rechtervleugel is opeens veel te klein en klopt helemaal niet meer met het lichaam qua kleur en belijning. linkerkant van het hoofd is helemaal vervaagd met een rare bruine lijn eronder". Oorzaak: nieuw palet veranderde 1443 px tegelijk (vleugel, kroon, lijf) + kopvergroting. Terug naar ronde 10; ronde 12 = ronde 10 + alleen de goudstaf (18 px).
 - Stafkop ronde 8 (gouden bol): "ja dat is nu een bol, ik dacht dat je meer voor een puntig uiteinde ging, ga dat maar doen, een puntig einde" → puntige stafkop (ronde 9).
 - Kroonvarianten A–F (alleen omkleuren van bestaande stippen): "geen enkele mooi"; B het dichtst bij maar te zwak, willekeurig, half doorgevoerd.
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.

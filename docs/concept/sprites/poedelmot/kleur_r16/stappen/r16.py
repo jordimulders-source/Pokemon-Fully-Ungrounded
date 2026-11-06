@@ -4,8 +4,8 @@ def put(y,x0,s):
     for i,c in enumerate(s):
         if c!='=': F[(x0+i,y)]=c
 # 1 kraag: haarplukjes die aan de kinschaduw (y43) hangen, plus een tweede rij korte streken
-put(44,16,"AAAAA7AAA7AAA7AAA7AAAAA")
-put(45,19,"AA77AA77AA77AA77A7AAA")
+put(44,16,"AAAAA7AAAA7AAA7AA7AAAAA")
+put(45,19,"AA77AAA7AAA77A77A7AAA")
 put(46,19,"7AAAAAAAA7AAAAAAA")
 put(47,19,"77"); put(47,28,"77"); put(47,32,"A")
 # 3 middenpootje: teentje
@@ -22,3 +22,10 @@ for y in range(21,35):
         if R[y][x]=='6' and (x,y) not in {(58,24)}:
             W.setdefault(y,[]).append((x,'5' if ((x,y) in KL or (x,y) in LIJN) else 'D'))
 W.setdefault(33,[]).append((39,"D"))
+
+# achtervleugel ook in D/5 (zelfde tint als de voorvleugel, zoals het model)
+H={(46,38),(47,38),(45,39),(46,40),(47,40),(47,42),(48,42),(51,42),(52,42),(45,43),(46,43),(49,43),(50,43),(51,38),(52,39),(52,40),(51,41)}
+for y in range(36,45):
+    for x in range(40,58):
+        if R[y][x]=='6' and (x,y) not in {(55,43),(54,44)}:
+            W.setdefault(y,[]).append((x,'5' if (x,y) in H else 'D'))

@@ -69,6 +69,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Krabbel `referenties/krabbel_jordi_staf_punt.png`: "Het moet gewoon een puntje zijn, zodat je kan zien dat er een staart hangt, hij moet niet een verbinding maken naar iets wat niet bestaat" / "al kan de staf links goed zijn, zolang we het lichaam fixen, want die is niet goed in vorm nu" / "nee houd de staf links maar zo" / "puur tussen de poten" / "en het lichaam linksonderin moet meer opgevuld" / "maar laten we aub weer naar de sprite gaan want dit is echt zinloos werk" → terug naar de pixels (ronde 3 op ronde 2), poppetje alleen als onderlaag voor de staf (`poppetje_staf_256.png`).
 
+- (7 nov) "en het uiteinde van de staf plus de staf zelf mag ook wat kenmerken van een staart hebben, dus een hybride idee" → aan de maker doorgegeven (ronde 3).
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

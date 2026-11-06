@@ -19,8 +19,16 @@ for y in range(H):
 binnen = {p for p, c in G.items()}
 rand = {p for p in binnen if any((p[0] + dx, p[1] + dy) not in binnen for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))}
 
+# knot als volle bal, kop ervoor; restvlak onder de knot weg
+BAL_C, BAL_R = (23.5, 9.0), 5.3
+in_bal = lambda x, y: (x - BAL_C[0]) ** 2 + (y - BAL_C[1]) ** 2 <= BAL_R ** 2
+in_kop = lambda x, y: ((x - 12.5) / 12.9) ** 2 + ((y - 18.6) / 10.1) ** 2 <= 1.0 or y <= 9 and 9 <= x <= 17
+binnen = {p for p in binnen if in_kop(*p)} | {(x, y) for x in range(W) for y in range(H) if in_bal(x, y)}
+kopset = {p for p in binnen if in_kop(*p)}
+rand = {p for p in binnen if any((p[0] + dx, p[1] + dy) not in binnen for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))}
+rand |= {p for p in kopset if any((p[0] + dx, p[1] + dy) not in kopset and in_bal(p[0] + dx, p[1] + dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))}
 # vlakken
-def is_knot(x, y): return (x - 23.5) ** 2 / 25 + (y - 9.5) ** 2 / 20 <= 1.0 and x >= 19
+def is_knot(x, y): return in_bal(x, y) and not in_kop(x, y)
 def is_stekel(x, y): return y <= 8 and 9 <= x <= 17
 KOP_C, KOP_R = (12.5, 18.5), (12.5, 9.8)   # ellips van de kop (benadering van de omtrek)
 
@@ -28,7 +36,7 @@ def tint(u, v):
     """u,v: plek t.o.v. middelpunt, genormaliseerd (-1..1). Licht linksboven: licht waar -u-v groot is."""
     s = -0.55 * u - 0.75 * v
     r = math.hypot(u, v)
-    if r > 0.86 and s < 0.25: return '3'
+    if r > 0.93 and s < 0.25: return '3'
     if s > 0.78 and r > 0.45: return '0'
     if s < -0.35 or (r > 0.8 and s < 0.0): return '2'
     return '1'
@@ -38,14 +46,14 @@ for (x, y) in binnen:
     if (x, y) in rand:
         R[(x, y)] = '#'; continue
     if is_knot(x, y):
-        R[(x, y)] = tint((x - 23.5) / 5, (y - 9.5) / 4.5)
+        R[(x, y)] = tint((x - BAL_C[0]) / BAL_R, (y - BAL_C[1]) / BAL_R)
     elif is_stekel(x, y):
         R[(x, y)] = '0' if x <= 12 else ('1' if x <= 13 else '2')
     else:
         R[(x, y)] = tint((x - KOP_C[0]) / KOP_R[0], (y - KOP_C[1]) / KOP_R[1])
 
 # grens knot/kop: omlijning tussen knot en kop (de knot ligt achter de kop), witte band ertussen
-for (x, y) in list(R):
+for (x, y) in []:
     if R[(x, y)] != '#' and is_knot(x, y):
         for dx, dy in ((-1, 0), (0, 1), (-1, 1)):
             q = (x + dx, y + dy)
@@ -56,18 +64,17 @@ for i, p in enumerate(BAND):
     if p in R: R[p] = 'w' if i % 3 else 'g'
 
 # ogen: Hitmontops oog (zwart rondje met wit puntje linksboven)
-OOG = [".##.", "#w##", "####", ".##."]
-for (ox, oy) in ((3, 16), (11, 16)):
+OOG = [".####.", "######", "##ww##", "##ww##", "######", ".####."]
+for (ox, oy) in ((2, 16), (11, 16)):
     for j, rij in enumerate(OOG):
         for i, c in enumerate(rij):
             if c != '.': R[(ox + i, oy + j)] = '#' if c == '#' else 'w'
 # de V: twee lijnen die tussen de ogen in één punt samenkomen (punt op (8,15))
-V = [(5, 12), (6, 13), (7, 14), (8, 15),           # linkerarm
-     (16, 10), (15, 11), (14, 11), (13, 12), (12, 12), (11, 13), (10, 14), (9, 14), (8, 15)]
+V = [(5, 11), (6, 12), (7, 13), (8, 14), (9, 15),           # linkerarm
+     (16, 10), (15, 11), (14, 11), (13, 12), (12, 13), (11, 14), (10, 14), (9, 15)]
 for p in V: R[p] = '3'
 # mond: één streepje, uiteinden 1 px hoger (een beetje blij)
-for x in range(6, 12): R[(x, 22)] = '#'
-R[(5, 21)] = '3'; R[(12, 21)] = '3'
+for x in range(5, 14): R[(x, 23)] = '3'
 
 def png(R, naam):
     im = Image.new('RGBA', (W, H), (0, 0, 0, 0))

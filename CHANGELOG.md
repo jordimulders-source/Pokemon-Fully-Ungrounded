@@ -629,3 +629,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.162] - Hitmontop-evolutie: hoofdconcept via Gemini, pixels ronde 9
 - Jordi bewerkte het 3D-plaatje in Gemini met Claude's prompt: knot met witte band, V naar achteren, kleinere stekel ("Dit is het idee wat ik voor het hoofd had min of meer"). Bron in `referenties/hoofd_gemini_concept.webp`. Ronde 9 (`stap4_hoofd/ronde9/`): silhouet verkleind uit die bron, met de hand ogen (zwart rondje met wit puntje), V met punt tussen de ogen, mondstreepje, witte band; vooraanzicht, nog niet gedraaid.
+
+### [v0.0.163] - Hitmontop-evolutie: hoofd ronde 9b (Jordi's doorgekruiste punten)
+- Ogen: zwarte cirkel met witte cirkel erin (zoals het concept); mond: dunne lijn in de donkere huidtint zonder stippen; knot: volle bal achter de kop, de zwarte knip eronder weg. Verder niets veranderd.

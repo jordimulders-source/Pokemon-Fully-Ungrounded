@@ -1,0 +1,13 @@
+# Keuring (zelfvergelijking van de maker, géén eindoordeel)
+- Bron: bron/bron_leidraad.png, bron/bron_ineen.png, bron/bron_tak.png (klauwen), bron/bron_rug.png, referenties/grote_snavels_studie.png
+- Bekeken op 8× en 1× (licht/donker) + close-ups kop/muil (8,4–34,34) en onderkant (16,34–50,62)
+- Per onderdeel (lijkt op <bron> / wijkt af in <x>):
+  - snavel: geen hoornblok meer; bevederde kop met dunne lichte lip (D) op y12 en een punt van 2 px in D (10,14–15), zoals de leidraad. Wijkt af in: de lip loopt als rechte rij van 8 px.
+  - muil (192 px 9/A/B/D): donker dak direct onder de lip, donkere achterhoek (23–26,14) aan de keel, keelgat, lichte bodem linksonder. Wijkt af in: de bovenkant is nu een brede donkere band; het geheel leest breder en platter dan de leidraad.
+  - oog: ongewijzigd (rond 5×5, puur zwart).
+  - wang: licht 5 aan de mondrand → sikkel 4 die naar onder breder wordt → 3 bij de vleugelgrens; geen evenwijdige strepen. Wijkt af in: de sikkel is aan de bovenkant nog een smalle trap.
+  - halsrand: bocht laag bij de kin (y31) oplopend naar (30–32,27), 4 boven / 3 kern / 2 alleen onder de kin. Wijkt af in: links onder de kin is hij dik (3+2 boven elkaar).
+  - klauwen: twee kleine gekromde klauwen (7 boven, E onderkant) op (24–26,42–44) en (29–31,43–44), alles binnen de omtrek. Wijkt af in: op 1× heel klein, lezen als twee bruine streepjes.
+  - onderkant: ronde buik met sikkel rechtsonder, gebogen schaduw (2/3) onder de buik rond de klauwen, staart breder met lichte bol (5) linksboven en bandjes; vleugelpennen met punten op y47/52/56. Wijkt af in: vleugel nog blokkig (rechte lijnen).
+  - spikkels: 5 groepjes in C. Wijkt af in: zelfde L-vorm.
+- Oordeel: open — onafhankelijke keuring door de coördinator.

@@ -9,7 +9,7 @@ PAL = [
     (186, 178, 214),  # 4 schaduw vacht, vleugel basis, hoornglans
     (226, 222, 240),  # 5 vacht basis, veerranden
     (250, 248, 255),  # 6 vacht licht
-    (184, 152, 120),  # 7 hoorn (haakje), warm: eigen kleur
+    (184, 152, 120),  # 7 klauwen (warm hoorn)
     (8, 8, 12),       # 8 oog, puur zwart
     (44, 30, 96),     # 9 keel / slagschaduw in de muil (donkerst)
     (84, 64, 168),    # A muil donker-midden

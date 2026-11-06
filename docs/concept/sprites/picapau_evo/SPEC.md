@@ -51,3 +51,8 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 ## Model ronde 3 → sprite (6 nov)
 - `blender/r3/` (C3): staart + bliksem lezen als Gen 1; oren = ringetjes op steeltjes ("slakkenvoelsprieten"), verre oor tegen de vleugel.
 - Jordi: **"Ga een sprite bouwen. Dat is makkelijker aan te passen"** → model stopt bij C3 (bron voor massa: lijf, kop, vleugels, staart, bliksem). Sprite v1: overtrekken van de C3-render (methode Picapau sprite v2); de oren in de pixelstap naar Gen 1 (oorpunt loopt zelf uit in de krul, geen losse ring).
+
+## Sprite r2 (6 nov)
+- `sprite_v1/r2/`. Claude: schaduw met regels in code (niet met de hand), kop leest als vos.
+- Jordi: **"het ding is, het is nog niet echt een vogel he. De staart mag wat dunner en wat meer vogelachtig, desnoods zwart. De oren mogen ook naar achter bewegen, zwart en meer op de raichu lijken, verder mag die wat graden naar links draaien, want nu zien we een flink stuk hoofd met het oog helemaal aan de zijkant. De vleugel mag iets vogel achtiger"**
+- → pose-wijziging (draaien) in het model, dan opnieuw overtrekken; kleur daarna met de hand.

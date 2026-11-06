@@ -69,5 +69,8 @@ Bij `referenties/hitmontop_3d.webp`: "kijk naar deze afbeelding. De V-vorm tusse
 Dus: (1) de V tussen de ogen (de voorrand van de flappen) naar achteren trekken; (2) de flappen komen achter samen in een knot = een rondje met een witte band, zoals zijn handen met polsband; (3) de stekel kleiner. Verder niets.
 Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste wat ik kan vragen"; "namelijk de v vorm in het hitmontop hoofd, want die sluit neit aan in een punt". Daarna: "stop maar", "ik ben er ff klaar mee". **Gepauzeerd.** Volgende keer eerst: de V van Hitmontop (twee lijnen die tussen de ogen in één scherpe punt samenkomen) naar achteren getrokken, nog steeds als V met punt.
 
+## Hoofd: concept goedgekeurd (6 nov)
+- Jordi's Gemini-bewerking van het 3D-plaatje: `referenties/hoofd_gemini_concept.webp`. Jordi: "je hebt nog gelijk ook. Dit is het idee wat ik voor het hoofd had min of meer". Dit is de bron voor de pixels (ronde 9: `stap4_hoofd/ronde9/`, silhouet uit de bron, details met de hand).
+
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

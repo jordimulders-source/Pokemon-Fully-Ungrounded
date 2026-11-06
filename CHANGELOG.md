@@ -626,3 +626,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.161] - Keurslot-hook verwijderd
 - Jordi: "die keurcontrole is echt bizar, haal die eraf" (hij blokkeerde ook het terugsturen van zijn eigen referentieplaatje). `.claude/hooks/sprite_keurslot.py` en de hook in `.claude/settings.json` weg; CLAUDE.md, SPRITE_WERKWIJZE.md en SPRITE_OPDRACHT.md bijgewerkt.
+
+### [v0.0.162] - Hitmontop-evolutie: hoofdconcept via Gemini, pixels ronde 9
+- Jordi bewerkte het 3D-plaatje in Gemini met Claude's prompt: knot met witte band, V naar achteren, kleinere stekel ("Dit is het idee wat ik voor het hoofd had min of meer"). Bron in `referenties/hoofd_gemini_concept.webp`. Ronde 9 (`stap4_hoofd/ronde9/`): silhouet verkleind uit die bron, met de hand ogen (zwart rondje met wit puntje), V met punt tussen de ogen, mondstreepje, witte band; vooraanzicht, nog niet gedraaid.

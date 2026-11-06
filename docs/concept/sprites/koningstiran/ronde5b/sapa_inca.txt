@@ -124,3 +124,18 @@ P t 162 82 42
 49 14 tytKdddddd
 50 15 tyttKdddddd
 51 16 tttttKd
+# ==== ronde 5b: geen zwarte klont tussen staf, vleugel en lijf ====
+# vleugelpunt in vleugeltinten (m/l, penscheidingen in d); K alleen als een doorlopende onderrand
+40 13 mllmmmd
+41 12 mlmdmmmd
+42 12 mmmmdmmd
+43 12 Kmdmmdmd
+44 13 Kmdmmdmd
+45 13 Kdmdmmdd
+46 14 KKKmddd
+47 17 KKddd
+# flank erachter in schaduwtint met zachte lichte rand (m) langs de staf; staf zonder K-wig
+48 17 mmdddd
+49 17 mmddddd
+50 19 mdddddd
+51 21 Kd

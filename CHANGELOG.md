@@ -154,3 +154,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca ronde 4 (`docs/concept/sprites/koningstiran/ronde4/`): vleugel om de staf in vleugelvorm, staf meer staart, linkerpoot aangesloten, trotse Pokémon-ogen.
 - Sapa Inca: zes kroonvarianten (gouden stippen, gouden band, zonder stippen) in `docs/concept/sprites/koningstiran/kroon_varianten/`.
 - Sapa Inca ronde 5: staf zichtbaar onder de vleugel. Stand van zaken bijgewerkt.
+- Sapa Inca ronde 5b: zwart vlak tussen staf, vleugel en lijf opgelost.

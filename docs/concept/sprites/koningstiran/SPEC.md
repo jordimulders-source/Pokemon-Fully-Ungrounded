@@ -93,6 +93,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Ronde 5 (maker, op ronde 4): staf komt onder de vleugelpunt weer tevoorschijn (rij 47–49, zelfde lijn en dikte), buigt dan naar het lijf; 24 px gewijzigd, rest 0 px. Open: middenstuk 9 rijen verborgen, bocht leest als knik.
 
+- (7 nov) "nu is er een zwart vlak tussen staf, lichaam en vleugel in wat er niet mooi uitziet" → ronde 5b: zone x17–23, rij 44–52 (d + K-streepjes) laten lezen als vleugelpunt + flank.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

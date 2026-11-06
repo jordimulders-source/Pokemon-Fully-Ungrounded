@@ -121,6 +121,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Jordi: "3 en puntig" → **kroon v3 (één gouden boog + gouden randvlekken) en puntige stafkop gekozen**. Kandidaat: `kandidaat/sapa_inca.png` (= ronde9 v3). Volgende stap: verse onafhankelijke keurder, daarna af.
 
+- (7 nov) Onafhankelijke keuring (`KEURING.md`): 13 PASS, 9 FAIL. Ronde 10 (maker): technische punten 1–5 en 9 gerepareerd (135 px, 0 open randen met strenge definitie); keuzes van Jordi niet aangeraakt. Open voor Jordi: kop/ogen groter, klauwen, vleugelpunt, kroononderrand, kleurbalans; afweging lichte randen aan de lichtkant (nu donkerbruin).
+
 ## Afgekeurd
 - Stafkop ronde 8 (gouden bol): "ja dat is nu een bol, ik dacht dat je meer voor een puntig uiteinde ging, ga dat maar doen, een puntig einde" → puntige stafkop (ronde 9).
 - Kroonvarianten A–F (alleen omkleuren van bestaande stippen): "geen enkele mooi"; B het dichtst bij maar te zwak, willekeurig, half doorgevoerd.

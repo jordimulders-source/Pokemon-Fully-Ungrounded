@@ -160,3 +160,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca ronde 7b/8: linkeromtrek tussen 6b en 7, grotere zon-stafkop (7×7).
 - Sapa Inca ronde 9: nieuw kroonpatroon per veer (3 varianten) en puntige stafkop.
 - Sapa Inca: Jordi kiest kroon v3 en de puntige stafkop; kandidaat-frontsprite in `docs/concept/sprites/koningstiran/kandidaat/`.
+- Sapa Inca: onafhankelijke keuring (13 PASS / 9 FAIL) en ronde 10 met de technische reparaties (open randen, ruis, omlijning, shading).

@@ -87,6 +87,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) Ronde 4 (maker, op ronde 3): linkervleugel met knik en bolle achterrand om de staf; staf taps (3→5 px) met vaan aan beide kanten; linkerpoot opgebouwd als de rechter; ogen opnieuw (goud, hoog onder een vlak lid, glans; gezicht zelfde maat). Kroon/buik/rechterpoot/rechtervleugel 0 px. Open: ogen klein, staf meer staf dan staart, staf onder de arm deels verborgen.
 
+- (7 nov) "het is nu niet helemaal duidelijk meer dat hij een staf vast heeft, misschien onderin de staf nog iets meer ervan tonen? zodat de vleugel het grotendeels overlapt maar niet volledig" → ronde 5 (maker).
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

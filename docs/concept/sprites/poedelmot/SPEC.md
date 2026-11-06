@@ -73,3 +73,4 @@ Plus de latere besluiten onderaan (pose tak-foto, 3/4 op 45°, adertjes, poedelp
   - **Voorpoten:** "alsof het poten zijn van een zoogdier"; "komen ook wat hoger uit het boven lichaam"; "niet echt stelten".
   - **Vier achterpoten:** "functioneren als achterpoten alleen zijn het er 4 ipv 2"; "komen wat meer uit de zijkant".
 - Jordi 6 nov (letterlijk): "kijk ook naar andere pokemon sprites van niet insecten hiervoor" → studie van Gen 3-sprites van niet-insecten voor de poten.
+- Jordi 6 nov (letterlijk): "en het gaat vooral om de positie waar de poten uit komen, die zitten vrij ver naar voren, bijna op borsthoogte waar ze uit komen" → **hoofdpunt poten: de aanzet**, vrij ver naar voren, bijna op borsthoogte.

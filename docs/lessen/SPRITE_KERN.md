@@ -16,6 +16,7 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 - **Zelfgenoemd zwak punt = terug**, niet opleveren. Reparaties via de maker; daarna opnieuw keuren.
 - **Toets de hoofdvraag eerst** (pose, kop, leest het als Pokémon op 1×?), pas daarna getallen (overlap, px). Groene getallen ≠ goed beeld.
 - Een pose-probleem los je nooit op met kleurrondes.
+- **Model alleen tot de richting staat** (picapau-evo, 6 nov, Jordi: "laten we een sprite gaan maken, dat is makkelijker te editen" · "en model vertaalt toch altijd weer anders naar een sprite"): zodra pose en massa kloppen, naar de sprite; vorm-details (buikcurve, maat van de bliksem, oren) in de sprite oplossen, geen extra modelrondes.
 
 ## Hoe een Gen 3-sprite eruitziet (meetbaar)
 - 3/4 naar links-voor, kop draait meer naar de kijker dan het lijf; ronde kop als eigen vorm; één oog bij een snavel/snuit opzij.

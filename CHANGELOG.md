@@ -560,3 +560,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.139] - Les: changelog na main nummeren
 - `docs/lessen/AGENTS.md`: vóór het pushen naar `main` eerst `main` mergen en de eigen changelogsecties achteraan nummeren (Jordi).
+
+### [v0.0.140] - Poedelmot frontsprite af (Gemini-model)
+- **Nieuwe fakemon: Venezolaanse poedelmot** (eigen soort, laatste evolutie; voorvorm: larve met poedelkenmerken, later). Frontsprite naar Jordi's eigen Gemini-ontwerp: lijf uit afbeelding 2, voelsprieten uit afbeelding 1. `docs/concept/sprites/poedelmot/af/poedelmot.png` (+ `normal.pal`, 8×-weergave), 64×64, box 62×45, 1782 px, 14 kleuren.
+- 21 kleurrondes (`kleur_r1`–`kleur_r21`); keuring r21 PASS op de twee eisen (accuraat t.o.v. model + Gen 3) en eindkeuring Dragonfly Cave PASS. Ter info van de eindkeurder: het lijnennet in het onderlijf (uit het model) is het drukste deel van de sprite.
+- **Werkwijze:** nieuwe belangrijkste spriteregel (bovenaan `SPRITE_KERN.md`): een model van Jordi namaken = alleen accuraat op het origineel + Gen 3; niet genoemd = niet goedgekeurd. Vaste methode "Gemini-model namaken" met stappen en lessen in `SPRITE_WERKWIJZE.md`.

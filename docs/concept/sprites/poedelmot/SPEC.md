@@ -27,5 +27,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` + `docs/lessen/SPRITE_KERN.md`. Ach
 - (6 nov, letterlijk) "eigen soort, en een laatste evolutie idd, komt 1 vorm voor, een larve met poedel kenmerken"
   → **Eigen soort** (niet de Venomoth-regional form), **laatste evolutie** (fase 2 van 2; formaat 62×45, 1782 px is goed). Voorvorm: een **larve met poedelkenmerken** (ontwerp later, eigen SPEC).
 
+## Af (6 nov)
+- `af/poedelmot.png` = kleur_r21: keuring PASS (twee eisen) + eindkeuring Dragonfly Cave PASS; Jordi: "ik vind hem goed gelukt".
+
 ## Open
 - Naam, type en data komen later (Jordi, 5 nov). Ontwerp van de larve.

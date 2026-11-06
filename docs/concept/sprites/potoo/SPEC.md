@@ -69,6 +69,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **opnieuw beginnen** (Jordi
 | muilgrootte | "naar 175 pixels gaan is een goed idee" (6 nov) | muil/omtrek gemeten: foto 20,0%, ronde 14 15,7% (137 px) → muil ±175 px; mondlijn telt als muilrand, binnengrens 1 px naar buiten, buitenomtrek gelijk |
 | onderkant | Claude stelde voor linksonder opnieuw over te trekken van de tak-foto; Jordi: "prima" (6 nov) | `sprite/ronde17_basis/`: buik rond tot de zitplek, stap naar binnen, staart eronder; de afgekapte vorm kwam door te sterk samendrukken, niet uit de bron |
 | snavelhaak | "je blijft elke keer een snavelkop imagineren, maar als je in de bronnen kijkt zit die daar helemaal niet, ja misschien heeeeeel lichtjes" (6 nov) | geen hoornblok/haakje; bovenkaak = bevederde kop met dunne lichte snijrand; hoogstens 1–2 px lichte hoorn |
+| onderkant v2 | "het moet juist minder zuid amerika"; "er zit toch geen tak in de sprite"; "rechts is de beste" (6 nov) | `sprite/ronde17_basis_v2/`: vloeiende onderkant zonder takstap, bredere staart; kop rij 0–30 gelijk aan ronde 13 |
+| klauwen | "zorg dat er bij het inkleuren 2 klauwen in komen die op de foto ook zichtbaar zijn, rustend op de tak" (6 nov) | twee korte gekromde klauwen onder de buik (±(23–26,42–44) en (29–31,43–44)), tak zelf niet getekend; vervangt "klauwen verborgen" |
 | kern | "De snavel en ogen zijn het kernpunt van het design, zoals je kan zien zitten er kleine veren allemaal ook tussen de ogen duidelijk, dat mag je ook uitbeelden" (5 nov, tweede gesprek) | besloten: snavel + ogen krijgen de meeste aandacht; korte veertjes tussen en rond de ogen (borstelveertjes/wenkbrauwkuif) uitbeelden |
 | werkwijze | "Voordat je een silhouet bouwt, bouw je eerst een 3d model" | 3D-poppetje vóór het silhouet |
 

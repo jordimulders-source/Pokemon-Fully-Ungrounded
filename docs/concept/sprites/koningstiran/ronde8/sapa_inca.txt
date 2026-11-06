@@ -78,3 +78,15 @@ P t 162 82 42
 61 0 .....................KKaK....aggggK.............................
 62 0 .............................KKaKK..............................
 63 0 ................................................................
+# ==== ronde 8: stafkop = variant B (zon uit de veerpunt), zonneschijf vergroot tot 7x7 met roestbruine vaan eromheen ====
+# donkere omlijning (K) waar de zon voor de kroonrand en het kwastje ligt
+20 14 KKK
+21 13 KaaaK
+22 12 KayygaK
+23 11 Kayyggga__
+24 11 Kaygggga__
+25 11 Kaggggaa_
+26 12 taggaat_
+27 12 ttaaatt
+28 13 ttytt
+29 13 atyta

@@ -91,6 +91,8 @@ Eindvorm eerst (FAKEMON_DESIGN principe 1), daarna terugwerken naar awki en hatu
 
 - (7 nov) "verder vind ik op wat design consistencies na het prima, alleen de hoofdtooi moet nog een iets ander design, misschien de zwarte pixels daar geel maken oid, maar misschien kan je wat variaties tonen" → kroonvarianten A–F (alleen hercoloreren, op ronde 4): `kroon_varianten/kroon_varianten.png`.
 
+- (7 nov) Ronde 5 (maker, op ronde 4): staf komt onder de vleugelpunt weer tevoorschijn (rij 47–49, zelfde lijn en dikte), buigt dan naar het lijf; 24 px gewijzigd, rest 0 px. Open: middenstuk 9 rijen verborgen, bocht leest als knik.
+
 ## Afgekeurd
 - Staartpoging na de krabbel (5 nov): ging over het been heen, las als een streep, "lijkt niet op een staart, een scepter". "spiegelbeeld mag" ging over de staart, niet over de vleugels ("niet spiegelbeeld"). Wacht op Jordi's antwoord/omtrek.
 - Pose-ronde 4: opgeheven vleugel een rechte lijn, benen in een V.

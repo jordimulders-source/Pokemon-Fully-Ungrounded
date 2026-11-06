@@ -6,6 +6,9 @@ naast staat: <bestand>.keuring.md, nieuwer dan de afbeelding, met
   8×: ... / 1×: ...                                   (bekeken op 8× en 1×, keurvel: tools/grounded/keurvel.py)
   per onderdeel één regel 'lijkt op ... / wijkt af in ...'
   Oordeel: PASS                                       (één afwijking of twijfel = niet sturen)
+Uitzondering (Jordi 7 nov: "ja, tekenbases mogen door het keurslot"): een tekenbasis of vergelijkingsvel waar Jordi zelf
+over gaat tekenen mag door met <bestand>.tekenbasis.md (nieuwer dan de afbeelding) met een regel "Tekenbasis: <waarom>".
+Nooit gebruiken voor een sprite of ontwerp dat ter beoordeling naar Jordi gaat.
 Zie docs/lessen/SPRITE_WERKWIJZE.md, "Checklist". Exit 2 blokkeert de tool en toont de melding aan Claude."""
 import json, os, re, sys
 
@@ -18,6 +21,10 @@ for f in files:
     p = os.path.normpath(p)
     rel = os.path.relpath(p, root)
     if not rel.startswith('docs/concept/sprites/') or not re.search(r'\.(png|jpe?g|gif|webp)$', rel, re.I):
+        continue
+    tb = p + '.tekenbasis.md'
+    if os.path.exists(tb) and (not os.path.exists(p) or os.path.getmtime(tb) >= os.path.getmtime(p)) \
+            and re.search(r'(?im)^\s*[-*]?\s*Tekenbasis:\s*\S', open(tb, encoding='utf-8').read()):
         continue
     k = p + '.keuring.md'
     if not os.path.exists(k):

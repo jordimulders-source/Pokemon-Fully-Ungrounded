@@ -38,3 +38,12 @@ Voorbeeldmodel: `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` (hui
 
 **Regional forms:** begin van de bestaande sprite van de soort; lessen (Uyuni-Silicobra, Salticonda) in `naslag/SPRITE_WERKWIJZE_oud.md`, "Regional forms".
 **Silhouet naar sprite is niet 1 op 1** (Jordi, 5 nov, DJ Rotom): heeft een onderdeel in kleur meer ruimte nodig (gezicht, ogen), dan mag de sprite daar afwijken; in de sprite oplossen en de afwijking melden. **Vormen van een bestaande soort** (Rotom-vormen, regional forms): consistentie-analyse tegen alle bestaande vormen, zie naslag.
+
+## Model van Jordi namaken (poedelmot, 6 nov; Jordi: "dit is wel een hele goede way of working zo")
+1. Jordi's afbeelding(en) in `referenties/`; zo nodig samenstellen (poedelmot: lijf uit afb. 2, sprieten uit afb. 1, zelfde koppositie → direct overleggen).
+2. Silhouet = het model direct verkleind (alpha ≥ 0,45 per blok, gaten dicht; `poedelmot/silhouet/sil.py`), plus rode omtrek over het model en een kleurgids (gemiddelde per pixel, géén sprite). Silhouet bevroren.
+3. Eén maker tekent per ronde met de hand op het raster, met close-ups naast het model op 12×; Claude kijkt elk eindvel op 8× naast het model; zelfgenoemd zwak punt = terug.
+4. Keurder toetst alleen de twee eisen (accuraat t.o.v. model; Gen 3 volgens SPRITE_KERN), oordeelt eerst zelf, leest oude keuringen pas daarna. Bevroren is alleen wat accuraat verklaard is.
+5. Gebundelde reparaties per ronde (alleen benoemde zones), commit + push na elke ronde.
+6. **Zuinig:** keurder pas als de maker zelf geen zwakke punten meer ziet; maker vervangen door een verse (start vanaf de laatste ronde) zodra een ronde > ±400k tokens kost (de eerste maker liep na 10 rondes vast, de verse loste het raster in de vleugels in één ronde op); Claude bekijkt alleen het eindvel.
+- Valkuilen: een stijlkeurder die het model herinterpreteert (koele schaduw, aders, mond weg) duwt de sprite weg van het model; herhaalde kleine patronen (schubben, baarden) worden op 64 px een raster: minder, grotere vormen op de modelplekken.

@@ -42,3 +42,7 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 - Jordi over de kuif in ronde 1: **"vooral de oren zijn too much"** · **"te wit, te groot"** → kuif kleiner, rustiger, subtiele krul, overwegend kastanje (hooguit lichte rand/top). Vervangt "lichte kuif" uit de kleurkeuze.
 - Ronde 2 (maker): kuif zoals hierboven, imposanter (borst, kop, bredere vleugels, minder stekels, grotere stippen), staart als platte veerpluim in S met grotere bliksem, langere beitelsnavel, echte kastanje in de render.
 - Jordi: **"de vleugels zijn ook iets te draconian, maar voor de rest vind ik hem wel al ergens op beginnen te lijken"** → vleugels: vogelvleugel met ronde voorrand en zachte, gesloten handpennen (geen drakenvingers); de rest van C (lijf, kop, kopdraai, pose) alleen licht bijwerken, niet herbouwen.
+
+## Model ronde 2 (6 nov)
+- `blender/r2/` (C2). Jordi: **"de oren en staart zijn geen raichu staart"**.
+- Bron nu de echte Raichu: `referenties/raichu_gen3_8x.png` + Gen 1. Staart = dunne donkere koord (1–2 px) in een krul/lus met een grote platte bliksem als eind (niet de dikke pluim met kleine bliksem van C2). Kuif = Raichu-oorvorm: brede driehoek, donkere buitenkant, lichtere binnenkant, dunne krul aan de punt; maat zoals C2 ("too much", "te wit, te groot" blijven gelden). Ronde 3: alleen kuif en staart, rest van C2 bevroren.

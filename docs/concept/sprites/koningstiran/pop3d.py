@@ -146,7 +146,8 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out
                 a = k * math.pi / 4
                 m.ell(ctr + Rs @ np.array((math.cos(a) * 11, math.sin(a) * 11, 0)), (2.4, 2.4, 1.6), 'gold')
         # lijf linksonder: flank loopt rond door naar de dij (lijf hield daar 'opeens op', Jordi)
-        m.ell(W2(-12, -28, 0), (13, 11, 13), 'body')
+        # lijf linksonder: geen losse bult meer, maar het ei loopt rustig door naar de dij (Jordi: "lichaam niet goed in vorm")
+        m.ell((2, -12, -2), (24, 22, 21), 'body', A)
     else:
         # verre vleugel: gesloten, hangt langs de voorkant omlaag (Decidueye-cape)
         wing(m, (-2, 28, -15), (-14, 4, -28), [(-0.22, -1.0), (-0.16, -1.0), (-0.10, -1.0), (-0.04, -1.0)],
@@ -159,7 +160,7 @@ def bird(extra=32, fan_L=58, fan_n=17, tilt=14, curl=0.5, wing_out=0.0, tail_out
     # staart = staf (Jordi 7 nov): de echte staart is weg; alleen rechtsonder een klein stukje waar hij uit het lijf
     # komt en heel licht afbuigt, in het goud van de staf, achter het standbeen (nergens eroverheen).
     if staff:
-        tube(m, [W2(*q) for q in ((-3, -34, -9), (-4, -40, -5), (-3, -44, -4), (-1, -42, -4))], 2.2, 1.9, 'gold')  # los krulletje tussen de poten, raakt geen poot of dij
+        tube(m, [W2(*q) for q in ((0.5, -31, -4), (1.0, -35, -2), (1.4, -38.5, -1.5))], 2.4, 0.9, 'gold')  # alleen een hangend puntje: er hangt een staart (krabbel)
     else:
         for ang in (-62 - tail_out, -48 - tail_out, -34 - tail_out):
             Rt = rot_z(math.radians(ang)) @ rot_x(math.radians(-6))

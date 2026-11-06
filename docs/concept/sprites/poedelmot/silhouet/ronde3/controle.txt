@@ -1,0 +1,8 @@
+px 1378; korrels buiten de oorpunten: 0; in de oorpunten: 1 uit, 0 in, 1 tanden
+massa poppetje (buiten kop, oren, poten, reparatiezones): 5 afwijkingen, waarvan > 1 px van de 50%-grens: 2
+   +x59 y22 (dekking 0.15)
+   -x8 y31 (dekking 0.52)
+   -x47 y33 (dekking 1.00)
+   -x48 y33 (dekking 1.00)
+   -x45 y45 (dekking 0.52)
+componenten (8-buren): 1

@@ -1,0 +1,53 @@
+# --- kop r9 (Jordi over r8: "nee ik vind het ook nog niet zo mooi, hoe kunnen we dit beter maken"): opbouw van Swellow (eerste frame)
+# snavel, voet, oog en wang als één ontwerp: oog (Picapau, 1 px naar links) direct rechtsboven de snavelvoet, voet 7 rijen hoog (rij 8-14)
+# tegen de wang, wang (c/C) 2 px naar links zodat hij tegen de voet ligt en de rode mondhoek in de wang overloopt. Verre oog vervalt
+# (Swellow toont er geen); daar loopt nu de lichte rand (1) van de kop door.
+5 18 411222kk223k
+6 18 41122Gwkk223k
+7 18 41122kkGk223k
+8 23 2kk2223k
+10 23 ccc2223k
+11 23 cccCC23k
+12 23 cCC223k
+# snavel (Swellow: bovenrand in de donkere snaveltint, licht bovenop als vlek, mondlijn van de punt schuin omlaag naar de mondhoek,
+# ondersnavel korter met donker aan de schaduwkant). Hier grijs (a/g/G) zoals Picapau, 12 px, rechter (beitel, geen haak).
+8 18 GGGGg
+9 16 GGaaaag
+10 14 GGaaaaagg
+11 12 GGaaaaggggg
+12 11 GkkkkggggggC
+13 14 kgkkkkkCC
+14 15 kggGGGGG
+# verre vleugel onder de snavelpunt: twee lichte resten (3) worden schaduw (4), anders tintclusters van 2 px
+13 13 4
+14 13 4
+# --- oren r9 (Jordi: "daarnaast is 1 van die slingers op zijn hoofd bijna een rechte lijn")
+# verre oor: vanaf de kruin (wortel kGGk) een korte boog over de bovenkant en meteen omkrullen in de spiraal met gat, boven de achterkop
+1 22 kGGGk
+0 26 kkkkkkkkk
+1 35 k
+2 36 k
+3 36 k
+4 36 k
+5 36 k
+6 32 kkkk
+3 31 k
+4 31 k
+5 31 k
+2 32 kk
+3 34 k
+4 34 k
+# nabij oor: vanaf de achterkop (rij 8) naar achteren, dezelfde spiraal één verdieping lager
+8 31 kkkkkk
+9 37 k
+10 38 k
+11 38 k
+12 38 k
+13 38 k
+14 34 kkkk
+11 33 k
+12 33 k
+13 33 k
+10 34 kk
+11 36 k
+12 36 k

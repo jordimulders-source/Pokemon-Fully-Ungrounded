@@ -1,5 +1,5 @@
-pixeldiff tegen ronde 6: 158 px; buiten de achterpootzone: 0; in de voorpoten van ronde 6: 0
-boven rij 51 gewijzigd: 27 px, waarvan bestaande (niet-transparante) pixels van ronde 6: 0
+pixeldiff tegen ronde 6: 173 px; buiten de achterpootzone: 0; in de voorpoten van ronde 6: 0
+boven rij 51 gewijzigd (buiten de linkerlob): 27 px, waarvan bestaande (niet-transparante) pixels van ronde 6: 0
 gewijzigd in de voorpootzone van ronde 6 (rijen 52-59, x15-36): 0
 clusters < 3 px buiten de ogen (tint, [(x,y)]): 26
    ('1', [(28, 51), (29, 51)])

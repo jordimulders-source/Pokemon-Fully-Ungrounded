@@ -6,9 +6,9 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 R = np.array([list(l.rstrip('\n')) for l in open(os.path.join(HERE, 'raster.txt'))][:64])
 R6 = np.array([list(l.rstrip('\n')) for l in open(os.path.join(HERE, '../ronde6/raster.txt'))][:64])
 A = R != '.'
-# achterpootzone ronde 8: links x7-15 y51-58 (oude P weg, onderrand flanklob), onder de buik x23-29 y52-57 (verre achterpoot),
+# achterpootzone ronde 8: links x7-15 y45-58 (oude P weg, flanklob rond afgewerkt, ronde 8b), onder de buik x23-29 y52-57 (verre achterpoot),
 # rechts x36-46 y45-59 (achterlijf onder de vleugel, S, R1)
-zone = np.zeros((64, 64), bool); zone[51:59, 7:16] = True; zone[52:58, 23:30] = True; zone[45:60, 36:47] = True
+zone = np.zeros((64, 64), bool); zone[45:59, 7:16] = True; zone[52:58, 23:30] = True; zone[45:60, 36:47] = True
 # voorpoten ronde 6: de pixels die ronde 6 aan de voorpoten tekende + rijen 41-51 van de voorpoten (blijven gelijk)
 R5 = np.array([list(l.rstrip('\n')) for l in open(os.path.join(HERE, '../ronde5/raster.txt'))][:64])
 voor = (R6 != R5) & (R6 != '.')  # alleen pixels die ronde 6 aan de voorpoten tekende
@@ -17,8 +17,8 @@ for l in open(os.path.join(HERE, '../ronde6/achterpoten_masker.txt')):
 achter = ~voor
 D = R != R6
 print('pixeldiff tegen ronde 6: %d px; buiten de achterpootzone: %d; in de voorpoten van ronde 6: %d' % (D.sum(), (D & ~zone).sum(), (D & voor).sum()))
-boven = D.copy(); boven[51:] = False
-print('boven rij 51 gewijzigd: %d px, waarvan bestaande (niet-transparante) pixels van ronde 6: %d' % (boven.sum(), (boven & (R6 != '.')).sum()))
+boven = D.copy(); boven[51:] = False; boven[45:51, 7:16] = False
+print('boven rij 51 gewijzigd (buiten de linkerlob): %d px, waarvan bestaande (niet-transparante) pixels van ronde 6: %d' % (boven.sum(), (boven & (R6 != '.')).sum()))
 print('gewijzigd in de voorpootzone van ronde 6 (rijen 52-59, x15-36):', int((D[52:60, 15:37] & ~zone[52:60, 15:37]).sum()))
 oog = np.zeros((64, 64), bool); oog[25:30, 18:27] = True
 klein = []

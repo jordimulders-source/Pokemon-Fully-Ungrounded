@@ -19,7 +19,7 @@ Basis: ronde 6. Ronde 7 is niet gebruikt.
 - **Fout in ronde 6/7:** links een zwarte lijn tussen flanklob en P (P hing eronder) en P stond ver naar links naast het lijf; rechts hing S naast een leeg stuk (ronde 6) of aan een smal heupje (ronde 7).
 
 ## Wat er gedaan is
-- **Links (verre kant):** P is weg. De flanklob van ronde 6 sluit onderaan af met wol op rij 51 en een onderrand op rij 52 (x11-15), tegen de linkervoorpoot aan. Er staat geen poot meer links naast het lijf.
+- **Links (verre kant):** P is weg. **Ronde 8b:** de flanklob van ronde 6 (blok x10-14, y45-52, las op 1× nog als poot ver naar links) is een ronde wolbuik geworden die onderaan achter de linkervoorpoot wegdraait: de linkerrand loopt x13 → x12 → x11 (y45-48) en buigt dan terug x12 → x13 → x14 → x15 (y49-52), met donkere omlijning waar hij onder het lijf wegdraait (zoals de linkerkant van Giratina). Op 1× leest links niets meer als poot buiten de voorpoot.
 - **Verre achterpoot (het stukje dat je ziet, zoals bij Giratina):** de omlijning onder de buik (rij 52, x24-27) is wol geworden. De buik loopt zo door in een kort stompje (x24-29, y52-56), in schaduwtinten, tegen de rechtervoorpoot aan, met een punt (`121`) en 2 klauwtjes op y57: één rij hoger dan de linkervoorpoot (y58). De tweede verre achterpoot is niet te zien.
 - **Rechts (nabije kant):** het lijf loopt door in een **achterlijf** onder de vleugel, achter de rechterarm (x39-45, y45-52). Uit die massa komen zonder naad:
   - **S**, direct achter de rechtervoorpoot (x36-40), kort, punt op y57, 2 klauwtjes op y58 (één rij hoger dan de rechtervoorpoot, y59);
@@ -28,8 +28,8 @@ Basis: ronde 6. Ronde 7 is niet gebruikt.
 - **Toets naast Giratina (1×, 8×, 16×):** links verborgen, alleen een stukje voet tussen de voorpoten; rechts zichtbaar achter de rechtervoorpoot onder een doorlopend achterlijf. Elke achterpoot loopt in de wol van het lijf over, zonder omlijning ertussen.
 
 ## Diff (`controle.txt`, `diff.png`)
-- 158 px gewijzigd tegen ronde 6: 0 buiten de achterpootzone, 0 in de voorpoten van ronde 6.
-- Boven rij 51: 27 px gewijzigd, allemaal pixels die in ronde 6 transparant waren (het nieuwe achterlijf onder de vleugel); 0 bestaande pixels veranderd.
+- 173 px gewijzigd tegen ronde 6: 0 buiten de achterpootzone, 0 in de voorpoten van ronde 6.
+- Boven rij 51: de linkerlob (x10-15, y45-50, ronde 8b, met toestemming binnen de lijfonderrand) en verder 27 px die in ronde 6 transparant waren (het nieuwe achterlijf onder de vleugel); daarbuiten 0 bestaande pixels veranderd.
 - `diff.png`: grijs = ronde 6, blauw = voorpoten (ongewijzigd), rood = gewijzigd.
 - 0 lichte pixels op de buitenrand, 13 kleuren.
 
@@ -40,7 +40,7 @@ Basis: ronde 6. Ronde 7 is niet gebruikt.
 
 ## Zwakke punten (eerlijk)
 1. **Verre achterpoot tussen de voorpoten:** zo staat hij bij Giratina, maar op 1× kan het stompje lezen als een derde, kleine voorpoot. Vraag aan Jordi of dit het "deels buiten beeld" is dat hij bedoelt.
-2. **Flanklob links:** de lob van ronde 6 (x10-15) steekt nu als een blok uit onder links, met een vrij rechte onderrand (rij 52, 5 px). Dat is lijfvorm van ronde 6, niet aangepast.
+2. **Linkerbuik (8b):** de rand is nu maar 1-2 px wolrand naast de arm; het lijf oogt links iets smaller dan in ronde 6.
 3. **Inham tussen arm en vleugel** (x39-42, y41-44) is transparant gebleven (boven de onderrand, niet aangeraakt); het achterlijf sluit er nu onder aan.
 4. **Wol:** de achterpoten zijn net zo glad als de voorpoten (hoort bij de latere wolronde, "de armen mogen nog wat meer fluffy").
 5. Een onafhankelijke keurder is nog niet geweest.

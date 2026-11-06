@@ -14,15 +14,16 @@ for l in open(os.path.join(HERE, '../ronde6/achterpoten_masker.txt')):
 # 2. nieuwe pixels per rij: (x0, tekens); elk teken is een pixel (hex-index of 'b')
 NIEUW = {
  # rechts: achterlijf onder de vleugel, achter de rechterarm (x<=39 op rij 46-49 = armomlijning, blijft)
- 45: [(39, "22")],
- 46: [(40, "522")],
- 47: [(40, "5542")],
- 48: [(40, "54441")],
- 49: [(40, "444331")],
- 50: [(39, "4443331")],
  # links: flanklob sluit onderaan af; rechts: achterlijf loopt door
- 51: [(10, "24333"), (38, "44333331")],
- 52: [(11, "21111"), (24, "33333"), (37, "344332331")],
+ # links (ronde 8b): de lob draait onderaan rond weg achter de linkervoorpoot (geen blok, geen uitsteeksel)
+ 45: [(12, "."), (39, "22")],
+ 46: [(11, ".23"), (40, "522")],
+ 47: [(10, ".243"), (40, "5542")],
+ 48: [(10, ".2443"), (40, "54441")],
+ 49: [(10, "..143"), (40, "444331")],
+ 50: [(10, "...13"), (39, "4443331")],
+ 51: [(10, "....1"), (38, "44333331")],
+ 52: [(11, "....1"), (24, "33333"), (37, "344332331")],
  # midden: verre achterpoot onder de buik uit (x23-29); rechts S (x36-40) en R1 (x42-44) uit het achterlijf
  53: [(24, "14433"), (36, "33443133" + "1")],
  54: [(25, "2433"), (36, "34433123" + "1")],

@@ -1,15 +1,15 @@
-"""Lijnt Jordi's krabbel (referenties/krabbel_jordi_lijf_staf.png) uit op ronde5b en zet de rode lijnen om naar spritecoordinaten.
+"""Lijnt Jordi's krabbel (referenties/krabbel_jordi_staf_overgang.png) uit op ronde13 en zet de rode lijnen om naar spritecoordinaten.
 Schrijft ronde6/krabbel_punten.txt en ronde6/krabbel_overlay.png. Draaien vanuit de repo-root."""
 import os
 import numpy as np
 from PIL import Image
 H = os.path.dirname(os.path.abspath(__file__)); K = os.path.dirname(H)
-src = Image.open(os.path.join(K, 'referenties/krabbel_jordi_lijf_staf.png')).convert('RGB')
+src = Image.open(os.path.join(K, 'referenties/krabbel_jordi_staf_overgang.png')).convert('RGB')
 k = np.array(src).astype(int)
 R, G, B = k[..., 0], k[..., 1], k[..., 2]
 red = (R > 190) & (G < 45) & (B < 55) & (R - G > 160)
-sp = Image.open(os.path.join(K, 'ronde5b/sapa_inca.png')).convert('RGB')
-spa = np.array(Image.open(os.path.join(K, 'ronde5b/sapa_inca.png'))) > 0
+sp = Image.open(os.path.join(K, 'ronde13/sapa_inca.png')).convert('RGB')
+spa = np.array(Image.open(os.path.join(K, 'ronde13/sapa_inca.png'))) > 0
 spr = np.array(sp).astype(int)
 bg = np.median(k[20:60, 20:60].reshape(-1, 3), 0)
 def score(sc, ox, oy):
@@ -23,7 +23,7 @@ def score(sc, ox, oy):
     ref[inside] = spr[Y[inside], X[inside]]
     return np.abs(k[yy, xx] - ref).sum(-1).mean()
 best = None
-for sc in np.arange(7.6, 9.4, 0.1):
+for sc in np.arange(7.0, 8.8, 0.1):
     for ox in range(-30, 60, 4):
         for oy in range(-40, 40, 4):
             v = score(sc, ox, oy)

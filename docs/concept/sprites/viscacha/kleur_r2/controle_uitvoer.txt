@@ -1,0 +1,32 @@
+silhouetwijzigingen t.o.v. r1: 21
+   (6,12) weg  zone 5 oren
+   (20,12) erbij  zone 5 oren
+   (22,12) weg  zone 5 oren
+   (9,13) erbij  zone 5 oren
+   (9,14) erbij  zone 5 oren
+   (9,15) erbij  zone 5 oren
+   (1,26) weg  zone 2 snuit
+   (2,26) weg  zone 2 snuit
+   (35,26) weg  zone 3 rug
+   (36,26) weg  zone 3 rug
+   (37,26) weg  zone 3 rug
+   (38,26) weg  zone 3 rug
+   (37,27) weg  zone 3 rug
+   (38,28) erbij  zone 3 rug
+   (60,28) weg  zone 7 staart/voet
+   (40,29) erbij  zone 3 rug
+   (61,29) weg  zone 7 staart/voet
+   (42,30) erbij  zone 3 rug
+   (43,32) erbij  zone 3 rug
+   (44,32) erbij  zone 3 rug
+   (44,33) erbij  zone 3 rug
+pixeldiff r1->r2: 226 px; per zone: {'1 wangpluk/achterkop': 44, '2 snuit': 14, '3 rug': 78, '4 buik': 47, '5 oren': 14, '6 voorpoot': 21, '7 staart/voet': 8}
+open randen (vlakkleur op de buitenrand): 0 []
+losse pixels (geen 4-buren): []
+tintclusters < 3 px (4-samenhangend): 3
+   A [(57, 12)] 
+   E [(10, 26)] (oog/glans)
+   D [(11, 26)] (oog/glans)
+gebruikte indexen: 123456789ABCDEF | kleuren incl. transparant: 16
+png: (64, 64) P paletlengte 16
+png == raster: True

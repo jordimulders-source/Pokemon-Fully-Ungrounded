@@ -14,6 +14,8 @@ Bron: berg-viscacha (*Lagidium viscacia*), Andeswoestijnen (Atacama, Uyuni, Líp
 - r6: **"dit vind ik een leuke"** → ontwerpreferentie.
 - "ja je houdt zoveel mogelijk het gemini model vast" (7 nov)
 - r4 sprite: **"kijk eens goed naar het gezicht, linkerkant, neus, whiskers, mond etc klopt niet"** (7 nov): gezicht volgen als in Gemini (neus aan de snuitpunt, mondlijn, ronde snuitbult, snorharen).
+- r8: "bovenkant lijf mag iets minder vlak nog idd"; kleur/schaduw naar Gen 3: "perfect, doe maar" (7 nov).
+- r9 (krabbel `kleur_r9/jordi_krabbel_rug.png`): **"ik vind de rug nog geen vloeiende boog, dat is het enige wat je nog hoeft aan te passen. Is 1 bult, met een klein deukje erin en een hele kleine boog. Net boven de staart steekt 1 pixel uit ook ... Echte viscachas hebben bijna een perfect bolle rug. Pas alleen dit aan en voor de rest is die perfect"** → rug mag van het model afwijken (bolle boog).
 - **"het enige dat anders mag van gemini is dat het oog luier mag, zoals een echte viscacha"** (7 nov)
 
 ## Referentie

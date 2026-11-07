@@ -18,3 +18,6 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 - De keurder toetst **trouw aan het Gemini-plaatje + spritetechniek**, niet het ontwerp. Ontwerppunten (kop klein, oren smal, minder cute) zijn géén FAIL en geen reparatie; hooguit "voor Jordi".
 - Vergelijk op 8× naast het Gemini-plaatje (verkleind) én 2–3 echte sprites.
 - De regel "na 2 mislukte rondes stoppen" telt hier alleen bij ontwerp- of vertaalproblemen; rondes met alleen benoemde pixelreparaties (contour, toonvlakken) gaan door, doel ≤ 5.
+
+## Lessen
+- **Gezicht apart vergelijken** (viscacha r4, 7 nov: Jordi "kijk eens goed naar het gezicht ... neus, whiskers, mond"; twee keurders en Claude misten het): maak altijd een close-up van de kop van sprite en Gemini op dezelfde schaal naast elkaar en vink per onderdeel af: neus, mond, snuitvorm, kin, snorharen, oog, oren. Snorharen uit Gemini niet weglaten: 1 px lijntjes zoals Raticate/Sandshrew.

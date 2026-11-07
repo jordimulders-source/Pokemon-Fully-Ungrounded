@@ -11,6 +11,7 @@ Bron: berg-viscacha (*Lagidium viscacia*), Andeswoestijnen (Atacama, Uyuni, Líp
 - "pak die afbeelding [r3] als basis en laten we voor een iets meer woestijn achtige gloed gaan en het design interessanter maken door het hele ontwerp net wat meer electric te maken als in energiek"
 - r6: **"dit vind ik een leuke"** → ontwerpreferentie.
 - "ja je houdt zoveel mogelijk het gemini model vast" (7 nov)
+- r4 sprite: **"kijk eens goed naar het gezicht, linkerkant, neus, whiskers, mond etc klopt niet"** (7 nov): gezicht volgen als in Gemini (neus aan de snuitpunt, mondlijn, ronde snuitbult, snorharen).
 - **"het enige dat anders mag van gemini is dat het oog luier mag, zoals een echte viscacha"** (7 nov)
 
 ## Referentie

@@ -131,6 +131,12 @@ Verder alles precies zoals het model (ook de kuif, het verenpatroon, de spikkels
 - Jordi: "ja c4 is het beste, ga maar door naar eindkeuring qua schaduw en kleuren, volgens dragonflycave en vergelijking met andere pokemon".
 - `eindkeuring/RAPPORT.md` (REPARATIES, 35 indexwissels) → toegepast in `eind_r1/potoo.png` (`repareer.py`, controle op oude waarde). Ter info open: klauwen lezen als zwarte vlek; snorharen niet taps.
 - (7 nov) "prima zo, ga maar naar eindkeuring, tov andere pokemon en dragonflycave" → `eindkeuring2/RAPPORT.md` (REPARATIES, 16 px) → `eind_r2/potoo.png`. Ter info: rechtervleugelrand x45 y31–48 kaarsrecht (vormkeuze Jordi).
+- (7 nov) vleugelrand licht bol ("die mag wat minder kaarsrecht nog") → `eind_r3/`; laatste keurder (`eindkeuring3/RAPPORT.md`): schaduw/kleur en passen tussen Gen 3-sprites PASS.
+- (7 nov) "het valt mij op dat de bovenkant een rechte lijn is, dat moet wat meer boller" (bovenkant van zijn hoofd) → `eind_r4/`.
+- (7 nov) 4 rood gestipte pixels (haarsliert linksboven) weg: "dan is die klaar en mag je pushen naar main, geen keuring meer nodig" → **`af/potoo.png`** (+ `potoo_8x.png`, `maak.py`).
+
+## AF (7 nov)
+- Frontsprite: `af/potoo.png` (64×64, 12 kleuren + transparant).
 
 ## Open
 - Naam, type en data later.

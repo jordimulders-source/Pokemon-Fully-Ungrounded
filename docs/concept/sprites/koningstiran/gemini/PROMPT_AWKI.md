@@ -103,3 +103,86 @@ AVOID
 ```
 
 Bijsturen (max. 1–2 keer, één zin), bijv. `same design, make the closed crest longer and flatter` of `same design, stepped triangles bigger and fewer`.
+
+## Startprompts v2 (7 nov, nieuw gesprek per prompt; vervangen A en B hierboven)
+Na ronde 1 (Jordi: "heel rare kop" / "net pidgeot met een heel matig patroontje"; "de kuif moet verticaler en korter"). Wijzigingen: kuif ±kop-lang, vast uit de kruin, schuin naar achteren-boven (30–45°) als gesloten waaier; gezicht van fase 1 (zwart masker, witte keel) blijft; gewone snavel; kop meer naar de kijker; trapdriehoeken uitgelegd als blokpiramides; Pidgeot met name vermeden.
+Bijlagen: 1 = `../../hatun_runa/af/hatun_runa_8x.png`, 2 = `bijlage_sapa_inca_6x.png` (eventueel 3 = foto koningstiran).
+
+### Prompt A v2: vuur in de kuif
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENTS
+- Attachment 1 is the FIRST stage of this 3-stage bird line (a Great kiskadee).
+- Attachment 2 is the FINAL stage: the Inca emperor (Sapa Inca), with a huge open fan crown.
+- I need the SECOND stage in between. Use the attachments for palette and family resemblance only. Do NOT copy the open fan crown, staff, large ear discs or pose of attachment 2.
+
+THE CREATURE
+- Second stage, Fire/Flying: the crown prince (Quechua "awki"). A proud young heir, not yet a king. Based on the Royal flycatcher (Onychorhynchus coronatus), whose crown is a fan that is usually kept folded shut.
+- HEAD (most important): keep the face of attachment 1: black mask through the eye, white throat, short straight sturdy dark beak (like attachment 1, NOT flat or duck-like). The head is turned towards the viewer in 3/4 view: both eyes visible, beak pointing left-down.
+- CREST: a FOLDED fan crest that grows out of the top of the head, part of the head itself, not lying on top of it like a hat. It is short (about as long as the head) and narrow, pointing backwards and UPWARDS at about 40 degrees, like a closed hand fan waiting to open. Not long, not flowing, not flat.
+- Build: a bit taller and more upright than stage 1, slightly longer legs, still medium-sized.
+- Body: warm dark brown back and wings, golden-ochre belly, rust-brown tail.
+
+THE FIRE (only in the crest)
+- The folded crest is flame red and orange, brighter towards the tip, with the edges and tip glowing yellow like an ember. The fire is held in the closed fan; it bursts open in the next stage.
+- No fire anywhere else. Wings and tail plain brown with rust-brown edges.
+
+INCA DETAILS (feathers only)
+- A short row of small yellow feathers on the forehead just above the beak (the crown prince's yellow fringe). Small, neat, NOT hair, NOT bangs, NOT a beard.
+- A small round gold feather patch behind each eye (the young noble's first ear plugs).
+- Nothing else: no clothing, jewelry, staff or chest pattern.
+
+POSE
+- Standing on its own legs, body in 3/4 view facing left, chest out, near wing half open as it just landed, far wing folded. Proud and alert, a little arrogant.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO branch, ground, shadow or base. No glow aura, loose flames, smoke, sparkles, text or effects. One single creature.
+
+AVOID
+- NOT Pidgeot or Pidgeotto: no long flowing head plume, no plain brown profile bird.
+- Not Fletchinder, Talonflame, Moltres, Ho-Oh, a cardinal or a woodpecker.
+- No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
+```
+
+### Prompt B v2: trapdriehoeken op de vleugel
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENTS
+- Attachment 1 is the FIRST stage of this 3-stage bird line (a Great kiskadee).
+- Attachment 2 is the FINAL stage: the Inca emperor (Sapa Inca), with a huge open fan crown.
+- I need the SECOND stage in between. Use the attachments for palette and family resemblance only. Do NOT copy the open fan crown, staff, large ear discs or pose of attachment 2.
+
+THE CREATURE
+- Second stage, Fire/Flying: the crown prince (Quechua "awki"). A proud young heir, not yet a king. Based on the Royal flycatcher (Onychorhynchus coronatus), whose crown is a fan that is usually kept folded shut.
+- HEAD (most important): keep the face of attachment 1: black mask through the eye, white throat, short straight sturdy dark beak (like attachment 1, NOT flat or duck-like). The head is turned towards the viewer in 3/4 view: both eyes visible, beak pointing left-down.
+- CREST: a FOLDED fan crest that grows out of the top of the head, part of the head itself, not lying on top of it like a hat. It is short (about as long as the head) and narrow, pointing backwards and UPWARDS at about 40 degrees, like a closed hand fan waiting to open. Golden yellow with a rust-red tip. Not long, not flowing, not flat.
+- Build: a bit taller and more upright than stage 1, slightly longer legs, still medium-sized.
+- Body: warm dark brown back and wings, golden-ochre belly, rust-brown tail.
+
+THE FIRE (only as a wing pattern)
+- On the near wing, across the wing coverts: ONE row of 3 or 4 BIG stepped triangles pointing up, like flames. Each triangle is a stepped pyramid built from stacked blocks: a wide block at the bottom, a narrower block on top of it, and the narrowest block at the tip, so the sides go up in clear stairs, never as straight diagonal lines. This is the Andean "escalonado" textile motif.
+- Each stepped triangle: dark red bottom block, orange middle block, yellow top block. All triangles the same shape, evenly spaced, large enough to read clearly at sprite size.
+- It is part of the feathers, not cloth or an armband. Flight feathers and tail plain brown with rust-brown edges. No fire on the head.
+
+INCA DETAILS (feathers only)
+- The stepped-triangle wing pattern above.
+- A short row of small yellow feathers on the forehead just above the beak (the crown prince's yellow fringe). Small, neat, NOT hair, NOT bangs, NOT a beard.
+- A small round gold feather patch behind each eye (the young noble's first ear plugs).
+- Nothing else: no clothing, jewelry, staff or chest pattern.
+
+POSE
+- Standing on its own legs, body in 3/4 view facing left, chest out, near wing half open as it just landed so the stepped triangles are clearly visible, far wing folded. Proud and alert, a little arrogant.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO branch, ground, shadow or base. No glow, real flames, smoke, sparkles, text or effects. One single creature.
+
+AVOID
+- NOT Pidgeot or Pidgeotto: no long flowing head plume, no plain brown profile bird.
+- Not Fletchinder, Talonflame, Moltres, Ho-Oh, a cardinal or a woodpecker.
+- No sawtooth band, no zigzag, no Aztec/Mexican or Japanese look.
+- No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
+```

@@ -898,3 +898,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.223] - Awki: keuring + ronde 4
 - Keurder: alles PASS op de twee eisen (incl. Jordi's punten) behalve 4 staartpixels; die gerepareerd in `kleur_r4/`. Jordi: "mooi al, stuur maar naar de eindkeuring".
+
+### [v0.0.224] - Awki: eindkeuring + kandidaat
+- Eindkeuring (Dragonfly Cave, naast Taillow/Swellow/Pidgeotto/Fearow/Ho-Oh): 16/17 PASS; 2 staartpixels gerepareerd in `kleur_r5/` (kandidaat, `awki_8x.png`). Formaat 1388 px.

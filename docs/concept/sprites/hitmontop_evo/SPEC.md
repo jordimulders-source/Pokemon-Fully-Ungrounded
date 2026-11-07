@@ -102,3 +102,6 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 
 ## Sprite ronde 1 (Jordi, 7 nov, letterlijk)
 "ja de kop is niet meer herkenbaar hitmontop, het lichaam heeft een beetje een gekke vorm, het geelgroenpatroon is een beetje saaitjes en de lijnen mogen wat dynamischer. De arm onderin heeft nog geen goede vorm, zijn vooral rechte lijnen, de vuist sluit niet lekker aan en de band ook niet, maar je bent op de goede weg, blijf werken". Wit in de benen: nog niet gekozen (ronde 2 levert A zonder en B met wit).
+
+## Sprite ronde 2 (Jordi, 7 nov, letterlijk)
+"de ogen mogen nog wta meer hitmontop, mond is goed, rest van het hoofd ook wel, de benen met wit zijn beter, al mis ik daar nog wat schaduwing, waardoor het net lijkt alsof er iets weggelaten is. De torso ziet er ook nog een beetje gek uit, maar ik weet niet zo goed hoe we dat beter kunnen maken, voor de rest komen we nu echt ergens". Dus: benen variant B; ronde 3 levert torso-varianten ter keuze.

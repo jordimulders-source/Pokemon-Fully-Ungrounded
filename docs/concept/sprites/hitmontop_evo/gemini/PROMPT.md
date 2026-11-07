@@ -45,3 +45,20 @@ AVOID
 - Bijsturen hooguit 1–2 keer met één zin, bijv. `same design, make the stripes wider and fewer`.
 - Daarna een nieuw gesprek met de beste versie als bijlage: `Use the attached image as the base design. Keep its pose, proportions and colors. Change only: ...`
 - Rondes en Jordi's keuze vastleggen in `README.md` hier; gekozen ontwerp als `../referenties/gemini_gekozen_capoeira.png`.
+
+## Variant B: alleen het hoofd als bijlage (als Gemini weigert)
+Jordi (7 nov): "ik ben wel bang dat de hitmontop in die pose ervoor kan zorgen dat die weigert het te bouwen". Dan alleen `bijlage1_hoofd.webp` meesturen en in de prompt het blok ATTACHMENTS vervangen door:
+
+```
+ATTACHMENT
+- The attached image is the approved HEAD. Copy it exactly: Hitmontop's head shape, the V-shaped line between the eyes pulled back over the head, all the "hair" combed back into a round bun with a white band (like its hands with wristbands), a smaller horn on top. Hair, horn and head are one material and one color (the same brown as the skin), no separate hair color. Eyes are black circles with one white dot. Mouth is one short line. No eyebrows, no nose, no ears.
+- Ignore the body in the attachment; draw the body and pose as described below.
+
+POSE
+- A one-arm handstand, frozen in the middle of a capoeira move: the support arm straight down, the round hand flat on the floor.
+- The body tilted about 45 degrees, the hips are the highest point of the torso.
+- The head low, next to the support arm, upright enough to read, looking at the viewer.
+- The legs spread wide in a V-split up into the air, one leg to the upper left, one to the upper right; these are the two highest points of the silhouette. Blue feet with white claws at the ends.
+- The free arm bent across the hip.
+- Silhouette like an upside-down triangle: wide at the top, a narrow point at the bottom (the hand).
+```

@@ -859,3 +859,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.210] - Viscacha: bolle rug en Gen 3-kleur
 - r9: rug minder vlak (Jordi) en kleur/schaduw naar Gen 3 (contrast ±30 per tint, hooglicht op rug en voorhoofd, staart belicht van linksboven, verre poten een tint donkerder, bilsikkel zonder banding); keuring PASS.
 - r10: rug als één bolle boog en uitstekende pixel boven de staart weg, naar Jordi's krabbel ("echte viscachas hebben bijna een perfect bolle rug"). Jordi: "ik vind hem goed, keurder niet nodig". `af/` bijgewerkt naar r10.
+
+### [v0.0.211] - Olinguito: Gemini-prompt voor een verbeterronde
+- Jordi wil de olinguito ("bandingo") verbeteren via Gemini. Prompt en bijlagen (huidige sprite 6×, ontwerp, Coathief en wasbeer 6×) in `docs/concept/sprites/olinguito_v2/gemini/`.

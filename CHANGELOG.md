@@ -844,3 +844,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.206] - Hatun runa frontsprite: kandidaat
 - `docs/concept/sprites/hatun_runa/` (koningstiran fase 1, kiskadie, Normal/Flying): silhouet = Gemini-model verkleind (48 px breed, 971 px), poedelmot-methode met één maker. r1–r2 maker; r3 kop/vleugel op Claude's punten; keuring r3 (oog zonder glans, dambord, toon verre vleugel); r4 = die reparaties (toon verre vleugel nagemeten: r4 80 tegen model 81); Jordi: "ik vind hem netjes"; eindkeuring Dragonfly Cave op kleur en schaduw (10 px); r5 = die 10 px (Claude). Kandidaat: `kleur_r5/hatun_runa.png`.
+
+### [v0.0.207] - Hatun runa frontsprite af
+- Jordi over r5: "ik vind het goed, er vallen 2 pixels uit de toon [...] als je die 2 fixt dan is die klaar". Twee losse zwarte pixels weg: (21,37) → donkerbruin, (34,47) → roodbruin (kleur van de omgeving). Buiksikkel blijft ("de donkere sikkel zie ik niet"). **Af:** `docs/concept/sprites/hatun_runa/af/hatun_runa.png` (+ `normal.pal`, `hatun_runa_8x.png`). Volgende in de lijn: awki (fase 2).

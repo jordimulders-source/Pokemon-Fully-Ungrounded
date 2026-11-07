@@ -166,3 +166,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca: eindkeuring (20 PASS / 11 FAIL) en ronde 13 met de top-5-reparaties (ogen/snavel, banding, hooglicht romp, stafpunt, opschonen).
 - Sapa Inca ronde 14: overgang staf/lijf, spitse stafpunt, poten, verre oog en paarse pixels opgeruimd.
 - Sapa Inca: tweede eindkeuring (netheid per onderdeel) en ronde 15 met de 14-px top 5.
+- Sapa Inca: overzicht van tien versies; samengevoegd tot ronde 12 met het hoofd en de tooivorm van ronde 2 (`samengevoegd/`).

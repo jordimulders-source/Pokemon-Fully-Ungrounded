@@ -36,6 +36,7 @@ Verder alles precies zoals het model (ook de kuif, het verenpatroon, de spikkels
 ## Eindkeuring (7 nov)
 - Jordi: "ja c4 is het beste, ga maar door naar eindkeuring qua schaduw en kleuren, volgens dragonflycave en vergelijking met andere pokemon".
 - `eindkeuring/RAPPORT.md` (REPARATIES, 35 indexwissels) → toegepast in `eind_r1/potoo.png` (`repareer.py`, controle op oude waarde). Ter info open: klauwen lezen als zwarte vlek; snorharen niet taps.
+- (7 nov) "prima zo, ga maar naar eindkeuring, tov andere pokemon en dragonflycave" → `eindkeuring2/RAPPORT.md` (REPARATIES, 16 px) → `eind_r2/potoo.png`. Ter info: rechtervleugelrand x45 y31–48 kaarsrecht (vormkeuze Jordi).
 
 ## Open
 - Naam, type en data later.

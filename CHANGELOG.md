@@ -889,3 +889,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.220] - Awki: frontsprite kleur ronde 1
 - Maker-agent (poedelmot-regels, gereedschap van de hatun runa): silhouet-diff 0 (1396 px), Jordi's zes punten (vleugellijnen, buik→vleugel, poten, onderkant kuifpunt, belijning/schaduw kuif, oog) verwerkt. Vel: `docs/concept/sprites/awki/kleur_r1/vel.png`.
+
+### [v0.0.221] - Awki: frontsprite kleur ronde 2
+- Vleugellijnen doorlopend per veer (Jordi: "het belangrijkste"), karmijnvlak in de opgeheven vleugel, gat naast de hals transparant (8 px silhouetafwijking, volgt het model), keel volgens het model, rustigere kuifvoet, lavendel lichter. Vel: `docs/concept/sprites/awki/kleur_r2/vel.png`.

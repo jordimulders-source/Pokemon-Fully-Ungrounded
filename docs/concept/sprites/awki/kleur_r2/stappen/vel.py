@@ -16,6 +16,18 @@ def row(ims,gap=10):
 def cu(X0,Y0,X1,Y1,z,t):
     return row([label(rimg(rf,pf,BG).crop((X0,Y0,X1,Y1)).resize(((X1-X0)*z,(Y1-Y0)*z),Image.NEAREST),t+' sprite'),label(model(X0,Y0,X1,Y1,z),t+' model')])
 top=row(ims); mid=row([cu(20,2,46,30,12,'kop+kuif'),cu(3,2,25,40,12,'vleugel')],20)
+# vleugellijnen: alleen de lijnpixels (5, 2, 1 en 8/9-lijnen) vol, de rest vervaagd; naast het model (opgeheven vleugel x3-25 y8-40, gevouwen x32-50 y26-50)
+import numpy as np
+def lijnen(X0,Y0,X1,Y1,z,t,keep):
+    R=tl.raster(rf); a=np.asarray(rimg(rf,pf,BG)).astype(float).copy()
+    for y in range(64):
+        for x in range(64):
+            if R[y][x] not in keep: a[y,x]=a[y,x]*0.3+np.array(BG)*0.7
+    im=Image.fromarray(a.astype('uint8')).crop((X0,Y0,X1,Y1)).resize(((X1-X0)*z,(Y1-Y0)*z),Image.NEAREST)
+    return row([label(im,t+' lijnen sprite'),label(model(X0,Y0,X1,Y1,z),t+' model')])
+lin=row([lijnen(3,8,25,40,12,'vleugel','125'),lijnen(32,26,50,50,12,'gevouwen','12')],20)
+mid=Image.fromarray(np.vstack([np.asarray(row([mid],0)),np.full((10,mid.width,3),255,'uint8')])) if False else mid
+_m=Image.new('RGB',(max(mid.width,lin.width),mid.height+lin.height+10),'white'); _m.paste(mid,(0,0)); _m.paste(lin,(0,mid.height+10)); mid=_m
 mb=model(0,0,64,64,1) if False else tl.model(0,0,64,64,8).resize((64,64),Image.BOX)
 ones=[rimg(rf,pf,BG),rimg(rf,pf,(40,48,64)),mb]
 bot=row(ones+[i.resize((128,128),Image.NEAREST) for i in ones],16)

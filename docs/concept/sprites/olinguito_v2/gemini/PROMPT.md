@@ -108,3 +108,29 @@ AVOID
 - Do not redesign it. Do not make it look like Zigzagoon, Linoone, Sentret, Furret, Purrloin, a ferret or a monkey.
 - No plush toy, chibi or mascot look; no oversized sparkly eyes. No clothing or accessories.
 ```
+
+## Startprompt v4 (7 nov, nieuw gesprek; vervangt v3)
+Jordi over de huidige sprite: "de twee voorste armen lijken 1 in de sprite en het hoofd ziet er een beetje gek uit qua vorm vanuit deze hoek". Bijlagen: 1 = `bijlage_ontwerp.png`, 2 = `bijlage_kop_8x.png` (nu alleen voor kenmerken en kleuren, niet de vorm).
+
+```
+Redraw this Pokémon as a high-quality official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENTS
+- Attachment 1 is the approved design: the creature, its pose and all its features. Keep all of it. Do not change the concept or the pose.
+- Attachment 2 is the head from my current sprite. Keep its features and colors (grey-brown face, warm brown back of the head, black mask band across the eye, small dark red-brown eye, dark grey-brown snout, dusty pink nose, one dominant ear). But its SHAPE looks odd from this angle: draw the head as a correct 3D form in 3/4 view.
+
+THE TASK
+- My current sprite has the right design but weak craftsmanship. Draw it again from scratch, from attachment 1, at the level of a professional Game Freak sprite artist. The improvement must be in the execution, not in the design. Two problems must be fixed:
+  1. FRONT LEGS: in my sprite the two front legs read as one. Draw two clearly separate front legs: the near leg in front, lighter; the far leg behind it, darker and partly hidden, with a visible gap or outline between them. Each front paw has its own 2 long light claws.
+  2. HEAD SHAPE: a round skull in 3/4 view that turns towards the viewer, the snout coming forward out of the face, the head clearly connected to the neck. Same features as attachment 2.
+- Also: readable joints and volume in the legs, pink feet, a long thin tail that tapers smoothly, shading that shows the round body (light from top left), a clean 1 px outline without jaggies.
+- It is an olinguito (Bassaricyon neblina), the first stage of a Dark-type starter line: cute and sinister at the same time.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, light from top left.
+- Plain white background. NO branch, rock, ground, shadow or base. No glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Do not redesign it. Do not make it look like Zigzagoon, Linoone, Sentret, Furret, Purrloin, a ferret or a monkey.
+- No plush toy, chibi or mascot look; no oversized sparkly eyes. No clothing or accessories.
+```

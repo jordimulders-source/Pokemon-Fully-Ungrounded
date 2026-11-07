@@ -30,3 +30,7 @@ Ontwerp en Jordi's woorden per ronde: `referenties/ONTWERP.md` (uit de tak `clau
 - Nog te doen: frame 2, rug, icoon, shiny, naam/data.
 - **Eindkeuring (25 okt, `af/EINDKEURING.md`):** hoofdvraag PASS; reparatie 1 uitgevoerd (verre voorpoot 2 px roze voetje). Open, raakt het silhouet (vraag aan Jordi): losse spriet (19,59) en drie haakjes van 1 px (kop achter, voorhoofd, staart links).
 - **Af (25 okt):** Jordi akkoord met de 4 silhouetpixels; spriet weg, drie haakjes glad (7 px). 0 open randen. Eindversie `af/olinguito.png`.
+
+## Ronde "Gemini-pose" (7 nov)
+- Gemini v4 (`gemini/ronde2_v4_pose.png`). Jordi: "de pose is nu beter, maar het ontwerp is wel minder. Zou je deze twee kunnen samenvoegen en daarmee de sprite beter kunnen maken? Dus de kleuren van de sprite die we al hadden gevormd naar het huidige silhouet?" + "bijv de rode ogen behouden etc" + over de klauwen: "ik tel er maar 2 bij gemini hoor".
+- Dus: silhouet = Gemini v4 verkleind; kleuren en kenmerken = `af/olinguito.png` (rood oog, masker, kruin, snoet, neus, donkerbruin lijf). Werkmap `gemini_samen/`.

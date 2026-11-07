@@ -1,0 +1,12 @@
+# r3 kop: oog als Gen 3-vogeloog (Taillow: zwarte pupil 2x2 met licht eromheen): pupil (18-19,47-48), wenkbrauw erboven, ring (17,47-48), sclera (20,47-48), iris E (18-19,49)
+# masker als doorlopende band F van snavelbasis onder en achter het oog tot x26; open V: bovensnavel C/B, rode bek, onderkaak C met zwarte buitenrand; witte keel als een vlak
+46: 14=1999999999AA22
+47: 13=19999119FFFFFF3
+48: 12=BB111A119FFFFFF3
+49: 10=1BCCCCBFEEFFFFFF
+50: 9=1111BBB1FFFFFF99
+51: 13=13DDC1999999
+52: 14=1DC1999999
+53: 13=13C111AA99
+54: 13=1B11 19=111A
+48: 17=F

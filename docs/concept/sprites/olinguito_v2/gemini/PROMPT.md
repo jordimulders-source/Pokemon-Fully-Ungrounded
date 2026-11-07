@@ -48,3 +48,35 @@ AVOID
 
 ## Ronde 1 (7 nov): afgekeurd
 `ronde1_afgekeurd.png`. Jordi: "dat is niet beter, amper aangepast, behalve het hoofd wat ik juist goed vond".
+
+## Startprompt v2 (7 nov, nieuw gesprek)
+Jordi: "juist de pose en features moeten wat beter"; het hoofd vond hij goed. Bijlagen: 1 = `bijlage_kop_8x.png` (alleen de kop), 2 = `../referenties/referentie_foto_boom.webp`, 3 = `../referenties/referentie_foto_voor.png`. De hele huidige sprite niet meesturen.
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENTS
+- Attachment 1 is the HEAD of this Pokémon, from my current sprite. Keep this head exactly: its shape, grey-brown face, warm brown back of the head, black mask band across the eye, small dark red-brown eye, dark grey-brown snout, dusty pink nose, one dominant ear. Do not redesign the head.
+- Attachments 2 and 3 are photos of the real animal, the olinguito (Bassaricyon neblina). Use them for the anatomy of the body, legs, paws and tail.
+
+WHAT TO DESIGN (everything except the head is open)
+- A better pose and better body features than my current sprite. Design them freshly. Make the pose more dynamic and more appealing, with a clear, readable silhouette.
+- The body, legs, paws, claws and tail are yours to design, within these rules:
+  - Real olinguito anatomy: slim, dense dark brown fur, no belly patch, long thin tail (as long as the body or longer).
+  - The signature of this line: 2 long, light-colored claws on each front paw, like Linoone (bigger than on a real olinguito). They must be clearly visible.
+  - Pink feet.
+- It is the first stage of a Dark-type starter line: a small thief that will grow into a vigilante. Cute and sinister at the same time, not comical.
+
+VIEW
+- Standard front-sprite view: the creature faces left, head in 3/4 towards the viewer, only one eye visible.
+- The whole creature fits inside the frame.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO branch, tree, rock, ground, shadow or base. No glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Do not make it look like Zigzagoon, Linoone, Sentret, Furret, Purrloin, Meowth, a weasel, a ferret or a monkey.
+- No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
+- No clothing, bag, bandana or accessories.
+```

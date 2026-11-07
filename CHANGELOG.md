@@ -929,4 +929,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Eindkeuring (Dragonfly Cave, naast Taillow/Swellow/Pidgeotto/Fearow/Ho-Oh): 16/17 PASS; 2 staartpixels gerepareerd in `kleur_r5/` (kandidaat, `awki_8x.png`). Formaat 1388 px.
 
 ### [v0.0.233] - Awki frontsprite af
-- Jordi: "rond af". Ronde 5 is de frontsprite: `docs/concept/sprites/awki/af/` (`awki.png`, `awki_8x.png`, `normal.pal`). 23 frontsprites af. Lessen in `SPRITE_WERKWIJZE.md` (awki) en `GEMINI.md`.
+- Jordi: "rond af". Ronde 5 is de frontsprite: `docs/concept/sprites/awki/af/` (`awki.png`, `awki_8x.png`, `normal.pal`). 25 frontsprites af (na merge met main). Lessen in `SPRITE_WERKWIJZE.md` (awki) en `GEMINI.md`.

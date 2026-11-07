@@ -105,3 +105,6 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 
 ## Sprite ronde 2 (Jordi, 7 nov, letterlijk)
 "de ogen mogen nog wta meer hitmontop, mond is goed, rest van het hoofd ook wel, de benen met wit zijn beter, al mis ik daar nog wat schaduwing, waardoor het net lijkt alsof er iets weggelaten is. De torso ziet er ook nog een beetje gek uit, maar ik weet niet zo goed hoe we dat beter kunnen maken, voor de rest komen we nu echt ergens". Dus: benen variant B; ronde 3 levert torso-varianten ter keuze.
+
+## Sprite ronde 3 (Jordi, 7 nov, letterlijk)
+"c is wel prima al, moet denk ik nog iets meer volgens de dragonflycave en gen 3 sprite regels, maar het lijkt het minst op een bulge". Torso c gekozen; volgende: keuring + Dragonfly Cave/Gen 3-eindkeuring, daarna benoemde reparaties.

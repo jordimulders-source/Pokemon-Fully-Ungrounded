@@ -186,3 +186,28 @@ AVOID
 - No sawtooth band, no zigzag, no Aztec/Mexican or Japanese look.
 - No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
 ```
+
+## Startprompt v3 (7 nov, nieuw gesprek; na r3 "hij loopt vast")
+Bijlagen: 1 = `awki_r2_A_kuif.png` (basis), 2 = `awki_r3_A_bijgestuurd.png` (pose en patroon).
+
+```
+Draw this Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+- Attachment 1 is the base design. Keep its head, face, crest, ear patches, colors, body, legs and tail exactly as they are.
+- Attachment 2 shows the pose and wing pattern I want. Take from it ONLY the raised wing with the big flame pattern. Attachment 2 has a mistake: it has three wings. Do not copy that.
+
+ANATOMY (most important)
+- The bird has exactly TWO wings.
+- Near wing (on the right side of the body, closest to the viewer): raised up from the shoulder and reaching up and forward, feathers spread open, proudly greeting the sun like an Inca. This is the only raised wing and it carries the pattern.
+- Far wing (on the left, behind the chest): folded and mostly hidden behind the body. No other wing anywhere.
+
+THE PATTERN (on the raised wing only)
+- 3 large stepped triangles pointing up, covering most of the wing coverts: dark red bottom, orange middle, yellow tip. Each triangle is a stepped pyramid made of stacked blocks, so its sides go up in clear stairs, never as smooth diagonal lines (Andean "escalonado" textile motif).
+
+POSE
+- Standing on its own legs, body in 3/4 view facing left, chest out, head lifted a little, beak pointing left. Proud, calm, a young prince.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. No ground, shadow, glow, sun, sparkles or effects. One single creature.
+```

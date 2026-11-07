@@ -864,3 +864,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.212] - Awki: bijsturing 1 vastgelegd
 - Gemini gaf de vogel een extra vleugel; zie `koningstiran/gemini/README.md`.
+
+### [v0.0.213] - Awki: startprompt v3
+- Gemini liep vast; nieuwe startprompt (r2-A als basis, r3 voor vleugel en patroon, precies twee vleugels) in `PROMPT_AWKI.md`. Les over extra ledematen in `docs/lessen/GEMINI.md`.

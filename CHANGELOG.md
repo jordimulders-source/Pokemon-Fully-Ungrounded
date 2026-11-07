@@ -882,3 +882,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.218] - Awki: bijsturing op ronde 4
 - Na vergelijking met fase 1 en 3: lavendel punten in de kuif en een beetje rood rond de snavel (Jordi). Zin in `PROMPT_AWKI.md`.
+
+### [v0.0.219] - Awki: ronde 5 en kleuraccenten
+- Gemini-bijsturing (r5) verknalde de kuif; Claude kleurde r4 zelf bij (lavendel kuifpunt, rood tussen snavel en oog): `awki_r4_accenten.png`.
+- Besluit Jordi: de Sapa Inca wordt een late evolutie (Bisharp → Kingambit-idee); de awki mag er al sterk en "fully evolved" uitzien. In `POKEMON.md`.

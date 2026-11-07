@@ -587,3 +587,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.26] - Olinguito v2: ontwerp gekozen
 - Na schetsrondes 5–11 en een 3D-poppetje (`docs/concept/ontwerp/olinguito_v2/scripts/pop3d.py`: bollen/ellipsoïden met kijkhoek, textuur voor masker/snoet) koos Jordi het ontwerp: driekwart op 52°, kop naar de foto, Zigzagoon-masker met duister oog, grijsbruine snoet, Linoone-klauwen, gehurkte achterpoten, lange staart dicht op het lijf. Vastgelegd in `ONTWERP.md` + `ONTWERP_GEKOZEN.png`.
+
+### [v0.0.134] - Showcase-vel van alle afgeronde frontsprites
+- `docs/concept/sprites/showcase/frontsprites_af.png`: de 16 afgeronde frontsprites, incl. nachtaap fase 3 (muriqui, `af/` overgenomen van branch `claude/zen-mendel-9u6x44`) (4x vergroot, werknaam + type) op één vel om te tonen. Cuyby is ronde 4 (de goedgekeurde; ronde 6 wacht nog). Opnieuw maken na nieuwe sprites: `python3 docs/concept/sprites/showcase/maak_vel.py <uit.png>` (lijst bovenin het script aanvullen).
+- Keurslot laat `docs/concept/sprites/showcase/` door (verzamelvellen van al goedgekeurde sprites; Jordi: het slot is voor keuren, niet voor tonen).

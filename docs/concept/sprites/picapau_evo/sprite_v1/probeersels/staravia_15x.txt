@@ -1,0 +1,8 @@
+8 15 kggg
+9 15 kggg
+10 13 kkkaaagg
+11 15 aaaGGGgg
+12 15 aaaGGGgg
+13 13 kkkkkggggg
+14 16 GGGGG
+15 16 GGGGG

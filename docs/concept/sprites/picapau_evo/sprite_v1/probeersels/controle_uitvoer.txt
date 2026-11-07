@@ -1,0 +1,6 @@
+P1: losse pixels [], lichte kleur op de buitenrand [], 15 kleuren + transparant
+P2: losse pixels [], lichte kleur op de buitenrand [], 15 kleuren + transparant
+P3: losse pixels [], lichte kleur op de buitenrand [], 15 kleuren + transparant
+P4: losse pixels [], lichte kleur op de buitenrand [], 15 kleuren + transparant
+P5: losse pixels [], lichte kleur op de buitenrand [], 15 kleuren + transparant
+P6: losse pixels [], lichte kleur op de buitenrand [], 15 kleuren + transparant

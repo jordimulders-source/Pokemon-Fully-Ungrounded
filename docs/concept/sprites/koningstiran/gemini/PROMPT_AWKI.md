@@ -316,3 +316,10 @@ STYLE AND FORMAT
 AVOID
 - Not Xatu itself (only its open-wing stance), not Talonflame, Fletchinder, Moltres or Ho-Oh.
 ```
+
+## Bijsturing op r4 (7 nov, in het gesprek van r4)
+Jordi eens met punt 2 (lavendel punten in de kuif, zoals de waaier van fase 3) en 3 (beetje rood in het gezicht, overgang naar fase 3); "de rest maakt niet uit".
+
+```
+Same design, same pose and wings. Change only two small things: 1) give the tips and edges of the folded crest a few lavender-purple feather tips, like the purple edge of the stage 3 fan crown; 2) add a little red around the base of the beak, as a first hint of the red face of stage 3. Keep everything else exactly the same.
+```

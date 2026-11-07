@@ -560,3 +560,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.139] - Les: changelog na main nummeren
 - `docs/lessen/AGENTS.md`: vóór het pushen naar `main` eerst `main` mergen en de eigen changelogsecties achteraan nummeren (Jordi).
+
+### [v0.0.140] - Gemini-prompt koningstiran fase 1 (hatun runa)
+- `docs/concept/sprites/koningstiran/gemini/PROMPT_HATUN_RUNA.md`: prompt voor Gemini (grote kiskadie als anatomie, witte wenkbrauwstreep = gevlochten llawt'u, verborgen gele kroon als hint, Normal/Flying, palet van de Sapa Inca zonder kroon/staf), volgens `GEMINI.md` (3/4 links, geen ondergrond/effecten, witte achtergrond, ≤16 kleuren, AVOID-regel), plus tips voor bijsturen. Bijlage: Sapa Inca 6× (`bijlage_sapa_inca_6x.png`), eindvorm `af/sapa_inca.png` hierheen gekopieerd van de koningstiran-tak.

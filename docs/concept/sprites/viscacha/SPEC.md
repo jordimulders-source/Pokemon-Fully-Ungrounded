@@ -23,7 +23,7 @@ Bron: berg-viscacha (*Lagidium viscacia*), Andeswoestijnen (Atacama, Uyuni, Líp
 | pose | r6: gespannen, naar voren, voorpoten op, achterpoten gebogen, klaar om te springen; 3/4 naar links | gekozen |
 | kleur | woestijnoker/zand, terracotta in de schaduw, crème buik/borst, geel accent | gekozen |
 | staart | lange staart die omhoog krult, één geheel met het lijf, gekartelde gele pluim | gekozen |
-| wangpluk | puntige gele pluk; **vast aan de wangvacht**, niet zwevend als losse schicht (Claude, nog niet door Jordi bevestigd) | open |
+| wangaanhangsel | zoals Gemini (grootte, plek, bliksemvorm). Jordi: "het elektrische wangaanhangsel heb je ook niet nagemaakt, je hebt het niet goed gecontroleerd, je mag alleen met ogen afwijken" | open |
 | oren | rond, viscacha, geen konijn | gekozen |
 | oog | luier dan Gemini: halfgesloten, zware bovenleden zoals een echte viscacha (enige toegestane ontwerpafwijking). Bron: Jordi's foto's `referenties/jordi_foto1_oog_zijaanzicht.png` en `jordi_foto2_oog_rechtop.png` ("zie bronmateriaal"): smalle amandelvormige spleet, zwaar bovenlid dat schuin over het oog hangt, donker, hoog opzij van de kop; slaperig-zelfvoldaan | open |
 

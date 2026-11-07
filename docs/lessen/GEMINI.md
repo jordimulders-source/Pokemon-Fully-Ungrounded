@@ -12,12 +12,13 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 ## Van Gemini-plaatje naar sprite
 - De sprite is een **vertaling** van het Gemini-plaatje naar 64×64, geen nieuw ontwerp. Silhouet = masker van het plaatje verkleind (massa heilig), kleuren = de Gemini-kleuren.
 - Kwantiseren naar het palet mag als **onderlaag** (Gemini-plaatjes zijn al pixelachtig); daarna met de hand opschonen volgens SPRITE_KERN (tinten, sikkelschaduw, selout, ogen van een echte sprite). Geen kale scriptuitvoer opleveren.
-- Afwijken van Gemini alleen waar iets op 1× anders leest dan in het plaatje (een vlak dat op 64 px als kraag leest, losse haren, effectjes); meld elke afwijking.
+- **Niet afwijken van Gemini** behalve wat Jordi expliciet toestaat (viscacha: alleen het oog). Ook niet uit eigen zorg ("leest als kraag"): Jordi 7 nov "je mag alleen met ogen afwijken". Twijfel = Jordi vragen, niet zelf of via de keurder besluiten.
 
 ## Keuren
-- De keurder toetst **trouw aan het Gemini-plaatje + spritetechniek**, niet het ontwerp. Ontwerppunten (kop klein, oren smal, minder cute) zijn géén FAIL en geen reparatie; hooguit "voor Jordi".
+- De keurder toetst **trouw aan het Gemini-plaatje + spritetechniek**, niet het ontwerp. Ontwerppunten (kop klein, minder cute) zijn géén FAIL; **elke afwijking van Gemini wel** (vorm, maat of plek van een onderdeel, iets weggelaten).
 - Vergelijk op 8× naast het Gemini-plaatje (verkleind) én 2–3 echte sprites.
 - De regel "na 2 mislukte rondes stoppen" telt hier alleen bij ontwerp- of vertaalproblemen; rondes met alleen benoemde pixelreparaties (contour, toonvlakken) gaan door, doel ≤ 5.
 
 ## Lessen
+- **Elk onderdeel afvinken tegen Gemini op dezelfde schaal** (kop, oren, oog, neus, mond, snorharen, aanhangsels, poten, lijf, staart): de viscacha-wangpluk werd stilletjes verkleind en het gezicht vereenvoudigd; Jordi: "je hebt het niet goed gecontroleerd".
 - **Gezicht apart vergelijken** (viscacha r4, 7 nov: Jordi "kijk eens goed naar het gezicht ... neus, whiskers, mond"; twee keurders en Claude misten het): maak altijd een close-up van de kop van sprite en Gemini op dezelfde schaal naast elkaar en vink per onderdeel af: neus, mond, snuitvorm, kin, snorharen, oog, oren. Snorharen uit Gemini niet weglaten: 1 px lijntjes zoals Raticate/Sandshrew.

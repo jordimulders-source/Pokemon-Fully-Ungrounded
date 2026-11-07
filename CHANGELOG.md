@@ -792,3 +792,14 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.141] - Sapa Inca frontsprite af
 - Frontsprite van de Sapa Inca (eindvorm koningstiran-lijn, Fire/Psychic) is af: `docs/concept/sprites/koningstiran/af/sapa_inca.png`, samengevoegd uit ronde 12 (binnenkant tooi, staf/staart, lijf, poten) en ronde 2 (hoofd, tooivorm). Retro in `docs/lessen/RETRO_SAPA_INCA.md`. Nog te doen: frame 2, rug, icoon, shiny, naam/data; daarna awki en hatun runa.
+
+### [v0.0.140] - Poedelmot frontsprite af (Gemini-model)
+- **Nieuwe fakemon: Venezolaanse poedelmot** (eigen soort, laatste evolutie; voorvorm: larve met poedelkenmerken, later). Frontsprite naar Jordi's eigen Gemini-ontwerp: lijf uit afbeelding 2, voelsprieten uit afbeelding 1. `docs/concept/sprites/poedelmot/af/poedelmot.png` (+ `normal.pal`, 8×-weergave), 64×64, box 62×45, 1782 px, 14 kleuren.
+- 21 kleurrondes (`kleur_r1`–`kleur_r21`); keuring r21 PASS op de twee eisen (accuraat t.o.v. model + Gen 3) en eindkeuring Dragonfly Cave PASS. Ter info van de eindkeurder: het lijnennet in het onderlijf (uit het model) is het drukste deel van de sprite.
+- **Werkwijze:** nieuwe belangrijkste spriteregel (bovenaan `SPRITE_KERN.md`): een model van Jordi namaken = alleen accuraat op het origineel + Gen 3; niet genoemd = niet goedgekeurd. Vaste methode "Gemini-model namaken" met stappen en lessen in `SPRITE_WERKWIJZE.md`.
+
+### [v0.0.141] - Poedellarve frontsprite af (voorvorm poedelmot)
+- Jordi's Gemini-model van de larve (`docs/concept/sprites/poedellarve/referenties/jordi_gemini.png`); Gemini kreeg hem niet korter. Claude maakte het stuk onder de kop lager zonder hem smaller te maken (`model/laag.py`: borst en voorpootjes ingedrukt, kop/sprieten/bolletjes onvervormd omlaag, achterlijf en voetjes onveranderd); Jordi koos 60%.
+- Zwakke eerste vorm (evolueert op lv 15–20 max): formaat als Wurmple/Caterpie/Grubbin, 40×30 px, 778 px. Silhouet = model verkleind (`silhouet/sil.py`).
+- Twee kleurrondes door één maker met het meetgereedschap van de poedelmot vanaf ronde 1 (`kleur_r1`, `kleur_r2`). Jordi: "ik vind ronde 2 wel goed, maar je moet hem spiegelen" en "dan is de sprite eigenlijk al af". Eindversie `af/poedellarve.png` (gespiegeld naar links, + `normal.pal`, 8×-weergave).
+- Eindkeuring kleuren en schaduwen (Dragonfly Cave, naast poedelmot en Gen 3-sprites; Jordi): na het spiegelen viel het licht van rechtsboven → kleur r3 (21 px tinten, paletkleur 7 warmer, vorm ongewijzigd), herkeuring PASS. `af/poedellarve.png` is nu r3.

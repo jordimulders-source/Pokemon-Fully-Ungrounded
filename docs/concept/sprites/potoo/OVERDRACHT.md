@@ -1,3 +1,5 @@
+> **Afgerond (7 nov):** frontsprite af in `af/potoo.png` via het Gemini-model; deze overdracht is naslag.
+
 # Overdracht great potoo (7 nov) — prompt voor een nieuw gesprek
 
 We gaan verder met de great potoo (fakemon voor Pokémon Fully Ungrounded, Ghost/Normal, één stage). Jordi stuurt in dit gesprek zijn eigen overtrek van kop, snavel en bek (gemaakt op `docs/concept/sprites/potoo/tekenbasis/leidraad_gespiegeld_spritepixelraster.png` of `leidraad_origineel_raster.png`). Die overtrek is vanaf nu de bron voor kop + snavel + bek: **1 op 1 overnemen, niets verzinnen.**

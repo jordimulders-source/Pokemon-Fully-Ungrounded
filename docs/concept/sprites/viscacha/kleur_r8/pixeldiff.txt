@@ -1,0 +1,7 @@
+pluim Counter({'.': 109, 'A': 32, '1': 23, '8': 17, '4': 11, 'C': 10, '9': 8})
+totaal anders dan r7: 48
+snorharen/gezicht 10
+pluim 10
+voorpoten 23
+oor nabij 5
+buiten zones: []

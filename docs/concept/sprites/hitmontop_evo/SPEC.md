@@ -78,6 +78,7 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 ## Gemini-ontwerp (Jordi, 7 nov)
 - Nieuwe poging via een Gemini-prompt met hoofd + pose als bijlagen: `gemini/PROMPT.md`. Jordi: "ik wil dat die geen shirt heeft, en dat de broek gele en groene strepen hebben als patroon. er zit zon typisch capoeira touwtje aan de broek en ik wil dat zijn armen een soort van muay thai banden hebben, maar dan meer capoeira mode".
 - Jordi: "belangrijk is dat die echt hitmon blijft en dus niet mens, dus verhoudingen van hoofd, handen en voeten zijn groter dan de benen en armen".
+- Jordi (na Gemini ronde 2): "de broek mag ook echt minder een broek zijn en gewoon meer de benen met kleur".
 
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

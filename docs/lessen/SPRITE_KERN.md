@@ -18,6 +18,7 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 - Een pose-probleem los je nooit op met kleurrondes.
 - **Model alleen tot de richting staat** (picapau-evo, 6 nov, Jordi: "laten we een sprite gaan maken, dat is makkelijker te editen" · "en model vertaalt toch altijd weer anders naar een sprite"): zodra pose en massa kloppen, naar de sprite; vorm-details (buikcurve, maat van de bliksem, oren) in de sprite oplossen, geen extra modelrondes.
 - **Ook bij een poseprobleem na "maak een sprite" niet terug naar het model** (picapau-evo, 6 nov: twee extra poseproeven na Jordi's "laten we een sprite gaan maken" → "ga gewoon een sprite maken aub" · "zitten we weer uren aan het model te werken"): draai/leun in de sprite zelf, of vraag Jordi eerst.
+- **Snavel en dunne delen niet vóór een donker vlak** (picapau-evo, 7 nov: 6 snavelrondes faalden doordat de snavel vóór de donkere verre vleugel lag; echte sprites zetten hem tegen lucht of een licht vlak). Bij twijfel: een vel met 4–6 probeersels van alleen het hoofd ("doe wat probeersels en toon me"), Jordi kiest.
 
 ## Hoe een Gen 3-sprite eruitziet (meetbaar)
 - 3/4 naar links-voor, kop draait meer naar de kijker dan het lijf; ronde kop als eigen vorm; één oog bij een snavel/snuit opzij.

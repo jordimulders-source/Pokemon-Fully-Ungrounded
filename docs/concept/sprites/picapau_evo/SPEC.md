@@ -1,5 +1,7 @@
 # Evolutie van Picapau (Electric/Flying, eindvorm): SPEC
 
+**AF (7 nov): frontsprite `af/picapau_evo.png` (+ `normal.pal`, `vel.png`)** = sprite r16; onafhankelijke eindkeuring PASS (`sprite_v1/r16/picapau_evo.png.keuring.md`); Jordi: **"helemaal prima"**. Grote specht (3/4 als Pidgeot, achterover), P5-snavel, zwarte slierten met krullen, dunne staartlus met Z-bliksem. Optioneel later: bollere buitenrand vleugelvoorrand. Naam open (Picaraio). Frame 2, rug, icoon, shiny, data later.
+
 Naam open (voorstel uit IDEEEN: Picaraio = *pica-pau* + *raio*). Pre-evo: `../picapau/` (af, 5 nov). Concept: `docs/concept/IDEEEN.md` (Roomkleurige specht, "Evolutie die op Raichu lijkt").
 Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de geel → oranje-kastanje stap zit in het geslacht zelf (zoals Pikachu → Raichu).
 

@@ -591,3 +591,30 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.134] - Showcase-vel van alle afgeronde frontsprites
 - `docs/concept/sprites/showcase/frontsprites_af.png`: de 16 afgeronde frontsprites, incl. nachtaap fase 3 (muriqui, `af/` overgenomen van branch `claude/zen-mendel-9u6x44`) (4x vergroot, werknaam + type) op één vel om te tonen. Cuyby is ronde 4 (de goedgekeurde; ronde 6 wacht nog). Opnieuw maken na nieuwe sprites: `python3 docs/concept/sprites/showcase/maak_vel.py <uit.png>` (lijst bovenin het script aanvullen).
 - Keurslot laat `docs/concept/sprites/showcase/` door (verzamelvellen van al goedgekeurde sprites; Jordi: het slot is voor keuren, niet voor tonen).
+
+### [v0.0.67] - Nachtaap fase 3: kleur tot en met arm en lijf
+- Kleurrondes 1–1s (`docs/concept/sprites/nachtaap_fase3/kleur/`): volume naar het model, onderste been één vorm met het lijf, spiraal als losse Nazca-spiraal, healerhand met vingers en palm (Drowzee/Deoxys), lichtblauwe gloed, maan als sikkel.
+- Opgeheven been 7 px naar rechts (Jordi koos uit +3…+11) zodat het uit de heup komt; rug, heup en bil daarop afgewerkt.
+- Vuistarm naar Jordi's krabbels: volle mouw van vuist tot schouder met vloeiende randen, onderrand halverwege tussen ronde 1p en zijn boog (Jordi: "50%"). Basis: `kleur/ronde1s/`.
+- Rugpatroon verkend en geparkeerd tot het lijf af was; richting: brede banden die als boog om het lijf lopen (fase 2, Furret, Dusclops).
+
+### [v0.0.68] - Nachtaap fase 3: lijf af, rugpatroon loopt
+- Na de arm: lijf eerst als één geheel (studie rug met front- en back sprites), daarna vormshading (borstkas, buik, heup; been uit de heup), staartwortel loopt door in de heup; dij −2; healerhand bevroren (vier vingers) in zilverblauw, gloed en ogen turkoois, pols uit de gloed. Basis: `docs/concept/sprites/nachtaap_fase3/kleur/ronde7c/`.
+- Rugpatroon: drie rondes (wiggen, strepen, banden/ringen) afgekeurd; loopt nog (Jordi: "afronden betekent niet half werk").
+- Lessen in `docs/lessen/SPRITE_WERKWIJZE.md` (referentie van Jordi per onderdeel, eerst opties via een agent, geen sterkte-varianten, plooien en massa's, staartwortel, retro hand).
+
+### [v0.0.69] - Nachtaap fase 3: rugbanden naar Jordi's krabbel
+- Ronde 5: de krabbel letterlijk overgetrokken (drie ')'-banden). Jordi: het is een krabbel, geen blauwdruk.
+- Ronde 6 (`docs/concept/sprites/nachtaap_fase3/rugpatroon/ronde6/`): drie gelijke, ronde banden op gelijke afstand, 3 px in het midden, taps uitlopend; shading wit/lichtblauw/grijsblauw van licht naar schaduw. Keurder: eerst FAIL (2 px te dun), daarna opnieuw opgebouwd uit één vaste bandvorm.
+
+### [v0.0.70] - Nachtaap fase 3: draaistanden rugbanden
+- Ronde 7 (`docs/concept/sprites/nachtaap_fase3/rugpatroon/ronde7/`): de banden van ronde 6 tegen de klok in gedraaid in vier standen, 0°, 8°, 15° en 22°, zodat Jordi kan kiezen. Bij 30° kwamen er trappetjes in de banden; die stand is geschrapt.
+
+### [v0.0.71] - Nachtaap fase 3: frontsprite in af/, linkeroog ter keuze
+- Jordi koos stand D (22°) voor de rugbanden. `docs/concept/sprites/nachtaap_fase3/af/` bevat de frontsprite, het palet, het vergelijkingsvel en EINDKEURING.md.
+- Eindkeuring: GOED. Geen harde fouten; de wijzigingen ten opzichte van het bevroren lijf zitten alleen in de rugzone.
+- Linkeroog: drie opties in `af/oog/` (A, B, C). Het oog mist nu de glans en leest dof.
+
+### [v0.0.72] - Nachtaap fase 3: frontsprite af
+- Linkeroog D: het oog kreeg linksboven een glans en de iris is nu boven donker (2 px). Het is daarmee even opgebouwd als het rechteroog, maar 1 kolom smaller. De eindkeuring staat nu op GOED. `docs/concept/sprites/nachtaap_fase3/af/nachtaap_fase3.png` is de frontsprite.
+- Nog te doen: frame 2, rugsprite, icoon, shiny, naam en data.

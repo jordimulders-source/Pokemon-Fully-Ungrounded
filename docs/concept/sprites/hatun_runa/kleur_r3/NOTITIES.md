@@ -1,7 +1,7 @@
 # Hatun runa – kleur ronde 3
 
 Basis: `../kleur_r2/raster.txt`. Handwerk: `stappen/e_kop3.txt` (kop) en `stappen/e_goud.txt` (nabije vleugel). `vel.png`: r3 | r2 | model op 8×, kop/vleugel 12×, 1×/2× licht en donker + model 1×.
-**Pixeldiff met r2: 61 px, allemaal binnen de zones kop (x9–27, y46–55) en nabije vleugel (x28–43, y26–46); 0 erbuiten** (script onder in deze ronde gedraaid). Silhouet-diff 0 (971 px).
+**Pixeldiff met r2: 59 px (kop 24, vleugel 35), allemaal binnen de zones kop (x9–27, y46–55) en nabije vleugel (x28–43, y26–46); 0 erbuiten** (script onder in deze ronde gedraaid). Silhouet-diff 0 (971 px).
 
 ## Reparaties (benoemd door Claude)
 1. **Oog:** opgebouwd zoals het Taillow-oog (`graphics/pokemon/taillow/anim_front_gba.png`: zwarte pupil met licht eromheen, geen losse glanspixel): pupil 2×2 op de gemeten plek (18–19, 47–48); erboven de wenkbrauw, links de witte voorkant van de wenkbrauw (model rij 47 wit x15–17.5), rechts de witte sikkel (20,47–48), eronder een grijsbruine iris E (18–19,49). De pupil staat zo los van het masker.

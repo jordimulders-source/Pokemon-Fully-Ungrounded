@@ -568,3 +568,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.141] - Spriteregels voor Gemini-ontwerpen
 - Nieuw `docs/lessen/GEMINI.md` (Jordi: "pas de regels maar aan voor gemini modellen die sprites gemaakt worden"): Jordi's Gemini-keuze is het bevroren ontwerp; de sprite is een trouwe vertaling (kwantiseren als onderlaag mag, daarna met de hand opschonen); de keurder toetst trouw + techniek, ontwerppunten zijn geen FAIL; promptlessen (nieuw gesprek i.p.v. bijsturen, geen ondergrond, benoemen wat niet mag lijken). Verwijzing in `SPRITE_KERN.md` en `CLAUDE.md`.
 - Viscacha: kleur ronde 1 en 2 door keurders afgekeurd (wangpluk leest als kraag, contour, toonvlakken); ronde 3 volgens de nieuwe regels.
+
+### [v0.0.142] - Viscacha frontsprite af
+- Electric-viscacha (single stage) naar Jordi's Gemini-model (ronde 6), alleen het oog luier zoals een echte viscacha (Jordi's foto's). 8 rondes: r1–r6 op het oog (keurders FAIL, Jordi: gezicht en wangaanhangsel klopten niet), r7–r8 met de poedelmot-methode (verse maker, meten per pixel). Keuring twee eisen PASS, eindkeuring Dragonfly Cave PASS; Jordi: "ik vind hem erg goed ja!". Eindversie: `docs/concept/sprites/viscacha/af/viscacha.png` (+ `viscacha_8x.png`, `normal.pal`).
+- Lessen van de poedelmot/poedellarve-sessie op deze branch gezet (SPRITE_KERN, SPRITE_WERKWIJZE "Gemini-model namaken", CLAUDE.md); `GEMINI.md` aangevuld.

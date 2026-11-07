@@ -1,0 +1,15 @@
+silhouetwijzigingen t.o.v. r2: 4
+   (34,27) weg  zone D rug/lijf/buik
+   (35,27) weg  zone D rug/lijf/buik
+   (36,27) weg  zone D rug/lijf/buik
+   (38,28) weg  zone D rug/lijf/buik
+pixeldiff r2->r3: 289 px; per zone: {'A oor (Gemini)': 13, 'B wangpluk/kopcontour': 35, 'C snuit/kin': 9, 'D rug/lijf/buik': 232}
+open randen (vlakkleur op de buitenrand): 0 []
+losse pixels (geen 4-buren): []
+tintclusters < 3 px (4-samenhangend): 3
+   A [(57, 12)] 
+   E [(10, 26)] (oog/glans)
+   D [(11, 26)] (oog/glans)
+gebruikte indexen: 123456789ABCDEF | kleuren incl. transparant: 16
+png: (64, 64) P paletlengte 16
+png == raster: True

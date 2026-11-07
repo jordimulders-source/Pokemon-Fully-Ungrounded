@@ -266,3 +266,29 @@ STYLE AND FORMAT
 AVOID
 - Not Talonflame, Fletchinder, Moltres or Ho-Oh.
 ```
+
+## Startprompt v6 (7 nov, nieuw gesprek; vervangt v5)
+Bijlage: één afbeelding `bijlage_awki_v6.png` (fase 1, r2-A als basis, fase 3). Ten opzichte van v5: de vleugel die in r2-A al omhoog staat (links) blijft de opgeheven vleugel en krijgt de vuurkleuren; geen vleugelwissel meer (minder kans op een derde vleugel).
+
+```
+Draw a Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+The attached image shows a 3-stage bird line: STAGE 1 (left, finished sprite), STAGE 2 (middle, base design) and STAGE 3 (right, finished sprite). I need a new version of STAGE 2. Stages 1 and 3 are only for family resemblance and palette: do not copy their poses, fan crown or staff.
+
+KEEP FROM THE MIDDLE BIRD
+- Its head, face (black mask, white throat, short dark beak), the folded flame crest, the gold ear patches, the yellow forehead feathers, the brown body, golden-ochre belly, legs, rust-brown tail and its pose. Keep the proportions.
+
+CHANGE ONLY THIS
+1. Wing colors: the raised wing on the LEFT (in front of the chest) is colored like fire, row by row: the small feathers near the shoulder stay brown, the next row of covert feathers dark red, the next row orange, and the long flight feathers bright yellow at the tips. Each feather row is one clear flat color band, so the colors change in clean steps from row to row, not a smooth gradient. No pattern, no shapes on top of the feathers.
+2. Pose: that same left wing reaches a little higher, up and forward towards the sun, feathers open, head lifted a little: proudly greeting the sun like an Inca.
+
+ANATOMY
+- Exactly TWO wings: the raised fire-colored wing on the left and the folded brown wing on the right side of the body. Do not add any other wing.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. No ground, shadow, glow, sun, sparkles or effects. One single creature, no other stages in the result.
+
+AVOID
+- Not Talonflame, Fletchinder, Moltres or Ho-Oh.
+```

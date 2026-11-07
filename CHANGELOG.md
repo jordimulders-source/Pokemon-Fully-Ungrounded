@@ -873,3 +873,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.215] - Awki: startprompt v5
 - Patroon vervangen door vuurkleuren per veerrij op de opgeheven vleugel (Jordi); les over patronen in `docs/lessen/GEMINI.md`.
+
+### [v0.0.216] - Awki: startprompt v6
+- Eén bijlage met fase 1, het voorlopige model (r2-A) en fase 3; de al opgeheven vleugel krijgt de vuurkleuren (geen vleugelwissel). In `PROMPT_AWKI.md`.

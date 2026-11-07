@@ -1,7 +1,9 @@
 # SPRITE-KERN: de enige pagina die je vóór spritewerk MOET lezen
 Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen ... hij vergeet heel vaak lessen mee te nemen"). Geef dit bestand mee aan **elke** sprite-agent, ook bij kleine reparaties. Al het andere in `docs/lessen/` is naslag.
 
-**Ontwerp uit Gemini?** Dan vervangt `docs/lessen/GEMINI.md` stap 1–3 hieronder (Gemini-keuze van Jordi = bevroren ontwerp; sprite = trouwe vertaling; keurder toetst trouw + techniek, niet het ontwerp).
+**BELANGRIJKSTE REGEL: een model van Jordi namaken (Jordi, 6 nov: "dit is de belangrijkste regel vanaf nu").** Levert Jordi een model (eigen ontwerp/afbeelding) om na te maken, dan zijn er precies twee eisen, en verder niets: (1) **lijkt hij heel accuraat op het origineel** (niets toevoegen, weglaten of herinterpreteren; het model is perfect); (2) **is het een Gen 3-sprite volgens al onze eisen** (deze pagina). Keurders toetsen alleen deze twee; "welk dier leest het", eigen ontwerpideeën of stijlwensen die het model veranderen tellen niet. Voorbeeld: poedelmot (`docs/concept/sprites/poedelmot/SPEC.md`). **Wat Jordi niet noemt is niet goedgekeurd** (Jordi: "als ik iets niet benoem betekent het niet dat het perfect is"): bevroren is alleen wat expliciet accuraat verklaard is.
+
+**Ontwerp uit Gemini?** Volg `SPRITE_WERKWIJZE.md` → "Gemini-model namaken" (meetgereedschap poedelmot) en `docs/lessen/GEMINI.md`; die vervangen stap 1–3 hieronder (Gemini-keuze van Jordi = bevroren ontwerp; sprite = trouwe vertaling; keurder toetst trouw + techniek, niet het ontwerp).
 
 ## Volgorde (nooit overslaan)
 1. **Ontwerp met Jordi**: pose + kenmerken, letterlijk in `SPEC.md` van de Pokémon. Foto's van Jordi direct in `referenties/` (komt een foto niet als bestand binnen: punt voor punt beschrijven).

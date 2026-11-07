@@ -1,4 +1,7 @@
-# Sprites vanaf een Gemini-ontwerp (Jordi, 7 nov: "pas de regels maar aan voor gemini modellen die sprites gemaakt worden")
+# Sprites vanaf een Gemini-ontwerp
+
+**Eerst:** `SPRITE_WERKWIJZE.md` → "Gemini-model namaken" (poedelmot/poedellarve: meetgereedschap px.py/box1x/lijnkaart vanaf ronde 1, één keurder met alleen de twee eisen, 8× naar Jordi, verse maker > ±400k tokens). Dit bestand vult aan.
+ (Jordi, 7 nov: "pas de regels maar aan voor gemini modellen die sprites gemaakt worden")
 
 Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in plaats van** stap 1–3 van `SPRITE_KERN.md` (ontwerp, bron, silhouet). De rest van SPRITE_KERN (netheid, belijning, ogen, keurslot) blijft gelden.
 

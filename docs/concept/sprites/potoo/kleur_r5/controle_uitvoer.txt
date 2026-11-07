@@ -1,0 +1,6 @@
+pixels: 1242 (silhouet 1229)
+alpha-diff met silhouet: 13  extra=[(24, 1), (27, 1), (23, 2), (39, 3), (42, 7), (43, 8), (45, 8), (44, 10), (45, 10), (43, 11), (44, 11), (27, 49), (27, 50)]  mist=[]
+open randen (buitenrand zonder lijnkleur 1-4/9): 0 []
+losse pixels (vlaktint zonder gelijke buur): 0 []
+tintclusters < 3 px: 0
+gebruikte indexen: 123456789ABC (12 kleuren + transparant)

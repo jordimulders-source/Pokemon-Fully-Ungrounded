@@ -77,3 +77,21 @@ POSE
 - The free arm bent across the hip.
 - Silhouette like an upside-down triangle: wide at the top, a narrow point at the bottom (the hand).
 ```
+
+## Startprompt v2 (7 nov, nieuw gesprek)
+Bijlagen: 1 = `ronde1.png` (ontwerp), 2 = `bijlage2_stickman.png` (pose). Weigert of negeert hij de stickman: bijlage 2 = `bijlage2_pose.png` (model v3).
+
+```
+Use attachment 1 as the base design. Keep EXACTLY its design: the head (V line pulled back, round bun with a white band, small horn, black eyes with a white dot, one short mouth line), the big round hands, the big blue clawed feet, the thin smooth brown limbs, the bare brown torso, the white trousers with broad yellow and green stripes, the yellow capoeira cord around the waist, the yellow cord armbands. Keep its Hitmon proportions: big head, big hands, big feet, thin arms and legs. Keep the Gen 3 sprite style, white background, no floor or shadow.
+
+Change ONLY the pose. Attachment 2 shows the pose as a stick figure (big circle = head, small circles = hands and feet, grey line = floor). In attachment 1 the body hangs straight upside down; that is wrong. The correct pose, a frozen one-arm handstand from capoeira:
+- The support arm is a straight vertical line from the hand on the floor up to the shoulder. The shoulder is at the top of this arm, NOT under the head.
+- From the shoulder the torso goes diagonally UP and to the RIGHT, at about 45 degrees. The hips are the highest point of the torso, upper right.
+- The head hangs LOW, to the LEFT of the support arm, at about the middle height of the arm, on a short neck from the shoulder, face towards the viewer.
+- From the hips the legs open in a wide V-split: one leg crosses up and to the far upper left, the other goes up to the upper right. The two feet are the highest points of the sprite.
+- The free arm comes out of the same shoulder, bends at the elbow, and its round hand rests on the hip at the upper right. It does not stick out sideways and is not hidden.
+- Both upper arms have the yellow cord armband.
+- Silhouette: an upside-down triangle, wide at the top (the feet), a narrow point at the bottom (the hand on the floor).
+
+AVOID: a straight vertical upside-down body, the head directly under the hips, an arm coming out of the chin or neck, human proportions, a shirt, a floor or shadow.
+```

@@ -647,3 +647,95 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.145] - Great potoo: Jordi's eigen omtrek, verhouding gekozen
 - Jordi's overtrek van kop/snavel/bek letterlijk uitgelezen naar spritepixels (`potoo/jordi_overtrek/`: verschil met de leidraad, halslijn en kaakpunt met de hand afgelezen; oog op de fotopositie). "De kop gaat niet meer afwijken van deze omtrek."
 - Lijf in rondes 8–13 (`potoo/sprite/ronde8_voorbeeld` t/m `ronde13_standen`): eerst te klein/verzonnen, daarna gemeten in oogmaten op al zijn foto's (oog→staartpunt 17–20 oog, breedte 7,7 oog), ineengedoken op de tak met de kop voorover, lijnen 1 px. Jordi koos het lijf 15% kleiner (`ronde13_standen/potoo_85.png`); de afgekapte vorm linksonder ("Zuid-Amerika") mag blijven.
+
+### [v0.0.140] - Hitmontop: evolutie in plaats van regional form
+- Jordi: Hitmontops Japanse naam is al capoeira, dus geen regional form maar alleen een nieuwe capoeira-evolutie. Eerst puur ontwerp. Drie richtingen (mestre/bananeira, Besouro-kever/armada, malandro/negativa) in `docs/concept/IDEEEN.md`; POKEMON.md en DEX_NOMINATIES bijgewerkt (dubbele Hitmontop-regel in POKEMON.md weg).
+
+### [v0.0.141] - Hitmontop-evolutie: pose gekozen
+- Jordi koos de pose: eenarmige handstand met benen in een V-split (foto in `docs/concept/sprites/hitmontop_evo/referenties/`), beschreven in `SPEC.md` daar.
+
+### [v0.0.142] - Hitmontop-evolutie: ontwerp vastgelegd
+- Jordi's ontwerp letterlijk in `docs/concept/sprites/hitmontop_evo/SPEC.md`: kleine niet-functionele hoorn, bruine huid, lange aansluitende blauwe broek, langer lijf, afro-Braziliaans haar (Eddy Gordo), langere benen met kleinere blauwe klauwvoeten, koordjes aan broek en armen (muay thai), ronde handen. Fanart "Mestrimba" als inspiratie in `referenties/`.
+
+### [v0.0.143] - Hitmontop-evolutie: Fighting/Ground
+- Jordi koos Fighting/Ground ("omdat die telkens aan de grond zit"); Dark past niet. Uniek in de dex (Great Tusk staat uit). In SPEC.md en POKEMON.md.
+
+### [v0.0.144] - Hitmontop-evolutie: poppetje ronde 1 (intern)
+- Eigen 3D-poppetje (lama-methode, `pop3d`) in Jordi's pose: `docs/concept/sprites/hitmontop_evo/ontwerp/` (standen A70/B55/C40). Pose klopt, maar leest als een mensje i.p.v. een Hitmon (kop, paardenstaart, slungelig lijf); niet naar Jordi, ronde 2 met Hitmontops kop, dreads en een voller lijf loopt.
+
+### [v0.0.145] - Hitmontop-evolutie: poppetje ronde 2 (intern)
+- `ontwerp/ronde2.py`: Hitmontop-kop (koepel met puntige bruine rand, schuine ogen, mond, stompe hoorn), voller lijf, blauwe klauwvoeten, dikkere cordão. Gezicht leest als Hitmontop, maar hangende dreads aan de omgekeerde kop lezen in alle drie varianten als octopuspoten. Na 2 rondes gestopt: haarvraag ligt bij Jordi.
+
+### [v0.0.146] - Hitmontop-evolutie: poppetje afgekeurd, nu sprite art
+- Jordi keurde de kop van poppetje ronde 2 af ("wat een mormel"). Nieuwe aanpak (Jordi): direct pixelen vanaf de Hitmontop-sprite, met zijn kop rechtop als skelet; maker-agent bezig in `docs/concept/sprites/hitmontop_evo/sprite_r1/`. Les in `docs/lessen/GRAPHICS.md`.
+
+### [v0.0.147] - Hitmontop-evolutie: sprite ronde 1 (intern)
+- Maker pixelde vanaf de Hitmontop-sprite (`docs/concept/sprites/hitmontop_evo/sprite_r1/`): kop = Hitmontops kop rechtop met haar in plaats van de rand, handen en voeten 1:1 van Hitmontop, broek/romp/benen met de hand. Maker en Claude: nog niet goed (leest liggend i.p.v. handstand, haar geen dreads, plankromp, buisbenen). Verse keurder beoordeelt hem blind (Jordi: "laat maar eerst een andere agent keuren").
+
+### [v0.0.148] - Hitmontop-evolutie: sprite ronde 2 (intern)
+- `docs/concept/sprites/hitmontop_evo/sprite_r2/`: pose opnieuw als Y (V-split, nek, vrije arm, kleinere voeten, marge); gezicht, steunarm en cordão bevroren (diff 0, 1 px omhoog). Zwak: kop te groot t.o.v. een kort lijf en korte benen, haar leest als pet i.p.v. dreads. Verse keurder bezig.
+
+### [v0.0.149] - Hitmontop-evolutie: sprite ronde 3 (intern), gestopt
+- `sprite_r3/`: dreads in eigen tint, hoorn 4 px, vrije arm met onderarm, voeten met enkel en klauwen, minder banding, ogen exact Hitmontop. Claude: nog niet goed (kop ±27 px tegen lijf ±15 px, haar leest als een platte bruine kap). Na 3 sprite-rondes gestopt volgens de werkwijze; aanpak ligt bij Jordi.
+
+### [v0.0.150] - Hitmontop-evolutie: v2 afgekeurd, v3 vanaf de Hitmontop-pixels
+- v2 ronde 1 (schone start, met de hand) door de keurder afgekeurd: leest als een chibi-mensje met zijstaart. Oorzaak na vier pogingen: telkens vanaf nul een menselijke houding. Nieuwe aanpak v3: Hitmontops eigen sprite (al ondersteboven met de benen in een V) stap voor stap bewerken zoals een regional form; steunhand i.p.v. kop op de grond, zijn eigen haar gerestyled. `docs/concept/sprites/hitmontop_evo/sprite_v3_r1/`.
+
+### [v0.0.151] - Hitmontop-evolutie: nieuwe werkwijze, stap 1 skelet
+- Jordi's werkwijze: eerst een stick man van de pose, dan stap voor stap onderdelen erop plakken (handen en voeten eerst), pas daarna één geheel maken; elke stap met opties. v3-maker gestopt. `docs/concept/sprites/hitmontop_evo/skelet/`: gewrichten op de gespiegelde foto, opties A (foto), B (Pokémon-maat: kop 1,3×, lijf 1,2×, benen 1,1×), C (B met bredere V).
+
+### [v0.0.152] - Hitmontop-evolutie: stap 2 skelet in Hitmonlee-maat + handen en voeten
+- Jordi: "geen menselijke verhoudingen", benen niet langer dan Hitmonlee, Hitmontop is "wimpy" t.o.v. hem. `docs/concept/sprites/hitmontop_evo/stap2/`: hoeken van de foto, lengtes in spritepixels (benen 22–26, romp 20–22, kop 18–20), Hitmontops ronde handen en zijvoeten 1:1 geplakt (alleen gespiegeld). Opties D/E/F; keuring van stap 1 (PASS) erbij.
+
+### [v0.0.153] - Hitmontop-evolutie: stap 3 knip- en plakwerk
+- Op skelet D14: Hitmontops kop 1:1 (hoorn omlaag of 180°, hele kop of alleen het gezicht), Hitmonchans armen, Hitmonlee's benen, romp van Hitmonchan of Tyrogue (opties A–D). `docs/concept/sprites/hitmontop_evo/stap3/`. Keurder: PASS als concept; de 1:1-kop (37 px breed) is te groot voor het skelet, keuze ligt bij Jordi.
+
+### [v0.0.154] - Hitmontop-evolutie: stap 3b is de vorm
+- Stap 3 opnieuw (`docs/concept/sprites/hitmontop_evo/stap3b/`): onderdelen per kleur netjes geknipt met omlijning op de knip, kop draait mee langs de nek, Hitmonchans bovenbeen als arm (zijn eigen arm is te verkort), kleine kop uit Hitmontops overworld-sprite als optie. Jordi: "ok dit is de vorm", "vanaf hier gaan we alles stap voor stap aanpassen". Keuring (FAIL op zichtbaarheid van de romp) als lijst voor de volgende stappen.
+
+### [v0.0.155] - Hitmontop-evolutie: hoofd (stap 4) keurklaar
+- Op de vorm (stap 3b C): Hitmontops gezicht (ogen, fronslijnen, mond met iets meer vreugde) op een ronde kop van ±23 px, stekel kleiner als geheel, haar glad naar achteren met kamstrepen naar een knot. 4 rondes (`docs/concept/sprites/hitmontop_evo/stap4_hoofd/`), eindversie `ronde3b/`; verse keurder PASS. Rest pixel voor pixel ongewijzigd.
+
+### [v0.0.156] - Hitmontop-evolutie: hoofd terug naar het Hitmontop-ontwerp
+- Jordi over ronde 3b: mond zat bovenaan ("kaal met een baard?"), haar en hoorn moeten één materiaal/kleur met de kop zijn, hoorn kleiner maar zichtbaar door het opgeknotte haar, ogen zwarte rondjes met wit puntje, mond een streepje, hele hoofd tegen de klok in draaien, simpel. Anime-plaatje en zijn krabbel in `referenties/`; SPEC en les bijgewerkt.
+
+### [v0.0.157] - Hitmontop-evolutie: los hoofd ronde 5b
+- Hoofd los ontworpen (Jordi: "eerst maar puur het hoofd"): één glad bruin geheel zonder streep tussen haar en kop, haar naar achteren opgeknot rond een kleinere punt, enige streep = haarlijn hoog als fade, ogen zwarte rondjes met wit puntje, mond een streepje, 27° tegen de klok in. `docs/concept/sprites/hitmontop_evo/stap4_hoofd/ronde5b/`; keurder PASS.
+
+### [v0.0.158] - Hitmontop-evolutie: hoofd ronde 6 vanaf Hitmontops eigen pixels
+- Jordi: "ik heb liever dat je hitmontops hoofd pakt en daarmee gaat spelen". Stap voor stap op zijn kop-pixels (uitsnede, 180° + licht, flappen weg/knot, hoorn kleiner, fade + mond, draaien), varianten A (knot achterop) en B (knot rond de punt). `docs/concept/sprites/hitmontop_evo/stap4_hoofd/ronde6/`. Keurder: stap 3B/4B lezen het sterkst als Hitmontop; tussenstappen getoond aan Jordi.
+
+### [v0.0.159] - Hitmontop-evolutie: gepauzeerd
+- Jordi over hoofd ronde 6: "compleet prutswerk"; daarna "nee laat maar". Het hoofd is gepauzeerd; pose, skelet en vorm liggen vast. Stand van zaken in CLAUDE.md bijgewerkt.
+
+### [v0.0.160] - Hitmontop-evolutie: hoofd ronde 8 (Jordi's recept)
+- Recept van Jordi bij de 3D-referentie: V tussen de ogen naar achteren, flappen samen in een knot (Hitmontops eigen hand + witte polsband), kleinere maar echte stekel, gladde bovenkant. Bron: zijn overworld-kop (rechtop, van voren), met de hand vergroot; ogen van de frontsprite. `docs/concept/sprites/hitmontop_evo/stap4_hoofd/ronde8/`; keurder PASS voor variant 2 rechtop.
+
+### [v0.0.161] - Keurslot-hook verwijderd
+- Jordi: "die keurcontrole is echt bizar, haal die eraf" (hij blokkeerde ook het terugsturen van zijn eigen referentieplaatje). `.claude/hooks/sprite_keurslot.py` en de hook in `.claude/settings.json` weg; CLAUDE.md, SPRITE_WERKWIJZE.md en SPRITE_OPDRACHT.md bijgewerkt.
+
+### [v0.0.162] - Hitmontop-evolutie: hoofdconcept via Gemini, pixels ronde 9
+- Jordi bewerkte het 3D-plaatje in Gemini met Claude's prompt: knot met witte band, V naar achteren, kleinere stekel ("Dit is het idee wat ik voor het hoofd had min of meer"). Bron in `referenties/hoofd_gemini_concept.webp`. Ronde 9 (`stap4_hoofd/ronde9/`): silhouet verkleind uit die bron, met de hand ogen (zwart rondje met wit puntje), V met punt tussen de ogen, mondstreepje, witte band; vooraanzicht, nog niet gedraaid.
+
+### [v0.0.163] - Hitmontop-evolutie: hoofd ronde 9b (Jordi's doorgekruiste punten)
+- Ogen: zwarte cirkel met witte cirkel erin (zoals het concept); mond: dunne lijn in de donkere huidtint zonder stippen; knot: volle bal achter de kop, de zwarte knip eronder weg. Verder niets veranderd.
+
+### [v0.0.164] - Hitmontop-evolutie: model in de pose (Gemini)
+- Jordi maakte met Gemini een volledig model van de evolutie in de pose (handstand, V-split, kop met knot en kleine stekel); v2 kreeg een ronde steunhand, v3 een gladde buisarm. `referenties/model_gemini_pose_v3.png` is de bevroren bron voor de sprite; Stand van zaken bijgewerkt.
+
+### [v0.0.165] - Hitmontop-evolutie: silhouet stap 1 uit model v3
+- `docs/concept/sprites/hitmontop_evo/silhouet_v3/`: masker direct uit het bevroren model `model_gemini_pose_v3.png` (lokale achtergrondschatting, grondschaduw weg, witte enkel rechts dichtgemaakt), naar 64×64 verkleind (63 px hoog, hand op de grond). Geen agents (Jordi).
+- **A** = puur het model; **B** = "minder mens" volgens SPEC: lijf gedrongener (romp ±3 px korter langs zijn as; kop en steunarm staan exact stil). Vel: `vel_stap1.png` (model, rode omtrek over het model, A en B op 8×).
+
+### [v0.0.166] - Hitmontop-evolutie: silhouet stap 2 (meer Hitmon, minder mens)
+- Jordi: "het hoofd moet iets groter, de benen net wat korter en de voeten net wat groter, hij moet minder op een mens en meer op een hitmon lijken, handen dus ook iets groter".
+- `silhouet_v3/stap2.py`: per lichaamsdeel op het grote masker van model v3: kop ×1,15 (vanuit de nek), handen ×1,3 (steunhand blijft op de grond), voeten ×1,22, benen ±9% korter (alleen het onderbeen; de voet schuift mee). Daarna weer passend op 64×64.
+- **C** = A + aanpassingen, **D** = B (gedrongen romp) + aanpassingen. Vel: `silhouet_v3/vel_stap2.png`.
+
+### [v0.0.167] - Hitmontop-evolutie: sprite ronde 1 (op silhouet D)
+- Jordi: "is niet erg, het is een silhouet, ga maar een sprite bouwen dan kijken we verder". Gebouwd op **D** (gedrongen romp + grotere kop/handen/voeten, kortere benen).
+- `sprite_model/render.py`: de render van model v3 met precies dezelfde vervormingen als D, verkleind naar 64×64 (pixeldiff met silhouet D: 0). `kleur.py`: materiaal uit de tint (bruin/blauw/wit, elk 3 tonen + selout), toon uit de schaduw van de render, 1 px omlijning (selout linksboven, donkerbruin rechtsonder), binnenlijnen waar materialen elkaar overlappen. `handwerk.py`: ogen pixel voor pixel van Hitmontop (`anim_front_gba.png`), binnenlijn kop vóór de schouder, mond als één streepje, witte band om de knot, witte klauwen, één witte streep op het shirt.
+- Broek wit zoals in het model (SPEC: nog open, wit of blauw). Vel: `sprite_model/vel_r1.png`.
+
+### [v0.0.168] - Hitmontop-evolutie: sprite ronde 1 afgekeurd
+- Jordi: "lachwekkend slecht". Vastgelegd in SPEC; les in `SPRITE_KERN.md` (render per script kwantiseren is geen sprite). Silhouet D blijft staan.

@@ -28,3 +28,4 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 
 ## Zuinig
 Eén maker per sprite (SendMessage), één keurder, kleine vellen, commit en push na elke ronde. Max 3–4 agents.
+- Een verkleinde 3D-render per script kwantiseren is geen sprite (Hitmontop-evo, 6 nov: "lachwekkend slecht"): ook als Jordi "zelf, zonder agents" zegt, blijft kleur handwerk op een raster na een studie van de echte sprite (Hitmontop/Hitmonlee).

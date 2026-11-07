@@ -51,7 +51,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Lessen onder "Lessen" in je NOTITIES.md (Claude zet ze over); niet in SPRITING.md schrijven, niet committen tenzij gevraagd.
 
 ## 4. Claude (coördinator)
-- **Checklist bovenaan `SPRITE_WERKWIJZE.md` + keurslot** (`.claude/hooks/sprite_keurslot.py`): geen sprite-afbeelding naar Jordi zonder keurvel en `Oordeel: PASS`.
+- **Checklist bovenaan `SPRITE_WERKWIJZE.md`** (keurslot-hook verwijderd, Jordi 6 nov): geen sprite naar Jordi zonder eigen controle.
 - **Sprite uit een model/render:** vóór Jordi altijd `tools/grounded/model_vs_sprite.py` en per onderdeel nalopen of de sprite de render volgt (zie GRAPHICS.md, Picapau 5 nov); de volledige afwijkingslijst gaat naar de maker.
 - **Tokens sparen:** agents krijgen SPRITE_NORM.md + SPEC/AFGEKEURD (niet alle lessenbestanden); één maker per sprite die met SendMessage doorwerkt; geen parallelle experimenten tenzij Jordi vraagt; kleine vellen.
 - Plak de verwijzing naar dit bestand in elke sprite-opdracht en geef bij reparaties een pixelbudget en de lijst bevroren delen mee.

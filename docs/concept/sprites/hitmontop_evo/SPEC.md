@@ -80,6 +80,15 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 - Jordi: "belangrijk is dat die echt hitmon blijft en dus niet mens, dus verhoudingen van hoofd, handen en voeten zijn groter dan de benen en armen".
 - Jordi (na Gemini ronde 2): "de broek mag ook echt minder een broek zijn en gewoon meer de benen met kleur".
 
+## Bevroren ontwerp (Jordi, 7 nov)
+- **Model = `referenties/gemini_gekozen_capoeira.png`** (Gemini ronde 5). Jordi: "ik denk dat we dit allemaal met kleurgebruik kunnen oplossen en dat het silhouet staat".
+- Toegestane afwijkingen (alleen deze; Jordi letterlijk):
+  1. Kleur: "de broek nog steeds teveel broek is en te weinig benen" (benen lezen als gekleurde benen, geen broek); "Torso is nu wat meer bollig" (bol via kleur); "de vuisten zijn nog steeds geen volledige ballen".
+  2. Silhouet: steunarm korter (Claude: "de steunarm is na de bijsturing nauwelijks korter geworden"; Jordi: "eens, die mag korter"; voorstel een derde korter, hand blijft op de grond, rest zakt mee).
+  3. Silhouet: "het onderste arm mist een touw" / "en voeg het touw toe, dat zijn nog silhouet wijzigingen" (gele koordband om de steunarm, zoals om de vrije arm).
+  4. Steunhand rond maken tot bal (vuisten "volledige ballen").
+- Sprite volgens `docs/lessen/GEMINI.md` + SPRITE_WERKWIJZE "Gemini-model namaken". Werk: `sprite_gemini/`.
+
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.
 

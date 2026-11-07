@@ -75,6 +75,9 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 ## Model (Jordi, 6 nov)
 - `referenties/model_gemini_pose.png`: volledig model in de pose (Gemini, Jordi). Jordi: "ik heb nu een model. Als we hiervan een sprite maken en het iets beter inkleuren dan zijn we er". Dit is de bron voor de sprite (zoals de render bij Picapau), bevroren. Jordi: "en het moet minder een mens worden". Versie 2 met ronde steunhand: `referenties/model_gemini_pose_v2.png`. **Versie 3 = de bron** (`referenties/model_gemini_pose_v3.png`, gladde buisarm; Gemini weigert verdere bewerkingen). Nog menselijk, op te lossen in de sprite: borst/schouderblad-anatomie glad maken, lijf iets gedrongener. Open: broek wit (model) of blauw (SPEC).
 
+## Gemini-ontwerp (Jordi, 7 nov)
+- Nieuwe poging via een Gemini-prompt met hoofd + pose als bijlagen: `gemini/PROMPT.md`. Jordi: "ik wil dat die geen shirt heeft, en dat de broek gele en groene strepen hebben als patroon. er zit zon typisch capoeira touwtje aan de broek en ik wil dat zijn armen een soort van muay thai banden hebben, maar dan meer capoeira mode".
+
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.
 

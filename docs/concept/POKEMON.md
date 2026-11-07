@@ -48,6 +48,8 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 ## Werknamen (Jordi, 7 nov)
 - "voor nu allemaal goed, dat worden de working names": **Picaraio** (Picapau-evolutie), **Hummlet** (kolibrie fase 1), **Bandingo** (olinguito), **Cholucha** (cholita-lama), **Pupoodle** (poedellarve).
 - Alpaca: Jordi denkt aan **Palpaca** (pal + alpaca; "klinkt als een pokemon naam, want flamigo bestaat ook"), nog niet helemaal tevreden, wel beter dan Alpunch/Fluffist/Paqucha.
+- **Palpaca** is ook werknaam (Jordi, 7 nov: "Palpaca mag je ook doen"). Werknamen zijn rond "totdat ze ooit aangepast worden" (Jordi).
+- **Overzichtsvel:** ronde namen tussen aanhalingstekens (Jordi, 7 nov), ook "DJ Rotom" en "Silicobra" (regional). Script: `docs/concept/sprites/showcase/maak_vel.py`.
 - Niet gekozen voorstellen van Claude (7 nov): lama Brawllama/Llamauler/Cargallama; wasbeer Vigilacoon/Clawstice/Mascarón; nachtaap 1 Aotiny/Tutito/Nocticue; nachtaap 2 Killamono/Lunaotus/Vigilune; muriqui Kallamuri/Muriquilla/Yatiriqui; kolibrie Mainumby/Soulibri/Animibri; Sapa Inca Intirano/Sapainca/Mascaypacha; poedelmot Moodle/Tepuffle/Poodlemoth.
 
 ## Legendaries

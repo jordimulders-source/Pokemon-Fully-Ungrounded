@@ -847,3 +847,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.207] - Eerste werknamen
 - Jordi kiest werknamen: Picaraio, Hummlet, Bandingo, Cholucha, Pupoodle. Alpaca: Palpaca in overweging. Alles in POKEMON.md (Werknamen), met de niet gekozen voorstellen.
+
+### [v0.0.208] - Palpaca, ronde namen op het vel
+- Palpaca is werknaam (Jordi). Werknamen zijn rond tot ze ooit worden aangepast. Op het overzichtsvel staan ronde namen tussen aanhalingstekens, ook "DJ Rotom" en "Silicobra" (regional). `showcase/maak_vel.py` bijgewerkt (alle 21 afgemaakte frontsprites, typesymbolen uit `graphics/types/`, starters voorop, dan Cuyby/Cuychu); het vel zelf volgt met de twee bijna afgemaakte sprites.

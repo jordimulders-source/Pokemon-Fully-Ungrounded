@@ -9,7 +9,7 @@ Regels: `docs/lessen/GEMINI.md`. Lijn: `docs/concept/POKEMON.md` (Koningstiran-l
 ## Prompt (in een nieuw gesprek plakken)
 
 ```
-Design an original Pokémon and draw it as an official Gen 5 front sprite (Black/White style pixel art).
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
 
 WHAT IT IS
 - The first stage of a 3-stage bird line from a South American region. Typing: Normal/Flying. A common early-route bird, small and plain, like a city sparrow, but with a hidden royal destiny.

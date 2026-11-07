@@ -563,3 +563,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.140] - Gemini-prompt koningstiran fase 1 (hatun runa)
 - `docs/concept/sprites/koningstiran/gemini/PROMPT_HATUN_RUNA.md`: prompt voor Gemini (grote kiskadie als anatomie, witte wenkbrauwstreep = gevlochten llawt'u, verborgen gele kroon als hint, Normal/Flying, palet van de Sapa Inca zonder kroon/staf), volgens `GEMINI.md` (3/4 links, geen ondergrond/effecten, witte achtergrond, ≤16 kleuren, AVOID-regel), plus tips voor bijsturen. Bijlage: Sapa Inca 6× (`bijlage_sapa_inca_6x.png`), eindvorm `af/sapa_inca.png` hierheen gekopieerd van de koningstiran-tak.
+
+### [v0.0.141] - Gemini-prompts: Gen 3 in plaats van Gen 5
+- Jordi: "maak er aub gen 3 van". `PROMPT_HATUN_RUNA.md` vraagt nu om een "official Gen 3 front sprite (Ruby/Sapphire/Emerald style)"; de vaste regel in `docs/lessen/GEMINI.md` (hierheen gehaald van de viscacha-tak) ook. Gen 5 (96×96) botste met de eis 64×64 en ≤16 kleuren.

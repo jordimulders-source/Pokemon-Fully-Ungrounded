@@ -8,3 +8,10 @@ Prompt: `PROMPT_HATUN_RUNA.md`. Regels: `docs/lessen/GEMINI.md`.
 3. (7 nov) `ronde3_bijgestuurd.png` (bijsturing in hetzelfde gesprek: symbolen weg, blokjes rood/goud, kop meer naar de kijker). Jordi: "ik vind dit nog niet goed vertalen". Kop niet gedraaid (genegeerd); patroon nu losse stippen op een witte band: leest als zweetband/pet. Gemini-grens bereikt (2 bijsturingen).
 4. (7 nov) `ronde4_startprompt_v3.png` (nieuw gesprek, startprompt v3). Jordi: "ik vind dit wel iets, hij maakt nu consistent hetzelfde ontwerp, dat betekent dat je prompt goed klopt met welke soort we maken". Goed: actieve afzetpose, snavel open, kiskadiekop klopt (zwarte kruin, kale witte strepen, gouden vlek), goudgele vleugelonderkant. Punten (Claude): kop weer in profiel en klein naast de vleugels, oog verdwijnt in het masker; opgezette staart rechts leest als een derde vleugel; bruin + schreeuwende snavel ligt dicht bij Spearow.
    - **Gekozen (Jordi, 7 nov): ronde 4 = bevroren ontwerp** (`../referenties/gemini_gekozen_hatun_runa.png`). De bijsturing daarna was "veel slechter". Morgen: frontsprite door de maker-agent volgens `docs/lessen/GEMINI.md` + `SPRITE_KERN.md`; mogelijke vertaalafwijkingen melden (kop/oog op 64 px, staart die als derde vleugel leest).
+
+# Koningstiran fase 2 (awki): Gemini-rondes
+
+Prompts: `PROMPT_AWKI.md`.
+
+1. (7 nov) `awki_r1_A_kuif.png` en `awki_r1_B_vleugel.png`. Jordi: "ik vind ze beide niet goed. De eerste heeft een heel rare kop en die 2e is net pidgeot met een heel matig patroontje".
+   - Analyse (Claude): A: kuif = losse vlammende plank boven op de kop (hoed), eendensnavel (door "broad flat beak"), franje als pony, geen gezichtstekening. B: lange achterwaartse kuif + bruin/oker + profiel = Pidgeot's handelsmerk; trapdriehoeken werden een zaagtandband. Beide: familietrekken van fase 1 (masker, witte strepen) weg. Oorzaak in de prompt: "sticking out far behind" (echte koningstiran: kuif ±kop-lang) en "broad flat beak".

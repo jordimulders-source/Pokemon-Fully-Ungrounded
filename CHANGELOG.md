@@ -852,3 +852,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sparren over fase 2 (Fire/Flying, kroonprins). Besloten (Jordi): koningstiran met gesloten kuif als hamerkop (niet de vuurtiran), gele franje en kleine gouden oorvlekken, caracarabouw begint.
 - Experiment met twee prompts: A = vuur in de gesloten kuif, B = vuur als vleugelpatroon van Andes-trapdriehoeken (*escalonado*), rood → oranje → geel.
 - Prompts en bijlagen: `docs/concept/sprites/koningstiran/gemini/PROMPT_AWKI.md`; notitie in `POKEMON.md`.
+
+### [v0.0.209] - Awki: Gemini-ronde 1 besproken
+- Ronde 1 (A: vuur in kuif, B: trapdriehoeken op vleugel) afgekeurd door Jordi ("rare kop", "net pidgeot"); beelden en analyse in `docs/concept/sprites/koningstiran/gemini/README.md`.

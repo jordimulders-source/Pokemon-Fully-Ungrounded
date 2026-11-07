@@ -1,0 +1,10 @@
+# Ogen ronde 3: Hitmontops oog (anim_front.png) pixel voor pixel, 4x4 rond (.XX. / XwXX / XXXX / .XX.), glans linksboven zoals bij Hitmontop,
+# op de modelposities: oog 1 midden (17,65;39,05) -> kolom 16-19 rij 37-40; oog 2 midden (19,95;45,95) -> kolom 18-21 rij 44-47.
+r37: 17=11
+r38: 16=1611
+r39: 16=1111
+r40: 16=3 17=11 19=3
+r44: 19=11
+r45: 18=1611
+r46: 18=1111
+r47: 18=4 19=11 21=4

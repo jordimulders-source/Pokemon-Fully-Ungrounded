@@ -1,0 +1,16 @@
+# Torso variant c (lezing van het model): grotendeels basis (3) zoals het model, kleine ovale glans (2) linksboven in het midden,
+# schaduw (4) onder de vrije arm en een sikkel (4) langs de rechterkant die naar de steunarm breder wordt.
+r27: 26=3
+r28: 25=3333
+r29: 23=333333333
+r30: 20=44332222333333
+r31: 20=43322222233333344
+r32: 21=3322222333333344
+r33: 21=3332223333333344
+r34: 22=33333333333344
+r35: 23=3333333333344
+r36: 24=333333333444
+r37: 25=33333334444
+r38: 26=333334444
+r39: 27=33344444
+r40: 27=3344444

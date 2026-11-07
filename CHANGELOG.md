@@ -574,3 +574,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini-ronde 2 (startprompt v2) opgeslagen: kiskadiekop klopt nu, maar de tocapu-vakjes werden losse symbolen. Voorstel: doorlopend trapzigzag-motief.
 - Startprompt v3 (Jordi: actievere pose, niet "weer vooruit poseren"): kiskadie op het moment dat hij afzet naar een insect (lijf schuin naar voren, nabije vleugel hoog in de opslag, snavel open roepend "bem-te-vi"); witte wenkbrauwstrepen zonder patroon, Inca-tekens pas vanaf fase 2.
 - Gemini-ronde 4 (startprompt v3): Jordi "ik vind dit wel iets"; consistent hetzelfde ontwerp. Drie Gemini-lessen in `docs/lessen/GEMINI.md` (gedrag als pose-bron, geen details onder sprite-schaal, cultuur als verenvlak).
+- **Hatun runa-ontwerp gekozen** (Jordi): Gemini-ronde 4 bevroren als `docs/concept/sprites/koningstiran/referenties/gemini_gekozen_hatun_runa.png`; de bijgestuurde versie daarna was slechter. Volgende sessie: frontsprite.

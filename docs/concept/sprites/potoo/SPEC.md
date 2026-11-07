@@ -31,6 +31,7 @@ Verder alles precies zoals het model (ook de kuif, het verenpatroon, de spikkels
 
 ## Varianten
 - (7 nov, bij r6) "ik vind hem eigenlijk al heel goed, probeer eens eentje met een groot zwart oog? zonder wit erin"; "ter vergelijking" → `varianten_oog/` (A: glans zwart; B: ook ring zwart, groter oog).
+- (7 nov) "ja b is beter, alleen het oog mag nog wel wat schaduw" → `varianten_oog/schaduw.py`: C1–C4.
 
 ## Open
 - Naam, type en data later.

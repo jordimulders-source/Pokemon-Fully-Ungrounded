@@ -24,7 +24,7 @@ Bron: berg-viscacha (*Lagidium viscacia*), Andeswoestijnen (Atacama, Uyuni, Líp
 | staart | lange staart die omhoog krult, één geheel met het lijf, gekartelde gele pluim | gekozen |
 | wangpluk | puntige gele pluk; **vast aan de wangvacht**, niet zwevend als losse schicht (Claude, nog niet door Jordi bevestigd) | open |
 | oren | rond, viscacha, geen konijn | gekozen |
-| oog | luier dan Gemini: halfgesloten, zware bovenleden zoals een echte viscacha (enige toegestane ontwerpafwijking) | open |
+| oog | luier dan Gemini: halfgesloten, zware bovenleden zoals een echte viscacha (enige toegestane ontwerpafwijking). Bron: Jordi's foto's `referenties/jordi_foto1_oog_zijaanzicht.png` en `jordi_foto2_oog_rechtop.png` ("zie bronmateriaal"): smalle amandelvormige spleet, zwaar bovenlid dat schuin over het oog hangt, donker, hoog opzij van de kop; slaperig-zelfvoldaan | open |
 
 ## Afgekeurd (niet herhalen)
 Blauw, pastel, konijnenlook, luie/slaperige pose, Neopets/knuffel, rots/ondergrond, losse haren, zigzagpatroon op de rug, Raichu-trekjes (wangcirkels, gekrulde oren, dunne zigzagstaart), losse bliksemschicht als staart, elektriciteit/gloed/vonken.

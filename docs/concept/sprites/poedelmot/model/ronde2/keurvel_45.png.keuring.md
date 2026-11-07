@@ -1,0 +1,15 @@
+# Keuring (eigen keuring door de maker, geen onafhankelijke keurder)
+- Bron: render_45_werk.png, referenties/foto_tak_katoen.webp, vilt_hand_vleugels_gespreid.png, foto_sprieten_plus_vilt.png, foto_vinger_zijaanzicht.webp
+- Werk: render_45_1x.png (model ronde 2 op 45°, verkleind naar 64×64; dit is geen sprite).
+- Bekeken op 8× en 1× (licht en donker) + close-ups (kop/oren 14,8–50,30; poten 8,36–58,62)
+- Per onderdeel (lijkt op <bron> / wijkt af in <x>):
+  - **Oren/sprieten:** lijken op foto_sprieten en het vilt (gebogen schacht met een kam van tanden, taps, opzij, punt licht omhoog) / wijken af: op 1× worden het bruine driehoeken, de tanden lezen pas op werkformaat. Dat is verwacht; de tanden komen in de pixelstap.
+  - **Kop:** lijkt op de tak-foto (rond, wollig, met een duidelijke plukkenkraag eronder) / wijkt af: de kop is klein ten opzichte van het lijf. Op de foto en bij Gen 3-schattigheid is de kop groter.
+  - **Ogen:** lijken op Venomoth en de tak-foto (groot, rond, bol, half in de kop) / wijken af: ze raken elkaar in het midden, waardoor het snuitvlak onder de ogen terechtkomt i.p.v. ertussen. Facetten zijn op 1× onzichtbaar (verwacht).
+  - **Snuit:** lijkt op de tak-foto (bruin vlak onder de ogen, geen bolletje meer) / wijkt af: leest op 1× nog als een klein driehoekig neusje of snaveltje.
+  - **Wol/lijf:** lijkt op de tak-foto (dik, wollig, plukken met volume, zittend en rechtop) / wijkt af: de plukken zijn regelmatig 'bloemkool'; op de foto is de wol meer haar-achtig met losse slierten aan de randen.
+  - **Poten (6):** lijken op de tak-foto (dik en wollig over de hele lengte, gelede insectenpoten, pompon als verdikking onderaan; voorpaar hangt naar voren/omlaag, middenpaar opzij, achterpaar grotendeels verborgen; ±5 pompons zichtbaar) / wijken af: de voorpoten staan wat wijd en recht als kolommen. Knie/scheen leest weinig als geleding; het geheel heeft iets van een zittende yeti.
+  - **Voorvleugels:** lijken op de tak-/vingerfoto (lang, smal, spits, met dikte, welving en vleugelvoet) / wijken af: de verre voorvleugel steekt als een spitse punt boven de kop uit (de opdracht zegt: geen vleugelpunt boven de kop). De nabije vleugel leest als een zeil of haaienvin.
+  - **Achtervleugels:** lijken op het vilt (kleiner, rond) / wijken af: in 45° zijn ze nauwelijks te zien (alleen een lob onder de nabije voorvleugel), dus het tweede paar leest niet.
+  - **Kader:** gecentreerd en passend met 2 px marge op alle drie de hoeken / geen afwijking.
+- Oordeel: FAIL (vleugelpunt boven de kop; achtervleugel leest niet; kop klein; snuit nog neusje; poten als kolommen)

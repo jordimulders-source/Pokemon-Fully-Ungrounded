@@ -163,6 +163,7 @@ Types en dex-status gecontroleerd in de repo (`species_info/`, `DEX_IN_ROM.md`).
   - Als **nieuwe lijn**: rups → cocon → mot (Bombyx mori voor extra foto's).
   - Lore voor allebei: een **cryptid**. NPC's twijfelen of hij bestaat; hij is alleen 's nachts zichtbaar, op één plek. Type Bug/Fairy, of Bug/Normal (de pluizige "poedel") als iets anders.
   - Tepuis komen nu twee keer terug (Archen, poedelmot): goed gebied voor "verloren wereld"-soorten.
+  - **Besloten (Jordi, 5 nov):** eigen lijn; de larve heeft kenmerken van een poedelhond (humor), de mot is Bug/Fairy. Zie `POKEMON.md`.
 
 **Ruïnes**
 - **Tiwanaku-Golett/Golurk:** stond al op de lijst (Rock/Ghost of Ground/Psychic; repo: Ground/Ghost, in de dex). **Voorstel:** samenvoegen met de "mysterieuze ruïne-Pokémon" (Rock/Ghost of Rock/Psychic, Puma Punku). Dan is dit die Pokémon en hoeven we geen aparte fakemon te maken.
@@ -219,6 +220,25 @@ Jordi: Salar de Uyuni-variant van Silicobra, misschien ook van Sandaconda of een
   - **B. Inca-rangen:** fase 1 gewoon; fase 2 een *orejón* (Inca-adel, genoemd naar hun grote gouden oorschijven: de vogel krijgt gouden "oorschijven"); fase 3 de Sapa Inca met de mascaypacha. Te combineren met A.
   - **C. Spheal-stijl, ander dier als eindvorm:** koningstiran → bergcaracara met de kroon, de vogel die de veren levert wordt zelf koning. Of → rotshaan (kam als gouden helm).
   - **D. Zon-lijn:** koningstiran → zonneral (Fire/Flying), de waaier op de kop wordt een zon op de vleugels.
+- **Inca-rangen uitgewerkt (Claude, 5 nov; Jordi ziet lijn B zitten).** Rangen en hun kenmerken:
+  - *Hatun runa*: gewone mensen (boeren van een *ayllu*); elke man droeg een gevlochten hoofdband (*llawt'u*) waarvan kleur/vorm zijn herkomst toonde.
+  - *Chaski*: renbode in een estafette over de Inca-wegen, met een schelptoeter (*pututu*). Snel; past bij een vogel die insecten in de vlucht vangt.
+  - *Khipu kamayuq*: houdt de boekhouding bij in knopen (koord met knopen aan de vogel?).
+  - *Kuraka*: plaatselijk hoofd van een gemeenschap.
+  - *Orejón* (Spaanse bijnaam): Inca-adel met grote gouden oorschijven; jongens kregen hun oren doorboord bij de inwijding (*warachikuy*).
+  - *Tukuy rikuq*: "hij die alles ziet", de inspecteur van de koning.
+  - *Apu*: gouverneur van een wereldkwart (ook het woord voor berggeesten).
+  - *Willaq umu*: hogepriester van de zon.
+  - *Awki*: de kroonprins. Volgens de kroniekschrijvers droeg die een **gele** franje, de Sapa Inca een **rode**: dat valt samen met de gele kuif van het vrouwtje en de rode van het mannetje bij de echte vogel.
+  - *Sapa Inca* (keizer, "zoon van de zon") en *Quya* (koningin). Attributen: mascaypacha, gouden oorschijven, scepter (*suntur pawqar*), tuniek met *tocapu*-patronen, zonneschijf.
+- **Lijnvarianten met rangen (Claude):**
+  1. *Hatun runa → orejón → Sapa Inca*: kiskadie met hoofdbandje → tiran met gouden oorschijven (kuif dicht) → koningstiran met open waaier en rode franje over de snavelbasis.
+  2. *Chaski → kuraka/apu → Sapa Inca*: snelle bode (Speed) → bestuurder → koning. Meer "loopbaan" dan afkomst.
+  3. *Awki → Sapa Inca* (2 fasen): gele franje → rode franje. Simpel, de kleurwissel is het verhaal.
+  4. Splitsing in fase 3 (zoals Kirlia → Gardevoir/Gallade): Sapa Inca (Fire/Flying, zonnekoning) of willaq umu (Psychic/Flying, zonnepriester).
+  - Vrouwtje als *Quya* met gele kroon, of het mannetje/vrouwtje-verschil laten vallen als de kleurwissel al per fase gebeurt.
+- **Schetsen v1** (5 nov): `docs/concept/ontwerp/koningstiran/schets_v1.png`. Rij 1: kiskadie (hatun runa) → koningstiran met dichte kuif, gele franje, gouden oorschijf (awki) → open waaier, rode franje, tocapu-borst (Sapa Inca). Rij 2: vorkstaarttiran als chaski, zonneral als willaq umu.
+
 ## Roomkleurige specht (idee, Jordi 5 nov)
 - **Bron:** *Celeus flavus* (cream-colored woodpecker), Amazone: várzea en bos langs rivieren; eet vooral mieren en termieten (uit boomnesten) en fruit. Jordi: "net Pikachu". **Electric/Flying**, in het ontwerp nog net iets meer Pikachu dan in het echt. Nog niets besloten; Jordi zoekt de invalshoek.
 - **Wat er al op Pikachu lijkt (Claude):** geel lijf; rode wangvlek (de "baardstreep") = de wangzak; donker geschubde vleugels = de bruine strepen op Pikachu's rug; roodbruine, stijve steunstaart = de bliksemstaart (kan als zigzag gezet worden); de kuif = de oren (twee punten met donkere toppen).
@@ -236,3 +256,10 @@ Jordi: Salar de Uyuni-variant van Silicobra, misschien ook van Sandaconda of een
   - Een dorp in de várzea zonder stroomnet, met **roffelpalen** (oude palen van de telegraaflijn van Rondon, hergebruikt). Show, don't tell: de lampen knipperen in het ritme van de klop; 's nachts slapen de vogels en gaat het licht uit, dus het dorp gaat vroeg naar bed; na een onweer gaan de dorpelingen uit om de bliksembomen te zoeken (nieuw droog hout = nieuwe stroom); de bliksembomen zijn kleine heiligdommen (Illapa).
   - Niet zwart-wit, als het verhaal dat wil: een bedrijf dat een stuwdam of netaansluiting belooft (Zuid-Amerika kent zulke conflicten); de dorpelingen zijn het onderling oneens.
 - **Evolutie die op Raichu lijkt (Jordi, 5 nov):** wel, maar die lijkt minder op Raichu dan Picapau op Pikachu. **Dat heeft een voorbeeld (Claude):** Toedscruel lijkt ook veel minder op Tentacruel dan Toedscool op Tentacool. Toeval bij het jong, eigen identiteit bij de volwassen vorm. Raichu-haakjes (Claude): oranje-kastanje (*Celeus elegans*), lichte buik, de kuif krult zoals Raichu's oren, zwaarder lijf; en Raichu's **lange dunne staart met de bliksempunt** = de **spechtentong** (die in het echt rond de schedel loopt, met weerhaakjes aan de punt): een lange tong met een bliksemvormige punt.
+
+## Hitmontop-evolutie (5 nov): alleen ontwerp
+- **Geen regional form** (Jordi): Hitmontops Japanse naam (*Kapoerer*) is al op capoeira gebaseerd, dus de gewone Hitmontop blijft en krijgt alleen een evolutie die nog meer capoeira wordt. Eerst puur het design; type, ability, stats en evolutiemethode later.
+- Richtingen (Claude), begin bij de eindvorm:
+  - **A. Mestre van de berimbau:** permanent in de *bananeira* (handstand, benen in een V); staart/hoorn als de boog van de berimbau, de *cabaça* op rug of buik. Risico: instrument lastig te tekenen, "vechter met een attribuut".
+  - **B. Besouro (voorkeur Claude):** de legende van Besouro Mangangá (capoeirista uit Bahia, rond 1900; de bijnaam betekent "kever"; hij zou in een kever veranderen en wegvliegen, en had het *corpo fechado*: messen en kogels deerden hem niet). Hitmontops hoorn wordt een hercules-keverhoorn (*Dynastes hercules*, Zuid-Amerikaans regenwoud), glanzend schild = gesloten lichaam, dekschilden als jasje. Silhouet: de *armada* (draaiende trap, dekschilden waaieren uit). Mythe + dier + vechtkunst.
+  - **C. Malandro van de negativa:** laag en breed, één hand op de grond, been zwaait opzij; lis en schijnbeweging, *mandinga*-amulet. Minst dierlijk.

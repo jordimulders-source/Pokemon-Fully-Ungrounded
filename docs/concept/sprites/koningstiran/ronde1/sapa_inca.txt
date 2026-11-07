@@ -1,0 +1,176 @@
+# Sapa Inca ronde 1 - met de hand getekend tekstraster (y x0 tekens), achter naar voor per onderdeel.
+# palet: index 1..15 in deze volgorde; index 0 = transparant
+P K 24 16 20
+P d 52 38 36
+P m 88 66 58
+P l 136 104 86
+P r 186 54 34
+P R 238 98 48
+P o 250 162 92
+P p 116 90 172
+P v 184 166 236
+P a 172 104 34
+P g 230 172 58
+P y 250 226 132
+P b 112 128 152
+P w 210 222 234
+P t 162 82 42
+
+# ---- kroon (waaier): rand lavendel, vlekkenring, oranjerood veld met stippen ----
+1 25 pppppppppK
+2 22 pppvpvvvpvvvpKKK
+3 20 pppvvvpvvvpvvvKpppK
+4 18 ppvpvvoRooooorRRvKpppKK
+5 17 pvpvvoooRooKoorRRRRppKppK
+6 16 pvvvRoKooRooKoorRRKRRrppppK
+7 15 ppvooRooKoRRooorrRKRRrRRRpKpKK
+8 14 pvvoooRRooooRooorRRRRrrRRRRpppK
+9 13 pvvooKooRoooorooorRRRRrRRKRRrpppK
+10 12 ppvRooooooRoKorRKRrRKRrrRRRRrrrpppK
+11 12 pvvoRRooooRRRRrRRRrRRRrRRRrKrrrpppK
+12 11 pvvoooRRooKoRRRrRRRrRRrRKRrKrRRrrpppK
+13 11 pvoKKooRRoooRRRRrRrRRRrRRrKrRrKKrrppK
+14 10 ppvooooooRRoooRRRrRrRRrRRrKrRRRRrrrpKpK
+15 10 pvRoooooKoRRooRRRrRrRrrRRKrRKRRrrrKrppK
+16 10 pvoRRRoooooRRoRrRRrrrrRrKrRRrrrKrrrrppK
+17 9 ppvooooRRRooooRRrrrrrrrrrRRrrKrrrrrrrppK
+18 9 pvvKKoooooRRRooRRrrrrrrrrrKrrrrRRrKKrppK
+19 9 pvvoooooKoooRRoRrKKKrrrrrKrrRRKRRrrrrppp
+20 9 pvvooooooRRRRRrKllmmdKrrrrrRRRrrrrrrrpp
+21 9 pvvooooorRRRRRKlmmmmddKrrrrRRRrrrrrrpp
+22 9 pvvRRrKK
+22 18 KKKK
+22 22 KrRRbbRRRrK
+22 33 KKKKKKKrrrrKr
+# kwastje links (hangende zijveer, lavendel-zwarte punt)
+23 10 rRRrK
+24 10 rRK
+25 10 rRK
+26 10 rK
+27 10 rK
+28 10 pK
+29 9 pvK
+30 9 KpK
+31 10 K
+# kwastjes rechts (grotendeels achter de vleugel)
+23 40 KKrvp
+24 42 KpK
+31 46 vp
+32 46 KK
+
+# ---- opgeheven nabije vleugel (rechts): gesloten blad, knik in de pols ----
+18 51 KKKK
+19 49 KlKmdK
+20 48 KlmdmdK
+21 47 KlmdmmdK
+22 46 KlmdmmddK
+23 45 KlmdmmddK
+24 45 KldmmdmdK
+25 44 KldmmdmddK
+26 43 KlmmdmdddK
+27 43 KlmdmdddK
+28 39 mllmmlmmdddK
+29 36 mllmdlmdmmdddK
+30 35 mlmdlmdmddddK
+31 34 KmmdmddddKKK
+32 34 KddmdddKK
+33 35 KKKKKK
+
+# ---- kop: donker, kaal rood gezicht, haaksnavel, gouden oorschijf ----
+23 22 rKKRwbRKKKr
+24 22 rwKbwbRwKaK
+25 22 rRrbwbKRrrya
+26 22 mrrbwKrrmmga
+27 22 lmmKbKddddaK
+
+# ---- hals en zwarte borstband ----
+28 21 llmmdmmmddddK
+29 21 lllmmmmmmddddK
+30 21 llmmdmmmmdddK
+30 34 K
+31 21 lmmmmmdmmdddd
+32 20 mlmmdmmmmmdddd
+33 19 mdlmmmmmmmdddddd
+34 18 mddlmmmyygggmddddddK
+
+# ---- verre vleugel (cape, links) ----
+35 18 mdd
+36 17 mddd
+37 17 mdd
+38 17 mdd
+39 17 mdd
+40 17 mdd
+41 17 mdd
+42 16 mddd
+43 16 mddd
+44 16 mdddd
+45 16 mdddd
+46 15 mdddKd
+47 15 mddKddK
+48 15 mdKddK
+49 15 mdKdKK
+50 15 mKdKdK
+51 15 mKdKK
+52 15 mKdKK
+53 15 KdKK
+54 16 KdK
+55 17 K
+
+# ---- borst (okergoud) en flank ----
+35 21 mmyyyggggg
+35 31 amddddK
+36 21 ayyyyyggggaa
+36 33 mddddK
+37 20 agyyyygggggaa
+37 33 mmdddK
+38 20 agyyyggggggaa
+38 33 mmdddK
+39 20 agyyggggggga
+39 32 ammdddK
+40 20 agygggggggga
+40 32 ammdddK
+41 20 agggggggggga
+41 32 ammdddK
+42 20 agggggggggaa
+42 32 amdddddK
+43 20 aggggggggaa
+43 31 aamdddddK
+44 21 agggggggaa
+44 31 aamdddddK
+45 21 aggggggaaa
+45 31 amddddddK
+46 21 aggggggaaa
+46 31 amdddddK
+47 22 agggggaaa
+47 31 mddddddK
+48 23 aggggaa
+48 30 mdddddddK
+49 24 aagaa
+49 29 mddddddddK
+50 26 agga
+50 30 mddddddtK
+51 26 agga
+51 30 mdddddKtK
+52 25 aggaa
+52 30 ddddddKtK
+
+# ---- poten en staart ----
+53 25 agga
+53 29 KaggaKddtK
+54 25 aga
+54 29 aggaaKttK
+55 24 agga
+55 29 aggaaKdtK
+56 24 aaK
+56 29 aggaaKdtK
+57 24 ga
+57 29 KagaKdtK
+58 24 ga
+58 30 agaKttK
+59 24 ga
+59 30 agaKtK
+60 22 aagaa
+60 30 agaKdK
+61 21 KKaK
+61 29 aggggK
+62 29 KKaKK

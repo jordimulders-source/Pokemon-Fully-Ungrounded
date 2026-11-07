@@ -1,0 +1,14 @@
+# Ronde 1k bovenop ronde1j. Alleen de vuistarm (rij 22-31, x9-22).
+## pols: korte smalle pols onder de vuist (rij 22: 5 px), plooi = bestaande D-rij 21; geleidelijk breder: 5-6-7-8-8-8 px (horizontaal)
+## onderrand 45 graden (K x10..19) met 1 px lucht tot de kruin/kopomtrek (rij 26-31); kop 0 px
+## cilinder: kernschaduw S direct boven de onderrand over de hele lengte, lichtband L doorlopend onder de bovenrand
+22 9 |KKSVDD.
+23 9 |..KSVLDD
+24 9 |...KSVLLDD
+25 9 |....KSVVVLDD
+26 9 |.....KSVVVLLD
+27 14 |.KSVVVLLD
+28 15 |.KSVVLLD
+29 16 |.KSVLLK
+30 17 |.KSVLK
+31 18 |.KSVD

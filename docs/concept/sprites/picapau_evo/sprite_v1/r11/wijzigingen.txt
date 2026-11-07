@@ -1,0 +1,50 @@
+# r11 = probeersel P5 (snavel goedgekeurd, bevroren) + deze wijzigingen. Per regel "rij kolom pixels"; "_" = transparant maken.
+# --- 1. oude oren van r9/P5 weg (oude_oren.txt wordt hieronder door bouw_r11.py als "_" gezet)
+# --- 2. slierten (Jordi: "ik ben nog steeds niet tevreden met de slierten op het hoofd overigens, die moeten beiden ongeveer uit dezelfde plek
+#     komen en netjes langs elkaar hangen zoals de raichu oren op de gen 1 sprite" · "en ja ze mogen overlappen")
+# gemeenschappelijke voet op de achterkruin: verre (26-27,2), nabije (28,3), raken elkaar schuin
+# verre spriet: boog over de kruin (rij 1-4), zakt met 1 rij per 3 px naar achteren en krult in een spiraal met gat (x40-45, rij 4-10)
+2 26 kk
+1 28 kkk
+2 31 kkk
+3 34 kkk
+4 37 kkkkkkk
+5 44 k
+6 45 k
+7 45 k
+8 45 k
+9 45 k
+10 41 kkkk
+7 40 k
+8 40 k
+9 40 k
+6 41 kk
+7 43 k
+8 43 k
+# nabije spriet: 2 rijen lager evenwijdig vanaf dezelfde voet, zakt sneller en krult eerder (spiraal x33-38, rij 8-14), onder de verre door
+3 28 kkk
+4 31 k
+5 32 k
+6 33 k
+7 33 k
+8 33 kkkk
+9 37 k
+10 38 k
+11 38 k
+12 38 k
+13 38 k
+14 34 kkkk
+11 33 k
+12 33 k
+13 33 k
+10 34 kk
+11 36 k
+12 36 k
+# --- 3. verre vleugel achter en onder de snavel netjes afgewerkt (geen rechte zwarte lijn op rij 9; veerpunten zoals de rest van de waaier)
+# boven de snavel: twee pennen eindigen in een punt (pen 1 x10-12 in rij 9, pen 2 x13-16 in rij 10 tegen de snavel)
+8 9 k3vv4vvv4
+9 10 _kk4vvk
+10 13 kk
+# vleugelwortel onder de keel: bovenrand terug (k), met de veerkleuren van de wortel (3/v/4)
+13 14 kkkk
+14 13 kvvv4vk

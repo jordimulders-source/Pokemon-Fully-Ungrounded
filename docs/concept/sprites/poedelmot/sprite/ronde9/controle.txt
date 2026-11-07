@@ -1,0 +1,9 @@
+pixeldiff tegen ronde 8: 81 px; buiten de zones (links x10-15 y45-52, midden x22-29 y52-58, rechts x35-44 y41-57): 0
+voorpoten (pixels die ronde 6 aan de voorpoten tekende) gewijzigd t.o.v. ronde 6: 0
+rode schetscellen: 91; links (x<16) op het lijf van ronde 9: 0 (moet 0: geen uitstulpsel onder het kruis)
+rode cellen over de voorpoten (blijven gelijk): [(22, 55), (30, 52), (30, 55), (30, 56), (31, 52), (31, 53), (31, 54), (31, 55), (34, 55), (34, 56), (35, 55)]
+clusters < 3 px in de zones: [('2', [(43, 45)]), ('2', [(42, 52)]), ('2', [(42, 54), (43, 55)]), ('2', [(25, 57)]), ('2', [(38, 57)]), ('3', [(15, 50)]), ('6', [(15, 45), (15, 46)]), ('b', [(42, 56)]), ('b', [(44, 56)]), ('b', [(24, 58)]), ('b', [(26, 58)])]
+buitenrand niet in omlijningskleur: 0 []
+ingesloten transparante pixels: []
+kleuren: 13 + transparant
+diff.png: grijs = ronde 8, blauw = voorpoten (ongewijzigd), rood = gewijzigd t.o.v. ronde 8

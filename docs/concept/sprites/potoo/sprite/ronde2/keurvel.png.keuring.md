@@ -1,0 +1,13 @@
+# Keuring (zelfkeuring maker, ronde 2; nog géén onafhankelijke keurder)
+- Bron: Noctowl (gevouwen vleugel als eigen donkere vorm), Taillow (open snavel), poppetje r14, close-up en leidraad (gespiegeld); studie Swellow/Hoothoot/Noctowl/Pidgeotto op 8×.
+- Bekeken op 8× en 1× (licht/donker) + close-ups kop (13,0–37,32) en vleugel/staart (28,18–48,62).
+- Per onderdeel:
+  - vleugel: lijkt op Noctowl (donkerder dan het lijf, eigen omlijning, licht aan de voorrand, boeg bij de schouder, schouderveren onder de mantel, twee schuine dekverenrijen, dekverengrens, drie pennen met getrapte punten, vleugelpunt steekt achter de staart uit in het silhouet). Twijfel: de dekverenrijen zijn rechte schuine lijnen.
+  - staart: eindigt in drie veerpunten met inkepingen. Wijkt af: het zichtbare stuk onder de vleugel is nog kort (±15 px).
+  - silhouet: veerpuntjes op rug (3×) en borst (1×). Wijkt af: de kruin is glad.
+  - kop vs. bek: de koepel is groter (y1–15, 19 px breed) dan de muil (y16–28), de haak is 2 px langer, de kin loopt zonder kaaklijn over in de keel.
+  - contrast: lijf van 6 (bijna wit) via 5 naar 4; vleugel 4/3/F; donkere buitenlijn.
+  - patroon: korte streepjes in rijen op mantel en staart, F-streepjes op de pennen; gezicht en borst rustig. Twijfel: de borst is een groot leeg wit vlak.
+  - oog puur zwart, muil paars.
+  - netheid: geen open randen of gaatjes; alleen de 1-px-diagonalen van kaakrand/binnenrand (lijnen).
+- Oordeel: FAIL (nog geen PASS: eerst blinde test + keurder)

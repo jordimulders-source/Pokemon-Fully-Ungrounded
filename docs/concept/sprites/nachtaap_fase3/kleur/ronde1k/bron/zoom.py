@@ -20,5 +20,5 @@ def teken(p):
         d.line([(30,30+(y-y0)*s),(30+w,30+(y-y0)*s)],fill=(255,120,120) if y%5==0 else (220,220,220))
         if y%5==0 and y<y1: d.text((2,30+(y-y0)*s+1),str(y),fill=(0,0,0))
     return im
-A=teken(os.path.join(R,'raster.txt')); B=teken(os.path.join(R,'../ronde1h/raster.txt'))
+A=teken(os.path.join(R,'raster.txt')); B=teken(os.path.join(H,'basis_1j.txt'))
 o=Image.new('RGB',(A.width*2+20,A.height),(255,255,255)); o.paste(A,(0,0)); o.paste(B,(A.width+20,0)); o.save(uit)

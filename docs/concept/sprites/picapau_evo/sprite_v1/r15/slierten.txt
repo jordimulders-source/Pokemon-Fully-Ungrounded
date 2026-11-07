@@ -1,0 +1,43 @@
+# r14 slierten, met de hand. Per regel "rij kolom pixels". 4 = donkerste bruin (lichte kant), k = zwart (schaduwkant).
+# Jordi over r13: "doe maar, maar de aansluiting op het hoofd moet iets dikker" ("doe maar" = de krullen mogen groter, met een duidelijker gat)
+# --- voet: dikke pluk op de achterkruin (x24-29, rij 0-3, 4 rijen dik) die de kopomlijning (4, rij 2 x22-25) voortzet en taps afloopt
+0 27 444
+1 24 444444
+2 26 kkkk
+3 27 kkk
+# --- verre spriet (achter, bovenkant van de pluk): trapjes 3-2-2-2 omlaag, dan een krul van 7x7 rechtsboven (x39-45, rij 2-8):
+#     links omlaag, onder naar rechts, rechts omhoog, boven terug naar links; gat 3x3
+1 30 444
+2 33 44
+3 35 44
+4 37 444
+5 39 4k
+6 39 4kk
+2 41 444
+3 40 4kkk4
+4 44 kk
+5 44 kk
+6 44 kk
+7 40 kkkkk
+8 41 kkk
+# --- nabije spriet (vóór, direct onder de verre: 4 + k), zakt mee en hangt vóór de verre krul omlaag (x37-38, rij 5-8),
+#     dan een krul van 7x7 linksonder (x33-39, rij 7-13): rechts omlaag, onder naar links, links omhoog, boven naar binnen; gat 3x3
+2 30 444
+3 30 kkk
+3 33 44
+4 33 kk
+4 35 44
+5 35 kk
+5 37 4k
+6 37 4k
+7 37 4k
+8 34 44
+8 37 4k
+9 33 4k
+9 38 kk
+10 33 4k
+10 38 kk
+11 33 4k
+11 38 kk
+12 34 kkkkk
+13 35 kkk

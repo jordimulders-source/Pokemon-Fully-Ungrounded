@@ -1,0 +1,136 @@
+# Great potoo (Ghost/Normal, losse soort): SPEC
+
+Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md`. Stand: **opnieuw beginnen** (Jordi, 5 nov: "begin maar helemaal opnieuw"). Het 3D-werk in `model3d/`, `model3d_v2/` en `model3d_v3/` is afgekeurd; geen Blender/3D meer voor de potoo (Jordi, 5 nov).
+
+## Besloten (Jordi, 5 nov)
+- Basissoort: **great potoo** (*Nyctibius grandis*): "ik wil sowieso een great potoo".
+- **Eén stage** (single stage, zoals Sableye): "laten we 1 stage doen en gelijk met ontwerp gaan beginnen".
+- Type **Ghost/Normal**: "Ik vind Ghost/Normal een leuke type, helemaal omdat we al een Ghost/Flying hebben en ik echt ontzettend veel ideeën heb voor vogels". (In de repo zijn alleen Zorua/Zoroark-Hisui Normal/Ghost.)
+- **Geen tak of stomp in beeld:** "er is eigenlijk geen enkele pokemon sprite met een tak of iets anders in beeld, dus die camouflage kunnen we niet zo goed overbrengen". De vermomming zit in de sprite-frames (stilstaan ↔ bek open), in het lijf (schorsachtig verenpatroon) en in de data (ability, dex-tekst).
+
+## Kenmerken (uit Jordi's foto's)
+- Grote ronde kop, enorme zwarte kraalogen (great potoo: donkere iris, leest als zwart).
+- Klein snaveltje, maar een gigantische roze muil als de bek opengaat.
+- Licht grijswit met bruingrijs gespikkeld/geschubd verenpatroon (schors/korstmos).
+- Rechtop zittend, peervormig lijf, lange vleugels en staart naar beneden.
+
+## Achtergrond
+- Guaraní-legende van de urutau: Ñeambiú verliest haar geliefde, verstomt van verdriet en wordt een urutau; de nachtelijke roep is haar klaagzang.
+- Leefwijze: zit overdag stil als een afgebroken tak, vaak wekenlang op dezelfde plek; vliegt 's nachts korte stukjes vanaf die plek om grote insecten te vangen en keert terug. Vliegt dus weinig (past bij Ghost/Normal zonder Flying).
+
+## Onderdelen
+| onderdeel | bron / referentie | Jordi's woorden | status |
+|---|---|---|---|
+| pose | driekwart, licht vooruit hangend, **bek open**; kop/muil uit het drieluik (boven + linksonder); skelet: `jordi_great_potoo_tak_bek_open_volledig.png` (hele vogel, bek open, 3/4), voorover hangen uit `jordi_great_potoo_vooroverhangend_bek_open.webp` | "Ik wil de bek juist open, want dat is de sprite die men het meest gaat zien. het wordt uiteraard een driekwart pose met de vogel die licht vooruit hangt" | besloten |
+| klauwen | nauwelijks zichtbaar op de foto's | "De klauwen zijn nauwelijks zichtbaar lijkt wel, wel lachen. Dat betekent dat we die prima in een sprite ook kunnen verbergen" | besloten: verborgen |
+| neerzetten | optie 1: op een onzichtbare tak, zoals Swellow/Noctowl/Taillow (`vogels_neerzetten.png`) | "ja, optie 1, ga maar naar het silhouet" | besloten |
+| frames | frame 1 = bek open (hoofdsprite); frame 2 nog open | idem | deels |
+
+## Silhouet
+- v1: omtrek van de takfoto, 10° voorover, gespiegeld: las als augurk (muil onzichtbaar).
+- v2: muil-inkeping: te klein op 64.
+- v3: onderkaak hangt verder open (drieluik), kop 15% groter (Pokémon-verhouding). 1023 px (Xatu 1033). Model = de foto zelf langs dezelfde omtrek (`silhouet/model_v3.png`).
+
+## Ontwerp (Jordi, 5 nov)
+| onderdeel | Jordi's woorden | status |
+|---|---|---|
+| vacht | "misschien dat we de vacht heel licht maken als mooi contrast"; "C zie ik zitten qua vachtkleur" | besloten: heel licht (C) |
+| ogen | "grote ogen"; "de ogen worden echt pikzwart, kijk naar andere pokemon die dat ook hebben"; "drifloon heeft ook puur zwarte ogen, dat gaan wij ook doen" | besloten: **puur zwart zonder glans (Drifloon)**, bewuste uitzondering op de regel "geen volledig zwarte ogen zonder glans" |
+| mond | "grote mond"; "De mond maken we dan geestblauw/paars achtig"; "de muil moet wel echt een snavel zijn he" | besloten: echte snavel zoals de bron: bovensnavel = voorkant van het gezicht met klein haakje, onderkaak = brede schep, wijd open; binnenkant geestblauw/paars. Afgekeurd: losse grijze eendensnavel ("de snavel is nog helemaal niet goed", "kijk eens naar het bronmateriaal, je bent aan het speculeren") |
+| geest | "dus hij mag nog wat geestachtiger"; "Het geestachtige zit alleen in de kleuren en de muil" | besloten: geen vervagend onderlijf |
+| patroon | "We kunnen wel het hisui zorua idee doen dat ze goed passen in sneeuwgebied, dus dat er wat schorsachtige vlekken in komen" | besloten: lichte vacht (sneeuwcamouflage) + enkele schorsachtige vlekken |
+| vorm | "de vorm mag redelijk vergelijkbaar met het origineel" (5 nov, tweede gesprek) | besloten: 3D-model blijft dicht bij de echte great potoo; Pokémon-aanpassingen klein en benoemd |
+| sfeer | "hij moet schattig maar uncanny tegelijkertijd zijn zoals in het echt" (5 nov, tweede gesprek) | besloten: ronde zachte kop + kraalogen (schattig), te wijde muil tot achter de ogen en starende blik (uncanny) |
+| bronnen | "de bronnen die ik net gestuurd heb", "die 5 fotos die ik aan het begin stuur"; over de platte-kopfoto: "die moet juist niet"; over oortjes/kop: "nu ben je weer net een soort vleermuis aan het bouwen" (5 nov, tweede gesprek) | besloten: **alleen** `jordi_great_potoo_bek_open_drieluik.webp`, `jordi_great_potoo_bek_open_duo.webp`, `jordi_great_potoo_kop_closeup_bek_open.webp`, `jordi_great_potoo_illustratie_rug_staart.png`, `jordi_great_potoo_nacht_stam_volledig.webp`. Geen andere foto's, geen oortjes, geen platte kop/snavel |
+| kop-leidraad | "dit mag als leidraad voor het hoofd, dit linkse stuk" (linkerhelft van `jordi_great_potoo_bek_open_duo.webp`) | besloten: kopvorm, oog, snavel en muil op die foto meten |
+| bek groot | "met die lekker overdreven grote bek", "dat is grappig" (5 nov, tweede gesprek) | besloten: de muil mag overdreven groot (Pokémon-stap B) |
+| ogen hoger | "en de ogen moeten hoger" (5 nov, tweede gesprek, bij de 3D-overlay) | besloten: oogmidden hoger op de koepel |
+| snavel = kern | "de snavel is de main selling point, die moet gewoon goed zijn", "maak nu een poppetje zoals bij de lama, doe het desnoods alleen vanuit sprite vorm. Er zijn pokemon die ook hun snavel open hebben die je als inspiratie kan gebruiken", "ik accepteer het niet als de bron niet goed nagemaakt is want dat kan gewoon niet moeilijk zijn" (5 nov) | besloten: poppetje in lama-stijl (mag alleen in de spritehoek); bron (close-up/leidraad) getrouw nagemaakt; open snavels in echte sprites: `referenties/open_snavels_sprites.png` |
+| poppetje r3 | "elke keer dezelfde fouten he. Het is geen bol hoofd, de kaak gaat niet voldoende naar voren, ogen net te laag op de bek. De bovenkant van de snavel sluit niet goed aan en is te puntig", "en de mond is nog teveel pacman ook", "maar het was wel de beste tot nu toe" (5 nov) | harde eisen: kop BOL (Claude las dit eerst omgekeerd en maakte de kop in ronde 4 platter; Jordi: "maak het hoofd nu gewoon eens bol en laat een keurder kijken"); onderkaak verder naar voren; ogen iets hoger boven de mondrand; bovensnavel sluit vloeiend aan op het gezicht en is niet puntig |
+| snavelpunt | "de punt is echt onderdeel van de snavel he, niet een decoratie"; bij ronde 5: "die punt bovenop de snavel is geen losse punt, die is onderdeel van de snavel"; "allereerst mijn oordeel, je leest niet", "echt al 4x gezeggd" (5 nov) | besloten: echte bovensnavel (hoornvorm, snavelrug tussen de veertjes) die in één vorm in het haakje eindigt; Jordi's oordeel gaat vóór de keurder |
+| onderkaak r5 | "de onderkant lijkt meer op een pelikaan omdat die die te ver uitsteekt van het lichaam en niet ver genoeg open gaat, plus de vorm is gewoon nog steeds anders dan de foto" (5 nov) | besloten: kaak wijder open, dicht bij het lijf, omtrek = de overgetrokken mondrand van leidraad en close-up |
+| vorm kop+muil | "maar waarom ben je al uren bezig met een fucking snavel nabouwen"; daarna stuurde Jordi de overtrek van de maker terug (`referenties/overtrek_ronde5_AFGEKEURD_niet_nauwkeurig.png`): "dit is helemaal niet overgetrokken", "en eerder ging je overtrekken en toen kregen we allemaal rare pixels eromheen" (5 nov) | besloten: kop + snavel + muil in de spritehoek als 2D-tekening; eerst nauwkeurig met de hand overtrekken (veel punten, gladde curven, < 2 px van de rand), alleen eigen vectorvormen, geen fotopixels/segmentatie; lijf van het poppetje blijft |
+| oog zonder rand | "en waarom heeft het oog opeens een half wit stuk eronder" (5 nov, bij ronde 3–5) | besloten: geen licht ooglid/sikkel; puur zwarte kraal (keurderadvies ronde 2 verworpen) |
+| lichaamsvorm | "kijk dit is de vorm van het lichaam" (5 nov) bij `referenties/jordi_great_potoo_illustratie_LICHAAMSVORM.png` | besloten: lijf volgt deze illustratie: rechtop, lang; brede schouders direct onder de kop waar de vleugels beginnen, smal taps lijf, zeer lange staart (±de helft van de vogel) met de lange vleugelpunten ertegenaan |
+| kop blijft staan | "als de mond open gaat schuift het hoofd niet opeens een stuk naar voren" (5 nov) | besloten: kop op dezelfde plek als met dichte bek (illustratie lichaamsvorm); alleen de onderkaak klapt open voor de borst |
+| proces | "ik wil niks meer zien totdat het echt lijkt op de bronfotos" (5 nov) | besloten: geen tussenresultaten naar Jordi; pas na eigen vergelijking met de foto's + keurder PASS |
+| blinde test | "ik denk dat een onafhankelijke agent niet eens kan zien dat dit een vogel is" (5 nov) | besloten: elke ronde een blinde test (agent zonder context ziet alleen het plaatje en zegt wat het is); pas verder naar keurder/Jordi als hij een (potoo-achtige) vogel met open snavel ziet |
+| hoek + sprite | "driekwart, als je een sprite wil bouwen al meteen mag het ook, maar het moet goed zijn" (6 nov) | besloten: driekwart blijft; direct naar de 64×64-sprite mag, met poppetje ronde 14 als bron voor massa/pose; snavel/muil in de pixelstap naar de close-up en echte open-snavelsprites |
+| stand 6 nov | "Lichaam is oké, de rest niet. We gaan morgen verder en dan zal ik een nieuw idee opperen voor hoofd en snavel" (6 nov) | lijf bevroren (poppetje ronde 14 / sprite ronde 3: rechtop, brede schouders, gevouwen vleugel met pennen, brede platte staart, schorspatroon); kop en snavel opnieuw met Jordi's nieuwe idee |
+| schets kop/bek | Jordi's schets (`referenties/jordi_schets_kop_bek_7nov.webp`, over de driekwart-tekenbasis): "allereerst de bekvorm wat meer zoals in de bron. Wat hem anders maakt dan andere vogels is dat de kop wat meer voorover geleund is en de nek er echt achterop zit en helemaal doorloopt. Alsof die echt voorover hangt om zijn bek open te trekken, plus de positie van het oog heb ik iets anders gedaan. Kijk of je deze feedback begrijpt met een sprite schets, dat de afwerking niet goed is, is niet erg, we gaan de vorm goed krijgen. Weet dat mijn schets niet 1 op 1 klopt maar ik hoop daarmee het concept toe te lichten" (7 nov) | Claude leest: (1) bek = brede ronde U met punt onderaan zoals de bron, van snavelpunt tot onder het oog; (2) kop hangt voorover, achterkop/nek loopt in één doorgaande bocht van kruin naar rug, geen knik; (3) oog verder naar voren, iets liggend ovaal. Eerst een vormschets als sprite. Aanvulling: "ja in de schets kan ik dat niet uittekenen maar de kop hangt wat meer voorover" |
+| schets 2 | "je deflate het hoofd nu teveel en het sluit niet aan op de vogel, zie mijn lijnen" (7 nov, `referenties/jordi_schets2_kop_7nov.png` over vormschets ronde 5) | kop weer vol en hoog: koepel van de snavel bol omhoog over het oog en achter in de mantel; lijn van onder het oog langs de rechterkant van de bek omlaag: kaak/wang sluit aan op borst en lijf |
+| schets 3 | "hoofdvorm is prima. Alleen je blijft telkens het oog meeschalen, het oog moet dezelfde positie hebben als op de foto. De snavel vorm gaan we nu doen, kijk mijn getekende lijn. Als dat niet voldoende is, teken precies de lijn zoals op de foto van de snavelbekrand en laat mij vervolgens zien hoe die lijn eruit ziet, dan gaan we die 1 op 1 erin zetten. Daarnaast is het dus belangrijk dat er een halsrand in komt, maar dat wordt puur kleur en schaduwgebruik. We boeken nu wel progressie" (7 nov, `referenties/jordi_schets3_bek_7nov.png` over vormschets 6) | kopvorm schets 6 bevroren; oog op de fotopositie/-verhouding (niet meeschalen); bekvorm naar zijn lijn; eerst de bekrand nauwkeurig van de leidraad overtrekken en als lijn op de foto aan Jordi tonen, dan 1-op-1 erin; halsrand later met kleur/schaduw |
+| overtrek | "de omtrek van de bekrand is zeer netjes, doe hetzelfde eens met de hele vorm, misschien dat dat werkt" (7 nov) | bekrand-overtrek (`sprite/bekrand_overtrek/`) goedgekeurd; nu de hele vorm van de leidraad zo overtrekken en eerst als lijnen tonen |
+| omtrek Jordi | "de kop gaat niet meer afwijken van deze omtrek" (6 nov) | kop/snavel/bek = `jordi_overtrek/omtrek_cellen.json` (zijn eigen lijn, letterlijk uitgelezen); vorm vast, alleen schaal volgt de verhouding |
+| verhouding | "het lichaam mag iets kleiner, zodat de bek echt groot wordt op de sprite"; "laten we voor 15% gaan" (6 nov) | zit op de tak als `referenties/jordi_great_potoo_tak_bek_open_volledig.png`, ineengedoken met de kop voorover; lijf 15% kleiner dan ronde 12: `sprite/ronde13_standen/potoo_85.png` (vorm goedgekeurd) |
+| lijnen | "gebruik pixels zoals de sprite in game ze zou gebruiken" (6 nov) | buitenlijn 1 px, geen dubbele trapjes |
+| vorm linksonder | "lijkt die nog steeds een beetje afgekapt waardoor het nu vooral op zuid amerika lijkt, qua vorm is dat niet erg, juist wel grappig" (6 nov) | vorm blijft; met kleur moet het een stilzittende vogel worden |
+| ronde 14 | "ik vind dit al best een goede eerste draft. Het oog is alleen niet rond genoeg, oog icm muil maakt hem zo gek. Daarnaast heb je idd teveel focus gelegd op snavel, dat gaat ten koste van de muil ... het onderlichaam is nog net wat teveel origami" (6 nov) | oog rond; muil gaat vóór snavelplaat; onderlichaam zachter |
+| muilgrootte | "naar 175 pixels gaan is een goed idee" (6 nov) | muil/omtrek gemeten: foto 20,0%, ronde 14 15,7% (137 px) → muil ±175 px; mondlijn telt als muilrand, binnengrens 1 px naar buiten, buitenomtrek gelijk |
+| onderkant | Claude stelde voor linksonder opnieuw over te trekken van de tak-foto; Jordi: "prima" (6 nov) | `sprite/ronde17_basis/`: buik rond tot de zitplek, stap naar binnen, staart eronder; de afgekapte vorm kwam door te sterk samendrukken, niet uit de bron |
+| snavelhaak | "je blijft elke keer een snavelkop imagineren, maar als je in de bronnen kijkt zit die daar helemaal niet, ja misschien heeeeeel lichtjes" (6 nov) | geen hoornblok/haakje; bovenkaak = bevederde kop met dunne lichte snijrand; hoogstens 1–2 px lichte hoorn |
+| onderkant v2 | "het moet juist minder zuid amerika"; "er zit toch geen tak in de sprite"; "rechts is de beste" (6 nov) | `sprite/ronde17_basis_v2/`: vloeiende onderkant zonder takstap, bredere staart; kop rij 0–30 gelijk aan ronde 13 |
+| klauwen | "zorg dat er bij het inkleuren 2 klauwen in komen die op de foto ook zichtbaar zijn, rustend op de tak" (6 nov) | twee korte gekromde klauwen onder de buik (±(23–26,42–44) en (29–31,43–44)), tak zelf niet getekend; vervangt "klauwen verborgen" |
+| kern | "De snavel en ogen zijn het kernpunt van het design, zoals je kan zien zitten er kleine veren allemaal ook tussen de ogen duidelijk, dat mag je ook uitbeelden" (5 nov, tweede gesprek) | besloten: snavel + ogen krijgen de meeste aandacht; korte veertjes tussen en rond de ogen (borstelveertjes/wenkbrauwkuif) uitbeelden |
+| werkwijze | "Voordat je een silhouet bouwt, bouw je eerst een 3d model" | 3D-poppetje vóór het silhouet |
+
+## Afgekeurd (niet herhalen)
+- **Poppetje (bollen-renderer, `poppetje/`) ronde 1–3, maker-agent:** twee keurders FAIL. Ronde 2: "witte gladde helm met paars grijnsvlak"; ronde 3: "paars schild/slabbetje met grijs kader", bovensnavel als vizier, kruin als pet, staart als stokje. Keurder: de bollen-renderer maakt van snavel en kaak losse geometrische stukken; niet verder repareren.
+- **3D v3 (snavel uit onderdelen, `model3d_v3/`) en Blender/3D als geheel:** "haha je gaat nu precies hetzelfde weer fout doen", "deze aanpak werkt niet", "stop met blender"; eerder: "hij hoeft echt niet geometrisch perfect te zijn he maar er gaan zulke simpele dingen bij het model eerder fout, oog in de mond enzo".
+- **3D v2 (gespleten koepel + schep, `model3d_v2/`):** "ik vind het eerlijk gezegd nog totaal niet lijken, de bek is geen snavel, lijkt net een soort pacman zeehond, de bolling bovenop is niet goed", "de onderkaak moet meer pronounced", "en de snavel is geen pacman mond". Bek niet als opengeknipte kop bouwen.
+- Paars rond de mond (voxelkop): "geen idee wat dit was maar doe dit nooit meer, met al dat paars om die mond heen". Mondkleur alleen binnen de mondrand.
+- Zichtbare roep / geestslierten uit de muil: "een zichtbare roep doen we niet, dat is niet pokemon".
+- **Silhouet v1–v4 (de foto overgetrokken):** "we gaan niet een potoo namaken", "we maken een pokemon". Eerst een Pokémon-ontwerp (stap 1), dan pas een silhouet. Gewenst: "geestachtiger", "grote ogen, grote mond".
+- Tweede stage die met een tak/stomp versmelt (`concept_schets_2stages_afgekeurd.png`): tak in beeld past niet bij Pokémon-sprites.
+
+## Referenties
+- `referenties/jordi_great_potoo_bek_open_drieluik.webp`: bek open (3/4 en zij), voederen.
+- `referenties/jordi_great_potoo_stomp_voor.png`: rechtop op stomp, bijna van voren.
+- `referenties/jordi_great_potoo_wit_zijaanzicht.png`: lichte vogel, zijaanzicht, kop van dichtbij.
+- `referenties/jordi_grijze_potoo_takhouding_nacht.webp`: andere soort (gele iris), takhouding.
+- `referenties/jordi_great_potoo_tak_bek_open_volledig.png`: hele vogel op tak, bek open, 3/4 (skelet).
+- `referenties/jordi_great_potoo_vooroverhangend_bek_open.webp`: voorover hangend, zijaanzicht, bek open, staart zichtbaar.
+- `referenties/jordi_great_potoo_nacht_voor_volledig.webp`: hele vogel van voren, 's nachts (verenpatroon, kop).
+- `referenties/jordi_great_potoo_illustratie_rug_staart.png`: illustratie rug/vleugel/lange staart.
+# Great potoo: SPEC (Gemini-model, 7 nov)
+
+Werkwijze: **Gemini-model namaken** (`docs/lessen/SPRITE_WERKWIJZE.md`, voorbeeld poedelmot) + `docs/lessen/SPRITE_KERN.md`. Twee eisen, verder niets: (1) heel accuraat op het model, (2) Gen 3 volgens onze eisen.
+
+Eerdere potoo-rondes (5–6 nov, Ghost/Normal, één stage, foto's, poppetje, 3D) staan op branch `claude/laughing-darwin-7smba1` (`docs/concept/sprites/potoo/SPEC.md`); dat ontwerp is vervangen door dit model. Type en data later.
+
+## Jordi's woorden (letterlijk)
+- (6 nov, bij `referenties/gemini_v1_goed_oog_snavel.png`) "ik ben wel al tevreden over oog en snavel"
+- (6 nov) "de tak hoort niet in de sprite, die moet helemaal weg"
+- (6 nov) "de klauwen mogen best doen alsof ze op een tak zitten, dit beeld spiegelen kan je zelf, ik vind het lichaam iets te kort, mag net wat langer"
+- (7 nov) "hij is best goed namelijk, snavel en hoofd kloppen, het lichaam moet net wat groter (wel in verhouding blijven) en de tak moet weg, voor de rest precies zo vertalen naar een gen 3 sprite"
+- (7 nov, bij de eerste lijfmaten) "je hebt hem dikker gemaakt, niet langer"
+- (7 nov, bij `referenties/gemini_model_jordi.jpg`) "dit is alles wat ik heb, ga maar los, volg de werkwijze van de poedelmot"; "met als uitzondering de wijzigingen die we besproken hebben, maar alleen die"
+
+## Toegestane wijzigingen t.o.v. het model (alleen deze)
+1. **Tak weg**: takeinde in de klauwen en het losse takje. Klauwen blijven gekruld alsof ze een tak vasthouden.
+2. **Lijf langer**: kop, oog, snavel en muil ongewijzigd; lijf eronder alleen in de hoogte opgerekt, breedte gelijk (`model/lijf.py`; eerste versie maakte hem ook breder: "dikker, niet langer").
+3. **Spiegelen** (kijkt links-voor).
+Verder alles precies zoals het model (ook de kuif, het verenpatroon, de spikkels, de blauwpaarse muil, het oog met glans).
+
+## Bestanden
+- `referenties/gemini_model_jordi.jpg`: het model (Jordi). `gemini_v2_afgekeurd.png`: afgekeurd, niet gebruiken.
+- `model/knip.py` → `model_los.png` (los van het nep-dambord, tak weg). Restpixels olijf aan de linkerkant van het klauwgat zijn tak, geen klauw.
+- `model/lijf.py` → `model_lijf_10/20/30.png` (gespiegeld). Vergelijking: `model/lijf_maten_vel.png`.
+
+- (7 nov) "de meest rechtse, ga maar los" → **lijf +30% langer** (`model/model_lijf_30.png`).
+
+## Silhouet (bevroren, 7 nov)
+- `silhouet/silhouet.png` = model_lijf_30 direct verkleind (`silhouet/sil.py`, alpha ≥ 0,45): 1229 px, x 17–46, y 1–63. Rode omtrek: `silhouet_over_bron.png`; kleurgids (gemiddelde, géén sprite): `gids_gemiddeld.png`; `model_64_box.png`, `model_12x.png`.
+- Meetgereedschap (`gereedschap/`, kader in `kader.json`): `px.py` (model per spritepixel), `box1x.py` (model | sprite op 1×-niveau vergroot), `overlay.py` (spritelijnen over het model).
+
+## Varianten
+- (7 nov, bij r6) "ik vind hem eigenlijk al heel goed, probeer eens eentje met een groot zwart oog? zonder wit erin"; "ter vergelijking" → `varianten_oog/` (A: glans zwart; B: ook ring zwart, groter oog).
+- (7 nov) "ja b is beter, alleen het oog mag nog wel wat schaduw" → `varianten_oog/schaduw.py`: C1–C4.
+
+## Eindkeuring (7 nov)
+- Jordi: "ja c4 is het beste, ga maar door naar eindkeuring qua schaduw en kleuren, volgens dragonflycave en vergelijking met andere pokemon".
+- `eindkeuring/RAPPORT.md` (REPARATIES, 35 indexwissels) → toegepast in `eind_r1/potoo.png` (`repareer.py`, controle op oude waarde). Ter info open: klauwen lezen als zwarte vlek; snorharen niet taps.
+- (7 nov) "prima zo, ga maar naar eindkeuring, tov andere pokemon en dragonflycave" → `eindkeuring2/RAPPORT.md` (REPARATIES, 16 px) → `eind_r2/potoo.png`. Ter info: rechtervleugelrand x45 y31–48 kaarsrecht (vormkeuze Jordi).
+
+## Open
+- Naam, type en data later.

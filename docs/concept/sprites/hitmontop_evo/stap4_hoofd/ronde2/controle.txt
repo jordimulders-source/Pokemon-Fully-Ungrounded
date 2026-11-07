@@ -1,0 +1,4 @@
+optie_1L: stand 1 (±15°), knotje, mond licht | buiten zone anders: 0 | zone (x0,y0,x1,y1) (2, 22, 29, 47) (oud hoofd 169 px, nieuw hoofd 501 px)
+optie_1M: stand 1 (±15°), knotje, mond iets meer | buiten zone anders: 0 | zone (x0,y0,x1,y1) (2, 22, 29, 47) (oud hoofd 169 px, nieuw hoofd 501 px)
+optie_2L: stand 2 (±40°), knotje, mond licht | buiten zone anders: 0 | zone (x0,y0,x1,y1) (0, 24, 29, 47) (oud hoofd 169 px, nieuw hoofd 450 px)
+optie_2M: stand 2 (±40°), knotje, mond iets meer | buiten zone anders: 0 | zone (x0,y0,x1,y1) (0, 24, 29, 47) (oud hoofd 169 px, nieuw hoofd 450 px)

@@ -28,5 +28,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-model namaken) + `docs/less
 - (7 nov, letterlijk) "doe toch nog maar een eindkeuring nog qua kleuren, dragonflycave en vergelijking met andere sprites, let op, dit is puur kleuren en schaduwen"
   → Eindkeuring af (gespiegelde r2): FAIL op lichtrichting (licht kwam na het spiegelen van rechtsboven). Kleur r3: 21 px tinten verplaatst + paletkleur 7 warmer (226,216,200), alpha-diff 0; herkeuring PASS. **`af/poedellarve.png` = kleur_r3.**
 
+- (7 nov, letterlijk, over r3) "helemaal prima" → **af en bevroren.**
+
 ## Open
 - Naam, type en data later (Jordi, 5 nov).

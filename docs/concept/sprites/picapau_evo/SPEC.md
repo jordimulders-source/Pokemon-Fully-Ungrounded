@@ -1,0 +1,90 @@
+# Evolutie van Picapau (Electric/Flying, eindvorm): SPEC
+
+**AF (7 nov): frontsprite `af/picapau_evo.png` (+ `normal.pal`, `vel.png`)** = sprite r16; onafhankelijke eindkeuring PASS (`sprite_v1/r16/picapau_evo.png.keuring.md`); Jordi: **"helemaal prima"**. Grote specht (3/4 als Pidgeot, achterover), P5-snavel, zwarte slierten met krullen, dunne staartlus met Z-bliksem. Optioneel later: bollere buitenrand vleugelvoorrand. Naam open (Picaraio). Frame 2, rug, icoon, shiny, data later.
+
+Naam open (voorstel uit IDEEEN: Picaraio = *pica-pau* + *raio*). Pre-evo: `../picapau/` (af, 5 nov). Concept: `docs/concept/IDEEEN.md` (Roomkleurige specht, "Evolutie die op Raichu lijkt").
+Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de geel → oranje-kastanje stap zit in het geslacht zelf (zoals Pikachu → Raichu).
+
+## Jordi letterlijk
+- "tijd om de evolutie van picapau te maken" (5 nov)
+- Eerder (IDEEEN, 5 nov): evolutie die op Raichu lijkt, "maar die lijkt minder op Raichu dan Picapau op Pikachu" (zoals Toedscruel/Tentacruel).
+- Keuzes (5 nov):
+  - Kleur: **kastanje + lichte kuif** (lijf oranje-kastanje zoals *Celeus elegans*, kuif en buik licht crème).
+  - Tong (Raichu-staart als spechtentong met bliksempunt): **alleen in dex/move**, niet in de sprite. Jordi: "die tong is een leuk idee maar ik ben bang dat dat niet lekker te spriten is".
+  - Pose: **vleugels half open** (dreigend, kuif opgezet, grotere sprite).
+  - Kuif: **grote gekrulde kuif** (twee lange kuifpunten die aan de top naar buiten krullen zoals Raichu's oren; de donkere toppen van Picapau vallen weg, Raichu heeft bruine oortoppen).
+- Inspiratie: "deze sprite mag als inspiratie dienen" · "uit gen 1" → `referenties/jordi_inspiratie_raichu_gen1.png` (Raichu, Gen 1-frontsprite op 16×, 64×64).
+  Beschrijving (Claude): 3/4 naar links, voorovergebogen en ineengedoken; grote ronde kop als eigen vorm, één groot oog, wangvlek; lichte buik als grote ovaal; arm voor de buik, verre arm opgetrokken achter de kop; oren met gekrulde toppen naar rechtsboven; staart in een grote S-boog achter en onder het lijf langs, eindigend in de bliksempunt linksonder. Dynamisch, gespannen, vult het hele frame.
+  Lezing (Claude): inspiratie voor houding en spanning (vult het frame), niet om over te nemen.
+- Wat Jordi eruit wil (5 nov): **"echt zon krullende staart met een bliksemschicht"** · **"krullende oren"** (= de kuif) · **"imposant, groot, opgeblazen"**.
+  → De **staart** zelf (niet de tong) wordt een lange krullende staart (S-boog zoals Raichu Gen 1) met een bliksemschicht als punt; bij een specht: de stijve steunstaart verlengd tot een krullende veerstaart/-pluim met bliksempunt. De kuifpunten krullen zoals Raichu's oren. Het lijf opgeblazen (veren opgezet, zoals een vogel die zich groot maakt), groot en imposant.
+
+- Jordi (5 nov): **"we kunnen wel proberen zo'n tong te spriten die dan half eruit hangt, maar ik denk dat het niet lukt"** → tong half uit de snavel als **variant náást** de hoofdversie (zonder tong), niet als hoofdkeuze.
+- Jordi (5 nov): **"Voor inspiratie sprites kan je kijken naar legendary vogels enzo, die hebben ook altijd wat complexere poses met dingen die om ze heen krullen. Ik wil gewoon voorkomen dat al onze vogels hetzelfde erbij staan"** → `referenties/vergelijking_vogelposes.png` (Gen 3-frontsprites op 4×: Lugia, Ho-Oh, Articuno (staart krult om het lijf), Zapdos, Moltres, Galar-vogels, Rayquaza, Yveltal, Noivern, Braviary, Staraptor, Talonflame, Corviknight, Kilowattrel). Pose moet duidelijk anders zijn dan onze eigen vogels (kolibrie, kolibrie pre-evo, Picapau: alle drie vleugels dicht/rechtop).
+
+## Familie met Picapau (vast)
+- Specht: beitelsnavel blijft, oog en kop in de lijn van Picapau, vleugels met de ronde lichte stippen (Jordi: stippen, geen Pidgey-schubben), stijve steunstaart.
+- Zwaarder lijf, bolle buik (Jordi bij Picapau: "het lichaam moet echt bol, dat is juist een kenmerk van pikachu").
+
+## Onderdelen
+| onderdeel | bron | Jordi | status |
+|---|---|---|---|
+| kleur | *Celeus elegans* | kastanje + lichte kuif | gekozen |
+| pose | Raichu Gen 1 als inspiratie | vleugels half open; "imposant, groot, opgeblazen" | gekozen, bron (model/foto) open |
+| staart | Raichu Gen 1 | "echt zon krullende staart met een bliksemschicht" | gekozen |
+| kuif | Raichu-oren | grote gekrulde kuif; "krullende oren" | gekozen |
+| tong | spechtentong | alleen dex/move; variant met tong half uit de snavel proberen | variant |
+| snavel, oog, poten | Picapau | – | open |
+
+## Afgekeurd (niet herhalen)
+- Alle lessen van Picapau (`../picapau/SPEC.md`): profielkop zonder kopdraai, dunne delen die bij het verkleinen wegvallen, model aanpassen als de sprite fout is.
+
+## Model ronde 1 (5 nov)
+- `blender/standen/` (A/B/C + tong). Claude: leest als dikke Pidgey/Fletchinder met witte ramshoorns, niet imposant; tong = worm op 1× → tong-variant vervalt.
+- Jordi over de kuif in ronde 1: **"vooral de oren zijn too much"** · **"te wit, te groot"** → kuif kleiner, rustiger, subtiele krul, overwegend kastanje (hooguit lichte rand/top). Vervangt "lichte kuif" uit de kleurkeuze.
+- Ronde 2 (maker): kuif zoals hierboven, imposanter (borst, kop, bredere vleugels, minder stekels, grotere stippen), staart als platte veerpluim in S met grotere bliksem, langere beitelsnavel, echte kastanje in de render.
+- Jordi: **"de vleugels zijn ook iets te draconian, maar voor de rest vind ik hem wel al ergens op beginnen te lijken"** → vleugels: vogelvleugel met ronde voorrand en zachte, gesloten handpennen (geen drakenvingers); de rest van C (lijf, kop, kopdraai, pose) alleen licht bijwerken, niet herbouwen.
+
+## Model ronde 2 (6 nov)
+- `blender/r2/` (C2). Jordi: **"de oren en staart zijn geen raichu staart"**.
+- Bron nu de echte Raichu: `referenties/raichu_gen3_8x.png` + Gen 1. Staart = dunne donkere koord (1–2 px) in een krul/lus met een grote platte bliksem als eind (niet de dikke pluim met kleine bliksem van C2). Kuif = Raichu-oorvorm: brede driehoek, donkere buitenkant, lichtere binnenkant, dunne krul aan de punt; maat zoals C2 ("too much", "te wit, te groot" blijven gelden). Ronde 3: alleen kuif en staart, rest van C2 bevroren.
+- Jordi: **"nee de gen 1 raichu sprite moet je ook naar kijken"** → Gen 1 (`jordi_inspiratie_raichu_gen1.png`) is de hoofdbron, Gen 3 aanvulling. Gen 1-staart: brede donkere S (±3–4 px op 64) die om het lijf loopt, grote schuine bliksem linksonder; Gen 1-oren: lichte binnenkant, punt eindigt in een spiraal/krul.
+
+## Model ronde 3 → sprite (6 nov)
+- `blender/r3/` (C3): staart + bliksem lezen als Gen 1; oren = ringetjes op steeltjes ("slakkenvoelsprieten"), verre oor tegen de vleugel.
+- Jordi: **"Ga een sprite bouwen. Dat is makkelijker aan te passen"** → model stopt bij C3 (bron voor massa: lijf, kop, vleugels, staart, bliksem). Sprite v1: overtrekken van de C3-render (methode Picapau sprite v2); de oren in de pixelstap naar Gen 1 (oorpunt loopt zelf uit in de krul, geen losse ring).
+
+## Sprite r2 (6 nov)
+- `sprite_v1/r2/`. Claude: schaduw met regels in code (niet met de hand), kop leest als vos.
+- Jordi: **"het ding is, het is nog niet echt een vogel he. De staart mag wat dunner en wat meer vogelachtig, desnoods zwart. De oren mogen ook naar achter bewegen, zwart en meer op de raichu lijken, verder mag die wat graden naar links draaien, want nu zien we een flink stuk hoofd met het oog helemaal aan de zijkant. De vleugel mag iets vogel achtiger"**
+- → pose-wijziging (draaien) in het model, dan opnieuw overtrekken; kleur daarna met de hand.
+- Jordi: **"ja het lijkt nu iets meer een alien dan een vogel, en ik heb liever eigenlijk een grote vogel met raichu motief"** → koerswijziging: basis = echte grote vogel (nek, borst, schuin lijf, poten onder het zwaartepunt; Staraptor/Braviary/Talonflame/Pidgeot, grote specht *Campephilus*/*Dryocopus*); Raichu alleen als motief (zwarte gekrulde kuif, dunne staart met bliksem, kastanje + crème, wangvlek). Ei-lijf van C3 vervalt. Model r4 eerst tonen, dan pas sprite.
+
+## Model r4 (6 nov)
+- `blender/r4/` (V2 gekozen: lijf 35°, kop +5°): leest als vogel (lijster/roodborst), niet imposant; oren op 1× een zwarte vlek; poten dun en naast elkaar; staartlus + bliksem nemen veel frame. Voorstel: lijf voorover (Talonflame-diagonaal), vleugels hoger en breder, bliksem iets kleiner, grote voeten met klauwen.
+- Jordi over r4: **"ja nu komen we ergens! de snavel mag open, dat geeft wat karakter. Vergeet mijn eerdere instructies over de oren, die mogen dunner en wat verder doorkrullen, iets meer zoals de onderkant van de oren van raichu"** + "ja" op de imposant-ronde → r5: voorover, vleugels hoger/breder, bliksem iets kleiner, grote klauwen; snavel open; oren dunner met doorlopende spiraal (oude maatgrens vervalt).
+- Jordi: **"ja en in de pose mag de buik echt naar voren, die laten we een beetje op die gen 1 raichu pose lijken"** → grote bolle crème buik die naar voren/links uitpuilt (Gen 1-houding), lijf helt eromheen; blijft een vogel.
+
+## Model r5 (6 nov)
+- `blender/r5/` (vel_r5, closeup_r5): voorover, vleugels 1,32×, snavel open, oren dun met spiraal (±410°), bolle buik naar voren, grote voeten met klauwen. Zwak: diagonaal minder zichtbaar door de buik, verre vleugel verstopt, bliksem klein (voorstel 0,85×), staartlus breed.
+- Jordi over r5: **"de buik is teveel een bulge"** → r6: buik als deel van één doorlopende lijfvorm (volle borst/buik, geen losse bol of knik); bliksem 0,85×.
+- Jordi: **"maar laten we een sprite gaan maken"** · **"dat is makkelijker te editen"** → geen r6-model; sprite r3 van de r5-render, buik (geen bulge) en grotere bliksem in de sprite opgelost.
+
+## Sprite r3/r4 (6 nov)
+- `sprite_v1/r3/`, `r4/`: met de hand overgetrokken van model r5.
+- Jordi over r4: **"dit is geen driekwart aanzicht, laten we daar mee beginnen. Zijn mond is gewoon een rode wolk, de kuif staat teveel rechtop, die mag meer naar beneden buigen. Maar het begint met het driekwart aanzicht wat niet klopt en de hele sprite mag wat meer achterover leunen zoals raichu in gen 1"**
+- → poseproef in het model (`blender/r6pose/`): lijf echt 3/4 naar de kijker (borst/buik van voren, poten in perspectief), kop 3/4 met het oog dicht bij de snavel, achterover leunen (Gen 1) i.p.v. voorover, kuif naar beneden/achter. Daarna sprite; mond: boven- en ondersnavel, donkere mond, rood hooguit kleine tong.
+- Jordi: **"ik kies p3, en hij mag nog iets meer naar rechts draaien, net als gen 1 raichu beide ogen in beeld, of gaat het niet passen om ook de linkervleugel in de sprite te krijgen lichtjes? Zijn er vogel sprites die dat hebben?"** → P3 gekozen; r7pose: meer naar de kijker (beide ogen), verre vleugel links achter borst/kop zichtbaar. Voorbeelden (`referenties/vergelijking_vogels_frontaal.png`): beide vleugels: Pidgeot, Fearow, Fletchinder, Talonflame, Braviary, Articuno, Ho-Oh; beide ogen: Ho-Oh, Noctowl, Xatu, Decidueye. Ho-Oh heeft alles samen (snavel schuin naar links-onder).
+- Jordi: **"ja pidgeot toont hoe het moet"** → Pidgeot (Gen 3-front) is het voorbeeld voor draai, beide vleugels en ogen.
+- Jordi bij r7pose: **"ga gewoon een sprite maken aub"** · **"zitten we weer uren aan het model te werken"** → geen modelwerk meer; sprite r5 van R3.
+- Jordi: **"r2 trouwens, onderste, alleen snavel moet nog licht open"** → bron = r7pose R2 (render), snavel licht open (smalle mondspleet).
+- Jordi over sprite r5: **"de snavel zijn rechte lijnen, dat lijkt me niet de bedoeling. De krullen bovenop het hoofd zijn links ook weggevallen. Verder mag die nog iets meer achterover leunen, buiten dat vind ik het al goed in de buurt komen"** → r6 (alleen in de sprite): kromme, tapse snavel; krul ook aan het linkeroor; bovenlijf ±6–10° achterover.
+- Jordi over sprite r6: **"ik wil beide krullen bovenop naar achteren en die snavel is geen snavel, kijk bijv naar fearow of andere vogels, echt lelijk. Voor de rest is die wel prima. Alleen de buik is niet meer mooi ovaal. De pose is prima"** → pose bevroren (r6); r7: beide krullen naar achteren, snavel opnieuw naar echte vogelsprites (Fearow), buik weer mooi ovaal.
+- Jordi over snavel r7: **"niet mooi, past niet bij het hoofd en is niet zo mooi als bij normale pokemon sprites"** → r8: twee snavelvarianten (A = snavel van Picapau vergroot; B = stevige Gen 3-snavel met brede voet), geen strepen; rest r7 bevroren.
+- Jordi: **"nee ik vind het ook nog niet zo mooi, hoe kunnen we dit beter maken, daarnaast is 1 van die slingers op zijn hoofd bijna een rechte lijn"** · op het voorstel (kop + snavel als één geheel van een echte sprite overnemen): **"probeer maar"** → r9: gezicht (snavel, voet, oog, wang) cel voor cel van Swellow (hoofdbron; zelfde hoek, ronde kop) met Pidgeotto als aanvulling, aangepast (grijs, spechtenlengte, licht open); verre krul zonder rechte steel. Vel: `referenties/koppen_keuze.png`.
+- r9 (gezicht naar Swellow) en r10 (Swellow-snavel letterlijk omgekleurd): geen van beide goed. r10 leest als zangvogel/eendenmond en valt weg tegen de donkere verre vleugel. Kern (Claude): de snavel ligt vóór de donkere verre vleugel, dus geen contrast; Swellows snavel staat tegen wit. Gestopt (regel: na 2 missers terug naar de werkwijze), vraag aan Jordi.
+- Jordi over de probeersels: **"p5 is de enige die er oke uit ziet, ga daar maar mee verder. Ik ben nog steeds niet tevreden met de slierten op het hoofd overigens, die moeten beiden ongeveer uit dezelfde plek komen en netjes langs elkaar hangen zoals de raichu oren op de gen 1 sprite"** → snavel P5 (Staravia-snavel in grijs) gekozen; r11: vleugelrand achter de snavel netjes, krullen uit (bijna) hetzelfde punt op de kop, netjes naast elkaar naar achteren hangend zoals de Gen 1-oren.
+- Jordi: **"en ja ze mogen overlappen"** → slierten mogen deels overlappen (nabije vóór de verre).
+- Jordi over r12: **"kijk die eerste is beter, alleen het mag iets meer buigen en elkaar overlappen, zodat het niet precies op pixels grenst met de vleugel"** → r13: slierten r12 met meer boog, flinke overlap, ≥ 1 px lucht tot de vleugel.
+- Jordi over r13: **"doe maar, maar de aansluiting op het hoofd moet iets dikker"** → r14: krullen ±7×7 met gat ≥ 2×2, voet van de pluk ±4–5 px breed en taps.
+- Jordi over r14: **"ja ga maar verder"** → slierten akkoord; naar onafhankelijke keuring van de hele sprite.

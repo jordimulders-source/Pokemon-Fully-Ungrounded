@@ -1,0 +1,12 @@
+1 stafkop lichtkant: 6 px
+2 buik schaduwkant: 19 px
+2 staf licht links: 28 px
+3 open randen: 59 px
+4 paarse puntjes: 8 px
+5 borst: 4 px
+5 hand: 4 px
+9 flank rechts: 1 px
+9 kop links: 5 px
+9 vleugelwortel: 1 px
+totaal gewijzigd: 135 px; silhouet erbij 2 eraf 10
+open randen na reparatie: 0

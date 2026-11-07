@@ -1,0 +1,13 @@
+px 1528; korrels buiten de oren: 0; binnen de oren (de kamtanden): 23 uit, 24 in, 19 tanden
+massa poppetje (buiten kop, oren, poten): 10 afwijkingen, waarvan > 1 px van de 50%-grens: 0
+   -x10 y14 (dekking 0.51)
+   -x11 y15 (dekking 0.90)
+   -x12 y15 (dekking 0.58)
+   +x45 y21 (dekking 0.11)
+   +x44 y22 (dekking 0.49)
+   +x59 y22 (dekking 0.15)
+   -x12 y27 (dekking 0.52)
+   +x37 y27 (dekking 0.27)
+   -x8 y31 (dekking 0.52)
+   +x50 y33 (dekking 0.44)
+componenten (8-buren): 1

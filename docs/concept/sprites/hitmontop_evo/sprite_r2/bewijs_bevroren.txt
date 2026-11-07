@@ -1,0 +1,4 @@
+bevroren pixels: 368  verschillen: 0
+[]
+png-controle r1 (x,y) vs r2 (x,y-1): 368 bevroren pixels, 0 verschillen
+palet gelijk: True

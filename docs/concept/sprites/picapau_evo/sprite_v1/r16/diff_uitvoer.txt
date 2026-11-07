@@ -1,0 +1,8 @@
+diff r16 tegen r15: 5 px veranderd
+zone 1-kopstrook-restje: 3 px: 19,7:1>2 18,8:1>2 19,8:1>2
+zone 2-onderrand-tussen-de-poten: 2 px: 20,39:k>2 21,39:k>2
+buiten de zones: 0 px
+snavel P5 (36 px): 2 px verschil
+snavel zelf, rij 9-13 (32 px): 0 px verschil; rij 8 (voorhoofd boven de snavel, op verzoek gewijzigd): 2 px
+slierten (97 px): 0 px verschil
+omtrek veranderd (transparant <-> gevuld) per zone: 

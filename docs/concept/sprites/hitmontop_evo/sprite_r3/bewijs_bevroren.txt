@@ -1,0 +1,4 @@
+Bevroren (gezicht met mond en wenkbrauwen, steunarm, cordão; zonder de vrijgegeven delen): 301 pixels, 0 verschillen in raster.txt, 0 in de png-indexen []
+Alle verschillen r2 -> r3 liggen binnen de opdrachtzones {'haar+hoorn': (8, 36, 19, 36), 'vrije arm/hand': (36, 51, 14, 30), 'voeten+benen': (24, 63, 0, 17), 'romprand': (31, 41, 23, 39), 'linkeroog': (9, 15, 33, 38), 'polsband+staartje': (33, 39, 47, 54)}; daarbuiten: 0
+Let op: paletindex c en e kregen nieuwe kleuren (haar); geen bevroren pixel gebruikt c of e.
+Kleuren in bevroren pixels: 12345abf

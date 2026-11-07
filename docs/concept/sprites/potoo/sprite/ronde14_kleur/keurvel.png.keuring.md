@@ -1,0 +1,14 @@
+# Keuring (zelfvergelijking van de maker, géén eindoordeel)
+- Bron: bron/bron_leidraad.png (linkerhelft duo, gespiegeld), bron/bron_ineen.png (gespiegeld), bron/bron_tak.png (gespiegeld), bron/bron_rug.png, referenties/grote_snavels_studie.png
+- Bekeken op 8× en 1× (licht/donker) + close-ups kop/muil (8,8–32,32) en lijf/staart (14,28–51,62)
+- Per onderdeel (lijkt op <bron> / wijkt af in <x>):
+  - muil: lijkt op de leidraad in de wijde U met de punt onderaan, donker achterin bij de mondhoek (keelspleet 3 px, zoals de spleetjes op de foto) en lichter op de kaakbodem; lichte lip langs de verre kaak (D) zoals de lichte rand links op de foto. Wijkt af in: de kleur (geestblauw/paars i.p.v. roze, bewust); het verhemelte vangt licht (Jordi) waar de foto daar juist donkerder is; de diepe keel is een vrij groot donker vlak.
+  - bovensnavel/haak: lijkt op de snavelstudie (eigen hoornkleur, donkere outline, haak = uiteinde van de plaat, punt donkerder en terug gekruld). Wijkt af in: op 1× is de haak klein (3×4 px); de hoornplaat (7) is grijsbruin en ligt qua helderheid dicht bij de schorsstreepjes.
+  - halsrand: lijkt op de foto's (rand van de gezichtsschijf van onder het oog langs de muil omlaag), nu zonder zwarte lijn: tint 3 met 1 px schaduw 4 erachter en een lichte kaakrand (6) aan de muilkant. Wijkt af in: leest op 8× nog steeds als één lijn, niet als rafelige verenkraag.
+  - oog: ongewijzigd, puur zwart, geen glans of lichte rand; wenkbrauwschaduw (4) erboven, borstelveertjes (4) tussen oog en snavel.
+  - kop: licht linksboven (6 → 5 → 4 → 3 naar achter/rechts), selout 2 aan de lichtkant, zwart aan de schaduwkant (één wisselpunt). Wijkt af in: de schorsstreepjes (7) op kruin en nek lezen als losse staafjes.
+  - vleugel: eigen vlak van schouder tot over de staart, voorrand 2 + lichte rand 5, dekveren (korte 3-strepen), pennen met lijnen 3 en schaduw F aan de achterrand, veren alleen bovenaan belicht. Wijkt af in: de lange evenwijdige lijnen lezen als planken; de vleugelpunten over de staart zijn niet als punten te zien.
+  - zitplek: donkere takschaduwlijn (2) onder de borst, borst bolt erboven (licht 6 linksboven, 4/3 sikkel onderaan). Wijkt af in: de lijn loopt alleen over de borst; zonder tak leest het eerder als een "riem" dan als een tak.
+  - staart: begint onder de takschaduw, dwarsbanden (3), lichte linkerrand. Wijkt af in: banden zijn recht; één grijsbruin vlekje leest als vuil.
+  - schaduw: overal 2–3 tonen per vlak met licht linksboven; borst en wang niet meer vlak. Wijkt af in: het lijf blijft (bewust, C2) laag in contrast; naast Taillow bleek.
+- Oordeel: open — onafhankelijke keuring door de coördinator.

@@ -1,0 +1,14 @@
+# Keuring (zelfvergelijking van de maker, géén eindoordeel)
+- Bron: bron/bron_leidraad.png (linkerhelft duo, gespiegeld), bron/bron_ineen.png, bron/bron_tak.png, bron/bron_rug.png, referenties/grote_snavels_studie.png
+- Bekeken op 8× en 1× (licht/donker) + close-ups kop/muil (8,4–34,34) en lijf/staart (14,28–51,62)
+- Per onderdeel (lijkt op <bron> / wijkt af in <x>):
+  - muil (176 px 9/A/B/D + keelgat 7 px in 1): lijkt op de leidraad: donker dak, diepste keelgat achterin, lichte bodem als eigen massa linksonder, lippen langs beide kaken, slagschaduw onder de mondtop. Wijkt af in: de lichte bodem leest op 8× ook als "tong"; het keelgat is een klein koepeltje van 7 px.
+  - oog: rond 5×5, puur zwart; eronder 2 px veren in 5 en 4 (geen fel wit meer). Wijkt af in: niets nieuws.
+  - borstelveertjes: tuftje vóór het oog (15–16,7 + 16,8, tint 4) en boven het oog (21–22,5, tint 5). Wijkt af in: op 1× nauwelijks zichtbaar.
+  - kop/mantel: groter 5-vlak, 4 als smalle sikkel, 3 alleen tegen de rechter buitenlijn. Wijkt af in: de 3-pixels langs de rand zijn een trap van losse pixels.
+  - halsrand: gebogen kraag van 2–3 px (3 bovenaan, 4 eronder) met kartels (4) in de borst, rechts doorlopend in de mantelgrens (30–32,28–29). Wijkt af in: de kartels zijn klein; de kraag leest als lichte band.
+  - vleugel: pennen krommen licht (L1 x37→36, L2 x41→40), zijn op twee plekken onderbroken en eindigen met ronde punten op y47, y52 en y56, met schaduw onder de punten. Wijkt af in: nog steeds vrij recht en blokkig.
+  - zitplek: buik onderaan afgerond (5→4→3→2), teenhint (26–27,43 + 27,44 in 4, 29–30,43 in 3). Wijkt af in: de tenen zijn op 1× bijna niet te zien.
+  - staart: lichte linkerkant, losse gebogen bandjes, schorsvlekken. Wijkt af in: de vlekken zijn nog altijd hoekjes.
+  - spikkels: 5 groepjes van 3 px in eigen koele grijsbruine tint (C), los van de warme hoorn (7). Wijkt af in: ze hebben alle 5 dezelfde L-vorm.
+- Oordeel: open — onafhankelijke keuring door de coördinator.

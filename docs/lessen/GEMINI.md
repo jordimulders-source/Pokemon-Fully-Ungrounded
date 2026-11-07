@@ -1,13 +1,12 @@
-# Sprites vanaf een Gemini-ontwerp
+# Sprites vanaf een Gemini-ontwerp (Jordi, 7 nov: "pas de regels maar aan voor gemini modellen die sprites gemaakt worden")
 
 **Eerst:** `SPRITE_WERKWIJZE.md` → "Gemini-model namaken" (poedelmot/poedellarve: meetgereedschap px.py/box1x/lijnkaart vanaf ronde 1, één keurder met alleen de twee eisen, 8× naar Jordi, verse maker > ±400k tokens). Dit bestand vult aan.
- (Jordi, 7 nov: "pas de regels maar aan voor gemini modellen die sprites gemaakt worden")
 
 Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in plaats van** stap 1–3 van `SPRITE_KERN.md` (ontwerp, bron, silhouet). De rest van SPRITE_KERN (netheid, belijning, ogen, keurslot) blijft gelden.
 
 ## Ontwerp in Gemini
 - Claude schrijft de prompt (Engels); Jordi plakt hem in Gemini en stuurt het resultaat. Voorbeeld en rondes: `docs/concept/sprites/viscacha/gemini/README.md`.
-- Vast in elke prompt: echte diersoort als anatomie (foto meesturen), "official Gen 5 front sprite", 3/4 naar links, geen elektriciteit/gloed/effecten, **geen rots/ondergrond/schaduw**, witte achtergrond, ≤16 kleuren, 64×64, een AVOID-regel (Neopets/knuffel, konijn, enz.).
+- Vast in elke prompt: echte diersoort als anatomie (foto meesturen), "official Gen 3 front sprite (Ruby/Sapphire/Emerald style)" (Jordi, 7 nov: Gen 3, niet Gen 5; Gen 5 is 96×96 en botst met 64×64/≤16 kleuren), 3/4 naar links, geen elektriciteit/gloed/effecten, **geen rots/ondergrond/schaduw**, witte achtergrond, ≤16 kleuren, 64×64, een AVOID-regel (Neopets/knuffel, konijn, enz.).
 - **Gemini is slecht in verbeteren:** korte bijstuurfeedback werkt hooguit 1–2 keer; daarna drijft hij af (viscacha werd Raichu). Beter: de beste versie als bijlage in een **nieuw gesprek** met een nieuwe startprompt.
 - "Meer Pokémon"/"cuter" laat Gemini naar bekende soorten glijden (Pikachu/Raichu); noem expliciet wat níet mag lijken.
 - Jordi's keuze = **bevroren ontwerp**: pose, verhoudingen (kopgrootte, oren), kenmerken en kleuren. Opslaan als `referenties/gemini_gekozen_*.png`, feedback per ronde in `gemini/README.md`, Jordi letterlijk in SPEC.
@@ -29,3 +28,7 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 - **Viscacha af in 8 rondes** (7 nov): r1–r6 tekenden op het oog en hielden vast; r7–r8 met de poedelmot-methode (verse maker, meetgereedschap, Claude stuurt benoemde reparaties na het vel, één keurder met de twee eisen, daarna DFC-eindkeuring) gaven in 2 rondes PASS en "erg goed". Begin dus meteen zo.
 - **Gen 3 boven het model voor licht en contrast** (viscacha r9, Jordi "perfect, doe maar"): een Gemini-model is vaak vlak (weinig contrast, geen hooglicht, lichtrichting wisselend). Na de vormkeuring mag een kleurronde naar Gen 3 (stappen ±30–40, hooglicht linksboven, verre ledematen donkerder) zonder het ontwerp te veranderen; vraag het Jordi.
 - **Een rug/romp die in het model vlak is mag bol** als Jordi het vraagt; trapjes in een regelmatig curvepatroon (2‑3‑5 / 5‑3‑2‑1‑1), geen herhaalde gelijke trappen. Jordi's krabbel (rode lijn/stip) schalen en op het raster leggen om pixels te vinden.
+
+- **Consistent ontwerp = goede prompt** (Jordi, 7 nov, hatun runa): echte soort + kenmerken + gedrag (de kiskadie die "bem-te-vi" roept en afzet naar een insect) gaf over gesprekken heen steeds hetzelfde dier. Gedrag als pose-bron werkt beter dan "dynamic pose".
+- **Geen details onder sprite-schaal vragen:** een rij symbolen/tocapu in een streep van 3 px werd losse icoontjes en is niet naar 64×64 te vertalen (Jordi). Patronen pas als groot vlak, of zelf in de pixels.
+- Woorden als "headband/braided" + wit/rood geven een Japanse hachimaki; beschrijf een cultuurverwijzing als verenvlak, niet als voorwerp.

@@ -1,0 +1,161 @@
+# r15 reparaties op r14, met de hand. Per regel "rij kolom pixels"; '.' = laat staan, '_' = transparant.
+# Zone-kopjes "@ naam x0 x1 y0 y1" gebruikt bouw_r15.py voor de diff per zone.
+
+@ 1-voeten 11 27 39 48
+# verre poot (hoger, achter, kleiner, schaduwtint G): twee teentjes met klauwpunt, geen rechte lijn op y40
+39 12 __kGGGkkkkk
+40 11 __kGkGGk_kgg
+41 11 ___k_kk__
+# nabije poot (lager, groter): tarsus x21-23 (r14), dan drie tenen naar voren met klauwen (G + k)
+# T1 links (klauw 16,47-48), T2 midden omlaag (klauw 21,47-48), T3 rechtsonder (klauw 24,47-48)
+43 13 _____kkggGkk3k
+44 13 ___kkggggGGkkk
+45 14 __kgggGGggGk
+46 14 _kgGGkkGkGG
+47 14 _kGk__kGkkG
+48 16 k____k__k
+
+@ 2-buik 10 29 14 35
+16 18 eaaaaabb
+17 17 eaaaaaabb
+18 15 eaaaaaaaabbb
+19 13 eeaaaaaaaaabbbe
+20 12 eaaaaaaaaaaabbbe
+21 11 eaaaaaaaaaaabbbbe
+22 11 eaaaaaaaaaaabbbee
+23 10 eaaaaaaaaaaabbbbee
+24 10 eaaaaaaaaaabbbbeee
+25 10 eaaaaaaaaabbbbeee
+26 10 eaaaaaaabbbbbbeee
+27 10 ebaaaaabbbbbbbeee
+28 10 ebaaabbbbbbbbeee
+29 10 ebbabbbbbbbbbeee
+30 11 ebbbbbbbbbbeee
+31 11 ebbbbbbbbbbeee
+32 12 ebbbbbbbbeee
+33 13 kbbbbbbeee
+34 14 kbbbbeee
+
+@ 3-vleugelvoorrand 30 46 12 31
+# glans '2' alleen bij de pols (rij 12-15); de rest van de voorrand één tint '3'; binnenlijn '4' als bolle boog (breed in het midden)
+12 45 2
+13 44 2
+14 42 23334
+15 40 233334
+16 38 33333334
+17 37 33333334
+18 36 33333334
+19 34 333333334
+20 33 333333334
+21 31 333333334
+22 31 33333334
+23 31 3333334
+24 31 333333
+25 31 333334v
+26 32 3
+27 32 3334v
+28 31 3334v
+29 31 3334v
+30 32 334
+31 32 33
+
+@ 4-kop 19 29 3 13
+3 24 2
+4 20 2111
+5 19 22112
+6 19 22
+7 20 2
+7 28 3
+8 27 33
+9 27 33
+13 24 3
+
+@ 5-bliksem 0 14 36 45
+36 0 __2222yykk
+37 0 _2yyyyy1k_
+38 0 _2yyyy1k__
+39 0 _kk2yy1k__
+40 0 ____2yy1k___
+41 0 _____2yy1k___
+42 0 ______2yy1k__
+43 0 _______2yy1k_
+44 0 ________2y11k_
+45 9 2111k_
+
+@ 6-wang 23 28 10 12
+10 23 2ccc33
+11 23 2cccCC3
+12 23 2cCC33
+
+@ 7-stippen 36 52 13 30
+# rond: 2x2 kern a + sikkel e rechtsonder (aa. / aae / .ee); A
+13 49 aav
+14 49 aae
+15 50 ee
+# B (was 2x2 op 42-43,18-19, nu in de voorrand: weg en naar 45,17)
+17 45 aa
+18 44 vaae
+19 43 vvvee
+# C (was plus rond 48,20; nu 50,19)
+19 48 vv
+19 50 aa
+20 47 vvvaae
+21 47 v
+21 51 ee
+# D (plus rond 44,23 -> 43,22)
+22 43 aa
+23 43 aae
+24 44 ee
+# E (was 2x2 op 35-36,24-25 in de voorrand; nu 47,24)
+24 47 aa
+25 47 aae
+26 48 ee
+# F (2x2 op 40-41,26-27 houdt zijn plek, krijgt de sikkel)
+27 42 e
+28 41 ee
+# G (plus rond 37,29 -> 36,28)
+28 36 aa
+29 36 aae
+30 37 ee
+
+@ 8-staartlus 11 28 48 60
+48 11 k
+49 11 k
+50 11 k
+54 13 _
+55 14 _
+56 15 _
+57 17 _
+59 20 _
+60 22 _
+
+@ 9-verre-vleugel-en-keel 8 18 4 17
+# verre vleugel: twee veertoppen (11,2) en (8,6) met een inkeping op (9,5), scheidingslijn '4' van de inkeping naar (13,9)
+4 13 v
+5 9 _43vvvk
+6 9 334vvv4
+7 10 3v4vvv4
+# keel onder de snavel in kastanje (was een donkere vleugelvlek)
+14 14 33333
+15 14 22233
+16 15 223
+17 16 3
+
+@ 10-netheid 23 62 4 49
+# oog: grijze randpixels zwart
+6 23 k
+7 25 k
+# handpennen: lichte randen verschillend lang en taps
+8 53 v
+9 52 v
+10 50 vv
+10 56 v
+11 54 vv
+12 52 vvv
+13 56 v
+# steunstaart: vlakjes samenvoegen
+45 28 3
+46 28 3
+47 32 v
+48 32 v
+49 31 v

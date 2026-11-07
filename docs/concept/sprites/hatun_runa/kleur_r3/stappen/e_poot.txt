@@ -1,0 +1,7 @@
+# pootjes: tenen met grijsbruine highlight E (model 128,102,82); verre poot 1 highlight; bek-donkerrood -> 3 (model 118,57,42)
+57: 30=1221 37=121
+58: 31=121 37=1221
+59: 30=1E21 36=1EE1
+60: 30=12121 36=1E221
+61: 32=11 37=111
+51: 14=3 16=3

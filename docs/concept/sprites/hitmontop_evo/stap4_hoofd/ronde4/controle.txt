@@ -1,0 +1,3 @@
+optie_A: 27 gr tegen de klok in, knot op de kruin om de kleine punt | buiten zone anders: 0 | zone (x0,y0,x1,y1) (4, 22, 29, 46) (oud hoofd 169 px, nieuw hoofd 375 px)
+optie_B: 42 gr tegen de klok in, knot op de kruin om de kleine punt | buiten zone anders: 0 | zone (x0,y0,x1,y1) (3, 24, 29, 46) (oud hoofd 169 px, nieuw hoofd 368 px)
+optie_C: 27 gr tegen de klok in, punt door het haar, knot achterop (links) | buiten zone anders: 0 | zone (x0,y0,x1,y1) (1, 24, 29, 46) (oud hoofd 169 px, nieuw hoofd 386 px)

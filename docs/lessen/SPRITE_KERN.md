@@ -13,22 +13,33 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 5. **Claude kijkt zelf** op 8× naast Taillow, dan een **verse onafhankelijke keurder** (oordeelt eerst blind). Pas dan naar Jordi, met alleen de sprite.
 6. Eerst alleen ontwerp + frontsprite. Frame 2, rug, icoon, shiny, naam en data komen **later voor alle soorten samen**.
 
+7. **Vastgelopen? Draft + kleine stapjes** (poedelmot 6 nov, Jordi: "als we zo telkens met kleine stapjes werken komen we er wel"): na 2 mislukte model-/silhouetrondes meteen een gekleurde draft-sprite maken en die per onderdeel met Jordi verbeteren (één onderdeel per ronde, diff 0 erbuiten, onderdeel eerst op de bronfoto beschrijven, dan tekenen).
+
+8. **Schets van Jordi = grens, en Claude meet zelf** (poedelmot 6 nov: "ik heb cirkels getekend met de vraag of je daar binnen wil blijven"): omcirkelde vormen zijn de ruimte waarbinnen het onderdeel moet blijven; leg de schets over het resultaat en tel zelf de pixels erbuiten vóór je iets stuurt. Geloof een makerrapport ("bult is weg") nooit zonder eigen meting.
+
 ## Harde regels (elke ronde controleren)
 - **Goedgekeurd = bevroren**: pixeldiff 0 buiten de opdrachtzone, met script bewezen. Wat Jordi goedkeurde nooit herbouwen.
 - **Jordi's woorden letterlijk** in SPEC en opdracht; nieuwe opmerking vult aan. Twijfelt Jordi: **eerst vragen wat hij ziet**, niet gokken. Bij twijfel over de omvang van een wijziging: vragen.
+- **Geen eigen kenmerken in de opdracht** (poedelmot 5 nov: "dun", "snuitvlak", "niet 3/4" waren van Claude, niet van Jordi): zet in een makeropdracht alleen wat Jordi zei of wat de bron toont; een eigen idee heet expliciet "voorstel Claude". Lees Jordi's zin twee keer vóór je hem samenvat.
 - **Model of keuze niet ongevraagd veranderen**; een idee = variant náást de gekozen versie.
 - **Zelfgenoemd zwak punt = terug**, niet opleveren. Reparaties via de maker; daarna opnieuw keuren.
 - **Toets de hoofdvraag eerst** (pose, kop, leest het als Pokémon op 1×?), pas daarna getallen (overlap, px). Groene getallen ≠ goed beeld.
 - Een pose-probleem los je nooit op met kleurrondes.
+- **Model alleen tot de richting staat** (picapau-evo, 6 nov, Jordi: "laten we een sprite gaan maken, dat is makkelijker te editen" · "en model vertaalt toch altijd weer anders naar een sprite"): zodra pose en massa kloppen, naar de sprite; vorm-details (buikcurve, maat van de bliksem, oren) in de sprite oplossen, geen extra modelrondes.
+- **Ook bij een poseprobleem na "maak een sprite" niet terug naar het model** (picapau-evo, 6 nov: twee extra poseproeven na Jordi's "laten we een sprite gaan maken" → "ga gewoon een sprite maken aub" · "zitten we weer uren aan het model te werken"): draai/leun in de sprite zelf, of vraag Jordi eerst.
+- **Snavel en dunne delen niet vóór een donker vlak** (picapau-evo, 7 nov: 6 snavelrondes faalden doordat de snavel vóór de donkere verre vleugel lag; echte sprites zetten hem tegen lucht of een licht vlak). Bij twijfel: een vel met 4–6 probeersels van alleen het hoofd ("doe wat probeersels en toon me"), Jordi kiest.
 
 ## Hoe een Gen 3-sprite eruitziet (meetbaar)
 - 3/4 naar links-voor, kop draait meer naar de kijker dan het lijf; ronde kop als eigen vorm; één oog bij een snavel/snuit opzij.
 - **Netheid**: per kleurgroep ≤ 3 tinten + omlijning; geen tintvlakjes < 3 px (clusterscript) behalve glans; grenzen als vloeiende curven, geen trapjes, geen banding (tinten parallel aan de rand), geen pillow shading; licht linksboven, schaduw als sikkel die de vorm volgt.
 - **Contrast**: helderheidsstappen meten tegen Taillow (±30–40 per tint).
 - **Belijning**: buitenlijn 1 px; zwart alleen aan de schaduwkant, gekleurde selout aan de lichtkant; **nooit zwart en donkerlila om en om op één rand**; binnenlijnen alleen waar vorm over vorm valt, in een donkere tint van het vlak, taps; geen open randen, geen lichte kleur op de buitenrand.
+- **Stuurt Jordi een referentie, dan is díe de hoofdbron** (picapau-evo, 6 nov: Gen 3 Raichu gepakt i.p.v. zijn Gen 1 → "nee de gen 1 raichu sprite moet je ook naar kijken"); andere sprites alleen als aanvulling.
 - **Ogen**: neem een oog pixel voor pixel over van een echte sprite (zelf tekenen of opblazen geeft "geen Pokémon-oog"/"monster").
 - **Pootjes/ledematen**: in perspectief (verre hoger en achter, nooit op één lijn naast elkaar), omlijnd, verre in schaduwtint; kleine vogelpootjes echt klein.
 - **Vorm**: geen rechte stukken waar het dier rond is (buikrand!), geen knikken; snavel/dunne delen ≥ 2 px als het moet lezen.
 
 ## Zuinig
 Eén maker per sprite (SendMessage), één keurder, kleine vellen, commit en push na elke ronde. Max 3–4 agents.
+- Een verkleinde 3D-render per script kwantiseren is geen sprite (Hitmontop-evo, 6 nov: "lachwekkend slecht"): ook als Jordi "zelf, zonder agents" zegt, blijft kleur handwerk op een raster na een studie van de echte sprite (Hitmontop/Hitmonlee).
+- **Gemini als bron (potoo, 6 nov):** vraag je meerdere wijzigingen tegelijk, dan tekent Gemini een heel nieuw beeld (stijl, oog en snavel kwijt). Eén wijziging per prompt, of de beste versie als bestand nemen en zelf bewerken (oprekken, tak weg, spiegelen).

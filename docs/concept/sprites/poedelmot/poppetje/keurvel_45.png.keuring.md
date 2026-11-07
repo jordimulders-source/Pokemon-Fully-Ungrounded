@@ -1,0 +1,14 @@
+# Keuring (eigen keuring door de maker; nog geen onafhankelijke keurder)
+- Bron: poppetje_45.png, referenties/foto_tak_katoen.webp, graphics/pokemon/butterfree, venomoth, volbeat (anim_front, frame 1)
+- Werk: poppetje_45_1x.png (praatplaat op 45°, verkleind naar 64×64; dit is geen sprite)
+- Bekeken op 8× en 1× (licht en donker) + close-ups (kop 8,4–56,34; poten 4,30–60,62)
+- Per onderdeel (lijkt op <bron> / wijkt af in <x>):
+  - **Zithouding:** lijkt op de tak-foto (rechtop, lijf en kop één dikke wolmassa, poten ervoor op de grond) / wijkt af: het lijf staat iets hoger op de poten dan op de foto, waar de wol bijna op de tak ligt.
+  - **Kop:** lijkt op Volbeat/Illumise in verhouding (47% van de hoogte zonder vleugels; posestudie ±45%), groot en rond, draait naar de kijker / wijkt af: de kraag tussen kop en lijf leest alleen als lijntjes, zonder duidelijke inkeping in de omtrek.
+  - **Ogen:** lijken op de tak-foto/Venomoth (groot, bol, donker, glans) en zitten niet tegen elkaar / geen afwijking gezien.
+  - **Snuit:** bruin vlak tussen en onder de ogen, zoals op de foto / wijkt af: op 1× een bruin vlekje; leest nog wat als neus.
+  - **Sprieten:** kam met schacht en tanden, opzij als oren, licht omhoog gekruld / wijken af: op 1× dichtgelopen bruine driehoeken (verwacht, de tanden komen in de pixelstap). Het verre oor valt half voor de verre vleugel.
+  - **Poten (6):** dik en wollig over de hele lengte, met pompons. Het voorpaar is het grootst en staat voor de borst, het middenpaar opzij, het achterpaar grotendeels verborgen; ±5 te zien / wijken af: de pompons staan bijna op één lijn onderaan (het perspectief verre-hoger is zwak, alleen 8° pitch). De knik dij-scheen leest weinig.
+  - **Vleugels:** lijken op Butterfree in 3/4 (nabij paar groot rechts, voor- en achtervleugel overlappen tot één vorm, achtervleugel goed zichtbaar; voorvleugel lang, smal, spits) / wijken af: **de verre voorvleugel steekt links boven het verre oor uit, boven de lijn van de kop** (geen punt recht boven de kop, maar wel hoger dan de kop). De verre achtervleugel is nauwelijks te zien.
+  - **Kader:** vult het 1×-kader breder dan Butterfree/Venomoth / dat is goed voor een eindvorm; geen afwijking.
+- Oordeel: FAIL (verre voorvleugel hoger dan de kop; kraag zonder inkeping; pompons bijna op één lijn)

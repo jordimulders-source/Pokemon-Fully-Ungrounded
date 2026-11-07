@@ -1,0 +1,13 @@
+pixeldiff tegen ronde 3 B: 226 px, waarvan buiten de pootzone: 0
+clusters < 3 px buiten de ogen (tint, [(x,y)]): 9
+   (np.str_('2'), [(np.int64(39), np.int64(54))])
+   (np.str_('3'), [(np.int64(41), np.int64(53)), (np.int64(40), np.int64(54))])
+   (np.str_('4'), [(np.int64(11), np.int64(52)), (np.int64(10), np.int64(53))])
+   (np.str_('5'), [(np.int64(9), np.int64(52)), (np.int64(10), np.int64(52))])
+   (np.str_('5'), [(np.int64(39), np.int64(52)), (np.int64(40), np.int64(52))])
+   (np.str_('6'), [(np.int64(15), np.int64(45)), (np.int64(15), np.int64(46))])
+   (np.str_('6'), [(np.int64(31), np.int64(45)), (np.int64(32), np.int64(46))])
+   (np.str_('6'), [(np.int64(15), np.int64(53)), (np.int64(16), np.int64(53))])
+   (np.str_('6'), [(np.int64(29), np.int64(53)), (np.int64(30), np.int64(53))])
+buitenrand niet in omlijningskleur (1, 2, b): 0 []
+kleuren: 13 + transparant

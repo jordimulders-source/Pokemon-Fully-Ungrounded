@@ -560,3 +560,30 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.139] - Les: changelog na main nummeren
 - `docs/lessen/AGENTS.md`: vóór het pushen naar `main` eerst `main` mergen en de eigen changelogsecties achteraan nummeren (Jordi).
+
+### [v0.0.18] - Olinguito v2: eerste schets
+- Nieuwe start op Jordi's aanpak: meer echte olinguito, sinister, iets langere snuit, donker masker, 2 lange klauwen (Linoone), pose naar de boomfoto. Twee schetsen (staart omhoog/omlaag) met silhouet in `docs/concept/ontwerp/olinguito_v2/`, plus Jordi's referenties. Nog geen pixels.
+
+### [v0.0.19] - Olinguito v2: ronde 2
+- Staart omhoog gekozen. Profiel met één oog en één dominant oor, dunnere staart, kortere snuit (langer pas bij de coati), zacht masker i.p.v. wasbeerband, Linoone-klauwen, achterpoten onder het lijf naar voren, geen buikvlak. `docs/concept/ontwerp/olinguito_v2/schetsen_v2.png`.
+
+### [v0.0.20] - Olinguito v2: ronde 3
+- Rondere kop, langere staart (boog terug over de rug), asymmetrische poten zoals op de boomfoto (één voorpoot gestrekt, één opgetild; één achterpoot opgetrokken, één gestrekt). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde3.png`.
+
+### [v0.0.21] - Olinguito v2: ronde 4
+- Veel kleiner oog, kop in 3/4 naar de kijker (snuit uit het midden van het gezicht), groter oor. `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde4.png`.
+
+### [v0.0.22] - Olinguito v2: ronde 5
+- Kopvorm naar Jordi's foto: druppel met ronde schedel en spitse snuit, warmbruine kruin, grijs gezicht, donkere streep langs het oog, oor met donkere rand. `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde5.png`.
+
+### [v0.0.23] - Olinguito v2: ronde 6
+- Kop overgetrokken van Jordi's foto (neus omlaag, oog laag, hoog voorhoofd, oor bovenop), kleiner lijf, poten verder naar voren onder het lijf, roze voeten. `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde6.png`.
+
+### [v0.0.24] - Olinguito v2: ronde 7
+- Pose diagonaler (diepte: borst dichtbij, romp ver weg), poten elk in een andere fase van de stap, zwart masker oog-tot-oog zoals Patrat (alleen rond het oog). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde7.png`.
+
+### [v0.0.25] - Olinguito v2: ronde 8
+- Achterpoten gehurkt zoals op de foto's (dikke gevouwen dij, lage hak, platte voet naar voren). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde8.png`.
+
+### [v0.0.26] - Olinguito v2: ontwerp gekozen
+- Na schetsrondes 5–11 en een 3D-poppetje (`docs/concept/ontwerp/olinguito_v2/scripts/pop3d.py`: bollen/ellipsoïden met kijkhoek, textuur voor masker/snoet) koos Jordi het ontwerp: driekwart op 52°, kop naar de foto, Zigzagoon-masker met duister oog, grijsbruine snoet, Linoone-klauwen, gehurkte achterpoten, lange staart dicht op het lijf. Vastgelegd in `ONTWERP.md` + `ONTWERP_GEKOZEN.png`.

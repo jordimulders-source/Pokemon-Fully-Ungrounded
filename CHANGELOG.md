@@ -870,3 +870,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.214] - Overzichtsvel nieuwe Pokémon
 - `docs/concept/sprites/showcase/frontsprites_af.png`: alle 24 afgemaakte frontsprites met typesymbolen; starters voorop, dan Cuyby/Cuychu; ronde namen tussen aanhalingstekens (Jordi). Nieuw erbij: viscacha (Electric), hatun runa (Normal/Flying), potoo (Ghost/Normal).
+
+### [v0.0.215] - Werknamen in CLAUDE.md, naar main
+- Werknamen in Stand van zaken gezet, zodat nieuwe sessies weten wie Jordi bedoelt; alles naar `main` (Jordi).

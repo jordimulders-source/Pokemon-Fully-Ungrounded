@@ -815,3 +815,11 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Blender-modellen C1–C3 ("alien", ei-lijf) → r4/r5 grote vogel → poseproeven r6pose/r7pose (3/4 zoals Pidgeot, achterover). Sprite r1–r16 met de hand overgetrokken; snavel na 6 probeersels: P5 (Staravia-opbouw in grijs); slierten r11–r14 uit één voet, overlappend.
 - Onafhankelijke keuring r14 FAIL (10 reparaties) → r15 → r16 PASS; Jordi: "helemaal prima". Eindversie `af/picapau_evo.png` (+ `normal.pal`). Naam nog open.
 - Lessen in `docs/lessen/SPRITE_KERN.md`: Jordi's referentie is de hoofdbron; model alleen tot de richting staat; na "maak een sprite" niet terug naar het model; snavel/dunne delen niet tegen een donker vlak.
+
+### [v0.0.140] - Viscacha: Gemini-basis gekozen
+- Prompt voor Gemini opgesteld (Electric zonder elektriciteit, echte viscacha-anatomie, actieve pose, geen ondergrond); 5 rondes. Ronde 3 wordt het startpunt van een nieuwe prompt (woestijnkleur, energieker ontwerp). Referenties en feedback: `docs/concept/sprites/viscacha/gemini/`.
+- Ronde 6 (nieuwe startprompt met ronde 3 als bijlage, woestijnkleur en energieker ontwerp) gekozen als ontwerpreferentie: `docs/concept/sprites/viscacha/referenties/gemini_gekozen_ronde6.png`.
+
+### [v0.0.141] - Spriteregels voor Gemini-ontwerpen
+- Nieuw `docs/lessen/GEMINI.md` (Jordi: "pas de regels maar aan voor gemini modellen die sprites gemaakt worden"): Jordi's Gemini-keuze is het bevroren ontwerp; de sprite is een trouwe vertaling (kwantiseren als onderlaag mag, daarna met de hand opschonen); de keurder toetst trouw + techniek, ontwerppunten zijn geen FAIL; promptlessen (nieuw gesprek i.p.v. bijsturen, geen ondergrond, benoemen wat niet mag lijken). Verwijzing in `SPRITE_KERN.md` en `CLAUDE.md`.
+- Viscacha: kleur ronde 1 en 2 door keurders afgekeurd (wangpluk leest als kraag, contour, toonvlakken); ronde 3 volgens de nieuwe regels.

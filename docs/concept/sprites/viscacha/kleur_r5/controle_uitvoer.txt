@@ -1,0 +1,54 @@
+silhouetwijzigingen t.o.v. r4: 41
+   (3,25) erbij  zone a gele pluk (voorhoofd/neusrug)
+   (4,25) erbij  zone a gele pluk (voorhoofd/neusrug)
+   (1,26) erbij  zone a gele pluk (voorhoofd/neusrug)
+   (35,26) erbij  zone g rug: vachtpiek terug (Gemini-masker)
+   (36,26) erbij  zone g rug: vachtpiek terug (Gemini-masker)
+   (37,26) erbij  zone g rug: vachtpiek terug (Gemini-masker)
+   (38,26) erbij  zone g rug: vachtpiek terug (Gemini-masker)
+   (34,27) erbij  zone g rug: vachtpiek terug (Gemini-masker)
+   (35,27) erbij  zone g rug: vachtpiek terug (Gemini-masker)
+   (36,27) erbij  zone g rug: vachtpiek terug (Gemini-masker)
+   (37,27) erbij  zone g rug: vachtpiek terug (Gemini-masker)
+   (60,28) erbij  zone h staart en voet terug naar Gemini-masker
+   (1,29) weg  zone b snuit/neus/mond
+   (40,29) weg  zone g rug: vachtpiek terug (Gemini-masker)
+   (61,29) erbij  zone h staart en voet terug naar Gemini-masker
+   (42,30) weg  zone g rug: vachtpiek terug (Gemini-masker)
+   (2,31) erbij  zone b snuit/neus/mond
+   (0,32) erbij  zone d snorharen
+   (1,32) erbij  zone d snorharen
+   (43,32) weg  zone g rug: vachtpiek terug (Gemini-masker)
+   (44,32) weg  zone g rug: vachtpiek terug (Gemini-masker)
+   (0,33) erbij  zone d snorharen
+   (44,33) weg  zone g rug: vachtpiek terug (Gemini-masker)
+   (2,34) erbij  zone d snorharen
+   (0,35) erbij  zone d snorharen
+   (1,35) erbij  zone d snorharen
+   (0,36) erbij  zone d snorharen
+   (3,36) erbij  zone d snorharen
+   (2,37) erbij  zone d snorharen
+   (1,38) erbij  zone d snorharen
+   (0,39) erbij  zone d snorharen
+   (54,47) erbij  zone h staart en voet terug naar Gemini-masker
+   (55,47) erbij  zone h staart en voet terug naar Gemini-masker
+   (56,47) erbij  zone h staart en voet terug naar Gemini-masker
+   (50,48) erbij  zone h staart en voet terug naar Gemini-masker
+   (51,48) erbij  zone h staart en voet terug naar Gemini-masker
+   (52,48) erbij  zone h staart en voet terug naar Gemini-masker
+   (53,48) erbij  zone h staart en voet terug naar Gemini-masker
+   (54,48) erbij  zone h staart en voet terug naar Gemini-masker
+   (22,58) erbij  zone h staart en voet terug naar Gemini-masker
+   (29,58) erbij  zone h staart en voet terug naar Gemini-masker
+pixeldiff r4->r5: 206 px; per zone: {'a gele pluk (voorhoofd/neusrug)': 9, 'b snuit/neus/mond': 10, 'c kin/keel': 14, 'd snorharen': 15, 'e wangaanhangsel (Gemini)': 58, 'f snorharen verre kant': 6, 'g rug: vachtpiek terug (Gemini-masker)': 19, 'h staart en voet terug naar Gemini-masker': 21, 'i nazorg controle': 1, 'j lijf/buik als Gemini (smallere buikvlek, minder terracotta op de bil)': 53}
+open randen (vlakkleur op de buitenrand): 0 []
+losse pixels (geen 4-buren): [(3, 36, 'B'), (2, 37, 'B'), (1, 38, 'B'), (0, 39, 'B')]
+tintclusters < 3 px (4-samenhangend): 4
+   A [(57, 12)] 
+   E [(11, 26)] (oog/glans)
+   D [(12, 26)] (oog/glans)
+   E [(10, 27)] (oog/glans)
+gebruikte indexen: 123456789ABCDEF | kleuren incl. transparant: 16
+png: (64, 64) P paletlengte 16
+png == raster: True
+t.o.v. Gemini-masker (silhouet_auto): ontbreekt [(1, 29)] | extra [(59, 10), (56, 11), (19, 12), (20, 12), (21, 12), (5, 13), (9, 13), (18, 13), (5, 14), (9, 14), (17, 14), (9, 15), (23, 15), (23, 16), (59, 16), (23, 17), (3, 25), (4, 25), (3, 26), (2, 31), (0, 32), (1, 32), (0, 33), (2, 34), (0, 35), (1, 35), (0, 36), (3, 36), (2, 37), (8, 37), (9, 37), (1, 38), (0, 39), (34, 51), (35, 52)]

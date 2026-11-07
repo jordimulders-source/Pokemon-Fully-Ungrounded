@@ -1,0 +1,33 @@
+silhouetwijzigingen t.o.v. r3: 21
+   (6,12) erbij  zone 2 oren
+   (19,12) erbij  zone 2 oren
+   (5,13) erbij  zone 2 oren
+   (18,13) erbij  zone 2 oren
+   (5,14) erbij  zone 2 oren
+   (17,14) erbij  zone 2 oren
+   (23,15) erbij  zone 2 oren
+   (23,16) erbij  zone 2 oren
+   (23,17) erbij  zone 2 oren
+   (2,26) erbij  zone 3 snuitpluk
+   (3,26) erbij  zone 3 snuitpluk
+   (54,47) weg  zone 4a staartaanzet
+   (55,47) weg  zone 4a staartaanzet
+   (56,47) weg  zone 4a staartaanzet
+   (50,48) weg  zone 4a staartaanzet
+   (51,48) weg  zone 4a staartaanzet
+   (52,48) weg  zone 4a staartaanzet
+   (53,48) weg  zone 4a staartaanzet
+   (54,48) weg  zone 4a staartaanzet
+   (22,58) weg  zone 4b verre voet
+   (29,58) weg  zone 4b verre voet
+pixeldiff r3->r4: 76 px; per zone: {'1 oog (Drowzee)': 21, '2 oren': 21, '3 snuitpluk': 6, '4a staartaanzet': 15, '4b verre voet': 3, '4c scheen': 3, '4d schouder': 7}
+open randen (vlakkleur op de buitenrand): 0 []
+losse pixels (geen 4-buren): []
+tintclusters < 3 px (4-samenhangend): 4
+   A [(57, 12)] 
+   E [(11, 26)] (oog/glans)
+   D [(12, 26)] (oog/glans)
+   E [(10, 27)] (oog/glans)
+gebruikte indexen: 123456789ABCDEF | kleuren incl. transparant: 16
+png: (64, 64) P paletlengte 16
+png == raster: True

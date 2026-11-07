@@ -99,3 +99,6 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 - Silhouet: D gekozen (Jordi: "is niet erg, het is een silhouet, ga maar een sprite bouwen dan kijken we verder"; D = gedrongen romp, kop iets groter, benen net wat korter, voeten en handen iets groter).
 - Sprite ronde 1 (`sprite_model/`, kleur per script uit de verkleinde render): Jordi: **"lachwekkend slecht"**. Afgekeurd. Oorzaak (Claude): kleur per script gekwantiseerd uit de render, in strijd met de vaste regel "kleurt nooit per script"; het resultaat leest als een verkleinde 3D-render, niet als een getekende Hitmon-sprite.
 - **Focus volgende keer (Jordi, 6 nov): "dat hij zo ACCURAAT mogelijk is tov het model".** Elke vorm, kleurvlak en detail van `model_gemini_pose_v3.png` volgen, met de hand getekend; niets toevoegen of vereenvoudigen wat niet in het model staat.
+
+## Sprite ronde 1 (Jordi, 7 nov, letterlijk)
+"ja de kop is niet meer herkenbaar hitmontop, het lichaam heeft een beetje een gekke vorm, het geelgroenpatroon is een beetje saaitjes en de lijnen mogen wat dynamischer. De arm onderin heeft nog geen goede vorm, zijn vooral rechte lijnen, de vuist sluit niet lekker aan en de band ook niet, maar je bent op de goede weg, blijf werken". Wit in de benen: nog niet gekozen (ronde 2 levert A zonder en B met wit).

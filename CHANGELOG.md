@@ -566,3 +566,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.141] - Gemini-prompts: Gen 3 in plaats van Gen 5
 - Jordi: "maak er aub gen 3 van". `PROMPT_HATUN_RUNA.md` vraagt nu om een "official Gen 3 front sprite (Ruby/Sapphire/Emerald style)"; de vaste regel in `docs/lessen/GEMINI.md` (hierheen gehaald van de viscacha-tak) ook. Gen 5 (96×96) botste met de eis 64×64 en ≤16 kleuren.
+
+### [v0.0.142] - Hatun runa: eerste Gemini-ronde besproken
+- `docs/concept/sprites/koningstiran/gemini/README.md`: feedback op ronde 1 (hoofdband werd een losse hachimaki, kiskadiekop olijfgroen, profielpose) en de bijstuurzin.

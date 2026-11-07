@@ -858,3 +858,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.210] - Awki: Gemini-prompts v2
 - Twee nieuwe startprompts (A kuif, B vleugel) na ronde 1: kuif korter en schuin omhoog als gesloten waaier, gezicht van fase 1 behouden, gewone snavel, trapdriehoeken als blokpiramides uitgelegd, Pidgeot vermeden. In `PROMPT_AWKI.md`.
+
+### [v0.0.211] - Awki: Gemini-ronde 2
+- Ronde 2 vastgelegd (kuif nu goed begrepen); Jordi wil A bijsturen met een groter vuurpatroon op de vleugel en een Inca-pose. Zie `koningstiran/gemini/README.md`.

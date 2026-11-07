@@ -85,3 +85,4 @@ Bron: *Celeus elegans* (chestnut woodpecker): kastanjebruin met lichte kuif; de 
 - Jordi: **"en ja ze mogen overlappen"** → slierten mogen deels overlappen (nabije vóór de verre).
 - Jordi over r12: **"kijk die eerste is beter, alleen het mag iets meer buigen en elkaar overlappen, zodat het niet precies op pixels grenst met de vleugel"** → r13: slierten r12 met meer boog, flinke overlap, ≥ 1 px lucht tot de vleugel.
 - Jordi over r13: **"doe maar, maar de aansluiting op het hoofd moet iets dikker"** → r14: krullen ±7×7 met gat ≥ 2×2, voet van de pluk ±4–5 px breed en taps.
+- Jordi over r14: **"ja ga maar verder"** → slierten akkoord; naar onafhankelijke keuring van de hele sprite.

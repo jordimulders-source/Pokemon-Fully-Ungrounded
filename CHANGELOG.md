@@ -167,3 +167,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sapa Inca ronde 14: overgang staf/lijf, spitse stafpunt, poten, verre oog en paarse pixels opgeruimd.
 - Sapa Inca: tweede eindkeuring (netheid per onderdeel) en ronde 15 met de 14-px top 5.
 - Sapa Inca: overzicht van tien versies; samengevoegd tot ronde 12 met het hoofd en de tooivorm van ronde 2 (`samengevoegd/`).
+### [v0.0.25] - Sapa Inca frontsprite af
+- Frontsprite van de Sapa Inca (eindvorm koningstiran-lijn, Fire/Psychic) is af: `docs/concept/sprites/koningstiran/af/sapa_inca.png`, samengevoegd uit ronde 12 (binnenkant tooi, staf/staart, lijf, poten) en ronde 2 (hoofd, tooivorm). Retro in `docs/lessen/RETRO_SAPA_INCA.md`. Nog te doen: frame 2, rug, icoon, shiny, naam/data; daarna awki en hatun runa.

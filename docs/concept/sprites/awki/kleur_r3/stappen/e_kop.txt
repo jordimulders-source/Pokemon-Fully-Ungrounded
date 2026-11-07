@@ -1,0 +1,14 @@
+# kop: geel voorhoofdsrandje A (selout 8), zwart masker D met oog (pupil 1, glans B, iris 8), rood vlakje 6/5, grijze snavel C (snavelrug 1, ondersnavel/kin bruin 2/3), witte keel B met schaduw C onder het masker, gouden oorvlek A/9/8, kopkruin bruin 4/3
+17: 24=8AAAA9922D431
+18: 24=8AA9A911DDD321
+19: 24=111266B8DDD991
+20: 21=11CCCC25548DDDAA81
+21: 21=1CCCCCD1DDDDD8A981
+22:21=1123322BBCCCC38831
+# zak tussen vleugel en hals: in het model achtergrond, door het bevroren silhouet gevuld -> wit B met omlijning
+23:22=1BB11BBBBBBB433221
+24: 22=1BB1BBBBBBBC332221
+25: 22=1BB1BBBBBBC3332221
+26:20=521BB1BBBBBC43322221
+27:20=622111BBBC333333222221
+28:19=66652234C4

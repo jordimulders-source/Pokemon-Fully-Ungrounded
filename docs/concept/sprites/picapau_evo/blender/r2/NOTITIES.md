@@ -1,0 +1,23 @@
+# Evo van Picapau, modelronde 2 (C2): notities van de maker
+
+Basis: stand C van ronde 1 (lijf 40, kop +20, voorover 10, kantel 8), dezelfde pose. Model `picapau_evo_r2.py` (kopie van `../picapau_evo.py`, dat ongewijzigd blijft). Draaien: `python3.11 maak_r2.py` → `C2_8x.png`, `C2_1x.png` (1968 px, Picapau ±830), `rond/vel.png`, `standen_r2.png` (Picapau af, Raichu Gen 1, ronde-1-C, C2; 1× en 4×). De tong-variant is vervallen (coördinator: op 1× een worm).
+
+## Jordi over ronde 1 (letterlijk)
+- "vooral de oren zijn too much"
+- "te wit, te groot"
+- "de vleugels zijn ook iets te draconian, maar voor de rest vind ik hem wel al ergens op beginnen te lijken"
+- Coördinator daarbij: kuif kleiner en rustiger, korter, minder hoog, krul subtiel, liever te bescheiden; overwegend kastanje, hooguit een lichte top. Vleugels: vogelvleugel met ronde voorrand en zachte, afgeronde handpennen die als gesloten vlak lezen, half open. Buiten kuif, vleugels en de punten 1–5 **niets** aan C veranderen (lijf, kop, kopdraai en pose blijven); borst en kop alleen licht bijwerken.
+
+## Per punt
+1. **Kuif = veren, klein en rustig** ("vooral de oren zijn too much", "te wit, te groot"). Twee platte lobben (plat 0,25), basis 4,0 → top 1,5 BU, ±10 BU boven de kop (r1: ±20 BU met een grote haak). Alleen het bovenste derde buigt subtiel naar buiten. Kleur: kastanje (lijfkleur), alleen het topje oranjecrème → crème. **1×:** twee kleine kastanje punten met lichte topjes; de krul is op 1× niet meer te zien (bewust bescheiden). Zwak: de punten lezen als **kat- of vossenoren** meer dan als veren, en de verre vleugel staat er direct achter, waardoor kuif en vleugeltop op 1× in elkaar overlopen. Van opzij (rondom 0/180) zijn de lobben dunne stokjes.
+2. **Imposant, licht bijgewerkt.** Borst iets hoger en voller (r1 (−4,5; −3,0) r 9,5–11 → (−5,2; −1,8) r 10,2–11,5), kop licht groter (9,6 → 10,1), lijf, nek, poten en pose = r1. **Vleugels:** ronde, dikke voorrand (arm 5,2 BU), één gesloten hand- en armplaat, vier ronde handpennen (punt 3,4 BU) die tot 75% samensmelten: alleen een geschulpte rand, geen vingers of punten. Hoog opgetrokken en breder dan r1. Stippen: minder en groter (raster 8,5 BU, r ±2,5), alleen op de dekveren. **1×:** de vleugel is een gesloten vlak met een geschulpte rand; de stippen zijn 2×2 tot 3×3 px. Zwak: de vleugel lijkt nog iets op een want of pootje (vier ronde lobben), en van voren (rondom 90) staan de vleugels smal opgetrokken, niet breed gespreid.
+3. **Staart = platte veerpluim met S.** Plat in de diepte (0,34) en breder naar de punt (3,0 → 4,7 BU). Uit de stuit omhoog naar rechts, over een boog omlaag langs de rechterkant, dan onder het lijf door naar voren: een liggende S. Bliksem groter (3,4–3,6 BU, punt 1,6 BU), plat. **1×:** de staart is 4–6 px breed en de S leest (boog rechts, band onder). De bliksem is overal ≥ 2 px (punt ±3 px) en leest als gele zigzag. Zwak: van schuin voren leest de pluim nog vrij rond (een brede band, geen veertextuur), en de bliksem heeft een dikke "laars" bij de aanzet.
+4. **Snavel.** Langer (19 BU) en nu **in de huid** (smooth union met de kop) in plaats van een losse kegel. De losse kegel stak schuin uit de gedraaide kop en gaf een groot donker schaduwvlak dat als open snavel las. **1×:** ±7 px lang, geen donkere onderkant meer. Zwak: bij de basis een licht kraagje waar de snavel in de kop overvloeit.
+5. **Kleuren.** Blender rekent `diffuse_color` lineair; ronde 1 zette sRGB-waarden in, vandaar het bleke grijsbruin. Nu: sRGB → lineair (`lin()`), gemeten compensatie (een belicht vlak rendert ±0,73× zo licht) en glans uit (die maakte alles grijs). De render toont warm oranje-kastanje (Celeus elegans), donkerder kastanje op de vleugels, roodbruine staart, crème buik, gele bliksem en een rode wang. **1×:** leest als kastanje/oranje, niet grijs.
+
+## Oordeel over de hoofdvraag (leest hij als een imposante, Raichu-achtige specht?)
+- **Beter dan r1:** geen ramshoorns meer, warme kastanje kleur, de vleugel leest als vogelvleugel, de staart is een S met een duidelijke bliksem en de snavel is lang en dicht. De Raichu-verwijzing zit nu vooral in de staart en de buikovaal, rustiger zoals Jordi wil.
+- **Nog niet:**
+  - **Imposant:** hij leest nog als een ronde, dikke vogel (Fletchinder-achtig) met grote vleugels, niet echt imposant. Dat komt doordat de pose en het lijf bewust gelijk bleven.
+  - **Specht:** het specht-karakter hangt alleen aan de snavel. Een dikke kop met spechtenstreep of nekvlek zou kunnen helpen, maar dat valt buiten deze opdracht.
+  - **Kuif en vleugeltop:** de kleine kuif leest als katoren, en de verre vleugel direct achter de kuif maakt de top op 1× rommelig. Dat is het eerste punt voor een volgende ronde; de vleugelstand zelf heb ik niet veranderd.

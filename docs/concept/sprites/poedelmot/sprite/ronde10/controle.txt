@@ -1,0 +1,11 @@
+rechts: pootpixels buiten de lange lus: 0 []
+midden: pootpixels buiten de U-vormen: 0 []
+midden: onderrand van de buik uit ronde 6 net naast de U (niet meegeteld): [(23, 52), (24, 52)]
+links: pixels voorbij de lijn borst (x17, y39-40) -> linkervoorpoot (x16, y52), dus x<16 op y41-52: 0 []
+links: rode kruis-cellen op het lijf: 0
+voorpoten gewijzigd t.o.v. ronde 6: 0
+pixeldiff tegen ronde 9: 118 px
+buitenrand niet in omlijningskleur: 0 []
+ingesloten transparante pixels: []
+kleuren: 13 + transparant
+diff.png: grijs = ronde 9, blauw = voorpoten (ongewijzigd), rood = gewijzigd t.o.v. ronde 9

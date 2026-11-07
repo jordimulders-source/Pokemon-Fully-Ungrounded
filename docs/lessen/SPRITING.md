@@ -237,3 +237,17 @@ Deze punten gingen herhaaldelijk mis; loop ze **expliciet** na en noteer in NOTI
 - **Een uiteinde dat niet kan meeschuiven** (de lobpunt zou op de bevroren kaak vallen): eindig de vorm op de nieuwe plek en maak de oude plek vacht. Een los lijntje dat dan overblijft, wordt ook vacht, anders blijft er een donker stipje over.
 - De Read-weergave van grote PNG's is grof. Controleer pixelposities met een tekstraster, niet op het oog.
 - **Mini-oog op een donkere kop (kolibrie, 24 okt):** Game Freak maakt een klein oog nooit een donkere of witte stip, maar zwart bovenlid + glans + een lichte/felle iris tegenover de glans (Corviknight, Kilowattrel); een losse witte stip leest als een gaatje.
+
+## 32. Lessen uit olinguito v2 (3D-poppetje → sprite)
+- **Pixel-over van het 3D-poppetje** (`docs/concept/ontwerp/olinguito_v2/scripts/sprite.py`) geeft maat en silhouet (±850 px), maar de automatische omzetting zelf is rommelig (binnenlijnen, vlakke kop). Teken daarna met de hand per deel (`teken.py` + `docs/concept/sprites/olinguito_v2/delen.py`: `(y, x, pixels)`, kop als omtrek-dict met vulregels).
+- **Keuringslus met één agent** (via SendMessage dezelfde agent, zodat hij zijn eerdere oordeel kent): 3 rondes van afgekeurd naar goedgekeurd. Typische fails: maskerbalk als rechthoek (moet een gebogen band zijn), vlak oog zonder pupil/irisverloop, kop als kegel zonder stop en snoet, klauwen als identieke rechte strepen (vork), verre achtervoet van 1 rij (telt niet op 1×), ingesloten gaatje van 1 px.
+- **Bouwscript controleert nu ook ingesloten gaten** (transparant, niet verbonden met de rand); lucht tussen twee poten is wél gewenst, losse 1-px-gaatjes niet.
+## Lessen Sapa Inca (6 nov, maker-agent)
+- Een waaier/kroon met vlakke tintblokken (licht/basis/schaduw als sectoren) leest als paddenstoel; dezelfde kleuren in **radiale veren** (scheidingen uit de kopbasis, één vlek + één stip per veer) lezen als veren.
+- Twee korte markeringen plus een streepje op een lichte ovaal = een gezichtje (pareidolie): geen textuur in zo'n driehoek op een borst.
+- Een zwarte kroononderrand direct boven zwarte oogleden wordt één balk en een boze blik: laat een rij gezichtskleur ertussen.
+- Haaksnavel: een bleke rug die schuin naar de punt loopt (1 px per rij) + donkere punt; een even brede bleke kolom leest als balk.
+- Klein oog in een gekleurd masker: donkere iris + 1 px glans + warme tint tegenover de glans, zonder zwart lid.
+- Lichte borst die zacht in een donker lijf overloopt: per rij licht → basis → middentint → donker, met een kernschaduwband die naar onderen breder wordt.
+- **Patronen ontwerpen, niet omkleuren (Sapa Inca, 7 nov):** stippen van een bestaande sprite omkleuren gaf "te willekeurig, half doorgevoerd". Een patroon op veren/schubben volgt de structuur: hetzelfde motief op dezelfde plek per veer, in nette bogen, rondom doorgevoerd.
+- **Complexe ontwerpen: kijk ook naar latere generaties (Jordi, 7 nov):** voor kleur en schaduw van een ingewikkeld ontwerp Gen 6–9-sprites als maatstaf nemen (Armarouge, Corviknight, Kilowattrel, Kingambit): groot waardebereik in donkere vlakken, tintverschuiving (schaduw koeler, licht warmer), gekleurde selout aan de lichtkant. Metaal/goud als 3–4 tinten met korte glans, nooit een doorlopende felle lijn (leest als gloed).

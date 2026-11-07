@@ -1,0 +1,14 @@
+# Keuring (zelfvergelijking van de maker, géén eindoordeel)
+- Bron: bron/bron_leidraad.png (linkerhelft duo, gespiegeld), bron/bron_ineen.png, bron/bron_tak.png, bron/bron_rug.png, referenties/grote_snavels_studie.png
+- Bekeken op 8× en 1× (licht/donker) + close-ups kop/muil (8,6–32,32) en lijf/staart (14,28–51,62)
+- Per onderdeel (lijkt op <bron> / wijkt af in <x>):
+  - muil: lijkt op de leidraad: wijde U, donker dak onder de snavel, diepste keel achterin (keelspleet), licht alleen als sikkel op de kaakbodem, lichte rand langs beide kaken; 177 px (9/A/B/D). Wijkt af in: het donkere vlak (9) is groot en egaal; de kaakpunt onderaan is klein.
+  - bovensnavel/haak: bestaand haakje, lichte snavelrug (6) op x11–12 y10, geen brede plaat. Wijkt af in: op 1× nog klein; hoorn (7) ligt dicht bij de schorsstreepjes.
+  - halsrand: band van 2 px (4) onder wang en kaak, lichtere veren (5) erachter, geen lijn meer. Wijkt af in: leest nog steeds vooral als rechte schaduwband.
+  - oog: rond 5×5 met afgeronde hoeken (21 px), midden (21,10), puur zwart; 2 px lichte veren (6) tussen oog en muil. Wijkt af in: ligt 0,4 px hoger dan het oude midden.
+  - kop: licht linksboven, gekleurde selout aan de lichtkant. Wijkt af in: schorsgroepjes (7) lezen op 1× als vuile vlekjes.
+  - vleugel: donkerder (3/F) tegenover de lichte borst, dekveren met twee schubranden, drie pennen met ronde punten op y47, y52 en y56, schaduw onder de punten. Wijkt af in: de penlijnen zijn nog recht en evenwijdig, het blok heeft scherpe hoeken: nog wat origami.
+  - zitplek: buikband (2) y41–43 als takschaduw onder de bollende borst, die eronder in de staart overgaat. Wijkt af in: zonder tak blijft het een horizontale band.
+  - staart: lichte linkerkant, schaduw onder de penpunten, losse gebogen bandjes (3) en schorsvlekjes (7). Wijkt af in: de vlekjes lezen als vuil.
+  - schaduw: muil zonder banding (onregelmatig 9/A/B), borst met gebogen glans in plaats van het witte blok. Wijkt af in: de vleugel heeft weinig zachte overgangen.
+- Oordeel: open — onafhankelijke keuring door de coördinator.

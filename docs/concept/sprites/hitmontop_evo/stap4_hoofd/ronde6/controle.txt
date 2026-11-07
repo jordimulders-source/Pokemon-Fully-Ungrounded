@@ -1,0 +1,12 @@
+3A_flappen_knot: 393 px, breed 23; 58% exact Hitmontop (zelfde plek en tint als stap 2), 85% op een plek waar Hitmontop huid had
+4A_hoorn_klein: 377 px, breed 23; 61% exact Hitmontop (zelfde plek en tint als stap 2), 88% op een plek waar Hitmontop huid had
+5A_fade_mond: 376 px, breed 23; 41% exact Hitmontop (zelfde plek en tint als stap 2), 88% op een plek waar Hitmontop huid had
+6A_maat: 376 px, breed 23; 41% exact Hitmontop (zelfde plek en tint als stap 2), 88% op een plek waar Hitmontop huid had
+7A_gedraaid: 364 px, breed 26 (gedraaid en met de hand gelegd; ogen 1:1 Hitmontop)
+3B_flappen_knot: 398 px, breed 23; 60% exact Hitmontop (zelfde plek en tint als stap 2), 89% op een plek waar Hitmontop huid had
+4B_hoorn_klein: 382 px, breed 23; 64% exact Hitmontop (zelfde plek en tint als stap 2), 93% op een plek waar Hitmontop huid had
+5B_fade_mond: 382 px, breed 23; 45% exact Hitmontop (zelfde plek en tint als stap 2), 93% op een plek waar Hitmontop huid had
+6B_maat: 382 px, breed 23; 45% exact Hitmontop (zelfde plek en tint als stap 2), 93% op een plek waar Hitmontop huid had
+7B_gedraaid: 379 px, breed 23 (gedraaid en met de hand gelegd; ogen 1:1 Hitmontop)
+controle A: open randen 0
+controle B: open randen 0

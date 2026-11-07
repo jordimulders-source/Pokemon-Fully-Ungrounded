@@ -1,0 +1,40 @@
+# r13 slierten, met de hand. Per regel "rij kolom pixels". 4 = donkerste bruin (lichte kant), k = zwart (schaduwkant); 2 px dik zoals r12.
+# Jordi over r12: "kijk die eerste is beter, alleen het mag iets meer buigen en elkaar overlappen, zodat het niet precies op pixels grenst met de vleugel"
+# Eén pluk: de nabije ligt over de hele boog direct onder/vóór de verre (verre 4 bovenop, nabije 4 + k eronder), trapjes 3-2-2-1-1
+# (steiler naar het eind). Pas onderaan gaan ze uiteen: de verre rolt rechtsom-achter in een spiraal rechtsboven die achter de nabije
+# uitsteekt, de nabije hangt vóór hem omlaag en rolt naar de kop toe in een spiraal linksonder. Overal >= 1 px lucht tot de vleugel.
+# --- verre spriet (achter): bovenrand van de pluk, daarna spiraal (x36-41, rij 3-8): links omlaag, onder naar rechts, rechts omhoog, eind naar binnen
+1 26 4
+0 27 444
+1 30 44
+2 32 44
+3 34 44
+3 36 4k
+4 36 4k
+4 39 44
+5 36 4k
+5 40 kk
+6 36 4k
+6 40 kk
+7 37 kkkkk
+8 38 kkk
+# --- nabije spriet (vóór): direct onder de verre (4 + k), zakt mee en hangt vóór de verre spiraal omlaag, dan naar links en omhoog naar binnen
+2 26 4
+1 27 444
+2 27 kkk
+2 30 44
+3 30 kk
+3 32 44
+4 32 kk
+4 34 4
+5 34 k4
+6 35 k4
+7 36 4k
+8 36 4k
+9 36 4k
+10 36 4k
+8 33 44
+9 32 4k
+10 32 4k
+11 32 4kkkkk
+12 33 kkkk

@@ -364,7 +364,7 @@ Als de regel 'alle Pokémon zijn te krijgen' uit Ungrounded blijft, kunnen deze 
 | Grimer (Alola) → Muk (Alola) | Poison/Dark | Gewone Grimer niet nodig naast de Hoenn-vorm |
 | Onix → Steelix | Onix: Rock/Ground; Steelix: Steel/Ground | Jordi 22 okt: geschrapt. Iconisch; Steelix voor de Steel-E4 |
 | Voltorb (Hisui) → Electrode (Hisui) | Electric/Grass | Jordi 22 okt: erin. Pokéball-grap |
-| Tyrogue → Hitmonlee → Hitmonchan → Hitmontop | Fighting | Jordi 22 okt: Tyrogue-lijn niet; alleen een regionale capoeira-Hitmontop (zie POKEMON.md). Vechtsporters in de steden (capoeira!); Hitmontop is een capoeirista avant la lettre |
+| Tyrogue → Hitmonlee → Hitmonchan → Hitmontop | Fighting | Jordi 22 okt: Tyrogue-lijn niet; alleen Hitmontop, met een nieuwe capoeira-evolutie (Jordi 5 nov; zie POKEMON.md). Vechtsporters in de steden (capoeira!); Hitmontop is een capoeirista avant la lettre |
 | Lickitung → Lickilicky | Normal | Geen band |
 | Rhyhorn → Rhydon → Rhyperior | Rock | Jordi 22 okt: geschrapt. Rock-tank; pure Rock in Ungrounded |
 | Mime Jr. → Mr. Mime → Mr. Rime | Mime Jr., Mr. Mime: Psychic/Fairy; Mr. Rime: Ice/Psychic | Mime/Rime passen niet |

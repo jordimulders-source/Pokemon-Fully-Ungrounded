@@ -1,0 +1,8 @@
+# r4 (KEURING r3): verre vleugel x9-24 y30-36 een toon donkerder (4->3, 5->4; omlijning/scheidingen/top-selout blijven)
+30: 12=44
+31: 8=14324333131
+32: 9=11324332431
+33: 11=13243324321
+34: 11=133243323321
+35: 12=133233323321
+36: 13=13322222221

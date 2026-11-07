@@ -1,0 +1,7 @@
+pixeldiff tegen ronde 2: 529 px, waarvan buiten de pootzone: 0
+clusters < 3 px buiten de ogen (tint, [(x,y)]): 3
+   (np.str_('6'), [(np.int64(15), np.int64(45)), (np.int64(15), np.int64(46))])
+   (np.str_('6'), [(np.int64(7), np.int64(51))])
+   (np.str_('6'), [(np.int64(29), np.int64(53))])
+buitenrand niet in omlijningskleur (1, 2, b): 0 []
+kleuren: 13 + transparant

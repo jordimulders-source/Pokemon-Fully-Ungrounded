@@ -33,6 +33,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Ogen geïntegreerd (bovenlid donkerst, iris donker boven/licht onder, glans), niet opgeplakt, geen brilogen; geen volledig zwarte ogen zonder glans.
 - Omlijning per kleurgroep, zwart alleen aan de schaduwkant; licht van linksboven; geen open randen (ook schaduwkleur naast transparant).
 - Kleuren vergelijken met Pokémon van **hetzelfde type** (Dark mag donker).
+- **Kleur blijft binnen zijn vorm** (potoo, 5 nov: "geen idee wat dit was maar doe dit nooit meer, met al dat paars om die mond heen"): een mond-, oog- of tekeningkleur loopt nooit uit over de vacht eromheen; geen randen, spikkels of halo's. **Geen ruis** (Jordi: "de ruis ja"): geen losse pixels, strepen of trapjes; elk beeld dat naar Jordi gaat is schoon.
 - Verzonnen kleurvlakken mogen alleen als ze werken; bij twijfel één vachtkleur.
 - Referentiefoto = inspiratie, geen blauwdruk (Pokémon-filosofie), maar de soort moet herkenbaar blijven.
 
@@ -50,7 +51,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Lessen onder "Lessen" in je NOTITIES.md (Claude zet ze over); niet in SPRITING.md schrijven, niet committen tenzij gevraagd.
 
 ## 4. Claude (coördinator)
-- **Checklist bovenaan `SPRITE_WERKWIJZE.md` + keurslot** (`.claude/hooks/sprite_keurslot.py`): geen sprite-afbeelding naar Jordi zonder keurvel en `Oordeel: PASS`.
+- **Checklist bovenaan `SPRITE_WERKWIJZE.md`** (keurslot-hook verwijderd, Jordi 6 nov): geen sprite naar Jordi zonder eigen controle.
 - **Sprite uit een model/render:** vóór Jordi altijd `tools/grounded/model_vs_sprite.py` en per onderdeel nalopen of de sprite de render volgt (zie GRAPHICS.md, Picapau 5 nov); de volledige afwijkingslijst gaat naar de maker.
 - **Tokens sparen:** agents krijgen SPRITE_NORM.md + SPEC/AFGEKEURD (niet alle lessenbestanden); één maker per sprite die met SendMessage doorwerkt; geen parallelle experimenten tenzij Jordi vraagt; kleine vellen.
 - Plak de verwijzing naar dit bestand in elke sprite-opdracht en geef bij reparaties een pixelbudget en de lijst bevroren delen mee.
@@ -62,3 +63,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - **Jordi's woorden letterlijk doorgeven** (citaat), niet parafraseren of inkorten tot een eigen lijstje. Een nieuwe instructie of referentie is een **aanvulling** op de vorige, geen vervanging: alle eerdere, nog openstaande punten gaan mee. Geeft Jordi een referentie-sprite die "volledig voldoet", dan is die referentie de specificatie: de agent neemt alles over wat hij laat zien (ook dingen die Claude niet heeft opgesomd, zoals de positie van het oog) en meet het na (olinguito stap 1: de oogpositie viel weg omdat Claude Linoone samenvatte tot drie punten).
 - **Eén versie naar Jordi, nooit meerdere imperfecte opties** (Jordi, 3 nov, lama 5b/5c: "je stuurt telkens meerdere imperfecte opties, die lastig te vergelijken zijn"). Stuur alleen de beste versie, met alles wat Claude, de maker of de keurder zelf al zag opgelost; vorige rondes hooguit klein als naslag, niet als keuze. Een smaakvraag is één vraag over die ene versie. Een reparatie die een kenmerk laat verdwijnen (5c: de staart) is een fail, geen "smaakvraag".
 - Nieuwe terugkerende feedback van Jordi meteen in §2 hierboven zetten.
+- **Varianten altijd groot tonen (Jordi, 7 nov: "dat kan ik toch niet zien in zo'n klein plaatje"):** een variant van een detail (gezicht, oog) staat op hetzelfde formaat als het hoofdresultaat, ingezoomd op dat detail (8–10×), niet alleen als 1×-duimnagel.
+- **Nooit het hele palet in één ronde omgooien (Sapa Inca ronde 11, Jordi: "veel slechter"):** een nieuw palet verandert elke pixel tegelijk (1443 px), waardoor goedgekeurde delen (vleugel, kroon) ongemerkt anders worden. Kleur/schaduw per onderdeel en één stap tegelijk, met een diff per zone in RGB (niet alleen indexen).
+- **Keurder en Claude missen slordigheid (Sapa Inca, 7 nov: "ik kan me niet voorstellen dat een eindkeurder dit wil"):** na elke ronde een script op de hele sprite laten draaien voor losse pixels (geen buur in dezelfde kleurgroep), verdwaalde kleuren buiten hun onderdeel (paars buiten de kroon) en rommelige randen, en zelf op 12x per zone kijken (poten, ogen, overgangen) vóór het naar Jordi gaat. Een eindkeuring die "af/niet af" zegt, toetst ook leesbaarheid per onderdeel, niet alleen regels.
+- **Regelmatig alle versies naast elkaar leggen (Sapa Inca, 7 nov: "we zijn heel weinig vooruit gegaan, en sommige punten zelfs achteruit"):** na elke 3–4 rondes een overzicht van de laatste versies op 4x en 1x maken en per onderdeel de beste versie aanwijzen; keurrondes van een paar pixels kunnen ongemerkt achteruitgaan (staf werd een naald). Per onderdeel de beste versie bewaren en samenvoegen.

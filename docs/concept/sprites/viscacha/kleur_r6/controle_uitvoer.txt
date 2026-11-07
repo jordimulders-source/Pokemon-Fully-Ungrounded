@@ -1,0 +1,10 @@
+t.o.v. Gemini-masker: ontbreekt [(56, 48), (57, 48), (51, 49), (52, 49), (53, 49), (54, 49), (55, 49)]
+  extra buiten masker (dunne delen +): 17 px; extra buiten masker en dunne delen: [(6, 30), (6, 33), (6, 34), (0, 36), (8, 38), (0, 39), (7, 39), (12, 39), (13, 39), (2, 42)]
+open randen: []
+losse pixels: [(59, 14, '8'), (5, 40, 'B'), (2, 42, 'B')]
+clusters < 3 px: 3
+   E [(15, 30)]
+   D [(16, 30)]
+   E [(14, 31)]
+kleuren incl. transparant: 16
+png == raster: True

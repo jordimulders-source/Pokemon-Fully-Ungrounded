@@ -1,0 +1,9 @@
+alpha-diff met silhouet: 0 []
+open randen (vlakkleur op de buitenrand): 0 []
+losse pixels (geen 4-buren): []
+tintclusters < 3 px (4-samenhangend): 2
+   E [(10, 26)] (oog/glans)
+   D [(11, 26)] (oog/glans)
+gebruikte indexen: 123456789ABCDEF | kleuren incl. transparant: 16
+png: (64, 64) P paletlengte 16
+png == raster: True

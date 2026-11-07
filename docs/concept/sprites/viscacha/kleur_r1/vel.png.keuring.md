@@ -1,0 +1,37 @@
+# Keuring viscacha kleur ronde 1 (onafhankelijke keurder, 7 nov)
+- Bron: docs/concept/sprites/viscacha/referenties/gemini_gekozen_ronde6.png; vergeleken met graphics/pokemon/{pachirisu,emolga,dedenne,sandshrew,taillow}/anim_front.png (bovenste 64×64), alles op 8× (nearest) en 1×/2× op licht en donker.
+- Bekeken: viscacha.png op 8×, 1× op licht (240) en donker (30), plus raster.txt per pixel.
+
+## Blind (vóór SPEC/bron)
+- Op 1×: een oranje-zandkleurige springknaagdier (springmuis/kangoeroerat, iets vos-achtig door de puntige oren), gespannen pose naar links, lange staart met gele vlampunt. Leest als "Pokémon-achtig wezen", Electric door het geel. Kleurenschema doet aan Raichu denken (oranje + geel accent + bruine oorbinnenkant), maar zonder wangcirkels.
+- Wat meteen opvalt op 1×: (1) een **gele schuine band in de nek** die leest als een **kraag/sjaal**, niet als wangvacht; (2) **geel bij de neus** leest als gele snuitpunt/snor; (3) een **los crème ovaal** midden op de flank (een vlek, geen buik); (4) een **hobbel op de rug** en een vlakke rugstreep; (5) de nabije voorpoot is een stijve rechte paal.
+- Op 8×: kleurgebruik netjes (geen losse pixels, 3 tinten per groep), maar grote vlakke toonblokken (lichte rugband en een los dij-eiland) en een paar getrapte contouren. Formaat vult 62 px breed: groter dan Pachirisu/Dedenne in hun frame.
+- Zou ik hem zonder twijfel naast Pachirisu/Emolga/Dedenne zetten? Nee: kraag, gele neus en flankvlek verraden hem.
+
+## Per onderdeel (na SPEC en bron)
+- **Pose / massa**: lijkt op de bron (gespannen, voorpoten op, achterpoot gebogen, 3/4 links) / wijkt af in: niets wezenlijks; massa klopt (alpha-diff 0). Hoofdvraag pose: PASS.
+- **Kop**: lijkt op de bron (profiel, oog, ronde wang) / wijkt af in: snuit zwak (neus = randpixel (3,31), mond 1 px (5,33)); gele pluk op (1–5,26–29) zit precies op de snuitpunt en maakt van de neus een gele snuit; in de bron zit dat plukje hoger, vóór/boven het oog aan de zijkant van de kop.
+- **Oren**: lijken op de bron qua plaats / wijken af in: toppen puntig (`221` op rij 12, x6–8 en x21–22), lezen vos/konijn-achtig; SPEC zegt "rond, viscacha". Verre oor heeft geen enkele binnentint en is 3–4 px smal.
+- **Oog**: Emolga-oog overgenomen, leest als Pokémon-oog. OK.
+- **Wangpluk**: lijkt op de bron (gele sikkel met punt naar boven-achter) / wijkt af in: hij ligt niet op de wang maar **op de achterrand van de kop**, loopt van (20–23,26) diagonaal door tot (17–19,36), dus tot op de borst, en heeft over de hele rechterkant (x19–23, rij 27–36) een zwarte lijn die hem van nek en lijf scheidt. Gevolg: één losse band tussen kop en lijf = kraag. In de bron is het een korte halve maan óp de wang, binnen de kopvorm, met alleen de punt erbuiten.
+- **Lijf / rug**: lijkt op de bron (oker, schaduw rechtsonder) / wijkt af in: rugcontour rij 27 x28–34 is een recht stuk van 7 px; daarachter een bult (35–38,26–27, overblijfsel van de vachtpiek in de bron = "losse haren", afgekeurd) en een dip op (37,28); daarna trapjes van 2 px per rij (x39 r29, x41 r30, x43 r31). Bovenop de romp staat zwart aan de lichtkant: (42–43,31) `11` naast selout `22` op (40–41,30) = zwart en selout om en om op één rand.
+- **Toonvlakken**: grote vlakke lichte band (5) over de rug (rij 28–35, x22–38) en een los dij-eiland (5) op (34–40,33–41) met een 3-lijn ertussen: blokkerig, twee lichtpunten op één lijf. Kop: 4- en 3-band lopen evenwijdig aan de achterrand van de kop (rij 20–26, x17–20) = lichte banding.
+- **Buik / crème**: lijkt op de bron (crème borst en buik) / wijkt af in: borst (6–16,36–43) is goed, maar de buik is een rond ovaal (24–36,40–48) met een rechte horizontale onderrand (rij 48, `6666666666`) en daaronder terracotta (rij 49–52): het zweeft als vlek op de flank. In de bron is de crème een smalle strook langs de onderkant van de buik. Kinlijn onder de kop is ook recht: (6–10,37) `FFFFF`.
+- **Voorpoten**: verre poot (8–16,43–49) opgeheven, prima. Nabije poot (17–22,37–49) is een rechte kolom van 13 rijen met verticale binnenlijnen op x18 en x23: geen pols, geen poot onderaan, niet taps.
+- **Achterpoten**: perspectief klopt (verre voet links en hoger, eindigt rij 57; nabije voet rij 62). Onderrand verre voet (22–29,57) is een rechte zwarte lijn van 8 px; mag een kleine ronding/teen.
+- **Staart**: één geheel met het lijf, aanzet onderaan de romp zoals de bron. OK. Wel: linkerrand wisselt van donkerbruin B (x51–56, rij 26–41) naar zwart 1 (x53–55, rij 42–44): twee randkleuren op één rand. Rechterrand springt op rij 27→28 van x57 naar x60 (trap van 3 px).
+- **Pluim**: gekarteld geel, drie punten, overgang naar bruin gekarteld, leest op 1× als één geheel. OK. De punten (53,12), (56–57,12) en (58,10) bestaan alleen uit selout 8 zonder geel erin; op 1× nog net leesbaar, mag 1 px voller.
+- **Netheid**: ≤3 tinten per groep, geen clusters < 3 px buiten het oog, geen open randen (controle.py klopt). Licht linksboven, schaduw rechtsonder: OK.
+
+## Reparatielijst (geprioriteerd, via de maker)
+1. **Wangpluk naar de wang** (hoofdpunt, kraag): verwijder het geel onder rij 32 (x14–19, rij 33–36 → kop-/borsttinten 4/5 en crème zoals ernaast). Leg de sikkel als korte halve maan op de wang, ongeveer x13–19, rij 28–32, met alleen de punt buiten de kopomtrek op (20–23,26–27). De achterrand van de kop (x19–23, rij 28–34) wordt een gewone kopcontour/binnenlijn in 2 (donker terracotta, taps) waar kop over nek valt, niet een zwarte lijn langs het geel.
+2. **Geel van de snuit**: haal het geel weg op (1–5,26–29) (`88`, `88A8`, `89AA`, `199`). Snuitpunt rij 27–31 in 5 met selout 2, neus als 2 px donker op de snuitpunt. Wil je het plukje houden: 2–3 px klein boven/vóór het oog op de voorhoofdrand (±x5–7, rij 22–24), los van de neus.
+3. **Rugcontour gladmaken**: weg met de bult (35–38,26) en de dip (37,28); laat de rug als één boog lopen van de nek (24,28) via ±(30,27) – (36,27) naar (38,28), (40,29), (42,30), (44,32). Zwart (42–43,31) → selout 2 (lichtkant); zwart pas vanaf de rechterkant van de romp (x45, rij 33+).
+4. **Crème buik als strook, geen ovaal**: crème laten aansluiten op de onderrand van de buik (rij 47–49 direct tegen de buitenlijn), bovenkant als vlakke boog die de buik volgt, ovaal-top (28–31,40) zakken naar ±rij 43–44; rechte rij 48 `6666666666` weg (schaduw 6 als sikkel langs de onderrand). Kinlijn (6–10,37) iets ronden.
+5. **Oortoppen rond**: (6–8,12) en (20–22,12) afronden tot 3–4 px brede ronde top (hoekpixels weg, top 2 px breed in selout 2); verre oor een binnentint (B/C, 1–2 px) zoals het nabije.
+6. **Toonblokken rustiger**: het dij-eiland 5 (34–40,33–41) verkleinen tot een smalle glans bovenaan de dij of laten opgaan in de rugband; de 3-lijn tussen rug en dij (33–35,33–41) taps (dun boven, verdwijnt onder). Kop: 4/3 aan de achterrand niet als twee parallelle banden, 3 alleen onderaan als sikkel.
+7. **Nabije voorpoot**: kolom (17–22,37–49) een knik/pols geven op ±rij 44 en een poot met 1–2 teenpixels op rij 48–50; binnenlijnen x18/x23 taps laten eindigen in plaats van 8 rijen recht.
+8. **Kleine randpunten**: staartlinkerrand één randkleur (B of 1 doorlopend aan de schaduwkant); trap rechts in de staart (57→60, rij 27–28) zachter (59 op rij 28); pluimpunten 1 px geel (9/A) in de kern; verre voet onderrand (22–29,57) iets ronden.
+9. (Overweging, niet verplicht) formaat: hij vult 62 px; naast Pachirisu/Dedenne oogt hij groot. Alleen aanpassen als Jordi dat wil.
+
+Oordeel: FAIL

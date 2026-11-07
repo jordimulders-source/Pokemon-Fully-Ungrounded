@@ -1,0 +1,11 @@
+BUITEN de zones: 0 px verschil in raster.txt, 0 px verschil in picapau_evo.png 
+
+zone snavel (x6-22, y7-15): 33 px veranderd
+  per overgang (oud->nieuw, . = transparant): 4->G: 1, G->.: 4, G->4: 1, G->a: 4, G->g: 1, G->k: 3, G->v: 2, a->.: 1, a->3: 1, a->4: 1, a->G: 1, a->g: 3, g->G: 2, g->k: 1, k->.: 5, k->G: 1, v->G: 1
+  rij 8: 17:v>G 18:4>G 19:G>a 20:G>a 21:G>g
+  rij 9: 17:G>a 18:G>a 21:a>g
+  rij 10: 12:G>v 13:G>v 15:a>g
+  rij 11: 10:G>. 11:G>4 12:a>3 13:a>G 14:a>g
+  rij 12: 8:G>. 9:G>. 10:a>. 11:a>4 12:g>G
+  rij 13: 7:G>. 8:k>. 9:k>. 10:k>. 11:k>. 12:k>G 14:g>k 19:g>G
+  rij 14: 11:k>. 12:G>k 13:G>k 14:G>k

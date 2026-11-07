@@ -1,0 +1,4 @@
+variant 1 rechtop: 441 px, 26 breed (met knot), open randen 12 [(25, 11), (25, 12), (25, 13), (18, 10), (18, 11), (18, 12)]
+variant 1 gedraaid: 442 px, 29 breed (met knot), open randen 12 [(23, 13), (23, 14), (23, 15), (16, 12), (16, 13), (16, 14)]
+variant 2 rechtop: 434 px, 28 breed (met knot), open randen 8 [(16, 25), (16, 26), (16, 27), (16, 28), (17, 24), (18, 23)]
+variant 2 gedraaid: 434 px, 28 breed (met knot), open randen 8 [(17, 27), (17, 28), (17, 29), (17, 30), (18, 26), (19, 25)]

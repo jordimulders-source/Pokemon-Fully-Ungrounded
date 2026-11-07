@@ -1,0 +1,17 @@
+figuur: x 14-46, y 3-61 (33 x 59 px), pixels: 1121
+kleuren gebruikt: 123456789ABCDEF
+open randen (lichte kleur op de buitenrand): []
+losse pixels: [(19, 19, 'D'), (20, 26, 'D'), (21, 27, 'D'), (26, 27, '9'), (22, 28, 'D'), (25, 28, '9'), (23, 29, 'D'), (24, 29, '9')]
+gaatjes (transparant omsloten): []
+tintclusters < 3 px: 11
+   D [(19, 19)]
+   9 [(28, 23), (28, 24)]
+   D [(19, 24), (19, 25)]
+   9 [(27, 25), (27, 26)]
+   D [(20, 26)]
+   D [(21, 27)]
+   9 [(26, 27)]
+   D [(22, 28)]
+   9 [(25, 28)]
+   D [(23, 29)]
+   9 [(24, 29)]

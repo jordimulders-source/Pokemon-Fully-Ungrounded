@@ -561,13 +561,289 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.139] - Les: changelog na main nummeren
 - `docs/lessen/AGENTS.md`: vóór het pushen naar `main` eerst `main` mergen en de eigen changelogsecties achteraan nummeren (Jordi).
 
-### [v0.0.140] - Poedelmot frontsprite af (Gemini-model)
+### [v0.0.140] - Olinguito v2: eerste schets
+- Nieuwe start op Jordi's aanpak: meer echte olinguito, sinister, iets langere snuit, donker masker, 2 lange klauwen (Linoone), pose naar de boomfoto. Twee schetsen (staart omhoog/omlaag) met silhouet in `docs/concept/ontwerp/olinguito_v2/`, plus Jordi's referenties. Nog geen pixels.
+
+### [v0.0.141] - Olinguito v2: ronde 2
+- Staart omhoog gekozen. Profiel met één oog en één dominant oor, dunnere staart, kortere snuit (langer pas bij de coati), zacht masker i.p.v. wasbeerband, Linoone-klauwen, achterpoten onder het lijf naar voren, geen buikvlak. `docs/concept/ontwerp/olinguito_v2/schetsen_v2.png`.
+
+### [v0.0.142] - Olinguito v2: ronde 3
+- Rondere kop, langere staart (boog terug over de rug), asymmetrische poten zoals op de boomfoto (één voorpoot gestrekt, één opgetild; één achterpoot opgetrokken, één gestrekt). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde3.png`.
+
+### [v0.0.143] - Olinguito v2: ronde 4
+- Veel kleiner oog, kop in 3/4 naar de kijker (snuit uit het midden van het gezicht), groter oor. `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde4.png`.
+
+### [v0.0.144] - Olinguito v2: ronde 5
+- Kopvorm naar Jordi's foto: druppel met ronde schedel en spitse snuit, warmbruine kruin, grijs gezicht, donkere streep langs het oog, oor met donkere rand. `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde5.png`.
+
+### [v0.0.145] - Olinguito v2: ronde 6
+- Kop overgetrokken van Jordi's foto (neus omlaag, oog laag, hoog voorhoofd, oor bovenop), kleiner lijf, poten verder naar voren onder het lijf, roze voeten. `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde6.png`.
+
+### [v0.0.146] - Olinguito v2: ronde 7
+- Pose diagonaler (diepte: borst dichtbij, romp ver weg), poten elk in een andere fase van de stap, zwart masker oog-tot-oog zoals Patrat (alleen rond het oog). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde7.png`.
+
+### [v0.0.147] - Olinguito v2: ronde 8
+- Achterpoten gehurkt zoals op de foto's (dikke gevouwen dij, lage hak, platte voet naar voren). `docs/concept/ontwerp/olinguito_v2/schetsen_v2_ronde8.png`.
+
+### [v0.0.148] - Olinguito v2: ontwerp gekozen
+- Na schetsrondes 5–11 en een 3D-poppetje (`docs/concept/ontwerp/olinguito_v2/scripts/pop3d.py`: bollen/ellipsoïden met kijkhoek, textuur voor masker/snoet) koos Jordi het ontwerp: driekwart op 52°, kop naar de foto, Zigzagoon-masker met duister oog, grijsbruine snoet, Linoone-klauwen, gehurkte achterpoten, lange staart dicht op het lijf. Vastgelegd in `ONTWERP.md` + `ONTWERP_GEKOZEN.png`.
+
+### [v0.0.149] - Showcase-vel van alle afgeronde frontsprites
+- `docs/concept/sprites/showcase/frontsprites_af.png`: de 16 afgeronde frontsprites, incl. nachtaap fase 3 (muriqui, `af/` overgenomen van branch `claude/zen-mendel-9u6x44`) (4x vergroot, werknaam + type) op één vel om te tonen. Cuyby is ronde 4 (de goedgekeurde; ronde 6 wacht nog). Opnieuw maken na nieuwe sprites: `python3 docs/concept/sprites/showcase/maak_vel.py <uit.png>` (lijst bovenin het script aanvullen).
+- Keurslot laat `docs/concept/sprites/showcase/` door (verzamelvellen van al goedgekeurde sprites; Jordi: het slot is voor keuren, niet voor tonen).
+
+### [v0.0.150] - Nachtaap fase 3: kleur tot en met arm en lijf
+- Kleurrondes 1–1s (`docs/concept/sprites/nachtaap_fase3/kleur/`): volume naar het model, onderste been één vorm met het lijf, spiraal als losse Nazca-spiraal, healerhand met vingers en palm (Drowzee/Deoxys), lichtblauwe gloed, maan als sikkel.
+- Opgeheven been 7 px naar rechts (Jordi koos uit +3…+11) zodat het uit de heup komt; rug, heup en bil daarop afgewerkt.
+- Vuistarm naar Jordi's krabbels: volle mouw van vuist tot schouder met vloeiende randen, onderrand halverwege tussen ronde 1p en zijn boog (Jordi: "50%"). Basis: `kleur/ronde1s/`.
+- Rugpatroon verkend en geparkeerd tot het lijf af was; richting: brede banden die als boog om het lijf lopen (fase 2, Furret, Dusclops).
+
+### [v0.0.151] - Nachtaap fase 3: lijf af, rugpatroon loopt
+- Na de arm: lijf eerst als één geheel (studie rug met front- en back sprites), daarna vormshading (borstkas, buik, heup; been uit de heup), staartwortel loopt door in de heup; dij −2; healerhand bevroren (vier vingers) in zilverblauw, gloed en ogen turkoois, pols uit de gloed. Basis: `docs/concept/sprites/nachtaap_fase3/kleur/ronde7c/`.
+- Rugpatroon: drie rondes (wiggen, strepen, banden/ringen) afgekeurd; loopt nog (Jordi: "afronden betekent niet half werk").
+- Lessen in `docs/lessen/SPRITE_WERKWIJZE.md` (referentie van Jordi per onderdeel, eerst opties via een agent, geen sterkte-varianten, plooien en massa's, staartwortel, retro hand).
+
+### [v0.0.152] - Nachtaap fase 3: rugbanden naar Jordi's krabbel
+- Ronde 5: de krabbel letterlijk overgetrokken (drie ')'-banden). Jordi: het is een krabbel, geen blauwdruk.
+- Ronde 6 (`docs/concept/sprites/nachtaap_fase3/rugpatroon/ronde6/`): drie gelijke, ronde banden op gelijke afstand, 3 px in het midden, taps uitlopend; shading wit/lichtblauw/grijsblauw van licht naar schaduw. Keurder: eerst FAIL (2 px te dun), daarna opnieuw opgebouwd uit één vaste bandvorm.
+
+### [v0.0.153] - Nachtaap fase 3: draaistanden rugbanden
+- Ronde 7 (`docs/concept/sprites/nachtaap_fase3/rugpatroon/ronde7/`): de banden van ronde 6 tegen de klok in gedraaid in vier standen, 0°, 8°, 15° en 22°, zodat Jordi kan kiezen. Bij 30° kwamen er trappetjes in de banden; die stand is geschrapt.
+
+### [v0.0.154] - Nachtaap fase 3: frontsprite in af/, linkeroog ter keuze
+- Jordi koos stand D (22°) voor de rugbanden. `docs/concept/sprites/nachtaap_fase3/af/` bevat de frontsprite, het palet, het vergelijkingsvel en EINDKEURING.md.
+- Eindkeuring: GOED. Geen harde fouten; de wijzigingen ten opzichte van het bevroren lijf zitten alleen in de rugzone.
+- Linkeroog: drie opties in `af/oog/` (A, B, C). Het oog mist nu de glans en leest dof.
+
+### [v0.0.155] - Nachtaap fase 3: frontsprite af
+- Linkeroog D: het oog kreeg linksboven een glans en de iris is nu boven donker (2 px). Het is daarmee even opgebouwd als het rechteroog, maar 1 kolom smaller. De eindkeuring staat nu op GOED. `docs/concept/sprites/nachtaap_fase3/af/nachtaap_fase3.png` is de frontsprite.
+- Nog te doen: frame 2, rugsprite, icoon, shiny, naam en data.
+
+### [v0.0.156] - Great potoo: ontwerp gestart
+- Nieuwe fakemon besloten: **great potoo** (urutau), losse soort met één stage, type **Ghost/Normal** (Jordi: "ik wil sowieso een great potoo", "laten we 1 stage doen"). Tweede stage die met een tak versmelt afgewezen: geen Pokémon-sprite heeft een ondergrond in beeld; de camouflage gaat via de twee frames (stil ↔ bek open), het verenpatroon en de data.
+- Map `docs/concept/sprites/potoo/`: SPEC.md, Jordi's foto's in `referenties/`, posevel `pose_keuze.png` (A van voren, B zijaanzicht, C bek open; Gen 3-skelet Hoothoot/Noctowl/Natu/Xatu). POKEMON.md en FAKEMON_PITCH bijgewerkt.
+
+### [v0.0.157] - Great potoo: ontwerp vastgelegd, 3D-poging afgebroken
+- Ontwerpkeuzes vastgelegd in `docs/concept/sprites/potoo/SPEC.md`: lichte vacht met schorsvlekken, pikzwarte ogen (Drifloon), geestpaarse mond in een echte snavel, pose 3/4 met open bek op een onzichtbare tak.
+- 3D-model (`model3d/`) afgekeurd ("begin maar helemaal opnieuw"); overdrachtsprompt voor een nieuw gesprek in `docs/concept/sprites/potoo/OVERDRACHT.md`; lessen in SPRITE_WERKWIJZE.md.
+
+### [v0.0.158] - Great potoo: 3D afgekeurd, poppetje in lama-stijl
+- Merge-tekens uit CHANGELOG.md en CLAUDE.md opgeruimd (potoo-secties hernummerd).
+- SPEC met Jordi's punten van 5 nov: alleen zijn 5 foto's als bron (linkerhelft duo-foto = leidraad kop), snavel en ogen = kern, veertjes tussen de ogen, schattig + uncanny, lekker overdreven grote bek, ogen hoger, bron getrouw nagemaakt.
+- 3D v2 (gespleten koepel, `model3d_v2/`) en v3 (snavel uit onderdelen, `model3d_v3/`) afgekeurd ("pacman zeehond", "stop met blender").
+- Poppetje in lama-stijl door één maker-agent (`docs/concept/sprites/potoo/poppetje/`), rondes 1–4b met overgetrokken foto-omtrekken als controle en twee keurders; ronde 3 de beste tot nu toe (Jordi), ronde 4 (kop vlakker, kaak naar voren, ogen hoger) bouwt daarop. Vel open snavels uit echte sprites: `potoo/referenties/open_snavels_sprites.png`.
+
+### [v0.0.159] - Great potoo: poppetje rondes 6–14 en eerste frontsprites
+- Poppetje als 2D-vectortekening (met de hand overgetrokken, geen fotopixels): kop/muil/snavel uit de leidraad (ronde 7), lijf naar Jordi's lichaamsvorm-illustratie (ronde 8), daarna rondes 9–14 op blinde tests (agent zonder context ziet alleen het plaatje). Diagnose ronde 12: schorspatroon verhoogt de herkenning (55 → 70% potoo), roze vs. paarse muil maakt weinig uit. Beste: `docs/concept/sprites/potoo/poppetje/ronde14_spritehoek.png` (50–65% potoo).
+- Frontsprite 64×64 (frame 1, bek open): `docs/concept/sprites/potoo/sprite/ronde1–3/`. Blinde tests: r1 vis/beluga, r2 uil/potoo 15–45%, r3 duif 40% / potoo 45%.
+- Werkwijze: blinde test per ronde met neutrale bestandsnaam (lessen in `docs/lessen/SPRITE_WERKWIJZE.md`).
+
+### [v0.0.160] - Great potoo: vorm met Jordi's schetsen, overtrek, overdracht
+- Studie grote open snavels (`potoo/referenties/GROTE_SNAVELS_STUDIE.md`); driekwart-tekenbasis en vormschetsen 5–7 naar Jordi's schetsen (kop voorover, nekboog, oog op fotopositie); kopvorm (schets 6) goedgekeurd.
+- Overtrek van de bekrand (goedgekeurd) en de hele vorm op de leidraad (`potoo/sprite/bekrand_overtrek/`, `vorm_overtrek/`); Jordi trekt kop/snavel zelf over op `potoo/tekenbasis/` (leidraad met pixelraster).
+- Keurslot: tekenbases mogen door met `<bestand>.tekenbasis.md` (Jordi).
+- Overdrachtsprompt: `docs/concept/sprites/potoo/OVERDRACHT.md` (oude: `naslag_OVERDRACHT_5nov.md`).
+
+### [v0.0.161] - Great potoo: Jordi's eigen omtrek, verhouding gekozen
+- Jordi's overtrek van kop/snavel/bek letterlijk uitgelezen naar spritepixels (`potoo/jordi_overtrek/`: verschil met de leidraad, halslijn en kaakpunt met de hand afgelezen; oog op de fotopositie). "De kop gaat niet meer afwijken van deze omtrek."
+- Lijf in rondes 8–13 (`potoo/sprite/ronde8_voorbeeld` t/m `ronde13_standen`): eerst te klein/verzonnen, daarna gemeten in oogmaten op al zijn foto's (oog→staartpunt 17–20 oog, breedte 7,7 oog), ineengedoken op de tak met de kop voorover, lijnen 1 px. Jordi koos het lijf 15% kleiner (`ronde13_standen/potoo_85.png`); de afgekapte vorm linksonder ("Zuid-Amerika") mag blijven.
+
+### [v0.0.162] - Hitmontop: evolutie in plaats van regional form
+- Jordi: Hitmontops Japanse naam is al capoeira, dus geen regional form maar alleen een nieuwe capoeira-evolutie. Eerst puur ontwerp. Drie richtingen (mestre/bananeira, Besouro-kever/armada, malandro/negativa) in `docs/concept/IDEEEN.md`; POKEMON.md en DEX_NOMINATIES bijgewerkt (dubbele Hitmontop-regel in POKEMON.md weg).
+
+### [v0.0.163] - Hitmontop-evolutie: pose gekozen
+- Jordi koos de pose: eenarmige handstand met benen in een V-split (foto in `docs/concept/sprites/hitmontop_evo/referenties/`), beschreven in `SPEC.md` daar.
+
+### [v0.0.164] - Hitmontop-evolutie: ontwerp vastgelegd
+- Jordi's ontwerp letterlijk in `docs/concept/sprites/hitmontop_evo/SPEC.md`: kleine niet-functionele hoorn, bruine huid, lange aansluitende blauwe broek, langer lijf, afro-Braziliaans haar (Eddy Gordo), langere benen met kleinere blauwe klauwvoeten, koordjes aan broek en armen (muay thai), ronde handen. Fanart "Mestrimba" als inspiratie in `referenties/`.
+
+### [v0.0.165] - Hitmontop-evolutie: Fighting/Ground
+- Jordi koos Fighting/Ground ("omdat die telkens aan de grond zit"); Dark past niet. Uniek in de dex (Great Tusk staat uit). In SPEC.md en POKEMON.md.
+
+### [v0.0.166] - Hitmontop-evolutie: poppetje ronde 1 (intern)
+- Eigen 3D-poppetje (lama-methode, `pop3d`) in Jordi's pose: `docs/concept/sprites/hitmontop_evo/ontwerp/` (standen A70/B55/C40). Pose klopt, maar leest als een mensje i.p.v. een Hitmon (kop, paardenstaart, slungelig lijf); niet naar Jordi, ronde 2 met Hitmontops kop, dreads en een voller lijf loopt.
+
+### [v0.0.167] - Hitmontop-evolutie: poppetje ronde 2 (intern)
+- `ontwerp/ronde2.py`: Hitmontop-kop (koepel met puntige bruine rand, schuine ogen, mond, stompe hoorn), voller lijf, blauwe klauwvoeten, dikkere cordão. Gezicht leest als Hitmontop, maar hangende dreads aan de omgekeerde kop lezen in alle drie varianten als octopuspoten. Na 2 rondes gestopt: haarvraag ligt bij Jordi.
+
+### [v0.0.168] - Hitmontop-evolutie: poppetje afgekeurd, nu sprite art
+- Jordi keurde de kop van poppetje ronde 2 af ("wat een mormel"). Nieuwe aanpak (Jordi): direct pixelen vanaf de Hitmontop-sprite, met zijn kop rechtop als skelet; maker-agent bezig in `docs/concept/sprites/hitmontop_evo/sprite_r1/`. Les in `docs/lessen/GRAPHICS.md`.
+
+### [v0.0.169] - Hitmontop-evolutie: sprite ronde 1 (intern)
+- Maker pixelde vanaf de Hitmontop-sprite (`docs/concept/sprites/hitmontop_evo/sprite_r1/`): kop = Hitmontops kop rechtop met haar in plaats van de rand, handen en voeten 1:1 van Hitmontop, broek/romp/benen met de hand. Maker en Claude: nog niet goed (leest liggend i.p.v. handstand, haar geen dreads, plankromp, buisbenen). Verse keurder beoordeelt hem blind (Jordi: "laat maar eerst een andere agent keuren").
+
+### [v0.0.170] - Hitmontop-evolutie: sprite ronde 2 (intern)
+- `docs/concept/sprites/hitmontop_evo/sprite_r2/`: pose opnieuw als Y (V-split, nek, vrije arm, kleinere voeten, marge); gezicht, steunarm en cordão bevroren (diff 0, 1 px omhoog). Zwak: kop te groot t.o.v. een kort lijf en korte benen, haar leest als pet i.p.v. dreads. Verse keurder bezig.
+
+### [v0.0.171] - Hitmontop-evolutie: sprite ronde 3 (intern), gestopt
+- `sprite_r3/`: dreads in eigen tint, hoorn 4 px, vrije arm met onderarm, voeten met enkel en klauwen, minder banding, ogen exact Hitmontop. Claude: nog niet goed (kop ±27 px tegen lijf ±15 px, haar leest als een platte bruine kap). Na 3 sprite-rondes gestopt volgens de werkwijze; aanpak ligt bij Jordi.
+
+### [v0.0.172] - Hitmontop-evolutie: v2 afgekeurd, v3 vanaf de Hitmontop-pixels
+- v2 ronde 1 (schone start, met de hand) door de keurder afgekeurd: leest als een chibi-mensje met zijstaart. Oorzaak na vier pogingen: telkens vanaf nul een menselijke houding. Nieuwe aanpak v3: Hitmontops eigen sprite (al ondersteboven met de benen in een V) stap voor stap bewerken zoals een regional form; steunhand i.p.v. kop op de grond, zijn eigen haar gerestyled. `docs/concept/sprites/hitmontop_evo/sprite_v3_r1/`.
+
+### [v0.0.173] - Hitmontop-evolutie: nieuwe werkwijze, stap 1 skelet
+- Jordi's werkwijze: eerst een stick man van de pose, dan stap voor stap onderdelen erop plakken (handen en voeten eerst), pas daarna één geheel maken; elke stap met opties. v3-maker gestopt. `docs/concept/sprites/hitmontop_evo/skelet/`: gewrichten op de gespiegelde foto, opties A (foto), B (Pokémon-maat: kop 1,3×, lijf 1,2×, benen 1,1×), C (B met bredere V).
+
+### [v0.0.174] - Hitmontop-evolutie: stap 2 skelet in Hitmonlee-maat + handen en voeten
+- Jordi: "geen menselijke verhoudingen", benen niet langer dan Hitmonlee, Hitmontop is "wimpy" t.o.v. hem. `docs/concept/sprites/hitmontop_evo/stap2/`: hoeken van de foto, lengtes in spritepixels (benen 22–26, romp 20–22, kop 18–20), Hitmontops ronde handen en zijvoeten 1:1 geplakt (alleen gespiegeld). Opties D/E/F; keuring van stap 1 (PASS) erbij.
+
+### [v0.0.175] - Hitmontop-evolutie: stap 3 knip- en plakwerk
+- Op skelet D14: Hitmontops kop 1:1 (hoorn omlaag of 180°, hele kop of alleen het gezicht), Hitmonchans armen, Hitmonlee's benen, romp van Hitmonchan of Tyrogue (opties A–D). `docs/concept/sprites/hitmontop_evo/stap3/`. Keurder: PASS als concept; de 1:1-kop (37 px breed) is te groot voor het skelet, keuze ligt bij Jordi.
+
+### [v0.0.176] - Hitmontop-evolutie: stap 3b is de vorm
+- Stap 3 opnieuw (`docs/concept/sprites/hitmontop_evo/stap3b/`): onderdelen per kleur netjes geknipt met omlijning op de knip, kop draait mee langs de nek, Hitmonchans bovenbeen als arm (zijn eigen arm is te verkort), kleine kop uit Hitmontops overworld-sprite als optie. Jordi: "ok dit is de vorm", "vanaf hier gaan we alles stap voor stap aanpassen". Keuring (FAIL op zichtbaarheid van de romp) als lijst voor de volgende stappen.
+
+### [v0.0.177] - Hitmontop-evolutie: hoofd (stap 4) keurklaar
+- Op de vorm (stap 3b C): Hitmontops gezicht (ogen, fronslijnen, mond met iets meer vreugde) op een ronde kop van ±23 px, stekel kleiner als geheel, haar glad naar achteren met kamstrepen naar een knot. 4 rondes (`docs/concept/sprites/hitmontop_evo/stap4_hoofd/`), eindversie `ronde3b/`; verse keurder PASS. Rest pixel voor pixel ongewijzigd.
+
+### [v0.0.178] - Hitmontop-evolutie: hoofd terug naar het Hitmontop-ontwerp
+- Jordi over ronde 3b: mond zat bovenaan ("kaal met een baard?"), haar en hoorn moeten één materiaal/kleur met de kop zijn, hoorn kleiner maar zichtbaar door het opgeknotte haar, ogen zwarte rondjes met wit puntje, mond een streepje, hele hoofd tegen de klok in draaien, simpel. Anime-plaatje en zijn krabbel in `referenties/`; SPEC en les bijgewerkt.
+
+### [v0.0.179] - Hitmontop-evolutie: los hoofd ronde 5b
+- Hoofd los ontworpen (Jordi: "eerst maar puur het hoofd"): één glad bruin geheel zonder streep tussen haar en kop, haar naar achteren opgeknot rond een kleinere punt, enige streep = haarlijn hoog als fade, ogen zwarte rondjes met wit puntje, mond een streepje, 27° tegen de klok in. `docs/concept/sprites/hitmontop_evo/stap4_hoofd/ronde5b/`; keurder PASS.
+
+### [v0.0.180] - Hitmontop-evolutie: hoofd ronde 6 vanaf Hitmontops eigen pixels
+- Jordi: "ik heb liever dat je hitmontops hoofd pakt en daarmee gaat spelen". Stap voor stap op zijn kop-pixels (uitsnede, 180° + licht, flappen weg/knot, hoorn kleiner, fade + mond, draaien), varianten A (knot achterop) en B (knot rond de punt). `docs/concept/sprites/hitmontop_evo/stap4_hoofd/ronde6/`. Keurder: stap 3B/4B lezen het sterkst als Hitmontop; tussenstappen getoond aan Jordi.
+
+### [v0.0.181] - Hitmontop-evolutie: gepauzeerd
+- Jordi over hoofd ronde 6: "compleet prutswerk"; daarna "nee laat maar". Het hoofd is gepauzeerd; pose, skelet en vorm liggen vast. Stand van zaken in CLAUDE.md bijgewerkt.
+
+### [v0.0.182] - Hitmontop-evolutie: hoofd ronde 8 (Jordi's recept)
+- Recept van Jordi bij de 3D-referentie: V tussen de ogen naar achteren, flappen samen in een knot (Hitmontops eigen hand + witte polsband), kleinere maar echte stekel, gladde bovenkant. Bron: zijn overworld-kop (rechtop, van voren), met de hand vergroot; ogen van de frontsprite. `docs/concept/sprites/hitmontop_evo/stap4_hoofd/ronde8/`; keurder PASS voor variant 2 rechtop.
+
+### [v0.0.183] - Keurslot-hook verwijderd
+- Jordi: "die keurcontrole is echt bizar, haal die eraf" (hij blokkeerde ook het terugsturen van zijn eigen referentieplaatje). `.claude/hooks/sprite_keurslot.py` en de hook in `.claude/settings.json` weg; CLAUDE.md, SPRITE_WERKWIJZE.md en SPRITE_OPDRACHT.md bijgewerkt.
+
+### [v0.0.184] - Hitmontop-evolutie: hoofdconcept via Gemini, pixels ronde 9
+- Jordi bewerkte het 3D-plaatje in Gemini met Claude's prompt: knot met witte band, V naar achteren, kleinere stekel ("Dit is het idee wat ik voor het hoofd had min of meer"). Bron in `referenties/hoofd_gemini_concept.webp`. Ronde 9 (`stap4_hoofd/ronde9/`): silhouet verkleind uit die bron, met de hand ogen (zwart rondje met wit puntje), V met punt tussen de ogen, mondstreepje, witte band; vooraanzicht, nog niet gedraaid.
+
+### [v0.0.185] - Hitmontop-evolutie: hoofd ronde 9b (Jordi's doorgekruiste punten)
+- Ogen: zwarte cirkel met witte cirkel erin (zoals het concept); mond: dunne lijn in de donkere huidtint zonder stippen; knot: volle bal achter de kop, de zwarte knip eronder weg. Verder niets veranderd.
+
+### [v0.0.186] - Hitmontop-evolutie: model in de pose (Gemini)
+- Jordi maakte met Gemini een volledig model van de evolutie in de pose (handstand, V-split, kop met knot en kleine stekel); v2 kreeg een ronde steunhand, v3 een gladde buisarm. `referenties/model_gemini_pose_v3.png` is de bevroren bron voor de sprite; Stand van zaken bijgewerkt.
+
+### [v0.0.187] - Hitmontop-evolutie: silhouet stap 1 uit model v3
+- `docs/concept/sprites/hitmontop_evo/silhouet_v3/`: masker direct uit het bevroren model `model_gemini_pose_v3.png` (lokale achtergrondschatting, grondschaduw weg, witte enkel rechts dichtgemaakt), naar 64×64 verkleind (63 px hoog, hand op de grond). Geen agents (Jordi).
+- **A** = puur het model; **B** = "minder mens" volgens SPEC: lijf gedrongener (romp ±3 px korter langs zijn as; kop en steunarm staan exact stil). Vel: `vel_stap1.png` (model, rode omtrek over het model, A en B op 8×).
+
+### [v0.0.188] - Hitmontop-evolutie: silhouet stap 2 (meer Hitmon, minder mens)
+- Jordi: "het hoofd moet iets groter, de benen net wat korter en de voeten net wat groter, hij moet minder op een mens en meer op een hitmon lijken, handen dus ook iets groter".
+- `silhouet_v3/stap2.py`: per lichaamsdeel op het grote masker van model v3: kop ×1,15 (vanuit de nek), handen ×1,3 (steunhand blijft op de grond), voeten ×1,22, benen ±9% korter (alleen het onderbeen; de voet schuift mee). Daarna weer passend op 64×64.
+- **C** = A + aanpassingen, **D** = B (gedrongen romp) + aanpassingen. Vel: `silhouet_v3/vel_stap2.png`.
+
+### [v0.0.189] - Hitmontop-evolutie: sprite ronde 1 (op silhouet D)
+- Jordi: "is niet erg, het is een silhouet, ga maar een sprite bouwen dan kijken we verder". Gebouwd op **D** (gedrongen romp + grotere kop/handen/voeten, kortere benen).
+- `sprite_model/render.py`: de render van model v3 met precies dezelfde vervormingen als D, verkleind naar 64×64 (pixeldiff met silhouet D: 0). `kleur.py`: materiaal uit de tint (bruin/blauw/wit, elk 3 tonen + selout), toon uit de schaduw van de render, 1 px omlijning (selout linksboven, donkerbruin rechtsonder), binnenlijnen waar materialen elkaar overlappen. `handwerk.py`: ogen pixel voor pixel van Hitmontop (`anim_front_gba.png`), binnenlijn kop vóór de schouder, mond als één streepje, witte band om de knot, witte klauwen, één witte streep op het shirt.
+- Broek wit zoals in het model (SPEC: nog open, wit of blauw). Vel: `sprite_model/vel_r1.png`.
+
+### [v0.0.190] - Hitmontop-evolutie: sprite ronde 1 afgekeurd
+- Jordi: "lachwekkend slecht". Vastgelegd in SPEC; les in `SPRITE_KERN.md` (render per script kwantiseren is geen sprite). Silhouet D blijft staan.
+
+### [v0.0.191] - Poedelmot: eigen lijn, poedel-larve, mot Bug/Fairy
+- `docs/concept/POKEMON.md` en `IDEEEN.md`: de Venezolaanse poedelmot wordt een eigen lijn (Jordi). De larve heeft kenmerken van een poedelhond, de mot is Bug/Fairy. Nog open: het type van de larve, het aantal fasen, de ability en de lore.
+
+### [v0.0.192] - Poedelmot eindvorm: van brainstorm naar draft-sprite
+- `docs/concept/sprites/poedelmot/`: SPEC met Jordi's leidraad (zijn eerste lange bericht, zin voor zin) en alle besluiten; referenties (tak-foto, vilt, sprieten, zijaanzicht, fan-art); 3D-model (afgekeurd), poppetje op 45° (lama-methode, rondes 1–5b), silhouet rondes 1–3, en **draft-sprite ronde 1** (`sprite/ronde1/`, 64×64, poten naar Giratina). Vanaf nu stap voor stap verbeteren met Jordi.
+- `CLAUDE.md`: vaste regel "niet interpreteren wat Jordi niet zegt"; `docs/lessen/SPRITE_KERN.md`: geen eigen kenmerken in een makeropdracht.
+
+### [v0.0.193] - Koningstiran-lijn: Inca-rangen, ontwerp en Sapa Inca-sprite (rondes 1–15)
+- Inca-rangen uitgewerkt (hatun runa, chaski, kuraka, orejón, apu, awki, Sapa Inca/Quya e.a.) met vier lijnvarianten.
+- Eerste conceptschetsen van de koningstiran-lijn: `docs/concept/ontwerp/koningstiran/schets_v1.png` (script `ontwerp/scripts/koningstiran.py`).
+- Jordi kiest de lijn hatun runa → awki → Sapa Inca (vastgelegd in `POKEMON.md`); schets v2 met de kop naar voren en een imposante kroon in twee lagen (`ontwerp/koningstiran/schets_v2.png`).
+- Koningstiran-sprite gestart (eindvorm eerst): `docs/concept/sprites/koningstiran/SPEC.md` en pose-onderzoek met echte sprites (`referenties/pose_onderzoek.png`, `vogels_en_kronen.png`).
+- Sapa Inca wordt een hybride koningstiran × bergcaracara (Jordi: "meer creatieve vrijheid"); 3D-poppetje `docs/concept/sprites/koningstiran/pop3d.py` met een raster van 9 hoeken (`pop3d_hoeken.png`): waaier als dichte paraplu met hangende kwastjes, caracaralijf, rood gezicht, gouden borst en oorschijf.
+- Sapa Inca: pose aangepast naar Empoleon (borst vooruit, verre vleugel als gebaar, nabije vleugel als mantel, brede stand); les over T-poses in `FAKEMON_CHECKLIST.md`.
+- Sapa Inca pose-ronde 3: vleugels gesloten en massief, gebiedend gebaar in plaats van gespreide "danser"-pennen.
+- Sapa Inca: posegokken gestopt; kandidaat-skeletten voor een nonchalante koningspose in `docs/concept/sprites/koningstiran/referenties/nonchalant.png`.
+- Sapa Inca pose-ronde 4 naar het Pachacútec-beeld in Cuzco (vleugel half omhoog, andere als Decidueye-cape, contrapposto, slanker).
+- Sapa Inca: hoek B3 gekozen; opgeheven vleugel met knik en bolle achterrand (3 buigingen), benen niet meer in een V.
+- Sapa Inca: buiging 1 gekozen, vleugel iets korter, poten korter.
+- Sapa Inca: staart als scepter (eerste opzet).
+- Sapa Inca: staart als scepter vereenvoudigd (gewone staart die afbuigt, niet onder de poten door); in deze hoek valt hij grotendeels achter het lijf, keuze voorgelegd.
+- Sapa Inca: staart en bovenarm naar Jordi's krabbel (staart achter het standbeen door en aan de voorkant omhoog; bovenarm korter).
+- Sapa Inca: staart-scepter vervalt (leest in deze pose niet als scepter); gewone roestbruine staart achter de poten.
+- Sapa Inca: benen even lang onder het lijf, linkervleugel smaller.
+- Sapa Inca: silhouet v1 op 64x64 (1560 px) uit het poppetje B3 (`docs/concept/sprites/koningstiran/silhouet_v1_vel.png`).
+- Sapa Inca kleursprite ronde 1 en 2 (`docs/concept/sprites/koningstiran/ronde2/`): kroon bevroren; gezicht, vleugel, borst en staart met kleur gerepareerd; silhouetkeuzes voorgelegd.
+- Jordi: ronde 2 "al heel netjes"; verder morgen. Lessen van de maker in `SPRITING.md`, Stand van zaken bijgewerkt.
+- Sapa Inca: types Normal/Flying → Fire/Flying → Fire/Psychic (Jordi). Poppetje: linkervleugel hoger met staf (varianten veren/zonneschijf, `staf_varianten.png`), flank linksonder loopt door naar de dij; silhouet v2 (`silhouet_v2_vel.png`).
+- Sapa Inca: de staart is de staf (Jordi): gouden staartstukje rechtsonder, staf buigt onder de hand achter het lijf; silhouet v2.
+- Sapa Inca: arm houdt de staf weer zichtbaar vast, staf wordt hoger staart, staartstukje buigt naar links.
+- Sapa Inca: staartstukje rechts weg; staf krult af bij de buik, piepklein krulletje tussen de poten; linkervleugel één vorm.
+- Sapa Inca: staf verdwijnt achter de donkere flank, krulletje los tussen de poten (gemeten).
+- Sapa Inca ronde 3 (`docs/concept/sprites/koningstiran/ronde3/`): staf in de linkervleugel, lijf linksonder opgevuld, staartpuntje tussen de poten; gezichtsvariant apart.
+- Sapa Inca ronde 4 (`docs/concept/sprites/koningstiran/ronde4/`): vleugel om de staf in vleugelvorm, staf meer staart, linkerpoot aangesloten, trotse Pokémon-ogen.
+- Sapa Inca: zes kroonvarianten (gouden stippen, gouden band, zonder stippen) in `docs/concept/sprites/koningstiran/kroon_varianten/`.
+- Sapa Inca ronde 5: staf zichtbaar onder de vleugel. Stand van zaken bijgewerkt.
+- Sapa Inca ronde 5b: zwart vlak tussen staf, vleugel en lijf opgelost.
+- Sapa Inca ronde 6 en 6b: lijf ovaal volgens Jordi's rode lijnen, buik rond, staf vóór de vleugel tot de greep, poten afgewerkt, staf verdwijnt kort onder de hand achter het lijf.
+- Sapa Inca ronde 7: lijf links voller, buik egaal ovaal, stafkop als staartveerpunt (variant met zonneschijf).
+- Sapa Inca ronde 7b/8: linkeromtrek tussen 6b en 7, grotere zon-stafkop (7×7).
+- Sapa Inca ronde 9: nieuw kroonpatroon per veer (3 varianten) en puntige stafkop.
+- Sapa Inca: Jordi kiest kroon v3 en de puntige stafkop; kandidaat-frontsprite in `docs/concept/sprites/koningstiran/kandidaat/`.
+- Sapa Inca: onafhankelijke keuring (13 PASS / 9 FAIL) en ronde 10 met de technische reparaties (open randen, ruis, omlijning, shading).
+- Sapa Inca ronde 11: staf als goud zonder gloed, kop en ogen groter, kleur en schaduw naar latere generaties (paarsbruine schaduw, lichte selout, warm goud).
+- Sapa Inca: ronde 11 afgekeurd; ronde 12 = ronde 10 met alleen de staf als goud zonder gloed.
+- Sapa Inca: eindkeuring (20 PASS / 11 FAIL) en ronde 13 met de top-5-reparaties (ogen/snavel, banding, hooglicht romp, stafpunt, opschonen).
+- Sapa Inca ronde 14: overgang staf/lijf, spitse stafpunt, poten, verre oog en paarse pixels opgeruimd.
+- Sapa Inca: tweede eindkeuring (netheid per onderdeel) en ronde 15 met de 14-px top 5.
+- Sapa Inca: overzicht van tien versies; samengevoegd tot ronde 12 met het hoofd en de tooivorm van ronde 2 (`samengevoegd/`).
+
+### [v0.0.194] - Sapa Inca frontsprite af
+- Frontsprite van de Sapa Inca (eindvorm koningstiran-lijn, Fire/Psychic) is af: `docs/concept/sprites/koningstiran/af/sapa_inca.png`, samengevoegd uit ronde 12 (binnenkant tooi, staf/staart, lijf, poten) en ronde 2 (hoofd, tooivorm). Retro in `docs/lessen/RETRO_SAPA_INCA.md`. Nog te doen: frame 2, rug, icoon, shiny, naam/data; daarna awki en hatun runa.
+
+### [v0.0.195] - Poedelmot frontsprite af (Gemini-model)
 - **Nieuwe fakemon: Venezolaanse poedelmot** (eigen soort, laatste evolutie; voorvorm: larve met poedelkenmerken, later). Frontsprite naar Jordi's eigen Gemini-ontwerp: lijf uit afbeelding 2, voelsprieten uit afbeelding 1. `docs/concept/sprites/poedelmot/af/poedelmot.png` (+ `normal.pal`, 8×-weergave), 64×64, box 62×45, 1782 px, 14 kleuren.
 - 21 kleurrondes (`kleur_r1`–`kleur_r21`); keuring r21 PASS op de twee eisen (accuraat t.o.v. model + Gen 3) en eindkeuring Dragonfly Cave PASS. Ter info van de eindkeurder: het lijnennet in het onderlijf (uit het model) is het drukste deel van de sprite.
 - **Werkwijze:** nieuwe belangrijkste spriteregel (bovenaan `SPRITE_KERN.md`): een model van Jordi namaken = alleen accuraat op het origineel + Gen 3; niet genoemd = niet goedgekeurd. Vaste methode "Gemini-model namaken" met stappen en lessen in `SPRITE_WERKWIJZE.md`.
 
-### [v0.0.141] - Les: Gemini herbouwt bij meerdere wijzigingen
+### [v0.0.196] - Poedellarve frontsprite af (voorvorm poedelmot)
+- Jordi's Gemini-model van de larve (`docs/concept/sprites/poedellarve/referenties/jordi_gemini.png`); Gemini kreeg hem niet korter. Claude maakte het stuk onder de kop lager zonder hem smaller te maken (`model/laag.py`: borst en voorpootjes ingedrukt, kop/sprieten/bolletjes onvervormd omlaag, achterlijf en voetjes onveranderd); Jordi koos 60%.
+- Zwakke eerste vorm (evolueert op lv 15–20 max): formaat als Wurmple/Caterpie/Grubbin, 40×30 px, 778 px. Silhouet = model verkleind (`silhouet/sil.py`).
+- Twee kleurrondes door één maker met het meetgereedschap van de poedelmot vanaf ronde 1 (`kleur_r1`, `kleur_r2`). Jordi: "ik vind ronde 2 wel goed, maar je moet hem spiegelen" en "dan is de sprite eigenlijk al af". Eindversie `af/poedellarve.png` (gespiegeld naar links, + `normal.pal`, 8×-weergave).
+- Eindkeuring kleuren en schaduwen (Dragonfly Cave, naast poedelmot en Gen 3-sprites; Jordi): na het spiegelen viel het licht van rechtsboven → kleur r3 (21 px tinten, paletkleur 7 warmer, vorm ongewijzigd), herkeuring PASS. `af/poedellarve.png` is nu r3.
+
+### [v0.0.197] - Les: Gemini herbouwt bij meerdere wijzigingen
 - `docs/lessen/SPRITE_KERN.md`: Gemini tekent bij een prompt met meerdere wijzigingen een heel nieuw beeld; één wijziging per prompt, of de beste versie zelf bewerken (potoo).
 
-### [v0.0.142] - Potoo: SPEC en referenties vastgelegd
+### [v0.0.198] - Potoo: SPEC en referenties vastgelegd
 - `docs/concept/sprites/potoo/SPEC.md` + `referenties/`: Jordi's besluiten (oog en snavel van Gemini v1, geen tak, klauwen in grijphouding, lijf langer) en de afgekeurde Gemini v2. Eerdere gesprekken over dit ontwerp waren niet vastgelegd.
+
+### [v0.0.199] - Evolutie van Picapau: frontsprite af
+- Ontwerp met Jordi (SPEC `docs/concept/sprites/picapau_evo/`): grote specht met Raichu Gen 1-motief (kastanje + crème, zwarte gekrulde slierten, dunne staartlus met bliksem), Raichu Gen 1 als inspiratie; tong-variant vervallen.
+- Blender-modellen C1–C3 ("alien", ei-lijf) → r4/r5 grote vogel → poseproeven r6pose/r7pose (3/4 zoals Pidgeot, achterover). Sprite r1–r16 met de hand overgetrokken; snavel na 6 probeersels: P5 (Staravia-opbouw in grijs); slierten r11–r14 uit één voet, overlappend.
+- Onafhankelijke keuring r14 FAIL (10 reparaties) → r15 → r16 PASS; Jordi: "helemaal prima". Eindversie `af/picapau_evo.png` (+ `normal.pal`). Naam nog open.
+- Lessen in `docs/lessen/SPRITE_KERN.md`: Jordi's referentie is de hoofdbron; model alleen tot de richting staat; na "maak een sprite" niet terug naar het model; snavel/dunne delen niet tegen een donker vlak.
+
+### [v0.0.200] - Viscacha: Gemini-basis gekozen
+- Prompt voor Gemini opgesteld (Electric zonder elektriciteit, echte viscacha-anatomie, actieve pose, geen ondergrond); 5 rondes. Ronde 3 wordt het startpunt van een nieuwe prompt (woestijnkleur, energieker ontwerp). Referenties en feedback: `docs/concept/sprites/viscacha/gemini/`.
+- Ronde 6 (nieuwe startprompt met ronde 3 als bijlage, woestijnkleur en energieker ontwerp) gekozen als ontwerpreferentie: `docs/concept/sprites/viscacha/referenties/gemini_gekozen_ronde6.png`.
+
+### [v0.0.201] - Spriteregels voor Gemini-ontwerpen
+- Nieuw `docs/lessen/GEMINI.md` (Jordi: "pas de regels maar aan voor gemini modellen die sprites gemaakt worden"): Jordi's Gemini-keuze is het bevroren ontwerp; de sprite is een trouwe vertaling (kwantiseren als onderlaag mag, daarna met de hand opschonen); de keurder toetst trouw + techniek, ontwerppunten zijn geen FAIL; promptlessen (nieuw gesprek i.p.v. bijsturen, geen ondergrond, benoemen wat niet mag lijken). Verwijzing in `SPRITE_KERN.md` en `CLAUDE.md`.
+- Viscacha: kleur ronde 1 en 2 door keurders afgekeurd (wangpluk leest als kraag, contour, toonvlakken); ronde 3 volgens de nieuwe regels.
+
+### [v0.0.202] - Gemini-prompt koningstiran fase 1 (hatun runa)
+- `docs/concept/sprites/koningstiran/gemini/PROMPT_HATUN_RUNA.md`: prompt voor Gemini (grote kiskadie als anatomie, witte wenkbrauwstreep = gevlochten llawt'u, verborgen gele kroon als hint, Normal/Flying, palet van de Sapa Inca zonder kroon/staf), volgens `GEMINI.md` (3/4 links, geen ondergrond/effecten, witte achtergrond, ≤16 kleuren, AVOID-regel), plus tips voor bijsturen. Bijlage: Sapa Inca 6× (`bijlage_sapa_inca_6x.png`), eindvorm `af/sapa_inca.png` hierheen gekopieerd van de koningstiran-tak.
+
+### [v0.0.203] - Gemini-prompts: Gen 3 in plaats van Gen 5
+- Jordi: "maak er aub gen 3 van". `PROMPT_HATUN_RUNA.md` vraagt nu om een "official Gen 3 front sprite (Ruby/Sapphire/Emerald style)"; de vaste regel in `docs/lessen/GEMINI.md` (hierheen gehaald van de viscacha-tak) ook. Gen 5 (96×96) botste met de eis 64×64 en ≤16 kleuren.
+
+### [v0.0.204] - Hatun runa: eerste Gemini-ronde besproken
+- `docs/concept/sprites/koningstiran/gemini/README.md`: feedback op ronde 1 (hoofdband werd een losse hachimaki, kiskadiekop olijfgroen, profielpose) en de bijstuurzin.
+- Jordi: "vind hem eerder japans lijken" (hachimaki). Prompt herschreven: geen hoofdband, maar een tocapu-weefmotief in rood/goud/zwart ín de witte wenkbrauwstreep; rug donkerbruin.
+- Startprompt v2 voor een nieuw gesprek (met de Sapa Inca als bijlage): de Inca-verwijzing exact beschreven (llawt'u van de gewone burger = witte wenkbrauwstreep met één rij tocapu-vakjes in rood/goud/zwart; verborgen gouden kroonvlek als zaadje van de keizerskroon; verder niets Inca).
+- Gemini-ronde 2 (startprompt v2) opgeslagen: kiskadiekop klopt nu, maar de tocapu-vakjes werden losse symbolen. Voorstel: doorlopend trapzigzag-motief.
+- Startprompt v3 (Jordi: actievere pose, niet "weer vooruit poseren"): kiskadie op het moment dat hij afzet naar een insect (lijf schuin naar voren, nabije vleugel hoog in de opslag, snavel open roepend "bem-te-vi"); witte wenkbrauwstrepen zonder patroon, Inca-tekens pas vanaf fase 2.
+- Gemini-ronde 4 (startprompt v3): Jordi "ik vind dit wel iets"; consistent hetzelfde ontwerp. Drie Gemini-lessen in `docs/lessen/GEMINI.md` (gedrag als pose-bron, geen details onder sprite-schaal, cultuur als verenvlak).
+- **Hatun runa-ontwerp gekozen** (Jordi): Gemini-ronde 4 bevroren als `docs/concept/sprites/koningstiran/referenties/gemini_gekozen_hatun_runa.png`; de bijgestuurde versie daarna was slechter. Volgende sessie: frontsprite.
+
+### [v0.0.205] - Alle takken in main
+- Jordi: "zorg dat alle takken naar main gecommit worden". Twaalf takken samengevoegd (o.a. Sapa Inca, poedelmot/poedellarve, potoo, viscacha, Hitmontop-evolutie, Picapau-evolutie, nachtaap fase 3, spritewerkplaats/olinguito-schetsen van 24 okt, hatun runa-Gemini); vier oude takken van 25 okt (Coathief, lama, wasbeer, kolibrie pre-evo) als samengevoegd gemarkeerd: hun inhoud zat al in main. Keurslot-hook blijft weg (Jordi, 6 nov). Changelogsecties van de takken achteraan, hernummerd v0.0.140–v0.0.204. CLAUDE.md (Stand van zaken, dubbele regels) en GEMINI.md opgeruimd.
+
+### [v0.0.206] - Hatun runa frontsprite: kandidaat
+- `docs/concept/sprites/hatun_runa/` (koningstiran fase 1, kiskadie, Normal/Flying): silhouet = Gemini-model verkleind (48 px breed, 971 px), poedelmot-methode met één maker. r1–r2 maker; r3 kop/vleugel op Claude's punten; keuring r3 (oog zonder glans, dambord, toon verre vleugel); r4 = die reparaties (toon verre vleugel nagemeten: r4 80 tegen model 81); Jordi: "ik vind hem netjes"; eindkeuring Dragonfly Cave op kleur en schaduw (10 px); r5 = die 10 px (Claude). Kandidaat: `kleur_r5/hatun_runa.png`.
+
+### [v0.0.207] - Hatun runa frontsprite af
+- Jordi over r5: "ik vind het goed, er vallen 2 pixels uit de toon [...] als je die 2 fixt dan is die klaar". Twee losse zwarte pixels weg: (21,37) → donkerbruin, (34,47) → roodbruin (kleur van de omgeving). Buiksikkel blijft ("de donkere sikkel zie ik niet"). **Af:** `docs/concept/sprites/hatun_runa/af/hatun_runa.png` (+ `normal.pal`, `hatun_runa_8x.png`). Volgende in de lijn: awki (fase 2).

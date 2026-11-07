@@ -1,0 +1,8 @@
+pixels: 778 (silhouet 778)
+alpha-diff met silhouet: 4  extra=[(38, 34), (28, 44)]  mist=[(33, 39), (20, 46)]
+open randen (buitenrand zonder lijnkleur 1-4): 0 []  | bewuste uitzondering klauwtjes: []
+buitenrand 125 px: selout 3 23 px in 5 reeksen (lengtes [3, 3, 4, 5, 8]), reeksen < 3 px: []
+losse pixels (vlaktint zonder gelijke buur): 0 []
+tintclusters < 3 px: 0
+gebruikte indexen: 12345678AD
+aantal kleuren: 10 + transparant = 11

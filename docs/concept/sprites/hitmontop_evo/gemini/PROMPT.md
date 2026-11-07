@@ -19,6 +19,7 @@ Regels: `docs/lessen/GEMINI.md`. Nieuw gesprek (Gemini weigerde verdere bewerkin
 Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
 
 It is a new evolution of Hitmontop, based on capoeira (Hitmontop's Japanese name already refers to capoeira). It must clearly read as a member of the Hitmon family: smooth brown skin, round ball hands, simple shapes. It is a Pokémon, not a human.
+- PROPORTIONS (most important): it stays a Hitmon, not a human. The head, the round hands and the feet are BIG, bigger than the arms and legs are thick; the arms and legs are thin, simple tubes between them, like Hitmontop.
 
 ATTACHMENTS
 - Attachment 1 is the approved HEAD. Copy it exactly: Hitmontop's head shape, the V-shaped line between the eyes pulled back over the head, all the "hair" combed back into a round bun with a white band (like its hands with wristbands), a smaller horn on top. Hair, horn and head are one material and one color (the same brown as the skin), no separate hair color. Eyes are black circles with one white dot. Mouth is one short line. No eyebrows, no nose, no ears.
@@ -45,6 +46,8 @@ AVOID
 - Bijsturen hooguit 1–2 keer met één zin, bijv. `same design, make the stripes wider and fewer`.
 - Daarna een nieuw gesprek met de beste versie als bijlage: `Use the attached image as the base design. Keep its pose, proportions and colors. Change only: ...`
 - Rondes en Jordi's keuze vastleggen in `README.md` hier; gekozen ontwerp als `../referenties/gemini_gekozen_capoeira.png`.
+
+Jordi (7 nov): "belangrijk is dat die echt hitmon blijft en dus niet mens, dus verhoudingen van hoofd, handen en voeten zijn groter dan de benen en armen" (regel PROPORTIONS toegevoegd; stickman met grotere kop, handen en voeten).
 
 ## Variant B (aanbevolen): hoofd + stickman, pose beschreven
 Jordi: "misschien kunnen we daar meer een stickman van maken [...] of misschien kan jij het heel goed beschrijven". Bijlagen: 1 = `bijlage1_hoofd.webp`, 2 = `bijlage2_stickman.png` (schone stickman van pose v3: kop = cirkel, handen/voeten = rondjes). Vervang ATTACHMENTS door het blok hieronder en voeg na de eerste ATTACHMENT-regels toe: `- Attachment 2 is a stick figure that shows only the POSE (big circle = head, small circles = hands and feet, grey line = floor). Follow the pose, not the drawing style.` Werkt Gemini ook zonder stickman: alleen bijlage 1.

@@ -1,5 +1,6 @@
 # model.py: maakt het model met de steunarm korter (alleen rijen uit het rechte armstuk tussen lijf en polsband;
 # alles erboven zakt mee, hand blijft staan) + alpha-masker (witte achtergrond vanaf de rand weggevuld).
+# Plus: steunhand rond (bovendeel 40 px omhoog, zie onder).
 # derde: rijen 774-835 (62 px = 1/3 van 185 px armlengte lijf->polsband, y 653-838); kwart: rijen 782-827 (46 px).
 import numpy as np; from PIL import Image; from collections import deque
 H='/home/user/Pokemon-Fully-Ungrounded/docs/concept/sprites/hitmontop_evo/'
@@ -19,11 +20,14 @@ while q:
     yy,xx=y+dy,x+dx
     if 0<=yy<h and 0<=xx<w and wit[yy,xx] and not bg[yy,xx]: bg[yy,xx]=1; q.append((yy,xx))
 rgba=np.zeros((h,w,4),'uint8'); rgba[...,:3]=c; rgba[...,3]=np.where(bg,0,255)
-Image.fromarray(rgba).save(H+'sprite_gemini/ronde1/gereedschap/model_origineel.png')
+pass  # origineel-met-masker wordt niet meer bewaard
 for naam,(a,b) in {'derde':(774,836),'kwart':(782,828)}.items():
   n=b-a
   o=np.zeros_like(rgba)
   o[n:b]=rgba[:a]           # alles boven het knipstuk zakt n rijen
   o[b:]=rgba[b:]            # polsband + hand blijven staan
+  # steunhand rond: alles boven de onderkant van de polsband (y<896) gaat G px omhoog, zodat er onder de band
+  # ruimte is voor een volle bal (die wordt met de hand op het raster getekend; hier blijft alleen de onderste helft staan)
+  G=40; o2=np.zeros_like(o); o2[:896-G]=o[G:896]; o2[896:]=o[896:]; o=o2
   Image.fromarray(o).save(H+f'sprite_gemini/ronde1/gereedschap/model_{naam}.png')
   ys,xs=np.where(o[...,3]>0); print(naam,'bbox',xs.min(),xs.max(),ys.min(),ys.max())

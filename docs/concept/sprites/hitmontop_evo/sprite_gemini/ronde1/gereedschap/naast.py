@@ -9,8 +9,8 @@ def grid(c,lijn):
   d=ImageDraw.Draw(c)
   for x in range(x0,x1+1): d.line([((x-x0)*z,0),((x-x0)*z,c.size[1])],fill=(255,0,0) if x%5==0 else (230,180,180))
   for y in range(y0,y1+1): d.line([(0,(y-y0)*z),(c.size[0],(y-y0)*z)],fill=(255,0,0) if y%5==0 else (230,180,180))
-  for x in range(x0,x1,5): d.text(((x-x0)*z+2,2),str(x),fill=(200,0,0))
-  for y in range(y0,y1,5): d.text((2,(y-y0)*z+2),str(y),fill=(200,0,0))
+  for x in range((x0+4)//5*5,x1,5): d.text(((x-x0)*z+2,2),str(x),fill=(200,0,0))
+  for y in range((y0+4)//5*5,y1,5): d.text((2,(y-y0)*z+2),str(y),fill=(200,0,0))
   return c
 lijn=z>=10
 m=grid(bg.crop((int(X0+x0*s),int(Y0+y0*s),int(X0+x1*s),int(Y0+y1*s))).resize(((x1-x0)*z,(y1-y0)*z),Image.LANCZOS),lijn)

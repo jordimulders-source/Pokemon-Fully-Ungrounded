@@ -1,5 +1,6 @@
 # Stap 2: lijf groter in verhouding (Jordi 6 nov: "het lichaam moet net wat groter (wel in verhouding blijven)").
-# Kop/snavel/muil (boven Y0) onaangeroerd; eronder in hoogte s en breedte geleidelijk naar s (Y0->Y1), om de lijfas CX.
+# Jordi 7 nov: "je hebt hem dikker gemaakt, niet langer" -> alleen in de hoogte oprekken, breedte blijft.
+# Kop/snavel/muil (boven Y0) onaangeroerd; eronder alleen verticaal x s.
 # Daarna gespiegeld (Jordi: "dit beeld spiegelen kan je zelf"). Uitvoer: model_lijf_<pct>.png
 import numpy as np, sys; from PIL import Image
 a=np.asarray(Image.open('model_los.png')).astype(np.uint8)
@@ -11,7 +12,7 @@ for s in (1.10,1.20,1.30):
         if yo<Y0: ys=yo; f=1.0
         else:
             ys=Y0+(yo-Y0)/s
-            t=min(1,max(0,(ys-Y0)/(Y1-Y0))); t=t*t*(3-2*t); f=1+(s-1)*t
+            f=1.0
         yi=int(round(ys))
         if yi>=H: continue
         xo=np.arange(Wn)-off; xs=np.round(CX+(xo-CX)/f).astype(int)

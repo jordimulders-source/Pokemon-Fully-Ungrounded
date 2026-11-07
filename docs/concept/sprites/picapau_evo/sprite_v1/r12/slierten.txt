@@ -1,0 +1,34 @@
+# r12 slierten, met de hand. Per regel "rij kolom pixels". 4 = donkerste bruin (lichte kant: boven/links), k = zwart (schaduwkant).
+# Jordi: "ik ben nog steeds niet tevreden met de slierten op het hoofd overigens, die moeten beiden ongeveer uit dezelfde plek komen en
+# netjes langs elkaar hangen zoals de raichu oren op de gen 1 sprite" · "en ja ze mogen overlappen"
+# Beide 2 px dik (4 boven/links, k onder/rechts). Gemeenschappelijke voet op de achterkruin (26-29, 1-3): de nabije ligt direct onder/vóór
+# de verre (4-k-4-k), daarna hangen ze in trapjes 3-3-3-3-2 (verre) en 3-3-2-1-1-1 (nabije) naar achteren-omlaag.
+# --- verre spriet (achter, hoger): korte top op rij 0, dan omlaag naar achteren; spiraal met gat rechtsboven (x41-46, rij 5-10),
+#     rechtsom gerold: boven naar rechts, rechts omlaag, onder naar links, links omhoog, eind naar binnen
+0 27 444
+1 26 4kkk444
+2 26 k
+2 30 kkk444
+3 33 kkk444
+4 36 kkk44
+5 39 kk4444
+6 41 kkkk4
+7 45 kk
+8 41 4k
+8 45 kk
+9 41 4kkkkk
+10 42 kkkk
+# --- nabije spriet (vóór, lager): vanaf dezelfde voet, zakt sneller; spiraal met gat linksonder (x34-39, rij 8-13),
+#     de spriet komt rechts omlaag en rolt naar links en omhoog naar binnen
+2 27 444
+3 27 kkk444
+4 30 kkk44
+5 33 kk4
+6 35 k4
+7 36 k4
+8 37 k4k
+9 35 44.4k
+10 34 4kk.4k
+11 34 4k..4k
+12 34 4kkkkk
+13 35 kkkk

@@ -211,3 +211,29 @@ STYLE AND FORMAT
 - 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
 - Plain white background. No ground, shadow, glow, sun, sparkles or effects. One single creature.
 ```
+
+## Startprompt v4 (7 nov, nieuw gesprek; vervangt v3)
+Jordi: "rechts mag geschrapt worden want het hele patroon klopt niet". Bijlage: alleen `awki_r2_A_kuif.png`.
+
+```
+Draw this Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+The attached image is the base design. Keep its head, face, crest, ear patches, colors, body, legs and tail exactly as they are. Change only the pose of the wings and add a wing pattern.
+
+ANATOMY (most important)
+- The bird has exactly TWO wings.
+- Near wing (on the right side of the body, closest to the viewer): raised up from the shoulder and reaching up and forward, feathers spread open, proudly greeting the sun like an Inca. This is the only raised wing and it carries the pattern.
+- Far wing (on the left, behind the chest): folded and mostly hidden behind the body. No other wing anywhere.
+
+THE PATTERN (on the raised wing only)
+- An Andean textile border across the wing coverts: one row of 3 large stepped pyramids pointing up, like flames.
+- Each pyramid is built from 3 stacked rectangular blocks: a wide block at the bottom, a block half as wide centred on top of it, and a small block centred on top of that. The sides go up in clear right-angled stairs. No smooth diagonal lines, no curved flame shapes, no plain triangles.
+- Colors: bottom block dark red, middle block orange, top block yellow. All three pyramids identical, side by side, touching at the bottom.
+
+POSE
+- Standing on its own legs, body in 3/4 view facing left, chest out, head lifted a little, beak pointing left. Proud, calm, a young prince.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. No ground, shadow, glow, sun, sparkles or effects. One single creature.
+```

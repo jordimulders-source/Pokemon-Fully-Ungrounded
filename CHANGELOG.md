@@ -867,3 +867,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.213] - Awki: startprompt v3
 - Gemini liep vast; nieuwe startprompt (r2-A als basis, r3 voor vleugel en patroon, precies twee vleugels) in `PROMPT_AWKI.md`. Les over extra ledematen in `docs/lessen/GEMINI.md`.
+
+### [v0.0.214] - Awki: startprompt v4
+- Ronde 3 als bijlage geschrapt (patroon klopt niet); v4 met alleen r2-A als bijlage en het trappatroon in tekst uitgelegd.

@@ -293,7 +293,7 @@ AVOID
 - Not Talonflame, Fletchinder, Moltres or Ho-Oh.
 ```
 
-## Startprompt v7 (7 nov, nieuw gesprek; vervangt v6)
+## Startprompt v7 (7 nov) – CONCEPT, niet gebruiken: Jordi "nee eerst overleggen"
 Jordi over r4: binnenkant vleugel = zon, buitenkant bruin; Xatu-pose zodat je een groot deel van de zon ziet. Bijlage: `awki_r4_v6.png`.
 
 ```

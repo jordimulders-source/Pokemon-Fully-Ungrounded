@@ -10,6 +10,7 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 - **Gemini is slecht in verbeteren:** korte bijstuurfeedback werkt hooguit 1–2 keer; daarna drijft hij af (viscacha werd Raichu). Beter: de beste versie als bijlage in een **nieuw gesprek** met een nieuwe startprompt.
 - **Een lichaamsdeel verplaatsen via bijsturen geeft extra ledematen** (awki, 7 nov: "vleugel omhoog" gaf een derde vleugel). Zeg in de prompt hoeveel vleugels/armen er zijn en welke welke is (nabij/ver), en noem de fout in de bijlage.
 - **Geometrische patronen lukken Gemini niet** (awki, 7 nov: trapdriehoeken werden zaagtand of gladde driehoeken die erop "plakken"). Vraag kleur per veerrij/lichaamsdeel; een patroon zet de maker-agent zelf.
+- **Nieuw idee van Jordi = eerst overleggen, dan pas een prompt** (awki, 7 nov: "nee eerst overleggen"). Leg de open keuzes voor; schrijf de prompt pas na zijn antwoord.
 - "Meer Pokémon"/"cuter" laat Gemini naar bekende soorten glijden (Pikachu/Raichu); noem expliciet wat níet mag lijken.
 - Jordi's keuze = **bevroren ontwerp**: pose, verhoudingen (kopgrootte, oren), kenmerken en kleuren. Opslaan als `referenties/gemini_gekozen_*.png`, feedback per ronde in `gemini/README.md`, Jordi letterlijk in SPEC.
 

@@ -1,0 +1,7 @@
+pixels: 1782 (silhouet 1782)
+alpha-diff met silhouet: 0  extra=[]  mist=[]
+open randen (buitenrand zonder lijnkleur 1/2/A): 0 []  | bewuste uitzondering voetje: [(25, 58), (25, 59)]
+buitenrand 181 px: selout A 42 px in 4 reeksen (lengtes [8, 9, 10, 15]), reeksen < 3 px: []
+losse pixels (vlaktint zonder gelijke buur): 0 []
+tintclusters < 3 px: 0
+gebruikte indexen: 123456789A

@@ -2,12 +2,14 @@
 
 **Eerst:** `SPRITE_WERKWIJZE.md` → "Gemini-model namaken" (poedelmot/poedellarve: meetgereedschap px.py/box1x/lijnkaart vanaf ronde 1, één keurder met alleen de twee eisen, 8× naar Jordi, verse maker > ±400k tokens). Dit bestand vult aan.
  (Jordi, 7 nov: "pas de regels maar aan voor gemini modellen die sprites gemaakt worden")
+# Sprites vanaf een Gemini-ontwerp (Jordi, 7 nov: "pas de regels maar aan voor gemini modellen die sprites gemaakt worden")
 
 Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in plaats van** stap 1–3 van `SPRITE_KERN.md` (ontwerp, bron, silhouet). De rest van SPRITE_KERN (netheid, belijning, ogen, keurslot) blijft gelden.
 
 ## Ontwerp in Gemini
 - Claude schrijft de prompt (Engels); Jordi plakt hem in Gemini en stuurt het resultaat. Voorbeeld en rondes: `docs/concept/sprites/viscacha/gemini/README.md`.
 - Vast in elke prompt: echte diersoort als anatomie (foto meesturen), "official Gen 5 front sprite", 3/4 naar links, geen elektriciteit/gloed/effecten, **geen rots/ondergrond/schaduw**, witte achtergrond, ≤16 kleuren, 64×64, een AVOID-regel (Neopets/knuffel, konijn, enz.).
+- Vast in elke prompt: echte diersoort als anatomie (foto meesturen), "official Gen 3 front sprite (Ruby/Sapphire/Emerald style)" (Jordi, 7 nov: Gen 3, niet Gen 5; Gen 5 is 96×96 en botst met 64×64/≤16 kleuren), 3/4 naar links, geen elektriciteit/gloed/effecten, **geen rots/ondergrond/schaduw**, witte achtergrond, ≤16 kleuren, 64×64, een AVOID-regel (Neopets/knuffel, konijn, enz.).
 - **Gemini is slecht in verbeteren:** korte bijstuurfeedback werkt hooguit 1–2 keer; daarna drijft hij af (viscacha werd Raichu). Beter: de beste versie als bijlage in een **nieuw gesprek** met een nieuwe startprompt.
 - "Meer Pokémon"/"cuter" laat Gemini naar bekende soorten glijden (Pikachu/Raichu); noem expliciet wat níet mag lijken.
 - Jordi's keuze = **bevroren ontwerp**: pose, verhoudingen (kopgrootte, oren), kenmerken en kleuren. Opslaan als `referenties/gemini_gekozen_*.png`, feedback per ronde in `gemini/README.md`, Jordi letterlijk in SPEC.
@@ -26,3 +28,12 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 - **Elk onderdeel afvinken tegen Gemini op dezelfde schaal** (kop, oren, oog, neus, mond, snorharen, aanhangsels, poten, lijf, staart): de viscacha-wangpluk werd stilletjes verkleind en het gezicht vereenvoudigd; Jordi: "je hebt het niet goed gecontroleerd".
 - **Gezicht apart vergelijken** (viscacha r4, 7 nov: Jordi "kijk eens goed naar het gezicht ... neus, whiskers, mond"; twee keurders en Claude misten het): maak altijd een close-up van de kop van sprite en Gemini op dezelfde schaal naast elkaar en vink per onderdeel af: neus, mond, snuitvorm, kin, snorharen, oog, oren. Snorharen uit Gemini niet weglaten: 1 px lijntjes zoals Raticate/Sandshrew.
 - **Onderlaag eerst, niet hertekenen** (viscacha r1–r6): elke handmatige hertekening verschuift onderdelen een paar pixels van Gemini (oorvorm, neus-Y, snorhaarpad, teenlijntjes) en levert FAIL op FAIL. Begin met het gekwantiseerde Gemini-plaatje op de juiste schaal (alles incl. snorharen in 64×64), houd elke featurepixel op zijn plek, schoon alleen technisch op (buitenlijn, ruis, ≤3 tinten), vervang alleen wat Jordi toestaat. Meld de afwijking van de onderlaag per zone.
+- Afwijken van Gemini alleen waar iets op 1× anders leest dan in het plaatje (een vlak dat op 64 px als kraag leest, losse haren, effectjes); meld elke afwijking.
+
+## Keuren
+- De keurder toetst **trouw aan het Gemini-plaatje + spritetechniek**, niet het ontwerp. Ontwerppunten (kop klein, oren smal, minder cute) zijn géén FAIL en geen reparatie; hooguit "voor Jordi".
+- Vergelijk op 8× naast het Gemini-plaatje (verkleind) én 2–3 echte sprites.
+- De regel "na 2 mislukte rondes stoppen" telt hier alleen bij ontwerp- of vertaalproblemen; rondes met alleen benoemde pixelreparaties (contour, toonvlakken) gaan door, doel ≤ 5.
+- **Consistent ontwerp = goede prompt** (Jordi, 7 nov, hatun runa): echte soort + kenmerken + gedrag (de kiskadie die "bem-te-vi" roept en afzet naar een insect) gaf over gesprekken heen steeds hetzelfde dier. Gedrag als pose-bron werkt beter dan "dynamic pose".
+- **Geen details onder sprite-schaal vragen:** een rij symbolen/tocapu in een streep van 3 px werd losse icoontjes en is niet naar 64×64 te vertalen (Jordi). Patronen pas als groot vlak, of zelf in de pixels.
+- Woorden als "headband/braided" + wit/rood geven een Japanse hachimaki; beschrijf een cultuurverwijzing als verenvlak, niet als voorwerp.

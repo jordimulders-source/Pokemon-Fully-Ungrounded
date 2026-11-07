@@ -18,3 +18,6 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 - De keurder toetst **trouw aan het Gemini-plaatje + spritetechniek**, niet het ontwerp. Ontwerppunten (kop klein, oren smal, minder cute) zijn géén FAIL en geen reparatie; hooguit "voor Jordi".
 - Vergelijk op 8× naast het Gemini-plaatje (verkleind) én 2–3 echte sprites.
 - De regel "na 2 mislukte rondes stoppen" telt hier alleen bij ontwerp- of vertaalproblemen; rondes met alleen benoemde pixelreparaties (contour, toonvlakken) gaan door, doel ≤ 5.
+- **Consistent ontwerp = goede prompt** (Jordi, 7 nov, hatun runa): echte soort + kenmerken + gedrag (de kiskadie die "bem-te-vi" roept en afzet naar een insect) gaf over gesprekken heen steeds hetzelfde dier. Gedrag als pose-bron werkt beter dan "dynamic pose".
+- **Geen details onder sprite-schaal vragen:** een rij symbolen/tocapu in een streep van 3 px werd losse icoontjes en is niet naar 64×64 te vertalen (Jordi). Patronen pas als groot vlak, of zelf in de pixels.
+- Woorden als "headband/braided" + wit/rood geven een Japanse hachimaki; beschrijf een cultuurverwijzing als verenvlak, niet als voorwerp.

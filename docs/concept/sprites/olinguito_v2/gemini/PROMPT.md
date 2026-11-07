@@ -80,3 +80,31 @@ AVOID
 - No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
 - No clothing, bag, bandana or accessories.
 ```
+
+## Startprompt v3 (7 nov, nieuw gesprek; vervangt v2)
+Jordi: "het hele concept is goed, alleen de afwerking niet zo, daarom wil ik kijken of dat met gemini beter kan". Concept, pose en kenmerken blijven; alleen de uitvoering moet beter. Bijlagen: 1 = `bijlage_ontwerp.png` (concept en pose), 2 = `bijlage_kop_8x.png` (kop, vast). De hele huidige sprite niet meesturen (r1: dan kopieert Gemini hem).
+
+```
+Redraw this Pokémon as a high-quality official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENTS
+- Attachment 1 is the approved design: the creature, its pose and all its features. Keep all of it. Do not change the concept, the pose or the proportions.
+- Attachment 2 is the head from my current sprite. Keep this head exactly as it is in the sprite (shape, colors, black mask band, small dark red-brown eye, pink nose, one dominant ear).
+
+THE TASK
+- My current sprite has the right design but weak craftsmanship. Draw it again from scratch, from attachment 1, at the level of a professional Game Freak sprite artist. The improvement must be in the execution, not in the design:
+  - Clear, confident anatomy: the shoulder, elbow, knee and heel of each leg are readable; legs have weight and volume, not flat sticks.
+  - Paws and claws drawn with care: the 2 long light claws per front paw are clean, separate and sharp, attached to the paw; pink feet with clear toes.
+  - The tail tapers smoothly and has volume and fur shading along its whole length.
+  - Shading that shows the round form of the body (light from top left, shadow underneath), with clean color clusters, no noise, no pillow shading.
+  - A clean, smooth 1 px outline with no jaggies, darker on the shadow side.
+- It is an olinguito (Bassaricyon neblina), the first stage of a Dark-type starter line: cute and sinister at the same time.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, light from top left.
+- Plain white background. NO branch, rock, ground, shadow or base. No glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Do not redesign it. Do not make it look like Zigzagoon, Linoone, Sentret, Furret, Purrloin, a ferret or a monkey.
+- No plush toy, chibi or mascot look; no oversized sparkly eyes. No clothing or accessories.
+```

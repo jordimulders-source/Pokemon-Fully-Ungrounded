@@ -83,6 +83,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Inspiratie:** grote kiskadie (*Great kiskadee*, gewone stadsvogel met verborgen gele kroon; de witte wenkbrauwstreep = gevlochten hoofdband *llawt'u*) → koningstiran (*Tropical royal flycatcher*) met dichte kuif, gele franje (kroonprins) en gouden oorschijf (Inca-adel, *orejones*) → koningstiran met open waaier, rode franje (*mascaypacha*), tocapu-borst.
 - **Eisen (Jordi):** de kroon van fase 3 moet **imposant groot** zijn; sprites van fase 3 (en mogelijk fase 2) met de kop **(grotendeels) van voren**, zodat de waaier als een volle hoofdtooi leest.
 - **Typen (Jordi, 7 nov):** Normal/Flying → Fire/Flying → **Fire/Psychic**. De regionale vogel, en voor het eerst verliest die in de eindvorm zijn Flying-type.
+- **Awki (fase 2, Jordi 7 nov):** koningstiran met **gesloten kuif** (hamerkop), gele franje, kleine gouden oorvlekken, caracarabouw begint. Experiment: A = vuur in de kuif, B = vuur als vleugelpatroon van Andes-**trapdriehoeken** (*escalonado*). Prompts: `sprites/koningstiran/gemini/PROMPT_AWKI.md`.
 - **Eindvorm:** hybride met de bergcaracara (zie `docs/concept/sprites/koningstiran/SPEC.md`).
 - **Open:** namen, of het mannetje/vrouwtje-verschil (rood/geel) vervalt omdat de kleur per fase al wisselt.
 

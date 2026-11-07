@@ -847,3 +847,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.207] - Hatun runa frontsprite af
 - Jordi over r5: "ik vind het goed, er vallen 2 pixels uit de toon [...] als je die 2 fixt dan is die klaar". Twee losse zwarte pixels weg: (21,37) → donkerbruin, (34,47) → roodbruin (kleur van de omgeving). Buiksikkel blijft ("de donkere sikkel zie ik niet"). **Af:** `docs/concept/sprites/hatun_runa/af/hatun_runa.png` (+ `normal.pal`, `hatun_runa_8x.png`). Volgende in de lijn: awki (fase 2).
+
+### [v0.0.208] - Gemini-prompts koningstiran fase 2 (awki)
+- Sparren over fase 2 (Fire/Flying, kroonprins). Besloten (Jordi): koningstiran met gesloten kuif als hamerkop (niet de vuurtiran), gele franje en kleine gouden oorvlekken, caracarabouw begint.
+- Experiment met twee prompts: A = vuur in de gesloten kuif, B = vuur als vleugelpatroon van Andes-trapdriehoeken (*escalonado*), rood → oranje → geel.
+- Prompts en bijlagen: `docs/concept/sprites/koningstiran/gemini/PROMPT_AWKI.md`; notitie in `POKEMON.md`.

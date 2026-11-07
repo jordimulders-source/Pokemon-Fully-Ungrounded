@@ -1,0 +1,105 @@
+# Gemini-prompts: koningstiran fase 2 "awki" (7 nov)
+
+Regels: `docs/lessen/GEMINI.md`. Lijn: `docs/concept/POKEMON.md` (Koningstiran-lijn). Fase 1: `../../hatun_runa/af/hatun_runa_8x.png`, fase 3: `bijlage_sapa_inca_6x.png`.
+
+## Besloten (Jordi, 7 nov)
+- Vogel: **koningstiran met gesloten kuif** (de "hamerkop"). Niet de vuurtiran: "vuurtiran is wat kleiner dan de koningstiran, al heeft die niet de kuif die ik juist een heel goed idee vind".
+- Experiment met twee versies: **A** = vuur in de kuif, **B** = vuur als vleugelpatroon van **trapdriehoeken** ("trapdriehoeken voor vleugelpatroon is geniaal").
+- In beide: gele franje (kroonprins) en kleine gouden oorvlekken; de bouw van de caracara begint (langere poten, rechter dan fase 1).
+- Pose (keuze Claude, Jordi kan bijsturen): net geland, nabije vleugel nog half open; kop driekwart naar de kijker. Gelijk in A en B zodat ze vergelijkbaar zijn; B heeft de open vleugel nodig om het patroon te tonen.
+
+## Bijlagen (beide prompts, in deze volgorde)
+1. `../../hatun_runa/af/hatun_runa_8x.png` (fase 1)
+2. `bijlage_sapa_inca_6x.png` (fase 3)
+3. Een foto van een **koningstiran met gesloten kuif** (*Onychorhynchus coronatus*, Royal flycatcher). Jordi zoekt er een; daarna opslaan als `../referenties/koningstiran_dicht_foto.*`.
+
+Elke prompt in een **eigen nieuw gesprek**.
+
+## Prompt A: vuur in de kuif
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENTS
+- Attachment 1 is the FIRST stage of this 3-stage bird line (a Great kiskadee, a common city bird).
+- Attachment 2 is the FINAL stage: the Inca emperor (Sapa Inca), with a huge open fan crown.
+- Attachment 3 is a photo of the real animal for THIS stage: a Royal flycatcher (Onychorhynchus coronatus) with its crest CLOSED.
+- Use attachments 1 and 2 only for palette and family resemblance. Do NOT copy the fan crown, staff, large ear discs, pose or size of attachment 2.
+
+THE CREATURE
+- The SECOND stage, Fire/Flying: the crown prince (in Quechua "awki"). Not yet a king; a proud young heir between the humble first stage and the emperor.
+- Anatomy: a Royal flycatcher. Its crest is CLOSED and lies flat backwards over the head as one long, flat, pointed shape sticking out far behind the back of the head, like a hammerhead. This closed crest is the main feature of the design and must be clearly readable in the silhouette.
+- The build starts growing towards the final stage: a bit taller and more upright than stage 1, longer legs, but still a medium-sized bird, not yet big and heavy.
+- Body: warm dark brown back and wings, golden-ochre belly, rust-brown tail, broad flat dark beak.
+
+THE FIRE (only in the crest)
+- The closed crest is where the fire lives: the folded crest feathers are flame red and orange, getting brighter towards the tip, with the edges and the tip glowing yellow like a smouldering ember. It is still folded shut: the fire is held in, waiting to burst open in the next stage.
+- No flames anywhere else on the body. The wings and tail are plain brown with rust-brown edges.
+
+THE INCA REFERENCES (feathers only, nothing more)
+- In the Inca empire the crown prince wore a YELLOW fringe on the forehead (the emperor's was red). On this bird: a short fringe of yellow feathers hanging over the base of the beak, between the eyes.
+- Noble Inca youths received gold ear plugs at their initiation. On this bird: a small round gold patch of feathers on each side of the head, behind the eye. Small; they become large discs only in the final stage.
+- No clothing, jewelry, staff, patterns on the chest or anything else.
+
+POSE AND VIEW
+- It has just landed: standing on its own legs, body upright in 3/4 view facing left, near wing still half open as it folds in, far wing folded.
+- Head in 3/4 view towards the viewer: both eyes visible, beak pointing left-down, the long closed crest sticking out behind the head to the right.
+- Proud and alert, a little arrogant; not angry, not sleepy.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO branch, perch, ground, rock, shadow or base.
+- No glow aura, sparkles, loose flames, smoke, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Not Fletchinder, Talonflame, Moltres, Ho-Oh, Pidgeotto, Swellow, Staravia, Corviknight or Oricorio.
+- Not a woodpecker, not a cardinal, no upright crest; the crest lies flat and points backwards.
+- No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes. It is a wild animal that looks like a Pokémon.
+```
+
+## Prompt B: vuur als vleugelpatroon (trapdriehoeken)
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENTS
+- Attachment 1 is the FIRST stage of this 3-stage bird line (a Great kiskadee, a common city bird).
+- Attachment 2 is the FINAL stage: the Inca emperor (Sapa Inca), with a huge open fan crown.
+- Attachment 3 is a photo of the real animal for THIS stage: a Royal flycatcher (Onychorhynchus coronatus) with its crest CLOSED.
+- Use attachments 1 and 2 only for palette and family resemblance. Do NOT copy the fan crown, staff, large ear discs, pose or size of attachment 2.
+
+THE CREATURE
+- The SECOND stage, Fire/Flying: the crown prince (in Quechua "awki"). Not yet a king; a proud young heir between the humble first stage and the emperor.
+- Anatomy: a Royal flycatcher. Its crest is CLOSED and lies flat backwards over the head as one long, flat, pointed shape sticking out far behind the back of the head, like a hammerhead. This closed crest is the main feature of the silhouette. Its color is golden yellow with a darker rust tip, no fire.
+- The build starts growing towards the final stage: a bit taller and more upright than stage 1, longer legs, but still a medium-sized bird, not yet big and heavy.
+- Body: warm dark brown back and wings, golden-ochre belly, rust-brown tail, broad flat dark beak.
+
+THE FIRE (only as a wing pattern)
+- The fire is a woven Andean pattern on the wing coverts: one or two rows of STEPPED TRIANGLES (the classic Andean "escalonado" motif: triangles with stair-step edges instead of straight diagonal sides), all pointing up, like a row of flames.
+- Each stepped triangle goes from dark red at the base through orange to yellow at the tip. Clean geometric pixel steps, the same shape repeated, like a textile border; not random flames, not loose symbols.
+- The pattern is part of the feathers, not a cloth or an armband. Flight feathers and tail stay plain brown with rust-brown edges. No fire on the head.
+
+THE INCA REFERENCES (feathers only, nothing more)
+- The stepped-triangle wing pattern described above.
+- In the Inca empire the crown prince wore a YELLOW fringe on the forehead (the emperor's was red). On this bird: a short fringe of yellow feathers hanging over the base of the beak, between the eyes.
+- Noble Inca youths received gold ear plugs at their initiation. On this bird: a small round gold patch of feathers on each side of the head, behind the eye. Small; they become large discs only in the final stage.
+- No clothing, jewelry, staff, patterns on the chest or anything else.
+
+POSE AND VIEW
+- It has just landed: standing on its own legs, body upright in 3/4 view facing left, near wing still half open as it folds in so the stepped-triangle pattern is clearly visible, far wing folded.
+- Head in 3/4 view towards the viewer: both eyes visible, beak pointing left-down, the long closed crest sticking out behind the head to the right.
+- Proud and alert, a little arrogant; not angry, not sleepy.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO branch, perch, ground, rock, shadow or base.
+- No glow, sparkles, real flames, smoke, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Not Fletchinder, Talonflame, Moltres, Ho-Oh, Pidgeotto, Swellow, Staravia, Corviknight or Oricorio.
+- Not a woodpecker, not a cardinal, no upright crest; the crest lies flat and points backwards.
+- No Aztec/Mexican or Japanese look; no zigzag lightning bolts; no Native North American feather headdress.
+- No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes. It is a wild animal that looks like a Pokémon.
+```
+
+Bijsturen (max. 1–2 keer, één zin), bijv. `same design, make the closed crest longer and flatter` of `same design, stepped triangles bigger and fewer`.

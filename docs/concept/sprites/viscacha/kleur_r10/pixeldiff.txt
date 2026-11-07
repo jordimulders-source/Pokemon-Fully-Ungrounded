@@ -1,0 +1,6 @@
+Pixeldiff r10 t.o.v. r9 (indexen). Palet ongewijzigd (normal.pal = r9).
+rugzone (x29-49, r28-44; contour, selout, hooglicht, sikkel): 46
+  waarvan nieuw gevuld (r9 transparant): 22, transparant geworden: 0
+uitstekende pixel (49,44) weg (rode stip): 1 (r9 1 -> r10 .; (48,44) is nu de omlijning)
+BUITEN DE ZONES: 0 []
+totaal: 47

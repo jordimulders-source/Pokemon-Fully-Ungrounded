@@ -78,3 +78,38 @@ AVOID
 - Not Pidgey, Taillow, Starly, Fletchling, Pikipek, Rookidee or Wattrel; not a great tit or generic finch: the black-and-white kiskadee head must be the first thing you see.
 - No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
 ```
+
+## Startprompt v3 (7 nov, nieuw gesprek; vervangt v2)
+Jordi: "ik wil eigenlijk ook een actievere pose [...] ik wil iets anders dan een vogel die weer vooruit poseert zoals zoveel sprites". Patroon in fase 1 weg (Claude-voorstel: Inca-tekens pas vanaf fase 2). Bijlagen: 1 = Sapa Inca-sprite, 2 = `ronde3_bijgestuurd.png` (kop en kleuren).
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENTS
+- Attachment 1 is the FINAL (3rd) stage of this line, a royal bird based on the Inca emperor. Use it only for palette and family resemblance. Do NOT copy its fan crown, staff, ear discs or pose.
+- Attachment 2 is my current design of the FIRST stage. Keep its head, colors and proportions. Change the pose completely and remove the band pattern (see below).
+
+THE CREATURE
+- First stage, Normal/Flying, an early-route bird: a Great kiskadee (Pitangus sulphuratus), the loud, bold city bird of South America that shouts its own name ("bem-te-vi") and chases birds much bigger than itself.
+- Head: black crown, thick black mask through the eye, two broad WHITE eyebrow stripes that meet at the back of the head, white throat, one small gold-yellow spot in the middle of the black crown (its hidden crown). The white stripes are PLAIN white feathers: no pattern, no dots, no band, no cap look; the black crown must show clearly between the two white stripes.
+- Body: warm dark brown back and wings, rust-brown edges on wing and tail feathers, golden yellow belly, short straight sturdy black beak, short dark legs.
+
+POSE (most important)
+- Not the standard standing bird. Show it in action: the moment it launches off to snatch an insect. Body tilted forward and down towards the left, about 30 degrees.
+- Near wing raised high in the upstroke, bent at the wrist, flight feathers fanned out behind the body; far wing half visible, lower, not symmetrical with the near wing. Not a T-pose, not both wings spread flat.
+- Beak wide open, shouting, showing the inside of the mouth. Eye fierce and focused on its target, cocky, not cute and not angry.
+- Legs tucked under the body or kicking back, tail fanned and angled up behind.
+- Head in 3/4 view towards the viewer: near eye clearly visible, both white stripes visible.
+- The whole bird must fit inside the frame with a clear, compact silhouette.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO branch, perch, ground, shadow, insect, motion lines, speed lines, wind, glow or effects. One single creature, no extra views.
+
+AVOID
+- No headband, cap, rope, cord, beads or any accessory; no Inca or Japanese clothing.
+- Not Pikachu, Pidgey, Taillow, Swellow, Starly, Fletchling, Pikipek, Rookidee or Wattrel; not a generic finch or great tit.
+- No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
+```
+
+Bijsturen (max. 1–2 keer, één zin): bijv. `same design, near wing higher and more bent at the wrist` of `same design, beak open wider, shouting`.

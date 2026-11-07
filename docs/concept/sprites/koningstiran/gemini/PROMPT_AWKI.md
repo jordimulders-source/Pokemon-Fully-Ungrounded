@@ -188,13 +188,13 @@ AVOID
 ```
 
 ## Startprompt v3 (7 nov, nieuw gesprek; na r3 "hij loopt vast")
-Bijlagen: 1 = `awki_r2_A_kuif.png` (basis), 2 = `awki_r3_A_bijgestuurd.png` (pose en patroon).
+Bijlage: één afbeelding `bijlage_awki_v3.png` (links r2-A = basis, rechts r3 = vleugel en patroon).
 
 ```
 Draw this Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
 
-- Attachment 1 is the base design. Keep its head, face, crest, ear patches, colors, body, legs and tail exactly as they are.
-- Attachment 2 shows the pose and wing pattern I want. Take from it ONLY the raised wing with the big flame pattern. Attachment 2 has a mistake: it has three wings. Do not copy that.
+- The attached image shows two versions side by side. The LEFT one is the base design. Keep its head, face, crest, ear patches, colors, body, legs and tail exactly as they are.
+- The RIGHT one shows the pose and wing pattern I want. Take from it ONLY the raised wing with the big flame pattern. The right one has a mistake: it has three wings. Do not copy that.
 
 ANATOMY (most important)
 - The bird has exactly TWO wings.

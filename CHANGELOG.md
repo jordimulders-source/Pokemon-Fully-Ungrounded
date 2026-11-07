@@ -844,3 +844,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.206] - Poedellarve: Bug/Normal
 - Jordi (7 nov): de poedellarve wordt **Bug/Normal** (POKEMON.md). Overzichtsvel van alle afgemaakte frontsprites met typesymbolen gemaakt (starters voorop, dan Cuyby/Cuychu); nog niet in de repo, wacht op twee bijna afgemaakte sprites.
+
+### [v0.0.207] - Eerste werknamen
+- Jordi kiest werknamen: Picaraio, Hummlet, Bandingo, Cholucha, Pupoodle. Alpaca: Palpaca in overweging. Alles in POKEMON.md (Werknamen), met de niet gekozen voorstellen.

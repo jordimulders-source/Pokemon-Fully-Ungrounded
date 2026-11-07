@@ -45,6 +45,11 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Nachtaap:** concept B (dieper violet met indigo rand rond een bleke lila gezichtsschijf, cyaan gloeiende ogen, tarsierhouding, geen borststeen).
 - **Cuyby:** Langhaarbol (Peruaanse langhaarcavia als één bol vacht met vallende lokken, driekleur als strakke vlakken; evolueert tot een wandelende hooiberg). Moet echt Pokémon-stijl worden. **Sprite ronde 3 goedgekeurd** (Jordi 23 okt; `docs/concept/sprites/cuyby/ronde3/`). Eerder: ronde 2: richting goed, nog polijsten (Jordi 23 okt: 'beetje een Hamtaro-look, maar dat zou een Pokémon kunnen zijn'): `docs/concept/sprites/cuyby/ronde2/`.
 
+## Werknamen (Jordi, 7 nov)
+- "voor nu allemaal goed, dat worden de working names": **Picaraio** (Picapau-evolutie), **Hummlet** (kolibrie fase 1), **Bandingo** (olinguito), **Cholucha** (cholita-lama), **Pupoodle** (poedellarve).
+- Alpaca: Jordi denkt aan **Palpaca** (pal + alpaca; "klinkt als een pokemon naam, want flamigo bestaat ook"), nog niet helemaal tevreden, wel beter dan Alpunch/Fluffist/Paqucha.
+- Niet gekozen voorstellen van Claude (7 nov): lama Brawllama/Llamauler/Cargallama; wasbeer Vigilacoon/Clawstice/Mascarón; nachtaap 1 Aotiny/Tutito/Nocticue; nachtaap 2 Killamono/Lunaotus/Vigilune; muriqui Kallamuri/Muriquilla/Yatiriqui; kolibrie Mainumby/Soulibri/Animibri; Sapa Inca Intirano/Sapainca/Mascaypacha; poedelmot Moodle/Tepuffle/Poodlemoth.
+
 ## Legendaries
 - **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor**; Kay Pacha (deze wereld) = **poema**; Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.
 - **Opper-legendary: Pachamama** (Moeder Aarde; "pacha" = wereld én tijd); de drie werelden zijn delen van haar. Type, naam en rol: open.

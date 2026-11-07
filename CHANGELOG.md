@@ -560,3 +560,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.139] - Les: changelog na main nummeren
 - `docs/lessen/AGENTS.md`: vóór het pushen naar `main` eerst `main` mergen en de eigen changelogsecties achteraan nummeren (Jordi).
+
+### [v0.0.140] - Viscacha: Gemini-basis gekozen
+- Prompt voor Gemini opgesteld (Electric zonder elektriciteit, echte viscacha-anatomie, actieve pose, geen ondergrond); 5 rondes. Jordi kiest ronde 3 als basis. Referenties en feedback: `docs/concept/sprites/viscacha/gemini/`.

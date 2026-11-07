@@ -847,3 +847,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.207] - Hatun runa frontsprite af
 - Jordi over r5: "ik vind het goed, er vallen 2 pixels uit de toon [...] als je die 2 fixt dan is die klaar". Twee losse zwarte pixels weg: (21,37) → donkerbruin, (34,47) → roodbruin (kleur van de omgeving). Buiksikkel blijft ("de donkere sikkel zie ik niet"). **Af:** `docs/concept/sprites/hatun_runa/af/hatun_runa.png` (+ `normal.pal`, `hatun_runa_8x.png`). Volgende in de lijn: awki (fase 2).
+
+### [v0.0.208] - Great potoo frontsprite af (Gemini-model)
+- Jordi's Gemini-model (`potoo/referenties/gemini_model_jordi.jpg`) volgens de poedelmot-werkwijze: los geknipt, tak weg, lijf 30% langer (alleen in de hoogte), gespiegeld (`potoo/model/`); silhouet = verkleind model; 6 kleurrondes (`kleur_r1`–`r6`), oog puur zwart met donkergrijze bol (variant C4), drie eindkeuringen (Dragonfly Cave + Noctowl/Xatu/Swellow/Drifloon/Dusclops; 35 + 16 px), vleugelrand en kruin bol, haarsliert weg.
+- Af: `docs/concept/sprites/potoo/af/potoo.png`. 23 frontsprites af.

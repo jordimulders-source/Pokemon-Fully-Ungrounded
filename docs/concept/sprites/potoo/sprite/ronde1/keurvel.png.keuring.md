@@ -1,0 +1,14 @@
+# Keuring (zelfkeuring maker, ronde 1; nog géén onafhankelijke keurder)
+- Bron: poppetje ronde 14 (`poppetje/ronde14_spritehoek.png`, massa/pose), close-up en leidraad (gespiegeld), Taillow (open snavel, Gen 3), Xatu-bestand (staande zuil).
+- Bekeken op 8× en 1× (licht/donker) + close-ups kop (13,2–37,32) en lijf/staart (28,26–46,62).
+- Per onderdeel:
+  - silhouet/pose: lijkt op het poppetje (rechtop, mantel gebocheld achter de kop, lange staart; borstrand volgt de verkleinde omtrek); wijkt af: kop ±15% groter (Pokémon-stap, gezicht/oog/muil hadden ruimte nodig), staart onderaan 1 px uitwaaierend.
+  - kop: lijkt op leidraad (bolle koepel, oog hoog en voor het midden); wijkt af: voorhoofd iets steiler dan op de foto.
+  - oog: puur zwart 6×6, geen glans/rand (Drifloon-besluit).
+  - bovensnavel + haak: lijkt op close-up (kort hoornstukje vóóraan dat in één vorm omlaag in de haak eindigt, haak dun en donker); wijkt af: op 1× is de haak maar 3–4 px.
+  - mondhoek: onder/achter het oog (x32, oog x24–29), lip rondt de hoek, plooi loopt 3 px de wang in.
+  - onderkaak + kin: eigen lichte kaakrand (D) langs verre en nabije kaak, donkere binnenrand, kaakpunt hoornkleurig; bevederde kin (licht boven, schaduw onder) loopt naar de keel terug en gaat zonder lijn over in de wang; lijn alleen waar de kin over borst/vleugel valt. Twijfel: de kinlijn rechts is een lange donkere diagonaal ("glimlachlijn").
+  - muil: geestpaars, dunne gehemelteschaduw, V-spleet midden, lichtere kaakbodem + tong; mondkleur alleen binnen de rand. Twijfel: gehemelterij + V leest op 8× als een "T".
+  - vacht/patroon: C2 bijna wit met lila zweem; schorsvlekjes dicht op mantel/vleugel/staart, ijl op kruin/wang, borst schoon. Twijfel: vlekjes zijn 3-px blokjes, lezen op 8× iets als "camouflagevlekken" i.p.v. fijne schors.
+  - netheid: geen open randen, geen gaatjes, geen vlaktintclusters < 3 px (alleen de 1-px-diagonalen van kaakrand D en binnenrand 9, dat zijn lijnen).
+- Oordeel: FAIL (nog geen PASS: eerst blinde test + onafhankelijke keurder)

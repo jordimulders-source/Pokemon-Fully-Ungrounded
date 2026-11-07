@@ -4,6 +4,7 @@ Regels en eisen: `SPRITE_KERN.md`. Hier alleen de stappen en de commando's. Oude
 ## Checklist (afgedwongen door het keurslot)
 Jordi 3 nov: "het is elke keer opnieuw dat we instructies vastleggen die je elke keer opnieuw weer overslaat" → "doe allemaal". Daarom afgedwongen, niet alleen opgeschreven:
 1. **Keurslot:** `.claude/hooks/sprite_keurslot.py` blokkeert elke afbeelding uit `docs/concept/sprites/` naar Jordi zonder `<bestand>.keuring.md` (nieuwer dan de afbeelding, met `Bron:`, 8×, 1×, per onderdeel "lijkt op / wijkt af in", `Oordeel: PASS`). Uitzondering: `docs/concept/sprites/showcase/` (vellen van al goedgekeurde sprites om te tonen, Jordi 5 nov). Het slot geldt alleen voor spritewerk, niet voor andere afbeeldingen buiten die map. Niet omzeilen (geen kopie buiten die map sturen).
+1. **Keurslot:** (uitzondering, Jordi 7 nov: tekenbases/vergelijkingsvellen waar Jordi zelf overheen tekent mogen door met `<bestand>.tekenbasis.md` met "Tekenbasis: <waarom>"; nooit voor iets ter beoordeling) `.claude/hooks/sprite_keurslot.py` blokkeert elke afbeelding uit `docs/concept/sprites/` naar Jordi zonder `<bestand>.keuring.md` (nieuwer dan de afbeelding, met `Bron:`, 8×, 1×, per onderdeel "lijkt op / wijkt af in", `Oordeel: PASS`). Niet omzeilen (geen kopie buiten die map sturen).
 2. **Keurvel:** `python3 tools/grounded/keurvel.py -o vel.png --werk werk.png --bron <echte sprites/foto's> --zoom x0,y0,x1,y1` → werk naast de bronnen op 8× en 1× (licht/donker) + close-ups, en een keuringssjabloon.
 3. **Referentie eerst, per onderdeel** (hand, voet, kop, staart, patroon): 2–3 echte sprites of Jordi's eigen plaatje (stuurt Jordi een afbeelding, dan is díe de bron, niet de sprite van die soort uit de repo). Kenmerken zelf tellen/controleren op een close-up voor iets op een referentievel komt.
 4. **Eén afwijking of twijfel = niet sturen.** Toets of het **leest** als een echte Pokémon, niet of het doet wat gevraagd werd.
@@ -33,6 +34,13 @@ apt-get install -y libegl1 libgl1-mesa-dri
 Voorbeeldmodel: `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` (huid = smooth union van afstandsvelden, kleurvlakken per vlak, snavel/ogen/pootjes los; Workbench-render, 512 px = 8×, ortho 64 BU = spriteframe). Silhouet/vel: `kolibrie_pre/blender/A/maak.py`. Toonkaart: model met alle kleuren wit renderen, verkleinen, 4 tonen.
 
 **Controlescript (elke ronde):** alpha-diff met het bevroren silhouet (0 of alleen in benoemde zones), open randen, losse pixels, clusters < 3 px, lijst gewijzigde pixels oud→nieuw. Voorbeeld: `kolibrie_pre/blender/A/kleur_r9/controle.py`.
+
+**Potoo-lessen (5 nov, eerste poging afgebroken; overdracht `docs/concept/sprites/potoo/OVERDRACHT.md`):**
+- Eerst een Pokémon-ontwerp, dan pas een silhouet ("we gaan niet een potoo namaken"). Wijkt het ontwerp af van het dier, dan eerst een 3D-model van de héle Pokémon.
+- 3D = meten, niet verzinnen: oriëntatiepunten uit de foto's, render op de foto-hoeken mét de foto-omtrek erover + 4 andere hoeken.
+- Snavel/bek nooit uit bollen ("je maakt er een lipschijf van"): omtrek punt voor punt overtrekken, zelf letten op punten en golving.
+- Nooit een rommelig tussenresultaat sturen (voxelruis, losse pixels, mondkleur buiten de mond).
+- Tweede potoo-gesprek (5 nov): ook een SDF-model met omtrek-fit op de foto faalde ("pacman zeehond", "stop met blender"). Een open snavel uit formules (opengeknipte kop of losse onderdelen) leest niet als snavel; na 2 mislukte rondes niet doorpatchen maar Jordi om een andere aanpak/krabbel vragen. Alleen de foto's die Jordi in dat gesprek stuurt zijn de bron.
 
 **Opdracht aan een agent bevat altijd:** `SPRITE_KERN.md`, SPEC-pad, bevroren delen + toegestane zones, Jordi's woorden letterlijk, gewenste uitvoer (raster, png, pal, vel, NOTITIES met zwakke punten), "niet committen".
 
@@ -133,3 +141,8 @@ Voorbeeldmodel: `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` (hui
 - Krabbel van Jordi = richting, geen overtrek: haal er vorm, aantal en plek uit, en bouw het patroon uit één vaste vorm die je herhaalt (gelijke vorm/afstand); supersample-maskers geven ongelijke rijbreedtes en "chevrons" (sin-boog) — cirkelboog of handgemaakte rijtabel werkt beter.
 - Bandtint op lichte vacht: het grijsblauw (14) ligt te dicht bij de lichte vachttint (5) en valt weg; zet de band één stap lichter dan wat eronder ligt, of gebruik een vaste rijopbouw licht-midden-schaduw.
 - Toon Jordi geen opties die een regel breken om het rijtje te vullen (B: het verre oog even groot als het nabije). Jordi: "stop aub met dingen als B voorstellen, dat kan echt niet". Liever twee goede opties dan vier waarvan er twee fout zijn.
+- **Nederlandse dubbelzinnigheid in feedback (potoo, 5 nov):** "het is geen bol hoofd" = de kop is niet bol genoeg (klacht), niet "maak hem niet bol". Bij twijfel Jordi's zin terugvertalen naar een concrete actie en die eerst kort checken; ronde 4 maakte de kop daardoor juist platter.
+- **Blinde test zonder verklappende bestandsnaam:** kopieer het plaatje eerst naar de scratchpad met een neutrale naam (bijv. `test_a.png`); een pad met "potoo" erin verklapt het antwoord (potoo, 5 nov).
+- **Alleen veranderen wat Jordi noemt (potoo, 6 nov: "pas gvd alleen dingen aan die je aan moet passen").** Zodra Jordi een draft goed vindt, bouw je voort op díe versie en pas je alleen zijn punten aan. Extra reparaties van de keurder leg je eerst aan hem voor; nooit stilletjes meenemen (ronde 17 veranderde de muil rechts en maakte van zijn snavelpunt een lijn). Zijn geschetste omtrek is bindend: "korter/kleiner" betekent binnen die vorm kleiner kleuren, niet de vorm weggooien. Controleer met een pixeldiff dat buiten de genoemde plekken niets veranderd is, en meld die diff.
+- **Geen tak in de sprite = geen takstap in de omtrek**; "stil zitten" komt uit kleur, klauwen en houding (potoo, 6 nov).
+- **Vormvarianten in vlakke kleuren altijd labelen als "alleen vorm, kleurwerk blijft"**, anders denkt Jordi dat het kleurwerk weg is.

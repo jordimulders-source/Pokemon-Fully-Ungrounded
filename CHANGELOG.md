@@ -841,3 +841,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.205] - Alle takken in main
 - Jordi: "zorg dat alle takken naar main gecommit worden". Twaalf takken samengevoegd (o.a. Sapa Inca, poedelmot/poedellarve, potoo, viscacha, Hitmontop-evolutie, Picapau-evolutie, nachtaap fase 3, spritewerkplaats/olinguito-schetsen van 24 okt, hatun runa-Gemini); vier oude takken van 25 okt (Coathief, lama, wasbeer, kolibrie pre-evo) als samengevoegd gemarkeerd: hun inhoud zat al in main. Keurslot-hook blijft weg (Jordi, 6 nov). Changelogsecties van de takken achteraan, hernummerd v0.0.140–v0.0.204. CLAUDE.md (Stand van zaken, dubbele regels) en GEMINI.md opgeruimd.
+
+### [v0.0.206] - Hatun runa frontsprite: kandidaat
+- `docs/concept/sprites/hatun_runa/` (koningstiran fase 1, kiskadie, Normal/Flying): silhouet = Gemini-model verkleind (48 px breed, 971 px), poedelmot-methode met één maker. r1–r2 maker; r3 kop/vleugel op Claude's punten; keuring r3 (oog zonder glans, dambord, toon verre vleugel); r4 = die reparaties (toon verre vleugel nagemeten: r4 80 tegen model 81); Jordi: "ik vind hem netjes"; eindkeuring Dragonfly Cave op kleur en schaduw (10 px); r5 = die 10 px (Claude). Kandidaat: `kleur_r5/hatun_runa.png`.

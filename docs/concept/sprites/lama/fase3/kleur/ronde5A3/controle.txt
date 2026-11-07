@@ -1,0 +1,6 @@
+gewijzigd t.o.v. 5A2: 52 (hoed/kop y0-13: 44, oog: 8, elders: 0 [])
+oog t.o.v. 5A: 3 x22y14 d->S x23y14 S->C x24y14 S->C
+buiten silhouet_A: +9 x16y12 x17y12 x18y12 x19y12 x28y12 x29y12 x28y13 x29y13 x30y13
+silhouet_A leeg: -2 x22y5 x18y11
+open randen: 0 
+kleuren: 15

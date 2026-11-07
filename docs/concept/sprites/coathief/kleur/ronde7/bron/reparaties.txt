@@ -1,0 +1,25 @@
+# ===== ronde 7 (op 6g): staande voorpoot buigt licht naar achter; vier klauwen netter =====
+# staande verre voorpoot: y 57-58 een kolom naar rechts (x 28-32), lichtkant volgt de buiging; voet plat
+57 27 .myzmk
+58 27 .mzymk
+59 29 myzk
+60 29 mzmk
+# klauw A (opgetilde poot): linkerrand 19,18,18,17,17,16,16 / rechterrand 20,20,20,19,18,17,16
+55 18 cwx
+56 18 ccx
+57 17 ccx
+58 16 .cx
+59 16 cx
+60 16 x
+# klauw B: rechterrand 23,23,22,22,21,20 (taps), glans (22,56)
+55 21 ccx
+56 21 cwx
+57 21 cx.
+58 20 ccx
+59 20 cx
+60 20 x
+# klauwen staande voet: bovenste haak (glans 25,59), onderzijde x; onderste haak (glans 25,61), punt (21,62)
+59 24 cwcnn
+60 22 xccxxxx
+61 24 cwccnx
+62 21 xccn

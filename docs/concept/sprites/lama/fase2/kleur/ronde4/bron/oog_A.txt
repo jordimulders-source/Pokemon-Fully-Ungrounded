@@ -1,0 +1,7 @@
+# Oog A: Numel-basis met minder emotie. Mat donkerbruin (d) oog onder een vlak, zwaar bovenlid (rechte lidlijn d-k-k-k,
+# huidplooi b erboven); alleen de voorrand zwart (zoals Numel), geen wit oogwit, geen zwart rondje; klein warm lichtje (l) laag in het oog.
+11 19 lbbbd
+12 19 dkkkb
+13 19 bkddb
+14 19 bdhdb
+15 19 bbsbb

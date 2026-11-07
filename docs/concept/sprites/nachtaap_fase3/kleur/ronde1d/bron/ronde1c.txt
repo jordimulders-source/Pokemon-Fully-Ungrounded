@@ -1,0 +1,53 @@
+# Ronde 1c: overschrijft delen.txt (ronde 1b) alleen in de opdrachtzones. y x0 pixels.
+## zone 2: kop bovenkant (kruin 2 px hoger) + maan
+27 8 DDDDDK
+28 7 DDLLVVVK
+29 6 DLLVVVVVSK
+30 5 DLVMWWMVVSSKSVSK
+31 4 DLVMWWWWMVVSSKSSK
+32 3 DLVMWWMMMWmSSSDK
+33 3 DLVWVSSSSVmSSSDDK
+34 2 DLVMVVVVVVVSmSSDDK
+## zone 3: spiraalgat rond, windinglijn naar het gat
+29 49 KLVVVSSSSK
+30 49 KLVVSDDSSK
+31 49 KVVSD..DSK
+32 49 KVVD....DK
+33 49 KVSD....KV
+34 49 KVSSD..DVVV
+35 49 KVSSSDDDVVV
+## zone 1: healerhand + gloed
+47 12 BDDBBBBbG
+48 8 GGBBDMMDDDBBbG
+49 8 GBDDDMmDMMDBBbG
+50 7 GBDMMDMmDMmDDDbbG
+51 7 GBDMMDMmDMmDMmKbG
+52 7 GBDMMDMmDMmDMmKbG
+53 7 GBDMMDMmDMmDmmKbG
+54 7 GBDMMmMMmMmmmmKbG
+55 7 GDDMMWMMMMmmmmKbG
+56 6 GDWMDMMMMMmmmmmKbG
+57 6 GDMMMDMmmmmmmmDKbG
+58 7 GDDmmmmmmmmmDDKbG
+59 8 GGDDDK
+## zone 4: ogen
+36 9 KKK
+37 5 GbfFWGb
+38 5 bBfpbBB
+## zone 4: plooi romp/dij zachter
+40 30 S
+41 30 SS
+42 29 SSS
+43 29 SDS
+44 29 SDS
+## zone 4: korrel dijrand
+49 45 SSS
+50 45 SSS
+## zone 4: vuist meer contrast
+15 2 DLLVLLVK
+16 1 DLLLVLLVSK
+17 1 DLLVDVVDSSK
+18 1 DVVVVVVSSSK
+19 2 DVVVVSSSSK
+20 3 DVSSSSSDK
+21 3 KDSSSSDDDK

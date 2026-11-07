@@ -1,0 +1,18 @@
+kleur1b – tussenstand (gestopt op verzoek; nieuw silhouet met grotere kop volgt)
+Nog niets gewijzigd: dj_rotom.txt / dj_rotom.png = kleur1 (zoals opgeleverd).
+
+Omrekening bron_vervormd.png -> 64-raster (volgens silhouet1/maak_silhouet.py, W=60):
+  alpha-bbox x0=0, y0=183, b=1745, h=1292; s=60/1745=0.03438; H=44; ox=2, oy=19
+  raster_x = 2 + (X-0)*s ; raster_y = 19 + (Y-183)*s
+  (zonder de bbox-crop zit je 2 rijen te hoog)
+
+Gemeten grenzen in het huidige silhouet:
+  linkerspeaker voorvlak x3-14 (paneel x4.5-13.5), zijvlak x14-18
+  kop voorvlak x19-31 (±13 px breed, ±17 hoog, y40-57), kop zijvlak x32-34, rechterspeaker vanaf x35
+  ogen: links x20.5-23.5, rechts x27-30, y42-46.5 (rechteroog even groot)
+  grijns x24-28, y47-48, 3 tandjes
+  display x20.5-30.5, y49.5-55.5 (bovenhoeken hoger, midden lager), equalizer y51-55, ±9 kolommen
+  snoer y53, links x17-20, rechts x31-35
+Plan dat klaarlag: zone x14-34 / y38-57; kopnaad x19, voorvlak x20-31, zijvlak x32-34;
+  display x21-30 y49-55 met hoorntjes op y49, losse staafjes x22/24/26/28 (y51-54, licht bovenblokje),
+  grijns '8fff8'/'888' op x24-28 y47-48.

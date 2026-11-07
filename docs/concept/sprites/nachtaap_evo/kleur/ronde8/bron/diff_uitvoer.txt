@@ -1,0 +1,3 @@
+ronde 8 : diff buiten de zone (x17-49,y24-50): 0 | in de zone: 266 | overgangen buiten de zone: []
+variant B : diff buiten de zone (x17-49,y24-50): 9 | in de zone: 274 | overgangen buiten de zone: [(15, 13)]
+palet ronde 8 = ronde 7: True | variant B wijkt af op index: [15] nieuw idx 15 = [168, 196, 236]

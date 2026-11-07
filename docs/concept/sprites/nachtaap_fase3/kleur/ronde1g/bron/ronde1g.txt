@@ -1,0 +1,50 @@
+# Ronde 1g bovenop ronde1f/v7. y x tekens (spatie = niet aanraken)
+## zone 3: vuistarm smaller (Jordi: "deze arm is te dik"); naar later_vuistarm.txt, rij 26-28 hersteld
+22 4 KKKKKD
+23 5 ....KSVVVLLD
+24 6 ....KSVVVLLD
+25 8 ...KSVVVLLD
+26 8 ....KSVVVLLD
+27 13 KSVVLLD
+28 14 KSVVLSD
+## zone 1: rugrand schouder-heup als boog (2-3-5 px, oplopend), lichtband eronder, lichte vlekken oude dijwortel weg
+30 26 DD
+31 21 |..DDDLLLLVVLLLVVVVSSK
+32 21 DDLLLLLVVVVLLLVVVVVSSK
+33 21 LLLVVVVVVVVLLVVVVVSSSK
+34 21 VLLVVVVVVVVLVVVVVVVSSSK
+35 21 SLLVVVSVVVVLLVVVVVVSSS
+## zone 2: heup/bil: naden weg (dij gaat in de heup op), rompomtrek vloeit in de bovenrand van het onderbeen
+36 21 SLLVVVSSVVLLLLVVVVVVSSS
+37 21 SLLVVVSSVVLLLVVVVVVVVSS
+38 21 SLLVVVSSVVVLVVVVVVVVVSS
+39 21 SLLVVVSSVVVVVVVVVVVVSSSSSDK
+40 21 SLLVVVSSVVVVVVVVVVVVSSSSSDK
+41 21 SLLVVVSSVVVVVVVVVVVSSSSSDK
+42 21 SLLVVVSSVVVVVVVVVVSSSSSSDK
+43 22 LLVVVSSVVVVVVVVSSSSSSSSDK
+44 22 LLVVVSSVVVVVSSSSSSSSSSSVVD
+45 32 SSSSSSSSSSSSVVLLD
+46 22 LLVVSS
+46 33 VVVSSSSSSSSSSVLLDD
+47 21 VLLVVSS
+47 35 VVSSSSSSSSSV
+48 22 LLVVSS
+48 36 VSSSSSSSSS
+49 43 SS
+50 43 SS
+51 43 SS
+## zone 4 (volume): buiklicht als eigen vlak linksboven op de romp (los van de lichtband van de dij)
+34 32 V
+35 29 VLLVV
+36 29 LLLLVV
+37 29 LLLVV
+38 29 VLVV
+## losse pixels in de lichtband van de arm
+34 21 L
+47 21 L
+## vuistarm: spleet arm/kruin eindigt zonder 1-px inkeping
+26 11 K
+## vuistarm: onderkant vuist rond i.p.v. 5 px recht
+21 4 K
+22 4 .

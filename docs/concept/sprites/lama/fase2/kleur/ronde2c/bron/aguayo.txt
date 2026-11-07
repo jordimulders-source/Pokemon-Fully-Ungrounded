@@ -1,0 +1,8 @@
+# R3 aguayo, met de hand: grijs blok (45-47,27-29) weg; strepen lopen door tot de rand en buigen in schaduw (m) weg,
+# rechterrand k. Nopje (44-45,24) -> kwastje m m; zwart aan de bovenkant (37,24), (51,24) -> d.
+24 37 d
+24 44 mm
+24 51 d
+27 45 ymm
+28 45 umk
+29 45 um

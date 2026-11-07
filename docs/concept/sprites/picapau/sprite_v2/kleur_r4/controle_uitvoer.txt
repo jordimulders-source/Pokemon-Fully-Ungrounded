@@ -1,0 +1,24 @@
+diff met r3, bevroren oog (x24-27, r18-21): 16 px, verschil 0 []
+diff met r3, bevroren wang (alle c/C van r3): 21 px, verschil 0 []
+diff met r3, bevroren vleugelstippen (h/l/g in de vleugel van r3, x>=33 r25-36): 19 px, verschil 0 []
+diff met r3, bevroren staart (x>=44, r46-63): 360 px, verschil 0 []
+nieuwe wangpixels buiten de r3-wang: 0
+palet gelijk aan r3: True
+lichte kleur op de buitenrand: 0 []
+overige niet-omlijningskleur op de rand (dunne delen: snavel, poten, tenen = pseudo-omlijning; staart r3): 11 [(15, 17, 'g'), (16, 17, 'g'), (31, 45, 'g'), (31, 46, 'g'), (31, 47, 'g'), (28, 48, 'g'), (29, 48, 'g'), (30, 48, 'g'), (31, 48, 'g'), (33, 49, 'g'), (34, 49, 'g')]
+losse pixels: 0 []
+pixels alleen diagonaal verbonden: 0 []
+tintclusters < 3 px: 13, waarvan in bevroren delen (oog/stippen/staart/wang) 6; in r4-werk 7:
+  g: [(15, 17), (16, 17)]
+  g: [(18, 18)]
+  g: [(20, 19)]
+  g: [(18, 21)]
+  b: [(41, 34), (42, 34)]
+  b: [(44, 36)]
+  g: [(33, 49), (34, 49)]
+pixels BUITEN het silhouet: 69, max afstand 2 px (eis <= 2); > 2: []
+  per onderdeel: kuif 21, achterkuif-lobben 8, snavel/verre oog 9, borst/buik (bol) 22, poten/tenen 9
+  lijst: [(33, 4), (32, 5), (31, 6), (36, 6), (30, 7), (35, 7), (38, 7), (29, 8), (30, 8), (38, 8), (28, 9), (29, 9), (38, 9), (27, 10), (28, 10), (37, 10), (27, 11), (28, 11), (37, 11), (38, 11), (39, 11), (40, 12), (40, 13), (21, 14), (39, 14), (20, 15), (18, 16), (38, 16), (14, 17), (16, 17), (17, 17), (18, 17), (18, 18), (41, 18), (40, 19), (18, 23), (40, 23), (41, 24), (24, 30), (24, 31), (25, 31), (24, 32), (25, 32), (24, 33), (25, 33), (24, 34), (25, 34), (24, 35), (25, 35), (25, 36), (26, 36), (25, 37), (26, 37), (26, 38), (27, 38), (26, 39), (27, 39), (27, 40), (27, 41), (28, 42), (35, 46), (36, 47), (37, 47), (27, 48), (28, 48), (32, 49), (33, 49), (34, 49), (35, 49)]
+silhouetpixels LEEG gelaten: 18 [(34, 9), (37, 21), (29, 44), (30, 45), (27, 46), (28, 46), (29, 46), (30, 46), (33, 46), (36, 46), (37, 46), (26, 47), (27, 47), (28, 47), (29, 47), (30, 47), (33, 47), (34, 48)]
+gewijzigd t.o.v. r3: 278 px; totaal 869 px; kleuren: 1234CGbcdghklrw
+tinten geel: ['1', '2', '3'] + selout 4

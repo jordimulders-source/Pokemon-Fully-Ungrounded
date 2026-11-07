@@ -1,0 +1,32 @@
+"""Palet (16 kleuren, index 0 transparant) -> normal.pal (JASC) en raster.txt -> kolibrie_pre.png (geïndexeerd)."""
+import sys
+from PIL import Image
+PAL = [
+    (152, 208, 160),  # 0 transparant
+    (20, 14, 30),     # 1 buitenlijn (bijna-zwart violet), oog, snavelrand
+    (66, 48, 98),    # 2 binnenlijnen (kopvorm, kapnaad, buikgrens, veerlijnen) en selout bovenop
+    (108, 90, 156),   # 3 lila schaduw
+    (150, 134, 200),  # 4 lila basis
+    (186, 176, 224),  # 5 lila licht / buikschaduw
+    (224, 220, 244),  # 6 buik lavendelwit
+    (255, 255, 255),  # 7 buik hooglicht en glans in het oog
+    (96, 82, 170),    # 8 vleugel basis (was iris licht)
+    (176, 98, 40),    # 9 poot schaduw / verre poot (donker warm)
+    (62, 52, 128),    # A vleugel schaduw (was iris donker)
+    (102, 90, 172),   # B kap basis
+    (250, 212, 72),   # C gele mondhoek, licht teentje
+    (226, 150, 40),   # D mondhoek; poot basis
+    (66, 56, 126),    # E kapschaduw
+    (112, 62, 28),    # F poot donkerst (tussen de teentjes, verre poot)
+]
+CH = '.123456789ABCDEF'
+def build(txt='raster.txt', out='kolibrie_pre.png'):
+    rows = [l.rstrip('\n') for l in open(txt)][:64]
+    im = Image.new('P', (64, 64), 0); im.putpalette([v for c in PAL for v in c])
+    for y, r in enumerate(rows):
+        for x, c in enumerate(r): im.putpixel((x, y), CH.index(c))
+    im.save(out, transparency=0); return im
+if __name__ == '__main__':
+    build()
+    with open('normal.pal', 'w', newline='\r\n') as f:
+        f.write('JASC-PAL\n0100\n16\n' + ''.join(f'{r} {g} {b}\n' for r, g, b in PAL))

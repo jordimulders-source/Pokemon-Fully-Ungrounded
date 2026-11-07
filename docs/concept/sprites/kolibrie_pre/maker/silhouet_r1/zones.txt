@@ -1,0 +1,8 @@
+# x0 y0 x1 y1 label  (spritecoordinaten; afwijkingen van foto 1 met reden)
+8 10 14 21 A: bek kort en open (foto 3): foto 1 heeft een lange dichte volwassen snavel; jong = kort, brede basis, gaap 1-4 px
+18 8 30 11 B: kruin 3 px hoger en ronder dan foto 1: kop groter (cute; kop 49% van de hoogte)
+30 13 42 33 C: achterhoofd en rug 2-3 px voller (donzig, foto 5), met een nekknik op y20-21 zodat de kop een eigen onderdeel blijft
+15 29 17 38 G: borst 1-2 px voller naar voren (donsbolletje)
+17 36 45 41 D: buik 8 px hoger afgerond (foto 1 tot y50): lijf korter en ronder zoals de uitvlieger (foto 5)
+37 41 46 46 E: staart een kort stompje (foto 1: lange staart + vleugelpunten tot y62)
+23 42 34 43 F: twee pootjes op de grond, geen tak (nabije links groter, verre rechts kleiner, 2 kolommen lucht)

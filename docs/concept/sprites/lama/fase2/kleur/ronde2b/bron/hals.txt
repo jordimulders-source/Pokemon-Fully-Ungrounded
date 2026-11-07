@@ -1,0 +1,14 @@
+# Ronde 2b: wolhals als cilinder (licht links, schaduw rechts, kernschaduw onder de kin) met 3 verspringende ronde plukken:
+#  A boven-midden achter de kop (r16-18, rand s r18-19), C midden-rechts (r19-22, rand s r22-23), B onder-voor (r22-25, rand s r25).
+# Formaat: rij x0 pixels (overschrijft raster.txt; alleen binnen de halszone).
+16 22 lhld
+17 21 lhllbd
+18 20 lllbssd
+19 19 ssbssld
+20 18 sssbblhldd
+21 18 ssbbbllbbsd
+22 18 slhlbbbbssk
+23 18 dllllbsssk
+24 17 dlllbbbbbbssdd
+25 16 dhlbbssbbbssssmd
+26 18 lhllbbbbbsss

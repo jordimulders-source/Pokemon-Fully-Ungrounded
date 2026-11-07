@@ -9,3 +9,5 @@ Inspiratie van Jordi (22 okt): fanmade sprite work van de boombox-/stereo-Rotom 
 - `inspiratie/_stereo_rotom_…_by_tobalcr…png`: overworld-sprites in 4 richtingen × 4 frames (door TobalCR, DeviantArt).
 
 Kenmerken om over te nemen: breed, laag silhouet (speakers links/rechts), Rotom-oranje met zwarte speakerconussen, noot-bliksem bovenop, mintgroene gloed in plaats van een zwarte omlijning buitenom (bij Gen 3 nog bekijken: de gloed als vaste kleur in het palet).
+
+**5 nov:** Jordi stuurde de echte bron (`referenties/pokopia_dj_rotom_bron.webp`); werkwijze en status staan nu in `SPEC.md`. Silhouet ronde 1: `silhouet1/vel_silhouet1.png`.

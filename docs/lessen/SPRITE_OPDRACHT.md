@@ -1,5 +1,7 @@
 # Vaste opdracht voor elke sprite-agent (ook bij kleine reparaties)
 
+> **Kort: lees eerst `docs/lessen/SPRITE_KERN.md`.** Dit bestand is naslag.
+
 Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe klein ook. Jordi (23 okt): "ik moet elke keer dingen opnieuw vertellen waarvan ik dacht dat ik je erop getraind had." Dit bestand is daar het antwoord op.
 
 ## 1. Eerst lezen (altijd)
@@ -27,6 +29,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 
 **Lijnen, ogen, kleur**
 - Geen rechte lijnen waar het dier rond is; curven zonder hoeken; geen overdreven rechte staart.
+- **Rotom-vormen:** de ogen zijn de game-Rotom-ogen (schuine amandel, donkere rand, grote gekleurde iris met glans, wit alleen als randje); neem de opbouw van Rotom/Frost pixel voor pixel als sjabloon (Jordi, 5 nov: "het zijn nog geen typische rotom ogen").
 - Ogen geïntegreerd (bovenlid donkerst, iris donker boven/licht onder, glans), niet opgeplakt, geen brilogen; geen volledig zwarte ogen zonder glans.
 - Omlijning per kleurgroep, zwart alleen aan de schaduwkant; licht van linksboven; geen open randen (ook schaduwkleur naast transparant).
 - Kleuren vergelijken met Pokémon van **hetzelfde type** (Dark mag donker).
@@ -34,6 +37,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Referentiefoto = inspiratie, geen blauwdruk (Pokémon-filosofie), maar de soort moet herkenbaar blijven.
 
 **Werkwijze**
+- **Een goedgekeurd poppetje/ontwerp is de specificatie:** het silhouet trekt het over (max. ±1 px), de maker interpreteert of herontwerpt het niet (Jordi, 3 nov, lamakop: "de kop is dus niet goed want die is anders"). Dat geldt voor het **hele** silhouet, ook lijf en poten ("het lijf en de poten wijken echt flink af"): Claude geeft geen eigen vormeisen ("eigen kolom per poot", "≥ 5 px") die het model overrulen, en meet elke ronde de afwijking met een dekkingskaart van het model (`lama/fase2/silhouet_r5/kop_dekking.py`) vóór Jordi.
 - **Wat Jordi goedkeurde blijft letterlijk staan** (pixel voor pixel). "Meer Pokémon" of "beter" nooit uitvoeren door goedgekeurde verhoudingen te veranderen.
 - **Een kleine correctie is klein:** werk binnen het pixelbudget dat Claude opgeeft; tel en meld het aantal gewijzigde pixels. Verplaats je een onderdeel, laat dan de vorm eromheen meekloppen (neus verschuiven = snuit mee).
 - Grote of ongevraagde wijzigingen alleen als variant naast het origineel.
@@ -46,6 +50,8 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - Lessen onder "Lessen" in je NOTITIES.md (Claude zet ze over); niet in SPRITING.md schrijven, niet committen tenzij gevraagd.
 
 ## 4. Claude (coördinator)
+- **Checklist bovenaan `SPRITE_WERKWIJZE.md` + keurslot** (`.claude/hooks/sprite_keurslot.py`): geen sprite-afbeelding naar Jordi zonder keurvel en `Oordeel: PASS`.
+- **Sprite uit een model/render:** vóór Jordi altijd `tools/grounded/model_vs_sprite.py` en per onderdeel nalopen of de sprite de render volgt (zie GRAPHICS.md, Picapau 5 nov); de volledige afwijkingslijst gaat naar de maker.
 - **Tokens sparen:** agents krijgen SPRITE_NORM.md + SPEC/AFGEKEURD (niet alle lessenbestanden); één maker per sprite die met SendMessage doorwerkt; geen parallelle experimenten tenzij Jordi vraagt; kleine vellen.
 - Plak de verwijzing naar dit bestand in elke sprite-opdracht en geef bij reparaties een pixelbudget en de lijst bevroren delen mee.
 - **Bekijk elk resultaat zelf** (1× en 3×, naast de laatst goedgekeurde versie) vóór het naar Jordi gaat. Een gezicht of geheel dat slechter oogt dan de vorige goedgekeurde versie gaat **nooit** naar Jordi: terugsturen of de vorige versie houden.
@@ -54,6 +60,7 @@ Claude plakt de verwijzing naar dit bestand in **elke** sprite-opdracht, hoe kle
 - **Een formaat- of pixelgrens mag nooit winnen van de vorm:** meldt een agent "dunner/rechter gemaakt om onder X px te blijven", dan is dat een afkeuring, niet een kanttekening (olinguito 22: Claude liet een 5 px rechte poot door).
 - Twijfel Claude bij de eigen check, dan de vorige goedgekeurde versie houden en eerst de oorzaak vinden; geen nieuwe ronde op gevoel.
 - **Jordi's woorden letterlijk doorgeven** (citaat), niet parafraseren of inkorten tot een eigen lijstje. Een nieuwe instructie of referentie is een **aanvulling** op de vorige, geen vervanging: alle eerdere, nog openstaande punten gaan mee. Geeft Jordi een referentie-sprite die "volledig voldoet", dan is die referentie de specificatie: de agent neemt alles over wat hij laat zien (ook dingen die Claude niet heeft opgesomd, zoals de positie van het oog) en meet het na (olinguito stap 1: de oogpositie viel weg omdat Claude Linoone samenvatte tot drie punten).
+- **Eén versie naar Jordi, nooit meerdere imperfecte opties** (Jordi, 3 nov, lama 5b/5c: "je stuurt telkens meerdere imperfecte opties, die lastig te vergelijken zijn"). Stuur alleen de beste versie, met alles wat Claude, de maker of de keurder zelf al zag opgelost; vorige rondes hooguit klein als naslag, niet als keuze. Een smaakvraag is één vraag over die ene versie. Een reparatie die een kenmerk laat verdwijnen (5c: de staart) is een fail, geen "smaakvraag".
 - Nieuwe terugkerende feedback van Jordi meteen in §2 hierboven zetten.
 - **Varianten altijd groot tonen (Jordi, 7 nov: "dat kan ik toch niet zien in zo'n klein plaatje"):** een variant van een detail (gezicht, oog) staat op hetzelfde formaat als het hoofdresultaat, ingezoomd op dat detail (8–10×), niet alleen als 1×-duimnagel.
 - **Nooit het hele palet in één ronde omgooien (Sapa Inca ronde 11, Jordi: "veel slechter"):** een nieuw palet verandert elke pixel tegelijk (1443 px), waardoor goedgekeurde delen (vleugel, kroon) ongemerkt anders worden. Kleur/schaduw per onderdeel en één stap tegelijk, met een diff per zone in RGB (niet alleen indexen).

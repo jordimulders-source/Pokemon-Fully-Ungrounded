@@ -1,0 +1,2 @@
+ronde2.txt: 1512 px | korrels: 0 uitsteeksel-px, 0 inkeping-px, 0 tanden van 1 rij/kolom
+model50.txt: 1509 px | korrels: 5 uitsteeksel-px, 8 inkeping-px, 9 tanden van 1 rij/kolom

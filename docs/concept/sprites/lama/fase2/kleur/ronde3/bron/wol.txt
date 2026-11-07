@@ -1,0 +1,30 @@
+# Kleur ronde 3: wol als één zachte massa, met de hand getypt (rij x0 pixels) over het raster van 2c.
+# Licht linksboven (hals links, schouder, rug), basis b in grote rustige vlakken, kernschaduw s onderaan die naar
+# rechts dikker wordt (y38 links, y37 midden, y36 rechts), teruggekaatst licht b onder de buik (35-39,38), (36-38,39).
+# Zachte plukken zonder schaduwrand: bovenaan de hals (bestaand, 22-23,16-17), hals (21,22), schouder (21-23,32-33).
+# Halsband, aguayo, kop en poten blijven; alleen vachtletters binnen de wol.
+# --- hals (cilinder: kernschaduw onder de kin links, licht links-midden, schaduw rechts)
+19 19 ssblbsd
+20 18 ssbllllbdd
+21 17 ssbllllbbbsd
+22 18 sllhllbbbsk
+23 18 dllllbbsskk
+24 17 dllllbbbbsssdd
+25 16 dlllllbbbbssssmd
+26 17 dlhlllbbbbsss
+# --- borst binnen de halsband en rug tussen halsband en aguayo
+27 20 lllbbbbss
+27 31 sbllllb
+28 23 llbb
+28 30 sbllllbb
+29 30 sbllllb
+# --- schouder, flank, buik en achterwerk
+32 27 llllllllbbbbss
+32 44 sbllllbsdd
+33 20 dlhhllllllllbbbbbbbbbbbbbblllbbsdd
+34 21 dlllllllllbbbbbbbbbbbbbbbblbbsd
+35 20 dlllllllbbbbbbbbbbbbbbbbbbbbbssk
+36 20 dllllbbbbbbbbbbbbbbbbbbbssssssdk
+37 21 dllbbbbbbbbbbbbssssssssssssssdk
+38 22 dbsssssssssssbbbbbsssssssssdk
+39 29 ssssssdbbbssssss

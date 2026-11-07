@@ -1,0 +1,32 @@
+# Kleur ronde 2 lama fase 3: met de hand getypte wijzigingen op ronde1b.txt (y x0 pixels; '.' = transparant)
+# bombin: hoger (top y4 tussen de oren), breder naar links, rand y9 x17-24 (x17-18 buiten het silhouet)
+4 19 dCkkk.Ck
+5 19 dCkSdkCSk
+6 19 kkSdkkCSk
+7 19 kdkkkkCSk
+8 19 kRRrrmCSk
+9 17 kkddkkkkCk
+10 19 dHHCkkkk
+# kop + vlecht
+11 19 dHHCCSSk
+12 17 ddHHCCCCSkdk
+13 17 dHHCdkkkSSdk
+14 16 dHHCCdHkkSkd
+15 15 dHkCCCCCddSdk
+16 15 dHCCCCCddSSSdk
+17 15 dHCCCddSSCSkkd
+18 15 dCdddSSCCCkSdk
+19 16 dSSSCCCCkdkkCk
+20 16 kkkdHCCCkSdkSk
+21 16 dHHCCCCCkdkkCSk
+22 16 dHCCCCCCkRrmCSrkk
+
+# poten: alleen afwerking. Knie nabije voorpoot zonder losse vlek; verre windsel in dezelfde volgorde als de nabije, één tint donkerder
+47 25 CCCCSS
+50 17 kyyyd
+51 17 krrrm
+52 17 kBBBD
+53 17 kgggD
+54 17 kyyyd
+55 17 krrrm
+56 17 kyydd

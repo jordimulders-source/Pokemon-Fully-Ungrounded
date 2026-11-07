@@ -1,0 +1,36 @@
+px 1224 (bron 1071, fase 1 = 1019), box 37x62, y1-62
+zone            +px  -px  max afstand nieuw px tot bron / weg px tot rand
+1 kop             45   17   3.2 / 2.0
+1 kop (onderlip)    3    0   1.4 / 0.0
+2 hals             4    5   1.0 / 2.0
+5 halsband         7    0   2.0 / 0.0
+3 lijf+staart     59    7   2.2 / 1.0
+4 poten          163   99   5.0 / 5.0
+buiten zones: 0
+componenten 1
+losse px (<=1 buur) 0
+gaten 0
+rechte verticale randen >=4 (x, y0-y1):
+rechte horizontale randen >=4 (y, x0-x1):
+  boven y24 x38-42 (5) zone 3 lijf+staart
+  onder y61 x43-47 (5) zone 4 poten
+poten (rij: segmenten breedte / lucht):
+  y45: 18-23(6)  26-32(7)  35-40(6)  43-49(7)   lucht 2,2,2
+  y46: 18-23(6)  26-32(7)  35-40(6)  43-50(8)   lucht 2,2,2
+  y47: 19-23(5)  26-31(6)  36-40(5)  44-49(6)   lucht 2,4,3
+  y48: 17-22(6)  27-31(5)  36-41(6)  44-48(5)   lucht 4,4,2
+  y49: 16-22(7)  27-31(5)  37-41(5)  44-48(5)   lucht 4,5,2
+  y50: 17-23(7)  27-32(6)  37-41(5)  45-49(5)   lucht 3,4,3
+  y51: 16-23(8)  28-32(5)  38-42(5)  45-50(6)   lucht 4,5,2
+  y52: 16-23(8)  28-32(5)  37-42(6)  46-50(5)   lucht 4,4,3
+  y53: 16-22(7)  28-33(6)  36-40(5)  45-49(5)   lucht 5,2,4
+  y54: 17-21(5)  27-33(7)  36-40(5)  44-48(5)   lucht 5,2,3
+  y55: 18-20(3)  26-32(7)  35-39(5)  44-48(5)   lucht 5,2,4
+  y56: 25-31(7)  35-39(5)  43-48(6)   lucht 3,3
+  y57: 24-31(8)  35-39(5)  43-47(5)   lucht 3,3
+  y58: 24-32(9)  36-38(3)  42-47(6)   lucht 3,3
+  y59: 24-32(9)  42-48(7)   lucht 9
+  y60: 25-31(7)  42-48(7)   lucht 10
+  y61: 26-30(5)  43-47(5)   lucht 12
+  y62: 27-29(3)   lucht 
+kop incl. oren en onderlip y1-21: 21/62 = 34% van de hoogte, 214 px

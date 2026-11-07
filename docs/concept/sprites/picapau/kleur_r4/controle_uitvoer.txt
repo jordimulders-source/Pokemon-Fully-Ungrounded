@@ -1,0 +1,41 @@
+0. tegen r3-B
+   silhouet-diff: 0 []
+   gewijzigde pixels (x, y, oud, nieuw): 20
+      (31, 10, '1', '2')
+      (31, 11, '1', '2')
+      (27, 29, '1', '2')
+      (28, 29, '1', '2')
+      (30, 29, '2', '1')
+      (27, 30, '1', '2')
+      (28, 30, '1', '2')
+      (30, 30, '2', '1')
+      (31, 30, '2', '1')
+      (28, 31, '1', '2')
+      (31, 31, '2', '1')
+      (28, 32, '1', '2')
+      (29, 32, '1', '2')
+      (30, 32, '2', '1')
+      (29, 33, '1', '2')
+      (29, 46, 'g', 'k')
+      (28, 47, 'g', 'k')
+      (34, 47, 'G', 'k')
+      (36, 47, 'G', 'k')
+      (38, 47, 'G', 'k')
+1. ter info: diff met het bevroren silhouet (B wijkt bewust af, zie r3)
+   buiten de zones: 9 [(18, 18), (17, 22), (18, 23), (42, 46), (43, 46), (37, 47), (38, 47), (39, 47), (40, 47)]
+   in de zones (gemeld): 12 [(33, 4, 'kuiftoppen', '+'), (32, 5, 'kuiftoppen', '+'), (39, 5, 'kuiftoppen', '+'), (31, 6, 'kuiftoppen', '+'), (36, 6, 'kuiftoppen', '+'), (39, 6, 'kuiftoppen', '+'), (16, 17, 'snavelpunt', '+'), (33, 46, 'tenen', '-'), (35, 46, 'tenen', '+'), (33, 47, 'tenen', '-'), (36, 47, 'tenen', '+'), (34, 48, 'tenen', '-')]
+   B: alle silhouetwijzigingen: 21 (budget 30) [(33, 4, '+'), (32, 5, '+'), (39, 5, '+'), (31, 6, '+'), (36, 6, '+'), (39, 6, '+'), (16, 17, '+'), (18, 18, '+'), (17, 22, '+'), (18, 23, '+'), (33, 46, '-'), (35, 46, '+'), (42, 46, '-'), (43, 46, '-'), (33, 47, '-'), (36, 47, '+'), (37, 47, '+'), (38, 47, '+'), (39, 47, '+'), (40, 47, '+'), (34, 48, '-')]
+2. open randen (niet-omlijningskleur naast transparant)
+   0 []
+3. losse pixels
+   0 []
+4. clusters < 3 px per tint (8-samenhangend; glans w en het overgenomen Pikachu-oog uitgezonderd)
+   aantal: 0
+5. pixels 829 | kleuren 15 1234CGbcdghklrw | bbox 15 3 50 57 (36x55)
+UITSLAG: OK
+6. poten: grijs (g/G) tegen transparant (reparatie 1/2)
+   0 []
+7. contrast (luma) tegen Pikachu/Taillow
+   Picapau geel 1/2/3/selout: [244, 213, 179, 73] | zwart 21
+   Pikachu geel (255,246,164)/(246,230,82)/(246,189,32)/(222,148,0), selout (156,82,0)/(98,49,8): [239, 218, 188, 153, 95, 59]
+   Taillow blauw (112,136,176)/(90,106,156)/(49,74,123)/(32,41,82): [133, 107, 72, 43]

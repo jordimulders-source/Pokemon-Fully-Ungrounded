@@ -1,0 +1,9 @@
+px 1512 | silhouet 1512 | alpha-diff: +0 -0
+open randen (vulkleur naast transparant): 4
+   x20 y2 C
+   x20 y3 C
+   x25 y3 C
+   x25 y4 C
+losse pixels (geen gelijke 4-buur): 91
+   m@x23,y8 d@x19,y11 H@x19,y12 d@x27,y12 d@x26,y13 n@x27,y13 d@x16,y14 d@x21,y14 H@x22,y14 d@x15,y15 d@x26,y15 k@x15,y16 n@x26,y16 d@x27,y17 n@x27,y18 S@x17,y20 C@x18,y20 d@x26,y20 n@x26,y21 k@x30,y21 S@x26,y22 m@x28,y22 r@x30,y22 S@x45,y22 m@x29,y23 k@x30,y23 k@x43,y23 S@x44,y23 Y@x27,y24 k@x36,y24 D@x37,y24 n@x46,y24 d@x26,y26 y@x34,y26 p@x14,y28 r@x15,y28 Y@x17,y28 g@x19,y28 p@x21,y28 C@x24,y28 Y@x25,y28 S@x26,y28 Y@x27,y28 p@x28,y28 D@x47,y29 m@x48,y33 r@x39,y34 m@x39,y35 m@x13,y36 d@x40,y36 d@x13,y37 d@x37,y37 D@x14,y38 d@x38,y38 D@x15,y39 k@x24,y40 Y@x34,y40 k@x22,y41 d@x23,y41 d@x36,y41 k@x37,y41 d@x35,y42 k@x36,y42 y@x33,y43 d@x34,y43 k@x35,y43 d@x21,y44 d@x33,y44 k@x34,y44 k@x38,y45 k@x41,y45 k@x44,y45 k@x47,y45 d@x38,y46 d@x39,y47 d@x32,y49 m@x29,y53 D@x29,y54 d@x29,y56 m@x29,y57 k@x35,y58 S@x29,y59 d@x43,y59 H@x44,y59 S@x47,y59 k@x48,y59 k@x19,y60 k@x44,y60 k@x47,y60 k@x23,y62 k@x28,y62
+kleuren gebruikt: 15 BCDHSUYdgkmnpry

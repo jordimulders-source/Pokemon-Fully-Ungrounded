@@ -1,0 +1,35 @@
+# ---- ronde 11: drie tapse wiggen (f licht / m schaduw, 1 px basis langs het hooglicht) ----
+26 23 ffffff
+27 21 ffffffff
+27 31 ffff
+28 20 bbffffffff
+28 33 ffff
+29 21 bbbfffffff
+29 34 ffff
+30 23 bbbffffff
+30 35 fffm
+31 25 bbffffff
+31 36 ffm
+32 30 fff
+32 37 fmm
+33 30 fff
+33 37 mmm
+33 44 b
+34 30 fff
+34 37 mmm
+34 42 mmff
+35 30 fff
+35 38 fff
+35 43 fmm
+36 30 fff
+36 38 fff
+36 44 mmm
+37 31 ff
+37 39 ff
+37 44 mm
+38 32 f
+38 39 ff
+38 45 m
+39 39 f
+40 39 f
+# wigpixels: 112, buiten de projectie: 29

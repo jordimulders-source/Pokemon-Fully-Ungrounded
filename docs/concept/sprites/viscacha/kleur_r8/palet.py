@@ -15,5 +15,5 @@ PAL=[(152,208,160), # 0 transparant
  (166,122,74),  # C bruin (model 166,121,74)
  (248,248,248), # D wit (oogglans)
  (168,100,66),  # E verre achterpoot/voet (model 165,97,57 / 169,100,73); pupil is nu 1
- (118,102,88),  # F snorhaar grijsbruin (model 119,103,88)
+ (140,124,104), # F snorhaar: middentint (lijnkern model 107-126,96-116,85-107; per spritepixel gemengd met crème/vacht)
 ]

@@ -863,3 +863,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.211] - Hitmontop-evolutie: Gemini-prompt
 - Nieuwe poging voor de capoeira-evolutie via Gemini: `docs/concept/sprites/hitmontop_evo/gemini/PROMPT.md`, met als bijlagen het goedgekeurde hoofd (`bijlage1_hoofd.webp`) en pose v3 (`bijlage2_pose.png`).
 - Jordi: geen shirt, broek met gele en groene strepen, capoeira-koord aan de broek, armbanden à la Muay Thai maar in capoeira-stijl. Open: grondkleur broek (wit/blauw) en kleur van het koord.
+
+### [v0.0.212] - Hitmongroove: ontwerp bevroren
+- Gemini-rondes 1–5 voor de Hitmontop-evolutie (`hitmontop_evo/gemini/README.md`); ronde 5 bevroren als model (`referenties/gemini_gekozen_capoeira.png`) met Jordi's wijzigingen: benen i.p.v. broek en bolle torso via kleur, vuisten als bollen, steunarm korter, koordband om de steunarm.
+- Naam: **Hitmongroove** (Jordi).
+- Les in `docs/lessen/GEMINI.md`: een eerder Gemini-plaatje als bijlage in een nieuw gesprek wordt gekopieerd; een stickman leest hij niet als pose.

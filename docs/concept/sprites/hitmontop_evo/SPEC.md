@@ -90,7 +90,7 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 - Sprite volgens `docs/lessen/GEMINI.md` + SPRITE_WERKWIJZE "Gemini-model namaken". Werk: `sprite_gemini/`.
 
 ## Naam
-- Jordi (7 nov): "In mijn hoofd had ik de namen Hitmonmove en Hitmongroove al zitten". Beide passen in de limiet van 12 tekens (Hitmongroove precies 12). Nog niet gekozen.
+- Jordi (7 nov): "In mijn hoofd had ik de namen Hitmonmove en Hitmongroove al zitten". Beide passen in de limiet van 12 tekens (Hitmongroove precies 12). **Gekozen: Hitmongroove** (Jordi: "Hitmongroove prima dan!").
 
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.

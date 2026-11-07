@@ -220,6 +220,25 @@ Jordi: Salar de Uyuni-variant van Silicobra, misschien ook van Sandaconda of een
   - **B. Inca-rangen:** fase 1 gewoon; fase 2 een *orejón* (Inca-adel, genoemd naar hun grote gouden oorschijven: de vogel krijgt gouden "oorschijven"); fase 3 de Sapa Inca met de mascaypacha. Te combineren met A.
   - **C. Spheal-stijl, ander dier als eindvorm:** koningstiran → bergcaracara met de kroon, de vogel die de veren levert wordt zelf koning. Of → rotshaan (kam als gouden helm).
   - **D. Zon-lijn:** koningstiran → zonneral (Fire/Flying), de waaier op de kop wordt een zon op de vleugels.
+- **Inca-rangen uitgewerkt (Claude, 5 nov; Jordi ziet lijn B zitten).** Rangen en hun kenmerken:
+  - *Hatun runa*: gewone mensen (boeren van een *ayllu*); elke man droeg een gevlochten hoofdband (*llawt'u*) waarvan kleur/vorm zijn herkomst toonde.
+  - *Chaski*: renbode in een estafette over de Inca-wegen, met een schelptoeter (*pututu*). Snel; past bij een vogel die insecten in de vlucht vangt.
+  - *Khipu kamayuq*: houdt de boekhouding bij in knopen (koord met knopen aan de vogel?).
+  - *Kuraka*: plaatselijk hoofd van een gemeenschap.
+  - *Orejón* (Spaanse bijnaam): Inca-adel met grote gouden oorschijven; jongens kregen hun oren doorboord bij de inwijding (*warachikuy*).
+  - *Tukuy rikuq*: "hij die alles ziet", de inspecteur van de koning.
+  - *Apu*: gouverneur van een wereldkwart (ook het woord voor berggeesten).
+  - *Willaq umu*: hogepriester van de zon.
+  - *Awki*: de kroonprins. Volgens de kroniekschrijvers droeg die een **gele** franje, de Sapa Inca een **rode**: dat valt samen met de gele kuif van het vrouwtje en de rode van het mannetje bij de echte vogel.
+  - *Sapa Inca* (keizer, "zoon van de zon") en *Quya* (koningin). Attributen: mascaypacha, gouden oorschijven, scepter (*suntur pawqar*), tuniek met *tocapu*-patronen, zonneschijf.
+- **Lijnvarianten met rangen (Claude):**
+  1. *Hatun runa → orejón → Sapa Inca*: kiskadie met hoofdbandje → tiran met gouden oorschijven (kuif dicht) → koningstiran met open waaier en rode franje over de snavelbasis.
+  2. *Chaski → kuraka/apu → Sapa Inca*: snelle bode (Speed) → bestuurder → koning. Meer "loopbaan" dan afkomst.
+  3. *Awki → Sapa Inca* (2 fasen): gele franje → rode franje. Simpel, de kleurwissel is het verhaal.
+  4. Splitsing in fase 3 (zoals Kirlia → Gardevoir/Gallade): Sapa Inca (Fire/Flying, zonnekoning) of willaq umu (Psychic/Flying, zonnepriester).
+  - Vrouwtje als *Quya* met gele kroon, of het mannetje/vrouwtje-verschil laten vallen als de kleurwissel al per fase gebeurt.
+- **Schetsen v1** (5 nov): `docs/concept/ontwerp/koningstiran/schets_v1.png`. Rij 1: kiskadie (hatun runa) → koningstiran met dichte kuif, gele franje, gouden oorschijf (awki) → open waaier, rode franje, tocapu-borst (Sapa Inca). Rij 2: vorkstaarttiran als chaski, zonneral als willaq umu.
+
 ## Roomkleurige specht (idee, Jordi 5 nov)
 - **Bron:** *Celeus flavus* (cream-colored woodpecker), Amazone: várzea en bos langs rivieren; eet vooral mieren en termieten (uit boomnesten) en fruit. Jordi: "net Pikachu". **Electric/Flying**, in het ontwerp nog net iets meer Pikachu dan in het echt. Nog niets besloten; Jordi zoekt de invalshoek.
 - **Wat er al op Pikachu lijkt (Claude):** geel lijf; rode wangvlek (de "baardstreep") = de wangzak; donker geschubde vleugels = de bruine strepen op Pikachu's rug; roodbruine, stijve steunstaart = de bliksemstaart (kan als zigzag gezet worden); de kuif = de oren (twee punten met donkere toppen).

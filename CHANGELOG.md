@@ -746,3 +746,49 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.135] - Poedelmot eindvorm: van brainstorm naar draft-sprite
 - `docs/concept/sprites/poedelmot/`: SPEC met Jordi's leidraad (zijn eerste lange bericht, zin voor zin) en alle besluiten; referenties (tak-foto, vilt, sprieten, zijaanzicht, fan-art); 3D-model (afgekeurd), poppetje op 45° (lama-methode, rondes 1–5b), silhouet rondes 1–3, en **draft-sprite ronde 1** (`sprite/ronde1/`, 64×64, poten naar Giratina). Vanaf nu stap voor stap verbeteren met Jordi.
 - `CLAUDE.md`: vaste regel "niet interpreteren wat Jordi niet zegt"; `docs/lessen/SPRITE_KERN.md`: geen eigen kenmerken in een makeropdracht.
+
+### [v0.0.140] - Koningstiran-lijn: Inca-rangen, ontwerp en Sapa Inca-sprite (rondes 1–15)
+- Inca-rangen uitgewerkt (hatun runa, chaski, kuraka, orejón, apu, awki, Sapa Inca/Quya e.a.) met vier lijnvarianten.
+- Eerste conceptschetsen van de koningstiran-lijn: `docs/concept/ontwerp/koningstiran/schets_v1.png` (script `ontwerp/scripts/koningstiran.py`).
+- Jordi kiest de lijn hatun runa → awki → Sapa Inca (vastgelegd in `POKEMON.md`); schets v2 met de kop naar voren en een imposante kroon in twee lagen (`ontwerp/koningstiran/schets_v2.png`).
+- Koningstiran-sprite gestart (eindvorm eerst): `docs/concept/sprites/koningstiran/SPEC.md` en pose-onderzoek met echte sprites (`referenties/pose_onderzoek.png`, `vogels_en_kronen.png`).
+- Sapa Inca wordt een hybride koningstiran × bergcaracara (Jordi: "meer creatieve vrijheid"); 3D-poppetje `docs/concept/sprites/koningstiran/pop3d.py` met een raster van 9 hoeken (`pop3d_hoeken.png`): waaier als dichte paraplu met hangende kwastjes, caracaralijf, rood gezicht, gouden borst en oorschijf.
+- Sapa Inca: pose aangepast naar Empoleon (borst vooruit, verre vleugel als gebaar, nabije vleugel als mantel, brede stand); les over T-poses in `FAKEMON_CHECKLIST.md`.
+- Sapa Inca pose-ronde 3: vleugels gesloten en massief, gebiedend gebaar in plaats van gespreide "danser"-pennen.
+- Sapa Inca: posegokken gestopt; kandidaat-skeletten voor een nonchalante koningspose in `docs/concept/sprites/koningstiran/referenties/nonchalant.png`.
+- Sapa Inca pose-ronde 4 naar het Pachacútec-beeld in Cuzco (vleugel half omhoog, andere als Decidueye-cape, contrapposto, slanker).
+- Sapa Inca: hoek B3 gekozen; opgeheven vleugel met knik en bolle achterrand (3 buigingen), benen niet meer in een V.
+- Sapa Inca: buiging 1 gekozen, vleugel iets korter, poten korter.
+- Sapa Inca: staart als scepter (eerste opzet).
+- Sapa Inca: staart als scepter vereenvoudigd (gewone staart die afbuigt, niet onder de poten door); in deze hoek valt hij grotendeels achter het lijf, keuze voorgelegd.
+- Sapa Inca: staart en bovenarm naar Jordi's krabbel (staart achter het standbeen door en aan de voorkant omhoog; bovenarm korter).
+- Sapa Inca: staart-scepter vervalt (leest in deze pose niet als scepter); gewone roestbruine staart achter de poten.
+- Sapa Inca: benen even lang onder het lijf, linkervleugel smaller.
+- Sapa Inca: silhouet v1 op 64x64 (1560 px) uit het poppetje B3 (`docs/concept/sprites/koningstiran/silhouet_v1_vel.png`).
+- Sapa Inca kleursprite ronde 1 en 2 (`docs/concept/sprites/koningstiran/ronde2/`): kroon bevroren; gezicht, vleugel, borst en staart met kleur gerepareerd; silhouetkeuzes voorgelegd.
+- Jordi: ronde 2 "al heel netjes"; verder morgen. Lessen van de maker in `SPRITING.md`, Stand van zaken bijgewerkt.
+- Sapa Inca: types Normal/Flying → Fire/Flying → Fire/Psychic (Jordi). Poppetje: linkervleugel hoger met staf (varianten veren/zonneschijf, `staf_varianten.png`), flank linksonder loopt door naar de dij; silhouet v2 (`silhouet_v2_vel.png`).
+- Sapa Inca: de staart is de staf (Jordi): gouden staartstukje rechtsonder, staf buigt onder de hand achter het lijf; silhouet v2.
+- Sapa Inca: arm houdt de staf weer zichtbaar vast, staf wordt hoger staart, staartstukje buigt naar links.
+- Sapa Inca: staartstukje rechts weg; staf krult af bij de buik, piepklein krulletje tussen de poten; linkervleugel één vorm.
+- Sapa Inca: staf verdwijnt achter de donkere flank, krulletje los tussen de poten (gemeten).
+- Sapa Inca ronde 3 (`docs/concept/sprites/koningstiran/ronde3/`): staf in de linkervleugel, lijf linksonder opgevuld, staartpuntje tussen de poten; gezichtsvariant apart.
+- Sapa Inca ronde 4 (`docs/concept/sprites/koningstiran/ronde4/`): vleugel om de staf in vleugelvorm, staf meer staart, linkerpoot aangesloten, trotse Pokémon-ogen.
+- Sapa Inca: zes kroonvarianten (gouden stippen, gouden band, zonder stippen) in `docs/concept/sprites/koningstiran/kroon_varianten/`.
+- Sapa Inca ronde 5: staf zichtbaar onder de vleugel. Stand van zaken bijgewerkt.
+- Sapa Inca ronde 5b: zwart vlak tussen staf, vleugel en lijf opgelost.
+- Sapa Inca ronde 6 en 6b: lijf ovaal volgens Jordi's rode lijnen, buik rond, staf vóór de vleugel tot de greep, poten afgewerkt, staf verdwijnt kort onder de hand achter het lijf.
+- Sapa Inca ronde 7: lijf links voller, buik egaal ovaal, stafkop als staartveerpunt (variant met zonneschijf).
+- Sapa Inca ronde 7b/8: linkeromtrek tussen 6b en 7, grotere zon-stafkop (7×7).
+- Sapa Inca ronde 9: nieuw kroonpatroon per veer (3 varianten) en puntige stafkop.
+- Sapa Inca: Jordi kiest kroon v3 en de puntige stafkop; kandidaat-frontsprite in `docs/concept/sprites/koningstiran/kandidaat/`.
+- Sapa Inca: onafhankelijke keuring (13 PASS / 9 FAIL) en ronde 10 met de technische reparaties (open randen, ruis, omlijning, shading).
+- Sapa Inca ronde 11: staf als goud zonder gloed, kop en ogen groter, kleur en schaduw naar latere generaties (paarsbruine schaduw, lichte selout, warm goud).
+- Sapa Inca: ronde 11 afgekeurd; ronde 12 = ronde 10 met alleen de staf als goud zonder gloed.
+- Sapa Inca: eindkeuring (20 PASS / 11 FAIL) en ronde 13 met de top-5-reparaties (ogen/snavel, banding, hooglicht romp, stafpunt, opschonen).
+- Sapa Inca ronde 14: overgang staf/lijf, spitse stafpunt, poten, verre oog en paarse pixels opgeruimd.
+- Sapa Inca: tweede eindkeuring (netheid per onderdeel) en ronde 15 met de 14-px top 5.
+- Sapa Inca: overzicht van tien versies; samengevoegd tot ronde 12 met het hoofd en de tooivorm van ronde 2 (`samengevoegd/`).
+
+### [v0.0.141] - Sapa Inca frontsprite af
+- Frontsprite van de Sapa Inca (eindvorm koningstiran-lijn, Fire/Psychic) is af: `docs/concept/sprites/koningstiran/af/sapa_inca.png`, samengevoegd uit ronde 12 (binnenkant tooi, staf/staart, lijf, poten) en ronde 2 (hoofd, tooivorm). Retro in `docs/lessen/RETRO_SAPA_INCA.md`. Nog te doen: frame 2, rug, icoon, shiny, naam/data; daarna awki en hatun runa.

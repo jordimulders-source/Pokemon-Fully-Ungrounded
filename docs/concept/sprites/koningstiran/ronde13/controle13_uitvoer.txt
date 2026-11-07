@@ -1,0 +1,11 @@
+palet identiek aan ronde 12: True
+1 ogen en snavel (x23-31 y23-26): 6 px
+2 flank (x29-35 y36-50): 22 px
+3 romp linksboven (x21-27 y28-33): 10 px
+4 stafpunt (x13-17 y18-21): 12 px
+5 klont (15,46-47): 1 px
+5 kroononderrand + drup (x40-46 y22-24): 8 px
+5 hand (x12-20 y41-45): 3 px
+buiten de genoemde plekken: 0 px []
+silhouet: erbij 0 eraf 4 totaal 1625
+2x2-klonten zwart: []

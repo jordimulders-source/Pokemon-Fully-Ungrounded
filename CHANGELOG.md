@@ -569,3 +569,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.142] - Hatun runa: eerste Gemini-ronde besproken
 - `docs/concept/sprites/koningstiran/gemini/README.md`: feedback op ronde 1 (hoofdband werd een losse hachimaki, kiskadiekop olijfgroen, profielpose) en de bijstuurzin.
+- Jordi: "vind hem eerder japans lijken" (hachimaki). Prompt herschreven: geen hoofdband, maar een tocapu-weefmotief in rood/goud/zwart ín de witte wenkbrauwstreep; rug donkerbruin.

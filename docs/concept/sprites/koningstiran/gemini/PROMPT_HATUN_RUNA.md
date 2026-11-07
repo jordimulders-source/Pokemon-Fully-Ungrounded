@@ -13,8 +13,8 @@ Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/
 
 WHAT IT IS
 - The first stage of a 3-stage bird line from a South American region. Typing: Normal/Flying. A common early-route bird, small and plain, like a city sparrow, but with a hidden royal destiny.
-- Anatomy: the Great kiskadee (Pitangus sulphuratus) in attachment 1. Keep it a real flycatcher: big flat-topped head, thick black mask through the eye, broad white eyebrow stripe that meets at the back of the head, white throat, short straight sturdy black beak, bright yellow belly, olive-brown back, rusty-brown edges on the wing and tail feathers, short dark legs, medium tail.
-- The white eyebrow stripe is a braided headband (the Inca llawt'u): woven white band with a few small red diagonal stripes in it. It must grow from the feathers, it is NOT a separate hat or accessory.
+- Anatomy: the Great kiskadee (Pitangus sulphuratus) in attachment 1. Keep it a real flycatcher: big flat-topped head, thick black mask through the eye, broad white eyebrow stripe that meets at the back of the head, white throat, short straight sturdy black beak, bright yellow belly, warm dark brown back, rusty-brown edges on the wing and tail feathers, short dark legs, medium tail.
+- Inside the white eyebrow stripe: a small repeating Andean textile pattern (tiny squares and step shapes, like Inca tocapu) in red, gold and black, as if the feathers themselves are woven. It is a feather marking, NOT a headband, rope, cloth or knot (it must not look Japanese).
 - Hidden crown: on top of the head only a small yellow patch peeks out between the dark feathers (the real kiskadee has a hidden yellow crown). Just a hint, no fan, no crest.
 - Attachment 2 is its FINAL evolution. Use it only for the shared palette (warm brown, ochre-yellow belly, gold accents). Do NOT copy its fan crown, staff, ear discs or pose. This stage is the humble beginning.
 

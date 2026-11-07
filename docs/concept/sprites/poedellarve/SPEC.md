@@ -20,5 +20,10 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-model namaken) + `docs/less
 ## Besloten
 - Silhouet: `silhouet/silhouet.png` (gekozen model direct verkleind, `silhouet/sil.py`; 40×30, 778 px, x 12–51, y 33–62, schaal 13,55 modelpx per spritepixel, links 12, boven 33). Rode omtrek over het model: `silhouet/silhouet_over_bron.png`. Kleurgids (gemiddelde kleur per pixel, géén sprite): `silhouet/gids_gemiddeld.png`. Bevroren; alleen dunne delen (sprietkrullen) mogen met de hand.
 
+## Af (7 nov)
+- (7 nov, letterlijk) "ik vind ronde 2 wel goed, maar je moet hem spiegelen idd" en "en dan is de sprite eigenlijk al af wmb"
+- `af/poedellarve.png` = `kleur_r2/poedellarve.png` horizontaal gespiegeld (kijkt nu naar links, zoals Gen 3; pixel voor pixel exact gespiegeld, box x 12–51 blijft gelijk), + `normal.pal` en `af/poedellarve_8x.png`. De belichting is mee gespiegeld (licht nu rechtsboven); niet opnieuw belicht, Jordi vond hem zo af.
+- Alpha t.o.v. het silhouet (vóór spiegelen): 4 px bewust gewijzigd (krulpunt links, bolletjes 2–4; zie `kleur_r2/NOTITIES.md`). Keuring: Claude op 8× + Jordi akkoord; de onafhankelijke keurder van r2 is gestopt omdat Jordi hem al goedkeurde.
+
 ## Open
 - Naam, type en data later (Jordi, 5 nov).

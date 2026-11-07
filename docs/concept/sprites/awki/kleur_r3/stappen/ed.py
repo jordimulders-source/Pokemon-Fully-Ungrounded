@@ -7,7 +7,7 @@ for l in open(sys.argv[3]):
     if not l.strip(): continue
     y,rest=l.split(':',1); y=int(y)
     for t in rest.split():
-        x,s_=t.split('='); x=int(x)
+        x,s_=t.split('=',1); x=int(x)
         for k,c in enumerate(s_):
             if c=='=': continue
             if (c=='.')!=(not SIL[y,x+k]): print('SILHOUET-afwijking',x+k,y,c)

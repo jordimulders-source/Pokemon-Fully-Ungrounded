@@ -892,3 +892,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.221] - Awki: frontsprite kleur ronde 2
 - Vleugellijnen doorlopend per veer (Jordi: "het belangrijkste"), karmijnvlak in de opgeheven vleugel, gat naast de hals transparant (8 px silhouetafwijking, volgt het model), keel volgens het model, rustigere kuifvoet, lavendel lichter. Vel: `docs/concept/sprites/awki/kleur_r2/vel.png`.
+
+### [v0.0.222] - Awki: frontsprite kleur ronde 3
+- Gele veerpunten en karmijnlijnen op de modelpixels, kuif met lengtestrepen en rode selout, rustige kuifvoet, leesbaar oog (iris + glans), tweetonige snavel. Maker ziet geen zwakke punten meer; volgende: keurder. Vel: `docs/concept/sprites/awki/kleur_r3/vel.png`.

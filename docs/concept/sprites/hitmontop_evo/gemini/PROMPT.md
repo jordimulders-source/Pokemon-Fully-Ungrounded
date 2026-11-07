@@ -46,7 +46,10 @@ AVOID
 - Daarna een nieuw gesprek met de beste versie als bijlage: `Use the attached image as the base design. Keep its pose, proportions and colors. Change only: ...`
 - Rondes en Jordi's keuze vastleggen in `README.md` hier; gekozen ontwerp als `../referenties/gemini_gekozen_capoeira.png`.
 
-## Variant B: alleen het hoofd als bijlage (als Gemini weigert)
+## Variant B (aanbevolen): hoofd + stickman, pose beschreven
+Jordi: "misschien kunnen we daar meer een stickman van maken [...] of misschien kan jij het heel goed beschrijven". Bijlagen: 1 = `bijlage1_hoofd.webp`, 2 = `bijlage2_stickman.png` (schone stickman van pose v3: kop = cirkel, handen/voeten = rondjes). Vervang ATTACHMENTS door het blok hieronder en voeg na de eerste ATTACHMENT-regels toe: `- Attachment 2 is a stick figure that shows only the POSE (big circle = head, small circles = hands and feet, grey line = floor). Follow the pose, not the drawing style.` Werkt Gemini ook zonder stickman: alleen bijlage 1.
+
+### Oorspronkelijk: alleen het hoofd als bijlage (als Gemini weigert)
 Jordi (7 nov): "ik ben wel bang dat de hitmontop in die pose ervoor kan zorgen dat die weigert het te bouwen". Dan alleen `bijlage1_hoofd.webp` meesturen en in de prompt het blok ATTACHMENTS vervangen door:
 
 ```

@@ -26,6 +26,16 @@ olive=flood(olive,[(840,482),(830,470)])
 olive=ndimage.binary_closing(olive,iterations=2)
 olive&=fg
 fg&=~olive
+# restrand van het takeinde (grijsolijf, grenst aan het gat)
+rest=(lum>60)&(lum<180)&(a[...,1]>=a[...,2]+6)&box&fg
+hole=olive.copy()
+for _ in range(6):
+    grow=ndimage.binary_dilation(hole)&rest&~hole
+    if not grow.any(): break
+    hole|=grow
+fg&=~hole
+r2=np.zeros_like(fg); r2[828:872,455:478]=True
+fg&=~(r2&(lum>60)&(a[...,1]>=a[...,2]+6))
 np.save('fg.npy',fg)
 o=np.zeros((H,W,4),'uint8'); o[...,:3]=a; o[...,3]=fg*255
 Image.fromarray(o).save('model_los.png')

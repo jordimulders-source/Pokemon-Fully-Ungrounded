@@ -1,6 +1,6 @@
 # Viscacha (Electric, single stage): SPEC
 
-**AF (7 nov): `af/viscacha.png` (+ `viscacha_8x.png`, `normal.pal`)** = kleur_r8; keuring twee eisen PASS + eindkeuring Dragonfly Cave PASS. Jordi: "ik vind hem erg goed ja!". Later (voor alle soorten): frame 2, rug, icoon, shiny, naam/data.
+**AF (7 nov): `af/viscacha.png` (+ `viscacha_8x.png`, `normal.pal`)** = kleur_r10. r8: keuring twee eisen PASS + eindkeuring Dragonfly Cave PASS ("ik vind hem erg goed ja!"); r9 bollere rug + Gen 3-kleur/schaduw (keuring PASS); r10 rug als bolle boog naar Jordi's krabbel. Jordi: "nee ik vind hem goed, keurder niet nodig". Later (voor alle soorten): frame 2, rug, icoon, shiny, naam/data.
 
 Bron: berg-viscacha (*Lagidium viscacia*), Andeswoestijnen (Atacama, Uyuni, Lípez). Vroege knager van de hoogvlakte; neef van Minccino (beide Chinchillidae). Type Electric (Jordi 29 okt). Naam/data later.
 

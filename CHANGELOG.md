@@ -572,3 +572,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.142] - Viscacha frontsprite af
 - Electric-viscacha (single stage) naar Jordi's Gemini-model (ronde 6), alleen het oog luier zoals een echte viscacha (Jordi's foto's). 8 rondes: r1–r6 op het oog (keurders FAIL, Jordi: gezicht en wangaanhangsel klopten niet), r7–r8 met de poedelmot-methode (verse maker, meten per pixel). Keuring twee eisen PASS, eindkeuring Dragonfly Cave PASS; Jordi: "ik vind hem erg goed ja!". Eindversie: `docs/concept/sprites/viscacha/af/viscacha.png` (+ `viscacha_8x.png`, `normal.pal`).
 - Lessen van de poedelmot/poedellarve-sessie op deze branch gezet (SPRITE_KERN, SPRITE_WERKWIJZE "Gemini-model namaken", CLAUDE.md); `GEMINI.md` aangevuld.
+
+### [v0.0.143] - Viscacha: bolle rug en Gen 3-kleur
+- r9: rug minder vlak (Jordi) en kleur/schaduw naar Gen 3 (contrast ±30 per tint, hooglicht op rug en voorhoofd, staart belicht van linksboven, verre poten een tint donkerder, bilsikkel zonder banding); keuring PASS.
+- r10: rug als één bolle boog en uitstekende pixel boven de staart weg, naar Jordi's krabbel ("echte viscachas hebben bijna een perfect bolle rug"). Jordi: "ik vind hem goed, keurder niet nodig". `af/` bijgewerkt naar r10.

@@ -1,0 +1,8 @@
+# r16 op r15, met de hand. "rij kolom pixels"; '.' = laat staan, '_' = transparant.
+@ 1-kopstrook-restje
+# j-restje (keurder) -> kopbasis 2; enige glans blijft x21-23, y3-5
+7 19 2
+8 18 22
+@ 2-onderrand-tussen-de-poten
+# rechte zwarte rand (18-22,39) breken: lijf 1 px lager (buurkleur 2) boven de nabije tarsus; zwart blijft op 18-19 en 22
+39 20 22

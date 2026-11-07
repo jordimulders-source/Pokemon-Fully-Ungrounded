@@ -803,3 +803,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Zwakke eerste vorm (evolueert op lv 15–20 max): formaat als Wurmple/Caterpie/Grubbin, 40×30 px, 778 px. Silhouet = model verkleind (`silhouet/sil.py`).
 - Twee kleurrondes door één maker met het meetgereedschap van de poedelmot vanaf ronde 1 (`kleur_r1`, `kleur_r2`). Jordi: "ik vind ronde 2 wel goed, maar je moet hem spiegelen" en "dan is de sprite eigenlijk al af". Eindversie `af/poedellarve.png` (gespiegeld naar links, + `normal.pal`, 8×-weergave).
 - Eindkeuring kleuren en schaduwen (Dragonfly Cave, naast poedelmot en Gen 3-sprites; Jordi): na het spiegelen viel het licht van rechtsboven → kleur r3 (21 px tinten, paletkleur 7 warmer, vorm ongewijzigd), herkeuring PASS. `af/poedellarve.png` is nu r3.
+
+### [v0.0.141] - Les: Gemini herbouwt bij meerdere wijzigingen
+- `docs/lessen/SPRITE_KERN.md`: Gemini tekent bij een prompt met meerdere wijzigingen een heel nieuw beeld; één wijziging per prompt, of de beste versie zelf bewerken (potoo).
+
+### [v0.0.142] - Potoo: SPEC en referenties vastgelegd
+- `docs/concept/sprites/potoo/SPEC.md` + `referenties/`: Jordi's besluiten (oog en snavel van Gemini v1, geen tak, klauwen in grijphouding, lijf langer) en de afgekeurde Gemini v2. Eerdere gesprekken over dit ontwerp waren niet vastgelegd.

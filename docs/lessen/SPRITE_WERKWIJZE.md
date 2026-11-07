@@ -164,6 +164,7 @@ Voorbeeldmodel: `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` (hui
 8. **Naar Jordi:** de sprite op 64×64 **én 8× vergroot** (`<naam>_8x.png` met keuring); daarna `af/`, CHANGELOG, Stand van zaken.
 
 **Lessen poedelmot (goed):** het verkleinde model als silhouet was meteen goed (alpha-diff 0 alle rondes); meten per pixel (px.py, lijnkaart) loste in 4 rondes op wat 15 rondes op het oog niet lukte; een verse maker brak twee keer een vastgelopen reeks; Jordi's woorden letterlijk in SPEC en elke opdracht; commit na elke ronde.
+**Potoo (7 nov, bevestigd: Jordi "dit is de manier"):** model → kandidaat in ±70 min (6 rondes, 1 maker + 1 verse), na 3 eerdere gesprekken (±1,5 dag, ±100 commits) zonder sprite. Werkte: Jordi's toegestane wijzigingen als script op het model (tak weg, lijf langer, spiegelen) met pixeldiff 0 op de kop, varianten ter keuze (lijfmaat, oog) i.p.v. uitleg, en Claude die tussendoor zelf naar het vel kijkt en reparaties benoemt.
 **Lessen poedelmot (minder goed):**
 - Een stijlkeurder (Gen 3-smaak zonder model) duwde de sprite weg: koele lila schaduw, extra aders, mond weg, "leest als vos". Nooit een keurder die het model mag herinterpreteren.
 - Twee keurders tegelijk (gelijkenis + stijl) gaven tegenstrijdige opdrachten; één keurder met de twee eisen is beter.

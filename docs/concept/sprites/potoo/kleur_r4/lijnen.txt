@@ -1,0 +1,40 @@
+# 1-px lijnwerk in vlaktint (uitgezonderd van losse-pixel/cluster-check)
+# muilrand (wit) en grijze band eronder
+36,14
+35,15
+34,16
+33,17
+32,18
+30,19
+31,19
+29,20
+27,21
+28,21
+26,22
+24,23
+25,23
+36,15
+35,16
+34,17
+33,18
+32,19
+30,20
+31,20
+29,21
+27,22
+28,22
+26,23
+# kuifstrengen nek (grijze lijn binnen de omtrek)
+40,6
+41,8
+40,12
+40,14
+29,22
+# tenen (1 px breed)
+28,49
+28,50
+30,49
+31,49
+32,49
+31,50
+31,51

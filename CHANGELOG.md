@@ -809,3 +809,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.142] - Potoo: SPEC en referenties vastgelegd
 - `docs/concept/sprites/potoo/SPEC.md` + `referenties/`: Jordi's besluiten (oog en snavel van Gemini v1, geen tak, klauwen in grijphouding, lijf langer) en de afgekeurde Gemini v2. Eerdere gesprekken over dit ontwerp waren niet vastgelegd.
+
+### [v0.0.140] - Evolutie van Picapau: frontsprite af
+- Ontwerp met Jordi (SPEC `docs/concept/sprites/picapau_evo/`): grote specht met Raichu Gen 1-motief (kastanje + crème, zwarte gekrulde slierten, dunne staartlus met bliksem), Raichu Gen 1 als inspiratie; tong-variant vervallen.
+- Blender-modellen C1–C3 ("alien", ei-lijf) → r4/r5 grote vogel → poseproeven r6pose/r7pose (3/4 zoals Pidgeot, achterover). Sprite r1–r16 met de hand overgetrokken; snavel na 6 probeersels: P5 (Staravia-opbouw in grijs); slierten r11–r14 uit één voet, overlappend.
+- Onafhankelijke keuring r14 FAIL (10 reparaties) → r15 → r16 PASS; Jordi: "helemaal prima". Eindversie `af/picapau_evo.png` (+ `normal.pal`). Naam nog open.
+- Lessen in `docs/lessen/SPRITE_KERN.md`: Jordi's referentie is de hoofdbron; model alleen tot de richting staat; na "maak een sprite" niet terug naar het model; snavel/dunne delen niet tegen een donker vlak.

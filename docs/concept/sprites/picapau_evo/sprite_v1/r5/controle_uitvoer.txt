@@ -1,0 +1,8 @@
+lichte kleur (a/b/1/y/w/c) op de buitenrand: 0 []
+gekleurde selout op de rand (telling per kleur, k = zwart niet geteld): {'4': 49, 'G': 7, '3': 4, 'v': 8, 'e': 15, '2': 21, 'g': 4}
+losse pixels: 0 []
+alleen diagonaal verbonden (1px-lijnen van oor en haak tellen hier mee): 1 [(33, 4)]
+tintclusters < 3 px (8-verbonden, zonder omlijning k/4 en zonder oog/glans): 0
+afwijking van de R2-massa (info; bewust: buik, bliksem, snavel, verre vleugel): 222 px extra, 95 px weggelaten
+kleuren gebruikt: 15 + transparant; telling {'.': 2389, 'k': 284, '1': 30, '2': 135, '3': 244, 'v': 411, '4': 176, 'a': 143, 'b': 94, 'e': 71, 'c': 7, 'y': 40, 'C': 7, 'w': 1, 'g': 19, 'G': 45}
+totaal 1707 px

@@ -23,12 +23,16 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 - **Zelfgenoemd zwak punt = terug**, niet opleveren. Reparaties via de maker; daarna opnieuw keuren.
 - **Toets de hoofdvraag eerst** (pose, kop, leest het als Pokémon op 1×?), pas daarna getallen (overlap, px). Groene getallen ≠ goed beeld.
 - Een pose-probleem los je nooit op met kleurrondes.
+- **Model alleen tot de richting staat** (picapau-evo, 6 nov, Jordi: "laten we een sprite gaan maken, dat is makkelijker te editen" · "en model vertaalt toch altijd weer anders naar een sprite"): zodra pose en massa kloppen, naar de sprite; vorm-details (buikcurve, maat van de bliksem, oren) in de sprite oplossen, geen extra modelrondes.
+- **Ook bij een poseprobleem na "maak een sprite" niet terug naar het model** (picapau-evo, 6 nov: twee extra poseproeven na Jordi's "laten we een sprite gaan maken" → "ga gewoon een sprite maken aub" · "zitten we weer uren aan het model te werken"): draai/leun in de sprite zelf, of vraag Jordi eerst.
+- **Snavel en dunne delen niet vóór een donker vlak** (picapau-evo, 7 nov: 6 snavelrondes faalden doordat de snavel vóór de donkere verre vleugel lag; echte sprites zetten hem tegen lucht of een licht vlak). Bij twijfel: een vel met 4–6 probeersels van alleen het hoofd ("doe wat probeersels en toon me"), Jordi kiest.
 
 ## Hoe een Gen 3-sprite eruitziet (meetbaar)
 - 3/4 naar links-voor, kop draait meer naar de kijker dan het lijf; ronde kop als eigen vorm; één oog bij een snavel/snuit opzij.
 - **Netheid**: per kleurgroep ≤ 3 tinten + omlijning; geen tintvlakjes < 3 px (clusterscript) behalve glans; grenzen als vloeiende curven, geen trapjes, geen banding (tinten parallel aan de rand), geen pillow shading; licht linksboven, schaduw als sikkel die de vorm volgt.
 - **Contrast**: helderheidsstappen meten tegen Taillow (±30–40 per tint).
 - **Belijning**: buitenlijn 1 px; zwart alleen aan de schaduwkant, gekleurde selout aan de lichtkant; **nooit zwart en donkerlila om en om op één rand**; binnenlijnen alleen waar vorm over vorm valt, in een donkere tint van het vlak, taps; geen open randen, geen lichte kleur op de buitenrand.
+- **Stuurt Jordi een referentie, dan is díe de hoofdbron** (picapau-evo, 6 nov: Gen 3 Raichu gepakt i.p.v. zijn Gen 1 → "nee de gen 1 raichu sprite moet je ook naar kijken"); andere sprites alleen als aanvulling.
 - **Ogen**: neem een oog pixel voor pixel over van een echte sprite (zelf tekenen of opblazen geeft "geen Pokémon-oog"/"monster").
 - **Pootjes/ledematen**: in perspectief (verre hoger en achter, nooit op één lijn naast elkaar), omlijnd, verre in schaduwtint; kleine vogelpootjes echt klein.
 - **Vorm**: geen rechte stukken waar het dier rond is (buikrand!), geen knikken; snavel/dunne delen ≥ 2 px als het moet lezen.

@@ -45,3 +45,6 @@ AVOID
 - Gemini maakt geen echte 64×64; het plaatje is het nieuwe ontwerp, de maker-agent vertaalt het daarna naar de sprite.
 - Bijsturen hooguit 1–2 keer met één zin (bijv. `same design, only make the claws longer`). Daarna een nieuw gesprek met de beste versie als bijlage.
 - Vraag niet om "cuter" of "more Pokémon": dan glijdt hij naar bekende soorten.
+
+## Ronde 1 (7 nov): afgekeurd
+`ronde1_afgekeurd.png`. Jordi: "dat is niet beter, amper aangepast, behalve het hoofd wat ik juist goed vond".

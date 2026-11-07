@@ -8,10 +8,12 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-model namaken) + `docs/less
 ## Bron
 - `referenties/jordi_gemini.png`: het model (Gemini). Witte, pluizige larve: poedelkop met twee krullende, geribbelde voelsprieten (roze-grijs), donkere grote ogen, zwart neusje, glimlach; dik voorlijf met twee pluizige voorpootjes; telescoperende achterlijfsegmenten met ronde pluisbolletjes bovenop en ronde pootjes eronder.
 
+- (7 nov, letterlijk, op de eerste versie die het achterlijf smaller maakte) "nee het stuk onder het hoofd moet korter, hij moet niet smaller"
+
 ## Korter maken (Claude, 7 nov)
-- `model/kort2.py <factor>`: kop + voorlijf (x ≥ 500) onveranderd; achterlijf horizontaal ingedrukt; de pluisbolletjes en pootjes worden onvervormd teruggeplakt zodat ze rond blijven.
-- Varianten: `model/kort2_75.png` (achterlijf 75%) en `model/kort2_65.png` (65%); naast het origineel in `model/vergelijking.png` (onderaan ±1× sprite, 2× getoond).
-- **Wacht op Jordi:** origineel, 75% of 65%. Daarna: silhouet = gekozen model verkleind (fase 1: kleiner dan de poedelmot, ±48–52 px breed), meetgereedschap uit `../poedelmot/kleur_r19/stappen/` en `kleur_r20/stappen/`, één maker.
+- `model/laag.py <factor> 330 500`: de band onder de kop (y 578–690: borst en voorpootjes) verticaal ingedrukt; kop, sprieten en bolletjes schuiven onvervormd omlaag; voetjes en onderrand onveranderd; het achterlijf (x ≤ 330) blijft precies zo, met een geleidelijke overgang tot x = 500.
+- Varianten: `model/laag_60.png` en `model/laag_40.png`; naast het origineel in `model/vergelijking.png` (onderaan ±1× sprite, 2× getoond). Claude kiest 60% (bij 40% worden de voorpootjes platte boontjes).
+- **Wacht op Jordi:** 60% of 40%. Daarna: silhouet = gekozen model verkleind (fase 1: kleiner dan de poedelmot, ±48–52 px breed), meetgereedschap uit `../poedelmot/kleur_r19/stappen/` en `kleur_r20/stappen/`, één maker.
 
 ## Open
 - Naam, type en data later (Jordi, 5 nov).

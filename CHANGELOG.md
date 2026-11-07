@@ -841,3 +841,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.205] - Alle takken in main
 - Jordi: "zorg dat alle takken naar main gecommit worden". Twaalf takken samengevoegd (o.a. Sapa Inca, poedelmot/poedellarve, potoo, viscacha, Hitmontop-evolutie, Picapau-evolutie, nachtaap fase 3, spritewerkplaats/olinguito-schetsen van 24 okt, hatun runa-Gemini); vier oude takken van 25 okt (Coathief, lama, wasbeer, kolibrie pre-evo) als samengevoegd gemarkeerd: hun inhoud zat al in main. Keurslot-hook blijft weg (Jordi, 6 nov). Changelogsecties van de takken achteraan, hernummerd v0.0.140–v0.0.204. CLAUDE.md (Stand van zaken, dubbele regels) en GEMINI.md opgeruimd.
+
+### [v0.0.206] - Poedellarve: Bug/Normal
+- Jordi (7 nov): de poedellarve wordt **Bug/Normal** (POKEMON.md). Overzichtsvel van alle afgemaakte frontsprites met typesymbolen gemaakt (starters voorop, dan Cuyby/Cuychu); nog niet in de repo, wacht op twee bijna afgemaakte sprites.

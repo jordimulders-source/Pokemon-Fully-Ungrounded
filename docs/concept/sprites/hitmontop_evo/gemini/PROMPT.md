@@ -98,3 +98,43 @@ Change the pose. Attachment 2 shows the pose as a stick figure (big circle = hea
 
 AVOID: baggy or wide trousers, a straight vertical upside-down body, the head directly under the hips, an arm coming out of the chin or neck, human proportions, a shirt, a floor or shadow.
 ```
+
+## Startprompt v3 (7 nov, nieuw gesprek)
+Waarom: met ronde 1 als basisontwerp kopieert Gemini dat plaatje (ook de verkeerde pose); de stickman leest hij niet. Nu: het hele ontwerp in woorden, en als posebron het 3D-model, dat de schuine romp wél laat zien.
+Bijlagen: 1 = `bijlage1_hoofd.webp`, 2 = `bijlage2_pose.png` (model v3). Weigert hij: bijlage 2 weglaten (de tekst beschrijft de pose).
+
+```
+Draw an original Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art): a new evolution of Hitmontop, based on capoeira. It is a Pokémon of the Hitmon family, not a human.
+
+ATTACHMENTS
+- Attachment 2 is a 3D model of this Pokémon. Use it for the POSE: copy the pose exactly, including the 45 degree tilted torso. Redraw it as a Gen 3 sprite with the changes listed below.
+- Attachment 1 is the approved HEAD. Use it for the head: Hitmontop's head shape, the V-shaped line between the eyes pulled back over the head, the "hair" combed back into a round bun with a white band, a smaller horn on top. Head, hair and horn are one material and one color (the same brown as the skin). Black circle eyes with one white dot, one short mouth line, no eyebrows, no nose, no ears.
+
+POSE (as in attachment 2)
+- A frozen one-arm handstand. The support arm is a straight vertical line from the round hand on the floor up to the shoulder.
+- From the shoulder the torso goes diagonally UP and to the RIGHT, about 45 degrees; the hips are the highest point of the torso.
+- The head hangs LOW, to the LEFT of the support arm, face towards the viewer.
+- From the hips the legs open in a wide V-split to the upper left and upper right; the feet are the highest points.
+- The free arm bends at the elbow and its round hand rests on the hip.
+- NOT a straight vertical upside-down body, NOT the head directly under the hips.
+
+PROPORTIONS (most important)
+- Hitmon proportions, like Hitmontop, Hitmonchan and Tyrogue: a big head, big round hands and big feet, connected by thin, simple limbs.
+- The head is the biggest single shape, at least as wide as the torso. Each hand is a big ball, about half the width of the head and about three times as thick as the arm. Each foot is about as big as a hand.
+- Arms and legs are thin, smooth tubes of even thickness, no muscles, no visible elbows or knees. The torso is simple and smooth, no human anatomy.
+
+CHANGES TO THE 3D MODEL
+- NO shirt: the torso is bare brown skin, like the arms.
+- No trousers: the legs themselves are colored white with a few BROAD yellow and green stripes, as if it is the color of the legs. Thin, smooth and tight like the arms, no loose fabric, no folds, no wide parts, no hems.
+- A yellow capoeira cord (cordão) tied around the waist, knotted at the side, the two ends hanging down.
+- On both upper arms: a band of the same braided yellow cord, like Muay Thai prajiad but in capoeira style, with a short hanging end.
+- Big blue feet with white claws, round brown hands with a white band at the wrist.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO floor, shadow, base, motion lines or effects. One single creature, no extra views.
+
+AVOID
+- Human body or proportions, realistic muscles, small hands, a shirt, baggy trousers.
+- Not Hitmonchan, Hitmonlee or Machop. No plush toy, chibi or mascot look.
+```

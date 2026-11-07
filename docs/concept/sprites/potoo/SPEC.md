@@ -29,5 +29,8 @@ Verder alles precies zoals het model (ook de kuif, het verenpatroon, de spikkels
 - `silhouet/silhouet.png` = model_lijf_30 direct verkleind (`silhouet/sil.py`, alpha ≥ 0,45): 1229 px, x 17–46, y 1–63. Rode omtrek: `silhouet_over_bron.png`; kleurgids (gemiddelde, géén sprite): `gids_gemiddeld.png`; `model_64_box.png`, `model_12x.png`.
 - Meetgereedschap (`gereedschap/`, kader in `kader.json`): `px.py` (model per spritepixel), `box1x.py` (model | sprite op 1×-niveau vergroot), `overlay.py` (spritelijnen over het model).
 
+## Varianten
+- (7 nov, bij r6) "ik vind hem eigenlijk al heel goed, probeer eens eentje met een groot zwart oog? zonder wit erin"; "ter vergelijking" → `varianten_oog/` (A: glans zwart; B: ook ring zwart, groter oog).
+
 ## Open
 - Naam, type en data later.

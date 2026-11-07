@@ -23,5 +23,11 @@ Verder alles precies zoals het model (ook de kuif, het verenpatroon, de spikkels
 - `model/knip.py` → `model_los.png` (los van het nep-dambord, tak weg). Restpixels olijf aan de linkerkant van het klauwgat zijn tak, geen klauw.
 - `model/lijf.py` → `model_lijf_10/20/30.png` (gespiegeld). Vergelijking: `model/lijf_maten_vel.png`.
 
+- (7 nov) "de meest rechtse, ga maar los" → **lijf +30% langer** (`model/model_lijf_30.png`).
+
+## Silhouet (bevroren, 7 nov)
+- `silhouet/silhouet.png` = model_lijf_30 direct verkleind (`silhouet/sil.py`, alpha ≥ 0,45): 1229 px, x 17–46, y 1–63. Rode omtrek: `silhouet_over_bron.png`; kleurgids (gemiddelde, géén sprite): `gids_gemiddeld.png`; `model_64_box.png`, `model_12x.png`.
+- Meetgereedschap (`gereedschap/`, kader in `kader.json`): `px.py` (model per spritepixel), `box1x.py` (model | sprite op 1×-niveau vergroot), `overlay.py` (spritelijnen over het model).
+
 ## Open
-- Lijfmaat: +10, +20 of +30% (Jordi kiest).
+- Naam, type en data later.

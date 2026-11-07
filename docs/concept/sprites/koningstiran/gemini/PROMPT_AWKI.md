@@ -237,3 +237,32 @@ STYLE AND FORMAT
 - 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
 - Plain white background. No ground, shadow, glow, sun, sparkles or effects. One single creature.
 ```
+
+## Startprompt v5 (7 nov, nieuw gesprek; vervangt v4)
+Jordi: "is het geen idee om gemini te vragen om de vleugels te kleuren ipv een patroon erop te zetten? [...] want anders gaat die er iets op blijven plakken". Bijlage: alleen `awki_r2_A_kuif.png`.
+
+```
+Draw this Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+The attached image is the base design. Keep its head, face, crest, ear patches, colors, body, legs and tail exactly as they are. Change only the pose of the wings and the colors of the raised wing.
+
+ANATOMY (most important)
+- The bird has exactly TWO wings.
+- Near wing (on the right side of the body, closest to the viewer): raised up from the shoulder and reaching up and forward, feathers spread open, proudly greeting the sun like an Inca. This is the only raised wing.
+- Far wing (on the left, behind the chest): folded and mostly hidden behind the body. No other wing anywhere.
+
+THE WING COLORS (on the raised wing only)
+- No pattern, no shapes on top of the feathers. Instead the feathers of the raised wing are colored like fire, row by row: the small feathers near the shoulder stay brown, the next row of covert feathers dark red, the next row orange, and the long flight feathers bright yellow at the tips.
+- Each feather row is one clear flat color band, so the colors change in clean steps from row to row, not a smooth gradient.
+- The folded far wing stays brown.
+
+POSE
+- Standing on its own legs, body in 3/4 view facing left, chest out, head lifted a little, beak pointing left. Proud, calm, a young prince.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. No ground, shadow, glow, sun, sparkles or effects. One single creature.
+
+AVOID
+- Not Talonflame, Fletchinder, Moltres or Ho-Oh.
+```

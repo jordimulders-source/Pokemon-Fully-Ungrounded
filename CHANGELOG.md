@@ -870,3 +870,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.214] - Awki: startprompt v4
 - Ronde 3 als bijlage geschrapt (patroon klopt niet); v4 met alleen r2-A als bijlage en het trappatroon in tekst uitgelegd.
+
+### [v0.0.215] - Awki: startprompt v5
+- Patroon vervangen door vuurkleuren per veerrij op de opgeheven vleugel (Jordi); les over patronen in `docs/lessen/GEMINI.md`.

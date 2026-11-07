@@ -1,4 +1,4 @@
-# vel.py raster.txt pal out.png [vorige_raster vorige_pal]: sprite | (vorige) | model op 8x; close-ups kop en vleugel op 12x; 1x (licht, donker, model BOX) + 2x
+# vel.py (awki: close-ups kop+kuif x20-46 y2-30 en opgeheven vleugel x3-25 y2-40) raster.txt pal out.png [vorige_raster vorige_pal]: sprite | (vorige) | model op 8x; close-ups kop en vleugel op 12x; 1x (licht, donker, model BOX) + 2x
 import sys
 import tl
 from tl import Image,ImageDraw,model,rimg,src
@@ -15,7 +15,7 @@ def row(ims,gap=10):
     return o
 def cu(X0,Y0,X1,Y1,z,t):
     return row([label(rimg(rf,pf,BG).crop((X0,Y0,X1,Y1)).resize(((X1-X0)*z,(Y1-Y0)*z),Image.NEAREST),t+' sprite'),label(model(X0,Y0,X1,Y1,z),t+' model')])
-top=row(ims); mid=row([cu(7,41,29,57,12,'kop'),cu(27,18,47,46,12,'vleugel')],20)
+top=row(ims); mid=row([cu(20,2,46,30,12,'kop+kuif'),cu(3,2,25,40,12,'vleugel')],20)
 mb=model(0,0,64,64,1) if False else tl.model(0,0,64,64,8).resize((64,64),Image.BOX)
 ones=[rimg(rf,pf,BG),rimg(rf,pf,(40,48,64)),mb]
 bot=row(ones+[i.resize((128,128),Image.NEAREST) for i in ones],16)

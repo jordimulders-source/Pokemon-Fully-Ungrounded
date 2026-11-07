@@ -861,3 +861,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.211] - Awki: Gemini-ronde 2
 - Ronde 2 vastgelegd (kuif nu goed begrepen); Jordi wil A bijsturen met een groter vuurpatroon op de vleugel en een Inca-pose. Zie `koningstiran/gemini/README.md`.
+
+### [v0.0.212] - Awki: bijsturing 1 vastgelegd
+- Gemini gaf de vogel een extra vleugel; zie `koningstiran/gemini/README.md`.

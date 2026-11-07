@@ -1,0 +1,5 @@
+alpha-diff in zone KOP: 47 px
+alpha-diff in zone STROOK: 6 px
+alpha-diff in zone POTEN: 8 px
+alpha-diff BUITEN de zones: 0 []
+kleur gewijzigd (niet alpha): 688 px

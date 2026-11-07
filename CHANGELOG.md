@@ -561,12 +561,18 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.139] - Les: changelog na main nummeren
 - `docs/lessen/AGENTS.md`: vóór het pushen naar `main` eerst `main` mergen en de eigen changelogsecties achteraan nummeren (Jordi).
 
-### [v0.0.140] - Poedelmot frontsprite af (Gemini-model)
+### [v0.0.140] - Evolutie van Picapau: frontsprite af
+- Ontwerp met Jordi (SPEC `docs/concept/sprites/picapau_evo/`): grote specht met Raichu Gen 1-motief (kastanje + crème, zwarte gekrulde slierten, dunne staartlus met bliksem), Raichu Gen 1 als inspiratie; tong-variant vervallen.
+- Blender-modellen C1–C3 ("alien", ei-lijf) → r4/r5 grote vogel → poseproeven r6pose/r7pose (3/4 zoals Pidgeot, achterover). Sprite r1–r16 met de hand overgetrokken; snavel na 6 probeersels: P5 (Staravia-opbouw in grijs); slierten r11–r14 uit één voet, overlappend.
+- Onafhankelijke keuring r14 FAIL (10 reparaties) → r15 → r16 PASS; Jordi: "helemaal prima". Eindversie `af/picapau_evo.png` (+ `normal.pal`). Naam nog open.
+- Lessen in `docs/lessen/SPRITE_KERN.md`: Jordi's referentie is de hoofdbron; model alleen tot de richting staat; na "maak een sprite" niet terug naar het model; snavel/dunne delen niet tegen een donker vlak.
+
+### [v0.0.141] - Poedelmot frontsprite af (Gemini-model)
 - **Nieuwe fakemon: Venezolaanse poedelmot** (eigen soort, laatste evolutie; voorvorm: larve met poedelkenmerken, later). Frontsprite naar Jordi's eigen Gemini-ontwerp: lijf uit afbeelding 2, voelsprieten uit afbeelding 1. `docs/concept/sprites/poedelmot/af/poedelmot.png` (+ `normal.pal`, 8×-weergave), 64×64, box 62×45, 1782 px, 14 kleuren.
 - 21 kleurrondes (`kleur_r1`–`kleur_r21`); keuring r21 PASS op de twee eisen (accuraat t.o.v. model + Gen 3) en eindkeuring Dragonfly Cave PASS. Ter info van de eindkeurder: het lijnennet in het onderlijf (uit het model) is het drukste deel van de sprite.
 - **Werkwijze:** nieuwe belangrijkste spriteregel (bovenaan `SPRITE_KERN.md`): een model van Jordi namaken = alleen accuraat op het origineel + Gen 3; niet genoemd = niet goedgekeurd. Vaste methode "Gemini-model namaken" met stappen en lessen in `SPRITE_WERKWIJZE.md`.
 
-### [v0.0.141] - Poedellarve frontsprite af (voorvorm poedelmot)
+### [v0.0.142] - Poedellarve frontsprite af (voorvorm poedelmot)
 - Jordi's Gemini-model van de larve (`docs/concept/sprites/poedellarve/referenties/jordi_gemini.png`); Gemini kreeg hem niet korter. Claude maakte het stuk onder de kop lager zonder hem smaller te maken (`model/laag.py`: borst en voorpootjes ingedrukt, kop/sprieten/bolletjes onvervormd omlaag, achterlijf en voetjes onveranderd); Jordi koos 60%.
 - Zwakke eerste vorm (evolueert op lv 15–20 max): formaat als Wurmple/Caterpie/Grubbin, 40×30 px, 778 px. Silhouet = model verkleind (`silhouet/sil.py`).
 - Twee kleurrondes door één maker met het meetgereedschap van de poedelmot vanaf ronde 1 (`kleur_r1`, `kleur_r2`). Jordi: "ik vind ronde 2 wel goed, maar je moet hem spiegelen" en "dan is de sprite eigenlijk al af". Eindversie `af/poedellarve.png` (gespiegeld naar links, + `normal.pal`, 8×-weergave).

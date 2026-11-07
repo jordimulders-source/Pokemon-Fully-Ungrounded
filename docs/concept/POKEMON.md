@@ -102,7 +102,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - Minccino-lijn (chinchilla) naast de viscacha (neven, beide Chinchillidae).
 
 ## Nog open (zie `IDEEEN.md`)
-Viscacha (vroege knager op de hoogvlakte, Electric: Jordi 29 okt; single stage, actieve wachtpose, goudzand, geen blauw/konijn/Neopets; ontwerpreferentie: `sprites/viscacha/gemini/gekozen_ronde6.png`), capibara (laagland), mug (iets later, Kricketot-rol), vlieg, Venezolaanse poedelmot, voetbal-Pokémon, vicuña → guanaco, fruit (chirimoya, guaraná, pitahaya, cacao, aardappel, maïs, empanadas, ceviche, mate), iconische planten (coca, Puya raimondii, yareta, cardón, araucaria, …), mythologische wezens. Nieuwe lijst van 29 okt (Bartitsu-Mr. Rime, Oricorio-dansen, hoatzin-Archeops, zout-Sandaconda, Tiwanaku-Golett, Galápagos-vormen, BJJ, …): `IDEEEN.md`.
+Viscacha (vroege knager op de hoogvlakte, Electric: Jordi 29 okt; single stage, actieve wachtpose, goudzand, geen blauw/konijn/Neopets; ontwerpreferentie: `sprites/viscacha/referenties/gemini_gekozen_ronde6.png`), capibara (laagland), mug (iets later, Kricketot-rol), vlieg, Venezolaanse poedelmot, voetbal-Pokémon, vicuña → guanaco, fruit (chirimoya, guaraná, pitahaya, cacao, aardappel, maïs, empanadas, ceviche, mate), iconische planten (coca, Puya raimondii, yareta, cardón, araucaria, …), mythologische wezens. Nieuwe lijst van 29 okt (Bartitsu-Mr. Rime, Oricorio-dansen, hoatzin-Archeops, zout-Sandaconda, Tiwanaku-Golett, Galápagos-vormen, BJJ, …): `IDEEEN.md`.
 
 **Evolutieplek in de nieuwe regio** (techniek, 23 okt): de plaatsgebonden evoluties wezen naar Hoenn-kaarten en zijn
 tijdelijk vervangen. Elk heeft in de nieuwe regio een eigen plek nodig (`IF_IN_MAP`/`IF_IN_MAPSEC` in

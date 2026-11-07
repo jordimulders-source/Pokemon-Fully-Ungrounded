@@ -11,4 +11,4 @@ Feedback per ronde:
 
 Lessen: geen rots/ondergrond; geen elektriciteit; "meer Pokémon" laat Gemini naar Raichu glijden; goud + zwarte staart is het kleurpakket van Raichu. Gemini is alleen ontwerpreferentie; de frontsprite maakt de maker-agent volgens `docs/lessen/SPRITE_KERN.md`.
 
-6. **Gekozen (Jordi: "dit vind ik een leuke"): `gekozen_ronde6.png`**. Nieuwe startprompt met ronde 3 als bijlage: woestijnkleur (oker/zand, terracotta in de schaduw), energiek ontwerp (gespannen, slank, springerig lijf; gekartelde gele staartpluim; puntige gele wangpluk; puntige vachtranden). Dit is de ontwerpreferentie voor de maker-agent.
+6. **Gekozen (Jordi: "dit vind ik een leuke"): `../referenties/gemini_gekozen_ronde6.png`**. Nieuwe startprompt met ronde 3 als bijlage: woestijnkleur (oker/zand, terracotta in de schaduw), energiek ontwerp (gespannen, slank, springerig lijf; gekartelde gele staartpluim; puntige gele wangpluk; puntige vachtranden). Dit is de ontwerpreferentie voor de maker-agent.

@@ -563,4 +563,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.140] - Viscacha: Gemini-basis gekozen
 - Prompt voor Gemini opgesteld (Electric zonder elektriciteit, echte viscacha-anatomie, actieve pose, geen ondergrond); 5 rondes. Ronde 3 wordt het startpunt van een nieuwe prompt (woestijnkleur, energieker ontwerp). Referenties en feedback: `docs/concept/sprites/viscacha/gemini/`.
-- Ronde 6 (nieuwe startprompt met ronde 3 als bijlage, woestijnkleur en energieker ontwerp) gekozen als ontwerpreferentie: `docs/concept/sprites/viscacha/gemini/gekozen_ronde6.png`.
+- Ronde 6 (nieuwe startprompt met ronde 3 als bijlage, woestijnkleur en energieker ontwerp) gekozen als ontwerpreferentie: `docs/concept/sprites/viscacha/referenties/gemini_gekozen_ronde6.png`.

@@ -1,6 +1,8 @@
 # SPRITE-KERN: de enige pagina die je vóór spritewerk MOET lezen
 Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen ... hij vergeet heel vaak lessen mee te nemen"). Geef dit bestand mee aan **elke** sprite-agent, ook bij kleine reparaties. Al het andere in `docs/lessen/` is naslag.
 
+**Ontwerp uit Gemini?** Dan vervangt `docs/lessen/GEMINI.md` stap 1–3 hieronder (Gemini-keuze van Jordi = bevroren ontwerp; sprite = trouwe vertaling; keurder toetst trouw + techniek, niet het ontwerp).
+
 ## Volgorde (nooit overslaan)
 1. **Ontwerp met Jordi**: pose + kenmerken, letterlijk in `SPEC.md` van de Pokémon. Foto's van Jordi direct in `referenties/` (komt een foto niet als bestand binnen: punt voor punt beschrijven).
 2. **Bron voor de vorm** (Jordi, 5 nov: "blender model is geen vereiste, genoeg sprites zijn zonder blender ook gelukt"): kies wat werkt. **Foto in de juiste pose** (kolibrie-eindvorm, olinguito) of een **3D-poppetje/Blender-model** bij lastige 3/4-poses (kolibrie pre-evo, `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py`: één huid, geen losse bollen, eerst een rondom-vel). Nooit zelfgebouwde cirkels en driehoeken.

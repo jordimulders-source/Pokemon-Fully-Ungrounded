@@ -17,11 +17,14 @@ items=[
 ("cuyby_evo/ronde6/anim_front.png",'"Cuychu"',"normal"),
 ("kolibrie_pre/af/kolibrie_pre.png",'"Hummlet"',"flying"),
 ("kolibrie/af/kolibrie.png","Kolibrie","ghost/flying"),
+("hatun_runa/af/hatun_runa.png","Hatun runa","normal/flying"),
 ("koningstiran/af/sapa_inca.png","Sapa Inca","fire/psychic"),
 ("picapau/af/picapau.png",'"Picapau"',"electric/flying"),
 ("picapau_evo/af/picapau_evo.png",'"Picaraio"',"electric/flying"),
 ("poedellarve/af/poedellarve.png",'"Pupoodle"',"bug/normal"),
 ("poedelmot/af/poedelmot.png","Poedelmot","bug/fairy"),
+("viscacha/af/viscacha.png","Viscacha","electric"),
+("potoo/af/potoo.png","Potoo","ghost/normal"),
 ("silicobra_uyuni/af/silicobra_uyuni.png",'"Silicobra" (regional)',"ground/electric"),
 ("salticonda/af/salticonda.png",'"Salticonda"',"ground/electric"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
@@ -52,7 +55,8 @@ for k,(p,n,t) in enumerate(items):
     x=pad+(k%C)*cw; y=top+(k//C)*ch
     d.rounded_rectangle((x+4,y,x+cw-4,y+ch-12),14,fill=(255,253,248),outline=(220,212,198),width=2)
     img.paste(a,(x+14,y+6),a)
-    tw=d.textlength(n,font=fn); d.text((x+(cw-tw)/2,y+64*S+8),n,font=fn,fill=(40,35,30))
+    f=fn if d.textlength(n,font=fn)<=cw-24 else ImageFont.truetype(F,16)
+    tw=d.textlength(n,font=f); d.text((x+(cw-tw)/2,y+64*S+10),n,font=f,fill=(40,35,30))
     ty=y+64*S+34
     if t=="?":
         tw=d.textlength("type open",font=fy); d.text((x+(cw-tw)/2,ty+12),"type open",font=fy,fill=(120,110,100))

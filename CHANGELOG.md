@@ -842,11 +842,31 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.205] - Alle takken in main
 - Jordi: "zorg dat alle takken naar main gecommit worden". Twaalf takken samengevoegd (o.a. Sapa Inca, poedelmot/poedellarve, potoo, viscacha, Hitmontop-evolutie, Picapau-evolutie, nachtaap fase 3, spritewerkplaats/olinguito-schetsen van 24 okt, hatun runa-Gemini); vier oude takken van 25 okt (Coathief, lama, wasbeer, kolibrie pre-evo) als samengevoegd gemarkeerd: hun inhoud zat al in main. Keurslot-hook blijft weg (Jordi, 6 nov). Changelogsecties van de takken achteraan, hernummerd v0.0.140–v0.0.204. CLAUDE.md (Stand van zaken, dubbele regels) en GEMINI.md opgeruimd.
 
-### [v0.0.206] - Poedellarve: Bug/Normal
+### [v0.0.206] - Hatun runa frontsprite: kandidaat
+- `docs/concept/sprites/hatun_runa/` (koningstiran fase 1, kiskadie, Normal/Flying): silhouet = Gemini-model verkleind (48 px breed, 971 px), poedelmot-methode met één maker. r1–r2 maker; r3 kop/vleugel op Claude's punten; keuring r3 (oog zonder glans, dambord, toon verre vleugel); r4 = die reparaties (toon verre vleugel nagemeten: r4 80 tegen model 81); Jordi: "ik vind hem netjes"; eindkeuring Dragonfly Cave op kleur en schaduw (10 px); r5 = die 10 px (Claude). Kandidaat: `kleur_r5/hatun_runa.png`.
+
+### [v0.0.207] - Hatun runa frontsprite af
+- Jordi over r5: "ik vind het goed, er vallen 2 pixels uit de toon [...] als je die 2 fixt dan is die klaar". Twee losse zwarte pixels weg: (21,37) → donkerbruin, (34,47) → roodbruin (kleur van de omgeving). Buiksikkel blijft ("de donkere sikkel zie ik niet"). **Af:** `docs/concept/sprites/hatun_runa/af/hatun_runa.png` (+ `normal.pal`, `hatun_runa_8x.png`). Volgende in de lijn: awki (fase 2).
+
+### [v0.0.208] - Great potoo frontsprite af (Gemini-model)
+- Jordi's Gemini-model (`potoo/referenties/gemini_model_jordi.jpg`) volgens de poedelmot-werkwijze: los geknipt, tak weg, lijf 30% langer (alleen in de hoogte), gespiegeld (`potoo/model/`); silhouet = verkleind model; 6 kleurrondes (`kleur_r1`–`r6`), oog puur zwart met donkergrijze bol (variant C4), drie eindkeuringen (Dragonfly Cave + Noctowl/Xatu/Swellow/Drifloon/Dusclops; 35 + 16 px), vleugelrand en kruin bol, haarsliert weg.
+- Af: `docs/concept/sprites/potoo/af/potoo.png`. 23 frontsprites af.
+
+### [v0.0.209] - Viscacha frontsprite af
+- Electric-viscacha (single stage) naar Jordi's Gemini-model (ronde 6), alleen het oog luier zoals een echte viscacha (Jordi's foto's). 8 rondes: r1–r6 op het oog (keurders FAIL, Jordi: gezicht en wangaanhangsel klopten niet), r7–r8 met de poedelmot-methode (verse maker, meten per pixel). Keuring twee eisen PASS, eindkeuring Dragonfly Cave PASS; Jordi: "ik vind hem erg goed ja!". Eindversie: `docs/concept/sprites/viscacha/af/viscacha.png` (+ `viscacha_8x.png`, `normal.pal`).
+- Lessen van de poedelmot/poedellarve-sessie op deze branch gezet (SPRITE_KERN, SPRITE_WERKWIJZE "Gemini-model namaken", CLAUDE.md); `GEMINI.md` aangevuld.
+
+### [v0.0.210] - Viscacha: bolle rug en Gen 3-kleur
+- r9: rug minder vlak (Jordi) en kleur/schaduw naar Gen 3 (contrast ±30 per tint, hooglicht op rug en voorhoofd, staart belicht van linksboven, verre poten een tint donkerder, bilsikkel zonder banding); keuring PASS.
+- r10: rug als één bolle boog en uitstekende pixel boven de staart weg, naar Jordi's krabbel ("echte viscachas hebben bijna een perfect bolle rug"). Jordi: "ik vind hem goed, keurder niet nodig". `af/` bijgewerkt naar r10.
+### [v0.0.211] - Poedellarve: Bug/Normal
 - Jordi (7 nov): de poedellarve wordt **Bug/Normal** (POKEMON.md). Overzichtsvel van alle afgemaakte frontsprites met typesymbolen gemaakt (starters voorop, dan Cuyby/Cuychu); nog niet in de repo, wacht op twee bijna afgemaakte sprites.
 
-### [v0.0.207] - Eerste werknamen
+### [v0.0.212] - Eerste werknamen
 - Jordi kiest werknamen: Picaraio, Hummlet, Bandingo, Cholucha, Pupoodle. Alpaca: Palpaca in overweging. Alles in POKEMON.md (Werknamen), met de niet gekozen voorstellen.
 
-### [v0.0.208] - Palpaca, ronde namen op het vel
+### [v0.0.213] - Palpaca, ronde namen op het vel
 - Palpaca is werknaam (Jordi). Werknamen zijn rond tot ze ooit worden aangepast. Op het overzichtsvel staan ronde namen tussen aanhalingstekens, ook "DJ Rotom" en "Silicobra" (regional). `showcase/maak_vel.py` bijgewerkt (alle 21 afgemaakte frontsprites, typesymbolen uit `graphics/types/`, starters voorop, dan Cuyby/Cuychu); het vel zelf volgt met de twee bijna afgemaakte sprites.
+
+### [v0.0.214] - Overzichtsvel nieuwe Pokémon
+- `docs/concept/sprites/showcase/frontsprites_af.png`: alle 24 afgemaakte frontsprites met typesymbolen; starters voorop, dan Cuyby/Cuychu; ronde namen tussen aanhalingstekens (Jordi). Nieuw erbij: viscacha (Electric), hatun runa (Normal/Flying), potoo (Ghost/Normal).

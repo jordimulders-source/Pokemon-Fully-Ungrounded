@@ -1,0 +1,16 @@
+rugboog (selout, lijf, nekplooi)                9
+hooglicht B (rug + voorhoofd)                  21
+staart (x47-62, r23-49)                       122
+verre voorpoot (x12-19, r44-49)                21
+bil-sikkel (x42-47, r33-47)                    29
+B->2 samengevoegd (oor, buiten de zones)        7
+BUITEN DE ZONES                                 0 []
+totaal gewijzigde pixels (index): 209
+
+Palet r8 -> r9 (alle pixels met deze index veranderen mee van kleur):
+  2: (150, 86, 48) -> (128, 72, 42)
+  3: (206, 124, 72) -> (190, 110, 64)
+  4: (210, 156, 90) -> (208, 148, 82)
+  B: (122, 84, 46) -> (252, 222, 150)
+  C: (166, 122, 74) -> (160, 114, 68)
+  E: (168, 100, 66) -> (160, 90, 54)

@@ -1,5 +1,7 @@
 # Viscacha (Electric, single stage): SPEC
 
+**AF (7 nov): `af/viscacha.png` (+ `viscacha_8x.png`, `normal.pal`)** = kleur_r10. r8: keuring twee eisen PASS + eindkeuring Dragonfly Cave PASS ("ik vind hem erg goed ja!"); r9 bollere rug + Gen 3-kleur/schaduw (keuring PASS); r10 rug als bolle boog naar Jordi's krabbel. Jordi: "nee ik vind hem goed, keurder niet nodig". Later (voor alle soorten): frame 2, rug, icoon, shiny, naam/data.
+
 Bron: berg-viscacha (*Lagidium viscacia*), Andeswoestijnen (Atacama, Uyuni, Lípez). Vroege knager van de hoogvlakte; neef van Minccino (beide Chinchillidae). Type Electric (Jordi 29 okt). Naam/data later.
 
 ## Jordi letterlijk
@@ -12,6 +14,8 @@ Bron: berg-viscacha (*Lagidium viscacia*), Andeswoestijnen (Atacama, Uyuni, Líp
 - r6: **"dit vind ik een leuke"** → ontwerpreferentie.
 - "ja je houdt zoveel mogelijk het gemini model vast" (7 nov)
 - r4 sprite: **"kijk eens goed naar het gezicht, linkerkant, neus, whiskers, mond etc klopt niet"** (7 nov): gezicht volgen als in Gemini (neus aan de snuitpunt, mondlijn, ronde snuitbult, snorharen).
+- r8: "bovenkant lijf mag iets minder vlak nog idd"; kleur/schaduw naar Gen 3: "perfect, doe maar" (7 nov).
+- r9 (krabbel `kleur_r9/jordi_krabbel_rug.png`): **"ik vind de rug nog geen vloeiende boog, dat is het enige wat je nog hoeft aan te passen. Is 1 bult, met een klein deukje erin en een hele kleine boog. Net boven de staart steekt 1 pixel uit ook ... Echte viscachas hebben bijna een perfect bolle rug. Pas alleen dit aan en voor de rest is die perfect"** → rug mag van het model afwijken (bolle boog).
 - **"het enige dat anders mag van gemini is dat het oog luier mag, zoals een echte viscacha"** (7 nov)
 
 ## Referentie

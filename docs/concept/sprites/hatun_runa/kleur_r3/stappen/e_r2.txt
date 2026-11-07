@@ -1,0 +1,14 @@
+# ronde 2: staart lichter (meer 5 zoals de modelmediaan), tweede scheiding (52,38)->(50,40); verre dekveren: lichtere 3-rand binnen de omlijning linksonder (model rij 37-41); bek: zalm (15,51)
+33: 47=35555541
+34: 46=2445452551
+35: 46=2454425451
+36: 45=24444255541
+37: 44=22334245441
+38: 44=2233245421
+39: 43=2223234521
+40: 43=222233421
+38: 15=33
+39: 16=33
+40: 17=33
+41: 18=33
+51: 15=D

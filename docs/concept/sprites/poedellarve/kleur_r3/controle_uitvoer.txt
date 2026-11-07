@@ -1,0 +1,11 @@
+pixels: 778 (silhouet 778)
+alpha-diff met silhouet: 0  extra=[]  mist=[]
+open randen (buitenrand zonder lijnkleur 1-4): 0 []  | bewuste uitzondering klauwtjes: []
+buitenrand 125 px: selout 3 23 px in 6 reeksen (lengtes [3, 3, 3, 3, 4, 7]), reeksen < 3 px: []
+losse pixels (vlaktint zonder gelijke buur): 0 []
+tintclusters < 3 px: 0
+gebruikte indexen: 12345678AD
+aantal kleuren: 10 + transparant = 11
+alpha-diff tegen af/poedellarve.png: 0 (SIL in controle.py = af/poedellarve.png)
+pixels anders dan af: 21: (13,36) (13,38) (14,39) (14,41) (14,42) (13,43) (14,43) (14,44) (15,44) (32,42) (32,43) (35,44) (37,45) (40,46) (43,47) (44,49) (49,53) (50,54) (13,54) (13,55) (14,55)
+buitenrand 3: boven 20, links 7, rechts 9 | 2: boven 27, links 35, rechts 33, onder 47

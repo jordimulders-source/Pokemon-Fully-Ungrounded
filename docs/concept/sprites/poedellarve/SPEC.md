@@ -25,5 +25,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-model namaken) + `docs/less
 - `af/poedellarve.png` = `kleur_r2/poedellarve.png` horizontaal gespiegeld (kijkt nu naar links, zoals Gen 3; pixel voor pixel exact gespiegeld, box x 12–51 blijft gelijk), + `normal.pal` en `af/poedellarve_8x.png`. De belichting is mee gespiegeld (licht nu rechtsboven); niet opnieuw belicht, Jordi vond hem zo af.
 - Alpha t.o.v. het silhouet (vóór spiegelen): 4 px bewust gewijzigd (krulpunt links, bolletjes 2–4; zie `kleur_r2/NOTITIES.md`). Keuring: Claude op 8× + Jordi akkoord; de onafhankelijke keurder van r2 is gestopt omdat Jordi hem al goedkeurde.
 
+- (7 nov, letterlijk) "doe toch nog maar een eindkeuring nog qua kleuren, dragonflycave en vergelijking met andere sprites, let op, dit is puur kleuren en schaduwen"
+  → Eindkeuring af (gespiegelde r2): FAIL op lichtrichting (licht kwam na het spiegelen van rechtsboven). Kleur r3: 21 px tinten verplaatst + paletkleur 7 warmer (226,216,200), alpha-diff 0; herkeuring PASS. **`af/poedellarve.png` = kleur_r3.**
+
 ## Open
 - Naam, type en data later (Jordi, 5 nov).

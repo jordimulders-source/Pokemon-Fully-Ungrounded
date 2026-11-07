@@ -1,7 +1,6 @@
-# Keuring af/poedellarve_8x.png
-Bron: `referenties/model_gekozen.png` (Jordi's Gemini-model, 60%-versie), gespiegeld vergeleken.
-8×: deze weergave, naast het model bekeken op het vel van r2 / 1×: `kleur_r2/vel.png` onderaan (licht en donker).
-- Vorm en silhouet: lijkt op het model (gespiegeld); 4 px bewust aangepast voor krul en bolletjes.
-- Kop, ogen, snuit, neus, mond, sprieten met krul, segmenten, bolletjes, poten: lijkt op het model, zoals in r2 dat Jordi goedkeurde ("ik vind ronde 2 wel goed").
-- Spiegeling: exact (pixelcheck), zoals Jordi vroeg.
+# Keuring af/poedellarve_8x.png (= kleur_r3)
+Bron: `referenties/model_gekozen.png` (gespiegeld) en `../poedelmot/af/poedelmot.png` + Gen 3-sprites (Wurmple, Silcoon, Altaria, Seel, Taillow) in de eindkeuring.
+8×: deze weergave en `kleur_r3/vel.png` / 1×: `kleur_r3/vel.png` (licht en donker).
+- Vorm en silhouet: lijkt op r2 dat Jordi goedkeurde; alpha-diff 0 (alleen tinten veranderd).
+- Kleuren en schaduwen: lijkt op het model; licht nu linksboven zoals de poedelmot; eindkeuring Dragonfly Cave r3 PASS (`poedellarve.png.eindkeuring_dfc.md`).
 Oordeel: PASS

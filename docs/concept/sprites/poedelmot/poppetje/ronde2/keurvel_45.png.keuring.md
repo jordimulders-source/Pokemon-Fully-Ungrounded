@@ -1,0 +1,12 @@
+# Keuring (eigen keuring door de maker; nog geen onafhankelijke keurder)
+- Bron: poppetje_45.png, referenties/foto_tak_katoen.webp, referenties/foto_sprieten_plus_vilt.png, graphics/pokemon/butterfree, venomoth (frame 1)
+- Werk: poppetje_45_1x.png (praatplaat op 45°, verkleind naar 64×64; geen sprite)
+- Bekeken op 8× en 1× (licht en donker) + close-ups (kop/sprieten 4,8–60,34; poten 4,30–60,62)
+- Per onderdeel (lijkt op <bron> / wijkt af in <x>):
+  - **Sprieten (groter):** lijken op foto_sprieten/het vilt (lange gebogen kammen opzij, punt omhoog, ±44 eenheden i.p.v. 30) / wijken af: de tanden staan vooral aan de onderkant, de bovenrij leest weinig (eenzijdig, als een hark). Op 1× zijn het bruine vegen met gaatjes (verwacht).
+  - **Vleugels (groter):** lijken op het vilt en de tak-foto (nabije voorvleugel lang en spits, ronde achtervleugel met gladde rand eronder; verre voorvleugel steekt boven de kop uit, mag) / wijken af: **de verre achtervleugel is helemaal niet meer te zien** (achter lijf en poten); de opdracht was hem met een gladde rand te laten lezen.
+  - **Snuit:** brede, platte neusbrug tussen en onder de ogen, zoals op de foto / geen driehoekje meer; geen afwijking gezien.
+  - **Ogen/kop:** ongewijzigd t.o.v. ronde 1. De kop is nu 53% van de hoogte zonder vleugels (het lijf zit lager), binnen de 45–55% van de posestudie.
+  - **Poten:** iets dunner (dij 5,4 i.p.v. 7), nog wollig. Het lijf zit laag ertussen, het voorpaar is gespreid met de knie naar voren, de nabije pompons zijn lager en groter, de verre hoger en kleiner, het middenpaar staat opzij / wijken af: **de verre voorpoot steekt links als een armpje/vin uit** in plaats van half verborgen te zijn; **op 1× lopen de poten samen tot één wolmassa** en lezen er geen zes (eerder 3–4 bobbels onderaan).
+  - **Kader:** 1× ±54×41 px, vergelijkbaar met Venomoth (breed) en iets lager dan Butterfree; niet te klein / geen afwijking.
+- Oordeel: FAIL (verre achtervleugel onzichtbaar; verre voorpoot leest als arm; poten lezen op 1× niet als zes)

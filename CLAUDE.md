@@ -17,6 +17,7 @@ Vervolg op **Pokémon Ungrounded** (Project Grounded), gebouwd als fork daarvan 
 - **Stand van zaken** hieronder kort houden: alleen wat een volgende sessie moet weten. Details horen in `CHANGELOG.md`.
 
 ## Vaste regels
+- **Niet interpreteren (Jordi, 5 nov: "vanaf nu ga je niet meer dingen interpreteren die ik niet zeg"):** geef Jordi's woorden letterlijk door; vul niets in wat hij niet zei (geen eigen kenmerken, geen versmalde of verbrede lezing). Is iets onduidelijk: vragen, niet invullen.
 - **Changelog:** zet elke wijziging onderaan in `CHANGELOG.md`, als een nieuwe `### [v.x.y.z] - ...`-sectie. Versies: 0.8.x tot de laatste fase vóór de beta; 0.9 = die laatste fase; 1.0 = de beta. Dit is Jordi's eigen logboek; het mag "vervuild" zijn (codeblokken, learnsets). Niet opschonen of herstructureren.
 - **Debugmenu blijft aan** (`DEBUG_OVERWORLD_MENU` en `DEBUG_BATTLE_MENU` in `include/config/debug.h`).
 - **Mail en Magikarp-levels** niet aanpassen.
@@ -97,6 +98,7 @@ Algemene lessen staan hieronder; de rest is per onderwerp opgesplitst. **Lees he
 - **Nachtaap fase 3 (muriqui): frontsprite af** (5 nov, `docs/concept/sprites/nachtaap_fase3/af/nachtaap_fase3.png`, rugbanden stand D, linkeroog D, EINDKEURING GOED); nog te doen: frame 2, rug, icoon, shiny, naam/data.
 - **Great potoo (Ghost/Normal, één stage), bezig:** lijf en kopvorm goedgekeurd; Jordi trekt kop/snavel/bek zelf over op `potoo/tekenbasis/`. Nieuw gesprek start met `docs/concept/sprites/potoo/OVERDRACHT.md`.
 - **Hitmontop-evolutie (capoeira, Fighting/Ground), gepauzeerd (6 nov):** `docs/concept/sprites/hitmontop_evo/` (SPEC met al Jordi's woorden). Vast: pose (eenarmige handstand, V-split), skelet in Hitmonlee-maat (stap2 D14), vorm = geplakte assets (stap3b). Het hoofd mislukte 8 rondes; daarna maakte Jordi met Gemini een volledig model in de pose: **bron = `referenties/model_gemini_pose_v3.png`** (bevroren). Volgende stap (nieuwe sessie, zelf, zonder agents): silhouet uit het model → kleur → details, per stap 8× naast het model; minder menselijk maken in de sprite; vraag: broek wit of blauw.
+- **Poedelmot (Bug/Fairy, eindvorm), bezig:** draft-sprite `docs/concept/sprites/poedelmot/sprite/ronde1/`; SPEC met LEIDRAAD (Jordi's eerste bericht) is de toetssteen. Werkwijze hier (Jordi 6 nov): draft-sprite en dan stap voor stap aanpassen, geen gokrondes.
 - **Muziek staat op pauze** (feedback in `docs/concept/MUZIEK.md`; instrumentenset `fu_samples.py`, schetsen songs 611–616).
 - **Tilesets:** `tilesets/` (assetbibliotheek); La Paz + altiplano ronde 2 wacht op Jordi.
 - **Techniek (v0.0.9, ±18,4 MB vrij):** Ungrounded-muziek, intro's/films, Hoenn-wereld en Pokémon buiten de dex zijn eruit (`docs/concept/STAND_TECHNIEK.md`, `PLAN_HOENN_ERUIT.md`). Skelet: StartTown, Pokémon Center, Mart, stock-huizen, TestMap; overgangsheader `map_compat.h` + stubs. **Stap 8 (Frontier/Union Room/Contests/Secret Bases/Trainer Hill weg?) wacht op Jordi.** Expansion is bijgewerkt naar **1.17.1** (v0.0.10; nieuwe gevechtsmotor, zie STAND_TECHNIEK stap 4). Soorten aan/uit: `include/config/species_enabled.h`.

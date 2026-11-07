@@ -138,3 +138,8 @@ AVOID
 - Human body or proportions, realistic muscles, small hands, a shirt, baggy trousers.
 - Not Hitmonchan, Hitmonlee or Machop. No plush toy, chibi or mascot look.
 ```
+
+## Bijsturing op v3 (zelfde gesprek)
+```
+Same design, same pose, same colors. Change only these four things: (1) the support arm is too long: make it clearly shorter, so the head and body sit lower, closer to the floor; (2) both hands are plain round balls, perfect spheres with a white wrist band, no fingers, no flat palm, no thumb; (3) the torso is too human: make it one smooth, simple rounded shape like Hitmontop's body, no chest, no nipples, no belly button, no abs, no shoulder blades, no muscle lines; (4) the waist cord is a real capoeira cordão: a thick, tightly braided rope wrapped around the waist, tied in one knot at the side of the hip, the two ends hanging down long, ending in small tassels.
+```

@@ -292,3 +292,27 @@ STYLE AND FORMAT
 AVOID
 - Not Talonflame, Fletchinder, Moltres or Ho-Oh.
 ```
+
+## Startprompt v7 (7 nov, nieuw gesprek; vervangt v6)
+Jordi over r4: binnenkant vleugel = zon, buitenkant bruin; Xatu-pose zodat je een groot deel van de zon ziet. Bijlage: `awki_r4_v6.png`.
+
+```
+Draw this Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+The attached image is the base design. Keep its head, face (black mask, white throat, short dark beak), the folded flame crest, the gold ear patches, the yellow forehead feathers, the brown body, golden-ochre belly, legs and rust-brown tail exactly as they are.
+
+THE WINGS (the main change)
+- The wings are two-sided, like many real birds: the OUTSIDE (upper side) of both wings is plain warm brown, like the folded wing in the attached image. The INSIDE (underside) of both wings is the fire-and-sun coloring from the raised wing in the attached image: dark red near the body, then orange, then bright yellow at the feather tips, in clean color bands row by row, like sun rays.
+- Pose like Xatu: both wings spread wide open to the sides and slightly forward, like an open cloak, so we see the INSIDE of both wings. Together the two open wings frame the body like a big sun disc with rays. Exactly two wings.
+- The wings are spread in a relaxed, slightly curved way, not stiff and flat like a T-pose.
+
+POSE AND VIEW
+- Standing upright on its own legs, body in 3/4 view facing left, head turned towards the viewer and lifted a little, beak pointing left. Proud and calm, a young prince showing off.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. No ground, shadow, glow, sun, sparkles or effects. One single creature.
+
+AVOID
+- Not Xatu itself (only its open-wing stance), not Talonflame, Fletchinder, Moltres or Ho-Oh.
+```

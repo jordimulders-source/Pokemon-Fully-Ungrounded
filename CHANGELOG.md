@@ -876,3 +876,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.216] - Awki: startprompt v6
 - Eén bijlage met fase 1, het voorlopige model (r2-A) en fase 3; de al opgeheven vleugel krijgt de vuurkleuren (geen vleugelwissel). In `PROMPT_AWKI.md`.
+
+### [v0.0.217] - Awki: Gemini-ronde 4 en startprompt v7
+- Ronde 4 (v6) vastgelegd; Jordi's idee: binnenkant van de vleugels is de zon, buitenkant bruin, Xatu-pose. Startprompt v7 in `PROMPT_AWKI.md`.

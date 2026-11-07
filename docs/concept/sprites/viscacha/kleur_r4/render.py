@@ -1,7 +1,7 @@
 """raster.txt -> viscacha.png (geindexeerd), normal.pal, en een 8x-preview naast de bron64."""
 import sys
 from PIL import Image
-D='/home/user/Pokemon-Fully-Ungrounded/docs/concept/sprites/viscacha/kleur_r3/'
+D='/home/user/Pokemon-Fully-Ungrounded/docs/concept/sprites/viscacha/kleur_r4/'
 sys.path.insert(0,D); from palet import PAL
 r=[l.rstrip('\n') for l in open(D+'raster.txt')][:64]
 im=Image.new('P',(64,64)); im.putpalette([v for c in PAL for v in c])

@@ -53,6 +53,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Moonkey** (nachtaap fase 2): Jordi "Moonkey is echt heel geniaal, die doen we" (8 nov).
 - Werknamen 8 nov (Jordi): **Llamauler** (lama fase 2; "toch het beste"), **Vigiloot** (wasbeer; "voor nu"), **Nocticue** (nachtaap fase 1), **Princadee** (awki; koningstiran, geen kiskadie: "wil wel qua immersie goed blijven zitten").
 - **Sunperor** (Sapa Inca): Jordi "voorlopig toch voor Sunperor, maar houd intirano in gedachten mocht ik in de toekomst weer gaan twijfelen" (8 nov). Reserve: **Intirano** (Inti + tirano; traditie van Entei/Raikou/Suicune/Tapu).
+- **Soulibri** (kolibrie, Ghost/Flying; na Hummlet): Jordi "Soulibri is goed" (8 nov).
 - Picaraio of Raiopau (8 nov): Jordi "Picaraio dan!" (*pica* = pikken blijft hoorbaar, zoals in Picapau).
 - Alpaca: Jordi denkt aan **Palpaca** (pal + alpaca; "klinkt als een pokemon naam, want flamigo bestaat ook"), nog niet helemaal tevreden, wel beter dan Alpunch/Fluffist/Paqucha.
 - **Palpaca** is ook werknaam (Jordi, 7 nov: "Palpaca mag je ook doen"). Werknamen zijn rond "totdat ze ooit aangepast worden" (Jordi).

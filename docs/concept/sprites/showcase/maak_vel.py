@@ -20,7 +20,7 @@ items=[
 ("koningstiran/af/sapa_inca.png",'"Sunperor"',"fire/psychic"),
 ("viscacha/af/viscacha.png",'"Zapacha"',"electric"),
 ("kolibrie_pre/af/kolibrie_pre.png",'"Hummlet"',"flying"),
-("kolibrie/af/kolibrie.png","Kolibrie","ghost/flying"),
+("kolibrie/af/kolibrie.png",'"Soulibri"',"ghost/flying"),
 ("picapau/af/picapau.png",'"Picapau"',"electric/flying"),
 ("picapau_evo/af/picapau_evo.png",'"Picaraio"',"electric/flying"),
 ("poedellarve/af/poedellarve.png",'"Pupoodle"',"bug/normal"),

@@ -985,3 +985,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.221] - Sunperor
 - Sunperor = werknaam Sapa Inca (Jordi); Intirano als reserve. Vel bijgewerkt.
+
+### [v0.0.222] - Soulibri
+- Soulibri = werknaam kolibrie (Jordi). Vel bijgewerkt.

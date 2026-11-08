@@ -17,7 +17,7 @@ items=[
 ("cuyby_evo/ronde6/anim_front.png",'"Cuychu"',"normal"),
 ("hatun_runa/af/hatun_runa.png",'"Kiskiddo"',"normal/flying"),
 ("awki/af/awki.png",'"Princadee"',"fire/flying"),
-("koningstiran/af/sapa_inca.png","Sapa Inca","fire/psychic"),
+("koningstiran/af/sapa_inca.png",'"Sunperor"',"fire/psychic"),
 ("viscacha/af/viscacha.png",'"Zapacha"',"electric"),
 ("kolibrie_pre/af/kolibrie_pre.png",'"Hummlet"',"flying"),
 ("kolibrie/af/kolibrie.png","Kolibrie","ghost/flying"),

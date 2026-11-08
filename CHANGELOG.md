@@ -982,3 +982,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.220] - Llamauler, Vigiloot, Nocticue, Princadee
 - Werknamen (Jordi, 8 nov); POKEMON.md, Stand van zaken en vel bijgewerkt.
+
+### [v0.0.221] - Sunperor
+- Sunperor = werknaam Sapa Inca (Jordi); Intirano als reserve. Vel bijgewerkt.

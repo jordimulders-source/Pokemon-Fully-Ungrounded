@@ -114,3 +114,6 @@ Bij het vel r4 | r4 glansmidden | r3 | model: "de 3e is het beste, laat die nu e
 
 ## Eindkeuring ronde 3 (Jordi, 8 nov, letterlijk)
 "nee de arm mag niet langer, de koordband mag wel smaller als dat er prima uit blijft zien, ga het verder perfectioneren". Ronde 5 = r3 + reparaties uit EINDKEURING.md + smallere koordband + arm taps binnen dezelfde lengte.
+
+## Sprite ronde 5 (Jordi, 8 nov, letterlijk)
+"stuur maar naar eindkeuring, gen 3 sprite keuring, dragonflycave keuring"; arm: "A uiteraard"; "hoorn moet niet langer".

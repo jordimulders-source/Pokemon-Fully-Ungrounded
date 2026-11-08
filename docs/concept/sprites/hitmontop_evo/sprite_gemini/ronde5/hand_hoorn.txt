@@ -1,0 +1,5 @@
+# hoorn: scherpe punt naar linksonder, maat en plek van het model (alpha: punt x8 rij 48-49, onderrand rij 49 x8-11)
+# bovenrand selout 5 (lichtkant), onderrand zwart; punt = (8,49)
+r47: 9=5233
+r48: 8=53441
+r49: 8=1111

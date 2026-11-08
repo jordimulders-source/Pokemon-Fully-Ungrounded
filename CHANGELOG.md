@@ -936,3 +936,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Prompt herschreven (Jordi): de sprite moet op bijna alle vlakken mooier (gezicht, kopvorm, lijf, ledematen en aansluiting, patroon, staart); alleen de zweefhangende pose is heilig.
 - Gemini ronde 1 afgekeurd (`gemini/afgekeurd_r1.png`: handen onnatuurlijk, silhouet, maan, boze blik, takje in de voet, rugpatroon). Prompt v3: oude sprite alleen als ruwe referentie, vrij hertekenen; neutrale blik, maan als in de oude sprite, takje alleen in de staart, nieuw rugpatroon.
 - Gemini ronde 2 = basis (`gemini/basis_r2.png`, Jordi fan van de uitstekende maan); verbeterprompt: één kleur voor handen/voeten, takje echt in de staartkrul, bewust rugpatroon, grotere ogen.
+- Gemini ronde 3 (`gemini/basis_r3.png`): takje eruit (Jordi); verbeterprompts A (meerdere sikkels op de rug) en B (één maanpatroon), grotere ogen.

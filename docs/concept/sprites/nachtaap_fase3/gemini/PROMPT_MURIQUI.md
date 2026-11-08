@@ -107,3 +107,28 @@ This is much better. Keep everything as it is (pose, silhouette, head shape, the
 
 Same 64x64 Gen 3 sprite style, white background, nothing else changed.
 ```
+
+## Ronde 3 (verbeterprompt) → `basis_r3.png`
+Jordi (8 nov): "De tak mag helemaal eruit, de ogen zijn nog te klein en het patroon op de rug is vaag, kunnen we niet meerdere crescent moons doen? of 1 maan achtig patroon?" → takje en cocabladeren vervallen. Twee varianten:
+
+### Verbeterprompt A: meerdere sikkels
+```
+Good. Keep everything as it is (pose, silhouette, head, the crescent moon on the head, hands, feet, colors), and change only these three things:
+
+1. Remove the twig and leaves completely. The tail ends in the clean spiral only.
+2. Make the eyes clearly bigger than now, still turquoise, neutral and calm.
+3. Replace the vague back pattern with a few crescent moons (white, the same style as the moon on the head) in a row along the back, following the shape of the body. Crisp shapes with a clear outline, not blurry.
+
+Same 64x64 Gen 3 sprite style, white background, nothing else changed.
+```
+
+### Verbeterprompt B: één maanpatroon
+```
+Good. Keep everything as it is (pose, silhouette, head, the crescent moon on the head, hands, feet, colors), and change only these three things:
+
+1. Remove the twig and leaves completely. The tail ends in the clean spiral only.
+2. Make the eyes clearly bigger than now, still turquoise, neutral and calm.
+3. Replace the vague back pattern with one large moon-like pattern on the back (white, the same style as the moon on the head), following the shape of the body. A crisp shape with a clear outline, not blurry.
+
+Same 64x64 Gen 3 sprite style, white background, nothing else changed.
+```

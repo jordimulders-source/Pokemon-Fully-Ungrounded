@@ -137,10 +137,63 @@ put(7,46,["14444"])                            # vachtband onder de kin (model y
 for x in range(51,56): px(x,25,'1')
 # achterhoofdlijn als doorlopende ')' (model: x18-19 y29-31 -> x20 y32-33 -> x21 y34-39 -> x20 y40-41 -> x19 y42-43 -> x17-18 y44)
 for (x,y) in [(18,30),(19,31),(20,32),(20,33),(20,40),(20,41),(19,42),(19,43)]: px(x,y,'1')
+# ===== RONDE 2 (Claude-review r1) =====
+# 2+4: kop opnieuw van het origineel (og.py: model met spritepixelraster). Binnenlijnen 5, buitenomtrek 1,
+#      lichtkant maanhoorn grijsblauw (4) zoals model, masker = donkere band (6), mondlijn 8.
+KOP={25:(5,".4"),
+26:(4,".491"),
+27:(3,".491..1111111995"),
+28:(3,"4995133333451995"),
+29:(3,"49953222334599b5"),
+30:(3,"1999533333499b5"),
+31:(3,"1999555555999c5"),
+32:(3,"199999999999c5"),
+33:(2,".1c999999999c5"),
+34:(2,".135bb9999bb5"),
+35:(2,"13466666666665"),
+36:(2,"13466666666665"),
+37:(2,"13469f66669ff5"),
+38:(2,"1346fa6666faa5"),
+39:(2,"1446ef6666fef5"),
+40:(2,".1448777778643"),
+41:(3,"14876767784"),
+42:(3,"14877777784"),
+43:(3,"14877777884"),
+44:(4,"148888888"),
+45:(5,"118777811"),
+46:(7,"14444")}
+for y,(x0,r) in KOP.items(): put(x0,y,[r.replace(' ','')])
+# 3: gloedhand opnieuw van het origineel: lange rechte vingers tot de gloedrand, scheidingen + handrand in 13 (d), duim schuin linksonder, grote lichte palm
+GH={47:(10,"ffeeddeeeef"),48:(9,"feedd99dddeef4"),49:(9,"fed9d99d99deef"),50:(9,"fedbdbbdbbddea"),
+51:(9,"feedbdbbdbd9da"),52:(9,"feeedbdbdbdbda"),53:(8,"feeeedbdbcbdbda"),54:(7,"feeeeedcccccdcda"),
+55:(7,"fedddedcccccccda"),56:(6,"fed99bdbcccccccda"),57:(6,"feedbbbbbccbbbbda"),58:(7,"feeddbbbbcbbbbda"),
+59:(8,"ffeeedbbcbbbbda"),60:(10,"feeeddddddddef")}
+for y,(x0,r) in GH.items(): put(x0,y,[r])
+# 5: hand linksboven opnieuw van het origineel: 2 vingers + witte handrug met knokkelstip, scheiding in d, lucht tussen vingers en duim (y19)
+put(0,14,["...1111111...","..1b99999b1..","..1dd99d9cc1.",".1b99999ccc1.",".111199ccccc1",
+          ".....1ccccc","...111dcccc","..1bbbccccd","...11cccc11",".....1111.11"])
+# ronde 2 fijn: ovaal-hoek dicht, snuit ronde bovenhoeken, knokkelstip weg (las als oog), V-inkeping tussen vingers, losse pixels
+px(8,27,'1'); px(6,40,'4'); px(12,40,'6'); px(7,16,'9'); px(2,16,'.'); px(3,16,'1'); px(13,23,'3'); px(2,17,'1')
 # --- OGEN (varianten); hoofdversie = OOG
-OGEN={'A':{37:("9f","9fa"),38:("ae","aee")},
+OGEN={'A':{37:("9f","9fa"),38:("ae","aee"),39:("66","666")},
       'B':{37:("9f","9ff"),38:("fa","faa"),39:("ae","aee")},
-      'C':{37:("9f","9ff"),38:("fa","faa"),39:("e6","6e6")}}
+      'C':{37:("9f","9ff"),38:("fa","faa"),39:("ef","fef")}}
 def ogen(v):
     for y,(l,r) in OGEN[v].items():
-        put(5,y,[l]); put(12,y,[r])
+        put(6,y,[l]); put(12,y,[r])
+# --- RONDE 2 punt 1: zwart (1) alleen op de buitenomtrek; binnenlijnen -> donkerste tint van het vlak
+def binnenlijnen():
+    H,W=a.shape; b=a.copy()
+    HAND={9,11,12,13}; GLOED={10,14,15}; ROZE={7,8}; VACHT={2,3,4,5,6}
+    for y in range(H):
+        for x in range(W):
+            if a[y,x]!=1: continue
+            nb4=[a[y+dy,x+dx] if 0<=y+dy<H and 0<=x+dx<W else 0 for dy,dx in((0,1),(1,0),(0,-1),(-1,0))]
+            if 0 in nb4: continue
+            nb=[a[y+dy,x+dx] for dy in(-1,0,1) for dx in(-1,0,1) if 0<=y+dy<H and 0<=x+dx<W and a[y+dy,x+dx] not in (0,1)]
+            inhand=(x<=12 and 13<=y<=23) or (30<=x<=42 and 3<=y<=11) or (6<=x<=23 and y>=47) or (x>=53 and y>=48)
+            h=sum(v in HAND for v in nb) if inhand else 0; g=sum(v in GLOED for v in nb); r=sum(v in ROZE for v in nb); v_=sum(v in VACHT for v in nb)+(0 if inhand else sum(v in (9,11,12) for v in nb))
+            best=max((h,13),(g,15),(r,8),(v_,5))
+            b[y,x]=best[1]
+    a[:]=b
+binnenlijnen()

@@ -3,13 +3,14 @@ from PIL import Image, ImageDraw, ImageFont
 from tools import *
 a=load(sys.argv[1]); out=sys.argv[2]
 g=Image.open(os.path.join(G,'grid128.png')).convert('RGB')
-m64=g.resize((64,64),Image.BOX)
+O=Image.open('/home/user/Pokemon-Fully-Ungrounded/docs/concept/sprites/nachtaap_fase3/gemini/gekozen_r4.png').convert('RGB')
+O2=Image.new('RGB',(1024,1024),'white'); O2.paste(O,(2,1)); m64=O2.resize((64,64),Image.BOX)
 def rgba(a):
     r=np.array(rgb(a).convert('RGBA')); r[a==0,3]=0; return Image.fromarray(r)
-S=rgb(a); W=Image.new('RGB',(64*8*2+30,64*8+40+12*24+30+80),'white'); d=ImageDraw.Draw(W)
+S=rgb(a); W=Image.new('RGB',(64*8*3+40,64*8+40+12*24+30+80),'white'); d=ImageDraw.Draw(W)
 F=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf',14)
 W.paste(S.resize((512,512),Image.NEAREST),(10,30)); W.paste(g.resize((512,512),Image.NEAREST),(532,30))
-d.text((10,8),'sprite 8x',font=F,fill='black'); d.text((532,8),'model (128-raster) 8x',font=F,fill='black')
+d.text((10,8),'sprite 8x',font=F,fill='black'); d.text((532,8),'model (128-raster) 8x',font=F,fill='black'); W.paste(m64.resize((512,512),Image.NEAREST),(1054,30)); d.text((1054,8),'model BOX naar 64 px, 8x',font=F,fill='black')
 y=560
 for k,(x0,y0,x1,y1) in enumerate([(0,24,18,48),(0,12,14,24),(4,44,25,63),(29,2,44,15)]):
     pass

@@ -2,6 +2,27 @@
 
 Alles wat Jordi tijdens het brainstormen noemt, in steekwoorden. Het concept (`docs/concept/CONCEPT.md`) wordt hieruit opgebouwd.
 
+## Overzicht: sowieso doen en brainstormfase (Jordi, 8 nov)
+Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de secties eronder.
+
+**Sowieso doen**
+- **Dundragoon:** lome, grappige draakevolutie van Dunsparce, Drampa-achtig; tweede vertakking naast Dudunsparce (vraag open: blijft Dudunsparce erin, of komt Dundragoon in zijn plaats?).
+- **Een Ice/Poison-Pokémon** (typing bestaat nog niet; invulling nog in de brainstorm, zie hieronder).
+- **Vuurwerk** (Fire/Fairy, FAKEMON_PITCH #83).
+- **Pachamama Ground/Fairy.**
+- **Tiwanaku-vorm van Golett/Golurk.**
+- **Mate-vorm van Poltchageist/Sinistcha.**
+- **Yanma/Yanmega:** "gaan we nog iets mee doen voor bug/dragon".
+- **Iets met een condor** (Jordi, 8 nov; zie ook de condor-legendary en de regionale vogel in `POKEMON.md`).
+
+**Brainstormfase**
+- Invulling van de Ice/Poison-Pokémon (aardappel/chuño, Tentacool-vorm en ozongat: Jordi niet overtuigd; nieuwe voorstellen: bevriezende gifkikker, bedorven ijsje, bevriezing-ijsgeest).
+- Ground/Fairy buiten Pachamama: Jordi denkt nog na.
+- Gloednieuwe Pokémon zonder link met Zuid-Amerika.
+- Evoluties voor soorten die ze echt nodig hebben (Smeargle, Chatot, Cryogonal: niet per se).
+- Regional forms die underrated Pokémon interessant maken (de rest van de top 10 in `DEX_NOMINATIES.md` §5: nog niet overtuigd).
+- Al het andere in dit bestand dat niet als besloten in `POKEMON.md` staat.
+
 ## Basis
 - Vervolg op Pokémon Ungrounded, ambitieuzer. Gebouwd in pokeemerald-expansion (fork van projectgrounded, met alle revisies van Pokémon/moves/abilities en de QoL).
 - Nieuwe regio op basis van Zuid-Amerika; zoals Hoenn ≈ Kyushu: geïnspireerd, niet nagemeten. Eigen namen en eigen kaart.

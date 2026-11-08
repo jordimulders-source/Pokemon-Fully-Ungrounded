@@ -1003,3 +1003,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.226] - Reactie op de nieuwe ronde ideeën
 - `IDEEEN.md`: Jordi's reactie (Dundragoon tweede vertakking naast Dudunsparce, vuurwerk ja, Ice/Poison-voorstellen nee, evoluties niet per se).
 - `POKEMON.md`: Pachamama Ground/Fairy; Tiwanaku-Golett en mate-Poltchageist gaan we doen.
+
+### [v0.0.227] - Ideeën: overzicht sowieso doen / brainstormfase
+- `IDEEEN.md`: bovenaan een overzicht met wat we sowieso doen (Dundragoon, Ice/Poison-Pokémon, vuurwerk, Pachamama Ground/Fairy, Tiwanaku-Golett, mate-Poltchageist, Yanma Bug/Dragon, iets met een condor) en wat nog in de brainstormfase zit.

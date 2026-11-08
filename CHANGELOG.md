@@ -862,3 +862,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.211] - Olinguito: Gemini-prompt voor een verbeterronde
 - Jordi wil de olinguito ("bandingo") verbeteren via Gemini. Prompt en bijlagen (huidige sprite 6×, ontwerp, Coathief en wasbeer 6×) in `docs/concept/sprites/olinguito_v2/gemini/`.
+
+### [v0.0.212] - Olinguito: nieuwe frontsprite (Gemini-pose + oude inkleuring)
+- Gemini v4 gaf een betere pose; Jordi: pose en kopvorm van Gemini, inkleuring van de oude sprite (rood oog, masker, patroon rond oog en neus, kruin, geen mond), lijf met Gen 3-schaduw.
+- 6 rondes (`docs/concept/sprites/olinguito_v2/gemini_samen/`), keuring r5 en eindkeuring r6 (PASS na 7 px). Nieuwe versie: `olinguito_v2/af/olinguito.png`; de oude staat als `af/olinguito_v1.png`.

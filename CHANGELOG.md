@@ -979,3 +979,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.219] - Moonkey
 - Moonkey = werknaam nachtaap fase 2 (Jordi). Vel bijgewerkt.
+
+### [v0.0.220] - Llamauler, Vigiloot, Nocticue, Princadee
+- Werknamen (Jordi, 8 nov); POKEMON.md, Stand van zaken en vel bijgewerkt.

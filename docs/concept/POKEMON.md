@@ -51,6 +51,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Kiskiddo** (hatun runa, fase 1 koningstiran-lijn): Jordi "Kiskiddo akkoord" (8 nov).
 - **Rollen (Jordi, 8 nov):** de Inca-vogellijn (Kiskiddo → awki → Sapa Inca) wordt de regional birds, "de pidgey van deze regio"; de viscacha (Zapacha) wordt de electric rodent. De early route insect komt nog; Pupoodle is dat niet.
 - **Moonkey** (nachtaap fase 2): Jordi "Moonkey is echt heel geniaal, die doen we" (8 nov).
+- Werknamen 8 nov (Jordi): **Llamauler** (lama fase 2; "toch het beste"), **Vigiloot** (wasbeer; "voor nu"), **Nocticue** (nachtaap fase 1), **Princadee** (awki; koningstiran, geen kiskadie: "wil wel qua immersie goed blijven zitten").
 - Picaraio of Raiopau (8 nov): Jordi "Picaraio dan!" (*pica* = pikken blijft hoorbaar, zoals in Picapau).
 - Alpaca: Jordi denkt aan **Palpaca** (pal + alpaca; "klinkt als een pokemon naam, want flamigo bestaat ook"), nog niet helemaal tevreden, wel beter dan Alpunch/Fluffist/Paqucha.
 - **Palpaca** is ook werknaam (Jordi, 7 nov: "Palpaca mag je ook doen"). Werknamen zijn rond "totdat ze ooit aangepast worden" (Jordi).

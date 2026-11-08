@@ -965,3 +965,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "doe maar o3" → ogen O3 (Absol) + rugbogen R2 = basis `gemini_sprite/r7/O3.png`. Laatste kleurronde (Gen 3-licht) gestart; Jordi: "met de laatste kleurronde mag je van het gemini model afwijken".
 - Lichtronde r8 (hooglichttint vacht, benen als cilinders), eindkeuring GOED + 1 px. **Frontsprite af:** `docs/concept/sprites/nachtaap_fase3/af/nachtaap_fase3.png` (+ `_8x`, `normal.pal`, `voor_na.png`); oude versie in `af/oud_voor_gemini/`.
 - Ter vergelijking (Jordi: "puur om even te kijken"): nieuwe versie met de ogen van de oude sprite, 1-op-1 / huidige grootte / iets groter: `gemini_sprite/r9/vel_oude_ogen.png`. `af/` ongewijzigd.
+- Jordi: "oude ogen 1 op 1 ... wordt dit het ontwerp" → ogen van de oude sprite (V1) in `af/nachtaap_fase3.png` (+ `_8x`, `voor_na.png`). Muriqui-ontwerp definitief.

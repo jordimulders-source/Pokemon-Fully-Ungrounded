@@ -859,17 +859,95 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.210] - Viscacha: bolle rug en Gen 3-kleur
 - r9: rug minder vlak (Jordi) en kleur/schaduw naar Gen 3 (contrast ±30 per tint, hooglicht op rug en voorhoofd, staart belicht van linksboven, verre poten een tint donkerder, bilsikkel zonder banding); keuring PASS.
 - r10: rug als één bolle boog en uitstekende pixel boven de staart weg, naar Jordi's krabbel ("echte viscachas hebben bijna een perfect bolle rug"). Jordi: "ik vind hem goed, keurder niet nodig". `af/` bijgewerkt naar r10.
+### [v0.0.211] - Poedellarve: Bug/Normal
+- Jordi (7 nov): de poedellarve wordt **Bug/Normal** (POKEMON.md). Overzichtsvel van alle afgemaakte frontsprites met typesymbolen gemaakt (starters voorop, dan Cuyby/Cuychu); nog niet in de repo, wacht op twee bijna afgemaakte sprites.
 
-### [v0.0.211] - Hitmontop-evolutie: Gemini-prompt
+### [v0.0.212] - Eerste werknamen
+- Jordi kiest werknamen: Picaraio, Hummlet, Bandingo, Cholucha, Pupoodle. Alpaca: Palpaca in overweging. Alles in POKEMON.md (Werknamen), met de niet gekozen voorstellen.
+
+### [v0.0.213] - Palpaca, ronde namen op het vel
+- Palpaca is werknaam (Jordi). Werknamen zijn rond tot ze ooit worden aangepast. Op het overzichtsvel staan ronde namen tussen aanhalingstekens, ook "DJ Rotom" en "Silicobra" (regional). `showcase/maak_vel.py` bijgewerkt (alle 21 afgemaakte frontsprites, typesymbolen uit `graphics/types/`, starters voorop, dan Cuyby/Cuychu); het vel zelf volgt met de twee bijna afgemaakte sprites.
+
+### [v0.0.214] - Overzichtsvel nieuwe Pokémon
+- `docs/concept/sprites/showcase/frontsprites_af.png`: alle 24 afgemaakte frontsprites met typesymbolen; starters voorop, dan Cuyby/Cuychu; ronde namen tussen aanhalingstekens (Jordi). Nieuw erbij: viscacha (Electric), hatun runa (Normal/Flying), potoo (Ghost/Normal).
+
+### [v0.0.215] - Werknamen in CLAUDE.md, naar main
+- Werknamen in Stand van zaken gezet, zodat nieuwe sessies weten wie Jordi bedoelt; alles naar `main` (Jordi).
+
+### [v0.0.216] - Gemini-prompts koningstiran fase 2 (awki)
+- Sparren over fase 2 (Fire/Flying, kroonprins). Besloten (Jordi): koningstiran met gesloten kuif als hamerkop (niet de vuurtiran), gele franje en kleine gouden oorvlekken, caracarabouw begint.
+- Experiment met twee prompts: A = vuur in de gesloten kuif, B = vuur als vleugelpatroon van Andes-trapdriehoeken (*escalonado*), rood → oranje → geel.
+- Prompts en bijlagen: `docs/concept/sprites/koningstiran/gemini/PROMPT_AWKI.md`; notitie in `POKEMON.md`.
+
+### [v0.0.217] - Awki: Gemini-ronde 1 besproken
+- Ronde 1 (A: vuur in kuif, B: trapdriehoeken op vleugel) afgekeurd door Jordi ("rare kop", "net pidgeot"); beelden en analyse in `docs/concept/sprites/koningstiran/gemini/README.md`.
+
+### [v0.0.218] - Awki: Gemini-prompts v2
+- Twee nieuwe startprompts (A kuif, B vleugel) na ronde 1: kuif korter en schuin omhoog als gesloten waaier, gezicht van fase 1 behouden, gewone snavel, trapdriehoeken als blokpiramides uitgelegd, Pidgeot vermeden. In `PROMPT_AWKI.md`.
+
+### [v0.0.219] - Awki: Gemini-ronde 2
+- Ronde 2 vastgelegd (kuif nu goed begrepen); Jordi wil A bijsturen met een groter vuurpatroon op de vleugel en een Inca-pose. Zie `koningstiran/gemini/README.md`.
+
+### [v0.0.220] - Awki: bijsturing 1 vastgelegd
+- Gemini gaf de vogel een extra vleugel; zie `koningstiran/gemini/README.md`.
+
+### [v0.0.221] - Awki: startprompt v3
+- Gemini liep vast; nieuwe startprompt (r2-A als basis, r3 voor vleugel en patroon, precies twee vleugels) in `PROMPT_AWKI.md`. Les over extra ledematen in `docs/lessen/GEMINI.md`.
+
+### [v0.0.222] - Awki: startprompt v4
+- Ronde 3 als bijlage geschrapt (patroon klopt niet); v4 met alleen r2-A als bijlage en het trappatroon in tekst uitgelegd.
+
+### [v0.0.223] - Awki: startprompt v5
+- Patroon vervangen door vuurkleuren per veerrij op de opgeheven vleugel (Jordi); les over patronen in `docs/lessen/GEMINI.md`.
+
+### [v0.0.224] - Awki: startprompt v6
+- Eén bijlage met fase 1, het voorlopige model (r2-A) en fase 3; de al opgeheven vleugel krijgt de vuurkleuren (geen vleugelwissel). In `PROMPT_AWKI.md`.
+
+### [v0.0.225] - Awki: Gemini-ronde 4 en startprompt v7
+- Ronde 4 (v6) vastgelegd; Jordi's idee: binnenkant van de vleugels is de zon, buitenkant bruin, Xatu-pose. Startprompt v7 in `PROMPT_AWKI.md`.
+
+### [v0.0.226] - Awki: bijsturing op ronde 4
+- Na vergelijking met fase 1 en 3: lavendel punten in de kuif en een beetje rood rond de snavel (Jordi). Zin in `PROMPT_AWKI.md`.
+
+### [v0.0.227] - Awki: ronde 5 en kleuraccenten
+- Gemini-bijsturing (r5) verknalde de kuif; Claude kleurde r4 zelf bij (lavendel kuifpunt, rood tussen snavel en oog): `awki_r4_accenten.png`.
+- Besluit Jordi: de Sapa Inca wordt een late evolutie (Bisharp → Kingambit-idee); de awki mag er al sterk en "fully evolved" uitzien. In `POKEMON.md`.
+
+### [v0.0.228] - Awki: frontsprite kleur ronde 1
+- Maker-agent (poedelmot-regels, gereedschap van de hatun runa): silhouet-diff 0 (1396 px), Jordi's zes punten (vleugellijnen, buik→vleugel, poten, onderkant kuifpunt, belijning/schaduw kuif, oog) verwerkt. Vel: `docs/concept/sprites/awki/kleur_r1/vel.png`.
+
+### [v0.0.229] - Awki: frontsprite kleur ronde 2
+- Vleugellijnen doorlopend per veer (Jordi: "het belangrijkste"), karmijnvlak in de opgeheven vleugel, gat naast de hals transparant (8 px silhouetafwijking, volgt het model), keel volgens het model, rustigere kuifvoet, lavendel lichter. Vel: `docs/concept/sprites/awki/kleur_r2/vel.png`.
+
+### [v0.0.230] - Awki: frontsprite kleur ronde 3
+- Gele veerpunten en karmijnlijnen op de modelpixels, kuif met lengtestrepen en rode selout, rustige kuifvoet, leesbaar oog (iris + glans), tweetonige snavel. Maker ziet geen zwakke punten meer; volgende: keurder. Vel: `docs/concept/sprites/awki/kleur_r3/vel.png`.
+
+### [v0.0.231] - Awki: keuring + ronde 4
+- Keurder: alles PASS op de twee eisen (incl. Jordi's punten) behalve 4 staartpixels; die gerepareerd in `kleur_r4/`. Jordi: "mooi al, stuur maar naar de eindkeuring".
+
+### [v0.0.232] - Awki: eindkeuring + kandidaat
+- Eindkeuring (Dragonfly Cave, naast Taillow/Swellow/Pidgeotto/Fearow/Ho-Oh): 16/17 PASS; 2 staartpixels gerepareerd in `kleur_r5/` (kandidaat, `awki_8x.png`). Formaat 1388 px.
+
+### [v0.0.233] - Awki frontsprite af
+- Jordi: "rond af". Ronde 5 is de frontsprite: `docs/concept/sprites/awki/af/` (`awki.png`, `awki_8x.png`, `normal.pal`). 25 frontsprites af (na merge met main). Lessen in `SPRITE_WERKWIJZE.md` (awki) en `GEMINI.md`.
+
+### [v0.0.234] - Olinguito (Bandingo): Gemini-prompt voor een verbeterronde
+- Jordi wil Bandingo verbeteren via Gemini. Prompts (v1–v4) en bijlagen in `docs/concept/sprites/olinguito_v2/gemini/`; v1 kopieerde de oude sprite bijna letterlijk, v4 gaf een betere pose.
+
+### [v0.0.235] - Olinguito (Bandingo): nieuwe frontsprite (Gemini-pose + oude inkleuring)
+- Jordi: pose en kopvorm van Gemini (gladgemaakt), inkleuring van de oude sprite (rood oog, masker, patroon rond oog en neus, kruin, geen mond), lijf met Gen 3-schaduw.
+- 6 rondes (`docs/concept/sprites/olinguito_v2/gemini_samen/`), keuring r5 en eindkeuring r6 (PASS na 7 px). Nieuwe versie: `olinguito_v2/af/olinguito.png`; de oude staat als `af/olinguito_v1.png`.
+
+### [v0.0.236] - Hitmontop-evolutie: Gemini-prompt
 - Nieuwe poging voor de capoeira-evolutie via Gemini: `docs/concept/sprites/hitmontop_evo/gemini/PROMPT.md`, met als bijlagen het goedgekeurde hoofd (`bijlage1_hoofd.webp`) en pose v3 (`bijlage2_pose.png`).
 - Jordi: geen shirt, broek met gele en groene strepen, capoeira-koord aan de broek, armbanden à la Muay Thai maar in capoeira-stijl. Open: grondkleur broek (wit/blauw) en kleur van het koord.
 
-### [v0.0.212] - Hitmongroove: ontwerp bevroren
+### [v0.0.237] - Hitmongroove: ontwerp bevroren
 - Gemini-rondes 1–5 voor de Hitmontop-evolutie (`hitmontop_evo/gemini/README.md`); ronde 5 bevroren als model (`referenties/gemini_gekozen_capoeira.png`) met Jordi's wijzigingen: benen i.p.v. broek en bolle torso via kleur, vuisten als bollen, steunarm korter, koordband om de steunarm.
 - Naam: **Hitmongroove** (Jordi).
 - Les in `docs/lessen/GEMINI.md`: een eerder Gemini-plaatje als bijlage in een nieuw gesprek wordt gekopieerd; een stickman leest hij niet als pose.
 
-### [v0.0.213] - Hitmongroove frontsprite af
+### [v0.0.238] - Hitmongroove frontsprite af
 - Frontsprite van Hitmongroove (capoeira-evolutie van Hitmontop, Fighting/Ground): `docs/concept/sprites/hitmontop_evo/af/hitmongroove.png` (+ `_8x.png`), naar Jordi's Gemini-model in 5 rondes (`sprite_gemini/ronde1–5`).
 - Keuzes van Jordi: benen B (met wit), torso c, ogen van Hitmontop, steunarm een derde korter met arm A (smallere koordband, taps), hoorn op modelmaat.
 - Strenge eindkeuring ronde 5: eindkeuring en Gen 3 PASS, Dragonfly Cave na 3 pixelreparaties (schouder, hoornpunt, oksel) in orde. Ter info: de geeltinten hebben ongelijke stappen (paletkeuze).

@@ -1,0 +1,44 @@
+# ronde 3 bovenop stappen/r3_basis.txt (oude kop +2,+3). Naden kop/hals:
+24 32 .
+25 32 .
+29 32 3
+30 32 34
+31 32 34
+32 31 334
+33 31 334
+34 31 334
+35 31 334
+36 31 334
+37 30 3334
+38 28 33344
+39 27 3333
+40 27 333
+41 25 3331
+42 24 1133
+43 21 ....
+44 20 ..
+45 13 .....
+# verre achterpoot naar Gemini (dij x38-40, scheen x36-39, roze voet x35-38 r46-47)
+40 34 4444333
+41 35 44133
+42 35 331332
+43 35 3133221
+44 35 1332211
+45 35 1322111
+46 35 eeff11
+47 35 ffff1
+48 35 11
+# nabije klauwen gebogen
+56 24 .1c1c1
+57 24 1c1c1
+58 24 1c1d1
+59 23 1d1d1.
+60 23 1d11..
+61 23 .1...
+# nabije klauwen v2: elke klauw 4-verbonden (2 px op de knik), één doorlopende scheidingslijn
+56 23 .1cc1c1
+57 23 .1c1cc1
+58 23 1cc1d1.
+59 23 1d1dd1.
+60 23 1d1d1..
+61 23 .1.1...

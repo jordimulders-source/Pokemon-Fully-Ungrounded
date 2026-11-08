@@ -967,3 +967,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ter vergelijking (Jordi: "puur om even te kijken"): nieuwe versie met de ogen van de oude sprite, 1-op-1 / huidige grootte / iets groter: `gemini_sprite/r9/vel_oude_ogen.png`. `af/` ongewijzigd.
 - Jordi: "oude ogen 1 op 1 ... wordt dit het ontwerp" → ogen van de oude sprite (V1) in `af/nachtaap_fase3.png` (+ `_8x`, `voor_na.png`). Muriqui-ontwerp definitief.
 - Jordi: rechte lijn rechts aan de healerhand ("Zou dat nog iets smoother kunnen?"). Opties `gemini_sprite/r10/vel_hand.png`: A hoek rechtsonder rond, B + muis van de hand bolt 1 px uit (gloed volgt). `af/` ongewijzigd.
+- Jordi: "A lost het heel netjes op" → healerhand met ronde hoek rechtsonder (`gemini_sprite/r10/C.png`, optie A) in `af/nachtaap_fase3.png` (+ `_8x`, `voor_na.png`).

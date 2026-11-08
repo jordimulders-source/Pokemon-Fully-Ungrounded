@@ -155,3 +155,4 @@ Jordi 5 nov: "de bladeren moeten helemaal weg uit het ontwerp" · "zijn dit ding
 - **Gemini ronde 4 gekozen** (`gemini/gekozen_r4.png`, Jordi letterlijk in `gemini/PROMPT_MURIQUI.md`): sprite volledig overnemen; alleen ogen neutraler ("wat te vrolijk") en rugpatroon: 3 bogen van het Gemini-type, ongeveer als het origineel (`af/`), meeschalend met de rugvorm. Werk in `gemini_sprite/`.
 - **Af (8 nov):** Gemini-versie met ogen O3 (Absol), rugbogen R2 (langs de romp-as) en Gen 3-lichtronde → `af/nachtaap_fase3.png`; oude versie in `af/oud_voor_gemini/`.
 - **Definitief (8 nov):** ogen van de oude sprite 1-op-1 (`gemini_sprite/r9/V1.png`) i.p.v. O3; Jordi: "wordt dit het ontwerp".
+- Healerhand: hoek rechtsonder rond (r10 optie A, Jordi 8 nov).

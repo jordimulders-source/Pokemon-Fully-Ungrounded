@@ -988,3 +988,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.222] - Soulibri
 - Soulibri = werknaam kolibrie (Jordi). Vel bijgewerkt.
+
+### [v0.0.223] - Curiqui, Lanymph: alle afgemaakte sprites hebben een naam
+- Curiqui (muriqui) en Lanymph (poedelmot) als werknaam (Jordi). Alle 27 afgemaakte frontsprites hebben nu een werknaam; overzichtsvel `docs/concept/sprites/showcase/frontsprites_af.png` bijgewerkt.

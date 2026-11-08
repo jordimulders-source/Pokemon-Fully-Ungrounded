@@ -2356,7 +2356,7 @@ Cry_Dunsparce::
 	.incbin "sound/direct_sound_samples/cries/dunsparce.bin"
 .endif
 
-.if P_GEN_9_CROSS_EVOS == TRUE
+.if P_GEN_9_CROSS_EVOS == TRUE && FU_DUDUNSPARCE == TRUE
 	.align 2
 Cry_Dudunsparce::
 .if TESTING == FALSE

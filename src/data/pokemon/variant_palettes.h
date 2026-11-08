@@ -1418,7 +1418,7 @@ static const u16 sVariants_Forretress[] = INCBIN_U16("graphics/pokemon/forretres
 #if (P_FAMILY_DUNSPARCE)
 static const u16 sVariants_Dunsparce[] = INCBIN_U16("graphics/pokemon/dunsparce/variants.gbapal");
 #endif
-#if (P_FAMILY_DUNSPARCE) && (P_GEN_9_CROSS_EVOS)
+#if (P_FAMILY_DUNSPARCE) && (P_GEN_9_CROSS_EVOS) && FU_DUDUNSPARCE
 static const u16 sVariants_Dudunsparce[] = INCBIN_U16("graphics/pokemon/dudunsparce/variants.gbapal");
 #endif
 #if (P_FAMILY_GLIGAR)
@@ -5053,7 +5053,7 @@ const struct VariantPalettes gVariantPalettes[] =
 #if (P_FAMILY_DUNSPARCE)
     {gMonPalette_Dunsparce, sVariants_Dunsparce, sVariantNames_dunsparce},
 #endif
-#if (P_FAMILY_DUNSPARCE) && (P_GEN_9_CROSS_EVOS)
+#if (P_FAMILY_DUNSPARCE) && (P_GEN_9_CROSS_EVOS) && FU_DUDUNSPARCE
     {gMonPalette_Dudunsparce, sVariants_Dudunsparce, sVariantNames_dunsparce},
 #endif
 #if (P_FAMILY_GLIGAR)

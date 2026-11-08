@@ -1012,3 +1012,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.229] - Mate: vorm of origineel open
 - `IDEEEN.md`/`POKEMON.md`: voor mate is nog open of het een Poltchageist/Sinistcha-vorm of een originele Pokémon wordt.
+
+### [v0.0.230] - Dudunsparce uit de ROM
+- Nieuwe schakelaar `FU_DUDUNSPARCE` (FALSE) in `include/config/species_enabled.h`: Dudunsparce (beide vormen) is uit de soortdata, vormtabel, kleurvarianten en kreten; Dunsparce evolueert niet meer met Hyper Drill (Jordi, 8 nov). Dundragoon komt later als evolutie.
+- `IDEEEN.md`/`POKEMON.md`: condor-Pokémon sowieso; Venomoth-vuurvlieg (Electric/Fire) bij de Venomoth-regional form.
+- ROM: `__rom_end` 0x08E16B18, ±17,9 MB vrij.

@@ -6,14 +6,15 @@ Alles wat Jordi tijdens het brainstormen noemt, in steekwoorden. Het concept (`d
 Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de secties eronder.
 
 **Sowieso doen**
-- **Dundragoon:** lome, grappige draakevolutie van Dunsparce, Drampa-achtig; tweede vertakking naast Dudunsparce; **Dudunsparce komt niet in de game** (Jordi, 8 nov).
+- **Dundragoon:** lome, grappige draakevolutie van Dunsparce, Drampa-achtig; tweede vertakking naast Dudunsparce; **Dudunsparce komt niet in de game** (Jordi, 8 nov; uit de ROM sinds v0.0.230, Hyper Drill laat Dunsparce niet meer evolueren).
 - **Een Ice/Poison-Pokémon** (typing bestaat nog niet; invulling nog in de brainstorm, zie hieronder).
 - **Vuurwerk** (Fire/Fairy, FAKEMON_PITCH #83).
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).
 - **Yanma/Yanmega:** "gaan we nog iets mee doen voor bug/dragon".
-- **Iets met een condor** (Jordi, 8 nov; zie ook de condor-legendary en de regionale vogel in `POKEMON.md`).
+- **Een condor-Pokémon** (Jordi, 8 nov: "Ik wil een condor pokemon erin"; Hanan Pacha is in `POKEMON.md` al een condor).
+- **Venomoth-vuurvlieg** (Electric/Fire), zie `POKEMON.md`.
 
 **Brainstormfase**
 - Invulling van de Ice/Poison-Pokémon (aardappel/chuño, Tentacool-vorm en ozongat: Jordi niet overtuigd; nieuwe voorstellen: bevriezende gifkikker, bedorven ijsje, bevriezing-ijsgeest).

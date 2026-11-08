@@ -615,7 +615,7 @@ gCryTable::
 .endif @ P_FAMILY_PINECO
 .if P_FAMILY_DUNSPARCE == TRUE
 	cry Cry_Dunsparce
-.if P_GEN_9_CROSS_EVOS == TRUE
+.if P_GEN_9_CROSS_EVOS == TRUE && FU_DUDUNSPARCE == TRUE
 	cry Cry_Dudunsparce
 .endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_DUNSPARCE
@@ -3189,7 +3189,7 @@ gCryTable_Reverse::
 .endif @ P_FAMILY_PINECO
 .if P_FAMILY_DUNSPARCE == TRUE
 	cry_reverse Cry_Dunsparce
-.if P_GEN_9_CROSS_EVOS == TRUE
+.if P_GEN_9_CROSS_EVOS == TRUE && FU_DUDUNSPARCE == TRUE
 	cry_reverse Cry_Dudunsparce
 .endif @ P_GEN_9_CROSS_EVOS
 .endif @ P_FAMILY_DUNSPARCE

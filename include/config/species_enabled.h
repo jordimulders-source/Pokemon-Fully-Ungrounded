@@ -518,6 +518,7 @@
 #define FU_BRAVIARY_HISUI                FALSE // Hisuian Braviary
 #define FU_GOOMY_HISUI                   FALSE // Hisuian Sliggoo en Goodra
 #define FU_AVALUGG_HISUI                 FALSE // Hisuian Avalugg
+#define FU_DUDUNSPARCE                   FALSE // Dudunsparce (Jordi, 8 nov: komt niet in de game; Dunsparce krijgt Dundragoon)
 
 // =====================================================================
 // Fully Ungrounded: legendaries, mythicals, Ultra Beasts en paradoxen.

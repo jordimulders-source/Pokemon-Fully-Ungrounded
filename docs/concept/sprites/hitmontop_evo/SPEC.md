@@ -111,3 +111,6 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 
 ## Sprite ronde 4 (Jordi, 7 nov, letterlijk)
 Bij het vel r4 | r4 glansmidden | r3 | model: "de 3e is het beste, laat die nu even een hele strenge eindkeuring doen, of dit een geloofwaardige hitmontop evo is, of deze sprite in pokemon past, en onze gebruikelijke dragonflycave/gen 3 sprite keuringen, let ook op de vorm van de onderste arm die misschien wat te recht is". Dus: ronde 3 (torso c) is de basis, niet r4.
+
+## Eindkeuring ronde 3 (Jordi, 8 nov, letterlijk)
+"nee de arm mag niet langer, de koordband mag wel smaller als dat er prima uit blijft zien, ga het verder perfectioneren". Ronde 5 = r3 + reparaties uit EINDKEURING.md + smallere koordband + arm taps binnen dezelfde lengte.

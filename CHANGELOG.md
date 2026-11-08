@@ -999,3 +999,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.225] - Nieuwe ronde ideeën
 - `IDEEEN.md`: nieuwe sectie (8 nov) met Jordi's vier richtingen, Dundragoon (lome, grappige draakevolutie van Dunsparce) en de nog niet bestaande typings (Ice/Poison, Fire/Fairy, eventueel Ground/Fairy); repo-check van die typings en voorstellen van Claude (open).
+
+### [v0.0.226] - Reactie op de nieuwe ronde ideeën
+- `IDEEEN.md`: Jordi's reactie (Dundragoon tweede vertakking naast Dudunsparce, vuurwerk ja, Ice/Poison-voorstellen nee, evoluties niet per se).
+- `POKEMON.md`: Pachamama Ground/Fairy; Tiwanaku-Golett en mate-Poltchageist gaan we doen.

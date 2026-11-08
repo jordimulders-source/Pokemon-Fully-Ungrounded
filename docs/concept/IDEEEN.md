@@ -278,3 +278,11 @@ Aanleiding (Jordi): de werkwijze met Gemini werkt; alle eerdere ideeën zijn uit
 - **Normal + Steel/Ice/Rock (staan al in de pitches):** charango (#69, Normal/Steel), chinchilla (#11) en alpaca-poncho (#74, Normal/Ice). Normal/Rock nieuw: de **moai** van Rapa Nui (Paaseiland hoort bij Chili).
 - **Evoluties voor soorten in de dex zonder evolutie, met een lage BST** (repo): Smeargle (250), Volbeat/Illumise, Cryogonal (385), Chatot (411), Spinda (420), Lunatone/Solrock. Haakjes: **Smeargle → muralist van Valparaíso** (pitch #73, street art); **Chatot → ara met kleilik** (pitch #13; papegaai wordt grote Amazone-ara); **Cryogonal → penitentes** (pitch #45, ijspieken als monniken, Ice/Ghost); **Heatmor** is een miereneter (de reuzenmiereneter is Zuid-Amerikaans).
 - **Regional forms:** de top 10 in `DEX_NOMINATIES.md` §5 staat nog open (brilbeer-Teddiursa, boto-Finizen, Tiwanaku-Golett, El Tío-Impidimp, Boitatá-Arbok, Mapinguari-Slaking, mate-Poltchageist, reuzenotter-Buizel, Titicaca-Tympole, pudú/huemul-Deerling).
+
+### Reactie Jordi (8 nov)
+- **Dundragoon:** "het is een tweede vertakking naast dudunsparce en ik denk dat we hem ook ipv doen." (Het laatste deel wordt nog nagevraagd.)
+- **Ice/Poison:** "De aardappel ben ik niet helemaal van overtuigd, evenals de andere ice/poison ideeën." Nog open.
+- **Vuurwerk (Fire/Fairy, FAKEMON_PITCH #83):** "Vuurwerk is wel lachen! Dat zie ik wel zitten."
+- **Pachamama Ground/Fairy:** "ook een goede ja" (zie POKEMON.md, Legendaries).
+- **Evoluties** (Smeargle, Chatot, Cryogonal enz.): "hoef ik niet per se te evolven".
+- **Regional forms:** "de tiwanaku en mate gaan we doen, de rest ben ik nog niet overtuigd van" (zie POKEMON.md, Regional forms).

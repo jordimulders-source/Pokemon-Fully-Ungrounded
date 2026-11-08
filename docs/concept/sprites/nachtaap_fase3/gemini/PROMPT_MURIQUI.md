@@ -92,3 +92,18 @@ AVOID
 - Not Oranguru, Ambipom, Aipom, Infernape, Mew or Alakazam. Not a gibbon or a human; no clothing.
 - No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
 ```
+
+## Ronde 2 (prompt v3) → basis: `basis_r2.png`
+Jordi (8 nov): "beter, ik ben wel fan van de maanvorm. Kleuren van de handen en voeten zijn wel wat willekeurig nu en de tak zit nog steeds niet in de staart, is denk ik niet mogelijk? het patroon op de rug lijkt wel willekeurig, deze maanvorm die uitsteekt op het hoofd ben ik wel fan van, laten we kijken of we een verbeterprompt kunnen doen. Ogen mogen ook groter"
+
+### Verbeterprompt (in hetzelfde gesprek)
+```
+This is much better. Keep everything as it is (pose, silhouette, head shape, the crescent moon sticking out of the head, colors of the fur), and change only these four things:
+
+1. HANDS AND FEET: their colors look random now (one pink, one silver, one grey). Give both hands and both feet the same color, so they clearly belong together. The healing hand keeps its turquoise band of light.
+2. TWIG: the twig is floating next to the tail. The tail must actually HOLD it: the very tip of the tail at the centre of the spiral curls tightly around the twig, like a monkey's prehensile tail gripping a branch. The twig touches and is wrapped by the tail, it does not float.
+3. BACK PATTERN: the light patches on the back look random. Replace them with one clear, deliberate pattern that follows the shape of the body, like the patterns on official Pokémon. No random blotches.
+4. EYES: make the eyes a bit bigger, still turquoise, neutral and calm.
+
+Same 64x64 Gen 3 sprite style, white background, nothing else changed.
+```

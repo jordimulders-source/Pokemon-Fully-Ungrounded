@@ -46,7 +46,8 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Cuyby:** Langhaarbol (Peruaanse langhaarcavia als één bol vacht met vallende lokken, driekleur als strakke vlakken; evolueert tot een wandelende hooiberg). Moet echt Pokémon-stijl worden. **Sprite ronde 3 goedgekeurd** (Jordi 23 okt; `docs/concept/sprites/cuyby/ronde3/`). Eerder: ronde 2: richting goed, nog polijsten (Jordi 23 okt: 'beetje een Hamtaro-look, maar dat zou een Pokémon kunnen zijn'): `docs/concept/sprites/cuyby/ronde2/`.
 
 ## Werknamen (Jordi, 7 nov)
-- "voor nu allemaal goed, dat worden de working names": **Picaraio** (Picapau-evolutie), **Hummlet** (kolibrie fase 1), **Bandingo** (olinguito), **Cholucha** (cholita-lama), **Pupoodle** (poedellarve).
+- "voor nu allemaal goed, dat worden de working names": **Picaraio** (Picapau-evolutie), **Hummlet** (kolibrie fase 1), **Cholucha** (cholita-lama), **Pupoodle** (poedellarve).
+- Werknamen 8 nov: **Bandolingo** (olinguito; vervangt Bandingo, dat te veel op "Mandingo" lijkt; Jordi: lang, "maar bulbasaur en charmander ook"), **Zapacha** (viscacha; "geniaal, bekt lekker"), **Bootoo** (great potoo; "het meest pokemon").
 - Picaraio of Raiopau (8 nov): Jordi "Picaraio dan!" (*pica* = pikken blijft hoorbaar, zoals in Picapau).
 - Alpaca: Jordi denkt aan **Palpaca** (pal + alpaca; "klinkt als een pokemon naam, want flamigo bestaat ook"), nog niet helemaal tevreden, wel beter dan Alpunch/Fluffist/Paqucha.
 - **Palpaca** is ook werknaam (Jordi, 7 nov: "Palpaca mag je ook doen"). Werknamen zijn rond "totdat ze ooit aangepast worden" (Jordi).

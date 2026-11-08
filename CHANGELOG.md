@@ -969,3 +969,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.216] - Picaraio blijft
 - Raiopau overwogen; Jordi kiest Picaraio (POKEMON.md).
+
+### [v0.0.217] - Bandolingo, Zapacha, Bootoo
+- Werknamen (Jordi, 8 nov): Bandolingo (olinguito, vervangt Bandingo), Zapacha (viscacha), Bootoo (great potoo). POKEMON.md, Stand van zaken en overzichtsvel bijgewerkt.

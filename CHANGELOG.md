@@ -868,3 +868,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini-rondes 1–5 voor de Hitmontop-evolutie (`hitmontop_evo/gemini/README.md`); ronde 5 bevroren als model (`referenties/gemini_gekozen_capoeira.png`) met Jordi's wijzigingen: benen i.p.v. broek en bolle torso via kleur, vuisten als bollen, steunarm korter, koordband om de steunarm.
 - Naam: **Hitmongroove** (Jordi).
 - Les in `docs/lessen/GEMINI.md`: een eerder Gemini-plaatje als bijlage in een nieuw gesprek wordt gekopieerd; een stickman leest hij niet als pose.
+
+### [v0.0.213] - Hitmongroove frontsprite af
+- Frontsprite van Hitmongroove (capoeira-evolutie van Hitmontop, Fighting/Ground): `docs/concept/sprites/hitmontop_evo/af/hitmongroove.png` (+ `_8x.png`), naar Jordi's Gemini-model in 5 rondes (`sprite_gemini/ronde1–5`).
+- Keuzes van Jordi: benen B (met wit), torso c, ogen van Hitmontop, steunarm een derde korter met arm A (smallere koordband, taps), hoorn op modelmaat.
+- Strenge eindkeuring ronde 5: eindkeuring en Gen 3 PASS, Dragonfly Cave na 3 pixelreparaties (schouder, hoornpunt, oksel) in orde. Ter info: de geeltinten hebben ongelijke stappen (paletkeuze).
+- Lessen in `docs/lessen/GEMINI.md`.

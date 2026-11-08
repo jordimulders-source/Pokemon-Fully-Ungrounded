@@ -11,7 +11,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Vuurwerk** (Fire/Fairy, FAKEMON_PITCH #83).
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
-- **Mate-vorm van Poltchageist/Sinistcha.**
+- **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).
 - **Yanma/Yanmega:** "gaan we nog iets mee doen voor bug/dragon".
 - **Iets met een condor** (Jordi, 8 nov; zie ook de condor-legendary en de regionale vogel in `POKEMON.md`).
 
@@ -298,7 +298,7 @@ Aanleiding (Jordi): de werkwijze met Gemini werkt; alle eerdere ideeën zijn uit
 - **Ground/Fairy (als Jordi het wil):** het past letterlijk bij **Pachamama** (Moeder Aarde; type nog open).
 - **Normal + Steel/Ice/Rock (staan al in de pitches):** charango (#69, Normal/Steel), chinchilla (#11) en alpaca-poncho (#74, Normal/Ice). Normal/Rock nieuw: de **moai** van Rapa Nui (Paaseiland hoort bij Chili).
 - **Evoluties voor soorten in de dex zonder evolutie, met een lage BST** (repo): Smeargle (250), Volbeat/Illumise, Cryogonal (385), Chatot (411), Spinda (420), Lunatone/Solrock. Haakjes: **Smeargle → muralist van Valparaíso** (pitch #73, street art); **Chatot → ara met kleilik** (pitch #13; papegaai wordt grote Amazone-ara); **Cryogonal → penitentes** (pitch #45, ijspieken als monniken, Ice/Ghost); **Heatmor** is een miereneter (de reuzenmiereneter is Zuid-Amerikaans).
-- **Regional forms:** de top 10 in `DEX_NOMINATIES.md` §5 staat nog open (brilbeer-Teddiursa, boto-Finizen, Tiwanaku-Golett, El Tío-Impidimp, Boitatá-Arbok, Mapinguari-Slaking, mate-Poltchageist, reuzenotter-Buizel, Titicaca-Tympole, pudú/huemul-Deerling).
+- **Regional forms:** de top 10 in `DEX_NOMINATIES.md` §5 staat nog open (brilbeer-Teddiursa, boto-Finizen, Tiwanaku-Golett, El Tío-Impidimp, Boitatá-Arbok, Mapinguari-Slaking, mate, reuzenotter-Buizel, Titicaca-Tympole, pudú/huemul-Deerling).
 
 ### Reactie Jordi (8 nov)
 - **Dundragoon:** "het is een tweede vertakking naast dudunsparce en ik denk dat we hem ook ipv doen." (Het laatste deel wordt nog nagevraagd.)

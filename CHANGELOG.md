@@ -1009,3 +1009,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.228] - Dudunsparce eruit (besluit), Tiwanaku-type open
 - `IDEEEN.md`/`POKEMON.md`: Dudunsparce komt niet in de game (Dundragoon is de draakvertakking van Dunsparce); voor de Tiwanaku-Golett is nog geen type bedacht. Technisch zit Dudunsparce nog in de ROM (Dunsparce evolueert met Hyper Drill); uitzetten gebeurt samen met Dundragoon.
+
+### [v0.0.229] - Mate: vorm of origineel open
+- `IDEEEN.md`/`POKEMON.md`: voor mate is nog open of het een Poltchageist/Sinistcha-vorm of een originele Pokémon wordt.

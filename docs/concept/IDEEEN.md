@@ -6,11 +6,11 @@ Alles wat Jordi tijdens het brainstormen noemt, in steekwoorden. Het concept (`d
 Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de secties eronder.
 
 **Sowieso doen**
-- **Dundragoon:** lome, grappige draakevolutie van Dunsparce, Drampa-achtig; tweede vertakking naast Dudunsparce (vraag open: blijft Dudunsparce erin, of komt Dundragoon in zijn plaats?).
+- **Dundragoon:** lome, grappige draakevolutie van Dunsparce, Drampa-achtig; tweede vertakking naast Dudunsparce; **Dudunsparce komt niet in de game** (Jordi, 8 nov).
 - **Een Ice/Poison-Pokémon** (typing bestaat nog niet; invulling nog in de brainstorm, zie hieronder).
 - **Vuurwerk** (Fire/Fairy, FAKEMON_PITCH #83).
 - **Pachamama Ground/Fairy.**
-- **Tiwanaku-vorm van Golett/Golurk.**
+- **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Mate-vorm van Poltchageist/Sinistcha.**
 - **Yanma/Yanmega:** "gaan we nog iets mee doen voor bug/dragon".
 - **Iets met een condor** (Jordi, 8 nov; zie ook de condor-legendary en de regionale vogel in `POKEMON.md`).

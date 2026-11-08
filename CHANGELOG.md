@@ -1006,3 +1006,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.227] - Ideeën: overzicht sowieso doen / brainstormfase
 - `IDEEEN.md`: bovenaan een overzicht met wat we sowieso doen (Dundragoon, Ice/Poison-Pokémon, vuurwerk, Pachamama Ground/Fairy, Tiwanaku-Golett, mate-Poltchageist, Yanma Bug/Dragon, iets met een condor) en wat nog in de brainstormfase zit.
+
+### [v0.0.228] - Dudunsparce eruit (besluit), Tiwanaku-type open
+- `IDEEEN.md`/`POKEMON.md`: Dudunsparce komt niet in de game (Dundragoon is de draakvertakking van Dunsparce); voor de Tiwanaku-Golett is nog geen type bedacht. Technisch zit Dudunsparce nog in de ROM (Dunsparce evolueert met Hyper Drill); uitzetten gebeurt samen met Dundragoon.

@@ -933,3 +933,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.234] - Muriqui: Gemini-prompt voor een mooiere versie
 - Jordi: de muriqui (nachtaap fase 3) is nog slordig; via Gemini mooier en natuurlijker maken met hetzelfde concept (pose, aansluiting ledematen, healerhand, Nazca-staart met een takje Andes-healingbladeren). Prompt en bijlage: `docs/concept/sprites/nachtaap_fase3/gemini/` (`PROMPT_MURIQUI.md`, `bijlage1_huidige_sprite_8x.png`); blad ingevuld als coca. Alleen de huidige sprite als bijlage (Jordi: "gemini kan wel een hand maken").
+- Prompt herschreven (Jordi): de sprite moet op bijna alle vlakken mooier (gezicht, kopvorm, lijf, ledematen en aansluiting, patroon, staart); alleen de zweefhangende pose is heilig.

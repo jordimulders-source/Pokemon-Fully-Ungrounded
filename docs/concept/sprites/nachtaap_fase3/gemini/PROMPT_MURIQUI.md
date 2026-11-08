@@ -132,3 +132,7 @@ Good. Keep everything as it is (pose, silhouette, head, the crescent moon on the
 
 Same 64x64 Gen 3 sprite style, white background, nothing else changed.
 ```
+
+## Ronde 4 (verbeterprompt A) → **gekozen: `gekozen_r4.png`**
+Jordi (8 nov): "beide maanpatronen kan die niet goed, maar ik moet zeggen, ik ben nu eigenlijk met alles tevreden behalve rugpatroon en ogen, maar dat zijn dingen die jij prima kan fixen denk ik. Hij is wat te vrolijk qua gelaat/ogen, dat moet neutraler, het rugpatroon mag je deze type bogen gebruiken, maar dan ongeveer als het origineel, 3 die meeschalen met de vorm van de rug, kan je dat? voor de rest de sprite volledig overnemen"
+→ Sprite: `../gemini_sprite/` (onderlaag `grid128.png` = Gemini-pixelraster 128×128, `s64.npy` = 2× verkleind).

@@ -152,3 +152,4 @@ Jordi 5 nov: "de bladeren moeten helemaal weg uit het ontwerp" · "zijn dit ding
 
 ## Gemini-herontwerp (8 nov)
 - Jordi: "de muriqui sprite vind ik toch nog wel slordig, dat zouden we gemini nog beter kunnen doen" (letterlijk + uitwerking in `gemini/PROMPT_MURIQUI.md`): concept en model blijven; pose natuurlijker (aansluiting lijf/benen/armen), healerhand, Nazca-spiraalstaart, **de staart houdt een takje met Andes-healingbladeren vast** (bladeren terug). Prompt + bijlage `gemini/bijlage1_huidige_sprite_8x.png`; wacht op Jordi's Gemini-resultaat.
+- **Gemini ronde 4 gekozen** (`gemini/gekozen_r4.png`, Jordi letterlijk in `gemini/PROMPT_MURIQUI.md`): sprite volledig overnemen; alleen ogen neutraler ("wat te vrolijk") en rugpatroon: 3 bogen van het Gemini-type, ongeveer als het origineel (`af/`), meeschalend met de rugvorm. Werk in `gemini_sprite/`.

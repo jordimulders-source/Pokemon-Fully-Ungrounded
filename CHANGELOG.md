@@ -996,3 +996,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: rechte lijn rechts aan de healerhand ("Zou dat nog iets smoother kunnen?"). Opties `gemini_sprite/r10/vel_hand.png`: A hoek rechtsonder rond, B + muis van de hand bolt 1 px uit (gloed volgt). `af/` ongewijzigd.
 - Jordi: "A lost het heel netjes op" → healerhand met ronde hoek rechtsonder (`gemini_sprite/r10/C.png`, optie A) in `af/nachtaap_fase3.png` (+ `_8x`, `voor_na.png`).
 - Overzichtsvel `showcase/frontsprites_af.png` opnieuw gemaakt met de definitieve Curiqui.
+
+### [v0.0.225] - Nieuwe ronde ideeën
+- `IDEEEN.md`: nieuwe sectie (8 nov) met Jordi's vier richtingen, Dundragoon (lome, grappige draakevolutie van Dunsparce) en de nog niet bestaande typings (Ice/Poison, Fire/Fairy, eventueel Ground/Fairy); repo-check van die typings en voorstellen van Claude (open).

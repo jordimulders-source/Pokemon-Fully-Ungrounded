@@ -932,4 +932,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "rond af". Ronde 5 is de frontsprite: `docs/concept/sprites/awki/af/` (`awki.png`, `awki_8x.png`, `normal.pal`). 25 frontsprites af (na merge met main). Lessen in `SPRITE_WERKWIJZE.md` (awki) en `GEMINI.md`.
 
 ### [v0.0.234] - Muriqui: Gemini-prompt voor een mooiere versie
-- Jordi: de muriqui (nachtaap fase 3) is nog slordig; via Gemini mooier en natuurlijker maken met hetzelfde concept (pose, aansluiting ledematen, healerhand, Nazca-staart met een takje Andes-healingbladeren). Prompt en bijlage: `docs/concept/sprites/nachtaap_fase3/gemini/` (`PROMPT_MURIQUI.md`, `bijlage1_huidige_sprite_8x.png`); blad ingevuld als coca.
+- Jordi: de muriqui (nachtaap fase 3) is nog slordig; via Gemini mooier en natuurlijker maken met hetzelfde concept (pose, aansluiting ledematen, healerhand, Nazca-staart met een takje Andes-healingbladeren). Prompt en bijlage: `docs/concept/sprites/nachtaap_fase3/gemini/` (`PROMPT_MURIQUI.md`, `bijlage1_huidige_sprite_8x.png`); blad ingevuld als coca. Alleen de huidige sprite als bijlage (Jordi: "gemini kan wel een hand maken").

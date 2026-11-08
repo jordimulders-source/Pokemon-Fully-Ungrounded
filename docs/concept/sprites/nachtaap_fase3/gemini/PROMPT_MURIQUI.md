@@ -7,11 +7,8 @@ Regels: `docs/lessen/GEMINI.md`. SPEC: `../SPEC.md`. Huidige frontsprite (beta):
 - De bladeren komen dus terug (5 nov waren ze uit het ontwerp): de staart houdt een takje met bladeren vast.
 - "Typische Andes-healingbladeren" in de prompt ingevuld als **coca** (de yatiri leest cocabladeren, zie `POKEMON.md`). Ander blad (bijv. muña) = één woord in de prompt wijzigen.
 
-## Bijlagen (in deze volgorde)
-1. `bijlage1_huidige_sprite_8x.png` (huidige sprite; concept, kleuren, pose)
-2. `../referenties/foto6_muriqui_tekening_hangend.png` (muriqui hangend, één been omhoog)
-3. `../referenties/foto4_moeder_met_jong.jpg` (muriqui-gezicht)
-4. `../referenties/drowzee_gen1_sugimori.png` (healerhand: vijf vingers, palm naar de kijker)
+## Bijlage
+1. `bijlage1_huidige_sprite_8x.png` (huidige sprite), **de enige bijlage** (Jordi, 8 nov: "we gaan alleen de muriqui sprite als bron gebruiken, geen andere afbeeldingen. gemini kan wel een hand maken").
 
 Nieuw gesprek per poging; niet lang bijsturen (Gemini drijft af).
 
@@ -20,19 +17,16 @@ Nieuw gesprek per poging; niet lang bijsturen (Gemini drijft af).
 ```
 Redraw an existing original Pokémon as a cleaner, more natural official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
 
-ATTACHMENTS
-- Attachment 1 is the current sprite of this Pokémon. KEEP its concept, pose idea, colors and features. It is too messy: the body, arms and legs do not connect naturally, the healing hand looks like a glove, and the tail is stiff. Make it more beautiful and natural, not a different design.
-- Attachment 2 is a drawing of the real animal, a muriqui (woolly spider monkey, Brachyteles, Atlantic Forest of Brazil), hanging with one leg up: use it for anatomy and how the long limbs attach to the body.
-- Attachment 3 is a photo of a muriqui face.
-- Attachment 4 shows the kind of hand I want for the healing hand: five fingers, palm flat towards the viewer.
+ATTACHMENT
+- The attachment is the current sprite of this Pokémon. KEEP its concept, pose idea, colors and features. It is too messy: the body, arms and legs do not connect naturally, the healing hand looks like a glove, and the tail is stiff. Make it more beautiful and natural, not a different design.
 
 THE CREATURE
 - Final stage of a Psychic starter line (owl monkey line). A gentle healer who looks a bit sinister. Lore: it channels plants and branches with psychic power, so it hangs from invisible branches in mid-air.
-- Anatomy of a muriqui: very long thin arms and legs, slim body, long prehensile tail. Exactly two arms, two legs and one tail.
+- Anatomy of a real muriqui (woolly spider monkey, Brachyteles, Atlantic Forest of Brazil): very long thin arms and legs, slim body, long prehensile tail. Exactly two arms, two legs and one tail.
 - Face: big bare dark purple face mask framed by fur, straight brow line, small turquoise eyes close together under the brow (stern, not sleepy, no eyelids), light pink-lilac muzzle with nostrils at the top, straight neutral mouth, no ears visible. A white crescent moon on top of the head.
 - Colors: lavender-blue violet fur (lighter and bluer than Oranguru), darker violet in the shadows, three broad light silver-blue curved bands across the middle of the back that wrap around the body.
 
-POSE AND VIEW (same as attachment 1, but natural)
+POSE AND VIEW (same as the attachment, but natural)
 - It floats low in the air, body almost horizontal and tilted up towards the back, head at the front left in 3/4 view looking at the viewer.
 - Near arm raised up and forward, the hand closed in a fist around an invisible branch.
 - One leg raised straight up, the foot curled around an invisible branch. The other leg hangs relaxed down and back. Both legs grow naturally out of the hips, the arms out of the shoulders; the body reads as one smooth animal, like a muriqui really hanging.

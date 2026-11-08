@@ -1,0 +1,15 @@
+# kuif: gesloten vlammende waaier, basis goud/geel (9/A) -> oranje 7 -> rood 6 met oranje lengtebanen -> lavendel punt E met donkerpaarse schaduwband F; omlijning onder/rechts 5, lavendel F
+3: 43=F
+4: 41=FFEF
+5: 39=FFEEEF
+6: 37=566FFEEF
+7: 36=56676FFF
+8: 35=5667666FF
+9: 33=5667766666F
+10: 32=677977676665
+11: 31=89977677665
+12: 30=8A9A9777765
+13: 29=8A99799765
+14: 28=8AA9A995
+15: 26=85A99A5431
+16: 25=8A9569A84431

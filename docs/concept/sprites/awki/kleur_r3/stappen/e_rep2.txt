@@ -1,0 +1,58 @@
+# ronde 2 reparaties (ed.py-formaat "y: x=tekens", '=' laten staan). Palet r2: D = karmijn (vleugelvlak), 1 = omlijning+masker (oude D samengevoegd)
+# Palet r2: D = karmijn (vleugelvlak, nieuw); masker = omlijning 1 (oude D samengevoegd; proef met bruin 2 liet het masker wegvallen), oog = glans B + iris 8
+15: 2=....1AAA96777544
+16: 2=..88A1AA9767DD5441
+17: 2=..8AAA1A97765DD5441
+18: 2=..8AAAA17776D5DD5441
+19: 2=...8AAA9677DD55DD541
+20: 2=...8AAAA776DDD5DD54111
+21: 2=....1AA9777655DDD531
+22: 2=...881A9777DD55DD5311222
+23: 2=...8AA889776DDDDD5321..1
+24: 2=...8AAAAA7655DDDD5321..1
+25: 2=....1AAA97775225D5321..1
+26: 2=.....111A976D555DD521..1
+27: 2=........11976DDDDDD52111
+28: 2=.....888AA8655555DDD5223
+29: 2=......8AAAA97777DDDD5223
+30: 2=......18AAAA966DDDDDD534
+31: 2=........1188977777DDD589
+32: 2=........8AAAA97776DD6899
+33: 2=........11AAAA867777D899
+# (G) gevouwen vleugel: veerlijn A (42,37)-(42,38) in 2 naar de donkere rand, lijn B (39,39) sluit aan op de band rij 40-41 (model fijn.py x42.5 rij 37-38, x39.5 rij 38.5-40)
+37: 42=2
+38: 42=2
+39: 39=2
+# (1) gat tussen vleugel en hals transparant (23-24, 23-26; zie rijen 23-26 hierboven); bovenrand rij 22 = kin/ondersnavel 1/2 zoals het model
+22: 22=122221
+# (2) keel: modelvorm rij 22-27 (wit x28-31 onder het masker, cremegrijze C alleen op de modelplekken: kin (27,23)/(26,24), rechts (32,22)/(33,24)/(32,25)/(31,26), onder (26,27)/(28,27))
+22: 28=BBBBC3
+23: 26=3C
+24: 26=C
+27: 26=CBC3
+28: 27=4
+# (6) masker: (31,17) geel-oker zoals het model, (34,20) oker (oorvlek), (29,21) bruin 3 (model 119,74,77); pupil 1 (30-31,18)
+17: 31=9
+20: 34=8
+21: 29=3
+# (4) kuifbasis: doorlopende donkerrode lijn (27,15)-(28,16)-(29,16) tussen kuif en geel voorhoofdsrandje; voorhoofd rustig geel A/9 met oker 8 tegen het oog
+16: 28=559A
+18: 29=8
+# (4)(5) kuif: lengtestrepen 7 netjes op de modelplekken, top rood
+7: 38=6
+10: 37=666
+11: 38=6
+# (2) keelonderkant: C-rij (26-28,27) als creme/grijze schaduw onderaan (model 186/243/227 -> zacht), geen losse C op (32,22)
+27: 27=C
+22: 32=B
+# (5) kuif iets lichter: selout bovenrand 8 i.p.v. 6 op (32,10) (model 9), top (38,6) rood 6 i.p.v. 5
+10: 32=8
+6: 38=6
+24: 27=C  # kin-creme 3 px (model 226,220,205)
+# (L) veerlijnen doorlopend gemaakt (geen gaten tussen tiplijn, oranje en karmijn): S1 in geel oker 8 (model fijn 8 op (9.5,12.5),(10,14)); S2 (11,19) 6 sluit (10,19) op (12,20) aan; S3 (10,23) 8, (11,23) 6 naar (12,24); S5 (14,31) 8
+12: 9=8
+13: 10=8
+14: 10=8
+19: 11=6
+23: 10=86
+31: 14=8

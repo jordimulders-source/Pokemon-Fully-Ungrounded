@@ -14,7 +14,7 @@ Jordi (8 nov, tweede bericht): "het gaat erom dat we een slordige sprite hebben 
 
 Nieuw gesprek per poging; niet lang bijsturen (Gemini drijft af).
 
-## Prompt
+## Prompt v2 (afgekeurd, ronde 1: `afgekeurd_r1.png`)
 
 ```
 Redesign this Pokémon as a beautiful official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
@@ -45,5 +45,50 @@ STYLE AND FORMAT
 AVOID
 - Not Oranguru, Ambipom, Aipom, Infernape, Mew or Alakazam. Not a gibbon or a human; no clothing.
 - No starfish pose with stiff straight limbs, no glove or mitten hand, no balloon arms.
+- No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
+```
+
+## Ronde 1 (Jordi, 8 nov, letterlijk)
+"nog steeds niet tevreden, de handen zijn nog steeds ontzettend onnatuurlijk, en het silhouet is nog niet mooi, de maanvorm op het hoofd is slechter dan het origineel en hij kijkt boos, waar die heel neutraal moet kijken. de tak zit in de bovenste voet wat ook op een hand lijkt, die moet in de staart. Het rugpatroon is echt lelijk, net zo lelijk als wat we al hadden, je prompt wilde de originele sprite denk ik te true to form houden, maak een nieuwe prompt, ik start een nieuw gesprek in gemini, wel met de originele sprite nog steeds erbij"
+
+## Prompt v3 (nieuw gesprek, bijlage: alleen `bijlage1_huidige_sprite_8x.png`)
+
+```
+Design a Pokémon as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). Draw it fresh, as a Game Freak artist would.
+
+ATTACHMENT
+- The attachment is an old, failed sprite of this Pokémon. Use it ONLY as a rough reference for the concept, the colors and the pose idea. Do NOT trace it or stay close to its shapes: its silhouette, hands, head, body, back pattern and tail are all badly drawn. Redesign all of those so they look like they belong to an official Pokémon.
+
+THE CREATURE
+- Final stage of a Psychic starter line from South America. Based on a real muriqui (woolly spider monkey, Brachyteles): long arms and legs, slim body, long prehensile tail. Exactly two arms, two legs and one tail.
+- A gentle healer. It hangs from invisible branches in mid-air with psychic power.
+- Expression: completely NEUTRAL and calm. Not angry, not frowning, not smiling, not sleepy.
+- Face: a muriqui face: bare dark face framed by fur, small turquoise eyes, a lighter muzzle, a neutral closed mouth.
+- On the head: a crescent moon like in the attachment, a broad white crescent that follows the curve of the top of the head. Not a small icon or sticker on the forehead.
+- Colors: lavender-blue violet fur, turquoise eyes, silver-blue hands.
+- Back pattern: the pattern in the attachment is ugly. Design a clean, simple back pattern the way Game Freak would: a few large, calm shapes that follow the 3D form of the body. No scratchy, wavy or thin stripes.
+
+THE POSE (keep this idea, the only thing that is fixed)
+- It floats low in the air as if hanging from invisible branches. Body almost horizontal and tilted up towards the back, head at the front left in 3/4 view, looking at the viewer.
+- One arm raised up and forward, its hand gripping an invisible branch.
+- One leg raised up high, its FOOT gripping an invisible branch. It is clearly a monkey foot, not a hand, and it holds NOTHING visible.
+- The other leg hangs relaxed down and back.
+- The other arm reaches forward-down under the head: the healing hand, open, palm towards the viewer, like a healer casting a healing spell in anime. Around this hand a soft turquoise band of light with its own outline.
+- Tail up behind the body, ending in an open spiral like the Nazca monkey geoglyph. ONLY the tip of the TAIL holds a small twig with a few coca leaves.
+
+HANDS (most important, they failed every time)
+- Both hands must look natural and anatomically believable, drawn like the hands of official Pokémon such as Machamp, Hitmonchan, Mr. Mime or Medicham: correct size for the arm (not huge, not tiny), fingers in proportion, a clear wrist.
+- No glove, mitten, cartoon cushion hand or stiff spread fingers.
+
+SILHOUETTE
+- A beautiful, readable silhouette with flowing lines, like an official Pokémon: limbs tapering naturally, legs growing out of the hips, arms out of the shoulders, the body as one smooth animal. No starfish pose, no stiff straight tubes.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Gen 3 sprites, large calm shading areas, no noise.
+- Plain white background. No ground, rock, shadow or base. No visible branch except the twig in the tail.
+- No sparkles, motion lines, text or effects besides the band of light around the healing hand. One single creature.
+
+AVOID
+- Not Oranguru, Ambipom, Aipom, Infernape, Mew or Alakazam. Not a gibbon or a human; no clothing.
 - No plush toy, chibi, Neopets or mascot look; no oversized sparkly eyes.
 ```

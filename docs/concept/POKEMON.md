@@ -46,7 +46,16 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Cuyby:** Langhaarbol (Peruaanse langhaarcavia als één bol vacht met vallende lokken, driekleur als strakke vlakken; evolueert tot een wandelende hooiberg). Moet echt Pokémon-stijl worden. **Sprite ronde 3 goedgekeurd** (Jordi 23 okt; `docs/concept/sprites/cuyby/ronde3/`). Eerder: ronde 2: richting goed, nog polijsten (Jordi 23 okt: 'beetje een Hamtaro-look, maar dat zou een Pokémon kunnen zijn'): `docs/concept/sprites/cuyby/ronde2/`.
 
 ## Werknamen (Jordi, 7 nov)
-- "voor nu allemaal goed, dat worden de working names": **Picaraio** (Picapau-evolutie), **Hummlet** (kolibrie fase 1), **Bandingo** (olinguito), **Cholucha** (cholita-lama), **Pupoodle** (poedellarve).
+- "voor nu allemaal goed, dat worden de working names": **Picaraio** (Picapau-evolutie), **Hummlet** (kolibrie fase 1), **Cholucha** (cholita-lama), **Pupoodle** (poedellarve).
+- Werknamen 8 nov: **Bandolingo** (olinguito; vervangt Bandingo, dat te veel op "Mandingo" lijkt; Jordi: lang, "maar bulbasaur en charmander ook"), **Zapacha** (viscacha; "geniaal, bekt lekker"), **Bootoo** (great potoo; "het meest pokemon").
+- **Kiskiddo** (hatun runa, fase 1 koningstiran-lijn): Jordi "Kiskiddo akkoord" (8 nov).
+- **Rollen (Jordi, 8 nov):** de Inca-vogellijn (Kiskiddo → awki → Sapa Inca) wordt de regional birds, "de pidgey van deze regio"; de viscacha (Zapacha) wordt de electric rodent. De early route insect komt nog; Pupoodle is dat niet.
+- **Moonkey** (nachtaap fase 2): Jordi "Moonkey is echt heel geniaal, die doen we" (8 nov).
+- Werknamen 8 nov (Jordi): **Llamauler** (lama fase 2; "toch het beste"), **Vigiloot** (wasbeer; "voor nu"), **Nocticue** (nachtaap fase 1), **Princadee** (awki; koningstiran, geen kiskadie: "wil wel qua immersie goed blijven zitten").
+- **Sunperor** (Sapa Inca): Jordi "voorlopig toch voor Sunperor, maar houd intirano in gedachten mocht ik in de toekomst weer gaan twijfelen" (8 nov). Reserve: **Intirano** (Inti + tirano; traditie van Entei/Raikou/Suicune/Tapu).
+- **Soulibri** (kolibrie, Ghost/Flying; na Hummlet): Jordi "Soulibri is goed" (8 nov).
+- **Curiqui** (muriqui, nachtaap fase 3) en **Lanymph** (poedelmot): Jordi (8 nov); Lunurse afgewezen ("nurse heeft in de pokemon franchise toch teveel een link met nurse joy"). Daarmee heeft elke afgemaakte frontsprite een (werk)naam.
+- Picaraio of Raiopau (8 nov): Jordi "Picaraio dan!" (*pica* = pikken blijft hoorbaar, zoals in Picapau).
 - Alpaca: Jordi denkt aan **Palpaca** (pal + alpaca; "klinkt als een pokemon naam, want flamigo bestaat ook"), nog niet helemaal tevreden, wel beter dan Alpunch/Fluffist/Paqucha.
 - **Palpaca** is ook werknaam (Jordi, 7 nov: "Palpaca mag je ook doen"). Werknamen zijn rond "totdat ze ooit aangepast worden" (Jordi).
 - **Overzichtsvel:** ronde namen tussen aanhalingstekens (Jordi, 7 nov), ook "DJ Rotom" en "Silicobra" (regional). Script: `docs/concept/sprites/showcase/maak_vel.py`.

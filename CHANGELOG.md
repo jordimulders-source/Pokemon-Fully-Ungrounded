@@ -966,5 +966,33 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Lichtronde r8 (hooglichttint vacht, benen als cilinders), eindkeuring GOED + 1 px. **Frontsprite af:** `docs/concept/sprites/nachtaap_fase3/af/nachtaap_fase3.png` (+ `_8x`, `normal.pal`, `voor_na.png`); oude versie in `af/oud_voor_gemini/`.
 - Ter vergelijking (Jordi: "puur om even te kijken"): nieuwe versie met de ogen van de oude sprite, 1-op-1 / huidige grootte / iets groter: `gemini_sprite/r9/vel_oude_ogen.png`. `af/` ongewijzigd.
 - Jordi: "oude ogen 1 op 1 ... wordt dit het ontwerp" → ogen van de oude sprite (V1) in `af/nachtaap_fase3.png` (+ `_8x`, `voor_na.png`). Muriqui-ontwerp definitief.
+
+### [v0.0.216] - Picaraio blijft
+- Raiopau overwogen; Jordi kiest Picaraio (POKEMON.md).
+
+### [v0.0.217] - Bandolingo, Zapacha, Bootoo
+- Werknamen (Jordi, 8 nov): Bandolingo (olinguito, vervangt Bandingo), Zapacha (viscacha), Bootoo (great potoo). POKEMON.md, Stand van zaken en overzichtsvel bijgewerkt.
+
+### [v0.0.218] - Kiskiddo, rollen, overzichtsvel met 27 sprites
+- Kiskiddo = werknaam hatun runa (Jordi). Rollen (Jordi): Inca-vogellijn = regional birds ("de pidgey van deze regio"), Zapacha = electric rodent; early route insect komt nog (niet Pupoodle).
+- Overzichtsvel opnieuw: nieuwe olinguito- en muriqui-sprite, awki (Fire/Flying) en Hitmongroove (Fighting/Ground) erbij; volgorde starters, Cuyby/Cuychu, vogellijn, Zapacha, rest.
+
+### [v0.0.219] - Moonkey
+- Moonkey = werknaam nachtaap fase 2 (Jordi). Vel bijgewerkt.
+
+### [v0.0.220] - Llamauler, Vigiloot, Nocticue, Princadee
+- Werknamen (Jordi, 8 nov); POKEMON.md, Stand van zaken en vel bijgewerkt.
+
+### [v0.0.221] - Sunperor
+- Sunperor = werknaam Sapa Inca (Jordi); Intirano als reserve. Vel bijgewerkt.
+
+### [v0.0.222] - Soulibri
+- Soulibri = werknaam kolibrie (Jordi). Vel bijgewerkt.
+
+### [v0.0.223] - Curiqui, Lanymph: alle afgemaakte sprites hebben een naam
+- Curiqui (muriqui) en Lanymph (poedelmot) als werknaam (Jordi). Alle 27 afgemaakte frontsprites hebben nu een werknaam; overzichtsvel `docs/concept/sprites/showcase/frontsprites_af.png` bijgewerkt.
+
+### [v0.0.224] - Curiqui: healerhand rond
 - Jordi: rechte lijn rechts aan de healerhand ("Zou dat nog iets smoother kunnen?"). Opties `gemini_sprite/r10/vel_hand.png`: A hoek rechtsonder rond, B + muis van de hand bolt 1 px uit (gloed volgt). `af/` ongewijzigd.
 - Jordi: "A lost het heel netjes op" → healerhand met ronde hoek rechtsonder (`gemini_sprite/r10/C.png`, optie A) in `af/nachtaap_fase3.png` (+ `_8x`, `voor_na.png`).
+- Overzichtsvel `showcase/frontsprites_af.png` opnieuw gemaakt met de definitieve Curiqui.

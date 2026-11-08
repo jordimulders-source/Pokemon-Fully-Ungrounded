@@ -5,29 +5,31 @@ os.chdir(R0+"docs/concept/sprites")
 S=3; C=6
 items=[
 ("alpaca/ronde17/variant_kop/anim_front.png",'"Palpaca"',"fight"),
-("lama/fase2/af/lama.png","Lama","fight"),
+("lama/fase2/af/lama.png",'"Llamauler"',"fight"),
 ("lama/fase3/af/lama3.png",'"Cholucha"',"fight"),
-("olinguito_v2/af/olinguito.png",'"Bandingo"',"dark"),
+("olinguito_v2/af/olinguito.png",'"Bandolingo"',"dark"),
 ("coathief/af/coathief.png",'"Coathief"',"dark"),
-("wasbeer/af/wasbeer.png","Wasbeer","dark"),
-("nachtaap/ronde12/variant_spiraal/anim_front.png","Nachtaap","psychic"),
-("nachtaap_evo/af/nachtaap_evo.png","Nachtaap fase 2","psychic"),
-("nachtaap_fase3/af/nachtaap_fase3.png","Muriqui","psychic"),
+("wasbeer/af/wasbeer.png",'"Vigiloot"',"dark"),
+("nachtaap/ronde12/variant_spiraal/anim_front.png",'"Nocticue"',"psychic"),
+("nachtaap_evo/af/nachtaap_evo.png",'"Moonkey"',"psychic"),
+("nachtaap_fase3/af/nachtaap_fase3.png",'"Curiqui"',"psychic"),
 ("cuyby/ronde4/anim_front.png",'"Cuyby"',"normal"),
 ("cuyby_evo/ronde6/anim_front.png",'"Cuychu"',"normal"),
+("hatun_runa/af/hatun_runa.png",'"Kiskiddo"',"normal/flying"),
+("awki/af/awki.png",'"Princadee"',"fire/flying"),
+("koningstiran/af/sapa_inca.png",'"Sunperor"',"fire/psychic"),
+("viscacha/af/viscacha.png",'"Zapacha"',"electric"),
 ("kolibrie_pre/af/kolibrie_pre.png",'"Hummlet"',"flying"),
-("kolibrie/af/kolibrie.png","Kolibrie","ghost/flying"),
-("hatun_runa/af/hatun_runa.png","Hatun runa","normal/flying"),
-("koningstiran/af/sapa_inca.png","Sapa Inca","fire/psychic"),
+("kolibrie/af/kolibrie.png",'"Soulibri"',"ghost/flying"),
 ("picapau/af/picapau.png",'"Picapau"',"electric/flying"),
 ("picapau_evo/af/picapau_evo.png",'"Picaraio"',"electric/flying"),
 ("poedellarve/af/poedellarve.png",'"Pupoodle"',"bug/normal"),
-("poedelmot/af/poedelmot.png","Poedelmot","bug/fairy"),
-("viscacha/af/viscacha.png","Viscacha","electric"),
-("potoo/af/potoo.png","Potoo","ghost/normal"),
+("poedelmot/af/poedelmot.png",'"Lanymph"',"bug/fairy"),
+("potoo/af/potoo.png",'"Bootoo"',"ghost/normal"),
 ("silicobra_uyuni/af/silicobra_uyuni.png",'"Silicobra" (regional)',"ground/electric"),
 ("salticonda/af/salticonda.png",'"Salticonda"',"ground/electric"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
+("hitmontop_evo/af/hitmongroove.png",'"Hitmongroove"',"fight/ground"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)
@@ -63,5 +65,5 @@ for k,(p,n,t) in enumerate(items):
     else:
         ic=[icon(z) for z in t.split("/")]; tot=sum(i.width for i in ic)+6*(len(ic)-1); ix=x+(cw-tot)//2
         for i in ic: img.paste(i,(ix,ty),i); ix+=i.width+6
-d.text((pad,H-34),"Namen tussen aanhalingstekens zijn rond; de rest is een beschrijving. Starterfasen 1–2 tonen het type van de lijn.",font=fy,fill=(140,130,120))
+d.text((pad,H-34),"Werknamen; rond tot ze ooit worden aangepast. Starterfasen 1–2 tonen het type van de lijn.",font=fy,fill=(140,130,120))
 img.save(OUT)

@@ -1,0 +1,24 @@
+# ronde 4 bovenop raster_r3.txt
+# verre klauwen: 2 px breed (licht + schaduw), één scheidingslijn, 1 px punt
+51 21 111
+52 20 1cd1cd1
+53 20 1cd1cd1
+54 20 1d11d1
+55 20 .1..1
+# nabije klauwen: 2 px breed, knik naar linksonder, punt recht omlaag
+56 22 .1cd1cd1
+57 22 .1cd1cd1
+58 22 1cd11cd1
+59 22 1cd1cd1.
+60 22 1d11d1..
+61 22 .1..1...
+# verre achterpoot: één donkerbruin been (3 + schaduw 2), heldere omlijning, roze voet
+40 34 4444333
+41 35 441333
+42 35 431333
+43 35 3133321
+44 35 1333221
+45 35 3322221
+46 34 1eeff11
+47 34 1ffff1
+48 35 11

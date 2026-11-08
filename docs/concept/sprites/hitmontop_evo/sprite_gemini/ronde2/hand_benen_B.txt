@@ -1,0 +1,12 @@
+# Benen variant B (met wit): gelijk aan A, plus het wit uit het model als schuine band (wit 6, schaduw grijs 7)
+# die vlak achter de gele wikkelband om het dijbeen loopt; bij het kruis geen wit (geen blok).
+r15: 23=66899C
+r16: 24=B6689A
+r17: 25=BC6689A
+r18: 26=BBC679A
+r19: 27=BBCC67D
+r20: 27=BBCCC67D
+r17: 40=D6689
+r18: 39=DB6689
+r19: 38=DBB679
+r20: 38=BBCC67

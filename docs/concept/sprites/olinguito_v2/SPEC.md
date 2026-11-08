@@ -30,3 +30,11 @@ Ontwerp en Jordi's woorden per ronde: `referenties/ONTWERP.md` (uit de tak `clau
 - Nog te doen: frame 2, rug, icoon, shiny, naam/data.
 - **Eindkeuring (25 okt, `af/EINDKEURING.md`):** hoofdvraag PASS; reparatie 1 uitgevoerd (verre voorpoot 2 px roze voetje). Open, raakt het silhouet (vraag aan Jordi): losse spriet (19,59) en drie haakjes van 1 px (kop achter, voorhoofd, staart links).
 - **Af (25 okt):** Jordi akkoord met de 4 silhouetpixels; spriet weg, drie haakjes glad (7 px). 0 open randen. Eindversie `af/olinguito.png`.
+
+## Ronde "Gemini-pose" (7 nov)
+- Gemini v4 (`gemini/ronde2_v4_pose.png`). Jordi: "de pose is nu beter, maar het ontwerp is wel minder. Zou je deze twee kunnen samenvoegen en daarmee de sprite beter kunnen maken? Dus de kleuren van de sprite die we al hadden gevormd naar het huidige silhouet?" + "bijv de rode ogen behouden etc" + over de klauwen: "ik tel er maar 2 bij gemini hoor".
+- Dus: silhouet = Gemini v4 verkleind; kleuren en kenmerken = `af/olinguito.png` (rood oog, masker, kruin, snoet, neus, donkerbruin lijf). Werkmap `gemini_samen/`.
+- Jordi over r2 (7 nov): "het hoofd is nog wat hoekig, de mond mag weg, het gebrek aan mond in het origineel is prima, evenals het patroon rondom het oog en de neus inh et orgineel, oor en hoofdpatroon, plus hoofdvorm, ik vind de voorpoten best oke al mag de voorste klauw iets minder recht, de achterpoot die aan de binnenkant staat is ook niet helemaal netjes een achterpoot zoals in het gemini model, voor de rest prima". Origineel = `af/olinguito.png` (die heeft geen mond).
+- Jordi over r4 (7 nov): "ik twijfel nog een beetje over het kleur/schaduwgebruik van het lichaam [...] ik vind het gemini model namelijk een betere hoofdvorm hebben, maar onze sprite een betere inkleuring". Na vraag: kopvorm Gemini, inkleuring oude sprite: "ja dat wil ik. Je mag het gemini model gladder maken, want dat is natuurlijk geen sprite." Lijf: "mag je gewoon de gebruikelijke gen 3 sprite/dragonflycave keuringen geven, als die daar doorheen komt is het prima".
+- **Af (8 nov):** r6 na eindkeuring (`gemini_samen/EINDKEURING_R6.md`, PASS na 7 px) = `af/olinguito.png`; vorige versie `af/olinguito_v1.png`. Ter info: 1 px inham binnenkant staart (rij 13–16, uit Gemini); geheel donkerder dan Gen 3-voorbeelden (goedgekeurde kleuren).
+- Jordi (8 nov) bij het tonen van de nieuwe sprite: "top".

@@ -931,7 +931,29 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.233] - Awki frontsprite af
 - Jordi: "rond af". Ronde 5 is de frontsprite: `docs/concept/sprites/awki/af/` (`awki.png`, `awki_8x.png`, `normal.pal`). 25 frontsprites af (na merge met main). Lessen in `SPRITE_WERKWIJZE.md` (awki) en `GEMINI.md`.
 
-### [v0.0.234] - Muriqui: Gemini-prompt voor een mooiere versie
+### [v0.0.234] - Olinguito (Bandingo): Gemini-prompt voor een verbeterronde
+- Jordi wil Bandingo verbeteren via Gemini. Prompts (v1–v4) en bijlagen in `docs/concept/sprites/olinguito_v2/gemini/`; v1 kopieerde de oude sprite bijna letterlijk, v4 gaf een betere pose.
+
+### [v0.0.235] - Olinguito (Bandingo): nieuwe frontsprite (Gemini-pose + oude inkleuring)
+- Jordi: pose en kopvorm van Gemini (gladgemaakt), inkleuring van de oude sprite (rood oog, masker, patroon rond oog en neus, kruin, geen mond), lijf met Gen 3-schaduw.
+- 6 rondes (`docs/concept/sprites/olinguito_v2/gemini_samen/`), keuring r5 en eindkeuring r6 (PASS na 7 px). Nieuwe versie: `olinguito_v2/af/olinguito.png`; de oude staat als `af/olinguito_v1.png`.
+
+### [v0.0.236] - Hitmontop-evolutie: Gemini-prompt
+- Nieuwe poging voor de capoeira-evolutie via Gemini: `docs/concept/sprites/hitmontop_evo/gemini/PROMPT.md`, met als bijlagen het goedgekeurde hoofd (`bijlage1_hoofd.webp`) en pose v3 (`bijlage2_pose.png`).
+- Jordi: geen shirt, broek met gele en groene strepen, capoeira-koord aan de broek, armbanden à la Muay Thai maar in capoeira-stijl. Open: grondkleur broek (wit/blauw) en kleur van het koord.
+
+### [v0.0.237] - Hitmongroove: ontwerp bevroren
+- Gemini-rondes 1–5 voor de Hitmontop-evolutie (`hitmontop_evo/gemini/README.md`); ronde 5 bevroren als model (`referenties/gemini_gekozen_capoeira.png`) met Jordi's wijzigingen: benen i.p.v. broek en bolle torso via kleur, vuisten als bollen, steunarm korter, koordband om de steunarm.
+- Naam: **Hitmongroove** (Jordi).
+- Les in `docs/lessen/GEMINI.md`: een eerder Gemini-plaatje als bijlage in een nieuw gesprek wordt gekopieerd; een stickman leest hij niet als pose.
+
+### [v0.0.238] - Hitmongroove frontsprite af
+- Frontsprite van Hitmongroove (capoeira-evolutie van Hitmontop, Fighting/Ground): `docs/concept/sprites/hitmontop_evo/af/hitmongroove.png` (+ `_8x.png`), naar Jordi's Gemini-model in 5 rondes (`sprite_gemini/ronde1–5`).
+- Keuzes van Jordi: benen B (met wit), torso c, ogen van Hitmontop, steunarm een derde korter met arm A (smallere koordband, taps), hoorn op modelmaat.
+- Strenge eindkeuring ronde 5: eindkeuring en Gen 3 PASS, Dragonfly Cave na 3 pixelreparaties (schouder, hoornpunt, oksel) in orde. Ter info: de geeltinten hebben ongelijke stappen (paletkeuze).
+- Lessen in `docs/lessen/GEMINI.md`.
+
+### [v0.0.239] - Muriqui: opnieuw via Gemini, frontsprite af
 - Jordi: de muriqui (nachtaap fase 3) is nog slordig; via Gemini mooier en natuurlijker maken met hetzelfde concept (pose, aansluiting ledematen, healerhand, Nazca-staart met een takje Andes-healingbladeren). Prompt en bijlage: `docs/concept/sprites/nachtaap_fase3/gemini/` (`PROMPT_MURIQUI.md`, `bijlage1_huidige_sprite_8x.png`); blad ingevuld als coca. Alleen de huidige sprite als bijlage (Jordi: "gemini kan wel een hand maken").
 - Prompt herschreven (Jordi): de sprite moet op bijna alle vlakken mooier (gezicht, kopvorm, lijf, ledematen en aansluiting, patroon, staart); alleen de zweefhangende pose is heilig.
 - Gemini ronde 1 afgekeurd (`gemini/afgekeurd_r1.png`: handen onnatuurlijk, silhouet, maan, boze blik, takje in de voet, rugpatroon). Prompt v3: oude sprite alleen als ruwe referentie, vrij hertekenen; neutrale blik, maan als in de oude sprite, takje alleen in de staart, nieuw rugpatroon.

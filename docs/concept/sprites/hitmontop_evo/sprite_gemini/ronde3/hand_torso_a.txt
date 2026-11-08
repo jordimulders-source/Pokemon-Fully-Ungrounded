@@ -1,0 +1,16 @@
+# Torso variant a: cilinder langs de schuine lichaamsas (45 graden, van koord rechtsboven naar nek linksonder):
+# lichte band (2) langs de linkerbovenkant over de hele lengte, basis (3), sikkelschaduw (4) langs de rechteronderkant.
+r27: 26=2
+r28: 25=2222
+r29: 23=222223333
+r30: 20=22222223333333
+r31: 20=22222233333333344
+r32: 21=2222333333333444
+r33: 21=2223333333334444
+r34: 22=23333333334444
+r35: 23=3333333344444
+r36: 24=333333444444
+r37: 25=33334444444
+r38: 26=334444444
+r39: 27=44444444
+r40: 27=4444444

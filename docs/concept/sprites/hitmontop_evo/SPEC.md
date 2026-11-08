@@ -75,6 +75,23 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 ## Model (Jordi, 6 nov)
 - `referenties/model_gemini_pose.png`: volledig model in de pose (Gemini, Jordi). Jordi: "ik heb nu een model. Als we hiervan een sprite maken en het iets beter inkleuren dan zijn we er". Dit is de bron voor de sprite (zoals de render bij Picapau), bevroren. Jordi: "en het moet minder een mens worden". Versie 2 met ronde steunhand: `referenties/model_gemini_pose_v2.png`. **Versie 3 = de bron** (`referenties/model_gemini_pose_v3.png`, gladde buisarm; Gemini weigert verdere bewerkingen). Nog menselijk, op te lossen in de sprite: borst/schouderblad-anatomie glad maken, lijf iets gedrongener. Open: broek wit (model) of blauw (SPEC).
 
+## Gemini-ontwerp (Jordi, 7 nov)
+- Nieuwe poging via een Gemini-prompt met hoofd + pose als bijlagen: `gemini/PROMPT.md`. Jordi: "ik wil dat die geen shirt heeft, en dat de broek gele en groene strepen hebben als patroon. er zit zon typisch capoeira touwtje aan de broek en ik wil dat zijn armen een soort van muay thai banden hebben, maar dan meer capoeira mode".
+- Jordi: "belangrijk is dat die echt hitmon blijft en dus niet mens, dus verhoudingen van hoofd, handen en voeten zijn groter dan de benen en armen".
+- Jordi (na Gemini ronde 2): "de broek mag ook echt minder een broek zijn en gewoon meer de benen met kleur".
+
+## Bevroren ontwerp (Jordi, 7 nov)
+- **Model = `referenties/gemini_gekozen_capoeira.png`** (Gemini ronde 5). Jordi: "ik denk dat we dit allemaal met kleurgebruik kunnen oplossen en dat het silhouet staat".
+- Toegestane afwijkingen (alleen deze; Jordi letterlijk):
+  1. Kleur: "de broek nog steeds teveel broek is en te weinig benen" (benen lezen als gekleurde benen, geen broek); "Torso is nu wat meer bollig" (bol via kleur); "de vuisten zijn nog steeds geen volledige ballen".
+  2. Silhouet: steunarm korter (Claude: "de steunarm is na de bijsturing nauwelijks korter geworden"; Jordi: "eens, die mag korter"; voorstel een derde korter, hand blijft op de grond, rest zakt mee).
+  3. Silhouet: "het onderste arm mist een touw" / "en voeg het touw toe, dat zijn nog silhouet wijzigingen" (gele koordband om de steunarm, zoals om de vrije arm).
+  4. Steunhand rond maken tot bal (vuisten "volledige ballen").
+- Sprite volgens `docs/lessen/GEMINI.md` + SPRITE_WERKWIJZE "Gemini-model namaken". Werk: `sprite_gemini/`.
+
+## Naam
+- Jordi (7 nov): "In mijn hoofd had ik de namen Hitmonmove en Hitmongroove al zitten". Beide passen in de limiet van 12 tekens (Hitmongroove precies 12). **Gekozen: Hitmongroove** (Jordi: "Hitmongroove prima dan!").
+
 ## Nog open
 - Kleur van de koordjes, gezicht/uitdrukking, de vorm van de kleine hoorn.
 
@@ -82,3 +99,21 @@ Op ronde 8 (Jordi): "dit kan toch niet"; "je volgt niet eens het allersimpelste 
 - Silhouet: D gekozen (Jordi: "is niet erg, het is een silhouet, ga maar een sprite bouwen dan kijken we verder"; D = gedrongen romp, kop iets groter, benen net wat korter, voeten en handen iets groter).
 - Sprite ronde 1 (`sprite_model/`, kleur per script uit de verkleinde render): Jordi: **"lachwekkend slecht"**. Afgekeurd. Oorzaak (Claude): kleur per script gekwantiseerd uit de render, in strijd met de vaste regel "kleurt nooit per script"; het resultaat leest als een verkleinde 3D-render, niet als een getekende Hitmon-sprite.
 - **Focus volgende keer (Jordi, 6 nov): "dat hij zo ACCURAAT mogelijk is tov het model".** Elke vorm, kleurvlak en detail van `model_gemini_pose_v3.png` volgen, met de hand getekend; niets toevoegen of vereenvoudigen wat niet in het model staat.
+
+## Sprite ronde 1 (Jordi, 7 nov, letterlijk)
+"ja de kop is niet meer herkenbaar hitmontop, het lichaam heeft een beetje een gekke vorm, het geelgroenpatroon is een beetje saaitjes en de lijnen mogen wat dynamischer. De arm onderin heeft nog geen goede vorm, zijn vooral rechte lijnen, de vuist sluit niet lekker aan en de band ook niet, maar je bent op de goede weg, blijf werken". Wit in de benen: nog niet gekozen (ronde 2 levert A zonder en B met wit).
+
+## Sprite ronde 2 (Jordi, 7 nov, letterlijk)
+"de ogen mogen nog wta meer hitmontop, mond is goed, rest van het hoofd ook wel, de benen met wit zijn beter, al mis ik daar nog wat schaduwing, waardoor het net lijkt alsof er iets weggelaten is. De torso ziet er ook nog een beetje gek uit, maar ik weet niet zo goed hoe we dat beter kunnen maken, voor de rest komen we nu echt ergens". Dus: benen variant B; ronde 3 levert torso-varianten ter keuze.
+
+## Sprite ronde 3 (Jordi, 7 nov, letterlijk)
+"c is wel prima al, moet denk ik nog iets meer volgens de dragonflycave en gen 3 sprite regels, maar het lijkt het minst op een bulge". Torso c gekozen; volgende: keuring + Dragonfly Cave/Gen 3-eindkeuring, daarna benoemde reparaties.
+
+## Sprite ronde 4 (Jordi, 7 nov, letterlijk)
+Bij het vel r4 | r4 glansmidden | r3 | model: "de 3e is het beste, laat die nu even een hele strenge eindkeuring doen, of dit een geloofwaardige hitmontop evo is, of deze sprite in pokemon past, en onze gebruikelijke dragonflycave/gen 3 sprite keuringen, let ook op de vorm van de onderste arm die misschien wat te recht is". Dus: ronde 3 (torso c) is de basis, niet r4.
+
+## Eindkeuring ronde 3 (Jordi, 8 nov, letterlijk)
+"nee de arm mag niet langer, de koordband mag wel smaller als dat er prima uit blijft zien, ga het verder perfectioneren". Ronde 5 = r3 + reparaties uit EINDKEURING.md + smallere koordband + arm taps binnen dezelfde lengte.
+
+## Sprite ronde 5 (Jordi, 8 nov, letterlijk)
+"stuur maar naar eindkeuring, gen 3 sprite keuring, dragonflycave keuring"; arm: "A uiteraard"; "hoorn moet niet langer".

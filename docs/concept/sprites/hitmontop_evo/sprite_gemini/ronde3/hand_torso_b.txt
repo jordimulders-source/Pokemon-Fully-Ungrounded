@@ -1,0 +1,16 @@
+# Torso variant b: als a, plus de schouder boven de steunarm als ronde aanzet (eigen bol: licht 3 linksboven, rand 5 waar hij over de borst valt)
+# en de schouder bij de vrije arm afgerond met een korte binnenlijn (5) waar de borst begint.
+r27: 26=2
+r28: 25=2222
+r29: 23=222223333
+r30: 20=22222223333333
+r31: 20=22225233333333344
+r32: 21=2253333333333444
+r33: 21=2223333333334444
+r34: 22=23333333334444
+r35: 23=3333333344444
+r36: 24=333333444444
+r37: 25=33334555444
+r38: 26=334533354
+r39: 27=45333444
+r40: 27=4433444

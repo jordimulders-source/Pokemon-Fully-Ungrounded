@@ -1,0 +1,6 @@
+# Wit in de benen met volume: wit aan de lichte kant, grijs 7 aan de schaduwkant (naar de gele band toe), zoals het grijs in het model.
+r15: 23=66799C
+r16: 24=B6679A
+r17: 25=BC6679A
+r17: 40=D6679
+r18: 39=DB6679

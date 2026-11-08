@@ -1,0 +1,7 @@
+# ogen ronde 2: beide ogen 111/161/.11 (zwart met wit puntje), op de gemeten modelpixels.
+r38: 16=111
+r39: 16=161
+r40: 16=3 17=11
+r45: 18=111 21=3
+r46: 18=161 21=4
+r47: 18=4 19=11 21=4

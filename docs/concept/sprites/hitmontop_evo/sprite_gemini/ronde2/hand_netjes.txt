@@ -1,0 +1,7 @@
+# opschoning na de controle (losse tintpixels)
+r37: 23=3
+r47: 12=3
+r45: 10=7
+r49: 31=33
+r55: 34=4
+r61: 34=4

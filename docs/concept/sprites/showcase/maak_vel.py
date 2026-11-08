@@ -11,7 +11,7 @@ items=[
 ("coathief/af/coathief.png",'"Coathief"',"dark"),
 ("wasbeer/af/wasbeer.png","Wasbeer","dark"),
 ("nachtaap/ronde12/variant_spiraal/anim_front.png","Nachtaap","psychic"),
-("nachtaap_evo/af/nachtaap_evo.png","Nachtaap fase 2","psychic"),
+("nachtaap_evo/af/nachtaap_evo.png",'"Moonkey"',"psychic"),
 ("nachtaap_fase3/af/nachtaap_fase3.png","Muriqui","psychic"),
 ("cuyby/ronde4/anim_front.png",'"Cuyby"',"normal"),
 ("cuyby_evo/ronde6/anim_front.png",'"Cuychu"',"normal"),

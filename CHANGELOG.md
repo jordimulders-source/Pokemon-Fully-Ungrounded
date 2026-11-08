@@ -976,3 +976,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.218] - Kiskiddo, rollen, overzichtsvel met 27 sprites
 - Kiskiddo = werknaam hatun runa (Jordi). Rollen (Jordi): Inca-vogellijn = regional birds ("de pidgey van deze regio"), Zapacha = electric rodent; early route insect komt nog (niet Pupoodle).
 - Overzichtsvel opnieuw: nieuwe olinguito- en muriqui-sprite, awki (Fire/Flying) en Hitmongroove (Fighting/Ground) erbij; volgorde starters, Cuyby/Cuychu, vogellijn, Zapacha, rest.
+
+### [v0.0.219] - Moonkey
+- Moonkey = werknaam nachtaap fase 2 (Jordi). Vel bijgewerkt.

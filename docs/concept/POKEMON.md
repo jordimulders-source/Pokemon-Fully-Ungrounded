@@ -50,6 +50,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - Werknamen 8 nov: **Bandolingo** (olinguito; vervangt Bandingo, dat te veel op "Mandingo" lijkt; Jordi: lang, "maar bulbasaur en charmander ook"), **Zapacha** (viscacha; "geniaal, bekt lekker"), **Bootoo** (great potoo; "het meest pokemon").
 - **Kiskiddo** (hatun runa, fase 1 koningstiran-lijn): Jordi "Kiskiddo akkoord" (8 nov).
 - **Rollen (Jordi, 8 nov):** de Inca-vogellijn (Kiskiddo → awki → Sapa Inca) wordt de regional birds, "de pidgey van deze regio"; de viscacha (Zapacha) wordt de electric rodent. De early route insect komt nog; Pupoodle is dat niet.
+- **Moonkey** (nachtaap fase 2): Jordi "Moonkey is echt heel geniaal, die doen we" (8 nov).
 - Picaraio of Raiopau (8 nov): Jordi "Picaraio dan!" (*pica* = pikken blijft hoorbaar, zoals in Picapau).
 - Alpaca: Jordi denkt aan **Palpaca** (pal + alpaca; "klinkt als een pokemon naam, want flamigo bestaat ook"), nog niet helemaal tevreden, wel beter dan Alpunch/Fluffist/Paqucha.
 - **Palpaca** is ook werknaam (Jordi, 7 nov: "Palpaca mag je ook doen"). Werknamen zijn rond "totdat ze ooit aangepast worden" (Jordi).

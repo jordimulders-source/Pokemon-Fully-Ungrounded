@@ -2,7 +2,7 @@ import numpy as np, sys, os
 from PIL import Image, ImageDraw, ImageFont
 H=os.path.dirname(os.path.abspath(__file__)); G=os.path.dirname(H)
 P=[(0,0,0),(24,16,40),(140,148,200),(116,122,178),(80,84,138),(56,52,96),(48,40,64),(214,162,190),(144,98,130),
- (240,246,250),(196,210,232),(184,192,224),(154,162,194),(110,116,150),(170,234,236),(44,138,150)]
+ (240,246,250),(92,206,210),(184,192,224),(154,162,194),(110,116,150),(170,234,236),(44,138,150)]
 CH='.123456789abcdef'
 F=ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf',10)
 def load(fn):

@@ -149,3 +149,6 @@ Jordi 5 nov: "de bladeren moeten helemaal weg uit het ontwerp" · "zijn dit ding
 - Jordi: "kijk vooral ook naar het linkeroog nog" → linkeroog (x5–6, y37–38) mist de glans van het rechteroog en heeft het donkerste teal linksboven, leest dof. Opties `af/oog/` A (glans linksboven, advies), B (glans + 1 px breder), C (glans naar de neus).
 - Eindkeurder na Jordi's aanvulling: TERUG op 2 px linkeroog (geen glans, iris donker links i.p.v. boven) → optie D in `af/oog/` (F C / B A).
 - Jordi: "D uiteraard, maar stop aub met dingen als B voorstellen, dat kan echt niet" → oog D in `af/`; frontsprite af. Nog te doen: frame 2, rug, icoon, shiny, naam/data.
+
+## Gemini-herontwerp (8 nov)
+- Jordi: "de muriqui sprite vind ik toch nog wel slordig, dat zouden we gemini nog beter kunnen doen" (letterlijk + uitwerking in `gemini/PROMPT_MURIQUI.md`): concept en model blijven; pose natuurlijker (aansluiting lijf/benen/armen), healerhand, Nazca-spiraalstaart, **de staart houdt een takje met Andes-healingbladeren vast** (bladeren terug). Prompt + bijlage `gemini/bijlage1_huidige_sprite_8x.png`; wacht op Jordi's Gemini-resultaat.

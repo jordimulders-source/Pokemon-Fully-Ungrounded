@@ -1076,3 +1076,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.249] - Geen cueca/marinera-Oricorio
 - `IDEEEN.md`/`DEX_NOMINATIES.md`: cueca en marinera komen er niet in; welke leguaan voor Kecleon bedenken we later.
+
+### [v0.0.250] - Ideeën Jordi: Galápagos-opties en meer
+- `IDEEEN.md`: nieuwe lijst opties van Jordi (boobies, vampiervink, fregatvogels, cormorant, pinguïn, mockingbird, kerkuil, haaienlijn met hamerhaai, batfish, Pincurchin-zee-egel, chocolate chip-Staryu, Binacle-schildpad, pistoolgarnaal, reuzenkrab-Kingler, Corsola op dood koraal, mierenleger, bouwvakker-Bibarel, hannya, Andes-Baltoy, tempel-Pokémon, vlieg → mug, early game Bug, Ghost-mythes); Torkoal-schildpad, Sharpedo-hamerhaai en lavacactus-Cacnea geschrapt.

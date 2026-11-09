@@ -376,12 +376,47 @@ Lijn dan: Mime Jr. → regionale Mr. Mime → Bartitsu-Mr. Rime (zoals Galar: Mi
 
 ### Galápagos-regional forms (voorstellen Claude, 9 nov, open)
 Sowieso doen (Jordi). Typen: repo → voorstel; alle soorten in de dex. Rode draad: Darwin; elk eiland iets anders, de soort past zich aan.
-- **Pikipek-lijn** (Normal/Flying →) **darwinvinken**: vorm per snavel, type per dieet: zaad (Grass), insect (Bug), cactus (Ground) en de **vampiervink** (Dark/Flying; drinkt echt bloed van genten).
-- **Torkoal** (Fire →) Ground/Grass: **reuzenschildpad** in twee schildvormen (koepel en zadelrug met lange nek); trage Trick Room-tank.
-- **Cacnea/Cacturne** (Grass, Grass/Dark →) Grass/Fire of Grass/Rock: **lavacactus** (groeit op verse lava) → **boom-opuntia** (cactus zo groot als een boom, voer van de schildpadden). Sluit aan op Jordi's wens voor een regionale Cacnea/Maractus.
-- **Carvanha/Sharpedo** (Water/Dark →) Water/Electric: **hamerhaai**; voelt elektrische velden met zijn kop, jaagt in scholen.
+- **Pikipek-lijn** (Normal/Flying →) **darwinvinken**: vorm per snavel, type per dieet: zaad (Grass), insect (Bug), cactus (Ground) en de **vampiervink** (Dark/Flying; drinkt echt bloed van genten). **Jordi denkt erover na (9 nov).**
+- ~~**Torkoal** (Fire →) Ground/Grass: **reuzenschildpad** in twee schildvormen (koepel en zadelrug met lange nek); trage Trick Room-tank.~~ geschrapt (Jordi, 9 nov).
+- ~~**Cacnea/Cacturne** (Grass, Grass/Dark →) Grass/Fire of Grass/Rock: **lavacactus** (groeit op verse lava) → **boom-opuntia** (cactus zo groot als een boom, voer van de schildpadden). Sluit aan op Jordi's wens voor een regionale Cacnea/Maractus.~~ geschrapt (Jordi, 9 nov: neigt naar een Noord-Andes-variant op Cacnea of Maractus).
+- ~~**Carvanha/Sharpedo** (Water/Dark →) Water/Electric: **hamerhaai**; voelt elektrische velden met zijn kop, jaagt in scholen.~~ geschrapt als Sharpedo-vorm (Jordi, 9 nov); hamerhaai liever in een nieuwe haaienlijn.
 - **Krabby/Kingler** (Water →) Fire/Water of Rock/Water: **Sally Lightfoot-krab**, felrood op zwarte lava, springt van rots naar rots; trage klapper wordt snel.
 - **Salandit/Salazzle** (Poison/Fire →) Water/Dragon: **zeeleguaan** (pitch #18), graast zeewier, niest zout.
 - **Ducklett/Swanna** (Water/Flying →) Water/Fairy met Dancer: **blauwvoetgent**, pronkdans met blauwe voeten (pitch #17).
 - **Spheal-lijn** (Ice/Water →) Water/Normal: **Galápagos-zeeleeuw**, tropisch en speels; ijstank wordt snelle zwemmer.
 - **Cramorant** (Flying/Water →) Water/Fighting: aalscholver die niet meer kan vliegen. **Kilowattrel** (Electric/Flying →) Dark/Flying: fregatvogel-piraat.
+
+### Opties en ideeën Jordi (9 nov)
+Galápagos (alles opties):
+- **Blue-footed / red-footed booby.**
+- **Vampire ground finch:** "evil vogel zou wel eens vet zijn".
+- **Magnificent / great frigatebird.**
+- **Flightless cormorant:** 1-op-1-optie voor Cramorant.
+- **Galápagos penguin:** misschien voor de Delibird-evolutie of Eiscue.
+- **Galápagos mockingbird:** voor het verhaal.
+- **Galápagos barn owl:** misschien voor de Hoothoot-lijn.
+- **Wingull-lijn:** alleen als we iets leuks kunnen bedenken.
+- **Spheal-regional (zeehonden/zeeleeuwen):** optie.
+- **Nieuwe haaienlijn** met een hamerhaai ertussen (nu alleen Sharpedo- en Garchomp-lijn).
+- **Red-lipped batfish:** "moeten we ook wat mee".
+- **Alomomola** is al een mola mola, dus een regional is niet logisch (de mola leeft wereldwijd in warme en gematigde zeeën, niet alleen op de Galápagos).
+- **Garden eel** lijkt al erg op Wiglett (Wiglett is ook een garden eel; Wiglett-lijn staat uit de dex).
+- **Pincurchin-vorm: pencil-spined sea urchin** ("ziet er erg sinister uit en Pincurchin is een saaie pokemon"; Pincurchin staat uit de dex).
+- **Chocolate chip-Staryu-vorm:** "misschien wel geinig".
+- **Schildpad-Pokémon die evolueert met een Binacle in je party** (zoals Shellder/Slowbro en Remoraid/Mantine); nog uitwerken (Binacle-lijn staat uit de dex).
+- **Pistoolgarnaal:** er bestaat nog geen garnaal-Pokémon; Clauncher/Clawitzer vindt Jordi geen garnalen (Bulbapedia noemt Clauncher een pistoolgarnaal, Jordi ziet het niet, ook door het gebrek aan passende moves).
+- **Kingler: Japanse reuzenkrab-vorm** (*Japanese spider crab*).
+- **Dood koraal:** goede plek voor Corsola/Cursola.
+- **Carpenter bee:** Jordi vroeg om uitleg tegenover gewone bijen.
+
+Overig:
+- **Mierenleger als losse lijn** (Durant is de enige mier-Pokémon).
+- **Bibarel-evolutie:** bouwvakker-bever, **Water/Fighting** (Bibarel nu Normal/Water). Haakje Claude: in Vuurland zijn in 1946 Canadese bevers uitgezet die nu de bossen van Patagonië slopen (systeem-thema).
+- **Abra-regional, Dark/Psychic trickster/goochelaar:** "lijkt me tof".
+- **Een Pokémon gebaseerd op hannya** (Japans demonmasker).
+- **Baltoy/Claydol: Andes-vorm** (zie het huaco-retratovoorstel in `DEX_NOMINATIES.md` §5).
+- **Ruïne- of zelfs tempel-Pokémon:** een levende tempel, enorm, mogelijk een Snorlax-idee: geen legendary, wel een static encounter (idee uit een gesprek met een maat).
+- **Vlieg → mug-lijn:** "denk ik nog wel een goede" (mug was al Poison/Electric).
+- **Early game Bug** die op hoogte kan leven: nog nodig.
+- **Ghost-types:** wereldwijde mythes en cryptids; hoe vet het design zou zijn is daarbij belangrijk.
+- **Cacnea/Maractus:** Jordi neigt naar een Noord-Andes-variant.

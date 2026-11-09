@@ -1107,3 +1107,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.259] - Regionale Rufflet, harpij Steel/Flying, aardappel/maïs-lijn
 - `IDEEEN.md`: Rufflet gaat mee in de harpij-vorm; Jordi vindt Steel/Flying tof; nieuwe lijn: aardappel met maiskolf-handen die steeds meer een gerecht wordt.
+
+### [v0.0.260] - Fire/Water erbij, Galápagos-regionals mogen Fire
+- `IDEEEN.md`: een Fire/Water-Pokémon komt erbij (Jordi); Galápagos-regionals mogen Fire krijgen; aardappel/maïs-lijn richting (locro, causa, huancaína).

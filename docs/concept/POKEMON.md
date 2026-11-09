@@ -60,6 +60,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Palpaca** is ook werknaam (Jordi, 7 nov: "Palpaca mag je ook doen"). Werknamen zijn rond "totdat ze ooit aangepast worden" (Jordi).
 - **Overzichtsvel:** ronde namen tussen aanhalingstekens (Jordi, 7 nov), ook "DJ Rotom" en "Silicobra" (regional). Script: `docs/concept/sprites/showcase/maak_vel.py`.
 - Niet gekozen voorstellen van Claude (7 nov): lama Brawllama/Llamauler/Cargallama; wasbeer Vigilacoon/Clawstice/Mascarón; nachtaap 1 Aotiny/Tutito/Nocticue; nachtaap 2 Killamono/Lunaotus/Vigilune; muriqui Kallamuri/Muriquilla/Yatiriqui; kolibrie Mainumby/Soulibri/Animibri; Sapa Inca Intirano/Sapainca/Mascaypacha; poedelmot Moodle/Tepuffle/Poodlemoth.
+- **Mr. Prime** (Jordi, 9 nov): Bartitsu-eindvorm van de regionale (jiujitsu-)Mr. Mime; oude gentleman met wandelstok. Lijn: Mime Jr. → regionale Mr. Mime → Mr. Prime.
 
 ## Legendaries
 - **Trio: de drie Inca-werelden.** Hanan Pacha (bovenwereld, zon, goden) = **condor** (Jordi, 9 nov: "klinkt uitstekend"; dit is de condor-Pokémon); Kay Pacha (deze wereld) = **poema**; Uku Pacha (onderwereld, voorouders, oorsprong) = **slang**. Typen, namen en rol: open.

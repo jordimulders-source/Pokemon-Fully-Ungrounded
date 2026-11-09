@@ -1061,3 +1061,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.244] - Mime Jr. blijft, naamvoorstellen eindvorm
 - `IDEEEN.md`: Mime Jr. blijft gewoon; typen nog open; naamvoorstellen voor de Bartitsu-eindvorm (Sir Mime, Mr. Prime e.a.).
+
+### [v0.0.245] - Mr. Prime
+- Naam van de Bartitsu-eindvorm: **Mr. Prime** (Jordi). `IDEEEN.md` en de werknamen in `POKEMON.md`.

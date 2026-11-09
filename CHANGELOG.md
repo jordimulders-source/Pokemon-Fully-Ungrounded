@@ -1024,3 +1024,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.232] - Venomoth-vuurvlieg: onderbouwing
 - `POKEMON.md`: waarom Venonat → vuurvlieg conceptueel klopt (Pokédex: door licht aangetrokken, eet insecten; *Photuris*; precedenten).
+
+### [v0.0.233] - Venonat: inspiratie
+- `POKEMON.md`: Venonat is op meerdere insecten gebaseerd, dus de evolutie kan alle kanten op (Jordi).

@@ -1113,3 +1113,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.261] - Onderwater-Oddish (Water/Fire)
 - `IDEEEN.md`: een onderwater-Oddish-lijn voor de Galápagos, Water/Fire, geïnspireerd op fan-art maar in een eigen vorm (voorstel: kokerwormen van de hydrothermale bronnen).
+
+### [v0.0.262] - Gaucho-Pokémon, convergente soorten
+- `IDEEEN.md`: gaucho-Pokémon met hoed sowieso (optie: regionale Lotad); voorstellen convergente soorten (Ñanduo, pekari-Swinub, opossum-Kangaskhan e.a.); onderwater-Oddish zonder Bellossom.

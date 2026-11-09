@@ -422,3 +422,7 @@ Overig:
 - **Early game Bug** die op hoogte kan leven: nog nodig.
 - **Ghost-types:** wereldwijde mythes en cryptids; hoe vet het design zou zijn is daarbij belangrijk.
 - **Cacnea/Maractus:** Jordi neigt naar een Noord-Andes-variant.
+
+### Voorstellen Claude (9 nov, open): early game Bug op hoogte en Ghost-mythes
+- **Early game Bug (altiplano):** Andes-aardappelsnuitkever (*Premnotrypes*, plaag van de aardappelboeren; Bug/Ground); Andes-hommel (*Bombus funebris*, tot boven 4000 m; Patagonische reuzenhommel *B. dahlbomii* "vliegende muis" met rossige vacht, verdrongen door ingevoerde Europese hommels); cochenille (schildluis op cactussen, wit wasachtig pluis met knalrood binnenin: de rode verf van Inca-textiel).
+- **Ghost, wereldwijd (op design):** Nuckelavee (Orkney, paard en ruiter zonder huid), Gashadokuro (Japan, reuzenskelet van verhongerden), Dullahan (Ierland, hoofdloze ruiter die zijn hoofd als lantaarn draagt), Jorōgumo (Japan, spinvrouw), La Llorona (Latijns-Amerika, huilende vrouw bij het water), Chupacabra (Latijns-Amerika), Black Shuck (Engeland, spookhond met gloeiende ogen), Mothman (VS). Let op: de Wendigo is voor sommige inheemse volken heilig; liever niet.

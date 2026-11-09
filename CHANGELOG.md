@@ -1079,3 +1079,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.250] - Ideeën Jordi: Galápagos-opties en meer
 - `IDEEEN.md`: nieuwe lijst opties van Jordi (boobies, vampiervink, fregatvogels, cormorant, pinguïn, mockingbird, kerkuil, haaienlijn met hamerhaai, batfish, Pincurchin-zee-egel, chocolate chip-Staryu, Binacle-schildpad, pistoolgarnaal, reuzenkrab-Kingler, Corsola op dood koraal, mierenleger, bouwvakker-Bibarel, hannya, Andes-Baltoy, tempel-Pokémon, vlieg → mug, early game Bug, Ghost-mythes); Torkoal-schildpad, Sharpedo-hamerhaai en lavacactus-Cacnea geschrapt.
+
+### [v0.0.251] - Pincurchin terug, carpenter bee-Combee
+- `P_FAMILY_PINCURCHIN` weer aan in `species_enabled.h` (Jordi): krijgt een regional form (pencil-spined sea urchin). ROM: ±17,9 MB vrij.
+- `IDEEEN.md`: Combee-regional als carpenter bee sowieso, evolueert onafhankelijk van geslacht.

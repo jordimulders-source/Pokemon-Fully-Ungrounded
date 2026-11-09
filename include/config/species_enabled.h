@@ -430,7 +430,7 @@
 #define P_FAMILY_IMPIDIMP                P_GEN_8_POKEMON
 #define P_FAMILY_MILCERY                 FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
 #define P_FAMILY_FALINKS                 FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
-#define P_FAMILY_PINCURCHIN              FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
+#define P_FAMILY_PINCURCHIN              P_GEN_8_POKEMON // FU: terug (Jordi, 9 nov; krijgt een regional form)
 #define P_FAMILY_SNOM                    P_GEN_8_POKEMON
 #define P_FAMILY_STONJOURNER             FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
 #define P_FAMILY_EISCUE                  P_GEN_8_POKEMON

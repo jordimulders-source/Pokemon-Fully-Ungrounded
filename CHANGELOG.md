@@ -1043,3 +1043,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.238] - Darwins vliegend hert geschrapt
 - `IDEEEN.md`: Darwins vliegend hert (als Pinsir-vorm/evolutie) geschrapt, net niet uniek genoeg (Jordi).
+
+### [v0.0.239] - Octillery-evolutie: kraken-battleship
+- `IDEEEN.md`: richting voor de evolutie na de tank-Octillery: een soort kraken-battleship (Jordi).

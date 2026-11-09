@@ -383,6 +383,7 @@ Lijn dan: Mime Jr. → regionale Mr. Mime → Bartitsu-Mr. Rime (zoals Galar: Mi
 ### Galápagos-regional forms (voorstellen Claude, 9 nov, open)
 Sowieso doen (Jordi). Typen: repo → voorstel; alle soorten in de dex. Rode draad: Darwin; elk eiland iets anders, de soort past zich aan.
 - **Pikipek-lijn** (Normal/Flying →) **darwinvinken**: vorm per snavel, type per dieet: zaad (Grass), insect (Bug), cactus (Ground) en de **vampiervink** (Dark/Flying; drinkt echt bloed van genten). **Jordi denkt erover na (9 nov).**
+- **Pikipek-twijfel (Jordi, 9 nov):** bij een spechtvink-Pikipek vallen Trumbeak en Toucannon (toekans zijn juist Zuid-Amerikaans) af.
 - ~~**Torkoal** (Fire →) Ground/Grass: **reuzenschildpad** in twee schildvormen (koepel en zadelrug met lange nek); trage Trick Room-tank.~~ geschrapt (Jordi, 9 nov).
 - ~~**Cacnea/Cacturne** (Grass, Grass/Dark →) Grass/Fire of Grass/Rock: **lavacactus** (groeit op verse lava) → **boom-opuntia** (cactus zo groot als een boom, voer van de schildpadden). Sluit aan op Jordi's wens voor een regionale Cacnea/Maractus.~~ geschrapt (Jordi, 9 nov: neigt naar een Noord-Andes-variant op Cacnea of Maractus).
 - ~~**Carvanha/Sharpedo** (Water/Dark →) Water/Electric: **hamerhaai**; voelt elektrische velden met zijn kop, jaagt in scholen.~~ geschrapt als Sharpedo-vorm (Jordi, 9 nov); hamerhaai liever in een nieuwe haaienlijn.

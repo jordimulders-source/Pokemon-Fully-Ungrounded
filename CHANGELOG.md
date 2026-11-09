@@ -1083,3 +1083,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.251] - Pincurchin terug, carpenter bee-Combee
 - `P_FAMILY_PINCURCHIN` weer aan in `species_enabled.h` (Jordi): krijgt een regional form (pencil-spined sea urchin). ROM: ±17,9 MB vrij.
 - `IDEEEN.md`: Combee-regional als carpenter bee sowieso, evolueert onafhankelijk van geslacht.
+
+### [v0.0.252] - Spooktrein sowieso
+- `IDEEEN.md`: een trein-/spooktrein-Pokémon gaat er sowieso in (Jordi); verder deze sessie diverse voorstellen (Amazone-insecten, Pinsir-evolutie als tor/kaiju, poesrups-tussenstadium, Ghost-mythes, early game Bug).

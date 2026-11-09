@@ -1116,3 +1116,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.262] - Gaucho-Pokémon, convergente soorten
 - `IDEEEN.md`: gaucho-Pokémon met hoed sowieso (optie: regionale Lotad); voorstellen convergente soorten (Ñanduo, pekari-Swinub, opossum-Kangaskhan e.a.); onderwater-Oddish zonder Bellossom.
+
+### [v0.0.263] - Mightyena-evolutie, gaucho-voorkeur
+- `IDEEEN.md`: Mightyena krijgt een evolutie die nog meer hyena wordt (Poochyena-lijn moet terug in de dex); lichte voorkeur voor de gaucho als Lotad-vorm.

@@ -88,7 +88,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 
 - **Ongebruikte Game Freak-ontwerpen** (Jordi, 22 okt): Jordi overweegt een paar ongebruikte ontwerpen uit de Gold/Silver-beta (Spaceworld 1997) uit te werken; hij kiest zelf welke. Bron: `docs/concept/sprites/spaceworld/spaceworld97_152-251.webp` (sprites en prototypenamen via @obskyr/@TeamSpaceworld). Opties die Jordi noemt (23 okt):
   - **Norowara** (#229) en **Kyonpan** (#230): **komen in de game** (Jordi, 9 nov; 23 okt nog "vrijwel zeker"), ook al zijn ze niet Zuid-Amerikaans;
-  - de **tank-versie van Octillery** (#210-beta);
+  - de **tank-versie van Octillery** (#210-beta): **wordt een regional form van Octillery, met een nieuwe evolutie daarna** (Jordi, 9 nov);
   - de **andere Delibird** (#225 Gifuto, de cadeau-vogel);
   - **Kotora** en **Raitora** (#226/#227): **Raitora voorlopig niet** (Jordi, 9 nov); eerder: Raitora wordt een jaguar (Jordi, 23 okt), een gevlekt bliksemwelpje dat een Electric-jaguar wordt; vult het jaguar-idee uit `IDEEEN.md` in;
   - **Purakkusu** (#234).

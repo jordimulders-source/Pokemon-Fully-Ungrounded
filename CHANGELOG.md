@@ -1037,3 +1037,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.236] - Heliamphora-Bellsprout sowieso
 - `IDEEEN.md`: regional form van de Bellsprout-lijn naar *Heliamphora* (tepuis) gaat er sowieso in.
+
+### [v0.0.237] - Tank-Octillery sowieso
+- `IDEEEN.md`/`POKEMON.md`: de tank-Octillery (Spaceworld-beta) wordt een regional form van Octillery, met een nieuwe evolutie daarna.

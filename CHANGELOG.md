@@ -1027,3 +1027,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.233] - Venonat: inspiratie
 - `POKEMON.md`: Venonat is op meerdere insecten gebaseerd, dus de evolutie kan alle kanten op (Jordi).
+
+### [v0.0.234] - Spaceworld-ghosts erin, Delibird-evolutie, Golofa-foto
+- `POKEMON.md`: Norowara en Kyonpan komen in de game; Raitora voorlopig niet.
+- `IDEEEN.md`: Delibird-evolutie sowieso; blobfish-idee en Nazca-astronaut goed bevonden; Lanturn-hengelvis nog open; Golofa-foto van Jordi (Salento) als referentie.

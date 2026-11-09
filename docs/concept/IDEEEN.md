@@ -17,10 +17,12 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Venomoth-vuurvlieg** (Electric/Fire): Venonat wordt de nieuwe Venomoth **met een move die hij leert**; conceptueel een insect dat tot vuurvlieg evolueert (zoals Volbeat). **Ontwerp opnieuw met Gemini** (Jordi, 9 nov: "Het design was prima, maar kunnen we denk ik nu veel beter maken met Gemini").
 - **Banette-evolutie** ("nog meer marionet").
 - **Bartitsu-Mr. Rime.**
-- **Blobfish-lijn, 2 fases.**
+- **Blobfish-lijn, 2 fases** (voorstel Claude, Jordi 9 nov "goed idee": fase 1 een gewone diepzeevis, fase 2 "naar boven gehaald" en ingezakt).
 - **Kricketune-evolutie die echt een dirigent wordt.**
 - **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).
 - **Galápagos-regional forms.**
+- **Delibird-evolutie** (Jordi, 9 nov: "Delibird gaan we een evo geven dan"); Delibird-familie moet terug in de dex; ontgimmicken (haakje: de beta-cadeauvogel Gifuto #225).
+- **Spaceworld-ghosts Norowara en Kyonpan** komen in de game (Jordi, 9 nov); Raitora voorlopig niet.
 
 **Brainstormfase**
 - Invulling van de Ice/Poison-Pokémon (aardappel/chuño, Tentacool-vorm en ozongat: Jordi niet overtuigd; nieuwe voorstellen: bevriezende gifkikker, bedorven ijsje, bevriezing-ijsgeest).
@@ -31,16 +33,16 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Victreebel-regional form verkennen:** "van die hangende planten waar vliegen in kruipen en opgegeten worden bijv".
 - **Nog een nieuwe Mr. Mime-vorm** (misschien).
 - **Ledian-evolutie** (nadenken).
-- **Lanturn-evolutie:** "is dat uberhaupt nodig? Die kunnen we dan nog wat verder diepzee maken en enger, zoals Annihilape, maar misschien valt dat uit de toon".
+- **Lanturn-evolutie:** voorstel Claude: diepzee-hengelvis waarbij het mannetje als parasiet aan het vrouwtje vastgroeit; Jordi (9 nov): "erg smerig en grounded, nu nog bedenken of ik Lanturn die horror wil aandoen". Eerder: "is dat uberhaupt nodig? Die kunnen we dan nog wat verder diepzee maken en enger, zoals Annihilape, maar misschien valt dat uit de toon".
 - **Sunflora-evolutie:** "alleen als we echt met een vet idee kunnen bedenken".
-- **Golofa / Pinsir:** neushoornkever (*Golofa*, Colombia, foto Jordi) met 2 enorme scharen in een cirkelvorm; Jordi twijfelt of Pinsir na de buff een evolutie nodig heeft en of Pinsir hier al op gebaseerd is.
-- **Shuckle- en Delibird-evolutie:** gimmickmons, dan moeten ze ontgimmickt worden; "vraag me af of dat werkt".
+- **Golofa / Pinsir:** neushoornkever (*Golofa*, door Jordi zelf gefotografeerd in Salento: `sprites/golofa/referenties/foto_jordi_salento.webp`; Heracross ziet er "flink anders uit"; op de foto zijn de twee bogen de extreem lange voorpoten) met 2 enorme scharen in een cirkelvorm; Jordi twijfelt of Pinsir na de buff een evolutie nodig heeft en of Pinsir hier al op gebaseerd is.
+- **Shuckle-evolutie** (Delibird: zie sowieso): gimmickmons, dan moeten ze ontgimmickt worden; "vraag me af of dat werkt".
 - **Octillery-evolutie** (Jordi's favoriete Pokémon; "zelfs met onze dikke buff is die nog niet geweldig").
 - **Evolutie voor Ninjask, Sableye, Mawile, Manectric:** "zelfs met terugwerkende kracht in Ungrounded".
 - **Regionale Cacnea/Maractus-lijn** ("dit zijn geen zuid amerikaanse cactussen").
 - **Kecleon-evolutie:** past in het verhaal als Keccles late game evolueert.
 - **Regionale Tropius**, misschien; misschien een **Absol-evolutie**; misschien een **Glalie-evolutie**.
-- **Nazca-lijn-Pokémon zoals Sigilyph:** regionale variant is "een beetje gek" (Sigilyph past al), evolutie past niet echt, "dus eerder een soortgelijke pokemon ernaast?".
+- **Nazca-lijn-Pokémon zoals Sigilyph:** regionale variant is "een beetje gek" (Sigilyph past al), evolutie past niet echt, "dus eerder een soortgelijke pokemon ernaast?". Voorstel Claude: de "astronaut"/uilman van Nazca; Jordi (9 nov): goed idee.
 - **Flamigo-evolutie:** "weet ik bijna wel zeker".
 - Al het andere in dit bestand dat niet als besloten in `POKEMON.md` staat.
 - **Repo-check (Claude, 9 nov):** niet in de dex (familie moet terug): Mime-lijn, Ledyba-lijn, Sunkern-lijn, Shuckle, Delibird, Mawile, Electrike-lijn, Snorunt-lijn. Wel in de dex: Banette, Victreebel, Lanturn, Pinsir (Bug/Ground), Octillery (Water), Ninjask, Sableye, Cacnea/Maractus, Kecleon (Grass), Tropius, Absol (Dark/Fairy), Kricketune, Sigilyph, Flamigo, Venonat-lijn.

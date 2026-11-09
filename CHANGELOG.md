@@ -1046,3 +1046,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.239] - Octillery-evolutie: kraken-battleship
 - `IDEEEN.md`: richting voor de evolutie na de tank-Octillery: een soort kraken-battleship (Jordi).
+
+### [v0.0.240] - Voorstellen regional forms met andere typen
+- `IDEEEN.md`: lijst regional forms die type en rol compleet veranderen (Golofa-Heracross, pichiciego-Sandshrew, holenuil-Hoothoot, manenwolf-Growlithe, brulaap-Mankey, killer bee-Combee, Torkoal-locomotief e.a.), alles open.

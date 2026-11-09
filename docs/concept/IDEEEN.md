@@ -331,3 +331,22 @@ Aanleiding (Jordi): de werkwijze met Gemini werkt; alle eerdere ideeën zijn uit
 - **Pachamama Ground/Fairy:** "ook een goede ja" (zie POKEMON.md, Legendaries).
 - **Evoluties** (Smeargle, Chatot, Cryogonal enz.): "hoef ik niet per se te evolven".
 - **Regional forms:** "de tiwanaku en mate gaan we doen, de rest ben ik nog niet overtuigd van" (zie POKEMON.md, Regional forms).
+
+### Regional forms die de Pokémon echt anders maken (voorstellen Claude, 9 nov, open)
+Jordi (9 nov): regional forms zijn leuk omdat ze type en gebruik compleet veranderen; een Golofa-Heracross die ook Bug/Fighting is "zou extreem saai zijn". Inspiratie hoeft niet per se Zuid-Amerikaans te zijn. Typen hieronder: repo → voorstel. Alle soorten zitten in de dex.
+- **Golofa-Heracross** (Bug/Fighting →) Bug/Steel (grijpkraan met lange armen) of Bug/Dark (nachtdier).
+- **Sandshrew/Sandslash** (Ground →) **Ground/Fairy**: roze gordeldiertje *pichiciego* (pink fairy armadillo, Argentinië).
+- **Hoothoot/Noctowl** (Flying/Dark →) Ground/Normal of Ground/Dark: holenuil die in viscachaholen woont; verliest Flying.
+- **Growlithe/Arcanine** (Fire →) Grass/Dark: manenwolf, vos op stelten die fruit eet (pitch #9).
+- **Mankey/Primeape** (Fighting →) Normal/Dark: brulaap, geluidsaanvaller (pitch #24).
+- **Combee/Vespiquen** (Bug/Flying →) Bug/Fighting: de "killer bees" die in 1957 uit een Braziliaans lab ontsnapten.
+- **Venipede/Scolipede** (Bug/Poison →) Bug/Dark: Amazone-reuzenduizendpoot die van grotplafonds hangt en vleermuizen vangt.
+- **Spinarak/Ariados** (Bug/Poison →) Bug/Dark: vogelspin die vogels eet en brandharen schiet.
+- **Heatmor** (Fire →) Normal/Fighting: reuzenmiereneter die rechtop staat als een bokser; **Durant** (Bug/Steel →) Bug/Dark: legermieren. Rivaliteit blijft.
+- **Lapras** (Water/Ice →) Water/Dragon of Water/Ghost: **Nahuelito**, het meermonster van Nahuel Huapi (Patagonië), een cryptid.
+- **Psyduck/Golduck** (Water/Psychic →) Water/Fighting: Andes-stroomversnellingseend (*pato de los torrentes*) die tegen watervallen op zwemt.
+- **Snover/Abomasnow** (Grass/Ice →) Grass/Fairy of Grass/Rock: *Puya raimondii*, bloeit één keer na ±100 jaar.
+- **Cramorant** (Flying/Water →) Water/Fighting: de Galápagos-aalscholver die niet meer kan vliegen. **Wattrel/Kilowattrel** (Electric/Flying; is al een fregatvogel →) Dark/Flying piraat.
+- **Torkoal** (Fire →) Steel/Ghost: verroeste stoomlocomotief van het treinkerkhof van Uyuni.
+- **Solrock/Lunatone** (Rock/Psychic →) Fire/Steel en Steel/Fairy: Inca-goud ("zweet van de zon") en -zilver ("tranen van de maan").
+- **Ponyta/Rapidash** (Fire →) Steel/Fairy: draaimolenpaard (niet Zuid-Amerikaans).

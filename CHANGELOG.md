@@ -1110,3 +1110,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.260] - Fire/Water erbij, Galápagos-regionals mogen Fire
 - `IDEEEN.md`: een Fire/Water-Pokémon komt erbij (Jordi); Galápagos-regionals mogen Fire krijgen; aardappel/maïs-lijn richting (locro, causa, huancaína).
+
+### [v0.0.261] - Onderwater-Oddish (Water/Fire)
+- `IDEEEN.md`: een onderwater-Oddish-lijn voor de Galápagos, Water/Fire, geïnspireerd op fan-art maar in een eigen vorm (voorstel: kokerwormen van de hydrothermale bronnen).

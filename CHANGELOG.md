@@ -1086,3 +1086,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.252] - Spooktrein sowieso
 - `IDEEEN.md`: een trein-/spooktrein-Pokémon gaat er sowieso in (Jordi); verder deze sessie diverse voorstellen (Amazone-insecten, Pinsir-evolutie als tor/kaiju, poesrups-tussenstadium, Ghost-mythes, early game Bug).
+
+### [v0.0.253] - Pseudo-draak: pitahaya
+- `IDEEEN.md`: de pseudo-legendary draak wordt pitahaya-geïnspireerd (Jordi).

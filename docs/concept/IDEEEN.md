@@ -436,10 +436,11 @@ Overig:
 
 ### Rock: Salta en Noordwest-Argentinië (vraag Jordi 9 nov; voorstellen Claude, open)
 Typen-check (Claude, 9 nov): Rock komt bij geen enkele nieuwe soort of vorm voor, Water nog niet vast, Steel alleen DJ Rotom.
-- **Cerro de los Siete Colores** (Purmamarca) en **Serranía de Hornocal** ("berg van 14 kleuren"): gekleurde gesteentelagen uit verschillende tijdperken; een Pokémon die per evolutie lagen (= tijd) krijgt.
+- **Cerro de los Siete Colores** (Purmamarca) en **Serranía de Hornocal** ("berg van 14 kleuren"): gekleurde gesteentelagen uit verschillende tijdperken; een Pokémon die per evolutie lagen (= tijd) krijgt. **Jordi (9 nov): "een pokemon die elke evo lagen bij krijgt met diverse kleuren, meso stijl is wel tof".**
 - **Cono de Arita** (Salar de Arizaro, bij Tolar Grande): een bijna perfecte kegel midden op een zoutvlakte, voor de Andesvolken heilig.
 - **Quebrada de las Conchas** (Cafayate): zandsteen in vormen met namen (El Sapo, El Fraile, Los Castillos), de Garganta del Diablo en het **Anfiteatro**, een natuurlijke zaal waar muzikanten spelen om de akoestiek (Rock + geluid).
 - **Campo de Piedra Pómez** (Catamarca): een veld van witte, door de wind uitgeslepen puimsteen.
 - **Ischigualasto / Talampaya** (San Juan, La Rioja): de oudste dinosaurussen (*Eoraptor*, *Herrerasaurus*): fossiel-Pokémon.
 - **Llullaillaco-mummies:** Inca-kinderen die op de top van de vulkaan zijn geofferd (capacocha), nu in een museum in Salta; Rock/Ghost-lore, voorzichtig met de toon.
 - Ook in de buurt: **Tren a las Nubes** (Salta, spoorlijn tot ±4200 m; past bij de spooktrein) en **Los Cardones** (cardón-cactussen; past bij de Noord-Andes-cactus).
+- **Cactussen die op steen lijken (vraag Jordi 9 nov; Claude):** *Copiapoa* (Atacama, Chili; grijze, krijtachtige bollen tussen de rotsen, leeft van zeemist), *Ariocarpus* (Mexico, "living rock cactus"), *Tephrocactus*/*Maihueniopsis* (puna van Argentinië, polletjes van segmenten die op kiezels lijken). Geen cactus maar wel steenhard: de yareta (Andes-kussenplant, ±3000 jaar oud, je kunt erop staan; pitch #41 Grass/Rock). *Lithops* ("levende stenen") komen uit Zuidelijk Afrika en zijn geen cactussen.

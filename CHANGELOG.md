@@ -1089,3 +1089,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.253] - Pseudo-draak: pitahaya
 - `IDEEEN.md`: de pseudo-legendary draak wordt pitahaya-geïnspireerd (Jordi).
+
+### [v0.0.254] - Sneeuwbol sowieso, Rock-ideeën Salta
+- `IDEEEN.md`: sneeuwbol-Pokémon sowieso (Jordi); pitahaya-draak waarschijnlijk Grass/Dragon; typen-check (Rock leeg, Water en Steel dun); Rock-voorstellen rond Salta (gekleurde bergen, Cono de Arita, Quebrada de las Conchas, puimsteenveld, Ischigualasto, Llullaillaco).

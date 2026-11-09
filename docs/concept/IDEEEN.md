@@ -30,6 +30,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Pincurchin-regional: pencil-spined sea urchin** (Pincurchin weer in de dex).
 - **Trein-/spooktrein-Pokémon** (Jordi, 9 nov: "sowieso"). Haakje: het treinkerkhof van Uyuni (bij gym 1); eerder voorstel Torkoal-locomotief (Steel/Ghost) uit de lijst waar Jordi niet van overtuigd was.
 - **Pseudo-legendary draak: pitahaya-geïnspireerd** (Jordi, 9 nov). Eerder: FAKEMON_PITCH #36 (pitahaya, Grass/Dragon) en "Dragonfruit (Dragon)" in de lijst van 29 okt; Tropius is in de repo al Grass/Dragon; **de pseudo-draak deelt waarschijnlijk die typing** (Jordi, 9 nov: "maakt niet uit dat meerdere pokemon dezelfde typing hebben").
+- **Sneeuwbol-Pokémon** (Jordi, 9 nov: "ben ik wel van overtuigd dus dat gaan we sowieso doen"; FAKEMON_PITCH #85, voorstel Ice/Psychic).
 - **Nazca-astronaut** (de "uilman" van Nazca; een soortgelijke Pokémon naast Sigilyph, geen vorm of evolutie; Jordi 9 nov: "astronaut komt erin").
 - **Golofa-kever** (Jordi, 9 nov: "ik wil die beetle erin"): door Jordi zelf gefotografeerd in Salento (`sprites/golofa/referenties/foto_jordi_salento.webp`); de twee grote bogen zijn de extreem lange voorpoten. **Open:** regional Heracross of regional Pinsir. Repo: Heracross Bug/Fighting, Pinsir Bug/Ground. Achtergrond (Claude): Heracross is een neushoornkever (naam van de herculeskever, die in Midden- en Zuid-Amerika leeft); *Golofa* is ook een neushoornkever (zelfde onderfamilie Dynastinae). Pinsir wordt meestal aan een vliegend hert toegeschreven; in Chili en Argentinië leeft het vliegend hert van Darwin (*Chiasognathus grantii*) met enorme kaken. **Darwins vliegend hert geschrapt** (Jordi, 9 nov: "net niet uniek genoeg").
 - **Spaceworld-ghosts Norowara en Kyonpan** komen in de game (Jordi, 9 nov); Raitora voorlopig niet.
@@ -432,3 +433,13 @@ Overig:
 - **Reactie Jordi (9 nov) op de Amazone-insecten:** vogelspin-Pokémon erbij is een goede, mogelijk een **Spinarak-regional**; slangrups "is vet, maar weet niet hoe ik dat leuk moet uitwerken"; helmcicade "heeft een soort heracross hoofd"; **puss caterpillar (poesrups) als optie** ("heerlijk vaag"; had een alternatief voor Pupoodle kunnen zijn, misschien nog een **tussenevolutie**); **termiet → termietenheuvel** is ook een optie. Vraag: zit er bij de kevers een logische Pinsir-evolutie?
 - **Pinsir-evolutie (Jordi, 9 nov):** een enorme tor/kaiju-hybride; welke tor nog bepalen, kunnen ook meerdere combineren.
 - **Voorstellen Claude:** Pinsir-evolutie als **sabeltandboktor** (*Macrodontia cervicornis*, Amazone, een van de grootste kevers, enorme kaken als Pinsirs scharen, schorspatroon); puss caterpillar als **tussenstadium Pupoodle → Lanymph**: de poedel in showtrim (de rups lijkt op een geföhnde kuif), de haren steken; de volwassen *Megalopyge* is ook een pluizige mot, dus het klopt biologisch.
+
+### Rock: Salta en Noordwest-Argentinië (vraag Jordi 9 nov; voorstellen Claude, open)
+Typen-check (Claude, 9 nov): Rock komt bij geen enkele nieuwe soort of vorm voor, Water nog niet vast, Steel alleen DJ Rotom.
+- **Cerro de los Siete Colores** (Purmamarca) en **Serranía de Hornocal** ("berg van 14 kleuren"): gekleurde gesteentelagen uit verschillende tijdperken; een Pokémon die per evolutie lagen (= tijd) krijgt.
+- **Cono de Arita** (Salar de Arizaro, bij Tolar Grande): een bijna perfecte kegel midden op een zoutvlakte, voor de Andesvolken heilig.
+- **Quebrada de las Conchas** (Cafayate): zandsteen in vormen met namen (El Sapo, El Fraile, Los Castillos), de Garganta del Diablo en het **Anfiteatro**, een natuurlijke zaal waar muzikanten spelen om de akoestiek (Rock + geluid).
+- **Campo de Piedra Pómez** (Catamarca): een veld van witte, door de wind uitgeslepen puimsteen.
+- **Ischigualasto / Talampaya** (San Juan, La Rioja): de oudste dinosaurussen (*Eoraptor*, *Herrerasaurus*): fossiel-Pokémon.
+- **Llullaillaco-mummies:** Inca-kinderen die op de top van de vulkaan zijn geofferd (capacocha), nu in een museum in Salta; Rock/Ghost-lore, voorzichtig met de toon.
+- Ook in de buurt: **Tren a las Nubes** (Salta, spoorlijn tot ±4200 m; past bij de spooktrein) en **Los Cardones** (cardón-cactussen; past bij de Noord-Andes-cactus).

@@ -1101,3 +1101,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.257] - Ice/Poison als regionale Poliwag-lijn
 - `IDEEEN.md`: de kristalkikker wordt (waarschijnlijk) een regionale Poliwag-lijn; Poliwag en Poliwhirl sowieso, eindvorm (Poliwrath, Politoed of een nieuwe derde) open. Cinnaber als favoriet mineraal; eis: duidelijk anders dan Glimmora.
+
+### [v0.0.258] - Harpij-arend: Braviary-vorm
+- `POKEMON.md`/`IDEEEN.md`: de harpij-arend wordt een eigen Braviary-vorm (Jordi); vraag of Rufflet meegaat.

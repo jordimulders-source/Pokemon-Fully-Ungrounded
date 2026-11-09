@@ -1092,3 +1092,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.254] - Sneeuwbol sowieso, Rock-ideeën Salta
 - `IDEEEN.md`: sneeuwbol-Pokémon sowieso (Jordi); pitahaya-draak waarschijnlijk Grass/Dragon; typen-check (Rock leeg, Water en Steel dun); Rock-voorstellen rond Salta (gekleurde bergen, Cono de Arita, Quebrada de las Conchas, puimsteenveld, Ischigualasto, Llullaillaco).
+
+### [v0.0.255] - Yareta, Copiapoa, Rock-Cacnea; lagen-Pokémon mesa-stijl
+- `IDEEEN.md`: met yareta en Copiapoa gaan we iets doen; Jordi neigt naar een Rock-regional Cacnea-lijn (misschien zonder Grass); lagen-Pokémon in de stijl van het Minecraft-mesagebied.

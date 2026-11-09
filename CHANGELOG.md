@@ -1098,3 +1098,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.256] - Ice/Poison: kikkers met giftige kristallen
 - `IDEEEN.md`: de Ice/Poison-lijn wordt een lijn kikkers met giftige kristallen op ze (Jordi), met echte hoge-Andes-kikkers als haakjes; sneeuwbol-uitwerking open; typen-telling.
+
+### [v0.0.257] - Ice/Poison als regionale Poliwag-lijn
+- `IDEEEN.md`: de kristalkikker wordt (waarschijnlijk) een regionale Poliwag-lijn; Poliwag en Poliwhirl sowieso, eindvorm (Poliwrath, Politoed of een nieuwe derde) open. Cinnaber als favoriet mineraal; eis: duidelijk anders dan Glimmora.

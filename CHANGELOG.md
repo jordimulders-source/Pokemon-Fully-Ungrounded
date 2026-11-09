@@ -1031,3 +1031,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.234] - Spaceworld-ghosts erin, Delibird-evolutie, Golofa-foto
 - `POKEMON.md`: Norowara en Kyonpan komen in de game; Raitora voorlopig niet.
 - `IDEEEN.md`: Delibird-evolutie sowieso; blobfish-idee en Nazca-astronaut goed bevonden; Lanturn-hengelvis nog open; Golofa-foto van Jordi (Salento) als referentie.
+
+### [v0.0.235] - Nazca-astronaut en Golofa-kever sowieso
+- `IDEEEN.md`: de Nazca-astronaut komt erin; de Golofa-kever ook (regional Heracross of Pinsir nog open, met achtergrond over beide).

@@ -22,6 +22,8 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).
 - **Galápagos-regional forms.**
 - **Delibird-evolutie** (Jordi, 9 nov: "Delibird gaan we een evo geven dan"); Delibird-familie moet terug in de dex; ontgimmicken (haakje: de beta-cadeauvogel Gifuto #225).
+- **Nazca-astronaut** (de "uilman" van Nazca; een soortgelijke Pokémon naast Sigilyph, geen vorm of evolutie; Jordi 9 nov: "astronaut komt erin").
+- **Golofa-kever** (Jordi, 9 nov: "ik wil die beetle erin"): door Jordi zelf gefotografeerd in Salento (`sprites/golofa/referenties/foto_jordi_salento.webp`); de twee grote bogen zijn de extreem lange voorpoten. **Open:** regional Heracross of regional Pinsir. Repo: Heracross Bug/Fighting, Pinsir Bug/Ground. Achtergrond (Claude): Heracross is een neushoornkever (naam van de herculeskever, die in Midden- en Zuid-Amerika leeft); *Golofa* is ook een neushoornkever (zelfde onderfamilie Dynastinae). Pinsir wordt meestal aan een vliegend hert toegeschreven; in Chili en Argentinië leeft het vliegend hert van Darwin (*Chiasognathus grantii*) met enorme kaken.
 - **Spaceworld-ghosts Norowara en Kyonpan** komen in de game (Jordi, 9 nov); Raitora voorlopig niet.
 
 **Brainstormfase**
@@ -35,14 +37,12 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Ledian-evolutie** (nadenken).
 - **Lanturn-evolutie:** voorstel Claude: diepzee-hengelvis waarbij het mannetje als parasiet aan het vrouwtje vastgroeit; Jordi (9 nov): "erg smerig en grounded, nu nog bedenken of ik Lanturn die horror wil aandoen". Eerder: "is dat uberhaupt nodig? Die kunnen we dan nog wat verder diepzee maken en enger, zoals Annihilape, maar misschien valt dat uit de toon".
 - **Sunflora-evolutie:** "alleen als we echt met een vet idee kunnen bedenken".
-- **Golofa / Pinsir:** neushoornkever (*Golofa*, door Jordi zelf gefotografeerd in Salento: `sprites/golofa/referenties/foto_jordi_salento.webp`; Heracross ziet er "flink anders uit"; op de foto zijn de twee bogen de extreem lange voorpoten) met 2 enorme scharen in een cirkelvorm; Jordi twijfelt of Pinsir na de buff een evolutie nodig heeft en of Pinsir hier al op gebaseerd is.
 - **Shuckle-evolutie** (Delibird: zie sowieso): gimmickmons, dan moeten ze ontgimmickt worden; "vraag me af of dat werkt".
 - **Octillery-evolutie** (Jordi's favoriete Pokémon; "zelfs met onze dikke buff is die nog niet geweldig").
 - **Evolutie voor Ninjask, Sableye, Mawile, Manectric:** "zelfs met terugwerkende kracht in Ungrounded".
 - **Regionale Cacnea/Maractus-lijn** ("dit zijn geen zuid amerikaanse cactussen").
 - **Kecleon-evolutie:** past in het verhaal als Keccles late game evolueert.
 - **Regionale Tropius**, misschien; misschien een **Absol-evolutie**; misschien een **Glalie-evolutie**.
-- **Nazca-lijn-Pokémon zoals Sigilyph:** regionale variant is "een beetje gek" (Sigilyph past al), evolutie past niet echt, "dus eerder een soortgelijke pokemon ernaast?". Voorstel Claude: de "astronaut"/uilman van Nazca; Jordi (9 nov): goed idee.
 - **Flamigo-evolutie:** "weet ik bijna wel zeker".
 - Al het andere in dit bestand dat niet als besloten in `POKEMON.md` staat.
 - **Repo-check (Claude, 9 nov):** niet in de dex (familie moet terug): Mime-lijn, Ledyba-lijn, Sunkern-lijn, Shuckle, Delibird, Mawile, Electrike-lijn, Snorunt-lijn. Wel in de dex: Banette, Victreebel, Lanturn, Pinsir (Bug/Ground), Octillery (Water), Ninjask, Sableye, Cacnea/Maractus, Kecleon (Grass), Tropius, Absol (Dark/Fairy), Kricketune, Sigilyph, Flamigo, Venonat-lijn.

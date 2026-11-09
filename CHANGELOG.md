@@ -1021,3 +1021,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.231] - Ideeën: grote nieuwe lijst (9 nov)
 - `IDEEEN.md`, overzicht: sowieso Banette-evolutie, Bartitsu-Mr. Rime, blobfish-lijn, Kricketune-dirigent, hoatzin, Galápagos-vormen, Venomoth-vuurvlieg (evolutie via een move, opnieuw met Gemini), condor = Hanan Pacha; brainstorm: Victreebel-vorm, Mr. Mime-vorm, Ledian, Lanturn, Sunflora, Golofa/Pinsir, Shuckle, Delibird, Octillery, Ninjask, Sableye, Mawile, Manectric, Cacnea/Maractus, Kecleon, Tropius, Absol, Glalie, Nazca-Pokémon, Flamigo. Repo-check van de dex-status.
 - `POKEMON.md`: Venomoth-vorm en condor-legendary bijgewerkt.
+
+### [v0.0.232] - Venomoth-vuurvlieg: onderbouwing
+- `POKEMON.md`: waarom Venonat → vuurvlieg conceptueel klopt (Pokédex: door licht aangetrokken, eet insecten; *Photuris*; precedenten).

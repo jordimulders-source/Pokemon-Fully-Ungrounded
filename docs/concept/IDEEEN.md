@@ -24,6 +24,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Delibird-evolutie** (Jordi, 9 nov: "Delibird gaan we een evo geven dan"); Delibird-familie moet terug in de dex; ontgimmicken (haakje: de beta-cadeauvogel Gifuto #225).
 - **Heliamphora-regional form van de Bellsprout-lijn** (Jordi, 9 nov: "gaan we sowieso doen"); de bekerplant van de tepuis (staat rechtop, met een klein lepelvormig dekseltje). Eerder: Victreebel-regional form verkennen: "van die hangende planten waar vliegen in kruipen en opgegeten worden bijv". (hangende bekerplanten zijn *Nepenthes*, Zuidoost-Azië).
 - **Tank-Octillery als regional form, plus een nieuwe evolutie daarna** (Jordi, 9 nov: "tank octillery regional form ook en een nieuwe evolutie daarna"; de tank-versie uit de Spaceworld-beta, #210). Richting evolutie (Jordi, 9 nov): "een soort kraken battleship zou wel tof zijn denk ik". Eerder: Octillery-evolutie (Jordi's favoriete Pokémon; "zelfs met onze dikke buff is die nog niet geweldig").
+- **Kecleon-evolutie: een leguaan** (Jordi, 9 nov: "dan hebben we bij deze onze Kecleon evolutie"); evolueert zodra Kecleon op de Galápagos-locatie in de game is (plaatsgebonden, zoals Nosepass en Magneton). Kecleon is in de repo Grass. Er bestaat nog geen leguaan-Pokémon. Open: welke leguaan (zee-, land- of roze leguaan) en type. Eerder: Kecleon-evolutie: past in het verhaal als Keccles late game evolueert.
 - **Nazca-astronaut** (de "uilman" van Nazca; een soortgelijke Pokémon naast Sigilyph, geen vorm of evolutie; Jordi 9 nov: "astronaut komt erin").
 - **Golofa-kever** (Jordi, 9 nov: "ik wil die beetle erin"): door Jordi zelf gefotografeerd in Salento (`sprites/golofa/referenties/foto_jordi_salento.webp`); de twee grote bogen zijn de extreem lange voorpoten. **Open:** regional Heracross of regional Pinsir. Repo: Heracross Bug/Fighting, Pinsir Bug/Ground. Achtergrond (Claude): Heracross is een neushoornkever (naam van de herculeskever, die in Midden- en Zuid-Amerika leeft); *Golofa* is ook een neushoornkever (zelfde onderfamilie Dynastinae). Pinsir wordt meestal aan een vliegend hert toegeschreven; in Chili en Argentinië leeft het vliegend hert van Darwin (*Chiasognathus grantii*) met enorme kaken. **Darwins vliegend hert geschrapt** (Jordi, 9 nov: "net niet uniek genoeg").
 - **Spaceworld-ghosts Norowara en Kyonpan** komen in de game (Jordi, 9 nov); Raitora voorlopig niet.
@@ -41,7 +42,6 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Shuckle-evolutie** (Delibird: zie sowieso): gimmickmons, dan moeten ze ontgimmickt worden; "vraag me af of dat werkt".
 - **Evolutie voor Ninjask, Sableye, Mawile, Manectric:** "zelfs met terugwerkende kracht in Ungrounded".
 - **Regionale Cacnea/Maractus-lijn** ("dit zijn geen zuid amerikaanse cactussen").
-- **Kecleon-evolutie:** past in het verhaal als Keccles late game evolueert.
 - **Regionale Tropius**, misschien; misschien een **Absol-evolutie**; misschien een **Glalie-evolutie**.
 - **Flamigo-evolutie:** "weet ik bijna wel zeker".
 - Al het andere in dit bestand dat niet als besloten in `POKEMON.md` staat.

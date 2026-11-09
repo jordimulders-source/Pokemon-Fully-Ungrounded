@@ -140,5 +140,6 @@ tijdelijk vervangen. Elk heeft in de nieuwe regio een eigen plek nodig (`IF_IN_M
 - Magnezone (Magneton) en Vikavolt (Charjabug): magnetisch veld (was New Mauville/Chargestone Cave); nu alleen Thunder Stone.
 - Leafeon (Eevee): mosrots in een bos (was Petalburg Woods); nu alleen Leaf Stone.
 - Glaceon (Eevee) en Crabominable (Crabrawler, nog niet in de dex): ijsrots (was Shoal Cave); nu alleen Ice Stone.
+- Kecleon → leguaan-evolutie (nieuw, Jordi 9 nov): op de Galápagos-locatie.
 - Alolan Exeggutor (Exeggcute): was Route 119; nu tijdelijk level-up met een Dragon-type in het team. Plek: de
   waspalmenvallei (zie "Bestaande soorten in de regio").

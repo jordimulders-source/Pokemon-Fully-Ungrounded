@@ -1067,3 +1067,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.246] - Voorstellen Galápagos-regional forms
 - `IDEEEN.md`: darwinvinken-Pikipek, reuzenschildpad-Torkoal, lavacactus-Cacnea, hamerhaai-Sharpedo, Sally Lightfoot-Krabby, zeeleguaan-Salandit, blauwvoetgent-Swanna, zeeleeuw-Spheal, Cramorant, Kilowattrel (open).
+
+### [v0.0.247] - Kecleon-evolutie: leguaan
+- `IDEEEN.md`/`POKEMON.md`: Kecleon krijgt een leguaan-evolutie die plaatsgebonden op de Galápagos-locatie evolueert (zoals Nosepass en Magneton). Welke leguaan en type: open.

@@ -1055,3 +1055,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.242] - Pre-evolutie Bartitsu-Mr. Rime
 - `IDEEEN.md`: origami, brandweerhond en nimbus eventuele opties (Jordi nog niet tevreden over link/uitvoering); voorstellen voor een regionale Mr. Mime als pre-evolutie van Bartitsu-Mr. Rime (bokser, polospeler, conducteur, Watson).
+
+### [v0.0.243] - Jiujitsu-Mr. Mime
+- `IDEEEN.md`: richting Jordi: regionale Mr. Mime als BJJ-vechter op zijn rug in een gi ("get into my guard"), daarna Bartitsu-Mr. Rime als oude gentleman met wandelstok.

@@ -370,3 +370,4 @@ Lijn dan: Mime Jr. → regionale Mr. Mime → Bartitsu-Mr. Rime (zoals Galar: Mi
 - **Conducteur/stationschef** van de Brits-Argentijnse spoorwegen, met fluitje en pet: de heer op het perron.
 - **Watson → Holmes** (Holmes' "baritsu"): de assistent wordt de detective; als knipoog, zonder echte namen.
 - Open: blijft Mime Jr. gewoon of krijgt hij ook een vorm.
+- **Richting Jordi (9 nov):** "wat als we gewoon een jiu jitsu mr mime maken, die met zijn rug op de grond ligt, get into my guard, in een gi. En daarna een oude gentleman wordt met een wandelstok". Haakjes (Claude): bartitsu bevat zelf jiujitsu (Barton-Wright leerde het in Japan), dus de stap klopt; BJJ is Braziliaans (Gracie); sluit aan op het BJJ-idee van 29 okt (Werdum-pose). Let op: de alpaca-lijn zou in fase 2 "een andere vechtsport" krijgen (mogelijk BJJ); die keuze vervalt dan voor de alpaca.

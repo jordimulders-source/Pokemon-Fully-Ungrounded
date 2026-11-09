@@ -1040,3 +1040,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.237] - Tank-Octillery sowieso
 - `IDEEEN.md`/`POKEMON.md`: de tank-Octillery (Spaceworld-beta) wordt een regional form van Octillery, met een nieuwe evolutie daarna.
+
+### [v0.0.238] - Darwins vliegend hert geschrapt
+- `IDEEEN.md`: Darwins vliegend hert (als Pinsir-vorm/evolutie) geschrapt, net niet uniek genoeg (Jordi).

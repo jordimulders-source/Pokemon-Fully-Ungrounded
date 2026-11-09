@@ -1073,3 +1073,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.248] - Oricorio-vormen sowieso, Keccles evolueert op de Galápagos
 - `IDEEEN.md`: de eerder besproken Oricorio-vormen (samba, tango, cumbia) gaan we sowieso doen; Keccles evolueert ook op de Galápagos-locatie (laat in het verhaal).
+
+### [v0.0.249] - Geen cueca/marinera-Oricorio
+- `IDEEEN.md`/`DEX_NOMINATIES.md`: cueca en marinera komen er niet in; welke leguaan voor Kecleon bedenken we later.

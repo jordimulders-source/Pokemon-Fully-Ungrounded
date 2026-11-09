@@ -548,7 +548,7 @@ Bestaande lijnen die een Zuid-Amerikaanse vorm kunnen krijgen: een andere habita
 | 10 | Deerling → Sawsbuck | Grass/Ice: Deerling als pudú (kleinste hert ter wereld), Sawsbuck als huemul (wapen van Chili); seizoenen = Patagonische seizoenen | pudú en huemul | PAT (Valdiviaans regenwoud, Andes) |
 |  | Rufflet → Braviary | Flying/Fighting: harpij met dubbele kuif, jaagt op luiaards en apen | harpij-arend (Amazone) | AMA |
 |  | Cherubi → Cherrim | Grass/Ground: bloeit alleen na zeldzame regen; in de zon openen de bloemen | desierto florido (de bloeiende Atacama) | ATA |
-|  | Oricorio (nieuwe stijlen) | Nieuwe dansstijlen met eigen nectar: tango (Dark/Flying), samba (Fire/Flying of Fairy), cueca/marinera (Normal/Flying) | tango (Buenos Aires), samba (Rio), cueca (Chili), marinera (Peru) | STAD |
+|  | Oricorio (nieuwe stijlen) | Nieuwe dansstijlen met eigen nectar: tango (Dark/Flying), samba (Fire/Flying of Fairy), cueca/marinera (Normal/Flying) | tango (Buenos Aires), samba (Rio), cueca (Chili), marinera (Peru); **cueca en marinera niet** (Jordi, 9 nov) | STAD |
 |  | Sandile → Krokorok → Krookodile | Water/Dark: kaaiman met brede snuit, ligt in groepen op de oever | yacaré-kaaiman van de Pantanal | PAN |
 |  | Diglett → Dugtrio | Ground/Normal: knager met grote tanden in plaats van een mol; roept 'tuc-tuc' onder de grond | tuco-tuco (Ctenomys) van de altiplano, pampa en Patagonië | ALT, PAT (vroege Ground voor gym 1) |
 |  | Chewtle → Drednaw | Water/Grass: plat, blad-achtig schild, zuigt prooi op | matamata-schildpad (Amazone) | AMA |

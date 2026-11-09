@@ -1017,3 +1017,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Nieuwe schakelaar `FU_DUDUNSPARCE` (FALSE) in `include/config/species_enabled.h`: Dudunsparce (beide vormen) is uit de soortdata, vormtabel, kleurvarianten en kreten; Dunsparce evolueert niet meer met Hyper Drill (Jordi, 8 nov). Dundragoon komt later als evolutie.
 - `IDEEEN.md`/`POKEMON.md`: condor-Pokémon sowieso; Venomoth-vuurvlieg (Electric/Fire) bij de Venomoth-regional form.
 - ROM: `__rom_end` 0x08E16B18, ±17,9 MB vrij.
+
+### [v0.0.231] - Ideeën: grote nieuwe lijst (9 nov)
+- `IDEEEN.md`, overzicht: sowieso Banette-evolutie, Bartitsu-Mr. Rime, blobfish-lijn, Kricketune-dirigent, hoatzin, Galápagos-vormen, Venomoth-vuurvlieg (evolutie via een move, opnieuw met Gemini), condor = Hanan Pacha; brainstorm: Victreebel-vorm, Mr. Mime-vorm, Ledian, Lanturn, Sunflora, Golofa/Pinsir, Shuckle, Delibird, Octillery, Ninjask, Sableye, Mawile, Manectric, Cacnea/Maractus, Kecleon, Tropius, Absol, Glalie, Nazca-Pokémon, Flamigo. Repo-check van de dex-status.
+- `POKEMON.md`: Venomoth-vorm en condor-legendary bijgewerkt.

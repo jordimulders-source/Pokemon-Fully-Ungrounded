@@ -2,8 +2,8 @@
 
 Alles wat Jordi tijdens het brainstormen noemt, in steekwoorden. Het concept (`docs/concept/CONCEPT.md`) wordt hieruit opgebouwd.
 
-## Overzicht: sowieso doen en brainstormfase (Jordi, 8 nov)
-Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de secties eronder.
+## Overzicht: sowieso doen en brainstormfase (Jordi, 8–9 nov)
+Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de secties eronder. Indeling 9 nov (Claude): zonder "misschien/nadenken/verkennen" = sowieso, met = brainstorm; Jordi kan schuiven.
 
 **Sowieso doen**
 - **Dundragoon:** lome, grappige draakevolutie van Dunsparce, Drampa-achtig; tweede vertakking naast Dudunsparce; **Dudunsparce komt niet in de game** (Jordi, 8 nov; uit de ROM sinds v0.0.230, Hyper Drill laat Dunsparce niet meer evolueren).
@@ -13,8 +13,14 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).
 - **Yanma/Yanmega:** "gaan we nog iets mee doen voor bug/dragon".
-- **Een condor-Pokémon** (Jordi, 8 nov: "Ik wil een condor pokemon erin"; Hanan Pacha is in `POKEMON.md` al een condor).
-- **Venomoth-vuurvlieg** (Electric/Fire), zie `POKEMON.md`.
+- **Een condor-Pokémon = Hanan Pacha** (Jordi, 9 nov: "de condor in het legendary trio klinkt uitstekend").
+- **Venomoth-vuurvlieg** (Electric/Fire): Venonat wordt de nieuwe Venomoth **met een move die hij leert**; conceptueel een insect dat tot vuurvlieg evolueert (zoals Volbeat). **Ontwerp opnieuw met Gemini** (Jordi, 9 nov: "Het design was prima, maar kunnen we denk ik nu veel beter maken met Gemini").
+- **Banette-evolutie** ("nog meer marionet").
+- **Bartitsu-Mr. Rime.**
+- **Blobfish-lijn, 2 fases.**
+- **Kricketune-evolutie die echt een dirigent wordt.**
+- **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).
+- **Galápagos-regional forms.**
 
 **Brainstormfase**
 - Invulling van de Ice/Poison-Pokémon (aardappel/chuño, Tentacool-vorm en ozongat: Jordi niet overtuigd; nieuwe voorstellen: bevriezende gifkikker, bedorven ijsje, bevriezing-ijsgeest).
@@ -22,7 +28,22 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - Gloednieuwe Pokémon zonder link met Zuid-Amerika.
 - Evoluties voor soorten die ze echt nodig hebben (Smeargle, Chatot, Cryogonal: niet per se).
 - Regional forms die underrated Pokémon interessant maken (de rest van de top 10 in `DEX_NOMINATIES.md` §5: nog niet overtuigd).
+- **Victreebel-regional form verkennen:** "van die hangende planten waar vliegen in kruipen en opgegeten worden bijv".
+- **Nog een nieuwe Mr. Mime-vorm** (misschien).
+- **Ledian-evolutie** (nadenken).
+- **Lanturn-evolutie:** "is dat uberhaupt nodig? Die kunnen we dan nog wat verder diepzee maken en enger, zoals Annihilape, maar misschien valt dat uit de toon".
+- **Sunflora-evolutie:** "alleen als we echt met een vet idee kunnen bedenken".
+- **Golofa / Pinsir:** neushoornkever (*Golofa*, Colombia, foto Jordi) met 2 enorme scharen in een cirkelvorm; Jordi twijfelt of Pinsir na de buff een evolutie nodig heeft en of Pinsir hier al op gebaseerd is.
+- **Shuckle- en Delibird-evolutie:** gimmickmons, dan moeten ze ontgimmickt worden; "vraag me af of dat werkt".
+- **Octillery-evolutie** (Jordi's favoriete Pokémon; "zelfs met onze dikke buff is die nog niet geweldig").
+- **Evolutie voor Ninjask, Sableye, Mawile, Manectric:** "zelfs met terugwerkende kracht in Ungrounded".
+- **Regionale Cacnea/Maractus-lijn** ("dit zijn geen zuid amerikaanse cactussen").
+- **Kecleon-evolutie:** past in het verhaal als Keccles late game evolueert.
+- **Regionale Tropius**, misschien; misschien een **Absol-evolutie**; misschien een **Glalie-evolutie**.
+- **Nazca-lijn-Pokémon zoals Sigilyph:** regionale variant is "een beetje gek" (Sigilyph past al), evolutie past niet echt, "dus eerder een soortgelijke pokemon ernaast?".
+- **Flamigo-evolutie:** "weet ik bijna wel zeker".
 - Al het andere in dit bestand dat niet als besloten in `POKEMON.md` staat.
+- **Repo-check (Claude, 9 nov):** niet in de dex (familie moet terug): Mime-lijn, Ledyba-lijn, Sunkern-lijn, Shuckle, Delibird, Mawile, Electrike-lijn, Snorunt-lijn. Wel in de dex: Banette, Victreebel, Lanturn, Pinsir (Bug/Ground), Octillery (Water), Ninjask, Sableye, Cacnea/Maractus, Kecleon (Grass), Tropius, Absol (Dark/Fairy), Kricketune, Sigilyph, Flamigo, Venonat-lijn.
 
 ## Basis
 - Vervolg op Pokémon Ungrounded, ambitieuzer. Gebouwd in pokeemerald-expansion (fork van projectgrounded, met alle revisies van Pokémon/moves/abilities en de QoL).

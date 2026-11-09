@@ -1095,3 +1095,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.255] - Yareta, Copiapoa, Rock-Cacnea; lagen-Pokémon mesa-stijl
 - `IDEEEN.md`: met yareta en Copiapoa gaan we iets doen; Jordi neigt naar een Rock-regional Cacnea-lijn (misschien zonder Grass); lagen-Pokémon in de stijl van het Minecraft-mesagebied.
+
+### [v0.0.256] - Ice/Poison: kikkers met giftige kristallen
+- `IDEEEN.md`: de Ice/Poison-lijn wordt een lijn kikkers met giftige kristallen op ze (Jordi), met echte hoge-Andes-kikkers als haakjes; sneeuwbol-uitwerking open; typen-telling.

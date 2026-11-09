@@ -7,7 +7,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 
 **Sowieso doen**
 - **Dundragoon:** lome, grappige draakevolutie van Dunsparce, Drampa-achtig; tweede vertakking naast Dudunsparce; **Dudunsparce komt niet in de game** (Jordi, 8 nov; uit de ROM sinds v0.0.230, Hyper Drill laat Dunsparce niet meer evolueren).
-- **Een Ice/Poison-Pokémon** (typing bestaat nog niet; invulling nog in de brainstorm, zie hieronder).
+- **Een Ice/Poison-lijn: kikkers met giftige kristallen op ze** (Jordi, 9 nov). Echte haakjes (Claude): harlekijnpadden (*Atelopus*, páramo tot ±4800 m, tetrodotoxine, de *jambato* teruggevonden in 2016), vieroogkikker (*Pleurodema marmoratum*, puna tot ±5000 m, gifklieren als nepogen, volgt smeltende gletsjers tot ±5400 m), Andespad (*Rhinella spinulosa*).
 - **Vuurwerk** (Fire/Fairy, FAKEMON_PITCH #83).
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).

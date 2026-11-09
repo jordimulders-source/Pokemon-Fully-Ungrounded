@@ -1070,3 +1070,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.247] - Kecleon-evolutie: leguaan
 - `IDEEEN.md`/`POKEMON.md`: Kecleon krijgt een leguaan-evolutie die plaatsgebonden op de Galápagos-locatie evolueert (zoals Nosepass en Magneton). Welke leguaan en type: open.
+
+### [v0.0.248] - Oricorio-vormen sowieso, Keccles evolueert op de Galápagos
+- `IDEEEN.md`: de eerder besproken Oricorio-vormen (samba, tango, cumbia) gaan we sowieso doen; Keccles evolueert ook op de Galápagos-locatie (laat in het verhaal).

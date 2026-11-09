@@ -361,3 +361,12 @@ Jordi (9 nov): regional forms zijn leuk omdat ze type en gebruik compleet verand
 - **Miltank** (Normal →) Ice/Normal: ijscokar (Normal/Ice bestaat nog niet).
 - **Skarmory** (Steel/Flying →) Normal/Flying: origamikraanvogel (pitch #76); stalen muur wordt broze, snelle aanvaller.
 - **Mimikyu** (Ghost/Fairy, zelfde type): draagt hier een Zapacha-pak in plaats van een Pikachu-pak, omdat Zapacha de elektrische knager van de regio is (grap, geen rolwissel).
+- **Jordi (9 nov):** "origami en brandweerhond, plus nimbus zijn eventuele opties, maar ben nog niet tevreden over deze specifieke link en uitvoering" (nimbus = de onweerswolk-Altaria).
+
+### Bartitsu-Mr. Rime: pre-evolutie als regionale Mr. Mime (vraag Jordi 9 nov; voorstellen Claude, open)
+Lijn dan: Mime Jr. → regionale Mr. Mime → Bartitsu-Mr. Rime (zoals Galar: Mime Jr. → Galar-Mr. Mime → Mr. Rime). Mime-lijn moet terug in de dex.
+- **Victoriaanse bokser** (Fighting of Fighting/Psychic): bartitsu = boksen + jiujitsu + savate + stokvechten; de pre-evo kent één discipline, de evolutie alles. Snor, opgerolde mouwen, Queensberry-houding.
+- **Polospeler** (Britten brachten polo naar Argentinië, nu het beste polo-land ter wereld): de polohamer wordt bij de evolutie de wandelstok.
+- **Conducteur/stationschef** van de Brits-Argentijnse spoorwegen, met fluitje en pet: de heer op het perron.
+- **Watson → Holmes** (Holmes' "baritsu"): de assistent wordt de detective; als knipoog, zonder echte namen.
+- Open: blijft Mime Jr. gewoon of krijgt hij ook een vorm.

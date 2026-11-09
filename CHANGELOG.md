@@ -1052,3 +1052,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.241] - Regional forms, niet Zuid-Amerikaans
 - `IDEEEN.md`: Jordi is van de vorige lijst nog niet overtuigd; nieuwe lijst zonder Zuid-Amerikaanse link (goochelaar-Alakazam, brandweerhond-Arcanine, koffie-Snorlax, badeend-Golduck, onweer-Altaria, ijscokar-Miltank, origami-Skarmory, Zapacha-Mimikyu), alles open.
+
+### [v0.0.242] - Pre-evolutie Bartitsu-Mr. Rime
+- `IDEEEN.md`: origami, brandweerhond en nimbus eventuele opties (Jordi nog niet tevreden over link/uitvoering); voorstellen voor een regionale Mr. Mime als pre-evolutie van Bartitsu-Mr. Rime (bokser, polospeler, conducteur, Watson).

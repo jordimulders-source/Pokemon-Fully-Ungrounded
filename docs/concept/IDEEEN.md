@@ -22,6 +22,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).
 - **Galápagos-regional forms.**
 - **Delibird-evolutie** (Jordi, 9 nov: "Delibird gaan we een evo geven dan"); Delibird-familie moet terug in de dex; ontgimmicken (haakje: de beta-cadeauvogel Gifuto #225).
+- **Heliamphora-regional form van de Bellsprout-lijn** (Jordi, 9 nov: "gaan we sowieso doen"); de bekerplant van de tepuis (staat rechtop, met een klein lepelvormig dekseltje). Eerder: Victreebel-regional form verkennen: "van die hangende planten waar vliegen in kruipen en opgegeten worden bijv". (hangende bekerplanten zijn *Nepenthes*, Zuidoost-Azië).
 - **Nazca-astronaut** (de "uilman" van Nazca; een soortgelijke Pokémon naast Sigilyph, geen vorm of evolutie; Jordi 9 nov: "astronaut komt erin").
 - **Golofa-kever** (Jordi, 9 nov: "ik wil die beetle erin"): door Jordi zelf gefotografeerd in Salento (`sprites/golofa/referenties/foto_jordi_salento.webp`); de twee grote bogen zijn de extreem lange voorpoten. **Open:** regional Heracross of regional Pinsir. Repo: Heracross Bug/Fighting, Pinsir Bug/Ground. Achtergrond (Claude): Heracross is een neushoornkever (naam van de herculeskever, die in Midden- en Zuid-Amerika leeft); *Golofa* is ook een neushoornkever (zelfde onderfamilie Dynastinae). Pinsir wordt meestal aan een vliegend hert toegeschreven; in Chili en Argentinië leeft het vliegend hert van Darwin (*Chiasognathus grantii*) met enorme kaken.
 - **Spaceworld-ghosts Norowara en Kyonpan** komen in de game (Jordi, 9 nov); Raitora voorlopig niet.
@@ -32,7 +33,6 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - Gloednieuwe Pokémon zonder link met Zuid-Amerika.
 - Evoluties voor soorten die ze echt nodig hebben (Smeargle, Chatot, Cryogonal: niet per se).
 - Regional forms die underrated Pokémon interessant maken (de rest van de top 10 in `DEX_NOMINATIES.md` §5: nog niet overtuigd).
-- **Victreebel-regional form verkennen:** "van die hangende planten waar vliegen in kruipen en opgegeten worden bijv".
 - **Nog een nieuwe Mr. Mime-vorm** (misschien).
 - **Ledian-evolutie** (nadenken).
 - **Lanturn-evolutie:** voorstel Claude: diepzee-hengelvis waarbij het mannetje als parasiet aan het vrouwtje vastgroeit; Jordi (9 nov): "erg smerig en grounded, nu nog bedenken of ik Lanturn die horror wil aandoen". Eerder: "is dat uberhaupt nodig? Die kunnen we dan nog wat verder diepzee maken en enger, zoals Annihilape, maar misschien valt dat uit de toon".

@@ -1034,3 +1034,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.235] - Nazca-astronaut en Golofa-kever sowieso
 - `IDEEEN.md`: de Nazca-astronaut komt erin; de Golofa-kever ook (regional Heracross of Pinsir nog open, met achtergrond over beide).
+
+### [v0.0.236] - Heliamphora-Bellsprout sowieso
+- `IDEEEN.md`: regional form van de Bellsprout-lijn naar *Heliamphora* (tepuis) gaat er sowieso in.

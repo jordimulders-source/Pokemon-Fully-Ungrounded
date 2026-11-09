@@ -1104,3 +1104,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.258] - Harpij-arend: Braviary-vorm
 - `POKEMON.md`/`IDEEEN.md`: de harpij-arend wordt een eigen Braviary-vorm (Jordi); vraag of Rufflet meegaat.
+
+### [v0.0.259] - Regionale Rufflet, harpij Steel/Flying, aardappel/maïs-lijn
+- `IDEEEN.md`: Rufflet gaat mee in de harpij-vorm; Jordi vindt Steel/Flying tof; nieuwe lijn: aardappel met maiskolf-handen die steeds meer een gerecht wordt.

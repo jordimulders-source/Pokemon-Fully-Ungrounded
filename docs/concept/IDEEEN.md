@@ -350,3 +350,14 @@ Jordi (9 nov): regional forms zijn leuk omdat ze type en gebruik compleet verand
 - **Torkoal** (Fire →) Steel/Ghost: verroeste stoomlocomotief van het treinkerkhof van Uyuni.
 - **Solrock/Lunatone** (Rock/Psychic →) Fire/Steel en Steel/Fairy: Inca-goud ("zweet van de zon") en -zilver ("tranen van de maan").
 - **Ponyta/Rapidash** (Fire →) Steel/Fairy: draaimolenpaard (niet Zuid-Amerikaans).
+- **Jordi (9 nov):** "ben denk ik van geen een van deze ideeen echt overtuigd voorlopig".
+
+### Regional forms, niet Zuid-Amerikaans (voorstellen Claude, 9 nov, open)
+- **Abra-lijn** (Psychic →) Dark: Alakazam als toneelgoochelaar; het is allemaal truc, geen echte krachten.
+- **Growlithe/Arcanine** (Fire →) Water/Fire: brandweerhond (dalmatiër) die vuur blust; stoom. Water/Fire heeft alleen Volcanion (niet in de dex).
+- **Munchlax/Snorlax** (Normal →) Normal/Electric: Snorlax aan de koffie die nooit slaapt; snelle sweeper in plaats van tank.
+- **Psyduck/Golduck** (Water/Psychic →) Water/Normal: de reuzenbadeend van Florentijn Hofman (Nederlandse knipoog); drijvende tank in plaats van special attacker.
+- **Swablu/Altaria** (Dragon/Flying →) Electric/Flying: de wattenwolk wordt een onweerswolk.
+- **Miltank** (Normal →) Ice/Normal: ijscokar (Normal/Ice bestaat nog niet).
+- **Skarmory** (Steel/Flying →) Normal/Flying: origamikraanvogel (pitch #76); stalen muur wordt broze, snelle aanvaller.
+- **Mimikyu** (Ghost/Fairy, zelfde type): draagt hier een Zapacha-pak in plaats van een Pikachu-pak, omdat Zapacha de elektrische knager van de regio is (grap, geen rolwissel).

@@ -1049,3 +1049,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.240] - Voorstellen regional forms met andere typen
 - `IDEEEN.md`: lijst regional forms die type en rol compleet veranderen (Golofa-Heracross, pichiciego-Sandshrew, holenuil-Hoothoot, manenwolf-Growlithe, brulaap-Mankey, killer bee-Combee, Torkoal-locomotief e.a.), alles open.
+
+### [v0.0.241] - Regional forms, niet Zuid-Amerikaans
+- `IDEEEN.md`: Jordi is van de vorige lijst nog niet overtuigd; nieuwe lijst zonder Zuid-Amerikaanse link (goochelaar-Alakazam, brandweerhond-Arcanine, koffie-Snorlax, badeend-Golduck, onweer-Altaria, ijscokar-Miltank, origami-Skarmory, Zapacha-Mimikyu), alles open.

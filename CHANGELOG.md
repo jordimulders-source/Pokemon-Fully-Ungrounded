@@ -1064,3 +1064,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.245] - Mr. Prime
 - Naam van de Bartitsu-eindvorm: **Mr. Prime** (Jordi). `IDEEEN.md` en de werknamen in `POKEMON.md`.
+
+### [v0.0.246] - Voorstellen Galápagos-regional forms
+- `IDEEEN.md`: darwinvinken-Pikipek, reuzenschildpad-Torkoal, lavacactus-Cacnea, hamerhaai-Sharpedo, Sally Lightfoot-Krabby, zeeleguaan-Salandit, blauwvoetgent-Swanna, zeeleeuw-Spheal, Cramorant, Kilowattrel (open).

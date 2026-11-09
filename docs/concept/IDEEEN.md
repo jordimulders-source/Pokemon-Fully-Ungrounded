@@ -372,3 +372,15 @@ Lijn dan: Mime Jr. → regionale Mr. Mime → Bartitsu-Mr. Rime (zoals Galar: Mi
 - **Mime Jr. blijft gewoon** (Jordi, 9 nov). Typen jiujitsu-Mr. Mime en Bartitsu-eindvorm: nog niet bepaald.
 - **Naam eindvorm: Mr. Prime** (Jordi, 9 nov: "hilarisch en perfect"). Eerdere voorstellen Claude: **Sir Mime** (van Mr. naar Sir: geridderd, rangverhoging als evolutie), **Mr. Prime** (rijmt zoals Rime; oud maar nog in zijn prime), Lord Mime, Mr. Time (de oude heer).
 - **Richting Jordi (9 nov):** "wat als we gewoon een jiu jitsu mr mime maken, die met zijn rug op de grond ligt, get into my guard, in een gi. En daarna een oude gentleman wordt met een wandelstok". Haakjes (Claude): bartitsu bevat zelf jiujitsu (Barton-Wright leerde het in Japan), dus de stap klopt; BJJ is Braziliaans (Gracie); sluit aan op het BJJ-idee van 29 okt (Werdum-pose). Past bij Jordi's eerdere besluit "Ik maak een andere BJJ pokemon later" (`sprites/lama/SPEC.md`: geen BJJ voor de lama-lijn).
+
+### Galápagos-regional forms (voorstellen Claude, 9 nov, open)
+Sowieso doen (Jordi). Typen: repo → voorstel; alle soorten in de dex. Rode draad: Darwin; elk eiland iets anders, de soort past zich aan.
+- **Pikipek-lijn** (Normal/Flying →) **darwinvinken**: vorm per snavel, type per dieet: zaad (Grass), insect (Bug), cactus (Ground) en de **vampiervink** (Dark/Flying; drinkt echt bloed van genten).
+- **Torkoal** (Fire →) Ground/Grass: **reuzenschildpad** in twee schildvormen (koepel en zadelrug met lange nek); trage Trick Room-tank.
+- **Cacnea/Cacturne** (Grass, Grass/Dark →) Grass/Fire of Grass/Rock: **lavacactus** (groeit op verse lava) → **boom-opuntia** (cactus zo groot als een boom, voer van de schildpadden). Sluit aan op Jordi's wens voor een regionale Cacnea/Maractus.
+- **Carvanha/Sharpedo** (Water/Dark →) Water/Electric: **hamerhaai**; voelt elektrische velden met zijn kop, jaagt in scholen.
+- **Krabby/Kingler** (Water →) Fire/Water of Rock/Water: **Sally Lightfoot-krab**, felrood op zwarte lava, springt van rots naar rots; trage klapper wordt snel.
+- **Salandit/Salazzle** (Poison/Fire →) Water/Dragon: **zeeleguaan** (pitch #18), graast zeewier, niest zout.
+- **Ducklett/Swanna** (Water/Flying →) Water/Fairy met Dancer: **blauwvoetgent**, pronkdans met blauwe voeten (pitch #17).
+- **Spheal-lijn** (Ice/Water →) Water/Normal: **Galápagos-zeeleeuw**, tropisch en speels; ijstank wordt snelle zwemmer.
+- **Cramorant** (Flying/Water →) Water/Fighting: aalscholver die niet meer kan vliegen. **Kilowattrel** (Electric/Flying →) Dark/Flying: fregatvogel-piraat.

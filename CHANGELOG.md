@@ -1025,3 +1025,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.233] - Charlatan-Alakazam: ronde 5, bijsturing v6
 - Ronde 5 opgeslagen. Jordi: oren van het origineel (ronde 3) beter; zijkanten en rug zwart, "beetje mr mime/rime lijn idee". `PROMPT_v6.md` met ronde 5 als basis en ronde 3 alleen voor de oren. Daarna: "evenals de bovenarmen" (ook zwart).
+
+### [v0.0.234] - Charlatan-Alakazam: ronde 6
+- Ronde 6 opgeslagen. Jordi: lijfsilhouet klopt nu, hoofd van ronde 3 is beter, lijfkleuren nog verbeteren.

@@ -1031,3 +1031,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.235] - Charlatan-Alakazam: samengesteld model, bijsturing v7
 - Hoofd van ronde 3 op het lijf van ronde 6 (`samengesteld_kop3_lijf6.png`). `PROMPT_v7.md` (Jordi): onderarmen en bovenbenen niet zwart, schouderstukken als aparte platen, Alakazam-anatomie aanhouden.
+
+### [v0.0.236] - Charlatan-Alakazam: silhouet vast, SPEC voor de frontsprite
+- Ronde 7 opgeslagen; Jordi: silhouet klopt, kleuren aan Claude. `alakazam_regional/SPEC.md` met model (silhouet ronde 7, hoofd ronde 3, niet spiegelen) en kleurzones uit Jordi's woorden; maker-agent gestart.

@@ -1005,3 +1005,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.227] - Cosmic: Ghost en Electric-resist eruit
 - Jordi: Ghost uit de Cosmic-matchups, geen Electric-resist. Stand in `IDEEEN.md`.
+
+### [v0.0.228] - Cosmic: naam en Fairy-nerf
+- Jordi's vraag over de naam Cosmic en "fairy mag een flinke nerf" in `IDEEEN.md`.

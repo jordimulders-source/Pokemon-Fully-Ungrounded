@@ -17,3 +17,6 @@ De oude krullen verdwijnen. Kop, mantel, ogen, mond: 100% r5 (ontwerp, textuur, 
 ## Stappen
 1. Aangepast model op Gemini-resolutie, gebouwd uit r5-onderdelen (kop pixel-identiek) → Jordi keurt de posities.
 2. Daarna pas de sprite (SPRITE_WERKWIJZE "Gemini-model namaken").
+
+## Model
+- **v1 (10 nov):** `model/model_v1.png`. Jordi: "die linker tentakel gaat wel, maar voor de rest ziet het er allemaal echt verschrikkelijk uit".

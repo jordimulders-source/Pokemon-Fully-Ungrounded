@@ -1047,3 +1047,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Verse maker vanaf het gekwantiseerde model (onderlaag, lijnkaart, px-metingen): r5 snor als omlijnde grijze streng, nette handen/voeten, wit front volgt de vorm. Keurder: snor, kop, voeten opgelost.
 - r6: onderarmen grijs (Jordi; de horizontale rechterarm is de onderarm, keurder r2 had dat fout), tapse vingerlijnen, schoppen los, knieglans.
 - r7 (Claude, 19 px keurdersreparaties): onderarmen terug naar 3 tinten, schaduw als sikkel, geen banding. Controle: open randen 0, losse o 0, alpha-diff 0. Herkeuring + DFC-eindkeuring: PASS na deze reparaties.
+
+### [v0.0.239] - Charlatan-Alakazam: r8 (pupil, handen)
+- r8: pupil 1 px naar links ("pupil perfect"), rechterhand A goed. Linkerhand nog niet: r9 maakt L1 (model nagemaakt) en L2 (grotere vuist, voorstel Claude). Daarna het lijf: tuxedokleuren in het lichaam verwerken zoals bij Mr. Rime, niet te cartoony (Jordi; SPEC bijgewerkt).

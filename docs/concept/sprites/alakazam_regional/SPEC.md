@@ -21,3 +21,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` → "Gemini-model namaken" + `docs/
 - Kaarten: wit met zwart schoppensymbool, twee dezelfde.
 - Geen kleding: geen zomen, naden, manchetten of revers (Jordi: "Pokemon dragen in principe geen kleding").
 - Contrast en licht naar Gen 3 (Jordi: "licht/contrast maar dat is standaard en fixen we zelf later").
+
+## Na ronde 8 (Jordi, 10 nov)
+- Pupil: 1 px naar links. Jordi: "pupil perfect, bij die ernaast heeft die geen pupil meer".
+- Rechterhand: A. Jordi: "rechterhand is wel oke". Linkerhand: "links is echt nog niet mooi, alle varianten niet, kan je het model niet namaken?". Daarna over het voorstel van Claude (een grotere vuist, kaart door de vuist): "je voorstel kunnen we proberne".
+- Lijf: "Daarna is het tijd om het lichaam minder als kleding te laten maken. Het lijkt nu bijna een beetje een pinguin badpak met een strik" en "ik wil de tuxedo kleuren zoveel mogelijk verwerken in het lichaam, zodat het natuurlijk lijkt, zoals bij mr rime. maar ook niet te cartoony".

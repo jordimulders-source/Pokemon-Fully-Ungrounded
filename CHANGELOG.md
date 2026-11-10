@@ -1002,4 +1002,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Alakazam eerst: Gemini-prompts in `docs/concept/sprites/alakazam_regional/gemini/PROMPT.md` (variant A twee toverstafjes, variant B twee identieke speelkaarten; zwart/wit/grijs, smoking uit eigen lijf, violette tint op het hoofd, opgekrulde snor, één oog half dicht, voorkant naar rechts, geen hoge hoed). Bijlage: Alakazam-frontsprite 8×. Rood accent nog open.
 
 ### [v0.0.226] - Charlatan-Alakazam: pose met hand achter de rug
-- Jordi: "1 hand toont hij naar ons toe, de ander houdt die achter zijn rug, daar zie je dan dat hij een kaart vast heeft ook/of toverstaf". In beide Gemini-prompts (staf en kaarten) en POKEMON.md verwerkt.
+- Jordi: "1 hand toont hij naar ons toe, de ander houdt die achter zijn rug, daar zie je dan dat hij een kaart vast heeft ook/of toverstaf". In beide Gemini-prompts (staf en kaarten) en POKEMON.md verwerkt. Daarna: "en die hand toont die dan nonchalant" (ook verwerkt).

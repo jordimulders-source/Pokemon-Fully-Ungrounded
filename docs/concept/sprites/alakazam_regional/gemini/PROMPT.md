@@ -10,6 +10,7 @@ Regels: `docs/lessen/GEMINI.md`. Twee varianten, verder identiek, elk in een **n
 - "hij wordt donkerder, zwart/wit/grijs zou ik zeggen. De blik in de ogen wordt ook geniepig, ik zou zeggen 1 meer open en 1 half gesloten."
 - "smoking uit eigen lijf goed. Violet tint op het hoofd ook prima. Rood misschien voor een soort stropdas of een soort kleur in zijn smoking bij dat zakje waar mensen soms een bloem in doen, maar misschien is dat te gimmicky."
 - "1 hand toont hij naar ons toe, de ander houdt die achter zijn rug, daar zie je dan dat hij een kaart vast heeft ook/of toverstaf, perfecte pose is dat"
+- "en die hand toont die dan nonchalant"
 - Geen hoge hoed (advies Claude; Jordi twijfelde). Geen derde kaart, geen regionaal anker (Jordi).
 
 ## Bijlage
@@ -28,7 +29,7 @@ A Dark/Psychic Alakazam that is a stage illusionist and a swindler: very skilled
 
 POSE
 - Three-quarter view, but turned partly sideways: the FRONT of its body faces the RIGHT side of the image (the opposite of a normal front sprite). A shifty, untrustworthy stance.
-- It has exactly two arms. One hand is held out toward the viewer, showing its object openly. The other hand is held behind its back, and the viewer can still see that this hidden hand holds the same object too.
+- It has exactly two arms. One hand is held out toward the viewer, showing its object nonchalantly, casual and relaxed. The other hand is held behind its back, and the viewer can still see that this hidden hand holds the same object too.
 
 FACE
 - A sneaky look: one eye more open, the other eye half closed.

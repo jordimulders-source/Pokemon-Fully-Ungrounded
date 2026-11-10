@@ -228,3 +228,41 @@ AVOID
 - Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
 - No plush toy, chibi, Neopets or mascot look.
 ```
+
+- **r5 (10 nov):** `r5_A5.png` (prompt A5). Jordi: "juist, nu komen we ergens. Ik zou hem nog wat meer uitgestrekt willen hebben, nu is het wat meer een bal. de mond vind ik nog net niet gattling gun genoeg, maar misschien kan gemini dat niet. De pose zou ik zodanig willen dat de tentakels die kunnen schieten op schouderhoogte zitten. Dan zou het wel kunnen dat we 2 tentakels als rupsbanden maken. Dus 2 zijn rupsbanden, 2 zijn kanonnen, en de voorste twee zijn reguliere tentakels"
+
+## Prompt A6 (A5 aangepast, geen bijlage, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). You make the design decisions; below are the brief and the design rules.
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Animal: the Humboldt squid ("diablo rojo") from the Pacific coast of Peru and Chile: a long arrow-shaped mantle with large triangular fins at the tip, big eyes, arms and long hunting tentacles. A fierce pack hunter that flashes red.
+- It must be bigger, heavier and clearly stronger than Octillery, and read as its evolution at a glance (red body, round yellow warts on the arms). It is not Octillery with things added: design a new face and body.
+
+DESIGN RULES
+- Pokémon are never animals with weapons attached. Every weapon IS a body part that grows naturally out of the animal's anatomy, the way Clawitzer's claw is its cannon.
+- Its mouth is a rapid-fire weapon like a gatling gun, but made of red flesh: several fleshy red tubes grown together in a ring around the mouth, an octopus mouth that is clearly a multi-barrel gun. Like Octillery's tube mouth, but evolved.
+- Its arms have three roles:
+  - two arms are its tank treads: they run under the body in long flat loops and it rolls on them like a tank, still clearly red squid arms;
+  - two long tentacles are its two cannons, with the club at the end forming the cannon. They come out at shoulder height, beside the head, and are aimed forward like the guns of a tank;
+  - the two front arms are regular tentacles.
+- The Steel type is part of the body's physiology, as with Steel-type Pokémon like Aggron, Steelix, Metagross, Mawile, Scizor and Empoleon. Here it is shown only through textures on the body that suggest armour. NO steel plates, no grey metal pieces, no helmet, no casing.
+- Keep it clean and readable like a real Pokémon: a few strong shapes, not over-designed.
+
+POSE AND SIZE
+- The body is stretched out and long, the mantle reaching back and up like a long arrow; NOT rolled up into a ball.
+- Still a real Gen 3 sprite composition: the whole creature fits in a 64x64 frame, a little wider than tall at most, not a wide horizontal picture.
+- 3/4 view facing left, mouth and both tentacle cannons aimed forward-left. Both eyes visible. Calm, confident and dangerous; not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Real-world guns or machine parts: no metal gatling cylinders, pipes, collars, bolts, rivets, seams, screws, metal plates or metal tank treads.
+- Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```

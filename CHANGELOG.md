@@ -1013,3 +1013,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.229] - Octillery-evolutie: r4 en prompt A5
 - r4 (A4 met r3 als bijlage) "veel slechter": vorm weg, metaal past niet bij het lijf. Terug naar A3 (Jordi): compact Gen 3-formaat (niet te breed), staal alleen als textuur die op pantser duidt (geen platen; Jordi's overzicht van Steel-Pokémon in `octillery_evo/referenties/`), gatling wordt een rode octopusmond met een andere vorm, een soort kanon zoals bij Octillery. Prompt A5.
+
+### [v0.0.230] - Octillery-evolutie: r5 en prompt A6
+- r5 (A5): "juist, nu komen we ergens". Jordi: meer uitgestrekt (geen bal), mond meer gatling, schietende tentakels op schouderhoogte, 2 tentakels als rupsbanden, 2 kanonnen, voorste 2 gewone tentakels. Prompt A6.

@@ -999,3 +999,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.225] - Idee: Cosmic-type
 - Jordi's idee voor een nieuw type Cosmic (kandidaten, Cosmic Power, opmerking over de typetabel) met de huidige repo-types van de kandidaten in `docs/concept/IDEEEN.md`. Nog niets besloten.
+
+### [v0.0.226] - Cosmic: matchup-voorstel, correcties
+- Jordi's matchup-voorstel voor Cosmic in `IDEEEN.md`. Correctie: Minior is Rock/Flying (niet Normal) en staat uit; `TYPE_MYSTERY` kan niet hergebruikt worden (codemarkering voor "geen type"), Cosmic krijgt een eigen nummer.

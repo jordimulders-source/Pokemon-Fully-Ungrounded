@@ -1004,3 +1004,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.226] - Octillery-evolutie: ronde 1 en prompt A2
 - r1 (A en B) afgekeurd door Jordi ("gewoon octillery met wat kanonnen"); plaatjes en feedback in `octillery_evo/gemini/PROMPT.md`. Verder met richting A: meer kraken, echt oorlogswapen, steel natuurlijk zoals bij Empoleon. Nieuwe prompt A2.
 - Les in GEMINI.md: "keep from X" geeft X met accessoires, ook zonder bijlage; steel als anatomie beschrijven.
+
+### [v0.0.227] - Octillery-evolutie: r2, Humboldtinktvis, prompt A3
+- r2 afgekeurd ("goedkoop, wat metaal erop geplakt"). Jordi: wapens als lichaamsdeel, Gemini laten ontwerpen, Humboldtinktvis i.p.v. kraken, gatling mag organisch, kanonnen onderdeel van de tentakels, mooi pantser zoals andere Steel-types. Studie Steel-voorbeelden + prompt A3 in `octillery_evo/gemini/PROMPT.md`.

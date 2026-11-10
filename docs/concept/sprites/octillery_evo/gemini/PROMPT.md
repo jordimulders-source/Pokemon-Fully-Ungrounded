@@ -127,3 +127,39 @@ AVOID
 - Not a robot, mech, tank, ship or submarine: no hull, deck, treads, turrets, bolts, rivets, seams or flags.
 - Not over-designed: no spikes, chains or tiny details. No plush toy, chibi, Neopets or mascot look.
 ```
+
+## Na r2: nieuwe aanpak (Jordi, 10 nov)
+- Jordi: "pokemon zijn niet dieren met wapens erop geplakt, ze zijn vaak op handige manieren onderdeel van het lichaam. Je moet de prompt anders schrijven want gemini moet juist ontwerpen, niet ik, doe maar humboldt ipv kraken, is wat meer gedefinieerd. En de gatling gun mag gewoon organisch eruitzien, de kanonnen moeten ook wat meer onderdeel van de tentakels. Hij moet verder op een mooie manier bepantserd zijn, zoals bij andere pokemon steel types".
+- Anatomie: **Humboldtinktvis** (*Dosidicus gigas*, "diablo rojo", Peru/Chili): pijlvormige mantel met grote driehoekige vinnen aan de punt, grote ogen, 8 armen + **2 lange vangtentakels met verdikte knots** (→ de twee kanonnen, natuurlijk onderdeel van de tentakels), **sifon/trechter** voor straalaandrijving (→ de organische gatling), papegaaiachtige snavel, flitst rood/wit, jaagt in groepen.
+- Steel-voorbeelden (types gecontroleerd in de repo): Empoleon (Water/Steel; snavel, kroon en vleugelranden zíjn staal), Corviknight (veren als platen van een harnas), Aggron (platen op kop en rug volgen de lichaamsvorm, grijs pantser op donker lijf), Scizor (scharen zijn het wapen en het pantser), Skarmory (veren zijn bladen), Kingambit (de bladen zijn het lijf), Steelix (gesegmenteerd lijf). Bij ons ook Blastoise Water/Steel (kanonnen uit het schild). Wapen als lichaamsdeel: Clawitzer (Water; de schaar is het kanon).
+- Prompt-aanpak: Gemini krijgt een ontwerpopdracht (probleem + principes + voorbeelden), geen onderdelenlijst; geen woorden als "gatling"/"barrel".
+
+## Prompt A3
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). You make the design decisions; below are the brief and the design rules.
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Animal: the Humboldt squid ("diablo rojo") from the Pacific coast of Peru and Chile: an arrow-shaped mantle with large triangular fins at the tip, big eyes, a powerful beak, eight arms plus two long hunting tentacles with thickened clubs at the ends, and a siphon it uses to shoot jets of water. A fierce pack hunter that flashes red.
+- It must be bigger, heavier and clearly stronger than Octillery, and read as its evolution at a glance (red body, round yellow warts on the arms). It is not Octillery with things added: design a new face and body.
+
+DESIGN RULES
+- Pokémon are never animals with weapons attached. The weapon IS a body part that grows naturally out of the animal's anatomy, the way Clawitzer's claw is its cannon, Blastoise's cannons grow from its shell and Scizor's pincers are both its weapon and its armour.
+- Use the squid's own anatomy for the three weapons: its siphon becomes a multi-barrel rapid-fire organ that still looks organic, and its two long hunting tentacles become its two cannons, with the club itself forming the cannon. No other weapons.
+- The Steel type is beautiful armour that follows the body, as in Steel-type Pokémon: Empoleon's steel beak, crown and wing edges, Corviknight's feathers like plates of a knight's armour, Aggron's plates following the shape of its head and back. Hard, polished, dark steel on the parts of a squid that would naturally be hard or protective (for example the fins, the mantle or the arm edges), flowing into the red flesh. Never a helmet, casing or plates stuck on top.
+- Keep it clean and readable like a real Pokémon: a few strong shapes, not over-designed.
+
+POSE AND VIEW
+- 3/4 view facing left, the full body visible, the three weapons aimed forward-left. Both eyes visible. Calm, confident and dangerous; not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Real-world guns or machine parts: no gatling cylinders, pipes, collars, bolts, rivets, seams or screws.
+- Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```

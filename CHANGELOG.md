@@ -1008,3 +1008,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.228] - Cosmic: naam en Fairy-nerf
 - Jordi's vraag over de naam Cosmic en "fairy mag een flinke nerf" in `IDEEEN.md`.
+
+### [v0.0.229] - Cosmic tegen Cosmic: super effective
+- Jordi kiest super effective voor Cosmic tegen Cosmic. Volledige matchups in `IDEEEN.md`.

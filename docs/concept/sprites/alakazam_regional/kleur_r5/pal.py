@@ -1,9 +1,9 @@
 # palet + raster->png (index 0 = transparant)
 import numpy as np, sys
 from PIL import Image
-PAL=[('.',(152,208,160)),('o',(22,20,30)),
- ('k',(40,38,52)),('m',(62,60,80)),('n',(96,94,120)),('p',(138,136,162)),   # zwart materiaal (k schaduw, m basis, n licht, p glans)
- ('w',(252,252,252)),('a',(222,222,232)),('b',(186,184,202)),('c',(146,140,170)),('d',(106,96,136)),  # wit / grijs (c,d violet in de schaduw)
+PAL=[('.',(152,208,160)),('o',(16,14,22)),
+ ('k',(34,32,46)),('m',(54,52,70)),('n',(88,86,112)),('p',(130,128,156)),   # zwart materiaal (k schaduw, m basis, n licht, p glans)
+ ('w',(252,252,252)),('a',(224,224,232)),('b',(184,184,196)),('c',(146,140,170)),('d',(106,96,136)),  # wit / grijs (c,d violet in de schaduw)
  ('t',(248,112,104)),('r',(208,48,56)),('s',(128,24,40))]
 CH={c:i for i,(c,_) in enumerate(PAL)}
 RGB={c:v for c,v in PAL}

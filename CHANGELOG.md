@@ -1009,3 +1009,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.228] - Charlatan-Alakazam: Gemini-ronde 1, prompt v2
 - Ronde 1 (staf en kaarten) opgeslagen met Jordi's feedback in `alakazam_regional/gemini/README.md`; Jordi kiest de kaarten. Startprompt v2 (`PROMPT_v2.md`): bijna zijaanzicht naar rechts, één snor, subtielere smoking zonder Dracula-kraag, mag meer van Alakazam afwijken; plek van het violet nog open.
+- Violet (Jordi: optie 4): grijs hoofd met een lichte violette glans in de schaduwen; in prompt v2 en POKEMON.md.

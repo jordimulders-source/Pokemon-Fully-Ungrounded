@@ -5,8 +5,8 @@ Nieuw gesprek. Bijlage: alleen `bijlage1_alakazam.png` (géén ronde-1-plaatje: 
 ## Jordi over ronde 1 (letterlijk)
 "De pose klopt nog niet. Hij staat nog teveel naar de voorkant toe, moet meer naar rechts kijken. De kaarten wil ik wel voor gaan. Het hele hoofd is nu violet en dat klopt niet, plus hij heeft een dubbele snor, het mag wel iets meer van alakazam afwijken nog. De jas is nu teveel dracula, het mag niet zo overdreven mwuahaha villain zijn. Verder ben ik wel tevreden over het kleurgebruik"
 
-## Nog open
-- [HEAD]: waar het violet komt (Jordi kiest).
+## Keuzes
+- Violet (Jordi, 10 nov: optie 4): grijs hoofd met een lichte violette glans in de schaduwen. Niets meer open.
 
 ## Prompt
 
@@ -26,7 +26,7 @@ FACE
 
 COLORS
 - Black, white and grey, with a red bow tie marking at the collar, part of its body like Rowlet's bow tie.
-- [HEAD]
+- The head is grey, with a light violet sheen only in its shadows. The head is NOT violet.
 - A tuxedo made from its own body, subtle and elegant: a white chest like a dress shirt, black shoulders and arms like a jacket.
 
 OBJECTS

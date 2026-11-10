@@ -1013,3 +1013,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.229] - Charlatan-Alakazam: ronde 2, prompt v3 (hoofd)
 - Ronde 2 opgeslagen; Jordi: pose klopt, meer charisma. Prompt v3 (`PROMPT_v3.md`): ronde 2 als bijlage, alleen het hoofd: iets meer naar ons toe, kijkt ons zijdelings aan, "wenkbrauw opgetrokken"-look zonder wenkbrauw, snor twirlt meer.
+
+### [v0.0.230] - Charlatan-Alakazam: ronde 3, bijsturing v4
+- Ronde 3 opgeslagen (Jordi: "uitstekend"). Bijsturingen `PROMPT_v4.md`: achterovergekamd haar (donkere kopbovenkant) en zwarte snor, elk apart.

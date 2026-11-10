@@ -22,7 +22,7 @@ open('onderlaag_L1.txt','w').write('\n'.join(''.join(r) for r in R)+'\n')
 for y in range(33,47): print(y,' '.join(R[y][3:21]))
 # --- technisch opschonen (zie NOTITIES): randen kaart lichtkant d, kaartindex -> a, lijn (15,39) volgens fo, benen buiten de hand terug naar r8
 FIX={(7,34):'d',(6,35):'d',(5,36):'d',(5,38):'w',(6,39):'w',(6,40):'d',(5,39):'d',(11,38):'b',(15,39):'o',(14,39):'c',
-     (16,40):'o',(20,39):'o',(19,40):'d',(11,43):'d',(12,43):'d',(13,44):'d'}
+     (16,40):'o',(20,39):'o',(19,40):'o',(11,43):'d',(12,43):'d',(13,44):'d'}
 for (x,y),c in FIX.items(): R[y][x]=c
 for y in range(44,47):
     for x in range(18,21): R[y][x]=B[y][x]

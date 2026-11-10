@@ -90,6 +90,8 @@ AVOID
 ## Rondes
 - **r1 (10 nov):** `r1_A_gatling.png`, `r1_B_mantel.png`. Jordi: "Beide echt slecht, is gewoon octillery met wat kanonnen". Jordi stuurde géén bijlagen mee ("dat is het ironische"); de tekst "keep from Octillery" + de opsomming van Octillery-kenmerken was genoeg om Octillery na te tekenen met wapens en een helm erop. Jordi: "Ik wil dat die meer kraken wordt. Maar ook echt een oorlogswapen. Het steel gedeelte moet natuurlijk zijn, hier lijkt het erop geplakt. Dat is bij een Empoleon bijv ook niet". Verder met richting A.
 
+- **r2 (10 nov):** `r2_A2.png` (prompt A2). Jordi: "nog steeds lelijk, nu is die wat meer een kraken vorm, maar het lijkt echt heel goedkoop, wat metaal erop geplakt en voor de rest echt precies octillery". Twee rondes mis → stoppen, eerst overleggen.
+
 ## Prompt A2 (na r1; richting A, meer kraken, oorlogswapen, steel als anatomie zoals Empoleon)
 Keuzes Claude (Jordi kan schrappen): mantel langgerekt als bij een inktvis met twee stalen vinnen bovenaan (leest als granaat/torpedo); de snuit = de sifon (waarmee inktvissen echt water spuiten) die een gatling is.
 

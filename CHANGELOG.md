@@ -1028,3 +1028,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.234] - Octillery-evolutie: r9, Gemini-rondes klaar
 - r9 (A9): posities van de tentakelkanonnen kloppen, de rest vergeten. Jordi: "Design 5 blijft het beste". Verdere aanpak wacht op Jordi.
+
+### [v0.0.235] - Octillery-evolutie: SPEC en aangepast model v1
+- r5 bevroren als ontwerp (`octillery_evo/referenties/gemini_gekozen_r5.png`), SPEC met Jordi's toegestane wijzigingen (kanonnen over de schouders, 2 rupsband-tentakels, 2 gespreide tentakels; kop 100% r5; kanontentakels mogen de kop deels overlappen). Schets `schets_tentakels.png`.
+- Maker bouwde `model/model_v1.png` uit r5-onderdelen (kop: 0 afwijkende pixels buiten de kanonoverlap); wacht op Jordi.

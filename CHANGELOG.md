@@ -1042,3 +1042,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Snor blijft grijs (Jordi: "nee houd hem grijs"); SPEC, POKEMON.md en Stand van zaken bijgewerkt.
 - Correctie (Jordi): "ik heb nooit gezegd zwart, ik heb gezegd dat het kan vervagen naar zwart, maar ik ben tevreden met de grijze". "Zwarte snor" was een verkeerde lezing van Claude; SPEC en README bijgewerkt.
 - Regel "na 2 mislukte rondes stoppen" weggehaald (Jordi: "die twee rondes misgaan mag je weghalen, want de poedelmot methode heeft bewezen dat er meer rondes nodig zijn, maar het resultaat dan uitstekend is"): CLAUDE.md, SPRITE_KERN.md, GEMINI.md.
+
+### [v0.0.238] - Charlatan-Alakazam: frontsprite r5–r7 (poedelmot-methode)
+- Verse maker vanaf het gekwantiseerde model (onderlaag, lijnkaart, px-metingen): r5 snor als omlijnde grijze streng, nette handen/voeten, wit front volgt de vorm. Keurder: snor, kop, voeten opgelost.
+- r6: onderarmen grijs (Jordi; de horizontale rechterarm is de onderarm, keurder r2 had dat fout), tapse vingerlijnen, schoppen los, knieglans.
+- r7 (Claude, 19 px keurdersreparaties): onderarmen terug naar 3 tinten, schaduw als sikkel, geen banding. Controle: open randen 0, losse o 0, alpha-diff 0. Herkeuring + DFC-eindkeuring: PASS na deze reparaties.

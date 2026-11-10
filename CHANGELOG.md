@@ -1024,4 +1024,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi wil de kleding natuurlijker als lijf en andere oren. `PROMPT_v5.md`: smoking alleen als kleurzones van Alakazams eigen platen (schouders zwart, borst wit, knieën zwart), geen naden/zomen/manchetten, strikje als tekening (Rowlet), oren horizontaler naar achteren.
 
 ### [v0.0.233] - Charlatan-Alakazam: ronde 5, bijsturing v6
-- Ronde 5 opgeslagen. Jordi: oren van het origineel (ronde 3) beter; zijkanten en rug zwart, "beetje mr mime/rime lijn idee". `PROMPT_v6.md` met ronde 5 als basis en ronde 3 alleen voor de oren.
+- Ronde 5 opgeslagen. Jordi: oren van het origineel (ronde 3) beter; zijkanten en rug zwart, "beetje mr mime/rime lijn idee". `PROMPT_v6.md` met ronde 5 als basis en ronde 3 alleen voor de oren. Daarna: "evenals de bovenarmen" (ook zwart).

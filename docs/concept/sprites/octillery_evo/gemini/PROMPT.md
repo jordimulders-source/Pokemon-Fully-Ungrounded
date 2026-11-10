@@ -191,3 +191,40 @@ AVOID
 ```
 
 - **r4 (10 nov):** `r4_A4.png` (prompt A4 met r3 als bijlage). Jordi: "veel slechter". Claude: tentakels werden dunne zwepen met losse buisjes (ondanks "keep"), lijf kleiner en lichter, sifon werd een ring donuts voor het gezicht, mantelstaal werd één grote kap. r3 blijft de beste.
+
+## Na r4 (Jordi, 10 nov)
+- "ja pak prompt a3, belangrijk is nog wel dat het een gen 3 sprite wordt, want deze is te breed horizontaal. Steel pokemon hebben eigenlijk vrijwel nooit stukken stalen platen zoals je hier kan zien, het staal is juist fysiologisch onderdeel van het lichaam, of left to the imagination. Laten we daarom voor nu gaan voor texturen die op bepantsering duiden, maar geen stalen platen. De gatling gun moet een octopus mond zijn met een andere vorm, zoals bij octillery het ook een soort kanon is, maar wel rood."
+- Jordi's overzicht van Steel-Pokémon: `../referenties/steel_pokemon_overzicht.webp`.
+
+## Prompt A5 (A3 aangepast, geen bijlage, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). You make the design decisions; below are the brief and the design rules.
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Animal: the Humboldt squid ("diablo rojo") from the Pacific coast of Peru and Chile: an arrow-shaped mantle with large triangular fins at the tip, big eyes, eight arms plus two long hunting tentacles with thickened clubs at the ends. A fierce pack hunter that flashes red.
+- It must be bigger, heavier and clearly stronger than Octillery, and read as its evolution at a glance (red body, round yellow warts on the arms). It is not Octillery with things added: design a new face and body.
+
+DESIGN RULES
+- Pokémon are never animals with weapons attached. The weapon IS a body part that grows naturally out of the animal's anatomy, the way Clawitzer's claw is its cannon.
+- Three weapons, no others:
+  - its mouth is the rapid-fire weapon: a red octopus mouth that is a kind of cannon, like Octillery's tube mouth, but with a different shape;
+  - its two long hunting tentacles are its two cannons, with the club itself forming the cannon.
+- The Steel type is part of the body's physiology, as with Steel-type Pokémon like Aggron, Steelix, Metagross, Mawile, Scizor and Empoleon, or left to the imagination. Here it is shown only through textures on the body that suggest armour. NO steel plates, no grey metal pieces, no helmet, no casing.
+- Keep it clean and readable like a real Pokémon: a few strong shapes, not over-designed.
+
+POSE AND SIZE
+- A real Gen 3 sprite composition: the whole creature fits compactly in a square 64x64 frame, about as tall as it is wide. NOT a wide horizontal picture: the arms and tentacles curl close around the body instead of stretching out to the sides.
+- 3/4 view facing left, mouth and both tentacle cannons aimed forward-left. Both eyes visible. Calm, confident and dangerous; not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Real-world guns or machine parts: no gatling cylinders, pipes, collars, bolts, rivets, seams, screws or metal plates.
+- Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```

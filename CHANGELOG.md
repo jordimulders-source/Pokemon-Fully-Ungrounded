@@ -1002,3 +1002,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.226] - Cosmic: matchup-voorstel, correcties
 - Jordi's matchup-voorstel voor Cosmic in `IDEEEN.md`. Correctie: Minior is Rock/Flying (niet Normal) en staat uit; `TYPE_MYSTERY` kan niet hergebruikt worden (codemarkering voor "geen type"), Cosmic krijgt een eigen nummer.
+
+### [v0.0.227] - Cosmic: Ghost en Electric-resist eruit
+- Jordi: Ghost uit de Cosmic-matchups, geen Electric-resist. Stand in `IDEEEN.md`.

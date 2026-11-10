@@ -1119,3 +1119,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.263] - Mightyena-evolutie, gaucho-voorkeur
 - `IDEEEN.md`: Mightyena krijgt een evolutie die nog meer hyena wordt (Poochyena-lijn moet terug in de dex); lichte voorkeur voor de gaucho als Lotad-vorm.
+
+### [v0.0.264] - Steenmozaïek-kat (Rock), zeeleeuw-Spheal
+- `IDEEEN.md`: Rock-katachtige naar Jordi's steenmozaïekbeeldje uit Mexico (foto in `sprites/steenmozaiek/referenties/`); regionale Spheal/Sealeo met nieuwe evolutie, typevoorstellen voor de zeeleeuw.

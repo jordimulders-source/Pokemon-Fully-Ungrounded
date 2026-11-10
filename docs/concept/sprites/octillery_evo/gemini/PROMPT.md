@@ -396,3 +396,4 @@ AVOID
 - Not a robot, vehicle, ship or submarine. Not a shrimp or lobster. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
 - No plush toy, chibi, Neopets or mascot look.
 ```
+- **r9 (10 nov):** `r9_A9.png` (prompt A9). Jordi: "nu vergeet die weer van alles, maar de posities van de tentakelkanonnen kloppen wel. Design 5 blijft het beste he". Einde van de Gemini-rondes.

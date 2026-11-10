@@ -1025,3 +1025,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.233] - Octillery-evolutie: r8, zelfkritiek, prompt A9
 - r8 (A8): "het wordt er niet beter op". Op Jordi's verzoek kritiek op de eigen prompts (tegenspraak uitgestrekt/compact, het woord "tank", "ridged", vormloos "hypermodern", "lobster", tentakels zonder begin/eind) en een laatste prompt A9 met elke tentakel uitgebreid beschreven (begin, verloop, eind, zichtbaarheid in driekwart). Alles in `octillery_evo/gemini/PROMPT.md`.
+
+### [v0.0.234] - Octillery-evolutie: r9, Gemini-rondes klaar
+- r9 (A9): posities van de tentakelkanonnen kloppen, de rest vergeten. Jordi: "Design 5 blijft het beste". Verdere aanpak wacht op Jordi.

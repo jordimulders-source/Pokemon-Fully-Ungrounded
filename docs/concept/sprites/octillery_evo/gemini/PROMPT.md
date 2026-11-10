@@ -88,4 +88,40 @@ AVOID
 ```
 
 ## Rondes
-- **r1 (10 nov):** `r1_A_gatling.png`, `r1_B_mantel.png`. Jordi: "Beide echt slecht, is gewoon octillery met wat kanonnen". Oorzaak: Octillery als bijlage + "keep from Octillery" → Gemini kopieert Octillery en plakt er wapens en een helm op.
+- **r1 (10 nov):** `r1_A_gatling.png`, `r1_B_mantel.png`. Jordi: "Beide echt slecht, is gewoon octillery met wat kanonnen". Jordi stuurde géén bijlagen mee ("dat is het ironische"); de tekst "keep from Octillery" + de opsomming van Octillery-kenmerken was genoeg om Octillery na te tekenen met wapens en een helm erop. Jordi: "Ik wil dat die meer kraken wordt. Maar ook echt een oorlogswapen. Het steel gedeelte moet natuurlijk zijn, hier lijkt het erop geplakt. Dat is bij een Empoleon bijv ook niet". Verder met richting A.
+
+## Prompt A2 (na r1; richting A, meer kraken, oorlogswapen, steel als anatomie zoals Empoleon)
+Keuzes Claude (Jordi kan schrappen): mantel langgerekt als bij een inktvis met twee stalen vinnen bovenaan (leest als granaat/torpedo); de snuit = de sifon (waarmee inktvissen echt water spuiten) die een gatling is.
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE IDEA
+- The final evolution of the Remoraid line, Water/Steel. Remoraid is a pistol, Octillery a cannon; this stage is a living weapon of war: a KRAKEN, the giant sea monster that drags warships down, grown into heavy artillery.
+- This is NOT Octillery with weapons added. The whole body has changed into a new, much bigger and more dangerous animal. Only the red colour, the heavy-lidded half-closed eyes and a few round yellow warts tell you it evolved from Octillery.
+
+ANATOMY (a giant squid / kraken)
+- A long, tall, torpedo-shaped mantle that rises up and back behind the head, like a giant squid, ending in two broad fins at the top.
+- Long, thick, muscular tentacles, much longer than the body is tall. Several of them rise up and curl in the air around the body like a sea monster rising from the deep; the others brace heavily on the ground.
+- Big, heavy and powerful. Menacing and calm, not screaming, not angry.
+
+THE STEEL IS PART OF THE BODY (like Empoleon's steel beak and wing edges)
+- No armour, helmet, plates or casing laid over the body. Only these body parts ARE steel, dark gunmetal with a blue sheen, and they keep the natural shape of that body part, flowing smoothly into the red flesh:
+  - the siphon/snout in front of the face (the tube squids use to jet water) has grown into a rotary gatling of several barrels, pointing forward-left. The most important feature;
+  - the two fins at the top of the mantle, shaped like the tail fins of a torpedo or artillery shell;
+  - the ends of the two front tentacles, which have hardened into one thick cannon barrel each, the opening at the tip, raised and aimed forward. The tentacle itself becomes the barrel; nothing is attached to it.
+- Exactly three weapons: the gatling and the two tentacle cannons. No other guns.
+
+POSE AND VIEW
+- 3/4 view facing left, towering up, weapons aimed forward-left. Both eyes visible.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Not Octillery with a helmet or guns stuck on. Not Blastoise, Clawitzer, Tentacruel, Grapploct, Malamar or Cloyster.
+- Not a robot, mech, tank, ship or submarine: no hull, deck, treads, turrets, bolts, rivets, seams or flags.
+- Not over-designed: no spikes, chains or tiny details. No plush toy, chibi, Neopets or mascot look.
+```

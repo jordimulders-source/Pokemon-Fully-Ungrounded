@@ -1000,3 +1000,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.225] - Octillery-evolutie: Gemini-prompts
 - Overleg (Jordi, 10 nov): Octillery-evolutie wordt een kraken met wapens, Water/Steel, groter en zwaarder, organisch metaal, max. 3 kanonnen, driekwart; geen oorlogsschip, beta-tank valt af. POKEMON.md bijgewerkt.
 - Twee Gemini-prompts (A: gatlingsnuit + 2 tentakelkanonnen, B: 2 kanonnen op de mantel + snuit) met Octillery/Remoraid-bijlagen op 8×: `docs/concept/sprites/octillery_evo/gemini/`.
+
+### [v0.0.226] - Octillery-evolutie: ronde 1 en prompt A2
+- r1 (A en B) afgekeurd door Jordi ("gewoon octillery met wat kanonnen"); plaatjes en feedback in `octillery_evo/gemini/PROMPT.md`. Verder met richting A: meer kraken, echt oorlogswapen, steel natuurlijk zoals bij Empoleon. Nieuwe prompt A2.
+- Les in GEMINI.md: "keep from X" geeft X met accessoires, ook zonder bijlage; steel als anatomie beschrijven.

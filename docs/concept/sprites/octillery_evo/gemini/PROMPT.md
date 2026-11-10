@@ -88,4 +88,4 @@ AVOID
 ```
 
 ## Rondes
-(nog geen)
+- **r1 (10 nov):** `r1_A_gatling.png`, `r1_B_mantel.png`. Jordi: "Beide echt slecht, is gewoon octillery met wat kanonnen". Oorzaak: Octillery als bijlage + "keep from Octillery" → Gemini kopieert Octillery en plakt er wapens en een helm op.

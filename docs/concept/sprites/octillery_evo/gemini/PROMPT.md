@@ -189,3 +189,5 @@ AVOID
 - Gatling cylinders, pipes, collars, helmets, armour plates, bolts or screws.
 - Not a robot, mech or submarine. Not Octillery's face, not Malamar, Tentacruel or Clawitzer.
 ```
+
+- **r4 (10 nov):** `r4_A4.png` (prompt A4 met r3 als bijlage). Jordi: "veel slechter". Claude: tentakels werden dunne zwepen met losse buisjes (ondanks "keep"), lijf kleiner en lichter, sifon werd een ring donuts voor het gezicht, mantelstaal werd één grote kap. r3 blijft de beste.

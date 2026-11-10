@@ -329,6 +329,7 @@ DESIGN RULES
   - two tentacles under the body are simply folded into the outline of a tank tread: each one bent into a long flat loop that it rests and rolls on. They are ONLY tentacles in that shape: smooth red tentacle skin with the yellow warts along the underside, no tread links, no segments, no wheels, nothing mechanical;
   - the two front arms are regular tentacles;
   - exactly six limbs in total, no extra tentacles.
+- Everything connects cleanly, as in a real squid: all six limbs grow from one ring at the base of the head, below the eyes, and you can follow each limb from that ring to its tip. The mouth cannon grows from the centre of that ring. The head flows smoothly into the mantle. No parts that float, overlap oddly or end without a clear origin.
 - The Steel type is natural armour: the mantle is a hard, smooth red shell, divided into a few broad segments like a lobster's tail or a beetle's back. No veins, cracks or line patterns on the skin. NO steel plates, no grey metal pieces, no helmet, no casing.
 - Keep it clean and readable like a real Pokémon: a few strong shapes, not over-designed.
 
@@ -347,3 +348,5 @@ AVOID
 - Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
 - No plush toy, chibi, Neopets or mascot look.
 ```
+
+- Jordi over r7 (10 nov): "het sluit ook allemaal niet netjes aan he" → regel over aansluiting toegevoegd aan A8.

@@ -1019,3 +1019,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.231] - Charlatan-Alakazam: Gemini-ontwerp gekozen
 - Ronde 4 (achterovergekamd haar) afgekeurd ("erg lelijk"); zwarte snor weigerde Gemini. Jordi kiest ronde 3 als Gemini-ontwerp: `alakazam_regional/referenties/gemini_gekozen_charlatan.png`. In de sprite: snor zwart (zelf), licht/contrast naar Gen 3. Les in GEMINI.md.
+
+### [v0.0.232] - Charlatan-Alakazam: bijsturing v5 (kleding als lijf, oren)
+- Jordi wil de kleding natuurlijker als lijf en andere oren. `PROMPT_v5.md`: smoking alleen als kleurzones van Alakazams eigen platen (schouders zwart, borst wit, knieën zwart), geen naden/zomen/manchetten, strikje als tekening (Rowlet), oren horizontaler naar achteren.

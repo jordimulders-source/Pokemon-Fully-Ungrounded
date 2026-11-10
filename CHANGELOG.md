@@ -1037,3 +1037,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.237] - Charlatan-Alakazam: frontsprite rondes 1–3
 - Maker-agent volgens de Gemini-werkwijze: `alakazam_regional/kleur_r1..r3/` (silhouet = ronde 7 verkleind, kleurzones uit SPEC, 14 kleuren, kijkt naar rechts). Na r1 reparaties van Claude (gezicht, snor, zwarte massa), na r2 keurdersreparaties (rechterbovenarm zwart, kin/hals grijs, linkersnorkrul, kaartranden, mondlijn). r3 naar Jordi.
+- r4 (Jordi: "de snor is ook nog teveel snor en niet genoeg in alakazam stijl zoals in het model"): snor als twee dunne snorharen van 1 px uit de snuit, band weg; stompje tussen hals en arm hoort bij de arm; schaduw onder de kaak.

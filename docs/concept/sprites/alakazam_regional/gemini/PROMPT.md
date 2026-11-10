@@ -9,6 +9,7 @@ Regels: `docs/lessen/GEMINI.md`. Twee varianten, verder identiek, elk in een **n
 - "Ik wil een pose in drie kwart maar waar hij deels zijwaarts staat, met zijn voorkant naar de rechterkant van het scherm toe, dat is een vrij onbetrouwbare pose namelijk. Hij is skilled, maar gelijk als je hem ziet denk je hier klopt iets niet."
 - "hij wordt donkerder, zwart/wit/grijs zou ik zeggen. De blik in de ogen wordt ook geniepig, ik zou zeggen 1 meer open en 1 half gesloten."
 - "smoking uit eigen lijf goed. Violet tint op het hoofd ook prima. Rood misschien voor een soort stropdas of een soort kleur in zijn smoking bij dat zakje waar mensen soms een bloem in doen, maar misschien is dat te gimmicky."
+- "1 hand toont hij naar ons toe, de ander houdt die achter zijn rug, daar zie je dan dat hij een kaart vast heeft ook/of toverstaf, perfecte pose is dat"
 - Geen hoge hoed (advies Claude; Jordi twijfelde). Geen derde kaart, geen regionaal anker (Jordi).
 
 ## Bijlage
@@ -27,6 +28,7 @@ A Dark/Psychic Alakazam that is a stage illusionist and a swindler: very skilled
 
 POSE
 - Three-quarter view, but turned partly sideways: the FRONT of its body faces the RIGHT side of the image (the opposite of a normal front sprite). A shifty, untrustworthy stance.
+- It has exactly two arms. One hand is held out toward the viewer, showing its object openly. The other hand is held behind its back, and the viewer can still see that this hidden hand holds the same object too.
 
 FACE
 - A sneaky look: one eye more open, the other eye half closed.
@@ -39,7 +41,7 @@ COLORS
 - [RED ACCENT]
 
 OBJECTS
-- In each hand one magic wand, both exactly the same: a classic black wand with white tips. One in each hand, like Alakazam holds one spoon in each hand.
+- In each hand one magic wand, both exactly the same: a classic black wand with white tips. One in the shown hand, one in the hand behind its back, like Alakazam holds one spoon in each hand.
 
 STYLE AND FORMAT
 - 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
@@ -56,7 +58,7 @@ Gelijk aan variant A, alleen het blok OBJECTS en de laatste AVOID-regel vervange
 
 ```
 OBJECTS
-- In each hand one playing card, and both cards are exactly the same card (the same suit and the same value), which a real deck never has. Held up between the fingers, one in each hand, like Alakazam holds one spoon in each hand. Big, simple card faces that stay readable at 64x64.
+- In each hand one playing card, and both cards are exactly the same card (the same suit and the same value), which a real deck never has. Held between the fingers: one in the shown hand, one in the hand behind its back, like Alakazam holds one spoon in each hand. Big, simple card faces that stay readable at 64x64.
 ```
 ```
 - No extra objects: exactly one card in each hand, nothing else.

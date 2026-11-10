@@ -1000,3 +1000,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.225] - Abra-lijn regional form: charlatan-Alakazam (concept + prompts)
 - Nieuw concept (Jordi, 10 nov): Abra-lijn als illusionisten/oplichters, Dark/Psychic, geniepiger dan het origineel; motief één object (Kadabra) en twee dezelfde (Alakazam). Kadabra krijgt een hartteken. Vastgelegd in POKEMON.md → Regional forms.
 - Alakazam eerst: Gemini-prompts in `docs/concept/sprites/alakazam_regional/gemini/PROMPT.md` (variant A twee toverstafjes, variant B twee identieke speelkaarten; zwart/wit/grijs, smoking uit eigen lijf, violette tint op het hoofd, opgekrulde snor, één oog half dicht, voorkant naar rechts, geen hoge hoed). Bijlage: Alakazam-frontsprite 8×. Rood accent nog open.
+
+### [v0.0.226] - Charlatan-Alakazam: pose met hand achter de rug
+- Jordi: "1 hand toont hij naar ons toe, de ander houdt die achter zijn rug, daar zie je dan dat hij een kaart vast heeft ook/of toverstaf". In beide Gemini-prompts (staf en kaarten) en POKEMON.md verwerkt.

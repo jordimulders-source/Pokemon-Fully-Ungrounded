@@ -16,8 +16,8 @@ Regels: `docs/lessen/GEMINI.md`. Twee varianten, verder identiek, elk in een **n
 ## Bijlage
 1. `bijlage1_alakazam.png`: de Gen 3-frontsprite van Alakazam (anatomie en motief).
 
-## Nog open (Jordi kiest vóór het plakken; vul in op de plek van [...])
-- Rood accent: [A red bow tie marking at the collar, part of its body like Rowlet's bow tie / A small red marking at the breast-pocket spot of the tuxedo / No red]. Advies Claude: strikje (uit het eigen lijf, zoals Rowlet); de zakbloem is een los voorwerp.
+## Rood accent
+- Jordi (10 nov): "strikje" (rood strikje bij de kraag, uit het eigen lijf zoals Rowlet).
 
 ## Prompt (variant A: toverstafjes)
 
@@ -39,7 +39,7 @@ COLORS
 - Black, white and grey instead of yellow and brown.
 - A tuxedo made from its own body, not clothes: the chest and belly plates are white like a dress shirt; the big shoulder pads are black and stand up high like the collar of a magician's cape.
 - A violet tint on the head.
-- [RED ACCENT]
+- A red bow tie marking at the collar, part of its body like Rowlet's bow tie.
 
 OBJECTS
 - In each hand one magic wand, both exactly the same: a classic black wand with white tips. One in the shown hand, one in the hand behind its back, like Alakazam holds one spoon in each hand.

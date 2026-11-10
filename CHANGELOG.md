@@ -1003,3 +1003,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.226] - Charlatan-Alakazam: pose met hand achter de rug
 - Jordi: "1 hand toont hij naar ons toe, de ander houdt die achter zijn rug, daar zie je dan dat hij een kaart vast heeft ook/of toverstaf". In beide Gemini-prompts (staf en kaarten) en POKEMON.md verwerkt. Daarna: "en die hand toont die dan nonchalant" (ook verwerkt).
+
+### [v0.0.227] - Charlatan-Alakazam: rood strikje
+- Jordi koos het strikje als rood accent; prompts (A en B), README en POKEMON.md bijgewerkt.

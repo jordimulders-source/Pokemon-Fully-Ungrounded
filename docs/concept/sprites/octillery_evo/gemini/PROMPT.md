@@ -266,3 +266,5 @@ AVOID
 - Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
 - No plush toy, chibi, Neopets or mascot look.
 ```
+
+- **r6 (10 nov):** `r6_A6.png` (prompt A6). Jordi: "deze is toch minder goed weer. Die aderen zien er raar uit, de tentakels zijn ook niet goed uitgewerkt, ze moeten een dubbele functie hebben". r5 blijft de beste.

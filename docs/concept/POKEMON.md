@@ -88,11 +88,16 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 
 - **Ongebruikte Game Freak-ontwerpen** (Jordi, 22 okt): Jordi overweegt een paar ongebruikte ontwerpen uit de Gold/Silver-beta (Spaceworld 1997) uit te werken; hij kiest zelf welke. Bron: `docs/concept/sprites/spaceworld/spaceworld97_152-251.webp` (sprites en prototypenamen via @obskyr/@TeamSpaceworld). Opties die Jordi noemt (23 okt):
   - **Norowara** (#229) en **Kyonpan** (#230): **vrijwel zeker** (Jordi, 23 okt), ook al zijn ze niet Zuid-Amerikaans;
-  - de **tank-versie van Octillery** (#210-beta);
+  - de **tank-versie van Octillery** (#210-beta; valt af, Jordi 10 nov: zie Octillery-evolutie);
   - de **andere Delibird** (#225 Gifuto, de cadeau-vogel);
   - **Kotora** en **Raitora** (#226/#227): **Raitora wordt een jaguar** (Jordi, 23 okt), een gevlekt bliksemwelpje dat een Electric-jaguar wordt; vult het jaguar-idee uit `IDEEEN.md` in;
   - **Purakkusu** (#234).
   - Voor ons gebruik: ze opnieuw als Gen 3-sprite tekenen in onze stijl (niet de beta-sprites zelf gebruiken), met een plek in de regio (Raitora als Electric-tijger is een mooie Zuid-Amerikaanse Electric-kat naast de jaguar-idee; Octillery-tank kan in een havenstad of militaire basis).
+
+### Octillery-evolutie (Jordi, 10 nov)
+- Remoraid → Octillery → **kraken met wapens**, Water/Steel. Geen oorlogsschip ("bij een warship [zijn] de kanonnen niet pronounced genoeg"); de lijn gaat om afschieten.
+- Eisen (Jordi): "het moet wel pokemon blijven, dus niet te overdesigned en het moet overduidelijk een evolutie van octillery zijn"; "sterkere look, meer kraken"; duidelijk groter en zwaarder; metaal organisch; max. 3 kanonnen ("of 1 gatling gun en 2 kanonnen"); driekwart. De beta-tank (#210) valt af.
+- Gemini-experiment A (gatlingsnuit + 2 tentakelkanonnen) en B (kanonnen op de mantel): `sprites/octillery_evo/gemini/PROMPT.md`.
 
 ### Koningstiran-lijn (Jordi, 5 nov)
 - **Besloten:** lijn "Inca-rangen, afkomst": **hatun runa** (gewone burger) → **awki** (kroonprins) → **Sapa Inca** (koning). Brainstorm en alternatieven in `IDEEEN.md`; schetsen in `docs/concept/ontwerp/koningstiran/` (v2 = richting).

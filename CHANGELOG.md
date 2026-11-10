@@ -996,3 +996,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: rechte lijn rechts aan de healerhand ("Zou dat nog iets smoother kunnen?"). Opties `gemini_sprite/r10/vel_hand.png`: A hoek rechtsonder rond, B + muis van de hand bolt 1 px uit (gloed volgt). `af/` ongewijzigd.
 - Jordi: "A lost het heel netjes op" → healerhand met ronde hoek rechtsonder (`gemini_sprite/r10/C.png`, optie A) in `af/nachtaap_fase3.png` (+ `_8x`, `voor_na.png`).
 - Overzichtsvel `showcase/frontsprites_af.png` opnieuw gemaakt met de definitieve Curiqui.
+
+### [v0.0.225] - Octillery-evolutie: Gemini-prompts
+- Overleg (Jordi, 10 nov): Octillery-evolutie wordt een kraken met wapens, Water/Steel, groter en zwaarder, organisch metaal, max. 3 kanonnen, driekwart; geen oorlogsschip, beta-tank valt af. POKEMON.md bijgewerkt.
+- Twee Gemini-prompts (A: gatlingsnuit + 2 tentakelkanonnen, B: 2 kanonnen op de mantel + snuit) met Octillery/Remoraid-bijlagen op 8×: `docs/concept/sprites/octillery_evo/gemini/`.

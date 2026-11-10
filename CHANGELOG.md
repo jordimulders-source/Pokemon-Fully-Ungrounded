@@ -1016,3 +1016,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.230] - Octillery-evolutie: r5 en prompt A6
 - r5 (A5): "juist, nu komen we ergens". Jordi: meer uitgestrekt (geen bal), mond meer gatling, schietende tentakels op schouderhoogte, 2 tentakels als rupsbanden, 2 kanonnen, voorste 2 gewone tentakels. Prompt A6.
+
+### [v0.0.231] - Octillery-evolutie: r6 en prompt A7
+- r6 (A6) minder goed: aders, rupsbanden niet als tentakels, gatling mislukt. Jordi: rupsbanden = zichtbaar tentakels in rupsbandvorm; kanonnen van r5 maar over de schouders; mantel van r5 als natuurlijk pantser; mond wordt een hypermodern krachtig kanon. Prompt A7 (basis A5).

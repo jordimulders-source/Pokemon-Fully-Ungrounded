@@ -268,3 +268,43 @@ AVOID
 ```
 
 - **r6 (10 nov):** `r6_A6.png` (prompt A6). Jordi: "deze is toch minder goed weer. Die aderen zien er raar uit, de tentakels zijn ook niet goed uitgewerkt, ze moeten een dubbele functie hebben". r5 blijft de beste.
+
+## Na r6 (Jordi, 10 nov)
+- "het moeten zichtbaar tentakels blijven, die in de vorm van een rupsband zitten. De kanonnen bij ronde 5 waren uitstekend, maar die moeten over de schouders heen hangen. Ronde 5 had een goede mantel, in ronde 6 lijken het net rare aders het moet een soort natuurlijk pantser zijn. De gattling gun is in 6 ook niet gelukt, in 5 ziet het er beter uit, ik denk niet dat gemini dit kan, dan wil ik gewoon dat het een hypermodern krachtig kanon is"
+- Keuze Claude: de mond blijft rood en uit het lijf gegroeid (eerdere eis "wel rood"); Steel-voorbeeldenlijst eruit.
+
+## Prompt A7 (basis A5, geen bijlage, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). You make the design decisions; below are the brief and the design rules.
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Animal: the Humboldt squid ("diablo rojo") from the Pacific coast of Peru and Chile: a long arrow-shaped mantle with large triangular fins at the tip, big eyes, arms and long hunting tentacles. A fierce pack hunter that flashes red.
+- It must be bigger, heavier and clearly stronger than Octillery, and read as its evolution at a glance (red body, round yellow warts on the arms). It is not Octillery with things added: design a new face and body.
+
+DESIGN RULES
+- Pokémon are never animals with weapons attached. Every weapon IS a body part that grows naturally out of the animal's anatomy, the way Clawitzer's claw is its cannon.
+- Its mouth is one hypermodern, powerful cannon: a sleek, heavy red cannon mouth grown from its face, like Octillery's tube mouth evolved into high-tech artillery.
+- Its arms, all clearly still red squid tentacles with yellow warts:
+  - two long hunting tentacles are its two cannons: thick red tentacles ending in a ridged club that opens into a wide cannon muzzle. They hang forward over its shoulders, one on each side of the head, and aim forward like the guns of a tank;
+  - two tentacles are curled into the shape of tank treads under the body: they are visibly tentacles, wrapped in long flat loops that it rolls on;
+  - the two front arms are regular tentacles.
+- The Steel type is natural armour: the mantle is a hard, smooth red shell, divided into a few broad segments like a lobster's tail or a beetle's back. No veins, cracks or line patterns on the skin. NO steel plates, no grey metal pieces, no helmet, no casing.
+- Keep it clean and readable like a real Pokémon: a few strong shapes, not over-designed.
+
+POSE AND SIZE
+- The body is stretched out and long, the mantle reaching back and up like an arrow; NOT rolled up into a ball.
+- Still a real Gen 3 sprite composition: the whole creature fits compactly in a 64x64 frame, at most a little wider than tall, not a wide horizontal picture. Nothing sticks far out to the sides.
+- 3/4 view facing left, mouth cannon and both tentacle cannons aimed forward-left. Both eyes visible. Calm, confident and dangerous; not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Real-world guns or machine parts: no metal cylinders, pipes, collars, bolts, rivets, seams, screws, metal plates or metal tank treads.
+- Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```

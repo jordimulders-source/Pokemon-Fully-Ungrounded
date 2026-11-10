@@ -350,3 +350,4 @@ AVOID
 ```
 
 - Jordi over r7 (10 nov): "het sluit ook allemaal niet netjes aan he" → regel over aansluiting toegevoegd aan A8.
+- **r8 (10 nov):** `r8_A8.png` (prompt A8). Jordi: "het wordt er niet beter op he". Elke extra eis breekt iets anders (mond werd een snuit, rupsband een paperclip, mantel een garnaal). Stoppen met prompt-patchen, eerst overleggen.

@@ -20,3 +20,4 @@ De oude krullen verdwijnen. Kop, mantel, ogen, mond: 100% r5 (ontwerp, textuur, 
 
 ## Model
 - **v1 (10 nov):** `model/model_v1.png`. Jordi: "die linker tentakel gaat wel, maar voor de rest ziet het er allemaal echt verschrikkelijk uit".
+- Jordi over v1 (10 nov): "de kanon [linksboven gaat wel]. De rupsband tentakels zijn gewoon nagetekend en heel slecht, veel te dun, lijken totaal niet op het origineel. het rechterkanon is geknipt en geplakt en sluit niet goed aan, en de twee rechte tentakels lijken aanhangsels die totaal niet passen. Verder sluit het niet aan op het lichaam. Het kanon wat je weggehaald hebt vooraan heeb je ook slordig afgeknipt waardoor er nog een schouder zit. Ik neig ernaar dat je dit niet kan, dus wederom, wees eerljik"

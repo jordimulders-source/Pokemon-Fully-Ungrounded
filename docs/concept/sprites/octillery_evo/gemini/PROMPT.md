@@ -163,3 +163,29 @@ AVOID
 - Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
 - No plush toy, chibi, Neopets or mascot look.
 ```
+
+- **r3 (10 nov):** `r3_A3.png` (prompt A3). Jordi: "beter qua vorm en anatomie, alleen hij blijft gewoon geweren erop zetten, voor de tentakels vind ik het best prima, maar de rest moet organischer". → r3 als bijlage in een nieuw gesprek (Gemini verbetert slecht in hetzelfde gesprek): vorm, anatomie en tentakelkanonnen blijven; sifonwapen en pantser organisch.
+
+## Prompt A4 (bijlage: `r3_A3.png`, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. The attached image is your previous draft of a new Pokémon: the final evolution of Remoraid and Octillery, a Water/Steel Humboldt squid that is living heavy artillery. Draw an improved version as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+KEEP FROM THE DRAFT
+- The body shape, anatomy, proportions and pose: the arrow-shaped mantle with the large steel fin at the tip, the eye, the arms with yellow warts and steel hooks, the red colour.
+- The two long hunting tentacles with cannons at the ends: these are good, keep them as they are.
+
+CHANGE: IT STILL LOOKS LIKE GUNS AND ARMOUR WERE PUT ON A SQUID
+- The weapon under the head is a real-world gatling gun with a collar: remove it. Instead the squid's own siphon (the funnel it shoots water jets from) has grown into several fleshy tubes fused side by side, like Octillery's tube mouth multiplied, made of the same red flesh with hard dark steel only at the rims of the openings. It must look grown, like part of the animal.
+- The grey plates on the mantle and around the eye look like a helmet: remove them. The steel must be seamless and grown, like a nautilus shell, a beetle's shell or Empoleon's steel beak and crown: smooth polished dark steel flowing out of the red skin in one or two clean shapes that follow the curve of the mantle. No segments, plate edges, bolts, rivets, seams or machine parts anywhere.
+- Everything that is not the two tentacle cannons must read as a living animal.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- 3/4 view facing left, full body visible. Plain white background. NO water, splash, ground, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Gatling cylinders, pipes, collars, helmets, armour plates, bolts or screws.
+- Not a robot, mech or submarine. Not Octillery's face, not Malamar, Tentacruel or Clawitzer.
+```

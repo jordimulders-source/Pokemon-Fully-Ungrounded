@@ -22,7 +22,7 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
 ## Keuren
 - De keurder toetst **trouw aan het Gemini-plaatje + spritetechniek**, niet het ontwerp. Ontwerppunten (kop klein, minder cute) zijn géén FAIL; **elke afwijking van Gemini wel** (vorm, maat of plek van een onderdeel, iets weggelaten).
 - Vergelijk op 8× naast het Gemini-plaatje (verkleind) én 2–3 echte sprites.
-- De regel "na 2 mislukte rondes stoppen" telt hier alleen bij ontwerp- of vertaalproblemen; rondes met alleen benoemde pixelreparaties (contour, toonvlakken) gaan door, doel ≤ 5.
+- Geen "na 2 rondes stoppen": met de poedelmot-methode gaan de rondes door tot het resultaat uitstekend is (Jordi, 10 nov: "die twee rondes misgaan mag je weghalen, want de poedelmot methode heeft bewezen dat er meer rondes nodig zijn, maar het resultaat dan uitstekend is").
 
 ## Lessen
 - **Elk onderdeel afvinken tegen Gemini op dezelfde schaal** (kop, oren, oog, neus, mond, snorharen, aanhangsels, poten, lijf, staart): de viscacha-wangpluk werd stilletjes verkleind en het gezicht vereenvoudigd; Jordi: "je hebt het niet goed gecontroleerd".

@@ -1019,3 +1019,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.231] - Octillery-evolutie: r6 en prompt A7
 - r6 (A6) minder goed: aders, rupsbanden niet als tentakels, gatling mislukt. Jordi: rupsbanden = zichtbaar tentakels in rupsbandvorm; kanonnen van r5 maar over de schouders; mantel van r5 als natuurlijk pantser; mond wordt een hypermodern krachtig kanon. Prompt A7 (basis A5).
+
+### [v0.0.232] - Octillery-evolutie: r7 en prompt A8
+- r7 (A7): maar één kanon, rechtertentakel klopt niet, rupsband te veel rupsband ("slechts tentakels in de vorm ervan, zo gevouwen"). Prompt A8: twee kanonnen over beide schouders, rupsbanden alleen gevouwen tentakels, precies zes ledematen.

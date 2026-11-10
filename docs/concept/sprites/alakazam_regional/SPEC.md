@@ -11,7 +11,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` → "Gemini-model namaken" + `docs/
 ## Kleurzones (de kleuren van ronde 7 gelden NIET; Jordi liet de kleuren aan Claude, dit is de vertaling van zijn eerdere woorden)
 - Hoofd en oren: grijs, met een lichte violette glans alleen in de schaduwen (Jordi: optie 4; "het hele hoofd is nu violet en dat klopt niet"). Zoals ronde 3.
 - Ogen: zoals ronde 3 (één meer open, één half dicht onder een zwaar ooglid; geen wenkbrauw).
-- Snor: **zwart** (Jordi: "De snor wil die niet aanpassen [...] maar dat kunnen we zelf doen"), vorm en krullen als het model.
+- Snor: **grijs, zoals het model** (Jordi, 10 nov: "nee houd hem grijs"; eerder zwart gepland), een gevulde streng met omlijning zoals bij Alakazam.
 - Strikje: rood, als tekening van het lijf (geen knoop).
 - Voorkant romp/borst: wit.
 - Zijkanten en rug van de romp: zwart (Jordi: "de zijkanten en de achterkant van het lichaam mogen nu zwart, beetje mr mime/rime lijn idee"), met een duidelijke scheidingslijn naar het wit.

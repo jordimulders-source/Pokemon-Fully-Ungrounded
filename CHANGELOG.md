@@ -1022,3 +1022,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.232] - Octillery-evolutie: r7 en prompt A8
 - r7 (A7): maar één kanon, rechtertentakel klopt niet, rupsband te veel rupsband ("slechts tentakels in de vorm ervan, zo gevouwen"). Prompt A8: twee kanonnen over beide schouders, rupsbanden alleen gevouwen tentakels, precies zes ledematen; alles moet netjes aansluiten (Jordi: "het sluit ook allemaal niet netjes aan he"), alle ledematen uit één ring onder de ogen.
+
+### [v0.0.233] - Octillery-evolutie: r8, zelfkritiek, prompt A9
+- r8 (A8): "het wordt er niet beter op". Op Jordi's verzoek kritiek op de eigen prompts (tegenspraak uitgestrekt/compact, het woord "tank", "ridged", vormloos "hypermodern", "lobster", tentakels zonder begin/eind) en een laatste prompt A9 met elke tentakel uitgebreid beschreven (begin, verloop, eind, zichtbaarheid in driekwart). Alles in `octillery_evo/gemini/PROMPT.md`.

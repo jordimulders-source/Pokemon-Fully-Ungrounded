@@ -351,3 +351,48 @@ AVOID
 
 - Jordi over r7 (10 nov): "het sluit ook allemaal niet netjes aan he" → regel over aansluiting toegevoegd aan A8.
 - **r8 (10 nov):** `r8_A8.png` (prompt A8). Jordi: "het wordt er niet beter op he". Elke extra eis breekt iets anders (mond werd een snuit, rupsband een paperclip, mantel een garnaal). Stoppen met prompt-patchen, eerst overleggen.
+
+## Kritiek op eigen prompts A5–A8 (Claude, 10 nov; Jordi: "Kijk kritisch naar je eigen prompt en wat er fout gaat, beschrijf de tentakels uitgebreid")
+1. **Tegenspraak:** "stretched out and long, mantle reaching back" én "compact, not wide" → Gemini kiest uitgestrekt = breed (r6, r8). Oplossing (keuze Claude): de mantel wijst schuin omhoog, het dier staat rechtop op zijn armen; uitgestrekt in de hoogte past in een vierkant.
+2. **Het woord "tank"** (tank treads, guns of a tank) roept machines op: schakels (r6, r7) of een paperclip (r8). Alleen de vorm beschrijven, het woord niet gebruiken.
+3. **"Ridged club"** gaf geribbelde pijpen (r7, r8); r5 had alleen "the club itself forming the cannon". Terug naar r5.
+4. **"Hypermodern, high-tech, sleek"** zonder vorm gaf een lange snuit (r8). Vorm erbij: kort, dik, breed uitlopend.
+5. **"Lobster's tail"** gaf een garnaal (r8). r5 had geen segmenten gevraagd en Jordi vond die mantel goed.
+6. **Tentakels kregen één zin per rol, zonder begin, verloop en eind** → losse, zwevende delen ("sluit niet netjes aan"). Elke tentakel nu: waar hij begint, welke weg hij aflegt, waar hij eindigt, en wat je ervan ziet in driekwart.
+7. Echte Humboldt heeft 10 ledematen; zeggen dat deze Pokémon er gestileerd zes heeft.
+
+## Prompt A9 (laatste poging, geen bijlage, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Based on the Humboldt squid ("diablo rojo") from Peru and Chile, a fierce red pack hunter. It is bigger, heavier and stronger than Octillery and reads as its evolution: red body, round yellow warts on the arms. A new face and body, not Octillery with things added.
+- Pokémon are never animals with weapons attached: every weapon IS a body part, the way Clawitzer's claw is its cannon.
+
+THE BODY
+- It stands upright on its arms. Its long arrow-shaped mantle rises up and slightly back from the top of the head, ending in two large triangular fins at the top. The mantle is a hard, smooth, glossy red shell: this natural armour is its Steel type. No grey metal, no plates, no veins, cracks or line patterns.
+- Big eyes on the sides of the head, calm and dangerous.
+- The mouth sits at the front of the head, in the centre of the ring where the arms start: a short, thick, wide red cannon mouth that flares open at the end, like Octillery's tube mouth grown into a powerful modern cannon. It points forward-left. Short and wide, not a long snout.
+
+THE SIX TENTACLES (it has six, stylised, not the ten of a real squid; all are red with yellow warts on the underside, and all six start from one ring around the mouth at the base of the head)
+1. and 2. THE CANNONS. The two longest, thickest tentacles start from the left and right sides of the ring, just below the eyes. Each one rises up along the side of the head, bends forward over the shoulder (where the head meets the mantle) and then points straight forward, so the muzzle sits above and in front of the eye. The thick club at the tip is itself the cannon: the club is hollow and opens at the front into a round dark muzzle. In this 3/4 view the near cannon is fully visible over the near shoulder; the far cannon is visible over the far shoulder, partly behind the head. Both are aimed forward-left, parallel to each other.
+3. and 4. THE ROLLING TENTACLES. Two tentacles start from the bottom of the ring and go down to the ground. Each one lies flat on the ground and bends back on itself into a long, flat, closed oval loop beneath the body, the tip tucked back in at the ring. The creature rests and rolls on these two loops. One loop is on the near side, one on the far side. They are plain smooth tentacles bent into that shape, with the yellow warts on the outside of the loop touching the ground: nothing else, no links, segments, ridges or wheels.
+5. and 6. THE FRONT ARMS. Two shorter tentacles start from the front of the ring, on either side of the mouth, and curl down and forward in front of the body, the tips curled up. Ordinary arms.
+- You can follow every tentacle from the ring to its tip. Nothing floats, nothing ends without a clear origin, no extra tentacles.
+
+POSE AND SIZE
+- 3/4 view facing left, all three cannons aimed forward-left. Both eyes visible.
+- Real Gen 3 sprite composition: the whole creature fits in a square 64x64 frame, about as tall as it is wide. The long mantle goes upward, not sideways; nothing sticks far out to the sides.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Machine parts of any kind: metal, pipes, collars, ribs on the barrels, bolts, rivets, screws, plates, links, wheels.
+- Not a robot, vehicle, ship or submarine. Not a shrimp or lobster. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```

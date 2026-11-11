@@ -1068,3 +1068,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Prompt v4: kaart volledig frontaal, Kadabra zelf driekwart (Jordi).
 - Kadabra ronde 4: kaart niet vast, geen "is this your card"-pose; alleen rood op het hoofd (Jordi). Bijsturing `BIJSTURING_v4.md`.
 - Kadabra ronde 5: "Helemaal perfect", behalve de open rechterhand (5 mensenvingers). Bijsturingsprompts A/B in `BIJSTURING_hand.md`.
+- Kadabra: model aangepast door Claude (Jordi: "pas het model aan met hand met 3 vingers en klauwtjes"): `kadabra_regional/model/model_hand3.png`.

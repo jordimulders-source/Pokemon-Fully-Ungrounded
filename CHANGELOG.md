@@ -1070,3 +1070,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra ronde 5: "Helemaal perfect", behalve de open rechterhand (5 mensenvingers). Bijsturingsprompts A/B in `BIJSTURING_hand.md`.
 - Kadabra: model aangepast door Claude (Jordi: "pas het model aan met hand met 3 vingers en klauwtjes"): `kadabra_regional/model/model_hand3.png`.
 - Kadabra: Claudes eigen handaanpassing afgekeurd ("Jij kan dit dus niet"); Gemini-prompt hand v2 (`BIJSTURING_hand2.md`): hand als kopie van de eigen voeten (drie tenen met klauwtjes). Les in GEMINI.md.
+- Kadabra: SPEC vastgelegd (model ronde 5; open hand 3 vingers met klauwtjes en arm in "tahdah/voila"-pose door de maker in de sprite; alleen rode klaver). Stand van zaken bijgewerkt voor de volgende sessie.

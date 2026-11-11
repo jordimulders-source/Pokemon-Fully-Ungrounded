@@ -440,3 +440,27 @@ STYLE AND FORMAT
 AVOID
 - Adding, removing or redesigning anything. No new tentacles, no metal, no changes to the face.
 ```
+
+## Compacter (11 nov; Jordi over r11: "nee dan moet die nog compacter"; bijlagen 1 `../referenties/ontwerp_gekozen.png`, 2 `r11_afgewerkt.png`; nieuw gesprek)
+
+```
+Attachment 1 is a finished Pokémon design. Attachment 2 is a cleaner redraw of it, but it is still far too wide and it lost the rolled-up tentacles. Do NOT redesign the creature. Redraw it as one clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style) that fits a SQUARE.
+
+THE COMPOSITION MUST CHANGE (this is the whole task)
+- Right now the creature is about 1.5 times as wide as it is tall. The new drawing must be AS TALL AS IT IS WIDE.
+- Tilt the whole body up: the mantle points steeply upward (about 45 degrees towards the top right) instead of lying sideways.
+- Both cannon tentacles stay close to the head: their cannons point forward-left but do not reach further left than the mouth cannon plus one cannon length.
+- The two tentacles on the right are short and curl down close to the body instead of stretching out to the right.
+- The creature sits higher on its two rolled-up tentacles, which are clearly visible at the bottom, like in attachment 1: two tentacles rolled up flat, red with yellow warts.
+
+KEEP EXACTLY
+- The head, the eyes, the ribbed mouth cannon, the segmented mantle with fins, the two cannon tentacles with their wide muzzles (the lower one with its loop joining the body), six tentacles in total. 3/4 view facing left.
+- Use the clean finish of attachment 2: one pixel size, one consistent 1 px dark outline, light from the top left, smooth connections.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, clean Game Freak Gen 3 shading.
+- Plain white background. No ground, shadow, effects or text. One single creature.
+
+AVOID
+- Adding, removing or redesigning anything. No new tentacles, no metal, no changes to the face.
+```

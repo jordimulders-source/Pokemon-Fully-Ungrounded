@@ -1032,3 +1032,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.235] - Octillery-evolutie: SPEC en aangepast model v1
 - r5 bevroren als ontwerp (`octillery_evo/referenties/gemini_gekozen_r5.png`), SPEC met Jordi's toegestane wijzigingen (kanonnen over de schouders, 2 rupsband-tentakels, 2 gespreide tentakels; kop 100% r5; kanontentakels mogen de kop deels overlappen). Schets `schets_tentakels.png`.
 - Maker bouwde `model/model_v1.png` uit r5-onderdelen (kop: 0 afwijkende pixels buiten de kanonoverlap); wacht op Jordi.
+
+### [v0.0.236] - Octillery-evolutie: ontwerp gekozen
+- Gemini r10 (rupsbanden, Jordi) + de hele kanontentakel uit r5 samengevoegd (`octillery_evo/samenvoeg/`, scripts `seg.py`/`plak.py`). Jordi: "juist, dat is m" → `referenties/ontwerp_gekozen.png`. Formaat naar vierkant via Gemini (prompt "Formaat" in `gemini/PROMPT.md`).

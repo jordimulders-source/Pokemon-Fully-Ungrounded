@@ -397,3 +397,21 @@ AVOID
 - No plush toy, chibi, Neopets or mascot look.
 ```
 - **r9 (10 nov):** `r9_A9.png` (prompt A9). Jordi: "nu vergeet die weer van alles, maar de posities van de tentakelkanonnen kloppen wel. Design 5 blijft het beste he". Einde van de Gemini-rondes.
+
+## Formaat (11 nov; bijlage `../referenties/ontwerp_gekozen.png`, nieuw gesprek)
+
+```
+The attached image is a finished Pokémon design. Do NOT redesign it. Redraw exactly this creature as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), changing ONLY its proportions of the composition so it fits a square 64x64 sprite.
+
+THE ONLY CHANGE
+- The picture is now about 1.5 times as wide as it is tall. Make the whole creature fit a square: about as wide as it is tall.
+- Do this by bringing the limbs closer to the body: the upper cannon tentacle on the left reaches less far out, and the two tentacles on the right are shorter and closer to the body. If needed, the mantle points a bit more upward.
+- The head, eyes, mouth cannon, mantle with fins, the two rolled-up tentacles at the bottom and the lower cannon tentacle with its loop stay exactly as they are: same shapes, same colours, same details, same number of tentacles (six).
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, same 3/4 view facing left.
+- Plain white background. No ground, shadow, effects or text. One single creature.
+
+AVOID
+- Adding, removing or redesigning anything. No new tentacles, no metal, no changes to the face.
+```

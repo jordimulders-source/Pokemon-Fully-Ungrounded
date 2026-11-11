@@ -1,4 +1,4 @@
-# vel.py: kleur_r11: armen r9 | r11 | model op 12x; hele sprite 8x en 1x
+# vel.py: kleur_r12: rechterarm r11 | r12 | model op 12x; hele sprite 8x en 1x
 import sys,os; H=os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0,H+'/../silhouet')
 from PIL import Image,ImageDraw,ImageFont
 from geo import *
@@ -14,9 +14,8 @@ def rij(titel,items):
     o=Image.new('RGB',(sum(GAP),max(i.height for _,i in items)+80),'white'); d=ImageDraw.Draw(o); d.text((0,0),titel,fill=(0,0,0),font=F); x=0
     for (t,i),g in zip(items,GAP): o.paste(i,(x,30)); d.multiline_text((x,34+i.height),t,fill=(0,0,0),font=F); x+=g
     rijen.append(o)
-b=(2,17,24,46); Z=12
-ala=Image.open(GP+'alakazam/anim_front.png').convert('RGB').crop((0,16,22,40)); ala=ala.resize((ala.width*Z,ala.height*Z),Image.NEAREST)
-rij('LINKERARM 12x (zelfde schaal als het model)',[('r9 L1',spr('basis_L1.txt',b,Z)),('r11: onderarm zwart,\nbovenarm grijs',spr('var_r11.txt',b,Z)),('model',mod(b,Z))])
+Z=12
+ala=None
 def heel(fn):
     big=pal.rgb(pal.load(H+'/'+fn)).resize((512,512),Image.NEAREST); one=Image.open(H+'/'+fn.replace('.txt','.png')).convert('RGBA')
     o=Image.new('RGB',(512,512+84),'white'); o.paste(big,(0,0))
@@ -24,8 +23,8 @@ def heel(fn):
         q=Image.new('RGBA',(64,64),bg+(255,)); q.alpha_composite(one); o.paste(q.convert('RGB'),(i*84,520))
     return o
 bR=(32,24,54,40)
-rij('RECHTERARM 12x',[('r9 L1',spr('basis_L1.txt',bR,Z)),('r11',spr('var_r11.txt',bR,Z)),('model',mod(bR,Z))])
-rij('HELE SPRITE 8x en 1x (L1, rechts A, pupil 1 px)',[('r11',heel('var_r11.txt')),('r9 L1',heel('basis_L1.txt'))])
+rij('RECHTERARM 12x',[('r11',spr('basis_r11.txt',bR,Z)),('r12: bovenarm grijs',spr('var_r12.txt',bR,Z)),('model',mod(bR,Z))])
+rij('HELE SPRITE 8x en 1x (L1, rechts A, pupil 1 px)',[('r12',heel('var_r12.txt')),('r11',heel('basis_r11.txt'))])
 W=max(r.width for r in rijen); O=Image.new('RGB',(W,sum(r.height+20 for r in rijen)),'white'); y=0
 for r in rijen: O.paste(r,(0,y)); y+=r.height+20
 O.save(H+'/vel.png'); print(O.size)

@@ -1045,3 +1045,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.239] - Octillery-evolutie: frontsprite af (kandidaat voor Jordi)
 - Frontsprite naar model v3 in 5 rondes (3 makers, 2 keuringen): `octillery_evo/af/octillery_evo.png` (+ `_8x`, `maak.py`), werk in `octillery_evo/sprite/r1–r5`. Formaat zoals het model (±62×41). Toegestane afwijkingen uitgevoerd: zuignappen op de donkere boog, verkeerde wratten onder de kin weg, plaknaden weg; verder vereenvoudigd tot vormen die op 1× lezen.
 - Bijna-zwart 36% (r3) → 20,6%; helderheid blijft onder Gen 3 doordat het model donker karmijn is (lichtere paletoptie: `sprite/r4/octi_palet_lichter.png`, Jordi kiest).
+
+### [v0.0.240] - Octillery-evolutie: sprite afgekeurd
+- Jordi keurt de sprite uit v0.0.239 af ("er gaat echt zoveel fout dat het niet eens zin heeft om het allemaal te benoemen"). Oorzaken in de werkwijze vastgelegd in `docs/lessen/GEMINI.md`; vervolg wacht op Jordi.

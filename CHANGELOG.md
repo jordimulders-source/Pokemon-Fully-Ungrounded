@@ -1063,3 +1063,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra ronde 2 (Jordi: "dit is te frontaal, hij moet meer driekwart. Plus hij lijkt nog steeds teveel op alakazam en het lijkt alsof die zn middelvinger opsteekt"); prompt v3 zonder Alakazam-bijlage, driekwart naar links, kaart opzij aan gestrekte arm, vastgeknepen tussen duim en vingers.
 - Kadabra: klaverteken in plaats van hart (Jordi: "ik wil toch voor een klaver gaan ipv een hart ook"); prompt v3, POKEMON.md en Stand van zaken bijgewerkt.
 - Klaver rood (Jordi).
+- Kadabra prompt v4 (Jordi: "nee gewoon betere prompt"): twee bijlagen (lijf van Kadabra, kleuren van de Alakazam), pose als gedrag (straatgoochelaar toont kaart aan toeschouwer links), greep tussen duim en wijsvinger.

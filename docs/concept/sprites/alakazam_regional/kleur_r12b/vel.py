@@ -1,4 +1,4 @@
-# vel.py: kleur_r12: rechterarm r11 | r12 | model op 12x; hele sprite 8x en 1x
+# vel.py: kleur_r12b: rechterarm r11 | V1 | V2 | model op 12x; hele sprite 8x en 1x
 import sys,os; H=os.path.dirname(os.path.abspath(__file__)); sys.path.insert(0,H+'/../silhouet')
 from PIL import Image,ImageDraw,ImageFont
 from geo import *
@@ -23,8 +23,8 @@ def heel(fn):
         q=Image.new('RGBA',(64,64),bg+(255,)); q.alpha_composite(one); o.paste(q.convert('RGB'),(i*84,520))
     return o
 bR=(32,24,54,40)
-rij('RECHTERARM 12x',[('r11',spr('basis_r11.txt',bR,Z)),('r12: bovenarm grijs',spr('var_r12.txt',bR,Z)),('model',mod(bR,Z))])
-rij('HELE SPRITE 8x en 1x (L1, rechts A, pupil 1 px)',[('r12',heel('var_r12.txt')),('r11',heel('basis_r11.txt'))])
+rij('RECHTERARM 12x',[('r11',spr('r11.txt',bR,Z)),('V1: arm 3 px',spr('var_V1.txt',bR,Z)),('V2: breedte model,\nlichter',spr('var_V2.txt',bR,Z)),('model',mod(bR,Z))])
+rij('HELE SPRITE 8x en 1x (L1, rechts A, pupil 1 px)',[('V1',heel('var_V1.txt')),('V2',heel('var_V2.txt'))])
 W=max(r.width for r in rijen); O=Image.new('RGB',(W,sum(r.height+20 for r in rijen)),'white'); y=0
 for r in rijen: O.paste(r,(0,y)); y+=r.height+20
 O.save(H+'/vel.png'); print(O.size)

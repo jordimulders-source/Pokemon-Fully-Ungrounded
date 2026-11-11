@@ -415,3 +415,28 @@ STYLE AND FORMAT
 AVOID
 - Adding, removing or redesigning anything. No new tentacles, no metal, no changes to the face.
 ```
+
+## Bijsnijden + netjes afwerken (11 nov; Jordi: "nu nog een prompt voor gemini om het te kroppen en nog wat netter af te werken"; bijlage `../referenties/ontwerp_gekozen.png`, nieuw gesprek)
+
+```
+The attached image is a finished Pokémon design, made by combining two drawings. Do NOT redesign it. Redraw exactly this creature as one clean, consistent official Gen 3 front sprite (Ruby/Sapphire/Emerald style).
+
+1. CROP TO A SPRITE
+- Fit the whole creature tightly into a square 64x64 sprite: about as wide as it is tall, with nothing cut off.
+- To fit, bring the limbs closer to the body: the upper cannon tentacle on the left reaches less far out, and the two tentacles on the right are shorter and closer to the body. If needed, the mantle points a bit more upward.
+
+2. CLEAN FINISH
+- The lower cannon tentacle was pasted in from another drawing: redraw it so it looks like it was always part of this creature. Same pixel size as the rest, same outline thickness, same shading and colours, a smooth natural connection where its loop joins the body, and a clean overlap where it lies over the rolled-up tentacles.
+- One consistent 1 px dark outline around the whole creature, no double lines, broken lines or stray pixels.
+- Consistent light from the top left on every part.
+
+KEEP EXACTLY
+- The head, eyes, mouth cannon, mantle with fins, the two rolled-up tentacles at the bottom, both cannon tentacles and the two tentacles on the right: same shapes, colours and details, six tentacles in total. Same 3/4 view facing left.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, clean Game Freak Gen 3 shading.
+- Plain white background. No ground, shadow, effects or text. One single creature.
+
+AVOID
+- Adding, removing or redesigning anything. No new tentacles, no metal, no changes to the face.
+```

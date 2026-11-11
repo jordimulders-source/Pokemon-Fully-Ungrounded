@@ -2,6 +2,8 @@
 
 Nieuw gesprek. Bijlage: ALLEEN `bijlage_kadabra_origineel.png`. De Alakazam niet meer meesturen: met die bijlage bleef het resultaat te veel op Alakazam lijken; de kleuren staan nu in woorden in de prompt.
 
+Jordi (11 nov): "ik wil toch voor een klaver gaan ipv een hart ook". Kleur van de klaver: nog open.
+
 Jordi over ronde 2 (letterlijk): "dit is te frontaal, hij moet meer driekwart. Plus hij lijkt nog steeds teveel op alakazam en het lijkt alsof die zn middelvinger opsteekt"
 
 ```
@@ -11,7 +13,7 @@ The attached image is the original Kadabra. Keep Kadabra's own body and anatomy:
 
 CONCEPT
 - A Dark/Psychic regional form: a charlatan's apprentice, a card swindler who is not yet very experienced and is still learning the trade.
-- A red heart mark on its forehead, in the place of the star.
+- A [BLACK / RED] club mark (♣, the card suit "clubs") on its forehead, in the place of the star.
 - Colors: recolor Kadabra's own markings. Its yellow body becomes grey with a light violet sheen in the shadows; its brown armor parts become black; a white chest; a small red dewlap under the chin. No new body parts.
 - It holds exactly ONE playing card (white with a black spade).
 

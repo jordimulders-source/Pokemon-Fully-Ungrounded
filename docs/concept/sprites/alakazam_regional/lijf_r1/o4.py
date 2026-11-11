@@ -1,7 +1,8 @@
-BASIS4='O1'
-O4={ # strikje 5x3 als rode tekening onder de kin (x30-34, rij 25-27), rest wit
-25:"==========atrwtra=",
-26:"========wwwtrsrsa",
-27:"========wwwrswssa",
-28:"========wwwwaaawo",
+BASIS4='O2'
+O4={ # strikje 5x3 (x30-34, rij 26-28) als rode tekening onder de kin; rij 25 = kinschaduw op de witte keel
+25:"==========aaaaaaa",
+26:"========wwwtrarra",
+27:"========wwwrrsrsa",
+28:"========wwwrsasso",
+29:"kkmmmmdcwwwaaaaao",
 }

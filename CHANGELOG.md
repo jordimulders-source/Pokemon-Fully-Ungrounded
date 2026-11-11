@@ -1041,3 +1041,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.238] - Octillery-evolutie: model v3
 - Onderste kanontentakel lager en aansluitend onder de kin (`samenvoeg/v3.png`, nu `referenties/ontwerp_gekozen.png`). Anatomie-analyse (8 tentakels, zuignappen, bewegen als "lopende" octopus) in SPEC. Toegestane afwijkingen voor de sprite: zuignappen op de donkere boog, verkeerde wratten onder de kin weg, plaknaden weg.
+
+### [v0.0.239] - Octillery-evolutie: frontsprite af (kandidaat voor Jordi)
+- Frontsprite naar model v3 in 5 rondes (3 makers, 2 keuringen): `octillery_evo/af/octillery_evo.png` (+ `_8x`, `maak.py`), werk in `octillery_evo/sprite/r1–r5`. Formaat zoals het model (±62×41). Toegestane afwijkingen uitgevoerd: zuignappen op de donkere boog, verkeerde wratten onder de kin weg, plaknaden weg; verder vereenvoudigd tot vormen die op 1× lezen.
+- Bijna-zwart 36% (r3) → 20,6%; helderheid blijft onder Gen 3 doordat het model donker karmijn is (lichtere paletoptie: `sprite/r4/octi_palet_lichter.png`, Jordi kiest).

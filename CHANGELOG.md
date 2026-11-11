@@ -1035,3 +1035,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.236] - Octillery-evolutie: ontwerp gekozen
 - Gemini r10 (rupsbanden, Jordi) + de hele kanontentakel uit r5 samengevoegd (`octillery_evo/samenvoeg/`, scripts `seg.py`/`plak.py`). Jordi: "juist, dat is m" → `referenties/ontwerp_gekozen.png`. Formaat naar vierkant via Gemini (prompt "Formaat" in `gemini/PROMPT.md`).
+
+### [v0.0.237] - Octillery-evolutie: Gemini-formaatrondes
+- r11 (bijsnijden + afwerken) en r12 (compacter): netter, maar rupsbanden en tweede kanon raakten kwijt; Jordi: "Ook dit werkt dus niet". Formaat niet meer via Gemini; keuze tussen vertalen zoals het is (±64×42) of het bovenste kanon inkorten (±64×47) ligt bij Jordi.

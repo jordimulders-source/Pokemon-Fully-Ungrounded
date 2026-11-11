@@ -27,3 +27,4 @@ De oude krullen verdwijnen. Kop, mantel, ogen, mond: 100% r5 (ontwerp, textuur, 
 - Jordi over samenvoeging v1: "juist, dat is m" → bevroren ontwerp: `referenties/ontwerp_gekozen.png`. Volgende stap: formaat via Gemini (prompt in `gemini/PROMPT.md`, "Formaat").
 - **Gemini r11 (11 nov):** `gemini/r11_afgewerkt.png` (prompt "Bijsnijden + netjes afwerken"). Jordi: "hier komt ie mee". Claude: 880×619 (1,42 : 1, was 1,54), aansluiting kanon netter; rupsband-tentakels onderaan grotendeels weg (alleen linkerkrul zichtbaar, rest een donkere massa).
 - **Gemini r12 (11 nov):** `gemini/r12_compacter.png` (prompt "Compacter"). Jordi: "en dit formaat?". Claude: 818×619 (1,32 : 1) → 64×48; onderste kanon is een opgerolde tentakel geworden (geen monding meer), dus weer maar 1 kanon.
+- Jordi over r12 (11 nov): "alleen het gat moeten we invullen, wat me wel zorgen baart is dat de rupsbanden nu totaal niet meer goed zitten. Ook dit werkt dus niet".

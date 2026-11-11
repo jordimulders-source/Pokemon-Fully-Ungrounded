@@ -38,3 +38,9 @@ De oude krullen verdwijnen. Kop, mantel, ogen, mond: 100% r5 (ontwerp, textuur, 
 - Zuignappen: echte inktvisarmen hebben ze aan de binnenkant (mondkant, holle kant bij een krul). Goed: de 2 rechts (onder/binnenkant van de boog). Verkeerd: de krul achter de kop (wratten aan de bolle buitenkant). Rupsbanden: voor lopen moeten ze naar de grond (buitenkant van de lus onderaan); de linker heeft ze aan de bovenkant. Kanonnen: geen zuignappen zichtbaar (gestileerd).
 - Jordi (11 nov) over v2: "dit moet nog iets beter aansluiten, klein beetje hoger, dan kunnen we het daarna met een sprite wel fixen denk ik" → v3: stuk 30 px hoger (`plak2.py 560 376 575 -30`), `samenvoeg/v3.png`.
 - Jordi (11 nov): "alle zuignappen lijken aan de buitenkant te zitten, dus dat is prima, de kleinste tentakel lijkt alleen geen zuignappen te hebben, daar moet wel nog iets komen" → toegestane toevoeging in de sprite: zuignappen (gele wratten, zelfde stijl) op de kleinste tentakel (Claude vermoedt: de donkere boog rechts achter, tussen oog en de rechter tentakels; navragen).
+- Jordi (11 nov), met `samenvoeg/jordi_zuignappen_weg.png`: "deze zitten wel verkeerd en mogen weg, maar dat kan tijdens het spriten wel. En ja ik bedoel die donkere boog rechts. Ik denk dat dit wel moet lukken" → model = v3 (`referenties/ontwerp_gekozen.png`).
+
+## Toegestane afwijkingen in de sprite (definitief)
+1. Zuignappen (gele wratten, zelfde stijl) op de donkere boog rechts.
+2. De omcirkelde wratten onder de kin (op de tentakel onder het onderste kanon) weg.
+3. Naden van het plakken wegwerken: rechte lijn boven de loop van het onderste kanon, harde overgang waar de steel achter de kin verdwijnt.

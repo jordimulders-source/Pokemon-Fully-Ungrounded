@@ -1038,3 +1038,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.237] - Octillery-evolutie: Gemini-formaatrondes
 - r11 (bijsnijden + afwerken) en r12 (compacter): netter, maar rupsbanden en tweede kanon raakten kwijt; Jordi: "Ook dit werkt dus niet". Formaat niet meer via Gemini; keuze tussen vertalen zoals het is (±64×42) of het bovenste kanon inkorten (±64×47) ligt bij Jordi.
+
+### [v0.0.238] - Octillery-evolutie: model v3
+- Onderste kanontentakel lager en aansluitend onder de kin (`samenvoeg/v3.png`, nu `referenties/ontwerp_gekozen.png`). Anatomie-analyse (8 tentakels, zuignappen, bewegen als "lopende" octopus) in SPEC. Toegestane afwijkingen voor de sprite: zuignappen op de donkere boog, verkeerde wratten onder de kin weg, plaknaden weg.

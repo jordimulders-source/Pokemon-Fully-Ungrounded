@@ -45,3 +45,4 @@ De oude krullen verdwijnen. Kop, mantel, ogen, mond: 100% r5 (ontwerp, textuur, 
 2. De omcirkelde wratten onder de kin (op de tentakel onder het onderste kanon) weg.
 3. Naden van het plakken wegwerken: rechte lijn boven de loop van het onderste kanon, harde overgang waar de steel achter de kin verdwijnt.
 - Jordi (12 nov) over `af/` (r5): "hoe komt deze door de keuring heen?" · "er gaat echt zoveel fout dat het niet eens zin heeft om het allemaal te benoemen" → afgekeurd; `af/` is géén eindresultaat.
+- Jordi (12 nov): "ik vind echt letterlijk geen enkel onderdeel goed gelukt".

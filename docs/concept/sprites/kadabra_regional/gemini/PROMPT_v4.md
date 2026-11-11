@@ -1,13 +1,15 @@
 # Gemini-prompt: regionale Kadabra, startprompt v4 (11 nov)
 
-Nieuw gesprek. Bijlagen: 1 = `bijlage_kadabra_origineel.png` (Gen 3-Kadabra), 2 = `../../alakazam_regional/af_r2/alakazam_charlatan_8x.png`. Basis = v2 (kleuren klopten), plus v3-regels tegen middelvinger en Alakazam-lijf, en de pose als gedrag beschreven (GEMINI.md: gedrag als posebron werkt beter). Jordi: "nee gewoon betere prompt".
+Nieuw gesprek. Bijlage: alleen `../../alakazam_regional/af_r2/alakazam_charlatan_8x.png` (Jordi: "ik laat de kadabra bijlage weg dit keer"); de Kadabra-anatomie staat in woorden. Basis = v2 (kleuren klopten), plus v3-regels tegen middelvinger en Alakazam-lijf, en de pose als gedrag beschreven (GEMINI.md: gedrag als posebron werkt beter). Jordi: "nee gewoon betere prompt".
 
 ```
 Design a regional form of Kadabra and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
 
-ATTACHMENTS
-- Attachment 1 is the original Gen 3 Kadabra. Use it for the BODY: Kadabra's head shape, its big ears, its short mustache, its long tail, its slim build and its proportions. The result must read as Kadabra at first glance.
-- Attachment 2 is its evolution: the regional form of Alakazam, a card-swindler illusionist (Dark/Psychic). Use it for the COLOR SCHEME and markings, applied to Kadabra's body: grey body with a light violet sheen in the shadows, black shoulder plates, black back and sides, grey upper arms and black forearms, a white chest plate, black knee pads, a small red dewlap under the chin, a white playing card with a black spade. Same grey, same black, same white as attachment 2. Do NOT copy its shapes or pose.
+ATTACHMENT
+- The attached image is its evolution: the regional form of Alakazam, a card-swindler illusionist (Dark/Psychic). Use it for the COLOR SCHEME and markings: grey body with a light violet sheen in the shadows, black shoulder plates, black back and sides, grey upper arms and black forearms, a white chest plate, black knee pads, a small red dewlap under the chin, a white playing card with a black spade. Same grey, same black, same white. Do NOT copy its shapes or pose.
+
+BODY (Kadabra, not Alakazam)
+- The body is the official Kadabra: a fox-like head with a pointed snout and two big pointed ears standing up, a short mustache (two short strands, not long and drooping), a long thick tail, a slim body, and smaller shoulder plates than Alakazam. It must read as Kadabra at first glance.
 
 CONCEPT
 - The pre-evolution: a charlatan's apprentice. A card swindler too, but not yet very experienced; still learning the trade.
@@ -16,7 +18,7 @@ CONCEPT
 
 POSE (most important)
 - It behaves like a street magician who just did a card trick and now shows the card to a spectator standing to the LEFT, asking "is this your card?".
-- Its body is in three-quarter view facing left, like the standing pose of attachment 1; not a straight front view and not a side view. Its head is turned toward the left as well, eyes on the spectator.
+- Its body is in three-quarter view facing left, like a normal Gen 3 front sprite; not a straight front view and not a side view. Its head is turned toward the left as well, eyes on the spectator.
 - One arm is stretched out to the left side, holding the card up at shoulder height, with the card face turned flat toward the viewer so we can see the spade.
 - The hand holds the card by its lower edge between thumb and index finger; the other fingers are curled into the palm. No finger sticks up on its own.
 - The other arm stays close to the body. The long tail is visible behind it.

@@ -1064,3 +1064,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra: klaverteken in plaats van hart (Jordi: "ik wil toch voor een klaver gaan ipv een hart ook"); prompt v3, POKEMON.md en Stand van zaken bijgewerkt.
 - Klaver rood (Jordi).
 - Kadabra prompt v4 (Jordi: "nee gewoon betere prompt"): twee bijlagen (lijf van Kadabra, kleuren van de Alakazam), pose als gedrag (straatgoochelaar toont kaart aan toeschouwer links), greep tussen duim en wijsvinger.
+- Prompt v4 aangepast: alleen de Alakazam als bijlage (Jordi: "ik laat de kadabra bijlage weg dit keer"); Kadabra-lijf in woorden.

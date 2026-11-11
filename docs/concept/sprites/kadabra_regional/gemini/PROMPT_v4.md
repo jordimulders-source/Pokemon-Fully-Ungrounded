@@ -1,6 +1,6 @@
 # Gemini-prompt: regionale Kadabra, startprompt v4 (11 nov)
 
-Nieuw gesprek. Bijlage: alleen `../../alakazam_regional/af_r2/alakazam_charlatan_8x.png` (Jordi: "ik laat de kadabra bijlage weg dit keer"); de Kadabra-anatomie staat in woorden. Basis = v2 (kleuren klopten), plus v3-regels tegen middelvinger en Alakazam-lijf, en de pose als gedrag beschreven (GEMINI.md: gedrag als posebron werkt beter). Jordi: "nee gewoon betere prompt".
+Nieuw gesprek. Bijlage: alleen `../../alakazam_regional/af_r2/alakazam_charlatan_8x.png` (Jordi: "ik laat de kadabra bijlage weg dit keer"); de Kadabra-anatomie staat in woorden. Basis = v2 (kleuren klopten), plus v3-regels tegen middelvinger en Alakazam-lijf, en de pose als gedrag beschreven (GEMINI.md: gedrag als posebron werkt beter). Jordi: "nee gewoon betere prompt". En: "de kaart moet ook frontaal getoond worden, terwijl kadabra in een driekwart pose kijkt en staat".
 
 ```
 Design a regional form of Kadabra and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
@@ -17,10 +17,9 @@ CONCEPT
 - It holds exactly ONE playing card.
 
 POSE (most important)
-- It behaves like a street magician who just did a card trick and now shows the card to a spectator standing to the LEFT, asking "is this your card?".
-- Its body is in three-quarter view facing left, like a normal Gen 3 front sprite; not a straight front view and not a side view. Its head is turned toward the left as well, eyes on the spectator.
-- One arm is stretched out to the left side, holding the card up at shoulder height, with the card face turned flat toward the viewer so we can see the spade.
-- The hand holds the card by its lower edge between thumb and index finger; the other fingers are curled into the palm. No finger sticks up on its own.
+- Kadabra itself stands and looks in a three-quarter view facing LEFT, like a normal Gen 3 front sprite: not a straight front view, not a side view.
+- The CARD, however, is shown completely frontal: a flat upright rectangle facing the viewer straight on, not tilted, not in perspective, with the spade clearly visible in the middle. Like a magician who turns the card to the audience: "is this your card?".
+- One arm is stretched out to the left side, holding that card up at shoulder height. The hand holds the card by its lower edge between thumb and index finger; the other fingers are curled into the palm. No finger sticks up on its own.
 - The other arm stays close to the body. The long tail is visible behind it.
 
 STYLE AND FORMAT
@@ -29,7 +28,7 @@ STYLE AND FORMAT
 
 AVOID
 - Not Alakazam: no huge round shoulder pads (Kadabra's plates are smaller), no long drooping mustache, no Alakazam pose turned to the right, no hand behind the back.
-- No straight front view. No single raised finger.
+- No straight front view of the body. No tilted or angled card. No single raised finger.
 - No brown; no dark-all-over body.
 - No clothing: no jacket, cape, sleeves, top hat or gloves; no bow tie.
 - Not a human magician. No plush toy, chibi or mascot look.

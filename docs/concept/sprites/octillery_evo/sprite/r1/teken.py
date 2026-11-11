@@ -79,13 +79,12 @@ row(40,19,'1f4f4fcc45')
 row(41,19,'1cbf4fb145')
 row(42,19,'1ba3f4ff44')
 row(43,19,'11')
-# --- bijna-oog ---
-row(38,37,'ffff')
-row(39,34,'fff6611f')
-row(40,32,'ff55111bb1')
-row(41,32,'f11bc1ccbf')
-row(42,33,'1bcc1cff')
-row(43,34,'fffff')
+# --- bijna-oog (gemeten: geel x34-38, y40-43) ---
+OOG={37:(36,'ffff'),38:(34,'ff6655f'),39:(33,'f665111f'),40:(32,'f5111bb14'),41:(32,'4f1b1ccf4'),
+     42:(32,'41bc1cbf4'),43:(33,'4fccbf4'),44:(34,'4fff4')}
+for y,(x,r) in OOG.items(): row(y,x,r)
+# --- verre oog (gemeten: geel x26, y40-41) ---
+row(39,25,'f1f'); row(40,25,'fc1'); row(41,25,'fb1'); row(42,25,'4f4')
 # --- mondkanon (met de hand, x18-32) ---
 MOND={
 43:"   11111111111 ",

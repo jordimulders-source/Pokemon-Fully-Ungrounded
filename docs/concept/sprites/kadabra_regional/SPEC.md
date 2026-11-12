@@ -13,7 +13,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` → "Gemini-model namaken" + `GEMIN
 ## Model
 - Basis: `gemini/ronde5.png` ("helemaal perfect" op de open hand na). `gemini/ronde8_hand_klauwen5.png` heeft wel klauwtjes maar 5 vingers.
 - Open hand (rechts in beeld): **3 vingers met klauwtjes**, Kadabra-stijl (zie `referenties/kadabra_artwork_hand.webp` en de voeten van het model), de arm in een **"tahdah/voilà"-pose**. Dit lost de maker-agent op in de sprite (Gemini telt de vingers niet goed); Jordi tekent niet.
-- Eerste eigen modelaanpassing van Claude was afgekeurd ("dat ziet er echt totaal niet uit") en is verwijderd. Tweede poging (12 nov, wacht op Jordi): `model/model_hand3_v2.png` = ronde 8 (Gemini-hand met klauwtjes) met de vierde vinger weggehaald, dus 3 vingers in Gemini's eigen stijl (`model/h3.py`, vergelijking met de Gen 3-Kadabra/Alakazam: `model/hand_v2_vergelijking.png`).
+- Eerste eigen modelaanpassing van Claude was afgekeurd ("dat ziet er echt totaal niet uit") en is verwijderd. Tweede poging (12 nov): `model/model_hand3_v2.png`, Jordi: "de middelste vinger lijkt nu net alsof die gebroken is, die moet iets natuurlijker gepositioneerd, dan is die goed" → `model/model_hand3_v3.png` (middelvinger recht en taps, `model/h4.py`; wacht op Jordi). v2 = ronde 8 (Gemini-hand met klauwtjes) met de vierde vinger weggehaald, dus 3 vingers in Gemini's eigen stijl (`model/h3.py`, vergelijking met de Gen 3-Kadabra/Alakazam: `model/hand_v2_vergelijking.png`).
 
 ## Volgende stap
 Frontsprite volgens de poedelmot-methode (zoals de charlatan-Alakazam, `alakazam_regional/`): onderlaag = model verkleind, alleen de hand + armpose als benoemde afwijking.

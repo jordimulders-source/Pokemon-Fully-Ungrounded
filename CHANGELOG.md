@@ -1077,3 +1077,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra-model v5: hand naar Jordi's schets (handpalm met drie vingers als waaier naar rechts), `model/model_hand_v5.png`.
 - Kadabra-hand: v5 afgekeurd ("echt niet mooi"); Gemini-prompt met Jordi's schets als bijlage (`gemini/BIJSTURING_hand3_schets.md`). Les in GEMINI.md.
 - Kadabra-model v7: uit Gemini's schets-hand (ronde 9) de duim weggehaald, drie vingers als waaier naar rechts: `model/model_hand_v7.png`.
+- Kadabra: v7 afgekeurd (geen duim); complete nieuwe Gemini-prompt `kadabra_regional/gemini/PROMPT_v5.md` (pose van ronde 5 in woorden, alleen rode klaver, handen "zoals zijn voeten": duim + twee vingers met klauwtjes).

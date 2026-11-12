@@ -683,3 +683,5 @@ STYLE AND FORMAT
 AVOID
 - Guns, pipes, bolts, plates or anything mechanical. White or pale tentacle ends. A wide, lying-down pose. Not Octillery's face, not Malamar, Tentacruel or Clawitzer. No plush or chibi look.
 ```
+
+- **r18–r20 (12 nov, P6A/P6B, Jordi's beste 3 van veel pogingen):** `r18_rupsband_schakels.png` (twee rupsbanden met gele zuignappen en schakelpatroon), `r19_twee_rollen.png` (twee ronde rollen), `r20_uitgewaaierd.png` (geen rupsband, tentakels gespreid). Jordi: "heb van alles geprobeerd en dit zijjn de beste 3 resultaten. Hoofd en een groot deel van de tentakels zijn niet beter dan het model wat we al gebruikten, dus nu nog bepalen wat we met de onderkant gaan doen. Als we de rupsbanden isoleren en dan netjes aan den onderkant plakken, dan zijn we er denk ik wel. Ik vind de oorspronkelijke rupsband best goed, alleen hij mist dus de suction cups. Als we het dan nog net wat netter kunnen afwerken en zorgen dat de overige 2 tentakels in het model ook suction cups hebben, zijn we er voor het model"

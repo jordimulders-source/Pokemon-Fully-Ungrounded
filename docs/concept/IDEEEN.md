@@ -277,3 +277,7 @@ Jordi: Salar de Uyuni-variant van Silicobra, misschien ook van Sandaconda of een
 - **Naam (Jordi, 10 nov):** is "Cosmic" een goede samenvatting voor al het buitenaardse? "Het hoeft niet perfect te zijn he, ik bedoel niet alle steel pokemon zijn per se staal natuurlijk." Claude: ja (dekt ruimte, sterren, maan, meteorieten én aliens; "Space" te letterlijk, "Astral" neigt naar geesten, "Alien" sluit hemellichamen uit); past in de 8 tekens van `TYPE_NAME_LENGTH`.
 - **Fairy (Jordi, 10 nov):** "fairy mag een flinke nerf". Claude-advies Cosmic tegen Cosmic: super effective (nog niet gekozen).
 - **Besloten (Jordi, 10 nov):** Cosmic tegen Cosmic = super effective ("klinkt goed ja"). Matchups nu: SE tegen Steel, Electric, Fairy, Cosmic; NVE tegen Bug, Rock, Ice; resist Steel, Water, Fire; immuun voor Fairy; zwak tegen Poison, Rock, Psychic, Cosmic. Balans (Claude, telling op de tabel): spreiding ±18% kleiner; Grass, Bug en Steel blijven de uitschieters, Psychic houden in de gaten.
+- **Besloten (Jordi, 12 nov):** "Ik heb erover nagedacht en we gaan het doen." Een gym of E4-lid krijgt Cosmic. Samenvatting in `CONCEPT.md`.
+
+## Ruimte en diepe zee als mysterieuze gebieden (12 nov)
+- **Jordi:** "Daarnaast zit ik erover na te denken om de ruimte en diepe zee beide als mysterieuze areas toe te voegen, mogelijk met eigen legendaries. Dat zijn twee van de grootste mysteries in ons bestaan en tof om daar iets mee te doen."

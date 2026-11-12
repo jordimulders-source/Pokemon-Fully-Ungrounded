@@ -1014,3 +1014,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.230] - Typetabel met Cosmic als afbeelding
 - `docs/concept/typetabel_cosmic.png`: alle 19 types incl. Cosmic (stand v0.0.229), om door te sturen.
+
+### [v0.0.231] - Cosmic besloten
+- Jordi: "we gaan het doen". Cosmic als 19e type in `docs/concept/CONCEPT.md` (matchups, kandidaten, techniek); een gym of E4-lid krijgt Cosmic (welke: open). Taak in `TODO.md`; uitwerking in een later gesprek.
+- Nieuw idee in `IDEEEN.md`: de ruimte en de diepe zee als mysterieuze gebieden, mogelijk met eigen legendaries.

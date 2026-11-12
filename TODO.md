@@ -11,6 +11,7 @@
 8. Vanilla-systemen die niet bij de QoL-filosofie passen: contests/Pokéblocks, Berry Blender en andere minigames, secret bases, Mystery Gift/e-Reader, Record Mixing/Union Room (eerst aan Jordi voorleggen).
 
 ## Fase 1: concept
+- **Cosmic-type uitwerken** (besloten 12 nov, zie `docs/concept/CONCEPT.md`): welke soorten Cosmic worden, Cosmic-moves, welke gym of welk E4-lid, Minior in de dex?, Fairy-nerf; daarna in de code (typetabel, icoon, Hidden Power/Gem/berry). Jordi gaat hiermee verder in een nieuw gesprek.
 - `docs/concept/CONCEPT.md`: regiokaart, steden, gyms, E4, verhaal, starters (Fighting → Dark → Psychic), dex-lijst, fakemon-lijst.
 - Proefronde fakemon-sprites (±5 soorten) om het spritewerk te oefenen.
 - **Afronding goedgekeurde frontsprites** (kolibrie, olinguito v2, Coathief, wasbeer): frame 2, rugsprite, icoon, shiny-palet (skins-regel), naam/data. Coathief daarnaast: A/B-test kleine kleurreparaties (zie `docs/concept/sprites/coathief/SPEC.md`). Frame 2/icoon/shiny bouwen op het goedgekeurde frame 1; de rugsprite is een nieuwe pose (overtrekvel gebruiken).

@@ -1048,3 +1048,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.240] - Octillery-evolutie: sprite afgekeurd
 - Jordi keurt de sprite uit v0.0.239 af ("er gaat echt zoveel fout dat het niet eens zin heeft om het allemaal te benoemen"). Oorzaken in de werkwijze vastgelegd in `docs/lessen/GEMINI.md`; vervolg wacht op Jordi.
+
+### [v0.0.241] - Octillery-evolutie: terug naar Gemini, prompts P1/P2
+- Nieuwe tekening i.p.v. bewerken: compacte pose zodat het ontwerp in 64×64 past. P1 (pose strikt: van voren, mantel in verkorting) en P2 (pose vrij) in `octillery_evo/gemini/PROMPT.md`; zes zichtbare tentakels (de rest achter het lijf). Elk resultaat eerst als 64×64-verkleining toetsen.

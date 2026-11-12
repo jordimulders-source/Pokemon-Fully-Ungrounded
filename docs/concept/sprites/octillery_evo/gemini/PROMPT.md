@@ -464,3 +464,60 @@ STYLE AND FORMAT
 AVOID
 - Adding, removing or redesigning anything. No new tentacles, no metal, no changes to the face.
 ```
+
+## Terug naar Gemini (12 nov): nieuwe tekening, compacte pose
+- Jordi: "Ok prima, we moeten dus terug naar Gemini." · "maar is 6 tentakels wel realistisch? Ik stel voor om 1 kritische en 1 minder kritische prompt te gaan maken qua pose, zodat we sowieso vooruit kunnen."
+- Aantal: een echte Humboldt heeft 10 ledematen (8 armen + 2 vangtentakels), een octopus 8. In de prompt: het dier heeft er meer, maar vanuit deze hoek zijn er zes zichtbaar (rest achter het lijf).
+- Bijlage bij beide: `../referenties/ontwerp_gekozen.png`. Elk in een nieuw gesprek, 3–4 keer draaien; Claude verkleint elk resultaat naar 64×64 als toets vóór er een sprite komt.
+
+## Prompt P1 (pose strikt: van voren, mantel in verkorting)
+
+```
+The attached image shows a finished Pokémon design: a red Humboldt squid that is living artillery, the final evolution of Remoraid and Octillery (Water/Steel). Draw this SAME creature again, as a new drawing in a new pose, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). Do not edit the attached image; redraw the creature from a different angle.
+
+WHY A NEW POSE
+- In the attached image the creature lies sideways and is far too wide for a square sprite. The new pose must fit a square, about as tall as it is wide, with a big readable head.
+
+THE POSE (follow this exactly)
+- We see it almost from the front, slightly from its right side. Its head is large and low in the picture, facing the viewer and a little to the left.
+- Its long mantle does NOT stick out sideways. It rises up and back behind the head, strongly foreshortened, so we see it as a short tapering shape above the head ending in the two fins at the top.
+- It braces itself on two tentacles that are rolled up flat under the body, one on each side, and aims its cannons: it is about to fire.
+- The two cannon tentacles come up beside the head, one on each side, and bend forward so both wide muzzles point towards the viewer and slightly left, at about eye height.
+- Two more tentacles spread out low to the left and right, short, tips curled.
+- A squid has more arms, but from this angle only these six are visible; the others are hidden behind the body.
+
+KEEP FROM THE ATTACHED DESIGN
+- The dark crimson red colour, the yellow slanted eyes with the heavy calm-angry lids, the short ribbed cannon mouth in the middle of the face, the shape of the tentacle cannons (a thick club that opens into a wide muzzle), the segmented hard mantle with fins, the round yellow warts on the outside of the tentacles. No metal plates, no grey parts.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites. Few, large, clear shapes: this must stay readable at 64x64.
+- Plain white background. No ground, shadow, water, smoke, muzzle flash, effects or text. One single creature, no extra views.
+
+AVOID
+- A wide, lying-down composition. Extra tentacles. Machine parts, pipes, bolts, grey metal. A copy of the attached pose.
+```
+
+## Prompt P2 (pose vrij: Gemini kiest, alleen de eis "vierkant en leesbaar")
+
+```
+The attached image shows a finished Pokémon design: a red Humboldt squid that is living artillery, the final evolution of Remoraid and Octillery (Water/Steel). You are a Pokémon designer at Game Freak. Draw this SAME creature again as a new drawing, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). Do not edit the attached image; redraw the creature.
+
+THE PROBLEM TO SOLVE
+- In the attached image the creature is far too wide and too detailed for a 64x64 sprite. Choose a new pose and angle, the way Game Freak fits long creatures like Gyarados, Seviper or Sharpedo into a square: the whole creature must fit a square, about as tall as it is wide, with a big readable head and few, large, clear shapes. You decide the pose.
+
+WHAT THE CREATURE HAS
+- A short ribbed cannon mouth in the middle of its face.
+- Two tentacles that end in cannons: a thick club that opens into a wide muzzle. Both aimed forward.
+- Two tentacles rolled up flat under the body that it rests and moves on.
+- Two more tentacles spread out. A squid has more arms, but only these six need to be visible; the others can be hidden behind the body.
+- A long, hard, segmented mantle ending in two fins.
+- Dark crimson red, yellow slanted eyes with heavy calm-angry lids, round yellow warts on the outside of the tentacles. No metal plates, no grey parts.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- The creature faces left or towards the viewer, 3/4 view. Both eyes visible.
+- Plain white background. No ground, shadow, water, smoke, muzzle flash, effects or text. One single creature, no extra views.
+
+AVOID
+- A wide, lying-down composition. Extra tentacles. Machine parts, pipes, bolts, grey metal. A copy of the attached pose.
+```

@@ -1073,3 +1073,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra: SPEC vastgelegd (model ronde 5; open hand 3 vingers met klauwtjes en arm in "tahdah/voila"-pose door de maker in de sprite; alleen rode klaver). Stand van zaken bijgewerkt voor de volgende sessie.
 - Kadabra-model, tweede poging hand (12 nov): `kadabra_regional/model/model_hand3_v2.png`, uit ronde 8 de vierde vinger weggehaald (3 vingers met klauwtjes in Gemini-stijl); wacht op Jordi.
 - Kadabra-model v3: middelvinger recht en taps (Jordi: "lijkt nu net alsof die gebroken is"), `model/model_hand3_v3.png`.
+- Kadabra-model v4: aansluiting van de middelvinger op de hand glad gemaakt (Jordi: "het is de verbinding aan de hand die nog steeds krom is"), `model/model_hand3_v4.png`.

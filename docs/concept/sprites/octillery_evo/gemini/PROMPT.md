@@ -544,3 +544,20 @@ STYLE AND FORMAT
 - 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean Game Freak Gen 3 shading. Few, large, clear shapes.
 - Plain white background. No ground, shadow, effects or text. One single creature.
 ```
+
+- **r15 (12 nov, P3):** `r15_P3.png`. Jordi: "hij mist 1 rupsband links, de tentakels zijn wel beter, maar de zuignappen niet consistent". Toets `toets64_r15.png`. Claude probeerde de rechter rupsband gespiegeld links te plakken: niet schoon (streepartefacten, overlapt de linker tentakel), weggegooid. Eén wijziging per prompt:
+
+## Prompt P4 (bijlage `r15_P3.png`, nieuw gesprek; alleen de linker rupsband)
+
+```
+The attached image is a finished Pokémon sprite design. Redraw it exactly as it is, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), with ONE change.
+
+THE ONE CHANGE
+- At the bottom right the creature rests on a tentacle rolled up flat like a caterpillar track: a long flat roll with spiral lines on its side and pale round suckers at the front. At the bottom left there is only a small round roll. Replace that small round roll with a second rolled-up tentacle that looks like the one on the right: the same long flat shape, the same spiral lines, the same pale round suckers, seen from the same angle. The creature now rests on two matching rolled-up tentacles, one on each side.
+
+KEEP EVERYTHING ELSE EXACTLY
+- Same pose, size and proportions, same head, eyes, ribbed cannon mouth, mantle with fins, both cannon tentacles, all other tentacles, all yellow warts, same colours. Do not add or remove anything else. The creature still fits a square.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left. Plain white background, no ground, shadow, effects or text.
+```

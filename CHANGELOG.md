@@ -1054,3 +1054,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.242] - Octillery-evolutie: Gemini r13/r14, toets 64×64, prompt P3
 - P1/P2 gaven twee vierkante, op 64×64 leesbare versies (`toets64_r13_r14.png`); Jordi: de ene bolt te veel op, de andere heeft maar één rupsband en is kaal zonder de extra tentakels. Prompt P3: de kale versie als bijlage, met twee gelijke rupsbanden, extra tentakels en gele wratten.
+
+### [v0.0.243] - Octillery-evolutie: Gemini r15, prompt P4
+- r15 (P3): tentakels beter, gele wratten erbij; linker rupsband ontbreekt en de zuignappen zijn niet consistent (Jordi). Prompt P4: alleen de linker rupsband gelijk aan de rechter. Plakpoging van Claude niet schoon, weggegooid.

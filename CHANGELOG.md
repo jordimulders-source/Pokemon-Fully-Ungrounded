@@ -1060,3 +1060,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.244] - Octillery-evolutie: Gemini r16, prompt P5
 - r16 (P4): twee rupsbanden, maar de linker schiet te ver uit en is anders vormgegeven (Jordi). Prompt P5: linker = spiegelbeeld van de rechter, korter, geen wit.
+
+### [v0.0.245] - Octillery-evolutie: r17, linker rupsband zelf ingekort
+- r17 (P5) slechter; Jordi: "Ik heb niet het gevoel dat we vooruit gaan". Geen Gemini-rondes meer voor de rupsband: r16 bewerkt met `octillery_evo/samenvoeg/rups_kort.py` (linker rupsband 75% lang, kleuren van de rechter) → `samenvoeg/r16_kort.png`, wacht op Jordi.

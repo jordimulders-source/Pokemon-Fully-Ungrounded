@@ -580,3 +580,5 @@ KEEP EVERYTHING ELSE EXACTLY
 STYLE AND FORMAT
 - 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left. Plain white background, no ground, shadow, effects or text.
 ```
+
+- **r17 (12 nov, P5):** `r17_P5.png`: linker rupsband versmolten met de tentakel, weer wit. Jordi: "Ik heb niet het gevoel dat we vooruit gaan". Gemini stopt hier voor de rupsband. Claude bewerkte r16 zelf (`../samenvoeg/rups_kort.py 0.75 520 694` → `../samenvoeg/r16_kort.png`, vel `vel_r16_kort.png`): linker rupsband horizontaal ingedrukt tot 75% (verankerd rechts), wit uiteinde omgekleurd naar het rood/roze van de rechter.

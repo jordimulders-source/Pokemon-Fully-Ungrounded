@@ -1051,3 +1051,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.241] - Octillery-evolutie: terug naar Gemini, prompts P1/P2
 - Nieuwe tekening i.p.v. bewerken: compacte pose zodat het ontwerp in 64×64 past. P1 (pose strikt: van voren, mantel in verkorting) en P2 (pose vrij) in `octillery_evo/gemini/PROMPT.md`; zes zichtbare tentakels (de rest achter het lijf). Elk resultaat eerst als 64×64-verkleining toetsen.
+
+### [v0.0.242] - Octillery-evolutie: Gemini r13/r14, toets 64×64, prompt P3
+- P1/P2 gaven twee vierkante, op 64×64 leesbare versies (`toets64_r13_r14.png`); Jordi: de ene bolt te veel op, de andere heeft maar één rupsband en is kaal zonder de extra tentakels. Prompt P3: de kale versie als bijlage, met twee gelijke rupsbanden, extra tentakels en gele wratten.

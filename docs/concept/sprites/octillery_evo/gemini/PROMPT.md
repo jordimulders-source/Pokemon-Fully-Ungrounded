@@ -521,3 +521,26 @@ STYLE AND FORMAT
 AVOID
 - A wide, lying-down composition. Extra tentacles. Machine parts, pipes, bolts, grey metal. A copy of the attached pose.
 ```
+
+- **r13/r14 (12 nov, P1/P2):** `r13_bol.png` (opgebold kluwen onderaan, gele wratten, 3 monden zichtbaar) en `r14_kaal.png` (twee rollen, twee kleine tentakels, geen gele wratten). Jordi: "Hij bolt de tweede teveel op, de eerste krijgt maar 1 rupsband en is kaal zonder de extra tentakels". Toets 64×64 (`toets64_r13_r14.png`): beide vierkant (1,0 en 1,11) en op 1×/2× leesbaar: kop, ogen, mondkanon en kanonnen blijven staan.
+
+## Prompt P3 (bijlage `r14_kaal.png`, nieuw gesprek)
+
+```
+The attached image is a Pokémon design that is almost right: a red Humboldt squid that is living artillery (final evolution of Remoraid and Octillery, Water/Steel), drawn as a Gen 3 front sprite. Redraw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art) with only the changes below.
+
+KEEP EXACTLY
+- The pose, angle, size and proportions; the head, the yellow eyes with heavy lids, the ribbed cannon mouth, the segmented mantle with fins, both cannon tentacles with their wide muzzles, the colours. The whole creature still fits a square.
+
+CHANGE ONLY THIS
+1. It rests on TWO rolled-up tentacles, one on each side, and both look the same: a tentacle rolled up flat like the one on the right in the image. Make the left one match the right one.
+2. It looks too bare. Add more tentacles so it reads as a squid: besides the two small spreading tentacles it has now, add two or three more that spread and curl out behind and beside the body, between the cannons and the rolled-up tentacles. They stay close to the body; the creature must not become wider than it is tall.
+3. Add round yellow warts on the outside of the tentacles (cannon tentacles, spreading tentacles and rolled-up tentacles), like Octillery's.
+
+DO NOT
+- Do not curl the tentacles into a ball or knot under the body. Do not move or change the head, eyes, mouth cannon or cannon tentacles. No metal, no grey parts, no extra cannons.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean Game Freak Gen 3 shading. Few, large, clear shapes.
+- Plain white background. No ground, shadow, effects or text. One single creature.
+```

@@ -1076,3 +1076,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra-model v4: aansluiting van de middelvinger op de hand glad gemaakt (Jordi: "het is de verbinding aan de hand die nog steeds krom is"), `model/model_hand3_v4.png`.
 - Kadabra-model v5: hand naar Jordi's schets (handpalm met drie vingers als waaier naar rechts), `model/model_hand_v5.png`.
 - Kadabra-hand: v5 afgekeurd ("echt niet mooi"); Gemini-prompt met Jordi's schets als bijlage (`gemini/BIJSTURING_hand3_schets.md`). Les in GEMINI.md.
+- Kadabra-model v7: uit Gemini's schets-hand (ronde 9) de duim weggehaald, drie vingers als waaier naar rechts: `model/model_hand_v7.png`.

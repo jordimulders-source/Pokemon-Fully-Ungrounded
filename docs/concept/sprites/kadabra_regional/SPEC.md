@@ -18,3 +18,4 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` → "Gemini-model namaken" + `GEMIN
 ## Volgende stap
 Frontsprite volgens de poedelmot-methode (zoals de charlatan-Alakazam, `alakazam_regional/`): onderlaag = model verkleind, alleen de hand + armpose als benoemde afwijking.
 - **Handpose naar Jordi's schets (12 nov):** `referenties/jordi_schets_hand.png`; Jordi: "het is niet mogelijk om de pose van de hand te doen zoals in mijn zeer lelijke schets hier?". Claude: `model/model_hand_v5.png` (ronde handpalm, drie vingers als waaier naar rechts, elk met klauwtje; `model/h6.py`); wacht op Jordi.
+- **v7 (12 nov):** Gemini volgde Jordi's schets maar tekende te veel vingers (`gemini/ronde9_schets_hand5.png`; Jordi: "gemini heeft evident discalculie, maar kan je hier iets mee?"). Claude haalde de duim linksboven weg: `model/model_hand_v7.png` (drie vingers als waaier naar rechts, `model/h8.py`); wacht op Jordi.

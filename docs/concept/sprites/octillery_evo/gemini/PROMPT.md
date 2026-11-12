@@ -561,3 +561,22 @@ KEEP EVERYTHING ELSE EXACTLY
 STYLE AND FORMAT
 - 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left. Plain white background, no ground, shadow, effects or text.
 ```
+
+- **r16 (12 nov, P4):** `r16_P4.png`. Twee rupsbanden; Jordi: "Die linkse schiet teveel uit en ze zijn niet consistent in het design" (links wit uiteinde met witte zuignappen en langer; rechts rood met roze ringetjes).
+
+## Prompt P5 (bijlage `r16_P4.png`, nieuw gesprek; alleen de linker rupsband)
+
+```
+The attached image is a finished Pokémon sprite design. Redraw it exactly as it is, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), with ONE change.
+
+THE ONE CHANGE: THE ROLLED-UP TENTACLE AT THE BOTTOM LEFT
+- The creature rests on two rolled-up tentacles. The one at the bottom RIGHT is correct: dark red, a rounded front end with a few pale pink sucker rings, one spiral line along its side.
+- The one at the bottom LEFT is wrong in two ways: it sticks out too far to the left, and it looks different (a white end with white suckers).
+- Redraw the LEFT one as the mirror image of the RIGHT one: the same dark red colour, the same rounded end with the same few pale pink sucker rings, the same spiral line, the same thickness. Make it shorter, about two thirds of its current length, so its left end stays under the creature and does not stick out past the tentacles above it. No white.
+
+KEEP EVERYTHING ELSE EXACTLY
+- Same pose, size and proportions, same head, eyes, ribbed cannon mouth, mantle with fins, both cannon tentacles, all other tentacles, all yellow warts, the right rolled-up tentacle, same colours. Do not add or remove anything else.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left. Plain white background, no ground, shadow, effects or text.
+```

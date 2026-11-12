@@ -1065,4 +1065,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r17 (P5) slechter; Jordi: "Ik heb niet het gevoel dat we vooruit gaan". Geen Gemini-rondes meer voor de rupsband: r16 bewerkt met `octillery_evo/samenvoeg/rups_kort.py` (linker rupsband 75% lang, kleuren van de rechter) → `samenvoeg/r16_kort.png`, wacht op Jordi.
 
 ### [v0.0.246] - Octillery-evolutie: prompt P6 (from scratch)
-- Jordi vindt de ingekorte r16 ook niet mooi; nog één startprompt zonder bijlage (P6) met het hele ontwerp in woorden: compacte pose van voren, twee gelijke korte rollen, vier gewone tentakels, overal dezelfde gele wratten.
+- Jordi vindt de ingekorte r16 ook niet mooi; startprompts zonder bijlage met het hele ontwerp in woorden en alle lessen van de sessie: P6A (twee gelijke korte rupsbanden + vier tentakels) en P6B (geen rupsbanden, zes losse tentakels, uitdrukkelijk niet opgebold).

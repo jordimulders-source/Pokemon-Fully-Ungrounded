@@ -582,3 +582,36 @@ STYLE AND FORMAT
 ```
 
 - **r17 (12 nov, P5):** `r17_P5.png`: linker rupsband versmolten met de tentakel, weer wit. Jordi: "Ik heb niet het gevoel dat we vooruit gaan". Gemini stopt hier voor de rupsband. Claude bewerkte r16 zelf (`../samenvoeg/rups_kort.py 0.75 520 694` → `../samenvoeg/r16_kort.png`, vel `vel_r16_kort.png`): linker rupsband horizontaal ingedrukt tot 75% (verankerd rechts), wit uiteinde omgekleurd naar het rood/roze van de rechter.
+
+## Prompt P6 (12 nov; Jordi: "maak nog 1 keer een prompt, helemaal from scratch, zonder afbeeldingen als bijlage"; geen bijlage, nieuw gesprek, meerdere keren draaien)
+Keuze Claude (Jordi gaf geen regel): overal dezelfde ronde gele wratten aan de buitenkant, ook op de opgerolde tentakels.
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE POKÉMON
+- The final evolution of the Remoraid line, Water/Steel. Remoraid is a fish that is a pistol, Octillery is an octopus that is a cannon; this one is heavy artillery: a big Humboldt squid ("diablo rojo", the fierce red squid of Peru and Chile) whose own body has become weapons.
+- Pokémon are never animals with weapons attached. Every weapon here IS a body part of the squid, red flesh, grown naturally. No metal, no grey parts, no machine parts.
+- Colour: dark crimson red all over. Yellow slanted eyes with heavy lids, calm and dangerous. Its Steel type shows only in its mantle: a hard, smooth shell in a few broad segments.
+
+ITS BODY, PART BY PART
+- Mouth: in the middle of its face, a short, thick, ribbed tube that flares open at the end: a cannon mouth, like Octillery's mouth but bigger.
+- Two cannon tentacles: one on each side of the head. Each is a thick tentacle whose club end has become a cannon, opening into a wide round muzzle. Both are raised beside the head and aimed forward.
+- Two rolled-up tentacles under the body, one left and one right, exactly alike: each is a tentacle rolled up flat into a short, low roll with a spiral on its side. The squid rests on these two rolls and moves on them. They are short and stay tucked under the body.
+- Four more ordinary tentacles, two on each side, that curl up and out between the cannons and the rolls. Short, lively, tips curled.
+- A long arrow-shaped mantle with two fins at its tip.
+- The same round yellow warts, all the same size, in a row along the outside of every tentacle: the cannon tentacles, the four ordinary ones and the two rolls.
+
+POSE AND COMPOSITION
+- It has braced itself on its two rolls and aims all three cannons: it is about to fire.
+- We see it from the front, slightly from one side. The head is big and low in the picture. The mantle rises up and back behind the head, foreshortened, with the fins at the top.
+- The whole creature fits a square, about as tall as it is wide. Nothing sticks far out to the sides; the tentacles are not tangled into a ball.
+- Symmetry matters: what is on the left side also exists on the right side, in the same design.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites. Few, large, clear shapes.
+- Plain white background. No ground, shadow, water, smoke, muzzle flash, effects or text. One single creature, no extra views.
+
+AVOID
+- Guns, pipes, bolts, plates or anything mechanical. White or pale tentacle ends. A wide, lying-down pose. Not Octillery's face, not Malamar, Tentacruel or Clawitzer. No plush or chibi look.
+```

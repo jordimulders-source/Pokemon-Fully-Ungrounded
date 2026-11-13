@@ -1072,3 +1072,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.248] - Krassault
 - Werknaam Octillery-evolutie: Krassault (Jordi; kraken + assault). Model v4 goedgekeurd als basis; sprite 2 gestart met Jordi's eisen (afwerking, belijning en aansluiting vóór silhouet; rupsbanden als assets).
+
+### [v0.0.249] - Krassault: sprite overnemen i.p.v. hertekenen
+- Sprite 2 (r1–r3, hertekend door makers) afgekeurd door Jordi ("alles aan het hertekenen ipv de sprite aan het overnemen"; rupsbanden "prutswerk"). Nieuw in `octillery_evo/sprite3/`: eigen pixelraster van het Gemini-model teruggehaald (127×115), exacte 2×-reductie met regels naar 64×58, rupsbanden als assets in het model naar elkaar toe geschoven (varianten A/B). Vel `sprite3/vel_p.png`; wacht op Jordi's keuze.

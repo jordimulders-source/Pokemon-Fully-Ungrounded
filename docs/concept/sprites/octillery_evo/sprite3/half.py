@@ -1,7 +1,8 @@
 # natief.png (127x115) -> palet (K kleuren) -> 2x2-reductie met regels -> onderlaag 64x64
 import sys; from PIL import Image; import numpy as np
 K=int(sys.argv[1]) if len(sys.argv)>1 else 14; DARKMIN=int(sys.argv[2]) if len(sys.argv)>2 else 2
-im=Image.open('sprite3/natief.png').convert('RGB'); a=np.asarray(im).astype(int)
+IN=sys.argv[3] if len(sys.argv)>3 else 'sprite3/natief.png'; TAG=sys.argv[4] if len(sys.argv)>4 else 'half'
+im=Image.open(IN).convert('RGB'); a=np.asarray(im).astype(int)
 bgm=(a.min(axis=2)>=215)
 g=a[~bgm]
 rng=np.random.default_rng(1); C=g[rng.choice(len(g),K,replace=False)].astype(float)
@@ -31,6 +32,6 @@ for oy in (0,1):
         ys,xs=np.where(o>0); o2=o[ys.min():ys.max()+1,xs.min():xs.max()+1]
         full=np.zeros((64,64),int); h,w=o2.shape; x0=(64-w)//2; full[63-h:63,x0:x0+w]=o2
         pal=[255,0,255]+[int(v) for c in C for v in c]; pal+= [0]*(768-len(pal))
-        p=Image.fromarray(full.astype('uint8'),'P'); p.putpalette(pal); p.save(f'sprite3/half_{oy}{ox}.png',transparency=0)
+        p=Image.fromarray(full.astype('uint8'),'P'); p.putpalette(pal); p.save(f'sprite3/{TAG}_{oy}{ox}.png',transparency=0)
         print(oy,ox,w,h,(o2>0).sum())
 print(C.tolist())

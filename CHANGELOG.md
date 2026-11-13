@@ -1459,3 +1459,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.352] - Sneeuwbolslak fase 2: Gemini-prompt
 - Startprompt fase 2 (Ice) in `docs/concept/sprites/sneeuwbolslak_fase2/gemini/PROMPT.md`, op basis van Jordi's goedgekeurde voorstellen (spiraal en langwerpig, ijskorst met barsten, sneeuwstorm, bevroren slijmspoor). Bijlage: `bijlage_fase1_8x.png` (afgewerkte fase 1 op wit).
 - Keuzes van Claude die Jordi nog niet besprak staan apart in het bestand: rijpspoor als bevroren staartpunt (geen spoor op de grond), huisje half in de storm, voetstuk blijft, ± 56 px.
+
+### [v0.0.353] - Sneeuwbolslak fase 2: Gemini ronde 1
+- `sneeuwbolslak_fase2/gemini/r1_gemini.png` opgeslagen. Huis is een schuine kegel met blokkenkorst geworden; vraag aan Jordi of de vorm (schuin omhoog vs. plat naar achteren) en de blokjes goed zijn.

@@ -53,3 +53,37 @@ AVOID
 ## Tips
 - Gemini zet een losse bol naast de slak: de AVOID-zin over "own shell" naar boven halen, nieuw gesprek.
 - Bol te druk (veel vlokken, landschap): "contents: only 3 snowflakes" en het beste resultaat als bijlage in een nieuw gesprek.
+
+---
+
+# Prompt v2 (13 nov): nieuw gesprek, r1 als bijlage
+
+Jordi: "ja schrijf die prompt, voetstuk mag blijven". Bijlagen: 1. `r1_gemini.png`, 2. de tuinslakfoto.
+Keuzes Claude (schrappen mag): kleine mond op de kop; schaduw op het lijf iets blauwer zodat het glas lichter afsteekt (lijf blijft lichtblauw-wit). Rafelige onderkant: Jordi heeft niets gezegd; de prompt vraagt een strakke omlijning, zoals v1.
+Let op (GEMINI.md): "keep X, change Y" kan ook X slopen. Gaat het silhouet of de bol achteruit: v1 opnieuw in een nieuw gesprek draaien.
+
+```
+Attachment 1 is a draft of an original Pokémon: a small snail whose shell is a snow globe (pure Ice type, first stage, early game). Attachment 2 is a real garden snail for anatomy.
+
+Redraw it as a clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+KEEP EXACTLY
+- The silhouette and pose: low snail body facing left, large round glass globe on its back, two eye stalks up.
+- The globe: the tiny house inside, a few snowflakes, one highlight in the top left.
+- The reddish-brown snow-globe base that attaches the globe to the body.
+- Body color pale icy blue-white.
+
+FIX ONLY THESE
+1. The head: make it a clear, rounded snail head (use the real snail in attachment 2) with a simple cute face: the eyes are clearly visible dark eyes at the tips of the two long eye stalks, and a small mouth. Two short lower tentacles, smooth, not lumpy stubs. No extra bumps or growths.
+2. Contrast: the globe needs a dark 1 px outline all around, including the left side. Shade the body with slightly bluer, darker tones so the glass reads lighter than the body and they do not blend together.
+3. Shading: flat Gen 3 shading in 3 to 4 tones per color. NO dithering or checkerboard patterns.
+4. Outline: one clean, closed 1 px dark outline around the whole creature, also along the bottom of the foot (no ragged or melting edge).
+
+FORMAT
+- 64x64 pixel sprite, the creature smaller than the canvas, max 16 colors, light from top left.
+- Plain white background. NO floor, slime trail, shadow, glow, sparkles or effects outside the globe. One single creature, no extra views.
+
+AVOID
+- Do not change the shape or size of the globe, do not add a spiral shell, crystals, ice spikes, stars or a face on the globe.
+- Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
+```

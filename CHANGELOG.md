@@ -1386,3 +1386,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.330] - Abra-regional: sprite r2 (Krassault-recept)
 - Silhouet bevroren (diff 0 buiten de handen; 3 vingergaatjes uit het model erbij), 9 kleuren, lijnkleur grijs-violet, bijna-zwart 34,6% → 21,3%, 53 modelvlekjes behouden, ogen op de gemeten modelplek. `abra_regional/kleur_r2/`.
 - Open (Claude op 8×): onderhelft (armen, handen, benen) nog mozaïek; rechterhand; lijnen samen ±41%.
+
+### [v0.0.331] - Abra-regional: sprite r3
+- Verse maker. Onderhelft per lichaamsdeel als banden uit het model (meerderheid per band), binnenlijnen alleen waar het model ≥2 zwarte pixels heeft, toonovergangen als toongrens, lichtere plooikleur voor vingers/tenen, lichte omlijning op de staartbovenrand, rechterhand per pixel uit het model. Kop, romp en silhouet bevroren (diff 0). Lijnen samen 40,7% → 32,3%, zwart 20,9%; 11 kleuren. `abra_regional/kleur_r3/`.

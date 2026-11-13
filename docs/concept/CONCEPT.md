@@ -29,3 +29,11 @@ Wat in de conceptdocumenten staat, is **besloten** door Jordi. Losse ideeën sta
 - **Pokémon League in Machu Picchu.** Cuzco bezoek je al eerder en je komt er meerdere keren terug. De League staat **los van het verhaal** (zoals in bijna elke game behalve B/W).
 - **Gymlocaties akkoord (Jordi, 22 okt, nogmaals bevestigd):** Ground – Uyuni (gym 1), **Ice – Cordillera Real** (gym 2; Jordi, 22 okt: 'meer grounded', echte gletsjers naast La Paz, en het past bij het niet-lineaire: na Uyuni terug naar het noorden, daarna weer zuidwaarts via Lípez naar Atacama), **Fire – Atacama** (San Pedro), **Dragon – Cuzco** (Amaru), **Poison – Buenos Aires**, **Dark – Rio de Janeiro**, **Grass – Paramaribo**, Bug – diep in de jungle (gym 8). **Volgorde akkoord (Jordi, 22 okt):** 3 Fire (Atacama), 4 Dragon (Cuzco), 5 Poison (Buenos Aires), 6 Dark (Rio), 7 Grass (Paramaribo), 8 Bug (jungle): van Rio **niet** langs de kust naar Paramaribo: je moet **terug (backtracken) en via Colombia** (Andes-noord: Quito/Salento/Medellín/Cartagena) naar Paramaribo, zodat het niet lineair wordt (Jordi); de kustroute Rio → Belém → Paramaribo gaat pas later open. Daarna de Amazone in.
 - Niet als gym/E4: Normal, Water, Fighting, Psychic, Rock, Fairy (kampioen open).
+- **Cosmic krijgt een gym of E4-lid** (Jordi, 12 nov). Welke plek: nog open (de huidige 8 gyms + 4 E4 zijn allemaal ingevuld).
+
+## Nieuw type: Cosmic (besloten, Jordi 12 nov: "we gaan het doen")
+- 19e type voor al het buitenaardse (ruimte, sterren, maan, meteorieten, aliens); haalt soorten weg bij Psychic. Uitwerking (soorten, moves, code) in een later gesprek.
+- **Matchups:** super effective tegen Steel, Electric, Fairy, Cosmic; not very effective tegen Bug, Rock, Ice. Resist Steel, Fire, Water; immuun voor Fairy; zwak voor Poison, Rock, Psychic, Cosmic. Fairy mag een flinke nerf (Jordi).
+- **Kandidaten (Jordi):** Elgyem-lijn, Lunatone & Solrock, Baltoy-lijn, Minior, Deoxys, Clefairy-lijn; Cosmic Power wordt een Cosmic-move. Meer kandidaten en de discussie: `IDEEEN.md` (Nieuw type: Cosmic).
+- **Techniek:** eigen typenummer (niet `TYPE_MYSTERY`, dat is de codemarkering voor "geen type"); tabel in `src/data/types_info.h`.
+- Typetabel als afbeelding: `typetabel_cosmic.png`.

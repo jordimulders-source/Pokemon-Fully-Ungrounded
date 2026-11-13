@@ -1208,3 +1208,29 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.275] - Abra-regional: start ontwerp
 - Jordi (13 nov): Abra wordt puur Dark, nog geen magiër maar wil het worden, nog geen smoking, zelfde huidskleur als Kadabra/Alakazam. Letterlijk in `POKEMON.md`; ontwerprichtingen voorgelegd.
+
+### [v0.0.276] - Idee: Cosmic-type
+- Jordi's idee voor een nieuw type Cosmic (kandidaten, Cosmic Power, opmerking over de typetabel) met de huidige repo-types van de kandidaten in `docs/concept/IDEEEN.md`. Nog niets besloten.
+
+### [v0.0.277] - Cosmic: matchup-voorstel, correcties
+- Jordi's matchup-voorstel voor Cosmic in `IDEEEN.md`. Correctie: Minior is Rock/Flying (niet Normal) en staat uit; `TYPE_MYSTERY` kan niet hergebruikt worden (codemarkering voor "geen type"), Cosmic krijgt een eigen nummer.
+
+### [v0.0.278] - Cosmic: Ghost en Electric-resist eruit
+- Jordi: Ghost uit de Cosmic-matchups, geen Electric-resist. Stand in `IDEEEN.md`.
+
+### [v0.0.279] - Cosmic: naam en Fairy-nerf
+- Jordi's vraag over de naam Cosmic en "fairy mag een flinke nerf" in `IDEEEN.md`.
+
+### [v0.0.280] - Cosmic tegen Cosmic: super effective
+- Jordi kiest super effective voor Cosmic tegen Cosmic. Volledige matchups in `IDEEEN.md`.
+
+### [v0.0.281] - Typetabel met Cosmic als afbeelding
+- `docs/concept/typetabel_cosmic.png`: alle 19 types incl. Cosmic (stand v0.0.229), om door te sturen.
+
+### [v0.0.282] - Cosmic besloten
+- Jordi: "we gaan het doen". Cosmic als 19e type in `docs/concept/CONCEPT.md` (matchups, kandidaten, techniek); een gym of E4-lid krijgt Cosmic (welke: open). Taak in `TODO.md`; uitwerking in een later gesprek.
+- Nieuw idee in `IDEEEN.md`: de ruimte en de diepe zee als mysterieuze gebieden, mogelijk met eigen legendaries.
+
+### [v0.0.283] - Cosmic-afspraken in main, Curiqui Psychic/Cosmic
+- Jordi: "alle afspraken uit die niet-gemergede branch mogen gemerged worden en rondgemaakt". Cosmic-branch gemerged (secties hernummerd naar v0.0.276–282): Cosmic is besloten (matchups, kandidaten, techniek in `CONCEPT.md`/`IDEEEN.md`, typetabel `typetabel_cosmic.png`).
+- Jordi: "Geef Curiqui gelijk Cosmic als secondary type". Curiqui is nu Psychic/Cosmic (POKEMON.md, Stand van zaken, overzichtsvel). Eigen Cosmic-badge voor het vel in `showcase/types/cosmic.png` (letters uit de bestaande typebadges, indigo); nog niet in de ROM.

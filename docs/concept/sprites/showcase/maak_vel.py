@@ -12,7 +12,7 @@ items=[
 ("wasbeer/af/wasbeer.png",'"Vigiloot"',"dark"),
 ("nachtaap/ronde12/variant_spiraal/anim_front.png",'"Nocticue"',"psychic"),
 ("nachtaap_evo/af/nachtaap_evo.png",'"Moonkey"',"psychic"),
-("nachtaap_fase3/af/nachtaap_fase3.png",'"Curiqui"',"psychic"),
+("nachtaap_fase3/af/nachtaap_fase3.png",'"Curiqui"',"psychic/cosmic"),
 ("cuyby/ronde4/anim_front.png",'"Cuyby"',"normal"),
 ("cuyby_evo/ronde6/anim_front.png",'"Cuychu"',"normal"),
 ("hatun_runa/af/hatun_runa.png",'"Kiskiddo"',"normal/flying"),
@@ -38,7 +38,8 @@ items=[
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)
 def icon(t):
-    i=Image.open(R0+f"graphics/types/{t}.png"); a=i.convert("RGBA")
+    eigen=R0+f"docs/concept/sprites/showcase/types/{t}.png"  # nieuwe types (Cosmic) die nog niet in graphics/types staan
+    i=Image.open(eigen if os.path.exists(eigen) else R0+f"graphics/types/{t}.png"); a=i.convert("RGBA")
     if i.mode=="P":
         px=i.load(); ap=a.load()
         for y in range(i.height):

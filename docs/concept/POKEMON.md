@@ -21,6 +21,8 @@ Per Pokémon of lijn: **Besloten** (wat vastligt), **Inspiratie** (het echte die
 
 Contrast per starter: de alpaca ziet er knuffelbaar uit maar vecht; de coati is een dief die nobel wordt; de nachtaap ziet er eng uit maar geneest.
 
+- **Curiqui (fase 3 Psychic-starter) wordt Psychic/Cosmic** (Jordi, 13 nov: "Geef Curiqui gelijk Cosmic als secondary type"). Fase 1 en 2 blijven Psychic.
+
 ### Fighting: lamoïden-lijn
 - **Besloten:** schattige, fluffy alpaca → lama (groter, sterker) → lama met de **bombín** (bolhoed van de Boliviaanse cholita), in cholita-luchadora-stijl. Lamoïden-lijn, geen vertakking.
 - **Inspiratie:** alpaca (stamt af van de vicuña) en lama (stamt af van de guanaco, grootste en sterkste, lastdier van de Andes); alpaca's schoppen en spugen als ze boos zijn. De bombín kwam in de jaren 1920 uit Europa en werd een symbool van trots voor Aymara-vrouwen; cholita-worstelen in El Alto.

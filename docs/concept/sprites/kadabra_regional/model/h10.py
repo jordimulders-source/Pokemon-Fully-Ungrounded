@@ -1,6 +1,6 @@
 # Kadabra-model uit ronde 10 B: beide handen van 4 naar 3 vingers, op het eigen 100x100-raster van het plaatje (cel 10,24 px).
 # Open hand: de onderste vinger weg, rand van de handpalm rond gesloten (duim links, vinger omhoog, vinger schuin rechts; Gemini's eigen pixels).
-# Kaarthand: handpalm naar de kijker onder de kaart, duim met klauwtje over de onderrand van de kaart, vingers achter de kaart (Jordi: we horen de binnenkant van de hand te zien).
+# Kaarthand: Gemini's eigen hand, alleen de vinger linksonder weg en de onderrand van de vinger erboven gesloten (Jordi: "deze linkerhand ... met 1 vinger minder").
 from PIL import Image
 import numpy as np, sys
 sys.path.insert(0,'model'); from grid10 import P,O,load,cell,cls
@@ -24,23 +24,16 @@ row(39,88,'o........')
 row(40,87,'o.........')
 row(41,86,'o..........')
 # kaarthand (kolom 1 = positie 0; strings beginnen op positie 5 = kolom 6)
-row(33,5,'====aoa')
-row(34,5,'====oWoa')
-row(35,5,'====obcoa')
-row(36,5,'====obbcoa')
-row(37,5,'====obbbcoo.')
-row(38,5,'...oabbbbcco.')
-row(39,5,'..oaabbbbccco')
-row(40,5,'..oabbbbbccco')
-row(41,5,'..obbbbbcccc==')
-row(42,5,'...obbbccccd==')
-row(43,5,'....oocccdd===')
-row(44,5,'......oooo====')
+row(41,6,'..oooo')
+row(42,6,'....')
+row(43,6,'.....')
+row(44,6,'.....')
 for j,c in ((37,89),(38,89),(39,89),(40,88),(41,87)):
     a[int(round(O+j*P))-1:int(round(O+(j+1)*P))+1, int(round(O+c*P)):]=(255,255,255)
 a[int(round(O+36.6*P)):int(round(O+42.4*P)), int(round(O+89*P)):]=(255,255,255)
-a[int(round(O+45*P)):int(round(O+46*P)), int(round(O+4*P)):int(round(O+13*P))]=(255,255,255)
-a[int(round(O+44*P)):int(round(O+45*P)), int(round(O+4*P)):int(round(O+11*P))]=(255,255,255)
+a[int(round(O+42*P))-1:int(round(O+45*P))+2, int(round(O+5*P)):int(round(O+10*P))]=(255,255,255)
+a[int(round(O+43*P))-1:int(round(O+45*P))+2, int(round(O+10*P)):int(round(O+11*P))]=(255,255,255)
+a[int(round(O+44*P))+1:int(round(O+46*P)), int(round(O+5*P)):int(round(O+11*P))+3]=(255,255,255)
 out=Image.fromarray(a); out.save('model/model_B_hand3.png')
 z1=out.crop((700,230,1010,470)).resize((620,480),Image.NEAREST); z2=out.crop((20,250,330,520)).resize((620,540),Image.NEAREST)
 o=Image.new('RGB',(1250,540),'white'); o.paste(z2,(0,0)); o.paste(z1,(630,0)); o.save('model/model_B_handen_closeup.png')

@@ -98,7 +98,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - Remoraid → Octillery → **kraken met wapens**, Water/Steel. Geen oorlogsschip ("bij een warship [zijn] de kanonnen niet pronounced genoeg"); de lijn gaat om afschieten.
 - Eisen (Jordi): "het moet wel pokemon blijven, dus niet te overdesigned en het moet overduidelijk een evolutie van octillery zijn"; "sterkere look, meer kraken"; duidelijk groter en zwaarder; metaal organisch; max. 3 kanonnen ("of 1 gatling gun en 2 kanonnen"); driekwart. De beta-tank (#210) valt af.
 - Gemini-experiment A (gatlingsnuit + 2 tentakelkanonnen) en B (kanonnen op de mantel): `sprites/octillery_evo/gemini/PROMPT.md`.
-- Naam (Jordi, 13 nov): het woord **Assault** erin; "Krassault mogelijk, van kraken en assault"; Octassault "lijkt teveel op octillery". Nog niet besloten.
+- Naam (Jordi, 13 nov): het woord **Assault** erin; "Krassault mogelijk, van kraken en assault"; Octassault "lijkt teveel op octillery". **Werknaam: Krassault** (Jordi: "Krassault is prima als werknaam").
 - Model (13 nov): compacte pose van voren, `sprites/octillery_evo/referenties/model_v4.png` (vervangt het brede ontwerp hieronder).
 - Uitkomst (11 nov): **Humboldt-inktvis** i.p.v. kraken; geribbeld mondkanon (rood, organisch), 2 tentakelkanonnen, 2 tentakels opgerold als rupsband, 3 tentakels rechts, krul achter de kop (8 tentakels); Steel als natuurlijk pantser (gesegmenteerde mantel), geen platen. Ontwerp `sprites/octillery_evo/referenties/ontwerp_gekozen.png`, SPEC en anatomie-analyse in `sprites/octillery_evo/SPEC.md`. Bewegen (voorstel, niet besloten): rupsband-tentakels rollen zich af als 'lopende' octopussen, zuignappen als anker tegen de terugslag.
 

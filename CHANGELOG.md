@@ -1069,3 +1069,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.247] - Octillery-evolutie: model v4 (onderkant geplakt)
 - Gemini r18–r20 (P6A/P6B) vastgelegd; kop en tentakels niet beter dan r16 (Jordi). Op Jordi's plan: rechter rupsband van r16 gekopieerd naar links (achter het lijf), zuignappen geel, wratten op de twee lage tentakels: `octillery_evo/samenvoeg/model_v4.png` (`onderkant.py`). Wacht op Jordi.
+
+### [v0.0.248] - Krassault
+- Werknaam Octillery-evolutie: Krassault (Jordi; kraken + assault). Model v4 goedgekeurd als basis; sprite 2 gestart met Jordi's eisen (afwerking, belijning en aansluiting vóór silhouet; rupsbanden als assets).

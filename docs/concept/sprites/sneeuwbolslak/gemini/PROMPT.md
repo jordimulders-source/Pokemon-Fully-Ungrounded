@@ -106,3 +106,8 @@ FORMAT
 - 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left.
 - Plain white background. NO snow, floor, shadow, glow or effects outside the globe. One single creature, no extra views.
 ```
+
+## Ronde 3 (13 nov)
+- `r3a_gemini.png` (veel vlokken) en `r3b_gemini.png` (stervlokken). Jordi: "eerst kwam 1, die vond ik wat overdreevn, is door de vlokvorm beter. vertaalt dat naar een sprite denk je? Anders kan je zelf een hybride vorm maken".
+- Natief raster: pitch 10,24 px → slak 63×51, past direct in 64×64 (`sprite/natief.py`). De stervormen vallen daarin weg tot vage vlekjes.
+- Hybride Claude: `sprite/hybride_v1.png` = r3b op 64×64, de vier vage vlokken vervangen door witte plusjes (5 px) + 6 losse witte pixels; verder niets veranderd.

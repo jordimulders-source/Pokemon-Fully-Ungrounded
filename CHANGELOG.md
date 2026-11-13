@@ -1088,3 +1088,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.240] - Charlatan-Alakazam af
 - Jordi (13 nov): "zet de alakazam alvast in af". `alakazam_regional/af/` = af_r2 (sprite, 8×, raster); op het overzichtsvel `showcase/frontsprites_af.png` (27 sprites, "Alakazam (regional)", Dark/Psychic); Stand van zaken bijgewerkt. Gepusht naar main.
+
+### [v0.0.241] - Kadabra-regional: frontsprite r1–r2
+- r1 (maker, poedelmot-methode, model `model/model_B_hand3.png`, palet van de charlatan-Alakazam, 62×54 px): keurder eis 1 PASS, eis 2 FAIL (grijs te licht, lichtkant 2 % zwart). r2: grijs een stap donkerder (gem. 181,5; Alakazam 179,9), lichtkant 12 %, linkerplaat zwart, kin opgeruimd, klavervoet 2 px; klavervarianten A (4×4) en B (5×5) op het vel. Nagel op de kaartvinger zit erin maar leest op 1× niet.

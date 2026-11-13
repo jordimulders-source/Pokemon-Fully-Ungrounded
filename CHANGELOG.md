@@ -1423,3 +1423,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.342] - Sneeuwbolslak: oogtype-probeersels
 - Jordi: "nee een ander type oog, dit is alle 3 niet mooi". Maker nam ogen pixel voor pixel over van Magcargo, Surskit, Gastrodon en Sliggoo (alleen de voelspriettoppen, verder diff 0). Vel `sprite/maker/vel_ogen.png`.
+
+### [v0.0.343] - Sneeuwbolslak: frontsprite af
+- Jordi: "surskit is de enige die redelijk past, dus ga maar voor die en stuur hem naar de eindkeuring".
+- Eindkeuring: PASS met 2 losse pixels gerepareerd. `sneeuwbolslak/af/sneeuwbolslak.png` (+ `_8x.png`), op het overzichtsvel (`showcase/frontsprites_af.png`). Stand van zaken: 31 frontsprites af. Les in GEMINI.md.

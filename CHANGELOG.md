@@ -1378,3 +1378,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.328] - Abra-regional: Gemini-model gekozen, sprite gestart
 - Ronde 2 (v2B, ingezakte Abra-zit) gekozen: "Deze is uitstekend, die lijkt half dood". `abra_regional/referenties/gemini_gekozen.png`, `SPEC.md`. Sprite via de poedelmot-methode met overnemen van het model (Krassault), geen hertekende onderdelen.
+
+### [v0.0.329] - Abra-regional: sprite r1
+- Maker: Gemini-raster teruggehaald (pitch 8 px, natief 127×127, figuur 96×96), exacte 2×2-reductie → 48×49 (1071 px; Abra 951, regionale Kadabra 1232), 10 modeltonen. 12 pixels gerepareerd (buitenrand, gesloten ogen); vlekjes/streepjes, oorkerf en staartrand onaangeroerd. `abra_regional/kleur_r1/` (vel, LOG).
+- Open: handen/vingers lezen niet na de reductie, omlijning ±33%, linkeroog 1 px, huidtonen grijzer dan de regionale Kadabra.

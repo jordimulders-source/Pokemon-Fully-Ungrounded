@@ -104,3 +104,7 @@ AVOID
 ## Reactie Jordi op r2 (13 nov)
 - `r2_gemini.png`. Jordi: "compleet mislukt".
 - Analyse Claude: "less snail, more cosmic" vertaalde Gemini als kop weglaten (haakvormige stomp zonder gezicht); "freezing solid" genegeerd (glazen bol met huisje, alleen barsten); de bijlagen trokken hem terug naar de bol van fase 1. Abstracte woorden werken niet; Gemini heeft concrete vormen nodig.
+- Jordi verder over r2: "dit is toch verschrikkelijk", "alles hieraan is slecht"; "die eerste was beter".
+
+## Ronde 3 (13 nov)
+- `r3_gemini.png` (door Jordi zelf geprompt). Jordi: "Dit is nog teveel de eerste vorm. Het is een beetje waar ik vooraf bang voor was, fase 2 lijkt teveel op fase 1. Hoe gaan we een tussenfase creëren die tussen die slak in zit en een komeet. De slak moet al langzaam dus meer opgaan. De bol moet bevriezen, maar minder puntig en het moet allemaal langzaam 1 geheel vormen. De chaos in de bol die begint te ontstaan ben ik wel fan van, alsof de laatste vorm nu in de bol zit en zodra die barst de hele pokemon overneemt. Laten we eerst overleggne voordat we prompten"

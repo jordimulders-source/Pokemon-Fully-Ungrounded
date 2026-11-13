@@ -61,3 +61,4 @@ Jordi letterlijk:
 Regels voor de maker: model volgen voor ontwerp, pose en kleur; plaknaden zijn géén ontwerp. Afwerking gaat vóór silhouet: belijning en aansluiting moeten kloppen, niets zweeft. De rupsbanden zijn assets: de verste (links, achter het lijf) mag verder achter de rest verstopt worden als hij anders niet netjes aansluit.
 - Jordi over sprite 2 r2 (13 nov, op basis van Claudes beschrijving): "de kleur vind ik niet erg, rupsbanden en mond wel" → kleur (lichter/roder dan het model) is goed; rupsbanden en mondkanon repareren.
 - Jordi (13 nov): "ik stel sowieso voor om de rupsbanden wat gedeeltelijker te verstoppen, wat meer onder het lichaam te zetten".
+- Jordi (13 nov): "vooral de linkse mag meer bedekt worden".

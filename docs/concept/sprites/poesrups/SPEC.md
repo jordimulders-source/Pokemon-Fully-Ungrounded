@@ -9,6 +9,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-model namaken) + `docs/less
 - (op ronde 3, twee plaatjes) "hij deed eerst de tweede, daarna zei ik dat die meer bedekt moest worden en je alleen de ogen mocht zien. Die zijn nu iets teveel zoogdier nog. Maar we hebben een model verder, met alleen nog de ogen die iets anders moeten, doe maar zoals jij initieel van plan was en bouw de sprite"
 - (op kleur r1, terwijl r2 liep) "prima, begint al ergens op te lijken"
 - (op kleur r2, op de vragen oog A/B/C en of de kam groter mag dan in het model) "ik zie tussen A en C geen verschil, beide prima., de kam mag prima groter" → **oog A** (keuze Claude tussen A en C); **kam mag groter dan in het model.**
+- (op kleur r3) "ja dit is te overdreven. Ik vind ronde 2 al uitstekend, wat wilde je er nog aan veranderen?" → **r3 vervalt; r2 is de basis.** Ronde 4 (kam als volle plukken) gestopt. Variant ter keuze: `kleur_r2b/` = r2 met alleen de 24 px buiten de kam uit r3 (derde ronde pootje, minder loklijnen, randje bij het verre oog).
 
 ## Bron
 - `referenties/model_gekozen.png`: **het model (bevroren)**: de bedekte versie (alleen de ogen zichtbaar onder de vacht). Kijkt al naar links.

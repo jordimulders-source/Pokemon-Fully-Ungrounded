@@ -1,0 +1,42 @@
+   0000000000111111111122222222223333333333444444444455555555556666
+   0123456789012345678901234567890123456789012345678901234567890123
+24                                           -PPPPPPPP---          
+25                                           DPPPPPPPPPPPPPP---    
+26                                           DdPPPPPddP---------   
+27                                          --DPPPP-PP--------d-   
+28                                      ---P-PP-------------PPd    
+29                                    -PPPP----------------dPPd    
+30                                  ---P------------------dPPPd    
+31                                --PP-d------------------PPPP-    
+32                               ------------------------DPPPPd    
+33                         ---- ---P-----d--------------DPPPP-     
+34                       -P---dd-PP-------Dd-----------DPPPPPd     
+35                      -------D-PP--------d---------dDdPPPPPd     
+36                     ------dD-------------D------D--DDd--PPd     
+37                    yY--------P------------------d--D -dddd-     
+38   -P--             yYd---d---------P----d-d-----D-D-            
+39  -PPPP--           -y-d--DD------PP---dD--D-----DDd             
+40  PDDPPPPP-          --dd-dy-----dP--DYYd--D----dDd    -----     
+41  -DDPP---PP-        YY-D--YD-------YyYYd-dD---DD-    PP-----    
+42  -PdPPd---PPP      -YYd-DddPP---dDYYYYy--DD-dD-     P----d---   
+43   ddPd------PP      -ddd-PPPPPP---DYYy--DdDDd --   ----Y-Y---   
+44    -d--------PP    -PdDPPPPPPPPd-------dd-D- d--d- ----  -----  
+45     -------d----   PdDDGPPPPPPPd---------dd --Dd-D--yy    ----  
+46      ---d-ddD---- -PDGDDDPPPPPPPd--------DDD-D---d--d-    d---  
+47              d-----PDDDDDPPP-PPD---------DdDD- -Dd-y-     --d-  
+48               ----dPDDGDDPPdddPD-D--------D-dDDd--dy-      -d-- 
+49                ----dGGDDdPddDDDdd---------dDd--dDdY- --     -d- 
+50            --- ----ddDGDPDDDD--DD------dd--dDDDDddd-------   -- 
+51         -Yy-YY---Yd-DDDdDDDd---D--------D----d---d------------- 
+52        -YY--PPd-------P--ddddd-DdD------DD-----------yY-ydd-d-  
+53        -PPPPPPPPPPPPP-----d-----dDDd----Dd----------DDd-- --    
+54       yY-PDDPPPd----------d-------------DDd---ddd-yyDD--        
+55       YYPDDDDPPP-------d-d--dddDD-------D-DDDDDDDDD--D-d        
+56       yYdDDDDPPP----dd----ddDdD--dd----DDDDDd------dD---        
+57       -dddDDDPPPd--d-----yd-DDYyd--dDDDD---------DD----         
+58        --dDDDD-Pd-D----ddd--DDDDDYDDdd------dDDd---dd-          
+59         PddDDd--ddd---d--P--DdDD--------dddd-----dd             
+60          -dDD--ddd---dP--PP--Dd-----dDDD----ddD--               
+61            --d-d      -P-PPd--DDDDdDd---ddd--                   
+62                        -d--d-d----------                        
+63                         -ddDdPdddddd-                           

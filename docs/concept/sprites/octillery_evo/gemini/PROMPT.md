@@ -1,0 +1,687 @@
+# Gemini-prompts: Octillery-evolutie (10 nov)
+
+Regels: `docs/lessen/GEMINI.md`. Lijn: `docs/concept/POKEMON.md` (Octillery-evolutie).
+
+## Besloten (Jordi, 10 nov)
+- Geen oorlogsschip: "het gaat er bij remoraid en octillery om dat ze dingen afschieten"; "ik ben bang dat bij een warship de kanonnen niet pronounced genoeg zijn".
+- **Water/Steel**, "maar het moet wel pokemon blijven, dus niet te overdesigned en het moet overduidelijk een evolutie van octillery zijn".
+- "hij moet wel sterker worden, dus ook een sterkere look, meer kraken". **Duidelijk groter en zwaarder.**
+- **Metaal organisch.** "meer dan 3 kanonnen wordt teveel, of 1 gatling gun en 2 kanonnen".
+- Pose driekwart (sprites). De beta-tank (Spaceworld #210) laten we los.
+- Twee prompts naast elkaar: **A** = richting 1+2 (gatlingsnuit + twee tentakelkanonnen), **B** = richting 3 (kanonnen op de mantel).
+- Keuze Claude in B (Jordi kan bijsturen): de buissnuit van Octillery blijft en telt als kanon, plus 2 op de mantel = 3.
+
+## Bijlagen (beide prompts, in deze volgorde)
+1. `bijlage_octillery_8x.png` (Octillery, Gen 3-sprite)
+2. `bijlage_remoraid_8x.png` (Remoraid, Gen 3-sprite)
+
+Elke prompt in een **eigen nieuw gesprek**.
+
+## Prompt A: gatlingsnuit + twee tentakelkanonnen
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENTS
+- Attachment 1 is Octillery (Gen 3 sprite). The new Pokémon is its EVOLUTION and must be instantly recognisable as an evolved Octillery.
+- Attachment 2 is Remoraid, the first stage. The line is about shooting things: Remoraid is a pistol, Octillery a cannon, this stage is heavy artillery.
+
+THE CREATURE
+- Third stage of the line, Water/Steel. A kraken: clearly BIGGER, HEAVIER and STRONGER than Octillery. Broader, taller mantle, thick powerful tentacles that spread out wide and heavy over the ground.
+- Keep from Octillery: the round red head/mantle, the heavy-lidded grumpy eyes, the round yellow warts on the head and on the tentacle tips, the red-orange body colour.
+- The Steel is ORGANIC: parts of the mantle are covered by smooth gunmetal-grey armour that has grown out of the body like a shell or a thick hide. No bolts, screws, rivets, seams, wires or machine parts. It looks grown, not built.
+
+THE WEAPONS (exactly three, nothing more)
+- 1: Octillery's tube snout has grown into a rotary gatling: a short cluster of several barrels grown together around the mouth, made of the same organic gunmetal. It points forward-left. This is the most important feature.
+- 2 and 3: the two front tentacles end in one thick cannon barrel each, grown from the tentacle like a shell, with the opening at the tip. They are raised and aimed forward.
+- All other tentacles are normal octopus tentacles with the yellow warts at the tips.
+- The weapons must be big and clearly readable in the silhouette, but the creature must still look like an animal, not a machine.
+
+POSE AND VIEW
+- Body in 3/4 view facing left, sitting heavily on its spread tentacles, gatling and both tentacle cannons aimed forward-left.
+- Both eyes visible. Calm and menacing; heavy and unshakable, not angry and not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Not Blastoise, Clawitzer, Tentacruel, Grapploct, Cloyster or a recoloured Octillery.
+- Not a robot, mech, tank, ship or submarine: no hull, deck, treads, turrets, chimneys or flags.
+- Not over-designed: no spikes, chains, armour everywhere or tiny details. No plush toy, chibi, Neopets or mascot look.
+```
+
+## Prompt B: kanonnen op de mantel
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+ATTACHMENTS
+- Attachment 1 is Octillery (Gen 3 sprite). The new Pokémon is its EVOLUTION and must be instantly recognisable as an evolved Octillery.
+- Attachment 2 is Remoraid, the first stage. The line is about shooting things: Remoraid is a pistol, Octillery a cannon, this stage is heavy artillery.
+
+THE CREATURE
+- Third stage of the line, Water/Steel. A kraken: clearly BIGGER, HEAVIER and STRONGER than Octillery. Broader, taller mantle, thick powerful tentacles that spread out wide and heavy over the ground.
+- Keep from Octillery: the round red head/mantle, the heavy-lidded grumpy eyes, the round yellow warts on the head and on the tentacle tips, the red-orange body colour.
+- The Steel is ORGANIC: parts of the mantle are covered by smooth gunmetal-grey armour that has grown out of the body like a shell or a thick hide. No bolts, screws, rivets, seams, wires or machine parts. It looks grown, not built.
+
+THE WEAPONS (exactly three, nothing more)
+- 1: Octillery's tube snout stays, bigger and thicker, with a gunmetal rim grown around the opening, pointing forward-left.
+- 2 and 3: two thick cannon barrels grow out of the top of the mantle, one on each side, like horns made of the same organic gunmetal, both aimed forward. They grow from the body, they are not mounted turrets.
+- All tentacles are normal octopus tentacles with the yellow warts at the tips; no weapons on the tentacles.
+- The weapons must be big and clearly readable in the silhouette, but the creature must still look like an animal, not a machine.
+
+POSE AND VIEW
+- Body in 3/4 view facing left, sitting heavily on its spread tentacles, snout and both mantle cannons aimed forward-left.
+- Both eyes visible. Calm and menacing; heavy and unshakable, not angry and not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Not Blastoise, Clawitzer, Tentacruel, Grapploct, Cloyster or a recoloured Octillery.
+- Not a robot, mech, tank, ship or submarine: no hull, deck, treads, turrets, chimneys or flags.
+- Not over-designed: no spikes, chains, armour everywhere or tiny details. No plush toy, chibi, Neopets or mascot look.
+```
+
+## Rondes
+- **r1 (10 nov):** `r1_A_gatling.png`, `r1_B_mantel.png`. Jordi: "Beide echt slecht, is gewoon octillery met wat kanonnen". Jordi stuurde géén bijlagen mee ("dat is het ironische"); de tekst "keep from Octillery" + de opsomming van Octillery-kenmerken was genoeg om Octillery na te tekenen met wapens en een helm erop. Jordi: "Ik wil dat die meer kraken wordt. Maar ook echt een oorlogswapen. Het steel gedeelte moet natuurlijk zijn, hier lijkt het erop geplakt. Dat is bij een Empoleon bijv ook niet". Verder met richting A.
+
+- **r2 (10 nov):** `r2_A2.png` (prompt A2). Jordi: "nog steeds lelijk, nu is die wat meer een kraken vorm, maar het lijkt echt heel goedkoop, wat metaal erop geplakt en voor de rest echt precies octillery". Twee rondes mis → stoppen, eerst overleggen.
+
+## Prompt A2 (na r1; richting A, meer kraken, oorlogswapen, steel als anatomie zoals Empoleon)
+Keuzes Claude (Jordi kan schrappen): mantel langgerekt als bij een inktvis met twee stalen vinnen bovenaan (leest als granaat/torpedo); de snuit = de sifon (waarmee inktvissen echt water spuiten) die een gatling is.
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE IDEA
+- The final evolution of the Remoraid line, Water/Steel. Remoraid is a pistol, Octillery a cannon; this stage is a living weapon of war: a KRAKEN, the giant sea monster that drags warships down, grown into heavy artillery.
+- This is NOT Octillery with weapons added. The whole body has changed into a new, much bigger and more dangerous animal. Only the red colour, the heavy-lidded half-closed eyes and a few round yellow warts tell you it evolved from Octillery.
+
+ANATOMY (a giant squid / kraken)
+- A long, tall, torpedo-shaped mantle that rises up and back behind the head, like a giant squid, ending in two broad fins at the top.
+- Long, thick, muscular tentacles, much longer than the body is tall. Several of them rise up and curl in the air around the body like a sea monster rising from the deep; the others brace heavily on the ground.
+- Big, heavy and powerful. Menacing and calm, not screaming, not angry.
+
+THE STEEL IS PART OF THE BODY (like Empoleon's steel beak and wing edges)
+- No armour, helmet, plates or casing laid over the body. Only these body parts ARE steel, dark gunmetal with a blue sheen, and they keep the natural shape of that body part, flowing smoothly into the red flesh:
+  - the siphon/snout in front of the face (the tube squids use to jet water) has grown into a rotary gatling of several barrels, pointing forward-left. The most important feature;
+  - the two fins at the top of the mantle, shaped like the tail fins of a torpedo or artillery shell;
+  - the ends of the two front tentacles, which have hardened into one thick cannon barrel each, the opening at the tip, raised and aimed forward. The tentacle itself becomes the barrel; nothing is attached to it.
+- Exactly three weapons: the gatling and the two tentacle cannons. No other guns.
+
+POSE AND VIEW
+- 3/4 view facing left, towering up, weapons aimed forward-left. Both eyes visible.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Not Octillery with a helmet or guns stuck on. Not Blastoise, Clawitzer, Tentacruel, Grapploct, Malamar or Cloyster.
+- Not a robot, mech, tank, ship or submarine: no hull, deck, treads, turrets, bolts, rivets, seams or flags.
+- Not over-designed: no spikes, chains or tiny details. No plush toy, chibi, Neopets or mascot look.
+```
+
+## Na r2: nieuwe aanpak (Jordi, 10 nov)
+- Jordi: "pokemon zijn niet dieren met wapens erop geplakt, ze zijn vaak op handige manieren onderdeel van het lichaam. Je moet de prompt anders schrijven want gemini moet juist ontwerpen, niet ik, doe maar humboldt ipv kraken, is wat meer gedefinieerd. En de gatling gun mag gewoon organisch eruitzien, de kanonnen moeten ook wat meer onderdeel van de tentakels. Hij moet verder op een mooie manier bepantserd zijn, zoals bij andere pokemon steel types".
+- Anatomie: **Humboldtinktvis** (*Dosidicus gigas*, "diablo rojo", Peru/Chili): pijlvormige mantel met grote driehoekige vinnen aan de punt, grote ogen, 8 armen + **2 lange vangtentakels met verdikte knots** (→ de twee kanonnen, natuurlijk onderdeel van de tentakels), **sifon/trechter** voor straalaandrijving (→ de organische gatling), papegaaiachtige snavel, flitst rood/wit, jaagt in groepen.
+- Steel-voorbeelden (types gecontroleerd in de repo): Empoleon (Water/Steel; snavel, kroon en vleugelranden zíjn staal), Corviknight (veren als platen van een harnas), Aggron (platen op kop en rug volgen de lichaamsvorm, grijs pantser op donker lijf), Scizor (scharen zijn het wapen en het pantser), Skarmory (veren zijn bladen), Kingambit (de bladen zijn het lijf), Steelix (gesegmenteerd lijf). Bij ons ook Blastoise Water/Steel (kanonnen uit het schild). Wapen als lichaamsdeel: Clawitzer (Water; de schaar is het kanon).
+- Prompt-aanpak: Gemini krijgt een ontwerpopdracht (probleem + principes + voorbeelden), geen onderdelenlijst; geen woorden als "gatling"/"barrel".
+
+## Prompt A3
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). You make the design decisions; below are the brief and the design rules.
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Animal: the Humboldt squid ("diablo rojo") from the Pacific coast of Peru and Chile: an arrow-shaped mantle with large triangular fins at the tip, big eyes, a powerful beak, eight arms plus two long hunting tentacles with thickened clubs at the ends, and a siphon it uses to shoot jets of water. A fierce pack hunter that flashes red.
+- It must be bigger, heavier and clearly stronger than Octillery, and read as its evolution at a glance (red body, round yellow warts on the arms). It is not Octillery with things added: design a new face and body.
+
+DESIGN RULES
+- Pokémon are never animals with weapons attached. The weapon IS a body part that grows naturally out of the animal's anatomy, the way Clawitzer's claw is its cannon, Blastoise's cannons grow from its shell and Scizor's pincers are both its weapon and its armour.
+- Use the squid's own anatomy for the three weapons: its siphon becomes a multi-barrel rapid-fire organ that still looks organic, and its two long hunting tentacles become its two cannons, with the club itself forming the cannon. No other weapons.
+- The Steel type is beautiful armour that follows the body, as in Steel-type Pokémon: Empoleon's steel beak, crown and wing edges, Corviknight's feathers like plates of a knight's armour, Aggron's plates following the shape of its head and back. Hard, polished, dark steel on the parts of a squid that would naturally be hard or protective (for example the fins, the mantle or the arm edges), flowing into the red flesh. Never a helmet, casing or plates stuck on top.
+- Keep it clean and readable like a real Pokémon: a few strong shapes, not over-designed.
+
+POSE AND VIEW
+- 3/4 view facing left, the full body visible, the three weapons aimed forward-left. Both eyes visible. Calm, confident and dangerous; not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Real-world guns or machine parts: no gatling cylinders, pipes, collars, bolts, rivets, seams or screws.
+- Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```
+
+- **r3 (10 nov):** `r3_A3.png` (prompt A3). Jordi: "beter qua vorm en anatomie, alleen hij blijft gewoon geweren erop zetten, voor de tentakels vind ik het best prima, maar de rest moet organischer". → r3 als bijlage in een nieuw gesprek (Gemini verbetert slecht in hetzelfde gesprek): vorm, anatomie en tentakelkanonnen blijven; sifonwapen en pantser organisch.
+
+## Prompt A4 (bijlage: `r3_A3.png`, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. The attached image is your previous draft of a new Pokémon: the final evolution of Remoraid and Octillery, a Water/Steel Humboldt squid that is living heavy artillery. Draw an improved version as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+KEEP FROM THE DRAFT
+- The body shape, anatomy, proportions and pose: the arrow-shaped mantle with the large steel fin at the tip, the eye, the arms with yellow warts and steel hooks, the red colour.
+- The two long hunting tentacles with cannons at the ends: these are good, keep them as they are.
+
+CHANGE: IT STILL LOOKS LIKE GUNS AND ARMOUR WERE PUT ON A SQUID
+- The weapon under the head is a real-world gatling gun with a collar: remove it. Instead the squid's own siphon (the funnel it shoots water jets from) has grown into several fleshy tubes fused side by side, like Octillery's tube mouth multiplied, made of the same red flesh with hard dark steel only at the rims of the openings. It must look grown, like part of the animal.
+- The grey plates on the mantle and around the eye look like a helmet: remove them. The steel must be seamless and grown, like a nautilus shell, a beetle's shell or Empoleon's steel beak and crown: smooth polished dark steel flowing out of the red skin in one or two clean shapes that follow the curve of the mantle. No segments, plate edges, bolts, rivets, seams or machine parts anywhere.
+- Everything that is not the two tentacle cannons must read as a living animal.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- 3/4 view facing left, full body visible. Plain white background. NO water, splash, ground, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Gatling cylinders, pipes, collars, helmets, armour plates, bolts or screws.
+- Not a robot, mech or submarine. Not Octillery's face, not Malamar, Tentacruel or Clawitzer.
+```
+
+- **r4 (10 nov):** `r4_A4.png` (prompt A4 met r3 als bijlage). Jordi: "veel slechter". Claude: tentakels werden dunne zwepen met losse buisjes (ondanks "keep"), lijf kleiner en lichter, sifon werd een ring donuts voor het gezicht, mantelstaal werd één grote kap. r3 blijft de beste.
+
+## Na r4 (Jordi, 10 nov)
+- "ja pak prompt a3, belangrijk is nog wel dat het een gen 3 sprite wordt, want deze is te breed horizontaal. Steel pokemon hebben eigenlijk vrijwel nooit stukken stalen platen zoals je hier kan zien, het staal is juist fysiologisch onderdeel van het lichaam, of left to the imagination. Laten we daarom voor nu gaan voor texturen die op bepantsering duiden, maar geen stalen platen. De gatling gun moet een octopus mond zijn met een andere vorm, zoals bij octillery het ook een soort kanon is, maar wel rood."
+- Jordi's overzicht van Steel-Pokémon: `../referenties/steel_pokemon_overzicht.webp`.
+
+## Prompt A5 (A3 aangepast, geen bijlage, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). You make the design decisions; below are the brief and the design rules.
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Animal: the Humboldt squid ("diablo rojo") from the Pacific coast of Peru and Chile: an arrow-shaped mantle with large triangular fins at the tip, big eyes, eight arms plus two long hunting tentacles with thickened clubs at the ends. A fierce pack hunter that flashes red.
+- It must be bigger, heavier and clearly stronger than Octillery, and read as its evolution at a glance (red body, round yellow warts on the arms). It is not Octillery with things added: design a new face and body.
+
+DESIGN RULES
+- Pokémon are never animals with weapons attached. The weapon IS a body part that grows naturally out of the animal's anatomy, the way Clawitzer's claw is its cannon.
+- Three weapons, no others:
+  - its mouth is the rapid-fire weapon: a red octopus mouth that is a kind of cannon, like Octillery's tube mouth, but with a different shape;
+  - its two long hunting tentacles are its two cannons, with the club itself forming the cannon.
+- The Steel type is part of the body's physiology, as with Steel-type Pokémon like Aggron, Steelix, Metagross, Mawile, Scizor and Empoleon, or left to the imagination. Here it is shown only through textures on the body that suggest armour. NO steel plates, no grey metal pieces, no helmet, no casing.
+- Keep it clean and readable like a real Pokémon: a few strong shapes, not over-designed.
+
+POSE AND SIZE
+- A real Gen 3 sprite composition: the whole creature fits compactly in a square 64x64 frame, about as tall as it is wide. NOT a wide horizontal picture: the arms and tentacles curl close around the body instead of stretching out to the sides.
+- 3/4 view facing left, mouth and both tentacle cannons aimed forward-left. Both eyes visible. Calm, confident and dangerous; not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Real-world guns or machine parts: no gatling cylinders, pipes, collars, bolts, rivets, seams, screws or metal plates.
+- Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```
+
+- **r5 (10 nov):** `r5_A5.png` (prompt A5). Jordi: "juist, nu komen we ergens. Ik zou hem nog wat meer uitgestrekt willen hebben, nu is het wat meer een bal. de mond vind ik nog net niet gattling gun genoeg, maar misschien kan gemini dat niet. De pose zou ik zodanig willen dat de tentakels die kunnen schieten op schouderhoogte zitten. Dan zou het wel kunnen dat we 2 tentakels als rupsbanden maken. Dus 2 zijn rupsbanden, 2 zijn kanonnen, en de voorste twee zijn reguliere tentakels"
+
+## Prompt A6 (A5 aangepast, geen bijlage, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). You make the design decisions; below are the brief and the design rules.
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Animal: the Humboldt squid ("diablo rojo") from the Pacific coast of Peru and Chile: a long arrow-shaped mantle with large triangular fins at the tip, big eyes, arms and long hunting tentacles. A fierce pack hunter that flashes red.
+- It must be bigger, heavier and clearly stronger than Octillery, and read as its evolution at a glance (red body, round yellow warts on the arms). It is not Octillery with things added: design a new face and body.
+
+DESIGN RULES
+- Pokémon are never animals with weapons attached. Every weapon IS a body part that grows naturally out of the animal's anatomy, the way Clawitzer's claw is its cannon.
+- Its mouth is a rapid-fire weapon like a gatling gun, but made of red flesh: several fleshy red tubes grown together in a ring around the mouth, an octopus mouth that is clearly a multi-barrel gun. Like Octillery's tube mouth, but evolved.
+- Its arms have three roles:
+  - two arms are its tank treads: they run under the body in long flat loops and it rolls on them like a tank, still clearly red squid arms;
+  - two long tentacles are its two cannons, with the club at the end forming the cannon. They come out at shoulder height, beside the head, and are aimed forward like the guns of a tank;
+  - the two front arms are regular tentacles.
+- The Steel type is part of the body's physiology, as with Steel-type Pokémon like Aggron, Steelix, Metagross, Mawile, Scizor and Empoleon. Here it is shown only through textures on the body that suggest armour. NO steel plates, no grey metal pieces, no helmet, no casing.
+- Keep it clean and readable like a real Pokémon: a few strong shapes, not over-designed.
+
+POSE AND SIZE
+- The body is stretched out and long, the mantle reaching back and up like a long arrow; NOT rolled up into a ball.
+- Still a real Gen 3 sprite composition: the whole creature fits in a 64x64 frame, a little wider than tall at most, not a wide horizontal picture.
+- 3/4 view facing left, mouth and both tentacle cannons aimed forward-left. Both eyes visible. Calm, confident and dangerous; not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Real-world guns or machine parts: no metal gatling cylinders, pipes, collars, bolts, rivets, seams, screws, metal plates or metal tank treads.
+- Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```
+
+- **r6 (10 nov):** `r6_A6.png` (prompt A6). Jordi: "deze is toch minder goed weer. Die aderen zien er raar uit, de tentakels zijn ook niet goed uitgewerkt, ze moeten een dubbele functie hebben". r5 blijft de beste.
+
+## Na r6 (Jordi, 10 nov)
+- "het moeten zichtbaar tentakels blijven, die in de vorm van een rupsband zitten. De kanonnen bij ronde 5 waren uitstekend, maar die moeten over de schouders heen hangen. Ronde 5 had een goede mantel, in ronde 6 lijken het net rare aders het moet een soort natuurlijk pantser zijn. De gattling gun is in 6 ook niet gelukt, in 5 ziet het er beter uit, ik denk niet dat gemini dit kan, dan wil ik gewoon dat het een hypermodern krachtig kanon is"
+- Keuze Claude: de mond blijft rood en uit het lijf gegroeid (eerdere eis "wel rood"); Steel-voorbeeldenlijst eruit.
+
+## Prompt A7 (basis A5, geen bijlage, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). You make the design decisions; below are the brief and the design rules.
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Animal: the Humboldt squid ("diablo rojo") from the Pacific coast of Peru and Chile: a long arrow-shaped mantle with large triangular fins at the tip, big eyes, arms and long hunting tentacles. A fierce pack hunter that flashes red.
+- It must be bigger, heavier and clearly stronger than Octillery, and read as its evolution at a glance (red body, round yellow warts on the arms). It is not Octillery with things added: design a new face and body.
+
+DESIGN RULES
+- Pokémon are never animals with weapons attached. Every weapon IS a body part that grows naturally out of the animal's anatomy, the way Clawitzer's claw is its cannon.
+- Its mouth is one hypermodern, powerful cannon: a sleek, heavy red cannon mouth grown from its face, like Octillery's tube mouth evolved into high-tech artillery.
+- Its arms, all clearly still red squid tentacles with yellow warts:
+  - two long hunting tentacles are its two cannons: thick red tentacles ending in a ridged club that opens into a wide cannon muzzle. They hang forward over its shoulders, one on each side of the head, and aim forward like the guns of a tank;
+  - two tentacles are curled into the shape of tank treads under the body: they are visibly tentacles, wrapped in long flat loops that it rolls on;
+  - the two front arms are regular tentacles.
+- The Steel type is natural armour: the mantle is a hard, smooth red shell, divided into a few broad segments like a lobster's tail or a beetle's back. No veins, cracks or line patterns on the skin. NO steel plates, no grey metal pieces, no helmet, no casing.
+- Keep it clean and readable like a real Pokémon: a few strong shapes, not over-designed.
+
+POSE AND SIZE
+- The body is stretched out and long, the mantle reaching back and up like an arrow; NOT rolled up into a ball.
+- Still a real Gen 3 sprite composition: the whole creature fits compactly in a 64x64 frame, at most a little wider than tall, not a wide horizontal picture. Nothing sticks far out to the sides.
+- 3/4 view facing left, mouth cannon and both tentacle cannons aimed forward-left. Both eyes visible. Calm, confident and dangerous; not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Real-world guns or machine parts: no metal cylinders, pipes, collars, bolts, rivets, seams, screws, metal plates or metal tank treads.
+- Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```
+
+- **r7 (10 nov):** `r7_A7.png` (prompt A7). Jordi: "ik zie nog maar 1 kanon, de rechtse tentakel klopt niet meer, verder is de rupsband nog steeds teveel rupsband, het moet slechts tentakels in de vorm ervan zijn, zo gevouwen". Keuze Claude in A8: "exactly six limbs".
+
+## Prompt A8 (A7 aangepast, geen bijlage, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). You make the design decisions; below are the brief and the design rules.
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Animal: the Humboldt squid ("diablo rojo") from the Pacific coast of Peru and Chile: a long arrow-shaped mantle with large triangular fins at the tip, big eyes, arms and long hunting tentacles. A fierce pack hunter that flashes red.
+- It must be bigger, heavier and clearly stronger than Octillery, and read as its evolution at a glance (red body, round yellow warts on the arms). It is not Octillery with things added: design a new face and body.
+
+DESIGN RULES
+- Pokémon are never animals with weapons attached. Every weapon IS a body part that grows naturally out of the animal's anatomy, the way Clawitzer's claw is its cannon.
+- Its mouth is one hypermodern, powerful cannon: a sleek, heavy red cannon mouth grown from its face, like Octillery's tube mouth evolved into high-tech artillery.
+- Its arms, all clearly still red squid tentacles with yellow warts:
+  - TWO cannons, both clearly visible: its two long hunting tentacles, thick red tentacles ending in a ridged club that opens into a wide cannon muzzle. One hangs forward over its left shoulder, the other over its right shoulder (the far one partly behind the head), both aimed forward like the guns of a tank;
+  - two tentacles under the body are simply folded into the outline of a tank tread: each one bent into a long flat loop that it rests and rolls on. They are ONLY tentacles in that shape: smooth red tentacle skin with the yellow warts along the underside, no tread links, no segments, no wheels, nothing mechanical;
+  - the two front arms are regular tentacles;
+  - exactly six limbs in total, no extra tentacles.
+- Everything connects cleanly, as in a real squid: all six limbs grow from one ring at the base of the head, below the eyes, and you can follow each limb from that ring to its tip. The mouth cannon grows from the centre of that ring. The head flows smoothly into the mantle. No parts that float, overlap oddly or end without a clear origin.
+- The Steel type is natural armour: the mantle is a hard, smooth red shell, divided into a few broad segments like a lobster's tail or a beetle's back. No veins, cracks or line patterns on the skin. NO steel plates, no grey metal pieces, no helmet, no casing.
+- Keep it clean and readable like a real Pokémon: a few strong shapes, not over-designed.
+
+POSE AND SIZE
+- The body is stretched out and long, the mantle reaching back and up like an arrow; NOT rolled up into a ball.
+- Still a real Gen 3 sprite composition: the whole creature fits compactly in a 64x64 frame, at most a little wider than tall, not a wide horizontal picture. Nothing sticks far out to the sides.
+- 3/4 view facing left, mouth cannon and both tentacle cannons aimed forward-left. Both eyes visible. Calm, confident and dangerous; not screaming.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Real-world guns or machine parts: no metal cylinders, pipes, collars, bolts, rivets, seams, screws, metal plates or metal tank treads.
+- Not a robot, mech, tank, ship or submarine. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```
+
+- Jordi over r7 (10 nov): "het sluit ook allemaal niet netjes aan he" → regel over aansluiting toegevoegd aan A8.
+- **r8 (10 nov):** `r8_A8.png` (prompt A8). Jordi: "het wordt er niet beter op he". Elke extra eis breekt iets anders (mond werd een snuit, rupsband een paperclip, mantel een garnaal). Stoppen met prompt-patchen, eerst overleggen.
+
+## Kritiek op eigen prompts A5–A8 (Claude, 10 nov; Jordi: "Kijk kritisch naar je eigen prompt en wat er fout gaat, beschrijf de tentakels uitgebreid")
+1. **Tegenspraak:** "stretched out and long, mantle reaching back" én "compact, not wide" → Gemini kiest uitgestrekt = breed (r6, r8). Oplossing (keuze Claude): de mantel wijst schuin omhoog, het dier staat rechtop op zijn armen; uitgestrekt in de hoogte past in een vierkant.
+2. **Het woord "tank"** (tank treads, guns of a tank) roept machines op: schakels (r6, r7) of een paperclip (r8). Alleen de vorm beschrijven, het woord niet gebruiken.
+3. **"Ridged club"** gaf geribbelde pijpen (r7, r8); r5 had alleen "the club itself forming the cannon". Terug naar r5.
+4. **"Hypermodern, high-tech, sleek"** zonder vorm gaf een lange snuit (r8). Vorm erbij: kort, dik, breed uitlopend.
+5. **"Lobster's tail"** gaf een garnaal (r8). r5 had geen segmenten gevraagd en Jordi vond die mantel goed.
+6. **Tentakels kregen één zin per rol, zonder begin, verloop en eind** → losse, zwevende delen ("sluit niet netjes aan"). Elke tentakel nu: waar hij begint, welke weg hij aflegt, waar hij eindigt, en wat je ervan ziet in driekwart.
+7. Echte Humboldt heeft 10 ledematen; zeggen dat deze Pokémon er gestileerd zes heeft.
+
+## Prompt A9 (laatste poging, geen bijlage, nieuw gesprek)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE BRIEF
+- The final evolution of the Remoraid line: Remoraid (a fish that is a pistol) evolves into Octillery (an octopus that is a cannon), and this third stage is heavy artillery. Water/Steel.
+- Based on the Humboldt squid ("diablo rojo") from Peru and Chile, a fierce red pack hunter. It is bigger, heavier and stronger than Octillery and reads as its evolution: red body, round yellow warts on the arms. A new face and body, not Octillery with things added.
+- Pokémon are never animals with weapons attached: every weapon IS a body part, the way Clawitzer's claw is its cannon.
+
+THE BODY
+- It stands upright on its arms. Its long arrow-shaped mantle rises up and slightly back from the top of the head, ending in two large triangular fins at the top. The mantle is a hard, smooth, glossy red shell: this natural armour is its Steel type. No grey metal, no plates, no veins, cracks or line patterns.
+- Big eyes on the sides of the head, calm and dangerous.
+- The mouth sits at the front of the head, in the centre of the ring where the arms start: a short, thick, wide red cannon mouth that flares open at the end, like Octillery's tube mouth grown into a powerful modern cannon. It points forward-left. Short and wide, not a long snout.
+
+THE SIX TENTACLES (it has six, stylised, not the ten of a real squid; all are red with yellow warts on the underside, and all six start from one ring around the mouth at the base of the head)
+1. and 2. THE CANNONS. The two longest, thickest tentacles start from the left and right sides of the ring, just below the eyes. Each one rises up along the side of the head, bends forward over the shoulder (where the head meets the mantle) and then points straight forward, so the muzzle sits above and in front of the eye. The thick club at the tip is itself the cannon: the club is hollow and opens at the front into a round dark muzzle. In this 3/4 view the near cannon is fully visible over the near shoulder; the far cannon is visible over the far shoulder, partly behind the head. Both are aimed forward-left, parallel to each other.
+3. and 4. THE ROLLING TENTACLES. Two tentacles start from the bottom of the ring and go down to the ground. Each one lies flat on the ground and bends back on itself into a long, flat, closed oval loop beneath the body, the tip tucked back in at the ring. The creature rests and rolls on these two loops. One loop is on the near side, one on the far side. They are plain smooth tentacles bent into that shape, with the yellow warts on the outside of the loop touching the ground: nothing else, no links, segments, ridges or wheels.
+5. and 6. THE FRONT ARMS. Two shorter tentacles start from the front of the ring, on either side of the mouth, and curl down and forward in front of the body, the tips curled up. Ordinary arms.
+- You can follow every tentacle from the ring to its tip. Nothing floats, nothing ends without a clear origin, no extra tentacles.
+
+POSE AND SIZE
+- 3/4 view facing left, all three cannons aimed forward-left. Both eyes visible.
+- Real Gen 3 sprite composition: the whole creature fits in a square 64x64 frame, about as tall as it is wide. The long mantle goes upward, not sideways; nothing sticks far out to the sides.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO water, splash, ground, rock, shadow or base.
+- No muzzle flash, smoke, bullets, ink, glow, sparkles, motion lines, text or effects. One single creature, no extra views.
+
+AVOID
+- Machine parts of any kind: metal, pipes, collars, ribs on the barrels, bolts, rivets, screws, plates, links, wheels.
+- Not a robot, vehicle, ship or submarine. Not a shrimp or lobster. Not Octillery's face, not Malamar, Tentacruel, Grapploct or Clawitzer.
+- No plush toy, chibi, Neopets or mascot look.
+```
+- **r9 (10 nov):** `r9_A9.png` (prompt A9). Jordi: "nu vergeet die weer van alles, maar de posities van de tentakelkanonnen kloppen wel. Design 5 blijft het beste he". Einde van de Gemini-rondes.
+
+## Formaat (11 nov; bijlage `../referenties/ontwerp_gekozen.png`, nieuw gesprek)
+
+```
+The attached image is a finished Pokémon design. Do NOT redesign it. Redraw exactly this creature as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style), changing ONLY its proportions of the composition so it fits a square 64x64 sprite.
+
+THE ONLY CHANGE
+- The picture is now about 1.5 times as wide as it is tall. Make the whole creature fit a square: about as wide as it is tall.
+- Do this by bringing the limbs closer to the body: the upper cannon tentacle on the left reaches less far out, and the two tentacles on the right are shorter and closer to the body. If needed, the mantle points a bit more upward.
+- The head, eyes, mouth cannon, mantle with fins, the two rolled-up tentacles at the bottom and the lower cannon tentacle with its loop stay exactly as they are: same shapes, same colours, same details, same number of tentacles (six).
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, same 3/4 view facing left.
+- Plain white background. No ground, shadow, effects or text. One single creature.
+
+AVOID
+- Adding, removing or redesigning anything. No new tentacles, no metal, no changes to the face.
+```
+
+## Bijsnijden + netjes afwerken (11 nov; Jordi: "nu nog een prompt voor gemini om het te kroppen en nog wat netter af te werken"; bijlage `../referenties/ontwerp_gekozen.png`, nieuw gesprek)
+
+```
+The attached image is a finished Pokémon design, made by combining two drawings. Do NOT redesign it. Redraw exactly this creature as one clean, consistent official Gen 3 front sprite (Ruby/Sapphire/Emerald style).
+
+1. CROP TO A SPRITE
+- Fit the whole creature tightly into a square 64x64 sprite: about as wide as it is tall, with nothing cut off.
+- To fit, bring the limbs closer to the body: the upper cannon tentacle on the left reaches less far out, and the two tentacles on the right are shorter and closer to the body. If needed, the mantle points a bit more upward.
+
+2. CLEAN FINISH
+- The lower cannon tentacle was pasted in from another drawing: redraw it so it looks like it was always part of this creature. Same pixel size as the rest, same outline thickness, same shading and colours, a smooth natural connection where its loop joins the body, and a clean overlap where it lies over the rolled-up tentacles.
+- One consistent 1 px dark outline around the whole creature, no double lines, broken lines or stray pixels.
+- Consistent light from the top left on every part.
+
+KEEP EXACTLY
+- The head, eyes, mouth cannon, mantle with fins, the two rolled-up tentacles at the bottom, both cannon tentacles and the two tentacles on the right: same shapes, colours and details, six tentacles in total. Same 3/4 view facing left.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, clean Game Freak Gen 3 shading.
+- Plain white background. No ground, shadow, effects or text. One single creature.
+
+AVOID
+- Adding, removing or redesigning anything. No new tentacles, no metal, no changes to the face.
+```
+
+## Compacter (11 nov; Jordi over r11: "nee dan moet die nog compacter"; bijlagen 1 `../referenties/ontwerp_gekozen.png`, 2 `r11_afgewerkt.png`; nieuw gesprek)
+
+```
+Attachment 1 is a finished Pokémon design. Attachment 2 is a cleaner redraw of it, but it is still far too wide and it lost the rolled-up tentacles. Do NOT redesign the creature. Redraw it as one clean official Gen 3 front sprite (Ruby/Sapphire/Emerald style) that fits a SQUARE.
+
+THE COMPOSITION MUST CHANGE (this is the whole task)
+- Right now the creature is about 1.5 times as wide as it is tall. The new drawing must be AS TALL AS IT IS WIDE.
+- Tilt the whole body up: the mantle points steeply upward (about 45 degrees towards the top right) instead of lying sideways.
+- Both cannon tentacles stay close to the head: their cannons point forward-left but do not reach further left than the mouth cannon plus one cannon length.
+- The two tentacles on the right are short and curl down close to the body instead of stretching out to the right.
+- The creature sits higher on its two rolled-up tentacles, which are clearly visible at the bottom, like in attachment 1: two tentacles rolled up flat, red with yellow warts.
+
+KEEP EXACTLY
+- The head, the eyes, the ribbed mouth cannon, the segmented mantle with fins, the two cannon tentacles with their wide muzzles (the lower one with its loop joining the body), six tentacles in total. 3/4 view facing left.
+- Use the clean finish of attachment 2: one pixel size, one consistent 1 px dark outline, light from the top left, smooth connections.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, clean Game Freak Gen 3 shading.
+- Plain white background. No ground, shadow, effects or text. One single creature.
+
+AVOID
+- Adding, removing or redesigning anything. No new tentacles, no metal, no changes to the face.
+```
+
+## Terug naar Gemini (12 nov): nieuwe tekening, compacte pose
+- Jordi: "Ok prima, we moeten dus terug naar Gemini." · "maar is 6 tentakels wel realistisch? Ik stel voor om 1 kritische en 1 minder kritische prompt te gaan maken qua pose, zodat we sowieso vooruit kunnen."
+- Aantal: een echte Humboldt heeft 10 ledematen (8 armen + 2 vangtentakels), een octopus 8. In de prompt: het dier heeft er meer, maar vanuit deze hoek zijn er zes zichtbaar (rest achter het lijf).
+- Bijlage bij beide: `../referenties/ontwerp_gekozen.png`. Elk in een nieuw gesprek, 3–4 keer draaien; Claude verkleint elk resultaat naar 64×64 als toets vóór er een sprite komt.
+
+## Prompt P1 (pose strikt: van voren, mantel in verkorting)
+
+```
+The attached image shows a finished Pokémon design: a red Humboldt squid that is living artillery, the final evolution of Remoraid and Octillery (Water/Steel). Draw this SAME creature again, as a new drawing in a new pose, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). Do not edit the attached image; redraw the creature from a different angle.
+
+WHY A NEW POSE
+- In the attached image the creature lies sideways and is far too wide for a square sprite. The new pose must fit a square, about as tall as it is wide, with a big readable head.
+
+THE POSE (follow this exactly)
+- We see it almost from the front, slightly from its right side. Its head is large and low in the picture, facing the viewer and a little to the left.
+- Its long mantle does NOT stick out sideways. It rises up and back behind the head, strongly foreshortened, so we see it as a short tapering shape above the head ending in the two fins at the top.
+- It braces itself on two tentacles that are rolled up flat under the body, one on each side, and aims its cannons: it is about to fire.
+- The two cannon tentacles come up beside the head, one on each side, and bend forward so both wide muzzles point towards the viewer and slightly left, at about eye height.
+- Two more tentacles spread out low to the left and right, short, tips curled.
+- A squid has more arms, but from this angle only these six are visible; the others are hidden behind the body.
+
+KEEP FROM THE ATTACHED DESIGN
+- The dark crimson red colour, the yellow slanted eyes with the heavy calm-angry lids, the short ribbed cannon mouth in the middle of the face, the shape of the tentacle cannons (a thick club that opens into a wide muzzle), the segmented hard mantle with fins, the round yellow warts on the outside of the tentacles. No metal plates, no grey parts.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites. Few, large, clear shapes: this must stay readable at 64x64.
+- Plain white background. No ground, shadow, water, smoke, muzzle flash, effects or text. One single creature, no extra views.
+
+AVOID
+- A wide, lying-down composition. Extra tentacles. Machine parts, pipes, bolts, grey metal. A copy of the attached pose.
+```
+
+## Prompt P2 (pose vrij: Gemini kiest, alleen de eis "vierkant en leesbaar")
+
+```
+The attached image shows a finished Pokémon design: a red Humboldt squid that is living artillery, the final evolution of Remoraid and Octillery (Water/Steel). You are a Pokémon designer at Game Freak. Draw this SAME creature again as a new drawing, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). Do not edit the attached image; redraw the creature.
+
+THE PROBLEM TO SOLVE
+- In the attached image the creature is far too wide and too detailed for a 64x64 sprite. Choose a new pose and angle, the way Game Freak fits long creatures like Gyarados, Seviper or Sharpedo into a square: the whole creature must fit a square, about as tall as it is wide, with a big readable head and few, large, clear shapes. You decide the pose.
+
+WHAT THE CREATURE HAS
+- A short ribbed cannon mouth in the middle of its face.
+- Two tentacles that end in cannons: a thick club that opens into a wide muzzle. Both aimed forward.
+- Two tentacles rolled up flat under the body that it rests and moves on.
+- Two more tentacles spread out. A squid has more arms, but only these six need to be visible; the others can be hidden behind the body.
+- A long, hard, segmented mantle ending in two fins.
+- Dark crimson red, yellow slanted eyes with heavy calm-angry lids, round yellow warts on the outside of the tentacles. No metal plates, no grey parts.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- The creature faces left or towards the viewer, 3/4 view. Both eyes visible.
+- Plain white background. No ground, shadow, water, smoke, muzzle flash, effects or text. One single creature, no extra views.
+
+AVOID
+- A wide, lying-down composition. Extra tentacles. Machine parts, pipes, bolts, grey metal. A copy of the attached pose.
+```
+
+- **r13/r14 (12 nov, P1/P2):** `r13_bol.png` (opgebold kluwen onderaan, gele wratten, 3 monden zichtbaar) en `r14_kaal.png` (twee rollen, twee kleine tentakels, geen gele wratten). Jordi: "Hij bolt de tweede teveel op, de eerste krijgt maar 1 rupsband en is kaal zonder de extra tentakels". Toets 64×64 (`toets64_r13_r14.png`): beide vierkant (1,0 en 1,11) en op 1×/2× leesbaar: kop, ogen, mondkanon en kanonnen blijven staan.
+
+## Prompt P3 (bijlage `r14_kaal.png`, nieuw gesprek)
+
+```
+The attached image is a Pokémon design that is almost right: a red Humboldt squid that is living artillery (final evolution of Remoraid and Octillery, Water/Steel), drawn as a Gen 3 front sprite. Redraw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art) with only the changes below.
+
+KEEP EXACTLY
+- The pose, angle, size and proportions; the head, the yellow eyes with heavy lids, the ribbed cannon mouth, the segmented mantle with fins, both cannon tentacles with their wide muzzles, the colours. The whole creature still fits a square.
+
+CHANGE ONLY THIS
+1. It rests on TWO rolled-up tentacles, one on each side, and both look the same: a tentacle rolled up flat like the one on the right in the image. Make the left one match the right one.
+2. It looks too bare. Add more tentacles so it reads as a squid: besides the two small spreading tentacles it has now, add two or three more that spread and curl out behind and beside the body, between the cannons and the rolled-up tentacles. They stay close to the body; the creature must not become wider than it is tall.
+3. Add round yellow warts on the outside of the tentacles (cannon tentacles, spreading tentacles and rolled-up tentacles), like Octillery's.
+
+DO NOT
+- Do not curl the tentacles into a ball or knot under the body. Do not move or change the head, eyes, mouth cannon or cannon tentacles. No metal, no grey parts, no extra cannons.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean Game Freak Gen 3 shading. Few, large, clear shapes.
+- Plain white background. No ground, shadow, effects or text. One single creature.
+```
+
+- **r15 (12 nov, P3):** `r15_P3.png`. Jordi: "hij mist 1 rupsband links, de tentakels zijn wel beter, maar de zuignappen niet consistent". Toets `toets64_r15.png`. Claude probeerde de rechter rupsband gespiegeld links te plakken: niet schoon (streepartefacten, overlapt de linker tentakel), weggegooid. Eén wijziging per prompt:
+
+## Prompt P4 (bijlage `r15_P3.png`, nieuw gesprek; alleen de linker rupsband)
+
+```
+The attached image is a finished Pokémon sprite design. Redraw it exactly as it is, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), with ONE change.
+
+THE ONE CHANGE
+- At the bottom right the creature rests on a tentacle rolled up flat like a caterpillar track: a long flat roll with spiral lines on its side and pale round suckers at the front. At the bottom left there is only a small round roll. Replace that small round roll with a second rolled-up tentacle that looks like the one on the right: the same long flat shape, the same spiral lines, the same pale round suckers, seen from the same angle. The creature now rests on two matching rolled-up tentacles, one on each side.
+
+KEEP EVERYTHING ELSE EXACTLY
+- Same pose, size and proportions, same head, eyes, ribbed cannon mouth, mantle with fins, both cannon tentacles, all other tentacles, all yellow warts, same colours. Do not add or remove anything else. The creature still fits a square.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left. Plain white background, no ground, shadow, effects or text.
+```
+
+- **r16 (12 nov, P4):** `r16_P4.png`. Twee rupsbanden; Jordi: "Die linkse schiet teveel uit en ze zijn niet consistent in het design" (links wit uiteinde met witte zuignappen en langer; rechts rood met roze ringetjes).
+
+## Prompt P5 (bijlage `r16_P4.png`, nieuw gesprek; alleen de linker rupsband)
+
+```
+The attached image is a finished Pokémon sprite design. Redraw it exactly as it is, as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art), with ONE change.
+
+THE ONE CHANGE: THE ROLLED-UP TENTACLE AT THE BOTTOM LEFT
+- The creature rests on two rolled-up tentacles. The one at the bottom RIGHT is correct: dark red, a rounded front end with a few pale pink sucker rings, one spiral line along its side.
+- The one at the bottom LEFT is wrong in two ways: it sticks out too far to the left, and it looks different (a white end with white suckers).
+- Redraw the LEFT one as the mirror image of the RIGHT one: the same dark red colour, the same rounded end with the same few pale pink sucker rings, the same spiral line, the same thickness. Make it shorter, about two thirds of its current length, so its left end stays under the creature and does not stick out past the tentacles above it. No white.
+
+KEEP EVERYTHING ELSE EXACTLY
+- Same pose, size and proportions, same head, eyes, ribbed cannon mouth, mantle with fins, both cannon tentacles, all other tentacles, all yellow warts, the right rolled-up tentacle, same colours. Do not add or remove anything else.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left. Plain white background, no ground, shadow, effects or text.
+```
+
+- **r17 (12 nov, P5):** `r17_P5.png`: linker rupsband versmolten met de tentakel, weer wit. Jordi: "Ik heb niet het gevoel dat we vooruit gaan". Gemini stopt hier voor de rupsband. Claude bewerkte r16 zelf (`../samenvoeg/rups_kort.py 0.75 520 694` → `../samenvoeg/r16_kort.png`, vel `vel_r16_kort.png`): linker rupsband horizontaal ingedrukt tot 75% (verankerd rechts), wit uiteinde omgekleurd naar het rood/roze van de rechter.
+
+## Prompt P6 (12 nov; Jordi: "maak nog 1 keer een prompt, helemaal from scratch, zonder afbeeldingen als bijlage"; geen bijlage, nieuw gesprek, meerdere keren draaien)
+Keuze Claude (Jordi gaf geen regel): overal dezelfde ronde gele wratten aan de buitenkant, ook op de opgerolde tentakels.
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE POKÉMON
+- The final evolution of the Remoraid line, Water/Steel. Remoraid is a fish that is a pistol, Octillery is an octopus that is a cannon; this one is heavy artillery: a big Humboldt squid ("diablo rojo", the fierce red squid of Peru and Chile) whose own body has become weapons.
+- Pokémon are never animals with weapons attached. Every weapon here IS a body part of the squid, red flesh, grown naturally. No metal, no grey parts, no machine parts.
+- Colour: dark crimson red all over. Yellow slanted eyes with heavy lids, calm and dangerous. Its Steel type shows only in its mantle: a hard, smooth shell in a few broad segments.
+
+ITS BODY, PART BY PART
+- Mouth: in the middle of its face, a short, thick, ribbed tube that flares open at the end: a cannon mouth, like Octillery's mouth but bigger.
+- Two cannon tentacles: one on each side of the head. Each is a thick tentacle whose club end has become a cannon, opening into a wide round muzzle. Both are raised beside the head and aimed forward.
+- Two rolled-up tentacles under the body, one left and one right, exactly alike: each is a tentacle rolled up flat into a short, low roll with a spiral on its side. The squid rests on these two rolls and moves on them. They are short and stay tucked under the body.
+- Four more ordinary tentacles, two on each side, that curl up and out between the cannons and the rolls. Short, lively, tips curled.
+- A long arrow-shaped mantle with two fins at its tip.
+- The same round yellow warts, all the same size, in a row along the outside of every tentacle: the cannon tentacles, the four ordinary ones and the two rolls.
+
+POSE AND COMPOSITION
+- It has braced itself on its two rolls and aims all three cannons: it is about to fire.
+- We see it from the front, slightly from one side. The head is big and low in the picture. The mantle rises up and back behind the head, foreshortened, with the fins at the top.
+- The whole creature fits a square, about as tall as it is wide. Nothing sticks far out to the sides; the tentacles are not tangled into a ball.
+- Symmetry matters: what is on the left side also exists on the right side, in the same design.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites. Few, large, clear shapes.
+- Plain white background. No ground, shadow, water, smoke, muzzle flash, effects or text. One single creature, no extra views.
+
+AVOID
+- Guns, pipes, bolts, plates or anything mechanical. White or pale tentacle ends. A wide, lying-down pose. Not Octillery's face, not Malamar, Tentacruel or Clawitzer. No plush or chibi look.
+```
+
+## Prompts P6A en P6B (12 nov; Jordi: "1 met rupsbanden en 1 met de specifieke instructie om de tentakels niet op te bollen, neem in de prompt al onze geleerde lessen mee deze sessie")
+Lezing Claude: A = met rupsbanden (P6 + herkomst van de tentakels); B = zonder rupsbanden, alle tentakels los en uitgewaaierd, uitdrukkelijk niet opgebold. Lessen verwerkt: ontwerpbrief i.p.v. bewerking, geen bijlage; wapens zijn lichaamsdelen; geen woorden die machines oproepen (tank, gatling, ridged, lobster, hypermodern); Steel = natuurlijk pantser als vorm, geen platen/texturen; geen "keep from Octillery"; per ledemaat herkomst en verloop; aantal expliciet; compacte pose van voren, vierkant; gedrag als pose; weinig, grote vormen; links en rechts gelijk; één regel voor de wratten; geen witte uiteinden.
+
+### P6A (met rupsbanden)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE POKÉMON
+- The final evolution of the Remoraid line, Water/Steel. Remoraid is a fish that is a pistol, Octillery is an octopus that is a cannon; this one is heavy artillery: a big Humboldt squid ("diablo rojo", the fierce red squid of Peru and Chile) whose own body has become weapons.
+- Pokémon are never animals with weapons attached. Every weapon here IS a body part of the squid, red flesh, grown naturally. No metal, no grey parts, no machine parts.
+- Colour: dark crimson red all over. Yellow slanted eyes with heavy lids, calm and dangerous. Its Steel type shows only in its mantle: a hard, smooth shell in a few broad segments.
+
+ITS BODY, PART BY PART
+- Mouth: in the middle of its face, a short, thick, ribbed tube that flares open at the end: a cannon mouth, like Octillery's mouth but bigger.
+- Two cannon tentacles: one on each side of the head. Each is a thick tentacle whose club end has become a cannon, opening into a wide round muzzle. Both are raised beside the head and aimed forward.
+- Two rolled-up tentacles under the body, one left and one right, exactly alike: each is a tentacle rolled up flat into a short, low roll with a spiral on its side. The squid rests on these two rolls and moves on them. They are short and stay tucked under the body.
+- Four more ordinary tentacles, two on each side, that curl up and out between the cannons and the rolls. Short, lively, tips curled.
+- A long arrow-shaped mantle with two fins at its tip.
+- All tentacles grow from one ring around the mouth, under the head; you can follow each one from that ring to its tip. Nothing floats or ends without a clear origin.
+- The same round yellow warts, all the same size, in a row along the outside of every tentacle: the cannon tentacles, the four ordinary ones and the two rolls.
+
+POSE AND COMPOSITION
+- It has braced itself on its two rolls and aims all three cannons: it is about to fire.
+- We see it from the front, slightly from one side. The head is big and low in the picture. The mantle rises up and back behind the head, foreshortened, with the fins at the top.
+- The whole creature fits a square, about as tall as it is wide. Nothing sticks far out to the sides; the tentacles are not tangled into a ball.
+- Symmetry matters: what is on the left side also exists on the right side, in the same design.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites. Few, large, clear shapes.
+- Plain white background. No ground, shadow, water, smoke, muzzle flash, effects or text. One single creature, no extra views.
+
+AVOID
+- Guns, pipes, bolts, plates or anything mechanical. White or pale tentacle ends. A wide, lying-down pose. Not Octillery's face, not Malamar, Tentacruel or Clawitzer. No plush or chibi look.
+```
+
+### P6B (zonder rupsbanden, tentakels niet opgebold)
+
+```
+You are a Pokémon designer at Game Freak. Design a new Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE POKÉMON
+- The final evolution of the Remoraid line, Water/Steel. Remoraid is a fish that is a pistol, Octillery is an octopus that is a cannon; this one is heavy artillery: a big Humboldt squid ("diablo rojo", the fierce red squid of Peru and Chile) whose own body has become weapons.
+- Pokémon are never animals with weapons attached. Every weapon here IS a body part of the squid, red flesh, grown naturally. No metal, no grey parts, no machine parts.
+- Colour: dark crimson red all over. Yellow slanted eyes with heavy lids, calm and dangerous. Its Steel type shows only in its mantle: a hard, smooth shell in a few broad segments.
+
+ITS BODY, PART BY PART
+- Mouth: in the middle of its face, a short, thick, ribbed tube that flares open at the end: a cannon mouth, like Octillery's mouth but bigger.
+- Two cannon tentacles: one on each side of the head. Each is a thick tentacle whose club end has become a cannon, opening into a wide round muzzle. Both are raised beside the head and aimed forward.
+- Six more ordinary tentacles, three on each side. They are NOT rolled up, coiled, knotted or bunched into a ball. Each one is a separate, clearly readable tentacle with open space between it and the next: the lower ones spread out over the ground to the left and right and carry the body, the upper ones rise and curl outward at the tip. Like the arms of a squid fanned out, not a pile.
+- A long arrow-shaped mantle with two fins at its tip.
+- All tentacles grow from one ring around the mouth, under the head; you can follow each one from that ring to its tip. Nothing floats or ends without a clear origin.
+- The same round yellow warts, all the same size, in a row along the outside of every tentacle: the cannon tentacles and the six ordinary ones.
+
+POSE AND COMPOSITION
+- It has braced itself on its spread lower tentacles and aims all three cannons: it is about to fire.
+- We see it from the front, slightly from one side. The head is big and low in the picture. The mantle rises up and back behind the head, foreshortened, with the fins at the top.
+- The whole creature fits a square, about as tall as it is wide. Nothing sticks far out to the sides. The tentacles are fanned out and separate, never tangled, stacked or curled into a ball under the body.
+- Symmetry matters: what is on the left side also exists on the right side, in the same design.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites. Few, large, clear shapes.
+- Plain white background. No ground, shadow, water, smoke, muzzle flash, effects or text. One single creature, no extra views.
+
+AVOID
+- Guns, pipes, bolts, plates or anything mechanical. White or pale tentacle ends. A wide, lying-down pose. Not Octillery's face, not Malamar, Tentacruel or Clawitzer. No plush or chibi look.
+```
+
+- **r18–r20 (12 nov, P6A/P6B, Jordi's beste 3 van veel pogingen):** `r18_rupsband_schakels.png` (twee rupsbanden met gele zuignappen en schakelpatroon), `r19_twee_rollen.png` (twee ronde rollen), `r20_uitgewaaierd.png` (geen rupsband, tentakels gespreid). Jordi: "heb van alles geprobeerd en dit zijjn de beste 3 resultaten. Hoofd en een groot deel van de tentakels zijn niet beter dan het model wat we al gebruikten, dus nu nog bepalen wat we met de onderkant gaan doen. Als we de rupsbanden isoleren en dan netjes aan den onderkant plakken, dan zijn we er denk ik wel. Ik vind de oorspronkelijke rupsband best goed, alleen hij mist dus de suction cups. Als we het dan nog net wat netter kunnen afwerken en zorgen dat de overige 2 tentakels in het model ook suction cups hebben, zijn we er voor het model"

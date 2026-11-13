@@ -33,6 +33,7 @@ items=[
 ("hitmontop_evo/af/hitmongroove.png",'"Hitmongroove"',"fight/ground"),
 ("kadabra_regional/af/kadabra_charlatan.png",'Kadabra (regional)',"dark/psychic"),
 ("alakazam_regional/af/alakazam_charlatan.png",'Alakazam (regional)',"dark/psychic"),
+("octillery_evo/af/krassault.png",'"Krassault"',"water/steel"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

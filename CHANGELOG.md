@@ -1114,3 +1114,94 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.245] - Poesrups: frontsprite af
 - Tussenvorm van de poedelmot-lijn (Pupoodle → poesrups → Lanymph), Bug/Fairy (Jordi). Gemini-model gekozen na 3 promptrondes (`sprites/poesrups/gemini/README.md`); sprite 54×33 in 4 rondes: r2 gekozen ("Ik vind ronde 2 al uitstekend"), r3 (kam groter) verworpen, r4 kleurronde, eindkeuring Dragonfly Cave + Gen 3 PASS, 20 px tintreparatie.
 - `sprites/poesrups/af/`; overzichtsvel `showcase/frontsprites_af.png` (28 sprites); POKEMON.md, SPEC, lessen (GEMINI.md, SPRITE_WERKWIJZE.md), Stand van zaken.
+
+### [v0.0.246] - Octillery-evolutie: Gemini-prompts
+- Overleg (Jordi, 10 nov): Octillery-evolutie wordt een kraken met wapens, Water/Steel, groter en zwaarder, organisch metaal, max. 3 kanonnen, driekwart; geen oorlogsschip, beta-tank valt af. POKEMON.md bijgewerkt.
+- Twee Gemini-prompts (A: gatlingsnuit + 2 tentakelkanonnen, B: 2 kanonnen op de mantel + snuit) met Octillery/Remoraid-bijlagen op 8×: `docs/concept/sprites/octillery_evo/gemini/`.
+
+### [v0.0.247] - Octillery-evolutie: ronde 1 en prompt A2
+- r1 (A en B) afgekeurd door Jordi ("gewoon octillery met wat kanonnen"); plaatjes en feedback in `octillery_evo/gemini/PROMPT.md`. Verder met richting A: meer kraken, echt oorlogswapen, steel natuurlijk zoals bij Empoleon. Nieuwe prompt A2.
+- Les in GEMINI.md: "keep from X" geeft X met accessoires, ook zonder bijlage; steel als anatomie beschrijven.
+
+### [v0.0.248] - Octillery-evolutie: r2, Humboldtinktvis, prompt A3
+- r2 afgekeurd ("goedkoop, wat metaal erop geplakt"). Jordi: wapens als lichaamsdeel, Gemini laten ontwerpen, Humboldtinktvis i.p.v. kraken, gatling mag organisch, kanonnen onderdeel van de tentakels, mooi pantser zoals andere Steel-types. Studie Steel-voorbeelden + prompt A3 in `octillery_evo/gemini/PROMPT.md`.
+
+### [v0.0.249] - Octillery-evolutie: r3 en prompt A4
+- r3 (A3): vorm en anatomie beter, tentakelkanonnen goed; sifonwapen en pantser moeten organischer (Jordi). Prompt A4 met r3 als bijlage in `octillery_evo/gemini/PROMPT.md`.
+
+### [v0.0.250] - Octillery-evolutie: r4 en prompt A5
+- r4 (A4 met r3 als bijlage) "veel slechter": vorm weg, metaal past niet bij het lijf. Terug naar A3 (Jordi): compact Gen 3-formaat (niet te breed), staal alleen als textuur die op pantser duidt (geen platen; Jordi's overzicht van Steel-Pokémon in `octillery_evo/referenties/`), gatling wordt een rode octopusmond met een andere vorm, een soort kanon zoals bij Octillery. Prompt A5.
+
+### [v0.0.251] - Octillery-evolutie: r5 en prompt A6
+- r5 (A5): "juist, nu komen we ergens". Jordi: meer uitgestrekt (geen bal), mond meer gatling, schietende tentakels op schouderhoogte, 2 tentakels als rupsbanden, 2 kanonnen, voorste 2 gewone tentakels. Prompt A6.
+
+### [v0.0.252] - Octillery-evolutie: r6 en prompt A7
+- r6 (A6) minder goed: aders, rupsbanden niet als tentakels, gatling mislukt. Jordi: rupsbanden = zichtbaar tentakels in rupsbandvorm; kanonnen van r5 maar over de schouders; mantel van r5 als natuurlijk pantser; mond wordt een hypermodern krachtig kanon. Prompt A7 (basis A5).
+
+### [v0.0.253] - Octillery-evolutie: r7 en prompt A8
+- r7 (A7): maar één kanon, rechtertentakel klopt niet, rupsband te veel rupsband ("slechts tentakels in de vorm ervan, zo gevouwen"). Prompt A8: twee kanonnen over beide schouders, rupsbanden alleen gevouwen tentakels, precies zes ledematen; alles moet netjes aansluiten (Jordi: "het sluit ook allemaal niet netjes aan he"), alle ledematen uit één ring onder de ogen.
+
+### [v0.0.254] - Octillery-evolutie: r8, zelfkritiek, prompt A9
+- r8 (A8): "het wordt er niet beter op". Op Jordi's verzoek kritiek op de eigen prompts (tegenspraak uitgestrekt/compact, het woord "tank", "ridged", vormloos "hypermodern", "lobster", tentakels zonder begin/eind) en een laatste prompt A9 met elke tentakel uitgebreid beschreven (begin, verloop, eind, zichtbaarheid in driekwart). Alles in `octillery_evo/gemini/PROMPT.md`.
+
+### [v0.0.255] - Octillery-evolutie: r9, Gemini-rondes klaar
+- r9 (A9): posities van de tentakelkanonnen kloppen, de rest vergeten. Jordi: "Design 5 blijft het beste". Verdere aanpak wacht op Jordi.
+
+### [v0.0.256] - Octillery-evolutie: SPEC en aangepast model v1
+- r5 bevroren als ontwerp (`octillery_evo/referenties/gemini_gekozen_r5.png`), SPEC met Jordi's toegestane wijzigingen (kanonnen over de schouders, 2 rupsband-tentakels, 2 gespreide tentakels; kop 100% r5; kanontentakels mogen de kop deels overlappen). Schets `schets_tentakels.png`.
+- Maker bouwde `model/model_v1.png` uit r5-onderdelen (kop: 0 afwijkende pixels buiten de kanonoverlap); wacht op Jordi.
+
+### [v0.0.257] - Octillery-evolutie: ontwerp gekozen
+- Gemini r10 (rupsbanden, Jordi) + de hele kanontentakel uit r5 samengevoegd (`octillery_evo/samenvoeg/`, scripts `seg.py`/`plak.py`). Jordi: "juist, dat is m" → `referenties/ontwerp_gekozen.png`. Formaat naar vierkant via Gemini (prompt "Formaat" in `gemini/PROMPT.md`).
+
+### [v0.0.258] - Octillery-evolutie: Gemini-formaatrondes
+- r11 (bijsnijden + afwerken) en r12 (compacter): netter, maar rupsbanden en tweede kanon raakten kwijt; Jordi: "Ook dit werkt dus niet". Formaat niet meer via Gemini; keuze tussen vertalen zoals het is (±64×42) of het bovenste kanon inkorten (±64×47) ligt bij Jordi.
+
+### [v0.0.259] - Octillery-evolutie: model v3
+- Onderste kanontentakel lager en aansluitend onder de kin (`samenvoeg/v3.png`, nu `referenties/ontwerp_gekozen.png`). Anatomie-analyse (8 tentakels, zuignappen, bewegen als "lopende" octopus) in SPEC. Toegestane afwijkingen voor de sprite: zuignappen op de donkere boog, verkeerde wratten onder de kin weg, plaknaden weg.
+
+### [v0.0.260] - Octillery-evolutie: frontsprite af (kandidaat voor Jordi)
+- Frontsprite naar model v3 in 5 rondes (3 makers, 2 keuringen): `octillery_evo/af/octillery_evo.png` (+ `_8x`, `maak.py`), werk in `octillery_evo/sprite/r1–r5`. Formaat zoals het model (±62×41). Toegestane afwijkingen uitgevoerd: zuignappen op de donkere boog, verkeerde wratten onder de kin weg, plaknaden weg; verder vereenvoudigd tot vormen die op 1× lezen.
+- Bijna-zwart 36% (r3) → 20,6%; helderheid blijft onder Gen 3 doordat het model donker karmijn is (lichtere paletoptie: `sprite/r4/octi_palet_lichter.png`, Jordi kiest).
+
+### [v0.0.261] - Octillery-evolutie: sprite afgekeurd
+- Jordi keurt de sprite uit v0.0.239 af ("er gaat echt zoveel fout dat het niet eens zin heeft om het allemaal te benoemen"). Oorzaken in de werkwijze vastgelegd in `docs/lessen/GEMINI.md`; vervolg wacht op Jordi.
+
+### [v0.0.262] - Octillery-evolutie: terug naar Gemini, prompts P1/P2
+- Nieuwe tekening i.p.v. bewerken: compacte pose zodat het ontwerp in 64×64 past. P1 (pose strikt: van voren, mantel in verkorting) en P2 (pose vrij) in `octillery_evo/gemini/PROMPT.md`; zes zichtbare tentakels (de rest achter het lijf). Elk resultaat eerst als 64×64-verkleining toetsen.
+
+### [v0.0.263] - Octillery-evolutie: Gemini r13/r14, toets 64×64, prompt P3
+- P1/P2 gaven twee vierkante, op 64×64 leesbare versies (`toets64_r13_r14.png`); Jordi: de ene bolt te veel op, de andere heeft maar één rupsband en is kaal zonder de extra tentakels. Prompt P3: de kale versie als bijlage, met twee gelijke rupsbanden, extra tentakels en gele wratten.
+
+### [v0.0.264] - Octillery-evolutie: Gemini r15, prompt P4
+- r15 (P3): tentakels beter, gele wratten erbij; linker rupsband ontbreekt en de zuignappen zijn niet consistent (Jordi). Prompt P4: alleen de linker rupsband gelijk aan de rechter. Plakpoging van Claude niet schoon, weggegooid.
+
+### [v0.0.265] - Octillery-evolutie: Gemini r16, prompt P5
+- r16 (P4): twee rupsbanden, maar de linker schiet te ver uit en is anders vormgegeven (Jordi). Prompt P5: linker = spiegelbeeld van de rechter, korter, geen wit.
+
+### [v0.0.266] - Octillery-evolutie: r17, linker rupsband zelf ingekort
+- r17 (P5) slechter; Jordi: "Ik heb niet het gevoel dat we vooruit gaan". Geen Gemini-rondes meer voor de rupsband: r16 bewerkt met `octillery_evo/samenvoeg/rups_kort.py` (linker rupsband 75% lang, kleuren van de rechter) → `samenvoeg/r16_kort.png`, wacht op Jordi.
+
+### [v0.0.267] - Octillery-evolutie: prompt P6 (from scratch)
+- Jordi vindt de ingekorte r16 ook niet mooi; startprompts zonder bijlage met het hele ontwerp in woorden en alle lessen van de sessie: P6A (twee gelijke korte rupsbanden + vier tentakels) en P6B (geen rupsbanden, zes losse tentakels, uitdrukkelijk niet opgebold).
+
+### [v0.0.268] - Octillery-evolutie: model v4 (onderkant geplakt)
+- Gemini r18–r20 (P6A/P6B) vastgelegd; kop en tentakels niet beter dan r16 (Jordi). Op Jordi's plan: rechter rupsband van r16 gekopieerd naar links (achter het lijf), zuignappen geel, wratten op de twee lage tentakels: `octillery_evo/samenvoeg/model_v4.png` (`onderkant.py`). Wacht op Jordi.
+
+### [v0.0.269] - Krassault
+- Werknaam Octillery-evolutie: Krassault (Jordi; kraken + assault). Model v4 goedgekeurd als basis; sprite 2 gestart met Jordi's eisen (afwerking, belijning en aansluiting vóór silhouet; rupsbanden als assets).
+
+### [v0.0.270] - Krassault: sprite overnemen i.p.v. hertekenen
+- Sprite 2 (r1–r3, hertekend door makers) afgekeurd door Jordi ("alles aan het hertekenen ipv de sprite aan het overnemen"; rupsbanden "prutswerk"). Nieuw in `octillery_evo/sprite3/`: eigen pixelraster van het Gemini-model teruggehaald (127×115), exacte 2×-reductie met regels naar 64×58, rupsbanden als assets in het model naar elkaar toe geschoven (varianten A/B). Vel `sprite3/vel_p.png`; wacht op Jordi's keuze.
+
+### [v0.0.271] - Krassault: silhouet vast, kleurronde 1
+- Rupsbanden variant A gekozen; silhouet definitief ("het silhouet staat"). Ontkorrelen (`sprite3/glad.py`) en kleurronde 1 binnen het bevroren silhouet (`sprite3/kleur/r1.png`, bewaakscript `bewaak.py`): omlijning, Gen 3-palet, zuignapringen. Jordi: "veel beter al, begint echt ergens op te lijken nu"; nog: tentakelkanonnen, consistente belijning, kleine tentakels, zuignappen op de rupsbanden, mond.
+
+### [v0.0.272] - Krassault: kleurrondes 2–4 en eindkeuring
+- r2 (kanonnen, belijning, kleine tentakels, zuignapringen, mond), r3 (tentakel-aansluitingen en rupsbandkrul na keuring op Jordi's twee vragen), r4 (punten uit de Dragonfly Cave/Gen 3-eindkeuring). Silhouet steeds diff 0. Open: paletvariant B (basisrood een stap lichter) en pupil linkeroog. Alles in `octillery_evo/sprite3/kleur/`.
+
+### [v0.0.273] - Krassault: frontsprite af
+- Jordi kiest kleur B (voorkeur Claude/eindkeurder) en de pupil van 2 px ("rechts is completer"). Definitief: `octillery_evo/af/krassault.png` (+ `_8x`, `maak.py`); de afgekeurde brede sprite naar `af/oud_afgekeurd_breed/`. Overzichtsvel bijgewerkt (27 sprites).
+
+### [v0.0.274] - Krassault, poesrups en Kadabra samen op main
+- Branches van Krassault (Octillery-evolutie, Water/Steel) en de poesrups (tussenvorm Pupoodle → poesrups → Lanymph, Bug/Fairy) in main gemerged naast de Kadabra-regional. Changelogsecties van die branches hernummerd (poesrups v0.0.244–245, Octillery-evolutie/Krassault v0.0.246–273). Overzichtsvel opnieuw gemaakt: 30 frontsprites. Stand van zaken bijgewerkt.

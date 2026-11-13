@@ -2,6 +2,67 @@
 
 Alles wat Jordi tijdens het brainstormen noemt, in steekwoorden. Het concept (`docs/concept/CONCEPT.md`) wordt hieruit opgebouwd.
 
+## Overzicht: sowieso doen en brainstormfase (Jordi, 8–9 nov)
+Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de secties eronder. Indeling 9 nov (Claude): zonder "misschien/nadenken/verkennen" = sowieso, met = brainstorm; Jordi kan schuiven.
+
+**Sowieso doen**
+- **Dundragoon:** lome, grappige draakevolutie van Dunsparce, Drampa-achtig; tweede vertakking naast Dudunsparce; **Dudunsparce komt niet in de game** (Jordi, 8 nov; uit de ROM sinds v0.0.230, Hyper Drill laat Dunsparce niet meer evolueren).
+- **Een Ice/Poison-lijn: kikkers met giftige kristallen op ze** (Jordi, 9 nov). **Cinnaber** (kwiksulfide, rood; Huancavelica-kwik voor het zilver van Potosí) vindt Jordi tof "gezien het verhaal en de pokemon link qua naam" (Cinnabar Island); "hier komen we wel uit". Andere giftige mineralen genoemd: stibniet (zilveren naalden, Bolivia), chalcanthiet (blauw, Chileense kopermijnen), realgar/operment (arseen, Atacama). **Idee Jordi: als Poliwag-regional** (er zijn al veel kikkers): de lijn redesignen en Poliwrath vervangen. Repo: Poliwag/Poliwhirl Water, Poliwrath Water/Fighting, Politoed Water/Normal; lijn zit in de dex. **Poliwag en Poliwhirl worden sowieso regionaal** (Jordi, 9 nov); de eindvorm: Jordi denkt na ("misschien toed, misschien wrath, misschien blijven beide hetzelfde en maken we een nieuwe 3e poli"). Voorbeeld (Jordi): Applin, die later een derde tak kreeg (Dipplin naast Flapple en Appletun). **Eis (Jordi): duidelijk anders dan Glimmora** (Glimmet/Glimmora zitten in de dex: Rock/Poison, kristalbloem met facetten). Voorstel Claude: geen geslepen edelstenen of bloemkrans, maar rijp- en ijsnaalden die uit de huid groeien (bevroren gifzweet), helder ijs met de waarschuwingskleuren van de huid eronder; dier eerst, kristal tweede. Echte haakjes (Claude): harlekijnpadden (*Atelopus*, páramo tot ±4800 m, tetrodotoxine, de *jambato* teruggevonden in 2016), vieroogkikker (*Pleurodema marmoratum*, puna tot ±5000 m, gifklieren als nepogen, volgt smeltende gletsjers tot ±5400 m), Andespad (*Rhinella spinulosa*).
+- **Vuurwerk** (Fire/Fairy, FAKEMON_PITCH #83).
+- **Pachamama Ground/Fairy.**
+- **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
+- **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).
+- **Yanma/Yanmega:** "gaan we nog iets mee doen voor bug/dragon".
+- **Een condor-Pokémon = Hanan Pacha** (Jordi, 9 nov: "de condor in het legendary trio klinkt uitstekend").
+- **Venomoth-vuurvlieg** (Electric/Fire): Venonat wordt de nieuwe Venomoth **met een move die hij leert**; conceptueel een insect dat tot vuurvlieg evolueert (zoals Volbeat). **Ontwerp opnieuw met Gemini** (Jordi, 9 nov: "Het design was prima, maar kunnen we denk ik nu veel beter maken met Gemini").
+- **Banette-evolutie** ("nog meer marionet").
+- **Bartitsu-Mr. Rime.**
+- **Blobfish-lijn, 2 fases** (voorstel Claude, Jordi 9 nov "goed idee": fase 1 een gewone diepzeevis, fase 2 "naar boven gehaald" en ingezakt).
+- **Kricketune-evolutie die echt een dirigent wordt.**
+- **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).
+- **Galápagos-regional forms.**
+- **Delibird-evolutie** (Jordi, 9 nov: "Delibird gaan we een evo geven dan"); Delibird-familie moet terug in de dex; ontgimmicken (haakje: de beta-cadeauvogel Gifuto #225).
+- **Heliamphora-regional form van de Bellsprout-lijn** (Jordi, 9 nov: "gaan we sowieso doen"); de bekerplant van de tepuis (staat rechtop, met een klein lepelvormig dekseltje). Eerder: Victreebel-regional form verkennen: "van die hangende planten waar vliegen in kruipen en opgegeten worden bijv". (hangende bekerplanten zijn *Nepenthes*, Zuidoost-Azië).
+- **Tank-Octillery als regional form, plus een nieuwe evolutie daarna** (Jordi, 9 nov: "tank octillery regional form ook en een nieuwe evolutie daarna"; de tank-versie uit de Spaceworld-beta, #210). Richting evolutie (Jordi, 9 nov): "een soort kraken battleship zou wel tof zijn denk ik". Eerder: Octillery-evolutie (Jordi's favoriete Pokémon; "zelfs met onze dikke buff is die nog niet geweldig").
+- **Kecleon-evolutie: een leguaan** (Jordi, 9 nov: "dan hebben we bij deze onze Kecleon evolutie"); evolueert zodra Kecleon op de Galápagos-locatie in de game is (plaatsgebonden, zoals Nosepass en Magneton). Kecleon is in de repo Grass. Er bestaat nog geen leguaan-Pokémon. **Keccles evolueert ook op die locatie** (Jordi, 9 nov: de Galápagos komt relatief laat in het verhaal). Welke leguaan (zee-, land- of roze leguaan) en type: later (Jordi, 9 nov). Eerder: Kecleon-evolutie: past in het verhaal als Keccles late game evolueert.
+- **Oricorio-vormen** (Jordi, 9 nov: "de eerder besproken oricorio forms" sowieso): zie "Oricorio, drie nieuwe dansen" in de sectie van 29 okt (samba Grass, tango Dark, cumbia Water). **Cueca en marinera komen er niet in** (Jordi, 9 nov).
+- **Combee-regional: carpenter bee** (Jordi, 9 nov: "zo kunnen we combee nuttig maken"); evolueert **onafhankelijk van geslacht**. Open: aparte vormen per geslacht (Mothim/Wormadam) of alleen een uiterlijk geslachtsverschil (zoals Pikachu; zit in de expansion, `P_GENDER_DIFFERENCES`).
+- **Pincurchin-regional: pencil-spined sea urchin** (Pincurchin weer in de dex).
+- **Trein-/spooktrein-Pokémon** (Jordi, 9 nov: "sowieso"). Haakje: het treinkerkhof van Uyuni (bij gym 1); eerder voorstel Torkoal-locomotief (Steel/Ghost) uit de lijst waar Jordi niet van overtuigd was.
+- **Pseudo-legendary draak: pitahaya-geïnspireerd** (Jordi, 9 nov). Eerder: FAKEMON_PITCH #36 (pitahaya, Grass/Dragon) en "Dragonfruit (Dragon)" in de lijst van 29 okt; Tropius is in de repo al Grass/Dragon; **de pseudo-draak deelt waarschijnlijk die typing** (Jordi, 9 nov: "maakt niet uit dat meerdere pokemon dezelfde typing hebben").
+- **Sneeuwbol-Pokémon** (Jordi, 9 nov: "ben ik wel van overtuigd dus dat gaan we sowieso doen"; FAKEMON_PITCH #85, voorstel Ice/Psychic; hoe precies bedenken we nog, Jordi 9 nov).
+- **Yareta en Copiapoa: daar gaan we iets mee doen** (Jordi, 9 nov; heeft veel yareta gezien). Jordi neigt naar een **Rock-regional Cacnea-lijn**, "misschien zelfs wel helemaal geen grass type om het origineel te houden".
+- **Harpij-arend: eigen Braviary-vorm** (Jordi, 9 nov: "We gaan voor een eigen braviary vorm"; zoals Meowth drie vormen heeft; Hisui-Braviary staat uit). **Rufflet gaat mee** (Jordi: "klinkt goed"); advies Claude was (harpijkuikens zijn witte donsballen; regionale Rufflet in de Amazone en gewone Rufflet in Patagonië houdt beide Braviary's te krijgen zonder evolutievoorwaarde).
+- **Harpij-Braviary type:** Jordi (9 nov): "steel/flying tof" (voorstellen Claude: Dark/Flying, Steel/Flying, Fighting/Flying, Fighting/Dark).
+- **Aardappel/maïs-lijn** (Jordi, 9 nov, idee van voor het slapengaan, "lichtjes vergeten"): eerste vorm een soort aardappel met maiskolf-handen; daarna wordt hij steeds meer een gerecht of een hybride gerecht met maïs en aardappelen goed verwerkt. Gerechten met allebei (Claude): ajiaco (Colombia, soep met drie soorten aardappel en een maiskolf erin), locro (Andes/Argentinië, stoofpot), pachamanca (Peru, aardoven met hete stenen: aardappel, choclo, vlees) en watia (Bolivia, aardoven), causa (gelaagde aardappel), papa a la huancaína met choclo, humitas, pastel de choclo. **Richting Jordi (9 nov):** eindvorm misschien een combinatie van causa en papa a la huancaína, met wat choclo-vormen; middelste vorm iets met locro.
+- **Fire/Water-Pokémon erbij** (Jordi, 9 nov); Galápagos-regionals mogen ook Fire krijgen (actieve vulkanen: Wolf, Sierra Negra, La Cumbre; jonge lava-eilanden in het westen, oude groene in het oosten). Fire/Water heeft alleen Volcanion (niet in de dex). Voorstellen Claude: zeeleguaan (warmt op op hete lava, duikt in koud water; mogelijk de Kecleon-evolutie), Sally Lightfoot-krab (Krabby), reuzenkokerworm van de hydrothermale bronnen (in 1977 bij de Galápagos ontdekt, de eerste ooit), lava die de zee in stroomt.
+- **Onderwater-Oddish-lijn voor de Galápagos, Water/Fire** (Jordi, 9 nov: "Dit gaan we stelen, maar dan wel in een andere vorm en water/fire"). Aanleiding: fan-art van iemand anders (anemoon-Oddish → Gloom → Vileplume, Poison/Electric, hidden ability Nematocysts); ons ontwerp moet duidelijk eigen zijn. Voorstel Claude: basis de reuzenkokerworm van de hydrothermale bronnen (witte koker, rode kieuwpluim, leeft van zwavelbacteriën) in plaats van een anemoon; Vileplume's bloem wordt een veld pluimen rond een rokende bron. Repo: Oddish-lijn Grass/Poison, in de dex. **Geen Bellossom-tak in de regionale lijn** (Jordi, 9 nov).
+- **Gaucho-Pokémon met hoed** (Jordi, 9 nov: "gaan we ook doen"); optie: **regionale Lotad-lijn**. Let op: eerder neigde Jordi naar een Lotad-vorm als *Victoria amazonica* (reuzenwaterlelie, stapstenen; `POKEMON.md`). Haakje Claude: Ludicolo danst al; de gauchodans **malambo** is een wedstrijd stampen tussen mannen, met boleadoras. **Jordi (9 nov):** lichte voorkeur voor gaucho als Lotad-vorm, tenzij een andere Pokémon een hoed kan krijgen; Murkrow/Honchkrow passen niet. Andere hoeddragers in de dex (Claude): Shroomish/Breloom (paddenstoelhoed, staartzaden als boleadoras), Cacturne (vogelverschrikker met hoedvorm), Mudbray/Mudsdale (het criollopaard erbij).
+- **Mightyena-evolutie, nog meer de hyena kant op** (Jordi, 9 nov; een van zijn favoriete dieren, ook al leven hyena's niet in Zuid-Amerika). Repo: Mightyena Dark; **Poochyena-lijn staat uit de dex** (moet terug). Haakjes Claude: botbrekende kaken, clans geleid door vrouwtjes, het "lachen", afhangende rug; naamgrap *Almightyena*.
+- **Spheal-lijn:** Jordi neigt (9 nov) naar een **regionale Spheal en Sealeo, met een nieuwe evolutie die niet Walrein is**. Repo: Spheal-lijn Ice/Water. Kandidaten eindvorm (Claude): Zuid-Amerikaanse zeeleeuw (mannetjes met een echte leeuwenmanen), zuidelijke zeeolifant (Península Valdés, mannetjes met slurfneus, tot 4 ton), zeeluipaard (Antarctische toproofdier); Galápagos-zeeleeuw als basis. **Jordi (10 nov):** zeeleeuwen zijn "energiek, luid, obnoxious, maar lijken altijd vrolijk"; wil er een leuk type bij. Voorstellen Claude: Water/Normal met geluidsmoves (Punk Rock), Water/Dark (brutale dieven: Galápagos-zeeleeuwen slapen op parkbankjes en bedelen op de vismarkt), Water/Fighting (stieren vechten om hun groep). Let op: Primarina is al een zeeleeuw (Water/Fairy, de nette artiest).
+- **Steenmozaïek-katachtige, Rock-type, eigen nieuwe lijn** (Jordi, 10 nov: "ok we maken een nieuwe"; geen regional, want de enige roofkat in de dex is Liepard; "het is sowieso een katachtige. en dan zou ik daar een rock type van willen maken"; "hier een pokemon van maken lijkt me ook wel tof"; foto `sprites/steenmozaiek/referenties/beeldje_jordi_mexico.png`): een kop met open muil en witte hoektanden, ingelegd met stukjes blauw, roodbruin, zwart en crèmekleurig gesteente. Claude: waarschijnlijk een jaguarkop (mogelijk een gevederde slangenkop zoals in Chichén Itzá); stenen lijken op sodaliet, jaspis, obsidiaan en onyx/marmer. Haakjes: Rock-type (dun!), de jaguar is weer open (Raitora voorlopig niet), Chavín-jaguars in Peru als Zuid-Amerikaanse link.
+- **Nazca-astronaut** (de "uilman" van Nazca; een soortgelijke Pokémon naast Sigilyph, geen vorm of evolutie; Jordi 9 nov: "astronaut komt erin").
+- **Golofa-kever** (Jordi, 9 nov: "ik wil die beetle erin"): door Jordi zelf gefotografeerd in Salento (`sprites/golofa/referenties/foto_jordi_salento.webp`); de twee grote bogen zijn de extreem lange voorpoten. **Open:** regional Heracross of regional Pinsir. Repo: Heracross Bug/Fighting, Pinsir Bug/Ground. Achtergrond (Claude): Heracross is een neushoornkever (naam van de herculeskever, die in Midden- en Zuid-Amerika leeft); *Golofa* is ook een neushoornkever (zelfde onderfamilie Dynastinae). Pinsir wordt meestal aan een vliegend hert toegeschreven; in Chili en Argentinië leeft het vliegend hert van Darwin (*Chiasognathus grantii*) met enorme kaken. **Darwins vliegend hert geschrapt** (Jordi, 9 nov: "net niet uniek genoeg").
+- **Spaceworld-ghosts Norowara en Kyonpan** komen in de game (Jordi, 9 nov); Raitora voorlopig niet.
+
+**Brainstormfase**
+- Invulling van de Ice/Poison-Pokémon (aardappel/chuño, Tentacool-vorm en ozongat: Jordi niet overtuigd; nieuwe voorstellen: bevriezende gifkikker, bedorven ijsje, bevriezing-ijsgeest).
+- Ground/Fairy buiten Pachamama: Jordi denkt nog na.
+- Gloednieuwe Pokémon zonder link met Zuid-Amerika.
+- Evoluties voor soorten die ze echt nodig hebben (Smeargle, Chatot, Cryogonal: niet per se).
+- Regional forms die underrated Pokémon interessant maken (de rest van de top 10 in `DEX_NOMINATIES.md` §5: nog niet overtuigd).
+- **Nog een nieuwe Mr. Mime-vorm** (misschien).
+- **Ledian-evolutie** (nadenken).
+- **Lanturn-evolutie:** voorstel Claude: diepzee-hengelvis waarbij het mannetje als parasiet aan het vrouwtje vastgroeit; Jordi (9 nov): "erg smerig en grounded, nu nog bedenken of ik Lanturn die horror wil aandoen". Eerder: "is dat uberhaupt nodig? Die kunnen we dan nog wat verder diepzee maken en enger, zoals Annihilape, maar misschien valt dat uit de toon".
+- **Sunflora-evolutie:** "alleen als we echt met een vet idee kunnen bedenken".
+- **Shuckle-evolutie** (Delibird: zie sowieso): gimmickmons, dan moeten ze ontgimmickt worden; "vraag me af of dat werkt".
+- **Evolutie voor Ninjask, Sableye, Mawile, Manectric:** "zelfs met terugwerkende kracht in Ungrounded".
+- **Regionale Cacnea/Maractus-lijn** ("dit zijn geen zuid amerikaanse cactussen").
+- **Regionale Tropius**, misschien; misschien een **Absol-evolutie**; misschien een **Glalie-evolutie**.
+- **Flamigo-evolutie:** "weet ik bijna wel zeker".
+- Al het andere in dit bestand dat niet als besloten in `POKEMON.md` staat.
+- **Repo-check (Claude, 9 nov):** niet in de dex (familie moet terug): Mime-lijn, Ledyba-lijn, Sunkern-lijn, Shuckle, Delibird, Mawile, Electrike-lijn, Snorunt-lijn. Wel in de dex: Banette, Victreebel, Lanturn, Pinsir (Bug/Ground), Octillery (Water), Ninjask, Sableye, Cacnea/Maractus, Kecleon (Grass), Tropius, Absol (Dark/Fairy), Kricketune, Sigilyph, Flamigo, Venonat-lijn.
+
 ## Basis
 - Vervolg op Pokémon Ungrounded, ambitieuzer. Gebouwd in pokeemerald-expansion (fork van projectgrounded, met alle revisies van Pokémon/moves/abilities en de QoL).
 - Nieuwe regio op basis van Zuid-Amerika; zoals Hoenn ≈ Kyushu: geïnspireerd, niet nagemeten. Eigen namen en eigen kaart.
@@ -264,3 +325,146 @@ Jordi: Salar de Uyuni-variant van Silicobra, misschien ook van Sandaconda of een
   - **A. Mestre van de berimbau:** permanent in de *bananeira* (handstand, benen in een V); staart/hoorn als de boog van de berimbau, de *cabaça* op rug of buik. Risico: instrument lastig te tekenen, "vechter met een attribuut".
   - **B. Besouro (voorkeur Claude):** de legende van Besouro Mangangá (capoeirista uit Bahia, rond 1900; de bijnaam betekent "kever"; hij zou in een kever veranderen en wegvliegen, en had het *corpo fechado*: messen en kogels deerden hem niet). Hitmontops hoorn wordt een hercules-keverhoorn (*Dynastes hercules*, Zuid-Amerikaans regenwoud), glanzend schild = gesloten lichaam, dekschilden als jasje. Silhouet: de *armada* (draaiende trap, dekschilden waaieren uit). Mythe + dier + vechtkunst.
   - **C. Malandro van de negativa:** laag en breed, één hand op de grond, been zwaait opzij; lis en schijnbeweging, *mandinga*-amulet. Minst dierlijk.
+
+## Nieuwe ronde ideeën (Jordi, 8 nov)
+Aanleiding (Jordi): de werkwijze met Gemini werkt; alle eerdere ideeën zijn uitgewerkt, dus tijd voor nieuwe. Gemini eventueel overslaan bij regional forms die de sprite niet te veel aanpassen ("zelfs dat valt nog te testen met gemini").
+- **Vier richtingen (Jordi):** (1) de bestaande kandidatenlijsten doornemen (nieuwe Pokémon, regional forms, evoluties); (2) gloednieuwe Pokémon **zonder link met Zuid-Amerika** ("dat hoeft namelijk geen vereiste te zijn"); (3) evoluties voor Pokémon die ze echt nodig hebben; (4) regional forms die leuk zijn of underrated Pokémon weer interessant maken.
+- **Dundragoon (Jordi):** "een evolutie die ik als kind altijd imagineerde, een lome grappige dragon evolutie van Dunsparce, jaaaren voordat Dudunsparce bestond. Het was meer een Drampa achtige draak, ook jaaaren voordat die bestond." Open: type, en hoe hij zich verhoudt tot Dudunsparce.
+- **Typings die nog niet bestaan (Jordi):** een **Ice/Poison**-Pokémon; **Fire/Fairy** bestaat ook nog niet; **Ground/Fairy**: "moet ik nog over nadenken of ik dat wil". Flygon en Sableye zijn nu onze unieke Bug/Dragon en Rock/Ghost; met **Yanma/Yanmega** gaan we nog iets doen voor Bug/Dragon. Normal + Steel/Ice/Rock "hoeven niet per se van mij"; **Normal/Bug is wel een goede voor Pupoodle**.
+- **Repo-check (Claude):** Ice/Poison, Fire/Fairy, Ground/Fairy, Normal/Steel, Normal/Ice en Normal/Rock komen in de repo bij geen enkele soort voor. Normal/Bug bestaat al bij Ledyba/Ledian (herzien), maar die lijn zit niet in de dex, dus Pupoodle is in de game de enige. Bug/Dragon: Vibrava en Flygon. Normal/Dragon: Drampa en Cyclizar (allebei niet in de dex). Dunsparce en Dudunsparce zijn hier Normal/Ground.
+
+### Voorstellen Claude (8 nov, alles open)
+- **Ice/Poison:** (a) **chuño**: de bittere Andes-aardappel (*papa amarga*) is giftig tot hij 's nachts bevriest en overdag droogt; de vriesdroging haalt het gif eruit (sluit aan op FAKEMON_PITCH #32). (b) **Tentacool-vorm** uit het ijskoude Patagonische/Antarctische water (kwallen met brandnetels). (c) **het ozongat**: een koelmiddel-/CFK-wolk; boven Patagonië (Punta Arenas) gelden UV-alarmen (systeem-thema).
+- **Fire/Fairy:** al in de pitches: gouden leeuwaapje (#23), vuurwerk (#83). Nieuw: de **Noche de San Juan** (Paraguay, *tatá pyrũ*: blootsvoets over gloeiende kolen lopen).
+- **Ground/Fairy (als Jordi het wil):** het past letterlijk bij **Pachamama** (Moeder Aarde; type nog open).
+- **Normal + Steel/Ice/Rock (staan al in de pitches):** charango (#69, Normal/Steel), chinchilla (#11) en alpaca-poncho (#74, Normal/Ice). Normal/Rock nieuw: de **moai** van Rapa Nui (Paaseiland hoort bij Chili).
+- **Evoluties voor soorten in de dex zonder evolutie, met een lage BST** (repo): Smeargle (250), Volbeat/Illumise, Cryogonal (385), Chatot (411), Spinda (420), Lunatone/Solrock. Haakjes: **Smeargle → muralist van Valparaíso** (pitch #73, street art); **Chatot → ara met kleilik** (pitch #13; papegaai wordt grote Amazone-ara); **Cryogonal → penitentes** (pitch #45, ijspieken als monniken, Ice/Ghost); **Heatmor** is een miereneter (de reuzenmiereneter is Zuid-Amerikaans).
+- **Regional forms:** de top 10 in `DEX_NOMINATIES.md` §5 staat nog open (brilbeer-Teddiursa, boto-Finizen, Tiwanaku-Golett, El Tío-Impidimp, Boitatá-Arbok, Mapinguari-Slaking, mate, reuzenotter-Buizel, Titicaca-Tympole, pudú/huemul-Deerling).
+
+### Reactie Jordi (8 nov)
+- **Dundragoon:** "het is een tweede vertakking naast dudunsparce en ik denk dat we hem ook ipv doen." (Het laatste deel wordt nog nagevraagd.)
+- **Ice/Poison:** "De aardappel ben ik niet helemaal van overtuigd, evenals de andere ice/poison ideeën." Nog open.
+- **Vuurwerk (Fire/Fairy, FAKEMON_PITCH #83):** "Vuurwerk is wel lachen! Dat zie ik wel zitten."
+- **Pachamama Ground/Fairy:** "ook een goede ja" (zie POKEMON.md, Legendaries).
+- **Evoluties** (Smeargle, Chatot, Cryogonal enz.): "hoef ik niet per se te evolven".
+- **Regional forms:** "de tiwanaku en mate gaan we doen, de rest ben ik nog niet overtuigd van" (zie POKEMON.md, Regional forms).
+
+### Regional forms die de Pokémon echt anders maken (voorstellen Claude, 9 nov, open)
+Jordi (9 nov): regional forms zijn leuk omdat ze type en gebruik compleet veranderen; een Golofa-Heracross die ook Bug/Fighting is "zou extreem saai zijn". Inspiratie hoeft niet per se Zuid-Amerikaans te zijn. Typen hieronder: repo → voorstel. Alle soorten zitten in de dex.
+- **Golofa-Heracross** (Bug/Fighting →) Bug/Steel (grijpkraan met lange armen) of Bug/Dark (nachtdier).
+- **Sandshrew/Sandslash** (Ground →) **Ground/Fairy**: roze gordeldiertje *pichiciego* (pink fairy armadillo, Argentinië).
+- **Hoothoot/Noctowl** (Flying/Dark →) Ground/Normal of Ground/Dark: holenuil die in viscachaholen woont; verliest Flying.
+- **Growlithe/Arcanine** (Fire →) Grass/Dark: manenwolf, vos op stelten die fruit eet (pitch #9).
+- **Mankey/Primeape** (Fighting →) Normal/Dark: brulaap, geluidsaanvaller (pitch #24).
+- **Combee/Vespiquen** (Bug/Flying →) Bug/Fighting: de "killer bees" die in 1957 uit een Braziliaans lab ontsnapten.
+- **Venipede/Scolipede** (Bug/Poison →) Bug/Dark: Amazone-reuzenduizendpoot die van grotplafonds hangt en vleermuizen vangt.
+- **Spinarak/Ariados** (Bug/Poison →) Bug/Dark: vogelspin die vogels eet en brandharen schiet.
+- **Heatmor** (Fire →) Normal/Fighting: reuzenmiereneter die rechtop staat als een bokser; **Durant** (Bug/Steel →) Bug/Dark: legermieren. Rivaliteit blijft.
+- **Lapras** (Water/Ice →) Water/Dragon of Water/Ghost: **Nahuelito**, het meermonster van Nahuel Huapi (Patagonië), een cryptid.
+- **Psyduck/Golduck** (Water/Psychic →) Water/Fighting: Andes-stroomversnellingseend (*pato de los torrentes*) die tegen watervallen op zwemt.
+- **Snover/Abomasnow** (Grass/Ice →) Grass/Fairy of Grass/Rock: *Puya raimondii*, bloeit één keer na ±100 jaar.
+- **Cramorant** (Flying/Water →) Water/Fighting: de Galápagos-aalscholver die niet meer kan vliegen. **Wattrel/Kilowattrel** (Electric/Flying; is al een fregatvogel →) Dark/Flying piraat.
+- **Torkoal** (Fire →) Steel/Ghost: verroeste stoomlocomotief van het treinkerkhof van Uyuni.
+- **Solrock/Lunatone** (Rock/Psychic →) Fire/Steel en Steel/Fairy: Inca-goud ("zweet van de zon") en -zilver ("tranen van de maan").
+- **Ponyta/Rapidash** (Fire →) Steel/Fairy: draaimolenpaard (niet Zuid-Amerikaans).
+- **Jordi (9 nov):** "ben denk ik van geen een van deze ideeen echt overtuigd voorlopig".
+
+### Regional forms, niet Zuid-Amerikaans (voorstellen Claude, 9 nov, open)
+- **Abra-lijn** (Psychic →) Dark: Alakazam als toneelgoochelaar; het is allemaal truc, geen echte krachten.
+- **Growlithe/Arcanine** (Fire →) Water/Fire: brandweerhond (dalmatiër) die vuur blust; stoom. Water/Fire heeft alleen Volcanion (niet in de dex).
+- **Munchlax/Snorlax** (Normal →) Normal/Electric: Snorlax aan de koffie die nooit slaapt; snelle sweeper in plaats van tank.
+- **Psyduck/Golduck** (Water/Psychic →) Water/Normal: de reuzenbadeend van Florentijn Hofman (Nederlandse knipoog); drijvende tank in plaats van special attacker.
+- **Swablu/Altaria** (Dragon/Flying →) Electric/Flying: de wattenwolk wordt een onweerswolk.
+- **Miltank** (Normal →) Ice/Normal: ijscokar (Normal/Ice bestaat nog niet).
+- **Skarmory** (Steel/Flying →) Normal/Flying: origamikraanvogel (pitch #76); stalen muur wordt broze, snelle aanvaller.
+- **Mimikyu** (Ghost/Fairy, zelfde type): draagt hier een Zapacha-pak in plaats van een Pikachu-pak, omdat Zapacha de elektrische knager van de regio is (grap, geen rolwissel).
+- **Jordi (9 nov):** "origami en brandweerhond, plus nimbus zijn eventuele opties, maar ben nog niet tevreden over deze specifieke link en uitvoering" (nimbus = de onweerswolk-Altaria).
+
+### Bartitsu-Mr. Rime: pre-evolutie als regionale Mr. Mime (vraag Jordi 9 nov; voorstellen Claude, open)
+Lijn dan: Mime Jr. → regionale Mr. Mime → Bartitsu-Mr. Rime (zoals Galar: Mime Jr. → Galar-Mr. Mime → Mr. Rime). Mime-lijn moet terug in de dex.
+- **Victoriaanse bokser** (Fighting of Fighting/Psychic): bartitsu = boksen + jiujitsu + savate + stokvechten; de pre-evo kent één discipline, de evolutie alles. Snor, opgerolde mouwen, Queensberry-houding.
+- **Polospeler** (Britten brachten polo naar Argentinië, nu het beste polo-land ter wereld): de polohamer wordt bij de evolutie de wandelstok.
+- **Conducteur/stationschef** van de Brits-Argentijnse spoorwegen, met fluitje en pet: de heer op het perron.
+- **Watson → Holmes** (Holmes' "baritsu"): de assistent wordt de detective; als knipoog, zonder echte namen.
+- **Mime Jr. blijft gewoon** (Jordi, 9 nov). Typen jiujitsu-Mr. Mime en Bartitsu-eindvorm: nog niet bepaald.
+- **Naam eindvorm: Mr. Prime** (Jordi, 9 nov: "hilarisch en perfect"). Eerdere voorstellen Claude: **Sir Mime** (van Mr. naar Sir: geridderd, rangverhoging als evolutie), **Mr. Prime** (rijmt zoals Rime; oud maar nog in zijn prime), Lord Mime, Mr. Time (de oude heer).
+- **Richting Jordi (9 nov):** "wat als we gewoon een jiu jitsu mr mime maken, die met zijn rug op de grond ligt, get into my guard, in een gi. En daarna een oude gentleman wordt met een wandelstok". Haakjes (Claude): bartitsu bevat zelf jiujitsu (Barton-Wright leerde het in Japan), dus de stap klopt; BJJ is Braziliaans (Gracie); sluit aan op het BJJ-idee van 29 okt (Werdum-pose). Past bij Jordi's eerdere besluit "Ik maak een andere BJJ pokemon later" (`sprites/lama/SPEC.md`: geen BJJ voor de lama-lijn).
+
+### Galápagos-regional forms (voorstellen Claude, 9 nov, open)
+Sowieso doen (Jordi). Typen: repo → voorstel; alle soorten in de dex. Rode draad: Darwin; elk eiland iets anders, de soort past zich aan.
+- **Pikipek-lijn** (Normal/Flying →) **darwinvinken**: vorm per snavel, type per dieet: zaad (Grass), insect (Bug), cactus (Ground) en de **vampiervink** (Dark/Flying; drinkt echt bloed van genten). **Jordi denkt erover na (9 nov).**
+- **Pikipek-twijfel (Jordi, 9 nov):** bij een spechtvink-Pikipek vallen Trumbeak en Toucannon (toekans zijn juist Zuid-Amerikaans) af.
+- ~~**Torkoal** (Fire →) Ground/Grass: **reuzenschildpad** in twee schildvormen (koepel en zadelrug met lange nek); trage Trick Room-tank.~~ geschrapt (Jordi, 9 nov).
+- ~~**Cacnea/Cacturne** (Grass, Grass/Dark →) Grass/Fire of Grass/Rock: **lavacactus** (groeit op verse lava) → **boom-opuntia** (cactus zo groot als een boom, voer van de schildpadden). Sluit aan op Jordi's wens voor een regionale Cacnea/Maractus.~~ geschrapt (Jordi, 9 nov: neigt naar een Noord-Andes-variant op Cacnea of Maractus).
+- ~~**Carvanha/Sharpedo** (Water/Dark →) Water/Electric: **hamerhaai**; voelt elektrische velden met zijn kop, jaagt in scholen.~~ geschrapt als Sharpedo-vorm (Jordi, 9 nov); hamerhaai liever in een nieuwe haaienlijn.
+- **Krabby/Kingler** (Water →) Fire/Water of Rock/Water: **Sally Lightfoot-krab**, felrood op zwarte lava, springt van rots naar rots; trage klapper wordt snel.
+- **Salandit/Salazzle** (Poison/Fire →) Water/Dragon: **zeeleguaan** (pitch #18), graast zeewier, niest zout.
+- **Ducklett/Swanna** (Water/Flying →) Water/Fairy met Dancer: **blauwvoetgent**, pronkdans met blauwe voeten (pitch #17).
+- **Spheal-lijn** (Ice/Water →) Water/Normal: **Galápagos-zeeleeuw**, tropisch en speels; ijstank wordt snelle zwemmer.
+- **Cramorant** (Flying/Water →) Water/Fighting: aalscholver die niet meer kan vliegen. **Kilowattrel** (Electric/Flying →) Dark/Flying: fregatvogel-piraat.
+
+### Opties en ideeën Jordi (9 nov)
+Galápagos (alles opties):
+- **Blue-footed / red-footed booby.**
+- **Vampire ground finch:** "evil vogel zou wel eens vet zijn".
+- **Magnificent / great frigatebird.**
+- **Flightless cormorant:** 1-op-1-optie voor Cramorant.
+- **Galápagos penguin:** misschien voor de Delibird-evolutie of Eiscue.
+- **Galápagos mockingbird:** voor het verhaal.
+- **Galápagos barn owl:** misschien voor de Hoothoot-lijn.
+- **Wingull-lijn:** alleen als we iets leuks kunnen bedenken.
+- **Spheal-regional (zeehonden/zeeleeuwen):** optie.
+- **Nieuwe haaienlijn** met een hamerhaai ertussen (nu alleen Sharpedo- en Garchomp-lijn).
+- **Red-lipped batfish:** "moeten we ook wat mee".
+- **Alomomola** is al een mola mola, dus een regional is niet logisch (de mola leeft wereldwijd in warme en gematigde zeeën, niet alleen op de Galápagos).
+- **Garden eel** lijkt al erg op Wiglett (Wiglett is ook een garden eel; Wiglett-lijn staat uit de dex).
+- **Pincurchin-vorm: pencil-spined sea urchin** ("ziet er erg sinister uit en Pincurchin is een saaie pokemon"; Pincurchin staat uit de dex).
+- **Chocolate chip-Staryu-vorm:** "misschien wel geinig".
+- **Schildpad-Pokémon die evolueert met een Binacle in je party** (zoals Shellder/Slowbro en Remoraid/Mantine); nog uitwerken (Binacle-lijn staat uit de dex).
+- **Pistoolgarnaal:** er bestaat nog geen garnaal-Pokémon; Clauncher/Clawitzer vindt Jordi geen garnalen (Bulbapedia noemt Clauncher een pistoolgarnaal, Jordi ziet het niet, ook door het gebrek aan passende moves).
+- **Kingler: Japanse reuzenkrab-vorm** (*Japanese spider crab*).
+- **Dood koraal:** goede plek voor Corsola/Cursola.
+- **Carpenter bee:** Jordi vroeg om uitleg tegenover gewone bijen.
+
+Overig:
+- **Mierenleger als losse lijn** (Durant is de enige mier-Pokémon).
+- **Bibarel-evolutie:** bouwvakker-bever, **Water/Fighting** (Bibarel nu Normal/Water). Haakje Claude: in Vuurland zijn in 1946 Canadese bevers uitgezet die nu de bossen van Patagonië slopen (systeem-thema).
+- **Abra-regional, Dark/Psychic trickster/goochelaar:** "lijkt me tof".
+- **Een Pokémon gebaseerd op hannya** (Japans demonmasker).
+- **Baltoy/Claydol: Andes-vorm** (zie het huaco-retratovoorstel in `DEX_NOMINATIES.md` §5).
+- **Ruïne- of zelfs tempel-Pokémon:** een levende tempel, enorm, mogelijk een Snorlax-idee: geen legendary, wel een static encounter (idee uit een gesprek met een maat).
+- **Vlieg → mug-lijn:** "denk ik nog wel een goede" (mug was al Poison/Electric).
+- **Early game Bug** die op hoogte kan leven: nog nodig.
+- **Ghost-types:** wereldwijde mythes en cryptids; hoe vet het design zou zijn is daarbij belangrijk.
+- **Cacnea/Maractus:** Jordi neigt naar een Noord-Andes-variant.
+
+### Voorstellen Claude (9 nov, open): early game Bug op hoogte en Ghost-mythes
+- **Early game Bug (altiplano):** Andes-aardappelsnuitkever (*Premnotrypes*, plaag van de aardappelboeren; Bug/Ground); Andes-hommel (*Bombus funebris*, tot boven 4000 m; Patagonische reuzenhommel *B. dahlbomii* "vliegende muis" met rossige vacht, verdrongen door ingevoerde Europese hommels); cochenille (schildluis op cactussen, wit wasachtig pluis met knalrood binnenin: de rode verf van Inca-textiel). **Jordi (9 nov): alle drie niet onderscheidend genoeg; cochenille amper zichtbaar met het blote oog.** Ronde 2: vinchuca (*Triatoma infestans*, roofwants die 's nachts uit lemen muren en rieten daken op de altiplano komt, overbrenger van Chagas), tarantulahavik (*Pepsis*, metaalblauw met oranje vleugels, verlamt vogelspinnen), glasvleugelvlinder (*Greta oto*, doorzichtige vleugels, nevelwoud tot ±2600 m), uilvlinder (*Caligo*, vleugels met uilenogen). **Jordi (9 nov): "we kunnen al vroeg een klein randje van de amazone bezoeken, irl ben ik daar ook geweest toen na death road af te fietsen"** (Camino de la Muerte: van La Cumbre ±4650 m naar Coroico ±1200 m in de yungas). Tarantulahavik: Jordi vindt hem "echt vaag" en wil meer weten.
+- **Ghost, wereldwijd (op design):** Nuckelavee (Orkney, paard en ruiter zonder huid), Gashadokuro (Japan, reuzenskelet van verhongerden), Dullahan (Ierland, hoofdloze ruiter die zijn hoofd als lantaarn draagt), Jorōgumo (Japan, spinvrouw), La Llorona (Latijns-Amerika, huilende vrouw bij het water), Chupacabra (Latijns-Amerika), Black Shuck (Engeland, spookhond met gloeiende ogen), Mothman (VS). Let op: de Wendigo is voor sommige inheemse volken heilig; liever niet.
+- **Amazone-insecten (voorstellen Claude, 9 nov, open):** slangrups (*Hemeroplanes*, blaast zich op tot een adderkop), helmcicade (*Bocydium*, helm met bolletjes als een antenne), harlekijnboktor (*Acrocinus*, extreem lange voorpoten; pseudoschorpioenen liften onder zijn dekschilden mee), lantaarndrager (*Fulgora*, kop als een krokodillenkop, uilenogen op de vleugels; volksverhaal over zijn beet), titanenkever (grootste kever, kaken die een potlood breken), poesrups (*Megalopyge*, lijkt op een pluizig toupetje, maar de haren steken venijnig), *Lonomia* (rups wiens gif bloedingen veroorzaakt), legermieren (*Eciton*, bouwen bruggen en nesten van hun eigen lijven; vgl. mierenleger-idee), kogelmier (pitch #27), bladsnijdersmieren (kweken schimmel), morphovlinder, orchideeënbij (metaalgroen, verzamelt geuren), pauwsprinkhaan (*Pterochroza*, blad met oogvlekken), en als echte "overnemer": de wesp *Hymenoepimecis*, waarvan de larve een spin dwingt een speciaal web te bouwen.
+- **Reactie Jordi (9 nov) op de Amazone-insecten:** vogelspin-Pokémon erbij is een goede, mogelijk een **Spinarak-regional**; slangrups "is vet, maar weet niet hoe ik dat leuk moet uitwerken"; helmcicade "heeft een soort heracross hoofd"; **puss caterpillar (poesrups) als optie** ("heerlijk vaag"; had een alternatief voor Pupoodle kunnen zijn, misschien nog een **tussenevolutie**); **termiet → termietenheuvel** is ook een optie. Vraag: zit er bij de kevers een logische Pinsir-evolutie?
+- **Pinsir-evolutie (Jordi, 9 nov):** een enorme tor/kaiju-hybride; welke tor nog bepalen, kunnen ook meerdere combineren.
+- **Voorstellen Claude:** Pinsir-evolutie als **sabeltandboktor** (*Macrodontia cervicornis*, Amazone, een van de grootste kevers, enorme kaken als Pinsirs scharen, schorspatroon); puss caterpillar als **tussenstadium Pupoodle → Lanymph**: de poedel in showtrim (de rups lijkt op een geföhnde kuif), de haren steken; de volwassen *Megalopyge* is ook een pluizige mot, dus het klopt biologisch.
+
+### Rock: Salta en Noordwest-Argentinië (vraag Jordi 9 nov; voorstellen Claude, open)
+Typen-check (Claude, 9 nov): Rock komt bij geen enkele nieuwe soort of vorm voor, Water nog niet vast, Steel alleen DJ Rotom.
+- **Cerro de los Siete Colores** (Purmamarca) en **Serranía de Hornocal** ("berg van 14 kleuren"): gekleurde gesteentelagen uit verschillende tijdperken; een Pokémon die per evolutie lagen (= tijd) krijgt. **Jordi (9 nov): "een pokemon die elke evo lagen bij krijgt met diverse kleuren, meso stijl is wel tof"; meso = het mesa/badlands-gebied uit Minecraft (gekleurde terracotta-banden).**
+- **Cono de Arita** (Salar de Arizaro, bij Tolar Grande): een bijna perfecte kegel midden op een zoutvlakte, voor de Andesvolken heilig.
+- **Quebrada de las Conchas** (Cafayate): zandsteen in vormen met namen (El Sapo, El Fraile, Los Castillos), de Garganta del Diablo en het **Anfiteatro**, een natuurlijke zaal waar muzikanten spelen om de akoestiek (Rock + geluid).
+- **Campo de Piedra Pómez** (Catamarca): een veld van witte, door de wind uitgeslepen puimsteen.
+- **Ischigualasto / Talampaya** (San Juan, La Rioja): de oudste dinosaurussen (*Eoraptor*, *Herrerasaurus*): fossiel-Pokémon.
+- **Llullaillaco-mummies:** Inca-kinderen die op de top van de vulkaan zijn geofferd (capacocha), nu in een museum in Salta; Rock/Ghost-lore, voorzichtig met de toon.
+- Ook in de buurt: **Tren a las Nubes** (Salta, spoorlijn tot ±4200 m; past bij de spooktrein) en **Los Cardones** (cardón-cactussen; past bij de Noord-Andes-cactus).
+- **Cactussen die op steen lijken (vraag Jordi 9 nov; Claude):** *Copiapoa* (Atacama, Chili; grijze, krijtachtige bollen tussen de rotsen, leeft van zeemist), *Ariocarpus* (Mexico, "living rock cactus"), *Tephrocactus*/*Maihueniopsis* (puna van Argentinië, polletjes van segmenten die op kiezels lijken). Geen cactus maar wel steenhard: de yareta (Andes-kussenplant, ±3000 jaar oud, je kunt erop staan; pitch #41 Grass/Rock). *Lithops* ("levende stenen") komen uit Zuidelijk Afrika en zijn geen cactussen.
+- **Rock/Water-idee van Jordi (9 nov):** een regional of evolutie waarvoor Jordi Rock/Water overwoog; welke is hij even vergeten ("ik kom er nog wel op"). Niet: arapaima, Binacle-schildpad, stromatolieten, tepui-waterval, puimsteen, Pincurchin, Staryu, Tiwanaku-Golett, Octillery, Kingler, Lanturn, Guatapé, Caño Cristales e.d.
+- **Typen-telling (Claude, 9 nov):** oud in de dex + nieuw: Rock ±24 (niets nieuws), Fairy ±25, Fighting ±27, Ice ±30 (gym 2!), Steel/Fire/Dragon ±35, Water 86. Advies: eerst Rock en Ice, dan Fairy.
+
+### Convergente soorten (Jordi, 9 nov; voorstellen Claude, open)
+Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Pokémon, zoals Toedscool en Wiglett, met iets slims in de namen. Voorstellen (dier dat in Zuid-Amerika echt dezelfde vorm of rol heeft; naam als werktitel):
+- **Doduo/Dodrio → nandoe (ñandú):** "Ñanduo" → "Ñandrio".
+- **Swinub/Piloswine → pekari:** pekari's lijken op varkens maar zijn een aparte familie (echte convergentie); "Pecanub".
+- **Kangaskhan → opossum:** buideldier-moeder die haar jongen op de rug draagt; "Possumkhan".
+- **Relicanth → Zuid-Amerikaanse longvis** (*Lepidosiren*, levend fossiel dat lucht ademt); "Lungcanth".
+- **Ekans/Arbok → koraalslang:** "Ekoral".
+- **Lickitung → reuzenmiereneter** (tong ±60 cm); let op overlap met Heatmor (ook een miereneter).
+- **Phanpy/Donphan → tapir:** de "olifant" van Zuid-Amerika met een snuitje.

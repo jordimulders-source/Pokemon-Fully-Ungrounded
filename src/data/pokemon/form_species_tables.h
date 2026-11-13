@@ -767,7 +767,7 @@ static const u16 sUnownFormSpeciesIdTable[] = {
 };
 #endif //P_FAMILY_UNOWN
 
-#if P_FAMILY_DUNSPARCE
+#if P_FAMILY_DUNSPARCE && P_GEN_9_CROSS_EVOS && FU_DUDUNSPARCE
 static const u16 sDudunsparceFormSpeciesIdTable[] = {
     SPECIES_DUDUNSPARCE_TWO_SEGMENT,
     SPECIES_DUDUNSPARCE_THREE_SEGMENT,

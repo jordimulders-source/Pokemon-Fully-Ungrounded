@@ -4673,13 +4673,13 @@ const struct SpeciesInfo gSpeciesInfoGen2[] =
         .levelUpLearnset = sDunsparceLevelUpLearnset,
         .teachableLearnset = sDunsparceTeachableLearnset,
         .eggMoveLearnset = sDunsparceEggMoveLearnset,
-    #if P_GEN_9_CROSS_EVOS
+    #if P_GEN_9_CROSS_EVOS && FU_DUDUNSPARCE
         .evolutions = EVOLUTION({EVO_LEVEL, 0, SPECIES_DUDUNSPARCE_TWO_SEGMENT, CONDITIONS({IF_KNOWS_MOVE, MOVE_HYPER_DRILL}, {IF_PID_MODULO_100_GT, 0})},
                                 {EVO_LEVEL, 0, SPECIES_DUDUNSPARCE_THREE_SEGMENT, CONDITIONS({IF_KNOWS_MOVE, MOVE_HYPER_DRILL}, {IF_PID_MODULO_100_EQ, 0})}),
     #endif
     },
 
-#if P_GEN_9_CROSS_EVOS
+#if P_GEN_9_CROSS_EVOS && FU_DUDUNSPARCE
     [SPECIES_DUDUNSPARCE_TWO_SEGMENT] =
     {
         .baseHP        = 125,

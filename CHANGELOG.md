@@ -1205,3 +1205,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.274] - Krassault, poesrups en Kadabra samen op main
 - Branches van Krassault (Octillery-evolutie, Water/Steel) en de poesrups (tussenvorm Pupoodle → poesrups → Lanymph, Bug/Fairy) in main gemerged naast de Kadabra-regional. Changelogsecties van die branches hernummerd (poesrups v0.0.244–245, Octillery-evolutie/Krassault v0.0.246–273). Overzichtsvel opnieuw gemaakt: 30 frontsprites. Stand van zaken bijgewerkt.
+
+### [v0.0.275] - Abra-regional: start ontwerp
+- Jordi (13 nov): Abra wordt puur Dark, nog geen magiër maar wil het worden, nog geen smoking, zelfde huidskleur als Kadabra/Alakazam. Letterlijk in `POKEMON.md`; ontwerprichtingen voorgelegd.

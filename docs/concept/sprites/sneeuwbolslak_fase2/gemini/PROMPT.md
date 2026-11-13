@@ -60,3 +60,7 @@ AVOID
 - Gemini maakt de schelp weer rond of zet een losse bol erop: de AVOID-zin "own body part" naar boven, nieuw gesprek.
 - Te druk (veel barsten, ruis in de bol): "max 3 cracks", "storm: about 15 white pixels and 2 swirls".
 - Gaat het mis, niet bijsturen in hetzelfde gesprek (GEMINI.md): beste resultaat als bijlage in een nieuw gesprek.
+
+## Reactie Jordi op r1 (13 nov)
+- "het huis is iets teveel nu een bol met ijs erop. Dat die scheurt en gaat open breken en chaotischer wordt zie ik zitten, ik vind eigenlijk de slak zelf nog teveel van hetzelfde, die moet al meer hints geven richting eindfase, dat we de kosmische kant op gaan, zonder echt het weg te geven"
+- Voorstellen Claude voor de volgende prompt (keuze open): zie het antwoord in de sessie; wordt hier aangevuld zodra Jordi kiest.

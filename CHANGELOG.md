@@ -1455,3 +1455,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.351] - CLAUDE.md: niet meer naar projectgrounded pushen
 - Jordi: "nee er moet niet naar projectgrounded gepushed worden, geen idee hoe dat in claude.md is gekomen". Regel in Stand van zaken vervangen.
+- Jordi: "haal dat weg": ook de vervangende regel geschrapt; de pushinstructie staat er niet meer in.

@@ -43,3 +43,17 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64
 
 AVOID: a realistic tiger/jaguar with a painted pattern, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
 ```
+2. `fase2_ronde2.png`: Jordi (13 nov, letterlijk): "Beter, maar het moet minder buff, meer jaguar en gladder". Oorzaak "buff" (Claude): mijn toevoeging "heavy broad head, stocky muscular body" uit ronde 2; geschrapt. Ronde 3: nieuw gesprek, foto + ronde 2 als bijlagen. "Gladder" vertaald als glad gepolijst steen + vloeiende omtrek (vertaling Claude, zie vraag aan Jordi).
+
+### Prompt fase 2, ronde 3 (nieuw gesprek; bijlagen: foto beeldje + fase2_ronde2.png)
+```
+Attached: (1) a photo of a stone mosaic jaguar figurine from Mexico, (2) the current attempt at a Pokémon based on it. The current attempt is better: keep it stylized and made of stone mosaic pieces. But it must be less buff, more jaguar and smoother.
+
+Design a pure Rock-type jaguar Pokémon, the fully evolved (second and final) stage of a two-stage line, inspired by the figurine: a stylized stone mosaic jaguar, the body built from inlaid stone pieces with thin seams in blue/lilac, reddish-brown, black and cream like the figurine. No fur, no spots or rosettes. Less buff: not bulky or muscular. More jaguar: the proportions of a real jaguar. Smoother: smooth, polished stone like the figurine and smooth, flowing outlines. As the final stage it is beautiful and advanced in material and colour. Head inspired by the figurine: open mouth, white fangs, round black eye.
+
+Pose: standing on all four legs, body in 3/4 view facing left, head turned slightly more towards the viewer than the body. Compact composition that fits in a square, legs close to the body.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left. Plain white background. No ground, no rocks, no shadow, no glow or effects.
+
+AVOID: bulky/buff/bear-like body, a realistic jaguar with a painted pattern, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
+```

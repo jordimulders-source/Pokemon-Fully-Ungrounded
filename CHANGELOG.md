@@ -1469,3 +1469,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.355] - Abra-regional: ogen 1 px naar rechtsboven (variant E)
 - Jordi: "schuif beide ogen iets meer naar rechtsboven, want nu zit links vast aan de rand". `kleur_r6/abra_r6_E.png` = D met beide ogen (+1,−1); oude oogplek terug naar de r5-vulling. `ogen_E.png`.
+
+### [v0.0.356] - Abra-regional: ogen 1 px terug naar links (variant F)
+- Jordi: "ogen weer 1 pixel naar links, verhouding klopt niet meer". `kleur_r6/abra_r6_F.png` = E met beide ogen 1 px naar links (= D 1 px omhoog). `ogen_F.png`.

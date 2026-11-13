@@ -1,15 +1,15 @@
 # Gemini-prompts v2A en v2B (13 nov)
 
-Jordi na ronde 1: "Probeer allebei" (A = playing possum op de zij, B = ingezakte Abra-zit). Elk in een **nieuw gesprek**, met dezelfde drie bijlagen als v1 (Abra, regionale Kadabra, opossumfoto). Ronde 1 niet als bijlage (GEMINI.md: een draft als bijlage sloopt vaak wat goed is).
+Jordi na ronde 1: "Probeer allebei" (A = playing possum op de zij, B = ingezakte Abra-zit). Elk in een **nieuw gesprek**. Jordi: "nee alleen regionale kadabra doen we erbij" → enige bijlage: `bijlage_kadabra_regional.png`; Abra en de opossum staan in woorden. Ronde 1 niet als bijlage (GEMINI.md: een draft als bijlage sloopt vaak wat goed is).
 
 ## v2A: playing possum
 
 ```
 Design a regional form of Abra and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
 
-Attachment 1 is the original Abra: keep it clearly recognizable as Abra (head shape, pointed ears, closed eyes, no mouth, segmented body plates, three-fingered hands and feet, tail).
-Attachment 2 is its evolution, the regional Kadabra. Use it ONLY for the skin color of this evolutionary line (grey with a light violet sheen in the shadows) and the style. Do NOT copy its pose, its markings, its card or its black-and-white tuxedo pattern.
-Attachment 3 is a real opossum "playing dead". Use it for the limp body language and a few opossum traits.
+It must stay clearly recognizable as Abra: Abra's fox-like head with big pointed ears, closed eyes, no mouth, segmented body plates on the shoulders, three-fingered hands and feet, a tail.
+The attached image is its evolution, the regional Kadabra. Use it ONLY for the skin color of this evolutionary line (grey with a light violet sheen in the shadows) and the style. Do NOT copy its pose, its markings, its card or its black-and-white tuxedo pattern.
+Its body language is that of an opossum "playing dead".
 
 CONCEPT
 - Pure Dark type. A shady little street urchin who wants to become a magician but is not one yet. It carries nothing.
@@ -42,9 +42,9 @@ AVOID
 ```
 Design a regional form of Abra and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
 
-Attachment 1 is the original Abra: keep it clearly recognizable as Abra (head shape, pointed ears, closed eyes, no mouth, segmented body plates, three-fingered hands and feet, tail).
-Attachment 2 is its evolution, the regional Kadabra. Use it ONLY for the skin color of this evolutionary line (grey with a light violet sheen in the shadows) and the style. Do NOT copy its pose, its markings, its card or its black-and-white tuxedo pattern.
-Attachment 3 is a real opossum "playing dead". Use it for the limp body language and a few opossum traits.
+It must stay clearly recognizable as Abra: Abra's fox-like head with big pointed ears, closed eyes, no mouth, segmented body plates on the shoulders, three-fingered hands and feet, a tail.
+The attached image is its evolution, the regional Kadabra. Use it ONLY for the skin color of this evolutionary line (grey with a light violet sheen in the shadows) and the style. Do NOT copy its pose, its markings, its card or its black-and-white tuxedo pattern.
+Its body language is that of an opossum "playing dead".
 
 CONCEPT
 - Pure Dark type. A shady little street urchin who wants to become a magician but is not one yet. It carries nothing.

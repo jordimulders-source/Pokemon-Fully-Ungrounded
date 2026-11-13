@@ -1066,3 +1066,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.246] - Octillery-evolutie: prompt P6 (from scratch)
 - Jordi vindt de ingekorte r16 ook niet mooi; startprompts zonder bijlage met het hele ontwerp in woorden en alle lessen van de sessie: P6A (twee gelijke korte rupsbanden + vier tentakels) en P6B (geen rupsbanden, zes losse tentakels, uitdrukkelijk niet opgebold).
+
+### [v0.0.247] - Octillery-evolutie: model v4 (onderkant geplakt)
+- Gemini r18–r20 (P6A/P6B) vastgelegd; kop en tentakels niet beter dan r16 (Jordi). Op Jordi's plan: rechter rupsband van r16 gekopieerd naar links (achter het lijf), zuignappen geel, wratten op de twee lage tentakels: `octillery_evo/samenvoeg/model_v4.png` (`onderkant.py`). Wacht op Jordi.

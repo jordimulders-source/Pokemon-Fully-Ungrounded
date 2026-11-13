@@ -47,3 +47,7 @@ De oude krullen verdwijnen. Kop, mantel, ogen, mond: 100% r5 (ontwerp, textuur, 
 - Jordi (12 nov) over `af/` (r5): "hoe komt deze door de keuring heen?" · "er gaat echt zoveel fout dat het niet eens zin heeft om het allemaal te benoemen" → afgekeurd; `af/` is géén eindresultaat.
 - Jordi (12 nov): "ik vind echt letterlijk geen enkel onderdeel goed gelukt".
 - Jordi over `samenvoeg/r16_kort.png` (12 nov): "ook niet mooi he".
+
+## Model v4 (13 nov)
+- Jordi: model = de versie die we al gebruikten (r16 met rupsbanden; hij stuurde `samenvoeg/vel_r16_kort.png`): "deze gebruikten we al" · "als we die rupsbanden verbeteren zijn we er". Plan Jordi: rupsbanden isoleren en netjes aan de onderkant plakken; "Ik vind de oorspronkelijke rupsband best goed, alleen hij mist dus de suction cups"; de overige 2 tentakels ook suction cups.
+- Uitgevoerd (`samenvoeg/onderkant.py -290 -10` → `samenvoeg/model_v4.png`, vel `vel_model_v4.png`): rechter rupsband van r16 uitgeknipt (floodfill binnen de omlijning) en als kopie links achter het lijf geplakt (zelfde richting, twee evenwijdige rupsbanden); oude linker rupsband weg; ringen op de uiteinden geel; 3 gekopieerde gele wratten op elk van de twee lage tentakels. Rest pixelgelijk aan r16. 64×64-toets: 62×56.

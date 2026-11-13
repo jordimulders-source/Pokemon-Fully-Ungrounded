@@ -1375,3 +1375,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.327] - Idee: sneeuwbol-lijn die Cosmic wordt
 - Jordi: "ik zat te denken aan een pokemon lijn die begint als snow globe en daarna cosmic wordt". Letterlijk in IDEEEN.md (bij Sneeuwbol-Pokémon) en POKEMON.md; uitwerking open.
+
+### [v0.0.328] - Sneeuwbol-lijn: eerste richting
+- Jordi: eindvorm blijft Ice/Cosmic, groeit uit naar "een soort cosmisch ijs sferisch ding", sneeuwglobe moet een hybride zijn; begint puur Ice en vroeg te vangen, mogelijk 3 fases. Letterlijk in IDEEEN.md, met voorstellen van Claude (open).

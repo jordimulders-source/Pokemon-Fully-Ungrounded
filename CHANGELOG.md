@@ -1397,3 +1397,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.333] - Abra-regional: sprite r5
 - Jordi over r4: linkeroog diagonaler ("desnoods doe je de linkerpixel 1 omhoog"), lijnwerk niet overal mooi, linkerarm te recht, rare witte pixel in het rechteroor, kop en rechts de staart te veel rechte lijnen.
 - r5 (verse maker, 42 px t.o.v. r4): oog A (linkerpixel omhoog) en B (modeldiagonaal), rechteroor-binnenlijn als boog + gat (31,18) dicht (meethulpje telde hooglicht als achtergrond), rechterrand kop en kinlijn naar de modellijn, linkerarm hol zoals het model, staart rechts afgerond (2 silhouetpixels) en bovenrand zwart zoals het model. `abra_regional/kleur_r5/`.
+
+### [v0.0.334] - Abra-regional: r6, ogen hangen meer
+- Jordi: "kan je beide ogen nog iets meer laten hangen? zoals in het model?". Model gemeten: beide ogen zakken naar de neus toe. r6 (Claude, `kleur_r6/maak_r6.py`): A = rechteroog een nette diagonaal (30,28)(29,29)(28,30) + linkeroog 3 px diagonaal (24,31 erbij); B = alleen het rechteroog. Close-up `kleur_r6/ogen.png`.

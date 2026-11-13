@@ -1382,3 +1382,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.329] - Abra-regional: sprite r1
 - Maker: Gemini-raster teruggehaald (pitch 8 px, natief 127×127, figuur 96×96), exacte 2×2-reductie → 48×49 (1071 px; Abra 951, regionale Kadabra 1232), 10 modeltonen. 12 pixels gerepareerd (buitenrand, gesloten ogen); vlekjes/streepjes, oorkerf en staartrand onaangeroerd. `abra_regional/kleur_r1/` (vel, LOG).
 - Open: handen/vingers lezen niet na de reductie, omlijning ±33%, linkeroog 1 px, huidtonen grijzer dan de regionale Kadabra.
+
+### [v0.0.330] - Abra-regional: sprite r2 (Krassault-recept)
+- Silhouet bevroren (diff 0 buiten de handen; 3 vingergaatjes uit het model erbij), 9 kleuren, lijnkleur grijs-violet, bijna-zwart 34,6% → 21,3%, 53 modelvlekjes behouden, ogen op de gemeten modelplek. `abra_regional/kleur_r2/`.
+- Open (Claude op 8×): onderhelft (armen, handen, benen) nog mozaïek; rechterhand; lijnen samen ±41%.

@@ -1452,3 +1452,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.350] - Sneeuwbolslak: frontsprite af
 - Jordi: "surskit is de enige die redelijk past, dus ga maar voor die en stuur hem naar de eindkeuring".
 - Eindkeuring: PASS met 2 losse pixels gerepareerd. `sneeuwbolslak/af/sneeuwbolslak.png` (+ `_8x.png`), op het overzichtsvel (`showcase/frontsprites_af.png`). Stand van zaken: 31 frontsprites af. Les in GEMINI.md.
+
+### [v0.0.351] - CLAUDE.md: niet meer naar projectgrounded pushen
+- Jordi: "nee er moet niet naar projectgrounded gepushed worden, geen idee hoe dat in claude.md is gekomen". Regel in Stand van zaken vervangen.

@@ -51,3 +51,11 @@ De oude krullen verdwijnen. Kop, mantel, ogen, mond: 100% r5 (ontwerp, textuur, 
 ## Model v4 (13 nov)
 - Jordi: model = de versie die we al gebruikten (r16 met rupsbanden; hij stuurde `samenvoeg/vel_r16_kort.png`): "deze gebruikten we al" · "als we die rupsbanden verbeteren zijn we er". Plan Jordi: rupsbanden isoleren en netjes aan de onderkant plakken; "Ik vind de oorspronkelijke rupsband best goed, alleen hij mist dus de suction cups"; de overige 2 tentakels ook suction cups.
 - Uitgevoerd (`samenvoeg/onderkant.py -290 -10` → `samenvoeg/model_v4.png`, vel `vel_model_v4.png`): rechter rupsband van r16 uitgeknipt (floodfill binnen de omlijning) en als kopie links achter het lijf geplakt (zelfde richting, twee evenwijdige rupsbanden); oude linker rupsband weg; ringen op de uiteinden geel; 3 gekopieerde gele wratten op elk van de twee lage tentakels. Rest pixelgelijk aan r16. 64×64-toets: 62×56.
+
+## Sprite 2 (13 nov) – model `referenties/model_v4.png`
+Jordi letterlijk:
+- "ok de afwerking is niet helemaal mooi, je ziet duidelijk dat het erop geplakt is? Maakt dat uit voor het bouwen van de sprite? Anders gaan we dat nu niet fixen"
+- "ja, afwerking is echt heel belangrijk, belijning moet kloppen, aansluiting moet kloppen, niks moet zweven. Zie de rupsbanden als een soort assets, vooral degene het verst van ons af, als het niet netjes aansluit kan je die achter de rest van de sprite verstoppen desnoods. Dus het silhouet hoeft niet 100% te leiden, dat het resultaat er natuurlijk en mooi uitziet is het belangrijkste."
+- Naam: "Als naam wilde ik het woord Assault erin verwerken. ... Krassault mogelijk, van kraken en assault. Octassault klinkt goed maar lijkt teveel op octillery"
+
+Regels voor de maker: model volgen voor ontwerp, pose en kleur; plaknaden zijn géén ontwerp. Afwerking gaat vóór silhouet: belijning en aansluiting moeten kloppen, niets zweeft. De rupsbanden zijn assets: de verste (links, achter het lijf) mag verder achter de rest verstopt worden als hij anders niet netjes aansluit.

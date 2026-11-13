@@ -62,3 +62,4 @@ Regels voor de maker: model volgen voor ontwerp, pose en kleur; plaknaden zijn g
 - Jordi over sprite 2 r2 (13 nov, op basis van Claudes beschrijving): "de kleur vind ik niet erg, rupsbanden en mond wel" → kleur (lichter/roder dan het model) is goed; rupsbanden en mondkanon repareren.
 - Jordi (13 nov): "ik stel sowieso voor om de rupsbanden wat gedeeltelijker te verstoppen, wat meer onder het lichaam te zetten".
 - Jordi (13 nov): "vooral de linkse mag meer bedekt worden".
+- Jordi (13 nov), op de vraag of de uiteinden met gele zuignappen zichtbaar blijven en de lange achterkant onder het lijf verdwijnt: "Ja, want dat is ook het meest natuurlijke, dat het achterste gedeelte meer bedekt wordt".

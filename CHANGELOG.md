@@ -1420,3 +1420,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.341] - Sneeuwbolslak: pupillen kleiner (A/B)
 - Jordi: "op de ogen na ben ik tevreden, die zijn een beetje te groot deel van de oogballen nu lijkt". Twee varianten: pupil 2 px (A) en 1 px (B), verder pixeldiff 0. Vel `sprite/maker/vel_r3.png`.
+
+### [v0.0.342] - Sneeuwbolslak: oogtype-probeersels
+- Jordi: "nee een ander type oog, dit is alle 3 niet mooi". Maker nam ogen pixel voor pixel over van Magcargo, Surskit, Gastrodon en Sliggoo (alleen de voelspriettoppen, verder diff 0). Vel `sprite/maker/vel_ogen.png`.

@@ -1091,3 +1091,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.241] - Poedelmot-lijn: tussenvorm poesrups
 - Jordi (13 nov): de tussenvorm tussen Pupoodle en Lanymph wordt een poesrups (puss caterpillar); letterlijk in `POKEMON.md` en `IDEEEN.md`. Het idee stond nog nergens in de repo. Gemini-prompt geschreven; nog geen model.
+- Poesrups Gemini ronde 1 afgekeurd (pruik); `sprites/poesrups/gemini/README.md`, les in GEMINI.md, nieuwe prompt.

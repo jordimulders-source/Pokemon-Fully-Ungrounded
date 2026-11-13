@@ -164,6 +164,7 @@ Types en dex-status gecontroleerd in de repo (`species_info/`, `DEX_IN_ROM.md`).
   - Lore voor allebei: een **cryptid**. NPC's twijfelen of hij bestaat; hij is alleen 's nachts zichtbaar, op één plek. Type Bug/Fairy, of Bug/Normal (de pluizige "poedel") als iets anders.
   - Tepuis komen nu twee keer terug (Archen, poedelmot): goed gebied voor "verloren wereld"-soorten.
   - **Besloten (Jordi, 5 nov):** eigen lijn; de larve heeft kenmerken van een poedelhond (humor), de mot is Bug/Fairy. Zie `POKEMON.md`.
+  - **Tussenvorm = poesrups** (puss caterpillar, rups van de flanelmot Megalopyge; Jordi, 13 nov): "Het moet dus vooral een harige rups zijn, mysterieus en cryptid, maar dus ook pluizig, het gaat dus om die harige rups vorm". Zie `POKEMON.md`.
 
 **Ruïnes**
 - **Tiwanaku-Golett/Golurk:** stond al op de lijst (Rock/Ghost of Ground/Psychic; repo: Ground/Ghost, in de dex). **Voorstel:** samenvoegen met de "mysterieuze ruïne-Pokémon" (Rock/Ghost of Rock/Psychic, Puma Punku). Dan is dit die Pokémon en hoeven we geen aparte fakemon te maken.

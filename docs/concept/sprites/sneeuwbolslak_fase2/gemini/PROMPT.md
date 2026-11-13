@@ -63,4 +63,40 @@ AVOID
 
 ## Reactie Jordi op r1 (13 nov)
 - "het huis is iets teveel nu een bol met ijs erop. Dat die scheurt en gaat open breken en chaotischer wordt zie ik zitten, ik vind eigenlijk de slak zelf nog teveel van hetzelfde, die moet al meer hints geven richting eindfase, dat we de kosmische kant op gaan, zonder echt het weg te geven"
-- Voorstellen Claude voor de volgende prompt (keuze open): zie het antwoord in de sessie; wordt hier aangevuld zodra Jordi kiest.
+- Voorstellen Claude: A1 korst breekt open (scherven kantelen naar buiten), A2 losse zwevende scherven, A3 storm lekt door de barsten, A4 bol en korst één klomp; B1 vuile sneeuwbal, B2 lijf naar indigo, B3 gestroomlijnd lijf (oogstelen naar achteren), B4 langere staart, B5 sterglans in de ogen.
+- Jordi: "ik vind het wel tof dat de bol bevriest en al wat meer de komeet weggeeft, barsten prima, scherven die naar buiten kantelen kunnen we niet uitbeelden, losse scherven ook niet. Langere staart prima, de slak moet minder slak worden en al meer richting kosmisch ontwerp gaan, kan je daarmee vooruit? Gestroomlijnd lijf ook goed"
+- Dus: wel bol bevriest + barsten, B3, B4, minder slak/meer kosmisch. Niet: A1-scherven, A2. Niet genoemd en dus niet in de prompt: A3, B1, B2, B5.
+
+# Prompt v2 (13 nov): nieuw gesprek
+
+Bijlagen: 1. `bijlage_fase1_8x.png` (fase 1), 2. `r1_gemini.png` (eerste poging fase 2).
+Keuzes Claude (schrappen mag): voetstuk en lijfkleur blijven (niet besproken, stonden in r1 zonder bezwaar); de inhoud van de bol niet genoemd behalve dat hij bevriest; nog steeds geen sterren/galaxy (Jordi: "zonder echt het weg te geven").
+
+```
+Attachment 1 is the official-style Gen 3 front sprite of an original Pokémon: a small snail whose shell is a snow globe (pure Ice type, first stage of three). Its final stage will be a long, sleek icy comet (Ice/Cosmic). Attachment 2 is a first attempt at the second stage: the direction is right, but it is still too much a snail with an ice-covered ball on its back.
+
+Design the SECOND STAGE (still pure Ice type) and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT: halfway between the snow-globe snail and the comet. Less of a snail, more towards a cosmic design: it should hint at the comet it will become, without giving it away.
+- The globe is freezing solid: frozen, frosted ice that already looks more like the icy core of a comet than a glass ball. Big, simple cracks run through it. It stays one solid shape.
+- Streamlined body: longer and lower, built for speed, the eye stalks swept back.
+- A longer tail: the frozen tail end streams out backwards in a long frosty trail, attached to the body, a clear start of a comet tail.
+- Keep the link with attachment 1: pale icy blue-white body, the reddish-brown snow-globe base as the ring where the frozen globe attaches to the body.
+
+KEEP IT READABLE AS A SPRITE
+- One clear, elongated silhouette, low and long, everything pointing backwards. Max 3 or 4 cracks, big and simple.
+
+POSE
+- Three-quarter view facing left, moving forward.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, the creature larger than the first stage but not filling the whole canvas (there is a third stage), max 16 colors, 1 px dark outline, light from top left, flat Gen 3 shading with 3 to 4 tones per color, no dithering.
+- Compact composition, everything attached to the body.
+- Plain white background. NO floor, trail on the ground, snow on the ground, shadow, base platform, glow, sparkles or effects outside the creature. No loose or floating pieces. One single creature, no extra views.
+
+AVOID
+- Not a snail carrying a ball: the frozen globe is its own body part.
+- No ice blocks or brick pattern, no cone or drill shape.
+- No stars, galaxy or planets.
+- Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
+```

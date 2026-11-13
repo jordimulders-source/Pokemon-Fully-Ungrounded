@@ -10,9 +10,9 @@ Bijlage: zelf toevoegen (Jordi): een foto van een gewone tuinslak (zijaanzicht, 
 - "ik vind de slak wel een goed idee"
 - "ja die vind ik tof, maar zorg er wel voor dat het in een sprite uit te beelden blijft."
 
-## Nog open (Jordi kiest vóór het plakken; anders de eerste optie)
-- Wat er in de bol staat: [A een piepklein besneeuwd bergje / B alleen sneeuwvlokjes / C een minuscuul huisje].
-- Kleur van het slakkenlijf: [A lichtblauw-wit / B lichtgrijs / C bleek lila].
+## Gekozen (Jordi, 13 nov: "1c en 2a")
+- Wat er in de bol staat: C, een minuscuul huisje.
+- Kleur van het slakkenlijf: A, lichtblauw-wit.
 
 ## Keuzes Claude voor leesbaarheid in een sprite (schrappen mag)
 - Bol rond en relatief groot (± de helft van de sprite), met één lichtvlek linksboven en 3–5 sneeuwpixels: glas lees je in Gen 3 aan de lichtvlek, niet aan transparantie.
@@ -27,11 +27,11 @@ Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/
 CONCEPT
 - A small snail whose shell is a snow globe. Pure Ice type, the first stage of a three-stage line, an early-game Pokémon.
 - It is ONE creature, a true hybrid: the glass globe IS its shell and grows from its back. The round base of the snow globe (like the wooden/plastic base of a souvenir snow globe) is where the shell attaches to the snail's body.
-- Inside the globe: [CONTENTS: a tiny snow-covered mountain / only snowflakes / a tiny house], with a few snowflakes floating around it. Keep the contents very simple so they read at sprite size.
+- Inside the globe: a tiny house, with a few snowflakes floating around it. Keep the contents very simple so they read at sprite size.
 - The attached photo is a real garden snail: use it for the anatomy of the body (soft foot, two long eye stalks with the eyes on top, two short lower tentacles).
 
 DESIGN
-- Body color: [BODY: pale icy blue-white / light grey / pale lilac]. Simple, cute but not a plush toy.
+- Body color: pale icy blue-white. Simple, cute but not a plush toy.
 - The globe is large and round, about half of the sprite. Show the glass with one clear highlight in the top left and a darker edge, NOT with see-through effects. 3 to 5 white snow pixels inside.
 - Readable silhouette: snail body low and long, round globe on top, eye stalks clearly visible.
 

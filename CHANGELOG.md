@@ -1388,3 +1388,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.331] - Sneeuwbolslak: Gemini-prompt fase 1
 - Jordi akkoord met fase 2 (spiraal, ijskorst, sneeuwstorm binnenin, bevroren spoor), "maar zorg er wel voor dat het in een sprite uit te beelden blijft". Lijn in POKEMON.md.
 - `sprites/sneeuwbolslak/gemini/PROMPT.md`: startprompt fase 1 (open keuzes: inhoud van de bol, kleur van het lijf; bijlage tuinslakfoto zelf toevoegen).
+
+### [v0.0.332] - Sneeuwbolslak: keuzes prompt
+- Jordi: "1c en 2a": een minuscuul huisje in de bol, lijf lichtblauw-wit. Ingevuld in `sprites/sneeuwbolslak/gemini/PROMPT.md`.

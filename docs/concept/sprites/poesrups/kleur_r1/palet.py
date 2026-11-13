@@ -9,7 +9,7 @@ PAL = [
     (146, 128, 120),  # 4 donker grijsbeige: segmentnaden in de schaduw, voetschaduw, sprietribbels
     (182, 162, 152),  # 5 grijsbeige: pootjes, sprietschaduw, naden (model voet (184,164,152))
     (206, 194, 182),  # 6 schaduw wit 2: onderkant segmenten, naden in het licht
-    (230, 224, 212),  # 7 schaduw wit 1
+    (226, 216, 200),  # 7 schaduw wit 1
     (194, 176, 162),  # 8 beige schaduw (snuit/oogvlek)
     (0, 0, 0),        # 9 (ongebruikt)
     (246, 244, 234),  # A wit (model (232-240,232-240,224))

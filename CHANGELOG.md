@@ -1372,3 +1372,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.326] - Abra-regional: Gemini-prompt v1
 - Jordi: geen mond, ogen dicht, kerf in één oor, geen vachtplukken, geen rood; meer opossum, "die er half dood bij ligt", herkenbaar Abra. Letterlijk in POKEMON.md.
 - `sprites/abra_regional/gemini/PROMPT.md` met bijlagen (originele Abra en regionale Kadabra, 8×); open keuzes: kleur van de platen en welke opossumkenmerken.
+
+### [v0.0.327] - Abra-regional: Gemini ronde 1, prompts v2A/v2B
+- Ronde 1: pose leest als kruipen (buik, poten naar voren, kop wakker, zweeft). Jordi: "Probeer allebei" → `abra_regional/gemini/PROMPT_v2.md`: A playing possum (zij/half op de rug), B ingezakte Abra-zit.

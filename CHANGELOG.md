@@ -1466,3 +1466,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.354] - Sneeuwbolslak: rondere bol, Gen 3-belijning en shading
 - Jordi (na "af"): bovenkant bol niet rond genoeg; "sowieso zijn de lijnen te strak en te zwart, ik was te vroeg" · "komt niet overeen met andere gen 3 sprites"; daarna "veel netter, nu nog shading, kleur belijning verbeteren".
 - Bovenrand bol als cirkel (`sprite/rond/rond_A.png`); verse maker na studie van Castform/Swablu/Spheal: gekleurde selout per vlak, zwart alleen onderaan en in de ogen, sikkelschaduw op bol, voetstuk en voet (`sprite/lijn/r3.png`). Nog niet gekeurd.
+
+### [v0.0.355] - Sneeuwbolslak: herkeuring, opnieuw af
+- Jordi: "keur maar". Verse keurder: PASS; 3 pixels in de bolsikkel aangepast (geen stijve band meer). Nieuwe versie in `sneeuwbolslak/af/` en op het overzichtsvel; oude versie met zwarte lijnen in `af/oud_zwartelijn/`. Les in GEMINI.md.

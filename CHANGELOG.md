@@ -1393,3 +1393,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.332] - Abra-regional: keuring r3, sprite r4
 - Onafhankelijke keurder (hoofdvraag "nog niet, wel dichtbij"; 11 MOET, 8 MAG; `kleur_r3/KEURING_r3.md`): linkeroog liep over in de kaak, rechteronderarm miste zijn rand, wangvlekje weg, en kleine lijnfouten.
 - r4 (Claude, per script `kleur_r4/maak_r4.py`): alle 11 MOET-punten (35 pixels). MAG-punten nog niet.
+
+### [v0.0.333] - Idee: Cosmic-convergente Gastly-lijn
+- Jordi's idee (convergente Gastly-lijn op stervorming) met voorstel Claude in `IDEEEN.md` (Convergente soorten): Gastarly (Bok-globule) → Jaunter/Flaunter (protoster met jets) → Dwengar (bruine dwerg). Open.

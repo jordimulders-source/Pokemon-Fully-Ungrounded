@@ -1389,3 +1389,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.331] - Abra-regional: sprite r3
 - Verse maker. Onderhelft per lichaamsdeel als banden uit het model (meerderheid per band), binnenlijnen alleen waar het model ≥2 zwarte pixels heeft, toonovergangen als toongrens, lichtere plooikleur voor vingers/tenen, lichte omlijning op de staartbovenrand, rechterhand per pixel uit het model. Kop, romp en silhouet bevroren (diff 0). Lijnen samen 40,7% → 32,3%, zwart 20,9%; 11 kleuren. `abra_regional/kleur_r3/`.
+
+### [v0.0.332] - Abra-regional: keuring r3, sprite r4
+- Onafhankelijke keurder (hoofdvraag "nog niet, wel dichtbij"; 11 MOET, 8 MAG; `kleur_r3/KEURING_r3.md`): linkeroog liep over in de kaak, rechteronderarm miste zijn rand, wangvlekje weg, en kleine lijnfouten.
+- r4 (Claude, per script `kleur_r4/maak_r4.py`): alle 11 MOET-punten (35 pixels). MAG-punten nog niet.

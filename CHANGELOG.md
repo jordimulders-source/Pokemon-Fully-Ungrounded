@@ -1397,3 +1397,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.334] - Sneeuwbolslak: Gemini-prompt v2
 - Jordi: "ja schrijf die prompt, voetstuk mag blijven". Prompt v2 (nieuw gesprek, r1 als bijlage): kop met gezichtje, contrast glas/lijf, geen dithering, strakke omlijning. In `sprites/sneeuwbolslak/gemini/PROMPT.md`.
+
+### [v0.0.335] - Sneeuwbolslak: Gemini-ronde 2
+- Resultaat prompt v2 bewaard: `sprites/sneeuwbolslak/gemini/r2_gemini.png` (omlijning, contrast en ogen beter; kop nog klodderig, onderste voelsprieten lijken pootjes, geen mond).

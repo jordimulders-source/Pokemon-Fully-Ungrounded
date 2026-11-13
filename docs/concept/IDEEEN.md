@@ -43,7 +43,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Steenmozaïek-katachtige, Rock-type, eigen nieuwe lijn** (Jordi, 10 nov: "ok we maken een nieuwe"; geen regional, want de enige roofkat in de dex is Liepard; "het is sowieso een katachtige. en dan zou ik daar een rock type van willen maken"; "hier een pokemon van maken lijkt me ook wel tof"; foto `sprites/steenmozaiek/referenties/beeldje_jordi_mexico.png`): een kop met open muil en witte hoektanden, ingelegd met stukjes blauw, roodbruin, zwart en crèmekleurig gesteente. Claude: waarschijnlijk een jaguarkop (mogelijk een gevederde slangenkop zoals in Chichén Itzá); stenen lijken op sodaliet, jaspis, obsidiaan en onyx/marmer. Haakjes: Rock-type (dun!), de jaguar is weer open (Raitora voorlopig niet), Chavín-jaguars in Peru als Zuid-Amerikaanse link.
 - **Nazca-astronaut** (de "uilman" van Nazca; een soortgelijke Pokémon naast Sigilyph, geen vorm of evolutie; Jordi 9 nov: "astronaut komt erin").
 - **Golofa-kever** (Jordi, 9 nov: "ik wil die beetle erin"): door Jordi zelf gefotografeerd in Salento (`sprites/golofa/referenties/foto_jordi_salento.webp`); de twee grote bogen zijn de extreem lange voorpoten. **Open:** regional Heracross of regional Pinsir. Repo: Heracross Bug/Fighting, Pinsir Bug/Ground. Achtergrond (Claude): Heracross is een neushoornkever (naam van de herculeskever, die in Midden- en Zuid-Amerika leeft); *Golofa* is ook een neushoornkever (zelfde onderfamilie Dynastinae). Pinsir wordt meestal aan een vliegend hert toegeschreven; in Chili en Argentinië leeft het vliegend hert van Darwin (*Chiasognathus grantii*) met enorme kaken. **Darwins vliegend hert geschrapt** (Jordi, 9 nov: "net niet uniek genoeg").
-- **Spaceworld-ghosts Norowara en Kyonpan** komen in de game (Jordi, 9 nov); Raitora voorlopig niet.
+- **Spaceworld-ghosts Norowara en Kyonpan** komen in de game (Jordi, 9 nov); Raitora gaat er helemaal uit (Jordi, 13 nov).
 
 **Brainstormfase**
 - Invulling van de Ice/Poison-Pokémon (aardappel/chuño, Tentacool-vorm en ozongat: Jordi niet overtuigd; nieuwe voorstellen: bevriezende gifkikker, bedorven ijsje, bevriezing-ijsgeest).
@@ -178,7 +178,7 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
   - de **Puya raimondii** staat al op de lijst met iconische planten, maar is geen cactus.
 
 ## Jaguar (idee, Jordi 22 okt)
-- **Invulling (Jordi, 23 okt): Kotora/Raitora (Spaceworld-beta) als jaguar** (Electric), zie `POKEMON.md`.
+- (Vervallen 13 nov: Raitora gaat er helemaal uit.) **Invulling (Jordi, 23 okt): Kotora/Raitora (Spaceworld-beta) als jaguar** (Electric), zie `POKEMON.md`.
 - Er bestaat nog geen echte jaguar-Pokémon (Liepard = luipaard, Incineroar = tijger, Raikou/Entei = legendaries, Luxray = lynx, Pyroar = leeuw).
 - Inspiratie: het heilige dier van de Amazone en van Chavín (sjamanen die in jaguars veranderen, zie de ruïne-Pokémon); jaagt ook in het water, met een beet door de schedel; in het Pantanal en de Amazone.
 - Geen probleem naast de poema van het legendary-trio (Kay Pacha): jaguars en poema's zijn sowieso anders (Jordi). De jaguar is gevlekt, gedrongen, een jager in jungle en water; de poema is effen, slank, een bergkat van de Andes.

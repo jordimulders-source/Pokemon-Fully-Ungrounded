@@ -92,9 +92,9 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
   - **Norowara** (#229) en **Kyonpan** (#230): **komen in de game** (Jordi, 9 nov; 23 okt nog "vrijwel zeker"), ook al zijn ze niet Zuid-Amerikaans;
   - de **tank-versie van Octillery** (#210-beta; valt af, Jordi 10 nov: zie Octillery-evolutie);
   - de **andere Delibird** (#225 Gifuto, de cadeau-vogel);
-  - **Kotora** en **Raitora** (#226/#227): **Raitora voorlopig niet** (Jordi, 9 nov); eerder: Raitora wordt een jaguar (Jordi, 23 okt), een gevlekt bliksemwelpje dat een Electric-jaguar wordt; vult het jaguar-idee uit `IDEEEN.md` in;
+  - **Kotora** en **Raitora** (#226/#227): **Raitora gaat er helemaal uit** (Jordi, 13 nov: "raitora gaat er helemaal uit"; 9 nov nog "voorlopig niet"); eerder: Raitora wordt een jaguar (Jordi, 23 okt), een gevlekt bliksemwelpje dat een Electric-jaguar wordt; vult het jaguar-idee uit `IDEEEN.md` in;
   - **Purakkusu** (#234).
-  - Voor ons gebruik: ze opnieuw als Gen 3-sprite tekenen in onze stijl (niet de beta-sprites zelf gebruiken), met een plek in de regio (Raitora als Electric-tijger is een mooie Zuid-Amerikaanse Electric-kat naast de jaguar-idee; Octillery-tank kan in een havenstad of militaire basis).
+  - Voor ons gebruik: ze opnieuw als Gen 3-sprite tekenen in onze stijl (niet de beta-sprites zelf gebruiken), met een plek in de regio (Octillery-tank kan in een havenstad of militaire basis).
 
 ### Octillery-evolutie (Jordi, 10 nov)
 - Remoraid → Octillery → **kraken met wapens**, Water/Steel. Geen oorlogsschip ("bij een warship [zijn] de kanonnen niet pronounced genoeg"); de lijn gaat om afschieten.

@@ -1343,3 +1343,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.318] - Twee vergeten gesprekken samengevoegd
 - De brainstorm van 8–10 nov (branch `beautiful-maxwell`, oorspronkelijk v0.0.225–264, hier hernummerd tot v0.0.277–316) en de regionaam Sielo (branch `eager-sagan`, was v0.0.225) waren nooit in main gekomen. Nu samengevoegd; in `POKEMON.md` gelden de nieuwste besluiten (harpij = Braviary-vorm, Norowara/Kyonpan erin, tank-Octillery vervalt ten gunste van Krassault, condor alleen als legendary).
+
+### [v0.0.319] - Raitora vervalt
+- Jordi (13 nov): "raitora gaat er helemaal uit". Bijgewerkt in `POKEMON.md` (Spaceworld-ontwerpen) en `IDEEEN.md`. Les over vergeten branches in `docs/lessen/AGENTS.md`.

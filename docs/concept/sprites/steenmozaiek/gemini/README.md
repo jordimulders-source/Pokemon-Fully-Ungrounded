@@ -98,3 +98,19 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pi
 AVOID: chibi or buff proportions, a bear or bulldog shape, a smooth digital illustration or painting, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
 ```
 5. **`fase2_ronde5.png` gekozen** (= `../referenties/model_gekozen.png`); Jordi: "Ik ben tevreden op een soort van extra oog na op de wang". De grotere staart is Jordi's eigen bijsturing in Gemini.
+
+## Fase 1 (welp), prompt v2 (13 nov; vervangt de oude welp-prompt bovenaan)
+Nieuw gesprek; bijlagen: (1) foto beeldje, (2) `../referenties/model_gekozen.png` (de gekozen volwassen vorm), (3) een foto van een echte jaguarwelp.
+```
+PIXEL ART SPRITE, NOT AN ILLUSTRATION.
+
+Attached: (1) a photo of a stone mosaic jaguar figurine from Mexico, (2) a Pokémon inspired by it: a pure Rock-type adult jaguar made of carved stone mosaic, the final stage of a two-stage line, (3) a photo of a real jaguar cub.
+
+Design its pre-evolution (first of two stages): a jaguar cub, pure Rock-type, a carved stone mosaic inspired by the figurine, clearly the same line as the adult in attachment 2. Anatomy and proportions of the real jaguar cub in attachment 3. The adult is more beautiful and more advanced in material and colour than this cub: keep the cub's material and colours less advanced than the adult's. Head inspired by the figurine: open mouth, white fangs, one round black eye with a white highlight. No fur, no spots or rosettes. One eye visible on the face, no second eye on the cheek.
+
+Pose: standing on all four legs, body in 3/4 view facing left, head turned slightly more towards the viewer than the body. Four legs and one tail in total. Compact composition that fits in a square.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, visible pixels, 1px dark outline, light from the top left. Plain white background. No ground, no rocks, no shadow, no glow or effects.
+
+AVOID: a copy of the adult made smaller, chibi or buff proportions, a smooth digital illustration or painting, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
+```

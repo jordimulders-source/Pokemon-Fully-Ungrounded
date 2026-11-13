@@ -1105,3 +1105,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.243] - Kadabra-regional af
 - Jordi: "B want A is geen ruit, maak maar rond". `kadabra_regional/af/` = kleur_r7 B (ruit 5×5); op het overzichtsvel als "Kadabra (regional)", Dark/Psychic (28 sprites); Stand van zaken en lessen (GEMINI.md) bijgewerkt. Gepusht naar main.
+- Namen (Jordi): "ze blijven kadabra en alakazam heten"; POKEMON.md en Stand van zaken bijgewerkt.

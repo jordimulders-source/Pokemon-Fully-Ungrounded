@@ -63,3 +63,4 @@ Regels voor de maker: model volgen voor ontwerp, pose en kleur; plaknaden zijn g
 - Jordi (13 nov): "ik stel sowieso voor om de rupsbanden wat gedeeltelijker te verstoppen, wat meer onder het lichaam te zetten".
 - Jordi (13 nov): "vooral de linkse mag meer bedekt worden".
 - Jordi (13 nov), op de vraag of de uiteinden met gele zuignappen zichtbaar blijven en de lange achterkant onder het lijf verdwijnt: "Ja, want dat is ook het meest natuurlijke, dat het achterste gedeelte meer bedekt wordt".
+- Jordi over sprite 2 r3 (13 nov): "de rupsbanden zijn veel slechter geworden en je hebt ze niet dichter bij elkaar gezet, prutswerk". Claude had "meer onder het lichaam zetten" opgevat als het achterste deel verstoppen en de maker de rupsbanden laten hertekenen; bedoeld was: de rupsbanden zelf dichter bij elkaar / verder onder het lijf schuiven.

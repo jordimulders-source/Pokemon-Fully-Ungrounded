@@ -18,6 +18,6 @@ for y in range(64):
     r=red[sl]
     if r.sum()==0: a[y,x]=1; continue
     l=np.median(L[sl][r])
-    a[y,x]=3 if l<58 else 4 if l<82 else 5 if l<112 else 6
+    a[y,x]=3 if l<72 else 4 if l<97 else 5 if l<122 else 6
     if D>=0.28 and a[y,x]>3: a[y,x]-=1
 cfg.write(a,'onder.txt')

@@ -1081,3 +1081,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra ronde 10: A (open hand met duim + 2 vingers, "het beste gelukt tot nu toe") en B (meer de houding van Kadabra); Jordi neigt naar B.
 - Kadabra: model = ronde 10 B (Jordi: "de 2e is beter"); beide handen naar 3 vingers in `model/model_B_hand3.png` (wacht op Jordi); extra bronnen in `referenties/`.
 - Kadabra-model: kaarthand zonder nagels op de gebogen vingers (Jordi).
+- Kadabra-model: kaarthand omgedraaid (handpalm naar de kijker, duim over de kaart; Jordi: "zouden wij als kijker de binnenkant van de hand moeten zien").

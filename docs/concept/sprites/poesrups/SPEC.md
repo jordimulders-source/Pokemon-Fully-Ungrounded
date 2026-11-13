@@ -24,5 +24,10 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-model namaken) + `docs/less
 - Formaat (keuze Claude, fase 2 van 3 tussen de larve 40 px/778 px en de mot 62 px/1782 px): **54 px breed**.
 - Silhouet: `silhouet/silhouet.png` (model direct verkleind, `silhouet/sil.py`; 54×33, 1046 px, x 5–58, y 29–61, schaal 16,648 modelpx per spritepixel, links 5, boven 29; modelbox x 69–968, y 240–794). Rode omtrek over het model: `silhouet/silhouet_over_bron.png`; kleurgids: `silhouet/gids_gemiddeld.png`. Bevroren; alleen dunne delen (krullen van de kam, pootjes) mogen met de hand.
 
+## Af (13 nov)
+- Rondes: r1 (stekelkam), **r2 (Jordi: "Ik vind ronde 2 al uitstekend")**, r3 (kam groter: "te overdreven", vervalt), r2b (variant, niet gekozen: "ik vind links mooier"), r4 = kleurronde op r2 (alpha-diff 0, ogen diff 0, 118 px van tint gewisseld, palet iets contrastrijker en warmer).
+- Eindkeuring Dragonfly Cave + Gen 3 (`af/poesrups.png.eindkeuring_dfc.md`): **PASS**, met 2 optionele tintreparaties (wit eilandje achterste segment A→7, 6 px; onderrand midden 6→5, 14 px); beide toegepast door Claude (20 px, alpha-diff 0).
+- **`af/poesrups.png`** (+ `poesrups_8x.png`, `normal.pal`). Oog: Weedle 2×2 (`graphics/pokemon/weedle/anim_front_gba.png`), ver oog 1×2. Type **Bug/Fairy** (Jordi).
+
 ## Open
-- Naam, type en data later (Jordi, 5 nov).
+- Naam en data later (Jordi, 5 nov).

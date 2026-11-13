@@ -24,6 +24,7 @@ items=[
 ("picapau/af/picapau.png",'"Picapau"',"electric/flying"),
 ("picapau_evo/af/picapau_evo.png",'"Picaraio"',"electric/flying"),
 ("poedellarve/af/poedellarve.png",'"Pupoodle"',"bug/normal"),
+("poesrups/af/poesrups.png",'Poesrups',"bug/fairy"),
 ("poedelmot/af/poedelmot.png",'"Lanymph"',"bug/fairy"),
 ("potoo/af/potoo.png",'"Bootoo"',"ghost/normal"),
 ("silicobra_uyuni/af/silicobra_uyuni.png",'"Silicobra" (regional)',"ground/electric"),

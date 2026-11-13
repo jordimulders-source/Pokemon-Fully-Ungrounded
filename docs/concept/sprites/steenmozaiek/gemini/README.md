@@ -29,13 +29,13 @@ AVOID: plush/Neopets look, realistic painting, extra rocks or crystals growing f
 ```
 
 ## Rondes fase 2
-1. `fase2_ronde1.png`: Jordi (13 nov, letterlijk): "Deze is ok, maar hij mag nog meer stylized, meer steen/mozaiek achtig. Nu is het puur een tijger met een patroon". Ronde 2: nieuw gesprek, foto + ronde 1 als bijlagen, prompt hieronder. Toegevoegd door Claude (voorstel, niet van Jordi): het lijf zelf opgebouwd uit hoekige stenen stukken met rechte randen, geen vacht en geen vlekken-/rozetpatroon.
+1. `fase2_ronde1.png`: Jordi (13 nov, letterlijk): "Deze is ok, maar hij mag nog meer stylized, meer steen/mozaiek achtig. Nu is het puur een tijger met een patroon" · "en uiteraard moet het een jaguar zijn". Ronde 2: nieuw gesprek, foto + ronde 1 als bijlagen, prompt hieronder. Toegevoegd door Claude (voorstel, niet van Jordi): het lijf zelf opgebouwd uit hoekige stenen stukken met rechte randen, geen vacht en geen vlekken-/rozetpatroon; jaguar uitgeschreven als brede, zware kop en gedrongen, gespierd lijf.
 
 ### Prompt fase 2, ronde 2 (nieuw gesprek; bijlagen: foto beeldje + fase2_ronde1.png)
 ```
 Attached: (1) a photo of a stone mosaic jaguar figurine from Mexico, (2) a first attempt at a Pokémon based on it. The first attempt is OK, but it is purely a tiger with a pattern on it. It must be much more stylized and much more stone/mosaic-like, like the figurine itself.
 
-Design a pure Rock-type jaguar Pokémon, the fully evolved (second and final) stage of a two-stage line, inspired by the figurine. It should read as a stylized stone mosaic sculpture come to life, not as a furry animal with a pattern: the body itself is built from angular inlaid stone pieces with straight edges and thin seams, in blue/lilac, reddish-brown, black and cream like the figurine. No fur, no spots or rosettes. As the final stage it is beautiful and advanced in material and colour. Head inspired by the figurine: open mouth, white fangs, round black eye. Jaguar build.
+Design a pure Rock-type jaguar Pokémon, the fully evolved (second and final) stage of a two-stage line, inspired by the figurine. It should read as a stylized stone mosaic sculpture come to life, not as a furry animal with a pattern: the body itself is built from angular inlaid stone pieces with straight edges and thin seams, in blue/lilac, reddish-brown, black and cream like the figurine. No fur, no spots or rosettes. As the final stage it is beautiful and advanced in material and colour. Head inspired by the figurine: open mouth, white fangs, round black eye. It must clearly be a jaguar (not a tiger): jaguar build, a heavy broad head and a stocky, muscular body.
 
 Pose: standing on all four legs, body in 3/4 view facing left, head turned slightly more towards the viewer than the body. Compact composition that fits in a square, legs close to the body.
 

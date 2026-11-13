@@ -11,7 +11,7 @@ drk=(lum<50)&~bg; blk=(lum<24)&~bg
 PAL=[(255,0,255),(24,10,12),(80,22,30),(106,34,45),(124,44,56),(148,52,66),(164,66,78),(184,100,108),(140,74,84),(180,112,116),(170,128,52),(228,196,112),(244,226,156)]
 def cls(px):   # px: Nx3 niet-donker, niet-geel -> index
     r,g,b=px.mean(0); l=0.299*r+0.587*g+0.114*b; sat=(max(r,g,b)-min(r,g,b))/max(r,g,b,1)
-    if sat<0.50 and l>88: return 8 if l<112 else 9
+    pass
     for i,t in ((3,60),(4,73),(5,89),(6,108)):
         if l<t: return i
     return 7

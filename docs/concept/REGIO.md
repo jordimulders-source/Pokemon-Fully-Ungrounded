@@ -1,7 +1,8 @@
 # Regio
 
 ## Naam
-- De regionaam wordt een **woordgrap in het Spaans met 'ver weg' (faraway)** (Jordi). Benoemen zoals Pokémon dat deed bij Kalos, Alola en Paldea: een verzonnen, korte naam met een herkenbare knipoog naar de taal/cultuur. Jordi wacht op een inspiratiemoment.
+- **De regio heet Sielo** (Jordi, 10 nov: "sielo akkoord"). Van het Spaanse *cielo* (hemel), met een S in plaats van de C: herkenbaar maar eigen, zoals *aloha* → Alola. Spreekt in het Spaans en het Engels ongeveer hetzelfde uit (*sjelo* / *see-EH-lo*); gekozen boven *Siello* vanwege die uitspraak (dubbele l).
+- Eerder idee: een Spaanse woordgrap met 'ver weg' (faraway); niet de uiteindelijke keuze. Eisen bij het zoeken (Jordi): makkelijk te onthouden, 5–6 letters, geen Spaanse j (niet naar het Engels te vertalen), geen letterlijk woord maar een Alola-trucje, geen kopie van bestaande regionamen.
 
 ## Opzet
 - **Start in een La Paz-achtige stad** (hoog, kabelbanen), met een **ijsgebied** ernaast (Cordillera Real). Sneeuw vroeg in de game, niet als eindgebied. Geen standaardopening met kleine stad en grasroute.

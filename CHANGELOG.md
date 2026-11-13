@@ -1337,3 +1337,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.316] - Steenmozaïek-kat (Rock), zeeleeuw-Spheal
 - `IDEEEN.md`: Rock-katachtige naar Jordi's steenmozaïekbeeldje uit Mexico (foto in `sprites/steenmozaiek/referenties/`); regionale Spheal/Sealeo met nieuwe evolutie, typevoorstellen voor de zeeleeuw.
+
+### [v0.0.317] - De regio heet Sielo
+- Regionaam gekozen: **Sielo** (van *cielo*, hemel; Alola-trucje met de S). Vastgelegd in `docs/concept/REGIO.md` met de eisen die bij het zoeken golden.
+
+### [v0.0.318] - Twee vergeten gesprekken samengevoegd
+- De brainstorm van 8–10 nov (branch `beautiful-maxwell`, oorspronkelijk v0.0.225–264, hier hernummerd tot v0.0.277–316) en de regionaam Sielo (branch `eager-sagan`, was v0.0.225) waren nooit in main gekomen. Nu samengevoegd; in `POKEMON.md` gelden de nieuwste besluiten (harpij = Braviary-vorm, Norowara/Kyonpan erin, tank-Octillery vervalt ten gunste van Krassault, condor alleen als legendary).

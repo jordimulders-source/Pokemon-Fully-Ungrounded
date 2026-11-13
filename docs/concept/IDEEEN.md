@@ -209,7 +209,7 @@ Types en dex-status gecontroleerd in de repo (`species_info/`, `DEX_IN_ROM.md`).
 **Vogels**
 - **Harpij-arend: komt er sowieso** (Jordi). Keuze: regional of nieuw.
   - Regional **Braviary** (Rufflet-lijn zit in de dex, Normal/Flying): Flying/Fighting (stond al op de lijst); Hisui-Braviary is een voorbeeld dat Braviary een vorm kan krijgen. Goedkoop, Braviary is al een adelaar.
-  - Nieuwe lijn (FAKEMON_PITCH #12, Flying/Fighting): meer eigen, maar er komen al twee condors (vogellijn + legendary).
+  - Nieuwe lijn (FAKEMON_PITCH #12, Flying/Fighting): meer eigen, maar er komt al een condor-legendary (de condor-vogellijn vervalt, 13 nov).
   - Advies Claude: Braviary-vorm (minder werk, geen derde grote roofvogellijn).
 - **Hoatzin als Archen/Archeops (Poison/Flying):** stond al op de lijst. Repo: Archeops = Rock/Flying (Defeatist); **Archen-lijn uit de dex**. Lore-haakje: het **levende fossiel van de tepuis**. *The Lost World* van Conan Doyle speelt op de Roraima-tepui; daar heeft Archen het overleefd in plaats van uit te sterven. Hoatzinkuikens hebben echte klauwtjes aan hun vleugels, en de vogel stinkt door bladeren die in zijn krop gisten: Poison (ability Stench in plaats van Defeatist?). Het fossiel elders in de regio is dan zijn voorouder.
 - **Oricorio, drie nieuwe dansen:** repo-vormen: Baile Fire, Pom-Pom Electric, Pa'u Psychic, Sensu Ghost. Grass, Dark en Water zijn dus allemaal nieuw.

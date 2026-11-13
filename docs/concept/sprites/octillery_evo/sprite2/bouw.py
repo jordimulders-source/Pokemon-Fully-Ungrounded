@@ -1,11 +1,15 @@
 # bouw.py rN : auto.txt (onderlaag, zie onder.py + auto.py) + handwerk uit rN/patches.txt -> rN/raster.txt + rN/octi.png
-# patches.txt: blokken "@ x y" gevolgd door rasterregels; '_' = onderlaag laten staan
+# patches.txt: '= x,y,c ...' zet losse pixels; blokken "@ x y" gevolgd door rasterregels; '_' = onderlaag laten staan
 import cfg,sys,numpy as np
 r=sys.argv[1]; a=cfg.read('auto.txt')
 x=y=None
 for l in open(r+'/patches.txt'):
     l=l.rstrip('\n')
     if l.startswith('#') or not l.strip(): continue
+    if l.startswith('='):
+        for t in l[1:].split():
+            px,py,c=t.split(','); a[int(py),int(px)]=cfg.CH.index(c)
+        continue
     if l.startswith('@'): _,x,y=l.split()[:3]; x=int(x); y=int(y); continue
     for i,ch in enumerate(l):
         if ch!='_': a[y,x+i]=cfg.CH.index(ch)

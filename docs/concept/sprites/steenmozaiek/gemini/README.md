@@ -63,7 +63,7 @@ AVOID: bulky/buff/bear-like body, a realistic jaguar with a painted pattern, fur
 ```
 Good, but this is no longer a sprite. Turn exactly this design into an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style): pixel art, 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left, plain white background. Keep the design, pose, proportions, colours and stone pieces exactly the same; change nothing else.
 ```
-   - Jordi (13 nov, letterlijk, op ronde 3): "wel mooi design" · "de pose is nog ietwat saai" · "en de tanden zijn weg". Keuzes: pose **brullend** (optie Claude: "Staat stevig, kop omhoog en naar de kijker, muil wijd open"); **Gemini moet de sprite maken** (pixel art nadrukkelijker vragen). Bijstuurprompt hierboven vervalt.
+   - Jordi (13 nov, letterlijk, op ronde 3): "wel mooi design" · "de pose is nog ietwat saai" · "en de tanden zijn weg" · "de tanden zoals in het beeldje". Keuzes: pose **brullend** (optie Claude: "Staat stevig, kop omhoog en naar de kijker, muil wijd open"); **Gemini moet de sprite maken** (pixel art nadrukkelijker vragen). Bijstuurprompt hierboven vervalt.
 
 ### Prompt fase 2, ronde 4 (nieuw gesprek; bijlagen: foto beeldje + fase2_ronde3.png)
 ```
@@ -73,7 +73,7 @@ Attached: (1) a photo of a stone mosaic jaguar figurine from Mexico, (2) a Poké
 
 Change three things:
 1. The pose is too boring. New pose: roaring. It stands firmly on all four legs, body in 3/4 view facing left, head raised and turned towards the viewer, mouth wide open. Four legs in total. Compact composition that fits in a square, legs close to the body.
-2. The teeth are missing. Show the white teeth in the wide open mouth, upper and lower fangs, like the figurine in attachment 1.
+2. The teeth are missing. Give it the teeth exactly as in the figurine in attachment 1 (look closely at the photo): the same large, smooth, white fangs, upper and lower, in the same places in the open mouth.
 3. It must be a sprite: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, visible pixels, 1px dark outline, light from the top left. Plain white background. No ground, no rocks, no shadow, no glow or effects.
 
 AVOID: a smooth digital illustration or painting, bulky/buff body, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.

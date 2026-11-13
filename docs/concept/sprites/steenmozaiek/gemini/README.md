@@ -57,3 +57,9 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64
 
 AVOID: bulky/buff/bear-like body, a realistic jaguar with a painted pattern, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
 ```
+3. `fase2_ronde3.png`: Jordi (13 nov, letterlijk): "nu is het geen sprite meer" (Gemini gaf een illustratie). Bijstuurprompt in hetzelfde gesprek hieronder; alternatief: illustratie als model gebruiken en Claude maakt de sprite (zoals bij de poedelmot).
+
+### Bijstuurprompt ronde 3 (zelfde gesprek)
+```
+Good, but this is no longer a sprite. Turn exactly this design into an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style): pixel art, 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left, plain white background. Keep the design, pose, proportions, colours and stone pieces exactly the same; change nothing else.
+```

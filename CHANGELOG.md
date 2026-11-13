@@ -1075,3 +1075,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.249] - Krassault: sprite overnemen i.p.v. hertekenen
 - Sprite 2 (r1–r3, hertekend door makers) afgekeurd door Jordi ("alles aan het hertekenen ipv de sprite aan het overnemen"; rupsbanden "prutswerk"). Nieuw in `octillery_evo/sprite3/`: eigen pixelraster van het Gemini-model teruggehaald (127×115), exacte 2×-reductie met regels naar 64×58, rupsbanden als assets in het model naar elkaar toe geschoven (varianten A/B). Vel `sprite3/vel_p.png`; wacht op Jordi's keuze.
+
+### [v0.0.250] - Krassault: silhouet vast, kleurronde 1
+- Rupsbanden variant A gekozen; silhouet definitief ("het silhouet staat"). Ontkorrelen (`sprite3/glad.py`) en kleurronde 1 binnen het bevroren silhouet (`sprite3/kleur/r1.png`, bewaakscript `bewaak.py`): omlijning, Gen 3-palet, zuignapringen. Jordi: "veel beter al, begint echt ergens op te lijken nu"; nog: tentakelkanonnen, consistente belijning, kleine tentakels, zuignappen op de rupsbanden, mond.

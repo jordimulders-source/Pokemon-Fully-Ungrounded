@@ -20,5 +20,7 @@ Werkwijze: `docs/lessen/GEMINI.md` + `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-m
 - 13 nov, na 2 rondes, keuze Jordi: "Doorgaan zoals nu" (alle stukken van het model houden, geen vereenvoudiging).
 - Jordi op r2 (letterlijk): "ik vind het zeker niet lelijk, beetje slim met shading omgaan en misschien sommige kleuren verwisselen als dat het model ten goede komt" · "en het oog iets gedefinieerder".
 
+- Op r3: "bovenkant oog is wat afgekapt" → oogvarianten (`sprite/r4/oog_varianten.png`); op variant 3 rood kruis: "haal deze pixels eens weg en toon me het resultaat" → (14,18), (14,19), (15,19) weg (`sprite/r4/oog_3b.png`). "en klopt de schaduw op de buik volledig?" → 22 px correctie (`sprite/r4/buik.py`); Jordi: "buik is goed". Samen: `sprite/r4/steenjaguar_r4.png`.
+
 ## Open
 - Naam, formaat per fase (pas bij het silhouet), welk Gemini-model gekozen wordt.

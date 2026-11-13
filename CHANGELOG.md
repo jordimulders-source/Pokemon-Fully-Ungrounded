@@ -1078,3 +1078,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.250] - Krassault: silhouet vast, kleurronde 1
 - Rupsbanden variant A gekozen; silhouet definitief ("het silhouet staat"). Ontkorrelen (`sprite3/glad.py`) en kleurronde 1 binnen het bevroren silhouet (`sprite3/kleur/r1.png`, bewaakscript `bewaak.py`): omlijning, Gen 3-palet, zuignapringen. Jordi: "veel beter al, begint echt ergens op te lijken nu"; nog: tentakelkanonnen, consistente belijning, kleine tentakels, zuignappen op de rupsbanden, mond.
+
+### [v0.0.251] - Krassault: kleurrondes 2–4 en eindkeuring
+- r2 (kanonnen, belijning, kleine tentakels, zuignapringen, mond), r3 (tentakel-aansluitingen en rupsbandkrul na keuring op Jordi's twee vragen), r4 (punten uit de Dragonfly Cave/Gen 3-eindkeuring). Silhouet steeds diff 0. Open: paletvariant B (basisrood een stap lichter) en pupil linkeroog. Alles in `octillery_evo/sprite3/kleur/`.

@@ -9,16 +9,17 @@ CH='.123456789abcdef'
 PAL=[(255,0,255),
  (32,12,18),    #1 omlijning / opening
  (84,22,36),    #2 binnenlijn + selout donkerrood
- (116,34,50),   #3 rood schaduw
- (156,48,66),   #4 rood mid
- (190,76,88),   #5 rood licht
- (220,120,122), #6 hooglicht
+ (120,34,50),   #3 rood schaduw
+ (164,50,68),   #4 rood mid
+ (200,80,92),   #5 rood licht
+ (230,128,128), #6 hooglicht
  (136,64,78),   #7 mauve donker (mondkanon/lip)
  (200,130,134), #8 mauve licht
  (164,112,36),  #9 geel donker
  (228,188,84),  #a geel
  (252,236,160), #b geel licht
- (255,255,255),(255,255,255),(255,255,255),(255,255,255)]
+ (116,72,28),   #c wratrand bruin
+(255,255,255),(255,255,255),(255,255,255)]
 def model():
     return np.asarray(Image.open(MODEL).convert('RGB')).astype(int)
 def cell(x,y):

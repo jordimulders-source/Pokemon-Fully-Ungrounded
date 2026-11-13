@@ -1391,3 +1391,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.332] - Sneeuwbolslak: keuzes prompt
 - Jordi: "1c en 2a": een minuscuul huisje in de bol, lijf lichtblauw-wit. Ingevuld in `sprites/sneeuwbolslak/gemini/PROMPT.md`.
+
+### [v0.0.333] - Sneeuwbolslak: Gemini-ronde 1
+- Eerste Gemini-resultaat van Jordi bewaard: `sprites/sneeuwbolslak/gemini/r1_gemini.png`.

@@ -1234,3 +1234,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.283] - Cosmic-afspraken in main, Curiqui Psychic/Cosmic
 - Jordi: "alle afspraken uit die niet-gemergede branch mogen gemerged worden en rondgemaakt". Cosmic-branch gemerged (secties hernummerd naar v0.0.276–282): Cosmic is besloten (matchups, kandidaten, techniek in `CONCEPT.md`/`IDEEEN.md`, typetabel `typetabel_cosmic.png`).
 - Jordi: "Geef Curiqui gelijk Cosmic als secondary type". Curiqui is nu Psychic/Cosmic (POKEMON.md, Stand van zaken, overzichtsvel). Eigen Cosmic-badge voor het vel in `showcase/types/cosmic.png` (letters uit de bestaande typebadges, indigo); nog niet in de ROM.
+
+### [v0.0.284] - Cosmic nachtblauw; Abra als straatsloeber
+- Cosmic-badge: eerste indigo leek te veel op Ghost/Dragon; Jordi koos nachtblauw ("alle kleuren van vlakken zijn effen"). `showcase/types/cosmic.png`, overzichtsvel opnieuw.
+- Abra-regional: Jordi wil een duistere straatsloeber, zonder assets, die er slapjes bij ligt (POKEMON.md); ontwerprichtingen voorgelegd.

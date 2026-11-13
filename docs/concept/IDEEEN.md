@@ -282,3 +282,5 @@ Jordi: Salar de Uyuni-variant van Silicobra, misschien ook van Sandaconda of een
 
 ## Ruimte en diepe zee als mysterieuze gebieden (12 nov)
 - **Jordi:** "Daarnaast zit ik erover na te denken om de ruimte en diepe zee beide als mysterieuze areas toe te voegen, mogelijk met eigen legendaries. Dat zijn twee van de grootste mysteries in ons bestaan en tof om daar iets mee te doen."
+
+- **Cosmic-badgekleur (Jordi, 13 nov):** "nee alle kleuren van vlakken zijn effen, dus nachtblauw is prima." Badge = nachtblauw zonder sterretjes (`sprites/showcase/types/cosmic.png`).

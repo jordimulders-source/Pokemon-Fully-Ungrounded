@@ -1,0 +1,44 @@
+pixels: 1058 (silhouet 1046)
+benoemde alphawijzigingen (kam en pootjes, erbij en eraf; alpha_wijzigingen.txt): 32
+onbenoemde alpha-diff met silhouet: 0  extra=[]  mist=[]
+open randen (buitenrand zonder lijnkleur 1-4): 0 []  | bewuste uitzondering klauwtjes: []
+buitenrand 147 px: selout 3+4 75 px in 10 reeksen (lengtes [3, 3, 4, 5, 5, 6, 8, 10, 11, 20]), reeksen < 3 px: []
+losse omlijningspixels in een vlak: 0 []
+losse pixels (vlaktint zonder gelijke buur): 0 []
+tintclusters < 3 px: 0
+gebruikte indexen: 1234567A
+
+alpha-diff met kleur_r2: 0 []
+ogen-diff (6 px: nabij 2x2 + glans, ver 1x2): 0 []
+pixels met een andere index: 118 van 1058
+   5 -> 4: 1
+   6 -> 5: 35
+   6 -> 7: 1
+   7 -> 6: 9
+   A -> 6: 12
+   A -> 7: 60
+buitenlijn/donkere lijn (index 1-4 in r2) van index gewisseld: 0 []
+paletwijzigingen (index: r2 -> r4):
+   4: (146, 130, 112) -> (142, 124, 106)
+   5: (178, 162, 140) -> (172, 154, 130)
+   6: (204, 194, 174) -> (200, 186, 162)
+   7: (226, 216, 200) -> (224, 212, 190)
+
+r2
+   A (246,244,234) luma 243.5             478 px  R-B 12
+   7 (226,216,200) luma 217.2  stap 26.3    43 px  R-B 26
+   6 (204,194,174) luma 194.8  stap 22.4   206 px  R-B 30
+   5 (178,162,140) luma 164.4  stap 30.4    95 px  R-B 38
+   4 (146,130,112) luma 132.8  stap 31.6   100 px  R-B 34
+   3 (104, 88, 82) luma  92.1  stap 40.7    54 px  R-B 22
+   2 ( 52, 40, 36) luma  43.2  stap 49.0    77 px  R-B 16
+   1 ( 16,  8,  8) luma  10.4  stap 32.8     5 px  R-B 8
+r4
+   A (246,244,234) luma 243.5             406 px  R-B 12
+   7 (224,212,190) luma 213.2  stap 30.3    95 px  R-B 34
+   6 (200,186,162) luma 187.6  stap 25.6   191 px  R-B 38
+   5 (172,154,130) luma 156.8  stap 30.8   129 px  R-B 42
+   4 (142,124,106) luma 127.4  stap 29.3   101 px  R-B 36
+   3 (104, 88, 82) luma  92.1  stap 35.3    54 px  R-B 22
+   2 ( 52, 40, 36) luma  43.2  stap 49.0    77 px  R-B 16
+   1 ( 16,  8,  8) luma  10.4  stap 32.8     5 px  R-B 8

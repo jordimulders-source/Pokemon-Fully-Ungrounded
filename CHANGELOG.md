@@ -1368,3 +1368,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.325] - Cosmic nachtblauw; Abra als straatsloeber
 - Cosmic-badge: eerste indigo leek te veel op Ghost/Dragon; Jordi koos nachtblauw ("alle kleuren van vlakken zijn effen"). `showcase/types/cosmic.png`, overzichtsvel opnieuw.
 - Abra-regional: Jordi wil een duistere straatsloeber, zonder assets, die er slapjes bij ligt (POKEMON.md); ontwerprichtingen voorgelegd.
+
+### [v0.0.326] - Abra-regional: Gemini-prompt v1
+- Jordi: geen mond, ogen dicht, kerf in één oor, geen vachtplukken, geen rood; meer opossum, "die er half dood bij ligt", herkenbaar Abra. Letterlijk in POKEMON.md.
+- `sprites/abra_regional/gemini/PROMPT.md` met bijlagen (originele Abra en regionale Kadabra, 8×); open keuzes: kleur van de platen en welke opossumkenmerken.

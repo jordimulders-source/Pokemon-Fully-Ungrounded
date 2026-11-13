@@ -1084,3 +1084,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra-model: kaarthand omgedraaid (handpalm naar de kijker, duim over de kaart; Jordi: "zouden wij als kijker de binnenkant van de hand moeten zien").
 - Kadabra-model: kaarthand = Gemini's eigen hand met één vinger minder (Jordi).
 - Kadabra-model akkoord (Jordi: "ja prima"): `kadabra_regional/model/model_B_hand3.png`. Les in GEMINI.md (vinger weghalen uit Gemini's eigen pixels).
+- Kadabra: frontsprite gestart (`kadabra_regional/kleur_r1/`, poedelmot-methode, palet van de charlatan-Alakazam); in de sprite krijgt de kaartvinger een nagel (Jordi).

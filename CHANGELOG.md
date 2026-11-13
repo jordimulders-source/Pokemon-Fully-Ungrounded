@@ -1381,3 +1381,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.329] - Sneeuwbol-lijn: slak, fase 3 naar de vorm van de Interloper
 - Jordi kiest de slak als richting; fase 2 moet meer vooruitgang zijn; fase 3 qua vorm een beetje als de Interloper (Outer Wilds). Letterlijk in IDEEEN.md, met voorstellen van Claude voor fase 2 (open).
+
+### [v0.0.330] - Sneeuwbol-lijn: Interloper = langwerpige vorm
+- Jordi: van de Interloper "vooral de langwerpige vorm, de donkere kern hoeft niet". In IDEEEN.md.

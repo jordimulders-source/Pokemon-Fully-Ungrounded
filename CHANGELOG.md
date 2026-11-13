@@ -1459,3 +1459,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.352] - Abra-regional: r6, ogen hangen meer
 - Jordi: "kan je beide ogen nog iets meer laten hangen? zoals in het model?". Model gemeten: beide ogen zakken naar de neus toe. r6 (Claude, `kleur_r6/maak_r6.py`): A = rechteroog een nette diagonaal (30,28)(29,29)(28,30) + linkeroog 3 px diagonaal (24,31 erbij); B = alleen het rechteroog. Close-up `kleur_r6/ogen.png`.
+
+### [v0.0.353] - Abra-regional: ogen zoals de echte Abra (variant D)
+- Fout van Claude rechtgezet: de echte Abra heeft geen 3 maar 4 px per oog (zwarte diagonaal + donkerbruine pixel recht eronder; linkeroog begint met een bruine pixel). Variant D (`kleur_r6/abra_r6_D.png`, `ogen_D.png`): A + donkere lijntint aan dezelfde uiteinden. Les in GEMINI.md.

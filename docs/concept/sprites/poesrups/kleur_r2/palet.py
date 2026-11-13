@@ -6,9 +6,9 @@ PAL = [
     (16, 8, 8),       # 1 zwart: ogen, neus
     (52, 40, 36),     # 2 buitenlijn (model: zwarte buitenlijn)
     (104, 88, 82),    # 3 donkere binnenlijn: plooien onder bolletjes, mond, oogreflectie, sprietkrul
-    (146, 128, 120),  # 4 donker grijsbeige: segmentnaden in de schaduw, voetschaduw, sprietribbels
-    (182, 162, 152),  # 5 grijsbeige: pootjes, sprietschaduw, naden (model voet (184,164,152))
-    (206, 194, 182),  # 6 schaduw wit 2: onderkant segmenten, naden in het licht
+    (146, 130, 112),  # 4 donker grijsbeige: segmentnaden in de schaduw, voetschaduw, sprietribbels
+    (178, 162, 140),  # 5 grijsbeige: pootjes, sprietschaduw, naden (model voet (184,164,152))
+    (204, 194, 174),  # 6 schaduw wit 2: onderkant segmenten, naden in het licht
     (226, 216, 200),  # 7 schaduw wit 1
     (194, 176, 162),  # 8 beige schaduw (snuit/oogvlek)
     (0, 0, 0),        # 9 (ongebruikt)

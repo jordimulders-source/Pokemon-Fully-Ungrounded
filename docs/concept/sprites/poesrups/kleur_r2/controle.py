@@ -13,9 +13,9 @@ P = [(x, y) for y in range(64) for x in range(64)]
 a = np.array(Image.open(SIL).convert('RGBA'))[:, :, 3] > 0
 TOEG = set(tuple(map(int, l.split(','))) for l in open(os.path.join(HIER, 'alpha_wijzigingen.txt')) if l.strip())
 extra = [(x, y) for x, y in P if r[y][x] != '.' and not a[y, x] and (x, y) not in TOEG]
-mist = [(x, y) for x, y in P if r[y][x] == '.' and a[y, x]]
+mist = [(x, y) for x, y in P if r[y][x] == '.' and a[y, x] and (x, y) not in TOEG]
 print(f'pixels: {sum(c != "." for l in r for c in l)} (silhouet {int(a.sum())})')
-print(f'benoemde alphawijzigingen (krullen, pootje 5; alpha_wijzigingen.txt): {len(TOEG)}')
+print(f'benoemde alphawijzigingen (kam en pootjes, erbij en eraf; alpha_wijzigingen.txt): {len(TOEG)}')
 print(f'onbenoemde alpha-diff met silhouet: {len(extra) + len(mist)}  extra={extra}  mist={mist}')
 nb4 = lambda x, y: [(r[y+dy][x+dx] if 0 <= y+dy < 64 and 0 <= x+dx < 64 else '.') for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))]
 LIJN = set('1234')         # buitenlijn (2/1) en selout (4)
@@ -28,7 +28,7 @@ print(f'open randen (buitenrand zonder lijnkleur 1-4): {len(open_r)} {open_r}  |
 # selout: aaneengesloten reeksen A op de buitenrand (geen afwisseling A/1 binnen een rand)
 op = lambda x, y: 0 <= x < 64 and 0 <= y < 64 and r[y][x] != '.'
 rand = {(x, y) for x, y in P if op(x, y) and any(not op(x+dx, y+dy) for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1)))}
-Aset = {p for p in rand if r[p[1]][p[0]] == '3'}; zien = set(); reeksen = []
+Aset = {p for p in rand if r[p[1]][p[0]] in '34'}; zien = set(); reeksen = []
 for p in sorted(Aset):
     if p in zien: continue
     st = [p]; c = []; zien.add(p)
@@ -40,7 +40,7 @@ for p in sorted(Aset):
                 if n in Aset and n not in zien: zien.add(n); st.append(n)
     reeksen.append(sorted(c))
 kort = [c for c in reeksen if len(c) < 3 and not set(c) <= VOET]
-print(f'buitenrand {len(rand)} px: selout 3 {len(Aset)} px in {len(reeksen)} reeksen (lengtes {sorted(len(c) for c in reeksen)}), reeksen < 3 px: {kort}')
+print(f'buitenrand {len(rand)} px: selout 3+4 {len(Aset)} px in {len(reeksen)} reeksen (lengtes {sorted(len(c) for c in reeksen)}), reeksen < 3 px: {kort}')
 GLANS = {(16,55)}   # oogglans nabije oog
 VLAK = set('567A')   # vlaktinten; 1-4 lijn- en detailkleuren
 # pootjes (2-4 px binnenwerk) zijn klein detail

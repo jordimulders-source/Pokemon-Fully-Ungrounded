@@ -7,6 +7,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-model namaken) + `docs/less
 - (op Gemini ronde 1) "hij doet nu dit maar die lijkt neit op de poesrups"
 - (op ronde 2) "vind het nog niet genoeg de puss caterpillar" / "hij is sowieso nog niet insect genoeg"
 - (op ronde 3, twee plaatjes) "hij deed eerst de tweede, daarna zei ik dat die meer bedekt moest worden en je alleen de ogen mocht zien. Die zijn nu iets teveel zoogdier nog. Maar we hebben een model verder, met alleen nog de ogen die iets anders moeten, doe maar zoals jij initieel van plan was en bouw de sprite"
+- (op kleur r1, terwijl r2 liep) "prima, begint al ergens op te lijken"
 
 ## Bron
 - `referenties/model_gekozen.png`: **het model (bevroren)**: de bedekte versie (alleen de ogen zichtbaar onder de vacht). Kijkt al naar links.

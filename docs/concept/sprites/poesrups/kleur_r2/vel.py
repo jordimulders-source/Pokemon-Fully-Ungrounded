@@ -10,10 +10,11 @@ def spr(p, col=LI):
     b = Image.new('RGBA', (64, 64), col); b.alpha_composite(Image.open(p).convert('RGBA')); return b.convert('RGB')
 def up(im, z): return im.resize((im.width*z, im.height*z), Image.NEAREST)
 A = os.path.join(H, 'poesrups.png'); bx = (2, 26, 62, 63)
-V = Image.new('RGB', (1000, 1150), (255, 255, 255)); d = ImageDraw.Draw(V)
+V = Image.new('RGB', (1480, 1150), (255, 255, 255)); d = ImageDraw.Draw(V)
 d.text((4, 2), 'poesrups kleur_r2 (8x)', fill=0); V.paste(up(spr(A).crop(bx), 8), (0, 16))
-d.text((490, 2), 'model, zelfde uitsnede (8x)', fill=0)
-V.paste(big.crop((int(bx[0]*k), int(bx[1]*k), int(bx[2]*k), int(bx[3]*k))).resize((480, 296), Image.LANCZOS), (490, 16))
+d.text((490, 2), 'kleur_r1 (8x)', fill=0); V.paste(up(spr(os.path.join(H, '..', 'kleur_r1', 'poesrups.png')).crop(bx), 8), (490, 16))
+d.text((980, 2), 'model, zelfde uitsnede (8x)', fill=0)
+V.paste(big.crop((int(bx[0]*k), int(bx[1]*k), int(bx[2]*k), int(bx[3]*k))).resize((480, 296), Image.LANCZOS), (980, 16))
 y = 330; d.text((4, y), '1x en 2x op licht en donker; rechts het model verkleind (BOX) op 1x/2x', fill=0); y += 16
 mod1 = big.crop((0, 0, int(64*k), int(64*k))).resize((64, 64), Image.BOX)
 x = 0
@@ -32,5 +33,5 @@ for nm, p, t in (('A', A, 'A (in de sprite): Weedle 2x2, witte glans; ver oog 1x
     d.text((4, y), 'oog ' + t, fill=0); y += 16
     V.paste(up(spr(p).crop((5, 48, 27, 62)), 8), (0, y)); V.paste(spr(p), (190, y)); V.paste(spr(p, DO), (260, y))
     V.paste(up(spr(p), 2), (330, y)); V.paste(up(spr(p, DO), 2), (464, y)); y += 134
-V.crop((0, 0, 980, y)).save(os.path.join(H, 'vel.png'))
+V.crop((0, 0, 1470, y)).save(os.path.join(H, 'vel.png'))
 up(spr(A), 8).save(os.path.join(H, 'poesrups_8x.png'))

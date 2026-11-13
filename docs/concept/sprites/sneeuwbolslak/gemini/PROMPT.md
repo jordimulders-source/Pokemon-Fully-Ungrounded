@@ -87,3 +87,6 @@ AVOID
 - Do not change the shape or size of the globe, do not add a spiral shell, crystals, ice spikes, stars or a face on the globe.
 - Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
 ```
+
+## Reactie Jordi op r2 (13 nov)
+- "Ik vind het nog niet duidelijk genoeg een snow globe denk ik"

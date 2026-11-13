@@ -1475,3 +1475,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.357] - Abra-regional: ogen F gekozen, eindronde schaduw/kleur/lijn gestart
 - Jordi: "ja" (F) "schaduw, kleuren en belijning". Basis `kleur_r7/basis_F.png`; eindkeuring Dragonfly Cave/Gen 3 op schaduw, kleuren en belijning.
+
+### [v0.0.358] - Abra-regional: r7 schaduw, kleuren, belijning (A/B)
+- Eindkeuring op basis F ("bijna"): banding op de snuit, twee bijna-dubbele tinten (m, I), vulpixel op de rand, drie randen met wisselende lijnkleur. r7 (37 px, `kleur_r7/maak_r7.py`): m en I opgeheven (9 kleuren), randen één lijnkleur, r3-MAG a/c/d/f uitgevoerd; silhouet en ogen ongewijzigd. Zwart 21,6% (volgt het model).
+- Keuze voor Jordi: A = modeltonen, B = huid naar de regionale Kadabra. `kleur_r7/vel.png`.

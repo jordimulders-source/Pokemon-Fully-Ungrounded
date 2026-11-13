@@ -1087,4 +1087,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra: frontsprite gestart (`kadabra_regional/kleur_r1/`, poedelmot-methode, palet van de charlatan-Alakazam); in de sprite krijgt de kaartvinger een nagel (Jordi).
 
 ### [v0.0.240] - Charlatan-Alakazam af
-- Jordi (13 nov): "zet de alakazam alvast in af". `alakazam_regional/af/` = af_r2 (sprite, 8×, raster); op het overzichtsvel `showcase/frontsprites_af.png` (28 sprites, "Alakazam (regional)", Dark/Psychic); Stand van zaken bijgewerkt. Gepusht naar main.
+- Jordi (13 nov): "zet de alakazam alvast in af". `alakazam_regional/af/` = af_r2 (sprite, 8×, raster); op het overzichtsvel `showcase/frontsprites_af.png` (27 sprites, "Alakazam (regional)", Dark/Psychic); Stand van zaken bijgewerkt. Gepusht naar main.

@@ -10,6 +10,7 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-model namaken) + `docs/less
 - (op kleur r1, terwijl r2 liep) "prima, begint al ergens op te lijken"
 - (op kleur r2, op de vragen oog A/B/C en of de kam groter mag dan in het model) "ik zie tussen A en C geen verschil, beide prima., de kam mag prima groter" → **oog A** (keuze Claude tussen A en C); **kam mag groter dan in het model.**
 - (op kleur r3) "ja dit is te overdreven. Ik vind ronde 2 al uitstekend, wat wilde je er nog aan veranderen?" → **r3 vervalt; r2 is de basis.** Ronde 4 (kam als volle plukken) gestopt. Variant ter keuze: `kleur_r2b/` = r2 met alleen de 24 px buiten de kam uit r3 (derde ronde pootje, minder loklijnen, randje bij het verre oog).
+- (op het vel r2 | r2b) "ik vind links mooier, ga hem nu nog beter inkleuren, dragonflycave en gen 3 sprite eindkeuring en dan afronden, bug/fairy type" → **r2 gekozen (r2b vervalt); vorm bevroren.** Kleurronde (`kleur_r4/`), eindkeuring Dragonfly Cave + Gen 3, dan `af/`. **Type: Bug/Fairy.**
 
 ## Bron
 - `referenties/model_gekozen.png`: **het model (bevroren)**: de bedekte versie (alleen de ogen zichtbaar onder de vacht). Kijkt al naar links.

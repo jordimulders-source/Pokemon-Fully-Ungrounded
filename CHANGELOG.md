@@ -1406,3 +1406,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.337] - Sneeuwbolslak: ronde 3 en eerste hybride op 64×64
 - Gemini r3a/r3b bewaard; natief raster (pitch 10,24) past direct in 64×64. Stervlokken vallen weg; hybride `sprite/hybride_v1.png` met witte plusjes en losse pixels. Les in GEMINI.md.
+
+### [v0.0.338] - Sneeuwbolslak: sprite ronde 1 (onderlaag + bol blauwer)
+- Jordi: vlokken prima, "bol ietsje blauwer", sprite gaan bouwen met de poedelmot-methode, "niet opnieuw dingen gaan tekenen, buiten wat we afgesproken hebben". `SPEC.md` aangemaakt.
+- Natief Gemini-raster overgenomen (geen tekenwerk): achtergrond weg, 13 kleuren + transparant, bol-binnenkant eigen paletkleur in twee tinten (A/B). Vel `sprite/r1_vel.png`.

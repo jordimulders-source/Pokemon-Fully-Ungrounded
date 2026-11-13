@@ -78,3 +78,22 @@ Change three things:
 
 AVOID: a smooth digital illustration or painting, bulky/buff body, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
 ```
+4. `fase2_ronde4.png`: Jordi (13 nov, letterlijk): "ik vind de pose nog steeds een beetje saai en weinig dynamisch. Plus hij is op patroon na nog steeds qua vorm niet echt steen achtig. Nog 1 kee proberen? Plus hij is erg chibi/buff, zo ziet een echte jaguar er niet uit toch? Moeten we deze proberen te blijven veranderen, of helemaal opnieuw met alleen het beeldje?"
+   - Advies Claude: opnieuw, zonder de oude versie als bijlage (die trekt de chibi-vorm en de pose steeds mee; GEMINI.md: Gemini is slecht in verbeteren) en mét een foto van een echte brullende jaguar als bron voor anatomie en pose (stond in de vaste prompteisen, was vergeten).
+
+### Prompt fase 2, ronde 5 (nieuw gesprek; bijlagen: foto beeldje + foto echte brullende jaguar)
+```
+PIXEL ART SPRITE, NOT AN ILLUSTRATION.
+
+Attached: (1) a photo of a stone mosaic jaguar figurine from Mexico, (2) a photo of a real roaring jaguar.
+
+Design an original Pokémon: a pure Rock-type jaguar, the fully evolved (second and final) stage of a two-stage line.
+- Body and anatomy: a real adult jaguar as in attachment 2: long, low body, long tail, realistic proportions. Not chibi, not buff, not bulky.
+- Material: the whole creature is a carved stone sculpture like the figurine in attachment 1, not an animal with a stone pattern. Its shape itself is stone: carved, smooth polished planes with clear edges, built from separate inlaid stone pieces with thin seams in blue/lilac, reddish-brown, black and cream like the figurine. No fur, no spots or rosettes. As the final stage it is beautiful and advanced in material and colour.
+- Head: like the figurine: wide open mouth, the teeth exactly as in the figurine (large, smooth, white fangs, upper and lower, in the same places), round black eye.
+- Pose: dynamic and roaring, based on the real jaguar in attachment 2: one front paw stepping forward, head thrust forward and turned towards the viewer, tail raised. Body in 3/4 view facing left. Four legs and one tail in total. Compact composition that fits in a square.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, visible pixels, 1px dark outline, light from the top left. Plain white background. No ground, no rocks, no shadow, no glow or effects.
+
+AVOID: chibi or buff proportions, a bear or bulldog shape, a smooth digital illustration or painting, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
+```

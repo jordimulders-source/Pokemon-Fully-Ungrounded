@@ -63,3 +63,18 @@ AVOID: bulky/buff/bear-like body, a realistic jaguar with a painted pattern, fur
 ```
 Good, but this is no longer a sprite. Turn exactly this design into an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style): pixel art, 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left, plain white background. Keep the design, pose, proportions, colours and stone pieces exactly the same; change nothing else.
 ```
+   - Jordi (13 nov, letterlijk, op ronde 3): "wel mooi design" · "de pose is nog ietwat saai" · "en de tanden zijn weg". Keuzes: pose **brullend** (optie Claude: "Staat stevig, kop omhoog en naar de kijker, muil wijd open"); **Gemini moet de sprite maken** (pixel art nadrukkelijker vragen). Bijstuurprompt hierboven vervalt.
+
+### Prompt fase 2, ronde 4 (nieuw gesprek; bijlagen: foto beeldje + fase2_ronde3.png)
+```
+PIXEL ART SPRITE, NOT AN ILLUSTRATION.
+
+Attached: (1) a photo of a stone mosaic jaguar figurine from Mexico, (2) a Pokémon design based on it. Keep the design of attachment 2: the stylized, smooth, polished stone mosaic jaguar with its pieces in blue/lilac, reddish-brown, black and cream, its proportions, black nose, round black eye and ears. Pure Rock-type, final stage of a two-stage line.
+
+Change three things:
+1. The pose is too boring. New pose: roaring. It stands firmly on all four legs, body in 3/4 view facing left, head raised and turned towards the viewer, mouth wide open. Four legs in total. Compact composition that fits in a square, legs close to the body.
+2. The teeth are missing. Show the white teeth in the wide open mouth, upper and lower fangs, like the figurine in attachment 1.
+3. It must be a sprite: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, visible pixels, 1px dark outline, light from the top left. Plain white background. No ground, no rocks, no shadow, no glow or effects.
+
+AVOID: a smooth digital illustration or painting, bulky/buff body, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
+```

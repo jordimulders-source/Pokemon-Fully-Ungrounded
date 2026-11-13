@@ -90,3 +90,19 @@ AVOID
 
 ## Reactie Jordi op r2 (13 nov)
 - "Ik vind het nog niet duidelijk genoeg een snow globe denk ik"
+- Keuze uit de voorstellen (water, sneeuwlaag, vlokken, voetstuk, glans): "meer sneeuwvlokken". Alleen dat; de kop is niet genoemd en blijft dus zoals in r2.
+
+# Prompt v3 (13 nov): nieuw gesprek, r2 als bijlage
+
+```
+Attachment 1 is an official-style Gen 3 front sprite (Ruby/Sapphire/Emerald pixel art) of an original Pokémon: a small snail whose shell is a snow globe (pure Ice type).
+
+Redraw it exactly the same, with ONE change: many more snowflakes inside the globe, so it clearly reads as a snow globe. A flurry of small white snowflakes (single pixels and tiny 2x2 flakes) spread through the whole globe, around the tiny house.
+
+KEEP EXACTLY
+- Everything else: silhouette, pose, colors, outline, the head and eye stalks, the globe's size and highlight, the tiny house, the reddish-brown base.
+
+FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left.
+- Plain white background. NO snow, floor, shadow, glow or effects outside the globe. One single creature, no extra views.
+```

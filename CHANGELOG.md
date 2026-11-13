@@ -1400,3 +1400,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.335] - Sneeuwbolslak: Gemini-ronde 2
 - Resultaat prompt v2 bewaard: `sprites/sneeuwbolslak/gemini/r2_gemini.png` (omlijning, contrast en ogen beter; kop nog klodderig, onderste voelsprieten lijken pootjes, geen mond).
+
+### [v0.0.336] - Sneeuwbolslak: Gemini-prompt v3
+- Jordi: "Ik vind het nog niet duidelijk genoeg een snow globe denk ik"; keuze: "meer sneeuwvlokken". Prompt v3 (r2 als bijlage, alleen meer vlokken) in `sprites/sneeuwbolslak/gemini/PROMPT.md`.

@@ -22,3 +22,4 @@ Lijn: slak met sneeuwbol als huisje → spiraal met ijskorst → langwerpige kom
 - r4 (`gemini/r4_gemini.png`, Jordi: "is dit kleiner?"): nee, zelfde pixelmaat (10,24) en exact dezelfde omvang als r3b (195–839 × 246–767); niet gebruikt.
 - r5 (`gemini/r5_gemini.png`): wél kleiner, natief 42×35 (`sprite/r5_natief64.png`, vergelijking `sprite/r5_vs_46.png`). Ogen en omlijning schoner; vlokken bijna weg, huisje een vlek, kop/lijf iets anders dan r3b.
 - Maker (46 px): `sprite/maker/r2.png` + `vel_r2.png`; silhouet = start46 (diff 0), palet r1_B, ogen 6×6 met L-pupil, huisje 10×8, 4 plusvlokken + losse pixels. Zwakke punten maker: geen rij oogwit onder het ooglid; huisje vereenvoudigd.
+- Jordi op r2: "op de ogen na ben ik tevreden, die zijn een beetje te groot deel van de oogballen nu lijkt" → `sprite/ogen_pupil.py`: r3_A (pupil 2 px, diff 2), r3_B (pupil 1 px, diff 4); vel `sprite/maker/vel_r3.png`.

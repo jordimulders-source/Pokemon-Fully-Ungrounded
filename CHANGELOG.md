@@ -1417,3 +1417,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.340] - Sneeuwbolslak: sprite 46 px (maker r2)
 - Jordi: "46 prima"; "nu zijn de ogen wel grotendeels weg" (over Gemini r5) doorgegeven aan de maker; "laat de maker maar doorgaan".
 - Maker zette ogen, huisje, vlokken, glans, sneeuwlaag en omlijning met de hand terug op 46×37 (silhouet-diff 0, palet van r1_B). `sprite/maker/r2.png`, vel `vel_r2.png`. Gemini r4/r5 gemeten (r4 niet kleiner; r5 42×35, niet gebruikt).
+
+### [v0.0.341] - Sneeuwbolslak: pupillen kleiner (A/B)
+- Jordi: "op de ogen na ben ik tevreden, die zijn een beetje te groot deel van de oogballen nu lijkt". Twee varianten: pupil 2 px (A) en 1 px (B), verder pixeldiff 0. Vel `sprite/maker/vel_r3.png`.

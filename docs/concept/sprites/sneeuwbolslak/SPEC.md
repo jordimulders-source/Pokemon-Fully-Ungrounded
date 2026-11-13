@@ -19,3 +19,4 @@ Lijn: slak met sneeuwbol als huisje → spiraal met ijskorst → langwerpige kom
 - Open: maat (slak 63×51, vult het vak; fase 1 is normaal kleiner).
 - Jordi: "b en hij moet uiteraard kleiner, maar dat is niet moeilijk toch?" → bol B gekozen. Maattest (`sprite/maattest.py`, vel `sprite/maattest_vel.png`): 40, 46 en 52 px breed; silhouet blijft, ogen/huisje/omlijning moeten daarna met de hand (maker).
 - Jordi: "46 prima". Startbestand maker: `sprite/start46.png` (verkleind uit r1_B, nog niet opgeschoond). Geen nieuw Gemini-model: model alleen tot de richting staat (SPRITE_KERN).
+- r4 (`gemini/r4_gemini.png`, Jordi: "is dit kleiner?"): nee, zelfde pixelmaat (10,24) en exact dezelfde omvang als r3b (195–839 × 246–767); niet gebruikt.

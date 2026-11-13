@@ -19,9 +19,8 @@ for y in range(64):
         elif o_+d_>=T and w_<.6 or (edge[y,x] and w_<.5): r+='o' if o_>=d_ else 'd'
         elif w_>=.5: r+='w'
         elif o_+k_>=.6: r+='o' if o_>k_ else 'm'
-        elif l>=198: r+='a'
-        elif l>=168: r+='b'
-        elif l>=125: r+='c'
+        elif l>=176: r+='a'      # model licht (187) -> a
+        elif l>=125: r+='b'      # model middentoon (148) -> b; c = schaduw, met de hand (zoals de charlatan-Alakazam: lijf b, schaduw c)
         else: r+='c'
     out.append(r)
 open('onderlaag.txt','w').write('\n'.join(out)+'\n'); print('\n'.join('%2d '%i+l for i,l in enumerate(out)))

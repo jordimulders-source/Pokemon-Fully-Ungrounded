@@ -2,7 +2,6 @@
 import sys,numpy as np,pal
 from PIL import Image,ImageDraw
 from meet import s2c
-R=pal.load(sys.argv[1]); x0,y0,x1,y1,z=map(int,sys.argv[3:8])
 M=Image.open('cellen.png').convert('RGB')
 def model(x0,y0,x1,y1,z,grid=True):
     a=s2c(x0,y0); b=s2c(x1,y1)
@@ -20,5 +19,6 @@ def model(x0,y0,x1,y1,z,grid=True):
 def sprite(R,x0,y0,x1,y1,z,bg=(152,208,160)):
     return pal.rgb(R,bg).crop((x0,y0,x1,y1)).resize(((x1-x0)*z,(y1-y0)*z),Image.NEAREST)
 if __name__=='__main__':
+    R=pal.load(sys.argv[1]); x0,y0,x1,y1,z=map(int,sys.argv[3:8])
     s=sprite(R,x0,y0,x1,y1,z); m=model(x0,y0,x1,y1,z,len(sys.argv)<9)
     o=Image.new('RGB',(s.width*2+6,s.height),'white'); o.paste(s,(0,0)); o.paste(m,(s.width+6,0)); o.save(sys.argv[2])

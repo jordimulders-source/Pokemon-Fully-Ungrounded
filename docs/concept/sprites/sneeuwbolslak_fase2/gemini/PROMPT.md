@@ -100,3 +100,7 @@ AVOID
 - No stars, galaxy or planets.
 - Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
 ```
+
+## Reactie Jordi op r2 (13 nov)
+- `r2_gemini.png`. Jordi: "compleet mislukt".
+- Analyse Claude: "less snail, more cosmic" vertaalde Gemini als kop weglaten (haakvormige stomp zonder gezicht); "freezing solid" genegeerd (glazen bol met huisje, alleen barsten); de bijlagen trokken hem terug naar de bol van fase 1. Abstracte woorden werken niet; Gemini heeft concrete vormen nodig.

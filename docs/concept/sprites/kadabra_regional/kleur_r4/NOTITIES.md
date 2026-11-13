@@ -41,7 +41,7 @@ Hoek in het model (`../model/grid10.py`): linkerrand cel x3 (rij 28–30) → x4
 **Hand:** de gestrekte vinger ligt vóór de kaarthoek rechtsonder: vingertop met zwarte rand (6–7,24) op de kaart, nagel w verplaatst van (6,24) naar (6,25), de kaartrand loopt bij K3 achter de vinger door (wit rechts van de vinger op (8–9,24), (9,25)). De lichtgrijze strook (3–4,25) en de gebogen vingers zijn ongewijzigd; 3 vingers.
 
 ## Beste combinatie: pos_P1 + oog_1 + kaart_K2 (`raster.txt`)
-- Pixeldiff tegen r2: 82 px, **buiten de zones 0**; silhouet +37 (alleen kaart), niets eraf.
+- Pixeldiff tegen r2: 81 px, **buiten de zones 0**; silhouet +37 (alleen kaart), niets eraf.
 - `controle.py`: 11 kleuren + transparant, open randen 0, losse o 0; clusters < 3 px: (3–4,25) a (strook onder in de kaart, stond al in r2 maar hing daar aan (3,24)), (20,25) n en (5–6,28) b (beide r2). Lichtkant 16 % zwart.
 
 ## Zwakke punten

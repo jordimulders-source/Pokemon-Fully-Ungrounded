@@ -22,5 +22,11 @@ Werkwijze: `docs/lessen/GEMINI.md` + `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-m
 
 - Op r3: "bovenkant oog is wat afgekapt" → oogvarianten (`sprite/r4/oog_varianten.png`); op variant 3 rood kruis: "haal deze pixels eens weg en toon me het resultaat" → (14,18), (14,19), (15,19) weg (`sprite/r4/oog_3b.png`). "en klopt de schaduw op de buik volledig?" → 22 px correctie (`sprite/r4/buik.py`); Jordi: "buik is goed". Samen: `sprite/r4/steenjaguar_r4.png`.
 
+- Eindkeuring Dragonfly Cave + Gen 3 (`af/steenjaguar.png.eindkeuring_dfc.md`): **PASS**. Toegepast: voorpoot-onderkant 8→7 (5 px), crèmepixel achterpoot 13→12, staartpunt 2 px 5→4. Jordi: "de buitenste lijn is helemaal zwart, kijk daar ook nog eens goed naar" · "of dat werkt of niet past" → gemeten: Gen 3 heeft 45–68% zwart in de buitenlijn; voorstel B (lichtkant: rand langs lila → 2, langs rood → 3, langs crème/zwart/muil zwart; 72 px). Jordi: "ja rechts is echt beter".
+
+## Af (13 nov)
+- **`af/steenjaguar.png`** (+ `steenjaguar_8x.png`, `normal.pal`, eindkeuring). Fase 2 (eindvorm), pure Rock, 60×48, 15 kleuren + transparant. Rondes: r1–r2 (maker, 2×-reductie van het Gemini-raster), r3 (shading), r4 (oog en buik met Jordi, selout).
+
 ## Open
+- Fase 1 (welp): Gemini-prompt staat klaar in `gemini/README.md` (bijlagen: foto + `af/steenjaguar.png` of het model).
 - Naam, formaat per fase (pas bij het silhouet), welk Gemini-model gekozen wordt.

@@ -1372,3 +1372,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.326] - Abra-regional: Gemini-prompt v1
 - Jordi: geen mond, ogen dicht, kerf in één oor, geen vachtplukken, geen rood; meer opossum, "die er half dood bij ligt", herkenbaar Abra. Letterlijk in POKEMON.md.
 - `sprites/abra_regional/gemini/PROMPT.md` met bijlagen (originele Abra en regionale Kadabra, 8×); open keuzes: kleur van de platen en welke opossumkenmerken.
+
+### [v0.0.327] - Steenmozaïek-jaguar: frontsprite eindvorm af
+- Nieuwe lijn (Jordi): "een soort rock jaguar lijn ... gebaseerd op mijn beeldje uit mexico, 2 fases"; beide puur Rock, welp → volwassen, fase 2 "nog mooier en geavanceerder qua materiaal en kleur". Staand op 4 poten, brullend.
+- Gemini: 5 rondes voor fase 2 (tijger met patroon → te buff → illustratie → chibi → gekozen; grotere staart is Jordi's eigen bijsturing). Extra wangoog weggehaald.
+- Sprite: Gemini-raster teruggehaald (120×95) en 2× verkleind, alle mozaïekstukken behouden (Jordi's keuze); shading met licht linksboven; oog naar Jordi's pixelaanwijzingen; buikschaduw gecorrigeerd; gekleurde selout aan de lichtkant (Jordi: "ja rechts is echt beter"). Eindkeuring DFC: PASS.
+- `docs/concept/sprites/steenmozaiek/af/steenjaguar.png`; op het overzichtsvel (nog zonder naam). Fase 1 (welp) volgt.

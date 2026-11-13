@@ -1,0 +1,190 @@
+# r3: handwerk bovenop r2/raster.txt ('_' = r2 laten staan). Bevroren: mantel+vin, rechteroog, linker kanontentakel (vorm).
+# --- 7. zuignap van tentakel B omlijnd (was bruin op de buitenrand)
+@ 21 23
+22
+@ 20 24
+2ba1
+@ 23 25
+1
+# --- 6. KANONLIP LINKS: mauve -> lijfrood met lichte rand (vorm ongewijzigd)
+@ 5 26
+5665
+@ 4 27
+553344
+@ 4 28
+531144
+@ 4 29
+511144
+@ 4 30
+411133
+@ 5 31
+4433
+# --- 3. TENTAKEL B (achter-links): bolling naar rechts y26-31, onder de kop door, daarna achter arm A (geen tralie meer)
+@ 18 26
+254431
+@ 19 29
+254432
+@ 19 30
+254432
+@ 19 31
+244324
+@ 19 33
+2432
+# --- 3/5. rechterrand arm A 1 px naar buiten (x18) vanaf y34 + B erachter + LINKEROOG (lid, geel x23-24, pupil x25)
+@ 17 34
+413432
+@ 17 35
+4134321144
+@ 17 36
+413431aa14
+@ 17 37
+413431ba114
+@ 17 38
+413431ba124
+@ 17 39
+413432a924
+@ 17 40
+4134322224444444
+@ 17 41
+4133222444444444
+# --- 2. MONDKANON: ronde boring, lip in lijfrood met lichte rand linksboven, 2 gebogen ribbels erachter
+@ 17 42
+4132554222222244443
+@ 18 43
+1256544255254233
+@ 18 44
+1565114425425423
+@ 18 45
+1552111424424423
+@ 18 46
+1542111324424323
+@ 18 47
+1444113324324323
+@ 18 48
+3143333133233233
+@ 20 49
+1333122222233333
+# --- 4. lage tentakel C: zwarte inham dicht, onderkant in schaduw, zuignap omlijnd
+@ 6 44
+22
+@ 4 48
+4444
+@ 1 49
+144111333333333
+# --- 6. KANON RECHTS: lip lijfrood met lichte rand, ronde boring
+@ 46 26
+5665
+@ 44 27
+5555544
+@ 44 28
+5521144
+@ 44 29
+5211114
+@ 44 30
+4211113
+@ 44 31
+4411133
+@ 45 32
+43333
+# --- 3. TENTAKEL D (rechts): S-bocht, taps naar de punt, zuignappen binnen de omlijning
+@ 53 25
+25441
+@ 52 26
+.2ba431
+@ 52 27
+.2a9431
+@ 53 28
+.254431
+@ 53 29
+.255431
+@ 53 30
+..254ba1
+@ 54 31
+.254a91
+@ 54 32
+.255431
+@ 54 33
+.255431
+@ 54 34
+.255431
+@ 54 35
+255431
+@ 54 36
+255431
+@ 53 37
+554431
+@ 51 38
+24554331
+@ 58 39
+1.
+= 60,42,2
+# --- 4. wenkbrauw rechteroog: bovenste rij van het 2 px dikke stuk naar de rode lijntint
+= 39,34,2 40,34,2
+# --- 1. lage tentakel G hangt over de achterkant van de rechter rupsband
+= 53,44,2
+@ 57 46
+44
+@ 49 47
+444444
+@ 57 47
+4443
+@ 48 48
+3333333333331
+@ 36 49
+222222222223333333333331
+# --- 1. RUPSBANDEN: opgerolde tentakels. Rolkop links (rond, zuignapringen, krul), achterkant taps onder lijf/tentakels.
+! 50
+.*2 11 .*3 1 1 2*5 3*7 111 333 2 3*8 2 4*9 2 3*11 1 .*5
+! 51
+.*9 2 3333 2*7 3*6 2 3*7 2 b 5*10 2*11 1 .*5
+! 52
+.*8 2 a 4444 3*14 2*7 a3a 55 2*7 3*11 1 .*5
+! 53
+.*7 2 a3a 44 2*6 44 3*13 2 59 44 2 4*17 3 1 .*5
+! 54
+.*7 2 4944 2 4*10 3*9 1 2 5444 2 44 222 4*12 33 1 .*5
+! 55
+.*7 2 4444 2 4 22 4*7 3*7 11 . 2 4b44 2 4 2 444 2 4*10 333 1 .*5
+! 56
+.*7 1 44a4 2 444 2 4444 3*6 111 ... 2 a3a4 2 44 2 44 2 4*8 3333 1 .*6
+! 57
+.*8 1 a39 3 222 3*7 1111 .*6 1 49 444 2 444 2 4*6 3*6 1 .*7
+! 58
+.*9 1 9 3*7 1*5 .*11 1 3*5 222 3*11 11 .*8
+! 59
+.*10 1*8 .*16 1 33 a 3*13 111 .*10
+! 60
+.*35 1 939 3*8 1111 .*13
+! 61
+.*36 1*11 .*17
+! 62
+.*64
+# --- 1c. zuignapringen feller (boven licht, onder donker, hart in schaduwrood)
+= 36,51,b 35,52,a 36,52,3 37,52,a 36,53,9 35,55,b 34,56,a 35,56,3 36,56,a 35,57,9 37,59,a 36,60,9 37,60,3 38,60,9
+= 9,52,a 8,53,a 9,53,3 10,53,a 9,54,9 10,56,a 9,57,a 10,57,3 11,57,9 10,58,9
+# --- 2b. lip lichter dan de loop (lichte rand), loop per ribbel 1 glanspixel boven en schaduw onder
+@ 19 42
+__555
+@ 19 43
+_56655_54_54
+@ 19 44
+565__54_44_44
+@ 19 45
+55____4_44_43
+@ 19 46
+55____4_43_33
+@ 19 47
+544__43_33_33
+@ 19 48
+_4443
+= 23,39,9
+# --- 7. kleine punten: lichte kleur van de buitenrand, losse tintpixels
+@ 53 37
+255431
+= 22,31,4 52,38,5 24,47,3 46,51,5 60,47,4
+# --- 4. contour: schaduwkant (rechts/onder) zwart, lichtkant rood
+= 18,22,1 19,23,1 22,23,1 50,26,1 9,39,1 10,40,1 11,41,1 61,41,1 57,44,1 8,50,1 7,56,1 33,57,1
+# --- 1d. uitloper van de krul kort houden (geen lange horizontale streep)
+= 46,52,4 18,53,4
+# --- 4b. geen 2x2 lijnblokjes bij het linkeroog
+= 22,40,3 26,38,4

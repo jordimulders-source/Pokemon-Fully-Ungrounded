@@ -13,7 +13,8 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 5. **Claude kijkt zelf** op 8× naast Taillow, dan een **verse onafhankelijke keurder** (oordeelt eerst blind). Pas dan naar Jordi, met alleen de sprite.
 6. Eerst alleen ontwerp + frontsprite. Frame 2, rug, icoon, shiny, naam en data komen **later voor alle soorten samen**.
 
-7. **Vastgelopen? Draft + kleine stapjes** (poedelmot 6 nov, Jordi: "als we zo telkens met kleine stapjes werken komen we er wel"): na 2 mislukte model-/silhouetrondes meteen een gekleurde draft-sprite maken en die per onderdeel met Jordi verbeteren (één onderdeel per ronde, diff 0 erbuiten, onderdeel eerst op de bronfoto beschrijven, dan tekenen).
+7. **Geen stopregel na 2 rondes** (Jordi, 10 nov: "die twee rondes misgaan mag je weghalen, want de poedelmot methode heeft bewezen dat er meer rondes nodig zijn, maar het resultaat dan uitstekend is").
+   **Vastgelopen? Draft + kleine stapjes** (poedelmot 6 nov, Jordi: "als we zo telkens met kleine stapjes werken komen we er wel"): loopt het model/silhouet vast, dan meteen een gekleurde draft-sprite maken en die per onderdeel met Jordi verbeteren (één onderdeel per ronde, diff 0 erbuiten, onderdeel eerst op de bronfoto beschrijven, dan tekenen).
 
 8. **Schets van Jordi = grens, en Claude meet zelf** (poedelmot 6 nov: "ik heb cirkels getekend met de vraag of je daar binnen wil blijven"): omcirkelde vormen zijn de ruimte waarbinnen het onderdeel moet blijven; leg de schets over het resultaat en tel zelf de pixels erbuiten vóór je iets stuurt. Geloof een makerrapport ("bult is weg") nooit zonder eigen meting.
 

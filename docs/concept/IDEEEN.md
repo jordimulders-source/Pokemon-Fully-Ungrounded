@@ -5,7 +5,7 @@ Alles wat Jordi tijdens het brainstormen noemt, in steekwoorden. Het concept (`d
 ## Overzicht: sowieso doen en brainstormfase (Jordi, 8–9 nov)
 Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de secties eronder. Indeling 9 nov (Claude): zonder "misschien/nadenken/verkennen" = sowieso, met = brainstorm; Jordi kan schuiven.
 
-**Sowieso doen**
+**Sowieso doen** (samenvatting van de keuzes ook in `POKEMON.md` → "Besloten in de ideeënronde")
 - **Dundragoon:** lome, grappige draakevolutie van Dunsparce, Drampa-achtig; tweede vertakking naast Dudunsparce; **Dudunsparce komt niet in de game** (Jordi, 8 nov; uit de ROM sinds v0.0.230, Hyper Drill laat Dunsparce niet meer evolueren).
 - **Een Ice/Poison-lijn: kikkers met giftige kristallen op ze** (Jordi, 9 nov). **Cinnaber** (kwiksulfide, rood; Huancavelica-kwik voor het zilver van Potosí) vindt Jordi tof "gezien het verhaal en de pokemon link qua naam" (Cinnabar Island); "hier komen we wel uit". Andere giftige mineralen genoemd: stibniet (zilveren naalden, Bolivia), chalcanthiet (blauw, Chileense kopermijnen), realgar/operment (arseen, Atacama). **Idee Jordi: als Poliwag-regional** (er zijn al veel kikkers): de lijn redesignen en Poliwrath vervangen. Repo: Poliwag/Poliwhirl Water, Poliwrath Water/Fighting, Politoed Water/Normal; lijn zit in de dex. **Poliwag en Poliwhirl worden sowieso regionaal** (Jordi, 9 nov); de eindvorm: Jordi denkt na ("misschien toed, misschien wrath, misschien blijven beide hetzelfde en maken we een nieuwe 3e poli"). Voorbeeld (Jordi): Applin, die later een derde tak kreeg (Dipplin naast Flapple en Appletun). **Eis (Jordi): duidelijk anders dan Glimmora** (Glimmet/Glimmora zitten in de dex: Rock/Poison, kristalbloem met facetten). Voorstel Claude: geen geslepen edelstenen of bloemkrans, maar rijp- en ijsnaalden die uit de huid groeien (bevroren gifzweet), helder ijs met de waarschuwingskleuren van de huid eronder; dier eerst, kristal tweede. Echte haakjes (Claude): harlekijnpadden (*Atelopus*, páramo tot ±4800 m, tetrodotoxine, de *jambato* teruggevonden in 2016), vieroogkikker (*Pleurodema marmoratum*, puna tot ±5000 m, gifklieren als nepogen, volgt smeltende gletsjers tot ±5400 m), Andespad (*Rhinella spinulosa*).
 - **Vuurwerk** (Fire/Fairy, FAKEMON_PITCH #83).
@@ -16,14 +16,14 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Een condor-Pokémon = Hanan Pacha** (Jordi, 9 nov: "de condor in het legendary trio klinkt uitstekend").
 - **Venomoth-vuurvlieg** (Electric/Fire): Venonat wordt de nieuwe Venomoth **met een move die hij leert**; conceptueel een insect dat tot vuurvlieg evolueert (zoals Volbeat). **Ontwerp opnieuw met Gemini** (Jordi, 9 nov: "Het design was prima, maar kunnen we denk ik nu veel beter maken met Gemini").
 - **Banette-evolutie** ("nog meer marionet").
-- **Bartitsu-Mr. Rime.**
+- **Mime-lijn:** Mime Jr. blijft → regionale jiujitsu-Mr. Mime → **Mr. Prime** (zie sectie hieronder en `POKEMON.md`).
 - **Blobfish-lijn, 2 fases** (voorstel Claude, Jordi 9 nov "goed idee": fase 1 een gewone diepzeevis, fase 2 "naar boven gehaald" en ingezakt).
 - **Kricketune-evolutie die echt een dirigent wordt.**
 - **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).
 - **Galápagos-regional forms.**
 - **Delibird-evolutie** (Jordi, 9 nov: "Delibird gaan we een evo geven dan"); Delibird-familie moet terug in de dex; ontgimmicken (haakje: de beta-cadeauvogel Gifuto #225).
 - **Heliamphora-regional form van de Bellsprout-lijn** (Jordi, 9 nov: "gaan we sowieso doen"); de bekerplant van de tepuis (staat rechtop, met een klein lepelvormig dekseltje). Eerder: Victreebel-regional form verkennen: "van die hangende planten waar vliegen in kruipen en opgegeten worden bijv". (hangende bekerplanten zijn *Nepenthes*, Zuidoost-Azië).
-- **Tank-Octillery als regional form, plus een nieuwe evolutie daarna** (Jordi, 9 nov: "tank octillery regional form ook en een nieuwe evolutie daarna"; de tank-versie uit de Spaceworld-beta, #210). Richting evolutie (Jordi, 9 nov): "een soort kraken battleship zou wel tof zijn denk ik". Eerder: Octillery-evolutie (Jordi's favoriete Pokémon; "zelfs met onze dikke buff is die nog niet geweldig").
+- **Octillery-evolutie:** zie `POKEMON.md` (Krassault; de tank-Octillery valt af, Jordi 10 nov).
 - **Kecleon-evolutie: een leguaan** (Jordi, 9 nov: "dan hebben we bij deze onze Kecleon evolutie"); evolueert zodra Kecleon op de Galápagos-locatie in de game is (plaatsgebonden, zoals Nosepass en Magneton). Kecleon is in de repo Grass. Er bestaat nog geen leguaan-Pokémon. **Keccles evolueert ook op die locatie** (Jordi, 9 nov: de Galápagos komt relatief laat in het verhaal). Welke leguaan (zee-, land- of roze leguaan) en type: later (Jordi, 9 nov). Eerder: Kecleon-evolutie: past in het verhaal als Keccles late game evolueert.
 - **Oricorio-vormen** (Jordi, 9 nov: "de eerder besproken oricorio forms" sowieso): zie "Oricorio, drie nieuwe dansen" in de sectie van 29 okt (samba Grass, tango Dark, cumbia Water). **Cueca en marinera komen er niet in** (Jordi, 9 nov).
 - **Combee-regional: carpenter bee** (Jordi, 9 nov: "zo kunnen we combee nuttig maken"); evolueert **onafhankelijk van geslacht**. Open: aparte vormen per geslacht (Mothim/Wormadam) of alleen een uiterlijk geslachtsverschil (zoals Pikachu; zit in de expansion, `P_GENDER_DIFFERENCES`).
@@ -46,7 +46,6 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Spaceworld-ghosts Norowara en Kyonpan** komen in de game (Jordi, 9 nov); Raitora voorlopig niet.
 
 **Brainstormfase**
-- Invulling van de Ice/Poison-Pokémon (aardappel/chuño, Tentacool-vorm en ozongat: Jordi niet overtuigd; nieuwe voorstellen: bevriezende gifkikker, bedorven ijsje, bevriezing-ijsgeest).
 - Ground/Fairy buiten Pachamama: Jordi denkt nog na.
 - Gloednieuwe Pokémon zonder link met Zuid-Amerika.
 - Evoluties voor soorten die ze echt nodig hebben (Smeargle, Chatot, Cryogonal: niet per se).
@@ -225,6 +224,7 @@ Types en dex-status gecontroleerd in de repo (`species_info/`, `DEX_IN_ROM.md`).
   - Lore voor allebei: een **cryptid**. NPC's twijfelen of hij bestaat; hij is alleen 's nachts zichtbaar, op één plek. Type Bug/Fairy, of Bug/Normal (de pluizige "poedel") als iets anders.
   - Tepuis komen nu twee keer terug (Archen, poedelmot): goed gebied voor "verloren wereld"-soorten.
   - **Besloten (Jordi, 5 nov):** eigen lijn; de larve heeft kenmerken van een poedelhond (humor), de mot is Bug/Fairy. Zie `POKEMON.md`.
+  - **Tussenvorm = poesrups** (puss caterpillar, rups van de flanelmot Megalopyge; Jordi, 13 nov): "Het moet dus vooral een harige rups zijn, mysterieus en cryptid, maar dus ook pluizig, het gaat dus om die harige rups vorm". Zie `POKEMON.md`.
 
 **Ruïnes**
 - **Tiwanaku-Golett/Golurk:** stond al op de lijst (Rock/Ghost of Ground/Psychic; repo: Ground/Ghost, in de dex). **Voorstel:** samenvoegen met de "mysterieuze ruïne-Pokémon" (Rock/Ghost of Rock/Psychic, Puma Punku). Dan is dit die Pokémon en hoeven we geen aparte fakemon te maken.
@@ -467,3 +467,21 @@ Jordi: naast regional forms ook een paar convergente soorten van Gen 1–3-Poké
 - **Ekans/Arbok → koraalslang:** "Ekoral".
 - **Lickitung → reuzenmiereneter** (tong ±60 cm); let op overlap met Heatmor (ook een miereneter).
 - **Phanpy/Donphan → tapir:** de "olifant" van Zuid-Amerika met een snuitje.
+
+## Nieuw type: Cosmic (10 nov, nog niets besloten)
+- **Jordi:** "ik zit te denken aan cosmic. Daar kunnen veel bestaande types meteen naar toe, past bij de lore en is eigenlijk niet goed te vatten, nu wordt dat vaak op psychic gezet, maar dan wordt er wel flink gesneden in het aantal psychic pokemon meteen."
+- **Kandidaten (Jordi):** Elgyem-lijn, Lunatone & Solrock, Baltoy-lijn, Minior, Deoxys, Clefairy-lijn; "Wss nog veel meer." **Cosmic Power** kan al een Cosmic-aanval zijn.
+- **Jordi:** "De type chart is nog niet helemaal in balans vind ik overigens." (Wat precies: nog vragen.)
+- **Jordi over gissen naar matchups:** "dat is ook wel weer uitdagend en zorgt ervoor dat je blijft opletten, had ik met fairy ook altijd."
+- **Repo-stand (Claude, 10 nov):** Elgyem/Beheeyem Psychic; Lunatone/Solrock Rock/Psychic; Baltoy/Claydol Ground/Psychic; Clefairy-lijn Fairy; Minior Rock/Flying, staat uit (`species_enabled.h` FALSE; DEX_NOMINATIES 3b, DEX_IN_ROM categorie C), Jordi dacht dat hij erin zou komen: nog bevestigen; Deoxys Psychic, niet in de dex; Cosmic Power = Psychic-statusmove. Andere mogelijke kandidaten (Claude, alleen ter overweging): Beldum-lijn en Bronzor-lijn (Steel/Psychic, in de dex), Sigilyph (Psychic/Flying, in de dex), Natu/Xatu (Psychic/Flying, in de dex), Staryu (Water, in de dex), Jirachi (niet in de dex).
+- **Techniek (Claude):** `TYPE_MYSTERY` niet hergebruiken: de code gebruikt het als "geen type" (o.a. derde type, `MoveIgnoresType` in `battle_util.c`). Curse is hier Ghost (`B_UPDATED_MOVE_TYPES` = GEN_LATEST). Cosmic wordt dus een nieuw nummer; tabel in `src/data/types_info.h`.
+- **Lore-haakje (Claude, optie):** de Inca's zagen sterrenbeelden in de **donkere vlekken** van de Melkweg (*Mayu*, de hemelrivier): o.a. de lama (*Yacana*), de vos (*Atoq*), de pad en de slang. Plus de Atacama (sterrenwachten, meteorieten; staat al bij Deoxys/Lunatone/Solrock in DEX_NOMINATIES).
+- **Matchups (Jordi, 10 nov, voorstel):** Cosmic super effective tegen Steel, Electric en Fairy; not very effective tegen Ghost, Bug, Rock en Ice. Resist Steel, Water, Fire en Electric; immuun voor Fairy; zwak tegen Poison, Rock, Psychic en Ghost. Vraag van Jordi: hoe kan Cosmic de balans geloofwaardig (fysiologisch) verbeteren.
+- **Aanpassing (Jordi, 10 nov):** Ghost eruit ("dan halen we die weg"; Claude rekende met beide Ghost-regels weg, nog bevestigen) en geen Electric-resist. Zwak voor het eigen type is geen probleem (Jordi: "dat is bewear ook, en alle ghost types bijna"). Stand: SE tegen Steel, Electric, Fairy; NVE tegen Bug, Rock, Ice; resist Steel, Water, Fire; immuun voor Fairy; zwak tegen Poison, Rock, Psychic. Cosmic tegen Cosmic nog open.
+- **Naam (Jordi, 10 nov):** is "Cosmic" een goede samenvatting voor al het buitenaardse? "Het hoeft niet perfect te zijn he, ik bedoel niet alle steel pokemon zijn per se staal natuurlijk." Claude: ja (dekt ruimte, sterren, maan, meteorieten én aliens; "Space" te letterlijk, "Astral" neigt naar geesten, "Alien" sluit hemellichamen uit); past in de 8 tekens van `TYPE_NAME_LENGTH`.
+- **Fairy (Jordi, 10 nov):** "fairy mag een flinke nerf". Claude-advies Cosmic tegen Cosmic: super effective (nog niet gekozen).
+- **Besloten (Jordi, 10 nov):** Cosmic tegen Cosmic = super effective ("klinkt goed ja"). Matchups nu: SE tegen Steel, Electric, Fairy, Cosmic; NVE tegen Bug, Rock, Ice; resist Steel, Water, Fire; immuun voor Fairy; zwak tegen Poison, Rock, Psychic, Cosmic. Balans (Claude, telling op de tabel): spreiding ±18% kleiner; Grass, Bug en Steel blijven de uitschieters, Psychic houden in de gaten.
+- **Besloten (Jordi, 12 nov):** "Ik heb erover nagedacht en we gaan het doen." Een gym of E4-lid krijgt Cosmic. Samenvatting in `CONCEPT.md`.
+
+## Ruimte en diepe zee als mysterieuze gebieden (12 nov)
+- **Jordi:** "Daarnaast zit ik erover na te denken om de ruimte en diepe zee beide als mysterieuze areas toe te voegen, mogelijk met eigen legendaries. Dat zijn twee van de grootste mysteries in ons bestaan en tof om daar iets mee te doen."

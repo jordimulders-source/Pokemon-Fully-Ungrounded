@@ -1,0 +1,16 @@
+pixels: 1169 (silhouet 1046)
+benoemde alphawijzigingen (kam en pootjes, erbij en eraf; alpha_wijzigingen.txt): 135
+onbenoemde alpha-diff met silhouet: 0  extra=[]  mist=[]
+open randen (buitenrand zonder lijnkleur 1-4): 0 []  | bewuste uitzondering klauwtjes: []
+buitenrand 182 px: selout 3+4 107 px in 5 reeksen (lengtes [11, 21, 24, 25, 26]), reeksen < 3 px: []
+losse omlijningspixels in een vlak: 0 []
+losse pixels (vlaktint zonder gelijke buur): 0 []
+tintclusters < 3 px: 0
+gebruikte indexen: 1234567A
+
+diff t.o.v. r2 (diff_r2.py):
+kam: 159 px gewijzigd, waarvan alpha 115
+pootjes: 6 px gewijzigd, waarvan alpha 4
+loklijnen: 15 px gewijzigd, waarvan alpha 0
+verre oog: 3 px gewijzigd, waarvan alpha 0
+buiten de zones: 0 []

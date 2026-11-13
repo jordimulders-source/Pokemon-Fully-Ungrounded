@@ -997,128 +997,370 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "A lost het heel netjes op" → healerhand met ronde hoek rechtsonder (`gemini_sprite/r10/C.png`, optie A) in `af/nachtaap_fase3.png` (+ `_8x`, `voor_na.png`).
 - Overzichtsvel `showcase/frontsprites_af.png` opnieuw gemaakt met de definitieve Curiqui.
 
-### [v0.0.225] - Nieuwe ronde ideeën
+### [v0.0.225] - Abra-lijn regional form: charlatan-Alakazam (concept + prompts)
+- Nieuw concept (Jordi, 10 nov): Abra-lijn als illusionisten/oplichters, Dark/Psychic, geniepiger dan het origineel; motief één object (Kadabra) en twee dezelfde (Alakazam). Kadabra krijgt een hartteken. Vastgelegd in POKEMON.md → Regional forms.
+- Alakazam eerst: Gemini-prompts in `docs/concept/sprites/alakazam_regional/gemini/PROMPT.md` (variant A twee toverstafjes, variant B twee identieke speelkaarten; zwart/wit/grijs, smoking uit eigen lijf, violette tint op het hoofd, opgekrulde snor, één oog half dicht, voorkant naar rechts, geen hoge hoed). Bijlage: Alakazam-frontsprite 8×. Rood accent nog open.
+
+### [v0.0.226] - Charlatan-Alakazam: pose met hand achter de rug
+- Jordi: "1 hand toont hij naar ons toe, de ander houdt die achter zijn rug, daar zie je dan dat hij een kaart vast heeft ook/of toverstaf". In beide Gemini-prompts (staf en kaarten) en POKEMON.md verwerkt. Daarna: "en die hand toont die dan nonchalant" (ook verwerkt).
+
+### [v0.0.227] - Charlatan-Alakazam: rood strikje
+- Jordi koos het strikje als rood accent; prompts (A en B), README en POKEMON.md bijgewerkt.
+
+### [v0.0.228] - Charlatan-Alakazam: Gemini-ronde 1, prompt v2
+- Ronde 1 (staf en kaarten) opgeslagen met Jordi's feedback in `alakazam_regional/gemini/README.md`; Jordi kiest de kaarten. Startprompt v2 (`PROMPT_v2.md`): bijna zijaanzicht naar rechts, één snor, subtielere smoking zonder Dracula-kraag, mag meer van Alakazam afwijken; plek van het violet nog open.
+- Violet (Jordi: optie 4): grijs hoofd met een lichte violette glans in de schaduwen; in prompt v2 en POKEMON.md.
+
+### [v0.0.229] - Charlatan-Alakazam: ronde 2, prompt v3 (hoofd)
+- Ronde 2 opgeslagen; Jordi: pose klopt, meer charisma. Prompt v3 (`PROMPT_v3.md`): ronde 2 als bijlage, alleen het hoofd: iets meer naar ons toe, kijkt ons zijdelings aan, "wenkbrauw opgetrokken"-look zonder wenkbrauw, snor twirlt meer.
+
+### [v0.0.230] - Charlatan-Alakazam: ronde 3, bijsturing v4
+- Ronde 3 opgeslagen (Jordi: "uitstekend"). Bijsturingen `PROMPT_v4.md`: achterovergekamd haar (donkere kopbovenkant) en zwarte snor, elk apart.
+
+### [v0.0.231] - Charlatan-Alakazam: Gemini-ontwerp gekozen
+- Ronde 4 (achterovergekamd haar) afgekeurd ("erg lelijk"); zwarte snor weigerde Gemini. Jordi kiest ronde 3 als Gemini-ontwerp: `alakazam_regional/referenties/gemini_gekozen_charlatan.png`. In de sprite: snor zwart (zelf), licht/contrast naar Gen 3. Les in GEMINI.md.
+
+### [v0.0.232] - Charlatan-Alakazam: bijsturing v5 (kleding als lijf, oren)
+- Jordi wil de kleding natuurlijker als lijf en andere oren. `PROMPT_v5.md`: smoking alleen als kleurzones van Alakazams eigen platen (schouders zwart, borst wit, knieën zwart), geen naden/zomen/manchetten, strikje als tekening (Rowlet), oren horizontaler naar achteren.
+
+### [v0.0.233] - Charlatan-Alakazam: ronde 5, bijsturing v6
+- Ronde 5 opgeslagen. Jordi: oren van het origineel (ronde 3) beter; zijkanten en rug zwart, "beetje mr mime/rime lijn idee". `PROMPT_v6.md` met ronde 5 als basis en ronde 3 alleen voor de oren. Daarna: "evenals de bovenarmen" (ook zwart).
+
+### [v0.0.234] - Charlatan-Alakazam: ronde 6
+- Ronde 6 opgeslagen. Jordi: lijfsilhouet klopt nu, hoofd van ronde 3 is beter, lijfkleuren nog verbeteren.
+
+### [v0.0.235] - Charlatan-Alakazam: samengesteld model, bijsturing v7
+- Hoofd van ronde 3 op het lijf van ronde 6 (`samengesteld_kop3_lijf6.png`). `PROMPT_v7.md` (Jordi): onderarmen en bovenbenen niet zwart, schouderstukken als aparte platen, Alakazam-anatomie aanhouden.
+
+### [v0.0.236] - Charlatan-Alakazam: silhouet vast, SPEC voor de frontsprite
+- Ronde 7 opgeslagen; Jordi: silhouet klopt, kleuren aan Claude. `alakazam_regional/SPEC.md` met model (silhouet ronde 7, hoofd ronde 3, niet spiegelen) en kleurzones uit Jordi's woorden; maker-agent gestart.
+
+### [v0.0.237] - Charlatan-Alakazam: frontsprite rondes 1–3
+- Maker-agent volgens de Gemini-werkwijze: `alakazam_regional/kleur_r1..r3/` (silhouet = ronde 7 verkleind, kleurzones uit SPEC, 14 kleuren, kijkt naar rechts). Na r1 reparaties van Claude (gezicht, snor, zwarte massa), na r2 keurdersreparaties (rechterbovenarm zwart, kin/hals grijs, linkersnorkrul, kaartranden, mondlijn). r3 naar Jordi.
+- r4 (Jordi: "de snor is ook nog teveel snor en niet genoeg in alakazam stijl zoals in het model"): snor als twee dunne snorharen van 1 px uit de snuit, band weg; stompje tussen hals en arm hoort bij de arm; schaduw onder de kaak.
+- Jordi over r4: snor "2 haren die helemaal niet bij alakazam passen", "heel slordig afgewerkt", linkerkant hoofd, wit front als rechte lijn, handen "pixel blurs", voeten slordig; "Ik wil hem pas zien als die echt lijkt op het model". Verse maker (r5) met de onderlaag-methode (gekwantiseerd model, kleuren mappen, alleen technisch opschonen); snor als omlijnde streng in twee varianten (zwart / grijs). Les in GEMINI.md.
+- Snor blijft grijs (Jordi: "nee houd hem grijs"); SPEC, POKEMON.md en Stand van zaken bijgewerkt.
+- Correctie (Jordi): "ik heb nooit gezegd zwart, ik heb gezegd dat het kan vervagen naar zwart, maar ik ben tevreden met de grijze". "Zwarte snor" was een verkeerde lezing van Claude; SPEC en README bijgewerkt.
+- Regel "na 2 mislukte rondes stoppen" weggehaald (Jordi: "die twee rondes misgaan mag je weghalen, want de poedelmot methode heeft bewezen dat er meer rondes nodig zijn, maar het resultaat dan uitstekend is"): CLAUDE.md, SPRITE_KERN.md, GEMINI.md.
+
+### [v0.0.238] - Charlatan-Alakazam: frontsprite r5–r7 (poedelmot-methode)
+- Verse maker vanaf het gekwantiseerde model (onderlaag, lijnkaart, px-metingen): r5 snor als omlijnde grijze streng, nette handen/voeten, wit front volgt de vorm. Keurder: snor, kop, voeten opgelost.
+- r6: onderarmen grijs (Jordi; de horizontale rechterarm is de onderarm, keurder r2 had dat fout), tapse vingerlijnen, schoppen los, knieglans.
+- r7 (Claude, 19 px keurdersreparaties): onderarmen terug naar 3 tinten, schaduw als sikkel, geen banding. Controle: open randen 0, losse o 0, alpha-diff 0. Herkeuring + DFC-eindkeuring: PASS na deze reparaties.
+
+### [v0.0.239] - Charlatan-Alakazam: r8 (pupil, handen)
+- r8: pupil 1 px naar links ("pupil perfect"), rechterhand A goed. Linkerhand nog niet: r9 maakt L1 (model nagemaakt) en L2 (grotere vuist, voorstel Claude). Daarna het lijf: tuxedokleuren in het lichaam verwerken zoals bij Mr. Rime, niet te cartoony (Jordi; SPEC bijgewerkt).
+- r9–r10: linkerhand L1 (model nagemaakt; Jordi: "Links heeft in elk geval de kaart zeeer netjes vast") en L2 (vuist); r10 liet de onderarm doorlopen in de hand (Jordi: "nu heb je van een arm een hand gemaakt"). r11: armkleuren zoals het model, onderarmen zwart en bovenarmen grijs (Jordi), vorm ongewijzigd.
+- r12–r12c: rechterbovenarm grijs; r12/r12b te smal (Jordi: "de rechterbovenarm is nog niet helemaal grijs, kom op he", "is dit geen onderdeel van de arm", "check het model ook"); r12c (Claude, 13 px): het hele stuk van schouder tot elleboog grijs, zoals het model.
+- Lijfopties lijf_r1 (O1 grijs lijf + witte borstplaat, O2 + flank vervaagt naar zwart, O3 Mr. Rime-buikvlek, O4 = O2 met klein strikje), na een Mr. Rime-studie; samengevoegd met r12c in `lijf_r1/samengevoegd/` (x34 rij 29–31 blijft omlijning tussen front en arm).
+- Keurder lijfopties: O1 PASS (3 px reparaties, door Claude: O1r), O2/O4 FAIL (d/c-strook leest als revers), O3 FAIL (blijft pinguin). O5 = O1r + klein strikje van O4 (voorstel keurder). Keuzevel `lijf_r1/samengevoegd/vel_keuze.png`.
+- Rechterschouderplaat (Jordi: "deze pixellijn is schouderblad en dus verkeerd gekleurd"): rij 27 x37–40 van grijs naar zwart plaatmateriaal (nnmm) in O1r, O5, O3 en r12c.
+- lijf_r2: 8 vervangers voor het strikje op O1r (Jordi: "teken eens wat en doe ook een stropdas patroon proberen", "geef me meerdere opties"): S1 keelwam, S2 sleutelbeenvlekken, S3 rode keelvlek, S4 rode stropdastekening, S5 zwarte streep + rood, S6 geen rood, S7 rode ruit op borstbeen, S8 zwarte streep. Vel `lijf_r2/vel.png`.
+- Jordi kiest S1 (keelwam) op O1; eindafwerking gestart in `af_r1/` (DFC-checklist, vergelijking met Gen 3-sprites, één lichtrichting, kleur- en geometriecontrole).
+- af_r1: eindafwerking (kop belicht van linksboven, palet 13→11, verre ledematen donkerder, oorknikje weg); DFC/checklist PASS op richtlijnpunten na. Eindkeurder: FAIL op selout (58 % zwart aan de lichtkant). af_r2: selout gekleurd (18 % zwart; Gen 3: 3–23 %), meer hooglicht, banding bovenarm weg, deukje kop dicht, onderarm ronder.
+- Kadabra-regional: Gemini-prompt v1 (`docs/concept/sprites/kadabra_regional/gemini/PROMPT.md`): charlatan-leerling, één kaart in een "is this your card"-pose, hartteken, design consistent met de charlatan-Alakazam; kijkrichting nog open.
+- Kadabra ronde 1 (Jordi: "de pose is teveel hetzelfde, hij moet veel meer de kaart frontaal tonen, is this your card, en zelf wat meer naar links kijken, en iets minder op alakazam lijken, meer op een kadabra versie van die alakazam ook"); prompt v2 met de originele Kadabra als anatomiebijlage.
+- Kadabra ronde 2 (Jordi: "dit is te frontaal, hij moet meer driekwart. Plus hij lijkt nog steeds teveel op alakazam en het lijkt alsof die zn middelvinger opsteekt"); prompt v3 zonder Alakazam-bijlage, driekwart naar links, kaart opzij aan gestrekte arm, vastgeknepen tussen duim en vingers.
+- Kadabra: klaverteken in plaats van hart (Jordi: "ik wil toch voor een klaver gaan ipv een hart ook"); prompt v3, POKEMON.md en Stand van zaken bijgewerkt.
+- Klaver rood (Jordi).
+- Kadabra prompt v4 (Jordi: "nee gewoon betere prompt"): twee bijlagen (lijf van Kadabra, kleuren van de Alakazam), pose als gedrag (straatgoochelaar toont kaart aan toeschouwer links), greep tussen duim en wijsvinger.
+- Prompt v4 aangepast: alleen de Alakazam als bijlage (Jordi: "ik laat de kadabra bijlage weg dit keer"); Kadabra-lijf in woorden.
+- Prompt v4: kaart volledig frontaal, Kadabra zelf driekwart (Jordi).
+- Kadabra ronde 4: kaart niet vast, geen "is this your card"-pose; alleen rood op het hoofd (Jordi). Bijsturing `BIJSTURING_v4.md`.
+- Kadabra ronde 5: "Helemaal perfect", behalve de open rechterhand (5 mensenvingers). Bijsturingsprompts A/B in `BIJSTURING_hand.md`.
+- Kadabra: model aangepast door Claude (Jordi: "pas het model aan met hand met 3 vingers en klauwtjes"): `kadabra_regional/model/model_hand3.png`.
+- Kadabra: Claudes eigen handaanpassing afgekeurd ("Jij kan dit dus niet"); Gemini-prompt hand v2 (`BIJSTURING_hand2.md`): hand als kopie van de eigen voeten (drie tenen met klauwtjes). Les in GEMINI.md.
+- Kadabra: SPEC vastgelegd (model ronde 5; open hand 3 vingers met klauwtjes en arm in "tahdah/voila"-pose door de maker in de sprite; alleen rode klaver). Stand van zaken bijgewerkt voor de volgende sessie.
+- Kadabra-model, tweede poging hand (12 nov): `kadabra_regional/model/model_hand3_v2.png`, uit ronde 8 de vierde vinger weggehaald (3 vingers met klauwtjes in Gemini-stijl); wacht op Jordi.
+- Kadabra-model v3: middelvinger recht en taps (Jordi: "lijkt nu net alsof die gebroken is"), `model/model_hand3_v3.png`.
+- Kadabra-model v4: aansluiting van de middelvinger op de hand glad gemaakt (Jordi: "het is de verbinding aan de hand die nog steeds krom is"), `model/model_hand3_v4.png`.
+- Kadabra-model v5: hand naar Jordi's schets (handpalm met drie vingers als waaier naar rechts), `model/model_hand_v5.png`.
+- Kadabra-hand: v5 afgekeurd ("echt niet mooi"); Gemini-prompt met Jordi's schets als bijlage (`gemini/BIJSTURING_hand3_schets.md`). Les in GEMINI.md.
+- Kadabra-model v7: uit Gemini's schets-hand (ronde 9) de duim weggehaald, drie vingers als waaier naar rechts: `model/model_hand_v7.png`.
+- Kadabra: v7 afgekeurd (geen duim); complete nieuwe Gemini-prompt `kadabra_regional/gemini/PROMPT_v5.md` (pose van ronde 5 in woorden, alleen rode klaver, handen "zoals zijn voeten": duim + twee vingers met klauwtjes).
+- Kadabra ronde 10: A (open hand met duim + 2 vingers, "het beste gelukt tot nu toe") en B (meer de houding van Kadabra); Jordi neigt naar B.
+- Kadabra: model = ronde 10 B (Jordi: "de 2e is beter"); beide handen naar 3 vingers in `model/model_B_hand3.png` (wacht op Jordi); extra bronnen in `referenties/`.
+- Kadabra-model: kaarthand zonder nagels op de gebogen vingers (Jordi).
+- Kadabra-model: kaarthand omgedraaid (handpalm naar de kijker, duim over de kaart; Jordi: "zouden wij als kijker de binnenkant van de hand moeten zien").
+- Kadabra-model: kaarthand = Gemini's eigen hand met één vinger minder (Jordi).
+- Kadabra-model akkoord (Jordi: "ja prima"): `kadabra_regional/model/model_B_hand3.png`. Les in GEMINI.md (vinger weghalen uit Gemini's eigen pixels).
+- Kadabra: frontsprite gestart (`kadabra_regional/kleur_r1/`, poedelmot-methode, palet van de charlatan-Alakazam); in de sprite krijgt de kaartvinger een nagel (Jordi).
+
+### [v0.0.240] - Charlatan-Alakazam af
+- Jordi (13 nov): "zet de alakazam alvast in af". `alakazam_regional/af/` = af_r2 (sprite, 8×, raster); op het overzichtsvel `showcase/frontsprites_af.png` (27 sprites, "Alakazam (regional)", Dark/Psychic); Stand van zaken bijgewerkt. Gepusht naar main.
+
+### [v0.0.241] - Kadabra-regional: frontsprite r1–r2
+- r1 (maker, poedelmot-methode, model `model/model_B_hand3.png`, palet van de charlatan-Alakazam, 62×54 px): keurder eis 1 PASS, eis 2 FAIL (grijs te licht, lichtkant 2 % zwart). r2: grijs een stap donkerder (gem. 181,5; Alakazam 179,9), lichtkant 12 %, linkerplaat zwart, kin opgeruimd, klavervoet 2 px; klavervarianten A (4×4) en B (5×5) op het vel. Nagel op de kaartvinger zit erin maar leest op 1× niet.
+- Kadabra r2 naar Jordi: "de schoppen ipv de klaver is mogelijk een beter idee, verder zie ik zijn pupillen niet en is de kaart net niet goed genoeg, verder erg prima". r3 gestart (verse maker): schoppen op het voorhoofd, pupillen, kaartvarianten.
+- Kadabra r3: varianten voor de rode schoppen op het voorhoofd (1–3), de ogen met pupil (1–3) en de kaart (A modelmaat, B 7×10 rechtop, C 9×12); beste combinatie van de maker: schoppen_3 + oog_3 + kaart_B. Vel `kadabra_regional/kleur_r3/vel.png`; wacht op Jordi's keuze.
+- Kadabra r3 naar Jordi: kaart niet rechtop, schoppen niet op de juiste plek van het hoofd. r4: schuine kaart (K1–K3) en positievarianten voor de schoppen (P1–P3).
+- Kadabra r4: studie van de ster bij de Kadabra-sprites (op de middellijn, vult de ruimte tussen de ogen, vervormt niet); schoppen in positievarianten P1–P5 langs de middellijn (r3 lag 1 px te laag/links), oog_1 (alleen pupil) in de sprite, kaart schuin (±18°, K1–K3). Beste combinatie van de maker: P1 + oog_1 + K2. Vel `kadabra_regional/kleur_r4/vel.png`; wacht op Jordi.
+- Kadabra r4 afgekeurd (kaartvorm, schoppen te groot en verkeerd geplaatst; "Maak er maar een ruit van"). r5 (Claude zelf, op r2): rode ruit op de modelplek (A/B), oog_1, kaart naar de goedgekeurde Alakazam-kaart. `kadabra_regional/kleur_r5/`.
+- Kadabra r6: ruit 1 px naar rechts (Jordi: "de ruit mag 1 pixel naar rechts, daarna mag die naar eindkeuring"); A (3×5) en B (5×5) in `kadabra_regional/kleur_r6/`; eindkeuring gestart.
+- Eindkeuring Kadabra r6 afgebroken door de gebruikslimiet (13 nov); Stand van zaken bijgewerkt: eindkeuring en ruitkeuze (A/B) staan nog open.
+
+### [v0.0.242] - Kadabra-regional: eindkeuring, r7
+- Eindkeuring r6 (DFC, checklist, naast Kadabra/Alakazam/Sneasel/Umbreon en de charlatan-Alakazam): PASS met kleine reparaties (lichtkant 10 % zwart, palet identiek aan de Alakazam, 1232 px). Advies keurder: ruit B (5×5) leest als ruit, A (3×5) als stip.
+- r7 (Claude): nagel los van de kaart ((6,23) a→d) en tapse binnenlijn aan de oorbasis ((27,15) b→d). Niet gedaan (silhouet = model): oorpunt en elleboog 1 px. `kadabra_regional/kleur_r7/` (A en B); wacht op Jordi's ruitkeuze, dan naar `af/`.
+
+### [v0.0.243] - Kadabra-regional af
+- Jordi: "B want A is geen ruit, maak maar rond". `kadabra_regional/af/` = kleur_r7 B (ruit 5×5); op het overzichtsvel als "Kadabra (regional)", Dark/Psychic (28 sprites); Stand van zaken en lessen (GEMINI.md) bijgewerkt. Gepusht naar main.
+- Namen (Jordi): "ze blijven kadabra en alakazam heten"; POKEMON.md en Stand van zaken bijgewerkt.
+
+### [v0.0.244] - Poedelmot-lijn: tussenvorm poesrups
+- Jordi (13 nov): de tussenvorm tussen Pupoodle en Lanymph wordt een poesrups (puss caterpillar); letterlijk in `POKEMON.md` en `IDEEEN.md`. Het idee stond nog nergens in de repo. Gemini-prompt geschreven; nog geen model.
+- Poesrups Gemini ronde 1 afgekeurd (pruik); `sprites/poesrups/gemini/README.md`, les in GEMINI.md, nieuwe prompt.
+
+### [v0.0.245] - Poesrups: frontsprite af
+- Tussenvorm van de poedelmot-lijn (Pupoodle → poesrups → Lanymph), Bug/Fairy (Jordi). Gemini-model gekozen na 3 promptrondes (`sprites/poesrups/gemini/README.md`); sprite 54×33 in 4 rondes: r2 gekozen ("Ik vind ronde 2 al uitstekend"), r3 (kam groter) verworpen, r4 kleurronde, eindkeuring Dragonfly Cave + Gen 3 PASS, 20 px tintreparatie.
+- `sprites/poesrups/af/`; overzichtsvel `showcase/frontsprites_af.png` (28 sprites); POKEMON.md, SPEC, lessen (GEMINI.md, SPRITE_WERKWIJZE.md), Stand van zaken.
+
+### [v0.0.246] - Octillery-evolutie: Gemini-prompts
+- Overleg (Jordi, 10 nov): Octillery-evolutie wordt een kraken met wapens, Water/Steel, groter en zwaarder, organisch metaal, max. 3 kanonnen, driekwart; geen oorlogsschip, beta-tank valt af. POKEMON.md bijgewerkt.
+- Twee Gemini-prompts (A: gatlingsnuit + 2 tentakelkanonnen, B: 2 kanonnen op de mantel + snuit) met Octillery/Remoraid-bijlagen op 8×: `docs/concept/sprites/octillery_evo/gemini/`.
+
+### [v0.0.247] - Octillery-evolutie: ronde 1 en prompt A2
+- r1 (A en B) afgekeurd door Jordi ("gewoon octillery met wat kanonnen"); plaatjes en feedback in `octillery_evo/gemini/PROMPT.md`. Verder met richting A: meer kraken, echt oorlogswapen, steel natuurlijk zoals bij Empoleon. Nieuwe prompt A2.
+- Les in GEMINI.md: "keep from X" geeft X met accessoires, ook zonder bijlage; steel als anatomie beschrijven.
+
+### [v0.0.248] - Octillery-evolutie: r2, Humboldtinktvis, prompt A3
+- r2 afgekeurd ("goedkoop, wat metaal erop geplakt"). Jordi: wapens als lichaamsdeel, Gemini laten ontwerpen, Humboldtinktvis i.p.v. kraken, gatling mag organisch, kanonnen onderdeel van de tentakels, mooi pantser zoals andere Steel-types. Studie Steel-voorbeelden + prompt A3 in `octillery_evo/gemini/PROMPT.md`.
+
+### [v0.0.249] - Octillery-evolutie: r3 en prompt A4
+- r3 (A3): vorm en anatomie beter, tentakelkanonnen goed; sifonwapen en pantser moeten organischer (Jordi). Prompt A4 met r3 als bijlage in `octillery_evo/gemini/PROMPT.md`.
+
+### [v0.0.250] - Octillery-evolutie: r4 en prompt A5
+- r4 (A4 met r3 als bijlage) "veel slechter": vorm weg, metaal past niet bij het lijf. Terug naar A3 (Jordi): compact Gen 3-formaat (niet te breed), staal alleen als textuur die op pantser duidt (geen platen; Jordi's overzicht van Steel-Pokémon in `octillery_evo/referenties/`), gatling wordt een rode octopusmond met een andere vorm, een soort kanon zoals bij Octillery. Prompt A5.
+
+### [v0.0.251] - Octillery-evolutie: r5 en prompt A6
+- r5 (A5): "juist, nu komen we ergens". Jordi: meer uitgestrekt (geen bal), mond meer gatling, schietende tentakels op schouderhoogte, 2 tentakels als rupsbanden, 2 kanonnen, voorste 2 gewone tentakels. Prompt A6.
+
+### [v0.0.252] - Octillery-evolutie: r6 en prompt A7
+- r6 (A6) minder goed: aders, rupsbanden niet als tentakels, gatling mislukt. Jordi: rupsbanden = zichtbaar tentakels in rupsbandvorm; kanonnen van r5 maar over de schouders; mantel van r5 als natuurlijk pantser; mond wordt een hypermodern krachtig kanon. Prompt A7 (basis A5).
+
+### [v0.0.253] - Octillery-evolutie: r7 en prompt A8
+- r7 (A7): maar één kanon, rechtertentakel klopt niet, rupsband te veel rupsband ("slechts tentakels in de vorm ervan, zo gevouwen"). Prompt A8: twee kanonnen over beide schouders, rupsbanden alleen gevouwen tentakels, precies zes ledematen; alles moet netjes aansluiten (Jordi: "het sluit ook allemaal niet netjes aan he"), alle ledematen uit één ring onder de ogen.
+
+### [v0.0.254] - Octillery-evolutie: r8, zelfkritiek, prompt A9
+- r8 (A8): "het wordt er niet beter op". Op Jordi's verzoek kritiek op de eigen prompts (tegenspraak uitgestrekt/compact, het woord "tank", "ridged", vormloos "hypermodern", "lobster", tentakels zonder begin/eind) en een laatste prompt A9 met elke tentakel uitgebreid beschreven (begin, verloop, eind, zichtbaarheid in driekwart). Alles in `octillery_evo/gemini/PROMPT.md`.
+
+### [v0.0.255] - Octillery-evolutie: r9, Gemini-rondes klaar
+- r9 (A9): posities van de tentakelkanonnen kloppen, de rest vergeten. Jordi: "Design 5 blijft het beste". Verdere aanpak wacht op Jordi.
+
+### [v0.0.256] - Octillery-evolutie: SPEC en aangepast model v1
+- r5 bevroren als ontwerp (`octillery_evo/referenties/gemini_gekozen_r5.png`), SPEC met Jordi's toegestane wijzigingen (kanonnen over de schouders, 2 rupsband-tentakels, 2 gespreide tentakels; kop 100% r5; kanontentakels mogen de kop deels overlappen). Schets `schets_tentakels.png`.
+- Maker bouwde `model/model_v1.png` uit r5-onderdelen (kop: 0 afwijkende pixels buiten de kanonoverlap); wacht op Jordi.
+
+### [v0.0.257] - Octillery-evolutie: ontwerp gekozen
+- Gemini r10 (rupsbanden, Jordi) + de hele kanontentakel uit r5 samengevoegd (`octillery_evo/samenvoeg/`, scripts `seg.py`/`plak.py`). Jordi: "juist, dat is m" → `referenties/ontwerp_gekozen.png`. Formaat naar vierkant via Gemini (prompt "Formaat" in `gemini/PROMPT.md`).
+
+### [v0.0.258] - Octillery-evolutie: Gemini-formaatrondes
+- r11 (bijsnijden + afwerken) en r12 (compacter): netter, maar rupsbanden en tweede kanon raakten kwijt; Jordi: "Ook dit werkt dus niet". Formaat niet meer via Gemini; keuze tussen vertalen zoals het is (±64×42) of het bovenste kanon inkorten (±64×47) ligt bij Jordi.
+
+### [v0.0.259] - Octillery-evolutie: model v3
+- Onderste kanontentakel lager en aansluitend onder de kin (`samenvoeg/v3.png`, nu `referenties/ontwerp_gekozen.png`). Anatomie-analyse (8 tentakels, zuignappen, bewegen als "lopende" octopus) in SPEC. Toegestane afwijkingen voor de sprite: zuignappen op de donkere boog, verkeerde wratten onder de kin weg, plaknaden weg.
+
+### [v0.0.260] - Octillery-evolutie: frontsprite af (kandidaat voor Jordi)
+- Frontsprite naar model v3 in 5 rondes (3 makers, 2 keuringen): `octillery_evo/af/octillery_evo.png` (+ `_8x`, `maak.py`), werk in `octillery_evo/sprite/r1–r5`. Formaat zoals het model (±62×41). Toegestane afwijkingen uitgevoerd: zuignappen op de donkere boog, verkeerde wratten onder de kin weg, plaknaden weg; verder vereenvoudigd tot vormen die op 1× lezen.
+- Bijna-zwart 36% (r3) → 20,6%; helderheid blijft onder Gen 3 doordat het model donker karmijn is (lichtere paletoptie: `sprite/r4/octi_palet_lichter.png`, Jordi kiest).
+
+### [v0.0.261] - Octillery-evolutie: sprite afgekeurd
+- Jordi keurt de sprite uit v0.0.239 af ("er gaat echt zoveel fout dat het niet eens zin heeft om het allemaal te benoemen"). Oorzaken in de werkwijze vastgelegd in `docs/lessen/GEMINI.md`; vervolg wacht op Jordi.
+
+### [v0.0.262] - Octillery-evolutie: terug naar Gemini, prompts P1/P2
+- Nieuwe tekening i.p.v. bewerken: compacte pose zodat het ontwerp in 64×64 past. P1 (pose strikt: van voren, mantel in verkorting) en P2 (pose vrij) in `octillery_evo/gemini/PROMPT.md`; zes zichtbare tentakels (de rest achter het lijf). Elk resultaat eerst als 64×64-verkleining toetsen.
+
+### [v0.0.263] - Octillery-evolutie: Gemini r13/r14, toets 64×64, prompt P3
+- P1/P2 gaven twee vierkante, op 64×64 leesbare versies (`toets64_r13_r14.png`); Jordi: de ene bolt te veel op, de andere heeft maar één rupsband en is kaal zonder de extra tentakels. Prompt P3: de kale versie als bijlage, met twee gelijke rupsbanden, extra tentakels en gele wratten.
+
+### [v0.0.264] - Octillery-evolutie: Gemini r15, prompt P4
+- r15 (P3): tentakels beter, gele wratten erbij; linker rupsband ontbreekt en de zuignappen zijn niet consistent (Jordi). Prompt P4: alleen de linker rupsband gelijk aan de rechter. Plakpoging van Claude niet schoon, weggegooid.
+
+### [v0.0.265] - Octillery-evolutie: Gemini r16, prompt P5
+- r16 (P4): twee rupsbanden, maar de linker schiet te ver uit en is anders vormgegeven (Jordi). Prompt P5: linker = spiegelbeeld van de rechter, korter, geen wit.
+
+### [v0.0.266] - Octillery-evolutie: r17, linker rupsband zelf ingekort
+- r17 (P5) slechter; Jordi: "Ik heb niet het gevoel dat we vooruit gaan". Geen Gemini-rondes meer voor de rupsband: r16 bewerkt met `octillery_evo/samenvoeg/rups_kort.py` (linker rupsband 75% lang, kleuren van de rechter) → `samenvoeg/r16_kort.png`, wacht op Jordi.
+
+### [v0.0.267] - Octillery-evolutie: prompt P6 (from scratch)
+- Jordi vindt de ingekorte r16 ook niet mooi; startprompts zonder bijlage met het hele ontwerp in woorden en alle lessen van de sessie: P6A (twee gelijke korte rupsbanden + vier tentakels) en P6B (geen rupsbanden, zes losse tentakels, uitdrukkelijk niet opgebold).
+
+### [v0.0.268] - Octillery-evolutie: model v4 (onderkant geplakt)
+- Gemini r18–r20 (P6A/P6B) vastgelegd; kop en tentakels niet beter dan r16 (Jordi). Op Jordi's plan: rechter rupsband van r16 gekopieerd naar links (achter het lijf), zuignappen geel, wratten op de twee lage tentakels: `octillery_evo/samenvoeg/model_v4.png` (`onderkant.py`). Wacht op Jordi.
+
+### [v0.0.269] - Krassault
+- Werknaam Octillery-evolutie: Krassault (Jordi; kraken + assault). Model v4 goedgekeurd als basis; sprite 2 gestart met Jordi's eisen (afwerking, belijning en aansluiting vóór silhouet; rupsbanden als assets).
+
+### [v0.0.270] - Krassault: sprite overnemen i.p.v. hertekenen
+- Sprite 2 (r1–r3, hertekend door makers) afgekeurd door Jordi ("alles aan het hertekenen ipv de sprite aan het overnemen"; rupsbanden "prutswerk"). Nieuw in `octillery_evo/sprite3/`: eigen pixelraster van het Gemini-model teruggehaald (127×115), exacte 2×-reductie met regels naar 64×58, rupsbanden als assets in het model naar elkaar toe geschoven (varianten A/B). Vel `sprite3/vel_p.png`; wacht op Jordi's keuze.
+
+### [v0.0.271] - Krassault: silhouet vast, kleurronde 1
+- Rupsbanden variant A gekozen; silhouet definitief ("het silhouet staat"). Ontkorrelen (`sprite3/glad.py`) en kleurronde 1 binnen het bevroren silhouet (`sprite3/kleur/r1.png`, bewaakscript `bewaak.py`): omlijning, Gen 3-palet, zuignapringen. Jordi: "veel beter al, begint echt ergens op te lijken nu"; nog: tentakelkanonnen, consistente belijning, kleine tentakels, zuignappen op de rupsbanden, mond.
+
+### [v0.0.272] - Krassault: kleurrondes 2–4 en eindkeuring
+- r2 (kanonnen, belijning, kleine tentakels, zuignapringen, mond), r3 (tentakel-aansluitingen en rupsbandkrul na keuring op Jordi's twee vragen), r4 (punten uit de Dragonfly Cave/Gen 3-eindkeuring). Silhouet steeds diff 0. Open: paletvariant B (basisrood een stap lichter) en pupil linkeroog. Alles in `octillery_evo/sprite3/kleur/`.
+
+### [v0.0.273] - Krassault: frontsprite af
+- Jordi kiest kleur B (voorkeur Claude/eindkeurder) en de pupil van 2 px ("rechts is completer"). Definitief: `octillery_evo/af/krassault.png` (+ `_8x`, `maak.py`); de afgekeurde brede sprite naar `af/oud_afgekeurd_breed/`. Overzichtsvel bijgewerkt (27 sprites).
+
+### [v0.0.274] - Krassault, poesrups en Kadabra samen op main
+- Branches van Krassault (Octillery-evolutie, Water/Steel) en de poesrups (tussenvorm Pupoodle → poesrups → Lanymph, Bug/Fairy) in main gemerged naast de Kadabra-regional. Changelogsecties van die branches hernummerd (poesrups v0.0.244–245, Octillery-evolutie/Krassault v0.0.246–273). Overzichtsvel opnieuw gemaakt: 30 frontsprites. Stand van zaken bijgewerkt.
+
+### [v0.0.275] - Abra-regional: start ontwerp
+- Jordi (13 nov): Abra wordt puur Dark, nog geen magiër maar wil het worden, nog geen smoking, zelfde huidskleur als Kadabra/Alakazam. Letterlijk in `POKEMON.md`; ontwerprichtingen voorgelegd.
+
+### [v0.0.276] - Idee: Cosmic-type
+- Jordi's idee voor een nieuw type Cosmic (kandidaten, Cosmic Power, opmerking over de typetabel) met de huidige repo-types van de kandidaten in `docs/concept/IDEEEN.md`. Nog niets besloten.
+
+### [v0.0.277] - Cosmic: matchup-voorstel, correcties
+- Jordi's matchup-voorstel voor Cosmic in `IDEEEN.md`. Correctie: Minior is Rock/Flying (niet Normal) en staat uit; `TYPE_MYSTERY` kan niet hergebruikt worden (codemarkering voor "geen type"), Cosmic krijgt een eigen nummer.
+
+### [v0.0.278] - Cosmic: Ghost en Electric-resist eruit
+- Jordi: Ghost uit de Cosmic-matchups, geen Electric-resist. Stand in `IDEEEN.md`.
+
+### [v0.0.279] - Cosmic: naam en Fairy-nerf
+- Jordi's vraag over de naam Cosmic en "fairy mag een flinke nerf" in `IDEEEN.md`.
+
+### [v0.0.280] - Cosmic tegen Cosmic: super effective
+- Jordi kiest super effective voor Cosmic tegen Cosmic. Volledige matchups in `IDEEEN.md`.
+
+### [v0.0.281] - Typetabel met Cosmic als afbeelding
+- `docs/concept/typetabel_cosmic.png`: alle 19 types incl. Cosmic (stand v0.0.229), om door te sturen.
+
+### [v0.0.282] - Cosmic besloten
+- Jordi: "we gaan het doen". Cosmic als 19e type in `docs/concept/CONCEPT.md` (matchups, kandidaten, techniek); een gym of E4-lid krijgt Cosmic (welke: open). Taak in `TODO.md`; uitwerking in een later gesprek.
+- Nieuw idee in `IDEEEN.md`: de ruimte en de diepe zee als mysterieuze gebieden, mogelijk met eigen legendaries.
+
+### [v0.0.283] - Cosmic-afspraken in main, Curiqui Psychic/Cosmic
+- Jordi: "alle afspraken uit die niet-gemergede branch mogen gemerged worden en rondgemaakt". Cosmic-branch gemerged (secties hernummerd naar v0.0.276–282): Cosmic is besloten (matchups, kandidaten, techniek in `CONCEPT.md`/`IDEEEN.md`, typetabel `typetabel_cosmic.png`).
+- Jordi: "Geef Curiqui gelijk Cosmic als secondary type". Curiqui is nu Psychic/Cosmic (POKEMON.md, Stand van zaken, overzichtsvel). Eigen Cosmic-badge voor het vel in `showcase/types/cosmic.png` (letters uit de bestaande typebadges, indigo); nog niet in de ROM.
+
+### [v0.0.284] - Nieuwe ronde ideeën
 - `IDEEEN.md`: nieuwe sectie (8 nov) met Jordi's vier richtingen, Dundragoon (lome, grappige draakevolutie van Dunsparce) en de nog niet bestaande typings (Ice/Poison, Fire/Fairy, eventueel Ground/Fairy); repo-check van die typings en voorstellen van Claude (open).
 
-### [v0.0.226] - Reactie op de nieuwe ronde ideeën
+### [v0.0.285] - Reactie op de nieuwe ronde ideeën
 - `IDEEEN.md`: Jordi's reactie (Dundragoon tweede vertakking naast Dudunsparce, vuurwerk ja, Ice/Poison-voorstellen nee, evoluties niet per se).
 - `POKEMON.md`: Pachamama Ground/Fairy; Tiwanaku-Golett en mate-Poltchageist gaan we doen.
 
-### [v0.0.227] - Ideeën: overzicht sowieso doen / brainstormfase
+### [v0.0.286] - Ideeën: overzicht sowieso doen / brainstormfase
 - `IDEEEN.md`: bovenaan een overzicht met wat we sowieso doen (Dundragoon, Ice/Poison-Pokémon, vuurwerk, Pachamama Ground/Fairy, Tiwanaku-Golett, mate-Poltchageist, Yanma Bug/Dragon, iets met een condor) en wat nog in de brainstormfase zit.
 
-### [v0.0.228] - Dudunsparce eruit (besluit), Tiwanaku-type open
+### [v0.0.287] - Dudunsparce eruit (besluit), Tiwanaku-type open
 - `IDEEEN.md`/`POKEMON.md`: Dudunsparce komt niet in de game (Dundragoon is de draakvertakking van Dunsparce); voor de Tiwanaku-Golett is nog geen type bedacht. Technisch zit Dudunsparce nog in de ROM (Dunsparce evolueert met Hyper Drill); uitzetten gebeurt samen met Dundragoon.
 
-### [v0.0.229] - Mate: vorm of origineel open
+### [v0.0.288] - Mate: vorm of origineel open
 - `IDEEEN.md`/`POKEMON.md`: voor mate is nog open of het een Poltchageist/Sinistcha-vorm of een originele Pokémon wordt.
 
-### [v0.0.230] - Dudunsparce uit de ROM
+### [v0.0.289] - Dudunsparce uit de ROM
 - Nieuwe schakelaar `FU_DUDUNSPARCE` (FALSE) in `include/config/species_enabled.h`: Dudunsparce (beide vormen) is uit de soortdata, vormtabel, kleurvarianten en kreten; Dunsparce evolueert niet meer met Hyper Drill (Jordi, 8 nov). Dundragoon komt later als evolutie.
 - `IDEEEN.md`/`POKEMON.md`: condor-Pokémon sowieso; Venomoth-vuurvlieg (Electric/Fire) bij de Venomoth-regional form.
 - ROM: `__rom_end` 0x08E16B18, ±17,9 MB vrij.
 
-### [v0.0.231] - Ideeën: grote nieuwe lijst (9 nov)
+### [v0.0.290] - Ideeën: grote nieuwe lijst (9 nov)
 - `IDEEEN.md`, overzicht: sowieso Banette-evolutie, Bartitsu-Mr. Rime, blobfish-lijn, Kricketune-dirigent, hoatzin, Galápagos-vormen, Venomoth-vuurvlieg (evolutie via een move, opnieuw met Gemini), condor = Hanan Pacha; brainstorm: Victreebel-vorm, Mr. Mime-vorm, Ledian, Lanturn, Sunflora, Golofa/Pinsir, Shuckle, Delibird, Octillery, Ninjask, Sableye, Mawile, Manectric, Cacnea/Maractus, Kecleon, Tropius, Absol, Glalie, Nazca-Pokémon, Flamigo. Repo-check van de dex-status.
 - `POKEMON.md`: Venomoth-vorm en condor-legendary bijgewerkt.
 
-### [v0.0.232] - Venomoth-vuurvlieg: onderbouwing
+### [v0.0.291] - Venomoth-vuurvlieg: onderbouwing
 - `POKEMON.md`: waarom Venonat → vuurvlieg conceptueel klopt (Pokédex: door licht aangetrokken, eet insecten; *Photuris*; precedenten).
 
-### [v0.0.233] - Venonat: inspiratie
+### [v0.0.292] - Venonat: inspiratie
 - `POKEMON.md`: Venonat is op meerdere insecten gebaseerd, dus de evolutie kan alle kanten op (Jordi).
 
-### [v0.0.234] - Spaceworld-ghosts erin, Delibird-evolutie, Golofa-foto
+### [v0.0.293] - Spaceworld-ghosts erin, Delibird-evolutie, Golofa-foto
 - `POKEMON.md`: Norowara en Kyonpan komen in de game; Raitora voorlopig niet.
 - `IDEEEN.md`: Delibird-evolutie sowieso; blobfish-idee en Nazca-astronaut goed bevonden; Lanturn-hengelvis nog open; Golofa-foto van Jordi (Salento) als referentie.
 
-### [v0.0.235] - Nazca-astronaut en Golofa-kever sowieso
+### [v0.0.294] - Nazca-astronaut en Golofa-kever sowieso
 - `IDEEEN.md`: de Nazca-astronaut komt erin; de Golofa-kever ook (regional Heracross of Pinsir nog open, met achtergrond over beide).
 
-### [v0.0.236] - Heliamphora-Bellsprout sowieso
+### [v0.0.295] - Heliamphora-Bellsprout sowieso
 - `IDEEEN.md`: regional form van de Bellsprout-lijn naar *Heliamphora* (tepuis) gaat er sowieso in.
 
-### [v0.0.237] - Tank-Octillery sowieso
+### [v0.0.296] - Tank-Octillery sowieso
 - `IDEEEN.md`/`POKEMON.md`: de tank-Octillery (Spaceworld-beta) wordt een regional form van Octillery, met een nieuwe evolutie daarna.
 
-### [v0.0.238] - Darwins vliegend hert geschrapt
+### [v0.0.297] - Darwins vliegend hert geschrapt
 - `IDEEEN.md`: Darwins vliegend hert (als Pinsir-vorm/evolutie) geschrapt, net niet uniek genoeg (Jordi).
 
-### [v0.0.239] - Octillery-evolutie: kraken-battleship
+### [v0.0.298] - Octillery-evolutie: kraken-battleship
 - `IDEEEN.md`: richting voor de evolutie na de tank-Octillery: een soort kraken-battleship (Jordi).
 
-### [v0.0.240] - Voorstellen regional forms met andere typen
+### [v0.0.299] - Voorstellen regional forms met andere typen
 - `IDEEEN.md`: lijst regional forms die type en rol compleet veranderen (Golofa-Heracross, pichiciego-Sandshrew, holenuil-Hoothoot, manenwolf-Growlithe, brulaap-Mankey, killer bee-Combee, Torkoal-locomotief e.a.), alles open.
 
-### [v0.0.241] - Regional forms, niet Zuid-Amerikaans
+### [v0.0.300] - Regional forms, niet Zuid-Amerikaans
 - `IDEEEN.md`: Jordi is van de vorige lijst nog niet overtuigd; nieuwe lijst zonder Zuid-Amerikaanse link (goochelaar-Alakazam, brandweerhond-Arcanine, koffie-Snorlax, badeend-Golduck, onweer-Altaria, ijscokar-Miltank, origami-Skarmory, Zapacha-Mimikyu), alles open.
 
-### [v0.0.242] - Pre-evolutie Bartitsu-Mr. Rime
+### [v0.0.301] - Pre-evolutie Bartitsu-Mr. Rime
 - `IDEEEN.md`: origami, brandweerhond en nimbus eventuele opties (Jordi nog niet tevreden over link/uitvoering); voorstellen voor een regionale Mr. Mime als pre-evolutie van Bartitsu-Mr. Rime (bokser, polospeler, conducteur, Watson).
 
-### [v0.0.243] - Jiujitsu-Mr. Mime
+### [v0.0.302] - Jiujitsu-Mr. Mime
 - `IDEEEN.md`: richting Jordi: regionale Mr. Mime als BJJ-vechter op zijn rug in een gi ("get into my guard"), daarna Bartitsu-Mr. Rime als oude gentleman met wandelstok.
 
-### [v0.0.244] - Mime Jr. blijft, naamvoorstellen eindvorm
+### [v0.0.303] - Mime Jr. blijft, naamvoorstellen eindvorm
 - `IDEEEN.md`: Mime Jr. blijft gewoon; typen nog open; naamvoorstellen voor de Bartitsu-eindvorm (Sir Mime, Mr. Prime e.a.).
 
-### [v0.0.245] - Mr. Prime
+### [v0.0.304] - Mr. Prime
 - Naam van de Bartitsu-eindvorm: **Mr. Prime** (Jordi). `IDEEEN.md` en de werknamen in `POKEMON.md`.
 
-### [v0.0.246] - Voorstellen Galápagos-regional forms
+### [v0.0.305] - Voorstellen Galápagos-regional forms
 - `IDEEEN.md`: darwinvinken-Pikipek, reuzenschildpad-Torkoal, lavacactus-Cacnea, hamerhaai-Sharpedo, Sally Lightfoot-Krabby, zeeleguaan-Salandit, blauwvoetgent-Swanna, zeeleeuw-Spheal, Cramorant, Kilowattrel (open).
 
-### [v0.0.247] - Kecleon-evolutie: leguaan
+### [v0.0.306] - Kecleon-evolutie: leguaan
 - `IDEEEN.md`/`POKEMON.md`: Kecleon krijgt een leguaan-evolutie die plaatsgebonden op de Galápagos-locatie evolueert (zoals Nosepass en Magneton). Welke leguaan en type: open.
 
-### [v0.0.248] - Oricorio-vormen sowieso, Keccles evolueert op de Galápagos
+### [v0.0.307] - Oricorio-vormen sowieso, Keccles evolueert op de Galápagos
 - `IDEEEN.md`: de eerder besproken Oricorio-vormen (samba, tango, cumbia) gaan we sowieso doen; Keccles evolueert ook op de Galápagos-locatie (laat in het verhaal).
 
-### [v0.0.249] - Geen cueca/marinera-Oricorio
+### [v0.0.308] - Geen cueca/marinera-Oricorio
 - `IDEEEN.md`/`DEX_NOMINATIES.md`: cueca en marinera komen er niet in; welke leguaan voor Kecleon bedenken we later.
 
-### [v0.0.250] - Ideeën Jordi: Galápagos-opties en meer
+### [v0.0.309] - Ideeën Jordi: Galápagos-opties en meer
 - `IDEEEN.md`: nieuwe lijst opties van Jordi (boobies, vampiervink, fregatvogels, cormorant, pinguïn, mockingbird, kerkuil, haaienlijn met hamerhaai, batfish, Pincurchin-zee-egel, chocolate chip-Staryu, Binacle-schildpad, pistoolgarnaal, reuzenkrab-Kingler, Corsola op dood koraal, mierenleger, bouwvakker-Bibarel, hannya, Andes-Baltoy, tempel-Pokémon, vlieg → mug, early game Bug, Ghost-mythes); Torkoal-schildpad, Sharpedo-hamerhaai en lavacactus-Cacnea geschrapt.
 
-### [v0.0.251] - Pincurchin terug, carpenter bee-Combee
+### [v0.0.310] - Pincurchin terug, carpenter bee-Combee
 - `P_FAMILY_PINCURCHIN` weer aan in `species_enabled.h` (Jordi): krijgt een regional form (pencil-spined sea urchin). ROM: ±17,9 MB vrij.
 - `IDEEEN.md`: Combee-regional als carpenter bee sowieso, evolueert onafhankelijk van geslacht.
 
-### [v0.0.252] - Spooktrein sowieso
+### [v0.0.311] - Spooktrein sowieso
 - `IDEEEN.md`: een trein-/spooktrein-Pokémon gaat er sowieso in (Jordi); verder deze sessie diverse voorstellen (Amazone-insecten, Pinsir-evolutie als tor/kaiju, poesrups-tussenstadium, Ghost-mythes, early game Bug).
 
-### [v0.0.253] - Pseudo-draak: pitahaya
+### [v0.0.312] - Pseudo-draak: pitahaya
 - `IDEEEN.md`: de pseudo-legendary draak wordt pitahaya-geïnspireerd (Jordi).
 
-### [v0.0.254] - Sneeuwbol sowieso, Rock-ideeën Salta
+### [v0.0.313] - Sneeuwbol sowieso, Rock-ideeën Salta
 - `IDEEEN.md`: sneeuwbol-Pokémon sowieso (Jordi); pitahaya-draak waarschijnlijk Grass/Dragon; typen-check (Rock leeg, Water en Steel dun); Rock-voorstellen rond Salta (gekleurde bergen, Cono de Arita, Quebrada de las Conchas, puimsteenveld, Ischigualasto, Llullaillaco).
 
-### [v0.0.255] - Yareta, Copiapoa, Rock-Cacnea; lagen-Pokémon mesa-stijl
+### [v0.0.314] - Yareta, Copiapoa, Rock-Cacnea; lagen-Pokémon mesa-stijl
 - `IDEEEN.md`: met yareta en Copiapoa gaan we iets doen; Jordi neigt naar een Rock-regional Cacnea-lijn (misschien zonder Grass); lagen-Pokémon in de stijl van het Minecraft-mesagebied.
 
-### [v0.0.256] - Ice/Poison: kikkers met giftige kristallen
+### [v0.0.315] - Ice/Poison: kikkers met giftige kristallen
 - `IDEEEN.md`: de Ice/Poison-lijn wordt een lijn kikkers met giftige kristallen op ze (Jordi), met echte hoge-Andes-kikkers als haakjes; sneeuwbol-uitwerking open; typen-telling.
 
-### [v0.0.257] - Ice/Poison als regionale Poliwag-lijn
+### [v0.0.316] - Ice/Poison als regionale Poliwag-lijn
 - `IDEEEN.md`: de kristalkikker wordt (waarschijnlijk) een regionale Poliwag-lijn; Poliwag en Poliwhirl sowieso, eindvorm (Poliwrath, Politoed of een nieuwe derde) open. Cinnaber als favoriet mineraal; eis: duidelijk anders dan Glimmora.
 
-### [v0.0.258] - Harpij-arend: Braviary-vorm
+### [v0.0.317] - Harpij-arend: Braviary-vorm
 - `POKEMON.md`/`IDEEEN.md`: de harpij-arend wordt een eigen Braviary-vorm (Jordi); vraag of Rufflet meegaat.
 
-### [v0.0.259] - Regionale Rufflet, harpij Steel/Flying, aardappel/maïs-lijn
+### [v0.0.318] - Regionale Rufflet, harpij Steel/Flying, aardappel/maïs-lijn
 - `IDEEEN.md`: Rufflet gaat mee in de harpij-vorm; Jordi vindt Steel/Flying tof; nieuwe lijn: aardappel met maiskolf-handen die steeds meer een gerecht wordt.
 
-### [v0.0.260] - Fire/Water erbij, Galápagos-regionals mogen Fire
+### [v0.0.319] - Fire/Water erbij, Galápagos-regionals mogen Fire
 - `IDEEEN.md`: een Fire/Water-Pokémon komt erbij (Jordi); Galápagos-regionals mogen Fire krijgen; aardappel/maïs-lijn richting (locro, causa, huancaína).
 
-### [v0.0.261] - Onderwater-Oddish (Water/Fire)
+### [v0.0.320] - Onderwater-Oddish (Water/Fire)
 - `IDEEEN.md`: een onderwater-Oddish-lijn voor de Galápagos, Water/Fire, geïnspireerd op fan-art maar in een eigen vorm (voorstel: kokerwormen van de hydrothermale bronnen).
 
-### [v0.0.262] - Gaucho-Pokémon, convergente soorten
+### [v0.0.321] - Gaucho-Pokémon, convergente soorten
 - `IDEEEN.md`: gaucho-Pokémon met hoed sowieso (optie: regionale Lotad); voorstellen convergente soorten (Ñanduo, pekari-Swinub, opossum-Kangaskhan e.a.); onderwater-Oddish zonder Bellossom.
 
-### [v0.0.263] - Mightyena-evolutie, gaucho-voorkeur
+### [v0.0.322] - Mightyena-evolutie, gaucho-voorkeur
 - `IDEEEN.md`: Mightyena krijgt een evolutie die nog meer hyena wordt (Poochyena-lijn moet terug in de dex); lichte voorkeur voor de gaucho als Lotad-vorm.
 
-### [v0.0.264] - Steenmozaïek-kat (Rock), zeeleeuw-Spheal
+### [v0.0.323] - Steenmozaïek-kat (Rock), zeeleeuw-Spheal
 - `IDEEEN.md`: Rock-katachtige naar Jordi's steenmozaïekbeeldje uit Mexico (foto in `sprites/steenmozaiek/referenties/`); regionale Spheal/Sealeo met nieuwe evolutie, typevoorstellen voor de zeeleeuw.
+
+### [v0.0.324] - Ideeënronde samengevat en met main samengevoegd
+- `POKEMON.md`: nieuwe sectie "Besloten in de ideeënronde (Jordi, 8–10 nov)" met alle keuzes uit het brainstormgesprek, zodat andere sessies ze zien; `IDEEEN.md`-overzicht bijgewerkt (Mime-lijn, Octillery verwijst naar Krassault); Stand van zaken in `CLAUDE.md`.
+- Branch samengevoegd met `main` (parallelle sessies); de changelogsecties van dit gesprek zijn hernummerd naar v0.0.284–v0.0.323. Bij Norowara/Kyonpan geldt het nieuwere "komen in de game" (9 nov), bij de tank-Octillery het nieuwere "valt af" (10 nov).

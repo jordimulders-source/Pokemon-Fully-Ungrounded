@@ -1,0 +1,17 @@
+# poesrups kleur r4c (r4b + (34,45) in 7 zodat de sikkel van vlak 2 één geheel is): alleen tint (vorm bevroren). Koepel: sikkel per segment (7 rechts in elk vlak, 6 in de nok onderaan), naden donkerder waar ze door schaduw lopen, staart en onderkant achter donkerder. r4a had te smalle witte wiggen (strepen); wit hier breder en langer.
+43: 34=75 39=75
+44: 28=75 34=75 39=75
+45: 28=775 34=775 39=75
+46: 27=7775 34=775 39=775 
+47: 26=77775 34=775 39=775 43=775
+48: 25=777765 33=7775 38=7775 43=775
+49: 25=77666 32=77765 37=77765 42=7765
+50: 31=77766 37=7766 42=7765
+51: 31=7666 37=766 42=766
+52: 41=6666
+53: 47=777
+54: 54=555
+56: 41=55 47=55
+57: 39=555555 47=5
+59: 41=4
+60: 29=76

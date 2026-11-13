@@ -11,5 +11,10 @@ Werkwijze: `docs/lessen/GEMINI.md` + `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-m
 ## Bron
 - `referenties/beeldje_jordi_mexico.png`: het beeldje. Wat de foto toont: een kop met open muil en witte hoektanden, een rond zwart oog, ingelegd met hoekige stukjes blauw/lila, roodbruin, zwart en crèmekleurig gesteente, gescheiden door dunne voegen.
 
+## Model (fase 2, gekozen 13 nov)
+- `referenties/model_gekozen.png` (= `gemini/fase2_ronde5.png`). Jordi (letterlijk): "De staart groter maken was mijn eigen touch. Ik ben tevreden op een soort van extra oog na op de wang, maar die kan je zelf wel weghalen, dat blijft die doen gek genoeg, bouw hier maar een sprite van, net zoals bij de poedelmot. Dus niet zelf onderdelen opnieuw gaan tekenen"
+- Wangoog: het oog zonder glans op het crèmestuk (native x40–43, y35–38) is weggehaald (13 pixels → crème van dat stuk); het oog met glans blijft. Keuze welk oog "extra" is: Claude (ter controle aan Jordi).
+- Sprite-onderlaag: `sprite/natief.png` (Gemini-raster terug, 120×95 modelpixels, `sprite/natief2.py`), `sprite/natief_zonder_wangoog.png`; sprite = 2×-reductie (±60×48).
+
 ## Open
 - Naam, formaat per fase (pas bij het silhouet), welk Gemini-model gekozen wordt.

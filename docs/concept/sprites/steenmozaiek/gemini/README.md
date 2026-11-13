@@ -97,3 +97,4 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pi
 
 AVOID: chibi or buff proportions, a bear or bulldog shape, a smooth digital illustration or painting, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
 ```
+5. **`fase2_ronde5.png` gekozen** (= `../referenties/model_gekozen.png`); Jordi: "Ik ben tevreden op een soort van extra oog na op de wang". De grotere staart is Jordi's eigen bijsturing in Gemini.

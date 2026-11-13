@@ -1456,3 +1456,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.351] - CLAUDE.md: niet meer naar projectgrounded pushen
 - Jordi: "nee er moet niet naar projectgrounded gepushed worden, geen idee hoe dat in claude.md is gekomen". Regel in Stand van zaken vervangen.
 - Jordi: "haal dat weg": ook de vervangende regel geschrapt; de pushinstructie staat er niet meer in.
+
+### [v0.0.352] - Sneeuwbolslak: rondere bol, Gen 3-belijning en shading
+- Jordi (na "af"): bovenkant bol niet rond genoeg; "sowieso zijn de lijnen te strak en te zwart, ik was te vroeg" · "komt niet overeen met andere gen 3 sprites"; daarna "veel netter, nu nog shading, kleur belijning verbeteren".
+- Bovenrand bol als cirkel (`sprite/rond/rond_A.png`); verse maker na studie van Castform/Swablu/Spheal: gekleurde selout per vlak, zwart alleen onderaan en in de ogen, sikkelschaduw op bol, voetstuk en voet (`sprite/lijn/r3.png`). Nog niet gekeurd.

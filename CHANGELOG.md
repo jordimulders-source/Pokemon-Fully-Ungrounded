@@ -1081,3 +1081,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.251] - Krassault: kleurrondes 2–4 en eindkeuring
 - r2 (kanonnen, belijning, kleine tentakels, zuignapringen, mond), r3 (tentakel-aansluitingen en rupsbandkrul na keuring op Jordi's twee vragen), r4 (punten uit de Dragonfly Cave/Gen 3-eindkeuring). Silhouet steeds diff 0. Open: paletvariant B (basisrood een stap lichter) en pupil linkeroog. Alles in `octillery_evo/sprite3/kleur/`.
+
+### [v0.0.252] - Krassault: frontsprite af
+- Jordi kiest kleur B (voorkeur Claude/eindkeurder) en de pupil van 2 px ("rechts is completer"). Definitief: `octillery_evo/af/krassault.png` (+ `_8x`, `maak.py`); de afgekeurde brede sprite naar `af/oud_afgekeurd_breed/`. Overzichtsvel bijgewerkt (27 sprites).

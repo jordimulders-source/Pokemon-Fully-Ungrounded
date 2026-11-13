@@ -16,5 +16,9 @@ Werkwijze: `docs/lessen/GEMINI.md` + `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-m
 - Wangoog: het oog zonder glans op het crèmestuk (native x40–43, y35–38) is weggehaald (13 pixels → crème van dat stuk); het oog met glans blijft. Keuze welk oog "extra" is: Claude (ter controle aan Jordi).
 - Sprite-onderlaag: `sprite/natief.png` (Gemini-raster terug, 120×95 modelpixels, `sprite/natief2.py`), `sprite/natief_zonder_wangoog.png`; sprite = 2×-reductie (±60×48).
 
+## Sprite
+- 13 nov, na 2 rondes, keuze Jordi: "Doorgaan zoals nu" (alle stukken van het model houden, geen vereenvoudiging).
+- Jordi op r2 (letterlijk): "ik vind het zeker niet lelijk, beetje slim met shading omgaan en misschien sommige kleuren verwisselen als dat het model ten goede komt" · "en het oog iets gedefinieerder".
+
 ## Open
 - Naam, formaat per fase (pas bij het silhouet), welk Gemini-model gekozen wordt.

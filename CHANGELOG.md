@@ -1462,3 +1462,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.353] - Abra-regional: ogen zoals de echte Abra (variant D)
 - Fout van Claude rechtgezet: de echte Abra heeft geen 3 maar 4 px per oog (zwarte diagonaal + donkerbruine pixel recht eronder; linkeroog begint met een bruine pixel). Variant D (`kleur_r6/abra_r6_D.png`, `ogen_D.png`): A + donkere lijntint aan dezelfde uiteinden. Les in GEMINI.md.
+
+### [v0.0.354] - Abra-regional: ogen 1 px naar rechtsboven (variant E)
+- Jordi: "schuif beide ogen iets meer naar rechtsboven, want nu zit links vast aan de rand". `kleur_r6/abra_r6_E.png` = D met beide ogen (+1,−1); oude oogplek terug naar de r5-vulling. `ogen_E.png`.

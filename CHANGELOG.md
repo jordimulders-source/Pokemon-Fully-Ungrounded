@@ -1208,3 +1208,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.275] - Abra-regional: start ontwerp
 - Jordi (13 nov): Abra wordt puur Dark, nog geen magiër maar wil het worden, nog geen smoking, zelfde huidskleur als Kadabra/Alakazam. Letterlijk in `POKEMON.md`; ontwerprichtingen voorgelegd.
+
+### [v0.0.276] - Concept: condor-vogellijn vervalt
+- Jordi (13 nov): "de condor lijn zit niet in het plan, de sunperor lijn is de early route birds, er komt een condor legendary". Bijgewerkt in `POKEMON.md` (Overige fakemon, vaste lijst) en `IDEEEN.md` (oud voorstel vogellijn gemarkeerd als vervallen).

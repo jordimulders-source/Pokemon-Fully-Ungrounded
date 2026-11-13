@@ -1413,3 +1413,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.339] - Sneeuwbolslak: bol B, maattest
 - Jordi kiest bol B en wil hem kleiner. Maattest op 40/46/52 px breed (`sprite/maattest_vel.png`).
+
+### [v0.0.340] - Sneeuwbolslak: sprite 46 px (maker r2)
+- Jordi: "46 prima"; "nu zijn de ogen wel grotendeels weg" (over Gemini r5) doorgegeven aan de maker; "laat de maker maar doorgaan".
+- Maker zette ogen, huisje, vlokken, glans, sneeuwlaag en omlijning met de hand terug op 46×37 (silhouet-diff 0, palet van r1_B). `sprite/maker/r2.png`, vel `vel_r2.png`. Gemini r4/r5 gemeten (r4 niet kleiner; r5 42×35, niet gebruikt).

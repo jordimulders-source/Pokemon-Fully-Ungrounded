@@ -11,10 +11,12 @@ r = [l.rstrip('\n') for l in open(f)][:64]
 assert len(r) == 64 and all(len(l) == 64 for l in r), 'raster moet 64x64 zijn'
 P = [(x, y) for y in range(64) for x in range(64)]
 a = np.array(Image.open(SIL).convert('RGBA'))[:, :, 3] > 0
-extra = [(x, y) for x, y in P if r[y][x] != '.' and not a[y, x]]
+TOEG = set(tuple(map(int, l.split(','))) for l in open(os.path.join(HIER, 'alpha_wijzigingen.txt')) if l.strip())
+extra = [(x, y) for x, y in P if r[y][x] != '.' and not a[y, x] and (x, y) not in TOEG]
 mist = [(x, y) for x, y in P if r[y][x] == '.' and a[y, x]]
 print(f'pixels: {sum(c != "." for l in r for c in l)} (silhouet {int(a.sum())})')
-print(f'alpha-diff met silhouet: {len(extra) + len(mist)}  extra={extra}  mist={mist}')
+print(f'benoemde alphawijzigingen (krullen, pootje 5; alpha_wijzigingen.txt): {len(TOEG)}')
+print(f'onbenoemde alpha-diff met silhouet: {len(extra) + len(mist)}  extra={extra}  mist={mist}')
 nb4 = lambda x, y: [(r[y+dy][x+dx] if 0 <= y+dy < 64 and 0 <= x+dx < 64 else '.') for dx, dy in ((1, 0), (-1, 0), (0, 1), (0, -1))]
 LIJN = set('1234')         # buitenlijn (2/1) en selout (4)
 VOET = set()   # klauwtjes en sprietpunt rechts op de rand in 4 (bewust): klauw_rand.txt
@@ -39,17 +41,20 @@ for p in sorted(Aset):
     reeksen.append(sorted(c))
 kort = [c for c in reeksen if len(c) < 3 and not set(c) <= VOET]
 print(f'buitenrand {len(rand)} px: selout 3 {len(Aset)} px in {len(reeksen)} reeksen (lengtes {sorted(len(c) for c in reeksen)}), reeksen < 3 px: {kort}')
-GLANS = {(42,46),(49,46)}   # oogglans nabij en ver oog
-VLAK = set('5678AD')   # vlaktinten; 1-4 lijn- en detailkleuren
-# sprieten zijn lijnwerk (nerf en baarden 1 px), geen vlaktint
+GLANS = {(16,55)}   # oogglans nabije oog
+VLAK = set('567A')   # vlaktinten; 1-4 lijn- en detailkleuren
+# pootjes (2-4 px binnenwerk) zijn klein detail
 SPRIET = set()
 try:
-    SPRIET = set(tuple(map(int, l.split(','))) for l in open(os.path.join(os.path.dirname(os.path.abspath(f)), 'spriet_zone.txt')))
+    SPRIET = set(tuple(map(int, l.split(','))) for l in open(os.path.join(os.path.dirname(os.path.abspath(f)), 'pootjes.txt')))
 except OSError: pass
-# segmentnaden en kopcontour zijn lijnwerk (1 px, taps in 6/5)
+# segmentnaden, wervelstreepjes en haarlijnen zijn lijnwerk (1 px, 7/6/5)
 try:
-    SPRIET |= set(tuple(map(int, l.split(','))) for l in open(os.path.join(os.path.dirname(os.path.abspath(f)), 'naden.txt')))
+    SPRIET |= set(tuple(map(int, l.split(','))) for l in open(os.path.join(os.path.dirname(os.path.abspath(f)), 'lijnwerk.txt')))
 except OSError: pass
+# index 1/2 midden in een vlak (geen buur 1-4 of rand)
+los12 = [(x, y, r[y][x]) for x, y in P if r[y][x] in '12' and '.' not in nb4(x, y) and not any(c in '1234' for c in nb4(x, y))]
+print(f'losse omlijningspixels in een vlak: {len(los12)} {los12}')
 losse = [(x, y, r[y][x]) for x, y in P if r[y][x] in VLAK and r[y][x] not in nb4(x, y) and (x, y) not in GLANS and (x, y) not in SPRIET]
 print(f'losse pixels (vlaktint zonder gelijke buur): {len(losse)} {losse}')
 seen = set(); small = []

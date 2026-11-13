@@ -2,7 +2,7 @@
 import sys
 import numpy as np
 from PIL import Image
-PAL = [('.', (255, 0, 255)), ('K', (16, 12, 18)), ('DB', (58, 58, 98)), ('DR', (78, 40, 38)), ('X', (40, 36, 40)), ('G', (118, 120, 130)),
+PAL = [('.', (255, 0, 255)), ('K', (16, 12, 18)), ('DB', (72, 76, 120)), ('DR', (94, 52, 46)), ('X', (40, 36, 40)), ('G', (118, 120, 130)),
        ('B0', (86, 92, 139)), ('B1', (123, 127, 176)), ('B2', (172, 173, 212)),
        ('R0', (110, 60, 50)), ('R1', (158, 94, 78)), ('R2', (196, 132, 114)),
        ('C0', (160, 140, 114)), ('C1', (206, 190, 158)), ('C2', (238, 232, 212)), ('W', (250, 252, 255))]
@@ -46,3 +46,5 @@ if __name__ == '__main__':
     k = (full == IDX['K']).sum(); s = (full == IDX['DB']).sum() + (full == IDX['DR']).sum(); x = (full == IDX['X']).sum()
     print(uit, ww, 'x', hh, 'kleuren', len(set(full.ravel())) - 1, 'zwart K %.1f%% voeg+selout (DB/DR) %.1f%% zwarte tegels %.1f%% samen donker %.1f%%'
           % (100 * k / tot, 100 * s / tot, 100 * x / tot, 100 * (k + s + x) / tot))
+    rgb = np.array([c for _, c in PAL], float); lum = rgb @ [0.299, 0.587, 0.114]
+    print('gemiddelde helderheid sprite %.1f' % lum[full[full > 0]].mean())

@@ -136,7 +136,9 @@ for j in range(h):
             elif nline[q] > nline[j, i]: who = q
             else: who = (j, i) if tsize[tp] >= tsize[tq] else q
             kk = nK[j, i] + nK[q]; ll = nline[j, i] + nline[q]
+            if ll == 0: continue  # r2: alleen een voeg waar het model er een heeft
             col = 1 if (ll > 0 and kk * 2 > ll) else 2
+            if not (j > 19 and i < 16): col = 2  # r2: binnenlijnen in de donkere tint van het vlak, zwart alleen in de muil
             L[who] = max(L[who], col) if L[who] != 2 or col == 2 else 2
             if col == 1: L[who] = 1
 
@@ -172,7 +174,7 @@ for it in range(3):
             l, k = nd.label(mt & (tone == tn))
             for ci in range(1, k + 1):
                 m = l == ci
-                if m.sum() >= 3: continue
+                if m.sum() >= 4: continue
                 ring = nd.binary_dilation(m) & mt & ~m
                 if not ring.any(): continue
                 v, c = np.unique(tone[ring], return_counts=True)

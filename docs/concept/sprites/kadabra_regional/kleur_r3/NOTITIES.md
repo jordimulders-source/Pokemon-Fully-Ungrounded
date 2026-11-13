@@ -35,7 +35,7 @@ Geen pixels eraf. De figuur begint bij B en C op x0 (box 63×54). Hand: 3 vinger
 
 ## Beste combinatie: schoppen_3 + oog_3 + kaart_B (`raster.txt`)
 - schoppen_3: de enige die op 1× lobben toont; oog_3: pupil op 1× op licht en donker te zien; kaart_B: leest als speelkaart met symbool en blijft in verhouding tot het model en tot de kaarten van de Alakazam (7 px breed, symbool 3 px).
-- Pixeldiff tegen r2: 73 px, **buiten de zones 0** (`r3.py`), silhouet +30 px (alleen kaart), niets eraf.
+- Pixeldiff tegen r2: 74 px, **buiten de zones 0** (`r3.py`), silhouet +30 px (alleen kaart), niets eraf.
 - `controle.py`: 11 kleuren + transparant, open randen 0, losse o 0. Clusters < 3 px: (25,16)+(24,17) a (rest van de lichte strook boven de schoppen), (20,25) n en (5–6,28) b (beide al in r2). Lichtkant 17 % zwart (r2 12 %; komt door de kaartrand).
 
 ## Zwakke punten

@@ -1375,3 +1375,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.327] - Abra-regional: Gemini ronde 1, prompts v2A/v2B
 - Ronde 1: pose leest als kruipen (buik, poten naar voren, kop wakker, zweeft). Jordi: "Probeer allebei" → `abra_regional/gemini/PROMPT_v2.md`: A playing possum (zij/half op de rug), B ingezakte Abra-zit.
+
+### [v0.0.328] - Abra-regional: Gemini-model gekozen, sprite gestart
+- Ronde 2 (v2B, ingezakte Abra-zit) gekozen: "Deze is uitstekend, die lijkt half dood". `abra_regional/referenties/gemini_gekozen.png`, `SPEC.md`. Sprite via de poedelmot-methode met overnemen van het model (Krassault), geen hertekende onderdelen.

@@ -5,3 +5,6 @@
 - Analyse Claude: hij ligt op zijn buik met vier poten naar voren (leest als kruipen/sluipen, niet als dood liggen); kop rechtop en wakker; zweeft zonder steunpunt; staart kort. Goed: Abra-kop met dichte ogen, geen mond, donkere platen, gesegmenteerd lijf.
 - Jordi: "Probeer allebei" → `PROMPT_v2.md` (v2A playing possum, v2B ingezakte Abra-zit), elk in een nieuw gesprek.
 - Jordi: "nee alleen regionale kadabra doen we erbij" → v2A/v2B met alleen die bijlage; Abra en opossum in woorden.
+
+## Ronde 2 (prompt v2B, `ronde2_B.png`): GEKOZEN
+- Jordi: "Deze is uitstekend, die lijkt half dood, ga maar een sprite bouwen." → `referenties/gemini_gekozen.png`, SPEC.md.

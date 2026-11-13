@@ -430,7 +430,7 @@
 #define P_FAMILY_IMPIDIMP                P_GEN_8_POKEMON
 #define P_FAMILY_MILCERY                 FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
 #define P_FAMILY_FALINKS                 FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
-#define P_FAMILY_PINCURCHIN              FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
+#define P_FAMILY_PINCURCHIN              P_GEN_8_POKEMON // FU: terug (Jordi, 9 nov; krijgt een regional form)
 #define P_FAMILY_SNOM                    P_GEN_8_POKEMON
 #define P_FAMILY_STONJOURNER             FALSE // FU: niet in de dex (was P_GEN_8_POKEMON)
 #define P_FAMILY_EISCUE                  P_GEN_8_POKEMON
@@ -518,6 +518,7 @@
 #define FU_BRAVIARY_HISUI                FALSE // Hisuian Braviary
 #define FU_GOOMY_HISUI                   FALSE // Hisuian Sliggoo en Goodra
 #define FU_AVALUGG_HISUI                 FALSE // Hisuian Avalugg
+#define FU_DUDUNSPARCE                   FALSE // Dudunsparce (Jordi, 8 nov: komt niet in de game; Dunsparce krijgt Dundragoon)
 
 // =====================================================================
 // Fully Ungrounded: legendaries, mythicals, Ultra Beasts en paradoxen.

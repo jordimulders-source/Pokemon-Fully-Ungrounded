@@ -1235,6 +1235,136 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "alle afspraken uit die niet-gemergede branch mogen gemerged worden en rondgemaakt". Cosmic-branch gemerged (secties hernummerd naar v0.0.276–282): Cosmic is besloten (matchups, kandidaten, techniek in `CONCEPT.md`/`IDEEEN.md`, typetabel `typetabel_cosmic.png`).
 - Jordi: "Geef Curiqui gelijk Cosmic als secondary type". Curiqui is nu Psychic/Cosmic (POKEMON.md, Stand van zaken, overzichtsvel). Eigen Cosmic-badge voor het vel in `showcase/types/cosmic.png` (letters uit de bestaande typebadges, indigo); nog niet in de ROM.
 
-### [v0.0.284] - Cosmic nachtblauw; Abra als straatsloeber
+### [v0.0.284] - Nieuwe ronde ideeën
+- `IDEEEN.md`: nieuwe sectie (8 nov) met Jordi's vier richtingen, Dundragoon (lome, grappige draakevolutie van Dunsparce) en de nog niet bestaande typings (Ice/Poison, Fire/Fairy, eventueel Ground/Fairy); repo-check van die typings en voorstellen van Claude (open).
+
+### [v0.0.285] - Reactie op de nieuwe ronde ideeën
+- `IDEEEN.md`: Jordi's reactie (Dundragoon tweede vertakking naast Dudunsparce, vuurwerk ja, Ice/Poison-voorstellen nee, evoluties niet per se).
+- `POKEMON.md`: Pachamama Ground/Fairy; Tiwanaku-Golett en mate-Poltchageist gaan we doen.
+
+### [v0.0.286] - Ideeën: overzicht sowieso doen / brainstormfase
+- `IDEEEN.md`: bovenaan een overzicht met wat we sowieso doen (Dundragoon, Ice/Poison-Pokémon, vuurwerk, Pachamama Ground/Fairy, Tiwanaku-Golett, mate-Poltchageist, Yanma Bug/Dragon, iets met een condor) en wat nog in de brainstormfase zit.
+
+### [v0.0.287] - Dudunsparce eruit (besluit), Tiwanaku-type open
+- `IDEEEN.md`/`POKEMON.md`: Dudunsparce komt niet in de game (Dundragoon is de draakvertakking van Dunsparce); voor de Tiwanaku-Golett is nog geen type bedacht. Technisch zit Dudunsparce nog in de ROM (Dunsparce evolueert met Hyper Drill); uitzetten gebeurt samen met Dundragoon.
+
+### [v0.0.288] - Mate: vorm of origineel open
+- `IDEEEN.md`/`POKEMON.md`: voor mate is nog open of het een Poltchageist/Sinistcha-vorm of een originele Pokémon wordt.
+
+### [v0.0.289] - Dudunsparce uit de ROM
+- Nieuwe schakelaar `FU_DUDUNSPARCE` (FALSE) in `include/config/species_enabled.h`: Dudunsparce (beide vormen) is uit de soortdata, vormtabel, kleurvarianten en kreten; Dunsparce evolueert niet meer met Hyper Drill (Jordi, 8 nov). Dundragoon komt later als evolutie.
+- `IDEEEN.md`/`POKEMON.md`: condor-Pokémon sowieso; Venomoth-vuurvlieg (Electric/Fire) bij de Venomoth-regional form.
+- ROM: `__rom_end` 0x08E16B18, ±17,9 MB vrij.
+
+### [v0.0.290] - Ideeën: grote nieuwe lijst (9 nov)
+- `IDEEEN.md`, overzicht: sowieso Banette-evolutie, Bartitsu-Mr. Rime, blobfish-lijn, Kricketune-dirigent, hoatzin, Galápagos-vormen, Venomoth-vuurvlieg (evolutie via een move, opnieuw met Gemini), condor = Hanan Pacha; brainstorm: Victreebel-vorm, Mr. Mime-vorm, Ledian, Lanturn, Sunflora, Golofa/Pinsir, Shuckle, Delibird, Octillery, Ninjask, Sableye, Mawile, Manectric, Cacnea/Maractus, Kecleon, Tropius, Absol, Glalie, Nazca-Pokémon, Flamigo. Repo-check van de dex-status.
+- `POKEMON.md`: Venomoth-vorm en condor-legendary bijgewerkt.
+
+### [v0.0.291] - Venomoth-vuurvlieg: onderbouwing
+- `POKEMON.md`: waarom Venonat → vuurvlieg conceptueel klopt (Pokédex: door licht aangetrokken, eet insecten; *Photuris*; precedenten).
+
+### [v0.0.292] - Venonat: inspiratie
+- `POKEMON.md`: Venonat is op meerdere insecten gebaseerd, dus de evolutie kan alle kanten op (Jordi).
+
+### [v0.0.293] - Spaceworld-ghosts erin, Delibird-evolutie, Golofa-foto
+- `POKEMON.md`: Norowara en Kyonpan komen in de game; Raitora voorlopig niet.
+- `IDEEEN.md`: Delibird-evolutie sowieso; blobfish-idee en Nazca-astronaut goed bevonden; Lanturn-hengelvis nog open; Golofa-foto van Jordi (Salento) als referentie.
+
+### [v0.0.294] - Nazca-astronaut en Golofa-kever sowieso
+- `IDEEEN.md`: de Nazca-astronaut komt erin; de Golofa-kever ook (regional Heracross of Pinsir nog open, met achtergrond over beide).
+
+### [v0.0.295] - Heliamphora-Bellsprout sowieso
+- `IDEEEN.md`: regional form van de Bellsprout-lijn naar *Heliamphora* (tepuis) gaat er sowieso in.
+
+### [v0.0.296] - Tank-Octillery sowieso
+- `IDEEEN.md`/`POKEMON.md`: de tank-Octillery (Spaceworld-beta) wordt een regional form van Octillery, met een nieuwe evolutie daarna.
+
+### [v0.0.297] - Darwins vliegend hert geschrapt
+- `IDEEEN.md`: Darwins vliegend hert (als Pinsir-vorm/evolutie) geschrapt, net niet uniek genoeg (Jordi).
+
+### [v0.0.298] - Octillery-evolutie: kraken-battleship
+- `IDEEEN.md`: richting voor de evolutie na de tank-Octillery: een soort kraken-battleship (Jordi).
+
+### [v0.0.299] - Voorstellen regional forms met andere typen
+- `IDEEEN.md`: lijst regional forms die type en rol compleet veranderen (Golofa-Heracross, pichiciego-Sandshrew, holenuil-Hoothoot, manenwolf-Growlithe, brulaap-Mankey, killer bee-Combee, Torkoal-locomotief e.a.), alles open.
+
+### [v0.0.300] - Regional forms, niet Zuid-Amerikaans
+- `IDEEEN.md`: Jordi is van de vorige lijst nog niet overtuigd; nieuwe lijst zonder Zuid-Amerikaanse link (goochelaar-Alakazam, brandweerhond-Arcanine, koffie-Snorlax, badeend-Golduck, onweer-Altaria, ijscokar-Miltank, origami-Skarmory, Zapacha-Mimikyu), alles open.
+
+### [v0.0.301] - Pre-evolutie Bartitsu-Mr. Rime
+- `IDEEEN.md`: origami, brandweerhond en nimbus eventuele opties (Jordi nog niet tevreden over link/uitvoering); voorstellen voor een regionale Mr. Mime als pre-evolutie van Bartitsu-Mr. Rime (bokser, polospeler, conducteur, Watson).
+
+### [v0.0.302] - Jiujitsu-Mr. Mime
+- `IDEEEN.md`: richting Jordi: regionale Mr. Mime als BJJ-vechter op zijn rug in een gi ("get into my guard"), daarna Bartitsu-Mr. Rime als oude gentleman met wandelstok.
+
+### [v0.0.303] - Mime Jr. blijft, naamvoorstellen eindvorm
+- `IDEEEN.md`: Mime Jr. blijft gewoon; typen nog open; naamvoorstellen voor de Bartitsu-eindvorm (Sir Mime, Mr. Prime e.a.).
+
+### [v0.0.304] - Mr. Prime
+- Naam van de Bartitsu-eindvorm: **Mr. Prime** (Jordi). `IDEEEN.md` en de werknamen in `POKEMON.md`.
+
+### [v0.0.305] - Voorstellen Galápagos-regional forms
+- `IDEEEN.md`: darwinvinken-Pikipek, reuzenschildpad-Torkoal, lavacactus-Cacnea, hamerhaai-Sharpedo, Sally Lightfoot-Krabby, zeeleguaan-Salandit, blauwvoetgent-Swanna, zeeleeuw-Spheal, Cramorant, Kilowattrel (open).
+
+### [v0.0.306] - Kecleon-evolutie: leguaan
+- `IDEEEN.md`/`POKEMON.md`: Kecleon krijgt een leguaan-evolutie die plaatsgebonden op de Galápagos-locatie evolueert (zoals Nosepass en Magneton). Welke leguaan en type: open.
+
+### [v0.0.307] - Oricorio-vormen sowieso, Keccles evolueert op de Galápagos
+- `IDEEEN.md`: de eerder besproken Oricorio-vormen (samba, tango, cumbia) gaan we sowieso doen; Keccles evolueert ook op de Galápagos-locatie (laat in het verhaal).
+
+### [v0.0.308] - Geen cueca/marinera-Oricorio
+- `IDEEEN.md`/`DEX_NOMINATIES.md`: cueca en marinera komen er niet in; welke leguaan voor Kecleon bedenken we later.
+
+### [v0.0.309] - Ideeën Jordi: Galápagos-opties en meer
+- `IDEEEN.md`: nieuwe lijst opties van Jordi (boobies, vampiervink, fregatvogels, cormorant, pinguïn, mockingbird, kerkuil, haaienlijn met hamerhaai, batfish, Pincurchin-zee-egel, chocolate chip-Staryu, Binacle-schildpad, pistoolgarnaal, reuzenkrab-Kingler, Corsola op dood koraal, mierenleger, bouwvakker-Bibarel, hannya, Andes-Baltoy, tempel-Pokémon, vlieg → mug, early game Bug, Ghost-mythes); Torkoal-schildpad, Sharpedo-hamerhaai en lavacactus-Cacnea geschrapt.
+
+### [v0.0.310] - Pincurchin terug, carpenter bee-Combee
+- `P_FAMILY_PINCURCHIN` weer aan in `species_enabled.h` (Jordi): krijgt een regional form (pencil-spined sea urchin). ROM: ±17,9 MB vrij.
+- `IDEEEN.md`: Combee-regional als carpenter bee sowieso, evolueert onafhankelijk van geslacht.
+
+### [v0.0.311] - Spooktrein sowieso
+- `IDEEEN.md`: een trein-/spooktrein-Pokémon gaat er sowieso in (Jordi); verder deze sessie diverse voorstellen (Amazone-insecten, Pinsir-evolutie als tor/kaiju, poesrups-tussenstadium, Ghost-mythes, early game Bug).
+
+### [v0.0.312] - Pseudo-draak: pitahaya
+- `IDEEEN.md`: de pseudo-legendary draak wordt pitahaya-geïnspireerd (Jordi).
+
+### [v0.0.313] - Sneeuwbol sowieso, Rock-ideeën Salta
+- `IDEEEN.md`: sneeuwbol-Pokémon sowieso (Jordi); pitahaya-draak waarschijnlijk Grass/Dragon; typen-check (Rock leeg, Water en Steel dun); Rock-voorstellen rond Salta (gekleurde bergen, Cono de Arita, Quebrada de las Conchas, puimsteenveld, Ischigualasto, Llullaillaco).
+
+### [v0.0.314] - Yareta, Copiapoa, Rock-Cacnea; lagen-Pokémon mesa-stijl
+- `IDEEEN.md`: met yareta en Copiapoa gaan we iets doen; Jordi neigt naar een Rock-regional Cacnea-lijn (misschien zonder Grass); lagen-Pokémon in de stijl van het Minecraft-mesagebied.
+
+### [v0.0.315] - Ice/Poison: kikkers met giftige kristallen
+- `IDEEEN.md`: de Ice/Poison-lijn wordt een lijn kikkers met giftige kristallen op ze (Jordi), met echte hoge-Andes-kikkers als haakjes; sneeuwbol-uitwerking open; typen-telling.
+
+### [v0.0.316] - Ice/Poison als regionale Poliwag-lijn
+- `IDEEEN.md`: de kristalkikker wordt (waarschijnlijk) een regionale Poliwag-lijn; Poliwag en Poliwhirl sowieso, eindvorm (Poliwrath, Politoed of een nieuwe derde) open. Cinnaber als favoriet mineraal; eis: duidelijk anders dan Glimmora.
+
+### [v0.0.317] - Harpij-arend: Braviary-vorm
+- `POKEMON.md`/`IDEEEN.md`: de harpij-arend wordt een eigen Braviary-vorm (Jordi); vraag of Rufflet meegaat.
+
+### [v0.0.318] - Regionale Rufflet, harpij Steel/Flying, aardappel/maïs-lijn
+- `IDEEEN.md`: Rufflet gaat mee in de harpij-vorm; Jordi vindt Steel/Flying tof; nieuwe lijn: aardappel met maiskolf-handen die steeds meer een gerecht wordt.
+
+### [v0.0.319] - Fire/Water erbij, Galápagos-regionals mogen Fire
+- `IDEEEN.md`: een Fire/Water-Pokémon komt erbij (Jordi); Galápagos-regionals mogen Fire krijgen; aardappel/maïs-lijn richting (locro, causa, huancaína).
+
+### [v0.0.320] - Onderwater-Oddish (Water/Fire)
+- `IDEEEN.md`: een onderwater-Oddish-lijn voor de Galápagos, Water/Fire, geïnspireerd op fan-art maar in een eigen vorm (voorstel: kokerwormen van de hydrothermale bronnen).
+
+### [v0.0.321] - Gaucho-Pokémon, convergente soorten
+- `IDEEEN.md`: gaucho-Pokémon met hoed sowieso (optie: regionale Lotad); voorstellen convergente soorten (Ñanduo, pekari-Swinub, opossum-Kangaskhan e.a.); onderwater-Oddish zonder Bellossom.
+
+### [v0.0.322] - Mightyena-evolutie, gaucho-voorkeur
+- `IDEEEN.md`: Mightyena krijgt een evolutie die nog meer hyena wordt (Poochyena-lijn moet terug in de dex); lichte voorkeur voor de gaucho als Lotad-vorm.
+
+### [v0.0.323] - Steenmozaïek-kat (Rock), zeeleeuw-Spheal
+- `IDEEEN.md`: Rock-katachtige naar Jordi's steenmozaïekbeeldje uit Mexico (foto in `sprites/steenmozaiek/referenties/`); regionale Spheal/Sealeo met nieuwe evolutie, typevoorstellen voor de zeeleeuw.
+
+### [v0.0.324] - Ideeënronde samengevat en met main samengevoegd
+- `POKEMON.md`: nieuwe sectie "Besloten in de ideeënronde (Jordi, 8–10 nov)" met alle keuzes uit het brainstormgesprek, zodat andere sessies ze zien; `IDEEEN.md`-overzicht bijgewerkt (Mime-lijn, Octillery verwijst naar Krassault); Stand van zaken in `CLAUDE.md`.
+- Branch samengevoegd met `main` (parallelle sessies); de changelogsecties van dit gesprek zijn hernummerd naar v0.0.284–v0.0.323. Bij Norowara/Kyonpan geldt het nieuwere "komen in de game" (9 nov), bij de tank-Octillery het nieuwere "valt af" (10 nov).
+
+### [v0.0.325] - Cosmic nachtblauw; Abra als straatsloeber
 - Cosmic-badge: eerste indigo leek te veel op Ghost/Dragon; Jordi koos nachtblauw ("alle kleuren van vlakken zijn effen"). `showcase/types/cosmic.png`, overzichtsvel opnieuw.
 - Abra-regional: Jordi wil een duistere straatsloeber, zonder assets, die er slapjes bij ligt (POKEMON.md); ontwerprichtingen voorgelegd.

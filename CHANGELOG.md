@@ -1106,3 +1106,11 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.243] - Kadabra-regional af
 - Jordi: "B want A is geen ruit, maak maar rond". `kadabra_regional/af/` = kleur_r7 B (ruit 5×5); op het overzichtsvel als "Kadabra (regional)", Dark/Psychic (28 sprites); Stand van zaken en lessen (GEMINI.md) bijgewerkt. Gepusht naar main.
 - Namen (Jordi): "ze blijven kadabra en alakazam heten"; POKEMON.md en Stand van zaken bijgewerkt.
+
+### [v0.0.244] - Poedelmot-lijn: tussenvorm poesrups
+- Jordi (13 nov): de tussenvorm tussen Pupoodle en Lanymph wordt een poesrups (puss caterpillar); letterlijk in `POKEMON.md` en `IDEEEN.md`. Het idee stond nog nergens in de repo. Gemini-prompt geschreven; nog geen model.
+- Poesrups Gemini ronde 1 afgekeurd (pruik); `sprites/poesrups/gemini/README.md`, les in GEMINI.md, nieuwe prompt.
+
+### [v0.0.245] - Poesrups: frontsprite af
+- Tussenvorm van de poedelmot-lijn (Pupoodle → poesrups → Lanymph), Bug/Fairy (Jordi). Gemini-model gekozen na 3 promptrondes (`sprites/poesrups/gemini/README.md`); sprite 54×33 in 4 rondes: r2 gekozen ("Ik vind ronde 2 al uitstekend"), r3 (kam groter) verworpen, r4 kleurronde, eindkeuring Dragonfly Cave + Gen 3 PASS, 20 px tintreparatie.
+- `sprites/poesrups/af/`; overzichtsvel `showcase/frontsprites_af.png` (28 sprites); POKEMON.md, SPEC, lessen (GEMINI.md, SPRITE_WERKWIJZE.md), Stand van zaken.

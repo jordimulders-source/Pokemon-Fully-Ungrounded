@@ -56,3 +56,5 @@ Wanneer Jordi een ontwerp in Gemini laat maken en kiest, gelden deze regels **in
   - Kleine, precieze pixelwijzigingen op het tekstraster kan Claude zelf doen (ruit, ogen, 2 keurderspixels); een maker-ronde met varianten kost meer en gaf hier slechtere resultaten.
   - "Alleen de pupil" letterlijk nemen: de variant met de kleinste diff kiezen en de diff tonen.
   - Symbolen van 3×5 (1-3-3-3-1) lezen als stip, niet als ruit; 1-3-5-3-1 wel.
+- **"Long hair / flowing locks / combed" geeft mensenhaar** (poesrups r1, 13 nov: een glanzende pruik met één oog). Voor een harig dier: "dense, short, matte plush fur", de vorm in maten beschrijven en "no long strands, no gloss" erbij.
+- **"Mag groter" is geen opdracht om te overdrijven** (poesrups r3, 13 nov: kam 2× zo groot als draadhaakjes; Jordi: "te overdreven. Ik vind ronde 2 al uitstekend"). Een eigen zwak punt eerst aan Jordi tonen als variant naast de basis, niet meteen een ronde erop bouwen; vindt hij de basis goed, dan is die goed.

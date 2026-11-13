@@ -1,0 +1,9 @@
+pixels: 1058 (silhouet 1046)
+benoemde alphawijzigingen (kam en pootjes, erbij en eraf; alpha_wijzigingen.txt): 32
+onbenoemde alpha-diff met silhouet: 0  extra=[]  mist=[]
+open randen (buitenrand zonder lijnkleur 1-4): 0 []  | bewuste uitzondering klauwtjes: []
+buitenrand 147 px: selout 3+4 75 px in 10 reeksen (lengtes [3, 3, 4, 5, 5, 6, 8, 10, 11, 20]), reeksen < 3 px: []
+losse omlijningspixels in een vlak: 0 []
+losse pixels (vlaktint zonder gelijke buur): 0 []
+tintclusters < 3 px: 0
+gebruikte indexen: 1234567A

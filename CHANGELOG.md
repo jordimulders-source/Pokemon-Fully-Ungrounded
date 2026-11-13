@@ -1410,3 +1410,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.338] - Sneeuwbolslak: sprite ronde 1 (onderlaag + bol blauwer)
 - Jordi: vlokken prima, "bol ietsje blauwer", sprite gaan bouwen met de poedelmot-methode, "niet opnieuw dingen gaan tekenen, buiten wat we afgesproken hebben". `SPEC.md` aangemaakt.
 - Natief Gemini-raster overgenomen (geen tekenwerk): achtergrond weg, 13 kleuren + transparant, bol-binnenkant eigen paletkleur in twee tinten (A/B). Vel `sprite/r1_vel.png`.
+
+### [v0.0.339] - Sneeuwbolslak: bol B, maattest
+- Jordi kiest bol B en wil hem kleiner. Maattest op 40/46/52 px breed (`sprite/maattest_vel.png`).

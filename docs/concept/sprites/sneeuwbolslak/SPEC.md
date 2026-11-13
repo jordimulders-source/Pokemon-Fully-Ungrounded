@@ -17,3 +17,4 @@ Lijn: slak met sneeuwbol als huisje → spiraal met ijskorst → langwerpige kom
 - `sprite/onderlaag.py`: natief raster, achtergrond weg, kwantisering naar 13 kleuren + transparant (seeds per kleurgroep), 4 anti-aliasrestjes naar de lijntint.
 - `sprite/bolblauw.py`: binnenkleur van de bol eigen paletkleur, A (206,225,240) / B (194,216,238). Vel: `sprite/r1_vel.png`.
 - Open: maat (slak 63×51, vult het vak; fase 1 is normaal kleiner).
+- Jordi: "b en hij moet uiteraard kleiner, maar dat is niet moeilijk toch?" → bol B gekozen. Maattest (`sprite/maattest.py`, vel `sprite/maattest_vel.png`): 40, 46 en 52 px breed; silhouet blijft, ogen/huisje/omlijning moeten daarna met de hand (maker).

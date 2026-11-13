@@ -1472,3 +1472,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.356] - Abra-regional: ogen 1 px terug naar links (variant F)
 - Jordi: "ogen weer 1 pixel naar links, verhouding klopt niet meer". `kleur_r6/abra_r6_F.png` = E met beide ogen 1 px naar links (= D 1 px omhoog). `ogen_F.png`.
+
+### [v0.0.357] - Abra-regional: ogen F gekozen, eindronde schaduw/kleur/lijn gestart
+- Jordi: "ja" (F) "schaduw, kleuren en belijning". Basis `kleur_r7/basis_F.png`; eindkeuring Dragonfly Cave/Gen 3 op schaduw, kleuren en belijning.

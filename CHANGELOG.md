@@ -1393,3 +1393,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.332] - Abra-regional: keuring r3, sprite r4
 - Onafhankelijke keurder (hoofdvraag "nog niet, wel dichtbij"; 11 MOET, 8 MAG; `kleur_r3/KEURING_r3.md`): linkeroog liep over in de kaak, rechteronderarm miste zijn rand, wangvlekje weg, en kleine lijnfouten.
 - r4 (Claude, per script `kleur_r4/maak_r4.py`): alle 11 MOET-punten (35 pixels). MAG-punten nog niet.
+
+### [v0.0.333] - Abra-regional: sprite r5
+- Jordi over r4: linkeroog diagonaler ("desnoods doe je de linkerpixel 1 omhoog"), lijnwerk niet overal mooi, linkerarm te recht, rare witte pixel in het rechteroor, kop en rechts de staart te veel rechte lijnen.
+- r5 (verse maker, 42 px t.o.v. r4): oog A (linkerpixel omhoog) en B (modeldiagonaal), rechteroor-binnenlijn als boog + gat (31,18) dicht (meethulpje telde hooglicht als achtergrond), rechterrand kop en kinlijn naar de modellijn, linkerarm hol zoals het model, staart rechts afgerond (2 silhouetpixels) en bovenrand zwart zoals het model. `abra_regional/kleur_r5/`.

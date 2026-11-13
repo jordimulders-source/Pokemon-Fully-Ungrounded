@@ -1398,5 +1398,64 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi over r4: linkeroog diagonaler ("desnoods doe je de linkerpixel 1 omhoog"), lijnwerk niet overal mooi, linkerarm te recht, rare witte pixel in het rechteroor, kop en rechts de staart te veel rechte lijnen.
 - r5 (verse maker, 42 px t.o.v. r4): oog A (linkerpixel omhoog) en B (modeldiagonaal), rechteroor-binnenlijn als boog + gat (31,18) dicht (meethulpje telde hooglicht als achtergrond), rechterrand kop en kinlijn naar de modellijn, linkerarm hol zoals het model, staart rechts afgerond (2 silhouetpixels) en bovenrand zwart zoals het model. `abra_regional/kleur_r5/`.
 
-### [v0.0.334] - Abra-regional: r6, ogen hangen meer
+### [v0.0.334] - Idee: sneeuwbol-lijn die Cosmic wordt
+- Jordi: "ik zat te denken aan een pokemon lijn die begint als snow globe en daarna cosmic wordt". Letterlijk in IDEEEN.md (bij Sneeuwbol-Pokémon) en POKEMON.md; uitwerking open.
+
+### [v0.0.335] - Sneeuwbol-lijn: eerste richting
+- Jordi: eindvorm blijft Ice/Cosmic, groeit uit naar "een soort cosmisch ijs sferisch ding", sneeuwglobe moet een hybride zijn; begint puur Ice en vroeg te vangen, mogelijk 3 fases. Letterlijk in IDEEEN.md, met voorstellen van Claude (open).
+
+### [v0.0.336] - Sneeuwbol-lijn: slak, fase 3 naar de vorm van de Interloper
+- Jordi kiest de slak als richting; fase 2 moet meer vooruitgang zijn; fase 3 qua vorm een beetje als de Interloper (Outer Wilds). Letterlijk in IDEEEN.md, met voorstellen van Claude voor fase 2 (open).
+
+### [v0.0.337] - Sneeuwbol-lijn: Interloper = langwerpige vorm
+- Jordi: van de Interloper "vooral de langwerpige vorm, de donkere kern hoeft niet". In IDEEEN.md.
+
+### [v0.0.338] - Sneeuwbolslak: Gemini-prompt fase 1
+- Jordi akkoord met fase 2 (spiraal, ijskorst, sneeuwstorm binnenin, bevroren spoor), "maar zorg er wel voor dat het in een sprite uit te beelden blijft". Lijn in POKEMON.md.
+- `sprites/sneeuwbolslak/gemini/PROMPT.md`: startprompt fase 1 (open keuzes: inhoud van de bol, kleur van het lijf; bijlage tuinslakfoto zelf toevoegen).
+
+### [v0.0.339] - Sneeuwbolslak: keuzes prompt
+- Jordi: "1c en 2a": een minuscuul huisje in de bol, lijf lichtblauw-wit. Ingevuld in `sprites/sneeuwbolslak/gemini/PROMPT.md`.
+
+### [v0.0.340] - Sneeuwbolslak: Gemini-ronde 1
+- Eerste Gemini-resultaat van Jordi bewaard: `sprites/sneeuwbolslak/gemini/r1_gemini.png`.
+
+### [v0.0.341] - Sneeuwbolslak: Gemini-prompt v2
+- Jordi: "ja schrijf die prompt, voetstuk mag blijven". Prompt v2 (nieuw gesprek, r1 als bijlage): kop met gezichtje, contrast glas/lijf, geen dithering, strakke omlijning. In `sprites/sneeuwbolslak/gemini/PROMPT.md`.
+
+### [v0.0.342] - Sneeuwbolslak: Gemini-ronde 2
+- Resultaat prompt v2 bewaard: `sprites/sneeuwbolslak/gemini/r2_gemini.png` (omlijning, contrast en ogen beter; kop nog klodderig, onderste voelsprieten lijken pootjes, geen mond).
+
+### [v0.0.343] - Sneeuwbolslak: Gemini-prompt v3
+- Jordi: "Ik vind het nog niet duidelijk genoeg een snow globe denk ik"; keuze: "meer sneeuwvlokken". Prompt v3 (r2 als bijlage, alleen meer vlokken) in `sprites/sneeuwbolslak/gemini/PROMPT.md`.
+
+### [v0.0.344] - Sneeuwbolslak: ronde 3 en eerste hybride op 64×64
+- Gemini r3a/r3b bewaard; natief raster (pitch 10,24) past direct in 64×64. Stervlokken vallen weg; hybride `sprite/hybride_v1.png` met witte plusjes en losse pixels. Les in GEMINI.md.
+
+### [v0.0.345] - Sneeuwbolslak: sprite ronde 1 (onderlaag + bol blauwer)
+- Jordi: vlokken prima, "bol ietsje blauwer", sprite gaan bouwen met de poedelmot-methode, "niet opnieuw dingen gaan tekenen, buiten wat we afgesproken hebben". `SPEC.md` aangemaakt.
+- Natief Gemini-raster overgenomen (geen tekenwerk): achtergrond weg, 13 kleuren + transparant, bol-binnenkant eigen paletkleur in twee tinten (A/B). Vel `sprite/r1_vel.png`.
+
+### [v0.0.346] - Sneeuwbolslak: bol B, maattest
+- Jordi kiest bol B en wil hem kleiner. Maattest op 40/46/52 px breed (`sprite/maattest_vel.png`).
+
+### [v0.0.347] - Sneeuwbolslak: sprite 46 px (maker r2)
+- Jordi: "46 prima"; "nu zijn de ogen wel grotendeels weg" (over Gemini r5) doorgegeven aan de maker; "laat de maker maar doorgaan".
+- Maker zette ogen, huisje, vlokken, glans, sneeuwlaag en omlijning met de hand terug op 46×37 (silhouet-diff 0, palet van r1_B). `sprite/maker/r2.png`, vel `vel_r2.png`. Gemini r4/r5 gemeten (r4 niet kleiner; r5 42×35, niet gebruikt).
+
+### [v0.0.348] - Sneeuwbolslak: pupillen kleiner (A/B)
+- Jordi: "op de ogen na ben ik tevreden, die zijn een beetje te groot deel van de oogballen nu lijkt". Twee varianten: pupil 2 px (A) en 1 px (B), verder pixeldiff 0. Vel `sprite/maker/vel_r3.png`.
+
+### [v0.0.349] - Sneeuwbolslak: oogtype-probeersels
+- Jordi: "nee een ander type oog, dit is alle 3 niet mooi". Maker nam ogen pixel voor pixel over van Magcargo, Surskit, Gastrodon en Sliggoo (alleen de voelspriettoppen, verder diff 0). Vel `sprite/maker/vel_ogen.png`.
+
+### [v0.0.350] - Sneeuwbolslak: frontsprite af
+- Jordi: "surskit is de enige die redelijk past, dus ga maar voor die en stuur hem naar de eindkeuring".
+- Eindkeuring: PASS met 2 losse pixels gerepareerd. `sneeuwbolslak/af/sneeuwbolslak.png` (+ `_8x.png`), op het overzichtsvel (`showcase/frontsprites_af.png`). Stand van zaken: 31 frontsprites af. Les in GEMINI.md.
+
+### [v0.0.351] - CLAUDE.md: niet meer naar projectgrounded pushen
+- Jordi: "nee er moet niet naar projectgrounded gepushed worden, geen idee hoe dat in claude.md is gekomen". Regel in Stand van zaken vervangen.
+- Jordi: "haal dat weg": ook de vervangende regel geschrapt; de pushinstructie staat er niet meer in.
+
+### [v0.0.352] - Abra-regional: r6, ogen hangen meer
 - Jordi: "kan je beide ogen nog iets meer laten hangen? zoals in het model?". Model gemeten: beide ogen zakken naar de neus toe. r6 (Claude, `kleur_r6/maak_r6.py`): A = rechteroog een nette diagonaal (30,28)(29,29)(28,30) + linkeroog 3 px diagonaal (24,31 erbij); B = alleen het rechteroog. Close-up `kleur_r6/ogen.png`.

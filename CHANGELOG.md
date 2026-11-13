@@ -1098,3 +1098,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra r4 afgekeurd (kaartvorm, schoppen te groot en verkeerd geplaatst; "Maak er maar een ruit van"). r5 (Claude zelf, op r2): rode ruit op de modelplek (A/B), oog_1, kaart naar de goedgekeurde Alakazam-kaart. `kadabra_regional/kleur_r5/`.
 - Kadabra r6: ruit 1 px naar rechts (Jordi: "de ruit mag 1 pixel naar rechts, daarna mag die naar eindkeuring"); A (3×5) en B (5×5) in `kadabra_regional/kleur_r6/`; eindkeuring gestart.
 - Eindkeuring Kadabra r6 afgebroken door de gebruikslimiet (13 nov); Stand van zaken bijgewerkt: eindkeuring en ruitkeuze (A/B) staan nog open.
+
+### [v0.0.242] - Kadabra-regional: eindkeuring, r7
+- Eindkeuring r6 (DFC, checklist, naast Kadabra/Alakazam/Sneasel/Umbreon en de charlatan-Alakazam): PASS met kleine reparaties (lichtkant 10 % zwart, palet identiek aan de Alakazam, 1232 px). Advies keurder: ruit B (5×5) leest als ruit, A (3×5) als stip.
+- r7 (Claude): nagel los van de kaart ((6,23) a→d) en tapse binnenlijn aan de oorbasis ((27,15) b→d). Niet gedaan (silhouet = model): oorpunt en elleboog 1 px. `kadabra_regional/kleur_r7/` (A en B); wacht op Jordi's ruitkeuze, dan naar `af/`.

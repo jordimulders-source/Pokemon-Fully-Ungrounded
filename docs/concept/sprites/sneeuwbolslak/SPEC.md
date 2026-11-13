@@ -24,3 +24,4 @@ Lijn: slak met sneeuwbol als huisje → spiraal met ijskorst → langwerpige kom
 - Maker (46 px): `sprite/maker/r2.png` + `vel_r2.png`; silhouet = start46 (diff 0), palet r1_B, ogen 6×6 met L-pupil, huisje 10×8, 4 plusvlokken + losse pixels. Zwakke punten maker: geen rij oogwit onder het ooglid; huisje vereenvoudigd.
 - Jordi op r2: "op de ogen na ben ik tevreden, die zijn een beetje te groot deel van de oogballen nu lijkt" → `sprite/ogen_pupil.py`: r3_A (pupil 2 px, diff 2), r3_B (pupil 1 px, diff 4); vel `sprite/maker/vel_r3.png`.
 - Jordi op de pupilvarianten: "nee een ander type oog, dit is alle 3 niet mooi" → maker maakt probeersels met ogen pixel voor pixel uit echte sprites (lotad, wurmple, slugma/magcargo, surskit, shellos/gastrodon, sliggoo/goomy).
+- Jordi: "surskit is de enige die redelijk past, dus ga maar voor die en stuur hem naar de eindkeuring" → `sprite/r4_surskit.png`.

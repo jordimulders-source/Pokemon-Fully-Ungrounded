@@ -1102,3 +1102,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.242] - Kadabra-regional: eindkeuring, r7
 - Eindkeuring r6 (DFC, checklist, naast Kadabra/Alakazam/Sneasel/Umbreon en de charlatan-Alakazam): PASS met kleine reparaties (lichtkant 10 % zwart, palet identiek aan de Alakazam, 1232 px). Advies keurder: ruit B (5×5) leest als ruit, A (3×5) als stip.
 - r7 (Claude): nagel los van de kaart ((6,23) a→d) en tapse binnenlijn aan de oorbasis ((27,15) b→d). Niet gedaan (silhouet = model): oorpunt en elleboog 1 px. `kadabra_regional/kleur_r7/` (A en B); wacht op Jordi's ruitkeuze, dan naar `af/`.
+
+### [v0.0.243] - Kadabra-regional af
+- Jordi: "B want A is geen ruit, maak maar rond". `kadabra_regional/af/` = kleur_r7 B (ruit 5×5); op het overzichtsvel als "Kadabra (regional)", Dark/Psychic (28 sprites); Stand van zaken en lessen (GEMINI.md) bijgewerkt. Gepusht naar main.

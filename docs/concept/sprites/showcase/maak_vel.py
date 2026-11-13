@@ -30,6 +30,7 @@ items=[
 ("salticonda/af/salticonda.png",'"Salticonda"',"ground/electric"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ("hitmontop_evo/af/hitmongroove.png",'"Hitmongroove"',"fight/ground"),
+("alakazam_regional/af/alakazam_charlatan.png",'Alakazam (regional)',"dark/psychic"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

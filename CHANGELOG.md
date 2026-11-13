@@ -1085,3 +1085,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Kadabra-model: kaarthand = Gemini's eigen hand met één vinger minder (Jordi).
 - Kadabra-model akkoord (Jordi: "ja prima"): `kadabra_regional/model/model_B_hand3.png`. Les in GEMINI.md (vinger weghalen uit Gemini's eigen pixels).
 - Kadabra: frontsprite gestart (`kadabra_regional/kleur_r1/`, poedelmot-methode, palet van de charlatan-Alakazam); in de sprite krijgt de kaartvinger een nagel (Jordi).
+
+### [v0.0.240] - Charlatan-Alakazam af
+- Jordi (13 nov): "zet de alakazam alvast in af". `alakazam_regional/af/` = af_r2 (sprite, 8×, raster); op het overzichtsvel `showcase/frontsprites_af.png` (28 sprites, "Alakazam (regional)", Dark/Psychic); Stand van zaken bijgewerkt. Gepusht naar main.

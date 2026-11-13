@@ -1372,3 +1372,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.326] - Abra-regional: Gemini-prompt v1
 - Jordi: geen mond, ogen dicht, kerf in één oor, geen vachtplukken, geen rood; meer opossum, "die er half dood bij ligt", herkenbaar Abra. Letterlijk in POKEMON.md.
 - `sprites/abra_regional/gemini/PROMPT.md` met bijlagen (originele Abra en regionale Kadabra, 8×); open keuzes: kleur van de platen en welke opossumkenmerken.
+
+### [v0.0.327] - Idee: sneeuwbol-lijn die Cosmic wordt
+- Jordi: "ik zat te denken aan een pokemon lijn die begint als snow globe en daarna cosmic wordt". Letterlijk in IDEEEN.md (bij Sneeuwbol-Pokémon) en POKEMON.md; uitwerking open.

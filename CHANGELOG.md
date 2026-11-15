@@ -1470,3 +1470,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.355] - Sneeuwbolslak fase 2: bolinhoud
 - Jordi: "binnenkant bol is nog net niet goed genoeg ... mag nog meer een sneeuwstorm lijken"; varianten A (sneeuwjacht) en B (plusvlokken zoals fase 1), Jordi: "hybride van a en b, vlokken met sneeuwstorm". De hybride (r8C) is de nieuwe `sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png` (+ `_8x.png`), ook op het overzichtsvel.
+
+### [v0.0.356] - Sneeuwbolslak fase 2: mond en sneeuwstorm
+- Jordi: "de mond is ook niet goed gelukt, is nu gewoon 3 pixels diagonaal op een willekeurige plek" en "de sneeuwvlokken zijn prima maar het is nog te weinig sneeuwstorm in de bal". Mond nu één glimlachlijn van de snuitpunt tot onder het wangvlak (variant A, donkerblauw; Jordi: "a is wel prima"); storm sterker (drie spiraalarmen, meer vlokken), plusvlokken ongewijzigd. Nieuwe `sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png` (+ `_8x.png`), overzichtsvel bijgewerkt.

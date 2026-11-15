@@ -1639,3 +1639,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.397] - Hauntflare: v16 (keuring PASS)
 - Punteriger rechter mondhoek, gloeiende kernkleur in de mond (rood + oranje tong), tand zonder rechte hoek: `sprites/hauntflare/sprite_v16/hauntflare_v16.png`.
+
+### [v0.0.398] - Hauntflare: v17
+- Gemarkeerde lippixel (31,32) hoofdroze (Jordi).

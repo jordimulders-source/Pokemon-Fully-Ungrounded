@@ -36,3 +36,4 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - Nieuwe basis (Claude): het model zelf, 74 → 64 door rijen/kolommen te schrappen (`model/schrap.py`, `model/model_64_geschrapt.png`, vergelijking `model/geschrapt_vs_r3.png`); r1–r3 afgekeurd.
 - 15 nov: "moet nog veel beter, werk tot je bij een goede eindversie komt en stuur dan pas door naar mij" · "en kap aub met dingen zelf tekenen from scratch". Werk: `sprite_v2/` (model opschonen, niets hertekenen).
 - 15 nov: "oog en mond grootte van model is beter en van jouw versie de positionering, dus doe een hybride en werk naar een eindversie en laat die pas aan mij zien" → modelgezicht (grootte, vorm, aansluiting) verschoven naar de r3-positie.
+- 15 nov (na v3): "ogen en mond zijn nog niet goed".

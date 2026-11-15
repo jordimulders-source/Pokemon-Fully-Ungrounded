@@ -1586,3 +1586,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3: prompt v7 (geest is het wezen: ijzeren schulp, wielen en rookstaart van geestenergie; "locomotive" niet als onderwerp).
 - Spooktrein fase 3: kern van Jordi (schroot dat zonder de geest uit elkaar valt, razendsnel, geest heeft lol, zoals Rotom) + precieze vormbeschrijving in prompt v8.
 - Spooktrein fase 3: prompt v8 variant B (steigeren als een paard, luikje aan de onderkant met geest eruit).
+- Spooktrein fase 3 ronde 6 (v8): "al beter"; prompt v9 (Spiritomb-achtige zigzag-grijns, geen neus, geestarmen en extra gezicht als leger spirits, meer wielen, furieuzer).

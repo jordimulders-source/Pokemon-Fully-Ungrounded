@@ -1590,3 +1590,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.381] - Hauntflare: Gemini r4 + overzicht van alle 9
 - r4_a/b/c opgeslagen; overzichtsvel `sprites/hauntflare/gemini/overzicht_r1-r4.png`.
+
+### [v0.0.382] - Hauntflare: twee modellen (knip- en plakwerk)
+- Alle Gemini-plaatjes op hun natieve raster (`model/natief.py`; r1–r4 99×99, r3_b 79×79).
+- Claude-model: r4_b + staart r4_a. Jordi-model: bol/pose r4_b, gezicht r3_b, handen r4_a, ring r4_c, kuif r3_b in r4_a-vlamkleuren. Naast elkaar: `sprites/hauntflare/model/naast_elkaar.png`.

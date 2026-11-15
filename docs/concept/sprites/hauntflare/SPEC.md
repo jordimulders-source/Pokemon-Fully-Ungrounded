@@ -20,3 +20,4 @@ Middenfase van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Cos
 - 15 nov over r2: "ja dat effect om de ring lag aan mij." Over r2_b (`gemini/r2_b.png`): "Ik gaf na deze feedback dat ik de bol meer een gas look wilde. Laten we nog 1 keer proberen te prompten, we zitten wel goed in de richting. Ik vond de bol bij de 1e en de ring die niet direct eraan vast zat toffer, maar deze lijkt meer op haunter". Prompt r3: `gemini/PROMPT_r3.md`.
 - 15 nov, Gemini r3 (`gemini/r3_a/b/c.png`): "Dit zijn drie ontwerpen. Elk ontwerp heeft wel dingen die tof zijn, al is er nog geen enkele echt perfect. Zet eens alle ontwerpen naast elkaar tot nu toe" → `gemini/overzicht_r1-r3.png`.
 - 15 nov: "doe nog 1 laatste prompt en daarna kunnen we met knip en plak werk de topversie maken". Prompt r4: `gemini/PROMPT_r4.md`.
+- 15 nov, Gemini r4 (`gemini/r4_a/b/c.png`): "Ok, zet alle 9 naast elkaar" → `gemini/overzicht_r1-r4.png`.

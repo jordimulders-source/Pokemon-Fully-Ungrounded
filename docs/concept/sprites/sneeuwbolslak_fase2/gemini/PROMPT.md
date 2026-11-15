@@ -154,3 +154,4 @@ AVOID
 ## Ronde 4 (15 nov)
 - `r4_gemini.png` (prompt v3). Jordi: "dit is veel minder mooi dan wat we al hadden".
 - Analyse Claude: grijze klomp (steen/zeehond, geen ijs of glas), het voetstuk werd een rode raamlijst, de draaikolk een sterrenstelsel (verraadt de eindvorm), geen huisje; alles wat fase 1 charmant maakte (glas, sneeuw, huisje, lichtblauw) is weg.
+- Jordi verder over r4: "het is juist nog minder de vorm die ik wilde hebben, verder klopt het niet samen, het is ook geen duidelijke snowglobe meer"

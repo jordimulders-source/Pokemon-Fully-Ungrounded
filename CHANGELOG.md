@@ -1404,3 +1404,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Namen Dustly → Hauntflare → Gengas definitief (Jordi); lijn opgenomen in `POKEMON.md` (Convergente soorten).
 - Cosmic/Poison voor de lijn bevestigd (Jordi). Start Gengas: `docs/concept/sprites/gengas/SPEC.md`.
 - Gengas: ontwerp afgesproken, Gemini-prompt r1 (`sprites/gengas/gemini/PROMPT_r1.md`) met Gengar Gen 3 als bijlage.
+- Gengas: Gemini r1 besproken, prompt r2 met drie kleurregels ter keuze.

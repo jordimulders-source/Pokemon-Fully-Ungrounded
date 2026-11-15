@@ -141,7 +141,7 @@ Alleen de keuzes; details, citaten en open vragen in `IDEEEN.md` (overzicht bove
 - **Geschrapt:** Darwins vliegend hert, Torkoal-schildpad, Sharpedo-hamerhaai (liever een nieuwe haaienlijn), lavacactus-Cacnea, Dudunsparce.
 
 ## Convergente soorten (besloten)
-- **Dustly → Hauntflare → Gengas** (Jordi, 13–15 nov; namen definitief): Cosmic-convergente lijn van de Gastly-lijn, op de levensloop van een ster: Bok-globule → protoster met jets (de losse knopen = Haunters handen) → bruine dwerg. Cosmic/Poison voor de hele lijn (Jordi, 15 nov: "cosmic/poison is goed"). Gengas eerst (Jordi: "de meest complexe van de drie"); `sprites/gengas/SPEC.md`. Details: `IDEEEN.md` (Convergente soorten).
+- **Dustly → Hauntflare → Gengas** (Jordi, 13–15 nov; namen definitief): Cosmic-convergente lijn van de Gastly-lijn, op de levensloop van een ster: Bok-globule → protoster met jets (de losse knopen = Haunters handen) → bruine dwerg. Cosmic/Poison voor de hele lijn (Jordi, 15 nov: "cosmic/poison is goed"). Gengas eerst (Jordi: "de meest complexe van de drie"); `sprites/gengas/SPEC.md`. **Gengas: frontsprite af** (15 nov, `sprites/gengas/af/gengas.png`): bol gas met banden, gasoren, vier losse manen als handen/voeten, Gengars ogen en grijns (125%). Details: `IDEEEN.md` (Convergente soorten).
 
 ## Dex-besluiten (op basis van `DEX_NOMINATIES.md`)
 - **Ronde 1 (Jordi, 22 okt), eruit:** Kanto-starters (voorlopig), Onix/Steelix, Rhyhorn-lijn, Electabuzz-lijn, Magmar-lijn, Ralts-lijn, Mawile, Clamperl-lijn, Shellos-lijn, Riolu-lijn, Carnivine, Finneon-lijn, Roggenrola-lijn, Audino, Sewaddle-lijn, Dwebble-lijn, Druddigon, Binacle-lijn, Carbink, Cutiefly-lijn, Bruxish.

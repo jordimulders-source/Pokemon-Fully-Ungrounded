@@ -47,3 +47,4 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - 15 nov (v9): "ik twijfel toch nog een beetje over ogen en mond, hoe verhouden die zich in percentage tot de oorspronkelijke gengar qua grootte?" (Claude: absoluut 100%, t.o.v. het lijf ±81%; gelijke verhouding = ±120–125%) · "verder ben ik wel tevreden, al twijfel ik een beetje over dat spiraaltje".
 - 15 nov: "probeer maar 2" (stormvlek zonder spiraal, als de Grote Rode Vlek) · "Ogen en mond kan jij blijkbaar niet from scratch bouwen, dus kijk hoe je dat netjes zou kunnen vergroten".
 - 15 nov: "de stormvlek is niet mooi zo, als die niet goed immersed toont, heb ik liever dat je het reguliere golfpatroon aanhoudt, die is erg mooi gelukt" → geen vlek/spiraal, bandenpatroon loopt door.
+- 15 nov (v12): "ok genoeg voor mijn ogen, stuur maar gelijk door naar de eindkeuring, voor schaduw, belijning, kleur, gen 3 sprites en dragonflycave" → ontwerp v12 goedgekeurd; eindkeuring (uitvoering) loopt.

@@ -1486,3 +1486,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.360] - Abra-regional: A gekozen; buitenrand en rechte lijnen
 - Jordi: "A is prima, hij is juist nog niet een goochelaar zoals Kadabra, maar meer een soort van opossum die weinig hoop heeft, tot die evolved".
 - Zwart op de buitenrand gemeten: echte Abra/Kadabra/Sneasel ±40 %, donkere soorten 76–86 %, onze Abra 61 % → te veel. Ronde 8 gestart: buitenrand lichter (selout zoals Abra) en de rechte lijnen die Jordi noemt (staart rechts, lijf rechts, beide armen, kop links).
+### [v0.0.361] - Steenmozaïek-jaguar: frontsprite eindvorm af (van branch friendly-cerf, oorspronkelijk v0.0.327)
+- Nieuwe lijn (Jordi): "een soort rock jaguar lijn ... gebaseerd op mijn beeldje uit mexico, 2 fases"; beide puur Rock, welp → volwassen, fase 2 "nog mooier en geavanceerder qua materiaal en kleur". Staand op 4 poten, brullend.
+- Gemini: 5 rondes voor fase 2 (tijger met patroon → te buff → illustratie → chibi → gekozen; grotere staart is Jordi's eigen bijsturing). Extra wangoog weggehaald.
+- Sprite: Gemini-raster teruggehaald (120×95) en 2× verkleind, alle mozaïekstukken behouden (Jordi's keuze); shading met licht linksboven; oog naar Jordi's pixelaanwijzingen; buikschaduw gecorrigeerd; gekleurde selout aan de lichtkant (Jordi: "ja rechts is echt beter"). Eindkeuring DFC: PASS.
+- `docs/concept/sprites/steenmozaiek/af/steenjaguar.png`; op het overzichtsvel (nog zonder naam). Fase 1 (welp) volgt.
+### [v0.0.362] - Steenmozaïek-jaguar: welp-prompts met eigen patroon
+- Jordi: de welp geen kleinere mozaïekversie, "een ander leuk patroon met een idee erachter". Twee Gemini-prompts (Jordi: "1 en 2 wil ik allebei proberen"): A ruwe luipaardjaspis (welp = ruw materiaal, wordt bij evolutie geslepen en ingelegd), B ingekerfd Chavín-reliëf (gegraveerd → ingelegd). `steenmozaiek/gemini/README.md`, prompt v3.

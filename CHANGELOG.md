@@ -1507,3 +1507,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini: 5 rondes voor fase 2 (tijger met patroon → te buff → illustratie → chibi → gekozen; grotere staart is Jordi's eigen bijsturing). Extra wangoog weggehaald.
 - Sprite: Gemini-raster teruggehaald (120×95) en 2× verkleind, alle mozaïekstukken behouden (Jordi's keuze); shading met licht linksboven; oog naar Jordi's pixelaanwijzingen; buikschaduw gecorrigeerd; gekleurde selout aan de lichtkant (Jordi: "ja rechts is echt beter"). Eindkeuring DFC: PASS.
 - `docs/concept/sprites/steenmozaiek/af/steenjaguar.png`; op het overzichtsvel (nog zonder naam). Fase 1 (welp) volgt.
+
+### [v0.0.366] - Mate-lijn: besloten + Gemini-prompts fase 2
+- Jordi: mate wordt een **nieuwe lijn** (geen vorm van Sinistea/Poltchageist), **Grass/Water**, **2 fases**; "het gaat me puur om ontwerp, de rest bedenk ik zelf wel".
+- Gemini-prompts voor fase 2 in drie richtingen: A kalebas-schildpad, B hoornkikker, D kalebas-vogel. `docs/concept/sprites/mate/gemini/README.md`. IDEEEN.md en POKEMON.md bijgewerkt.

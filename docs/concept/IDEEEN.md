@@ -11,7 +11,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Vuurwerk** (Fire/Fairy, FAKEMON_PITCH #83).
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
-- **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).
+- **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker). **15 nov: nieuwe lijn, Grass/Water, 2 fases** (Jordi: "het gaat me puur om ontwerp, de rest bedenk ik zelf wel"). Gemini-prompts voor drie richtingen (kalebas-schildpad, hoornkikker, kalebas-vogel): `sprites/mate/gemini/README.md`.
 - **Yanma/Yanmega:** "gaan we nog iets mee doen voor bug/dragon".
 - **Een condor-Pokémon = Hanan Pacha** (Jordi, 9 nov: "de condor in het legendary trio klinkt uitstekend").
 - **Venomoth-vuurvlieg** (Electric/Fire): Venonat wordt de nieuwe Venomoth **met een move die hij leert**; conceptueel een insect dat tot vuurvlieg evolueert (zoals Volbeat). **Ontwerp opnieuw met Gemini** (Jordi, 9 nov: "Het design was prima, maar kunnen we denk ik nu veel beter maken met Gemini").

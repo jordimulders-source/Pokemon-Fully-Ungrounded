@@ -1398,3 +1398,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi's idee (convergente Gastly-lijn op stervorming) met voorstel Claude in `IDEEEN.md` (Convergente soorten): Gastarly (Bok-globule) → Jaunter/Flaunter (protoster met jets) → Dwengar (bruine dwerg). Open.
 - Vraag Cosmic/Poison voor de hele lijn: natuurkundig onderbouwd en typecombinatie doorgerekend (Psychic 4×) in `IDEEEN.md`.
 - Naamalternatieven voor de lijn (Dustly, Harunter/Hauntar, Gengas/Dimgar) in `IDEEEN.md`.
+- Jordi ziet Dustly en Gengas zitten; nieuwe Haunter-opties (Hunter, Huntar, Hurtler) in `IDEEEN.md`.

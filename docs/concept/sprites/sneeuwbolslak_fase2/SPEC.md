@@ -18,3 +18,4 @@ Lijn: sneeuwbolslak (fase 1, `sneeuwbolslak/`) → fase 2 → komeet (fase 3, Ic
 - Meetgereedschap: `sprite/meet/px.py x,y` (modelkleur per spritepixel), `sprite/meet/box1x.py` (model op 1×/8×, modeluitsnede op het raster).
 - Maker r1 (onderlaag56 + opschonen; binnenlijnen ontbraken, bol te leeg) → lijnkaart `sprite/meet/lijnkaart.py` → r2 (`sprite/maker/r2.png`, vel `sprite/voor_jordi_r2.png`, ogen A/B/C).
 - Jordi op r2: "geen van de drie, probeer het oog na te bouwen, c zit daar het dichtst in de buurt. En het is vooral detailwerk wat niet goed is, lijnen zijn te recht, de staart is een pixel blur, niet goed gedefinieerd, veel zwart, de bol is ook een pixel blur, aansluiting van de bol op het lichaam is niet mooi. Dit is nog niet goed"
+- Jordi op r3b (`sprite/voor_jordi_r3b.png`): "ik zie er geen gezichtje in, betere versie, maar nog niet perfect, blijf werken aan schaduw, belijning, kleur en let er wederom op dat je teveel rechte lijnen gebruikt"

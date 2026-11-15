@@ -1566,7 +1566,99 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gengas v13: eindkeuring (schaduw, belijning, kleur, Gen 3, Dragonfly Cave) uitgevoerd: 44 pixels, palet ongewijzigd. Eindkandidaat. `sprite_v13/`.
 - **Gengas: frontsprite af** (Jordi: "tof"): v13 → `docs/concept/sprites/gengas/af/gengas.png` (+ `_8x`), op het overzichtsvel (Cosmic/Poison). Stand van zaken bijgewerkt.
 
-### [v0.0.374] - Spooktreinlijn: sparren
+### [v0.0.374] - Hauntflare: Gemini-prompt
+- Start Hauntflare (middenfase Dustly → Hauntflare → Gengas): `docs/concept/sprites/hauntflare/SPEC.md`.
+- Gemini-prompt r1 (`sprites/hauntflare/gemini/PROMPT_r1.md`): protoster met stofschijf, bovenste jet = puntige kop, onderste jet = staart, handen = losse Herbig-Haro-knopen; ogen en grijns exact Haunter. Bijlage `referenties/haunter_gen3_8x.png`.
+
+### [v0.0.375] - Hauntflare: Gemini r1 besproken
+- Gemini r1 opgeslagen (`sprites/hauntflare/gemini/r1_a.png`) met beoordeling in `SPEC.md`.
+
+### [v0.0.376] - Hauntflare: Gemini-prompt r2
+- Prompt r2 (`sprites/hauntflare/gemini/PROMPT_r2.md`): Haunter-gezicht, dikke stofschijf i.p.v. Saturnusring, kijkt naar links, jets tegengesteld, matte gasbol. Les over bijlagen in `GEMINI.md`.
+
+### [v0.0.377] - Hauntflare: Gemini r2 besproken
+- Gemini r2 opgeslagen (`sprites/hauntflare/gemini/r2_a.png`) met beoordeling in `SPEC.md`.
+
+### [v0.0.378] - Hauntflare: Gemini-prompt r3
+- r2_b opgeslagen; prompt r3 (`sprites/hauntflare/gemini/PROMPT_r3.md`): opbouw van r2_b, gasbol en losse ring zoals r1.
+
+### [v0.0.379] - Hauntflare: Gemini r3 + overzicht
+- r3_a/b/c opgeslagen; overzichtsvel van alle ontwerpen: `sprites/hauntflare/gemini/overzicht_r1-r3.png`.
+
+### [v0.0.380] - Hauntflare: laatste Gemini-prompt r4
+- Prompt r4 (`sprites/hauntflare/gemini/PROMPT_r4.md`): r3 met handen in jetkleur, Haunters mond, gezicht boven de ring, vaste schaal voor knip- en plakwerk.
+
+### [v0.0.381] - Hauntflare: Gemini r4 + overzicht van alle 9
+- r4_a/b/c opgeslagen; overzichtsvel `sprites/hauntflare/gemini/overzicht_r1-r4.png`.
+
+### [v0.0.382] - Hauntflare: twee modellen (knip- en plakwerk)
+- Alle Gemini-plaatjes op hun natieve raster (`model/natief.py`; r1–r4 99×99, r3_b 79×79).
+- Claude-model: r4_b + staart r4_a. Jordi-model: bol/pose r4_b, gezicht r3_b, handen r4_a, ring r4_c, kuif r3_b in r4_a-vlamkleuren. Naast elkaar: `sprites/hauntflare/model/naast_elkaar.png`.
+
+### [v0.0.383] - Hauntflare: sprite r1
+- Maker r1 (`sprites/hauntflare/sprite_r1/`): geschrapt naar 64×64, vlammen warmer, handen met oranje binnenrand, ring 3 tonen; gezicht nog niet goed (r2 loopt).
+
+### [v0.0.384] - Hauntflare: sprite v2
+- Nieuwe basis + maker v2 (`sprites/hauntflare/sprite_v2/`): Haunter-gezicht, vlammen/handen/ring gekleurd; v3 loopt.
+
+### [v0.0.385] - Hauntflare: frontsprite-kandidaat (v6, keuring PASS)
+- v3–v6 met twee keuringen; v6 PASS (`sprites/hauntflare/sprite_v6/hauntflare_v6.png`). Wacht op Jordi.
+
+### [v0.0.386] - Hauntflare: gezichtsopties
+- Linkeroog gespiegeld van het rechteroog (vier hoeken), nieuwe mond lager en meer naar links met V-tanden: `sprites/hauntflare/gezicht_v7/opties_heel.png`.
+
+### [v0.0.387] - Hauntflare: gezichtsopties afgekeurd
+- `gezicht_v7` afgekeurd (getekend oog en mond); les in `GEMINI.md`. v6 blijft de laatste sprite.
+
+### [v0.0.388] - Hauntflare: gezicht v7 (keuring PASS)
+- Verre oog gespiegeld en verkort voor perspectief, mond naar Haunters mond aangepast aan het lijf (lager, meer naar links, tong): `sprites/hauntflare/sprite_v7/hauntflare_v7.png`.
+
+### [v0.0.389] - Hauntflare: tanden (v8, keuring PASS)
+- Twee V-boventanden in de hoofdkleur naar Jordi's referenties: `sprites/hauntflare/sprite_v8/hauntflare_v8.png`.
+
+### [v0.0.390] - Hauntflare: tanden boven en onder (v9, keuring PASS)
+- Tanden vast aan de lip naar Haunter G3 en de pixelref, ongelijk en verspringend: `sprites/hauntflare/sprite_v9/hauntflare_v9.png`.
+
+### [v0.0.391] - Hauntflare: tanden bijgesteld (v10)
+- Rechter boventand iets kleiner, linker ondertand iets groter (Jordi): `sprites/hauntflare/sprite_v10/`.
+
+### [v0.0.392] - Hauntflare: tanden naar Haunter G3 (v11)
+- Rechter boventand en linker ondertand als G3-tand: punt van 1 px op een voet van 3 (`sprites/hauntflare/sprite_v11/`).
+
+### [v0.0.393] - Hauntflare: v12
+- Gemarkeerde tandpixel (31,33) weg (Jordi).
+
+### [v0.0.394] - Hauntflare: vlammen en handen als vuur (v13)
+- Kuif, staart en handen herkleurd naar Gen 3-vuur (Typhlosion, Ponyta e.a.): `sprites/hauntflare/sprite_v13/`.
+
+### [v0.0.395] - Hauntflare: eindversie v15 (eindkeuring PASS)
+- Eindkeuring kleur, schaduw en belijning: handenlijnen gerepareerd; `sprites/hauntflare/sprite_v15/hauntflare_v15.png` wacht op Jordi.
+
+### [v0.0.396] - Hauntflare: opties mondhoek en mondkleur
+- `sprites/hauntflare/sprite_v16/opties.png` (3 hoeken × 3 mondkleuren).
+
+### [v0.0.397] - Hauntflare: v16 (keuring PASS)
+- Punteriger rechter mondhoek, gloeiende kernkleur in de mond (rood + oranje tong), tand zonder rechte hoek: `sprites/hauntflare/sprite_v16/hauntflare_v16.png`.
+
+### [v0.0.398] - Hauntflare: v17
+- Gemarkeerde lippixel (31,32) hoofdroze (Jordi).
+
+### [v0.0.399] - Hauntflare: frontsprite af
+- Eindkeuring v17 → v18 PASS; `sprites/hauntflare/af/hauntflare.png`, op het overzichtsvel. POKEMON.md, Stand van zaken en les in GEMINI.md bijgewerkt.
+### [v0.0.400] - Steenmozaïek-jaguar: welp-prompts met eigen patroon
+- Jordi: de welp geen kleinere mozaïekversie, "een ander leuk patroon met een idee erachter". Twee Gemini-prompts (Jordi: "1 en 2 wil ik allebei proberen"): A ruwe luipaardjaspis (welp = ruw materiaal, wordt bij evolutie geslepen en ingelegd), B ingekerfd Chavín-reliëf (gegraveerd → ingelegd). `steenmozaiek/gemini/README.md`, prompt v3.
+- Bijgewerkt (Jordi: "gewoon alleen onze sprite"): beide prompts met één bijlage, `af/steenjaguar.png`; welp, jaspis en Chavín in woorden.
+- Welp ronde 1: B (Chavín) het beste van de twee; ronde-2-prompt (zittend, speels, poot likken; patroon groter/overdrevener; hoekiger lijf; oog minder chibi). `fase1B_ronde1.png`.
+### [v0.0.401] - Steenjaguar-welp: sprite basis gekeurd (zonder spiraalronde)
+- Model: Gemini ronde 3 (Chavín, zittend, poot likkend). r1 hertekend en afgekeurd; vanaf r2 model overgenomen (natief raster → 50×45). Jordi's punten: rug smooth, heup A, oog 1 px links, geen bolle schaduw, volume en gezicht uit het model, verre oog zoals Gen 3.
+- r6–r11 met verse keurders per ronde; r11 basis PASS na neuspunt. Spiralen volgen in een aparte ronde. `docs/concept/sprites/steenmozaiek/welp/r11/`.
+- Patroonronde (Jordi: "het moet meer een patroon op het lichaam gaan worden ... echt inkleuren en het lichaam moet niet veranderen erdoor"): spiralen als ingekleurde vlakken die de facetten volgen (p1–p4, keurder per ronde; p4 = keuring p3 toegepast). `welp/p4/welp_p4.png`, naar Jordi.
+- Jordi's vier punten op p4 (tong los van de poot, lila rugband, voorhoofdspatroon, staartring), alleen met kleur, schaduw en lijnen: p5–p8, keurder per ronde; p8 = keuring p7 toegepast. `welp/p8/welp_p8.png`, naar Jordi.
+### [v0.0.402] - Steenjaguar-welp: Chavín-inkleuring (gehouwen steen)
+- Jordi (foto Chavín-jaguarbeeld): "Hij moet er eigenlijk uitzien alsof die uit steen gecarved is", "het steengevoel vind ik het belangrijkste", kleur mag ("vind het nu teveel een huisdier"), koplijnen om de ogen + 2 naar de kruin, "let op schaduwen". Silhouet en vorm gelijk aan p8.
+- c1–c5 met keurder per ronde: lichte steen (greige én grijs), kerven met lichte lip, grote voluten op schouder en dij, pootbanden; de oogbogen bevroren na Jordi's "prima". `welp/c5/welp_c5.png` + `_grijs`, naar Jordi.
+- Halve cirkel naast het oog (c10 variant 1), eindkeuring Dragonfly Cave + Gen 3: PASS na 5 randpixels + mondhoek. **Af:** `docs/concept/sprites/steenmozaiek/af/welp.png` (+ `_8x`, `welp_grijs.png`, `welp_normal.pal`, eindkeuring). Op het overzichtsvel.
+### [v0.0.403] - Spooktreinlijn: sparren
 - Jordi start de spooktreinlijn (3 fases). Zijn woorden en de open voorstellen van Claude (opbouw, typing, sprite-aanpak) in `docs/concept/IDEEEN.md`.
 - Besluiten Jordi over de spooktreinlijn vastgelegd (fases, Steel → Steel/Ghost, semi-frontaal, Gemini, fase 3 eerst).
 - Spooktrein fase 3: Gemini-startprompt met drie wagonvarianten (a/b/c) in `docs/concept/sprites/spooktrein_fase3/gemini/PROMPT.md`.

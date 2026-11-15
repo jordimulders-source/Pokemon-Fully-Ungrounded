@@ -3,6 +3,8 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 
 **BELANGRIJKSTE REGEL: een model van Jordi namaken (Jordi, 6 nov: "dit is de belangrijkste regel vanaf nu").** Levert Jordi een model (eigen ontwerp/afbeelding) om na te maken, dan zijn er precies twee eisen, en verder niets: (1) **lijkt hij heel accuraat op het origineel** (niets toevoegen, weglaten of herinterpreteren; het model is perfect); (2) **is het een Gen 3-sprite volgens al onze eisen** (deze pagina). Keurders toetsen alleen deze twee; "welk dier leest het", eigen ontwerpideeën of stijlwensen die het model veranderen tellen niet. Voorbeeld: poedelmot (`docs/concept/sprites/poedelmot/SPEC.md`). **Wat Jordi niet noemt is niet goedgekeurd** (Jordi: "als ik iets niet benoem betekent het niet dat het perfect is"): bevroren is alleen wat expliciet accuraat verklaard is.
 
+**MODEL OVERNEMEN, NOOIT HERTEKENEN (Jordi, 13 en 15 nov: "je hebt alles weer opnieuw getekend he" · "moet ik dat in elk gesprek opnieuw aangeven?").** Bij een model (Gemini of ander) is de sprite de **verkleining van het model zelf**: natief raster terughalen → verkleinen met vlakgemiddelde + dichtstbijzijnde kleur uit het model → alleen technisch opschonen (buitenlijn, ruis, ≤3 tinten) en per pixel repareren wat de reductie kapotmaakt (oog, neus, tanden), steeds naar het model. Gezicht, vlakken, schaduw en poten komen uit het model, niet uit de hand van de maker. Een toegestane afwijking van Jordi komt als laatste, als bovenlaag. De maker meldt per zone hoeveel pixels afwijken van de kale reductie. Zet dit letterlijk in elke makeropdracht. Voorbeeld: Krassault (`octillery_evo/sprite3/`).
+
 **Ontwerp uit Gemini?** Volg `SPRITE_WERKWIJZE.md` → "Gemini-model namaken" (meetgereedschap poedelmot) en `docs/lessen/GEMINI.md`; die vervangen stap 1–3 hieronder (Gemini-keuze van Jordi = bevroren ontwerp; sprite = trouwe vertaling; keurder toetst trouw + techniek, niet het ontwerp).
 
 ## Volgorde (nooit overslaan)
@@ -41,6 +43,7 @@ Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen 
 - **Vorm**: geen rechte stukken waar het dier rond is (buikrand!), geen knikken; snavel/dunne delen ≥ 2 px als het moet lezen.
 
 ## Zuinig
+- **Geen tussenrondes naar Jordi (15 nov: "de beste sessies sturen niet elke ronde naar mij door, die sturen pas echt goed werk door").** Rondes gaan maker → Claude-vergelijking → verse keurder → reparaties, stil; Jordi ziet pas een versie met keurder-PASS die Claude zelf duidelijk goed vindt. Alleen een echte ontwerpkeuze mag eerder (als korte vraag met varianten).
 Eén maker per sprite (SendMessage), één keurder, kleine vellen, commit en push na elke ronde. Max 3–4 agents.
 - Een verkleinde 3D-render per script kwantiseren is geen sprite (Hitmontop-evo, 6 nov: "lachwekkend slecht"): ook als Jordi "zelf, zonder agents" zegt, blijft kleur handwerk op een raster na een studie van de echte sprite (Hitmontop/Hitmonlee).
 - **Gemini als bron (potoo, 6 nov):** vraag je meerdere wijzigingen tegelijk, dan tekent Gemini een heel nieuw beeld (stijl, oog en snavel kwijt). Eén wijziging per prompt, of de beste versie als bestand nemen en zelf bewerken (oprekken, tak weg, spiegelen).

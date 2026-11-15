@@ -5,6 +5,8 @@ Eindvorm van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Cosmi
 - 13 nov: "Ik wil Gastly een buitenaardse gaswolk maken die dan logisch evolueert van een andere vorm haunter en gengar gebaseerd op verschijnselen die in de ruimte plaatsvinden. Het moet echt convergent zijn he."
 - 15 nov: namen "zijn definitief"; "laten we beginnen met gengas, want dat is de meest complexe van de drie, hoe zullen we die maken?"
 
+- 15 nov (ontwerp): "gengar is te herkennen aan zijn ogen en zijn mond, plus de oren. Maar vooral ogen en mond moeten exact hetzelfde blijven. Je kan er een bol gas van maken met wolkenbanden, je kan de armen en de poten om hem heen laten zweven als een soort manen idee, dus dat het armen en poten zijn, maar dat ze disconnected zijn. voor de rest is het een toedscruel, wiglett/wugtrio idee, dus convergent, lijkt erop, maar wel een duidelijk andere vorm. wat vind je hiervan? Samen met wat van jouw suggesties"
+
 ## Basis (besloten)
 - Verschijnsel: bruine dwerg (Claude, door Jordi gekozen via de naam Gengas en de lijn in `POKEMON.md`).
 

@@ -184,3 +184,4 @@ Style: pixel art in the style of an official Gen 3 Pokémon front sprite (Ruby/S
 
 AVOID: a realistic armadillo, a real animal with a cup or barrel on its back, loose yerba powder in a cup, silver straps or belts across the shell, grey skin, engraved patterns, the bombilla in its mouth, a tortoise or turtle, a teacup or teapot ghost (Sinistea/Polteageist look), plush/Neopets look, an illustration instead of a sprite, extra props (thermos, kettle, cup).
 ```
+6. `fase2_E_r5.png`: Jordi (15 nov, letterlijk): "ik vind het niks, te chibi, geen pokemon, nog steeds een dier met een voorwerp erop, misschien is het concept gewoon niet goed".

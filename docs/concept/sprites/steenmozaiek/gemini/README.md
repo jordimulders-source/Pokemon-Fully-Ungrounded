@@ -116,16 +116,16 @@ AVOID: a copy of the adult made smaller, chibi or buff proportions, a smooth dig
 ```
 
 ## Fase 1 (welp), prompt v3: eigen patroon (15 nov; vervangt v2)
-Jordi (15 nov, letterlijk): "Ik wil daar niet een kleinere versie van maken, hij moet er wat anders uit zien en ook een ander soort patroon hebben. Liever niet dezelfde mozaiek stijl, maar een ander leuk patroon met een idee erachter" · "het wordt een soort cub". Suggesties Claude; Jordi: "1 en 2 wil ik allebei proberen".
-Beide in een **nieuw gesprek**. Bijlagen: (1) foto beeldje, (2) `../referenties/model_gekozen.png`, (3) foto echte jaguarwelp, (4) A: foto van leopard skin jasper (ruw/ongeslepen) · B: foto van een Chavín-jaguarreliëf (bijv. de Tello-obelisk of de jaguarzuilen van Chavín de Huántar).
+Jordi (15 nov, letterlijk): "Ik wil daar niet een kleinere versie van maken, hij moet er wat anders uit zien en ook een ander soort patroon hebben. Liever niet dezelfde mozaiek stijl, maar een ander leuk patroon met een idee erachter" · "het wordt een soort cub". Suggesties Claude; Jordi: "1 en 2 wil ik allebei proberen" · "ik ga niet 4 bijlagen erbij doen, gewoon alleen onze sprite".
+Beide in een **nieuw gesprek**, met als enige bijlage `../af/steenjaguar.png` (de afgemaakte sprite van fase 2).
 
 ### A: ruwe luipaardjaspis (welp = het ruwe materiaal, bij de evolutie geslepen en ingelegd tot mozaïek)
 ```
 PIXEL ART SPRITE, NOT AN ILLUSTRATION.
 
-Attached: (1) a photo of a stone mosaic jaguar figurine from Mexico, (2) a Pokémon inspired by it: a pure Rock-type adult jaguar made of cut and inlaid stone mosaic, the final stage of a two-stage line, (3) a photo of a real jaguar cub, (4) a photo of raw leopard skin jasper.
+Attached is a Pokémon sprite: a pure Rock-type adult jaguar made of cut and inlaid stone mosaic, the final stage of a two-stage line.
 
-Design its pre-evolution (first of two stages): a jaguar cub, pure Rock-type. Idea: the cub is the raw, uncut stone; when it evolves, it is cut and inlaid into the mosaic of attachment 2. So the cub is NOT a mosaic: no separate pieces, no seams. Its body is one rough, unpolished stone like the raw leopard skin jasper in attachment 4, with the natural rosette-like spots that grow in that stone. It must clearly be the same line as the adult in attachment 2, but it must look different, not a smaller copy. Anatomy and proportions of the real jaguar cub in attachment 3. Head: open mouth, white fangs, one round black eye with a white highlight. No fur.
+Design its pre-evolution (first of two stages): a jaguar cub, pure Rock-type. Idea: the cub is the raw, uncut stone; when it evolves, it is cut and inlaid into the mosaic of the adult. So the cub is NOT a mosaic: no separate pieces, no seams. Its body is one rough, unpolished stone like raw leopard skin jasper, with the natural rosette-like spots that grow in that stone. It must clearly be the same line as the attached adult, but it must look different, not a smaller copy. Anatomy and proportions of a real jaguar cub. Head: open mouth, white fangs, one round black eye with a white highlight. No fur.
 
 Pose: standing on all four legs, body in 3/4 view facing left, head turned slightly more towards the viewer than the body. Four legs and one tail in total. Compact composition that fits in a square.
 
@@ -138,9 +138,9 @@ AVOID: mosaic pieces or seams, a copy of the adult made smaller, chibi or buff p
 ```
 PIXEL ART SPRITE, NOT AN ILLUSTRATION.
 
-Attached: (1) a photo of a stone mosaic jaguar figurine from Mexico, (2) a Pokémon inspired by it: a pure Rock-type adult jaguar made of cut and inlaid stone mosaic, the final stage of a two-stage line, (3) a photo of a real jaguar cub, (4) a photo of a carved Chavín jaguar relief from Peru.
+Attached is a Pokémon sprite: a pure Rock-type adult jaguar made of cut and inlaid stone mosaic, the final stage of a two-stage line.
 
-Design its pre-evolution (first of two stages): a jaguar cub, pure Rock-type. Idea: the cub is a carving; when it evolves, the carving becomes the inlaid mosaic of attachment 2. So the cub is NOT a mosaic: no separate pieces, no seams. Its body is one block of carved stone, and its pattern is lines and curls engraved into the stone, in the style of the Chavín relief in attachment 4. It must clearly be the same line as the adult in attachment 2, but it must look different, not a smaller copy. Anatomy and proportions of the real jaguar cub in attachment 3. Head: open mouth, white fangs, one round black eye with a white highlight. No fur.
+Design its pre-evolution (first of two stages): a jaguar cub, pure Rock-type. Idea: the cub is a carving; when it evolves, the carving becomes the inlaid mosaic of the adult. So the cub is NOT a mosaic: no separate pieces, no seams. Its body is one block of carved stone, and its pattern is lines and curls engraved into the stone, in the style of the ancient Chavín jaguar reliefs from Peru. It must clearly be the same line as the attached adult, but it must look different, not a smaller copy. Anatomy and proportions of a real jaguar cub. Head: open mouth, white fangs, one round black eye with a white highlight. No fur.
 
 Pose: standing on all four legs, body in 3/4 view facing left, head turned slightly more towards the viewer than the body. Four legs and one tail in total. Compact composition that fits in a square.
 

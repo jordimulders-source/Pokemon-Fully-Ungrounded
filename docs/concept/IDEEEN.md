@@ -40,6 +40,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Jordi (15 nov), over ronde 4:** "dit ziet er echt stom uit" / "het gezicht is teveel mens" / "net thomas the tank engine" / "en hij is niet roestig".
   - **Jordi (15 nov):** dier als skelet afgewezen: "nee dit is een trein, geen dier". Prompt v5 (eerst ontwerp in Sugimori-stijl): `sprites/spooktrein_fase3/gemini/PROMPT_v5.md`.
   - **Jordi (15 nov):** "het moet gewoon nog minder een trein zijn". Prompt v6 (A: geest is het lijf; B: trein als drie iconen): `PROMPT_v6.md`.
+  - **Jordi (15 nov):** "of juist meer zoals cuphead" (plaat van de Phantom Express); prompt v6 variant C.
 - **Pseudo-legendary draak: pitahaya-geïnspireerd** (Jordi, 9 nov). Eerder: FAKEMON_PITCH #36 (pitahaya, Grass/Dragon) en "Dragonfruit (Dragon)" in de lijst van 29 okt; Tropius is in de repo al Grass/Dragon; **de pseudo-draak deelt waarschijnlijk die typing** (Jordi, 9 nov: "maakt niet uit dat meerdere pokemon dezelfde typing hebben").
 - **Sneeuwbol-Pokémon** (Jordi, 9 nov: "ben ik wel van overtuigd dus dat gaan we sowieso doen"; FAKEMON_PITCH #85, voorstel Ice/Psychic; hoe precies bedenken we nog, Jordi 9 nov).
   - **Idee Jordi (13 nov):** "ik zat te denken aan een pokemon lijn die begint als snow globe en daarna cosmic wordt". Nog open: aantal fases, typing per fase, hoe de evolutie eruitziet.

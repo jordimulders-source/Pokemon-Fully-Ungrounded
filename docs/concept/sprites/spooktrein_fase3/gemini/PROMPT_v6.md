@@ -40,3 +40,23 @@ CONCEPT: a ghost that has possessed a steam train, so abstracted that it is a cr
 
 AVOID: no human face, not Thomas the Tank Engine, no realistic locomotive, no skull or horror mask, no conductor, no small ghosts, no speed lines or rails.
 ```
+
+## Variant C: meer zoals Cuphead (Jordi, 15 nov: "of juist meer zoals cuphead", met een plaat van de Phantom Express)
+Wat we overnemen (principe, Claude): de hele voorkant ís het gezicht, de koeienvanger is één grote grijns, de locomotief zelf leeft en vervormt (buigt, rekt, helt), grote cartoonogen. Niet overnemen (moet anders blijven, Jordi): paars/blauw palet, schedelconducteur, losse spoken, het gezicht van de Phantom Express zelf (blauw gezichtsplaat, koplamp als neus).
+
+```
+Design an original Pokémon in the official Ken Sugimori Pokémon artwork style (clean lines, flat cel shading, plain white background).
+
+TYPE: Steel / Ghost. Final stage of its line.
+
+CONCEPT: an old steam locomotive that a ghost has brought to life: the locomotive itself is the living creature.
+- The whole front of the locomotive IS its face: two big, identical ghost eyes high on the front, and the cowcatcher is one huge, wide, cheeky grin full of flat teeth.
+- The locomotive is alive and elastic like a cartoon: it bends, stretches and leans forward as it races ahead, not a rigid machine.
+- Few parts: the face-front, a short chimney, a long low body, two big front wheels spinning in motion like in a comic book. No cab, no windows, no rods, no pipes, no wagons.
+- The back of the body dissolves into green ghost smoke, with faint ghostly wheels inside it.
+- Dark grey old iron with rust patches and rust streaks; green for the ghost (eyes, smoke).
+- Expression: cheeky and mischievous, visibly having fun being a ghost and going so fast.
+- View: slightly more frontal than three-quarter, facing left.
+
+AVOID: no human face (no nose, no eyebrows, no lips), the headlight is not an eye or nose, not Thomas the Tank Engine, no realistic locomotive, no skull, no conductor, no other ghosts, no purple, no speed lines or rails.
+```

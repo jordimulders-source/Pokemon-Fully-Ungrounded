@@ -21,3 +21,14 @@ Reproduceren: `python3 tanden.py` · `python3 controle.py` · `python3 vel.py` (
 ## Oordeel
 Op 12x naast de refs: dezelfde bouw (hoofdroze V's vast aan beide lippen, zigzagrij boven en onder, verspringend, tong ertussen), het meest als het 3D-model. Op 1x leest het als een tandige grijns. Beperking: de opening is 3 rijen hoog, dus de tanden vullen een groter deel ervan dan bij Haunter (5 rijen); de mond oogt daardoor wat meer dicht dan in de artwork.
 **Favoriet R**: de ondertanden lezen op 12x en 6x echt als tanden (W); bij S zijn ze 1-px pinnetjes die op 1x wegvallen.
+
+## T (na "R en S gaan niet naar Jordi": mond bijna dicht)
+Reproduceren: `python3 maak_t.py` (gebruikt `rek.py`) · `python3 controle.py` · `python3 vel.py` (vel: refs-mondcrops | v7 | R | T).
+- **Oprekken zonder tekenen (`rek.py`)**: per kolom bestaande v7-rijen gedupliceerd; bovenlip blijft op y33. x20-28: rij 34 (donker) en rij 35 (tong) elk 1x (+2, opening y34-38, onderlip y39); x29-33 (rechter mondhoek, ring dichtbij): alleen rij 34 (+1). De zijkanten schuiven mee; de onderste bolrijen vlak boven de ring vallen weg. Bol boven de ring: overal ≥1 px (x24-28: y40; x29-32: y39).
+- **Tanden** (bouw van Haunter G3 rij 39-44 en de pixel-ref: hoofdroze voet breekt de lip open, punt steekt uit, zwarte lijn langs de tand; ongelijk, Jordi: "niet allemaal precies hetzelfde"):
+  - boven, ver (links) klein: voet (25-26,33), punt (25,34); dichtbij groot: voet (29-31,33), (30-31,34), punt (30,35), zwarte lijn links (29,34-35); rechte lip ertussen (27-28,33).
+  - onder, kleine bultjes in de onderlip: dichtbij punt (28,37) met zwart aan beide kanten, voet (27-29,38-39); ver punt (24,38), voet (24-25,39), inkeping (26,39). Kinschaduw (27-28,40) 2->7 zodat de voet aan het hoofd vastzit.
+  - Verspringend: punten boven x25/x30, onder x24/x28. Donker blijft y34-35, tong y36-38 zichtbaar.
+- Controle: diff alleen in x20-33, y33-40 (mondzone), silhouet 0, palet v7, P, transparantie 0. Ogen 0.
+- Afgevallen tussenstappen: T met gelijke tanden (zoals R), T2 (kleinere ondertanden: lazen niet).
+- **Oordeel**: naast G3 en de pixel-ref op 12x/1x nu een open grijns met 2 ongelijke V's boven, kleine bultjes onder, donker + tong ertussen: zelfde bouw. Zwak punt: de opgerekte linker mondhoek wordt een 2 px brede zwarte balk van 5 rijen (x20-22, y34-38; ontstaat vanzelf door het dupliceren); de mond is daardoor hoger dan bij Haunter.

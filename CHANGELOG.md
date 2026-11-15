@@ -1612,3 +1612,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.388] - Hauntflare: gezicht v7 (keuring PASS)
 - Verre oog gespiegeld en verkort voor perspectief, mond naar Haunters mond aangepast aan het lijf (lager, meer naar links, tong): `sprites/hauntflare/sprite_v7/hauntflare_v7.png`.
+
+### [v0.0.389] - Hauntflare: tanden (v8, keuring PASS)
+- Twee V-boventanden in de hoofdkleur naar Jordi's referenties: `sprites/hauntflare/sprite_v8/hauntflare_v8.png`.

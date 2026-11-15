@@ -54,3 +54,14 @@ for p in [(29,27),(38,29),(33,33),(26,36)]: zet(B,'w',plus(*p))
 zet(B,'w',[(33,24),(39,33),(28,31),(31,29),(37,36),(23,33),(34,37)])
 schrijf(B,'sprite/maker/raster_r8B.txt')
 print('ok')
+# ---- C: hybride (Jordi: "hybride van a en b, vlokken met sneeuwstorm"): sneeuwjacht A + plusvlokken van B,
+# rond elke plusvlok 1 px vrij in glastint b.
+AC=[l.rstrip('\n') for l in open('sprite/maker/raster_r8A.txt')]
+C=[list(r) for r in AC]
+PLUS=[(29,27),(38,29),(33,33),(26,36)]
+for px_,py_ in PLUS:
+    for y in range(py_-2,py_+3):
+        for x in range(px_-2,px_+3):
+            if abs(x-px_)+abs(y-py_)<=3 and vrij(x,y): C[y][x]='b'
+    zet(C,'w',plus(px_,py_))
+schrijf(C,'sprite/maker/raster_r8C.txt')

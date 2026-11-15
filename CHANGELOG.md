@@ -1590,3 +1590,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 ronde 7 (v9); prompt v10: terug naar Emerald-sprite, minder detail, één geest uit de schoorsteen met één arm (fluittouw-pose) en een mini-locomotiefkop.
 - Spooktrein fase 3 ronde 8 (v10): bijna goed (Jordi: geest prima, achterkant meer geestwolken, "wat te klein").
 - Spooktrein fase 3: prompt v11 (ronde 8 als bijlage; achterkant wordt geestwolken, lijf langer).
+- Spooktrein fase 3: model gekozen (ronde 9, prompt v11; Jordi: "zou dit vertalen naar een sprite? ... ik vind zijn mond geniaal"). SPEC, natief raster (86×83) en ruwe 64-onderlaag via schrappen in `spooktrein_fase3/model/`.

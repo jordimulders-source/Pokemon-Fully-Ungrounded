@@ -1581,3 +1581,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3: dier als skelet afgewezen (Jordi); prompt v5 = eerst ontwerp in Sugimori-artworkstijl, daarna sprite; roest als textuur; mensengezicht expliciet uitgesloten.
 - Spooktrein fase 3: Jordi "nog minder een trein"; prompt v6 met variant A (geest als lijf, trein als stukken die hij draagt) en B (trein teruggebracht tot schoorsteen, koeienvanger, wielen).
 - Spooktrein fase 3: prompt v6 variant C (meer zoals Cuphead: voorkant = gezicht, koeienvanger = grijns, levende vervormende loc).
+- Spooktrein fase 3: prompt v6 variant D (geest woont in de loc als heremietkreeft en kijkt eruit; naar Jordi's referentie Locoalmotiv).

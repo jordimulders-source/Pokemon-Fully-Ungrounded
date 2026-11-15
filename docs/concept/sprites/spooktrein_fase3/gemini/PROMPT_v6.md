@@ -60,3 +60,23 @@ CONCEPT: an old steam locomotive that a ghost has brought to life: the locomotiv
 
 AVOID: no human face (no nose, no eyebrows, no lips), the headlight is not an eye or nose, not Thomas the Tank Engine, no realistic locomotive, no skull, no conductor, no other ghosts, no purple, no speed lines or rails.
 ```
+
+## Variant D: de geest zit in de loc en kijkt eruit (Jordi, 15 nov: "dit is conceptueel ook geinig", fan-design Locoalmotiv, Carkol-evolutie Steel/Fire)
+Principe (Claude): het wezen woont in de locomotief als in een schulp en steekt zijn kop en armen uit de voorkant; de trein is zijn pantser. Niet overnemen: mijnhelm, kolenberg, Fire, Carkol.
+
+```
+Design an original Pokémon in the official Ken Sugimori Pokémon artwork style (clean lines, flat cel shading, plain white background).
+
+TYPE: Steel / Ghost. Final stage of its line.
+
+CONCEPT: a green ghost that lives inside an old steam locomotive like a hermit crab in its shell, and drives it at full speed.
+- The ghost's head and two small ghostly hands stick out of the open front of the locomotive (where the smokebox door would be), gripping the edges.
+- The locomotive is its shell: chunky, simplified, long and low, with a short chimney, a cowcatcher at the front and big wheels spinning in motion like in a comic book. No cab, no windows, no rods, no pipes, no wagons.
+- The back of the locomotive dissolves into green ghost smoke, with faint ghostly wheels inside it.
+- Dark grey old iron with rust patches and rust streaks; the ghost is green.
+- The ghost has two identical eyes and a cheeky, mischievous grin: it is visibly having fun being a ghost and going so fast. Not human: no nose, no eyebrows.
+- The whole thing leans forward, racing ahead.
+- View: slightly more frontal than three-quarter, facing left.
+
+AVOID: no human face, not Thomas the Tank Engine, no realistic locomotive, no skull, no conductor or driver hat, no other ghosts, no speed lines or rails.
+```

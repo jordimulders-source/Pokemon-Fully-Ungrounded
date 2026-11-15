@@ -1569,3 +1569,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.374] - Spooktreinlijn: sparren
 - Jordi start de spooktreinlijn (3 fases). Zijn woorden en de open voorstellen van Claude (opbouw, typing, sprite-aanpak) in `docs/concept/IDEEEN.md`.
 - Besluiten Jordi over de spooktreinlijn vastgelegd (fases, Steel → Steel/Ghost, semi-frontaal, Gemini, fase 3 eerst).
+- Spooktrein fase 3: Gemini-startprompt met drie wagonvarianten (a/b/c) in `docs/concept/sprites/spooktrein_fase3/gemini/PROMPT.md`.

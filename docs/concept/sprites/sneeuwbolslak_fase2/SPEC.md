@@ -12,3 +12,4 @@ Lijn: sneeuwbolslak (fase 1, `sneeuwbolslak/`) → fase 2 → komeet (fase 3, Ic
 ## Model
 - `sprite/r8_bol_r7.png` = r8 (lijf en staart) + bol van r7 (`sprite/plak_bol.py`; r7 en r8 hebben hetzelfde raster, 1-op-1; groenige randpixels van r7 vervangen door de r8-pixel).
 - Volgende stap: natief raster, maattest, daarna maker (alleen opruimen binnen het silhouet).
+- Jordi: "dan mag je daarna gaan bouwen, zoals bij de poedelmot qua methode oa". Maattest: `sprite/maattest.py`, vel `sprite/maattest_vel.png` (52, 56, 60 px breed; preview met 15 clusters, geen eindsprite).

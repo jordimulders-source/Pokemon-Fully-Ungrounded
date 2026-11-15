@@ -28,3 +28,4 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - Ogen en mond exact Gengar (Jordi); Claude-voorstel dat Jordi met "alright" aannam: ogen en grijns pixel voor pixel uit de Gen 3-Gengar, iets meer naar het midden van de bol (twee posities tonen).
 - Lijf: een bol (Jordi: "zorg wel dat het een bol blijft he"); banden, wervel, lichtvlek en oren uit het model (Jordi: "lichaam ben ik tevreden over").
 - Ledematen: indeling 3 (Jordi). Claude-voorstellen uit de r5-bespreking (Jordi: "alright"): voor = groter en lichter, achter = kleiner, donkerder, half verstopt; iets donkerder en warmer grijs dan het model; handen met Gengars drie stompe vingers, voeten in Gengars voetvorm (Jordi r1: "verder eens"); 2–3 grotere kraters per maan.
+- 15 nov: "toon voordat je gaat bouwen nog jouw opties voor ogen en mond posities" → `model/gezicht_opties.png` (A/B/C, Gengar-pixels op de kleurgids; schets).

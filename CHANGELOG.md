@@ -1486,3 +1486,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.360] - Abra-regional: A gekozen; buitenrand en rechte lijnen
 - Jordi: "A is prima, hij is juist nog niet een goochelaar zoals Kadabra, maar meer een soort van opossum die weinig hoop heeft, tot die evolved".
 - Zwart op de buitenrand gemeten: echte Abra/Kadabra/Sneasel ±40 %, donkere soorten 76–86 %, onze Abra 61 % → te veel. Ronde 8 gestart: buitenrand lichter (selout zoals Abra) en de rechte lijnen die Jordi noemt (staart rechts, lijf rechts, beide armen, kop links).
+
+### [v0.0.361] - Abra-regional: r8 buitenrand en curven
+- Buitenrand naar het Abra/Kadabra-recept: 43 randpixels zwart → donkere lijntint (schaduwkant was 100 % zwart); rand-zwart 60,9 % → 42,7 % (Abra 40 %), zwart totaal 21,6 → 17,5 %.
+- Curven waar het model ze heeft: staart rechts (1,1,1,2,3,2,1,1,1) en buitenkant linkerarm. Kop links, lijf rechts, binnenkant linkerarm en rechterarm zijn in het model op natieve resolutie recht: lichte curven daar alleen in variant `abra_r8_curve.png` (max. 1 px van het model). `abra_regional/kleur_r8/` (vel, closeup, LOG).

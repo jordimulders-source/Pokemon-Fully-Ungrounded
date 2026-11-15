@@ -148,3 +148,23 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pi
 
 AVOID: mosaic pieces or seams, a copy of the adult made smaller, chibi or buff proportions, a smooth digital illustration or painting, fur, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
 ```
+
+## Rondes fase 1
+1. `fase1B_ronde1.png` (prompt B, Chavín): Jordi (15 nov, letterlijk): "deze is het beste van de twee, maar ik wil meer een zittende speelse pose, waar die zijn poot likt oid. Iedereen staat op dezelfde saaie manier in de AI generereer poses. Hij blijft driekwart, het patroon is goed, maar vertaalt nog niet ideaal naar een sprite, dus dit mag iets groter, iets overdrevener. En er mogen iets meer tinten van een Rock type in zitten, dit zit hem niet in stukken steen, maar in vorm van het lichaam, wat hoekiger. Plus het oog is echt te chibi". A niet bewaard.
+
+### Prompt fase 1, ronde 2 (nieuw gesprek; enige bijlage: fase1B_ronde1.png)
+```
+PIXEL ART SPRITE, NOT AN ILLUSTRATION.
+
+Attached is a Pokémon design: a pure Rock-type jaguar cub carved from stone, with lines and curls engraved into the stone in the style of the ancient Chavín jaguar reliefs from Peru. It is the first stage of a two-stage line.
+
+Keep this design: the carved stone cub, its colours and its engraved pattern. Change these things:
+1. Pose: sitting, playful, for example licking its paw. Not standing. Still in 3/4 view.
+2. The engraved pattern is good, but it does not yet translate well into a sprite: make the pattern a bit bigger and a bit more exaggerated.
+3. A bit more of a Rock-type feel. Not through separate stone pieces, but through the shape of the body: somewhat more angular.
+4. The eye is far too chibi: make it less chibi.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, visible pixels, 1px dark outline, light from the top left. Plain white background. No ground, no rocks, no shadow, no glow or effects.
+
+AVOID: a standing pose, a big chibi eye, separate stone pieces or seams, a smooth digital illustration or painting, fur, plush/Neopets look, extra rocks or crystals growing from the body.
+```

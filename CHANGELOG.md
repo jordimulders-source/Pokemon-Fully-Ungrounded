@@ -1494,3 +1494,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.362] - Steenmozaïek-jaguar: welp-prompts met eigen patroon
 - Jordi: de welp geen kleinere mozaïekversie, "een ander leuk patroon met een idee erachter". Twee Gemini-prompts (Jordi: "1 en 2 wil ik allebei proberen"): A ruwe luipaardjaspis (welp = ruw materiaal, wordt bij evolutie geslepen en ingelegd), B ingekerfd Chavín-reliëf (gegraveerd → ingelegd). `steenmozaiek/gemini/README.md`, prompt v3.
 - Bijgewerkt (Jordi: "gewoon alleen onze sprite"): beide prompts met één bijlage, `af/steenjaguar.png`; welp, jaspis en Chavín in woorden.
+- Welp ronde 1: B (Chavín) het beste van de twee; ronde-2-prompt (zittend, speels, poot likken; patroon groter/overdrevener; hoekiger lijf; oog minder chibi). `fase1B_ronde1.png`.

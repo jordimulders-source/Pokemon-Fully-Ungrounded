@@ -21,3 +21,4 @@ Lijn: sneeuwbolslak (fase 1, `sneeuwbolslak/`) → fase 2 → komeet (fase 3, Ic
 - Jordi op r3b (`sprite/voor_jordi_r3b.png`): "ik zie er geen gezichtje in, betere versie, maar nog niet perfect, blijf werken aan schaduw, belijning, kleur en let er wederom op dat je teveel rechte lijnen gebruikt"
 - r4 (`sprite/maker/r4.png`, vel_r4): rechte stukken 34→24 (langste 5), palet `maker/pal4.py` (blauwer, richting Regice), silhouet −16 px voor rondingen → **bevroren silhouet nu `sprite/sil56_r4.npy`** (Claude akkoord; bewaak.py gebruikt dat).
 - Jordi (15 nov): "blijf doorwerken tot er een eindresultaat is en stuur die dan pas naar mij"
+- Jordi (tijdens r6): "kijk ook naar bolinhoud, de binnenkant is niks uit te halen momenteel"

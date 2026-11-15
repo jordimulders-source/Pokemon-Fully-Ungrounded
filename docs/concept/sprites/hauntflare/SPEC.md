@@ -47,3 +47,4 @@ Jordi letterlijk: "gebruik de jouwe maar als model voor vorm, de vlammen zouden 
 - v9: tanden vast aan de lip (opening 2 rijen hoger door rijen te dupliceren), 3 ongelijke boven, 2 onder, verspringend; keuring T2 FAIL (onderlip open) → v9 **PASS**. `sprite_v9/hauntflare_v9.png`.
 - 15 nov over v9: "rechtse tand is veel te groot" · "en onderin heeft nog steeds geen tanden" · "als je die linksonderin net wat groter maakt en rechtsboven net wat kleiner, dan keur ik de tanden goed" → v10.
 - v10: rechter boventand 1 kolom smaller, linker ondertand 1 px groter (5 px t.o.v. v9). `sprite_v10/hauntflare_v10.png`.
+- 15 nov over v10: "kleiner, niet smaller. en links is nu 2 pixels onder elkaar, dat klopt ook niet, kijk nu eens hoe de andere haunters het doen" → v11: beide tanden naar het G3-patroon (punt 1 px met zwart ernaast op een voet van 3 in huidkleur), 6 px herkleurd.

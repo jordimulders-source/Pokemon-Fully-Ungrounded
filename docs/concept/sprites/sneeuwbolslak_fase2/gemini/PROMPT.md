@@ -109,4 +109,4 @@ AVOID
 ## Ronde 3 (13 nov)
 - `r3_gemini.png` (door Jordi zelf geprompt). Jordi: "Dit is nog teveel de eerste vorm. Het is een beetje waar ik vooraf bang voor was, fase 2 lijkt teveel op fase 1. Hoe gaan we een tussenfase creëren die tussen die slak in zit en een komeet. De slak moet al langzaam dus meer opgaan. De bol moet bevriezen, maar minder puntig en het moet allemaal langzaam 1 geheel vormen. De chaos in de bol die begint te ontstaan ben ik wel fan van, alsof de laatste vorm nu in de bol zit en zodra die barst de hele pokemon overneemt. Laten we eerst overleggne voordat we prompten"
 - Voorstel Claude: fase 2 als cocon (Shelgon/Kakuna/Silcoon): ijs over het hele lijf, één ronde ei-/druppelvorm, kopje piept vooraan uit, rond venster met de chaos, barsten over de cocon. Open: a. inhoud draaikolk, b. huisje, c. voetstuk, d. staart.
-- Jordi: "ik wil liever geen oogstelen maar in vorm 2" (navraag: lezing "geen oogstelen meer in vorm 2").
+- Jordi: "ik wil liever geen oogstelen maar in vorm 2" En: "fase 1 is echt een slak en vanaf fase 2 stappen we daar al van af".

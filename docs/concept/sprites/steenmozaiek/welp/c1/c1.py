@@ -4,7 +4,7 @@
 # Lichtrand: elke vlakpixel direct onder of rechts van een groef wordt 1 toon lichter (licht linksboven).
 import sys, numpy as np
 from PIL import Image
-B0=np.load('basis.npy'); P8=np.array(Image.open('../p8/welp_p8.png'))
+B0=np.load('basis_facet.npy'); P8=np.array(Image.open('../p8/welp_p8.png'))
 S={}  # (x0,y0): regels
 def stempel(x0,y0,txt):
     S[(x0,y0)]=[r for r in txt.strip('\n').split('\n')]
@@ -16,13 +16,13 @@ def opbouw():
     for (x0,y0),rows in S.items():
         for j,r in enumerate(rows):
             for i,ch in enumerate(r):
-                if ch==' ' or ch=='.': continue
+                if ch in ' .12': continue
                 y,x=y0+j,x0+i
                 if ch in '345': base[y,x]=int(ch)
                 else: lay[y,x]=ch
     return base,lay
 # ---------- kleur ----------
-GROEF={5:3,4:6,3:2,2:2}      # groef = donkere tint van het vlak
+GROEF={5:6,4:2,3:2,2:2}      # groef = donkere tint van het vlak (op licht: 6, op midden/donker: 2)
 RAND ={3:4,4:5,5:14}         # lichtrand = 1 toon lichter
 def kleur(var):
     base,lay=opbouw(); a=P8.copy()
@@ -33,7 +33,7 @@ def kleur(var):
     G=np.isin(lay,['g','i'])&vlak
     for y,x in zip(*np.where(G)):
         t=base[y,x]
-        if var=='B' and lay[y,x]=='i': a[y,x]=8 if t==5 else 7
+        if var=='B' and lay[y,x]=='i': a[y,x]=8
         else: a[y,x]=GROEF.get(t,2)
     for y,x in zip(*np.where(vlak&~G)):
         if lay[y,x]=='n': continue
@@ -41,14 +41,24 @@ def kleur(var):
         if (y>0 and G[y-1,x]) or (x>0 and G[y,x-1]):
             a[y,x]=RAND.get(base[y,x],base[y,x])
     return a
-def pal(var):
+STEEN={
+ # index: 1 zwart, 2 donkere selout/groef op donker, 6 groef op midden, 3 donker, 4 midden, 5 licht, 14 hooglicht
+ 'p8':    {},
+ 'grijs': {1:(28,26,30),2:(62,60,64),6:(82,80,82),3:(100,98,98),4:(138,134,128),5:(174,170,160),14:(206,202,190)},
+ 'greige':{1:(30,24,26),2:(66,56,54),6:(86,74,70),3:(106,94,88),4:(144,130,118),5:(180,166,148),14:(210,198,178)},
+}
+def pal(var, steen='greige'):
     p=Image.open('../p8/welp_p8.png').getpalette()[:48]
-    p[18:21]=[80,52,52]     # 6: groef op middentoon (A en B)
+    p[18:21]=[80,52,52]
+    for k,rgb in STEEN[steen].items(): p[3*k:3*k+3]=list(rgb)
     return p
-def bewaar(var):
-    a=kleur(var); im=Image.fromarray(a.astype(np.uint8),'P'); im.putpalette(pal(var)+[0]*(768-48))
-    im.save('welp_c1_%s.png'%var,transparency=0)
-    im.convert('RGBA').resize((512,512),Image.NEAREST).save('welp_c1_%s_8x.png'%var)
+def bewaar(var, steen='greige', naam=None):
+    naam=naam or 'welp_c1_%s'%var
+    a=kleur(var); im=Image.fromarray(a.astype(np.uint8),'P'); im.putpalette(pal(var,steen)+[0]*(768-48))
+    im.save(naam+'.png',transparency=0)
+    r=Image.open(naam+'.png').convert('RGBA'); bg=Image.new('RGBA',r.size,(255,255,255,255)); bg.alpha_composite(r)
+    bg.resize((512,512),Image.NEAREST).save(naam+'_8x.png')
     return a
 if __name__=='__main__':
     for v in (sys.argv[1:] or ['A','B']): bewaar(v)
+    bewaar('A','grijs','welp_c1_C')   # C: zelfde gravure als A, koelere grijze steen (zoals de foto)

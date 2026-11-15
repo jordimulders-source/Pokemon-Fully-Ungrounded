@@ -1,0 +1,17 @@
+(32,34) m->l  Z1 rand lichte strook schuin (model)
+(32,35) m->l  Z1 rand lichte strook schuin (model)
+(32,36) m->l  Z1 rand lichte strook schuin (model)
+(12,24) m->l  Z2 lichte band loopt in zoals model
+(13,24) m->l  Z2 lichte band loopt in zoals model
+(12,25) b->l  Z2 lichte band loopt in zoals model
+(13,25) b->l  Z2 lichte band loopt in zoals model
+(13,26) b->l  Z2 lichte band loopt in zoals model
+(13,27) b->l  Z2 lichte band loopt in zoals model
+(8,29) b->m  Z2 randtint (model selout r -> m)
+(8,30) b->m  Z2 randtint (model selout r -> m)
+(8,31) b->m  Z2 randtint (model selout r -> m)
+(8,33) m->b  Z3 randschaduw zoals model (a/b -> b)
+(9,33) m->b  Z3 randschaduw zoals model (a/b -> b)
+(8,34) m->b  Z3 randschaduw zoals model (a/b -> b)
+(8,35) m->b  Z3 randschaduw zoals model (a/b -> b)
+(8,36) m->b  Z3 randschaduw zoals model (a/b -> b)

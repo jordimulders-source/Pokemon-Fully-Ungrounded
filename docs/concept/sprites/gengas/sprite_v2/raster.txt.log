@@ -1,0 +1,47 @@
+(14,21) l->a  inkeping oor/kop: donkere lijn van het linkeroor loopt door (model 161,72,95 lag op de rand)
+(14,22) v->r  selout bovenrand kop sluit aan op rij 13 (r)
+(14,38) m->a  inkeping tussen kop en rechteroor: lijn volgt de V (model-lijn rij 13 = a)
+(14,39) l->a  idem
+(22,11) a->K  gat in de linker omlijning (model 68-84 lum, bijna zwart) tussen K-stukken rij 16-21 en 26+
+(23,10) a->K  gat in de linker omlijning (model 68-84 lum, bijna zwart) tussen K-stukken rij 16-21 en 26+
+(24,10) a->K  gat in de linker omlijning (model 68-84 lum, bijna zwart) tussen K-stukken rij 16-21 en 26+
+(25,9) a->K  gat in de linker omlijning (model 68-84 lum, bijna zwart) tussen K-stukken rij 16-21 en 26+
+(52,15) m->K  onderrand linksonder: middentint op de buitenrand -> omlijning (schaduwkant)
+(53,16) m->K  idem, sluit trap 53,15 -> 54,18
+(53,17) m->K  idem
+(56,40) a->K  linkerrand rechteronder-maan: donkerlila op de rand tussen K
+(10,32) K->.  los omlijningsstaartje onder de bovenste maan (1 px, nergens aan vast behalve 9,32)
+(29,14) r->b  meegeschoven randselout van de oude plek: los in het masker
+(35,26) l->R  lichtroze ruispixel midden in het rechteroog
+(31,24) v->m  gedempte punt van de lichte wig tussen de ogen (model 153-159,88-90,105-109; v was te fel)
+(31,25) v->m  idem
+(34,27) R->K  pupil rechteroog (Gengar-vorm)
+(34,28) R->K  pupil rechteroog (Gengar-vorm)
+(35,28) R->K  pupil rechteroog (Gengar-vorm)
+(38,14) a->K  bovenlip linkerpunt: doorlopende lijn
+(39,16) a->K  bovenlip: geen a/K om en om
+(40,18) G->K  bovenlip: geen a/K om en om (was tandgrijs G)
+(39,14) G->H  tandschaduw linkerpunt: één tint
+(40,16) h->H  tandschaduw: één tint
+(39,30) h->H  tandschaduw rechterpunt: één tint
+(43,2) h->g  linkermaan: lichtgrijs op de buitenrand -> selout
+(41,7) W->g  linkermaan: wit op de buitenrand -> selout
+(49,2) G->K  linkermaan onderkant: schaduwkant
+(24,62) g->K  rechtermaan rechterrand: schaduwkant
+(25,62) g->K  rechtermaan rechterrand: schaduwkant
+(26,62) g->K  rechtermaan rechterrand: schaduwkant
+(51,50) G->g  rechteronder-maan bovenrand: selout
+(51,52) G->g  idem
+(59,41) g->K  rechteronder-maan linksonder: schaduwkant
+(59,49) h->K  rechteronder-maan onderrand tussen de tenen
+(0,29) G->g  bovenste maan bovenrand: model donkergrijs (83-86) -> selout g
+(0,30) G->g  bovenste maan bovenrand: model donkergrijs (83-86) -> selout g
+(0,31) G->g  bovenste maan bovenrand: model donkergrijs (83-86) -> selout g
+(1,32) G->g  idem
+(4,27) G->g  bovenste maan linkerrand: selout
+(5,25) G->g  idem
+(8,28) G->g  idem onderrand
+(9,30) G->g  idem
+(2,33) H->g  bovenste maan: lichtgrijs/glans op de bovenrand -> selout
+(2,34) h->g  idem
+(5,26) H->g  glans op de rand -> selout g

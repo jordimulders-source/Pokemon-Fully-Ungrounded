@@ -1,0 +1,83 @@
+(44,8) l->G  maanpixel terug (v3-fout)
+(30,13) m->a  linkeroog Gengar-vorm
+(30,15) a->K  linkeroog Gengar-vorm
+(30,16) u->b  linkeroog Gengar-vorm
+(31,13) m->a  linkeroog Gengar-vorm
+(31,14) R->E  linkeroog Gengar-vorm
+(31,15) m->R  linkeroog Gengar-vorm
+(31,16) a->K  linkeroog Gengar-vorm
+(31,17) u->K  linkeroog Gengar-vorm
+(31,18) u->b  linkeroog Gengar-vorm
+(32,13) m->a  linkeroog Gengar-vorm
+(32,14) R->E  linkeroog Gengar-vorm
+(32,15) E->R  linkeroog Gengar-vorm
+(32,17) u->E  linkeroog Gengar-vorm
+(32,18) b->K  linkeroog Gengar-vorm
+(33,14) R->E  linkeroog Gengar-vorm
+(33,15) W->R  linkeroog Gengar-vorm
+(33,16) K->R  linkeroog Gengar-vorm
+(33,17) u->E  linkeroog Gengar-vorm
+(33,18) b->a  linkeroog Gengar-vorm
+(34,13) a->b  linkeroog Gengar-vorm
+(34,14) R->a  linkeroog Gengar-vorm
+(34,15) K->R  linkeroog Gengar-vorm
+(34,16) E->R  linkeroog Gengar-vorm
+(34,17) a->R  linkeroog Gengar-vorm
+(34,18) b->a  linkeroog Gengar-vorm
+(35,14) a->b  linkeroog Gengar-vorm
+(35,15) R->a  linkeroog Gengar-vorm
+(35,16) R->E  linkeroog Gengar-vorm
+(35,17) K->a  linkeroog Gengar-vorm
+(36,15) m->b  linkeroog Gengar-vorm
+(36,16) m->b  linkeroog Gengar-vorm
+(30,12) u->b  lijftint naast het oog (geen kom)
+(31,12) u->b  lijftint naast het oog (geen kom)
+(32,12) u->b  lijftint naast het oog (geen kom)
+(32,31) m->a  rechterlijn oog: a (was lichtere m)
+(33,31) m->a  rechterlijn oog: a (was lichtere m)
+(34,31) m->a  rechterlijn oog: a (was lichtere m)
+(36,26) R->E  onderrij oog donkerrood zoals Gengar
+(37,26) m->b  geen lichte rand onder het oog (was m)
+(36,27) R->E  onderrij oog donkerrood zoals Gengar
+(37,27) m->b  geen lichte rand onder het oog (was m)
+(36,28) R->E  onderrij oog donkerrood zoals Gengar
+(37,28) m->b  geen lichte rand onder het oog (was m)
+(36,24) m->b  geen lichte pixel onder de ooghoek (was m)
+(34,25) a->b  geen donkere kom-pixel naast het oog
+(31,26) u->b  geen kom tegen het oog
+(32,25) u->b  geen kom tegen het oog
+(32,26) u->b  geen kom tegen het oog
+(34,23) u->b  geen kom tegen het oog
+(39,14) H->W  tanden wit, naden H
+(39,15) H->W  tanden wit, naden H
+(41,15) H->W  tanden wit, naden H
+(40,16) H->W  tanden wit, naden H
+(41,16) H->W  tanden wit, naden H
+(42,16) H->W  tanden wit, naden H
+(40,17) H->W  tanden wit, naden H
+(41,19) h->H  tanden wit, naden H
+(41,20) H->W  tanden wit, naden H
+(41,21) H->W  tanden wit, naden H
+(41,22) H->W  tanden wit, naden H
+(41,23) h->H  tanden wit, naden H
+(41,24) H->W  tanden wit, naden H
+(45,24) h->H  tanden wit, naden H
+(41,25) H->W  tanden wit, naden H
+(41,26) H->W  tanden wit, naden H
+(45,26) H->W  tanden wit, naden H
+(41,27) H->W  tanden wit, naden H
+(41,28) h->H  tanden wit, naden H
+(42,28) h->H  tanden wit, naden H
+(43,28) h->H  tanden wit, naden H
+(44,28) h->H  tanden wit, naden H
+(39,30) H->W  tanden wit, naden H
+(39,13) l->a  linkerpunt grijns had geen lijn
+(39,31) H->W  rechterpunt tand wit (was H)
+(45,19) u->a  onderlip één tint (was u)
+(46,25) m->a  onderlip één tint (was lichtere m)
+(46,26) m->a  idem
+(42,30) m->a  lijn rechtsonder grijns (was lichtere m)
+(43,29) m->a  idem
+(44,29) l->a  grijns had hier geen lijn
+(45,28) m->b  geen lichte pixel onder de mondhoek (was m)
+(45,29) m->b  idem

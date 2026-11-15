@@ -1508,41 +1508,98 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite: Gemini-raster teruggehaald (120×95) en 2× verkleind, alle mozaïekstukken behouden (Jordi's keuze); shading met licht linksboven; oog naar Jordi's pixelaanwijzingen; buikschaduw gecorrigeerd; gekleurde selout aan de lichtkant (Jordi: "ja rechts is echt beter"). Eindkeuring DFC: PASS.
 - `docs/concept/sprites/steenmozaiek/af/steenjaguar.png`; op het overzichtsvel (nog zonder naam). Fase 1 (welp) volgt.
 
-### [v0.0.366] - IJskomeet (fase 3 sneeuwbolslak-lijn): nieuwe Gemini-prompt
+### [v0.0.366] - Sneeuwbolslak fase 2: Gemini-prompt
+- Startprompt fase 2 (Ice) in `docs/concept/sprites/sneeuwbolslak_fase2/gemini/PROMPT.md`, op basis van Jordi's goedgekeurde voorstellen (spiraal en langwerpig, ijskorst met barsten, sneeuwstorm, bevroren slijmspoor). Bijlage: `bijlage_fase1_8x.png` (afgewerkte fase 1 op wit).
+- Keuzes van Claude die Jordi nog niet besprak staan apart in het bestand: rijpspoor als bevroren staartpunt (geen spoor op de grond), huisje half in de storm, voetstuk blijft, ± 56 px.
+
+### [v0.0.367] - Sneeuwbolslak fase 2: Gemini ronde 1
+- `sneeuwbolslak_fase2/gemini/r1_gemini.png` opgeslagen. Huis is een schuine kegel met blokkenkorst geworden; vraag aan Jordi of de vorm (schuin omhoog vs. plat naar achteren) en de blokjes goed zijn.
+
+### [v0.0.368] - Sneeuwbolslak fase 2: frontsprite af
+- Ontwerp met Jordi via Gemini (rondes r1–r8, `sneeuwbolslak_fase2/gemini/PROMPT.md`): vanaf fase 2 geen slak meer; vorm van een zee-engel (Clione), kruipend, lijf van ijs met kristalstaart; de bol op de rug bevriest en barst, binnenin ontstaat een chaotische sneeuwstorm (in fase 3, de komeet, barst hij helemaal). Model = Gemini r8 met de bol van r7.
+- Sprite (56 px breed, op Jordi's keuze): natief raster → onderlaag → maker; bol als echte cirkel (Jordi: "dat moet echt een bol blijven"); meetscripts `lijnkaart.py`, `recht.py` (rechte lijnstukken), `bewaak.py`. Rondes r1–r7b met twee makers, drie keurders en een eindkeuring (PASS, 8 pixels door Claude).
+- Af: `docs/concept/sprites/sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png` (+ `_8x.png`), op het overzichtsvel. Naam open.
+
+### [v0.0.369] - Sneeuwbolslak fase 2: bolinhoud
+- Jordi: "binnenkant bol is nog net niet goed genoeg ... mag nog meer een sneeuwstorm lijken"; varianten A (sneeuwjacht) en B (plusvlokken zoals fase 1), Jordi: "hybride van a en b, vlokken met sneeuwstorm". De hybride (r8C) is de nieuwe `sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png` (+ `_8x.png`), ook op het overzichtsvel.
+
+### [v0.0.370] - Sneeuwbolslak fase 2: mond en sneeuwstorm
+- Jordi: "de mond is ook niet goed gelukt, is nu gewoon 3 pixels diagonaal op een willekeurige plek" en "de sneeuwvlokken zijn prima maar het is nog te weinig sneeuwstorm in de bal". Mond nu één glimlachlijn van de snuitpunt tot onder het wangvlak (variant A, donkerblauw; Jordi: "a is wel prima"); storm sterker (drie spiraalarmen, meer vlokken), plusvlokken ongewijzigd. Nieuwe `sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png` (+ `_8x.png`), overzichtsvel bijgewerkt.
+
+### [v0.0.371] - Sneeuwbolslak fase 2: strenge eindkeuring
+- Verse eindkeuring op de af-versie (na de bol- en mondrondes): PASS met één pixel (22,39) in de aansluiting kop/bol/nek, toegepast. Les in GEMINI.md: elke wijziging na een PASS opnieuw keuren.
+
+### [v0.0.372] - Sneeuwbolslak fase 3: Gemini-prompt
+- Startprompt voor de komeet (Ice/Cosmic) in `docs/concept/sprites/sneeuwbolslak_fase3/gemini/PROMPT.md`, met de afgewerkte fase 2 als bijlage (`bijlage_fase2_8x.png`). Jordi's woorden letterlijk erboven; eigen keuzes van Claude (zwevend, heldere kern met plusvlokken, mond, maat) apart.
+
+### [v0.0.373] - Gengas: convergente Gastly-lijn (idee → frontsprite af)
+- Jordi's idee (convergente Gastly-lijn op stervorming) met voorstel Claude in `IDEEEN.md` (Convergente soorten): Gastarly (Bok-globule) → Jaunter/Flaunter (protoster met jets) → Dwengar (bruine dwerg). Open.
+- Vraag Cosmic/Poison voor de hele lijn: natuurkundig onderbouwd en typecombinatie doorgerekend (Psychic 4×) in `IDEEEN.md`.
+- Naamalternatieven voor de lijn (Dustly, Harunter/Hauntar, Gengas/Dimgar) in `IDEEEN.md`.
+- Jordi ziet Dustly en Gengas zitten; nieuwe Haunter-opties (Hunter, Huntar, Hurtler) in `IDEEEN.md`.
+- Hunter afgewezen (gewoon een woord); opties Huntar, Herbunter, Hayunter, Haunflare in `IDEEEN.md`.
+- Jordi kiest Hauntflare voor de Haunter-fase; lijn nu Dustly → Hauntflare → Gengas.
+- Namen Dustly → Hauntflare → Gengas definitief (Jordi); lijn opgenomen in `POKEMON.md` (Convergente soorten).
+- Cosmic/Poison voor de lijn bevestigd (Jordi). Start Gengas: `docs/concept/sprites/gengas/SPEC.md`.
+- Gengas: ontwerp afgesproken, Gemini-prompt r1 (`sprites/gengas/gemini/PROMPT_r1.md`) met Gengar Gen 3 als bijlage.
+- Gengas: Gemini r1 besproken, prompt r2 met drie kleurregels ter keuze.
+- Gengas: r2 te rotsachtig (Jordi); prompt r3 zonder vorige versie als bijlage, gas-uiterlijk (wervelende banden, storm, rokerige oorpunten, alleen de manen van steen). Les in `GEMINI.md`.
+- Gengas: Gemini r3 beter (Jordi); prompt r4 met echte driekwartpose en echte bruine-dwergkleuren (dof donkerrood/magenta).
+- Gengas: prompt r5 (zwevend als hemellichaam, ledematen op onnatuurlijke posities alsof ze om hem heen draaien).
+- Gengas: model uit Gemini r5 overgenomen (natief raster 99×99), lijf weer een echte bol, drie indelingen van de manen (`sprites/gengas/model/`).
+- Gengas: Jordi kiest indeling 3 (schuine baan); model op spritemaat en opdracht ronde 1 in SPEC.
+- Gengas: drie opties voor de plek van ogen en grijns (pixels uit de Gen 3-Gengar), `model/gezicht_opties.png`.
+- Gengas: frontsprite ronde 1 (maker-agent, handgetekend raster; bol rond binnen 0,4 px, gezicht diff 0 op Gengar). `sprites/gengas/sprite_r1/`.
+- Gengas: ronde 2 (manen als Gengar-handen/-voeten, diepte, neutraler grijs; lijf en gezicht diff 0). `sprite_r2/`.
+- Gengas: ronde 3, alleen de stormwervel rond (diff 0 erbuiten). `sprite_r3/`.
+- Gengas: rondes 1–3 afgekeurd (Jordi: manen willekeurige vormen, linkeroor, vlak onder rechteroor, krul, schaduwen, gezicht geplakt). Nieuwe basis: model 74→64 door rijen/kolommen te schrappen (`model/schrap.py`). Les in `GEMINI.md`.
+- Gengas v2: model opgeschoond (gemeten 15 kleuren, ruis eruit, 47 gelogde pixelcorrecties), gezicht hybride (modelgrootte op r3-positie). `sprite_v2/`.
+- Gengas v3: keuringspunten v2 gerepareerd (naden gezicht, lichte wig in het masker, krul 1-op-1 uit het natieve model, gat bij de rookarm, kraters). `sprite_v3/`.
+- Gengas v4: lichtvlekkern terug (selout r samengevoegd met m, gemeten goedkoopste ruil). `sprite_v4/`.
+- Gengas v5: gezicht ligt op het oppervlak (geen schaduwkom: dunne lijn, witte tanden, lijftint eromheen), linkeroog naar Gengars oogvorm. `sprite_v5/`.
+- Gengas v6: ogen en grijns Gengars Gen 3-pixels 1-op-1, geïntegreerd (band in de gezichtszone lichter, geen kom). `sprite_v6/`.
+- Gengas v7: Gengar-gezicht als één blok op de r3-plek (afstand oog–grijns exact Gengar), bandrand rond, losse pixels weg. `sprite_v7/`.
+- Gengas v8a/v8b: bandenpatroon loopt weer door het gezicht (a: band door de ogen zoals het model; b: band als strook boven de ogen), krul afgerond, tandlijn exact Gengar. Claude kiest v8b. `sprite_v8/`.
+- Gengas v9: naad rechts van het gezicht schuin zoals het model, twee egale stukken links weer bandovergangen; eindkandidaat. Lessen (gezicht 1-op-1, geen vlak rond het gezicht) in `GEMINI.md`. `sprite_v9/`.
+- Gengas v10a/b: spiraal vervangen door een ovale stormvlek (a lichter, b donkerder dan de band); Claude kiest a, verfijnen. `sprite_v10/`.
+- Gengas v11: geen stormvlek (bandenpatroon loopt door), gezicht 125% (Gengar per kleurlaag vloeiend geschaald, 17 pixels nagelopen tegen Gengar). `sprite_v11/`.
+- Gengas v13: eindkeuring (schaduw, belijning, kleur, Gen 3, Dragonfly Cave) uitgevoerd: 44 pixels, palet ongewijzigd. Eindkandidaat. `sprite_v13/`.
+- **Gengas: frontsprite af** (Jordi: "tof"): v13 → `docs/concept/sprites/gengas/af/gengas.png` (+ `_8x`), op het overzichtsvel (Cosmic/Poison). Stand van zaken bijgewerkt.
+### [v0.0.374] - IJskomeet (fase 3 sneeuwbolslak-lijn): nieuwe Gemini-prompt
 - Jordi keurde de eerste twee plaatjes af ("lijken net kirby en mario vijandjes"): moet een bol met ijsuiteinden zijn, kern geëxplodeerd, grotesker, ijsstulpsels overal (Interloper), geen lachgezichtje, wel ogen.
 - Nieuwe startprompt zonder bijlage: `docs/concept/sprites/ijskomeet/gemini/PROMPT.md`; afgekeurde plaatjes als `r1a/r1b_afgekeurd.png`. Citaat in IDEEEN.md.
 
-### [v0.0.367] - IJskomeet: Gemini-prompt v2
+### [v0.0.375] - IJskomeet: Gemini-prompt v2
 - Ronde 2 afgekeurd (Jordi: ogen en mond te "kiddy"; "deze pokemon is de kern die uit de barst gekomen is en daardoor evolved is"). Prompt v2: de Pokémon is de ontsnapte kern, heel lijf zonder barsten, alleen smalle koude ogen, geen mond. `ijskomeet/gemini/PROMPT.md`, `r2_afgekeurd.png`.
 
-### [v0.0.368] - IJskomeet: Gemini-prompt v3 (meer cosmic)
+### [v0.0.376] - IJskomeet: Gemini-prompt v3 (meer cosmic)
 - Jordi: "nog niet cosmic genoeg"; alle vier voorstellen goed, ogen naar Minior, Lunatone en Solrock. v3: indigo/violet in de schaduwen, nevel in doorzichtige plekken, gasstaart achter de ijsstaart, ogen verzonken in donkere kassen die koud oplichten, geen mond. Ogenstudie `ijskomeet/gemini/ogen_studie.png`.
 
-### [v0.0.369] - IJskomeet: Gemini-prompt v4
+### [v0.0.377] - IJskomeet: Gemini-prompt v4
 - Ronde 3 afgekeurd (te veel monster: boze ogen, boze mond; vorm meer Interloper). v4 met Jordi's Interloper-beeld als vormbijlage: ronde ijskoepel voorop, ijspunten allemaal naar achteren, gezicht neutraal met twee ijzige bologen, geen mond. `ijskomeet/gemini/PROMPT.md`, `r3_afgekeurd.png`, `interloper_referentie.png`.
 
-### [v0.0.370] - IJskomeet: Gemini-prompt v5
+### [v0.0.378] - IJskomeet: Gemini-prompt v5
 - Ronde 4 "al iets beter"; buitenste laag te neutraal, "daar mag wat meer ijsschots vorm in". v5: r4 als bijlage, alleen de buitenlaag als grote hoekige ijsschotsen; v5b als terugval (v4 + die regel). `r4_gemini.png`.
 
-### [v0.0.371] - IJskomeet: Gemini-prompt v6
+### [v0.0.379] - IJskomeet: Gemini-prompt v6
 - Ronde 5 "halve bak" (alleen naden op de gladde koepel). v6: nieuw gesprek met Interloper + r4; de ijsschotsen moeten het silhouet hoekig maken (dikke platen met zijkant, schuiven over elkaar). `r5_gemini.png`.
 
-### [v0.0.372] - IJskomeet: Gemini-prompt v7
+### [v0.0.380] - IJskomeet: Gemini-prompt v7
 - Jordi: gasstaart "meer omringend aan het uiteinde", ogen "wat hoger en nog wat meer laten gloeien, sinister". v7 = v6 + brede komeetstaart om de achterkant (Interloper) + ogen hoog, fel gloeiend met halo, geen pupil.
 
-### [v0.0.373] - IJskomeet: Gemini-prompt v8
+### [v0.0.381] - IJskomeet: Gemini-prompt v8
 - Ronde 6 "wat een mislukking": r4 was overgetrokken met een gasring eraan. v8: alleen de Interloper als bijlage, korter, kleuren en ogen in woorden. Les in GEMINI.md. `r6_afgekeurd.png`.
 
-### [v0.0.374] - IJskomeet: ronde 7 beste tot nu toe, prompt v9
+### [v0.0.382] - IJskomeet: ronde 7 beste tot nu toe, prompt v9
 - Jordi: r7 "de beste tot nu toe", "bijna tevreden"; de ijsschotsen moeten "nog net iets meer op een dier lijken, alsof dat het lichaam is". v9: r7 als bijlage; Jordi: "zonder aan de vorm te zitten", dus silhouet exact gelijk, alleen naden en schaduw binnen de omtrek als kop + lijf. `r7_gemini.png`.
 
-### [v0.0.375] - IJskomeet: ronde 8 afgekeurd
+### [v0.0.383] - IJskomeet: ronde 8 afgekeurd
 - v9 gaf alleen roodbruine naden ("gemini snapt het niet"). Voorstel: r7 als model bevriezen en de schotsen als lijf in de sprite oplossen. `r8_afgekeurd.png`, les in GEMINI.md.
 
-### [v0.0.376] - IJskomeet: ronde 7 gekozen als model
+### [v0.0.384] - IJskomeet: ronde 7 gekozen als model
 - Jordi: "ja doe maar ronde 7 als model". `ijskomeet/referenties/gemini_gekozen_r7.png`. Diervorm van de schotsen nog open (voorstel Claude: slak, alternatief pissebed).
 
-### [v0.0.377] - IJskomeet: frontsprite af
+### [v0.0.385] - IJskomeet: frontsprite af
 - Gemini-model r7 (Interloper-vorm, ijsschotsen, kern geëxplodeerd; Jordi: "het hele idee van deze vorm is dus dat een kern is geëxplodeerd en deze het hele dier in ijsschotsen heeft veranderd, de kern is ondertussen de drijvende kracht erachter"; tragisch "zoals bij parasect"). Schotsen als slakkenlijf (Jordi: "ja doe maar de slak").
 - 23 spriterondes. r1–r14: makers en Claude tekenden/schoven naden; mislukte omdat elke onderlaag de mediaan per 3×3 nam en de dunne modellijnen wegvielen (Jordi: "KIJK NAAR DE LIJNEN"). r15: model 3× verkleind waarbij in het ijs de donkerste pixel wint → schotsstructuur van het model klopte meteen. Daarna: lichtere binnennaden (eigen navy), gasstaart lavendel → cyaan → wit met zachte rand, lichtere linkerbuitenlijn, kopbovenkant als drietand, pieken glad uit het model (gemiddelde per 3×3), ogen met teal ring, kern = zachte gloed van r21.
-- `docs/concept/sprites/ijskomeet/af/ijskomeet.png` (+ `_8x`); op het overzichtsvel als "IJskomeet" (Ice/Cosmic). Naam nog open. Lessen in `docs/lessen/GEMINI.md` en bovenaan `SPRITE_KERN.md` (makers tekenen niet bij een Gemini-model).
+- `docs/concept/sprites/ijskomeet/af/ijskomeet.png` (+ `_8x`); op het overzichtsvel als "IJskomeet" (Ice/Cosmic), naast fase 1 en 2: de hele sneeuwbolslak-lijn is af. Naam nog open. (Startprompt fase 3 kwam uit `sneeuwbolslak_fase3/gemini/PROMPT.md`; vervolgprompts in `ijskomeet/gemini/PROMPT.md`.) Lessen in `docs/lessen/GEMINI.md` en bovenaan `SPRITE_KERN.md` (makers tekenen niet bij een Gemini-model).

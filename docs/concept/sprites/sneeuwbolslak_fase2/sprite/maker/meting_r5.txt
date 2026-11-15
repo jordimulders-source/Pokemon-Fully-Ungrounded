@@ -1,0 +1,50 @@
+== meting r5 (sprite/maker/r5_bouw.py op raster_r4; palet pal5.py; render naarpng5.py; vel vel5.py)
+== bewaak.py
+silhouet-diff: 0
+afwijking van onderlaag56: {'bol': 195, 'kop': 98, 'staart': 130, 'lijf/flap/ring': 192} totaal 615 van 1345
+OK
+== recht.py (r4: 24, langste 5)
+ 5 px verticaal    vanaf (x 58, y 23)
+ 5 px verticaal    vanaf (x 54, y 35)
+ 5 px verticaal    vanaf (x 50, y 25)
+ 5 px verticaal    vanaf (x 45, y 30)
+ 5 px horizontaal  vanaf (x 29, y 44)
+ 5 px horizontaal  vanaf (x 28, y 58)
+ 5 px horizontaal  vanaf (x 23, y 57)
+ 5 px horizontaal  vanaf (x 13, y 56)
+ 5 px horizontaal  vanaf (x 10, y 52)
+ 5 px diagonaal /  vanaf (x 59, y 29)
+ 5 px diagonaal /  vanaf (x 57, y 21)
+ 4 px verticaal    vanaf (x 59, y 19)
+ 4 px verticaal    vanaf (x 42, y 29)
+ 4 px verticaal    vanaf (x 41, y 33)
+ 4 px verticaal    vanaf (x 23, y 41)
+ 4 px verticaal    vanaf (x 21, y 29)
+ 4 px horizontaal  vanaf (x 37, y 42)
+ 4 px horizontaal  vanaf (x 31, y 52)
+ 4 px horizontaal  vanaf (x 30, y 41)
+ 4 px horizontaal  vanaf (x 30, y 20)
+ 4 px horizontaal  vanaf (x 6, y 51)
+totaal 21
+== MOET-afvinklijst (KEURING_r4)
+[x] 1 Bol rechts: geen c-kolom naast de barst meer; sikkel 'a' 1 px (39,25)(40,26)(40,27)(40,28)(41,29-32), 2 px (39-40,33)-(39-40,35), (39-40,36), (38-39,37), (38,38). Lichte modelvlek (38-39,30) e, (39-40,31) c, b/c gemengd.
+[x] 2 Bol binnen: strepen kringelen (24: x28-30 b -> 25: x31-33 b -> 26: x32 b; 30: x24-26 b -> 29: x27 b -> 28: x28-29 b; 35: x28-30, 36: x26-27, 37: x28-29). w alleen glans: (25,26)(26,26)(25,27) en (32,36)(32,37). Rij 37 'wwwwww' weg.
+[x] 3 Waaier: zaagrand overal d ((53,25)(51,26)(53,26)(47,30) # -> d). Naden: (53,26-27)(52,28) d -> (52,29) a; (48,30) a,(48,31)(49,32) d,(49,33) a; rechts (58,27)(57,28) d -> (56,29)(55,30)(55,31) a. Weg: x53 y29 (#) en y31-32, x49 y33-35, x46 y35-36 (nu a). 1-px-eilandjes weg: elke scherf licht links (e/c), b rechts.
+    Niet gekund: x50 y25-29 is buitenlijn (silhouet), blijft d.
+[x] 4 Onderste segment: verticale naad x47 y35-37 weg, banden ee/cc/b en de aa-band langs de rechterrand weg (rand b tot y41, a pas vanaf y42-48 onderaan). Grond b, lichte strepen x42-43 (y37-41) en x48-49 (y37-40).
+    Afwijking van de keuring (eis 1): de modellijn loopt wel door, op een ander pad dan r4: px.py p15 43-63 op (49,36)(48,37)(47,38)(47,39)(46,40)(45,41)(44,42). Getekend als taps d-lijn met a aan de uiteinden ((49,35),(43,42)) en schaduw a links ervan zoals het model.
+[x] 5 Ring: onderrand één tint # ((25-26,42)(27-28,43)(29-33,44)(34-36,43)(37-40,42)). r/s/t lichter (pal5). Ruis weg: t-eiland (30-31,42) -> s; (39,40)(37,41) -> s; (32,42) en (32,43) in de vaste r-strook. t linksboven (24-29,40-41), s midden, r rechtsonder (33-36,42)(32-33,43)(38,41).
+    Deels: links 3 rijen rood op x29 (en x28 2 rijen); (27-28,43) is #, niet s, zodat de onderrand geen 7 px rechte lijn wordt (nu 5 px op y44).
+[x] 6 Palet pal5: a (82,140,168) b (130,182,206) c (176,214,228) d (46,82,112) e (214,238,244) # (24,32,50); r (136,56,68) s (172,72,80) t ongewijzigd. Stappen (gem. helderheid) e 232, c 206, b 173, a 130, d 80.
+[x] 7 Flap: e alleen linksboven (44: x34-37, 45: x30-34, 46: x29-31, 47: x28-29), dan c, rechts/onder b; (34-38,46) b, (31-34,47) b, (35-36,47) c.
+[x] 8 Lijfnaad: boog 2-3-4-3-2: (26,50)a (27,50)d | (28-30,51) | (31-34,52) | (35-37,51) | (38,50)d (39,50)a; (25,50)(40,50) b, (40,49) a.
+[x] 9 Staartpunt: c-diagonaal weg; (57,22)e (58,22)c overgang, (56-57,23) e b, (55-57,24) e c b ((55,24) d -> e), (54-57,25) e e b b, (54-57,26) e c b b.
+== MAG
+[x] Pootje: hele buitenrand # ((13,53)(12,54) d -> #); binnennaad (14,52)(15,53)(16,54) blijft d. Variant op de keuring: kop-onderlijn (10-13,52) blijft #, zodat er geen d/# wissel op die rand ontstaat.
+[x] (12,48) c -> b.
+[ ] Onderrand 5 px (23-27,57)(28-32,58): niet aangeraakt (silhouet bevroren).
+== Goed (diff 0 bewezen)
+oog 0, wang 0, barst # 0, ring bovenrand 0, silhouet 0; flapcontour op dezelfde plek (alleen d -> # volgens MOET 5). Kop x<=22: 3 px (MAG pootje 2 + oogpixel 1).
+pixels veranderd t.o.v. r4: 270
+== zelfcontrole
+1x naast model en Regice/Glalie/Walrein: leest als het model; tinten cyaan; r5 blijft lichter/minder contrastrijk dan Gen 3-ijs, zoals het model. Zwak: bol mist de fijne wervel-textuur van het model (op 64 px niet haalbaar zonder ruis); waaiernaden dunner dan in het model.

@@ -1,0 +1,366 @@
+(10,25) u->b  u -> b (slot vrij voor tandlijn)
+(11,25) u->b  u -> b (slot vrij voor tandlijn)
+(10,26) u->b  u -> b (slot vrij voor tandlijn)
+(11,26) u->b  u -> b (slot vrij voor tandlijn)
+(12,26) u->b  u -> b (slot vrij voor tandlijn)
+(10,27) u->b  u -> b (slot vrij voor tandlijn)
+(11,27) u->b  u -> b (slot vrij voor tandlijn)
+(12,27) u->b  u -> b (slot vrij voor tandlijn)
+(10,28) u->b  u -> b (slot vrij voor tandlijn)
+(11,28) u->b  u -> b (slot vrij voor tandlijn)
+(12,28) u->b  u -> b (slot vrij voor tandlijn)
+(13,28) u->b  u -> b (slot vrij voor tandlijn)
+(10,29) u->b  u -> b (slot vrij voor tandlijn)
+(11,29) u->b  u -> b (slot vrij voor tandlijn)
+(12,29) u->b  u -> b (slot vrij voor tandlijn)
+(15,29) u->b  u -> b (slot vrij voor tandlijn)
+(16,29) u->b  u -> b (slot vrij voor tandlijn)
+(17,29) u->b  u -> b (slot vrij voor tandlijn)
+(18,29) u->b  u -> b (slot vrij voor tandlijn)
+(11,30) u->b  u -> b (slot vrij voor tandlijn)
+(17,30) u->b  u -> b (slot vrij voor tandlijn)
+(18,30) u->b  u -> b (slot vrij voor tandlijn)
+(22,31) u->b  u -> b (slot vrij voor tandlijn)
+(23,31) u->b  u -> b (slot vrij voor tandlijn)
+(24,31) u->b  u -> b (slot vrij voor tandlijn)
+(25,31) u->b  u -> b (slot vrij voor tandlijn)
+(22,32) u->b  u -> b (slot vrij voor tandlijn)
+(23,32) u->b  u -> b (slot vrij voor tandlijn)
+(24,32) u->b  u -> b (slot vrij voor tandlijn)
+(22,33) u->b  u -> b (slot vrij voor tandlijn)
+(23,33) u->b  u -> b (slot vrij voor tandlijn)
+(24,33) u->b  u -> b (slot vrij voor tandlijn)
+(22,34) u->b  u -> b (slot vrij voor tandlijn)
+(12,47) u->b  u -> b (slot vrij voor tandlijn)
+(32,37) a->b  oud modelgezicht weg, lijftint buren
+(13,33) a->b  oud modelgezicht weg, lijftint buren
+(15,30) K->b  oud modelgezicht weg, lijftint buren
+(15,39) W->b  oud modelgezicht weg, lijftint buren
+(31,29) K->b  oud modelgezicht weg, lijftint buren
+(18,44) W->l  oud modelgezicht weg, lijftint buren
+(31,38) K->b  oud modelgezicht weg, lijftint buren
+(21,46) a->m  oud modelgezicht weg, lijftint buren
+(14,40) K->l  oud modelgezicht weg, lijftint buren
+(32,39) K->l  oud modelgezicht weg, lijftint buren
+(30,39) W->b  oud modelgezicht weg, lijftint buren
+(24,35) R->b  oud modelgezicht weg, lijftint buren
+(16,31) K->b  oud modelgezicht weg, lijftint buren
+(31,31) a->b  oud modelgezicht weg, lijftint buren
+(29,43) a->l  oud modelgezicht weg, lijftint buren
+(20,40) a->b  oud modelgezicht weg, lijftint buren
+(14,33) E->b  oud modelgezicht weg, lijftint buren
+(22,46) a->m  oud modelgezicht weg, lijftint buren
+(27,36) E->b  oud modelgezicht weg, lijftint buren
+(27,45) K->b  oud modelgezicht weg, lijftint buren
+(17,44) K->l  oud modelgezicht weg, lijftint buren
+(30,41) W->b  oud modelgezicht weg, lijftint buren
+(25,36) E->b  oud modelgezicht weg, lijftint buren
+(16,42) W->l  oud modelgezicht weg, lijftint buren
+(29,36) a->b  oud modelgezicht weg, lijftint buren
+(31,33) a->b  oud modelgezicht weg, lijftint buren
+(30,34) E->b  oud modelgezicht weg, lijftint buren
+(13,30) a->b  oud modelgezicht weg, lijftint buren
+(16,35) E->b  oud modelgezicht weg, lijftint buren
+(23,40) a->b  oud modelgezicht weg, lijftint buren
+(14,37) a->b  oud modelgezicht weg, lijftint buren
+(27,40) K->b  oud modelgezicht weg, lijftint buren
+(17,39) K->b  oud modelgezicht weg, lijftint buren
+(19,45) a->l  oud modelgezicht weg, lijftint buren
+(25,40) a->b  oud modelgezicht weg, lijftint buren
+(29,31) E->b  oud modelgezicht weg, lijftint buren
+(15,41) W->l  oud modelgezicht weg, lijftint buren
+(29,40) W->b  oud modelgezicht weg, lijftint buren
+(14,30) E->b  oud modelgezicht weg, lijftint buren
+(27,33) E->b  oud modelgezicht weg, lijftint buren
+(17,32) E->b  oud modelgezicht weg, lijftint buren
+(30,29) K->b  oud modelgezicht weg, lijftint buren
+(28,32) E->b  oud modelgezicht weg, lijftint buren
+(30,38) a->b  oud modelgezicht weg, lijftint buren
+(15,34) R->b  oud modelgezicht weg, lijftint buren
+(31,30) a->b  oud modelgezicht weg, lijftint buren
+(26,34) K->b  oud modelgezicht weg, lijftint buren
+(24,46) K->m  oud modelgezicht weg, lijftint buren
+(29,42) W->l  oud modelgezicht weg, lijftint buren
+(31,39) W->b  oud modelgezicht weg, lijftint buren
+(23,35) a->b  oud modelgezicht weg, lijftint buren
+(17,34) R->b  oud modelgezicht weg, lijftint buren
+(27,44) W->b  oud modelgezicht weg, lijftint buren
+(17,43) W->l  oud modelgezicht weg, lijftint buren
+(19,40) K->b  oud modelgezicht weg, lijftint buren
+(30,40) W->b  oud modelgezicht weg, lijftint buren
+(25,35) R->b  oud modelgezicht weg, lijftint buren
+(13,39) a->l  oud modelgezicht weg, lijftint buren
+(26,36) E->b  oud modelgezicht weg, lijftint buren
+(29,35) R->b  oud modelgezicht weg, lijftint buren
+(31,32) a->b  oud modelgezicht weg, lijftint buren
+(18,32) K->b  oud modelgezicht weg, lijftint buren
+(26,45) W->l  oud modelgezicht weg, lijftint buren
+(29,44) a->b  oud modelgezicht weg, lijftint buren
+(21,40) a->b  oud modelgezicht weg, lijftint buren
+(28,36) E->b  oud modelgezicht weg, lijftint buren
+(30,42) a->l  oud modelgezicht weg, lijftint buren
+(13,32) a->b  oud modelgezicht weg, lijftint buren
+(15,38) K->b  oud modelgezicht weg, lijftint buren
+(18,34) a->b  oud modelgezicht weg, lijftint buren
+(20,46) a->m  oud modelgezicht weg, lijftint buren
+(14,39) W->l  oud modelgezicht weg, lijftint buren
+(30,35) a->b  oud modelgezicht weg, lijftint buren
+(32,38) K->l  oud modelgezicht weg, lijftint buren
+(15,31) R->b  oud modelgezicht weg, lijftint buren
+(29,30) K->b  oud modelgezicht weg, lijftint buren
+(15,40) W->m  oud modelgezicht weg, lijftint buren
+(26,40) K->b  oud modelgezicht weg, lijftint buren
+(16,39) K->b  oud modelgezicht weg, lijftint buren
+(18,45) a->l  oud modelgezicht weg, lijftint buren
+(27,32) K->b  oud modelgezicht weg, lijftint buren
+(17,31) K->b  oud modelgezicht weg, lijftint buren
+(28,31) K->b  oud modelgezicht weg, lijftint buren
+(17,40) W->b  oud modelgezicht weg, lijftint buren
+(28,40) K->b  oud modelgezicht weg, lijftint buren
+(26,33) K->b  oud modelgezicht weg, lijftint buren
+(15,42) a->l  oud modelgezicht weg, lijftint buren
+(31,41) K->l  oud modelgezicht weg, lijftint buren
+(14,34) a->b  oud modelgezicht weg, lijftint buren
+(30,30) E->b  oud modelgezicht weg, lijftint buren
+(23,46) a->m  oud modelgezicht weg, lijftint buren
+(15,35) a->b  oud modelgezicht weg, lijftint buren
+(26,35) R->b  oud modelgezicht weg, lijftint buren
+(25,46) a->l  oud modelgezicht weg, lijftint buren
+(16,43) K->l  oud modelgezicht weg, lijftint buren
+(18,40) K->b  oud modelgezicht weg, lijftint buren
+(31,34) a->b  oud modelgezicht weg, lijftint buren
+(22,40) a->b  oud modelgezicht weg, lijftint buren
+(17,35) a->b  oud modelgezicht weg, lijftint buren
+(28,44) H->b  oud modelgezicht weg, lijftint buren
+(13,31) a->b  oud modelgezicht weg, lijftint buren
+(24,40) a->b  oud modelgezicht weg, lijftint buren
+(18,33) a->b  oud modelgezicht weg, lijftint buren
+(26,46) a->l  oud modelgezicht weg, lijftint buren
+(29,39) K->b  oud modelgezicht weg, lijftint buren
+(20,45) W->m  oud modelgezicht weg, lijftint buren
+(14,38) K->b  oud modelgezicht weg, lijftint buren
+(25,41) W->b  oud modelgezicht weg, lijftint buren
+(29,32) E->b  oud modelgezicht weg, lijftint buren
+(29,41) W->b  oud modelgezicht weg, lijftint buren
+(14,31) E->b  oud modelgezicht weg, lijftint buren
+(27,34) K->b  oud modelgezicht weg, lijftint buren
+(27,43) W->b  oud modelgezicht weg, lijftint buren
+(15,32) R->b  oud modelgezicht weg, lijftint buren
+(16,40) W->b  oud modelgezicht weg, lijftint buren
+(29,34) R->b  oud modelgezicht weg, lijftint buren
+(23,45) W->m  oud modelgezicht weg, lijftint buren
+(19,41) H->b  oud modelgezicht weg, lijftint buren
+(16,33) R->b  oud modelgezicht weg, lijftint buren
+(25,45) W->l  oud modelgezicht weg, lijftint buren
+(21,41) W->b  oud modelgezicht weg, lijftint buren
+(19,43) H->l  oud modelgezicht weg, lijftint buren
+(20,44) W->l  oud modelgezicht weg, lijftint buren
+(26,41) W->b  oud modelgezicht weg, lijftint buren
+(21,45) W->m  oud modelgezicht weg, lijftint buren
+(17,41) W->b  oud modelgezicht weg, lijftint buren
+(28,41) H->b  oud modelgezicht weg, lijftint buren
+(29,33) R->b  oud modelgezicht weg, lijftint buren
+(26,43) W->b  oud modelgezicht weg, lijftint buren
+(14,32) E->b  oud modelgezicht weg, lijftint buren
+(27,35) R->b  oud modelgezicht weg, lijftint buren
+(28,34) K->b  oud modelgezicht weg, lijftint buren
+(30,31) E->b  oud modelgezicht weg, lijftint buren
+(28,43) H->b  oud modelgezicht weg, lijftint buren
+(18,41) W->b  oud modelgezicht weg, lijftint buren
+(22,41) W->b  oud modelgezicht weg, lijftint buren
+(30,33) E->b  oud modelgezicht weg, lijftint buren
+(24,41) W->b  oud modelgezicht weg, lijftint buren
+(18,43) W->l  oud modelgezicht weg, lijftint buren
+(19,44) H->l  oud modelgezicht weg, lijftint buren
+(22,45) W->m  oud modelgezicht weg, lijftint buren
+(15,33) R->b  oud modelgezicht weg, lijftint buren
+(16,32) K->b  oud modelgezicht weg, lijftint buren
+(24,45) H->m  oud modelgezicht weg, lijftint buren
+(16,41) W->l  oud modelgezicht weg, lijftint buren
+(25,44) W->l  oud modelgezicht weg, lijftint buren
+(20,41) W->b  oud modelgezicht weg, lijftint buren
+(17,33) E->b  oud modelgezicht weg, lijftint buren
+(28,33) E->b  oud modelgezicht weg, lijftint buren
+(17,42) W->l  oud modelgezicht weg, lijftint buren
+(28,42) H->l  oud modelgezicht weg, lijftint buren
+(16,34) R->b  oud modelgezicht weg, lijftint buren
+(26,44) W->b  oud modelgezicht weg, lijftint buren
+(30,32) E->b  oud modelgezicht weg, lijftint buren
+(28,35) K->b  oud modelgezicht weg, lijftint buren
+(18,42) W->l  oud modelgezicht weg, lijftint buren
+(21,44) W->m  oud modelgezicht weg, lijftint buren
+(23,41) H->b  oud modelgezicht weg, lijftint buren
+(27,41) W->b  oud modelgezicht weg, lijftint buren
+(24,42) W->b  oud modelgezicht weg, lijftint buren
+(22,44) W->m  oud modelgezicht weg, lijftint buren
+(24,44) H->l  oud modelgezicht weg, lijftint buren
+(25,43) W->b  oud modelgezicht weg, lijftint buren
+(20,42) W->b  oud modelgezicht weg, lijftint buren
+(21,43) W->l  oud modelgezicht weg, lijftint buren
+(23,42) H->b  oud modelgezicht weg, lijftint buren
+(27,42) W->b  oud modelgezicht weg, lijftint buren
+(25,42) W->b  oud modelgezicht weg, lijftint buren
+(23,44) W->m  oud modelgezicht weg, lijftint buren
+(19,42) H->b  oud modelgezicht weg, lijftint buren
+(21,42) W->b  oud modelgezicht weg, lijftint buren
+(22,43) W->m  oud modelgezicht weg, lijftint buren
+(24,43) W->l  oud modelgezicht weg, lijftint buren
+(26,42) W->b  oud modelgezicht weg, lijftint buren
+(20,43) W->l  oud modelgezicht weg, lijftint buren
+(22,42) W->b  oud modelgezicht weg, lijftint buren
+(23,43) H->b  oud modelgezicht weg, lijftint buren
+(13,33) b->E  Gengar linkeroog idx 6
+(14,33) b->a  Gengar linkeroog idx e
+(13,34) b->E  Gengar linkeroog idx 6
+(14,34) b->R  Gengar linkeroog idx 5
+(15,34) b->K  Gengar linkeroog idx f
+(16,34) b->a  Gengar linkeroog idx e
+(13,35) b->E  Gengar linkeroog idx 6
+(14,35) b->R  Gengar linkeroog idx 5
+(15,35) b->K  Gengar linkeroog idx f
+(16,35) b->E  Gengar linkeroog idx 6
+(17,35) b->a  Gengar linkeroog idx e
+(14,36) b->R  Gengar linkeroog idx 5
+(15,36) b->R  Gengar linkeroog idx 5
+(16,36) b->R  Gengar linkeroog idx 5
+(15,37) b->E  Gengar linkeroog idx 6
+(27,31) b->a  Gengar rechteroog idx e
+(28,31) b->E  Gengar rechteroog idx 6
+(29,31) b->E  Gengar rechteroog idx 6
+(26,32) b->a  Gengar rechteroog idx e
+(27,32) b->R  Gengar rechteroog idx 5
+(28,32) b->E  Gengar rechteroog idx 6
+(29,32) b->E  Gengar rechteroog idx 6
+(24,33) b->K  Gengar rechteroog idx f
+(25,33) b->K  Gengar rechteroog idx f
+(26,33) b->R  Gengar rechteroog idx 5
+(27,33) b->R  Gengar rechteroog idx 5
+(28,33) b->R  Gengar rechteroog idx 5
+(29,33) b->E  Gengar rechteroog idx 6
+(23,34) b->a  Gengar rechteroog idx e
+(24,34) b->E  Gengar rechteroog idx 6
+(25,34) b->K  Gengar rechteroog idx f
+(26,34) b->R  Gengar rechteroog idx 5
+(27,34) b->R  Gengar rechteroog idx 5
+(28,34) b->R  Gengar rechteroog idx 5
+(29,34) b->E  Gengar rechteroog idx 6
+(24,35) b->R  Gengar rechteroog idx 5
+(25,35) b->R  Gengar rechteroog idx 5
+(26,35) b->R  Gengar rechteroog idx 5
+(27,35) b->R  Gengar rechteroog idx 5
+(28,35) b->E  Gengar rechteroog idx 6
+(25,36) b->E  Gengar rechteroog idx 6
+(26,36) b->E  Gengar rechteroog idx 6
+(27,36) b->E  Gengar rechteroog idx 6
+(29,37) b->a  Gengar grijns idx e
+(30,37) b->a  Gengar grijns idx e
+(31,37) b->H  Gengar grijns idx 7
+(32,37) b->K  Gengar grijns idx f
+(12,38) l->a  Gengar grijns idx e
+(13,38) l->a  Gengar grijns idx e
+(27,38) b->a  Gengar grijns idx e
+(28,38) b->a  Gengar grijns idx e
+(29,38) b->H  Gengar grijns idx 7
+(30,38) b->W  Gengar grijns idx 1
+(31,38) b->W  Gengar grijns idx 1
+(32,38) l->K  Gengar grijns idx f
+(13,39) l->H  Gengar grijns idx 7
+(14,39) l->a  Gengar grijns idx e
+(15,39) b->a  Gengar grijns idx e
+(24,39) b->a  Gengar grijns idx e
+(25,39) b->a  Gengar grijns idx e
+(26,39) b->a  Gengar grijns idx e
+(27,39) b->u  Gengar grijns idx 3
+(28,39) b->W  Gengar grijns idx 1
+(29,39) b->W  Gengar grijns idx 1
+(30,39) b->W  Gengar grijns idx 1
+(31,39) b->K  Gengar grijns idx f
+(14,40) l->W  Gengar grijns idx 1
+(15,40) m->u  Gengar grijns idx 3
+(16,40) b->a  Gengar grijns idx e
+(17,40) b->a  Gengar grijns idx e
+(18,40) b->a  Gengar grijns idx e
+(19,40) b->a  Gengar grijns idx e
+(20,40) b->a  Gengar grijns idx e
+(21,40) b->a  Gengar grijns idx e
+(22,40) b->a  Gengar grijns idx e
+(23,40) b->a  Gengar grijns idx e
+(24,40) b->H  Gengar grijns idx 7
+(25,40) b->W  Gengar grijns idx 1
+(26,40) b->W  Gengar grijns idx 1
+(27,40) b->u  Gengar grijns idx 3
+(28,40) b->W  Gengar grijns idx 1
+(29,40) b->W  Gengar grijns idx 1
+(30,40) b->W  Gengar grijns idx 1
+(31,40) b->K  Gengar grijns idx f
+(14,41) m->W  Gengar grijns idx 1
+(15,41) l->u  Gengar grijns idx 3
+(16,41) l->W  Gengar grijns idx 1
+(17,41) b->W  Gengar grijns idx 1
+(18,41) b->u  Gengar grijns idx 3
+(19,41) b->W  Gengar grijns idx 1
+(20,41) b->W  Gengar grijns idx 1
+(21,41) b->W  Gengar grijns idx 1
+(22,41) b->W  Gengar grijns idx 1
+(23,41) b->u  Gengar grijns idx 3
+(24,41) b->W  Gengar grijns idx 1
+(25,41) b->W  Gengar grijns idx 1
+(26,41) b->W  Gengar grijns idx 1
+(27,41) b->H  Gengar grijns idx 7
+(28,41) b->H  Gengar grijns idx 2
+(29,41) b->W  Gengar grijns idx 1
+(30,41) b->K  Gengar grijns idx f
+(15,42) l->u  Gengar grijns idx 3
+(16,42) l->W  Gengar grijns idx 1
+(17,42) l->W  Gengar grijns idx 1
+(18,42) l->H  Gengar grijns idx 7
+(19,42) b->H  Gengar grijns idx 2
+(20,42) b->W  Gengar grijns idx 1
+(21,42) b->W  Gengar grijns idx 1
+(22,42) b->W  Gengar grijns idx 1
+(23,42) b->H  Gengar grijns idx 7
+(24,42) b->H  Gengar grijns idx 2
+(25,42) b->W  Gengar grijns idx 1
+(26,42) b->W  Gengar grijns idx 1
+(27,42) b->W  Gengar grijns idx 1
+(28,42) l->u  Gengar grijns idx 3
+(29,42) l->K  Gengar grijns idx f
+(15,43) l->a  Gengar grijns idx e
+(16,43) l->W  Gengar grijns idx 1
+(17,43) l->W  Gengar grijns idx 1
+(18,43) l->W  Gengar grijns idx 1
+(19,43) l->u  Gengar grijns idx 3
+(20,43) l->W  Gengar grijns idx 1
+(21,43) l->W  Gengar grijns idx 1
+(22,43) m->W  Gengar grijns idx 1
+(23,43) b->W  Gengar grijns idx 1
+(24,43) l->u  Gengar grijns idx 3
+(25,43) b->W  Gengar grijns idx 1
+(26,43) b->W  Gengar grijns idx 1
+(27,43) b->a  Gengar grijns idx e
+(28,43) b->a  Gengar grijns idx e
+(16,44) l->a  Gengar grijns idx e
+(17,44) l->a  Gengar grijns idx e
+(18,44) l->W  Gengar grijns idx 1
+(19,44) l->u  Gengar grijns idx 3
+(20,44) l->W  Gengar grijns idx 1
+(21,44) m->W  Gengar grijns idx 1
+(22,44) m->W  Gengar grijns idx 1
+(23,44) m->W  Gengar grijns idx 1
+(24,44) l->u  Gengar grijns idx 3
+(25,44) l->a  Gengar grijns idx e
+(26,44) b->a  Gengar grijns idx e
+(18,45) l->a  Gengar grijns idx e
+(19,45) l->a  Gengar grijns idx e
+(20,45) m->a  Gengar grijns idx e
+(21,45) m->a  Gengar grijns idx e
+(22,45) m->a  Gengar grijns idx e
+(23,45) m->a  Gengar grijns idx e
+(24,45) m->a  Gengar grijns idx e
+(38,34) b->l  krul: hoek binnenlus afgerond
+(38,36) b->l  krul: hoek binnenlus afgerond
+(38,28) l->m  krul: losse l opgenomen
+(36,29) l->m  krul: losse l opgenomen
+(39,37) m->l  krul: losse m opgenomen
+(39,33) m->l  krul: losse m opgenomen
+(43,34) m->l  krul: losse m opgenomen

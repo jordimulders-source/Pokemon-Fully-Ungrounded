@@ -1,0 +1,6 @@
+== meting r7b (sprite/maker/r7b_bouw.py op raster_r7; pal6; vel7b.py)
+silhouet-diff: 0
+afwijking van onderlaag56: {'bol': 216, 'kop': 102, 'staart': 131, 'lijf/flap/ring': 198} totaal 647 van 1345
+OK
+totaal 21
+Binnen de bol: geen a. Enige d is de barst, een Y op het pad van M1: stam (36,25)-(34,29), linkertak tot (30,33), rechtertak tot (37,37). Storm in e/w: 4 gebogen banen met stukken van max 2 px, plus 8 w-vlokken op b. Glasrand en glans zoals r7. Buiten x22-41/y23-38 diff 0 t.o.v. r6.

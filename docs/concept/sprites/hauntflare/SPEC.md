@@ -30,3 +30,4 @@ Jordi letterlijk: "gebruik de jouwe maar als model voor vorm, de vlammen zouden 
 - Ogen en mond: Haunters Gen 3-pixels (`graphics/pokemon/haunter/anim_front.png`, frame 1), niet tekenen.
 - Vlammen (kuif en staart; lezing Claude: beide zijn vlammen in dit model) meer vlamkleur; handen in het kleurgebruik van de r4_a-handen (`model/nat_r4_a.png`). Ring minder effen (tonen uit de r4_c-ring, `model/nat_r4_c.png`, op het bruine palet).
 - Verboden: onderdelen opnieuw tekenen. Alleen bestaande pixels schrappen, verschuiven, overnemen en herkleuren.
+- r1 (`sprite_r1/`): silhouet diff 0, vlammen/handen/ring goed; gezicht mislukt (Haunter-blok geschrapt → mond werd een kruis). r2: Haunter-gezicht 1-op-1 (schaal 1,0) op de bol boven de ring.

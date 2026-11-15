@@ -114,3 +114,71 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pi
 
 AVOID: a copy of the adult made smaller, chibi or buff proportions, a smooth digital illustration or painting, fur, spots/rosettes, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
 ```
+
+## Fase 1 (welp), prompt v3: eigen patroon (15 nov; vervangt v2)
+Jordi (15 nov, letterlijk): "Ik wil daar niet een kleinere versie van maken, hij moet er wat anders uit zien en ook een ander soort patroon hebben. Liever niet dezelfde mozaiek stijl, maar een ander leuk patroon met een idee erachter" · "het wordt een soort cub". Suggesties Claude; Jordi: "1 en 2 wil ik allebei proberen" · "ik ga niet 4 bijlagen erbij doen, gewoon alleen onze sprite".
+Beide in een **nieuw gesprek**, met als enige bijlage `../af/steenjaguar.png` (de afgemaakte sprite van fase 2).
+
+### A: ruwe luipaardjaspis (welp = het ruwe materiaal, bij de evolutie geslepen en ingelegd tot mozaïek)
+```
+PIXEL ART SPRITE, NOT AN ILLUSTRATION.
+
+Attached is a Pokémon sprite: a pure Rock-type adult jaguar made of cut and inlaid stone mosaic, the final stage of a two-stage line.
+
+Design its pre-evolution (first of two stages): a jaguar cub, pure Rock-type. Idea: the cub is the raw, uncut stone; when it evolves, it is cut and inlaid into the mosaic of the adult. So the cub is NOT a mosaic: no separate pieces, no seams. Its body is one rough, unpolished stone like raw leopard skin jasper, with the natural rosette-like spots that grow in that stone. It must clearly be the same line as the attached adult, but it must look different, not a smaller copy. Anatomy and proportions of a real jaguar cub. Head: open mouth, white fangs, one round black eye with a white highlight. No fur.
+
+Pose: standing on all four legs, body in 3/4 view facing left, head turned slightly more towards the viewer than the body. Four legs and one tail in total. Compact composition that fits in a square.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, visible pixels, 1px dark outline, light from the top left. Plain white background. No ground, no rocks, no shadow, no glow or effects.
+
+AVOID: mosaic pieces or seams, a copy of the adult made smaller, chibi or buff proportions, a smooth digital illustration or painting, fur, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
+```
+
+### B: ingekerfd Chavín-reliëf (welp = gegraveerd, bij de evolutie ingelegd)
+```
+PIXEL ART SPRITE, NOT AN ILLUSTRATION.
+
+Attached is a Pokémon sprite: a pure Rock-type adult jaguar made of cut and inlaid stone mosaic, the final stage of a two-stage line.
+
+Design its pre-evolution (first of two stages): a jaguar cub, pure Rock-type. Idea: the cub is a carving; when it evolves, the carving becomes the inlaid mosaic of the adult. So the cub is NOT a mosaic: no separate pieces, no seams. Its body is one block of carved stone, and its pattern is lines and curls engraved into the stone, in the style of the ancient Chavín jaguar reliefs from Peru. It must clearly be the same line as the attached adult, but it must look different, not a smaller copy. Anatomy and proportions of a real jaguar cub. Head: open mouth, white fangs, one round black eye with a white highlight. No fur.
+
+Pose: standing on all four legs, body in 3/4 view facing left, head turned slightly more towards the viewer than the body. Four legs and one tail in total. Compact composition that fits in a square.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, visible pixels, 1px dark outline, light from the top left. Plain white background. No ground, no rocks, no shadow, no glow or effects.
+
+AVOID: mosaic pieces or seams, a copy of the adult made smaller, chibi or buff proportions, a smooth digital illustration or painting, fur, plush/Neopets look, extra rocks or crystals growing from the body, a statue on a pedestal.
+```
+
+## Rondes fase 1
+1. `fase1B_ronde1.png` (prompt B, Chavín): Jordi (15 nov, letterlijk): "deze is het beste van de twee, maar ik wil meer een zittende speelse pose, waar die zijn poot likt oid. Iedereen staat op dezelfde saaie manier in de AI generereer poses. Hij blijft driekwart, het patroon is goed, maar vertaalt nog niet ideaal naar een sprite, dus dit mag iets groter, iets overdrevener. En er mogen iets meer tinten van een Rock type in zitten, dit zit hem niet in stukken steen, maar in vorm van het lichaam, wat hoekiger. Plus het oog is echt te chibi". A niet bewaard.
+
+### Prompt fase 1, ronde 2 (nieuw gesprek; enige bijlage: fase1B_ronde1.png)
+```
+PIXEL ART SPRITE, NOT AN ILLUSTRATION.
+
+Attached is a Pokémon design: a pure Rock-type jaguar cub carved from stone, with lines and curls engraved into the stone in the style of the ancient Chavín jaguar reliefs from Peru. It is the first stage of a two-stage line.
+
+Keep this design: the carved stone cub, its colours and its engraved pattern. Change these things:
+1. Pose: sitting, playful, for example licking its paw. Not standing. Still in 3/4 view.
+2. The engraved pattern is good, but it does not yet translate well into a sprite: make the pattern a bit bigger and a bit more exaggerated.
+3. A bit more of a Rock-type feel. Not through separate stone pieces, but through the shape of the body: somewhat more angular.
+4. The eye is far too chibi: make it less chibi.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, visible pixels, 1px dark outline, light from the top left. Plain white background. No ground, no rocks, no shadow, no glow or effects.
+
+AVOID: a standing pose, a big chibi eye, separate stone pieces or seams, a smooth digital illustration or painting, fur, plush/Neopets look, extra rocks or crystals growing from the body.
+```
+2. `fase1B_ronde2.png`: zittend, poot likkend. Jordi (15 nov, letterlijk): "Gemini maakt hem nu gelijk boos, zonder het oog echt heel erg aan te passen, maar ik ben wel iets tevredener". Claude: pose goed; boze blik haalt het welpgevoel weg; bruin-op-bruin-gravures verdwijnen op ±44 px, alleen de gekleurde spiralen blijven; nauwelijks hoekiger; lila nekring leest als halsband (vraag aan Jordi).
+   - Jordi: "ja maak de prompt, halsband mag weg".
+
+### Prompt fase 1, ronde 3 (hetzelfde gesprek als ronde 2)
+```
+Good, keep this pose exactly: sitting, playful, licking its paw, in 3/4 view. Change only these things:
+1. The eye: now it looks angry. It must be a neutral, young cub's eye: not angry, not chibi. No angry eyebrow.
+2. The engraved pattern disappears at sprite size: brown lines on a brown body are not readable. Use fewer but bigger engraved spirals and curls, in the contrasting colours (lilac and cream), so they stay readable in a 64x64 sprite.
+3. The body is still round: make the body shape somewhat more angular, like carved stone.
+4. Remove the lilac ring around the neck; it looks like a pet collar.
+
+Keep everything else the same. Official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left, plain white background.
+```
+3. `fase1B_ronde3.png` (na de prompt hierboven) en `fase1B_ronde3b.png` (Jordi vroeg daarna in hetzelfde gesprek om meer grote spiralen en lijnen). Jordi (15 nov, letterlijk): "1 na jouw prompt en daarna vroeg ik om meer grote spiralen en lijnen en dat kwam er niet zo mooi uit." Claude: ronde 3 beter (blik neutraal, halsband weg, vlakken hoekiger, weinig grote spiralen); 3b druk, de crèmelijnen lezen als barsten.

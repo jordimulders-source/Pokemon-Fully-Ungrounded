@@ -1,0 +1,7 @@
+silhouet t.o.v. basis: erbij 10 [(np.int64(21), np.int64(20)), (np.int64(20), np.int64(21)), (np.int64(21), np.int64(21)), (np.int64(19), np.int64(22)), (np.int64(20), np.int64(22)), (np.int64(21), np.int64(22)), (np.int64(19), np.int64(23)), (np.int64(20), np.int64(23)), (np.int64(21), np.int64(23)), (np.int64(19), np.int64(24))]  eraf 0
+kleuren incl. transparant: 16 (indexen [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15] )
+lichte kleur op de buitenrand: []
+buitenrand niet-lijnkleur: 0
+rand om-en-om (losse afwijkende randpixel): []
+mogelijke dubbele buitenlijn (zwart achter zwarte rand): 10 [(11, 59), (12, 34), (14, 41), (16, 56), (45, 27), (47, 26), (48, 23), (49, 24), (59, 41), (60, 42)]
+tintvlakjes < 3 px: 8 [(22, 22, 7, 1), (19, 25, 7, 1), (23, 25, 7, 1), (31, 25, 7, 1), (29, 26, 7, 1), (28, 29, 7, 1), (24, 32, 7, 1), (20, 28, 8, 1)]

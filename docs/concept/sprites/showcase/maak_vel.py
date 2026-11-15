@@ -38,7 +38,9 @@ items=[
 ("sneeuwbolslak/af/sneeuwbolslak.png",'Sneeuwbolslak',"ice"),
 ("sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png",'Sneeuwbolslak fase 2',"ice"),
 ("ijskomeet/af/ijskomeet.png",'IJskomeet',"ice/cosmic"),
+("steenmozaiek/af/welp.png",'Steenjaguar-welp',"rock"),
 ("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
+("hauntflare/af/hauntflare.png",'"Hauntflare"',"cosmic/poison"),
 ("gengas/af/gengas.png",'"Gengas"',"cosmic/poison"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")

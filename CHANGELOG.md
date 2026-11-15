@@ -1500,3 +1500,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r6–r11 met verse keurders per ronde; r11 basis PASS na neuspunt. Spiralen volgen in een aparte ronde. `docs/concept/sprites/steenmozaiek/welp/r11/`.
 - Patroonronde (Jordi: "het moet meer een patroon op het lichaam gaan worden ... echt inkleuren en het lichaam moet niet veranderen erdoor"): spiralen als ingekleurde vlakken die de facetten volgen (p1–p4, keurder per ronde; p4 = keuring p3 toegepast). `welp/p4/welp_p4.png`, naar Jordi.
 - Jordi's vier punten op p4 (tong los van de poot, lila rugband, voorhoofdspatroon, staartring), alleen met kleur, schaduw en lijnen: p5–p8, keurder per ronde; p8 = keuring p7 toegepast. `welp/p8/welp_p8.png`, naar Jordi.
+### [v0.0.364] - Steenjaguar-welp: Chavín-inkleuring (gehouwen steen)
+- Jordi (foto Chavín-jaguarbeeld): "Hij moet er eigenlijk uitzien alsof die uit steen gecarved is", "het steengevoel vind ik het belangrijkste", kleur mag ("vind het nu teveel een huisdier"), koplijnen om de ogen + 2 naar de kruin, "let op schaduwen". Silhouet en vorm gelijk aan p8.
+- c1–c5 met keurder per ronde: lichte steen (greige én grijs), kerven met lichte lip, grote voluten op schouder en dij, pootbanden; de oogbogen bevroren na Jordi's "prima". `welp/c5/welp_c5.png` + `_grijs`, naar Jordi.

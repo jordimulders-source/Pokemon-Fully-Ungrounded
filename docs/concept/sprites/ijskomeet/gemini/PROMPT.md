@@ -124,3 +124,48 @@ AVOID
 - Not a smooth ball, not a ghost, not a fish (no fins). No star shapes anywhere, on or inside the body.
 - No glossy 3D render.
 ```
+
+## Ronde 3 (15 nov), prompt v3
+- `r3_afgekeurd.png`. Jordi: "het is nu weer teveel een monster, boze ogen, boze mond. Dat wil ik niet. Hij moet heel neutraal zijn, gewoon 2 ogen en geen mond, die ogen zijn ijzige spheren die passen bij het idee. Beetje zoals bij lunatone, minior en solrock. Het design zelf is iets beter, maar qua vorm heb ik nog liever wat meer iets als de interloper."
+- Jordi stuurde een beeld van de Interloper mee: `interloper_referentie.png` (ronde voorkant, lange ijspunten die allemaal naar achteren wijzen, langs de vliegrichting, gasstaart eromheen).
+
+# Prompt v4 (15 nov): nieuw gesprek, bijlage = `interloper_referentie.png` (vervangt v3)
+
+Keuzes Claude (schrappen mag): de Interloper als bijlage alleen voor de vorm (geen Pokémon-ontwerp, dus overnemen is hier juist de bedoeling); de donkere rotsplekken op de voorkant expliciet weg (Jordi 13 nov: "de donkere kern hoeft niet"). Kleuren en nevel uit v3 blijven ("design iets beter").
+
+```
+Attachment 1 is the comet "The Interloper" from the game Outer Wilds. Use it ONLY as the reference for the shape.
+
+Design an original Pokémon based on this shape and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT
+- The final stage of an Ice/Cosmic line. The earlier stages were a snail whose shell was a snow globe. Inside that globe a core of ice grew, until it burst out of the globe. This Pokémon IS that core: it broke free and evolved into a living comet from deep space.
+
+SHAPE (follow attachment 1)
+- A smooth, rounded dome of ice at the front, where the face is.
+- From the dome, long ice spikes all sweep BACKWARDS, side by side, in the direction of the tail, like the Interloper. They are long, pointed, slightly different in length, and all point back. No spikes sticking out sideways or forwards.
+- The body is whole: no cracks, no holes, no broken glass. No dark rocks on the front, only ice.
+
+COSMIC
+- Pale icy blue-white on the lit surfaces, turning into deep indigo and violet in the shadows between the spikes and towards the back.
+- One or two translucent patches in the ice show deep space inside: dark indigo with a soft violet nebula. No star shapes.
+- Around and behind the spikes, a thin, pale comet tail of icy vapor and gas streaming back, attached to the body. This is the only soft, glowing part.
+
+FACE
+- Completely neutral, no emotion: just two eyes and nothing else.
+- The eyes are two round, icy spheres set into the dome, glowing with a cold pale cyan light, like the eyes of Lunatone, Solrock and Minior's core: calm, unblinking, no pupils or a tiny one, no eyelids.
+- NO mouth, NO teeth, NO eyebrows, NO frown, NO ridges or brow shapes above the eyes. The face is smooth ice around the two eyes.
+
+POSE
+- Three-quarter view facing left, the dome at the front-left and the spikes and tail streaming back to the top right, as if it is flying through space.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, a final stage that fills most of the canvas, max 16 colors, 1 px dark outline, clean flat shading like official Game Freak Gen 3 sprites. No dithering.
+- Compact composition: the spikes and tail stay inside the square.
+- Plain white background. NO black space background, NO separate stars, sparkles, aura, particles, motion lines, floor or shadow. One single creature, no extra views.
+
+AVOID
+- Not a monster: no angry eyes, no mouth, no teeth, no skull-like face.
+- Not cute: no smile, no cheeks, no cartoon eyes with a white shine dot.
+- Not a smooth ball, not a spiky ball with spikes in every direction, not a ghost, not a fish. No glossy 3D render.
+```

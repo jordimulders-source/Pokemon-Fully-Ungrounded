@@ -1517,3 +1517,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.368] - IJskomeet: Gemini-prompt v3 (meer cosmic)
 - Jordi: "nog niet cosmic genoeg"; alle vier voorstellen goed, ogen naar Minior, Lunatone en Solrock. v3: indigo/violet in de schaduwen, nevel in doorzichtige plekken, gasstaart achter de ijsstaart, ogen verzonken in donkere kassen die koud oplichten, geen mond. Ogenstudie `ijskomeet/gemini/ogen_studie.png`.
+
+### [v0.0.369] - IJskomeet: Gemini-prompt v4
+- Ronde 3 afgekeurd (te veel monster: boze ogen, boze mond; vorm meer Interloper). v4 met Jordi's Interloper-beeld als vormbijlage: ronde ijskoepel voorop, ijspunten allemaal naar achteren, gezicht neutraal met twee ijzige bologen, geen mond. `ijskomeet/gemini/PROMPT.md`, `r3_afgekeurd.png`, `interloper_referentie.png`.

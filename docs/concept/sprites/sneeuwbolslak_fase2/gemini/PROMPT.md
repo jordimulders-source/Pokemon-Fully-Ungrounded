@@ -192,3 +192,6 @@ AVOID
 - No galaxy, stars or planets.
 - Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
 ```
+
+## Ronde 5 (15 nov)
+- `r5_gemini.png` (prompt v4). Jordi: "dit is het ook niet, laat me even een beschrijving bedenken". Volgende prompt komt uit Jordi's eigen beschrijving.

@@ -30,3 +30,9 @@ Werkwijze: `docs/lessen/GEMINI.md` + `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-m
 ## Open
 - Fase 1 (welp): eigen patroon, geen kleinere mozaïek (Jordi, 15 nov); twee Gemini-prompts (A ruwe luipaardjaspis, B Chavín-reliëf) in `gemini/README.md` → "prompt v3".
 - Naam, formaat per fase (pas bij het silhouet), welk Gemini-model gekozen wordt.
+
+## Fase 1 (welp)
+- Jordi (15 nov, letterlijk): "Ik wil daar niet een kleinere versie van maken, hij moet er wat anders uit zien en ook een ander soort patroon hebben. Liever niet dezelfde mozaiek stijl, maar een ander leuk patroon met een idee erachter" · "het wordt een soort cub". Gekozen idee: **B, ingekerfd Chavín-reliëf** (welp = gegraveerde steen, bij de evolutie ingelegd tot mozaïek). Pose: zittend, speels, likt zijn poot (Jordi).
+- **Model:** `referenties/model_welp_gekozen.png` (= `gemini/fase1B_ronde3.png`, Gemini-rondes in `gemini/README.md`).
+- **Toegestane afwijking (Jordi, 15 nov, letterlijk):** "kan jij dan versie 1 nog wat meer belijning en spiralen geven? Denk het wel he. Dat je de huidige wat groter maakt en het lichaam wat meer bedekt. dat gaan we in de sprite doen, dus niet eerst een nieuw model bouwen". Alles daarbuiten volgt het model.
+- Sprite: `welp/` (rondes `welp/rN/`).

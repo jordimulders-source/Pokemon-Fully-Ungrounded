@@ -51,3 +51,4 @@ Jordi letterlijk: "gebruik de jouwe maar als model voor vorm, de vlammen zouden 
 - 15 nov over v11: "haal de ingekleurde pixel tand weg" (markering op (31,33)) → v12: (31,33) weer lipzwart.
 - 15 nov: "ok genoeg, de vlammen en handen moeten meer vlammen worden, stuur maar meteen naar eindkeuring voor kleur, schaduw en belijning" → gezicht v12 bevroren; kleurronde vlammen/handen (`sprite_v13/`), daarna eindkeuring.
 - v13: vlammen en handen als Gen 3-vuur (geel hart, oranje, rode punten, rode/donkerrode lijn i.p.v. zwart), 374 px herkleurd; eindkeuring loopt.
+- v13–v15: eindkeuring kleur/schaduw/belijning v13 FAIL (7 px handen) → v14 → v15 **PASS**. Eindversie voor Jordi: `sprite_v15/hauntflare_v15.png`.

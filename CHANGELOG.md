@@ -1630,3 +1630,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.394] - Hauntflare: vlammen en handen als vuur (v13)
 - Kuif, staart en handen herkleurd naar Gen 3-vuur (Typhlosion, Ponyta e.a.): `sprites/hauntflare/sprite_v13/`.
+
+### [v0.0.395] - Hauntflare: eindversie v15 (eindkeuring PASS)
+- Eindkeuring kleur, schaduw en belijning: handenlijnen gerepareerd; `sprites/hauntflare/sprite_v15/hauntflare_v15.png` wacht op Jordi.

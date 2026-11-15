@@ -1503,3 +1503,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.364] - Steenjaguar-welp: Chavín-inkleuring (gehouwen steen)
 - Jordi (foto Chavín-jaguarbeeld): "Hij moet er eigenlijk uitzien alsof die uit steen gecarved is", "het steengevoel vind ik het belangrijkste", kleur mag ("vind het nu teveel een huisdier"), koplijnen om de ogen + 2 naar de kruin, "let op schaduwen". Silhouet en vorm gelijk aan p8.
 - c1–c5 met keurder per ronde: lichte steen (greige én grijs), kerven met lichte lip, grote voluten op schouder en dij, pootbanden; de oogbogen bevroren na Jordi's "prima". `welp/c5/welp_c5.png` + `_grijs`, naar Jordi.
+- Halve cirkel naast het oog (c10 variant 1), eindkeuring Dragonfly Cave + Gen 3: PASS na 5 randpixels + mondhoek. **Af:** `docs/concept/sprites/steenmozaiek/af/welp.png` (+ `_8x`, `welp_grijs.png`, `welp_normal.pal`, eindkeuring). Op het overzichtsvel.

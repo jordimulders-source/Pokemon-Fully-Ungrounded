@@ -1399,3 +1399,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vraag Cosmic/Poison voor de hele lijn: natuurkundig onderbouwd en typecombinatie doorgerekend (Psychic 4×) in `IDEEEN.md`.
 - Naamalternatieven voor de lijn (Dustly, Harunter/Hauntar, Gengas/Dimgar) in `IDEEEN.md`.
 - Jordi ziet Dustly en Gengas zitten; nieuwe Haunter-opties (Hunter, Huntar, Hurtler) in `IDEEEN.md`.
+- Hunter afgewezen (gewoon een woord); opties Huntar, Herbunter, Hayunter, Haunflare in `IDEEEN.md`.

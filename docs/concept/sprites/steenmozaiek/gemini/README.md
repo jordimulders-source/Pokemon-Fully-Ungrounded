@@ -168,3 +168,4 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pi
 
 AVOID: a standing pose, a big chibi eye, separate stone pieces or seams, a smooth digital illustration or painting, fur, plush/Neopets look, extra rocks or crystals growing from the body.
 ```
+2. `fase1B_ronde2.png`: zittend, poot likkend. Jordi (15 nov, letterlijk): "Gemini maakt hem nu gelijk boos, zonder het oog echt heel erg aan te passen, maar ik ben wel iets tevredener". Claude: pose goed; boze blik haalt het welpgevoel weg; bruin-op-bruin-gravures verdwijnen op ±44 px, alleen de gekleurde spiralen blijven; nauwelijks hoekiger; lila nekring leest als halsband (vraag aan Jordi).

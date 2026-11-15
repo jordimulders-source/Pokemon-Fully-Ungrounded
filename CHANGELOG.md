@@ -1413,3 +1413,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gengas: drie opties voor de plek van ogen en grijns (pixels uit de Gen 3-Gengar), `model/gezicht_opties.png`.
 - Gengas: frontsprite ronde 1 (maker-agent, handgetekend raster; bol rond binnen 0,4 px, gezicht diff 0 op Gengar). `sprites/gengas/sprite_r1/`.
 - Gengas: ronde 2 (manen als Gengar-handen/-voeten, diepte, neutraler grijs; lijf en gezicht diff 0). `sprite_r2/`.
+- Gengas: ronde 3, alleen de stormwervel rond (diff 0 erbuiten). `sprite_r3/`.

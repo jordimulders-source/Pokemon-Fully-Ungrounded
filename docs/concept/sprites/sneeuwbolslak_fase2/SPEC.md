@@ -14,5 +14,5 @@ Lijn: sneeuwbolslak (fase 1, `sneeuwbolslak/`) → fase 2 → komeet (fase 3, Ic
 - Volgende stap: natief raster, maattest, daarna maker (alleen opruimen binnen het silhouet).
 - Jordi: "dan mag je daarna gaan bouwen, zoals bij de poedelmot qua methode oa". Maattest: `sprite/maattest.py`, vel `sprite/maattest_vel.png` (52, 56, 60 px breed; preview met 15 clusters, geen eindsprite).
 - Jordi: "56 is goed, maar houd rekening met het feit dat de bol nu rechte lijnen heeft, dat moet echt een bol blijven".
-- Silhouet: `sprite/sil.py` → `sprite/sil56.npy` (56×41, offset 4,19); bol rond gemaakt met `sprite/bol_rond.py` → **`sprite/sil56_rond.npy` = bevroren silhouet** (cirkel r 11 rond 31.5,31.0; ijspunten bovenop uit het model blijven; +2/−12 px).
+- Silhouet: `sprite/sil.py` → `sprite/sil56.npy` (56×41, offset 4,19); bol rond gemaakt met `sprite/bol_rond.py` → **`sprite/sil56_rond.npy` = bevroren silhouet** (cirkel r 10.6 rond 31.5,31.0, rechte zijkant max 3 px na Jordi: "beide zijkanten hebben echt te lange rechte lijnen" "in de bol"; ijspunten bovenop uit het model blijven).
 - Meetgereedschap: `sprite/meet/px.py x,y` (modelkleur per spritepixel), `sprite/meet/box1x.py` (model op 1×/8×, modeluitsnede op het raster).

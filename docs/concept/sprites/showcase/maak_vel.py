@@ -37,6 +37,7 @@ items=[
 ("octillery_evo/af/krassault.png",'"Krassault"',"water/steel"),
 ("sneeuwbolslak/af/sneeuwbolslak.png",'Sneeuwbolslak',"ice"),
 ("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
+("ijskomeet/af/ijskomeet.png",'IJskomeet',"ice/cosmic"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

@@ -1541,3 +1541,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.376] - IJskomeet: ronde 7 gekozen als model
 - Jordi: "ja doe maar ronde 7 als model". `ijskomeet/referenties/gemini_gekozen_r7.png`. Diervorm van de schotsen nog open (voorstel Claude: slak, alternatief pissebed).
+
+### [v0.0.377] - IJskomeet: frontsprite af
+- Gemini-model r7 (Interloper-vorm, ijsschotsen, kern geëxplodeerd; Jordi: "het hele idee van deze vorm is dus dat een kern is geëxplodeerd en deze het hele dier in ijsschotsen heeft veranderd, de kern is ondertussen de drijvende kracht erachter"; tragisch "zoals bij parasect"). Schotsen als slakkenlijf (Jordi: "ja doe maar de slak").
+- 23 spriterondes. r1–r14: makers en Claude tekenden/schoven naden; mislukte omdat elke onderlaag de mediaan per 3×3 nam en de dunne modellijnen wegvielen (Jordi: "KIJK NAAR DE LIJNEN"). r15: model 3× verkleind waarbij in het ijs de donkerste pixel wint → schotsstructuur van het model klopte meteen. Daarna: lichtere binnennaden (eigen navy), gasstaart lavendel → cyaan → wit met zachte rand, lichtere linkerbuitenlijn, kopbovenkant als drietand, pieken glad uit het model (gemiddelde per 3×3), ogen met teal ring, kern = zachte gloed van r21.
+- `docs/concept/sprites/ijskomeet/af/ijskomeet.png` (+ `_8x`); op het overzichtsvel als "IJskomeet" (Ice/Cosmic). Naam nog open. Lessen in `docs/lessen/GEMINI.md` en bovenaan `SPRITE_KERN.md` (makers tekenen niet bij een Gemini-model).

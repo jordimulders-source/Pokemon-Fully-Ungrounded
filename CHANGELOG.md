@@ -1603,3 +1603,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.385] - Hauntflare: frontsprite-kandidaat (v6, keuring PASS)
 - v3–v6 met twee keuringen; v6 PASS (`sprites/hauntflare/sprite_v6/hauntflare_v6.png`). Wacht op Jordi.
+
+### [v0.0.386] - Hauntflare: gezichtsopties
+- Linkeroog gespiegeld van het rechteroog (vier hoeken), nieuwe mond lager en meer naar links met V-tanden: `sprites/hauntflare/gezicht_v7/opties_heel.png`.

@@ -1476,3 +1476,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.357] - Sneeuwbolslak fase 2: strenge eindkeuring
 - Verse eindkeuring op de af-versie (na de bol- en mondrondes): PASS met één pixel (22,39) in de aansluiting kop/bol/nek, toegepast. Les in GEMINI.md: elke wijziging na een PASS opnieuw keuren.
+
+### [v0.0.358] - Sneeuwbolslak fase 3: Gemini-prompt
+- Startprompt voor de komeet (Ice/Cosmic) in `docs/concept/sprites/sneeuwbolslak_fase3/gemini/PROMPT.md`, met de afgewerkte fase 2 als bijlage (`bijlage_fase2_8x.png`). Jordi's woorden letterlijk erboven; eigen keuzes van Claude (zwevend, heldere kern met plusvlokken, mond, maat) apart.

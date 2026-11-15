@@ -1618,3 +1618,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.390] - Hauntflare: tanden boven en onder (v9, keuring PASS)
 - Tanden vast aan de lip naar Haunter G3 en de pixelref, ongelijk en verspringend: `sprites/hauntflare/sprite_v9/hauntflare_v9.png`.
+
+### [v0.0.391] - Hauntflare: tanden bijgesteld (v10)
+- Rechter boventand iets kleiner, linker ondertand iets groter (Jordi): `sprites/hauntflare/sprite_v10/`.

@@ -1572,3 +1572,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.375] - Hauntflare: Gemini r1 besproken
 - Gemini r1 opgeslagen (`sprites/hauntflare/gemini/r1_a.png`) met beoordeling in `SPEC.md`.
+
+### [v0.0.376] - Hauntflare: Gemini-prompt r2
+- Prompt r2 (`sprites/hauntflare/gemini/PROMPT_r2.md`): Haunter-gezicht, dikke stofschijf i.p.v. Saturnusring, kijkt naar links, jets tegengesteld, matte gasbol. Les over bijlagen in `GEMINI.md`.

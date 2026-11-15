@@ -1615,3 +1615,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.389] - Hauntflare: tanden (v8, keuring PASS)
 - Twee V-boventanden in de hoofdkleur naar Jordi's referenties: `sprites/hauntflare/sprite_v8/hauntflare_v8.png`.
+
+### [v0.0.390] - Hauntflare: tanden boven en onder (v9, keuring PASS)
+- Tanden vast aan de lip naar Haunter G3 en de pixelref, ongelijk en verspringend: `sprites/hauntflare/sprite_v9/hauntflare_v9.png`.

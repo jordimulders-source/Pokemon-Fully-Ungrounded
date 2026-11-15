@@ -123,7 +123,7 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64
 
 AVOID: grey skin, a separate barrel or ball on its back, silver straps or belts across the shell, a tortoise or turtle, an armadillo curled into a ball, the bombilla in its mouth, fine detailed patterns, a teacup or teapot ghost (Sinistea/Polteageist look), an object with a face, plush/Neopets look, realistic painting, extra props (thermos, kettle, cup).
 ```
-2. `fase2_E_r2.png` (Jordi stuurde hem zonder commentaar). Claude: alleen het grijs is bruin geworden; schild, riemen en gravures zijn een kopie van r1. A half uitgevoerd (kleur, geen gravures op kop/staart), B niet. Oorzaak: r1 als bijlage + "keep" → Gemini kopieert de draft (zelfde les als GEMINI.md, Octillery-evolutie r4). Ronde 3: dezelfde opdracht zonder de draft als bijlage.
+2. `fase2_E_r2.png` (Jordi stuurde hem zonder commentaar). Claude: alleen het grijs is bruin geworden; schild, riemen en gravures zijn een kopie van r1. A half uitgevoerd (kleur, geen gravures op kop/staart), B niet. Oorzaak (gecorrigeerd na r4): er waren geen bijlagen; Jordi: "dat betekent dat jouw prompt hem telkens dezelfde kant opstuurt". De prompttekst zelf (dier + kalebas met opening bovenop + bombilla als vlaggetje) bepaalt het beeld. Ronde 3: dezelfde opdracht zonder de draft als bijlage.
 
 ### Prompt E, ronde 3 (nieuw gesprek; bijlagen: alleen foto mate-kalebas + foto driebandgordeldier, GEEN eerdere poging)
 ```

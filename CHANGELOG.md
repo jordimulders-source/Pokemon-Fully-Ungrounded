@@ -1578,3 +1578,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.377] - Hauntflare: Gemini r2 besproken
 - Gemini r2 opgeslagen (`sprites/hauntflare/gemini/r2_a.png`) met beoordeling in `SPEC.md`.
+
+### [v0.0.378] - Hauntflare: Gemini-prompt r3
+- r2_b opgeslagen; prompt r3 (`sprites/hauntflare/gemini/PROMPT_r3.md`): opbouw van r2_b, gasbol en losse ring zoals r1.

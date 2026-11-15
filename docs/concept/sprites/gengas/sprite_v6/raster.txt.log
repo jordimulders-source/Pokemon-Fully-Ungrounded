@@ -1,0 +1,522 @@
+(24,28) b->m  overgang band: onderrand loopt rond op naar links
+(25,28) b->m  overgang band: onderrand loopt rond op naar links
+(9,29) b->m  band één tint lichter
+(10,29) u->m  lichte wig/ring vlak met de band
+(11,29) u->m  lichte wig/ring vlak met de band
+(12,29) u->m  lichte wig/ring vlak met de band
+(13,29) b->m  band één tint lichter
+(14,29) b->m  band één tint lichter
+(15,29) u->m  lichte wig/ring vlak met de band
+(16,29) u->m  lichte wig/ring vlak met de band
+(17,29) u->m  lichte wig/ring vlak met de band
+(18,29) u->m  lichte wig/ring vlak met de band
+(19,29) l->m  lichte wig tussen de ogen vlak met de band
+(20,29) l->m  lichte wig tussen de ogen vlak met de band
+(21,29) l->m  lichte wig tussen de ogen vlak met de band
+(22,29) l->m  lichte wig tussen de ogen vlak met de band
+(23,29) l->m  lichte wig tussen de ogen vlak met de band
+(24,29) b->m  band één tint lichter
+(25,29) b->m  band één tint lichter
+(26,29) b->m  band één tint lichter
+(27,29) b->m  band één tint lichter
+(28,29) b->m  band één tint lichter
+(29,29) b->m  band één tint lichter
+(32,29) b->m  band één tint lichter
+(9,30) b->m  band één tint lichter
+(10,30) b->m  band één tint lichter
+(11,30) u->m  lichte wig/ring vlak met de band
+(12,30) b->m  band één tint lichter
+(16,30) b->m  band één tint lichter
+(17,30) u->m  lichte wig/ring vlak met de band
+(18,30) u->m  lichte wig/ring vlak met de band
+(19,30) b->m  band één tint lichter
+(20,30) l->m  lichte wig tussen de ogen vlak met de band
+(21,30) l->m  lichte wig tussen de ogen vlak met de band
+(22,30) l->m  lichte wig tussen de ogen vlak met de band
+(23,30) l->m  lichte wig tussen de ogen vlak met de band
+(24,30) l->m  lichte wig tussen de ogen vlak met de band
+(25,30) l->m  lichte wig tussen de ogen vlak met de band
+(26,30) l->m  lichte wig tussen de ogen vlak met de band
+(27,30) b->m  band één tint lichter
+(28,30) b->m  band één tint lichter
+(32,30) b->m  band één tint lichter
+(33,30) b->m  band één tint lichter
+(9,31) b->m  band één tint lichter
+(10,31) b->m  band één tint lichter
+(11,31) b->m  band één tint lichter
+(12,31) b->m  band één tint lichter
+(18,31) b->m  band één tint lichter
+(19,31) b->m  band één tint lichter
+(20,31) b->m  band één tint lichter
+(21,31) b->m  band één tint lichter
+(22,31) u->m  lichte wig/ring vlak met de band
+(23,31) u->m  lichte wig/ring vlak met de band
+(24,31) u->m  lichte wig/ring vlak met de band
+(25,31) u->m  lichte wig/ring vlak met de band
+(26,31) b->m  band één tint lichter
+(27,31) b->m  band één tint lichter
+(32,31) b->m  band één tint lichter
+(8,32) a->b  randschaduw links één tint lichter (a->b)
+(9,32) b->m  band één tint lichter
+(10,32) b->m  band één tint lichter
+(11,32) b->m  band één tint lichter
+(12,32) b->m  band één tint lichter
+(19,32) b->m  band één tint lichter
+(20,32) b->m  band één tint lichter
+(21,32) b->m  band één tint lichter
+(22,32) u->m  lichte wig/ring vlak met de band
+(23,32) u->m  lichte wig/ring vlak met de band
+(24,32) u->m  lichte wig/ring vlak met de band
+(25,32) b->m  band één tint lichter
+(26,32) b->m  band één tint lichter
+(32,32) b->m  band één tint lichter
+(8,33) a->b  randschaduw links één tint lichter (a->b)
+(9,33) b->m  band één tint lichter
+(10,33) b->m  band één tint lichter
+(11,33) b->m  band één tint lichter
+(12,33) b->m  band één tint lichter
+(19,33) b->m  band één tint lichter
+(20,33) b->m  band één tint lichter
+(21,33) b->m  band één tint lichter
+(22,33) u->m  lichte wig/ring vlak met de band
+(23,33) u->m  lichte wig/ring vlak met de band
+(24,33) u->m  lichte wig/ring vlak met de band
+(25,33) b->m  band één tint lichter
+(32,33) b->m  band één tint lichter
+(9,34) b->m  band één tint lichter
+(10,34) b->m  band één tint lichter
+(11,34) b->m  band één tint lichter
+(12,34) b->m  band één tint lichter
+(13,34) b->m  band één tint lichter
+(19,34) b->m  band één tint lichter
+(20,34) b->m  band één tint lichter
+(21,34) b->m  band één tint lichter
+(22,34) u->m  lichte wig/ring vlak met de band
+(23,34) b->m  band één tint lichter
+(24,34) b->m  band één tint lichter
+(25,34) b->m  band één tint lichter
+(32,34) b->m  band één tint lichter
+(9,35) b->m  band één tint lichter
+(10,35) b->m  band één tint lichter
+(11,35) b->m  band één tint lichter
+(12,35) b->m  band één tint lichter
+(13,35) b->m  band één tint lichter
+(14,35) b->m  band één tint lichter
+(18,35) b->m  band één tint lichter
+(19,35) b->m  band één tint lichter
+(20,35) b->m  band één tint lichter
+(21,35) b->m  band één tint lichter
+(22,35) b->m  band één tint lichter
+(31,35) b->m  band één tint lichter
+(32,35) b->m  band één tint lichter
+(8,36) a->b  randschaduw links één tint lichter (a->b)
+(9,36) b->m  band één tint lichter
+(10,36) b->m  band één tint lichter
+(11,36) b->m  band één tint lichter
+(12,36) b->m  band één tint lichter
+(13,36) b->m  band één tint lichter
+(14,36) b->m  band één tint lichter
+(15,36) b->m  band één tint lichter
+(16,36) b->m  band één tint lichter
+(17,36) b->m  band één tint lichter
+(18,36) b->m  band één tint lichter
+(19,36) b->m  band één tint lichter
+(20,36) b->m  band één tint lichter
+(21,36) b->m  band één tint lichter
+(22,36) b->m  band één tint lichter
+(23,36) b->m  band één tint lichter
+(24,36) b->m  band één tint lichter
+(30,36) b->m  band één tint lichter
+(31,36) b->m  band één tint lichter
+(32,36) b->m  band één tint lichter
+(10,37) a->m  losse schaduwpixel in de band
+(11,37) b->m  band één tint lichter
+(12,37) b->m  band één tint lichter
+(13,37) b->m  band één tint lichter
+(15,37) b->m  band één tint lichter
+(16,37) b->m  band één tint lichter
+(17,37) b->m  band één tint lichter
+(18,37) b->m  band één tint lichter
+(19,37) b->m  band één tint lichter
+(20,37) b->m  band één tint lichter
+(21,37) b->m  band één tint lichter
+(22,37) b->m  band één tint lichter
+(23,37) b->m  band één tint lichter
+(24,37) b->m  band één tint lichter
+(25,37) b->m  band één tint lichter
+(26,37) b->m  band één tint lichter
+(27,37) b->m  band één tint lichter
+(28,37) b->m  band één tint lichter
+(29,37) b->m  band één tint lichter
+(30,37) b->m  band één tint lichter
+(31,37) b->m  band één tint lichter
+(16,38) b->m  band één tint lichter
+(17,38) b->m  band één tint lichter
+(18,38) b->m  band één tint lichter
+(19,38) b->m  band één tint lichter
+(20,38) b->m  band één tint lichter
+(21,38) b->m  band één tint lichter
+(22,38) b->m  band één tint lichter
+(23,38) b->m  band één tint lichter
+(24,38) b->m  band één tint lichter
+(25,38) b->m  band één tint lichter
+(26,38) b->m  band één tint lichter
+(27,38) b->m  band één tint lichter
+(28,38) b->m  band één tint lichter
+(29,38) b->m  band één tint lichter
+(18,39) b->m  band één tint lichter
+(19,39) b->m  band één tint lichter
+(20,39) b->m  band één tint lichter
+(21,39) b->m  band één tint lichter
+(22,39) b->m  band één tint lichter
+(23,39) b->m  band één tint lichter
+(24,39) b->m  band één tint lichter
+(25,39) b->m  band één tint lichter
+(26,39) b->m  band één tint lichter
+(27,39) b->m  band één tint lichter
+(28,39) b->m  band één tint lichter
+(31,40) b->m  band één tint lichter
+(32,37) a->m  oud gezicht weg, lijftint van de buren
+(13,33) a->m  oud gezicht weg, lijftint van de buren
+(15,30) K->m  oud gezicht weg, lijftint van de buren
+(15,39) W->m  oud gezicht weg, lijftint van de buren
+(31,29) K->b  oud gezicht weg, lijftint van de buren
+(18,44) W->l  oud gezicht weg, lijftint van de buren
+(31,38) K->m  oud gezicht weg, lijftint van de buren
+(21,46) a->m  oud gezicht weg, lijftint van de buren
+(14,40) K->l  oud gezicht weg, lijftint van de buren
+(32,39) K->l  oud gezicht weg, lijftint van de buren
+(30,39) W->m  oud gezicht weg, lijftint van de buren
+(24,35) R->m  oud gezicht weg, lijftint van de buren
+(16,31) K->m  oud gezicht weg, lijftint van de buren
+(31,31) a->m  oud gezicht weg, lijftint van de buren
+(29,43) a->l  oud gezicht weg, lijftint van de buren
+(20,40) a->m  oud gezicht weg, lijftint van de buren
+(14,33) E->m  oud gezicht weg, lijftint van de buren
+(22,46) a->m  oud gezicht weg, lijftint van de buren
+(27,36) E->m  oud gezicht weg, lijftint van de buren
+(27,45) K->b  oud gezicht weg, lijftint van de buren
+(17,44) K->l  oud gezicht weg, lijftint van de buren
+(30,41) W->m  oud gezicht weg, lijftint van de buren
+(25,36) E->m  oud gezicht weg, lijftint van de buren
+(16,42) W->l  oud gezicht weg, lijftint van de buren
+(29,36) a->m  oud gezicht weg, lijftint van de buren
+(31,33) a->m  oud gezicht weg, lijftint van de buren
+(30,34) E->m  oud gezicht weg, lijftint van de buren
+(13,30) a->m  oud gezicht weg, lijftint van de buren
+(16,35) E->m  oud gezicht weg, lijftint van de buren
+(23,40) a->m  oud gezicht weg, lijftint van de buren
+(14,37) a->m  oud gezicht weg, lijftint van de buren
+(27,40) K->m  oud gezicht weg, lijftint van de buren
+(17,39) K->m  oud gezicht weg, lijftint van de buren
+(19,45) a->m  oud gezicht weg, lijftint van de buren
+(25,40) a->m  oud gezicht weg, lijftint van de buren
+(29,31) E->m  oud gezicht weg, lijftint van de buren
+(15,41) W->m  oud gezicht weg, lijftint van de buren
+(29,40) W->m  oud gezicht weg, lijftint van de buren
+(14,30) E->m  oud gezicht weg, lijftint van de buren
+(27,33) E->m  oud gezicht weg, lijftint van de buren
+(17,32) E->m  oud gezicht weg, lijftint van de buren
+(30,29) K->b  oud gezicht weg, lijftint van de buren
+(28,32) E->m  oud gezicht weg, lijftint van de buren
+(30,38) a->m  oud gezicht weg, lijftint van de buren
+(15,34) R->m  oud gezicht weg, lijftint van de buren
+(31,30) a->m  oud gezicht weg, lijftint van de buren
+(26,34) K->m  oud gezicht weg, lijftint van de buren
+(24,46) K->m  oud gezicht weg, lijftint van de buren
+(29,42) W->l  oud gezicht weg, lijftint van de buren
+(31,39) W->m  oud gezicht weg, lijftint van de buren
+(23,35) a->m  oud gezicht weg, lijftint van de buren
+(17,34) R->m  oud gezicht weg, lijftint van de buren
+(27,44) W->b  oud gezicht weg, lijftint van de buren
+(17,43) W->l  oud gezicht weg, lijftint van de buren
+(19,40) K->m  oud gezicht weg, lijftint van de buren
+(30,40) W->m  oud gezicht weg, lijftint van de buren
+(25,35) R->m  oud gezicht weg, lijftint van de buren
+(13,39) a->l  oud gezicht weg, lijftint van de buren
+(26,36) E->m  oud gezicht weg, lijftint van de buren
+(29,35) R->m  oud gezicht weg, lijftint van de buren
+(31,32) a->m  oud gezicht weg, lijftint van de buren
+(18,32) K->m  oud gezicht weg, lijftint van de buren
+(26,45) W->l  oud gezicht weg, lijftint van de buren
+(29,44) a->b  oud gezicht weg, lijftint van de buren
+(21,40) a->m  oud gezicht weg, lijftint van de buren
+(28,36) E->m  oud gezicht weg, lijftint van de buren
+(30,42) a->l  oud gezicht weg, lijftint van de buren
+(13,32) a->m  oud gezicht weg, lijftint van de buren
+(15,38) K->m  oud gezicht weg, lijftint van de buren
+(18,34) a->m  oud gezicht weg, lijftint van de buren
+(20,46) a->m  oud gezicht weg, lijftint van de buren
+(14,39) W->l  oud gezicht weg, lijftint van de buren
+(30,35) a->m  oud gezicht weg, lijftint van de buren
+(32,38) K->l  oud gezicht weg, lijftint van de buren
+(15,31) R->m  oud gezicht weg, lijftint van de buren
+(29,30) K->m  oud gezicht weg, lijftint van de buren
+(15,40) W->m  oud gezicht weg, lijftint van de buren
+(26,40) K->m  oud gezicht weg, lijftint van de buren
+(16,39) K->m  oud gezicht weg, lijftint van de buren
+(18,45) a->l  oud gezicht weg, lijftint van de buren
+(27,32) K->m  oud gezicht weg, lijftint van de buren
+(17,31) K->m  oud gezicht weg, lijftint van de buren
+(28,31) K->m  oud gezicht weg, lijftint van de buren
+(17,40) W->m  oud gezicht weg, lijftint van de buren
+(28,40) K->m  oud gezicht weg, lijftint van de buren
+(26,33) K->m  oud gezicht weg, lijftint van de buren
+(15,42) a->l  oud gezicht weg, lijftint van de buren
+(31,41) K->l  oud gezicht weg, lijftint van de buren
+(14,34) a->m  oud gezicht weg, lijftint van de buren
+(30,30) E->m  oud gezicht weg, lijftint van de buren
+(23,46) a->m  oud gezicht weg, lijftint van de buren
+(15,35) a->m  oud gezicht weg, lijftint van de buren
+(26,35) R->m  oud gezicht weg, lijftint van de buren
+(25,46) a->l  oud gezicht weg, lijftint van de buren
+(16,43) K->l  oud gezicht weg, lijftint van de buren
+(18,40) K->m  oud gezicht weg, lijftint van de buren
+(31,34) a->m  oud gezicht weg, lijftint van de buren
+(22,40) a->m  oud gezicht weg, lijftint van de buren
+(17,35) a->m  oud gezicht weg, lijftint van de buren
+(28,44) H->b  oud gezicht weg, lijftint van de buren
+(13,31) a->m  oud gezicht weg, lijftint van de buren
+(24,40) a->m  oud gezicht weg, lijftint van de buren
+(18,33) a->m  oud gezicht weg, lijftint van de buren
+(26,46) a->l  oud gezicht weg, lijftint van de buren
+(29,39) K->m  oud gezicht weg, lijftint van de buren
+(20,45) W->m  oud gezicht weg, lijftint van de buren
+(14,38) K->m  oud gezicht weg, lijftint van de buren
+(25,41) W->m  oud gezicht weg, lijftint van de buren
+(29,32) E->m  oud gezicht weg, lijftint van de buren
+(29,41) W->m  oud gezicht weg, lijftint van de buren
+(14,31) E->m  oud gezicht weg, lijftint van de buren
+(27,34) K->m  oud gezicht weg, lijftint van de buren
+(27,43) W->b  oud gezicht weg, lijftint van de buren
+(15,32) R->m  oud gezicht weg, lijftint van de buren
+(16,40) W->m  oud gezicht weg, lijftint van de buren
+(29,34) R->m  oud gezicht weg, lijftint van de buren
+(23,45) W->m  oud gezicht weg, lijftint van de buren
+(19,41) H->m  oud gezicht weg, lijftint van de buren
+(16,33) R->m  oud gezicht weg, lijftint van de buren
+(25,45) W->l  oud gezicht weg, lijftint van de buren
+(21,41) W->m  oud gezicht weg, lijftint van de buren
+(19,43) H->l  oud gezicht weg, lijftint van de buren
+(20,44) W->m  oud gezicht weg, lijftint van de buren
+(26,41) W->m  oud gezicht weg, lijftint van de buren
+(21,45) W->m  oud gezicht weg, lijftint van de buren
+(17,41) W->m  oud gezicht weg, lijftint van de buren
+(28,41) H->m  oud gezicht weg, lijftint van de buren
+(29,33) R->m  oud gezicht weg, lijftint van de buren
+(26,43) W->b  oud gezicht weg, lijftint van de buren
+(14,32) E->m  oud gezicht weg, lijftint van de buren
+(27,35) R->m  oud gezicht weg, lijftint van de buren
+(28,34) K->m  oud gezicht weg, lijftint van de buren
+(30,31) E->m  oud gezicht weg, lijftint van de buren
+(28,43) H->b  oud gezicht weg, lijftint van de buren
+(18,41) W->m  oud gezicht weg, lijftint van de buren
+(22,41) W->m  oud gezicht weg, lijftint van de buren
+(30,33) E->m  oud gezicht weg, lijftint van de buren
+(24,41) W->m  oud gezicht weg, lijftint van de buren
+(18,43) W->l  oud gezicht weg, lijftint van de buren
+(19,44) H->m  oud gezicht weg, lijftint van de buren
+(22,45) W->m  oud gezicht weg, lijftint van de buren
+(15,33) R->m  oud gezicht weg, lijftint van de buren
+(16,32) K->m  oud gezicht weg, lijftint van de buren
+(24,45) H->m  oud gezicht weg, lijftint van de buren
+(16,41) W->m  oud gezicht weg, lijftint van de buren
+(25,44) W->l  oud gezicht weg, lijftint van de buren
+(20,41) W->m  oud gezicht weg, lijftint van de buren
+(17,33) E->m  oud gezicht weg, lijftint van de buren
+(28,33) E->m  oud gezicht weg, lijftint van de buren
+(17,42) W->l  oud gezicht weg, lijftint van de buren
+(28,42) H->l  oud gezicht weg, lijftint van de buren
+(16,34) R->m  oud gezicht weg, lijftint van de buren
+(26,44) W->b  oud gezicht weg, lijftint van de buren
+(30,32) E->m  oud gezicht weg, lijftint van de buren
+(28,35) K->m  oud gezicht weg, lijftint van de buren
+(18,42) W->l  oud gezicht weg, lijftint van de buren
+(21,44) W->m  oud gezicht weg, lijftint van de buren
+(23,41) H->m  oud gezicht weg, lijftint van de buren
+(27,41) W->m  oud gezicht weg, lijftint van de buren
+(24,42) W->m  oud gezicht weg, lijftint van de buren
+(22,44) W->m  oud gezicht weg, lijftint van de buren
+(24,44) H->m  oud gezicht weg, lijftint van de buren
+(25,43) W->b  oud gezicht weg, lijftint van de buren
+(20,42) W->m  oud gezicht weg, lijftint van de buren
+(21,43) W->m  oud gezicht weg, lijftint van de buren
+(23,42) H->m  oud gezicht weg, lijftint van de buren
+(27,42) W->m  oud gezicht weg, lijftint van de buren
+(25,42) W->m  oud gezicht weg, lijftint van de buren
+(23,44) W->m  oud gezicht weg, lijftint van de buren
+(19,42) H->m  oud gezicht weg, lijftint van de buren
+(21,42) W->m  oud gezicht weg, lijftint van de buren
+(22,43) W->m  oud gezicht weg, lijftint van de buren
+(24,43) W->l  oud gezicht weg, lijftint van de buren
+(26,42) W->m  oud gezicht weg, lijftint van de buren
+(20,43) W->m  oud gezicht weg, lijftint van de buren
+(22,42) W->m  oud gezicht weg, lijftint van de buren
+(23,43) H->m  oud gezicht weg, lijftint van de buren
+(13,31) m->b  Gengar linkeroog (18,28) idx d
+(14,31) m->E  Gengar linkeroog (19,28) idx 6
+(15,31) m->a  Gengar linkeroog (20,28) idx e
+(16,31) m->b  Gengar linkeroog (21,28) idx d
+(13,32) m->b  Gengar linkeroog (18,29) idx d
+(14,32) m->E  Gengar linkeroog (19,29) idx 6
+(15,32) m->R  Gengar linkeroog (20,29) idx 5
+(16,32) m->K  Gengar linkeroog (21,29) idx f
+(17,32) m->a  Gengar linkeroog (22,29) idx e
+(14,33) m->E  Gengar linkeroog (19,30) idx 6
+(15,33) m->R  Gengar linkeroog (20,30) idx 5
+(16,33) m->K  Gengar linkeroog (21,30) idx f
+(17,33) m->E  Gengar linkeroog (22,30) idx 6
+(18,33) m->a  Gengar linkeroog (23,30) idx e
+(14,34) m->b  Gengar linkeroog (19,31) idx d
+(15,34) m->R  Gengar linkeroog (20,31) idx 5
+(16,34) m->R  Gengar linkeroog (21,31) idx 5
+(17,34) m->R  Gengar linkeroog (22,31) idx 5
+(18,34) m->b  Gengar linkeroog (23,31) idx d
+(15,35) m->b  Gengar linkeroog (20,32) idx d
+(16,35) m->E  Gengar linkeroog (21,32) idx 6
+(17,35) m->b  Gengar linkeroog (22,32) idx d
+(28,29) m->a  Gengar rechteroog (33,26) idx e
+(29,29) m->E  Gengar rechteroog (34,26) idx 6
+(30,29) b->E  Gengar rechteroog (35,26) idx 6
+(26,30) m->b  Gengar rechteroog (31,27) idx d
+(27,30) m->a  Gengar rechteroog (32,27) idx e
+(28,30) m->R  Gengar rechteroog (33,27) idx 5
+(29,30) m->E  Gengar rechteroog (34,27) idx 6
+(30,30) m->E  Gengar rechteroog (35,27) idx 6
+(31,30) m->b  Gengar rechteroog (36,27) idx d
+(25,31) m->K  Gengar rechteroog (30,28) idx f
+(26,31) m->K  Gengar rechteroog (31,28) idx f
+(27,31) m->R  Gengar rechteroog (32,28) idx 5
+(28,31) m->R  Gengar rechteroog (33,28) idx 5
+(29,31) m->R  Gengar rechteroog (34,28) idx 5
+(30,31) m->E  Gengar rechteroog (35,28) idx 6
+(31,31) m->b  Gengar rechteroog (36,28) idx d
+(24,32) m->a  Gengar rechteroog (29,29) idx e
+(25,32) m->E  Gengar rechteroog (30,29) idx 6
+(26,32) m->K  Gengar rechteroog (31,29) idx f
+(27,32) m->R  Gengar rechteroog (32,29) idx 5
+(28,32) m->R  Gengar rechteroog (33,29) idx 5
+(29,32) m->R  Gengar rechteroog (34,29) idx 5
+(30,32) m->E  Gengar rechteroog (35,29) idx 6
+(31,32) m->b  Gengar rechteroog (36,29) idx d
+(24,33) m->b  Gengar rechteroog (29,30) idx d
+(25,33) m->R  Gengar rechteroog (30,30) idx 5
+(26,33) m->R  Gengar rechteroog (31,30) idx 5
+(27,33) m->R  Gengar rechteroog (32,30) idx 5
+(28,33) m->R  Gengar rechteroog (33,30) idx 5
+(29,33) m->E  Gengar rechteroog (34,30) idx 6
+(30,33) m->b  Gengar rechteroog (35,30) idx d
+(25,34) m->b  Gengar rechteroog (30,31) idx d
+(26,34) m->E  Gengar rechteroog (31,31) idx 6
+(27,34) m->E  Gengar rechteroog (32,31) idx 6
+(28,34) m->E  Gengar rechteroog (33,31) idx 6
+(29,34) m->b  Gengar rechteroog (34,31) idx d
+(30,38) m->a  Gengar grijns (35,32) idx e
+(31,38) m->a  Gengar grijns (36,32) idx e
+(32,38) l->H  Gengar grijns (37,32) idx 7
+(33,38) l->K  Gengar grijns (38,32) idx f
+(13,39) l->a  Gengar grijns (18,33) idx e
+(14,39) l->a  Gengar grijns (19,33) idx e
+(28,39) m->a  Gengar grijns (33,33) idx e
+(29,39) m->a  Gengar grijns (34,33) idx e
+(30,39) m->H  Gengar grijns (35,33) idx 7
+(31,39) m->W  Gengar grijns (36,33) idx 1
+(32,39) l->W  Gengar grijns (37,33) idx 1
+(33,39) l->K  Gengar grijns (38,33) idx f
+(13,40) l->b  Gengar grijns (18,34) idx d
+(14,40) l->H  Gengar grijns (19,34) idx 7
+(15,40) m->a  Gengar grijns (20,34) idx e
+(16,40) m->a  Gengar grijns (21,34) idx e
+(25,40) m->a  Gengar grijns (30,34) idx e
+(26,40) m->a  Gengar grijns (31,34) idx e
+(27,40) m->a  Gengar grijns (32,34) idx e
+(28,40) m->G  Gengar grijns (33,34) idx 3
+(29,40) m->W  Gengar grijns (34,34) idx 1
+(30,40) m->W  Gengar grijns (35,34) idx 1
+(31,40) m->W  Gengar grijns (36,34) idx 1
+(32,40) l->K  Gengar grijns (37,34) idx f
+(14,41) m->b  Gengar grijns (19,35) idx d
+(15,41) m->W  Gengar grijns (20,35) idx 1
+(16,41) m->G  Gengar grijns (21,35) idx 3
+(17,41) m->a  Gengar grijns (22,35) idx e
+(18,41) m->a  Gengar grijns (23,35) idx e
+(19,41) m->a  Gengar grijns (24,35) idx e
+(20,41) m->a  Gengar grijns (25,35) idx e
+(21,41) m->a  Gengar grijns (26,35) idx e
+(22,41) m->a  Gengar grijns (27,35) idx e
+(23,41) m->a  Gengar grijns (28,35) idx e
+(24,41) m->a  Gengar grijns (29,35) idx e
+(25,41) m->H  Gengar grijns (30,35) idx 7
+(26,41) m->W  Gengar grijns (31,35) idx 1
+(27,41) m->W  Gengar grijns (32,35) idx 1
+(28,41) m->G  Gengar grijns (33,35) idx 3
+(29,41) m->W  Gengar grijns (34,35) idx 1
+(30,41) m->W  Gengar grijns (35,35) idx 1
+(31,41) l->W  Gengar grijns (36,35) idx 1
+(32,41) l->K  Gengar grijns (37,35) idx f
+(14,42) l->b  Gengar grijns (19,36) idx d
+(15,42) l->W  Gengar grijns (20,36) idx 1
+(16,42) l->G  Gengar grijns (21,36) idx 3
+(17,42) l->W  Gengar grijns (22,36) idx 1
+(18,42) l->W  Gengar grijns (23,36) idx 1
+(19,42) m->G  Gengar grijns (24,36) idx 3
+(20,42) m->W  Gengar grijns (25,36) idx 1
+(21,42) m->W  Gengar grijns (26,36) idx 1
+(22,42) m->W  Gengar grijns (27,36) idx 1
+(23,42) m->W  Gengar grijns (28,36) idx 1
+(24,42) m->G  Gengar grijns (29,36) idx 3
+(25,42) m->W  Gengar grijns (30,36) idx 1
+(26,42) m->W  Gengar grijns (31,36) idx 1
+(27,42) m->W  Gengar grijns (32,36) idx 1
+(28,42) l->H  Gengar grijns (33,36) idx 7
+(29,42) l->H  Gengar grijns (34,36) idx 2
+(30,42) l->W  Gengar grijns (35,36) idx 1
+(31,42) l->K  Gengar grijns (36,36) idx f
+(15,43) l->b  Gengar grijns (20,37) idx d
+(16,43) l->G  Gengar grijns (21,37) idx 3
+(17,43) l->W  Gengar grijns (22,37) idx 1
+(18,43) l->W  Gengar grijns (23,37) idx 1
+(19,43) l->H  Gengar grijns (24,37) idx 7
+(20,43) m->H  Gengar grijns (25,37) idx 2
+(21,43) m->W  Gengar grijns (26,37) idx 1
+(22,43) m->W  Gengar grijns (27,37) idx 1
+(23,43) m->W  Gengar grijns (28,37) idx 1
+(24,43) l->H  Gengar grijns (29,37) idx 7
+(25,43) b->H  Gengar grijns (30,37) idx 2
+(26,43) b->W  Gengar grijns (31,37) idx 1
+(27,43) b->W  Gengar grijns (32,37) idx 1
+(28,43) b->W  Gengar grijns (33,37) idx 1
+(29,43) l->G  Gengar grijns (34,37) idx 3
+(30,43) l->K  Gengar grijns (35,37) idx f
+(16,44) l->a  Gengar grijns (21,38) idx e
+(17,44) l->W  Gengar grijns (22,38) idx 1
+(18,44) l->W  Gengar grijns (23,38) idx 1
+(19,44) m->W  Gengar grijns (24,38) idx 1
+(20,44) m->G  Gengar grijns (25,38) idx 3
+(21,44) m->W  Gengar grijns (26,38) idx 1
+(22,44) m->W  Gengar grijns (27,38) idx 1
+(23,44) m->W  Gengar grijns (28,38) idx 1
+(24,44) m->W  Gengar grijns (29,38) idx 1
+(25,44) l->G  Gengar grijns (30,38) idx 3
+(26,44) b->W  Gengar grijns (31,38) idx 1
+(27,44) b->W  Gengar grijns (32,38) idx 1
+(28,44) b->a  Gengar grijns (33,38) idx e
+(29,44) b->a  Gengar grijns (34,38) idx e
+(17,45) l->a  Gengar grijns (22,39) idx e
+(18,45) l->a  Gengar grijns (23,39) idx e
+(19,45) m->W  Gengar grijns (24,39) idx 1
+(20,45) m->G  Gengar grijns (25,39) idx 3
+(21,45) m->W  Gengar grijns (26,39) idx 1
+(22,45) m->W  Gengar grijns (27,39) idx 1
+(23,45) m->W  Gengar grijns (28,39) idx 1
+(24,45) m->W  Gengar grijns (29,39) idx 1
+(25,45) l->G  Gengar grijns (30,39) idx 3
+(26,45) l->a  Gengar grijns (31,39) idx e
+(27,45) b->a  Gengar grijns (32,39) idx e
+(19,46) m->a  Gengar grijns (24,40) idx e
+(20,46) m->a  Gengar grijns (25,40) idx e
+(21,46) m->a  Gengar grijns (26,40) idx e
+(22,46) m->a  Gengar grijns (27,40) idx e
+(23,46) m->a  Gengar grijns (28,40) idx e
+(24,46) m->a  Gengar grijns (29,40) idx e
+(25,46) l->a  Gengar grijns (30,40) idx e

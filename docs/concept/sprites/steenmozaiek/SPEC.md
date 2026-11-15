@@ -41,3 +41,4 @@ Werkwijze: `docs/lessen/GEMINI.md` + `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-m
 - Kleuren (Jordi, 15 nov): "beide kleuren goed, dus links is het origineel en rechts wordt de shiny" → greige = normaal, grijs = shiny.
 - Kop (Jordi, 15 nov): "nee ik bedoel een halve cirkel naast het oog, zoals op het beeld in de bron foto" (geen hele cirkel).
 - Kleuren aanvulling (Jordi, 15 nov, letterlijk): "of ja 1 van de andere 7 kleuren, misschien dat we de shiny kristal maken, maar behoud beide kleuren". Beide tinten (greige, grijs) bewaren in `welp/c*/`; shiny/kleurvarianten komen pas in de latere fase voor alle soorten.
+- Formaat (15 nov): welp 1244 px (50×45), vergelijkbaar met Hippopotas 1197 / Drilbur 1240; volwassen vorm 1552 px (1,25×). Jordi: "prima, zo behouden".

@@ -1420,3 +1420,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gengas v4: lichtvlekkern terug (selout r samengevoegd met m, gemeten goedkoopste ruil). `sprite_v4/`.
 - Gengas v5: gezicht ligt op het oppervlak (geen schaduwkom: dunne lijn, witte tanden, lijftint eromheen), linkeroog naar Gengars oogvorm. `sprite_v5/`.
 - Gengas v6: ogen en grijns Gengars Gen 3-pixels 1-op-1, geïntegreerd (band in de gezichtszone lichter, geen kom). `sprite_v6/`.
+- Gengas v7: Gengar-gezicht als één blok op de r3-plek (afstand oog–grijns exact Gengar), bandrand rond, losse pixels weg. `sprite_v7/`.

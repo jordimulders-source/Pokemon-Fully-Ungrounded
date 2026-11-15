@@ -1645,3 +1645,16 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.399] - Hauntflare: frontsprite af
 - Eindkeuring v17 → v18 PASS; `sprites/hauntflare/af/hauntflare.png`, op het overzichtsvel. POKEMON.md, Stand van zaken en les in GEMINI.md bijgewerkt.
+### [v0.0.400] - Steenmozaïek-jaguar: welp-prompts met eigen patroon
+- Jordi: de welp geen kleinere mozaïekversie, "een ander leuk patroon met een idee erachter". Twee Gemini-prompts (Jordi: "1 en 2 wil ik allebei proberen"): A ruwe luipaardjaspis (welp = ruw materiaal, wordt bij evolutie geslepen en ingelegd), B ingekerfd Chavín-reliëf (gegraveerd → ingelegd). `steenmozaiek/gemini/README.md`, prompt v3.
+- Bijgewerkt (Jordi: "gewoon alleen onze sprite"): beide prompts met één bijlage, `af/steenjaguar.png`; welp, jaspis en Chavín in woorden.
+- Welp ronde 1: B (Chavín) het beste van de twee; ronde-2-prompt (zittend, speels, poot likken; patroon groter/overdrevener; hoekiger lijf; oog minder chibi). `fase1B_ronde1.png`.
+### [v0.0.401] - Steenjaguar-welp: sprite basis gekeurd (zonder spiraalronde)
+- Model: Gemini ronde 3 (Chavín, zittend, poot likkend). r1 hertekend en afgekeurd; vanaf r2 model overgenomen (natief raster → 50×45). Jordi's punten: rug smooth, heup A, oog 1 px links, geen bolle schaduw, volume en gezicht uit het model, verre oog zoals Gen 3.
+- r6–r11 met verse keurders per ronde; r11 basis PASS na neuspunt. Spiralen volgen in een aparte ronde. `docs/concept/sprites/steenmozaiek/welp/r11/`.
+- Patroonronde (Jordi: "het moet meer een patroon op het lichaam gaan worden ... echt inkleuren en het lichaam moet niet veranderen erdoor"): spiralen als ingekleurde vlakken die de facetten volgen (p1–p4, keurder per ronde; p4 = keuring p3 toegepast). `welp/p4/welp_p4.png`, naar Jordi.
+- Jordi's vier punten op p4 (tong los van de poot, lila rugband, voorhoofdspatroon, staartring), alleen met kleur, schaduw en lijnen: p5–p8, keurder per ronde; p8 = keuring p7 toegepast. `welp/p8/welp_p8.png`, naar Jordi.
+### [v0.0.402] - Steenjaguar-welp: Chavín-inkleuring (gehouwen steen)
+- Jordi (foto Chavín-jaguarbeeld): "Hij moet er eigenlijk uitzien alsof die uit steen gecarved is", "het steengevoel vind ik het belangrijkste", kleur mag ("vind het nu teveel een huisdier"), koplijnen om de ogen + 2 naar de kruin, "let op schaduwen". Silhouet en vorm gelijk aan p8.
+- c1–c5 met keurder per ronde: lichte steen (greige én grijs), kerven met lichte lip, grote voluten op schouder en dij, pootbanden; de oogbogen bevroren na Jordi's "prima". `welp/c5/welp_c5.png` + `_grijs`, naar Jordi.
+- Halve cirkel naast het oog (c10 variant 1), eindkeuring Dragonfly Cave + Gen 3: PASS na 5 randpixels + mondhoek. **Af:** `docs/concept/sprites/steenmozaiek/af/welp.png` (+ `_8x`, `welp_grijs.png`, `welp_normal.pal`, eindkeuring). Op het overzichtsvel.

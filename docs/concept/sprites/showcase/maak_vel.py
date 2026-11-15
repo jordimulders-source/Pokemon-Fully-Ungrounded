@@ -40,6 +40,7 @@ items=[
 ("sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png",'Sneeuwbolslak fase 2',"ice"),
 ("hauntflare/af/hauntflare.png",'"Hauntflare"',"cosmic/poison"),
 ("gengas/af/gengas.png",'"Gengas"',"cosmic/poison"),
+("steenmozaiek/af/welp.png",'Steenjaguar-welp',"rock"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

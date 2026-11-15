@@ -28,5 +28,17 @@ Werkwijze: `docs/lessen/GEMINI.md` + `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-m
 - **`af/steenjaguar.png`** (+ `steenjaguar_8x.png`, `normal.pal`, eindkeuring). Fase 2 (eindvorm), pure Rock, 60×48, 15 kleuren + transparant. Rondes: r1–r2 (maker, 2×-reductie van het Gemini-raster), r3 (shading), r4 (oog en buik met Jordi, selout).
 
 ## Open
-- Fase 1 (welp): Gemini-prompt staat klaar in `gemini/README.md` (bijlagen: foto + `af/steenjaguar.png` of het model).
+- Fase 1 (welp): eigen patroon, geen kleinere mozaïek (Jordi, 15 nov); twee Gemini-prompts (A ruwe luipaardjaspis, B Chavín-reliëf) in `gemini/README.md` → "prompt v3".
 - Naam, formaat per fase (pas bij het silhouet), welk Gemini-model gekozen wordt.
+
+## Fase 1 (welp)
+- Jordi (15 nov, letterlijk): "Ik wil daar niet een kleinere versie van maken, hij moet er wat anders uit zien en ook een ander soort patroon hebben. Liever niet dezelfde mozaiek stijl, maar een ander leuk patroon met een idee erachter" · "het wordt een soort cub". Gekozen idee: **B, ingekerfd Chavín-reliëf** (welp = gegraveerde steen, bij de evolutie ingelegd tot mozaïek). Pose: zittend, speels, likt zijn poot (Jordi).
+- **Model:** `referenties/model_welp_gekozen.png` (= `gemini/fase1B_ronde3.png`, Gemini-rondes in `gemini/README.md`).
+- **Toegestane afwijking (Jordi, 15 nov, letterlijk):** "kan jij dan versie 1 nog wat meer belijning en spiralen geven? Denk het wel he. Dat je de huidige wat groter maakt en het lichaam wat meer bedekt. dat gaan we in de sprite doen, dus niet eerst een nieuw model bouwen". Alles daarbuiten volgt het model.
+- Sprite: `welp/` (rondes `welp/rN/`).
+- **Chavín-inkleuring (Jordi, 15 nov, letterlijk):** "zoiets als op deze foto bedoelde je dan? Kan je de inkleuring niet opnieuw doen, op het gebied van chavin de huantar, zoals jij het in gedachten hebt? Want ik vind nu ook het hele rock patroon niet goed te zien, houd het silhouet en de vorm verder hetzelfde". Foto: `referenties/chavin_jaguar_beeld_jordi.png` (stenen jaguarbeeld bij Chavín de Huántar, het hele lijf bedekt met gegraveerde voluten in panelen). Ronde: `welp/c1/`.
+- Koplijnen: Jordi (15 nov): "A heeft de lijnen die ik wil" (c6/c7 variant a: wenkbrauwvoluut + boog verre oog + middenlijn naar de kruin) → bevroren.
+- Kleuren (Jordi, 15 nov): "beide kleuren goed, dus links is het origineel en rechts wordt de shiny" → greige = normaal, grijs = shiny.
+- Kop (Jordi, 15 nov): "nee ik bedoel een halve cirkel naast het oog, zoals op het beeld in de bron foto" (geen hele cirkel).
+- Kleuren aanvulling (Jordi, 15 nov, letterlijk): "of ja 1 van de andere 7 kleuren, misschien dat we de shiny kristal maken, maar behoud beide kleuren". Beide tinten (greige, grijs) bewaren in `welp/c*/`; shiny/kleurvarianten komen pas in de latere fase voor alle soorten.
+- Formaat (15 nov): welp 1244 px (50×45), vergelijkbaar met Hippopotas 1197 / Drilbur 1240; volwassen vorm 1552 px (1,25×). Jordi: "prima, zo behouden".

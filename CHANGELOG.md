@@ -1497,3 +1497,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.363] - Abra-regional: zachtere ogen (r10 A/B)
 - Jordi: "de ogen zijn nog wel wat hard met dat pure zwart, kan die iets zachter qua kleur?". `kleur_r10/maak_r10.py`: A = oogkern in de lijnkleur (60,54,80); B = nieuwe tussentint (36,32,52). Beide ook op de curve-variant. `kleur_r10/ogen.png`.
+
+### [v0.0.364] - Abra-regional: frontsprite af
+- Jordi: "A is mooi, commit en push naar main". `abra_regional/af/abra_regional.png` (+ `_8x`) = r10 A (r9 met de oogkern in de lijnkleur). Variant met lichte curven blijft in `kleur_r10/abra_r10_curve_A.png`.
+- Op het overzichtsvel als "Abra (regional)", Dark (32 sprites). Stand van zaken, POKEMON.md en les (GEMINI.md) bijgewerkt. De charlatan-lijn (Abra, Kadabra, Alakazam) heeft nu alle frontsprites.

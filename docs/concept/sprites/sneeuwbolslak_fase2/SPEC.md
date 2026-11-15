@@ -31,3 +31,4 @@ Lijn: sneeuwbolslak (fase 1, `sneeuwbolslak/`) → fase 2 → komeet (fase 3, Ic
 - Jordi op de af-versie r8C: "de mond is ook niet goed gelukt, is nu gewoon 3 pixels diagonaal op een willekeurige plek" → r9: mondlijn naar het model.
 - Jordi: "en de sneeuwvlokken zijn prima maar het is nog te weinig sneeuwstorm in de bal" → r9: plusvlokken blijven, storm sterker.
 - Jordi op mondvarianten r10: "a is wel prima" → **af = r10A** (storm r9 + mond A in d). `af/sneeuwbolslak_fase2.png` + `_8x.png`, raster `sprite/maker/raster_af.txt`.
+- Strenge eindkeuring op de af-versie (`sprite/keuring/EINDKEURING_af.md`): PASS met 1 MOET-pixel, (22,39) c→a, door Claude toegepast.

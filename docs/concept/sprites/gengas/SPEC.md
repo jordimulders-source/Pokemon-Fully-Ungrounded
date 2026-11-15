@@ -10,5 +10,6 @@ Eindvorm van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Cosmi
 ## Basis (besloten)
 - Verschijnsel: bruine dwerg (Claude, door Jordi gekozen via de naam Gengas en de lijn in `POKEMON.md`).
 
-## Ontwerp (open, voorstellen Claude; nog niets gekozen)
-Zie het antwoord van 15 nov / `IDEEEN.md`. Werkwijze: Gemini-model van Jordi → `SPRITE_WERKWIJZE.md` "Gemini-model namaken".
+## Ontwerp
+- 15 nov: "oren mogen van gas, schrijf de prompt maar" (na de tabel van Claude: ogen en mond exact Gengar; bol gas met wolkenbanden; vier losse ledematen als manen (Jordi); voorstellen Claude: magenta-paars met banden, oren als gaslussen, geen rugstekels, stompe ledematen met kratertextuur, dunne methaanband (in de prompt weggelaten: GEMINI.md verbiedt gloed/effecten)).
+- Prompt: `gemini/PROMPT_r1.md`. Werkwijze: Gemini-model van Jordi → `SPRITE_WERKWIJZE.md` "Gemini-model namaken".

@@ -1421,3 +1421,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gengas v5: gezicht ligt op het oppervlak (geen schaduwkom: dunne lijn, witte tanden, lijftint eromheen), linkeroog naar Gengars oogvorm. `sprite_v5/`.
 - Gengas v6: ogen en grijns Gengars Gen 3-pixels 1-op-1, geïntegreerd (band in de gezichtszone lichter, geen kom). `sprite_v6/`.
 - Gengas v7: Gengar-gezicht als één blok op de r3-plek (afstand oog–grijns exact Gengar), bandrand rond, losse pixels weg. `sprite_v7/`.
+- Gengas v8a/v8b: bandenpatroon loopt weer door het gezicht (a: band door de ogen zoals het model; b: band als strook boven de ogen), krul afgerond, tandlijn exact Gengar. Claude kiest v8b. `sprite_v8/`.

@@ -1565,3 +1565,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gengas v11: geen stormvlek (bandenpatroon loopt door), gezicht 125% (Gengar per kleurlaag vloeiend geschaald, 17 pixels nagelopen tegen Gengar). `sprite_v11/`.
 - Gengas v13: eindkeuring (schaduw, belijning, kleur, Gen 3, Dragonfly Cave) uitgevoerd: 44 pixels, palet ongewijzigd. Eindkandidaat. `sprite_v13/`.
 - **Gengas: frontsprite af** (Jordi: "tof"): v13 → `docs/concept/sprites/gengas/af/gengas.png` (+ `_8x`), op het overzichtsvel (Cosmic/Poison). Stand van zaken bijgewerkt.
+
+### [v0.0.374] - Hauntflare: Gemini-prompt
+- Start Hauntflare (middenfase Dustly → Hauntflare → Gengas): `docs/concept/sprites/hauntflare/SPEC.md`.
+- Gemini-prompt r1 (`sprites/hauntflare/gemini/PROMPT_r1.md`): protoster met stofschijf, bovenste jet = puntige kop, onderste jet = staart, handen = losse Herbig-Haro-knopen; ogen en grijns exact Haunter. Bijlage `referenties/haunter_gen3_8x.png`.

@@ -43,6 +43,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Jordi (15 nov):** "of juist meer zoals cuphead" (plaat van de Phantom Express); prompt v6 variant C.
   - **Jordi (15 nov):** "dit is conceptueel ook geinig" (fan-design Locoalmotiv: wezen kijkt uit de voorkant van de loc); prompt v6 variant D.
   - **Jordi (15 nov):** "of deze" (fan-lijn Summer and Winter: monocycle → cartank → gastraen, Steel/Dragon; het gaswezen zit binnenin en kijkt door de voorkant).
+  - **Jordi (15 nov), na ronde 5:** "ja dit is ook weer stom, een trein met een geest erin, dat is niet een pokemon" / "de wielen mogen best onderdeel van de geest zijn, alsof de trein alleen gepowered wordt door een geest".
 - **Pseudo-legendary draak: pitahaya-geïnspireerd** (Jordi, 9 nov). Eerder: FAKEMON_PITCH #36 (pitahaya, Grass/Dragon) en "Dragonfruit (Dragon)" in de lijst van 29 okt; Tropius is in de repo al Grass/Dragon; **de pseudo-draak deelt waarschijnlijk die typing** (Jordi, 9 nov: "maakt niet uit dat meerdere pokemon dezelfde typing hebben").
 - **Sneeuwbol-Pokémon** (Jordi, 9 nov: "ben ik wel van overtuigd dus dat gaan we sowieso doen"; FAKEMON_PITCH #85, voorstel Ice/Psychic; hoe precies bedenken we nog, Jordi 9 nov).
   - **Idee Jordi (13 nov):** "ik zat te denken aan een pokemon lijn die begint als snow globe en daarna cosmic wordt". Nog open: aantal fases, typing per fase, hoe de evolutie eruitziet.

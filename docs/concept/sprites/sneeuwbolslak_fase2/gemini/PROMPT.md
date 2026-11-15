@@ -249,3 +249,24 @@ Better. Redraw it with these changes, keep everything else:
 5. It must clearly be caught in the middle of a transformation: the ice is visibly spreading over the globe and the body, some parts already solid ice, other parts not yet.
 Same format: 64x64 Gen 3 front sprite, three-quarter view facing left, max 16 colors, 1 px dark outline, plain white background, no floor or shadow, no galaxy or stars.
 ```
+
+## Ronde 7 (15 nov)
+- `r7_gemini.png` (bijstuurprompt v5b, groene achtergrond). Jordi: "ik ben tevreden met dit concept, maar dit vertaalt nog niet naar een sprite denk ik, ik heb deze gevraagd aan gemini meer een sprite te maken, maar dat lukt hem niet, heb jij nog een prompt suggestie"
+- Meting Claude: pixelmaat ± 10 px → natief ± 83×60, te groot voor 64×64 (fase 1 was 63×51 en moest ook naar 46). Ruis: bol van binnen verfrommeld, staart vol kleine kristalfacetten, barstlijnen over het hele lijf.
+
+# Prompt v6 (15 nov): vereenvoudigen, nieuw gesprek met r7 als bijlage
+
+```
+Attachment 1 is the design of an original Pokémon. The design is final. Redraw it as a real official Gen 3 front sprite (Ruby/Sapphire/Emerald), as if Game Freak had to fit it into a 64x64 sprite with 16 colors.
+
+KEEP: the pose, the silhouette, the proportions, the colors, the frozen snow globe with cracks and the red base ring, the crawling icy body with the side flap, the eye, the crystal tail.
+
+SIMPLIFY (this is the only change):
+- The whole creature about 56 pixels wide, every pixel visible as a clear square.
+- Max 16 colors in total, one dark outline color.
+- Inside the globe: 3 or 4 big white swirls and a few single snow pixels, not crumpled texture.
+- Cracks: max 3 on the globe, max 2 on the body, each 1 px wide.
+- Tail: 4 or 5 big crystal points instead of many small facets.
+- Flat shading, 3 to 4 tones per color, no dithering, no noise, no texture.
+- Plain white background, no floor or shadow, one single creature.
+```

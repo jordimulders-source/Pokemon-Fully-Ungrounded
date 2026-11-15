@@ -85,3 +85,42 @@ AVOID
 - Not a smooth ball, not a ghost, not a fish (no fins). No stars or star shapes anywhere.
 - No glossy 3D render.
 ```
+
+## Na v2 (15 nov), vóór Jordi hem draaide
+- Jordi: "en het is nog niet cosmic genoeg". Voorstellen Claude: ruimtekleuren (indigo/violet in de diepe delen), echte komeetstaart van ijsdamp/gas, ruimte met nevel in doorzichtige plekken van het ijs, ogen die koud oplichten. Jordi: "allemaal wel goede suggesties, qua ogen kan je kijken naar oa minior, lunatone en solrock, dat zijn ook niet blije lachende stenen".
+- Ogenstudie (repo-sprites): Lunatone: één oog diep in een donkere kas, rode iris met donkere ring; Solrock: ogen verzonken in de steen, gekleurde ring met rode pupil; Minior-kern: grote bleke oplichtende ogen zonder pupil. Alle drie: geen mond, geen wenkbrauwen of oogleden, het oog zit ín het gesteente. `ogen_studie.png`.
+
+# Prompt v3 (15 nov): nieuw gesprek, geen bijlage (vervangt v2)
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT
+- The final stage of an Ice/Cosmic line. The earlier stages were a snail whose shell was a snow globe. Inside that globe a core of ice grew, until it burst out through the cracks of the globe. This Pokémon IS that core: it broke free, and by doing so it evolved into a living comet from deep space.
+- The body itself is whole and unbroken: no cracks, no holes, no broken glass on it. It is a solid, lumpy sphere of rough ice with jagged ice growths sticking out all over it.
+- Shape: elongated like a real comet nucleus, the round lumpy core at the front stretching back into a long, rough tail of ice. Think of the comet "The Interloper" from the game Outer Wilds: an elongated icy body covered in irregular ice spikes and columns. Only the shape, no dark core.
+
+COSMIC
+- Space-frozen colors: pale icy blue-white on the lit surfaces, turning into deep indigo and violet in the shadows, the hollows and towards the tail, as if the ice froze in the darkness of space.
+- A few translucent patches in the ice show deep space inside: dark indigo with a soft violet nebula. Only nebula clouds, no star shapes.
+- Behind the ice tail, a real comet tail: a thin, pale trail of icy vapor and gas streaming back, attached to the body. This is the only soft, glowing part.
+
+DESIGN
+- Grotesque and alien, not cute. Irregular, asymmetric ice protrusions of different sizes all over the body (thick columns, crooked spikes, shards), as if the ice keeps growing out of it.
+- Face: only two eyes, set deep into the ice like the eyes of Lunatone, Solrock and Minior's core: each eye sits in a dark socket in the ice and glows with a cold light (pale cyan or violet), unblinking, no eyelids, no eyebrows. NO mouth. The face must not look friendly, angry or cartoonish: like an ancient object from space that is watching you.
+- Light from top left.
+
+POSE
+- Three-quarter view facing left, the core at the front-left and the tail streaming back to the top right, as if it is flying through space.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, a final stage that fills most of the canvas, max 16 colors, 1 px dark outline, clean flat shading like official Game Freak Gen 3 sprites. No dithering.
+- Compact composition: the tails stay inside the square, protrusions close to the body.
+- Plain white background. NO separate stars, sparkles, aura, particles, motion lines, floor or shadow. One single creature, no extra views.
+
+AVOID
+- No cracks or fractures on the body, no broken shell, no glass.
+- No mouth, no frown, no smile, no cheeks, no cute round cartoon eyes with a white shine dot. Not a children's cartoon, not a Kirby or Mario enemy, not a mascot.
+- Not a smooth ball, not a ghost, not a fish (no fins). No star shapes anywhere, on or inside the body.
+- No glossy 3D render.
+```

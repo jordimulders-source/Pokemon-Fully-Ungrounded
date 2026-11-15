@@ -1514,3 +1514,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.367] - IJskomeet: Gemini-prompt v2
 - Ronde 2 afgekeurd (Jordi: ogen en mond te "kiddy"; "deze pokemon is de kern die uit de barst gekomen is en daardoor evolved is"). Prompt v2: de Pokémon is de ontsnapte kern, heel lijf zonder barsten, alleen smalle koude ogen, geen mond. `ijskomeet/gemini/PROMPT.md`, `r2_afgekeurd.png`.
+
+### [v0.0.368] - IJskomeet: Gemini-prompt v3 (meer cosmic)
+- Jordi: "nog niet cosmic genoeg"; alle vier voorstellen goed, ogen naar Minior, Lunatone en Solrock. v3: indigo/violet in de schaduwen, nevel in doorzichtige plekken, gasstaart achter de ijsstaart, ogen verzonken in donkere kassen die koud oplichten, geen mond. Ogenstudie `ijskomeet/gemini/ogen_studie.png`.

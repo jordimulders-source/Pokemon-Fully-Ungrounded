@@ -1495,3 +1495,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: de welp geen kleinere mozaïekversie, "een ander leuk patroon met een idee erachter". Twee Gemini-prompts (Jordi: "1 en 2 wil ik allebei proberen"): A ruwe luipaardjaspis (welp = ruw materiaal, wordt bij evolutie geslepen en ingelegd), B ingekerfd Chavín-reliëf (gegraveerd → ingelegd). `steenmozaiek/gemini/README.md`, prompt v3.
 - Bijgewerkt (Jordi: "gewoon alleen onze sprite"): beide prompts met één bijlage, `af/steenjaguar.png`; welp, jaspis en Chavín in woorden.
 - Welp ronde 1: B (Chavín) het beste van de twee; ronde-2-prompt (zittend, speels, poot likken; patroon groter/overdrevener; hoekiger lijf; oog minder chibi). `fase1B_ronde1.png`.
+### [v0.0.363] - Steenjaguar-welp: sprite basis gekeurd (zonder spiraalronde)
+- Model: Gemini ronde 3 (Chavín, zittend, poot likkend). r1 hertekend en afgekeurd; vanaf r2 model overgenomen (natief raster → 50×45). Jordi's punten: rug smooth, heup A, oog 1 px links, geen bolle schaduw, volume en gezicht uit het model, verre oog zoals Gen 3.
+- r6–r11 met verse keurders per ronde; r11 basis PASS na neuspunt. Spiralen volgen in een aparte ronde. `docs/concept/sprites/steenmozaiek/welp/r11/`.

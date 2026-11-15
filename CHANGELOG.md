@@ -1507,3 +1507,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini: 5 rondes voor fase 2 (tijger met patroon → te buff → illustratie → chibi → gekozen; grotere staart is Jordi's eigen bijsturing). Extra wangoog weggehaald.
 - Sprite: Gemini-raster teruggehaald (120×95) en 2× verkleind, alle mozaïekstukken behouden (Jordi's keuze); shading met licht linksboven; oog naar Jordi's pixelaanwijzingen; buikschaduw gecorrigeerd; gekleurde selout aan de lichtkant (Jordi: "ja rechts is echt beter"). Eindkeuring DFC: PASS.
 - `docs/concept/sprites/steenmozaiek/af/steenjaguar.png`; op het overzichtsvel (nog zonder naam). Fase 1 (welp) volgt.
+
+### [v0.0.366] - IJskomeet (fase 3 sneeuwbolslak-lijn): nieuwe Gemini-prompt
+- Jordi keurde de eerste twee plaatjes af ("lijken net kirby en mario vijandjes"): moet een bol met ijsuiteinden zijn, kern geëxplodeerd, grotesker, ijsstulpsels overal (Interloper), geen lachgezichtje, wel ogen.
+- Nieuwe startprompt zonder bijlage: `docs/concept/sprites/ijskomeet/gemini/PROMPT.md`; afgekeurde plaatjes als `r1a/r1b_afgekeurd.png`. Citaat in IDEEEN.md.

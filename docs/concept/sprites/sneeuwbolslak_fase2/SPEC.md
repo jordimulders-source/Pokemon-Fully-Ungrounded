@@ -25,3 +25,4 @@ Lijn: sneeuwbolslak (fase 1, `sneeuwbolslak/`) → fase 2 → komeet (fase 3, Ic
 - Jordi: "het lijkt nu gewoon op een bevroren bol, je ziet niet meer wat er binnenin gebeurt"
 - r5–r7b: keurder → MOET-lijst → maker (r5 kleur cyaan/rood, r6 ring/aansluiting/kopschaduw, r7–r7b bolinhoud: glas met lichte rand, witte krullende storm, Y-barst als enige donkere lijn). Eindkeuring r7b PASS met 8 MOET-pixels (Claude, `sprite/eind.py`).
 - **Af: `af/sneeuwbolslak_fase2.png` + `af/sneeuwbolslak_fase2_8x.png`** (raster `sprite/maker/raster_af.txt`), op het overzichtsvel. Naam open.
+- Jordi op het eindresultaat: "binnenkant bol is nog net niet goed genoeg, wel beter, maar mag nog meer een sneeuwstorm lijken" → r8 met twee varianten (A dichte sneeuwjacht, B plusvlokken zoals fase 1).

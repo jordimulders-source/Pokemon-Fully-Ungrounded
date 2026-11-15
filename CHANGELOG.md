@@ -1462,3 +1462,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.353] - Sneeuwbolslak fase 2: Gemini ronde 1
 - `sneeuwbolslak_fase2/gemini/r1_gemini.png` opgeslagen. Huis is een schuine kegel met blokkenkorst geworden; vraag aan Jordi of de vorm (schuin omhoog vs. plat naar achteren) en de blokjes goed zijn.
+
+### [v0.0.354] - Sneeuwbolslak fase 2: frontsprite af
+- Ontwerp met Jordi via Gemini (rondes r1–r8, `sneeuwbolslak_fase2/gemini/PROMPT.md`): vanaf fase 2 geen slak meer; vorm van een zee-engel (Clione), kruipend, lijf van ijs met kristalstaart; de bol op de rug bevriest en barst, binnenin ontstaat een chaotische sneeuwstorm (in fase 3, de komeet, barst hij helemaal). Model = Gemini r8 met de bol van r7.
+- Sprite (56 px breed, op Jordi's keuze): natief raster → onderlaag → maker; bol als echte cirkel (Jordi: "dat moet echt een bol blijven"); meetscripts `lijnkaart.py`, `recht.py` (rechte lijnstukken), `bewaak.py`. Rondes r1–r7b met twee makers, drie keurders en een eindkeuring (PASS, 8 pixels door Claude).
+- Af: `docs/concept/sprites/sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png` (+ `_8x.png`), op het overzichtsvel. Naam open.

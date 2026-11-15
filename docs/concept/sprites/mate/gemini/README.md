@@ -123,3 +123,23 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64
 
 AVOID: grey skin, a separate barrel or ball on its back, silver straps or belts across the shell, a tortoise or turtle, an armadillo curled into a ball, the bombilla in its mouth, fine detailed patterns, a teacup or teapot ghost (Sinistea/Polteageist look), an object with a face, plush/Neopets look, realistic painting, extra props (thermos, kettle, cup).
 ```
+2. `fase2_E_r2.png` (Jordi stuurde hem zonder commentaar). Claude: alleen het grijs is bruin geworden; schild, riemen en gravures zijn een kopie van r1. A half uitgevoerd (kleur, geen gravures op kop/staart), B niet. Oorzaak: r1 als bijlage + "keep" → Gemini kopieert de draft (zelfde les als GEMINI.md, Octillery-evolutie r4). Ronde 3: dezelfde opdracht zonder de draft als bijlage.
+
+### Prompt E, ronde 3 (nieuw gesprek; bijlagen: alleen foto mate-kalebas + foto driebandgordeldier, GEEN eerdere poging)
+```
+Attached: (1) a photo of a traditional yerba mate gourd with a silver rim and a bombilla, (2) a photo of a southern three-banded armadillo.
+
+Design an original Pokémon: a Grass/Water-type, the fully evolved (second and final) stage of a two-stage line. It is based on yerba mate, the drink shared in Argentina, Uruguay, Paraguay and southern Brazil, combined with a southern three-banded armadillo (Tolypeutes matacus) from the Chaco.
+
+One material: the whole creature is made of cured mate gourd, not an animal carrying a gourd. Its head shield, its tail rings and the scales on its legs are the same brown cured gourd as its shell, with the same bold burned or engraved patterns; only the skin between the plates is a lighter shade of that brown. No grey.
+
+The shell keeps the shape of a real armadillo shell, seen from the side: a domed front shield over the shoulders, three narrow segmented bands in the middle that follow and bend with the body like the real animal's bands, and a domed rear shield over the hips. It is not a round ball or a barrel. Silver appears only as thin rims along the edges of the bands and shields, like the silver trim on a decorated mate, never as straps across the shell. On top of the shell is the opening of the mate with a silver rim (the "virola"), filled with a sloped little mound of green yerba leaves (the "montañita"), and a silver bombilla (a metal drinking straw with a flattened bend and a gold mouthpiece) sticks out of the yerba at an angle, like a little flag. The bombilla is never in its mouth. Anatomy of a real armadillo: head with snout and ears, four short legs with claws, a short tail. As the final stage it looks cured, decorated and silver-trimmed (its pre-evolution will be a raw, green, unripe gourd).
+
+Colours: only the browns of the cured gourd, silver, yerba green and a little gold. Patterns bold and few enough to read at 64x64.
+
+Pose: standing on all four legs, body in 3/4 view facing left, head turned slightly towards the viewer. Compact composition that fits in a square, legs close to the body.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left. Plain white background. No ground, no shadow, no water splashes, no steam, no glow or effects.
+
+AVOID: grey skin, a round barrel or ball on its back, silver straps or belts across the shell, a tortoise or turtle, an armadillo curled into a ball, the bombilla in its mouth, fine detailed patterns, a teacup or teapot ghost (Sinistea/Polteageist look), an object with a face, plush/Neopets look, realistic painting, extra props (thermos, kettle, cup).
+```

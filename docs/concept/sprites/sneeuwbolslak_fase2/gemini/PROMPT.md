@@ -195,3 +195,6 @@ AVOID
 
 ## Ronde 5 (15 nov)
 - `r5_gemini.png` (prompt v4). Jordi: "dit is het ook niet, laat me even een beschrijving bedenken". Volgende prompt komt uit Jordi's eigen beschrijving.
+
+## Beschrijving Jordi (15 nov), bij r1
+- "Wat dit goed deed is de bol zelf, deze begint te barsten, plus in de bol begint een chaotische sneeuwstorm te ontstaan, in de derde fase barst deze bol compleet en ontstaat er zo de kern van de laatste vorm. De positie van de bol is goed, ik ben niet zo overtuigd van dat hele puntige schild erbovenop, maar ik ben er ook niet op tegen. Dat het lichaam langer wordt en steeds ijziger met kristallen zie ik ook zitten. Sowieso kan het hele lichaam van ijs worden ook, wat ik in deze vorm nog niet goed vind is dat het nog steeds dezelfde vorm slak is, daar moeten we dus iets anders van maken, vooral de ogen, misschien een ander soort dier met dezelfde vorm, die al meer een ijs vorm heeft, kan je iets met deze beschijving, prompt nog niet, maar spar even mee"

@@ -1402,3 +1402,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hunter afgewezen (gewoon een woord); opties Huntar, Herbunter, Hayunter, Haunflare in `IDEEEN.md`.
 - Jordi kiest Hauntflare voor de Haunter-fase; lijn nu Dustly → Hauntflare → Gengas.
 - Namen Dustly → Hauntflare → Gengas definitief (Jordi); lijn opgenomen in `POKEMON.md` (Convergente soorten).
+- Cosmic/Poison voor de lijn bevestigd (Jordi). Start Gengas: `docs/concept/sprites/gengas/SPEC.md`.

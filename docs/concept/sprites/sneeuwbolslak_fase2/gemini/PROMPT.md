@@ -112,3 +112,41 @@ AVOID
 - Jordi: "ik wil liever geen oogstelen maar in vorm 2" En: "fase 1 is echt een slak en vanaf fase 2 stappen we daar al van af".
 - Voorstel Claude: cocon met gezicht (1a ogen in het ijs, 1b venster is oog, 1c geen gezicht) + open a–d. Jordi: "fase 3 is dus meteoriet (die we wel ogen geven natuurlijk)"
 - Jordi: "sorry komeet bedoel ik, fase 2 krijgt ook ogen, want er zijn weinig pokemon zonder ogen"
+- Jordi: "1a, dat blijft qua vorm vergelijkbaar met fase 1, a2, b2 indien mogelijk, c1, d1"
+- Dus: ogen in het ijs vooraan, door een spleet (vorm vergelijkbaar met fase 1); in de draaikolk één helder lichtpunt; huisje nog net zichtbaar (indien mogelijk); voetstuk als ring rond de cocon; korte ronde staart naar achteren.
+
+# Prompt v3 (15 nov): cocon, nieuw gesprek
+
+Bijlage: alleen `bijlage_fase1_8x.png`, uitdrukkelijk alleen voor ogen en kleuren (les r2: een bijlage trekt Gemini terug naar de oude vorm; gaat dat mis, dan zonder bijlage opnieuw).
+Keuzes Claude (schrappen mag): ei-/druppelvorm iets langer naar achteren (Jordi: "langzaam 1 geheel", "minder puntig"; Interloper-richting); ± 56 px; geen mond (niet besproken).
+
+```
+Attachment 1 is the official-style Gen 3 front sprite of the FIRST stage of an original Pokémon line: a snail with a snow globe as its shell (Ice type). Use it ONLY as a reference for the eye shape and the color palette. Do NOT copy its snail body, eye stalks or globe.
+
+Design the SECOND STAGE (pure Ice type) and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art). The final third stage will be an icy comet.
+
+CONCEPT: a cocoon stage, like Shelgon, Kakuna or Silcoon. The snail is gone: it has frozen into one smooth, solid shell of ice. The comet is growing inside and will break out.
+- Shape: one single rounded egg/teardrop shape of frosted ice, slightly longer towards the back, smooth and rounded, NO points or spikes.
+- Eyes: two eyes peeking out through a narrow slit in the ice at the front, the same eye shape as in attachment 1. No eye stalks, no head sticking out, no mouth.
+- Window: on the side of the cocoon there is a round window of clear glass (what is left of the snow globe). Behind it, a wild swirling vortex of snow, with one bright point of light in the center, the core of the comet. If it fits, a tiny house is just barely visible in the storm.
+- A few large, simple cracks run from the window over the ice, as if it is about to burst.
+- The reddish-brown snow-globe base is now a ring around the cocoon.
+- A short, rounded frozen tail at the back, the first hint of a comet tail. Attached to the body.
+
+KEEP IT READABLE AS A SPRITE
+- One clear, simple silhouette: a smooth ice egg with a short tail. Max 3 or 4 cracks. The vortex is white swirls and pixels around one bright point, not noise.
+- Ice reads by flat Gen 3 shading and one highlight in the top left.
+
+POSE
+- Three-quarter view, the front (with the eyes) facing left, resting on the ground.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, the creature about 56 pixels wide (larger than the first stage, not filling the whole canvas), max 16 colors, 1 px dark outline, light from top left, flat Gen 3 shading with 3 to 4 tones per color, no dithering.
+- Plain white background. NO floor, snow on the ground, shadow, glow, sparkles or effects outside the creature. No loose or floating pieces. One single creature, no extra views.
+
+AVOID
+- No snail body, no foot, no eye stalks, no tentacles, no shell spiral or cone.
+- No ice blocks or brick pattern, no ice spikes or crystal clusters.
+- No stars, galaxy or planets outside the bright core.
+- Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
+```

@@ -32,3 +32,8 @@ Reproduceren: `python3 maak_t.py` (gebruikt `rek.py`) Â· `python3 controle.py` Â
 - Controle: diff alleen in x20-33, y33-40 (mondzone), silhouet 0, palet v7, P, transparantie 0. Ogen 0.
 - Afgevallen tussenstappen: T met gelijke tanden (zoals R), T2 (kleinere ondertanden: lazen niet).
 - **Oordeel**: naast G3 en de pixel-ref op 12x/1x nu een open grijns met 2 ongelijke V's boven, kleine bultjes onder, donker + tong ertussen: zelfde bouw. Zwak punt: de opgerekte linker mondhoek wordt een 2 px brede zwarte balk van 5 rijen (x20-22, y34-38; ontstaat vanzelf door het dupliceren); de mond is daardoor hoger dan bij Haunter.
+
+## T2 (alleen herkleuren van T, `maak_t2.py`)
+- Linker mondhoek: de 2x5 zwarte balk is nu een 1-px lijn die schuin naar de hoek loopt: (20,33),(20-21,34),(21,35),(21,36),(22,37),(23,38), zoals v7/C3 en Haunter G3. Herkleurd: (20,35) 1->7, (22,35) 8->10, (23,35) 1->10, (22,36) 1->5, (21,37) 1->7, (21,38) 1->7. Het hoektandje (22,34) blijft zoals in v7.
+- Rechter mondhoek is al een 1-px lijn ((33,33-35),(32,36),(31,37),(29-30,38)): ongewijzigd.
+- Gecontroleerd op 12x naast G3/pixel-ref: tandlijnen 1 px; niets anders dikker dan in die sprites. Diff alleen in de mondzone, silhouet 0.

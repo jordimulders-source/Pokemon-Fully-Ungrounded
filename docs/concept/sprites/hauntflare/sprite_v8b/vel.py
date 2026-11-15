@@ -1,5 +1,5 @@
 """vel.png: bovenaan mondcrops van de refs (artwork, 3D, pixel-ref, Haunter G3 12x);
-daaronder per rij gezicht 12x | hele sprite 6x | 1x voor v7, R, T."""
+daaronder per rij gezicht 12x | hele sprite 6x | 1x voor v7, T, T2."""
 from PIL import Image, ImageDraw
 import os
 H = os.path.dirname(os.path.abspath(__file__)); R = os.path.join(H, '..', '..', '..', '..', '..')
@@ -14,7 +14,7 @@ refs = [('artwork', Image.open(os.path.join(REF, 'haunter_artwork.png')).convert
         ('3D', Image.open(os.path.join(REF, 'haunter_3d.png')).convert('RGBA').crop((180, 255, 330, 335))),
         ('pixel-ref', Image.open(os.path.join(REF, 'haunter_pixel_ref.png')).convert('RGBA').crop((370, 300, 660, 470))),
         ('Haunter G3', rgba(os.path.join(R, 'graphics', 'pokemon', 'haunter', 'anim_front.png')).crop((14, 36, 36, 47)))]
-rijen = [('v7', '../sprite_v7/hauntflare_v7.png')] + [(k, f'kandidaat_{k}.png') for k in ['R','T']]
+rijen = [('v7', '../sprite_v7/hauntflare_v7.png')] + [(k, f'kandidaat_{k}.png') for k in ['T','T2']]
 W = 1560; vel = Image.new('RGBA', (W, RH + 30 + len(rijen) * (18 * 12 + 30)), BG); d = ImageDraw.Draw(vel)
 x = 0
 for n, im in refs:

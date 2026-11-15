@@ -11,11 +11,11 @@ Geen bijlage (eerste fase die we maken).
 - Fase 3 = de hele trein (locomotief met wagons): "exact".
 - Spirit: "beetje rotom achtig, de locomotief heeft een gezicht waarin je kan zien dat het een geest is, en er zijn ook hints van geest op andere plekken"
 - Vaart: "trein helt naar voren en de wielen zijn zoals in een stripboek mee aan het bewegen"
+- Kleur: "idd roestbruine 1e fase, maar de 3e is alweer functioneel, dus hooguit tinten van roest"
 - Wagons: varianten a (verdwijnen achter de locomotief), b (lossen op in rook/spooknevel) en c (buigen in een bocht mee): "alle drie proberen, kijken wat gemini doet"
 
 ## Keuzes Claude (Jordi heeft hier niets over gezegd; schrappen of aanpassen mag)
 - **Anders dan de Phantom Express:** geen schedel- of demonengezicht, geen spookconducteur of losse spookfiguren, geen cartoon/rubberhose-stijl.
-- **Kleur:** niet vastgelegd (vraag 5 staat open); de prompt zegt alleen "old steam train".
 - **Steel:** als textuur (oud ijzer, klinknagels), geen losse platen (GEMINI.md).
 - Richting: naar links, zoals alle frontsprites.
 
@@ -29,7 +29,8 @@ TYPE: Steel / Ghost. Final stage of its line.
 CONCEPT: an old steam train that has been taken over by a spirit, a bit like how Rotom possesses machines.
 - The locomotive is the head: it has a face in which you can clearly see that it is a ghost (the spirit shows through the locomotive's front).
 - There are also small hints of the ghost elsewhere on the train.
-- The metal reads as old iron through texture (rivets, worn iron), not as separate armour plates.
+- The metal reads as old iron through texture (rivets, old iron), not as separate armour plates.
+- The train is functional again, not a wreck: at most some tints of rust.
 
 FULL SPEED (this must be obvious)
 - The whole train leans forward, as if charging ahead at full speed.

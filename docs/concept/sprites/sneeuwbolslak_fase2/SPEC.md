@@ -29,3 +29,4 @@ Lijn: sneeuwbolslak (fase 1, `sneeuwbolslak/`) → fase 2 → komeet (fase 3, Ic
 - Jordi op r8 A/B (`sprite/voor_jordi_r8.png`): "hybride van a en b, vlokken met sneeuwstorm" → r8C.
 - **Af (r8C, hybride): `af/sneeuwbolslak_fase2.png` + `_8x.png`** (raster `sprite/maker/raster_af.txt` = raster_r8C).
 - Jordi op de af-versie r8C: "de mond is ook niet goed gelukt, is nu gewoon 3 pixels diagonaal op een willekeurige plek" → r9: mondlijn naar het model.
+- Jordi: "en de sneeuwvlokken zijn prima maar het is nog te weinig sneeuwstorm in de bal" → r9: plusvlokken blijven, storm sterker.

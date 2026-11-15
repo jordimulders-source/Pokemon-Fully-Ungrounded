@@ -7,6 +7,7 @@ Model: `referenties/gemini_gekozen_r7.png` (Gemini ronde 7). Rondes en prompts: 
 - "ja doe maar ronde 7 als model, ik had nog niet bepaald een diervorm in gedachten, wat vind jij goed passen?"
 - Op het voorstel slak (kop = plaat met de ogen, voet = rij platte schotsen langs de onderkant, nevel/punten op de plek van het oude sneeuwbolhuisje): "ja doe maar de slak".
 - Idee achter de vorm (15 nov): "ja het hele idee van deze vorm is dus dat een kern is geëxplodeerd en deze het hele dier in ijsschotsen heeft veranderd, de kern is ondertussen de drijvende kracht erachter geworden en heeft deze pokemon komeetkrachten gegeven, hoe klinkt zoiets?"
+- Jordi (15 nov), op "een beetje tragisch, het slakje is niet meer wat het was": "ja dat tragische is goed, zoals bij parasect bijvoorbeeld".
 - Eerder: "geen lachgezichtje, ogen wel"; ogen "ijzige spheren", "wat hoger en nog wat meer laten gloeien, sinister"; geen mond.
 
 ## Toegestaan om af te wijken van het model

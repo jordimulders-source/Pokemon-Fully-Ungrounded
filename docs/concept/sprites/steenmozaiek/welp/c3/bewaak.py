@@ -1,4 +1,4 @@
-# Bewaakt c2 t.o.v. p8: silhouet-diff 0, buitenlijn ongewijzigd, lijn/oog/mond/tong/tand-pixels van p8 ongewijzigd,
+# Bewaakt c3 t.o.v. p8: silhouet-diff 0, buitenlijn ongewijzigd, lijn/oog/mond/tong/tand-pixels van p8 ongewijzigd,
 # gezicht-rechthoek (oog, snuit, mond, tanden, tong) index-diff 0 EN kleur van de gezichtsindexen (6,9,10,11,12,13,15)
 # gelijk aan p8, palet <=16. Telt hooglicht (14) buiten de tenen.
 import numpy as np
@@ -10,7 +10,7 @@ def rand(a):
     for dy,dx in ((1,0),(-1,0),(0,1),(0,-1)): r|=m&~np.roll(np.roll(m,dy,0),dx,1)
     return r
 ok=True
-for f in ('welp_c2.png','welp_c2_grijs.png'):
+for f in ('welp_c3_A.png','welp_c3_A_grijs.png','welp_c3_B.png','welp_c3_B_grijs.png'):
     I=Image.open(f); a=np.array(I); pa=I.getpalette()[:48]
     sil=int(((a>0)!=(p8>0)).sum()); buit=int((rand(p8)&(a!=p8)).sum())
     lijn=int((np.isin(p8,[1,2,10,12,13,15])&(a!=p8)).sum()); kop=int((bevroren_kop()&(a!=p8)).sum())

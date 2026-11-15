@@ -150,3 +150,7 @@ AVOID
 - No stars, galaxy or planets outside the bright core.
 - Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
 ```
+
+## Ronde 4 (15 nov)
+- `r4_gemini.png` (prompt v3). Jordi: "dit is veel minder mooi dan wat we al hadden".
+- Analyse Claude: grijze klomp (steen/zeehond, geen ijs of glas), het voetstuk werd een rode raamlijst, de draaikolk een sterrenstelsel (verraadt de eindvorm), geen huisje; alles wat fase 1 charmant maakte (glas, sneeuw, huisje, lichtblauw) is weg.

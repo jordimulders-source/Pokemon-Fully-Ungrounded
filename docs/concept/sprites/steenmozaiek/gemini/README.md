@@ -169,3 +169,15 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pi
 AVOID: a standing pose, a big chibi eye, separate stone pieces or seams, a smooth digital illustration or painting, fur, plush/Neopets look, extra rocks or crystals growing from the body.
 ```
 2. `fase1B_ronde2.png`: zittend, poot likkend. Jordi (15 nov, letterlijk): "Gemini maakt hem nu gelijk boos, zonder het oog echt heel erg aan te passen, maar ik ben wel iets tevredener". Claude: pose goed; boze blik haalt het welpgevoel weg; bruin-op-bruin-gravures verdwijnen op ±44 px, alleen de gekleurde spiralen blijven; nauwelijks hoekiger; lila nekring leest als halsband (vraag aan Jordi).
+   - Jordi: "ja maak de prompt, halsband mag weg".
+
+### Prompt fase 1, ronde 3 (hetzelfde gesprek als ronde 2)
+```
+Good, keep this pose exactly: sitting, playful, licking its paw, in 3/4 view. Change only these things:
+1. The eye: now it looks angry. It must be a neutral, young cub's eye: not angry, not chibi. No angry eyebrow.
+2. The engraved pattern disappears at sprite size: brown lines on a brown body are not readable. Use fewer but bigger engraved spirals and curls, in the contrasting colours (lilac and cream), so they stay readable in a 64x64 sprite.
+3. The body is still round: make the body shape somewhat more angular, like carved stone.
+4. Remove the lilac ring around the neck; it looks like a pet collar.
+
+Keep everything else the same. Official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left, plain white background.
+```

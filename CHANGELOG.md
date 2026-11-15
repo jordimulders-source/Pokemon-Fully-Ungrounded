@@ -1511,3 +1511,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.366] - IJskomeet (fase 3 sneeuwbolslak-lijn): nieuwe Gemini-prompt
 - Jordi keurde de eerste twee plaatjes af ("lijken net kirby en mario vijandjes"): moet een bol met ijsuiteinden zijn, kern geëxplodeerd, grotesker, ijsstulpsels overal (Interloper), geen lachgezichtje, wel ogen.
 - Nieuwe startprompt zonder bijlage: `docs/concept/sprites/ijskomeet/gemini/PROMPT.md`; afgekeurde plaatjes als `r1a/r1b_afgekeurd.png`. Citaat in IDEEEN.md.
+
+### [v0.0.367] - IJskomeet: Gemini-prompt v2
+- Ronde 2 afgekeurd (Jordi: ogen en mond te "kiddy"; "deze pokemon is de kern die uit de barst gekomen is en daardoor evolved is"). Prompt v2: de Pokémon is de ontsnapte kern, heel lijf zonder barsten, alleen smalle koude ogen, geen mond. `ijskomeet/gemini/PROMPT.md`, `r2_afgekeurd.png`.

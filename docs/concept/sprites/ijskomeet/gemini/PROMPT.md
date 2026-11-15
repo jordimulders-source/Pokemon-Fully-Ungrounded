@@ -49,3 +49,39 @@ AVOID
 - Weer te rond/glad: de AVOID-regel "Not a smooth ball" bovenaan zetten, nieuw gesprek.
 - Toch sterretjes: "No stars" naar CONCEPT verplaatsen.
 - Te druk (te veel kleine stekels): "fewer, bigger ice protrusions (about 6 to 8)".
+
+## Ronde 2 (15 nov), prompt v1
+- `r2_afgekeurd.png`. Jordi: "dit klopt niet, ik vind het nog teveel kiddy qua ogen en mond, plus de barst zit niet meer in deze pokemon, deze pokemon is de kern die uit de barst gekomen is en daardoor evolved is".
+- Mijn lezing van "kern is geëxplodeerd" (barsten in de kern) was dus fout.
+
+# Prompt v2 (15 nov): nieuw gesprek, geen bijlage
+
+Keuzes Claude (schrappen mag): ogen als smalle spleten zonder pupilglans (studie GEMINI.md: mysterieus in Gen 3 = klein, donker lid, geen ronde glimmende iris). Geen schaal of glasresten in beeld: Jordi noemde ze niet.
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT
+- The final stage of an Ice/Cosmic line. The earlier stages were a snail whose shell was a snow globe. Inside that globe a core of ice grew, until it burst out through the cracks of the globe. This Pokémon IS that core: it broke free, and by doing so it evolved into a living comet.
+- The body itself is whole and unbroken: no cracks, no holes, no broken glass on it. It is a solid, lumpy sphere of rough ice with jagged ice growths sticking out all over it.
+- Shape: elongated like a real comet nucleus, the round lumpy core at the front stretching back into a long, rough tail of ice. Think of the comet "The Interloper" from the game Outer Wilds: an elongated icy body covered in irregular ice spikes and columns. Only the shape, no dark core.
+
+DESIGN
+- Grotesque and alien, not cute. Irregular, asymmetric ice protrusions of different sizes all over the body (thick columns, crooked spikes, shards), as if the ice keeps growing out of it.
+- Face: only two eyes, small, narrow and cold, like slits in the ice, set deep at the front of the core. NO mouth, NO eyebrows, NO cheeks. The face must not look friendly, angry or cartoonish: it should feel like something ancient and unknown watching you.
+- Colors: pale icy blue-white ice, mid blue shadows, deep blue in the darkest places. Light from top left.
+
+POSE
+- Three-quarter view facing left, the core at the front-left and the tail streaming back to the top right, as if it is flying through space.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, a final stage that fills most of the canvas, max 16 colors, 1 px dark outline, clean flat shading like official Game Freak Gen 3 sprites. No dithering.
+- Compact composition: the tail stays inside the square, protrusions close to the body.
+- Plain white background. NO stars, sparkles, glow, aura, particles, motion lines, floor or shadow. One single creature, no extra views.
+
+AVOID
+- No cracks or fractures on the body, no broken shell, no glass.
+- No mouth, no frown, no smile, no big round eyes, no eye shine. Not a children's cartoon, not a Kirby or Mario enemy, not a mascot.
+- Not a smooth ball, not a ghost, not a fish (no fins). No stars or star shapes anywhere.
+- No glossy 3D render.
+```

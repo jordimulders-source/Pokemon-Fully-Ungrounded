@@ -1633,3 +1633,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.395] - Hauntflare: eindversie v15 (eindkeuring PASS)
 - Eindkeuring kleur, schaduw en belijning: handenlijnen gerepareerd; `sprites/hauntflare/sprite_v15/hauntflare_v15.png` wacht op Jordi.
+
+### [v0.0.396] - Hauntflare: opties mondhoek en mondkleur
+- `sprites/hauntflare/sprite_v16/opties.png` (3 hoeken × 3 mondkleuren).

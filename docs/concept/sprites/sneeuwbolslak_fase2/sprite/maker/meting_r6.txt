@@ -1,0 +1,15 @@
+== meting r6 (sprite/maker/r6_bouw.py op raster_r5; palet pal6.py; naarpng6.py; vel6.py)
+silhouet-diff: 0
+afwijking van onderlaag56: {'bol': 195, 'kop': 102, 'staart': 131, 'lijf/flap/ring': 198} totaal 626 van 1345
+OK
+== recht.py (r5: 21)
+totaal 21
+pixels gewijzigd t.o.v. r5: 29
+t over: 0  s: [(27, 42), (28, 42), (29, 42), (30, 42), (31, 42), (32, 42)]
+== KEURING_r5 MOET
+[x] 1 Aansluiting: (24,40) #, (25,41) r: ringeinde dicht. (22,39) c, neklijn begint op (22,40).
+    Afwijking: (22,38) en (23,39) zijn 'a' en niet d/#. Met d/# kwamen er twee nieuwe rechte stukken van 4 px bij ((20-23,38) en (23-26,39)), waardoor recht.py op 23 uitkwam.
+[x] 2 Ring: r (138,64,73), s (169,71,77). s alleen op (27-32,42). t komt nergens meer voor. (34-39,39-41) en (29-31,43) zijn r.
+[x] 3 Staartnaad: (49,33) d, (49,34) a, (49,35) d, doorgaand van (48,30) tot (44,42).
+[x] 4 Kop: (12,42), (13,42), (18,42) en (11,43) zijn e. Bovenkant van c op rij 42 is x14-17 (4 px), daarna een trap.
+Buiten deze punten is de diff 0 (alleen de genoemde pixels gewijzigd).

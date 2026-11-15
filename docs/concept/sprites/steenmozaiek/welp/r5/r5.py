@@ -7,8 +7,8 @@ _,K,d,S,M,L,P,Q,R,g_,Wt,C,T,G=range(14)
 BR={S,M,L}; log={}
 a=r4.copy()
 import sys
-BRON=sys.argv[1] if len(sys.argv)>1 else 'r3'
-FAC=np.load('facet.npy') if BRON=='facet' else None
+BRON='r3'
+FAC=None
 edge=np.zeros((H,W),bool)
 for y in range(H):
     for x in range(W):

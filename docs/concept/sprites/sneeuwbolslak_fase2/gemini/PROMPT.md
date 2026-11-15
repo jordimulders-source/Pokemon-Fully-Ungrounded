@@ -155,3 +155,40 @@ AVOID
 - `r4_gemini.png` (prompt v3). Jordi: "dit is veel minder mooi dan wat we al hadden".
 - Analyse Claude: grijze klomp (steen/zeehond, geen ijs of glas), het voetstuk werd een rode raamlijst, de draaikolk een sterrenstelsel (verraadt de eindvorm), geen huisje; alles wat fase 1 charmant maakte (glas, sneeuw, huisje, lichtblauw) is weg.
 - Jordi verder over r4: "het is juist nog minder de vorm die ik wilde hebben, verder klopt het niet samen, het is ook geen duidelijke snowglobe meer"
+- Claude bood aan: Jordi beschrijft de vorm, of een ontwerpvel met vier varianten. Jordi: "doe maar een totaal nieuwe prompt".
+
+# Prompt v4 (15 nov): totaal nieuw, nieuw gesprek
+
+Bijlage: `bijlage_fase1_8x.png`, alleen voor ogen en kleuren.
+Alles uit Jordi's woorden (zie hierboven): slak gaat op, geen oogstelen, wel ogen (vorm als fase 1); bol bevriest, minder puntig, alles langzaam één geheel; duidelijke sneeuwbol; chaos in de bol alsof de eindvorm erin zit; barsten; gestroomlijnd; langere staart; lichtpunt; huisje indien mogelijk; voetstuk als ring; geen scherven.
+Keuzes Claude (schrappen mag): ogen vooraan op het lijf onder/vóór de bol (zonder kop moeten ze ergens zitten); de bol vooraan en het lijf dat erachter uitloopt in de staart (zo wijst alles naar de komeetvorm); ± 56 px.
+
+```
+Attachment 1 is the official-style Gen 3 front sprite of the FIRST stage of an original Pokémon line: a snail whose shell is a snow globe (pure Ice type). Use it ONLY as a reference for the eye shape, the colors and the snow-globe details. The line ends in a long, sleek icy comet.
+
+Design the SECOND STAGE (pure Ice type) and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT: the in-between stage. It is no longer a snail: the snail has slowly dissolved into its snow globe, and body and globe are growing together into one streamlined whole, halfway towards a comet.
+- It is still clearly a SNOW GLOBE: a big round glass globe with snow inside and the reddish-brown snow-globe base, which is now a ring where the globe meets the body.
+- The globe is freezing: frost creeps over the glass from the edges, and a few big, simple cracks run through it. Rounded and smooth, no points or spikes.
+- Inside the globe chaos is starting: a swirling snowstorm, with one bright point of light in the center, as if the final form is growing inside and will take over the whole Pokémon once the globe bursts. If it fits, the tiny house from attachment 1 is just barely visible in the storm.
+- The body: no snail foot, no head, no eye stalks. A smooth, frozen, streamlined body that flows out of the globe towards the back and ends in a longer frozen tail, the start of a comet tail.
+- Eyes: two eyes at the front of the body, below the globe, with the same eye shape as in attachment 1.
+
+KEEP IT READABLE AS A SPRITE
+- One clear silhouette that reads as one creature: round globe in front, body and tail streaming back. Max 3 or 4 cracks. The storm is white swirls and pixels around one bright point, not noise.
+- The glass reads by one clear highlight in the top left.
+
+POSE
+- Three-quarter view facing left.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, the creature about 56 pixels wide (larger than the first stage, not filling the whole canvas), max 16 colors, pale icy blue-white like attachment 1 (no grey), 1 px dark outline, light from top left, flat Gen 3 shading with 3 to 4 tones per color, no dithering.
+- Plain white background. NO floor, snow on the ground, shadow, glow, sparkles or effects outside the creature. No loose or floating pieces or shards. One single creature, no extra views.
+
+AVOID
+- No snail body, foot, head, eye stalks or tentacles. No spiral shell or cone.
+- No ice blocks or brick pattern, no ice spikes or crystal clusters.
+- No galaxy, stars or planets.
+- Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
+```

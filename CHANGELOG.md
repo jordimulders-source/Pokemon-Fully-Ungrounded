@@ -1624,3 +1624,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.392] - Hauntflare: tanden naar Haunter G3 (v11)
 - Rechter boventand en linker ondertand als G3-tand: punt van 1 px op een voet van 3 (`sprites/hauntflare/sprite_v11/`).
+
+### [v0.0.393] - Hauntflare: v12
+- Gemarkeerde tandpixel (31,33) weg (Jordi).

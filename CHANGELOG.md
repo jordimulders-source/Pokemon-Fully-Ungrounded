@@ -1589,3 +1589,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 ronde 6 (v8): "al beter"; prompt v9 (Spiritomb-achtige zigzag-grijns, geen neus, geestarmen en extra gezicht als leger spirits, meer wielen, furieuzer).
 - Spooktrein fase 3 ronde 7 (v9); prompt v10: terug naar Emerald-sprite, minder detail, één geest uit de schoorsteen met één arm (fluittouw-pose) en een mini-locomotiefkop.
 - Spooktrein fase 3 ronde 8 (v10): bijna goed (Jordi: geest prima, achterkant meer geestwolken, "wat te klein").
+- Spooktrein fase 3: prompt v11 (ronde 8 als bijlage; achterkant wordt geestwolken, lijf langer).

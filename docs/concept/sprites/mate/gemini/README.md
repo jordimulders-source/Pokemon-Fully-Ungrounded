@@ -166,3 +166,21 @@ AVOID: grey skin, a round barrel or ball on its back, silver straps or belts acr
 4. `fase2_E_r4.png`: Jordi (15 nov, letterlijk): "Gemini snapt er geen drol van, en dit terwijl ik telkens geen bijlagen toevoeg". Gemini gaf een illustratie i.p.v. een sprite. Alle mate-prompts begonnen met "Attached: ..." terwijl er geen bijlagen waren (Claude had dat moeten checken). Ontwerp zelf (Claude): eerste versie met één materiaal, glad, echte gordeldierbanden en de kalebashals die uit het achterschild groeit.
 5. **Model gekozen: `fase2_E_r2.png`.** Jordi (15 nov, letterlijk): "ik vind deze als model het beste tot nu toe, alleen het mist nog iets om er echt een vet design van te maken, plus hij is niet echt pragmatisch, want als deze gaat rennen oid dan zou de mate er allemaal uit moeten vallen, waar bij sinistcha het lichaam de thee is".
    Jordi, direct daarna: "het is eigenlijk geen pokemon".
+
+### Prompt E, ronde 5 (nieuw gesprek, GEEN bijlagen)
+Jordi koos 1 + 3: (1) het lijf is de mate: de yerba is een levend, geworteld deel van het wezen (niets kan eruit vallen); (3) Pokémon-verhoudingen i.p.v. een echt gordeldier. Concept anders beschreven (les: dezelfde kern geeft hetzelfde beeld), geen "Attached"-regels, "pixel art, geen illustratie" expliciet (r4 werd een illustratie). Keuzes Claude: yerba als manen die uit de opening over de rug groeien; kop ±⅓ van het lijf; 3 grote klauwen; glad zonder patronen (r3).
+```
+Design an original Pokémon, a Grass/Water-type: the fully evolved (second and final) stage of a two-stage line. Concept: a living yerba mate, the drink shared in Argentina, Uruguay, Paraguay and southern Brazil, in the shape of a three-banded armadillo. It is a Pokémon, not a real animal carrying a mate: the creature's body IS the mate.
+
+Its shell is a smooth, polished, cured mate gourd in warm browns, shaped like a simplified, rounded armadillo shell with three bands in the middle. Thin silver rims run along the edges of the bands, like the silver trim on a decorated mate. At the top of the shell is the opening of the gourd with a silver rim (the "virola"). From that opening the yerba grows out as a living part of the creature: a rooted, leafy mane of small green yerba leaves that grows from inside its body and flows back over the top of the shell. The yerba is its body, like a plant growing from it, not loose powder in a cup, so nothing can spill out when it runs. A silver bombilla (a metal drinking straw with a flattened bend and a gold mouthpiece) is planted in the yerba mane at an angle, like a little flag.
+
+Pokémon proportions, not a realistic armadillo: a big head (about a third of its total size) with large, expressive eyes and a short, rounded snout, two rounded ears, short stubby legs with three big claws each, a short tail. Head, ears, legs and tail are the same smooth cured gourd brown as the shell, slightly lighter, with no grey. Simple, bold shapes and a strong silhouette.
+
+Colours: only the browns of the cured gourd, silver, yerba green and a little gold. No engraved or burned patterns: smooth surfaces with simple shading and a highlight.
+
+Pose: standing on all four legs, confident and alert, body in 3/4 view facing left, head turned slightly towards the viewer. Compact composition that fits in a square, legs close to the body.
+
+Style: pixel art in the style of an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald), 64x64 pixels with clearly visible pixels, at most 16 colours, 1px dark outline, light from the top left. Not an illustration, not a drawing, not smooth digital art. Plain white background. No ground, no shadow, no water splashes, no steam, no glow or effects.
+
+AVOID: a realistic armadillo, a real animal with a cup or barrel on its back, loose yerba powder in a cup, silver straps or belts across the shell, grey skin, engraved patterns, the bombilla in its mouth, a tortoise or turtle, a teacup or teapot ghost (Sinistea/Polteageist look), plush/Neopets look, an illustration instead of a sprite, extra props (thermos, kettle, cup).
+```

@@ -181,3 +181,4 @@ Good, keep this pose exactly: sitting, playful, licking its paw, in 3/4 view. Ch
 
 Keep everything else the same. Official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), pixel art, 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left, plain white background.
 ```
+3. `fase1B_ronde3.png` (na de prompt hierboven) en `fase1B_ronde3b.png` (Jordi vroeg daarna in hetzelfde gesprek om meer grote spiralen en lijnen). Jordi (15 nov, letterlijk): "1 na jouw prompt en daarna vroeg ik om meer grote spiralen en lijnen en dat kwam er niet zo mooi uit." Claude: ronde 3 beter (blik neutraal, halsband weg, vlakken hoekiger, weinig grote spiralen); 3b druk, de crèmelijnen lezen als barsten.

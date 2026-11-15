@@ -317,3 +317,7 @@ FORMAT
 - 64x64 pixel sprite filling most of the canvas, max 16 colors, 1 px dark outline, light from top left, flat Gen 3 shading, no dithering.
 - Plain white background, no stars, no floor. One single creature.
 ```
+
+## Ronde 8 (15 nov), prompt v9
+- `r8_afgekeurd.png`. Jordi: "gemini snapt het niet". Gemini kleurde alleen de naden roodbruin; schikking en schaduw gelijk aan r7.
+- Voorstel Claude: r7 bevriezen als model (silhouet vast); het "dier"-lezen van de schotsen binnen de omtrek oplossen in de sprite (naden/schaduw), liefst naar een krabbel van Jordi op r7.

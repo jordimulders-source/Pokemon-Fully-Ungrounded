@@ -1535,3 +1535,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.374] - IJskomeet: ronde 7 beste tot nu toe, prompt v9
 - Jordi: r7 "de beste tot nu toe", "bijna tevreden"; de ijsschotsen moeten "nog net iets meer op een dier lijken, alsof dat het lichaam is". v9: r7 als bijlage; Jordi: "zonder aan de vorm te zitten", dus silhouet exact gelijk, alleen naden en schaduw binnen de omtrek als kop + lijf. `r7_gemini.png`.
+
+### [v0.0.375] - IJskomeet: ronde 8 afgekeurd
+- v9 gaf alleen roodbruine naden ("gemini snapt het niet"). Voorstel: r7 als model bevriezen en de schotsen als lijf in de sprite oplossen. `r8_afgekeurd.png`, les in GEMINI.md.

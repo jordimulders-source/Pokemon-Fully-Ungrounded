@@ -1416,3 +1416,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gengas: ronde 3, alleen de stormwervel rond (diff 0 erbuiten). `sprite_r3/`.
 - Gengas: rondes 1–3 afgekeurd (Jordi: manen willekeurige vormen, linkeroor, vlak onder rechteroor, krul, schaduwen, gezicht geplakt). Nieuwe basis: model 74→64 door rijen/kolommen te schrappen (`model/schrap.py`). Les in `GEMINI.md`.
 - Gengas v2: model opgeschoond (gemeten 15 kleuren, ruis eruit, 47 gelogde pixelcorrecties), gezicht hybride (modelgrootte op r3-positie). `sprite_v2/`.
+- Gengas v3: keuringspunten v2 gerepareerd (naden gezicht, lichte wig in het masker, krul 1-op-1 uit het natieve model, gat bij de rookarm, kraters). `sprite_v3/`.

@@ -1,0 +1,56 @@
+(36,37) b->l  spiraallijn weg; lichte stroom om de vlek
+(37,38) b->l  spiraallijn weg; lichte stroom om de vlek
+(38,39) b->l  spiraallijn weg; lichte stroom om de vlek
+(39,39) b->l  spiraallijn weg; lichte stroom om de vlek
+(40,39) b->l  spiraallijn weg; lichte stroom om de vlek
+(41,39) b->l  spiraallijn weg; lichte stroom om de vlek
+(42,39) b->l  spiraallijn weg; lichte stroom om de vlek
+(39,32) l->b  stormvlek t
+(40,32) l->b  stormvlek t
+(41,32) l->b  stormvlek t
+(42,32) l->b  stormvlek t
+(43,32) l->b  stormvlek t
+(44,32) l->b  stormvlek t
+(45,32) m->b  stormvlek t
+(38,33) l->b  stormvlek t
+(39,33) l->b  stormvlek f
+(44,33) l->b  stormvlek f
+(45,33) m->b  stormvlek f
+(46,33) m->a  stormvlek r
+(37,34) l->b  stormvlek t
+(38,34) l->b  stormvlek f
+(40,34) l->m  stormvlek c
+(41,34) l->m  stormvlek c
+(42,34) l->m  stormvlek c
+(43,34) l->m  stormvlek c
+(45,34) l->b  stormvlek f
+(46,34) m->b  stormvlek f
+(47,34) m->a  stormvlek r
+(37,35) l->b  stormvlek t
+(39,35) l->m  stormvlek c
+(40,35) l->m  stormvlek c
+(43,35) l->m  stormvlek c
+(45,35) m->b  stormvlek f
+(46,35) m->b  stormvlek f
+(47,35) m->a  stormvlek r
+(37,36) l->a  stormvlek r
+(38,36) l->b  stormvlek f
+(40,36) l->b  stormvlek f
+(41,36) l->m  stormvlek c
+(43,36) l->m  stormvlek c
+(45,36) m->b  stormvlek f
+(46,36) m->b  stormvlek f
+(47,36) m->a  stormvlek r
+(38,37) l->a  stormvlek r
+(39,37) l->b  stormvlek f
+(42,37) l->b  stormvlek f
+(43,37) l->b  stormvlek f
+(45,37) m->b  stormvlek f
+(46,37) m->a  stormvlek r
+(39,38) l->a  stormvlek r
+(40,38) l->a  stormvlek r
+(41,38) l->a  stormvlek r
+(42,38) l->a  stormvlek r
+(43,38) b->a  stormvlek r
+(44,38) l->a  stormvlek r
+(45,38) m->a  stormvlek r

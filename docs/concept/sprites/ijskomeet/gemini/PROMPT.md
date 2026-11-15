@@ -227,3 +227,41 @@ FORMAT
 AVOID
 - No smooth dome, no round head with lines on it. Not a monster, no angry face. Not cute. Not a robot or spaceship (no panels or rivets). No glossy 3D render.
 ```
+
+## Aanvulling Jordi op v6 (15 nov, vóór het draaien)
+- "en dat vuur of wat dan ook wat ervan af komt is ook maar erg halve bak, dat zou wat meer omringend mogen zijn aan het uiteinde. De ogen wil ik wat hoger en nog wat meer laten gloeien, sinister"
+
+# Prompt v7 (15 nov): vervangt v6, zelfde bijlagen (1. `interloper_referentie.png`, 2. `r4_gemini.png`)
+
+```
+Attachment 1 is the comet "The Interloper" from the game Outer Wilds: reference for the overall shape, and for how the pale comet tail surrounds the back of the comet.
+Attachment 2 is an earlier draft of my Pokémon: reference ONLY for the colors (pale icy white, indigo and violet spikes, nebula patches) and the two round eyes with no mouth. Do not copy its smooth rounded head, its eye position or its thin wisp of vapor.
+
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art): the final stage of an Ice/Cosmic line, a living comet of ice that burst out of a snow globe.
+
+THE OUTER LAYER IS MADE OF ICE FLOES
+- The whole front and the outer layer are built from large, thick slabs of pack ice, like broken ice floes pushed on top of each other.
+- This must change the SILHOUETTE: the outline is angular, made of straight edges and sharp corners where the slabs stick out. NO smooth round curve anywhere on the head.
+- The slabs have thickness: each slab shows a lit top face and a darker blue side edge, and some slabs overlap and tilt up at their edges.
+- About 6 to 8 big slabs, not many small cracks, not lines drawn on a smooth surface.
+- Behind the slabs, the dark indigo/violet spikes sweep backwards like the Interloper.
+
+COMET TAIL
+- At the back end, a pale icy-blue comet tail of vapor and gas wraps AROUND the rear of the body, like in attachment 1: it surrounds the spikes above and below and streams back as one broad, soft shape. Not a thin wisp or a single trail of smoke.
+- It stays inside the 64x64 square and is attached to the body.
+
+FACE
+- Only two round, icy spheres as eyes, like Lunatone, Solrock and Minior's core. Place them HIGH on the front slab, in the upper part of the front.
+- The eyes glow strongly with a cold, bright cyan light, with a small halo of glow on the ice around them. Sinister, like something watching you from the dark.
+- NO mouth, NO eyebrows, NO ridges above the eyes, NO pupils.
+
+POSE
+- Three-quarter view facing left, the front at the left, spikes and tail streaming back to the top right.
+
+FORMAT
+- 64x64 pixel sprite, a final stage that fills most of the canvas, max 16 colors, 1 px dark outline, light from top left, flat Gen 3 shading, no dithering.
+- Plain white background. NO stars, sparkles, particles, floor or shadow. One single creature, no extra views.
+
+AVOID
+- No smooth dome, no round head with lines on it. No mouth, no teeth, no angry brows. Not cute. Not a robot or spaceship (no panels or rivets). No glossy 3D render.
+```

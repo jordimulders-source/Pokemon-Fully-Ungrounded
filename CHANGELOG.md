@@ -1526,3 +1526,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.371] - IJskomeet: Gemini-prompt v6
 - Ronde 5 "halve bak" (alleen naden op de gladde koepel). v6: nieuw gesprek met Interloper + r4; de ijsschotsen moeten het silhouet hoekig maken (dikke platen met zijkant, schuiven over elkaar). `r5_gemini.png`.
+
+### [v0.0.372] - IJskomeet: Gemini-prompt v7
+- Jordi: gasstaart "meer omringend aan het uiteinde", ogen "wat hoger en nog wat meer laten gloeien, sinister". v7 = v6 + brede komeetstaart om de achterkant (Interloper) + ogen hoog, fel gloeiend met halo, geen pupil.

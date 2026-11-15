@@ -18,3 +18,4 @@ Eindvorm van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Cosmi
 - 15 nov, Gemini r2 (`gemini/r2_a.png`): door Jordi gestuurd zonder commentaar.
 - 15 nov over r2: "ik vind het nu teveel een rots, terwijl die van gas moet zijn, plus gemini past amper iets aan". Prompt r3: `gemini/PROMPT_r3.md` (nieuw gesprek, alleen Gengar als bijlage).
 - 15 nov over r3 (`gemini/r3_a.png`): "Beter, alleen de pose is niet goed driekwart. Geef hem echt de brown dwarf kleuren". Prompt r4: `gemini/PROMPT_r4.md`.
+- 15 nov: "de pose mag echt zwevend zijn dus dat het duidelijk een hemellichaam is ipv staand, met de armen en benen op een beetje onnatuurlijke posities om aan te tonen dat die om hem heen draaien". Prompt r5: `gemini/PROMPT_r5.md`.

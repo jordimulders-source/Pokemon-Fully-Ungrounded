@@ -1407,3 +1407,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gengas: Gemini r1 besproken, prompt r2 met drie kleurregels ter keuze.
 - Gengas: r2 te rotsachtig (Jordi); prompt r3 zonder vorige versie als bijlage, gas-uiterlijk (wervelende banden, storm, rokerige oorpunten, alleen de manen van steen). Les in `GEMINI.md`.
 - Gengas: Gemini r3 beter (Jordi); prompt r4 met echte driekwartpose en echte bruine-dwergkleuren (dof donkerrood/magenta).
+- Gengas: prompt r5 (zwevend als hemellichaam, ledematen op onnatuurlijke posities alsof ze om hem heen draaien).

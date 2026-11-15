@@ -1,0 +1,44 @@
+(14,18) K->a  E-MOET1 zwarte binnenlijn lichtkant linkeroor -> a
+(13,19) K->a  E-MOET1 zwarte binnenlijn lichtkant linkeroor -> a
+(34,15) K->a  E-MOET2 zwart/lila om en om voet rechteroor -> a
+(35,15) K->a  E-MOET2 zwart/lila om en om voet rechteroor -> a
+(43,53) H->g  E-MOET3 maan raakt lijf zonder lijn -> g
+(32,33) l->m  E-MOET4 contour rechts van het rechteroog
+(32,34) l->m  E-MOET4 contour rechts van het rechteroog
+(32,35) l->m  E-MOET4 contour rechts van het rechteroog
+(31,36) l->m  E-MOET4 contour rechts van het rechteroog
+(12,38) m->l  E-MOET5 wangvlak één geheel
+(15,41) l->m  E-MOET5 los l-brokje
+(45,50) g->K  MAG maan vóór donker lijf: omlijning
+(46,50) g->K  MAG maan vóór donker lijf: omlijning
+(47,50) g->K  MAG maan vóór donker lijf: omlijning
+(26,2) K->g  MAG bovenste maan: lichtkant één doorlopende g-lijn (geen K/g om en om)
+(27,3) K->g  MAG bovenste maan: lichtkant één doorlopende g-lijn (geen K/g om en om)
+(9,38) a->l  K-MOET2 plooi ingekort, wangvlak
+(9,39) a->l  K-MOET2 plooi ingekort, wangvlak
+(10,39) a->l  K-MOET2 plooi ingekort, wangvlak
+(11,39) a->l  K-MOET2 plooi ingekort, wangvlak
+(13,39) l->b  K-MOET2 donker randje onder/naast de onderkant van het oog
+(14,39) m->b  K-MOET2 donker randje onder/naast de onderkant van het oog
+(15,38) m->b  K-MOET2 donker randje onder/naast de onderkant van het oog
+(37,31) l->m  K-MOET1 band los van het oog, taps, glad
+(34,32) l->m  K-MOET1 band los van het oog, taps, glad
+(35,32) l->m  K-MOET1 band los van het oog, taps, glad
+(33,33) l->m  K-MOET1 band los van het oog, taps, glad
+(33,34) l->m  K-MOET1 band los van het oog, taps, glad
+(44,34) m->l  K-MOET1 band los van het oog, taps, glad
+(33,35) l->m  K-MOET1 band los van het oog, taps, glad
+(34,35) l->m  K-MOET1 band los van het oog, taps, glad
+(43,35) m->l  K-MOET1 band los van het oog, taps, glad
+(32,36) l->m  K-MOET1 band los van het oog, taps, glad
+(33,36) l->m  K-MOET1 band los van het oog, taps, glad
+(34,36) l->m  K-MOET1 band los van het oog, taps, glad
+(41,36) m->l  K-MOET1 band los van het oog, taps, glad
+(42,36) m->l  K-MOET1 band los van het oog, taps, glad
+(43,36) m->l  K-MOET1 band los van het oog, taps, glad
+(31,37) l->m  K-MOET1 band los van het oog, taps, glad
+(32,37) l->m  K-MOET1 band los van het oog, taps, glad
+(38,37) m->l  K-MOET1 band los van het oog, taps, glad
+(39,37) m->l  K-MOET1 band los van het oog, taps, glad
+(40,37) m->l  K-MOET1 band los van het oog, taps, glad
+(41,37) m->l  K-MOET1 band los van het oog, taps, glad

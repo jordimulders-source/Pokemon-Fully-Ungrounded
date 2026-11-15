@@ -1425,3 +1425,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gengas v9: naad rechts van het gezicht schuin zoals het model, twee egale stukken links weer bandovergangen; eindkandidaat. Lessen (gezicht 1-op-1, geen vlak rond het gezicht) in `GEMINI.md`. `sprite_v9/`.
 - Gengas v10a/b: spiraal vervangen door een ovale stormvlek (a lichter, b donkerder dan de band); Claude kiest a, verfijnen. `sprite_v10/`.
 - Gengas v11: geen stormvlek (bandenpatroon loopt door), gezicht 125% (Gengar per kleurlaag vloeiend geschaald, 17 pixels nagelopen tegen Gengar). `sprite_v11/`.
+- Gengas v13: eindkeuring (schaduw, belijning, kleur, Gen 3, Dragonfly Cave) uitgevoerd: 44 pixels, palet ongewijzigd. Eindkandidaat. `sprite_v13/`.

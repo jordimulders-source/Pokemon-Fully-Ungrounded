@@ -270,3 +270,7 @@ SIMPLIFY (this is the only change):
 - Flat shading, 3 to 4 tones per color, no dithering, no noise, no texture.
 - Plain white background, no floor or shadow, one single creature.
 ```
+
+## Ronde 8 (15 nov)
+- `r8_gemini.png` (prompt v6). Jordi: "Vind je staart en lichaam nu wat beter? de bol is verschrikkelijk, maar daar kan je de bol die we al hadden op plakken toch?"
+- Meting Claude: r7 en r8 hebben exact dezelfde omvang (144–972 × 215–808), dus hetzelfde raster: onderdelen zijn 1-op-1 uitwisselbaar.

@@ -1400,3 +1400,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Naamalternatieven voor de lijn (Dustly, Harunter/Hauntar, Gengas/Dimgar) in `IDEEEN.md`.
 - Jordi ziet Dustly en Gengas zitten; nieuwe Haunter-opties (Hunter, Huntar, Hurtler) in `IDEEEN.md`.
 - Hunter afgewezen (gewoon een woord); opties Huntar, Herbunter, Hayunter, Haunflare in `IDEEEN.md`.
+- Jordi kiest Hauntflare voor de Haunter-fase; lijn nu Dustly → Hauntflare → Gengas.

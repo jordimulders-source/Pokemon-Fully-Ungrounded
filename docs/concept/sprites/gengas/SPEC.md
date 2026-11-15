@@ -17,3 +17,4 @@ Eindvorm van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Cosmi
 - 15 nov: "nee de kleur moet juist minder dicht bij gengar, dat is leuker. verder eens" (eens met Claude: oren gevuld in Gengars vorm van gas; ledematen allemaal los met gat, voeten onder de bol, handen als Gengars handen). Prompt r2: `gemini/PROMPT_r2.md`, kleurregel A/B/C ter keuze.
 - 15 nov, Gemini r2 (`gemini/r2_a.png`): door Jordi gestuurd zonder commentaar.
 - 15 nov over r2: "ik vind het nu teveel een rots, terwijl die van gas moet zijn, plus gemini past amper iets aan". Prompt r3: `gemini/PROMPT_r3.md` (nieuw gesprek, alleen Gengar als bijlage).
+- 15 nov over r3 (`gemini/r3_a.png`): "Beter, alleen de pose is niet goed driekwart. Geef hem echt de brown dwarf kleuren". Prompt r4: `gemini/PROMPT_r4.md`.

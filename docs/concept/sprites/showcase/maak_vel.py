@@ -31,10 +31,12 @@ items=[
 ("salticonda/af/salticonda.png",'"Salticonda"',"ground/electric"),
 ("dj_rotom/af/dj_rotom.png",'"DJ Rotom"',"electric/steel"),
 ("hitmontop_evo/af/hitmongroove.png",'"Hitmongroove"',"fight/ground"),
+("abra_regional/af/abra_regional.png",'Abra (regional)',"dark"),
 ("kadabra_regional/af/kadabra_charlatan.png",'Kadabra (regional)',"dark/psychic"),
 ("alakazam_regional/af/alakazam_charlatan.png",'Alakazam (regional)',"dark/psychic"),
 ("octillery_evo/af/krassault.png",'"Krassault"',"water/steel"),
 ("sneeuwbolslak/af/sneeuwbolslak.png",'Sneeuwbolslak',"ice"),
+("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
 ("sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png",'Sneeuwbolslak fase 2',"ice"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")

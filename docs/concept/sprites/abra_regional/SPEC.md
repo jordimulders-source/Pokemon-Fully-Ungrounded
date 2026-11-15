@@ -16,3 +16,8 @@ Werkwijze: `docs/lessen/SPRITE_WERKWIJZE.md` → "Gemini-model namaken" + `docs/
 
 ## Toegestane afwijkingen van het model
 - Geen. Alleen Gen 3-techniek (≤16 kleuren, 1 px omlijning, licht linksboven) waar het model daar aantoonbaar van afwijkt, per pixel gemeld.
+
+## Na r7 (Jordi, 15 nov)
+- Kleur: "A is prima, hij is juist nog niet een goochelaar zoals Kadabra, maar meer een soort van opossum die weinig hoop heeft, tot die evolved" → modeltonen (A).
+- "de zwarte belijning aan de buitenkant is meer dan bij andere gen 3 sprites of niet?" Gemeten (aandeel zwart op de buitenrand): Abra 40 %, Kadabra 41 %, Sneasel 42 %, Zigzagoon 50 %; donkere soorten 76–86 % (Mightyena, Umbreon, Poochyena, Houndour, Sableye); onze Abra r7 A 61 %.
+- "Daarnaast zijn er nog steeds best veel rechte lijnen, rechterkant van de staart, rechterkant van het lichaam, beide armen, linkerkant hoofd. Controleer deze even allemaal."

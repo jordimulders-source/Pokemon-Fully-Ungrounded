@@ -65,3 +65,38 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64
 AVOID: a normal bird beak, a straw/pipe/cigar/whistle held in the beak, green wings, a cute sparrow mascot, a teacup or teapot ghost (Sinistea/Polteageist look), a hummingbird, plush/Neopets look, realistic painting, extra props (thermos, kettle, cup).
 ```
 2. `fase2_D_r2.png`: Jordi (15 nov, letterlijk): "vind hem een beetje raar eruit zien". (Claude: de snavel is weer een gewone snavel met een rietje; het lijf leest als een vogel in een pot.) Les tot nu toe: werkt als het dier de kalebas heel laat en draagt (A); niet als de kalebas in het lijf opgaat (B) of een mate-onderdeel een lichaamsdeel moet worden (D).
+
+## Nieuwe richtingen (Jordi, 15 nov): gordeldier (E) en capibara (F)
+Jordi: "ik zat ook al aan een gordeldier te denken, maak een prompt voor die en de capybara, met wat je uit eerdere resultaten hier geleerd hebt als lessen".
+Lessen uit ronde 1–2, in de prompts verwerkt: (1) de mate blijft heel en herkenbaar als één voorwerp (bolle kalebas, opening bovenop met virola, schuine montañita, bombilla schuin in de yerba als een vlaggetje); (2) het dier draagt de mate, mate-onderdelen worden geen lichaamsdelen en het dier houdt zijn eigen kop/snuit; (3) de bombilla staat in de yerba, nooit in de bek; (4) weinig, grove gravures die op 64×64 overeind blijven; (5) beperkt palet: kalebasbruin, zilver, yerbagroen + de eigen kleur van het dier, geen extra kleuren.
+Keuzes van Claude: E = Zuidelijk driebandgordeldier (*Tolypeutes matacus*, Chaco), met de banden als zilveren banden; F = de kalebas groeit uit de rug (deel van het lijf, geen losse last), vacht duidelijk anders van tint dan de kalebas.
+
+### Prompt E: gordeldier (fase 2; bijlagen: foto mate-kalebas + foto driebandgordeldier + fase2_A_r1.png)
+```
+Attached: (1) a photo of a traditional yerba mate gourd with a silver rim and a bombilla, (2) a photo of a southern three-banded armadillo, (3) an earlier design of a different Pokémon in this concept that worked well: a tortoise whose shell is a whole mate gourd. Use it only as a reference for how the mate should look, not for the animal.
+
+Design an original Pokémon: a Grass/Water-type, the fully evolved (second and final) stage of a two-stage line. It is based on yerba mate, the drink shared in Argentina, Uruguay, Paraguay and southern Brazil, combined with a southern three-banded armadillo (Tolypeutes matacus) from the Chaco. Its domed shell is a whole, cured mate gourd that stays clearly recognisable as a mate: rounded and brown, with a few bold burned or engraved patterns. The armadillo's bands are silver bands across the gourd. On top of the shell is the opening of the mate with a silver rim (the "virola"), filled with a sloped little mound of green yerba leaves (the "montañita"), and a silver bombilla (a metal drinking straw with a flattened bend and a gold mouthpiece) sticks out of the yerba at an angle, like a little flag. The bombilla is never in its mouth. The armadillo keeps its own anatomy: its own head with the armadillo snout, ears and head shield, four short legs with claws, a short tail. As the final stage it looks cured, decorated and silver-trimmed (its pre-evolution will be a raw, green, unripe gourd).
+
+Colours: only the brown of the cured gourd, silver, yerba green, a little gold, and the armadillo's own skin colour. Patterns bold and few enough to read at 64x64.
+
+Pose: standing on all four legs, body in 3/4 view facing left, head turned slightly towards the viewer. Compact composition that fits in a square, legs close to the body.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left. Plain white background. No ground, no shadow, no water splashes, no steam, no glow or effects.
+
+AVOID: a tortoise or turtle, an armadillo curled into a ball, the bombilla in its mouth, the gourd melting into the body so it no longer reads as a mate, fine detailed patterns, a teacup or teapot ghost (Sinistea/Polteageist look), an object with a face, plush/Neopets look, realistic painting, extra props (thermos, kettle, cup).
+```
+
+### Prompt F: capibara (fase 2; bijlagen: foto mate-kalebas + foto capibara + fase2_A_r1.png)
+```
+Attached: (1) a photo of a traditional yerba mate gourd with a silver rim and a bombilla, (2) a photo of a capybara, (3) an earlier design of a different Pokémon in this concept that worked well: a tortoise whose shell is a whole mate gourd. Use it only as a reference for how the mate should look, not for the animal.
+
+Design an original Pokémon: a Grass/Water-type, the fully evolved (second and final) stage of a two-stage line. It is based on yerba mate, the drink shared in Argentina, Uruguay, Paraguay and southern Brazil, combined with a capybara (the "carpincho" of the Paraná and Río de la Plata wetlands): calm, sturdy and relaxed. A whole, cured mate gourd grows from the middle of its back, as part of its body (not a loose object or a pack strapped on), and stays clearly recognisable as a mate: rounded and brown, with a few bold burned or engraved patterns and silver details. At the top of the gourd is the opening with a silver rim (the "virola"), filled with a sloped little mound of green yerba leaves (the "montañita"), and a silver bombilla (a metal drinking straw with a flattened bend and a gold mouthpiece) sticks out of the yerba at an angle, like a little flag. The bombilla is never in its mouth. The capybara keeps its own anatomy: the big blunt head with the square snout, small ears, eyes high on the head, a barrel-shaped body, four short legs, no visible tail. Its fur is a clearly different shade from the gourd so the gourd stands out. As the final stage it looks cured, decorated and silver-trimmed (its pre-evolution will be a raw, green, unripe gourd).
+
+Colours: only the capybara's own fur colour, the brown of the cured gourd, silver, yerba green and a little gold. Patterns bold and few enough to read at 64x64.
+
+Pose: standing on all four legs, body in 3/4 view facing left, head turned slightly towards the viewer, calm expression. Compact composition that fits in a square, legs close to the body.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left. Plain white background. No ground, no water, no shadow, no water splashes, no steam, no glow or effects.
+
+AVOID: a mate strapped on like a backpack or saddle, the bombilla in its mouth, the gourd melting into the body so it no longer reads as a mate, a guinea pig or beaver, a meme capybara with an orange or a bird on its head, fine detailed patterns, a teacup or teapot ghost (Sinistea/Polteageist look), an object with a face, plush/Neopets look, realistic painting, extra props (thermos, kettle, cup).
+```

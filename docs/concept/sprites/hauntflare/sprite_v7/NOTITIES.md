@@ -33,3 +33,11 @@ Uit `sprite_v2/stap1_kleur.npy` (oude linkeroog en mond); daardoor komt ook de g
 
 ## Favoriet (eerlijk)
 **C**: de hoek van het verre oog sluit het best aan bij het rechteroog (één boze blik, niet scheel), en M2 zit lager en platter, wat op de onderste helft van een bol klopt. De tong in donkerroze is hoe Haunter zijn mond bouwt (donkere band onder de tanden, lichte tong); zonder tong (C_donker) wordt de opening één zware vlek. Zwak punt: de linker mondhoek (Haunters kleine hoektand) leest op 12x als een klein kluwen; op 1x/6x valt het weg.
+
+## C2 (na keuring: C beste, FAIL op kleine punten)
+`python3 c2.py` (bouwt `kandidaat_C2.png` uit C, log `c2_log.json`) · `python3 c2_meet.py` · `python3 vel_c2.py` (`vel_c2.png`: C2 | C | v6, gezicht 12x, heel 6x, 1x).
+1. (22,22) 7->9, (23,25) 7->8. 4. Glansstreep (19,20),(19,21),(19,22),(20,20) 7->9.
+2. Linker mondhoek: (21,33),(21,34),(21,35),(22,35) -> 7, (23,35) a->1: één schuine zwarte lijn (vóór de verschuiving).
+3. Hele mond (61 px: lijnen, opening, tong en de ingesloten tanden in x21-35, y31-38) 2 px naar links; vrijgekomen pixels uit `stap1_kleur.npy`; (33,35) en (32,36) 8->7 (1-px vlekjes). Mond nu x19-33, midden ±26, tussen de binnenhoeken van de ogen; linker mondhoek 7 px van de bolrand, onderkant 2 px bol boven de ring.
+5. Tong gehouden.
+Controle: 63 px anders dan C, alles binnen x19-35, y20-38; silhouet 0; 15 kleuren. 1-px vlakjes die blijven: (27,33), (22,34) = tandpunten; (31,25), (29,26), (28,29) = bevroren v6 rond het rechteroog.

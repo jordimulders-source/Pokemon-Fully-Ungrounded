@@ -1642,3 +1642,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.398] - Hauntflare: v17
 - Gemarkeerde lippixel (31,32) hoofdroze (Jordi).
+
+### [v0.0.399] - Hauntflare: frontsprite af
+- Eindkeuring v17 → v18 PASS; `sprites/hauntflare/af/hauntflare.png`, op het overzichtsvel. POKEMON.md, Stand van zaken en les in GEMINI.md bijgewerkt.

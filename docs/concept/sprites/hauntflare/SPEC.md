@@ -56,3 +56,4 @@ Jordi letterlijk: "gebruik de jouwe maar als model voor vorm, de vlammen zouden 
 - 15 nov: "hoek k2 met kern b, maar naast de mondhoek zit nu die tand die echt een 90 graden pixelhoek heeft, dat is niet heel mooi, 1 pixel bij kleuren zou ik zeggen" → v16 = B+K2 + (31,33) roze (T1; alternatief T2 = (29,34) in `sprite_v16/tand_opties.png`); keuring loopt.
 - v16 keuring mond **PASS**.
 - 15 nov over v16: "nee nu klopt de geel gestipte pixel niet meer" (stip op (31,32)) → v17: (31,32) zwart → hoofdroze, tand zit vast aan het hoofd.
+- v17 eindkeuring FAIL (3 px rand bol/kuif) → v18 **PASS** → `af/hauntflare.png` (+ `_8x.png`), op het overzichtsvel.

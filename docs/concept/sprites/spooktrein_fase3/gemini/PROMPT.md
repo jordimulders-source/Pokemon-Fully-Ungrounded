@@ -12,6 +12,7 @@ Geen bijlage (eerste fase die we maken).
 - Spirit: "beetje rotom achtig, de locomotief heeft een gezicht waarin je kan zien dat het een geest is, en er zijn ook hints van geest op andere plekken"
 - Vaart: "trein helt naar voren en de wielen zijn zoals in een stripboek mee aan het bewegen"
 - Kleur: "idd roestbruine 1e fase, maar de 3e is alweer functioneel, dus hooguit tinten van roest"
+- Geest: "en de geest heeft dan een mooie contrastkleur, misschien groenig?"
 - Wagons: varianten a (verdwijnen achter de locomotief), b (lossen op in rook/spooknevel) en c (buigen in een bocht mee): "alle drie proberen, kijken wat gemini doet"
 
 ## Keuzes Claude (Jordi heeft hier niets over gezegd; schrappen of aanpassen mag)
@@ -31,6 +32,7 @@ CONCEPT: an old steam train that has been taken over by a spirit, a bit like how
 - There are also small hints of the ghost elsewhere on the train.
 - The metal reads as old iron through texture (rivets, old iron), not as separate armour plates.
 - The train is functional again, not a wreck: at most some tints of rust.
+- The ghost has a nice contrasting color, greenish, against the iron of the train.
 
 FULL SPEED (this must be obvious)
 - The whole train leans forward, as if charging ahead at full speed.

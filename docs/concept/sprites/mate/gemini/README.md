@@ -100,3 +100,6 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64
 
 AVOID: a mate strapped on like a backpack or saddle, the bombilla in its mouth, the gourd melting into the body so it no longer reads as a mate, a guinea pig or beaver, a meme capybara with an orange or a bird on its head, fine detailed patterns, a teacup or teapot ghost (Sinistea/Polteageist look), an object with a face, plush/Neopets look, realistic painting, extra props (thermos, kettle, cup).
 ```
+
+## Rondes E/F
+1. `fase2_E_r1.png`, `fase2_F_r1.png`. Jordi (15 nov, letterlijk): "de capybara is waardeloos, maar de armadillo heeft potentie, al is het wel nog teveel een dier met een accessoire". Capibara (F) valt af.

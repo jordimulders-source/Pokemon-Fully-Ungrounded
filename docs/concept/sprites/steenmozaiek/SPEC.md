@@ -38,3 +38,5 @@ Werkwijze: `docs/lessen/GEMINI.md` + `docs/lessen/SPRITE_WERKWIJZE.md` (Gemini-m
 - Sprite: `welp/` (rondes `welp/rN/`).
 - **Chavín-inkleuring (Jordi, 15 nov, letterlijk):** "zoiets als op deze foto bedoelde je dan? Kan je de inkleuring niet opnieuw doen, op het gebied van chavin de huantar, zoals jij het in gedachten hebt? Want ik vind nu ook het hele rock patroon niet goed te zien, houd het silhouet en de vorm verder hetzelfde". Foto: `referenties/chavin_jaguar_beeld_jordi.png` (stenen jaguarbeeld bij Chavín de Huántar, het hele lijf bedekt met gegraveerde voluten in panelen). Ronde: `welp/c1/`.
 - Koplijnen: Jordi (15 nov): "A heeft de lijnen die ik wil" (c6/c7 variant a: wenkbrauwvoluut + boog verre oog + middenlijn naar de kruin) → bevroren.
+- Kleuren (Jordi, 15 nov): "beide kleuren goed, dus links is het origineel en rechts wordt de shiny" → greige = normaal, grijs = shiny.
+- Kop (Jordi, 15 nov): "nee ik bedoel een halve cirkel naast het oog, zoals op het beeld in de bron foto" (geen hele cirkel).

@@ -1636,3 +1636,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.396] - Hauntflare: opties mondhoek en mondkleur
 - `sprites/hauntflare/sprite_v16/opties.png` (3 hoeken × 3 mondkleuren).
+
+### [v0.0.397] - Hauntflare: v16 (keuring PASS)
+- Punteriger rechter mondhoek, gloeiende kernkleur in de mond (rood + oranje tong), tand zonder rechte hoek: `sprites/hauntflare/sprite_v16/hauntflare_v16.png`.

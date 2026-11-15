@@ -1,0 +1,24 @@
+== meting r7
+Stappen: eindkeuring_r6_moet.py (M1-M3a, 66 px, 0 mismatch) -> sprite/maker/raster_r7_m3a.txt; daarna sprite/maker/r7_bouw.py (M3b) -> raster_r7.txt. Palet pal6, render naarpng6.py, vel vel7.py.
+silhouet-diff: 0
+afwijking van onderlaag56: {'bol': 211, 'kop': 102, 'staart': 131, 'lijf/flap/ring': 199} totaal 643 van 1345
+OK
+== recht.py (r6: 21)
+totaal 21
+gewijzigd t.o.v. r6: 180  buiten x22-41,y23-38: 0
+== tintvlakjes < 3 px in de bol (r6: 6 volgens mijn telling, keurder 44 incl. 1-2 px randen)
+4
+('w', [(30, 27)])
+('w', [(26, 29)])
+('w', [(27, 33)])
+('w', [(33, 37)])
+== EINDKEURING_r6
+[x] M1 barst # -> d (script), onderste tak doorgetrokken.
+[x] M2 lichte rechter binnenrand (script); in M3b uitgebreid tot een lichte glasrand rondom: c linksboven, e rechts/onder (r > 8,8 van het middelpunt).
+[x] M3a (script), daarna in M3b grotendeels herschilderd tot vormen.
+[x] M3b: doorkijktint b; stormbanen a als wervels: A boven (28-30,24)->(31-34,25) en omlaag rechts (36,27)(37,28)(38,29) met C dun b (38,30-31)(39,32-33);
+    B (25-29,30) krult links omlaag (24,31)(23,32-33)(24,34); D onder (25-26,35)(27-29,36)(30-31,37) terug naar de barst.
+    Lichte sneeuwsliert c tussen A en B en langs y29; lichte kern e (31-36,31-35) onder de vork; glans e met w-kern (25,26)(26,26)(25,27).
+    Vlokken w: (27,33) (33,37) + 2 extra (26,29) (30,27). Tintvlakjes < 3 px: alleen die 4 vlokken.
+== Zelfcontrole 1x/3x
+Glasrand + glans lezen als glas; binnenin zijn de donkere wervels zichtbaar. Zwak punt: de barst (nu d) en de stormbanen (a) liggen dicht bij elkaar in tint, waardoor de barst minder opvalt dan in het model.

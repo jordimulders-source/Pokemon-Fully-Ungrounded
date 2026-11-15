@@ -1,0 +1,7 @@
+silhouet-diff: 0
+afwijking van onderlaag56: {'bol': 193, 'kop': 85, 'staart': 148, 'lijf/flap/ring': 183} totaal 609 van 1351
+OK
+--- oog B
+silhouet-diff: 0
+afwijking van onderlaag56: {'bol': 193, 'kop': 81, 'staart': 148, 'lijf/flap/ring': 183} totaal 605 van 1351
+OK

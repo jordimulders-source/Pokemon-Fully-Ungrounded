@@ -1,0 +1,4 @@
+silhouet-diff: 0
+afwijking van onderlaag56: {'bol': 196, 'kop': 85, 'staart': 148, 'lijf/flap/ring': 183} totaal 612 van 1361
+OK
+pixeldiff r3->r3b 133 buiten bolzone x19-44 y18-40: 0

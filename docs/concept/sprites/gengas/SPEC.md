@@ -15,3 +15,4 @@ Eindvorm van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Cosmi
 - Prompt: `gemini/PROMPT_r1.md`. Werkwijze: Gemini-model van Jordi → `SPRITE_WERKWIJZE.md` "Gemini-model namaken".
 - 15 nov, Gemini r1 (`gemini/r1_a.png`): "wat vind je hiervan? Ik twijfel over de oren en de kleur, de benen zweven nog niet genoeg"
 - 15 nov: "nee de kleur moet juist minder dicht bij gengar, dat is leuker. verder eens" (eens met Claude: oren gevuld in Gengars vorm van gas; ledematen allemaal los met gat, voeten onder de bol, handen als Gengars handen). Prompt r2: `gemini/PROMPT_r2.md`, kleurregel A/B/C ter keuze.
+- 15 nov, Gemini r2 (`gemini/r2_a.png`): door Jordi gestuurd zonder commentaar.

@@ -30,3 +30,4 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - Ledematen: indeling 3 (Jordi). Claude-voorstellen uit de r5-bespreking (Jordi: "alright"): voor = groter en lichter, achter = kleiner, donkerder, half verstopt; iets donkerder en warmer grijs dan het model; handen met Gengars drie stompe vingers, voeten in Gengars voetvorm (Jordi r1: "verder eens"); 2–3 grotere kraters per maan.
 - 15 nov: "toon voordat je gaat bouwen nog jouw opties voor ogen en mond posities" → `model/gezicht_opties.png` (A/B/C, Gengar-pixels op de kleurgids; schets).
 - 15 nov over de gezichtsopties: "Het is lastig om te zien, want het is heel slordig knip en plakwerk".
+- 15 nov: "C sowieso niet iig" (gezichtspositie C valt af; keuze tussen A en B).

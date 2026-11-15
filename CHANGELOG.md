@@ -1585,3 +1585,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 ronde 5 (v6 variant D) afgekeurd (Jordi: "een trein met een geest erin, dat is niet een pokemon"). Les in GEMINI.md.
 - Spooktrein fase 3: prompt v7 (geest is het wezen: ijzeren schulp, wielen en rookstaart van geestenergie; "locomotive" niet als onderwerp).
 - Spooktrein fase 3: kern van Jordi (schroot dat zonder de geest uit elkaar valt, razendsnel, geest heeft lol, zoals Rotom) + precieze vormbeschrijving in prompt v8.
+- Spooktrein fase 3: prompt v8 variant B (steigeren als een paard, luikje aan de onderkant met geest eruit).

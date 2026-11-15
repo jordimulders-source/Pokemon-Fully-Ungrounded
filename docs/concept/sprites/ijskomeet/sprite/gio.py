@@ -1,5 +1,5 @@
 import numpy as np
-CH='KWLMDSijnvwcCr'
+CH='KWLMDSijnvwcCrg'
 def to_txt(o,fn):
     with open(fn,'w') as f:
         for row in o: f.write(''.join('.' if v<0 else CH[v] for v in row)+'\n')

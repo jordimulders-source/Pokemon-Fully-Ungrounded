@@ -6,6 +6,9 @@ r4=np.load('welp_r4.npy'); r3=np.load('welp_r3_A_oog1.npy'); F=np.load('form.npy
 _,K,d,S,M,L,P,Q,R,g_,Wt,C,T,G=range(14)
 BR={S,M,L}; log={}
 a=r4.copy()
+import sys
+BRON=sys.argv[1] if len(sys.argv)>1 else 'r3'
+FAC=np.load('facet.npy') if BRON=='facet' else None
 edge=np.zeros((H,W),bool)
 for y in range(H):
     for x in range(W):
@@ -34,7 +37,8 @@ def r3buur(y,x):
     return None
 n_vul=0
 for y,x in zip(*np.where(~kop&~edge&np.isin(r4,list(BR)))):
-    v=r3[y,x] if r3[y,x] in BR else r3buur(y,x)
+    if FAC is not None and FAC[y,x] in BR: v=FAC[y,x]
+    else: v=r3[y,x] if r3[y,x] in BR else r3buur(y,x)
     if v is not None and a[y,x]!=v: a[y,x]=v; n_vul+=1
 log['vul_uit_model']=n_vul
 # 3. korrels < 3 px (bruin) naar de buurtint binnen dezelfde vorm; facetten van 3+ px blijven
@@ -58,6 +62,6 @@ for it in range(2):
                     v=max(cnt,key=cnt.get)
                     for y,x in cl: a[y,x]=v; n+=1
 log['korrels']=n
-np.save('welp_r5.npy',a)
+np.save('welp_r5.npy' if BRON=='r3' else 'welp_r5_facet.npy',a)
 log['diff_r4']=int((a!=r4).sum()); log['diff_r3']=int((a!=r3).sum())
 print(log)

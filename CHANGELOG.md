@@ -1627,3 +1627,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.393] - Hauntflare: v12
 - Gemarkeerde tandpixel (31,33) weg (Jordi).
+
+### [v0.0.394] - Hauntflare: vlammen en handen als vuur (v13)
+- Kuif, staart en handen herkleurd naar Gen 3-vuur (Typhlosion, Ponyta e.a.): `sprites/hauntflare/sprite_v13/`.

@@ -50,3 +50,4 @@ Jordi letterlijk: "gebruik de jouwe maar als model voor vorm, de vlammen zouden 
 - 15 nov over v10: "kleiner, niet smaller. en links is nu 2 pixels onder elkaar, dat klopt ook niet, kijk nu eens hoe de andere haunters het doen" → v11: beide tanden naar het G3-patroon (punt 1 px met zwart ernaast op een voet van 3 in huidkleur), 6 px herkleurd.
 - 15 nov over v11: "haal de ingekleurde pixel tand weg" (markering op (31,33)) → v12: (31,33) weer lipzwart.
 - 15 nov: "ok genoeg, de vlammen en handen moeten meer vlammen worden, stuur maar meteen naar eindkeuring voor kleur, schaduw en belijning" → gezicht v12 bevroren; kleurronde vlammen/handen (`sprite_v13/`), daarna eindkeuring.
+- v13: vlammen en handen als Gen 3-vuur (geel hart, oranje, rode punten, rode/donkerrode lijn i.p.v. zwart), 374 px herkleurd; eindkeuring loopt.

@@ -2,7 +2,7 @@
 import sys,numpy as np
 from PIL import Image, ImageDraw
 from toon6 import big
-F=np.load('FIN7.npy'); SRC='../../referenties/model_welp_gekozen.png'; k=16.896
+F=np.load('FIN10.npy'); SRC='../../referenties/model_welp_gekozen.png'; k=16.896
 def raster(c,box,z):
     d=ImageDraw.Draw(c)
     for i in range(box[2]-box[0]+1): d.line([(i*z,0),(i*z,c.height)],fill=(0,160,255,255) if (i+box[0])%5==0 else (120,120,120,70))

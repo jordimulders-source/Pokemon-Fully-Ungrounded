@@ -1373,7 +1373,136 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: geen mond, ogen dicht, kerf in één oor, geen vachtplukken, geen rood; meer opossum, "die er half dood bij ligt", herkenbaar Abra. Letterlijk in POKEMON.md.
 - `sprites/abra_regional/gemini/PROMPT.md` met bijlagen (originele Abra en regionale Kadabra, 8×); open keuzes: kleur van de platen en welke opossumkenmerken.
 
-### [v0.0.327] - Steenmozaïek-jaguar: frontsprite eindvorm af
+### [v0.0.327] - Abra-regional: Gemini ronde 1, prompts v2A/v2B
+- Ronde 1: pose leest als kruipen (buik, poten naar voren, kop wakker, zweeft). Jordi: "Probeer allebei" → `abra_regional/gemini/PROMPT_v2.md`: A playing possum (zij/half op de rug), B ingezakte Abra-zit.
+
+### [v0.0.328] - Abra-regional: Gemini-model gekozen, sprite gestart
+- Ronde 2 (v2B, ingezakte Abra-zit) gekozen: "Deze is uitstekend, die lijkt half dood". `abra_regional/referenties/gemini_gekozen.png`, `SPEC.md`. Sprite via de poedelmot-methode met overnemen van het model (Krassault), geen hertekende onderdelen.
+
+### [v0.0.329] - Abra-regional: sprite r1
+- Maker: Gemini-raster teruggehaald (pitch 8 px, natief 127×127, figuur 96×96), exacte 2×2-reductie → 48×49 (1071 px; Abra 951, regionale Kadabra 1232), 10 modeltonen. 12 pixels gerepareerd (buitenrand, gesloten ogen); vlekjes/streepjes, oorkerf en staartrand onaangeroerd. `abra_regional/kleur_r1/` (vel, LOG).
+- Open: handen/vingers lezen niet na de reductie, omlijning ±33%, linkeroog 1 px, huidtonen grijzer dan de regionale Kadabra.
+
+### [v0.0.330] - Abra-regional: sprite r2 (Krassault-recept)
+- Silhouet bevroren (diff 0 buiten de handen; 3 vingergaatjes uit het model erbij), 9 kleuren, lijnkleur grijs-violet, bijna-zwart 34,6% → 21,3%, 53 modelvlekjes behouden, ogen op de gemeten modelplek. `abra_regional/kleur_r2/`.
+- Open (Claude op 8×): onderhelft (armen, handen, benen) nog mozaïek; rechterhand; lijnen samen ±41%.
+
+### [v0.0.331] - Abra-regional: sprite r3
+- Verse maker. Onderhelft per lichaamsdeel als banden uit het model (meerderheid per band), binnenlijnen alleen waar het model ≥2 zwarte pixels heeft, toonovergangen als toongrens, lichtere plooikleur voor vingers/tenen, lichte omlijning op de staartbovenrand, rechterhand per pixel uit het model. Kop, romp en silhouet bevroren (diff 0). Lijnen samen 40,7% → 32,3%, zwart 20,9%; 11 kleuren. `abra_regional/kleur_r3/`.
+
+### [v0.0.332] - Abra-regional: keuring r3, sprite r4
+- Onafhankelijke keurder (hoofdvraag "nog niet, wel dichtbij"; 11 MOET, 8 MAG; `kleur_r3/KEURING_r3.md`): linkeroog liep over in de kaak, rechteronderarm miste zijn rand, wangvlekje weg, en kleine lijnfouten.
+- r4 (Claude, per script `kleur_r4/maak_r4.py`): alle 11 MOET-punten (35 pixels). MAG-punten nog niet.
+
+### [v0.0.333] - Abra-regional: sprite r5
+- Jordi over r4: linkeroog diagonaler ("desnoods doe je de linkerpixel 1 omhoog"), lijnwerk niet overal mooi, linkerarm te recht, rare witte pixel in het rechteroor, kop en rechts de staart te veel rechte lijnen.
+- r5 (verse maker, 42 px t.o.v. r4): oog A (linkerpixel omhoog) en B (modeldiagonaal), rechteroor-binnenlijn als boog + gat (31,18) dicht (meethulpje telde hooglicht als achtergrond), rechterrand kop en kinlijn naar de modellijn, linkerarm hol zoals het model, staart rechts afgerond (2 silhouetpixels) en bovenrand zwart zoals het model. `abra_regional/kleur_r5/`.
+
+### [v0.0.334] - Idee: sneeuwbol-lijn die Cosmic wordt
+- Jordi: "ik zat te denken aan een pokemon lijn die begint als snow globe en daarna cosmic wordt". Letterlijk in IDEEEN.md (bij Sneeuwbol-Pokémon) en POKEMON.md; uitwerking open.
+
+### [v0.0.335] - Sneeuwbol-lijn: eerste richting
+- Jordi: eindvorm blijft Ice/Cosmic, groeit uit naar "een soort cosmisch ijs sferisch ding", sneeuwglobe moet een hybride zijn; begint puur Ice en vroeg te vangen, mogelijk 3 fases. Letterlijk in IDEEEN.md, met voorstellen van Claude (open).
+
+### [v0.0.336] - Sneeuwbol-lijn: slak, fase 3 naar de vorm van de Interloper
+- Jordi kiest de slak als richting; fase 2 moet meer vooruitgang zijn; fase 3 qua vorm een beetje als de Interloper (Outer Wilds). Letterlijk in IDEEEN.md, met voorstellen van Claude voor fase 2 (open).
+
+### [v0.0.337] - Sneeuwbol-lijn: Interloper = langwerpige vorm
+- Jordi: van de Interloper "vooral de langwerpige vorm, de donkere kern hoeft niet". In IDEEEN.md.
+
+### [v0.0.338] - Sneeuwbolslak: Gemini-prompt fase 1
+- Jordi akkoord met fase 2 (spiraal, ijskorst, sneeuwstorm binnenin, bevroren spoor), "maar zorg er wel voor dat het in een sprite uit te beelden blijft". Lijn in POKEMON.md.
+- `sprites/sneeuwbolslak/gemini/PROMPT.md`: startprompt fase 1 (open keuzes: inhoud van de bol, kleur van het lijf; bijlage tuinslakfoto zelf toevoegen).
+
+### [v0.0.339] - Sneeuwbolslak: keuzes prompt
+- Jordi: "1c en 2a": een minuscuul huisje in de bol, lijf lichtblauw-wit. Ingevuld in `sprites/sneeuwbolslak/gemini/PROMPT.md`.
+
+### [v0.0.340] - Sneeuwbolslak: Gemini-ronde 1
+- Eerste Gemini-resultaat van Jordi bewaard: `sprites/sneeuwbolslak/gemini/r1_gemini.png`.
+
+### [v0.0.341] - Sneeuwbolslak: Gemini-prompt v2
+- Jordi: "ja schrijf die prompt, voetstuk mag blijven". Prompt v2 (nieuw gesprek, r1 als bijlage): kop met gezichtje, contrast glas/lijf, geen dithering, strakke omlijning. In `sprites/sneeuwbolslak/gemini/PROMPT.md`.
+
+### [v0.0.342] - Sneeuwbolslak: Gemini-ronde 2
+- Resultaat prompt v2 bewaard: `sprites/sneeuwbolslak/gemini/r2_gemini.png` (omlijning, contrast en ogen beter; kop nog klodderig, onderste voelsprieten lijken pootjes, geen mond).
+
+### [v0.0.343] - Sneeuwbolslak: Gemini-prompt v3
+- Jordi: "Ik vind het nog niet duidelijk genoeg een snow globe denk ik"; keuze: "meer sneeuwvlokken". Prompt v3 (r2 als bijlage, alleen meer vlokken) in `sprites/sneeuwbolslak/gemini/PROMPT.md`.
+
+### [v0.0.344] - Sneeuwbolslak: ronde 3 en eerste hybride op 64×64
+- Gemini r3a/r3b bewaard; natief raster (pitch 10,24) past direct in 64×64. Stervlokken vallen weg; hybride `sprite/hybride_v1.png` met witte plusjes en losse pixels. Les in GEMINI.md.
+
+### [v0.0.345] - Sneeuwbolslak: sprite ronde 1 (onderlaag + bol blauwer)
+- Jordi: vlokken prima, "bol ietsje blauwer", sprite gaan bouwen met de poedelmot-methode, "niet opnieuw dingen gaan tekenen, buiten wat we afgesproken hebben". `SPEC.md` aangemaakt.
+- Natief Gemini-raster overgenomen (geen tekenwerk): achtergrond weg, 13 kleuren + transparant, bol-binnenkant eigen paletkleur in twee tinten (A/B). Vel `sprite/r1_vel.png`.
+
+### [v0.0.346] - Sneeuwbolslak: bol B, maattest
+- Jordi kiest bol B en wil hem kleiner. Maattest op 40/46/52 px breed (`sprite/maattest_vel.png`).
+
+### [v0.0.347] - Sneeuwbolslak: sprite 46 px (maker r2)
+- Jordi: "46 prima"; "nu zijn de ogen wel grotendeels weg" (over Gemini r5) doorgegeven aan de maker; "laat de maker maar doorgaan".
+- Maker zette ogen, huisje, vlokken, glans, sneeuwlaag en omlijning met de hand terug op 46×37 (silhouet-diff 0, palet van r1_B). `sprite/maker/r2.png`, vel `vel_r2.png`. Gemini r4/r5 gemeten (r4 niet kleiner; r5 42×35, niet gebruikt).
+
+### [v0.0.348] - Sneeuwbolslak: pupillen kleiner (A/B)
+- Jordi: "op de ogen na ben ik tevreden, die zijn een beetje te groot deel van de oogballen nu lijkt". Twee varianten: pupil 2 px (A) en 1 px (B), verder pixeldiff 0. Vel `sprite/maker/vel_r3.png`.
+
+### [v0.0.349] - Sneeuwbolslak: oogtype-probeersels
+- Jordi: "nee een ander type oog, dit is alle 3 niet mooi". Maker nam ogen pixel voor pixel over van Magcargo, Surskit, Gastrodon en Sliggoo (alleen de voelspriettoppen, verder diff 0). Vel `sprite/maker/vel_ogen.png`.
+
+### [v0.0.350] - Sneeuwbolslak: frontsprite af
+- Jordi: "surskit is de enige die redelijk past, dus ga maar voor die en stuur hem naar de eindkeuring".
+- Eindkeuring: PASS met 2 losse pixels gerepareerd. `sneeuwbolslak/af/sneeuwbolslak.png` (+ `_8x.png`), op het overzichtsvel (`showcase/frontsprites_af.png`). Stand van zaken: 31 frontsprites af. Les in GEMINI.md.
+
+### [v0.0.351] - CLAUDE.md: niet meer naar projectgrounded pushen
+- Jordi: "nee er moet niet naar projectgrounded gepushed worden, geen idee hoe dat in claude.md is gekomen". Regel in Stand van zaken vervangen.
+- Jordi: "haal dat weg": ook de vervangende regel geschrapt; de pushinstructie staat er niet meer in.
+
+### [v0.0.352] - Abra-regional: r6, ogen hangen meer
+- Jordi: "kan je beide ogen nog iets meer laten hangen? zoals in het model?". Model gemeten: beide ogen zakken naar de neus toe. r6 (Claude, `kleur_r6/maak_r6.py`): A = rechteroog een nette diagonaal (30,28)(29,29)(28,30) + linkeroog 3 px diagonaal (24,31 erbij); B = alleen het rechteroog. Close-up `kleur_r6/ogen.png`.
+
+### [v0.0.353] - Abra-regional: ogen zoals de echte Abra (variant D)
+- Fout van Claude rechtgezet: de echte Abra heeft geen 3 maar 4 px per oog (zwarte diagonaal + donkerbruine pixel recht eronder; linkeroog begint met een bruine pixel). Variant D (`kleur_r6/abra_r6_D.png`, `ogen_D.png`): A + donkere lijntint aan dezelfde uiteinden. Les in GEMINI.md.
+
+### [v0.0.354] - Sneeuwbolslak: rondere bol, Gen 3-belijning en shading
+- Jordi (na "af"): bovenkant bol niet rond genoeg; "sowieso zijn de lijnen te strak en te zwart, ik was te vroeg" · "komt niet overeen met andere gen 3 sprites"; daarna "veel netter, nu nog shading, kleur belijning verbeteren".
+- Bovenrand bol als cirkel (`sprite/rond/rond_A.png`); verse maker na studie van Castform/Swablu/Spheal: gekleurde selout per vlak, zwart alleen onderaan en in de ogen, sikkelschaduw op bol, voetstuk en voet (`sprite/lijn/r3.png`). Nog niet gekeurd.
+
+### [v0.0.355] - Abra-regional: ogen 1 px naar rechtsboven (variant E)
+- Jordi: "schuif beide ogen iets meer naar rechtsboven, want nu zit links vast aan de rand". `kleur_r6/abra_r6_E.png` = D met beide ogen (+1,−1); oude oogplek terug naar de r5-vulling. `ogen_E.png`.
+
+### [v0.0.356] - Abra-regional: ogen 1 px terug naar links (variant F)
+- Jordi: "ogen weer 1 pixel naar links, verhouding klopt niet meer". `kleur_r6/abra_r6_F.png` = E met beide ogen 1 px naar links (= D 1 px omhoog). `ogen_F.png`.
+
+### [v0.0.357] - Abra-regional: ogen F gekozen, eindronde schaduw/kleur/lijn gestart
+- Jordi: "ja" (F) "schaduw, kleuren en belijning". Basis `kleur_r7/basis_F.png`; eindkeuring Dragonfly Cave/Gen 3 op schaduw, kleuren en belijning.
+
+### [v0.0.358] - Sneeuwbolslak: herkeuring, opnieuw af
+- Jordi: "keur maar". Verse keurder: PASS; 3 pixels in de bolsikkel aangepast (geen stijve band meer). Nieuwe versie in `sneeuwbolslak/af/` en op het overzichtsvel; oude versie met zwarte lijnen in `af/oud_zwartelijn/`. Les in GEMINI.md.
+
+### [v0.0.359] - Abra-regional: r7 schaduw, kleuren, belijning (A/B)
+- Eindkeuring op basis F ("bijna"): banding op de snuit, twee bijna-dubbele tinten (m, I), vulpixel op de rand, drie randen met wisselende lijnkleur. r7 (37 px, `kleur_r7/maak_r7.py`): m en I opgeheven (9 kleuren), randen één lijnkleur, r3-MAG a/c/d/f uitgevoerd; silhouet en ogen ongewijzigd. Zwart 21,6% (volgt het model).
+- Keuze voor Jordi: A = modeltonen, B = huid naar de regionale Kadabra. `kleur_r7/vel.png`.
+
+### [v0.0.360] - Abra-regional: A gekozen; buitenrand en rechte lijnen
+- Jordi: "A is prima, hij is juist nog niet een goochelaar zoals Kadabra, maar meer een soort van opossum die weinig hoop heeft, tot die evolved".
+- Zwart op de buitenrand gemeten: echte Abra/Kadabra/Sneasel ±40 %, donkere soorten 76–86 %, onze Abra 61 % → te veel. Ronde 8 gestart: buitenrand lichter (selout zoals Abra) en de rechte lijnen die Jordi noemt (staart rechts, lijf rechts, beide armen, kop links).
+
+### [v0.0.361] - Abra-regional: r8 buitenrand en curven
+- Buitenrand naar het Abra/Kadabra-recept: 43 randpixels zwart → donkere lijntint (schaduwkant was 100 % zwart); rand-zwart 60,9 % → 42,7 % (Abra 40 %), zwart totaal 21,6 → 17,5 %.
+- Curven waar het model ze heeft: staart rechts (1,1,1,2,3,2,1,1,1) en buitenkant linkerarm. Kop links, lijf rechts, binnenkant linkerarm en rechterarm zijn in het model op natieve resolutie recht: lichte curven daar alleen in variant `abra_r8_curve.png` (max. 1 px van het model). `abra_regional/kleur_r8/` (vel, closeup, LOG).
+
+### [v0.0.362] - Abra-regional: r9 schouder + eindkeuring
+- Jordi: "nu zitten er rechts op de schouder een paar overbodige pixels". Uitstekende puntpixel (46,31) weg en de dubbele zwarte lijnknoop eronder opgeruimd (5 px; in de curve-variant ook (45,34) weg, 7 px). Rand volgt het model binnen een halve pixel.
+- Eindkeuring Dragonfly Cave/Gen 3: hoofdvraag ja; 3 MOET (schouder, uitgevoerd), 4 MAG niet uitgevoerd (3 zouden van het model afwijken). Rand-zwart 42,7 %, zwart totaal 17,4 % (Abra 40,3 / 18,0). `abra_regional/kleur_r9/`.
+
+### [v0.0.363] - Abra-regional: zachtere ogen (r10 A/B)
+- Jordi: "de ogen zijn nog wel wat hard met dat pure zwart, kan die iets zachter qua kleur?". `kleur_r10/maak_r10.py`: A = oogkern in de lijnkleur (60,54,80); B = nieuwe tussentint (36,32,52). Beide ook op de curve-variant. `kleur_r10/ogen.png`.
+
+### [v0.0.364] - Abra-regional: frontsprite af
+- Jordi: "A is mooi, commit en push naar main". `abra_regional/af/abra_regional.png` (+ `_8x`) = r10 A (r9 met de oogkern in de lijnkleur). Variant met lichte curven blijft in `kleur_r10/abra_r10_curve_A.png`.
+- Op het overzichtsvel als "Abra (regional)", Dark (32 sprites). Stand van zaken, POKEMON.md en les (GEMINI.md) bijgewerkt. De charlatan-lijn (Abra, Kadabra, Alakazam) heeft nu alle frontsprites.
+
+### [v0.0.365] - Steenmozaïek-jaguar: frontsprite eindvorm af
 - Nieuwe lijn (Jordi): "een soort rock jaguar lijn ... gebaseerd op mijn beeldje uit mexico, 2 fases"; beide puur Rock, welp → volwassen, fase 2 "nog mooier en geavanceerder qua materiaal en kleur". Staand op 4 poten, brullend.
 - Gemini: 5 rondes voor fase 2 (tijger met patroon → te buff → illustratie → chibi → gekozen; grotere staart is Jordi's eigen bijsturing). Extra wangoog weggehaald.
 - Sprite: Gemini-raster teruggehaald (120×95) en 2× verkleind, alle mozaïekstukken behouden (Jordi's keuze); shading met licht linksboven; oog naar Jordi's pixelaanwijzingen; buikschaduw gecorrigeerd; gekleurde selout aan de lichtkant (Jordi: "ja rechts is echt beter"). Eindkeuring DFC: PASS.

@@ -163,3 +163,4 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64
 
 AVOID: grey skin, a round barrel or ball on its back, silver straps or belts across the shell, a tortoise or turtle, an armadillo curled into a ball, the bombilla in its mouth, engraved or burned patterns, ornaments, carvings or textures on the plates, a teacup or teapot ghost (Sinistea/Polteageist look), an object with a face, plush/Neopets look, realistic painting, extra props (thermos, kettle, cup).
 ```
+4. `fase2_E_r4.png`: Jordi (15 nov, letterlijk): "Gemini snapt er geen drol van, en dit terwijl ik telkens geen bijlagen toevoeg". Gemini gaf een illustratie i.p.v. een sprite. Alle mate-prompts begonnen met "Attached: ..." terwijl er geen bijlagen waren (Claude had dat moeten checken). Ontwerp zelf (Claude): eerste versie met één materiaal, glad, echte gordeldierbanden en de kalebashals die uit het achterschild groeit.

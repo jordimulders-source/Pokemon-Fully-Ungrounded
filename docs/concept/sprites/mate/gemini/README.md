@@ -64,3 +64,4 @@ Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64
 
 AVOID: a normal bird beak, a straw/pipe/cigar/whistle held in the beak, green wings, a cute sparrow mascot, a teacup or teapot ghost (Sinistea/Polteageist look), a hummingbird, plush/Neopets look, realistic painting, extra props (thermos, kettle, cup).
 ```
+2. `fase2_D_r2.png`: Jordi (15 nov, letterlijk): "vind hem een beetje raar eruit zien". (Claude: de snavel is weer een gewone snavel met een rietje; het lijf leest als een vogel in een pot.) Les tot nu toe: werkt als het dier de kalebas heel laat en draagt (A); niet als de kalebas in het lijf opgaat (B) of een mate-onderdeel een lichaamsdeel moet worden (D).

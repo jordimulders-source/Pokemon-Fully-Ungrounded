@@ -265,3 +265,32 @@ FORMAT
 AVOID
 - No smooth dome, no round head with lines on it. No mouth, no teeth, no angry brows. Not cute. Not a robot or spaceship (no panels or rivets). No glossy 3D render.
 ```
+
+## Ronde 6 (15 nov), prompt v7
+- `r6_afgekeurd.png`. Jordi: "wat een mislukking".
+- Analyse Claude: r4 als bijlage werd weer overgetrokken (zelfde punten en dezelfde dunne sliert rechtsboven), met een ring van gas eraan geplakt en hoekige platen eroverheen. Plus te veel eisen tegelijk (GEMINI.md).
+
+# Prompt v8 (15 nov): nieuw gesprek, ALLEEN bijlage `interloper_referentie.png`
+Geen eerdere Gemini-versie meesturen; kleuren en ogen in woorden. Minder eisen.
+
+```
+Attachment 1 is the comet "The Interloper" from the game Outer Wilds. Design an original Pokémon with this shape and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+It is the final stage of an Ice/Cosmic line: a living comet of ice that burst out of a snow globe.
+
+SHAPE (follow attachment 1)
+- The front is a mass of thick, broken ice floes pushed together: an angular outline with straight edges and sharp corners, slabs that tilt up and overlap.
+- From the front, long ice spikes sweep backwards, side by side, like the Interloper.
+- A broad, soft comet tail of pale vapor surrounds the back half of the body, above and below the spikes, and streams back to the top right, like the glow around the Interloper.
+
+COLORS
+- Pale icy white and light blue on the front, deep indigo and violet on the spikes, with a soft violet nebula visible inside the ice between them. No star shapes.
+
+FACE
+- Two round eyes high on the front, glowing bright cold cyan, sinister. Nothing else: no mouth, no eyebrows, no pupils.
+
+POSE AND FORMAT
+- Three-quarter view facing left, flying to the left, tail to the top right.
+- 64x64 pixel sprite filling most of the canvas, max 16 colors, 1 px dark outline, light from top left, flat Gen 3 shading, no dithering.
+- Plain white background, no stars, no space background, no floor. One single creature.
+```

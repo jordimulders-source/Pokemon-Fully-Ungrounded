@@ -1529,3 +1529,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.372] - IJskomeet: Gemini-prompt v7
 - Jordi: gasstaart "meer omringend aan het uiteinde", ogen "wat hoger en nog wat meer laten gloeien, sinister". v7 = v6 + brede komeetstaart om de achterkant (Interloper) + ogen hoog, fel gloeiend met halo, geen pupil.
+
+### [v0.0.373] - IJskomeet: Gemini-prompt v8
+- Ronde 6 "wat een mislukking": r4 was overgetrokken met een gasring eraan. v8: alleen de Interloper als bijlage, korter, kleuren en ogen in woorden. Les in GEMINI.md. `r6_afgekeurd.png`.

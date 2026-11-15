@@ -1490,3 +1490,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.361] - Abra-regional: r8 buitenrand en curven
 - Buitenrand naar het Abra/Kadabra-recept: 43 randpixels zwart → donkere lijntint (schaduwkant was 100 % zwart); rand-zwart 60,9 % → 42,7 % (Abra 40 %), zwart totaal 21,6 → 17,5 %.
 - Curven waar het model ze heeft: staart rechts (1,1,1,2,3,2,1,1,1) en buitenkant linkerarm. Kop links, lijf rechts, binnenkant linkerarm en rechterarm zijn in het model op natieve resolutie recht: lichte curven daar alleen in variant `abra_r8_curve.png` (max. 1 px van het model). `abra_regional/kleur_r8/` (vel, closeup, LOG).
+
+### [v0.0.362] - Abra-regional: r9 schouder + eindkeuring
+- Jordi: "nu zitten er rechts op de schouder een paar overbodige pixels". Uitstekende puntpixel (46,31) weg en de dubbele zwarte lijnknoop eronder opgeruimd (5 px; in de curve-variant ook (45,34) weg, 7 px). Rand volgt het model binnen een halve pixel.
+- Eindkeuring Dragonfly Cave/Gen 3: hoofdvraag ja; 3 MOET (schouder, uitgevoerd), 4 MAG niet uitgevoerd (3 zouden van het model afwijken). Rand-zwart 42,7 %, zwart totaal 17,4 % (Abra 40,3 / 18,0). `abra_regional/kleur_r9/`.

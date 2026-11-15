@@ -1569,3 +1569,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.374] - Hauntflare: Gemini-prompt
 - Start Hauntflare (middenfase Dustly → Hauntflare → Gengas): `docs/concept/sprites/hauntflare/SPEC.md`.
 - Gemini-prompt r1 (`sprites/hauntflare/gemini/PROMPT_r1.md`): protoster met stofschijf, bovenste jet = puntige kop, onderste jet = staart, handen = losse Herbig-Haro-knopen; ogen en grijns exact Haunter. Bijlage `referenties/haunter_gen3_8x.png`.
+
+### [v0.0.375] - Hauntflare: Gemini r1 besproken
+- Gemini r1 opgeslagen (`sprites/hauntflare/gemini/r1_a.png`) met beoordeling in `SPEC.md`.

@@ -11,3 +11,4 @@ Middenfase van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Cos
 
 ## Prompt
 - r1: `gemini/PROMPT_r1.md`, bijlage `referenties/haunter_gen3_8x.png`.
+- 15 nov, Gemini r1 (`gemini/r1_a.png`): "klopt dit bij je idee?" Beoordeling Claude: kop-jet, staart, losse handen, gezicht en kleur kloppen; afwijkend: stofschijf werd een dunne Saturnusring om alles heen, kijkt naar rechts, beide jets waaieren naar links (komeet/vuurbal i.p.v. twee tegengestelde jets), bal glanst als plastic.

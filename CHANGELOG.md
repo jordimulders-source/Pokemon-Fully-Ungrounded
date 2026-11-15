@@ -1574,3 +1574,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein: geest in een groenige contrastkleur (Jordi); prompt fase 3 bijgewerkt.
 - Spooktrein fase 3 Gemini ronde 1 (varianten a/b/c) opgeslagen in `spooktrein_fase3/gemini/r1/`; Jordi kiest het idee van b (wagons lossen op in rook), maar "het is nog geen pokemon".
 - Spooktrein fase 3: Gemini-startprompt v2 (Pokémon-vorm, gedrongen, geen horrorgrijns, warm ijzer + groene geest, rook i.p.v. wagons; vier geest-varianten a–d) in `spooktrein_fase3/gemini/PROMPT_v2.md`.
+- Spooktrein fase 3 ronde 2 (prompt v2) afgekeurd (Jordi: "flinke downgrade"); prompt v3 = v1-b met gerichte wijzigingen (gezicht, detailniveau, kleur) in `PROMPT_v3.md`. Les in GEMINI.md.

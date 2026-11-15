@@ -11,6 +11,6 @@ PAL={
 'r':(104,40,52),      # 8 rood donker
 's':(150,62,74),      # 9 rood midden
 't':(196,92,96),      # 10 rood licht
-'u':(42,82,150),      # 11 blauw vlak donker
-'v':(90,142,206),     # 12 blauw vlak licht
+'u':(54,108,160),      # 11 blauw vlak donker
+'v':(104,156,196),     # 12 blauw vlak licht
 }

@@ -1538,3 +1538,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.375] - IJskomeet: ronde 8 afgekeurd
 - v9 gaf alleen roodbruine naden ("gemini snapt het niet"). Voorstel: r7 als model bevriezen en de schotsen als lijf in de sprite oplossen. `r8_afgekeurd.png`, les in GEMINI.md.
+
+### [v0.0.376] - IJskomeet: ronde 7 gekozen als model
+- Jordi: "ja doe maar ronde 7 als model". `ijskomeet/referenties/gemini_gekozen_r7.png`. Diervorm van de schotsen nog open (voorstel Claude: slak, alternatief pissebed).

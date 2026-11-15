@@ -321,3 +321,4 @@ FORMAT
 ## Ronde 8 (15 nov), prompt v9
 - `r8_afgekeurd.png`. Jordi: "gemini snapt het niet". Gemini kleurde alleen de naden roodbruin; schikking en schaduw gelijk aan r7.
 - Voorstel Claude: r7 bevriezen als model (silhouet vast); het "dier"-lezen van de schotsen binnen de omtrek oplossen in de sprite (naden/schaduw), liefst naar een krabbel van Jordi op r7.
+- Jordi (15 nov): "ja doe maar ronde 7 als model, ik had nog niet bepaald een diervorm in gedachten, wat vind jij goed passen?" → `referenties/gemini_gekozen_r7.png`.

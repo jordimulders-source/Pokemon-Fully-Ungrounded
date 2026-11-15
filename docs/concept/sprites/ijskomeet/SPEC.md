@@ -1,0 +1,18 @@
+# IJskomeet (fase 3 sneeuwbolslak-lijn, Ice/Cosmic): SPEC
+
+Model: `referenties/gemini_gekozen_r7.png` (Gemini ronde 7). Rondes en prompts: `gemini/PROMPT.md`. Lijn: `docs/concept/IDEEEN.md` (Sneeuwbol-Pokémon); fase 1: `../sneeuwbolslak/af/`.
+
+## Jordi (letterlijk)
+- Over r7: "Dit is de beste tot nu toe, maar ik twijfel over de ogen en de positie"; "wacht ik weet het, ik ben bijna tevreden, maar ik wil dat die ijsschotsen nog net iets meer op een dier lijken, alsof dat het lichaam is"; "zonder aan de vorm te zitten".
+- "ja doe maar ronde 7 als model, ik had nog niet bepaald een diervorm in gedachten, wat vind jij goed passen?"
+- Op het voorstel slak (kop = plaat met de ogen, voet = rij platte schotsen langs de onderkant, nevel/punten op de plek van het oude sneeuwbolhuisje): "ja doe maar de slak".
+- Idee achter de vorm (15 nov): "ja het hele idee van deze vorm is dus dat een kern is geëxplodeerd en deze het hele dier in ijsschotsen heeft veranderd, de kern is ondertussen de drijvende kracht erachter geworden en heeft deze pokemon komeetkrachten gegeven, hoe klinkt zoiets?"
+- Eerder: "geen lachgezichtje, ogen wel"; ogen "ijzige spheren", "wat hoger en nog wat meer laten gloeien, sinister"; geen mond.
+
+## Toegestaan om af te wijken van het model
+- Alleen binnen de omtrek van de ijsschotsen: naden en schaduw zo herverdelen dat het een slak leest (kop met ogen, lange lage voet langs de onderkant). Silhouet blijft het model.
+- Verder geldt GEMINI.md: niets toevoegen, weglaten of herinterpreteren.
+
+## Open
+- De ogen: Jordi twijfelde ("ik twijfel over de ogen en de positie") maar koos daarna alleen het lijf. Ogen volgen het model tot Jordi iets anders zegt.
+- Naam.

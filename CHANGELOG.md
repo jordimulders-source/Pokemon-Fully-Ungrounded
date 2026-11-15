@@ -1409,3 +1409,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gengas: Gemini r3 beter (Jordi); prompt r4 met echte driekwartpose en echte bruine-dwergkleuren (dof donkerrood/magenta).
 - Gengas: prompt r5 (zwevend als hemellichaam, ledematen op onnatuurlijke posities alsof ze om hem heen draaien).
 - Gengas: model uit Gemini r5 overgenomen (natief raster 99×99), lijf weer een echte bol, drie indelingen van de manen (`sprites/gengas/model/`).
+- Gengas: Jordi kiest indeling 3 (schuine baan); model op spritemaat en opdracht ronde 1 in SPEC.

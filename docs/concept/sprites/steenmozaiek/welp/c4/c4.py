@@ -1,3 +1,4 @@
+# c4: c3 + keuring c2 (dij opnieuw, stip weg, oogwit lichter, geen kraaghooglicht).
 # c3: c2 + licht gegraveerd lijnenpatroon op de kop (kopgravure.py, Jordi: 'mogelijk cirkelend om de bovenkant van de ogen heen').
 # c2 (basis welp_c1_A, keuring c1/keuring.md): kop als één gehouwen volume, lichtere steen, elke groef een kerf
 # (donkere groef index 2 + lichte lip onder/rechts), 10-15 px hooglicht (index 14), borstbanden buigen mee, dijkrul rustiger.
@@ -33,16 +34,19 @@ def kleur():
     a[vlak]=base[vlak]
     G=np.isin(lay,['g','i','k'])&vlak
     a[G]=2
+    a[49,32]=4 if P8[49,32]==2 else a[49,32]   # keuring c2 MOET 2: losse groefstip (p8-lijnpixel) weg
     K=(lay=='k')&vlak
     a[K&(base==5)]=3            # kopgravure licht: op het lichte voorhoofd een groef in 3 i.p.v. 2
     for y,x in zip(*np.where(vlak&~G)):
         if lay[y,x]=='H': a[y,x]=14; continue
         if lay[y,x]=='c': a[y,x]=LIP[base[y,x]]; continue
-        if (y>0 and G[y-1,x]) or (x>0 and G[y,x-1]): a[y,x]=LIP.get(base[y,x],base[y,x])
+        boven=y>0 and G[y-1,x] and not (y<63 and G[y+1,x])     # geen lip tussen twee groeven op 1 px afstand
+        links=x>0 and G[y,x-1] and not (x<63 and G[y,x+1])
+        if boven or links: a[y,x]=LIP.get(base[y,x],base[y,x])
     return a
 STEEN={  # 1 zwart, 2 selout/groef, 3 donker, 4 midden, 5 licht, 14 lip-op-licht/hooglicht. Index 6 = pupil (p8-kleur).
- 'greige':{1:(30,24,26),2:(84,74,70),3:(126,114,104),4:(162,150,136),5:(196,186,168),14:(224,216,198)},
- 'grijs': {1:(28,26,30),2:(78,76,78),3:(120,118,116),4:(156,152,146),5:(192,188,178),14:(222,218,208)},
+ 'greige':{9:(214,208,196),1:(30,24,26),2:(84,74,70),3:(126,114,104),4:(162,150,136),5:(196,186,168),14:(224,216,198)},
+ 'grijs': {9:(214,208,196),1:(28,26,30),2:(78,76,78),3:(120,118,116),4:(156,152,146),5:(192,188,178),14:(222,218,208)},
 }
 def bewaar(steen,naam):
     a=kleur(); p=Image.open('../p8/welp_p8.png').getpalette()[:48]
@@ -52,4 +56,4 @@ def bewaar(steen,naam):
     bg.resize((512,512),Image.NEAREST).save(naam+'_8x.png')
 if __name__=='__main__':
     for v in 'AB':
-        VAR=v; bewaar('greige','welp_c3_'+v); bewaar('grijs','welp_c3_'+v+'_grijs')
+        VAR=v; bewaar('greige','welp_c4_'+v); bewaar('grijs','welp_c4_'+v+'_grijs')

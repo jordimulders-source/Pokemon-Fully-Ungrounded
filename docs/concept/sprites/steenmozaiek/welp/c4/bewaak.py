@@ -1,4 +1,4 @@
-# Bewaakt c3 t.o.v. p8: silhouet-diff 0, buitenlijn ongewijzigd, lijn/oog/mond/tong/tand-pixels van p8 ongewijzigd,
+# Bewaakt c4 (oogwit-index 9 bewust lichter, keuring c2 MAG) t.o.v. p8: silhouet-diff 0, buitenlijn ongewijzigd, lijn/oog/mond/tong/tand-pixels van p8 ongewijzigd,
 # gezicht-rechthoek (oog, snuit, mond, tanden, tong) index-diff 0 EN kleur van de gezichtsindexen (6,9,10,11,12,13,15)
 # gelijk aan p8, palet <=16. Telt hooglicht (14) buiten de tenen.
 import numpy as np
@@ -10,11 +10,12 @@ def rand(a):
     for dy,dx in ((1,0),(-1,0),(0,1),(0,-1)): r|=m&~np.roll(np.roll(m,dy,0),dx,1)
     return r
 ok=True
-for f in ('welp_c3_A.png','welp_c3_A_grijs.png','welp_c3_B.png','welp_c3_B_grijs.png'):
+for f in ('welp_c4_A.png','welp_c4_A_grijs.png','welp_c4_B.png','welp_c4_B_grijs.png'):
     I=Image.open(f); a=np.array(I); pa=I.getpalette()[:48]
     sil=int(((a>0)!=(p8>0)).sum()); buit=int((rand(p8)&(a!=p8)).sum())
-    lijn=int((np.isin(p8,[1,2,10,12,13,15])&(a!=p8)).sum()); kop=int((bevroren_kop()&(a!=p8)).sum())
-    kleur=all(pa[3*k:3*k+3]==pp[3*k:3*k+3] for k in (6,9,10,11,12,13,15)); n=len(np.unique(a))
+    UIT=np.zeros(p8.shape,bool); UIT[49,32]=True   # keuring c2 MOET 2: losse p8-lijnstip bewust weg
+    lijn=int((np.isin(p8,[1,2,10,12,13,15])&(a!=p8)&~UIT).sum()); kop=int((bevroren_kop()&(a!=p8)).sum())
+    kleur=all(pa[3*k:3*k+3]==pp[3*k:3*k+3] for k in (6,10,11,12,13,15)); n=len(np.unique(a))
     teen=(p8==14); hl=int(((a==14)&~teen).sum())
     print(f,'| silhouet-diff',sil,'| buitenlijn',buit,'| lijnen/oog/mond',lijn,'| gezicht-zone',kop,'| gezichtskleuren = p8',kleur,'| kleuren',n,'| hooglicht px (excl. tenen)',hl,'+ tenen',int(teen.sum()),'| anders dan p8',int((a!=p8).sum()))
     ok&=sil==0 and buit==0 and lijn==0 and kop==0 and kleur and n<=16

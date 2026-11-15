@@ -1584,3 +1584,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.379] - Hauntflare: Gemini r3 + overzicht
 - r3_a/b/c opgeslagen; overzichtsvel van alle ontwerpen: `sprites/hauntflare/gemini/overzicht_r1-r3.png`.
+
+### [v0.0.380] - Hauntflare: laatste Gemini-prompt r4
+- Prompt r4 (`sprites/hauntflare/gemini/PROMPT_r4.md`): r3 met handen in jetkleur, Haunters mond, gezicht boven de ring, vaste schaal voor knip- en plakwerk.

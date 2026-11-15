@@ -41,3 +41,4 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - 15 nov: "en linkeroog is slordig" · "voor de rest verandert er niks aan je plan, blijf doorwerken".
 - 15 nov: "de ogen zijn echt extreem lelijk, pupillen op willekeurige posities, dat kan echt niet".
 - 15 nov: "de mond is ook slordig".
+- Claude (15 nov): gemeten dat de modelgrijns even breed is als Gengars grijns (18–19 px); v6: ogen en grijns Gengars Gen 3-pixels 1-op-1 op de v5-plek, geïntegreerd (geen kom, band lichter in de gezichtszone).

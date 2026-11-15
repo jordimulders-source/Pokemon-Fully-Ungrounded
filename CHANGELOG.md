@@ -1498,3 +1498,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.363] - Steenjaguar-welp: sprite basis gekeurd (zonder spiraalronde)
 - Model: Gemini ronde 3 (Chavín, zittend, poot likkend). r1 hertekend en afgekeurd; vanaf r2 model overgenomen (natief raster → 50×45). Jordi's punten: rug smooth, heup A, oog 1 px links, geen bolle schaduw, volume en gezicht uit het model, verre oog zoals Gen 3.
 - r6–r11 met verse keurders per ronde; r11 basis PASS na neuspunt. Spiralen volgen in een aparte ronde. `docs/concept/sprites/steenmozaiek/welp/r11/`.
+- Patroonronde (Jordi: "het moet meer een patroon op het lichaam gaan worden ... echt inkleuren en het lichaam moet niet veranderen erdoor"): spiralen als ingekleurde vlakken die de facetten volgen (p1–p4, keurder per ronde; p4 = keuring p3 toegepast). `welp/p4/welp_p4.png`, naar Jordi.

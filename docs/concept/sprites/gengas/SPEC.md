@@ -37,3 +37,4 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - 15 nov: "moet nog veel beter, werk tot je bij een goede eindversie komt en stuur dan pas door naar mij" · "en kap aub met dingen zelf tekenen from scratch". Werk: `sprite_v2/` (model opschonen, niets hertekenen).
 - 15 nov: "oog en mond grootte van model is beter en van jouw versie de positionering, dus doe een hybride en werk naar een eindversie en laat die pas aan mij zien" → modelgezicht (grootte, vorm, aansluiting) verschoven naar de r3-positie.
 - 15 nov (na v3): "ogen en mond zijn nog niet goed".
+- 15 nov: "lijkt net alsof ze indeuken" (ogen en mond). Opdracht v4: ogen/grijns op het oppervlak, geen schaduwkom; grootte/vorm/positie blijven.

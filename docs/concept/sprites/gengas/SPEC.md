@@ -31,3 +31,4 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - 15 nov: "toon voordat je gaat bouwen nog jouw opties voor ogen en mond posities" → `model/gezicht_opties.png` (A/B/C, Gengar-pixels op de kleurgids; schets).
 - 15 nov over de gezichtsopties: "Het is lastig om te zien, want het is heel slordig knip en plakwerk".
 - 15 nov: "C sowieso niet iig" (gezichtspositie C valt af; keuze tussen A en B).
+- 15 nov: "ik neig toch naar A, ga maar bouwen daarmee" → gezicht op plek A (Gengar-pixels verschoven dx −6, dy +5 t.o.v. de Gengar-sprite). Bouw ronde 1: `sprite_r1/`.

@@ -1606,3 +1606,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.386] - Hauntflare: gezichtsopties
 - Linkeroog gespiegeld van het rechteroog (vier hoeken), nieuwe mond lager en meer naar links met V-tanden: `sprites/hauntflare/gezicht_v7/opties_heel.png`.
+
+### [v0.0.387] - Hauntflare: gezichtsopties afgekeurd
+- `gezicht_v7` afgekeurd (getekend oog en mond); les in `GEMINI.md`. v6 blijft de laatste sprite.

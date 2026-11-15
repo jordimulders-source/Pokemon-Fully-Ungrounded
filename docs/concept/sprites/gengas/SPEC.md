@@ -44,3 +44,4 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - Claude (15 nov): gemeten dat de modelgrijns even breed is als Gengars grijns (18–19 px); v6: ogen en grijns Gengars Gen 3-pixels 1-op-1 op de v5-plek, geïntegreerd (geen kom, band lichter in de gezichtszone).
 - 15 nov (v7): "nu is het een soort vlak om de ogen heen wat totaal niet meer bij de rest van de sprite past".
 - 15 nov: "ja het moet er allemaal consistent uit zien ook".
+- 15 nov (v9): "ik twijfel toch nog een beetje over ogen en mond, hoe verhouden die zich in percentage tot de oorspronkelijke gengar qua grootte?" (Claude: absoluut 100%, t.o.v. het lijf ±81%; gelijke verhouding = ±120–125%) · "verder ben ik wel tevreden, al twijfel ik een beetje over dat spiraaltje".

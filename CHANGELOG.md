@@ -1523,3 +1523,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.370] - IJskomeet: Gemini-prompt v5
 - Ronde 4 "al iets beter"; buitenste laag te neutraal, "daar mag wat meer ijsschots vorm in". v5: r4 als bijlage, alleen de buitenlaag als grote hoekige ijsschotsen; v5b als terugval (v4 + die regel). `r4_gemini.png`.
+
+### [v0.0.371] - IJskomeet: Gemini-prompt v6
+- Ronde 5 "halve bak" (alleen naden op de gladde koepel). v6: nieuw gesprek met Interloper + r4; de ijsschotsen moeten het silhouet hoekig maken (dikke platen met zijkant, schuiven over elkaar). `r5_gemini.png`.

@@ -194,3 +194,36 @@ FORMAT
 ## Prompt v5b: nieuw gesprek, bijlage = `interloper_referentie.png`
 v4 ongewijzigd, met in SHAPE na de eerste regel:
 `- The outer layer of ice is not smooth: it is made of a few large, flat, angular plates of ice like ice floes / broken pack ice, with straight edges and sharp corners, slightly overlapping. A few big plates, not many small cracks.`
+
+## Ronde 5 (15 nov), prompt v5
+- `r5_gemini.png`. Jordi: "halve bak doet die maar". Gemini tekende alleen naden op de gladde koepel; het silhouet bleef rond.
+
+# Prompt v6 (15 nov): nieuw gesprek, bijlagen = 1. `interloper_referentie.png`, 2. `r4_gemini.png`
+Keuze Claude: de ijsschotsen moeten het silhouet zelf veranderen (hoekige omtrek, platen die over elkaar schuiven), niet alleen lijnen op het oppervlak. r4 alleen als bijlage voor gezicht en kleuren.
+
+```
+Attachment 1 is the comet "The Interloper" from the game Outer Wilds: reference for the overall shape.
+Attachment 2 is an earlier draft of my Pokémon: reference ONLY for the face (two round icy cyan eyes, no mouth) and the colors (pale icy white, indigo and violet spikes, nebula patches, pale vapor tail). Do not copy its smooth rounded head.
+
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art): the final stage of an Ice/Cosmic line, a living comet of ice that burst out of a snow globe.
+
+THE OUTER LAYER IS MADE OF ICE FLOES
+- The whole front and the outer layer are built from large, thick slabs of pack ice, like broken ice floes pushed on top of each other.
+- This must change the SILHOUETTE: the outline is angular, made of straight edges and sharp corners where the slabs stick out. NO smooth round curve anywhere on the head.
+- The slabs have thickness: each slab shows a lit top face and a darker blue side edge, and some slabs overlap and tilt up at their edges.
+- About 6 to 8 big slabs, not many small cracks, not lines drawn on a smooth surface.
+- Behind the slabs, the dark indigo/violet spikes sweep backwards like the Interloper, with a pale vapor tail.
+
+FACE
+- Completely neutral: only two round, icy cyan spheres as eyes, set into the front slab, like Lunatone, Solrock and Minior's core. NO mouth, NO eyebrows, NO ridges above the eyes.
+
+POSE
+- Three-quarter view facing left, the front at the left, spikes and tail streaming back to the top right.
+
+FORMAT
+- 64x64 pixel sprite, a final stage that fills most of the canvas, max 16 colors, 1 px dark outline, light from top left, flat Gen 3 shading, no dithering.
+- Plain white background. NO stars, sparkles, aura, particles, floor or shadow. One single creature, no extra views.
+
+AVOID
+- No smooth dome, no round head with lines on it. Not a monster, no angry face. Not cute. Not a robot or spaceship (no panels or rivets). No glossy 3D render.
+```

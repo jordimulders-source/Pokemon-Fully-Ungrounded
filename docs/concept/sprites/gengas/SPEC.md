@@ -20,3 +20,4 @@ Eindvorm van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Cosmi
 - 15 nov over r3 (`gemini/r3_a.png`): "Beter, alleen de pose is niet goed driekwart. Geef hem echt de brown dwarf kleuren". Prompt r4: `gemini/PROMPT_r4.md`.
 - 15 nov: "de pose mag echt zwevend zijn dus dat het duidelijk een hemellichaam is ipv staand, met de armen en benen op een beetje onnatuurlijke posities om aan te tonen dat die om hem heen draaien". Prompt r5: `gemini/PROMPT_r5.md`.
 - 15 nov over r5 (`gemini/r5_a.png`): "lichaam ben ik tevreden over, alleen kijkt die denk ik iets teveel zijwaarts, wat vind je van de handen en voeten? die kunnen we altijd zelf nog anders positioneren"
+- 15 nov: "doordat ze juist niet exact in de positie zitten waar handen en voeten horen is het duidelijk dat ze zweven lijkt me. Ga eens kijken wat je kan doen en toon mij een paar modelversies voordat we gaan bouwen" · "zorg wel dat het een bol blijft he". Modelindelingen: `model/indelingen_v1.png`.

@@ -1597,3 +1597,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.383] - Hauntflare: sprite r1
 - Maker r1 (`sprites/hauntflare/sprite_r1/`): geschrapt naar 64×64, vlammen warmer, handen met oranje binnenrand, ring 3 tonen; gezicht nog niet goed (r2 loopt).
+
+### [v0.0.384] - Hauntflare: sprite v2
+- Nieuwe basis + maker v2 (`sprites/hauntflare/sprite_v2/`): Haunter-gezicht, vlammen/handen/ring gekleurd; v3 loopt.

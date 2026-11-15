@@ -1578,3 +1578,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 ronde 3 (prompt v3) opgeslagen; Jordi: nog te veel een normale locomotief, gezicht cheeky i.p.v. boos, geestrook perfect. Referenties (Clover, fan-design) in `spooktrein_fase3/referenties/`.
 - Spooktrein fase 3: richting vastgelegd (onderdelen = lichaam, cheeky gezicht, 2 ogen, spookwielen, lang en laag, roestbruin/donkergrijs/groen); prompt v4.
 - Spooktrein fase 3 ronde 4 (prompt v4) afgekeurd (Jordi: "dit ziet er echt stom uit"): mensengezicht op een gewone loc, koeienvanger geen kaak.
+- Spooktrein fase 3: dier als skelet afgewezen (Jordi); prompt v5 = eerst ontwerp in Sugimori-artworkstijl, daarna sprite; roest als textuur; mensengezicht expliciet uitgesloten.

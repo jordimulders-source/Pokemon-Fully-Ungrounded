@@ -1418,3 +1418,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gengas v2: model opgeschoond (gemeten 15 kleuren, ruis eruit, 47 gelogde pixelcorrecties), gezicht hybride (modelgrootte op r3-positie). `sprite_v2/`.
 - Gengas v3: keuringspunten v2 gerepareerd (naden gezicht, lichte wig in het masker, krul 1-op-1 uit het natieve model, gat bij de rookarm, kraters). `sprite_v3/`.
 - Gengas v4: lichtvlekkern terug (selout r samengevoegd met m, gemeten goedkoopste ruil). `sprite_v4/`.
+- Gengas v5: gezicht ligt op het oppervlak (geen schaduwkom: dunne lijn, witte tanden, lijftint eromheen), linkeroog naar Gengars oogvorm. `sprite_v5/`.

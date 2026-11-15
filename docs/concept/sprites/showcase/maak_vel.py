@@ -36,9 +36,9 @@ items=[
 ("alakazam_regional/af/alakazam_charlatan.png",'Alakazam (regional)',"dark/psychic"),
 ("octillery_evo/af/krassault.png",'"Krassault"',"water/steel"),
 ("sneeuwbolslak/af/sneeuwbolslak.png",'Sneeuwbolslak',"ice"),
-("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
 ("sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png",'Sneeuwbolslak fase 2',"ice"),
 ("ijskomeet/af/ijskomeet.png",'IJskomeet',"ice/cosmic"),
+("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
 ("gengas/af/gengas.png",'"Gengas"',"cosmic/poison"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")

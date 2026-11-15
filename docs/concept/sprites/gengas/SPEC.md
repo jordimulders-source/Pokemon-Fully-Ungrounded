@@ -32,3 +32,5 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - 15 nov over de gezichtsopties: "Het is lastig om te zien, want het is heel slordig knip en plakwerk".
 - 15 nov: "C sowieso niet iig" (gezichtspositie C valt af; keuze tussen A en B).
 - 15 nov: "ik neig toch naar A, ga maar bouwen daarmee" → gezicht op plek A (Gengar-pixels verschoven dx −6, dy +5 t.o.v. de Gengar-sprite). Bouw ronde 1: `sprite_r1/`.
+- 15 nov over ronde 2/3: "die manen heb je opnieuw getekent, waardeloos idee, want jij kan geen handen en voeten tekenen. Dit zijn nu gewoon willekeurige vormen. Daarnaast heb je het linker oor niet goed nagedaan en onder het rechte oor heb je gewoon maar een vlak ingevuld wat er helemaal niet is, ook de krul in de planeet zelf is niet mooi, net als de schaduwen etc. Ogen en mond lijken teveel erop geplakt, die moeten beter aansluiten qua, kleur, schaduw, lijnen en ze mogen iets groter"
+- Nieuwe basis (Claude): het model zelf, 74 → 64 door rijen/kolommen te schrappen (`model/schrap.py`, `model/model_64_geschrapt.png`, vergelijking `model/geschrapt_vs_r3.png`); r1–r3 afgekeurd.

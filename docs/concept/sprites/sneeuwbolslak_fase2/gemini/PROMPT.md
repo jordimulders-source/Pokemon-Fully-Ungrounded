@@ -232,3 +232,20 @@ AVOID
 - No galaxy, stars or planets.
 - Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
 ```
+
+## Ronde 6 (15 nov)
+- `r6_gemini.png` (prompt v5). Jordi: "Iets beter, de buitenkant vand e bol mag nog wat meer bevriezen, ijs worden. Het lichaam ook, plus hij moet kruipen en niet vliegen, mag ook iets langwerperiger. Hij moet echt duidelijk midden in een proces zitten"
+
+# Bijstuurprompt v5b (15 nov): zelfde gesprek als r6
+Keuze Claude (schrappen mag): "midden in een proces" voor Gemini vertaald als: het ijs is zichtbaar bezig zich over bol en lijf te verspreiden (deels al ijs, deels nog niet).
+Gaat het mis: nieuw gesprek met prompt v5, bijlagen r6 (i.p.v. r1) en de Clione-foto, en deze punten erbij.
+
+```
+Better. Redraw it with these changes, keep everything else:
+1. The outside of the snow globe freezes more: it is turning into ice, with frost and ice growing over the glass. The glass and the chaotic snowstorm inside are still visible.
+2. The body freezes more too: it is turning into solid ice.
+3. It crawls along the ground, low, like a slug. It does not fly. The side flaps are not wings.
+4. The body is a bit longer.
+5. It must clearly be caught in the middle of a transformation: the ice is visibly spreading over the globe and the body, some parts already solid ice, other parts not yet.
+Same format: 64x64 Gen 3 front sprite, three-quarter view facing left, max 16 colors, 1 px dark outline, plain white background, no floor or shadow, no galaxy or stars.
+```

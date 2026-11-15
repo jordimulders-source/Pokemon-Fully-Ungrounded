@@ -1482,3 +1482,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.359] - Abra-regional: r7 schaduw, kleuren, belijning (A/B)
 - Eindkeuring op basis F ("bijna"): banding op de snuit, twee bijna-dubbele tinten (m, I), vulpixel op de rand, drie randen met wisselende lijnkleur. r7 (37 px, `kleur_r7/maak_r7.py`): m en I opgeheven (9 kleuren), randen één lijnkleur, r3-MAG a/c/d/f uitgevoerd; silhouet en ogen ongewijzigd. Zwart 21,6% (volgt het model).
 - Keuze voor Jordi: A = modeltonen, B = huid naar de regionale Kadabra. `kleur_r7/vel.png`.
+
+### [v0.0.360] - Abra-regional: A gekozen; buitenrand en rechte lijnen
+- Jordi: "A is prima, hij is juist nog niet een goochelaar zoals Kadabra, maar meer een soort van opossum die weinig hoop heeft, tot die evolved".
+- Zwart op de buitenrand gemeten: echte Abra/Kadabra/Sneasel ±40 %, donkere soorten 76–86 %, onze Abra 61 % → te veel. Ronde 8 gestart: buitenrand lichter (selout zoals Abra) en de rechte lijnen die Jordi noemt (staart rechts, lijf rechts, beide armen, kop links).

@@ -27,3 +27,4 @@ Lijn: sneeuwbolslak (fase 1, `sneeuwbolslak/`) → fase 2 → komeet (fase 3, Ic
 - **Af: `af/sneeuwbolslak_fase2.png` + `af/sneeuwbolslak_fase2_8x.png`** (raster `sprite/maker/raster_af.txt`), op het overzichtsvel. Naam open.
 - Jordi op het eindresultaat: "binnenkant bol is nog net niet goed genoeg, wel beter, maar mag nog meer een sneeuwstorm lijken" → r8 met twee varianten (A dichte sneeuwjacht, B plusvlokken zoals fase 1).
 - Jordi op r8 A/B (`sprite/voor_jordi_r8.png`): "hybride van a en b, vlokken met sneeuwstorm" → r8C.
+- **Af (r8C, hybride): `af/sneeuwbolslak_fase2.png` + `_8x.png`** (raster `sprite/maker/raster_af.txt` = raster_r8C).

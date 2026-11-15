@@ -294,3 +294,25 @@ POSE AND FORMAT
 - 64x64 pixel sprite filling most of the canvas, max 16 colors, 1 px dark outline, light from top left, flat Gen 3 shading, no dithering.
 - Plain white background, no stars, no space background, no floor. One single creature.
 ```
+
+## Ronde 7 (15 nov), prompt v8
+- `r7_gemini.png`. Jordi: "Dit is de beste tot nu toe, maar ik twijfel over de ogen en de positie".
+- Daarna Jordi: "wacht ik weet het, ik ben bijna tevreden, maar ik wil dat die ijsschotsen nog net iets meer op een dier lijken, alsof dat het lichaam is".
+
+# Prompt v9 (15 nov): nieuw gesprek, bijlage = `r7_gemini.png`, één wijziging
+Welk dier zei Jordi niet; de prompt noemt er geen (navragen of het de slak van fase 1 moet worden).
+
+```
+Attachment 1 is a draft of an original Pokémon in official Gen 3 style (Ruby/Sapphire/Emerald pixel art): a living comet of ice, Ice/Cosmic type, the final stage of a line that started as a snail.
+
+Redraw it with ONE change: the ice floes at the front must look a bit more like an animal, as if the slabs ARE its body. Arrange the same kind of slabs so they read as a creature: the slab with the eyes is clearly its head, and the slabs behind and below it form its body. It stays made of ice floes, only the arrangement changes.
+
+KEEP
+- The angular broken-ice-floe look, the colors, the two glowing cyan eyes and no mouth.
+- The dark indigo/violet spikes sweeping back, the violet nebula between them, the broad pale vapor tail around the back.
+- The direction: flying to the left, tail to the top right.
+
+FORMAT
+- 64x64 pixel sprite filling most of the canvas, max 16 colors, 1 px dark outline, light from top left, flat Gen 3 shading, no dithering.
+- Plain white background, no stars, no floor. One single creature.
+```

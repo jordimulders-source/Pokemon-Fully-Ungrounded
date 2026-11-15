@@ -49,4 +49,4 @@ AVOID: a teacup or teapot ghost (Sinistea/Polteageist look), an object with a fa
 ```
 
 ## Rondes
-(nog geen)
+1. `fase2_A_r1.png`, `fase2_B_r1.png`, `fase2_D_r1.png`. Jordi (15 nov, letterlijk): "Puur naar design kijkend vind ik de schildpad het beste gelukt, maar dat komt omdat die de enige echte mate vorm heeft". Afwijkingen van de prompt (Claude): B: bombilla prikt door de kop in plaats van uit de bek, yerba ligt plat in plaats van als montañita, de kalebasvorm is opgegaan in een kikkerlijf; D: bombilla zit als een sigaar/fluitje in de snavel (mondstuk naar buiten) in plaats van dat hij de snavel is, groene vleugels niet gevraagd.

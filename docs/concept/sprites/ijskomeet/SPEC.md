@@ -17,3 +17,6 @@ Model: `referenties/gemini_gekozen_r7.png` (Gemini ronde 7). Rondes en prompts: 
 ## Open
 - De ogen: Jordi twijfelde ("ik twijfel over de ogen en de positie") maar koos daarna alleen het lijf. Ogen volgen het model tot Jordi iets anders zegt.
 - Naam.
+
+## Feedback sprite
+- r5 (15 nov), keuze "zo laten" (trouw aan model, slak licht): "zo laten, maar kijk nog meer naar het oorspronkelijke model. de kern heb je een soort helix in gezet, maar dat klopt niet, verder kloppen de vormen vand e schotsen niet en mag de belijning lichter, blijf verder werken. Zorg er ook voor dat de buitenkant van het 'vuur' niet per se bevroren lijkt"

@@ -165,3 +165,4 @@ AVOID: grey skin, a round barrel or ball on its back, silver straps or belts acr
 ```
 4. `fase2_E_r4.png`: Jordi (15 nov, letterlijk): "Gemini snapt er geen drol van, en dit terwijl ik telkens geen bijlagen toevoeg". Gemini gaf een illustratie i.p.v. een sprite. Alle mate-prompts begonnen met "Attached: ..." terwijl er geen bijlagen waren (Claude had dat moeten checken). Ontwerp zelf (Claude): eerste versie met één materiaal, glad, echte gordeldierbanden en de kalebashals die uit het achterschild groeit.
 5. **Model gekozen: `fase2_E_r2.png`.** Jordi (15 nov, letterlijk): "ik vind deze als model het beste tot nu toe, alleen het mist nog iets om er echt een vet design van te maken, plus hij is niet echt pragmatisch, want als deze gaat rennen oid dan zou de mate er allemaal uit moeten vallen, waar bij sinistcha het lichaam de thee is".
+   Jordi, direct daarna: "het is eigenlijk geen pokemon".

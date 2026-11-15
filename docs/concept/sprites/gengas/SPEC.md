@@ -40,3 +40,4 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - 15 nov: "lijkt net alsof ze indeuken" (ogen en mond). Opdracht v4: ogen/grijns op het oppervlak, geen schaduwkom; grootte/vorm/positie blijven.
 - 15 nov: "en linkeroog is slordig" · "voor de rest verandert er niks aan je plan, blijf doorwerken".
 - 15 nov: "de ogen zijn echt extreem lelijk, pupillen op willekeurige posities, dat kan echt niet".
+- 15 nov: "de mond is ook slordig".

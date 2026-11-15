@@ -1534,4 +1534,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Ronde 6 "wat een mislukking": r4 was overgetrokken met een gasring eraan. v8: alleen de Interloper als bijlage, korter, kleuren en ogen in woorden. Les in GEMINI.md. `r6_afgekeurd.png`.
 
 ### [v0.0.374] - IJskomeet: ronde 7 beste tot nu toe, prompt v9
-- Jordi: r7 "de beste tot nu toe", "bijna tevreden"; de ijsschotsen moeten "nog net iets meer op een dier lijken, alsof dat het lichaam is". v9: r7 als bijlage, alleen de schikking van de schotsen als kop + lijf. `r7_gemini.png`.
+- Jordi: r7 "de beste tot nu toe", "bijna tevreden"; de ijsschotsen moeten "nog net iets meer op een dier lijken, alsof dat het lichaam is". v9: r7 als bijlage; Jordi: "zonder aan de vorm te zitten", dus silhouet exact gelijk, alleen naden en schaduw binnen de omtrek als kop + lijf. `r7_gemini.png`.

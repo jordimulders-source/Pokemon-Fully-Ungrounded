@@ -46,7 +46,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Jordi (15 nov), over ronde 5:** "halve bak doet die maar".
   - **Jordi (15 nov):** "en dat vuur of wat dan ook wat ervan af komt is ook maar erg halve bak, dat zou wat meer omringend mogen zijn aan het uiteinde. De ogen wil ik wat hoger en nog wat meer laten gloeien, sinister".
   - **Jordi (15 nov), over ronde 6:** "wat een mislukking".
-  - **Jordi (15 nov), over ronde 7 (prompt v8):** "Dit is de beste tot nu toe, maar ik twijfel over de ogen en de positie"; daarna: "wacht ik weet het, ik ben bijna tevreden, maar ik wil dat die ijsschotsen nog net iets meer op een dier lijken, alsof dat het lichaam is".
+  - **Jordi (15 nov), over ronde 7 (prompt v8):** "Dit is de beste tot nu toe, maar ik twijfel over de ogen en de positie"; daarna: "wacht ik weet het, ik ben bijna tevreden, maar ik wil dat die ijsschotsen nog net iets meer op een dier lijken, alsof dat het lichaam is", "zonder aan de vorm te zitten".
 - **Yareta en Copiapoa: daar gaan we iets mee doen** (Jordi, 9 nov; heeft veel yareta gezien). Jordi neigt naar een **Rock-regional Cacnea-lijn**, "misschien zelfs wel helemaal geen grass type om het origineel te houden".
 - **Harpij-arend: eigen Braviary-vorm** (Jordi, 9 nov: "We gaan voor een eigen braviary vorm"; zoals Meowth drie vormen heeft; Hisui-Braviary staat uit). **Rufflet gaat mee** (Jordi: "klinkt goed"); advies Claude was (harpijkuikens zijn witte donsballen; regionale Rufflet in de Amazone en gewone Rufflet in Patagonië houdt beide Braviary's te krijgen zonder evolutievoorwaarde).
 - **Harpij-Braviary type:** Jordi (9 nov): "steel/flying tof" (voorstellen Claude: Dark/Flying, Steel/Flying, Fighting/Flying, Fighting/Dark).

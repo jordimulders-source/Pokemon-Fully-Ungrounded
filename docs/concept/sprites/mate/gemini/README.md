@@ -50,3 +50,17 @@ AVOID: a teacup or teapot ghost (Sinistea/Polteageist look), an object with a fa
 
 ## Rondes
 1. `fase2_A_r1.png`, `fase2_B_r1.png`, `fase2_D_r1.png`. Jordi (15 nov, letterlijk): "Puur naar design kijkend vind ik de schildpad het beste gelukt, maar dat komt omdat die de enige echte mate vorm heeft". Afwijkingen van de prompt (Claude): B: bombilla prikt door de kop in plaats van uit de bek, yerba ligt plat in plaats van als montañita, de kalebasvorm is opgegaan in een kikkerlijf; D: bombilla zit als een sigaar/fluitje in de snavel (mondstuk naar buiten) in plaats van dat hij de snavel is, groene vleugels niet gevraagd.
+
+### Prompt D, ronde 2 (nieuw gesprek; bijlagen: foto mate-kalebas + fase2_D_r1.png)
+Doel: de bombilla ís de snavel (r1: sigaar in een gewone snavel). Keuzes van Claude: goud bij de kop, platte filterpunt aan het eind; vleugels in de kalebaskleur in plaats van groen; het lijf + kraag van r1 behouden.
+```
+Attached: (1) a photo of a traditional yerba mate gourd with a silver rim and a bombilla, (2) a first attempt at this Pokémon. Keep from the first attempt: the round, brown, engraved gourd body, the silver rim (the "virola") as a collar at the neck, and the crest of green yerba leaves on the head. What went wrong: the bird has a normal beak and holds the bombilla in it like a cigar or a whistle. That is wrong.
+
+Design an original Pokémon: a Grass/Water-type, the fully evolved (second and final) stage of a two-stage line. It is based on yerba mate, the drink shared in Argentina, Uruguay, Paraguay and southern Brazil, combined with a bird. Its round body is a cured mate gourd: brown, decorated with burned or engraved patterns, with silver details and a silver rim (the "virola") as a collar at the neck. Its head is the opening of the mate: on top it has a crest of green yerba leaves, shaped like a sloped little mound (the "montañita"). The bird has NO normal beak: its beak IS a silver bombilla (a long, thin metal drinking straw). The beak grows directly out of the face, starting with a gold band at the face, with a slight bend, and ends in the flattened, spoon-shaped filter tip of a bombilla. It drinks through its beak. Its wings are part of the gourd: brown with engraved patterns and silver edges, not green. Anatomy of a real bird: one head, two folded wings (one near, one far), two legs, a tail.
+
+Pose: standing on two legs, body in 3/4 view facing left, head turned slightly towards the viewer, wings folded. Compact composition that fits in a square, legs close to the body.
+
+Style: an official Gen 3 Pokémon front sprite (Ruby/Sapphire/Emerald style), 64x64 pixels, at most 16 colours, 1px dark outline, light from the top left. Plain white background. No ground, no branch, no shadow, no water splashes, no steam, no glow or effects.
+
+AVOID: a normal bird beak, a straw/pipe/cigar/whistle held in the beak, green wings, a cute sparrow mascot, a teacup or teapot ghost (Sinistea/Polteageist look), a hummingbird, plush/Neopets look, realistic painting, extra props (thermos, kettle, cup).
+```

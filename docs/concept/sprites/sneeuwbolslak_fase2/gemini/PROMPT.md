@@ -111,3 +111,4 @@ AVOID
 - Voorstel Claude: fase 2 als cocon (Shelgon/Kakuna/Silcoon): ijs over het hele lijf, één ronde ei-/druppelvorm, kopje piept vooraan uit, rond venster met de chaos, barsten over de cocon. Open: a. inhoud draaikolk, b. huisje, c. voetstuk, d. staart.
 - Jordi: "ik wil liever geen oogstelen maar in vorm 2" En: "fase 1 is echt een slak en vanaf fase 2 stappen we daar al van af".
 - Voorstel Claude: cocon met gezicht (1a ogen in het ijs, 1b venster is oog, 1c geen gezicht) + open a–d. Jordi: "fase 3 is dus meteoriet (die we wel ogen geven natuurlijk)"
+- Jordi: "sorry komeet bedoel ik, fase 2 krijgt ook ogen, want er zijn weinig pokemon zonder ogen"

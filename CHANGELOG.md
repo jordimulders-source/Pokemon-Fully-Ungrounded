@@ -1494,3 +1494,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.362] - Abra-regional: r9 schouder + eindkeuring
 - Jordi: "nu zitten er rechts op de schouder een paar overbodige pixels". Uitstekende puntpixel (46,31) weg en de dubbele zwarte lijnknoop eronder opgeruimd (5 px; in de curve-variant ook (45,34) weg, 7 px). Rand volgt het model binnen een halve pixel.
 - Eindkeuring Dragonfly Cave/Gen 3: hoofdvraag ja; 3 MOET (schouder, uitgevoerd), 4 MAG niet uitgevoerd (3 zouden van het model afwijken). Rand-zwart 42,7 %, zwart totaal 17,4 % (Abra 40,3 / 18,0). `abra_regional/kleur_r9/`.
+
+### [v0.0.363] - Abra-regional: zachtere ogen (r10 A/B)
+- Jordi: "de ogen zijn nog wel wat hard met dat pure zwart, kan die iets zachter qua kleur?". `kleur_r10/maak_r10.py`: A = oogkern in de lijnkleur (60,54,80); B = nieuwe tussentint (36,32,52). Beide ook op de curve-variant. `kleur_r10/ogen.png`.

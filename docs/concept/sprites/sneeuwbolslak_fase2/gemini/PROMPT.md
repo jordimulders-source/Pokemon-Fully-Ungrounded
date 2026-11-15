@@ -199,3 +199,36 @@ AVOID
 ## Beschrijving Jordi (15 nov), bij r1
 - "Wat dit goed deed is de bol zelf, deze begint te barsten, plus in de bol begint een chaotische sneeuwstorm te ontstaan, in de derde fase barst deze bol compleet en ontstaat er zo de kern van de laatste vorm. De positie van de bol is goed, ik ben niet zo overtuigd van dat hele puntige schild erbovenop, maar ik ben er ook niet op tegen. Dat het lichaam langer wordt en steeds ijziger met kristallen zie ik ook zitten. Sowieso kan het hele lichaam van ijs worden ook, wat ik in deze vorm nog niet goed vind is dat het nog steeds dezelfde vorm slak is, daar moeten we dus iets anders van maken, vooral de ogen, misschien een ander soort dier met dezelfde vorm, die al meer een ijs vorm heeft, kan je iets met deze beschijving, prompt nog niet, maar spar even mee"
 - Voorstellen Claude: Andes-gordeldier, zee-engel (Clione), Liolaemus-hagedis, heremietkreeft. Jordi: "de clione zie ik zitten, maar we behouden dus nog wel de bol op de rug"
+- Claude vroeg naar houding, vleugels, rood hart, ogen, hoorntjes, schild. Jordi: "we gebruiken de clione echt alleen voor de vorm, dus dit zijn vragen die niet belangrijk zijn, ik heb mijn voorkeur al aangegeven."
+
+# Prompt v5 (15 nov): Clione-vorm, bol van r1, nieuw gesprek
+
+Bijlagen: 1. `r1_gemini.png`, alleen voor de bol (barsten, storm, positie op de rug). 2. Zelf toevoegen (Jordi): een foto van een zee-engel (*Clione limacina*), voor de vorm.
+Uit Jordi's beschrijving: bol als in r1 (positie, barsten, chaotische storm); lijf langer en ijziger met kristallen, mag helemaal ijs; niet meer de slakkenvorm, vooral andere ogen; Clione alleen voor de vorm; bol op de rug.
+Keuzes Claude (schrappen mag): puntig schild weggelaten (Jordi: niet overtuigd, niet tegen); geen lichtpunt in de bol (Jordi: de kern ontstaat in fase 3); voetstuk als ring (stond in r1, eerder c1); ogen: twee simpele ogen in de kop, niet nader ingevuld; ± 56 px.
+
+```
+Attachment 1 shows an earlier draft of an original Pokémon: use it ONLY for the snow globe on its back (its position, the cracks, the chaotic snowstorm inside, the reddish-brown base ring). Do NOT copy the snail body, eye stalks, face or the pointed shell on top. Attachment 2 is a sea angel (Clione limacina): use it ONLY for the body shape.
+
+Design this Pokémon (pure Ice type, the second of three stages; the final stage is an icy comet) and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT
+- Body: the shape of a sea angel (attachment 2), made of ice. Longer than a snail, becoming icier, with a few ice crystals on the body. The whole body is ice.
+- Eyes: two simple eyes in the head. No eye stalks.
+- On its back: a snow globe, in the same position as in attachment 1. The glass is starting to crack, and inside a chaotic snowstorm is forming.
+
+KEEP IT READABLE AS A SPRITE
+- One clear silhouette. Max 3 or 4 cracks, big and simple. The storm is white swirls and pixels, not noise. The glass reads by one clear highlight in the top left.
+
+POSE
+- Three-quarter view facing left.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, the creature about 56 pixels wide, max 16 colors, pale icy blue-white, 1 px dark outline, light from top left, flat Gen 3 shading with 3 to 4 tones per color, no dithering.
+- Plain white background. NO floor, water, bubbles, shadow, glow, sparkles or effects outside the creature. No loose or floating pieces. One single creature, no extra views.
+
+AVOID
+- No snail shape, no snail foot, no eye stalks, no pointed shell or cone.
+- No galaxy, stars or planets.
+- Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
+```

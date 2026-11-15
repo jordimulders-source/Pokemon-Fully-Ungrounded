@@ -20,3 +20,4 @@ Model: `referenties/gemini_gekozen_r7.png` (Gemini ronde 7). Rondes en prompts: 
 
 ## Feedback sprite
 - r5 (15 nov), keuze "zo laten" (trouw aan model, slak licht): "zo laten, maar kijk nog meer naar het oorspronkelijke model. de kern heb je een soort helix in gezet, maar dat klopt niet, verder kloppen de vormen vand e schotsen niet en mag de belijning lichter, blijf verder werken. Zorg er ook voor dat de buitenkant van het 'vuur' niet per se bevroren lijkt"
+- r15–r17 (15 nov): basis = model 3× verkleind waarbij in het ijs de donkerste pixel wint (lijnen blijven). Jordi r15: "ja kijk nu gaan we de goede kant op"; r16: "weer minder goed" (ontkorrelen haalde facetlijnen weg), "de linkerkant belijning is beter"; r17: "kijk 17 begint ergens op te lijken, nu begint die goed te worden en is er alleen afwerking nog nodig".

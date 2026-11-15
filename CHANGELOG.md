@@ -1520,3 +1520,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.369] - IJskomeet: Gemini-prompt v4
 - Ronde 3 afgekeurd (te veel monster: boze ogen, boze mond; vorm meer Interloper). v4 met Jordi's Interloper-beeld als vormbijlage: ronde ijskoepel voorop, ijspunten allemaal naar achteren, gezicht neutraal met twee ijzige bologen, geen mond. `ijskomeet/gemini/PROMPT.md`, `r3_afgekeurd.png`, `interloper_referentie.png`.
+
+### [v0.0.370] - IJskomeet: Gemini-prompt v5
+- Ronde 4 "al iets beter"; buitenste laag te neutraal, "daar mag wat meer ijsschots vorm in". v5: r4 als bijlage, alleen de buitenlaag als grote hoekige ijsschotsen; v5b als terugval (v4 + die regel). `r4_gemini.png`.

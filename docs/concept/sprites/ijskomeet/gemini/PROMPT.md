@@ -169,3 +169,28 @@ AVOID
 - Not cute: no smile, no cheeks, no cartoon eyes with a white shine dot.
 - Not a smooth ball, not a spiky ball with spikes in every direction, not a ghost, not a fish. No glossy 3D render.
 ```
+
+## Ronde 4 (15 nov), prompt v4
+- `r4_gemini.png`. Jordi: "Al iets beter, alleen ik vind de buitenste laag net iets te neutraal, daar mag wat meer ijsschots vorm in".
+
+# Prompt v5 (15 nov): nieuw gesprek, bijlage = `r4_gemini.png`, één wijziging
+Let op (GEMINI.md): "keep X, change Y" kan X slopen. Gaan ogen of vorm achteruit: v5b draaien.
+
+```
+Attachment 1 is a front sprite of an original Pokémon in official Gen 3 style (Ruby/Sapphire/Emerald pixel art): a living comet of ice, Ice/Cosmic type.
+
+Redraw it with ONE change: the outer layer of ice (the pale white dome and the pale spikes) is too smooth. Give it the shape of ice floes: the surface is made of a few large, flat, angular plates of ice with straight edges and sharp corners, like broken pack ice, slightly overlapping, with thin darker blue lines where the plates meet. Keep it to a few big plates, not many small cracks.
+
+KEEP EXACTLY
+- The silhouette and pose: rounded front at the left, spikes and vapor tail sweeping back to the top right.
+- The face: the two round, icy cyan eyes, nothing else. No mouth, no eyebrows.
+- The dark indigo/violet spikes and the nebula patches, the pale vapor tail, all colors.
+
+FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, flat Gen 3 shading, no dithering.
+- Plain white background, no stars, sparkles or effects. One single creature.
+```
+
+## Prompt v5b: nieuw gesprek, bijlage = `interloper_referentie.png`
+v4 ongewijzigd, met in SHAPE na de eerste regel:
+`- The outer layer of ice is not smooth: it is made of a few large, flat, angular plates of ice like ice floes / broken pack ice, with straight edges and sharp corners, slightly overlapping. A few big plates, not many small cracks.`

@@ -43,3 +43,4 @@ Jordi letterlijk (alles hierboven) + afgesproken met Jordi:
 - 15 nov: "de mond is ook slordig".
 - Claude (15 nov): gemeten dat de modelgrijns even breed is als Gengars grijns (18–19 px); v6: ogen en grijns Gengars Gen 3-pixels 1-op-1 op de v5-plek, geïntegreerd (geen kom, band lichter in de gezichtszone).
 - 15 nov (v7): "nu is het een soort vlak om de ogen heen wat totaal niet meer bij de rest van de sprite past".
+- 15 nov: "ja het moet er allemaal consistent uit zien ook".

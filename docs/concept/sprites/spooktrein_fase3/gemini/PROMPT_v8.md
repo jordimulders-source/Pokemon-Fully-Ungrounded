@@ -56,7 +56,8 @@ SHAPE (follow this closely)
 - Chimney: short, wide and dented, bent backwards as if by the wind, with a wisp of green ghost smoke.
 - Body (back half): the iron narrows and ends in a ragged, broken edge. Out of the open back, the ghost streams out as a green smoke tail.
 - Wheels: no iron wheels. Two big wheels made of green ghost energy under the head, lifted in the air like a horse's front legs, spinning in motion like in a comic book.
-- Underside: because it rears up, you see its belly. There is a small open hatch in the iron underside, and a piece of the green ghost hangs out of it. One or two faint ghostly wheels in the smoke tail.
+- Underside: because it rears up, you see its belly. There is a small open hatch in the iron underside, and a piece of the green ghost hangs out of it.
+- One or two faint ghostly wheels in the smoke tail.
 
 COLORS: rusty iron (rust brown with a bit of dark grey); everything of the ghost is green.
 

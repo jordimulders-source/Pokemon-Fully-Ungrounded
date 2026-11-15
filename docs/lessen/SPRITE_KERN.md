@@ -1,3 +1,5 @@
+> **Gemini-model namaken = NIET TEKENEN (Jordi, 15 nov).** Onderlaag is het verkleinde model; de maker tekent geen schotsen, naden, pieken, kernen of strepen zelf. Ook reparatie-opdrachten van Claude/keurders zeggen nooit "teken" of "opnieuw met de hand", maar "neem over uit het model".
+
 # SPRITE-KERN: de enige pagina die je vóór spritewerk MOET lezen
 Samengevat uit alle spritelessen (5 nov, Jordi: "vat de lessen echt enorm samen ... hij vergeet heel vaak lessen mee te nemen"). Geef dit bestand mee aan **elke** sprite-agent, ook bij kleine reparaties. Al het andere in `docs/lessen/` is naslag.
 

@@ -1583,3 +1583,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3: prompt v6 variant C (meer zoals Cuphead: voorkant = gezicht, koeienvanger = grijns, levende vervormende loc).
 - Spooktrein fase 3: prompt v6 variant D (geest woont in de loc als heremietkreeft en kijkt eruit; naar Jordi's referentie Locoalmotiv).
 - Spooktrein fase 3 ronde 5 (v6 variant D) afgekeurd (Jordi: "een trein met een geest erin, dat is niet een pokemon"). Les in GEMINI.md.
+- Spooktrein fase 3: prompt v7 (geest is het wezen: ijzeren schulp, wielen en rookstaart van geestenergie; "locomotive" niet als onderwerp).

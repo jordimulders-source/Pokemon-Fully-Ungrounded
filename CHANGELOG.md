@@ -1703,3 +1703,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.416] - Spooktreinlijn: fase 1/2 uitgewerkt, prompt fase 2
 - Jordi: fase 1 heeft nog geen geest ("gewoon een hoop met metaal dat sentient is ... wel een zwakke pokemon"); de schoorsteen staat half rechtop in de hoop, met 2 ogen erin. Fase 2: alle drie de aandrijvingen (groene barsten, spookwielen, geestwolk eronder); geest blijft dezelfde kleur als in fase 3.
 - Gemini-prompt fase 2 v1: `docs/concept/sprites/spooktrein_fase1_2/gemini/PROMPT_fase2_v1.md`.
+
+### [v0.0.417] - Spooktrein fase 2: ronde 1 afgekeurd, prompt v2
+- Jordi over r1: "is te cartoony en niet genoeg gepowered door de geest". `gemini/r1/fase2_v1_afgekeurd.png`. v2: Gen 3-Ghost-stijl (Shuppet/Duskull/Gastly), stalen i.p.v. houten wagon, groene energie dominant (brede barsten, wielen van damp, grote wolk), onderlijf van de geest stroomt de wagon in. `PROMPT_fase2_v2.md`.

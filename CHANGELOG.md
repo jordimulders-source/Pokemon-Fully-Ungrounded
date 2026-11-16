@@ -1732,3 +1732,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.430] - Blobfish fase 2: Gemini r2 + bijsturing r3
 - `r2.png` bewaard; `PROMPT_r3.md` ("ogen zijn nu te menselijk en de bovenkant moet rond blijven").
+
+### [v0.0.431] - Blobfish fase 2: Gemini r3
+- `r3.png` bewaard (beste tot nu toe; eindvorm nog twijfel); rondeoverzicht in `blobfish_fase2/gemini/README.md`.

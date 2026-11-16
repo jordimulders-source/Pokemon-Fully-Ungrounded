@@ -1,5 +1,7 @@
 # Gemini-prompt: mate-lijn fase 2 (kano), v4 (16 nov)
 
+**VERVALLEN** (16 nov): geschreven vóór Jordi's "lelijke rand, de roeispanen zijn opeens niet meer roeispanen, de kano nog steeds niet gefixed". Niet gebruiken.
+
 Nieuw gesprek. Bijlage: `r3/gemini_r3.png` (rand en mond zijn nu goed).
 
 ## Jordi over r3 (letterlijk, 16 nov)

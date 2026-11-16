@@ -29,3 +29,6 @@ Gemini-model namaken (`docs/lessen/SPRITE_WERKWIJZE.md`, `GEMINI.md`, `SPRITE_KE
 ## Af, versie 3 (16 nov)
 `af/spooktrein.png` = r27: strenge eindkeuring (schaduw, kleuren, lijnen, Dragonfly Cave) PASS na r25 (8 px) en paletrondes r26/r27 (metaal + groen meer contrast, grijs weer grijs). Keuring: `af/strenge_keuring_r27.md`.
 - 16 nov: "de zwarte lijnen in het gezicht en de koeienvanger voelen nog wat hard" → r28 A/B; Jordi: "A is het beste" (binnenlijnen index 15 = (62,32,26)).
+
+## Af, versie 4 (16 nov)
+`af/spooktrein.png` = r29 (r28A + 1 px): zachte binnenlijnen (index 15), strenge keuring PASS (`af/keuring_r29.md`). 16 kleuren.

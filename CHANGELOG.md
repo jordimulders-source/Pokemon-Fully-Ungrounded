@@ -1794,3 +1794,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 r26: paletronde metaal + groen (alleen paletwaarden; zwakke tintgrenzen metaal 20,4% → 0,4%, groen 3,0% → 1,0%, groen-metaal 32,5% → 5,4%); variant C gekozen; herkeuring.
 - **Spooktrein fase 3: frontsprite af, versie 3** (r27): strenge eindkeuring PASS; paletronde metaal + groen (zwakke tintgrenzen 10% → 2%), grijs weer grijs. `af/`, overzichtsvel, les.
 - Spooktrein fase 3 r28: binnenlijnen in kop en koeienvanger zachter (Jordi: "voelen nog wat hard"): A = nieuwe donkere roesttint (62,32,26), B = roestdonker 9; buitenlijn blijft zwart. Keuze aan Jordi.
+- **Spooktrein fase 3: frontsprite af, versie 4** (r29): binnenlijnen in kop en koeienvanger zachter (A, Jordi), strenge keuring PASS na 1 px; `af/` en overzichtsvel bijgewerkt.

@@ -23,3 +23,6 @@ Official Gen 3 front sprite style, 64x64, max 16 colors, plain white background.
 
 ## Tips
 - Barsten worden weer dichte sterren: "the bursts are made of separate rays and dots with gaps between them, not a filled star".
+
+## Daarna: hoofdronde
+Jordi: "het hoofd is wel wat te kaal verder". Niet in v11 (derde wijziging); aparte ronde met het v11-resultaat als bijlage, vorm volgt Jordi's keuze.

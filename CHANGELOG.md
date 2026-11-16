@@ -1738,3 +1738,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.432] - Blobfish fase 2: Gemini-prompt r4
 - `PROMPT_r4.md`: nieuw gesprek met r3 als bijlage, alleen groter ("ja misschien wat groter").
+
+### [v0.0.433] - Blobfish fase 2: Gemini-prompt r5
+- r4 veranderde niets (bijlage gekopieerd); `PROMPT_r5.md`: nieuwe startprompt met alle feedback, zonder r3 als bijlage.

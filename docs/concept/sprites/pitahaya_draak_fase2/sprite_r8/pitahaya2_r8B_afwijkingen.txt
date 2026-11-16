@@ -1,0 +1,10 @@
+9	45	r	.	Jordi: weghalen (transparant)
+9	46	d	.	Jordi: weghalen (transparant)
+9	47	d	.	Jordi: weghalen (transparant)
+10	46	v	.	Jordi: weghalen (transparant)
+9	44	r	K	bovenrand V: lijn zwart (schaduwkant)
+10	45	v	K	bovenrand V: lijn zwart
+11	46	v	K	punt V: lijn zwart
+9	48	p	r	onderrand V: selout r (lipband)
+10	48	s	W	pit van de rand af: modelpit ligt precies op de grens X10|X11 (blok X10 rechterkolom, X11 linkerkolom 3 pitpx)
+11	48	W	s	pit 1 px naar rechts, zelfde modelpit (component 913), niet meer tegen de nieuwe rand

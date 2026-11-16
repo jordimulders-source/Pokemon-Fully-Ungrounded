@@ -6,7 +6,7 @@ Nieuw gesprek. Bijlagen: (1) `../../mate/af/mate_8x.png` (fase 1: kerfwerk, zilv
 "de kano moet geen getuite mond hebben, hij moet een gekerfde mond hebben zoals in fase 1 hooguit. de metalen rand moet erin. De vorm van de kano mag wat scherper, zoals in het echt. Hij moet echt als een soort kalebas dienen, alsof deze pokemon de wereldkampioen mate maker is"
 
 ## Open (niet beantwoord)
-- Roeispanen: in de prompt = bombilla als peddelsteel met het zeefje als blad (Claudes lezing van "echt bombillos" + "niet meer roeispanen").
+- Roeispanen: bevestigd door Jordi: "ze moeten bombillas zijn die werken als peddels" (in de prompt: bombilla als steel, zeefje als blad).
 - Mond: "hooguit" → in de prompt staat de gekerfde mond; schrappen = regel weghalen.
 
 ## Prompt

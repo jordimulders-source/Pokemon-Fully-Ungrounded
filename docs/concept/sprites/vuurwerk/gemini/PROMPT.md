@@ -10,7 +10,7 @@ Nieuw gesprek, geen bijlage (de referenties in `../` zijn andermans fakemon; nie
 - "we beginnen met de vuurpijl, laten we kijken wat gemini ervan maakt en dan gaan we door brainstormen"
 
 ## Open, bewust aan Gemini gelaten
-Lijf, onderkant, plek van het gezicht, richting van de pijlhanden. Geen keuzes van Claude toegevoegd behalve de vaste Gen 3-eisen en de Gen 3-compositie (compact, ledematen dicht bij het lijf).
+Lijf, onderkant, plek van het gezicht, richting van de pijlhanden. Keuzes van Claude (schrappen mag): de vaste Gen 3-eisen, Gen 3-compositie (compact, ledematen dicht bij het lijf) en de AVOID-regel "geen draak, slang, feniks of vogel" (afstand tot de referenties en Moltres/Ho-Oh).
 
 ## Prompt
 

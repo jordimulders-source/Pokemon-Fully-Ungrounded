@@ -1713,4 +1713,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: geest mag "een beeetje" op de mini-geest van fase 3 lijken; mond "overdreven wijd open". Prompt v4 met uitsnede als losse inspiratie: `gemini/PROMPT_fase2_v4.md`, `gemini/bijlage_minigeest_fase3.png`.
 
 ### [v0.0.419] - Spooktrein fase 2: ronde 3, prompt v5 (gezicht)
-- Jordi over r3: "de vorm van de geest is nu goed, maar het gezicht vind ik echt slecht. Is teveel gengar, de mond moet echt overdreven groot zijn en doe maar kleine pretoogjes". `gemini/r3/fase2_v4.png`; v5 = r3 als bijlage, alleen het gezicht anders: `gemini/PROMPT_fase2_v5.md`.
+- Jordi over r3: "de vorm van de geest is nu goed, maar het gezicht vind ik echt slecht. Is teveel gengar, de mond moet echt overdreven groot zijn en doe maar kleine pretoogjes" / "en ik wil meer ghost power zien". `gemini/r3/fase2_v4.png`; v5 = r3 als bijlage, gezicht + meer geestkracht: `gemini/PROMPT_fase2_v5.md`.

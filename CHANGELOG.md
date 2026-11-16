@@ -1691,3 +1691,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein: Gemini-geest groter afgekeurd (Jordi: "gemini kan dit niet"); vel met Gen 3-geestmonden als bron (`geest_mond/gen3_geesten.png`).
 - Spooktrein fase 3: r5-proef (kleine geest 1-op-1 uit het natieve model); Jordi: geest iets groter schalen, trein mag simpeler.
 - Spooktrein fase 3 sprite r6 (verse maker): kleine geest 1,1× uit het natieve model, koeienvanger met 4 spijlen, trein vereenvoudigd; gezicht kleine geest nog onleesbaar → r7 met A/B (mond binnen licht zoals model / donker zoals Weepinbell).
+- Spooktrein fase 3 sprite r7: kleine geest met één schaalfactor (×1,06), ogen en D-mond op modelplek; A (mond licht zoals model) / B (donker zoals Weepinbell) aan Jordi.

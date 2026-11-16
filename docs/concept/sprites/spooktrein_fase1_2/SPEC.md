@@ -20,3 +20,4 @@ Fase 3 (stoomtrein, Steel/Ghost) wordt in een andere sessie gemaakt: `../spooktr
 
 ## Open
 - Werkwijze: Gemini (zoals fase 3), daarna `docs/lessen/GEMINI.md`.
+- Fase 1: prompt v1 in `gemini/PROMPT_fase1_v1.md` (16 nov); wacht op Gemini-resultaat van Jordi.

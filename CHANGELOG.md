@@ -1776,3 +1776,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/spooktrein_fase2/af/spooktrein_fase2.png` (+ `_8x`, `_vel`); op het overzichtsvel als "Spooktrein fase 2" (steel/ghost). Naam nog open.
 - Ter info (eindkeuring, niet aangepast): roestvlekken op het front zijn opgegaan in het middenbruin; rechte donkere strepen in de wolk (y52–53, y56) en lichte veegstrepen onderin volgen het model; kop licht met smalle schaduwsikkel (trouw aan het model).
 - Jordi (17 nov): "het wiel is minder mooi geworden, die was eerst dikker" / "ja ronde 4 terug, die was gewoon prima": spookwiel van r4 terug in `af/` (79 px, alleen in de wielzone x20–31 y45–56; script-diff 0 daarbuiten). Varianten in `sprite_r9/`.
+
+### [v0.0.443] - Spooktrein fase 1: Gemini-prompt v1
+- `docs/concept/sprites/spooktrein_fase1_2/gemini/PROMPT_fase1_v1.md`: roestige schroothoop met treinspullen, schoorsteen half rechtop met 2 ogen erin, puur Steel, geen geest; kleuren van het roest van fase 2. Wacht op Gemini-resultaat.

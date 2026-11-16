@@ -2054,3 +2054,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.505] - Mate-lijn fase 2: Gemini-prompt v8
 - `PROMPT_v8.md`: alleen het gezicht van het ventje ("keihard aan het werk"); de kop wordt daarna in het samengestelde model geplakt. Natief raster van het model: `mate_fase2/ogen/natief.py` (pitch 10,24, fase 0).
+
+### [v0.0.506] - Mate-lijn fase 2: gezichtsvarianten ventje
+- r8 bewaard (emoji-blik, afgekeurd; kano goed). Vier gezichtsvarianten door Claude op het natieve raster in `mate_fase2/ogen/` (A vastberaden, B inspanning, C één oog dicht, D open tanden), elk ook als volledig model.

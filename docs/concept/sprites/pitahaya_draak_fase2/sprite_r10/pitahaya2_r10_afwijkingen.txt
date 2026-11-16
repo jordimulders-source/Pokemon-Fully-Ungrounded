@@ -1,0 +1,102 @@
+punt	x	y	oud	nieuw	reden
+A1	18	44	P	p	mondhoek onder de bovenkaak: geen lichtste tint (Exploud/Croconaw donker achterin)
+A1	19	44	P	p	mondhoek onder de bovenkaak: geen lichtste tint (Exploud/Croconaw donker achterin)
+A1	18	45	P	p	mondhoek onder de bovenkaak: geen lichtste tint (Exploud/Croconaw donker achterin)
+A1	19	45	P	p	mondhoek onder de bovenkaak: geen lichtste tint (Exploud/Croconaw donker achterin)
+A1	20	45	P	p	mondhoek onder de bovenkaak: geen lichtste tint (Exploud/Croconaw donker achterin)
+A1	18	46	P	p	mondhoek onder de bovenkaak: geen lichtste tint (Exploud/Croconaw donker achterin)
+A1	19	46	P	p	mondhoek onder de bovenkaak: geen lichtste tint (Exploud/Croconaw donker achterin)
+A1	20	46	P	p	mondhoek onder de bovenkaak: geen lichtste tint (Exploud/Croconaw donker achterin)
+A1	18	47	P	p	mondhoek onder de bovenkaak: geen lichtste tint (Exploud/Croconaw donker achterin)
+A1	16	48	P	p	verre lip: basistint, los van het vruchtvlees w
+A1	16	49	P	p	verre lip: basistint, los van het vruchtvlees w
+A1	17	49	P	p	verre lip: basistint, los van het vruchtvlees w
+A1	15	50	P	p	verre lip: basistint, los van het vruchtvlees w
+A1	16	50	P	p	verre lip: basistint, los van het vruchtvlees w
+A1	15	51	P	p	verre lip: basistint, los van het vruchtvlees w
+A1	17	45	p	r	modeltoon r; lijn onder de bovenlip (17,44-47) doorlopend r
+A2	9	54	p	r	onderkant onderkaak kijkt naar beneden: schaduw (Exploud, Gyarados)
+A2	10	54	P	r	onderkant onderkaak kijkt naar beneden: schaduw (Exploud, Gyarados)
+A2	11	54	P	r	onderkant onderkaak kijkt naar beneden: schaduw (Exploud, Gyarados)
+A3	9	53	p	P	voorste lipbocht naar het licht: modeltoon P
+A3	10	53	p	P	voorste lipbocht naar het licht: modeltoon P
+A4	8	48	d	r	lipcontour één tint r tot (7,53)
+A4	8	49	d	r	lipcontour één tint r tot (7,53)
+B1	61	48	.	K	staart rechts: modeldekking 2,3,3,2/9 = bolling (Swampert/Salamence-krul)
+B1	61	49	.	K	staart rechts: modeldekking 2,3,3,2/9 = bolling (Swampert/Salamence-krul)
+B1	61	50	.	K	staart rechts: modeldekking 2,3,3,2/9 = bolling (Swampert/Salamence-krul)
+B1	61	51	.	K	staart rechts: modeldekking 2,3,3,2/9 = bolling (Swampert/Salamence-krul)
+B1	60	48	K	g	oude lijn wordt donkerste groen langs de schaduwrand
+B1	60	49	K	g	oude lijn wordt donkerste groen langs de schaduwrand
+B1	60	50	K	g	oude lijn wordt donkerste groen langs de schaduwrand
+B1	60	51	K	g	oude lijn wordt donkerste groen langs de schaduwrand
+B2	12	58	g	K	teenlijn uit het model (natief 4/9 zwart)
+B2	12	59	K	.	inkeping onder de modelteenlijnen (12,58) en (15,58): drie teenpunten (Feraligatr/Swampert)
+B2	15	59	K	.	inkeping onder de modelteenlijnen (12,58) en (15,58): drie teenpunten (Feraligatr/Swampert)
+B2	12	56	.	g	bolling op teen 1, modeldekking 2/9: bovenrand geen 1-1-1-trap
+B3	18	34	r	.	kopbovenkant: modeldekking 6/9 -> zadel tussen wenkbrauw en nekschub
+B3	19	34	r	.	kopbovenkant: modeldekking 6/9 -> zadel tussen wenkbrauw en nekschub
+B3	20	34	d	.	kopbovenkant: modeldekking 6/9 -> zadel tussen wenkbrauw en nekschub
+B3	18	35	p	d	nieuwe bovenrand = selout d
+B3	19	35	p	d	nieuwe bovenrand = selout d
+B3	20	35	p	d	nieuwe bovenrand = selout d
+C1	25	32	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	26	32	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	25	33	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	27	33	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	32	33	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	49	38	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	48	39	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	51	43	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	52	43	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	57	43	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	58	44	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	12	57	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	10	58	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	29	59	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	28	60	G	g	vlaktint op de buitenrand -> selout (Feraligatr/Salamence: punten donker omlijnd)
+C1	31	34	p	d	top rugplaat op de buitenrand -> selout
+C1	38	34	p	d	top rugplaat op de buitenrand -> selout
+C2	10	34	r	d	kopselout één tint d
+C2	11	34	r	d	kopselout één tint d
+C2	17	34	r	d	kopselout één tint d
+C2	9	35	r	d	kopselout één tint d
+D1	45	37	p	r	gladde modelhelderheid < 103: terminator hoger aan de achterkant (romp) en bij de keel, laag waar het lijf bolt (Salamence/Shelgon)
+D1	45	38	p	r	gladde modelhelderheid < 103: terminator hoger aan de achterkant (romp) en bij de keel, laag waar het lijf bolt (Salamence/Shelgon)
+D1	28	43	p	r	gladde modelhelderheid < 103: terminator hoger aan de achterkant (romp) en bij de keel, laag waar het lijf bolt (Salamence/Shelgon)
+D1	29	44	p	r	gladde modelhelderheid < 103: terminator hoger aan de achterkant (romp) en bij de keel, laag waar het lijf bolt (Salamence/Shelgon)
+D1	44	43	p	r	gladde modelhelderheid < 103: terminator hoger aan de achterkant (romp) en bij de keel, laag waar het lijf bolt (Salamence/Shelgon)
+D1	45	43	p	r	gladde modelhelderheid < 103: terminator hoger aan de achterkant (romp) en bij de keel, laag waar het lijf bolt (Salamence/Shelgon)
+D1	46	43	p	r	gladde modelhelderheid < 103: terminator hoger aan de achterkant (romp) en bij de keel, laag waar het lijf bolt (Salamence/Shelgon)
+D1	47	43	p	r	gladde modelhelderheid < 103: terminator hoger aan de achterkant (romp) en bij de keel, laag waar het lijf bolt (Salamence/Shelgon)
+D1	44	44	p	r	gladde modelhelderheid < 103: terminator hoger aan de achterkant (romp) en bij de keel, laag waar het lijf bolt (Salamence/Shelgon)
+D1	47	44	p	r	gladde modelhelderheid < 103: terminator hoger aan de achterkant (romp) en bij de keel, laag waar het lijf bolt (Salamence/Shelgon)
+D1	24	48	r	d	gladde modelhelderheid <= 78 (donkerste roze): sikkel waar het lijf achter de dijen verdwijnt
+D1	25	48	r	d	gladde modelhelderheid <= 78 (donkerste roze): sikkel waar het lijf achter de dijen verdwijnt
+D1	26	48	r	d	gladde modelhelderheid <= 78 (donkerste roze): sikkel waar het lijf achter de dijen verdwijnt
+D1	27	48	r	d	gladde modelhelderheid <= 78 (donkerste roze): sikkel waar het lijf achter de dijen verdwijnt
+D1	25	49	r	d	gladde modelhelderheid <= 78 (donkerste roze): sikkel waar het lijf achter de dijen verdwijnt
+D1	26	49	r	d	gladde modelhelderheid <= 78 (donkerste roze): sikkel waar het lijf achter de dijen verdwijnt
+D1	37	50	r	d	gladde modelhelderheid <= 78 (donkerste roze): sikkel waar het lijf achter de dijen verdwijnt
+D1	38	51	r	d	gladde modelhelderheid <= 78 (donkerste roze): sikkel waar het lijf achter de dijen verdwijnt
+D1	39	51	r	d	gladde modelhelderheid <= 78 (donkerste roze): sikkel waar het lijf achter de dijen verdwijnt
+D3	33	49	h	H	middelste dij: modelrandlicht 5,6,4/9 (sluit aan op H (36,51)-(37,53))
+D3	34	50	h	H	middelste dij: modelrandlicht 5,6,4/9 (sluit aan op H (36,51)-(37,53))
+D3	35	51	h	H	middelste dij: modelrandlicht 5,6,4/9 (sluit aan op H (36,51)-(37,53))
+D3	48	51	h	H	achterste dij: modelrandlicht 5/9 (sluit aan op H (47,48)-(48,49)); (46,47) 4/9 niet: gaf dambord met (47,48)
+D3	56	44	h	H	staartkrul: modelrandlicht 5,6,7,4,6,7,9/9 (gele spiraalband in het model)
+D3	57	44	h	H	staartkrul: modelrandlicht 5,6,7,4,6,7,9/9 (gele spiraalband in het model)
+D3	57	45	h	H	staartkrul: modelrandlicht 5,6,7,4,6,7,9/9 (gele spiraalband in het model)
+D3	57	48	h	H	staartkrul: modelrandlicht 5,6,7,4,6,7,9/9 (gele spiraalband in het model)
+D3	56	49	h	H	staartkrul: modelrandlicht 5,6,7,4,6,7,9/9 (gele spiraalband in het model)
+D3	54	50	h	H	staartkrul: modelrandlicht 5,6,7,4,6,7,9/9 (gele spiraalband in het model)
+D3	55	50	h	H	staartkrul: modelrandlicht 5,6,7,4,6,7,9/9 (gele spiraalband in het model)
+F	40	52	G	g	losse G; modeltoon g, buren h/g
+D2	29	36	p	P	variant: rughooglicht op de top van de rugplaat (gladde modelhelderheid >= 140); niet in het model
+D2	35	36	p	P	variant: rughooglicht op de top van de rugplaat (gladde modelhelderheid >= 140); niet in het model
+D2	36	36	p	P	variant: rughooglicht op de top van de rugplaat (gladde modelhelderheid >= 140); niet in het model
+D2	37	36	p	P	variant: rughooglicht op de top van de rugplaat (gladde modelhelderheid >= 140); niet in het model
+D2	28	37	p	P	variant: rughooglicht op de top van de rugplaat (gladde modelhelderheid >= 140); niet in het model
+D2	29	37	p	P	variant: rughooglicht op de top van de rugplaat (gladde modelhelderheid >= 140); niet in het model
+D2	36	37	p	P	variant: rughooglicht op de top van de rugplaat (gladde modelhelderheid >= 140); niet in het model
+D2	37	37	p	P	variant: rughooglicht op de top van de rugplaat (gladde modelhelderheid >= 140); niet in het model

@@ -3,7 +3,7 @@
 Keurder: dezelfde als r2. Hulpmiddelen hier: `zij.py`/`zijB.py` (bek naast het model met raster: `bek_r3.png`, `bek_r3_detail.png`, `bek_lipB.png`), `meet_r3.py`/`meet_lipB.py` (tinten, clusters, dambord), `r2_r3_lipB_2x.png` (r2 | r3 | lipB op 2×, witte achtergrond).
 Diff r2 → r3: 29 px, allemaal in de opdrachtzones. Palet, maat en silhouet zijn gelijk. Zwart binnen de figuur 5,4 %.
 
-## Oordeel: PASS (hoofdversie)
+## Oordeel: PASS (hoofdversie en lipB, allebei technisch in orde)
 
 ### 1. Reparaties uit r2
 - **1 Mondhoek:** goed. De lichtroze modelstreep loopt nu als één strook van (19,44) naar (15,50), rechts p en r waar het model donker is. Er is geen p/P om en om meer. Trouw aan het model (bek_r3_detail).

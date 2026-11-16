@@ -2030,3 +2030,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.497] - Mate-lijn fase 2 (kano): Gemini-prompt
 - `docs/concept/sprites/mate_fase2/gemini/PROMPT.md`: prompt A (kano met ogen, punt als neus) en B (plus mond), met Jordi's woorden; open punten (materiaal kano, hoorntjes, stoom) staan erbij.
 - Jordi's keuze over het gezicht toegevoegd aan `IDEEEN.md`.
+
+### [v0.0.498] - Mate-lijn fase 2: Gemini-prompt v2
+- Gemini r1 bewaard (`mate_fase2/r1/`); Jordi's feedback in `IDEEEN.md`; `PROMPT_v2.md`: kano = de kalebas zelf, echte bombilla's, compact Gen 3-silhouet.

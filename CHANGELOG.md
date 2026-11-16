@@ -1660,3 +1660,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Halve cirkel naast het oog (c10 variant 1), eindkeuring Dragonfly Cave + Gen 3: PASS na 5 randpixels + mondhoek. **Af:** `docs/concept/sprites/steenmozaiek/af/welp.png` (+ `_8x`, `welp_grijs.png`, `welp_normal.pal`, eindkeuring). Op het overzichtsvel.
 ### [v0.0.403] - Blobfish-lijn: start
 - Jordi: typing Water → Water; eerst ideeën bespreken. Vastgelegd in `docs/concept/IDEEEN.md` (Blobfish-lijn); voorstellen voor uiterlijk en evolutie liggen bij Jordi.
+### [v0.0.404] - Blobfish-lijn: concept en Gemini-prompts
+- Jordi: fase 1 een blobfish van boetseerklei (zoals onder water, derpy blij, goede lippen, ligt op de bodem); fase 2 een echte, nog chagrijniger, extra gesmolten blobfish met kwijl, van gelei-speelgoed. Citaten in `IDEEEN.md`.
+- Gemini-prompts: `docs/concept/sprites/blobfish/gemini/PROMPT.md` en `blobfish_fase2/gemini/PROMPT.md` (keuzes Claude apart gemarkeerd).

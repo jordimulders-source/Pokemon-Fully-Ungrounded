@@ -19,7 +19,10 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Mime-lijn:** Mime Jr. blijft → regionale jiujitsu-Mr. Mime → **Mr. Prime** (zie sectie hieronder en `POKEMON.md`).
 - **Blobfish-lijn, 2 fases** (voorstel Claude, Jordi 9 nov "goed idee": fase 1 een gewone diepzeevis, fase 2 "naar boven gehaald" en ingezakt).
   - **Typing (Jordi, 16 nov): Water → Water.** Eerst ideeën bespreken vóór een Gemini-prompt (Jordi, 16 nov).
-  - **Voorstellen Claude (16 nov, open):** uiterlijk fase 1, evolutiemethode, uiterlijk fase 2, toon; zie het gesprek van 16 nov (antwoord Jordi volgt hier).
+  - **Jordi (16 nov):** "we moeten er een pokemon van maken, dus hoe gaan we afwijken van dat het gewoon een dier is"; geen link met Zuid-Amerika, algemene concepten. Uit 7 voorstellen (theatermasker, lavalamp, waterballon, spons, boetseerklei, zitzak, drukvat) koos hij boetseerklei voor fase 1.
+  - **Fase 1 (Jordi, 16 nov):** "die is dan licht derpy blij, lijkt voor de rest echt op de blobfish als die onderwater is, goede lippen dus, blij om je te zien lijkt wel, ligt op de bodem. Wel duidelijk van klei".
+  - **Fase 2 (Jordi, 16 nov):** "wordt het dus een echte blobfish met kwijl die nog chagrijniger eruit ziet dan normaal, hij is dan van dat gelei achtig speelgoed dat kinderen soms hebben, dat je dan moet voelen en heel naar en glad voelt, en hij moet nog meer gesmolten lijken dan normaal".
+  - Gemini-prompts: `sprites/blobfish/gemini/PROMPT.md` (fase 1), `sprites/blobfish_fase2/gemini/PROMPT.md` (fase 2). Evolutiemethode nog open.
 - **Kricketune-evolutie die echt een dirigent wordt.**
 - **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).
 - **Galápagos-regional forms.**

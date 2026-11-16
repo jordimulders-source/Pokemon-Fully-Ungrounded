@@ -6,3 +6,4 @@ Besluiten van de lijn: `../spooktrein_fase1_2/SPEC.md`. Model: `model/model.png`
 - Ogen, Jordi (16 nov): "ogen niet goed maar dat gaan we zelf maar doen". In de sprite: opening donker houden, ogen van het model als plaatshouder; het gezicht maken we daarna met Jordi in varianten (zoals bij fase 2).
 - Grootte (Claude, fase 1 = klein): ±48 px breed; fase 2 vult 64×63.
 - Jordi (16 nov) bij r3: "ja liever dat je met iets grotere vormen netjes gedefinieerd de stapel kan vullen dan dat het een brei wordt".
+- Jordi (16 nov), daarna: "een bruine brei moet het niet worden".

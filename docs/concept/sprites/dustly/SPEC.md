@@ -26,4 +26,5 @@ Eerste fase van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Co
 - 15 nov (Jordi): "nieuwe prompt idd" (op kleur A + lossere wolk). Prompt r4: `gemini/PROMPT_r4.md`.
 - 15 nov, Gemini r4 (`gemini/r4_a.png`): "zucht" (weer Gastly's bal). Prompt r5 zonder bijlage en zonder het woord Gastly: `gemini/PROMPT_r5.md`.
 - 15 nov, Gemini r5 (`gemini/r5_a.png`, zonder bijlage): "het is weer precies gastly". Prompt r6 met r3 als bijlage: `gemini/PROMPT_r6.md`.
+- 15 nov, Gemini r6 (`gemini/r6_a.png`): "hiermee beginnen en dan de kleuren leuker maken bij het maken van de sprite? dus minder zwart". → model = r6_a.
 - Referentie voor de prompt: `referenties/gastly_gen3_8x.png`.

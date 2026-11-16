@@ -1672,3 +1672,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r4 (`dustly/gemini/r4_a.png`) viel terug op Gastly's bal (Jordi: "zucht"). Prompt r5 zonder bijlage en zonder het woord Gastly (gezicht in woorden). Les in `GEMINI.md`.
 ### [v0.0.409] - Dustly: Gemini r5 en prompt r6
 - r5 zonder bijlage was weer Gastly (Jordi: "het is weer precies gastly"). Prompt r6: r3 als bijlage, alleen kleur (grijsbruin rook, smalle roze rand) en minder massief. Les in `GEMINI.md` bijgewerkt.
+### [v0.0.410] - Dustly: model gekozen (Gemini r6)
+- Jordi: "hiermee beginnen en dan de kleuren leuker maken bij het maken van de sprite? dus minder zwart". Model: `docs/concept/sprites/dustly/gemini/r6_a.png`.

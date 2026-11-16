@@ -1928,3 +1928,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.471] - Gengas frame 2: prompt hoofd v3
 - Ook het puntje linksonder de mond (Jordi) laat Gemini rond maken.
+
+### [v0.0.472] - Gengas: puntje linksonder rond (voorstel v14)
+- Jordi: "linksonder de mond is ook een puntje" / "kan je de hoofdversie meteen beter maken". Maker-agent: 3 px in rij 53–54 (rand 15,15,18 → 15,16,17), alleen bestaande paletindexen, manen ongewijzigd. `gengas/sprite_v14/` (hoofdsprite + lijf zonder manen, vel `voor_na.png`). `af/` nog niet overschreven; wacht op Jordi.

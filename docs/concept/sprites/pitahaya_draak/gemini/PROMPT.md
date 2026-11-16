@@ -81,3 +81,17 @@ The face is still part of the fruit skin, not a separate mask.
 
 Same pose, same colors, same Gen 3 sprite style, plain white background.
 ```
+
+---
+
+# Prompt v4 (16 nov): zelfde gesprek, reactie op r3 (`r3.png`)
+
+## Jordi (letterlijk)
+- "het is wat beter, maar gelijk wel wat overdreven, het moet een fase 1 dragon zijn, een gible, axew achtig"
+
+```
+Better, but the face is now too much. It must be a first-stage baby dragon, like Gible or Axew: simple, young and a bit innocent, with only a hint of dragon.
+- Tone the face down to the level of Gible and Axew: big simple eyes (keep the amber color), less heavy brow, fewer scale bumps on the forehead.
+- Simpler mouth, like Gible's or Axew's; at most one tiny fang, or none.
+Keep everything else exactly as it is: fruit head, cactus-stem body, arms, legs, pose, colors, Gen 3 sprite style, plain white background.
+```

@@ -1919,3 +1919,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.468] - Gengas frame 2: ronde 2 mislukt, analyse
 - Prompt v3 (getallen per onderdeel): Gemini tekende manen bij i.p.v. ze te verplaatsen en drukte de bol weer plat (`frame2_ronde2_v3.png`). Analyse waarom de viscacha wel lukte in STUDIE.md §9 en GEMINI.md.
+
+### [v0.0.469] - Gengas frame 2: combinatie Gemini + script
+- `gengas/frame2/manen.py`: haalt de vier manen uit de sprite (bewaard in `manen_lab.npy`) en maakt `lijf_zonder_manen(_8x).png` als bijlage voor Gemini. `PROMPT_HOOFD.md`: alleen de knikbeweging van het hoofd als handeling. Daarna zet het script de manen op nieuwe plekken.

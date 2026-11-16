@@ -1845,3 +1845,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini r3 (te overdreven; moet Gible/Axew-achtig), prompt v4.
 - Gemini r4 (alleen ogen te Neopets), prompt v5.
 - r5: blik "brutaal en ondeugend" (Jordi, keuze c), prompt v6.
+- Pitahaya-draak fase 1: Gemini r6 gekozen als model (`pitahaya_draak/model/model.png`), SPEC.md; sprite r1 bij de maker (model overnemen, niets tekenen).

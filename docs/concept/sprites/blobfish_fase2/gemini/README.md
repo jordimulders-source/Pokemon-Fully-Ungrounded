@@ -7,3 +7,4 @@
 5. PROMPT_r5: nieuw gesprek zonder eigen bijlage, alle feedback in de startprompt.
    Resultaat `r5.png`: vrijwel gelijk aan r3, niet groter.
 6. `../lagen/`: Jordi over r5: "hij heeft nu een soort laag eronder, misschien dat we er nog 1 of twee onder kunnen zetten". Claude heeft de puddingvoet van r5 gekopieerd (`stapel.py`): +1/+2 lagen, gelijk of telkens 6% breder; overzicht `overzicht.png`.
+7. Jordi: "rechtsonderin is perfect, maar dan mag elke laag een iets andere kleur, donkerder is het mooist denk ik". +2 lagen, 6% breder, per laag donkerder (×0,92 of ×0,86): `overzicht_donker.png`.

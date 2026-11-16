@@ -1958,3 +1958,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.477] - Gengas frame 2: prompt v5
 - Script-frame 2 afgewezen door Jordi ("nee", "nieuwe prompt, gemini heeft nog niks veranderd"). Nieuwe knik-prompt die beschrijft wat zichtbaar moet veranderen (hoger in beeld, gezicht hoger op de bol, oren naar achteren, schaal 16× houden).
+
+### [v0.0.478] - Gengas frame 2: prompt v6 (vel met twee frames)
+- Jordi: "nee, nieuwe prompt". Andere aanpak: Gemini maakt een vel met links het origineel en rechts de knik, zodat het verschil zichtbaar moet zijn.

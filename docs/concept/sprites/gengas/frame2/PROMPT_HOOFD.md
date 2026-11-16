@@ -25,3 +25,13 @@ Combinatie (Jordi: "geef gemini de handeling en dan kunnen we met het script de 
 > The creature nods upward: the whole round body floats higher in the picture, closer to the top edge, leaving more empty white space below it. At the same time it tilts its head slightly backward: the face (red eyes and white grin) moves a little up on the ball, so it looks a bit more upward, and the two ears lean a little further back.
 >
 > Keep exactly the same size, the same pixel scale (every pixel stays a 16×16 block), the same pixel-art style, the same colors, cloud bands, eyes and grin design. Plain white background. Do not add anything: no hands, no moons, no objects, no glow, no effects, no text.
+
+## Prompt v6 (Jordi: "nee, nieuwe prompt"): vel met twee frames
+
+> Make a pixel-art animation sprite sheet with two frames side by side, using the attached sprite.
+>
+> LEFT frame: the attached sprite, copied exactly.
+>
+> RIGHT frame: the same creature in the next moment of a nodding motion. The round body has bobbed upward, so it sits clearly higher than in the left frame (its bottom edge is well above the bottom edge of the left one), and its head is tilted back a little: the eyes and the grin sit a bit higher on the ball and look slightly upward, the ears lean back.
+>
+> Both frames: identical size, identical pixel scale, same pixel-art style, same colors, cloud bands, eyes and grin. Plain white background, frames aligned on the same baseline. No hands, no moons, no objects, no glow, no text.

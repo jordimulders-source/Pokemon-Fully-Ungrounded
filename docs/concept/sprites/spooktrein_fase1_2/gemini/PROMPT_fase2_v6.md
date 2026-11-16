@@ -1,6 +1,6 @@
 # Gemini-prompt: spooktrein fase 2 (Steel/Ghost), v6 (16 nov)
 
-Ronde 4 (`r4/fase2_v5.png`), Jordi: "hij volgt de instructies gewoon niet op".
+Ronde 4 (`r4/fase2_v5.png`), Jordi: "hij volgt de instructies gewoon niet op" / "hier kunnen we nooit een sprite van maken en de geest heeft een rotkop".
 Analyse Claude: wel goed: staal, spoorwagon, barsten, snelheid, wegvliegende bouten. Fout: stoompluimvorm van de geest kwijt (ronde kop), gezicht weer Gengar (schuine ogen, tandengrijns), mond niet overdreven, wagon lang en van opzij i.p.v. semi-frontaal en compact. Vier wijzigingen met een bijlage was te veel (les GEMINI.md).
 Nieuw gesprek, GEEN bijlage: startprompt v4 + alle besluiten van ronde 3–4 in één keer.
 

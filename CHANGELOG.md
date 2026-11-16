@@ -1776,11 +1776,69 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/spooktrein_fase2/af/spooktrein_fase2.png` (+ `_8x`, `_vel`); op het overzichtsvel als "Spooktrein fase 2" (steel/ghost). Naam nog open.
 - Ter info (eindkeuring, niet aangepast): roestvlekken op het front zijn opgegaan in het middenbruin; rechte donkere strepen in de wolk (y52–53, y56) en lichte veegstrepen onderin volgen het model; kop licht met smalle schaduwsikkel (trouw aan het model).
 - Jordi (17 nov): "het wiel is minder mooi geworden, die was eerst dikker" / "ja ronde 4 terug, die was gewoon prima": spookwiel van r4 terug in `af/` (79 px, alleen in de wielzone x20–31 y45–56; script-diff 0 daarbuiten). Varianten in `sprite_r9/`.
+### [v0.0.443] - Spooktrein fase 3: sparren tot frontsprite af (r29)
+- Jordi start de spooktreinlijn (3 fases). Zijn woorden en de open voorstellen van Claude (opbouw, typing, sprite-aanpak) in `docs/concept/IDEEEN.md`.
+- Besluiten Jordi over de spooktreinlijn vastgelegd (fases, Steel → Steel/Ghost, semi-frontaal, Gemini, fase 3 eerst).
+- Spooktrein fase 3: Gemini-startprompt met drie wagonvarianten (a/b/c) in `docs/concept/sprites/spooktrein_fase3/gemini/PROMPT.md`.
+- Spooktrein: kleur vastgelegd (fase 1 roestbruin, fase 3 functioneel met hooguit tinten van roest); prompt fase 3 bijgewerkt.
+- Spooktrein: geest in een groenige contrastkleur (Jordi); prompt fase 3 bijgewerkt.
+- Spooktrein fase 3 Gemini ronde 1 (varianten a/b/c) opgeslagen in `spooktrein_fase3/gemini/r1/`; Jordi kiest het idee van b (wagons lossen op in rook), maar "het is nog geen pokemon".
+- Spooktrein fase 3: Gemini-startprompt v2 (Pokémon-vorm, gedrongen, geen horrorgrijns, warm ijzer + groene geest, rook i.p.v. wagons; vier geest-varianten a–d) in `spooktrein_fase3/gemini/PROMPT_v2.md`.
+- Spooktrein fase 3 ronde 2 (prompt v2) afgekeurd (Jordi: "flinke downgrade"); prompt v3 = v1-b met gerichte wijzigingen (gezicht, detailniveau, kleur) in `PROMPT_v3.md`. Les in GEMINI.md.
+- Spooktrein fase 3 ronde 3 (prompt v3) opgeslagen; Jordi: nog te veel een normale locomotief, gezicht cheeky i.p.v. boos, geestrook perfect. Referenties (Clover, fan-design) in `spooktrein_fase3/referenties/`.
+- Spooktrein fase 3: richting vastgelegd (onderdelen = lichaam, cheeky gezicht, 2 ogen, spookwielen, lang en laag, roestbruin/donkergrijs/groen); prompt v4.
+- Spooktrein fase 3 ronde 4 (prompt v4) afgekeurd (Jordi: "dit ziet er echt stom uit"): mensengezicht op een gewone loc, koeienvanger geen kaak.
+- Spooktrein fase 3: dier als skelet afgewezen (Jordi); prompt v5 = eerst ontwerp in Sugimori-artworkstijl, daarna sprite; roest als textuur; mensengezicht expliciet uitgesloten.
+- Spooktrein fase 3: Jordi "nog minder een trein"; prompt v6 met variant A (geest als lijf, trein als stukken die hij draagt) en B (trein teruggebracht tot schoorsteen, koeienvanger, wielen).
+- Spooktrein fase 3: prompt v6 variant C (meer zoals Cuphead: voorkant = gezicht, koeienvanger = grijns, levende vervormende loc).
+- Spooktrein fase 3: prompt v6 variant D (geest woont in de loc als heremietkreeft en kijkt eruit; naar Jordi's referentie Locoalmotiv).
+- Spooktrein fase 3 ronde 5 (v6 variant D) afgekeurd (Jordi: "een trein met een geest erin, dat is niet een pokemon"). Les in GEMINI.md.
+- Spooktrein fase 3: prompt v7 (geest is het wezen: ijzeren schulp, wielen en rookstaart van geestenergie; "locomotive" niet als onderwerp).
+- Spooktrein fase 3: kern van Jordi (schroot dat zonder de geest uit elkaar valt, razendsnel, geest heeft lol, zoals Rotom) + precieze vormbeschrijving in prompt v8.
+- Spooktrein fase 3: prompt v8 variant B (steigeren als een paard, luikje aan de onderkant met geest eruit).
+- Spooktrein fase 3 ronde 6 (v8): "al beter"; prompt v9 (Spiritomb-achtige zigzag-grijns, geen neus, geestarmen en extra gezicht als leger spirits, meer wielen, furieuzer).
+- Spooktrein fase 3 ronde 7 (v9); prompt v10: terug naar Emerald-sprite, minder detail, één geest uit de schoorsteen met één arm (fluittouw-pose) en een mini-locomotiefkop.
+- Spooktrein fase 3 ronde 8 (v10): bijna goed (Jordi: geest prima, achterkant meer geestwolken, "wat te klein").
+- Spooktrein fase 3: prompt v11 (ronde 8 als bijlage; achterkant wordt geestwolken, lijf langer).
+- Spooktrein fase 3: model gekozen (ronde 9, prompt v11; Jordi: "zou dit vertalen naar een sprite? ... ik vind zijn mond geniaal"). SPEC, natief raster (86×83) en ruwe 64-onderlaag via schrappen in `spooktrein_fase3/model/`.
+- Spooktrein fase 3 sprite r1 (maker): BOX-onderlaag per kleurgroep (schrappen bij 26% vervormde), netjes gemaakt; Claude stuurt r2 met reparaties (ogen, mond, koeienvanger, wolken, kleine geest).
+- Spooktrein fase 3 sprite r2 (LANCZOS-onderlaag): wolken beter, gezicht en koeienvanger niet; r3 = hybride (gezicht/koeienvanger/kleine geest per onderdeel geschrapt zonder lijnen te raken).
+- Spooktrein fase 3 sprite r3 (hybride): gezicht nu het best (bevroren); r4 = ontruisronde (koeienvanger, roest, kleine geest).
+- Spooktrein fase 3 sprite r4 (ontruisd, gezicht bevroren): automatisch overnemen zit aan zijn grens (koeienvanger en kleine geest niet leesbaar); vraag aan Jordi.
+- Spooktrein fase 3: kleine geest onleesbaar op 64 px (ook in het natieve model); Gemini-prompt om alleen de geest groter te maken (`PROMPT_geest.md`).
+- Spooktrein: Gemini-geest groter afgekeurd (Jordi: "gemini kan dit niet"); vel met Gen 3-geestmonden als bron (`geest_mond/gen3_geesten.png`).
+- Spooktrein fase 3: r5-proef (kleine geest 1-op-1 uit het natieve model); Jordi: geest iets groter schalen, trein mag simpeler.
+- Spooktrein fase 3 sprite r6 (verse maker): kleine geest 1,1× uit het natieve model, koeienvanger met 4 spijlen, trein vereenvoudigd; gezicht kleine geest nog onleesbaar → r7 met A/B (mond binnen licht zoals model / donker zoals Weepinbell).
+- Spooktrein fase 3 sprite r7: kleine geest met één schaalfactor (×1,06), ogen en D-mond op modelplek; A (mond licht zoals model) / B (donker zoals Weepinbell) aan Jordi.
+- Spooktrein fase 3 r7 afgekeurd door Jordi (mond klopt niet; r4 was beter); r8: mond letterlijk uit het model (open grijns). Les in GEMINI.md.
+- Spooktrein fase 3 sprite r8: ogen en mond van de kleine geest letterlijk uit het model (overlay 0 afwijkingen); verse keurder (trouw + Gen 3/DFC) gestart.
+- Spooktrein fase 3 r8 gekeurd: FAIL (geest ±1,4× te groot t.o.v. schoorsteen, geen hals; Jordi: verhouding met de schoorsteen klopt niet). r9: geest én schoorsteenrand 1-op-1 uit het natieve model met de eigen hals.
+- Spooktrein fase 3 sprite r9: geest + schoorsteenrand 1-op-1 uit het natieve model (kop:rand en hals:rand = model), MOET 3/4 toegepast; verse keuring.
+- Spooktrein fase 3 r9 gekeurd: FAIL op de trein (schoorsteenpijp te kort, kop links te recht, koeienvanger blokken i.p.v. bladen); groen goedgekeurd door Jordi. r10 (verse maker): alleen de trein.
+- Spooktrein fase 3 sprite r10: koeienvanger opnieuw opgebouwd, kop links rond, pijp opgeschoond (groen diff 0); koeienvanger nog te rechtop/blokkig → r11 schuin en puntig uit het model.
+- Spooktrein fase 3 sprite r11: koeienvanger per pixel uit het model (silhouet, puntige onderrand), nog druk; keurder met pixel-MOET voor de koeienvanger.
+- Spooktrein fase 3 sprite r12 = koeienvanger-voorstel van de keurder (drie platen en een tand, schuine bovenranden, groen diff 0); eindkeuring.
+- Spooktrein fase 3: eindkeuring r12 FAIL (21 px: losse zwarte pixels, dubbele onderlijn, buil); MOET toegepast → r13; korte herkeuring.
+- Spooktrein fase 3 sprite r14: koeienvanger met de IJskomeet-methode (donkerste modelpixel wint bij genoeg lijn), alles 2 px naar rechts, wolkpunten netjes ingekort; nog korrelig → r15 (verse maker): koeienvanger ontkorrelen + kleur/schaduw kop.
+- Spooktrein fase 3 sprite r15 (kop-kleur via gemiddelde per voetafdruk, koeienvanger ontkorreld maar weer blokken); r16 = r15-kop + r14-koeienvanger.
+- Spooktrein fase 3 sprite r17 (opschoonscript eindkeurder): korrel weg, V-lijn onder de band; eindkeuring FAIL (koeienvanger nog blokken, kop niet bol). r18: verse maker.
+- Spooktrein fase 3 sprite r18: V-lijn en naden van de koeienvanger per lijnpixel uit het model geprojecteerd; kop met toonkaart (licht linksboven), nieuwe lichtbruine tint; eindkeuring.
+- **Spooktrein fase 3: frontsprite af** (r19, eindkeuring PASS): `spooktrein_fase3/af/spooktrein.png` (+ `_8x`), op het overzichtsvel; Stand van zaken en lessen (GEMINI.md) bijgewerkt. Open voor Jordi: pixel (25,31) en lichtbruine tint op de kop.
+- Spooktrein fase 3 r20: losse pixel (25,31), lijntje rechts van de mini-geest en 2 losse pixels onder de koeienvanger weg (Jordi). Koeienvanger moet nog beter: makerronde.
+- Spooktrein fase 3 r21: koeienvanger-tinten uit het model (contour bleek al binnen 1 px gelijk); Claude: de 'vorm' zit in de zwarte vlakken tussen de bladen (vooral rechts) → r22.
+- Spooktrein fase 3 r22: zwarte vlakken tussen de bladen uit het model (lum<75, ≥40%); middentand nu los. Vorm rechts volgens meting gelijk aan model; vraag aan Jordi met vergelijking r22 vs model.
+- Spooktrein fase 3 r23: koeienvanger volgens Jordi's tweede schets (rechte linkerrand, ^-punt, ruit, <-naad, hoekige rechteronderkant); korte herkeuring.
+- **Spooktrein fase 3: frontsprite af, versie 2** (r24, keuring PASS): losse pixels weg, koeienvanger volgens Jordi's tweede schets, "<" 3 px. `af/` en overzichtsvel bijgewerkt; les in GEMINI.md.
+- Spooktrein fase 3: strenge eindkeuring (schaduw, kleuren, lijnen, DFC) op r24: FAIL (contrast plaattinten 14, dambord schoorsteenlip, zwarte klonten); r25 met 8 px + 1 paletwaarde; restpunt modderig metaal (20% zwakke tintgrenzen, Gen 3 0–9%) → kleurronde palet.
+- Spooktrein fase 3 r26: paletronde metaal + groen (alleen paletwaarden; zwakke tintgrenzen metaal 20,4% → 0,4%, groen 3,0% → 1,0%, groen-metaal 32,5% → 5,4%); variant C gekozen; herkeuring.
+- **Spooktrein fase 3: frontsprite af, versie 3** (r27): strenge eindkeuring PASS; paletronde metaal + groen (zwakke tintgrenzen 10% → 2%), grijs weer grijs. `af/`, overzichtsvel, les.
+- Spooktrein fase 3 r28: binnenlijnen in kop en koeienvanger zachter (Jordi: "voelen nog wat hard"): A = nieuwe donkere roesttint (62,32,26), B = roestdonker 9; buitenlijn blijft zwart. Keuze aan Jordi.
+- **Spooktrein fase 3: frontsprite af, versie 4** (r29): binnenlijnen in kop en koeienvanger zachter (A, Jordi), strenge keuring PASS na 1 px; `af/` en overzichtsvel bijgewerkt.
 
-### [v0.0.443] - Spooktrein fase 1: Gemini-prompt v1
+### [v0.0.444] - Spooktrein fase 1: Gemini-prompt v1
 - `docs/concept/sprites/spooktrein_fase1_2/gemini/PROMPT_fase1_v1.md`: roestige schroothoop met treinspullen, schoorsteen half rechtop met 2 ogen erin, puur Steel, geen geest; kleuren van het roest van fase 2. Wacht op Gemini-resultaat.
 
-### [v0.0.444] - Spooktrein fase 1: frontsprite af
+### [v0.0.445] - Spooktrein fase 1: frontsprite af
 - Gemini-rondes 1–4 (prompt v1/v2 + bijsturen): schroothoop met schuine schoorsteen en één groot spaakwiel; ogen maken we zelf (Jordi: "ogen niet goed maar dat gaan we zelf maar doen").
 - Sprite r1–r4 (automatische verkleining + samenvoegen in het midden) gaven brei/keien/puzzel; r5–r6 (verse maker): de hoop met de hand opgebouwd als stapel losse, overlappende objecten (rail schuin, klinkplaat, klem, bijlplaat, onderplaat, bout, staaf, U-beugel), wiel en schoorsteen bevroren. Jordi: "nice! dat is erg netjes opgelost".
 - Ogen: vier varianten, Jordi koos D (ovaal met glans) "door het kleurgebruik".
@@ -1788,5 +1846,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/spooktrein_fase1/af/spooktrein_fase1.png` (+ `_8x`, `keuring.md`); op het overzichtsvel als "Spooktrein fase 1" (steel). Naam nog open.
 - Ter info (keurder): donkerder dan echte Gen 3-staalsoorten, trouw aan het model.
 
-### [v0.0.445] - Werknaam Wagogogon
+### [v0.0.446] - Werknaam Wagogogon
 - Spooktrein fase 2 heet **Wagogogon** (Jordi, 16 nov). In POKEMON.md (Werknamen), Stand van zaken en op het overzichtsvel.
+
+### [v0.0.447] - Main gemerged; overzichtsvel per lijn
+- Main (spooktrein fase 3 af) in deze branch gemerged; overzichtsvel bevat nu de hele spooktreinlijn (fase 1, Wagogogon, fase 3) en Dustly staat naast Hauntflare en Gengas.
+- Regel (Jordi, 16 nov): "houd dat als regel aan dat de hele lijn naast elkaar hoort"; in CLAUDE.md en `maak_vel.py`.

@@ -3,6 +3,7 @@ import sys, os
 OUT=os.path.abspath(sys.argv[1]); R0=os.path.abspath(os.path.join(os.path.dirname(os.path.abspath(__file__)),"../../../.."))+"/"
 os.chdir(R0+"docs/concept/sprites")
 S=3; C=6
+# Regel (Jordi, 16 nov): een hele evolutielijn staat naast elkaar, in volgorde van de fases.
 items=[
 ("alpaca/ronde17/variant_kop/anim_front.png",'"Palpaca"',"fight"),
 ("lama/fase2/af/lama.png",'"Llamauler"',"fight"),
@@ -40,12 +41,13 @@ items=[
 ("ijskomeet/af/ijskomeet.png",'IJskomeet',"ice/cosmic"),
 ("steenmozaiek/af/welp.png",'Steenjaguar-welp',"rock"),
 ("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
-("dustly/af/dustly.png",'"Dustly"',"cosmic/poison"),
 ("blobfish/af/blobfish.png",'Blobfish (winegum)',"water"),
+("dustly/af/dustly.png",'"Dustly"',"cosmic/poison"),
 ("hauntflare/af/hauntflare.png",'"Hauntflare"',"cosmic/poison"),
 ("gengas/af/gengas.png",'"Gengas"',"cosmic/poison"),
 ("spooktrein_fase1/af/spooktrein_fase1.png",'Spooktrein fase 1',"steel"),
 ("spooktrein_fase2/af/spooktrein_fase2.png",'"Wagogogon"',"steel/ghost"),
+("spooktrein_fase3/af/spooktrein.png",'Spooktrein fase 3',"steel/ghost"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

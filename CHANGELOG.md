@@ -1990,3 +1990,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.487] - Gengas frame 2: variant C (tegenbeweging)
 - Jordi: de manen maken dezelfde beweging als het hoofd, daardoor lastig te zien ("puur artistieke richting"). Variant C (`gengas/frame2/combi_c.py`): bol kantelt rechtsom en gaat 3 px omhoog, de manen draaien 30° de andere kant op rond de bol en zakken 4 px. Gifs zonder engine, met V_SLIDE en met TIP_MOVE_FORWARD; frame 2 langer in beeld (34 tikken).
+
+### [v0.0.488] - Frame 2: werkwijze besloten, Gengas variant C + V_SLIDE gekozen
+- Jordi: "de tweede gif van de 3 vind ik echt uitstekend" (variant C met ANIM_V_SLIDE). Beide tests geslaagd; werkwijze in STUDIE.md §12 en verwijzing in SPRITE_WERKWIJZE. Maker-agent schoont de rotatieranden van frame 2 op (vorm en beweging bevroren).

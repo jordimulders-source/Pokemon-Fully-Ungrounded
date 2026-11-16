@@ -91,3 +91,11 @@ Poging 3 is afgekeurd. De meting in §2 zei alleen *hoeveel* er verandert, niet 
 - **Bekend vs. ongewoon:** "een knaagdier roept met open bek" kent Gemini; een bol met Gengar-gezicht en gasoren niet, en het trekt naar Gengar of een generieke bol.
 - **Ruimte:** Gengas vult het vak; "hoger" vraagt een nieuwe compositie.
 - Les: **Gemini voor lokale poseveranderingen; beweging van de hele figuur (opveren, kantelen, knikken) via de engine-animatie (`frontAnimId`) of een script.**
+
+## 12. Werkwijze frame 2 (besloten na de viscacha- en Gengas-test, 16 nov)
+Jordi over Gengas variant C met V_SLIDE: "de tweede gif van de 3 vind ik echt uitstekend". Daarmee zijn beide tests geslaagd. Werkwijze:
+1. **Lokale pose met anatomie** (bek open, poot/arm omhoog): Gemini bewerkt de 8×-sprite zelf met een handeling in woorden ("cries out with its mouth open, raised paw lifted higher"); terugzetten met de middelste pixel per 16×16-vak; kleine reparaties door een maker-agent (viscacha: snorharen).
+2. **Hele figuur beweegt** (bol, kop is het lijf): per script — onderdeel draaien met nearest-neighbour (zoals de engine) en/of verschuiven; geen Gemini (verloopt of doet niets).
+3. **Losse delen** (manen, zwevende handen): per script verplaatsen, **in tegenbeweging** met het lijf (lijf omhoog/rechtsom → delen omlaag/de andere kant op), anders lees je hun beweging niet.
+4. **Wat bij verplaatsen bloot komt of door draaien rafelt:** maker-agent maakt het rond/dicht/schoon, vorm en hoek bevroren.
+5. **Engine-animatie erbij** (`frontAnimId`): kies er een die de beweging versterkt (Gengas: `ANIM_V_SLIDE`); frame 2 lang genoeg in beeld (Gengas: ±34 tikken). Eerst als gif simuleren (`gengas/frame2/combi_c.py`, nagerekend uit `src/pokemon_animation.c`), daarna in de emulator.

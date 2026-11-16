@@ -21,6 +21,7 @@
 - Bij r6: "ja kijk, en dan moet wat boven dat grijs zit dezelfde tint krijgen of nog zelfs een tint donkerder, binnenkant bovenkant mond"
 - Bij r7 (screenshot `feedback/jordi_r7_vier_pixels.png`, 4 pixels ingestipt; volgens Claude (9,45), (9,46), (9,47), (10,46)): "wacht, de vorm van de bek klopt ook niet. Ik heb vier pixels ingestipt, wat als die weggehaald worden om de binnenkant wat diagonaler te maken? Zoals in het model" · "en dan de rest netjes bijkleuren"
 - Bij r8: "veel beter, maar het zwart van de mondhoek moet dan roze worden" · "zodat de kleur consistent is" · (op de vraag: V links of mondhoek achterin) "de mondhoek"
+- Bij r9 (16 nov): "vind het roze nu toch nog niet helemaal werken, maar stuur naar de eindkeuring, laat een keurder ook specifiek daarnaar kijken. Verder moet er nog hard aan belijning, schaduwen en kleur gewerkt worden, het model en de silhouet staat grotendeels, op de rechterkant van de staart na wat een volledig rechte lijn is, evenals de meest linkerpot en de bovenkant van het hoofd. Keur dit allemaal in 1 keer en kom pas terug met een eindversie, dragonflycave, gen 3 sprite keuring, allemaal nu doen"
 
 ## Keuzes Claude (niet besproken)
 - Maat: model verkleind tot ±62 px breed (proef: ±62×36), op de bodem van het 64×64-vlak.

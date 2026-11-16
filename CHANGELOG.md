@@ -1846,3 +1846,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini r4 (alleen ogen te Neopets), prompt v5.
 - r5: blik "brutaal en ondeugend" (Jordi, keuze c), prompt v6.
 - Pitahaya-draak fase 1: Gemini r6 gekozen als model (`pitahaya_draak/model/model.png`), SPEC.md; sprite r1 bij de maker (model overnemen, niets tekenen).
+- **Frontsprite pitahaya-draak fase 1 af** (`docs/concept/sprites/pitahaya_draak/af/`): model overgenomen (natief raster 5,12 px, exacte 3×-reductie, donkerste pixel wint bij lijnen), toonkaart voor de vulling, 39 keurderwissels per pixel gemeten, oog B (Jordi). 31×49, 13 kleuren. Op het overzichtsvel.

@@ -15,3 +15,4 @@ Gemini-model namaken (`docs/lessen/SPRITE_WERKWIJZE.md`, `GEMINI.md`, `SPRITE_KE
 
 ## Goedgekeurd (bevroren)
 - 16 nov, r9: "al het groen is goed nu, nu de trein zelf nog" (kleine geest, wolken, geestwielen, groene kieren).
+- 16 nov, r13: "de koeienvanger isn nog steeds niet mooi" → Jordi tekende lijnen (`jordi/koeienvanger_lijnen.png`); "Schuif maar 2 pixels naar rechts, maar zorg wel dat de vlammen niet afgekapt worden"; "de kleuren en schaduw op het hoofd zijn ook nog niet mooi".

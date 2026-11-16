@@ -9,67 +9,41 @@ A	(46,57)	1->6	poten/groen
 A	(14,58)	1->7	poten/groen
 A	(23,50)	1->6	poten/groen
 A	(32,54)	1->7	poten/groen
-T	(33,33)	3->4	rug/lijf roze
-T	(35,33)	3->4	rug/lijf roze
-T	(10,35)	3->4	kop
-T	(14,35)	3->4	kop
-T	(24,35)	3->2	kop
-T	(9,36)	3->4	kop
-T	(15,36)	5->4	kop
-T	(10,37)	3->4	kop
-T	(11,37)	3->4	kop
-T	(19,37)	3->4	kop
-T	(32,37)	3->4	rug/lijf roze
-T	(7,38)	5->4	kop
-T	(11,38)	5->4	kop
-T	(38,38)	3->4	rug/lijf roze
-T	(45,38)	4->3	rug/lijf roze
-T	(4,39)	5->4	kop
-T	(6,39)	5->4	kop
-T	(11,39)	3->4	kop
-T	(42,39)	3->4	rug/lijf roze
-T	(4,40)	3->4	bek
-T	(11,42)	3->4	bek
-T	(28,42)	4->3	rug/lijf roze
-T	(28,43)	4->3	rug/lijf roze
-T	(18,44)	5->4	bek
-T	(29,44)	4->3	rug/lijf roze
-T	(35,44)	2->3	rug/lijf roze
-T	(45,44)	3->4	rug/lijf roze
-T	(20,45)	5->4	kop
-T	(19,46)	5->4	bek
-T	(20,46)	5->4	rug/lijf roze
-T	(10,47)	3->4	bek
-T	(17,47)	3->4	bek
-T	(18,47)	5->4	bek
-T	(26,47)	3->2	poten/groen
-T	(40,47)	2->3	poten/groen
-T	(16,48)	3->4	bek
-T	(17,48)	5->4	bek
-T	(22,48)	3->2	poten/groen
-T	(23,48)	3->2	poten/groen
-T	(24,48)	3->2	poten/groen
-T	(25,48)	3->2	poten/groen
-T	(26,48)	3->2	poten/groen
-T	(48,48)	2->3	staart
-T	(25,49)	3->2	poten/groen
-T	(26,49)	3->2	poten/groen
-T	(27,49)	2->3	poten/groen
-T	(8,50)	5->4	bek
-T	(16,50)	5->4	bek
-T	(37,50)	3->2	poten/groen
-T	(15,51)	5->4	bek
-T	(8,53)	3->4	bek
-T	(10,54)	5->4	bek
-T	(11,54)	5->4	bek
+A2	(33,34)	1->6	poten/groen
+A2	(36,34)	1->2	rug/lijf roze
+A2	(33,35)	1->2	rug/lijf roze
+A2	(32,36)	1->6	poten/groen
+A2	(42,36)	1->2	rug/lijf roze
+A2	(34,40)	1->2	rug/lijf roze
+A2	(22,41)	1->6	kop
+A2	(24,41)	1->2	kop
+A2	(48,41)	1->6	staart
+A2	(48,45)	1->2	rug/lijf roze
+A2	(39,46)	1->2	rug/lijf roze
+A2	(30,47)	1->6	poten/groen
+A2	(34,48)	1->2	poten/groen
+A2	(20,49)	1->2	poten/groen
+A2	(21,49)	1->2	poten/groen
+A2	(22,49)	1->2	poten/groen
+A2	(23,49)	1->2	poten/groen
+A2	(35,49)	1->2	poten/groen
+A2	(51,49)	1->6	staart
+A2	(52,49)	1->6	staart
+A2	(50,50)	1->6	staart
+A2	(48,51)	1->6	staart
+A2	(40,52)	1->6	poten/groen
+A2	(49,52)	1->6	staart
+A2	(28,53)	1->6	poten/groen
 T	(34,31)	9->8	poten/groen
 T	(27,34)	9->8	poten/groen
 T	(32,34)	9->8	poten/groen
+T	(33,34)	6->7	poten/groen
 T	(40,35)	7->8	poten/groen
 T	(31,36)	9->8	poten/groen
 T	(39,37)	9->8	poten/groen
 T	(44,37)	9->8	poten/groen
 T	(47,40)	6->7	poten/groen
+T	(22,41)	6->7	kop
 T	(47,41)	9->8	poten/groen
 T	(36,42)	9->8	poten/groen
 T	(46,42)	9->8	poten/groen
@@ -82,15 +56,19 @@ T	(57,45)	9->8	staart
 T	(45,46)	7->8	poten/groen
 T	(46,46)	7->8	poten/groen
 T	(57,46)	7->8	staart
+T	(30,47)	6->7	poten/groen
 T	(55,48)	6->7	staart
 T	(58,48)	7->8	staart
 T	(33,49)	9->8	poten/groen
+T	(51,49)	6->7	staart
 T	(47,50)	8->9	poten/groen
 T	(54,50)	9->8	staart
 T	(55,50)	9->8	staart
 T	(56,50)	7->8	staart
+T	(48,51)	6->8	staart
 T	(30,52)	8->7	poten/groen
 T	(35,52)	7->8	poten/groen
+T	(40,52)	6->7	poten/groen
 T	(42,53)	8->7	poten/groen
 T	(44,54)	6->7	poten/groen
 T	(46,54)	6->7	poten/groen
@@ -100,64 +78,48 @@ T	(47,59)	8->7	poten/groen
 T	(30,60)	6->7	poten/groen
 T	(33,60)	8->7	poten/groen
 T	(35,61)	8->7	poten/groen
-M vlees	(8,42)	3->11	bek
 M vlees	(10,43)	12->10	bek
 M vlees	(11,43)	12->10	bek
-M vlees	(9,44)	1->10	bek
 M vlees	(11,44)	12->10	bek
 M vlees	(13,44)	12->10	bek
 M vlees	(13,46)	12->10	bek
 M vlees	(14,46)	12->10	bek
-M vlees	(17,46)	3->10	bek
-M vlees	(10,47)	4->10	bek
 M vlees	(14,47)	12->10	bek
 M vlees	(10,48)	12->11	bek
 M vlees	(11,48)	12->11	bek
 M vlees	(12,48)	12->11	bek
-M vlees	(16,48)	4->10	bek
 M vlees	(14,49)	12->11	bek
 M vlees	(9,50)	12->11	bek
 M vlees	(11,51)	12->11	bek
-M vlees	(12,52)	4->11	bek
 M pit buiten vlees	(17,45)	12->4	bek
 M pit	(11,44)	10->12	bek
 M pit	(11,48)	11->12	bek
 M pit	(14,49)	11->12	bek
 M pit	(11,51)	11->12	bek
 M pit	(13,46)	10->12	bek
-B	(30,30)	7->6	poten/groen
+M pit	(15,47)	10->12	bek
+M pit	(9,51)	11->12	bek
+D tand	(5,42)	1->11	bek
 B	(34,30)	8->6	poten/groen
 B	(29,31)	9->6	poten/groen
 B	(33,31)	8->6	poten/groen
 B	(42,31)	10->2	rug/lijf roze
-B	(25,32)	7->6	poten/groen
-B	(26,32)	1->6	poten/groen
+B	(26,32)	1->7	poten/groen
 B	(28,32)	9->6	poten/groen
 B	(33,32)	8->6	poten/groen
 B	(13,33)	8->6	kop
-B	(25,33)	7->6	poten/groen
-B	(27,33)	7->6	poten/groen
 B	(29,33)	4->1	rug/lijf roze
-B	(32,33)	7->6	poten/groen
 B	(39,33)	8->6	poten/groen
-B	(40,33)	7->6	poten/groen
-B	(10,34)	3->2	kop
-B	(11,34)	1->2	kop
+B	(11,34)	1->3	kop
 B	(12,34)	9->6	kop
 B	(15,34)	4->2	kop
 B	(16,34)	4->2	kop
-B	(17,34)	3->2	kop
-B	(18,34)	3->2	kop
-B	(19,34)	3->2	kop
 B	(20,34)	4->2	kop
 B	(21,34)	8->6	kop
 B	(22,34)	8->6	kop
-B	(31,34)	3->2	rug/lijf roze
-B	(38,34)	3->2	rug/lijf roze
 B	(42,34)	3->1	rug/lijf roze
 B	(46,34)	8->6	poten/groen
 B	(8,35)	4->2	kop
-B	(9,35)	3->2	kop
 B	(45,35)	9->6	poten/groen
 B	(8,36)	4->2	kop
 B	(44,36)	8->6	poten/groen
@@ -167,23 +129,14 @@ B	(46,37)	7->1	rug/lijf roze
 B	(4,38)	5->2	kop
 B	(5,38)	5->2	kop
 B	(46,38)	7->1	rug/lijf roze
-B	(49,38)	7->6	staart
 B	(3,39)	4->2	kop
 B	(47,39)	10->2	rug/lijf roze
-B	(48,39)	7->6	staart
-B	(3,40)	3->2	kop
 B	(3,41)	4->2	kop
-B	(51,43)	1->6	staart
-B	(52,43)	7->6	staart
+B	(51,43)	1->7	staart
 B	(53,43)	8->6	staart
 B	(54,43)	8->6	staart
 B	(55,43)	8->6	staart
 B	(56,43)	8->6	staart
-B	(57,43)	7->6	staart
-B	(49,44)	3->2	rug/lijf roze
-B	(50,44)	3->2	rug/lijf roze
-B	(58,44)	7->6	staart
-B	(9,45)	3->2	bek
 B	(9,46)	4->2	bek
 B	(59,46)	7->1	rug/lijf roze
 B	(9,47)	4->2	bek
@@ -202,30 +155,42 @@ B	(12,54)	3->1	bek
 B	(25,54)	7->1	poten/groen
 B	(38,55)	6->1	poten/groen
 B	(54,56)	6->1	staart
-B	(12,57)	7->6	poten/groen
-B	(10,58)	7->6	poten/groen
-B	(29,59)	7->6	poten/groen
-B	(28,60)	7->6	poten/groen
+C	(30,30)	7->6	poten/groen
 C	(34,31)	8->6	poten/groen
 C	(28,33)	9->6	poten/groen
+C	(33,33)	3->4	rug/lijf roze
+C	(35,33)	3->4	rug/lijf roze
+C	(40,33)	7->6	poten/groen
 C	(13,34)	8->6	kop
-C	(27,34)	8->6	poten/groen
+C	(27,34)	8->7	poten/groen
+C	(31,34)	3->4	rug/lijf roze
+C	(38,34)	3->4	rug/lijf roze
+C	(14,35)	3->4	kop
 C	(22,35)	8->6	kop
 C	(22,36)	7->6	kop
 C	(45,36)	9->6	poten/groen
+C	(32,37)	3->4	rug/lijf roze
 C	(41,37)	7->6	poten/groen
 C	(44,37)	8->6	poten/groen
-C	(45,37)	4->3	rug/lijf roze
-C	(5,39)	5->4	kop
+C	(38,38)	3->4	rug/lijf roze
 C	(23,39)	8->7	kop
 C	(4,42)	3->4	bek
-C	(18,45)	5->4	bek
-C	(10,46)	3->2	bek
+C	(8,42)	3->4	bek
+C	(11,42)	3->4	bek
+C	(30,47)	7->8	poten/groen
 C	(9,48)	4->2	bek
 C	(33,48)	7->8	poten/groen
 C	(48,49)	8->9	staart
-C	(8,50)	4->2	bek
+C	(8,50)	5->2	bek
 C	(34,50)	9->8	poten/groen
+C	(8,53)	3->2	bek
 C	(23,53)	7->6	poten/groen
-C	(11,58)	7->6	poten/groen
+C	(9,54)	4->2	bek
 C	(51,59)	7->6	staart
+E dambord	(10,37)	3->4	kop
+E dambord	(12,38)	5->4	oog
+E dambord	(7,38)	5->4	kop
+E dambord	(19,45)	4->5	bek
+E dambord	(19,46)	5->4	bek
+E dambord	(35,59)	7->8	poten/groen
+E dambord	(31,60)	7->8	poten/groen

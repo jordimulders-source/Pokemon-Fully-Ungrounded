@@ -39,3 +39,4 @@ Jordi letterlijk: "hiermee beginnen en dan de kleuren leuker maken bij het maken
 - 15 nov (Jordi, over r4): "nog niet goed, te blurry" → r5: drie varianten scherper (vlakken / contrast / lijn), zonder tekenen, gezicht en silhouet diff 0.
 - 15 nov (Jordi, na r5 V1–V3): "kijk ook naar belijning, schaduw en kleur van de echte gastly" → r6: studie Gastly Gen 3, aanpak toegepast op palet A.
 - 15 nov (Jordi): "r6b, maar de lichtrand iets feller" → r7 (alleen palet lichtrand).
+- r7: lichtrand feller; eindkeuring 6 px → r8. 15 nov (Jordi): "akkoord, commit en push naar main" → **af:** `af/dustly.png` (+ `_8x`, `eindkeuring.md`), op het overzichtsvel.

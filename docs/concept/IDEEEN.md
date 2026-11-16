@@ -39,6 +39,8 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Fairy-voorstellen Claude (16 nov, open):** (1) vonken als fonkelende vierpuntige sterretjes; (2) barsten op de rug in bloemvorm (vuurwerk heet ook pioen/chrysant); (3) meer pastelroze en wit in de kern; (4) linten/serpentines die uit het vuur wapperen; (5) krullen in de vlammen (sierlijk; botst met "furieuzer"); (6) hartvormige barst (waarschijnlijk te lief).
   - **Jordi (16 nov):** "schuin omlaag is niet zo erg, dat het er niet zo dynamisch uitziet wel, wat twinkel en iets zachtroze erin is ok, het is nu ook teveel een vlam en net te weinig vuurwerk". Prompt v8: `sprites/vuurwerk/gemini/PROMPT_v8_slang.md`.
   - **Jordi (16 nov):** "fairy hoeft niet bepaald cute te zijn, zie grimmsnarl" (in v8 verwerkt).
+  - **Gemini v8** (`sprites/vuurwerk/r6/gemini_v8.webp`), Jordi (16 nov): "dit vertaalt nooit naar een sprite denk ik. Plus ik vind het nog teveel gewoon een lijn". (Claude: losse dunne vonkenstrengen zonder massa; v7 had wel dichte, sprite-bare vormen.)
+  - **Voorstellen Claude (16 nov, open):** (1) lijf opgerold tot een ring/vuurrad (erfenis van de wondertol); (2) lijf als ketting van rotjes (botst met "alles uit de vuurpijl"); (3) grote dichte barstvormige vinnen/kammen die breedte geven; (4) grotere kop, korter en dikker lijf. Steeds: dichte vormen en schone omlijning (zoals v7), geen dunne strengen.
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

@@ -1896,3 +1896,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Poging 3 afgekeurd (Jordi: "een paar pixels die op en neer bewegen is geen beweging").
 - Nieuw in de studie (§7): verschilvellen (`vel.py`) van knaagdieren en kleine soorten in Gen 3- en DS-stijl, en per sprite de verschuiving van bovenkant en voeten (`banden.py`). Bij ±90% beweegt de hele bovenkant, meestal 2–4 px of meer; alleen kleine delen bewegen bij ±10%.
 - Poging 4: het hele lijf strekt 3 px omhoog vanuit vaste voeten (A), en daarnaast een versie die ook 2 px naar voren leunt (B). Er hoeft niets bijgetekend te worden.
+
+### [v0.0.463] - Frame 2: voorbeelden en Gemini-prompt viscacha
+- `frame2_studie/voorbeelden_expansion.gif`: frame 1/2 van Pikachu, Rattata, Raticate, Patrat, Plusle en Sentret (DS-stijl, zoals in de game): echte andere poses (bek open, poot/arm mee).
+- Oordeel na Jordi's twijfel: een tweede pose zelf tekenen kan Claude niet betrouwbaar; de route is een Gemini-bewerking van het model, waarvan alleen de veranderde onderdelen worden overgenomen.
+- `viscacha/gemini/PROMPT_FRAME2.md`: prompt voor de tweede pose (bek open, voorpoot hoger, staart iets op; achterpoten blijven staan).

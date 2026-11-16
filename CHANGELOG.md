@@ -1725,3 +1725,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.422] - Spooktrein fase 2: model gekozen, sprite gestart
 - Jordi: "ronde 5 dan, met dingen uit ronde 6 als je dat nodig hebt"; mond: overdreven grote O, "zo groot dat alleen geesten dat kunnen hebben, niet in verhouding groot"; "die onderdelen die losgeschoten zijn en erachter vliegen mag je wegggummen". Map `docs/concept/sprites/spooktrein_fase2/` (SPEC, model). Ogen: "de ogen mogen zijn zoals de geest links in het rood" (`referenties/ogen_geest_rood.png`), "het gaat alleen om de vorm", groot mag. Mond: "de mond mag bijna swalot achtig worden" / "of gulpin" (referenties in de map).
+
+### [v0.0.423] - Spooktrein fase 2: sprite met gezicht (r3)
+- Maker: r1 kale verkleining van Gemini r5 (natief raster 199×199, losse onderdelen gegumd, staart B: alleen horizontaal ingedrukt), r2 wagon rustiger, wielen/as/krul/staartrand uit het model. Gezicht door Claude in varianten met Jordi: tong weg, 3/4 (verre oog links kleiner), D-vormige lachmond (15 px, 1 px links/omlaag), ogen zwart + donkergroen, wagonrandpixels langs de mond groen. `docs/concept/sprites/spooktrein_fase2/sprite_r3/`.
+- Jordi: "damn dat is denk ik een record qua snelheid?". Volgende: groene spookwielen gedefinieerder (maker r4), dan kleur, lijnen, schaduw, keurder en Dragonfly Cave-eindkeuring. Les in `docs/lessen/GEMINI.md`.

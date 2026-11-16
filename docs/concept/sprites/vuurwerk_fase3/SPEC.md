@@ -33,3 +33,4 @@ Stijl van de spikkels: `referenties/vuurwerk_pixelart_jordi.png` (losse, onderbr
 - Vlam rechtsboven: Jordi kiest "B" → `sprite/r16/sprite_B.png` = eindsprite-kandidaat (r12 p2 + (43,6) leeg, (41,6) donkerrood).
 - Na "af": "linksbovenin is een afgekapt stuk vuurwerk, maar dat gaat er raar uitzien in een gevecht denk je niet?" → varianten in `sprite/r18/`.
 - r18: "beter, ik vind het vuurwerk onderin er mooi uit zien, maar het lijkt nog niet echt een verband te hebben met de rest van de sprite he" → varianten A–C in `sprite/r19/`.
+- r19/r20: "nee het gaat me niet direct om de positie, maar we moeten nadenken wat het verband is" · "pokemon hebben over het algemeen geen special effects, dus daarom twijfel ik" → `sprite/r20/sprite_1_zonder_barst.png` (losse barst weg).

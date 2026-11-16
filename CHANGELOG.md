@@ -1744,3 +1744,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.434] - Blobfish fase 2: Gemini r5
 - `r5.png` bewaard (vrijwel gelijk aan r3).
+
+### [v0.0.435] - Blobfish fase 2: extra lagen onder r5
+- `blobfish_fase2/lagen/`: puddingvoet van r5 1 of 2 keer extra eronder gezet (gelijk of breder), script `stapel.py`, overzicht `overzicht.png`.

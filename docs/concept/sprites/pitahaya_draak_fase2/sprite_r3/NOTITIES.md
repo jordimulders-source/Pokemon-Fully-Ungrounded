@@ -8,7 +8,7 @@ Reparaties 1, 2, 4 en 5 uit `keuring_r2/KEURING.md`, plus reparatie 3 als varian
 
 ## 1 Mondhoek x15–19, y44–51 (19 px)
 - Eigen meting: per blok het gemiddelde van de roze modelpx. Bij "dichtstbijzijnde toon" wisselden P en p om en om, want de lichte modelstreep ligt precies tussen die twee tonen. Daarom een strookregel, ook uit het model: staat P bij de twee dichtstbijzijnde tonen → P, anders staat p erbij → p, anders r. Daarna clusters < 3 px één ronde samengevoegd met de buurtint (3 px). Het resterende dambord (17,47)/(17,48) is opgelost met 1 px naar de tint van het modelblok: (17,48) P → p.
-- Resultaat: de lichtroze streep loopt doorlopend langs de bekrand van (19,44) naar (15,50). Rechts daarvan p, en r alleen waar het model donker is. (15,49) W → P: het blok heeft < 4/9 wit (de keurder schatte roze; de meting geeft lichtroze).
+- Resultaat: de lichtroze streep loopt doorlopend langs de bekrand van (19,44) naar (15,50). Rechts daarvan p, en r alleen waar het model donker is. (15,49) is wit gebleven (W): het modelblok heeft 6/9 vlees (≥ 4/9), dus de regel laat hem vlees. Wit is juist (correctie r4; eerder stond hier ten onrechte "W → P").
 
 ## 2 Linker lipband (7,50)–(7,53): d → r (4 px)
 Het model is daar 70–100 % roze. Zoals de keurder voorschreef: r (177,40,84) dient ook als selout. Het witte vlees raakt de buitenlijn niet meer.

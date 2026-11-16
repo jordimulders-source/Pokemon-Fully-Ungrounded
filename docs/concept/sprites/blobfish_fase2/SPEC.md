@@ -14,3 +14,6 @@ Naam, type en fase 1: nog open.
 ## Model (bevroren ontwerp)
 - `referenties/model_gekozen.png` = `gemini/r5.png` + 2 lagen eronder (`lagen/stapel_kleur.py`, kleuren "355,1.5,0.85" en "340,1.6,0.68", telkens 6% breder, 64 px omlaag op 1024-schaal).
 - Sprite = verkleining van dit model (SPRITE_KERN: overnemen, nooit hertekenen). Eindvorm: groot, vult bijna de hele breedte van 64×64.
+
+## Na de sprite (16 nov)
+- Jordi: "we hebben nu iets geinigs met die lagen gedaan, maar dat is niet echt pudding stijl, wat voor soort eten heeft dit wel?" → Claude: gelatina de capas (gelaagde gelatine uit Latijns-Amerika). Jordi: "lijkt idd op gelatina de capas, nice!"

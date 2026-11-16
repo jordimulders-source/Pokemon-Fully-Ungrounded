@@ -1768,3 +1768,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.442] - Blobfish fase 2: frontsprite af
 - `blobfish_fase2/af/blobfish_fase2.png` (+ 8× en vel), 61×45, 15 kleuren. r3 keuring PASS + reparaties (r4), r5 na tweede keuring PASS. Les in GEMINI.md. Naam, type en fase 1 nog open.
+
+### [v0.0.443] - Blobfish fase 2: gelatina de capas
+- Jordi herkent de gelaagde sprite als gelatina de capas (SPEC.md).

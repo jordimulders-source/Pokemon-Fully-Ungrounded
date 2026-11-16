@@ -1681,3 +1681,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi over r4: "nog niet goed, te blurry". `docs/concept/sprites/dustly/sprite_r5/`: V1 vlakken samengevoegd, V2 + meer contrast, V3 + doorlopende bult- en buitenlijnen. Zonder tekenen: silhouet en gezicht diff 0 (script).
 ### [v0.0.413] - Dustly: r6 naar Gastly's belijning, schaduw en kleur
 - Jordi: "kijk ook naar belijning, schaduw en kleur van de echte gastly". Studie `dustly/sprite_r6/studie.md`; r6 (op V3): lijn alleen om de dichte kern, gas zonder buitenlijn, Gastly's toonstappen en hue shift op palet A. r6b: zelfde pixels, verzadiging omhoog ("kleurrijker"). Silhouet en gezicht diff 0.
+### [v0.0.414] - Dustly: r7/r8 kandidaat
+- Jordi: "r6b, maar de lichtrand iets feller" → r7 (alleen palet lichtrand). Eindkeuring r7: 6 px (restjes oude gaslijn, mondlijn zwart/donker om en om) → r8, keurder: daarna PASS. Kandidaat `docs/concept/sprites/dustly/sprite_r8/dustly_r8.png` (+ `_8x`), naar Jordi.

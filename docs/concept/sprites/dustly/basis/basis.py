@@ -3,7 +3,7 @@
 import sys; from PIL import Image; import numpy as np
 T=float(sys.argv[1]) if len(sys.argv)>1 else 0.5
 a=np.asarray(Image.open('basis/natief.png').convert('RGB')).astype(float)
-bg=a.min(2)>=200                      # bijna-wit = achtergrond (Gemini-ruis weg)
+sys.path.insert(0,'basis'); from bgmask import bgmask; bg=bgmask()   # achtergrond + witte gaten; oogwit blijft
 X0,Y0=17,18; Wn,Hn=69,63              # natieve uitsnede, veelvoud van 3
 crop=a[Y0:Y0+Hn,X0:X0+Wn].copy(); al=(~bg[Y0:Y0+Hn,X0:X0+Wn]).astype(float)
 assert not (~bg)[:,:X0].any() and not (~bg)[:,X0+Wn:].any() and not (~bg)[:Y0].any() and not (~bg)[Y0+Hn:].any()

@@ -1695,3 +1695,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 r7 afgekeurd door Jordi (mond klopt niet; r4 was beter); r8: mond letterlijk uit het model (open grijns). Les in GEMINI.md.
 - Spooktrein fase 3 sprite r8: ogen en mond van de kleine geest letterlijk uit het model (overlay 0 afwijkingen); verse keurder (trouw + Gen 3/DFC) gestart.
 - Spooktrein fase 3 r8 gekeurd: FAIL (geest ±1,4× te groot t.o.v. schoorsteen, geen hals; Jordi: verhouding met de schoorsteen klopt niet). r9: geest én schoorsteenrand 1-op-1 uit het natieve model met de eigen hals.
+- Spooktrein fase 3 sprite r9: geest + schoorsteenrand 1-op-1 uit het natieve model (kop:rand en hals:rand = model), MOET 3/4 toegepast; verse keuring.

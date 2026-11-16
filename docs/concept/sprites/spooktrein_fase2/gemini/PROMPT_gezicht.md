@@ -14,3 +14,4 @@ Redraw attachment 1 exactly as it is, with ONE change: the ghost's face.
 
 Keep everything else exactly the same: the ghost's steam shape, the raised fist, the hand on the rim, the wagon, the green cracks, the ghost cloud, the colors, the pixel style, facing left.
 ```
+- Jordi probeerde Gemini voor het gezicht (`gezicht/r1_a.png`, `r1_b.png`): "dit maakt gemini ervan dus daar heb je ook weinig aan".

@@ -23,5 +23,16 @@ for y in range(1,63):
             nb=o[y-1:y+2,x-1:x+2].ravel(); nb=np.delete(nb,4)
             if (nb>0).all() and not np.isin(nb,[1,5,10,14]).any():
                 u,uc=np.unique(nb,return_counts=True); mark('losse lijnpixel (bout/ruis)',y,x,u[uc.argmax()])
+# 4. wielen (alleen variant B-schaal gemeten): de reductie brak de ronde omlijnde wielen; per pixel terug naar
+#    de modelopbouw (natief x39-50/y110-120 en x70-82/y111-121): omlijning rondom, licht grijs linksboven, donker rechtsonder
+s,X0,Y0,oy,XC,kk=[float(v) for v in open(f'basis_{VAR}.meta').read().split()]
+if True:
+    T=['.OOO.','OggGO','OgGGO','OGGsO','.OOO.']
+    cm={'O':1,'g':12,'G':13,'s':14}
+    for (wx,wy) in [(round((nx-X0)*s),round((ny-Y0)*s+oy)) for nx,ny in ((39,110),(70,111))]:
+        print('wiel op',wx,wy)
+        for dy,row in enumerate(T):
+            for dx,ch in enumerate(row):
+                if ch!='.': mark('wiel naar model',wy+dy,wx+dx,cm[ch])
 np.save(f'post_{VAR}.npy',o)
 print('afwijkend van kale reductie:',(o!=b).sum(),log)

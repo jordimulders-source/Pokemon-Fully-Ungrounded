@@ -24,8 +24,11 @@ FORMAT: 64x64 pixel sprite, small creature (fills about half the canvas), max 16
 
 ## Ronde 1 (`f1_r1/fase1_v1.png`)
 Jordi: "op zich al prima, maar de ogen zijn niet zichtbaar, moeten geen menselijke ogen zijn".
-Bijsturen in hetzelfde gesprek (één wijziging, les GEMINI.md):
+Jordi (daarna): "het wiel mag wel groter aan de zijkant staan".
+Bijsturen in hetzelfde gesprek (twee wijzigingen, het maximum volgens GEMINI.md):
 
 ```
-Keep everything exactly the same, change ONLY the eyes: they are hard to see and look like human eyes. Make the two eyes clearly visible and readable at sprite size, and NOT human eyes: no eyelids, no human iris. Simple Pokémon eyes, bigger, set inside the dark opening of the chimney.
+Keep everything exactly the same, change ONLY these two things:
+1. The eyes are hard to see and look like human eyes. Make the two eyes clearly visible and readable at sprite size, and NOT human eyes: no eyelids, no human iris. Simple Pokémon eyes, bigger, set inside the dark opening of the chimney.
+2. Make the train wheel bigger and place it at the side of the heap.
 ```

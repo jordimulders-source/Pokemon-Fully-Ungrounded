@@ -1739,3 +1739,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Af:** `docs/concept/sprites/blobfish/af/blobfish.png` (+ `_8x`). Op het overzichtsvel. Naam open.
 ### [v0.0.433] - Rock/Water-lijn: fontein ↔ gargoyle
 - Jordi (16 nov): "Ik ben eruit. Een fontein die in een gargoyle evolved of andersom." Vastgelegd in `docs/concept/IDEEEN.md` bij het Rock/Water-idee van 9 nov; richting nog open.
+### [v0.0.434] - Fontein ↔ gargoyle: vicuña/guanaco als kandidaat
+- Jordi (16 nov): de vicuña → guanaco-lijn als kandidaat voor de Rock/Water-lijn fontein ↔ gargoyle; "het moet er vooral goed uitzien". Met achtergrond (gargoyle = waterspuwer) in `docs/concept/IDEEEN.md`.

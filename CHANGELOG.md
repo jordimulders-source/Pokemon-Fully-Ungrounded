@@ -1687,3 +1687,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 sprite r2 (LANCZOS-onderlaag): wolken beter, gezicht en koeienvanger niet; r3 = hybride (gezicht/koeienvanger/kleine geest per onderdeel geschrapt zonder lijnen te raken).
 - Spooktrein fase 3 sprite r3 (hybride): gezicht nu het best (bevroren); r4 = ontruisronde (koeienvanger, roest, kleine geest).
 - Spooktrein fase 3 sprite r4 (ontruisd, gezicht bevroren): automatisch overnemen zit aan zijn grens (koeienvanger en kleine geest niet leesbaar); vraag aan Jordi.
+- Spooktrein fase 3: kleine geest onleesbaar op 64 px (ook in het natieve model); Gemini-prompt om alleen de geest groter te maken (`PROMPT_geest.md`).

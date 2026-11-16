@@ -35,3 +35,4 @@ Jordi letterlijk: "hiermee beginnen en dan de kleuren leuker maken bij het maken
 - Kleur: minder zwart, kleurrijker (Jordi). Welke kleuren zei Jordi niet: de maker levert eerst de trouwe sprite en daarop 3 kleurvarianten (voorstel Claude) voor Jordi om te kiezen.
 - Maat: fase 1; Gastly Gen 3 = 48×42 px, 1190 px.
 - 15 nov (Jordi, na uitleg Claude dat A het best bij de Bok-globule past): "ga voor A" → variant A (stoffig mauve-roze/rozebruin, schaduw diep pruim, lichtrand roze-oranje).
+- 15 nov (Jordi, over r2): "de mond ben je ook teveel zelf aan het tekenen" → r3: mondzone = kale modelreductie (oorzaak: Claude's r2-opdracht schreef tandmaat en lijndikte voor).

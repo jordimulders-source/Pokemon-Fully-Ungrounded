@@ -32,3 +32,4 @@ Stijl van de spikkels: `referenties/vuurwerk_pixelart_jordi.png` (losse, onderbr
 - r12: "deze vlam hier is aan de onderkant een rechte lijn, daar mag iets meer contrast in, misschien 1 of 2 pixels anders" (`referenties/jordi_vlam_rechtsboven.png`); varianten A–D in `sprite/r16/`.
 - Vlam rechtsboven: Jordi kiest "B" → `sprite/r16/sprite_B.png` = eindsprite-kandidaat (r12 p2 + (43,6) leeg, (41,6) donkerrood).
 - Na "af": "linksbovenin is een afgekapt stuk vuurwerk, maar dat gaat er raar uitzien in een gevecht denk je niet?" → varianten in `sprite/r18/`.
+- r18: "beter, ik vind het vuurwerk onderin er mooi uit zien, maar het lijkt nog niet echt een verband te hebben met de rest van de sprite he" → varianten A–C in `sprite/r19/`.

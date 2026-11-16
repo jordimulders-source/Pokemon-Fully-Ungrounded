@@ -1834,3 +1834,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Spooktrein fase 3: frontsprite af, versie 3** (r27): strenge eindkeuring PASS; paletronde metaal + groen (zwakke tintgrenzen 10% → 2%), grijs weer grijs. `af/`, overzichtsvel, les.
 - Spooktrein fase 3 r28: binnenlijnen in kop en koeienvanger zachter (Jordi: "voelen nog wat hard"): A = nieuwe donkere roesttint (62,32,26), B = roestdonker 9; buitenlijn blijft zwart. Keuze aan Jordi.
 - **Spooktrein fase 3: frontsprite af, versie 4** (r29): binnenlijnen in kop en koeienvanger zachter (A, Jordi), strenge keuring PASS na 1 px; `af/` en overzichtsvel bijgewerkt.
+
+### [v0.0.444] - Pitahaya-draak: start lijn
+- `IDEEEN.md`: Jordi's opzet (3 fases, fase 1 = pitahayahoofd met een lichaam eronder) en een lijstje Zuid-Amerikaanse draakachtige mythen als naslag.

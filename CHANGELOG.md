@@ -1835,7 +1835,54 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 r28: binnenlijnen in kop en koeienvanger zachter (Jordi: "voelen nog wat hard"): A = nieuwe donkere roesttint (62,32,26), B = roestdonker 9; buitenlijn blijft zwart. Keuze aan Jordi.
 - **Spooktrein fase 3: frontsprite af, versie 4** (r29): binnenlijnen in kop en koeienvanger zachter (A, Jordi), strenge keuring PASS na 1 px; `af/` en overzichtsvel bijgewerkt.
 
-### [v0.0.444] - Pitahaya-draak: start lijn
+### [v0.0.444] - Blobfish fase 2: Gemini-prompt r1
+- `docs/concept/sprites/blobfish_fase2/gemini/PROMPT_r1.md`: eerste Gemini-prompt voor fase 2 van de blobfish-lijn ("pudding"), met Claude's eigen keuzes apart gemarkeerd.
+
+### [v0.0.445] - Blobfish fase 2: Gemini r1 + bijsturing r2
+- `blobfish_fase2/gemini/r1.png` bewaard; `PROMPT_r2.md` met Jordi's feedback ("meer pudding, chagrijniger, overdrevener, meer gesmolten").
+
+### [v0.0.446] - Blobfish fase 2: Gemini r2 + bijsturing r3
+- `r2.png` bewaard; `PROMPT_r3.md` ("ogen zijn nu te menselijk en de bovenkant moet rond blijven").
+
+### [v0.0.447] - Blobfish fase 2: Gemini r3
+- `r3.png` bewaard (beste tot nu toe; eindvorm nog twijfel); rondeoverzicht in `blobfish_fase2/gemini/README.md`.
+
+### [v0.0.448] - Blobfish fase 2: Gemini-prompt r4
+- `PROMPT_r4.md`: nieuw gesprek met r3 als bijlage, alleen groter ("ja misschien wat groter").
+
+### [v0.0.449] - Blobfish fase 2: Gemini-prompt r5
+- r4 veranderde niets (bijlage gekopieerd); `PROMPT_r5.md`: nieuwe startprompt met alle feedback, zonder r3 als bijlage.
+
+### [v0.0.450] - Blobfish fase 2: Gemini r5
+- `r5.png` bewaard (vrijwel gelijk aan r3).
+
+### [v0.0.451] - Blobfish fase 2: extra lagen onder r5
+- `blobfish_fase2/lagen/`: puddingvoet van r5 1 of 2 keer extra eronder gezet (gelijk of breder), script `stapel.py`, overzicht `overzicht.png`.
+
+### [v0.0.452] - Blobfish fase 2: lagen donkerder
+- Gekozen opbouw (+2 lagen, telkens 6% breder) met elke laag donkerder, twee sterktes; `stapel.py` kreeg een kleurfactor.
+
+### [v0.0.453] - Blobfish fase 2: lagen zonder copy-paste-look
+- `lagen/stapel2.py`: elke laag eigen spiegeling, verschuiving, dikte, breedte en donkerte; varianten a/b/c (`overzicht_varianten.png`).
+
+### [v0.0.454] - Blobfish fase 2: varianten a/b/c afgekeurd
+- Jordi bedoelde alleen de kleur; kandidaten blijven rechtsonder met elke laag donkerder (`donker92`/`donker86`).
+
+### [v0.0.455] - Blobfish fase 2: lagen in andere kleuren
+- `lagen/stapel_kleur.py`: rechtsonder met elke onderlaag een eigen kleur (donkerder); vier combinaties in `overzicht_kleuren.png`.
+
+### [v0.0.456] - Blobfish fase 2: model gekozen
+- Jordi koos B (onderlagen rood en bordeaux): `blobfish_fase2/referenties/model_gekozen.png`. Volgende stap: frontsprite naar dit model.
+
+### [v0.0.457] - Blobfish fase 2: sprite r1
+- Maker: natief raster r5 (99×99), model op natief raster herbouwd, reductie 1,5×; r1 61×45, 16 kleuren, 301 px afwijkend van de kale reductie. Reparaties r2: mond/neus, ogen, schaduw rechts.
+
+### [v0.0.458] - Blobfish fase 2: frontsprite af
+- `blobfish_fase2/af/blobfish_fase2.png` (+ 8× en vel), 61×45, 15 kleuren. r3 keuring PASS + reparaties (r4), r5 na tweede keuring PASS. Les in GEMINI.md. Naam, type en fase 1 nog open.
+
+### [v0.0.459] - Blobfish fase 2: gelatina de capas
+- Jordi herkent de gelaagde sprite als gelatina de capas (SPEC.md).
+### [v0.0.460] - Pitahaya-draak fase 1: van idee tot frontsprite
 - `IDEEEN.md`: Jordi's opzet (3 fases, fase 1 = pitahayahoofd met een lichaam eronder) en een lijstje Zuid-Amerikaanse draakachtige mythen als naslag.
 - Jordi kiest de roze pitahaya en een komodo/teju-richting (fase 2 teju, fase 3 voorover leunend op 2 poten); Gemini-prompt fase 1: `docs/concept/sprites/pitahaya_draak/gemini/PROMPT.md`.
 - Fase 1 is geen kleine hagedis (Jordi); lichaam open, prompt aangepast.

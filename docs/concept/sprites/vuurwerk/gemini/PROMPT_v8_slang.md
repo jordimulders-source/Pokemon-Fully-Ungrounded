@@ -5,6 +5,7 @@ Nieuw gesprek, geen bijlage.
 ## Jordi (letterlijk, 16 nov)
 - Over v7: "kijk dit begint ergens op te lijken, hij mag nog iets furieuzer qua vorm en we moeten nog denken hoe we de fairy hierin terugzien"
 - "schuin omlaag is niet zo erg, dat het er niet zo dynamisch uitziet wel, wat twinkel en iets zachtroze erin is ok, het is nu ook teveel een vlam en net te weinig vuurwerk"
+- "fairy hoeft niet bepaald cute te zijn, zie grimmsnarl" (Grimmsnarl niet in de prompt noemen: Gemini zou hem namaken)
 - Eerder, blijft: hoofd en lijf van vuur, "alsof alles uit de vuurpijl komt"; staart = 1 vuurpijl; "sterker"; geel/rood/roze; verjaagt boze geesten; meerdere barsten langs de rug; spiraal.
 
 ## Keuzes Claude (schrappen mag)
@@ -24,7 +25,7 @@ CONCEPT
 - ALONG ITS BODY two or three SMALLER FIREWORK BURSTS explode outward, with radiating spark lines.
 - THE TAIL IS ONE FIREWORK ROCKET with a pointed tip and a striped casing in red, pink and yellow. It may point in any direction that makes the pose dynamic.
 - VERY DYNAMIC AND FURIOUS: lunging forward in a tight, tensed spiral, as if it just launched; trails and sparks whipped backward by the speed; narrowed, angry eyes. It looks strong and powerful, like a fully evolved Pokémon that chases away evil spirits.
-- FAIRY TOUCH: small four-pointed twinkling stars glitter among the sparks, and a soft pink glow sits in the core of the body and bursts.
+- FAIRY, BUT NOT CUTE: Fairy in the old folklore sense, a wild and fierce fae spirit, not sweet or adorable. Small four-pointed twinkling stars glitter among the sparks, and a soft pink glow sits in the core of the body and bursts.
 - No arms and no legs.
 - Colors: YELLOW, RED AND PINK, with soft pink and bright yellow-white in the cores.
 
@@ -34,5 +35,8 @@ STYLE AND FORMAT
 - Plain white background. NO floor, shadow or smoke. One single creature.
 
 AVOID
-- Not a plain flame or a candle fire. No solid skin or scales. No collar, mane or halo behind the head. Not a Chinese dragon, no horns, no whiskers. Not Rayquaza, not Gyarados. Not a rainbow, no green or blue. No hearts. No text. No glossy 3D render.
+- Not a plain flame or a candle fire. No solid skin or scales. No collar, mane or halo behind the head. Not a Chinese dragon, no horns, no whiskers. Not Rayquaza, not Gyarados. Not a rainbow, no green or blue. No hearts, nothing cute. No text. No glossy 3D render.
 ```
+
+## Tips
+- Te braaf: "a wicked, mischievous fae grin with sharp teeth" (niet besproken, alleen als Jordi dat wil).

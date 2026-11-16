@@ -2044,4 +2044,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r3 bewaard; v4 vervallen. `PROMPT_v5.md` (nieuwe startprompt): scherpere kano zonder getuite punt, gekerfde ogen/mond, zilveren rand, "wereldkampioen mate maker", bombilla-peddels.
 
 ### [v0.0.502] - Mate-lijn fase 2: Gemini-prompt v6
-- r4 bewaard; `PROMPT_v6.md` combineert de kanovorm van r2, ventje/peddels/rand van r4 en de ogen van fase 1.
+- r4 bewaard; `PROMPT_v6.md` combineert kano, stijl en gezicht van r3 (dunnere rand), roeihouding/peddels van r4 en de ogen van fase 1.

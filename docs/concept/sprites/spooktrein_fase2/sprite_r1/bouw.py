@@ -73,7 +73,7 @@ LUM=P@[0.3,0.59,0.11]; nr=0
 fgm=out>0; pad=np.pad(fgm,1)
 edge=fgm&~(pad[:-2,1:-1]&pad[2:,1:-1]&pad[1:-1,:-2]&pad[1:-1,2:])
 for (y,x) in zip(*np.where(edge)):
-    if (y,x) in WH: continue
+    pass
     cc=BLK[(y,x)]; v=cc[np.argmin(LUM[cc-1])]
     if v!=out[y,x]: out[y,x]=v; nr+=1
 print('randpixels naar donkerste modelkleur',nr,'wielpixels',len(WH))

@@ -144,7 +144,7 @@ La Paz (start), Cuzco, Rio de Janeiro, Lima, San Pedro de Atacama, Mendoza, Buen
 - Na gym 1 (Uyuni) meteen hot springs, een vulkaan en een sneeuwgebied (Jordi). Klopt met de echte Uyuni-tour door Sur Lípez: Laguna Colorada (rood meer vol flamingo's: Flamigo!), geisers Sol de Mañana, warmwaterbron Polques, vulkaan Licancabur, Laguna Verde, steenbomen (Árbol de Piedra) in de Siloli-woestijn.
 - Natuur staat centraal (Jordi): zoveel mogelijk aandacht voor de veelzijdige natuur van de regio.
 
-- Kameelachtigen: de starter is de lamoïden-lijn (zie CONCEPT). Later (Jordi): een wilde lijn vicuña → guanaco.
+- Kameelachtigen: de starter is de lamoïden-lijn (zie CONCEPT). Later (Jordi): een wilde lijn vicuña → guanaco. Alleen als er iets leuks voor te bedenken is (16 nov: "voor de leek zijn het net lamas, dus dat kan niet zomaar").
 - Voorstel vogellijn: condorkuiken (pluizig grijs) → jonge condor (bruin, zonder kraag) → volwassen condor (zwart, witte kraag). Kolibrie als losse lijn (kandidaat Psychic-starter of Flying/Fairy). Jordi: kolibrie wordt een **losse lijn** (vogellijn dus condorkuiken → condor).
 - Capibara als inspiratie voor de vroege routeknager/-zoogdier (Jordi). Let op immersie: capibara's leven in laagland bij water, niet op de altiplano rond La Paz/Uyuni (daar: viscacha, cavia/cuy, chinchilla).
 - Mug als bug (Jordi): iets minder early route, een beetje zoals Kricketot in Sinnoh; verschijnt zodra je in lager/warmer gebied komt (boven ±3000 m bijna geen muggen).
@@ -486,6 +486,7 @@ Typen-check (Claude, 9 nov): Rock komt bij geen enkele nieuwe soort of vorm voor
 - **Rock/Water-idee van Jordi (9 nov):** een regional of evolutie waarvoor Jordi Rock/Water overwoog; welke is hij even vergeten ("ik kom er nog wel op"). Niet: arapaima, Binacle-schildpad, stromatolieten, tepui-waterval, puimsteen, Pincurchin, Staryu, Tiwanaku-Golett, Octillery, Kingler, Lanturn, Guatapé, Caño Cristales e.d.
   - **Jordi, 16 nov: "Ik ben eruit. Een fontein die in een gargoyle evolved of andersom."** Rock/Water-lijn: fontein ↔ gargoyle. Richting (welke eerst) nog open.
   - 16 nov: vicuña/guanaco als kandidaat en vier Gemini-prompts geprobeerd; Jordi: "nee schrap maar, dit is niet mooi, plus gemini snapt het verschil tussen fontein en gargoyle niet". Capibara overwogen; Jordi: "werkt ook niet helemaal denk ik".
+  - Fontein ↔ gargoyle blijft staan; uitwerking niet forceren. Jordi, 16 nov: "laat staan, alleen we moeten de uitwerking nog niet forceren, vicuna/guanaco blijft ook staan maar alleen als we iets leuks ervoor kunnen bedenken, voor de leek zijn het net lamas, dus dat kan niet zomaar."
 - **Typen-telling (Claude, 9 nov):** oud in de dex + nieuw: Rock ±24 (niets nieuws), Fairy ±25, Fighting ±27, Ice ±30 (gym 2!), Steel/Fire/Dragon ±35, Water 86. Advies: eerst Rock en Ice, dan Fairy.
 
 ### Convergente soorten (Jordi, 9 nov; voorstellen Claude, open)

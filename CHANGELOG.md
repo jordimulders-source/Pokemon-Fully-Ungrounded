@@ -1745,3 +1745,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Vier prompts (richting A: vicuña-fontein → guanaco-gargoyle; B: andersom) in `docs/concept/sprites/fontein_gargoyle/gemini/PROMPT_v1.md`, met Jordi's citaten en Claudes eigen keuzes apart.
 ### [v0.0.436] - Fontein ↔ gargoyle: prompts geschrapt
 - Jordi: "nee schrap maar, dit is niet mooi, plus gemini snapt het verschil tussen fontein en gargoyle niet". Prompts verwijderd, vicuña/guanaco-kandidaat vervallen; notitie in `IDEEEN.md`, les in `GEMINI.md`.
+### [v0.0.437] - Fontein ↔ gargoyle en vicuña/guanaco: niet forceren
+- Jordi: "laat staan, alleen we moeten de uitwerking nog niet forceren, vicuna/guanaco blijft ook staan maar alleen als we iets leuks ervoor kunnen bedenken, voor de leek zijn het net lamas, dus dat kan niet zomaar." Bijgewerkt in `IDEEEN.md` en `POKEMON.md`.

@@ -12,3 +12,6 @@ Gemini-model namaken (`docs/lessen/SPRITE_WERKWIJZE.md`, `GEMINI.md`, `SPRITE_KE
 - `model/natief.py`: eigen raster terug (pitch 10,24 → 99×99, wezen 86×83).
 - `model/schrap.py`: 22 kolommen en 21 rijen geschrapt → `model_64.png` (64×62, elke pixel een modelpixel). Ruwe onderlaag: gezicht iets vervormd, kleine geest en vage wolken zijn ruis; dat lost de makerronde op.
 - Open: hoe de kleine geest "iets anders gevormd" moet (vraag aan Jordi). Vage, halfdoorzichtige wolken: in Gen 3 als egale lichtgroene wolkvormen met omlijning (vertaling, geen ontwerpwijziging).
+
+## Goedgekeurd (bevroren)
+- 16 nov, r9: "al het groen is goed nu, nu de trein zelf nog" (kleine geest, wolken, geestwielen, groene kieren).

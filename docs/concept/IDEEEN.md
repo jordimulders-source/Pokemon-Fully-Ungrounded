@@ -18,6 +18,8 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Banette-evolutie** ("nog meer marionet").
 - **Mime-lijn:** Mime Jr. blijft → regionale jiujitsu-Mr. Mime → **Mr. Prime** (zie sectie hieronder en `POKEMON.md`).
 - **Blobfish-lijn, 2 fases** (voorstel Claude, Jordi 9 nov "goed idee": fase 1 een gewone diepzeevis, fase 2 "naar boven gehaald" en ingezakt).
+  - **Typing (Jordi, 16 nov): Water → Water.** Eerst ideeën bespreken vóór een Gemini-prompt (Jordi, 16 nov).
+  - **Voorstellen Claude (16 nov, open):** uiterlijk fase 1, evolutiemethode, uiterlijk fase 2, toon; zie het gesprek van 16 nov (antwoord Jordi volgt hier).
 - **Kricketune-evolutie die echt een dirigent wordt.**
 - **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).
 - **Galápagos-regional forms.**

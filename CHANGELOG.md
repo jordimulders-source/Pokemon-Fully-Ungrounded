@@ -1987,3 +1987,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.486] - Gengas frame 2: combinatie kop + manen
 - Jordi: "kan je het niet combineren, én het hoofd dat anders staat én de manen". `gengas/frame2/combi.py`: in frame 2 is de bol 10° gekanteld (pixelrotatie zoals de engine doet) en 3 px omhoog, en staan de manen op de plekken van plan B. Twee richtingen: `combi_rechtsom` (gezicht omhoog) en `combi_linksom` (gezicht omlaag); vel `combi_vel.png`. Randen door de rotatie nog ruw (later opschonen door maker-agent).
+
+### [v0.0.487] - Gengas frame 2: variant C (tegenbeweging)
+- Jordi: de manen maken dezelfde beweging als het hoofd, daardoor lastig te zien ("puur artistieke richting"). Variant C (`gengas/frame2/combi_c.py`): bol kantelt rechtsom en gaat 3 px omhoog, de manen draaien 30° de andere kant op rond de bol en zakken 4 px. Gifs zonder engine, met V_SLIDE en met TIP_MOVE_FORWARD; frame 2 langer in beeld (34 tikken).

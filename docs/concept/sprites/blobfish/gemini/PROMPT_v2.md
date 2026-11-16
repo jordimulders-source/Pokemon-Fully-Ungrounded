@@ -7,11 +7,13 @@ Afgekeurde v1: `r1/gemini_v1_afgekeurd.png`.
 - "dit is niet goed. Je ziet er geen klei in, behalve de kleur (maar is juist leuk als die zo'n play dough kleur krijgt), plus het is niet genoeg deze vis" (bij het plaatje `blobfish_onderwater.png`)
 - "en ook weer teveel, op de neus na" / "dat die gewoon de afbeelding verder heeft nagemaakt"
 - "de neus mag niet zo hangen, dat moet het grote verschil zijn"
+- "en hij moet minder een visvorm hebben, omdat die dus gekleid is"
 
 ## Wat er verandert t.o.v. v1
 - Klei duidelijk zichtbaar (Claude: hoe Play-Doh eruitziet: gerolde worstjes, platgedrukte lapjes met vorkstreepjes, naden waar stukken tegen elkaar gedrukt zijn, vingerafdrukken).
 - Kleur: "zo'n play dough kleur" (welke kleur: niet gezegd, Gemini kiest).
 - Anatomie volgens Jordi's plaatje (grote kop, grote ronde borstvinnen, waaierstaart, rugvin), maar het plaatje niet natekenen.
+- Minder een visvorm, omdat hij gekleid is.
 - Neus hangt niet (het grote verschil met fase 2).
 - Rest van v1 (derpy blij, goede lippen, ligt op de bodem) blijft.
 
@@ -23,9 +25,10 @@ Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/
 CONCEPT
 - A blobfish sculpted out of Play-Doh. Pure Water type, the first stage of a two-stage line.
 - The attached picture shows the blobfish as it looks deep under water. Use it ONLY for the anatomy, do NOT copy or trace the picture: design a Pokémon. Anatomy: a big, bulbous head, a tapering body, big rounded pectoral fins with fin rays, a small dorsal fin, a fan-shaped tail fin with rays, small eyes and big, thick lips.
-- THE NOSE DOES NOT HANG: no drooping, sagging nose over the mouth. The face is firm and fish-like. This is the big difference with its evolution.
+- THE NOSE DOES NOT HANG: no drooping, sagging nose over the mouth. The face is firm. This is the big difference with its evolution.
 
 IT MUST CLEARLY READ AS PLAY-DOH
+- Because it is modelled out of Play-Doh, it has LESS of a fish shape: hand-modelled dough shapes, not a realistic fish body.
 - Bright Play-Doh color (one cheerful toy-dough color), matte.
 - Built from dough pieces pressed together, with visible seams where pieces meet.
 - The lips are a thick rolled dough sausage pressed onto the face.

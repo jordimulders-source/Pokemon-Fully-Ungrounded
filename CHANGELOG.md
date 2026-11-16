@@ -1722,3 +1722,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "gemini gaat geen goed gezicht kunnen ontwerpen". `gemini/r5/fase2_v6.png`. Jordi: "ik vind de rest van het design wel tof". Gezicht via een andere bron (overleg).
 - Ronde 6 (`gemini/r6/fase2_v6b.png`, zelfde prompt v6). Jordi: "pak deze en de vorige erbij, van welke kan je beter een sprite maken? dan maken we zelf het gezicht wel". Advies Claude: r5 (compacter, geest met donkere omlijning zoals Gen 3, minder zachte verlopen).
 - Gezicht (Jordi): "voor de mond zat ik aan een overdreven grote O mond te denken" / "zo groot dat alleen geesten dat kunnen hebben, niet in verhouding groot"; eerder: "kleine pretoogjes".
+
+### [v0.0.422] - Spooktrein fase 2: model gekozen, sprite gestart
+- Jordi: "ronde 5 dan, met dingen uit ronde 6 als je dat nodig hebt"; mond: overdreven grote O, "zo groot dat alleen geesten dat kunnen hebben, niet in verhouding groot"; "die onderdelen die losgeschoten zijn en erachter vliegen mag je wegggummen". Map `docs/concept/sprites/spooktrein_fase2/` (SPEC, model).

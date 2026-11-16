@@ -28,3 +28,9 @@ Eerste fase van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Co
 - 15 nov, Gemini r5 (`gemini/r5_a.png`, zonder bijlage): "het is weer precies gastly". Prompt r6 met r3 als bijlage: `gemini/PROMPT_r6.md`.
 - 15 nov, Gemini r6 (`gemini/r6_a.png`): "hiermee beginnen en dan de kleuren leuker maken bij het maken van de sprite? dus minder zwart". → model = r6_a.
 - Referentie voor de prompt: `referenties/gastly_gen3_8x.png`.
+
+## Opdracht sprite (15 nov)
+Jordi letterlijk: "hiermee beginnen en dan de kleuren leuker maken bij het maken van de sprite? dus minder zwart" · "kleurrijker"
+- Model: `gemini/r6_a.png`. Vorm, gezicht, bulten, slierten en schaduw overnemen (SPRITE_KERN "MODEL OVERNEMEN"), niets hertekenen.
+- Kleur: minder zwart, kleurrijker (Jordi). Welke kleuren zei Jordi niet: de maker levert eerst de trouwe sprite en daarop 3 kleurvarianten (voorstel Claude) voor Jordi om te kiezen.
+- Maat: fase 1; Gastly Gen 3 = 48×42 px, 1190 px.

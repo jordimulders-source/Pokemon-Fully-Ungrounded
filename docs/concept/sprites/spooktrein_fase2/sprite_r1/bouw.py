@@ -58,7 +58,7 @@ for j in range(Hh):
         sel=np.array([GROUP[v]==G for v in cc]); rgb=P[cc[sel]-1].mean(0)
         idx=[q for q in GROUP if GROUP[q]==G]
         out[oy+j,i]=idx[int(np.argmin(((P[np.array(idx)-1]-rgb)**2).sum(1)))]
-np.save(f'basis_{VAR}.npy',out)
+np.save(f'basis_{VAR}.npy',out); open(f'basis_{VAR}.meta','w').write(f'{s} {X0} {Y0} {oy} {XC} {k}')
 pal=[0,0,0]+[int(v) for v in P.ravel()]; pal+= [0]*(768-len(pal))
 im=Image.fromarray(out.astype(np.uint8),'P'); im.putpalette(pal); im.save(f'basis_{VAR}.png',transparency=0)
 rgb=np.where(out[...,None]>0,P[np.maximum(out,1)-1],255).astype(np.uint8)

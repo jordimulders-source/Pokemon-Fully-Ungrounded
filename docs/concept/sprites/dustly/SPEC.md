@@ -37,3 +37,4 @@ Jordi letterlijk: "hiermee beginnen en dan de kleuren leuker maken bij het maken
 - 15 nov (Jordi, na uitleg Claude dat A het best bij de Bok-globule past): "ga voor A" → variant A (stoffig mauve-roze/rozebruin, schaduw diep pruim, lichtrand roze-oranje).
 - 15 nov (Jordi, over r2): "de mond ben je ook teveel zelf aan het tekenen" → r3: mondzone = kale modelreductie (oorzaak: Claude's r2-opdracht schreef tandmaat en lijndikte voor).
 - 15 nov (Jordi, over r4): "nog niet goed, te blurry" → r5: drie varianten scherper (vlakken / contrast / lijn), zonder tekenen, gezicht en silhouet diff 0.
+- 15 nov (Jordi, na r5 V1–V3): "kijk ook naar belijning, schaduw en kleur van de echte gastly" → r6: studie Gastly Gen 3, aanpak toegepast op palet A.

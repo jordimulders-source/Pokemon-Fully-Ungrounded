@@ -2032,4 +2032,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi's keuze over het gezicht toegevoegd aan `IDEEEN.md`.
 
 ### [v0.0.498] - Mate-lijn fase 2: Gemini-prompt v2
-- Gemini r1 bewaard (`mate_fase2/r1/`); Jordi's feedback in `IDEEEN.md`; `PROMPT_v2.md`: kano = de kalebas zelf, echte bombilla's, compact Gen 3-silhouet.
+- Gemini r1 bewaard (`mate_fase2/r1/`); Jordi's feedback in `IDEEEN.md`; `PROMPT_v2.md`: kano = de kalebas zelf, echte bombilla's, ogen in de kalebas gekerfd, compact Gen 3-silhouet.

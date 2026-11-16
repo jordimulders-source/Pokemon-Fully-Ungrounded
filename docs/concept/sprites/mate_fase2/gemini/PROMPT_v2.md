@@ -4,6 +4,7 @@ Nieuw gesprek (Gemini verbetert slecht). Bijlagen: `../../mate/af/mate_8x.png` (
 
 ## Jordi over r1 (letterlijk, 16 nov)
 "conceptueel klopt die, maar dit is geen pokemon sprite. de kano heeft ook niks meer weg van de kalebas, de roeispanen moeten echt bombillos zijn"
+- "en de ogen moeten uit het hout gekerfd zijn"
 
 ## Keuzes Claude (niet besproken; schrappen mag)
 - "Geen Pokémon-sprite" gelezen als: lange, platte zijaanzicht-compositie met een klein figuurtje, veel losse spetters en zachte schaduw. Prompt vraagt een compact silhouet dat 64×64 vult, zoals een echte Gen 3-frontsprite.
@@ -17,7 +18,7 @@ Two attached images: (1) a Gen 3 sprite of a yerba mate gourd Pokémon, (2) a co
 
 THE POKÉMON
 - The canoe IS the mate gourd from image 1: the same brown dried calabash with the same texture and the silver rim, lying on its side and hollowed out. Short, round and bulbous like the gourd, NOT a long slim boat. The narrow neck of the gourd is the pointed front tip.
-- The canoe has two eyes near the front, and the pointed tip works as its nose. No mouth on the canoe.
+- The canoe has two eyes near the front, CARVED into the gourd (cut-in shapes in the brown material, like carvings on a decorated mate gourd), not painted or cartoon eyes. The pointed tip works as its nose. No mouth on the canoe.
 - The front part is closed and carries a heap of green yerba mate leaves and powder.
 - The back part is open and holds hot water; a little of the water spills over the back edge.
 - In the middle sits the little man made of yerba mate leaves (as in image 2). He has the face.

@@ -29,7 +29,26 @@ Geen. De nieuwe kleine clusters zijn r (20,47)–(20,48), r (15,52)–(16,52) en
 ## lipB tegen de hoofdversie
 - **Trouw aan het model:** lipB is iets trouwer, want de verre lip loopt in het model tot ongeveer (12,45).
 - **Leesbaarheid:** op 12× vormen (11,46) en (12,45) een korte schuine streep. Op 1× en 2× wordt (12,45) een los roze stipje in het grijs, en het nieuwe w/r-patroon op (11,45) is een tint-op-tint diagonaal binnen het vruchtvlees.
-- **Oordeel:** de hoofdversie is schoner, en het verschil in trouw valt binnen wat 64 px kan tonen. De hoofdversie is PASS. lipB is ook acceptabel, maar niet beter; de keuze is aan Claude of Jordi.
+- **Techniek:** beide versies voldoen aan de Gen 3-eisen. Ik kies hier niet tussen de twee.
+
+## Mondvorm van binnen zichtbaar (Jordi: "zorg er wel voor dat de mondvorm van binnen zichtbaar blijft")
+**Model:** de binnenkant heeft drie delen.
+1. Bovenin het grijze gehemelte achter de tanden.
+2. Daaronder de verre lip: een dunne roze strook die diagonaal loopt van linksonder (8,48) naar het midden (12,45).
+3. Daaronder het vlees van de onderkaak. Dat is bovenaan grijs en loopt onderaan over in wit, en wordt links, onder en rechts omsloten door een roze lipband (2 px). Pitjes zitten op het gehemelte en op het vlees.
+
+**Hoofdversie:**
+- Het gehemelte is als grijs vlak zichtbaar.
+- De onderkaak is als wit ovaal binnen een gesloten roze lipband zichtbaar: links (7,50)–(7,53), onder rij 53–54, rechts de mondhoekstreep.
+- De verre lip zie je alleen links, als een korte verticale roze strook op x9–10, y44–47. Hij loopt niet diagonaal door naar het midden.
+- Daardoor wordt de grens tussen gehemelte en onderkaak alleen bepaald door de tintstap grijs → wit rond rij 47/48. Het gehemelte en het bovenste grijze deel van de onderkaak lopen in één grijs vlak in elkaar over.
+- Op 1× en 2× zie je een grijs vlak boven en een wit vlak onder, met pitjes, binnen een roze rand.
+
+**lipB:**
+- Gehemelte en onderkaak zijn hetzelfde als in de hoofdversie.
+- De verre lip loopt hier wel diagonaal door van (10,46) via (11,46) naar (12,45), zoals in het model. Het grijs boven en links van die strook leest als gehemelte, het deel eronder als onderkaak.
+- Rechts van x12 (x13–16, y45–47) is er geen strook meer en loopt het grijs nog door. Dat staat ook zo in het model: daar is de strook dun en vervaagt hij.
+- Op 12× is de diagonaal te zien. Op 1× en 2× is het een klein roze puntje in het grijs; de scheiding is daar zwak maar wel aanwezig.
 
 ## Reparaties
 Geen verplichte. Kleine administratieve punten in `sprite_r3/NOTITIES.md`:

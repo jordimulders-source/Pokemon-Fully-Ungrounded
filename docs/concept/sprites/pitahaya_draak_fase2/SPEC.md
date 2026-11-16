@@ -13,6 +13,7 @@
 - Over r1: "design is tof, misschien net iets te weinig de vrucht zelf?"
 - Over r2 (model): "tof" · "ik zie geen spiraal in de staart, hij beweegt gewoon achter het lichaam, ga maar bouwen"
 - Tijdens r3 (16 nov): "zorg er wel voor dat de mondvorm van binnen zichtbaar blijft"
+- Na r3 (16 nov), op de vraag of de verre lip bedoeld was: "met schaduw werk lukt dat denk ik wel, maar onderkant en bovenkant mond loopt nu een beetje in elkaar over"
 
 ## Keuzes Claude (niet besproken)
 - Maat: model verkleind tot ±62 px breed (proef: ±62×36), op de bodem van het 64×64-vlak.

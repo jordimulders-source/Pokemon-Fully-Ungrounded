@@ -1,0 +1,88 @@
+1 gat	(38,41)	1->0	rechterarm
+1 gat	(38,42)	1->0	rechterarm
+1 gat	(38,43)	1->0	rechterarm
+1 gat	(39,43)	1->0	rechterarm
+1 rand gat	(38,40)	9->1	rechterarm
+1 rand gat	(39,41)	9->1	rechterarm
+1 rand gat	(39,40)	9->8	rechterarm
+1 rand gat	(39,44)	10->8	rechterarm
+1 rand gat	(37,44)	10->8	rechterarm
+1 rand gat	(40,43)	10->8	rechterarm
+1 rand gat	(40,44)	10->8	rechterarm
+1 rand gat	(40,42)	10->8	rechterarm
+1 lijn	(38,45)	10->8	rechterarm
+2 toonkaart	(25,37)	8->9	romp
+2 toonkaart	(27,37)	8->9	romp
+2 toonkaart	(35,37)	8->9	romp
+2 toonkaart	(37,37)	8->9	rechterarm
+2 toonkaart	(23,38)	8->9	romp
+2 toonkaart	(24,38)	8->9	romp
+2 toonkaart	(27,38)	8->9	romp
+2 toonkaart	(35,38)	8->9	romp
+2 toonkaart	(22,39)	8->9	linkerarm
+2 toonkaart	(28,39)	8->9	romp
+2 toonkaart	(31,39)	8->9	romp
+2 toonkaart	(36,39)	8->9	rechterarm
+2 toonkaart	(37,39)	8->9	rechterarm
+2 toonkaart	(43,39)	11->10	rechterarm
+2 toonkaart	(19,40)	8->10	linkerarm
+2 toonkaart	(28,40)	8->9	romp
+2 toonkaart	(34,40)	8->9	romp
+2 toonkaart	(39,40)	8->9	rechterarm
+2 toonkaart	(42,40)	11->10	rechterarm
+2 toonkaart	(43,40)	11->10	rechterarm
+2 toonkaart	(25,41)	10->9	romp
+2 toonkaart	(28,41)	10->9	romp
+2 toonkaart	(29,41)	8->9	romp
+2 toonkaart	(36,41)	8->9	rechterarm
+2 toonkaart	(43,41)	11->10	rechterarm
+2 toonkaart	(44,41)	11->10	rechterarm
+2 toonkaart	(18,42)	8->10	linkerarm
+2 toonkaart	(22,42)	9->8	linkerarm
+2 toonkaart	(29,42)	9->10	romp
+2 toonkaart	(33,42)	8->9	romp
+2 toonkaart	(36,42)	8->9	rechterarm
+2 toonkaart	(40,42)	8->10	rechterarm
+2 toonkaart	(18,43)	8->10	linkerarm
+2 toonkaart	(19,43)	8->9	linkerarm
+2 toonkaart	(18,44)	8->10	linkerarm
+2 toonkaart	(20,44)	10->9	linkerarm
+2 toonkaart	(28,44)	8->10	romp
+2 toonkaart	(37,44)	8->9	rechterarm
+2 toonkaart	(40,44)	8->10	rechterarm
+2 toonkaart	(45,44)	8->9	rechterarm
+2 toonkaart	(27,45)	10->9	romp
+2 toonkaart	(28,45)	8->9	romp
+2 toonkaart	(34,45)	10->9	romp
+2 toonkaart	(45,45)	8->9	rechterarm
+2 toonkaart	(23,46)	10->11	romp
+2 toonkaart	(25,46)	8->9	romp
+2 toonkaart	(28,46)	8->10	romp
+2 toonkaart	(44,46)	10->11	rechterarm
+2 toonkaart	(26,47)	8->9	romp
+2 toonkaart	(27,47)	8->9	romp
+2 toonkaart	(28,47)	8->9	romp
+2 toonkaart	(31,47)	8->9	romp
+2 toonkaart	(25,48)	8->9	poten
+2 toonkaart	(26,48)	8->9	poten
+2 toonkaart	(28,48)	8->9	poten
+2 toonkaart	(29,48)	8->9	poten
+2 toonkaart	(34,48)	8->9	poten
+2 toonkaart	(36,48)	10->11	rechterarm
+2 toonkaart	(37,48)	10->11	rechterarm
+2 toonkaart	(39,48)	8->9	rechterarm
+2 toonkaart	(29,49)	8->9	poten
+2 toonkaart	(30,49)	8->9	poten
+2 toonkaart	(35,49)	8->9	poten
+2 toonkaart	(38,49)	8->9	poten
+2 toonkaart	(25,50)	8->9	poten
+2 toonkaart	(26,50)	8->9	poten
+2 toonkaart	(30,50)	8->9	poten
+2 toonkaart	(25,51)	8->9	poten
+2 toonkaart	(27,51)	8->9	poten
+2 toonkaart	(36,51)	8->9	poten
+2 toonkaart	(38,51)	8->9	poten
+2 toonkaart	(39,51)	8->9	poten
+2 toonkaart	(38,52)	8->9	poten
+2 toonkaart	(40,52)	8->9	poten
+2 toonkaart	(38,53)	10->11	poten

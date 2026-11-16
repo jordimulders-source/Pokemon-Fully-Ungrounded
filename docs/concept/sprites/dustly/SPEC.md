@@ -16,4 +16,5 @@ Eerste fase van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Co
 5. Lichte rand aan één kant van de bol (waar een nabije ster hem belicht, *bright rim*): ja/nee.
 6. Pose: zwevend, driekwart naar links (zoals Hauntflare en Gengas).
 - 15 nov (Jordi): "is het echt een bol of gewoon een gaswolk? In gen 1 was gastly puur een gaswolk namelijk". Antwoord Claude: een gaswolk; rond en ondoorzichtig doordat hij zo dicht is, met een donkere kern en rafelige randen, vaak onregelmatig van vorm. Geen harde bol.
+- 15 nov (Jordi): "ja een wolk, rondachtig zoals gen 1, schrijf de prompt maar". Prompt r1: `gemini/PROMPT_r1.md`.
 - Referentie voor de prompt: `referenties/gastly_gen3_8x.png`.

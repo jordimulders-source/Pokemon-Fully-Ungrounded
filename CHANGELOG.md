@@ -1660,3 +1660,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Halve cirkel naast het oog (c10 variant 1), eindkeuring Dragonfly Cave + Gen 3: PASS na 5 randpixels + mondhoek. **Af:** `docs/concept/sprites/steenmozaiek/af/welp.png` (+ `_8x`, `welp_grijs.png`, `welp_normal.pal`, eindkeuring). Op het overzichtsvel.
 ### [v0.0.403] - Dustly: start ontwerp
 - Jordi: "Tijd om Dustly te gaan maken". `docs/concept/sprites/dustly/SPEC.md` (Bok-globule, ontwerpvoorstellen Claude, open) en Gastly-referentie `dustly/referenties/gastly_gen3_8x.png`. Prompt volgt na Jordi's keuzes (GEMINI.md: eerst overleggen).
+### [v0.0.404] - Dustly: Gemini-prompt r1
+- Jordi: "ja een wolk, rondachtig zoals gen 1, schrijf de prompt maar". Prompt `docs/concept/sprites/dustly/gemini/PROMPT_r1.md` (bijlage Gastly Gen 3): donkere stofwolk met Gastly's gezicht, roze-rood waterstofgas eromheen, driekwart links.

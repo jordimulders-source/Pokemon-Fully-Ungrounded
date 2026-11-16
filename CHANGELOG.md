@@ -1973,3 +1973,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.482] - Gengas frame 2: knik via Gemini gestopt
 - Prompt v7 gaf twee identieke frames. Jordi: "dit lukt dus duidelijk niet". Knik via Gemini gestopt; vervolg ligt bij Jordi (engine-animatie en/of script).
+
+### [v0.0.483] - Gengas frame 2: plan ter keuring
+- `gengas/frame2/plan.py`: frame 2 = ronde bol (v15) stil, vier manen verplaatst (boven 6 links; rechterhand 5 op; linkerhand 6 op; voet 6 links, 2 op); niets getekend. Vel `gengas_anim_front_plan.png`.
+- Knik via de engine, nagerekend uit `src/pokemon_animation.c`: `plan_v_slide.gif` (ANIM_V_SLIDE: op-neer-op, 6 px) en `plan_tip_move_forward.gif` (ANIM_TIP_MOVE_FORWARD: ±11° kantelen). Simulatie, niet in de emulator.

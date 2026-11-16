@@ -32,3 +32,6 @@ Keep everything exactly the same, change ONLY these two things:
 1. The eyes are hard to see and look like human eyes. Make the two eyes clearly visible and readable at sprite size, and NOT human eyes: no eyelids, no human iris. Simple Pokémon eyes, bigger, set inside the dark opening of the chimney.
 2. Make the train wheel bigger and place it at the side of the heap.
 ```
+
+## Ronde 2 (`f1_r2/fase1_v1b.png`)
+Jordi: "ogen niet goed en wiel te klein". Gemini maakte een tweede wiel i.p.v. het wiel groter; ogen nog wit met pupil. Verder: nieuw gesprek met startprompt v2 (`PROMPT_fase1_v2.md`).

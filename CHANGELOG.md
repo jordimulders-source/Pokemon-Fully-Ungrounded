@@ -1670,3 +1670,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi over r3 (`dustly/gemini/r3_a.png`, naast de lijn `lijn_r3.png`): "kijk beter", roestbruin niet mooi en te massief; "een wolk of gaswolk is het leukste". Prompt r4: losse gaswolk met slierten, donker grijsbruin, smalle roze-oranje lichtrand linksboven.
 ### [v0.0.408] - Dustly: Gemini r4 en prompt r5
 - r4 (`dustly/gemini/r4_a.png`) viel terug op Gastly's bal (Jordi: "zucht"). Prompt r5 zonder bijlage en zonder het woord Gastly (gezicht in woorden). Les in `GEMINI.md`.
+### [v0.0.409] - Dustly: Gemini r5 en prompt r6
+- r5 zonder bijlage was weer Gastly (Jordi: "het is weer precies gastly"). Prompt r6: r3 als bijlage, alleen kleur (grijsbruin rook, smalle roze rand) en minder massief. Les in `GEMINI.md` bijgewerkt.

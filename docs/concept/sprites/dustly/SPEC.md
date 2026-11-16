@@ -25,4 +25,5 @@ Eerste fase van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Co
 - 15 nov (Jordi, over r3): "nee hij zit niet te dicht bij hauntflare, ik vind dat roestbruin niet mooi en idd te massief". Kleur echt (Claude): binnen bijna zwart/donker bruingrijs, smalle roze-rode lichtrand (soms oranje/goud) aan de kant van een ster; roestbruin is de nepkleur van infraroodfoto's.
 - 15 nov (Jordi): "nieuwe prompt idd" (op kleur A + lossere wolk). Prompt r4: `gemini/PROMPT_r4.md`.
 - 15 nov, Gemini r4 (`gemini/r4_a.png`): "zucht" (weer Gastly's bal). Prompt r5 zonder bijlage en zonder het woord Gastly: `gemini/PROMPT_r5.md`.
+- 15 nov, Gemini r5 (`gemini/r5_a.png`, zonder bijlage): "het is weer precies gastly". Prompt r6 met r3 als bijlage: `gemini/PROMPT_r6.md`.
 - Referentie voor de prompt: `referenties/gastly_gen3_8x.png`.

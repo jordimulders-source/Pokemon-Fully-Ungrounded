@@ -484,6 +484,7 @@ Typen-check (Claude, 9 nov): Rock komt bij geen enkele nieuwe soort of vorm voor
 - Ook in de buurt: **Tren a las Nubes** (Salta, spoorlijn tot ±4200 m; past bij de spooktrein) en **Los Cardones** (cardón-cactussen; past bij de Noord-Andes-cactus).
 - **Cactussen die op steen lijken (vraag Jordi 9 nov; Claude):** *Copiapoa* (Atacama, Chili; grijze, krijtachtige bollen tussen de rotsen, leeft van zeemist), *Ariocarpus* (Mexico, "living rock cactus"), *Tephrocactus*/*Maihueniopsis* (puna van Argentinië, polletjes van segmenten die op kiezels lijken). Geen cactus maar wel steenhard: de yareta (Andes-kussenplant, ±3000 jaar oud, je kunt erop staan; pitch #41 Grass/Rock). *Lithops* ("levende stenen") komen uit Zuidelijk Afrika en zijn geen cactussen.
 - **Rock/Water-idee van Jordi (9 nov):** een regional of evolutie waarvoor Jordi Rock/Water overwoog; welke is hij even vergeten ("ik kom er nog wel op"). Niet: arapaima, Binacle-schildpad, stromatolieten, tepui-waterval, puimsteen, Pincurchin, Staryu, Tiwanaku-Golett, Octillery, Kingler, Lanturn, Guatapé, Caño Cristales e.d.
+  - **Jordi, 16 nov: "Ik ben eruit. Een fontein die in een gargoyle evolved of andersom."** Rock/Water-lijn: fontein ↔ gargoyle. Richting (welke eerst) nog open.
 - **Typen-telling (Claude, 9 nov):** oud in de dex + nieuw: Rock ±24 (niets nieuws), Fairy ±25, Fighting ±27, Ice ±30 (gym 2!), Steel/Fire/Dragon ±35, Water 86. Advies: eerst Rock en Ice, dan Fairy.
 
 ### Convergente soorten (Jordi, 9 nov; voorstellen Claude, open)

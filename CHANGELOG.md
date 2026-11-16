@@ -1737,3 +1737,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Naar Jordi's Gemini-model (winegum, vorm van de decoy-versie). Krassault-methode: natief raster 4 px, exacte 4×4-reductie (50×29 px, 848 px, tussen Feebas en Magikarp), silhouet bevroren vanaf r1. r2–r4: alleen herstel van wat de reductie wegnam (lipband via lipmasker uit het model, ogen, vinstralen, opkrul van de mond), keurder: trouw PASS, lijfcontrast te laag (uit het model).
 - Jordi koos uit A/B en 7 oogvarianten: **oog v4 (zwart kraaloog met glanspixel) op B (lichtronde)**: "lijkt het door meer contrast meer op een winegum". Eindkeuring Dragonfly Cave: PASS na 17 px (mauve tint op de rugvin naar lijftint, 2 px dambord op de kop).
 - **Af:** `docs/concept/sprites/blobfish/af/blobfish.png` (+ `_8x`). Op het overzichtsvel. Naam open.
+### [v0.0.433] - Rock/Water-lijn: fontein ↔ gargoyle
+- Jordi (16 nov): "Ik ben eruit. Een fontein die in een gargoyle evolved of andersom." Vastgelegd in `docs/concept/IDEEEN.md` bij het Rock/Water-idee van 9 nov; richting nog open.

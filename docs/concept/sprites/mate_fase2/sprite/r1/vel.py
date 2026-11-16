@@ -13,7 +13,7 @@ def on(im,c):
     b=Image.new('RGBA',im.size,c+(255,)); b.alpha_composite(im.convert('RGBA')); return b.convert('RGB')
 def up(im,s): return im.resize((im.width*s,im.height*s),Image.NEAREST)
 spl=on(sp,(235,240,235))
-V=Image.new('RGB',(1500,1300),(255,255,255)); d=ImageDraw.Draw(V)
+V=Image.new('RGB',(1500,1700),(255,255,255)); d=ImageDraw.Draw(V)
 V.paste(up(spl,8),(10,30)); d.text((10,10),R+' sprite 8x (64x64)',fill=0)
 V.paste(up(nat,8),(540,30)); d.text((540,10),'model natief raster 8x (zelfde schaal, ongeschrapt)',fill=0)
 # close-ups: (naam, x0,y0,x1,y1 in geschrapt-coordinaten)
@@ -25,7 +25,7 @@ for n,x0,y0,x1,y1 in cl:
     if x+a.width*2+30>1500: x=10; y+=330
     d.text((x,y-15),n+' (sprite | model) %dx'%s,fill=0)
     V.paste(a,(x,y)); V.paste(b,(x+a.width+6,y)); x+=a.width*2+30
-y2=y+340
+y2=y+300
 for i,c in enumerate([(255,255,255),(200,230,200),(40,40,48)]):
     V.paste(on(sp,c),(10+i*80,y2)); 
 V.paste(on(sp,(248,248,248)).resize((128,128),Image.NEAREST),(260,y2)); V.paste(nat,(400,y2))

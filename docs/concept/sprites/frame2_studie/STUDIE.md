@@ -85,3 +85,9 @@ Poging 3 is afgekeurd. De meting in §2 zei alleen *hoeveel* er verandert, niet 
 - Bijlage zonder manen + "the creature nods, lifts its head": Gemini gaf dezelfde bol terug (op 11× i.p.v. 16×), alleen de oren iets anders (`gengas/frame2/gemini_knik_r1.png`). Een bol heeft geen nek; "hoofd omhoog" is voor Gengas pure verplaatsing.
 - Daarom alles per script (`gengas/frame2/frame2.py`): ronde bol (v15, door maker-agents) 3 px omhoog, de vier manen (uit `af/gengas.png`) los verplaatst; niets getekend. Uitvoer: `gengas_frame2.png/.gif`, vel `gengas_anim_front.png`.
 - Werkwijze frame 2 samengevat: **lijf met anatomie (poten, bek) → Gemini (handeling in woorden); losse delen of een vormloos lijf → script (verplaatsen); wat bij verplaatsen bloot komt → maker-agent rond/dicht maken.**
+
+## 11. Viscacha in één keer goed, Gengas na zeven prompts niet: waarom (16 nov)
+- **Lokaal vs. alles:** bij de viscacha veranderde een deel (kop, voorpoten); ±70% bleef staan en dat kopieerde Gemini gewoon. Bij Gengas moet de hele figuur bewegen (de bol ís het hoofd); dan moet Gemini alles opnieuw tekenen en verloopt alles (vorm, banden, ogen, oren).
+- **Bekend vs. ongewoon:** "een knaagdier roept met open bek" kent Gemini; een bol met Gengar-gezicht en gasoren niet, en het trekt naar Gengar of een generieke bol.
+- **Ruimte:** Gengas vult het vak; "hoger" vraagt een nieuwe compositie.
+- Les: **Gemini voor lokale poseveranderingen; beweging van de hele figuur (opveren, kantelen, knikken) via de engine-animatie (`frontAnimId`) of een script.**

@@ -1967,3 +1967,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.480] - Gengas frame 2: prompt v7
 - v6 ronde 2 had een andere vorm (Jordi). Prompt v7: rechterframe = linkerframe gedraaid (±10°) en iets omhoog, niet hertekend, met alle kenmerken die gelijk moeten blijven opgesomd. Terugval: knik via de engine-animatie, frame 2 alleen de manen.
+
+### [v0.0.481] - Frame 2: waarom viscacha wel en Gengas niet
+- Analyse in STUDIE.md §11 en een les in GEMINI.md: Gemini werkt als alleen een deel verandert; een beweging van de hele figuur laat het ontwerp verlopen.

@@ -10,6 +10,9 @@
 - Gezicht ventje: "doe de boze blik van eerder maar, die vind ik het leukst"
 - Rondes en alle citaten: `IDEEEN.md` (Mate-lijn) en `gemini/PROMPT*.md`.
 
+## Lore (Jordi, 16 nov)
+- "het ventje zit aan de onderkant vast aan de kalebas en levert uit zijn eigen lichaam wat ongelimiteerd kan bijvullen dus de mate poeder. Water kan die zelf ook creëren, want hij is grass/water"
+
 ## Model (bevroren)
 `referenties/model.png` = Gemini r6 (`r6/gemini_r6.png`; zilveren rand om het voorste vak, ogen van de kano) + het water van r2 (vak x655–900, y410–610, groen overgeslagen) + het gezicht van het ventje uit r2 (natief x46–61, y37–47, pitch 10,24). Plaknaad onder het ventje rechts is geen ontwerp.
 Natief raster: pitch 10,24, fase 0 (`ogen/natief.py`).

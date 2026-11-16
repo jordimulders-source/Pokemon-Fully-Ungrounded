@@ -2060,3 +2060,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.507] - Mate-lijn fase 2: model bevroren
 - `mate_fase2/referenties/model.png`: r6 met het water en het boze gezicht van r2; `mate_fase2/SPEC.md`.
+
+### [v0.0.508] - Mate-lijn fase 2: lore
+- Jordi's lore (ventje vast aan de kalebas, vult de mate uit zijn eigen lichaam bij, maakt zelf water) in `IDEEEN.md` en `mate_fase2/SPEC.md`.

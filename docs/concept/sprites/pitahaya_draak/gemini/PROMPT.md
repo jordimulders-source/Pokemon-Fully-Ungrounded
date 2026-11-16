@@ -10,8 +10,11 @@ Bijlage: zelf toevoegen (Jordi): een foto van een roze pitahaya (heel, met schub
 - "dan is fase 2 een teju en fase 3 mag op 2 poten staan, maar voorover leunend, komodo draak"
 
 ## Keuzes Claude (schrappen mag)
-- Lichaam: klein hagedissenlijfje (voorbode van de teju in fase 2). Jordi zei alleen "een lichaam eronder".
-- Gezicht in de vrucht, de groene schubpunten van de schil als stekels/kuif.
+- De groene schubpunten van de schil als stekels/kuif.
+
+## Jordi (16 nov), reactie op v1
+- "hij moet niet een kleine hagedis zijn. Het gezicht zit in de vrucht bij fase 1, maar daarna komen er meer kenmerken bij"
+- **Open: wat voor lichaam (vraag aan Jordi). Prompt wacht daarop.**
 
 ## Prompt
 
@@ -21,7 +24,7 @@ Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/
 CONCEPT
 - The first stage of a three-stage dragon line (pseudo-legendary). Stage 2 will be a tegu lizard, stage 3 a Komodo-dragon-like dragon leaning forward on two legs.
 - Stage 1: its head IS a pink dragon fruit (pitahaya: hot pink skin with green-tipped scales), with a small body underneath.
-- The body is a small young lizard body (short legs, short tail), so it reads as the baby of a lizard-dragon line.
+- The body: [OPEN, waiting for Jordi].
 - Use the attached photo for the fruit: pink skin, the shape and placement of the scale flaps with green tips.
 
 DESIGN
@@ -30,14 +33,14 @@ DESIGN
 - Readable silhouette: big round-oval fruit head with scale flaps sticking out, small body below.
 
 POSE
-- Three-quarter view facing left, standing on four short legs, curious.
+- Three-quarter view facing left, curious.
 
 STYLE AND FORMAT
 - 64x64 pixel sprite, the creature smaller than the canvas (it is a first stage), max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
 - Plain white background. NO floor, shadow, base platform, leaves, glow or effects. One single creature, no extra views.
 
 AVOID
-- Not a lizard holding or wearing a separate fruit: the fruit IS its head.
+- Not a small lizard. Not a lizard holding or wearing a separate fruit: the fruit IS its head.
 - Not a snake. No wings.
 - Not Applin-like (no fruit with a creature peeking out of it). Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
 ```

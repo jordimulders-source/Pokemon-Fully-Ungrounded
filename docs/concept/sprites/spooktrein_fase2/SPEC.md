@@ -6,7 +6,7 @@ Model: `model/model_r5.png` (= `../spooktrein_fase1_2/gemini/r5/fase2_v6.png`, p
 - Model: "ronde 5 dan, met dingen uit ronde 6 als je dat nodig hebt" (r6: `referenties/r6.png`).
 - Design r5: "ik vind de rest van het design wel tof" (alles behalve het gezicht).
 - Gezicht: "gemini gaat geen goed gezicht kunnen ontwerpen" / "dan maken we zelf het gezicht wel" / "de mond moet echt overdreven groot zijn en doe maar kleine pretoogjes" / "voor de mond zat ik aan een overdreven grote O mond te denken" / "zo groot dat alleen geesten dat kunnen hebben, niet in verhouding groot".
-- Ogen: "de ogen mogen zijn zoals de geest links in het rood" (`referenties/ogen_geest_rood.png`, conceptschets van geesten; de rode geest links: twee gebogen, lichtgevend geel-crème ooglijnen boven een donker gezicht). Jordi: "het gaat alleen om de vorm".
+- Ogen: "de ogen mogen zijn zoals de geest links in het rood" (`referenties/ogen_geest_rood.png`, conceptschets van geesten; de rode geest links: twee gebogen, lichtgevend geel-crème ooglijnen boven een donker gezicht). Jordi: "het gaat alleen om de vorm" / "en prima dat ze groot zijn, ben van mening veranderd" / "want ze zijn namelijk niet lang" (vervangt "kleine pretoogjes").
 - "die onderdelen die losgeschoten zijn en erachter vliegen mag je wegggummen".
 - Kleur geest: "de geest blijft dezelfde kleur" (als fase 3).
 

@@ -24,6 +24,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Dieren-voorstellen Claude (16 nov, open):** egel → stekelvarken (stekels als vonken, oprollen en tollen, stekels die afschieten), kat → leeuw (staart achternazitten = tollen, manen = barst), gordeldier/schubdier (oprollen; barst minder sterk), kraaghagedis (kraag die openklapt = barst; neigt naar draak).
   - **Besloten (Jordi, 16 nov): egel → stekelvarken.** "goede, egels en stekelvarkens zijn er ook nog niet veel. Dan wordt de stekelvarken wel grotendeels van vuurwerk qua vorm, en zo weinig mogelijk qua lichaam zelf." Prompt v2: `sprites/vuurwerk/gemini/PROMPT_v2_stekelvarken.md`.
   - **Gemini v2** (`sprites/vuurwerk/r2/gemini_v2.png`), Jordi (16 nov): "echt vreselijk". (Analyse Claude: regenboogbezem van losse rechte strepen zonder vorm of ordening, gezicht verdwijnt, de pijlen zijn losse donkerrode staafjes die niet bij het lijf horen.)
+  - **Jordi (16 nov):** "ja wat meer de geel/rood/roze kant op qua vuurwerk is goed, de stekels moeten een suggestie zijn. en ik wil het zoals de google fotos die ik deelde, daarvan was de vorm van het dier vuur en vuurwerk en dat is tof". Prompt v3: `sprites/vuurwerk/gemini/PROMPT_v3.md`.
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

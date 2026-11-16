@@ -1658,3 +1658,41 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi (foto Chavín-jaguarbeeld): "Hij moet er eigenlijk uitzien alsof die uit steen gecarved is", "het steengevoel vind ik het belangrijkste", kleur mag ("vind het nu teveel een huisdier"), koplijnen om de ogen + 2 naar de kruin, "let op schaduwen". Silhouet en vorm gelijk aan p8.
 - c1–c5 met keurder per ronde: lichte steen (greige én grijs), kerven met lichte lip, grote voluten op schouder en dij, pootbanden; de oogbogen bevroren na Jordi's "prima". `welp/c5/welp_c5.png` + `_grijs`, naar Jordi.
 - Halve cirkel naast het oog (c10 variant 1), eindkeuring Dragonfly Cave + Gen 3: PASS na 5 randpixels + mondhoek. **Af:** `docs/concept/sprites/steenmozaiek/af/welp.png` (+ `_8x`, `welp_grijs.png`, `welp_normal.pal`, eindkeuring). Op het overzichtsvel.
+### [v0.0.403] - IJskomeet (fase 3 sneeuwbolslak-lijn): nieuwe Gemini-prompt
+- Jordi keurde de eerste twee plaatjes af ("lijken net kirby en mario vijandjes"): moet een bol met ijsuiteinden zijn, kern geëxplodeerd, grotesker, ijsstulpsels overal (Interloper), geen lachgezichtje, wel ogen.
+- Nieuwe startprompt zonder bijlage: `docs/concept/sprites/ijskomeet/gemini/PROMPT.md`; afgekeurde plaatjes als `r1a/r1b_afgekeurd.png`. Citaat in IDEEEN.md.
+
+### [v0.0.404] - IJskomeet: Gemini-prompt v2
+- Ronde 2 afgekeurd (Jordi: ogen en mond te "kiddy"; "deze pokemon is de kern die uit de barst gekomen is en daardoor evolved is"). Prompt v2: de Pokémon is de ontsnapte kern, heel lijf zonder barsten, alleen smalle koude ogen, geen mond. `ijskomeet/gemini/PROMPT.md`, `r2_afgekeurd.png`.
+
+### [v0.0.405] - IJskomeet: Gemini-prompt v3 (meer cosmic)
+- Jordi: "nog niet cosmic genoeg"; alle vier voorstellen goed, ogen naar Minior, Lunatone en Solrock. v3: indigo/violet in de schaduwen, nevel in doorzichtige plekken, gasstaart achter de ijsstaart, ogen verzonken in donkere kassen die koud oplichten, geen mond. Ogenstudie `ijskomeet/gemini/ogen_studie.png`.
+
+### [v0.0.406] - IJskomeet: Gemini-prompt v4
+- Ronde 3 afgekeurd (te veel monster: boze ogen, boze mond; vorm meer Interloper). v4 met Jordi's Interloper-beeld als vormbijlage: ronde ijskoepel voorop, ijspunten allemaal naar achteren, gezicht neutraal met twee ijzige bologen, geen mond. `ijskomeet/gemini/PROMPT.md`, `r3_afgekeurd.png`, `interloper_referentie.png`.
+
+### [v0.0.407] - IJskomeet: Gemini-prompt v5
+- Ronde 4 "al iets beter"; buitenste laag te neutraal, "daar mag wat meer ijsschots vorm in". v5: r4 als bijlage, alleen de buitenlaag als grote hoekige ijsschotsen; v5b als terugval (v4 + die regel). `r4_gemini.png`.
+
+### [v0.0.408] - IJskomeet: Gemini-prompt v6
+- Ronde 5 "halve bak" (alleen naden op de gladde koepel). v6: nieuw gesprek met Interloper + r4; de ijsschotsen moeten het silhouet hoekig maken (dikke platen met zijkant, schuiven over elkaar). `r5_gemini.png`.
+
+### [v0.0.409] - IJskomeet: Gemini-prompt v7
+- Jordi: gasstaart "meer omringend aan het uiteinde", ogen "wat hoger en nog wat meer laten gloeien, sinister". v7 = v6 + brede komeetstaart om de achterkant (Interloper) + ogen hoog, fel gloeiend met halo, geen pupil.
+
+### [v0.0.410] - IJskomeet: Gemini-prompt v8
+- Ronde 6 "wat een mislukking": r4 was overgetrokken met een gasring eraan. v8: alleen de Interloper als bijlage, korter, kleuren en ogen in woorden. Les in GEMINI.md. `r6_afgekeurd.png`.
+
+### [v0.0.411] - IJskomeet: ronde 7 beste tot nu toe, prompt v9
+- Jordi: r7 "de beste tot nu toe", "bijna tevreden"; de ijsschotsen moeten "nog net iets meer op een dier lijken, alsof dat het lichaam is". v9: r7 als bijlage; Jordi: "zonder aan de vorm te zitten", dus silhouet exact gelijk, alleen naden en schaduw binnen de omtrek als kop + lijf. `r7_gemini.png`.
+
+### [v0.0.412] - IJskomeet: ronde 8 afgekeurd
+- v9 gaf alleen roodbruine naden ("gemini snapt het niet"). Voorstel: r7 als model bevriezen en de schotsen als lijf in de sprite oplossen. `r8_afgekeurd.png`, les in GEMINI.md.
+
+### [v0.0.413] - IJskomeet: ronde 7 gekozen als model
+- Jordi: "ja doe maar ronde 7 als model". `ijskomeet/referenties/gemini_gekozen_r7.png`. Diervorm van de schotsen nog open (voorstel Claude: slak, alternatief pissebed).
+
+### [v0.0.414] - IJskomeet: frontsprite af
+- Gemini-model r7 (Interloper-vorm, ijsschotsen, kern geëxplodeerd; Jordi: "het hele idee van deze vorm is dus dat een kern is geëxplodeerd en deze het hele dier in ijsschotsen heeft veranderd, de kern is ondertussen de drijvende kracht erachter"; tragisch "zoals bij parasect"). Schotsen als slakkenlijf (Jordi: "ja doe maar de slak").
+- 23 spriterondes. r1–r14: makers en Claude tekenden/schoven naden; mislukte omdat elke onderlaag de mediaan per 3×3 nam en de dunne modellijnen wegvielen (Jordi: "KIJK NAAR DE LIJNEN"). r15: model 3× verkleind waarbij in het ijs de donkerste pixel wint → schotsstructuur van het model klopte meteen. Daarna: lichtere binnennaden (eigen navy), gasstaart lavendel → cyaan → wit met zachte rand, lichtere linkerbuitenlijn, kopbovenkant als drietand, pieken glad uit het model (gemiddelde per 3×3), ogen met teal ring, kern = zachte gloed van r21.
+- `docs/concept/sprites/ijskomeet/af/ijskomeet.png` (+ `_8x`); op het overzichtsvel als "IJskomeet" (Ice/Cosmic), naast fase 1 en 2: de hele sneeuwbolslak-lijn is af. Naam nog open. (Startprompt fase 3 kwam uit `sneeuwbolslak_fase3/gemini/PROMPT.md`; vervolgprompts in `ijskomeet/gemini/PROMPT.md`.) Lessen in `docs/lessen/GEMINI.md` en bovenaan `SPRITE_KERN.md` (makers tekenen niet bij een Gemini-model).

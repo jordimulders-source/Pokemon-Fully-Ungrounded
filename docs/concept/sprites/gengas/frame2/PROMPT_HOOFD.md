@@ -35,3 +35,27 @@ Combinatie (Jordi: "geef gemini de handeling en dan kunnen we met het script de 
 > RIGHT frame: the same creature in the next moment of a nodding motion. The round body has bobbed upward, so it sits clearly higher than in the left frame (its bottom edge is well above the bottom edge of the left one), and its head is tilted back a little: the eyes and the grin sit a bit higher on the ball and look slightly upward, the ears lean back.
 >
 > Both frames: identical size, identical pixel scale, same pixel-art style, same colors, cloud bands, eyes and grin. Plain white background, frames aligned on the same baseline. No hands, no moons, no objects, no glow, no text.
+
+## v6 ronde 2 (`gemini_knik_v6b.png`): Jordi "deze is ook niet goed he, hele andere vorm" (smaller, oren en gasarm anders). "kan je niet nog accurater prompten?"
+
+## Prompt v7 (draaien i.p.v. hertekenen, kenmerken opgesomd)
+
+> Make a pixel-art sprite sheet with two frames side by side, both at exactly the same size and pixel scale as the attached sprite.
+>
+> LEFT frame: the attached sprite, copied exactly, unchanged.
+>
+> RIGHT frame: the LEFT frame, rotated backward (counter-clockwise) by about 10 degrees around its center and shifted a little upward, like a head nodding up. It is the same drawing, only rotated and moved: do not redraw it, do not change its shape, size, width or proportions.
+>
+> These must be identical in both frames, only rotated with the body:
+> - the round ball shape, as wide as in the left frame
+> - the left ear, ending in a thin wispy tip that points up and to the left
+> - the right ear, pointing up and to the right
+> - the dark gas trail that flows out from behind the right ear to the right
+> - the light pink highlight on the upper left of the ball
+> - the darker cloud bands that run across the ball
+> - the angry, slanted red eyes
+> - the wide white grin with its row of teeth
+>
+> Plain white background. No hands, no moons, no other objects, no glow, no text.
+
+Terugval: knik via de engine (`frontAnimId`, bijv. `ANIM_ROTATE_UP_SLAM_DOWN`, `ANIM_V_SLIDE`, `ANIM_TIP_MOVE_FORWARD`) en frame 2 alleen de manen.

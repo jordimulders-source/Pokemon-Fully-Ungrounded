@@ -1964,3 +1964,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.479] - Gengas frame 2: Gemini v6 (twee frames) beoordeeld
 - Met prompt v6 veranderde Gemini wel iets: de bol staat hoger en is achterover gekanteld (gezicht hoger op de bol). Het rechterframe is terug op 52 px gezet en in een gif naast frame 1 gelegd (`gengas/frame2/gemini_knik_v6.png/.gif`). Afwijkingen: wolkenbanden grotendeels weg, ogen ronder en niet meer boos, grijns groter, oren spitser; de sprong in hoogte was ±12 px (in de gif op 3 px gezet).
+
+### [v0.0.480] - Gengas frame 2: prompt v7
+- v6 ronde 2 had een andere vorm (Jordi). Prompt v7: rechterframe = linkerframe gedraaid (±10°) en iets omhoog, niet hertekend, met alle kenmerken die gelijk moeten blijven opgesomd. Terugval: knik via de engine-animatie, frame 2 alleen de manen.

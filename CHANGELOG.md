@@ -1699,3 +1699,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 r9 gekeurd: FAIL op de trein (schoorsteenpijp te kort, kop links te recht, koeienvanger blokken i.p.v. bladen); groen goedgekeurd door Jordi. r10 (verse maker): alleen de trein.
 - Spooktrein fase 3 sprite r10: koeienvanger opnieuw opgebouwd, kop links rond, pijp opgeschoond (groen diff 0); koeienvanger nog te rechtop/blokkig → r11 schuin en puntig uit het model.
 - Spooktrein fase 3 sprite r11: koeienvanger per pixel uit het model (silhouet, puntige onderrand), nog druk; keurder met pixel-MOET voor de koeienvanger.
+- Spooktrein fase 3 sprite r12 = koeienvanger-voorstel van de keurder (drie platen en een tand, schuine bovenranden, groen diff 0); eindkeuring.

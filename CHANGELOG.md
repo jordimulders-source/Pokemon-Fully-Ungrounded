@@ -1787,3 +1787,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi's afwijkingen: kop 115%, rechteroog met pupil, glitter weg → vuurwerkspikkels (lijf en om de kop, naar `referenties/vuurwerk_pixelart_jordi.png`), vlamtong bovenop, losse vlam rechtsboven variant B. Linkeroog: "r12 p2 blijft het beste".
 - Spikkels om de kop: variant B (grote barst linksonder) staat erin; variant "rond" (`sprite/r10/sprite_rond.png`) ligt klaar als Jordi wil wisselen.
 - Op het overzichtsvel (`showcase/frontsprites_af.png`) als "Vuurwerkslang" (Fire/Fairy; naam open). Sterretje en wondertol (fase 1–2) nog te doen.
+
+### [v0.0.445] - Vuurwerkslang: zonder losse vuurwerkbarst
+- Jordi: afgekapt vuurwerk linksboven "gaat er raar uitzien in een gevecht"; de barst linksonder had "nog niet echt een verband" met de sprite; "pokemon hebben over het algemeen geen special effects". Alle losse vuurwerkspikkels/barsten weg (plek teruggezet naar het model via r10 "rond"); het vuurwerk zit nu in het dier zelf (staartpijl, kleurverloop, spikkels in het lijf, twinkels). Jordi: "ja hij is beter zonder, zorgt ook voor minder ruis waardoor de sprite beter leest".
+- `af/vuurwerkslang.png` (+ `_8x`) en het overzichtsvel bijgewerkt; varianten in `sprite/r18`–`r20`.

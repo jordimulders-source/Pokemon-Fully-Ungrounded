@@ -5,3 +5,4 @@
 4. PROMPT_r4 (nieuw gesprek, r3 als bijlage): Jordi: "ja misschien wat groter".
    Resultaat: Jordi "hij verandert niks".
 5. PROMPT_r5: nieuw gesprek zonder eigen bijlage, alle feedback in de startprompt.
+   Resultaat `r5.png`: vrijwel gelijk aan r3, niet groter.

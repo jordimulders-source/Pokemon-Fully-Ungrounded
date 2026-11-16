@@ -1,0 +1,1 @@
+r16 = r15 (kop) + koeienvanger uit r14 (x2-27, y42-61, alleen niet-groen). Claude: r14-koeienvanger leest op 2x meer als de puntige kaak van het model (V-punten, schuine naden); r15 werd weer blokken.

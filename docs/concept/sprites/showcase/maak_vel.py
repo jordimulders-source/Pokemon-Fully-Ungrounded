@@ -41,8 +41,11 @@ items=[
 ("steenmozaiek/af/welp.png",'Steenjaguar-welp',"rock"),
 ("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
 ("dustly/af/dustly.png",'"Dustly"',"cosmic/poison"),
+("blobfish/af/blobfish.png",'Blobfish (winegum)',"water"),
 ("hauntflare/af/hauntflare.png",'"Hauntflare"',"cosmic/poison"),
 ("gengas/af/gengas.png",'"Gengas"',"cosmic/poison"),
+("spooktrein_fase2/af/spooktrein_fase2.png",'Spooktrein fase 2',"steel/ghost"),
+("spooktrein_fase3/af/spooktrein.png",'Spooktrein fase 3',"steel/ghost"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

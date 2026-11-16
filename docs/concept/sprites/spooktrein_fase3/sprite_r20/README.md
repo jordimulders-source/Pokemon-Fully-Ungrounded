@@ -1,0 +1,1 @@
+r20 = r19 + Jordi 16 nov: "losse pixel mag weg, evenals rechts van de mini geest is er een lijntje en er zijn 2 losse pixels onder de koeienvanger". Gewijzigd: (25,31) zwart->9 (buren 9), lijntje (46,10),(43-45,11) weg, (7,60),(8,60) weg.

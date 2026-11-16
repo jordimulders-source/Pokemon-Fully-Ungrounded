@@ -1901,3 +1901,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `frame2_studie/voorbeelden_expansion.gif`: frame 1/2 van Pikachu, Rattata, Raticate, Patrat, Plusle en Sentret (DS-stijl, zoals in de game): echte andere poses (bek open, poot/arm mee).
 - Oordeel na Jordi's twijfel: een tweede pose zelf tekenen kan Claude niet betrouwbaar; de route is een Gemini-bewerking van het model, waarvan alleen de veranderde onderdelen worden overgenomen.
 - `viscacha/gemini/PROMPT_FRAME2.md`: prompt voor de tweede pose (bek open, voorpoot hoger, staart iets op; achterpoten blijven staan).
+
+### [v0.0.464] - Viscacha frame 2: Gemini ronde 1
+- Jordi's Gemini-beeld voor de tweede pose (`viscacha/gemini/frame2_ronde1.png`; bek open, kop naar achteren, voorpoten tegen de borst) en een gif met frame 1 (`frame2_ronde1.gif`). Het beeld ligt op hetzelfde 16×-raster als de sprite; lijf, achterpoten en staart vallen vrijwel samen met frame 1. Afwijkend: oren (nabij oor opzij, verre oor spits), korte snorharen, wangpluk. Keuze overnemen of opnieuw genereren ligt bij Jordi.

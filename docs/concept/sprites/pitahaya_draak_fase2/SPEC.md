@@ -18,6 +18,7 @@
 - Bij r3: "en de bovenlip is een rechte lijn" · "let daar ook op"
 - Bij r4: "kijk ook naar hoe andere pokemon dat met open monden doen" · "want het modelm doet het ook niet super mooi"
 - Bij r5: "kan dat roze in de bek ook een andere kleur? een donkerdere tint van wit/grijs wat we nu aan het doen zijn? dan ziet dat er natuurlijker uit"
+- Bij r6: "ja kijk, en dan moet wat boven dat grijs zit dezelfde tint krijgen of nog zelfs een tint donkerder, binnenkant bovenkant mond"
 
 ## Keuzes Claude (niet besproken)
 - Maat: model verkleind tot ±62 px breed (proef: ±62×36), op de bodem van het 64×64-vlak.

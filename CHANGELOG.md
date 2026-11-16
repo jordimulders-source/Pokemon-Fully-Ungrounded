@@ -1762,3 +1762,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.440] - Blobfish fase 2: model gekozen
 - Jordi koos B (onderlagen rood en bordeaux): `blobfish_fase2/referenties/model_gekozen.png`. Volgende stap: frontsprite naar dit model.
+
+### [v0.0.441] - Blobfish fase 2: sprite r1
+- Maker: natief raster r5 (99×99), model op natief raster herbouwd, reductie 1,5×; r1 61×45, 16 kleuren, 301 px afwijkend van de kale reductie. Reparaties r2: mond/neus, ogen, schaduw rechts.

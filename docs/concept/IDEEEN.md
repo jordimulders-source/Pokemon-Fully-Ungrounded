@@ -41,6 +41,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Jordi (16 nov):** "fairy hoeft niet bepaald cute te zijn, zie grimmsnarl" (in v8 verwerkt).
   - **Gemini v8** (`sprites/vuurwerk/r6/gemini_v8.webp`), Jordi (16 nov): "dit vertaalt nooit naar een sprite denk ik. Plus ik vind het nog teveel gewoon een lijn". (Claude: losse dunne vonkenstrengen zonder massa; v7 had wel dichte, sprite-bare vormen.)
   - **Voorstellen Claude (16 nov, open):** (1) lijf opgerold tot een ring/vuurrad (erfenis van de wondertol); (2) lijf als ketting van rotjes (botst met "alles uit de vuurpijl"); (3) grote dichte barstvormige vinnen/kammen die breedte geven; (4) grotere kop, korter en dikker lijf. Steeds: dichte vormen en schone omlijning (zoals v7), geen dunne strengen.
+  - **Jordi (16 nov):** "nee geen spieren/gedrongen, dan krijgt die dalijk een sixpack, ik heb liever dat die wat meer ringen heeft, plus wat losse vlammen om de vorm wat dynamiek te geven, er komen geen rotjes, het vuurwerk ontstaat echt vanuit het vuur zelf". Prompt v9: `sprites/vuurwerk/gemini/PROMPT_v9_slang.md`.
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

@@ -1741,3 +1741,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi (16 nov): "Ik ben eruit. Een fontein die in een gargoyle evolved of andersom." Vastgelegd in `docs/concept/IDEEEN.md` bij het Rock/Water-idee van 9 nov; richting nog open.
 ### [v0.0.434] - Fontein ↔ gargoyle: vicuña/guanaco als kandidaat
 - Jordi (16 nov): de vicuña → guanaco-lijn als kandidaat voor de Rock/Water-lijn fontein ↔ gargoyle; "het moet er vooral goed uitzien". Met achtergrond (gargoyle = waterspuwer) in `docs/concept/IDEEEN.md`.
+### [v0.0.435] - Fontein ↔ gargoyle: Gemini-prompts v1
+- Vier prompts (richting A: vicuña-fontein → guanaco-gargoyle; B: andersom) in `docs/concept/sprites/fontein_gargoyle/gemini/PROMPT_v1.md`, met Jordi's citaten en Claudes eigen keuzes apart.

@@ -46,6 +46,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Gemini v10** (`sprites/vuurwerk/r8/gemini_v10.webp`), Jordi (16 nov): "het gezicht is beter, de kleur ook wel iets maar niet genoeg, die sparks lijken niet op vuurwerk". Prompt v11 (bijlage v10): `sprites/vuurwerk/gemini/PROMPT_v11_bijlage.md`.
   - **Jordi (16 nov):** "het hoofd is wel wat te kaal verder". Hoofd in een aparte bijlageronde na v11 (max. 2 wijzigingen per ronde). Voorstellen Claude (open): (a) vlampunten achter op de kop zoals in v9, op het gladde gezicht van v10; (b) een kleine vuurwerkbarst als kuif/kam; (c) glinsterpatroon of twinkels op de kop.
   - **Gemini v11** (`sprites/vuurwerk/r9/gemini_v11.webp`), Jordi (16 nov): "het vuurwerk is wederom geen vuurwerk". (Claude: licht zat steeds in het midden = glinster; echt vuurwerk heeft een leeg midden, licht in de uiteinden en hangende sporen.) Prompt v12: `sprites/vuurwerk/gemini/PROMPT_v12_bijlage.md`.
+  - **Vuurwerkreferentie Jordi (16 nov):** "dit is vuurwerk imo" (`sprites/vuurwerk/referentie_vuurwerk_pixelart.png`). Prompt v12b (met die referentie als bijlage 2) in hetzelfde bestand.
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

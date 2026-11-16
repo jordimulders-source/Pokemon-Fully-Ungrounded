@@ -24,3 +24,15 @@ They still look like sparkles or glints, not like fireworks, because the bright 
 
 Official Gen 3 front sprite style, 64x64, max 16 colors, plain white background.
 ```
+
+## v12b (16 nov): met Jordi's vuurwerkreferentie als bijlage 2
+Jordi: "dit is vuurwerk imo" (`../referentie_vuurwerk_pixelart.png`, pixelart-vel met negen barsten op een donkere lucht).
+Wat het vuurwerk maakt (Claude): losse, onderbroken stralen van ongelijke lengte met gaten ertussen, verspreide felle pixels langs en aan het eind van de stralen, onregelmatig (niet perfect symmetrisch), geen omlijning, klein of geen fel midden. Risico op wit: het vel leunt op een donkere lucht; de roze barsten (linksonder, midden onder) hebben genoeg donkere pixels om op wit te blijven staan.
+
+```
+Image 1 is a Pokémon sprite: KEEP EVERYTHING EXACTLY (shape, coils, face, colors, rocket). Change ONLY the two burst shapes on its body.
+
+Image 2 shows what real fireworks look like in pixel art. Redraw the two bursts in exactly that style, like the PINK bursts at the bottom left and bottom middle of image 2: separate broken rays of uneven length with gaps between them, scattered bright pixels along and at the ends of the rays, slightly irregular, no outline, no big bright center. Keep them about as large as the head, in pink, magenta and gold, with enough dark magenta pixels to stay visible on a white background.
+
+Do NOT copy the dark background of image 2. Official Gen 3 front sprite style, 64x64, max 16 colors, plain white background.
+```

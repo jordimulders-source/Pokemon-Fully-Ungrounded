@@ -11,6 +11,9 @@ for y in range(10, 24):
             px[x, y] = max(set(buren), key=buren.count) if buren else 2
 MONDEN = {
  'B2': (14, [7, 11, 13, 15, 17, 17, 17, 17, 15, 13, 11, 7], {7: 7, 8: 11, 9: 11, 10: 9}),
+ 'B4': (14, [9, 13, 15, 17, 19, 19, 19, 19, 19, 19, 19, 17, 15, 13], {}),
+ 'B6': (14, [9, 13, 15, 17, 19, 19, 19, 19, 19, 17, 15, 11], {}),
+ 'B5': (14, [11, 15, 17, 19, 21, 21, 21, 21, 21, 21, 21, 19, 17, 15], {}),
  'B3': (14, [9, 13, 15, 17, 17, 19, 19, 19, 17, 17, 15, 13], {7: 9, 8: 13, 9: 13, 10: 11}),
 }
 y0, rijen, tong = MONDEN[variant]
@@ -21,7 +24,7 @@ binnen = {(x, y) for (x, y) in geest if px[x, y] in (2, 3, 4)}
 mag = {(x, y) for (x, y) in binnen if all((x + dx, y) in binnen or px[x + dx, y] in range(7, 14) for dx in (-1, 1))}
 def zet(i, w, v):
     h = w // 2
-    for x in range(cx - h, cx + round(h * fac) + 1):
+    for x in range(cx - round(h * fac), cx + h + 1):  # kijkt naar links: linkerhelft is de verre kant
         if (x, y0 + i) in mag: px[x, y0 + i] = v
 for i, w in enumerate(rijen): zet(i, w, 1)
 if "--tong" in sys.argv: [zet(i, w, 5) for i, w in tong.items()]  # Jordi 16 nov: "haal de tong maar weg"
@@ -31,7 +34,7 @@ OGEN = {
 }
 NABIJ, VER = OGEN[sys.argv[6]]
 oy = y0 - len(NABIJ) - 1
-ogen = [(cx - 8, NABIJ), (cx + 3, VER)]
+ogen = [(cx - 7, VER), (cx + 2, NABIJ)]  # links = verre oog (smaller), rechts = nabije oog
 for ox, oog in ogen:
     for j, r in enumerate(oog):
         for i, c in enumerate(r):

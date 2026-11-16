@@ -1888,3 +1888,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Meting op 384 Gen 3-sprites (`analyse.py`, `res.json`): mediaan 25% van frame 2 is nieuw getekend; 97 soorten < 15% (verschuif-frames), 148 > 30% (actiepose).
 - Proef viscacha: kop en staartpluim verschuiven gaat met een script, maar onder de snorharen ontstaan gaten; naden en verborgen stukken zijn handwerk.
 - Oordeel: verschuif-frames kan Claude betrouwbaar bouwen (script + maker voor de naden + automatische controles); echte actieposes alleen via een model van Jordi, waarbij alleen het bewegende deel wordt overgenomen.
+
+### [v0.0.461] - Frame 2 viscacha, poging 3
+- Poging 2 leek een muppet (kop los van het lijf). Nieuw: alleen oortoppen 1 px naar achteren en staartpluim 1 px zwiepen; niets komt bloot, geen nieuwe pixels (`frame2_studie/viscacha_poging3.gif`, vel `viscacha_anim_front.png`, script `viscacha_f2.py`). Les in STUDIE.md §6.

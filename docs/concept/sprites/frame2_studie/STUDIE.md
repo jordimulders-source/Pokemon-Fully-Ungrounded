@@ -39,3 +39,8 @@ Kop + snorharen 1 px omhoog, staartpluim 1 px schuin omhoog, verder niets (`visc
 ## 5. Open voor Jordi (niet ingevuld)
 - Welke beweging per soort (kop, oor, staart, bek open, vleugels): dat is een ontwerpkeuze.
 - Of een verschuif-frame genoeg is of dat elke soort een actiepose moet krijgen zoals in SPRITE_PLAN §1.7/§1.12 staat ("Frame 2 = frame 1 een pixel verschoven" staat daar onder Nooit, behalve bij vormloze soorten).
+
+## 6. Poging 3 viscacha (Jordi 16 nov: "verschuif-frames mogen"; poging 2 "lijkt net een muppet")
+- Poging 2 bewoog de kop los van het lijf; daardoor klapperde hij als een pop.
+- Poging 3 (`viscacha_f2.py`, `viscacha_poging3.png/.gif`, vel `viscacha_anim_front.png`): het lijf en de kop staan stil; alleen de oortoppen kantelen 1 px naar achteren en de staartpluim zwiept 1 px. Dat zijn onderdelen die aan lucht grenzen, dus er komt niets bloot en er hoeft niets getekend te worden (81 px gewijzigd, geen nieuwe kleuren, onderste 24 rijen gelijk).
+- Les: kies voor verschuif-frames onderdelen met lucht eromheen (oren, staart, pluimen, antennes), schuif rij voor rij met hooguit 1 px trap per rij (anders breekt de omlijning), en beweeg de kop niet los van een kaak/borst die blijft staan.

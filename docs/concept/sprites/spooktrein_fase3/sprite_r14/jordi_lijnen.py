@@ -11,7 +11,7 @@ def lijnpixels():
             sx=(X-ox)/s; sy=(Y-oy)/s
             if not(0<=sx<64 and 0<=sy<64): continue
             c=J[Y,X]; e=S[int(sy),int(sx)]
-            if c.max()<60 and np.abs(c-e).sum()>60: pts.append((sx,sy))
+            if c.max()<60 and np.abs(c-e).sum()>60 and (0.3*e[0]+0.59*e[1]+0.11*e[2])>70: pts.append((sx,sy))  # alleen zwart op een niet-donkere spritepixel = schetslijn
     return pts
 if __name__=='__main__':
     P=lijnpixels(); print(len(P))

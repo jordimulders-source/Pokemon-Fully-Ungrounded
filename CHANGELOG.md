@@ -1759,3 +1759,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.439] - Blobfish fase 2: lagen in andere kleuren
 - `lagen/stapel_kleur.py`: rechtsonder met elke onderlaag een eigen kleur (donkerder); vier combinaties in `overzicht_kleuren.png`.
+
+### [v0.0.440] - Blobfish fase 2: model gekozen
+- Jordi koos B (onderlagen rood en bordeaux): `blobfish_fase2/referenties/model_gekozen.png`. Volgende stap: frontsprite naar dit model.

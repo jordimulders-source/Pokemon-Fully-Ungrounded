@@ -11,3 +11,4 @@
 8. Jordi: "en zorg ervoor dat het niet op copy paste lijkt". `stapel2.py`: per laag anders gespiegeld, verschoven, breder/dunner en donkerder; varianten a/b/c in `overzicht_varianten.png`.
 9. Jordi: "nee dit is niet goed, ik bedoel puur de kleur die anders moest" → varianten a/b/c afgekeurd; terug naar rechtsonder + per laag donkerder (`r5_plus2_breder_donker92.png` / `donker86.png`).
 10. Jordi: "nee het mogen echt andere kleuren zijn ipv andere tinten". `stapel_kleur.py`: rechtsonder, laag 2 en 3 een andere kleur en donkerder; A paars/blauw, B rood/bordeaux, C karamel/chocolade, D oranje/paars (combinaties: keuze Claude) in `overzicht_kleuren.png`.
+11. **Gekozen (Jordi, 16 nov): "B"** → `../referenties/model_gekozen.png` (r5 + 2 lagen, telkens 6% breder, rood en bordeaux). Dit is het model voor de frontsprite.

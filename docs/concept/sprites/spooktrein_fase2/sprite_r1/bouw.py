@@ -42,7 +42,7 @@ def inv(u):  # sprite-x (in natieve eenheden na indrukken) -> natieve x
     return np.where(u<XC-X0, X0+u, XC+(u-(XC-X0))/k)
 SS=8
 W=64; Hh=int(np.ceil((Y1-Y0)*s))
-out=np.zeros((64,64),int); BLK={}; GL={}; oy=64-Hh-0  # onderaan uitlijnen
+out=np.zeros((64,64),int); BLK={}; GL={}; WH=set(); oy=64-Hh-0  # onderaan uitlijnen
 oy=max(0,(64-Hh)//2+ (64-Hh)//4)
 for j in range(Hh):
     for i in range(W):
@@ -53,6 +53,9 @@ for j in range(Hh):
         cov=(c>0).mean()
         if cov<0.5: continue
         cc=c[c>0]; BLK[(oy+j,i)]=cc
+        gr=np.isin(cc,[12,13]).mean()
+        if gr>=0.35 and (cc==1).mean()<0.6:      # wielen: grijs van het model gaat voor op de lijnregel
+            u,uc=np.unique(cc[np.isin(cc,[12,13])],return_counts=True); out[oy+j,i]=u[uc.argmax()]; WH.add((oy+j,i)); continue
         if (cc==1).mean()>=TL:
             rr=a[np.ix_(yy,xx)].reshape(-1,3)[c==1].mean(0)   # echte modelkleur van de lijn
             out[oy+j,i]=5 if rr[1]-rr[0]>12 else 1; GL[(oy+j,i)]=rr; continue
@@ -69,9 +72,10 @@ LUM=P@[0.3,0.59,0.11]; nr=0
 fgm=out>0; pad=np.pad(fgm,1)
 edge=fgm&~(pad[:-2,1:-1]&pad[2:,1:-1]&pad[1:-1,:-2]&pad[1:-1,2:])
 for (y,x) in zip(*np.where(edge)):
+    if (y,x) in WH: continue
     cc=BLK[(y,x)]; v=cc[np.argmin(LUM[cc-1])]
     if v!=out[y,x]: out[y,x]=v; nr+=1
-print('randpixels naar donkerste modelkleur',nr)
+print('randpixels naar donkerste modelkleur',nr,'wielpixels',len(WH))
 np.save(f'basis_{VAR}.npy',out); open(f'basis_{VAR}.meta','w').write(f'{s} {X0} {Y0} {oy} {XC} {k}')
 pal=[0,0,0]+[int(v) for v in P.ravel()]; pal+= [0]*(768-len(pal))
 im=Image.fromarray(out.astype(np.uint8),'P'); im.putpalette(pal); im.save(f'basis_{VAR}.png',transparency=0)

@@ -1,6 +1,6 @@
 # Gemini-prompt: spooktrein fase 2 (Steel/Ghost), v5 (16 nov)
 
-Ronde 3 (`r3/fase2_v4.png`), Jordi: "de vorm van de geest is nu goed, maar het gezicht vind ik echt slecht. Is teveel gengar, de mond moet echt overdreven groot zijn en doe maar kleine pretoogjes" / "en ik wil meer ghost power zien" / "dat de kar echt extreem hard gaat" / "en meer eenw agon dan een mine cart".
+Ronde 3 (`r3/fase2_v4.png`), Jordi: "de vorm van de geest is nu goed, maar het gezicht vind ik echt slecht. Is teveel gengar, de mond moet echt overdreven groot zijn en doe maar kleine pretoogjes" / "en ik wil meer ghost power zien" / "dat de kar echt extreem hard gaat" / "en meer eenw agon dan een mine cart" / "staal, geen hout".
 Nieuw gesprek, bijlage: `r3/fase2_v4.png`; vier wijzigingen (gezicht, geestkracht, snelheid, wagonvorm); de geest-vorm blijft (zelfde aanpak als fase 3 v11). Lukt het niet: v4 opnieuw draaien met deze gezichtsregel erin.
 
 ```
@@ -25,7 +25,7 @@ Redraw this exact design with FOUR changes.
 
 4. The wagon is a railway wagon, not a mine cart:
 - Long, low and rectangular with straight vertical sides (no tapered bucket shape), on an iron railway chassis with two round buffers at the front and railway wheels under it.
-- Still rusty iron, rickety and half falling apart.
+- Made of rusty STEEL plates with rivets, NOT wood: no planks, no wood grain. Rickety and half falling apart.
 
 Keep everything else the same: the steam-plume shape of the ghost with the curl on top, the raised fist, the hand on the rim, the colors, facing left. No speed lines or effects outside the creature.
 ```

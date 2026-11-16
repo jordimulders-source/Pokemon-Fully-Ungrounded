@@ -1835,10 +1835,58 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 r28: binnenlijnen in kop en koeienvanger zachter (Jordi: "voelen nog wat hard"): A = nieuwe donkere roesttint (62,32,26), B = roestdonker 9; buitenlijn blijft zwart. Keuze aan Jordi.
 - **Spooktrein fase 3: frontsprite af, versie 4** (r29): binnenlijnen in kop en koeienvanger zachter (A, Jordi), strenge keuring PASS na 1 px; `af/` en overzichtsvel bijgewerkt.
 
-### [v0.0.444] - Spooktrein fase 1: Gemini-prompt v1
+### [v0.0.444] - Blobfish fase 2: Gemini-prompt r1
+- `docs/concept/sprites/blobfish_fase2/gemini/PROMPT_r1.md`: eerste Gemini-prompt voor fase 2 van de blobfish-lijn ("pudding"), met Claude's eigen keuzes apart gemarkeerd.
+
+### [v0.0.445] - Blobfish fase 2: Gemini r1 + bijsturing r2
+- `blobfish_fase2/gemini/r1.png` bewaard; `PROMPT_r2.md` met Jordi's feedback ("meer pudding, chagrijniger, overdrevener, meer gesmolten").
+
+### [v0.0.446] - Blobfish fase 2: Gemini r2 + bijsturing r3
+- `r2.png` bewaard; `PROMPT_r3.md` ("ogen zijn nu te menselijk en de bovenkant moet rond blijven").
+
+### [v0.0.447] - Blobfish fase 2: Gemini r3
+- `r3.png` bewaard (beste tot nu toe; eindvorm nog twijfel); rondeoverzicht in `blobfish_fase2/gemini/README.md`.
+
+### [v0.0.448] - Blobfish fase 2: Gemini-prompt r4
+- `PROMPT_r4.md`: nieuw gesprek met r3 als bijlage, alleen groter ("ja misschien wat groter").
+
+### [v0.0.449] - Blobfish fase 2: Gemini-prompt r5
+- r4 veranderde niets (bijlage gekopieerd); `PROMPT_r5.md`: nieuwe startprompt met alle feedback, zonder r3 als bijlage.
+
+### [v0.0.450] - Blobfish fase 2: Gemini r5
+- `r5.png` bewaard (vrijwel gelijk aan r3).
+
+### [v0.0.451] - Blobfish fase 2: extra lagen onder r5
+- `blobfish_fase2/lagen/`: puddingvoet van r5 1 of 2 keer extra eronder gezet (gelijk of breder), script `stapel.py`, overzicht `overzicht.png`.
+
+### [v0.0.452] - Blobfish fase 2: lagen donkerder
+- Gekozen opbouw (+2 lagen, telkens 6% breder) met elke laag donkerder, twee sterktes; `stapel.py` kreeg een kleurfactor.
+
+### [v0.0.453] - Blobfish fase 2: lagen zonder copy-paste-look
+- `lagen/stapel2.py`: elke laag eigen spiegeling, verschuiving, dikte, breedte en donkerte; varianten a/b/c (`overzicht_varianten.png`).
+
+### [v0.0.454] - Blobfish fase 2: varianten a/b/c afgekeurd
+- Jordi bedoelde alleen de kleur; kandidaten blijven rechtsonder met elke laag donkerder (`donker92`/`donker86`).
+
+### [v0.0.455] - Blobfish fase 2: lagen in andere kleuren
+- `lagen/stapel_kleur.py`: rechtsonder met elke onderlaag een eigen kleur (donkerder); vier combinaties in `overzicht_kleuren.png`.
+
+### [v0.0.456] - Blobfish fase 2: model gekozen
+- Jordi koos B (onderlagen rood en bordeaux): `blobfish_fase2/referenties/model_gekozen.png`. Volgende stap: frontsprite naar dit model.
+
+### [v0.0.457] - Blobfish fase 2: sprite r1
+- Maker: natief raster r5 (99×99), model op natief raster herbouwd, reductie 1,5×; r1 61×45, 16 kleuren, 301 px afwijkend van de kale reductie. Reparaties r2: mond/neus, ogen, schaduw rechts.
+
+### [v0.0.458] - Blobfish fase 2: frontsprite af
+- `blobfish_fase2/af/blobfish_fase2.png` (+ 8× en vel), 61×45, 15 kleuren. r3 keuring PASS + reparaties (r4), r5 na tweede keuring PASS. Les in GEMINI.md. Naam, type en fase 1 nog open.
+
+### [v0.0.459] - Blobfish fase 2: gelatina de capas
+- Jordi herkent de gelaagde sprite als gelatina de capas (SPEC.md).
+
+### [v0.0.460] - Spooktrein fase 1: Gemini-prompt v1
 - `docs/concept/sprites/spooktrein_fase1_2/gemini/PROMPT_fase1_v1.md`: roestige schroothoop met treinspullen, schoorsteen half rechtop met 2 ogen erin, puur Steel, geen geest; kleuren van het roest van fase 2. Wacht op Gemini-resultaat.
 
-### [v0.0.445] - Spooktrein fase 1: frontsprite af
+### [v0.0.461] - Spooktrein fase 1: frontsprite af
 - Gemini-rondes 1–4 (prompt v1/v2 + bijsturen): schroothoop met schuine schoorsteen en één groot spaakwiel; ogen maken we zelf (Jordi: "ogen niet goed maar dat gaan we zelf maar doen").
 - Sprite r1–r4 (automatische verkleining + samenvoegen in het midden) gaven brei/keien/puzzel; r5–r6 (verse maker): de hoop met de hand opgebouwd als stapel losse, overlappende objecten (rail schuin, klinkplaat, klem, bijlplaat, onderplaat, bout, staaf, U-beugel), wiel en schoorsteen bevroren. Jordi: "nice! dat is erg netjes opgelost".
 - Ogen: vier varianten, Jordi koos D (ovaal met glans) "door het kleurgebruik".
@@ -1846,9 +1894,12 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/spooktrein_fase1/af/spooktrein_fase1.png` (+ `_8x`, `keuring.md`); op het overzichtsvel als "Spooktrein fase 1" (steel). Naam nog open.
 - Ter info (keurder): donkerder dan echte Gen 3-staalsoorten, trouw aan het model.
 
-### [v0.0.446] - Werknaam Wagogogon
+### [v0.0.462] - Werknaam Wagogogon
 - Spooktrein fase 2 heet **Wagogogon** (Jordi, 16 nov). In POKEMON.md (Werknamen), Stand van zaken en op het overzichtsvel.
 
-### [v0.0.447] - Main gemerged; overzichtsvel per lijn
+### [v0.0.463] - Main gemerged; overzichtsvel per lijn
 - Main (spooktrein fase 3 af) in deze branch gemerged; overzichtsvel bevat nu de hele spooktreinlijn (fase 1, Wagogogon, fase 3) en Dustly staat naast Hauntflare en Gengas.
 - Regel (Jordi, 16 nov): "houd dat als regel aan dat de hele lijn naast elkaar hoort"; in CLAUDE.md en `maak_vel.py`.
+
+### [v0.0.464] - Overzichtsvel: blobfish fase 2 erbij
+- Main (blobfish fase 2 af) gemerged; blobfish fase 2 staat op het overzichtsvel naast fase 1 (regel: hele lijn naast elkaar).

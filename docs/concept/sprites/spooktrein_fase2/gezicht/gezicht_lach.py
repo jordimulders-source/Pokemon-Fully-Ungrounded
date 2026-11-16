@@ -23,11 +23,12 @@ VORMEN = {  # per rij: lijst van (van, tot) t.o.v. cx, ongeschaald
  'O': [[(-4, 4), (-10, -10), (10, 10)], [(-6, 6), (-10, -9), (9, 10)], [(-7, 7), (-9, -8), (8, 9)], [(-8, 8)],
        [(-9, 9)], [(-9, 9)], [(-9, 9)], [(-9, 9)], [(-9, 9)], [(-8, 8)], [(-7, 7)], [(-5, 5)]],
 }
-sx = lambda d: cx + (round(d * fac) if d < 0 else d)
+mdx, mdy = (int(sys.argv[4]), int(sys.argv[5])) if len(sys.argv) > 5 else (0, 0)  # alleen de mond verschuiven
+sx = lambda d: cx + mdx + (round(d * fac) if d < 0 else d)
 for i, segs in enumerate(VORMEN[vorm]):
     for a, b in segs:
         for x in range(sx(a), sx(b) + 1):
-            if (x, y0 + i) in mag: px[x, y0 + i] = 1
+            if (x, y0 + mdy + i) in mag: px[x, y0 + mdy + i] = 1
 VER = ['.11..', '1551.', '1..51', '1...1'] if 0 else ['..1..', '.151.', '15.51', '1...1']
 NABIJ = ['..11..', '.1551.', '15..51', '1....1']
 oy = y0 - len(NABIJ)  # 1 rij lager dan voorheen

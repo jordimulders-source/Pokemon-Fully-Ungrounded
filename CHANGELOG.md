@@ -2051,3 +2051,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.504] - Mate-lijn fase 2: r6 + water van r2
 - r6 bewaard (zilveren rand om het voorste vak opgelost); het water van r2 teruggeplakt in `mate_fase2/r6_samengesteld/r6_water_r2.png`. Ogen nog open.
+
+### [v0.0.505] - Mate-lijn fase 2: Gemini-prompt v8
+- `PROMPT_v8.md`: alleen het gezicht van het ventje ("keihard aan het werk"); de kop wordt daarna in het samengestelde model geplakt. Natief raster van het model: `mate_fase2/ogen/natief.py` (pitch 10,24, fase 0).

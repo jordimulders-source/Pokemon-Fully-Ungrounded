@@ -1756,3 +1756,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.438] - Blobfish fase 2: varianten a/b/c afgekeurd
 - Jordi bedoelde alleen de kleur; kandidaten blijven rechtsonder met elke laag donkerder (`donker92`/`donker86`).
+
+### [v0.0.439] - Blobfish fase 2: lagen in andere kleuren
+- `lagen/stapel_kleur.py`: rechtsonder met elke onderlaag een eigen kleur (donkerder); vier combinaties in `overzicht_kleuren.png`.

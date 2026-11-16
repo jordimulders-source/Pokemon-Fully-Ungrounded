@@ -5,11 +5,12 @@ Hoopa Unbound (expansion, `graphics/pokemon/hoopa/unbound/anim_front.png`, gif i
 
 Bijlage: **de sprite zelf**, `../af/gengas_8x.png` (bij de viscacha hield Gemini zo exact het pixelraster aan; lijf en staart vielen pixel voor pixel samen met frame 1).
 
-## Prompt
+## Prompt (v2, Jordi 16 nov: "het zou tof zijn als gengas zijn hoofd ietsje hoger gaat, een soort knikbeweging, naast wat de manen doen")
 
-> Edit the attached pixel-art sprite. This is the first frame of a Pokémon battle sprite; make the second animation frame. Keep the pixel-art style, the pixel grid and the exact color palette. The round gas body, the cloud bands, the gas ears, the red eyes and the white grin stay exactly the same, pixel for pixel, in the same place.
+> Edit the attached pixel-art sprite. This is the first frame of a Pokémon battle sprite; make the second animation frame. Keep the pixel-art style, the pixel grid and the exact color palette. Do not redraw anything; only move parts.
 >
-> Change only the four floating grey moons, which are its detached hands and feet: each moon moves noticeably to a new position along its orbit around the body, as if the hands and feet are swinging. Keep each moon's exact shape, size, colors and craters; do not redraw them.
+> 1. The round gas body with its face (its head) moves a little higher, a few pixels up, like a small nod. Its shape, cloud bands, gas ears, red eyes and white grin stay exactly the same, pixel for pixel; only its position changes.
+> 2. The four floating grey moons, which are its detached hands and feet, each move noticeably to a new position along their orbit around the body, as if the hands and feet are swinging. Keep each moon's exact shape, size, colors and craters.
 >
 > Plain white background, no glow, no effects, no text.
 

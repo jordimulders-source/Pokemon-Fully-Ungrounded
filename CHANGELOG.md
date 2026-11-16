@@ -1909,3 +1909,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: viscacha-frame 2 uit Gemini "echt verbazingwekkend goed"; alleen de snorharen ontbreken (nog te fixen). Werkwijze vastgelegd in STUDIE.md §8 en GEMINI.md.
 - Hoopa Unbound bekeken (`frame2_studie/hoopa_unbound.gif`): in frame 2 verdwijnen alle losse armen. Ook `gengar.gif` ter vergelijking.
 - `gengas/gemini/PROMPT_FRAME2.md`: prompt waarin alleen de vier manen (losse handen/voeten) bewegen.
+
+### [v0.0.466] - Gengas frame 2: prompt v2 (knik)
+- Prompt aangevuld: het hoofd (de gasbol met gezicht) gaat een paar pixels hoger als knikbeweging, naast de bewegende manen (Jordi). Lukt dit, dan ziet Jordi de tests als geslaagd en is dit de werkwijze voor frame 2.

@@ -30,6 +30,9 @@ for i, w in enumerate(rijen): zet(i, w, 1)
 if "--tong" in sys.argv: [zet(i, w, 5) for i, w in tong.items()]  # Jordi 16 nov: "haal de tong maar weg"
 OGEN = {
  'o2': (['.1111.', '111111', '11..11', '1....1'], ['.111.', '11111', '11.11', '1...1']),
+ 'l1': (['.1111.', '1....1', '1....1'], ['.111.', '1...1', '1...1']),
+ 'k2': (['.1111.', '155551', '15..51', '1....1'], ['.111.', '15551', '15.51', '1...1']),
+ 'k3': (['..11..', '.1551.', '155551', '15..51', '1....1'], ['..1..', '.151.', '15551', '15.51', '1...1']),
  'o3': (['..11..', '.1111.', '111111', '11..11', '1....1'], ['..1..', '.111.', '11111', '11.11', '1...1']),
 }
 NABIJ, VER = OGEN[sys.argv[6]]
@@ -38,6 +41,6 @@ ogen = [(cx - 7, VER), (cx + 2, NABIJ)]  # links = verre oog (smaller), rechts =
 for ox, oog in ogen:
     for j, r in enumerate(oog):
         for i, c in enumerate(r):
-            if c == '1': px[ox + i, oy + j] = 1
+            if c in '15': px[ox + i, oy + j] = int(c)
 im.save(uit, transparency=0)
 im.convert('RGB').resize((512, 512), Image.NEAREST).save(uit.replace('.png', '_8x.png'))

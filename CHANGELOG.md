@@ -1994,8 +1994,22 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.488] - Frame 2: werkwijze besloten, Gengas variant C + V_SLIDE gekozen
 - Jordi: "de tweede gif van de 3 vind ik echt uitstekend" (variant C met ANIM_V_SLIDE). Beide tests geslaagd; werkwijze in STUDIE.md §12 en verwijzing in SPRITE_WERKWIJZE. Maker-agent schoont de rotatieranden van frame 2 op (vorm en beweging bevroren).
 
-### [v0.0.489] - Viscacha frame 2: snorharen terug
+### [v0.0.489] - Vuurwerklijn: ontwerp eindvorm (vuurwerkslang)
+- Nieuwe lijn Fire/Fairy: sterretje → wondertol → vuurpijl (Jordi). Na stekelvarken (geschrapt: "beetje te puny") en Amaru (vrij gehouden voor de Uku Pacha-slang en de Dragon-gym) werd de eindvorm een vuurwerkslang: lijf en kop van vuur dat uit een vuurpijl (de staart) stroomt, kleurverloop goud-wit → roze → karmijn, verjaagt boze geesten.
+- 14 Gemini-prompts (`docs/concept/sprites/vuurwerk/gemini/`), rondes en referenties in `docs/concept/sprites/vuurwerk/`; citaten en besluiten in `docs/concept/IDEEEN.md` (Vuurwerk). Gemini kan geen vuurwerkbarsten tekenen; die komen in de sprite naar Jordi's pixelart-vel.
+- Lessen in `docs/lessen/GEMINI.md` (voorwerp-Pokémon zonder anatomie, regenboogbezem, kop in kraag, dunne strengen, vuurwerk = licht aan de uiteinden, frisse startprompt met alle besluiten werkte het best, modeloog vergroten i.p.v. vervangen).
+
+### [v0.0.490] - Vuurwerkslang: frontsprite af
+- `docs/concept/sprites/vuurwerk_fase3/af/vuurwerkslang.png` (+ `_8x`), naar Gemini-model v14 (`referenties/model_v14.png`), 17 rondes in `sprite/`; keuring PASS (`sprite/keuring_r12/`).
+- Jordi's afwijkingen: kop 115%, rechteroog met pupil, glitter weg → vuurwerkspikkels (lijf en om de kop, naar `referenties/vuurwerk_pixelart_jordi.png`), vlamtong bovenop, losse vlam rechtsboven variant B. Linkeroog: "r12 p2 blijft het beste".
+- Spikkels om de kop: variant B (grote barst linksonder) staat erin; variant "rond" (`sprite/r10/sprite_rond.png`) ligt klaar als Jordi wil wisselen.
+- Op het overzichtsvel (`showcase/frontsprites_af.png`) als "Vuurwerkslang" (Fire/Fairy; naam open). Sterretje en wondertol (fase 1–2) nog te doen.
+
+### [v0.0.491] - Vuurwerkslang: zonder losse vuurwerkbarst
+- Jordi: afgekapt vuurwerk linksboven "gaat er raar uitzien in een gevecht"; de barst linksonder had "nog niet echt een verband" met de sprite; "pokemon hebben over het algemeen geen special effects". Alle losse vuurwerkspikkels/barsten weg (plek teruggezet naar het model via r10 "rond"); het vuurwerk zit nu in het dier zelf (staartpijl, kleurverloop, spikkels in het lijf, twinkels). Jordi: "ja hij is beter zonder, zorgt ook voor minder ruis waardoor de sprite beter leest".
+- `af/vuurwerkslang.png` (+ `_8x`) en het overzichtsvel bijgewerkt; varianten in `sprite/r18`–`r20`.
+### [v0.0.492] - Viscacha frame 2: snorharen terug
 - Maker-agent (`viscacha/frame2/`): Gemini-frame teruggezet op 64×64 en het palet van frame 1; vaste zone wijkt 0 px af van frame 1; Gemini's stompje vervangen door de 37 snorhaarpixels van frame 1, als groep 11 px omhoog; 6 px opschoning. Aandachtspunt: de rechter haren lopen nu over de gele wangpluk en de wang (in frame 1 eronder).
 
-### [v0.0.490] - Viscacha frame 2 af
+### [v0.0.493] - Viscacha frame 2 af
 - Jordi: "nee ik vind hem echt top zo" (snorharen over de wangpluk blijven zo). Frame 2 af: `viscacha/frame2/viscacha_anim_front.png`.

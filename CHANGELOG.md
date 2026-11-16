@@ -2008,3 +2008,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.491] - Vuurwerkslang: zonder losse vuurwerkbarst
 - Jordi: afgekapt vuurwerk linksboven "gaat er raar uitzien in een gevecht"; de barst linksonder had "nog niet echt een verband" met de sprite; "pokemon hebben over het algemeen geen special effects". Alle losse vuurwerkspikkels/barsten weg (plek teruggezet naar het model via r10 "rond"); het vuurwerk zit nu in het dier zelf (staartpijl, kleurverloop, spikkels in het lijf, twinkels). Jordi: "ja hij is beter zonder, zorgt ook voor minder ruis waardoor de sprite beter leest".
 - `af/vuurwerkslang.png` (+ `_8x`) en het overzichtsvel bijgewerkt; varianten in `sprite/r18`–`r20`.
+
+### [v0.0.492] - Vuurwerklijn: wondertol geschrapt, voorvormen geparkeerd
+- Fase 2 (wondertol) als salamander geprobeerd in 8 Gemini-rondes (`docs/concept/sprites/wondertol/`, prompts v1–v8, referenties van Jordi); geschrapt ("we schrappen dit idee").
+- Lijn wordt heroverwogen; de vuurwerkslang (fase 3) blijft. Voorvormen geparkeerd (IDEEEN.md → Vuurwerk).
+- Les in `docs/lessen/GEMINI.md`: vormloos vuurwerk als lijf lukt niet via Gemini.

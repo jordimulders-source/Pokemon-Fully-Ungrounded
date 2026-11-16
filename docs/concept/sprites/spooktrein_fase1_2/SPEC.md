@@ -15,5 +15,8 @@ Fase 3 (stoomtrein, Steel/Ghost) wordt in een andere sessie gemaakt: `../spooktr
 - Kleur geest (Jordi, 16 nov): "de geest blijft dezelfde kleur" (als in het fase 3-model, `../spooktrein_fase3/model/model.webp`).
 - Aandrijving zichtbaar, Jordi (16 nov): "een combinatie" van de voorstellen (a) groene barsten die de wagon bij elkaar houden, (b) wielen (deels) van groen spookgas, (c) geestwolk onder de wagon; Jordi: "ja ik bedoel alle 3".
 
+- Gezicht (Jordi, 16 nov): Gemini kan het niet ("gemini gaat geen goed gezicht kunnen ontwerpen"), "dan maken we zelf het gezicht wel"; "de mond moet echt overdreven groot zijn en doe maar kleine pretoogjes"; "voor de mond zat ik aan een overdreven grote O mond te denken".
+- Design (Jordi, 16 nov) bij ronde 5: "ik vind de rest van het design wel tof". Kandidaten model: `gemini/r5/fase2_v6.png` (advies Claude) of `gemini/r6/fase2_v6b.png`.
+
 ## Open
 - Werkwijze: Gemini (zoals fase 3), daarna `docs/lessen/GEMINI.md`.

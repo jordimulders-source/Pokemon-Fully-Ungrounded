@@ -1891,3 +1891,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.461] - Frame 2 viscacha, poging 3
 - Poging 2 leek een muppet (kop los van het lijf). Nieuw: alleen oortoppen 1 px naar achteren en staartpluim 1 px zwiepen; niets komt bloot, geen nieuwe pixels (`frame2_studie/viscacha_poging3.gif`, vel `viscacha_anim_front.png`, script `viscacha_f2.py`). Les in STUDIE.md §6.
+
+### [v0.0.462] - Frame 2: betere studie + viscacha poging 4
+- Poging 3 afgekeurd (Jordi: "een paar pixels die op en neer bewegen is geen beweging").
+- Nieuw in de studie (§7): verschilvellen (`vel.py`) van knaagdieren en kleine soorten in Gen 3- en DS-stijl, en per sprite de verschuiving van bovenkant en voeten (`banden.py`). Bij ±90% beweegt de hele bovenkant, meestal 2–4 px of meer; alleen kleine delen bewegen bij ±10%.
+- Poging 4: het hele lijf strekt 3 px omhoog vanuit vaste voeten (A), en daarnaast een versie die ook 2 px naar voren leunt (B). Er hoeft niets bijgetekend te worden.

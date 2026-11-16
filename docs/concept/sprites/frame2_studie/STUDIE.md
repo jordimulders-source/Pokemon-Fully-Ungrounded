@@ -44,3 +44,28 @@ Kop + snorharen 1 px omhoog, staartpluim 1 px schuin omhoog, verder niets (`visc
 - Poging 2 bewoog de kop los van het lijf; daardoor klapperde hij als een pop.
 - Poging 3 (`viscacha_f2.py`, `viscacha_poging3.png/.gif`, vel `viscacha_anim_front.png`): het lijf en de kop staan stil; alleen de oortoppen kantelen 1 px naar achteren en de staartpluim zwiept 1 px. Dat zijn onderdelen die aan lucht grenzen, dus er komt niets bloot en er hoeft niets getekend te worden (81 px gewijzigd, geen nieuwe kleuren, onderste 24 rijen gelijk).
 - Les: kies voor verschuif-frames onderdelen met lucht eromheen (oren, staart, pluimen, antennes), schuif rij voor rij met hooguit 1 px trap per rij (anders breekt de omlijning), en beweeg de kop niet los van een kaak/borst die blijft staan.
+
+## 7. Betere studie (16 nov): wat beweegt er echt (Jordi: "een paar pixels die op en neer bewegen is geen beweging")
+Poging 3 is afgekeurd. De meting in §2 zei alleen *hoeveel* er verandert, niet *wat*. Nieuw:
+- `vel.py`: vellen frame 1 | frame 2 | verschil (grijs gelijk, rood alleen frame 2, blauw alleen frame 1, geel andere kleur). `vel_gba_knaagdieren.png`, `vel_gba_klein.png`, `vel_ds_knaagdieren.png` (de DS-stijl is wat de game nu toont, `P_GBA_STYLE_SPECIES_GFX FALSE`).
+- `banden.py`: per sprite de beste verschuiving van de bovenkant (35% bovenaan) en van de voeten (15% onderaan).
+
+| | Gen 3 (384) | DS-stijl (844) |
+|---|---|---|
+| bovenkant beweegt, voeten bewegen ook (sprong, hele figuur) | 58% | 52% |
+| bovenkant beweegt, voeten vast (strekken, leunen, buigen) | 29% | 37% |
+| bovenkant stil (alleen kleine delen) | 11% | 9% |
+
+- Bij vaste voeten beweegt de bovenkant meestal **2 tot 4 px of meer** (Gen 3: 1 px 29×, 2 px 29×, 3 px 18×, ≥4 px 39×); omhoog en omlaag komen allebei voor.
+- Wat je op de vellen ziet: **het hele lijf beweegt als één geheel**, vanuit de voeten: Sentret en Cinccino strekken zich omhoog, Pachirisu en Furret leunen, Lillipup en Plusle springen, Zigzagoon duikt met de kop omlaag. Oren en staart bewegen mee of tegen (Eevee, Linoone, Minccino: staart zwaait 4–8 px). Daarbovenop vaak een getekend detail (bek open, ogen dicht).
+- Dus fout in poging 2: kop los van het lijf (muppet). Fout in poging 3: alleen puntjes van 1 px; dat doet Game Freak bijna nooit.
+
+### Poging 4 viscacha: het hele lijf (`viscacha_poging4.png`, `_strek.gif`, `_strek_leun.gif`, vellen `viscacha_anim_front_A/B.png`)
+- **A strekken:** drie rijen gedupliceerd (in de borst en in de poten); alles boven de poten komt 3 px omhoog, de voeten blijven staan. Hij gaat alerter rechtop staan, met langere poten.
+- **B strekken + leunen:** als A, en de bovenkant leunt daarna oplopend tot 2 px naar voren.
+- Er hoeft niets bijgetekend te worden, want rijen dupliceren laat niets bloot. Wel nadelen: gerekte diagonalen krijgen een trapje, en bij B vallen 2 px snorhaar links buiten het vak.
+
+### Oordeel, bijgesteld
+- Een frame waarin het hele lijf strekt, leunt of duikt (zoals Sentret, Pachirisu, Cinccino), kan Claude met een script als onderlaag bouwen; een maker ruimt daarna alleen de trapjes op.
+- Een beweging plus getekend detail (bek open, staart die echt zwaait, poot omhoog) blijft tekenwerk: via een maker-agent of een model van Jordi.
+- Welke beweging een soort krijgt, kiest Jordi.

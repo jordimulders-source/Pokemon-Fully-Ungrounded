@@ -1781,3 +1781,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 sprite r12 = koeienvanger-voorstel van de keurder (drie platen en een tand, schuine bovenranden, groen diff 0); eindkeuring.
 - Spooktrein fase 3: eindkeuring r12 FAIL (21 px: losse zwarte pixels, dubbele onderlijn, buil); MOET toegepast → r13; korte herkeuring.
 - Spooktrein fase 3 sprite r14: koeienvanger met de IJskomeet-methode (donkerste modelpixel wint bij genoeg lijn), alles 2 px naar rechts, wolkpunten netjes ingekort; nog korrelig → r15 (verse maker): koeienvanger ontkorrelen + kleur/schaduw kop.
+- Spooktrein fase 3 sprite r15 (kop-kleur via gemiddelde per voetafdruk, koeienvanger ontkorreld maar weer blokken); r16 = r15-kop + r14-koeienvanger.

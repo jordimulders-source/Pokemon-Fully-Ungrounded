@@ -9,3 +9,4 @@ Besluiten van de lijn: `../spooktrein_fase1_2/SPEC.md`. Model: `model/model.png`
 - Jordi (16 nov), daarna: "een bruine brei moet het niet worden".
 - Jordi (16 nov) bij r4: "ja wat beter, maar het is nog een blurry mess met wat willekeurige lijnen, zorg dat het netjes aansluit en dat het echt op een stapel lijkt en niet op een legpuzzel".
 - Jordi (16 nov), daarna: "ja en er mag dus overlap zijn, sommige stukken liggen op andere stukken, en dat je die andere stukken dan niet volledig ziet is niet erg".
+- Jordi (16 nov) bij r5: "beter, alleen die staaf lijkt te zweven, omdat je rechte lijnen ehbt gebruikt. Nu lijkt het net een rijdende kar".

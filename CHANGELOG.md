@@ -1699,3 +1699,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.415] - Spooktreinlijn: fase 1 en 2 besloten
 - Jordi: fase 1 = kleine schroothoop met treinspullen, één roestig stuk heeft ogen (Steel); fase 2 = krakkemikkige roestige wagon (geen mijnkar, dat is Carkol al) met een groene geest erin, één hand op de rand, één juichend, mond wijd open, kar zichtbaar aangedreven door de geest (Steel/Ghost). Vervangt "voorkant van de trein met 1 wagon". `docs/concept/sprites/spooktrein_fase1_2/SPEC.md`.
+
+### [v0.0.416] - Spooktreinlijn: fase 1/2 uitgewerkt, prompt fase 2
+- Jordi: fase 1 heeft nog geen geest ("gewoon een hoop met metaal dat sentient is ... wel een zwakke pokemon"); de schoorsteen staat half rechtop in de hoop, met 2 ogen erin. Fase 2: alle drie de aandrijvingen (groene barsten, spookwielen, geestwolk eronder); geest blijft dezelfde kleur als in fase 3.
+- Gemini-prompt fase 2 v1: `docs/concept/sprites/spooktrein_fase1_2/gemini/PROMPT_fase2_v1.md`.

@@ -80,3 +80,8 @@ Poging 3 is afgekeurd. De meting in §2 zei alleen *hoeveel* er verandert, niet 
 - **Viscacha:** de vraag was een **handeling van een dier** ("roept met open bek, poot omhoog"). Daar is Gemini op getraind; het lijf werd niet genoemd, dus bleef het staan.
 - **Gengas:** de vraag was **meetkunde** ("schuif 3 px omhoog", "6 px naar links"). Getallen en precieze verplaatsingen kan het niet; "verplaats de maan" werd "teken een maan daar" (ronde 2: zes manen). Daarnaast is Gengas een ongewoon ontwerp (losse manen als handen/voeten) dat het niet als ledematen herkent, en vult de bol bijna het hele vak, zodat "omhoog" een platgedrukte bol wordt.
 - Les: **Gemini voor poses (in woorden als handeling: lachen, juichen, zwaaien), een script voor pure verplaatsing.** Een vraag in getallen of posities aan Gemini werkt niet.
+
+## 10. Gengas: Gemini kan geen knik bij een bol (16 nov)
+- Bijlage zonder manen + "the creature nods, lifts its head": Gemini gaf dezelfde bol terug (op 11× i.p.v. 16×), alleen de oren iets anders (`gengas/frame2/gemini_knik_r1.png`). Een bol heeft geen nek; "hoofd omhoog" is voor Gengas pure verplaatsing.
+- Daarom alles per script (`gengas/frame2/frame2.py`): ronde bol (v15, door maker-agents) 3 px omhoog, de vier manen (uit `af/gengas.png`) los verplaatst; niets getekend. Uitvoer: `gengas_frame2.png/.gif`, vel `gengas_anim_front.png`.
+- Werkwijze frame 2 samengevat: **lijf met anatomie (poten, bek) → Gemini (handeling in woorden); losse delen of een vormloos lijf → script (verplaatsen); wat bij verplaatsen bloot komt → maker-agent rond/dicht maken.**

@@ -1952,3 +1952,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.475] - Gengas frame 2: lijf zonder manen rond (v15)
 - Maker-agent: rechtsonder (waar de voet lag) en onder de gasarm (waar de handmaan lag) de bol rond en dicht gemaakt, 14 px, alleen bestaande indexen, rest pixel voor pixel gelijk aan v14 (`gengas/sprite_v15/`). Gemini-bijlage voor de knik is nu `lijf_zonder_manen_v15_8x.png`; prompt zonder de alinea over rond maken.
+
+### [v0.0.476] - Gengas frame 2 per script
+- Gemini-knik r1 veranderde niets (zelfde bol, ander raster). Frame 2 nu per script (`gengas/frame2/frame2.py`): bol 3 px omhoog, bovenste maan 6 px links, rechterhand 5 px op, linkerhand 6 px op, voet 6 px links en 2 px op; niets getekend. Gif + vel `gengas_anim_front.png`. Werkwijze samengevat in STUDIE.md §10.

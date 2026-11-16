@@ -1897,3 +1897,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Pitahaya-draak fase 1 na feedback Jordi ("rechterarm zit vast aan het lichaam, kijk nog beter naar schaduw, kleur, belijning"): r6–r8 (arm los met modelcontour, lijf via toonkaart, kop minder zwart, groen verzadigder); eindkeuring r7 + 8 wissels = PASS. `af/` bijgewerkt.
 - Pitahaya-draak: Dragonfly Cave-eindkeuring (FAIL op 3 nekpixels → PASS), r9 = af.
 - Pitahaya-draak: witte areoolpixels uit het lijf, tand 1 px (Jordi koos C). af bijgewerkt.
+
+### [v0.0.461] - Gengas: hoofdsprite v14 (bol linksonder rond)
+- Jordi: "linksonder de mond is ook een puntje" → maker-agent haalde het puntje weg (3 px in rij 53–54, rand 15,15,18 → 15,16,17; alleen bestaande paletindexen, manen ongewijzigd). Jordi: "hoofdsprite na is de nieuwe hoofdversie". `af/gengas.png` en `af/gengas_8x.png` bijgewerkt; werkbestanden in `gengas/sprite_v14/` (branch `claude/upbeat-rubin-7s097g`).

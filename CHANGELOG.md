@@ -1684,3 +1684,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3: prompt v11 (ronde 8 als bijlage; achterkant wordt geestwolken, lijf langer).
 - Spooktrein fase 3: model gekozen (ronde 9, prompt v11; Jordi: "zou dit vertalen naar een sprite? ... ik vind zijn mond geniaal"). SPEC, natief raster (86×83) en ruwe 64-onderlaag via schrappen in `spooktrein_fase3/model/`.
 - Spooktrein fase 3 sprite r1 (maker): BOX-onderlaag per kleurgroep (schrappen bij 26% vervormde), netjes gemaakt; Claude stuurt r2 met reparaties (ogen, mond, koeienvanger, wolken, kleine geest).
+- Spooktrein fase 3 sprite r2 (LANCZOS-onderlaag): wolken beter, gezicht en koeienvanger niet; r3 = hybride (gezicht/koeienvanger/kleine geest per onderdeel geschrapt zonder lijnen te raken).

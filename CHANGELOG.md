@@ -1765,3 +1765,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.441] - Blobfish fase 2: sprite r1
 - Maker: natief raster r5 (99×99), model op natief raster herbouwd, reductie 1,5×; r1 61×45, 16 kleuren, 301 px afwijkend van de kale reductie. Reparaties r2: mond/neus, ogen, schaduw rechts.
+
+### [v0.0.442] - Blobfish fase 2: frontsprite af
+- `blobfish_fase2/af/blobfish_fase2.png` (+ 8× en vel), 61×45, 15 kleuren. r3 keuring PASS + reparaties (r4), r5 na tweede keuring PASS. Les in GEMINI.md. Naam, type en fase 1 nog open.

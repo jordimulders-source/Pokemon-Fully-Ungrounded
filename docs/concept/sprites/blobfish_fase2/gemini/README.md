@@ -12,3 +12,4 @@
 9. Jordi: "nee dit is niet goed, ik bedoel puur de kleur die anders moest" → varianten a/b/c afgekeurd; terug naar rechtsonder + per laag donkerder (`r5_plus2_breder_donker92.png` / `donker86.png`).
 10. Jordi: "nee het mogen echt andere kleuren zijn ipv andere tinten". `stapel_kleur.py`: rechtsonder, laag 2 en 3 een andere kleur en donkerder; A paars/blauw, B rood/bordeaux, C karamel/chocolade, D oranje/paars (combinaties: keuze Claude) in `overzicht_kleuren.png`.
 11. **Gekozen (Jordi, 16 nov): "B"** → `../referenties/model_gekozen.png` (r5 + 2 lagen, telkens 6% breder, rood en bordeaux). Dit is het model voor de frontsprite.
+12. **Sprite af (r5)**: `../af/blobfish_fase2.png` (+ `_8x`, `_vel`). Maker r1–r3 (natief raster 99×99, model op natief raster herbouwd, reductie 1,5×), keuring r3 PASS + reparaties, r4/r5 per script, keuring r5 PASS.

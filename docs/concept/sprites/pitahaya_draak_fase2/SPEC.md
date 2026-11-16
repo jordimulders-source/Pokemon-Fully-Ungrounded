@@ -16,6 +16,7 @@
 - Na r3 (16 nov), op de vraag of de verre lip bedoeld was: "met schaduw werk lukt dat denk ik wel, maar onderkant en bovenkant mond loopt nu een beetje in elkaar over"
 - Bij r3, screenshot (niet als bestand binnengekomen) met een zwarte cirkel om het grijze gehemelte met de 3 pitjes, linksboven in de bek: "omcirkeld, daar is niet te zien welk onderdeel van de mond het is"
 - Bij r3: "en de bovenlip is een rechte lijn" · "let daar ook op"
+- Bij r4: "kijk ook naar hoe andere pokemon dat met open monden doen" · "want het modelm doet het ook niet super mooi"
 
 ## Keuzes Claude (niet besproken)
 - Maat: model verkleind tot ±62 px breed (proef: ±62×36), op de bodem van het 64×64-vlak.

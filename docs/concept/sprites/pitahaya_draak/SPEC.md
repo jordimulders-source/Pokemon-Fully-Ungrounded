@@ -14,3 +14,4 @@
 - Ogen: eerst uit het model; daarna apart met Jordi (zijn woorden).
 - **Jordi (16 nov, werkregel):** "niks zelf tekenen, totdat er een vorm staat, volg de geslaagde lessen van recente sprites"
 - **Ogen (Jordi, 16 nov):** "kunnen de ogen nog iets scherpere lijnen krijgen als alternatieve versie waar ik uit kan kiezen?" → koos **B** (model, ooggebied één natieve pixel lager bemonsterd, strengere lijnregel; `sprite_ogen/`). r5 = r4 + oog B.
+- **Jordi (16 nov), na "af":** "rechterarm zit vast aan het lichaam, kijk nog beter naar schaduw, kleur, belijning" → ronde 6.

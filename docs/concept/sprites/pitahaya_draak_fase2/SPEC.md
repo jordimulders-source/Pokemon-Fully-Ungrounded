@@ -19,6 +19,7 @@
 - Bij r4: "kijk ook naar hoe andere pokemon dat met open monden doen" · "want het modelm doet het ook niet super mooi"
 - Bij r5: "kan dat roze in de bek ook een andere kleur? een donkerdere tint van wit/grijs wat we nu aan het doen zijn? dan ziet dat er natuurlijker uit"
 - Bij r6: "ja kijk, en dan moet wat boven dat grijs zit dezelfde tint krijgen of nog zelfs een tint donkerder, binnenkant bovenkant mond"
+- Bij r7 (screenshot `feedback/jordi_r7_vier_pixels.png`, 4 pixels ingestipt; volgens Claude (9,45), (9,46), (9,47), (10,46)): "wacht, de vorm van de bek klopt ook niet. Ik heb vier pixels ingestipt, wat als die weggehaald worden om de binnenkant wat diagonaler te maken? Zoals in het model" · "en dan de rest netjes bijkleuren"
 
 ## Keuzes Claude (niet besproken)
 - Maat: model verkleind tot ±62 px breed (proef: ±62×36), op de bodem van het 64×64-vlak.

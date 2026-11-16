@@ -17,5 +17,8 @@
 `referenties/model.png` = Gemini r6 (`r6/gemini_r6.png`; zilveren rand om het voorste vak, ogen van de kano) + het water van r2 (vak x655–900, y410–610, groen overgeslagen) + het gezicht van het ventje uit r2 (natief x46–61, y37–47, pitch 10,24). Plaknaad onder het ventje rechts is geen ontwerp.
 Natief raster: pitch 10,24, fase 0 (`ogen/natief.py`).
 
+## Eisen sprite (Jordi, 16 nov)
+- "de verre bombilla moet echt duidelijk een bombilla blijven, 1 pixel wordt te dun, 3 minimaal nodig"
+
 ## Nog open
 - Grootte (eindvorm van 2: ±64 px breed voorstel; het model is breed, ±72 natieve px).

@@ -1,0 +1,3 @@
+9	44	K	r	V-bovenrand zwart -> selout r (lipband)
+10	45	K	r	V-bovenrand zwart -> selout r (lipband)
+11	46	K	r	V-bovenrand zwart -> selout r (lipband)

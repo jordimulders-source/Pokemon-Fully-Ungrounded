@@ -1705,4 +1705,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini-prompt fase 2 v1: `docs/concept/sprites/spooktrein_fase1_2/gemini/PROMPT_fase2_v1.md`.
 
 ### [v0.0.417] - Spooktrein fase 2: ronde 1 afgekeurd, prompt v2
-- Jordi over r1: "is te cartoony en niet genoeg gepowered door de geest". `gemini/r1/fase2_v1_afgekeurd.png`. v2: Gen 3-Ghost-stijl (Shuppet/Duskull/Gastly), stalen i.p.v. houten wagon, groene energie dominant (brede barsten, wielen van damp, grote wolk), onderlijf van de geest stroomt de wagon in. `PROMPT_fase2_v2.md`.
+- Jordi over r1: "is te cartoony en niet genoeg gepowered door de geest". `gemini/r1/fase2_v1_afgekeurd.png`. v2: Gen 3-Ghost-stijl (Shuppet/Duskull/Gastly), geest ondeugend met karakter i.p.v. blij kind (Jordi: "veel ondeugender, veel meer een pokemon sprite", "meer karakter"), stalen i.p.v. houten wagon, groene energie dominant (brede barsten, wielen van damp, grote wolk), onderlijf van de geest stroomt de wagon in. `PROMPT_fase2_v2.md`.

@@ -1916,3 +1916,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.467] - Gengas frame 2: ronde 1 mislukt, prompt v3
 - Gemini ronde 1 (`gengas/gemini/frame2_ronde1.png`, gif): bol platgedrukt i.p.v. verplaatst, manen nauwelijks bewogen. Jordi: "hij doet niks met de instructies, dus die moeten specifieker".
 - Prompt v3: raster genoemd (64×64 op 16×), vijf onderdelen benoemd, per onderdeel richting en afstand in spritepixels en klokpositie, "niet platdrukken/rekken".
+
+### [v0.0.468] - Gengas frame 2: ronde 2 mislukt, analyse
+- Prompt v3 (getallen per onderdeel): Gemini tekende manen bij i.p.v. ze te verplaatsen en drukte de bol weer plat (`frame2_ronde2_v3.png`). Analyse waarom de viscacha wel lukte in STUDIE.md §9 en GEMINI.md.

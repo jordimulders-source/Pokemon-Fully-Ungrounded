@@ -74,3 +74,9 @@ Poging 3 is afgekeurd. De meting in §2 zei alleen *hoeveel* er verandert, niet 
 - Jordi gaf Gemini de 8×-sprite + de prompt uit `viscacha/gemini/PROMPT_FRAME2.md`. Resultaat (`viscacha/gemini/frame2_ronde1.png`, gif ernaast): exact op het 16×-raster van de sprite, lijf/achterpoten/staart pixel voor pixel gelijk aan frame 1, kop naar achteren met open bek en voorpoten tegen de borst. Jordi: "echt verbazingwekkend goed"; alleen de snorharen ontbreken ("goed te fixen").
 - Werkwijze frame 2 voortaan: **de sprite zelf (8×) als bijlage**, prompt "keep pixel grid and palette, change only X", terugzetten met de middelste pixel per 16×16-vak, dan opschonen.
 - Volgende: Gengas (manen bewegen; Hoopa Unbound doet iets vergelijkbaars, zie `hoopa_unbound.gif`), prompt in `gengas/gemini/PROMPT_FRAME2.md`.
+
+## 9. Waarom Gemini de viscacha wel en Gengas niet kon (16 nov)
+- Gemini heeft geen knippen-en-plakken: een "bewerking" tekent het hele beeld opnieuw, gestuurd door de bijlage. Wat het beeld al "weet", blijft staan; wat je vraagt, tekent het opnieuw.
+- **Viscacha:** de vraag was een **handeling van een dier** ("roept met open bek, poot omhoog"). Daar is Gemini op getraind; het lijf werd niet genoemd, dus bleef het staan.
+- **Gengas:** de vraag was **meetkunde** ("schuif 3 px omhoog", "6 px naar links"). Getallen en precieze verplaatsingen kan het niet; "verplaats de maan" werd "teken een maan daar" (ronde 2: zes manen). Daarnaast is Gengas een ongewoon ontwerp (losse manen als handen/voeten) dat het niet als ledematen herkent, en vult de bol bijna het hele vak, zodat "omhoog" een platgedrukte bol wordt.
+- Les: **Gemini voor poses (in woorden als handeling: lachen, juichen, zwaaien), een script voor pure verplaatsing.** Een vraag in getallen of posities aan Gemini werkt niet.

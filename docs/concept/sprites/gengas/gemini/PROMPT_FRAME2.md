@@ -36,3 +36,7 @@ De nieuwe plekken van de manen zijn een voorstel van Claude; pas getallen of ric
 ## Daarna
 - Terugzetten naar 64×64 zoals bij de viscacha (middelste pixel per 16×16-vak), kleuren op het palet van `af/gengas.png`; alleen de manen overnemen, de rest blijft frame 1.
 - Tekent Gemini de manen anders (andere vorm, vingers): opnieuw genereren, niet zelf repareren (SPEC: "jij kan geen handen en voeten tekenen").
+
+## Ronde 2 (prompt v3): mislukt (`frame2_ronde2_v3.png`)
+Manen niet verplaatst maar **bijgetekend** (zes in plaats van vier, één over het linkeroog, nieuwe ronde stenen in plaats van de hand-/voetvormen); bol weer platgedrukt in plaats van omhoog geschoven.
+Waarom het bij de viscacha wel lukte: zie `frame2_studie/STUDIE.md` §9.

@@ -1750,3 +1750,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.436] - Blobfish fase 2: lagen donkerder
 - Gekozen opbouw (+2 lagen, telkens 6% breder) met elke laag donkerder, twee sterktes; `stapel.py` kreeg een kleurfactor.
+
+### [v0.0.437] - Blobfish fase 2: lagen zonder copy-paste-look
+- `lagen/stapel2.py`: elke laag eigen spiegeling, verschuiving, dikte, breedte en donkerte; varianten a/b/c (`overzicht_varianten.png`).

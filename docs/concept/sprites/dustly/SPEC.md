@@ -34,3 +34,4 @@ Jordi letterlijk: "hiermee beginnen en dan de kleuren leuker maken bij het maken
 - Model: `gemini/r6_a.png`. Vorm, gezicht, bulten, slierten en schaduw overnemen (SPRITE_KERN "MODEL OVERNEMEN"), niets hertekenen.
 - Kleur: minder zwart, kleurrijker (Jordi). Welke kleuren zei Jordi niet: de maker levert eerst de trouwe sprite en daarop 3 kleurvarianten (voorstel Claude) voor Jordi om te kiezen.
 - Maat: fase 1; Gastly Gen 3 = 48×42 px, 1190 px.
+- 15 nov (Jordi, na uitleg Claude dat A het best bij de Bok-globule past): "ga voor A" → variant A (stoffig mauve-roze/rozebruin, schaduw diep pruim, lichtrand roze-oranje).

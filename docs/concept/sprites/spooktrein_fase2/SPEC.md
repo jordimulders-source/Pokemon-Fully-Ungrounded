@@ -7,6 +7,7 @@ Model: `model/model_r5.png` (= `../spooktrein_fase1_2/gemini/r5/fase2_v6.png`, p
 - Design r5: "ik vind de rest van het design wel tof" (alles behalve het gezicht).
 - Gezicht: "gemini gaat geen goed gezicht kunnen ontwerpen" / "dan maken we zelf het gezicht wel" / "de mond moet echt overdreven groot zijn en doe maar kleine pretoogjes" / "voor de mond zat ik aan een overdreven grote O mond te denken" / "zo groot dat alleen geesten dat kunnen hebben, niet in verhouding groot".
 - Ogen: "de ogen mogen zijn zoals de geest links in het rood" (`referenties/ogen_geest_rood.png`, conceptschets van geesten; de rode geest links: twee gebogen, lichtgevend geel-crème ooglijnen boven een donker gezicht). Jordi: "het gaat alleen om de vorm" / "en prima dat ze groot zijn, ben van mening veranderd" / "want ze zijn namelijk niet lang" (vervangt "kleine pretoogjes").
+- Mond: "de mond mag bijna swalot achtig worden" (`referenties/mond_swalot_kaart.png`, `mond_swalot_sv.png`: Swalot met de mond wijd open, een hoge ovale opening over bijna het hele lijf). Pixelbron in de repo: Swalot Gen 3 frame 2 (`graphics/pokemon/swalot/anim_front.png`, onderste helft: open mond, wel van opzij).
 - "die onderdelen die losgeschoten zijn en erachter vliegen mag je wegggummen".
 - Kleur geest: "de geest blijft dezelfde kleur" (als fase 3).
 

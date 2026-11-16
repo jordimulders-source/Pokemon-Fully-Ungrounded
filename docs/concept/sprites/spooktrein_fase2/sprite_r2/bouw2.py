@@ -38,7 +38,8 @@ for j in range(64):
         if G in 'WS':                                    # wagon: dunne lijnen zachter
             if WF=='avg' and G=='W':                     # vlakgemiddelde van het hout -> dichtstbijzijnde houtkleur
                 w=cc[np.isin(cc,[8,9,10,11,14,1])]; rgb=P[w-1].mean(0)
-                fill=[8,9,10,11][int(np.argmin(((P[[7,8,9,10]]-rgb)**2).sum(1)))]
+                fill=[8,9,10][int(np.argmin(((P[[7,8,9]]-rgb)**2).sum(1)))]   # roest niet uit een gemiddelde
+                if (cc==11).mean()>=0.4: fill=11                                # roest alleen waar het model hem echt heeft
             if L1>=TH: out[j,i]=1
             elif (cc==14).mean()>=0.4: out[j,i]=14       # stalen band van het model
             elif L1>=TW: out[j,i]=9 if fill==8 else 10   # in licht hout: #725641, anders #3d3827
@@ -53,6 +54,6 @@ for j in range(64):
             out[j,i]=fill; continue
         out[j,i]=fill
 out[out==6]=5                                           # tintreductie zoals r1
-np.save('kaal_r2.npy',out); np.save('zone.npy',ZONE)
+np.save('kaal_r2.npy',out); np.save('cls.npy',cls); np.save('zone.npy',ZONE)
 import pickle; pickle.dump(BLK,open('blk.pkl','wb'))
 print('fg',(out>0).sum())

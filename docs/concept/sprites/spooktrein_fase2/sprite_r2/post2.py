@@ -48,10 +48,26 @@ F=np.zeros((64,64),bool); F[0:23,:]=True; F[0:4,42:54]=False
 for y in range(23,32):
     for x in range(24,45):
         if r1[y,x] in (2,3,4,5): F[y,x]=True
-for (wx,wy) in ((0,39),(14,40)): F[wy:wy+5,wx:wx+5]=True
 nf=0
 for y,x in zip(*np.where(F)):
     if o[y,x]!=r1[y,x]: o[y,x]=r1[y,x]; nf+=1
 print('bevroren pixels teruggezet uit r1:',nf,'(F-zone',F.sum(),')')
+# C2. krul: donkere modellijn die als hout/staal is ingedeeld (#3d3827/#4a443c) is de spiraallijn (in het model donkergroen) -> #467e4b
+for y in range(0,4):
+    for x in range(42,54):
+        if o[y,x] in (9,10,11,14): mark('krul: spiraallijn = donkergroen van het model (#2c3d23/#446f3f) -> #467e4b',y,x,5)
+# D. wielen opnieuw uit het model (wiel.py-bemonstering, rand dicht): licht linksboven, donker rechtsonder, naaf rechts
+T=['.OOO..','OgggO.','OGGGsO','OGGGsO','OsssO.','.OOO..']; cm={'O':1,'g':12,'G':13,'s':14}
+for (wx,wy) in ((0,39),(14,39)):
+    for dy,row in enumerate(T):
+        for dx,ch in enumerate(row):
+            if ch!='.': mark('wiel uit model',wy+dy,wx+dx,cm[ch])
+# E. ashout tussen de wielen: middelpunt-bemonstering van de lichte balk uit het model (x6-13, rij 40-43)
+cls=np.load('cls.npy'); s,X0,Y0,oy,XC,k=[float(v) for v in open('r1.meta').read().split()]
+for y in range(40,44):
+    for x in range(6,14):
+        v=int(cls[int(Y0+(y-oy+0.5)/s), int(X0+(x+0.5)/s)])
+        if v==11: v=9
+        if v: mark('ashout uit model',y,x,v)
 o[o==6]=5
 np.save('post_r2.npy',o); np.save('frozen.npy',F); print(log)

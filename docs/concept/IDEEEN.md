@@ -18,6 +18,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Tweede referentie Jordi (16 nov):** andermans fakemon (niet in de repo; bestand niet beschikbaar): een viervoeter met donkere kop en klauwen, oranje-geel lijf dat achteraan overgaat in een vuurwerkspoor dat eindigt in een sterbarst; twee sterren aan lichtsporen op de kop. Jordi: "deze ook, voor dat idee wil ik gaan". **Besloten:** het vuurwerk vormt zelf het lijf van de Pokémon. Fases sterretje → wondertol → vuurpijl (Jordi: "kan"), alle drie levend; Fire/Fairy (pitch).
   - **Vormvoorstellen Claude (16 nov):** vos, kat, paard/eenhoorn, vogel (te dicht bij Moltres/Ho-Oh), danser; Claudes voorkeur kat.
   - **Jordi (16 nov), vorm vuurpijl:** "wat als de vuurpijl een hoofd heeft wat de vuurwerk explosie is en 2 handen die dan vuurpijlen zijn".
+  - **Jordi (16 nov):** "het hoofd moet meerdere kleuren zijn, hij wordt fire/fairy, dus mag kleurrijk. Is een pokemon die boze geesten verjaagt". (Achtergrond Claude: vuurwerk en rotjes zijn in China van oudsher bedoeld om boze geesten te verjagen, o.a. het monster Nian met Chinees Nieuwjaar.)
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

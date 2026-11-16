@@ -19,7 +19,7 @@ def zet(i, w, v):
     for x in range(cx - h, cx + round(h * fac) + 1):
         if px[x, y0 + i] not in range(7, 14): px[x, y0 + i] = v
 for i, w in enumerate(rijen): zet(i, w, 1)
-for i, w in tong.items(): zet(i, w, 5)
+if "--tong" in sys.argv: [zet(i, w, 5) for i, w in tong.items()]  # Jordi 16 nov: "haal de tong maar weg"
 NABIJ = ['..11..', '.1111.', '11..11', '1....1']
 VER = ['..1..', '.111.', '11.11', '1...1']
 oy = y0 - 5

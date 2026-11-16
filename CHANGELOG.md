@@ -1912,3 +1912,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.466] - Gengas frame 2: prompt v2 (knik)
 - Prompt aangevuld: het hoofd (de gasbol met gezicht) gaat een paar pixels hoger als knikbeweging, naast de bewegende manen (Jordi). Lukt dit, dan ziet Jordi de tests als geslaagd en is dit de werkwijze voor frame 2.
+
+### [v0.0.467] - Gengas frame 2: ronde 1 mislukt, prompt v3
+- Gemini ronde 1 (`gengas/gemini/frame2_ronde1.png`, gif): bol platgedrukt i.p.v. verplaatst, manen nauwelijks bewogen. Jordi: "hij doet niks met de instructies, dus die moeten specifieker".
+- Prompt v3: raster genoemd (64×64 op 16×), vijf onderdelen benoemd, per onderdeel richting en afstand in spritepixels en klokpositie, "niet platdrukken/rekken".

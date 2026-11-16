@@ -1,7 +1,7 @@
 # Gemini-prompt: pitahaya-draak fase 2 (teju), startprompt v1 (16 nov)
 
 Regels: `docs/lessen/GEMINI.md`. Lijn en besluiten: `docs/concept/IDEEEN.md` (Pseudo-legendary draak: pitahaya).
-Bijlagen (Jordi zelf toevoegen): (1) de fase 1-sprite `../af/pitahaya_draak_8x.png`, (2) een foto van een teju met open bek (Argentijnse teju, *Salvator merianae*), (3) een foto van een doorgesneden roze pitahaya (wit vruchtvlees met zwarte pitjes).
+Bijlagen (Jordi zelf toevoegen): (1) de fase 1-sprite `../../pitahaya_draak/af/pitahaya_draak_8x.png`, (2) een foto van een teju met open bek (Argentijnse teju, *Salvator merianae*), (3) een foto van een doorgesneden roze pitahaya (wit vruchtvlees met zwarte pitjes).
 
 ## Jordi (letterlijk, 16 nov)
 - "dan is fase 2 een teju en fase 3 mag op 2 poten staan, maar voorover leunend, komodo draak"
@@ -42,4 +42,23 @@ AVOID
 - Not standing on two legs. Not a snake. No wings.
 - Not a realistic lizard with a fruit stuck on it: the dragon fruit is its skin.
 - Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
+```
+
+---
+
+# Prompt v2 (16 nov): zelfde gesprek, reactie op r1 (`r1.png`)
+
+## Jordi (letterlijk)
+- "design is tof, misschien net iets te weinig de vrucht zelf?" · vraag: "is de grootte goed voor een sprite?"
+
+## Claude
+- Vrucht: alleen de kop is vrucht; het lijf is een groene hagedis met roze stippen. Voorstel: rug roze schil met groene schubpunten (zoals de kop), stippen weg, poten en staart groen.
+- Grootte: te breed (±2:1); in 64×64 wordt hij een smalle streep met een klein kopje. Voorstel: meer naar de kijker gedraaid, staart opgekruld naast/achter het lijf, past in een vierkant.
+- Max. 2 wijzigingen per bijlageronde (GEMINI.md); bek, kop en kleuren expliciet behouden.
+
+```
+The design is good: keep the head, the wide open mouth with the white seeded flesh, the expression and the colors exactly as they are. Change only two things:
+
+1. More dragon fruit on the body: the back (from the neck to the base of the tail) becomes the same hot pink dragon fruit skin as the head, with a row of green-tipped scale flaps along the spine, like on a real pitahaya. Remove the small pink dots. Legs, belly and tail stay green cactus stem.
+2. Compact Gen 3 sprite composition: it must fit in a 64x64 square. Turn the body more towards the viewer (three-quarter view facing left, seen more from the front), shorten the body, and curl the tail up and around beside the body instead of stretching it out behind. Same pose otherwise: low on four legs, mouth wide open.
 ```

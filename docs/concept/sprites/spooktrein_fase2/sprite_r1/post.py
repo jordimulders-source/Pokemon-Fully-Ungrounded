@@ -34,5 +34,9 @@ if True:
         for dy,row in enumerate(T):
             for dx,ch in enumerate(row):
                 if ch!='.': mark('wiel naar model',wy+dy,wx+dx,cm[ch])
+# 5. buitenlijn: geen lichte geesttint op de silhouetrand; #b5f3b6/#72d779 op de rand -> #67b370 (de randtint die het model zelf aan de lichtkant heeft)
+fg=o>0; p=np.pad(fg,1); e=fg&~(p[:-2,1:-1]&p[2:,1:-1]&p[1:-1,:-2]&p[1:-1,2:])
+for y,x in zip(*np.where(e)):
+    if o[y,x] in (2,3): mark('lichte randpixel -> selout',y,x,4)
 np.save(f'post_{VAR}.npy',o)
 print('afwijkend van kale reductie:',(o!=b).sum(),log)

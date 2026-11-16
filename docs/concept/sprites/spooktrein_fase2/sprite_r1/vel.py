@@ -6,7 +6,7 @@ a=np.asarray(Image.open('natief.png').convert('RGB')).astype(np.uint8).copy()
 for (x0,x1,y0,y1) in ((165,178,112,122),(157,163,123,129),(181,187,124,130),(169,175,129,132)): a[y0:y1+1,x0:x1+1]=255  # zelfde gum
 m=Image.fromarray(a)
 # staart indrukken zoals de sprite: kolommen rechts van XC horizontaal schalen
-L=m.crop((0,0,int(XC),199)); R=m.crop((int(XC),0,199,199)); R=R.resize((max(1,round(R.width*k)),199),Image.LANCZOS)
+L=m.crop((0,0,min(199,int(XC)),199)); R=m.crop((min(199,int(XC)),0,199,199)) if XC<199 else Image.new('RGB',(0,199)); R=R.resize((max(1,round(R.width*k)),199),Image.LANCZOS) if R.width>0 else R
 mm=Image.new('RGB',(L.width+R.width,199),'white'); mm.paste(L,(0,0)); mm.paste(R,(L.width,0))
 mm=mm.crop((int(X0),int(Y0),mm.width,199)); mm=mm.resize((round(mm.width*s),round(mm.height*s)),Image.LANCZOS)
 ref=Image.new('RGB',(64,64),'white'); ref.paste(mm,(0,int(oy)))

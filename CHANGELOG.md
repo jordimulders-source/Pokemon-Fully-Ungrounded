@@ -1993,3 +1993,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.488] - Frame 2: werkwijze besloten, Gengas variant C + V_SLIDE gekozen
 - Jordi: "de tweede gif van de 3 vind ik echt uitstekend" (variant C met ANIM_V_SLIDE). Beide tests geslaagd; werkwijze in STUDIE.md §12 en verwijzing in SPRITE_WERKWIJZE. Maker-agent schoont de rotatieranden van frame 2 op (vorm en beweging bevroren).
+
+### [v0.0.489] - Viscacha frame 2: snorharen terug
+- Maker-agent (`viscacha/frame2/`): Gemini-frame teruggezet op 64×64 en het palet van frame 1; vaste zone wijkt 0 px af van frame 1; Gemini's stompje vervangen door de 37 snorhaarpixels van frame 1, als groep 11 px omhoog; 6 px opschoning. Aandachtspunt: de rechter haren lopen nu over de gele wangpluk en de wang (in frame 1 eronder).

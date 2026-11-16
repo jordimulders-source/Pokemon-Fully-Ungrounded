@@ -61,6 +61,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Jordi (16 nov):** "origineel, twee fases, het ventje is nieuw, dat is de yerba mate die een eigen vorm krijgt, waar die in fase 1 vooral de drijvende kracht was." Prompt fase 1: `sprites/mate/gemini/PROMPT.md`.
   - **Over r1 (Jordi, 16 nov):** "ik vind het nog niet voldoende een mate kalebas en de bombillo mist. het masker is vooral voor de vorm, en de ogen wil ik gaten waar je vervolgens het groen van de bladeren uit kan zien". Prompt v2: `sprites/mate/gemini/PROMPT_v2.md`.
   - **Fase 1 frontsprite af** (16 nov): `sprites/mate/af/mate.png` (model = Gemini r4 met de mond van r3, hoorntjes van het aña-aña-masker). Fase 2 (kano) nog te doen.
+  - **Fase 2 (kano), Jordi (16 nov):** "het ventje heeft het gezicht, maar we kunnen de kano misschien nog ogen geven en heel misschien zelfs een mond, dat de punt van de kano als neus fungeert". Prompt: `sprites/mate_fase2/gemini/PROMPT.md` (A: ogen, B: ogen + mond).
 - **Yanma/Yanmega:** "gaan we nog iets mee doen voor bug/dragon".
 - **Een condor-Pokémon = Hanan Pacha** (Jordi, 9 nov: "de condor in het legendary trio klinkt uitstekend").
 - **Venomoth-vuurvlieg** (Electric/Fire): Venonat wordt de nieuwe Venomoth **met een move die hij leert**; conceptueel een insect dat tot vuurvlieg evolueert (zoals Volbeat). **Ontwerp opnieuw met Gemini** (Jordi, 9 nov: "Het design was prima, maar kunnen we denk ik nu veel beter maken met Gemini").

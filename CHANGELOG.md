@@ -2026,3 +2026,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite r1–r15 (`sprites/mate/sprite/`): vlekkentextuur afgekeurd ("erg korrelig", "groene blur") → 3 tinten + sikkelschaduw; hoorns, arm, neus, mond, voeten en ogen opnieuw uit het model verkleind na "de hoorns waren opnieuw getekend"; keuring per onderdeel op vorm; onderhoeken ronder (Jordi); Dragonfly Cave-eindkeuring: belijning op 8 px gerepareerd, palet lichter (variant B, Jordi: "rechts").
 - **Frontsprite af:** `sprites/mate/af/mate.png` (+ `_8x`), op het overzichtsvel. Naam open.
 - Lessen in `docs/lessen/GEMINI.md` (vlekkentextuur niet overnemen; keuring op metingen mist vormfouten).
+
+### [v0.0.497] - Mate-lijn fase 2 (kano): Gemini-prompt
+- `docs/concept/sprites/mate_fase2/gemini/PROMPT.md`: prompt A (kano met ogen, punt als neus) en B (plus mond), met Jordi's woorden; open punten (materiaal kano, hoorntjes, stoom) staan erbij.
+- Jordi's keuze over het gezicht toegevoegd aan `IDEEEN.md`.

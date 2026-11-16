@@ -1949,3 +1949,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.474] - Gengas: puntje linksonder rond (voorstel v14)
 - Jordi: "linksonder de mond is ook een puntje" / "kan je de hoofdversie meteen beter maken". Maker-agent: 3 px in rij 53–54 (rand 15,15,18 → 15,16,17), alleen bestaande paletindexen, manen ongewijzigd. `gengas/sprite_v14/` (hoofdsprite + lijf zonder manen, vel `voor_na.png`). `af/` nog niet overschreven; wacht op Jordi.
+
+### [v0.0.475] - Gengas frame 2: lijf zonder manen rond (v15)
+- Maker-agent: rechtsonder (waar de voet lag) en onder de gasarm (waar de handmaan lag) de bol rond en dicht gemaakt, 14 px, alleen bestaande indexen, rest pixel voor pixel gelijk aan v14 (`gengas/sprite_v15/`). Gemini-bijlage voor de knik is nu `lijf_zonder_manen_v15_8x.png`; prompt zonder de alinea over rond maken.

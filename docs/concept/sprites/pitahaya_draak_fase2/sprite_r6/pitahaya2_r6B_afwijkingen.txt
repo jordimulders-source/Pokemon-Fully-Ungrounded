@@ -9,5 +9,9 @@
 12	44	v	w	wig v -> w (modeltoon wig 187), zodat de verre lip de donkerste is
 13	44	v	w	wig v -> w (modeltoon wig 187), zodat de verre lip de donkerste is
 11	45	v	w	wig v -> w (modeltoon wig 187), zodat de verre lip de donkerste is
+10	43	w	K	keuring_r5 punt 2: kaaklijn zakt naar rij 43 (trap 7-4-3; model: geen zwart, wig)
+11	43	w	K	keuring_r5 punt 2: kaaklijn zakt naar rij 43 (trap 7-4-3; model: geen zwart, wig)
+10	42	K	r	keuring_r5 punt 2: roze bovenkaak boven de gezakte lijn (tint als (14-16,43); model: 3 zwart onderin)
+11	42	K	r	keuring_r5 punt 2: roze bovenkaak boven de gezakte lijn (tint als (14-16,43); model: 1 zwart)
 9	45	r	v	twijfel: aansluiting verre lip op buitenste lipband -> donkergrijs
 10	47	r	v	twijfel: aansluiting verre lip op buitenste lipband -> donkergrijs

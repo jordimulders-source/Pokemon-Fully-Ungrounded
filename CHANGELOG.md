@@ -1719,4 +1719,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi over r4: "hij volgt de instructies gewoon niet op" / "hier kunnen we nooit een sprite van maken en de geest heeft een rotkop" (`gemini/r4/fase2_v5.png`: stoompluim kwijt, weer Gengar-gezicht, wagon lang en van opzij). v6: nieuw gesprek zonder bijlage, alle besluiten in één startprompt: `gemini/PROMPT_fase2_v6.md`.
 
 ### [v0.0.421] - Spooktrein fase 2: ronde 5
-- Jordi: "gemini gaat geen goed gezicht kunnen ontwerpen". `gemini/r5/fase2_v6.png`. Gezicht via een andere bron (overleg).
+- Jordi: "gemini gaat geen goed gezicht kunnen ontwerpen". `gemini/r5/fase2_v6.png`. Jordi: "ik vind de rest van het design wel tof". Gezicht via een andere bron (overleg).

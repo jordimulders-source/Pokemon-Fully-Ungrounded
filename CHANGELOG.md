@@ -1847,3 +1847,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r5: blik "brutaal en ondeugend" (Jordi, keuze c), prompt v6.
 - Pitahaya-draak fase 1: Gemini r6 gekozen als model (`pitahaya_draak/model/model.png`), SPEC.md; sprite r1 bij de maker (model overnemen, niets tekenen).
 - **Frontsprite pitahaya-draak fase 1 af** (`docs/concept/sprites/pitahaya_draak/af/`): model overgenomen (natief raster 5,12 px, exacte 3×-reductie, donkerste pixel wint bij lijnen), toonkaart voor de vulling, 39 keurderwissels per pixel gemeten, oog B (Jordi). 31×49, 13 kleuren. Op het overzichtsvel.
+- Pitahaya-draak fase 1 na feedback Jordi ("rechterarm zit vast aan het lichaam, kijk nog beter naar schaduw, kleur, belijning"): r6–r8 (arm los met modelcontour, lijf via toonkaart, kop minder zwart, groen verzadigder); eindkeuring r7 + 8 wissels = PASS. `af/` bijgewerkt.

@@ -38,3 +38,19 @@ print('losse donkerste randpixels tussen 2e donkerste:',alt)
 r9=np.array(Image.open('../r9/sprite_a.png')); r10=np.array(Image.open('../r10/sprite_B.png'))
 for nm,a in (('r9',r9),('r10',r10)):
     ys,xs=np.where(a!=s); print('diff met',nm,len(xs), sorted((int(x),int(y)) for x,y in zip(xs,ys)) if len(xs)<40 else '')
+# zwart(1) los tussen donkerlila(6) op de buitenrand, en omgekeerd
+for a_,b_ in ((1,6),(6,1)):
+    alt=[]
+    for y,x in zip(*np.where(r4&(s==a_))):
+        nb=[(y+dy,x+dx) for dy in(-1,0,1) for dx in(-1,0,1) if (dy or dx) and 0<=y+dy<64 and 0<=x+dx<64 and r4[y+dy,x+dx]]
+        if sum(s[p]==b_ for p in nb)>=2 and sum(s[p]==a_ for p in nb)==0: alt.append((int(x),int(y)))
+    print('los',a_,'tussen',b_,':',alt)
+# gaten in de buitenlijn: transparante pixels die 4-buur zijn van een binnenvlak (niet-lijn) van de hoofdmassa
+lijn={1,2,6,9,10,14}
+gat=[(int(x),int(y)) for y,x in zip(*np.where(r4)) if s[y,x] not in lijn]
+print('niet-lijnkleur op buitenrand hoofdmassa:',gat)
+# 8-verbonden clusters <3 px voor vlakkleuren (niet de lijnkleuren)
+print('vlak-clusters <3 (8-buren), lijf+kop:')
+for i in (3,4,5,7,8,11,12,13,15):
+    l,k=ndimage.label(big&(s==i),np.ones((3,3))); c=[(int(np.mean(np.where(l==j)[1])),int(np.mean(np.where(l==j)[0])),int((l==j).sum())) for j in range(1,k+1) if (l==j).sum()<3]
+    if c: print(' ',i,c)

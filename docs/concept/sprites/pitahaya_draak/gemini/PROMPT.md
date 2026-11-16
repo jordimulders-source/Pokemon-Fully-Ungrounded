@@ -108,3 +108,7 @@ Very good, keep EVERYTHING exactly as it is, only change the eyes.
 The eyes are now too big, glossy and cartoon-mascot-like (Neopets style). Make them like the eyes of official Gen 3 Pokémon sprites such as Gible or Bagon: smaller and simpler, a flat amber/yellow iris with a dark pupil and one single small white highlight pixel, a clear dark outline around the eye. No big shiny anime pupils, no multiple highlights, no eyelashes.
 Same face otherwise (mouth, small fang, snout), same pose, colors, Gen 3 sprite style, plain white background.
 ```
+
+---
+
+# r5 (16 nov, `r5.png`): Jordi: "wederom beter, alleen nog niet de juiste blik in de ogen". Welke blik: gevraagd.

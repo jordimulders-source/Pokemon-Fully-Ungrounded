@@ -2036,3 +2036,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.499] - Mate-lijn fase 2: Gemini-prompt v3
 - r2 bewaard (kanovorm blijft); `PROMPT_v3.md`: bombilla's zoals in fase 1, gewone mond voor het ventje, zilveren rand langs de kano.
+
+### [v0.0.500] - Mate-lijn fase 2: Gemini-prompt v4
+- r3 bewaard (zilveren rand en mond goed); `PROMPT_v4.md` vraagt alleen een duidelijke roeihouding met de bombilla's.

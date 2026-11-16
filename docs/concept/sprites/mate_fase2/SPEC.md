@@ -19,6 +19,7 @@ Natief raster: pitch 10,24, fase 0 (`ogen/natief.py`).
 
 ## Eisen sprite (Jordi, 16 nov)
 - "de verre bombilla moet echt duidelijk een bombilla blijven, 1 pixel wordt te dun, 3 minimaal nodig"
+- "als je moet inkorten, gebruik daar zoveel mogelijk het water en de boot voor"
 
 ## Nog open
 - Grootte (eindvorm van 2: ±64 px breed voorstel; het model is breed, ±72 natieve px).

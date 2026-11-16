@@ -1787,3 +1787,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Eindkeuring (Dragonfly Cave, naast Magnemite/Aron/Nosepass/Registeel/Magneton/Mawile): FAIL klein → dambord op de schoorsteenrand weg (4 px), middenbruin #86654a en lichtbruin #aa8769 voor genoeg tintstap, 1 px in de staaf; daarna PASS. 12 kleuren, 51×44 px.
 - `docs/concept/sprites/spooktrein_fase1/af/spooktrein_fase1.png` (+ `_8x`, `keuring.md`); op het overzichtsvel als "Spooktrein fase 1" (steel). Naam nog open.
 - Ter info (keurder): donkerder dan echte Gen 3-staalsoorten, trouw aan het model.
+
+### [v0.0.445] - Werknaam Wagogogon
+- Spooktrein fase 2 heet **Wagogogon** (Jordi, 16 nov). In POKEMON.md (Werknamen), Stand van zaken en op het overzichtsvel.

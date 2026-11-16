@@ -58,6 +58,7 @@ Modeltekeningen in `docs/concept/ontwerp/<soort>/` (concept A/B/C + ONTWERP.md).
 - **Soulibri** (kolibrie, Ghost/Flying; na Hummlet): Jordi "Soulibri is goed" (8 nov).
 - **Curiqui** (muriqui, nachtaap fase 3) en **Lanymph** (poedelmot): Jordi (8 nov); Lunurse afgewezen ("nurse heeft in de pokemon franchise toch teveel een link met nurse joy"). Daarmee heeft elke afgemaakte frontsprite een (werk)naam.
 - Picaraio of Raiopau (8 nov): Jordi "Picaraio dan!" (*pica* = pikken blijft hoorbaar, zoals in Picapau).
+- **Wagogogon** (spooktrein fase 2, Steel/Ghost, de geest in de roestige wagon): Jordi (16 nov): "Fase 2 uit deze lijn heb ik een naam voor bedacht: Wagogogon".
 - Alpaca: Jordi denkt aan **Palpaca** (pal + alpaca; "klinkt als een pokemon naam, want flamigo bestaat ook"), nog niet helemaal tevreden, wel beter dan Alpunch/Fluffist/Paqucha.
 - **Palpaca** is ook werknaam (Jordi, 7 nov: "Palpaca mag je ook doen"). Werknamen zijn rond "totdat ze ooit aangepast worden" (Jordi).
 - **Overzichtsvel:** ronde namen tussen aanhalingstekens (Jordi, 7 nov), ook "DJ Rotom" en "Silicobra" (regional). Script: `docs/concept/sprites/showcase/maak_vel.py`.

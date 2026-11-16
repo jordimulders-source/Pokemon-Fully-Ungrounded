@@ -1955,3 +1955,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.476] - Gengas frame 2 per script
 - Gemini-knik r1 veranderde niets (zelfde bol, ander raster). Frame 2 nu per script (`gengas/frame2/frame2.py`): bol 3 px omhoog, bovenste maan 6 px links, rechterhand 5 px op, linkerhand 6 px op, voet 6 px links en 2 px op; niets getekend. Gif + vel `gengas_anim_front.png`. Werkwijze samengevat in STUDIE.md §10.
+
+### [v0.0.477] - Gengas frame 2: prompt v5
+- Script-frame 2 afgewezen door Jordi ("nee", "nieuwe prompt, gemini heeft nog niks veranderd"). Nieuwe knik-prompt die beschrijft wat zichtbaar moet veranderen (hoger in beeld, gezicht hoger op de bol, oren naar achteren, schaal 16× houden).

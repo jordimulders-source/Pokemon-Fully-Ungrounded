@@ -27,3 +27,4 @@ Stijl van de spikkels: `referenties/vuurwerk_pixelart_jordi.png` (losse, onderbr
 - r7: "het leest nog niet goed het oog he, verder is een bovenste stuk vlam nu een vierkant" · "ja het linkeroog is sowieso een blur, het moet zodanig worden dat er echt een oog uit te halen valt, dat is bij r5 115% nog het beste alleen die heeft dus geen pupil"
 - r8: "ik heb echt geen idee wat je met het linkeroog aan het doen bent, rechteroog lijken a en b allebei prima"
 - r9: "nee het gebied links moet gewoon wat gefixed worden, er moet niet een extra oog bij"
+- r11: "blijkbaar snap je niet wat ik met linkeroog bedoel, ik heb hem omcirkeld" (`referenties/jordi_linkeroog_omcirkeld.png`: het gebied uiterst links aan de koprand, de bruine dubbele lijn met de tan strook, ±x3–6, y18–24).

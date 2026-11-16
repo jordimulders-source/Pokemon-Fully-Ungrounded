@@ -15,3 +15,4 @@
 - **Jordi (16 nov, werkregel):** "niks zelf tekenen, totdat er een vorm staat, volg de geslaagde lessen van recente sprites"
 - **Ogen (Jordi, 16 nov):** "kunnen de ogen nog iets scherpere lijnen krijgen als alternatieve versie waar ik uit kan kiezen?" → koos **B** (model, ooggebied één natieve pixel lager bemonsterd, strengere lijnregel; `sprite_ogen/`). r5 = r4 + oog B.
 - **Jordi (16 nov), na "af":** "rechterarm zit vast aan het lichaam, kijk nog beter naar schaduw, kleur, belijning" → ronde 6.
+- **Jordi (16 nov):** "ik zie nu pas dat er allerlei willekeurige witte pixels in het lichaam staan, plus de tand is ook 2 witte pixels" → areolen weg (modelgroen), keuze C: "de 1 pixel tand is cute en goed". = af.

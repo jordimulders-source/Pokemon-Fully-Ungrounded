@@ -1844,3 +1844,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini r2 (lijf goed, gezicht nog niet dragon), prompt v3.
 - Gemini r3 (te overdreven; moet Gible/Axew-achtig), prompt v4.
 - Gemini r4 (alleen ogen te Neopets), prompt v5.
+- r5: blik "brutaal en ondeugend" (Jordi, keuze c), prompt v6.

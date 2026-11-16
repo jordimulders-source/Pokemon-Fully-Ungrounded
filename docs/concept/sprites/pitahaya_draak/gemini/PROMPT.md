@@ -112,3 +112,12 @@ Same face otherwise (mouth, small fang, snout), same pose, colors, Gen 3 sprite 
 ---
 
 # r5 (16 nov, `r5.png`): Jordi: "wederom beter, alleen nog niet de juiste blik in de ogen". Welke blik: gevraagd.
+- Jordi koos **c, brutaal en ondeugend** (uit: a dapper/vastberaden, b nieuwsgierig/alert, c brutaal/ondeugend).
+
+# Prompt v6 (16 nov): zelfde gesprek
+
+```
+Great, keep EVERYTHING exactly as it is, only change the expression of the eyes.
+The eyes look empty now and don't focus on anything. Give them a cheeky, mischievous, slightly provoking look, like a little troublemaker challenging the opponent: a clear dark pupil looking straight at the opponent (to the left), upper eyelid slightly lowered for a sly, cocky look. Keep it a young baby dragon (Gible/Axew level), not angry or evil.
+Keep the eye size, the amber color, the simple Gen 3 style eyes, the mouth with the small fang, pose, colors and plain white background.
+```

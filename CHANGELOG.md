@@ -1841,3 +1841,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Fase 1 is geen kleine hagedis (Jordi); lichaam open, prompt aangepast.
 - Lichaam fase 1: stukje cactusrank (Jordi); prompt compleet.
 - Gemini r1 pitahaya-draak fase 1 (idee klopt; gezicht en ledematen aanpassen), prompt v2.
+- Gemini r2 (lijf goed, gezicht nog niet dragon), prompt v3.

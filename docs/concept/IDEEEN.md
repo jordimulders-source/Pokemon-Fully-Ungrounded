@@ -22,6 +22,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Jordi (16 nov):** "we moeten er een pokemon van maken, dus hoe gaan we afwijken van dat het gewoon een dier is"; geen link met Zuid-Amerika, algemene concepten. Uit 7 voorstellen (theatermasker, lavalamp, waterballon, spons, boetseerklei, zitzak, drukvat) koos hij boetseerklei voor fase 1.
   - **Fase 1 (Jordi, 16 nov):** "die is dan licht derpy blij, lijkt voor de rest echt op de blobfish als die onderwater is, goede lippen dus, blij om je te zien lijkt wel, ligt op de bodem. Wel duidelijk van klei".
   - **Fase 2 (Jordi, 16 nov):** "wordt het dus een echte blobfish met kwijl die nog chagrijniger eruit ziet dan normaal, hij is dan van dat gelei achtig speelgoed dat kinderen soms hebben, dat je dan moet voelen en heel naar en glad voelt, en hij moet nog meer gesmolten lijken dan normaal".
+  - **Materiaal fase 1 (Jordi, 16 nov):** klei afgekeurd na twijfel ("is play dough goed genoeg uit te drukken in een sprite?"); gekozen: houten decoy ("ja een fishbait is een goede"), de rest van fase 1 blijft. Prompt: `sprites/blobfish/gemini/PROMPT_v3.md`.
   - Gemini-prompts: `sprites/blobfish/gemini/PROMPT.md` (fase 1), `sprites/blobfish_fase2/gemini/PROMPT.md` (fase 2). Evolutiemethode nog open.
 - **Kricketune-evolutie die echt een dirigent wordt.**
 - **Hoatzin-Pokémon** (Jordi neigt momenteel juist niet naar een Archeops-variant).

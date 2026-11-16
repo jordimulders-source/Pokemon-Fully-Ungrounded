@@ -1663,3 +1663,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.404] - Blobfish-lijn: concept en Gemini-prompts
 - Jordi: fase 1 een blobfish van boetseerklei (zoals onder water, derpy blij, goede lippen, ligt op de bodem); fase 2 een echte, nog chagrijniger, extra gesmolten blobfish met kwijl, van gelei-speelgoed. Citaten in `IDEEEN.md`.
 - Gemini-prompts: `docs/concept/sprites/blobfish/gemini/PROMPT.md` en `blobfish_fase2/gemini/PROMPT.md` (keuzes Claude apart gemarkeerd).
+### [v0.0.405] - Blobfish fase 1: van klei naar houten decoy
+- Gemini v1/v2 (klei) bekeken; Jordi twijfelde of Play-Doh in een sprite leest. Uit materiaalalternatieven koos hij de houten decoy (fishbait). Prompt v3: `docs/concept/sprites/blobfish/gemini/PROMPT_v3.md`.

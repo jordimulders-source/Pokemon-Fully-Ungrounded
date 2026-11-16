@@ -69,3 +69,8 @@ Poging 3 is afgekeurd. De meting in §2 zei alleen *hoeveel* er verandert, niet 
 - Een frame waarin het hele lijf strekt, leunt of duikt (zoals Sentret, Pachirisu, Cinccino), kan Claude met een script als onderlaag bouwen; een maker ruimt daarna alleen de trapjes op.
 - Een beweging plus getekend detail (bek open, staart die echt zwaait, poot omhoog) blijft tekenwerk: via een maker-agent of een model van Jordi.
 - Welke beweging een soort krijgt, kiest Jordi.
+
+## 8. Geslaagd: Gemini-bewerking van de sprite zelf (viscacha, 16 nov)
+- Jordi gaf Gemini de 8×-sprite + de prompt uit `viscacha/gemini/PROMPT_FRAME2.md`. Resultaat (`viscacha/gemini/frame2_ronde1.png`, gif ernaast): exact op het 16×-raster van de sprite, lijf/achterpoten/staart pixel voor pixel gelijk aan frame 1, kop naar achteren met open bek en voorpoten tegen de borst. Jordi: "echt verbazingwekkend goed"; alleen de snorharen ontbreken ("goed te fixen").
+- Werkwijze frame 2 voortaan: **de sprite zelf (8×) als bijlage**, prompt "keep pixel grid and palette, change only X", terugzetten met de middelste pixel per 16×16-vak, dan opschonen.
+- Volgende: Gengas (manen bewegen; Hoopa Unbound doet iets vergelijkbaars, zie `hoopa_unbound.gif`), prompt in `gengas/gemini/PROMPT_FRAME2.md`.

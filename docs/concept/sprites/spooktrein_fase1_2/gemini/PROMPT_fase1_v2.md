@@ -18,7 +18,7 @@ VIEW: 3/4 view facing left.
 
 COLORS: rust browns (light #a0846a, mid #765a43, dark #363122) with a little dark grey steel (#4e4a44, #7b7c7e, highlight #aba09a), outline near-black brown (#292018).
 
-AVOID: a second wheel, any ghost, green or glow, a full locomotive or wagon, a mine cart, wood, a robot, arms or legs, a mouth, human eyes, cute/kawaii/chibi style, Trubbish or Garbodor look, too many tiny parts, too much detail.
+AVOID: a second wheel, any ghost, green or glow, a full locomotive or wagon, a mine cart, wood, a robot, arms or legs, a mouth full of teeth, human eyes, cute/kawaii/chibi style, Trubbish or Garbodor look, too many tiny parts, too much detail.
 
 FORMAT: 64x64 pixel sprite, small creature (fills about half the canvas), max 16 colors, 1 px dark outline, flat Gen 3 shading, no dithering, compact silhouette that fits in a square, plain white background, no ground, floor, shadow or rails under it.
 ```

@@ -21,3 +21,11 @@ COLORS: rust browns (light #a0846a, mid #765a43, dark #363122) with a little dar
 AVOID: any ghost, green or glow, a full locomotive or wagon, a mine cart, wood, a robot, arms or legs, a mouth full of teeth, cute/kawaii/chibi style, Trubbish or Garbodor look, too many tiny parts, too much detail.
 
 FORMAT: 64x64 pixel sprite, small creature (fills about half the canvas), max 16 colors, 1 px dark outline, flat Gen 3 shading, no dithering, compact silhouette that fits in a square, plain white background, no ground, floor, shadow or rails under it.
+
+## Ronde 1 (`f1_r1/fase1_v1.png`)
+Jordi: "op zich al prima, maar de ogen zijn niet zichtbaar, moeten geen menselijke ogen zijn".
+Bijsturen in hetzelfde gesprek (één wijziging, les GEMINI.md):
+
+```
+Keep everything exactly the same, change ONLY the eyes: they are hard to see and look like human eyes. Make the two eyes clearly visible and readable at sprite size, and NOT human eyes: no eyelids, no human iris. Simple Pokémon eyes, bigger, set inside the dark opening of the chimney.
+```

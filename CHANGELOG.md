@@ -2048,3 +2048,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.503] - Mate-lijn fase 2: r2 als basis, Gemini-prompt v7
 - r5 bewaard en overzicht r1–r5 (`mate_fase2/overzicht_r1_r5.png`). Jordi koos r2 als beste; `PROMPT_v7.md`: uitgekerfde ogen met mate erdoor, ventje minder boos, zilveren rand om het voorste vak.
+
+### [v0.0.504] - Mate-lijn fase 2: r6 + water van r2
+- r6 bewaard (zilveren rand om het voorste vak opgelost); het water van r2 teruggeplakt in `mate_fase2/r6_samengesteld/r6_water_r2.png`. Ogen nog open.

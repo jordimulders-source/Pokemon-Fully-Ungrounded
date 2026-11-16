@@ -69,6 +69,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Over r4 (Jordi, 16 nov):** "beter, maar de kano is veel minder mooi dan eerst, geen fatsoenlijke ogen ook"; "vond zelfs de vorige meer stijl hebben". Prompt v6 (kano/stijl/gezicht r3 + roeihouding/peddels r4 + ogen fase 1): `sprites/mate_fase2/gemini/PROMPT_v6.md`.
   - **Over r5 (Jordi, 16 nov):** "dit is het ook niet".
   - **r2 gekozen als basis (Jordi, 16 nov):** "Dit is de beste tot nu toe. De ogen mogen echt uitgekerfd zijn, zodat je de mate kan zien door de ogen heen, het ventje mag iets minder boos kijken en er moet nog een zilveren rand om het hoofd van de kano heen". Prompt v7: `sprites/mate_fase2/gemini/PROMPT_v7.md`.
+  - **Over r6 (Jordi, 16 nov):** "het hoofd is nu opgelost, nu haalt die het water weg, maar dat kan je wss wel terug zetten, ogen ben ik nog niet tevreden mee". Claude zette het water van r2 terug: `sprites/mate_fase2/r6_samengesteld/r6_water_r2.png` (vak x655–900, y410–610, groen van het ventje overgeslagen).
 - **Yanma/Yanmega:** "gaan we nog iets mee doen voor bug/dragon".
 - **Een condor-Pokémon = Hanan Pacha** (Jordi, 9 nov: "de condor in het legendary trio klinkt uitstekend").
 - **Venomoth-vuurvlieg** (Electric/Fire): Venonat wordt de nieuwe Venomoth **met een move die hij leert**; conceptueel een insect dat tot vuurvlieg evolueert (zoals Volbeat). **Ontwerp opnieuw met Gemini** (Jordi, 9 nov: "Het design was prima, maar kunnen we denk ik nu veel beter maken met Gemini").

@@ -45,3 +45,10 @@ STYLE AND FORMAT
 AVOID
 - No smooth skin, no flat single color. No pompoms or round bursts. No spring or slinky shape. No floating, separate rocket. No dragon snout, horns, whiskers or brow ridges. No collar or halo behind the head. Not Rayquaza, not Gyarados. No green, blue or orange. Nothing cute, no hearts. No text. No glossy 3D render.
 ```
+
+## v14b (16 nov): hoofd = explosie (experiment)
+Jordi: "of we maken het hoofd ene explosie en we kijken wat die gaat doen". Zelfde prompt, twee regels anders:
+- HEAD-regel vervangen door:
+  `- THE HEAD IS A FIREWORK EXPLOSION: where the fiery body ends, it bursts open into a firework explosion, and that explosion IS the head. The eyes and the mouth are inside the explosion itself. There is no snake head sticking out of it, no collar, no halo.`
+- In de no-regel: `NO firework explosions or burst shapes anywhere.` → `No firework explosions anywhere except the head.`
+Les uit v4–v6: een gezicht "in het midden van de barst" gaf steeds een kop in een kraag; daarom staat er expliciet dat er geen slangenkop uitsteekt.

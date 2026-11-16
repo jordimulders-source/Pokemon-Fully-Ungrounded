@@ -1,8 +1,8 @@
-# Meting r12 sprite_B_p2: palet, transparantie, rand, kleine clusters, vergelijking met r9-reparaties.
+# Meting eindkandidaat r16 sprite_B (= r12 p2 + 2 px losse vlam): palet, transparantie, rand, kleine clusters, vergelijking met r9/r10.
 import numpy as np; from PIL import Image
 from scipy import ndimage
 from collections import Counter
-im=Image.open('../r12/sprite_B_p2.png'); s=np.array(im); pal=np.array(im.getpalette()[:48]).reshape(16,3)
+im=Image.open('../r16/sprite_B.png'); s=np.array(im); pal=np.array(im.getpalette()[:48]).reshape(16,3)
 print('mode',im.mode,im.size,'transparency',im.info.get('transparency'),'palet-len',len(im.getpalette())//3)
 u=np.unique(s); print('indices gebruikt',u.tolist())
 for i in u: print(i,tuple(pal[i]),'L=%d'%int(.299*pal[i][0]+.587*pal[i][1]+.114*pal[i][2]),int((s==i).sum()))

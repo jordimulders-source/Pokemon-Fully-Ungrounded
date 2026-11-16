@@ -1,7 +1,7 @@
 # Keurvel r12 p2 (eindkeuring): sprite | model verkleind naar 64 (box), 8x; 1x op licht/donker.
 import numpy as np; from PIL import Image, ImageDraw
 D='../../'
-s=Image.open(D+'sprite/r12/sprite_B_p2.png').convert('RGBA')
+s=Image.open(D+'sprite/r16/sprite_B.png').convert('RGBA')
 m=Image.open(D+'referenties/model_v14.png').convert('RGB')
 m=m.crop((140,120,880,880)).resize((64,64),Image.BOX)
 ma=np.array(m.convert('RGBA')); wit=(np.abs(ma[...,:3].astype(int)-255).sum(2)<40); ma[wit,3]=0

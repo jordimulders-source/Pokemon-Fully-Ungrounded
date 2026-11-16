@@ -1,7 +1,7 @@
 # Zoomvel met coordinaten: zone x0,y0,x1,y1 van r12 p2 op 16x.
 import sys; from PIL import Image, ImageDraw
 x0,y0,x1,y1=map(int,sys.argv[1:5]); Z=16
-s=Image.open('../r12/sprite_B_p2.png').convert('RGBA')
+s=Image.open('../r16/sprite_B.png').convert('RGBA')
 bg=Image.new('RGBA',(64,64),(255,255,255,255)); bg.alpha_composite(s)
 c=bg.crop((x0,y0,x1,y1)).convert('RGB').resize(((x1-x0)*Z,(y1-y0)*Z),Image.NEAREST)
 v=Image.new('RGB',(c.width+24,c.height+24),(255,255,255)); v.paste(c,(24,24)); d=ImageDraw.Draw(v)

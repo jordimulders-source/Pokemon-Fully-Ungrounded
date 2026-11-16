@@ -2057,3 +2057,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.506] - Mate-lijn fase 2: gezichtsvarianten ventje
 - r8 bewaard (emoji-blik, afgekeurd; kano goed). Vier gezichtsvarianten door Claude op het natieve raster in `mate_fase2/ogen/` (A vastberaden, B inspanning, C één oog dicht, D open tanden), elk ook als volledig model.
+
+### [v0.0.507] - Mate-lijn fase 2: model bevroren
+- `mate_fase2/referenties/model.png`: r6 met het water en het boze gezicht van r2; `mate_fase2/SPEC.md`.

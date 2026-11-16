@@ -20,3 +20,4 @@ Gemini-model namaken (`docs/lessen/SPRITE_WERKWIJZE.md`, `GEMINI.md`, `SPRITE_KE
 ## Af (16 nov)
 `af/spooktrein.png` (+ `_8x`) = r19: eindkeuring PASS (`af/eindkeuring.md`). Open voor Jordi: losse zwarte pixel (25,31) in de bevroren gezichtslijnen weg of houden; lichtbruine tint 14 op de kop.
 - 16 nov (na af): "losse pixel mag weg, evenals rechts van de mini geest is er een lijntje en er zijn 2 losse pixels onder de koeienvanger, die koeienvanger moet trouwens nog beter" → r20 (pixels weg), koeienvanger volgt.
+- 16 nov, r23 (na tweede schets `jordi/koeienvanger_lijnen2.png`, "veel klopt al wel hoor"): "alleen de rechtse < moet iets kleiner".

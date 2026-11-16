@@ -54,8 +54,9 @@ for j in range(Hh):
         if cov<0.5: continue
         cc=c[c>0]; BLK[(oy+j,i)]=cc
         gr=np.isin(cc,[12,13]).mean()
-        if gr>=0.35 and (cc==1).mean()<0.6:      # wielen: grijs van het model gaat voor op de lijnregel
-            u,uc=np.unique(cc[np.isin(cc,[12,13])],return_counts=True); out[oy+j,i]=u[uc.argmax()]; WH.add((oy+j,i)); continue
+        if gr>=0.25:      # wielen: middelpunt-bemonstering (dichtstbijzijnde modelpixel), houdt de ronde lijn + grijs
+            cv=cls[min(198,int(Y0+(j+0.5)/s)), min(198,int(inv(np.array([(i+0.5)/s]))[0]))]
+            if cv>0: out[oy+j,i]=cv; WH.add((oy+j,i)); continue
         if (cc==1).mean()>=TL:
             rr=a[np.ix_(yy,xx)].reshape(-1,3)[c==1].mean(0)   # echte modelkleur van de lijn
             out[oy+j,i]=5 if rr[1]-rr[0]>12 else 1; GL[(oy+j,i)]=rr; continue

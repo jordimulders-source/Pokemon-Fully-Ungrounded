@@ -1711,3 +1711,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "nog teveel een cartoony blob, al is het gezicht wat beter". `gemini/r2/fase2_v2.png`. Jordi: "en de onderkant is lelijk van de geest" / "dat mag meer de kar bedekken" / "de pose is wel goed". (Slierten kwamen van Claudes eigen toevoeging in v2: onderlijf stroomt de wagon in; eruit.) Vorm van de geest eerst overleggen.
 - Jordi kiest voor de geest een stoompluim met krullen ("c is prima"). Prompt v3: `gemini/PROMPT_fase2_v3.md`.
 - Jordi: geest mag "een beeetje" op de mini-geest van fase 3 lijken; mond "overdreven wijd open". Prompt v4 met uitsnede als losse inspiratie: `gemini/PROMPT_fase2_v4.md`, `gemini/bijlage_minigeest_fase3.png`.
+
+### [v0.0.419] - Spooktrein fase 2: ronde 3, prompt v5 (gezicht)
+- Jordi over r3: "de vorm van de geest is nu goed, maar het gezicht vind ik echt slecht. Is teveel gengar, de mond moet echt overdreven groot zijn en doe maar kleine pretoogjes". `gemini/r3/fase2_v4.png`; v5 = r3 als bijlage, alleen het gezicht anders: `gemini/PROMPT_fase2_v5.md`.

@@ -42,7 +42,7 @@ def inv(u):  # sprite-x (in natieve eenheden na indrukken) -> natieve x
     return np.where(u<XC-X0, X0+u, XC+(u-(XC-X0))/k)
 SS=8
 W=64; Hh=int(np.ceil((Y1-Y0)*s))
-out=np.zeros((64,64),int); BLK={}; oy=64-Hh-0  # onderaan uitlijnen
+out=np.zeros((64,64),int); BLK={}; GL={}; oy=64-Hh-0  # onderaan uitlijnen
 oy=max(0,(64-Hh)//2+ (64-Hh)//4)
 for j in range(Hh):
     for i in range(W):
@@ -53,7 +53,9 @@ for j in range(Hh):
         cov=(c>0).mean()
         if cov<0.5: continue
         cc=c[c>0]; BLK[(oy+j,i)]=cc
-        if (cc==1).mean()*cov>=TL*cov and (cc==1).mean()>=TL: out[oy+j,i]=1; continue
+        if (cc==1).mean()>=TL:
+            rr=a[np.ix_(yy,xx)].reshape(-1,3)[c==1].mean(0)   # echte modelkleur van de lijn
+            out[oy+j,i]=5 if rr[1]-rr[0]>12 else 1; GL[(oy+j,i)]=rr; continue
         if (cc==7).mean()>=TN: out[oy+j,i]=7; continue
         g=[GROUP[v] for v in cc]; gs,gc=np.unique(g,return_counts=True); G=gs[gc.argmax()]
         sel=np.array([GROUP[v]==G for v in cc])

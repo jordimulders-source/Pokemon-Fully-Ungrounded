@@ -14,15 +14,23 @@ MONDEN = {
  'B3': (14, [9, 13, 15, 17, 17, 19, 19, 19, 17, 17, 15, 13], {7: 9, 8: 13, 9: 13, 10: 11}),
 }
 y0, rijen, tong = MONDEN[variant]
+# Jordi: "de mond valt nu aan de linkerkant erbuiten": mond alleen binnen de geest, met 1 px geest eromheen
+geest = {(x, y) for x in range(64) for y in range(64) if px[x, y] in (1, 2, 3, 4, 5) and y < 30}
+binnen = {(x, y) for (x, y) in geest if px[x, y] != 1 or 14 <= y < 30 and 23 <= x <= 44} 
+binnen = {(x, y) for (x, y) in geest if px[x, y] in (2, 3, 4)}
+mag = {(x, y) for (x, y) in binnen if all((x + dx, y) in binnen or px[x + dx, y] in range(7, 14) for dx in (-1, 1))}
 def zet(i, w, v):
     h = w // 2
     for x in range(cx - h, cx + round(h * fac) + 1):
-        if px[x, y0 + i] not in range(7, 14): px[x, y0 + i] = v
+        if (x, y0 + i) in mag: px[x, y0 + i] = v
 for i, w in enumerate(rijen): zet(i, w, 1)
 if "--tong" in sys.argv: [zet(i, w, 5) for i, w in tong.items()]  # Jordi 16 nov: "haal de tong maar weg"
-NABIJ = ['..11..', '.1111.', '11..11', '1....1']
-VER = ['..1..', '.111.', '11.11', '1...1']
-oy = y0 - 5
+OGEN = {
+ 'o2': (['.1111.', '111111', '11..11', '1....1'], ['.111.', '11111', '11.11', '1...1']),
+ 'o3': (['..11..', '.1111.', '111111', '11..11', '1....1'], ['..1..', '.111.', '11111', '11.11', '1...1']),
+}
+NABIJ, VER = OGEN[sys.argv[6]]
+oy = y0 - len(NABIJ) - 1
 ogen = [(cx - 8, NABIJ), (cx + 3, VER)]
 for ox, oog in ogen:
     for j, r in enumerate(oog):

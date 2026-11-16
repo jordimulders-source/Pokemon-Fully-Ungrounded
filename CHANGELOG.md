@@ -1776,3 +1776,14 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - `docs/concept/sprites/spooktrein_fase2/af/spooktrein_fase2.png` (+ `_8x`, `_vel`); op het overzichtsvel als "Spooktrein fase 2" (steel/ghost). Naam nog open.
 - Ter info (eindkeuring, niet aangepast): roestvlekken op het front zijn opgegaan in het middenbruin; rechte donkere strepen in de wolk (y52–53, y56) en lichte veegstrepen onderin volgen het model; kop licht met smalle schaduwsikkel (trouw aan het model).
 - Jordi (17 nov): "het wiel is minder mooi geworden, die was eerst dikker" / "ja ronde 4 terug, die was gewoon prima": spookwiel van r4 terug in `af/` (79 px, alleen in de wielzone x20–31 y45–56; script-diff 0 daarbuiten). Varianten in `sprite_r9/`.
+
+### [v0.0.443] - Vuurwerklijn: ontwerp eindvorm (vuurwerkslang)
+- Nieuwe lijn Fire/Fairy: sterretje → wondertol → vuurpijl (Jordi). Na stekelvarken (geschrapt: "beetje te puny") en Amaru (vrij gehouden voor de Uku Pacha-slang en de Dragon-gym) werd de eindvorm een vuurwerkslang: lijf en kop van vuur dat uit een vuurpijl (de staart) stroomt, kleurverloop goud-wit → roze → karmijn, verjaagt boze geesten.
+- 14 Gemini-prompts (`docs/concept/sprites/vuurwerk/gemini/`), rondes en referenties in `docs/concept/sprites/vuurwerk/`; citaten en besluiten in `docs/concept/IDEEEN.md` (Vuurwerk). Gemini kan geen vuurwerkbarsten tekenen; die komen in de sprite naar Jordi's pixelart-vel.
+- Lessen in `docs/lessen/GEMINI.md` (voorwerp-Pokémon zonder anatomie, regenboogbezem, kop in kraag, dunne strengen, vuurwerk = licht aan de uiteinden, frisse startprompt met alle besluiten werkte het best, modeloog vergroten i.p.v. vervangen).
+
+### [v0.0.444] - Vuurwerkslang: frontsprite af
+- `docs/concept/sprites/vuurwerk_fase3/af/vuurwerkslang.png` (+ `_8x`), naar Gemini-model v14 (`referenties/model_v14.png`), 17 rondes in `sprite/`; keuring PASS (`sprite/keuring_r12/`).
+- Jordi's afwijkingen: kop 115%, rechteroog met pupil, glitter weg → vuurwerkspikkels (lijf en om de kop, naar `referenties/vuurwerk_pixelart_jordi.png`), vlamtong bovenop, losse vlam rechtsboven variant B. Linkeroog: "r12 p2 blijft het beste".
+- Spikkels om de kop: variant B (grote barst linksonder) staat erin; variant "rond" (`sprite/r10/sprite_rond.png`) ligt klaar als Jordi wil wisselen.
+- Op het overzichtsvel (`showcase/frontsprites_af.png`) als "Vuurwerkslang" (Fire/Fairy; naam open). Sterretje en wondertol (fase 1–2) nog te doen.

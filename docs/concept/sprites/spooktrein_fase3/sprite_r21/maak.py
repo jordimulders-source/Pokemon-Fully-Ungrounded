@@ -60,7 +60,7 @@ for y,x in zip(*np.where(vul)):
     else: a[y,x]=11
 # 2b. grijze bladen: per samenhangend grijs vlak (11/12, 4-buren) licht-donker uit de toonkaart van het model
 #     (gladgestreken luminantie) + licht linksboven binnen het blad: lichte kant 10, midden 11, donkere kant 12.
-GW=float(sys.argv[4]) if len(sys.argv)>4 else 0.5
+GW=float(sys.argv[4]) if len(sys.argv)>4 else 0.5   # gebruikt: maak.py 0.3 0.45 0.15 0.5
 for bl in comps(list(zip(*np.where(vul&np.isin(a,[11,12]))))):
     if len(bl)<6: continue
     T=np.array([tl(x,y) for y,x in bl]); Tz=(T-T.mean())/(T.std()+1e-6)

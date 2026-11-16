@@ -1789,3 +1789,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 r21: koeienvanger-tinten uit het model (contour bleek al binnen 1 px gelijk); Claude: de 'vorm' zit in de zwarte vlakken tussen de bladen (vooral rechts) → r22.
 - Spooktrein fase 3 r22: zwarte vlakken tussen de bladen uit het model (lum<75, ≥40%); middentand nu los. Vorm rechts volgens meting gelijk aan model; vraag aan Jordi met vergelijking r22 vs model.
 - Spooktrein fase 3 r23: koeienvanger volgens Jordi's tweede schets (rechte linkerrand, ^-punt, ruit, <-naad, hoekige rechteronderkant); korte herkeuring.
+- **Spooktrein fase 3: frontsprite af, versie 2** (r24, keuring PASS): losse pixels weg, koeienvanger volgens Jordi's tweede schets, "<" 3 px. `af/` en overzichtsvel bijgewerkt; les in GEMINI.md.

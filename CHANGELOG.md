@@ -1834,3 +1834,10 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Spooktrein fase 3: frontsprite af, versie 3** (r27): strenge eindkeuring PASS; paletronde metaal + groen (zwakke tintgrenzen 10% → 2%), grijs weer grijs. `af/`, overzichtsvel, les.
 - Spooktrein fase 3 r28: binnenlijnen in kop en koeienvanger zachter (Jordi: "voelen nog wat hard"): A = nieuwe donkere roesttint (62,32,26), B = roestdonker 9; buitenlijn blijft zwart. Keuze aan Jordi.
 - **Spooktrein fase 3: frontsprite af, versie 4** (r29): binnenlijnen in kop en koeienvanger zachter (A, Jordi), strenge keuring PASS na 1 px; `af/` en overzichtsvel bijgewerkt.
+
+### [v0.0.444] - Mate-lijn (origineel, Grass/Water): fase 1 frontsprite af
+- Idee van Jordi (16 nov): fase 1 = de mate-kalebas zelf met handen en voeten, Shy Guy-vorm, masker; fase 2 = kano met een bladerventje (de yerba) dat roeit met twee bombilla's, kruiden voorin, warm water achterin. Origineel, twee fases. Letterlijk in `IDEEEN.md`.
+- Gemini-rondes r1–r4 (`sprites/mate/gemini/PROMPT*.md`): ronde mate met zilveren rand en bombilla, ooggaten met groen erin, hoorntjes van het aña-aña-masker (Chané/Guaraní, Chaco); model = r4 met de mond van r3 (`referenties/model.png`).
+- Sprite r1–r15 (`sprites/mate/sprite/`): vlekkentextuur afgekeurd ("erg korrelig", "groene blur") → 3 tinten + sikkelschaduw; hoorns, arm, neus, mond, voeten en ogen opnieuw uit het model verkleind na "de hoorns waren opnieuw getekend"; keuring per onderdeel op vorm; onderhoeken ronder (Jordi); Dragonfly Cave-eindkeuring: belijning op 8 px gerepareerd, palet lichter (variant B, Jordi: "rechts").
+- **Frontsprite af:** `sprites/mate/af/mate.png` (+ `_8x`), op het overzichtsvel. Naam open.
+- Lessen in `docs/lessen/GEMINI.md` (vlekkentextuur niet overnemen; keuring op metingen mist vormfouten).

@@ -59,3 +59,5 @@ Combinatie (Jordi: "geef gemini de handeling en dan kunnen we met het script de 
 > Plain white background. No hands, no moons, no other objects, no glow, no text.
 
 Terugval: knik via de engine (`frontAnimId`, bijv. `ANIM_ROTATE_UP_SLAM_DOWN`, `ANIM_V_SLIDE`, `ANIM_TIP_MOVE_FORWARD`) en frame 2 alleen de manen.
+
+## v7 (`gemini_knik_v7.png`): twee identieke frames, geen draaiing. Jordi: "hij doet weer niks, dit lukt dus duidelijk niet". Knik via Gemini gestopt.

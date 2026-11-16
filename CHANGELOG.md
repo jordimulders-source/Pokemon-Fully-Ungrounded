@@ -1970,3 +1970,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.481] - Frame 2: waarom viscacha wel en Gengas niet
 - Analyse in STUDIE.md §11 en een les in GEMINI.md: Gemini werkt als alleen een deel verandert; een beweging van de hele figuur laat het ontwerp verlopen.
+
+### [v0.0.482] - Gengas frame 2: knik via Gemini gestopt
+- Prompt v7 gaf twee identieke frames. Jordi: "dit lukt dus duidelijk niet". Knik via Gemini gestopt; vervolg ligt bij Jordi (engine-animatie en/of script).

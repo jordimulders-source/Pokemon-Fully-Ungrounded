@@ -1922,3 +1922,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.469] - Gengas frame 2: combinatie Gemini + script
 - `gengas/frame2/manen.py`: haalt de vier manen uit de sprite (bewaard in `manen_lab.npy`) en maakt `lijf_zonder_manen(_8x).png` als bijlage voor Gemini. `PROMPT_HOOFD.md`: alleen de knikbeweging van het hoofd als handeling. Daarna zet het script de manen op nieuwe plekken.
+
+### [v0.0.470] - Gengas frame 2: prompt hoofd v2
+- Lijf zonder manen is rechtsonder afgesneden (daar lag de voet); prompt vraagt Gemini de bol daar rond af te maken.

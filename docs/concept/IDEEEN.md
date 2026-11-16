@@ -25,6 +25,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Besloten (Jordi, 16 nov): egel → stekelvarken.** "goede, egels en stekelvarkens zijn er ook nog niet veel. Dan wordt de stekelvarken wel grotendeels van vuurwerk qua vorm, en zo weinig mogelijk qua lichaam zelf." Prompt v2: `sprites/vuurwerk/gemini/PROMPT_v2_stekelvarken.md`.
   - **Gemini v2** (`sprites/vuurwerk/r2/gemini_v2.png`), Jordi (16 nov): "echt vreselijk". (Analyse Claude: regenboogbezem van losse rechte strepen zonder vorm of ordening, gezicht verdwijnt, de pijlen zijn losse donkerrode staafjes die niet bij het lijf horen.)
   - **Jordi (16 nov):** "ja wat meer de geel/rood/roze kant op qua vuurwerk is goed, de stekels moeten een suggestie zijn. en ik wil het zoals de google fotos die ik deelde, daarvan was de vorm van het dier vuur en vuurwerk en dat is tof". Prompt v3: `sprites/vuurwerk/gemini/PROMPT_v3.md`.
+  - **Derde referentie Jordi (16 nov):** andermans fakemon (DoctorFakemon, Electric/Fire; `sprites/vuurwerk/referentie3_andermans_fakemon.png`, niet namaken). Jordi: "deze bijv ook, al is die zelf wel lelijk". (Beschrijving Claude: lijf van vlamvormen, sterbarsten aan staartpunt en ledematen, kleine pre-evo met een barst als staart.)
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

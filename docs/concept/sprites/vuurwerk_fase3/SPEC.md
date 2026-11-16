@@ -30,3 +30,4 @@ Stijl van de spikkels: `referenties/vuurwerk_pixelart_jordi.png` (losse, onderbr
 - r11: "blijkbaar snap je niet wat ik met linkeroog bedoel, ik heb hem omcirkeld" (`referenties/jordi_linkeroog_omcirkeld.png`: het gebied uiterst links aan de koprand, de bruine dubbele lijn met de tan strook, ±x3–6, y18–24).
 - r14: "allemaal slecht, ik heb hier puntjes op 3 potentiele pixels gezet die mogen veranderen, de rest blijft hetzelfde" (`referenties/jordi_linkeroog_puntjes.png`; gemeten: (4,22), (4,23), (5,24) op r12 p2). r15 = 8 combinaties van alleen die 3 pixels (`sprite/r15/`).
 - r12: "deze vlam hier is aan de onderkant een rechte lijn, daar mag iets meer contrast in, misschien 1 of 2 pixels anders" (`referenties/jordi_vlam_rechtsboven.png`); varianten A–D in `sprite/r16/`.
+- Vlam rechtsboven: Jordi kiest "B" → `sprite/r16/sprite_B.png` = eindsprite-kandidaat (r12 p2 + (43,6) leeg, (41,6) donkerrood).

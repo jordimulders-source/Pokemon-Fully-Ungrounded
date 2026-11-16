@@ -30,3 +30,6 @@ Bijsturen in hetzelfde gesprek (één wijziging):
 ```
 Keep everything exactly the same (the chimney, the big wheel, the pose, the colors), change ONLY the middle of the heap: it now looks like a mound of sand or dirt. There must be no sand, dirt or earth at all. The heap underneath the chimney is made only of piled-up rusty metal train parts: bent steel plates, pieces of rail, bolts, rivets and chain, stacked and tangled together, with gaps and hard edges between them.
 ```
+
+## Ronde 4 (`f1_r4/fase1_v2b.png`)
+Jordi: "dit is wel veel detailwerk, valt daar een sprite van te maken?". Grove testverkleining (`f1_r4/test_verkleining.png`, 56/48/44 px breed, geen sprite): schoorsteen en wiel blijven leesbaar, het midden (ketting, bouten, kleine plaatjes) wordt ruis.

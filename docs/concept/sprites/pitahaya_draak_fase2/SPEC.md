@@ -17,6 +17,7 @@
 - Bij r3, screenshot (niet als bestand binnengekomen) met een zwarte cirkel om het grijze gehemelte met de 3 pitjes, linksboven in de bek: "omcirkeld, daar is niet te zien welk onderdeel van de mond het is"
 - Bij r3: "en de bovenlip is een rechte lijn" · "let daar ook op"
 - Bij r4: "kijk ook naar hoe andere pokemon dat met open monden doen" · "want het modelm doet het ook niet super mooi"
+- Bij r5: "kan dat roze in de bek ook een andere kleur? een donkerdere tint van wit/grijs wat we nu aan het doen zijn? dan ziet dat er natuurlijker uit"
 
 ## Keuzes Claude (niet besproken)
 - Maat: model verkleind tot ±62 px breed (proef: ±62×36), op de bodem van het 64×64-vlak.

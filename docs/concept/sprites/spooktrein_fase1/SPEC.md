@@ -7,3 +7,4 @@ Besluiten van de lijn: `../spooktrein_fase1_2/SPEC.md`. Model: `model/model.png`
 - Grootte (Claude, fase 1 = klein): ±48 px breed; fase 2 vult 64×63.
 - Jordi (16 nov) bij r3: "ja liever dat je met iets grotere vormen netjes gedefinieerd de stapel kan vullen dan dat het een brei wordt".
 - Jordi (16 nov), daarna: "een bruine brei moet het niet worden".
+- Jordi (16 nov) bij r4: "ja wat beter, maar het is nog een blurry mess met wat willekeurige lijnen, zorg dat het netjes aansluit en dat het echt op een stapel lijkt en niet op een legpuzzel".

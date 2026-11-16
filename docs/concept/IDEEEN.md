@@ -34,6 +34,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Besloten (Jordi, 16 nov): vuurwerkslang, geen Amaru.** "voor een vuurwerkslang wordt de staart 1 vuurpijl, die richt naar boven, of half naar boven. Verder prima idee". Armen (eerder "2 handen die vuurpijlen zijn") nog open. Prompt v5: `sprites/vuurwerk/gemini/PROMPT_v5_slang.md`.
   - **Gemini v5** (`sprites/vuurwerk/r3/gemini_v5.png`), Jordi (16 nov): "het is wel oke, maar zo saaitjes". (Analyse Claude: gewone S-slang met een sterkraag als manen; één effen buis als lijf, kleine losse pijl aan de staart, rustige pose.)
   - **Jordi (16 nov):** "1, 2 en 4, maak v6" (spiraal omhoog, kleinere barsten langs de rug, print van vuurpijlpapier). Prompt v6: `sprites/vuurwerk/gemini/PROMPT_v6_slang.md`.
+  - **Gemini v6** (`sprites/vuurwerk/r4/gemini_v6.png`), Jordi (16 nov): "het hoofd is zo stom, ik wil niet dat er een hoofd uit een vuurkraag komt, het hoofd moet van vuur zijn". Prompt v7 (alleen het hoofd anders): `sprites/vuurwerk/gemini/PROMPT_v7_slang.md`.
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

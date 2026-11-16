@@ -25,3 +25,6 @@ Gemini-model namaken (`docs/lessen/SPRITE_WERKWIJZE.md`, `GEMINI.md`, `SPRITE_KE
 ## Af, versie 2 (16 nov)
 `af/spooktrein.png` = r24 (losse pixels weg, koeienvanger volgens Jordi's schets, "<" 3 px; keuring PASS `af/keuring_r24.md`).
 - 16 nov: strenge keuring vond twee even lichte groentinten; Jordi: "ja, breng daar ook meer verschil in" (paletronde metaal + groen, r26).
+
+## Af, versie 3 (16 nov)
+`af/spooktrein.png` = r27: strenge eindkeuring (schaduw, kleuren, lijnen, Dragonfly Cave) PASS na r25 (8 px) en paletrondes r26/r27 (metaal + groen meer contrast, grijs weer grijs). Keuring: `af/strenge_keuring_r27.md`.

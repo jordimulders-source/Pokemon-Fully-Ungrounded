@@ -1792,3 +1792,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Spooktrein fase 3: frontsprite af, versie 2** (r24, keuring PASS): losse pixels weg, koeienvanger volgens Jordi's tweede schets, "<" 3 px. `af/` en overzichtsvel bijgewerkt; les in GEMINI.md.
 - Spooktrein fase 3: strenge eindkeuring (schaduw, kleuren, lijnen, DFC) op r24: FAIL (contrast plaattinten 14, dambord schoorsteenlip, zwarte klonten); r25 met 8 px + 1 paletwaarde; restpunt modderig metaal (20% zwakke tintgrenzen, Gen 3 0–9%) → kleurronde palet.
 - Spooktrein fase 3 r26: paletronde metaal + groen (alleen paletwaarden; zwakke tintgrenzen metaal 20,4% → 0,4%, groen 3,0% → 1,0%, groen-metaal 32,5% → 5,4%); variant C gekozen; herkeuring.
+- **Spooktrein fase 3: frontsprite af, versie 3** (r27): strenge eindkeuring PASS; paletronde metaal + groen (zwakke tintgrenzen 10% → 2%), grijs weer grijs. `af/`, overzichtsvel, les.

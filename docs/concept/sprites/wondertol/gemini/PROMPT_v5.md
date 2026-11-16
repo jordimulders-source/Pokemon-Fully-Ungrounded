@@ -6,6 +6,8 @@ Nieuw gesprek, geen eerdere versies als bijlage. Bijlagen: (1) foto vuursalamand
 Over v4 (`r4/gemini_v4.png`): "dit lijkt meer een soort supernova". Daarna 4 referenties: "hier referenties" (`referenties/jordi_ref1..4`).
 (Wat Claude in de referenties ziet: een klein, verblindend fel heet punt laag op de grond; daaruit spuiten lange, dunne, gebogen vonksporen omhoog en opzij als een lage koepel/fontein; geen vuurrad naar de kijker, geen bol.)
 
+Jordi: "die groene stuur ik ook naar gemini bij de volgende prompt" → regel toegevoegd dat Gemini de kleuren van de bijlagen negeert (kleur B, geen groen).
+
 ## Wijzigingen t.o.v. v4 (keuzes Claude, schrappen mag)
 - Lijf = het felle hete punt laag bij de grond (wit-goud, naar roze/magenta aan de rand); uit rug en flanken spuiten gebogen vonksporen omhoog en opzij als een lage fontein. Geen pinwheel/spiraal meer.
 - Salamander laag bij de grond (zoals in v3/v4 de kop laag), kop en poten van vuur.
@@ -19,7 +21,7 @@ Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/
 
 CONCEPT
 - Fire/Fairy type, the middle stage of a firework evolution line: a SALAMANDER WHOSE BODY IS A BURNING GROUND-SPINNER FIREWORK.
-- Attachment 1 (fire salamander) is only for the head and legs. The other attachments show what the ground-spinner firework looks like when lit: a small, blinding hot point low on the ground, with long curved spark trails shooting up and out of it like a low fountain.
+- Attachment 1 (fire salamander) is only for the head and legs. The other attachments show what the ground-spinner firework looks like when lit: a small, blinding hot point low on the ground, with long curved spark trails shooting up and out of it like a low fountain. Use the attachments ONLY for the shape of the firework; ignore their colors (one of them is green) and use the colors described below.
 - THE BODY IS THAT BLAZING HOT POINT: a compact, low, glowing body of white-gold fire close to the ground, shading to hot pink and magenta at its edges. The creature is low and flat to the ground, not standing up.
 - FROM ITS BACK AND SIDES, CURVED SPARK TRAILS SHOOT UP AND OUTWARD like a low dome-shaped fountain, slightly curling as if it spins. Draw them as thick, solid, curved pixel streaks so they stay readable at 64x64.
 - THE HEAD sticks out of the front of the glowing body: a FLAT, WIDE salamander head, held low, with small eyes on top of the head and a wide mouth line. The head is made of fire; only the eyes and the mouth are drawn into the flame.

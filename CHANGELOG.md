@@ -1996,3 +1996,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.489] - Viscacha frame 2: snorharen terug
 - Maker-agent (`viscacha/frame2/`): Gemini-frame teruggezet op 64×64 en het palet van frame 1; vaste zone wijkt 0 px af van frame 1; Gemini's stompje vervangen door de 37 snorhaarpixels van frame 1, als groep 11 px omhoog; 6 px opschoning. Aandachtspunt: de rechter haren lopen nu over de gele wangpluk en de wang (in frame 1 eronder).
+
+### [v0.0.490] - Viscacha frame 2 af
+- Jordi: "nee ik vind hem echt top zo" (snorharen over de wangpluk blijven zo). Frame 2 af: `viscacha/frame2/viscacha_anim_front.png`.

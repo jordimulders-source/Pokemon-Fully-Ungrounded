@@ -1677,3 +1677,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.411] - Dustly: frontsprite-kandidaat (r4)
 - Model Gemini r6, kleur A (Jordi: "kleurrijker", "ga voor A"): stoffig mauve-roze, pruimschaduw, roze-oranje lichtrand. Silhouet = kale modelreductie (diff 0), schaal 2/3, 46×42 / 1313 px.
 - r2: mond te veel getekend (Jordi) → r3: mond = kale reductie, alleen de hoektanden in Gastly's Gen 3-vorm op de modelplek (met script gecontroleerd). Keuring r2: 5 px (terug naar modeltonen) → r4. Kandidaat `docs/concept/sprites/dustly/sprite_r4/dustly_r4.png` (+ `_8x`), naar Jordi.
+### [v0.0.412] - Dustly: r5, drie varianten tegen "te blurry"
+- Jordi over r4: "nog niet goed, te blurry". `docs/concept/sprites/dustly/sprite_r5/`: V1 vlakken samengevoegd, V2 + meer contrast, V3 + doorlopende bult- en buitenlijnen. Zonder tekenen: silhouet en gezicht diff 0 (script).

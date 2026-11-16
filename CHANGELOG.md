@@ -1729,3 +1729,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.423] - Spooktrein fase 2: sprite met gezicht (r3)
 - Maker: r1 kale verkleining van Gemini r5 (natief raster 199×199, losse onderdelen gegumd, staart B: alleen horizontaal ingedrukt), r2 wagon rustiger, wielen/as/krul/staartrand uit het model. Gezicht door Claude in varianten met Jordi: tong weg, 3/4 (verre oog links kleiner), D-vormige lachmond (15 px, 1 px links/omlaag), ogen zwart + donkergroen, wagonrandpixels langs de mond groen. `docs/concept/sprites/spooktrein_fase2/sprite_r3/`.
 - Jordi: "damn dat is denk ik een record qua snelheid?". Volgende: groene spookwielen gedefinieerder (maker r4), dan kleur, lijnen, schaduw, keurder en Dragonfly Cave-eindkeuring. Les in `docs/lessen/GEMINI.md`.
+
+### [v0.0.424] - Spooktrein fase 2: frontsprite af
+- Rondes 4–8: spookwiel gedefinieerder (Jordi: "De groene wielen moeten nog wat meer gedefinieerd"), keuringen r4/r5/r6c FAIL → reparaties (gesloten buitenlijn met selout/zwart, spikkels weg, banden als ijzeren stroken, roest + plankbruin samengevoegd voor ≥30 tintstap, wolk met donkere onderrand, schaduwsikkel geest), r7b PASS, r8 drie opschoonpunten, eindkeuring Dragonfly Cave PASS. Verse maker vanaf r6.
+- `docs/concept/sprites/spooktrein_fase2/af/spooktrein_fase2.png` (+ `_8x`, `_vel`); op het overzichtsvel als "Spooktrein fase 2" (steel/ghost). Naam nog open.
+- Ter info (eindkeuring, niet aangepast): roestvlekken op het front zijn opgegaan in het middenbruin; rechte donkere strepen in de wolk (y52–53, y56) en lichte veegstrepen onderin volgen het model; kop licht met smalle schaduwsikkel (trouw aan het model).

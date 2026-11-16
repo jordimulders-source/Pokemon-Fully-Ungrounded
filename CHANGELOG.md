@@ -1668,3 +1668,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.406] - Blobfish fase 1: winegum
 - Jordi: decoy niet mooi, vorm wel goed; lijn meer richting pudding, fase 1 iets steviger: winegum. Prompt v4 (vorm van v3 als bijlage): `docs/concept/sprites/blobfish/gemini/PROMPT_v4.md`.
 - Ook een ijsprompt (`PROMPT_v4_ijs.md`). Jordi: fase 2 wordt pudding → `docs/concept/sprites/blobfish_fase2/gemini/PROMPT_v2_pudding.md`.
+### [v0.0.407] - Blobfish fase 1: frontsprite af (winegum)
+- Naar Jordi's Gemini-model (winegum, vorm van de decoy-versie). Krassault-methode: natief raster 4 px, exacte 4×4-reductie (50×29 px, 848 px, tussen Feebas en Magikarp), silhouet bevroren vanaf r1. r2–r4: alleen herstel van wat de reductie wegnam (lipband via lipmasker uit het model, ogen, vinstralen, opkrul van de mond), keurder: trouw PASS, lijfcontrast te laag (uit het model).
+- Jordi koos uit A/B en 7 oogvarianten: **oog v4 (zwart kraaloog met glanspixel) op B (lichtronde)**: "lijkt het door meer contrast meer op een winegum". Eindkeuring Dragonfly Cave: PASS na 17 px (mauve tint op de rugvin naar lijftint, 2 px dambord op de kop).
+- **Af:** `docs/concept/sprites/blobfish/af/blobfish.png` (+ `_8x`). Op het overzichtsvel. Naam open.

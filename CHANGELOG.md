@@ -1840,3 +1840,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi kiest de roze pitahaya en een komodo/teju-richting (fase 2 teju, fase 3 voorover leunend op 2 poten); Gemini-prompt fase 1: `docs/concept/sprites/pitahaya_draak/gemini/PROMPT.md`.
 - Fase 1 is geen kleine hagedis (Jordi); lichaam open, prompt aangepast.
 - Lichaam fase 1: stukje cactusrank (Jordi); prompt compleet.
+- Gemini r1 pitahaya-draak fase 1 (idee klopt; gezicht en ledematen aanpassen), prompt v2.

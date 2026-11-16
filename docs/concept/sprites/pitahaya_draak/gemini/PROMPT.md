@@ -44,3 +44,19 @@ AVOID
 - Not a snake. No wings.
 - Not Applin-like (no fruit with a creature peeking out of it). Not a plush toy, chibi or Neopets mascot. No glossy 3D render.
 ```
+
+---
+
+# Prompt v2 (16 nov): zelfde gesprek, reactie op r1 (`r1.png`)
+
+## Jordi (letterlijk)
+- "het gezicht is stom en niet passend, de armen en benen mogen iets substantieler, het idee klopt wel goed"
+
+```
+The idea is right, keep the fruit head and the cactus-stem body exactly as they are. Change only two things:
+
+1. The face: replace it completely. The current face is silly and doesn't fit a Pokémon that will evolve into a tegu lizard and then a Komodo dragon. Remove the blush marks, the dot nostrils and the small smile.
+2. The arms and legs: make them a bit more substantial (thicker and sturdier), still made of the same green cactus stem.
+
+Same pose, same colors, same Gen 3 sprite style, plain white background.
+```

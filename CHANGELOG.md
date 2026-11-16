@@ -1977,3 +1977,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.483] - Gengas frame 2: plan ter keuring
 - `gengas/frame2/plan.py`: frame 2 = ronde bol (v15) stil, vier manen verplaatst (boven 6 links; rechterhand 5 op; linkerhand 6 op; voet 6 links, 2 op); niets getekend. Vel `gengas_anim_front_plan.png`.
 - Knik via de engine, nagerekend uit `src/pokemon_animation.c`: `plan_v_slide.gif` (ANIM_V_SLIDE: op-neer-op, 6 px) en `plan_tip_move_forward.gif` (ANIM_TIP_MOVE_FORWARD: ±11° kantelen). Simulatie, niet in de emulator.
+
+### [v0.0.484] - Gengas frame 2: manen verder (plan B)
+- Jordi: "2 en 3 zijn best goed! kan je nog de manen wat meer laten bewegen naar andere plekken?" Plan B: alle manen 12–15 px tegen de klok in langs hun baan (boven → links boven het linkeroor, rechterhand → rechtsboven, linkerhand → linksonder, voet → rechts). Bestanden met `_b` in `gengas/frame2/`; `plan.py` leest de verplaatsingen nu uit `MANEN`/`SUF`.
+- Kantelende engine-animaties in de expansion: ANIM_TIP_MOVE_FORWARD bij 14 soorten (o.a. Relicanth, Stunky, Whirlipede, Basculin, Clauncher, Crabrawler, Fomantis, Grookey, Drizzile, Zygarde), verder SWING_CONCAVE/CONVEX (±33), BOUNCE_ROTATE_TO_SIDES (±21), ROTATE_UP_SLAM_DOWN (4).

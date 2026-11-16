@@ -19,3 +19,11 @@ Stijl van de spikkels: `referenties/vuurwerk_pixelart_jordi.png` (losse, onderbr
 ## Niet besloten (niet doen)
 - Barsten op het lijf (niet gevraagd).
 - Frame 2, rug, icoon, shiny, naam/data: later voor alle soorten samen.
+
+## Rondes (Jordi letterlijk, 16 nov)
+- r4: "de ogen zijn nog niet zo goed zichtbaar, binnenkant misschien een andere kleur geven die losse vlam rechtsbovenin is een lijn geworden. Als je ruimte hebt mag de kop ook best groter. Ik vind hem verder nog niet slecht hoor." · "desnoods doe je de oogkleur niet wit zodat je meer contrast hebt"
+- r5: "de kop 115% prima, maar het belangrijkste is dat het oog groter wordt. ik zie geen pupil nu"
+- r6 (Seviper-oog): "nee vreselijk, het oog was bijna goed en nu compleet verknald"
+- r7: "het leest nog niet goed het oog he, verder is een bovenste stuk vlam nu een vierkant" · "ja het linkeroog is sowieso een blur, het moet zodanig worden dat er echt een oog uit te halen valt, dat is bij r5 115% nog het beste alleen die heeft dus geen pupil"
+- r8: "ik heb echt geen idee wat je met het linkeroog aan het doen bent, rechteroog lijken a en b allebei prima"
+- r9: "nee het gebied links moet gewoon wat gefixed worden, er moet niet een extra oog bij"

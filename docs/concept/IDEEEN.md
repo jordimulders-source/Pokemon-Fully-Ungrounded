@@ -49,6 +49,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Vuurwerkreferentie Jordi (16 nov):** "dit is vuurwerk imo" (`sprites/vuurwerk/referentie_vuurwerk_pixelart.png`). Prompt v12b (met die referentie als bijlage 2) in hetzelfde bestand.
   - **Gemini v12b** (`sprites/vuurwerk/r9/gemini_v12b.webp`), Jordi (16 nov): "gemini kan het niet, heb zelfs de afbeelding erbij gedaan". Voorstel Claude (open): hoofd nog één Gemini-ronde, daarna het ontwerp bevriezen en de barsten in de spritefase zelf zetten in de stijl van `referentie_vuurwerk_pixelart.png` (wijkt af van "model overnemen", dus alleen met Jordi's akkoord).
   - **Zonder barsten** (`sprites/vuurwerk/r9/gemini_v12c_zonder_barsten.webp`), Jordi (16 nov): "ik dacht het al te zien, de vorm klopt niet". (Waarnemingen Claude, open: lijf is een veer/slinky van even dikke ringen; de pijl zweeft los, de staart gaat er niet in; het lijf loopt niet taps; de kop steekt los uit; de barsten verborgen dit.)
+  - **Jordi (16 nov):** "nieuwe prompt, want hij doet het de hele tijd al fout, met dit ontwerp kunnen we niks". Prompt v13 (nieuwe start, alle besluiten op een rij): `sprites/vuurwerk/gemini/PROMPT_v13_nieuw.md`.
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

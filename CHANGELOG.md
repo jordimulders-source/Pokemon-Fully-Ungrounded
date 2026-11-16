@@ -1837,3 +1837,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.444] - Pitahaya-draak: start lijn
 - `IDEEEN.md`: Jordi's opzet (3 fases, fase 1 = pitahayahoofd met een lichaam eronder) en een lijstje Zuid-Amerikaanse draakachtige mythen als naslag.
+- Jordi kiest de roze pitahaya en een komodo/teju-richting (fase 2 teju, fase 3 voorover leunend op 2 poten); Gemini-prompt fase 1: `docs/concept/sprites/pitahaya_draak/gemini/PROMPT.md`.

@@ -1,0 +1,11 @@
+10	45	p	v	verre lip (roze binnen de bek) -> donkergrijs
+10	46	r	v	verre lip (roze binnen de bek) -> donkergrijs
+11	46	r	v	verre lip (roze binnen de bek) -> donkergrijs
+12	45	r	v	verre lip (roze binnen de bek) -> donkergrijs
+13	45	r	v	verre lip (roze binnen de bek) -> donkergrijs
+10	43	v	w	wig v -> w (modeltoon wig 187), zodat de verre lip de donkerste is
+11	43	v	w	wig v -> w (modeltoon wig 187), zodat de verre lip de donkerste is
+10	44	v	w	wig v -> w (modeltoon wig 187), zodat de verre lip de donkerste is
+12	44	v	w	wig v -> w (modeltoon wig 187), zodat de verre lip de donkerste is
+13	44	v	w	wig v -> w (modeltoon wig 187), zodat de verre lip de donkerste is
+11	45	v	w	wig v -> w (modeltoon wig 187), zodat de verre lip de donkerste is

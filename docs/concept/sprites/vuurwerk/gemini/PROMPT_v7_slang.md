@@ -4,7 +4,7 @@ Nieuw gesprek, geen bijlage. Hoofd en lijf veranderd t.o.v. v6.
 
 ## Jordi over v6 (letterlijk, 16 nov)
 "het hoofd is zo stom, ik wil niet dat er een hoofd uit een vuurkraag komt, het hoofd moet van vuur zijn"
-Daarna: "en het lichaam ook, alsof alles uit de vuurpijl komt"
+Daarna: "en het lichaam ook, alsof alles uit de vuurpijl komt"; "en hij moet er sterker uit zien"
 
 ## Keuze Claude (open, Jordi beslist)
 - De print van vuurpijlpapier (punt 4 uit v6) botst met een lijf van vuur; nu alleen nog op de vuurpijl zelf. Schrappen of terugzetten mag.
@@ -32,7 +32,7 @@ CONCEPT
 - No arms and no legs: a true serpent.
 - A few separate teardrop-shaped sparks fly outward from the body, close to it.
 - Colors: YELLOW, RED AND PINK only, with bright yellow-white at the cores of the bursts.
-- It chases away evil spirits: a bold, defiant, protective expression.
+- IT LOOKS STRONG AND POWERFUL, like a fully evolved Pokémon. It chases away evil spirits: a bold, defiant, protective expression.
 - Final stage of a three-stage line (sparkler -> ground spinner -> firework rocket).
 
 STYLE AND FORMAT

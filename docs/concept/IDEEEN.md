@@ -47,6 +47,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Jordi (16 nov):** "het hoofd is wel wat te kaal verder". Hoofd in een aparte bijlageronde na v11 (max. 2 wijzigingen per ronde). Voorstellen Claude (open): (a) vlampunten achter op de kop zoals in v9, op het gladde gezicht van v10; (b) een kleine vuurwerkbarst als kuif/kam; (c) glinsterpatroon of twinkels op de kop.
   - **Gemini v11** (`sprites/vuurwerk/r9/gemini_v11.webp`), Jordi (16 nov): "het vuurwerk is wederom geen vuurwerk". (Claude: licht zat steeds in het midden = glinster; echt vuurwerk heeft een leeg midden, licht in de uiteinden en hangende sporen.) Prompt v12: `sprites/vuurwerk/gemini/PROMPT_v12_bijlage.md`.
   - **Vuurwerkreferentie Jordi (16 nov):** "dit is vuurwerk imo" (`sprites/vuurwerk/referentie_vuurwerk_pixelart.png`). Prompt v12b (met die referentie als bijlage 2) in hetzelfde bestand.
+  - **Gemini v12b** (`sprites/vuurwerk/r9/gemini_v12b.webp`), Jordi (16 nov): "gemini kan het niet, heb zelfs de afbeelding erbij gedaan". Voorstel Claude (open): hoofd nog één Gemini-ronde, daarna het ontwerp bevriezen en de barsten in de spritefase zelf zetten in de stijl van `referentie_vuurwerk_pixelart.png` (wijkt af van "model overnemen", dus alleen met Jordi's akkoord).
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

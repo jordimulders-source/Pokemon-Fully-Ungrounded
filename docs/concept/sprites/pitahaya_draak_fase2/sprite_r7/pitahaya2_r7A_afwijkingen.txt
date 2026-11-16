@@ -1,0 +1,4 @@
+10	44	idx 10->13	wig -> plooitint v (155,154,159)
+12	44	idx 10->13	wig -> plooitint v (155,154,159)
+13	44	idx 10->13	wig -> plooitint v (155,154,159)
+11	45	idx 10->13	wig -> plooitint v (155,154,159)

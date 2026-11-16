@@ -56,3 +56,11 @@ Op 2× zakt de lijn zichtbaar naar de mondhoek, zoals bij Croconaw en Gyarados, 
   De grijze vouw gaat links over in de roze lipband.
 - **r6B:** (9,45) en (10,47) zijn ook v. Alleen (9,44) r blijft, als roze stukje in de hoek bij de tand. De grijze vouw loopt door tot tegen de linker lipband, en het roze zit alleen nog op de buitenlippen.
 - **Op 1× en 2×:** nauwelijks verschil. Op 8–20× is r6B de doorlopende grijze vouw en houdt r6 een roze begin links.
+
+## Aanvulling (coördinator: in r7 wordt de wig even donker als de plooi of een tint donkerder, op Jordi's wens)
+- **Toon van de wig:** mijn opmerking hierover vervalt.
+- **Reparatie (14,45):** opnieuw bekijken in r7.
+  - Is de wig donker (v of donkerder), dan raakt hij de tongachterkant (w) niet meer in dezelfde tint, en is het in-elkaar-overlopen bij (13,44)/(14,45) grotendeels weg.
+  - Wordt de wig precies v, dan smelten wig en plooi samen tot één donker vlak boven de tong. Dat kan de bedoeling zijn (donker bovenin, zoals Croconaw), maar dan is de plooi geen apart deel meer.
+  - Voor r7 te keuren: is de grens donker/wit op (14,45) gesloten? En leest de bovenkant van de bek nog als bovenkant?
+- **Ongewijzigd:** bovenlip, netheid en de beschrijving r6 tegenover r6B.

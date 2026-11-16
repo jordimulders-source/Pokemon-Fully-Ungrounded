@@ -36,3 +36,4 @@ Jordi letterlijk: "hiermee beginnen en dan de kleuren leuker maken bij het maken
 - Maat: fase 1; Gastly Gen 3 = 48×42 px, 1190 px.
 - 15 nov (Jordi, na uitleg Claude dat A het best bij de Bok-globule past): "ga voor A" → variant A (stoffig mauve-roze/rozebruin, schaduw diep pruim, lichtrand roze-oranje).
 - 15 nov (Jordi, over r2): "de mond ben je ook teveel zelf aan het tekenen" → r3: mondzone = kale modelreductie (oorzaak: Claude's r2-opdracht schreef tandmaat en lijndikte voor).
+- 15 nov (Jordi, over r4): "nog niet goed, te blurry" → r5: drie varianten scherper (vlakken / contrast / lijn), zonder tekenen, gezicht en silhouet diff 0.

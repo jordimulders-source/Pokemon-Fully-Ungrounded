@@ -19,3 +19,13 @@ for i in range(1,16):
 # los gedeelte buiten de hoofdmassa: waar
 ys,xs=np.where(op&~big); print('pixels buiten hoofdmassa',len(xs))
 q=op&~big; print(' linksonder x<27,y>28:',int(q[28:,:27].sum()),' kopzone y<30:',int(q[:30].sum()))
+print('lichte kleuren op buitenrand hoofdmassa (idx 4,5,7,8,12,13,15):')
+for i in (4,5,7,8,12,13,15):
+    ys,xs=np.where(rb&(s==i)); print(i,[(int(x),int(y)) for x,y in zip(xs,ys)])
+# zwart vs donkerlila (6) op rand: lichtkant check grof
+# zwart(1) en donkerlila(6) om en om op de rand: randpixels 1 met >=2 rand-buren 6 en omgekeerd
+alt=[]
+for y,x in zip(*np.where(rb&(s==1))):
+    nb=[(y+dy,x+dx) for dy in(-1,0,1) for dx in(-1,0,1) if (dy or dx) and 0<=y+dy<64 and 0<=x+dx<64 and rb[y+dy,x+dx]]
+    if sum(s[p]==6 for p in nb)>=2 and sum(s[p]==1 for p in nb)==0: alt.append((int(x),int(y)))
+print('losse zwarte randpixels tussen donkerlila:',alt)

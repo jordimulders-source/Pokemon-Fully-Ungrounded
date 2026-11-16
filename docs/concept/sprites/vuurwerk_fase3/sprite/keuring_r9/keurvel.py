@@ -17,7 +17,7 @@ for j,(im,c) in enumerate([(s,(255,255,255)),(m64,(255,255,255)),(s,(40,40,48)),
     vel.paste(bg.convert('RGB'),(x0+(j%2)*70,10+(j//2)*70))
 d=ImageDraw.Draw(vel)
 # markeringen (sprite-coordinaten) uit het rapport
-MARK={1:(0,28,26,56),2:(24,46,44,63),3:(0,4,22,30),4:(0,0,14,10)}
+MARK={1:(0,28,26,56),2:(20,3,43,44),3:(2,4,30,27),4:(8,20,11,23),5:(25,8,40,17)}
 for n,(a,b,c,e) in MARK.items():
     d.rectangle((10+a*Z,10+b*Z,10+c*Z,10+e*Z),outline=(0,160,255),width=3); d.text((14+a*Z,12+b*Z),str(n),fill=(0,0,255))
 vel.save('keurvel_r9.png')

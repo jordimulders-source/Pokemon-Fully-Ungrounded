@@ -1,0 +1,30 @@
+1 mondhoek	(19,44)	p->P
+1 mondhoek	(19,45)	p->P
+1 mondhoek	(17,46)	r->p
+1 mondhoek	(18,46)	p->P
+1 mondhoek	(17,47)	r->p
+1 mondhoek	(16,48)	r->p
+1 mondhoek	(19,48)	r->p
+1 mondhoek	(16,49)	p->P
+1 mondhoek	(17,49)	p->P
+1 mondhoek	(18,49)	r->p
+1 mondhoek	(19,49)	r->p
+1 mondhoek	(15,50)	p->P
+1 mondhoek	(17,50)	r->p
+1 mondhoek	(18,50)	r->p
+1 mondhoek	(16,51)	r->p
+1 mondhoek	(17,51)	r->p
+1 mondhoek cluster	(17,44)	r->p
+1 mondhoek cluster	(16,48)	p->P
+1 mondhoek cluster	(19,50)	r->p
+2 lipband	(7,50)	d->r
+2 lipband	(7,51)	d->r
+2 lipband	(7,52)	d->r
+2 lipband	(7,53)	d->r
+4 voorvoet dambord	(11,58)	G->g
+4 voorvoet dambord	(13,57)	g->G
+4 dambord	(10,37)	r->p
+4 dambord	(39,46)	d->r
+4 dambord	(17,48)	P->p
+5 lipband onder	(9,53)	W->p
+5 lipband onder	(10,53)	W->p

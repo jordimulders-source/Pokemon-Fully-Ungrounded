@@ -2016,3 +2016,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.494] - Gengas frame 2 opgeschoond
 - Maker-agent (`gengas/frame2/schoon/`): rotatie-artefacten in frame 2 weg, 118 px. Ogen en grijns pixel voor pixel uit frame 1 op de gedraaide plek (grijns in 4 stroken met trapjes van 1 px), 13 randpixels gedicht, oorpunt en gaspluimpje weer vast; manen (418 px) en frame 1 ongewijzigd, geen nieuwe indexen. Vel `combi_c_anim_front_schoon.png`, gif `combi_c_v_slide_schoon.gif`.
+
+### [v0.0.495] - Gengas frame 2 af
+- Jordi: "prima". Frame 2 van Gengas af: `gengas/frame2/schoon/combi_c_anim_front_schoon.png`, engine-animatie `ANIM_V_SLIDE`, frame 2 ±34 tikken in beeld. Daarmee zijn beide frame 2-tests af (viscacha en Gengas).

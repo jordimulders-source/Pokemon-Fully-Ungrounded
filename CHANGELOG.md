@@ -1686,3 +1686,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Spooktrein fase 3 sprite r1 (maker): BOX-onderlaag per kleurgroep (schrappen bij 26% vervormde), netjes gemaakt; Claude stuurt r2 met reparaties (ogen, mond, koeienvanger, wolken, kleine geest).
 - Spooktrein fase 3 sprite r2 (LANCZOS-onderlaag): wolken beter, gezicht en koeienvanger niet; r3 = hybride (gezicht/koeienvanger/kleine geest per onderdeel geschrapt zonder lijnen te raken).
 - Spooktrein fase 3 sprite r3 (hybride): gezicht nu het best (bevroren); r4 = ontruisronde (koeienvanger, roest, kleine geest).
+- Spooktrein fase 3 sprite r4 (ontruisd, gezicht bevroren): automatisch overnemen zit aan zijn grens (koeienvanger en kleine geest niet leesbaar); vraag aan Jordi.

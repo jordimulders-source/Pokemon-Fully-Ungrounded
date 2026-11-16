@@ -46,6 +46,8 @@ items=[
 ("gengas/af/gengas.png",'"Gengas"',"cosmic/poison"),
 ("spooktrein_fase2/af/spooktrein_fase2.png",'Spooktrein fase 2',"steel/ghost"),
 ("spooktrein_fase3/af/spooktrein.png",'Spooktrein fase 3',"steel/ghost"),
+("pitahaya_draak/af/pitahaya_draak.png",'Pitahaya-draak fase 1',"grass/dragon"),
+("vuurwerk_fase3/af/vuurwerkslang.png",'Vuurwerkslang',"fire/fairy"),
 ("mate/af/mate.png",'Mate-kalebas',"grass/water"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")

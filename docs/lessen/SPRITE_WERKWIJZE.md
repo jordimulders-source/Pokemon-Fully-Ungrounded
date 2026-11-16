@@ -109,6 +109,7 @@ Voorbeeldmodel: `docs/concept/sprites/kolibrie_pre/blender/kolibrie_pre.py` (hui
 ## Stap 6. Afronden
 - Eindversie in `docs/concept/sprites/<naam>/af/` + vel; SPEC.md, `CHANGELOG.md`, Stand van zaken in `CLAUDE.md` bijwerken; lessen naar het passende `docs/lessen/`-bestand.
 - Daarna (aparte taak): frame 2, rugsprite, icoon, shiny-palet (skins-regel), naam en data.
+- Frame 2: eerst `docs/concept/sprites/frame2_studie/STUDIE.md` §12 lezen (werkwijze: Gemini voor lokale poses, script voor hele figuur en losse delen in tegenbeweging, maker-agent voor naden, engine-animatie erbij).
 
 ## Kosten en tempo (ter oriëntatie)
 - Een maker- of keurderronde kost ±150–400k agenttokens; zuinig: één maker, één keurder, kleine vellen, geen parallelle experimenten.

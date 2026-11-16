@@ -23,6 +23,13 @@ for y in range(1,63):
             nb=o[y-1:y+2,x-1:x+2].ravel(); nb=np.delete(nb,4)
             if (nb>0).all() and not np.isin(nb,[1,5,10,14]).any():
                 u,uc=np.unique(nb,return_counts=True); mark('losse lijnpixel (bout/ruis)',y,x,u[uc.argmax()])
+# 3b. losse hout/staalpixel zonder buur van zijn groep (donkere modellijn verkeerd ingedeeld, bv. in de krul) -> omlijning
+for y in range(64):
+    for x in range(64):
+        v=o[y,x]
+        if v in GROUP and GROUP[v] in 'WS':
+            nb=o[max(0,y-1):y+2,max(0,x-1):x+2].ravel()
+            if sum(1 for q in nb if q in GROUP and GROUP[q]==GROUP[v])==1 and sum(1 for q in nb if q in (2,3,4,5,6))>=3: mark('losse hout/staalpixel -> lijn',y,x,1)
 # 4. wielen (alleen variant B-schaal gemeten): de reductie brak de ronde omlijnde wielen; per pixel terug naar
 #    de modelopbouw (natief x39-50/y110-120 en x70-82/y111-121): omlijning rondom, licht grijs linksboven, donker rechtsonder
 s,X0,Y0,oy,XC,kk=[float(v) for v in open(f'basis_{VAR}.meta').read().split()]

@@ -74,7 +74,9 @@ fgm=out>0; pad=np.pad(fgm,1)
 edge=fgm&~(pad[:-2,1:-1]&pad[2:,1:-1]&pad[1:-1,:-2]&pad[1:-1,2:])
 for (y,x) in zip(*np.where(edge)):
     pass
-    cc=BLK[(y,x)]; v=cc[np.argmin(LUM[cc-1])]
+    cc=BLK[(y,x)]; G0=GROUP.get(out[y,x],'O')
+    cc=cc[[(GROUP[q]==G0 or q==1 or (G0=='N' and GROUP[q]=='G')) for q in cc]]   # alleen eigen kleurgroep of omlijning
+    v=cc[np.argmin(LUM[cc-1])]
     if v!=out[y,x]: out[y,x]=v; nr+=1
 print('randpixels naar donkerste modelkleur',nr,'wielpixels',len(WH))
 np.save(f'basis_{VAR}.npy',out); open(f'basis_{VAR}.meta','w').write(f'{s} {X0} {Y0} {oy} {XC} {k}')

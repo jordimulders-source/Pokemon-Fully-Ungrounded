@@ -19,6 +19,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Vormvoorstellen Claude (16 nov):** vos, kat, paard/eenhoorn, vogel (te dicht bij Moltres/Ho-Oh), danser; Claudes voorkeur kat.
   - **Jordi (16 nov), vorm vuurpijl:** "wat als de vuurpijl een hoofd heeft wat de vuurwerk explosie is en 2 handen die dan vuurpijlen zijn".
   - **Jordi (16 nov):** "het hoofd moet meerdere kleuren zijn, hij wordt fire/fairy, dus mag kleurrijk. Is een pokemon die boze geesten verjaagt". (Achtergrond Claude: vuurwerk en rotjes zijn in China van oudsher bedoeld om boze geesten te verjagen, o.a. het monster Nian met Chinees Nieuwjaar.)
+  - **Gemini v1 vuurpijl** (`sprites/vuurwerk/r1/gemini_v1.png`, prompt `sprites/vuurwerk/gemini/PROMPT.md`), Jordi (16 nov): "ok dit ziet er echt heel stom uit". (Analyse Claude: een mensje in een gestreepte huls met een explosiehoed, dat pijlen vasthoudt; de open prompt liet Gemini een letterlijk mensfiguur invullen.)
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

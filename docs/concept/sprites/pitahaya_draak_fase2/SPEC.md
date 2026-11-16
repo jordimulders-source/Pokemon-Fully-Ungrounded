@@ -1,0 +1,17 @@
+# Pitahaya-draak fase 2 (teju; werknaam open), frontsprite naar Gemini-model
+
+- Lijn: pitahayahoofd met cactusrank-lijf (fase 1, `../pitahaya_draak/af/`) → **teju (deze)** → komododraak op 2 poten, voorover leunend. Pseudo-legendary, waarschijnlijk Grass/Dragon.
+- **Model (bevroren ontwerp):** `model/model.png` (= `gemini/r2.png`, prompts `gemini/PROMPT.md` v1–v2). Kijkt al naar links, niet spiegelen.
+- Ontwerpgeschiedenis en citaten: `docs/concept/IDEEEN.md` (Pseudo-legendary draak: pitahaya).
+
+## Jordi (letterlijk, 16 nov)
+- "dan is fase 2 een teju en fase 3 mag op 2 poten staan, maar voorover leunend, komodo draak"
+- "Het gezicht zit in de vrucht bij fase 1, maar daarna komen er meer kenmerken bij"
+- "het vruchtvlees wil ik wel erin hebben, ik twijfelde tussen buikpatroon of de binnenkant van de mond" → "ja dan moet de bek groot open"
+- "Ik wil duidelijk de dragonfruit blijven laten tonen"
+- "Ik wil laag op vier poten, net wat gemener, duidelijke middenfase, beetje grootte als gabite, maar gabite staat op 2"
+- Over r1: "design is tof, misschien net iets te weinig de vrucht zelf?"
+- Over r2 (model): "tof" · "ik zie geen spiraal in de staart, hij beweegt gewoon achter het lichaam, ga maar bouwen"
+
+## Keuzes Claude (niet besproken)
+- Maat: model verkleind tot ±62 px breed (proef: ±62×36), op de bodem van het 64×64-vlak.

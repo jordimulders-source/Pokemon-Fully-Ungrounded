@@ -66,6 +66,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
   - **Gemini v6** (`sprites/wondertol/r6/gemini_v6.png`), Jordi (16 nov): "ok conceptueel is het nu beter, behalve dat die mn punten niet volgt. Het vuur is hetgene dat draait, niet een stuk eronder. De armen en het hoofd zijn nog steeds losse opplaksels". Prompt v7 (bijlage v6): `sprites/wondertol/gemini/PROMPT_v7.md`.
   - **Gemini v7** (`sprites/wondertol/r7/gemini_v7.png`), Jordi (16 nov): "iets beter, maar zijn hoofd en poten zijn nog steeds opgeplakt en geen onderdeel van het vuur zoals bij de laatste fase". Prompt v8 (bijlagen v7 + fase 3-model): `sprites/wondertol/gemini/PROMPT_v8.md`.
   - **Gemini v8** (`sprites/wondertol/r8/gemini_v8.png`), Jordi (16 nov): "zucht". (Claude: draaipunt weg, staat weer op poten, kop nog oranje huid, losse roze vlam ernaast; met twee bijlagen drijft Gemini af.)
+  - **Geschrapt (Jordi, 16 nov):** "we schrappen dit idee" (de salamander-wondertol, v1–v8). Fase 2 weer open.
 - **Pachamama Ground/Fairy.**
 - **Tiwanaku-vorm van Golett/Golurk** (type: nog niets bedacht, Jordi 8 nov).
 - **Iets met mate:** een vorm van Poltchageist/Sinistcha óf een originele Pokémon (Jordi, 8 nov: weet het nog niet zeker).

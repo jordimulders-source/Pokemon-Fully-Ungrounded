@@ -95,3 +95,16 @@ Better, but the face is now too much. It must be a first-stage baby dragon, like
 - Simpler mouth, like Gible's or Axew's; at most one tiny fang, or none.
 Keep everything else exactly as it is: fruit head, cactus-stem body, arms, legs, pose, colors, Gen 3 sprite style, plain white background.
 ```
+
+---
+
+# Prompt v5 (16 nov): zelfde gesprek, reactie op r4 (`r4.png`)
+
+## Jordi (letterlijk)
+- "ok ik vind de ogen nu teveel neopets, de rest is goed"
+
+```
+Very good, keep EVERYTHING exactly as it is, only change the eyes.
+The eyes are now too big, glossy and cartoon-mascot-like (Neopets style). Make them like the eyes of official Gen 3 Pokémon sprites such as Gible or Bagon: smaller and simpler, a flat amber/yellow iris with a dark pupil and one single small white highlight pixel, a clear dark outline around the eye. No big shiny anime pupils, no multiple highlights, no eyelashes.
+Same face otherwise (mouth, small fang, snout), same pose, colors, Gen 3 sprite style, plain white background.
+```

@@ -1843,3 +1843,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini r1 pitahaya-draak fase 1 (idee klopt; gezicht en ledematen aanpassen), prompt v2.
 - Gemini r2 (lijf goed, gezicht nog niet dragon), prompt v3.
 - Gemini r3 (te overdreven; moet Gible/Axew-achtig), prompt v4.
+- Gemini r4 (alleen ogen te Neopets), prompt v5.

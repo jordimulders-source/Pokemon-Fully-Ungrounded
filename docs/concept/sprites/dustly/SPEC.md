@@ -19,4 +19,5 @@ Eerste fase van de convergente Gastly-lijn: Dustly → Hauntflare → Gengas. Co
 - 15 nov (Jordi): "ja een wolk, rondachtig zoals gen 1, schrijf de prompt maar". Prompt r1: `gemini/PROMPT_r1.md`.
 - 15 nov, Gemini r1 (`gemini/r1_a.png`): "dit is nog teveel gastly".
 - 15 nov (Jordi): "alleen de ogen en de mond hoeven te blijven". Prompt r2: `gemini/PROMPT_r2.md`.
+- 15 nov, Gemini r2 (`gemini/r2_a.png`): "het mag nog wel meer afwijken, dit is nog steeds net gastly". Prompt r3: `gemini/PROMPT_r3.md`.
 - Referentie voor de prompt: `referenties/gastly_gen3_8x.png`.

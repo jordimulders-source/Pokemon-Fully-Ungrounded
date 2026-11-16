@@ -1664,3 +1664,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "ja een wolk, rondachtig zoals gen 1, schrijf de prompt maar". Prompt `docs/concept/sprites/dustly/gemini/PROMPT_r1.md` (bijlage Gastly Gen 3): donkere stofwolk met Gastly's gezicht, roze-rood waterstofgas eromheen, driekwart links.
 ### [v0.0.405] - Dustly: Gemini r1 en prompt r2
 - Jordi over r1 (`dustly/gemini/r1_a.png`): "dit is nog teveel gastly"; "alleen de ogen en de mond hoeven te blijven". Prompt r2 (`gemini/PROMPT_r2.md`): geen bal, één bobbelige stofwolk, geen gasaura, belichte rand linksboven.
+### [v0.0.406] - Dustly: Gemini r2 en prompt r3
+- Jordi over r2 (`dustly/gemini/r2_a.png`): "het mag nog wel meer afwijken, dit is nog steeds net gastly". Prompt r3: klein gezicht, roestbruin stof, belichte halvemaankant linksboven, bloemkoolbulten en stofstrepen.

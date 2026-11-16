@@ -19,7 +19,7 @@ def grid(im,x0,y0,S):
     for j in range(0,im.size[1]//S+1):
         if (y0+j)%5==0: d.line([0,j*S,im.size[0],j*S],fill=(255,0,0))
     return im
-S=8; zones=[('linkerhand',(7,37,20,55)),('rechteroog',(25,32,38,45))]; Z=12
+S=8; zones=[('linkerhand',(7,37,20,55)),('rechteroog',(25,32,38,45)),('linksonder',(11,46,25,60)),('rechtsonder',(37,42,53,60))]; Z=12
 rows=[]
 for nm,(x0,y0,x1,y1) in zones:
     w,h=(x1-x0)*Z,(y1-y0)*Z

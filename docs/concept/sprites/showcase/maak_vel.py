@@ -44,6 +44,7 @@ items=[
 ("blobfish/af/blobfish.png",'Blobfish (winegum)',"water"),
 ("hauntflare/af/hauntflare.png",'"Hauntflare"',"cosmic/poison"),
 ("gengas/af/gengas.png",'"Gengas"',"cosmic/poison"),
+("spooktrein_fase1/af/spooktrein_fase1.png",'Spooktrein fase 1',"steel"),
 ("spooktrein_fase2/af/spooktrein_fase2.png",'Spooktrein fase 2',"steel/ghost"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")

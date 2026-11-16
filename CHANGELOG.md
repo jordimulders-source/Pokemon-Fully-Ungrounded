@@ -1779,3 +1779,11 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.443] - Spooktrein fase 1: Gemini-prompt v1
 - `docs/concept/sprites/spooktrein_fase1_2/gemini/PROMPT_fase1_v1.md`: roestige schroothoop met treinspullen, schoorsteen half rechtop met 2 ogen erin, puur Steel, geen geest; kleuren van het roest van fase 2. Wacht op Gemini-resultaat.
+
+### [v0.0.444] - Spooktrein fase 1: frontsprite af
+- Gemini-rondes 1–4 (prompt v1/v2 + bijsturen): schroothoop met schuine schoorsteen en één groot spaakwiel; ogen maken we zelf (Jordi: "ogen niet goed maar dat gaan we zelf maar doen").
+- Sprite r1–r4 (automatische verkleining + samenvoegen in het midden) gaven brei/keien/puzzel; r5–r6 (verse maker): de hoop met de hand opgebouwd als stapel losse, overlappende objecten (rail schuin, klinkplaat, klem, bijlplaat, onderplaat, bout, staaf, U-beugel), wiel en schoorsteen bevroren. Jordi: "nice! dat is erg netjes opgelost".
+- Ogen: vier varianten, Jordi koos D (ovaal met glans) "door het kleurgebruik".
+- Eindkeuring (Dragonfly Cave, naast Magnemite/Aron/Nosepass/Registeel/Magneton/Mawile): FAIL klein → dambord op de schoorsteenrand weg (4 px), middenbruin #86654a en lichtbruin #aa8769 voor genoeg tintstap, 1 px in de staaf; daarna PASS. 12 kleuren, 51×44 px.
+- `docs/concept/sprites/spooktrein_fase1/af/spooktrein_fase1.png` (+ `_8x`, `keuring.md`); op het overzichtsvel als "Spooktrein fase 1" (steel). Naam nog open.
+- Ter info (keurder): donkerder dan echte Gen 3-staalsoorten, trouw aan het model.

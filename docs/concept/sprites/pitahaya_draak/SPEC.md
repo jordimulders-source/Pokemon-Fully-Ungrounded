@@ -13,3 +13,4 @@
 - Maat: eerste fase van een pseudo, gemeten aan Bagon/Gible/Axew-achtige Gen 3-basisvormen; vult 64×64 niet helemaal.
 - Ogen: eerst uit het model; daarna apart met Jordi (zijn woorden).
 - **Jordi (16 nov, werkregel):** "niks zelf tekenen, totdat er een vorm staat, volg de geslaagde lessen van recente sprites"
+- **Ogen (Jordi, 16 nov):** "kunnen de ogen nog iets scherpere lijnen krijgen als alternatieve versie waar ik uit kan kiezen?" → koos **B** (model, ooggebied één natieve pixel lager bemonsterd, strengere lijnregel; `sprite_ogen/`). r5 = r4 + oog B.

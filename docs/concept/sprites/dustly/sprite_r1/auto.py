@@ -27,7 +27,7 @@ for y in range(H):
         else:
             bm=wt*body[sl]
             l=(bm*lum[sl]).sum()/bm.sum() if bm.sum()>0 else (wt*lum[sl]*~bg[sl]).sum()/tot
-            o[y,x]=3 if l<86 else (4 if l<116 else 5)
+            o[y,x]=3 if l<86 else (4 if l<116 else (5 if l<158 else 6))
 full=np.zeros((64,64),int); full[8:8+H,9:9+W]=o
 np.save('sprite_r1/auto_idx.npy',full)
 print('px',(full>0).sum(),{i:int((full==i).sum()) for i in range(1,12)})

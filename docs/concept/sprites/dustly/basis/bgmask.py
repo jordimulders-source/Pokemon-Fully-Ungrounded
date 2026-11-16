@@ -6,5 +6,5 @@ def bgmask():
     w=a.min(2)>=200; lab,n=label(w); bg=np.zeros(w.shape,bool)
     for i in range(1,n+1):
         m=lab==i; ys,xs=np.where(m)
-        if (ys.min()==0 or xs.min()==0 or ys.max()==99 or xs.max()==99) or a[m].mean()>=250: bg|=m
+        if (ys.min()==0 or xs.min()==0 or ys.max()==99 or xs.max()==99) or (a[m].mean()>=250 and m.sum()>=20): bg|=m   # tand (2 px, 252) blijft
     return bg

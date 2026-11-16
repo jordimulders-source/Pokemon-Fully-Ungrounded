@@ -1882,3 +1882,9 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.459] - Blobfish fase 2: gelatina de capas
 - Jordi herkent de gelaagde sprite als gelatina de capas (SPEC.md).
+
+### [v0.0.460] - Studie frame 2 (beweging frontsprites)
+- `docs/concept/sprites/frame2_studie/STUDIE.md`: hoe de engine frontsprites laat bewegen (`frontAnimFrames`, `frontAnimId`, waar het speelt; frame 2 staat 0,1–0,25 s in beeld; 400 soorten in de expansion hebben geen frame 2).
+- Meting op 384 Gen 3-sprites (`analyse.py`, `res.json`): mediaan 25% van frame 2 is nieuw getekend; 97 soorten < 15% (verschuif-frames), 148 > 30% (actiepose).
+- Proef viscacha: kop en staartpluim verschuiven gaat met een script, maar onder de snorharen ontstaan gaten; naden en verborgen stukken zijn handwerk.
+- Oordeel: verschuif-frames kan Claude betrouwbaar bouwen (script + maker voor de naden + automatische controles); echte actieposes alleen via een model van Jordi, waarbij alleen het bewegende deel wordt overgenomen.

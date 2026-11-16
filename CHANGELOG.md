@@ -1726,3 +1726,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.428] - Blobfish fase 2: Gemini-prompt r1
 - `docs/concept/sprites/blobfish_fase2/gemini/PROMPT_r1.md`: eerste Gemini-prompt voor fase 2 van de blobfish-lijn ("pudding"), met Claude's eigen keuzes apart gemarkeerd.
+
+### [v0.0.429] - Blobfish fase 2: Gemini r1 + bijsturing r2
+- `blobfish_fase2/gemini/r1.png` bewaard; `PROMPT_r2.md` met Jordi's feedback ("meer pudding, chagrijniger, overdrevener, meer gesmolten").

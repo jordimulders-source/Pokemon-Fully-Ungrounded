@@ -3,6 +3,7 @@
 # modelkleuren. Variant A: alles uniform. Variant B: hoogte vult 64, alleen de staart (rechts van XC) horizontaal ingedrukt.
 import sys; from PIL import Image; import numpy as np; from comp import label
 VAR=sys.argv[1] if len(sys.argv)>1 else 'A'
+import os; MODE=os.environ.get('MODE','mode')
 TL=float(sys.argv[2]) if len(sys.argv)>2 else 0.30; TN=float(sys.argv[3]) if len(sys.argv)>3 else 0.25
 a=np.asarray(Image.open('natief.png').convert('RGB')).astype(int).copy()
 fg=a.min(2)<225
@@ -55,9 +56,12 @@ for j in range(Hh):
         if (cc==1).mean()*cov>=TL*cov and (cc==1).mean()>=TL: out[oy+j,i]=1; continue
         if (cc==7).mean()>=TN: out[oy+j,i]=7; continue
         g=[GROUP[v] for v in cc]; gs,gc=np.unique(g,return_counts=True); G=gs[gc.argmax()]
-        sel=np.array([GROUP[v]==G for v in cc]); rgb=P[cc[sel]-1].mean(0)
-        idx=[q for q in GROUP if GROUP[q]==G]
-        out[oy+j,i]=idx[int(np.argmin(((P[np.array(idx)-1]-rgb)**2).sum(1)))]
+        sel=np.array([GROUP[v]==G for v in cc])
+        if MODE=='mode':   # meest voorkomende modelkleur binnen de groep
+            u,uc=np.unique(cc[sel],return_counts=True); out[oy+j,i]=u[uc.argmax()]
+        else:              # vlakgemiddelde -> dichtstbijzijnde modelkleur in de groep
+            rgb=P[cc[sel]-1].mean(0); idx=[q for q in GROUP if GROUP[q]==G]
+            out[oy+j,i]=idx[int(np.argmin(((P[np.array(idx)-1]-rgb)**2).sum(1)))]
 np.save(f'basis_{VAR}.npy',out); open(f'basis_{VAR}.meta','w').write(f'{s} {X0} {Y0} {oy} {XC} {k}')
 pal=[0,0,0]+[int(v) for v in P.ravel()]; pal+= [0]*(768-len(pal))
 im=Image.fromarray(out.astype(np.uint8),'P'); im.putpalette(pal); im.save(f'basis_{VAR}.png',transparency=0)

@@ -1,6 +1,6 @@
 # Gemini-prompt: gezicht spooktrein fase 2 (16 nov)
 
-Jordi: ogen "zoals de geest links in het rood" ("het gaat alleen om de vorm", groot mag, "want ze zijn namelijk niet lang"); mond "overdreven grote O", "zo groot dat alleen geesten dat kunnen hebben", "bijna swalot achtig" / "of gulpin"; "maar die kan je niet uit de sprite halen want daar hebben ze hun mond niet zo open".
+Jordi: ogen "zoals de geest links in het rood" ("het gaat alleen om de vorm", groot mag, "want ze zijn namelijk niet lang"); mond "overdreven grote O", "zo groot dat alleen geesten dat kunnen hebben", "bijna swalot achtig" / "of gulpin"; "maar die kan je niet uit de sprite halen want daar hebben ze hun mond niet zo open" / "ah swalot wel een beetej" (Swalot Gen 3 frame 2).
 Claude tekent geen monden/ogen (GEMINI.md), dus: één wijziging (alleen het gezicht) met het gekozen model als bijlage; de sprite neemt het gezicht daarna uit dit plaatje over.
 Nieuw gesprek. Bijlagen: 1 `../model/model_r5.png`, 2 `../referenties/ogen_geest_rood.png`, 3 `../referenties/mond_swalot_sv.png`.
 

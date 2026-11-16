@@ -36,11 +36,14 @@ items=[
 ("alakazam_regional/af/alakazam_charlatan.png",'Alakazam (regional)',"dark/psychic"),
 ("octillery_evo/af/krassault.png",'"Krassault"',"water/steel"),
 ("sneeuwbolslak/af/sneeuwbolslak.png",'Sneeuwbolslak',"ice"),
-("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
 ("sneeuwbolslak_fase2/af/sneeuwbolslak_fase2.png",'Sneeuwbolslak fase 2',"ice"),
+("ijskomeet/af/ijskomeet.png",'IJskomeet',"ice/cosmic"),
+("steenmozaiek/af/welp.png",'Steenjaguar-welp',"rock"),
+("steenmozaiek/af/steenjaguar.png",'Steenjaguar',"rock"),
+("dustly/af/dustly.png",'"Dustly"',"cosmic/poison"),
+("blobfish/af/blobfish.png",'Blobfish (winegum)',"water"),
 ("hauntflare/af/hauntflare.png",'"Hauntflare"',"cosmic/poison"),
 ("gengas/af/gengas.png",'"Gengas"',"cosmic/poison"),
-("steenmozaiek/af/welp.png",'Steenjaguar-welp',"rock"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

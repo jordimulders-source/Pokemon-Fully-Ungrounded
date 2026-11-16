@@ -1658,7 +1658,86 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi (foto Chavín-jaguarbeeld): "Hij moet er eigenlijk uitzien alsof die uit steen gecarved is", "het steengevoel vind ik het belangrijkste", kleur mag ("vind het nu teveel een huisdier"), koplijnen om de ogen + 2 naar de kruin, "let op schaduwen". Silhouet en vorm gelijk aan p8.
 - c1–c5 met keurder per ronde: lichte steen (greige én grijs), kerven met lichte lip, grote voluten op schouder en dij, pootbanden; de oogbogen bevroren na Jordi's "prima". `welp/c5/welp_c5.png` + `_grijs`, naar Jordi.
 - Halve cirkel naast het oog (c10 variant 1), eindkeuring Dragonfly Cave + Gen 3: PASS na 5 randpixels + mondhoek. **Af:** `docs/concept/sprites/steenmozaiek/af/welp.png` (+ `_8x`, `welp_grijs.png`, `welp_normal.pal`, eindkeuring). Op het overzichtsvel.
-### [v0.0.403] - Spooktreinlijn: sparren
+### [v0.0.403] - IJskomeet (fase 3 sneeuwbolslak-lijn): nieuwe Gemini-prompt
+- Jordi keurde de eerste twee plaatjes af ("lijken net kirby en mario vijandjes"): moet een bol met ijsuiteinden zijn, kern geëxplodeerd, grotesker, ijsstulpsels overal (Interloper), geen lachgezichtje, wel ogen.
+- Nieuwe startprompt zonder bijlage: `docs/concept/sprites/ijskomeet/gemini/PROMPT.md`; afgekeurde plaatjes als `r1a/r1b_afgekeurd.png`. Citaat in IDEEEN.md.
+
+### [v0.0.404] - IJskomeet: Gemini-prompt v2
+- Ronde 2 afgekeurd (Jordi: ogen en mond te "kiddy"; "deze pokemon is de kern die uit de barst gekomen is en daardoor evolved is"). Prompt v2: de Pokémon is de ontsnapte kern, heel lijf zonder barsten, alleen smalle koude ogen, geen mond. `ijskomeet/gemini/PROMPT.md`, `r2_afgekeurd.png`.
+
+### [v0.0.405] - IJskomeet: Gemini-prompt v3 (meer cosmic)
+- Jordi: "nog niet cosmic genoeg"; alle vier voorstellen goed, ogen naar Minior, Lunatone en Solrock. v3: indigo/violet in de schaduwen, nevel in doorzichtige plekken, gasstaart achter de ijsstaart, ogen verzonken in donkere kassen die koud oplichten, geen mond. Ogenstudie `ijskomeet/gemini/ogen_studie.png`.
+
+### [v0.0.406] - IJskomeet: Gemini-prompt v4
+- Ronde 3 afgekeurd (te veel monster: boze ogen, boze mond; vorm meer Interloper). v4 met Jordi's Interloper-beeld als vormbijlage: ronde ijskoepel voorop, ijspunten allemaal naar achteren, gezicht neutraal met twee ijzige bologen, geen mond. `ijskomeet/gemini/PROMPT.md`, `r3_afgekeurd.png`, `interloper_referentie.png`.
+
+### [v0.0.407] - IJskomeet: Gemini-prompt v5
+- Ronde 4 "al iets beter"; buitenste laag te neutraal, "daar mag wat meer ijsschots vorm in". v5: r4 als bijlage, alleen de buitenlaag als grote hoekige ijsschotsen; v5b als terugval (v4 + die regel). `r4_gemini.png`.
+
+### [v0.0.408] - IJskomeet: Gemini-prompt v6
+- Ronde 5 "halve bak" (alleen naden op de gladde koepel). v6: nieuw gesprek met Interloper + r4; de ijsschotsen moeten het silhouet hoekig maken (dikke platen met zijkant, schuiven over elkaar). `r5_gemini.png`.
+
+### [v0.0.409] - IJskomeet: Gemini-prompt v7
+- Jordi: gasstaart "meer omringend aan het uiteinde", ogen "wat hoger en nog wat meer laten gloeien, sinister". v7 = v6 + brede komeetstaart om de achterkant (Interloper) + ogen hoog, fel gloeiend met halo, geen pupil.
+
+### [v0.0.410] - IJskomeet: Gemini-prompt v8
+- Ronde 6 "wat een mislukking": r4 was overgetrokken met een gasring eraan. v8: alleen de Interloper als bijlage, korter, kleuren en ogen in woorden. Les in GEMINI.md. `r6_afgekeurd.png`.
+
+### [v0.0.411] - IJskomeet: ronde 7 beste tot nu toe, prompt v9
+- Jordi: r7 "de beste tot nu toe", "bijna tevreden"; de ijsschotsen moeten "nog net iets meer op een dier lijken, alsof dat het lichaam is". v9: r7 als bijlage; Jordi: "zonder aan de vorm te zitten", dus silhouet exact gelijk, alleen naden en schaduw binnen de omtrek als kop + lijf. `r7_gemini.png`.
+
+### [v0.0.412] - IJskomeet: ronde 8 afgekeurd
+- v9 gaf alleen roodbruine naden ("gemini snapt het niet"). Voorstel: r7 als model bevriezen en de schotsen als lijf in de sprite oplossen. `r8_afgekeurd.png`, les in GEMINI.md.
+
+### [v0.0.413] - IJskomeet: ronde 7 gekozen als model
+- Jordi: "ja doe maar ronde 7 als model". `ijskomeet/referenties/gemini_gekozen_r7.png`. Diervorm van de schotsen nog open (voorstel Claude: slak, alternatief pissebed).
+
+### [v0.0.414] - IJskomeet: frontsprite af
+- Gemini-model r7 (Interloper-vorm, ijsschotsen, kern geëxplodeerd; Jordi: "het hele idee van deze vorm is dus dat een kern is geëxplodeerd en deze het hele dier in ijsschotsen heeft veranderd, de kern is ondertussen de drijvende kracht erachter"; tragisch "zoals bij parasect"). Schotsen als slakkenlijf (Jordi: "ja doe maar de slak").
+- 23 spriterondes. r1–r14: makers en Claude tekenden/schoven naden; mislukte omdat elke onderlaag de mediaan per 3×3 nam en de dunne modellijnen wegvielen (Jordi: "KIJK NAAR DE LIJNEN"). r15: model 3× verkleind waarbij in het ijs de donkerste pixel wint → schotsstructuur van het model klopte meteen. Daarna: lichtere binnennaden (eigen navy), gasstaart lavendel → cyaan → wit met zachte rand, lichtere linkerbuitenlijn, kopbovenkant als drietand, pieken glad uit het model (gemiddelde per 3×3), ogen met teal ring, kern = zachte gloed van r21.
+- `docs/concept/sprites/ijskomeet/af/ijskomeet.png` (+ `_8x`); op het overzichtsvel als "IJskomeet" (Ice/Cosmic), naast fase 1 en 2: de hele sneeuwbolslak-lijn is af. Naam nog open. (Startprompt fase 3 kwam uit `sneeuwbolslak_fase3/gemini/PROMPT.md`; vervolgprompts in `ijskomeet/gemini/PROMPT.md`.) Lessen in `docs/lessen/GEMINI.md` en bovenaan `SPRITE_KERN.md` (makers tekenen niet bij een Gemini-model).
+### [v0.0.415] - Dustly: start ontwerp
+- Jordi: "Tijd om Dustly te gaan maken". `docs/concept/sprites/dustly/SPEC.md` (Bok-globule, ontwerpvoorstellen Claude, open) en Gastly-referentie `dustly/referenties/gastly_gen3_8x.png`. Prompt volgt na Jordi's keuzes (GEMINI.md: eerst overleggen).
+### [v0.0.416] - Dustly: Gemini-prompt r1
+- Jordi: "ja een wolk, rondachtig zoals gen 1, schrijf de prompt maar". Prompt `docs/concept/sprites/dustly/gemini/PROMPT_r1.md` (bijlage Gastly Gen 3): donkere stofwolk met Gastly's gezicht, roze-rood waterstofgas eromheen, driekwart links.
+### [v0.0.417] - Dustly: Gemini r1 en prompt r2
+- Jordi over r1 (`dustly/gemini/r1_a.png`): "dit is nog teveel gastly"; "alleen de ogen en de mond hoeven te blijven". Prompt r2 (`gemini/PROMPT_r2.md`): geen bal, één bobbelige stofwolk, geen gasaura, belichte rand linksboven.
+### [v0.0.418] - Dustly: Gemini r2 en prompt r3
+- Jordi over r2 (`dustly/gemini/r2_a.png`): "het mag nog wel meer afwijken, dit is nog steeds net gastly". Prompt r3: klein gezicht, roestbruin stof, belichte halvemaankant linksboven, bloemkoolbulten en stofstrepen.
+### [v0.0.419] - Dustly: Gemini r3 en prompt r4
+- Jordi over r3 (`dustly/gemini/r3_a.png`, naast de lijn `lijn_r3.png`): "kijk beter", roestbruin niet mooi en te massief; "een wolk of gaswolk is het leukste". Prompt r4: losse gaswolk met slierten, donker grijsbruin, smalle roze-oranje lichtrand linksboven.
+### [v0.0.420] - Dustly: Gemini r4 en prompt r5
+- r4 (`dustly/gemini/r4_a.png`) viel terug op Gastly's bal (Jordi: "zucht"). Prompt r5 zonder bijlage en zonder het woord Gastly (gezicht in woorden). Les in `GEMINI.md`.
+### [v0.0.421] - Dustly: Gemini r5 en prompt r6
+- r5 zonder bijlage was weer Gastly (Jordi: "het is weer precies gastly"). Prompt r6: r3 als bijlage, alleen kleur (grijsbruin rook, smalle roze rand) en minder massief. Les in `GEMINI.md` bijgewerkt.
+### [v0.0.422] - Dustly: model gekozen (Gemini r6)
+- Jordi: "hiermee beginnen en dan de kleuren leuker maken bij het maken van de sprite? dus minder zwart". Model: `docs/concept/sprites/dustly/gemini/r6_a.png`.
+### [v0.0.423] - Dustly: frontsprite-kandidaat (r4)
+- Model Gemini r6, kleur A (Jordi: "kleurrijker", "ga voor A"): stoffig mauve-roze, pruimschaduw, roze-oranje lichtrand. Silhouet = kale modelreductie (diff 0), schaal 2/3, 46×42 / 1313 px.
+- r2: mond te veel getekend (Jordi) → r3: mond = kale reductie, alleen de hoektanden in Gastly's Gen 3-vorm op de modelplek (met script gecontroleerd). Keuring r2: 5 px (terug naar modeltonen) → r4. Kandidaat `docs/concept/sprites/dustly/sprite_r4/dustly_r4.png` (+ `_8x`), naar Jordi.
+### [v0.0.424] - Dustly: r5, drie varianten tegen "te blurry"
+- Jordi over r4: "nog niet goed, te blurry". `docs/concept/sprites/dustly/sprite_r5/`: V1 vlakken samengevoegd, V2 + meer contrast, V3 + doorlopende bult- en buitenlijnen. Zonder tekenen: silhouet en gezicht diff 0 (script).
+### [v0.0.425] - Dustly: r6 naar Gastly's belijning, schaduw en kleur
+- Jordi: "kijk ook naar belijning, schaduw en kleur van de echte gastly". Studie `dustly/sprite_r6/studie.md`; r6 (op V3): lijn alleen om de dichte kern, gas zonder buitenlijn, Gastly's toonstappen en hue shift op palet A. r6b: zelfde pixels, verzadiging omhoog ("kleurrijker"). Silhouet en gezicht diff 0.
+### [v0.0.426] - Dustly: r7/r8 kandidaat
+- Jordi: "r6b, maar de lichtrand iets feller" → r7 (alleen palet lichtrand). Eindkeuring r7: 6 px (restjes oude gaslijn, mondlijn zwart/donker om en om) → r8, keurder: daarna PASS. Kandidaat `docs/concept/sprites/dustly/sprite_r8/dustly_r8.png` (+ `_8x`), naar Jordi.
+### [v0.0.427] - Dustly: frontsprite af
+- Jordi: "akkoord". `docs/concept/sprites/dustly/af/dustly.png` (+ `_8x`, eindkeuring) = r8. Op het overzichtsvel (`showcase/frontsprites_af.png`). Lijn Dustly → Hauntflare → Gengas heeft nu alle drie de frontsprites. POKEMON.md, Stand van zaken en GEMINI.md (les "te blurry") bijgewerkt.
+### [v0.0.428] - Blobfish-lijn: start
+- Jordi: typing Water → Water; eerst ideeën bespreken. Vastgelegd in `docs/concept/IDEEEN.md` (Blobfish-lijn); voorstellen voor uiterlijk en evolutie liggen bij Jordi.
+### [v0.0.429] - Blobfish-lijn: concept en Gemini-prompts
+- Jordi: fase 1 een blobfish van boetseerklei (zoals onder water, derpy blij, goede lippen, ligt op de bodem); fase 2 een echte, nog chagrijniger, extra gesmolten blobfish met kwijl, van gelei-speelgoed. Citaten in `IDEEEN.md`.
+- Gemini-prompts: `docs/concept/sprites/blobfish/gemini/PROMPT.md` en `blobfish_fase2/gemini/PROMPT.md` (keuzes Claude apart gemarkeerd).
+### [v0.0.430] - Blobfish fase 1: van klei naar houten decoy
+- Gemini v1/v2 (klei) bekeken; Jordi twijfelde of Play-Doh in een sprite leest. Uit materiaalalternatieven koos hij de houten decoy (fishbait). Prompt v3: `docs/concept/sprites/blobfish/gemini/PROMPT_v3.md`.
+### [v0.0.431] - Blobfish fase 1: winegum
+- Jordi: decoy niet mooi, vorm wel goed; lijn meer richting pudding, fase 1 iets steviger: winegum. Prompt v4 (vorm van v3 als bijlage): `docs/concept/sprites/blobfish/gemini/PROMPT_v4.md`.
+- Ook een ijsprompt (`PROMPT_v4_ijs.md`). Jordi: fase 2 wordt pudding → `docs/concept/sprites/blobfish_fase2/gemini/PROMPT_v2_pudding.md`.
+### [v0.0.432] - Blobfish fase 1: frontsprite af (winegum)
+- Naar Jordi's Gemini-model (winegum, vorm van de decoy-versie). Krassault-methode: natief raster 4 px, exacte 4×4-reductie (50×29 px, 848 px, tussen Feebas en Magikarp), silhouet bevroren vanaf r1. r2–r4: alleen herstel van wat de reductie wegnam (lipband via lipmasker uit het model, ogen, vinstralen, opkrul van de mond), keurder: trouw PASS, lijfcontrast te laag (uit het model).
+- Jordi koos uit A/B en 7 oogvarianten: **oog v4 (zwart kraaloog met glanspixel) op B (lichtronde)**: "lijkt het door meer contrast meer op een winegum". Eindkeuring Dragonfly Cave: PASS na 17 px (mauve tint op de rugvin naar lijftint, 2 px dambord op de kop).
+- **Af:** `docs/concept/sprites/blobfish/af/blobfish.png` (+ `_8x`). Op het overzichtsvel. Naam open.
+### [v0.0.433] - Spooktreinlijn: sparren tot frontsprite r14
 - Jordi start de spooktreinlijn (3 fases). Zijn woorden en de open voorstellen van Claude (opbouw, typing, sprite-aanpak) in `docs/concept/IDEEEN.md`.
 - Besluiten Jordi over de spooktreinlijn vastgelegd (fases, Steel → Steel/Ghost, semi-frontaal, Gemini, fase 3 eerst).
 - Spooktrein fase 3: Gemini-startprompt met drie wagonvarianten (a/b/c) in `docs/concept/sprites/spooktrein_fase3/gemini/PROMPT.md`.

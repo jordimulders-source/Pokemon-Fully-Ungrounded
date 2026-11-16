@@ -1,0 +1,16 @@
+L	(8,44)	8->11	gezicht (ogen+lippen)
+L	(9,45)	8->10	gezicht (ogen+lippen)
+L	(10,46)	9->10	gezicht (ogen+lippen)
+L	(12,47)	10->11	gezicht (ogen+lippen)
+L	(20,48)	8->9	gezicht (ogen+lippen)
+L	(20,49)	8->9	gezicht (ogen+lippen)
+L	(12,50)	2->9	gezicht (ogen+lippen)
+L	(20,50)	2->9	gezicht (ogen+lippen)
+O	(19,45)	1->12	gezicht (ogen+lippen)
+O	(19,46)	4->12	gezicht (ogen+lippen)
+O	(9,41)	1->12	gezicht (ogen+lippen)
+S	(34,42)	11->4	borstvin
+S	(36,41)	11->4	borstvin
+S	(37,42)	10->4	borstvin
+S	(32,44)	4->11	borstvin
+S	(33,43)	4->11	borstvin

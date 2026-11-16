@@ -19,7 +19,7 @@ CONCEPT
 - Fire/Fairy type, the middle stage of a firework evolution line: a SALAMANDER WHOSE BODY IS A SPINNING GROUND-SPINNER FIREWORK, A WHIRLING BALL OF FIRE.
 - Attachment 1 (fire salamander) is only for the head and legs. Attachment 2 (a burning ground-spinner firework) is only for the body.
 - THE BODY IS THE FIREWORK WHILE IT SPINS: not a solid ball, not a shell. It is a WHIRL OF FIRE seen at the moment of spinning: a small white-hot core, and around it several thick, curved arms of flame and spark trails that all sweep in the same direction, like a pinwheel of fire, together forming a round spinning disc of light. The edges of the whirl are ragged with flame tongues. There is no separate body behind or under it: the whirl IS the body.
-- THE HEAD sticks out of the front of the fireball: a FLAT, WIDE salamander head, held low and forward, with small eyes sitting on top of the head and a wide mouth line. The head is made of the same green and turquoise fire as the whirl; only the eyes and the mouth are drawn into the flame.
+- THE HEAD sticks out of the front of the whirl: a FLAT, WIDE salamander head, held low and forward, with small eyes sitting on top of the head and a wide mouth line. The head is made of the same green and turquoise fire as the whirl; only the eyes and the mouth are drawn into the flame.
 - FOUR SHORT SALAMANDER LEGS made of the same green and turquoise fire stick out sideways from the whirl, with small splayed toes. They are legs, not arms.
 - The tail is one of the flame arms of the whirl.
 - Short solid spark trails fly off the ends of the flame arms, continuing the spin.

@@ -1679,3 +1679,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r2: mond te veel getekend (Jordi) → r3: mond = kale reductie, alleen de hoektanden in Gastly's Gen 3-vorm op de modelplek (met script gecontroleerd). Keuring r2: 5 px (terug naar modeltonen) → r4. Kandidaat `docs/concept/sprites/dustly/sprite_r4/dustly_r4.png` (+ `_8x`), naar Jordi.
 ### [v0.0.412] - Dustly: r5, drie varianten tegen "te blurry"
 - Jordi over r4: "nog niet goed, te blurry". `docs/concept/sprites/dustly/sprite_r5/`: V1 vlakken samengevoegd, V2 + meer contrast, V3 + doorlopende bult- en buitenlijnen. Zonder tekenen: silhouet en gezicht diff 0 (script).
+### [v0.0.413] - Dustly: r6 naar Gastly's belijning, schaduw en kleur
+- Jordi: "kijk ook naar belijning, schaduw en kleur van de echte gastly". Studie `dustly/sprite_r6/studie.md`; r6 (op V3): lijn alleen om de dichte kern, gas zonder buitenlijn, Gastly's toonstappen en hue shift op palet A. r6b: zelfde pixels, verzadiging omhoog ("kleurrijker"). Silhouet en gezicht diff 0.

@@ -1665,3 +1665,5 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Gemini-prompts: `docs/concept/sprites/blobfish/gemini/PROMPT.md` en `blobfish_fase2/gemini/PROMPT.md` (keuzes Claude apart gemarkeerd).
 ### [v0.0.405] - Blobfish fase 1: van klei naar houten decoy
 - Gemini v1/v2 (klei) bekeken; Jordi twijfelde of Play-Doh in een sprite leest. Uit materiaalalternatieven koos hij de houten decoy (fishbait). Prompt v3: `docs/concept/sprites/blobfish/gemini/PROMPT_v3.md`.
+### [v0.0.406] - Blobfish fase 1: winegum
+- Jordi: decoy niet mooi, vorm wel goed; lijn meer richting pudding, fase 1 iets steviger: winegum. Prompt v4 (vorm van v3 als bijlage): `docs/concept/sprites/blobfish/gemini/PROMPT_v4.md`.

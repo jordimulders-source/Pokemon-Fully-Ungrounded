@@ -1723,3 +1723,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi: "r6b, maar de lichtrand iets feller" → r7 (alleen palet lichtrand). Eindkeuring r7: 6 px (restjes oude gaslijn, mondlijn zwart/donker om en om) → r8, keurder: daarna PASS. Kandidaat `docs/concept/sprites/dustly/sprite_r8/dustly_r8.png` (+ `_8x`), naar Jordi.
 ### [v0.0.427] - Dustly: frontsprite af
 - Jordi: "akkoord". `docs/concept/sprites/dustly/af/dustly.png` (+ `_8x`, eindkeuring) = r8. Op het overzichtsvel (`showcase/frontsprites_af.png`). Lijn Dustly → Hauntflare → Gengas heeft nu alle drie de frontsprites. POKEMON.md, Stand van zaken en GEMINI.md (les "te blurry") bijgewerkt.
+
+### [v0.0.428] - Blobfish fase 2: Gemini-prompt r1
+- `docs/concept/sprites/blobfish_fase2/gemini/PROMPT_r1.md`: eerste Gemini-prompt voor fase 2 van de blobfish-lijn ("pudding"), met Claude's eigen keuzes apart gemarkeerd.

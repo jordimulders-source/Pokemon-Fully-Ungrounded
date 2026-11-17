@@ -2057,3 +2057,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r8 bewaard en afgevinkt (lijf, kledingstuk, kruizen, tanden goed; hoofd en imposant fout); prompt v12 met r8 + hoofdvorm van r7 als bijlagen.
 - r9 bewaard ("manmanman": bodybuilder, derde arm, hoofd-bijlage genegeerd); werkwijze voorgelegd.
 - Vormschets (`gemini/bijlage_vormschets.png`) en prompt v13 in twee varianten: A met vormschets, B met Shuppeteer als voorbeeld.
+- r10 (A en B) bewaard: allebei slecht; Gemini haalt dit concept niet. Werkwijze voorgelegd, les in `GEMINI.md`.

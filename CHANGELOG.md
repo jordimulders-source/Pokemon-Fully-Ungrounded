@@ -2054,3 +2054,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r7 bewaard ("iets beter"); les: geen Sugimori-artwork als tussenstap.
 - Jordi: "nog steeds teveel banette"; prompt v10 = r7 als bijlage, hoofd minder Banette + Gen 3-sprite.
 - r7 per besluit tegen de SPEC afgevinkt; prompt v11 (lijf = gladde geest, kledingstuk = Banettes oude lijf, kruizen zijn de handen, tanden in hoofdkleur, van bovenaf, Gen 3-sprite). Les in `GEMINI.md`.
+- r8 bewaard en afgevinkt (lijf, kledingstuk, kruizen, tanden goed; hoofd en imposant fout); prompt v12 met r8 + hoofdvorm van r7 als bijlagen.

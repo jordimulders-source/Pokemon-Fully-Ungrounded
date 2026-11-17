@@ -40,6 +40,9 @@ Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "ver
 ## Over r7 (`gemini/r7/gemini_r7.png`, prompt v9), Jordi 17 nov, letterlijk
 "iets beter maar het is nog steeds niet banette en sugimori stijl kan je echt nooit een fatsoenlijke sprite van maken"
 
+## Over r8 (`gemini/r8/gemini_r8.png`, prompt v11), Jordi 17 nov, letterlijk
+"hoofd is weer verknald, en hij is niet imposant, wederom niet"
+
 ## Open
 - Jordi (17 nov): "nog steeds teveel banette bedoel ik"; "hoofdvorm wel eindelijk goed" (r7). Prompt v10 (hoofd aanpassen) vervalt. Jordi: "ik hoef toch niet elke keer mn idee opnieuw te typen"; Claude vergeleek r7 zelf met deze SPEC -> v11.
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).

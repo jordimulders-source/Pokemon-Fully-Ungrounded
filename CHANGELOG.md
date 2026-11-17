@@ -2050,3 +2050,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Prompt v6: begint bij de figuur (kwaadaardige nar die aan de touwtjes trekt), silhouet en gedrag; eerst artwork. Les in `GEMINI.md`.
 - r6 bewaard (eerste ronde zonder Banette-hoofd); prompt v7 = v6 met een groot, breed silhouet ("imposant is niet mager, imposant is groot, breed").
 - Jordi: "waardeloos ontwerp weer". Voorstel v8: terug naar r2 en per bericht één wijziging (`gemini/PROMPT_v8_vanaf_r2.md`); v7 in de wacht.
+- Referentie Shuppeteer (fan-fakemon) van Jordi; prompt v9 met Shuppeteer als maat ("nog groter en imposanter") en alle besluiten uit SPEC.

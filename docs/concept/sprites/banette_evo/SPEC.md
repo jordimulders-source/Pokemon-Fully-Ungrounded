@@ -18,5 +18,10 @@ Typing (Jordi): Ghost/Dark (zelfde als Banette in de repo).
 ## Over r2 (`gemini/r2/gemini_r2.png`), Jordi 17 nov, letterlijk
 "zelfde issues als eerst, en ja ik bedoel de punten als een narrenmuts. Hij is nog steeds niet imposant genoeg, niet eng/sinister genoeg, het kledingstuk is nu wel beter, maar zijn lichaam sluit niet goed aan, en ik ben bang dat de shuppets te klein zijn en niet goed vertalen naar een sprite, plus de x'en sluiten niet lekker op de arm aan"
 
+## Over r3 (`gemini/r3/gemini_r3.png`), Jordi 17 nov, letterlijk
+"nog slechter dan de vorige ronde"
+
+Analyse Claude: drie rondes geven steeds Banettes hoofd (één punt, Banette-grijns, in r3 zelfs de gele mond); de narrenmutspunten kwamen nooit. Vermoedelijk kopieert Gemini de Banette-bijlage en de naam (GEMINI.md: bijlage bepaalt het gezicht; Pokémon noemen = gezicht kopiëren). v4: geen Banette-bijlage, Banette alleen nog genoemd voor het kledingstuk.
+
 ## Open
 - Naam, evolutiemethode: later.

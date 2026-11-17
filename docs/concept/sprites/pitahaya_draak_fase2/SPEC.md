@@ -24,6 +24,7 @@
 - Bij r9 (16 nov): "vind het roze nu toch nog niet helemaal werken, maar stuur naar de eindkeuring, laat een keurder ook specifiek daarnaar kijken. Verder moet er nog hard aan belijning, schaduwen en kleur gewerkt worden, het model en de silhouet staat grotendeels, op de rechterkant van de staart na wat een volledig rechte lijn is, evenals de meest linkerpot en de bovenkant van het hoofd. Keur dit allemaal in 1 keer en kom pas terug met een eindversie, dragonflycave, gen 3 sprite keuring, allemaal nu doen"
 - Bij de eindversie (17 nov), over de plaatlicht-variant en het onderlijf: "het model is minder goed met kleuren dan onze keuringen, dus dat is prima. Wat betreft onderlijf, hoe verhoudt het zich tot andere sprites? Je mag met kleur altijd van het model afwijken he"
 - Bij eindversie 2 (17 nov): "zijn oog lijkt nu geen pupil te hebben"
+- Over de oogvarianten (r13): "b is erg netjes" → `eind/pitahaya2_eind3.png` (= r13 oog B).
 
 ## Keuzes Claude (niet besproken)
 - Maat: model verkleind tot ±62 px breed (proef: ±62×36), op de bodem van het 64×64-vlak.

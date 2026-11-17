@@ -2124,3 +2124,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoofd + armen r1: "kijk nu komen we ergens"; prompt v2: alleen het hoofd groter.
 - Gemini vergrootte het hoofd niet; Claude vergrootte het zelf in het model, 4 vormen (`hoofdarmen_groter/vormen.png`: 1,4×, 1,6×, 1,6× lager, 1,8×).
 - Jordi koos D (1,8×); prompt om het ontwerp met Gemini op te poetsen (`PROMPT_4_oppoetsen.md`).
+- Gemini-oppoetsronde niet goed; D opnieuw zonder meegeknipt armstuk en met de armen 0/60/110 px lager (`hoofdarmen_D2/vormen_D2.png`).

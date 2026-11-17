@@ -2026,3 +2026,11 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite r1–r15 (`sprites/mate/sprite/`): vlekkentextuur afgekeurd ("erg korrelig", "groene blur") → 3 tinten + sikkelschaduw; hoorns, arm, neus, mond, voeten en ogen opnieuw uit het model verkleind na "de hoorns waren opnieuw getekend"; keuring per onderdeel op vorm; onderhoeken ronder (Jordi); Dragonfly Cave-eindkeuring: belijning op 8 px gerepareerd, palet lichter (variant B, Jordi: "rechts").
 - **Frontsprite af:** `sprites/mate/af/mate.png` (+ `_8x`), op het overzichtsvel. Naam open.
 - Lessen in `docs/lessen/GEMINI.md` (vlekkentextuur niet overnemen; keuring op metingen mist vormfouten).
+
+### [v0.0.497] - Pitahaya-draak fase 2 (teju): frontsprite af
+- Brainstorm met Jordi (16 nov): vruchtvlees in de open bek (niet als buikpatroon), "duidelijk de dragonfruit blijven laten tonen", laag op vier poten, net wat gemener, middenfase. Letterlijk in `IDEEEN.md` en `pitahaya_draak_fase2/SPEC.md`.
+- Gemini r1–r2 (`pitahaya_draak_fase2/gemini/PROMPT.md`): r2 = model (rug ook roze schil met schubpunten, compacter).
+- Sprite r1–r13: model 3× verkleind (natief raster 5,076); bek opnieuw opgebouwd met doorlopende contouren en de Gen 3-opbouw van open bekken (Croconaw, Gyarados, Exploud), op Jordi's vrijgave ("het model doet het ook niet super mooi"): binnenkant grijs i.p.v. roze, donkerste tint bovenin, bovenlip als trap, 4 pixels weg voor een schuine bekrand (Jordi), zwart van de mondhoek roze. Eindkeuring A–G (Dragonfly Cave, Gen 3): bek-roze, rechte stukken (staart, linkerpoot, kop), randen, palet, volume onderlijf en dijen; hooglicht op de rugplaten (Jordi: "dat is prima"); oog met pupil, variant B (Jordi: "b is erg netjes").
+- **Frontsprite af:** `pitahaya_draak_fase2/af/pitahaya_draak_fase2.png` (+ `_8x`), 58×33, 14 kleuren. Op het overzichtsvel. Naam open.
+- Regel van Jordi in `SPRITE_KERN.md`: kleur, schaduw en volume mogen altijd van het model afwijken ("het model is minder goed met kleuren dan onze keuringen").
+

@@ -37,6 +37,10 @@ Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "ver
 ## Referentie (Jordi, 17 nov)
 - Fan-fakemon "Shuppeteer" (Shuppet → Banette → Shuppeteer; groot blokkig lijf half zwart/half rood, narrenmuts met belletjes, ritsgrijns, Shuppets als handpoppen). Jordi: "kijk naar deze fan fakemon, die shuppeteer is al iets beter"; "maar hij moet nog groter en imposanter".
 
+## Over r7 (`gemini/r7/gemini_r7.png`, prompt v9), Jordi 17 nov, letterlijk
+"iets beter maar het is nog steeds niet banette en sugimori stijl kan je echt nooit een fatsoenlijke sprite van maken"
+
 ## Open
+- Wat "nog steeds niet banette" precies betekent: gevraagd (17 nov).
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).
 - Naam, evolutiemethode: later.

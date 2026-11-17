@@ -2051,3 +2051,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r6 bewaard (eerste ronde zonder Banette-hoofd); prompt v7 = v6 met een groot, breed silhouet ("imposant is niet mager, imposant is groot, breed").
 - Jordi: "waardeloos ontwerp weer". Voorstel v8: terug naar r2 en per bericht één wijziging (`gemini/PROMPT_v8_vanaf_r2.md`); v7 in de wacht.
 - Referentie Shuppeteer (fan-fakemon) van Jordi; prompt v9 met Shuppeteer als maat ("nog groter en imposanter") en alle besluiten uit SPEC.
+- r7 bewaard ("iets beter"); les: geen Sugimori-artwork als tussenstap.

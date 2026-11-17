@@ -1,5 +1,5 @@
 # pitahaya3_r8.png t.o.v. ../sprite_r7/pitahaya3_r7.png: stap | x | y | r7 -> r8 (tekens .#drpPgGhHwWkqQs)
-# totaal 68 px
+# totaal 83 px
 1 band onder platen | 23 | 22 | H -> h
 1 band onder platen | 24 | 22 | H -> h
 1 band onder platen | 25 | 22 | H -> h
@@ -68,3 +68,20 @@
 4 plaat | 42 | 27 | r -> p
 4 plaat | 40 | 28 | r -> p
 4 plaat | 41 | 28 | r -> p
+5a rafel uiteinde kleiner | 13 | 50 | g -> .
+5a rafel uiteinde kleiner | 14 | 50 | g -> .
+5a rafel uiteinde kleiner | 12 | 51 | g -> .
+5a rafel uiteinde kleiner | 15 | 53 | g -> .
+5a rafel uiteinde kleiner | 14 | 54 | g -> .
+5a rafel uiteinde kleiner | 15 | 54 | h -> .
+5a rafel uiteinde kleiner | 16 | 54 | h -> .
+5a rafel uiteinde kleiner | 17 | 54 | h -> g
+5b rafel beenzijde terug | 27 | 51 | G -> h
+5b rafel beenzijde terug | 28 | 51 | G -> G
+5b rafel beenzijde terug | 26 | 52 | p -> r
+5b rafel beenzijde terug | 27 | 52 | G -> h
+5b rafel beenzijde terug | 28 | 52 | G -> G
+5b rafel beenzijde terug | 26 | 53 | p -> r
+5b rafel beenzijde terug | 27 | 53 | r -> h
+5b rafel beenzijde terug | 28 | 53 | r -> G
+5b rafel beenzijde terug | 27 | 54 | r -> G

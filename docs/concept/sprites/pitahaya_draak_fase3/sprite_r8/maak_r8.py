@@ -52,11 +52,25 @@ rij('4 plaat', 23, 28, 'rrr', 'ddd')
 rij('4 plaat', 27, 41, 'rr', 'pp')
 rij('4 plaat', 28, 40, 'rr', 'pp')
 
+# 5. Groene rafels van de staartknots (Jordi: "de dynamiek in de staart dragonfruit moet ook behouden blijven, dus de
+#    groene rafels" en "degene aan het uiteinde is te groot en aan de beenzijde zijn ze verdwenen").
+#    Model gemeten per spritecel (dekking >50% = in het silhouet, zie NOTITIES.md):
+#    5a. Rafel aan het uiteinde (linksboven): model punt op (13,51), rij 50 alleen x 15-18; sprite had punt op (12,51),
+#        rij 50 x 13-18 en extra cellen (15,53), (14-16,54) (model 0-44%). Die cellen weg; rand van de 2e rafel op rij 54 donker.
+SILH_WEG = [(13,50),(14,50),(12,51),(15,53),(14,54),(15,54),(16,54)]
+zet('5a rafel uiteinde kleiner', [(13,50,'g','.'),(14,50,'g','.'),(12,51,'g','.'),(15,53,'g','.'),(14,54,'g','.'),
+    (15,54,'h','.'),(16,54,'h','.'),(17,54,'h','g')])
+#    5b. Beenzijde: model heeft een schutblad op x 26.5-28, y 50.5-54 (rechtsboven op de knots, naar het been). In de sprite
+#        was alleen (26-28,51) en (27-28,52) groen en las het als vlek; nu een blad met lichte kant, schaduwkant en punt.
+zet('5b rafel beenzijde terug', [(27,51,'G','h'),(28,51,'G','G'),(26,52,'p','r'),(27,52,'G','h'),(28,52,'G','G'),
+    (26,53,'p','r'),(27,53,'r','h'),(28,53,'r','G'),(27,54,'r','G')])
+
 im = Image.fromarray(o.astype('uint8'), 'P'); im.putpalette(pal); im.save('pitahaya3_r8.png', transparency=0)
 zt = np.asarray(Image.open('../sprite_r6/pitahaya3_r6_zonder_tong.png')).astype(int)
 bk = np.asarray(Image.open('../sprite_r6/pitahaya3_r6_buik.png')).astype(int)
 import sys; sys.path.insert(0, '../sprite_r6'); from buik import RIJEN
-assert ((o > 0) == (r7 > 0)).all(), 'silhouet'
+verschil = {(x, y) for y, x in np.argwhere((o > 0) != (r7 > 0))}
+assert verschil == set(SILH_WEG), ('silhouet', verschil ^ set(SILH_WEG))
 kd = np.argwhere(o[12:30, 0:21] != zt[12:30, 0:21])
 assert all(zt[12+y, x] in (6, 7, 8, 9) for y, x in kd), 'kop: alleen groene nekpixels mogen in het kopvak wijzigen'
 assert (o[26:39, 0:13] == zt[26:39, 0:13]).all(), 'bek'

@@ -53,6 +53,7 @@ Afgevinkt (Claude): hoofd-bijlage genegeerd (weer Banette/Gengar-hoofd), "thick 
 
 ## Stand na 10 rondes (Claude)
 Gemini haalt dit concept niet: met of zonder bijlage, schets of voorbeeld valt hij terug op een Banette/Gengar-hoofd en een generiek geestlijf. Werkwijze voorgelegd aan Jordi.
+Jordi (17 nov): "We gaan niet stoppen, het is gewoon slechte prompting, we gaan fase voor fase bouwen. Haal alle referenties naar banette weg en laten we asset voor asset gaan bouwen en kijken of dat lukt". Plan: `gemini/assets/PLAN.md`.
 
 ## Open
 - Jordi (17 nov): "nog steeds teveel banette bedoel ik"; "hoofdvorm wel eindelijk goed" (r7). Prompt v10 (hoofd aanpassen) vervalt. Jordi: "ik hoef toch niet elke keer mn idee opnieuw te typen"; Claude vergeleek r7 zelf met deze SPEC -> v11.

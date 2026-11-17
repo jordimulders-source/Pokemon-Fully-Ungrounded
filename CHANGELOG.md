@@ -2106,3 +2106,7 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r9 bewaard ("manmanman": bodybuilder, derde arm, hoofd-bijlage genegeerd); werkwijze voorgelegd.
 - Vormschets (`gemini/bijlage_vormschets.png`) en prompt v13 in twee varianten: A met vormschets, B met Shuppeteer als voorbeeld.
 - r10 (A en B) bewaard: allebei slecht; Gemini haalt dit concept niet. Werkwijze voorgelegd, les in `GEMINI.md`.
+
+### [v0.0.518] - Banette-evolutie: asset voor asset
+- Main (mate fase 2, pitahaya fase 2) in de branch gemerged; Banette-changelogsecties hernummerd naar v0.0.511–517.
+- Plan asset voor asset zonder Banette-referenties (`banette_evo/gemini/assets/PLAN.md`), prompt asset 1 (hoofd).

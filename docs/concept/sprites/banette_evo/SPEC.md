@@ -28,5 +28,9 @@ Analyse Claude: drie rondes geven steeds Banettes hoofd (één punt, Banette-gri
 
 Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "vervloekte pop met ritsmond" ís Banette voor Gemini. v5: in stappen, telkens één ding erbij (GEMINI.md): eerst alleen de nieuwe puppetmaster zelf (hoofd, lijf, kruishanden), zonder pop/rits/Shuppets; daarna met de beste versie als bijlage het kledingstuk, daarna de Shuppets.
 
+## Over r5 (`gemini/r5/gemini_r5.png`, prompt v5 stap 1), Jordi 17 nov, letterlijk
+"echt bizar slecht"
+
 ## Open
+- Werkwijze na 5 mislukte Gemini-rondes: voorgelegd aan Jordi (17 nov).
 - Naam, evolutiemethode: later.

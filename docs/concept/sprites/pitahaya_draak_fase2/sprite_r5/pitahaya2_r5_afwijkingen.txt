@@ -1,0 +1,33 @@
+1 kaaklijn (contour)	11	42	r	K	model 8 roze/1 zwart/0 vlees/0 bg
+1 kaaklijn (contour)	12	43	w	K	model 2 roze/3 zwart/4 vlees/0 bg
+1 kaaklijn (contour)	13	43	r	K	model 6 roze/2 zwart/1 vlees/0 bg
+1 kaaklijn (contour)	14	44	d	K	model 7 roze/2 zwart/0 vlees/0 bg
+2 wig donkergrijs (Gen 3-schaduw)	10	43	w	v	model 0 roze/0 zwart/9 vlees/0 bg
+2 wig donkergrijs (Gen 3-schaduw)	11	43	w	v	model 0 roze/1 zwart/8 vlees/0 bg
+2 wig donkergrijs (Gen 3-schaduw)	10	44	w	v	model 0 roze/0 zwart/9 vlees/0 bg
+2 wig donkergrijs (Gen 3-schaduw)	11	44	s	v	model 0 roze/0 zwart/9 vlees/0 bg
+2 wig donkergrijs (Gen 3-schaduw)	12	44	w	v	model 0 roze/0 zwart/9 vlees/0 bg
+2 wig donkergrijs (Gen 3-schaduw)	13	44	w	v	model 0 roze/0 zwart/9 vlees/0 bg
+2 wig donkergrijs (Gen 3-schaduw)	11	45	w	v	model 1 roze/0 zwart/8 vlees/0 bg
+3 verre lip (contour)	10	45	w	p	model 4 roze/0 zwart/5 vlees/0 bg
+3 verre lip (contour)	11	46	d	r	model 5 roze/0 zwart/4 vlees/0 bg
+3 verre lip (contour)	12	45	d	r	model 5 roze/0 zwart/4 vlees/0 bg
+3 verre lip (contour)	13	45	w	r	model 4 roze/0 zwart/5 vlees/0 bg
+4 tongvlees grijs (pit eerst weg)	15	47	s	w	model 0 roze/0 zwart/9 vlees/0 bg
+4 tong vooraan licht (Gen 3-opbouw; model grijs 188-198)	12	46	w	W	model 0 roze/0 zwart/9 vlees/0 bg
+4 tong vooraan licht (Gen 3-opbouw; model grijs 188-198)	13	46	s	W	model 0 roze/0 zwart/9 vlees/0 bg
+4 tong vooraan licht (Gen 3-opbouw; model grijs 188-198)	11	47	s	W	model 0 roze/0 zwart/9 vlees/0 bg
+4 tong vooraan licht (Gen 3-opbouw; model grijs 188-198)	12	47	w	W	model 0 roze/0 zwart/9 vlees/0 bg
+4 tong vooraan licht (Gen 3-opbouw; model grijs 188-198)	13	47	w	W	model 0 roze/0 zwart/9 vlees/0 bg
+4 mondhoek/binnenrand lipband (modeltoon)	17	44	p	r	model 9 roze/0 zwart/0 vlees/0 bg
+4 mondhoek/binnenrand lipband (modeltoon)	17	46	p	r	model 6 roze/0 zwart/3 vlees/0 bg
+4 mondhoek/binnenrand lipband (modeltoon)	17	47	p	r	model 7 roze/0 zwart/2 vlees/0 bg
+pit opnieuw kiezen	9	51	s	W	model 0 roze/0 zwart/9 vlees/0 bg
+pit opnieuw kiezen	12	50	s	W	model 0 roze/0 zwart/9 vlees/0 bg
+pit opnieuw kiezen	14	49	s	W	model 0 roze/0 zwart/9 vlees/0 bg
+pit (modelcomponent 913)	10	48	W	s	model 0 roze/0 zwart/9 vlees/0 bg
+pit (modelcomponent 856)	11	44	v	s	model 0 roze/0 zwart/9 vlees/0 bg
+pit (modelcomponent 763)	9	51	W	s	model 0 roze/0 zwart/9 vlees/0 bg
+pit (modelcomponent 705)	14	49	W	s	model 0 roze/0 zwart/9 vlees/0 bg
+pit (modelcomponent 477)	12	50	W	s	model 0 roze/0 zwart/9 vlees/0 bg
+pit (modelcomponent 474)	15	47	w	s	model 0 roze/0 zwart/9 vlees/0 bg

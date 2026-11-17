@@ -2027,25 +2027,73 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - **Frontsprite af:** `sprites/mate/af/mate.png` (+ `_8x`), op het overzichtsvel. Naam open.
 - Lessen in `docs/lessen/GEMINI.md` (vlekkentextuur niet overnemen; keuring op metingen mist vormfouten).
 
-### [v0.0.497] - Banette-evolutie: idee vastgelegd
+### [v0.0.497] - Pitahaya-draak fase 2 (teju): frontsprite af
+- Brainstorm met Jordi (16 nov): vruchtvlees in de open bek (niet als buikpatroon), "duidelijk de dragonfruit blijven laten tonen", laag op vier poten, net wat gemener, middenfase. Letterlijk in `IDEEEN.md` en `pitahaya_draak_fase2/SPEC.md`.
+- Gemini r1–r2 (`pitahaya_draak_fase2/gemini/PROMPT.md`): r2 = model (rug ook roze schil met schubpunten, compacter).
+- Sprite r1–r13: model 3× verkleind (natief raster 5,076); bek opnieuw opgebouwd met doorlopende contouren en de Gen 3-opbouw van open bekken (Croconaw, Gyarados, Exploud), op Jordi's vrijgave ("het model doet het ook niet super mooi"): binnenkant grijs i.p.v. roze, donkerste tint bovenin, bovenlip als trap, 4 pixels weg voor een schuine bekrand (Jordi), zwart van de mondhoek roze. Eindkeuring A–G (Dragonfly Cave, Gen 3): bek-roze, rechte stukken (staart, linkerpoot, kop), randen, palet, volume onderlijf en dijen; hooglicht op de rugplaten (Jordi: "dat is prima"); oog met pupil, variant B (Jordi: "b is erg netjes").
+- **Frontsprite af:** `pitahaya_draak_fase2/af/pitahaya_draak_fase2.png` (+ `_8x`), 58×33, 14 kleuren. Op het overzichtsvel. Naam open.
+- Regel van Jordi in `SPRITE_KERN.md`: kleur, schaduw en volume mogen altijd van het model afwijken ("het model is minder goed met kleuren dan onze keuringen").
+### [v0.0.498] - Mate-lijn fase 2 (kano): Gemini-prompt
+- `docs/concept/sprites/mate_fase2/gemini/PROMPT.md`: prompt A (kano met ogen, punt als neus) en B (plus mond), met Jordi's woorden; open punten (materiaal kano, hoorntjes, stoom) staan erbij.
+- Jordi's keuze over het gezicht toegevoegd aan `IDEEEN.md`.
+
+### [v0.0.499] - Mate-lijn fase 2: Gemini-prompt v2
+- Gemini r1 bewaard (`mate_fase2/r1/`); Jordi's feedback in `IDEEEN.md`; `PROMPT_v2.md`: kano = de kalebas zelf, echte bombilla's, ogen in de kalebas gekerfd, compact Gen 3-silhouet.
+
+### [v0.0.500] - Mate-lijn fase 2: Gemini-prompt v3
+- r2 bewaard (kanovorm blijft); `PROMPT_v3.md`: bombilla's zoals in fase 1, gewone mond voor het ventje, zilveren rand langs de kano.
+
+### [v0.0.501] - Mate-lijn fase 2: Gemini-prompt v4
+- r3 bewaard (zilveren rand en mond goed); `PROMPT_v4.md` vraagt alleen een duidelijke roeihouding met de bombilla's.
+
+### [v0.0.502] - Mate-lijn fase 2: Gemini-prompt v5
+- r3 bewaard; v4 vervallen. `PROMPT_v5.md` (nieuwe startprompt): scherpere kano zonder getuite punt, gekerfde ogen/mond, zilveren rand, "wereldkampioen mate maker", bombilla-peddels.
+
+### [v0.0.503] - Mate-lijn fase 2: Gemini-prompt v6
+- r4 bewaard; `PROMPT_v6.md` combineert kano, stijl en gezicht van r3 (dunnere rand), roeihouding/peddels van r4 en de ogen van fase 1.
+
+### [v0.0.504] - Mate-lijn fase 2: r2 als basis, Gemini-prompt v7
+- r5 bewaard en overzicht r1–r5 (`mate_fase2/overzicht_r1_r5.png`). Jordi koos r2 als beste; `PROMPT_v7.md`: uitgekerfde ogen met mate erdoor, ventje minder boos, zilveren rand om het voorste vak.
+
+### [v0.0.505] - Mate-lijn fase 2: r6 + water van r2
+- r6 bewaard (zilveren rand om het voorste vak opgelost); het water van r2 teruggeplakt in `mate_fase2/r6_samengesteld/r6_water_r2.png`. Ogen nog open.
+
+### [v0.0.506] - Mate-lijn fase 2: Gemini-prompt v8
+- `PROMPT_v8.md`: alleen het gezicht van het ventje ("keihard aan het werk"); de kop wordt daarna in het samengestelde model geplakt. Natief raster van het model: `mate_fase2/ogen/natief.py` (pitch 10,24, fase 0).
+
+### [v0.0.507] - Mate-lijn fase 2: gezichtsvarianten ventje
+- r8 bewaard (emoji-blik, afgekeurd; kano goed). Vier gezichtsvarianten door Claude op het natieve raster in `mate_fase2/ogen/` (A vastberaden, B inspanning, C één oog dicht, D open tanden), elk ook als volledig model.
+
+### [v0.0.508] - Mate-lijn fase 2: model bevroren
+- `mate_fase2/referenties/model.png`: r6 met het water en het boze gezicht van r2; `mate_fase2/SPEC.md`.
+
+### [v0.0.509] - Mate-lijn fase 2: lore
+- Jordi's lore (ventje vast aan de kalebas, vult de mate uit zijn eigen lichaam bij, maakt zelf water) in `IDEEEN.md` en `mate_fase2/SPEC.md`.
+
+### [v0.0.510] - Mate-lijn fase 2 (kano): frontsprite af
+- `docs/concept/sprites/mate_fase2/af/mate2.png` (+ `_8x`): kalebas-kano met boos yerba-ventje dat roeit met twee bombilla's, zilveren rand om het yerba-vak, gekerfde ogen, warm water achterin. Model: Gemini r6 + water en gezicht van r2.
+- Sprite r1–r9 in `mate_fase2/sprite/`: natief raster verkleind door schrappen (hals 2 kolommen, yerba-vak 2, naden in romp/water), achtersteven heel, rechterrand op één boog die achter het zeefje aansluit (Jordi koos B → zacht → A); keurder PASS en Dragonfly Cave-eindkeuring, 11 px reparaties.
+- Op het overzichtsvel (`showcase/frontsprites_af.png`). De mate-lijn is af. Lessen in `docs/lessen/GEMINI.md`.
+
+### [v0.0.511] - Banette-evolutie: idee vastgelegd
 - Jordi's idee voor de Banette-evolutie (Ghost/Dark, puppetmaster met twee mini-Shuppets) letterlijk vastgelegd in `docs/concept/sprites/banette_evo/SPEC.md` en `IDEEEN.md`; eerst overleggen, daarna de Gemini-prompt.
 
-### [v0.0.498] - Banette-evolutie: antwoorden en Gemini-prompt v1
+### [v0.0.512] - Banette-evolutie: antwoorden en Gemini-prompt v1
 - Jordi's antwoorden (draden, kledingstuk, beentjes, zigzagmond, houding) letterlijk in `banette_evo/SPEC.md`; prompt `banette_evo/gemini/PROMPT_v1.md` met Banette- en Shuppet-sprite als bijlage. Kleur nog open.
 
-### [v0.0.499] - Banette-evolutie: Gemini r1 en prompt v2
+### [v0.0.513] - Banette-evolutie: Gemini r1 en prompt v2
 - r1 bewaard (`banette_evo/gemini/r1/`), Jordi's feedback letterlijk in SPEC; prompt v2 (groter, jas = Banettes oude lijf, twee hoofdaanhangsels, wat donkerder, 64×64 vullen).
 
-### [v0.0.500] - Banette-evolutie: Gemini r2 en prompt v3
+### [v0.0.514] - Banette-evolutie: Gemini r2 en prompt v3
 - r2 bewaard, feedback letterlijk in SPEC; prompt v3 (narrenmutspunten, imposanter/sinisterder, lijf sluit aan op de rits, grotere Shuppets, kruizen groeien uit de armen).
 
-### [v0.0.501] - Banette-evolutie: Gemini r3 en prompt v4
+### [v0.0.515] - Banette-evolutie: Gemini r3 en prompt v4
 - r3 bewaard ("nog slechter"); prompt v4 zonder Banette-bijlage en Banette-naam (Gemini kopieerde steeds Banettes hoofd), kledingstuk en ogen in woorden.
 
-### [v0.0.502] - Banette-evolutie: Gemini r4 en prompt v5 (stap 1)
+### [v0.0.516] - Banette-evolutie: Gemini r4 en prompt v5 (stap 1)
 - r4 bewaard (ook zonder bijlagen weer Banette); v5 in stappen: eerst alleen de puppetmaster zelf, daarna kledingstuk, daarna Shuppets. Les in `GEMINI.md`.
 
-### [v0.0.503] - Banette-evolutie: Gemini r5
+### [v0.0.517] - Banette-evolutie: Gemini r5
 - r5 bewaard ("echt bizar slecht"); werkwijze voorgelegd aan Jordi.
 - Prompt v6: begint bij de figuur (kwaadaardige nar die aan de touwtjes trekt), silhouet en gedrag; eerst artwork. Les in `GEMINI.md`.
 - r6 bewaard (eerste ronde zonder Banette-hoofd); prompt v7 = v6 met een groot, breed silhouet ("imposant is niet mager, imposant is groot, breed").

@@ -24,3 +24,4 @@
 - "de tong lijkt zo niet echt op een tong, dus haal die maar weg. Daarnaast vind ik rechts de beste, maar ik heb nog wel wat kritiek. Er is geen belijning tussen de achterpoot en de staart, lijkt net een blur. Plus het schaduw en kleur gebruik is in de hele sprite nog niet optimaal. Kan je daar nog aan werken? Hoofd en de vruchtvlees buik zijn nog het beste, maar verder mist die al het contrast dat sprites normaal wel hebben"
 - → basis = C (buik) zonder tong; ronde 7: lijn achterpoot/staart, schaduw en kleur/contrast in de hele sprite; kop en buik zijn het beste.
 - Jordi (18 nov), tijdens r8: "de dynamiek in de staart dragonfruit moet ook behouden blijven, dus de groene rafels"
+- Jordi (18 nov): "degene aan het uiteinde is te groot en aan de beenzijde zijn ze verdwenen" (rafels knots)

@@ -43,6 +43,11 @@ Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "ver
 ## Over r8 (`gemini/r8/gemini_r8.png`, prompt v11), Jordi 17 nov, letterlijk
 "hoofd is weer verknald, en hij is niet imposant, wederom niet"
 
+## Over r9 (`gemini/r9/gemini_r9.png`, prompt v12), Jordi 17 nov, letterlijk
+"manmanman"
+
+Afgevinkt (Claude): hoofd-bijlage genegeerd (weer Banette/Gengar-hoofd), "thick strong arms, broad chest" gaf een bodybuilder met een derde arm; kledingstuk, kruizen en Shuppets bleven.
+
 ## Open
 - Jordi (17 nov): "nog steeds teveel banette bedoel ik"; "hoofdvorm wel eindelijk goed" (r7). Prompt v10 (hoofd aanpassen) vervalt. Jordi: "ik hoef toch niet elke keer mn idee opnieuw te typen"; Claude vergeleek r7 zelf met deze SPEC -> v11.
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).

@@ -72,6 +72,9 @@ Jordi (17 nov): "We gaan niet stoppen, het is gewoon slechte prompting, we gaan 
 - `af/shuppetto.png` (+ `_8x`, `_vel` naast het model) = `sprite/r14/`. 14 rondes: r1–r10 makers (steeds vers) met keuringen, r11–r14 pixelreparaties door Claude uit de keuringen; DFC-eindkeuring r12, slotcontrole r14 PASS.
 - Bewust anders dan het model: geen linkerarm zichtbaar (zit in het model achter de mutspunt), kleuren Gen 3 (mond donkerbruin, touwtjes licht grijsblauw, glanssikkel op het rood).
 
+## Jordi over r14 (18 nov), letterlijk
+"vrij netjes, niet erg dat de linkerarm niet zichtbaar is. Laten we naar het linker'oor' kijken. Deze heeft 2 rechte lijnen onder elkaar, kan dat iets smoother? Daarnaast hangt het belletje net iets te perfect boven het shuppet hoofd, kan daar iets van ruimte tussen zitten? Ook het schaduwwerk in het linkeroor mag net wat beter, is nu een effen vlak. Verder ben ik best tevreden!"
+
 ## Open
 - Jordi (17 nov): "nog steeds teveel banette bedoel ik"; "hoofdvorm wel eindelijk goed" (r7). Prompt v10 (hoofd aanpassen) vervalt. Jordi: "ik hoef toch niet elke keer mn idee opnieuw te typen"; Claude vergeleek r7 zelf met deze SPEC -> v11.
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).

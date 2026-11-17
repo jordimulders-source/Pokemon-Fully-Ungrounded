@@ -49,6 +49,7 @@ items=[
 ("pitahaya_draak/af/pitahaya_draak.png",'Pitahaya-draak fase 1',"grass/dragon"),
 ("vuurwerk_fase3/af/vuurwerkslang.png",'Vuurwerkslang',"fire/fairy"),
 ("mate/af/mate.png",'Mate-kalebas',"grass/water"),
+("mate_fase2/af/mate2.png",'Mate-kano',"grass/water"),
 ]
 F="/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf"; FR=F.replace("-Bold","")
 ft=ImageFont.truetype(F,36); fn=ImageFont.truetype(F,19); fy=ImageFont.truetype(FR,16)

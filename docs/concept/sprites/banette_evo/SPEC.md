@@ -44,7 +44,7 @@ Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "ver
 "hoofd is weer verknald, en hij is niet imposant, wederom niet"
 
 ## Over r9 (`gemini/r9/gemini_r9.png`, prompt v12), Jordi 17 nov, letterlijk
-"manmanman"
+"manmanman"; "het moet geen muscledude worden"
 
 Afgevinkt (Claude): hoofd-bijlage genegeerd (weer Banette/Gengar-hoofd), "thick strong arms, broad chest" gaf een bodybuilder met een derde arm; kledingstuk, kruizen en Shuppets bleven.
 

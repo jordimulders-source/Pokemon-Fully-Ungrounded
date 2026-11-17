@@ -2063,3 +2063,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.508] - Mate-lijn fase 2: lore
 - Jordi's lore (ventje vast aan de kalebas, vult de mate uit zijn eigen lichaam bij, maakt zelf water) in `IDEEEN.md` en `mate_fase2/SPEC.md`.
+
+### [v0.0.509] - Mate-lijn fase 2 (kano): frontsprite af
+- `docs/concept/sprites/mate_fase2/af/mate2.png` (+ `_8x`): kalebas-kano met boos yerba-ventje dat roeit met twee bombilla's, zilveren rand om het yerba-vak, gekerfde ogen, warm water achterin. Model: Gemini r6 + water en gezicht van r2.
+- Sprite r1–r9 in `mate_fase2/sprite/`: natief raster verkleind door schrappen (hals 2 kolommen, yerba-vak 2, naden in romp/water), achtersteven heel, rechterrand op één boog die achter het zeefje aansluit (Jordi koos B → zacht → A); keurder PASS en Dragonfly Cave-eindkeuring, 11 px reparaties.
+- Op het overzichtsvel (`showcase/frontsprites_af.png`). De mate-lijn is af. Lessen in `docs/lessen/GEMINI.md`.

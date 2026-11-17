@@ -2122,3 +2122,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Lijf r2 "beter gelukt"; Jordi pauzeert en herevalueert het ontwerp. Stand in SPEC en CLAUDE.md.
 - Jordi herevalueerde: lijf grotendeels weg, alleen hoofd en armen, Spiritomb-mond, Shuppeteer als hoofdreferentie; prompt `PROMPT_3_hoofd_armen.md`.
 - Hoofd + armen r1: "kijk nu komen we ergens"; prompt v2: alleen het hoofd groter.
+- Gemini vergrootte het hoofd niet; Claude vergrootte het zelf in het model, 4 vormen (`hoofdarmen_groter/vormen.png`: 1,4×, 1,6×, 1,6× lager, 1,8×).

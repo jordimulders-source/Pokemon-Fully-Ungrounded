@@ -15,5 +15,8 @@ Typing (Jordi): Ghost/Dark (zelfde als Banette in de repo).
 ## Over r1 (`gemini/r1/gemini_r1.png`), Jordi 17 nov, letterlijk
 "de kleur is prima, wat donkerder. Het concept klopt ook wel prima, alleen het is teveel banette, hij moet groter, imposanter, de jas moet juist meer banette's voormalige lichaam zijn en het nieuwe lichaam plus hoofd is groter, hij krijgt ook twee van die hoofdaanhangsels (geen idee hoe die heten) om nog meer als een evil puppetmaster/joker eruit te zien, hij mag ook richting max grootte gaan van 64x64"
 
+## Over r2 (`gemini/r2/gemini_r2.png`), Jordi 17 nov, letterlijk
+"zelfde issues als eerst, en ja ik bedoel de punten als een narrenmuts. Hij is nog steeds niet imposant genoeg, niet eng/sinister genoeg, het kledingstuk is nu wel beter, maar zijn lichaam sluit niet goed aan, en ik ben bang dat de shuppets te klein zijn en niet goed vertalen naar een sprite, plus de x'en sluiten niet lekker op de arm aan"
+
 ## Open
 - Naam, evolutiemethode: later.

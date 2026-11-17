@@ -2035,3 +2035,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.499] - Banette-evolutie: Gemini r1 en prompt v2
 - r1 bewaard (`banette_evo/gemini/r1/`), Jordi's feedback letterlijk in SPEC; prompt v2 (groter, jas = Banettes oude lijf, twee hoofdaanhangsels, wat donkerder, 64×64 vullen).
+
+### [v0.0.500] - Banette-evolutie: Gemini r2 en prompt v3
+- r2 bewaard, feedback letterlijk in SPEC; prompt v3 (narrenmutspunten, imposanter/sinisterder, lijf sluit aan op de rits, grotere Shuppets, kruizen groeien uit de armen).

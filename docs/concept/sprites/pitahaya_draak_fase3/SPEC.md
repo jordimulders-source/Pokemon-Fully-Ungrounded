@@ -25,3 +25,7 @@
 - → basis = C (buik) zonder tong; ronde 7: lijn achterpoot/staart, schaduw en kleur/contrast in de hele sprite; kop en buik zijn het beste.
 - Jordi (18 nov), tijdens r8: "de dynamiek in de staart dragonfruit moet ook behouden blijven, dus de groene rafels"
 - Jordi (18 nov): "degene aan het uiteinde is te groot en aan de beenzijde zijn ze verdwenen" (rafels knots)
+
+## Af (18 nov), ronde 9
+- `af/pitahaya_draak_fase3.png` (+ `_8x`) = r9: buik vruchtvlees, zonder tong; lijn achterpoot/staart, contrast op Sceptile-niveau, rafels knots naar het model. Keurder r8 FAIL (klein) → r9 PASS. Vergelijking `af/af_vs_r6_8x.png`; de drie r6-versies in `af/oud_r6/`.
+- Ter info (keurder, optioneel): verre achterbeen staat twee tintstappen onder de verre arm (Gen 3-norm één stap).

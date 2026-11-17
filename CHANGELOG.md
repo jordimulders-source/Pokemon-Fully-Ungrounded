@@ -2088,3 +2088,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Model: Gemini r4 (prompts v1–v4 in `pitahaya_draak_fase3/gemini/PROMPT.md`: minder druk, groener lijf, roze rug, cactusribben, dragonfruit-knots aan de staart; bloem weer weg; tong geprobeerd).
 - Sprite r1–r6 (`sprite_r*/`): model overgenomen (natief raster, niet-gehele reductie 3,66× naar 62 px, lijnen uit het modelskelet), palet van de teju; keurder na r4 (arm en keel), keurder + Dragonfly Cave na r5.
 - **Af:** `pitahaya_draak_fase3/af/` in drie versies: A met tong, B zonder tong, C buik in vruchtvlees wit met zwarte pitjes (Jordi). Overzicht `af/keuze_8x.png`. Keuze en naam open.
+
+### [v0.0.513] - Pitahaya-draak fase 3: buikversie zonder tong af
+- Jordi koos C (buik vruchtvlees) zonder tong; kritiek: geen lijn achterpoot/staart, te weinig contrast, rafels knots (uiteinde te groot, beenzijde verdwenen).
+- Sprite r7–r9 (`sprite_r7/`–`sprite_r9/`): groen palet donkerder en gespreid (L 60/96/137/199 + 37), licht/schaduw per vorm, lijn achterpoot/staart, nek/schouder, verre ledematen donkerder, rafels naar het model, banding en streepruis weg. Keurder: r8 FAIL (klein), r9 PASS.
+- **Af:** `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`; oude versies A/B/C in `af/oud_r6/`.

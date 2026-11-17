@@ -34,6 +34,9 @@ Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "ver
 ## Over r6 (`gemini/r6/gemini_r6.png`, prompt v6), Jordi 17 nov, letterlijk
 "imposant is niet mager, imposant is groot, breed"; "waardeloos ontwerp weer"
 
+## Referentie (Jordi, 17 nov)
+- Fan-fakemon "Shuppeteer" (Shuppet → Banette → Shuppeteer; groot blokkig lijf half zwart/half rood, narrenmuts met belletjes, ritsgrijns, Shuppets als handpoppen). Jordi: "kijk naar deze fan fakemon, die shuppeteer is al iets beter".
+
 ## Open
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).
 - Naam, evolutiemethode: later.

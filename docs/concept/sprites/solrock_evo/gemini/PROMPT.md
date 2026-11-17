@@ -103,3 +103,43 @@ AVOID
 - Not a sun with a face. No tongue-like shapes, no ropes or tentacles.
 - No arms, legs, wings or human features. No glossy 3D render, no plush or mascot look.
 ```
+
+---
+
+# Prompt v4 (17 nov): NIEUW gesprek, startprompt (reactie op v3, `r3/gemini_v3.png`)
+
+## Jordi (letterlijk)
+- "dat oranje ding en die gele edelsteen, verzint die dat zelf telkens?" (nee: voorstellen van Claude; geschrapt)
+- "ik vind deze niet zo mooi, asynchroon en maar 1 oog"
+
+## Behouden uit v3
+Losse punten buiten een dunne felle rand om het zwarte lijf (eclipsbeeld werkt).
+
+```
+Design the evolution of the Pokémon SOLROCK and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE ATTACHED SPRITE IS SOLROCK (the pre-evolution). Keep its yellow stone spikes, its yellow face plates with the two red eye slits and its stony texture recognizable.
+
+CONCEPT
+- Solrock is a stone meteorite shaped like the sun. It evolves when the moon (Lunatone) is with it: a total solar eclipse made of stone.
+- Everything is rock. No gas, flames, plasma, lava, gems or glow effects.
+
+DESIGN
+- Core: a round body of dark, almost black stone with a glassy fusion crust (like a meteorite that burned through the atmosphere).
+- Face: Solrock's own face, with TWO red eye slits, as in the attached sprite, set on the dark body.
+- Eclipse rim: around the dark body runs a thin, bright pale yellow-white rim, hugging the body tightly, exactly like the bright edge around the black moon in a photo of a total solar eclipse. This rim is the only light in the design.
+- Broken corona: Solrock's yellow stone spikes have broken loose. All of them float OUTSIDE the bright rim, with white background visible between the rim and every spike. Not a single spike touches the body. 8 large spikes, evenly spaced all around and pointing straight outward, with a few small loose stone splinters further out between them.
+- Symmetrical and balanced: the spikes form an even, regular ring around the body.
+
+POSE
+- Facing the viewer, turned slightly to the left, floating.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO soft glow or halo behind the creature, no floor, shadow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- Not a naval mine or spiked ball: the spikes must not be attached to the body.
+- No lava, no gems or crystals, no one-eyed face.
+- Not a sun with a human face. No arms, legs, wings or human features. No glossy 3D render, no plush or mascot look.
+```

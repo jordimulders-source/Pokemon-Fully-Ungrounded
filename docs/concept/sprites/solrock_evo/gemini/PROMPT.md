@@ -45,3 +45,22 @@ AVOID
 - Not a crown or headdress on a ball. No arms, legs, wings or human features.
 - No glossy 3D render, no plush or mascot look.
 ```
+
+---
+
+# Prompt v2 (17 nov): zelfde gesprek, reactie op v1 (`r1/gemini_v1.png`)
+
+## Jordi (letterlijk)
+- "dit is niet helemaal wat je bedoelt he" / "ja schrijf v2"
+
+## Analyse Claude
+Punten zitten nog vast (geen kieren, geen licht ertussen; corona = vage gloed erachter, leest als zeemijn); lava = lange touwen eromheen. Goed: donker lijf met smeltkorst, gezicht. Kristal later. Max. 2 wijzigingen.
+
+```
+Good start: keep the dark fusion-crust body and the face exactly as they are. Change only two things:
+
+1. The yellow stone spikes must be DETACHED from the body. Each spike floats at a clear distance from the dark body, not touching it. In the gap between the body and the ring of floating spikes there is a narrow, bright pale yellow-white band of light, as if light is shining out from behind the dark body. This band of light is the corona. Remove the soft round glow behind the creature.
+2. The lava: replace the long red ropes with one short arc of molten rock that rises from the rim of the body and falls back onto it, close to the edge, like a solar prominence.
+
+Same number of spikes, same pose, same Gen 3 sprite style, plain white background.
+```

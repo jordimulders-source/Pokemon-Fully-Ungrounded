@@ -1,0 +1,130 @@
+# pitahaya3_r9.png t.o.v. ../sprite_r8/pitahaya3_r8.png: stap | x | y | r8 -> r9 (tekens .#drpPgGhHwWkqQs)
+# totaal 128 px
+1 schutblad | 26 | 51 | G -> h
+1 schutblad | 26 | 52 | r -> g
+1 schutblad | 26 | 53 | r -> d
+1 schutblad | 27 | 53 | h -> G
+1 schutblad | 28 | 53 | G -> r
+1 schutblad | 27 | 54 | G -> g
+2 staart liggend | 33 | 57 | g -> G
+2 staart liggend | 34 | 57 | g -> G
+2 staart liggend | 35 | 57 | g -> G
+2 staart liggend | 36 | 57 | g -> G
+2 staart liggend | 37 | 57 | g -> G
+2 staart liggend | 33 | 58 | H -> h
+2 staart liggend | 41 | 58 | H -> h
+2 staart liggend | 42 | 58 | H -> h
+2 staart liggend | 43 | 58 | H -> h
+2 staart liggend | 45 | 59 | G -> h
+2 staart liggend | 46 | 59 | G -> h
+2 staart liggend | 52 | 59 | G -> g
+2 staart liggend | 53 | 59 | G -> g
+2 staart liggend | 42 | 60 | G -> g
+2 staart liggend | 43 | 60 | G -> g
+2 staart liggend | 44 | 60 | G -> g
+2 staart liggend | 45 | 60 | G -> g
+3 scheen | 43 | 47 | g -> h
+3 scheen | 42 | 48 | G -> h
+3 scheen | 43 | 48 | g -> G
+3 scheen | 41 | 49 | G -> h
+3 scheen | 42 | 49 | G -> h
+3 scheen | 43 | 49 | g -> G
+3 scheen | 44 | 49 | g -> G
+3 scheen | 46 | 49 | G -> g
+3 scheen | 47 | 49 | g -> G
+3 scheen | 42 | 50 | G -> h
+3 scheen | 44 | 50 | g -> G
+3 scheen | 46 | 50 | G -> g
+3 scheen | 47 | 50 | g -> G
+3 scheen | 42 | 51 | G -> h
+3 scheen | 44 | 51 | g -> G
+3 scheen | 46 | 51 | G -> g
+3 scheen | 47 | 51 | g -> G
+3 scheen | 43 | 52 | G -> h
+3 scheen | 44 | 52 | G -> h
+3 scheen | 45 | 52 | g -> G
+3 scheen | 46 | 52 | G -> g
+3 scheen | 47 | 52 | g -> G
+3 scheen | 44 | 53 | G -> h
+3 scheen | 45 | 53 | g -> h
+3 scheen | 46 | 53 | G -> g
+3 scheen | 47 | 53 | g -> G
+3 scheen | 48 | 53 | g -> G
+3 scheen | 45 | 54 | g -> h
+3 scheen | 46 | 54 | G -> g
+3 scheen | 48 | 54 | g -> G
+3 scheen | 45 | 55 | g -> G
+3 scheen | 46 | 55 | G -> g
+3 scheen | 48 | 55 | g -> G
+3 verre achterbeen | 23 | 43 | h -> G
+3 verre achterbeen | 24 | 43 | G -> g
+3 verre achterbeen | 21 | 44 | G -> g
+3 verre achterbeen | 23 | 44 | h -> G
+3 verre achterbeen | 24 | 44 | G -> g
+3 verre achterbeen | 21 | 45 | G -> g
+3 verre achterbeen | 23 | 45 | h -> G
+3 verre achterbeen | 24 | 45 | G -> g
+3 verre achterbeen | 21 | 46 | h -> G
+3 verre achterbeen | 22 | 46 | h -> G
+3 verre achterbeen | 23 | 46 | h -> G
+3 verre achterbeen | 24 | 46 | G -> g
+3 verre achterbeen | 25 | 46 | G -> g
+3 verre achterbeen | 26 | 46 | G -> g
+3 verre achterbeen | 27 | 46 | G -> g
+3 verre achterbeen | 28 | 46 | G -> g
+3 verre achterbeen | 21 | 47 | h -> G
+3 verre achterbeen | 22 | 47 | h -> G
+3 verre achterbeen | 23 | 47 | h -> G
+3 verre achterbeen | 24 | 47 | G -> g
+3 verre achterbeen | 25 | 47 | G -> g
+3 verre achterbeen | 26 | 47 | G -> g
+3 verre achterbeen | 27 | 47 | G -> g
+3 verre achterbeen | 22 | 48 | h -> G
+3 verre achterbeen | 23 | 48 | h -> G
+3 verre achterbeen | 24 | 48 | G -> g
+3 verre achterbeen | 25 | 48 | G -> g
+3 verre achterbeen | 26 | 48 | G -> g
+3 verre achterbeen | 27 | 48 | G -> g
+3 verre achterbeen | 22 | 49 | h -> G
+3 verre achterbeen | 23 | 49 | G -> g
+3 verre achterbeen | 24 | 49 | G -> g
+3 verre achterbeen | 25 | 49 | G -> g
+3 verre achterbeen | 26 | 49 | G -> g
+3 verre achterbeen | 27 | 49 | G -> g
+3 verre achterbeen | 23 | 50 | G -> g
+3 verre achterbeen | 24 | 50 | G -> g
+3 verre achterbeen | 25 | 50 | G -> g
+3 verre achterbeen | 26 | 50 | G -> g
+4 staartflank | 58 | 44 | G -> g
+4 staartflank | 57 | 45 | g -> G
+4 staartflank | 58 | 45 | G -> g
+4 staartflank | 56 | 46 | G -> g
+4 staartflank | 57 | 46 | g -> G
+4 staartflank | 58 | 46 | G -> g
+4 staartflank | 56 | 47 | G -> g
+4 staartflank | 57 | 47 | g -> G
+4 staartflank | 58 | 47 | G -> g
+4 staartflank | 56 | 48 | G -> g
+4 staartflank | 57 | 48 | g -> G
+4 staartflank | 59 | 48 | G -> g
+4 staartflank | 60 | 48 | G -> g
+4 staartflank | 56 | 49 | G -> g
+4 staartflank | 57 | 49 | g -> G
+4 staartflank | 59 | 49 | G -> g
+4 staartflank | 60 | 49 | G -> g
+4 staartflank | 56 | 50 | G -> g
+4 staartflank | 57 | 50 | g -> G
+4 staartflank | 59 | 50 | G -> g
+4 staartflank | 60 | 50 | G -> g
+4 staartflank | 57 | 51 | g -> G
+4 staartflank | 59 | 51 | G -> g
+4 staartflank | 60 | 51 | G -> g
+4 staartflank | 57 | 52 | h -> G
+4 staartflank | 59 | 52 | G -> g
+4 staartflank | 60 | 52 | G -> g
+4 staartflank | 57 | 53 | h -> G
+4 staartflank | 59 | 53 | G -> g
+4 staartflank | 60 | 53 | G -> g
+5 hand | 30 | 47 | h -> G
+5 hand | 32 | 47 | h -> G
+5 hand | 34 | 46 | h -> G

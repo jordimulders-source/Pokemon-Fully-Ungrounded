@@ -23,5 +23,10 @@ Typing (Jordi): Ghost/Dark (zelfde als Banette in de repo).
 
 Analyse Claude: drie rondes geven steeds Banettes hoofd (één punt, Banette-grijns, in r3 zelfs de gele mond); de narrenmutspunten kwamen nooit. Vermoedelijk kopieert Gemini de Banette-bijlage en de naam (GEMINI.md: bijlage bepaalt het gezicht; Pokémon noemen = gezicht kopiëren). v4: geen Banette-bijlage, Banette alleen nog genoemd voor het kledingstuk.
 
+## Over r4 (`gemini/r4/gemini_r4.png`, prompt v4 zonder bijlagen), Jordi 17 nov, letterlijk
+"dit is zelfs zonder bijlagen"
+
+Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "vervloekte pop met ritsmond" ís Banette voor Gemini. v5: in stappen, telkens één ding erbij (GEMINI.md): eerst alleen de nieuwe puppetmaster zelf (hoofd, lijf, kruishanden), zonder pop/rits/Shuppets; daarna met de beste versie als bijlage het kledingstuk, daarna de Shuppets.
+
 ## Open
 - Naam, evolutiemethode: later.

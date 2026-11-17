@@ -2041,3 +2041,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.501] - Banette-evolutie: Gemini r3 en prompt v4
 - r3 bewaard ("nog slechter"); prompt v4 zonder Banette-bijlage en Banette-naam (Gemini kopieerde steeds Banettes hoofd), kledingstuk en ogen in woorden.
+
+### [v0.0.502] - Banette-evolutie: Gemini r4 en prompt v5 (stap 1)
+- r4 bewaard (ook zonder bijlagen weer Banette); v5 in stappen: eerst alleen de puppetmaster zelf, daarna kledingstuk, daarna Shuppets. Les in `GEMINI.md`.

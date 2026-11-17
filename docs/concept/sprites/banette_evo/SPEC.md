@@ -32,5 +32,5 @@ Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "ver
 "echt bizar slecht"
 
 ## Open
-- Werkwijze na 5 mislukte Gemini-rondes: voorgelegd aan Jordi (17 nov).
+- Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).
 - Naam, evolutiemethode: later.

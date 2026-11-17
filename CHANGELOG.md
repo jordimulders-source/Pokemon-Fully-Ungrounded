@@ -2056,3 +2056,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r7 per besluit tegen de SPEC afgevinkt; prompt v11 (lijf = gladde geest, kledingstuk = Banettes oude lijf, kruizen zijn de handen, tanden in hoofdkleur, van bovenaf, Gen 3-sprite). Les in `GEMINI.md`.
 - r8 bewaard en afgevinkt (lijf, kledingstuk, kruizen, tanden goed; hoofd en imposant fout); prompt v12 met r8 + hoofdvorm van r7 als bijlagen.
 - r9 bewaard ("manmanman": bodybuilder, derde arm, hoofd-bijlage genegeerd); werkwijze voorgelegd.
+- Vormschets (`gemini/bijlage_vormschets.png`) en prompt v13 in twee varianten: A met vormschets, B met Shuppeteer als voorbeeld.

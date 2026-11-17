@@ -32,7 +32,7 @@ Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "ver
 "echt bizar slecht"
 
 ## Over r6 (`gemini/r6/gemini_r6.png`, prompt v6), Jordi 17 nov, letterlijk
-"imposant is niet mager, imposant is groot, breed"
+"imposant is niet mager, imposant is groot, breed"; "waardeloos ontwerp weer"
 
 ## Open
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).

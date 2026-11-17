@@ -68,6 +68,10 @@ Jordi (17 nov): "We gaan niet stoppen, het is gewoon slechte prompting, we gaan 
 - Jordi (17 nov, voor het slapen): "als dat klaar is dan kan je een sprite gaan bouwen, dingen die niet precies kloppen kunnen we daarna toch nog in een sprite fixen. Bouw daarna een sprite totdat die helemaal goedgekeurd is en wees streng op aansluitingen, naden, kleuren, schaduwen, lege pixels, dingen die niet kloppen etc. Als ik morgen wakker word wil ik een goed eindresultaat zien."
 - Eerder (17 nov) over de mond: "de mond moet meer spiritomb stijl"; over de hoed: "moet onderdeel worden van het hoofd". Kleuren mogen afwijken van het model (SPRITE_KERN).
 
+## Frontsprite af (18 nov, nacht)
+- `af/shuppetto.png` (+ `_8x`, `_vel` naast het model) = `sprite/r14/`. 14 rondes: r1–r10 makers (steeds vers) met keuringen, r11–r14 pixelreparaties door Claude uit de keuringen; DFC-eindkeuring r12, slotcontrole r14 PASS.
+- Bewust anders dan het model: geen linkerarm zichtbaar (zit in het model achter de mutspunt), kleuren Gen 3 (mond donkerbruin, touwtjes licht grijsblauw, glanssikkel op het rood).
+
 ## Open
 - Jordi (17 nov): "nog steeds teveel banette bedoel ik"; "hoofdvorm wel eindelijk goed" (r7). Prompt v10 (hoofd aanpassen) vervalt. Jordi: "ik hoef toch niet elke keer mn idee opnieuw te typen"; Claude vergeleek r7 zelf met deze SPEC -> v11.
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).

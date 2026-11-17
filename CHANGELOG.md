@@ -1897,3 +1897,132 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Pitahaya-draak fase 1 na feedback Jordi ("rechterarm zit vast aan het lichaam, kijk nog beter naar schaduw, kleur, belijning"): r6–r8 (arm los met modelcontour, lijf via toonkaart, kop minder zwart, groen verzadigder); eindkeuring r7 + 8 wissels = PASS. `af/` bijgewerkt.
 - Pitahaya-draak: Dragonfly Cave-eindkeuring (FAIL op 3 nekpixels → PASS), r9 = af.
 - Pitahaya-draak: witte areoolpixels uit het lijf, tand 1 px (Jordi koos C). af bijgewerkt.
+
+### [v0.0.461] - Gengas: hoofdsprite v14 (bol linksonder rond)
+- Jordi: "linksonder de mond is ook een puntje" → maker-agent haalde het puntje weg (3 px in rij 53–54, rand 15,15,18 → 15,16,17; alleen bestaande paletindexen, manen ongewijzigd). Jordi: "hoofdsprite na is de nieuwe hoofdversie". `af/gengas.png` en `af/gengas_8x.png` bijgewerkt; werkbestanden in `gengas/sprite_v14/` (branch `claude/upbeat-rubin-7s097g`).
+
+### [v0.0.462] - Studie frame 2 (beweging frontsprites)
+- `docs/concept/sprites/frame2_studie/STUDIE.md`: hoe de engine frontsprites laat bewegen (`frontAnimFrames`, `frontAnimId`, waar het speelt; frame 2 staat 0,1–0,25 s in beeld; 400 soorten in de expansion hebben geen frame 2).
+- Meting op 384 Gen 3-sprites (`analyse.py`, `res.json`): mediaan 25% van frame 2 is nieuw getekend; 97 soorten < 15% (verschuif-frames), 148 > 30% (actiepose).
+- Proef viscacha: kop en staartpluim verschuiven gaat met een script, maar onder de snorharen ontstaan gaten; naden en verborgen stukken zijn handwerk.
+- Oordeel: verschuif-frames kan Claude betrouwbaar bouwen (script + maker voor de naden + automatische controles); echte actieposes alleen via een model van Jordi, waarbij alleen het bewegende deel wordt overgenomen.
+
+### [v0.0.463] - Frame 2 viscacha, poging 3
+- Poging 2 leek een muppet (kop los van het lijf). Nieuw: alleen oortoppen 1 px naar achteren en staartpluim 1 px zwiepen; niets komt bloot, geen nieuwe pixels (`frame2_studie/viscacha_poging3.gif`, vel `viscacha_anim_front.png`, script `viscacha_f2.py`). Les in STUDIE.md §6.
+
+### [v0.0.464] - Frame 2: betere studie + viscacha poging 4
+- Poging 3 afgekeurd (Jordi: "een paar pixels die op en neer bewegen is geen beweging").
+- Nieuw in de studie (§7): verschilvellen (`vel.py`) van knaagdieren en kleine soorten in Gen 3- en DS-stijl, en per sprite de verschuiving van bovenkant en voeten (`banden.py`). Bij ±90% beweegt de hele bovenkant, meestal 2–4 px of meer; alleen kleine delen bewegen bij ±10%.
+- Poging 4: het hele lijf strekt 3 px omhoog vanuit vaste voeten (A), en daarnaast een versie die ook 2 px naar voren leunt (B). Er hoeft niets bijgetekend te worden.
+
+### [v0.0.465] - Frame 2: voorbeelden en Gemini-prompt viscacha
+- `frame2_studie/voorbeelden_expansion.gif`: frame 1/2 van Pikachu, Rattata, Raticate, Patrat, Plusle en Sentret (DS-stijl, zoals in de game): echte andere poses (bek open, poot/arm mee).
+- Oordeel na Jordi's twijfel: een tweede pose zelf tekenen kan Claude niet betrouwbaar; de route is een Gemini-bewerking van het model, waarvan alleen de veranderde onderdelen worden overgenomen.
+- `viscacha/gemini/PROMPT_FRAME2.md`: prompt voor de tweede pose (bek open, voorpoot hoger, staart iets op; achterpoten blijven staan).
+
+### [v0.0.466] - Viscacha frame 2: Gemini ronde 1
+- Jordi's Gemini-beeld voor de tweede pose (`viscacha/gemini/frame2_ronde1.png`; bek open, kop naar achteren, voorpoten tegen de borst) en een gif met frame 1 (`frame2_ronde1.gif`). Het beeld ligt op hetzelfde 16×-raster als de sprite; lijf, achterpoten en staart vallen vrijwel samen met frame 1. Afwijkend: oren (nabij oor opzij, verre oor spits), korte snorharen, wangpluk. Keuze overnemen of opnieuw genereren ligt bij Jordi.
+
+### [v0.0.467] - Frame 2: viscacha-test geslaagd, prompt Gengas
+- Jordi: viscacha-frame 2 uit Gemini "echt verbazingwekkend goed"; alleen de snorharen ontbreken (nog te fixen). Werkwijze vastgelegd in STUDIE.md §8 en GEMINI.md.
+- Hoopa Unbound bekeken (`frame2_studie/hoopa_unbound.gif`): in frame 2 verdwijnen alle losse armen. Ook `gengar.gif` ter vergelijking.
+- `gengas/gemini/PROMPT_FRAME2.md`: prompt waarin alleen de vier manen (losse handen/voeten) bewegen.
+
+### [v0.0.468] - Gengas frame 2: prompt v2 (knik)
+- Prompt aangevuld: het hoofd (de gasbol met gezicht) gaat een paar pixels hoger als knikbeweging, naast de bewegende manen (Jordi). Lukt dit, dan ziet Jordi de tests als geslaagd en is dit de werkwijze voor frame 2.
+
+### [v0.0.469] - Gengas frame 2: ronde 1 mislukt, prompt v3
+- Gemini ronde 1 (`gengas/gemini/frame2_ronde1.png`, gif): bol platgedrukt i.p.v. verplaatst, manen nauwelijks bewogen. Jordi: "hij doet niks met de instructies, dus die moeten specifieker".
+- Prompt v3: raster genoemd (64×64 op 16×), vijf onderdelen benoemd, per onderdeel richting en afstand in spritepixels en klokpositie, "niet platdrukken/rekken".
+
+### [v0.0.470] - Gengas frame 2: ronde 2 mislukt, analyse
+- Prompt v3 (getallen per onderdeel): Gemini tekende manen bij i.p.v. ze te verplaatsen en drukte de bol weer plat (`frame2_ronde2_v3.png`). Analyse waarom de viscacha wel lukte in STUDIE.md §9 en GEMINI.md.
+
+### [v0.0.471] - Gengas frame 2: combinatie Gemini + script
+- `gengas/frame2/manen.py`: haalt de vier manen uit de sprite (bewaard in `manen_lab.npy`) en maakt `lijf_zonder_manen(_8x).png` als bijlage voor Gemini. `PROMPT_HOOFD.md`: alleen de knikbeweging van het hoofd als handeling. Daarna zet het script de manen op nieuwe plekken.
+
+### [v0.0.472] - Gengas frame 2: prompt hoofd v2
+- Lijf zonder manen is rechtsonder afgesneden (daar lag de voet); prompt vraagt Gemini de bol daar rond af te maken.
+
+### [v0.0.473] - Gengas frame 2: prompt hoofd v3
+- Ook het puntje linksonder de mond (Jordi) laat Gemini rond maken.
+
+### [v0.0.474] - Gengas: puntje linksonder rond (voorstel v14)
+- Jordi: "linksonder de mond is ook een puntje" / "kan je de hoofdversie meteen beter maken". Maker-agent: 3 px in rij 53–54 (rand 15,15,18 → 15,16,17), alleen bestaande paletindexen, manen ongewijzigd. `gengas/sprite_v14/` (hoofdsprite + lijf zonder manen, vel `voor_na.png`). `af/` nog niet overschreven; wacht op Jordi.
+
+### [v0.0.475] - Gengas frame 2: lijf zonder manen rond (v15)
+- Maker-agent: rechtsonder (waar de voet lag) en onder de gasarm (waar de handmaan lag) de bol rond en dicht gemaakt, 14 px, alleen bestaande indexen, rest pixel voor pixel gelijk aan v14 (`gengas/sprite_v15/`). Gemini-bijlage voor de knik is nu `lijf_zonder_manen_v15_8x.png`; prompt zonder de alinea over rond maken.
+
+### [v0.0.476] - Gengas frame 2 per script
+- Gemini-knik r1 veranderde niets (zelfde bol, ander raster). Frame 2 nu per script (`gengas/frame2/frame2.py`): bol 3 px omhoog, bovenste maan 6 px links, rechterhand 5 px op, linkerhand 6 px op, voet 6 px links en 2 px op; niets getekend. Gif + vel `gengas_anim_front.png`. Werkwijze samengevat in STUDIE.md §10.
+
+### [v0.0.477] - Gengas frame 2: prompt v5
+- Script-frame 2 afgewezen door Jordi ("nee", "nieuwe prompt, gemini heeft nog niks veranderd"). Nieuwe knik-prompt die beschrijft wat zichtbaar moet veranderen (hoger in beeld, gezicht hoger op de bol, oren naar achteren, schaal 16× houden).
+
+### [v0.0.478] - Gengas frame 2: prompt v6 (vel met twee frames)
+- Jordi: "nee, nieuwe prompt". Andere aanpak: Gemini maakt een vel met links het origineel en rechts de knik, zodat het verschil zichtbaar moet zijn.
+
+### [v0.0.479] - Gengas frame 2: Gemini v6 (twee frames) beoordeeld
+- Met prompt v6 veranderde Gemini wel iets: de bol staat hoger en is achterover gekanteld (gezicht hoger op de bol). Het rechterframe is terug op 52 px gezet en in een gif naast frame 1 gelegd (`gengas/frame2/gemini_knik_v6.png/.gif`). Afwijkingen: wolkenbanden grotendeels weg, ogen ronder en niet meer boos, grijns groter, oren spitser; de sprong in hoogte was ±12 px (in de gif op 3 px gezet).
+
+### [v0.0.480] - Gengas frame 2: prompt v7
+- v6 ronde 2 had een andere vorm (Jordi). Prompt v7: rechterframe = linkerframe gedraaid (±10°) en iets omhoog, niet hertekend, met alle kenmerken die gelijk moeten blijven opgesomd. Terugval: knik via de engine-animatie, frame 2 alleen de manen.
+
+### [v0.0.481] - Frame 2: waarom viscacha wel en Gengas niet
+- Analyse in STUDIE.md §11 en een les in GEMINI.md: Gemini werkt als alleen een deel verandert; een beweging van de hele figuur laat het ontwerp verlopen.
+
+### [v0.0.482] - Gengas frame 2: knik via Gemini gestopt
+- Prompt v7 gaf twee identieke frames. Jordi: "dit lukt dus duidelijk niet". Knik via Gemini gestopt; vervolg ligt bij Jordi (engine-animatie en/of script).
+
+### [v0.0.483] - Gengas frame 2: plan ter keuring
+- `gengas/frame2/plan.py`: frame 2 = ronde bol (v15) stil, vier manen verplaatst (boven 6 links; rechterhand 5 op; linkerhand 6 op; voet 6 links, 2 op); niets getekend. Vel `gengas_anim_front_plan.png`.
+- Knik via de engine, nagerekend uit `src/pokemon_animation.c`: `plan_v_slide.gif` (ANIM_V_SLIDE: op-neer-op, 6 px) en `plan_tip_move_forward.gif` (ANIM_TIP_MOVE_FORWARD: ±11° kantelen). Simulatie, niet in de emulator.
+
+### [v0.0.484] - Gengas frame 2: manen verder (plan B)
+- Jordi: "2 en 3 zijn best goed! kan je nog de manen wat meer laten bewegen naar andere plekken?" Plan B: alle manen 12–15 px tegen de klok in langs hun baan (boven → links boven het linkeroor, rechterhand → rechtsboven, linkerhand → linksonder, voet → rechts). Bestanden met `_b` in `gengas/frame2/`; `plan.py` leest de verplaatsingen nu uit `MANEN`/`SUF`.
+- Kantelende engine-animaties in de expansion: ANIM_TIP_MOVE_FORWARD bij 14 soorten (o.a. Relicanth, Stunky, Whirlipede, Basculin, Clauncher, Crabrawler, Fomantis, Grookey, Drizzile, Zygarde), verder SWING_CONCAVE/CONVEX (±33), BOUNCE_ROTATE_TO_SIDES (±21), ROTATE_UP_SLAM_DOWN (4).
+
+### [v0.0.485] - Gengas frame 2: gif zonder engine-animatie
+- Jordi: "de hele sprite beweegt, maar de manen bewegen niet los naar een andere positie". `plan_b_alleen_frames.gif`: alleen frame 1 ↔ 2, langzaam, zonder engine-beweging.
+
+### [v0.0.486] - Gengas frame 2: combinatie kop + manen
+- Jordi: "kan je het niet combineren, én het hoofd dat anders staat én de manen". `gengas/frame2/combi.py`: in frame 2 is de bol 10° gekanteld (pixelrotatie zoals de engine doet) en 3 px omhoog, en staan de manen op de plekken van plan B. Twee richtingen: `combi_rechtsom` (gezicht omhoog) en `combi_linksom` (gezicht omlaag); vel `combi_vel.png`. Randen door de rotatie nog ruw (later opschonen door maker-agent).
+
+### [v0.0.487] - Gengas frame 2: variant C (tegenbeweging)
+- Jordi: de manen maken dezelfde beweging als het hoofd, daardoor lastig te zien ("puur artistieke richting"). Variant C (`gengas/frame2/combi_c.py`): bol kantelt rechtsom en gaat 3 px omhoog, de manen draaien 30° de andere kant op rond de bol en zakken 4 px. Gifs zonder engine, met V_SLIDE en met TIP_MOVE_FORWARD; frame 2 langer in beeld (34 tikken).
+
+### [v0.0.488] - Frame 2: werkwijze besloten, Gengas variant C + V_SLIDE gekozen
+- Jordi: "de tweede gif van de 3 vind ik echt uitstekend" (variant C met ANIM_V_SLIDE). Beide tests geslaagd; werkwijze in STUDIE.md §12 en verwijzing in SPRITE_WERKWIJZE. Maker-agent schoont de rotatieranden van frame 2 op (vorm en beweging bevroren).
+
+### [v0.0.489] - Vuurwerklijn: ontwerp eindvorm (vuurwerkslang)
+- Nieuwe lijn Fire/Fairy: sterretje → wondertol → vuurpijl (Jordi). Na stekelvarken (geschrapt: "beetje te puny") en Amaru (vrij gehouden voor de Uku Pacha-slang en de Dragon-gym) werd de eindvorm een vuurwerkslang: lijf en kop van vuur dat uit een vuurpijl (de staart) stroomt, kleurverloop goud-wit → roze → karmijn, verjaagt boze geesten.
+- 14 Gemini-prompts (`docs/concept/sprites/vuurwerk/gemini/`), rondes en referenties in `docs/concept/sprites/vuurwerk/`; citaten en besluiten in `docs/concept/IDEEEN.md` (Vuurwerk). Gemini kan geen vuurwerkbarsten tekenen; die komen in de sprite naar Jordi's pixelart-vel.
+- Lessen in `docs/lessen/GEMINI.md` (voorwerp-Pokémon zonder anatomie, regenboogbezem, kop in kraag, dunne strengen, vuurwerk = licht aan de uiteinden, frisse startprompt met alle besluiten werkte het best, modeloog vergroten i.p.v. vervangen).
+
+### [v0.0.490] - Vuurwerkslang: frontsprite af
+- `docs/concept/sprites/vuurwerk_fase3/af/vuurwerkslang.png` (+ `_8x`), naar Gemini-model v14 (`referenties/model_v14.png`), 17 rondes in `sprite/`; keuring PASS (`sprite/keuring_r12/`).
+- Jordi's afwijkingen: kop 115%, rechteroog met pupil, glitter weg → vuurwerkspikkels (lijf en om de kop, naar `referenties/vuurwerk_pixelart_jordi.png`), vlamtong bovenop, losse vlam rechtsboven variant B. Linkeroog: "r12 p2 blijft het beste".
+- Spikkels om de kop: variant B (grote barst linksonder) staat erin; variant "rond" (`sprite/r10/sprite_rond.png`) ligt klaar als Jordi wil wisselen.
+- Op het overzichtsvel (`showcase/frontsprites_af.png`) als "Vuurwerkslang" (Fire/Fairy; naam open). Sterretje en wondertol (fase 1–2) nog te doen.
+
+### [v0.0.491] - Vuurwerkslang: zonder losse vuurwerkbarst
+- Jordi: afgekapt vuurwerk linksboven "gaat er raar uitzien in een gevecht"; de barst linksonder had "nog niet echt een verband" met de sprite; "pokemon hebben over het algemeen geen special effects". Alle losse vuurwerkspikkels/barsten weg (plek teruggezet naar het model via r10 "rond"); het vuurwerk zit nu in het dier zelf (staartpijl, kleurverloop, spikkels in het lijf, twinkels). Jordi: "ja hij is beter zonder, zorgt ook voor minder ruis waardoor de sprite beter leest".
+- `af/vuurwerkslang.png` (+ `_8x`) en het overzichtsvel bijgewerkt; varianten in `sprite/r18`–`r20`.
+### [v0.0.492] - Viscacha frame 2: snorharen terug
+- Maker-agent (`viscacha/frame2/`): Gemini-frame teruggezet op 64×64 en het palet van frame 1; vaste zone wijkt 0 px af van frame 1; Gemini's stompje vervangen door de 37 snorhaarpixels van frame 1, als groep 11 px omhoog; 6 px opschoning. Aandachtspunt: de rechter haren lopen nu over de gele wangpluk en de wang (in frame 1 eronder).
+
+### [v0.0.493] - Viscacha frame 2 af
+- Jordi: "nee ik vind hem echt top zo" (snorharen over de wangpluk blijven zo). Frame 2 af: `viscacha/frame2/viscacha_anim_front.png`.
+
+### [v0.0.494] - Gengas frame 2 opgeschoond
+- Maker-agent (`gengas/frame2/schoon/`): rotatie-artefacten in frame 2 weg, 118 px. Ogen en grijns pixel voor pixel uit frame 1 op de gedraaide plek (grijns in 4 stroken met trapjes van 1 px), 13 randpixels gedicht, oorpunt en gaspluimpje weer vast; manen (418 px) en frame 1 ongewijzigd, geen nieuwe indexen. Vel `combi_c_anim_front_schoon.png`, gif `combi_c_v_slide_schoon.gif`.
+
+### [v0.0.495] - Gengas frame 2 af
+- Jordi: "prima". Frame 2 van Gengas af: `gengas/frame2/schoon/combi_c_anim_front_schoon.png`, engine-animatie `ANIM_V_SLIDE`, frame 2 ±34 tikken in beeld. Daarmee zijn beide frame 2-tests af (viscacha en Gengas).
+
+### [v0.0.496] - Mate-lijn (origineel, Grass/Water): fase 1 frontsprite af
+- Idee van Jordi (16 nov): fase 1 = de mate-kalebas zelf met handen en voeten, Shy Guy-vorm, masker; fase 2 = kano met een bladerventje (de yerba) dat roeit met twee bombilla's, kruiden voorin, warm water achterin. Origineel, twee fases. Letterlijk in `IDEEEN.md`.
+- Gemini-rondes r1–r4 (`sprites/mate/gemini/PROMPT*.md`): ronde mate met zilveren rand en bombilla, ooggaten met groen erin, hoorntjes van het aña-aña-masker (Chané/Guaraní, Chaco); model = r4 met de mond van r3 (`referenties/model.png`).
+- Sprite r1–r15 (`sprites/mate/sprite/`): vlekkentextuur afgekeurd ("erg korrelig", "groene blur") → 3 tinten + sikkelschaduw; hoorns, arm, neus, mond, voeten en ogen opnieuw uit het model verkleind na "de hoorns waren opnieuw getekend"; keuring per onderdeel op vorm; onderhoeken ronder (Jordi); Dragonfly Cave-eindkeuring: belijning op 8 px gerepareerd, palet lichter (variant B, Jordi: "rechts").
+- **Frontsprite af:** `sprites/mate/af/mate.png` (+ `_8x`), op het overzichtsvel. Naam open.
+- Lessen in `docs/lessen/GEMINI.md` (vlekkentextuur niet overnemen; keuring op metingen mist vormfouten).

@@ -1,0 +1,7 @@
+{
+"_uitleg": "Reparaties per pixel bovenop kop4 (kaal). Onderooglid: in het model loopt een bruine lijn op y=22,6-23,0 van x=12 tot 14,6 en een bruin vlekje op (15,22); de reductie deelt die over twee rijen en laat hem wegvallen (lijnaandeel 0,25/0,04). Als 1 rij bruin zou hij tegen de mondlijn (rij 24) plakken, dus als tan 3 (gereduceerde dunne lijn), zodat de lichte oogvlek (14,21),(13,22),(14,22) dicht is en contrast krijgt. (15,21)=3 is de kale reductie zelf (modelmediaan 176, donker naast het oog) en staat hier alleen zodat de opschoning hem niet wegpoetst.",
+"13,23": 3,
+"14,23": 3,
+"15,22": 3,
+"15,21": 3
+}

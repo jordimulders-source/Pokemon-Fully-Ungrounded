@@ -55,6 +55,10 @@ Afgevinkt (Claude): hoofd-bijlage genegeerd (weer Banette/Gengar-hoofd), "thick 
 Gemini haalt dit concept niet: met of zonder bijlage, schets of voorbeeld valt hij terug op een Banette/Gengar-hoofd en een generiek geestlijf. Werkwijze voorgelegd aan Jordi.
 Jordi (17 nov): "We gaan niet stoppen, het is gewoon slechte prompting, we gaan fase voor fase bouwen. Haal alle referenties naar banette weg en laten we asset voor asset gaan bouwen en kijken of dat lukt". Plan: `gemini/assets/PLAN.md`.
 
+## Stand 17 nov (gepauzeerd)
+- Asset voor asset (`gemini/assets/PLAN.md`): hoofd r7 vorm goed (mond "Spiritomb-stijl", narrenmuts als deel van het hoofd; kleuren klopten niet). Lijf r2 (`gemini/assets/lijf_r2/`), Jordi: "ok beter gelukt, maar ik merk dat ik toch niet tevreden ben, ik geef het even op voor nu en ga het ontwerp herevalueren".
+- Volgende stap: Jordi herevalueert het ontwerp.
+
 ## Open
 - Jordi (17 nov): "nog steeds teveel banette bedoel ik"; "hoofdvorm wel eindelijk goed" (r7). Prompt v10 (hoofd aanpassen) vervalt. Jordi: "ik hoef toch niet elke keer mn idee opnieuw te typen"; Claude vergeleek r7 zelf met deze SPEC -> v11.
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).

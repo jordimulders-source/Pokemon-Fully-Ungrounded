@@ -172,7 +172,8 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - Regional forms die underrated Pokémon interessant maken (de rest van de top 10 in `DEX_NOMINATIES.md` §5: nog niet overtuigd).
 - **Nog een nieuwe Mr. Mime-vorm** (misschien).
 - **Ledian-evolutie** (nadenken).
-- **Lanturn-evolutie:** voorstel Claude: diepzee-hengelvis waarbij het mannetje als parasiet aan het vrouwtje vastgroeit; Jordi (9 nov): "erg smerig en grounded, nu nog bedenken of ik Lanturn die horror wil aandoen". Eerder: "is dat uberhaupt nodig? Die kunnen we dan nog wat verder diepzee maken en enger, zoals Annihilape, maar misschien valt dat uit de toon".
+- **Cosmic-lijnen (Jordi, 17 nov):** "Ik had twee tot drie cosmic ideeën in gedachten. een Steel/Cosmic lijn met o.a. een satelliet erin, plus een supernova/black hole lijn. Nu zat ik eraan te denken om Solrock daarin te betrekken, maar dat kan ik eigenlijk niet doen zonder Lunatone ook evoluties te gaan geven, dan wordt het meteen wel wat veel. Ik zat ook te denken om Lunatone en Solrock misschien een gezamenlijke eclipse evolutie te geven, of misschien een Accelgor/Escavalier achtige evolutie, maar laten we eerst naar lore kijken of dat allemaal wel past". Lore-overzicht van Claude: in het gesprek van 17 nov.
+- **Lanturn-evolutie geschrapt** (Jordi, 17 nov): "lanturn wil ik die horror niet aan doen, dat heb ik met een maat besproken". Niet opnieuw voorstellen.
 - **Sunflora-evolutie:** "alleen als we echt met een vet idee kunnen bedenken".
 - **Shuckle-evolutie** (Delibird: zie sowieso): gimmickmons, dan moeten ze ontgimmickt worden; "vraag me af of dat werkt".
 - **Evolutie voor Ninjask, Sableye, Mawile, Manectric:** "zelfs met terugwerkende kracht in Ungrounded".

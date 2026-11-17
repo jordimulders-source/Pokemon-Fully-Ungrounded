@@ -19,3 +19,7 @@
 - `af/pitahaya_draak_fase3.png` (A, met tong), `_zonder_tong.png` (B), `_buik.png` (C: buik in vruchtvlees wit met pitjes, op A); elk ook `_8x`; samen `af/keuze_8x.png`. Keuze A/B/C aan Jordi.
 - Rondes in `sprite_r1/`–`sprite_r6/` (3 makers; keurder na r4: arm/keel FAIL; keurder + Dragonfly Cave na r5: A en B PASS, C 3 technische punten → r6 gerepareerd). Palet = teju (fase 2). 61×50 px.
 - Buikzone door de maker vastgesteld (model heeft geen buikkleur); keurder ter info: leest op 1× ook als witte bef/sjerp omdat de nabije arm de onderbuik bedekt.
+
+## Jordi (18 nov), reactie op A/B/C
+- "de tong lijkt zo niet echt op een tong, dus haal die maar weg. Daarnaast vind ik rechts de beste, maar ik heb nog wel wat kritiek. Er is geen belijning tussen de achterpoot en de staart, lijkt net een blur. Plus het schaduw en kleur gebruik is in de hele sprite nog niet optimaal. Kan je daar nog aan werken? Hoofd en de vruchtvlees buik zijn nog het beste, maar verder mist die al het contrast dat sprites normaal wel hebben"
+- → basis = C (buik) zonder tong; ronde 7: lijn achterpoot/staart, schaduw en kleur/contrast in de hele sprite; kop en buik zijn het beste.

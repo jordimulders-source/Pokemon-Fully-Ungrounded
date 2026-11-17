@@ -2026,3 +2026,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite r1–r15 (`sprites/mate/sprite/`): vlekkentextuur afgekeurd ("erg korrelig", "groene blur") → 3 tinten + sikkelschaduw; hoorns, arm, neus, mond, voeten en ogen opnieuw uit het model verkleind na "de hoorns waren opnieuw getekend"; keuring per onderdeel op vorm; onderhoeken ronder (Jordi); Dragonfly Cave-eindkeuring: belijning op 8 px gerepareerd, palet lichter (variant B, Jordi: "rechts").
 - **Frontsprite af:** `sprites/mate/af/mate.png` (+ `_8x`), op het overzichtsvel. Naam open.
 - Lessen in `docs/lessen/GEMINI.md` (vlekkentextuur niet overnemen; keuring op metingen mist vormfouten).
+
+### [v0.0.497] - Pitahaya-draak fase 3 (komododraak): Gemini-startprompt
+- Jordi (17 nov): "fase 3 van de dragonfruit draak. Komodo draak". Startprompt v1 in `docs/concept/sprites/pitahaya_draak_fase3/gemini/PROMPT.md` (op 2 poten, voorover leunend; pitahaya-schil en cactusrank op het lijf als keuze van Claude, schrappen mag).

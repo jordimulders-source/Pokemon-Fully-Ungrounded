@@ -1,0 +1,70 @@
+# pitahaya3_r8.png t.o.v. ../sprite_r7/pitahaya3_r7.png: stap | x | y | r7 -> r8 (tekens .#drpPgGhHwWkqQs)
+# totaal 68 px
+1 band onder platen | 23 | 22 | H -> h
+1 band onder platen | 24 | 22 | H -> h
+1 band onder platen | 25 | 22 | H -> h
+1 band onder platen | 22 | 23 | H -> h
+1 band onder platen | 26 | 23 | H -> h
+1 band onder platen | 27 | 23 | H -> h
+1 band onder platen | 28 | 25 | H -> h
+1 band onder platen | 29 | 25 | H -> h
+1 band onder platen | 32 | 26 | h -> H
+1 band onder platen | 33 | 26 | h -> H
+1 band onder platen | 34 | 27 | h -> H
+1 band onder platen | 35 | 27 | h -> H
+1 slagschaduw kop | 20 | 24 | h -> G
+1 slagschaduw kop | 21 | 24 | h -> G
+1 slagschaduw kop | 21 | 25 | h -> G
+1 slagschaduw kop | 22 | 25 | h -> G
+1 slagschaduw kop | 21 | 26 | H -> G
+1 slagschaduw kop | 22 | 26 | H -> G
+1 slagschaduw kop | 20 | 27 | H -> G
+1 slagschaduw kop | 21 | 27 | H -> G
+1 slagschaduw kop | 22 | 27 | H -> h
+1 slagschaduw kop | 19 | 28 | h -> G
+1 slagschaduw kop | 20 | 29 | h -> G
+1 slagschaduw kop | 21 | 29 | h -> G
+1 onderkant nek | 25 | 30 | h -> G
+1 onderkant nek | 26 | 30 | h -> G
+1 onderkant nek | 28 | 31 | h -> G
+1 onderkant nek | 29 | 31 | h -> G
+1 onderkant nek | 29 | 32 | h -> G
+1 onderkant nek | 30 | 32 | h -> G
+1 onderkant nek | 29 | 33 | h -> G
+1 onderkant nek | 30 | 33 | h -> G
+1 spierlijn | 24 | 27 | h -> G
+1 spierlijn | 25 | 27 | h -> G
+1 spierlijn | 26 | 28 | h -> G
+1 spierlijn | 27 | 28 | h -> G
+1 spierlijn | 28 | 29 | h -> G
+1 spierlijn | 29 | 29 | h -> G
+1 schouderbolling | 29 | 30 | h -> H
+1 schouderbolling | 30 | 30 | h -> H
+1 schouderbolling | 30 | 31 | h -> H
+1 schouderbolling | 31 | 31 | h -> H
+1 schaduw achter schouder | 34 | 31 | h -> G
+1 schaduw achter schouder | 35 | 31 | h -> G
+1 schaduw achter schouder | 34 | 30 | h -> G
+2 verre arm | 18 | 35 | G -> h
+2 verre arm | 17 | 36 | G -> h
+2 verre arm | 16 | 37 | G -> h
+2 verre arm | 17 | 37 | G -> h
+2 verre arm | 14 | 38 | G -> h
+2 verre arm | 15 | 38 | G -> h
+2 verre arm | 13 | 39 | G -> h
+2 verre arm | 14 | 39 | G -> h
+2 verre arm | 12 | 40 | G -> h
+2 verre arm | 11 | 41 | G -> h
+2 verre arm | 11 | 42 | G -> h
+2 verre arm | 11 | 43 | G -> h
+3 romp achter arm | 35 | 35 | h -> G
+3 romp achter arm | 29 | 36 | h -> G
+3 romp achter arm | 30 | 36 | h -> G
+3 romp achter arm | 31 | 36 | h -> G
+4 plaat | 28 | 23 | r -> d
+4 plaat | 29 | 23 | r -> d
+4 plaat | 30 | 23 | r -> d
+4 plaat | 41 | 27 | r -> p
+4 plaat | 42 | 27 | r -> p
+4 plaat | 40 | 28 | r -> p
+4 plaat | 41 | 28 | r -> p

@@ -65,6 +65,7 @@ Bovenaan gehouden zodat de stand in één oogopslag te zien is. Details in de se
 - **Een condor-Pokémon = Hanan Pacha** (Jordi, 9 nov: "de condor in het legendary trio klinkt uitstekend").
 - **Venomoth-vuurvlieg** (Electric/Fire): Venonat wordt de nieuwe Venomoth **met een move die hij leert**; conceptueel een insect dat tot vuurvlieg evolueert (zoals Volbeat). **Ontwerp opnieuw met Gemini** (Jordi, 9 nov: "Het design was prima, maar kunnen we denk ik nu veel beter maken met Gemini").
 - **Banette-evolutie** ("nog meer marionet").
+  - **Jordi (17 nov):** Ghost/Dark puppetmaster die uit Banettes geopende ritsmond is geklommen; Banette zit als kledingstuk om hem heen (rits om zijn middel), handen = marionettenkruizen van donkere ghost-vorm, bestuurt twee mini-Shuppets (zoals Dragapult zijn Dreepy). Letterlijk citaat en open vragen: `sprites/banette_evo/SPEC.md`.
 - **Mime-lijn:** Mime Jr. blijft → regionale jiujitsu-Mr. Mime → **Mr. Prime** (zie sectie hieronder en `POKEMON.md`).
 - **Blobfish-lijn, 2 fases** (voorstel Claude, Jordi 9 nov "goed idee": fase 1 een gewone diepzeevis, fase 2 "naar boven gehaald" en ingezakt).
   - **Typing (Jordi, 16 nov): Water → Water.** Eerst ideeën bespreken vóór een Gemini-prompt (Jordi, 16 nov).

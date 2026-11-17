@@ -2026,3 +2026,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite r1–r15 (`sprites/mate/sprite/`): vlekkentextuur afgekeurd ("erg korrelig", "groene blur") → 3 tinten + sikkelschaduw; hoorns, arm, neus, mond, voeten en ogen opnieuw uit het model verkleind na "de hoorns waren opnieuw getekend"; keuring per onderdeel op vorm; onderhoeken ronder (Jordi); Dragonfly Cave-eindkeuring: belijning op 8 px gerepareerd, palet lichter (variant B, Jordi: "rechts").
 - **Frontsprite af:** `sprites/mate/af/mate.png` (+ `_8x`), op het overzichtsvel. Naam open.
 - Lessen in `docs/lessen/GEMINI.md` (vlekkentextuur niet overnemen; keuring op metingen mist vormfouten).
+
+### [v0.0.497] - Banette-evolutie: idee vastgelegd
+- Jordi's idee voor de Banette-evolutie (Ghost/Dark, puppetmaster met twee mini-Shuppets) letterlijk vastgelegd in `docs/concept/sprites/banette_evo/SPEC.md` en `IDEEEN.md`; eerst overleggen, daarna de Gemini-prompt.

@@ -14,3 +14,8 @@
 - Maat: eindvorm, vult het 64×64-vlak (model ±900×740 → ±62 px breed), op de bodem.
 - Tong: echte komodovaranen hebben een gele gespleten tong; past dus bij het komodo-deel van het concept.
 - Over de sprite (17 nov): "Maak nog een extra versie ernaast waar de buik de kleur krijgt van het vruchtvlees. Dus wit met zwarte spikkels" → variant `_buik` (op de versie met tong).
+
+## Af (18 nov), ronde 6
+- `af/pitahaya_draak_fase3.png` (A, met tong), `_zonder_tong.png` (B), `_buik.png` (C: buik in vruchtvlees wit met pitjes, op A); elk ook `_8x`; samen `af/keuze_8x.png`. Keuze A/B/C aan Jordi.
+- Rondes in `sprite_r1/`–`sprite_r6/` (3 makers; keurder na r4: arm/keel FAIL; keurder + Dragonfly Cave na r5: A en B PASS, C 3 technische punten → r6 gerepareerd). Palet = teju (fase 2). 61×50 px.
+- Buikzone door de maker vastgesteld (model heeft geen buikkleur); keurder ter info: leest op 1× ook als witte bef/sjerp omdat de nabije arm de onderbuik bedekt.

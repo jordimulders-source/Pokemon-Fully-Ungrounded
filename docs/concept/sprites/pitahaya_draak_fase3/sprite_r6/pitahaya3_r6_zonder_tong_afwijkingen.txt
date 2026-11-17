@@ -1,0 +1,6 @@
+# pitahaya3_r6_zonder_tong.png: elke pixel die afwijkt van ../sprite_r5/pitahaya3_r5_zonder_tong.png: stap | x | y | r5 -> r6 (tekens: .#drpPgGhHwWoyYs)
+# totaal 4 px
+borst: losse korrels (21,33),(26,33),(22,33) -> G | 21 | 33 | g -> G
+borst: losse korrels (21,33),(26,33),(22,33) -> G | 22 | 33 | h -> G
+borst: losse korrels (21,33),(26,33),(22,33) -> G | 26 | 33 | g -> G
+verre hand: (10,43) -> g | 10 | 43 | # -> g

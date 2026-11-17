@@ -2083,3 +2083,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - r2 (`gemini/r2.png`): pose, staart en hoofd prima; bloemkraag, roze op de rug, cactusribben in het lijf, tong simpeler. Prompt v3 (zelfde gesprek).
 - r3 (`gemini/r3.png`): Jordi "beter maar de bloem moet weg"; tongproef op 64 px (`r3_proef64_8x.png`); prompt v4 A (tong blijft) / B (tong weg).
 - r4 (`gemini/r4a_tong.png`, `r4b_zonder_tong.png`): bloem weg. Jordi: "probeer maar met tong". Model bevroren (`pitahaya_draak_fase3/model/`), `SPEC.md`; sprite gestart.
+
+### [v0.0.512] - Pitahaya-draak fase 3 (komododraak): frontsprite af, drie versies
+- Model: Gemini r4 (prompts v1–v4 in `pitahaya_draak_fase3/gemini/PROMPT.md`: minder druk, groener lijf, roze rug, cactusribben, dragonfruit-knots aan de staart; bloem weer weg; tong geprobeerd).
+- Sprite r1–r6 (`sprite_r*/`): model overgenomen (natief raster, niet-gehele reductie 3,66× naar 62 px, lijnen uit het modelskelet), palet van de teju; keurder na r4 (arm en keel), keurder + Dragonfly Cave na r5.
+- **Af:** `pitahaya_draak_fase3/af/` in drie versies: A met tong, B zonder tong, C buik in vruchtvlees wit met zwarte pitjes (Jordi). Overzicht `af/keuze_8x.png`. Keuze en naam open.

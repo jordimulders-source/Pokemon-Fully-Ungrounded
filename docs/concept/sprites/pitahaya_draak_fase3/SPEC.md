@@ -13,3 +13,4 @@
 ## Keuzes Claude (niet besproken)
 - Maat: eindvorm, vult het 64×64-vlak (model ±900×740 → ±62 px breed), op de bodem.
 - Tong: echte komodovaranen hebben een gele gespleten tong; past dus bij het komodo-deel van het concept.
+- Over de sprite (17 nov): "Maak nog een extra versie ernaast waar de buik de kleur krijgt van het vruchtvlees. Dus wit met zwarte spikkels" → variant `_buik` (op de versie met tong).

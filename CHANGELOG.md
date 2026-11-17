@@ -2118,3 +2118,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoofd r5 (belletjes; "moet meer een jester vorm worden"); hoofdprompt v7: hele bovenkant wordt de narrenmuts met band boven de ogen, brede punten omhoog en omgeslagen.
 - Hoofd r6: mond goed, muts is een accessoire; hoofdprompt v8: muts wordt deel van het hoofd (geen rand, punten groeien uit het hoofd, twee kleuren blijven).
 - Hoofd r7: vorm goed (kleuren later); prompt voor de rest van het lijf op dit hoofd (`gemini/assets/PROMPT_2_lijf_v1.md`).
+- Lijf r1 (dik, pak en handen fout); prompt lijf v2: groot zoals Dusknoir/Grimmsnarl, niet dik/gespierd, half uit het poppenpak gestapt, kruishanden als +.

@@ -2053,3 +2053,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Referentie Shuppeteer (fan-fakemon) van Jordi; prompt v9 met Shuppeteer als maat ("nog groter en imposanter") en alle besluiten uit SPEC.
 - r7 bewaard ("iets beter"); les: geen Sugimori-artwork als tussenstap.
 - Jordi: "nog steeds teveel banette"; prompt v10 = r7 als bijlage, hoofd minder Banette + Gen 3-sprite.
+- r7 per besluit tegen de SPEC afgevinkt; prompt v11 (lijf = gladde geest, kledingstuk = Banettes oude lijf, kruizen zijn de handen, tanden in hoofdkleur, van bovenaf, Gen 3-sprite). Les in `GEMINI.md`.

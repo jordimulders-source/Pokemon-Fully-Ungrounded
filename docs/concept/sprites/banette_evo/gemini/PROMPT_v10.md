@@ -1,5 +1,7 @@
 # Gemini-prompt: Banette-evolutie, v10 (17 nov)
 
+**VERVALLEN:** Jordi over r7: "hoofdvorm wel eindelijk goed"; wijziging 1 klopt dus niet.
+
 Nieuw gesprek. Bijlage: `r7/gemini_r7.png` (beste tot nu toe: "iets beter"). Twee wijzigingen (max. 2 per bijlageronde): (1) hoofd minder Banette ("nog steeds teveel banette"), (2) Gen 3-sprite i.p.v. Sugimori.
 Keuze Claude: wat er "Banette" aan het hoofd is, benoemd als de katachtige oortjes en de ene centrale punt; schrappen/aanvullen mag.
 

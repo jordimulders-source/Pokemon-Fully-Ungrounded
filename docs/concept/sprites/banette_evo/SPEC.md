@@ -41,6 +41,6 @@ Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "ver
 "iets beter maar het is nog steeds niet banette en sugimori stijl kan je echt nooit een fatsoenlijke sprite van maken"
 
 ## Open
-- Jordi (17 nov): "nog steeds teveel banette bedoel ik".
+- Jordi (17 nov): "nog steeds teveel banette bedoel ik"; "hoofdvorm wel eindelijk goed" (r7). Wat er dan te veel Banette is: gevraagd. Prompt v10 (hoofd aanpassen) vervalt.
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).
 - Naam, evolutiemethode: later.

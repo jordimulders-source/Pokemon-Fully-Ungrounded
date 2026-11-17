@@ -41,6 +41,6 @@ Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "ver
 "iets beter maar het is nog steeds niet banette en sugimori stijl kan je echt nooit een fatsoenlijke sprite van maken"
 
 ## Open
-- Wat "nog steeds niet banette" precies betekent: gevraagd (17 nov).
+- Jordi (17 nov): "nog steeds teveel banette bedoel ik".
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).
 - Naam, evolutiemethode: later.

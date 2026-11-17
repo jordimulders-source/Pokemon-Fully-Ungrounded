@@ -52,12 +52,13 @@ AVOID
 # Prompt v2 (17 nov): NIEUW gesprek, reactie op r1 (`r1.png`)
 
 ## Jordi (letterlijk)
+- "en het lichaam dan wat groener misschien? gewoon iets meer leuke ideeën om te onderscheiden van fase 2"
 - "beetje too much overdesigned, plus qua ontwerp vertaalt die niet lekker naar een sprite. Ik zou het nog vet vinden als we nog iets van een dragonfruit bloem erin verwerken en de staart een knots heeft als een dragonfruit"
 
 ## Claude
 - Nieuw gesprek (GEMINI.md: bijsturen werkt slecht bij grote wijzigingen), r1 niet als bijlage.
 - Waarom r1 slecht vertaalt: ±2:1 breed (ondanks "fits in a square"), tientallen kleine schubflappen en vlekjes die op 64 px ruis worden.
-- Plek van de bloem: niet ingevuld, Gemini laten kiezen (Jordi zei alleen "erin verwerken").
+- Ideeën van Claude om fase 3 van de teju te onderscheiden (luchtwortels, bloem als kraag/kam, driekantige rugplaten, gespleten tong van meeldraden); Jordi: "laten we allemaal proberen".
 - Extra bijlage: foto van een pitahayabloem (groot, wit, nachtbloeiend).
 
 ```
@@ -66,14 +67,17 @@ Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/
 CONCEPT
 - The final (third) stage of a pseudo-legendary dragon line based on the pink dragon fruit (pitahaya). The two attached sprites are stage 1 and stage 2 (a tegu lizard). Use them for the colors and materials; do not copy their body shapes.
 - Stage 3 is a Komodo dragon: heavy body, thick neck, long heavy head. It stands on its two hind legs but leans forward (body angled forward, not upright), the tail as counterweight.
-- Hot pink dragon fruit skin with green-tipped scale flaps on the head and back; legs are green cactus stem. Open mouth with white seeded dragon fruit flesh inside, like stage 2.
+- The body is mostly green cactus stem (greener than stage 2). Hot pink dragon fruit skin with green-tipped scale flaps only on the head. Open mouth with white seeded dragon fruit flesh inside, like stage 2.
 - The tail ends in a club shaped like a whole dragon fruit (pink, with green-tipped scale flaps).
-- Somewhere in the design, a dragon fruit flower (the large white night-blooming pitahaya flower, see the attached photo).
+- A dragon fruit flower (the large white night-blooming pitahaya flower, see the attached photo) as a collar around the neck or a crest on the head.
+- Back plates: instead of scale flaps along the back, a row of three-ribbed green cactus stem segments with wavy edges, standing up like plates.
+- Aerial roots, like the climbing pitahaya cactus uses to cling to trees: as a beard under the jaw or as strands hanging from the forearms.
+- A forked Komodo tongue made of the yellow stamens of the flower.
 
 DESIGN: SIMPLE, MADE FOR A SPRITE
 - Few big, clear shapes, like official Gen 3 sprites (Salamence, Tyranitar, Flygon level of detail). Only a handful of large scale flaps, not dozens of small ones. No small spots, dots or texture on the skin.
 - Big, heavy and powerful, clearly a final stage, but not over-designed.
-- Colors: hot pink, green, white. Keep the palette limited.
+- Colors: mostly green, with hot pink and white as accents. Keep the palette limited.
 
 POSE AND COMPOSITION
 - Three-quarter view facing left, threatening.

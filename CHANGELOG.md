@@ -2113,3 +2113,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoofd r1 weer Banette/Gengar (r7-bijlage was zelf een Banette-hoofd); hoofdprompt v2 zonder bijlage en zonder "ghost", narrenmuts in woorden.
 - Hoofd r2 (twee punten, maar bal + grijns leest als Banette); hoofdprompt v3: lang narrengezicht met puntige kin, stoffen punten.
 - Hoofdprompt v4: alle mogelijke Banette-verwijzingen weg (kleur, rode ogen, "puppet"), expliciet "do not draw Banette".
+- Hoofd r3: mond goed ("eindelijk"), punten werden duivelshoorns; hoofdprompt v5 met r3 als bijlage, alleen de punten naar slappe narrenmutsstof.

@@ -93,3 +93,27 @@ AVOID
 - Not a realistic lizard with a fruit stuck on it: the dragon fruit is its skin.
 - No glossy 3D render, no plush or mascot style.
 ```
+
+---
+
+# Prompt v3 (17 nov): zelfde gesprek, reactie op r2 (`r2.png`)
+
+## Jordi (letterlijk)
+- "bloemkraag, cactussen op de rug weg, tong vertaalt ook nog niet helemaal lekker, lichaam is nu wat saai"
+- "pose, staart en hoofd zijn prima"
+- "roze op de rug en cactusribben in het lijf" (keuze uit: roze schubflappen op de rug, cactusribben in het lijf, lichte buik, meer luchtwortels)
+
+## Keuzes Claude (schrappen mag)
+- Tong: simpeler (kort, dik, twee punten, één kleur); Jordi heeft de tongvraag niet beantwoord.
+- Vier wijzigingen in één ronde (meer dan de gebruikelijke 2); vaste delen expliciet genoemd.
+
+```
+Good. Keep the pose, the head, the tail with the dragon fruit club and the colors exactly as they are. Change only these things:
+
+1. The flower becomes a collar: a ring of white pitahaya petals all around the neck, behind the head.
+2. Remove the cactus plates on the back. Instead, a row of hot pink dragon fruit skin with green-tipped scale flaps along the spine, from the neck to the base of the tail, like on stage 2.
+3. The green body is too plain: show the three-ribbed cactus stem in the body itself, as long ribs with wavy edges running along the body, legs and tail. Nothing sticks out.
+4. The tongue: make it simple so it works in a small sprite: a short, thick forked tongue with two points, one yellow color.
+
+Same Gen 3 sprite style, plain white background.
+```

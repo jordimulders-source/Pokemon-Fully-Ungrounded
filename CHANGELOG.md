@@ -2048,3 +2048,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.503] - Banette-evolutie: Gemini r5
 - r5 bewaard ("echt bizar slecht"); werkwijze voorgelegd aan Jordi.
 - Prompt v6: begint bij de figuur (kwaadaardige nar die aan de touwtjes trekt), silhouet en gedrag; eerst artwork. Les in `GEMINI.md`.
+- r6 bewaard (eerste ronde zonder Banette-hoofd); prompt v7 = v6 met een groot, breed silhouet ("imposant is niet mager, imposant is groot, breed").

@@ -1,0 +1,59 @@
+x	y	oud	nieuw	reden
+28	43	r	p	terminator volgt de buikronding
+29	44	r	p	terminator volgt de buikronding
+31	45	r	p	terminator volgt de buikronding
+32	45	r	p	terminator volgt de buikronding
+33	45	r	p	terminator volgt de buikronding
+34	44	r	p	terminator volgt de buikronding
+34	45	r	p	terminator volgt de buikronding
+35	43	r	p	terminator volgt de buikronding
+35	45	r	p	terminator volgt de buikronding
+36	44	r	p	terminator volgt de buikronding
+36	45	r	p	terminator volgt de buikronding
+37	43	r	p	terminator volgt de buikronding
+37	44	r	p	terminator volgt de buikronding
+37	45	r	p	terminator volgt de buikronding
+40	44	r	p	terminator volgt de buikronding
+41	44	r	p	terminator volgt de buikronding
+42	43	r	p	terminator volgt de buikronding
+43	43	r	p	terminator volgt de buikronding
+32	46	r	d	slagschaduw middelste dij, sluit aan op (33,47)-(36,50)
+33	46	r	d	slagschaduw middelste dij, sluit aan op (33,47)-(36,50)
+45	45	r	d	slagschaduw achterste dij, sluit aan op (50,46)
+46	45	r	d	slagschaduw achterste dij, sluit aan op (50,46)
+47	46	r	d	slagschaduw achterste dij, sluit aan op (50,46)
+48	46	r	d	slagschaduw achterste dij, sluit aan op (50,46)
+49	46	r	d	slagschaduw achterste dij, sluit aan op (50,46)
+29	48	h	H	middelste dij: hooglicht linksboven
+30	48	h	H	middelste dij: hooglicht linksboven
+31	48	h	H	middelste dij: hooglicht linksboven
+29	49	h	H	middelste dij: hooglicht linksboven
+30	49	h	H	middelste dij: hooglicht linksboven
+30	47	h	H	middelste dij: bovenrand hooglicht (anders losse h)
+33	49	H	h	middelste dij: randlicht rechts weg
+34	50	H	h	middelste dij: randlicht rechts weg
+35	51	H	h	middelste dij: randlicht rechts weg
+36	51	H	h	middelste dij: randlicht rechts weg
+33	51	h	G	middelste dij: schaduwsikkel rechtsonder
+34	51	h	G	middelste dij: schaduwsikkel rechtsonder
+34	52	h	G	middelste dij: schaduwsikkel rechtsonder
+35	52	h	G	middelste dij: schaduwsikkel rechtsonder
+36	52	h	G	middelste dij: schaduwsikkel rechtsonder
+42	47	h	H	achterste dij: hooglicht linksboven
+43	47	h	H	achterste dij: hooglicht linksboven
+41	48	h	H	achterste dij: hooglicht linksboven
+42	48	h	H	achterste dij: hooglicht linksboven
+43	48	h	H	achterste dij: hooglicht linksboven
+41	49	h	H	achterste dij: hooglicht linksboven
+41	47	h	H	achterste dij: bovenrand hooglicht (anders losse h)
+47	48	H	h	achterste dij: randlicht rechts weg
+47	49	H	h	achterste dij: randlicht rechts weg
+48	49	H	h	achterste dij: randlicht rechts weg
+47	50	H	h	achterste dij: randlicht rechts weg
+48	51	H	h	achterste dij: randlicht rechts weg
+46	50	h	G	achterste dij: schaduwsikkel rechtsonder
+46	51	h	G	achterste dij: schaduwsikkel rechtsonder
+47	51	h	G	achterste dij: schaduwsikkel rechtsonder
+45	52	h	G	achterste dij: schaduwsikkel rechtsonder
+46	52	h	G	achterste dij: schaduwsikkel rechtsonder
+47	52	h	G	achterste dij: schaduwsikkel rechtsonder

@@ -6,7 +6,7 @@ Regels: geen "Banette" in de prompts; elk asset los, in een eigen nieuw gesprek;
 
 | # | Asset | Status |
 |---|---|---|
-| 1 | Hoofd (vorm met twee narrenmutspunten, ogen, zigzaggrijns) | prompt `PROMPT_1_hoofd.md` |
+| 1 | Hoofd (vorm met twee narrenmutspunten, ogen, zigzaggrijns) | r1 = Banette/Gengar (r7-bijlage was een Banette-hoofd); prompt `PROMPT_1_hoofd_v2.md` |
 | 2 | Romp (groot, breed, niet gespierd, gladde geest) | |
 | 3 | Kledingstuk (lege stoffen pop om het middel, open rits, lapje, slappe armpjes, staart met gele punt) | |
 | 4 | Armen omhoog met kruishanden | |

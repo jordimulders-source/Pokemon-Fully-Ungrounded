@@ -1,4 +1,6 @@
-# Banette-evolutie (Jordi, 17 nov)
+# Banette-evolutie: Shuppetto (Jordi, 17 nov)
+
+Naam (Jordi, 17 nov): "Naam wordt Shuppetto".
 
 Typing (Jordi): Ghost/Dark (zelfde als Banette in de repo).
 

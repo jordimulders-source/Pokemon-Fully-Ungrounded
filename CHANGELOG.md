@@ -2131,3 +2131,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Redraw-ronde: Gemini kopieert D weer bijna 1-op-1 ("hij doet het weer niet goed"). Volgende: hoofd + armen v3 zonder D (alleen Shuppeteer).
 - Hoofd + armen v3: weer bijna D (Gemini hield het vorige gesprek/beeld vast); Jordi heeft een ander idee.
 - Hoofd langs Jordi's gele lijn geknipt en 1,5/1,65/1,8× geschaald, armen los van de kruizen en aan de zijkant van het hoofd gezet (`gemini/assets/knip/knip.py`); model = 1,8× (`banette_evo/model/model.png`). Sprite wordt gebouwd.
+- Naam Banette-evolutie: **Shuppetto** (Jordi). In SPEC, POKEMON.md (Werknamen) en CLAUDE.md.

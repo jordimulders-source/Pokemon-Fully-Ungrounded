@@ -64,3 +64,42 @@ Good start: keep the dark fusion-crust body and the face exactly as they are. Ch
 
 Same number of spikes, same pose, same Gen 3 sprite style, plain white background.
 ```
+
+---
+
+# Prompt v3 (17 nov): NIEUW gesprek, startprompt (reactie op v2, `r2/gemini_v2.png`)
+
+## Jordi (letterlijk)
+- "al wel ietsje beter he, maar nog niet helemaal"
+
+## Analyse Claude
+v2: grote punten zitten nog steeds vast, gloed erachter blijft; nieuw is een buitenring van kleine losse splinters (die maakt het "opengebroken"). Lava werd een haakje dat op een tong lijkt. Gemini begrijpt "licht in de kier" niet; daarom nieuw gesprek (vorige versie niet als bijlage, anders kopieert hij hem) en de corona nu als concreet beeld: een dunne felle rand strak om het zwarte lijf, zoals op eclipsfoto's, met witte achtergrond tussen rand en zwevende stukken.
+
+```
+Design the evolution of the Pokémon SOLROCK and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+THE ATTACHED SPRITE IS SOLROCK (the pre-evolution). Keep its yellow stone spikes, its yellow face plate with the red eye slit and its stony texture recognizable.
+
+CONCEPT
+- Solrock is a stone meteorite shaped like the sun. It evolves when the moon (Lunatone) is with it: a total solar eclipse made of stone.
+- Everything is rock. No gas, flames, plasma or glow effects.
+
+DESIGN
+- Core: a round body of dark, almost black stone with a glassy fusion crust (like a meteorite that burned through the atmosphere). Solrock's yellow face plate with the red eye sits on it.
+- Eclipse rim: around the dark body runs a thin, bright pale yellow-white rim, hugging the body tightly, exactly like the bright edge around the black moon in a photo of a total solar eclipse. This rim is the only light in the design.
+- Broken corona: Solrock's yellow stone spikes have broken loose. All of them float OUTSIDE the bright rim, with white background visible between the rim and every spike. Not a single spike touches the body. 8 large spikes pointing outward, and between them a few small loose stone splinters further out, as if the corona is crumbling apart.
+- Prominence: one small arch of molten red-orange rock standing on the top-right edge of the body, shaped like an upside-down U with both ends on the rim.
+- One bright yellow-green olivine crystal set into the rim of the body.
+
+POSE
+- Three-quarter view facing left, floating.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO soft glow or halo behind the creature, no floor, shadow, sparkles or effects. One single creature, no extra views.
+
+AVOID
+- Not a naval mine or spiked ball: the spikes must not be attached to the body.
+- Not a sun with a face. No tongue-like shapes, no ropes or tentacles.
+- No arms, legs, wings or human features. No glossy 3D render, no plush or mascot look.
+```

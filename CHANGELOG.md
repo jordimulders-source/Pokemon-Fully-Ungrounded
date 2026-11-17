@@ -2029,3 +2029,6 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 
 ### [v0.0.497] - Banette-evolutie: idee vastgelegd
 - Jordi's idee voor de Banette-evolutie (Ghost/Dark, puppetmaster met twee mini-Shuppets) letterlijk vastgelegd in `docs/concept/sprites/banette_evo/SPEC.md` en `IDEEEN.md`; eerst overleggen, daarna de Gemini-prompt.
+
+### [v0.0.498] - Banette-evolutie: antwoorden en Gemini-prompt v1
+- Jordi's antwoorden (draden, kledingstuk, beentjes, zigzagmond, houding) letterlijk in `banette_evo/SPEC.md`; prompt `banette_evo/gemini/PROMPT_v1.md` met Banette- en Shuppet-sprite als bijlage. Kleur nog open.

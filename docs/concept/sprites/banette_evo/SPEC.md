@@ -49,7 +49,7 @@ Analyse Claude: ook zonder bijlage en zonder de naam tekent Gemini Banette; "ver
 Afgevinkt (Claude): hoofd-bijlage genegeerd (weer Banette/Gengar-hoofd), "thick strong arms, broad chest" gaf een bodybuilder met een derde arm; kledingstuk, kruizen en Shuppets bleven.
 
 ## Over r10 (`gemini/r10/`, prompt v13 A en B), Jordi 17 nov, letterlijk
-"allebei slecht, hij volgt de instructies niet, nu zijn het gewoon slungelige dikke geesten"
+"allebei slecht, hij volgt de instructies niet, nu zijn het gewoon slungelige dikke geesten"; "en het hoofd klopt gewoon weer niet"
 
 ## Stand na 10 rondes (Claude)
 Gemini haalt dit concept niet: met of zonder bijlage, schets of voorbeeld valt hij terug op een Banette/Gengar-hoofd en een generiek geestlijf. Werkwijze voorgelegd aan Jordi.

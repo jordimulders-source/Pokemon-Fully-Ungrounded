@@ -2128,3 +2128,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - D2 afgekeurd ("dit kan je niet"); prompt `PROMPT_5_armen.md`: D als bijlage, los grijs stuk weg en armen lager uit de zijkanten van het hoofd. Les in `GEMINI.md`.
 - Armen-ronde: Gemini veranderde bijna niets ("zucht"). Prompt hoofd + armen v3: de startprompt van r1 met een enorm hoofd en armen uit de zijkanten in de tekst.
 - Jordi: "hij mag best de hele sprite redrawen"; prompt `PROMPT_6_redraw.md` (D als ontwerpreferentie, alles opnieuw tekenen, armen uit de zijkanten).
+- Redraw-ronde: Gemini kopieert D weer bijna 1-op-1 ("hij doet het weer niet goed"). Volgende: hoofd + armen v3 zonder D (alleen Shuppeteer).

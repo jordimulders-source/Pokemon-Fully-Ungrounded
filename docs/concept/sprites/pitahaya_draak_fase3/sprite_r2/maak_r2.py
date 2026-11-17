@@ -5,6 +5,8 @@ import sys,numpy as np; from PIL import Image; from collections import Counter
 from groepen import laad; from lijnen import projecteer
 KAAL,NAT,UIT=sys.argv[1:4]
 def arg(k,d,t=float): return t(sys.argv[sys.argv.index(k)+1]) if k in sys.argv else d
+MONDZONE=lambda y,x: 1<=x<=15 and 25<=y<=34
+ZMIN=arg('--zmin',30,int); LT=arg('--lt',.4); PL=arg('--pl',95.); RKOP=arg('--rkop',15,int)
 LMIN=arg('--lmin',15,int); RMIN=arg('--rmin',25,int); RSP=arg("--rsp",5,int)
 K=Image.open(KAAL); kaal=np.asarray(K).astype(int); pal=K.getpalette()
 info=np.load(KAAL[:-4]+'_info.npz'); geo=info['geo']; F={k:info['f%d'%k] for k in (0,1,2,4,6,7,8)}
@@ -47,21 +49,33 @@ for k,naam in ((2,'roze'),(4,'groen')):
         sl=venster(y,x)
         if (g[sl]==k).sum()<0.4*g[sl].size: continue
         vals.append(TK[sl].mean()); pos.append((y,x))
-    vals=np.array(vals); q=np.percentile(vals,[30,80])          # 3 vultonen: 30 % schaduw, 50 % midden, 20 % licht
+    vals=np.array(vals); q=np.percentile(vals,[50,90] if k==4 else [40,PL])   # r2: groen 50/40/10, roze 40/50/10 (verdeling teju-sprite: hooglicht klein)
     t=TON[naam]
     for v,(y,x) in zip(vals,pos): zet(y,x,t[1] if v<q[0] else (t[2] if v<q[1] else t[3]),'T')
 # ---- L: lijnen uit het skelet van alle donkere modellijnen (zwart, donkergroen lum<72, donkerroze lum<62), componenten >= LMIN
 D=(g==1)|((g==4)&(lum<72))|((g==2)&(lum<62))
 cnt,ln,sk=projecteer(g,geo,D)
+# r2: zwart telt alleen als de natieve zwarte component groot is (>= ZMIN px: echte structuurlijn tussen ledematen en romp,
+#     kaak/bek); kleinere zwarte stukjes (schubranden, ribben) worden een donkere vlaktint.
+from lijnen import componenten as _comp
+labZ,sizeZ=_comp(g==1)
 zw=np.zeros((64,64),int); dn=np.zeros((64,64),int)
 for ny,nx in zip(*np.where(sk)):
     X,Y=n2s(nx+.5,ny+.5)
-    if 0<=X<64 and 0<=Y<64: dn[Y,X]+=1; zw[Y,X]+=(g[ny,nx]==1)
+    if 0<=X<64 and 0<=Y<64:
+        dn[Y,X]+=1
+        if g[ny,nx]==1:
+            sz=sizeZ[labZ[ny,nx]]
+            kop=X<=21 and Y<=34 and GRP.get(kaal[Y,X])=='roze'
+            if (not kop and sz>=ZMIN) or (kop and MONDZONE(Y,X) and sz>=15): zw[Y,X]+=1
 LIJN=np.zeros((64,64),int)
 for y,x in zip(*np.where((((cnt>=2)&(ln>=LMIN))|((cnt>=1)&(ln>=RMIN)))&(kaal>0)&~R0)):
     gr=GRP[o[y,x]]
     if gr in ('geel','wit','pit') or OOG(y,x): continue
-    if zw[y,x]*2>=dn[y,x]: LIJN[y,x]=1                             # echte zwarte modellijn
+    kop=x<=21 and y<=34
+    if zw[y,x]*2>=dn[y,x] and zw[y,x]>0: LIJN[y,x]=1                # echte zwarte modellijn
+    elif kop and gr=='roze':
+        if ln[y,x]>=RKOP: LIJN[y,x]=2                               # kop: alleen lange naden (grote schubflappen), donkerroze
     elif ln[y,x]>=RMIN: LIJN[y,x]=2 if gr=='roze' else 6           # donkergroene rib / donkerroze naad (alleen lange modellijnen)
 # fragmenten: zwarte lijnstukjes < 3 spritepx worden de donkere vlaktint; rib/naad-stukjes < 3 px vervallen
 def comp8(m):
@@ -108,32 +122,6 @@ for rnd in range(2):
         if not any(v in (1,2,6) for v in nb) and 0 not in nb:
             v=vlaktint(y,x,zonder_donker=True)
             if v and GRP[v] in ('roze','groen'): zet(y,x,v,'V')
-# ---- SP: dunne uitsteeksels (stekels, bracteepunten, klauwen) die de vlakreductie wegpoetst: natief silhouet min zijn opening
-#      (schijf r=3 natieve px) = uitsteeksels; hun skelet geprojecteerd naar het spriteraster; achtergrondpixels daarop worden figuur
-#      (groene stekel: groene modeltint van het venster). Alleen componenten >= 4 natieve px skelet.
-def schijf(r): return [(dy,dx) for dy in range(-r,r+1) for dx in range(-r,r+1) if dy*dy+dx*dx<=r*r]
-def erodeer(m,r):
-    p=np.pad(m,r); out=np.ones_like(m)
-    for dy,dx in schijf(r): out&=p[r+dy:r+dy+m.shape[0],r+dx:r+dx+m.shape[1]]
-    return out
-def dilateer(m,r):
-    p=np.pad(m,r); out=np.zeros_like(m)
-    for dy,dx in schijf(r): out|=p[r+dy:r+dy+m.shape[0],r+dx:r+dx+m.shape[1]]
-    return out
-FIG=g>0; KERN=dilateer(erodeer(FIG,RSP),RSP); UITS=FIG&~KERN&((g==4)|(g==1))
-from lijnen import zhang, componenten
-SK=zhang(UITS); lab,size=componenten(SK)
-SPX={}
-for ny,nx in zip(*np.where(SK)):
-    if size[lab[ny,nx]]<4: continue
-    X,Y=n2s(nx+.5,ny+.5)
-    if 0<=X<64 and 0<=Y<64: SPX[(Y,X)]=SPX.get((Y,X),0)+1
-for (y,x),n in SPX.items():
-    if o[y,x]!=0 or n<1: continue
-    if not any(o[y+dy,x+dx]>0 for dy,dx in ((1,0),(-1,0),(0,1),(0,-1),(1,1),(1,-1),(-1,1),(-1,-1))): continue
-    sl=venster(y,x); m=g[sl]==4
-    v=8 if not m.any() else TON['groen'][int(((P[TON['groen']]-a[sl][m].mean(0))**2).sum(1).argmin())]
-    zet(y,x,max(v,7),'SP')
 # ---- B: buitenlijn 1 px: zwart aan de schaduwkant (achtergrond onder/rechts), selout aan de lichtkant (boven/links)
 R=rand4(o>0)
 SEL={'roze':2,'groen':6,'geel':12,'wit':1,'pit':1,'zwart':1}
@@ -141,13 +129,52 @@ SEL={'roze':2,'groen':6,'geel':12,'wit':1,'pit':1,'zwart':1}
 M=gauss((o>0).astype(float),1.2); gy_,gx_=np.gradient(M)
 for y,x in zip(*np.where(R)):
     nx_,ny_=-gx_[y,x],-gy_[y,x]; nn=np.hypot(nx_,ny_)+1e-9
-    licht=(-0.45*nx_-0.9*ny_)/nn>0.2
+    licht=(-0.45*nx_-0.9*ny_)/nn>LT
     gr=GRP[o[y,x]]
     if gr=='geel': continue                       # tong apart (stap TONG)
     # dunne groene punten (stekels/bracteeen, <= 1 figuurbuur in 4-richting) houden een groene rand
     nb4=sum(1 for dy,dx in ((1,0),(-1,0),(0,1),(0,-1)) if o[y+dy,x+dx]>0)
     if gr=='groen' and nb4<=1: zet(y,x,6,'B'); continue
     zet(y,x,SEL[gr] if licht else 1,'B')
+# ---- BR (r2): bracteeen/stekels = groene modelcomponenten los van het groene lijf (>= 8 natieve px; kop, rug, staartknots).
+#      Spritepixel met >= BRT van het venster bractee wordt groen: aan de achtergrond donkergroen (punt/selout), binnen licht groen.
+from lijnen import componenten as _c2
+_lab,_size=_c2(g==4); _big=max(_size,key=_size.get)
+BRM=(g==4)&(_lab!=_big)
+for n,sz in _size.items():
+    if n!=_big and sz<8: BRM[_lab==n]=False
+BRT=arg('--brt',.25)
+for y in range(64):
+    for x in range(64):
+        sl=venster(y,x)
+        if sl[0].stop<=sl[0].start or sl[1].stop<=sl[1].start: continue
+        f=BRM[sl].mean()
+        if f<BRT or GRP.get(o[y,x]) in ('geel','wit','pit') or OOG(y,x): continue
+        if o[y,x]==0:
+            if any(o[y+dy,x+dx]>0 for dy,dx in ((1,0),(-1,0),(0,1),(0,-1))): zet(y,x,6,'BR')
+            continue
+        rand=any(o[y+dy,x+dx]==0 for dy,dx in ((1,0),(-1,0),(0,1),(0,-1)))
+        zet(y,x,6 if rand else 8,'BR')
+# ---- SP (r2): stekel-/bracteepunten uit het model (stekels.py: uitsteeksel = silhouet min opening r 6; punt = verst van de
+#      kern, voet = dichtstbijzijnde kernpixel). Het lijnstuk voet->punt wordt geprojecteerd; achtergrondpixels erop die aan de
+#      figuur raken worden donkergroen (stekelpunt zoals op de teju-sprite). Tong (geel) en tand (wit) uitgezonderd.
+from stekels import punten
+SPLOG=[]
+for (tx,ty),(vx,vy),sz,dd in punten(g):
+    if g[ty,tx] in (6,8) or g[vy,vx]==8: continue
+    _X,_Y=n2s(tx+.5,ty+.5)
+    if _X<=9 and 24<=_Y<=34: continue                 # tandpunt in de bek: geen stekel (r2)
+    pad=[]
+    for t in np.linspace(0,1,40):
+        X,Y=n2s(vx+.5+t*(tx-vx),vy+.5+t*(ty-vy))
+        if (Y,X) not in [p[:2] for p in pad]: pad.append((Y,X,t))
+    for y,x,t in pad:
+        if o[y,x]==0 and any(o[y+dy,x+dx]>0 for dy in (-1,0,1) for dx in (-1,0,1) if dy or dx):
+            zet(y,x,6,'SP'); SPLOG.append((x,y,tx,ty))
+        elif GRP.get(o[y,x])=='roze' and o[y,x]!=2 and t>=0.3:
+            zet(y,x,8,'SP')          # groene stekelvoet in het roze (model: groene bractee loopt het roze in)
+        elif o[y,x] in (2,) and t>=0.5:
+            zet(y,x,6,'SP')          # punt op de roze selout: donkergroen
 # ---- C: losse vulpixel (8-cluster van 1 in zijn tint) -> meest voorkomende buurtint uit dezelfde groep
 for rnd in range(2):
     for y,x in zip(*np.where(o>1)):
@@ -209,6 +236,77 @@ for y,x in zip(*np.where(o>1)):
     if not c: c=Counter(v for v in nb if GRP.get(v) in ('roze','groen') and v not in (2,6))
     if c: zet(y,x,c.most_common(1)[0][0],'C2')
 np.save(UIT[:-4]+'_stand.npy',o)
+# ---- R2: benoemde reparaties ronde 2, per pixel met modelmeting (meet.py: achtergrond/zwart/groen-fractie, gem. helderheid groen)
+R2=[
+ # kop/bek (meting: f1 = zwartfractie, f6 = witfractie, f0 = achtergrond)
+ (3,27,1,'KAAKLIJN onder de snuit: 40 % zwart; dicht het gat in de lijn (2..7,27)'),
+ (2,28,0,'TAND 1: 91 % achtergrond; was zwart/groen door de randstap'),
+ (3,28,11,'TAND 1 (snuitpunt): model wit natief x24-26, y102-106 (15 % van het venster, < 1 spritepx); 1 px wit hangend onder de kaaklijn, zoals tand 2/3'),
+ (5,25,2,'NEUSGAT: 22 % zwart (dunne donkere modellijn op de snuit); donkerroze binnenlijn'),
+ (11,29,1,'BEKHOEK: 35 % zwart; sluit het vruchtvlees rechtsonder af'),
+ (10,30,1,'ONDERLIP-LIJN: 31 % zwart; scheidt vruchtvlees/tong van de onderkaak'),
+ # voorste hand: 3 modelklauwen op x 9,9-10,7 / 11,3-12,4 / 13,2-14,1; op 64 px 2 klauwen + inkeping
+ (10,44,9,'KLAUW voorhand: groen 82 %, zwart 16 %; lichte klauw (lum 101, lichter dan de hand 80-95)'),
+ (11,44,1,'KLAUW voorhand: 48 % zwart = lijn tussen de klauwen'),
+ (12,44,9,'KLAUW voorhand: groen 56 %, lum 98; lichte klauw'),
+ (13,44,1,'KLAUW voorhand: 42 % zwart, 12 % achtergrond = rand'),
+ (10,45,1,'KLAUWPUNT: 39 % zwart, 34 % achtergrond = lijn onder de klauw'),
+ (11,45,0,'INKEPING tussen de klauwen: 31 % achtergrond + 47 % zwart (lijn); achtergrond zodat de klauwen los lezen'),
+ (12,45,1,'KLAUWPUNT: 42 % zwart'),
+ (13,45,0,'82 % achtergrond (was stekelpunt-groen)'),
+ (12,46,0,'66 % achtergrond (zwart restje onder de klauw)'),
+]
+for x,y,v,r in R2: zet(y,x,v,'R2')
+# nabije hand (x 27-35, y 44-48): de zwarte klont = 4 modelklauwen met zwarte lijnen ertussen. Regel uit de meting:
+# zwart alleen bij >= 30 % zwart, anders groen naar de helderheid van de groene modelpixels (>= 115 licht = klauw, >= 90 midden)
+gu=np.repeat(np.repeat(g,4,0),4,1); lu=np.repeat(np.repeat(lum,4,0),4,1)
+def win4(X,Y):
+    ny=by0-S+OY+S*(Y-Y0+ymin); nx=bx0-S+OX+S*(X-X0+xmin)
+    return slice(int(round(4*ny)),int(round(4*(ny+S)))),slice(int(round(4*nx)),int(round(4*(nx+S))))
+for Y in range(44,49):
+    for X in range(27,36):
+        if o[Y,X]==0: continue
+        sl=win4(X,Y); gb=gu[sl]; n=gb.size; m=gb==4
+        if (gb==0).sum()/n>=0.5: continue
+        if (gb==1).sum()/n>=(0.25 if Y>=46 else 0.30): zet(Y,X,6,'HAND'); continue      # lijn tussen de klauwen: donkergroen (geen klont zwart)
+        l=lu[sl][m].mean() if m.any() else 0
+        if Y>=47: zet(Y,X,9 if l>=90 else 7,'HAND')                 # klauwpunten onderaan lichter (model lum 90-101 vs hand 80-90)
+        else: zet(Y,X,8 if l>=100 else 7,'HAND')
+# staartonderkant: rij 62 alleen x 40-45 (model is daar vlak; 1 px hoger aan de uiteinden geeft de boog, opdracht r2)
+for x in (37,38,39,46,47,48):
+    if o[62,x]>0: zet(62,x,0,'STAART'); zet(61,x,1,'STAART')
+# staart rechterkant: kolom 61 was 10 px recht (rij 46-55); uiteinden met de hoogste achtergrondfractie weg (42/44 %, 9/12 %) -> 6 px,
+# de pixel links ervan wordt de zwarte rand (schaduwkant)
+for y in (46,47,54,55):
+    if o[y,61]>0: zet(y,61,0,'STAART'); zet(y,60,1,'STAART')
+# dambord (2x2 om-en-om van twee vultinten): de pixel die het minst op zijn 8 buren lijkt neemt de meest voorkomende buurtint
+for rnd in range(2):
+    for y in range(1,62):
+        for x in range(1,62):
+            q=o[y:y+2,x:x+2]
+            if not (q[0,0]==q[1,1] and q[0,1]==q[1,0] and q[0,0]!=q[0,1]): continue
+            if not all(GRP.get(v) in ('roze','groen') and v not in (2,6) for v in q.ravel()): continue
+            best=None
+            for yy,xx in ((y,x),(y,x+1),(y+1,x),(y+1,x+1)):
+                nb=[o[yy+dy,xx+dx] for dy in (-1,0,1) for dx in (-1,0,1) if dy or dx]
+                same=sum(1 for v in nb if v==o[yy,xx])
+                if best is None or same<best[0]: best=(same,yy,xx,Counter(v for v in nb if GRP.get(v) in ('roze','groen') and v not in (2,6)).most_common(1)[0][0])
+            zet(best[1],best[2],best[3],'DB')
+# losse vulpixels opnieuw (na alle stappen)
+for rnd in range(2):
+    for y,x in zip(*np.where(o>1)):
+        gr=GRP[o[y,x]]
+        if gr not in ('roze','groen') or (4<=x<=17 and 20<=y<=33) or (27<=x<=35 and 47<=y<=48) or (9<=x<=13 and 44<=y<=45): continue
+        nb=[o[y+dy,x+dx] for dy in (-1,0,1) for dx in (-1,0,1) if (dy or dx)]
+        if o[y,x] in nb: continue
+        c=Counter(v for v in nb if GRP.get(v)==gr and v!=o[y,x])
+        if not c: c=Counter(v for v in nb if v>0)
+        if c: zet(y,x,c.most_common(1)[0][0],'LOS')
+# ---- PALET (r2): roze, groen, vruchtvlees en pit = tinten van de teju-sprite (fase 2, af); geel/zwart blijven modeltonen
+TEJU={2:(104,24,56),3:(177,40,84),4:(231,78,123),5:(248,160,192),6:(48,88,48),7:(79,128,64),8:(120,168,80),9:(176,208,104),
+      10:(191,189,192),11:(237,234,237),15:(44,42,46),1:(19,19,15)}
+pal=list(pal)
+for i,c in TEJU.items(): pal[3*i:3*i+3]=list(c)
 im=Image.fromarray(o.astype('uint8'),'P'); im.putpalette(pal); im.save(UIT,transparency=0)
 with open(UIT[:-4]+'_afwijkingen.txt','w') as f:
     f.write('stap x y oud nieuw\n')

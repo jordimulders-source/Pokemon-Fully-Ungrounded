@@ -57,7 +57,7 @@ Jordi (17 nov): "We gaan niet stoppen, het is gewoon slechte prompting, we gaan 
 
 ## Stand 17 nov (gepauzeerd)
 - Asset voor asset (`gemini/assets/PLAN.md`): hoofd r7 vorm goed (mond "Spiritomb-stijl", narrenmuts als deel van het hoofd; kleuren klopten niet). Lijf r2 (`gemini/assets/lijf_r2/`), Jordi: "ok beter gelukt, maar ik merk dat ik toch niet tevreden ben, ik geef het even op voor nu en ga het ontwerp herevalueren".
-- Volgende stap: Jordi herevalueert het ontwerp.
+- Jordi (17 nov): "Imposant kunnen we tonen door het lichaam grotendeels te schrappen en alleen het hoofd en de armen te tonen, spiritomb mond, plus deze shuppeteer als reference voor het hoofd". Prompt `gemini/assets/PROMPT_3_hoofd_armen.md`.
 
 ## Open
 - Jordi (17 nov): "nog steeds teveel banette bedoel ik"; "hoofdvorm wel eindelijk goed" (r7). Prompt v10 (hoofd aanpassen) vervalt. Jordi: "ik hoef toch niet elke keer mn idee opnieuw te typen"; Claude vergeleek r7 zelf met deze SPEC -> v11.

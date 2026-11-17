@@ -2120,3 +2120,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Hoofd r7: vorm goed (kleuren later); prompt voor de rest van het lijf op dit hoofd (`gemini/assets/PROMPT_2_lijf_v1.md`).
 - Lijf r1 (dik, pak en handen fout); prompt lijf v2: groot zoals Dusknoir/Grimmsnarl, niet dik/gespierd, half uit het poppenpak gestapt, kruishanden als +.
 - Lijf r2 "beter gelukt"; Jordi pauzeert en herevalueert het ontwerp. Stand in SPEC en CLAUDE.md.
+- Jordi herevalueerde: lijf grotendeels weg, alleen hoofd en armen, Spiritomb-mond, Shuppeteer als hoofdreferentie; prompt `PROMPT_3_hoofd_armen.md`.

@@ -12,6 +12,8 @@ Typing (Jordi): Ghost/Dark (zelfde als Banette in de repo).
 - Mond: "Gengar is juist geen gat, maar heeft tanden, de mond wijkt nu af en is geen rits meer, een beetje de zigzag look werkt misschien wel, tanden die de kleur van het hoofd hebben."
 - Houding: "Hij zweeft en heeft een zodanig perspectief dat het lijkt alsof die van bovenop kijkt, wel driekwart uiteindelijk. Hij bestuurt de shuppets idd door zijn armen hoog te houden"
 
+## Over r1 (`gemini/r1/gemini_r1.png`), Jordi 17 nov, letterlijk
+"de kleur is prima, wat donkerder. Het concept klopt ook wel prima, alleen het is teveel banette, hij moet groter, imposanter, de jas moet juist meer banette's voormalige lichaam zijn en het nieuwe lichaam plus hoofd is groter, hij krijgt ook twee van die hoofdaanhangsels (geen idee hoe die heten) om nog meer als een evil puppetmaster/joker eruit te zien, hij mag ook richting max grootte gaan van 64x64"
+
 ## Open
-- Kleur van de nieuwe vorm t.o.v. Banette (huls): nog niet beantwoord.
 - Naam, evolutiemethode: later.

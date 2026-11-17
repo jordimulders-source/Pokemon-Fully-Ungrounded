@@ -1,0 +1,5 @@
+10	44	idx 10->14	wig: donkerst (120,119,125)
+12	44	idx 10->14	wig: donkerst (120,119,125)
+13	44	idx 10->14	wig: donkerst (120,119,125)
+11	45	idx 10->14	wig: donkerst (120,119,125)
+14	45	idx 10->13	keuring_r6: plooi tot de kaaklijn: plooitint v (155,154,159)

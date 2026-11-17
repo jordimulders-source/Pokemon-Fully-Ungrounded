@@ -1,0 +1,4 @@
+A tandvlees	4	42	K	r	model: 7 roze, 1 zwart, 1 vlees, 0 achtergrond; roze gemiddelde (168, 48, 86)
+A tandvlees	8	42	K	r	model: 6 roze, 0 zwart, 3 vlees, 0 achtergrond; roze gemiddelde (154, 47, 80)
+B schaduw verre lip	11	46	w	d	model: 5 roze, 0 zwart, 4 vlees, 0 achtergrond; donkere onderrand (113,43,55) van de strook ligt in dit blok
+B schaduw verre lip	12	45	w	d	model: 5 roze, 0 zwart, 4 vlees, 0 achtergrond; donkere onderrand (113,43,55) van de strook ligt in dit blok

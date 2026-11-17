@@ -1,0 +1,184 @@
+# pitahaya3_r7.png: elke pixel die afwijkt van de basis (r6 buik + bek zonder tong): stap | x | y | oud -> nieuw (tekens .#drpPgGhHwWkqQs)
+# totaal 182 px; daarnaast paletwijziging (zie NOTITIES.md)
+1 lijn voet-staart | 42 | 57 | H -> #
+1 lijn voet-staart | 43 | 57 | H -> #
+1 lijn voet-staart | 44 | 57 | h -> #
+1 lijn voet-staart | 45 | 56 | g -> #
+1 lijn voet-staart | 46 | 56 | g -> #
+1 lijn voet-staart | 47 | 56 | g -> #
+1 lijn voet-staart | 48 | 56 | g -> #
+1 lijn voet-staart | 49 | 55 | G -> #
+1 lijn voet-staart | 50 | 55 | h -> #
+1 lijn voet-staart | 51 | 54 | g -> #
+1 lijn voet-staart | 50 | 53 | g -> #
+1 lijn voet-staart | 52 | 53 | g -> #
+1 staart onder de lijn licht | 49 | 56 | h -> H
+1 staart onder de lijn licht | 50 | 56 | h -> H
+1 staart onder de lijn licht | 51 | 55 | h -> H
+1 staart onder de lijn licht | 52 | 55 | h -> H
+1 staart onder de lijn licht | 45 | 57 | h -> H
+1 staart onder de lijn licht | 46 | 57 | h -> H
+1 staart onder de lijn licht | 47 | 57 | h -> H
+1 staart onder de lijn licht | 48 | 57 | h -> H
+1b dijboog + contour | 41 | 40 | h -> g
+1b dijboog + contour | 42 | 40 | h -> g
+1b dijboog + contour | 43 | 40 | h -> g
+1b dijboog + contour | 44 | 40 | h -> g
+1b dijboog + contour | 46 | 41 | h -> k
+1b dijboog + contour | 47 | 42 | h -> k
+1b dijboog + contour | 48 | 43 | h -> k
+2 dij | 41 | 41 | h -> H
+2 dij | 42 | 41 | h -> H
+2 dij | 43 | 41 | h -> H
+2 dij | 40 | 42 | h -> H
+2 dij | 41 | 42 | h -> H
+2 dij | 46 | 42 | h -> G
+2 dij | 40 | 43 | h -> H
+2 dij | 46 | 43 | h -> G
+2 dij | 47 | 44 | h -> G
+2 dij | 45 | 46 | h -> G
+2 dij | 45 | 47 | h -> G
+2 dij | 47 | 47 | g -> G
+2 dij | 42 | 48 | h -> G
+2 dij | 44 | 48 | h -> G
+2 dij | 45 | 48 | h -> G
+2 dij | 46 | 48 | h -> G
+2 dij | 40 | 49 | h -> G
+2 dij | 41 | 49 | h -> G
+2 dij | 42 | 49 | h -> G
+2 dij | 45 | 49 | h -> G
+2 dij | 46 | 49 | h -> G
+2 scheen | 42 | 50 | h -> G
+2 scheen | 43 | 50 | h -> G
+2 scheen | 45 | 50 | h -> G
+2 scheen | 46 | 50 | h -> G
+2 slagschaduw heup | 47 | 41 | h -> G
+2 slagschaduw heup | 48 | 41 | h -> G
+2 slagschaduw heup | 48 | 42 | h -> G
+2 slagschaduw heup | 49 | 42 | h -> G
+2 slagschaduw heup | 49 | 43 | h -> G
+2 slagschaduw heup | 50 | 44 | h -> G
+2 slagschaduw heup | 50 | 45 | h -> G
+2 slagschaduw heup | 50 | 46 | h -> G
+2 slagschaduw heup | 50 | 47 | h -> G
+2c romp | 37 | 32 | h -> G
+2c romp | 38 | 32 | h -> G
+2c romp | 39 | 32 | h -> G
+2c romp | 40 | 32 | h -> G
+2c romp | 41 | 32 | h -> G
+2c romp | 35 | 33 | h -> G
+2c romp | 36 | 33 | h -> G
+2c romp | 37 | 33 | h -> G
+2c romp | 38 | 33 | h -> G
+2c romp | 39 | 33 | h -> G
+2c romp | 40 | 33 | h -> G
+2c romp | 41 | 33 | h -> G
+2c romp | 36 | 34 | h -> G
+2c romp | 37 | 34 | h -> G
+2c flank boven dij | 43 | 38 | h -> G
+2c flank boven dij | 44 | 38 | h -> G
+2c flank boven dij | 45 | 38 | h -> G
+2c flank boven dij | 46 | 38 | h -> G
+2c flank boven dij | 47 | 38 | h -> G
+2c flank boven dij | 41 | 39 | h -> G
+2c flank boven dij | 42 | 39 | h -> G
+2c flank boven dij | 43 | 39 | h -> G
+2c flank boven dij | 44 | 39 | h -> G
+2c flank boven dij | 45 | 39 | h -> G
+2c flank boven dij | 46 | 39 | h -> G
+2c flank boven dij | 47 | 39 | h -> G
+2c flank boven dij | 48 | 39 | h -> G
+2c flank boven dij | 49 | 39 | h -> G
+3 staart | 55 | 42 | h -> G
+3 staart | 55 | 43 | h -> G
+3 staart | 55 | 44 | h -> G
+3 staart | 57 | 44 | h -> G
+3 staart | 58 | 44 | g -> G
+3 staart | 55 | 45 | h -> G
+3 staart | 58 | 45 | h -> G
+3 staart | 55 | 46 | h -> G
+3 staart | 56 | 46 | h -> G
+3 staart | 58 | 46 | h -> G
+3 staart | 55 | 47 | h -> G
+3 staart | 56 | 47 | h -> G
+3 staart | 58 | 47 | h -> G
+3 staart | 56 | 48 | h -> G
+3 staart | 58 | 48 | h -> G
+3 staart | 59 | 48 | h -> G
+3 staart | 56 | 49 | h -> G
+3 staart | 58 | 49 | h -> G
+3 staart | 59 | 49 | h -> G
+3 staart | 56 | 50 | h -> G
+3 staart | 58 | 50 | h -> G
+3 staart | 59 | 50 | h -> G
+3 staart | 58 | 51 | h -> G
+3 staart | 59 | 51 | h -> G
+3 staart | 58 | 52 | h -> G
+3 staart | 59 | 52 | h -> G
+3 staart | 58 | 53 | h -> G
+3 staart | 59 | 53 | h -> G
+3 staart | 57 | 54 | h -> G
+3 staart | 59 | 54 | G -> g
+3 staart | 58 | 55 | G -> g
+3 staart | 59 | 55 | G -> g
+3 staart | 58 | 56 | G -> g
+3 staart | 59 | 56 | G -> g
+3 staart | 57 | 57 | G -> g
+3 staart | 58 | 57 | G -> g
+3 staart | 53 | 58 | h -> G
+3 staart | 56 | 58 | G -> g
+3 staart | 57 | 58 | G -> g
+3 staart | 45 | 59 | h -> G
+3 staart | 46 | 59 | h -> G
+3 staart | 47 | 59 | h -> G
+3 staart | 48 | 59 | h -> G
+3 staart | 49 | 59 | h -> G
+3 staart | 50 | 59 | h -> G
+3 staart | 51 | 59 | h -> G
+3 staart | 52 | 59 | h -> G
+3 staart | 53 | 59 | h -> G
+3 staart | 54 | 59 | G -> g
+3 staart | 55 | 59 | G -> g
+3 staart | 38 | 60 | h -> G
+3 staart | 39 | 60 | g -> G
+3 staart | 40 | 60 | h -> G
+3 staart | 41 | 60 | h -> G
+3 staart | 42 | 60 | h -> G
+3 staart | 43 | 60 | h -> G
+3 staart | 44 | 60 | h -> G
+3 staart | 45 | 60 | h -> G
+3 staart | 52 | 60 | G -> k
+3 staart | 53 | 60 | G -> k
+4 vorm achter arm | 24 | 47 | h -> G
+4 vorm achter arm | 24 | 48 | h -> G
+4 vorm achter arm | 23 | 49 | h -> G
+4 vorm achter arm | 27 | 50 | G -> g
+4 vorm achter arm | 28 | 50 | G -> g
+5 knots | 20 | 51 | p -> r
+5 knots | 21 | 51 | p -> r
+5 knots | 23 | 51 | p -> r
+5 knots | 24 | 51 | p -> r
+5 knots | 25 | 51 | p -> r
+5 knots | 20 | 52 | p -> P
+5 knots | 21 | 52 | p -> P
+5 knots | 22 | 52 | p -> P
+5 knots | 19 | 53 | p -> P
+5 knots | 20 | 53 | p -> P
+5 knots | 27 | 53 | p -> r
+5 knots | 28 | 53 | p -> r
+5 knots | 25 | 54 | p -> r
+5 knots | 26 | 54 | p -> r
+6 stekels | 26 | 18 | p -> P
+6 stekels | 27 | 18 | p -> P
+6 stekels | 28 | 18 | p -> P
+6 stekels | 25 | 19 | p -> P
+6 stekels | 26 | 19 | p -> P
+6 stekels | 32 | 19 | p -> P
+6 stekels | 33 | 19 | p -> P
+6 stekels | 32 | 20 | p -> P
+6 stekels | 38 | 22 | p -> P
+6 stekels | 39 | 22 | p -> P
+6 stekels | 38 | 23 | p -> P
+6 stekels | 45 | 31 | p -> P
+6 stekels | 46 | 31 | p -> P
+6 stekels | 45 | 32 | p -> P

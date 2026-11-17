@@ -59,6 +59,13 @@ Jordi (17 nov): "We gaan niet stoppen, het is gewoon slechte prompting, we gaan 
 - Asset voor asset (`gemini/assets/PLAN.md`): hoofd r7 vorm goed (mond "Spiritomb-stijl", narrenmuts als deel van het hoofd; kleuren klopten niet). Lijf r2 (`gemini/assets/lijf_r2/`), Jordi: "ok beter gelukt, maar ik merk dat ik toch niet tevreden ben, ik geef het even op voor nu en ga het ontwerp herevalueren".
 - Jordi (17 nov): "Imposant kunnen we tonen door het lichaam grotendeels te schrappen en alleen het hoofd en de armen te tonen, spiritomb mond, plus deze shuppeteer als reference voor het hoofd". Prompt `gemini/assets/PROMPT_3_hoofd_armen.md`.
 
+## Model (17 nov, avond)
+- Gemini r1 van "hoofd + armen" (`gemini/assets/hoofdarmen_r1/`, Jordi: "kijk nu komen we ergens, maar het hoofd moet groter"); vorm D gekozen (1,8×, "d is het beste").
+- Jordi's knipwerkwijze: "ik heb met een gele lijn genoteerd waar de linkerkant van het hoofd zit ... Dit is nu het hoofd en deze ga je schalen. Als het goed is heb je dan ook twee losse armen, die knip je los van de kruizen en die plak je na schalen van het hoofd op de juiste plek, kruizen, touwen en shuppets blijven zo". Script: `gemini/assets/knip/knip.py` (gele lijn: `jordi_lijn.png`; "mijn gele lijn [is] niet perfect").
+- **Model: `model/model.png`** (= `knip_1.8.png`).
+- Jordi (17 nov, voor het slapen): "als dat klaar is dan kan je een sprite gaan bouwen, dingen die niet precies kloppen kunnen we daarna toch nog in een sprite fixen. Bouw daarna een sprite totdat die helemaal goedgekeurd is en wees streng op aansluitingen, naden, kleuren, schaduwen, lege pixels, dingen die niet kloppen etc. Als ik morgen wakker word wil ik een goed eindresultaat zien."
+- Eerder (17 nov) over de mond: "de mond moet meer spiritomb stijl"; over de hoed: "moet onderdeel worden van het hoofd". Kleuren mogen afwijken van het model (SPRITE_KERN).
+
 ## Open
 - Jordi (17 nov): "nog steeds teveel banette bedoel ik"; "hoofdvorm wel eindelijk goed" (r7). Prompt v10 (hoofd aanpassen) vervalt. Jordi: "ik hoef toch niet elke keer mn idee opnieuw te typen"; Claude vergeleek r7 zelf met deze SPEC -> v11.
 - Jordi (17 nov): "het ligt aan je prompt,want hij maakt telkens hetzelfde". Prompt v6 (`gemini/PROMPT_v6.md`).

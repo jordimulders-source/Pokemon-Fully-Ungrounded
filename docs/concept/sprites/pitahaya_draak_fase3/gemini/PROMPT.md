@@ -117,3 +117,28 @@ Good. Keep the pose, the head, the tail with the dragon fruit club and the color
 
 Same Gen 3 sprite style, plain white background.
 ```
+
+---
+
+# Prompt v4 (17 nov): zelfde gesprek, reactie op r3 (`r3.png`)
+
+## Jordi (letterlijk)
+- "beter maar de bloem moet weg en de tong vraag ik me af hoe die naar sprite vertaalt"
+
+## Claude
+- Proef: r3 grof verkleind naar 64 px (`r3_proef64_8x.png`). De tong wordt een bleke streep van 1–2 px die met de tanden en het vruchtvlees in de bek samenvalt; nauwelijks leesbaar.
+- Variant A (bloem weg, tong blijft) en B (bloem en tong weg); Jordi kiest.
+
+A:
+```
+Better. Keep everything exactly as it is (pose, head, pink back, cactus ribs, tail with the dragon fruit club, colors). Change only one thing: remove the flower collar completely. The neck is green cactus stem like the rest of the body.
+Same Gen 3 sprite style, plain white background.
+```
+
+B:
+```
+Better. Keep everything exactly as it is (pose, head, pink back, cactus ribs, tail with the dragon fruit club, colors). Change only two things:
+1. Remove the flower collar completely. The neck is green cactus stem like the rest of the body.
+2. Remove the tongue. The mouth stays wide open with the white seeded dragon fruit flesh inside.
+Same Gen 3 sprite style, plain white background.
+```

@@ -2082,3 +2082,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Prompt v2 bijgewerkt: lijf groener (Jordi), plus alle vier ideeën van Claude (bloem als kraag/kam, driekantige rugplaten, luchtwortels, tong van meeldraden; Jordi: "laten we allemaal proberen").
 - r2 (`gemini/r2.png`): pose, staart en hoofd prima; bloemkraag, roze op de rug, cactusribben in het lijf, tong simpeler. Prompt v3 (zelfde gesprek).
 - r3 (`gemini/r3.png`): Jordi "beter maar de bloem moet weg"; tongproef op 64 px (`r3_proef64_8x.png`); prompt v4 A (tong blijft) / B (tong weg).
+- r4 (`gemini/r4a_tong.png`, `r4b_zonder_tong.png`): bloem weg. Jordi: "probeer maar met tong". Model bevroren (`pitahaya_draak_fase3/model/`), `SPEC.md`; sprite gestart.

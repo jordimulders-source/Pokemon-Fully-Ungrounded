@@ -46,3 +46,46 @@ AVOID
 - Not a realistic lizard with a fruit stuck on it: the dragon fruit is its skin.
 - No glossy 3D render, no plush or mascot style.
 ```
+
+---
+
+# Prompt v2 (17 nov): NIEUW gesprek, reactie op r1 (`r1.png`)
+
+## Jordi (letterlijk)
+- "beetje too much overdesigned, plus qua ontwerp vertaalt die niet lekker naar een sprite. Ik zou het nog vet vinden als we nog iets van een dragonfruit bloem erin verwerken en de staart een knots heeft als een dragonfruit"
+
+## Claude
+- Nieuw gesprek (GEMINI.md: bijsturen werkt slecht bij grote wijzigingen), r1 niet als bijlage.
+- Waarom r1 slecht vertaalt: ±2:1 breed (ondanks "fits in a square"), tientallen kleine schubflappen en vlekjes die op 64 px ruis worden.
+- Plek van de bloem: niet ingevuld, Gemini laten kiezen (Jordi zei alleen "erin verwerken").
+- Extra bijlage: foto van een pitahayabloem (groot, wit, nachtbloeiend).
+
+```
+Design an original Pokémon and draw it as an official Gen 3 front sprite (Ruby/Sapphire/Emerald style pixel art).
+
+CONCEPT
+- The final (third) stage of a pseudo-legendary dragon line based on the pink dragon fruit (pitahaya). The two attached sprites are stage 1 and stage 2 (a tegu lizard). Use them for the colors and materials; do not copy their body shapes.
+- Stage 3 is a Komodo dragon: heavy body, thick neck, long heavy head. It stands on its two hind legs but leans forward (body angled forward, not upright), the tail as counterweight.
+- Hot pink dragon fruit skin with green-tipped scale flaps on the head and back; legs are green cactus stem. Open mouth with white seeded dragon fruit flesh inside, like stage 2.
+- The tail ends in a club shaped like a whole dragon fruit (pink, with green-tipped scale flaps).
+- Somewhere in the design, a dragon fruit flower (the large white night-blooming pitahaya flower, see the attached photo).
+
+DESIGN: SIMPLE, MADE FOR A SPRITE
+- Few big, clear shapes, like official Gen 3 sprites (Salamence, Tyranitar, Flygon level of detail). Only a handful of large scale flaps, not dozens of small ones. No small spots, dots or texture on the skin.
+- Big, heavy and powerful, clearly a final stage, but not over-designed.
+- Colors: hot pink, green, white. Keep the palette limited.
+
+POSE AND COMPOSITION
+- Three-quarter view facing left, threatening.
+- It must fit in a SQUARE: about as tall as it is wide. The tail is short and thick, curled up beside or behind the body with the dragon fruit club raised; it does not stretch out sideways.
+
+STYLE AND FORMAT
+- 64x64 pixel sprite, the creature filling most of the canvas, max 16 colors, 1 px dark outline, light from top left, clean shading like official Game Freak Gen 3 sprites.
+- Plain white background. NO floor, shadow, base platform, leaves, fire, glow or effects. One single creature, no extra views.
+
+AVOID
+- No wings. Not a snake. Not standing straight up like a human or a kaiju.
+- Not Garchomp, Salamence, Tyranitar or Krookodile. Not a dinosaur (no T-rex). Not an Ankylosaurus.
+- Not a realistic lizard with a fruit stuck on it: the dragon fruit is its skin.
+- No glossy 3D render, no plush or mascot style.
+```

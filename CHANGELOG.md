@@ -2078,3 +2078,4 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 ### [v0.0.511] - Pitahaya-draak fase 3 (komododraak): Gemini-startprompt
 - Jordi (17 nov): "fase 3 van de dragonfruit draak. Komodo draak". Startprompt v1 in `docs/concept/sprites/pitahaya_draak_fase3/gemini/PROMPT.md` (op 2 poten, voorover leunend; pitahaya-schil en cactusrank op het lijf als keuze van Claude, schrappen mag).
 - Bijgewerkt na de merge met `main`: fase 2 (teju) is af; de prompt gaat nu uit van fase 1 én fase 2 als bijlagen.
+- r1 (`gemini/r1.png`): Jordi "beetje too much overdesigned [...] vertaalt die niet lekker naar een sprite"; wil een dragonfruitbloem en een dragonfruit-knots aan de staart. Prompt v2 (nieuw gesprek) in `PROMPT.md`.

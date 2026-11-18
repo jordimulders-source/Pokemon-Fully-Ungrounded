@@ -2093,3 +2093,8 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Jordi koos C (buik vruchtvlees) zonder tong; kritiek: geen lijn achterpoot/staart, te weinig contrast, rafels knots (uiteinde te groot, beenzijde verdwenen).
 - Sprite r7–r9 (`sprite_r7/`–`sprite_r9/`): groen palet donkerder en gespreid (L 60/96/137/199 + 37), licht/schaduw per vorm, lijn achterpoot/staart, nek/schouder, verre ledematen donkerder, rafels naar het model, banding en streepruis weg. Keurder: r8 FAIL (klein), r9 PASS.
 - **Af:** `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`; oude versies A/B/C in `af/oud_r6/`.
+
+### [v0.0.514] - Pitahaya-draak fase 3: knots, bek en schaduw bijgewerkt (r10–r14)
+- Jordi over r9: knots niet los van het been, bek slordig (1 pitje); r10: blad rechtsboven de knots omgedraaid naar het model, groene brug weg, verre achterbeen één tintstap onder de verre arm.
+- Bek: r11 varianten C/D/E (Jordi koos D: teju-opbouw, grijze bovenrij, pitjes als driehoek); r12 rechte lijn y30 weg in de bek, kaakonderrand met trapje (silhouet +1 px); r13 schaduw onderin de bek: F/G/H, G gekozen (ondertanden in de schaduw zoals het model). Buikpitjes onregelmatig (7).
+- Eindkeuring G: 7 px gerepareerd (r14). **Af:** `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`.

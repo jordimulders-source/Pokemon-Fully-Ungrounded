@@ -37,3 +37,7 @@
 - Jordi (18 nov) over r11: "d is het beste, maar deze rechte lijn die ik geel getekend heb aan sprites ziet er een beetje gek uit, in de mond kan dat onderdeel van het wit worden en buiten de mond kan die misschien iets minder rechtlijning worden" (screenshot `sprite_r11/jordi_feedback_D.png`; lijn = rij y30, x7–16)
 - Jordi (18 nov) over r12: "check bij de 5 pixels die ik gelijnd heb of de schaduwkleur nog klopt" (`sprite_r12/jordi_feedback_schaduw.png`; (8–10,30) grijs vlees, (8–9,31) ondertanden). Claude: grijs onderin vooraan is geen logische schaduw bij licht linksboven → r13 varianten.
 - Jordi (18 nov) over r13: "F is juist weer helemaal fout, welke vind jij het best consistent qua schaduw" → Claude: G (schaduw alleen onder de bovenkaak en achterin, ondertanden in schaduw van de onderlip zoals het model). G gaat naar de eindkeuring.
+
+## Af (18 nov), ronde 14
+- `af/pitahaya_draak_fase3.png` (+ `_8x`) = r14 = r13 G + 7 px van de eindkeuring (schaduw achterin de bek, banding staartlus, knots rechtsonder donkerst, rafels lichtkant). Vergelijking `af/af_vs_r9_8x.png`; r9 in `af/oud_r9/`.
+- Open (niet door Jordi genoemd na r12): rechte lijn onder de kaak buiten de bek (zwart (13–16,30) + grijze buikrand (17–22,30)).

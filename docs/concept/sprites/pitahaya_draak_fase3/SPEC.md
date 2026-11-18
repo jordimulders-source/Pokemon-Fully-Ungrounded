@@ -33,3 +33,4 @@
 ## Jordi (18 nov), reactie op r9
 - "hij is al iets beter, maar de knots staart vind ik nog niet perfect. Hij is nog niet genoeg los van het been, het is onduidelijk te zien of rechtsbovenin de staartknots of dat nou een rafel is of het been. De binnenkant van de mond is ook een beetje slordig met maar 1 zwarte pixel. Of we moeten iets bedenken hoe we daar 1 of 2 pixels kunnen toevoegen zodat het duidelijk vruchtvlees is, of we moeten de kleur aanpassen. Kloppen de schaduwen, lijnen en kleuren verder goed?"
 - → r10: knots los van het been (rechtsboven duidelijk rafel óf been); bek in twee varianten (A: 1–2 pitjes erbij, B: andere kleur binnenkant).
+- Jordi (18 nov) over r10: "de binnenkant van de mond is niet verbeterd, 2 stipjes onder elkaar geeft niet het juiste effect. Doe de stipjes op de buik ook onregelmatiger" → r11: bek in 3 varianten, buikpitjes onregelmatig.

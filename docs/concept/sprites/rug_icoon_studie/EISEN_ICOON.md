@@ -17,7 +17,7 @@ Jordi (18 nov): "het zou zonde zijn als je weer alles compleet anders gaat doen 
 7. Snorharen 1 px dun; geen strook van 2 px.
 8. Rond waar het dier rond is, punten puntig; poten als stompjes 2–3 px; buik naar verhouding kleiner ("enorme buik").
 9. Herkenningstekens groot: lange oren dicht bij elkaar, snuit naar linksonder, elektrisch motief op wang en nek getand geel, opgeheven voorpoot, ronde dij, staart.
-10. Wat goed is blijft staan (viscacha: de staart van v8, pixel voor pixel; stijl van v4).
+10. Wat goed is blijft staan (viscacha: de staart van v8, pixel voor pixel; stijl van v4). "niet koppig doen, niet opnieuw tekenen" (Jordi): alleen poetsen en benoemde punten repareren.
 11. Hoek: echt diagonaal zoals Rattata/Dedenne.
 12. Jordi ziet pas een af-versie (alleen echte keuzes eerder).
 

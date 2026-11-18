@@ -88,3 +88,4 @@ Gemini-bewerking r1 (`gemini_bewerk_chibi_r1.png`, gehalveerd `onderdelen/g1.png
 Jordi over a4: "het oog is prima, eevee is vgm ook maar 4 of 5 pixels oog". Oog van a4 bevroren.
 Jordi: "we gaan de goede kant op" · "rechteroor is wel een te rechte lijn" · "en let op witte vakjes" · "maar er is echte progressie". → a5: rechteroor rond, witte vakjes weg.
 Jordi: "linkerwangzak mag ook iets korter en rechter meer een < vorm, gebruik daar ook wiskunde voor, voor hoe groot het geel is tov de rest van het hoofd". Gemeten in de front: wangpluk 3,8% van de kop (4×5), kraag 9,9% (9×10, chevron). Doel icoon (kop ±50 px, kenmerk ×1,5): wang ±3 px, kraag ±7–8 px in <-vorm.
+Jordi over a6: "de snuit is nu juist weer te groot". (a6: snuit 5,0 binnen marge 4,3–5,9; dus naar de ondergrens).

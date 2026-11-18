@@ -1,0 +1,20 @@
+# pitahaya3_r12.png t.o.v. ../sprite_r11/pitahaya3_r11_D.png: stap | x | y | D -> r12 (tekens .#drpPgGhHwWkqQs)
+# totaal 6 px
+1 mond | 8 | 30 | d -> w
+1 mond | 9 | 30 | d -> w
+1 mond | 10 | 30 | # -> w
+1 mond | 9 | 31 | w -> W
+2 kaak | 12 | 31 | . -> #
+2 kaak | 12 | 30 | # -> d
+
+# pitahaya3_r12_alt.png t.o.v. ../sprite_r11/pitahaya3_r11_D.png: stap | x | y | D -> r12 (tekens .#drpPgGhHwWkqQs)
+# totaal 8 px
+1 mond | 8 | 30 | d -> w
+1 mond | 9 | 30 | d -> w
+1 mond | 10 | 30 | # -> w
+1 mond | 9 | 31 | w -> W
+2 kaak | 12 | 31 | . -> #
+2 kaak | 12 | 30 | # -> d
+2 kaak | 13 | 31 | . -> #
+2 kaak | 13 | 30 | # -> d
+

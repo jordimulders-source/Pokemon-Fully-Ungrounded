@@ -1,0 +1,335 @@
+# pitahaya3_r3_zonder_tong.png: elke pixel die afwijkt van r2 (../sprite_r2/pitahaya3_r2_zonder_tong.png), per stap: stap | x | y | r2 -> r3 (tekens: .#drpPgGhHwWoyYs)
+# totaal 329 px (een pixel kan in twee stappen voorkomen; telt dan eenmaal)
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 9 | 16 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 10 | 16 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 6 | 17 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 8 | 17 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 6 | 18 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 9 | 18 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 10 | 18 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 6 | 19 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 8 | 19 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 6 | 20 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 7 | 20 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 8 | 20 | P -> p
+kop: kroonhooglicht kleiner (alleen >=140 linksboven), rest middenroze | 9 | 20 | P -> p
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 3 | 22 | d -> #
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 4 | 22 | p -> r
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 5 | 22 | p -> r
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 6 | 22 | p -> r
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 7 | 22 | p -> d
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 11 | 22 | r -> d
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 3 | 23 | d -> #
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 4 | 23 | p -> P
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 5 | 23 | p -> P
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 6 | 23 | p -> P
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 7 | 23 | p -> r
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 8 | 23 | p -> d
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 9 | 23 | W -> #
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 10 | 23 | w -> W
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 2 | 24 | d -> #
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 3 | 24 | p -> P
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 4 | 24 | p -> P
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 7 | 24 | p -> r
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 8 | 24 | p -> r
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 1 | 25 | d -> #
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 2 | 25 | p -> P
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 7 | 25 | p -> r
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 5 | 26 | p -> r
+kop: vouw voorhoofd/snuit, snuitrug licht, snuitrand zwart, oog wit|pupil|wit onder zwarte wenkbrauw | 6 | 26 | p -> r
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 20 | 19 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 20 | 20 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 21 | 20 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 22 | 20 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 21 | 21 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 21 | 22 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 22 | 22 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 21 | 23 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 22 | 23 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 27 | 24 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 28 | 24 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 29 | 24 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 30 | 24 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 28 | 25 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 29 | 25 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 30 | 25 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 31 | 25 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 32 | 25 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 21 | 26 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 22 | 26 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 23 | 26 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 27 | 26 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 30 | 26 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 31 | 26 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 32 | 26 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 20 | 27 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 21 | 27 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 22 | 27 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 19 | 28 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 20 | 28 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 21 | 28 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 22 | 28 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 23 | 28 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 28 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 19 | 29 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 20 | 29 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 24 | 29 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 33 | 29 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 29 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 25 | 30 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 30 | 30 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 31 | 30 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 30 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 35 | 30 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 27 | 31 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 28 | 31 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 30 | 31 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 31 | 31 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 32 | 31 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 33 | 31 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 36 | 31 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 38 | 31 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 31 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 31 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 31 | 32 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 32 | 32 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 33 | 32 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 36 | 32 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 32 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 32 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 29 | 33 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 38 | 33 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 33 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 33 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 25 | 34 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 32 | 34 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 33 | 34 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 34 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 35 | 34 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 38 | 34 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 24 | 35 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 25 | 35 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 26 | 35 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 35 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 35 | 35 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 36 | 35 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 38 | 35 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 35 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 24 | 36 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 25 | 36 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 26 | 36 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 36 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 35 | 36 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 36 | 36 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 37 | 36 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 36 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 24 | 37 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 25 | 37 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 26 | 37 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 33 | 37 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 37 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 35 | 37 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 36 | 37 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 37 | 37 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 37 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 24 | 38 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 25 | 38 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 26 | 38 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 32 | 38 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 33 | 38 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 38 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 35 | 38 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 36 | 38 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 38 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 41 | 38 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 26 | 39 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 32 | 39 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 33 | 39 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 39 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 35 | 39 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 39 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 39 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 41 | 39 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 50 | 39 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 51 | 39 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 32 | 40 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 33 | 40 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 40 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 35 | 40 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 40 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 40 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 41 | 40 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 50 | 40 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 51 | 40 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 52 | 40 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 31 | 41 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 41 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 41 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 48 | 41 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 52 | 41 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 53 | 41 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 54 | 41 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 31 | 42 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 33 | 42 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 42 | 42 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 43 | 42 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 44 | 42 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 47 | 42 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 48 | 42 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 49 | 42 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 43 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 43 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 47 | 43 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 48 | 43 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 44 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 44 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 50 | 44 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 57 | 44 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 45 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 45 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 41 | 45 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 48 | 45 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 50 | 45 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 52 | 45 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 58 | 45 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 20 | 46 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 21 | 46 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 46 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 41 | 46 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 50 | 46 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 58 | 46 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 27 | 47 | H -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 47 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 42 | 47 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 45 | 47 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 50 | 47 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 53 | 47 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 54 | 47 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 27 | 48 | H -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 48 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 54 | 48 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 55 | 48 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 60 | 48 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 49 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 41 | 49 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 54 | 49 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 55 | 49 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 60 | 49 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 22 | 50 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 43 | 50 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 44 | 50 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 45 | 50 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 54 | 50 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 55 | 50 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 60 | 50 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 22 | 51 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 54 | 51 | G -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 53 | 52 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 54 | 52 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 53 | 53 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 54 | 53 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 44 | 54 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 45 | 54 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 50 | 54 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 55 | 54 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 44 | 55 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 45 | 55 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 48 | 55 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 49 | 55 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 50 | 55 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 54 | 55 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 55 | 55 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 56 | 55 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 57 | 55 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 29 | 56 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 49 | 56 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 55 | 56 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 28 | 57 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 29 | 57 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 30 | 57 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 31 | 57 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 32 | 57 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 45 | 57 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 48 | 57 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 52 | 57 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 28 | 58 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 29 | 58 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 30 | 58 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 33 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 34 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 35 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 36 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 37 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 38 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 40 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 41 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 42 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 43 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 44 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 45 | 58 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 47 | 58 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 48 | 58 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 49 | 58 | H -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 42 | 59 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 43 | 59 | h -> H
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 39 | 60 | h -> G
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 49 | 60 | G -> h
+lijf: volume-toonkaart G/h/H (35/47/18 %), clusters < 3 px weg | 50 | 60 | G -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 31 | 15 | g -> .
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 29 | 16 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 30 | 16 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 37 | 16 | g -> .
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 36 | 17 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 42 | 20 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 43 | 20 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 40 | 21 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 41 | 21 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 44 | 25 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 45 | 25 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 46 | 25 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 47 | 30 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 48 | 30 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 48 | 31 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 49 | 34 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 50 | 34 | g -> h
+rugstekels: lichte bovenkant, donkere punt en onderrand (6 doorns) | 51 | 34 | g -> h
+bek zonder tong: onderste hoektand (6,30) wit | 6 | 30 | # -> W
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 28 | 43 | g -> G
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 29 | 43 | G -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 30 | 43 | G -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 31 | 43 | h -> H
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 32 | 43 | h -> H
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 33 | 43 | G -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 34 | 43 | G -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 29 | 44 | G -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 30 | 44 | G -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 31 | 44 | h -> H
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 33 | 44 | G -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 28 | 45 | g -> G
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 30 | 45 | G -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 32 | 45 | g -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 33 | 45 | G -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 28 | 46 | g -> G
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 29 | 46 | g -> G
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 30 | 46 | G -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 31 | 46 | G -> H
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 32 | 46 | G -> g
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 33 | 46 | g -> h
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 34 | 46 | g -> H
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 28 | 47 | H -> g
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 30 | 47 | H -> #
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 31 | 47 | g -> H
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 32 | 47 | H -> #
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 33 | 47 | H -> g
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 34 | 47 | g -> H
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 35 | 47 | H -> #
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 28 | 48 | H -> g
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 29 | 48 | g -> #
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 30 | 48 | g -> #
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 31 | 48 | g -> H
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 32 | 48 | G -> #
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 33 | 48 | G -> g
+nabije hand: handrug als vlak, 2 klauwen als losse punten | 35 | 48 | H -> #
+opruimen: dambord kroon, losse H | 9 | 18 | p -> P
+opruimen: dambord kroon, losse H | 20 | 46 | H -> h

@@ -1,0 +1,315 @@
+# pitahaya3_r4_zonder_tong.png: elke pixel die afwijkt van r3 (../sprite_r3/pitahaya3_r3_zonder_tong.png): stap | x | y | r3 -> r4 (tekens: .#drpPgGhHwWoyYs)
+# totaal 306 px
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 8 | 25 | # -> d
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 9 | 25 | # -> d
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 10 | 25 | # -> d
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 11 | 25 | # -> d
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 12 | 25 | # -> d
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 8 | 26 | # -> W
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 9 | 26 | w -> W
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 10 | 26 | w -> W
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 11 | 26 | w -> W
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 10 | 27 | w -> W
+bek: bovenlip dunne donkerroze lijn i.p.v. zwarte balk, vruchtvlees helder wit | 11 | 27 | w -> W
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 11 | 13 | g -> .
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 12 | 13 | g -> h
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 13 | 13 | g -> h
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 10 | 14 | g -> .
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 12 | 15 | h -> g
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 18 | 15 | g -> h
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 5 | 16 | g -> h
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 15 | 16 | g -> p
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 16 | 16 | g -> p
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 17 | 16 | g -> h
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 4 | 17 | g -> h
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 5 | 17 | h -> g
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 4 | 18 | g -> h
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 5 | 18 | h -> g
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 11 | 18 | h -> p
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 12 | 18 | h -> g
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 18 | 18 | h -> g
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 3 | 19 | g -> h
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 4 | 19 | h -> g
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 9 | 19 | h -> p
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 12 | 19 | h -> g
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 11 | 20 | h -> g
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 18 | 21 | h -> g
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 18 | 22 | h -> g
+kopschubben: hoorns en bladen als punten met lichte kant en donkere rand/punt | 17 | 23 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 22 | 21 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 21 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 21 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 22 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 22 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 22 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 26 | 23 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 27 | 23 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 24 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 26 | 25 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 27 | 25 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 26 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 30 | 26 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 31 | 26 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 32 | 26 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 20 | 27 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 20 | 28 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 21 | 28 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 19 | 29 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 21 | 29 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 22 | 29 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 29 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 20 | 30 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 21 | 30 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 22 | 30 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 30 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 34 | 30 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 35 | 30 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 38 | 30 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 30 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 21 | 31 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 22 | 31 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 31 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 41 | 31 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 20 | 32 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 22 | 32 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 32 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 32 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 28 | 32 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 32 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 38 | 32 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 33 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 33 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 28 | 33 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 41 | 33 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 22 | 34 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 34 | h -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 29 | 34 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 34 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 40 | 34 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 41 | 34 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 42 | 34 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 35 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 35 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 35 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 29 | 35 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 30 | 35 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 31 | 35 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 35 | 35 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 36 | 35 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 35 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 40 | 35 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 42 | 35 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 35 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 35 | h -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 36 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 36 | h -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 36 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 27 | 36 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 29 | 36 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 30 | 36 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 31 | 36 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 32 | 36 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 33 | 36 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 34 | 36 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 35 | 36 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 36 | 36 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 36 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 36 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 40 | 36 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 36 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 36 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 45 | 36 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 37 | h -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 37 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 26 | 37 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 27 | 37 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 29 | 37 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 33 | 37 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 34 | 37 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 35 | 37 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 36 | 37 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 37 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 37 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 40 | 37 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 45 | 37 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 46 | 37 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 47 | 37 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 38 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 38 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 26 | 38 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 27 | 38 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 29 | 38 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 32 | 38 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 33 | 38 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 34 | 38 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 35 | 38 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 36 | 38 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 38 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 38 | 38 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 38 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 40 | 38 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 48 | 38 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 49 | 38 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 26 | 39 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 27 | 39 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 29 | 39 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 32 | 39 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 33 | 39 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 34 | 39 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 35 | 39 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 36 | 39 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 39 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 38 | 39 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 49 | 39 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 50 | 39 | H -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 51 | 39 | H -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 52 | 39 | H -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 40 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 31 | 40 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 32 | 40 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 33 | 40 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 34 | 40 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 36 | 40 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 40 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 38 | 40 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 40 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 50 | 40 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 51 | 40 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 52 | 40 | H -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 53 | 40 | H -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 54 | 40 | H -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 27 | 41 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 31 | 41 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 41 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 38 | 41 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 41 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 41 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 48 | 41 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 52 | 41 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 53 | 41 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 54 | 41 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 55 | 41 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 56 | 41 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 27 | 42 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 28 | 42 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 31 | 42 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 33 | 42 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 36 | 42 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 42 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 49 | 42 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 57 | 42 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 22 | 43 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 43 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 43 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 40 | 43 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 42 | 43 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 43 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 43 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 55 | 43 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 22 | 44 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 44 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 44 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 44 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 40 | 44 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 41 | 44 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 42 | 44 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 44 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 44 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 45 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 45 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 45 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 40 | 45 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 42 | 45 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 45 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 45 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 45 | 45 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 51 | 45 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 52 | 45 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 20 | 46 | h -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 46 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 46 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 42 | 46 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 46 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 46 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 45 | 46 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 53 | 46 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 47 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 47 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 25 | 47 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 47 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 47 | H -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 47 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 54 | 47 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 48 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 48 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 48 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 48 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 52 | 48 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 53 | 48 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 54 | 48 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 24 | 49 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 36 | 49 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 37 | 49 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 38 | 49 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 49 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 49 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 53 | 49 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 54 | 49 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 23 | 50 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 41 | 50 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 42 | 50 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 50 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 46 | 50 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 53 | 50 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 54 | 50 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 51 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 47 | 51 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 53 | 51 | g -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 54 | 51 | H -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 45 | 52 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 47 | 52 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 45 | 53 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 47 | 53 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 48 | 53 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 45 | 54 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 48 | 54 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 58 | 54 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 55 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 45 | 55 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 48 | 55 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 50 | 55 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 51 | 55 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 52 | 55 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 55 | 55 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 56 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 56 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 48 | 56 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 49 | 56 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 50 | 56 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 51 | 56 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 52 | 56 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 53 | 56 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 56 | 56 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 42 | 57 | g -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 57 | g -> H
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 57 | g -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 45 | 57 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 49 | 57 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 50 | 57 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 51 | 57 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 57 | 57 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 44 | 58 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 45 | 58 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 55 | 58 | g -> G
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 33 | 59 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 42 | 59 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 43 | 59 | H -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 38 | 60 | G -> h
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 39 | 60 | G -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 49 | 60 | h -> g
+lijf: middengroen, licht langs boven/links, ribben als 1 px lijnen uit het model | 50 | 60 | h -> g
+opruimen: losse groentonen naar buurmeerderheid | 24 | 32 | h -> G
+opruimen: losse groentonen naar buurmeerderheid | 25 | 38 | H -> G
+opruimen: losse groentonen naar buurmeerderheid | 53 | 39 | H -> g
+opruimen: losse groentonen naar buurmeerderheid | 57 | 42 | h -> g
+opruimen: losse groentonen naar buurmeerderheid | 20 | 46 | H -> h

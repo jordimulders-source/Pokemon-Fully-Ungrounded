@@ -1,0 +1,182 @@
+# pitahaya3_r5_zonder_tong.png: elke pixel die afwijkt van r4 (../sprite_r4/pitahaya3_r4_zonder_tong.png): stap | x | y | r4 -> r5 (tekens: .#drpPgGhHwWoyYs)
+# totaal 180 px
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 42 | 21 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 26 | 24 | H -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 27 | 24 | H -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 34 | 28 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 33 | 29 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 19 | 30 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 24 | 30 | h -> g
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 35 | 30 | h -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 19 | 31 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 20 | 31 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 23 | 31 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 28 | 31 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 37 | 31 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 20 | 32 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 21 | 32 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 23 | 32 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 36 | 32 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 41 | 32 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 22 | 33 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 23 | 33 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 24 | 33 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 23 | 34 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 24 | 35 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 25 | 35 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 25 | 36 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 25 | 37 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 26 | 37 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 26 | 38 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 26 | 39 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 49 | 39 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 26 | 40 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 52 | 40 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 53 | 40 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 26 | 41 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 47 | 42 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 48 | 42 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 47 | 43 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 22 | 45 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 47 | 45 | h -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 22 | 46 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 25 | 46 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 47 | 46 | h -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 51 | 46 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 52 | 46 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 22 | 47 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 24 | 47 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 25 | 47 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 54 | 47 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 22 | 48 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 24 | 48 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 54 | 48 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 59 | 48 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 22 | 49 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 23 | 49 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 24 | 49 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 54 | 49 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 59 | 49 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 22 | 50 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 54 | 50 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 59 | 50 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 43 | 51 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 54 | 51 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 59 | 51 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 59 | 53 | G -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 15 | 54 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 16 | 54 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 58 | 54 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 58 | 55 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 57 | 56 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 58 | 56 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 55 | 57 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 56 | 57 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 57 | 57 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 53 | 58 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 54 | 58 | g -> G
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 51 | 59 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 52 | 59 | g -> h
+lijf: ribben alleen lange modellijnen (>=6 px), schaduwvlekken samengevoegd | 53 | 59 | g -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 28 | 34 | G -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 29 | 35 | G -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 30 | 35 | G -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 31 | 35 | G -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 36 | 35 | h -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 37 | 35 | h -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 38 | 35 | G -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 39 | 35 | h -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 32 | 36 | G -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 33 | 36 | h -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 34 | 36 | h -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 35 | 36 | h -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 37 | 36 | g -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 38 | 36 | G -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 39 | 36 | h -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 32 | 37 | G -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 33 | 37 | h -> H
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 37 | 37 | g -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 39 | 37 | h -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 40 | 37 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 32 | 38 | h -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 33 | 38 | h -> H
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 36 | 38 | g -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 37 | 38 | g -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 38 | 38 | G -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 39 | 38 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 40 | 38 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 31 | 39 | G -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 32 | 39 | h -> H
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 36 | 39 | g -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 37 | 39 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 38 | 39 | h -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 39 | 39 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 40 | 39 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 31 | 40 | h -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 32 | 40 | h -> H
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 35 | 40 | G -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 36 | 40 | g -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 37 | 40 | h -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 38 | 40 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 39 | 40 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 30 | 41 | G -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 31 | 41 | h -> H
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 34 | 41 | G -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 36 | 41 | G -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 37 | 41 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 38 | 41 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 39 | 41 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 30 | 42 | G -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 31 | 42 | h -> H
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 34 | 42 | G -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 36 | 42 | h -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 37 | 42 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 29 | 43 | h -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 30 | 43 | h -> H
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 31 | 43 | H -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 32 | 43 | H -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 34 | 43 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 35 | 43 | G -> #
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 29 | 44 | h -> g
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 31 | 44 | H -> h
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 34 | 44 | h -> G
+nabije arm: elleboog-/bovenarmcontour, lichte onderarm, voor- en achterrand | 35 | 44 | G -> #
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 29 | 45 | G -> #
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 30 | 45 | h -> g
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 31 | 45 | h -> G
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 32 | 45 | h -> g
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 33 | 45 | h -> G
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 34 | 45 | h -> g
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 35 | 45 | G -> #
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 29 | 46 | G -> #
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 30 | 46 | h -> g
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 31 | 46 | H -> G
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 33 | 46 | h -> G
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 34 | 46 | H -> h
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 35 | 46 | G -> #
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 29 | 47 | g -> #
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 30 | 47 | # -> h
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 31 | 47 | H -> G
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 32 | 47 | # -> h
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 33 | 47 | g -> G
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 34 | 47 | H -> G
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 31 | 48 | H -> #
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 33 | 48 | g -> G
+nabije hand: 3 hangende klauwen donkergroen met lichte punt | 34 | 48 | H -> G
+dijvoorrand doorgetrokken tot y40: donkergroen, zwart onderaan | 40 | 40 | h -> g
+dijvoorrand doorgetrokken tot y40: donkergroen, zwart onderaan | 40 | 41 | h -> g
+dijvoorrand doorgetrokken tot y40: donkergroen, zwart onderaan | 39 | 42 | G -> g
+dijvoorrand doorgetrokken tot y40: donkergroen, zwart onderaan | 39 | 43 | h -> g
+dijvoorrand doorgetrokken tot y40: donkergroen, zwart onderaan | 38 | 44 | G -> g
+dijvoorrand doorgetrokken tot y40: donkergroen, zwart onderaan | 38 | 45 | G -> g
+keel: 1 px zwart aan de buitenrand, binnenste zwart naar donker-/middengroen | 16 | 29 | # -> d
+keel: 1 px zwart aan de buitenrand, binnenste zwart naar donker-/middengroen | 18 | 29 | # -> g
+keel: 1 px zwart aan de buitenrand, binnenste zwart naar donker-/middengroen | 17 | 31 | # -> g
+keel: 1 px zwart aan de buitenrand, binnenste zwart naar donker-/middengroen | 18 | 32 | # -> g
+keel: 1 px zwart aan de buitenrand, binnenste zwart naar donker-/middengroen | 18 | 33 | # -> g
+keel: 1 px zwart aan de buitenrand, binnenste zwart naar donker-/middengroen | 19 | 33 | # -> g
+verre hand: klauwen donkergroen/middentint | 10 | 44 | H -> g
+verre hand: klauwen donkergroen/middentint | 12 | 44 | H -> G
+kop: losse lichte pixels (2,25) en (19,25) | 2 | 25 | P -> p
+kop: losse lichte pixels (2,25) en (19,25) | 19 | 25 | h -> d
+opruimen: losse toonpixel (48,43) | 48 | 43 | G -> h

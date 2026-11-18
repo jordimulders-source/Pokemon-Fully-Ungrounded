@@ -2075,14 +2075,114 @@ De changelog van Pokémon Ungrounded staat in `docs/ungrounded/CHANGELOG_UNGROUN
 - Sprite r1–r9 in `mate_fase2/sprite/`: natief raster verkleind door schrappen (hals 2 kolommen, yerba-vak 2, naden in romp/water), achtersteven heel, rechterrand op één boog die achter het zeefje aansluit (Jordi koos B → zacht → A); keurder PASS en Dragonfly Cave-eindkeuring, 11 px reparaties.
 - Op het overzichtsvel (`showcase/frontsprites_af.png`). De mate-lijn is af. Lessen in `docs/lessen/GEMINI.md`.
 
-### [v0.0.511] - Studie rugsprites, iconen en overworldsprites
+### [v0.0.511] - Banette-evolutie: idee vastgelegd
+- Jordi's idee voor de Banette-evolutie (Ghost/Dark, puppetmaster met twee mini-Shuppets) letterlijk vastgelegd in `docs/concept/sprites/banette_evo/SPEC.md` en `IDEEEN.md`; eerst overleggen, daarna de Gemini-prompt.
+
+### [v0.0.512] - Banette-evolutie: antwoorden en Gemini-prompt v1
+- Jordi's antwoorden (draden, kledingstuk, beentjes, zigzagmond, houding) letterlijk in `banette_evo/SPEC.md`; prompt `banette_evo/gemini/PROMPT_v1.md` met Banette- en Shuppet-sprite als bijlage. Kleur nog open.
+
+### [v0.0.513] - Banette-evolutie: Gemini r1 en prompt v2
+- r1 bewaard (`banette_evo/gemini/r1/`), Jordi's feedback letterlijk in SPEC; prompt v2 (groter, jas = Banettes oude lijf, twee hoofdaanhangsels, wat donkerder, 64×64 vullen).
+
+### [v0.0.514] - Banette-evolutie: Gemini r2 en prompt v3
+- r2 bewaard, feedback letterlijk in SPEC; prompt v3 (narrenmutspunten, imposanter/sinisterder, lijf sluit aan op de rits, grotere Shuppets, kruizen groeien uit de armen).
+
+### [v0.0.515] - Banette-evolutie: Gemini r3 en prompt v4
+- r3 bewaard ("nog slechter"); prompt v4 zonder Banette-bijlage en Banette-naam (Gemini kopieerde steeds Banettes hoofd), kledingstuk en ogen in woorden.
+
+### [v0.0.516] - Banette-evolutie: Gemini r4 en prompt v5 (stap 1)
+- r4 bewaard (ook zonder bijlagen weer Banette); v5 in stappen: eerst alleen de puppetmaster zelf, daarna kledingstuk, daarna Shuppets. Les in `GEMINI.md`.
+
+### [v0.0.517] - Banette-evolutie: Gemini r5
+- r5 bewaard ("echt bizar slecht"); werkwijze voorgelegd aan Jordi.
+- Prompt v6: begint bij de figuur (kwaadaardige nar die aan de touwtjes trekt), silhouet en gedrag; eerst artwork. Les in `GEMINI.md`.
+- r6 bewaard (eerste ronde zonder Banette-hoofd); prompt v7 = v6 met een groot, breed silhouet ("imposant is niet mager, imposant is groot, breed").
+- Jordi: "waardeloos ontwerp weer". Voorstel v8: terug naar r2 en per bericht één wijziging (`gemini/PROMPT_v8_vanaf_r2.md`); v7 in de wacht.
+- Referentie Shuppeteer (fan-fakemon) van Jordi; prompt v9 met Shuppeteer als maat ("nog groter en imposanter") en alle besluiten uit SPEC.
+- r7 bewaard ("iets beter"); les: geen Sugimori-artwork als tussenstap.
+- Jordi: "nog steeds teveel banette"; prompt v10 = r7 als bijlage, hoofd minder Banette + Gen 3-sprite.
+- r7 per besluit tegen de SPEC afgevinkt; prompt v11 (lijf = gladde geest, kledingstuk = Banettes oude lijf, kruizen zijn de handen, tanden in hoofdkleur, van bovenaf, Gen 3-sprite). Les in `GEMINI.md`.
+- r8 bewaard en afgevinkt (lijf, kledingstuk, kruizen, tanden goed; hoofd en imposant fout); prompt v12 met r8 + hoofdvorm van r7 als bijlagen.
+- r9 bewaard ("manmanman": bodybuilder, derde arm, hoofd-bijlage genegeerd); werkwijze voorgelegd.
+- Vormschets (`gemini/bijlage_vormschets.png`) en prompt v13 in twee varianten: A met vormschets, B met Shuppeteer als voorbeeld.
+- r10 (A en B) bewaard: allebei slecht; Gemini haalt dit concept niet. Werkwijze voorgelegd, les in `GEMINI.md`.
+
+### [v0.0.518] - Banette-evolutie: asset voor asset
+- Main (mate fase 2, pitahaya fase 2) in de branch gemerged; Banette-changelogsecties hernummerd naar v0.0.511–517.
+- Plan asset voor asset zonder Banette-referenties (`banette_evo/gemini/assets/PLAN.md`), prompt asset 1 (hoofd).
+- Hoofd r1 weer Banette/Gengar (r7-bijlage was zelf een Banette-hoofd); hoofdprompt v2 zonder bijlage en zonder "ghost", narrenmuts in woorden.
+- Hoofd r2 (twee punten, maar bal + grijns leest als Banette); hoofdprompt v3: lang narrengezicht met puntige kin, stoffen punten.
+- Hoofdprompt v4: alle mogelijke Banette-verwijzingen weg (kleur, rode ogen, "puppet"), expliciet "do not draw Banette".
+- Hoofd r3: mond goed ("eindelijk"), punten werden duivelshoorns; hoofdprompt v5 met r3 als bijlage, alleen de punten naar slappe narrenmutsstof.
+- Hoofd r4: vorm beter, moet meer nar; hoofdprompt v6 met r4 als bijlage: belletjes aan de punten.
+- Hoofd r5 (belletjes; "moet meer een jester vorm worden"); hoofdprompt v7: hele bovenkant wordt de narrenmuts met band boven de ogen, brede punten omhoog en omgeslagen.
+- Hoofd r6: mond goed, muts is een accessoire; hoofdprompt v8: muts wordt deel van het hoofd (geen rand, punten groeien uit het hoofd, twee kleuren blijven).
+- Hoofd r7: vorm goed (kleuren later); prompt voor de rest van het lijf op dit hoofd (`gemini/assets/PROMPT_2_lijf_v1.md`).
+- Lijf r1 (dik, pak en handen fout); prompt lijf v2: groot zoals Dusknoir/Grimmsnarl, niet dik/gespierd, half uit het poppenpak gestapt, kruishanden als +.
+- Lijf r2 "beter gelukt"; Jordi pauzeert en herevalueert het ontwerp. Stand in SPEC en CLAUDE.md.
+- Jordi herevalueerde: lijf grotendeels weg, alleen hoofd en armen, Spiritomb-mond, Shuppeteer als hoofdreferentie; prompt `PROMPT_3_hoofd_armen.md`.
+- Hoofd + armen r1: "kijk nu komen we ergens"; prompt v2: alleen het hoofd groter.
+- Gemini vergrootte het hoofd niet; Claude vergrootte het zelf in het model, 4 vormen (`hoofdarmen_groter/vormen.png`: 1,4×, 1,6×, 1,6× lager, 1,8×).
+- Jordi koos D (1,8×); prompt om het ontwerp met Gemini op te poetsen (`PROMPT_4_oppoetsen.md`).
+- Gemini-oppoetsronde niet goed; D opnieuw zonder meegeknipt armstuk en met de armen 0/60/110 px lager (`hoofdarmen_D2/vormen_D2.png`).
+- D2 afgekeurd ("dit kan je niet"); prompt `PROMPT_5_armen.md`: D als bijlage, los grijs stuk weg en armen lager uit de zijkanten van het hoofd. Les in `GEMINI.md`.
+- Armen-ronde: Gemini veranderde bijna niets ("zucht"). Prompt hoofd + armen v3: de startprompt van r1 met een enorm hoofd en armen uit de zijkanten in de tekst.
+- Jordi: "hij mag best de hele sprite redrawen"; prompt `PROMPT_6_redraw.md` (D als ontwerpreferentie, alles opnieuw tekenen, armen uit de zijkanten).
+- Redraw-ronde: Gemini kopieert D weer bijna 1-op-1 ("hij doet het weer niet goed"). Volgende: hoofd + armen v3 zonder D (alleen Shuppeteer).
+- Hoofd + armen v3: weer bijna D (Gemini hield het vorige gesprek/beeld vast); Jordi heeft een ander idee.
+- Hoofd langs Jordi's gele lijn geknipt en 1,5/1,65/1,8× geschaald, armen los van de kruizen en aan de zijkant van het hoofd gezet (`gemini/assets/knip/knip.py`); model = 1,8× (`banette_evo/model/model.png`). Sprite wordt gebouwd.
+- Naam Banette-evolutie: **Shuppetto** (Jordi). In SPEC, POKEMON.md (Werknamen) en CLAUDE.md.
+
+### [v0.0.519] - Shuppetto (Banette-evolutie): frontsprite af
+- Sprite naar het model (Gemini hoofd + armen, hoofd 1,8× langs Jordi's gele lijn) in 14 rondes: makers r1–r10, keurders per ronde, Dragonfly Cave-eindkeuring (r12), slotcontrole r14 PASS. Pixelreparaties r11–r14 door Claude uit de keuringen.
+- `docs/concept/sprites/banette_evo/af/shuppetto.png` (+ `_8x.png`, `_vel.png` naast het model); op het overzichtsvel. SPEC, CLAUDE.md (46 frontsprites) en een les in `GEMINI.md` bijgewerkt.
+
+### [v0.0.520] - Shuppetto: punten van Jordi verwerkt (r15–r18)
+- Linkeroor gebogen met schaduw, linker-Shuppet 2 px lager (ruimte onder de bel), mutsrand als bolle boog over het linkerkruis, losse pixels (7,24), (8,24), (9,25). Eindkeuring r18 PASS; `banette_evo/af/` en het overzichtsvel bijgewerkt. Les in `GEMINI.md` (screenshot van Jordi registreren).
+
+### [v0.0.521] - Pitahaya-draak fase 3 (komododraak): Gemini-startprompt
+- Jordi (17 nov): "fase 3 van de dragonfruit draak. Komodo draak". Startprompt v1 in `docs/concept/sprites/pitahaya_draak_fase3/gemini/PROMPT.md` (op 2 poten, voorover leunend; pitahaya-schil en cactusrank op het lijf als keuze van Claude, schrappen mag).
+- Bijgewerkt na de merge met `main`: fase 2 (teju) is af; de prompt gaat nu uit van fase 1 én fase 2 als bijlagen.
+- r1 (`gemini/r1.png`): Jordi "beetje too much overdesigned [...] vertaalt die niet lekker naar een sprite"; wil een dragonfruitbloem en een dragonfruit-knots aan de staart. Prompt v2 (nieuw gesprek) in `PROMPT.md`.
+- Prompt v2 bijgewerkt: lijf groener (Jordi), plus alle vier ideeën van Claude (bloem als kraag/kam, driekantige rugplaten, luchtwortels, tong van meeldraden; Jordi: "laten we allemaal proberen").
+- r2 (`gemini/r2.png`): pose, staart en hoofd prima; bloemkraag, roze op de rug, cactusribben in het lijf, tong simpeler. Prompt v3 (zelfde gesprek).
+- r3 (`gemini/r3.png`): Jordi "beter maar de bloem moet weg"; tongproef op 64 px (`r3_proef64_8x.png`); prompt v4 A (tong blijft) / B (tong weg).
+- r4 (`gemini/r4a_tong.png`, `r4b_zonder_tong.png`): bloem weg. Jordi: "probeer maar met tong". Model bevroren (`pitahaya_draak_fase3/model/`), `SPEC.md`; sprite gestart.
+
+### [v0.0.522] - Pitahaya-draak fase 3 (komododraak): frontsprite af, drie versies
+- Model: Gemini r4 (prompts v1–v4 in `pitahaya_draak_fase3/gemini/PROMPT.md`: minder druk, groener lijf, roze rug, cactusribben, dragonfruit-knots aan de staart; bloem weer weg; tong geprobeerd).
+- Sprite r1–r6 (`sprite_r*/`): model overgenomen (natief raster, niet-gehele reductie 3,66× naar 62 px, lijnen uit het modelskelet), palet van de teju; keurder na r4 (arm en keel), keurder + Dragonfly Cave na r5.
+- **Af:** `pitahaya_draak_fase3/af/` in drie versies: A met tong, B zonder tong, C buik in vruchtvlees wit met zwarte pitjes (Jordi). Overzicht `af/keuze_8x.png`. Keuze en naam open.
+
+### [v0.0.523] - Pitahaya-draak fase 3: buikversie zonder tong af
+- Jordi koos C (buik vruchtvlees) zonder tong; kritiek: geen lijn achterpoot/staart, te weinig contrast, rafels knots (uiteinde te groot, beenzijde verdwenen).
+- Sprite r7–r9 (`sprite_r7/`–`sprite_r9/`): groen palet donkerder en gespreid (L 60/96/137/199 + 37), licht/schaduw per vorm, lijn achterpoot/staart, nek/schouder, verre ledematen donkerder, rafels naar het model, banding en streepruis weg. Keurder: r8 FAIL (klein), r9 PASS.
+- **Af:** `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`; oude versies A/B/C in `af/oud_r6/`.
+
+### [v0.0.524] - Pitahaya-draak fase 3: knots, bek en schaduw bijgewerkt (r10–r14)
+- Jordi over r9: knots niet los van het been, bek slordig (1 pitje); r10: blad rechtsboven de knots omgedraaid naar het model, groene brug weg, verre achterbeen één tintstap onder de verre arm.
+- Bek: r11 varianten C/D/E (Jordi koos D: teju-opbouw, grijze bovenrij, pitjes als driehoek); r12 rechte lijn y30 weg in de bek, kaakonderrand met trapje (silhouet +1 px); r13 schaduw onderin de bek: F/G/H, G gekozen (ondertanden in de schaduw zoals het model). Buikpitjes onregelmatig (7).
+- Eindkeuring G: 7 px gerepareerd (r14). **Af:** `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`.
+
+### [v0.0.525] - Pitahaya-draak fase 3: definitief af
+- Jordi: "de stippen op de buik waren eerst beter, kopieer de buik van eerder en dan is die klaar". r15 = r14 met de buikpitjes van r10 terug (17 px gekopieerd, verder pixelgelijk). `pitahaya_draak_fase3/af/pitahaya_draak_fase3.png`.
+
+### [v0.0.526] - Studie rugsprites, iconen en overworldsprites
 - `docs/concept/sprites/rug_icoon_studie/STUDIE.md`: 962 soorten (Gen 1–9, in-game set) en 385 originele GBA-sprites gemeten. Rug ±1,16× zo breed als de front en even hoog, onderkant vlak afgesneden (`backPicYOffset` = lege rijen eronder), zelfde palet; icoon ±0,44× de fronthoogte, onderkant y 29, frame 2 meestal bovenkant 1 px lager; overworld ±0,43× (HGSS-stijl, voor/achter/opzij, 32×32, alleen in de ROM als de soort in de wereld staat; volgers staan uit). Tabel per fronthoogte, want kleine soorten krijgen relatief grote ruggen en iconen.
 - Bevindingen: de rug is een nieuw aanzicht (kop in profiel over de schouder, ingezoomd), het icoon een mini-ontwerp (grote kop, eigen eenvoudige pose, één kenmerk groot), geen verkleining.
 - Voorgestelde werkwijze (rug via Gemini-rugmodel + Jordi kiest + overnemen in het frontpalet; iconen in batches met script-onderlaag en handwerk; overworld pas als nodig) en open vragen (volgers, icoonpose, proef viscacha + Gengas).
 - Vellen `1_vel_ingame.png`, `2_vel_gba.png`, `3_icoon_vs_verkleining.png` en scripts `vel.py`, `naief.py`, `meet_*.py`.
 
-### [v0.0.512] - Rug/icoon: antwoorden Jordi en voorbereiding proef
+### [v0.0.527] - Rug/icoon: antwoorden Jordi en voorbereiding proef
 - Antwoorden Jordi in `rug_icoon_studie/STUDIE.md` §6: volgers voorlopig niet, wel Pokémon in de overworld die alle kanten op kijken; iconen mogen een eigen pose hebben zoals bij Game Freak.
 - Gemini-rugprompts klaar: `viscacha/rug/PROMPT_RUG.md` (voorbeeld Raticate-rug) en `gengas/rug/PROMPT_RUG.md` (voorbeeld Gengar-rug); nog niet gebruikt.
 - `rug_icoon_studie/icon_onderlaag.py` (onderlaag voor iconen, nooit eindresultaat); `vel.py` toont iconen nu in hun echte icoonpalet. Correctie: icoonpaletten 3–5 worden door een paar tientallen soorten gebruikt.
+
+### [v0.0.528] - Proef rug en icoon met de viscacha; eisenlijst iconen
+- **Viscacha-rug af** (`docs/concept/sprites/viscacha/rug/af/rug.png`, backPicYOffset 13): Gemini-rug zonder voorbeeldbijlage (Jordi's poging), 1-op-1 verkleind (16-px raster), A gekozen boven B ("b lijkt opgeblazen"), oog 4 gekozen, selout aan de lichtkant na keuring; keurder PASS. Jordi: "backsprites lukken iig, dat is geslaagd". Verloop in `viscacha/rug/PROMPT_RUG.md`.
+- **Viscacha-icoon in de maak** (`viscacha/icoon/maker/`, v1–v4, v5 loopt): Gemini-iconen afgekeurd (eigen ontwerp/pose; bewerken hield de vorm maar niet het detail); nu uit onze front. v4: "type ontwerp is uitstekend, super consistent", maar viscacha niet herkenbaar → v5 met herkenningstekens.
+- **Overworld:** Gemini gaf een Raichu/Pachirisu; nog open.
+- **Eisenlijst iconen** `docs/concept/sprites/rug_icoon_studie/EISEN_ICOON.md` + `icoon_check.py` (17 automatische eisen: maat, palet, omlijning, binnenlijnen, kleurvlakken, hoekigheid, frame 2, pose), normen uit vanilla Gen 1–3, de in-game set (die de game toont) en fanmade Gen 9; strengere ontwerpregels en smokkelruimte; herkenningstekens eerst vastleggen. Hulpscripts `vorm_meet.py`, `hoekig_meet.py`, `icoon_groepen.py`, `icoon_paren.py --new`, `pose_buren.py`.
+- Jordi: iconen en overworld "minder belangrijk ... moeten gewoon consistent zijn"; les in SPRITE_KERN: "namaken, niet scheppen".
+- **Volgende proef:** Krassault-icoon via een Gemini chibi-model op 64×64 (`octillery_evo/icoon/PROMPT_ICOON.md`).
 

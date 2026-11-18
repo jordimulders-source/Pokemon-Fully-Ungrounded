@@ -25,7 +25,7 @@ for n,sp in enumerate(sps):
     if NEW:
         fp=D+'/anim_front.png' if os.path.exists(D+'/anim_front.png') else D+'/front.png'
         f=load(fp,D+'/normal.pal').crop((0,0,64,64)); f=f.crop(f.getbbox())
-        ic=load(D+'/icon.png','graphics/pokemon/icon_palettes/pal%d.pal'%IPI.get(sp,0))
+        ic=load(D+'/icon.png','graphics/pokemon/icon_palettes/pal%d.pal'%IPI.get(sp, next((v for k,v in IPI.items() if k.startswith(sp+'_')),0)))
     else:
         f=load(D+'/anim_front_gba.png',D+'/normal_gba.pal').crop((0,0,64,64)); f=f.crop(f.getbbox())
         ic=load(D+'/icon_gba.png')

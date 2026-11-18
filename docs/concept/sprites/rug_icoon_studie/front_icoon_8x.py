@@ -17,6 +17,6 @@ W=Image.new('RGB',(C*540,((len(sps)+C-1)//C)*280),(115,197,164)); d=ImageDraw.Dr
 for n,sp in enumerate(sps):
     D=f'graphics/pokemon/{sp}'; fp=D+'/anim_front.png' if os.path.exists(D+'/anim_front.png') else D+'/front.png'
     f=img(fp,pal(D+'/normal.pal'),64).resize((256,256),Image.NEAREST)
-    i=img(D+'/icon.png',pal(f'graphics/pokemon/icon_palettes/pal{IPI.get(sp,0)}.pal'),32).resize((256,256),Image.NEAREST)
+    i=img(D+'/icon.png',pal(f'graphics/pokemon/icon_palettes/pal{IPI.get(sp, next((v for k,v in IPI.items() if k.startswith(sp+'_')),0))}.pal'),32).resize((256,256),Image.NEAREST)
     x,y=(n%C)*540,(n//C)*280; W.paste(f,(x,y+20),f); W.paste(i,(x+266,y+20),i); d.text((x+2,y+2),sp,fill=0)
 W.save(sys.argv[1])

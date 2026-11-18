@@ -105,5 +105,8 @@ Bekeken: 20 kleine viervoeters in de in-game set (`10_poseburen_viscacha.png`: R
 ## 3. Overworld (zelfde aanpak, script volgt als het nodig is)
 Normen uit 942 overworldsprites (HGSS-stijl): 192×32 (6 frames: voor 2, achter 2, opzij 2), figuur ongeveer even hoog als het icoon (0,83–1,20×), onderkant y 28–31, 9–15 kleuren in een eigen palet, zwarte omlijning rondom, loopframe even hoog als stilstaan.
 
+## Complexe ontwerpen
+Jordi: "we hebben namelijk ook een aantal complexe designs en die moeten we ook kunnen omzetten". De smokkelregels van §1e zijn daarvoor bedoeld (naar Gen 9: Kingambit, Skeledirge, Tinkaton, Spidops, Grafaiai). Na de viscacha de werkwijze testen op één complex ontwerp (voorstel: spooktrein fase 3 of Krassault).
+
 ## Stand viscacha-icoon
 `viscacha/icoon/maker/icon_v2.png`: 13/14; alleen detail te laag (binnenlijnen 9%, minimum 10%, mediaan 18%). Vorm: 13 kleurvlakken (norm 10–28, mediaan 18), 0,20 van de front (aan de lage kant), silhouet 0,60 (goed), 0 gaten.

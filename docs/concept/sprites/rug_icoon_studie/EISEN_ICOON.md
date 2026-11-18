@@ -6,6 +6,9 @@ Jordi: "eigenlijk moeten we een soort eisenlijst maken op basis van de al bestaa
 
 **Afspraak:** een icoon is af als het script alles OK geeft en de korte handmatige blik (punt 2) klopt. Geen keurrondes daarbovenop.
 
+## Stand 18 nov: iconen geparkeerd
+Jordi: "want het is nog steeds compleet giswerk waar ik van alles moet verbeteren" · "dus we zijn al uren geen stap verder". Na ±12 rondes (Gemini, verkleinen, handwerk, chibi-model, onderdelen-methode) geen icoon dat af is. Wat werkte: onderdelen-methode voor lijf/verhoudingen/plaatsing (a2), de eisenlijst als maat. Wat niet werkte: kleine kenmerken in de kop (oog, kraag, wang) laten ontstaan door verkleinen of door makers; dat is herontwerpen in het klein, en dat kunnen wij niet zonder Jordi's krabbel. Iconen staan stil tot de fase voor alle soorten; dan eerst een nieuwe aanpak voor het gezicht bedenken, niet dezelfde rondes herhalen.
+
 ## Lessen viscacha-icoon in één lijst (afvinken bij elk nieuw icoon en elke ronde)
 Jordi (18 nov): "het zou zonde zijn als je weer alles compleet anders gaat doen dan eerst, dus probeer die lessen mee te nemen".
 1. Lijkt op de front: vormen en gebaren uit de front, niets verzinnen (eis 0).

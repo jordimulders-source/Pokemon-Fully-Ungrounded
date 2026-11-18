@@ -44,3 +44,7 @@ Nieuw gesprek. Bijlage 1: `bewerk_bijlage_v1_32x.png` (ons icoon v1, frame 1, 32
 > Only add what Gen 3 (Ruby/Sapphire/Emerald) party icons have and this one lacks: depth and shading. Make the far ear, far front leg and far hind leg darker, so they sit behind the body. Add a few dark inner lines where parts overlap, as in the battle sprite: thigh, between front leg and chest, inside of the ears, head against the body. Add one shadow tone on the lower right of each part and keep the upper left lighter. Give the eye one light pixel, close the tip of the nose, and give the light chest patch a rounded shape with a little shadow.
 >
 > Same pixel art style, flat colors, no gradients, no dithering, plain white background, no text.
+Bewerk r1 (`afgekeurd_bewerk_r1.png`): vorm veranderd (wangpluk weg, staartpluk klein, poten anders), raster wazig. Jordi: "kan de prompt misschien anders want hij snapt het niet".
+
+## Bewerk r2 (nieuw gesprek, alleen bijlage `bewerk_bijlage_v1_32x.png`; één wijziging per prompt, zie GEMINI.md)
+> Edit this pixel art icon. Keep every outline pixel and every shape exactly where it is. Only add shading inside it: a darker shade of each color on the lower right part of each body part, and darken the legs and ear that are further away.

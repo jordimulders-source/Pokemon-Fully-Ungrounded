@@ -105,6 +105,9 @@ Bekeken: 20 kleine viervoeters in de in-game set (`10_poseburen_viscacha.png`: R
 ## 3. Overworld (zelfde aanpak, script volgt als het nodig is)
 Normen uit 942 overworldsprites (HGSS-stijl): 192×32 (6 frames: voor 2, achter 2, opzij 2), figuur ongeveer even hoog als het icoon (0,83–1,20×), onderkant y 28–31, 9–15 kleuren in een eigen palet, zwarte omlijning rondom, loopframe even hoog als stilstaan.
 
+## Herkenbaarheid eerst vastleggen
+Jordi over viscacha v4: "kijk het type ontwerp is uitstekend, dit is super consistent met de andere sprites, alleen je herkent de viscacha niet goed meer terug." Les: de stijlregels (§1e) maken elk knaagdier gelijk. Daarom vóór het icoon per soort de **herkenningstekens van de front** opschrijven (vorm én maat: "lange rechtopstaande oren dicht bij elkaar", niet alleen "oren") en die in het icoon minstens even groot houden als bij verkleinen, liever overdreven. Handmatige toets: zou je de soort op 1× tussen de buren aanwijzen?
+
 ## Complexe ontwerpen
 Jordi: "we hebben namelijk ook een aantal complexe designs en die moeten we ook kunnen omzetten". De smokkelregels van §1e zijn daarvoor bedoeld (naar Gen 9: Kingambit, Skeledirge, Tinkaton, Spidops, Grafaiai). Na de viscacha de werkwijze testen op één complex ontwerp (voorstel: spooktrein fase 3 of Krassault).
 
